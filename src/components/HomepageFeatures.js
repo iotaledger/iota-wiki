@@ -1,32 +1,27 @@
 import React from 'react';
-import clsx from 'clsx';
-import styles from './HomepageFeatures.module.css';
 
 const FeatureList = [
   {
-    title: 'Easy to Use',
+    title: 'Learn',
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        Learn everything you need to know about the technology and how the IOTA eco-system ticks.
       </>
     ),
   },
   {
-    title: 'Focus on What Matters',
+    title: 'Develop',
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        Looking to build on IOTA? A one stop directory and source for developer docs and repos.
       </>
     ),
   },
   {
-    title: 'Powered by React',
+    title: 'Interact',
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        An introduction to the IOTA token, wallets, and safe management and trading of your crypto assets.
       </>
     ),
   },
@@ -34,8 +29,8 @@ const FeatureList = [
 
 function Feature({title, description}) {
   return (
-    <div className={clsx('col col--4')}>
-      <div className="text--center padding-horiz--md">
+    <div className='col col--4'>
+      <div className='text--center padding-horiz--md'>
         <h3>{title}</h3>
         <p>{description}</p>
       </div>
@@ -45,14 +40,12 @@ function Feature({title, description}) {
 
 export default function HomepageFeatures() {
   return (
-    <section className={styles.features}>
-      <div className="container">
-        <div className="row">
-          {FeatureList.map((props, idx) => (
-            <Feature key={idx} {...props} />
-          ))}
-        </div>
+    <div className='container padding-vert--xl'>
+      <div className='row'>
+        {FeatureList.map((props, idx) => (
+          <Feature key={idx} {...props} />
+        ))}
       </div>
-    </section>
+    </div>
   );
 }
