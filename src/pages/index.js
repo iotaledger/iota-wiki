@@ -1,29 +1,33 @@
 import React from 'react';
-import clsx from 'clsx';
 import Layout from '@theme/Layout';
-import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import styles from './index.module.css';
 import HomepageFeatures from '../components/HomepageFeatures';
 
 function HomepageHeader() {
   const {siteConfig} = useDocusaurusContext();
   return (
-    <header className={clsx('hero hero--primary', styles.heroBanner)}>
-      <div className="container">
-        <h1 className="hero__title">{siteConfig.title}</h1>
-        <p className="hero__subtitle">{siteConfig.tagline}</p>
+    <header className='hero hero--dark'>
+      <div className='container'>
+        <div className='row'>
+          <div className='col col--5 col--offset-1'>
+            <h1 className='hero__title'>{siteConfig.title}</h1>
+            <p className='hero__subtitle'>{siteConfig.tagline}</p>
+            <div>
+              <button href='docs/general/iota-101' className='button button--primary button--outline button--lg'>
+                Get Started
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
     </header>
-  );
+  )
 }
 
 export default function Home() {
   const {siteConfig} = useDocusaurusContext();
   return (
-    <Layout
-      title={`${siteConfig.title}`}
-      description={`${siteConfig.tagline}`}>
+    <Layout title={`${siteConfig.title}`} description={`${siteConfig.tagline}`}>
       <HomepageHeader />
       <main>
         <HomepageFeatures />
