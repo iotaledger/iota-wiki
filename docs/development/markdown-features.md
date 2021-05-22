@@ -73,27 +73,64 @@ function HelloDocusaurus() {
 
 Docusaurus has a special syntax to create admonitions and callouts:
 
-    :::tip My tip
+    :::note
 
-    Use this awesome feature option
-
-    :::
-
-    :::danger Take care
-
-    This action is dangerous
+    The content and title *can* include markdown.
 
     :::
 
-:::tip My tip
+    :::tip You can specify an optional title
 
-Use this awesome feature option
+    Heads up! Here's a pro-tip.
+
+    :::
+
+    :::info
+
+    Useful information.
+
+    :::
+
+    :::caution
+
+    Warning! You better pay attention!
+
+    :::
+
+    :::danger
+
+    Danger danger, mayday!
+
+    :::
+
+
+:::note
+
+The content and title *can* include markdown.
 
 :::
 
-:::danger Take care
+:::tip You can specify an optional title
 
-This action is dangerous
+Heads up! Here's a pro-tip.
+
+:::
+
+:::info
+
+Useful information.
+
+:::
+
+:::caution
+
+Warning! You better pay attention!
+
+:::
+
+:::danger
+
+Danger danger, mayday!
 
 :::
 
