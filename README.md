@@ -1,6 +1,14 @@
-# Website
+# IOTA wiki
 
-This website is built using [Docusaurus 2](https://docusaurus.io/), a modern static website generator.
+The IOTA wiki is a central hub for entering into the IOTA eco-system. A community driven initiative to provide an up-to-date collection of introductions and further readin for the Tech, The Teams, The Community, and everything in between. So anyone can learn how to build, adopt, and engage with IOTA, all in one space.
+
+# Contributions
+
+The IOTA wiki is a community development and we will review all pull-requests and issues posted to this repository. If you notice any errors, or feel we have ommited something, please feel free to create a pull request with any suggestions. Larger content additions and suggestions can start as issues which can further be discussed with the team maintaining the page. 
+
+# The Build
+
+The IOTA wiki and content are contained within this repo, and the system has been built using [Docusaurus v2.0](https://docusaurus.io/) and [react.js](https://reactjs.org).
 
 ## Installation
 
