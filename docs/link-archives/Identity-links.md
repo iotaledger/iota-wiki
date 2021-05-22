@@ -16,3 +16,11 @@ https://blog.iota.org/persistent-selv-an-interactive-demo-around-long-term-digit
 https://blog.iota.org/eclass-presents-the-distributed-ledger-based-infrastructure-for-industrial-digital-twins/ partnership with ECLASS  18.12.20 released
 
 
+Github:
+
+https://github.com/iotaledger/identity.rs
+
+
+DOCS:
+
+https://identity-docs.iota.org/welcome.html
