@@ -1,8 +1,8 @@
-#Suggested menu contents and sub-categories
+# Suggested menu contents and sub-categories
 
 A collection of five main NAV menu categories (plus FAQS) along with their respective sub-categories for individual wiki-pages.
 
-##GETTING STARTED
+## GETTING STARTED
 Introduction to IOTA & The Tangle
 Architecture
 Security
@@ -33,7 +33,7 @@ Glossary
 Road Map
 Tutorials
 
-##THE TOKEN
+## THE TOKEN
 Introduction to MIOTA
 Buying
 Transferring
@@ -45,7 +45,7 @@ Exchanges
 Protecting yourself from Scams
 Tutorials
 
-##FACT BASE
+## FACT BASE
 Quick Quotes
 Infographics
 Useful Links
@@ -54,7 +54,7 @@ Research Papers
 Videos
 Tutorials
 
-##THE COMMUNITY
+## THE COMMUNITY
 Contributions
 Discord
 Github
@@ -67,7 +67,7 @@ Grants
 Research – Outline/Council/Topics
 Tutorials
 
-##DEVELOP
+## DEVELOP
 Understanding the Architecture
 Run a Node
 Client Libraries
@@ -79,5 +79,5 @@ Developer Documentation
 Github Repos
 Tutorials
 
-##FAQS
+## FAQS
 
