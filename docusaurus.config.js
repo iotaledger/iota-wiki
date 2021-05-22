@@ -1,7 +1,7 @@
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
   title: 'IOTA Wiki',
-  tagline: 'IOTA is cool',
+  tagline: 'Everything you need to no about IOTA in one place.',
   url: 'https://iota-community.github.io',
   baseUrl: '/iota-wiki/',
   onBrokenLinks: 'throw',
@@ -11,7 +11,6 @@ module.exports = {
   projectName: 'iota-wiki', // Usually your repo name.
   themeConfig: {
     navbar: {
-      title: '',
       logo: {
         alt: 'IOTA Wiki Logo',
         src: 'img/logo.svg',
@@ -20,62 +19,25 @@ module.exports = {
       items: [
         {
           type: 'doc',
-          docId: 'intro',
-          position: 'left',
+          docId: 'general/iota-101',
+          position: 'right',
           label: 'IOTA 101',
         },
         {
           type: 'doc',
-          docId: 'intro',
-          position: 'left',
-          label: 'The Tech',
+          docId: 'general/governance',
+          position: 'right',
+          label: 'Governance',
         },
         {
           type: 'doc',
-          docId: 'intro',
-          position: 'left',
-          label: 'The Token',
-        },
-        {
-          type: 'doc',
-          docId: 'intro',
-          position: 'left',
-          label: 'The Science',
-        },
-        {
-          type: 'doc',
-          docId: 'intro',
-          position: 'left',
-          label: 'The Facts',
-        },
-        {
-          type: 'doc',
-          docId: 'intro',
-          position: 'left',
-          label: 'Community',
-        },
-        {
-          type: 'doc',
-          docId: 'intro',
-          position: 'left',
-          label: 'Develop',
-        },
-        {
-          type: 'doc',
-          docId: 'intro',
-          position: 'left',
-          label: 'Tutorials',
-        },
-        {
-          type: 'doc',
-          docId: 'intro',
-          position: 'left',
-          label: 'FAQs',
+          docId: 'link-archives/introduction',
+          position: 'right',
+          label: 'Link Archives',
         },
       ],
     },
     footer: {
-      style: 'light',
       links: [
         {
           title: 'Docs',
