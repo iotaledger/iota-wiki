@@ -13,6 +13,6 @@ https://blog.iota.org/digital-green-certificates-a-decentralized-and-interoperab
 
 https://blog.iota.org/persistent-selv-an-interactive-demo-around-long-term-digital-identity/   partnership demo for SELV with EIT Climate KIC   31.12.20 released
 
-https://blog.iota.org/eclass-presents-the-distributed-ledger-based-infrastructure-for-industrial-digital-twins/ partenrship with ECLASS  18.12.20 released
+https://blog.iota.org/eclass-presents-the-distributed-ledger-based-infrastructure-for-industrial-digital-twins/ partnership with ECLASS  18.12.20 released
 
 
