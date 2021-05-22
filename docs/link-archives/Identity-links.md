@@ -1,5 +1,7 @@
 IF - publications:
 
+https://www.iota.org/solutions/digital-identity
+
 https://blog.iota.org/iota-identity-beta-release/  10.05.21 released
 
 https://blog.iota.org/releasing-iota-identity-alpha-a-standard-framework-for-digital-identity-cebabd108b4f/  12.11.20 released
