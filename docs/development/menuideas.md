@@ -1,9 +1,10 @@
 ---
 sidebar_label: Menu Ideas
+sidebar_position: 1
 ---
 
 
-# Suggested menu contents and sub-categories
+# Menu Ideas
 
 A collection of five main NAV menu categories (plus FAQS) along with their respective sub-categories for individual wiki-pages.
 
