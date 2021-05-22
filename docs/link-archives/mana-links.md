@@ -1,0 +1,1 @@
+Usefull Resourcess explaineing MANA:
