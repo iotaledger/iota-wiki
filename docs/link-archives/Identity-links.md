@@ -6,6 +6,8 @@ https://blog.iota.org/releasing-iota-identity-alpha-a-standard-framework-for-dig
 
 https://blog.iota.org/the-first-step-towards-a-unified-identity-protocol-7dc3988c8b0e/  28.09.19 released
 
+https://files.iota.org/comms/IOTA_The_Case_for_a_Unified_Identity.pdf    DID WHitepaper
+
 
 IF + Partnership publications:
 
