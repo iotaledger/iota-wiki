@@ -1,6 +1,6 @@
 # IOTA wiki
 
-The IOTA wiki is a central hub for entering into the IOTA eco-system. A community driven initiative to provide an up-to-date collection of introductions and further readin for the Tech, The Teams, The Community, and everything in between. So anyone can learn how to build, adopt, and engage with IOTA, all in one space.
+The IOTA wiki is a central hub for entering into the IOTA eco-system. A community driven initiative to provide an up-to-date collection of introductions and further reading for the Tech, The Teams, The Community, and everything in between. So anyone can learn how to build, adopt, and engage with IOTA, all in one space.
 
 # Contributions
 
