@@ -12,6 +12,8 @@ https://files.iota.org/papers/20200120_Coordicide_WP.pdf - coordicide whitepaper
 
 https://arxiv.org/pdf/1905.10895.pdf - FPC Whitepaper
 
+https://blog.iota.org/safety-of-the-tangle-berserk-detection-in-the-fpc-1a2545584daa/ - Berserk detection in FPC
+
 https://arxiv.org/pdf/1911.08787.pdf  - research about robustness and efficiency of FPC
 
 https://blockchain.ieee.org/technicalbriefs/january-2019/iota-feeless-and-free  - released Jan 19 - puclication of Dr. Popov
