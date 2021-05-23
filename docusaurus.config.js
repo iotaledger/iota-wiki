@@ -19,21 +19,27 @@ module.exports = {
       items: [
         {
           type: 'doc',
-          docId: 'general/iota-101',
+          docId: 'getting-started/introduction-to-iota-and-the-tangle',
           position: 'right',
-          label: 'IOTA 101',
+          label: 'Getting Started',
         },
         {
           type: 'doc',
-          docId: 'general/governance',
+          docId: 'the-community/governance',
           position: 'right',
           label: 'Governance',
         },
         {
           type: 'doc',
-          docId: 'link-archives/introduction',
+          docId: 'fact-base/introduction-to-the-facts',
           position: 'right',
-          label: 'Link Archives',
+          label: 'Facts',
+        },
+        {
+          type: 'doc',
+          docId: 'faqs/faqs',
+          position: 'right',
+          label: 'FAQ',
         },
       ],
     },
@@ -44,7 +50,7 @@ module.exports = {
           items: [
             {
               label: 'Tutorial',
-              to: '/docs/intro',
+              to: '/docs/getting-started/tutorials',
             },
           ],
         },
