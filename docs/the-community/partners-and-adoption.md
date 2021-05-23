@@ -1,6 +1,6 @@
 ---
 sidebar_label: Partners & Adoption
-sidebar_position: 07
+sidebar_position: 8
 ---
 
 # Partners & Adoption
