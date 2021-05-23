@@ -62,7 +62,7 @@ The following are a collection of repositories housed in the official IOTA Ledge
 ## Wallets
 - [firefly](https://github.com/iotaledger/firefly) - IOTA's New Wallet
 - [pollen-wallet](https://github.com/iotaledger/pollen-wallet) - GUI Wallet for use with the Pollen network
-- [wallet.rs'(https://github.com/iotaledger/wallet.rs) - Build wallets and other applications involving IOTA value transfer
+- [wallet.rs](https://github.com/iotaledger/wallet.rs) - Build wallets and other applications involving IOTA value transfer
 - [spark-wallet](https://github.com/iotaledger/spark-wallet) - A low-security wallet intended for short-term use and to send small amounts of IOTA tokens
 - [trinity-wallet](https://github.com/iotaledger/trinity-wallet) - The IOTA Trinity Wallet - available on App Store, Google Play and all major Desktop platforms
 - [cli-wallet](https://github.com/iotaledger/cli-wallet)
