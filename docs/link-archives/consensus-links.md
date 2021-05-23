@@ -4,6 +4,10 @@ In use:
 
 https://assets.ctfassets.net/r1dr6vzfxhev/2t4uxvsIqk0EUau6g2sw0g/45eae33637ca92f85dd9f4a3a218e1ec/iota1_4_3.pdf 30.04.18 released - The Tangle by Dr. Popov
 
+
+
+IOTA 2.0
+
 https://coordicide.iota.org/
 
 https://coordicide.iota.org/module4 - voting mechanism - Shimmer
