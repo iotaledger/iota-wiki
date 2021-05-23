@@ -12,7 +12,7 @@ function HomepageHeader() {
           <div className='col col--5 col--offset-1'>
             <h1 className='hero__title'>{siteConfig.title}</h1>
             <p className='hero__subtitle'>{siteConfig.tagline}</p>
-            <a href='docs/general/iota-101' className='button button--primary button--outline button--lg'>
+            <a href='docs/getting-started/introduction-to-iota-and-the-tangle' className='button button--primary button--outline button--lg'>
               Get Started
             </a>
           </div>
