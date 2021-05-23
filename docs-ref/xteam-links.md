@@ -11,6 +11,7 @@ Just follow the below template.
 - [github link]()
 - [docs link]()
 - [discord link]()   link to a public channel, not private x-team channel
+- [x-team link]()
 - [blog post links]()
 
 ## Any other useful links
