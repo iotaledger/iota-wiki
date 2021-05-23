@@ -1,6 +1,6 @@
 ---
 sidebar_label: Blogs
-sidebar_position: 5
+sidebar_position: 6
 ---
 
 # Blogs
