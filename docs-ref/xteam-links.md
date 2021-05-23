@@ -16,3 +16,28 @@ Just follow the below template.
 ## Any other useful links
 Drop in any other links you think may be helpful to readers such as external posts, tutorials, videos, guides, etc...
 
+-----------------------------------------------------------------------------------------------------------------------
+
+## X-Team/Project Name
+
+## Main links
+- [github link]()
+- [docs link]()
+- [discord link]()
+- [blog post links]()
+
+## Any other useful links
+Drop in any other links you think may be helpful to readers such as external posts, tutorials, videos, guides, etc...
+
+
+## X-Team/Project Name
+
+## Main links
+- [github link]()
+- [docs link]()
+- [discord link]()
+- [blog post links]()
+
+## Any other useful links
+Drop in any other links you think may be helpful to readers such as external posts, tutorials, videos, guides, etc...
+
