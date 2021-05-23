@@ -26,7 +26,7 @@ Drop in any other links you think may be helpful to readers such as external pos
 - [docs link](https://identity-docs.iota.org/)
 - [discord link](https://discord.com/channels/397872799483428865/443602228813627392)
 - [X-Team Identity](https://iota-community.github.io/X-Team_IOTA_Identity/)
-- [IOTA Identity: Beta Rlease](http://blog.iota.org/iota-identity-beta-release/)
+- [IOTA Identity: Beta Release](http://blog.iota.org/iota-identity-beta-release/)
 - [Persistent Selv: An Interactive Demo Around Long-Term Digital Identity](http://blog.iota.org/persistent-selv-an-interactive-demo-around-long-term-digital-identity/)
 - [The First Step Towards A Unified Identity Protocol](http://blog.iota.org/the-first-step-towards-a-unified-identity-protocol-7dc3988c8b0e/)
 
