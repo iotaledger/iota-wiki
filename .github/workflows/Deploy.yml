@@ -29,4 +29,4 @@ jobs:
         chmod 600 ./private_key
         rsync -chav --delete \
           -e 'ssh -i ./private_key -o StrictHostKeyChecking=no' \
-          "${{ env.src }}" "${{ secrets.DEV_USER }}@${{ secrets.DEV_HOST }}:/${{ env.dest }}"
+          "${{ env.src }}" "${{ secrets.DEV_USER }}@${{ secrets.DEV_HOST }}:/home/${{ secrets.DEV_USER }}/${{ env.dest }}"
