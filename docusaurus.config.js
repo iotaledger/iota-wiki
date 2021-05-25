@@ -1,6 +1,6 @@
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
-  title: 'IOTA Wiki',
+  title: 'IOTA wiki',
   tagline: 'The single source of truth for the IOTA network',
   url: 'https://wiki.iota.org',
   baseUrl: '/iota-wiki/',
