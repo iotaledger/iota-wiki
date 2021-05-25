@@ -1,0 +1,32 @@
+name: Deploy
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - uses: actions/setup-node@v1.1.0
+      with:
+        version: 12.x
+
+    - name: Install dependencies
+      run: yarn install
+    - name: Build
+      run: yarn build
+      
+    - name: Sync
+      env:
+        src: "build/"
+        dest: "iota-wiki/"
+      run: |
+        echo "${{ secrets.DEV_PRIVATE_KEY }}" > private_key
+        chmod 600 ./private_key
+        rsync -chav --delete \
+          -e 'ssh -i ./private_key -o StrictHostKeyChecking=no' \
+          "${{ env.src }}" "${{ secrets.DEV_USER }}@${{ secrets.DEV_HOST }}:/${{ env.dest }}"
