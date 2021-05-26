@@ -81,7 +81,7 @@ Install [Node.js](https://nodejs.org/en/download/).
 <!-- CONTRIBUTING -->
 ## Contributing
 
-The IOTA wiki is a community development and we will review all pull-requests and issues posted to this repository. If you notice any errors, or feel we have ommited something, please feel free to create a pull request with any suggestions. Larger content additions and suggestions can start as issues which can further be discussed with the team maintaining the page.  
+The IOTA wiki is a community development and we will review all pull-requests and issues posted to this repository. If you notice any errors, or feel we have forgot something, please feel free to create a pull request with any suggestions. Larger content additions and suggestions can start as issues which can further be discussed with the team maintaining the page.  
 Have a look at [CONTRIBUTING](.github/CONTRIBUTING.md).
 
 1. Fork the Project
