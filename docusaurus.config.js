@@ -18,29 +18,47 @@ module.exports = {
       },
       items: [
         {
-          type: 'doc',
-          docId: 'getting-started/introduction-to-iota-and-the-tangle',
-          position: 'right',
-          label: 'Getting Started',
+          type: "doc",
+          docId: "getting-started/introduction-to-iota-and-the-tangle",
+          position: "right",
+          label: "Get Started",
+          activeSidebarClassName: "navbar__link--active"
         },
         {
-          type: 'doc',
-          docId: 'the-community/governance',
-          position: 'right',
-          label: 'Governance',
+          type: "doc",
+          docId: "the-token/introduction-to-miota",
+          position: "right",
+          label: "The Token",
+          activeSidebarClassName: "navbar__link--active"
         },
         {
-          type: 'doc',
-          docId: 'fact-base/introduction-to-the-facts',
-          position: 'right',
-          label: 'Facts',
+          type: "doc",
+          docId: "develop/understanding-the-architecture",
+          position: "right",
+          label: "Develop",
+          activeSidebarClassName: "navbar__link--active"
         },
         {
-          type: 'doc',
-          docId: 'faqs/faqs',
-          position: 'right',
-          label: 'FAQ',
+          type: "doc",
+          docId: "the-community/community-overview",
+          position: "right",
+          label: "The Community",
+          activeSidebarClassName: "navbar__link--active"
         },
+        {
+          type: "doc",
+          docId: "fact-base/introduction-to-the-facts",
+          position: "right",
+          label: "Fact Base",
+          activeSidebarClassName: "navbar__link--active"
+        },
+        {
+          type: "doc",
+          docId: "faqs/faqs",
+          position: "right",
+          label: "Faqs",
+          activeSidebarClassName: "navbar__link--active"
+        }
       ],
     },
     footer: {
