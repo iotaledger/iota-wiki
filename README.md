@@ -64,7 +64,7 @@ The IOTA wiki is a central hub for entering into the IOTA eco-system. A communit
 
 ### Built With
 
-The IOTA wiki and content are contained within this repo, and the system has been built using [Docusaurus v2.0](https://docusaurus.io/).
+The IOTA wiki and content is contained within this repo, and the system has been built using [Docusaurus v2.0](https://docusaurus.io/).
 
 <!-- GETTING STARTED -->
 ## Getting Started
