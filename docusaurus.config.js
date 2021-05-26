@@ -101,6 +101,25 @@ module.exports = {
       ],
       copyright: `Copyright © ${new Date().getFullYear()} IOTA Wiki, Built with Docusaurus.`,
     },
+    colorMode: {
+      // Dark/light switch icon options
+      switchConfig: {
+        // Icon for the switch while in dark mode
+        darkIcon: '🌙',
+
+        // CSS to apply to dark icon
+        darkIconStyle: {
+          marginLeft: '2px',
+        },
+
+        lightIcon: '☀',
+
+        lightIconStyle: {
+          marginLeft: '1px',
+          color: '#ffd557',
+        },
+      },
+    },
   },
   presets: [
     [
