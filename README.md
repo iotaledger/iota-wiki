@@ -1,41 +1,110 @@
-# IOTA wiki
+<!--
+*** This README is usinge the Best-README-Template (https://github.com/othneildrew/Best-README-Template).
+-->
+
+[![Contributors][contributors-shield]][contributors-url]
+[![Forks][forks-shield]][forks-url]
+[![Stargazers][stars-shield]][stars-url]
+[![Issues][issues-shield]][issues-url]
+
+
+
+<!-- PROJECT LOGO -->
+<br />
+<p align="center">
+  <a href="https://github.com/iota-community/iota-wiki">
+    <img src="static/img/logo.svg" alt="Logo" width="80" height="80">
+  </a>
+
+  <h3 align="center">IOTA Wiki</h3>
+
+  <p align="center">
+    Everything you need to know about IOTA in one place.
+    <br />
+    <a href="https://iota-community.github.io/iota-wiki"><strong>Explore the Wiki »</strong></a>
+    <br />
+    <br />
+    <a href="https://github.com/iota-community/iota-wiki/issues">Report Error</a>
+    ·
+    <a href="https://github.com/iota-community/iota-wiki/issues">Request Topic</a>
+    .
+  </p>
+</p>
+
+
+
+<!-- TABLE OF CONTENTS -->
+<details open="open">
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#about-the-project">About The Project</a>
+      <ul>
+        <li><a href="#built-with">Built With</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#getting-started">Getting Started</a>
+      <ul>
+        <li><a href="#prerequisites">Prerequisites</a></li>
+        <li><a href="#installation">Installation</a></li>
+      </ul>
+    </li>
+    <li><a href="#contributing">Contributing</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ol>
+</details>
+
+
+
+<!-- ABOUT THE PROJECT -->
+## About The Project
 
 The IOTA wiki is a central hub for entering into the IOTA eco-system. A community driven initiative to provide an up-to-date collection of introductions and further reading for the Tech, The Teams, The Community, and everything in between. So anyone can learn how to build, adopt, and engage with IOTA, all in one space.
 
-# Contributions
+### Built With
 
-The IOTA wiki is a community development and we will review all pull-requests and issues posted to this repository. If you notice any errors, or feel we have ommited something, please feel free to create a pull request with any suggestions. Larger content additions and suggestions can start as issues which can further be discussed with the team maintaining the page. 
+The IOTA wiki and content are contained within this repo, and the system has been built using [Docusaurus v2.0](https://docusaurus.io/).
 
-# The Build
+<!-- GETTING STARTED -->
+## Getting Started
 
-The IOTA wiki and content are contained within this repo, and the system has been built using [Docusaurus v2.0](https://docusaurus.io/) and [react.js](https://reactjs.org).
+### Prerequisites
 
-## Installation
+Install [Node.js](https://nodejs.org/en/download/).
 
-```console
-yarn install
-```
+### Local Development
 
-## Local Development
+1. Run `npx docusaurus start` in your terminal
+2. Open `http://localhost:3000`
 
-```console
-yarn start
-```
+<!-- CONTRIBUTING -->
+## Contributing
 
-This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
+The IOTA wiki is a community development and we will review all pull-requests and issues posted to this repository. If you notice any errors, or feel we have ommited something, please feel free to create a pull request with any suggestions. Larger content additions and suggestions can start as issues which can further be discussed with the team maintaining the page.  
+Have a look at [CONTRIBUTING](.github/CONTRIBUTING.md).
 
-## Build
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
-```console
-yarn build
-```
+<!-- CONTACT -->
+## Contact
 
-This command generates static content into the `build` directory and can be served using any static contents hosting service.
+Adamski - [AdamCroply](https://github.com/AdamCroply) - adamski#0458  
+Phylo - [Phyloiota](https://github.com/Phyloiota) - Phylo [Community DAO - lets go!]#2233  
+Jeroen van den Hout - [jlvandenhout](https://github.com/jlvandenhout) - jvdhout#4402  
+Dr.Electron - [Dr-Electron](https://github.com/Dr-Electron) - Dr.Electron#9370  
 
-## Deployment
-
-```console
-GIT_USER=<Your GitHub username> USE_SSH=true yarn deploy
-```
-
-If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
+<!-- MARKDOWN LINKS & IMAGES -->
+<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+[contributors-shield]: https://img.shields.io/github/contributors/iota-community/iota-wiki.svg?style=for-the-badge
+[contributors-url]: https://github.com/iota-community/iota-wiki/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/iota-community/iota-wiki.svg?style=for-the-badge
+[forks-url]: https://github.com/iota-community/iota-wiki/network/members
+[stars-shield]: https://img.shields.io/github/stars/iota-community/iota-wiki.svg?style=for-the-badge
+[stars-url]: https://github.com/iota-community/iota-wiki/stargazers
+[issues-shield]: https://img.shields.io/github/issues/iota-community/iota-wiki.svg?style=for-the-badge
+[issues-url]: https://github.com/iota-community/iota-wiki/issues
