@@ -18,46 +18,28 @@ module.exports = {
       },
       items: [
         {
-          type: "doc",
-          docId: "getting-started/introduction-to-iota-and-the-tangle",
-          position: "right",
+          to: "docs/getting-started/introduction-to-iota-and-the-tangle",
           label: "Get Started",
-          activeSidebarClassName: "navbar__link--active"
         },
         {
-          type: "doc",
-          docId: "the-token/introduction-to-miota",
-          position: "right",
+          to: "docs/the-token/introduction-to-miota",
           label: "The Token",
-          activeSidebarClassName: "navbar__link--active"
         },
         {
-          type: "doc",
-          docId: "develop/understanding-the-architecture",
-          position: "right",
+          to: "docs/develop/understanding-the-architecture",
           label: "Develop",
-          activeSidebarClassName: "navbar__link--active"
         },
         {
-          type: "doc",
-          docId: "the-community/community-overview",
-          position: "right",
+          to: "docs/the-community/community-overview",
           label: "The Community",
-          activeSidebarClassName: "navbar__link--active"
         },
         {
-          type: "doc",
-          docId: "fact-base/introduction-to-the-facts",
-          position: "right",
+          to: "docs/fact-base/introduction-to-the-facts",
           label: "Fact Base",
-          activeSidebarClassName: "navbar__link--active"
         },
         {
-          type: "doc",
-          docId: "faqs/faqs",
-          position: "right",
+          to: "docs/faqs/faqs",
           label: "Faqs",
-          activeSidebarClassName: "navbar__link--active"
         }
       ],
     },
