@@ -5,23 +5,23 @@ const FeatureList = [
     title: 'Learn',
     description: (
       <>
-        Learn everything you need to know about the technology and how the IOTA eco-system ticks.
+        Why IOTA? Basics to deeper topics: Learn about the tangle, industry applications and networks.
       </>
     ),
   },
   {
-    title: 'Develop',
+    title: 'Build',
     description: (
       <>
-        Looking to build on IOTA? A one stop directory and source for developer docs and repos.
+        Follow our tutorial to build your own application. IOTA supports Rust, C, Go, Java, and Python. 
       </>
     ),
   },
   {
-    title: 'Interact',
+    title: 'Participate',
     description: (
       <>
-        An introduction to the IOTA token, wallets, and safe management and trading of your crypto assets.
+        You want to be a part of the IOTA mission? Join the IOTA community or support the network by running a node.
       </>
     ),
   },
@@ -41,6 +41,11 @@ function Feature({title, description}) {
 export default function HomepageFeatures() {
   return (
     <div className='container padding-vert--xl'>
+      <div className='row'>
+        <div className='col'>
+          <h1 class="text--center" >Get started, right away</h1>
+        </div>
+      </div>
       <div className='row'>
         {FeatureList.map((props, idx) => (
           <Feature key={idx} {...props} />
