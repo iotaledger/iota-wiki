@@ -43,7 +43,7 @@ export default function HomepageFeatures() {
     <div className='container padding-vert--xl'>
       <div className='row'>
         <div className='col'>
-          <h1 class="text--center" >Get started, right away</h1>
+          <h1 className="text--center" >Get started, right away</h1>
         </div>
       </div>
       <div className='row'>
