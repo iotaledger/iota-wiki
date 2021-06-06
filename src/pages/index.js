@@ -6,7 +6,7 @@ import HomepageFeatures from '../components/HomepageFeatures';
 function HomepageHeader() {
   const {siteConfig} = useDocusaurusContext();
   return (
-    <header className='hero hero--dark bg-midnight-gradient'>
+    <header className='hero bg-midnight-gradient'>
       <div className='container'>
         <div className='row'>
           <div className='col col--5 col--offset-1'>

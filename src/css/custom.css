@@ -207,6 +207,9 @@
   --ifm-color-warning: #e5a23e;
   --ifm-color-danger: #e53e3e;
 
+  --ifm-navbar-background-color: rgba(255,255,255,0.05);
+  --ifm-hero-background-color:#FFFFFF00;
+
   --ifm-color-primary-dark: color-mod(
     var(--ifm-color-primary) shade(var(--ifm-dark-value))
   );
@@ -394,6 +397,8 @@ html[data-theme='dark'] {
   --ifm-background-color: var(--ifm-color-emphasis-100);
   --ifm-background-surface-color: var(--ifm-color-emphasis-100);
 
+  --ifm-footer-background-color: #131F37;
+
   --ifm-heading-color: inherit;
 
   --ifm-hover-overlay: var(--ifm-color-emphasis-200);
@@ -425,8 +430,4 @@ html[data-theme='dark'] {
 
 ::selection {
     background: #80efe4
-}
-
-.bg-midnight-gradient {
-    background: linear-gradient(225deg, #485776, #131f37)
 }
