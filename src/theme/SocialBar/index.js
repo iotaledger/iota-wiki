@@ -1,5 +1,7 @@
 import React from 'react'
 import useBaseUrl from '@docusaurus/useBaseUrl'
+import clsx from 'clsx';
+import styles from './styles.module.css';
 
 const SocialLinkList = [
   {
@@ -8,7 +10,7 @@ const SocialLinkList = [
     url: 'https://www.youtube.com/c/iotafoundation',
   },
   {
-    title: 'Github',
+    title: 'GitHub',
     imageUrl: '/img/github.svg',
     url: 'https://www.github.com/iotaledger/',
   },
@@ -28,7 +30,7 @@ const SocialLinkList = [
     url: 'https://www.reddit.com/r/iota/',
   },
   {
-    title: 'LinkedIn',
+    title: 'Linkedin',
     imageUrl: '/img/linkedin.svg',
     url: 'https://www.linkedin.com/company/iotafoundation/',
   },
@@ -42,14 +44,10 @@ const SocialLinkList = [
 function SocialLink({ id, title, imageUrl, url }) {
   //TO-DO Calculate color from inner col with id
   return (
-    <div className='col'>
+    <div className={clsx('col', styles.socialLink)}>
       <a href={url}>
-        <div className='row'>
-          <div className='col'>
-            <img className='social' src={useBaseUrl(imageUrl)} />
-          </div>
-          <div className='social col'>{title}</div>
-        </div>
+        <img src={useBaseUrl(imageUrl)} />
+        <div>{title}</div>
       </a>
     </div>
   )
@@ -57,7 +55,7 @@ function SocialLink({ id, title, imageUrl, url }) {
 
 function SocialBar() {
   return (
-    <div className="row">
+    <div className="row row--no-gutters text--center">
       {SocialLinkList.map((props, idx) => (
         <SocialLink key={idx} id={idx} {...props} />
       ))}
