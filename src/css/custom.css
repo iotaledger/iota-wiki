@@ -452,10 +452,3 @@ html[data-theme='dark'] {
   border-radius: 25px;
   padding: unset;
 }
-
-.social {
-  height: 48px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}

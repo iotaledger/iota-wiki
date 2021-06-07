@@ -1,0 +1,8 @@
+.socialLink {
+  font-family: 'Metropolis Bold';
+  transition: background-color var(--ifm-transition-slow) var(--ifm-transition-timing-default);
+}
+
+.socialLink:hover {
+  background-color: var(--ifm-color-primary);
+}
