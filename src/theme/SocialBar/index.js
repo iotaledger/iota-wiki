@@ -54,7 +54,7 @@ function SocialLink({ title, imageUrl, url, backgroundColor }) {
     className={clsx('col text--center padding-horiz--sm padding-vert--md', styles.socialLink)}
     style={{backgroundColor: backgroundColor}}
     href={url}>
-      <img className={clsx(styles.socialImage)} src={useBaseUrl(imageUrl)} />
+      <img className={clsx('margin-right--sm', styles.socialImage)} src={useBaseUrl(imageUrl)} />
       <div className={clsx(styles.socialTitle)}>{title}</div>
     </a>
   )
