@@ -51,10 +51,10 @@ const SocialLinkList = [
 function SocialLink({ title, imageUrl, url, backgroundColor }) {
   return (
     <a
-    className={clsx('col text--center padding-horiz--sm padding-vert--md', styles.socialLink)}
+    className={clsx('padding-horiz--sm padding-vert--md', styles.socialLink)}
     style={{backgroundColor: backgroundColor}}
     href={url}>
-      <img className={clsx('margin-right--sm', styles.socialImage)} src={useBaseUrl(imageUrl)} />
+      <img className={clsx(styles.socialImage)} src={useBaseUrl(imageUrl)} />
       <div className={clsx(styles.socialTitle)}>{title}</div>
     </a>
   )
@@ -62,7 +62,7 @@ function SocialLink({ title, imageUrl, url, backgroundColor }) {
 
 function SocialBar() {
   return (
-    <div className="row row--no-gutters">
+    <div className={clsx(styles.socialBar)}>
       {SocialLinkList.map((props, idx) => (
         <SocialLink key={idx} {...props} />
       ))}
