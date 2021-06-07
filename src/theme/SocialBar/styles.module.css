@@ -1,5 +1,10 @@
+.socialBar {
+  display: flex;
+}
+
 .socialLink {
   transition: background-color var(--ifm-transition-slow) var(--ifm-transition-timing-default);
+  flex: 1;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -16,7 +21,17 @@
 }
 
 .socialTitle {
-  display: block;
+  display: none;
   font-family: 'Metropolis Bold';
   color: #FFFFFF;
+}
+
+@media (min-width: 1064px) {
+  .socialImage {
+    margin-right: .5rem;
+  }
+
+  .socialTitle {
+    display: block;
+  }
 }
