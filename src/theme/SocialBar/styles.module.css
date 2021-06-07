@@ -1,8 +1,16 @@
 .socialLink {
-  font-family: 'Metropolis Bold';
   transition: background-color var(--ifm-transition-slow) var(--ifm-transition-timing-default);
 }
 
 .socialLink:hover {
-  background-color: var(--ifm-color-primary);
+  background-color: var(--ifm-color-primary) !important;
+}
+
+.socialImage {
+  width: 1.25rem;
+}
+
+.socialTitle {
+  font-family: 'Metropolis Bold';
+  color: #FFFFFF;
 }
