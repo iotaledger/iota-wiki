@@ -1,5 +1,9 @@
 .socialLink {
   transition: background-color var(--ifm-transition-slow) var(--ifm-transition-timing-default);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFFFFF;
 }
 
 .socialLink:hover {
@@ -7,10 +11,12 @@
 }
 
 .socialImage {
+  display: block;
   width: 1.25rem;
 }
 
 .socialTitle {
+  display: block;
   font-family: 'Metropolis Bold';
   color: #FFFFFF;
 }
