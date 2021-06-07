@@ -394,8 +394,8 @@
 }
 
 html[data-theme='dark'] {
-  --ifm-background-color: var(--ifm-color-emphasis-100);
-  --ifm-background-surface-color: var(--ifm-color-emphasis-100);
+  --ifm-background-color: var(--ifm-color-emphasis-200);
+  --ifm-background-surface-color: var(--ifm-color-emphasis-200);
 
   --ifm-color-emphasis-0: white;
   --ifm-footer-background-color: #131F37;
