@@ -1,0 +1,15 @@
+.heading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.headingImage {
+  width: 7rem;
+  margin-right: 0.5rem;
+}
+
+.headingTitle {
+  margin-bottom: 0;
+  font-weight: 500;
+}

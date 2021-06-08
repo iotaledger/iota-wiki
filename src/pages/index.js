@@ -1,39 +1,13 @@
 import React from 'react';
 import Layout from '@theme/Layout';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import HomepageFeatures from '../components/HomepageFeatures';
-
-function HomepageHeader() {
-  const { siteConfig } = useDocusaurusContext();
-  return (
-    <header className='hero bg-midnight-gradient'>
-      <div className='container'>
-        <div className='row'>
-          <div className='col'>
-            <div className='row'>
-              <div className='col col--2 col--offset-3'>
-                <img src="./img/globe.svg"></img>
-              </div>
-              <div className='col'>
-                <h1 className='hero__title'>{siteConfig.title}</h1>
-                <p className='hero__subtitle'>{siteConfig.tagline}</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </header>
-  )
-}
+import LandingpageHeader from '../components/LandingpageHeader';
 
 export default function Home() {
   const { siteConfig } = useDocusaurusContext();
   return (
     <Layout title={`${siteConfig.title}`} description={`${siteConfig.tagline}`}>
-      <HomepageHeader />
-      <main>
-        <HomepageFeatures />
-      </main>
+      <LandingpageHeader />
     </Layout>
   );
 }
