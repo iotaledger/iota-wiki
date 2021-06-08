@@ -163,19 +163,17 @@ module.exports = {
       // Dark/light switch icon options
       switchConfig: {
         // Icon for the switch while in dark mode
-        darkIcon: 'dark_mode',
+        darkIcon: 'light_mode',
 
         // CSS to apply to dark icon
         darkIconStyle: {
           fontFamily: 'Material Icons',
-          marginLeft: '2px',
         },
 
-        lightIcon: 'light_mode',
+        lightIcon: 'dark_mode',
 
         lightIconStyle: {
           fontFamily: 'Material Icons',
-          marginLeft: '1px',
         },
       },
     },
