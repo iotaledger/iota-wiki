@@ -1,6 +1,6 @@
 import React from 'react';
 
-const FeatureList = [
+const ActionList = [
   {
     title: 'Learn',
     link: 'docs/learn/about-iota/not-a-blockchain',
@@ -15,7 +15,7 @@ const FeatureList = [
     link: 'docs/build/getting-started/architecture',
     description: (
       <>
-        Follow our tutorial to build your own application. IOTA supports Rust, C, Go, Java, and Python. 
+        Follow our tutorial to build your own application. IOTA supports Rust, C, Go, Java, and Python.
       </>
     ),
   },
@@ -30,7 +30,7 @@ const FeatureList = [
   },
 ];
 
-function Feature({ title, link, description}) {
+function Action({ title, link, description}) {
   return (
     <div className='col col--4'>
       <div className="card">
@@ -53,19 +53,17 @@ function Feature({ title, link, description}) {
   );
 }
 
-export default function HomepageFeatures() {
+function LandingpageActions() {
   return (
     <div className='container padding-vert--xl'>
+      <p className="text--center" >Get started, right away</p>
       <div className='row'>
-        <div className='col'>
-          <h1 className="text--center" >Get started, right away</h1>
-        </div>
-      </div>
-      <div className='row'>
-        {FeatureList.map((props, idx) => (
-          <Feature key={idx} {...props} />
+        {ActionList.map((props, idx) => (
+          <Action key={idx} {...props} />
         ))}
       </div>
     </div>
   );
 }
+
+export default LandingpageActions
