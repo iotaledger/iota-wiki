@@ -430,6 +430,10 @@ html[data-theme='dark'] {
     font-weight: 700;
 }
 
+.footer {
+  font-size: 80%;
+}
+
 ::selection {
     background: #80efe4
 }
