@@ -9,6 +9,10 @@ module.exports = {
   favicon: 'img/favicon.ico',
   organizationName: 'iota-community', // Usually your GitHub org/user name.
   projectName: 'iota-wiki', // Usually your repo name.
+  onBrokenLinks: 'log',
+  stylesheets: [
+    'https://fonts.googleapis.com/css?family=Material+Icons',
+  ],
   themeConfig: {
     navbar: {
       logo: {
@@ -159,18 +163,19 @@ module.exports = {
       // Dark/light switch icon options
       switchConfig: {
         // Icon for the switch while in dark mode
-        darkIcon: '🌙',
+        darkIcon: 'dark_mode',
 
         // CSS to apply to dark icon
         darkIconStyle: {
+          fontFamily: 'Material Icons',
           marginLeft: '2px',
         },
 
-        lightIcon: '☀',
+        lightIcon: 'light_mode',
 
         lightIconStyle: {
+          fontFamily: 'Material Icons',
           marginLeft: '1px',
-          color: '#ffd557',
         },
       },
     },
