@@ -177,6 +177,21 @@ module.exports = {
         },
       },
     },
+    searchMode: {
+      switchConfig: {
+        openedIcon: 'close',
+
+        openedIconStyle: {
+          fontFamily: 'Material Icons',
+        },
+
+        closedIcon: 'search',
+
+        closedIconStyle: {
+          fontFamily: 'Material Icons',
+        },
+      },
+    },
   },
   presets: [
     [
