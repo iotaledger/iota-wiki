@@ -380,11 +380,13 @@
   --ifm-global-border-width: 2px;
   --ifm-global-radius: 0.5rem;
 
-  --ifm-navbar-link-color: var(--ifm-font-color-base);
-  --ifm-navbar-link-hover-color: var(--ifm-color-primary);
-  --ifm-navbar-link-active-color: var(--ifm-font-color-base);
+  --ifm-navbar-link-color: var(--ifm-color-emphasis-600);
+  --ifm-navbar-link-hover-color: var(--ifm-color-emphasis-600);
+  --ifm-navbar-link-active-color: var(--ifm-color-emphasis-600);
 
-  --ifm-navbar-padding-horizontal: 20px;
+  --ifm-navbar-padding-horizontal: 25px;
+  --ifm-navbar-padding-vertical: 18px;
+  --ifm-navbar-height: auto;
 
   --ifm-menu-color: var(--ifm-color-emphasis-600);
   --ifm-menu-color-active: var(--ifm-color-emphasis-1000);
@@ -393,6 +395,10 @@
 html[data-theme='dark'] {
   --ifm-background-color: var(--ifm-color-emphasis-200);
   --ifm-background-surface-color: var(--ifm-color-emphasis-200);
+
+  --ifm-navbar-link-color: var(--ifm-color-emphasis-400);
+  --ifm-navbar-link-hover-color: var(--ifm-color-emphasis-400);
+  --ifm-navbar-link-active-color: var(--ifm-color-emphasis-400);
 
   --ifm-color-emphasis-0: white;
   --ifm-footer-background-color: #131F37;
@@ -419,12 +425,18 @@ html[data-theme='dark'] {
 }
 
 .navbar {
-    font-family: var(--ifm-font-family-base);
+    font-family: 'Metropolis Medium';
+    line-height: 1rem;
+    font-size: 1rem;
+    font-weight: 400;
 }
 
-.navbar__item {
-    font-size: 0.875rem;
-    font-weight: 700;
+.navbar__brand {
+  height: 25px;
+}
+
+.navbar__link--active {
+  font-weight: bold;
 }
 
 .footer {
