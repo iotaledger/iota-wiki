@@ -384,7 +384,7 @@
   --ifm-navbar-link-hover-color: var(--ifm-color-primary);
   --ifm-navbar-link-active-color: var(--ifm-font-color-base);
 
-  --ifm-navbar-padding-horizontal: calc(var(--ifm-spacing-horizontal) * 5);
+  --ifm-navbar-padding-horizontal: 20px;
 
   --ifm-menu-color: var(--ifm-color-emphasis-600);
   --ifm-menu-color-active: var(--ifm-color-emphasis-1000);
