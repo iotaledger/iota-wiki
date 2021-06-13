@@ -444,7 +444,9 @@ html[data-theme='dark'] {
 }
 
 ::selection {
-    background: #80efe4
+  background-color: #b3d4fc;
+  color: #000;
+  text-shadow: none;
 }
 
 .card {
