@@ -207,9 +207,6 @@
   --ifm-color-warning: #e5a23e;
   --ifm-color-danger: #e53e3e;
 
-  --ifm-navbar-background-color: rgba(255,255,255,0.05);
-  --ifm-hero-background-color:#FFFFFF00;
-
   --ifm-color-primary-dark: color-mod(
     var(--ifm-color-primary) shade(var(--ifm-dark-value))
   );

@@ -48,8 +48,12 @@
   height: 28px;
   border-radius: 50%;
   color: var(--ifm-color-emphasis-1000);
-  background-color: var(--ifm-color-emphasis-200);
+  background-color: rgba(0, 0, 0, 0.05);
   transition: all 0.2s ease;
+}
+
+:global([data-theme='dark'] .react-toggle-track) {
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 :global(.react-toggle-track-check) {
