@@ -21,7 +21,7 @@
 }
 
 
-:global(.react-search-screenreader-only) {
+:global(.wiki-search-screenreader-only) {
   border: 0;
   clip: rect(0 0 0 0);
   height: 1px;
@@ -31,7 +31,7 @@
   width: 1px;
 }
 
-:global(.react-search) {
+:global(.wiki-search) {
   width: 32px;
   height: 32px;
   border-radius: 50%;
@@ -43,9 +43,10 @@
   background-color: transparent;
   transition: all 0.2s ease;
   font-size: 1.125rem;
+  z-index: 100;
 }
 
-:global(.react-search-opened) {
+:global(.wiki-search-opened) {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -53,12 +54,12 @@
   transition: opacity 0.25s ease;
 }
 
-:global(.react-search--checked .react-search-opened) {
+:global(.wiki-search--checked .wiki-search-opened) {
   opacity: 1;
   transition: opacity 0.25s ease;
 }
 
-:global(.react-search-closed) {
+:global(.wiki-search-closed) {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -66,6 +67,67 @@
   transition: opacity 0.25s ease;
 }
 
-:global(.react-search--checked .react-search-closed) {
+:global(.wiki-search--checked .wiki-search-closed) {
   opacity: 0;
+}
+
+:global(.wiki-search-page) {
+  display: none;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 100vh;
+  z-index: 99;
+  background-color: var(--ifm-color-emphasis-200);
+  transition: all 0.2s ease;
+}
+
+:global(.wiki-search-page.wiki-search-page--checked) {
+  display: block;
+}
+
+:global(.wiki-search-header) {
+  width: 100%;
+  height: var(--ifm-navbar-height);
+  padding: var(--ifm-navbar-padding-vertical) var(--ifm-navbar-padding-horizontal);
+}
+
+:global(.wiki-search-main) {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: var(--ifm-navbar-padding-vertical) var(--ifm-navbar-padding-horizontal);
+}
+
+:global(.wiki-search-bar) {
+  display: flex;
+  width: 50%;
+  min-width: 16rem;
+  border-radius: 900px;
+  background-color: var(--ifm-color-emphasis-400);
+}
+
+:global(.wiki-search-logo) {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  color: var(--ifm-color-emphasis-1000);
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  background-color: transparent;
+  transition: all 0.2s ease;
+  font-size: 1.125rem;
+}
+
+:global(.wiki-search-input) {
+  flex-grow: 1;
+  height: 32px;
+  border: 0;
+  border-top-right-radius: 900px;
+  border-bottom-right-radius: 900px;
+}
+
+:global(.wiki-search-input:focus) {
+  outline: none;
 }

@@ -179,15 +179,15 @@ module.exports = {
     },
     searchMode: {
       switchConfig: {
-        openedIcon: 'close',
+        closeIcon: 'close',
 
-        openedIconStyle: {
+        closeIconStyle: {
           fontFamily: 'Material Icons',
         },
 
-        closedIcon: 'search',
+        searchIcon: 'search',
 
-        closedIconStyle: {
+        searchIconStyle: {
           fontFamily: 'Material Icons',
         },
       },

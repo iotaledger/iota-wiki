@@ -9,25 +9,19 @@ import {useThemeConfig} from '@docusaurus/theme-common';
 import clsx from 'clsx';
 import styles from './styles.module.css';
 
-const Opened = ({icon, style}) => (
-  <span className={clsx(styles.toggle)} style={style}>
-    {icon}
-  </span>
-);
-
-const Closed = ({icon, style}) => (
-  <span className={clsx(styles.toggle)} style={style}>
-    {icon}
-  </span>
-);
-
 const Toggle = memo(
-  ({icons}) => {
+  () => {
+    const {
+      searchMode: {
+        switchConfig: {closeIcon, closeIconStyle, searchIcon, searchIconStyle},
+      },
+    } = useThemeConfig();
+
     const [checked, setChecked] = useState(false);
-    const inputRef = useRef(null);
+    const checkboxRef = useRef(null);
 
     const handleToggle = (e) => {
-      const checkbox = inputRef.current;
+      const checkbox = checkboxRef.current;
 
       if (!checkbox) {
         return;
@@ -44,42 +38,56 @@ const Toggle = memo(
     };
 
     return (
-      <div
-        className={clsx('react-search', {
-          'react-search--checked': checked,
-        })}
-        role="button"
-        tabIndex={-1}
-        onClick={handleToggle}>
-        <div className="react-search-opened">{icons.checked}</div>
-        <div className="react-search-closed">{icons.unchecked}</div>
+      <>
+        <div
+          className={clsx('wiki-search', {
+            'wiki-search--checked': checked,
+          })}
+          role="button"
+          tabIndex={-1}
+          onClick={handleToggle}>
+          <div className="wiki-search-opened">
+            <span className={clsx(styles.toggle)} style={closeIconStyle}>
+              {closeIcon}
+            </span>
+          </div>
+          <div className="wiki-search-closed">
+            <span className={clsx(styles.toggle)} style={searchIconStyle}>
+              {searchIcon}
+            </span>
+          </div>
 
-        <input
-          ref={inputRef}
-          checked={checked}
-          type="checkbox"
-          className="react-search-screenreader-only"
-          aria-label="Open and close search"
-          onChange={handleToggle}
-        />
-      </div>
+          <input
+            ref={checkboxRef}
+            checked={checked}
+            type="checkbox"
+            className="wiki-search-screenreader-only"
+            aria-label="Open and close search"
+            onChange={handleToggle}
+          />
+        </div>
+
+        <div className={clsx('wiki-search-page',
+          {
+            'wiki-search-page--checked': checked,
+          }
+        )}>
+          <div className='wiki-search-header'>
+          </div>
+          <div className='wiki-search-main'>
+            <div className='wiki-search-bar'>
+              <div className='wiki-search-logo'>
+                <span className={clsx(styles.toggle)} style={searchIconStyle}>
+                  {searchIcon}
+                </span>
+              </div>
+              <input className='wiki-search-input' type="text"></input>
+            </div>
+          </div>
+        </div>
+      </>
     );
   },
 );
 
-export default function () {
-  const {
-    searchMode: {
-      switchConfig: {openedIcon, openedIconStyle, closedIcon, closedIconStyle},
-    },
-  } = useThemeConfig();
-
-  return (
-    <Toggle
-      icons={{
-        checked: <Opened icon={openedIcon} style={openedIconStyle} />,
-        unchecked: <Closed icon={closedIcon} style={closedIconStyle} />,
-      }}
-    />
-  );
-}
+export default Toggle
