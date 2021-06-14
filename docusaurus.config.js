@@ -4,12 +4,12 @@ module.exports = {
   tagline: 'The complete reference for IOTA',
   url: 'http://94.16.108.60',
   baseUrl: '/',
-  onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'warn',
+  onBrokenLinks: 'log',
+  onBrokenMarkdownLinks: 'log',
   favicon: 'img/favicon.ico',
   organizationName: 'iota-community', // Usually your GitHub org/user name.
   projectName: 'iota-wiki', // Usually your repo name.
-  onBrokenLinks: 'log',
+  noIndex: true,
   stylesheets: [
     'https://fonts.googleapis.com/css?family=Material+Icons',
   ],
