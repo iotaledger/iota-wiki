@@ -393,6 +393,8 @@
     --ifm-menu-color: var(--ifm-color-emphasis-600);
     --ifm-menu-color-active: var(--ifm-color-emphasis-1000);
     --ifm-menu-color-background-active: transparent;
+
+    --ifm-button-color: white;
   }
 
   html[data-theme='dark'] {
@@ -453,6 +455,14 @@
     text-shadow: none;
   }
 
+  .grey {
+    color: var(--ifm-color-emphasis-600);
+  }
+
+  .grey[data-theme='dark'] {
+    color: var(--ifm-color-emphasis-400);
+  }
+
   .card {
     height: 100%;
   }
@@ -470,4 +480,6 @@
     line-height: 50px;
     border-radius: 25px;
     padding: unset;
+    font-size: 2rem;
+    font-weight: 400;
   }

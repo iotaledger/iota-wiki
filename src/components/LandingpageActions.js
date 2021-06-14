@@ -39,7 +39,7 @@ function Action({ title, link, description}) {
             <h2>{title}</h2>
           </div>
           <div className="col col--3">
-            <a href={link} className="card-button button button--primary button--block">&#x1433;</a>
+            <a href={link} className="material-icons card-button button button--primary button--block">navigate_next</a>
           </div>
         </div>
         <hr className="card-horizontal-line"></hr>
@@ -55,9 +55,9 @@ function Action({ title, link, description}) {
 
 function LandingpageActions() {
   return (
-    <div className='container padding-vert--xl'>
-      <p className="text--center" >Get started, right away</p>
-      <div className='row'>
+    <div className='container padding-vert--xl padding-horiz--xl'>
+      <p className="grey text--center" >Get started, right away</p>
+      <div className='row margin-top--lg'>
         {ActionList.map((props, idx) => (
           <Action key={idx} {...props} />
         ))}
