@@ -56,9 +56,9 @@ function Footer() {
         className={clsx('footer', 'padding--none', 'padding-top--lg', {
           'footer--dark': footer.style === 'dark',
         })}>
-        <div className="container">
+        <div className="container padding-horiz--xl">
           {links && links.length > 0 && (
-            <div className="row footer__links margin-horiz--xl margin-top--lg margin-bottom--xl">
+            <div className="row footer__links padding-top--lg padding-bottom--xl">
               {links.map((linkItem, i) => (
                 <div key={i} className="col footer__col">
                   {linkItem.title != null ? (
@@ -91,9 +91,9 @@ function Footer() {
             </div>
           )}
           {(logo || copyright) && (
-            <div className="footer__bottom text--center margin-vert--lg">
+            <div className="footer__bottom padding-top--xl padding-bottom--lg">
               {logo && (logo.src || logo.srcDark) && (
-                <div className="margin-bottom--sm">
+                <div>
                   {logo.href ? (
                     <Link href={logo.href} className={styles.footerLogoLink}>
                       <FooterLogo alt={logo.alt} sources={sources} />

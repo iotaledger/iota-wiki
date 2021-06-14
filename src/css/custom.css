@@ -370,7 +370,6 @@
 
     --ifm-font-color-base: var(--ifm-color-emphasis-700);
     --ifm-font-family-base: Inter, sans-serif;
-    --ifm-font-size-base: 80%;
     --ifm-line-height-base: 1.5;
 
     --ifm-heading-color: var(--ifm-color-gray-900);
@@ -433,7 +432,6 @@
   .navbar {
       font-family: 'Metropolis Medium';
       line-height: 1.25rem;
-      font-size: 1.25rem;
       font-weight: 400;
   }
 
@@ -454,6 +452,10 @@
     line-height: 1.25rem;
     font-size: 1.25rem;
     font-weight: 500;
+  }
+
+  .footer {
+    font-size: 80%;
   }
 
   ::selection {
