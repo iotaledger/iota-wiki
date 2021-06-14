@@ -385,6 +385,7 @@
     --ifm-navbar-link-hover-color: var(--ifm-color-emphasis-600);
     --ifm-navbar-link-active-color: var(--ifm-color-emphasis-600);
 
+    --ifm-footer-color: var(--ifm-navbar-link-color);
     --ifm-navbar-padding-horizontal: 25px;
     --ifm-navbar-padding-vertical: 18px;
     --ifm-navbar-height: auto;
@@ -404,8 +405,7 @@
 
     --ifm-menu-color-background-hover: var(--ifm-color-emphasis-300);
 
-    --ifm-color-emphasis-0: white;
-    --ifm-footer-background-color: #131F37;
+    --ifm-footer-background-color: var(--ifm-color-emphasis-200);
     --ifm-card-background-color:#293858;
 
     --ifm-heading-color: inherit;
