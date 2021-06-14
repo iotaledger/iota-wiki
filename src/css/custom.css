@@ -449,6 +449,13 @@
     font-weight: bold;
   }
 
+  .section-header {
+    font-family: 'Metropolis Medium';
+    line-height: 1.25rem;
+    font-size: 1.25rem;
+    font-weight: 500;
+  }
+
   ::selection {
     background-color: #b3d4fc;
     color: #000;
