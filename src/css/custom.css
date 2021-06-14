@@ -391,6 +391,7 @@
 
     --ifm-menu-color: var(--ifm-color-emphasis-600);
     --ifm-menu-color-active: var(--ifm-color-emphasis-1000);
+    --ifm-menu-color-background-active: transparent;
   }
 
   html[data-theme='dark'] {
@@ -400,6 +401,8 @@
     --ifm-navbar-link-color: var(--ifm-color-emphasis-400);
     --ifm-navbar-link-hover-color: var(--ifm-color-emphasis-400);
     --ifm-navbar-link-active-color: var(--ifm-color-emphasis-400);
+
+    --ifm-menu-color-background-hover: var(--ifm-color-emphasis-300);
 
     --ifm-color-emphasis-0: white;
     --ifm-footer-background-color: #131F37;
@@ -430,6 +433,10 @@
       line-height: 1.25rem;
       font-size: 1.25rem;
       font-weight: 400;
+  }
+
+  .navbar__items--right > * {
+    margin-left: 2rem;
   }
 
   .navbar__brand {
