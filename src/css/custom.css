@@ -388,7 +388,7 @@
     --ifm-footer-color: var(--ifm-navbar-link-color);
     --ifm-navbar-padding-horizontal: 25px;
     --ifm-navbar-padding-vertical: 18px;
-    --ifm-navbar-height: auto;
+    --ifm-navbar-height: 68px;
 
     --ifm-menu-color: var(--ifm-color-emphasis-600);
     --ifm-menu-color-active: var(--ifm-color-emphasis-1000);
