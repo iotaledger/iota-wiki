@@ -15,6 +15,7 @@ module.exports = {
   ],
   themeConfig: {
     navbar: {
+      hideOnScroll: true,
       logo: {
         alt: 'IOTA Wiki Logo',
         src: 'img/logo.svg',
