@@ -456,6 +456,22 @@
     font-size: 80%;
   }
 
+  .footer__bottom {
+    display: flex;
+    align-items: flex-end;
+    flex-wrap: wrap;
+  }
+
+  .footer__logo {
+    height: 3rem;
+    margin-right: 2em;
+    margin-bottom: -1em;
+  }
+
+  .footer__copyright {
+    margin-top: 1em;
+  }
+
   ::selection {
     background-color: #b3d4fc;
     color: #000;
