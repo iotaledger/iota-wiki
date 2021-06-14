@@ -156,7 +156,13 @@ module.exports = {
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} IOTA Wiki, Built with Docusaurus.`,
+      logo: {
+        alt: 'IOTA Logo',
+        src: 'img/iota_logo.svg',
+        srcDark: 'img/iota_logo_dark.svg',
+        href: 'https://www.iota.org',
+      },
+      copyright: `© ${new Date().getFullYear()} IOTA Wiki, Built with Docusaurus.`,
     },
     colorMode: {
       defaultMode: 'dark',

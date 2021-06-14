@@ -9,7 +9,6 @@ import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import {useThemeConfig} from '@docusaurus/theme-common';
 import useBaseUrl from '@docusaurus/useBaseUrl';
-import styles from './styles.module.css';
 import ThemedImage from '@theme/ThemedImage';
 import SocialBar from '@theme/SocialBar';
 
@@ -95,7 +94,7 @@ function Footer() {
               {logo && (logo.src || logo.srcDark) && (
                 <div>
                   {logo.href ? (
-                    <Link href={logo.href} className={styles.footerLogoLink}>
+                    <Link href={logo.href}>
                       <FooterLogo alt={logo.alt} sources={sources} />
                     </Link>
                   ) : (
