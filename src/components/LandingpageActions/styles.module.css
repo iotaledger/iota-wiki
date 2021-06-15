@@ -1,8 +1,12 @@
-.card {
-  background-color: #293858;
+:global(.card) {
+  background-color: #FFFFFF;
   border-radius: var(--ifm-global-radius);
   height: 100%;
   cursor: pointer;
+}
+
+:global([data-theme='dark'] .card)  {
+  background-color: #293858;
 }
 
 .header {
@@ -36,6 +40,7 @@
 }
 
 .icon {
+  color: #FFFFFF;
   align-items: center;
   display: flex;
   height: 100%;

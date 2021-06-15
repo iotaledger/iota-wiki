@@ -45,7 +45,7 @@ function Action({ title, link, description}) {
   return (
     <div className='col col--4 margin-vert--md'>
       <div
-        className={clsx('padding--lg', styles.card)}
+        className={clsx('card padding--lg')}
         onClick={handleClick}
         onMouseOver={() => setHovering(true)}
         onMouseOut={() => setHovering(false)}
