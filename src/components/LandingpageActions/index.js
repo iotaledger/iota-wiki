@@ -44,7 +44,7 @@ function Action({ title, link, description}) {
             </span>
           </a>
         </div>
-        <hr className="card-horizontal-line"></hr>
+        <div className="headline-stick size-s"></div>
         <div>
           {description}
         </div>
