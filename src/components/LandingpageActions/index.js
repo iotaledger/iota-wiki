@@ -1,5 +1,6 @@
 import clsx from 'clsx';
-import React from 'react';
+import React, { useState } from 'react';
+import { useHistory } from "react-router-dom";
 import styles from './styles.module.css';
 
 const ActionList = [
@@ -33,18 +34,37 @@ const ActionList = [
 ];
 
 function Action({ title, link, description}) {
+  let [hovering, setHovering] = useState(false);
+  let history = useHistory();
+
+  const handleClick = (e) => {
+    e.preventDefault();
+    history.push(link);
+  }
+
   return (
     <div className='col col--4 margin-vert--md'>
-      <div className={clsx('padding--lg', styles.card)}>
+      <div
+        className={clsx('padding--lg', styles.card)}
+        onClick={handleClick}
+        onMouseOver={() => setHovering(true)}
+        onMouseOut={() => setHovering(false)}
+      >
         <div className={clsx(styles.header)}>
           <span className={clsx(styles.headerTitle)}>{title}</span>
-          <a href={link} className={clsx(styles.button)}>
+          <div href={link} className={clsx(styles.button)}>
             <span className={clsx("material-icons", styles.icon)}>
               navigate_next
             </span>
-          </a>
+          </div>
         </div>
-        <div className="headline-stick size-s"></div>
+        <div className={clsx(
+          "headline-stick",
+          {
+            "size-m": hovering,
+            "size-s": !hovering
+          }
+        )}></div>
         <div className={clsx(styles.body)}>
           {description}
         </div>
