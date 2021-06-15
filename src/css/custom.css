@@ -481,9 +481,17 @@
     color: var(--ifm-navbar-link-color);
   }
 
-  .card-horizontal-line {
-    position: relative;
-    left: 15px;
-    border-color: var(--ifm-color-primary);
-    width: 10%;
+  .headline-stick {
+    height: 4px;
+    background-color: var(--ifm-color-primary);
+    margin-bottom: 1.25rem;
+    width: 16px;
+  }
+
+  .headline-stick.size-s {
+    width: 32px;
+  }
+
+  .headline-stick.size-m {
+    width: 48px;
   }
