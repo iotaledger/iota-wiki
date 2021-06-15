@@ -1,4 +1,6 @@
+import clsx from 'clsx';
 import React from 'react';
+import styles from './styles.module.css';
 
 const ActionList = [
   {
@@ -32,21 +34,19 @@ const ActionList = [
 
 function Action({ title, link, description}) {
   return (
-    <div className='col col--4 padding-vert--md'>
-      <div className="card">
-        <div className="card__header row">
-          <div className="col col--9">
-            <h2>{title}</h2>
-          </div>
-          <div className="col col--3">
-            <a href={link} className="material-icons card-button button button--primary button--block">navigate_next</a>
-          </div>
+    <div className='col col--4'>
+      <div className={clsx('padding--lg', styles.card)}>
+        <div className={clsx(styles.header)}>
+          <span className={clsx(styles.headerTitle)}>{title}</span>
+          <a href={link} className={clsx(styles.button)}>
+            <span className={clsx("material-icons", styles.icon)}>
+              navigate_next
+            </span>
+          </a>
         </div>
         <hr className="card-horizontal-line"></hr>
-        <div className="card__body">
-          <p>
-            {description}
-          </p>
+        <div>
+          {description}
         </div>
       </div>
     </div>
