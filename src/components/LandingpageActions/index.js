@@ -34,7 +34,7 @@ const ActionList = [
 
 function Action({ title, link, description}) {
   return (
-    <div className='col col--4'>
+    <div className='col col--4 margin-vert--md'>
       <div className={clsx('padding--lg', styles.card)}>
         <div className={clsx(styles.header)}>
           <span className={clsx(styles.headerTitle)}>{title}</span>
@@ -45,7 +45,7 @@ function Action({ title, link, description}) {
           </a>
         </div>
         <div className="headline-stick size-s"></div>
-        <div>
+        <div className={clsx(styles.body)}>
           {description}
         </div>
       </div>
@@ -55,8 +55,8 @@ function Action({ title, link, description}) {
 
 function LandingpageActions() {
   return (
-    <div className='container padding-vert--xl padding-horiz--xl'>
-      <div className="section-header grey text--center margin-bottom--md" >Get started, right away</div>
+    <div className='container padding--xl'>
+      <div className="section-header grey text--center margin-bottom--sm" >Get started, right away</div>
       <div className='row'>
         {ActionList.map((props, idx) => (
           <Action key={idx} {...props} />

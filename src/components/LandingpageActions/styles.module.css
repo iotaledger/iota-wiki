@@ -50,3 +50,7 @@
 .icon::before {
   position: absolute;
 }
+
+.body {
+  letter-spacing: 0.02em;
+}
