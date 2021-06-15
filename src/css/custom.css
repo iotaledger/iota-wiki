@@ -486,6 +486,7 @@
     background-color: var(--ifm-color-primary);
     margin-bottom: 1.25rem;
     width: 16px;
+    transition: all var(--ifm-transition-fast) var(--ifm-transition-timing-default);
   }
 
   .headline-stick.size-s {
