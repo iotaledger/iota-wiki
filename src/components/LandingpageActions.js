@@ -56,8 +56,8 @@ function Action({ title, link, description}) {
 function LandingpageActions() {
   return (
     <div className='container padding-vert--xl padding-horiz--xl'>
-      <p className="section-header grey text--center margin-bottom--lg" >Get started, right away</p>
-      <div className='row margin-vert--lg'>
+      <div className="section-header grey text--center margin-bottom--md" >Get started, right away</div>
+      <div className='row'>
         {ActionList.map((props, idx) => (
           <Action key={idx} {...props} />
         ))}

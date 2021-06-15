@@ -13,7 +13,7 @@ function LandingpageTitle() {
       <img className={clsx(styles.headingImage)} src={useBaseUrl('/img/globe.svg')} />
       <div>
         <h1 className={clsx(styles.headingTitle)}>{siteConfig.title}</h1>
-        <>{siteConfig.tagline}</>
+        <span className={clsx('grey', 'section-header')}>{siteConfig.tagline}</span>
       </div>
     </div>
   )

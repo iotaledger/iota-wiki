@@ -446,10 +446,9 @@
   }
 
   .section-header {
-    font-family: 'Metropolis Medium';
-    line-height: 1.25rem;
-    font-size: 1.25rem;
-    font-weight: 500;
+    font-family: 'Metropolis Semi Bold';
+    font-size: 1.25em;
+    letter-spacing: 0.04em;
   }
 
   .footer {
@@ -480,10 +479,6 @@
 
   .grey {
     color: var(--ifm-navbar-link-color);
-  }
-
-  .grey[data-theme='dark'] {
-    color: var(--ifm-color-emphasis-400);
   }
 
   .card {
