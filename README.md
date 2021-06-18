@@ -98,6 +98,11 @@ Phylo - [Phyloiota](https://github.com/Phyloiota) - Phylo [Community DAO - lets 
 Jeroen van den Hout - [jlvandenhout](https://github.com/jlvandenhout) - jvdhout#4402  
 Dr.Electron - [Dr-Electron](https://github.com/Dr-Electron) - Dr.Electron#9370  
 
+## Donate
+
+The IOTA wiki is a completely voluntary project put together, maintained, and contributed to by a group of enthusiastic community members. Feel free to support our work:
+DONATE - iota1qzrmyrnfhfauhv6gax50ncx844uppq4c5dddp3gk99ha0lx5jeqkwk6dapx
+
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 [contributors-shield]: https://img.shields.io/github/contributors/iota-community/iota-wiki.svg?style=for-the-badge
