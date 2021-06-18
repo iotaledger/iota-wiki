@@ -1,7 +1,7 @@
 ---
 id: an-introduction-to-iota
 title: An Introduction to IOTA
-description: A basic introduction to the IOTA DLT Technology it's use-cases and the Ecosystem developed around it.
+description: A basic introduction to the IOTA DLT Technology. The use-cases and the Ecosystem developed around it.
 ---
 
 
