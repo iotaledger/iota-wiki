@@ -1,6 +1,6 @@
 ---
-title: Run a Node
-description: Everything you need to know and learn to setup an IOTA Mainnet or DevNet Node and take actively part in the IOTA Network.
+title: Trust in Real World Data
+description: IOTA enables you to integrate Data from all kind of outside sources securely into your Application. Learn about IOTA Oracles.
 ---
 
 

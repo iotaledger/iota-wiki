@@ -1,6 +1,6 @@
 ---
-title: Run a Node
-description: Everything you need to know and learn to setup an IOTA Mainnet or DevNet Node and take actively part in the IOTA Network.
+title: Visualizer
+description: See the IOTA Tangle in real time confirming messages and building the unique IOTA Directed Acyclic Graph.
 ---
 
 

@@ -1,6 +1,6 @@
 ---
-title: Run a Node
-description: Everything you need to know and learn to setup an IOTA Mainnet or DevNet Node and take actively part in the IOTA Network.
+title: EDF - Funding
+description: IOTA's Ecosystem Development Fund is setup to support community based Projects that aim to build an support IOTA. Apply for your Project.
 ---
 
 

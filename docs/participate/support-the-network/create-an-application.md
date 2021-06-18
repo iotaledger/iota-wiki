@@ -1,6 +1,6 @@
 ---
-title: Run a Node
-description: Everything you need to know and learn to setup an IOTA Mainnet or DevNet Node and take actively part in the IOTA Network.
+title: Craete an Application
+description: IOTA is the goto solution if you want a fast, feeless, scalable and secure solution for your Application. Learn how to build what your customers need.
 ---
 
 

@@ -1,6 +1,6 @@
 ---
-title: Run a Node
-description: Everything you need to know and learn to setup an IOTA Mainnet or DevNet Node and take actively part in the IOTA Network.
+title: Stack Overflow
+description: A more forum style community channel. Use it to ask questions and find answers.
 ---
 
 

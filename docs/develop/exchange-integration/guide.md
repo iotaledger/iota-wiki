@@ -1,6 +1,6 @@
 ---
-title: Run a Node
-description: Everything you need to know and learn to setup an IOTA Mainnet or DevNet Node and take actively part in the IOTA Network.
+title: Exchange Integration Guide
+description: Learn how easy and secure it is to integrate IOTA into your Exchange.
 ---
 
 

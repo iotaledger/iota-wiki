@@ -1,6 +1,6 @@
 ---
-title: Run a Node
-description: Everything you need to know and learn to setup an IOTA Mainnet or DevNet Node and take actively part in the IOTA Network.
+title: X - Teams
+description: The IOTA X - Teams is where community engagement and the IOTA Foundation meet each other to work together on solutions. A lot of real progress in the Protocol evolves out of this amazing collaborations. Take part in it!
 ---
 
 

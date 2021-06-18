@@ -1,6 +1,6 @@
 ---
-title: Run a Node
-description: Everything you need to know and learn to setup an IOTA Mainnet or DevNet Node and take actively part in the IOTA Network.
+title: Discord
+description: The IOTA Discord id the melting pot for community engagemant. Most of the IOTA members are active here. Join a welcoming and active community and chat to thers about everything related to the project.
 ---
 
 

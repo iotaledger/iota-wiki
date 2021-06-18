@@ -1,6 +1,6 @@
 ---
-title: Run a Node
-description: Everything you need to know and learn to setup an IOTA Mainnet or DevNet Node and take actively part in the IOTA Network.
+title: Social Media
+description: IOTA has a threiving and active community on all popular social media applications. Find the IOTA community on your prefered medium.
 ---
 
 

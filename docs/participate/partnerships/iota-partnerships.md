@@ -1,6 +1,6 @@
 ---
-title: Run a Node
-description: Everything you need to know and learn to setup an IOTA Mainnet or DevNet Node and take actively part in the IOTA Network.
+title: IOTA Partnership
+description: IOTA has found important Partners in all global industries and develops the future together with them. Get an overview of the impressive collection of IOTA's Partners.
 ---
 
 
