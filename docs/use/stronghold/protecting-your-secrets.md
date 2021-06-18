@@ -1,6 +1,6 @@
 ---
-title: Run a Node
-description: Everything you need to know and learn to setup an IOTA Mainnet or DevNet Node and take actively part in the IOTA Network.
+title: Protecting your Secrets
+description: Stronghold is a set of libraries that enable's the most secure software solution to store secrets with IOTA.
 ---
 
 

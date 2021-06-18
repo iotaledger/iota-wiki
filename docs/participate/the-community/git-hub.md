@@ -1,6 +1,6 @@
 ---
-title: Run a Node
-description: Everything you need to know and learn to setup an IOTA Mainnet or DevNet Node and take actively part in the IOTA Network.
+title: GitHub
+description: IOTA is open-source software, and the IOTA GitHub is where all this software is developed. Totaly transparent and open. Meet the IOTA developers and see what amazing solutions are evolving here.
 ---
 
 

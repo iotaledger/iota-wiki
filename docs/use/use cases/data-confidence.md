@@ -1,6 +1,6 @@
 ---
-title: Run a Node
-description: Everything you need to know and learn to setup an IOTA Mainnet or DevNet Node and take actively part in the IOTA Network.
+title: Data Confidence
+description: Data on the Edge and in IOT solutions needs Trsut. IOTA has developed a solution together with Dell and INTEL that delivers exactly this trust.
 ---
 
 
@@ -31,4 +31,5 @@ content
 - **[a link](https://linkgoes.here)** - A description for the link
 - **[a link](https://linkgoes.here)** - A description for the link
 - **[a link](https://linkgoes.here)** - A description for the link
+
 

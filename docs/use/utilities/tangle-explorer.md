@@ -1,6 +1,6 @@
 ---
-title: Run a Node
-description: Everything you need to know and learn to setup an IOTA Mainnet or DevNet Node and take actively part in the IOTA Network.
+title: Tangle Explorer
+description: Find your transactions and messages, see it all alive and find historic data and statistics of all IOTA Networks.
 ---
 
 
