@@ -1,6 +1,6 @@
 ---
 title: Glossart
-description: Glossary of all specialised names and phrases used in the IOTA Technology. If you dont understand a wording you will find answers here.
+description: Glossary of all specialized names and phrases used in the IOTA Technology. If you dont understand a wording you will find answers here.
 ---
 
 
