@@ -1,6 +1,6 @@
 ---
-title: Glossart
-description: Glossary of all specialized names and phrases used in the IOTA Technology. If you dont understand a wording you will find answers here.
+title: DevNets
+description: Development and Testnet implementations for Research purposes, participate in future developments here.
 ---
 
 

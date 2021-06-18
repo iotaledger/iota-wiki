@@ -1,6 +1,7 @@
 ---
-title: Glossart
-description: Glossary of all specialized names and phrases used in the IOTA Technology. If you dont understand a wording you will find answers here.
+id: an-introduction-to-iota
+title: An Introduction to IOTA
+description: A basic introduction to the IOTA DLT Technology. The use-cases and the Ecosystem developed around it.
 ---
 
 
@@ -31,4 +32,3 @@ content
 - **[a link](https://linkgoes.here)** - A description for the link
 - **[a link](https://linkgoes.here)** - A description for the link
 - **[a link](https://linkgoes.here)** - A description for the link
-

@@ -1,6 +1,7 @@
 ---
-title: Glossart
-description: Glossary of all specialized names and phrases used in the IOTA Technology. If you dont understand a wording you will find answers here.
+id: why-is-iota-feeless?
+title: Why is IOTA Feeless?
+description: The unique feature of IOTA is the absence of any Fee's in the protocol. Here we explain how this is achieved.
 ---
 
 
@@ -31,4 +32,3 @@ content
 - **[a link](https://linkgoes.here)** - A description for the link
 - **[a link](https://linkgoes.here)** - A description for the link
 - **[a link](https://linkgoes.here)** - A description for the link
-

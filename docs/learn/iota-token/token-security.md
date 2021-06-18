@@ -1,6 +1,6 @@
 ---
-title: Glossart
-description: Glossary of all specialized names and phrases used in the IOTA Technology. If you dont understand a wording you will find answers here.
+title: Token Security
+description: The major security properties of the IOTA Token and the IOTA Ledger. Signature schemes, Cryptography and how it all works together.
 ---
 
 

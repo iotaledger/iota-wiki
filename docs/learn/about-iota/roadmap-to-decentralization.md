@@ -1,6 +1,7 @@
 ---
-title: Glossart
-description: Glossary of all specialized names and phrases used in the IOTA Technology. If you dont understand a wording you will find answers here.
+id: roadmap-to-decentralization
+title: Roadmap to Decentralization
+description: IOTA moves quickly towards full decentralization. This page describes the plan to reach this goal.
 ---
 
 
@@ -31,4 +32,3 @@ content
 - **[a link](https://linkgoes.here)** - A description for the link
 - **[a link](https://linkgoes.here)** - A description for the link
 - **[a link](https://linkgoes.here)** - A description for the link
-

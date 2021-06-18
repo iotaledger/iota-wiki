@@ -1,6 +1,6 @@
 ---
-title: Glossart
-description: Glossary of all specialized names and phrases used in the IOTA Technology. If you dont understand a wording you will find answers here.
+title: Firefly Wallet
+description: The IOTA Firefly Wallet sets a new standard for Software Wallets in DLT. We describe why it is so secure and how amazing it is to use it.
 ---
 
 
@@ -31,4 +31,5 @@ content
 - **[a link](https://linkgoes.here)** - A description for the link
 - **[a link](https://linkgoes.here)** - A description for the link
 - **[a link](https://linkgoes.here)** - A description for the link
+
 
