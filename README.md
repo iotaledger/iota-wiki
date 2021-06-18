@@ -100,7 +100,10 @@ Dr.Electron - [Dr-Electron](https://github.com/Dr-Electron) - Dr.Electron#9370
 
 ## Donate
 
-The IOTA wiki is a completely voluntary project put together, maintained, and contributed to by a group of enthusiastic community members. Feel free to support our work:
+The IOTA wiki is a completely voluntary project put together, maintained, and contributed to by a group of enthusiastic community members. 
+Feel free to support our work:
+
+
 DONATE - iota1qzrmyrnfhfauhv6gax50ncx844uppq4c5dddp3gk99ha0lx5jeqkwk6dapx
 
 <!-- MARKDOWN LINKS & IMAGES -->
