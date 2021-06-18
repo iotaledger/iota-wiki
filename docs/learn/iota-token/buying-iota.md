@@ -1,7 +1,7 @@
 ---
 id: buying-iota
 title: Buying IOTA
-description: Where and how to buy the IOTA Cryptocurrency. Markets, Exchanges and country specific informations to make the purchase of IOTA easy.
+description: Where and how to buy the IOTA Cryptocurrency. 
 ---
 
 
