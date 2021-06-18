@@ -1,5 +1,5 @@
 ---
-title: NFT's
+title: NFTs
 description: My document description from SEO
 ---
 
