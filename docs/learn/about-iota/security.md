@@ -1,6 +1,7 @@
 ---
-title: Glossart
-description: Glossary of all specialized names and phrases used in the IOTA Technology. If you dont understand a wording you will find answers here.
+id: security
+title: Security
+description: IOTA offers one of the most secure protocols in the DLT space. See how our unique approach works to protect your data and value.
 ---
 
 
@@ -31,4 +32,3 @@ content
 - **[a link](https://linkgoes.here)** - A description for the link
 - **[a link](https://linkgoes.here)** - A description for the link
 - **[a link](https://linkgoes.here)** - A description for the link
-

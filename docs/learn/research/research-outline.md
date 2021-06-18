@@ -1,6 +1,6 @@
 ---
-title: Glossart
-description: Glossary of all specialized names and phrases used in the IOTA Technology. If you dont understand a wording you will find answers here.
+title: Research Outline
+description: An introduction to the huge work that researchers of the IOTA Foundation and from Universities and Institutes all over the world have done around the IOTA Protocol and Technologie.
 ---
 
 
@@ -31,4 +31,5 @@ content
 - **[a link](https://linkgoes.here)** - A description for the link
 - **[a link](https://linkgoes.here)** - A description for the link
 - **[a link](https://linkgoes.here)** - A description for the link
+
 

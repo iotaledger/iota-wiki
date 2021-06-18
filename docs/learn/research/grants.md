@@ -1,6 +1,6 @@
 ---
-title: Glossart
-description: Glossary of all specialized names and phrases used in the IOTA Technology. If you dont understand a wording you will find answers here.
+title: Grants
+description: The biggest part of the work of the IOTA Foundation is in research & development. Regularly Grants from Governements and Consortiums are issued to the Foundation. See what amazing projects are outlined here.
 ---
 
 

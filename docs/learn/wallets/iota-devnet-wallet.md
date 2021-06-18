@@ -1,6 +1,6 @@
 ---
-title: Glossart
-description: Glossary of all specialized names and phrases used in the IOTA Technology. If you dont understand a wording you will find answers here.
+title: IOTA DevNet Wallet
+description: A Wallet for the current IOTA 2.o Development - and Testnet. Offers a lot of Functions that will become available in the IOTA 2.0 Mainnet. No real IOTA Tokens are used here.
 ---
 
 
@@ -31,4 +31,5 @@ content
 - **[a link](https://linkgoes.here)** - A description for the link
 - **[a link](https://linkgoes.here)** - A description for the link
 - **[a link](https://linkgoes.here)** - A description for the link
+
 

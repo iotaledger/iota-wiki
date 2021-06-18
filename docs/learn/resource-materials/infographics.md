@@ -1,6 +1,6 @@
 ---
-title: Glossart
-description: Glossary of all specialized names and phrases used in the IOTA Technology. If you dont understand a wording you will find answers here.
+title: Infographics
+description: A picture says sometimes more than a thousand words... Downloadable fact sheets and informations for every audience to explain IOTA.
 ---
 
 

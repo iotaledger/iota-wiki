@@ -1,6 +1,6 @@
 ---
-title: Glossart
-description: Glossary of all specialized names and phrases used in the IOTA Technology. If you dont understand a wording you will find answers here.
+title: Hardware Wallet's
+description: Currently IOTA supports the Ledger Nano Hardware Wallet's. Get all the info how to use them with IOTA here.
 ---
 
 
@@ -31,4 +31,5 @@ content
 - **[a link](https://linkgoes.here)** - A description for the link
 - **[a link](https://linkgoes.here)** - A description for the link
 - **[a link](https://linkgoes.here)** - A description for the link
+
 

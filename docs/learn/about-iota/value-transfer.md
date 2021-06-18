@@ -1,6 +1,7 @@
 ---
-title: Glossart
-description: Glossary of all specialized names and phrases used in the IOTA Technology. If you dont understand a wording you will find answers here.
+id: value-transfer
+title: Value Transfer
+description: Learn how the IOTA Cryptocurrency transfers it's native IOTA token.
 ---
 
 
@@ -31,4 +32,3 @@ content
 - **[a link](https://linkgoes.here)** - A description for the link
 - **[a link](https://linkgoes.here)** - A description for the link
 - **[a link](https://linkgoes.here)** - A description for the link
-

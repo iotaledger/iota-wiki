@@ -1,6 +1,6 @@
 ---
-title: Glossart
-description: Glossary of all specialized names and phrases used in the IOTA Technology. If you dont understand a wording you will find answers here.
+title: Enabling Privacy and Trust
+description: IOTA's digital identity Solutions offer amazing new ways to control privacy and data of humans and machines.
 ---
 
 

@@ -1,6 +1,6 @@
 ---
-title: Glossart
-description: Glossary of all specialized names and phrases used in the IOTA Technology. If you dont understand a wording you will find answers here.
+title: Fact Base
+description: A collection of fact's to conquer common misunderstandings and false proclamations bout IOTA, Get your fact's right!
 ---
 
 

@@ -1,6 +1,6 @@
 ---
-title: Glossart
-description: Glossary of all specialized names and phrases used in the IOTA Technology. If you dont understand a wording you will find answers here.
+title: Transfering Tokens
+description: How can i transfer IOTA tokens? What do i need to know and what are best practices to do?
 ---
 
 

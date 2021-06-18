@@ -1,6 +1,6 @@
 ---
-title: Glossart
-description: Glossary of all specialized names and phrases used in the IOTA Technology. If you dont understand a wording you will find answers here.
+title: Secure Access Control
+description: IOTA's unique solution to grant and control access to data and objects.
 ---
 
 
