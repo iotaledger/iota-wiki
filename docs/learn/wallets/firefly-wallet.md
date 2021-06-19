@@ -52,15 +52,6 @@ Read everything about the process here:
 
 
 
-
-<br/>
-
-----
-
-<br/>
-
-**need to add a footer section for further content - (three cards)**
-
 ## Useful Links
 - **[Firefly Discord Channel](https://discord.com/channels/397872799483428865/748265907351978115)** - Discuss the Firefly Wallet, ask questions and engage with the IOTA community on Discord
 - **[Firefly GitHub](https://github.com/iotaledger/firefly)** - Firefly codebase and development repository
