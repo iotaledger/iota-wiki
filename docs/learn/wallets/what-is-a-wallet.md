@@ -30,7 +30,7 @@ The IOTA Foundation has developed a software Wallet that follows the highest sta
 
 And download the Firefly Wallet here:
 
-**[Firefly Wallet Website](https://firefly.iota.org)** - Firefly website
+**[Firefly](https://firefly.iota.org)** - official website
 
 
 ## Hardware Wallets
