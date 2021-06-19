@@ -74,3 +74,16 @@ To make sure that the user has created a backup of the 24 words a check is done 
 
 After the user receives his 24 Seed Words the user can also create a **Stronghold File** as a digital Backup of the Profile. This File also contains the SEED and some setup Information of the Profile. We also strongly recommend storing this file in several independent locations (USB Stick, Cloud storage,...). In the case that the 24 words get lost it is possible to restore a profile with this file. To use the file the user has to create a secure password that encrypts the Stronghold file. Only in combination with this password, the Stronghold file will restore the Profile. It is therefore also essential for the user to store the Password of the stronghold file securely.
 
+
+Further then, the user creates also a Pin-code as easy access to the first level of the Firefly wallet Interface. This Pin Code is required to enter the Profile - Dashboard but does not grant access to Functions that handle or move the user's funds or give access to security settings of the Wallet. For all these actions that require a higher level of security, the user needs to enter the Stronghold Password. Only this password gives access to the full functionality of the Wallet.
+
+If different Users aim to use the same Firefly Wallet, or if you have multiple Seeds, you need to create one Profile for every Seed / every user.
+
+**Key Takeaways:**
+
+- **securely Backup the 24 words mnemonic phrase, it is your IOTA SEED!**
+- **securely store your Stronghold Backup File and the Stronghold Password**
+- **store it in multiple independent locations digital and physical**
+
+
+
