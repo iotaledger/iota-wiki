@@ -35,6 +35,7 @@ Find more information on the official Website and download the Firefly Wallet on
 
 
 
+
 ## Firefly Token Migration
 
 With the launch of the new IOTA 1.5 Chrysalis Mainnet end of April 28th, it is important that every IOTA Holder migrates his entire Fungs from the old IOTA 1.0 network to the new, much more improved and advanced 1.5 network.
