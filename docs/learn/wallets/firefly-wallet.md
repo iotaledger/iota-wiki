@@ -65,4 +65,21 @@ Read everything about the process here:
 - **[Firefly Discord Channel](https://discord.com/channels/397872799483428865/748265907351978115)** - Discuss the Firefly Wallet, ask questions and engage with the IOTA community on Discord
 - **[Firefly GitHub](https://github.com/iotaledger/firefly)** - Firefly codebase and development repository
 
+<br/>
+
+----
+
+## Firefly Features
+
+### Account Structure
+Firefly is structured to over you a vast amount of possibilities. The basic Account handling Logic works like this: 
+- One Firefly **Profile** is always a representation of one IOTA **Seed**
+- Every Firefly **Profile** can host an unlimited amount of **Wallet's** which can be seen as Sub-Accounts under the **Profile Seed**.
+
+### Profile Setup
+
+Every **Profile** receives a unique IOTA Seed consisting of a **24 words mnemonic Phrase** created with the `BIP39 Standard`. During the Profile creation, these 24 words will be shown to the user only a single time and the user must make sure to back up these 24 words. We highly recommend creating a Paper Wallet as a physical backup of these words. Losing these words will potentially result in losing access to the Profile and the funds connected with the Seed.
+To make sure that the user has created a backup of the 24 words a check is done which requires adding all the 24 words in the correct order by the user.
+
+After the user receives his 24 Seed Words the user can also create a **Stronghold File** as a digital Backup of the Profile. This File also contains the SEED and some setup Information of the Profile. We also strongly recommend storing this file in several independent locations (USB Stick, Cloud storage,...). In the case that the 24 words get lost it is possible to restore a profile with this file. To use the file the user has to create a secure password that encrypts the Stronghold file. Only in combination with this password, the Stronghold file will restore the Profile. It is therefore also essential for the user to store the Password of the stronghold file securely.
 
