@@ -25,9 +25,13 @@ Software wallets are user-friendly and therefore a very common way to handle you
 But as oftware wallets are part of your operating system, the security of a software wallet can always be only as good as the security of the whole operating system. So you need to make sure that your operating system is free of malicious software, otherwise, it will be easy for an attacker to get access to your secrets and so to your tokens. Always have an up-to-date system, run quality Antivirus and Anti - Malware programs and follow best practices for cybersecurity if you use a software wallet to handle your IOTA tokens.
 
 The IOTA Foundation has developed a software Wallet that follows the highest standards possible to keep your secrets safe. Read everything about the Firefly Wallet here:
+
 **[a link](https://linkgoes.here)** - A description for the link
+
 And download the Firefly Wallet here:
+
 **[a link](https://linkgoes.here)** - A description for the link
+
 
 ## Hardware Wallets
 
@@ -40,7 +44,9 @@ Through clever cryptographic concepts, the user can now interact with the IOTA n
 
 A hardware wallet is therefore the most secure way to keep your secrets safe, but it adds a layer of complexity to the use of your Crypto on top of what a software wallet provides.
 
-IOTA supports currently the use of the Ledger Nano hardware wallets. Read how to use it here: **[a link](https://linkgoes.here)** 
+IOTA supports currently the use of the Ledger Nano hardware wallets. 
+
+Read how to use it here: **[a link](https://linkgoes.here)** 
 
 
 <br/>
