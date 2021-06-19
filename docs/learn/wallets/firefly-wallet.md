@@ -14,15 +14,19 @@ IOTA's new wallet guides you through the complexities of crypto, protected and w
 
 Some of the most important features:
 - Written in Rust
+
 Rust offers security from the ground up – while maintaining speed, low memory usage, and scalability. This allows us to build apps with better performance and higher security.
 
 - Modular design
+
 Firefly separates different functionalities – like seed storage, handling transactions, and cryptography – in crates. A crate groups related functions, so that the functionality is easy to share between multiple projects.
 
 - Secured with Stronghold
+
 Sensitive actions like address generation and transaction signing take place in isolated application memory, keeping the seed away from potential attackers.
 
 - Crypto.rs
+
 Crypto.rs combines all cryptographic algorithms used by many of the projects at IOTA Foundation. It reduces the risk of using unsafe crypto implementations, making it easier to audit, resulting in verifiably safer code.
 
 Find more information on the official Website and download the Firefly Wallet only from there:
