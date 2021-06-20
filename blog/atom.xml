@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>http://94.16.108.60/blog</id>
+    <title>IOTA Wiki Blog</title>
+    <updated>2015-10-25T23:29:00.000Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="http://94.16.108.60/blog"/>
+    <subtitle>IOTA Wiki Blog</subtitle>
+    <icon>http://94.16.108.60/img/favicon.ico</icon>
+</feed>
