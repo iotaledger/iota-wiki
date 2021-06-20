@@ -38,7 +38,7 @@ Find more information on the official Website and download the Firefly Wallet on
 
 ## Firefly Token Migration
 
-With the launch of the new IOTA 1.5 Chrysalis Mainnet end of April 28th, it is important that every IOTA Holder migrates his entire Fungs from the old IOTA 1.0 network to the new, much more improved and advanced 1.5 network.
+With the launch of the new IOTA 1.5 Chrysalis Mainnet end of April 28th, it is important that every IOTA Holder migrates his entire Funds from the old IOTA 1.0 network to the new, much more improved and advanced 1.5 network.
 
 To make this process user-friendly and safe, the IOTA Foundation integrated a migration tool into the Firefly Wallet, that takes care of the whole process and moves your funds automated from the old into the new network. The only thing you need is your old IOTA 1.0 network Seed, represented as a combination of 81 characters, a ``.kdbx seed vault file``that you have backed up from the Trinity Wallet, or your Ledger Nano device.
 
@@ -102,4 +102,3 @@ Use the little "+" sign in the Wallet box to create a new one. Assign a name for
 One important thing to mention: You can only set up further Wallets if your first Wallet has already funds in it. So if you want to set up 5 different Wallets you need a small amount of IOTA' to end the newly created Wallet, before you can create another one.
 
 If you send and receive funds, they will always be organized under the wallet that you used to send or receive, so it is easier to keep track if you have a lot of transactions going on.
-
