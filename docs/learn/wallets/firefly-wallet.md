@@ -42,7 +42,7 @@ With the launch of the new IOTA 1.5 Chrysalis Mainnet end of April 28th, it is i
 
 To make this process user-friendly and safe, the IOTA Foundation integrated a migration tool into the Firefly Wallet, that takes care of the whole process and moves your funds automated from the old into the new network. The only thing you need is your old IOTA 1.0 network Seed, represented as a combination of 81 characters, a ``.kdbx seed vault file``that you have backed up from the Trinity Wallet, or your Ledger Nano device.
 
-With this information entered in the Migration Process in Firefly a fully automated process will start and all your Funds will be moved securely into the new network and you will have access to them through Firefly from now on.
+With this information entered in the Migration Process in Firefly, a fully automated process will start and all your Funds will be moved securely into the new network, and you will have access to them through Firefly from now on.
 
 Read everything about the process here:
 
