@@ -6,7 +6,7 @@ import styles from './styles.module.css';
 const ActionList = [
   {
     title: 'Learn',
-    link: 'docs/learn/about-iota/not-a-blockchain',
+    link: 'docs/learn/about-iota/an-introduction-to-iota',
     description: (
       <>
         Why IOTA? Basics to deeper topics: Learn about the tangle, industry applications and networks.
@@ -14,20 +14,20 @@ const ActionList = [
     ),
   },
   {
-    title: 'Build',
-    link: 'docs/build/getting-started/architecture',
+    title: 'Use',
+    link: 'docs/use/use-cases/industry-applications',
     description: (
       <>
-        Follow our tutorial to build your own application. IOTA supports Rust, C, Go, Java, and Python.
+        Learn about IOTAs solutions and how they can be applied in the real world.
       </>
     ),
   },
   {
-    title: 'Participate',
-    link: 'docs/participate/support-the-network/run-a-node',
+    title: 'Develop',
+    link: 'docs/develop/getting-started/architecture',
     description: (
       <>
-        You want to be a part of the IOTA mission? Join the IOTA community or support the network by running a node.
+        Follow our tutorials and documentation to build your own projects. IOTA supports Rust, C, Go, Java, and Python.
       </>
     ),
   },

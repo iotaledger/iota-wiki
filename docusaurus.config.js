@@ -24,11 +24,15 @@ module.exports = {
       items: [
         {
           label: "Learn",
-          to: "docs/learn/about-iota/not-a-blockchain",
+          to: "docs/learn/about-iota/an-introduction-to-iota",
         },
         {
-          label: "Build",
-          to: "docs/build/getting-started/architecture",
+          label: "Use",
+          to: "docs/use/use-cases/industry-applications",
+        },
+        {
+          label: "Develop",
+          to: "docs/develop/getting-started/architecture",
         },
         {
           label: "Participate",
