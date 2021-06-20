@@ -10,13 +10,13 @@ module.exports =
           label: 'About IOTA',
           collapsed: false,
           items: [
-                '/docs/learn/about-iota/an-introduction-to-iota', 
-                '/docs/learn/about-iota/data-transfer', 
-                '/docs/learn/about-iota/value-transfer',
-                '/docs/learn/about-iota/why-is-iota-feeless',
-                '/docs/learn/about-iota/roadmap-to-decentralization',
-                '/docs/learn/about-iota/security',
-                '/docs/learn/about-iota/energy-efficiency',
+                '/learn/about-iota/an-introduction-to-iota', 
+                '/learn/about-iota/data-transfer', 
+                '/learn/about-iota/value-transfer',
+                '/learn/about-iota/why-is-iota-feeless',
+                '/learn/about-iota/roadmap-to-decentralization',
+                '/learn/about-iota/security',
+                '/learn/about-iota/energy-efficiency',
             ],
         },
         {
@@ -24,11 +24,11 @@ module.exports =
           label: 'IOTA Token',
           collapsed: true,
           items: [
-                '/docs/learn/iota-token/overview',
-                '/docs/learn/iota-token/buying-iota',
-                '/docs/learn/iota-token/exchanges',
-                '/docs/learn/iota-token/transfering-tokens',
-                '/docs/learn/iota-token/token-security',
+                '/learn/iota-token/overview',
+                '/learn/iota-token/buying-iota',
+                '/learn/iota-token/exchanges',
+                '/learn/iota-token/transfering-tokens',
+                '/learn/iota-token/token-security',
             ],
         },
         {
@@ -36,10 +36,10 @@ module.exports =
             label: 'Wallets',
             collapsed: true,
             items: [
-                  '/docs/learn/wallets/what-is-a-wallet',
-                  '/docs/learn/wallets/firefly-wallet',
-                  '/docs/learn/wallets/iota-devnet-wallet',
-                  '/docs/learn/wallets/hardware-wallets',
+                  '/learn/wallets/what-is-a-wallet',
+                  '/learn/wallets/firefly-wallet',
+                  '/learn/wallets/iota-devnet-wallet',
+                  '/learn/wallets/hardware-wallets',
             ],
         },
         {
@@ -47,9 +47,9 @@ module.exports =
             label: 'Networks',
             collapsed: true,
             items: [
-                  '/docs/learn/networks/iota-1.5',
-                  '/docs/learn/networks/iota-2.0',
-                  '/docs/learn/networks/devnets',
+                  '/learn/networks/iota-1.5',
+                  '/learn/networks/iota-2.0',
+                  '/learn/networks/devnets',
             ],
         },
         {
@@ -57,11 +57,11 @@ module.exports =
             label: 'Resource Materials',
             collapsed: true,
             items: [
-                  '/docs/learn/resource-materials/glossary',
-                  '/docs/learn/resource-materials/fact-base',
-                  '/docs/learn/resource-materials/infographics',
-                  '/docs/learn/resource-materials/videos',
-                  '/docs/learn/resource-materials/faqs',
+                  '/learn/resource-materials/glossary',
+                  '/learn/resource-materials/fact-base',
+                  '/learn/resource-materials/infographics',
+                  '/learn/resource-materials/videos',
+                  '/learn/resource-materials/faqs',
             ],
           },
           {
@@ -69,9 +69,9 @@ module.exports =
             label: 'Research',
             collapsed: true,
             items: [
-                  '/docs/learn/research/research-outline',
-                  '/docs/learn/research/papers',
-                  '/docs/learn/research/grants',
+                  '/learn/research/research-outline',
+                  '/learn/research/papers',
+                  '/learn/research/grants',
           ],
           },
 
@@ -80,15 +80,15 @@ module.exports =
         { 
             type: 'category',
             label: 'Use Cases',
-            collapsed: true,
+            collapsed: false,
             items: [
-                  '/docs/use/use cases/industry-applications',
-                  '/docs/use/use cases/internet-of-things',
-                  '/docs/use/use cases/digital-assets',
-                  '/docs/use/use cases/nfts',
-                  '/docs/use/use cases/data-confidence',
-                  '/docs/use/use cases/eco-social-projects',
-                  '/docs/use/use cases/private-tangle',
+                  '/use/use cases/industry-applications',
+                  '/use/use cases/internet-of-things',
+                  '/use/use cases/digital-assets',
+                  '/use/use cases/nfts',
+                  '/use/use cases/data-confidence',
+                  '/use/use cases/eco-social-projects',
+                  '/use/use cases/private-tangle',
             ],
         },
         {
@@ -96,7 +96,7 @@ module.exports =
             label: 'Streams',
             collapsed: true,
             items: [
-                  '/docs/use/streams/encrypted data comms',
+                  '/use/streams/encrypted data comms',
             ],
         },
         {
@@ -104,7 +104,7 @@ module.exports =
             label: 'Identity',
             collapsed: true,
             items: [
-                  '/docs/use/identity/enabling-privacy-and-trust',
+                  '/use/identity/enabling-privacy-and-trust',
             ],
         },
         {
@@ -112,7 +112,7 @@ module.exports =
             label: 'Smart Contracts',
             collapsed: true,
             items: [
-                  '/docs/use/smart-contracts/programmable-contracts',
+                  '/use/smart-contracts/programmable-contracts',
             ],
         },
         {
@@ -120,7 +120,7 @@ module.exports =
             label: 'Access',
             collapsed: true,
             items: [
-                  '/docs/use/access/secure-access-control',
+                  '/use/access/secure-access-control',
             ],
         },
         {
@@ -128,7 +128,7 @@ module.exports =
             label: 'Stronghold',
             collapsed: true,
             items: [
-                  '/docs/use/stronghold/protecting-your-secrets',
+                  '/use/stronghold/protecting-your-secrets',
             ],
         },
         {
@@ -136,7 +136,7 @@ module.exports =
             label: 'Oracles',
             collapsed: true,
             items: [
-                  '/docs/use/oracles/trust-in-real-world-data',
+                  '/use/oracles/trust-in-real-world-data',
             ],
         },
         {
@@ -144,9 +144,9 @@ module.exports =
             label: 'Utilities',
             collapsed: true,
             items: [
-                  '/docs/use/utilities/tangle-explorer',
-                  '/docs/use/utilities/visualizer',
-                  '/docs/use/utilities/iota-ipfs',
+                  '/use/utilities/tangle-explorer',
+                  '/use/utilities/visualizer',
+                  '/use/utilities/iota-ipfs',
             ],
         }, 
 
@@ -155,10 +155,10 @@ module.exports =
         {
             type: 'category',
             label: 'Support The Network',
-            collapsed: true,
+            collapsed: false,
             items: [
-                  '/docs/participate/support-the-network/run-a-node',
-                  '/docs/participate/support-the-network/create-an-application',
+                  '/participate/support-the-network/run-a-node',
+                  '/participate/support-the-network/create-an-application',
             ],
         },        
         {
@@ -166,11 +166,11 @@ module.exports =
             label: 'The Community',
             collapsed: true,
             items: [
-                  '/docs/participate/the-community/discord',
-                  '/docs/participate/the-community/x-teams',
-                  '/docs/participate/the-community/git-hub',
-                  '/docs/participate/the-community/stack-overflow',
-                  '/docs/participate/the-community/social-media',
+                  '/participate/the-community/discord',
+                  '/participate/the-community/x-teams',
+                  '/participate/the-community/git-hub',
+                  '/participate/the-community/stack-overflow',
+                  '/participate/the-community/social-media',
             ],
         },        
         {
@@ -178,7 +178,7 @@ module.exports =
             label: 'Partnerships',
             collapsed: true,
             items: [
-                  '/docs/participate/partnerships/iota-partnerships',
+                  '/participate/partnerships/iota-partnerships',
             ],
         },        
         {
@@ -186,7 +186,7 @@ module.exports =
             label: 'Funding',
             collapsed: true,
             items: [
-                  '/docs/participate/funding/edf-funding',
+                  '/participate/funding/edf-funding',
             ],
         }, 
     
@@ -196,12 +196,12 @@ module.exports =
         {
             type: 'category',
             label: 'Getting Started',
-            collapsed: true,
+            collapsed: false,
             items: [
-                  '/docs/develop/getting started/archtecture',
-                  '/docs/develop/getting started/environment',
-                  '/docs/develop/getting started/send-a-first-message',
-                  '/docs/develop/getting started/devnet',
+                  '/develop/getting started/architecture',
+                  '/develop/getting started/environment',
+                  '/develop/getting started/send-a-first-message',
+                  '/develop/getting started/devnet',
             ],
         },        
         {
@@ -209,11 +209,11 @@ module.exports =
             label: 'Fundamentals',
             collapsed: true,
             items: [
-                  '/docs/develop/fundamentals/cryptography',
-                  '/docs/develop/fundamentals/consensus',
-                  '/docs/develop/fundamentals/mana',
-                  '/docs/develop/fundamentals/utxo',
-                  '/docs/develop/fundamentals/dapps',
+                  '/develop/fundamentals/cryptography',
+                  '/develop/fundamentals/consensus',
+                  '/develop/fundamentals/mana',
+                  '/develop/fundamentals/utxo',
+                  '/develop/fundamentals/dapps',
             ],
         },        
         {
@@ -221,7 +221,7 @@ module.exports =
             label: 'Exchange Integration',
             collapsed: true,
             items: [
-                  '/docs/develop/exchange-integration/guide',
+                  '/develop/exchange-integration/guide',
             ],
         },        
         {
@@ -229,8 +229,8 @@ module.exports =
             label: 'Tutorials',
             collapsed: true,
             items: [
-                  '/docs/develop/tutorials/hackster',
-                  '/docs/develop/tutorials/youtube',
+                  '/develop/tutorials/hackster',
+                  '/develop/tutorials/youtube',
             ],
         },        
         {
@@ -238,7 +238,7 @@ module.exports =
             label: 'Developer Docs',
             collapsed: true,
             items: [
-                  '/docs/develop/getting started/archtecture',
+                  '/develop/getting started/architecture',
             ],
         },
         {
@@ -246,7 +246,7 @@ module.exports =
             label: 'Project Repos',
             collapsed: true,
             items: [
-                  '/docs/develop/getting started/archtecture',
+                  '/develop/getting started/architecture',
             ],
         },
 
