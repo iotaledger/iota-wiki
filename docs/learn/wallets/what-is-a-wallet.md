@@ -19,7 +19,7 @@ In Crypto, we divide those wallets into two categories:
 
 ## Software Wallets
 
-A Software Wallet is a computer program that is executed in the operating system of your device (computer / mobile phone). It has no representation in a physical device and the program code is not written (hardcoded) into a computer chip.
+A Software Wallet is a computer program that is executed in the operating system of your device (computer / mobile phone). It has no representation in a physical device and the program code is not written (hard-coded) into a computer chip.
 Software wallets are user-friendly and therefore a very common way to handle your tokens. They usually need a short setup process where you once enter your secret Seed and then afterward will never have to enter this complicated list of words or characters again. You log in to the software wallet with a password that you create and have access to your tokens. You can send and receive tokens now easily and comfortably.
 
 But as oftware wallets are part of your operating system, the security of a software wallet can always be only as good as the security of the whole operating system. So you need to make sure that your operating system is free of malicious software, otherwise, it will be easy for an attacker to get access to your secrets and so to your tokens. Always have an up-to-date system, run quality Antivirus and Anti - Malware programs and follow best practices for cybersecurity if you use a software wallet to handle your IOTA tokens.
@@ -65,5 +65,4 @@ Purchase a Ledger only directly from the official store:
 - **[a link](https://linkgoes.here)** - A description for the link
 - **[a link](https://linkgoes.here)** - A description for the link
 - **[a link](https://linkgoes.here)** - A description for the link
-
 
