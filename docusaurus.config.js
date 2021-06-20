@@ -4,13 +4,18 @@ module.exports = {
   tagline: 'The complete reference for IOTA',
   url: 'http://94.16.108.60',
   baseUrl: '/',
-  onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'warn',
+  onBrokenLinks: 'log',
+  onBrokenMarkdownLinks: 'log',
   favicon: 'img/favicon.ico',
   organizationName: 'iota-community', // Usually your GitHub org/user name.
   projectName: 'iota-wiki', // Usually your repo name.
+  noIndex: true,
+  stylesheets: [
+    'https://fonts.googleapis.com/css?family=Material+Icons',
+  ],
   themeConfig: {
     navbar: {
+      hideOnScroll: true,
       logo: {
         alt: 'IOTA Wiki Logo',
         src: 'img/logo.svg',
@@ -151,24 +156,46 @@ module.exports = {
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} IOTA Wiki, Built with Docusaurus.`,
+      logo: {
+        alt: 'IOTA Logo',
+        src: 'img/iota_logo.svg',
+        srcDark: 'img/iota_logo_dark.svg',
+        href: 'https://www.iota.org',
+      },
+      copyright: `© ${new Date().getFullYear()} IOTA Wiki, Built with Docusaurus.`,
     },
     colorMode: {
+      defaultMode: 'dark',
+
       // Dark/light switch icon options
       switchConfig: {
         // Icon for the switch while in dark mode
-        darkIcon: '🌙',
+        darkIcon: 'light_mode',
 
         // CSS to apply to dark icon
         darkIconStyle: {
-          marginLeft: '2px',
+          fontFamily: 'Material Icons',
         },
 
-        lightIcon: '☀',
+        lightIcon: 'dark_mode',
 
         lightIconStyle: {
-          marginLeft: '1px',
-          color: '#ffd557',
+          fontFamily: 'Material Icons',
+        },
+      },
+    },
+    searchMode: {
+      switchConfig: {
+        closeIcon: 'close',
+
+        closeIconStyle: {
+          fontFamily: 'Material Icons',
+        },
+
+        searchIcon: 'search',
+
+        searchIconStyle: {
+          fontFamily: 'Material Icons',
         },
       },
     },
