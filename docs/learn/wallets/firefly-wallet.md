@@ -86,4 +86,21 @@ If different Users aim to use the same Firefly Wallet, or if you have multiple S
 - **store it in multiple independent locations digital and physical**
 
 
+### Firefly Dashboard
+
+
+
+The Firefly Dashboard is your Main Profile overview. Easily accessible information and access to the most common functions in a nicely styled layout.
+
+You are shown the Total Profile balance here, your different Wallets, and a list of the latest transactions. IOTA Price or Profile value in a chart and the basic security info.
+
+## Wallets
+
+Wallets are little sub-accounts, like the second level of an order under your Profile. It may be a convenient way to have several of them for different occasions, so like a "long term hold" and a spending Wallet. Or a Wallet where you receive payments, another one you receive donations, etc. You are free in setting them up as you wish.
+Use the little "+" sign in the Wallet box to create a new one. Assign a name for the Wallet, confirm the creation with your Stronghold password and you are set to receive funds in this Wallet.
+
+One important thing to mention: You can only set up further Wallets if your first Wallet has already funds in it. So if you want to set up 5 different Wallets you need a small amount of IOTA' to end the newly created Wallet, before you can create another one.
+
+If you send and receive funds, they will always be organized under the wallet that you used to send or receive, so it is easier to keep track if you have a lot of transactions going on.
+
 
