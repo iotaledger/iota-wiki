@@ -1,0 +1,84 @@
+/**
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+.toggle {
+  align-items: center;
+  display: flex;
+  height: 100%;
+  width: 100%;
+  justify-content: center;
+}
+.toggle::before {
+  position: absolute;
+}
+
+/**
+ * styles for React Toggle
+ * copied over because we want to allow user to swizzle it and modify the css
+ * and also to make sure its compatible with our dark mode
+ * https://github.com/aaronshaf/react-toggle/blob/master/style.css
+ */
+:global(.react-toggle) {
+  position: relative;
+  cursor: pointer;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+:global(.react-toggle-screenreader-only) {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  position: absolute;
+  width: 1px;
+}
+
+:global(.react-toggle--disabled) {
+  cursor: not-allowed;
+}
+
+:global(.react-toggle-track) {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  color: var(--ifm-color-emphasis-1000);
+  background-color: rgba(0, 0, 0, 0.05);
+  transition: all 0.2s ease;
+}
+
+:global([data-theme='dark'] .react-toggle-track) {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+:global(.react-toggle-track-check) {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+:global([data-theme='dark'] .react-toggle .react-toggle-track-check),
+:global(.react-toggle--checked .react-toggle-track-check) {
+  opacity: 1;
+  transition: opacity 0.25s ease;
+}
+
+:global(.react-toggle-track-x) {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  transition: opacity 0.25s ease;
+}
+
+:global([data-theme='dark'] .react-toggle .react-toggle-track-x),
+:global(.react-toggle--checked .react-toggle-track-x) {
+  opacity: 0;
+}
