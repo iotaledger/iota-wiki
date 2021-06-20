@@ -6,7 +6,7 @@ description: The IOTA Firefly Wallet sets a new standard for Software Wallets in
 
 # The Firefly Wallet
 
-The Secure Entrypoint to the IOTA Ecosystem.
+The Secure entry point to the IOTA Ecosystem.
 
 Firefly is built with the future in mind. It will evolve into a tool that offers much more than being just a Software Wallet for your IOTA Tokens.
 Firefly has a modular design that makes it easy to add innovative new features later on.
@@ -102,5 +102,4 @@ Use the little "+" sign in the Wallet box to create a new one. Assign a name for
 One important thing to mention: You can only set up further Wallets if your first Wallet has already funds in it. So if you want to set up 5 different Wallets you need a small amount of IOTA' to end the newly created Wallet, before you can create another one.
 
 If you send and receive funds, they will always be organized under the wallet that you used to send or receive, so it is easier to keep track if you have a lot of transactions going on.
-
 
