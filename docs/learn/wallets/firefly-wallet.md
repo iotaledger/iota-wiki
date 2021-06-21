@@ -96,9 +96,65 @@ You are shown the Total Profile balance here, your different Wallets, and a list
 
 ## Wallets
 
-Wallets are little sub-accounts, like the second level of an order under your Profile. It may be a convenient way to have several of them for different occasions, so like a "long term hold" and a spending Wallet. Or a Wallet where you receive payments, another one you receive donations, etc. You are free in setting them up as you wish.
-Use the little "+" sign in the Wallet box to create a new one. Assign a name for the Wallet, confirm the creation with your Stronghold password and you are set to receive funds in this Wallet.
+Wallets are sub-accounts to your Seed (Profile). It may be a convenient way to have several of them for different occasions. You could have a "long-term hold" and a "spending" Wallet. Or a Wallet where you receive payments, another one in which you receive donations, etc. You are free in setting them up as you wish.
+Use the little "+" sign in the **`My Wallets`** section of your dashboard to create a new one. Assign a name for the Wallet, confirm the creation with your Stronghold password and you are set to receive funds in this Wallet.
 
-One important thing to mention: You can only set up further Wallets if your first Wallet has already funds in it. So if you want to set up 5 different Wallets you need a small amount of IOTA' to end the newly created Wallet, before you can create another one.
+Important to mention here: You can only set up further Wallets if your first Wallet has already funds in it. So if you want to set up 5 different Wallets you need a small amount of IOTA in every newly created Wallet before you can create another one.
 
-If you send and receive funds, they will always be organized under the wallet that you used to send or receive, so it is easier to keep track if you have a lot of transactions going on.
+### Wallet Detail view
+
+If you click on one of the Wallets in the Dashboard overview, the Wallet Detail Screen opens. 
+Here you see the Balance contained in this specific Wallet and have the option to send and receive transactions.
+
+Next to the send and receive section an overview of all the transactions related to this specific wallet is shown.
+Little Icons show if send or receive transaction was done internal (to another Wallet of the same Profile) or external.
+Clicking on one of the transactions opens the **Transaction detail view**.
+The following information about the transaction is displayed:
+
+A flow that indicates **from where > Amount > to where** followed by:
+
+**Status**
+Confirmed or Pending status of the message
+
+**Date**
+Date and Time when the transaction was issued or received (in local System time)
+
+**Message ID**
+The unique identifier of this specific message (every transaction is a message) in the IOTA Ledger.
+
+**Send Address**
+The Address from where the transaction was initiated
+
+**Receive Address**
+The Address on which the tokens of this transaction have arrived. Several receive Addresses may be shown in this view. Your adresses contain the name of your wallet in brackets, other addresses that are shown without brackets do not belong to you. This is related to the UTXO (unspent transaction output) Account model in IOTA.
+
+If a transaction is issued from a UTXO output that does not consume all funds that are part of this output, 2 transactions are issued. One transaction moves the funds that are planned to send, and a second transaction that moves the rest of the unused funds from this UTXO to a new UTXO output. Both these transactions are part of the Message and therefore shown in the Transaction detail. Read more about the UTXO Account model here: (*internal link to utxo*)
+
+**Amount**
+Amount of IOTA sent and current value in chosen Profile currency
+
+
+2 different charts **Wallet Value** and **Wallet activity** also provide a graphic overview of the activities in this wallet.
+Also, you have will find 3 little dots next to the Wallet balance. Clicking on those dots opens a popup menu.
+
+Here you can enter the functions:
+
+**Customize Wallet** 
+Possibility to change the Wallet name.
+
+**View address history**
+A list of all addresses that have been used by this wallet and the balance that sits currently on this address. You can copy this list and paste it into your documents.
+
+**Hide Wallet**
+Empty Wallets can be hidden to keep your overview organized. If a wallet still contains funds you will not be able to hide it but will be offered to transfer the funds to another one of your Wallets and hide the Wallet afterward. A hidden Wallet can be shown again by enabling the function "show hidden wallets" in the advanced account settings.
+
+
+### Send and Receive Transactions
+
+The Send and Receive functions are available in the main Wallets dashboard, and also in evert Wallet detail view.
+
+**Receive**
+By activating this the Receive Funds view opens. The user can choose in a dropdown menu to which wallet the funds should be received.
+The receive address of the selected Wallet is displayed as a QR Code and as written address. The button `Copy Address` copies the displayed receive address into the user's clipboard for convenient pasting into other applications or documents.
+
+Please be aware that Firefly, for privacy reasons, automatically generates a new receive address for the user as soon as funds have been received on an address. But you can receive multiple times Funds at the same address if you wish to do this. There are no limitations to receive Funds multiple times at the same address anymore.
