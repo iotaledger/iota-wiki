@@ -151,10 +151,17 @@ Empty Wallets can be hidden to keep your overview organized. If a wallet still c
 
 ### Send and Receive Transactions
 
+
 The Send and Receive functions are available in the main Wallets dashboard, and also in evert Wallet detail view.
 
 **Receive**
-By activating this the Receive Funds view opens. The user can choose in a dropdown menu to which wallet the funds should be received.
-The receive address of the selected Wallet is displayed as a QR Code and as written address. The button `Copy Address` copies the displayed receive address into the user's clipboard for convenient pasting into other applications or documents.
+Click on the "Receive" button to open the Receive Funds dialogue. Using a dropdown menu, the user can choose in which of the Wallets the incoming funds should be received.
+The receive address of the selected Wallet is displayed as a QR Code and as a written address. The button `Copy Address` copies the displayed receive address into the user's clipboard for convenient pasting into other applications or documents.
+The receive address of a user will change every time funds have been received and spent again from that address. The wallet creates automatically a fresh address for the next receive attempt.
+Even if a user has received, but not yet spent funds from that receiving address, the user can decide to generate a fresh receive address using the small "refresh" button above the QR Code.
+This function is an essential privacy feature that is a standard approach in Crypto to reduce the traceability of your balances
 
-Please be aware that Firefly, for privacy reasons, automatically generates a new receive address for the user as soon as funds have been received on an address. But you can receive multiple times Funds at the same address if you wish to do this. There are no limitations to receive Funds multiple times at the same address anymore.
+**Send**
+The Send function has two essential features:
+"Send payment" - which is a standard IOTA transaction where you write or copy in a full IOTA receive address in the form of `iotaxjdjfkfkldldd.......`. You define the Wallet from where the tokens should be sent from a dropdown menu and the user defines the Amount of Tokens to be sent. While defining the amount, a user may choose "Max" - which will send all the Tokens in the chosen wallet, or specify the exact amount with manual input. A dropdown button provides the option to switch the amount between different magnitudes (Mi, Gi,...).
+Starting the transaction, the user has to enter the stronghold password to confirm the transaction attempt. After this, the following steps are performed by the wallet: "Syncing Wallet" - establishing the connection to the IOTA Ledger, "Performing PoW" - a tiny amount of PoW is performed by the device of the user, "Broadcasting transaction" - sending the signed transaction into the network, "Transfer complete" - confirmation of the transaction received from the network. This whole process happens in just a few seconds.
