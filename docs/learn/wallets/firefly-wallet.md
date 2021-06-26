@@ -58,6 +58,7 @@ Read everything about the process here:
 ## Firefly Features
 
 ### Account Structure
+
 Firefly's basic Account handling Logic works like this: 
 
 - One Firefly **Profile** is always the representation of one **IOTA Seed**
@@ -108,43 +109,54 @@ Little Icons indicate if a send or receive transaction was done internal (to ano
 Clicking on one of the transactions opens the 
 
 **Transaction detail view**.
+
 The following information about the transaction is displayed:
 
 A transaction flow that indicates: **from where > token amount > to where** followed by:
 
 **Status**
+
 Confirmed or Pending status of the message
 
 **Date**
+
 Date and Time when the transaction was issued or received (in local System time)
 
 **Message ID**
+
 The unique identifier of this specific message (every transaction in IOTA is a message) in the IOTA Ledger.
 
 **Send Address**
+
 The Address from where the transaction was initiated
 
 **Receive Address**
+
 The Address on which the tokens of this transaction have arrived. Several different receive Addresses may be shown in this view. The Addresses belonging to you are highlighted with the name of your wallet in brackets, other addresses that are shown without brackets do not belong to you. These are normally addresses of the sender to where the remaining funds that have not been used from the sender's address are transferred. This is related to the UTXO (unspent transaction output) Account model in IOTA.
 
 If a transaction is issued from a UTXO output (an address holding funds) that does not consume all funds that are part of this output, 2 transactions are issued. One transaction moves the funds that are planned to send away from the address, and a second transaction that moves the rest of the unused funds from this UTXO to a new UTXO output. Both these transactions are part of the Message and therefore shown in the Transaction detail. Read more about the UTXO Account model here: (*internal link to utxo*)
 
 **Amount**
+
 Amount of IOTA sent and current value in chosen Profile currency
 
 **2 different charts** 
+
 **Wallet Value** and **Wallet activity** also provide a graphic overview of the activities in this wallet.
 Also, you have will find **3 little dots** next to the Wallet balance. Clicking on those dots opens a popup menu.
 
 **In this popup menu you can enter the functions:**
 
 **Customize Wallet** 
+
 Possibility to change the Wallet name.
 
 **View address history**
+
 A list of all addresses that have been used by this wallet and the balance that sits currently on this address. You can copy this list and paste it into your documents.
 
 **Hide Wallet**
+
 Empty Wallets can be hidden to keep your Main Wallet overview organized. If a wallet still contains funds you will not be able to hide it by clicking this option but will be offered to transfer the funds to another Wallet and hide the Wallet afterward. A hidden Wallet can be shown again by enabling the function "show hidden wallets" in the advanced account settings.
 
 
@@ -153,13 +165,16 @@ Empty Wallets can be hidden to keep your Main Wallet overview organized. If a wa
 The Send and Receive functions are available in the main Wallets dashboard, and also in evert Wallet detail view.
 
 **Receive**
+
 Click on the "Receive" button to open the Receive Funds dialogue. Using a dropdown menu, the user can choose in which of the Wallets the incoming funds should be received.
 The receive address of the selected Wallet is displayed as a QR Code and as a written address. The button **`Copy Address`** copies the displayed receive address into the user's clipboard for convenient pasting into other applications or documents.
 **The receive address of a user will change every time funds have been received and spent again from that address. The wallet creates automatically a fresh address for the next receive attempt.**
+
 If a user has received, but not yet spent funds from that receiving address, the user can manually decide to generate a fresh receive address using the small "refresh" button above the QR Code.
 This function is an essential privacy feature that is a standard approach in Crypto to reduce the traceability of your balances
 
 **Send**
+
 The Send function has two essential features:
 "Send payment" - which is a standard IOTA transaction where you type or copy in a full IOTA receive address in the form of **`iotaxjdjfkfkldldd.......`**. 
 The user now defines the Wallet from where the tokens should be sent in a dropdown menu and the Number of Tokens to be sent. While defining the amount, a user may choose "Max" - which will send all the Tokens contained in the chosen wallet, or specify the exact amount with manual input. A dropdown button provides the option to switch the amount between different unit sizes (Mi, Gi,...). **Make sure that you are entering the token amount in the correct unit size.**
