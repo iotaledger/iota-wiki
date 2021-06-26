@@ -3,14 +3,19 @@ module.exports = {
   title: 'IOTA Wiki',
   tagline: 'The complete reference for IOTA',
   url: 'http://94.16.108.60',
-  baseUrl: '/',
-  onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'warn',
+  baseUrl: '/iota-wiki/',
+  onBrokenLinks: 'log',
+  onBrokenMarkdownLinks: 'log',
   favicon: 'img/favicon.ico',
   organizationName: 'iota-community', // Usually your GitHub org/user name.
   projectName: 'iota-wiki', // Usually your repo name.
+  noIndex: true,
+  stylesheets: [
+    'https://fonts.googleapis.com/css?family=Material+Icons',
+  ],
   themeConfig: {
     navbar: {
+      hideOnScroll: true,
       logo: {
         alt: 'IOTA Wiki Logo',
         src: 'img/logo.svg',
@@ -19,11 +24,15 @@ module.exports = {
       items: [
         {
           label: "Learn",
-          to: "docs/learn/about-iota/not-a-blockchain",
+          to: "docs/learn/about-iota/an-introduction-to-iota",
         },
         {
-          label: "Build",
-          to: "docs/build/getting-started/architecture",
+          label: "Use",
+          to: "docs/use/use-cases/industry-applications",
+        },
+        {
+          label: "Develop",
+          to: "docs/develop/getting-started/architecture",
         },
         {
           label: "Participate",
@@ -38,56 +47,85 @@ module.exports = {
           items: [
             {
               label: 'About IOTA',
-              to: "docs/learn/about-iota/not-a-blockchain",
-            },
-            {
-              label: 'Use cases',
-              to: "docs/learn/use-cases/industry-applications",
+              to: "docs/learn/about-iota/an-introduction-to-iota",
             },
             {
               label: 'IOTA Token',
               to: "docs/learn/iota-token/overview",
             },
             {
-              label: 'Networks',
-              to: "docs/learn/networks/chrysalis",
+              label: 'Wallets',
+              to: "docs/learn/wallets/what-is-a-wallet",
             },
             {
-              label: 'Resource materials',
+              label: 'Networks',
+              to: "docs/learn/networks/iota-1.5-chrysalis",
+            },
+            {
+              label: 'Resource Materials',
               to: "docs/learn/resource-materials/glossary",
+            },
+            {
+              label: 'Research',
+              to: "docs/learn/research/research-outline",
             },
           ],
         },
         {
-          title: 'BUILD',
+          title: 'USE',
           items: [
             {
-              label: 'Getting started',
-              to: "docs/build/getting-started/",
+              label: 'Use Cases',
+              to: "docs/use/use-cases/industry-applications",
             },
             {
-              label: 'Client Libraries',
-              to: "docs/build/client-libraries/",
+              label: 'Streams',
+              to: "docs/use/streams/encrypted-data-comms",
             },
             {
-              label: 'Wallet Libraries',
-              to: "docs/build/wallet-libraries/",
+              label: 'Identity',
+              to: "docs/use/identity/enabling-privacy-and-trust",
             },
             {
-              label: 'Private Tangle',
-              to: "docs/build/private-tangle",
+              label: 'Access',
+              to: "docs/use/access/secure-access-control",
             },
             {
-              label: 'Exchange Integration',
-              to: "docs/build/exchange-integration",
+              label: 'Smart Contracts',
+              to: "docs/use/smart-contracts/programmable-contracts",
             },
             {
-              label: 'Tutorials',
-              to: "docs/build/tutorials",
+              label: 'Stronghold',
+              to: "docs/use/stronghold/protecting-your-secrets",
+            },
+            {
+              label: 'Oracles',
+              to: "docs/use/oracles/trust-in-real-world-data",
             },
             {
               label: 'Utilities',
-              to: "docs/build/utilities",
+              to: "docs/use/utilities/tangle-explorer",
+            },
+          ],
+        },
+        {
+          title: 'DEVELOP',
+          items: [
+            {
+              label: 'Getting Started',
+              to: "docs/develop/getting-started/architecture",
+            },
+            {
+              label: 'Fundamentals',
+              to: "docs/develop/fundamentals/cryptography",
+            },
+            {
+              label: 'Exchange Integration',
+              to: "docs/develop/exchange-integration/guide",
+            },
+            {
+              label: 'Tutorials',
+              to: "docs/develop/tutorials/youtube",
             },
           ],
         },
@@ -99,76 +137,60 @@ module.exports = {
               to: "docs/participate/support-the-network/run-a-node",
             },
             {
-              label: 'Node software',
-              to: "docs/participate/node-software/hornet",
+              label: 'The Community',
+              to: "docs/participate/the-community/discord",
             },
             {
-              label: 'Join the community',
-              to: "docs/participate/join-the-community/github",
-            },
-          ],
-        },
-        {
-          title: 'SOLUTIONS',
-          items: [
-            {
-              label: 'Wallets',
-              to: "docs/solutions/wallets/wallets",
+              label: 'Partnerships',
+              to: "docs/participate/partnerships/iota-partnerships",
             },
             {
-              label: 'Streams',
-              to: "docs/solutions/streams/streams",
-            },
-            {
-              label: 'Identity',
-              to: "docs/solutions/identity/identity",
-            },
-            {
-              label: 'Access',
-              to: "docs/solutions/access/access",
-            },
-            {
-              label: 'Smart Contracts',
-              to: "docs/solutions/smart-contracts/smart-contracts",
-            },
-            {
-              label: 'Stronghold',
-              to: "docs/solutions/stronghold/stronghold",
-            },
-          ],
-        },
-        {
-          title: 'RESEARCH',
-          items: [
-            {
-              label: 'Academics',
-              to: "docs/research/academics/research-topics",
-            },
-            {
-              label: 'Papers',
-              to: "docs/research/papers/publications-in-1-5",
+              label: 'Funding',
+              to: "docs/participate/funding/edf-funding",
             },
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} IOTA Wiki, Built with Docusaurus.`,
+      logo: {
+        alt: 'IOTA Logo',
+        src: 'img/iota_logo.svg',
+        srcDark: 'img/iota_logo_dark.svg',
+        href: 'https://www.iota.org',
+      },
+      copyright: `© ${new Date().getFullYear()} IOTA Wiki, Built with Docusaurus.`,
     },
     colorMode: {
+      defaultMode: 'dark',
+
       // Dark/light switch icon options
       switchConfig: {
         // Icon for the switch while in dark mode
-        darkIcon: '🌙',
+        darkIcon: 'light_mode',
 
         // CSS to apply to dark icon
         darkIconStyle: {
-          marginLeft: '2px',
+          fontFamily: 'Material Icons',
         },
 
-        lightIcon: '☀',
+        lightIcon: 'dark_mode',
 
         lightIconStyle: {
-          marginLeft: '1px',
-          color: '#ffd557',
+          fontFamily: 'Material Icons',
+        },
+      },
+    },
+    searchMode: {
+      switchConfig: {
+        closeIcon: 'close',
+
+        closeIconStyle: {
+          fontFamily: 'Material Icons',
+        },
+
+        searchIcon: 'search',
+
+        searchIconStyle: {
+          fontFamily: 'Material Icons',
         },
       },
     },

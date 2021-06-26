@@ -6,7 +6,6 @@ description: The IOTA Firefly Wallet sets a new standard for Software Wallets in
 
 # The Firefly Wallet
 
-
 The Secure Entrypoint to the IOTA Ecosystem.
 
 Firefly is built with a bright future in mind. It will evolve into a tool that offers much more than being just a Software Wallet for your IOTA Tokens.
@@ -50,6 +49,38 @@ Read everything about the process here:
 - **[Firefly Migration Process](https://blog.iota.org/firefly-token-migration/)** - The whole Migration Process explained
 - **[Migration Security](https://blog.iota.org/security-during-token-migration/)** - Important advice for a safe Migration Process
 
+Sensitive actions like address generation and transaction signing take place in isolated application memory, keeping the seed away from potential attackers.
+
+- Crypto.rs
+
+Crypto.rs combines all cryptographic algorithms used by many of the projects at IOTA Foundation. It reduces the risk of using unsafe crypto implementations, making it easier to audit, resulting in verifiably safer code.
+
+Find more information on the official Website and download the Firefly Wallet only from there:
+
+**[Firefly](https://firefly.iota.org/)** - official Website
+
+
+
+
+## Firefly Token Migration
+
+With the launch of the new IOTA 1.5 Chrysalis Mainnet end of April 28th, it is important that every IOTA Holder migrates his entire Funds from the old IOTA 1.0 network to the new, much more improved and advanced 1.5 network.
+
+To make this process user-friendly and safe, the IOTA Foundation integrated a migration tool into the Firefly Wallet, that takes care of the whole process and moves your funds automated from the old into the new network. The only thing you need is your old IOTA 1.0 network Seed, represented as a combination of 81 characters, a ``.kdbx seed vault file``that you have backed up from the Trinity Wallet, or your Ledger Nano device.
+
+With this information entered in the Migration Process in Firefly, a fully automated process will start and all your Funds will be moved securely into the new network, and you will have access to them through Firefly from now on.
+
+Read everything about the process here:
+
+- **[Chrysalis Migration](https://blog.iota.org/the-chrysalis-token-migration-starts-now/)** - The Chrysalis network Migration process
+- **[Firefly Migration Process](https://blog.iota.org/firefly-token-migration/)** - The whole Migration Process explained
+- **[Migration Security](https://blog.iota.org/security-during-token-migration/)** - Important advice for a safe Migration Process
+
+
+
+## Useful Links
+- **[Firefly Discord Channel](https://discord.com/channels/397872799483428865/748265907351978115)** - Discuss the Firefly Wallet, ask questions and engage with the IOTA community on Discord
+- **[Firefly GitHub](https://github.com/iotaledger/firefly)** - Firefly codebase and development repository
 
 <br/>
 
@@ -192,4 +223,6 @@ After this, the following steps are performed by the wallet to deliver the trans
 
 This whole process happens in just a few seconds.
 
+One important thing to mention: You can only set up further Wallets if your first Wallet has already funds in it. So if you want to set up 5 different Wallets you need a small amount of IOTA' to end the newly created Wallet, before you can create another one.
 
+If you send and receive funds, they will always be organized under the wallet that you used to send or receive, so it is easier to keep track if you have a lot of transactions going on.

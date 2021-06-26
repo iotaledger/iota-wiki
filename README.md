@@ -12,7 +12,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <a href="https://github.com/iota-community/iota-wiki">
+  <a href="https://v2202102141633143571.bestsrv.de/">
     <img src="static/img/logo.svg" alt="Logo" width="80" height="80">
   </a>
 
@@ -21,7 +21,7 @@
   <p align="center">
     Everything you need to know about IOTA in one place.
     <br />
-    <a href="https://iota-community.github.io/iota-wiki"><strong>Explore the Wiki »</strong></a>
+    <a href="https://v2202102141633143571.bestsrv.de/"><strong>Explore the Wiki »</strong></a>
     <br />
     <br />
     <a href="https://github.com/iota-community/iota-wiki/issues">Report Error</a>
@@ -97,6 +97,14 @@ Adamski - [AdamCroply](https://github.com/AdamCroply) - adamski#0458
 Phylo - [Phyloiota](https://github.com/Phyloiota) - Phylo [Community DAO - lets go!]#2233  
 Jeroen van den Hout - [jlvandenhout](https://github.com/jlvandenhout) - jvdhout#4402  
 Dr.Electron - [Dr-Electron](https://github.com/Dr-Electron) - Dr.Electron#9370  
+
+## Donate
+
+The IOTA wiki is a completely voluntary project put together, maintained, and contributed to by a group of enthusiastic community members. 
+Feel free to support our work:
+
+
+DONATE - iota1qzrmyrnfhfauhv6gax50ncx844uppq4c5dddp3gk99ha0lx5jeqkwk6dapx
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->

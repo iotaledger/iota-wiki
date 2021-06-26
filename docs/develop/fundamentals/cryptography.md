@@ -1,6 +1,6 @@
 ---
 title: Cryptography
-description: 
+description: An introduction to the cryptographic methods used within IOTA for the protection of information and communications.
 ---
 
 
