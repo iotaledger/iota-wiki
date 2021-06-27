@@ -21,7 +21,7 @@ const SearchBar = () => {
   const search = React.useRef(null)
   const [active, setActive] = React.useState(false)
 
-  const duration = 200;
+  const duration = 300;
 
   const onEnter = () => {
     let searchStyle = search.current.style
@@ -54,6 +54,7 @@ const SearchBar = () => {
     searchStyle.top = '0'
     searchStyle.right = '0'
     searchStyle.bottom = '0'
+    searchStyle.borderRadius = '0'
   }
 
   const onExit = () => {
@@ -79,6 +80,7 @@ const SearchBar = () => {
     searchStyle.top = null
     searchStyle.right = null
     searchStyle.bottom = null
+    searchStyle.borderRadius = null
 
     // Remove the container.
     containerStyle.width = null
