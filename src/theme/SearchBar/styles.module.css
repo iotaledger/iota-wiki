@@ -1,0 +1,30 @@
+.search {
+  border: 0;
+  border-radius: var(--ifm-global-radius);
+}
+
+.searchBarIcon {
+  font-size: 1.25rem;
+  color: var(--ifm-color-emphasis-1000);
+}
+
+.searchBar {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  background-color: rgba(0, 0, 0, 0.05);
+  border-radius: var(--ifm-global-radius);
+}
+
+[data-theme='dark'] .searchBar {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.searchBarInput {
+  flex-grow: 1;
+  color: var(--ifm-color-emphasis-1000);
+  background-color: transparent;
+  padding: 0;
+  border: 0;
+  border-radius: var(--ifm-global-radius);
+}
