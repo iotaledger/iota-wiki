@@ -9,6 +9,7 @@ import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import {useThemeConfig} from '@docusaurus/theme-common';
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import SearchBar from '@theme/SearchBar';
 import ThemedImage from '@theme/ThemedImage';
 import SocialBar from '@theme/SocialBar';
 
@@ -56,6 +57,8 @@ function Footer() {
           'footer--dark': footer.style === 'dark',
         })}>
         <div className="container padding-horiz--xl">
+          <div className="section-header grey text--center margin-bottom--sm" >Looking for something specific?</div>
+          <SearchBar />
           {links && links.length > 0 && (
             <div className="row footer__links padding-top--lg padding-bottom--xl">
               {links.map((linkItem, i) => (
