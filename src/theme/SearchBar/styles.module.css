@@ -1,6 +1,7 @@
 .search {
   border: 0;
   border-radius: var(--ifm-global-radius);
+  z-index: 999;
 }
 
 .searchBarIcon {
