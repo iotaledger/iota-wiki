@@ -47,17 +47,13 @@ const SearchBar = () => {
   const onEntering = () => {
     let searchStyle = search.current.style
 
-    // Take the search out of the flow, placing it
-    // at the same position.
-    searchStyle.transition = `all ${duration}ms ease-in-out`
     searchStyle.left = '0'
     searchStyle.top = '0'
     searchStyle.right = '0'
     searchStyle.bottom = '0'
-    searchStyle.borderRadius = '0'
   }
 
-  const onExit = () => {
+  const onExiting = () => {
     let searchStyle = search.current.style
 
     const {
@@ -74,13 +70,11 @@ const SearchBar = () => {
     let searchStyle = search.current.style
     let containerStyle = container.current.style
 
-    searchStyle.transition = null
     searchStyle.position = null
     searchStyle.left = null
     searchStyle.top = null
     searchStyle.right = null
     searchStyle.bottom = null
-    searchStyle.borderRadius = null
 
     // Remove the container.
     containerStyle.width = null
@@ -95,7 +89,7 @@ const SearchBar = () => {
         nodeRef={search}
         onEnter={onEnter}
         onEntering={onEntering}
-        onExit={onExit}
+        onExiting={onExiting}
         onExited={onExited}
       >
         <div className={styles.search} ref={search}>
