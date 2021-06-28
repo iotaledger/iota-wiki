@@ -57,8 +57,12 @@ function Footer() {
           'footer--dark': footer.style === 'dark',
         })}>
         <div className="container padding-horiz--xl">
-          <div className="section-header grey text--center margin-bottom--sm" >Looking for something specific?</div>
-          <SearchBar />
+          <div className="section-header grey text--center margin-top--lg margin-bottom--sm" >Looking for something specific?</div>
+          <div className="row margin-vert--lg">
+            <div className="col col--8 col--offset-2">
+              <SearchBar />
+            </div>
+          </div>
           {links && links.length > 0 && (
             <div className="row footer__links padding-top--lg padding-bottom--xl">
               {links.map((linkItem, i) => (

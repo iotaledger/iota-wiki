@@ -88,7 +88,7 @@ const SearchBar = () => {
             <input
               className={styles.searchBarInput}
               type='text'
-              container='Search'
+              placeholder='Search'
               onFocus={() => setActive(true)}
               onBlur={() => setActive(false)}
             />

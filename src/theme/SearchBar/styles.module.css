@@ -25,21 +25,21 @@
 
 .searchBarIcon {
   font-size: 1.25rem;
-  color: var(--ifm-color-emphasis-1000);
+  color: var(--ifm-color-emphasis-500);
 }
 
 .searchBar {
   display: flex;
   justify-content: center;
   align-items: stretch;
-  background-color: rgba(0, 0, 0, 0.05);
+  background-color: var(--ifm-color-emphasis-300);
   border-radius: var(--ifm-global-radius);
   margin: 0;
   width: 100%;
 }
 
 [data-theme='dark'] .searchBar {
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: var(--ifm-color-emphasis-300);
 }
 
 :global(.enter-active) .searchBar {
@@ -68,4 +68,8 @@
   border: 0;
   border-radius: var(--ifm-global-radius);
   outline: none;
+}
+
+::placeholder {
+  color: var(--ifm-color-emphasis-500)
 }
