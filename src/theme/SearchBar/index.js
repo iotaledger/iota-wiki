@@ -1,9 +1,3 @@
-/**
- * Copyright (c) Facebook, Inc. and its affiliates.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */
 import React from 'react';
 import clsx from 'clsx';
 import { CSSTransition } from 'react-transition-group'
@@ -31,15 +25,12 @@ const SearchBar = () => {
       left, top, right, bottom, width, height
     } = search.current.getBoundingClientRect()
 
-    // Take the search out of the flow, placing it
-    // at the same position.
     searchStyle.position = 'fixed'
     searchStyle.left = left + 'px'
     searchStyle.top = top + 'px'
     searchStyle.right = `calc(100% - ${right}px)`
     searchStyle.bottom = `calc(100% - ${bottom}px)`
 
-    // Replace the search with the container.
     containerStyle.width = width + 'px'
     containerStyle.height = height + 'px'
   }
@@ -76,7 +67,6 @@ const SearchBar = () => {
     searchStyle.right = null
     searchStyle.bottom = null
 
-    // Remove the container.
     containerStyle.width = null
     containerStyle.height = null
   }
