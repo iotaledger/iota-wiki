@@ -10,34 +10,16 @@ export default function EditorMenu({ editor, className }) {
   return (
     <div className={clsx(className, styles.menu)}>
       <span
-        onClick={() => editor.chain().focus().toggleBold().run()}
-        className={clsx('material-icons', editor.isActive('bold') ? 'is-active' : '')}
-      >
-        format_bold
-      </span>
-      <span
-        onClick={() => editor.chain().focus().toggleItalic().run()}
-        className={clsx('material-icons', editor.isActive('italic') ? 'is-active' : '')}
-      >
-        format_italic
-      </span>
-      <span
-        onClick={() => editor.chain().focus().toggleStrike().run()}
-        className={clsx('material-icons', editor.isActive('strike') ? 'is-active' : '')}
-      >
-        format_strikethrough
-      </span>
-      <span
-        onClick={() => editor.chain().focus().toggleCode().run()}
-        className={clsx('material-icons', editor.isActive('code') ? 'is-active' : '')}
-      >
-        code
-      </span>
-      <span
-        onClick={() => editor.chain().focus().unsetAllMarks().clearNodes().run()}
+        onClick={() => editor.chain().focus().undo().run()}
         className='material-icons'
       >
-        format_clear
+        undo
+      </span>
+      <span
+        onClick={() => editor.chain().focus().redo().run()}
+        className='material-icons'
+      >
+        redo
       </span>
       <span
         onClick={() => editor.chain().focus().setParagraph().run()}
@@ -82,6 +64,36 @@ export default function EditorMenu({ editor, className }) {
         h6
       </span>
       <span
+        onClick={() => editor.chain().focus().setHorizontalRule().run()}
+        className='material-icons'
+      >
+        horizontal_rule
+      </span>
+      <span
+        onClick={() => editor.chain().focus().setHardBreak().run()}
+        className='material-icons'
+      >
+        keyboard_return
+      </span>
+      <span
+        onClick={() => editor.chain().focus().toggleBold().run()}
+        className={clsx('material-icons', editor.isActive('bold') ? 'is-active' : '')}
+      >
+        format_bold
+      </span>
+      <span
+        onClick={() => editor.chain().focus().toggleItalic().run()}
+        className={clsx('material-icons', editor.isActive('italic') ? 'is-active' : '')}
+      >
+        format_italic
+      </span>
+      <span
+        onClick={() => editor.chain().focus().toggleCode().run()}
+        className={clsx('material-icons', editor.isActive('code') ? 'is-active' : '')}
+      >
+        code
+      </span>
+      <span
         onClick={() => editor.chain().focus().toggleBulletList().run()}
         className={clsx('material-icons', editor.isActive('bulletList') ? 'is-active' : '')}
       >
@@ -106,28 +118,10 @@ export default function EditorMenu({ editor, className }) {
         format_quote
       </span>
       <span
-        onClick={() => editor.chain().focus().setHorizontalRule().run()}
+        onClick={() => editor.chain().focus().unsetAllMarks().clearNodes().run()}
         className='material-icons'
       >
-        horizontal_rule
-      </span>
-      <span
-        onClick={() => editor.chain().focus().setHardBreak().run()}
-        className='material-icons'
-      >
-        keyboard_return
-      </span>
-      <span
-        onClick={() => editor.chain().focus().undo().run()}
-        className='material-icons'
-      >
-        undo
-      </span>
-      <span
-        onClick={() => editor.chain().focus().redo().run()}
-        className='material-icons'
-      >
-        redo
+        format_clear
       </span>
     </div>
   )
