@@ -7,7 +7,16 @@
   background-color: var(--ifm-color-gray-900);
 }
 
-.menu > span {
+.menu :global(.is-active) {
+  color: var(--ifm-color-gray-200);
+  background-color: var(--ifm-color-gray-700);
+}
+
+.menu > :hover {
+  background-color: var(--ifm-color-gray-800);
+}
+
+.menu > * {
   display: inline-block;
   cursor: pointer;
   padding: 0.5rem;
