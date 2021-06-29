@@ -48,7 +48,7 @@ export default function Editor() {
   return (
     <div>
       <EditorMenu editor={editor} />
-      <EditorContent editor={editor} />
+      <EditorContent editor={editor} className='padding--lg '/>
     </div>
   )
 }

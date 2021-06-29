@@ -7,7 +7,7 @@ const headingLevels = [1, 2, 3, 4, 5, 6]
 
 const Group = ({className, children}) => {
   return (
-    <div className={clsx(styles.group, className)}>
+    <div className={clsx(styles.group, className, 'padding-horiz--xs')}>
       {children}
     </div>
   )
@@ -18,7 +18,8 @@ const Icon = (args) => {
     <div
       className={clsx(
         styles.icon,
-        (args.name && args.editor.isActive(args.name)) ? 'active' : ''
+        (args.name && args.editor.isActive(args.name)) ? 'active' : '',
+        'margin-horiz--xs'
       )}
       onClick={args.action}
     >
@@ -63,7 +64,7 @@ export default function EditorMenu({ editor, className }) {
   }
 
   return (
-    <div className={clsx(className, styles.menu, 'material-icons')}>
+    <div className={clsx(className, styles.menu, 'material-icons padding-vert--sm padding-horiz--md')}>
       <Group>
         <Icon editor={editor} action={() => editor.chain().focus().undo().run()}>
           undo
@@ -73,7 +74,7 @@ export default function EditorMenu({ editor, className }) {
         </Icon>
       </Group>
       <Group>
-        <select value={checkFontStyle()} onChange={changeFontStyle}>
+        <select className='margin-horiz--xs' value={checkFontStyle()} onChange={changeFontStyle}>
           <option hidden disabled value=''></option>
           <option value="paragraph">Normal text</option>
           {headingLevels.map((level) => {
