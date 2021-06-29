@@ -5,6 +5,22 @@ import styles from './styles.module.css'
 
 const headingLevels = [1, 2, 3, 4, 5, 6]
 
+
+const Icon = (args) => {
+  return (
+    <div
+      className={clsx(
+        styles.icon,
+        (args.name && args.editor.isActive(args.name)) ? 'active' : ''
+      )}
+      onClick={args.action}
+    >
+      <span>{args.children}</span>
+    </div>
+  )
+}
+
+
 export default function EditorMenu({ editor, className }) {
   const changeFontStyle = (event) => {
     event.preventDefault()
@@ -42,8 +58,12 @@ export default function EditorMenu({ editor, className }) {
   return (
     <div className={clsx(className, styles.menu, 'material-icons')}>
       <div className={styles.history}>
-        <span onClick={() => editor.chain().focus().undo().run()}>undo</span>
-        <span onClick={() => editor.chain().focus().redo().run()}>redo</span>
+        <Icon editor={editor} action={() => editor.chain().focus().undo().run()}>
+          undo
+        </Icon>
+        <Icon editor={editor} action={() => editor.chain().focus().redo().run()}>
+          redo
+        </Icon>
       </div>
       <div className={styles.style}>
         <select value={checkFontStyle()} onChange={changeFontStyle}>
@@ -55,69 +75,42 @@ export default function EditorMenu({ editor, className }) {
         </select>
       </div>
       <div className={styles.format}>
-        <span
-          onClick={() => editor.chain().focus().toggleBold().run()}
-          className={clsx(editor.isActive('bold') ? 'is-active' : '')}
-        >
+        <Icon editor={editor} action={() => editor.chain().focus().toggleBold().run()} name='bold'>
           format_bold
-        </span>
-        <span
-          onClick={() => editor.chain().focus().toggleItalic().run()}
-          className={clsx(editor.isActive('italic') ? 'is-active' : '')}
-        >
+        </Icon>
+        <Icon editor={editor} action={() => editor.chain().focus().toggleItalic().run()} name='italic'>
           format_italic
-        </span>
-        <span
-          onClick={() => editor.chain().focus().toggleCode().run()}
-          className={clsx(editor.isActive('code') ? 'is-active' : '')}
-        >
+        </Icon>
+        <Icon editor={editor} action={() => editor.chain().focus().toggleCode().run()} name='code'>
           code
-        </span>
+        </Icon>
       </div>
       <div className={styles.layout}>
-        <span
-          onClick={() => editor.chain().focus().toggleBulletList().run()}
-          className={clsx(editor.isActive('bulletList') ? 'is-active' : '')}
-        >
+        <Icon editor={editor} action={() => editor.chain().focus().toggleBulletList().run()} name='bulletList'>
           format_list_bulleted
-        </span>
-        <span
-          onClick={() => editor.chain().focus().toggleOrderedList().run()}
-          className={clsx(editor.isActive('orderedList') ? 'is-active' : '')}
-        >
+        </Icon>
+        <Icon editor={editor} action={() => editor.chain().focus().toggleOrderedList().run()} name='orderedList'>
           format_list_numbered
-        </span>
-        <span
-          onClick={() => editor.chain().focus().toggleCodeBlock().run()}
-          className={clsx(editor.isActive('codeBlock') ? 'is-active' : '')}
-        >
+        </Icon>
+        <Icon editor={editor} action={() => editor.chain().focus().toggleCodeBlock().run()} name='codeBlock'>
           code
-        </span>
-        <span
-          onClick={() => editor.chain().focus().toggleBlockquote().run()}
-          className={clsx(editor.isActive('blockquote') ? 'is-active' : '')}
-        >
+        </Icon>
+        <Icon editor={editor} action={() => editor.chain().focus().toggleBlockquote().run()} name='blockquote'>
           format_quote
-        </span>
+        </Icon>
       </div>
       <div className={styles.elements}>
-        <span
-          onClick={() => editor.chain().focus().setHorizontalRule().run()}
-        >
+        <Icon editor={editor} action={() => editor.chain().focus().setHorizontalRule().run()}>
           horizontal_rule
-        </span>
-        <span
-          onClick={() => editor.chain().focus().setHardBreak().run()}
-        >
+        </Icon>
+        <Icon editor={editor} action={() => editor.chain().focus().setHardBreak().run()}>
           keyboard_return
-        </span>
+        </Icon>
       </div>
       <div className={styles.actions}>
-        <span
-          onClick={() => editor.chain().focus().unsetAllMarks().clearNodes().run()}
-        >
+        <Icon editor={editor} action={() => editor.chain().focus().unsetAllMarks().clearNodes().run()}>
           format_clear
-        </span>
+        </Icon>
       </div>
     </div>
   )
