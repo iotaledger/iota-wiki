@@ -1,0 +1,15 @@
+.menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  color: var(--ifm-color-gray-200);
+  background-color: var(--ifm-color-gray-900);
+}
+
+.menu > span {
+  display: inline-block;
+  cursor: pointer;
+  padding: 0.5rem;
+  margin: 0.5rem;
+}
