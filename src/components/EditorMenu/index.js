@@ -5,6 +5,13 @@ import styles from './styles.module.css'
 
 const headingLevels = [1, 2, 3, 4, 5, 6]
 
+const Group = ({className, children}) => {
+  return (
+    <div className={clsx(styles.group, className)}>
+      {children}
+    </div>
+  )
+}
 
 const Icon = (args) => {
   return (
@@ -57,15 +64,15 @@ export default function EditorMenu({ editor, className }) {
 
   return (
     <div className={clsx(className, styles.menu, 'material-icons')}>
-      <div className={styles.history}>
+      <Group>
         <Icon editor={editor} action={() => editor.chain().focus().undo().run()}>
           undo
         </Icon>
         <Icon editor={editor} action={() => editor.chain().focus().redo().run()}>
           redo
         </Icon>
-      </div>
-      <div className={styles.style}>
+      </Group>
+      <Group>
         <select value={checkFontStyle()} onChange={changeFontStyle}>
           <option hidden disabled value=''></option>
           <option value="paragraph">Normal text</option>
@@ -73,8 +80,8 @@ export default function EditorMenu({ editor, className }) {
             return <option key={level} value={level}>{`Heading ${level}`}</option>
           })}
         </select>
-      </div>
-      <div className={styles.format}>
+      </Group>
+      <Group>
         <Icon editor={editor} action={() => editor.chain().focus().toggleBold().run()} name='bold'>
           format_bold
         </Icon>
@@ -84,8 +91,8 @@ export default function EditorMenu({ editor, className }) {
         <Icon editor={editor} action={() => editor.chain().focus().toggleCode().run()} name='code'>
           code
         </Icon>
-      </div>
-      <div className={styles.layout}>
+      </Group>
+      <Group>
         <Icon editor={editor} action={() => editor.chain().focus().toggleBulletList().run()} name='bulletList'>
           format_list_bulleted
         </Icon>
@@ -98,20 +105,20 @@ export default function EditorMenu({ editor, className }) {
         <Icon editor={editor} action={() => editor.chain().focus().toggleBlockquote().run()} name='blockquote'>
           format_quote
         </Icon>
-      </div>
-      <div className={styles.elements}>
+      </Group>
+      <Group>
         <Icon editor={editor} action={() => editor.chain().focus().setHorizontalRule().run()}>
           horizontal_rule
         </Icon>
         <Icon editor={editor} action={() => editor.chain().focus().setHardBreak().run()}>
           keyboard_return
         </Icon>
-      </div>
-      <div className={styles.actions}>
+      </Group>
+      <Group>
         <Icon editor={editor} action={() => editor.chain().focus().unsetAllMarks().clearNodes().run()}>
           format_clear
         </Icon>
-      </div>
+      </Group>
     </div>
   )
 }
