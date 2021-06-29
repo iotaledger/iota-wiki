@@ -1,8 +1,40 @@
-import React from 'react'
+import React, { useState } from 'react'
 import clsx from 'clsx'
 import styles from './styles.module.css'
 
+
+const headingLevels = [1, 2, 3, 4, 5, 6]
+
 export default function EditorMenu({ editor, className }) {
+  const changeFontStyle = (event) => {
+    event.preventDefault()
+
+    const value = event.target.value
+    if (value == 'paragraph') {
+      editor.chain().focus().setParagraph().run()
+    } else {
+      let level = parseInt(value)
+      if (headingLevels.includes(level)) {
+        editor.chain().focus().toggleHeading({ level: level }).run()
+      }
+    }
+  }
+
+  const checkFontStyle = () => {
+    let active = []
+
+    if (editor.isActive('paragraph')) {
+      active.push('paragraph')
+    }
+    for (const level of headingLevels) {
+      if (editor.isActive('heading', { level: level })) {
+        active.push(level.toString())
+      }
+    }
+
+    return active.length == 1 ? active[0] : ''
+  }
+
   if (!editor) {
     return null
   }
@@ -21,48 +53,17 @@ export default function EditorMenu({ editor, className }) {
       >
         redo
       </span>
-      <span
-        onClick={() => editor.chain().focus().setParagraph().run()}
-        className={clsx('material-icons', editor.isActive('paragraph') ? 'is-active' : '')}
-      >
-        segment
-      </span>
-      <span
-        onClick={() => editor.chain().focus().toggleHeading({ level: 1 }).run()}
-        className={clsx(editor.isActive('heading', { level: 1 }) ? 'is-active' : '')}
-      >
-        h1
-      </span>
-      <span
-        onClick={() => editor.chain().focus().toggleHeading({ level: 2 }).run()}
-        className={clsx(editor.isActive('heading', { level: 2 }) ? 'is-active' : '')}
-      >
-        h2
-      </span>
-      <span
-        onClick={() => editor.chain().focus().toggleHeading({ level: 3 }).run()}
-        className={clsx(editor.isActive('heading', { level: 3 }) ? 'is-active' : '')}
-      >
-        h3
-      </span>
-      <span
-        onClick={() => editor.chain().focus().toggleHeading({ level: 4 }).run()}
-        className={clsx(editor.isActive('heading', { level: 4 }) ? 'is-active' : '')}
-      >
-        h4
-      </span>
-      <span
-        onClick={() => editor.chain().focus().toggleHeading({ level: 5 }).run()}
-        className={clsx(editor.isActive('heading', { level: 5 }) ? 'is-active' : '')}
-      >
-        h5
-      </span>
-      <span
-        onClick={() => editor.chain().focus().toggleHeading({ level: 6 }).run()}
-        className={clsx(editor.isActive('heading', { level: 6 }) ? 'is-active' : '')}
-      >
-        h6
-      </span>
+      <select
+        value={checkFontStyle()}
+        onChange={changeFontStyle}>
+        <option hidden disabled selected value=''></option>
+        <option value="paragraph">Normal text</option>
+        {
+          headingLevels.map((level) => {
+            return <option key={level} value={level.toString()}>{`Heading ${level}`}</option>
+          })
+        }
+      </select>
       <span
         onClick={() => editor.chain().focus().setHorizontalRule().run()}
         className='material-icons'
