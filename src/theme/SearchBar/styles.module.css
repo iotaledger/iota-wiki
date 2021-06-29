@@ -46,10 +46,6 @@
   z-index: 100;
 }
 
-:global([data-theme='dark'] .wiki-search) {
-  color: #B0BFD9;
-}
-
 :global(.wiki-search-opened) {
   position: absolute;
   width: 100%;
