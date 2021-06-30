@@ -28,6 +28,35 @@
   color: var(--ifm-color-emphasis-500);
 }
 
+.closeIcon {
+  display: none;
+  font-size: 1.25rem;
+  color: var(--ifm-color-emphasis-500);
+  opacity: 0;
+  cursor: pointer;
+}
+
+:global(.enter) .closeIcon {
+  display: unset;
+}
+
+:global(.enter-active) .closeIcon {
+  transition: all 300ms ease-in-out;
+  opacity: 1;
+}
+
+:global(.enter-done) .closeIcon,
+:global(.exit) .closeIcon {
+  display: unset;
+  opacity: 1;
+}
+
+:global(.exit-active) .closeIcon {
+  transition: all 300ms ease-in-out;
+  opacity: 0;
+}
+
+
 .searchBar {
   display: flex;
   justify-content: center;

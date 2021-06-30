@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import clsx from 'clsx';
 import { CSSTransition } from 'react-transition-group'
 import {useThemeConfig} from '@docusaurus/theme-common';
@@ -14,6 +14,7 @@ const SearchBar = () => {
   const container = React.useRef(null)
   const search = React.useRef(null)
   const [active, setActive] = React.useState(false)
+  const [query, setQuery] = React.useState('')
 
   const duration = 300;
 
@@ -75,6 +76,10 @@ const SearchBar = () => {
     document.body.style.overflow = 'visible'
   }
 
+  useEffect(() => {
+    setActive(!!query)
+  }, [query])
+
   return (
     <div ref={container}>
       <CSSTransition
@@ -93,9 +98,16 @@ const SearchBar = () => {
               className={styles.searchBarInput}
               type='text'
               placeholder='Search'
-              onFocus={() => setActive(true)}
-              onBlur={() => setActive(false)}
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
             />
+            <span
+              className={clsx(styles.closeIcon, 'margin--sm')}
+              style={closeIconStyle}
+              onClick={(e) => setQuery('')}
+            >
+              {closeIcon}
+            </span>
           </div>
         </div>
       </CSSTransition>
