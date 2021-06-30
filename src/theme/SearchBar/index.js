@@ -1,22 +1,22 @@
-import React, { useEffect } from 'react';
-import clsx from 'clsx';
+import React, { useEffect } from 'react'
+import clsx from 'clsx'
 import { CSSTransition } from 'react-transition-group'
-import {useThemeConfig} from '@docusaurus/theme-common';
-import styles from './styles.module.css';
+import {useThemeConfig} from '@docusaurus/theme-common'
+import styles from './styles.module.css'
 
 const SearchBar = () => {
   const {
     searchMode: {
       switchConfig: {closeIcon, closeIconStyle, searchIcon, searchIconStyle},
     },
-  } = useThemeConfig();
+  } = useThemeConfig()
 
   const container = React.useRef(null)
   const search = React.useRef(null)
   const [active, setActive] = React.useState(false)
   const [query, setQuery] = React.useState('')
 
-  const duration = 300;
+  const duration = 300
 
   const onEnter = () => {
     let searchStyle = search.current.style
@@ -104,7 +104,7 @@ const SearchBar = () => {
             <span
               className={clsx(styles.closeIcon, 'margin--sm')}
               style={closeIconStyle}
-              onClick={(e) => setQuery('')}
+              onClick={() => setQuery('')}
             >
               {closeIcon}
             </span>
