@@ -1,13 +1,15 @@
 import React from 'react'
 import { useEditor, EditorContent } from '@tiptap/react'
+import clsx from 'clsx'
 import StarterKit from '@tiptap/starter-kit'
-import EditorMenu from './EditorMenu'
+import EditorMenu from '../EditorMenu'
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext'
 import unified from 'unified'
 import markdown from 'remark-parse'
 import frontmatter from 'remark-frontmatter'
 import remark2rehype from 'remark-rehype'
 import stringify from 'rehype-stringify'
+import styles from './styles.module.css'
 
 export default function Editor() {
   const {
@@ -21,6 +23,7 @@ export default function Editor() {
     extensions: [
       StarterKit,
     ],
+    autofocus: 'start',
     onBeforeCreate: async ({ editor }) => {
       let parameters = new URLSearchParams(window.location.search)
       let path = parameters.get("path")
@@ -37,7 +40,7 @@ export default function Editor() {
           .use(stringify)
           .process(text, function (err, file) {
             if (err) throw err
-            editor.commands.setContent(String(file))
+            editor.chain().setContent(String(file)).focus('start').run()
           })
       } else {
         console.log(`Path does not exist: ${path ?? '/'}`)
@@ -46,9 +49,9 @@ export default function Editor() {
   })
 
   return (
-    <div>
+    <div className={clsx(styles.editor)}>
       <EditorMenu editor={editor} />
-      <EditorContent editor={editor} className='padding--lg '/>
+      <EditorContent editor={editor} className={clsx(styles.content, 'padding-vert--lg padding-horiz--xl')}/>
     </div>
   )
 }
