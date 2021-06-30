@@ -33,6 +33,8 @@ const SearchBar = () => {
 
     containerStyle.width = width + 'px'
     containerStyle.height = height + 'px'
+
+    document.body.style.overflow = 'hidden'
   }
 
   const onEntering = () => {
@@ -69,6 +71,8 @@ const SearchBar = () => {
 
     containerStyle.width = null
     containerStyle.height = null
+
+    document.body.style.overflow = 'visible'
   }
 
   return (

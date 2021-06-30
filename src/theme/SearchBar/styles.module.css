@@ -32,14 +32,14 @@
   display: flex;
   justify-content: center;
   align-items: stretch;
-  background-color: var(--ifm-color-emphasis-300);
+  background-color: rgba(0, 0, 0, 0.05);
   border-radius: var(--ifm-global-radius);
   margin: 0;
   width: 100%;
 }
 
 [data-theme='dark'] .searchBar {
-  background-color: var(--ifm-color-emphasis-300);
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 :global(.enter-active) .searchBar {
