@@ -60,4 +60,3 @@ All users maintaining a node in the new or the legacy network can upgrade their 
 ## Useful Links
 - **[chrysalis.iota.org](https://chrysalis.iota.org/)** - Official Chrysalis Status Page
 - **[blog.iota.org/iota-chrysalis-a-new-dawn](https://blog.iota.org/iota-chrysalis-a-new-dawn/)** - Blog post Announcement to Chrysalis
-- **[iota-beginners-guide.com/future-of-iota/iota-1-5-chrysalis](https://iota-beginners-guide.com/future-of-iota/iota-1-5-chrysalis/)** - Private website with lots of information about iota 
