@@ -6,7 +6,7 @@ description: A major use-case for the IOTA Technology is Data Transfer. Learn ho
 
 # Data Transfer
 
-IOTA is the only Cryptocurrency and DLT Technology is capable of transferring Data free, fast, immutable, unforgeable, and secure. 
+IOTA is the only Cryptocurrency and DLT Technology that is capable of transferring Data free, fast, immutable, unforgeable, and secure. 
 It is therefore equipped with unique features that are more important than pure value transfer. 
 
 **Data is the new oil.**
