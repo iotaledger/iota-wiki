@@ -47,7 +47,7 @@ A more detailed description of this process on the protocol level can be found h
 
 ## Sending a message in IOTA
 
-Messages are created by so-called clients. This can be an IOTA wallet or any other application that is able to generate IOTA messages. The client sends those messages to IOTA nodes in order to process them.
+Messages are created by so-called clients. This can be an IOTA wallet or any other application that is able to generate IOTA messages. The client sends those messages to an IOTA node in order to process them.
 
 To make sure that a message is valid and a node knows what to do with the message, the message label created by a client must provide several pieces of informations for the node to be allowed to be processed and to enter the network.
 
@@ -59,11 +59,11 @@ The message ID is created as a unique cryptographic hash out of the bites contai
 
 **Network ID**
 
-An identification into which IOTA network the message belongs (Mainnet / Testnet / private Network) - Nodes will only accept messages that identify themself as belonging to the network the node belongs to.
+An identification in which IOTA network the message belongs (Mainnet / Testnet / private Network) - Nodes will only accept messages that identify themself as belonging to the network the node belongs to.
 
 **Parents length and Parents ID**
 
-The amount and the identifier of those messages are referenced by this new message. To build up the graph structure of the Tangle every new message in the Tangle must reference 2 - 8 previous messages. The node selects those two messages and sends the id's to the client and the client must include this information into the message "label"
+The amount and the identifier of the messages which are referenced by the new message. To build up the graph structure of the Tangle every new message in the Tangle must reference 2 - 8 previous messages. The node selects those two messages and sends the id's to the client and the client must include this information into the message "label"
 
 **Payload length**
 
