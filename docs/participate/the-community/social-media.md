@@ -25,9 +25,6 @@ The engineering Team of the IOTA Foundation also runs its own Twitter account fo
 
 [IOTA Engineering](https://twitter.com/iota_dev)
 
-And the IOTA Experience Team where community members work together with the IOTA Foundation publishes Updates on this Account:
-
-[IOTA Experience Teams](https://twitter.com/IOTAXTeams)
 
 Please follow and share
 
