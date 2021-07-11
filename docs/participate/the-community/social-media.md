@@ -1,34 +1,73 @@
 ---
 title: Social Media
-description: IOTA has a threiving and active community on all popular social media applications. Find the IOTA community on your prefered medium.
+description: IOTA has a threiving and active community on all popular social media applications. Find the IOTA Foundation and the community here.
 ---
 
 
-# Heading 1 (Page Title)
+# IOTA Social Media
 
-content - introduction to the topic
+The IOTA project has established a social media presence on all popular social media channels. These are the presences handled by the IOTA Foundation:
+
+## Discord
+
+This is without doubt the most active community and with nearly 50.000 members a great place for everyone that wants to learn more about IOTA and get to know the people involved. A lot of IOTA Foundation Team members and also the Founders and members of the Board are active on Discord and take part in the community discussions and projects there. Every aspect of the project is covered here in separate channels and you can find the whole range of this amazing community from serious mathematics and cryptographic topic up to memes and Fun channels. 
+Please join us there and get to know the amazing community behind the project by following this invite Link:
+[IOTA Discord](https://discord.iota.org)
+ 
+
+## Twitter
+
+The official IOTA Foundation Twitter Account is this one here, which will provide the newest developments, announcements, and information regarding the IOTA Project:
+
+[IOTA Foundation Twitter](https://twitter.com/iota)
+
+The engineering Team of the IOTA Foundation also runs its own Twitter account for Technologie updates:
+
+[IOTA Engineering](https://twitter.com/iota_dev)
+
+And the IOTA Experience Team where community members work together with the IOTA Foundation publishes Updates on this Account:
+
+[IOTA Experience Teams](https://twitter.com/IOTAXTeams)
+
+Please follow and share
+
+## YouTube
+
+IOTA Foundation has produced a big amount of excellent content to explain and inform interested users about the IOTA Technology. Also regularly Live Streams happen to different topics at the following YouTube channel:
+
+[IOTA Foundation](https://www.youtube.com/c/iotafoundation)
+
+We hope you enjoy the content and subscribe.
+
+## Reddit
+
+The IOTA community on Reddit meets in its own subreddit to discuss everything related to the project:
+
+[IOTA Subreddit](https://www.reddit.com/r/Iota/)
+
+## Stack Exchange
+
+IOTA runs a Forum on Stack Exchange - get into the discussion and find answers to your questions:
+
+[IOTA Stack Exchange](https://iota.stackexchange.com/)
 
 
-## Heading 2 (Sub topic 1)
+## Instagram
 
-content 
+Follow the IOTA Foundation on Instagram on the official account:
 
-## Heading 2 (Sub topic 2)
+[IOTA Instagram](https://www.instagram.com/iotafoundation)
 
-content
+## Linkedin
+
+The company account of IOTA Foundation can be found here. See recent job postings and engage on business level:
+
+[IOTA Foundation Linkedin](https://www.linkedin.com/company/iotafoundation/)
 
 
+## Security Disclaimer
 
-<br/>
+Please be always cautious on Social Media. Only the sites linked here are officially supported channels and  should be used to engage with the IOTA Foundation. A lot of scammers on social media will declare to be official representatives of the project, but we advise you to be very cautious. 
 
-----
-
-<br/>
-
-**need to add a footer section for further content - (three cards)**
-
-## Useful Links
-- **[a link](https://linkgoes.here)** - A description for the link
-- **[a link](https://linkgoes.here)** - A description for the link
-- **[a link](https://linkgoes.here)** - A description for the link
+No employee of the IOTA Foundation will ever actively approach you in private messages. Never share personal and private secret information like passwords or your IOTA Seed with anyone on social media. The IOTA Foundation members and moderators of those social media channels will never ask you for this information. Sadly impersonators cannot be detected directly, so we ask you to report suspicious contacts and approaches to the moderators/admins of the sites so that these accounts can be banned.
 
