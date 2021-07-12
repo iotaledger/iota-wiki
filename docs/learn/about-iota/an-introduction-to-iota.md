@@ -5,19 +5,52 @@ description: A basic introduction to the IOTA DLT Technology. The use-cases and 
 ---
 
 
-# Heading 1 (Page Title)
+# An Introduction to IOTA
 
-content - introduction to the topic
+This is a demonstration of how you put informaiton into a page using Github.
 
+## This is a Sub-Category
 
-## Heading 2 (Sub topic 1)
+### feature header
 
-content 
+And some information
+
+### Feature Header
+
+And some information
 
 ## Heading 2 (Sub topic 2)
 
-content
+*italic*
 
+**bold**
+
+***bold and italic***
+
+~~strike through~~
+
+- list item 
+- list item
+- list item
+
+1. item 1
+2. item 2
+3. item 3
+
+
+ >To add a quoted or embedded text, we use the greater than symbol at the start of the section. To close off a quote we create a new paragraph.
+
+ `inline code` 
+ 
+ ```Code blocks can be added in page where required
+either to demonstrate function, 
+or to add exclamation to a section,
+by wrapping the section with treble backticks 
+```
+ 
+ [the link text here](https://www.website.com)
+ 
+ ![image text](https://www.image.url)
 
 
 <br/>
