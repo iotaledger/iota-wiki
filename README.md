@@ -57,6 +57,14 @@
 
 
 
+<!-- MENU STRUCTURE - CONTENT CREATION IN PROGRESS -->
+## Menu Structure - Content creation in progress
+
+Please feel free to contribute to any of the available pages. This is the current state of progress:
+
+![image](https://user-images.githubusercontent.com/77154511/125544823-3ae9ebf4-3691-41ae-b24a-fba36cb5921d.png)
+
+
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
