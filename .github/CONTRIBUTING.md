@@ -120,7 +120,68 @@ If he maintainer approves the PR, it will be merged.
 <summary>Write Content ✏️:</summary>
 <br>
    
+   
+# Contribute to the Iota-Wiki Content
+
+This document describes how to contribute and add content to the IOTA wiki.
+
+We encourage everyone with knowledge of IOTA technology to share this knowledge with the community and help so help new people to get a better understanding and help the onboarding of new users.
+
+Thanks! :heart:
+
+
+
+<br>
+
+   
+## Content strategy
+
+The general menu structure of the WIKI website can be found in the readme file and is currently this:
+   
+   ![image](https://user-images.githubusercontent.com/77154511/126027961-ea8b46fb-a777-44d8-bcd6-55692948a69b.png)
+
+
+
+We want every contributor to understand the purpose of the Wiki and our way of delivering content. 
+
+We want the Wiki to be the one single reference and source of truth and up-to-date information for everyone that needs information about the IOTA project. And the Wiki is meant as a gateway to provide everyone quick access to all information regarding IOTA.
+
+We aim to deliver basic introduction content on the pages and whenever possible link the reader to more detailed content provided by the IOTA Foundation (Blog posts / Websites / Guides / Docs / Github). So you don't need to write an in-depth explanation about Mana for the Wiki if there is already very good up-to-date information available to where we can provide a link. So we would more give a general introduction to Mana in the Wiki and leave the detailed explanation in the Links.
+
+But if you feel that the available information is insufficient, outdated, or too complex to understand for normal users we are happy about detailed understandable content about a topic. As IOTA has been moving fast forward this might the the situation for in many fields of the project atm.
+
+We decided to split the WIKI into 4 major thematic areas that focus on the user/reader and the needs of those who visit the Wiki and we aim to deliver tailored content for that user group.
+
+## Learn
+
+The Learn section aims to describe most of IOTAs core functions and technology. Content should be explained in an understandable manner for normal random users that have no, or just a small knowledge about IOTA. We want to welcome interested people and show them the way into understanding IOTA and get fascinated about it. Perfect would be if we could provide also links to external sources that deliver further detailed content in different levels of complexity. Also welcome to link to an IF YouTube video.
+
+As we know the protocol has changed a lot and quickly we might not find up-to-date information, so we will write it ourselves.
+
+## Use
+
+Content for people that may be looking to use IOTA in their project / Company / Industry. Showcase of all the possibilities the protocol delivers, the several technologies developed for use cases. Explain and provide useful links to lead the reader into the project.
+
+
+## Participate
+
+How can someone become active in the project? Where to interact with the community, how to engage with others or the technologies, and get a hands-on experience with IOTA.
+
+Collect general info and link to Guides / POC's / Showcases / IF community sites. Create an interresting how to explanation... everything that catches users on the "oh yeah i wanna do this" - sense.
+
+## Develop
+
+The gateway for Developers. Introduces the core functionalities on a more technical level and aims to bring developers directly into the correct framework for them to start working with IOTA. Also, deliver guides and Tools that help getting started and to understand the concepts behind the protocol. This section will directly link to the underliying IOTA Docs and GitHubs, so please provide correct links to the specific content in the IOTA Docs.
+   
 ## Adding content
+
+To add content to a page you can use the implemented in-page-editor. This will make it easy to use and you can write content with the known tools simmilar as in a word or google doc. The editor translates this into a **`markdown`** file and creates an Pull Request to add this content into our GitHub Repository. We will check those Pull Requests and will approve it to be added, or will contact you if we have some suggestions to optimize the article or request changes.
+
+Our aim is not perfections from everyone - it is a community driven project, but we may have to change some things as we aim for a simmilar language and style throughout the whole website. This should give the readers a feeeling that it is coming out of one source. So we will contact you on your Github account or comment directly in the Pull Request.
+
+You can also create content directly in Github by forking the **`develop`** branch and start editing the pages you wish to contribute. The Page documents will be found under https://github.com/iota-community/iota-wiki/tree/develop/docs 
+   
+   
 
 To edit a document, click the pencil (edit this file) in the top right corner when viewing in github.
 
