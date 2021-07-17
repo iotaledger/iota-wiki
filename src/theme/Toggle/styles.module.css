@@ -53,7 +53,8 @@
 }
 
 :global([data-theme='dark'] .react-toggle-track) {
-  background-color: rgba(0, 0, 0, 0.5);
+  color: #B0BFD9;
+  background-color: #293858;
 }
 
 :global(.react-toggle-track-check) {
