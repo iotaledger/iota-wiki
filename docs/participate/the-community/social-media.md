@@ -21,7 +21,7 @@ The official IOTA Foundation Twitter Account is this one here, which will provid
 
 [IOTA Foundation Twitter](https://twitter.com/iota)
 
-The engineering Team of the IOTA Foundation also runs its own Twitter account for Technologie updates:
+The engineering Team of the IOTA Foundation shares updates and reports their progress in an own Twitter account:
 
 [IOTA Engineering](https://twitter.com/iota_dev)
 
