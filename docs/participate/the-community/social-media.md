@@ -59,7 +59,7 @@ Follow the IOTA Foundation on Instagram on the official account:
 
 The company account of IOTA Foundation can be found here. See recent job postings and engage on business level:
 
-[IOTA Foundation Linkedin](https://www.linkedin.com/company/iotafoundation/)
+[IOTA Foundation LinkedIn](https://www.linkedin.com/company/iotafoundation/)
 
 
 ## Security Disclaimer
