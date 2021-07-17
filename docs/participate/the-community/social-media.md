@@ -38,7 +38,7 @@ We hope you enjoy the content and subscribe.
 
 ## Reddit
 
-The IOTA community on Reddit meets in its own subreddit to discuss everything related to the project:
+The IOTA community on Reddit meets in its own Subreddit to discuss everything related to the project:
 
 [IOTA Subreddit](https://www.reddit.com/r/Iota/)
 
