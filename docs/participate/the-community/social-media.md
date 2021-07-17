@@ -1,6 +1,6 @@
 ---
 title: Social Media
-description: IOTA has a threiving and active community on all popular social media applications. Find the IOTA Foundation and the community here.
+description: IOTA has a thriving and active community on all popular social media applications. Find the IOTA Foundation and the community here.
 ---
 
 
@@ -67,4 +67,3 @@ The company account of IOTA Foundation can be found here. See recent job posting
 Please be always cautious on Social Media. Only the sites linked here are officially supported channels and  should be used to engage with the IOTA Foundation. A lot of scammers on social media will declare to be official representatives of the project, but we advise you to be very cautious. 
 
 No employee of the IOTA Foundation will ever actively approach you in private messages. Never share personal and private secret information like passwords or your IOTA Seed with anyone on social media. The IOTA Foundation members and moderators of those social media channels will never ask you for this information. Sadly impersonators cannot be detected directly, so we ask you to report suspicious contacts and approaches to the moderators/admins of the sites so that these accounts can be banned.
-
