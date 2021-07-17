@@ -12,7 +12,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <a href="https://v2202102141633143571.bestsrv.de/">
+  <a href="https://iota-community.github.io/iota-wiki">
     <img src="static/img/logo.svg" alt="Logo" width="80" height="80">
   </a>
 
@@ -21,7 +21,7 @@
   <p align="center">
     Everything you need to know about IOTA in one place.
     <br />
-    <a href="https://v2202102141633143571.bestsrv.de/"><strong>Explore the Wiki »</strong></a>
+    <a href="https://iota-community.github.io/iota-wiki"><strong>Explore the Wiki »</strong></a>
     <br />
     <br />
     <a href="https://github.com/iota-community/iota-wiki/issues">Report Error</a>
@@ -83,7 +83,7 @@ Install [Node.js](https://nodejs.org/en/download/).
 
 ### Local Development
 
-1. Run `npx docusaurus start` in your terminal
+1. Run `yarn install` and `npx docusaurus start` in your terminal
 2. Open `http://localhost:3000`
 
 <!-- CONTRIBUTING -->
