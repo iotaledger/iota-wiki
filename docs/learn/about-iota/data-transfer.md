@@ -11,7 +11,7 @@ These unique feautures open up a wide array of use cases that normal cryptocurre
 
 The economies of the future will rely on access to Data and on ways to monetize this Data. IOTA offers the solutions in its core protocol to transform societies worldwide into Data Economies.
 
-In IOTA, Nodes send and receive messages (data objects). These messages can contain value - in form of an IOTA token transaction - but they don't need to. 
+In IOTA, Nodes send and receive messages (data objects). There are several types of messages, like transaction messages which transfer value and optionally data, but also data only messages which enable free data transfer. 
 Messages in IOTA can carry any kind of other Data through the Directed Acyclic Graph that we call the Tangle towards other nodes. This enables the decentralized transport of Data and Value in a single message with the highest grade of security and the total absence of fees. 
 
 Applications can use IOTA as a currency and as a transport protocol for Information and therefore have one solution to handle both aspects with one technology.
@@ -193,4 +193,3 @@ The way a **value transaction** works is that the receiver of the payment will b
 ----
 
 <br/>
-
