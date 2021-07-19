@@ -62,7 +62,8 @@
 
 Please feel free to contribute to any of the available pages. This is the current state of progress:
 
-![image](https://user-images.githubusercontent.com/77154511/125544823-3ae9ebf4-3691-41ae-b24a-fba36cb5921d.png)
+![image](https://user-images.githubusercontent.com/77154511/126053406-51a270c9-bbcb-4e98-a850-97a9ec267a3e.png)
+
 
 
 <!-- ABOUT THE PROJECT -->
