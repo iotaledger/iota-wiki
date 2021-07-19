@@ -153,7 +153,7 @@ The Addresses belonging to you are highlighted with the name of your wallet in b
 
 - Amount of IOTA sent and current value in chosen Profile currency
 
-- [ ] **2 different charts** 
+**2 different charts** 
 
 - **Wallet Value** and **Wallet activity** also provide a graphic overview of the activities in this wallet.
 Also, you have will find **3 little dots** next to the Wallet balance. 
