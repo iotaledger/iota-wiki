@@ -116,7 +116,27 @@ Here Users see the Balance contained in this specific Wallet and have the option
 
 Next to the send and receive section an overview of all the transactions related to this specific wallet is shown.
 Little Icons indicate if a send or receive transaction was done internal (to another Wallet of the same Profile) or external.
-Clicking on one of the transactions opens the...
+
+Also, you have will find **3 little dots** next to the Wallet balance. 
+
+**Clicking on those dots opens a popup menu.**
+
+- <img src="https://user-images.githubusercontent.com/77154511/126114811-d792208d-8d76-47d8-b1c3-0cff5cdc6a54.png" width="400" height="600"/>
+
+- **In this popup menu you can enter the functions:**
+
+- [ ] **Customize Wallet** 
+
+- Possibility to change the Wallet name.
+
+- [ ] **View address history**
+
+- A list of all addresses that have been used by this wallet and the balance that sits currently on this address. You can copy this list and paste it into your documents.
+
+- [ ] **Hide Wallet**
+
+- Empty Wallets can be hidden to keep your Main Wallet overview organized. If a wallet still contains funds you will not be able to hide it by clicking this option but will be offered to transfer the funds to another Wallet and hide the Wallet afterward. A hidden Wallet can be shown again by enabling the function "show hidden wallets" in the advanced account settings.
+
 
 #### Transaction detail view.
 
@@ -153,28 +173,11 @@ The Addresses belonging to you are highlighted with the name of your wallet in b
 
 - Amount of IOTA sent and current value in chosen Profile currency
 
-**2 different charts** 
+
+#### 2 different charts
 
 - **Wallet Value** and **Wallet activity** also provide a graphic overview of the activities in this wallet.
-Also, you have will find **3 little dots** next to the Wallet balance. 
 
-**Clicking on those dots opens a popup menu.**
-
-- <img src="https://user-images.githubusercontent.com/77154511/126114811-d792208d-8d76-47d8-b1c3-0cff5cdc6a54.png" width="400" height="600"/>
-
-- **In this popup menu you can enter the functions:**
-
-- [ ] **Customize Wallet** 
-
-- Possibility to change the Wallet name.
-
-- [ ] **View address history**
-
-- A list of all addresses that have been used by this wallet and the balance that sits currently on this address. You can copy this list and paste it into your documents.
-
-- [ ] **Hide Wallet**
-
-- Empty Wallets can be hidden to keep your Main Wallet overview organized. If a wallet still contains funds you will not be able to hide it by clicking this option but will be offered to transfer the funds to another Wallet and hide the Wallet afterward. A hidden Wallet can be shown again by enabling the function "show hidden wallets" in the advanced account settings.
 
 
 ### Send and Receive Transactions
