@@ -180,7 +180,7 @@ As you may have recognized, a message in the IOTA network does not need a specif
 
 A **Data message** that is defined as an indexation Payload can be easily found by everyone that knows the index of that message, so if you just want to send an arbitrary message or Data that does not contain sensitive information you just need to tell the receiver which index you are using and he can observe the network for all messages containing this index using an explorer.
 
-The way a **value transaction** works is that the receiver of the payment will be specified in the "transaction payload" field of the message and only then it will be delivered to the specified IOTA address that is stated in the signed payload. Read more about how sending value transactions in IOTA works here:
+The way a **value transaction** works is that the receiver of the payment - an IOTA address - will be specified in the "signed transaction payload" field of the message then only then only the owner of that specific address can use the contained funds by unlocking them with the private key that belongs to that receiving address. Read more about how sending value transactions in IOTA works here: <link>
 
 
 
