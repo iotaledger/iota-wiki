@@ -37,7 +37,8 @@ Thus if you want to run a Mainnet-node you can chose between `Bee` and `Hornet`
 
 There are different approaches to install and start IOTA nodes. The most common ones are as follows:
 
-- Download pre-compiled binary files and start the node (Easy to start with but might require more steps later on for configuration)
+- Install the software via APT as in `apt install xyz` (Easiest approach, but not available for all node software variants)
+- Download pre-compiled binary files and start the node (Easy to start with but might require more steps later on for configuration. Good for learning the linux basics.)
 - Rund the node-software as a docker-container (Easy for users who know docker)
 - Clone the corresponding git repository, build the software yourself and start the node (Slightly more complex, might require intense copy-pasting of commands from guides ;))
 
