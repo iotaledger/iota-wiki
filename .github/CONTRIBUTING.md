@@ -168,7 +168,7 @@ Content for people that may be looking to use IOTA in their project / Company / 
 
 How can someone become active in the project? Where to interact with the community, how to engage with others or the technologies, and get a hands-on experience with IOTA.
 
-Collect general info and link to Guides / POC's / Showcases / IF community sites. Create an interesting "how-to" explanation... everything that invites users: "oh yeah I wanna do this"!
+Collect general info and link to Guides / POC's / Showcases / IF community sites. Create an interesting "how-to" explanation... everything that invites users: "oh yeah, I wanna do this"!
 
 ## Develop
 
