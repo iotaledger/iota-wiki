@@ -147,7 +147,7 @@ We want every contributor to understand the purpose of the Wiki and our way of d
 
 We want the Wiki to be the one single reference and source of truth and up-to-date information for everyone that needs information about the IOTA project. And the Wiki is meant as a gateway to provide everyone quick access to all information regarding IOTA.
 
-We aim to deliver basic introduction content on the pages and whenever possible link the reader to more detailed content provided by the IOTA Foundation (Blog posts / Websites / Guides / Docs / Github). So you don't need to write an in-depth explanation about Mana for the Wiki if there is already very good up-to-date information available to where we can provide a link. So we would more give a general introduction to Mana in the Wiki and leave the detailed explanation in the Links.
+We aim to deliver basic introduction content on the pages and whenever possible link the reader to more detailed content provided by the IOTA Foundation (Blog posts / Websites / Guides / Docs / GitHub). So you don't need to write an in-depth explanation about Mana for the Wiki if there is already very good up-to-date information available to where we can provide a link. So we would more give a general introduction to Mana in the Wiki and leave the detailed explanation in the Links.
 
 But if you feel that the available information is insufficient, outdated, or too complex to understand for normal users we are happy about detailed understandable content about a topic. As IOTA has been moving fast forward this might be the situation in many fields of the project atm.
 
