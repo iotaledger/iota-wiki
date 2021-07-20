@@ -211,4 +211,7 @@ module.exports = {
       },
     ],
   ],
+  plugins: [
+    "@jlvandenhout/docusaurus-plugin-search"
+  ]
 };
