@@ -375,7 +375,7 @@ https://github.com/iota-community/iota-wiki/projects
 
    **Linked Pull Requests**
    
-   As soon as you have opened a pull request for the content, link the issue to this pull request. When the Pull Request gets merged or closed it will automatically also close this issue.
+   As soon as you have opened a pull request for the content, link the issue to this pull request. When the Pull Request gets merged or closed, it will automatically also close this issue.
    
    ![image](https://user-images.githubusercontent.com/77154511/126052695-7b28f4c5-da09-4492-86e0-c5e4009862b0.png)
 
