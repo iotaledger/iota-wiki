@@ -363,7 +363,7 @@ https://github.com/iota-community/iota-wiki/projects
 
    **Projects**
    
-   Here you can assign an issue to a project. This should be already added if you habe followed the steps above by using the Project Kanban Board. But you can also manage it here.
+   Here you can assign an issue to a project. This should be already added if you have followed the steps above by using the Project Kanban Board. But you can also manage it here.
    
    ![image](https://user-images.githubusercontent.com/77154511/126052633-297926a3-911b-44a8-afb9-535875215297.png)
 
