@@ -143,7 +143,7 @@ The general menu structure of the WIKI website can be found in the README file a
 
 
 
-We want every contributor to understanding the purpose of the Wiki and our way of delivering content. 
+We want every contributor to understand the purpose of the Wiki and our way of delivering content. 
 
 We want the Wiki to be the one single reference and source of truth and up-to-date information for everyone that needs information about the IOTA project. And the Wiki is meant as a gateway to provide everyone quick access to all information regarding IOTA.
 
