@@ -178,7 +178,7 @@ The gateway for Developers. Introduces the core functionalities on a more techni
 
 To add content to a page, you can use the implemented in-page editor. This will make it easy to use and you can write content with the known tools, similar as in a word or google doc. The editor translates this into a **`markdown`** file and creates a Pull Request to add this content into our GitHub Repository. We will check those Pull Requests and will approve it to be added, or will contact you if we have some suggestions to optimize the article or request changes.
 
-We dont ask for perfection from everyone - it is a community-driven project and will grow and get better all the time, but we may have to change some things as we aim for a similar language and style throughout the whole website. This should give the readers the feeling that it is coming out of one source. So we will contact you on your Github account or comment directly in the Pull Request.
+We don't ask for perfection from everyone - it is a community-driven project and will grow and get better all the time, but we may have to change some things as we aim for a similar language and style throughout the whole website. This should give the readers the feeling that it is coming out of one source. So we will contact you on your GitHub account or comment directly in the Pull Request.
 
 You can also create content directly in Github by forking the **`develop`** branch and start editing the pages you wish to contribute. The Page documents will be found under https://github.com/iota-community/iota-wiki/tree/develop/docs 
    
