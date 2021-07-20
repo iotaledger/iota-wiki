@@ -345,7 +345,7 @@ https://github.com/iota-community/iota-wiki/projects
 
 ### Using issues to organize the Project Flow
    
-   Once you have converted your Project Board card into an open issue you can add some attributes to the issue that will structurize our workflow
+   Once you have converted your Project Board card into an open issue, you can add some attributes to the issue that will structure our workflow
    
    ![image](https://user-images.githubusercontent.com/77154511/126052539-960c80b6-9fb6-40c7-ad01-72ec068d176b.png)
    
