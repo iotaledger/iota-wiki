@@ -211,4 +211,19 @@ module.exports = {
       },
     ],
   ],
+  plugins: [
+    [
+      '@jlvandenhout/docusaurus-plugin-docs-editor',
+      {
+        // The path to the docs section in your repository
+        docsPath: 'example/docs',
+
+        // GitHub OAuth Application settings
+        github: {
+          clientId: '2c61ce1038155017711a',
+          tokenUri: 'http://localhost:9999/authenticate/'
+        }
+      }
+    ]
+  ]
 };

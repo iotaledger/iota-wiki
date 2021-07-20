@@ -16,17 +16,13 @@
   "dependencies": {
     "@docusaurus/core": "2.0.0-beta.0",
     "@docusaurus/preset-classic": "2.0.0-beta.0",
+    "@jlvandenhout/docusaurus-plugin-docs-editor": "jlvandenhout/docusaurus-plugin-docs-editor",
     "@mdx-js/react": "^1.6.21",
     "@svgr/webpack": "^5.5.0",
-    "@tiptap/react": "^2.0.0-beta.52",
-    "@tiptap/starter-kit": "^2.0.0-beta.81",
     "clsx": "^1.1.1",
     "file-loader": "^6.2.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
-    "rehype-stringify": "^8.0.0",
-    "remark-frontmatter": "2",
-    "remark-rehype": "^8.1.0",
     "url-loader": "^4.1.1"
   },
   "browserslist": {
