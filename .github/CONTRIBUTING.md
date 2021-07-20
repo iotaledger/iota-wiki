@@ -187,7 +187,7 @@ You can also create content directly in Github by forking the **`develop`** bran
 To edit a document, click the pencil (edit this file) in the top right corner when viewing in GitHub.
 
 
-   This will open up the Github editor so you can edit your file.
+   This will open up the GitHub editor, so you can edit your file.
 
 
    All pages are themed and styled automatically and follow a standardized format throughout the wiki.
