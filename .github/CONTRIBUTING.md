@@ -149,7 +149,7 @@ We want the Wiki to be the one single reference and source of truth and up-to-da
 
 We aim to deliver basic introduction content on the pages and whenever possible link the reader to more detailed content provided by the IOTA Foundation (Blog posts / Websites / Guides / Docs / GitHub). So you don't need to write an in-depth explanation about Mana for the Wiki if there is already very good up-to-date information available to where we can provide a link. So we would more give a general introduction to Mana in the Wiki and leave the detailed explanation in the Links.
 
-But if you feel that the available information is insufficient, outdated, or too complex to understand for normal users we are happy about detailed understandable content about a topic. As IOTA has been moving fast forward this might be the situation in many fields of the project atm.
+But if you feel that the available information is insufficient, outdated, or too complex to understand for normal users, we are happy about detailed understandable content about a topic. As IOTA has been moving fast forward this might be the situation in many fields of the project atm.
 
 We decided to split the WIKI into 4 major thematic areas that focus on the user/reader and the needs of those who visit the Wiki and we aim to deliver tailored content for that user group.
 
