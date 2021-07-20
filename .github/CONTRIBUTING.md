@@ -136,10 +136,9 @@ Thanks! :heart:
    
 ## Content strategy
 
-The general menu structure of the WIKI website can be found in the README file and is currently this:
+The general menu structure of the WIKI website can be found in this Google shhet - you will see which content is still open to produce and clicking on the Link of the cell will directly open the content page in HitHub - Status of Work in Progress is currently this:
    
-   ![image](https://user-images.githubusercontent.com/77154511/126052955-8e0467b3-618c-4de3-8da5-efdef4dad55e.png)
-
+https://docs.google.com/spreadsheets/d/1GjYFRrNhloVyR6kSAVlMAEWadY3onRv6UFnpQGRl0Z8/edit?usp=sharing
 
 
 
