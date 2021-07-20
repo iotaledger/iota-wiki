@@ -172,7 +172,7 @@ Collect general info and link to Guides / POC's / Showcases / IF community sites
 
 ## Develop
 
-The gateway for Developers. Introduces the core functionalities on a more technical level and aims to bring developers directly into the correct framework for them to start working with IOTA. Also, deliver guides and Tools that help getting started and to understand the concepts behind the protocol. This section will directly link to the underlying IOTA Docs and GitHubs, so please provide correct links to the specific content in the IOTA Docs.
+The gateway for Developers. Introduces the core functionalities on a more technical level and aims to bring developers directly into the correct framework for them to start working with IOTA. Also, deliver guides and tools that help to get started and to understand the concepts behind the protocol. This section will directly link to the underlying IOTA Docs and GitHub, so please provide correct links to the specific content in the IOTA Docs.
    
 ## Adding content
 
