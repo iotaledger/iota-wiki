@@ -237,7 +237,7 @@ To add a link to a page we use square brackets to contain the link text followed
 
    
 ### Images
-To add an image to a page we first need to upload the page to the [image folder]()
+To add an image to a page, we first need to upload the page to the [image folder]()
 Then on our page we can add the image using the same method as a link preceded with an exclamation mark:
 ```![image text](https://image.link/here.jpg)```
 
