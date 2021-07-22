@@ -14,25 +14,27 @@ IOTA’s new wallet guides you through the complexities of crypto, protected and
 
 Some of the most important features:
 
-- Written in Rust
+- [ ]  Written in Rust
 
 Rust offers security from the ground up – while maintaining speed, low memory usage, and scalability. This allows us to build apps with better performance and higher security.
 
-- Modular design
+- [ ]  Modular design
 
 Firefly separates different functionalities – like seed storage, handling transactions, and cryptography – in module crates. A module crate groups related functions so that the functionality is easy to share between multiple projects that aim to use the same feature.
 
-- Secured with Stronghold
+- [ ]  Secured with Stronghold
 
 Sensitive actions like address generation and transaction signing take place in isolated application memory built upon the IOTA Stronghold library, keeping the seed away from potential attackers.
 
-- Crypto.rs
+- [ ]  Crypto.rs
 
 Crypto.rs combines all cryptographic algorithms used by many of the projects at the IOTA Foundation. It reduces the risk of using unsafe crypto implementations, making it easier to audit, resulting in verifiably safer code.
 
 Find more information on the official Website and download the Firefly Wallet only from there:
 
-**[Firefly](https://firefly.iota.org/)** - official Website
+- **[Firefly](https://firefly.iota.org/)** - official Website
+
+- **[Firefly Github Releases](https://github.com/iotaledger/firefly/releases)** - official Firefly GitHub Repo with the latest release Version
 
 
 
@@ -49,33 +51,6 @@ Read everything about the process here:
 - **[Firefly Migration Process](https://blog.iota.org/firefly-token-migration/)** - The whole Migration Process explained
 - **[Migration Security](https://blog.iota.org/security-during-token-migration/)** - Important advice for a safe Migration Process
 
-Sensitive actions like address generation and transaction signing take place in isolated application memory, keeping the seed away from potential attackers.
-
-- Crypto.rs
-
-Crypto.rs combines all cryptographic algorithms used by many of the projects at IOTA Foundation. It reduces the risk of using unsafe crypto implementations, making it easier to audit, resulting in verifiably safer code.
-
-Find more information on the official Website and download the Firefly Wallet only from there:
-
-**[Firefly](https://firefly.iota.org/)** - official Website
-
-
-
-
-## Firefly Token Migration
-
-With the launch of the new IOTA 1.5 Chrysalis Mainnet end of April 28th, it is important that every IOTA Holder migrates his entire Funds from the old IOTA 1.0 network to the new, much more improved and advanced 1.5 network.
-
-To make this process user-friendly and safe, the IOTA Foundation integrated a migration tool into the Firefly Wallet, that takes care of the whole process and moves your funds automated from the old into the new network. The only thing you need is your old IOTA 1.0 network Seed, represented as a combination of 81 characters, a ``.kdbx seed vault file``that you have backed up from the Trinity Wallet, or your Ledger Nano device.
-
-With this information entered in the Migration Process in Firefly, a fully automated process will start and all your Funds will be moved securely into the new network, and you will have access to them through Firefly from now on.
-
-Read everything about the process here:
-
-- **[Chrysalis Migration](https://blog.iota.org/the-chrysalis-token-migration-starts-now/)** - The Chrysalis network Migration process
-- **[Firefly Migration Process](https://blog.iota.org/firefly-token-migration/)** - The whole Migration Process explained
-- **[Migration Security](https://blog.iota.org/security-during-token-migration/)** - Important advice for a safe Migration Process
-
 
 
 ## Useful Links
@@ -86,14 +61,15 @@ Read everything about the process here:
 
 ----
 
-## Firefly Features
+## Firefly Features Guide
 
 ### Account Structure
 
 Firefly's basic Account handling Logic works like this: 
 
-- One Firefly **Profile** is always the representation of one **IOTA Seed**
-- Every Firefly **Profile** can host an unlimited amount of **Wallet's** which can be seen as Sub-Accounts under the **Profile Seed**.
+- [ ] One Firefly **Profile** is always the representation of one **IOTA Seed**
+
+- [ ] Every Firefly **Profile** can host an unlimited amount of **Wallet's** which can be seen as Sub-Accounts under the one **Profile Seed**.
 
 ### Profile Setup
 
@@ -108,18 +84,19 @@ If different Users aim to use the same Firefly Wallet App, or if you have IOTA T
 
 **Key Takeaways:**
 
-- **Securely Back up the 24 words mnemonic phrase, it is your IOTA SEED!**
-- **Securely store your Stronghold Backup File and the Stronghold Password!**
-- **Store it in multiple independent locations digital and physical!**
+- [ ]  **Securely Back up the 24 words mnemonic phrase, it is your IOTA SEED!**
+- [ ] **Securely store your Stronghold Backup File and the Stronghold Password!**
+- [ ]  **Store it in multiple independent locations - digital and physical!**
 
 
 
 
 ### Firefly Dashboard
 
+![image](https://user-images.githubusercontent.com/77154511/126114270-96c27168-6b49-4a57-95e4-c1ec1b057249.png)
 
 The Firefly Dashboard is the main overview of a User Profile. Easily accessible information on the spot and the most common functions "Send" and "Receive" ordered in a nicely styled layout.
-Users are shown the total Profile balance here, the different Wallets, and a list of the latest occurred transactions. IOTA Price or Profile value is shown in a chart and a section with the basic security info of the Profile.
+Users are shown the total Profile balance here, the different Wallets that belong to the profile, and a list of the latest occurred transactions. IOTA Price or Profile value is shown in a chart and also a section with the basic security info of the Profile is displayed.
 
 ## Wallets
 
@@ -132,97 +109,113 @@ Important to mention here: Users can only set up further Wallets if the first Wa
 
 ### Wallet Detail view
 
+![image](https://user-images.githubusercontent.com/77154511/126114427-df51d0e3-a44e-48e0-a4c6-f4050dcff379.png)
+
 A mouse click on one of the Wallets in the Dashboard overview opens the Wallet Detail Screen. 
 Here Users see the Balance contained in this specific Wallet and have the option to send and receive transactions.
 
 Next to the send and receive section an overview of all the transactions related to this specific wallet is shown.
 Little Icons indicate if a send or receive transaction was done internal (to another Wallet of the same Profile) or external.
-Clicking on one of the transactions opens the 
 
-**Transaction detail view**.
+Also, you have will find **3 little dots** next to the Wallet balance. 
+
+**Clicking on those dots opens a popup menu.**
+
+- <img src="https://user-images.githubusercontent.com/77154511/126114811-d792208d-8d76-47d8-b1c3-0cff5cdc6a54.png" width="400" height="600"/>
+
+- **In this popup menu you can enter the functions:**
+
+- [ ] **Customize Wallet** 
+
+- Possibility to change the Wallet name.
+
+- [ ] **View address history**
+
+- A list of all addresses that have been used by this wallet and the balance that sits currently on this address. You can copy this list and paste it into your documents.
+
+- [ ] **Hide Wallet**
+
+- Empty Wallets can be hidden to keep your Main Wallet overview organized. If a wallet still contains funds you will not be able to hide it by clicking this option but will be offered to transfer the funds to another Wallet and hide the Wallet afterward. A hidden Wallet can be shown again by enabling the function "show hidden wallets" in the advanced account settings.
+
+
+#### Transaction detail view.
+
+![image](https://user-images.githubusercontent.com/77154511/126114552-383a3f34-e665-46a7-a3d8-4e6277811ce3.png)
 
 The following information about the transaction is displayed:
 
-A transaction flow that indicates: **from where > token amount > to where** followed by:
+- A transaction flow that indicates: **from where > token amount > to where** followed by:
 
-**Status**
+- [ ] **Status**
 
-Confirmed or Pending status of the message
+- Confirmed or Pending status of the message
 
-**Date**
+- [ ] **Date**
 
-Date and Time when the transaction was issued or received (in local System time)
+- Date and Time when the transaction was issued or received (in local System time)
 
-**Message ID**
+- [ ] **Message ID**
 
-The unique identifier of this specific message (every transaction in IOTA is a message) in the IOTA Ledger.
+- The unique identifier of this specific message (every transaction in IOTA is a message) in the IOTA Ledger.
 
-**Send Address**
+- [ ] **Send Address**
 
-The Address from where the transaction was initiated
+- The Address from where the transaction was initiated
 
-**Receive Address**
+- [ ] **Receive Address**
 
-The Address on which the tokens of this transaction have arrived. Several different receive Addresses may be shown in this view. The Addresses belonging to you are highlighted with the name of your wallet in brackets, other addresses that are shown without brackets do not belong to you. These are normally addresses of the sender to where the remaining funds that have not been used from the sender's address are transferred. This is related to the UTXO (unspent transaction output) Account model in IOTA.
+- The Address on which the tokens of this transaction have arrived. Several different receive Addresses may be shown in this view. 
+The Addresses belonging to you are highlighted with the name of your wallet in brackets, other addresses that are shown without brackets do not belong to you. These are normally addresses of the sender. To these address the remaining funds that have not been used from the sender's address are transferred. This is related to the UTXO (unspent transaction output) Account model in IOTA.
 
-If a transaction is issued from a UTXO output (an address holding funds) that does not consume all funds that are part of this output, 2 transactions are issued. One transaction moves the funds that are planned to send away from the address, and a second transaction that moves the rest of the unused funds from this UTXO to a new UTXO output. Both these transactions are part of the Message and therefore shown in the Transaction detail. Read more about the UTXO Account model here: (*internal link to utxo*)
+- If a transaction is issued from a UTXO output (an address holding funds) that does not consume all funds that are part of this output, one transaction moves the funds that are planned to send away from the address, and a second transaction moves the rest of the unused funds from this UTXO to a new UTXO output. Both these transactions are part of the message and therefore shown in the Transaction detail. Read more about the UTXO Account model here: (*internal link to utxo*)
 
-**Amount**
+- [ ] **Amount**
 
-Amount of IOTA sent and current value in chosen Profile currency
+- Amount of IOTA sent and current value in chosen Profile currency
 
-**2 different charts** 
 
-**Wallet Value** and **Wallet activity** also provide a graphic overview of the activities in this wallet.
-Also, you have will find **3 little dots** next to the Wallet balance. Clicking on those dots opens a popup menu.
+#### 2 different charts
 
-**In this popup menu you can enter the functions:**
+- **Wallet Value** and **Wallet activity** also provide a graphic overview of the activities in this wallet.
 
-**Customize Wallet** 
-
-Possibility to change the Wallet name.
-
-**View address history**
-
-A list of all addresses that have been used by this wallet and the balance that sits currently on this address. You can copy this list and paste it into your documents.
-
-**Hide Wallet**
-
-Empty Wallets can be hidden to keep your Main Wallet overview organized. If a wallet still contains funds you will not be able to hide it by clicking this option but will be offered to transfer the funds to another Wallet and hide the Wallet afterward. A hidden Wallet can be shown again by enabling the function "show hidden wallets" in the advanced account settings.
 
 
 ### Send and Receive Transactions
 
-The Send and Receive functions are available in the main Wallets dashboard, and also in evert Wallet detail view.
+- The Send and Receive functions are available in the main Wallets dashboard, and also in every Wallet detail view.
 
-**Receive**
+- [ ] **Receive**
 
-Click on the "Receive" button to open the Receive Funds dialogue. Using a dropdown menu, the user can choose in which of the Wallets the incoming funds should be received.
+- <img src="https://user-images.githubusercontent.com/77154511/126114880-0ffeb841-22ef-4858-a096-47a3b4ab333d.png" width="400" height="600"/>
+
+- Click on the "Receive" button to open the Receive Funds dialogue. Using a dropdown menu, the user can choose in which of the Wallets the incoming funds should be received.
 The receive address of the selected Wallet is displayed as a QR Code and as a written address. The button **`Copy Address`** copies the displayed receive address into the user's clipboard for convenient pasting into other applications or documents.
 **The receive address of a user will change every time funds have been received and spent again from that address. The wallet creates automatically a fresh address for the next receive attempt.**
 
-If a user has received, but not yet spent funds from that receiving address, the user can manually decide to generate a fresh receive address using the small "refresh" button above the QR Code.
+- If a user has received, but not yet spent funds from that receiving address, the user can manually decide to generate a fresh receive address using the small "refresh" button above the QR Code.
 This function is an essential privacy feature that is a standard approach in Crypto to reduce the traceability of your balances
 
-**Send**
+- [ ] **Send**
 
-The Send function has two essential features:
+- <img src="https://user-images.githubusercontent.com/77154511/126115936-253f9e94-2cef-460f-9314-020b6843730d.png" width="400" height="600"/>
+
+- The Send function has two essential features:
 "Send payment" - which is a standard IOTA transaction where you type or copy in a full IOTA receive address in the form of **`iotaxjdjfkfkldldd.......`**. 
 The user now defines the Wallet from where the tokens should be sent in a dropdown menu and the Number of Tokens to be sent. While defining the amount, a user may choose "Max" - which will send all the Tokens contained in the chosen wallet, or specify the exact amount with manual input. A dropdown button provides the option to switch the amount between different unit sizes (Mi, Gi,...). **Make sure that you are entering the token amount in the correct unit size.**
 
-To initiate the transaction now, the user has to enter the stronghold password which confirms and signs the transaction. 
+- To initiate the transaction now, the user has to enter the stronghold password which confirms and signs the transaction. 
 After this, the following steps are performed by the wallet to deliver the transaction to the recipient: 
 
-**"Syncing Wallet"** - establishing the connection to the IOTA Ledger, 
+- [ ] **"Syncing Wallet"** - establishing the connection to the IOTA Ledger, 
 
-**"Performing PoW"** - a tiny amount of PoW is performed by the device of the user, 
+- [ ] **"Performing PoW"** - a tiny amount of PoW is performed by the device of the user, 
 
-**"Broadcasting transaction"** - sending the signed transaction into the network, 
+- [ ] **"Broadcasting transaction"** - sending the signed transaction to the connected node, 
 
-**"Transfer complete"** - confirmation of the transaction received from the network. 
+- [ ] **"Transfer complete"** - confirmation that the transaction is accepted and included in the Ledger. 
 
 This whole process happens in just a few seconds.
 
-One important thing to mention: You can only set up further Wallets if your first Wallet has already funds in it. So if you want to set up 5 different Wallets you need a small amount of IOTA' to end the newly created Wallet, before you can create another one.
 
 If you send and receive funds, they will always be organized under the wallet that you used to send or receive, so it is easier to keep track if you have a lot of transactions going on.
+
