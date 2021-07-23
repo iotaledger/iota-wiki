@@ -2,9 +2,9 @@ name: deploy
 
 on:
   pull_request:
-    branches: [develop]
+    branches: [fix/themes]
   push:
-    branches: [develop]
+    branches: [fix/themes]
 
 jobs:
   checks:
