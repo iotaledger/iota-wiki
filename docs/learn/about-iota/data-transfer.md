@@ -36,8 +36,7 @@ The IOTA protocol categorizes these information packages into different types an
 This can be understood as similar to having to fill out a label before sending a package using your local postal service.
 
 
-A more detailed description of this process on the protocol level can be found here in this document:
-[https://github.com/iotaledger/protocol-rfcs/blob/33570042d8f2241ecc9a9104f5eb38fbf4bc3c95/text/0017-message/0017-message.md](https://)
+A more detailed description of this process on the protocol level can be found [here](https://github.com/iotaledger/protocol-rfcs/blob/33570042d8f2241ecc9a9104f5eb38fbf4bc3c95/text/0017-message/0017-message.md).
 
 
 
