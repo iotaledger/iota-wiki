@@ -74,7 +74,7 @@ A definition of which kind of payload is contained in the message. The Node need
 The nonce which lets this message fulfill the Proof-of-Work requirement. Proof of work is mostly done locally on the device that issues the message and is a form of spam protection. But it can also be done by the node if the node allows this. That is a very useful feature as it enables very low powered devices to issue messages (like sensors, chips, etc) - those sensors can send a message to a node that allows messages without already performed POW and then the POW is done by the node (which is usually running on a more powerful device). This is one of the key features of the protocol and the reason why IOTA is so suitable for IoT and Data applications. So users that want to issue a lot of Data messages from a huge amount of extremely low-power devices only need to connect those devices to a node that allows them to do the POW for them (which will be in most cases their own node). As the POW is anyway extremely low... for a node, it is no problem to do this even for a large number of devices.
 
 A side note - in the upcoming 2.0 IOTA version this POW requirement will become adaptive and is planned to be completely removed for times of normal network loads...
-Read more about IOTA 2.0 here: <link>
+Read more about IOTA 2.0 here: (link to content)
 
 
 ## Message structure
@@ -180,7 +180,7 @@ As you may have recognized, a message in the IOTA network does not need a specif
 
 A **Data message** that is defined as an indexation Payload can be easily found by everyone that knows the index of that message, so if you just want to send an arbitrary message or Data that does not contain sensitive information you just need to tell the receiver which index you are using and he can observe the network for all messages containing this index using an explorer.
 
-The way a **value transaction** works is that the receiver of the payment - an IOTA address - will be specified in the "signed transaction payload" field of the message then only then only the owner of that specific address can use the contained funds by unlocking them with the private key that belongs to that receiving address. Read more about how sending value transactions in IOTA works here: <link>
+The way a **value transaction** works is that the receiver of the payment - an IOTA address - will be specified in the "signed transaction payload" field of the message then only then only the owner of that specific address can use the contained funds by unlocking them with the private key that belongs to that receiving address. Read more about how sending value transactions in IOTA works here: (link to content)
 
 
 
