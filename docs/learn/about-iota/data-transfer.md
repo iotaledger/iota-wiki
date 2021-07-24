@@ -136,6 +136,8 @@ This is the defined outer structure of every message in the IOTA protocol (the l
                     </tr>
                 </table>
             </details>
+        </td>
+    </tr>
     <tr>
         <td>Nonce</td>
         <td>uint64</td>
