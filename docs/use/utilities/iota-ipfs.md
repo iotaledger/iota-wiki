@@ -4,20 +4,24 @@ description: Combine the IOTA Ledger Technologie with the distributed data stora
 ---
 
 
-# Heading 1 (Page Title)
+# The IOTA IPFS implementation
 
-content - introduction to the topic
+This tool is a Proof of concept that allows users to submit files and store them in the distributed Data storage IPFS (Interplanetary File System) over the Tangle.
+
+The tool is accessible over this website:
+
+- **[IOTA IPFS](https://ipfs.iota.org/)**
+- 
+and the source - code is hosted here:
+
+- **[IOTA IPFS GitHub](https://github.com/iotaledger/poc-ipfs)**
 
 
-## Heading 2 (Sub topic 1)
+IPFS is a tool and a protocol to host and transfer data in a distributed file system. It works similar to the peer 2 peer BitTorrent network.
 
-content 
+Using the IOTA IPFS tool allows users to upload a file to IPFS storage and send and receive the hash of the IPFS storage over the tangle. This enables distributed data storage makes it immutable due to the nature of IOTA's data structure
 
-## Heading 2 (Sub topic 2)
-
-content
-
-
+Due to the Proof oc Concept staus, the maximum uploadable document size is limited to 75kb at the moment.
 
 <br/>
 
@@ -25,10 +29,8 @@ content
 
 <br/>
 
-**need to add a footer section for further content - (three cards)**
+
 
 ## Useful Links
-- **[a link](https://linkgoes.here)** - A description for the link
-- **[a link](https://linkgoes.here)** - A description for the link
-- **[a link](https://linkgoes.here)** - A description for the link
+- **[IPFS Wikipedia Article](https://en.wikipedia.org/wiki/InterPlanetary_File_System)** 
 
