@@ -38,6 +38,44 @@ module.exports = {
           label: "Participate",
           to: "docs/participate/support-the-network/run-a-node",
         },
+        { 
+          label: 'External Docs', 
+          position: 'right',
+          items: [
+            {
+              label: "Bee",
+              to: "bee/getting_started/getting_started",
+            },
+            {
+              label: "GoShimmer",
+              to: "goshimmer/welcome",
+            },
+            {
+              label: "Wasp",
+              to: "wasp/welcome",
+            },
+            {
+              label: "iota.rs",
+              to: "iota.rs/welcome",
+            },
+            {
+              label: "wallet.rs",
+              to: "wallet.rs/welcome",
+            },
+            {
+              label: "stronghold.rs",
+              to: "stronghold.rs/welcome",
+            },
+            {
+              label: "IOTA 2.0 Specs",
+              to: "IOTA-2.0-Research-Specifications/Preface",
+            },
+            {
+              label: "Chrysalis docs",
+              to: "chrysalis-docs/welcome",
+            },
+          ]
+        },
       ],
     },
     footer: {
@@ -209,6 +247,80 @@ module.exports = {
           customCss: require.resolve('./src/css/custom.css'),
         },
       },
-    ],
+    ]
   ],
+  plugins: [
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'bee',
+        path: 'external/bee/documentation/docs',
+        routeBasePath: 'bee',
+        sidebarPath: require.resolve('./external/bee/documentation/sidebars.js'),
+      }
+    ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'goshimmer',
+        path: 'external/goshimmer/docOps/docs',
+        routeBasePath: 'goshimmer',
+        sidebarPath: require.resolve('./external/goshimmer/docOps/sidebars.js'),
+      }
+    ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'wasp',
+        path: 'external/wasp/documentation/docs',
+        routeBasePath: 'wasp',
+        sidebarPath: require.resolve('./external/wasp/documentation/sidebars.js'),
+      }
+    ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'iota-rs',
+        path: 'external/iota.rs/documentation/docs',
+        routeBasePath: 'iota.rs',
+        sidebarPath: require.resolve('./external/iota.rs/documentation/sidebars.js'),
+      }
+    ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'wallet-rs',
+        path: 'external/wallet.rs/documentation/docs',
+        routeBasePath: 'wallet.rs',
+        sidebarPath: require.resolve('./external/wallet.rs/documentation/sidebars.js'),
+      }
+    ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'stronghold-rs',
+        path: 'external/stronghold.rs/documentation/docs',
+        routeBasePath: 'stronghold.rs',
+        sidebarPath: require.resolve('./external/stronghold.rs/documentation/sidebars.js'),
+      }
+    ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'IOTA-Research-Specifications',
+        path: 'external/IOTA-2.0-Research-Specifications/docs',
+        routeBasePath: 'IOTA-2.0-Research-Specifications',
+        sidebarPath: require.resolve('./external/IOTA-2.0-Research-Specifications/sidebars.js'),
+      }
+    ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'chrysalis-docs',
+        path: 'external/chrysalis-docs/docs',
+        routeBasePath: 'chrysalis-docs',
+        sidebarPath: require.resolve('./external/chrysalis-docs/sidebars.js'),
+      }
+    ]
+  ]
 };

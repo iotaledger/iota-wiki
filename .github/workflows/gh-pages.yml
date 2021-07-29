@@ -1,38 +1,74 @@
 name: deploy
 
 on:
-  pull_request:
-    branches: [fix/themes]
-  push:
-    branches: [fix/themes]
+  workflow_dispatch:
+  schedule:
+    - cron:  '0 0 * * *'
 
 jobs:
-  checks:
-    if: github.event_name != 'push'
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v1
-      - uses: actions/setup-node@v1
-        with:
-          node-version: '12.x'
-      - name: Test Build
-        run: |
-          if [ -e yarn.lock ]; then
-          yarn install --frozen-lockfile
-          elif [ -e package-lock.json ]; then
-          npm ci
-          else
-          npm i
-          fi
-          npm run build
   gh-release:
     if: github.event_name != 'pull_request'
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
         with:
           node-version: '12.x'
+      - name: Create folder
+        run: |
+          mkdir external
+      - name: Copy Bee docs
+        run: |
+          cd external
+          git clone --depth=1 --sparse https://github.com/iotaledger/bee --branch dev
+          cd bee
+          git sparse-checkout set documentation
+          cd -
+      - name: Copy GoShimmer docs
+        run: |
+          cd external
+          git clone --depth=1 --sparse https://github.com/iotaledger/goshimmer
+          cd goshimmer
+          git sparse-checkout set docOps
+          cd -
+      - name: Copy Wasp docs
+        run: |
+          cd external
+          git clone --depth=1 --sparse https://github.com/iotaledger/wasp
+          cd wasp
+          git sparse-checkout set documentation
+          cd -
+      - name: Copy iota.rs docs
+        run: |
+          cd external
+          git clone --depth=1 --sparse https://github.com/iotaledger/iota.rs
+          cd iota.rs
+          git sparse-checkout set documentation
+          cd -
+      - name: Copy wallet.rs docs
+        run: |
+          cd external
+          git clone --depth=1 --sparse https://github.com/iotaledger/wallet.rs
+          cd wallet.rs
+          git sparse-checkout set documentation
+          cd -
+      - name: Copy stronghold.rs docs
+        run: |
+          cd external
+          git clone --depth=1 --sparse https://github.com/iotaledger/stronghold.rs
+          cd stronghold.rs
+          git sparse-checkout set documentation
+          cd -
+      - name: Copy IOTA 2.0 specs
+        run: |
+          cd external
+          git clone --depth=1 https://github.com/huhn511/IOTA-2.0-Research-Specifications --branch feat/add-docusaurus
+      - name: Copy Chrysalis docs
+        run: |
+          cd external
+          git clone --depth=1 https://github.com/iotaledger/chrysalis-docs
+      - name: Return to root folder
+        run: cd ..
       - name: Build
         run: |
           if [ -e yarn.lock ]; then
