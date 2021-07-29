@@ -381,8 +381,8 @@
     --ifm-global-radius: 0.5rem;
 
     --ifm-navbar-link-color: #485776;
-    --ifm-navbar-link-hover-color: var(--ifm-navbar-link-color);
-    --ifm-navbar-link-active-color: var(--ifm-navbar-link-color);
+    --ifm-navbar-link-hover-color: var(--ifm-color-primary);
+    --ifm-navbar-link-active-color: var(--ifm-color-primary);
 
     --ifm-footer-color: var(--ifm-navbar-link-color);
     --ifm-navbar-padding-horizontal: 25px;
@@ -390,7 +390,7 @@
     --ifm-navbar-height: 68px;
 
     --ifm-menu-color: var(--ifm-color-emphasis-600);
-    --ifm-menu-color-active: var(--ifm-color-emphasis-1000);
+    --ifm-menu-color-active: var(--ifm-color-primary);
     --ifm-menu-color-background-active: transparent;
 
     --ifm-button-color: white;
