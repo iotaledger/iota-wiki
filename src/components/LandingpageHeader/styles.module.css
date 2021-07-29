@@ -1,3 +1,7 @@
+html[data-theme='dark'] .header {
+  background: url('/img/background_dark.svg') center center/cover;
+}
+
 .header {
-  background: url('/img/bg.svg') center center/cover;
+  background: url('/img/background_light.svg') center center/cover;
 }
