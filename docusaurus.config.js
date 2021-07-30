@@ -40,17 +40,12 @@ module.exports = {
           to: "docs/use/use-cases/industry-applications",
         },
         {
-          label: "Develop",
-          to: "docs/develop/getting-started/architecture",
-        },
-        {
-          label: "Participate",
-          to: "docs/participate/support-the-network/run-a-node",
-        },
-        { 
-          label: 'External Docs', 
-          position: 'right',
+          label: 'Develop',
           items: [
+            {
+              label: "Getting Started",
+              to: "docs/develop/getting-started/architecture",
+            },
             {
               label: "Bee",
               to: "bee/getting_started/getting_started",
@@ -84,6 +79,10 @@ module.exports = {
               to: "chrysalis-docs/welcome",
             },
           ]
+        },
+        {
+          label: "Participate",
+          to: "docs/participate/support-the-network/run-a-node",
         },
       ],
     },
