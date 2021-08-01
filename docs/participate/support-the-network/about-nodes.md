@@ -33,7 +33,7 @@ When one node, no matter where it is in the world, receives a transaction, it wi
 To synchronize, nodes in IOTA networks use milestones.
 If the node has the history of transactions that a milestone references, that milestone is solid.
 
-Therefore, nodes know if they are synchonized if the index of their latest solid milestone is the same as the index of the latest milestone that it has received.
+Therefore, nodes know if they are synchronized if the index of their latest solid milestone is the same as the index of the latest milestone that it has received.
 
 When a node is synchronized, it then has enough information to decide which transactions it considers confirmed.
 
