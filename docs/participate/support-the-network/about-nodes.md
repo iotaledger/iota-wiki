@@ -16,7 +16,7 @@ Nodes are responsible for the following:
 * Keeping a record of the balances on addresses
 * Exposing APIs for clients
 
-## Ataching new transactions to the Tangle
+## Attaching new transactions to the Tangle
 
 When nodes receive a new transaction, they attach it to the Tangle by adding it to their local database.
 
