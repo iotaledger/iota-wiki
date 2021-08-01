@@ -6,7 +6,7 @@ description: See the IOTA Tangle in real-time confirming messages and building t
 
 # Network Visualizer
 
-Network Visualizers show you the activity of messages happening in an IOTA Tangle in real-time. They are a powerful tool for the researchers to help analyzing the complex structure and also produce often impressive and beautiful impressions of the so complex technology in IOTA. Many people find it fascinating to observe the Graph of messages grow and change under different network conditions.
+Network Visualizers show you the activity of messages happening in an IOTA Tangle in real-time. They are a powerful tool for the researchers to help analyze the complex structure and also often produce impressive and beautiful impressions of the so complex technology in IOTA. Many people find it fascinating to observe the Graph of messages grow and change under different network conditions.
 
 IOTA provides visualizers in the Network explorer Websites for the following networks:
 
@@ -36,6 +36,5 @@ This is the still active, but old Mainnet of the IOTA 1.0 Protocol implementatio
 The implementation of the upcoming fully decentralized IOTA 2.0 Protocol. The network here does not use or need a coordinator anymore. Used with Testnet tokens to fine-tune, test and optimize the upcoming development stage of the IOTA Protocol together with the IOTA community.
 
 - **[IOTA 2.0 DevNet](https://v2.iota.org/visualizer)**
-
 
 
