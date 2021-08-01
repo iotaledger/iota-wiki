@@ -43,7 +43,7 @@ All transactions remain in a pending state until the node is sure of its validit
 
 However, even when a transaction is valid, nodes may not be able to make a decision like in the case of a double spend.
 
-When nodes detect double spends they must decide which transaction to consider confirmed and which one to ignore. Nodes do this by using consensus rules that are built into their node software. See **The Coordinator** for information about the consensus rules in IOTA networks.
+When nodes detect double spends, they must decide which transaction to consider confirmed and which one to ignore. Nodes do this by using consensus rules that are built into their node software. See **The Coordinator** for information about the consensus rules in IOTA networks.
 
 ## Keeping a record of the balances on addresses
 
