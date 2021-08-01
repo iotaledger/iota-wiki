@@ -47,7 +47,7 @@ When nodes detect double spends, they must decide which transaction to consider 
 
 ## Keeping a record of the balances on addresses
 
-All nodes keep a record of the balances of addresses so they can do the following:
+All nodes keep a record of the balances of addresses, so they can do the following:
 
 * Check that a transaction is not transferring more IOTA tokens than are available on the address
 * Respond to clients' requests for their balance
