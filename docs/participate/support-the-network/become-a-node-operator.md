@@ -1,5 +1,5 @@
 ---
-title: Getting started as a node
+title: Become a node operator
 description: Running a node is the best way to use IOTA. This topic provides a checklist of steps for running a reliable node.
 ---
 
