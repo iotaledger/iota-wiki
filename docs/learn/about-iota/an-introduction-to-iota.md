@@ -55,4 +55,20 @@ As a result, requiring PoW secures blockchain networks by making it difficult to
 In the Tangle, messages require no fees because the network has no miners.
 In the Tangle, PoW is not used to secure the network. Instead, PoW is used only to discourage spam messages.
 To reach a consensus, all IOTA nodes validate messages and use different functions alongside messages in their confirmation.
+Currently messages will only considered valid if they have a refference to a milestone. These milestones are issued by a special network node - the Coordinator.
+
+## **The coordinator**
+
+**The Coordinator is a client that sends signed messages called milestones that nodes trust and use to confirm messages. This topic describes how nodes use milestones to determine which messages are confirmed.**
+
+ - The Coordinator is temporary. We will transition into removing the Coordinator:Coordicide in the upcomming IOTA 2.0 Metwork. Below is how the Coordinator is currently employed within IOTA.
+
+Messages in the Tangle are considered for confirmation only when they are directly or indirectly referenced by a milestone that has been validated by nodes.
+
+To allow them to recognize milestones, all nodes in the same IOTA network are configured with the Merkle root address of a Coordinator that they trust to confirm messages. Using this address, nodes can validate the signatures in milestones to verify whether they are signed by their trusted Coordinator.
+
+To make sure that new messages always have a chance of being confirmed, the Coordinator sends indexed milestones at regular intervals. This way, nodes can compare the indexes of their milestones to check whether they are synchonized with the rest of the network.
+
+![coordinator](https://user-images.githubusercontent.com/77154511/127796118-08915c1d-438d-4d9a-8432-893c6c5b4f0d.gif)
+
 
