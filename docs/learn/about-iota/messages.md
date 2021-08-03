@@ -46,7 +46,7 @@ Additionally, there can be three types of message payloads
 A transaction payload is made up of two parts:
 
 1. The Transaction Essence part, which contains the inputs, outputs, and an optional embedded payload.
-1. The Unlock Blocks which unlock the Transaction Essence's inputs. In case the unlock block contains a signature, it signs the entire Transaction Essence part.
+1. The Unlock Blocks, which unlocks the Transaction Essence's inputs. In case the unlock block contains a signature, it signs the entire Transaction Essence part.
 
 In general, all parts of a transaction payload begin with a byte describing the type of the given part to keep the flexibility to introduce new types/versions of the given part in the future.
 
