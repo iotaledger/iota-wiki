@@ -95,7 +95,7 @@ The source code of the software can be found here:
 
 - [GoShimmer GitHub](https://github.com/iotaledger/goshimmer)
 
-### Goshimmer Installation guides
+### GoShimmer Installation guides
 
 Standard installation following the Bee Documentation:
 
