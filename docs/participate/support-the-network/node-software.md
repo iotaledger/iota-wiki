@@ -99,7 +99,7 @@ The source code of the software can be found here:
 
 Standard installation following the Bee Documentation:
 
-- [Goshimmer Node Setup](https://goshimmer.docs.iota.org/docs/tutorials/setup)
+- [GoShimmer Node Setup](https://goshimmer.docs.iota.org/docs/tutorials/setup)
 
 ### Goshimmer community tutorials:
 
