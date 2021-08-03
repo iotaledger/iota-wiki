@@ -104,7 +104,7 @@ Standard installation following the Bee Documentation:
 ### Goshimmer community tutorials:
 
 - Nuriels GoShimmer Playbook: [Nuriel77 GoShimmer](https://github.com/nuriel77/goshimmer-playbook)
-- DeMichelle Shell Script: [Demichelle Goshimmer](https://github.com/demichele/install-goshimmer)
+- DeMichelle Shell Script: [DeMichelle GoShimmer](https://github.com/demichele/install-goshimmer)
 
 
 ## Chronicle Permanode
@@ -130,5 +130,4 @@ Wasp is still a work in progress and is purely for development and testing purpo
 The full documentation for WASP Smartcontract Nodes can be found here:
 
 - [WASP Documentation/GitHub](https://github.com/iotaledger/wasp)
-
 
