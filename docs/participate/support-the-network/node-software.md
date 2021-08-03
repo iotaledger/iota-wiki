@@ -74,7 +74,7 @@ The source code of the software can be found here:
 
 Standard installation following the Bee Documentation:
 
-- [Setup a BEE Node](https://bee.docs.iota.org/setup_a_node)
+- [Set up a BEE Node](https://bee.docs.iota.org/setup_a_node)
 
 
 ## Goshimmer
