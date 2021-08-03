@@ -9,11 +9,18 @@ module.exports = {
   favicon: 'img/favicon.ico',
   organizationName: 'iota-community', // Usually your GitHub org/user name.
   projectName: 'iota-wiki', // Usually your repo name.
-  noIndex: true,
   stylesheets: [
     'https://fonts.googleapis.com/css?family=Material+Icons',
   ],
   themeConfig: {
+    announcementBar: {
+      id: 'wip', // Any value that will identify this message.
+      content:
+        'The Wiki is still a WIP. Consider contributing by using the editor or creating a <a href="https://github.com/iota-community/iota-wiki">PR directly</a>',
+      backgroundColor: '#ff0000', // Defaults to `#fff`.
+      textColor: '#fff', // Defaults to `#000`.
+      isCloseable: false, // Defaults to `true`.
+    },
     navbar: {
       hideOnScroll: true,
       logo: {
