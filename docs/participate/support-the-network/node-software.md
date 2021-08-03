@@ -70,7 +70,7 @@ The source code of the software can be found here:
 
 - [Bee GitHub](https://github.com/iotaledger/bee)
 
-### BEE Instalation guides
+### BEE Installation guides
 
 Standard installation following the Bee Documentation:
 
@@ -130,7 +130,6 @@ Wasp is still a work in progress and is purely for development and testing purpo
 The full documentation for WASP Smartcontract Nodes can be found here:
 
 - [WASP Documentation/GitHub](https://github.com/iotaledger/wasp)
-
 
 
 
