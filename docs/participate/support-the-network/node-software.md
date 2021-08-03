@@ -77,7 +77,7 @@ Standard installation following the Bee Documentation:
 - [Set up a BEE Node](https://bee.docs.iota.org/setup_a_node)
 
 
-## Goshimmer
+## GoShimmer
 
 GoShimmer is a prototype node software exploring the implementation of IOTA 2.0. It is a research and engineering project from the IOTA Foundation seeking to evaluate Coordicide concepts by implementing them in a node software.
 
