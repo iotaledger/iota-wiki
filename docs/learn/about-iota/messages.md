@@ -30,7 +30,7 @@ Overall, these payload structures are simple:
 | ---- | ---- | ----------- |
 |    Payload Type  |  unit 32    |    must be set to **2**  |
 | Index     | String     | The index key of the message, a UTF-8 encoded string            |
-|DATA| ByteAray | Data we are attaching    |
+|DATA| ByteArray | Data we are attaching    |
 
 
 Additionally, there can be three types of message payloads
