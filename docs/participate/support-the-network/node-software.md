@@ -93,7 +93,7 @@ The full documentation for GoShimmer can be found here:
 
 The source code of the software can be found here:
 
-- [Goshimmer GitHub](https://github.com/iotaledger/Goshimmer)
+- [GoShimmer GitHub](https://github.com/iotaledger/goshimmer)
 
 ### Goshimmer Installation guides
 
