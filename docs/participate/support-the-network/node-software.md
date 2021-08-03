@@ -89,7 +89,7 @@ GoShimmer will not be developed as an upcoming Mainnet node Software.
 
 The full documentation for GoShimmer can be found here:
 
-- [Goshimmer Documentation](https://goshimmer.docs.iota.org/)
+- [GoShimmer Documentation](https://goshimmer.docs.iota.org/)
 
 The source code of the software can be found here:
 
