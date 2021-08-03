@@ -250,6 +250,7 @@ module.exports = {
           // Please change this to your repo.
           editUrl:
             'https://github.com/iota-community/iota-wiki',
+          remarkPlugins: [require('remark-code-import'), require('remark-import-partial')],
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
@@ -265,6 +266,7 @@ module.exports = {
         path: 'external/bee/documentation/docs',
         routeBasePath: 'bee',
         sidebarPath: require.resolve('./external/bee/documentation/sidebars.js'),
+        remarkPlugins: [require('remark-code-import'), require('remark-import-partial')],
       }
     ],
     [
@@ -292,6 +294,7 @@ module.exports = {
         path: 'external/iota.rs/documentation/docs',
         routeBasePath: 'iota.rs',
         sidebarPath: require.resolve('./external/iota.rs/documentation/sidebars.js'),
+        remarkPlugins: [require('remark-code-import'), require('remark-import-partial')],
       }
     ],
     [
