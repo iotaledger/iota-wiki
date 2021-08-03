@@ -20,7 +20,7 @@ The UTXO model defines a ledger state where balances are not directly associated
 ![utxo-model](https://user-images.githubusercontent.com/77154511/127794259-10071fbe-4f04-4ab2-81eb-a0589f025a00.png)
 
 
-So, the UTXO is a part of a larger, self-contained, and flexible message structure known as a payload. This approach is meant to enable a self-contained message structure defining the data of the entire transfer as a payload to be imbedded into a message.
+So, the UTXO is a part of a larger, self-contained, and flexible message structure known as a payload. This approach is meant to enable a self-contained message structure defining the data of the entire transfer as a payload to be embedded into a message.
 
 Overall, these payload structures are simple:
 
