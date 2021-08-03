@@ -28,7 +28,7 @@ Overall, these payload structures are simple:
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-|    Payload Type  |  unit 32    |    must be set to **2**  |
+|    Payload Type  |  uint32    |    must be set to **2**  |
 | Index     | String     | The index key of the message, a UTF-8 encoded string            |
 |DATA| ByteArray | Data we are attaching    |
 
