@@ -20,10 +20,7 @@ jobs:
       - name: Copy Bee docs
         run: |
           cd external
-          git clone --depth=1 --sparse https://github.com/iotaledger/bee --branch dev
-          cd bee
-          git sparse-checkout set documentation
-          cd -
+          git clone --depth=1 https://github.com/iotaledger/bee --branch dev
       - name: Copy GoShimmer docs
         run: |
           cd external
@@ -41,10 +38,7 @@ jobs:
       - name: Copy iota.rs docs
         run: |
           cd external
-          git clone --depth=1 --sparse https://github.com/iotaledger/iota.rs
-          cd iota.rs
-          git sparse-checkout set documentation
-          cd -
+          git clone --depth=1 https://github.com/iotaledger/iota.rs
       - name: Copy wallet.rs docs
         run: |
           cd external
