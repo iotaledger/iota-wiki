@@ -1,6 +1,7 @@
 import React from 'react'
 import clsx from 'clsx'
-import styles from './styles.module.css'
+
+import './styles.css'
 
 const ActionList = [
   {
@@ -32,7 +33,7 @@ const ActionList = [
   },
 ];
 
-function Action({ title, link, description}) {
+function Action({ title, link, description }) {
   let [hovering, setHovering] = useState(false);
   let history = useHistory();
 
@@ -42,31 +43,29 @@ function Action({ title, link, description}) {
   }
 
   return (
-    <div className='col col--4 margin-vert--md'>
-      <div
-        className={clsx('card padding--lg')}
-        onClick={handleClick}
-        onMouseOver={() => setHovering(true)}
-        onMouseOut={() => setHovering(false)}
-      >
-        <div className={clsx(styles.header)}>
-          <span className={clsx(styles.headerTitle)}>{title}</span>
-          <div href={link} className={clsx(styles.button)}>
-            <span className={clsx("material-icons", styles.icon)}>
-              navigate_next
-            </span>
-          </div>
+    <div
+      className='action margin-vert--md padding--lg'
+      onClick={handleClick}
+      onMouseOver={() => setHovering(true)}
+      onMouseOut={() => setHovering(false)}
+    >
+      <div className='action__header'>
+        <span className='action__title'>{title}</span>
+        <div href={link} className='action__button'>
+          <span className='action__icon material-icons'>
+            navigate_next
+          </span>
         </div>
-        <div className={clsx(
-          "headline-stick",
-          {
-            "size-m": hovering,
-            "size-s": !hovering
-          }
-        )}></div>
-        <div className={clsx(styles.body)}>
-          {description}
-        </div>
+      </div>
+      <div className={clsx(
+        'headline-stick',
+        {
+          'size-m': hovering,
+          'size-s': !hovering
+        }
+      )}></div>
+      <div className='action__description'>
+        {description}
       </div>
     </div>
   );
@@ -77,17 +76,17 @@ function LandingpageHeader() {
   const { isDarkTheme } = useThemeContext();
 
   return (
-    <header className={clsx('padding-top--xl', styles.header)}>
-      <div className={clsx(styles.heading)}>
-        <img className={clsx(styles.headingImage)} src={isDarkTheme ? useBaseUrl('/img/globe_dark.svg') : useBaseUrl('/img/globe_light.svg')} />
+    <header className='header padding-top--xl'>
+      <div className='title'>
+        <img className='title__image' src={isDarkTheme ? useBaseUrl('/img/globe_dark.svg') : useBaseUrl('/img/globe_light.svg')} />
         <div>
-          <h1 className={clsx(styles.headingTitle)}>{siteConfig.title}</h1>
-          <span className={clsx('grey', 'section-header')}>{siteConfig.tagline}</span>
+          <h1 className='title__text'>{siteConfig.title}</h1>
+          <span className='title__subtext grey'>{siteConfig.tagline}</span>
         </div>
       </div>
-      <div className='container padding--xl'>
-        <div className="section-header grey text--center margin-bottom--sm" >Get started, right away</div>
-        <div className='row'>
+      <div className='padding--xl'>
+        <div className='section-header grey text--center margin-bottom--sm' >Get started, right away</div>
+        <div className='actionlist'>
           {ActionList.map((props, idx) => (
             <Action key={idx} {...props} />
           ))}
