@@ -31,7 +31,7 @@ The source code of the software can be found here:
 
 Standard installation following the Hornet Documentation:
 
-- [Hornet documentation - setup a node](https://hornet.docs.iota.org/getting_started/installation_steps.html/)
+- [Hornet documentation - set up a node](https://hornet.docs.iota.org/getting_started/installation_steps.html/)
 
 ### Hornet Community Tutorials:
 
@@ -130,7 +130,6 @@ Wasp is still a work in progress and is purely for development and testing purpo
 The full documentation for WASP Smartcontract Nodes can be found here:
 
 - [WASP Documentation/GitHub](https://github.com/iotaledger/wasp)
-
 
 
 
