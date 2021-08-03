@@ -1,6 +1,6 @@
 ---
 title: Node Software
-description: IOTA networks consist of interconnected nodes that run the same node software. We introduce the different available Types and provide guides that will help in setting those nodes up.
+description: IOTA networks consist of interconnected nodes that run the same node software. We introduce the different available types and provide guides that will help in setting those nodes up.
 ---
 
 # Node Software
@@ -130,7 +130,6 @@ Wasp is still a work in progress and is purely for development and testing purpo
 The full documentation for WASP Smartcontract Nodes can be found here:
 
 - [WASP Documentation/GitHub](https://github.com/iotaledger/wasp)
-
 
 
 
