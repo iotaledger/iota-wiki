@@ -13,7 +13,7 @@ Messages can contain payloads. Some of them are core payloads that are processed
 
 ## UTXO
 
-Previously, IOTA protocol used transactions (which were vertices in the Tangle), where each transaction defined either an input or output. A grouping of those input/output transaction vertices made up a bundle which transferred the given values as an atomic unit. But this approach was seen as too time consuming. So, we adopted a new transaction structure called the unspent transaction outputs (UTXO).
+Previously, IOTA protocol used transactions (which were vertices in the Tangle), where each transaction defined either an input or output. A grouping of those input/output transaction vertices made up a bundle which transferred the given values as an atomic unit. But this approach was seen as too time-consuming. So, we adopted a new transaction structure called the unspent transaction outputs (UTXO).
 
 The UTXO model defines a ledger state where balances are not directly associated to addresses but to the outputs of transactions. In this model, transactions specify the outputs of previous transactions as inputs, which are consumed to create new outputs. A transaction must consume the entirety of the specified inputs.
 
@@ -77,4 +77,3 @@ Finally, a message is considered valid if the following syntactic rules are met:
 1. If the payload type is in the core payload range (0-127) and the node is familiar with it, or if it is above this range.
 1. If the Message PoW Hash will contain at least the number of trailing 0 trits the node defines as required.
 1. Parents' length must be 2
-
