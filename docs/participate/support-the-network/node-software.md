@@ -85,7 +85,7 @@ Due to the prototypical nature of the project, things written today may reflect 
 
 The software is written in Go and is currently the software used in the IOTA 2.0 DevNet where the upcoming IOTA 2.0 version without a coordinator node is tested and optimized in collaboration with a huge amount of community contributors. GoShimmer allows testing and analyzing all upcoming features of IOTA and is therefore an essential part of the ongoing IOTA Research.
 
-Goshimmer will not be developed as an upcoming Mainnet node Software.
+GoShimmer will not be developed as an upcoming Mainnet node Software.
 
 The full documentation for Goshimmer can be found here:
 
