@@ -41,7 +41,7 @@ Guides and easy one - line installations scripts created by IOTA community membe
 * 
 * DeMicheles one-liner using Nuriels Playbook: [Install Hornet](https://github.com/demichele/install-hornet-1.5)
 * 
-* Step by Step guide for Windows users by Phylo: 
+* Step-by-Step guide for Windows users by Phylo: 
 * [Hornet node Installation guide Part 1](https://phyloiota.medium.com/iota-hornet-node-installation-81747de28338) 
 * [Hornet node Installation guide Part 2](https://phyloiota.medium.com/iota-hornet-node-installation-2-8f2639e04d1d)
 * 
@@ -130,7 +130,6 @@ Wasp is still a work in progress and is purely for development and testing purpo
 The full documentation for WASP Smartcontract Nodes can be found here:
 
 - [WASP Documentation/GitHub](https://github.com/iotaledger/wasp)
-
 
 
 
