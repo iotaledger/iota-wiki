@@ -101,7 +101,7 @@ Standard installation following the Bee Documentation:
 
 - [GoShimmer Node Setup](https://goshimmer.docs.iota.org/docs/tutorials/setup)
 
-### Goshimmer community tutorials:
+### GoShimmer community tutorials:
 
 - Nuriels GoShimmer Playbook: [Nuriel77 GoShimmer](https://github.com/nuriel77/goshimmer-playbook)
 - DeMichelle Shell Script: [DeMichelle GoShimmer](https://github.com/demichele/install-goshimmer)
