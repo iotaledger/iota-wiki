@@ -200,17 +200,6 @@ function Navbar() {
       })}>
       <div className="navbar__inner">
         <div className="navbar__items">
-          {items?.length > 0 && (
-            <button
-              aria-label="Navigation bar toggle"
-              className="navbar__toggle clean-btn"
-              type="button"
-              tabIndex={0}
-              onClick={mobileSidebar.toggle}
-              onKeyDown={mobileSidebar.toggle}>
-              <IconMenu />
-            </button>
-          )}
           <Logo
             className="navbar__brand"
             imageClassName="navbar__logo"
@@ -231,6 +220,17 @@ function Navbar() {
               checked={colorModeToggle.isDarkTheme}
               onChange={colorModeToggle.toggle}
             />
+          )}
+          {items?.length > 0 && (
+            <button
+              aria-label="Navigation bar toggle"
+              className="navbar__toggle clean-btn"
+              type="button"
+              tabIndex={0}
+              onClick={mobileSidebar.toggle}
+              onKeyDown={mobileSidebar.toggle}>
+              <IconMenu />
+            </button>
           )}
         </div>
       </div>
