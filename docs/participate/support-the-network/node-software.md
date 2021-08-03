@@ -121,7 +121,7 @@ The full documentation for Chronicle Permanodes can be found here:
 
 - [Chronicle Documentation/GitHub](https://github.com/iotaledger/chronicle.rs)
 
-## WASP Smartcontract Node
+## WASP Smart Contract Node
 
 Wasp is a node software developed by the IOTA Foundation to run the IOTA Smart Contract Protocol (ISCP in short) on top of the IOTA Tangle.
 
@@ -130,4 +130,3 @@ Wasp is still a work in progress and is purely for development and testing purpo
 The full documentation for WASP Smartcontract Nodes can be found here:
 
 - [WASP Documentation/GitHub](https://github.com/iotaledger/wasp)
-
