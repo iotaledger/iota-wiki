@@ -87,7 +87,7 @@ The software is written in Go and is currently the software used in the IOTA 2.0
 
 GoShimmer will not be developed as an upcoming Mainnet node Software.
 
-The full documentation for Goshimmer can be found here:
+The full documentation for GoShimmer can be found here:
 
 - [Goshimmer Documentation](https://goshimmer.docs.iota.org/)
 
