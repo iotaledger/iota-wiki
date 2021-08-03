@@ -76,4 +76,4 @@ Finally, a message is considered valid if the following syntactic rules are met:
 1. When parsing the message is complete, there should not be any trailing bytes left that were not parsed.
 1. If the payload type is in the core payload range (0-127) and the node is familiar with it, or if it is above this range.
 1. If the Message PoW Hash will contain at least the number of trailing 0 trits the node defines as required.
-1. Parents' length must be 2
+1. Parents' length must be between 1 to 8
