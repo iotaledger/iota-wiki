@@ -26,7 +26,8 @@ jobs:
           cd external
           git clone --depth=1 --sparse https://github.com/iotaledger/goshimmer
           cd goshimmer
-          git sparse-checkout set docOps
+          git sparse-checkout set documentation
+          cp -rf documentation/static/img/* ../../static/img/
           cd -
       - name: Copy Wasp docs
         run: |
@@ -34,18 +35,18 @@ jobs:
           git clone --depth=1 --sparse https://github.com/iotaledger/wasp
           cd wasp
           git sparse-checkout set documentation
+          cp -r documentation/static/img/* ../../static/img/
           cd -
       - name: Copy iota.rs docs
         run: |
           cd external
           git clone --depth=1 https://github.com/iotaledger/iota.rs
+          cp -r iota.rs/documentation/static/img/* ../static/img/
       - name: Copy wallet.rs docs
         run: |
           cd external
-          git clone --depth=1 --sparse https://github.com/iotaledger/wallet.rs
-          cd wallet.rs
-          git sparse-checkout set documentation
-          cd -
+          git clone --depth=1 https://github.com/iotaledger/wallet.rs
+          cp -r wallet.rs/documentation/static/img/* ../static/img/
       - name: Copy stronghold.rs docs
         run: |
           cd external
@@ -61,6 +62,7 @@ jobs:
         run: |
           cd external
           git clone --depth=1 https://github.com/iotaledger/chrysalis-docs
+          cp -r chrysalis-docs/static/img/* ../static/img/
       - name: Return to root folder
         run: cd ..
       - name: Build

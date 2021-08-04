@@ -273,9 +273,9 @@ module.exports = {
       '@docusaurus/plugin-content-docs',
       {
         id: 'goshimmer',
-        path: 'external/goshimmer/docOps/docs',
+        path: 'external/goshimmer/documentation/docs',
         routeBasePath: 'goshimmer',
-        sidebarPath: require.resolve('./external/goshimmer/docOps/sidebars.js'),
+        sidebarPath: require.resolve('./external/goshimmer/documentation/sidebars.js'),
       }
     ],
     [
