@@ -25,8 +25,8 @@
 }
 
 .actionlist {
-  display: flex;
-  justify-content: space-between;
+  margin-left: max(1rem, calc(15% - 5rem));
+  margin-right: max(1rem, calc(15% - 5rem));
 }
 
 .action {
@@ -94,5 +94,6 @@
 }
 
 .action__description {
+  font-size: 80%;
   letter-spacing: 0.02em;
 }
