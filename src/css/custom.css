@@ -456,10 +456,17 @@
     font-size: 80%;
   }
 
+  .footer__links {
+    margin-left: max(1rem, calc(20% - 5rem));
+    margin-right: max(1rem, calc(20% - 5rem));
+  }
+
   .footer__bottom {
     display: flex;
     align-items: flex-end;
     flex-wrap: wrap;
+    margin-left: max(1rem, calc(20% - 5rem));
+    margin-right: max(1rem, calc(20% - 5rem));
   }
 
   .footer__logo {
