@@ -4,6 +4,9 @@ html {
     font-weight: 400;
 }
 
+article {  
+  max-width: 800px;  
+}
   
   @font-face {
       font-family: Inter;
@@ -436,12 +439,29 @@ html {
   }
 
 
+
 .menu__link {
   font-family: 'Metropolis Medium';
+  padding-top: 7px;
+  padding-bottom: 7px;
+  padding-left: 15px;
+  border-radius: 0px;
 }
 
 .menu__link--active {
   font-family: 'Metropolis Semi Bold';
+  border-left: 3px solid var(--ifm-color-primary);
+  padding-left: 12px;
+  background-color: rgba(54, 161, 172, .04)
+}
+
+
+
+.menu__link--sublist {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-radius: 0px;
+  border: none;
 }
 
 
@@ -449,13 +469,22 @@ html {
   font-family: 'Metropolis Medium';
   font-size: 0.9rem;
   color: var(--ifm-color-emphasis-600);
+  padding-top: 7px;
+  padding-bottom: 7px;
+  padding-left: 15px;
 }
 
 .table-of-contents__link--active {
   color: var(--ifm-color-primary);
   font-family: 'Metropolis Semi Bold';
+  border-left: 3px solid var(--ifm-color-primary);
+  padding-left: 12px;
 }
 
+
+.table-of-contents {
+  padding: 0px;
+}
 
   .navbar {
       font-family: 'Metropolis Medium';
@@ -546,3 +575,6 @@ html {
   .headline-stick.size-m {
     width: 48px;
   }
+
+
+ 
