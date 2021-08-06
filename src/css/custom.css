@@ -5,8 +5,19 @@ html {
 }
 
 article {  
-  max-width: 800px;  
+  max-width: 800px; 
+  padding-top: 3rem; 
+  padding-bottom: 3rem;
 }
+
+h1 {    
+  font-size: 2.5rem !important;  
+}  
+
+h2 {    
+ font-size: 1.8rem !important; 
+ padding-top: 1rem; 
+} 
   
   @font-face {
       font-family: Inter;
@@ -209,6 +220,7 @@ article {
       font-display: swap;
       src: url(https://webassets.iota.org/fonts/metropolis/Metropolis-Bold.woff2?v=11) format("woff2"), url(https://webassets.iota.org/fonts/metropolis/Metropolis-Bold.woff?v=11) format("woff")
   }
+
 
   :root {
     --ifm-color-primary: #36A1AC;
@@ -439,6 +451,10 @@ article {
   }
 
 
+.menu__list {
+    margin-bottom: 15px;
+}
+
 .menu__link {
   font-family: 'Metropolis Medium';
   padding-top: 5px;
@@ -466,11 +482,6 @@ article {
   background-size: 1.6rem 1.6rem;
 }
 
-.menu__list {
-  margin-bottom: 15px;
-
-}
-
 
 .table-of-contents__link {
   font-family: 'Metropolis Medium';
@@ -479,6 +490,7 @@ article {
   padding-top: 5px;
   padding-bottom: 5px;
   padding-left: 15px;
+  box-decoration-break: clone;
 }
 
 .table-of-contents__link--active {
@@ -495,7 +507,7 @@ article {
 
 
   .navbar {
-      font-family: 'Metropolis Medium';
+      font-family: 'Metropolis Semi Bold';
       line-height: 1.25rem;
       font-weight: 400;
   }
@@ -506,14 +518,6 @@ article {
 
   .navbar__brand {
     height: 25px;
-  }
-
-
-  .navbar__link--active {
-    font-family: 'Metropolis Semi Bold';
-    /* border-bottom: 3px solid var(--ifm-color-primary);
-    padding: 0px;
-    margin: 10px; */
   }
 
   .section-header {
@@ -529,7 +533,6 @@ article {
 
   .footer {
     border-top: 1px solid #E8EEFB;
-    font-size: 80%;
   }
 
   [data-theme='dark'] .footer {
@@ -553,12 +556,12 @@ article {
 
   .footer__logo {
     height: 3rem;
-    margin-right: 2em;
+    margin-right: 1em;
     margin-bottom: -1em;
   }
 
   .footer__copyright {
-    font-size: 1rem;
+    font-size: 0.9rem;
     margin-top: 1em;
   }
 

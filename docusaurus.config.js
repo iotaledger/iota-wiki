@@ -46,13 +46,7 @@ module.exports = {
           to: "docs/participate/support-the-network/run-a-node",
         },
       ],
-      <div className={clsx(
-        'headline-stick',
-        {
-          'size-m': hovering,
-          'size-s': !hovering
-        }
-      )}></div>
+      
     },
     footer: {
       links: [

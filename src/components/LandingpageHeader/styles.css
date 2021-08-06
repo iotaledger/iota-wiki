@@ -7,6 +7,15 @@
 }
 
 
+
+hr {
+  border: 1px solid #EEF2FA;
+}
+[data-theme='dark']  hr {
+  border: 1px solid #293858;
+}
+
+
 .title {
   display: flex;
   justify-content: center;
@@ -44,6 +53,7 @@ color: #909FBE
   border-radius: var(--ifm-global-radius);
   height: 100%;
   cursor: pointer;
+  box-shadow: 0px 2px 6px rgb(19, 31, 55, 0.12);
 }
 
 [data-theme='dark'] .action {
