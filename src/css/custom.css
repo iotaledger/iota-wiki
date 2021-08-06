@@ -1,7 +1,7 @@
 html {
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: antialiased;
-    font-weight: 400;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-weight: 400;
 }
 
 article {  
@@ -439,11 +439,10 @@ article {
   }
 
 
-
 .menu__link {
   font-family: 'Metropolis Medium';
-  padding-top: 7px;
-  padding-bottom: 7px;
+  padding-top: 5px;
+  padding-bottom: 5px;
   padding-left: 15px;
   border-radius: 0px;
 }
@@ -452,16 +451,24 @@ article {
   font-family: 'Metropolis Semi Bold';
   border-left: 3px solid var(--ifm-color-primary);
   padding-left: 12px;
-  background-color: rgba(54, 161, 172, .04)
+  background-color: rgba(54, 161, 172, .04);
 }
 
-
-
 .menu__link--sublist {
+  font-family: 'Metropolis Semi Bold';
   padding-top: 20px;
   padding-bottom: 20px;
   border-radius: 0px;
   border: none;
+}
+
+.menu .menu__link.menu__link--sublist:after {
+  background-size: 1.6rem 1.6rem;
+}
+
+.menu__list {
+  margin-bottom: 15px;
+
 }
 
 
@@ -469,8 +476,8 @@ article {
   font-family: 'Metropolis Medium';
   font-size: 0.9rem;
   color: var(--ifm-color-emphasis-600);
-  padding-top: 7px;
-  padding-bottom: 7px;
+  padding-top: 5px;
+  padding-bottom: 5px;
   padding-left: 15px;
 }
 
@@ -486,6 +493,7 @@ article {
   padding: 0px;
 }
 
+
   .navbar {
       font-family: 'Metropolis Medium';
       line-height: 1.25rem;
@@ -500,8 +508,12 @@ article {
     height: 25px;
   }
 
+
   .navbar__link--active {
     font-family: 'Metropolis Semi Bold';
+    /* border-bottom: 3px solid var(--ifm-color-primary);
+    padding: 0px;
+    margin: 10px; */
   }
 
   .section-header {
