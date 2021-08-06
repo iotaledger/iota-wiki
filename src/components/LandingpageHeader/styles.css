@@ -6,6 +6,7 @@
   background: url('/img/background_dark.svg') center center/cover;
 }
 
+
 .title {
   display: flex;
   justify-content: center;
@@ -19,9 +20,18 @@
 
 .title__text {
   margin-bottom: 0;
-  font-size: 2.5rem;
+  font-size: 2.3rem;
   letter-spacing: 0.02em;
-  font-family: 'Metropolis Semi Bold';
+  font-family: 'Metropolis';
+  font-weight: 600;
+}
+
+.title__subtext {
+font-size: 1.2rem;
+font-family: 'Metropolis';
+font-weight: 600;
+color: #909FBE
+
 }
 
 .actionlist {
@@ -47,9 +57,9 @@
 }
 
 .action__title {
-  padding: 0;
+  padding-top: 1rem;
   margin: 0;
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   letter-spacing: 0.02em;
   font-family: 'Metropolis Semi Bold';
 }
@@ -94,6 +104,7 @@
 }
 
 .action__description {
-  font-size: 80%;
+  padding-bottom: 0.5rem;
+  font-size: 1rem;
   letter-spacing: 0.02em;
 }

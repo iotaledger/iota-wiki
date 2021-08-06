@@ -1,3 +1,10 @@
+html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: antialiased;
+    font-weight: 400;
+}
+
+  
   @font-face {
       font-family: Inter;
       font-style: normal;
@@ -201,7 +208,7 @@
   }
 
   :root {
-    --ifm-color-primary: #00E0CA;
+    --ifm-color-primary: #36A1AC;
     --ifm-color-success: #0FC1B7;
     --ifm-color-info: #2E8698;
     --ifm-color-warning: #e5a23e;
@@ -356,13 +363,13 @@
       tint(var(--ifm-lightest-value))
     );
 
-    --ifm-color-gray-100: #F6F8FC;
+    --ifm-color-gray-100: #ffffff;
     --ifm-color-gray-200: #F2F5FB ;
     --ifm-color-gray-300: #EEF2FA;
     --ifm-color-gray-400: #CBD2E0;
     --ifm-color-gray-500: #A7B3C7;
     --ifm-color-gray-600: #8493AD;
-    --ifm-color-gray-700: #485776;
+    --ifm-color-gray-700: #293858;
     --ifm-color-gray-800: #131F37;
     --ifm-color-gray-900: #0A101C;
 
@@ -428,6 +435,28 @@
       color: inherit;
   }
 
+
+.menu__link {
+  font-family: 'Metropolis Medium';
+}
+
+.menu__link--active {
+  font-family: 'Metropolis Semi Bold';
+}
+
+
+.table-of-contents__link {
+  font-family: 'Metropolis Medium';
+  font-size: 0.9rem;
+  color: var(--ifm-color-emphasis-600);
+}
+
+.table-of-contents__link--active {
+  color: var(--ifm-color-primary);
+  font-family: 'Metropolis Semi Bold';
+}
+
+
   .navbar {
       font-family: 'Metropolis Medium';
       line-height: 1.25rem;
@@ -443,22 +472,34 @@
   }
 
   .navbar__link--active {
-    font-weight: bold;
+    font-family: 'Metropolis Semi Bold';
   }
 
   .section-header {
     font-family: 'Metropolis Semi Bold';
     font-size: 1.25em;
     letter-spacing: 0.04em;
+    color: #909FBE;
+  }
+
+  [data-theme='dark']  .section-header {
+   color: #B0BFD9;
   }
 
   .footer {
+    border-top: 1px solid #E8EEFB;
     font-size: 80%;
   }
+
+  [data-theme='dark'] .footer {
+    border-top: 1px solid #293858;
+  }
+
 
   .footer__links {
     margin-left: max(1rem, calc(20% - 5rem));
     margin-right: max(1rem, calc(20% - 5rem));
+    font-size: 1rem;
   }
 
   .footer__bottom {
@@ -476,6 +517,7 @@
   }
 
   .footer__copyright {
+    font-size: 1rem;
     margin-top: 1em;
   }
 
