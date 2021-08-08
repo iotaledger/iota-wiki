@@ -6,14 +6,13 @@ const katex = require('rehype-katex');
 module.exports = {
   title: 'IOTA Wiki',
   tagline: 'The complete reference for IOTA',
-  url: 'http://94.16.108.60',
-  baseUrl: '/iota-wiki/',
+  url: 'https://wiki.iota.org',
+  baseUrl: '/',
   onBrokenLinks: 'log',
   onBrokenMarkdownLinks: 'log',
   favicon: 'img/favicon.ico',
   organizationName: 'iota-community', // Usually your GitHub org/user name.
   projectName: 'iota-wiki', // Usually your repo name.
-  noIndex: true,
   stylesheets: [
     'https://fonts.googleapis.com/css?family=Material+Icons',
     {
@@ -23,6 +22,14 @@ module.exports = {
     },
   ],
   themeConfig: {
+    announcementBar: {
+      id: 'wip', // Any value that will identify this message.
+      content:
+        'This Wiki is still a Work in Progress. Consider contributing by using the in page editor or creating a <a href="https://github.com/iota-community/iota-wiki">PR directly</a>',
+      backgroundColor: '#ff0000', // Defaults to `#fff`.
+      textColor: '#fff', // Defaults to `#000`.
+      isCloseable: false, // Defaults to `true`.
+    },
     navbar: {
       hideOnScroll: true,
       logo: {
