@@ -252,19 +252,19 @@ Note: If you are an existing IOTA user and secured IOTA with a Ledger before the
 
 Creating a new Ledger profile in Firefly is very quick and simple. Once you have downloaded Firefly, open the app and follow the setup instructions. You first need to review and accept the terms and conditions, set a theme (dark or light), and choose a profile name. Select "Create a new wallet".
 
-<img width="800" alt="Screenshot-2021-08-04-at-21 32 17" src="https://user-images.githubusercontent.com/77154511/128617942-08c86c2a-3fc9-4f9e-9fe9-7ae773b65447.png">
+<img width="800" alt="Screenshot-2021-08-04-at-21 32 17" src="https://user-images.githubusercontent.com/77154511/128617942-08c86c2a-3fc9-4f9e-9fe9-7ae773b65447.png"/>
 
 Press "I want a hardware wallet" to begin the Ledger profile setup process.
 
-<img width="800" alt="Screenshot-2021-08-04-at-21 39 53" src="https://user-images.githubusercontent.com/77154511/128617963-b76ae3fc-2931-4ca9-9f3c-51658646f2da.png">
+<img width="800" alt="Screenshot-2021-08-04-at-21 39 53" src="https://user-images.githubusercontent.com/77154511/128617963-b76ae3fc-2931-4ca9-9f3c-51658646f2da.png"/>
 
 On the next page, you will be asked to set a PIN code. This PIN is used to log in to your wallet and blocks other people from logging in and viewing your balance transaction history. Choose a PIN that only you know. Re-enter your PIN on the next page to confirm.
 
-<img width="800" alt="Screenshot-2021-08-04-at-21 40 46-1" src="https://user-images.githubusercontent.com/77154511/128617980-b0f4a8eb-13bc-4e73-9c91-db005ddd4744.png">
+<img width="800" alt="Screenshot-2021-08-04-at-21 40 46-1" src="https://user-images.githubusercontent.com/77154511/128617980-b0f4a8eb-13bc-4e73-9c91-db005ddd4744.png"/>
 
 Now, Firefly will check that your Ledger Nano is connected. Make sure the IOTA app is open on your device and that Ledger Live is closed. If you have connection problems follow the "Tips if your Ledger isn't connecting" guide in Firefly.
 
-<img width="800" alt="Screenshot-2021-08-04-at-21 44 15" src="https://user-images.githubusercontent.com/77154511/128617996-e5e93888-8d42-4096-97a1-e4d3d2ff044c.png">
+<img width="800" alt="Screenshot-2021-08-04-at-21 44 15" src="https://user-images.githubusercontent.com/77154511/128617996-e5e93888-8d42-4096-97a1-e4d3d2ff044c.png"/>
 
 Hit "Continue", and that's all there is to it. It really is that simple. You can now enter the dashboard and begin exploring Firefly.
 
@@ -274,7 +274,7 @@ Hit "Continue", and that's all there is to it. It really is that simple. You can
 
 If you would like to receive funds to your new Ledger profile you can press the "Receive" button on the dashboard.
 
-<img width="800" alt="Screenshot-2021-08-04-at-21 59 43" src="https://user-images.githubusercontent.com/77154511/128618070-f18b484e-0d09-4998-8c07-6fd3bdc12612.png">
+<img width="800" alt="Screenshot-2021-08-04-at-21 59 43" src="https://user-images.githubusercontent.com/77154511/128618070-f18b484e-0d09-4998-8c07-6fd3bdc12612.png"/>
 
 On this page you can select "Generate address" and Firefly will prompt you to confirm the address matches the one displayed on your Ledger device.
 
@@ -286,11 +286,11 @@ Note: This is a security check to ensure that you are connected to the official,
 
 ![Screenshot-2021-08-04-at-22](https://user-images.githubusercontent.com/77154511/128618097-a8c4dfcd-30ea-41f6-b908-5d9e6008ebb8.png)
 
-<img width="454" alt="Screenshot-2021-08-04-at-21 52 53" src="https://user-images.githubusercontent.com/77154511/128618106-9f5e27fd-34a2-4614-ab9f-f3dd7a86149a.png">
+<img width="454" alt="Screenshot-2021-08-04-at-21 52 53" src="https://user-images.githubusercontent.com/77154511/128618106-9f5e27fd-34a2-4614-ab9f-f3dd7a86149a.png"/>
 
 You can now copy the address and share it with a friend or exchange from which you wish to receive tokens. Always make sure the address is the same as the one displayed on your Ledger device.
 
-<img width="800" alt="Screenshot-2021-08-04-at-21 53 19" src="https://user-images.githubusercontent.com/77154511/128618113-a7dc3849-f0bb-4782-b7da-3473bfb4023b.png">
+<img width="800" alt="Screenshot-2021-08-04-at-21 53 19" src="https://user-images.githubusercontent.com/77154511/128618113-a7dc3849-f0bb-4782-b7da-3473bfb4023b.png"/>
 
 ### Sending tokens
 
