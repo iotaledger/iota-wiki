@@ -7,7 +7,7 @@ description: A basic introduction to the IOTA DLT Technology. The use-cases and 
 
 # Introduction to IOTA
 
-**This topic describes some of the main differences between the Tangle and a blockchain.**
+**This topic describes some main differences between the Tangle and a blockchain.**
 
 Blockchains and the Tangle both fall under the same category of distributed ledger technology (DLT).
 
@@ -70,5 +70,4 @@ To allow them to recognize milestones, all nodes in the same IOTA network are co
 To make sure that new messages always have a chance of being confirmed, the Coordinator sends indexed milestones at regular intervals. This way, nodes can compare the indexes of their milestones to check whether they are synchonized with the rest of the network.
 
 ![coordinator](https://user-images.githubusercontent.com/77154511/127796118-08915c1d-438d-4d9a-8432-893c6c5b4f0d.gif)
-
 
