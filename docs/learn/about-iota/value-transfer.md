@@ -96,7 +96,7 @@ Nodes are the bookkeepers, decision-makers, and validators of all information in
 
 A Node is also the entry point for clients into the network. The clients submit messages to the node over a specified port in the node. The node collects all arriving traffic of this entry port in his inbox and first checks if the message is correctly formatted and can be processed.
 
-If all bits of the message are readable for the node and the node detects the signed transaction payload included in the message a validation process starts.
+If all bits of the message are readable for the node and the node detects the signed transaction payload included in the message, a validation process starts.
 
 Firstly, the node verifies if the address that tries to send these funds has the needed balance to do this. So he checks his current knowledge of that address (his ledger state) if the address has enough funds. Also, the node checks that no conflicts are known in the network that would make it possible to spend more funds than are currently located on the address (double spend). So if there is another message currently present and know for the node that wants to spend the same funds of the address, a conflict is detected and both messages will be processed into conflict resolution - more about this process later. 
 
