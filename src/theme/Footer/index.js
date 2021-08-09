@@ -52,7 +52,7 @@ function Footer() {
   return (
     <>
       <footer
-        className={clsx('footer', 'padding--none', 'padding-top--lg', {
+        className={clsx('footer', 'padding--none', 'padding-top--xl', {
           'footer--dark': footer.style === 'dark',
         })}>
         {links && links.length > 0 && (

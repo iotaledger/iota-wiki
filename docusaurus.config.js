@@ -46,6 +46,7 @@ module.exports = {
           to: "docs/participate/support-the-network/run-a-node",
         },
       ],
+      
     },
     footer: {
       links: [
