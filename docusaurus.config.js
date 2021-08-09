@@ -211,7 +211,7 @@ module.exports = {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
           editUrl:
-            'https://github.com/iota-community/iota-wiki',
+            'https://github.com/iota-community/iota-wiki/tree/develop/',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
