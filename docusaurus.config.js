@@ -53,42 +53,7 @@ module.exports = {
               label: "Getting Started",
               to: "docs/develop/getting-started/architecture",
             },
-            {
-              label: "Bee",
-              to: "bee/getting_started/getting_started",
-            },
-            {
-              label: "GoShimmer",
-              to: "goshimmer/welcome",
-            },
-            {
-              label: "Wasp",
-              to: "wasp/welcome",
-            },
-            {
-              label: "iota.rs",
-              to: "iota.rs/welcome",
-            },
-            {
-              label: "wallet.rs",
-              to: "wallet.rs/welcome",
-            },
-            {
-              label: "stronghold.rs",
-              to: "stronghold.rs/welcome",
-            },
-            {
-              label: "IOTA 2.0 Specs",
-              to: "IOTA-2.0-Research-Specifications/Preface",
-            },
-            {
-              label: "Chrysalis docs",
-              to: "chrysalis-docs/welcome",
-            },
-            {
-              label: "Hornet",
-              to: "hornet/welcome",
-            },
+            /* AUTO GENERATED EXTERNAL DOCS DROPDOWN CONFIG */
           ]
         },
         {

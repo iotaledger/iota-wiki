@@ -38,6 +38,13 @@ jobs:
           export replace_string='/\* AUTO GENERATED EXTERNAL DOCS CONFIG \*/'
           perl -0pe 's#$ENV{replace_string}#$ENV{config}#' docusaurus.config.js > docusaurus.config.js.cpy
           rm -f docusaurus.config.js && mv docusaurus.config.js.cpy docusaurus.config.js
+      - name: Add external doc dropdown config
+        run: |
+          export config=$(cat .github/workflows/EXTERNAL_DOCS_DROPDOWN_CONFIG)
+          echo "$config"
+          export replace_string='/\* AUTO GENERATED EXTERNAL DOCS DROPDOWN CONFIG \*/'
+          perl -0pe 's#$ENV{replace_string}#$ENV{config}#' docusaurus.config.js > docusaurus.config.js.cpy
+          rm -f docusaurus.config.js && mv docusaurus.config.js.cpy docusaurus.config.js
       - uses: actions/setup-node@v1
         with:
           node-version: '12.x'
