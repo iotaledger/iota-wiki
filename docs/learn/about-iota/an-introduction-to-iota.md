@@ -55,7 +55,7 @@ As a result, requiring PoW secures blockchain networks by making it difficult to
 In the Tangle, messages require no fees because the network has no miners.
 In the Tangle, PoW is not used to secure the network. Instead, PoW is used only to discourage spam messages.
 To reach a consensus, all IOTA nodes validate messages and use different functions alongside messages in their confirmation.
-Currently messages will only considered valid if they have a refference to a milestone. These milestones are issued by a special network node - the Coordinator.
+Currently messages will only be considered valid if they have a reference to a milestone. These milestones are issued by a special network node - the Coordinator.
 
 ## **The coordinator**
 
