@@ -35,16 +35,14 @@ p {
 }
 
 .title__text {
+  font-family: 'Metropolis Semi Bold';
   margin-bottom: 0;
   font-size: 2.3rem;
   letter-spacing: 0.02em;
-  font-family: 'Metropolis';
-  font-weight: 600;
 }
 
 .title__subtext {
 font-size: 1.2rem;
-font-family: 'Metropolis';
 font-weight: 600;
 color: #909FBE
 
