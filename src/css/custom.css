@@ -1,3 +1,25 @@
+html {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-weight: 400;
+}
+
+article {  
+  max-width: 800px; 
+  padding-top: 3rem; 
+  padding-bottom: 3rem;
+}
+
+h1 {    
+  font-size: 2.5rem !important;  
+}  
+
+h2 {    
+ font-size: 1.8rem !important; 
+ padding-top: 1rem; 
+} 
+
+
   @font-face {
       font-family: Inter;
       font-style: normal;
@@ -200,8 +222,9 @@
       src: url(https://webassets.iota.org/fonts/metropolis/Metropolis-Bold.woff2?v=11) format("woff2"), url(https://webassets.iota.org/fonts/metropolis/Metropolis-Bold.woff?v=11) format("woff")
   }
 
+
   :root {
-    --ifm-color-primary: #00E0CA;
+    --ifm-color-primary: #36A1AC;
     --ifm-color-success: #0FC1B7;
     --ifm-color-info: #2E8698;
     --ifm-color-warning: #e5a23e;
@@ -356,13 +379,13 @@
       tint(var(--ifm-lightest-value))
     );
 
-    --ifm-color-gray-100: #F6F8FC;
+    --ifm-color-gray-100: #E8EEFB;
     --ifm-color-gray-200: #F2F5FB ;
     --ifm-color-gray-300: #EEF2FA;
     --ifm-color-gray-400: #CBD2E0;
     --ifm-color-gray-500: #A7B3C7;
     --ifm-color-gray-600: #8493AD;
-    --ifm-color-gray-700: #485776;
+    --ifm-color-gray-700: #202B42;
     --ifm-color-gray-800: #131F37;
     --ifm-color-gray-900: #0A101C;
 
@@ -397,20 +420,22 @@
   }
 
   html[data-theme='dark'] {
-    --ifm-background-color: var(--ifm-color-emphasis-200);
-    --ifm-background-surface-color: var(--ifm-color-emphasis-200);
+    --ifm-color-primary: #14CABF;
+    
+    --ifm-background-color: #0D192F;
+    --ifm-background-surface-color: #0D192F;
 
     --ifm-navbar-link-color: #B0BFD9;
-    --ifm-navbar-background-color:#1f2a41;
+    --ifm-navbar-background-color:#0D192F;
 
     --ifm-menu-color-background-hover: var(--ifm-color-emphasis-300);
 
-    --ifm-footer-background-color: var(--ifm-color-emphasis-200);
+    --ifm-footer-background-color: #0D192F;
     --ifm-card-background-color:#293858;
 
     --ifm-heading-color: inherit;
 
-    --ifm-hover-overlay: var(--ifm-color-emphasis-200);
+    --ifm-hover-overlay: #0D192F;
   }
 
   .alert h1,
@@ -428,11 +453,73 @@
       color: inherit;
   }
 
+
+.menu__list {
+    margin-bottom: 15px;
+}
+
+.menu__link {
+  font-family: 'Metropolis Medium';
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 15px;
+  border-radius: 0px;
+}
+
+.menu__link--active {
+  font-family: 'Metropolis Semi Bold';
+  border-left: 3px solid var(--ifm-color-primary);
+  padding-left: 12px;
+  background-color: rgba(54, 161, 172, .04);
+}
+
+.menu__link--sublist {
+  font-family: 'Metropolis Semi Bold';
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-radius: 0px;
+  border: none;
+}
+
+.menu .menu__link.menu__link--sublist:after {
+  background-size: 1.6rem 1.6rem;
+}
+
+
+.table-of-contents__link {
+  font-family: 'Metropolis Medium';
+  font-size: 1rem;
+  color: var(--ifm-color-emphasis-600);
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 15px;
+  box-decoration-break: clone;
+}
+
+.table-of-contents__link--active {
+  color: var(--ifm-color-primary);
+  font-family: 'Metropolis Semi Bold';
+  border-left: 3px solid var(--ifm-color-primary);
+  padding-left: 12px;
+}
+
+
+.table-of-contents {
+  padding: 0px;
+}
+
+
   .navbar {
-      font-family: 'Metropolis Medium';
+      font-family: 'Metropolis Semi Bold';
       line-height: 1.25rem;
       font-weight: 400;
+      border-bottom: 1px solid #E8EEFB;
+      box-shadow: none;
   }
+  [data-theme='dark']  .navbar {
+    border-bottom: 1px solid var(--ifm-color-gray-700);
+   }
+
 
   .navbar__items--right > * {
     margin-left: 2rem;
@@ -442,23 +529,32 @@
     height: 25px;
   }
 
-  .navbar__link--active {
-    font-weight: bold;
-  }
-
   .section-header {
     font-family: 'Metropolis Semi Bold';
-    font-size: 1.25em;
+    font-size: 1.5rem;
     letter-spacing: 0.04em;
+    color: #909FBE;
+  }
+
+  [data-theme='dark']  .section-header {
+   color: #B0BFD9;
   }
 
   .footer {
-    font-size: 80%;
+    border-top: 1px solid #E8EEFB;
+    background-color: #fff;
   }
+
+  [data-theme='dark'] .footer {
+    border-top: 1px solid var(--ifm-color-gray-700);
+    background-color: #0D192F;
+  }
+
 
   .footer__links {
     margin-left: max(1rem, calc(20% - 5rem));
     margin-right: max(1rem, calc(20% - 5rem));
+    font-size: 1rem;
   }
 
   .footer__bottom {
@@ -471,11 +567,12 @@
 
   .footer__logo {
     height: 3rem;
-    margin-right: 2em;
+    margin-right: 1em;
     margin-bottom: -1em;
   }
 
   .footer__copyright {
+    font-size: 0.9rem;
     margin-top: 1em;
   }
 
@@ -504,3 +601,6 @@
   .headline-stick.size-m {
     width: 48px;
   }
+
+
+ 
