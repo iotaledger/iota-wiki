@@ -3,7 +3,7 @@ module.exports = {
   title: 'IOTA Wiki',
   tagline: 'The complete reference for IOTA',
   url: 'https://wiki.iota.org',
-  baseUrl: '/',
+  baseUrl: '/iota-wiki/',
   onBrokenLinks: 'log',
   onBrokenMarkdownLinks: 'log',
   favicon: 'img/favicon.ico',
