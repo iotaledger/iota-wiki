@@ -67,6 +67,6 @@ Messages in the Tangle are considered for confirmation only when they are direct
 
 To allow them to recognize milestones, all nodes in the same IOTA network are configured with the Merkle root address of a Coordinator that they trust to confirm messages. Using this address, nodes can validate the signatures in milestones to verify whether they are signed by their trusted Coordinator.
 
-To make sure that new messages always have a chance of being confirmed, the Coordinator sends indexed milestones at regular intervals. This way, nodes can compare the indexes of their milestones to check whether they are synchonized with the rest of the network.
+To make sure that new messages always have a chance of being confirmed, the Coordinator sends indexed milestones at regular intervals. This way, nodes can compare the indexes of their milestones to check whether they are synchronized with the rest of the network.
 
 ![coordinator](https://user-images.githubusercontent.com/77154511/127796118-08915c1d-438d-4d9a-8432-893c6c5b4f0d.gif)
