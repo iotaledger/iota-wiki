@@ -60,7 +60,7 @@ For example, what if Alice actually attached two messages to the Tangle: One tha
 
 Both of Alice's messages could not be part of the ledger state because it would result in a negative balance for Alice’s address: - 10 i.
 
-Messages in the Tangle are confirmed by special messages called milestones. Those milestones are issued by a special node called Coordinator, that is operated by the IOTA Foundation and is therefore still a centralized part in the Consensus.
+Messages in the Tangle are confirmed by special messages called milestones. Those milestones are issued by a special node called Coordinator, that is operated by the IOTA Foundation and is therefore still a centralized part of the Consensus.
 
 After Charlie's message is confirmed by a milestone, the nodes update his and Bob's balances to reflect the transfer of 10 i to Bob's address.
 Bob can now spend his new IOTA tokens.
