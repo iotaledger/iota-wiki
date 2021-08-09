@@ -48,7 +48,7 @@ Miners are incentivized to validate messages and do PoW because of the following
 The fees that users are willing to pay to have their messages included in a block
 The reward that the network gives them for mining the block before other miners
 The only way to reverse messages in a blockchain is to mine a new blockchain in the time it takes other miners to mine a single block. To do so, a miner would need 51% of the network's ability to do PoW known as hash power.
-As a result, requiring PoW secures blockchain networks by making it difficult to attack, change, or stop. The more miners that mine, the more the secure the network.
+As a result, requiring PoW secures blockchain networks by making it difficult to attack, change, or stop. The more miners participate, the more secure the network is.
 
 ## **Consensus in the Tangle**
 
@@ -70,4 +70,3 @@ To allow them to recognize milestones, all nodes in the same IOTA network are co
 To make sure that new messages always have a chance of being confirmed, the Coordinator sends indexed milestones at regular intervals. This way, nodes can compare the indexes of their milestones to check whether they are synchonized with the rest of the network.
 
 ![coordinator](https://user-images.githubusercontent.com/77154511/127796118-08915c1d-438d-4d9a-8432-893c6c5b4f0d.gif)
-
