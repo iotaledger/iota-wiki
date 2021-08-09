@@ -50,7 +50,7 @@ function getDropdownLabel(defaultLabel, items, localPathname)
 
   if(activeItem.length)
   {
-    label = activeItem[0];
+    label = { ...activeItem[0], label: defaultLabel.label+ ' > '+ activeItem[0].label}
   }
 
   return label;
@@ -66,6 +66,7 @@ function DropdownNavbarItemDesktop({items, position, className, ...props}) {
   **/
   const label = getDropdownLabel(props, items, useLocalPathname());
 
+  console.log(typeof label);
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (!dropdownRef.current || dropdownRef.current.contains(event.target)) {
