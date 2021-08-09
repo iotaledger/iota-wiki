@@ -75,7 +75,7 @@ Most clients for users will come in the form of a wallet software like the
 
 - [IOTA Firefly Wallet](https:/firefly.iota.org/)
 
-But also simple command-line tools for professional users like the 
+But also simple command-line tools for professional users, like the 
 
 - [CLI Wallet](https:/https://github.com/iotaledger/cli-wallet/) 
 
