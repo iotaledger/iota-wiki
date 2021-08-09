@@ -85,6 +85,10 @@ module.exports = {
               label: "Chrysalis docs",
               to: "chrysalis-docs/welcome",
             },
+            {
+              label: "Hornet",
+              to: "hornet/welcome",
+            },
           ]
         },
         {

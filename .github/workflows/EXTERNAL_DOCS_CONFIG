@@ -73,4 +73,13 @@
         routeBasePath: "chrysalis-docs",
         sidebarPath: require.resolve("./external/chrysalis-docs/sidebars.js"),
       }
+    ],
+    [
+      "@docusaurus/plugin-content-docs",
+      {
+        id: "hornet",
+        path: "external/hornet/documentation/docs",
+        routeBasePath: "hornet",
+        sidebarPath: require.resolve("./external/hornet/documentation/sidebars.js"),
+      }
     ]

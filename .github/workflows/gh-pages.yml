@@ -90,6 +90,11 @@ jobs:
           cd external
           git clone --depth=1 https://github.com/iotaledger/chrysalis-docs
           cp -r chrysalis-docs/static/img/* ../static/img/
+      - name: Copy Hornet docs
+        run: |
+          cd external
+          git clone --depth=1 https://github.com/gohornet/hornet
+          cp -r hornet/documentation/static/img/* ../static/img/
       - name: Return to root folder
         run: cd ..
       - name: Build
