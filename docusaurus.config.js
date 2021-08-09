@@ -38,8 +38,54 @@ module.exports = {
           to: "docs/use/use-cases/industry-applications",
         },
         {
-          label: "Develop",
-          to: "docs/develop/getting-started/architecture",
+          label: 'Develop',
+          items: [
+            {
+              label: "Getting Started",
+              to: "docs/develop/getting-started/architecture",
+              activeBaseRegex :"docs/develop/getting-started/.*"
+            },
+            {
+              label: "Bee",
+              to: "bee/getting_started/getting_started",
+              activeBaseRegex :"bee/.*"
+            },
+            {
+              label: "GoShimmer",
+              to: "goshimmer/welcome",
+              activeBaseRegex :"goshimmer/.*"
+            },
+            {
+              label: "Wasp",
+              to: "wasp/welcome",
+              activeBaseRegex :"wasp/.*"
+            },
+            {
+              label: "iota.rs",
+              to: "iota.rs/welcome",
+              activeBaseRegex :"iota.rs/.*"
+            },
+            {
+              label: "wallet.rs",
+              to: "wallet.rs/welcome",
+              activeBaseRegex :"wallet.rs/.*"
+            },
+            {
+              label: "stronghold.rs",
+              to: "stronghold.rs/welcome",
+              activeBaseRegex :"stronghold.rs/.*"
+            },
+            {
+              label: "IOTA 2.0 Specs",
+              to: "IOTA-2.0-Research-Specifications/Preface",
+              activeBaseRegex :"IOTA-2.0-Research-Specifications/.*"
+            },
+            {
+              label: "Chrysalis docs",
+              to: "chrysalis-docs/welcome",
+              activeBaseRegex :"chrysalis-docs/.*"
+            },
+          ]
         },
         {
           label: "Participate",
