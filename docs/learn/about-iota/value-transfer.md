@@ -36,7 +36,7 @@ To get these tip messages, Charlie requests them from a node.
 
 The node selects this messages by using an algorithm called uniform random tip selection (URTS). This algorithm selects between 1 and 8 valid tip messages that lead to a valid ledger state.
 
-* The ledger state is a record of all the value message that have transferred IOTA tokens in the Tangle, including the state of all balances on addresses. This state must always be balanced: The total number of IOTA tokens must always add up to thetotal supply.
+* The ledger state is a record of all the value message that have transferred IOTA tokens in the Tangle, including the state of all balances on addresses. This state must always be balanced: The total number of IOTA tokens must always add up to the total supply.
 
 
 
