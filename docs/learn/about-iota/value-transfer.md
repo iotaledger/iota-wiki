@@ -30,7 +30,7 @@ Therefore, the Tangle now includes a value message that transferred those 10 i t
 
 ### Choosing where to attach messages
 
-To transfer 10 i to Bob, Charlie must attach a value message to the Tangle. To do so, he needs between 1 and 8 tip messages that he can attach his own message.
+To transfer 10 i to Bob, Charlie must attach a value message to the Tangle. For that, he needs between 1 and 8 tip messages that he can attach to his own message.
 
 To get these tip messages, Charlie requests them from a node.
 
@@ -105,4 +105,3 @@ If no conflicts are detected, the next step for a node is to submit the requeste
 The node sends its updated Ledger State to all its directly connected neighboring nodes. Every node is connected to several other nodes. Those nodes receive the updated ledger state from their neighbors. Every node compares the request to its currently known version of the Ledger and checks again for conflicts. If no conflicts are found, the node updates his ledger state and sends the updated state to his neighbors again...
 
 This leads to an extremely fast propagation of ledger updates through the network and in a few seconds, it has reached every node in the network and is therefore accepted and confirmed. In this stage, the message has reached full confirmation and is considered solid. It will now be added to the tip pool of every node and can be used to be referenced by new messages.
-
