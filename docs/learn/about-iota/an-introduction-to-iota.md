@@ -61,7 +61,7 @@ Currently messages will only be considered valid if they have a reference to a m
 
 **The Coordinator is a client that sends signed messages called milestones that nodes trust and use to confirm messages. This topic describes how nodes use milestones to determine which messages are confirmed.**
 
- - The Coordinator is temporary. We will transition into removing the Coordinator:Coordicide in the upcomming IOTA 2.0 Metwork. Below is how the Coordinator is currently employed within IOTA.
+ - The Coordinator is temporary. We will transition into removing the Coordinator: Coordicide in the upcoming IOTA 2.0 network. Below is how the Coordinator is currently employed within IOTA.
 
 Messages in the Tangle are considered for confirmation only when they are directly or indirectly referenced by a milestone that has been validated by nodes.
 
