@@ -81,7 +81,7 @@ But also simple command-line tools for professional users, like the
 
 are available. 
 
-Machines, sensors, and devices, etc will use the code of the IOTA Wallet Libraries to create and execute the transactions autonomously.
+Machines, sensors, and devices, etc. will use the code of the IOTA Wallet Libraries to create and execute the transactions autonomously.
 
 To send a value transaction into the IOTA network, a client creates an IOTA message that includes a "signed transaction payload". In this payload, all the data is specified to tell the IOTA network how many tokens from address A (owned by the issuer of the message) should be transferred to address B and makes it possible to upgrade the state of the IOTA Ledger accordingly.
 
