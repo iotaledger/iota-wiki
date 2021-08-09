@@ -65,7 +65,7 @@ Messages in the Tangle are confirmed by special messages called milestones. Thos
 After Charlie's message is confirmed by a milestone, the nodes update his and Bob's balances to reflect the transfer of 10 i to Bob's address.
 Bob can now spend his new IOTA tokens.
 
-Lets go a bit more into details and observe the single stepd taken by the participants:
+Let's go a bit more into details and observe the single steps taken by the participants:
 
 
 ## Clients
