@@ -34,14 +34,12 @@ jobs:
       - name: Add external doc config
         run: |
           export config=$(cat .github/workflows/EXTERNAL_DOCS_CONFIG)
-          echo "$config"
           export replace_string='/\* AUTO GENERATED EXTERNAL DOCS CONFIG \*/'
           perl -0pe 's#$ENV{replace_string}#$ENV{config}#' docusaurus.config.js > docusaurus.config.js.cpy
           rm -f docusaurus.config.js && mv docusaurus.config.js.cpy docusaurus.config.js
       - name: Add external doc dropdown config
         run: |
           export config=$(cat .github/workflows/EXTERNAL_DOCS_DROPDOWN_CONFIG)
-          echo "$config"
           export replace_string='/\* AUTO GENERATED EXTERNAL DOCS DROPDOWN CONFIG \*/'
           perl -0pe 's#$ENV{replace_string}#$ENV{config}#' docusaurus.config.js > docusaurus.config.js.cpy
           rm -f docusaurus.config.js && mv docusaurus.config.js.cpy docusaurus.config.js
@@ -91,7 +89,7 @@ jobs:
       - name: Copy IOTA 2.0 specs
         run: |
           cd external
-          git clone --depth=1 https://github.com/huhn511/IOTA-2.0-Research-Specifications --branch feat/add-docusaurus
+          git clone --depth=1 https://github.com/iotaledger/IOTA-2.0-Research-Specifications
       - name: Copy Chrysalis docs
         run: |
           cd external
