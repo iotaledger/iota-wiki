@@ -602,5 +602,9 @@ h2 {
     width: 48px;
   }
 
-
- 
+  /*
+  Patch to avoid displaying a double header in imported DOCS
+  */
+  div.markdown > p > header > h1 {
+  display:none;
+  }
