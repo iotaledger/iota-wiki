@@ -11,17 +11,17 @@ import IconEdit from '@theme/IconEdit';
 /**
 This function will remove "external/anyOtherString"
 **/
-function sanitizeExternalProjectURL(editUrl)
+function reformatExternalProjectURL(editUrl)
 {
     const externalDocsRegex =  new RegExp('external\/[^\/]*\/','i') ;
     return editUrl.replace(externalDocsRegex, '');
 }
 
 export default function EditThisPage({editUrl}) {
-  const sanitizedEditURL = sanitizeExternalProjectURL(editUrl);
+  const formattedEditURL = reformatExternalProjectURL(editUrl);
 
   return (
-    <a href={sanitizedEditURL} target="_blank" rel="noreferrer noopener">
+    <a href={formattedEditURL} target="_blank" rel="noreferrer noopener">
       <IconEdit />
       <Translate
         id="theme.common.editThisPage"
