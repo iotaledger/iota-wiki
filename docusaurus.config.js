@@ -61,6 +61,7 @@ module.exports = {
           to: "docs/participate/support-the-network/run-a-node",
         },
       ],
+      
     },
     footer: {
       links: [
@@ -225,7 +226,7 @@ module.exports = {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
           editUrl:
-            'https://github.com/iota-community/iota-wiki',
+            'https://github.com/iota-community/iota-wiki/tree/develop/',
           remarkPlugins: [require('remark-code-import'), require('remark-import-partial')],
         },
         theme: {
