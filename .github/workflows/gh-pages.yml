@@ -3,12 +3,13 @@ name: deploy
 on:
   pull_request:
     branches: [develop]
-  push:
-    branches: [develop]
+  workflow_dispatch:
+  schedule:
+    - cron:  '0 0 * * *'
 
 jobs:
   checks:
-    if: github.event_name != 'push'
+    if: github.event_name == 'pull_request'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
@@ -29,10 +30,78 @@ jobs:
     if: github.event_name != 'pull_request'
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v2
+      - name: Add external doc config
+        run: |
+          export config=$(cat .github/workflows/EXTERNAL_DOCS_CONFIG)
+          export replace_string='/\* AUTO GENERATED EXTERNAL DOCS CONFIG \*/'
+          perl -0pe 's#$ENV{replace_string}#$ENV{config}#' docusaurus.config.js > docusaurus.config.js.cpy
+          rm -f docusaurus.config.js && mv docusaurus.config.js.cpy docusaurus.config.js
+      - name: Add external doc dropdown config
+        run: |
+          export config=$(cat .github/workflows/EXTERNAL_DOCS_DROPDOWN_CONFIG)
+          export replace_string='/\* AUTO GENERATED EXTERNAL DOCS DROPDOWN CONFIG \*/'
+          perl -0pe 's#$ENV{replace_string}#$ENV{config}#' docusaurus.config.js > docusaurus.config.js.cpy
+          rm -f docusaurus.config.js && mv docusaurus.config.js.cpy docusaurus.config.js
       - uses: actions/setup-node@v1
         with:
           node-version: '12.x'
+      - name: Create folder
+        run: |
+          mkdir external
+      - name: Copy Bee docs
+        run: |
+          cd external
+          git clone --depth=1 https://github.com/iotaledger/bee --branch dev
+      - name: Copy GoShimmer docs
+        run: |
+          cd external
+          git clone --depth=1 --sparse https://github.com/iotaledger/goshimmer
+          cd goshimmer
+          git sparse-checkout set documentation
+          cp -rf documentation/static/img/* ../../static/img/
+          cd -
+      - name: Copy Wasp docs
+        run: |
+          cd external
+          git clone --depth=1 --sparse https://github.com/iotaledger/wasp
+          cd wasp
+          git sparse-checkout set documentation
+          cp -r documentation/static/img/* ../../static/img/
+          cd -
+      - name: Copy iota.rs docs
+        run: |
+          cd external
+          git clone --depth=1 https://github.com/iotaledger/iota.rs
+          cp -r iota.rs/documentation/static/img/* ../static/img/
+      - name: Copy wallet.rs docs
+        run: |
+          cd external
+          git clone --depth=1 https://github.com/iotaledger/wallet.rs
+          cp -r wallet.rs/documentation/static/img/* ../static/img/
+      - name: Copy stronghold.rs docs
+        run: |
+          cd external
+          git clone --depth=1 --sparse https://github.com/iotaledger/stronghold.rs
+          cd stronghold.rs
+          git sparse-checkout set documentation
+          cd -
+      - name: Copy IOTA 2.0 specs
+        run: |
+          cd external
+          git clone --depth=1 https://github.com/iotaledger/IOTA-2.0-Research-Specifications
+      - name: Copy Chrysalis docs
+        run: |
+          cd external
+          git clone --depth=1 https://github.com/iotaledger/chrysalis-docs
+          cp -r chrysalis-docs/static/img/* ../static/img/
+      - name: Copy Hornet docs
+        run: |
+          cd external
+          git clone --depth=1 https://github.com/gohornet/hornet
+          cp -r hornet/documentation/static/img/* ../static/img/
+      - name: Return to root folder
+        run: cd ..
       - name: Build
         run: |
           if [ -e yarn.lock ]; then
