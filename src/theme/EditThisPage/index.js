@@ -8,6 +8,9 @@ import React from 'react';
 import Translate from '@docusaurus/Translate';
 import IconEdit from '@theme/IconEdit';
 
+/**
+This function will remove "external/anyOtherString"
+**/
 function sanitizeExternalProjectURL(editUrl)
 {
     const externalDocsRegex =  new RegExp('external\/[^\/]*\/','i') ;
