@@ -25,7 +25,7 @@ As a result, you can attach new messages to only one place: a block at the end o
 
 **Blockchain bottleneck**
 
-![blockchain-bottleneck](https://user-images.githubusercontent.com/77154511/127757399-8feb30cc-c5c2-4c9f-abf0-7d4584fa2b6c.gif)
+![blockchain-bottleneck](https://github.com/iota-community/iota-wiki/blob/add-static-image-locations-phylo/static/img/learn/blockchain-bottleneck.gif)
 
 
 
@@ -37,7 +37,7 @@ Rather than being limited to a single place for attaching new messages, you can 
 
 **Tangle bottleneck**
 
-![tangle-bottleneck](https://user-images.githubusercontent.com/77154511/127757420-7c85a003-57e0-49f7-a534-defe96e10df6.gif)
+![tangle-bottleneck](https://github.com/iota-community/iota-wiki/blob/add-static-image-locations-phylo/static/img/learn/tangle-bottleneck.gif)
 
 
 
@@ -69,4 +69,4 @@ To allow them to recognize milestones, all nodes in the same IOTA network are co
 
 To make sure that new messages always have a chance of being confirmed, the Coordinator sends indexed milestones at regular intervals. This way, nodes can compare the indexes of their milestones to check whether they are synchronized with the rest of the network.
 
-![coordinator](https://user-images.githubusercontent.com/77154511/127796118-08915c1d-438d-4d9a-8432-893c6c5b4f0d.gif)
+![coordinator](https://github.com/iota-community/iota-wiki/blob/add-static-image-locations-phylo/static/img/learn/milestones.gif)
