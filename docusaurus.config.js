@@ -1,19 +1,35 @@
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
+
+const math = require('remark-math');
+const katex = require('rehype-katex');
+
 module.exports = {
   title: 'IOTA Wiki',
   tagline: 'The complete reference for IOTA',
-  url: 'http://94.16.108.60',
-  baseUrl: '/iota-wiki/',
+  url: 'https://wiki.iota.org',
+  baseUrl: '/',
   onBrokenLinks: 'log',
   onBrokenMarkdownLinks: 'log',
   favicon: 'img/favicon.ico',
   organizationName: 'iota-community', // Usually your GitHub org/user name.
   projectName: 'iota-wiki', // Usually your repo name.
-  noIndex: true,
   stylesheets: [
     'https://fonts.googleapis.com/css?family=Material+Icons',
+    {
+      href: "https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/katex.min.css",
+      integrity: "sha384-Um5gpz1odJg5Z4HAmzPtgZKdTBHZdw8S29IecapCSB31ligYPhHQZMIlWLYQGVoc",
+      crossorigin: "anonymous",
+    },
   ],
   themeConfig: {
+    announcementBar: {
+      id: 'wip', // Any value that will identify this message.
+      content:
+        'This Wiki is still a Work in Progress. Consider contributing by using the in page editor or creating a <a href="https://github.com/iota-community/iota-wiki">PR directly</a>',
+      backgroundColor: '#ff0000', // Defaults to `#fff`.
+      textColor: '#fff', // Defaults to `#000`.
+      isCloseable: false, // Defaults to `true`.
+    },
     navbar: {
       hideOnScroll: true,
       logo: {
@@ -31,14 +47,21 @@ module.exports = {
           to: "docs/use/use-cases/industry-applications",
         },
         {
-          label: "Develop",
-          to: "docs/develop/getting-started/architecture",
+          label: 'Develop',
+          items: [
+            {
+              label: "Getting Started",
+              to: "docs/develop/getting-started/architecture",
+            },
+            /* AUTO GENERATED EXTERNAL DOCS DROPDOWN CONFIG */
+          ]
         },
         {
           label: "Participate",
           to: "docs/participate/support-the-network/run-a-node",
         },
       ],
+      
     },
     footer: {
       links: [
@@ -203,12 +226,20 @@ module.exports = {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
           editUrl:
-            'https://github.com/iota-community/iota-wiki',
+            'https://github.com/iota-community/iota-wiki/tree/develop/',
+          remarkPlugins: [require('remark-code-import'), require('remark-import-partial')],
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
         },
+        sitemap: {
+            changefreq: 'daily',
+            priority: 0.5,
+        },
       },
-    ],
+    ]
   ],
+  plugins: [
+    /* AUTO GENERATED EXTERNAL DOCS CONFIG */
+  ]
 };

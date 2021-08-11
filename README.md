@@ -12,8 +12,8 @@
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <a href="https://v2202102141633143571.bestsrv.de/">
-    <img src="static/img/logo.svg" alt="Logo" width="80" height="80">
+  <a href="https://wiki.iota.org">
+    <img src="static/img/logo.svg" alt="Logo" width="80" height="80" fill="#ffffff">
   </a>
 
   <h3 align="center">IOTA Wiki</h3>
@@ -21,7 +21,7 @@
   <p align="center">
     Everything you need to know about IOTA in one place.
     <br />
-    <a href="https://v2202102141633143571.bestsrv.de/"><strong>Explore the Wiki »</strong></a>
+    <a href="https://wiki.iota.org"><strong>Explore the Wiki »</strong></a>
     <br />
     <br />
     <a href="https://github.com/iota-community/iota-wiki/issues">Report Error</a>
@@ -58,11 +58,13 @@
 
 
 <!-- MENU STRUCTURE - CONTENT CREATION IN PROGRESS -->
-## Menu Structure - Content creation in progress
+## Menu Structure - Content creation in progress - ASK FOR YOUR HELP!
 
 Please feel free to contribute to any of the available pages. This is the current state of progress:
 
-![image](https://user-images.githubusercontent.com/77154511/125544823-3ae9ebf4-3691-41ae-b24a-fba36cb5921d.png)
+In this sheet all current Menu pages are marked with current progress status. You can choose the page you would like to contribute and get linked directly to the editable .md file in our Repo here:
+
+https://docs.google.com/spreadsheets/d/1GjYFRrNhloVyR6kSAVlMAEWadY3onRv6UFnpQGRl0Z8/edit?usp=sharing
 
 
 <!-- ABOUT THE PROJECT -->
@@ -83,7 +85,7 @@ Install [Node.js](https://nodejs.org/en/download/).
 
 ### Local Development
 
-1. Run `npx docusaurus start` in your terminal
+1. Run `yarn install` and `npx docusaurus start` in your terminal
 2. Open `http://localhost:3000`
 
 <!-- CONTRIBUTING -->
@@ -101,10 +103,11 @@ Have a look at [CONTRIBUTING](.github/CONTRIBUTING.md).
 <!-- CONTACT -->
 ## Contact
 
-Adamski - [AdamCroply](https://github.com/AdamCroply) - adamski#0458  
 Phylo - [Phyloiota](https://github.com/Phyloiota) - Phylo [Community DAO - lets go!]#2233  
 Jeroen van den Hout - [jlvandenhout](https://github.com/jlvandenhout) - jvdhout#4402  
 Dr.Electron - [Dr-Electron](https://github.com/Dr-Electron) - Dr.Electron#9370  
+Adamski - [AdamCroply](https://github.com/AdamCroply) - adamski#0458  
+
 
 ## Donate
 
@@ -112,7 +115,7 @@ The IOTA wiki is a completely voluntary project put together, maintained, and co
 Feel free to support our work:
 
 
-DONATE - iota1qzrmyrnfhfauhv6gax50ncx844uppq4c5dddp3gk99ha0lx5jeqkwk6dapx
+#### iota1qzrmyrnfhfauhv6gax50ncx844uppq4c5dddp3gk99ha0lx5jeqkwk6dapx
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->

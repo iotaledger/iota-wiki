@@ -33,7 +33,7 @@ When one node, no matter where it is in the world, receives a transaction, it wi
 To synchronize, nodes in IOTA networks use milestones.
 If the node has the history of transactions that a milestone references, that milestone is solid.
 
-Therefore, nodes know if they are synchonized if the index of their latest solid milestone is the same as the index of the latest milestone that it has received.
+Therefore, nodes know if they are synchronized if the index of their latest solid milestone is the same as the index of the latest milestone that it has received.
 
 When a node is synchronized, it then has enough information to decide which transactions it considers confirmed.
 
@@ -43,11 +43,11 @@ All transactions remain in a pending state until the node is sure of its validit
 
 However, even when a transaction is valid, nodes may not be able to make a decision like in the case of a double spend.
 
-When nodes detect double spends they must decide which transaction to consider confirmed and which one to ignore. Nodes do this by using consensus rules that are built into their node software. See **The Coordinator** for information about the consensus rules in IOTA networks.
+When nodes detect double spends, they must decide which transaction to consider confirmed and which one to ignore. Nodes do this by using consensus rules that are built into their node software. See **The Coordinator** for information about the consensus rules in IOTA networks.
 
 ## Keeping a record of the balances on addresses
 
-All nodes keep a record of the balances of addresses so they can do the following:
+All nodes keep a record of the balances of addresses, so they can do the following:
 
 * Check that a transaction is not transferring more IOTA tokens than are available on the address
 * Respond to clients' requests for their balance
