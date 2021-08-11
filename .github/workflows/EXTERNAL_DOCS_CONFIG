@@ -54,17 +54,17 @@
         sidebarPath: require.resolve("./external/stronghold.rs/documentation/sidebars.js"),
       }
     ],
-    [
-      "@docusaurus/plugin-content-docs",
-      {
-        id: "IOTA-Research-Specifications",
-        path: "external/IOTA-2.0-Research-Specifications/docs",
-        routeBasePath: "IOTA-2.0-Research-Specifications",
-        sidebarPath: require.resolve("./external/IOTA-2.0-Research-Specifications/sidebars.js"),
-        remarkPlugins: [math],
-        rehypePlugins: [katex],
-      }
-    ],
+    // [
+    //   "@docusaurus/plugin-content-docs",
+    //   {
+    //     id: "IOTA-Research-Specifications",
+    //     path: "external/IOTA-2.0-Research-Specifications/docs",
+    //     routeBasePath: "IOTA-2.0-Research-Specifications",
+    //     sidebarPath: require.resolve("./external/IOTA-2.0-Research-Specifications/sidebars.js"),
+    //     remarkPlugins: [math],
+    //     rehypePlugins: [katex],
+    //   }
+    // ],
     [
       "@docusaurus/plugin-content-docs",
       {
@@ -82,4 +82,13 @@
         routeBasePath: "hornet",
         sidebarPath: require.resolve("./external/hornet/documentation/sidebars.js"),
       }
-    ]
+    ],
+    [
+      "@docusaurus/plugin-content-docs",
+      {
+        id: "identity-rs",
+        path: "external/identity.rs/documentation/docs",
+        routeBasePath: "identity.rs",
+        sidebarPath: require.resolve("./external/identity.rs/documentation/sidebars.js"),
+      }
+    ],

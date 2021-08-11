@@ -22,10 +22,10 @@
               label: "stronghold.rs",
               to: "stronghold.rs/welcome",
             },
-            {
-              label: "IOTA 2.0 Specs",
-              to: "IOTA-2.0-Research-Specifications/Preface",
-            },
+            // {
+            //   label: "IOTA 2.0 Specs",
+            //   to: "IOTA-2.0-Research-Specifications/Preface",
+            // },
             {
               label: "Chrysalis docs",
               to: "chrysalis-docs/welcome",
@@ -33,4 +33,8 @@
             {
               label: "Hornet",
               to: "hornet/welcome",
+            },
+            {
+              label: "Identity",
+              to: "identity/intro",
             },
