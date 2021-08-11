@@ -30,7 +30,7 @@ On the other hand there different implementations of the IOTA node software:
 - `Hornet`: This software is a mainly community-driven implementation written in Go and is primarily meant to work with the `Mainnet`.
 - `GoShimmer`: This software is currently the only node-software available for participating in the 'IOTA DevNet 2.0'. It is also not able to use GoShimmer for the Mainnet
 
-Thus if you want to run a Mainnet-node you can chose between `Bee` and `Hornet`
+Thus if you want to run a Mainnet-node you can choose between `Bee` and `Hornet`
 
 
 ## How to setup an IOTA node?
