@@ -33,7 +33,7 @@ On the other hand there different implementations of the IOTA node software:
 Thus if you want to run a Mainnet-node you can choose between `Bee` and `Hornet`
 
 
-## How to setup an IOTA node?
+## How to set up an IOTA node?
 
 There are different approaches to install and start IOTA nodes. The most common ones are as follows:
 
