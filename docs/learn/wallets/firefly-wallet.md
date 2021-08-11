@@ -96,7 +96,7 @@ If different Users aim to use the same Firefly Wallet App, or if you have IOTA T
 
 ### Firefly Dashboard
 
-![image](https://user-images.githubusercontent.com/77154511/126114270-96c27168-6b49-4a57-95e4-c1ec1b057249.png)
+![image](https://github.com/iota-community/iota-wiki/blob/add-static-image-locations-phylo/static/img/learn/firefly/dashboard1.png)
 
 The Firefly Dashboard is the main overview of a User Profile. Easily accessible information on the spot and the most common functions "Send" and "Receive" ordered in a nicely styled layout.
 Users are shown the total Profile balance here, the different Wallets that belong to the profile, and a list of the latest occurred transactions. IOTA Price or Profile value is shown in a chart and also a section with the basic security info of the Profile is displayed.
@@ -112,7 +112,7 @@ Important to mention here: Users can only set up further Wallets if the first Wa
 
 ### Wallet Detail view
 
-![image](https://user-images.githubusercontent.com/77154511/126114427-df51d0e3-a44e-48e0-a4c6-f4050dcff379.png)
+![image](https://github.com/iota-community/iota-wiki/blob/add-static-image-locations-phylo/static/img/learn/firefly/wallet%20detail%20view1.png)
 
 A mouse click on one of the Wallets in the Dashboard overview opens the Wallet Detail Screen. 
 Here Users see the Balance contained in this specific Wallet and have the option to send and receive transactions.
@@ -124,7 +124,7 @@ Also, you have will find **3 little dots** next to the Wallet balance.
 
 **Clicking on those dots opens a popup menu.**
 
-<img src="https://user-images.githubusercontent.com/77154511/126114811-d792208d-8d76-47d8-b1c3-0cff5cdc6a54.png" width="400" height="600"/>
+<img src="https://github.com/iota-community/iota-wiki/blob/add-static-image-locations-phylo/static/img/learn/firefly/account%20detail%20customize1.png" width="400" height="600"/>
 
 - **In this popup menu you can enter the functions:**
 
@@ -143,7 +143,7 @@ Also, you have will find **3 little dots** next to the Wallet balance.
 
 #### Transaction detail view.
 
-![image](https://user-images.githubusercontent.com/77154511/126114552-383a3f34-e665-46a7-a3d8-4e6277811ce3.png)
+![image](https://github.com/iota-community/iota-wiki/blob/add-static-image-locations-phylo/static/img/learn/firefly/transaction%20details%20view1.png)
 
 The following information about the transaction is displayed:
 
@@ -189,7 +189,7 @@ The Addresses belonging to you are highlighted with the name of your wallet in b
 
 - **Receive**
 
-<img src="https://user-images.githubusercontent.com/77154511/126114880-0ffeb841-22ef-4858-a096-47a3b4ab333d.png" width="400" height="600"/>
+<img src="https://github.com/iota-community/iota-wiki/blob/add-static-image-locations-phylo/static/img/learn/firefly/receive%20funds1.png" width="400" height="600"/>
 
 - Click on the "Receive" button to open the Receive Funds dialogue. Using a dropdown menu, the user can choose in which of the Wallets the incoming funds should be received.
 The receive address of the selected Wallet is displayed as a QR Code and as a written address. The button **`Copy Address`** copies the displayed receive address into the user's clipboard for convenient pasting into other applications or documents.
@@ -200,7 +200,7 @@ This function is an essential privacy feature that is a standard approach in Cry
 
 - **Send**
 
-<img src="https://user-images.githubusercontent.com/77154511/126115936-253f9e94-2cef-460f-9314-020b6843730d.png" width="400" height="600"/>
+<img src="https://github.com/iota-community/iota-wiki/blob/add-static-image-locations-phylo/static/img/learn/firefly/send%20funds1.png" width="400" height="600"/>
 
 - The Send function has two essential features:
 "Send payment" - which is a standard IOTA transaction where you type or copy in a full IOTA receive address in the form of **`iotaxjdjfkfkldldd.......`**. 
@@ -252,86 +252,86 @@ Note: If you are an existing IOTA user and secured IOTA with a Ledger before the
 
 Creating a new Ledger profile in Firefly is very quick and simple. Once you have downloaded Firefly, open the app and follow the setup instructions. You first need to review and accept the terms and conditions, set a theme (dark or light), and choose a profile name. Select "Create a new wallet".
 
-<img width="800" alt="Screenshot-2021-08-04-at-21 32 17" src="https://user-images.githubusercontent.com/77154511/128617942-08c86c2a-3fc9-4f9e-9fe9-7ae773b65447.png"/>
+![image](https://github.com/iota-community/iota-wiki/blob/add-static-image-locations-phylo/static/img/learn/firefly/setup_a_wallet1_ledger.png)
 
 Press "I want a hardware wallet" to begin the Ledger profile setup process.
 
-<img width="800" alt="Screenshot-2021-08-04-at-21 39 53" src="https://user-images.githubusercontent.com/77154511/128617963-b76ae3fc-2931-4ca9-9f3c-51658646f2da.png"/>
+![image](https://github.com/iota-community/iota-wiki/blob/add-static-image-locations-phylo/static/img/learn/firefly/create_a_wallet1_ledger.png)
 
 On the next page, you will be asked to set a PIN code. This PIN is used to log in to your wallet and blocks other people from logging in and viewing your balance transaction history. Choose a PIN that only you know. Re-enter your PIN on the next page to confirm.
 
-<img width="800" alt="Screenshot-2021-08-04-at-21 40 46-1" src="https://user-images.githubusercontent.com/77154511/128617980-b0f4a8eb-13bc-4e73-9c91-db005ddd4744.png"/>
+![image](https://github.com/iota-community/iota-wiki/blob/add-static-image-locations-phylo/static/img/learn/firefly/set_pin1_ledger.png)
 
 Now, Firefly will check that your Ledger Nano is connected. Make sure the IOTA app is open on your device and that Ledger Live is closed. If you have connection problems follow the "Tips if your Ledger isn't connecting" guide in Firefly.
 
-<img width="800" alt="Screenshot-2021-08-04-at-21 44 15" src="https://user-images.githubusercontent.com/77154511/128617996-e5e93888-8d42-4096-97a1-e4d3d2ff044c.png"/>
+![image](https://github.com/iota-community/iota-wiki/blob/add-static-image-locations-phylo/static/img/learn/firefly/connect_ledger1_ledger.png)
 
 Hit "Continue", and that's all there is to it. It really is that simple. You can now enter the dashboard and begin exploring Firefly.
 
-![Screenshot-2021-08-04-at-21](https://user-images.githubusercontent.com/77154511/128618042-8a397e0b-4c66-40d9-8c66-4bd025f85205.png)
+![image](https://github.com/iota-community/iota-wiki/blob/add-static-image-locations-phylo/static/img/learn/firefly/setup_complete1_ledger.png)
 
 ### Receiving tokens
 
 If you would like to receive funds to your new Ledger profile you can press the "Receive" button on the dashboard.
 
-<img width="800" alt="Screenshot-2021-08-04-at-21 59 43" src="https://user-images.githubusercontent.com/77154511/128618070-f18b484e-0d09-4998-8c07-6fd3bdc12612.png"/>
+![image](https://github.com/iota-community/iota-wiki/blob/add-static-image-locations-phylo/static/img/learn/firefly/generate_address1_ledger.png)
 
 On this page you can select "Generate address" and Firefly will prompt you to confirm the address matches the one displayed on your Ledger device.
 
-![Screenshot-2021-08-04-at-21](https://user-images.githubusercontent.com/77154511/128618080-90a2a676-c993-45e8-a3be-331cb01d1f9e.png)
+![image](https://github.com/iota-community/iota-wiki/blob/add-static-image-locations-phylo/static/img/learn/firefly/confirm_receive_address1_ledger.png)
 
 Scroll through the address on your Ledger device. Confirm it matches by pressing both buttons when your Ledger reads "Ok".
 
 Note: This is a security check to ensure that you are connected to the official, secure version of Firefly. It ensures that no malicious software can alter the address you receive to and that it matches the one generated by your Ledger.
 
-![Screenshot-2021-08-04-at-22](https://user-images.githubusercontent.com/77154511/128618097-a8c4dfcd-30ea-41f6-b908-5d9e6008ebb8.png)
+![image](https://github.com/iota-community/iota-wiki/blob/add-static-image-locations-phylo/static/img/learn/firefly/display_ledger_address1.png)
 
-<img width="454" alt="Screenshot-2021-08-04-at-21 52 53" src="https://user-images.githubusercontent.com/77154511/128618106-9f5e27fd-34a2-4614-ab9f-f3dd7a86149a.png"/>
+![image](https://github.com/iota-community/iota-wiki/blob/add-static-image-locations-phylo/static/img/learn/firefly/okay_ledger_display1.png)
 
 You can now copy the address and share it with a friend or exchange from which you wish to receive tokens. Always make sure the address is the same as the one displayed on your Ledger device.
 
-<img width="800" alt="Screenshot-2021-08-04-at-21 53 19" src="https://user-images.githubusercontent.com/77154511/128618113-a7dc3849-f0bb-4782-b7da-3473bfb4023b.png"/>
+![image](https://github.com/iota-community/iota-wiki/blob/add-static-image-locations-phylo/static/img/learn/firefly/wallet1_view_ledger.png)
 
 ### Sending tokens
 
 Once you have received tokens to an address, your balance will update and you will be able to view the transaction in the transaction history. To send these tokens, press the "Send" button from the dashboard. Here you can fill in the address you want to send to, enter an amount, and hit "Send".
 
-![Screenshot-2021-08-04-at-23](https://user-images.githubusercontent.com/77154511/128618128-e04df52e-3b0d-40bc-b80b-098ac85d3b8d.png)
+![image](https://github.com/iota-community/iota-wiki/blob/add-static-image-locations-phylo/static/img/learn/firefly/send_payment1_ledger.png)
 
 You will then need to confirm that the full transaction details match what is displayed on your Ledger device. In some cases, where you are not sending the total balance on your address, you will also need to approve a "Remainder address". Scroll through the transaction details on your Ledger. Confirm the details match by pressing both buttons when your Ledger reads "Accept". If they do not match press "Deny".
 
 Note: As with generating addresses, this is a security check to ensure that you are connected to the official, secure version of Firefly. It ensures that no malicious software can alter the contents of your transaction and ensures you are sending the right amount to the correct address.
 
-![Screenshot-2021-08-04-at-24](https://user-images.githubusercontent.com/77154511/128618141-be152f66-a29f-4805-adf6-1846df0a2eb8.png)
+![image](https://github.com/iota-community/iota-wiki/blob/add-static-image-locations-phylo/static/img/learn/firefly/confirm_remainder_address1_ledger.png)
 
-![Screenshot-2021-08-04-at-25](https://user-images.githubusercontent.com/77154511/128618151-8471a7d6-77f5-4660-859c-d119bfad55d8.png)
+![image](https://github.com/iota-community/iota-wiki/blob/add-static-image-locations-phylo/static/img/learn/firefly/confirm_transaction1_ledger.png)
 
-![Screenshot-2021-08-04-at-26](https://user-images.githubusercontent.com/77154511/128618168-40279502-e1d9-4de6-9e11-18d0debc0c54.png)
+![image](https://github.com/iota-community/iota-wiki/blob/add-static-image-locations-phylo/static/img/learn/firefly/dispaly_amount1_ledger.png)
 
-![Screenshot-2021-08-04-at-27](https://user-images.githubusercontent.com/77154511/128618183-1c4e6a8e-9b3b-4550-b295-e8ea51c783d9.png)
+![image](https://github.com/iota-community/iota-wiki/blob/add-static-image-locations-phylo/static/img/learn/firefly/display_accept1_ledger.png)
 
 ### Creating wallets and sending internal transfers
 
 Firefly makes it possible to organize your tokens into different wallets within your profile. These tokens are kept separate from one another. Technically speaking, they are stored on addresses generated on different sub-accounts on your Ledger. Press "Create" from the dashboard and choose a name to add another wallet.
 
-![Screenshot-2021-08-04-at-28](https://user-images.githubusercontent.com/77154511/128618204-8e07d132-6d11-4745-9489-8f5d7bc5b7dd.png)
+![image](https://github.com/iota-community/iota-wiki/blob/add-static-image-locations-phylo/static/img/learn/firefly/multiple_wallet_view1_ledger.png)
 
 
 With multiple wallets, you can then send between them and split your tokens up to organize them however you like. You can select "Internal Transfer" from the Send view and select which wallet you would like to send to.
 
 Note: Your most recently created wallet must receive funds (i.e. not be empty) before you can create a new one. This ensures that your wallets can be more smoothly recovered if you need to restore your Ledger profile on a new device.
 
-![Screenshot-2021-08-04-at-29](https://user-images.githubusercontent.com/77154511/128618213-ba63c6ca-c524-423e-a5fa-d6b950881bad.png)
+![image](https://github.com/iota-community/iota-wiki/blob/add-static-image-locations-phylo/static/img/learn/firefly/choose_send_from_wallet1_ledger.png)
 
 
 ### Restoring an existing Ledger profile
 
 If you need to restore an existing Firefly profile with a new device, or you somehow lose access to Firefly, you can plug in your Ledger and restore an existing profile in a few simple steps. To do so, select "Migrate or restore a wallet" in setup and then "I have a Firefly Ledger backup".
 
-![Screenshot-2021-08-04-at-30](https://user-images.githubusercontent.com/77154511/128618222-b1a23572-45fa-44d7-94d8-41f0f348c50d.png)
+![image](https://github.com/iota-community/iota-wiki/blob/add-static-image-locations-phylo/static/img/learn/firefly/setup_a_wallet1_ledger.png)
 
 
-![Screenshot-2021-08-04-at-31](https://user-images.githubusercontent.com/77154511/128618228-dd1c2ea8-fa5f-49a8-8a60-d75216e89123.png)
+![image](https://github.com/iota-community/iota-wiki/blob/add-static-image-locations-phylo/static/img/learn/firefly/create_a_wallet1_ledger.png)
 
 Note: Backups of your transaction history for Ledger Nano users are not currently supported but will be added in a later version. Once a profile is restored, Firefly will sync your transaction history. It will always find your balance. In a future version, we will add support for retrieving your full transaction history from a node that stores the complete history of the IOTA Tangle.
 
@@ -339,7 +339,7 @@ Note: Backups of your transaction history for Ledger Nano users are not currentl
 
 It is possible to have more than one Ledger device with the same Firefly app. You can add another device by creating an additional profile from the login page. Firefly will always check that the right device is connected and you will receive an error message if you try to generate an address or send a transaction with the wrong device.
 
-![Screenshot-2021-08-05-at-00](https://user-images.githubusercontent.com/77154511/128618246-67f2949d-b1dd-4c16-a626-1e02679e0e23.png)
+![image](https://github.com/iota-community/iota-wiki/blob/add-static-image-locations-phylo/static/img/learn/firefly/ledger_multiple_profile_view1.png)
 
 
 
