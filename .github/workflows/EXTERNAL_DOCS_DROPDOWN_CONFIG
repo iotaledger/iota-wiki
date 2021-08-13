@@ -1,7 +1,6 @@
             {
               label: "Bee",
               to: "bee/getting_started/getting_started",
-              labelIcon:'/img/logo/testLogo.png',
             },
             {
               label: "Chrysalis docs",
