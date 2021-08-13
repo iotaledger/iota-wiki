@@ -43,8 +43,8 @@ export function NavLink({
           paddingBottom: '2px',
           marginRight: '5px',
       }
-      labelIcon = <img src={labelIcon} height={20} style={labelIconStyle} alt={label}/>
 
+      labelIcon = <img src={labelIcon} height={20} style={labelIconStyle} alt={label}/>;
       labelContainerStyle = {
           boxAlign: 'center',
           whiteSpace: 'no-wrap',
@@ -74,7 +74,8 @@ export function NavLink({
           })}
       {...props}>
       {isExternalLink ? (
-        <span>
+        <span style={labelContainerStyle}>
+          {labelIcon}
           {label}
           <IconExternalLink
             {...(isDropdownLink && {
