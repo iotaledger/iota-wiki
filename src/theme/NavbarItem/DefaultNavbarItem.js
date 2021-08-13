@@ -32,7 +32,11 @@ export function NavLink({
   const isExternalLink = label && href && !isInternalUrl(href);
   const isDropdownLink = activeClassName === dropdownLinkActiveClass;
 
-  let alignItems = null;
+  let labelContainerStyle = null;
+
+    /**
+     * If we have a labelIcon, create the element and modify the container styles.
+     */
   if (labelIcon) {
       const labelIconStyle = {
           display: 'inline',
@@ -41,7 +45,7 @@ export function NavLink({
       }
       labelIcon = <img src={labelIcon} height={20} style={labelIconStyle} alt={label}/>
 
-      alignItems = {
+      labelContainerStyle = {
           boxAlign: 'center',
           whiteSpace: 'no-wrap',
           alignItems: 'center',
@@ -80,7 +84,7 @@ export function NavLink({
           />
         </span>
       ) : (
-        <span style={alignItems}>
+        <span style={labelContainerStyle}>
             {labelIcon}
             {label}
         </span>
