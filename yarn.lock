@@ -3806,6 +3806,11 @@ dns-txt@^2.0.2:
   dependencies:
     buffer-indexof "^1.0.0"
 
+docusaurus-plugin-matomo@^0.0.3:
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/docusaurus-plugin-matomo/-/docusaurus-plugin-matomo-0.0.3.tgz#962f72727980367fea127054be03b373cbe50565"
+  integrity sha512-g6CaJKyiDyb+LhOySPTNh7WGPowwAMF4GWOJI+Kkfw5+pYBnddc+pKPM9mp2zouViYP3FvliOowK21R2jBUiZA==
+
 dom-converter@^0.2.0:
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/dom-converter/-/dom-converter-0.2.0.tgz#6721a9daee2e293682955b6afe416771627bb768"
