@@ -86,10 +86,10 @@ jobs:
           cd stronghold.rs
           git sparse-checkout set documentation
           cd -
-      # - name: Copy IOTA 2.0 specs
-      #  run: |
-      #    cd external
-      #    git clone --depth=1 https://github.com/iotaledger/IOTA-2.0-Research-Specifications
+      - name: Copy IOTA 2.0 specs
+        run: |
+          cd external
+          git clone --depth=1 https://github.com/iotaledger/IOTA-2.0-Research-Specifications --branch docusaurus
       - name: Copy Chrysalis docs
         run: |
           cd external
