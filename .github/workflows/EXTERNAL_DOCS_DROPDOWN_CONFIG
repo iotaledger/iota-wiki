@@ -36,5 +36,5 @@
             },
             {
               label: "Identity",
-              to: "identity/intro",
+              to: "identity.rs/intro",
             },
