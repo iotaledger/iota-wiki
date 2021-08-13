@@ -30,6 +30,10 @@ module.exports = {
       textColor: '#fff', // Defaults to `#000`.
       isCloseable: false, // Defaults to `true`.
     },
+    matomo: {
+      matomoUrl: 'https://matomo.antonionardella.it/',
+      siteId: '6',
+    },
     navbar: {
       hideOnScroll: true,
       logo: {
@@ -240,6 +244,7 @@ module.exports = {
     ]
   ],
   plugins: [
+    'docusaurus-plugin-matomo',
     /* AUTO GENERATED EXTERNAL DOCS CONFIG */
   ]
 };
