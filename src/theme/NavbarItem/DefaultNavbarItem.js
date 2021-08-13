@@ -19,6 +19,7 @@ export function NavLink({
   label,
   activeClassName = 'navbar__link--active',
   prependBaseUrlToHref,
+  labelIcon=null,
   ...props
 }) {
   // TODO all this seems hacky
@@ -30,6 +31,24 @@ export function NavLink({
   });
   const isExternalLink = label && href && !isInternalUrl(href);
   const isDropdownLink = activeClassName === dropdownLinkActiveClass;
+
+  let alignItems = null;
+  if (labelIcon) {
+      const labelIconStyle = {
+          display: 'inline',
+          paddingBottom: '2px',
+          marginRight: '5px',
+      }
+      labelIcon = <img src={labelIcon} height={20} style={labelIconStyle} alt={label}/>
+
+      alignItems = {
+          boxAlign: 'center',
+          whiteSpace: 'no-wrap',
+          alignItems: 'center',
+          display: 'flex',
+          padding: '5px'
+      }
+  }
   return (
     <Link
       {...(href
@@ -61,7 +80,10 @@ export function NavLink({
           />
         </span>
       ) : (
-        label
+        <span style={alignItems}>
+            {labelIcon}
+            {label}
+        </span>
       )}
     </Link>
   );

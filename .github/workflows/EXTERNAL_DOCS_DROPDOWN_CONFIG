@@ -1,40 +1,50 @@
             {
               label: "Bee",
               to: "bee/getting_started/getting_started",
+              labelIcon:'/img/logo/testLogo.png',
             },
             {
               label: "GoShimmer",
               to: "goshimmer/welcome",
+              labelIcon:'/img/logo/testLogo.png',
             },
             {
               label: "Wasp",
               to: "wasp/welcome",
+              labelIcon:'/img/logo/testLogo.png',
             },
             {
               label: "iota.rs",
               to: "iota.rs/welcome",
+              labelIcon:'/img/logo/testLogo.png',
             },
             {
               label: "wallet.rs",
               to: "wallet.rs/welcome",
+              labelIcon:'/img/logo/testLogo.png',
             },
             {
               label: "stronghold.rs",
               to: "stronghold.rs/welcome",
+              labelIcon:'/img/logo/testLogo.png',
             },
             {
               label: "IOTA 2.0 Specs",
               to: "IOTA-2.0-Research-Specifications/Preface",
+              labelIcon:'/img/logo/testLogo.png',
             },
             {
               label: "Chrysalis docs",
               to: "chrysalis-docs/welcome",
+              labelIcon:'/img/logo/testLogo.png',
             },
             {
               label: "Hornet",
               to: "hornet/welcome",
+              labelIcon:'/img/logo/testLogo.png',
             },
             {
               label: "Identity",
               to: "identity.rs/intro",
+              labelIcon:'/img/logo/testLogo.png',
             },
