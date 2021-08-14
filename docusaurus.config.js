@@ -209,8 +209,8 @@ module.exports = {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
-          editUrl:
-            '/iota-wiki/edit?path=',
+          editUrl: 'https://github.com/iota-community/iota-wiki/edit/develop/',
+          remarkPlugins: [require('remark-code-import'), require('remark-import-partial')],
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
@@ -232,6 +232,8 @@ module.exports = {
           method: 'POST',
         },
       }
-    ]
+    ],
+    'docusaurus-plugin-matomo',
+    /* AUTO GENERATED EXTERNAL DOCS CONFIG */
   ]
 };
