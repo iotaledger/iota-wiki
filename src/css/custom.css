@@ -381,8 +381,8 @@
     --ifm-global-radius: 0.5rem;
 
     --ifm-navbar-link-color: #485776;
-    --ifm-navbar-link-hover-color: var(--ifm-navbar-link-color);
-    --ifm-navbar-link-active-color: var(--ifm-navbar-link-color);
+    --ifm-navbar-link-hover-color: var(--ifm-color-primary);
+    --ifm-navbar-link-active-color: var(--ifm-color-primary);
 
     --ifm-footer-color: var(--ifm-navbar-link-color);
     --ifm-navbar-padding-horizontal: 25px;
@@ -390,7 +390,7 @@
     --ifm-navbar-height: 68px;
 
     --ifm-menu-color: var(--ifm-color-emphasis-600);
-    --ifm-menu-color-active: var(--ifm-color-emphasis-1000);
+    --ifm-menu-color-active: var(--ifm-color-primary);
     --ifm-menu-color-background-active: transparent;
 
     --ifm-button-color: white;
@@ -401,6 +401,7 @@
     --ifm-background-surface-color: var(--ifm-color-emphasis-200);
 
     --ifm-navbar-link-color: #B0BFD9;
+    --ifm-navbar-background-color:#1f2a41;
 
     --ifm-menu-color-background-hover: var(--ifm-color-emphasis-300);
 
@@ -455,10 +456,17 @@
     font-size: 80%;
   }
 
+  .footer__links {
+    margin-left: max(1rem, calc(20% - 5rem));
+    margin-right: max(1rem, calc(20% - 5rem));
+  }
+
   .footer__bottom {
     display: flex;
     align-items: flex-end;
     flex-wrap: wrap;
+    margin-left: max(1rem, calc(20% - 5rem));
+    margin-right: max(1rem, calc(20% - 5rem));
   }
 
   .footer__logo {
