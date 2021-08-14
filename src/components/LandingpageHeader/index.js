@@ -93,7 +93,7 @@ function LandingpageHeader() {
         </div>
       </div>
       <div className='margin-top--xl'>
-        <div className='section-header grey text--center margin-bottom--sm' >Get started, right away</div>
+        <div className='section-header text--center margin-bottom--sm' >Get started, right away</div>
         <div className='actionlist row'>
           {ActionList.map((props, idx) => (
             <Action key={idx} {...props} />
