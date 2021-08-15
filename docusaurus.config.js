@@ -64,6 +64,7 @@ module.exports = {
           label: "Participate",
           to: "docs/participate/support-the-network/run-a-node",
         },
+        { to: '/blog', label: 'Blog', position: 'right' },
       ],
 
     },
@@ -231,6 +232,9 @@ module.exports = {
           // Please change this to your repo.
           editUrl: 'https://github.com/iota-community/iota-wiki/edit/develop/',
           remarkPlugins: [require('remark-code-import'), require('remark-import-partial')],
+        },
+        blog: {
+          showReadingTime: true,
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
