@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://wiki.iota.org/blog</id>
+    <title>IOTA Wiki Blog</title>
+    <updated>2021-08-14T00:00:00.000Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://wiki.iota.org/blog"/>
+    <subtitle>IOTA Wiki Blog</subtitle>
+    <icon>https://wiki.iota.org/img/favicon.ico</icon>
+    <entry>
+        <title type="html"><![CDATA[Wiki Alpha release!]]></title>
+        <id>wiki-alpha</id>
+        <link href="https://wiki.iota.org/blog/wiki-alpha"/>
+        <updated>2021-08-14T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[We proudly present the first alpha release of the IOTA  wiki. Built by the community for the community. The wiki is at an early stage, and we would really appreciate your contribution.]]></summary>
+    </entry>
+</feed>

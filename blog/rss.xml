@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0">
+    <channel>
+        <title>IOTA Wiki Blog</title>
+        <link>https://wiki.iota.org/blog</link>
+        <description>IOTA Wiki Blog</description>
+        <lastBuildDate>Sat, 14 Aug 2021 00:00:00 GMT</lastBuildDate>
+        <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+        <generator>https://github.com/jpmonette/feed</generator>
+        <item>
+            <title><![CDATA[Wiki Alpha release!]]></title>
+            <link>https://wiki.iota.org/blog/wiki-alpha</link>
+            <guid>wiki-alpha</guid>
+            <pubDate>Sat, 14 Aug 2021 00:00:00 GMT</pubDate>
+            <description><![CDATA[We proudly present the first alpha release of the IOTA  wiki. Built by the community for the community. The wiki is at an early stage, and we would really appreciate your contribution.]]></description>
+        </item>
+    </channel>
+</rss>
