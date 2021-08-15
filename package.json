@@ -17,6 +17,7 @@
     "@algolia/client-search": "^4.9.1",
     "@docusaurus/core": "2.0.0-beta.4",
     "@docusaurus/preset-classic": "2.0.0-beta.4",
+    "@jlvandenhout/docusaurus-plugin-docs-editor": "jlvandenhout/docusaurus-plugin-docs-editor",
     "@mdx-js/react": "^1.6.21",
     "@svgr/webpack": "^5.5.0",
     "@types/react": "16.8.0 < 18.0.0",
