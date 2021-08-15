@@ -44,7 +44,7 @@ export function NavLink({
           marginRight: '10px',
       }
 
-      labelIcon = <img src={labelIcon} height={20} style={labelIconStyle} alt={label}/>;
+    labelIcon = <img src={useBaseUrl(labelIcon)} height={20} style={labelIconStyle} alt={label}/>;
       labelContainerStyle = {
           boxAlign: 'center',
           whiteSpace: 'no-wrap',
