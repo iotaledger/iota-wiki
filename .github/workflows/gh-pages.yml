@@ -1,8 +1,8 @@
 name: deploy
 
 on:
-  pull_request:
-    branches: [develop]
+  push:
+    branches: [feat/add-dropdown-icons]
   workflow_dispatch:
   schedule:
     - cron:  '0 0 * * *'
