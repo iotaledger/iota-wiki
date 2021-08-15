@@ -57,7 +57,46 @@ module.exports = {
               label: "Getting Started",
               to: "docs/develop/getting-started/architecture",
             },
-            /* AUTO GENERATED EXTERNAL DOCS DROPDOWN CONFIG */
+            {
+              label: "Bee",
+              to: "bee/getting_started/getting_started",
+            },
+            {
+              label: "Chrysalis docs",
+              to: "chrysalis-docs/welcome",
+            },
+            {
+              label: "GoShimmer",
+              to: "goshimmer/welcome",
+            },
+            {
+              label: "Hornet",
+              to: "hornet/welcome",
+            },
+            {
+              label: "Identity",
+              to: "identity.rs/intro",
+            },
+            {
+              label: "IOTA 2.0 Specs",
+              to: "IOTA-2.0-Research-Specifications/Preface",
+            },
+            {
+              label: "iota.rs",
+              to: "iota.rs/welcome",
+            },
+            {
+              label: "stronghold.rs",
+              to: "stronghold.rs/welcome",
+            },
+            {
+              label: "wallet.rs",
+              to: "wallet.rs/welcome",
+            },
+            {
+              label: "Wasp",
+              to: "wasp/welcome",
+            },
           ]
         },
         {
@@ -262,6 +301,99 @@ module.exports = {
       }
     ],
     'docusaurus-plugin-matomo',
-    /* AUTO GENERATED EXTERNAL DOCS CONFIG */
+    [
+      "@docusaurus/plugin-content-docs",
+      {
+        id: "bee",
+        path: "external/bee/documentation/docs",
+        routeBasePath: "bee",
+        sidebarPath: require.resolve("./external/bee/documentation/sidebars.js"),
+        remarkPlugins: [require("remark-code-import"), require("remark-import-partial")],
+      }
+    ],
+    [
+      "@docusaurus/plugin-content-docs",
+      {
+        id: "chrysalis-docs",
+        path: "external/chrysalis-docs/docs",
+        routeBasePath: "chrysalis-docs",
+        sidebarPath: require.resolve("./external/chrysalis-docs/sidebars.js"),
+      }
+    ],
+    [
+      "@docusaurus/plugin-content-docs",
+      {
+        id: "goshimmer",
+        path: "external/goshimmer/documentation/docs",
+        routeBasePath: "goshimmer",
+        sidebarPath: require.resolve("./external/goshimmer/documentation/sidebars.js"),
+      }
+    ],
+    [
+      "@docusaurus/plugin-content-docs",
+      {
+        id: "hornet",
+        path: "external/hornet/documentation/docs",
+        routeBasePath: "hornet",
+        sidebarPath: require.resolve("./external/hornet/documentation/sidebars.js"),
+      }
+    ],
+    [
+      "@docusaurus/plugin-content-docs",
+      {
+        id: "identity-rs",
+        path: "external/identity.rs/documentation/docs",
+        routeBasePath: "identity.rs",
+        sidebarPath: require.resolve("./external/identity.rs/documentation/sidebars.js"),
+      }
+    ],
+    [
+      "@docusaurus/plugin-content-docs",
+      {
+        id: "IOTA-Research-Specifications",
+        path: "external/IOTA-2.0-Research-Specifications/docs",
+        routeBasePath: "IOTA-2.0-Research-Specifications",
+        sidebarPath: require.resolve("./external/IOTA-2.0-Research-Specifications/sidebars.js"),
+        remarkPlugins: [math],
+        rehypePlugins: [katex],
+      }
+    ],
+    [
+      "@docusaurus/plugin-content-docs",
+      {
+        id: "iota-rs",
+        path: "external/iota.rs/documentation/docs",
+        routeBasePath: "iota.rs",
+        sidebarPath: require.resolve("./external/iota.rs/documentation/sidebars.js"),
+        remarkPlugins: [require("remark-code-import"), require("remark-import-partial")],
+      }
+    ],
+    [
+      "@docusaurus/plugin-content-docs",
+      {
+        id: "stronghold-rs",
+        path: "external/stronghold.rs/documentation/docs",
+        routeBasePath: "stronghold.rs",
+        sidebarPath: require.resolve("./external/stronghold.rs/documentation/sidebars.js"),
+      }
+    ],
+    [
+      "@docusaurus/plugin-content-docs",
+      {
+        id: "wallet-rs",
+        path: "external/wallet.rs/documentation/docs",
+        routeBasePath: "wallet.rs",
+        sidebarPath: require.resolve("./external/wallet.rs/documentation/sidebars.js"),
+      }
+    ],
+    [
+      "@docusaurus/plugin-content-docs",
+      {
+        id: "wasp",
+        path: "external/wasp/documentation/docs",
+        routeBasePath: "wasp",
+        sidebarPath: require.resolve("./external/wasp/documentation/sidebars.js"),
+      }
+    ],
   ]
 };
