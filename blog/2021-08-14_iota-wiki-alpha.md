@@ -8,9 +8,9 @@ author_image_url: https://avatars.githubusercontent.com/u/61637085?s=400&u=af6ca
 tags: [X-Teams, IOTA-Wiki]
 ---
 
-We proudly present the first alpha release of the wiki. The wiki is in an early state, and we would really appreciate your contribution.
-Our Team member [Jeroen](https://github.com/jlvandenhout) also build a nice editor, so it will be really easy for you to make changes even with nearly no GitHub knowledge.
+We proudly present the first alpha release of the IOTA  wiki. Built by the community for the community. The wiki is at an early stage, and we would really appreciate your contribution.
+Jeroen (https://github.com/jlvandenhout) has built a great in-page editor, which makes it easy to contribute to the wiki content without being a GitHub expert. You will however need a GitHub account. 
 
-Let's make the wiki the one place to go for IOTA together. Let's BUIDL
+The wiki blog will also contain a collection of curated community posts in the future. The wiki will be a one-stop shop for IOTA information.. Let's BUIDL it together!
 
 ![BUIDL](/img/buidl-bridge.gif)
