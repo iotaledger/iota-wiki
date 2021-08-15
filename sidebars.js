@@ -3,24 +3,25 @@ module.exports =
 {   
     learn: [
         {
-          type: 'category',
-          label: 'About IOTA',
-          collapsed: false,
-          items: [
+            type: 'category',
+            label: 'About IOTA',
+            collapsed: false,
+            items: [
                 'learn/about-iota/an-introduction-to-iota', 
                 'learn/about-iota/data-transfer', 
                 'learn/about-iota/value-transfer',
                 'learn/about-iota/why-is-iota-feeless',
                 'learn/about-iota/roadmap-to-decentralization',
+                'learn/about-iota/messages',
                 'learn/about-iota/security',
                 'learn/about-iota/energy-efficiency',
             ],
         },
         {
-          type: 'category',
-          label: 'IOTA Token',
-          collapsed: true,
-          items: [
+            type: 'category',
+            label: 'IOTA Token',
+            collapsed: true,
+            items: [
                 'learn/iota-token/overview',
                 'learn/iota-token/buying-iota',
                 'learn/iota-token/exchanges',
@@ -33,10 +34,10 @@ module.exports =
             label: 'Wallets',
             collapsed: true,
             items: [
-                  'learn/wallets/what-is-a-wallet',
-                  'learn/wallets/firefly-wallet',
-                  'learn/wallets/iota-devnet-wallet',
-                  'learn/wallets/hardware-wallets',
+                'learn/wallets/what-is-a-wallet',
+                'learn/wallets/firefly-wallet',
+                'learn/wallets/iota-devnet-wallet',
+                'learn/wallets/hardware-wallets',
             ],
         },
         {
@@ -44,9 +45,10 @@ module.exports =
             label: 'Networks',
             collapsed: true,
             items: [
-                  'learn/networks/iota-1.5-chrysalis',
-                  'learn/networks/iota-2.0-coordicide',
-                  'learn/networks/devnets',
+                'learn/networks/iota-1.5-chrysalis',
+                'learn/networks/iota-2.0-coordicide',
+                'learn/networks/devnets',
+                'learn/networks/network-token-migration'
             ],
         },
         {
@@ -54,11 +56,11 @@ module.exports =
             label: 'Resource Materials',
             collapsed: true,
             items: [
-                  'learn/resource-materials/glossary',
-                  'learn/resource-materials/fact-base',
-                  'learn/resource-materials/infographics',
-                  'learn/resource-materials/videos',
-                  'learn/resource-materials/faq\'s',
+                'learn/resource-materials/glossary',
+                'learn/resource-materials/fact-base',
+                'learn/resource-materials/infographics',
+                'learn/resource-materials/videos',
+                'learn/resource-materials/faq\'s',
             ],
           },
           {
@@ -66,9 +68,9 @@ module.exports =
             label: 'Research',
             collapsed: true,
             items: [
-                  'learn/research/research-outline',
-                  'learn/research/papers',
-                  'learn/research/grants',
+                'learn/research/research-outline',
+                'learn/research/papers',
+                'learn/research/grants',
           ],
         },
     ],
@@ -79,13 +81,13 @@ module.exports =
             label: 'Use Cases',
             collapsed: false,
             items: [
-                  'use/use-cases/industry-applications',
-                  'use/use-cases/internet-of-things',
-                  'use/use-cases/digital-assets',
-                  'use/use-cases/nfts',
-                  'use/use-cases/data-confidence',
-                  'use/use-cases/eco-social-projects',
-                  'use/use-cases/private-tangle',
+                'use/use-cases/industry-applications',
+                'use/use-cases/internet-of-things',
+                'use/use-cases/digital-assets',
+                'use/use-cases/nfts',
+                'use/use-cases/data-confidence',
+                'use/use-cases/eco-social-projects',
+                'use/use-cases/private-tangle',
             ],
         },
         {
@@ -93,7 +95,7 @@ module.exports =
             label: 'Streams',
             collapsed: true,
             items: [
-                  'use/streams/encrypted-data-comms',
+                'use/streams/encrypted-data-comms',
             ],
         },
         {
@@ -101,7 +103,7 @@ module.exports =
             label: 'Identity',
             collapsed: true,
             items: [
-                  'use/identity/enabling-privacy-and-trust',
+                'use/identity/enabling-privacy-and-trust',
             ],
         },
         {
@@ -109,7 +111,7 @@ module.exports =
             label: 'Smart Contracts',
             collapsed: true,
             items: [
-                  'use/smart-contracts/programmable-contracts',
+                'use/smart-contracts/programmable-contracts',
             ],
         },
         {
@@ -117,7 +119,7 @@ module.exports =
             label: 'Access',
             collapsed: true,
             items: [
-                  'use/access/secure-access-control',
+                'use/access/secure-access-control',
             ],
         },
         {
@@ -125,7 +127,7 @@ module.exports =
             label: 'Stronghold',
             collapsed: true,
             items: [
-                  'use/stronghold/protecting-your-secrets',
+                'use/stronghold/protecting-your-secrets',
             ],
         },
         {
@@ -133,7 +135,7 @@ module.exports =
             label: 'Oracles',
             collapsed: true,
             items: [
-                  'use/oracles/trust-in-real-world-data',
+                'use/oracles/trust-in-real-world-data',
             ],
         },
         {
@@ -141,9 +143,9 @@ module.exports =
             label: 'Utilities',
             collapsed: true,
             items: [
-                  'use/utilities/tangle-explorer',
-                  'use/utilities/visualizer',
-                  'use/utilities/iota-ipfs',
+                'use/utilities/tangle-explorer',
+                'use/utilities/visualizer',
+                'use/utilities/iota-ipfs',
             ],
         }, 
     ],
@@ -154,8 +156,11 @@ module.exports =
             label: 'Support The Network',
             collapsed: false,
             items: [
-                  'participate/support-the-network/run-a-node',
-                  'participate/support-the-network/create-an-application',
+                'participate/support-the-network/about-nodes',
+                'participate/support-the-network/become-a-node-operator',
+                'participate/support-the-network/node-software',
+                'participate/support-the-network/run-a-node',
+                'participate/support-the-network/create-an-application',
             ],
         },        
         {
@@ -163,11 +168,11 @@ module.exports =
             label: 'The Community',
             collapsed: true,
             items: [
-                  'participate/the-community/discord',
-                  'participate/the-community/x-teams',
-                  'participate/the-community/git-hub',
-                  'participate/the-community/stack-overflow',
-                  'participate/the-community/social-media',
+                'participate/the-community/discord',
+                'participate/the-community/x-teams',
+                'participate/the-community/git-hub',
+                'participate/the-community/stack-overflow',
+                'participate/the-community/social-media',
             ],
         },        
         {
@@ -175,7 +180,7 @@ module.exports =
             label: 'Partnerships',
             collapsed: true,
             items: [
-                  'participate/partnerships/iota-partnerships',
+                'participate/partnerships/iota-partnerships',
             ],
         },        
         {
@@ -183,7 +188,8 @@ module.exports =
             label: 'Funding',
             collapsed: true,
             items: [
-                  'participate/funding/edf-funding',
+                'participate/funding/edf-funding',
+                'participate/funding/community-treasury',
             ],
         }, 
     ],
@@ -195,10 +201,10 @@ module.exports =
             label: 'Getting Started',
             collapsed: false,
             items: [
-                  'develop/getting-started/architecture',
-                  'develop/getting-started/environment',
-                  'develop/getting-started/send-a-first-message',
-                  'develop/getting-started/devnet',
+                'develop/getting-started/architecture',
+                'develop/getting-started/environment',
+                'develop/getting-started/send-a-first-message',
+                'develop/getting-started/devnet',
             ],
         },        
         {
@@ -206,11 +212,11 @@ module.exports =
             label: 'Fundamentals',
             collapsed: true,
             items: [
-                  'develop/fundamentals/cryptography',
-                  'develop/fundamentals/consensus',
-                  'develop/fundamentals/mana',
-                  'develop/fundamentals/utxo',
-                  'develop/fundamentals/dapps',
+                'develop/fundamentals/cryptography',
+                'develop/fundamentals/consensus',
+                'develop/fundamentals/mana',
+                'develop/fundamentals/utxo',
+                'develop/fundamentals/dapps',
             ],
         },        
         {
@@ -218,7 +224,7 @@ module.exports =
             label: 'Exchange Integration',
             collapsed: true,
             items: [
-                  'develop/exchange-integration/guide',
+                'develop/exchange-integration/guide',
             ],
         },        
         {
@@ -226,24 +232,8 @@ module.exports =
             label: 'Tutorials',
             collapsed: true,
             items: [
-                  'develop/tutorials/hackster',
-                  'develop/tutorials/youtube',
-            ],
-        },        
-        {
-            type: 'category',
-            label: 'Developer Docs',
-            collapsed: true,
-            items: [
-                  'develop/getting-started/architecture',
-            ],
-        },
-        {
-            type: 'category',
-            label: 'Project Repos',
-            collapsed: true,
-            items: [
-                  'develop/getting-started/architecture',
+                'develop/tutorials/hackster',
+                'develop/tutorials/youtube',
             ],
         },
     ],   
