@@ -65,7 +65,7 @@ module.exports = {
           to: "docs/participate/support-the-network/run-a-node",
         },
       ],
-      
+
     },
     footer: {
       links: [
@@ -229,8 +229,7 @@ module.exports = {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
-          editUrl:
-            'https://github.com/iota-community/iota-wiki/tree/develop/',
+          editUrl: 'https://github.com/iota-community/iota-wiki/edit/develop/',
           remarkPlugins: [require('remark-code-import'), require('remark-import-partial')],
         },
         theme: {
@@ -244,6 +243,20 @@ module.exports = {
     ]
   ],
   plugins: [
+    [
+      '@jlvandenhout/docusaurus-plugin-docs-editor',
+      {
+        // GitHub OAuth Application settings
+        github: {
+          // REQUIRED - The Client ID you got from the GitHub OAuth App setup
+          clientId: '30a8f5a21215004e81ca',
+          // REQUIRED - The plugin will append the authorization code to this URL
+          tokenUrl: 'https://iota-wiki-github-oauth-login.iotaledger.workers.dev',
+          // The request method to use (GET or POST), defaults to GET
+          method: 'POST',
+        },
+      }
+    ],
     'docusaurus-plugin-matomo',
     /* AUTO GENERATED EXTERNAL DOCS CONFIG */
   ]
