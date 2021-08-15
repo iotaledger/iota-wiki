@@ -41,7 +41,7 @@ export function NavLink({
       const labelIconStyle = {
           display: 'inline',
           paddingBottom: '2px',
-          marginRight: '5px',
+          marginRight: '10px',
       }
 
       labelIcon = <img src={labelIcon} height={20} style={labelIconStyle} alt={label}/>;
