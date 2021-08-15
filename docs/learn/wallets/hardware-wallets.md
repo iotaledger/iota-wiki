@@ -1,5 +1,5 @@
 ---
-title: Hardware Wallet's
+title: Hardware Wallets
 description: Currently IOTA supports the Ledger Nano Hardware Wallet's. Get all the info how to use them with IOTA here.
 ---
 
