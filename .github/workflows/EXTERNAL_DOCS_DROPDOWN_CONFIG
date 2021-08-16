@@ -1,40 +1,50 @@
             {
               label: "Bee",
               to: "bee/getting_started/getting_started",
+              activeBaseRegex: 'bee/.*'
             },
             {
               label: "Chrysalis docs",
               to: "chrysalis-docs/welcome",
+              activeBaseRegex: 'chrysalis-docs/.*'
             },
             {
               label: "GoShimmer",
               to: "goshimmer/welcome",
+              activeBaseRegex: 'goshimmer/.*'
             },
             {
               label: "Hornet",
               to: "hornet/welcome",
+              activeBaseRegex: 'hornet/.*'
             },
             {
               label: "Identity",
               to: "identity.rs/intro",
+              activeBaseRegex: 'identity.rs/.*'
             },
             {
               label: "IOTA 2.0 Specs",
               to: "IOTA-2.0-Research-Specifications/Preface",
+              activeBaseRegex: 'IOTA-2.0-Research-Specifications/.*'
             },
             {
               label: "iota.rs",
               to: "iota.rs/welcome",
+              activeBaseRegex: 'iota.rs/.*'
             },
             {
               label: "stronghold.rs",
               to: "stronghold.rs/welcome",
+              activeBaseRegex: 'stronghold.rs/.*'
             },
             {
               label: "wallet.rs",
               to: "wallet.rs/welcome",
+              activeBaseRegex: 'wallet.rs/.*'
             },
             {
               label: "Wasp",
               to: "wasp/welcome",
+              activeBaseRegex: 'wasp/.*'
             },
