@@ -6,12 +6,12 @@
             {
               label: "Chrysalis docs",
               to: "chrysalis-docs/welcome",
-              labelIcon: '/img/logo/clientlibraries.svg',
+              labelIcon: '/img/logo/chrysalis.svg',
             },
             {
               label: "GoShimmer",
               to: "goshimmer/welcome",
-              labelIcon: '/img/logo/coordicide.svg',
+              labelIcon: '/img/logo/goshimmer.svg',
             },
             {
               label: "Hornet",
@@ -26,12 +26,12 @@
             {
               label: "IOTA 2.0 Specs",
               to: "IOTA-2.0-Research-Specifications/Preface",
-              labelIcon: '/img/logo/coordicide.svg',
+              labelIcon: '/img/logo/iota_20.svg',
             },
             {
               label: "iota.rs",
               to: "iota.rs/welcome",
-              labelIcon: '/img/logo/clientlibraries.svg',
+              labelIcon: '/img/logo/iota_mark.svg',
             },
             {
               label: "stronghold.rs",

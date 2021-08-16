@@ -56,6 +56,7 @@ module.exports = {
             {
               label: "Getting Started",
               to: "docs/develop/getting-started/architecture",
+              labelIcon: '/img/logo/getting_started.svg',
             },
             /* AUTO GENERATED EXTERNAL DOCS DROPDOWN CONFIG */
           ]
