@@ -1523,8 +1523,8 @@
     "@hapi/hoek" "^9.0.0"
 
 "@jlvandenhout/docusaurus-plugin-docs-editor@jlvandenhout/docusaurus-plugin-docs-editor":
-  version "0.1.0"
-  resolved "https://codeload.github.com/jlvandenhout/docusaurus-plugin-docs-editor/tar.gz/6ebd372529321f720834c8654c920677a4bb9fd5"
+  version "0.2.0"
+  resolved "https://codeload.github.com/jlvandenhout/docusaurus-plugin-docs-editor/tar.gz/c95b92657f40a9fb693821e0f08a36946abfe88b"
   dependencies:
     "@octokit/core" "^3.5.1"
     "@octokit/plugin-rest-endpoint-methods" "^5.5.1"
@@ -2183,9 +2183,9 @@
     "@types/prosemirror-view" "*"
 
 "@types/prosemirror-model@*", "@types/prosemirror-model@^1.13.1":
-  version "1.13.1"
-  resolved "https://registry.yarnpkg.com/@types/prosemirror-model/-/prosemirror-model-1.13.1.tgz#53df04ee174a7e1dc12747005b1b4c02565adcc4"
-  integrity sha512-tA1AlI+YR2t3Ve5eeQVJnQm4yV4wVlNfeogHusD1X3OEqqMYTuPssThgIMR4PxPHtvV871Ix8a20bUiJvULDgw==
+  version "1.13.2"
+  resolved "https://registry.yarnpkg.com/@types/prosemirror-model/-/prosemirror-model-1.13.2.tgz#2adad3ec478f83204f155d7fb94c9dfde2fc3296"
+  integrity sha512-a2rDB0aZ+7aIP7uBqQq1wLb4Hg4qqEvpkCqvhsgT/gG8IWC0peCAZfQ24sgTco0qSJLeDgIbtPeU6mgr869/kg==
   dependencies:
     "@types/orderedmap" "*"
 
@@ -6625,9 +6625,9 @@ lowlight@^1.2.0, lowlight@^1.20.0:
     highlight.js "~10.7.0"
 
 lowlight@^2.0.0:
-  version "2.2.0"
-  resolved "https://registry.yarnpkg.com/lowlight/-/lowlight-2.2.0.tgz#0fd5d3fe9a070afe1f2d60e0383742dc1ff7a84f"
-  integrity sha512-Rtgjv7dEmcvBU7IXvq6D5CgHUZZmrNJNsdAeNWUZB694nAaGJ+POzHAukfT+mHSAc6h8n8uAnw6EtTqtKpJ9vQ==
+  version "2.2.1"
+  resolved "https://registry.yarnpkg.com/lowlight/-/lowlight-2.2.1.tgz#4cf69c29d7bd8450fb2d0e9e33858e38589cf956"
+  integrity sha512-KDl2wTuCDk1+aJx/gfi4FPAxRNZ4fDa1zHQ0zpSjEf6qxmBD+1Pk6KriHikaQBshbS9gMIkZ/XCDT6IKAEKDsg==
   dependencies:
     "@types/hast" "^2.0.0"
     fault "^2.0.0"
@@ -8131,9 +8131,9 @@ prosemirror-transform@^1.0.0, prosemirror-transform@^1.1.0, prosemirror-transfor
     prosemirror-model "^1.0.0"
 
 prosemirror-view@^1.1.0, prosemirror-view@^1.19.0:
-  version "1.19.0"
-  resolved "https://registry.yarnpkg.com/prosemirror-view/-/prosemirror-view-1.19.0.tgz#f030b610213bc8627c027886e40e2e61d7ad3b40"
-  integrity sha512-XS0EUmxYr/k9KkANHwjBkH6EZNbuFh37oYLDgdcLRdX89eZVvlptqHqu/92j/Y+3iFsuW917FATjLkQtlLHylQ==
+  version "1.19.1"
+  resolved "https://registry.yarnpkg.com/prosemirror-view/-/prosemirror-view-1.19.1.tgz#3fe7479c28501da68348b31fb62a02f56d6d96c8"
+  integrity sha512-Hijrpw5pSkdr8LvN2KK9AxNngdJu9ftZw8gGB6jCk2bYOZ3VsQCehjKn4Chx3LvRiG3IGZMR2m1jWylRjmiwpA==
   dependencies:
     prosemirror-model "^1.14.3"
     prosemirror-state "^1.0.0"
