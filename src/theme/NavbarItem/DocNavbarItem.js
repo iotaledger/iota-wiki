@@ -31,7 +31,8 @@ export default function DocNavbarItem({
   activeSidebarClassName,
   label: staticLabel,
   docsPluginId,
-  labelIcon=null,
+  labelLightIcon=null,
+  labelDarkIcon=null,
   ...props
 }) {
   const {activeVersion, activeDoc} = useActiveDocContext(docsPluginId);
@@ -52,7 +53,8 @@ export default function DocNavbarItem({
       })}
       label={staticLabel ?? doc.id}
       to={doc.path}
-      labelIcon={'/img/logo/'}
+      labelLightIcon={'/img/logo/'}
+      labelDarkIcon={'/img/logo/'}
     />
   );
 }

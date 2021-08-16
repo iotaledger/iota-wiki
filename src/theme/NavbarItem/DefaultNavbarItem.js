@@ -8,6 +8,7 @@ import React from 'react';
 import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import useThemeContext from '@theme/hooks/useThemeContext';
 import IconExternalLink from '@theme/IconExternalLink';
 import isInternalUrl from '@docusaurus/isInternalUrl';
 const dropdownLinkActiveClass = 'dropdown__link--active';
@@ -19,7 +20,8 @@ export function NavLink({
   label,
   activeClassName = 'navbar__link--active',
   prependBaseUrlToHref,
-  labelIcon=null,
+  labelLightIcon = null,
+  labelDarkIcon = null,
   ...props
 }) {
   // TODO all this seems hacky
@@ -31,20 +33,22 @@ export function NavLink({
   });
   const isExternalLink = label && href && !isInternalUrl(href);
   const isDropdownLink = activeClassName === dropdownLinkActiveClass;
+  const { isDarkTheme } = useThemeContext();
 
   let labelContainerStyle = null;
 
     /**
      * If we have a labelIcon, create the element and modify the container styles.
      */
-  if (labelIcon) {
+  let labelIcon; 
+  if ( isDarkTheme ? labelDarkIcon : labelLightIcon ) {
       const labelIconStyle = {
           display: 'inline',
           paddingBottom: '2px',
           marginRight: '10px',
       }
 
-    labelIcon = <img src={useBaseUrl(labelIcon)} height={20} style={labelIconStyle} alt={label}/>;
+      labelIcon = <img src={ isDarkTheme ? useBaseUrl(labelDarkIcon) : useBaseUrl(labelLightIcon) } height={20} style={labelIconStyle} alt={label} />;
       labelContainerStyle = {
           boxAlign: 'center',
           whiteSpace: 'no-wrap',
