@@ -5,7 +5,7 @@
               labelDarkIcon: '/img/logo/bee_dark.svg',
             },
             {
-              label: "Chrysalis docs",
+              label: "Chrysalis Docs",
               to: "chrysalis-docs/welcome",
               labelLightIcon: '/img/logo/chrysalis_light.svg',
               labelDarkIcon: '/img/logo/chrysalis_dark.svg',
@@ -35,19 +35,19 @@
               labelDarkIcon: '/img/logo/iota_20_dark.svg',
             },
             {
-              label: "iota.rs",
+              label: "Core Libraries",
               to: "iota.rs/welcome",
               labelLightIcon: '/img/logo/iota_mark_light.svg',
               labelDarkIcon: '/img/logo/iota_mark_dark.svg',
             },
             {
-              label: "stronghold.rs",
+              label: "Stronghold",
               to: "stronghold.rs/welcome",
               labelLightIcon: '/img/logo/stronghold_light.svg',
               labelDarkIcon: '/img/logo/stronghold_dark.svg',
             },
             {
-              label: "wallet.rs",
+              label: "Wallet Library",
               to: "wallet.rs/welcome",
               labelLightIcon: '/img/logo/wallet_light.svg',
               labelDarkIcon: '/img/logo/wallet_dark.svg',
