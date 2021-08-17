@@ -1,8 +1,6 @@
             {
-              label: "Bee",
-              to: "bee/getting_started/getting_started",
-              labelLightIcon: '/img/logo/bee_light.svg',
-              labelDarkIcon: '/img/logo/bee_dark.svg',
+              label: 'Chrysalis (IOTA 1.5)',
+              to: 'category-header'
             },
             {
               label: "Chrysalis Docs",
@@ -11,16 +9,38 @@
               labelDarkIcon: '/img/logo/chrysalis_dark.svg',
             },
             {
-              label: "GoShimmer",
-              to: "goshimmer/welcome",
-              labelLightIcon: '/img/logo/goshimmer_light.svg',
-              labelDarkIcon: '/img/logo/goshimmer_dark.svg',
+              label: "Bee Node",
+              to: "bee/getting_started/getting_started",
+              labelLightIcon: '/img/logo/bee_light.svg',
+              labelDarkIcon: '/img/logo/bee_dark.svg',
             },
             {
-              label: "Hornet",
+              label: "Hornet Node",
               to: "hornet/welcome",
               labelLightIcon: '/img/logo/hornet_light.svg',
               labelDarkIcon: '/img/logo/hornet_dark.svg',
+            },
+            {
+              label: 'Libraries',
+              to: 'category-header'
+            },
+            {
+              label: "Core Lib",
+              to: "iota.rs/welcome",
+              labelLightIcon: '/img/logo/iota_mark_light.svg',
+              labelDarkIcon: '/img/logo/iota_mark_dark.svg',
+            },
+            {
+              label: "Wallet Lib",
+              to: "wallet.rs/welcome",
+              labelLightIcon: '/img/logo/wallet_light.svg',
+              labelDarkIcon: '/img/logo/wallet_dark.svg',
+            },
+            {
+              label: "Stronghold Secrets Lib",
+              to: "stronghold.rs/welcome",
+              labelLightIcon: '/img/logo/stronghold_light.svg',
+              labelDarkIcon: '/img/logo/stronghold_dark.svg',
             },
             {
               label: "Identity",
@@ -29,32 +49,28 @@
               labelDarkIcon: '/img/logo/identity_dark.svg',
             },
             {
-              label: "IOTA 2.0 Specs",
-              to: "IOTA-2.0-Research-Specifications/Preface",
-              labelLightIcon: '/img/logo/iota_20_light.svg',
-              labelDarkIcon: '/img/logo/iota_20_dark.svg',
+              label: 'Smart Contracts',
+              to: 'category-header'
             },
             {
-              label: "Core Libraries",
-              to: "iota.rs/welcome",
-              labelLightIcon: '/img/logo/iota_mark_light.svg',
-              labelDarkIcon: '/img/logo/iota_mark_dark.svg',
-            },
-            {
-              label: "Stronghold",
-              to: "stronghold.rs/welcome",
-              labelLightIcon: '/img/logo/stronghold_light.svg',
-              labelDarkIcon: '/img/logo/stronghold_dark.svg',
-            },
-            {
-              label: "Wallet Library",
-              to: "wallet.rs/welcome",
-              labelLightIcon: '/img/logo/wallet_light.svg',
-              labelDarkIcon: '/img/logo/wallet_dark.svg',
-            },
-            {
-              label: "Wasp",
+              label: "Wasp Node",
               to: "wasp/welcome",
               labelLightIcon: '/img/logo/wasp_light.svg',
               labelDarkIcon: '/img/logo/wasp_dark.svg',
+            },
+            {
+              label: 'Coordicide (IOTA 2.0)',
+              to: 'category-header'
+            },
+            {
+              label: "GoShimmer",
+              to: "goshimmer/welcome",
+              labelLightIcon: '/img/logo/goshimmer_light.svg',
+              labelDarkIcon: '/img/logo/goshimmer_dark.svg',
+            },
+            {
+              label: "Coordicide Specs",
+              to: "IOTA-2.0-Research-Specifications/Preface",
+              labelLightIcon: '/img/logo/iota_20_light.svg',
+              labelDarkIcon: '/img/logo/iota_20_dark.svg',
             },

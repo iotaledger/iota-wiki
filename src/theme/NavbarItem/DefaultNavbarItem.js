@@ -138,8 +138,28 @@ function DefaultNavbarItem({
   // Need to destructure position from props so that it doesn't get passed on.
   ...props
 }) {
-  const Comp = mobile ? DefaultNavbarItemMobile : DefaultNavbarItemDesktop;
-  return <Comp {...props} />;
+
+    /**
+     * Added to enable non-clickable category headers.
+     * To use simply add an navBar items in the config
+     * with to:'category-header'
+     */
+    if(props.to === 'category-header')
+    {
+        const categorySeparatorStyles = {
+            fontSize: '10px',
+            color:'var(--ifm-color-emphasis-600)',
+            paddingTop:'10px'
+
+        }
+        return <li style={categorySeparatorStyles}>{props.label}</li>
+    }
+    else
+    {
+        const Comp = mobile ? DefaultNavbarItemMobile : DefaultNavbarItemDesktop;
+        return <Comp {...props} />;
+
+    }
 }
 
 export default DefaultNavbarItem;
