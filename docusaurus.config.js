@@ -6,8 +6,8 @@ const katex = require('rehype-katex');
 module.exports = {
   title: 'IOTA Wiki',
   tagline: 'The complete reference for IOTA',
-  url: 'https://dr-electron.github.io/',
-  baseUrl: '/iota-wiki/',
+  url: 'https://wiki.iota.org',
+  baseUrl: '/',
   onBrokenLinks: 'log',
   onBrokenMarkdownLinks: 'log',
   favicon: 'img/favicon.ico',

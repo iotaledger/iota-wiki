@@ -40,7 +40,7 @@ export function NavLink({
     /**
      * If we have a labelIcon, create the element and modify the container styles.
      */
-  let labelIcon; 
+  let labelIcon = null; 
   if ( isDarkTheme ? labelDarkIcon : labelLightIcon ) {
       const labelIconStyle = {
           display: 'inline',
