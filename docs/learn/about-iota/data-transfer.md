@@ -9,7 +9,7 @@ description: A major use-case for the IOTA Technology is Data Transfer. Learn ho
 IOTA offers the ability to transfer Data for free. The Data transfer is fast, immutable, unforgeable, and secure, and is one of the core features of IOTA. This capability opens up a wide array of use cases that most other cryptocurrencies cannot serve in a way that IOTA does it.
 
 
-In IOTA, clients like wallets or applications send and receive messages (data objects) through nodes. Nodes are the entry and exit points for this messages and they communictae with each other and with the connected clients.
+In IOTA, clients like wallets or applications send and receive messages (data objects) through nodes. Nodes are the entry and exit points for this messages and they communicate with each other and with the connected clients.
 
 There are several different types of messages implemented in IOTA. Some of them transfer value (the IOTA token or digital assets), while others transfer no value, but pure Data and other types can contain both. 
 This enables the decentralized transport of Data and Value in a single message with the highest grade of security and the total absence of fees. The nodes of the network take care of the secure distribution of all messages in the Tangle.
@@ -54,7 +54,7 @@ The message ID is created as a unique cryptographic hash out of the bites contai
 
 **Network ID**
 
-An identification in which IOTA network the message belongs (Mainnet / Testnet / private Network) - Nodes will only accept messages that identify themself as belonging to the network the node belongs to.
+An identification in which IOTA network the message belongs (Mainnet / Testnet / private Network) - Nodes will only accept messages that identify themself as part of the network the node belongs to.
 
 **Parents length and Parents ID**
 
