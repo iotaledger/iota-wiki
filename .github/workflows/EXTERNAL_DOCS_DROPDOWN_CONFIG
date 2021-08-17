@@ -7,18 +7,21 @@
               to: "chrysalis-docs/welcome",
               labelLightIcon: '/img/logo/chrysalis_light.svg',
               labelDarkIcon: '/img/logo/chrysalis_dark.svg',
+              activeBaseRegex: 'chrysalis-docs/.*'
             },
             {
               label: "Bee Node",
               to: "bee/getting_started/getting_started",
               labelLightIcon: '/img/logo/bee_light.svg',
               labelDarkIcon: '/img/logo/bee_dark.svg',
+              activeBaseRegex: 'bee/.*'
             },
             {
               label: "Hornet Node",
               to: "hornet/welcome",
               labelLightIcon: '/img/logo/hornet_light.svg',
               labelDarkIcon: '/img/logo/hornet_dark.svg',
+              activeBaseRegex: 'hornet/.*'
             },
             {
               label: 'Libraries',
@@ -29,24 +32,28 @@
               to: "iota.rs/welcome",
               labelLightIcon: '/img/logo/iota_mark_light.svg',
               labelDarkIcon: '/img/logo/iota_mark_dark.svg',
+              activeBaseRegex: 'iota.rs/.*'
             },
             {
               label: "Wallet Lib",
               to: "wallet.rs/welcome",
               labelLightIcon: '/img/logo/wallet_light.svg',
               labelDarkIcon: '/img/logo/wallet_dark.svg',
+              activeBaseRegex: 'wallet.rs/.*'
             },
             {
               label: "Stronghold Secrets Lib",
               to: "stronghold.rs/welcome",
               labelLightIcon: '/img/logo/stronghold_light.svg',
               labelDarkIcon: '/img/logo/stronghold_dark.svg',
+              activeBaseRegex: 'stronghold.rs/.*'
             },
             {
               label: "Identity",
               to: "identity.rs/intro",
               labelLightIcon: '/img/logo/identity_light.svg',
               labelDarkIcon: '/img/logo/identity_dark.svg',
+              activeBaseRegex: 'identity.rs/.*'
             },
             {
               label: 'Smart Contracts',
@@ -57,6 +64,7 @@
               to: "wasp/welcome",
               labelLightIcon: '/img/logo/wasp_light.svg',
               labelDarkIcon: '/img/logo/wasp_dark.svg',
+              activeBaseRegex: 'wasp/.*'
             },
             {
               label: 'Coordicide (IOTA 2.0)',
@@ -67,10 +75,12 @@
               to: "goshimmer/welcome",
               labelLightIcon: '/img/logo/goshimmer_light.svg',
               labelDarkIcon: '/img/logo/goshimmer_dark.svg',
+              activeBaseRegex: 'goshimmer/.*'
             },
             {
               label: "Coordicide Specs",
               to: "IOTA-2.0-Research-Specifications/Preface",
               labelLightIcon: '/img/logo/iota_20_light.svg',
               labelDarkIcon: '/img/logo/iota_20_dark.svg',
+              activeBaseRegex: 'IOTA-2.0-Research-Specifications/.*'
             },
