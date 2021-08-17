@@ -42,7 +42,7 @@
               activeBaseRegex: 'wallet.rs/.*'
             },
             {
-              label: "Stronghold Secrets Lib",
+              label: "Stronghold",
               to: "stronghold.rs/welcome",
               labelLightIcon: '/img/logo/stronghold_light.svg',
               labelDarkIcon: '/img/logo/stronghold_dark.svg',
@@ -71,16 +71,16 @@
               to: 'category-header'
             },
             {
-              label: "GoShimmer",
-              to: "goshimmer/welcome",
-              labelLightIcon: '/img/logo/goshimmer_light.svg',
-              labelDarkIcon: '/img/logo/goshimmer_dark.svg',
-              activeBaseRegex: 'goshimmer/.*'
-            },
-            {
               label: "Coordicide Specs",
               to: "IOTA-2.0-Research-Specifications/Preface",
               labelLightIcon: '/img/logo/iota_20_light.svg',
               labelDarkIcon: '/img/logo/iota_20_dark.svg',
               activeBaseRegex: 'IOTA-2.0-Research-Specifications/.*'
+            },
+            {
+              label: "GoShimmer Node",
+              to: "goshimmer/welcome",
+              labelLightIcon: '/img/logo/goshimmer_light.svg',
+              labelDarkIcon: '/img/logo/goshimmer_dark.svg',
+              activeBaseRegex: 'goshimmer/.*'
             },
