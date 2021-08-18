@@ -7,7 +7,7 @@ description: My document description from SEO
 
 content - introduction to the topic
 
-## Heading 2 (Sub topic 1)
+## Types of Digital Assets
 
 content
 
