@@ -8,7 +8,6 @@ import React from 'react';
 import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import useBaseUrl from '@docusaurus/useBaseUrl';
-import useThemeContext from '@theme/hooks/useThemeContext';
 import IconExternalLink from '@theme/IconExternalLink';
 import isInternalUrl from '@docusaurus/isInternalUrl';
 const dropdownLinkActiveClass = 'dropdown__link--active';
@@ -20,8 +19,6 @@ export function NavLink({
   label,
   activeClassName = 'navbar__link--active',
   prependBaseUrlToHref,
-  labelLightIcon = null,
-  labelDarkIcon = null,
   ...props
 }) {
   // TODO all this seems hacky
@@ -33,30 +30,6 @@ export function NavLink({
   });
   const isExternalLink = label && href && !isInternalUrl(href);
   const isDropdownLink = activeClassName === dropdownLinkActiveClass;
-  const { isDarkTheme } = useThemeContext();
-
-  let labelContainerStyle = null;
-
-    /**
-     * If we have a labelIcon, create the element and modify the container styles.
-     */
-  let labelIcon = null; 
-  if ( isDarkTheme ? labelDarkIcon : labelLightIcon ) {
-      const labelIconStyle = {
-          display: 'inline',
-          paddingBottom: '2px',
-          marginRight: '10px',
-      }
-
-      labelIcon = <img src={ isDarkTheme ? useBaseUrl(labelDarkIcon) : useBaseUrl(labelLightIcon) } height={20} style={labelIconStyle} alt={label} />;
-      labelContainerStyle = {
-          boxAlign: 'center',
-          whiteSpace: 'no-wrap',
-          alignItems: 'center',
-          display: 'flex',
-          padding: '5px'
-      }
-  }
   return (
     <Link
       {...(href
@@ -78,8 +51,7 @@ export function NavLink({
           })}
       {...props}>
       {isExternalLink ? (
-        <span style={labelContainerStyle}>
-          {labelIcon}
+        <span>
           {label}
           <IconExternalLink
             {...(isDropdownLink && {
@@ -89,10 +61,7 @@ export function NavLink({
           />
         </span>
       ) : (
-        <span style={labelContainerStyle}>
-            {labelIcon}
-            {label}
-        </span>
+        label
       )}
     </Link>
   );

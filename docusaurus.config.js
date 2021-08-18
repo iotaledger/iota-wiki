@@ -48,7 +48,7 @@ module.exports = {
         },
         {
           label: "Use",
-          to: "docs/use/use-cases/industry-applications",
+          href: "docs/use/use-cases/industry-applications",
         },
         {
           label: 'Develop',
@@ -56,8 +56,7 @@ module.exports = {
             {
               label: "Getting Started",
               to: "docs/develop/getting-started/architecture",
-              labelLightIcon: '/img/logo/getting_started_light.svg',
-              labelDarkIcon: '/img/logo/getting_started_dark.svg',
+              className: 'icon-getting-started',
             },
             /* AUTO GENERATED EXTERNAL DOCS DROPDOWN CONFIG */
           ]
