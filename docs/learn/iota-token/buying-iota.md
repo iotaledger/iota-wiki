@@ -1,34 +1,25 @@
 ---
 id: buying-iota
 title: Buying IOTA
-description: Where and how to buy the IOTA Cryptocurrency. 
+description: Where and how to buy the IOTA Cryptocurrency.
 ---
 
+# Buying IOTA
 
-# Heading 1 (Page Title)
+IOTA is listed on most major cryptocurrency exchanges.
 
-content - introduction to the topic
+## Buying IOTA in the United States
 
+*   [**Binance.US**](https://www.binance.us/en/home)
+*   [**Bittrex**](https://global.bittrex.com/)
+*   [**Gate.io**](https://www.gate.io/)
 
-## Heading 2 (Sub topic 1)
+## Buying IOTA everywhere else
 
-content 
+*   [**Binance**](https://www.binance.com/en)
+*   [**Bitfinex**](https://www.bitfinex.com/)
+*   [**Bittrex**](https://global.bittrex.com/)
+*   [**Gate.io**](https://www.gate.io/)
+*   [**Liquid**](https://www.liquid.com/)
 
-## Heading 2 (Sub topic 2)
-
-content
-
-
-
-<br/>
-
-----
-
-<br/>
-
-**need to add a footer section for further content - (three cards)**
-
-## Useful Links
-- **[a link](https://linkgoes.here)** - A description for the link
-- **[a link](https://linkgoes.here)** - A description for the link
-- **[a link](https://linkgoes.here)** - A description for the link
+***
