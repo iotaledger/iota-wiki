@@ -7,7 +7,7 @@ module.exports = {
   title: 'IOTA Wiki',
   tagline: 'The complete reference for IOTA',
   url: 'https://wiki.iota.org',
-  baseUrl: '/',
+  baseUrl: '/iota-wiki/',
   onBrokenLinks: 'log',
   onBrokenMarkdownLinks: 'log',
   favicon: 'img/favicon.ico',
@@ -48,7 +48,7 @@ module.exports = {
         },
         {
           label: "Use",
-          href: "docs/use/use-cases/industry-applications",
+          to: "docs/use/use-cases/industry-applications",
         },
         {
           label: 'Develop',
