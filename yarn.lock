@@ -1523,8 +1523,8 @@
     "@hapi/hoek" "^9.0.0"
 
 "@jlvandenhout/docusaurus-plugin-docs-editor@jlvandenhout/docusaurus-plugin-docs-editor":
-  version "0.2.0"
-  resolved "https://codeload.github.com/jlvandenhout/docusaurus-plugin-docs-editor/tar.gz/c95b92657f40a9fb693821e0f08a36946abfe88b"
+  version "0.3.0"
+  resolved "https://codeload.github.com/jlvandenhout/docusaurus-plugin-docs-editor/tar.gz/dc0379fff78764a9433b21013a578222df9ceca3"
   dependencies:
     "@octokit/core" "^3.5.1"
     "@octokit/plugin-rest-endpoint-methods" "^5.5.1"
