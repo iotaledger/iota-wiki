@@ -1,50 +1,86 @@
             {
-              label: "Bee",
-              to: "bee/getting_started/getting_started",
-              activeBaseRegex: 'bee/.*'
+              label: 'Chrysalis (IOTA 1.5)',
+              to: 'category-header'
             },
             {
-              label: "Chrysalis docs",
+              label: "Chrysalis Docs",
               to: "chrysalis-docs/welcome",
+              labelLightIcon: '/img/logo/chrysalis_light.svg',
+              labelDarkIcon: '/img/logo/chrysalis_dark.svg',
               activeBaseRegex: 'chrysalis-docs/.*'
             },
             {
-              label: "GoShimmer",
-              to: "goshimmer/welcome",
-              activeBaseRegex: 'goshimmer/.*'
+              label: "Bee Node",
+              to: "bee/getting_started/getting_started",
+              labelLightIcon: '/img/logo/bee_light.svg',
+              labelDarkIcon: '/img/logo/bee_dark.svg',
+              activeBaseRegex: 'bee/.*'
             },
             {
-              label: "Hornet",
+              label: "Hornet Node",
               to: "hornet/welcome",
+              labelLightIcon: '/img/logo/hornet_light.svg',
+              labelDarkIcon: '/img/logo/hornet_dark.svg',
               activeBaseRegex: 'hornet/.*'
+            },
+            {
+              label: 'Libraries',
+              to: 'category-header'
+            },
+            {
+              label: "Core",
+              to: "iota.rs/welcome",
+              labelLightIcon: '/img/logo/iota_mark_light.svg',
+              labelDarkIcon: '/img/logo/iota_mark_dark.svg',
+              activeBaseRegex: 'iota.rs/.*'
+            },
+            {
+              label: "Wallet",
+              to: "wallet.rs/welcome",
+              labelLightIcon: '/img/logo/wallet_light.svg',
+              labelDarkIcon: '/img/logo/wallet_dark.svg',
+              activeBaseRegex: 'wallet.rs/.*'
+            },
+            {
+              label: "Stronghold",
+              to: "stronghold.rs/welcome",
+              labelLightIcon: '/img/logo/stronghold_light.svg',
+              labelDarkIcon: '/img/logo/stronghold_dark.svg',
+              activeBaseRegex: 'stronghold.rs/.*'
             },
             {
               label: "Identity",
               to: "identity.rs/intro",
+              labelLightIcon: '/img/logo/identity_light.svg',
+              labelDarkIcon: '/img/logo/identity_dark.svg',
               activeBaseRegex: 'identity.rs/.*'
             },
             {
-              label: "IOTA 2.0 Specs",
+              label: 'Smart Contracts',
+              to: 'category-header'
+            },
+            {
+              label: "Wasp Node",
+              to: "wasp/welcome",
+              labelLightIcon: '/img/logo/wasp_light.svg',
+              labelDarkIcon: '/img/logo/wasp_dark.svg',
+              activeBaseRegex: 'wasp/.*'
+            },
+            {
+              label: 'Coordicide (IOTA 2.0)',
+              to: 'category-header'
+            },
+            {
+              label: "Coordicide Specs",
               to: "IOTA-2.0-Research-Specifications/Preface",
+              labelLightIcon: '/img/logo/iota_20_light.svg',
+              labelDarkIcon: '/img/logo/iota_20_dark.svg',
               activeBaseRegex: 'IOTA-2.0-Research-Specifications/.*'
             },
             {
-              label: "iota.rs",
-              to: "iota.rs/welcome",
-              activeBaseRegex: 'iota.rs/.*'
-            },
-            {
-              label: "stronghold.rs",
-              to: "stronghold.rs/welcome",
-              activeBaseRegex: 'stronghold.rs/.*'
-            },
-            {
-              label: "wallet.rs",
-              to: "wallet.rs/welcome",
-              activeBaseRegex: 'wallet.rs/.*'
-            },
-            {
-              label: "Wasp",
-              to: "wasp/welcome",
-              activeBaseRegex: 'wasp/.*'
+              label: "GoShimmer Node",
+              to: "goshimmer/welcome",
+              labelLightIcon: '/img/logo/goshimmer_light.svg',
+              labelDarkIcon: '/img/logo/goshimmer_dark.svg',
+              activeBaseRegex: 'goshimmer/.*'
             },
