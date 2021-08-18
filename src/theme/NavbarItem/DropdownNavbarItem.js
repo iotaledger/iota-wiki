@@ -66,7 +66,6 @@ function DropdownNavbarItemDesktop({items, position, className, ...props}) {
   **/
   const label = getDropdownLabel(props, items, useLocalPathname());
 
-  console.log(typeof label);
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (!dropdownRef.current || dropdownRef.current.contains(event.target)) {
