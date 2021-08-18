@@ -21,5 +21,7 @@ IOTA is listed on most major cryptocurrency exchanges.
 *   [**Bittrex**](https://global.bittrex.com/)
 *   [**Gate.io**](https://www.gate.io/)
 *   [**Liquid**](https://www.liquid.com/)
+*   [**OKEx**](https://www.okex.com/)
+*   [**Bitpanda**](https://www.bitpanda.com/en)
 
 ***
