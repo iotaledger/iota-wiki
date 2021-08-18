@@ -608,3 +608,89 @@ h2 {
   div.markdown > p > header > h1 {
   display:none;
   }
+
+/**
+Logo fonts CSS
+**/
+
+@font-face {
+    font-family: 'icomoon';
+    src:  url('fonts/icomoon.eot?yl49be');
+    src:  url('fonts/icomoon.eot?yl49be#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?yl49be') format('truetype'),
+    url('fonts/icomoon.woff?yl49be') format('woff'),
+    url('fonts/icomoon.svg?yl49be#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+}
+
+.dropdown > .navbar__link--active:after {
+    border-color: currentColor transparent;
+    border-style: solid;
+    border-width: 0.4em 0.4em 0;
+    content: '';
+    display: inline-block;
+    margin-left: 0.3em;
+    position: relative;
+    top: 2px;
+    transform: translateY(-50%);
+}
+
+[class^="icon-"],  [class*=" icon-"]  {
+    justify-content: left ;
+}
+
+[class^="icon-"]:before, [class*=" icon-"]:before {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icomoon' !important;
+    speak: never;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    margin-right: 10px;
+}
+
+.icon-chrysalis:before {
+    content: "\e909";
+}
+.icon-wasp:before {
+    content: "\e900";
+}
+.icon-wallet:before {
+    content: "\e901";
+}
+.icon-stronghold:before {
+    content: "\e902";
+}
+.icon-iota-mark:before {
+    content: "\e903";
+}
+.icon-iota-20:before {
+    content: "\e904";
+}
+.icon-identity:before {
+    content: "\e905";
+}
+.icon-hornet:before {
+    content: "\e906";
+}
+.icon-goshimmer:before {
+    content: "\e907";
+}
+.icon-getting-started:before {
+    content: "\e908";
+}
+.icon-bee:before {
+    content: "\e90a";
+}
+
+/**
+Logo fonts CSS
+**/
