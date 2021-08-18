@@ -3,8 +3,6 @@ name: deploy
 on:
   pull_request:
     branches: [develop]
-  push:
-    branches: [feat/fontIcons]
   workflow_dispatch:
   schedule:
     - cron:  '0 0 * * *'
