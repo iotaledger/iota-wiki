@@ -609,6 +609,10 @@ h2 {
   display:none;
   }
 
+/**
+Logo fonts CSS
+**/
+
 @font-face {
     font-family: 'icomoon';
     src:  url('fonts/icomoon.eot?yl49be');
@@ -620,12 +624,6 @@ h2 {
     font-style: normal;
     font-display: block;
 }
-
-/**
-Logo fonts CSS
-**/
-
-
 
 .dropdown > .navbar__link--active:after {
     border-color: currentColor transparent;
@@ -692,3 +690,7 @@ Logo fonts CSS
 .icon-bee:before {
     content: "\e90a";
 }
+
+/**
+Logo fonts CSS
+**/
