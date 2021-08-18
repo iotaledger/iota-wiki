@@ -57,6 +57,7 @@ module.exports = {
               label: "Getting Started",
               to: "docs/develop/getting-started/architecture",
               className: 'icon-getting-started',
+              activeBaseRegex: 'docs/develop/getting-started/.*'
             },
             /* AUTO GENERATED EXTERNAL DOCS DROPDOWN CONFIG */
           ]
