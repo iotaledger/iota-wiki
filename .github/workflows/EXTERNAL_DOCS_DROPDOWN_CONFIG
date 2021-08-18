@@ -28,14 +28,14 @@
               to: 'category-header'
             },
             {
-              label: "Core Lib",
+              label: "Core",
               to: "iota.rs/welcome",
               labelLightIcon: '/img/logo/iota_mark_light.svg',
               labelDarkIcon: '/img/logo/iota_mark_dark.svg',
               activeBaseRegex: 'iota.rs/.*'
             },
             {
-              label: "Wallet Lib",
+              label: "Wallet",
               to: "wallet.rs/welcome",
               labelLightIcon: '/img/logo/wallet_light.svg',
               labelDarkIcon: '/img/logo/wallet_dark.svg',
