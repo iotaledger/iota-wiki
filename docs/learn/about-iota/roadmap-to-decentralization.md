@@ -1,34 +1,20 @@
 ---
 id: roadmap-to-decentralization
 title: Roadmap to Decentralization
-description: IOTA moves quickly towards full decentralization. This page describes the plan to reach this goal.
+description: IOTA moves quickly towards full decentralization. This page
+  describes the plan to reach this goal.
 ---
 
+# Roadmap to Decentralization
 
-# Heading 1 (Page Title)
+IOTA's long awaited "coordicide" update will completely decentralize the network.
 
-content - introduction to the topic
+## What is Coordicide?
 
+Coordicide, also known as V2 is an upcoming update to IOTA's core protocol that will enable full decentralization for both value and data transfer and will at the same time significantly improve performance on the network.
 
-## Heading 2 (Sub topic 1)
+## When will coordicide take place?
 
-content 
+Although no current roadmap date has been specified coordicide has been placed on the official IOTA [roadmap](https://roadmap.iota.org/) which allows you to view the next steps needed to be taken before completion. You can view coordicide's progress [here](https://roadmap.iota.org/coordicide).
 
-## Heading 2 (Sub topic 2)
-
-content
-
-
-
-<br/>
-
-----
-
-<br/>
-
-**need to add a footer section for further content - (three cards)**
-
-## Useful Links
-- **[a link](https://linkgoes.here)** - A description for the link
-- **[a link](https://linkgoes.here)** - A description for the link
-- **[a link](https://linkgoes.here)** - A description for the link
+***
