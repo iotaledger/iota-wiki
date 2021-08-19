@@ -4,32 +4,24 @@ description: An introduction to the huge work that researchers of the IOTA Found
 ---
 
 
-# Heading 1 (Page Title)
+# The IOTA Foundation Research Department
 
-content - introduction to the topic
+The Research Department has several key functions: 
+securing the protocol, innovating new developments, overseeing academic research collaborations, communicating new concepts to the community, and investigating fundamental DLT questions.
 
+To achieve our goal of improving the IOTA protocol, we identify possible changes, theorize solutions, simulate proposals, and test our theories. This process involves much internal discussion and collaboration with external parties.
 
-## Heading 2 (Sub topic 1)
+When team members agree that an approach is nearing the deployment stage, when all stakeholders are confident in its success, and when we have had peer-reviewed external validation, the Engineering Team joins the discussions to turn the approach into code.
 
-content 
+## The Goals
 
-## Heading 2 (Sub topic 2)
+- Moving the IOTA protocol forward to meet the IOTA vision.
 
-content
+- Be a leader in DLT research.
 
+## The Team
 
+The IOTA Research Department consists of over 20 scientists and advisors that are highly specialized and widely recognized in the academic world.
+In Addition, they receive support from external researchers and universities worldwide, which have established partnerships and collaborations with the IOTA Foundation.
 
-<br/>
-
-----
-
-<br/>
-
-**need to add a footer section for further content - (three cards)**
-
-## Useful Links
-- **[a link](https://linkgoes.here)** - A description for the link
-- **[a link](https://linkgoes.here)** - A description for the link
-- **[a link](https://linkgoes.here)** - A description for the link
-
-
+Meet the Team here: [Research Team](https://www.iota.org/foundation/researcher-profiles)
