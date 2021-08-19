@@ -69,7 +69,7 @@ module.exports =
             collapsed: true,
             items: [
                 'learn/research/research-outline',
-                'learn/research/papers',
+                'learn/research/research-papers',
                 'learn/research/grants',
           ],
         },
@@ -95,7 +95,7 @@ module.exports =
             label: 'Streams',
             collapsed: true,
             items: [
-                'use/streams/encrypted-data-comms',
+                'use/streams/encrypted-data-communication',
             ],
         },
         {
@@ -111,7 +111,7 @@ module.exports =
             label: 'Smart Contracts',
             collapsed: true,
             items: [
-                'use/smart-contracts/programmable-contracts',
+                'use/smart-contracts/iota-smart-contracts',
             ],
         },
         {
@@ -159,7 +159,6 @@ module.exports =
                 'participate/support-the-network/about-nodes',
                 'participate/support-the-network/become-a-node-operator',
                 'participate/support-the-network/node-software',
-                'participate/support-the-network/run-a-node',
                 'participate/support-the-network/create-an-application',
             ],
         },        
