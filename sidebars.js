@@ -224,7 +224,7 @@ module.exports =
             label: 'Exchange Integration',
             collapsed: true,
             items: [
-                'develop/exchange-integration/guide',
+                'develop/exchange-integration/exchange-integration-guide',
             ],
         },        
         {
