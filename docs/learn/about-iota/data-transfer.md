@@ -49,11 +49,11 @@ To make sure that a message is valid and a node knows what to do with the messag
 
 **Message ID**
 
-The message ID is created as a unique cryptographic hash out of the bites contained in the message. It is created by the client (application) or wallet that issues the message.
+The message ID is created as a unique cryptographic hash out of the bytes contained in the message. It is created by the client (application) or wallet that issues the message.
 
 **Network ID**
 
-An identification in which IOTA network the message belongs (Mainnet / Testnet / private Network) - Nodes will only accept messages that identify themself as part of the network the node belongs to.
+An identification in which IOTA network the message belongs (Mainnet / Testnet / private network) - Nodes will only accept messages that identify themself as part of the network the node belongs to.
 
 **Parents length and Parents ID**
 
