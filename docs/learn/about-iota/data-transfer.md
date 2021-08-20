@@ -161,7 +161,7 @@ The message will only be accepted for processing if these parameters are met and
 
 ### Payloads
 
-A message may contain a payload. Three payload types are currently defined in the mainnet, but developers can create their custom payloads and attach them to messages as long as they fit the general requirements. This means an IOTA message can contain many different types of information, and the IOTA Token as transaction payload is just one of many.
+A message may contain a payload. Three payload types are currently defined in the mainnet, but developers can create their custom payloads and attach them to messages as long as they fit the general requirements. This means an IOTA message can contain many types of information, and the IOTA Token as transaction payload is just one of many.
 Below is a table of the currently specified core payloads with a link to their specifications.
 
 
