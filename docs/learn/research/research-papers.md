@@ -11,4 +11,4 @@ You can find the papers here:
 - [Research Papers](https://www.iota.org/foundation/research-papers)
 
 And here:
-- [Google Sholar](https://scholar.google.com/citations?user=_ZIH81gAAAAJ&hl=en)
+- [Google Scholar](https://scholar.google.com/citations?user=_ZIH81gAAAAJ&hl=en)
