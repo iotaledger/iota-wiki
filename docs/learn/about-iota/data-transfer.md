@@ -11,7 +11,7 @@ IOTA offers the ability to transfer Data for free. The Data transfer is fast, im
 
 In IOTA, clients like wallets or applications send and receive messages (data objects) through nodes. Nodes are the entry and exit points for these messages, and they communicate with each other and with the connected clients.
 
-There are several different types of messages implemented in IOTA. Some transfer value (the IOTA token or digital assets), while others transfer no value, but pure Data and other types can contain both. 
+There are several types of messages implemented in IOTA. Some transfer value (the IOTA token or digital assets), while others transfer no value, but pure Data and other types can contain both. 
 This enables the decentralized transport of Data and Value in a single message with the highest security grade and the total absence of fees. The nodes of the network take care of the secure distribution of all messages in the Tangle.
 
 
