@@ -66,7 +66,7 @@ To join an IOTA network, you need to run one of the available node software.
 
 On the one hand, there are currently different IOTA networks active: 
 
-- The primary `Mainnet` (you might have heard the term "Chrysalis" or "IOTA 1.5") where for example, the real tradeable IOTA token belongs to
+- The primary `Mainnet` (you might have heard the term "Chrysalis" or "IOTA 1.5") where for example, the real tradable IOTA token belongs to
 - The `DevNet` on which new and not fully tested features are developed and tested. This is intended to ultimately lead the way to "IOTA 2.0"
 - There are further internal and community-driven networks for more specific test-runs, but those are out of scope for now ;)
 
