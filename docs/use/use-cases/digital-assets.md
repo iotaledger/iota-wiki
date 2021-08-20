@@ -1,11 +1,10 @@
 ---
 title: Digital Assets
-description: My document description from SEO
+description: This article discribes the IOTA Digital Assets Framework
 ---
 
 # Digital Assets
 
-content - introduction to the topic
 
 ## Types of Digital Assets
 
@@ -21,16 +20,4 @@ The process of creating either type of digital asset is known as **minting.**
 *Notes:*\
 *The terms asset and token may be used interchangeably (i.e. native asset, native token, smart asset, smart token). For example, if you are referring to a piece of artwork, you would probably call it an asset, but if you are referring to WenCoin, you would probably call it a token.*
 
-## Heading 2 (Sub topic 2)
 
-content
-
-***
-
-**need to add a footer section for further content - (three cards)**
-
-## Useful Links
-
-*   [**a link**](https://linkgoes.here/) - A description for the link
-*   [**a link**](https://linkgoes.here/) - A description for the link
-*   [**a link**](https://linkgoes.here/) - A description for the link
