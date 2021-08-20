@@ -25,10 +25,14 @@ module.exports = {
     announcementBar: {
       id: 'wip', // Any value that will identify this message.
       content:
-        'This Wiki is still a Work in Progress. Consider contributing by using the in page editor or creating a <a href="https://github.com/iota-community/iota-wiki">PR directly</a>',
+        'The work on this Wiki is still in progress. Consider contributing by using the in page editor or creating a <a href="https://github.com/iota-community/iota-wiki">PR directly</a>',
       backgroundColor: '#ff0000', // Defaults to `#fff`.
       textColor: '#fff', // Defaults to `#000`.
       isCloseable: false, // Defaults to `true`.
+    },
+    matomo: {
+      matomoUrl: 'https://matomo.antonionardella.it/',
+      siteId: '6',
     },
     navbar: {
       hideOnScroll: true,
@@ -52,6 +56,8 @@ module.exports = {
             {
               label: "Getting Started",
               to: "docs/develop/getting-started/architecture",
+              className: 'icon-getting-started',
+              activeBaseRegex: 'docs/develop/getting-started/.*'
             },
             /* AUTO GENERATED EXTERNAL DOCS DROPDOWN CONFIG */
           ]
@@ -60,8 +66,9 @@ module.exports = {
           label: "Participate",
           to: "docs/participate/support-the-network/run-a-node",
         },
+        { to: '/blog', label: 'Blog', position: 'right' },
       ],
-      
+
     },
     footer: {
       links: [
@@ -225,21 +232,38 @@ module.exports = {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
-          editUrl:
-            'https://github.com/iota-community/iota-wiki/tree/develop/',
+          editUrl: 'https://github.com/iota-community/iota-wiki/edit/develop/',
           remarkPlugins: [require('remark-code-import'), require('remark-import-partial')],
+        },
+        blog: {
+          showReadingTime: true,
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
         },
         sitemap: {
-            changefreq: 'daily',
-            priority: 0.5,
+          changefreq: 'daily',
+          priority: 0.5,
         },
       },
     ]
   ],
   plugins: [
+    [
+      '@jlvandenhout/docusaurus-plugin-docs-editor',
+      {
+        // GitHub OAuth Application settings
+        github: {
+          // REQUIRED - The Client ID you got from the GitHub OAuth App setup
+          clientId: '30a8f5a21215004e81ca',
+          // REQUIRED - The plugin will append the authorization code to this URL
+          tokenUrl: 'https://iota-wiki-github-oauth-login.iotaledger.workers.dev',
+          // The request method to use (GET or POST), defaults to GET
+          method: 'POST',
+        },
+      }
+    ],
+    'docusaurus-plugin-matomo',
     /* AUTO GENERATED EXTERNAL DOCS CONFIG */
   ]
 };

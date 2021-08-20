@@ -7,6 +7,7 @@
 import React from 'react';
 import Translate from '@docusaurus/Translate';
 import IconEdit from '@theme/IconEdit';
+import OriginalEditThisPage from '@theme-original/EditThisPage'
 
 /**
 This function will remove "external/anyOtherString"
@@ -17,17 +18,32 @@ function reformatExternalProjectURL(editUrl)
     return editUrl.replace(externalDocsRegex, '');
 }
 
+/**
+This function will check if docs is in "external/"
+**/
+function isExternalProjectURL(editUrl)
+{
+    const externalDocsRegex =  new RegExp('external\/[^\/]*\/','i') ;
+    return externalDocsRegex.test(editUrl)
+}
+
 export default function EditThisPage({editUrl}) {
   const formattedEditURL = reformatExternalProjectURL(editUrl);
 
   return (
-    <a href={formattedEditURL} target="_blank" rel="noreferrer noopener">
-      <IconEdit />
-      <Translate
-        id="theme.common.editThisPage"
-        description="The link label to edit the current page">
-        Edit this page
-      </Translate>
-    </a>
+    <>
+      {isExternalProjectURL(editUrl) ?
+        <a href={formattedEditURL} target="_blank" rel="noreferrer noopener">
+          <IconEdit />
+          <Translate
+            id="theme.common.editThisPage"
+            description="The link label to edit the current page">
+            Edit this page
+          </Translate>
+        </a>
+      :
+        <OriginalEditThisPage editUrl={editUrl} />
+      }
+    </>
   );
 }
