@@ -1,6 +1,6 @@
 ---
 title: Research Outline
-description: An introduction to the huge work that researchers of the IOTA Foundation and from Universities and Institutes all over the world have done around the IOTA Protocol and Technologie.
+description: An introduction to the huge work that researchers of the IOTA Foundation and from Universities and Institutes all over the world have done around the IOTA Protocol and Technology.
 ---
 
 
