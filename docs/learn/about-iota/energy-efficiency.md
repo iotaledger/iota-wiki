@@ -7,7 +7,7 @@ description: Transactions in the IOTA Network are more Energy efficient than in
 
 # Energy efficiency
 
-This page explains the energy efficiency experienced in IOTA.
+This page details IOTA's energy consumption on a per transaction basis.
 
 ## Complications with measuring transactions.
 
@@ -19,7 +19,7 @@ The IOTA foundation has given their own estimates on this very question, a detai
 
 ## How does this compare to other cryptocurrencies?
 
-Many cryptocurrencies have released their own varying numbers, to keep things simple averages will be taken of the various different sources listed below and the conservative estimate of 0.00011 kWh will be chosen for IOTA
+Many cryptocurrencies have released their own varying numbers, to keep things simple averages will be taken of the various different sources listed below and the conservative estimate of 0.00011 kWh will be chosen for IOTA. Bitcoin, Ethereum, Litecoin and a few of the other biggest cryptocurrencies will also be left out as the energy consumption is far too high to place on a graph with cryptocurrencies that fall below under a kilowatt an hour.
 
     <!DOCTYPE html>
     <html>
@@ -31,7 +31,7 @@ Many cryptocurrencies have released their own varying numbers, to keep things si
     <script>
     var xValues = ["Cardano", "Dogecoin", "XRP", "Nano", "IOTA"];
     var yValues = [0.5479, 0.12, 0.023, 0.000112, 0.00011];
-    var barColors = ["red", "green","blue","orange","brown"];
+    var barColors = ["blue", "orange","teal","green","black"];
 
     new Chart("myChart", {
       type: "bar",
@@ -55,6 +55,16 @@ Many cryptocurrencies have released their own varying numbers, to keep things si
     </body>
     </html>
 
-[Source](https://www.trgdatacenters.com/most-environment-friendly-cryptocurrencies/)
+## Sources:
+
+[TRG datacenters](https://www.trgdatacenters.com/most-environment-friendly-cryptocurrencies/)
+
+[Laptopmag](https://www.laptopmag.com/best-picks/most-energy-efficient-cryptocurrencies-the-best-picks-for-teslas-new-coin)
+
+[RealSimple](https://www.realsimple.com/work-life/money/money-planning/how-cryptocurrency-uses-energy)
+
+[IOTA blog](https://blog.iota.org/internal-energy-benchmarks-for-iota/)
+
+[Amir's blog](https://medium.com/@a.abbaszadeh.s/measuring-iota-pow-s-energy-consumption-and-comparing-with-other-payment-systems-413f4de50274)
 
 ***
