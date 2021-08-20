@@ -69,7 +69,7 @@ module.exports =
             collapsed: true,
             items: [
                 'learn/research/research-outline',
-                'learn/research/papers',
+                'learn/research/research-papers',
                 'learn/research/grants',
           ],
         },
