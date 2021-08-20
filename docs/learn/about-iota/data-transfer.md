@@ -152,7 +152,7 @@ All this information must be created by a client (wallet software or other progr
 A message is considered valid if the following syntactic rules are met:
 
 1. The message size must not exceed 32 KiB (32 * 1024 bytes).
-2. Analyzing the Syntax structure of the message (parsing) does not leave any unknown bit's - this means that all the message information is fully readable by the node... unreadable information could contain malicious code and is therefore denied.
+2. Analyzing the Syntax structure of the message (parsing) does not leave any unknown bits - this means that all the message information is fully readable by the node... unreadable information could contain malicious code and is therefore denied.
 3. If the payload type is known to the node.
 4. If the Message PoW Hash indicates that the minimum requirements of POW requested by the network or the node have been fulfilled.
 5. Number of parent messages must be between 1-8.
