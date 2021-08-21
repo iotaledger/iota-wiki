@@ -71,6 +71,8 @@ Table 1: Reference power levels
 
 With these results, the data of the node tests was ten normalized against the results from the node without Hornet running and with Hornet running without messages being processed. Table 2 shows the final results of the test.
 
+<br/>
+
 <div align="center">
 
 | device | No messages | 50 MPS remote PoW | 100 MPS remote PoW | Mainnet PoW |
@@ -94,7 +96,11 @@ Using the normalized data of the nodes running at 0 messages per second, the ene
   **Energy(J) = Power(W) * Time(s)** 
 </div>
 
+<br/>
+
 It is important to note that while the devices were performing the mainnet proof-of-work, they were processing an average of 0.0592 messages per second (RPi 3), and 0.0730 messages per second (RPi 4). For the remote proof-of-work scenarios, the MPS rates were a fixed 50 and 100 messages per second. Table 3 shows the calculated energy cost per message for each test scenario. 
+
+<br/>
 
 <div align="center">
 
@@ -119,10 +125,7 @@ nano - 403.2J per transaction (source)
 others
 others
 
-
 ## other possible topics? 
-
-
 
 <br/>
 
