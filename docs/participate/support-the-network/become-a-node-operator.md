@@ -10,7 +10,7 @@ description: Running a node is the best way to use IOTA. This topic provides a
 
 ## Setting up a reliable architecture
 
-To handle a high rate of transactions per second, nodes need enough computational power to run reliably, including the following minimum requirements:
+To handle high rates of transactions per second, nodes need enough computational power to run reliably, including the following minimum requirements:
 
 - A dual-core CPU
 - 2 GB RAM
@@ -35,7 +35,7 @@ Attackers can abuse any open ports on your device.
 
 To secure your device against attacks on unused open ports, you should close all ports except those that are in use. To do so, you can use a firewall.
 
-All operating systems include firewall options. By having a firewall in place you can completely block unused and unnecessary ports.
+All operating systems include firewall options. By having a firewall in place, you can completely block unused and unnecessary ports.
 
 ### Choosing a node software
 
