@@ -69,7 +69,7 @@ Table 1: Reference power levels
 
 <br/>
 
-With these results, the data of the node tests was ten normalized against the results from the node without Hornet running and with Hornet running without messages being processed. Table 2 shows the final results of the test.
+With these results, the data of the node tests was then normalized against the results from the node without Hornet running and with Hornet running without messages being processed. Table 2 shows the final results of the test.
 
 <br/>
 
@@ -93,7 +93,9 @@ With these results, the data of the node tests was ten normalized against the re
 Using the normalized data of the nodes running at 0 messages per second, the energy cost per message can be calculated with the formula:
 
 <div align="center">
-  **Energy(J) = Power(W) * Time(s)** 
+
+**Energy(J) = Power(W) * Time(s)**
+  
 </div>
 
 <br/>
@@ -125,7 +127,10 @@ nano - 403.2J per transaction (source)
 others
 others
 
+
 ## other possible topics? 
+
+
 
 <br/>
 
