@@ -97,7 +97,7 @@ The source code of the software can be found here:
 
 ### GoShimmer Installation guides
 
-Standard installation following the Bee Documentation:
+Standard installation following the Documentation:
 
 - [GoShimmer Node Setup](https://goshimmer.docs.iota.org/docs/tutorials/setup)
 
@@ -105,6 +105,7 @@ Standard installation following the Bee Documentation:
 
 - Nuriels GoShimmer Playbook: [Nuriel77 GoShimmer](https://github.com/nuriel77/goshimmer-playbook)
 - DeMichelle Shell Script: [DeMichelle GoShimmer](https://github.com/demichele/install-goshimmer)
+- Tanglebay Swarm Script: [Tanglebay Goshimmer Swarm](https://github.com/tanglebay/swarm/tree/0.6.5)
 
 
 ## Chronicle Permanode
