@@ -117,30 +117,3 @@ It is important to note that while the devices were performing the mainnet proof
   Table 3: Energy cost per message
 </div>
 
-<br/>
-
-To put this in perspective, a standard 60 Watt lightbulb running for 1 minute takes 3600 joules, an iPhone 12 takes approximately 50,000 joules for a single charge, and [estimates](https://digiconomist.net/bitcoin-energy-consumption) for a single Bitcoin transaction are around 6,120,000,000 joules (1700kWh) .
-
-Other energy efficient DLT estimates according to [Leafscore](https://www.leafscore.com/blog/the-9-most-sustainable-cryptocurrencies-for-2021/#:~:text=%23Special%20mention%20%E2%80%93%20Ethereum%20(ETH),-Ethereum%20has%20been&text=The%20cryptocurrency%20still%20uses%20enough,trying%20to%20make%20things%20better.)
-
-nano - 403.2J per transaction (source)
-others
-others
-
-
-## other possible topics? 
-
-
-
-<br/>
-
-----
-
-<br/>
-
-**need to add a footer section for further content - (three cards)**
-
-## Useful Links
-- **[a link](https://linkgoes.here)** - A description for the link
-- **[a link](https://linkgoes.here)** - A description for the link
-- **[a link](https://linkgoes.here)** - A description for the link
