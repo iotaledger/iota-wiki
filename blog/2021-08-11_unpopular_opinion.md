@@ -1,0 +1,19 @@
+---
+slug: bitcoin-middle-man
+title: "Unpopular opinion: Bitcoin did not get rid of the middle-man"
+author: Linus Naumann
+author_title: Community Member
+author_url: https://twitter.com/LinusNaumann
+author_image_url: https://pbs.twimg.com/profile_images/1397841376335876097/8Q2_Bovt_400x400.jpg
+tags: [Community, Bitcoin]
+---
+
+![miners](https://miro.medium.com/max/1400/1*Tacwi1EDsoRkqR7b_weUBg.png)
+
+Miners are companies with 0 interest in crypto-freedom. 4 mining pools control 51% of hash!
+
+Only IOTA leaderless consensus enables Satoshis vision of peer-to-peer electronic cash!
+
+Read Linus new article on:  
+[Reddit](https://t.co/ZjnLlfJ5dw?amp=1)  
+[Medium](https://medium.com/@linus.naumann/unpopular-opinion-bitcoin-did-not-get-rid-of-the-middle-man-71aced8c5e3f)  
