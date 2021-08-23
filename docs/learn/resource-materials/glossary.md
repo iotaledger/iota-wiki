@@ -6,7 +6,7 @@ description: Glossary of all specialized names and phrases used in the IOTA
 
 # **Glossary**
 
-**A**
+## A
 
 - **Address Checksum:** Checksum validation is a way to determine if an address is valid and does not contain typos. 
 - **Adaptive PoW** (In development for IOTA 1.5): With this feature, the coordinator can issue a milestone and simultaneously set the future PoW score. This means that if the network is not fully utilized, the PoW will be reduced to the point where it can be executed by microdevices. Accordingly, the coordinator can also raise the PoW difficulty in case of high utilization and thus make an attack very expensive.
@@ -18,15 +18,15 @@ description: Glossary of all specialized names and phrases used in the IOTA
 - **Approval Weight (IOTA 2.0):** A message gets Mana-weight by approving the message directly or indirectly. However, only strong Parents can pass on the mana weight to the past, while weak Parents receive the weight from their weak Children but do not pass it on.
 - **Approvers (IOTA 2.0):** Parents are approved by their referencing messages called approvers. It is thus a reverse mapping of parents. As in the parents’ definition, an approver might be either strong or weak.
 
-**B**
+## B
 
 - **Balance:** Funds on the addresses (account). These are always available and cannot be deleted or forgotten.
 - **Blockchain Bottleneck:** The more transactions are issued, the more the block rate and size becomes a bottleneck in the system. It is no longer possible to capture all incoming transactions in a prompt manner. Attempts to speed up block rates result in more orphaned blocks (blocks are left behind) and reduce the security of the blockchain. 
 - **Branch (IOTA 2.0):** A version of the ledger that temporarily coexists with other versions, each spawned by conflicting transactions.
-- **Bee (IOTA 2.0):** Production-ready implementation of the core client without coordinator in the Rust programming language. All previous developments and ideas from IRI, Ict, Hornet and Go Shimmer are merged into a unified platform.
+- **Bee:** Node software developed by the IOTA foundation using the Rust programming language.
 - **Bootstrapping attack:** An attack in which a node downloads malicious snapshot files, including invalid transactions and balances.
 
-**C**
+## C
 
 - **Curl:** This is the main hash function currently in use. It is based on the “sponge” construction of the Keccak inventors (SHA-3). 
 - **Confirmed:** Confirmed transactions. In IOTA 1.0 & 1.5, transactions are still confirmed by the coordinator (milestones). 
@@ -40,8 +40,10 @@ description: Glossary of all specialized names and phrases used in the IOTA
 - **Core Object type (IOTA 2.0):** An object type that must be parsed by all nodes. Parsers are computer programs responsible for decomposing and converting an input into a format more suitable for further processing.
 - **Core Application (IOTA 2.0): **Core application that must be executed by all nodes, for example the value transfer application.  
 - **Child (IOTA 2.0): **A transaction that directly references two others in the Tangle, referred to as parents.
+- **Chrysalis:** The name of the IOTA 1.5 network upgrade.
 
-**D**
+
+## D
 
 - **Data:** The tangle is a way of proving the integrity of data (verifiability of completeness and origin) in a trustworthy manner. At present, there are several cryptographic methods that make this possible, but security gaps are repeatedly discovered here, making data vulnerable to manipulation. This is a major problem, especially in cloud computing, where third-party audit tools are sometimes even used (for a fee) to ensure this data integrity. This is exactly where IOTA comes in and offers a relatively easy way to escape this with its protocol and without fees.
 - **Data transactions: **These are confirmed directly and are notarized. With the help of “notarization”, it can be proven that an electronic document existed in a certain form at a certain time and has not been changed since its creation. When a notarization is created, a unique hash (fingerprint) of a document is calculated and stored together with a timestamp in the IOTA ledger (tangle) in an immutable manner.
@@ -52,15 +54,16 @@ description: Glossary of all specialized names and phrases used in the IOTA
 - **Double-spending:** Double-spending is a potential flaw in a digital money system where the same single digital token can be spent more than once. Unlike physical money, a digital token consists of a digital file that can be duplicated or counterfeited.
 - **dRNG (Decentralized Random Number Generator):** This random number generator is required in Fast Probabilistic Consensus (FPC) to make the consensus model more resilient to attacks. In the case of conflicting transactions, the FPC votes on the transactions in question in several rounds. The threshold at which a node changes its mind in this vote is 50% +/- a small random deviation (using dRNG). In order to avoid stalemate or a specific outcome in the voting, this additional random component prevents potentially malicious nodes from influencing the voting process.
 - **Dust Protection (IOTA 1.5):** Someone who wants to harm IOTA could automatically send 1i for years to repeatedly recreated addresses, driving up the ledger’s memory requirements to the point where a full-node would eventually only run on large servers. Some kind of pledge solution will be implemented after the Chrysalis update: Only if the value transfer is less than the equivalent of 0.003 cents must the receiving address be previously charged with a certain minimum balance, otherwise the value transaction will not be accepted. This means that only the one who wants to make microtransactions must “previously” charge the destination address with 1 Ki. So, the first transaction must be a 1 Ki initial transaction for the following microtransactions. This will probably be able to be regulated automatically by the Wallet. Also, the addresses with Colored Coins have to be tokenized. After the Coordicide, there will be another solution for IOTA 2.0.
+- **Directed Acyclic Graph (DAG):** The data structure used by IOTA to arrange transactions over time.
 
-**E**
+## E
 
 - **Eclipse attack: **A cyber-attack that aims to isolate a specific user rather than attack the entire network.
 - **Entropy: **In cryptology, this term represents a measure of the “disorder” in texts. Entropy is usually abbreviated with the Greek capital letter Η.
 - **ETH Virtual Machine:** A VM is what executes the Smart Contract code so that it runs deterministically. The language in which you run the code provides hooks to access the sandbox on which the VM runs. In the case of IOTA, this is the ISCP sandbox, which only provides access to IOTA tokens, thus consensus also runs on IOTA tokens. It is only the VM that IOTA works with, foreign tokens have nothing to do with a VM running the SC code, not the ETH VM, nor the Cartesi VM.
 - **Epoch (IOTA 2.0):** A time interval used for a specific type of consensus mana. At the end of each epoch, a snapshot is taken of the state of mana distribution on the network. Since this tool uses the timestamp of messages, each node can eventually reach a consensus on the mana distribution of an epoch.
 
-**F**
+## F
 
 - **Faucet: **A pool of tokens (funds). Upon uncomplicated request, one gets a limited number of tokens for testing, especially for developers of own apps this is a great help.
 - **Firefly (IOTA 1.5):** Firefly is a wallet, intended to serve as a platform for the current and future IOTA ecosystem.
@@ -69,42 +72,44 @@ description: Glossary of all specialized names and phrases used in the IOTA
 - **Future Cone (IOTA 2.0): **All messages that directly or indirectly reference a message are called its future cone.
 - **Fork:** In IT, this is a new development branch after a project is split into a second follow-on project; the source code or parts of it are developed independently of the original parent project.
 
-**G**
+## G
 
 - **Genesis transaction: **The Genesis transaction is the first transaction that created all IOTA tokens and distributed them to the addresses of the buyers.
 - **GoShimmer (No Main net):** Prototype of Shimmer in the Go programming language. With this node-testing software, consensus is already reached without a coordinator. GoShimmer implements the various modules of Coordicide, such as auto peering, node identities, Mana, etc. GoShimmer serves as a test environment for the first alpha version and the test network. Everything tested here will be gradually merged with Hornet and later implemented in Bee.
 - **Generic Data Object (IOTA 2.0):** The most basic object type. All unrecognized data objects are treated this way.
 
-**H**
+## H
 
 - **History: **The list of transactions that were directly or indirectly authorized by a particular transaction.
 - **Hash values: **Checksums that are applied to the encryption of messages of variable length. Hash values are like fingerprints of a very long data set. Each message is assigned a very specific hash value.
 - **Hooks:** An interface that allows foreign program code to be integrated into an existing application to extend it, change its flow, or intercept certain events.
 - **Hornet Node (IOTA 1.5):** A completely new implementation of the core client in the Go programming language. The goal is to have a new core client which should contribute massively to the scaling of the network with a significantly increased performance. Hornet will use the architecture and modular concept of GoShimmer and is intended for low-end devices such as a Raspberry Pi. In addition, the coordinator will also run as a plugin via Hornet.
 
-**I**
+## I
 
 - **Inclusion state: **Used to determine if a transaction has been accepted and confirmed by the network. Especially for a transaction and a list of tips: Inclusion state is true if the tip refers to this transaction.
 
-**L**
+## L
 
 - **Local Snapshots: **Local snapshots are urgently needed to limit the memory requirements of the full nodes to a common size. For this purpose, on the individual nodes old, already confirmed, transactions are deleted from the database. What remains is only a small file (list) with the credits on the respective addresses. full nodes perform the snapshot independently and at their own discretion. This feature allows faster synchronization, lower system resource requirements and no more waiting for global snapshots to clean up the database.
 - **Layer:** In DLT a 2nd-layer refers to a secondary framework or protocol built on top of an existing distributed ledger. On these second layers, other applications can be executed without putting too much strain on the base layer. In IOTA, for example, these are the Smart Contracts and IOTA Streams.
 - **Local Modifiers:** User-defined conditions that can be considered by nodes during tip selection. In IOTA, nodes do not necessarily have the same view of the tangle. Different types of information that are only available to them locally can be used to strengthen security.
 - **Light node:** these are wallets or apps that, unlike full nodes, do not have a full copy of the ledger (Tangle). Therefore, they cannot verify and store transactions. A light node only manages addresses. It can be used to retrieve the ledger’s data, for example, to display credit balances or to start its own transactions and sign them with the private key. These transactions are distributed in the network and verified by the full nodes. If everything is in order, the recipient’s address is linked to the credit and stored in the ledger.
 
-**M**
+## M
 
 - **Mining races: **In PoW-based DLTs, the competition between miners for mining rewards and transaction fees is called a mining race. In this race, the fastest and most efficient hardware always wins.
 - **Merkle Tree: **A Merkle tree is a data structure used in computer science applications. In cryptocurrencies, Merkle trees are used to encode more efficiently and securely. 
 - **Main net: **The public usable IOTA network, in which the IOTA tokens are used that are traded on cryptocurrency exchanges.
 - **Milestone (IOTA 1.x): **Milestones are transactions that are signed and issued by the coordinator. Their main goal is to help the Tangle grow healthily and guarantee finality. When milestones directly or indirectly approve a transaction in the Tangle, nodes mark the status of that transaction and its entire history as confirmed.
+- **Message:** A message is the general term for value and data transactions.
 - **Message (IOTA 2.0):** A message is a core data type that reflects a vertex in the communication layer DAG. It contains the following properties: References to other messages, the sender’s public key, the issuing time of the message, the message sequence number from the node that issued the message, the payload that can be interpreted by higher layers, the nonce that the message uses to satisfy the PoW requirement, a signature that signs all of the above fields. A message is not forwarded until it becomes “solid”, i.e., its history is known to the node. Messages must currently become solid within a 30 second period or they will be discarded. Messages must also meet a PoW requirement, which currently is to find a nonce so that the hash of the message’s fields (minus the signature) has a certain number of leading zeros.
 - **Message overhead: **The additional information (metadata) that must be sent along with the actual information (data). This can include signatures, polls and anything that is transmitted over the network but is not the transaction itself.
 - **Mana (IOTA 2.0): **When a value transaction is processed, a quantity called Mana will be “pledged” to a specified node ID. This quantity is related to the amount of IOTA moved into the transaction. The only way to gain Mana is to convince some token holder to pledge it to you. In this sense, Mana is Delegated Proof of Token Ownership. Mana, therefore, provides adequate Sybil protection because it is difficult to acquire it in arbitrary amounts.
 - **Markers (IOTA 2.0): **A tool that exists only locally and allows certain calculations to be performed more efficiently, such as the calculation of the approval weight or the presence of certain messages in the past or future cone of another message.
+- **Messages per Second (MPS):** The amount of messages issued to the network every second.
 
-**N**
+## N
 
 - **Nakamoto Consensus:** Named after the creator of Bitcoin, Satoshi Nakamoto, the Nakamoto Consensus describes the replacement of coordination / communication between known agents with a cryptographic puzzle (Proof-of-Work). Completion of the puzzle determines which agent acts next. 
 - **Neighbors:** Network nodes that are directly connected and can exchange messages without intermediate nodes. 
@@ -112,15 +117,15 @@ description: Glossary of all specialized names and phrases used in the IOTA
 - **Network Layer (IOTA 2.0):** This layer manages the lower layers of Internet communication such as TCP. In this layer, the connections between the nodes are managed by the Auto peering and Peer Discovery modules and the Gossip protocol.
 - **Network ID: **The network ID enables user-specific subtangles in which nodes can only recognize messages from the network ID listed in their configuration file.
 
-**O**
+## O
 
 - **Orphan:** A transaction (or block) that is not referenced by any subsequent transaction (or block). An orphan is not considered confirmed and will not be part of the consensus.
 - **Object (IOTA 2.0):** the most basic unit of information in the IOTA protocol. Each object has a type and size and contains data.
 - **Oracles:** Oracles are designed to build a secure bridge between the digital and physical worlds in a decentralized, permissionless way. They bring off-chain data to decentralized applications and smart contracts on the IOTA network.
-- **OTV (IOTA 2.0):** On Tangle Voting is the internal name for the multiverse described by Hans Moog.
+- **OTV (IOTA 2.0):** On Tangle Voting is the internal name for the multiverse described by Hans Moog. It is a new consensus mechanism that allows nodes to vote on conflicts directly by publishing a message to the tangle.
 - **OTVFPCS (IOTA 2.0):** On Tangle Voting with FPCS (Fast Probabilistic Consensus on a Set) is a mechanism for breaking metastability, which can be used in addition to OTV (On Tangle Voting). Generally, in IOTA2.0, reaching a high approval weight is the finality criteria. If the approval weight is high enough, the message / transaction is finalized. With OTVFPC the initial opinion is created with OTV, if after some time the opinions of the nodes are still split, for whatever reason, FPC is activated to break this metastable state. The finality of value transactions should be reached faster this way.
 
-**P**
+## P
 
 - **Parents (IOTA 2.0): **A message directly references between 1-8 previous messages that we call its parents. A parent can be either strong or weak (see approval switch).
 - **Parallel reality ledger state (IOTA 2.0):** This state is used to track conflicts in the tangle. Two new ledger entries that are causally valid but in conflict with each other (ex. Double Spend) are posted into two separate “realities” for this purpose, representing possible but mutually exclusive future ledger states. The consensus mechanism (with FPC, etc.) will now operate until the perception of most nodes’ tilts in one direction and one of the two possible ledger states is accepted as true.
@@ -138,18 +143,21 @@ description: Glossary of all specialized names and phrases used in the IOTA
 - **Proof of Inclusion (PoI):** With PoI, one is able to provide evidence that a transaction was indirectly referenced by another transaction without having to present the full chain of actual transactions between the two transactions. This is done by using a sequence of hashes instead of the actual transaction data to prove the inclusion of a transaction (inclusion) in the referenced subtangle.
 - **Pruning:** In computer science, this is a term for simplifying, shortening, and optimizing decision trees. In IOTA, this is done by local snapshots on each full node. Old transactions that have already been confirmed are deleted from the database, leaving only a file (list) of credits on each address. 
 - **Public & private keys: **These are used in cryptographic systems which use key pairs. There are public keys and private keys which are known only to the owner. The generation of such keys depends on cryptographic algorithms based on mathematical problems to generate one-way functions. Effective security requires keeping the private key (seed) private; the public key (address) can be distributed openly without compromising security.
+- **Pending:** A message is pending when it is published to the network, but not yet confirmed.
+- **Permanode:** A permanode (permanent node) is a node that keeps track of all messages and transactions on the IOTA network.
 
-**R**
+## R
 
 - **Rebroadcast: **Repeats the sending of a transaction. While a transaction is being sent to an IOTA node, it may go offline. In this case, the IOTA node may not forward the transactions to its neighbors, and the rest of the network will never see these transactions. As a result, that transaction will never be referenced by the coordinator and thus never confirmed. Resending a bundle means resending the same bundle to an IOTA node. This way you give your transactions another chance to be forwarded to the rest of the network. 
 - **Reusable Addresses (IOTA 1.5):** With the implementation of the new signature topic Ed25519 through the IOTA 1.5 Chrysalis upgrade, reusable addresses are supported.
 - **Reattachment:** Resending a transaction by re-selecting a tip and referencing newer tips by repeating PoW.
 
-**S**
+## S
 
 - **Salt:** In cryptography, salt is a randomly chosen string of characters that is appended to a given plaintext before it is further processed to increase the entropy (disorder) of the input. It is often used for storing and transmitting passwords to increase information security.
 - **Sandbox:** An isolated area where programs can be tested.
 - **Software as a Service (SaaS):** The SaaS model is a subset of cloud computing. It is based on the principle that the software and IT infrastructure can be operated by an external service provider and rented by the customer as a service.
+- **Smart Contract:** Smart contracts are contracts or programs that are automatically executed.
 - **Smart Contract Chain: **Smart contracts are processed via a so-called contract chain, the representation of the contract state. A smart contract writes its state every time it is requested, and a new block is added for each of these state updates. All these updates are collected and confirmed in one block. So, the Chain also contains all the past states. The Chain can contain many Smart Contracts, all working on the same global state of the Chain. From this perspective, the Contract Chain is essentially a blockchain anchored on the Tangle. IOTA Smart Contracts can be considered “classic” Smart Contracts, but with the added feature that you can have multiple such parallel Chains all using the same native IOTA token and trading between them in a trusted manner on the Tangle. This enables trusted interoperability between different applications.
 - **Small-world network:** a network in which most nodes can be reached from any other node through a small number of intermediate steps.
 - **Solidification time:** The time of solidification when the entire history of a transaction has been received by a node.
@@ -162,11 +170,11 @@ description: Glossary of all specialized names and phrases used in the IOTA
 - **Sybil Attack:** An attempt to gain control of a peer-to-peer network by forging multiple false identities. 
 - **Snapshot: **A special feature of the Tangle. A snapshot deletes all transactions. Only transactions with a balance > 0 are kept. The metadata such as tags and messages are also deleted. What is left behind is just a list of addresses and balances. After a snapshot, the nodes use this list as “genesis”, a new starting point for the tangle. This reduces the size of the tangle network, allowing IOTA nodes to use less memory. Full nodes perform what are called “Local Snapshots” independently and at their own discretion. This means faster synchronization, lower system resource requirements, and no more waiting for global snapshots to clean up the database. Local snapshots are urgently needed to limit the storage requirements of the full nodes to a common size. By default, nodes store about 30 days of transaction data. This can be changed individually. However, the full node operator must be careful not to snapshot locally too frequently. If they snapshot too quickly, they risk building a subtangle that can fall out of consensus. This would be like a miner in the blockchain that only stores information contained in the last block in the blockchain – it is possible that this block will eventually not become part of the longest chain and this miner will build on an abandoned chain.
 
-**T**
+## T
 
 - **Tangle:** The Tangle is the underlying core data structure. In mathematical terms it is a directed acyclic graph (DAG). The Tangle is the distributed ledger of IOTA that stores all transactions. 
 - **Tag:** A short message which can be attached to a transfer. It can be searched for in the Tangle. 
-- **TPS: **Transaction per second 
+- **TPS: **Transaction per second. Same as MPS.
 - **Ternary system: **A trit (trinary digit) can have exactly three states (3 x 1 = 3): -1, 0 and 1. Three trits result in one tryte (33 = 27) and can thus represent 27 combinations. In IOTA, the letters A-Z (26 pieces) and the number 9 are used for this purpose. 
 - **Token:** The digital currency form (cryptocurrency). It is a powerful tool for value transfer between people and machines. Total number: 2,779,530,283,277,761 IOTA. The base units are pi, ti, gi, mi, ki, i 
 - **Trinity (IOTA 1.0):** An old wallet. After the update to IOTA 1.5 this wallet has no function anymore.
@@ -177,20 +185,18 @@ description: Glossary of all specialized names and phrases used in the IOTA
 - **Transaction (IOTA 2.0):**[** **](https://iota-beginners-guide.com/future-of-iota/iota-2-0-coordicide/)The payload of a value object. It contains the details of a money transfer.
 - **Transaction history: **Please read on here.
 
-**U**
+## U
 
 - **UTXO model:** This is a so-called addressing model. UTXO stands for “unspent transaction output”, which simply means that you not only keep track of the credits on the address, but also keep track of where the credits come from and where they are sent when they are spent. Each token on an address is thus uniquely identifiable and each issue names the exact token they want to move. This enables faster and more accurate conflict handling and improves the resilience and security of the protocol.
 
-**V**
+## V
 
 - **Value Layer (IOTA 2.0): **The Value layer builds on the Communication layer. It works exclusively with payloads of type Value object. This layer has several tasks: Forming the ledger state, processing, validation and output of transactions, conflict detection, conflict resolution via FPC, forming a DAG from value objects, tip selection (on value object tips).
 - **Value Transactions: **Value transactions either withdraw IOTA tokens from an address or deposit them to an address. Nodes must verify these transactions to ensure that the sender actually owns the IOTA tokens and that additional tokens are never generated. To do this, the following checks are performed: All IOTA tokens withdrawn from an address are also deposited into one or more other addresses; the value of each transaction does not exceed the total global supply; signatures are valid.
 - **Version Number (IOTA 2.0):** Indicates the correct format of each type.
 - **Virtual machine: **The technical software encapsulation of a computer system within an executable computer system.
 
-**W**
+## W
 
 - **White-flag approach (IOTA 1.5): **Used to calculate credits. A simpler, conflict-avoiding approach that improves the speed and efficiency of tip selection, eliminates certain attacks, and significantly reduces the need for reattachments.
-- **Wasp:** A node for IOTA Smart Contracts.
-
-**Z**
+- **Wasp:** The Wasp node software is an implementation of Smart Contracts on the IOTA Tangle.
