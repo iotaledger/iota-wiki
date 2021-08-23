@@ -10,8 +10,7 @@ content - introduction to the topic
 
 Heading 2 (Sub topic 1)
 
-content\
-
+content
 
 ## Heading 2 (Sub topic 2)
 
