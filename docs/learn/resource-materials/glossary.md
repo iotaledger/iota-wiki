@@ -25,15 +25,19 @@ The following are common terms associated with IOTA and DLT.
 
 <br/>
 
-- [**Chrysalis (IOTA 1.5)**](https://wiki.iota.org/docs/learn/networks/iota-1.5-chrysalis) - insert
+- [**Chronicle**]...(link) - Chronicle is an IOTA perma-node software designed for exploring and storing data from the Tangle
 
 <br/>
 
-- [**Coordicide (IOTA 2.0)**](https://wiki.iota.org/docs/learn/networks/iota-2.0-coordicide) - insert
+- [**Chrysalis (IOTA 1.5)**](https://wiki.iota.org/docs/learn/networks/iota-1.5-chrysalis) - Chrysalis (IOTA 1.5) is the name given to the current implementation of the IOTA network. Chrysalis succeeded the legacy IOTA 1.0 network in two parts to prepare for the changes planned in the IOTA 2.0 (Coordicide) protocol. 
 
 <br/>
 
-- [**Coordinator**]...(link) - insert
+- [**Coordicide (IOTA 2.0)**](https://wiki.iota.org/docs/learn/networks/iota-2.0-coordicide) - Coordicide is the name given to the IOTA 2.0 network which removes the reliance on the coordinator node, fully decentralizing the network. [Official IOTA 2.0 Website](https://v2.iota.org/)
+
+<br/>
+
+- **Coordinator** - The Coordinator is a node operated by the IOTA Foundation that creates "milestones" which a message must be referenced by to be considered valid. During the infancy stages of a DAG-based DLT network, there are certain vulnerabilities due to a smaller network, so the coordinator was implemented to prevent those types of attacks. The coordinator will be removed in IOTA 2.0 as those vulnerabilities are prevented through different methods on the more mature network. 
 
 <br/>
 
@@ -41,7 +45,7 @@ The following are common terms associated with IOTA and DLT.
 
 <br/>
 
-- [**DevNet**](https://wiki.iota.org/chrysalis-docs/devnet) - insert
+- [**DevNet**](https://wiki.iota.org/chrysalis-docs/devnet) - DevNet (Development Network) is the name given to the IOTA 2.0 test network.
 
 <br/>
 
@@ -53,7 +57,7 @@ The following are common terms associated with IOTA and DLT.
 
 <br/>
 
-- [**Edwards-Curve Digital Signature Algorithm (EdDSA)**]...(link) - insert
+- [**Edwards-Curve Digital Signature Algorithm (EdDSA)**](https://en.wikipedia.org/wiki/EdDSA) - EdDSA is a digital signature scheme based on Schnorr-signatures. EdDSA is used in the current IOTA 1.5 Chrysalis network and replaced the Winternitz-One-Time-Signatures (WOTS) of the legacy IOTA 1.0 network.
 
 <br/>
 
@@ -73,10 +77,6 @@ The following are common terms associated with IOTA and DLT.
 
 <br/>
 
-- [**Honey**]...(link)
-
-<br/>
-
 - [**Hornet**](https://wiki.iota.org/hornet/welcome) - insert
 
 <br/>
@@ -85,7 +85,7 @@ The following are common terms associated with IOTA and DLT.
 
 <br/>
 
-- [**IOTA**](https://iota.org/) - IOTA is an open-source, permissionless distributed ledger system. Its protocol operates on a special directed acyclic graph called the Tangle. 
+- [**IOTA**](https://iota.org/) - IOTA is an open-source, permissionless distributed ledger system. Its protocol operates on a special directed acyclic graph called the Tangle, currently on the Chrysalis (IOTA 1.5) implementation.
 
 <br/>
 
@@ -93,11 +93,11 @@ The following are common terms associated with IOTA and DLT.
 
 <br/>
 
-- [**Identity**](https://wiki.iota.org/docs/use/identity/enabling-privacy-and-trust) - insert
+- [**Identity**](https://wiki.iota.org/docs/use/identity/enabling-privacy-and-trust) - IOTA's Decentralized Identity or Self Sovereign Identity (SSI) defines a new method for identity management and authentication. It removes the centralized aspects and puts the Identity subject in full control over its own identity. [Identity details](https://wiki.iota.org/identity.rs/intro).
 
 <br/>
 
-- [**Ledger**](https://www.ledger.com/) - Ledger is a company that manufactures hardware wallets. Ledger devices are officially supported by the Firefly wallet for storing IOTA tokens. 
+- [**Ledger**](https://www.ledger.com/) - Ledger is a company that manufactures hardware wallets. Ledger devices are officially supported by the Firefly wallet for storing IOTA tokens. [Ledger use with Firefly wallet](https://blog.iota.org/general-use-guide-for-ledger-nano-with-firefly/).
 
 <br/>
 
@@ -139,6 +139,9 @@ The following are common terms associated with IOTA and DLT.
 
 - [**Peers**](https://wiki.iota.org/IOTA-2.0-Research-Specifications/3.3%20Peer%20Discovery) - insert
 
+<br/>
+
+- [**Pollen**]...(link) - Pollen was the first implementaion of the IOTA 2.0 (Coordicide) test network. Superceeded by the [IOTA 2.0 DevNet](https://wiki.iota.org/chrysalis-docs/devnet)
 <br/>
 
 - [**Proof-of-Stake (PoS)**]...(link) - insert
@@ -201,6 +204,7 @@ Milestones|
 Gossip| 
 rate/congenstion control| 
 opinions| 
+Honey| 
 
 
 <br/>
