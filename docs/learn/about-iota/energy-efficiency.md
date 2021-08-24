@@ -1,13 +1,13 @@
 ---
 id: energy-efficiency
 title: Energy efficiency
-description: Transactions in the IOTA Network are more Energy efficient than in any other Cryptocurrency currently existing.
+description: Energy efficiency of transactions in the IOTA Network.
 ---
 
 
 # Energy Efficiency
 
-An important measurement of any distributed ledger technology is the energy cost per transaction. The IOTA network is designed to be lightweight and is more energy efficient than any other DLT currently available due to its leaderless [DAG structure](link to most relevant Tangle explanation page). This page overviews the process and results of tests conducted by the IOTA Foundation to measure the energy efficiency of the Tangle. To read the full details of the test, the [official IOTA Foundation blog post](https://blog.iota.org/internal-energy-benchmarks-for-iota/) covers the process in depth.
+An important measurement of any distributed ledger technology is the energy cost per transaction. The IOTA network is designed to be lightweight and energy efficient. This page overviews the process and results of tests conducted by the IOTA Foundation to measure the energy efficiency of the Tangle. To read the full details of the test, the [official IOTA Foundation blog post](https://blog.iota.org/internal-energy-benchmarks-for-iota/) covers the process in depth.
 
 
 ## The Tests
@@ -19,7 +19,7 @@ Tests were completed on both a dedicated private Tangle set up for these tests a
 To measure the energy consumed, INA219 current sensors were used to measure the power consumed by the devices while processing transactions. The INA219 data was collected by a BeagleBone Black. This data was then normalized against the power consumed by the devices when idle to determine the cost of processing transactions. Each set of measurements was collected over a period of 10 minutes. 
 
 <p align="center">
-  <img src="https://blog.iota.org/content/images/2021/05/Figure-1--2-.png" width="440">
+  <img src="https://blog.iota.org/content/images/2021/05/Figure-1--2-.png" width="440" />
 </p>
 
 <div align="center">
@@ -59,7 +59,7 @@ Table 1: Reference power levels
 
 <br />
 <p align="center">
-  <img src="https://i.imgur.com/Bpn5VkJ.png" width="700">
+  <img src="https://i.imgur.com/Bpn5VkJ.png" width="700" />
 </p>
 
 

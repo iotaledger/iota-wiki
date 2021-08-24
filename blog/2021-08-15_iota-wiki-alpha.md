@@ -13,4 +13,4 @@ We proudly present the first alpha release of the IOTA  wiki. Built by the commu
 
 The wiki blog will also contain a collection of curated community posts in the future. The wiki will be a one-stop shop for IOTA information.. Let's BUIDL it together!
 
-![BUIDL](/img/buidl-bridge.gif)
+![BUIDL](/img/blog/buidl-bridge.gif)
