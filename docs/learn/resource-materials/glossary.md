@@ -33,6 +33,14 @@ The following are common terms associated with IOTA and DLT.
 
 <br/>
 
+- [**Coordinator**]...(link) - insert
+
+<br/>
+
+- [**Decentralized Finance (DeFi)**]...(link) - insert
+
+<br/>
+
 - [**DevNet**](https://wiki.iota.org/chrysalis-docs/devnet) - insert
 
 <br/>
@@ -57,7 +65,15 @@ The following are common terms associated with IOTA and DLT.
 
 <br/>
 
-- [**GoShimmer**](https://wiki.iota.org/goshimmer/welcome) - insert
+- [**Genesis Transaction**]...(link) - insert
+
+<br/>
+
+- [**GoShimmer**](https://wiki.iota.org/goshimmer/welcome) - GoShimmer is a node software being developed which explores the IOTA 2.0 implementation for the post-coordicide IOTA network.
+
+<br/>
+
+- [**Honey**]...(link)
 
 <br/>
 
@@ -66,6 +82,10 @@ The following are common terms associated with IOTA and DLT.
 <br/>
 
 - [**Internet-of-Things**](https://wiki.iota.org/docs/use/use-cases/internet-of-things) - insert
+
+<br/>
+
+- [**IOTA**](https://iota.org/) - IOTA is an open-source, permissionless distributed ledger system. Its protocol operates on a special directed acyclic graph called the Tangle. 
 
 <br/>
 
@@ -93,11 +113,19 @@ The following are common terms associated with IOTA and DLT.
 
 <br/>
 
-- **MIOTA** - MIOTA is a quantity of a million IOTA tokens as in the SI Prefix "mega"-IOTA. Similarly a billion IOTA is a Giga-IOTA or GIOTA. MIOTA is also the standard trading unit on exchanges. 
+- **MIOTA** - MIOTA is a quantity of a million IOTA tokens as in the SI Prefix "Mega"-IOTA. Similarly a billion IOTA is a Giga-IOTA or GIOTA. MIOTA is also the standard trading unit on exchanges. 
+
+<br/>
+
+- [**Nectar**]...(link) - insert
 
 <br/>
 
 - [**Neighbors**](https://wiki.iota.org/IOTA-2.0-Research-Specifications/3.4%20Neighbor%20Selection) - insert
+
+<br/>
+
+- [**Node**]...(link) - A node is an access point to the IOTA network, the Tangle. Nodes receive and validate messages sent on the Tangle, as well as communicate with each other to reach concensus on conflicting messages. 
 
 <br/>
 
@@ -149,11 +177,11 @@ The following are common terms associated with IOTA and DLT.
 
 <br/>
 
-- **Wallet** - A wallet is a method of storing cryptocurrency. Types include a software wallet (e.g. mobile or desktop app), hardware wallet (e.g. Ledger Nano or Trezor), or an exchange wallet (e.g. keeping your tokens on Binance, Bittrex etc.)
+- [**Wallet**](https://wiki.iota.org/docs/learn/wallets/what-is-a-wallet) - A wallet is a method of storing cryptocurrency. Types include a software wallet (e.g. mobile or desktop app), hardware wallet (e.g. Ledger Nano or Trezor), or an exchange wallet (e.g. keeping your tokens on Binance, Bittrex etc.). Wallets can be either "hot wallets" (connected to the internet for convenience) or "cold wallets" (not connected to the internet for security)
 
 <br/>
 
-- [**Wasp**](https://wiki.iota.org/wasp/welcome) - insert
+- [**Wasp**](https://wiki.iota.org/wasp/welcome) - Wasp is the node software being developed to run smart contracts on layer 2 of the IOTA network. 
 
 <br/>
 
@@ -169,13 +197,10 @@ Object management group|
 IEEE| 
 other governing bodies?| 
 Multiverse Consensus| 
-Nectar| 
-Honey| 
 Milestones| 
 Gossip| 
 rate/congenstion control| 
 opinions| 
-DeFi| 
 
 
 <br/>
