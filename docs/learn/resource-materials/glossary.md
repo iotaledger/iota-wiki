@@ -9,7 +9,7 @@ The following are common terms associated with IOTA and DLT.
 
 <br/>
 
-- [**Access**](https://wiki.iota.org/docs/use/access/secure-access-control) - insert
+- [**Access**](https://wiki.iota.org/docs/use/access/secure-access-control) - IOTA Access is an open-source framework used to build access control systems for smart devices. It is designed to work with any IoT resource, whether it's a vehicle, smart lock, or embedded sensor.
 
 <br/>
 
@@ -65,7 +65,7 @@ The following are common terms associated with IOTA and DLT.
 
 <br/>
 
-- [**Firefly**](https://wiki.iota.org/docs/learn/wallets/firefly-wallet) - Firefly is the official IOTA wallet developed by the IOTA Foundation making use of the IOTA 1.5 Chrysalis network. 
+- [**Firefly**](https://wiki.iota.org/docs/learn/wallets/firefly-wallet) - Firefly is the IOTA Foundation's officially supported IOTA wallet making use of the IOTA 1.5 Chrysalis network. 
 
 <br/>
 
@@ -73,7 +73,7 @@ The following are common terms associated with IOTA and DLT.
 
 <br/>
 
-- [**GoShimmer**](https://wiki.iota.org/goshimmer/welcome) - GoShimmer is a node software being developed which explores the IOTA 2.0 implementation for the post-coordicide IOTA network.
+- [**GoShimmer**](https://wiki.iota.org/goshimmer/welcome) - GoShimmer is an open-source node software being developed which explores the IOTA 2.0 implementation for the post-coordicide IOTA network.
 
 <br/>
 
@@ -93,7 +93,7 @@ The following are common terms associated with IOTA and DLT.
 
 <br/>
 
-- [**Identity**](https://wiki.iota.org/docs/use/identity/enabling-privacy-and-trust) - IOTA's Decentralized Identity or Self Sovereign Identity (SSI) defines a new method for identity management and authentication. It removes the centralized aspects and puts the Identity subject in full control over its own identity. [Identity details](https://wiki.iota.org/identity.rs/intro).
+- [**Identity**](https://wiki.iota.org/docs/use/identity/enabling-privacy-and-trust) - IOTA's Decentralized Identity or Self Sovereign Identity (SSI) defines a new framework for identity management and authentication. It removes the centralized aspects of authentication and puts the subject in full control over its own identity. [Identity details](https://wiki.iota.org/identity.rs/intro).
 
 <br/>
 
@@ -156,7 +156,7 @@ The following are common terms associated with IOTA and DLT.
 
 <br/>
 
-- [**Streams**](https://wiki.iota.org/docs/use/streams/encrypted-data-comms) - insert
+- [**Streams**](https://wiki.iota.org/docs/use/streams/encrypted-data-comms) - IOTA Streams is an open-source organizational tool for structuring and navigating secure data through the Tangle.
 
 <br/>
 
