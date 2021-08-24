@@ -54,7 +54,7 @@ description: Glossary of all specialized names and phrases used in the IOTA
 - **Double-spending:** Double-spending is a potential flaw in a digital money system where the same single digital token can be spent more than once. Unlike physical money, a digital token consists of a digital file that can be duplicated or counterfeited.
 - **dRNG (Decentralized Random Number Generator):** This random number generator is required in Fast Probabilistic Consensus (FPC) to make the consensus model more resilient to attacks. In the case of conflicting transactions, the FPC votes on the transactions in question in several rounds. The threshold at which a node changes its mind in this vote is 50% +/- a small random deviation (using dRNG). In order to avoid stalemate or a specific outcome in the voting, this additional random component prevents potentially malicious nodes from influencing the voting process.
 - **Dust Protection (IOTA 1.5):** Someone who wants to harm IOTA could automatically send 1i for years to repeatedly recreated addresses, driving up the ledger’s memory requirements to the point where a full-node would eventually only run on large servers. Some kind of pledge solution will be implemented after the Chrysalis update: Only if the value transfer is less than the equivalent of 0.003 cents must the receiving address be previously charged with a certain minimum balance, otherwise the value transaction will not be accepted. This means that only the one who wants to make microtransactions must “previously” charge the destination address with 1 Ki. So, the first transaction must be a 1 Ki initial transaction for the following microtransactions. This will probably be able to be regulated automatically by the Wallet. Also, the addresses with Colored Coins have to be tokenized. After the Coordicide, there will be another solution for IOTA 2.0.
-- **Directed Acyclic Graph (DAG):** The data structure used by IOTA to arrange transactions over time.
+- **Directed Acyclic Graph (DAG):** A directed acyclic graph is DLT structure that consists of edges and vertices that never form a closed loop. The IOTA arcitecture "the Tangle" is a form of directed acyclic graph. 
 
 ## E
 
@@ -71,6 +71,7 @@ description: Glossary of all specialized names and phrases used in the IOTA
 - **Full nodes (Hornet, Bee): **They form the core (infrastructure) of the IOTA network. In order to participate in the peer-to-peer network, the full node must always be online and connected to neighbors (other full nodes). In addition, the transaction database must be synchronized with all other full nodes in the network. The role of full nodes is to interact with clients (wallets, DApps, etc.) and attach their transactions to the ledger, make transactions known to all other full nodes in the network, validate transactions and store them in the ledger.
 - **Future Cone (IOTA 2.0): **All messages that directly or indirectly reference a message are called its future cone.
 - **Fork:** In IT, this is a new development branch after a project is split into a second follow-on project; the source code or parts of it are developed independently of the original parent project.
+- **FPC:** TODO
 
 ## G
 
