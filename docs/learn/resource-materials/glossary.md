@@ -5,7 +5,7 @@ description: Glossary of all specialized names and phrases used in the IOTA Tech
 
 
 # Glossary 
-The following are some common terms associated with IOTA and DLT.
+The following are common terms associated with IOTA and DLT.
 
 <br/>
 
@@ -50,7 +50,7 @@ insert
 <br/>
 
 ### [Directed Acyclic Graph (DAG)](https://wiki.iota.org/docs/learn/about-iota/an-introduction-to-iota#the-tangle-data-structure)
-A directed acyclic graph is DLT structure that consists of edges and vertices that never form a closed loop. The IOTA arcitecture "the Tangle" is a form of directed acyclic graph. 
+A directed acyclic graph is DLT structure that consists of edges and vertices that never form a closed loop. The IOTA architecture "the Tangle" is a form of directed acyclic graph. 
 
 <br/>
 
@@ -79,6 +79,11 @@ insert
 
 <br/>
 
+### [Internet-of-Things](https://wiki.iota.org/docs/use/use-cases/internet-of-things)
+insert
+
+<br/>
+
 ### [IOTA Foundation](https://www.iota.org/foundation/vision-and-mission)
 insert
 
@@ -100,14 +105,19 @@ insert (2 types described)
 
 <br/>
 
+### [Markers](https://wiki.iota.org/IOTA-2.0-Research-Specifications/4.7%20Markers) 
+insert
+
+<br/>
+
 ### [Messages](https://wiki.iota.org/docs/learn/about-iota/messages)
 insert
 potentially [2.0 specs messagelayout page](https://wiki.iota.org/IOTA-2.0-Research-Specifications/2.2%20Message%20Layout) 
 
 <br/>
 
-### [Multiverse Consensus]...(link)
-insert
+### MIOTA
+MIOTA is a quantity of a million IOTA tokens as in the SI Prefix "mega"-IOTA. Similarly a billion IOTA is a Giga-IOTA or GIOTA. MIOTA is also the standard trading unit on exchanges. 
 
 <br/>
 
@@ -200,16 +210,18 @@ insert
 
 
 
-thoughts for terms:
-Object management group
-IEEE
-other governing bodies?
-Multiverse Consensus
-Nectar
-Honey
-Milestones
-Gossip
-Tips/Tip selection
+thoughts for terms: 
+Object management group| 
+IEEE| 
+other governing bodies?| 
+Multiverse Consensus| 
+Nectar| 
+Honey| 
+Milestones| 
+Gossip| 
+Tips/Tip selection| 
+rate/congenstion control| 
+opinions| 
 
 
 <br/>
