@@ -9,7 +9,7 @@ The following are some common terms associated with IOTA and DLT.
 
 <br/>
 
-### [Access](https://wiki.iota.org/docs/use/access/secure-access-control) (needs better link)
+### [Access](https://wiki.iota.org/docs/use/access/secure-access-control)
 insert
 
 <br/>
@@ -84,7 +84,7 @@ insert
 
 <br/>
 
-### [Identity](https://wiki.iota.org/docs/use/identity/enabling-privacy-and-trust) (needs better link)
+### [Identity](https://wiki.iota.org/docs/use/identity/enabling-privacy-and-trust)
 insert
 
 <br/>
@@ -100,7 +100,18 @@ insert (2 types described)
 
 <br/>
 
+### [Messages](https://wiki.iota.org/docs/learn/about-iota/messages)
+insert
+potentially [2.0 specs messagelayout page](https://wiki.iota.org/IOTA-2.0-Research-Specifications/2.2%20Message%20Layout) 
+
+<br/>
+
 ### [Multiverse Consensus]...(link)
+insert
+
+<br/>
+
+### [Neighbors](https://wiki.iota.org/IOTA-2.0-Research-Specifications/3.4%20Neighbor%20Selection)
 insert
 
 <br/>
@@ -111,7 +122,12 @@ insert
 <br/>
 
 
-### [Oracles](https://wiki.iota.org/docs/use/oracles/trust-in-real-world-data) (needs better link)
+### [Oracles](https://wiki.iota.org/docs/use/oracles/trust-in-real-world-data)
+insert
+
+<br/>
+
+### [Peers](https://wiki.iota.org/IOTA-2.0-Research-Specifications/3.3%20Peer%20Discovery) 
 insert
 
 <br/>
@@ -121,22 +137,22 @@ insert
 
 <br/>
 
-### [UProof-of-Work (PoW)]...(link)
+### [Proof-of-Work (PoW)]...(link)
 insert
 
 <br/>
 
-### [Smart Contracts](https://wiki.iota.org/docs/use/smart-contracts/programmable-contracts/) (needs better link)
+### [Smart Contracts](https://wiki.iota.org/docs/use/smart-contracts/programmable-contracts/) 
 insert
 
 <br/>
 
-### [Streams](https://wiki.iota.org/docs/use/streams/encrypted-data-comms) (needs better link)
+### [Streams](https://wiki.iota.org/docs/use/streams/encrypted-data-comms)
 insert
 
 <br/>
 
-### [Stronghold](https://wiki.iota.org/docs/use/stronghold/protecting-your-secrets) (needs better link)
+### [Stronghold](https://wiki.iota.org/docs/use/stronghold/protecting-your-secrets)
 insert
 
 <br/>
@@ -146,6 +162,15 @@ The Tangle is the name given to the directed acyclic graph that is used in the I
 
 <br/>
 
+### [Tips]...(link) 
+insert
+
+<br/>
+
+### [Tip Selection](https://wiki.iota.org/IOTA-2.0-Research-Specifications/4.3%20Tip%20Selection%20Algorithm) 
+insert
+
+<br/>
 
 ### Trinity
 Trinity was the IOTA 1.0 legacy network official wallet. No longer supported or being developed.
@@ -167,6 +192,11 @@ insert
 
 <br/>
 
+### [X-Team](https://iotaexperience.team/)
+insert
+
+<br/>
+
 
 
 
@@ -179,6 +209,7 @@ Nectar
 Honey
 Milestones
 Gossip
+Tips/Tip selection
 
 
 <br/>
