@@ -12,7 +12,7 @@ function Action({title, link, description}) {
 
     const handleClick = (e) => {
         e.preventDefault();
-        history.push(link);
+        history.push(window.location.pathname + "/" + link);
     }
     return (
         <div className='col col--4 margin-vert--md'>
