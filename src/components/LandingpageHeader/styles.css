@@ -1,12 +1,3 @@
-.header {
-  background: url('/img/background_light.svg') center center/cover;
-}
-
-[data-theme='dark'] .header {
-  background: url('/img/background_dark.svg') center center/cover;
-}
-
-
 hr {
   border: 1px solid #EEF2FA;
 }

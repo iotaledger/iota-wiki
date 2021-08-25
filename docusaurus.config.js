@@ -47,11 +47,11 @@ module.exports = {
           to: "docs/learn/about-iota/an-introduction-to-iota",
         },
         {
-          label: "Use",
-          to: "docs/use/use-cases/industry-applications",
+          label: "Participate",
+          to: "docs/participate/support-the-network/about-nodes",
         },
         {
-          label: 'Develop',
+          label: 'Build',
           items: [
             {
               label: "Getting Started",
@@ -61,10 +61,6 @@ module.exports = {
             },
             /* AUTO GENERATED EXTERNAL DOCS DROPDOWN CONFIG */
           ]
-        },
-        {
-          label: "Participate",
-          to: "docs/participate/support-the-network/run-a-node",
         },
         { to: '/blog', label: 'Blog', position: 'right' },
       ],

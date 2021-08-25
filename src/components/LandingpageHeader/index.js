@@ -15,25 +15,25 @@ const ActionList = [
     link: 'docs/learn/about-iota/an-introduction-to-iota',
     description: (
       <>
-        Why IOTA? Basics to deeper topics: Learn about the tangle, industry applications and networks.
+        Learn about IOTA, the Tangle, its features, industry applications, network and more.
       </>
     ),
   },
   {
-    title: 'Use',
-    link: 'docs/use/use-cases/industry-applications',
+    title: 'Participate',
+    link: 'docs/participate/support-the-network/about-nodes',
     description: (
       <>
-        Learn about IOTAs solutions and how they can be applied in the real world.
+        Join the network and start using solutions built on top of the Tangle.
       </>
     ),
   },
   {
-    title: 'Develop',
+    title: 'Build',
     link: 'docs/develop/getting-started/architecture',
     description: (
       <>
-        Follow our tutorials and documentation to build your own projects. IOTA supports Rust, C, Go, Java, and Python.
+        Access documentation and guides to build with IOTA in Rust, C, Go, Java or Python.
       </>
     ),
   },
@@ -86,14 +86,12 @@ function LandingpageHeader() {
   return (
     <header className='header padding-vert--xl'>
       <div className='title margin-horiz--sm'>
-        <img className='title__image' src={isDarkTheme ? useBaseUrl('/img/globe_dark.svg') : useBaseUrl('/img/globe_light.svg')} />
         <div>
           <h1 className='title__text'>{siteConfig.title}</h1>
           <span className='title__subtext grey'>{siteConfig.tagline}</span>
         </div>
       </div>
       <div className='margin-top--xl'>
-        <div className='section-header text--center margin-bottom--sm' >Get started, right away</div>
         <div className='actionlist row'>
           {ActionList.map((props, idx) => (
             <Action key={idx} {...props} />

@@ -75,81 +75,6 @@ module.exports =
         },
     ],
     
-    use: [
-        { 
-            type: 'category',
-            label: 'Use Cases',
-            collapsed: false,
-            items: [
-                'use/use-cases/industry-applications',
-                'use/use-cases/internet-of-things',
-                'use/use-cases/digital-assets',
-                'use/use-cases/nfts',
-                'use/use-cases/data-confidence',
-                'use/use-cases/eco-social-projects',
-                'use/use-cases/private-tangle',
-            ],
-        },
-        {
-            type: 'category',
-            label: 'Streams',
-            collapsed: true,
-            items: [
-                'use/streams/encrypted-data-comms',
-            ],
-        },
-        {
-            type: 'category',
-            label: 'Identity',
-            collapsed: true,
-            items: [
-                'use/identity/enabling-privacy-and-trust',
-            ],
-        },
-        {
-            type: 'category',
-            label: 'Smart Contracts',
-            collapsed: true,
-            items: [
-                'use/smart-contracts/programmable-contracts',
-            ],
-        },
-        {
-            type: 'category',
-            label: 'Access',
-            collapsed: true,
-            items: [
-                'use/access/secure-access-control',
-            ],
-        },
-        {
-            type: 'category',
-            label: 'Stronghold',
-            collapsed: true,
-            items: [
-                'use/stronghold/protecting-your-secrets',
-            ],
-        },
-        {
-            type: 'category',
-            label: 'Oracles',
-            collapsed: true,
-            items: [
-                'use/oracles/trust-in-real-world-data',
-            ],
-        },
-        {
-            type: 'category',
-            label: 'Utilities',
-            collapsed: true,
-            items: [
-                'use/utilities/tangle-explorer',
-                'use/utilities/visualizer',
-                'use/utilities/iota-ipfs',
-            ],
-        }, 
-    ],
-
     participate: [
         {
             type: 'category',
@@ -192,6 +117,85 @@ module.exports =
                 'participate/funding/community-treasury',
             ],
         }, 
+        {
+            type: 'category',
+            label: 'Use Cases',
+            collapsed: false,
+            items: [
+                'use/use-cases/industry-applications',
+                'use/use-cases/internet-of-things',
+                'use/use-cases/digital-assets',
+                'use/use-cases/nfts',
+                'use/use-cases/data-confidence',
+                'use/use-cases/eco-social-projects',
+                'use/use-cases/private-tangle',
+            ],
+        },
+        {
+            type: 'category',
+            label: 'Solutions',
+            collapsed: false,
+            items: [
+                {
+                    type: 'category',
+                    label: 'Streams',
+                    collapsed: true,
+                    items: [
+                        'use/streams/encrypted-data-comms',
+                    ],
+                },
+                {
+                    type: 'category',
+                    label: 'Identity',
+                    collapsed: true,
+                    items: [
+                        'use/identity/enabling-privacy-and-trust',
+                    ],
+                },
+                {
+                    type: 'category',
+                    label: 'Smart Contracts',
+                    collapsed: true,
+                    items: [
+                        'use/smart-contracts/programmable-contracts',
+                    ],
+                },
+                {
+                    type: 'category',
+                    label: 'Access',
+                    collapsed: true,
+                    items: [
+                        'use/access/secure-access-control',
+                    ],
+                },
+                {
+                    type: 'category',
+                    label: 'Stronghold',
+                    collapsed: true,
+                    items: [
+                        'use/stronghold/protecting-your-secrets',
+                    ],
+                },
+                {
+                    type: 'category',
+                    label: 'Oracles',
+                    collapsed: true,
+                    items: [
+                        'use/oracles/trust-in-real-world-data',
+                    ],
+                },
+                {
+                    type: 'category',
+                    label: 'Utilities',
+                    collapsed: true,
+                    items: [
+                        'use/utilities/tangle-explorer',
+                        'use/utilities/visualizer',
+                        'use/utilities/iota-ipfs',
+                    ],
+                },
+            ],
+        },
     ],
 
 

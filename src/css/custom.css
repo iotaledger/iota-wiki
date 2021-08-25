@@ -4,6 +4,10 @@ html {
   font-weight: 400;
 }
 
+.title__text {
+  text-align: center;
+}
+
 article {  
   max-width: 800px; 
   padding-top: 3rem; 
