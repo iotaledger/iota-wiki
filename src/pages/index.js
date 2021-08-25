@@ -1,7 +1,7 @@
 import React from 'react';
 import Layout from '@theme/Layout';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import LandingPageHeader from '@site/src/components/LandingpageHeader';
+import LandingPageHeader from '@site/src/components/LandingPageHeader';
 
 const actionList = [
     {
