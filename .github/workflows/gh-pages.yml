@@ -1,8 +1,8 @@
 name: deploy
 
 on:
-  pull_request:
-    branches: [develop]
+  push:
+    branches: [feat/reorg]
   workflow_dispatch:
   schedule:
     - cron:  '0 0 * * *'
