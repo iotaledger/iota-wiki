@@ -52,9 +52,10 @@ module.exports = {
         },
         {
           label: 'Build',
+          to: 'mega-dropdown',
           items: [
             {
-              to: 'column',
+              to: 'mega-dropdown-column',
               column: [
                 {
                   label: "Getting Started",
@@ -65,7 +66,7 @@ module.exports = {
               ],
             },
             {
-              to: 'column',
+              to: 'mega-dropdown-column',
               column: [
                 {
                   label: 'Chrysalis (IOTA 1.5)',
@@ -93,7 +94,7 @@ module.exports = {
               ]
             },
             {
-              to: 'column',
+              to: 'mega-dropdown-column',
               column: [
                 {
                   label: 'Libraries',
@@ -127,7 +128,7 @@ module.exports = {
               ]
             },
             {
-              to: 'column',
+              to: 'mega-dropdown-column',
               column: [
                 {
                   label: 'Smart Contracts',
