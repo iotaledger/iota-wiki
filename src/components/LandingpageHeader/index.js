@@ -12,7 +12,7 @@ import './styles.css'
 const ActionList = [
   {
     title: 'Learn',
-    link: 'docs/learn/about-iota/an-introduction-to-iota',
+    link: 'learn/about-iota/an-introduction-to-iota',
     description: (
       <>
         Why IOTA? Basics to deeper topics: Learn about the tangle, industry applications and networks.
@@ -21,7 +21,7 @@ const ActionList = [
   },
   {
     title: 'Use',
-    link: 'docs/use/use-cases/industry-applications',
+    link: 'use/use-cases/industry-applications',
     description: (
       <>
         Learn about IOTAs solutions and how they can be applied in the real world.
@@ -30,7 +30,7 @@ const ActionList = [
   },
   {
     title: 'Develop',
-    link: 'docs/develop/getting-started/architecture',
+    link: 'develop/getting-started/architecture',
     description: (
       <>
         Follow our tutorials and documentation to build your own projects. IOTA supports Rust, C, Go, Java, and Python.

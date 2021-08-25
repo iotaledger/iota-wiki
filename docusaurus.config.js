@@ -44,27 +44,27 @@ module.exports = {
       items: [
         {
           label: "Learn",
-          to: "docs/learn/about-iota/an-introduction-to-iota",
+          to: "learn/about-iota/an-introduction-to-iota",
         },
         {
           label: "Use",
-          to: "docs/use/use-cases/industry-applications",
+          to: "use/use-cases/industry-applications",
         },
         {
           label: 'Develop',
           items: [
             {
               label: "Getting Started",
-              to: "docs/develop/getting-started/architecture",
+              to: "develop/getting-started/architecture",
               className: 'icon-getting-started',
-              activeBaseRegex: 'docs/develop/getting-started/.*'
+              activeBaseRegex: 'develop/getting-started/.*'
             },
             /* AUTO GENERATED EXTERNAL DOCS DROPDOWN CONFIG */
           ]
         },
         {
           label: "Participate",
-          to: "docs/participate/support-the-network/run-a-node",
+          to: "participate/support-the-network/run-a-node",
         },
         { to: '/blog', label: 'Blog', position: 'right' },
       ],
@@ -77,27 +77,27 @@ module.exports = {
           items: [
             {
               label: 'About IOTA',
-              to: "docs/learn/about-iota/an-introduction-to-iota",
+              to: "learn/about-iota/an-introduction-to-iota",
             },
             {
               label: 'IOTA Token',
-              to: "docs/learn/iota-token/overview",
+              to: "learn/iota-token/overview",
             },
             {
               label: 'Wallets',
-              to: "docs/learn/wallets/what-is-a-wallet",
+              to: "learn/wallets/what-is-a-wallet",
             },
             {
               label: 'Networks',
-              to: "docs/learn/networks/iota-1.5-chrysalis",
+              to: "learn/networks/iota-1.5-chrysalis",
             },
             {
               label: 'Resource Materials',
-              to: "docs/learn/resource-materials/glossary",
+              to: "learn/resource-materials/glossary",
             },
             {
               label: 'Research',
-              to: "docs/learn/research/research-outline",
+              to: "learn/research/research-outline",
             },
           ],
         },
@@ -106,35 +106,35 @@ module.exports = {
           items: [
             {
               label: 'Use Cases',
-              to: "docs/use/use-cases/industry-applications",
+              to: "use/use-cases/industry-applications",
             },
             {
               label: 'Streams',
-              to: "docs/use/streams/encrypted-data-comms",
+              to: "use/streams/encrypted-data-comms",
             },
             {
               label: 'Identity',
-              to: "docs/use/identity/enabling-privacy-and-trust",
+              to: "use/identity/enabling-privacy-and-trust",
             },
             {
               label: 'Access',
-              to: "docs/use/access/secure-access-control",
+              to: "use/access/secure-access-control",
             },
             {
               label: 'Smart Contracts',
-              to: "docs/use/smart-contracts/programmable-contracts",
+              to: "use/smart-contracts/programmable-contracts",
             },
             {
               label: 'Stronghold',
-              to: "docs/use/stronghold/protecting-your-secrets",
+              to: "use/stronghold/protecting-your-secrets",
             },
             {
               label: 'Oracles',
-              to: "docs/use/oracles/trust-in-real-world-data",
+              to: "use/oracles/trust-in-real-world-data",
             },
             {
               label: 'Utilities',
-              to: "docs/use/utilities/tangle-explorer",
+              to: "use/utilities/tangle-explorer",
             },
           ],
         },
@@ -143,19 +143,19 @@ module.exports = {
           items: [
             {
               label: 'Getting Started',
-              to: "docs/develop/getting-started/architecture",
+              to: "develop/getting-started/architecture",
             },
             {
               label: 'Fundamentals',
-              to: "docs/develop/fundamentals/cryptography",
+              to: "develop/fundamentals/cryptography",
             },
             {
               label: 'Exchange Integration',
-              to: "docs/develop/exchange-integration/guide",
+              to: "develop/exchange-integration/exchange-integration-guide",
             },
             {
               label: 'Tutorials',
-              to: "docs/develop/tutorials/youtube",
+              to: "develop/tutorials/youtube",
             },
           ],
         },
@@ -164,19 +164,19 @@ module.exports = {
           items: [
             {
               label: 'Support the network',
-              to: "docs/participate/support-the-network/run-a-node",
+              to: "participate/support-the-network/run-a-node",
             },
             {
               label: 'The Community',
-              to: "docs/participate/the-community/discord",
+              to: "participate/the-community/discord",
             },
             {
               label: 'Partnerships',
-              to: "docs/participate/partnerships/iota-partnerships",
+              to: "participate/partnerships/iota-partnerships",
             },
             {
               label: 'Funding',
-              to: "docs/participate/funding/edf-funding",
+              to: "participate/funding/edf-funding",
             },
           ],
         },
@@ -230,6 +230,7 @@ module.exports = {
       '@docusaurus/preset-classic',
       {
         docs: {
+          routeBasePath: '/',
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
           editUrl: 'https://github.com/iota-community/iota-wiki/edit/develop/',
