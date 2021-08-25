@@ -16,6 +16,10 @@ import {NavLink} from '@theme/NavbarItem/DefaultNavbarItem';
 import NavbarItem from '@theme/NavbarItem';
 const dropdownLinkActiveClass = 'dropdown__link--active';
 
+function deriveKey(a, b) {
+  return (.5 * (a + b) * (a + b + 1)) + b
+}
+
 function isItemActive(item, localPathname) {
   if (isSamePath(item.to, localPathname)) {
     return true;
@@ -39,7 +43,7 @@ function containsActiveItems(items, localPathname) {
   return items.some((item) => isItemActive(item, localPathname));
 }
 
-function MegaDropdownNavbarItemDesktop({items, position, className, ...props}) {
+function MegaDropdownNavbarItemDesktop({columns, position, className, ...props}) {
   const dropdownRef = useRef(null);
   const dropdownMenuRef = useRef(null);
   const [showDropdown, setShowDropdown] = useState(false);
@@ -60,6 +64,7 @@ function MegaDropdownNavbarItemDesktop({items, position, className, ...props}) {
       document.removeEventListener('touchstart', handleClickOutside);
     };
   }, [dropdownRef]);
+
   return (
     <div
       ref={dropdownRef}
@@ -70,6 +75,7 @@ function MegaDropdownNavbarItemDesktop({items, position, className, ...props}) {
       <NavLink
         className={clsx('navbar__item navbar__link', className)}
         onClick={props.to ? undefined : (e) => e.preventDefault()}
+        {...props}
         onKeyDown={(e) => {
           if (e.key === 'Enter') {
             e.preventDefault();
@@ -78,40 +84,48 @@ function MegaDropdownNavbarItemDesktop({items, position, className, ...props}) {
         }}>
         {props.children ?? props.label}
       </NavLink>
-      <ul ref={dropdownMenuRef} className="dropdown__menu">
-        {items.map((childItemProps, i) => (
-          <NavbarItem
-            isDropdownItem
-            onKeyDown={(e) => {
-              if (i === items.length - 1 && e.key === 'Tab') {
-                e.preventDefault();
-                setShowDropdown(false);
-                const nextNavbarItem = dropdownRef.current.nextElementSibling;
+      <div ref={dropdownMenuRef} className="dropdown__menu">
+        {columns.map((children, columnKey) => (
+          <ul key={columnKey}>
+            {children.map((childItemProps, childKey) => (
+              <NavbarItem
+                isDropdownItem
+                onKeyDown={(e) => {
+                  if (
+                    columnKey === columns.length - 1 &&
+                    childKey === children.length - 1 &&
+                    e.key === 'Tab'
+                  ) {
+                    e.preventDefault();
+                    setShowDropdown(false);
+                    const nextNavbarItem = dropdownRef.current.nextElementSibling;
 
-                if (nextNavbarItem) {
-                  nextNavbarItem.focus();
-                }
-              }
-            }}
-            activeClassName={dropdownLinkActiveClass}
-            {...childItemProps}
-            key={i}
-          />
+                    if (nextNavbarItem) {
+                      nextNavbarItem.focus();
+                    }
+                  }
+                }}
+                activeClassName={dropdownLinkActiveClass}
+                {...childItemProps}
+                key={childKey}
+              />
+            ))}
+          </ul>
         ))}
-      </ul>
+      </div>
     </div>
   );
 }
 
 function MegaDropdownNavbarItemMobile({
-  items,
+  columns,
   className,
   position: _position,
   // Need to destructure position from props so that it doesn't get passed on.
   ...props
 }) {
   const localPathname = useLocalPathname();
-  const containsActive = containsActiveItems(items, localPathname);
+  const containsActive = containsActiveItems(columns, localPathname);
   const {collapsed, toggleCollapsed, setCollapsed} = useCollapsible({
     initialState: () => !containsActive,
   }); // Expand/collapse if any item active after a navigation
@@ -137,15 +151,17 @@ function MegaDropdownNavbarItemMobile({
         {props.children ?? props.label}
       </NavLink>
       <Collapsible lazy as="ul" className="menu__list" collapsed={collapsed}>
-        {items.map((childItemProps, i) => (
-          <NavbarItem
-            mobile
-            isDropdownItem
-            onClick={props.onClick}
-            activeClassName="menu__link--active"
-            {...childItemProps}
-            key={i}
-          />
+        {columns.map((children, columnKey) => (
+          children.map((childItemProps, childKey) => (
+            <NavbarItem
+              mobile
+              isDropdownItem
+              onClick={props.onClick}
+              activeClassName="menu__link--active"
+              {...childItemProps}
+              key={deriveKey(columnKey, childKey)}
+            />
+          ))
         ))}
       </Collapsible>
     </li>
