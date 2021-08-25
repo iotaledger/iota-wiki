@@ -53,10 +53,9 @@ module.exports = {
         {
           label: 'Develop',
           to: 'mega-dropdown',
-          items: [
-            {
-              to: 'mega-dropdown-column',
-              column: [
+          columns: [
+            [
+              [
                 {
                   label: "Getting Started",
                   to: "docs/develop/getting-started/architecture",
@@ -64,10 +63,9 @@ module.exports = {
                   activeBaseRegex: 'docs/develop/getting-started/.*'
                 },
               ],
-            },
-            {
-              to: 'mega-dropdown-column',
-              column: [
+            ],
+            [
+              [
                 {
                   label: 'Chrysalis (IOTA 1.5)',
                   items: [
@@ -92,10 +90,9 @@ module.exports = {
                   ],
                 },
               ]
-            },
-            {
-              to: 'mega-dropdown-column',
-              column: [
+            ],
+            [
+              [
                 {
                   label: 'Libraries',
                   items: [
@@ -126,10 +123,9 @@ module.exports = {
                   ],
                 },
               ]
-            },
-            {
-              to: 'mega-dropdown-column',
-              column: [
+            ],
+            [
+              [
                 {
                   label: 'Smart Contracts',
                   items: [
@@ -159,7 +155,7 @@ module.exports = {
                   ],
                 },
               ],
-            },
+            ],
           ],
         },
         {
