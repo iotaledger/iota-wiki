@@ -72,13 +72,11 @@ function MegaDropdownNavbarItemDesktop({columns, position, className, ...props})
         className={clsx('navbar__item', 'dropdown', {
           'dropdown--right': position === 'right',
         })}
+        onMouseEnter={() => setShowDropdown(true)}
+        onMouseLeave={() => setShowDropdown(false)}
       >
         <NavLink
           className={clsx('navbar__item navbar__link', className)}
-          onClick={(e) => {
-            e.preventDefault();
-            setShowDropdown(!showDropdown);
-          }}
           {...props}
           onKeyDown={(e) => {
             if (e.key === 'Enter') {
@@ -90,47 +88,51 @@ function MegaDropdownNavbarItemDesktop({columns, position, className, ...props})
         </NavLink>
       </div>
       <div
-        ref={dropdownMenuRef}
-        className={clsx('mega-dropdown__menu', {
-          'mega-dropdown__menu--show': showDropdown,
+        className={clsx('mega-dropdown__container', {
+          'mega-dropdown__container--show': showDropdown,
         })}
       >
-        {columns.map((rows, columnKey) => (
-          <div className='mega-dropdown__column' key={columnKey}>
-            {rows.map((items, rowKey) => (
-              <div className='mega-dropdown__row' key={rowKey}>
-                {items.map(({items: subItems, className: itemClassName, ...itemProps}, itemKey) => (
-                  (subItems ?
-                    <div className={clsx('mega-dropdown__category', itemClassName)} key={itemKey}>
-                      <span className='menu__link'>{itemProps.label}</span>
-                      {subItems.map(({className: subItemClassName, ...subItemProps}, subItemKey) => (
-                        <NavLink
-                          className={clsx(
-                            'dropdown__link',
-                            subItemClassName,
-                          )}
-                          activeClassName={dropdownLinkActiveClass}
-                          {...subItemProps}
-                          key={subItemKey}
-                        />
-                      ))}
-                    </div>
-                  :
-                    <NavLink
-                      className={clsx(
-                        'dropdown__link',
-                        itemClassName,
-                      )}
-                      activeClassName={dropdownLinkActiveClass}
-                      {...itemProps}
-                      key={itemKey}
-                    />
-                  )
-                ))}
-              </div>
-            ))}
-          </div>
-        ))}
+        <div
+          ref={dropdownMenuRef}
+          className='mega-dropdown__menu'
+        >
+          {columns.map((rows, columnKey) => (
+            <div className='mega-dropdown__column' key={columnKey}>
+              {rows.map((items, rowKey) => (
+                <div className='mega-dropdown__row' key={rowKey}>
+                  {items.map(({items: subItems, className: itemClassName, ...itemProps}, itemKey) => (
+                    (subItems ?
+                      <div className={clsx('mega-dropdown__category', itemClassName)} key={itemKey}>
+                        <span className='menu__link'>{itemProps.label}</span>
+                        {subItems.map(({className: subItemClassName, ...subItemProps}, subItemKey) => (
+                          <NavLink
+                            className={clsx(
+                              'dropdown__link',
+                              subItemClassName,
+                            )}
+                            activeClassName={dropdownLinkActiveClass}
+                            {...subItemProps}
+                            key={subItemKey}
+                          />
+                        ))}
+                      </div>
+                    :
+                      <NavLink
+                        className={clsx(
+                          'dropdown__link',
+                          itemClassName,
+                        )}
+                        activeClassName={dropdownLinkActiveClass}
+                        {...itemProps}
+                        key={itemKey}
+                      />
+                    )
+                  ))}
+                </div>
+              ))}
+            </div>
+          ))}
+        </div>
       </div>
     </>
   );
