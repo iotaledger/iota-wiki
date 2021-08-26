@@ -40,10 +40,14 @@ function isItemActive(item, localPathname) {
 }
 
 function containsActiveItems(items, localPathname) {
-  return items.some((item) => isItemActive(item, localPathname));
+  return items.flat(2).some((item) => {
+    item.items ? containsActiveItems(item.items, localPathname) : isItemActive(item, localPathname)
+  });
 }
 
 function MegaDropdownNavbarItemDesktop({columns, position, className, ...props}) {
+  const localPathname = useLocalPathname();
+  const containsActive = containsActiveItems(columns, localPathname);
   const dropdownRef = useRef(null);
   const dropdownMenuRef = useRef(null);
   const [showDropdown, setShowDropdown] = useState(false);
@@ -76,8 +80,15 @@ function MegaDropdownNavbarItemDesktop({columns, position, className, ...props})
         onMouseLeave={() => setShowDropdown(false)}
       >
         <NavLink
-          className={clsx('navbar__item navbar__link', className)}
+          className={clsx(
+            'navbar__item navbar__link',
+            {
+              'navbar__link--active': containsActive,
+            },
+            className
+          )}
           {...props}
+          onClick={(e) => e.preventDefault()}
           onKeyDown={(e) => {
             if (e.key === 'Enter') {
               e.preventDefault();
@@ -111,6 +122,17 @@ function MegaDropdownNavbarItemDesktop({columns, position, className, ...props})
                               subItemClassName,
                             )}
                             activeClassName={dropdownLinkActiveClass}
+                            onKeyDown={(e) => {
+                              if (
+                                columnKey === columns.length - 1 &&
+                                rowKey === rows.length - 1 &&
+                                itemKey === items.length - 1 &&
+                                subItemKey === subItems.length - 1 &&
+                                e.key === 'Tab'
+                              ) {
+                                setShowDropdown(false);
+                              }
+                            }}
                             {...subItemProps}
                             key={subItemKey}
                           />
@@ -123,6 +145,16 @@ function MegaDropdownNavbarItemDesktop({columns, position, className, ...props})
                           itemClassName,
                         )}
                         activeClassName={dropdownLinkActiveClass}
+                        onKeyDown={(e) => {
+                          if (
+                            columnKey === columns.length - 1 &&
+                            rowKey === rows.length - 1 &&
+                            itemKey === items.length - 1 &&
+                            e.key === 'Tab'
+                          ) {
+                            setShowDropdown(false);
+                          }
+                        }}
                         {...itemProps}
                         key={itemKey}
                       />
