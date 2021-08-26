@@ -573,6 +573,32 @@ Logo fonts CSS
     content: "\e90a";
 }
 
+.mega-dropdown__menu {
+  background-color: var(--ifm-dropdown-background-color);
+  border-radius: var(--ifm-global-radius);
+  box-shadow: var(--ifm-global-shadow-md);
+  list-style: none;
+  max-height: calc(100vh - var(--ifm-navbar-height));
+  width: 100%;
+  opacity: 0;
+  overflow-y: auto;
+  padding: 0.5rem;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  visibility: hidden;
+  z-index: var(--ifm-z-index-dropdown);
+
+  transition-property: opacity, visibility;
+  transition-duration: var(--ifm-transition-fast);
+  transition-timing-function: var(--ifm-transition-timing-default);
+}
+
+.mega-dropdown__menu--show {
+  opacity: 1;
+  visibility: visible;
+}
+
 /**
 Logo fonts CSS
 **/
