@@ -575,10 +575,8 @@ Logo fonts CSS
 
 .mega-dropdown__menu {
   background-color: var(--ifm-dropdown-background-color);
-  border-radius: var(--ifm-global-radius);
-  box-shadow: var(--ifm-global-shadow-md);
   list-style: none;
-  max-height: calc(100vh - var(--ifm-navbar-height));
+  max-height: calc(100vh - var(--ifm-navbar-height) - var(--docusaurus-announcement-bar-height));
   width: 100%;
   opacity: 0;
   overflow-y: auto;
