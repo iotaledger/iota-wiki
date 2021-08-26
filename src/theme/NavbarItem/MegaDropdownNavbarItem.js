@@ -66,25 +66,35 @@ function MegaDropdownNavbarItemDesktop({columns, position, className, ...props})
   }, [dropdownRef]);
 
   return (
-    <div
-      ref={dropdownRef}
-      className={clsx('navbar__item', 'dropdown', 'dropdown--hoverable', {
-        'dropdown--right': position === 'right',
-        'dropdown--show': showDropdown,
-      })}>
-      <NavLink
-        className={clsx('navbar__item navbar__link', className)}
-        onClick={props.to ? undefined : (e) => e.preventDefault()}
-        {...props}
-        onKeyDown={(e) => {
-          if (e.key === 'Enter') {
+    <>
+      <div
+        ref={dropdownRef}
+        className={clsx('navbar__item', 'dropdown', {
+          'dropdown--right': position === 'right',
+        })}
+      >
+        <NavLink
+          className={clsx('navbar__item navbar__link', className)}
+          onClick={(e) => {
             e.preventDefault();
             setShowDropdown(!showDropdown);
-          }
-        }}>
-        {props.children ?? props.label}
-      </NavLink>
-      <div ref={dropdownMenuRef} className="dropdown__menu">
+          }}
+          {...props}
+          onKeyDown={(e) => {
+            if (e.key === 'Enter') {
+              e.preventDefault();
+              setShowDropdown(!showDropdown);
+            }
+          }}>
+          {props.children ?? props.label}
+        </NavLink>
+      </div>
+      <div
+        ref={dropdownMenuRef}
+        className={clsx('mega-dropdown__menu', {
+          'mega-dropdown__menu--show': showDropdown,
+        })}
+      >
         {columns.map((rows, columnKey) => (
           rows.map((children, rowKey) => (
             <ul key={deriveKey(columnKey, rowKey)}>
@@ -116,7 +126,7 @@ function MegaDropdownNavbarItemDesktop({columns, position, className, ...props})
           ))
         ))}
       </div>
-    </div>
+    </>
   );
 }
 
