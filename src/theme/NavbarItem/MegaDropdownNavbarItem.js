@@ -16,10 +16,6 @@ import {NavLink} from '@theme/NavbarItem/DefaultNavbarItem';
 import NavbarItem from '@theme/NavbarItem';
 const dropdownLinkActiveClass = 'dropdown__link--active';
 
-function deriveKey(a, b) {
-  return (.5 * (a + b) * (a + b + 1)) + b
-}
-
 function isItemActive(item, localPathname) {
   if (isSamePath(item.to, localPathname)) {
     return true;
@@ -41,13 +37,13 @@ function isItemActive(item, localPathname) {
 
 function containsActiveItems(items, localPathname) {
   return items.flat(2).some((item) => {
-    item.items ? containsActiveItems(item.items, localPathname) : isItemActive(item, localPathname)
+    item.sections ? containsActiveItems(item.sections, localPathname) : isItemActive(item, localPathname)
   });
 }
 
-function MegaDropdownNavbarItemDesktop({columns, position, className, ...props}) {
+function MegaDropdownNavbarItemDesktop({sections, position, className, ...props}) {
   const localPathname = useLocalPathname();
-  const containsActive = containsActiveItems(columns, localPathname);
+  const containsActive = containsActiveItems(sections, localPathname);
   const dropdownRef = useRef(null);
   const dropdownMenuRef = useRef(null);
   const [showDropdown, setShowDropdown] = useState(false);
@@ -107,63 +103,70 @@ function MegaDropdownNavbarItemDesktop({columns, position, className, ...props})
           ref={dropdownMenuRef}
           className='mega-dropdown__menu'
         >
-          {columns.map((rows, columnKey) => (
-            <div className='mega-dropdown__column' key={columnKey}>
-              {rows.map((items, rowKey) => (
-                <div className='mega-dropdown__row' key={rowKey}>
-                  {items.map(({items: subItems, className: itemClassName, ...itemProps}, itemKey) => (
-                    (subItems ?
-                      <div className={clsx('mega-dropdown__category', itemClassName)} key={itemKey}>
-                        <span className='menu__link'>{itemProps.label}</span>
-                        {subItems.map(({className: subItemClassName, ...subItemProps}, subItemKey) => (
-                          <NavLink
-                            className={clsx(
-                              'dropdown__link',
-                              subItemClassName,
-                            )}
-                            activeClassName={dropdownLinkActiveClass}
-                            onKeyDown={(e) => {
-                              if (
-                                columnKey === columns.length - 1 &&
-                                rowKey === rows.length - 1 &&
-                                itemKey === items.length - 1 &&
-                                subItemKey === subItems.length - 1 &&
-                                e.key === 'Tab'
-                              ) {
-                                setShowDropdown(false);
-                              }
-                            }}
-                            {...subItemProps}
-                            key={subItemKey}
-                          />
+          <div className='mega-dropdown__section mega-dropdown__section--row'>
+            {sections.map((items, sectionKey) => (
+              <div className='mega-dropdown__section' key={sectionKey}>
+                {items.map(({sections: subSections, className: itemClassName, ...itemProps}, itemKey) => (
+                  (subSections ?
+                    <div className={clsx('mega-dropdown__section', itemClassName)} key={itemKey}>
+                      {itemProps.label ??
+                        <div className='mega-dropdown__header'>
+                          {itemProps.label}
+                        </div>
+                      }
+                      <div className='mega-dropdown__section mega-dropdown__section--row'>
+                        {subSections.map((subItems, subSectionKey) => (
+                          <div className='mega-dropdown__section' key={subSectionKey}>
+                            {subItems.map(({className: subItemClassName, ...subItemProps}, subItemKey) => (
+                              <NavLink
+                                className={clsx(
+                                  'dropdown__link',
+                                  subItemClassName,
+                                )}
+                                activeClassName={dropdownLinkActiveClass}
+                                onKeyDown={(e) => {
+                                  if (
+                                    sectionKey === sections.length - 1 &&
+                                    itemKey === items.length - 1 &&
+                                    subSectionKey === subSections.length - 1 &&
+                                    subItemKey === subItems.length - 1 &&
+                                    e.key === 'Tab'
+                                  ) {
+                                    setShowDropdown(false);
+                                  }
+                                }}
+                                {...subItemProps}
+                                key={subItemKey}
+                              />
+                            ))}
+                          </div>
                         ))}
                       </div>
-                    :
-                      <NavLink
-                        className={clsx(
-                          'dropdown__link',
-                          itemClassName,
-                        )}
-                        activeClassName={dropdownLinkActiveClass}
-                        onKeyDown={(e) => {
-                          if (
-                            columnKey === columns.length - 1 &&
-                            rowKey === rows.length - 1 &&
-                            itemKey === items.length - 1 &&
-                            e.key === 'Tab'
-                          ) {
-                            setShowDropdown(false);
-                          }
-                        }}
-                        {...itemProps}
-                        key={itemKey}
-                      />
-                    )
-                  ))}
-                </div>
-              ))}
-            </div>
-          ))}
+                    </div>
+                  :
+                    <NavLink
+                      className={clsx(
+                        'dropdown__link',
+                        itemClassName,
+                      )}
+                      activeClassName={dropdownLinkActiveClass}
+                      onKeyDown={(e) => {
+                        if (
+                          sectionKey === sections.length - 1 &&
+                          itemKey === items.length - 1 &&
+                          e.key === 'Tab'
+                        ) {
+                          setShowDropdown(false);
+                        }
+                      }}
+                      {...itemProps}
+                      key={itemKey}
+                    />
+                  )
+                ))}
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </>
@@ -171,14 +174,14 @@ function MegaDropdownNavbarItemDesktop({columns, position, className, ...props})
 }
 
 function MegaDropdownNavbarItemMobile({
-  columns,
+  sections,
   className,
   position: _position,
   // Need to destructure position from props so that it doesn't get passed on.
   ...props
 }) {
   const localPathname = useLocalPathname();
-  const containsActive = containsActiveItems(columns, localPathname);
+  const containsActive = containsActiveItems(sections, localPathname);
   const {collapsed, toggleCollapsed, setCollapsed} = useCollapsible({
     initialState: () => !containsActive,
   }); // Expand/collapse if any item active after a navigation
@@ -204,19 +207,15 @@ function MegaDropdownNavbarItemMobile({
         {props.children ?? props.label}
       </NavLink>
       <Collapsible lazy as="ul" className="menu__list" collapsed={collapsed}>
-        {columns.map((rows, columnKey) => (
-          rows.map((items, rowKey) => (
-            items.map((itemProps, itemKey) => (
-              <NavbarItem
-                mobile
-                isDropdownItem
-                onClick={props.onClick}
-                activeClassName="menu__link--active"
-                {...itemProps}
-                key={deriveKey(deriveKey(columnKey, rowKey), itemKey)}
-              />
-            ))
-          ))
+        {sections.flat(2).map((itemProps, itemKey) => (
+          <NavbarItem
+            mobile
+            isDropdownItem
+            onClick={props.onClick}
+            activeClassName="menu__link--active"
+            {...itemProps}
+            key={itemKey}
+          />
         ))}
       </Collapsible>
     </li>
