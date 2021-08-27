@@ -12,6 +12,7 @@ import './styles.css'
 const ActionList = [
   {
     title: 'Learn',
+    image: 'img/learn.svg',
     link: 'docs/learn/about-iota/an-introduction-to-iota',
     description: (
       <>
@@ -21,6 +22,7 @@ const ActionList = [
   },
   {
     title: 'Participate',
+    image: 'img/participate.svg',
     link: 'docs/participate/support-the-network/about-nodes',
     description: (
       <>
@@ -30,6 +32,7 @@ const ActionList = [
   },
   {
     title: 'Build',
+    image: 'img/build.svg',
     link: 'docs/develop/getting-started/architecture',
     description: (
       <>
@@ -39,7 +42,7 @@ const ActionList = [
   },
 ];
 
-function Action({ title, link, description }) {
+function Action({ title, image, image_hover, link, description }) {
   let [hovering, setHovering] = useState(false);
   let history = useHistory();
 
@@ -51,28 +54,15 @@ function Action({ title, link, description }) {
   return (
     <div className='col col--4 margin-vert--md'>
       <div
-        className='action padding--lg'
+        className='card'
         onClick={handleClick}
-        onMouseOver={() => setHovering(true)}
-        onMouseOut={() => setHovering(false)}
       >
-        <div className='action__header'>
-          <span className='action__title'>{title}</span>
-          <div href={link} className='action__button'>
-            <span className='action__icon material-icons'>
-              navigate_next
-            </span>
-          </div>
+        <div className='card__image'>
+          <img className='image' src={image}/>
         </div>
-        <div className={clsx(
-          'headline-stick',
-          {
-            'size-m': hovering,
-            'size-s': !hovering
-          }
-        )}></div>
-        <div className='action__description'>
-          {description}
+        <div className='card__body'>
+          <h3>{title}</h3>
+          <small>{description}</small>
         </div>
       </div>
     </div>

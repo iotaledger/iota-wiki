@@ -396,6 +396,8 @@ h2 {
 
     --ifm-background-color: var(--ifm-color-gray-000);
 
+    --ifm-background-color: #f6f8fc;
+
     --ifm-hover-overlay: var(--ifm-color-emphasis-200);
 
     --ifm-font-color-base: var(--ifm-color-emphasis-700);
@@ -409,6 +411,8 @@ h2 {
 
     --ifm-global-border-width: 2px;
     --ifm-global-radius: 0.5rem;
+
+    --ifm-card-background-color: #E8EEFB !important;
 
     --ifm-navbar-link-color: #485776;
     --ifm-navbar-link-hover-color: var(--ifm-color-primary);
@@ -436,6 +440,8 @@ h2 {
     
     --ifm-background-color: #061023;
     --ifm-background-surface-color: #0D192F;
+
+    --ifm-card-background-color: #212D45 !important;
 
     --ifm-navbar-link-color: #B0BFD9;
     --ifm-navbar-background-color:var(--ifm-background-color);
@@ -550,6 +556,15 @@ h2 {
   [data-theme='dark']  .section-header {
    color: #B0BFD9;
   }
+
+  .footer {
+    border-top: 1px solid #E8EEFB;
+  }
+
+  [data-theme='dark'] .footer {
+    border-top: 1px solid var(--ifm-color-gray-700);
+  }
+
 
   .footer__links {
     margin-left: max(1rem, calc(20% - 5rem));
