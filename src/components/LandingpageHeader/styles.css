@@ -57,7 +57,7 @@ color: #909FBE
 }
 
 [data-theme='dark'] .action {
-  background-color: #293858;
+  background-color: #141E31;
 }
 
 .action__header {
@@ -72,6 +72,11 @@ color: #909FBE
   font-size: 1.6rem;
   letter-spacing: 0.02em;
   font-family: 'Metropolis Semi Bold';
+  color: var(--ifm-color-gray-900);
+}
+
+[data-theme='dark'] .action__title {
+  color: white;
 }
 
 .action__subtext {
@@ -117,4 +122,8 @@ color: #909FBE
   padding-bottom: 0.5rem;
   font-size: 1rem;
   letter-spacing: 0.02em;
+}
+
+[data-theme='dark'] .action__description {
+  color: var(--ifm-color-gray-500);
 }

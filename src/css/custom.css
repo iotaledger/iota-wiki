@@ -383,15 +383,18 @@ h2 {
       tint(var(--ifm-lightest-value))
     );
 
-    --ifm-color-gray-100: #E8EEFB;
-    --ifm-color-gray-200: #F2F5FB ;
-    --ifm-color-gray-300: #EEF2FA;
-    --ifm-color-gray-400: #CBD2E0;
-    --ifm-color-gray-500: #A7B3C7;
-    --ifm-color-gray-600: #8493AD;
-    --ifm-color-gray-700: #202B42;
-    --ifm-color-gray-800: #131F37;
-    --ifm-color-gray-900: #0A101C;
+    --ifm-color-gray-000: #F6F8FC;
+    --ifm-color-gray-100: #F2F5FB;
+    --ifm-color-gray-200: #E8EEFB;
+    --ifm-color-gray-300: #D8E1F4;
+    --ifm-color-gray-400: #AFBEDD;
+    --ifm-color-gray-500: #909FBE;
+    --ifm-color-gray-600: #7A89A8;
+    --ifm-color-gray-700: #697897;
+    --ifm-color-gray-800: #485776;
+    --ifm-color-gray-900: #131F37;
+
+    --ifm-background-color: var(--ifm-color-gray-000);
 
     --ifm-hover-overlay: var(--ifm-color-emphasis-200);
 
@@ -411,7 +414,12 @@ h2 {
     --ifm-navbar-link-hover-color: var(--ifm-color-primary);
     --ifm-navbar-link-active-color: var(--ifm-color-primary);
 
-    --ifm-footer-color: var(--ifm-navbar-link-color);
+
+    --ifm-footer-color: var(--ifm-color-gray-300);
+    --ifm-footer-title-color: var(--ifm-color-gray-700);
+    --ifm-footer-link-color: var(--ifm-color-gray-300);
+    --ifm-footer-background-color: #141E31;
+    
     --ifm-navbar-padding-horizontal: 25px;
     --ifm-navbar-padding-vertical: 18px;
     --ifm-navbar-height: 68px;
@@ -426,15 +434,14 @@ h2 {
   html[data-theme='dark'] {
     --ifm-color-primary: #14CABF;
     
-    --ifm-background-color: #0D192F;
+    --ifm-background-color: #061023;
     --ifm-background-surface-color: #0D192F;
 
     --ifm-navbar-link-color: #B0BFD9;
-    --ifm-navbar-background-color:#0D192F;
+    --ifm-navbar-background-color:var(--ifm-background-color);
 
     --ifm-menu-color-background-hover: var(--ifm-color-emphasis-300);
 
-    --ifm-footer-background-color: #0D192F;
     --ifm-card-background-color:#293858;
 
     --ifm-heading-color: inherit;
@@ -517,11 +524,11 @@ h2 {
       font-family: 'Metropolis Semi Bold';
       line-height: 1.25rem;
       font-weight: 400;
-      border-bottom: 1px solid #E8EEFB;
+      border-bottom: 1px solid var(--ifm-color-gray-300);
       box-shadow: none;
   }
   [data-theme='dark']  .navbar {
-    border-bottom: 1px solid var(--ifm-color-gray-700);
+    border-bottom: 1px solid #FFFFFF1F;
    }
 
 
@@ -543,17 +550,6 @@ h2 {
   [data-theme='dark']  .section-header {
    color: #B0BFD9;
   }
-
-  .footer {
-    border-top: 1px solid #E8EEFB;
-    background-color: #fff;
-  }
-
-  [data-theme='dark'] .footer {
-    border-top: 1px solid var(--ifm-color-gray-700);
-    background-color: #0D192F;
-  }
-
 
   .footer__links {
     margin-left: max(1rem, calc(20% - 5rem));
