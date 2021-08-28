@@ -1,7 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
 html {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  font-weight: 400;
+  font-weight: var(--ifm-font-weight-normal);
 }
 
 .title__text {
@@ -21,170 +23,8 @@ h1 {
 h2 {    
  font-size: 1.8rem !important; 
  padding-top: 1rem; 
-} 
+}
 
-
-  @font-face {
-      font-family: Inter;
-      font-style: normal;
-      font-weight: 100;
-      font-display: swap;
-      src: url(https://webassets.iota.org/fonts/inter/Inter-Thin.woff2?v=3.13) format("woff2"), url(https://webassets.iota.org/fonts/inter/Inter-Thin.woff?v=3.13) format("woff")
-  }
-
-  @font-face {
-      font-family: Inter;
-      font-style: italic;
-      font-weight: 100;
-      font-display: swap;
-      src: url(https://webassets.iota.org/fonts/inter/Inter-ThinItalic.woff2?v=3.13) format("woff2"), url(https://webassets.iota.org/fonts/inter/Inter-ThinItalic.woff?v=3.13) format("woff")
-  }
-
-  @font-face {
-      font-family: Inter;
-      font-style: normal;
-      font-weight: 200;
-      font-display: swap;
-      src: url(https://webassets.iota.org/fonts/inter/Inter-ExtraLight.woff2?v=3.13) format("woff2"), url(https://webassets.iota.org/fonts/inter/Inter-ExtraLight.woff?v=3.13) format("woff")
-  }
-
-  @font-face {
-      font-family: Inter;
-      font-style: italic;
-      font-weight: 200;
-      font-display: swap;
-      src: url(https://webassets.iota.org/fonts/inter/Inter-ExtraLightItalic.woff2?v=3.13) format("woff2"), url(https://webassets.iota.org/fonts/inter/Inter-ExtraLightItalic.woff?v=3.13) format("woff")
-  }
-
-  @font-face {
-      font-family: Inter;
-      font-style: normal;
-      font-weight: 300;
-      font-display: swap;
-      src: url(https://webassets.iota.org/fonts/inter/Inter-Light.woff2?v=3.13) format("woff2"), url(https://webassets.iota.org/fonts/inter/Inter-Light.woff?v=3.13) format("woff")
-  }
-
-  @font-face {
-      font-family: Inter;
-      font-style: italic;
-      font-weight: 300;
-      font-display: swap;
-      src: url(https://webassets.iota.org/fonts/inter/Inter-LightItalic.woff2?v=3.13) format("woff2"), url(https://webassets.iota.org/fonts/inter/Inter-LightItalic.woff?v=3.13) format("woff")
-  }
-
-  @font-face {
-      font-family: Inter;
-      font-style: normal;
-      font-weight: 400;
-      font-display: swap;
-      src: url(https://webassets.iota.org/fonts/inter/Inter-Regular.woff2?v=3.13) format("woff2"), url(https://webassets.iota.org/fonts/inter/Inter-Regular.woff?v=3.13) format("woff")
-  }
-
-  @font-face {
-      font-family: Inter;
-      font-style: italic;
-      font-weight: 400;
-      font-display: swap;
-      src: url(https://webassets.iota.org/fonts/inter/Inter-Italic.woff2?v=3.13) format("woff2"), url(https://webassets.iota.org/fonts/inter/Inter-Italic.woff?v=3.13) format("woff")
-  }
-
-  @font-face {
-      font-family: Inter;
-      font-style: normal;
-      font-weight: 500;
-      font-display: swap;
-      src: url(https://webassets.iota.org/fonts/inter/Inter-Medium.woff2?v=3.13) format("woff2"), url(https://webassets.iota.org/fonts/inter/Inter-Medium.woff?v=3.13) format("woff")
-  }
-
-  @font-face {
-      font-family: Inter;
-      font-style: italic;
-      font-weight: 500;
-      font-display: swap;
-      src: url(https://webassets.iota.org/fonts/inter/Inter-MediumItalic.woff2?v=3.13) format("woff2"), url(https://webassets.iota.org/fonts/inter/Inter-MediumItalic.woff?v=3.13) format("woff")
-  }
-
-  @font-face {
-      font-family: Inter;
-      font-style: normal;
-      font-weight: 600;
-      font-display: swap;
-      src: url(https://webassets.iota.org/fonts/inter/Inter-SemiBold.woff2?v=3.13) format("woff2"), url(https://webassets.iota.org/fonts/inter/Inter-SemiBold.woff?v=3.13) format("woff")
-  }
-
-  @font-face {
-      font-family: Inter;
-      font-style: italic;
-      font-weight: 600;
-      font-display: swap;
-      src: url(https://webassets.iota.org/fonts/inter/Inter-SemiBoldItalic.woff2?v=3.13) format("woff2"), url(https://webassets.iota.org/fonts/inter/Inter-SemiBoldItalic.woff?v=3.13) format("woff")
-  }
-
-  @font-face {
-      font-family: Inter;
-      font-style: normal;
-      font-weight: 700;
-      font-display: swap;
-      src: url(https://webassets.iota.org/fonts/inter/Inter-Bold.woff2?v=3.13) format("woff2"), url(https://webassets.iota.org/fonts/inter/Inter-Bold.woff?v=3.13) format("woff")
-  }
-
-  @font-face {
-      font-family: Inter;
-      font-style: italic;
-      font-weight: 700;
-      font-display: swap;
-      src: url(https://webassets.iota.org/fonts/inter/Inter-BoldItalic.woff2?v=3.13) format("woff2"), url(https://webassets.iota.org/fonts/inter/Inter-BoldItalic.woff?v=3.13) format("woff")
-  }
-
-  @font-face {
-      font-family: Inter;
-      font-style: normal;
-      font-weight: 800;
-      font-display: swap;
-      src: url(https://webassets.iota.org/fonts/inter/Inter-ExtraBold.woff2?v=3.13) format("woff2"), url(https://webassets.iota.org/fonts/inter/Inter-ExtraBold.woff?v=3.13) format("woff")
-  }
-
-  @font-face {
-      font-family: Inter;
-      font-style: italic;
-      font-weight: 800;
-      font-display: swap;
-      src: url(https://webassets.iota.org/fonts/inter/Inter-ExtraBoldItalic.woff2?v=3.13) format("woff2"), url(https://webassets.iota.org/fonts/inter/Inter-ExtraBoldItalic.woff?v=3.13) format("woff")
-  }
-
-  @font-face {
-      font-family: Inter;
-      font-style: normal;
-      font-weight: 900;
-      font-display: swap;
-      src: url(https://webassets.iota.org/fonts/inter/Inter-Black.woff2?v=3.13) format("woff2"), url(https://webassets.iota.org/fonts/inter/Inter-Black.woff?v=3.13) format("woff")
-  }
-
-  @font-face {
-      font-family: Inter;
-      font-style: italic;
-      font-weight: 900;
-      font-display: swap;
-      src: url(https://webassets.iota.org/fonts/inter/Inter-BlackItalic.woff2?v=3.13) format("woff2"), url(https://webassets.iota.org/fonts/inter/Inter-BlackItalic.woff?v=3.13) format("woff")
-  }
-
-  @font-face {
-      font-family: Inter var;
-      font-style: normal;
-      font-weight: 100 900;
-      font-display: swap;
-      font-named-instance: "Regular";
-      src: url(https://webassets.iota.org/fonts/inter/Inter-roman.var.woff2?v=3.13) format("woff2")
-  }
-
-  @font-face {
-      font-family: Inter var;
-      font-style: italic;
-      font-weight: 100 900;
-      font-display: swap;
-      font-named-instance: "Italic";
-      src: url(https://webassets.iota.org/fonts/inter/Inter-italic.var.woff2?v=3.13) format("woff2")
-  }
 
   @font-face {
       font-family: Metropolis Regular;
@@ -405,7 +245,7 @@ h2 {
     --ifm-line-height-base: 1.5;
 
     --ifm-heading-color: var(--ifm-color-gray-900);
-    --ifm-heading-font-family: Metropolis Bold;
+    --ifm-heading-font-family: Inter;
 
     --ifm-link-hover-decoration: none;
 
@@ -476,7 +316,7 @@ h2 {
 }
 
 .menu__link {
-  font-family: 'Metropolis Medium';
+  font-family: 'Inter';
   padding-top: 5px;
   padding-bottom: 5px;
   padding-left: 15px;
@@ -484,14 +324,16 @@ h2 {
 }
 
 .menu__link--active {
-  font-family: 'Metropolis Semi Bold';
+  font-family: 'Inter';
+  font-weight: var(--ifm-font-weight-semibold);
   border-left: 3px solid var(--ifm-color-primary);
   padding-left: 12px;
   background-color: rgba(54, 161, 172, .04);
 }
 
 .menu__link--sublist {
-  font-family: 'Metropolis Semi Bold';
+  font-family: 'Inter';
+  font-weight: var(--ifm-font-weight-semibold);
   padding-top: 20px;
   padding-bottom: 20px;
   border-radius: 0px;
@@ -504,8 +346,7 @@ h2 {
 
 
 .table-of-contents__link {
-  font-family: 'Metropolis Medium';
-  font-size: 1rem;
+  font-family: 'Inter';
   color: var(--ifm-color-emphasis-600);
   padding-top: 5px;
   padding-bottom: 5px;
@@ -515,7 +356,8 @@ h2 {
 
 .table-of-contents__link--active {
   color: var(--ifm-color-primary);
-  font-family: 'Metropolis Semi Bold';
+  font-family: 'Inter';
+  font-weight: var(--ifm-font-weight-semibold);
   border-left: 3px solid var(--ifm-color-primary);
   padding-left: 12px;
 }
@@ -547,7 +389,8 @@ h2 {
   }
 
   .section-header {
-    font-family: 'Metropolis Semi Bold';
+    font-family: 'Inter';
+    font-weight: var(--ifm-font-weight-semibold);
     font-size: 1.5rem;
     letter-spacing: 0.04em;
     color: #909FBE;
