@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkiota_wiki=self.webpackChunkiota_wiki||[]).push([[1713],{87485:function(a){a.exports=JSON.parse('{"x-teams":{"allTagsPath":"/blog/tags","slug":"x-teams","name":"x-teams","count":1,"permalink":"/blog/tags/x-teams"},"iota-wiki":{"allTagsPath":"/blog/tags","slug":"iota-wiki","name":"iota-wiki","count":1,"permalink":"/blog/tags/iota-wiki"}}')}}]);
