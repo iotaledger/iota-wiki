@@ -1,10 +1,7 @@
 ---
 slug: bitcoin-middle-man
 title: "Unpopular opinion: Bitcoin did not get rid of the middle-man"
-author: Linus Naumann
-author_title: Community Member
-author_url: https://twitter.com/LinusNaumann
-author_image_url: https://pbs.twimg.com/profile_images/1397841376335876097/8Q2_Bovt_400x400.jpg
+authors: lnaumann
 tags: [Community, Bitcoin]
 ---
 
