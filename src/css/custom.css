@@ -10,6 +10,11 @@ html {
   text-align: center;
 }
 
+.markdown > h3 {
+    --ifm-heading-vertical-rhythm-bottom: 0.2;
+    --ifm-h3-vertical-rhythm-top: 2;
+}
+
 article {  
   max-width: 800px; 
   padding-top: 3rem; 
@@ -334,8 +339,6 @@ h2 {
 .menu__link--sublist {
   font-family: 'Inter';
   font-weight: var(--ifm-font-weight-semibold);
-  padding-top: 20px;
-  padding-bottom: 20px;
   border-radius: 0px;
   border: none;
 }
