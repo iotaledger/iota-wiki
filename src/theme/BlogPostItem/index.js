@@ -63,6 +63,7 @@ function BlogPostItem(props) {
 
   const renderPostHeader = () => {
     const TitleHeading = isBlogPostPage ? 'h1' : 'h2';
+    // Move date to the right
     return (
       <header>
         <TitleHeading className={styles.blogPostTitle} itemProp="headline">
@@ -74,19 +75,25 @@ function BlogPostItem(props) {
             </Link>
           )}
         </TitleHeading>
-        <div className={clsx(styles.blogPostData, 'margin-vert--md')}>
-          <time dateTime={date} itemProp="datePublished">
-            {formattedDate}
-          </time>
+        <div className='row row--no-gutters'>
+          <div className='col'>
+            <BlogPostAuthors authors={authors} assets={assets} />
+          </div>
+          <div style={{position: 'relative'}} className={clsx(styles.blogPostData, 'margin-vert--md', 'col')}>
+            <div style={{position: 'absolute', right: 0, bottom: 0}}>
+              <time dateTime={date} itemProp="datePublished">
+                {formattedDate}
+              </time>
 
-          {typeof readingTime !== 'undefined' && (
-            <>
-              {' · '}
-              {readingTimePlural(readingTime)}
-            </>
-          )}
+              {typeof readingTime !== 'undefined' && (
+                <>
+                  {' · '}
+                  {readingTimePlural(readingTime)}
+                </>
+              )}
+            </div>
+          </div>
         </div>
-        <BlogPostAuthors authors={authors} assets={assets} />
       </header>
     );
   };
