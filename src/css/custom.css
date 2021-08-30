@@ -1,3 +1,465 @@
+/* 
+*  CSS TABLE OF CONTENTS
+*   
+*  1.0 - Font import
+*  2.0 - Root variables (Infima)
+*  2.1 - Root variables - dark theme (Infima)
+*  3.0 - Body
+*  4.0 - Logo fonts
+*/
+
+
+/*** 1.0 - Font import ***/
+  
+@font-face {
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 100;
+  font-display: swap;
+  src: url(https://webassets.iota.org/fonts/inter/Inter-Thin.woff2?v=3.13) format("woff2"), url(https://webassets.iota.org/fonts/inter/Inter-Thin.woff?v=3.13) format("woff")
+}
+
+@font-face {
+  font-family: Inter;
+  font-style: italic;
+  font-weight: 100;
+  font-display: swap;
+  src: url(https://webassets.iota.org/fonts/inter/Inter-ThinItalic.woff2?v=3.13) format("woff2"), url(https://webassets.iota.org/fonts/inter/Inter-ThinItalic.woff?v=3.13) format("woff")
+}
+
+@font-face {
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 200;
+  font-display: swap;
+  src: url(https://webassets.iota.org/fonts/inter/Inter-ExtraLight.woff2?v=3.13) format("woff2"), url(https://webassets.iota.org/fonts/inter/Inter-ExtraLight.woff?v=3.13) format("woff")
+}
+
+@font-face {
+  font-family: Inter;
+  font-style: italic;
+  font-weight: 200;
+  font-display: swap;
+  src: url(https://webassets.iota.org/fonts/inter/Inter-ExtraLightItalic.woff2?v=3.13) format("woff2"), url(https://webassets.iota.org/fonts/inter/Inter-ExtraLightItalic.woff?v=3.13) format("woff")
+}
+
+@font-face {
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(https://webassets.iota.org/fonts/inter/Inter-Light.woff2?v=3.13) format("woff2"), url(https://webassets.iota.org/fonts/inter/Inter-Light.woff?v=3.13) format("woff")
+}
+
+@font-face {
+  font-family: Inter;
+  font-style: italic;
+  font-weight: 300;
+  font-display: swap;
+  src: url(https://webassets.iota.org/fonts/inter/Inter-LightItalic.woff2?v=3.13) format("woff2"), url(https://webassets.iota.org/fonts/inter/Inter-LightItalic.woff?v=3.13) format("woff")
+}
+
+@font-face {
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://webassets.iota.org/fonts/inter/Inter-Regular.woff2?v=3.13) format("woff2"), url(https://webassets.iota.org/fonts/inter/Inter-Regular.woff?v=3.13) format("woff")
+}
+
+@font-face {
+  font-family: Inter;
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://webassets.iota.org/fonts/inter/Inter-Italic.woff2?v=3.13) format("woff2"), url(https://webassets.iota.org/fonts/inter/Inter-Italic.woff?v=3.13) format("woff")
+}
+
+@font-face {
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://webassets.iota.org/fonts/inter/Inter-Medium.woff2?v=3.13) format("woff2"), url(https://webassets.iota.org/fonts/inter/Inter-Medium.woff?v=3.13) format("woff")
+}
+
+@font-face {
+  font-family: Inter;
+  font-style: italic;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://webassets.iota.org/fonts/inter/Inter-MediumItalic.woff2?v=3.13) format("woff2"), url(https://webassets.iota.org/fonts/inter/Inter-MediumItalic.woff?v=3.13) format("woff")
+}
+
+@font-face {
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(https://webassets.iota.org/fonts/inter/Inter-SemiBold.woff2?v=3.13) format("woff2"), url(https://webassets.iota.org/fonts/inter/Inter-SemiBold.woff?v=3.13) format("woff")
+}
+
+@font-face {
+  font-family: Inter;
+  font-style: italic;
+  font-weight: 600;
+  font-display: swap;
+  src: url(https://webassets.iota.org/fonts/inter/Inter-SemiBoldItalic.woff2?v=3.13) format("woff2"), url(https://webassets.iota.org/fonts/inter/Inter-SemiBoldItalic.woff?v=3.13) format("woff")
+}
+
+@font-face {
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://webassets.iota.org/fonts/inter/Inter-Bold.woff2?v=3.13) format("woff2"), url(https://webassets.iota.org/fonts/inter/Inter-Bold.woff?v=3.13) format("woff")
+}
+
+@font-face {
+  font-family: Inter;
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://webassets.iota.org/fonts/inter/Inter-BoldItalic.woff2?v=3.13) format("woff2"), url(https://webassets.iota.org/fonts/inter/Inter-BoldItalic.woff?v=3.13) format("woff")
+}
+
+@font-face {
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url(https://webassets.iota.org/fonts/inter/Inter-ExtraBold.woff2?v=3.13) format("woff2"), url(https://webassets.iota.org/fonts/inter/Inter-ExtraBold.woff?v=3.13) format("woff")
+}
+
+@font-face {
+  font-family: Inter;
+  font-style: italic;
+  font-weight: 800;
+  font-display: swap;
+  src: url(https://webassets.iota.org/fonts/inter/Inter-ExtraBoldItalic.woff2?v=3.13) format("woff2"), url(https://webassets.iota.org/fonts/inter/Inter-ExtraBoldItalic.woff?v=3.13) format("woff")
+}
+
+@font-face {
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url(https://webassets.iota.org/fonts/inter/Inter-Black.woff2?v=3.13) format("woff2"), url(https://webassets.iota.org/fonts/inter/Inter-Black.woff?v=3.13) format("woff")
+}
+
+@font-face {
+  font-family: Inter;
+  font-style: italic;
+  font-weight: 900;
+  font-display: swap;
+  src: url(https://webassets.iota.org/fonts/inter/Inter-BlackItalic.woff2?v=3.13) format("woff2"), url(https://webassets.iota.org/fonts/inter/Inter-BlackItalic.woff?v=3.13) format("woff")
+}
+
+@font-face {
+  font-family: Inter var;
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  font-named-instance: "Regular";
+  src: url(https://webassets.iota.org/fonts/inter/Inter-roman.var.woff2?v=3.13) format("woff2")
+}
+
+@font-face {
+  font-family: Inter var;
+  font-style: italic;
+  font-weight: 100 900;
+  font-display: swap;
+  font-named-instance: "Italic";
+  src: url(https://webassets.iota.org/fonts/inter/Inter-italic.var.woff2?v=3.13) format("woff2")
+}
+
+@font-face {
+  font-family: Metropolis Regular;
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://webassets.iota.org/fonts/metropolis/Metropolis-Regular.woff2?v=11) format("woff2"), url(https://webassets.iota.org/fonts/metropolis/Metropolis-Regular.woff?v=11) format("woff")
+}
+
+@font-face {
+  font-family: Metropolis Light;
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://webassets.iota.org/fonts/metropolis/Metropolis-Light.woff2?v=11) format("woff2"), url(https://webassets.iota.org/fonts/metropolis/Metropolis-Light.woff?v=11) format("woff")
+}
+
+@font-face {
+  font-family: Metropolis Medium;
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://webassets.iota.org/fonts/metropolis/Metropolis-Medium.woff2?v=11) format("woff2"), url(https://webassets.iota.org/fonts/metropolis/Metropolis-Medium.woff?v=11) format("woff")
+}
+
+@font-face {
+  font-family: Metropolis Semi Bold;
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://webassets.iota.org/fonts/metropolis/Metropolis-SemiBold.woff2?v=11) format("woff2"), url(https://webassets.iota.org/fonts/metropolis/Metropolis-SemiBold.woff?v=11) format("woff")
+}
+
+@font-face {
+  font-family: Metropolis Bold;
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://webassets.iota.org/fonts/metropolis/Metropolis-Bold.woff2?v=11) format("woff2"), url(https://webassets.iota.org/fonts/metropolis/Metropolis-Bold.woff?v=11) format("woff")
+}
+  
+
+/*** 2.0 - Root variables (Infima) ***/
+
+:root {
+  /* Colors */
+  --ifm-color-primary: #36A1AC;
+  --ifm-color-success: #0FC1B7;
+  --ifm-color-info: #2E8698;
+  --ifm-color-warning: #e5a23e;
+  --ifm-color-danger: #e53e3e;
+  
+  /* Colors - gray */
+  --ifm-color-gray-100: #E8EEFB;
+  --ifm-color-gray-200: #F2F5FB;
+  --ifm-color-gray-300: #EEF2FA;
+  --ifm-color-gray-400: #CBD2E0;
+  --ifm-color-gray-500: #A7B3C7;
+  --ifm-color-gray-600: #8493AD;
+  --ifm-color-gray-700: #202B42;
+  --ifm-color-gray-800: #131F37;
+  --ifm-color-gray-900: #0A101C;
+
+  /* Primary */
+  --ifm-color-primary-dark: color-mod(
+    var(--ifm-color-primary) shade(var(--ifm-dark-value))
+  );
+  --ifm-color-primary-darker: color-mod(
+    var(--ifm-color-primary),
+    shade(var(--ifm-darker-value))
+  );
+  --ifm-color-primary-darkest: color-mod(
+    var(--ifm-color-primary),
+    shade(var(--ifm-darkest-value))
+  );
+  --ifm-color-primary-light: color-mod(
+    var(--ifm-color-primary),
+    tint(var(--ifm-light-value))
+  );
+  --ifm-color-primary-lighter: color-mod(
+    var(--ifm-color-primary),
+    tint(var(--ifm-lighter-value))
+  );
+  --ifm-color-primary-lightest: color-mod(
+    var(--ifm-color-primary),
+    tint(var(--ifm-lightest-value))
+  );
+
+  /* Secondary */
+  --ifm-color-secondary-dark: color-mod(
+    var(--ifm-color-secondary),
+    shade(var(--ifm-dark-value))
+  );
+  --ifm-color-secondary-darker: color-mod(
+    var(--ifm-color-secondary),
+    shade(var(--ifm-darker-value))
+  );
+  --ifm-color-secondary-darkest: color-mod(
+    var(--ifm-color-secondary),
+    shade(var(--ifm-darkest-value))
+  );
+  --ifm-color-secondary-light: color-mod(
+    var(--ifm-color-secondary),
+    tint(var(--ifm-light-value))
+  );
+  --ifm-color-secondary-lighter: color-mod(
+    var(--ifm-color-secondary),
+    tint(var(--ifm-lighter-value))
+  );
+  --ifm-color-secondary-lightest: color-mod(
+    var(--ifm-color-secondary),
+    tint(var(--ifm-lightest-value))
+  );
+
+  /* Success */
+  --ifm-color-success-dark: color-mod(
+    var(--ifm-color-success),
+    shade(var(--ifm-dark-value))
+  );
+  --ifm-color-success-darker: color-mod(
+    var(--ifm-color-success),
+    shade(var(--ifm-darker-value))
+  );
+  --ifm-color-success-darkest: color-mod(
+    var(--ifm-color-success),
+    shade(var(--ifm-darkest-value))
+  );
+  --ifm-color-success-light: color-mod(
+    var(--ifm-color-success),
+    tint(var(--ifm-light-value))
+  );
+  --ifm-color-success-lighter: color-mod(
+    var(--ifm-color-success),
+    tint(var(--ifm-lighter-value))
+  );
+  --ifm-color-success-lightest: color-mod(
+    var(--ifm-color-success),
+    tint(var(--ifm-lightest-value))
+  );
+
+  /* Info */
+  --ifm-color-info-dark: color-mod(
+    var(--ifm-color-info),
+    shade(var(--ifm-dark-value))
+  );
+  --ifm-color-info-darker: color-mod(
+    var(--ifm-color-info),
+    shade(var(--ifm-darker-value))
+  );
+  --ifm-color-info-darkest: color-mod(
+    var(--ifm-color-info),
+    shade(var(--ifm-darkest-value))
+  );
+  --ifm-color-info-light: color-mod(
+    var(--ifm-color-info),
+    tint(var(--ifm-light-value))
+  );
+  --ifm-color-info-lighter: color-mod(
+    var(--ifm-color-info),
+    tint(var(--ifm-lighter-value))
+  );
+  --ifm-color-info-lightest: color-mod(
+    var(--ifm-color-info),
+    tint(var(--ifm-lightest-value))
+  );
+
+  /* Warning */
+  --ifm-color-warning-dark: color-mod(
+    var(--ifm-color-warning),
+    shade(var(--ifm-dark-value))
+  );
+  --ifm-color-warning-darker: color-mod(
+    var(--ifm-color-warning),
+    shade(var(--ifm-darker-value))
+  );
+  --ifm-color-warning-darkest: color-mod(
+    var(--ifm-color-warning),
+    shade(var(--ifm-darkest-value))
+  );
+  --ifm-color-warning-light: color-mod(
+    var(--ifm-color-warning),
+    tint(var(--ifm-light-value))
+  );
+  --ifm-color-warning-lighter: color-mod(
+    var(--ifm-color-warning),
+    tint(var(--ifm-lighter-value))
+  );
+  --ifm-color-warning-lightest: color-mod(
+    var(--ifm-color-warning),
+    tint(var(--ifm-lightest-value))
+  );
+
+  /* Danger */
+  --ifm-color-danger-dark: color-mod(
+    var(--ifm-color-danger),
+    shade(var(--ifm-dark-value))
+  );
+  --ifm-color-danger-darker: color-mod(
+    var(--ifm-color-danger),
+    shade(var(--ifm-darker-value))
+  );
+  --ifm-color-danger-darkest: color-mod(
+    var(--ifm-color-danger),
+    shade(var(--ifm-darkest-value))
+  );
+  --ifm-color-danger-light: color-mod(
+    var(--ifm-color-danger),
+    tint(var(--ifm-light-value))
+  );
+  --ifm-color-danger-lighter: color-mod(
+    var(--ifm-color-danger),
+    tint(var(--ifm-lighter-value))
+  );
+  --ifm-color-danger-lightest: color-mod(
+    var(--ifm-color-danger),
+    tint(var(--ifm-lightest-value))
+  );
+
+  /* Hover */
+  --ifm-hover-overlay: var(--ifm-color-emphasis-200);
+  
+  /* Fonts - base */
+  --ifm-font-color-base: var(--ifm-color-emphasis-700);
+  --ifm-font-family-base: Inter, sans-serif;
+  --ifm-line-height-base: 1.5;
+  
+  /* Fonts - heading */
+  --ifm-heading-color: var(--ifm-color-gray-900);
+  --ifm-heading-font-family: Metropolis Bold;
+  
+  /* Fonts - link */
+  --ifm-link-hover-decoration: none;
+  
+  /* Globals */
+  --ifm-global-border-width: 2px;
+  --ifm-global-radius: 0.5rem;
+
+  /* Navbar */
+  --ifm-navbar-link-color: #485776;
+  --ifm-navbar-link-hover-color: var(--ifm-color-primary);
+  --ifm-navbar-link-active-color: var(--ifm-color-primary);
+  --ifm-navbar-padding-horizontal: 25px;
+  --ifm-navbar-padding-vertical: 18px;
+  --ifm-navbar-height: 68px;
+  
+  /* Footer */
+  --ifm-footer-color: var(--ifm-navbar-link-color);
+  
+  /* Menu */
+  --ifm-menu-color: var(--ifm-color-emphasis-600);
+  --ifm-menu-color-active: var(--ifm-color-primary);
+  --ifm-menu-color-background-active: transparent;
+  
+  /* Button*/
+  --ifm-button-color: white;
+}
+
+
+/*** 2.1 - Root variables - dark theme (Infima) ***/
+
+:root[data-theme='dark'] {
+  --ifm-color-primary: #14CABF;
+
+  --ifm-background-color: #0D192F;
+  --ifm-background-surface-color: #0D192F;
+
+  --ifm-navbar-link-color: #B0BFD9;
+  --ifm-navbar-background-color:#0D192F;
+
+  --ifm-menu-color-background-hover: var(--ifm-color-emphasis-300);
+
+  --ifm-footer-background-color: #0D192F;
+  --ifm-card-background-color:#293858;
+
+  --ifm-heading-color: inherit;
+
+  --ifm-hover-overlay: #0D192F;
+}
+
+
+/*** 3.0 - Body ***/
+
+::selection {
+  background-color: #b3d4fc;
+  color: #000;
+  text-shadow: none;
+}
+
 html {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
@@ -15,8 +477,8 @@ h1 {
 }
 
 h2 {
- font-size: 1.8rem !important;
- padding-top: 1rem;
+  font-size: 1.8rem !important;
+  padding-top: 1rem;
 }
 
 table *,
@@ -41,443 +503,23 @@ table tr:nth-child(n):not(table tr:first-child) {
   border-top: var(--ifm-table-border-width) solid var(--ifm-table-border-color);
 }
 
-
-  @font-face {
-      font-family: Inter;
-      font-style: normal;
-      font-weight: 100;
-      font-display: swap;
-      src: url(https://webassets.iota.org/fonts/inter/Inter-Thin.woff2?v=3.13) format("woff2"), url(https://webassets.iota.org/fonts/inter/Inter-Thin.woff?v=3.13) format("woff")
-  }
-
-  @font-face {
-      font-family: Inter;
-      font-style: italic;
-      font-weight: 100;
-      font-display: swap;
-      src: url(https://webassets.iota.org/fonts/inter/Inter-ThinItalic.woff2?v=3.13) format("woff2"), url(https://webassets.iota.org/fonts/inter/Inter-ThinItalic.woff?v=3.13) format("woff")
-  }
-
-  @font-face {
-      font-family: Inter;
-      font-style: normal;
-      font-weight: 200;
-      font-display: swap;
-      src: url(https://webassets.iota.org/fonts/inter/Inter-ExtraLight.woff2?v=3.13) format("woff2"), url(https://webassets.iota.org/fonts/inter/Inter-ExtraLight.woff?v=3.13) format("woff")
-  }
-
-  @font-face {
-      font-family: Inter;
-      font-style: italic;
-      font-weight: 200;
-      font-display: swap;
-      src: url(https://webassets.iota.org/fonts/inter/Inter-ExtraLightItalic.woff2?v=3.13) format("woff2"), url(https://webassets.iota.org/fonts/inter/Inter-ExtraLightItalic.woff?v=3.13) format("woff")
-  }
-
-  @font-face {
-      font-family: Inter;
-      font-style: normal;
-      font-weight: 300;
-      font-display: swap;
-      src: url(https://webassets.iota.org/fonts/inter/Inter-Light.woff2?v=3.13) format("woff2"), url(https://webassets.iota.org/fonts/inter/Inter-Light.woff?v=3.13) format("woff")
-  }
-
-  @font-face {
-      font-family: Inter;
-      font-style: italic;
-      font-weight: 300;
-      font-display: swap;
-      src: url(https://webassets.iota.org/fonts/inter/Inter-LightItalic.woff2?v=3.13) format("woff2"), url(https://webassets.iota.org/fonts/inter/Inter-LightItalic.woff?v=3.13) format("woff")
-  }
-
-  @font-face {
-      font-family: Inter;
-      font-style: normal;
-      font-weight: 400;
-      font-display: swap;
-      src: url(https://webassets.iota.org/fonts/inter/Inter-Regular.woff2?v=3.13) format("woff2"), url(https://webassets.iota.org/fonts/inter/Inter-Regular.woff?v=3.13) format("woff")
-  }
-
-  @font-face {
-      font-family: Inter;
-      font-style: italic;
-      font-weight: 400;
-      font-display: swap;
-      src: url(https://webassets.iota.org/fonts/inter/Inter-Italic.woff2?v=3.13) format("woff2"), url(https://webassets.iota.org/fonts/inter/Inter-Italic.woff?v=3.13) format("woff")
-  }
-
-  @font-face {
-      font-family: Inter;
-      font-style: normal;
-      font-weight: 500;
-      font-display: swap;
-      src: url(https://webassets.iota.org/fonts/inter/Inter-Medium.woff2?v=3.13) format("woff2"), url(https://webassets.iota.org/fonts/inter/Inter-Medium.woff?v=3.13) format("woff")
-  }
-
-  @font-face {
-      font-family: Inter;
-      font-style: italic;
-      font-weight: 500;
-      font-display: swap;
-      src: url(https://webassets.iota.org/fonts/inter/Inter-MediumItalic.woff2?v=3.13) format("woff2"), url(https://webassets.iota.org/fonts/inter/Inter-MediumItalic.woff?v=3.13) format("woff")
-  }
-
-  @font-face {
-      font-family: Inter;
-      font-style: normal;
-      font-weight: 600;
-      font-display: swap;
-      src: url(https://webassets.iota.org/fonts/inter/Inter-SemiBold.woff2?v=3.13) format("woff2"), url(https://webassets.iota.org/fonts/inter/Inter-SemiBold.woff?v=3.13) format("woff")
-  }
-
-  @font-face {
-      font-family: Inter;
-      font-style: italic;
-      font-weight: 600;
-      font-display: swap;
-      src: url(https://webassets.iota.org/fonts/inter/Inter-SemiBoldItalic.woff2?v=3.13) format("woff2"), url(https://webassets.iota.org/fonts/inter/Inter-SemiBoldItalic.woff?v=3.13) format("woff")
-  }
-
-  @font-face {
-      font-family: Inter;
-      font-style: normal;
-      font-weight: 700;
-      font-display: swap;
-      src: url(https://webassets.iota.org/fonts/inter/Inter-Bold.woff2?v=3.13) format("woff2"), url(https://webassets.iota.org/fonts/inter/Inter-Bold.woff?v=3.13) format("woff")
-  }
-
-  @font-face {
-      font-family: Inter;
-      font-style: italic;
-      font-weight: 700;
-      font-display: swap;
-      src: url(https://webassets.iota.org/fonts/inter/Inter-BoldItalic.woff2?v=3.13) format("woff2"), url(https://webassets.iota.org/fonts/inter/Inter-BoldItalic.woff?v=3.13) format("woff")
-  }
-
-  @font-face {
-      font-family: Inter;
-      font-style: normal;
-      font-weight: 800;
-      font-display: swap;
-      src: url(https://webassets.iota.org/fonts/inter/Inter-ExtraBold.woff2?v=3.13) format("woff2"), url(https://webassets.iota.org/fonts/inter/Inter-ExtraBold.woff?v=3.13) format("woff")
-  }
-
-  @font-face {
-      font-family: Inter;
-      font-style: italic;
-      font-weight: 800;
-      font-display: swap;
-      src: url(https://webassets.iota.org/fonts/inter/Inter-ExtraBoldItalic.woff2?v=3.13) format("woff2"), url(https://webassets.iota.org/fonts/inter/Inter-ExtraBoldItalic.woff?v=3.13) format("woff")
-  }
-
-  @font-face {
-      font-family: Inter;
-      font-style: normal;
-      font-weight: 900;
-      font-display: swap;
-      src: url(https://webassets.iota.org/fonts/inter/Inter-Black.woff2?v=3.13) format("woff2"), url(https://webassets.iota.org/fonts/inter/Inter-Black.woff?v=3.13) format("woff")
-  }
-
-  @font-face {
-      font-family: Inter;
-      font-style: italic;
-      font-weight: 900;
-      font-display: swap;
-      src: url(https://webassets.iota.org/fonts/inter/Inter-BlackItalic.woff2?v=3.13) format("woff2"), url(https://webassets.iota.org/fonts/inter/Inter-BlackItalic.woff?v=3.13) format("woff")
-  }
-
-  @font-face {
-      font-family: Inter var;
-      font-style: normal;
-      font-weight: 100 900;
-      font-display: swap;
-      font-named-instance: "Regular";
-      src: url(https://webassets.iota.org/fonts/inter/Inter-roman.var.woff2?v=3.13) format("woff2")
-  }
-
-  @font-face {
-      font-family: Inter var;
-      font-style: italic;
-      font-weight: 100 900;
-      font-display: swap;
-      font-named-instance: "Italic";
-      src: url(https://webassets.iota.org/fonts/inter/Inter-italic.var.woff2?v=3.13) format("woff2")
-  }
-
-  @font-face {
-      font-family: Metropolis Regular;
-      font-style: normal;
-      font-weight: 400;
-      font-display: swap;
-      src: url(https://webassets.iota.org/fonts/metropolis/Metropolis-Regular.woff2?v=11) format("woff2"), url(https://webassets.iota.org/fonts/metropolis/Metropolis-Regular.woff?v=11) format("woff")
-  }
-
-  @font-face {
-      font-family: Metropolis Light;
-      font-style: normal;
-      font-weight: 400;
-      font-display: swap;
-      src: url(https://webassets.iota.org/fonts/metropolis/Metropolis-Light.woff2?v=11) format("woff2"), url(https://webassets.iota.org/fonts/metropolis/Metropolis-Light.woff?v=11) format("woff")
-  }
-
-  @font-face {
-      font-family: Metropolis Medium;
-      font-style: normal;
-      font-weight: 400;
-      font-display: swap;
-      src: url(https://webassets.iota.org/fonts/metropolis/Metropolis-Medium.woff2?v=11) format("woff2"), url(https://webassets.iota.org/fonts/metropolis/Metropolis-Medium.woff?v=11) format("woff")
-  }
-
-  @font-face {
-      font-family: Metropolis Semi Bold;
-      font-style: normal;
-      font-weight: 400;
-      font-display: swap;
-      src: url(https://webassets.iota.org/fonts/metropolis/Metropolis-SemiBold.woff2?v=11) format("woff2"), url(https://webassets.iota.org/fonts/metropolis/Metropolis-SemiBold.woff?v=11) format("woff")
-  }
-
-  @font-face {
-      font-family: Metropolis Bold;
-      font-style: normal;
-      font-weight: 400;
-      font-display: swap;
-      src: url(https://webassets.iota.org/fonts/metropolis/Metropolis-Bold.woff2?v=11) format("woff2"), url(https://webassets.iota.org/fonts/metropolis/Metropolis-Bold.woff?v=11) format("woff")
-  }
-
-
-  :root {
-    --ifm-color-primary: #36A1AC;
-    --ifm-color-success: #0FC1B7;
-    --ifm-color-info: #2E8698;
-    --ifm-color-warning: #e5a23e;
-    --ifm-color-danger: #e53e3e;
-
-    --ifm-color-primary-dark: color-mod(
-      var(--ifm-color-primary) shade(var(--ifm-dark-value))
-    );
-    --ifm-color-primary-darker: color-mod(
-      var(--ifm-color-primary),
-      shade(var(--ifm-darker-value))
-    );
-    --ifm-color-primary-darkest: color-mod(
-      var(--ifm-color-primary),
-      shade(var(--ifm-darkest-value))
-    );
-    --ifm-color-primary-light: color-mod(
-      var(--ifm-color-primary),
-      tint(var(--ifm-light-value))
-    );
-    --ifm-color-primary-lighter: color-mod(
-      var(--ifm-color-primary),
-      tint(var(--ifm-lighter-value))
-    );
-    --ifm-color-primary-lightest: color-mod(
-      var(--ifm-color-primary),
-      tint(var(--ifm-lightest-value))
-    );
-
-    --ifm-color-secondary-dark: color-mod(
-      var(--ifm-color-secondary),
-      shade(var(--ifm-dark-value))
-    );
-    --ifm-color-secondary-darker: color-mod(
-      var(--ifm-color-secondary),
-      shade(var(--ifm-darker-value))
-    );
-    --ifm-color-secondary-darkest: color-mod(
-      var(--ifm-color-secondary),
-      shade(var(--ifm-darkest-value))
-    );
-    --ifm-color-secondary-light: color-mod(
-      var(--ifm-color-secondary),
-      tint(var(--ifm-light-value))
-    );
-    --ifm-color-secondary-lighter: color-mod(
-      var(--ifm-color-secondary),
-      tint(var(--ifm-lighter-value))
-    );
-    --ifm-color-secondary-lightest: color-mod(
-      var(--ifm-color-secondary),
-      tint(var(--ifm-lightest-value))
-    );
-
-    --ifm-color-success-dark: color-mod(
-      var(--ifm-color-success),
-      shade(var(--ifm-dark-value))
-    );
-    --ifm-color-success-darker: color-mod(
-      var(--ifm-color-success),
-      shade(var(--ifm-darker-value))
-    );
-    --ifm-color-success-darkest: color-mod(
-      var(--ifm-color-success),
-      shade(var(--ifm-darkest-value))
-    );
-    --ifm-color-success-light: color-mod(
-      var(--ifm-color-success),
-      tint(var(--ifm-light-value))
-    );
-    --ifm-color-success-lighter: color-mod(
-      var(--ifm-color-success),
-      tint(var(--ifm-lighter-value))
-    );
-    --ifm-color-success-lightest: color-mod(
-      var(--ifm-color-success),
-      tint(var(--ifm-lightest-value))
-    );
-
-    --ifm-color-info-dark: color-mod(
-      var(--ifm-color-info),
-      shade(var(--ifm-dark-value))
-    );
-    --ifm-color-info-darker: color-mod(
-      var(--ifm-color-info),
-      shade(var(--ifm-darker-value))
-    );
-    --ifm-color-info-darkest: color-mod(
-      var(--ifm-color-info),
-      shade(var(--ifm-darkest-value))
-    );
-    --ifm-color-info-light: color-mod(
-      var(--ifm-color-info),
-      tint(var(--ifm-light-value))
-    );
-    --ifm-color-info-lighter: color-mod(
-      var(--ifm-color-info),
-      tint(var(--ifm-lighter-value))
-    );
-    --ifm-color-info-lightest: color-mod(
-      var(--ifm-color-info),
-      tint(var(--ifm-lightest-value))
-    );
-
-    --ifm-color-warning-dark: color-mod(
-      var(--ifm-color-warning),
-      shade(var(--ifm-dark-value))
-    );
-    --ifm-color-warning-darker: color-mod(
-      var(--ifm-color-warning),
-      shade(var(--ifm-darker-value))
-    );
-    --ifm-color-warning-darkest: color-mod(
-      var(--ifm-color-warning),
-      shade(var(--ifm-darkest-value))
-    );
-    --ifm-color-warning-light: color-mod(
-      var(--ifm-color-warning),
-      tint(var(--ifm-light-value))
-    );
-    --ifm-color-warning-lighter: color-mod(
-      var(--ifm-color-warning),
-      tint(var(--ifm-lighter-value))
-    );
-    --ifm-color-warning-lightest: color-mod(
-      var(--ifm-color-warning),
-      tint(var(--ifm-lightest-value))
-    );
-
-    --ifm-color-danger-dark: color-mod(
-      var(--ifm-color-danger),
-      shade(var(--ifm-dark-value))
-    );
-    --ifm-color-danger-darker: color-mod(
-      var(--ifm-color-danger),
-      shade(var(--ifm-darker-value))
-    );
-    --ifm-color-danger-darkest: color-mod(
-      var(--ifm-color-danger),
-      shade(var(--ifm-darkest-value))
-    );
-    --ifm-color-danger-light: color-mod(
-      var(--ifm-color-danger),
-      tint(var(--ifm-light-value))
-    );
-    --ifm-color-danger-lighter: color-mod(
-      var(--ifm-color-danger),
-      tint(var(--ifm-lighter-value))
-    );
-    --ifm-color-danger-lightest: color-mod(
-      var(--ifm-color-danger),
-      tint(var(--ifm-lightest-value))
-    );
-
-    --ifm-color-gray-100: #E8EEFB;
-    --ifm-color-gray-200: #F2F5FB ;
-    --ifm-color-gray-300: #EEF2FA;
-    --ifm-color-gray-400: #CBD2E0;
-    --ifm-color-gray-500: #A7B3C7;
-    --ifm-color-gray-600: #8493AD;
-    --ifm-color-gray-700: #202B42;
-    --ifm-color-gray-800: #131F37;
-    --ifm-color-gray-900: #0A101C;
-
-    --ifm-hover-overlay: var(--ifm-color-emphasis-200);
-
-    --ifm-font-color-base: var(--ifm-color-emphasis-700);
-    --ifm-font-family-base: Inter, sans-serif;
-    --ifm-line-height-base: 1.5;
-
-    --ifm-heading-color: var(--ifm-color-gray-900);
-    --ifm-heading-font-family: Metropolis Bold;
-
-    --ifm-link-hover-decoration: none;
-
-    --ifm-global-border-width: 2px;
-    --ifm-global-radius: 0.5rem;
-
-    --ifm-navbar-link-color: #485776;
-    --ifm-navbar-link-hover-color: var(--ifm-color-primary);
-    --ifm-navbar-link-active-color: var(--ifm-color-primary);
-
-    --ifm-footer-color: var(--ifm-navbar-link-color);
-    --ifm-navbar-padding-horizontal: 25px;
-    --ifm-navbar-padding-vertical: 18px;
-    --ifm-navbar-height: 68px;
-
-    --ifm-menu-color: var(--ifm-color-emphasis-600);
-    --ifm-menu-color-active: var(--ifm-color-primary);
-    --ifm-menu-color-background-active: transparent;
-
-    --ifm-button-color: white;
-  }
-
-  html[data-theme='dark'] {
-    --ifm-color-primary: #14CABF;
-
-    --ifm-background-color: #0D192F;
-    --ifm-background-surface-color: #0D192F;
-
-    --ifm-navbar-link-color: #B0BFD9;
-    --ifm-navbar-background-color:#0D192F;
-
-    --ifm-menu-color-background-hover: var(--ifm-color-emphasis-300);
-
-    --ifm-footer-background-color: #0D192F;
-    --ifm-card-background-color:#293858;
-
-    --ifm-heading-color: inherit;
-
-    --ifm-hover-overlay: #0D192F;
-  }
-
-  .alert h1,
-  .alert h2,
-  .alert h3,
-  .alert h4,
-  .alert h5,
-  .alert h6,
-  .hero h1,
-  .hero h2,
-  .hero h3,
-  .hero h4,
-  .hero h5,
-  .hero h6 {
-      color: inherit;
-  }
-
+.alert h1,
+.alert h2,
+.alert h3,
+.alert h4,
+.alert h5,
+.alert h6,
+.hero h1,
+.hero h2,
+.hero h3,
+.hero h4,
+.hero h5,
+.hero h6 {
+  color: inherit;
+}
 
 .menu__list {
-    margin-bottom: 15px;
+  margin-bottom: 15px;
 }
 
 .menu__link {
@@ -507,7 +549,6 @@ table tr:nth-child(n):not(table tr:first-child) {
   background-size: 1.6rem 1.6rem;
 }
 
-
 .table-of-contents__link {
   font-family: 'Metropolis Medium';
   font-size: 1rem;
@@ -525,194 +566,179 @@ table tr:nth-child(n):not(table tr:first-child) {
   padding-left: 12px;
 }
 
-
 .table-of-contents {
   padding: 0px;
 }
 
+.navbar {
+  font-family: 'Metropolis Semi Bold';
+  line-height: 1.25rem;
+  font-weight: 400;
+  border-bottom: 1px solid #E8EEFB;
+  box-shadow: none;
+}
+[data-theme='dark']  .navbar {
+  border-bottom: 1px solid var(--ifm-color-gray-700);
+ }
 
-  .navbar {
-      font-family: 'Metropolis Semi Bold';
-      line-height: 1.25rem;
-      font-weight: 400;
-      border-bottom: 1px solid #E8EEFB;
-      box-shadow: none;
-  }
-  [data-theme='dark']  .navbar {
-    border-bottom: 1px solid var(--ifm-color-gray-700);
-   }
+.navbar__items--right > * {
+  margin-left: 2rem;
+}
 
+.navbar__brand {
+  height: 25px;
+}
 
-  .navbar__items--right > * {
-    margin-left: 2rem;
-  }
+.section-header {
+  font-family: 'Metropolis Semi Bold';
+  font-size: 1.5rem;
+  letter-spacing: 0.04em;
+  color: #909FBE;
+}
 
-  .navbar__brand {
-    height: 25px;
-  }
+[data-theme='dark']  .section-header {
+  color: #B0BFD9;
+}
 
-  .section-header {
-    font-family: 'Metropolis Semi Bold';
-    font-size: 1.5rem;
-    letter-spacing: 0.04em;
-    color: #909FBE;
-  }
+.footer {
+  border-top: 1px solid #E8EEFB;
+  background-color: #fff;
+}
 
-  [data-theme='dark']  .section-header {
-   color: #B0BFD9;
-  }
+[data-theme='dark'] .footer {
+  border-top: 1px solid var(--ifm-color-gray-700);
+  background-color: #0D192F;
+}
 
-  .footer {
-    border-top: 1px solid #E8EEFB;
-    background-color: #fff;
-  }
+.footer__links {
+  margin-left: max(1rem, calc(20% - 5rem));
+  margin-right: max(1rem, calc(20% - 5rem));
+  font-size: 1rem;
+}
 
-  [data-theme='dark'] .footer {
-    border-top: 1px solid var(--ifm-color-gray-700);
-    background-color: #0D192F;
-  }
+.footer__bottom {
+  display: flex;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  margin-left: max(1rem, calc(20% - 5rem));
+  margin-right: max(1rem, calc(20% - 5rem));
+}
 
+.footer__logo {
+  height: 3rem;
+  margin-right: 1em;
+  margin-bottom: -1em;
+}
 
-  .footer__links {
-    margin-left: max(1rem, calc(20% - 5rem));
-    margin-right: max(1rem, calc(20% - 5rem));
-    font-size: 1rem;
-  }
+.footer__copyright {
+  font-size: 0.9rem;
+  margin-top: 1em;
+}
 
-  .footer__bottom {
-    display: flex;
-    align-items: flex-end;
-    flex-wrap: wrap;
-    margin-left: max(1rem, calc(20% - 5rem));
-    margin-right: max(1rem, calc(20% - 5rem));
-  }
+.grey {
+  color: var(--ifm-navbar-link-color);
+}
 
-  .footer__logo {
-    height: 3rem;
-    margin-right: 1em;
-    margin-bottom: -1em;
-  }
+.headline-stick {
+  height: 4px;
+  background-color: var(--ifm-color-primary);
+  margin-bottom: 1.25rem;
+  width: 16px;
+  transition: all var(--ifm-transition-fast) var(--ifm-transition-timing-default);
+}
 
-  .footer__copyright {
-    font-size: 0.9rem;
-    margin-top: 1em;
-  }
+.headline-stick.size-s {
+  width: 32px;
+}
 
-  ::selection {
-    background-color: #b3d4fc;
-    color: #000;
-    text-shadow: none;
-  }
+.headline-stick.size-m {
+  width: 48px;
+}
 
-  .grey {
-    color: var(--ifm-navbar-link-color);
-  }
-
-  .headline-stick {
-    height: 4px;
-    background-color: var(--ifm-color-primary);
-    margin-bottom: 1.25rem;
-    width: 16px;
-    transition: all var(--ifm-transition-fast) var(--ifm-transition-timing-default);
-  }
-
-  .headline-stick.size-s {
-    width: 32px;
-  }
-
-  .headline-stick.size-m {
-    width: 48px;
-  }
-
-  /*
-  Patch to avoid displaying a double header in imported DOCS
-  */
-  div.markdown > p > header > h1 {
+/* Patch to avoid displaying a double header in imported DOCS */
+div.markdown > p > header > h1 {
   display:none;
-  }
+}
 
-/**
-Logo fonts CSS
-**/
+
+/*** 4.0 - Logo fonts ***/
 
 @font-face {
-    font-family: 'icomoon';
-    src:  url('fonts/icomoon.eot?yl49be');
-    src:  url('fonts/icomoon.eot?yl49be#iefix') format('embedded-opentype'),
-    url('fonts/icomoon.ttf?yl49be') format('truetype'),
-    url('fonts/icomoon.woff?yl49be') format('woff'),
-    url('fonts/icomoon.svg?yl49be#icomoon') format('svg');
-    font-weight: normal;
-    font-style: normal;
-    font-display: block;
+  font-family: 'icomoon';
+  src:  url('fonts/icomoon.eot?yl49be');
+  src:  url('fonts/icomoon.eot?yl49be#iefix') format('embedded-opentype'),
+  url('fonts/icomoon.ttf?yl49be') format('truetype'),
+  url('fonts/icomoon.woff?yl49be') format('woff'),
+  url('fonts/icomoon.svg?yl49be#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
 }
 
 .dropdown > .navbar__link--active:after {
-    border-color: currentColor transparent;
-    border-style: solid;
-    border-width: 0.4em 0.4em 0;
-    content: '';
-    display: inline-block;
-    margin-left: 0.3em;
-    position: relative;
-    top: 2px;
-    transform: translateY(-50%);
+  border-color: currentColor transparent;
+  border-style: solid;
+  border-width: 0.4em 0.4em 0;
+  content: '';
+  display: inline-block;
+  margin-left: 0.3em;
+  position: relative;
+  top: 2px;
+  transform: translateY(-50%);
 }
 
 [class^="icon-"],  [class*=" icon-"]  {
-    justify-content: left ;
+  justify-content: left ;
 }
 
 [class^="icon-"]:before, [class*=" icon-"]:before {
-    /* use !important to prevent issues with browser extensions that change fonts */
-    font-family: 'icomoon' !important;
-    speak: never;
-    font-style: normal;
-    font-weight: normal;
-    font-variant: normal;
-    text-transform: none;
-    line-height: 1;
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
 
-    /* Better Font Rendering =========== */
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    margin-right: 10px;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin-right: 10px;
 }
 
 .icon-chrysalis:before {
-    content: "\e909";
+  content: "\e909";
 }
 .icon-wasp:before {
-    content: "\e900";
+  content: "\e900";
 }
 .icon-wallet:before {
-    content: "\e901";
+  content: "\e901";
 }
 .icon-stronghold:before {
-    content: "\e902";
+  content: "\e902";
 }
 .icon-iota-mark:before {
-    content: "\e903";
+  content: "\e903";
 }
 .icon-iota-20:before {
-    content: "\e904";
+  content: "\e904";
 }
 .icon-identity:before {
-    content: "\e905";
+  content: "\e905";
 }
 .icon-hornet:before {
-    content: "\e906";
+  content: "\e906";
 }
 .icon-goshimmer:before {
-    content: "\e907";
+  content: "\e907";
 }
 .icon-getting-started:before {
-    content: "\e908";
+  content: "\e908";
 }
 .icon-bee:before {
-    content: "\e90a";
+  content: "\e90a";
 }
 
-/**
-Logo fonts CSS
-**/
+/*** END Logo fonts ***/
