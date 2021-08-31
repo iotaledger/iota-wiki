@@ -56,12 +56,21 @@ function Action({ title, image, image_hover, link, description }) {
       <div
         className='card'
         onClick={handleClick}
+        onMouseOver={() => setHovering(true)}
+        onMouseOut={() => setHovering(false)}
       >
         <div className='card__image'>
           <img className='image' src={image}/>
         </div>
         <div className='card__body'>
           <h3>{title}</h3>
+          <div className={clsx(
+            'headline-stick',
+            {
+              'size-m': hovering,
+              'size-s': !hovering
+            }
+          )}></div>
           <small>{description}</small>
         </div>
       </div>
