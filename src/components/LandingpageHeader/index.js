@@ -74,15 +74,15 @@ function LandingpageHeader() {
   const { isDarkTheme } = useThemeContext();
 
   return (
-    <header className='header padding-vert--xl'>
+    <header className='header'>
       <div className='title margin-horiz--sm'>
         <div>
           <h1 className='title__text'>{siteConfig.title}</h1>
           <span className='title__subtext grey'>{siteConfig.tagline}</span>
         </div>
       </div>
-      <div className='margin-top--xl'>
-        <div className='actionlist row'>
+      <div className='card-container'>
+        <div className='card-container__row row'>
           {ActionList.map((props, idx) => (
             <Action key={idx} {...props} />
           ))}

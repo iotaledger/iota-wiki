@@ -39,9 +39,11 @@ color: #909FBE
 
 }
 
-.actionlist {
-  /* margin-left: max(1rem, calc(15% - 5rem));
-  margin-right: max(1rem, calc(15% - 5rem)); */
+.card-container {
+  margin-top: 5rem;
+}
+
+.card-container__row {
   max-width: 80rem;
   margin-left: auto;
   margin-right: auto;
@@ -83,4 +85,9 @@ html[data-theme='light'] {
 .image {
   margin-top: -50px;
   margin-bottom: -15px;
+}
+
+.header {
+  padding-top: 7rem;
+  padding-bottom: 5rem;
 }
