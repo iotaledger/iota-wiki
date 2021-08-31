@@ -25,18 +25,11 @@ p {
   margin-right: 0.5rem;
 }
 
-.title__text {
-  font-family: 'Metropolis Semi Bold';
-  margin-bottom: 0;
-  font-size: 2.3rem;
-  letter-spacing: 0.02em;
-}
-
 .title__subtext {
-font-size: 1.2rem;
-font-weight: 600;
-color: #909FBE
-
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #909FBE;
+  text-align: center;
 }
 
 .card-container {
@@ -69,7 +62,3 @@ color: #909FBE
   width: 100%;
 }
 
-.header {
-  padding-top: 7rem;
-  padding-bottom: 5rem;
-}

@@ -8,7 +8,10 @@ html {
 
 .title__text {
   text-align: center;
-  font-size: 5rem !important;
+  font-size: 4rem;
+  font-family: 'Metropolis Semi Bold';
+  margin-bottom: 0;
+  letter-spacing: 0.02em;
 }
 
 .title__subtext {
