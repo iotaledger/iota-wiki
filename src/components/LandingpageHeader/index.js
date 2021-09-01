@@ -33,7 +33,7 @@ const ActionList = [
   {
     title: 'Build',
     image: 'img/build.svg',
-    link: 'docs/develop/getting-started/architecture',
+    link: 'docs/build/getting-started/architecture',
     description: (
       <>
         Access documentation and guides to build with IOTA in Rust, C, Go, Java or Python.

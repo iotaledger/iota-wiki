@@ -199,16 +199,16 @@ module.exports =
     ],
 
 
-    develop: [
+    build: [
         {
             type: 'category',
             label: 'Getting Started',
             collapsed: false,
             items: [
-                'develop/getting-started/architecture',
-                'develop/getting-started/environment',
-                'develop/getting-started/send-a-first-message',
-                'develop/getting-started/devnet',
+                'build/getting-started/architecture',
+                'build/getting-started/environment',
+                'build/getting-started/send-a-first-message',
+                'build/getting-started/devnet',
             ],
         },        
         {
@@ -216,11 +216,11 @@ module.exports =
             label: 'Fundamentals',
             collapsed: true,
             items: [
-                'develop/fundamentals/cryptography',
-                'develop/fundamentals/consensus',
-                'develop/fundamentals/mana',
-                'develop/fundamentals/utxo',
-                'develop/fundamentals/dapps',
+                'build/fundamentals/cryptography',
+                'build/fundamentals/consensus',
+                'build/fundamentals/mana',
+                'build/fundamentals/utxo',
+                'build/fundamentals/dapps',
             ],
         },        
         {
@@ -228,7 +228,7 @@ module.exports =
             label: 'Exchange Integration',
             collapsed: true,
             items: [
-                'develop/exchange-integration/exchange-integration-guide',
+                'build/exchange-integration/exchange-integration-guide',
             ],
         },        
         {
@@ -236,8 +236,8 @@ module.exports =
             label: 'Tutorials',
             collapsed: true,
             items: [
-                'develop/tutorials/hackster',
-                'develop/tutorials/youtube',
+                'build/tutorials/hackster',
+                'build/tutorials/youtube',
             ],
         },
     ],   
