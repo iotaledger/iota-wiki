@@ -5,6 +5,10 @@
  * LICENSE file in the root directory of this source tree.
  */
 
+.blogHeader a {
+  border:none
+}
+
 .blogPostTitle {
   font-size: 3rem !important;
 }

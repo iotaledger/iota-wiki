@@ -63,7 +63,7 @@ function BlogPostItem(props) {
   const renderPostHeader = () => {
     const TitleHeading = isBlogPostPage ? 'h1' : 'h2';
     return (
-      <header>
+      <header className={styles.blogHeader}>
         <TitleHeading className={styles.blogPostTitle}>
           {isBlogPostPage ? title : <Link to={permalink}>{title}</Link>}
         </TitleHeading>
