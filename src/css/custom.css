@@ -10,13 +10,9 @@ article {
   padding-bottom: 3rem;
 }
 
-article a {
+article a:hover {
   border-bottom: 1px solid var(--ifm-link-color);
   padding-bottom: 1px;
-}
-
-article a:hover {
-  color: var(--ifm-link-hover-color)
 }
 
 h1 {
@@ -633,11 +629,7 @@ table tr:nth-child(n):not(table tr:first-child) {
     width: 48px;
   }
 
-  .anchor {
-    border: none;
-  }
-
-  .hash-link {
+  .hash-link:hover {
     border: none;
   }
 
