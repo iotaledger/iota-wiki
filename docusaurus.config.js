@@ -147,6 +147,27 @@ module.exports = {
             },
           ],
         },
+        {
+          title: 'WIKI',
+          items: [
+            {
+              label: 'Github',
+              href: 'https://github.com/iota-community/iota-wiki'
+            },
+            {
+              label: 'Editor Github',
+              href: 'https://github.com/jlvandenhout/docusaurus-plugin-docs-editor'
+            },
+            {
+              label: 'Docusaurus',
+              href: 'https://docusaurus.io'
+            },
+            {
+              label: 'Blog',
+              to: 'blog'
+            },
+          ],
+        },
       ],
       logo: {
         alt: 'IOTA Logo',
