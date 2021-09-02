@@ -77,7 +77,12 @@ function MegaDropdownItem({className, ...props}) {
   throw 'Mega dropdown item must be a link or a category header.'
 }
 
-function MegaDropdownGrid({items, layout}) {
+function MegaDropdownNavbarItemDesktop({items_: items, layout, position, className, ...props}) {
+  const localPathname = useLocalPathname();
+  const containsActive = containsActiveItems(items, localPathname);
+  const dropdownRef = useRef(null);
+  const [showDropdown, setShowDropdown] = useState(false);
+
   const itemCursors = items.map(createItemCursor)
 
   // Layout is in row major order due to CSS grid area syntax
@@ -102,38 +107,27 @@ function MegaDropdownGrid({items, layout}) {
     }
   })
 
-  // TODO: Implement menu close behavior when pressing tab on last item.
-
   // Place items in grid in row major order.
   const grid = []
+  let lastItem = null
   for (let rowOffset = 0; rowOffset < rowCount; rowOffset++) {
     const rows = []
     for (let columnOffset = 0; columnOffset < columnCount; columnOffset++) {
-      rows.push(gridItems[rowOffset + columnOffset * rowCount])
+      const item = gridItems[rowOffset + columnOffset * rowCount]
+      rows.push(item)
+      if (item) {
+        lastItem = item
+      }
     }
     grid.push(rows)
   }
 
-  return (
-    <div className='mega-dropdown__grid'>
-      {grid.map((row, rowKey) => (
-        <div className='row mega-dropdown__row' key={rowKey}>
-          {row.map((column, columnKey) => (
-            <div className='col mega-dropdown__col' key={columnKey}>
-              {column ? <MegaDropdownItem {...column} /> : null}
-            </div>
-          ))}
-        </div>
-      ))}
-    </div>
-  )
-}
-
-function MegaDropdownNavbarItemDesktop({items_: items, layout, position, className, ...props}) {
-  const localPathname = useLocalPathname();
-  const containsActive = containsActiveItems(items, localPathname);
-  const dropdownRef = useRef(null);
-  const [showDropdown, setShowDropdown] = useState(false);
+  // Add tab behavior to last item
+  lastItem.onKeyDown = (e) => {
+    if (e.key === 'Tab') {
+      setShowDropdown(false);
+    }
+  }
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -186,7 +180,17 @@ function MegaDropdownNavbarItemDesktop({items_: items, layout, position, classNa
           'mega-dropdown__container--show': showDropdown,
         })}
       >
-        <MegaDropdownGrid items={items} layout={layout} />
+        <div className='mega-dropdown__grid'>
+          {grid.map((row, rowKey) => (
+            <div className='row mega-dropdown__row' key={rowKey}>
+              {row.map((column, columnKey) => (
+                <div className='col mega-dropdown__col' key={columnKey}>
+                  {column ? <MegaDropdownItem {...column} /> : null}
+                </div>
+              ))}
+            </div>
+          ))}
+        </div>
       </div>
     </>
   );
