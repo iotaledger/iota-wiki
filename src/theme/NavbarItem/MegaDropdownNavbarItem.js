@@ -14,6 +14,7 @@ import {
 } from '@docusaurus/theme-common';
 import {NavLink} from '@theme/NavbarItem/DefaultNavbarItem';
 import NavbarItem from '@theme/NavbarItem';
+import './styles.css';
 const dropdownLinkActiveClass = 'dropdown__link--active';
 
 function isItemActive(item, localPathname) {
@@ -70,7 +71,7 @@ function MegaDropdownItem({className, ...props}) {
   }
 
   if (props.label) {
-    return <h4>{props.label}</h4>
+    return <span className='mega-dropdown__label'>{props.label}</span>
   }
 
   throw 'Mega dropdown item must be a link or a category header.'
