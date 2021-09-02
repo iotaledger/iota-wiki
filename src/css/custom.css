@@ -539,6 +539,10 @@ Logo fonts CSS
     margin-right: 10px;
 }
 
+.mega-dropdown__label {
+  text-transform: uppercase;
+}
+
 .icon-chrysalis:before {
     content: "\e909";
 }

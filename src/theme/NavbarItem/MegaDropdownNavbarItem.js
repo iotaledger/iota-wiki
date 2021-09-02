@@ -65,6 +65,7 @@ function MegaDropdownItem({className, ...props}) {
           'dropdown__link',
           className,
         )}
+        activeClassName={dropdownLinkActiveClass}
         {...props}
       />
     )

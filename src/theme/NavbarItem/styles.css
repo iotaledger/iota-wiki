@@ -28,8 +28,9 @@
 
 .mega-dropdown__label {
   border-radius: 0.25rem;
-  color: var(--ifm-dropdown-link-color);
+  color: var(--ifm-menu-color);
   display: block;
+  font-family: var(--ifm-heading-font-family);
   font-size: 0.875rem;
   margin-top: 0.2rem;
   padding: 0.25rem 0.5rem;
