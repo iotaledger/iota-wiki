@@ -97,24 +97,21 @@ function MegaDropdownGrid({items, layout}) {
   const gridItems = gridIndexes.map((index) => {
     const cursor = itemCursors[index]
     if (cursor) {
-      const props = cursor.items[cursor.index++]
-      if (props) {
-        return <MegaDropdownItem {...props} />
-      }
+        return cursor.items[cursor.index++] ?? null
     }
   })
 
   // TODO: Implement menu close behavior when pressing tab on last item.
 
   // Place items in grid in row major order.
-  const grid = Array(rowCount).fill(Array(columnCount).fill())
-  gridItems.forEach((item, itemOffset) => {
-    if (item) {
-      const rowOffset = itemOffset % rowCount
-      const columnOffset = Math.floor(itemOffset / rowCount)
-      grid[rowOffset][columnOffset] = item
+  const grid = []
+  for (let rowOffset = 0; rowOffset < rowCount; rowOffset++) {
+    const rows = []
+    for (let columnOffset = 0; columnOffset < columnCount; columnOffset++) {
+      rows.push(gridItems[rowOffset + columnOffset * rowCount])
     }
-  })
+    grid.push(rows)
+  }
 
   return (
     <div className='mega-dropdown__grid'>
@@ -122,7 +119,7 @@ function MegaDropdownGrid({items, layout}) {
         <div className='row mega-dropdown__row' key={rowKey}>
           {row.map((column, columnKey) => (
             <div className='col mega-dropdown__col' key={columnKey}>
-              {column}
+              {column ? <MegaDropdownItem {...column} /> : null}
             </div>
           ))}
         </div>
