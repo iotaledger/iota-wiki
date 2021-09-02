@@ -52,131 +52,102 @@ module.exports = {
         },
         {
           label: 'Build',
-          to: 'mega-dropdown',
-          sections: [
-            [
-              {
-                label: "Getting Started",
-                to: "docs/develop/getting-started/architecture",
-                icon: "\e908",
-                activeBaseRegex: 'docs/develop/getting-started/.*'
-              },
-            ],
-            [
-              {
-                label: 'Chrysalis (IOTA 1.5)',
-                sections: [
-                  [
-                    {
-                      label: "Chrysalis Docs",
-                      to: "chrysalis-docs/welcome",
-                      icon: "\e909",
-                      activeBaseRegex: 'chrysalis-docs/.*',
-                    },
-                    {
-                      label: "Bee Node",
-                      to: "bee/getting_started/getting_started",
-                      icon: "\e90a",
-                      activeBaseRegex: 'bee/.*'
-                    },
-                    {
-                      label: "Hornet Node",
-                      to: "hornet/welcome",
-                      icon: "\e906",
-                      activeBaseRegex: 'hornet/.*'
-                    },
-                  ]
-                ],
-              },
-            ],
-            [
-              {
-                label: 'Coordicide (IOTA 2.0)',
-                sections: [
-                  [
-                    {
-                      label: "Coordicide Specs",
-                      to: "IOTA-2.0-Research-Specifications/Preface",
-                      icon: "\e904",
-                      activeBaseRegex: 'IOTA-2.0-Research-Specifications/.*'
-                    },
-                    {
-                      label: "GoShimmer Node",
-                      to: "goshimmer/welcome",
-                      icon: "\e907",
-                      activeBaseRegex: 'goshimmer/.*'
-                    },
-                  ]
-                ],
-              },
-              {
-                label: 'Libraries',
-                sections: [
-                  [
-                    {
-                      label: "Core",
-                      to: "iota.rs/welcome",
-                      icon: "\e903",
-                      activeBaseRegex: 'iota.rs/.*'
-                    },
-                    {
-                      label: "Wallet",
-                      to: "wallet.rs/welcome",
-                      icon: "\e901",
-                      activeBaseRegex: 'wallet.rs/.*'
-                    },
-                  ],
-                  [
-                    {
-                      label: "Stronghold",
-                      to: "stronghold.rs/welcome",
-                      icon: "\e902",
-                      activeBaseRegex: 'stronghold.rs/.*'
-                    },
-                    {
-                      label: "Identity",
-                      to: "identity.rs/intro",
-                      icon: "\e905",
-                      activeBaseRegex: 'identity.rs/.*'
-                    },
-                  ]
-                ],
-              },
-            ],
-            [
-              {
-                label: 'Smart Contracts',
-                sections: [
-                  [
-                    {
-                      label: "Wasp Node",
-                      to: "wasp/welcome",
-                      icon: "\e900",
-                      activeBaseRegex: 'wasp/.*',
-                    },
-                  ]
-                ],
-              },
-              {
-                label: 'Coordicide (IOTA 2.0)',
-                sections: [
-                  [
-                    {
-                      label: "Coordicide Specs",
-                      to: "IOTA-2.0-Research-Specifications/Preface",
-                      icon: "\e904",
-                      activeBaseRegex: 'IOTA-2.0-Research-Specifications/.*'
-                    },
-                    {
-                      label: "GoShimmer Node",
-                      to: "goshimmer/welcome",
-                      icon: "\e907",
-                      activeBaseRegex: 'goshimmer/.*'
-                    },
-                  ]
-                ],
-              },
-            ],
+          to: '#',
+          layout: [
+            '0',
+            '1 . 3',
+            '1 1 3 3',
+            '1 1 3 3',
+            '2 . 4',
+            '2 2 4',
+          ],
+          items_: [
+            {
+              label: "Getting Started",
+              to: "docs/develop/getting-started/architecture",
+              icon: "\e908",
+              activeBaseRegex: 'docs/develop/getting-started/.*'
+            },
+            {
+              label: 'Chrysalis (IOTA 1.5)',
+              items: [
+                {
+                  label: "Chrysalis Docs",
+                  to: "chrysalis-docs/welcome",
+                  icon: "\e909",
+                  activeBaseRegex: 'chrysalis-docs/.*',
+                },
+                {
+                  label: "Bee Node",
+                  to: "bee/getting_started/getting_started",
+                  icon: "\e90a",
+                  activeBaseRegex: 'bee/.*'
+                },
+                {
+                  label: "Hornet Node",
+                  to: "hornet/welcome",
+                  icon: "\e906",
+                  activeBaseRegex: 'hornet/.*'
+                },
+              ],
+            },
+            {
+              label: 'Coordicide (IOTA 2.0)',
+              items: [
+                {
+                  label: "Coordicide Specs",
+                  to: "IOTA-2.0-Research-Specifications/Preface",
+                  icon: "\e904",
+                  activeBaseRegex: 'IOTA-2.0-Research-Specifications/.*'
+                },
+                {
+                  label: "GoShimmer Node",
+                  to: "goshimmer/welcome",
+                  icon: "\e907",
+                  activeBaseRegex: 'goshimmer/.*'
+                },
+              ],
+            },
+            {
+              label: 'Libraries',
+              items: [
+                {
+                  label: "Core",
+                  to: "iota.rs/welcome",
+                  icon: "\e903",
+                  activeBaseRegex: 'iota.rs/.*'
+                },
+                {
+                  label: "Wallet",
+                  to: "wallet.rs/welcome",
+                  icon: "\e901",
+                  activeBaseRegex: 'wallet.rs/.*'
+                },
+                {
+                  label: "Stronghold",
+                  to: "stronghold.rs/welcome",
+                  icon: "\e902",
+                  activeBaseRegex: 'stronghold.rs/.*'
+                },
+                {
+                  label: "Identity",
+                  to: "identity.rs/intro",
+                  icon: "\e905",
+                  activeBaseRegex: 'identity.rs/.*'
+                },
+              ],
+            },
+            {
+              label: 'Smart Contracts',
+              items: [
+                {
+                  label: "Wasp Node",
+                  to: "wasp/welcome",
+                  icon: "\e900",
+                  activeBaseRegex: 'wasp/.*',
+                },
+              ],
+            },
           ],
         },
         { to: '/blog', label: 'Blog', position: 'right' },
