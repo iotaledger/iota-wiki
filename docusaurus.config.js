@@ -64,6 +64,7 @@ module.exports = {
           items_: [
             {
               label: "Getting Started",
+              sublabel: "IOTA development basics",
               to: "docs/develop/getting-started/architecture",
               icon: "\e908",
               activeBaseRegex: 'docs/develop/getting-started/.*'
@@ -73,18 +74,21 @@ module.exports = {
               items: [
                 {
                   label: "Chrysalis Docs",
+                  sublabel: "Mainnet documentation",
                   to: "chrysalis-docs/welcome",
                   icon: "\e909",
                   activeBaseRegex: 'chrysalis-docs/.*',
                 },
                 {
                   label: "Bee Node",
+                  sublabel: "IOTA node written in Rust",
                   to: "bee/getting_started/getting_started",
                   icon: "\e90a",
                   activeBaseRegex: 'bee/.*'
                 },
                 {
                   label: "Hornet Node",
+                  sublabel: "IOTA node written in Go",
                   to: "hornet/welcome",
                   icon: "\e906",
                   activeBaseRegex: 'hornet/.*'
@@ -96,12 +100,14 @@ module.exports = {
               items: [
                 {
                   label: "Coordicide Specs",
+                  sublabel: "Full specs of decentralized IOTA",
                   to: "IOTA-2.0-Research-Specifications/Preface",
                   icon: "\e904",
                   activeBaseRegex: 'IOTA-2.0-Research-Specifications/.*'
                 },
                 {
                   label: "GoShimmer Node",
+                  sublabel: "IOTA 2.0 node",
                   to: "goshimmer/welcome",
                   icon: "\e907",
                   activeBaseRegex: 'goshimmer/.*'
@@ -113,24 +119,28 @@ module.exports = {
               items: [
                 {
                   label: "Core",
+                  sublabel: "IOTA core functionality library",
                   to: "iota.rs/welcome",
                   icon: "\e903",
                   activeBaseRegex: 'iota.rs/.*'
                 },
                 {
                   label: "Wallet",
+                  sublabel: "Build IOTA wallets",
                   to: "wallet.rs/welcome",
                   icon: "\e901",
                   activeBaseRegex: 'wallet.rs/.*'
                 },
                 {
                   label: "Stronghold",
+                  sublabel: "Hanlde secrets securely",
                   to: "stronghold.rs/welcome",
                   icon: "\e902",
                   activeBaseRegex: 'stronghold.rs/.*'
                 },
                 {
                   label: "Identity",
+                  sublabel: "Identity framework",
                   to: "identity.rs/intro",
                   icon: "\e905",
                   activeBaseRegex: 'identity.rs/.*'
@@ -142,6 +152,7 @@ module.exports = {
               items: [
                 {
                   label: "Wasp Node",
+                  sublabel: "Smart-contract node",
                   to: "wasp/welcome",
                   icon: "\e900",
                   activeBaseRegex: 'wasp/.*',
