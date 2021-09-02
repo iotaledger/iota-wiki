@@ -712,30 +712,11 @@ Logo fonts CSS
   visibility: visible;
 }
 
-.mega-dropdown__menu {
-  display: flex;
-
-  border-top: 1px solid rgb(232, 238, 251);
-  border-bottom: 1px solid rgb(232, 238, 251);
-
+.mega-dropdown__grid {
   background-color: var(--ifm-dropdown-background-color);
-  list-style: none;
   max-height: calc(100vh - var(--ifm-navbar-height) - var(--docusaurus-announcement-bar-height));
   overflow-y: auto;
   padding: var(--ifm-navbar-padding-vertical) var(--ifm-navbar-padding-horizontal);
-}
-
-.mega-dropdown__section > .mega-dropdown__section:not(:first-child) {
-  margin-top: 1rem;
-}
-
-.mega-dropdown__section--row {
-  display: flex;
-}
-
-.mega-dropdown__section--row > .mega-dropdown__section:not(:first-child) {
-  margin-top: 0;
-  margin-left: 4rem;
 }
 
 /**

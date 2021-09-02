@@ -36,16 +36,105 @@ function isItemActive(item, localPathname) {
 }
 
 function containsActiveItems(items, localPathname) {
-  return items.flat(2).some((item) => {
-    item.sections ? containsActiveItems(item.sections, localPathname) : isItemActive(item, localPathname)
+  return items.some((item) => {
+    item.items ? containsActiveItems(item.items, localPathname) : isItemActive(item, localPathname)
   });
 }
 
-function MegaDropdownNavbarItemDesktop({sections, position, className, ...props}) {
+function createItemCursor({items, label, className, ...props}) {
+  const cursor = {items: [], index: 0}
+
+  if (items) {
+    if (label) {
+      cursor.items.push({label, className})
+    }
+    cursor.items.push(...items)
+  } else {
+    cursor.items.push({label, className, ...props})
+  }
+
+  return cursor
+}
+
+function MegaDropdownItem({className, ...props}) {
+  if (props.to || props.href) {
+    return (
+      <NavLink
+        className={clsx(
+          'dropdown__link',
+          className,
+        )}
+        {...props}
+      />
+    )
+  }
+
+  if (props.label) {
+    return <h4>{props.label}</h4>
+  }
+
+  throw 'Mega dropdown item must be a link or a category header.'
+}
+
+function MegaDropdownGrid({items, layout}) {
+  const itemCursors = items.map(createItemCursor)
+
+  // Layout is in row major order due to CSS grid area syntax
+  const rowCount = layout.length
+  const columnCount = Math.max(...layout.map(row => row.split(/\s+/).length))
+
+  // Place indexes in column major order.
+  const gridIndexes = []
+  layout.forEach((row, rowOffset) => {
+    row.split(/\s+/).forEach((column, columnOffset) => {
+      if (column && column !== '.') {
+        gridIndexes[rowOffset + columnOffset * rowCount] = column
+      }
+    })
+  })
+
+  // Resolve items in column major order.
+  const gridItems = gridIndexes.map((index) => {
+    const cursor = itemCursors[index]
+    if (cursor) {
+      const props = cursor.items[cursor.index++]
+      if (props) {
+        return <MegaDropdownItem {...props} />
+      }
+    }
+  })
+
+  // TODO: Implement menu close behavior when pressing tab on last item.
+
+  // Place items in grid in row major order.
+  const grid = Array(rowCount).fill(Array(columnCount).fill())
+  gridItems.forEach((item, itemOffset) => {
+    if (item) {
+      const rowOffset = itemOffset % rowCount
+      const columnOffset = Math.floor(itemOffset / rowCount)
+      grid[rowOffset][columnOffset] = item
+    }
+  })
+
+  return (
+    <div className='mega-dropdown__grid'>
+      {grid.map((row, rowKey) => (
+        <div className='row mega-dropdown__row' key={rowKey}>
+          {row.map((column, columnKey) => (
+            <div className='col mega-dropdown__col' key={columnKey}>
+              {column}
+            </div>
+          ))}
+        </div>
+      ))}
+    </div>
+  )
+}
+
+function MegaDropdownNavbarItemDesktop({items_: items, layout, position, className, ...props}) {
   const localPathname = useLocalPathname();
-  const containsActive = containsActiveItems(sections, localPathname);
+  const containsActive = containsActiveItems(items, localPathname);
   const dropdownRef = useRef(null);
-  const dropdownMenuRef = useRef(null);
   const [showDropdown, setShowDropdown] = useState(false);
 
   useEffect(() => {
@@ -99,89 +188,22 @@ function MegaDropdownNavbarItemDesktop({sections, position, className, ...props}
           'mega-dropdown__container--show': showDropdown,
         })}
       >
-        <div
-          ref={dropdownMenuRef}
-          className='mega-dropdown__menu'
-        >
-          <div className='mega-dropdown__section mega-dropdown__section--row'>
-            {sections.map((items, sectionKey) => (
-              <div className='mega-dropdown__section' key={sectionKey}>
-                {items.map(({sections: subSections, className: itemClassName, ...itemProps}, itemKey) => (
-                  (subSections ?
-                    <div className={clsx('mega-dropdown__section', itemClassName)} key={itemKey}>
-                      {itemProps.label ??
-                        <div className='mega-dropdown__header'>
-                          {itemProps.label}
-                        </div>
-                      }
-                      <div className='mega-dropdown__section mega-dropdown__section--row'>
-                        {subSections.map((subItems, subSectionKey) => (
-                          <div className='mega-dropdown__section' key={subSectionKey}>
-                            {subItems.map(({className: subItemClassName, ...subItemProps}, subItemKey) => (
-                              <NavLink
-                                className={clsx(
-                                  'dropdown__link',
-                                  subItemClassName,
-                                )}
-                                activeClassName={dropdownLinkActiveClass}
-                                onKeyDown={(e) => {
-                                  if (
-                                    sectionKey === sections.length - 1 &&
-                                    itemKey === items.length - 1 &&
-                                    subSectionKey === subSections.length - 1 &&
-                                    subItemKey === subItems.length - 1 &&
-                                    e.key === 'Tab'
-                                  ) {
-                                    setShowDropdown(false);
-                                  }
-                                }}
-                                {...subItemProps}
-                                key={subItemKey}
-                              />
-                            ))}
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  :
-                    <NavLink
-                      className={clsx(
-                        'dropdown__link',
-                        itemClassName,
-                      )}
-                      activeClassName={dropdownLinkActiveClass}
-                      onKeyDown={(e) => {
-                        if (
-                          sectionKey === sections.length - 1 &&
-                          itemKey === items.length - 1 &&
-                          e.key === 'Tab'
-                        ) {
-                          setShowDropdown(false);
-                        }
-                      }}
-                      {...itemProps}
-                      key={itemKey}
-                    />
-                  )
-                ))}
-              </div>
-            ))}
-          </div>
-        </div>
+        <MegaDropdownGrid items={items} layout={layout} />
       </div>
     </>
   );
 }
 
 function MegaDropdownNavbarItemMobile({
-  sections,
+  items_: items,
   className,
+  // Need to destructure position and layout from props so that it doesn't get passed on.
   position: _position,
-  // Need to destructure position from props so that it doesn't get passed on.
+  layout: _layout,
   ...props
 }) {
   const localPathname = useLocalPathname();
-  const containsActive = containsActiveItems(sections, localPathname);
+  const containsActive = containsActiveItems(items, localPathname);
   const {collapsed, toggleCollapsed, setCollapsed} = useCollapsible({
     initialState: () => !containsActive,
   }); // Expand/collapse if any item active after a navigation
@@ -207,7 +229,7 @@ function MegaDropdownNavbarItemMobile({
         {props.children ?? props.label}
       </NavLink>
       <Collapsible lazy as="ul" className="menu__list" collapsed={collapsed}>
-        {sections.flat(2).map((itemProps, itemKey) => (
+        {items.map((itemProps, itemKey) => (
           <NavbarItem
             mobile
             isDropdownItem
