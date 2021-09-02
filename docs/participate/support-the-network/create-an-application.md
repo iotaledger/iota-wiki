@@ -1,5 +1,5 @@
 ---
-title: Craete an Application
+title: Create an Application
 description: IOTA is the goto solution if you want a fast, feeless, scalable and secure solution for your Application. Learn how to build what your customers need.
 ---
 
