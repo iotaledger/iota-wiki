@@ -19,7 +19,7 @@
   visibility: visible;
 }
 
-.mega-dropdown__grid {
+.mega-dropdown__menu {
   background-color: var(--ifm-dropdown-background-color);
   max-height: calc(100vh - var(--ifm-navbar-height) - var(--docusaurus-announcement-bar-height));
   overflow-y: auto;
@@ -35,4 +35,33 @@
   margin-top: 0.2rem;
   padding: 0.25rem 0.5rem;
   white-space: nowrap;
+}
+
+.link {
+  display: inline-block;
+}
+
+.link__icon-container {
+  margin-right: 10px;
+  background-color: var(--ifm-color-secondary);
+  border-radius: var(--ifm-global-radius);
+  color: var(--ifm-dropdown-link-color);
+}
+
+.link__icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+}
+
+.link__container {
+  display: flex;
+  align-items: center;
+}
+
+.link__sublabel {
+  color: var(--ifm-menu-color);
+  font-weight: 400;
+  font-size: 80%;
 }
