@@ -15,7 +15,20 @@ html {
 }
 
 .title__subtext {
-  font-size: 1.5rem !important;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #909FBE !important;
+  text-align: center;
+}
+
+@media (max-width: 997px) {
+  .title__text {
+    font-size: 3rem;
+  }
+
+  .title__subtext {
+    font-size: 1.1rem;
+  }
 }
 
 .markdown > h3 {
