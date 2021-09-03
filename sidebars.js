@@ -191,7 +191,15 @@ module.exports =
                 'participate/funding/edf-funding',
                 'participate/funding/community-treasury',
             ],
-        }, 
+        },
+        {
+            type: 'category',
+            label: 'Contribution Guidelines',
+            collapsed: true,
+            items: [
+                'participate/contribution-guidelines/developer-documentation',
+            ],
+        },
     ],
 
 
