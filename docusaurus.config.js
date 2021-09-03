@@ -237,6 +237,7 @@ module.exports = {
         },
         blog: {
           showReadingTime: true,
+          blogSidebarCount: 0,
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
