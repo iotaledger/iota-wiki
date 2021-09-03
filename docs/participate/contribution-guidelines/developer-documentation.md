@@ -1,6 +1,6 @@
 # Developer Documentation Style Guide
 
-Our goal is to let our readers fully understand IOTA, be it IOTA Foundation, community, theory and practice behind the IOTA technology, or tools that support it. We only provide accurate information. We convey it in a clear form with no room to misunderstanding. Our writing welcomes and encourages learning and reading. With this in mind, we form our style guide.
+Our goal is to let our readers fully understand IOTA, be it IOTA Foundation, community, theory and practice behind the IOTA technology, or tools that support it. We only provide accurate information. We convey it in a clear form with no room for misunderstanding. Our writing welcomes and encourages learning and reading. With this in mind, we form our style guide.
 
 ## Quick Reference Guide
 
@@ -21,7 +21,7 @@ Our goal is to let our readers fully understand IOTA, be it IOTA Foundation, com
 - Prefer action verbs over utility verbs (open the door, not use the door; debug console displays errors, not contains errors).
 - [Use standard American spelling](https://developers.google.com/style/spelling) and punctuation.
 - [Put conditional clauses before instructions](https://developers.google.com/style/clause-order), not after.
-- Use common glossary across all documentation. Be consistent. Avoid synonyms for technical terms unless you have mentioned that term beforehand and the relation is clear.
+- Use a common glossary across all documentation. Be consistent. Avoid synonyms for technical terms unless you have mentioned that term beforehand and the relation is clear.
 - For general terms, see the [Google's word list](https://developers.google.com/style/wordlist).
 - Only use words you know, both by their meaning and spelling. If you do not know a word, the chances are that the reader does not know it either.
 
@@ -51,7 +51,7 @@ Refer to IOTA libraries by their filenames: iota.rs, wallet.rs, etc. Always use 
 
 Other IOTA products have an actual name. Always capitalize it: "A Hornet node, a Bee software. Hornet and Bee."
 
-Note that there are no determiners (the) when you refer something by its name: "the iota.rs library" as in "the library named iota.rs", but simply "iota.rs".
+Note that there are no determiners (the) when you refer to something by its name: "the iota.rs library" as in "the library named iota.rs", but simply "iota.rs".
 
 :::tip Good
 
@@ -135,7 +135,7 @@ The reader should understand what a paragraph is about from its first sentence.
 
 Group paragraphs with chapters, sections, and subsections by their common topic or theme.
 
-Always use headings. Make sure that a reader can swiftly navigate through whole article by heading names only. Prefer unique headings over duplications.
+Always use headings. Make sure that a reader can swiftly navigate through the whole article by heading names only. Prefer unique headings over duplications.
 
 #### Other structures
 
@@ -193,13 +193,13 @@ Never use color, size, location, or other visual cues as the primary way of desc
 
 ### Document Rendering and Formatting
 
-Markdown only [specifies](https://daringfireball.net/projects/markdown/syntax) what text elements are, but not how they look like. The final rendering could be affected by a rendering engine that could come from Docusaurus, IDE, or GitHub, a browser extension that changes CSS, or they could read raw .md file or copy parts of your article as a plain text via messenger. Some users do not *see* text at all and rely on screen readers.
+Markdown only [specifies](https://daringfireball.net/projects/markdown/syntax) what text elements are, but not how they look like. The final rendering could be affected by a rendering engine that could come from Docusaurus, IDE, or GitHub, a browser extension that changes CSS, or they could read a raw .md file or copy parts of your article as a plain text via messenger. Some users do not *see* text at all and rely on screen readers.
 
 Never rely on rendering in your work and make sure that everyone can read your article with no formatting at all. For example, use *weak* and **strong** emphasis, but never expect it to always be in italics and bold, respectively.
 
 #### Emphasis
 
-In general, use emphasis notation sparingly. In most cases, you can emphasize anything by using right words and sentence structure even in plain text.
+In general, use emphasis notation sparingly. In most cases, you can emphasize anything by using the right words and sentence structure even in plain text.
 
 Always use *weak emphasis* for UI element names.
 
@@ -246,7 +246,7 @@ Put long quotes in a paragraph-style quote (`>`).
 ### General Dos and Don'ts
 
 - Use [present tense](https://developers.google.com/style/tense).
-- Write [dates and times](https://developers.google.com/style/dates-times) in the global way (DD/MM/YY and 00:00)
+- Write [dates and times](https://developers.google.com/style/dates-times) in the global way (DD/MM/YYYY and 00:00)
 - Use qualifying nouns for technical keywords. For example, when referring to a file called example.yaml, call it the *example.yaml* *file* and not *example.yaml* by itself.
 - Provide context. Don't assume that the reader already knows what you're talking about.
 - Use negative constructions on a case by case basis, like when explaining what a feature does and what does and doesn’t work with it.
