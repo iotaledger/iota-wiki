@@ -57,34 +57,28 @@ export function NavLink({
           })}
       {...props}>
       <div className='link'>
-        <div className='link__container'>
-          {icon && (
-            <div className='link__icon-container'>
-              <div className='link__icon'>{icon}</div>
-            </div>
-          )}
-          <div className='link__body'>
-            <div className='link__label'>
-              {isExternalLink ? (
-                <span>
-                  {label}
-                  <IconExternalLink
-                    {...(isDropdownLink && {
-                      width: 12,
-                      height: 12,
-                    })}
-                  />
-                </span>
-              ) : (
-                label
-              )}
-            </div>
-            {sublabel && (
-              <div className='link__sublabel'>
-                {sublabel}
-              </div>
+        {icon && <div className='link__icon'>{icon}</div>}
+        <div className='link__body'>
+          <div className='link__label'>
+            {isExternalLink ? (
+              <span>
+                {label}
+                <IconExternalLink
+                  {...(isDropdownLink && {
+                    width: 12,
+                    height: 12,
+                  })}
+                />
+              </span>
+            ) : (
+              label
             )}
           </div>
+          {sublabel && (
+            <div className='link__sublabel'>
+              {sublabel}
+            </div>
+          )}
         </div>
       </div>
     </Link>

@@ -72,7 +72,7 @@ function MegaDropdownItem({className, ...props}) {
   }
 
   if (props.label) {
-    return <span className='mega-dropdown__label'>{props.label}</span>
+    return <div className='mega-dropdown__label'>{props.label}</div>
   }
 
   throw 'Mega dropdown item must be a link or a category header.'
