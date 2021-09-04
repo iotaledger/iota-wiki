@@ -139,7 +139,7 @@ module.exports = {
             },
             {
               label: 'Exchange Integration',
-              to: "docs/build/exchange-integration/guide",
+              to: "docs/develop/exchange-integration/exchange-integration-guide",
             },
             {
               label: 'Tutorials',
