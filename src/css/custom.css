@@ -252,11 +252,11 @@ h2 {
   --ifm-color-gray-100: #F2F5FB;
   --ifm-color-gray-200: #E8EEFB;
   --ifm-color-gray-300: #D8E1F4;
-  --ifm-color-gray-400: #AFBEDD;
+  --ifm-color-gray-400: #B0BFD9;
   --ifm-color-gray-500: #909FBE;
-  --ifm-color-gray-600: #7A89A8;
-  --ifm-color-gray-700: #697897;
-  --ifm-color-gray-800: #485776;
+  --ifm-color-gray-600: #677695;
+  --ifm-color-gray-700: #485776;
+  --ifm-color-gray-800: #293858;
   --ifm-color-gray-900: #131F37;
 
   --ifm-background-color: var(--ifm-color-gray-000);
@@ -265,7 +265,7 @@ h2 {
 
   --ifm-hover-overlay: var(--ifm-color-emphasis-200);
 
-  --ifm-font-color-base: var(--ifm-color-emphasis-800);
+  --ifm-font-color-base: var(--ifm-color-emphasis-700);
   --ifm-font-family-base: Inter, sans-serif;
   --ifm-line-height-base: 1.5;
 
