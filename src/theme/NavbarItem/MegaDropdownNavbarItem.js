@@ -184,9 +184,9 @@ function MegaDropdownNavbarItemDesktop({items_: items, layout, position, classNa
         <div className='mega-dropdown__menu'>
           <div className='mega-dropdown__grid'>
             {grid.map((row, rowKey) => (
-              <div className='row mega-dropdown__row' key={rowKey}>
+              <div className='row row--no-gutters mega-dropdown__row' key={rowKey}>
                 {row.map((column, columnKey) => (
-                  <div className='col mega-dropdown__col' key={columnKey}>
+                  <div className='col margin-horiz--xs mega-dropdown__col' key={columnKey}>
                     {column ? <MegaDropdownItem {...column} /> : null}
                   </div>
                 ))}
