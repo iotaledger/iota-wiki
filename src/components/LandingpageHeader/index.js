@@ -71,7 +71,7 @@ function Action({ title, image, image_hover, link, description }) {
               'size-s': !hovering
             }
           )}></div>
-          <small>{description}</small>
+          <div className='card__description'>{description}</div>
         </div>
       </div>
     </div>

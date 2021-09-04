@@ -48,6 +48,11 @@ p {
   padding: 10%;
 }
 
+.card__description {
+  color:white;
+  font-size: 0.95rem;
+}
+
 .image {
   margin-top: -10px;
   margin-bottom: -10px;
