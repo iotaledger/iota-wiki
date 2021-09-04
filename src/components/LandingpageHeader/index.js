@@ -12,34 +12,37 @@ import './styles.css'
 const ActionList = [
   {
     title: 'Learn',
+    image: 'img/learn.svg',
     link: 'docs/learn/about-iota/an-introduction-to-iota',
     description: (
       <>
-        Why IOTA? Basics to deeper topics: Learn about the tangle, industry applications and networks.
+        Learn about IOTA, the Tangle, its features, industry applications, network and more.
       </>
     ),
   },
   {
-    title: 'Use',
-    link: 'docs/use/use-cases/industry-applications',
+    title: 'Participate',
+    image: 'img/participate.svg',
+    link: 'docs/participate/support-the-network/about-nodes',
     description: (
       <>
-        Learn about IOTAs solutions and how they can be applied in the real world.
+        Join the network and start using solutions built on top of the Tangle.
       </>
     ),
   },
   {
-    title: 'Develop',
-    link: 'docs/develop/getting-started/architecture',
+    title: 'Build',
+    image: 'img/build.svg',
+    link: 'docs/build/getting-started/architecture',
     description: (
       <>
-        Follow our tutorials and documentation to build your own projects. IOTA supports Rust, C, Go, Java, and Python.
+        Access documentation and guides to build with IOTA in Rust, C, Go, Java or Python.
       </>
     ),
   },
 ];
 
-function Action({ title, link, description }) {
+function Action({ title, image, image_hover, link, description }) {
   let [hovering, setHovering] = useState(false);
   let history = useHistory();
 
@@ -51,28 +54,24 @@ function Action({ title, link, description }) {
   return (
     <div className='col col--4 margin-vert--md'>
       <div
-        className='action padding--lg'
+        className='card'
         onClick={handleClick}
         onMouseOver={() => setHovering(true)}
         onMouseOut={() => setHovering(false)}
       >
-        <div className='action__header'>
-          <span className='action__title'>{title}</span>
-          <div href={link} className='action__button'>
-            <span className='action__icon material-icons'>
-              navigate_next
-            </span>
-          </div>
+        <div className='card__image'>
+          <img className='image' src={image}/>
         </div>
-        <div className={clsx(
-          'headline-stick',
-          {
-            'size-m': hovering,
-            'size-s': !hovering
-          }
-        )}></div>
-        <div className='action__description'>
-          {description}
+        <div className='card__body'>
+          <h3>{title}</h3>
+          <div className={clsx(
+            'headline-stick',
+            {
+              'size-m': hovering,
+              'size-s': !hovering
+            }
+          )}></div>
+          <div className='card__description'>{description}</div>
         </div>
       </div>
     </div>
@@ -86,15 +85,13 @@ function LandingpageHeader() {
   return (
     <header className='header padding-vert--xl'>
       <div className='title margin-horiz--sm'>
-        <img className='title__image' src={isDarkTheme ? useBaseUrl('/img/globe_dark.svg') : useBaseUrl('/img/globe_light.svg')} />
         <div>
           <h1 className='title__text'>{siteConfig.title}</h1>
-          <span className='title__subtext grey'>{siteConfig.tagline}</span>
+          <div className='title__subtext grey'>{siteConfig.tagline}</div>
         </div>
       </div>
-      <div className='margin-top--xl'>
-        <div className='section-header text--center margin-bottom--sm' >Get started, right away</div>
-        <div className='actionlist row'>
+      <div className='card-container'>
+        <div className='card-container__row row'>
           {ActionList.map((props, idx) => (
             <Action key={idx} {...props} />
           ))}

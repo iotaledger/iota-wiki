@@ -47,24 +47,20 @@ module.exports = {
           to: "docs/learn/about-iota/an-introduction-to-iota",
         },
         {
-          label: "Use",
-          to: "docs/use/use-cases/industry-applications",
+          label: "Participate",
+          to: "docs/participate/support-the-network/about-nodes",
         },
         {
-          label: 'Develop',
+          label: 'Build',
           items: [
             {
               label: "Getting Started",
-              to: "docs/develop/getting-started/architecture",
+              to: "docs/build/getting-started/architecture",
               className: 'icon-getting-started',
-              activeBaseRegex: 'docs/develop/getting-started/.*'
+              activeBaseRegex: 'docs/build/getting-started/.*'
             },
             /* AUTO GENERATED EXTERNAL DOCS DROPDOWN CONFIG */
           ]
-        },
-        {
-          label: "Participate",
-          to: "docs/participate/support-the-network/run-a-node",
         },
         { to: '/blog', label: 'Blog', position: 'right' },
       ],
@@ -102,64 +98,6 @@ module.exports = {
           ],
         },
         {
-          title: 'USE',
-          items: [
-            {
-              label: 'Use Cases',
-              to: "docs/use/use-cases/industry-applications",
-            },
-            {
-              label: 'Streams',
-              to: "docs/use/streams/encrypted-data-comms",
-            },
-            {
-              label: 'Identity',
-              to: "docs/use/identity/enabling-privacy-and-trust",
-            },
-            {
-              label: 'Access',
-              to: "docs/use/access/secure-access-control",
-            },
-            {
-              label: 'Smart Contracts',
-              to: "docs/use/smart-contracts/programmable-contracts",
-            },
-            {
-              label: 'Stronghold',
-              to: "docs/use/stronghold/protecting-your-secrets",
-            },
-            {
-              label: 'Oracles',
-              to: "docs/use/oracles/trust-in-real-world-data",
-            },
-            {
-              label: 'Utilities',
-              to: "docs/use/utilities/tangle-explorer",
-            },
-          ],
-        },
-        {
-          title: 'DEVELOP',
-          items: [
-            {
-              label: 'Getting Started',
-              to: "docs/develop/getting-started/architecture",
-            },
-            {
-              label: 'Fundamentals',
-              to: "docs/develop/fundamentals/cryptography",
-            },
-            {
-              label: 'Exchange Integration',
-              to: "docs/develop/exchange-integration/exchange-integration-guide",
-            },
-            {
-              label: 'Tutorials',
-              to: "docs/develop/tutorials/youtube",
-            },
-          ],
-        },
-        {
           title: 'PARTICIPATE',
           items: [
             {
@@ -178,13 +116,62 @@ module.exports = {
               label: 'Funding',
               to: "docs/participate/funding/edf-funding",
             },
+            {
+              label: 'Use Cases',
+              to: "docs/use/use-cases/industry-applications",
+            },
+            {
+              label: 'Solutions',
+              to: "docs/use/streams/encrypted-data-comms",
+            },
+          ],
+        },
+        {
+          title: 'BUILD',
+          items: [
+            {
+              label: 'Getting Started',
+              to: "docs/build/getting-started/architecture",
+            },
+            {
+              label: 'Fundamentals',
+              to: "docs/build/fundamentals/cryptography",
+            },
+            {
+              label: 'Exchange Integration',
+              to: "docs/develop/exchange-integration/exchange-integration-guide",
+            },
+            {
+              label: 'Tutorials',
+              to: "docs/build/tutorials/youtube",
+            },
+          ],
+        },
+        {
+          title: 'WIKI',
+          items: [
+            {
+              label: 'Github',
+              href: 'https://github.com/iota-community/iota-wiki'
+            },
+            {
+              label: 'Editor Github',
+              href: 'https://github.com/jlvandenhout/docusaurus-plugin-docs-editor'
+            },
+            {
+              label: 'Docusaurus',
+              href: 'https://docusaurus.io'
+            },
+            {
+              label: 'Blog',
+              to: 'blog'
+            },
           ],
         },
       ],
       logo: {
         alt: 'IOTA Logo',
         src: 'img/iota_logo.svg',
-        srcDark: 'img/iota_logo_dark.svg',
         href: 'https://www.iota.org',
       },
       copyright: `© ${new Date().getFullYear()} IOTA Wiki, Built with Docusaurus.`,
