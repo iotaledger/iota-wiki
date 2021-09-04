@@ -83,7 +83,7 @@ function LandingpageHeader() {
   const { isDarkTheme } = useThemeContext();
 
   return (
-    <header className='header  padding-vert--xl'>
+    <header className='header padding-vert--xl'>
       <div className='title margin-horiz--sm'>
         <div>
           <h1 className='title__text'>{siteConfig.title}</h1>
