@@ -39,6 +39,7 @@ p {
   border-radius: 60px;
   overflow: visible;
   cursor: pointer;
+  height: 100%;
 }
 
 .card__body {
@@ -49,7 +50,6 @@ p {
 }
 
 .card__description {
-  color:white;
   font-size: 0.95rem;
 }
 
