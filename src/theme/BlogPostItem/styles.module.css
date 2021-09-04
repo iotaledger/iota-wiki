@@ -11,8 +11,15 @@
 
 .blogPostData {
   font-size: 0.9rem;
+  position: relative;
 }
 
 .blogPostDetailsFull {
   flex-direction: column;
+}
+
+.blogPostDataContainer {
+  position: absolute;
+  right: 0;
+  bottom: 2;
 }

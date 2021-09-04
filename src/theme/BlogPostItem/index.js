@@ -79,8 +79,8 @@ function BlogPostItem(props) {
           <div className='col'>
             <BlogPostAuthors authors={authors} assets={assets} />
           </div>
-          <div style={{position: 'relative'}} className={clsx(styles.blogPostData, 'margin-vert--md', 'col')}>
-            <div style={{position: 'absolute', right: 0, bottom: 2}}>
+          <div className={clsx(styles.blogPostData, 'margin-vert--md', 'col')}>
+            <div className={styles.blogPostDataContainer}>
               <time dateTime={date} itemProp="datePublished">
                 {formattedDate}
               </time>
