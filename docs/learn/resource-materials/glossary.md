@@ -30,7 +30,7 @@ description: Glossary of all specialized names and phrases used in the IOTA
 
 - **Curl:** This is the main hash function currently in use. It is based on the “sponge” construction of the Keccak inventors (SHA-3). 
 - **Confirmed:** Confirmed transactions. In IOTA 1.5, transactions are still confirmed by the coordinator (milestones). 
-- **CTPS:** Confirmed transaction per second.
+- **CTPS:** Confirmed transactions per second.
 - **Cumulative Weight:** A system for valuing transactions. Each additional transaction that references a transaction increases its cumulative weight. When tips are selected, a path through transactions that has a higher cumulative weight is preferred.
 - **CommNet:** The CommNet is a test-only network and is similar to the Testnet except that it is maintained by the IOTA community. The Hornet nodes in the CommNet continue to use a coordinator operated by the IOTA community.
 - **Chronicle:** Official permanode solution of the IOTA Foundation. It allows to store all transactions reaching a node in a distributed database that is secure and scales well. Chronicle is used to store the Tangle’s unlimited data flow and make it queryable. In other words, permanence allows the entire history of the Tangle to be stored indefinitely and makes that data easily accessible.
