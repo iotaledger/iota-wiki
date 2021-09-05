@@ -37,6 +37,10 @@ html[data-theme='dark'] .header {
   margin-top: 5rem;
 }
 
+.card__image {
+  background-color: var(--ifm-background-color);
+}
+
 .card-container__row {
   max-width: 80rem;
   margin-left: auto;
