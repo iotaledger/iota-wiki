@@ -14,6 +14,14 @@ p {
   color: var(--ifm-color-gray-500);
 }
 
+.header {
+  background-color: var(--ifm-color-gray-000);
+}
+
+html[data-theme='dark'] .header {
+  background-color: var(--ifm-background-color);
+}
+
 .title {
   display: flex;
   justify-content: center;
@@ -45,7 +53,6 @@ p {
 .card__body {
   border-bottom-left-radius: 60px;
   border-bottom-right-radius: 60px;
-  background-color: var(--card-bottom-background-color);
   padding: 10%;
 }
 
