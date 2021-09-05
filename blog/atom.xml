@@ -2,11 +2,33 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://wiki.iota.org/blog</id>
     <title>IOTA Wiki Blog</title>
-    <updated>2021-08-15T00:00:00.000Z</updated>
+    <updated>2021-08-22T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://wiki.iota.org/blog"/>
     <subtitle>IOTA Wiki Blog</subtitle>
     <icon>https://wiki.iota.org/img/favicon.ico</icon>
+    <entry>
+        <title type="html"><![CDATA[A future day with IOTA — Part II]]></title>
+        <id>future_day_2</id>
+        <link href="https://wiki.iota.org/blog/future_day_2"/>
+        <updated>2021-08-22T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[keyboard]]></summary>
+        <author>
+            <name>Linus Naumann</name>
+            <uri>https://twitter.com/LinusNaumann</uri>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Parallel realities and IOTAs breakthrough “Multiverse consensus”]]></title>
+        <id>multiverse_consensus</id>
+        <link href="https://wiki.iota.org/blog/multiverse_consensus"/>
+        <updated>2021-08-18T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[conflics]]></summary>
+        <author>
+            <name>Linus Naumann</name>
+            <uri>https://twitter.com/LinusNaumann</uri>
+        </author>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Wiki Alpha release!]]></title>
         <id>wiki-alpha</id>
@@ -14,8 +36,151 @@
         <updated>2021-08-15T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[We proudly present the first alpha release of the IOTA  wiki. Built by the community for the community. The wiki is at an early stage, and we would really appreciate your contribution.]]></summary>
         <author>
-            <name>Dr-Electron</name>
+            <name>Dr. Electron</name>
             <uri>https://github.com/Dr-Electron</uri>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[A future day with IOTA — Part I]]></title>
+        <id>future_day_1</id>
+        <link href="https://wiki.iota.org/blog/future_day_1"/>
+        <updated>2021-08-14T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[morning]]></summary>
+        <author>
+            <name>Linus Naumann</name>
+            <uri>https://twitter.com/LinusNaumann</uri>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Unpopular opinion: Bitcoin did not get rid of the middle-man]]></title>
+        <id>bitcoin-middle-man</id>
+        <link href="https://wiki.iota.org/blog/bitcoin-middle-man"/>
+        <updated>2021-08-11T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[miners]]></summary>
+        <author>
+            <name>Linus Naumann</name>
+            <uri>https://twitter.com/LinusNaumann</uri>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Layer One—Part 1: Assimilation]]></title>
+        <id>layer_one_1</id>
+        <link href="https://wiki.iota.org/blog/layer_one_1"/>
+        <updated>2021-08-06T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Assimilation]]></summary>
+        <author>
+            <name>R. Brennan Kelly</name>
+            <uri>https://iologica.substack.com</uri>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Layer One—Part 2: Error Correction]]></title>
+        <id>layer_one_2</id>
+        <link href="https://wiki.iota.org/blog/layer_one_2"/>
+        <updated>2021-08-06T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Error Correction]]></summary>
+        <author>
+            <name>R. Brennan Kelly</name>
+            <uri>https://iologica.substack.com</uri>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Layer One—Part 3: Metamoney]]></title>
+        <id>layer_one_3</id>
+        <link href="https://wiki.iota.org/blog/layer_one_3"/>
+        <updated>2021-08-06T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Parallel Reality]]></summary>
+        <author>
+            <name>R. Brennan Kelly</name>
+            <uri>https://iologica.substack.com</uri>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[My take on IOTA’s Community Treasury]]></title>
+        <id>my-take-community-treasury</id>
+        <link href="https://wiki.iota.org/blog/my-take-community-treasury"/>
+        <updated>2021-06-16T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Treasuries]]></summary>
+        <author>
+            <name>Luka Stanisic</name>
+            <uri>https://luka99.medium.com</uri>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[The Chirping Machine]]></title>
+        <id>the-chirping-machine</id>
+        <link href="https://wiki.iota.org/blog/the-chirping-machine"/>
+        <updated>2021-05-11T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Die Zwitscher-Maschine]]></summary>
+        <author>
+            <name>Borg</name>
+            <uri>https://b0rg.medium.com</uri>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[The Tech Behind IOTA — Part 2 (Consensus)]]></title>
+        <id>the-tech-behind-IOTA-2</id>
+        <link href="https://wiki.iota.org/blog/the-tech-behind-IOTA-2"/>
+        <updated>2021-01-31T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Coordicide]]></summary>
+        <author>
+            <name>Luka Stanisic</name>
+            <uri>https://luka99.medium.com</uri>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Why IOTA?]]></title>
+        <id>why-iota</id>
+        <link href="https://wiki.iota.org/blog/why-iota"/>
+        <updated>2021-01-23T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[IOTA]]></summary>
+        <author>
+            <name>Luka Stanisic</name>
+            <uri>https://luka99.medium.com</uri>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[The Tech Behind IOTA — Part 1 (Introduction)]]></title>
+        <id>the-tech-behind-IOTA-1</id>
+        <link href="https://wiki.iota.org/blog/the-tech-behind-IOTA-1"/>
+        <updated>2021-01-20T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Tangle]]></summary>
+        <author>
+            <name>Luka Stanisic</name>
+            <uri>https://luka99.medium.com</uri>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[The Economic Model of IOTA]]></title>
+        <id>the-economic-model</id>
+        <link href="https://wiki.iota.org/blog/the-economic-model"/>
+        <updated>2021-01-19T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[IOTA]]></summary>
+        <author>
+            <name>Luka Stanisic</name>
+            <uri>https://luka99.medium.com</uri>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[IILA x IOTA — Finite Element Method As A Service]]></title>
+        <id>IILA x IOTA — Finite Element Method As A Service</id>
+        <link href="https://wiki.iota.org/blog/2019/03/02/_finite_element_method_as_a_service"/>
+        <updated>2019-03-02T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[IOTA Lab Aachen]]></summary>
+        <author>
+            <name>Daniel Trauth</name>
+            <uri>https://medium.com/industrial-iota-lab-aachen-wzl-of-rwth-aachen</uri>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Manufacturing Economy]]></title>
+        <id>manufacturing-economy</id>
+        <link href="https://wiki.iota.org/blog/manufacturing-economy"/>
+        <updated>2018-08-15T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[IOTA Lab Aachen]]></summary>
+        <author>
+            <name>Daniel Trauth</name>
+            <uri>https://medium.com/industrial-iota-lab-aachen-wzl-of-rwth-aachen</uri>
         </author>
     </entry>
 </feed>

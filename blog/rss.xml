@@ -4,15 +4,120 @@
         <title>IOTA Wiki Blog</title>
         <link>https://wiki.iota.org/blog</link>
         <description>IOTA Wiki Blog</description>
-        <lastBuildDate>Sun, 15 Aug 2021 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 22 Aug 2021 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
+        <item>
+            <title><![CDATA[A future day with IOTA — Part II]]></title>
+            <link>https://wiki.iota.org/blog/future_day_2</link>
+            <guid>future_day_2</guid>
+            <pubDate>Sun, 22 Aug 2021 00:00:00 GMT</pubDate>
+            <description><![CDATA[keyboard]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Parallel realities and IOTAs breakthrough “Multiverse consensus”]]></title>
+            <link>https://wiki.iota.org/blog/multiverse_consensus</link>
+            <guid>multiverse_consensus</guid>
+            <pubDate>Wed, 18 Aug 2021 00:00:00 GMT</pubDate>
+            <description><![CDATA[conflics]]></description>
+        </item>
         <item>
             <title><![CDATA[Wiki Alpha release!]]></title>
             <link>https://wiki.iota.org/blog/wiki-alpha</link>
             <guid>wiki-alpha</guid>
             <pubDate>Sun, 15 Aug 2021 00:00:00 GMT</pubDate>
             <description><![CDATA[We proudly present the first alpha release of the IOTA  wiki. Built by the community for the community. The wiki is at an early stage, and we would really appreciate your contribution.]]></description>
+        </item>
+        <item>
+            <title><![CDATA[A future day with IOTA — Part I]]></title>
+            <link>https://wiki.iota.org/blog/future_day_1</link>
+            <guid>future_day_1</guid>
+            <pubDate>Sat, 14 Aug 2021 00:00:00 GMT</pubDate>
+            <description><![CDATA[morning]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Unpopular opinion: Bitcoin did not get rid of the middle-man]]></title>
+            <link>https://wiki.iota.org/blog/bitcoin-middle-man</link>
+            <guid>bitcoin-middle-man</guid>
+            <pubDate>Wed, 11 Aug 2021 00:00:00 GMT</pubDate>
+            <description><![CDATA[miners]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Layer One—Part 1: Assimilation]]></title>
+            <link>https://wiki.iota.org/blog/layer_one_1</link>
+            <guid>layer_one_1</guid>
+            <pubDate>Fri, 06 Aug 2021 00:00:00 GMT</pubDate>
+            <description><![CDATA[Assimilation]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Layer One—Part 2: Error Correction]]></title>
+            <link>https://wiki.iota.org/blog/layer_one_2</link>
+            <guid>layer_one_2</guid>
+            <pubDate>Fri, 06 Aug 2021 00:00:00 GMT</pubDate>
+            <description><![CDATA[Error Correction]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Layer One—Part 3: Metamoney]]></title>
+            <link>https://wiki.iota.org/blog/layer_one_3</link>
+            <guid>layer_one_3</guid>
+            <pubDate>Fri, 06 Aug 2021 00:00:00 GMT</pubDate>
+            <description><![CDATA[Parallel Reality]]></description>
+        </item>
+        <item>
+            <title><![CDATA[My take on IOTA’s Community Treasury]]></title>
+            <link>https://wiki.iota.org/blog/my-take-community-treasury</link>
+            <guid>my-take-community-treasury</guid>
+            <pubDate>Wed, 16 Jun 2021 00:00:00 GMT</pubDate>
+            <description><![CDATA[Treasuries]]></description>
+        </item>
+        <item>
+            <title><![CDATA[The Chirping Machine]]></title>
+            <link>https://wiki.iota.org/blog/the-chirping-machine</link>
+            <guid>the-chirping-machine</guid>
+            <pubDate>Tue, 11 May 2021 00:00:00 GMT</pubDate>
+            <description><![CDATA[Die Zwitscher-Maschine]]></description>
+        </item>
+        <item>
+            <title><![CDATA[The Tech Behind IOTA — Part 2 (Consensus)]]></title>
+            <link>https://wiki.iota.org/blog/the-tech-behind-IOTA-2</link>
+            <guid>the-tech-behind-IOTA-2</guid>
+            <pubDate>Sun, 31 Jan 2021 00:00:00 GMT</pubDate>
+            <description><![CDATA[Coordicide]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Why IOTA?]]></title>
+            <link>https://wiki.iota.org/blog/why-iota</link>
+            <guid>why-iota</guid>
+            <pubDate>Sat, 23 Jan 2021 00:00:00 GMT</pubDate>
+            <description><![CDATA[IOTA]]></description>
+        </item>
+        <item>
+            <title><![CDATA[The Tech Behind IOTA — Part 1 (Introduction)]]></title>
+            <link>https://wiki.iota.org/blog/the-tech-behind-IOTA-1</link>
+            <guid>the-tech-behind-IOTA-1</guid>
+            <pubDate>Wed, 20 Jan 2021 00:00:00 GMT</pubDate>
+            <description><![CDATA[Tangle]]></description>
+        </item>
+        <item>
+            <title><![CDATA[The Economic Model of IOTA]]></title>
+            <link>https://wiki.iota.org/blog/the-economic-model</link>
+            <guid>the-economic-model</guid>
+            <pubDate>Tue, 19 Jan 2021 00:00:00 GMT</pubDate>
+            <description><![CDATA[IOTA]]></description>
+        </item>
+        <item>
+            <title><![CDATA[IILA x IOTA — Finite Element Method As A Service]]></title>
+            <link>https://wiki.iota.org/blog/2019/03/02/_finite_element_method_as_a_service</link>
+            <guid>IILA x IOTA — Finite Element Method As A Service</guid>
+            <pubDate>Sat, 02 Mar 2019 00:00:00 GMT</pubDate>
+            <description><![CDATA[IOTA Lab Aachen]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Manufacturing Economy]]></title>
+            <link>https://wiki.iota.org/blog/manufacturing-economy</link>
+            <guid>manufacturing-economy</guid>
+            <pubDate>Wed, 15 Aug 2018 00:00:00 GMT</pubDate>
+            <description><![CDATA[IOTA Lab Aachen]]></description>
         </item>
     </channel>
 </rss>
