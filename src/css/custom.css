@@ -261,7 +261,7 @@ h2 {
 
   --ifm-background-color: var(--ifm-color-gray-000);
 
-  --ifm-background-color: #f6f8fc;
+  --ifm-background-color: white;
 
   --ifm-hover-overlay: var(--ifm-color-emphasis-200);
 
@@ -283,6 +283,7 @@ h2 {
   --ifm-navbar-link-hover-color: var(--ifm-color-primary);
   --ifm-navbar-link-active-color: var(--ifm-color-primary);
 
+  --ifm-dropdown-hover-background-color: rgba(72, 87, 118, 0.08);
 
   --ifm-footer-color: var(--ifm-color-gray-300);
   --ifm-footer-title-color: var(--ifm-color-gray-700);
@@ -505,48 +506,4 @@ Logo fonts CSS
     font-weight: normal;
     font-style: normal;
     font-display: block;
-}
-
-.link__icon {
-  /* use !important to prevent issues with browser extensions that change fonts */
-  font-family: 'icomoon' !important;
-
-  /* Better Font Rendering =========== */
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-
-  width: 2rem;
-  height: 2rem;
-}
-
-[data-theme='dark'] .link__icon {
-  color:var(--ifm-navbar-link-color);
-  background-color: #313E58;
-}
-
-.mega-dropdown__label {
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-.link__sublabel {
-  font-family: inter;
-}
-
-/*
-Active Link in mega menu
-*/
-.dropdown__link--active .link__icon {
-  color: white;
-  background-color: var(--ifm-color-primary);
-}
-
-.dropdown__link--active, .dropdown__link--active:hover {
-  color: var(--ifm-color-gray-800);
-  background-color: #EDFBFA;
-}
-
-[data-theme='dark'] .dropdown__link--active, [data-theme='dark'] .dropdown__link--active:hover {
-  color:white;
-  background-color: #1A2334;
 }
