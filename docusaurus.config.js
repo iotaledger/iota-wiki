@@ -54,7 +54,7 @@ module.exports = {
           label: 'Build',
           to: '#',
           layout: [
-            '. 1 3 4',
+            '0 1 3 4',
             '0 1 3 4',
             '. 1 3 2',
             '. 1 3 2',
@@ -63,10 +63,15 @@ module.exports = {
           items_: [
             {
               label: "Getting Started",
-              sublabel: "IOTA development basics",
-              to: "docs/develop/getting-started/architecture",
-              icon: "\ue908",
-              activeBaseRegex: 'docs/develop/getting-started/.*'
+              items: [
+                {
+                  label: "Getting Started",
+                  sublabel: "IOTA development basics",
+                  to: "docs/develop/getting-started/architecture",
+                  icon: "\ue908",
+                  activeBaseRegex: 'docs/develop/getting-started/.*'
+                }
+              ]
             },
             {
               label: 'Chrysalis (IOTA 1.5)',
