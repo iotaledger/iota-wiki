@@ -5,13 +5,15 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-.blogPostTitle {
+ .blogPostTitle {
   font-size: 3rem;
 }
 
 .blogPostData {
   font-size: 0.9rem;
   position: relative;
+  display: flex;
+  align-items: end;
 }
 
 .blogPostDetailsFull {
@@ -19,7 +21,6 @@
 }
 
 .blogPostDataContainer {
-  position: absolute;
-  right: 0;
-  bottom: 2;
+  margin-left: auto;
+  margin-bottom: 2px;
 }
