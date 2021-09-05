@@ -7,6 +7,7 @@
 import React from 'react';
 import DefaultNavbarItem from '@theme/NavbarItem/DefaultNavbarItem';
 import DropdownNavbarItem from '@theme/NavbarItem/DropdownNavbarItem';
+import MegaDropdownNavbarItem from './MegaDropdownNavbarItem';
 import LocaleDropdownNavbarItem from '@theme/NavbarItem/LocaleDropdownNavbarItem';
 import SearchNavbarItem from '@theme/NavbarItem/SearchNavbarItem';
 const NavbarItemComponents = {
@@ -14,6 +15,7 @@ const NavbarItemComponents = {
   localeDropdown: () => LocaleDropdownNavbarItem,
   search: () => SearchNavbarItem,
   dropdown: () => DropdownNavbarItem,
+  megaDropdown: () => MegaDropdownNavbarItem,
   // Need to lazy load these items as we don't know for sure the docs plugin is loaded
   // See https://github.com/facebook/docusaurus/issues/3360
 
@@ -35,7 +37,11 @@ const getNavbarItemComponent = (type) => {
   return navbarItemComponentFn();
 };
 
-function getComponentType(type, isDropdown) {
+function getComponentType(type, isDropdown, isMegaDropdown) {
+  if (isMegaDropdown) {
+    return 'megaDropdown';
+  }
+
   // Backward compatibility: navbar item with no type set
   // but containing dropdown items should use the type "dropdown"
   if (!type || type === 'default') {
@@ -46,7 +52,7 @@ function getComponentType(type, isDropdown) {
 }
 
 export default function NavbarItem({type, ...props}) {
-  const componentType = getComponentType(type, props.items !== undefined);
+  const componentType = getComponentType(type, props.items !== undefined, props.layout !== undefined);
   const NavbarItemComponent = getNavbarItemComponent(componentType);
   return <NavbarItemComponent {...props} />;
 }

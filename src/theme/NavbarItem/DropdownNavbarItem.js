@@ -175,7 +175,7 @@ function DropdownNavbarItemMobile({
   );
 }
 
-function DropdownNavbarItem({mobile = false, ...props}) {
+function DropdownNavbarItem({mobile = false, isDropdownItem: _isDropdownItem, ...props}) {
   const Comp = mobile ? DropdownNavbarItemMobile : DropdownNavbarItemDesktop;
   return <Comp {...props} />;
 }
