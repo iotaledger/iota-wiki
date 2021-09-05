@@ -34,12 +34,16 @@
   border-radius: 0.25rem;
   color: var(--ifm-menu-color);
   font-family: Metropolis Bold;
-  font-size: 0.875rem;
+  font-size: 0.825rem;
   height: 100%;
-  padding: 0.25rem 0.5rem;
+  padding: 1.5rem 0.25rem 0.8rem 0.5rem;
   white-space: nowrap;
   text-transform: uppercase;
   letter-spacing: 1px;
+}
+
+.dropdown__link {
+  margin:0.2rem 0
 }
 
 .link {
@@ -51,7 +55,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 1.5rem;
+  font-size: 1.7rem;
   margin-right: 10px;
   background-color: var(--ifm-color-gray-200);
   border-radius: var(--ifm-global-radius);
@@ -64,8 +68,8 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   
-  width: 2rem;
-  height: 2rem;
+  width: 2.5rem;
+  height: 2.5rem;
 }
 
 [data-theme='dark'] .link__icon {
@@ -73,10 +77,16 @@
   background-color: #313E58;
 }
 
+.link__label {
+  font-family: Metropolis Semi Bold;
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
 .link__sublabel {
   color: var(--ifm-menu-color);
   font-weight: 400;
-  font-size: 80%;
+  font-size: 85%;
   font-family: inter;
 }
 
@@ -85,6 +95,10 @@ Active Link in mega menu
 */
 [data-theme='dark'] .mega-dropdown__menu {
   border-color: #1A2334;
+}
+
+[data-theme='dark'] .mega-dropdown__label {
+  color: var(--ifm-color-gray-600);
 }
 
 .dropdown__link--active .link__icon {
