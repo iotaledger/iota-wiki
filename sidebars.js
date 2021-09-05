@@ -120,7 +120,7 @@ module.exports =
         {
             type: 'category',
             label: 'Use Cases',
-            collapsed: false,
+            collapsed: true,
             items: [
                 'use/use-cases/industry-applications',
                 'use/use-cases/internet-of-things',
@@ -134,7 +134,7 @@ module.exports =
         {
             type: 'category',
             label: 'Solutions',
-            collapsed: false,
+            collapsed: true,
             items: [
                 {
                     type: 'category',
