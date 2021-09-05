@@ -50,6 +50,11 @@
   color: var(--ifm-color-gray-600);
 }
 
+.dropdown {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
 .dropdown__link {
   margin:0.2rem 0
 }
