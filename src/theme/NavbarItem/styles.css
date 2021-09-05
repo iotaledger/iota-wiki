@@ -28,11 +28,15 @@
   border-bottom: 1px solid var(--ifm-color-gray-300);
 }
 
+[data-theme='dark'] .mega-dropdown__menu {
+  border-color: #1A2334;
+}
+
 .mega-dropdown__label {
   display: flex;
   align-items: flex-end;
   border-radius: 0.25rem;
-  color: var(--ifm-menu-color);
+  color: var(--ifm-color-gray-500);
   font-family: Metropolis Bold;
   font-size: 0.825rem;
   height: 100%;
@@ -40,6 +44,10 @@
   white-space: nowrap;
   text-transform: uppercase;
   letter-spacing: 1px;
+}
+
+[data-theme='dark'] .mega-dropdown__label {
+  color: var(--ifm-color-gray-600);
 }
 
 .dropdown__link {
@@ -93,13 +101,6 @@
 /*
 Active Link in mega menu
 */
-[data-theme='dark'] .mega-dropdown__menu {
-  border-color: #1A2334;
-}
-
-[data-theme='dark'] .mega-dropdown__label {
-  color: var(--ifm-color-gray-600);
-}
 
 .dropdown__link--active .link__icon {
   color: white;
