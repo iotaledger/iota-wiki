@@ -146,7 +146,7 @@ description: Glossary of all specialized names and phrases used in the IOTA
 ## R
 
 - **Rebroadcast:** Repeats the sending of a transaction. While a transaction is being sent to an IOTA node, it may go offline. In this case, the IOTA node may not forward the transactions to its neighbors, and the rest of the network will never see these transactions. As a result, that transaction will never be referenced by the coordinator and thus never confirmed. Resending a bundle means resending the same bundle to an IOTA node. This way you give your transactions another chance to be forwarded to the rest of the network. 
-- **Reusable Addresses:** With the implementation of the new signature topic Ed25519 through the IOTA 1.5 Chrysalis upgrade, reusable addresses are supported.
+- **Reusable Addresses:** With the introduction of the Ed25519 signature scheme, through the IOTA 1.5 Chrysalis upgrade, reusable addresses are now supported.
 - **Reattachment:** Resending a transaction by re-selecting a tip and referencing newer tips by repeating PoW.
 
 ## S
