@@ -71,7 +71,7 @@ description: Glossary of all specialized names and phrases used in the IOTA
 - **Full nodes (Hornet, Bee):** They form the core (infrastructure) of the IOTA network. In order to participate in the peer-to-peer network, the full node must always be online and connected to neighbors (other full nodes). In addition, the transaction database must be synchronized with all other full nodes in the network. The role of full nodes is to interact with clients (wallets, DApps, etc.) and attach their transactions to the ledger, make transactions known to all other full nodes in the network, validate transactions and store them in the ledger.
 - **Future Cone:** All messages that directly or indirectly reference a message are called its future cone.
 - **Fork:** In IT, this is a new development branch after a project is split into a second follow-on project; the source code or parts of it are developed independently of the original parent project.
-- **FPC(Fast Probabilistic Consensus):** Consensus that uses a random number and node opinions to reach consensus. In OTV it is only used in a specific edge case. Check out OTVFPCS.
+- **FPC(Fast Probabilistic Consensus):** Consensus that uses a random number and node opinions to reach consensus. In On-Tangle Voting, it is only used in a specific edge case. Check out OTVFPCS.
 
 ## G
 
