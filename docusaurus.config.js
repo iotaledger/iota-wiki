@@ -137,7 +137,7 @@ module.exports = {
                 },
                 {
                   label: "Stronghold",
-                  sublabel: "Hanlde secrets securely",
+                  sublabel: "Handle secrets securely",
                   to: "stronghold.rs/welcome",
                   icon: "\ue902",
                   activeBaseRegex: 'stronghold.rs/.*'
@@ -156,7 +156,7 @@ module.exports = {
               items: [
                 {
                   label: "Wasp Node",
-                  sublabel: "Smart-contract node",
+                  sublabel: "Smart contract node",
                   to: "wasp/welcome",
                   icon: "\ue900",
                   activeBaseRegex: 'wasp/.*',
