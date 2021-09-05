@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   inkscape:version="1.0beta2 (2b71d25, 2019-12-03)"
+   sodipodi:docname="stronghold_icon.svg"
+   id="svg835"
+   version="1.1"
+   fill="none"
+   viewBox="0 0 18 20"
+   height="20"
+   width="18">
+  <metadata
+     id="metadata841">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs839" />
+  <sodipodi:namedview
+     inkscape:current-layer="svg835"
+     inkscape:window-maximized="0"
+     inkscape:window-y="0"
+     inkscape:window-x="0"
+     inkscape:cy="14.412814"
+     inkscape:cx="7.6030161"
+     inkscape:zoom="6.8060867"
+     showgrid="false"
+     id="namedview837"
+     inkscape:window-height="1120"
+     inkscape:window-width="1792"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0"
+     guidetolerance="10"
+     gridtolerance="10"
+     objecttolerance="10"
+     borderopacity="1"
+     inkscape:document-rotation="0"
+     bordercolor="#666666"
+     pagecolor="#ffffff" />
+  <path
+     inkscape:connector-curvature="0"
+     id="path845"
+     d="m 9.0078125,0.00195313 c -0.6383548,-1.2e-7 -1.2755743,0.16784658 -1.84375,0.50390625 L 7.0546875,0.5703125 6.0976562,1.1367188 c -0.5684452,0.336229 -0.8956435,0.8844444 -1.09375,1.484375 l -0.2832031,0.021484 0.015625,0.2207031 C 4.4290325,2.7824372 4.1152197,2.9578936 3.7949219,2.9902344 L 3.5800781,2.625 2.71875,3.1347656 1.859375,3.6425781 1.8027344,3.6757812 C 0.49288373,4.4505487 -0.19212535,5.9565484 0.04882812,7.4433594 l 0.94726563,5.8515626 c 0.24303485,1.499749 1.10568335,2.833338 2.38671875,3.65625 l 4.0117187,2.576172 c 0.9871717,0.634087 2.2622976,0.62691 3.2421878,-0.01758 l 0.08594,-0.05664 3.59375,-2.365234 0.251953,-0.164063 c 1.230085,-0.809373 2.066239,-2.094412 2.324219,-3.541016 L 17.941406,7.4921875 C 18.209708,5.9884391 17.525399,4.4516112 16.197266,3.6660156 L 15.375,3.1796875 c -6.01e-4,-3.553e-4 -0.0014,3.547e-4 -0.002,0 C 14.671429,2.7654623 13.894812,2.788543 13.183594,3.0390625 13.047221,2.2923378 12.695283,1.5954028 12.015625,1.1933594 l -0.146484,-0.087891 h -0.002 L 11.34375,0.79492188 10.853516,0.50585938 C 10.285345,0.16979476 9.6461673,0.00195324 9.0078125,0.00195313 Z m -2.9101563,1.13476567 -0.109375,0.064453 -0.089844,0.087891 z m 2.0839844,1.0898437 c 0.5140886,-0.3040687 1.1402375,-0.3040588 1.6542969,0 l 1.1601565,0.6875 c 0.222019,0.1313331 0.347283,0.3767972 0.328125,0.6328125 l -0.0039,0.037109 v 0.013672 l -0.09766,1.2871094 1.136719,0.734375 1.580078,1.2109375 V 5.0039062 C 14.08882,4.9720832 14.201097,4.809088 14.355469,4.9003906 l 0.146484,0.087891 0.677735,0.4003907 c 0.604467,0.3575444 0.917066,1.0564215 0.792968,1.7519531 L 14.921875,13.03125 c -0.162487,0.91113 -0.686048,1.714729 -1.449219,2.21875 -0.0016,10e-4 -0.0023,0.0029 -0.0039,0.0039 l -3.9316406,2.585938 c -0.3261487,0.213539 -0.7344347,0.216584 -1.0625,0.0059 L 4.4648438,15.269531 C 3.6673567,14.757241 3.1241074,13.921255 2.9707031,12.974609 L 2.0214844,7.1230469 C 1.9100338,6.4353379 2.2244431,5.75089 2.8203125,5.3984375 L 2.8769531,5.3652344 3.7382812,4.8554688 C 4.0737842,4.6570238 4.4504081,4.7748004 4.6347656,5.09375 L 5.1621094,6.0039062 6.8925781,4.8847656 6.8632812,4.4863281 6.7890625,3.4902344 C 6.7698966,3.234086 6.8931867,2.9887606 7.1152344,2.8574219 l 0.109375,-0.064453 z m 6.8789064,0.8339844 0.3125,0.1171875 -0.144531,-0.083984 z m -1.515625,0.9511719 -0.605469,0.7890624 v 0.00195 h -0.002 -0.484375 l 0.324219,0.2128906 -0.02149,0.027344 -0.521484,-0.2402344 h -0.146484 l -0.07617,-0.035156 0.07031,-0.035156 -0.533203,-0.2460938 0.345703,0.2265625 -0.373047,-0.171875 0.05859,-0.1347656 0.09375,-0.1132812 0.558594,0.3652343 1.125,-0.5546875 z m -1.552734,0.765625 0.03906,0.025391 h -0.0918 z M 9.0175781,7.8828125 c -0.8948446,0 -1.6367187,0.7594321 -1.6367187,1.6679687 0,0.6162658 0.3342168,1.1687898 0.8398437,1.4570308 l 0.7441407,0.423829 0.765625,-0.378907 C 10.284307,10.778985 10.654297,10.20152 10.654297,9.5507812 10.654297,8.64221 9.9124885,7.8828125 9.0175781,7.8828125 Z M 9.03125,9.1679688 9.2109375,9.2695312 c 0.115147,0.065642 0.1699219,0.1827444 0.1699219,0.28125 0,0.1345567 -0.1348366,0.3320313 -0.3632813,0.3320313 -0.2284104,0 -0.3632812,-0.19734 -0.3632812,-0.3320313 0,-0.1042785 0.058455,-0.2262662 0.1894531,-0.2910156 z"
+     style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:medium;line-height:normal;font-family:sans-serif;font-variant-ligatures:normal;font-variant-position:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-alternates:normal;font-variant-east-asian:normal;font-feature-settings:normal;font-variation-settings:normal;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;writing-mode:lr-tb;direction:ltr;text-orientation:mixed;dominant-baseline:auto;baseline-shift:baseline;text-anchor:start;white-space:normal;shape-padding:0;shape-margin:0;inline-size:0;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;vector-effect:none;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate;stop-color:#000000;stop-opacity:1;fill:#000000" />
+</svg>
