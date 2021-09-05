@@ -39,7 +39,7 @@ description: Glossary of all specialized names and phrases used in the IOTA
 - **Communication Layer (IOTA 2.0):** This layer stores and communicates information. This layer contains the distributed ledger or tangle. The rate control and timestamps are also located in this layer.
 - **Core Object type (IOTA 2.0):** An object type that must be parsed by all nodes. Parsers are computer programs responsible for decomposing and converting an input into a format more suitable for further processing.
 - **Core Application (IOTA 2.0):** Core application that must be executed by all nodes, for example the value transfer application.  
-- **Child (IOTA 2.0):** A transaction that gets referenced by Parents
+- **Child (IOTA 2.0):** A transaction that gets referenced by Parents.
 - **Chrysalis:** The name of the IOTA 1.5 network upgrade.
 
 
