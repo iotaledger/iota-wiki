@@ -48,8 +48,8 @@
   Change colors in dark mode
 */
 [data-theme='dark'] .react-toggle-track {
-  color: #B0BFD9;
-  background-color: #293858;
+  color: var(--ifm-color-gray-400);
+  background-color: var(--ifm-color-gray-800);
 }
 
 .react-toggle-track-check {
@@ -88,5 +88,5 @@
 }
 
 /*
-  Remove toggle thumb 
+  Remove toggle thumb
 */

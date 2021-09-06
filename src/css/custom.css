@@ -36,7 +36,7 @@
 
   --ifm-card-background-color: #ffffff;
 
-  --ifm-navbar-link-color: #485776;
+  --ifm-navbar-link-color: var(--ifm-color-gray-700);
   --ifm-navbar-link-hover-color: var(--ifm-color-primary);
   --ifm-navbar-link-active-color: var(--ifm-color-primary);
 
@@ -65,7 +65,7 @@ html[data-theme='dark'] {
 
   --ifm-background-surface-color: #0D192F;
 
-  --ifm-navbar-link-color: #B0BFD9;
+  --ifm-navbar-link-color: var(--ifm-color-gray-400);
   --ifm-navbar-background-color:var(--ifm-background-color);
 
   --ifm-menu-color-background-hover: var(--ifm-color-emphasis-300);
@@ -94,7 +94,7 @@ html {
 .title__subtext {
   font-size: 1.5rem;
   font-weight: 600;
-  color: #909FBE !important;
+  color: var(--ifm-color-gray-500) !important;
   text-align: center;
 }
 
@@ -224,15 +224,15 @@ h2 {
     font-weight: var(--ifm-font-weight-semibold);
     font-size: 1.5rem;
     letter-spacing: 0.04em;
-    color: #909FBE;
+    color: var(--ifm-color-gray-500);
   }
 
   [data-theme='dark']  .section-header {
-   color: #B0BFD9;
+   color: var(--ifm-color-gray-400);
   }
 
   .footer {
-    border-top: 1px solid #E8EEFB;
+    border-top: 1px solid var(--ifm-color-gray-200);
   }
 
   [data-theme='dark'] .footer {
