@@ -92,7 +92,7 @@ description: Glossary of all specialized names and phrases used in the IOTA
 
 ## L
 
-- **Local Snapshots:** Local snapshots are urgently needed to limit the memory requirements of the full nodes to a common size. For this purpose, on the individual nodes old, already confirmed, transactions are deleted from the database. What remains is only a small file (list) with the credits on the respective addresses. Full nodes perform the snapshot independently and at their own discretion. This feature allows faster synchronization, lower system resource requirements and no more waiting for global snapshots to clean up the database.
+- **Local Snapshots:** Local snapshots are used to limit the memory requirements of the nodes. For this purpose, on the individual nodes old, already confirmed, transactions are deleted from the database. What remains is only a small file (list) with the balances on the respective addresses. Nodes perform the snapshot independently and at their own discretion. This feature allows faster synchronization, lower system resource requirements and no more waiting for global snapshots to clean up the database.
 - **Layer:** In DLT a 2nd-layer refers to a secondary framework or protocol built on top of an existing distributed ledger. On these second layers, other applications can be executed without putting too much strain on the base layer. In IOTA, for example, these are the Smart Contracts and IOTA Streams.
 - **Local Modifiers:** User-defined conditions that can be considered by nodes during tip selection. In IOTA, nodes do not necessarily have the same view of the tangle. Different types of information that are only available to them locally can be used to strengthen security.
 
