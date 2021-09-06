@@ -17,6 +17,8 @@ export function NavLink({
   to,
   href,
   label,
+  sublabel,
+  icon,
   activeClassName = 'navbar__link--active',
   prependBaseUrlToHref,
   ...props
@@ -30,6 +32,13 @@ export function NavLink({
   });
   const isExternalLink = label && href && !isInternalUrl(href);
   const isDropdownLink = activeClassName === dropdownLinkActiveClass;
+
+  const checkIsActive = (_match, location) => (
+    activeBaseRegex
+      ? new RegExp(activeBaseRegex).test(location.pathname)
+      : location.pathname.startsWith(activeBaseUrl)
+  )
+
   return (
     <Link
       {...(href
@@ -42,27 +51,36 @@ export function NavLink({
             to: toUrl,
             ...(activeBasePath || activeBaseRegex
               ? {
-                  isActive: (_match, location) =>
-                    activeBaseRegex
-                      ? new RegExp(activeBaseRegex).test(location.pathname)
-                      : location.pathname.startsWith(activeBaseUrl),
+                  isActive: checkIsActive,
                 }
               : null),
           })}
       {...props}>
-      {isExternalLink ? (
-        <span>
-          {label}
-          <IconExternalLink
-            {...(isDropdownLink && {
-              width: 12,
-              height: 12,
-            })}
-          />
-        </span>
-      ) : (
-        label
-      )}
+      <div className='link'>
+        {icon && <div className='link__icon'>{icon}</div>}
+        <div className='link__body'>
+          <div className='link__label'>
+            {isExternalLink ? (
+              <span>
+                {label}
+                <IconExternalLink
+                  {...(isDropdownLink && {
+                    width: 12,
+                    height: 12,
+                  })}
+                />
+              </span>
+            ) : (
+              label
+            )}
+          </div>
+          {sublabel && (
+            <div className='link__sublabel'>
+              {sublabel}
+            </div>
+          )}
+        </div>
+      </div>
     </Link>
   );
 }

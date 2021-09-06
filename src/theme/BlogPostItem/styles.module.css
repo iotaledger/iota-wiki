@@ -9,14 +9,22 @@
   border:none
 }
 
-.blogPostTitle {
-  font-size: 3rem !important;
+ .blogPostTitle {
+  font-size: 3rem;
 }
 
 .blogPostData {
   font-size: 0.9rem;
+  position: relative;
+  display: flex;
+  align-items: end;
 }
 
 .blogPostDetailsFull {
   flex-direction: column;
+}
+
+.blogPostDataContainer {
+  margin-left: auto;
+  margin-bottom: 2px;
 }

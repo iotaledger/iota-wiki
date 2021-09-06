@@ -1,0 +1,127 @@
+.mega-dropdown__container {
+  padding-top: var(--ifm-navbar-padding-vertical);
+  width: 100%;
+  opacity: 0;
+  visibility: hidden;
+  z-index: var(--ifm-z-index-dropdown);
+  position: absolute;
+  top: calc(100% - var(--ifm-navbar-padding-vertical) - 1px);
+  left: 0;
+
+  transition-property: opacity, visibility;
+  transition-duration: var(--ifm-transition-fast);
+  transition-timing-function: var(--ifm-transition-timing-default);
+}
+
+.mega-dropdown__container:hover,
+.mega-dropdown__container--show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.mega-dropdown__menu {
+  background-color: var(--ifm-dropdown-background-color);
+  max-height: calc(100vh - var(--ifm-navbar-height) - var(--docusaurus-announcement-bar-height));
+  overflow-y: auto;
+  padding: var(--ifm-navbar-padding-vertical) var(--ifm-navbar-padding-horizontal);
+  border-top: 1px solid var(--ifm-color-gray-300);
+  border-bottom: 1px solid var(--ifm-color-gray-300);
+}
+
+[data-theme='dark'] .mega-dropdown__menu {
+  border-color: #1A2334;
+}
+
+.mega-dropdown__col {
+  display: flex;
+  align-items: stretch;
+}
+
+.mega-dropdown__label {
+  display: flex;
+  align-items: flex-end;
+  border-radius: 0.25rem;
+  color: var(--ifm-color-gray-500);
+  font-family: Metropolis Bold;
+  font-size: 0.825rem;
+  padding: 0.25rem 0.5rem;
+  margin: 0.2rem 0;
+  white-space: nowrap;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+[data-theme='dark'] .mega-dropdown__label {
+  color: var(--ifm-color-gray-600);
+}
+
+.dropdown__link {
+  width: 100%;
+  margin: 0.2rem 0
+}
+
+.link {
+  display: inline-flex;
+  align-items: center;
+}
+
+.link__icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.7rem;
+  margin-right: 10px;
+  background-color: var(--ifm-color-gray-200);
+  border-radius: var(--ifm-global-radius);
+  color: var(--ifm-dropdown-link-color);
+
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+[data-theme='dark'] .link__icon {
+  color:var(--ifm-navbar-link-color);
+  background-color: #313E58;
+}
+
+.link__label {
+  font-family: Metropolis Semi Bold;
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+.link__sublabel {
+  color: var(--ifm-menu-color);
+  font-weight: 400;
+  font-size: 85%;
+  font-family: inter;
+}
+
+/*
+Active Link in mega menu
+*/
+
+.dropdown__link--active .link__icon {
+  color: white;
+  background-color: #14CABF;
+}
+
+.dropdown__link--active, .dropdown__link--active:hover {
+  color: var(--ifm-color-gray-800);
+  background-color: #EDFBFA;
+}
+
+[data-theme='dark'] .dropdown__link--active, [data-theme='dark'] .dropdown__link--active:hover {
+  color:white;
+  background-color: var(--ifm-dropdown-hover-background-color)
+}
+/*
+END Active Link in mega menu
+*/

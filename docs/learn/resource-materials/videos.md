@@ -3,32 +3,24 @@ title: Videos
 description: Great expalanation video's and short clips produced to explain all the amazing feature's that make IOTA so unique.
 ---
 
-
 # Heading 1 (Page Title)
 
 content - introduction to the topic
 
-
 ## Heading 2 (Sub topic 1)
 
-content 
+content
 
 ## Heading 2 (Sub topic 2)
 
 content
 
-
-
-<br/>
-
-----
-
-<br/>
+---
 
 **need to add a footer section for further content - (three cards)**
 
 ## Useful Links
-- **[a link](https://linkgoes.here)** - A description for the link
-- **[a link](https://linkgoes.here)** - A description for the link
-- **[a link](https://linkgoes.here)** - A description for the link
 
+- [**IOTA Foundation Youtube Channel**](https://www.youtube.com/c/iotafoundation/videos) - IOTA Foundation on Youtube: Multiple different videos made by the IOTA Foundation
+- [**IOTA Weekly Youtube Channel**](https://www.youtube.com/c/IOTAWeekly/videos) - IOTA Weekly on Youtube: Summary of what happens in the IOTA Ecosystem every week
+- [**Everything Tangle Youtube Channel**](https://www.youtube.com/c/everythingtangle/videos) - Everything Tangle on Youtube: Short and easy to understand Videos about IOTA

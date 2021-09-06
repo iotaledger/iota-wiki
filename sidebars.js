@@ -75,81 +75,6 @@ module.exports =
         },
     ],
     
-    use: [
-        { 
-            type: 'category',
-            label: 'Use Cases',
-            collapsed: false,
-            items: [
-                'use/use-cases/industry-applications',
-                'use/use-cases/internet-of-things',
-                'use/use-cases/digital-assets',
-                'use/use-cases/nfts',
-                'use/use-cases/data-confidence',
-                'use/use-cases/eco-social-projects',
-                'use/use-cases/private-tangle',
-            ],
-        },
-        {
-            type: 'category',
-            label: 'Streams',
-            collapsed: true,
-            items: [
-                'use/streams/encrypted-data-comms',
-            ],
-        },
-        {
-            type: 'category',
-            label: 'Identity',
-            collapsed: true,
-            items: [
-                'use/identity/enabling-privacy-and-trust',
-            ],
-        },
-        {
-            type: 'category',
-            label: 'Smart Contracts',
-            collapsed: true,
-            items: [
-                'use/smart-contracts/programmable-contracts',
-            ],
-        },
-        {
-            type: 'category',
-            label: 'Access',
-            collapsed: true,
-            items: [
-                'use/access/secure-access-control',
-            ],
-        },
-        {
-            type: 'category',
-            label: 'Stronghold',
-            collapsed: true,
-            items: [
-                'use/stronghold/protecting-your-secrets',
-            ],
-        },
-        {
-            type: 'category',
-            label: 'Oracles',
-            collapsed: true,
-            items: [
-                'use/oracles/trust-in-real-world-data',
-            ],
-        },
-        {
-            type: 'category',
-            label: 'Utilities',
-            collapsed: true,
-            items: [
-                'use/utilities/tangle-explorer',
-                'use/utilities/visualizer',
-                'use/utilities/iota-ipfs',
-            ],
-        }, 
-    ],
-
     participate: [
         {
             type: 'category',
@@ -192,19 +117,98 @@ module.exports =
                 'participate/funding/community-treasury',
             ],
         }, 
+        {
+            type: 'category',
+            label: 'Use Cases',
+            collapsed: true,
+            items: [
+                'use/use-cases/industry-applications',
+                'use/use-cases/internet-of-things',
+                'use/use-cases/digital-assets',
+                'use/use-cases/nfts',
+                'use/use-cases/data-confidence',
+                'use/use-cases/eco-social-projects',
+                'use/use-cases/private-tangle',
+            ],
+        },
+        {
+            type: 'category',
+            label: 'Solutions',
+            collapsed: true,
+            items: [
+                {
+                    type: 'category',
+                    label: 'Streams',
+                    collapsed: true,
+                    items: [
+                        'use/streams/encrypted-data-comms',
+                    ],
+                },
+                {
+                    type: 'category',
+                    label: 'Identity',
+                    collapsed: true,
+                    items: [
+                        'use/identity/enabling-privacy-and-trust',
+                    ],
+                },
+                {
+                    type: 'category',
+                    label: 'Smart Contracts',
+                    collapsed: true,
+                    items: [
+                        'use/smart-contracts/programmable-contracts',
+                    ],
+                },
+                {
+                    type: 'category',
+                    label: 'Access',
+                    collapsed: true,
+                    items: [
+                        'use/access/secure-access-control',
+                    ],
+                },
+                {
+                    type: 'category',
+                    label: 'Stronghold',
+                    collapsed: true,
+                    items: [
+                        'use/stronghold/protecting-your-secrets',
+                    ],
+                },
+                {
+                    type: 'category',
+                    label: 'Oracles',
+                    collapsed: true,
+                    items: [
+                        'use/oracles/trust-in-real-world-data',
+                    ],
+                },
+                {
+                    type: 'category',
+                    label: 'Utilities',
+                    collapsed: true,
+                    items: [
+                        'use/utilities/tangle-explorer',
+                        'use/utilities/visualizer',
+                        'use/utilities/iota-ipfs',
+                    ],
+                },
+            ],
+        },
     ],
 
 
-    develop: [
+    build: [
         {
             type: 'category',
             label: 'Getting Started',
             collapsed: false,
             items: [
-                'develop/getting-started/architecture',
-                'develop/getting-started/environment',
-                'develop/getting-started/send-a-first-message',
-                'develop/getting-started/devnet',
+                'build/getting-started/architecture',
+                'build/getting-started/environment',
+                'build/getting-started/send-a-first-message',
+                'build/getting-started/devnet',
             ],
         },        
         {
@@ -212,11 +216,11 @@ module.exports =
             label: 'Fundamentals',
             collapsed: true,
             items: [
-                'develop/fundamentals/cryptography',
-                'develop/fundamentals/consensus',
-                'develop/fundamentals/mana',
-                'develop/fundamentals/utxo',
-                'develop/fundamentals/dapps',
+                'build/fundamentals/cryptography',
+                'build/fundamentals/consensus',
+                'build/fundamentals/mana',
+                'build/fundamentals/utxo',
+                'build/fundamentals/dapps',
             ],
         },        
         {
@@ -224,7 +228,7 @@ module.exports =
             label: 'Exchange Integration',
             collapsed: true,
             items: [
-                'develop/exchange-integration/exchange-integration-guide',
+                'build/exchange-integration/exchange-integration-guide',
             ],
         },        
         {
@@ -232,8 +236,8 @@ module.exports =
             label: 'Tutorials',
             collapsed: true,
             items: [
-                'develop/tutorials/hackster',
-                'develop/tutorials/youtube',
+                'build/tutorials/hackster',
+                'build/tutorials/youtube',
             ],
         },
     ],   
