@@ -98,7 +98,6 @@ description: Glossary of all specialized names and phrases used in the IOTA
 
 ## M
 
-- **Mining races:** In PoW-based DLTs, the competition between miners for mining rewards and transaction fees is called a mining race. In this race, the fastest and most efficient hardware always wins.
 - **Merkle Tree:** A Merkle tree is a data structure used in computer science applications. In cryptocurrencies, Merkle trees are used to encode more efficiently and securely. 
 - **Mainnet:** The public usable IOTA network, in which the IOTA tokens are used that are traded on cryptocurrency exchanges.
 - **Milestone (IOTA 1.x):** Milestones are transactions that are signed and issued by the coordinator. Their main goal is to help the Tangle grow healthily and guarantee finality. When milestones directly or indirectly approve a transaction in the Tangle, nodes mark the status of that transaction and its entire history as confirmed.
