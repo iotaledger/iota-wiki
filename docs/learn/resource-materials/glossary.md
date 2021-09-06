@@ -77,7 +77,7 @@ description: Glossary of all specialized names and phrases used in the IOTA
 
 - **Genesis transaction:** The Genesis transaction is the first transaction that created all IOTA tokens and distributed them to the addresses of the buyers.
 - **GoShimmer (No Main net):** Prototype of the coordinator less version of IOTA written in the Go programming language. GoShimmer implements the various modules of Coordicide, such as auto peering, node identities, Mana, etc. GoShimmer serves as a test environment for the first alpha version and the test network. Everything tested here will be gradually merged with Hornet and Bee.
-- **Generic Data Object (IOTA 2.0):** The most basic object type. All unrecognized data objects are treated this way.
+- **Generic Data Object (IOTA 2.0):** The most basic object type. All unrecognized data objects are defined this way.
 
 ## H
 
