@@ -129,7 +129,9 @@ function BlogPostItem(props) {
               className={clsx('col', {
                 'col--9': !isBlogPostPage,
               })}>
-              <TagsListInline tags={tags} />
+              <div className={styles.tagsList}>
+                <TagsListInline tags={tags} />
+              </div>
             </div>
           )}
 
