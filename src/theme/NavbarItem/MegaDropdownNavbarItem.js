@@ -159,7 +159,7 @@ function MegaDropdownNavbarItemDesktop({items_: items, layout, position, classNa
       >
         <NavLink
           className={clsx(
-            'navbar__item navbar__link',
+            'navbar__link',
             {
               'navbar__link--active': containsActive,
             },
