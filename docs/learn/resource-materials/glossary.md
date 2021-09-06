@@ -84,7 +84,7 @@ description: Glossary of all specialized names and phrases used in the IOTA
 - **History:** The list of transactions that were directly or indirectly authorized by a particular transaction.
 - **Hash values:** Checksums that are applied to the encryption of messages of variable length. Hash values are like fingerprints of a very long data set. Each message is assigned a very specific hash value.
 - **Hooks:** An interface that allows foreign program code to be integrated into an existing application to extend it, change its flow, or intercept certain events.
-- **Hornet Node (IOTA 1.5):** A completely new implementation of the core server in the Go programming language. In addition, the coordinator also runs as a plugin via Hornet.
+- **Hornet Node (IOTA 1.5):** Community-developed IOTA Node written in the Go programming language. In addition, the coordinator also runs as a plugin via Hornet.
 
 ## I
 
