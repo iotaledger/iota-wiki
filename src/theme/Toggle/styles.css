@@ -9,17 +9,31 @@
  * Styles for React Toggle
  * copied over because we want to allow user to swizzle it and modify the css
  * and also to make sure its compatible with our dark mode
- * https://github.com/aaronshaf/react-toggle/blob/master/style.css
+ * https://github.com/aaronshaf/toggle/blob/master/style.css
  */
-.react-toggle {
+.toggle {
   touch-action: pan-x;
   position: relative;
   cursor: pointer;
   user-select: none;
-  -webkit-tap-highlight-color: transparent;
+
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.05);
+  transition: all 0.2s ease;
 }
 
-.react-toggle-screenreader-only {
+.toggle--disabled {
+  cursor: not-allowed;
+}
+
+[data-theme='dark'] .toggle {
+  color: #B0BFD9;
+  background-color: #293858;
+}
+
+.toggle__screenreader-only {
   border: 0;
   clip: rect(0 0 0 0);
   height: 1px;
@@ -29,64 +43,33 @@
   width: 1px;
 }
 
-.react-toggle--disabled {
-  cursor: not-allowed;
-}
-
-/*
-  Make toggle quadratic, change border radius to 50% and change bg color
-*/
-.react-toggle-track {
-  width: 28px;
-  height: 28px;
-  border-radius: 50%;
-  background-color: rgba(0, 0, 0, 0.05);
-  transition: all 0.2s ease;
-}
-
-/*
-  Change colors in dark mode
-*/
-[data-theme='dark'] .react-toggle-track {
-  color: #B0BFD9;
-  background-color: #293858;
-}
-
-.react-toggle-track-check {
+.toggle__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: absolute;
-  width: 14px;
-  height: 10px;
-  top: 0px;
-  bottom: 0px;
-  margin: auto 0;
-  left: 8px;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+.toggle__icon--checked {
   opacity: 0;
   transition: opacity 0.25s ease;
 }
 
-[data-theme='dark'] .react-toggle .react-toggle-track-check,
-.react-toggle--checked .react-toggle-track-check {
+[data-theme='dark'] .toggle .toggle__icon--checked,
+.toggle--checked .toggle__icon--checked {
+  opacity: 1;
+}
+
+.toggle__icon--unchecked {
   opacity: 1;
   transition: opacity 0.25s ease;
 }
 
-.react-toggle-track-x {
-  position: absolute;
-  width: 10px;
-  height: 10px;
-  top: 0px;
-  bottom: 0px;
-  margin: auto 0;
-  right: 10px;
-  opacity: 1;
-  transition: opacity 0.25s ease;
-}
-
-[data-theme='dark'] .react-toggle .react-toggle-track-x,
-.react-toggle--checked .react-toggle-track-x {
+[data-theme='dark'] .toggle .toggle__icon--unchecked,
+.toggle--checked .toggle__icon--unchecked {
   opacity: 0;
 }
-
-/*
-  Remove toggle thumb 
-*/
