@@ -1,211 +1,11 @@
 @import "fonts.css";
 
-html {
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  font-weight: var(--ifm-font-weight-normal);
-}
-
-.title__text {
-  text-align: center;
-  font-size: 4rem;
-  font-family: 'Metropolis Semi Bold';
-  margin-bottom: 0;
-  letter-spacing: 0.02em;
-}
-
-.title__subtext {
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: #909FBE !important;
-  text-align: center;
-}
-
-@media (max-width: 997px) {
-  .title__text {
-    font-size: 3rem;
-  }
-
-  .title__subtext {
-    font-size: 1.1rem;
-  }
-}
-
-.markdown > h3 {
-    --ifm-heading-vertical-rhythm-bottom: 0.2;
-    --ifm-h3-vertical-rhythm-top: 2;
-}
-
-article {
-  max-width: 800px;
-  padding-top: 3rem;
-  padding-bottom: 3rem;
-}
-
-h1 {
-  font-size: 2.5rem;
-}
-
-h2 {
- font-size: 1.8rem !important;
- padding-top: 1rem;
-}
-
 :root {
   --ifm-color-primary: #36A1AC;
   --ifm-color-success: #0FC1B7;
   --ifm-color-info: #2E8698;
   --ifm-color-warning: #e5a23e;
   --ifm-color-danger: #e53e3e;
-
-  --ifm-color-primary-dark: color-mod(
-    var(--ifm-color-primary) shade(var(--ifm-dark-value))
-  );
-  --ifm-color-primary-darker: color-mod(
-    var(--ifm-color-primary),
-    shade(var(--ifm-darker-value))
-  );
-  --ifm-color-primary-darkest: color-mod(
-    var(--ifm-color-primary),
-    shade(var(--ifm-darkest-value))
-  );
-  --ifm-color-primary-light: color-mod(
-    var(--ifm-color-primary),
-    tint(var(--ifm-light-value))
-  );
-  --ifm-color-primary-lighter: color-mod(
-    var(--ifm-color-primary),
-    tint(var(--ifm-lighter-value))
-  );
-  --ifm-color-primary-lightest: color-mod(
-    var(--ifm-color-primary),
-    tint(var(--ifm-lightest-value))
-  );
-
-  --ifm-color-secondary-dark: color-mod(
-    var(--ifm-color-secondary),
-    shade(var(--ifm-dark-value))
-  );
-  --ifm-color-secondary-darker: color-mod(
-    var(--ifm-color-secondary),
-    shade(var(--ifm-darker-value))
-  );
-  --ifm-color-secondary-darkest: color-mod(
-    var(--ifm-color-secondary),
-    shade(var(--ifm-darkest-value))
-  );
-  --ifm-color-secondary-light: color-mod(
-    var(--ifm-color-secondary),
-    tint(var(--ifm-light-value))
-  );
-  --ifm-color-secondary-lighter: color-mod(
-    var(--ifm-color-secondary),
-    tint(var(--ifm-lighter-value))
-  );
-  --ifm-color-secondary-lightest: color-mod(
-    var(--ifm-color-secondary),
-    tint(var(--ifm-lightest-value))
-  );
-
-  --ifm-color-success-dark: color-mod(
-    var(--ifm-color-success),
-    shade(var(--ifm-dark-value))
-  );
-  --ifm-color-success-darker: color-mod(
-    var(--ifm-color-success),
-    shade(var(--ifm-darker-value))
-  );
-  --ifm-color-success-darkest: color-mod(
-    var(--ifm-color-success),
-    shade(var(--ifm-darkest-value))
-  );
-  --ifm-color-success-light: color-mod(
-    var(--ifm-color-success),
-    tint(var(--ifm-light-value))
-  );
-  --ifm-color-success-lighter: color-mod(
-    var(--ifm-color-success),
-    tint(var(--ifm-lighter-value))
-  );
-  --ifm-color-success-lightest: color-mod(
-    var(--ifm-color-success),
-    tint(var(--ifm-lightest-value))
-  );
-
-  --ifm-color-info-dark: color-mod(
-    var(--ifm-color-info),
-    shade(var(--ifm-dark-value))
-  );
-  --ifm-color-info-darker: color-mod(
-    var(--ifm-color-info),
-    shade(var(--ifm-darker-value))
-  );
-  --ifm-color-info-darkest: color-mod(
-    var(--ifm-color-info),
-    shade(var(--ifm-darkest-value))
-  );
-  --ifm-color-info-light: color-mod(
-    var(--ifm-color-info),
-    tint(var(--ifm-light-value))
-  );
-  --ifm-color-info-lighter: color-mod(
-    var(--ifm-color-info),
-    tint(var(--ifm-lighter-value))
-  );
-  --ifm-color-info-lightest: color-mod(
-    var(--ifm-color-info),
-    tint(var(--ifm-lightest-value))
-  );
-
-  --ifm-color-warning-dark: color-mod(
-    var(--ifm-color-warning),
-    shade(var(--ifm-dark-value))
-  );
-  --ifm-color-warning-darker: color-mod(
-    var(--ifm-color-warning),
-    shade(var(--ifm-darker-value))
-  );
-  --ifm-color-warning-darkest: color-mod(
-    var(--ifm-color-warning),
-    shade(var(--ifm-darkest-value))
-  );
-  --ifm-color-warning-light: color-mod(
-    var(--ifm-color-warning),
-    tint(var(--ifm-light-value))
-  );
-  --ifm-color-warning-lighter: color-mod(
-    var(--ifm-color-warning),
-    tint(var(--ifm-lighter-value))
-  );
-  --ifm-color-warning-lightest: color-mod(
-    var(--ifm-color-warning),
-    tint(var(--ifm-lightest-value))
-  );
-
-  --ifm-color-danger-dark: color-mod(
-    var(--ifm-color-danger),
-    shade(var(--ifm-dark-value))
-  );
-  --ifm-color-danger-darker: color-mod(
-    var(--ifm-color-danger),
-    shade(var(--ifm-darker-value))
-  );
-  --ifm-color-danger-darkest: color-mod(
-    var(--ifm-color-danger),
-    shade(var(--ifm-darkest-value))
-  );
-  --ifm-color-danger-light: color-mod(
-    var(--ifm-color-danger),
-    tint(var(--ifm-light-value))
-  );
-  --ifm-color-danger-lighter: color-mod(
-    var(--ifm-color-danger),
-    tint(var(--ifm-lighter-value))
-  );
-  --ifm-color-danger-lightest: color-mod(
-    var(--ifm-color-danger),
-    tint(var(--ifm-lightest-value))
-  );
 
   --ifm-color-gray-000: #F6F8FC;
   --ifm-color-gray-100: #F2F5FB;
@@ -275,6 +75,57 @@ html[data-theme='dark'] {
   --ifm-heading-color: inherit;
 
   --ifm-hover-overlay: #0D192F;
+}
+
+html {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-weight: var(--ifm-font-weight-normal);
+}
+
+.title__text {
+  text-align: center;
+  font-size: 4rem;
+  font-family: 'Metropolis Semi Bold';
+  margin-bottom: 0;
+  letter-spacing: 0.02em;
+}
+
+.title__subtext {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #909FBE !important;
+  text-align: center;
+}
+
+@media (max-width: 997px) {
+  .title__text {
+    font-size: 3rem;
+  }
+
+  .title__subtext {
+    font-size: 1.1rem;
+  }
+}
+
+.markdown > h3 {
+    --ifm-heading-vertical-rhythm-bottom: 0.2;
+    --ifm-h3-vertical-rhythm-top: 2;
+}
+
+article {
+  max-width: 800px;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+h2 {
+ font-size: 1.8rem !important;
+ padding-top: 1rem;
 }
 
 .alert h1,
