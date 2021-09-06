@@ -103,7 +103,7 @@ jobs:
       - name: Copy Identity docs
         run: |
           cd external
-          git clone --depth=1 https://github.com/iotaledger/identity.rs
+          git clone --depth=1 https://github.com/lucas-tortora/identity.rs.git --branch docs/fixWikiImport
           cp -rn identity.rs/documentation/static/img/* ../static/img/
       - name: Return to root folder
         run: cd ..

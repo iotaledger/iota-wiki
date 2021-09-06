@@ -356,5 +356,16 @@ module.exports = {
     ],
     'docusaurus-plugin-matomo',
     /* AUTO GENERATED EXTERNAL DOCS CONFIG */
+
+    [
+      "@docusaurus/plugin-content-docs",
+      {
+        id: "identity-rs",
+        path: "external/identity.rs/documentation/docs",
+        routeBasePath: "identity.rs",
+        sidebarPath: require.resolve("./external/identity.rs/documentation/sidebars.js"),
+        remarkPlugins: [require("remark-code-import"), require("remark-import-partial")],
+      }
+    ],
   ]
 };
