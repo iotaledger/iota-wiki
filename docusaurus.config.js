@@ -104,7 +104,7 @@ module.exports = {
               items: [
                 {
                   label: "Coordicide Specs",
-                  sublabel: "Full specs of decentralized IOTA",
+                  sublabel: "Decentralizing IOTA",
                   to: "IOTA-2.0-Research-Specifications/Preface",
                   icon: "\ue904",
                   activeBaseRegex: 'IOTA-2.0-Research-Specifications/.*'
@@ -123,7 +123,7 @@ module.exports = {
               items: [
                 {
                   label: "Core",
-                  sublabel: "IOTA core functionality library",
+                  sublabel: "IOTA core functionality",
                   to: "iota.rs/welcome",
                   icon: "\ue903",
                   activeBaseRegex: 'iota.rs/.*'
