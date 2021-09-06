@@ -1,8 +1,6 @@
 name: deploy
 
 on:
-  push:
-    branches: [docs/fixImportsForIdentityAndStronghold]
   pull_request:
     branches: [develop]
   workflow_dispatch:
