@@ -5,6 +5,10 @@
  * LICENSE file in the root directory of this source tree.
  */
 
+.blogHeader a:hover {
+  border:none
+}
+
  .blogPostTitle {
   font-size: 3rem;
 }
@@ -23,4 +27,9 @@
 .blogPostDataContainer {
   margin-left: auto;
   margin-bottom: 2px;
+}
+
+.tagsList a:hover {
+  border: 1px solid var(--docusaurus-tag-list-border);
+  padding: .3rem .5rem;
 }
