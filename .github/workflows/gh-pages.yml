@@ -1,6 +1,8 @@
 name: deploy
 
 on:
+  push:
+    branches: [ docs/fixImportsForIdentityAndStronghold]
   pull_request:
     branches: [develop]
   workflow_dispatch:
@@ -82,9 +84,7 @@ jobs:
       - name: Copy stronghold.rs docs
         run: |
           cd external
-          git clone --depth=1 --sparse https://github.com/iotaledger/stronghold.rs
-          cd stronghold.rs
-          git sparse-checkout set documentation
+          git clone --depth=1  https://github.com/iotaledger/stronghold.rs
           cd -
       - name: Copy IOTA 2.0 specs
         run: |
