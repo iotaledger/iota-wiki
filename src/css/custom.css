@@ -6,6 +6,11 @@ html {
   font-weight: var(--ifm-font-weight-normal);
 }
 
+article a:hover {
+  border-bottom: 1px solid var(--ifm-link-color);
+  padding-bottom: 1px;
+}
+
 .title__text {
   text-align: center;
   font-size: 4rem;
@@ -479,6 +484,10 @@ html[data-theme='dark'] {
 
   .headline-stick.size-m {
     width: 48px;
+  }
+
+  .hash-link:hover {
+    border: none;
   }
 
   /*
