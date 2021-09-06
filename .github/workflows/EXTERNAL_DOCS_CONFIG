@@ -42,7 +42,7 @@
         path: "external/identity.rs/documentation/docs",
         routeBasePath: "identity.rs",
         sidebarPath: require.resolve("./external/identity.rs/documentation/sidebars.js"),
-        remarkPlugins: [require("remark-code-import"), require("remark-import-partial")],
+        remarkPlugins: [require("remark-code-import"), require("remark-import-partial"), require('remark-remove-comments') ],
       }
     ],
     [
