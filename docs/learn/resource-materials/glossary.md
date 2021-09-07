@@ -61,7 +61,6 @@ To make sure that new messages always have a chance of being confirmed, the Coor
 ## E
 
 - **Eclipse attack:** A cyber-attack that aims to isolate a specific user rather than attack the entire network.
-- **Entropy:** In cryptology, this term represents a measure of the “disorder” in texts. Entropy is usually abbreviated with the Greek capital letter Η.
 - **ETH Virtual Machine:** A VM is what executes the Smart Contract code so that it runs deterministically. The language in which you run the code provides hooks to access the sandbox on which the VM runs. In the case of IOTA, this is the ISCP sandbox, which only provides access to IOTA tokens, thus consensus also runs on IOTA tokens. It is only the VM that IOTA works with, foreign tokens have nothing to do with a VM running the SC code, not the ETH VM, nor the Cartesi VM.
 - **Epoch (IOTA 2.0):** A time interval used for a specific type of consensus mana. At the end of each epoch, a snapshot is taken of the state of mana distribution on the network. Since this tool uses the timestamp of messages, each node can eventually reach a consensus on the mana distribution of an epoch.
 
