@@ -29,7 +29,9 @@ description: Glossary of all specialized names and phrases used in the IOTA
 ## C
 
 - **Curl:** This is the main hash function currently in use. It is based on the “sponge” construction of the Keccak inventors (SHA-3). 
-- **Confirmed:** Confirmed transactions. In IOTA 1.5, transactions are still confirmed by the coordinator (milestones). 
+- **Confirmed:** Confirmed transactions. In IOTA 1.5, messages in the Tangle are considered for confirmation only when they are directly or indirectly referenced by a milestone that the Coordinator node has validated.
+To allow the nodes to recognize the milestones, all nodes that participate in the same IOTA network are configured with the Merkle root address of a Coordinator that they trust to confirm messages. Using this address, nodes can validate the signatures in milestones to verify whether the trusted Coordinator signs them.
+To make sure that new messages always have a chance of being confirmed, the Coordinator sends indexed milestones at regular intervals. This way, nodes can compare the indexes of their milestones to check whether they are synchronized with the rest of the network.
 - **CTPS:** Confirmed transactions per second.
 - **Cumulative Weight:** A system for valuing transactions. Each additional transaction that references a transaction increases its cumulative weight. When tips are selected, a path through transactions that has a higher cumulative weight is preferred.
 - **CommNet:** The CommNet is a test-only network and is similar to the Testnet except that it is maintained by the IOTA community. The Hornet nodes in the CommNet continue to use a coordinator operated by the IOTA community.
