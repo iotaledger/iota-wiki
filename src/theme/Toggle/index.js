@@ -9,48 +9,35 @@ import {useThemeConfig} from '@docusaurus/theme-common';
 import useIsBrowser from '@docusaurus/useIsBrowser';
 import clsx from 'clsx';
 import './styles.css';
-import styles from './styles.module.css';
-
-const Dark = ({icon, style}) => (
-  <span className={clsx(styles.toggle, styles.dark)} style={style}>
-    {icon}
-  </span>
-);
-
-const Light = ({icon, style}) => (
-  <span className={clsx(styles.toggle, styles.light)} style={style}>
-    {icon}
-  </span>
-); // Based on react-toggle (https://github.com/aaronshaf/react-toggle/).
 
 const Toggle = memo(
-  ({className, icons, checked: defaultChecked, disabled, onChange}) => {
+  ({className, styles, icons, checked: defaultChecked, disabled, onChange}) => {
     const [checked, setChecked] = useState(defaultChecked);
     const [focused, setFocused] = useState(false);
     const inputRef = useRef(null);
     return (
       <div
-        className={clsx('react-toggle', className, {
-          'react-toggle--checked': checked,
-          'react-toggle--focus': focused,
-          'react-toggle--disabled': disabled,
-        })}>
-        {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events */}
-        <div
-          className="react-toggle-track"
-          role="button"
-          tabIndex={-1}
-          onClick={() => inputRef.current?.click()}>
-          <div className="react-toggle-track-check">{icons.checked}</div>
-          <div className="react-toggle-track-x">{icons.unchecked}</div>
-          <div className="react-toggle-thumb" />
+        className={clsx('toggle', className, {
+          'toggle--checked': checked,
+          'toggle--focused': focused,
+          'toggle--disabled': disabled,
+        })}
+        role="button"
+        tabIndex={-1}
+        onClick={() => inputRef.current?.click()}>
+
+        <div className="toggle__icon toggle__icon--unchecked" style={styles.unchecked}>
+          {icons.unchecked}
+        </div>
+        <div className="toggle__icon toggle__icon--checked" style={styles.checked}>
+          {icons.checked}
         </div>
 
         <input
           ref={inputRef}
           checked={checked}
           type="checkbox"
-          className="react-toggle-screenreader-only"
+          className="toggle__screenreader-only"
           aria-label="Switch between dark and light mode"
           onChange={onChange}
           onClick={() => setChecked(!checked)}
@@ -66,6 +53,7 @@ const Toggle = memo(
     );
   },
 );
+
 export default function (props) {
   const {
     colorMode: {
@@ -76,9 +64,13 @@ export default function (props) {
   return (
     <Toggle
       disabled={!isBrowser}
+      styles={{
+        unchecked: lightIconStyle,
+        checked: darkIconStyle,
+      }}
       icons={{
-        checked: <Dark icon={darkIcon} style={darkIconStyle} />,
-        unchecked: <Light icon={lightIcon} style={lightIconStyle} />,
+        unchecked: lightIcon,
+        checked: darkIcon,
       }}
       {...props}
     />

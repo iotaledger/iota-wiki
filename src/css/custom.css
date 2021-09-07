@@ -291,6 +291,10 @@ h2 {
     width: 48px;
   }
 
+  .hash-link:hover {
+    border: none;
+  }
+
   /*
   Patch to avoid displaying a double header in imported DOCS
   */

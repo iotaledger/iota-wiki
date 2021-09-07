@@ -65,7 +65,7 @@ function BlogPostItem(props) {
     const TitleHeading = isBlogPostPage ? 'h1' : 'h2';
     // Move date to the right
     return (
-      <header>
+      <header className={styles.blogHeader}>
         <TitleHeading className={styles.blogPostTitle} itemProp="headline">
           {isBlogPostPage ? (
             title
@@ -129,7 +129,9 @@ function BlogPostItem(props) {
               className={clsx('col', {
                 'col--9': !isBlogPostPage,
               })}>
-              <TagsListInline tags={tags} />
+              <div className={styles.tagsList}>
+                <TagsListInline tags={tags} />
+              </div>
             </div>
           )}
 
