@@ -170,7 +170,6 @@ To make sure that new messages always have a chance of being confirmed, the Coor
 
 - **Tangle:** The Tangle is the underlying core data structure. In mathematical terms it is a directed acyclic graph (DAG). The Tangle is the distributed ledger of IOTA that stores all transactions. 
 - **Tag:** A short message which can be attached to a transfer. It can be searched for in the Tangle. 
-- **TPS:** Transaction per second. Same as MPS.
 - **Ternary system:** A trit (trinary digit) can have exactly three states (3 x 1 = 3): -1, 0 and 1. Three trits result in one tryte (33 = 27) and can thus represent 27 combinations. In IOTA, the letters A-Z (26 pieces) and the number 9 are used for this purpose. 
 - **Token:** The digital currency form (cryptocurrency). It is a powerful tool for value transfer between people and machines. Total number: 2,779,530,283,277,761 IOTA. The base units are Pi,
 Ti, Gi, Mi, ki, i 
