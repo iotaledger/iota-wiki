@@ -17,7 +17,7 @@ This enables the decentralized transport of Data and Value in a single message w
 
 ## Data Usage
 
-Many applications and use cases can profit from this combination of free, secure, and fast data and value transport, which is a demand in all major industries. Read more about IOTA Data use cases here: (link to content)
+Many applications and use cases can profit from this combination of free, secure, and fast data and value transport, which is a demand in all major industries. Read more about IOTA Data use cases [here](https://www.iota.org/solutions/industries).
 
 
 
