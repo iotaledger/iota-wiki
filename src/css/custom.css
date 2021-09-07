@@ -7,6 +7,7 @@
   --ifm-color-warning: #e5a23e;
   --ifm-color-danger: #e53e3e;
 
+  --wiki-color-gray-000: #ffffff;
   --ifm-color-gray-000: #F6F8FC;
   --ifm-color-gray-100: #F2F5FB;
   --ifm-color-gray-200: #E8EEFB;
@@ -17,8 +18,11 @@
   --ifm-color-gray-700: #485776;
   --ifm-color-gray-800: #293858;
   --ifm-color-gray-900: #131F37;
+  --wiki-color-gray-950: #141E31;
+  --wiki-color-gray-960: #0D192F;
+  --wiki-color-gray-970: #061023;
 
-  --ifm-background-color: white;
+  --ifm-background-color: var(--wiki-color-gray-000);
 
   --ifm-hover-overlay: var(--ifm-color-emphasis-200);
 
@@ -34,7 +38,7 @@
   --ifm-global-border-width: 2px;
   --ifm-global-radius: 0.5rem;
 
-  --ifm-card-background-color: #ffffff;
+  --ifm-card-background-color: var(--wiki-color-gray-000);
 
   --ifm-navbar-link-color: var(--ifm-color-gray-700);
   --ifm-navbar-link-hover-color: var(--ifm-color-primary);
@@ -45,7 +49,7 @@
   --ifm-footer-color: var(--ifm-color-gray-300);
   --ifm-footer-title-color: var(--ifm-color-gray-700);
   --ifm-footer-link-color: var(--ifm-color-gray-300);
-  --ifm-footer-background-color: #141E31;
+  --ifm-footer-background-color: var(--wiki-color-gray-950);
 
   --ifm-navbar-padding-horizontal: 25px;
   --ifm-navbar-padding-vertical: 18px;
@@ -55,26 +59,26 @@
   --ifm-menu-color-active: var(--ifm-color-primary);
   --ifm-menu-color-background-active: transparent;
 
-  --ifm-button-color: white;
+  --ifm-button-color: var(--wiki-color-gray-000);
 }
 
 html[data-theme='dark'] {
   --ifm-color-primary: #14CABF;
 
-  --ifm-background-color: #061023;
+  --ifm-background-color: var(--wiki-color-gray-970);
 
-  --ifm-background-surface-color: #0D192F;
+  --ifm-background-surface-color: var(--wiki-color-gray-960);
 
   --ifm-navbar-link-color: var(--ifm-color-gray-400);
   --ifm-navbar-background-color:var(--ifm-background-color);
 
   --ifm-menu-color-background-hover: var(--ifm-color-emphasis-300);
 
-  --ifm-card-background-color:#141E31;
+  --ifm-card-background-color:var(--wiki-color-gray-950);
 
   --ifm-heading-color: inherit;
 
-  --ifm-hover-overlay: #0D192F;
+  --ifm-hover-overlay: var(--wiki-color-gray-960);
 }
 
 html {
@@ -207,7 +211,7 @@ h2 {
       box-shadow: none;
   }
   [data-theme='dark']  .navbar {
-    border-bottom: 1px solid #FFFFFF1F;
+    border-bottom: 1px solid var(--ifm-color-gray-800);
    }
 
 

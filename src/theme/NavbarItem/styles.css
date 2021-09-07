@@ -109,7 +109,7 @@ Active Link in mega menu
 */
 
 .dropdown__link--active .link__icon {
-  color: white;
+  color: var(--wiki-color-gray-000);
   background-color: #14CABF;
 }
 
@@ -119,7 +119,7 @@ Active Link in mega menu
 }
 
 [data-theme='dark'] .dropdown__link--active, [data-theme='dark'] .dropdown__link--active:hover {
-  color:white;
+  color:var(--wiki-color-gray-000);
   background-color: var(--ifm-dropdown-hover-background-color)
 }
 /*
