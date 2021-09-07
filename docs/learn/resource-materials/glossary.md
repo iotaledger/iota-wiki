@@ -178,7 +178,7 @@ Ti, Gi, Mi, ki, i 
 - **Tip:** A transaction that has not yet been approved. 
 - **Tip Selection:** The process of selecting previous transactions to be referenced by a new transaction. In these references, a transaction ties into the existing data structure. IOTA only enforces that a transaction approves up to eight other transactions, the tip selection strategy is left to the user (with a good default provided by IOTA).
 - **Tip Transaction:** A solid end transaction that is not yet a parent.
-- **Transaction (IOTA 2.0):** The payload of a value object. It contains the details of a money transfer.
+- **Transaction (IOTA 2.0):** A message that contains a Token transfer as a payload. The transferred tokens can be native IOTA Tokens or native IOTA Assets.
 
 ## U
 
