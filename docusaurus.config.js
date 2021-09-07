@@ -44,11 +44,11 @@ module.exports = {
       items: [
         {
           label: "Learn",
-          to: "docs/learn/about-iota/an-introduction-to-iota",
+          to: "learn/about-iota/an-introduction-to-iota",
         },
         {
           label: "Participate",
-          to: "docs/participate/support-the-network/about-nodes",
+          to: "participate/support-the-network/about-nodes",
         },
         {
           label: 'Build',
@@ -67,9 +67,9 @@ module.exports = {
                 {
                   label: "Getting Started",
                   sublabel: "IOTA development basics",
-                  to: "docs/develop/getting-started/architecture",
+                  to: "build/getting-started/architecture",
                   icon: "\ue908",
-                  activeBaseRegex: 'docs/develop/getting-started/.*'
+                  activeBaseRegex: 'build/getting-started/.*'
                 }
               ]
             },
@@ -176,27 +176,27 @@ module.exports = {
           items: [
             {
               label: 'About IOTA',
-              to: "docs/learn/about-iota/an-introduction-to-iota",
+              to: "learn/about-iota/an-introduction-to-iota",
             },
             {
               label: 'IOTA Token',
-              to: "docs/learn/iota-token/overview",
+              to: "learn/iota-token/overview",
             },
             {
               label: 'Wallets',
-              to: "docs/learn/wallets/what-is-a-wallet",
+              to: "learn/wallets/what-is-a-wallet",
             },
             {
               label: 'Networks',
-              to: "docs/learn/networks/iota-1.5-chrysalis",
+              to: "learn/networks/iota-1.5-chrysalis",
             },
             {
               label: 'Resource Materials',
-              to: "docs/learn/resource-materials/glossary",
+              to: "learn/resource-materials/glossary",
             },
             {
               label: 'Research',
-              to: "docs/learn/research/research-outline",
+              to: "learn/research/research-outline",
             },
           ],
         },
@@ -205,27 +205,27 @@ module.exports = {
           items: [
             {
               label: 'Support the network',
-              to: "docs/participate/support-the-network/run-a-node",
+              to: "participate/support-the-network/run-a-node",
             },
             {
               label: 'The Community',
-              to: "docs/participate/the-community/discord",
+              to: "participate/the-community/discord",
             },
             {
               label: 'Partnerships',
-              to: "docs/participate/partnerships/iota-partnerships",
+              to: "participate/partnerships/iota-partnerships",
             },
             {
               label: 'Funding',
-              to: "docs/participate/funding/edf-funding",
+              to: "participate/funding/edf-funding",
             },
             {
               label: 'Use Cases',
-              to: "docs/use/use-cases/industry-applications",
+              to: "use/use-cases/industry-applications",
             },
             {
               label: 'Solutions',
-              to: "docs/use/streams/encrypted-data-comms",
+              to: "use/streams/encrypted-data-comms",
             },
           ],
         },
@@ -234,19 +234,19 @@ module.exports = {
           items: [
             {
               label: 'Getting Started',
-              to: "docs/build/getting-started/architecture",
+              to: "build/getting-started/architecture",
             },
             {
               label: 'Fundamentals',
-              to: "docs/build/fundamentals/cryptography",
+              to: "build/fundamentals/cryptography",
             },
             {
               label: 'Exchange Integration',
-              to: "docs/develop/exchange-integration/exchange-integration-guide",
+              to: "build/exchange-integration/exchange-integration-guide",
             },
             {
               label: 'Tutorials',
-              to: "docs/build/tutorials/youtube",
+              to: "build/tutorials/youtube",
             },
           ],
         },
@@ -324,6 +324,7 @@ module.exports = {
           // Please change this to your repo.
           editUrl: 'https://github.com/iota-community/iota-wiki/edit/develop/',
           remarkPlugins: [require('remark-code-import'), require('remark-import-partial')],
+          routeBasePath: "/"
         },
         blog: {
           showReadingTime: true,
