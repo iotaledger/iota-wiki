@@ -145,7 +145,7 @@ module.exports = {
                 {
                   label: "Identity",
                   sublabel: "Identity framework",
-                  to: "identity.rs/intro",
+                  to: "identity.rs/introduction",
                   icon: "\ue905",
                   activeBaseRegex: 'identity.rs/.*'
                 },
