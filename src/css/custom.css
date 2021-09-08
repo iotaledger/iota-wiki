@@ -7,9 +7,7 @@
   --ifm-color-warning: #e5a23e;
   --ifm-color-danger: #e53e3e;
 
-  --wiki-color-gray-000: #ffffff;
-  --ifm-color-gray-000: #F6F8FC;
-  --ifm-color-gray-100: #F2F5FB;
+  --ifm-color-gray-100: #F6F8FC;
   --ifm-color-gray-200: #E8EEFB;
   --ifm-color-gray-300: #D8E1F4;
   --ifm-color-gray-400: #B0BFD9;
@@ -17,12 +15,9 @@
   --ifm-color-gray-600: #677695;
   --ifm-color-gray-700: #485776;
   --ifm-color-gray-800: #293858;
-  --ifm-color-gray-900: #131F37;
-  --wiki-color-gray-950: #141E31;
-  --wiki-color-gray-960: #0D192F;
-  --wiki-color-gray-970: #061023;
+  --ifm-color-gray-900: #0D192F;
 
-  --ifm-background-color: var(--wiki-color-gray-000);
+  --ifm-background-color: var(--ifm-color-gray-0);
 
   --ifm-hover-overlay: var(--ifm-color-emphasis-200);
 
@@ -38,18 +33,18 @@
   --ifm-global-border-width: 2px;
   --ifm-global-radius: 0.5rem;
 
-  --ifm-card-background-color: var(--wiki-color-gray-000);
+  --ifm-card-background-color: var(--ifm-color-gray-0);
 
   --ifm-navbar-link-color: var(--ifm-color-gray-700);
   --ifm-navbar-link-hover-color: var(--ifm-color-primary);
   --ifm-navbar-link-active-color: var(--ifm-color-primary);
 
-  --ifm-dropdown-hover-background-color: rgba(72, 87, 118, 0.08);
+  --ifm-dropdown-hover-background-color: var(--ifm-color-gray-100);
 
   --ifm-footer-color: var(--ifm-color-gray-300);
   --ifm-footer-title-color: var(--ifm-color-gray-700);
   --ifm-footer-link-color: var(--ifm-color-gray-300);
-  --ifm-footer-background-color: var(--wiki-color-gray-950);
+  --ifm-footer-background-color: var(--ifm-color-gray-900);
 
   --ifm-navbar-padding-horizontal: 25px;
   --ifm-navbar-padding-vertical: 18px;
@@ -59,7 +54,7 @@
   --ifm-menu-color-active: var(--ifm-color-primary);
   --ifm-menu-color-background-active: transparent;
 
-  --ifm-button-color: var(--wiki-color-gray-000);
+  --ifm-button-color: var(--ifm-color-gray-0);
 }
 
 html {
@@ -71,20 +66,20 @@ html {
 html[data-theme='dark'] {
   --ifm-color-primary: #14CABF;
 
-  --ifm-background-color: var(--wiki-color-gray-970);
+  --ifm-background-color: var(--ifm-color-gray-900);
 
-  --ifm-background-surface-color: var(--wiki-color-gray-960);
+  --ifm-background-surface-color: var(--ifm-color-gray-900);
 
   --ifm-navbar-link-color: var(--ifm-color-gray-400);
   --ifm-navbar-background-color:var(--ifm-background-color);
 
   --ifm-menu-color-background-hover: var(--ifm-color-emphasis-300);
 
-  --ifm-card-background-color:var(--wiki-color-gray-950);
+  --ifm-card-background-color:var(--ifm-color-gray-900);
 
   --ifm-heading-color: inherit;
 
-  --ifm-hover-overlay: var(--wiki-color-gray-960);
+  --ifm-hover-overlay: var(--ifm-color-gray-900);
 }
 
 .title__text {
