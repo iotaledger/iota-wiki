@@ -21,7 +21,7 @@ description: Glossary of all specialized names and phrases used in the IOTA
 ## B
 
 - **Balance:** Funds on the addresses (account). These are always available and cannot be deleted or forgotten.
-- **Blockchain Bottleneck:** The more transactions are issued, the more the block rate and size becomes a bottleneck in the system. It is no longer possible to capture all incoming transactions in a prompt manner. Attempts to speed up block rates result in more orphaned blocks (blocks are left behind) and reduce the security of the blockchain. 
+- **Blockchain Bottleneck:** The more transactions are issued, the more the block rate and size become a bottleneck in the system. It is no longer possible to capture all incoming transactions in a prompt manner. Attempts to speed up block rates result in more orphaned blocks (blocks are left behind) and reduce the security of the blockchain. 
 - **Branch (IOTA 2.0):** A version of the ledger that temporarily coexists with other versions, each spawned by conflicting transactions.
 - **Bee:** Node software developed by the IOTA foundation using the Rust programming language.
 - **Bootstrapping attack:** An attack in which a node downloads malicious snapshot files, including invalid transactions and balances.
