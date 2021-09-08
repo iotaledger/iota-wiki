@@ -426,40 +426,6 @@ html[data-theme='dark'] {
    color: #B0BFD9;
   }
 
-  .footer {
-    border-top: 1px solid #E8EEFB;
-  }
-
-  [data-theme='dark'] .footer {
-    border-top: 1px solid var(--ifm-color-gray-700);
-  }
-
-
-  .footer__links {
-    margin-left: max(1rem, calc(20% - 5rem));
-    margin-right: max(1rem, calc(20% - 5rem));
-    font-size: 1rem;
-  }
-
-  .footer__bottom {
-    display: flex;
-    align-items: flex-end;
-    flex-wrap: wrap;
-    margin-left: max(1rem, calc(20% - 5rem));
-    margin-right: max(1rem, calc(20% - 5rem));
-  }
-
-  .footer__logo {
-    height: 3rem;
-    margin-right: 1em;
-    margin-bottom: -1em;
-  }
-
-  .footer__copyright {
-    font-size: 0.9rem;
-    margin-top: 1em;
-  }
-
   ::selection {
     background-color: #b3d4fc;
     color: #000;

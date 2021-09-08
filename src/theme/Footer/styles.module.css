@@ -1,0 +1,42 @@
+/**
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+ .footer {
+  border-top: 1px solid #E8EEFB;
+  background: #141E31;
+}
+
+[data-theme='dark'] .footer {
+  border-top: 1px solid var(--ifm-color-gray-700);
+}
+
+.footer__bottom, .footer__links {
+  margin-left: max(1rem,calc(20% - 5rem));
+  margin-right: max(1rem,calc(20% - 5rem));
+}
+
+.footer__links {
+  font-size: 1rem;
+}
+
+.footer__bottom {
+  display: flex;
+  align-items: flex-end;
+  flex-wrap: wrap;
+}
+
+.footer__logo {
+  height: 3rem;
+  margin-top: 2rem;
+  margin-right: 1em;
+  margin-bottom: -1em;
+}
+
+.footer__copyright {
+  font-size: 0.9rem;
+  margin-top: 1em;
+}
