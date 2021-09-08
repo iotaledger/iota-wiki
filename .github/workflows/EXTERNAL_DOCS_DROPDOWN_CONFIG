@@ -44,7 +44,7 @@
             },
             {
               label: "Identity",
-              to: "identity.rs/intro",
+              to: "identity.rs/introduction",
               className: "icon-identity",
               activeBaseRegex: 'identity.rs/.*'
             },
