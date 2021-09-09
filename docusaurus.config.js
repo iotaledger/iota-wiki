@@ -179,10 +179,6 @@ module.exports = {
           ],
         },
         { to: '/blog', label: 'Blog', position: 'right' },
-        {
-          type: 'search',
-          position: 'right',
-        },
       ],
 
     },
@@ -298,7 +294,6 @@ module.exports = {
     },
     colorMode: {
       defaultMode: 'dark',
-
       // Dark/light switch icon options
       switchConfig: {
         // Icon for the switch while in dark mode
