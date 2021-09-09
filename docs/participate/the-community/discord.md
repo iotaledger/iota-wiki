@@ -20,37 +20,37 @@ To access the IOTA Discord, a verified Discord account is required.
 
 Make sure to read the server rules and to accept them.
 
-![blockchain-bottleneck](/img/participate/discord/first_steps_discord_1.png)
+![discord-first-steps](/img/participate/discord/first_steps_discord_1.png)
 
 Before verification, the list of channels will be very limited. Use the **#help** channel to get support for the verification.
 
-![blockchain-bottleneck](/img/participate/discord/verify_yourself_discord_2.png)
+![discord-verify-yourself](/img/participate/discord/verify_yourself_discord_2.png)
 
 **Verification**
 
 Make sure to have DMs (direct messages) enabled.
 
-![blockchain-bottleneck](/img/participate/discord/enable_dm_discord_3.png)
+![discord-enable-dm](/img/participate/discord/enable_dm_discord_3.png)
 
 *Note: After the verification process it is suggested to disable direct messages as those are sometimes used to send spam messages or scams.*
 
 The verification system will send a direct message. Click on the **Click me to verify!** link to start with the verification.
 
-![blockchain-bottleneck](/img/participate/discord/verify_click_discord_4.png)
+![discord-verify](/img/participate/discord/verify_click_discord_4.png)
 
 Discord will warn you before opening a browser, click **Yep** to continue.
 
-![blockchain-bottleneck](/img/participate/discord/warning_discord_5.png)
+![discord-warning](/img/participate/discord/warning_discord_5.png)
 
 Once verified, the IOTA Discord will display the complete channels list.
 
-![blockchain-bottleneck](/img/participate/discord/success_discord_6.png)
+![discord-success](/img/participate/discord/success_discord_6.png)
 
 ## Welcome to the IOTA Discord
 
 Now that you are fully verified, you are able to see all the categories and channels.
 
-![blockchain-bottleneck](/img/participate/discord/welcome_discord_7.png)
+![discord-welcome](/img/participate/discord/welcome_discord_7.png)
 
 **Next steps**
 
