@@ -22,6 +22,19 @@ module.exports = {
     },
   ],
   themeConfig: {
+    typesense: {
+        typesenseCollectionName: 'IOTAWiki', // Replace with your own doc site's name. Should match the collection name in the scraper settings.
+        typesenseServerConfig: {
+          nodes: [
+            {
+              host: 'localhost',
+              port: 8108,
+              protocol: 'http',
+            },
+          ],
+          apiKey: 'DnmomoRyJG0bXvMpM1mVsL80eaQzjmBq',
+        },
+    },
     announcementBar: {
       id: 'wip', // Any value that will identify this message.
       content:
