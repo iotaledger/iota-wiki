@@ -179,6 +179,10 @@ module.exports = {
           ],
         },
         { to: '/blog', label: 'Blog', position: 'right' },
+        {
+          type: 'search',
+          position: 'right',
+        },
       ],
 
     },
@@ -328,6 +332,8 @@ module.exports = {
       },
     },
   },
+  themes: ['docusaurus-theme-search-typesense'],
+
   presets: [
     [
       '@docusaurus/preset-classic',
