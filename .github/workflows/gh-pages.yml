@@ -121,3 +121,14 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./build
           cname: wiki.iota.org
+      - name: Create search index env file
+        run: |
+          touch search.env
+          echo TYPESENSE_API_KEY=${{ secrets.TYPESENSE_API_KEY }} >> search.env
+          echo TYPESENSE_HOST=${{ secrets.TYPESENSE_HOST }} >> search.env
+          echo TYPESENSE_PORT=${{ secrets.TYPESENSE_PORT }} >> search.env
+          echo TYPESENSE_PROTOCOL=${{ secrets.TYPESENSE_PROTOCOL }} >> search.env
+      - name: Update search indexes
+        run: |
+          docker run -d --env-file=./search.env -e "CONFIG=$(cat .github/workflows/search.config.json | jq -r tostring)" typesense/docsearch-scraper
+
