@@ -107,7 +107,7 @@ Bee is a framework for IOTA nodes, clients and applications in Rust. The Bee tea
 
 **COMMUNITY DEVELOPMENT**
 
-These channels are dedicated to the developers in our ecosystem with a list of programming language specific channels, community activities and development like the comnet or the ntf-marketplace.
+These channels are dedicated to the developers in our ecosystem with a list of programming language specific channels, community activities and development like the Comnet or the NFT-marketplace.
 
 **IOTA IMPACT**
 
