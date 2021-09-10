@@ -4,7 +4,7 @@ import glossary from '@site/static/glossary/glossary.json'
 function GlossaryToolTip({glossaryKey}) {
 
     return (
-        <a href={"/docs/learn/resource-materials/glossary#"+glossary[glossaryKey].link} className={"tooltip"} data-tip={glossary[glossaryKey].tip}>{glossaryKey}</a>
+        <span className={"tooltip"} data-tip={glossary[glossaryKey]}>{glossaryKey}</span>
     )
 }
 
