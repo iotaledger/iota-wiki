@@ -1,7 +1,7 @@
 import React from 'react'
 import useBaseUrl from '@docusaurus/useBaseUrl'
 import clsx from 'clsx';
-import styles from './styles.module.css';
+import styles from './styles.css';
 
 const SocialLinkList = [
   {
@@ -57,18 +57,18 @@ const SocialLinkList = [
 function SocialLink({ title, imageUrl, url, backgroundColor }) {
   return (
     <a
-    className={clsx('padding-horiz--sm padding-vert--md', styles.socialLink)}
+    className={clsx('padding-horiz--sm padding-vert--md', 'socialLink')}
     style={{backgroundColor: backgroundColor}}
     href={url}>
-      <img className={clsx(styles.socialImage)} src={useBaseUrl(imageUrl)} />
-      <div className={clsx(styles.socialTitle)}>{title}</div>
+      <img className='socialImage' src={useBaseUrl(imageUrl)} />
+      <div className='socialTitle'>{title}</div>
     </a>
   )
 }
 
 function SocialBar() {
   return (
-    <div className={clsx(styles.socialBar)}>
+    <div className='socialBar'>
       {SocialLinkList.map((props, idx) => (
         <SocialLink key={idx} {...props} />
       ))}
