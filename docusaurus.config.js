@@ -67,9 +67,9 @@ module.exports = {
                 {
                   label: "Getting Started",
                   sublabel: "IOTA development basics",
-                  to: "docs/develop/getting-started/architecture",
+                  to: "docs/build/getting-started/architecture",
                   icon: "\ue908",
-                  activeBaseRegex: 'docs/develop/getting-started/.*'
+                  activeBaseRegex: 'docs/build/getting-started/.*'
                 }
               ]
             },
