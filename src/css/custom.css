@@ -512,3 +512,10 @@ Logo fonts CSS
     font-style: normal;
     font-display: block;
 }
+
+.__react_component_tooltip{
+  max-width: 80%;
+}
+.tooltip{
+  color: var(--ifm-link-color);
+}
