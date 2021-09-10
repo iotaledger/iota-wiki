@@ -293,6 +293,6 @@ h2 {
 /*
 Patch to avoid displaying a double header in imported DOCS
 */
-div.markdown > p > header > h1 {
+.markdown header h1 {
   display:none;
 }
