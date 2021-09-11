@@ -62,7 +62,7 @@ function MegaDropdownItem({className, ...props}) {
     return (
       <NavLink
         className={clsx(
-          'dropdown__link',
+          'dropdown__link mega-dropdown__link',
           className,
         )}
         activeClassName={dropdownLinkActiveClass}

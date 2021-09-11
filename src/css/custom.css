@@ -114,12 +114,8 @@ h2 {
   font-family: 'Metropolis Semi Bold';
   line-height: 1.25rem;
   font-weight: 400;
-  border-bottom: 1px solid var(--ifm-color-gray-300);
+  border-bottom: var(--ifm-global-border-width) solid var(--ifm-color-emphasis-200);
   box-shadow: none;
-}
-
-[data-theme='dark']  .navbar {
-  border-bottom: 1px solid var(--ifm-color-gray-800);
 }
 
 
@@ -144,11 +140,7 @@ h2 {
 }
 
 .footer {
-  border-top: 1px solid var(--ifm-color-gray-300);
-}
-
-[data-theme='dark'] .footer {
-  border-top: 1px solid var(--ifm-color-gray-800);
+  border-top: var(--ifm-global-border-width) solid var(--ifm-color-emphasis-200);
 }
 
 

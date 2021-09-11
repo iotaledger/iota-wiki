@@ -28,7 +28,7 @@
 
   --ifm-link-hover-decoration: none;
 
-  --ifm-global-border-width: 2px;
+  --ifm-global-border-width: 1px;
   --ifm-global-radius: 0.5rem;
 
   --ifm-card-background-color: var(--ifm-color-gray-0);
@@ -37,7 +37,7 @@
   --ifm-navbar-link-hover-color: var(--ifm-color-primary);
   --ifm-navbar-link-active-color: var(--ifm-color-primary);
 
-  --ifm-dropdown-hover-background-color: var(--ifm-color-gray-100);
+  --ifm-dropdown-hover-background-color: var(--ifm-color-emphasis-100);
 
   --ifm-footer-color: var(--ifm-color-gray-300);
   --ifm-footer-title-color: var(--ifm-color-gray-700);
