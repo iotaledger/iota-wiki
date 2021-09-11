@@ -266,10 +266,6 @@ h2 {
   text-shadow: none;
 }
 
-.grey {
-  color: var(--ifm-navbar-link-color);
-}
-
 .stick {
   height: 4px;
   background-color: var(--ifm-color-primary);
