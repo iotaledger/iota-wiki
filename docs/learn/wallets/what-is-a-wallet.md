@@ -26,7 +26,7 @@ But as software wallets are part of your operating system, the security of a sof
 
 The IOTA Foundation has developed a software Wallet that follows the highest standards possible to keep your secrets safe. Read everything about the Firefly Wallet here:
 
-**[a link](https://linkgoes.here)** - A description for the link
+**[Firefly Wallet](https://wiki.iota.org/docs/learn/wallets/firefly-wallet)**
 
 And download the Firefly Wallet here:
 
@@ -46,7 +46,7 @@ A hardware wallet is therefore the most secure way to keep your secrets safe, bu
 
 IOTA supports currently the use of the Ledger Nano hardware wallets. 
 
-Read how to use it here: **[a link](https://linkgoes.here)** 
+Read how to use it **[here.](https://wiki.iota.org/docs/learn/wallets/firefly-wallet#user-guide-for-users-of-a-ledger-nano-x-or-ledger-nano-s-device)** 
 
 Purchase a Ledger only directly from the official store: 
 
