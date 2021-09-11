@@ -4,32 +4,19 @@ description: A Wallet for the current IOTA 2.o Development - and Testnet. Offers
 ---
 
 
-# Heading 1 (Page Title)
+# Devnet Wallet
 
-content - introduction to the topic
-
-
-## Heading 2 (Sub topic 1)
-
-content 
-
-## Heading 2 (Sub topic 2)
-
-content
+With a wallet for the IOTA 2.0 Devnet you can request tokens from the faucet, transfer them and create or manage NFTs and digital assets.
+Currently, there exist two wallets for the DevNet. A Command Line Wallet(cli-wallet) and a GUI Wallet(IOTA 2.0 DevNet GUI Wallet)
 
 
+## cli-wallet
 
-<br/>
+The cli wallet is the most feature complete wallet. You can find a guide for it [here](https://wiki.iota.org/goshimmer/tutorials/wallet-library).  
+The cli wallet is located directly in the Goshimmer repo and pre-build binaries are released with each new GoShimmer version [here](https://github.com/iotaledger/goshimmer/releases).
 
-----
+## IOTA 2.0 DevNet GUI Wallet
 
-<br/>
+![DevNet-Wallet](https://github.com/iotaledger/IOTA-2.0-DevNet-wallet/blob/master/images/devnet-wallet.png?raw=true)
 
-**need to add a footer section for further content - (three cards)**
-
-## Useful Links
-- **[a link](https://linkgoes.here)** - A description for the link
-- **[a link](https://linkgoes.here)** - A description for the link
-- **[a link](https://linkgoes.here)** - A description for the link
-
-
+With the GUI wallet you can transfer token and manage your digital assets. It has its own [repo](https://github.com/iotaledger/IOTA-2.0-DevNet-wallet) and you can get prebuild binaries from the [releases](https://github.com/iotaledger/IOTA-2.0-DevNet-wallet/releases).
