@@ -9,6 +9,31 @@
   margin-right: 0.5rem;
 }
 
+.title__text {
+  text-align: center;
+  font-size: 4rem;
+  font-family: 'Metropolis Semi Bold';
+  margin-bottom: 0;
+  letter-spacing: 0.02em;
+}
+
+.title__subtext {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--ifm-color-gray-500);
+  text-align: center;
+}
+
+@media (max-width: 997px) {
+  .title__text {
+    font-size: 3rem;
+  }
+
+  .title__subtext {
+    font-size: 1.1rem;
+  }
+}
+
 .card-container {
   margin-top: 5rem;
 }

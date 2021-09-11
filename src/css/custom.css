@@ -7,31 +7,6 @@ html {
   font-weight: var(--ifm-font-weight-normal);
 }
 
-.title__text {
-  text-align: center;
-  font-size: 4rem;
-  font-family: 'Metropolis Semi Bold';
-  margin-bottom: 0;
-  letter-spacing: 0.02em;
-}
-
-.title__subtext {
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: var(--ifm-color-gray-500);
-  text-align: center;
-}
-
-@media (max-width: 997px) {
-  .title__text {
-    font-size: 3rem;
-  }
-
-  .title__subtext {
-    font-size: 1.1rem;
-  }
-}
-
 article {
   max-width: 800px;
   padding-top: 3rem;
@@ -198,6 +173,6 @@ h2 {
 /*
 Patch to avoid displaying a double header in imported DOCS
 */
-.markdown header h1 {
+div.markdown > p > header > h1 {
   display:none;
 }
