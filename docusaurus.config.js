@@ -67,9 +67,9 @@ module.exports = {
                 {
                   label: "Getting Started",
                   sublabel: "IOTA development basics",
-                  to: "docs/develop/getting-started/architecture",
+                  to: "docs/build/getting-started/architecture",
                   icon: "\ue908",
-                  activeBaseRegex: 'docs/develop/getting-started/.*'
+                  activeBaseRegex: 'docs/build/getting-started/.*'
                 }
               ]
             },
@@ -242,7 +242,7 @@ module.exports = {
             },
             {
               label: 'Exchange Integration',
-              to: "docs/develop/exchange-integration/exchange-integration-guide",
+              to: "docs/build/exchange-integration/exchange-integration-guide",
             },
             {
               label: 'Tutorials',
