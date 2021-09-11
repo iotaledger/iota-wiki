@@ -10,7 +10,7 @@ import Link from '@docusaurus/Link';
 import {useThemeConfig} from '@docusaurus/theme-common';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import ThemedImage from '@theme/ThemedImage';
-import SocialBar from '@theme/SocialBar';
+import Social from '@theme/Social';
 
 
 function FooterLink({to, href, label, prependBaseUrlToHref, ...props}) {
@@ -115,7 +115,7 @@ function Footer() {
             </div>
           )}
         </div>
-        <SocialBar/>
+        <Social/>
       </footer>
     </>
   );
