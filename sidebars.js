@@ -122,13 +122,13 @@ module.exports =
             label: 'Use Cases',
             collapsed: true,
             items: [
-                'use/use-cases/industry-applications',
-                'use/use-cases/internet-of-things',
-                'use/use-cases/digital-assets',
-                'use/use-cases/nfts',
-                'use/use-cases/data-confidence',
-                'use/use-cases/eco-social-projects',
-                'use/use-cases/private-tangle',
+                'participate/use-cases/industry-applications',
+                'participate/use-cases/internet-of-things',
+                'participate/use-cases/digital-assets',
+                'participate/use-cases/nfts',
+                'participate/use-cases/data-confidence',
+                'participate/use-cases/eco-social-projects',
+                'participate/use-cases/private-tangle',
             ],
         },
         {
@@ -136,62 +136,20 @@ module.exports =
             label: 'Solutions',
             collapsed: true,
             items: [
-                {
-                    type: 'category',
-                    label: 'Streams',
-                    collapsed: true,
-                    items: [
-                        'use/streams/encrypted-data-comms',
-                    ],
-                },
-                {
-                    type: 'category',
-                    label: 'Identity',
-                    collapsed: true,
-                    items: [
-                        'use/identity/enabling-privacy-and-trust',
-                    ],
-                },
-                {
-                    type: 'category',
-                    label: 'Smart Contracts',
-                    collapsed: true,
-                    items: [
-                        'use/smart-contracts/programmable-contracts',
-                    ],
-                },
-                {
-                    type: 'category',
-                    label: 'Access',
-                    collapsed: true,
-                    items: [
-                        'use/access/secure-access-control',
-                    ],
-                },
-                {
-                    type: 'category',
-                    label: 'Stronghold',
-                    collapsed: true,
-                    items: [
-                        'use/stronghold/protecting-your-secrets',
-                    ],
-                },
-                {
-                    type: 'category',
-                    label: 'Oracles',
-                    collapsed: true,
-                    items: [
-                        'use/oracles/trust-in-real-world-data',
-                    ],
-                },
+                'participate/solutions/streams',
+                'participate/solutions/identity',
+                'participate/solutions/smart-contracts',
+                'participate/solutions/access',
+                'participate/solutions/stronghold',
+                'participate/solutions/oracles',
                 {
                     type: 'category',
                     label: 'Utilities',
                     collapsed: true,
                     items: [
-                        'use/utilities/tangle-explorer',
-                        'use/utilities/visualizer',
-                        'use/utilities/iota-ipfs',
+                        'participate/solutions/utilities/tangle-explorer',
+                        'participate/solutions/utilities/visualizer',
+                        'participate/solutions/utilities/iota-ipfs',
                     ],
                 },
             ],
