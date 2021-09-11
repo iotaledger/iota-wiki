@@ -1,36 +1,18 @@
-/**
- * Copyright (c) Facebook, Inc. and its affiliates.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */
-
-/**
- * Styles for React Toggle
- * copied over because we want to allow user to swizzle it and modify the css
- * and also to make sure its compatible with our dark mode
- * https://github.com/aaronshaf/toggle/blob/master/style.css
- */
 .toggle {
-  touch-action: pan-x;
   position: relative;
+  color: var(--ifm-navbar-link-color);
   cursor: pointer;
   user-select: none;
 
   width: 28px;
   height: 28px;
   border-radius: 50%;
-  background-color: rgba(0, 0, 0, 0.05);
-  transition: all 0.2s ease;
+  background-color: var(--ifm-color-emphasis-200);
+  transition: all var(--ifm-transition-fast) var(--ifm-transition-timing-default);
 }
 
 .toggle--disabled {
   cursor: not-allowed;
-}
-
-[data-theme='dark'] .toggle {
-  color: var(--ifm-color-gray-400);;
-  background-color: var(--ifm-color-gray-800);
 }
 
 .toggle__screenreader-only {
@@ -48,28 +30,24 @@
   align-items: center;
   justify-content: center;
   position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
+  width: 100%;
+  height: 100%;
 }
 
 .toggle__icon--checked {
   opacity: 0;
-  transition: opacity 0.25s ease;
+  transition: opacity var(--ifm-transition-fast) var(--ifm-transition-timing-default);
 }
 
-[data-theme='dark'] .toggle .toggle__icon--checked,
 .toggle--checked .toggle__icon--checked {
   opacity: 1;
 }
 
 .toggle__icon--unchecked {
   opacity: 1;
-  transition: opacity 0.25s ease;
+  transition: opacity var(--ifm-transition-fast) var(--ifm-transition-timing-default);
 }
 
-[data-theme='dark'] .toggle .toggle__icon--unchecked,
 .toggle--checked .toggle__icon--unchecked {
   opacity: 0;
 }
