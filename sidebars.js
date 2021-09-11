@@ -136,6 +136,7 @@ module.exports =
             label: 'Solutions',
             collapsed: true,
             items: [
+                'participate/solutions/introduction',
                 'participate/solutions/streams',
                 'participate/solutions/identity',
                 'participate/solutions/smart-contracts',
