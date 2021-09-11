@@ -1,0 +1,80 @@
+:root {
+  --ifm-color-primary: #36A1AC;
+  --ifm-color-success: #0FC1B7;
+  --ifm-color-info: #2E8698;
+  --ifm-color-warning: #e5a23e;
+  --ifm-color-danger: #e53e3e;
+
+  --ifm-color-gray-100: #F6F8FC;
+  --ifm-color-gray-200: #E8EEFB;
+  --ifm-color-gray-300: #D8E1F4;
+  --ifm-color-gray-400: #B0BFD9;
+  --ifm-color-gray-500: #909FBE;
+  --ifm-color-gray-600: #677695;
+  --ifm-color-gray-700: #485776;
+  --ifm-color-gray-800: #293858;
+  --ifm-color-gray-900: #0D192F;
+
+  --ifm-background-color: var(--ifm-color-gray-0);
+
+  --ifm-hover-overlay: var(--ifm-color-emphasis-200);
+
+  --ifm-font-color-base: var(--ifm-color-emphasis-1000);
+  --ifm-font-family-base: Inter, sans-serif;
+  --ifm-line-height-base: 1.5;
+
+  --ifm-heading-color: var(--ifm-color-gray-900);
+  --ifm-heading-font-family: Inter;
+
+  --ifm-link-hover-decoration: none;
+
+  --ifm-global-border-width: 2px;
+  --ifm-global-radius: 0.5rem;
+
+  --ifm-card-background-color: var(--ifm-color-gray-0);
+
+  --ifm-navbar-link-color: var(--ifm-color-gray-700);
+  --ifm-navbar-link-hover-color: var(--ifm-color-primary);
+  --ifm-navbar-link-active-color: var(--ifm-color-primary);
+
+  --ifm-dropdown-hover-background-color: var(--ifm-color-gray-100);
+
+  --ifm-footer-color: var(--ifm-color-gray-300);
+  --ifm-footer-title-color: var(--ifm-color-gray-700);
+  --ifm-footer-link-color: var(--ifm-color-gray-300);
+  --ifm-footer-background-color: var(--ifm-color-gray-900);
+
+  --ifm-navbar-padding-horizontal: 25px;
+  --ifm-navbar-padding-vertical: 18px;
+  --ifm-navbar-height: 68px;
+
+  --ifm-menu-color: var(--ifm-color-emphasis-600);
+  --ifm-menu-color-active: var(--ifm-color-primary);
+  --ifm-menu-color-background-active: transparent;
+
+  --ifm-button-color: var(--ifm-color-gray-0);
+}
+
+:root[data-theme='dark'] {
+  --ifm-color-primary: #14CABF;
+
+  --ifm-background-color: var(--ifm-color-gray-900);
+
+  --ifm-background-surface-color: var(--ifm-color-gray-900);
+
+  --ifm-navbar-link-color: var(--ifm-color-gray-400);
+  --ifm-navbar-background-color:var(--ifm-background-color);
+
+  --ifm-menu-color-background-hover: var(--ifm-color-emphasis-300);
+
+  --ifm-card-background-color:var(--ifm-color-gray-900);
+
+  --ifm-heading-color: inherit;
+
+  --ifm-hover-overlay: var(--ifm-color-gray-900);
+}
+
+.markdown > h3 {
+  --ifm-heading-vertical-rhythm-bottom: 0.2;
+  --ifm-h3-vertical-rhythm-top: 2;
+}
