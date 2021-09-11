@@ -65,11 +65,8 @@ function Action({ title, image, image_hover, link, description }) {
         <div className='card__body'>
           <h3>{title}</h3>
           <div className={clsx(
-            'headline-stick',
-            {
-              'size-m': hovering,
-              'size-s': !hovering
-            }
+            'stick',
+            hovering ? 'stick--md' : 'stick--sm',
           )}></div>
           <div className='card__description'>{description}</div>
         </div>

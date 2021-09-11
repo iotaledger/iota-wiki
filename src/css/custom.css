@@ -270,7 +270,7 @@ h2 {
   color: var(--ifm-navbar-link-color);
 }
 
-.headline-stick {
+.stick {
   height: 4px;
   background-color: var(--ifm-color-primary);
   margin-bottom: 1.25rem;
@@ -278,11 +278,11 @@ h2 {
   transition: all var(--ifm-transition-fast) var(--ifm-transition-timing-default);
 }
 
-.headline-stick.size-s {
+.stick--sm {
   width: 32px;
 }
 
-.headline-stick.size-m {
+.stick--md {
   width: 48px;
 }
 
