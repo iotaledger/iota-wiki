@@ -47,7 +47,7 @@ module.exports =
             items: [
                 'learn/networks/iota-1.5-chrysalis',
                 'learn/networks/iota-2.0-coordicide',
-                'learn/networks/devnets',
+                'learn/networks/testnets',
                 'learn/networks/network-token-migration'
             ],
         },
