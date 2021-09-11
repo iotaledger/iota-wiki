@@ -142,7 +142,6 @@ h2 {
   color: inherit;
 }
 
-
 .menu__list {
   margin-bottom: 15px;
 }
@@ -167,7 +166,7 @@ h2 {
   border: none;
 }
 
-.menu .menu__link.menu__link--sublist:after {
+.menu__link--sublist:after {
   background-size: 1.6rem 1.6rem;
 }
 
@@ -187,11 +186,9 @@ h2 {
   padding-left: 12px;
 }
 
-
 .table-of-contents {
   padding: 0px;
 }
-
 
 .navbar {
   font-family: 'Metropolis Semi Bold';
