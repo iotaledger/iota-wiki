@@ -1,19 +1,21 @@
 :root {
-  --ifm-color-primary: #36A1AC;
-  --ifm-color-success: #0FC1B7;
-  --ifm-color-info: #2E8698;
-  --ifm-color-warning: #e5a23e;
-  --ifm-color-danger: #e53e3e;
+  --ifm-color-primary: hsl(186, 52%, 44%);
+  --ifm-color-success: hsl(162, 52%, 44%);
+  --ifm-color-info: hsl(194, 52%, 44%);
+  --ifm-color-warning: hsl(56, 52%, 44%);
+  --ifm-color-danger: hsl(4, 52%, 44%);
 
-  --ifm-color-gray-100: #F6F8FC;
-  --ifm-color-gray-200: #E8EEFB;
-  --ifm-color-gray-300: #D8E1F4;
-  --ifm-color-gray-400: #B0BFD9;
-  --ifm-color-gray-500: #909FBE;
-  --ifm-color-gray-600: #677695;
-  --ifm-color-gray-700: #485776;
-  --ifm-color-gray-800: #293858;
-  --ifm-color-gray-900: #0D192F;
+  --ifm-color-gray-0: hsl(220, 50%, 100%);
+  --ifm-color-gray-100: hsl(220, 50%, 98%);
+  --ifm-color-gray-200: hsl(220, 50%, 96%);
+  --ifm-color-gray-300: hsl(220, 50%, 94%);
+  --ifm-color-gray-400: hsl(220, 20%, 60%);
+  --ifm-color-gray-500: hsl(220, 20%, 50%);
+  --ifm-color-gray-600: hsl(220, 20%, 40%);
+  --ifm-color-gray-700: hsl(220, 50%, 12%);
+  --ifm-color-gray-800: hsl(220, 50%, 9%);
+  --ifm-color-gray-900: hsl(220, 50%, 6%);
+  --ifm-color-gray-1000: hsl(220, 50%, 3%);
 
   --ifm-background-color: var(--ifm-color-gray-0);
 
