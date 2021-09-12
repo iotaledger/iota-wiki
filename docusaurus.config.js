@@ -326,7 +326,7 @@ module.exports = {
           remarkPlugins: [require('remark-code-import'), require('remark-import-partial')],
         },
         blog: {
-          showReadingTime: true,
+          showReadingTime: false,
           blogSidebarCount: 0,
         },
         theme: {
