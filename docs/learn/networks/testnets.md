@@ -21,7 +21,7 @@ The network here does not use or need a coordinator anymore. Utilizes Testnet io
 
 ## IOTA 1.5 Comnet
 
-Comnet is a 100% community driven testnetwork. It can be used as a testnetwork for your IOTA 1.5 apps and it is also used to test the newest Versions of Hornet or Bee and future IOTA 1.5 upgrades.
+Comnet is a 100% community-driven test network. It can be used as a test network for your IOTA 1.5 apps and it is also used to test the newest Versions of Hornet or Bee and future IOTA 1.5 upgrades.
 
 - **[API: https://comnet.tanglebay.com/](https://comnet.tanglebay.com/api/v1/info)**
 - **[Explorer](https://explorer.tanglebay.com/comnet/)**
