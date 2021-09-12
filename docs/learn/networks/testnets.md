@@ -29,7 +29,7 @@ Comnet is a 100% community-driven test network. It can be used as a test network
 
 ## IOTA 1.5 Testnet
 
-The official IOTA 1.5 Testnet. In this testnet Coordinator and some public nodes are run by the IF. It can also be used to test apps for IOTA 1.5. 
+The official IOTA 1.5 Testnet. In this Testnet, the Coordinator and some public nodes are run by the IF. It can also be used to test apps for IOTA 1.5. 
 
 - **[API: https://api.lb-0.testnet.chrysalis2.com/](https://api.lb-0.testnet.chrysalis2.com/api/v1/info)**
 - **[Explorer](https://explorer.iota.org/testnet/)**
