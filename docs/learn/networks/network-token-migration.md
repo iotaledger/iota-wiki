@@ -1,34 +1,15 @@
 ---
 title: Network Token Migration
-description: We describe the process of migrating Tokens from the Legacy Network into the new Chrysalis Network
+description: We describe the process of migrating Tokens from the Legacy Network
+  into the new Chrysalis Network
 ---
 
+# Network Token migration:
 
-# Heading 1 (Page Title)
+We are looking for contributors that would explain how the Migration of tokens from the IOTA legacy network to the IOTA Chrysalis Network takes place.\
+\
+If You feel you can participate in this topic, please use the editor button below and start contributing.
 
-content - introduction to the topic
+### Thanks a lot
 
-
-## Heading 2 (Sub topic 1)
-
-content 
-
-## Heading 2 (Sub topic 2)
-
-content
-
-
-
-<br/>
-
-----
-
-<br/>
-
-**need to add a footer section for further content - (three cards)**
-
-## Useful Links
-- **[a link](https://linkgoes.here)** - A description for the link
-- **[a link](https://linkgoes.here)** - A description for the link
-- **[a link](https://linkgoes.here)** - A description for the link
-
+### The WIKI Team
