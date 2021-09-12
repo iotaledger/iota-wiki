@@ -4,7 +4,7 @@ description: The Development and Testnet implementations for Research purposes. 
 ---
 
 
-# Test- and Developmentnetworks
+# Test- and Development Networks
 
 The IOTA Foundation and the IOTA community members operate several Development Networks in which different stages of the IOTA protocol and new applications can be tested and optimized.
 This is a playground for developers and researchers. 
