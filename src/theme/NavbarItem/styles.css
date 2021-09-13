@@ -94,11 +94,16 @@
   font-family: inter;
 }
 
+.dropdown--show .link__label {
+  color: var(--ifm-navbar-link-hover-color);
+}
+
+.menu__link--active .link__icon,
 .dropdown__link--active .link__icon {
   color: var(--ifm-color-gray-0);
-  background-color: var(--ifm-navbar-link-hover-color);
+  background-color: var(--ifm-color-primary);
 }
 
 .dropdown__link--active .link__label {
-  color: var(--ifm-navbar-link-hover-color);
+  color: var(--ifm-color-primary);
 }

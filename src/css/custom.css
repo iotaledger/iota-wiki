@@ -65,6 +65,10 @@ h2 {
   background-size: 1.6rem 1.6rem;
 }
 
+[data-theme='dark'] .link__icon {
+  color: var(--ifm-color-emphasis-500);
+}
+
 .table-of-contents__link {
   font-family: 'Inter';
   color: var(--ifm-color-emphasis-600);
@@ -110,7 +114,7 @@ h2 {
   color: var(--ifm-color-gray-500);
 }
 
-[data-theme='dark']  .section-header {
+[data-theme='dark'] .section-header {
   color: var(--ifm-color-gray-400);
 }
 

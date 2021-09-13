@@ -173,9 +173,13 @@ function MegaDropdownNavbarItemDesktop({items_: items, layout, position, classNa
           {props.children ?? props.label}
         </NavLink>
       </div>
-      <div className={clsx('dropdown__container', {
-        'dropdown__container--show': showDropdown,
-      })}>
+      <div
+        className={clsx('dropdown__container', {
+          'dropdown__container--show': showDropdown,
+        })}
+        onMouseEnter={() => setShowDropdown(true)}
+        onMouseLeave={() => setShowDropdown(false)}
+      >
         <div className='dropdown__menu dropdown__menu--mega'>
           <div className='dropdown__grid'>
             {grid.map((row, rowKey) => (

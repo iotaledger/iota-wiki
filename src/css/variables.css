@@ -36,6 +36,7 @@
   --ifm-card-background-color: var(--ifm-color-gray-0);
 
   --ifm-navbar-link-color: var(--ifm-menu-color);
+  --ifm-navbar-link-hover-color: var(--ifm-color-emphasis-1000);
 
   --ifm-dropdown-background-color: var(--ifm-color-emphasis-0);
   --ifm-dropdown-hover-background-color: var(--ifm-color-emphasis-100);
@@ -43,6 +44,7 @@
   --ifm-footer-title-color: var(--ifm-color-emphasis-500);
   --ifm-footer-color: var(--ifm-color-gray-300);
   --ifm-footer-link-color: var(--ifm-color-gray-300);
+  --ifm-footer-link-hover-color: var(--ifm-color-gray-0);
   --ifm-footer-background-color: var(--ifm-color-gray-900);
 
   --ifm-navbar-padding-horizontal: 25px;
@@ -57,7 +59,6 @@
 }
 
 :root[data-theme='dark'] {
-  --ifm-color-primary: #14CABF;
   --ifm-background-color: var(--ifm-color-emphasis-0);
   --ifm-background-surface-color: var(--ifm-color-emphasis-0);
   --ifm-navbar-background-color:var(--ifm-background-color);
