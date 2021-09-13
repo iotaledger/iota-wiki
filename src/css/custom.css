@@ -84,6 +84,11 @@
   height: 25px;
 }
 
+.link__icon {
+  font-family: 'icomoon' !important;
+  font-size: 1.7rem;
+}
+
 .section-header {
   font-family: 'Inter';
   font-weight: var(--ifm-font-weight-semibold);
