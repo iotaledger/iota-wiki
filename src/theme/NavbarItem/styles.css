@@ -22,6 +22,7 @@
 
 .dropdown__menu--mega {
   visibility: inherit;
+  border-radius: 0;
   opacity: 1;
   box-shadow: none;
   width: 100%;
