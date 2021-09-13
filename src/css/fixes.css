@@ -1,0 +1,12 @@
+/*
+Patch to avoid displaying a double header in imported DOCS
+*/
+.markdown > p > header > h1 {
+  display:none;
+}
+
+hr {
+  border: none;
+  background-color: var(--ifm-hr-border-color);
+  height: var(--ifm-hr-border-width);
+}
