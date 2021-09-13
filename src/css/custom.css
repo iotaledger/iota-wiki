@@ -1,5 +1,6 @@
 @import "fonts.css";
 @import "variables.css";
+@import "fixes.css";
 
 :root {
   -moz-osx-font-smoothing: grayscale;
@@ -155,11 +156,4 @@
 
 .hash-link:hover {
   border: none;
-}
-
-/*
-Patch to avoid displaying a double header in imported DOCS
-*/
-.markdown > p > header > h1 {
-  display:none;
 }

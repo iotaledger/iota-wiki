@@ -56,6 +56,9 @@
   --ifm-menu-color-background-active: transparent;
 
   --ifm-button-color: var(--ifm-color-gray-0);
+
+  --ifm-hr-border-color: var(--ifm-color-emphasis-200);
+  --ifm-hr-border-width: var(--ifm-global-border-width);
 }
 
 :root[data-theme='dark'] {
