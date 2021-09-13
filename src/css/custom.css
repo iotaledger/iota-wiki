@@ -7,6 +7,14 @@ html {
   font-weight: var(--ifm-font-weight-normal);
 }
 
+.header {
+  background-color: var(--ifm-color-emphasis-100);
+}
+
+[data-theme='dark'] .header {
+  background-color: var(--ifm-color-emphasis-0);
+}
+
 article {
   max-width: 800px;
   padding-top: 3rem;
