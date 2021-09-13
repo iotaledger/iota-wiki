@@ -94,7 +94,8 @@
   font-family: inter;
 }
 
-.dropdown--show .link__label {
+.dropdown--show .link__label,
+.dropdown--show .navbar__link::after {
   color: var(--ifm-navbar-link-hover-color);
 }
 

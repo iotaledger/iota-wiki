@@ -151,7 +151,7 @@ function MegaDropdownNavbarItemDesktop({items_: items, layout, position, classNa
     <>
       <div
         ref={dropdownRef}
-        className={clsx('navbar__item', 'dropdown', 'dropdown--hoverable', {
+        className={clsx('dropdown', 'dropdown--hoverable', {
           'dropdown--right': position === 'right',
           'dropdown--show': showDropdown,
         })}
@@ -159,7 +159,7 @@ function MegaDropdownNavbarItemDesktop({items_: items, layout, position, classNa
         onMouseLeave={() => setShowDropdown(false)}
       >
         <NavLink
-          className={clsx('navbar__link', className, {
+          className={clsx('navbar__item navbar__link', className, {
             'navbar__link--active': containsActive,
           })}
           {...props}
