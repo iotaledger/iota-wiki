@@ -1,6 +1,7 @@
 import {Command, flags} from '@oclif/command'
 import {join} from 'path'
 import {rmSync} from 'fs'
+import {getLocalConfig} from '../local-config'
 
 export default class Clean extends Command {
   static description = 'completely removes local wiki'
@@ -12,7 +13,8 @@ export default class Clean extends Command {
 
   async run() {
     const PWD = process.env.PWD ?? ''
-    const LOCAL_WIKI_FOLDER = join(PWD, 'local')
+    const userConfig = await getLocalConfig()
+    const LOCAL_WIKI_FOLDER = join(PWD, userConfig.localWikiFolder)
     rmSync(LOCAL_WIKI_FOLDER, {recursive: true, force: true})
   }
 }
