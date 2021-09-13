@@ -9,9 +9,9 @@
   --ifm-color-gray-100: hsl(220, 50%, 97%);
   --ifm-color-gray-200: hsl(220, 50%, 94%);
   --ifm-color-gray-300: hsl(220, 50%, 91%);
-  --ifm-color-gray-400: hsl(220, 20%, 70%);
+  --ifm-color-gray-400: hsl(220, 20%, 75%);
   --ifm-color-gray-500: hsl(220, 20%, 60%);
-  --ifm-color-gray-600: hsl(220, 20%, 50%);
+  --ifm-color-gray-600: hsl(220, 20%, 35%);
   --ifm-color-gray-700: hsl(220, 50%, 19%);
   --ifm-color-gray-800: hsl(220, 50%, 14%);
   --ifm-color-gray-900: hsl(220, 50%, 10%);
@@ -21,7 +21,7 @@
   --ifm-background-surface-color: var(--ifm-color-emphasis-0);
   --ifm-hover-overlay: var(--ifm-color-emphasis-200);
 
-  --ifm-font-color-base: var(--ifm-color-emphasis-1000);
+  --ifm-font-color-base: var(--ifm-color-emphasis-700);
   --ifm-font-family-base: Inter, sans-serif;
   --ifm-line-height-base: 1.5;
 
@@ -35,14 +35,13 @@
 
   --ifm-card-background-color: var(--ifm-color-gray-0);
 
-  --ifm-navbar-link-color: var(--ifm-color-emphasis-600);
-  --ifm-navbar-link-hover-color: var(--ifm-color-primary);
-  --ifm-navbar-link-active-color: var(--ifm-color-primary);
+  --ifm-navbar-link-color: var(--ifm-menu-color);
 
+  --ifm-dropdown-background-color: var(--ifm-color-emphasis-0);
   --ifm-dropdown-hover-background-color: var(--ifm-color-emphasis-100);
 
+  --ifm-footer-title-color: var(--ifm-color-emphasis-500);
   --ifm-footer-color: var(--ifm-color-gray-300);
-  --ifm-footer-title-color: var(--ifm-color-gray-700);
   --ifm-footer-link-color: var(--ifm-color-gray-300);
   --ifm-footer-background-color: var(--ifm-color-gray-900);
 
@@ -59,7 +58,8 @@
 
 :root[data-theme='dark'] {
   --ifm-color-primary: #14CABF;
-
+  --ifm-background-color: var(--ifm-color-emphasis-0);
+  --ifm-background-surface-color: var(--ifm-color-emphasis-0);
   --ifm-navbar-background-color:var(--ifm-background-color);
 
   --ifm-menu-color-background-hover: var(--ifm-color-emphasis-100);
