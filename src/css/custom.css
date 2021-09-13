@@ -16,6 +16,16 @@
   background-color: var(--ifm-color-emphasis-0);
 }
 
+.markdown {
+  margin: 2rem 3rem;
+}
+
+@media screen and (max-width: 966px) {
+  .markdown {
+    margin: 2rem 0rem;
+  }
+}
+
 .menu__list {
   margin-bottom: 15px;
 }
