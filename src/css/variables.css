@@ -5,17 +5,17 @@
   --ifm-color-warning: hsl(56, 52%, 44%);
   --ifm-color-danger: hsl(4, 52%, 44%);
 
-  --ifm-color-gray-0: hsl(220, 50%, 100%);
-  --ifm-color-gray-100: hsl(220, 50%, 97%);
-  --ifm-color-gray-200: hsl(220, 50%, 94%);
-  --ifm-color-gray-300: hsl(220, 50%, 91%);
-  --ifm-color-gray-400: hsl(220, 20%, 75%);
-  --ifm-color-gray-500: hsl(220, 20%, 60%);
-  --ifm-color-gray-600: hsl(220, 20%, 35%);
-  --ifm-color-gray-700: hsl(220, 50%, 19%);
-  --ifm-color-gray-800: hsl(220, 50%, 14%);
-  --ifm-color-gray-900: hsl(220, 50%, 10%);
-  --ifm-color-gray-1000: hsl(220, 50%, 6%);
+  --ifm-color-gray-0: hsl(220, 100%, 100%);
+  --ifm-color-gray-100: hsl(220, 65%, 98%);
+  --ifm-color-gray-200: hsl(220, 60%, 94%);
+  --ifm-color-gray-300: hsl(220, 55%, 90%);
+  --ifm-color-gray-400: hsl(220, 35%, 75%);
+  --ifm-color-gray-500: hsl(220, 25%, 65%);
+  --ifm-color-gray-600: hsl(220, 15%, 50%);
+  --ifm-color-gray-700: hsl(220, 25%, 35%);
+  --ifm-color-gray-800: hsl(220, 35%, 25%);
+  --ifm-color-gray-900: hsl(220, 55%, 15%);
+  --ifm-color-gray-1000: hsl(220, 60%, 10%);
 
   --ifm-background-color: var(--ifm-color-emphasis-0);
   --ifm-background-surface-color: var(--ifm-color-emphasis-0);
@@ -25,7 +25,7 @@
   --ifm-font-family-base: Inter, sans-serif;
   --ifm-line-height-base: 1.5;
 
-  --ifm-heading-color: var(--ifm-color-gray-900);
+  --ifm-heading-color: var(--ifm-color-emphasis-900);
   --ifm-heading-font-family: Inter;
 
   --ifm-link-hover-decoration: none;
@@ -51,7 +51,7 @@
   --ifm-navbar-padding-vertical: 18px;
   --ifm-navbar-height: 68px;
 
-  --ifm-menu-color: var(--ifm-color-emphasis-600);
+  --ifm-menu-color: var(--ifm-color-emphasis-700);
   --ifm-menu-color-active: var(--ifm-color-primary);
   --ifm-menu-color-background-active: transparent;
 
@@ -66,8 +66,6 @@
   --ifm-menu-color-background-hover: var(--ifm-color-emphasis-100);
 
   --ifm-card-background-color:var(--ifm-color-gray-900);
-
-  --ifm-heading-color: inherit;
 
   --ifm-hover-overlay: var(--ifm-color-emphasis-100);
 }
