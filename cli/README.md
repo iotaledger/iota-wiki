@@ -1,6 +1,8 @@
 iota-wiki-cli
 ========
 
+This utility requires [`yarn`](https://yarnpkg.com/) and [`git`](https://git-scm.com/) to be installed.
+
 <!-- toc -->
 * [Usage](#usage)
 * [Commands](#commands)
