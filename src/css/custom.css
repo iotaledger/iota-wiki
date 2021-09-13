@@ -1,7 +1,7 @@
 @import "fonts.css";
 @import "variables.css";
 
-html {
+:root {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   font-weight: var(--ifm-font-weight-normal);
@@ -13,36 +13,6 @@ html {
 
 [data-theme='dark'] .header {
   background-color: var(--ifm-color-emphasis-0);
-}
-
-article {
-  max-width: 800px;
-  padding-top: 3rem;
-  padding-bottom: 3rem;
-}
-
-h1 {
-  font-size: 2.5rem;
-}
-
-h2 {
- font-size: 1.8rem !important;
- padding-top: 1rem;
-}
-
-.alert h1,
-.alert h2,
-.alert h3,
-.alert h4,
-.alert h5,
-.alert h6,
-.hero h1,
-.hero h2,
-.hero h3,
-.hero h4,
-.hero h5,
-.hero h6 {
-  color: inherit;
 }
 
 .menu__list {
@@ -185,6 +155,6 @@ h2 {
 /*
 Patch to avoid displaying a double header in imported DOCS
 */
-div.markdown > p > header > h1 {
+.markdown > p > header > h1 {
   display:none;
 }
