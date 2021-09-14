@@ -33,7 +33,7 @@
   --ifm-global-border-width: 1px;
   --ifm-global-radius: 0.5rem;
 
-  --ifm-card-background-color: var(--ifm-color-gray-0);
+  --ifm-card-background-color: var(--ifm-color-emphasis-0);
 
   --ifm-navbar-link-color: var(--ifm-color-emphasis-600);
   --ifm-navbar-link-hover-color: var(--ifm-color-emphasis-1000);
@@ -55,8 +55,6 @@
   --ifm-menu-color-active: var(--ifm-color-primary);
   --ifm-menu-color-background-active: transparent;
 
-  --ifm-button-color: var(--ifm-color-gray-0);
-
   --ifm-hr-border-color: var(--ifm-color-emphasis-200);
   --ifm-hr-border-width: var(--ifm-global-border-width);
 }
@@ -68,7 +66,7 @@
 
   --ifm-menu-color-background-hover: var(--ifm-color-emphasis-100);
 
-  --ifm-card-background-color:var(--ifm-color-gray-900);
+  --ifm-card-background-color:var(--ifm-color-emphasis-100);
 
   --ifm-hover-overlay: var(--ifm-color-emphasis-100);
 }

@@ -106,7 +106,6 @@
   box-shadow: none;
 }
 
-
 .navbar__items--right > * {
   margin-left: 2rem;
 }
@@ -132,22 +131,9 @@
   font-size: 1.7rem;
 }
 
-.section-header {
-  font-family: 'Inter';
-  font-weight: var(--ifm-font-weight-semibold);
-  font-size: 1.5rem;
-  letter-spacing: 0.04em;
-  color: var(--ifm-color-gray-500);
-}
-
-[data-theme='dark'] .section-header {
-  color: var(--ifm-color-gray-400);
-}
-
 .footer {
   border-top: var(--ifm-global-border-width) solid var(--ifm-color-emphasis-200);
 }
-
 
 .footer__links {
   margin-left: max(1rem, calc(20% - 5rem));
