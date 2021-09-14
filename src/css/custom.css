@@ -45,6 +45,26 @@
   background-color: rgba(54, 161, 172, .04);
 }
 
+.menu__link--active .link__icon,
+.dropdown__link--active .link__icon {
+  color: var(--ifm-color-gray-0);
+  background-color: var(--ifm-color-primary);
+}
+
+.dropdown__link--active .link__label,
+.dropdown__link .link__label:hover {
+  color: var(--ifm-navbar-link-hover-color);
+}
+
+.dropdown__label {
+  font-family: Metropolis Bold;
+  font-size: 0.825rem;
+  color: var(--ifm-color-emphasis-500);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  white-space: nowrap;
+}
+
 .menu__link--sublist {
   font-weight: var(--ifm-font-weight-semibold);
   border: none;
@@ -93,6 +113,18 @@
 
 .navbar__brand {
   height: 25px;
+}
+
+.link__label {
+  font-family: Metropolis Semi Bold;
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+.link__sublabel {
+  font-weight: 400;
+  font-size: 85%;
+  font-family: inter;
 }
 
 .link__icon {

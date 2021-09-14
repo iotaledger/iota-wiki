@@ -35,7 +35,7 @@
 
   --ifm-card-background-color: var(--ifm-color-gray-0);
 
-  --ifm-navbar-link-color: var(--ifm-menu-color);
+  --ifm-navbar-link-color: var(--ifm-color-emphasis-600);
   --ifm-navbar-link-hover-color: var(--ifm-color-emphasis-1000);
 
   --ifm-dropdown-background-color: var(--ifm-color-emphasis-0);
