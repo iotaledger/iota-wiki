@@ -1,3 +1,59 @@
-<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C13.6569 2 15 3.34315 15 5L17 5C19.2091 5 21 6.79086 21 9V17C21 19.2091 19.2091 21 17 21H7C4.79086 21 3 19.2091 3 17V9C3 6.79086 4.79086 5 7 5H9C9 3.34315 10.3431 2 12 2ZM19 14V12H15C14.4477 12 14 12.4477 14 13C14 13.5523 14.4477 14 15 14H19ZM19 10H15C13.3431 10 12 11.3431 12 13C12 14.6569 13.3431 16 15 16H19V17C19 18.1046 18.1046 19 17 19H7C5.89543 19 5 18.1046 5 17V9C5 7.89543 5.89543 7 7 7H17C18.1046 7 19 7.89543 19 9V10Z" fill="black"/>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   inkscape:version="1.0beta2 (2b71d25, 2019-12-03)"
+   sodipodi:docname="Union.svg"
+   id="svg835"
+   version="1.1"
+   fill="none"
+   viewBox="0 0 24 25"
+   height="25"
+   width="24">
+  <metadata
+     id="metadata841">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs839" />
+  <sodipodi:namedview
+     inkscape:current-layer="svg835"
+     inkscape:window-maximized="0"
+     inkscape:window-y="0"
+     inkscape:window-x="0"
+     inkscape:cy="12.5"
+     inkscape:cx="12"
+     inkscape:zoom="26.88"
+     showgrid="false"
+     id="namedview837"
+     inkscape:window-height="1120"
+     inkscape:window-width="1792"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0"
+     guidetolerance="10"
+     gridtolerance="10"
+     objecttolerance="10"
+     borderopacity="1"
+     inkscape:document-rotation="0"
+     bordercolor="#666666"
+     pagecolor="#ffffff" />
+  <path
+     style="fill:#000000;fill-opacity:1"
+     id="path833"
+     fill="#485776"
+     d="M12 0C14.2091 0 16 1.79086 16 4L18 4C21.3137 4 24 6.68629 24 10V19C24 22.3137 21.3137 25 18 25H6C2.68629 25 0 22.3137 0 19V10C0 6.68629 2.68629 4 6 4H8C8 1.79086 9.79086 0 12 0ZM22 17V12H18.5C17.1193 12 16 13.1193 16 14.5C16 15.8807 17.1193 17 18.5 17H22ZM22 10H18.5C16.0147 10 14 12.0147 14 14.5C14 16.9853 16.0147 19 18.5 19H22C22 21.2091 20.2091 23 18 23H6C3.79086 23 2 21.2091 2 19V10C2 7.79086 3.79086 6 6 6H18C20.2091 6 22 7.79086 22 10Z"
+     clip-rule="evenodd"
+     fill-rule="evenodd" />
 </svg>
