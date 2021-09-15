@@ -53,6 +53,10 @@
   --ifm-navbar-padding-horizontal: 1.5rem;
   --ifm-navbar-shadow: none;
 
+  --ifm-scrollbar-track-background-color: transparent;
+  --ifm-scrollbar-thumb-background-color: var(--ifm-color-emphasis-300);
+  --ifm-scrollbar-thumb-hover-background-color: var(--ifm-color-emphasis-400);
+
   --ifm-toc-border-color: var(--ifm-color-emphasis-200);
   --ifm-toc-link-color: var(--ifm-color-emphasis-700)
 }
@@ -62,4 +66,8 @@
   --ifm-background-surface-color: var(--ifm-color-emphasis-0);
 
   --ifm-hover-overlay: var(--ifm-color-emphasis-100);
+
+  --ifm-scrollbar-track-background-color: transparent;
+  --ifm-scrollbar-thumb-background-color: var(--ifm-color-emphasis-300);
+  --ifm-scrollbar-thumb-hover-background-color: var(--ifm-color-emphasis-400);
 }
