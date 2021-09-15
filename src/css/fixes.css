@@ -3,12 +3,39 @@
 }
 
 /*
+Patch to style scrollbars consistently
+*/
+* {
+  scrollbar-color: var(--ifm-scrollbar-thumb-background-color) var(--ifm-scrollbar-track-background-color);
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--ifm-scrollbar-track-background-color);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--ifm-scrollbar-thumb-background-color);
+  border-radius: 12px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--ifm-scrollbar-thumb-hover-background-color);
+}
+
+/*
 Patch to avoid displaying a double header in imported DOCS
 */
 .markdown > p > header > h1 {
   display: none;
 }
 
+/*
+Patch to unify hr with border styling
+*/
 hr {
   border: none;
   background-color: var(--ifm-hr-border-color);
