@@ -50,6 +50,7 @@
   --ifm-navbar-item-padding-horizontal: 1.5rem;
   --ifm-navbar-link-color: var(--ifm-color-emphasis-600);
   --ifm-navbar-link-hover-color: var(--ifm-color-emphasis-1000);
+  --ifm-navbar-padding-horizontal: 1.5rem;
   --ifm-navbar-shadow: none;
 
   --ifm-toc-border-color: var(--ifm-color-emphasis-200);

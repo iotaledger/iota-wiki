@@ -135,6 +135,7 @@
 .menu {
   border-top: var(--ifm-global-border-width) solid var(--ifm-color-emphasis-200);
   font-weight: var(--ifm-font-weight-normal);
+  font-size: 0.9rem;
   padding-top: calc(1rem + var(--ifm-toc-padding-vertical)) !important;
 }
 
@@ -146,6 +147,10 @@
   font-family: 'Metropolis Semi Bold';
   font-size: 0.9rem;
   letter-spacing: 1px;
+}
+
+.dropdown__menu--mega {
+  padding: calc(var(--ifm-navbar-padding-vertical) + 1rem) var(--ifm-navbar-padding-horizontal) !important;
 }
 
 .dropdown__menu--mega .link__label {
