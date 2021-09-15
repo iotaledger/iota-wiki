@@ -133,11 +133,9 @@
 }
 
 .menu {
+  border-top: var(--ifm-global-border-width) solid var(--ifm-color-emphasis-200);
   font-weight: var(--ifm-font-weight-normal);
-}
-
-.menu__list {
-  margin-top: 2rem;
+  padding-top: calc(1rem + var(--ifm-toc-padding-vertical)) !important;
 }
 
 .navbar {
