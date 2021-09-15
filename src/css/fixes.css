@@ -1,8 +1,12 @@
+:root {
+  -moz-osx-font-smoothing: grayscale;
+}
+
 /*
 Patch to avoid displaying a double header in imported DOCS
 */
 .markdown > p > header > h1 {
-  display:none;
+  display: none;
 }
 
 hr {

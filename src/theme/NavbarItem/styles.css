@@ -1,12 +1,12 @@
 .dropdown__container {
   position: absolute;
-  padding-top: calc(var(--ifm-navbar-padding-vertical) + var(--ifm-global-border-width) + 1px);
+  padding-top: calc(var(--ifm-navbar-padding-vertical) + var(--ifm-global-border-width) + 5px);
   width: 100%;
   opacity: 0;
   visibility: hidden;
   z-index: var(--ifm-z-index-dropdown);
   position: absolute;
-  top: calc(100% - var(--ifm-navbar-padding-vertical) - 1px);
+  top: calc(100% - var(--ifm-navbar-padding-vertical) - 5px);
   left: 0;
 
   transition-property: opacity, visibility;

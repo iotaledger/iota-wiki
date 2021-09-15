@@ -19,59 +19,46 @@
 
   --ifm-background-color: var(--ifm-color-emphasis-0);
   --ifm-background-surface-color: var(--ifm-color-emphasis-0);
-  --ifm-hover-overlay: var(--ifm-color-emphasis-200);
 
-  --ifm-font-color-base: var(--ifm-color-emphasis-700);
+  --ifm-color-content: var(--ifm-color-emphasis-700);
+  --ifm-color-content-inverse: var(--ifm-color-emphasis-300);
+
   --ifm-font-family-base: Inter, sans-serif;
-  --ifm-line-height-base: 1.5;
 
-  --ifm-heading-color: var(--ifm-color-emphasis-900);
-  --ifm-heading-font-family: Inter;
-
-  --ifm-link-hover-decoration: none;
+  --ifm-footer-background-color: var(--ifm-color-gray-900);
+  --ifm-footer-color: var(--ifm-color-gray-300);
+  --ifm-footer-link-color: var(--ifm-color-gray-300);
+  --ifm-footer-link-hover-color: var(--ifm-color-gray-0);
+  --ifm-footer-title-color: var(--ifm-color-emphasis-500);
 
   --ifm-global-border-width: 1px;
   --ifm-global-radius: 0.5rem;
 
-  --ifm-card-background-color: var(--ifm-color-emphasis-0);
+  --ifm-heading-font-family: "Metropolis Semi Bold", sans-serif;
+  --ifm-heading-font-weight: var(--ifm-font-weight-normal);
+  --ifm-heading-color: var(--ifm-color-emphasis-900);
 
-  --ifm-navbar-link-color: var(--ifm-color-emphasis-600);
-  --ifm-navbar-link-hover-color: var(--ifm-color-emphasis-1000);
-
-  --ifm-dropdown-background-color: var(--ifm-color-emphasis-0);
-  --ifm-dropdown-hover-background-color: var(--ifm-color-emphasis-100);
-
-  --ifm-footer-title-color: var(--ifm-color-emphasis-500);
-  --ifm-footer-color: var(--ifm-color-gray-300);
-  --ifm-footer-link-color: var(--ifm-color-gray-300);
-  --ifm-footer-link-hover-color: var(--ifm-color-gray-0);
-  --ifm-footer-background-color: var(--ifm-color-gray-900);
-
-  --ifm-navbar-padding-horizontal: 25px;
-  --ifm-navbar-padding-vertical: 18px;
-  --ifm-navbar-height: 68px;
-
-  --ifm-menu-color: var(--ifm-color-emphasis-700);
-  --ifm-menu-color-active: var(--ifm-color-primary);
-  --ifm-menu-color-background-active: transparent;
+  --ifm-hover-overlay: var(--ifm-color-emphasis-100);
 
   --ifm-hr-border-color: var(--ifm-color-emphasis-200);
   --ifm-hr-border-width: var(--ifm-global-border-width);
+
+  --ifm-link-hover-decoration: none;
+
+  --ifm-menu-color-active: var(--ifm-color-emphasis-1000);
+
+  --ifm-navbar-item-padding-horizontal: 1.5rem;
+  --ifm-navbar-link-color: var(--ifm-color-emphasis-600);
+  --ifm-navbar-link-hover-color: var(--ifm-color-emphasis-1000);
+  --ifm-navbar-shadow: none;
+
+  --ifm-toc-border-color: var(--ifm-color-emphasis-200);
+  --ifm-toc-link-color: var(--ifm-color-emphasis-700)
 }
 
 :root[data-theme='dark'] {
   --ifm-background-color: var(--ifm-color-emphasis-0);
   --ifm-background-surface-color: var(--ifm-color-emphasis-0);
-  --ifm-navbar-background-color:var(--ifm-background-color);
-
-  --ifm-menu-color-background-hover: var(--ifm-color-emphasis-100);
-
-  --ifm-card-background-color:var(--ifm-color-emphasis-100);
 
   --ifm-hover-overlay: var(--ifm-color-emphasis-100);
-}
-
-.markdown > h3 {
-  --ifm-heading-vertical-rhythm-bottom: 0.2;
-  --ifm-h3-vertical-rhythm-top: 2;
 }
