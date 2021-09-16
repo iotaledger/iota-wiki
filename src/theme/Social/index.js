@@ -1,6 +1,5 @@
-import React from 'react'
-import useBaseUrl from '@docusaurus/useBaseUrl'
-import clsx from 'clsx';
+import React from 'react';
+import useBaseUrl from '@docusaurus/useBaseUrl';
 import './styles.css';
 
 const SocialLinkList = [
@@ -60,7 +59,7 @@ function SocialLink({ title, imageUrl, url, backgroundColor }) {
     className='social__link padding-horiz--sm padding-vert--md'
     style={{backgroundColor: backgroundColor}}
     href={url}>
-      <img className='social__image' src={imageUrl} />
+      <img className='social__image' src={useBaseUrl(imageUrl)} />
       <div className='social__title'>{title}</div>
     </a>
   )
