@@ -69,7 +69,6 @@
 
 .dropdown__label,
 .footer__title {
-  color: var(--ifm-color-emphasis-500);
   font-family: "Metropolis Bold";
   font-size: 0.8rem;
   letter-spacing: 0.15rem;
@@ -118,8 +117,8 @@
   font-size: 1.7rem;
 }
 
-.link__sublabel {
-  font-size: 0.8rem;
+[data-theme='dark'] .link__icon {
+  color: var(--ifm-menu-color);
 }
 
 .markdown {
@@ -147,6 +146,13 @@
   font-family: 'Metropolis Semi Bold';
   font-size: 0.9rem;
   letter-spacing: 1px;
+}
+
+.table-of-contents__link:hover,
+.table-of-contents__link:hover code,
+.table-of-contents__link--active,
+.table-of-contents__link--active code {
+  color: var(--ifm-menu-color-active);
 }
 
 .dropdown__menu--mega {

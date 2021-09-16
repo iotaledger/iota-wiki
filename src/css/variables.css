@@ -23,13 +23,15 @@
   --ifm-color-content: var(--ifm-color-emphasis-700);
   --ifm-color-content-inverse: var(--ifm-color-emphasis-300);
 
+  --ifm-dropdown-link-color: var(--ifm-color-emphasis-700);
+
   --ifm-font-family-base: Inter, sans-serif;
 
   --ifm-footer-background-color: var(--ifm-color-gray-900);
   --ifm-footer-color: var(--ifm-color-gray-300);
   --ifm-footer-link-color: var(--ifm-color-gray-300);
   --ifm-footer-link-hover-color: var(--ifm-color-gray-0);
-  --ifm-footer-title-color: var(--ifm-color-emphasis-500);
+  --ifm-footer-title-color: var(--ifm-menu-color);
 
   --ifm-global-border-width: 1px;
   --ifm-global-radius: 0.5rem;
@@ -45,11 +47,12 @@
 
   --ifm-link-hover-decoration: none;
 
+  --ifm-menu-color: var(--ifm-color-emphasis-500);
   --ifm-menu-color-active: var(--ifm-color-emphasis-1000);
 
   --ifm-navbar-item-padding-horizontal: 1.5rem;
   --ifm-navbar-link-color: var(--ifm-color-emphasis-600);
-  --ifm-navbar-link-hover-color: var(--ifm-color-emphasis-1000);
+  --ifm-navbar-link-hover-color: var(--ifm-menu-color-active);
   --ifm-navbar-padding-horizontal: 1.5rem;
   --ifm-navbar-shadow: none;
 
@@ -58,7 +61,7 @@
   --ifm-scrollbar-thumb-hover-background-color: var(--ifm-color-emphasis-400);
 
   --ifm-toc-border-color: var(--ifm-color-emphasis-200);
-  --ifm-toc-link-color: var(--ifm-color-emphasis-700)
+  --ifm-toc-link-color: var(--ifm-menu-color);
 }
 
 :root[data-theme='dark'] {
