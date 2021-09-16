@@ -47,7 +47,7 @@
 
   --ifm-link-hover-decoration: none;
 
-  --ifm-menu-color: var(--ifm-color-emphasis-500);
+  --ifm-menu-color: var(--ifm-color-emphasis-600);
   --ifm-menu-color-active: var(--ifm-color-emphasis-1000);
 
   --ifm-navbar-item-padding-horizontal: 1.5rem;
