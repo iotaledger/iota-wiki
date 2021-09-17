@@ -133,3 +133,10 @@ ul ul .table-of-contents__link {
   color: #000;
   text-shadow: none;
 }
+
+.menu__link--sublist:after,
+.dropdown > .navbar__link:after {
+  font-family: 'Material Icons';
+  font-size: 1.25rem;
+  content: 'expand_more';
+}
