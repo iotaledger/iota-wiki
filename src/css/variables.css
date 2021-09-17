@@ -67,6 +67,8 @@
 
   --ifm-toc-border-color: var(--ifm-color-emphasis-200);
   --ifm-toc-link-color: var(--ifm-menu-color);
+  --ifm-toc-padding-vertical: 0.25rem;
+  --ifm-toc-padding-horizontal: 1rem;
 }
 
 :root[data-theme='dark'] {
