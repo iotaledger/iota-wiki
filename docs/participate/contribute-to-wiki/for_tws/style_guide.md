@@ -117,7 +117,7 @@ The reader should understand what a paragraph is about from its first sentence.
 
 Group paragraphs with chapters, sections, and subsections by their common topic or theme.
 
-Always use headings. Make sure that a reader can swiftly navigate through whole article by heading names only. Prefer unique headings over duplications.
+Always use headings. Make sure that a reader can navigate the article by just looking at headings. Prefer unique headings over duplications.
 
 #### Other structures
 
