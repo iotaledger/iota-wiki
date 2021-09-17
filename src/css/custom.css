@@ -39,14 +39,6 @@
   margin-top: 1em;
 }
 
-.header {
-  background-color: var(--ifm-color-emphasis-100);
-}
-
-[data-theme='dark'] .header {
-  background-color: var(--ifm-color-emphasis-0);
-}
-
 .link__icon {
   font-family: 'icomoon' !important;
   font-size: 1.7rem;
@@ -104,6 +96,15 @@
 
 .dropdown__menu--mega .link__label {
   font-family: "Metropolis Semi Bold", sans-serif;
+}
+
+.card {
+  cursor: pointer;
+  height: 100%;
+}
+
+.card__image img {
+  width: 100%;
 }
 
 ::selection {

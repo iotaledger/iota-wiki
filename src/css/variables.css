@@ -20,6 +20,9 @@
   --ifm-background-color: var(--ifm-color-emphasis-0);
   --ifm-background-surface-color: var(--ifm-color-emphasis-0);
 
+  --ifm-card-background-color: var(--ifm-color-emphasis-0);
+  --ifm-card-border-radius: 60px;
+
   --ifm-color-content: var(--ifm-color-emphasis-700);
   --ifm-color-content-inverse: var(--ifm-color-emphasis-300);
 
@@ -39,6 +42,8 @@
   --ifm-heading-font-family: "Metropolis Semi Bold", sans-serif;
   --ifm-heading-font-weight: var(--ifm-font-weight-normal);
   --ifm-heading-color: var(--ifm-color-emphasis-900);
+
+  --ifm-hero-background-color: var(--ifm-color-emphasis-100);
 
   --ifm-hover-overlay: var(--ifm-color-emphasis-100);
 
@@ -67,6 +72,10 @@
 :root[data-theme='dark'] {
   --ifm-background-color: var(--ifm-color-emphasis-0);
   --ifm-background-surface-color: var(--ifm-color-emphasis-0);
+
+  --ifm-card-background-color: var(--ifm-color-emphasis-100);
+
+  --ifm-hero-background-color: var(--ifm-color-emphasis-0);
 
   --ifm-hover-overlay: var(--ifm-color-emphasis-100);
 
