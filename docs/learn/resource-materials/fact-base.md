@@ -1,34 +1,15 @@
 ---
 title: Fact Base
-description: A collection of fact's to conquer common misunderstandings and false proclamations bout IOTA, Get your fact's right!
+description: A collection of fact's to conquer common misunderstandings and
+  false proclamations bout IOTA, Get your fact's right!
 ---
 
+# Fact Base
 
-# Heading 1 (Page Title)
+We are looking for contributors that would like to put together a fact base for IOTA.
 
-content - introduction to the topic
+If You feel you can participate in this topic, please use the editor button below and start contributing.
 
+### Thanks a lot[#](https://wiki.iota.org/docs/learn/networks/network-token-migration#thanks-a-lot)
 
-## Heading 2 (Sub topic 1)
-
-content 
-
-## Heading 2 (Sub topic 2)
-
-content
-
-
-
-<br/>
-
-----
-
-<br/>
-
-**need to add a footer section for further content - (three cards)**
-
-## Useful Links
-- **[a link](https://linkgoes.here)** - A description for the link
-- **[a link](https://linkgoes.here)** - A description for the link
-- **[a link](https://linkgoes.here)** - A description for the link
-
+### The WIKI Team[#](https://wiki.iota.org/docs/learn/networks/network-token-migration#the-wiki-team)
