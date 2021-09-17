@@ -1,26 +1,29 @@
 ---
 title: Videos
-description: Great expalanation video's and short clips produced to explain all the amazing feature's that make IOTA so unique.
+description: Great expalanation video's and short clips produced to explain all
+  the amazing feature's that make IOTA so unique.
 ---
 
-# Heading 1 (Page Title)
+# Videos about IOTA
 
-content - introduction to the topic
+### Here are some excellent YouTube channels and Videos that explain IOTA:
 
-## Heading 2 (Sub topic 1)
+\
+\
+IOTA Foundation official YouYube channel: [IOTA Foundation - YouTube](https://www.youtube.com/c/iotafoundation)
 
-content
+Weekly updates from the IOTA project by Chris Mueller: [IOTA Weekly - YouTube](https://www.youtube.com/channel/UCfq6x\_5wCrXh0mUa-1iRX9g)
 
-## Heading 2 (Sub topic 2)
+Everything Tangle - short explainers: [Everything Tangle - YouTube](https://www.youtube.com/channel/UCQaOR_QLI2tGceGAp3ZWfQw)
 
-content
+Uncoined Community Channels - short easy explained Videos: [UnCoined - YouTube](https://www.youtube.com/channel/UCtpz9oCJlMzviwSksDMNBLw)
 
----
+Einfach IOTA - Community Channel of the german IOTA Community: [einfachIOTA - YouTube](https://www.youtube.com/channel/UClEhfr5oh-bbH42XoXO4Pqw)
 
-**need to add a footer section for further content - (three cards)**
+We are looking for contributors that would like to extend this page.
 
-## Useful Links
+If You feel you can participate in this topic, please use the editor button below and start contributing.
 
-- [**IOTA Foundation Youtube Channel**](https://www.youtube.com/c/iotafoundation/videos) - IOTA Foundation on Youtube: Multiple different videos made by the IOTA Foundation
-- [**IOTA Weekly Youtube Channel**](https://www.youtube.com/c/IOTAWeekly/videos) - IOTA Weekly on Youtube: Summary of what happens in the IOTA Ecosystem every week
-- [**Everything Tangle Youtube Channel**](https://www.youtube.com/c/everythingtangle/videos) - Everything Tangle on Youtube: Short and easy to understand Videos about IOTA
+### Thanks a lot[#](https://wiki.iota.org/docs/learn/networks/network-token-migration#thanks-a-lot)
+
+### The WIKI Team[#](https://wiki.iota.org/docs/learn/networks/network-token-migration#the-wiki-team)
