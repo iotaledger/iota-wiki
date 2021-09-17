@@ -4,7 +4,7 @@ This is documentation section about IOTA documentation: what we write and how we
 
 IOTA foundation employs a team of technical writers. We mostly contribute to the [Build](../../build/welcome.md) section and trust you, the community, with maintaining IOTA Wiki as a whole. You can always reach to us if you need advice, a review, or any other help. We have listed our contacts [below](#Contact%20Technical%20Writers).
 
-If you wish to contribute to the wiki, check our [guide](./for_community/community_guide.md) for community contributions.
+If you wish to contribute to the wiki, check our [guide](./for_community/community_guide.md) for community.
 
 As a software developer from an [X-team](../the-community/x-teams.md) or IOTA Foundation, you will find tips on how to document your project together with IOTA's technical writers in the [developers' section](for_devs/developer_guide.md). As a technical writer, you will find our current conventions in our [writer's guide](for_tws/writer_guide.md).
 

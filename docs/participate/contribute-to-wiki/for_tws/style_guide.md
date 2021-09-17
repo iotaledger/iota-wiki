@@ -21,7 +21,7 @@ Our goal is to let our readers fully understand IOTA, be it IOTA Foundation, com
 - Prefer action verbs over utility verbs (open the door, not use the door; debug console displays errors, not contains errors).
 - [Use standard American spelling](https://developers.google.com/style/spelling) and punctuation.
 - [Put conditional clauses before instructions](https://developers.google.com/style/clause-order), not after.
-- Use common glossary across all documentation. Be consistent. Avoid synonyms for technical terms unless you have mentioned that term beforehand and the relation is clear.
+- Use a common glossary across all documentation. Be consistent. Avoid synonyms for technical terms unless you have mentioned that term beforehand and the relation is clear.
 - For general terms, see the [Google's word list](https://developers.google.com/style/wordlist).
 - Only use words you know, both by their meaning and spelling. If you do not know a word, the chances are that the reader does not know it either.
 

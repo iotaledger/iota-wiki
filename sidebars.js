@@ -196,6 +196,83 @@ module.exports =
                 },
             ],
         },
+        {
+            type: 'category',
+            label: 'Contribute To Wiki',
+            collapsed: true,
+            items: [
+                'participate/contribute-to-wiki/welcome',
+                {
+                    type: 'category',
+                    label: 'For Community',
+                    items: 
+                    [
+                        'participate/contribute-to-wiki/for_community/community_guide',
+                    ],
+                },
+                {
+                    type: 'category',
+                    label: 'For Developers',
+                    items: 
+                    [
+                      {
+                        type: 'doc',
+                        label: 'Developer\'s Guide',
+                        id: 'participate/contribute-to-wiki/for_devs/developer_guide'
+                      },
+                      {
+                        type: 'category',
+                        label: 'Toolbox',
+                        items:
+                        [
+                          {
+                            type: 'doc',
+                            label: 'Introduction',
+                            id: 'participate/contribute-to-wiki/for_devs/toolbox/toolbox'
+                          },
+                          {
+                            type: 'doc',
+                            label: 'The Right Questions',
+                            id: 'participate/contribute-to-wiki/for_devs/toolbox/questions'
+                          },
+                          {
+                            type: 'doc',
+                            label: 'Mind Map',
+                            id: 'participate/contribute-to-wiki/for_devs/toolbox/mind_map'
+                          },
+                        ]
+                      },
+                      {
+                        type: 'doc',
+                        label: 'Request a Technical Writer',
+                        id: 'participate/contribute-to-wiki/for_devs/request_tw'
+                      }
+                    ],
+                },
+                {
+                type: 'category',
+                label: 'For Writers',
+                items: 
+                [
+                    {
+                    type: 'doc',
+                    label: 'Technical Writer\'s Guide',
+                    id: 'participate/contribute-to-wiki/for_tws/writer_guide'
+                    },
+                    {
+                    type: 'doc',
+                    label: 'Style Guide',
+                    id: 'participate/contribute-to-wiki/for_tws/style_guide'
+                    },
+                    {
+                    type: 'doc',
+                    label: 'Internal Review Process',
+                    id: 'participate/contribute-to-wiki/for_tws/internal_review',
+                    },
+                ],
+                },
+            ],
+        },
     ],
 
 

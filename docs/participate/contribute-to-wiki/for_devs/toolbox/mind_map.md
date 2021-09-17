@@ -10,7 +10,7 @@ If you have a clear picture before your eyes, this could help. A mind map is exa
 
 Take a look at the example below. Besides other properties, aspirin has a number of side effects. Namely, it thins your blood so you should be wary of using it with anticoagulants. We traversed three concepts in two sentences: aspirin properties, adverse effects, and blood-related problems of administering it. The author could elaborate and describe how a doctor should adjust the dosage for different anticoagulants, but Madhero88 found it unpractical.
 
-[![An example of a mind map about aspirin.](../../../static/img/for_devs/toolbox/aspirin_mind_map.png "Click to see the full-size image.")](/img/for_devs/toolbox/aspirin_mind_map.png)
+[![An example of a mind map about aspirin.](/img/participate/contribute_to_wiki/for_devs/toolbox/aspirin_mind_map.png "Click to see the full-size image.")](/img/participate/contribute_to_wiki/for_devs/toolbox/aspirin_mind_map.png)
 *By [Madhero88](https://en.wikipedia.org/wiki/User:Madhero88), licensed under CC BY 3.0*
 
 Any time you switch your focus, you can take a look at your mind map and see the list of all aspects of whatever you are thinking about. You still cannot consider the whole project at once, but a mind map helps your brain to traverse it. 

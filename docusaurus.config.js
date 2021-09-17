@@ -269,6 +269,10 @@ module.exports = {
               label: 'Blog',
               to: 'blog'
             },
+            {
+              label: 'Contribute',
+              to: "docs/participate/contribute-to-wiki/welcome",
+            }
           ],
         },
       ],
