@@ -41,3 +41,38 @@ hr {
   background-color: var(--ifm-hr-border-color);
   height: var(--ifm-hr-border-width);
 }
+
+/*
+Patch to use transformed font icons in dropdowns and expanded menus
+*/
+.menu__link--sublist:after {
+  background: none;
+  content: none;
+  display: none;
+  filter: none;
+  min-width: auto;
+  transform: none;
+}
+
+.menu__list-item--collapsed .menu__link--sublist:after {
+  transform: rotate(-90deg);
+}
+
+.dropdown > .navbar__link:after {
+  border: none;
+  content: none;
+  display: none;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  margin-left: auto;
+  transform: none;
+}
+
+.menu__link--sublist:after,
+.dropdown > .navbar__link:after {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  content: '';
+}
