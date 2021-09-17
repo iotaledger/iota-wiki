@@ -36,7 +36,7 @@ function Action({ title, image, link, description }) {
   return (
     <div className='col margin-vert--md'>
       <div
-        className='card'
+        className='card card--full-height'
         onClick={handleClick}
       >
         <div className='card__image'>
