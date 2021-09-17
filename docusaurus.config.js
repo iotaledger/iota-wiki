@@ -27,12 +27,12 @@ module.exports = {
         typesenseServerConfig: {
           nodes: [
             {
-              host: 'localhost',
-              port: 8108,
-              protocol: 'http',
+              host: 'blog-search.iota.org',
+              port: 443,
+              protocol: 'https',
             },
           ],
-          apiKey: 'DnmomoRyJG0bXvMpM1mVsL80eaQzjmBq',
+          apiKey: '5ji1bYzTgX8ewA6EheyH8hbS1w9RZZWT',
         },
     },
     announcementBar: {

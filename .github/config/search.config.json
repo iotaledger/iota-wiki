@@ -31,7 +31,8 @@
       "anchor",
       "url",
       "url_without_anchor",
-      "type"
+      "type",
+      "docusaurus_tag"
     ]
   },
   "nb_hits": "OUTPUT OF THE CRAWL"
