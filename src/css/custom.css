@@ -1,6 +1,6 @@
 @import "fonts.css";
 @import "variables.css";
-@import "fixes.css";
+@import "patches.css";
 
 .dropdown__label,
 .footer__title {
