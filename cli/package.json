@@ -49,10 +49,10 @@
     ]
   },
   "scripts": {
-    "postpack": "rm -f oclif.manifest.json",
+    "postpack": "node -e 'require(`fs-extra`).remove(`oclif.manifest.json`);'",
     "posttest": "eslint . --ext .ts --config .eslintrc",
     "prepare": "echo INSTALLING",
-    "prepack": "rm -rf lib && tsc -b && oclif-dev manifest && oclif-dev readme",
+    "prepack": "node -e 'require(`fs-extra`).emptyDir(`lib`);' && tsc -b && oclif-dev manifest && oclif-dev readme",
     "test": "echo NO TESTS",
     "version": "oclif-dev readme && git add README.md"
   },
