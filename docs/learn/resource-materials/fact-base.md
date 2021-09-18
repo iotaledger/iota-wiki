@@ -1,34 +1,17 @@
 ---
 title: Fact Base
-description: A collection of fact's to conquer common misunderstandings and false proclamations bout IOTA, Get your fact's right!
+description: A collection of fact's to conquer common misunderstandings and
+  false proclamations bout IOTA, Get your fact's right!
 ---
 
+# Fact Base
 
-# Heading 1 (Page Title)
+We are looking for contributors that would like to put together a fact base for IOTA.
 
-content - introduction to the topic
+This can be used as an argument against common misconceptions and false claims about the IOTA protocol. Please only submit provable facts that represent the current protocol or the current state of research.
 
+If You feel you can participate in this topic, please use the editor button below and start contributing.
 
-## Heading 2 (Sub topic 1)
+### Thanks a lot
 
-content 
-
-## Heading 2 (Sub topic 2)
-
-content
-
-
-
-<br/>
-
-----
-
-<br/>
-
-**need to add a footer section for further content - (three cards)**
-
-## Useful Links
-- **[a link](https://linkgoes.here)** - A description for the link
-- **[a link](https://linkgoes.here)** - A description for the link
-- **[a link](https://linkgoes.here)** - A description for the link
-
+### The WIKI Team
