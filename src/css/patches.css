@@ -45,6 +45,15 @@ hr {
 /*
 Patch to use transformed font icons in dropdowns and expanded menus
 */
+
+.theme-doc-toc-mobile button::after {
+  background: none;
+  content: none;
+  display: none;
+  filter: none;
+  min-width: auto;
+}
+
 .menu__link--sublist:after {
   background: none;
   content: none;
@@ -69,6 +78,7 @@ Patch to use transformed font icons in dropdowns and expanded menus
   transform: none;
 }
 
+.theme-doc-toc-mobile button::after,
 .menu__link--sublist:after,
 .dropdown > .navbar__link:after {
   display: inline-flex;
