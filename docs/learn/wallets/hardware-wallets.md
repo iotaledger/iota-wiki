@@ -10,6 +10,6 @@ We are looking for contributors that would explain how Hardware Wallets work and
 
 If You feel you can participate in this topic, please use the editor button below and start contributing.
 
-### Thanks a lot[#](https://wiki.iota.org/docs/learn/networks/network-token-migration#thanks-a-lot)
+### Thanks a lot
 
-### The WIKI Team[#](https://wiki.iota.org/docs/learn/networks/network-token-migration#the-wiki-team)
+### The WIKI Team
