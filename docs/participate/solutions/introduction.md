@@ -14,7 +14,7 @@ Streams is an organizational tool for structuring and navigating secure data thr
 - [Identity](/docs/participate/solutions/identity):  
 The IOTA Identity framework implements the most common standards and patterns for Decentralized Identity in both a DLT agnostic and iota method specification manner.
 - [Smart Contracts](/docs/participate/solutions/smart-contracts):  
-IOTAs implementation of Smart Contracts (ISCP)
+The IOTA Smart Contract Protocol (ISCP) is the implementation of Smart Contracts on IOTA.
 - [Access](/docs/participate/solutions/access):  
 IOTA Access is an open-source framework used to build access control systems for smart devices. It is designed to work with any IoT resource, whether it's a vehicle, smart lock, or embedded sensor.
 - [Stronghold](/docs/participate/solutions/stronghold):  
