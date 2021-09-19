@@ -63,6 +63,7 @@
   font-weight: var(--ifm-font-weight-normal);
   font-size: 0.9rem;
   padding-top: calc(1rem + var(--ifm-toc-padding-vertical)) !important;
+  margin-top: calc(-1 * var(--ifm-global-border-width));
 }
 
 .menu__link--active {
