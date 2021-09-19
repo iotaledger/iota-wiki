@@ -69,7 +69,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 1.7rem;
+  font-size: 2.7rem;
   margin-right: 10px;
   background-color: var(--ifm-color-gray-200);
   border-radius: var(--ifm-global-radius);
