@@ -213,7 +213,6 @@ function Navbar() {
           {rightItems.map((item, i) => (
             <NavbarItem {...item} key={i} />
           ))}
-          {!hasSearchNavbarItem && <SearchBar />}
           {!colorModeToggle.disabled && (
             <Toggle
               className={styles.toggle}
@@ -221,6 +220,7 @@ function Navbar() {
               onChange={colorModeToggle.toggle}
             />
           )}
+          {!hasSearchNavbarItem && <SearchBar />}
           {items?.length > 0 && (
             <button
               aria-label="Navigation bar toggle"
