@@ -22,6 +22,19 @@ module.exports = {
     },
   ],
   themeConfig: {
+    typesense: {
+        typesenseCollectionName: 'IOTAWiki', // Replace with your own doc site's name. Should match the collection name in the scraper settings.
+        typesenseServerConfig: {
+          nodes: [
+            {
+              host: 'blog-search.iota.org',
+              port: 443,
+              protocol: 'https',
+            },
+          ],
+          apiKey: '5ji1bYzTgX8ewA6EheyH8hbS1w9RZZWT',
+        },
+    },
     announcementBar: {
       id: 'wip', // Any value that will identify this message.
       content:
@@ -281,7 +294,6 @@ module.exports = {
     },
     colorMode: {
       defaultMode: 'dark',
-
       // Dark/light switch icon options
       switchConfig: {
         // Icon for the switch while in dark mode
@@ -315,6 +327,8 @@ module.exports = {
       },
     },
   },
+  themes: ['docusaurus-theme-search-typesense'],
+
   presets: [
     [
       '@docusaurus/preset-classic',
