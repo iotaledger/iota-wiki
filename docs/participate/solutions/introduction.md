@@ -12,7 +12,7 @@ The IOTA foundation maintains and develops a collection of solutions building on
 - [Streams](/docs/participate/solutions/streams):  
 Streams is an organizational tool for structuring and navigating secure data through the Tangle. Streams organizes data by ordering it in a uniform and interoperable structure.
 - [Identity](/docs/participate/solutions/identity):  
-The IOTA Identity framework implements the most common standards and patterns for Decentralized Identity in both a DLT agnostic and iota method specification manner
+The IOTA Identity framework implements the most common standards and patterns for Decentralized Identity in both a DLT agnostic and iota method specification manner.
 - [Smart Contracts](/docs/participate/solutions/smart-contracts):  
 IOTAs implementation of Smart Contracts (ISCP)
 - [Access](/docs/participate/solutions/access):  
