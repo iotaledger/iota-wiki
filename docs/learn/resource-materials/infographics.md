@@ -1,34 +1,14 @@
 ---
 title: Infographics
-description: A picture says sometimes more than a thousand words... Downloadable fact sheets and informations for every audience to explain IOTA.
+description: A picture says sometimes more than a thousand words... Downloadable
+  fact sheets and informations for every audience to explain IOTA.
 ---
 
-
-# Heading 1 (Page Title)
-
-content - introduction to the topic
+# Infographics
 
 
-## Heading 2 (Sub topic 1)
+If You feel you can participate in this topic, please use the editor button below and start contributing.
 
-content 
+### Thanks a lot
 
-## Heading 2 (Sub topic 2)
-
-content
-
-
-
-<br/>
-
-----
-
-<br/>
-
-**need to add a footer section for further content - (three cards)**
-
-## Useful Links
-- **[a link](https://linkgoes.here)** - A description for the link
-- **[a link](https://linkgoes.here)** - A description for the link
-- **[a link](https://linkgoes.here)** - A description for the link
-
+### The WIKI Team
