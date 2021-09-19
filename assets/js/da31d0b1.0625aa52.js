@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkiota_wiki=self.webpackChunkiota_wiki||[]).push([[8004],{19881:function(a){a.exports=JSON.parse('{"allTagsPath":"/blog/tags","slug":"/blog/tags/layer-one","name":"Layer One","count":3,"permalink":"/blog/tags/layer-one"}')}}]);

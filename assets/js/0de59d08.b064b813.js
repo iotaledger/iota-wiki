@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkiota_wiki=self.webpackChunkiota_wiki||[]).push([[2488],{90927:function(i){i.exports=JSON.parse('{"allTagsPath":"/blog/tags","slug":"/blog/tags/coordicide","name":"Coordicide","count":2,"permalink":"/blog/tags/coordicide"}')}}]);
