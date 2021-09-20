@@ -1,6 +1,6 @@
 ---
-title: Secure Access Control
-description: IOTA's unique solution to grant and control access to data and objects.
+title: Smart Contracts
+description: IOTA offers an unique Feeless, Multi-Chain Smart Contract solution that is compatible with Solidity, Rust and Linux.
 ---
 
 

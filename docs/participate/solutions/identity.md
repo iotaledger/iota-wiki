@@ -1,6 +1,6 @@
 ---
-title: Trust in Real World Data
-description: IOTA enables you to integrate Data from all kind of outside sources securely into your Application. Learn about IOTA Oracles.
+title: Identity
+description: IOTA's digital identity Solutions offer amazing new ways to control privacy and data of humans and machines.
 ---
 
 
