@@ -2,6 +2,8 @@
 
 Our goal is to let our readers fully understand IOTA, be it IOTA Foundation, community, theory and practice behind the IOTA technology, or tools that support it. We only provide accurate information. We convey it in a clear form with no room for misunderstanding. Our writing welcomes and encourages learning and reading. With this in mind, we form our style guide.
 
+The first version of this page is based on the [Google's style guide](https://developers.google.com/style). Our guide is still under construction and does not follow its own recommendation on many occasions.
+
 ## Quick Reference Guide
 
 ### Tone and Content
@@ -117,7 +119,7 @@ The reader should understand what a paragraph is about from its first sentence.
 
 Group paragraphs with chapters, sections, and subsections by their common topic or theme.
 
-Always use headings. Make sure that a reader can navigate the article by just looking at headings. Prefer unique headings over duplications.
+Always use headings. Make sure that a reader can navigate the article by just looking at its headings. Prefer unique headings over duplications.
 
 #### Other structures
 
@@ -127,10 +129,17 @@ Use parallel writing structures for similar things. For example, start each list
 
 ### Reading Ease
 
-- Define acronyms and abbreviations on first usage and if they're used infrequently.
-- Use clear and direct language. Avoid the use of double negatives and exceptions for exceptions.
-  - **Recommended:** You can continue without a path.
-  - **Not recommended:** A missing path won't prevent you from continuing.
+Define acronyms and abbreviations on first usage and if they're used infrequently.
+
+Use clear and direct language. Avoid the use of double negatives and exceptions for exceptions.
+
+Good:
+
+> You can continue without a path.
+
+Bad:
+
+> A missing path won't prevent you from continuing.
 
 ### Links
 
@@ -166,11 +175,11 @@ Use parallel writing structures for similar things. For example, start each list
 Never use color, size, location, or other visual cues as the primary way of describing UI elements, as they could differ between platforms and browsers.
 
 - Refer to buttons and other elements by their label (or [aria-label](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-label_attribute), if they're visual elements)—for example:
-  - **Recommended:** Click **Save**.
-  - **Not recommended:** Click the round button.
+- **Recommended:** Click **Save**.
+- **Not recommended:** Click the round button.
 - Don't use directional language to orient the reader, such as "above", "below", or "right-hand side". This type of language doesn't work well for accessibility or for localization reasons. If a [UI element](https://developers.google.com/style/ui-elements) is hard to find, [provide a screenshot](https://developers.google.com/style/images).
-  - **Recommended:** Click menu **Menu**.
-  - **Not recommended:** In the left-side panel, click the button with three lines.
+- **Recommended:** Click menu **Menu**.
+- **Not recommended:** In the left-side panel, click the button with three lines.
 - Use *weak emphasis* in UI element names.
 
 ### Document Rendering and Formatting
@@ -181,7 +190,7 @@ Never rely on rendering in your work and make sure that everyone can read your a
 
 #### Emphasis
 
-In general, use emphasis notation sparingly. In most cases, you can emphasize anything by using right words and structuring sentences even in plain text.
+In general, use emphasis notation sparingly. In most cases, you can emphasize anything by using right words and rearranging your sentences even in plain text.
 
 Always use *weak emphasis* for UI element names.
 
@@ -235,44 +244,44 @@ Put long quotes in a paragraph-style quote (`>`).
 
 ### Write Short, Clear, and Precise Sentences
 
-- Use active voice. 
-- Address the reader directly. Use *you*, instead of *the user* or *they*. 
+- Use active voice.
+- Address the reader directly. Use *you*, instead of *the user* or *they*.
 - Use a simple word. For example, don't use words like *commence* when you mean *start* or *begin*. Don't use *consequently* when you mean *so*. Don't use words like *utilize* or *leverage* when you mean *use*. However, do not avoid complex words where they do belong.
 - Use a single word when it conveys the same idea as a phrase. For example, don't use a phrase like *a number of* when you can use *some* or *many*.
 - Avoid phrasal verbs when possible. A phrasal verb combines multiple words to form a single verb phrase. These verbs are also known as compound verbs. Try to substitute a simpler verb first. There might not be a better verb; for example, a few exceptions to this rule include *set up*, *log in*, and *sign in*.
-  - **Recommended:** This document uses the following terms:
-  - **Not recommended:** This document makes use of the following terms:
-- Define abbreviations. Abbreviations can be confusing out of context, and they don't translate well. Spell things out whenever possible, at least the first time that you use a given term. 
+- **Recommended:** This document uses the following terms:
+- **Not recommended:** This document makes use of the following terms:
+- Define abbreviations. Abbreviations can be confusing out of context, and they don't translate well. Spell things out whenever possible, at least the first time that you use a given term.
 - Don't use too many modifiers. In particular, don't use more than two nouns as modifiers of another noun.
-  - **Recommended:** A cloud-native DevSecOps pipeline in a hybrid environment
-  - **Not recommended:** A hybrid cloud-native DevSecOps pipeline
+- **Recommended:** A cloud-native DevSecOps pipeline in a hybrid environment
+- **Not recommended:** A hybrid cloud-native DevSecOps pipeline
 - Don't misplace modifiers. For example, place a word like *only* immediately before the noun or verb that it relates to.
-  - **Recommended:** Developers need to apply for only one token.
-  - **Not recommended:** Developers only need to apply for one token.
+- **Recommended:** Developers need to apply for only one token.
+- **Not recommended:** Developers only need to apply for one token.
 - Don't omit relative pronouns. To provide clarity and to avoid ambiguity, use relative pronouns such as *that* and *who*.
-  - **Recommended:** Running in a hybrid environment means that some of your processing happens on Google Cloud and other processing remains on-premises.
-  - **Not recommended:** Running in a hybrid environment means some of your processing happens on Google Cloud and other processing remains on-premises.
+- **Recommended:** Running in a hybrid environment means that some of your processing happens on Google Cloud and other processing remains on-premises.
+- **Not recommended:** Running in a hybrid environment means some of your processing happens on Google Cloud and other processing remains on-premises.
 - Clarify antecedents. Using pronouns can get tricky when translators are working with small, unconnected strings of text. Help them out by making things as clear as possible. For example, if a pronoun is ambiguous, then replace it with the appropriate noun.
-  - **Recommended:** If you use the term *green beer* in an ad, then make sure that the ad is targeted.
-  - **Not recommended:** If you use the term *green beer* in an ad, then make sure that it's targeted.
+- **Recommended:** If you use the term *green beer* in an ad, then make sure that the ad is targeted.
+- **Not recommended:** If you use the term *green beer* in an ad, then make sure that it's targeted.
 - Use helper words. Helper words, such as *if*, *then*, and *of*, are frequently left out of conversational English. Use these words to avoid ambiguity.
 
 ### Be Consistent
 
-- If you use a particular term for a particular concept in one place, then use that exact same term elsewhere, including the same capitalization. 
-- Don't use the same word to mean different things. In particular, avoid using the same word as both a noun and a verb in close proximity. Use standardized phrases for frequently used sentences, introductory phrases, and other common tasks. 
+- If you use a particular term for a particular concept in one place, then use that exact same term elsewhere, including the same capitalization.
+- Don't use the same word to mean different things. In particular, avoid using the same word as both a noun and a verb in close proximity. Use standardized phrases for frequently used sentences, introductory phrases, and other common tasks.
 - Use standard English word order. Sentences follow the *subject + verb + object* order.
 - Try to keep the main subject and verb as close to the beginning of the sentence as possible.
 - Use the conditional clause first. If you want to tell the audience to do something in a particular circumstance, mention the circumstance before you provide the instruction. 
-- Make list items consistent. Make list items parallel in structure. 
-- Be consistent in your capitalization and punctuation. 
-- Use consistent typographic formats. 
-- Use bold and italics consistently. Don't switch from using italics for emphasis to underlining. 
-- Use consistent capitalization. 
+- Make list items consistent. Make list items parallel in structure.
+- Be consistent in your capitalization and punctuation.
+- Use consistent typographic formats.
+- Use bold and italics consistently. Don't switch from using italics for emphasis to underlining.
+- Use consistent capitalization.
 
 ### Be Inclusive
 
-You're not writing for your culture. Write with inclusivity in mind. 
+You are writing to people of many cultures. Keep that in mind.
 
 - Don't be too culturally specific. In particular, don't refer to specific holidays, cultural practices, or sports unless you're certain they're known worldwide.
 - Avoid colloquialisms, idioms, or slang. Phrases like *ballpark figure*, *back burner*, or *hang in there* can be confusing and difficult to translate.
@@ -295,7 +304,7 @@ Don't try to write exactly the way you speak; you probably speak more colloquial
 
 Don't try to be super-entertaining, but also don't aim for super-dry. Be human, let your personality show, be memorable; you can even be a little funny now and then. But remember that the primary purpose of the document is to provide information to someone who's looking for it.
 
-Remember that many readers aren't fluent English speakers, many of them come from cultures different from yours, and your document might be translated into other languages. 
+Remember that many readers aren't fluent English speakers, many of them come from cultures different from yours, and your document might be translated into other languages.
 
 ### Some Things to Avoid Where Possible
 
