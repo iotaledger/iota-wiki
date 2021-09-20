@@ -236,6 +236,7 @@ module.exports =
             items: [
                 'build/tutorials/hackster',
                 'build/tutorials/youtube',
+                'build/tutorials/twitch',
             ],
         },
     ],   
