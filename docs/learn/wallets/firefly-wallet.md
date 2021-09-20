@@ -1,10 +1,27 @@
 ---
 title: Firefly Wallet
 description: The IOTA Firefly Wallet sets a new standard for Software Wallets in
-  DLT. We describe why it is so secure and how amazing it is to use it.
+  DLT. Learn everything here.
 ---
 
 # The Firefly Wallet
+
+## Table of contents
+
+- General Overview and Introduction 
+- Firefly Token migration proccess [**Migration Proccess**](https://wiki.iota.org/docs/learn/wallets/firefly-wallet#firefly-token-migration)
+- Firefly User Guide for STandard Users [**nonLedger User Guide**](https://wiki.iota.org/docs/learn/wallets/firefly-wallet#user-guide-for-standard-users)
+- Firefly User Guide for Ledger Nano Users [**Ledger User Guide**](https://wiki.iota.org/docs/learn/wallets/firefly-wallet#user-guide-for-users-of-a-ledger-nano-x-or-ledger-nano-s-device)
+- Firefly FAQ - Setup and Insstallation [**Setup FAQ**](https://wiki.iota.org/docs/learn/wallets/firefly-wallet#setup-and-installation)
+- Firefly FAQ - Backusp and Recivery [**Backup FAQ**](https://wiki.iota.org/docs/learn/wallets/firefly-wallet#backups-and-recovery)
+- Firefly FAQ - Profiles and Wallets [**Profiles FAQ**](https://wiki.iota.org/docs/learn/wallets/firefly-wallet#profiles-and-wallets)
+- Firefly FAQ - Transactions [**Transactions FAQ**](https://wiki.iota.org/docs/learn/wallets/firefly-wallet#transactions)
+- Firefly FAQ - Settings [**Settings FAQ**](https://wiki.iota.org/docs/learn/wallets/firefly-wallet#settings)
+- Firefly FAQ - Troubleshooting [**Troubleshooting FAQ**](https://wiki.iota.org/docs/learn/wallets/firefly-wallet#troubleshooting)
+- Firefly FAQ - Migration Process [**Migration FAQ**](https://wiki.iota.org/docs/learn/wallets/firefly-wallet#migration)
+- Firefly FAQ - Spent Addresses [**Spent Addresses FAQ**](https://wiki.iota.org/docs/learn/wallets/firefly-wallet#spent-addresses)
+
+## General Overview and Introduction
 
 The Secure Entrypoint to the IOTA Ecosystem.
 
