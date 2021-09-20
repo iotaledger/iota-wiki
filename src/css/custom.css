@@ -24,19 +24,17 @@
   display: flex;
   align-items: flex-end;
   flex-wrap: wrap;
-  margin-left: max(1rem, calc(20% - 5rem));
-  margin-right: max(1rem, calc(20% - 5rem));
+  margin-left: max(1rem, calc(20% - 10rem));
+  margin-right: max(1rem, calc(20% - 10rem));
 }
 
 .footer__logo {
-  height: 3rem;
-  margin-right: 1em;
-  margin-bottom: -1em;
+  margin: 0 var(--ifm-spacing-horizontal);
 }
 
 .footer__copyright {
-  font-size: 0.9rem;
-  margin-top: 1em;
+  margin: 0 var(--ifm-spacing-horizontal);
+  margin-bottom: 0.9rem;
 }
 
 .link__icon {
