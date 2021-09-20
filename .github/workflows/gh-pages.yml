@@ -45,7 +45,7 @@ jobs:
           rm -f docusaurus.config.js && mv docusaurus.config.js.cpy docusaurus.config.js
       - uses: actions/setup-node@v1
         with:
-          node-version: '12.x'
+          node-version: '14.x'
       - name: Create folder
         run: |
           mkdir external
