@@ -2,7 +2,7 @@
 
 This procedure outlines how the Technical Writing team reviews and approves content that we had a hand in creating, editing, etc. This includes articles, blog posts, code, internal/external PRs, and so on.
 
-1. After the principal TW has completed their content, they submit a PR in github and ask for the review of at least two other TWs. The reviewers must be notified within github (via request review) and within slack (@teammember) with the PR link.
+1. After the principal TW has completed their content, they submit a PR in GitHub and ask for the review of at least two other TWs. The reviewers must be notified within GitHub (via request review) and within slack (@teammember) with the PR link.
 
    - Three are able to review if requested or are interested and have the bandwidth.
    - In case of sick leave, vacations, etc., a PR could be reviewed and approved by only one editor.
