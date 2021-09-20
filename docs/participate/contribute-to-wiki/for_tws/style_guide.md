@@ -57,7 +57,7 @@ Note that there are no determiners (the) when you refer to something by its name
 
 Good:
 
-> The iota.rs library connects to a node. A node could be a Bee node or a Hornet node, but iota.rs handles both the same way. Bee supports the IOTA protocol 2.0, and Hornet does not.
+> The iota.rs library connects to a node. A node could be a Bee node or a Hornet node, but iota.rs handles both the same way. Bee is written in Rust, and Hornet is written in Go.
 
 ### Logograms, Emojis, and Contractions
 
