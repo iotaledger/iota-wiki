@@ -27,12 +27,11 @@ Comnet is a 100% community-driven test network. It can be used as a test network
 - **[Explorer](https://explorer.tanglebay.com/comnet/)**
 - **[Faucet](https://comnet.tanglekit.de/)**
 
-## IOTA 1.5 Testnet
+## IOTA 1.5 Devnet
 
-The official IOTA 1.5 Testnet. In this Testnet, the Coordinator and some public nodes are run by the IF. It can also be used to test apps for IOTA 1.5. 
+The official IOTA 1.5 Devnet. In this Devnet, the Coordinator and some public nodes are run by the IF. It can also be used to test apps for IOTA 1.5.
+The full documentation for the IOTA 1.5 Devnet can be found here:
 
-- **[API: https://api.lb-0.testnet.chrysalis2.com/](https://api.lb-0.testnet.chrysalis2.com/api/v1/info)**
-- **[Explorer](https://explorer.iota.org/testnet/)**
-- **[Faucet](https://faucet.testnet.chrysalis2.com/)**
+- **[IOTA 1.5 Devnet](https://wiki.iota.org/chrysalis-docs/devnet)**
 
 
