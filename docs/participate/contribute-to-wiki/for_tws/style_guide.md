@@ -2,7 +2,7 @@
 
 Our goal is to let our readers fully understand IOTA, be it IOTA Foundation, community, theory and practice behind the IOTA technology, or tools that support it. We only provide accurate information. We convey it in a clear form with no room for misunderstanding. Our writing welcomes and encourages learning and reading. With this in mind, we form our style guide.
 
-The first version of this page is based on the [Google's style guide](https://developers.google.com/style). Our guide is still under construction and does not follow its own recommendation on many occasions.
+The first version of this page is based on the [Google's style guide](https://developers.google.com/style). Our guide is still under construction and does not follow its own recommendations on many occasions.
 
 ## Quick Reference Guide
 
