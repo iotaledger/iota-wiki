@@ -1,0 +1,10 @@
+{
+    "content": [{
+        "repo": "https://github.com/iotaledger/bee",
+        "checkoutParams": ["--branch dev"],
+        "staticPath": "./documentation/static"
+    }, {
+        "repo": "https://github.com/iotaledger/goshimmer",
+        "staticPath": "./documentation/static"
+    }]
+}
