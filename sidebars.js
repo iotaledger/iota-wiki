@@ -84,7 +84,6 @@ module.exports =
                 'participate/support-the-network/about-nodes',
                 'participate/support-the-network/become-a-node-operator',
                 'participate/support-the-network/node-software',
-                'participate/support-the-network/run-a-node',
                 'participate/support-the-network/create-an-application',
             ],
         },        
@@ -96,7 +95,6 @@ module.exports =
                 'participate/the-community/discord',
                 'participate/the-community/x-teams',
                 'participate/the-community/git-hub',
-                'participate/the-community/stack-overflow',
                 'participate/the-community/social-media',
             ],
         },        
@@ -274,6 +272,7 @@ module.exports =
             items: [
                 'build/tutorials/hackster',
                 'build/tutorials/youtube',
+                'build/tutorials/twitch',
             ],
         },
     ],   
