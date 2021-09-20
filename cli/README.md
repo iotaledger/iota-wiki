@@ -16,7 +16,7 @@ $ npm install -g iota-wiki-cli
 $ iota-wiki-cli COMMAND
 running command...
 $ iota-wiki-cli (-v|--version|version)
-iota-wiki-cli/0.0.0 linux-x64 node-v14.16.1
+iota-wiki-cli/1.1.0 linux-x64 node-v14.16.1
 $ iota-wiki-cli --help [COMMAND]
 USAGE
   $ iota-wiki-cli COMMAND
@@ -25,10 +25,26 @@ USAGE
 <!-- usagestop -->
 # Commands
 <!-- commands -->
+* [`iota-wiki-cli checkout`](#iota-wiki-cli-checkout)
 * [`iota-wiki-cli clean`](#iota-wiki-cli-clean)
 * [`iota-wiki-cli help [COMMAND]`](#iota-wiki-cli-help-command)
 * [`iota-wiki-cli setup`](#iota-wiki-cli-setup)
 * [`iota-wiki-cli start`](#iota-wiki-cli-start)
+
+## `iota-wiki-cli checkout`
+
+checkout content repositories
+
+```
+USAGE
+  $ iota-wiki-cli checkout
+
+OPTIONS
+  -h, --help  show CLI help
+
+EXAMPLE
+  $ iota-wiki-cli checkout
+```
 
 ## `iota-wiki-cli clean`
 
