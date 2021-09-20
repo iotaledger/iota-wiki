@@ -234,11 +234,11 @@ module.exports = {
             },
             {
               label: 'Use Cases',
-              to: "docs/use/use-cases/industry-applications",
+              to: "docs/participate/use-cases/industry-applications",
             },
             {
               label: 'Solutions',
-              to: "docs/use/streams/encrypted-data-comms",
+              to: "docs/participate/solutions/streams/introduction",
             },
           ],
         },

@@ -1,6 +1,6 @@
 ---
-title: Enabling Privacy and Trust
-description: IOTA's digital identity Solutions offer amazing new ways to control privacy and data of humans and machines.
+title: Oracles
+description: IOTA enables you to integrate Data from all kind of outside sources securely into your Application. Learn about IOTA Oracles.
 ---
 
 
