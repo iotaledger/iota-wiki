@@ -8,18 +8,20 @@ description: The IOTA Firefly Wallet sets a new standard for Software Wallets in
 
 ## Table of contents
 
-- General Overview and Introduction 
-- Firefly Token migration proccess [**Migration Proccess**](https://wiki.iota.org/docs/learn/wallets/firefly-wallet#firefly-token-migration)
-- Firefly User Guide for STandard Users [**nonLedger User Guide**](https://wiki.iota.org/docs/learn/wallets/firefly-wallet#user-guide-for-standard-users)
-- Firefly User Guide for Ledger Nano Users [**Ledger User Guide**](https://wiki.iota.org/docs/learn/wallets/firefly-wallet#user-guide-for-users-of-a-ledger-nano-x-or-ledger-nano-s-device)
-- Firefly FAQ - Setup and Insstallation [**Setup FAQ**](https://wiki.iota.org/docs/learn/wallets/firefly-wallet#setup-and-installation)
-- Firefly FAQ - Backusp and Recivery [**Backup FAQ**](https://wiki.iota.org/docs/learn/wallets/firefly-wallet#backups-and-recovery)
-- Firefly FAQ - Profiles and Wallets [**Profiles FAQ**](https://wiki.iota.org/docs/learn/wallets/firefly-wallet#profiles-and-wallets)
-- Firefly FAQ - Transactions [**Transactions FAQ**](https://wiki.iota.org/docs/learn/wallets/firefly-wallet#transactions)
-- Firefly FAQ - Settings [**Settings FAQ**](https://wiki.iota.org/docs/learn/wallets/firefly-wallet#settings)
-- Firefly FAQ - Troubleshooting [**Troubleshooting FAQ**](https://wiki.iota.org/docs/learn/wallets/firefly-wallet#troubleshooting)
-- Firefly FAQ - Migration Process [**Migration FAQ**](https://wiki.iota.org/docs/learn/wallets/firefly-wallet#migration)
-- Firefly FAQ - Spent Addresses [**Spent Addresses FAQ**](https://wiki.iota.org/docs/learn/wallets/firefly-wallet#spent-addresses)
+- [General Overview and Introduction](#general-overview-and-introduction)
+- [Firefly Token Migration](#firefly-token-migration)
+- Firefly User Guide
+    * [User guide for standard users](#user-guide-for-standard-users)
+    * [User Guide for users of a Ledger Nano X or Ledger Nano S device](#user-guide-for-users-of-a-ledger-nano-x-or-ledger-nano-s-device)
+- Firefly FAQ
+    * [Setup and installation](#setup-and-installation)
+    * [Backups and recovery](#backups-and-recovery)
+    * [Profiles and wallets](#profiles-and-wallets)
+    * [Transactions](#transactions)
+    * [Settings](#settings)
+    * [Troubleshooting](#troubleshooting)
+    * [migration](#migration)
+    * [Spent Addresses](#spent-addresses)
 
 ## General Overview and Introduction
 
