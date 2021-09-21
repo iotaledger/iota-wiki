@@ -59,7 +59,7 @@ function SocialLink({ title, imageUrl, url, backgroundColor }) {
     className='social__link padding-horiz--sm padding-vert--md'
     style={{backgroundColor: backgroundColor}}
     href={url}>
-      <img className='social__image' src={useBaseUrl(imageUrl)} />
+      <img alt={title} className='social__image' src={useBaseUrl(imageUrl)} />
       <div className='social__title'>{title}</div>
     </a>
   )
