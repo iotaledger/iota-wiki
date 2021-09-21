@@ -51,7 +51,7 @@ function Action({ title, image, link, description }) {
   );
 }
 
-function LandingpageHeader() {
+function LandingPageHeader() {
   const { siteConfig } = useDocusaurusContext();
 
   return (
@@ -73,4 +73,4 @@ function LandingpageHeader() {
   )
 }
 
-export default LandingpageHeader
+export default LandingPageHeader
