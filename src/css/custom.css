@@ -76,7 +76,7 @@
 
 @media screen and (max-width: 966px) {
   .markdown {
-    margin: 2rem 0rem;
+    margin: 2rem 0;
   }
 }
 
