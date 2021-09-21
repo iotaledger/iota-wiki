@@ -242,7 +242,6 @@ module.exports =
                 'build/getting-started/architecture',
                 'build/getting-started/environment',
                 'build/getting-started/send-a-first-message',
-                'build/getting-started/devnet',
             ],
         },        
         {

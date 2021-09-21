@@ -16,8 +16,12 @@ The assets used in those Testnets are just Testnet-Tokens without any real value
 This is the implementation of the upcoming fully decentralized IOTA 2.0 Protocol. 
 The network here does not use or need a coordinator anymore. Utilizes Testnet Iota tokens without value to fine-tune, test, and optimize the upcoming development stage of the IOTA Protocol together with the IOTA community. This network is composed of Goshimmer nodes. While many nodes in the 2.0 Devnet are run and maintained by the Iota Foundation, anyone can contribute by running their own nodes. Having a larger network is beneficial for testing newly researched and developed concepts and ideas, catching bugs, and ironing out finished components.
 
-- **[API: https://nodes.nectar.iota.cafe/](http://nodes.nectar.iota.cafe/info)**
+- **[API: https://nodes.nectar.iota.cafe/](https://nodes.nectar.iota.cafe/info)**
 - **[Explorer](https://v2.iota.org/explorer)**
+- **[Visualiser](https://v2.iota.org/visualizer)**
+- **[Token Registry](https://v2.iota.org/coin-registry)**
+- **[DevNet 2.0 Wallet](https://github.com/iotaledger/IOTA-2.0-DevNet-wallet/releases/tag/v0.7.0)**
+- **[Features](https://v2.iota.org/)**
 
 ## IOTA 1.5 Comnet
 
@@ -27,12 +31,11 @@ Comnet is a 100% community-driven test network. It can be used as a test network
 - **[Explorer](https://explorer.tanglebay.com/comnet/)**
 - **[Faucet](https://comnet.tanglekit.de/)**
 
-## IOTA 1.5 Testnet
+## IOTA 1.5 Devnet
 
-The official IOTA 1.5 Testnet. In this Testnet, the Coordinator and some public nodes are run by the IF. It can also be used to test apps for IOTA 1.5. 
+The official IOTA 1.5 Devnet. In this Devnet, the Coordinator and some public nodes are run by the IF. It can also be used to test apps for IOTA 1.5.
+The full documentation for the IOTA 1.5 Devnet can be found here:
 
-- **[API: https://api.lb-0.testnet.chrysalis2.com/](https://api.lb-0.testnet.chrysalis2.com/api/v1/info)**
-- **[Explorer](https://explorer.iota.org/testnet/)**
-- **[Faucet](https://faucet.testnet.chrysalis2.com/)**
+- **[IOTA 1.5 Devnet](https://wiki.iota.org/chrysalis-docs/devnet)**
 
 
