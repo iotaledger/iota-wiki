@@ -37,8 +37,8 @@ Patch to avoid displaying a double header in imported DOCS
 Patch to unify hr with border styling
 */
 hr {
-  border: none;
   background-color: var(--ifm-hr-border-color);
+  border: none;
   height: var(--ifm-hr-border-width);
 }
 
@@ -50,9 +50,9 @@ Patch to use transformed font icons in dropdowns and expanded menus
   content: none;
   display: none;
   height: 100%;
+  margin-left: auto;
   position: absolute;
   top: 0;
-  margin-left: auto;
   transform: none;
 }
 
@@ -80,8 +80,8 @@ Patch to use transformed font icons in dropdowns and expanded menus
 .dropdown > .navbar__link:after,
 .menu__link--sublist:after,
 .theme-doc-toc-mobile button::after {
-  display: inline-flex;
   align-items: center;
-  justify-content: center;
+  display: inline-flex;
   content: '';
+  justify-content: center;
 }
