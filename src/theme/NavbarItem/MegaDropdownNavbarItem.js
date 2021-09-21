@@ -72,7 +72,7 @@ function MegaDropdownItem({className, ...props}) {
   }
 
   if (props.label) {
-    return <div className='mega-dropdown__label'>{props.label}</div>
+    return <div className='dropdown__label'>{props.label}</div>
   }
 
   throw 'Mega dropdown item must be a link or a category header.'
@@ -151,20 +151,17 @@ function MegaDropdownNavbarItemDesktop({items_: items, layout, position, classNa
     <>
       <div
         ref={dropdownRef}
-        className={clsx('navbar__item', 'dropdown', {
+        className={clsx('dropdown', 'dropdown--hoverable', {
           'dropdown--right': position === 'right',
+          'dropdown--show': showDropdown,
         })}
         onMouseEnter={() => setShowDropdown(true)}
         onMouseLeave={() => setShowDropdown(false)}
       >
         <NavLink
-          className={clsx(
-            'navbar__link',
-            {
-              'navbar__link--active': containsActive,
-            },
-            className
-          )}
+          className={clsx('navbar__item navbar__link', className, {
+            'navbar__link--active': containsActive,
+          })}
           {...props}
           onClick={(e) => e.preventDefault()}
           onKeyDown={(e) => {
@@ -177,22 +174,22 @@ function MegaDropdownNavbarItemDesktop({items_: items, layout, position, classNa
         </NavLink>
       </div>
       <div
-        className={clsx('mega-dropdown__container', {
-          'mega-dropdown__container--show': showDropdown,
+        className={clsx('dropdown__container', {
+          'dropdown__container--show': showDropdown,
         })}
+        onMouseEnter={() => setShowDropdown(true)}
+        onMouseLeave={() => setShowDropdown(false)}
       >
-        <div className='mega-dropdown__menu'>
-          <div className='mega-dropdown__grid'>
-            {grid.map((row, rowKey) => (
-              <div className='row row--no-gutters mega-dropdown__row' key={rowKey}>
-                {row.map((column, columnKey) => (
-                  <div className='col margin-horiz--xs mega-dropdown__col' key={columnKey}>
-                    {column ? <MegaDropdownItem {...column} /> : null}
-                  </div>
-                ))}
-              </div>
-            ))}
-          </div>
+        <div className='dropdown__menu dropdown__menu--mega'>
+          {grid.map((row, rowKey) => (
+            <div className='row row--no-gutters dropdown__row' key={rowKey}>
+              {row.map((column, columnKey) => (
+                <div className='col margin-horiz--xs dropdown__col' key={columnKey}>
+                  {column ? <MegaDropdownItem {...column} /> : null}
+                </div>
+              ))}
+            </div>
+          ))}
         </div>
       </div>
     </>
