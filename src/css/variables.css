@@ -50,7 +50,7 @@
   --ifm-hr-border-color: var(--ifm-color-emphasis-200);
   --ifm-hr-border-width: var(--ifm-global-border-width);
 
-  --ifm-link-hover-decoration: none;
+  --ifm-link-hover-decoration: underline;
 
   --ifm-menu-color: var(--ifm-color-emphasis-600);
   --ifm-menu-color-active: var(--ifm-color-emphasis-1000);
