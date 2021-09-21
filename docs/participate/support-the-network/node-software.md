@@ -31,24 +31,19 @@ The source code of the software can be found here:
 
 Standard installation following the Hornet Documentation:
 
-- [Hornet documentation - set up a node](https://hornet.docs.iota.org/getting_started/installation_steps.html/)
+- [Hornet documentation - set up a node](https://wiki.iota.org/hornet/getting_started/getting_started)
 
 ### Hornet Community Tutorials:
 
 Guides and easy one - line installations scripts created by IOTA community members:
 
 * Nuriels playbook installation using Docker: [Nuriel's playbook](https://github.com/nuriel77/hornet-playbook)
-* 
 * DeMicheles one-liner using Nuriels Playbook: [Install Hornet](https://github.com/demichele/install-hornet-1.5)
-* 
 * Step-by-Step guide for Windows users by Phylo: 
-* [Hornet node Installation guide Part 1](https://phyloiota.medium.com/iota-hornet-node-installation-81747de28338) 
-* [Hornet node Installation guide Part 2](https://phyloiota.medium.com/iota-hornet-node-installation-2-8f2639e04d1d)
-* 
+  - [Hornet node Installation guide Part 1](https://phyloiota.medium.com/iota-hornet-node-installation-81747de28338) 
+  - [Hornet node Installation guide Part 2](https://phyloiota.medium.com/iota-hornet-node-installation-2-8f2639e04d1d) 
 * Tanglebay Swarm Hornet Node installer: [Tanglebay Swarmnode](https://tanglebay.com/swarm/)
-* 
 * Install Hornet Mainnet Node using `apt`: [Svenger 87 Alphanet Tutorial](https://github.com/svenger87/hornet-alphanet-tutorial)
-* 
 * Run Hornet on a Raspberry Pi: [Raspihive Hornet](https://docs.raspihive.org/docs/install#45-first-start-of-raspihive-and-installation-of-the-hornet-node)
 
 
@@ -107,7 +102,6 @@ Standard installation following the Documentation:
 - DeMichelle Shell Script: [DeMichelle GoShimmer](https://github.com/demichele/install-goshimmer)
 - Tanglebay Swarm Script: [Tanglebay Goshimmer Swarm](https://github.com/tanglebay/swarm/tree/0.6.5)
 
-
 ## Chronicle Permanode
 
 Chronicle provides tools for managing and accessing permanode solutions using the IOTA actor framework backstage. With Chronicle, you can:
@@ -116,7 +110,6 @@ Chronicle provides tools for managing and accessing permanode solutions using th
 * Explore stored messages using an HTTP API
 * Store the data you want by modifying incoming messages
 * Filter data to store it how and where you want (work in progress)
-* 
 
 The full documentation for Chronicle Permanodes can be found here:
 

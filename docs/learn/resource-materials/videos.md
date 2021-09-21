@@ -1,26 +1,28 @@
 ---
 title: Videos
-description: Great expalanation video's and short clips produced to explain all the amazing feature's that make IOTA so unique.
+description: Great expalanation video's and short clips produced to explain all
+  the amazing feature's that make IOTA so unique.
 ---
 
-# Heading 1 (Page Title)
+# Videos about IOTA
 
-content - introduction to the topic
+### Here are some excellent YouTube channels and Videos that explain IOTA:
 
-## Heading 2 (Sub topic 1)
 
-content
+IOTA Foundation official YouYube channel: [IOTA Foundation - YouTube](https://www.youtube.com/c/iotafoundation)
 
-## Heading 2 (Sub topic 2)
+Weekly updates from the IOTA project by Chris Mueller: [IOTA Weekly - YouTube](https://www.youtube.com/channel/UCfq6x\_5wCrXh0mUa-1iRX9g)
 
-content
+Everything Tangle - short explainers: [Everything Tangle - YouTube](https://www.youtube.com/channel/UCQaOR_QLI2tGceGAp3ZWfQw)
 
----
+Uncoined Community Channels - short easy explained Videos: [UnCoined - YouTube](https://www.youtube.com/channel/UCtpz9oCJlMzviwSksDMNBLw)
 
-**need to add a footer section for further content - (three cards)**
+Einfach IOTA - Community Channel of the german IOTA Community: [einfachIOTA - YouTube](https://www.youtube.com/channel/UClEhfr5oh-bbH42XoXO4Pqw)
 
-## Useful Links
+We are looking for contributors that would like to extend this page.
 
-- [**IOTA Foundation Youtube Channel**](https://www.youtube.com/c/iotafoundation/videos) - IOTA Foundation on Youtube: Multiple different videos made by the IOTA Foundation
-- [**IOTA Weekly Youtube Channel**](https://www.youtube.com/c/IOTAWeekly/videos) - IOTA Weekly on Youtube: Summary of what happens in the IOTA Ecosystem every week
-- [**Everything Tangle Youtube Channel**](https://www.youtube.com/c/everythingtangle/videos) - Everything Tangle on Youtube: Short and easy to understand Videos about IOTA
+If You feel you can participate in this topic, please use the editor button below and start contributing.
+
+### Thanks a lot
+
+### The WIKI Team

@@ -42,6 +42,7 @@
         path: "external/identity.rs/documentation/docs",
         routeBasePath: "identity.rs",
         sidebarPath: require.resolve("./external/identity.rs/documentation/sidebars.js"),
+        remarkPlugins: [require("remark-code-import"), require("remark-import-partial"), require('remark-remove-comments') ],
       }
     ],
     [
@@ -72,6 +73,7 @@
         path: "external/stronghold.rs/documentation/docs",
         routeBasePath: "stronghold.rs",
         sidebarPath: require.resolve("./external/stronghold.rs/documentation/sidebars.js"),
+        remarkPlugins: [require("remark-code-import"), require("remark-import-partial")],
       }
     ],
     [

@@ -15,7 +15,7 @@ jobs:
       - uses: actions/checkout@v1
       - uses: actions/setup-node@v1
         with:
-          node-version: '12.x'
+          node-version: '14.x'
       - name: Test Build
         run: |
           if [ -e yarn.lock ]; then
@@ -45,7 +45,7 @@ jobs:
           rm -f docusaurus.config.js && mv docusaurus.config.js.cpy docusaurus.config.js
       - uses: actions/setup-node@v1
         with:
-          node-version: '12.x'
+          node-version: '14.x'
       - name: Create folder
         run: |
           mkdir external
@@ -82,9 +82,7 @@ jobs:
       - name: Copy stronghold.rs docs
         run: |
           cd external
-          git clone --depth=1 --sparse https://github.com/iotaledger/stronghold.rs
-          cd stronghold.rs
-          git sparse-checkout set documentation
+          git clone --depth=1  https://github.com/iotaledger/stronghold.rs
           cd -
       - name: Copy IOTA 2.0 specs
         run: |
@@ -123,3 +121,14 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./build
           cname: wiki.iota.org
+      - name: Create search index env file
+        run: |
+          touch search.env
+          echo TYPESENSE_API_KEY=${{ secrets.TYPESENSE_API_KEY }} >> search.env
+          echo TYPESENSE_HOST=${{ secrets.TYPESENSE_HOST }} >> search.env
+          echo TYPESENSE_PORT=${{ secrets.TYPESENSE_PORT }} >> search.env
+          echo TYPESENSE_PROTOCOL=${{ secrets.TYPESENSE_PROTOCOL }} >> search.env
+      - name: Update search indexes
+        run: |
+          docker run --env-file=./search.env -e "CONFIG=$(cat .github/config/search.config.json | jq -r tostring)" typesense/docsearch-scraper
+

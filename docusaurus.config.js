@@ -22,6 +22,19 @@ module.exports = {
     },
   ],
   themeConfig: {
+    typesense: {
+        typesenseCollectionName: 'IOTAWiki', // Replace with your own doc site's name. Should match the collection name in the scraper settings.
+        typesenseServerConfig: {
+          nodes: [
+            {
+              host: 'blog-search.iota.org',
+              port: 443,
+              protocol: 'https',
+            },
+          ],
+          apiKey: '5ji1bYzTgX8ewA6EheyH8hbS1w9RZZWT',
+        },
+    },
     announcementBar: {
       id: 'wip', // Any value that will identify this message.
       content:
@@ -67,9 +80,9 @@ module.exports = {
                 {
                   label: "Getting Started",
                   sublabel: "IOTA development basics",
-                  to: "docs/develop/getting-started/architecture",
+                  to: "docs/build/getting-started/architecture",
                   icon: "\ue908",
-                  activeBaseRegex: 'docs/develop/getting-started/.*'
+                  activeBaseRegex: 'docs/build/getting-started/.*'
                 }
               ]
             },
@@ -145,7 +158,7 @@ module.exports = {
                 {
                   label: "Identity",
                   sublabel: "Identity framework",
-                  to: "identity.rs/intro",
+                  to: "identity.rs/introduction",
                   icon: "\ue905",
                   activeBaseRegex: 'identity.rs/.*'
                 },
@@ -221,11 +234,11 @@ module.exports = {
             },
             {
               label: 'Use Cases',
-              to: "docs/use/use-cases/industry-applications",
+              to: "docs/participate/use-cases/industry-applications",
             },
             {
               label: 'Solutions',
-              to: "docs/use/streams/encrypted-data-comms",
+              to: "docs/participate/solutions/streams/introduction",
             },
           ],
         },
@@ -242,7 +255,7 @@ module.exports = {
             },
             {
               label: 'Exchange Integration',
-              to: "docs/develop/exchange-integration/exchange-integration-guide",
+              to: "docs/build/exchange-integration/exchange-integration-guide",
             },
             {
               label: 'Tutorials',
@@ -269,6 +282,10 @@ module.exports = {
               label: 'Blog',
               to: 'blog'
             },
+            {
+              label: 'Contribute',
+              to: "docs/participate/contribute-to-wiki/welcome",
+            }
           ],
         },
       ],
@@ -281,7 +298,6 @@ module.exports = {
     },
     colorMode: {
       defaultMode: 'dark',
-
       // Dark/light switch icon options
       switchConfig: {
         // Icon for the switch while in dark mode
@@ -315,6 +331,8 @@ module.exports = {
       },
     },
   },
+  themes: ['docusaurus-theme-search-typesense'],
+
   presets: [
     [
       '@docusaurus/preset-classic',
@@ -326,7 +344,7 @@ module.exports = {
           remarkPlugins: [require('remark-code-import'), require('remark-import-partial')],
         },
         blog: {
-          showReadingTime: true,
+          showReadingTime: false,
           blogSidebarCount: 0,
         },
         theme: {
