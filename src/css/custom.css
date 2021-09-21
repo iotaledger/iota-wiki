@@ -575,10 +575,3 @@ html[data-theme='dark'] .DocSearch {
           var(--ifm-color-emphasis-100) 100%
   );
 }
-
-@media (max-width: 996px)
-{
-  .searchBox_node_modules-docusaurus-theme-search-typesense-src-theme-SearchBar-styles-module {
-    right:80px !important;
-  }
-}
