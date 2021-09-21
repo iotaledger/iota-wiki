@@ -45,13 +45,15 @@ hr {
 /*
 Patch to use transformed font icons in dropdowns and expanded menus
 */
-
-.theme-doc-toc-mobile button::after {
-  background: none;
+.dropdown > .navbar__link:after {
+  border: none;
   content: none;
   display: none;
-  filter: none;
-  min-width: auto;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  margin-left: auto;
+  transform: none;
 }
 
 .menu__link--sublist:after {
@@ -67,20 +69,17 @@ Patch to use transformed font icons in dropdowns and expanded menus
   transform: rotate(-90deg);
 }
 
-.dropdown > .navbar__link:after {
-  border: none;
+.theme-doc-toc-mobile button::after {
+  background: none;
   content: none;
   display: none;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  margin-left: auto;
-  transform: none;
+  filter: none;
+  min-width: auto;
 }
 
-.theme-doc-toc-mobile button::after,
+.dropdown > .navbar__link:after,
 .menu__link--sublist:after,
-.dropdown > .navbar__link:after {
+.theme-doc-toc-mobile button::after {
   display: inline-flex;
   align-items: center;
   justify-content: center;
