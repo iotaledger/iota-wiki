@@ -8,8 +8,7 @@ description: Great expalanation video's and short clips produced to explain all
 
 ### Here are some excellent YouTube channels and Videos that explain IOTA:
 
-\
-\
+
 IOTA Foundation official YouYube channel: [IOTA Foundation - YouTube](https://www.youtube.com/c/iotafoundation)
 
 Weekly updates from the IOTA project by Chris Mueller: [IOTA Weekly - YouTube](https://www.youtube.com/channel/UCfq6x\_5wCrXh0mUa-1iRX9g)

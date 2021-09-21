@@ -4,31 +4,10 @@ description: IOTA is open-source software, and the IOTA GitHub is where all this
 ---
 
 
-# Heading 1 (Page Title)
+# IOTA Community GitHub
 
-content - introduction to the topic
+The IOTA community developers are invited to host their projects under the [**IOTA Community GitHub Organization**](https://github.com/iota-community).
+This aims to give community developers more visibility and makes it easier to find community projects developing on IOTA.
+If you want to list your community project as an open-source-code Repository here, get in touch with [Antonio Nardella](https://github.com/antonionardella), our community manager to request a listing.
 
-
-## Heading 2 (Sub topic 1)
-
-content 
-
-## Heading 2 (Sub topic 2)
-
-content
-
-
-
-<br/>
-
-----
-
-<br/>
-
-**need to add a footer section for further content - (three cards)**
-
-## Useful Links
-- **[a link](https://linkgoes.here)** - A description for the link
-- **[a link](https://linkgoes.here)** - A description for the link
-- **[a link](https://linkgoes.here)** - A description for the link
 

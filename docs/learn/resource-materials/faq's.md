@@ -3,32 +3,7 @@ title: FAQ's
 description: Questions and answers collections. Clear outlined information for the most common questions around IOTA.
 ---
 
-
-# Heading 1 (Page Title)
-
-content - introduction to the topic
-
-
-## Heading 2 (Sub topic 1)
-
-content 
-
-## Heading 2 (Sub topic 2)
-
-content
-
-
-
-<br/>
-
-----
-
-<br/>
-
-**need to add a footer section for further content - (three cards)**
-
-## Useful Links
-- **[a link](https://linkgoes.here)** - A description for the link
-- **[a link](https://linkgoes.here)** - A description for the link
-- **[a link](https://linkgoes.here)** - A description for the link
-
+- [Chrysalis FAQ](https://wiki.iota.org/chrysalis-docs/faq)
+- [Firefly FAQ](https://wiki.iota.org/docs/learn/wallets/firefly-wallet#faq)
+- [GoShimmer FAQ](https://wiki.iota.org/goshimmer/faq)
+- [Hornet FAQ](https://wiki.iota.org/hornet/faq)

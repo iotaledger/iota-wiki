@@ -1,6 +1,6 @@
 ---
-title: Run a Node
-description: Everything you need to know and learn to setup an IOTA Mainnet or DevNet Node and take actively part in the IOTA Network.
+title: Access
+description: IOTA's unique solution to grant and control access to data and objects.
 ---
 
 
