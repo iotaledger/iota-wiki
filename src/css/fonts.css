@@ -1,0 +1,59 @@
+/**
+Text fonts
+**/
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@font-face {
+  font-family: Metropolis Regular;
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://webassets.iota.org/fonts/metropolis/Metropolis-Regular.woff2?v=11) format("woff2"), url(https://webassets.iota.org/fonts/metropolis/Metropolis-Regular.woff?v=11) format("woff")
+}
+
+@font-face {
+  font-family: Metropolis Light;
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://webassets.iota.org/fonts/metropolis/Metropolis-Light.woff2?v=11) format("woff2"), url(https://webassets.iota.org/fonts/metropolis/Metropolis-Light.woff?v=11) format("woff")
+}
+
+@font-face {
+  font-family: Metropolis Medium;
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://webassets.iota.org/fonts/metropolis/Metropolis-Medium.woff2?v=11) format("woff2"), url(https://webassets.iota.org/fonts/metropolis/Metropolis-Medium.woff?v=11) format("woff")
+}
+
+@font-face {
+  font-family: Metropolis Semi Bold;
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://webassets.iota.org/fonts/metropolis/Metropolis-SemiBold.woff2?v=11) format("woff2"), url(https://webassets.iota.org/fonts/metropolis/Metropolis-SemiBold.woff?v=11) format("woff")
+}
+
+@font-face {
+  font-family: Metropolis Bold;
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://webassets.iota.org/fonts/metropolis/Metropolis-Bold.woff2?v=11) format("woff2"), url(https://webassets.iota.org/fonts/metropolis/Metropolis-Bold.woff?v=11) format("woff")
+}
+
+/**
+Logo fonts
+**/
+@font-face {
+  font-family: 'icomoon';
+  src:  url('fonts/icomoon.eot?yl49be');
+  src:  url('fonts/icomoon.eot?yl49be#iefix') format('embedded-opentype'),
+  url('fonts/icomoon.ttf?yl49be') format('truetype'),
+  url('fonts/icomoon.woff?yl49be') format('woff'),
+  url('fonts/icomoon.svg?yl49be#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
