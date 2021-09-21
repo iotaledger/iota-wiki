@@ -33,6 +33,10 @@
       "url_without_anchor",
       "type",
       "docusaurus_tag"
+    ],
+    "attributesForFaceting" :[
+      "docusaurus_tag",
+      "language"
     ]
   },
   "nb_hits": "OUTPUT OF THE CRAWL"

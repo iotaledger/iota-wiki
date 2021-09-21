@@ -25,3 +25,9 @@ The IOTA Research Department consists of over 20 scientists and advisors that ar
 In Addition, they receive support from external researchers and universities worldwide, which have established partnerships and collaborations with the IOTA Foundation.
 
 Meet the Team here: [Research Team](https://www.iota.org/foundation/researcher-profiles)
+
+## Reserach Videos
+
+The IOTA Foundation Research Team has created a big database of Videos and recordings that can help to understand the very complex topics that the researchers cover in their groundbreaking works:
+
+ - [IOTA Developer Playlist](https://www.youtube.com/playlist?list=PLMbc46iGTB_TIkwgBrAMSi4NbjPKkxrr4)
