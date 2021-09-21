@@ -40,7 +40,7 @@ function Action({ title, image, link, description }) {
         onClick={handleClick}
       >
         <div className='card__image'>
-          <img src={useBaseUrl(image)}/>
+          <img alt={title} src={useBaseUrl(image)}/>
         </div>
         <div className='card__body padding-horiz--lg padding-bottom--lg'>
           <h3>{title}</h3>
