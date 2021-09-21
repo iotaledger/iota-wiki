@@ -8,7 +8,7 @@ This document will evolve as we invent more ways to help each other. Check for u
 
 ## Make a Friend
 
-If you have not gotten in a contact with a technical writer yet, do it! We can advise you, ask the right questions, and plan together. Reach out to us through Slack DMs, `#dev-documentation` Slack channel, or via e-mail. If you come from outside IOTA, check the [Team](https://docs.iota.org/team) page for the external contacts.
+If you have not gotten in a contact with a technical writer yet, do it! We can advise you, ask the right questions, and plan together. Reach out to us through Slack DMs, `#dev-documentation` Slack channel, or via e-mail. If you come from outside IOTA, check the [Welcome](../welcome.md#contact-technical-writers) page for the external contacts.
 
 Active technical writers:
 
