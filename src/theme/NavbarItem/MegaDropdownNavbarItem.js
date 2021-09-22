@@ -79,6 +79,7 @@ function MegaDropdownItem({className, ...props}) {
 }
 
 function MegaDropdownNavbarItemDesktop({items_: items, layout, position, className, ...props}) {
+  console.log(layout)
   const localPathname = useLocalPathname();
   const containsActive = containsActiveItems(items, localPathname);
   const dropdownRef = useRef(null);

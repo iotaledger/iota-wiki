@@ -94,3 +94,12 @@
         sidebarPath: require.resolve("./external/wasp/documentation/sidebars.js"),
       }
     ],
+    [
+      "@docusaurus/plugin-content-docs",
+      {
+        id: "wasp",
+        path: "external/streams/documentation/docs",
+        routeBasePath: "streams",
+        sidebarPath: require.resolve("./external/streams/documentation/sidebars.js"),
+      }
+    ],

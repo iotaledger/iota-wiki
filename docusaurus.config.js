@@ -72,6 +72,7 @@ module.exports = {
             '. 1 3 2',
             '. 1 3 2',
             '. 1 3 2',
+            '. 1 3 2',
           ],
           items_: [
             {
@@ -83,7 +84,7 @@ module.exports = {
                   to: "docs/build/getting-started/architecture",
                   icon: "\ue908",
                   activeBaseRegex: 'docs/build/getting-started/.*'
-                }
+                },
               ]
             },
             {
@@ -161,6 +162,13 @@ module.exports = {
                   to: "identity.rs/introduction",
                   icon: "\ue905",
                   activeBaseRegex: 'identity.rs/.*'
+                },
+                {
+                  label: "Streams",
+                  sublabel: "Share data securely",
+                  to: "streams/welcome",
+                  icon: "\ue902",
+                  activeBaseRegex: 'streams/.*'
                 },
               ],
             },
@@ -374,5 +382,15 @@ module.exports = {
     ],
     'docusaurus-plugin-matomo',
     /* AUTO GENERATED EXTERNAL DOCS CONFIG */
+
+    [
+      "@docusaurus/plugin-content-docs",
+      {
+        id: "streams",
+        path: "external/streams/documentation/docs",
+        routeBasePath: "streams",
+        sidebarPath: require.resolve("./external/streams/documentation/sidebars.js"),
+      }
+    ],
   ]
 };

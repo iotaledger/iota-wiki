@@ -103,6 +103,11 @@ jobs:
           cd external
           git clone --depth=1 https://github.com/iotaledger/identity.rs
           cp -rn identity.rs/documentation/static/img/* ../static/img/
+      - name: Copy Streams docs
+        run: |
+          cd external
+          git clone --depth=1 https://github.com/iotaledger/streams.git
+          cp -rn streams/documentation/static/img/* ../static/img/
       - name: Return to root folder
         run: cd ..
       - name: Build
