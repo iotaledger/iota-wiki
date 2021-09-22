@@ -382,15 +382,5 @@ module.exports = {
     ],
     'docusaurus-plugin-matomo',
     /* AUTO GENERATED EXTERNAL DOCS CONFIG */
-
-    [
-      "@docusaurus/plugin-content-docs",
-      {
-        id: "streams",
-        path: "external/streams/documentation/docs",
-        routeBasePath: "streams",
-        sidebarPath: require.resolve("./external/streams/documentation/sidebars.js"),
-      }
-    ],
   ]
 };
