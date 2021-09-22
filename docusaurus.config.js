@@ -167,7 +167,7 @@ module.exports = {
                   label: "Streams",
                   sublabel: "Share data securely",
                   to: "streams/welcome",
-                  icon: "\ue902",
+                  icon: "\ue903",
                   activeBaseRegex: 'streams/.*'
                 },
               ],
