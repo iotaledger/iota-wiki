@@ -11,7 +11,7 @@ import useIsBrowser from '@docusaurus/useIsBrowser';
 import clsx from 'clsx';
 import './styles.css';
 
-const Toggle = memo(
+const ToggleMemo = memo(
   ({className, styles, icons, checked: defaultChecked, disabled, onChange}) => {
     const [checked, setChecked] = useState(defaultChecked);
     const [focused, setFocused] = useState(false);
@@ -55,6 +55,8 @@ const Toggle = memo(
   },
 );
 
+ToggleMemo.displayName = 'ToggleMemo';
+
 Toggle.propTypes = {
   className: PropTypes.string,
   styles: {
@@ -70,7 +72,7 @@ Toggle.propTypes = {
   onChange: PropTypes.func,
 }
 
-export default function (props) {
+export default function Toggle(props) {
   const {
     colorMode: {
       switchConfig: {darkIcon, darkIconStyle, lightIcon, lightIconStyle},
@@ -78,7 +80,7 @@ export default function (props) {
   } = useThemeConfig();
   const isBrowser = useIsBrowser();
   return (
-    <Toggle
+    <ToggleMemo
       disabled={!isBrowser}
       styles={{
         unchecked: lightIconStyle,
