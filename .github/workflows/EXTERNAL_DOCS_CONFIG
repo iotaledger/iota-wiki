@@ -97,7 +97,7 @@
     [
       "@docusaurus/plugin-content-docs",
       {
-        id: "wasp",
+        id: "streams",
         path: "external/streams/documentation/docs",
         routeBasePath: "streams",
         sidebarPath: require.resolve("./external/streams/documentation/sidebars.js"),
