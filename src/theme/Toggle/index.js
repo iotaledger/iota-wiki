@@ -5,6 +5,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 import React, {useState, useRef, memo} from 'react';
+import PropTypes from 'prop-types';
 import {useThemeConfig} from '@docusaurus/theme-common';
 import useIsBrowser from '@docusaurus/useIsBrowser';
 import clsx from 'clsx';
@@ -53,6 +54,21 @@ const Toggle = memo(
     );
   },
 );
+
+Toggle.propTypes = {
+  className: PropTypes.string,
+  styles: {
+    unchecked: PropTypes.string,
+    checked: PropTypes.string,
+  },
+  icons: {
+    unchecked: PropTypes.string,
+    checked: PropTypes.string,
+  },
+  checked: PropTypes.bool,
+  disabled: PropTypes.bool,
+  onChange: PropTypes.func,
+}
 
 export default function (props) {
   const {

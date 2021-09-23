@@ -5,6 +5,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 import React from 'react';
+import PropTypes from 'prop-types';
 import DefaultNavbarItem from '@theme/NavbarItem/DefaultNavbarItem';
 import DropdownNavbarItem from '@theme/NavbarItem/DropdownNavbarItem';
 import MegaDropdownNavbarItem from './MegaDropdownNavbarItem';
@@ -51,8 +52,14 @@ function getComponentType(type, isDropdown, isMegaDropdown) {
   return type;
 }
 
-export default function NavbarItem({type, ...props}) {
+function NavbarItem({type, ...props}) {
   const componentType = getComponentType(type, props.items !== undefined, props.layout !== undefined);
   const NavbarItemComponent = getNavbarItemComponent(componentType);
   return <NavbarItemComponent {...props} />;
 }
+
+NavbarItem.propTypes = {
+  type: PropTypes.string,
+}
+
+export default NavbarItem

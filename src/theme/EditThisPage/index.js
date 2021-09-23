@@ -7,7 +7,8 @@
 import React from 'react';
 import Translate from '@docusaurus/Translate';
 import IconEdit from '@theme/IconEdit';
-import OriginalEditThisPage from '@theme-original/EditThisPage'
+import OriginalEditThisPage from '@theme-original/EditThisPage';
+import PropTypes from 'prop-types';
 
 /**
 This function will remove "external/anyOtherString"
@@ -27,7 +28,7 @@ function isExternalProjectURL(editUrl)
     return externalDocsRegex.test(editUrl)
 }
 
-export default function EditThisPage({editUrl}) {
+function EditThisPage({editUrl}) {
   const formattedEditURL = reformatExternalProjectURL(editUrl);
 
   return (
@@ -47,3 +48,9 @@ export default function EditThisPage({editUrl}) {
     </>
   );
 }
+
+EditThisPage.propTypes = {
+  editUrl: PropTypes.string,
+}
+
+export default EditThisPage;

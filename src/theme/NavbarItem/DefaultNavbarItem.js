@@ -6,6 +6,7 @@
  */
 import React from 'react';
 import clsx from 'clsx';
+import PropTypes from 'prop-types';
 import Link from '@docusaurus/Link';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import IconExternalLink from '@theme/IconExternalLink';
@@ -85,6 +86,18 @@ export function NavLink({
   );
 }
 
+NavLink.propTypes = {
+  activeBasePath: PropTypes.string,
+  activeBaseRegex: PropTypes.string,
+  to: PropTypes.string,
+  href: PropTypes.string,
+  label: PropTypes.string,
+  sublabel: PropTypes.string,
+  icon: PropTypes.string,
+  activeClassName: 'navbar__link--active',
+  prependBaseUrlToHref: PropTypes.bool,
+};
+
 function DefaultNavbarItemDesktop({
   className,
   isDropdownItem = false,
@@ -107,11 +120,17 @@ function DefaultNavbarItemDesktop({
   return element;
 }
 
+DefaultNavbarItemDesktop.propTypes = {
+  className: PropTypes.string,
+  isDropdownItem: false,
+}
+
 function DefaultNavbarItemMobile({
   className,
-  isDropdownItem: _isDropdownItem,
   ...props
 }) {
+  delete props.isDropdownItem;
+
   return (
     <li className="menu__list-item">
       <NavLink className={clsx('menu__link', className)} {...props} />
@@ -119,13 +138,15 @@ function DefaultNavbarItemMobile({
   );
 }
 
+DefaultNavbarItemMobile.propTypes = {
+  className: PropTypes.string,
+}
+
 function DefaultNavbarItem({
   mobile = false,
-  position: _position,
-  // Need to destructure position from props so that it doesn't get passed on.
   ...props
 }) {
-
+  delete props.position;
     /**
      * Added to enable non-clickable category headers.
      * To use simply add an navBar items in the config
@@ -147,6 +168,10 @@ function DefaultNavbarItem({
         return <Comp {...props} />;
 
     }
+}
+
+DefaultNavbarItem.propTypes = {
+  mobile: false,
 }
 
 export default DefaultNavbarItem;
