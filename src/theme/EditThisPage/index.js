@@ -15,7 +15,7 @@ This function will remove "external/anyOtherString"
 **/
 function reformatExternalProjectURL(editUrl)
 {
-    const externalDocsRegex =  new RegExp('external\/[^\/]*\/','i') ;
+    const externalDocsRegex =  new RegExp('external/[^/]*/','i') ;
     return editUrl.replace(externalDocsRegex, '');
 }
 
@@ -24,7 +24,7 @@ This function will check if docs is in "external/"
 **/
 function isExternalProjectURL(editUrl)
 {
-    const externalDocsRegex =  new RegExp('external\/[^\/]*\/','i') ;
+    const externalDocsRegex =  new RegExp('external/[^/]*/','i') ;
     return externalDocsRegex.test(editUrl)
 }
 
