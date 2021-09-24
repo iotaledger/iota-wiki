@@ -18,8 +18,8 @@ export default class Start extends Command {
   async run() {
     const PWD = process.env.PWD ?? ''
     const userConfig = await getLocalConfig()
-    const WIKI_GIT_FOLDER = join(PWD, userConfig.localWikiFolder ?? '', userConfig.localWikiFolder ? 'iota-wiki' : '')
-    const DOCUSAURUS_CONFIG_PATH = join(WIKI_GIT_FOLDER, 'docusaurus.config.js')
+    const WORKING_FOLDER = join(PWD, userConfig.localWikiFolder ?? '', userConfig.localWikiFolder ? 'iota-wiki' : '')
+    const DOCUSAURUS_CONFIG_PATH = join(WORKING_FOLDER, 'docusaurus.config.js')
     const log = this.log
 
     const EXTERNAL_DOCS_CONFIG = readFileSync(join(PWD, userConfig.configFolder ?? '', 'EXTERNAL_DOCS_CONFIG'), 'utf8')
@@ -39,11 +39,11 @@ export default class Start extends Command {
     if (!userConfig.localWikiFolder)
       return
 
-    const WIKI_EXTERNAL_FOLDER = join(WIKI_GIT_FOLDER, 'external')
+    const WIKI_EXTERNAL_FOLDER = join(WORKING_FOLDER, 'external')
 
     const WIKI_CONTENT_REPO_FOLDER = join(WIKI_EXTERNAL_FOLDER, userConfig.repoName)
 
-    copySync(join(PWD, 'static', 'img'), join(WIKI_GIT_FOLDER, 'static', 'img'))
+    copySync(join(PWD, 'static', 'img'), join(WORKING_FOLDER, 'static', 'img'))
 
     log(resolve(join(PWD, '..')))
 
@@ -53,7 +53,7 @@ export default class Start extends Command {
         '--host',
         '0.0.0.0',
       ], {
-        cwd: WIKI_GIT_FOLDER,
+        cwd: WORKING_FOLDER,
         shell: true,
         stdio: 'inherit',
       })
