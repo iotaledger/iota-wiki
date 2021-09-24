@@ -1,0 +1,49 @@
+{
+    "configFolder": ".github/workflows/",
+    "content": [
+        {
+            "repo": "https://github.com/iotaledger/bee",
+            "checkoutParams": [
+                "--branch dev"
+            ],
+            "staticPath": "./documentation/static"
+        },
+        {
+            "repo": "https://github.com/iotaledger/goshimmer",
+            "staticPath": "./documentation/static"
+        },
+        {
+            "repo": "https://github.com/iotaledger/wasp",
+            "staticPath": "./documentation/static"
+        },
+        {
+            "repo": "https://github.com/iotaledger/iota.rs",
+            "staticPath": "./documentation/static"
+        },
+        {
+            "repo": "https://github.com/iotaledger/wallet.rs",
+            "staticPath": "./documentation/static"
+        },
+        {
+            "repo": "https://github.com/iotaledger/stronghold.rs"
+        },
+        {
+            "repo": "https://github.com/iotaledger/IOTA-2.0-Research-Specifications",
+            "checkoutParams": [
+                "--branch docusaurus"
+            ]
+        },
+        {
+            "repo": "https://github.com/iotaledger/chrysalis-docs",
+            "staticPath": "./static"
+        },
+        {
+            "repo": "https://github.com/gohornet/hornet",
+            "staticPath": "./documentation/static"
+        },
+        {
+            "repo": "https://github.com/iotaledger/identity.rs",
+            "staticPath": "./documentation/static"
+        }
+    ]
+}
