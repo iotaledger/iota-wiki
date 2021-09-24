@@ -20,12 +20,12 @@ const NavbarItemComponents = {
   // Need to lazy load these items as we don't know for sure the docs plugin is loaded
   // See https://github.com/facebook/docusaurus/issues/3360
 
-  /* eslint-disable @typescript-eslint/no-var-requires, global-require */
+  /* eslint-disable no-undef, global-require */
   docsVersion: () => require('@theme/NavbarItem/DocsVersionNavbarItem').default,
   docsVersionDropdown: () =>
     require('@theme/NavbarItem/DocsVersionDropdownNavbarItem').default,
   doc: () => require('@theme/NavbarItem/DocNavbarItem').default,
-  /* eslint-enable @typescript-eslint/no-var-requires, global-require */
+  /* eslint-enable no-undef, global-require */
 };
 
 const getNavbarItemComponent = (type) => {
@@ -52,14 +52,16 @@ function getComponentType(type, isDropdown, isMegaDropdown) {
   return type;
 }
 
-function NavbarItem({type, ...props}) {
-  const componentType = getComponentType(type, props.items !== undefined, props.layout !== undefined);
+function NavbarItem({type, items, layout, ...props}) {
+  const componentType = getComponentType(type, items !== undefined, layout !== undefined);
   const NavbarItemComponent = getNavbarItemComponent(componentType);
-  return <NavbarItemComponent {...props} />;
+  return <NavbarItemComponent items={items} layout={layout} {...props} />;
 }
 
 NavbarItem.propTypes = {
   type: PropTypes.string,
+  items: PropTypes.array,
+  layout: PropTypes.arrayOf(PropTypes.string),
 }
 
 export default NavbarItem

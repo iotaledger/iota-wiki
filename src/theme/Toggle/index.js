@@ -56,8 +56,7 @@ const ToggleMemo = memo(
 );
 
 ToggleMemo.displayName = 'ToggleMemo';
-
-Toggle.propTypes = {
+ToggleMemo.propTypes = {
   className: PropTypes.string,
   styles: {
     unchecked: PropTypes.string,

@@ -12,7 +12,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import IconExternalLink from '@theme/IconExternalLink';
 import isInternalUrl from '@docusaurus/isInternalUrl';
 const dropdownLinkActiveClass = 'dropdown__link--active';
-export function NavLink({
+function NavLink({
   activeBasePath,
   activeBaseRegex,
   to,
@@ -98,6 +98,8 @@ NavLink.propTypes = {
   prependBaseUrlToHref: PropTypes.bool,
 };
 
+export { NavLink };
+
 function DefaultNavbarItemDesktop({
   className,
   isDropdownItem = false,
@@ -129,6 +131,7 @@ function DefaultNavbarItemMobile({
   className,
   ...props
 }) {
+  /* eslint-disable-next-line react/prop-types */
   delete props.isDropdownItem;
 
   return (
@@ -144,15 +147,18 @@ DefaultNavbarItemMobile.propTypes = {
 
 function DefaultNavbarItem({
   mobile = false,
+  to,
+  label,
   ...props
 }) {
+  /* eslint-disable-next-line react/prop-types */
   delete props.position;
     /**
      * Added to enable non-clickable category headers.
      * To use simply add an navBar items in the config
      * with to:'category-header'
      */
-    if(props.to === 'category-header')
+    if(to === 'category-header')
     {
         const categorySeparatorStyles = {
             fontSize: '10px',
@@ -160,18 +166,20 @@ function DefaultNavbarItem({
             paddingTop:'10px'
 
         }
-        return <li style={categorySeparatorStyles}>{props.label}</li>
+        return <li style={categorySeparatorStyles}>{label}</li>
     }
     else
     {
         const Comp = mobile ? DefaultNavbarItemMobile : DefaultNavbarItemDesktop;
-        return <Comp {...props} />;
+        return <Comp to={to} label={label} {...props} />;
 
     }
 }
 
 DefaultNavbarItem.propTypes = {
   mobile: false,
+  to: PropTypes.string,
+  label: PropTypes.string,
 }
 
 export default DefaultNavbarItem;
