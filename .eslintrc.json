@@ -19,5 +19,10 @@
         "react"
     ],
     "rules": {
+    },
+    "settings": {
+        "react": {
+          "version": "detect"
+        }
     }
 }
