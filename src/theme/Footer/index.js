@@ -47,10 +47,10 @@ const FooterLogo = ({sources, alt}) => (
 );
 
 FooterLogo.propTypes = {
-  sources: {
+  sources: PropTypes.shape({
     light: PropTypes.string,
     dark: PropTypes.string
-  },
+  }),
   alt: PropTypes.string,
 }
 

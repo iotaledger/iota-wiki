@@ -279,6 +279,10 @@ function MegaDropdownNavbarItem({mobile = false, ...props}) {
 }
 
 MegaDropdownNavbarItem.propTypes = {
+  mobile: PropTypes.bool,
+}
+
+MegaDropdownNavbarItem.defaultProps = {
   mobile: false,
 }
 

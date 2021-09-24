@@ -94,8 +94,12 @@ NavLink.propTypes = {
   label: PropTypes.string,
   sublabel: PropTypes.string,
   icon: PropTypes.string,
-  activeClassName: 'navbar__link--active',
+  activeClassName: PropTypes.string,
   prependBaseUrlToHref: PropTypes.bool,
+};
+
+NavLink.defaultProps = {
+  activeClassName: 'navbar__link--active',
 };
 
 export { NavLink };
@@ -124,6 +128,10 @@ function DefaultNavbarItemDesktop({
 
 DefaultNavbarItemDesktop.propTypes = {
   className: PropTypes.string,
+  isDropdownItem: PropTypes.bool,
+}
+
+DefaultNavbarItemDesktop.defaultProps = {
   isDropdownItem: false,
 }
 
@@ -177,9 +185,13 @@ function DefaultNavbarItem({
 }
 
 DefaultNavbarItem.propTypes = {
-  mobile: false,
+  mobile: PropTypes.bool,
   to: PropTypes.string,
   label: PropTypes.string,
+}
+
+DefaultNavbarItem.defaultProps = {
+  mobile: false,
 }
 
 export default DefaultNavbarItem;

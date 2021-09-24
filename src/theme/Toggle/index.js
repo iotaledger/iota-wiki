@@ -58,14 +58,14 @@ const ToggleMemo = memo(
 ToggleMemo.displayName = 'ToggleMemo';
 ToggleMemo.propTypes = {
   className: PropTypes.string,
-  styles: {
+  styles: PropTypes.shape({
+    unchecked: PropTypes.any,
+    checked: PropTypes.any,
+  }),
+  icons: PropTypes.shape({
     unchecked: PropTypes.string,
     checked: PropTypes.string,
-  },
-  icons: {
-    unchecked: PropTypes.string,
-    checked: PropTypes.string,
-  },
+  }),
   checked: PropTypes.bool,
   disabled: PropTypes.bool,
   onChange: PropTypes.func,

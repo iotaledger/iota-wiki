@@ -195,6 +195,10 @@ function DropdownNavbarItem({mobile = false, ...props}) {
 }
 
 DropdownNavbarItem.propTypes = {
+  mobile: PropTypes.bool,
+}
+
+DropdownNavbarItem.defaultProps = {
   mobile: false,
 }
 
