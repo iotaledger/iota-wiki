@@ -31,3 +31,5 @@ Meet the Team here: [Research Team](https://www.iota.org/foundation/researcher-p
 The IOTA Foundation Research Team has created a big database of Videos and recordings that can help to understand the very complex topics that the researchers cover in their groundbreaking works:
 
  - [IOTA Developer Playlist](https://www.youtube.com/playlist?list=PLMbc46iGTB_TIkwgBrAMSi4NbjPKkxrr4)
+ - [IOTA Research Symposium 2021 Playlist](https://www.youtube.com/playlist?list=PLMbc46iGTB_Q7KAFXnQTFOn5keU2yDOXU)
+
