@@ -5,4 +5,4 @@ description: IOTA's Streams framework offers encrypted data channels for secure 
 
 # IOTA Streams
 
-![layer2-streams]{/img/learn/layer2-streams.png)
+![layer2-streams](/img/learn/layer2-streams.png)
