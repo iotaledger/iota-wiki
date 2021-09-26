@@ -1,6 +1,6 @@
 ---
 title: Introduction
-description: Collection and introdoction for IOTA solutions
+description: Collection and introdoction for IOTA frameworks
 ---
 
 # IOTA Frameworks
