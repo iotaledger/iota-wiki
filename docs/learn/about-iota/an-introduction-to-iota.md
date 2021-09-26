@@ -20,6 +20,10 @@ The main differences between blockchains and the Tangle are the following:
 
 To explain these points, you need to understand the differences between the data structures and the consensus mechanisms in these DLTs.
 
+**Blockchain vs. Tangle**
+
+![layer1-tangle](/img/learn/layer1-tangle.png)
+
 ## **The blockchain data structure**
 
 The blockchain data structure consists of a chain of sequential blocks, where each block contains a limited number of messages.

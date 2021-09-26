@@ -45,4 +45,3 @@ The implementation of the upcoming fully decentralized IOTA 2.0 Protocol. The ne
 
 - **[IOTA 2.0 DevNet](https://v2.iota.org/visualizer)**
 
-
