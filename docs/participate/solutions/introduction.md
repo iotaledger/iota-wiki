@@ -3,11 +3,13 @@ title: Introduction
 description: Collection and introdoction for IOTA solutions
 ---
 
-# IOTA Solutions
+# IOTA Frameworks
 
-The IOTA foundation maintains and develops a collection of solutions building on the Tangle.
+The IOTA foundation maintains and develops a collection of frameworks building on the Tangle.
 
-## List of Solutions
+## List of Frameworks
+
+![Layer2-frameworks](/img/learn/layer2-frameworks.png)
 
 - [Streams](/docs/participate/solutions/streams):  
 Streams is an organizational tool for structuring and navigating secure data through the Tangle. Streams organizes data by ordering it in a uniform and interoperable structure.
