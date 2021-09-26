@@ -46,4 +46,3 @@ This is the still active, but old Mainnet of the IOTA 1.0 Protocol implementatio
 The implementation of the upcoming fully decentralized IOTA 2.0 Protocol. The network here does not use or need a coordinator anymore. Used with Testnet tokens to fine-tune, test and optimize the upcoming development stage of the IOTA Protocol together with the IOTA community.
 
 - **[IOTA 2.0 DevNet](https://v2.iota.org/explorer)**
-
