@@ -1,34 +1,12 @@
 ---
 title: Access
-description: IOTA's unique solution to grant and control access to data and objects.
+description: IOTA's unique framework to grant and control access to data and objects.
 ---
 
 
-# Heading 1 (Page Title)
+# IOTA Access framework
 
-content - introduction to the topic
-
-
-## Heading 2 (Sub topic 1)
-
-content 
-
-## Heading 2 (Sub topic 2)
-
-content
+![layer2-access](/img/learn/layer2-access.png}
 
 
-
-<br/>
-
-----
-
-<br/>
-
-**need to add a footer section for further content - (three cards)**
-
-## Useful Links
-- **[a link](https://linkgoes.here)** - A description for the link
-- **[a link](https://linkgoes.here)** - A description for the link
-- **[a link](https://linkgoes.here)** - A description for the link
 
