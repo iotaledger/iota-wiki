@@ -35,7 +35,7 @@ export default class Checkout extends Command {
         stdio: 'inherit',
       })
       if(entry.staticPath) {
-        copySync(join(PWD, 'external', entry.repo.split('/').pop() as string, entry.staticPath), join(PWD, './static'))
+        copySync(join(PWD, 'external', entry.repo.split('/').pop() as string, entry.staticPath), join(PWD, './static'), {overwrite: false})
       }
     });
   }

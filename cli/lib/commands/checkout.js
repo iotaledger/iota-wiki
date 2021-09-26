@@ -26,7 +26,7 @@ class Checkout extends command_1.Command {
                 stdio: 'inherit',
             });
             if (entry.staticPath) {
-                fs_extra_1.copySync(path_1.join(PWD, 'external', entry.repo.split('/').pop(), entry.staticPath), path_1.join(PWD, './static'));
+                fs_extra_1.copySync(path_1.join(PWD, 'external', entry.repo.split('/').pop(), entry.staticPath), path_1.join(PWD, './static'), { overwrite: false });
             }
         });
     }
