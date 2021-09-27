@@ -20,7 +20,7 @@ description: The IOTA Firefly Wallet sets a new standard for Software Wallets in
     * [Transactions](#transactions)
     * [Settings](#settings)
     * [Troubleshooting](#troubleshooting)
-    * [migration](#migration)
+    * [Migration](#migration)
     * [Spent Addresses](#spent-addresses)
 
 ## General Overview and Introduction
