@@ -4,7 +4,7 @@ description: The IOTA Firefly Wallet sets a new standard for Software Wallets in
   DLT. Learn everything here.
 ---
 
-# The Firefly Wallet
+# Firefly Wallet
 
 ## Table of contents
 
