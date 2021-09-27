@@ -7,19 +7,19 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 const actions = [
   {
     title: 'Learn',
-    image: 'img/learn.png',
+    image: 'img/learn.svg',
     link: 'docs/learn/about-iota/an-introduction-to-iota',
     description: 'Learn about IOTA, the Tangle, its features, industry applications, network and more.',
   },
   {
     title: 'Participate',
-    image: 'img/participate.png',
+    image: 'img/participate.svg',
     link: 'docs/participate/support-the-network/about-nodes',
     description: 'Join the network and start using solutions built on top of the Tangle.',
   },
   {
     title: 'Build',
-    image: 'img/build.png',
+    image: 'img/build.svg',
     link: 'docs/build/getting-started/architecture',
     description: 'Access documentation and guides to build with IOTA in Rust, C, Go, Java or Python.',
   },
