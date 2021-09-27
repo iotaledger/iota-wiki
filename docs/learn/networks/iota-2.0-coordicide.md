@@ -7,7 +7,7 @@ The vision of a fully decentralized, feeless and highly scalable DLT.
 IOTA has always worked towards solving the big goal in Crypto. Solving the Blockchain Trilemma and creating a network that is permissionless, trustless, totally decentralized, easily accessible for everyone, blazing fast, extremely secure, leaderless, scalable, ready for mass adoption. The goal is to reach this without sacrificing one of the three major points: security, scalability, decentralization.
 
 ## Testnet implementation
-Over the last couple of years, IOTA has put an immense amount of research in developing a network that can be all the above described, and currently, this network is live in the [Goshimmer network](https://wiki.iota.org/goshimmer/welcome)
+Over the last couple of years, IOTA has put an immense amount of research in developing a network that can be all the above described, and currently, this network is live in the [GoShimmer network](https://wiki.iota.org/goshimmer/welcome)
 
 This network has been live since the beginning of 2020 and is the testbed for all research implementations that aim to improve the approach to bring this technology finally to the IOTA Mainnet and remove the Coordinator node. More and more maturity has been reached as described in this [blog.](https://blog.iota.org/path-towards-full-decentralization-with-iota-2-0/)
 
