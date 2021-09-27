@@ -20,7 +20,7 @@ A great summary of the research can be found in this collection of videos record
 - [IOTA Research Symposium](https://www.youtube.com/playlist?list=PLMbc46iGTB_Q7KAFXnQTFOn5keU2yDOXU)
 
 A Website that gives the most recent information, links to the relevant research papers and specifications has been created:
- - [IOTA V2 Devnet](https://v2.iota.org/)
+ - [IOTA V2 DevNet](https://v2.iota.org/)
 
 You will find all the needed information on this website, observe the network live using the [visualizer](https://v2.iota.org/visualizer), and find all related research papers and specifications.
 
