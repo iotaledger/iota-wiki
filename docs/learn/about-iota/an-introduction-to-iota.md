@@ -22,7 +22,7 @@ To explain these points, you need to understand the differences between the data
 
 **Blockchain vs. Tangle**
 
-![layer1-tangle](/img/learn/layer1-tangle.png)
+![layer1-tangle](/img/learn/layer1-tangle.png)](/img/learn/layer1-tangle.png)
 
 ## **The blockchain data structure**
 
@@ -31,7 +31,7 @@ As a result, Validators can attach new messages to only one place: a block at th
 
 **Blockchain bottleneck**
 
-![blockchain-bottleneck](/img/learn/blockchain-bottleneck.gif)
+![blockchain-bottleneck](/img/learn/blockchain-bottleneck.gif)](/img/learn/blockchain-bottleneck.gif)
 
 All transactions in a Blockchain have to wait until they are included in a Block. Due to limitations in Blocksize and Block Production time, this creates congestion and waiting times for transactions.
 
@@ -45,7 +45,7 @@ Rather than being limited to a single place for attaching new messages, you can 
 
 **Tangle bottleneck**
 
-![tangle-bottleneck](/img/learn/tangle-bottleneck.gif)
+![tangle-bottleneck](/img/learn/tangle-bottleneck.gif)](/img/learn/tangle-bottleneck.gif)
 
 Allowing parallel processing removes congestion.
 
@@ -84,4 +84,4 @@ To allow the nodes recognizing the milestones, all nodes that participate in the
 
 To make sure that new messages always have a chance of being confirmed, the Coordinator sends indexed milestones at regular intervals. This way, nodes can compare the indexes of their milestones to check whether they are synchronized with the rest of the network.
 
-![coordinator](/img/learn/milestones.gif)
+![coordinator](/img/learn/milestones.gif)](/img/learn/milestones.gif)
