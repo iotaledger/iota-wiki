@@ -4,9 +4,23 @@
         <title>IOTA Wiki Blog</title>
         <link>https://wiki.iota.org/blog</link>
         <description>IOTA Wiki Blog</description>
-        <lastBuildDate>Sun, 22 Aug 2021 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 24 Sep 2021 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
+        <item>
+            <title><![CDATA[My opinion on ISCP — security improvement proposal]]></title>
+            <link>https://wiki.iota.org/blog/iscp_security_proposal</link>
+            <guid>iscp_security_proposal</guid>
+            <pubDate>Fri, 24 Sep 2021 00:00:00 GMT</pubDate>
+            <description><![CDATA[keyboard]]></description>
+        </item>
+        <item>
+            <title><![CDATA[ISCP in a Private Network - Developing a Prediction Market]]></title>
+            <link>https://wiki.iota.org/blog/develop_prediction_market</link>
+            <guid>develop_prediction_market</guid>
+            <pubDate>Thu, 16 Sep 2021 00:00:00 GMT</pubDate>
+            <description><![CDATA[keyboard]]></description>
+        </item>
         <item>
             <title><![CDATA[A future day with IOTA — Part II]]></title>
             <link>https://wiki.iota.org/blog/future_day_2</link>
