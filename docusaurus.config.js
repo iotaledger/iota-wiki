@@ -245,7 +245,7 @@ module.exports = {
               to: "docs/participate/use-cases/industry-applications",
             },
             {
-              label: 'Solutions',
+              label: 'Frameworks',
               to: "docs/participate/solutions/streams/introduction",
             },
           ],

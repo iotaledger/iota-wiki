@@ -21,6 +21,7 @@ IOTA Foundation official YouTube channel: [IOTA Foundation - YouTube](https://ww
  - [Social Impact and public regulation affairs](https://www.youtube.com/playlist?list=PLMbc46iGTB_T2v1-bSMM7ETEPP7dFL5sj)
  - [Community events](https://www.youtube.com/playlist?list=PLMbc46iGTB_S57aQMVoRoXq8wQKphJF9B)
  - [Explore IOTA](https://www.youtube.com/playlist?list=PLMbc46iGTB_R07p5KmIavscv25R9Fsufb)
+ - [IOTA Research Symposium 2021](https://www.youtube.com/playlist?list=PLMbc46iGTB_Q7KAFXnQTFOn5keU2yDOXU)
 
 Weekly updates from the IOTA project by Chris Mueller: 
  - [IOTA Weekly - YouTube](https://www.youtube.com/channel/UCfq6x\_5wCrXh0mUa-1iRX9g)

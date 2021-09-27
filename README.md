@@ -87,7 +87,8 @@ Install [Node.js](https://nodejs.org/en/download/).
 
 ### Local Development
 
-1. Run `yarn install` and `npx docusaurus start` in your terminal
+1. Run `yarn install` in your terminal. If you want to also install the external docs use `yarn cli start` and `yarn cli checkout`
+3. Run `npx docusaurus start`
 2. Open `http://localhost:3000`
 
 <!-- CONTRIBUTING -->
