@@ -11,7 +11,7 @@ Over the last couple of years, IOTA has put an immense amount of research in dev
 
 This network has been live since the beginning of 2020 and is the testbed for all research implementations that aim to improve the approach to bring this technology finally to the IOTA Mainnet and remove the Coordinator node. More and more maturity has been reached as described in this [blog.](https://blog.iota.org/path-towards-full-decentralization-with-iota-2-0/)
 
-The IOTA Research Team test al Coordicide components together with the community in this public Testnet. Everyone can participate, [spin up a node](https://wiki.iota.org/goshimmer/tutorials/setup) in the network, test the solutions, and support the research.
+The IOTA Research Team test all Coordicide components together with the community in this public Testnet. Everyone can participate, [spin up a node](https://wiki.iota.org/goshimmer/tutorials/setup) in the network, test the solutions, and support the research.
 
 Step by step, the technology is improving, and the [IOTA Research Team](https://wiki.iota.org/docs/learn/research/research-outline) has used this network to produce a huge amount of [scientific papers](https://wiki.iota.org/docs/learn/research/research-papers) that go through full peer review processes ensuring the mathematical validation of all implemented solutions.
 
