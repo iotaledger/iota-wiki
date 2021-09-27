@@ -4,7 +4,9 @@ description: The current Mainnet implementation where all IOTA transactions and 
 ---
 
 
-# Vision
+# IOTA 1.5 Chrysalis
+
+## Vision
 
 The IOTA Foundation is well on the way to realizing its core goal of a decentralized IOTA mainnet. Considerable progress has been made in basic research on removing the coordinator, this is referred to as "Coordicide". Some Coordicide modules have already been added to the IOTA mainnet, including autopeering and object storage. Before the Coordicide can be completed, the IOTA mainnet had to be further optimized to provide a business-compatible solution for the ecosystem.
 

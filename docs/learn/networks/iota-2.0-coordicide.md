@@ -1,3 +1,9 @@
+---
+title: IOTA 2.0 Coordicide
+description: The vision of a fully decentralized, feeless and highly scalable DLT.
+---
+
+
 # IOTA 2.0 Coordicide
 
 ## Vision
