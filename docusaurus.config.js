@@ -238,7 +238,7 @@ module.exports = {
             },
             {
               label: 'Frameworks',
-              to: "docs/participate/solutions/streams/introduction",
+              to: "docs/participate/frameworks/introduction",
             },
           ],
         },
