@@ -6,4 +6,4 @@ description: IOTA's digital Identity framework offer amazing new ways to control
 
 # IOTA Identity framework
 
-![layer2-iedentity](/img/learn/layer2-identity.png)
+[![layer2-iedentity](/img/learn/layer2-identity.png)](/img/learn/layer2-identity.png)

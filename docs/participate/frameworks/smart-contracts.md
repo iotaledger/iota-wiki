@@ -6,4 +6,4 @@ description: IOTA offers an unique Multi-Chain Smart Contract solution that is c
 
 # IOTA Smart Contracts
 
-![layer2-smartcontracts](/img/learn/layer2-smart-contracts.png)
+[![layer2-smartcontracts](/img/learn/layer2-smart-contracts.png)](/img/learn/layer2-smart-contracts.png)
