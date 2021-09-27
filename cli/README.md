@@ -40,7 +40,8 @@ USAGE
   $ iota-wiki-cli checkout
 
 OPTIONS
-  -h, --help  show CLI help
+  -h, --help            show CLI help
+  -o, --[no-]overwrite  Disable/Enable overwriting of static content
 
 EXAMPLE
   $ iota-wiki-cli checkout

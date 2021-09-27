@@ -4,6 +4,7 @@ export default class Checkout extends Command {
     static examples: string[];
     static flags: {
         help: import("@oclif/parser/lib/flags").IBooleanFlag<void>;
+        overwrite: import("@oclif/parser/lib/flags").IBooleanFlag<boolean>;
     };
     run(): Promise<void>;
 }

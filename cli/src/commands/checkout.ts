@@ -13,6 +13,12 @@ export default class Checkout extends Command {
 
   static flags = {
     help: flags.help({char: 'h'}),
+    overwrite: flags.boolean({ 
+      char: 'o',
+      description: 'Disable/Enable overwriting of static content',
+      default: true,
+      allowNo: true
+    }),
   }
 
   async run() {
@@ -35,7 +41,7 @@ export default class Checkout extends Command {
         stdio: 'inherit',
       })
       if(entry.staticPath) {
-        copySync(join(PWD, 'external', entry.repo.split('/').pop() as string, entry.staticPath), join(PWD, './static'), {overwrite: false})
+        copySync(join(PWD, 'external', entry.repo.split('/').pop() as string, entry.staticPath), join(PWD, './static'), {overwrite: flags.overwrite})
       }
     });
   }

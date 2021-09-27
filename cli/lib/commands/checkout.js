@@ -26,7 +26,7 @@ class Checkout extends command_1.Command {
                 stdio: 'inherit',
             });
             if (entry.staticPath) {
-                fs_extra_1.copySync(path_1.join(PWD, 'external', entry.repo.split('/').pop(), entry.staticPath), path_1.join(PWD, './static'), { overwrite: false });
+                fs_extra_1.copySync(path_1.join(PWD, 'external', entry.repo.split('/').pop(), entry.staticPath), path_1.join(PWD, './static'), { overwrite: flags.overwrite });
             }
         });
     }
@@ -38,4 +38,10 @@ Checkout.examples = [
 ];
 Checkout.flags = {
     help: command_1.flags.help({ char: 'h' }),
+    overwrite: command_1.flags.boolean({
+        char: 'o',
+        description: 'Disable/Enable overwriting of static content',
+        default: true,
+        allowNo: true
+    }),
 };
