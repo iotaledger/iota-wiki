@@ -46,7 +46,7 @@
             "staticPath": "./documentation/static"
         },
         {
-            "repo": "https://github.com/iotaledger/streams.git",
+            "repo": "https://github.com/iotaledger/streams",
             "staticPath": "./documentation/static"
         }
     ]
