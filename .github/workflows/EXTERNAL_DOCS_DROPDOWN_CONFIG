@@ -74,3 +74,9 @@
               className: "icon-goshimmer",
               activeBaseRegex: 'goshimmer/.*'
             },
+            {
+              label: "Streams",
+              to: "streams/welcome",
+              className: "icon-streams",
+              activeBaseRegex: 'streams/.*'
+            },
