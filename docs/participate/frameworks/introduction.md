@@ -9,7 +9,7 @@ The IOTA foundation maintains and develops a collection of frameworks building o
 
 ## List of Frameworks
 
-![Layer2-frameworks](/img/learn/layer2-frameworks.png)
+[![Layer2-frameworks](/img/learn/layer2-frameworks.png)](/img/learn/layer2-frameworks.png)
 
 - [Streams](/docs/participate/frameworks/streams):  
 Streams is an organizational tool for structuring and navigating secure data through the Tangle. Streams organizes data by ordering it in a uniform and interoperable structure.
