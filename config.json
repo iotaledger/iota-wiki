@@ -44,6 +44,10 @@
         {
             "repo": "https://github.com/iotaledger/identity.rs",
             "staticPath": "./documentation/static"
+        },
+        {
+            "repo": "https://github.com/iotaledger/streams",
+            "staticPath": "./documentation/static"
         }
     ]
 }
