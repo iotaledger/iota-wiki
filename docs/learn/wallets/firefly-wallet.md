@@ -231,7 +231,7 @@ Note: If you are an existing IOTA user and secured IOTA with a Ledger before the
 
 Creating a new Ledger profile in Firefly is quick and simple. Once you have downloaded Firefly, open the app and follow the setup instructions. You first need to review and accept the terms and conditions, set a theme (dark or light), and choose a profile name. Select "Create a new wallet".
 
-![setup a wallet ledger](/img/learn/firefly/setup_a_wallet_ledger.png)
+[![setup a wallet ledger](/img/learn/firefly/setup_a_wallet_ledger.png)](/img/learn/firefly/setup_a_wallet_ledger.png)
 
 Press "I want a hardware wallet" to begin the Ledger profile setup process.
 
