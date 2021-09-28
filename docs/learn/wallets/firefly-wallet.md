@@ -144,7 +144,7 @@ In this pop-up menu you can enter the following functions:
 
 #### Transaction detail view.
 
-![transaction details view](/img/learn/firefly/transaction_details_view.png)
+[![transaction details view](/img/learn/firefly/transaction_details_view.png)](/img/learn/firefly/transaction_details_view.png)
 
 The following information about the transaction is displayed:
 
