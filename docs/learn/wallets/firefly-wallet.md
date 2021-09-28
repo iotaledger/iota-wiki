@@ -257,7 +257,7 @@ If you would like to receive funds to your new Ledger profile you can press the 
 
 On this page you can select "Generate address" and Firefly will prompt you to confirm the address matches the one displayed on your Ledger device.
 
-![confirm receive address ledger](/img/learn/firefly/confirm_receive_address_ledger.png)
+[![confirm receive address ledger](/img/learn/firefly/confirm_receive_address_ledger.png)](/img/learn/firefly/confirm_receive_address_ledger.png)
 
 Scroll through the address on your Ledger device. Confirm it matches by pressing both buttons when your Ledger reads "Ok".
 
