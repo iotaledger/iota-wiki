@@ -247,7 +247,7 @@ Now, Firefly will check that your Ledger Nano is connected. Make sure the IOTA a
 
 Hit "Continue", and that's all there is to it. It really is that simple. You can now enter the dashboard and begin exploring Firefly.
 
-![setup complete ledger](/img/learn/firefly/setup_complete_ledger.png)
+[![setup complete ledger](/img/learn/firefly/setup_complete_ledger.png)](/img/learn/firefly/setup_complete_ledger.png)
 
 ### Receiving tokens
 
