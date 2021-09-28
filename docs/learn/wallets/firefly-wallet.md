@@ -273,7 +273,7 @@ You can now copy the address and share it with a friend or exchange from which y
 
 Once you have received tokens to an address, your balance will update and you will be able to view the transaction in the transaction history. To send these tokens, press the "Send" button from the dashboard. Here you can fill in the address you want to send to, enter an amount, and hit "Send".
 
-![send payment ledger](/img/learn/firefly/send_payment_ledger.png)
+[![send payment ledger](/img/learn/firefly/send_payment_ledger.png)](/img/learn/firefly/send_payment_ledger.png)
 
 You will then need to confirm that the full transaction details match what is displayed on your Ledger device. In some cases, where you are not sending the total balance on your address, you will also need to approve a "Remainder address". Scroll through the transaction details on your Ledger. Confirm the details match by pressing both buttons when your Ledger reads "Accept". If they do not match press "Deny".
 
