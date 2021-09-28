@@ -297,7 +297,7 @@ Note: Your most recently created wallet must receive funds (i.e. not be empty) b
 
 If you need to restore an existing Firefly profile with a new device, or you somehow lose access to Firefly, you can plug in your Ledger and restore an existing profile in a few simple steps. To do so, select "Migrate or restore a wallet" in setup and then "I have a Firefly Ledger backup".
 
-![setup a wallet1 ledger](/img/learn/firefly/setup_a_wallet_ledger.png)![create a wallet1 ledger](/img/learn/firefly/create_a_wallet_ledger.png)
+[![setup a wallet1 ledger](/img/learn/firefly/setup_a_wallet_ledger.png)](/img/learn/firefly/setup_a_wallet_ledger.png)[![create a wallet1 ledger](/img/learn/firefly/create_a_wallet_ledger.png)](/img/learn/firefly/create_a_wallet_ledger.png)
 
 Note: Backups of your transaction history for Ledger Nano users are not currently supported but will be added in a later version. Once a profile is restored, Firefly will sync your transaction history. It will always find your balance. In a future version, we will add support for retrieving your full transaction history from a node that stores the complete history of the IOTA Tangle.
 
