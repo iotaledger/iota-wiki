@@ -1,34 +1,16 @@
 ---
 title: YouTube
-description: My document description from SEO
+description: YouTube coding tutorials and learning material about IOTA
 ---
 
+# YouTube Tutorials
 
-# Heading 1 (Page Title)
+A collection of usefull coding tutorials and information for developers.
 
-content - introduction to the topic
+## Rust Live Coding Sessions with the Bee Team
 
+- [Rust live coding - 25 videos](https://www.youtube.com/playlist?list=PLMbc46iGTB_SBwcE5WfUIV5HthmH34U2R)
 
-## Heading 2 (Sub topic 1)
+## Open SSH Key Generation Linux and MacOS
 
-content 
-
-## Heading 2 (Sub topic 2)
-
-content
-
-
-
-<br/>
-
-----
-
-<br/>
-
-**need to add a footer section for further content - (three cards)**
-
-## Useful Links
-- **[a link](https://linkgoes.here)** - A description for the link
-- **[a link](https://linkgoes.here)** - A description for the link
-- **[a link](https://linkgoes.here)** - A description for the link
-
+- [Generate SSH Keys with open SSH](https://www.youtube.com/watch?v=Cbuch9_NeYo&list=PLMbc46iGTB_RUu-Kd2EIUAc8lQShfaCD6)

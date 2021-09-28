@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import './styles.css';
 
@@ -51,19 +52,27 @@ const SocialLinkList = [
     url: 'https://www.facebook.com/TheIOTAFoundation/',
     backgroundColor: '#BAC6DE',
   },
-]
+];
 
 function SocialLink({ title, imageUrl, url, backgroundColor }) {
   return (
     <a
-    className='social__link padding-horiz--sm padding-vert--md'
-    style={{backgroundColor: backgroundColor}}
-    href={url}>
+      className='social__link padding-horiz--sm padding-vert--md'
+      style={{ backgroundColor: backgroundColor }}
+      href={url}
+    >
       <img alt={title} className='social__image' src={useBaseUrl(imageUrl)} />
       <div className='social__title'>{title}</div>
     </a>
-  )
+  );
 }
+
+SocialLink.propTypes = {
+  title: PropTypes.string,
+  imageUrl: PropTypes.string,
+  url: PropTypes.string,
+  backgroundColor: PropTypes.string,
+};
 
 function Social() {
   return (
@@ -72,7 +81,7 @@ function Social() {
         <SocialLink key={idx} {...props} />
       ))}
     </div>
-  )
+  );
 }
 
-export default Social
+export default Social;
