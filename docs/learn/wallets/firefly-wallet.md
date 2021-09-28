@@ -291,7 +291,7 @@ With multiple wallets, you can then send between them and split your tokens up t
 
 Note: Your most recently created wallet must receive funds (i.e. not be empty) before you can create a new one. This ensures that your wallets can be more smoothly recovered if you need to restore your Ledger profile on a new device.
 
-![choose send from wallet ledger](/img/learn/firefly/choose_send_from_wallet_ledger.png)
+[![choose send from wallet ledger](/img/learn/firefly/choose_send_from_wallet_ledger.png)](/img/learn/firefly/choose_send_from_wallet_ledger.png)
 
 ### Restoring an existing Ledger profile
 
