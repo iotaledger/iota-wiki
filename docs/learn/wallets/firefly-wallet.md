@@ -235,7 +235,7 @@ Creating a new Ledger profile in Firefly is quick and simple. Once you have down
 
 Press "I want a hardware wallet" to begin the Ledger profile setup process.
 
-![create a wallet ledger](/img/learn/firefly/create_a_wallet_ledger.png)
+[![create a wallet ledger](/img/learn/firefly/create_a_wallet_ledger.png)](/img/learn/firefly/create_a_wallet_ledger.png)
 
 On the next page, you will be asked to set a PIN code. This PIN is used to log in to your wallet and blocks other people from logging in and viewing your balance transaction history. Choose a PIN that only you know. Re-enter your PIN on the next page to confirm.
 
