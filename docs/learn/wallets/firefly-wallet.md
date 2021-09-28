@@ -243,7 +243,7 @@ On the next page, you will be asked to set a PIN code. This PIN is used to log i
 
 Now, Firefly will check that your Ledger Nano is connected. Make sure the IOTA app is open on your device and that Ledger Live is closed. If you have connection problems follow the "Tips if your Ledger isn't connecting" guide in Firefly.
 
-![connect ledger ledger](/img/learn/firefly/connect_ledger.png)
+[![connect ledger ledger](/img/learn/firefly/connect_ledger.png)](/img/learn/firefly/connect_ledger.png)
 
 Hit "Continue", and that's all there is to it. It really is that simple. You can now enter the dashboard and begin exploring Firefly.
 
