@@ -34,11 +34,10 @@ function NavLink({
   const isExternalLink = label && href && !isInternalUrl(href);
   const isDropdownLink = activeClassName === dropdownLinkActiveClass;
 
-  const checkIsActive = (_match, location) => (
+  const checkIsActive = (_match, location) =>
     activeBaseRegex
       ? new RegExp(activeBaseRegex).test(location.pathname)
-      : location.pathname.startsWith(activeBaseUrl)
-  )
+      : location.pathname.startsWith(activeBaseUrl);
 
   return (
     <Link
@@ -56,7 +55,8 @@ function NavLink({
                 }
               : null),
           })}
-      {...props}>
+      {...props}
+    >
       <div className='link'>
         {icon && <div className='link__icon'>{icon}</div>}
         <div className='link__body'>
@@ -75,11 +75,7 @@ function NavLink({
               label
             )}
           </div>
-          {sublabel && (
-            <div className='link__sublabel'>
-              {sublabel}
-            </div>
-          )}
+          {sublabel && <div className='link__sublabel'>{sublabel}</div>}
         </div>
       </div>
     </Link>
@@ -129,21 +125,18 @@ function DefaultNavbarItemDesktop({
 DefaultNavbarItemDesktop.propTypes = {
   className: PropTypes.string,
   isDropdownItem: PropTypes.bool,
-}
+};
 
 DefaultNavbarItemDesktop.defaultProps = {
   isDropdownItem: false,
-}
+};
 
-function DefaultNavbarItemMobile({
-  className,
-  ...props
-}) {
+function DefaultNavbarItemMobile({ className, ...props }) {
   /* eslint-disable-next-line react/prop-types */
   delete props.isDropdownItem;
 
   return (
-    <li className="menu__list-item">
+    <li className='menu__list-item'>
       <NavLink className={clsx('menu__link', className)} {...props} />
     </li>
   );
@@ -151,47 +144,37 @@ function DefaultNavbarItemMobile({
 
 DefaultNavbarItemMobile.propTypes = {
   className: PropTypes.string,
-}
+};
 
-function DefaultNavbarItem({
-  mobile = false,
-  to,
-  label,
-  ...props
-}) {
+function DefaultNavbarItem({ mobile = false, to, label, ...props }) {
   /* eslint-disable-next-line react/prop-types */
   delete props.position;
-    /**
-     * Added to enable non-clickable category headers.
-     * To use simply add an navBar items in the config
-     * with to:'category-header'
-     */
-    if(to === 'category-header')
-    {
-        const categorySeparatorStyles = {
-            fontSize: '10px',
-            color:'var(--ifm-color-emphasis-600)',
-            paddingTop:'10px'
-
-        }
-        return <li style={categorySeparatorStyles}>{label}</li>
-    }
-    else
-    {
-        const Comp = mobile ? DefaultNavbarItemMobile : DefaultNavbarItemDesktop;
-        return <Comp to={to} label={label} {...props} />;
-
-    }
+  /**
+   * Added to enable non-clickable category headers.
+   * To use simply add an navBar items in the config
+   * with to:'category-header'
+   */
+  if (to === 'category-header') {
+    const categorySeparatorStyles = {
+      fontSize: '10px',
+      color: 'var(--ifm-color-emphasis-600)',
+      paddingTop: '10px',
+    };
+    return <li style={categorySeparatorStyles}>{label}</li>;
+  } else {
+    const Comp = mobile ? DefaultNavbarItemMobile : DefaultNavbarItemDesktop;
+    return <Comp to={to} label={label} {...props} />;
+  }
 }
 
 DefaultNavbarItem.propTypes = {
   mobile: PropTypes.bool,
   to: PropTypes.string,
   label: PropTypes.string,
-}
+};
 
 DefaultNavbarItem.defaultProps = {
   mobile: false,
-}
+};
 
 export default DefaultNavbarItem;

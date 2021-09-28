@@ -4,7 +4,7 @@
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  */
-import React, {useState, useRef, useEffect} from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
 import {
@@ -13,7 +13,7 @@ import {
   Collapsible,
   useLocalPathname,
 } from '@docusaurus/theme-common';
-import {NavLink} from '@theme/NavbarItem/DefaultNavbarItem';
+import { NavLink } from '@theme/NavbarItem/DefaultNavbarItem';
 import NavbarItem from '@theme/NavbarItem';
 const dropdownLinkActiveClass = 'dropdown__link--active';
 
@@ -44,18 +44,19 @@ function containsActiveItems(items, localPathname) {
 Added function to add support for a changing label in dropdowns
 according to the selected dropdown item
 **/
-function getDropdownProps(props, items, localPathname)
-{
-  const activeItem = items.filter(item => (isItemActive(item, localPathname)));
-  if(activeItem.length)
-  {
-    return { ...activeItem[0], label: props.label + ' > ' + activeItem[0].label}
+function getDropdownProps(props, items, localPathname) {
+  const activeItem = items.filter((item) => isItemActive(item, localPathname));
+  if (activeItem.length) {
+    return {
+      ...activeItem[0],
+      label: props.label + ' > ' + activeItem[0].label,
+    };
   }
 
   return props;
 }
 
-function DropdownNavbarItemDesktop({items, position, className, ...props}) {
+function DropdownNavbarItemDesktop({ items, position, className, ...props }) {
   const dropdownRef = useRef(null);
   const dropdownMenuRef = useRef(null);
   const [showDropdown, setShowDropdown] = useState(false);
@@ -87,7 +88,8 @@ function DropdownNavbarItemDesktop({items, position, className, ...props}) {
       className={clsx('dropdown', 'dropdown--hoverable', {
         'dropdown--right': position === 'right',
         'dropdown--show': showDropdown,
-      })}>
+      })}
+    >
       <NavLink
         className={clsx('navbar__item navbar__link', className)}
         {...dropdownProps}
@@ -97,10 +99,11 @@ function DropdownNavbarItemDesktop({items, position, className, ...props}) {
             e.preventDefault();
             setShowDropdown(!showDropdown);
           }
-        }}>
+        }}
+      >
         {props.children ?? props.label}
       </NavLink>
-      <ul ref={dropdownMenuRef} className="dropdown__menu">
+      <ul ref={dropdownMenuRef} className='dropdown__menu'>
         {items.map((childItemProps, i) => (
           <NavbarItem
             isDropdownItem
@@ -130,18 +133,14 @@ DropdownNavbarItemDesktop.propTypes = {
   position: PropTypes.string,
   className: PropTypes.string,
   ...NavLink.propTypes,
-}
+};
 
-function DropdownNavbarItemMobile({
-  items,
-  className,
-  ...props
-}) {
+function DropdownNavbarItemMobile({ items, className, ...props }) {
   delete props.position;
 
   const localPathname = useLocalPathname();
   const containsActive = containsActiveItems(items, localPathname);
-  const {collapsed, toggleCollapsed, setCollapsed} = useCollapsible({
+  const { collapsed, toggleCollapsed, setCollapsed } = useCollapsible({
     initialState: () => !containsActive,
   }); // Expand/collapse if any item active after a navigation
 
@@ -154,24 +153,26 @@ function DropdownNavbarItemMobile({
     <li
       className={clsx('menu__list-item', {
         'menu__list-item--collapsed': collapsed,
-      })}>
+      })}
+    >
       <NavLink
-        role="button"
+        role='button'
         className={clsx('menu__link menu__link--sublist', className)}
         {...props}
         onClick={(e) => {
           e.preventDefault();
           toggleCollapsed();
-        }}>
+        }}
+      >
         {props.children ?? props.label}
       </NavLink>
-      <Collapsible lazy as="ul" className="menu__list" collapsed={collapsed}>
+      <Collapsible lazy as='ul' className='menu__list' collapsed={collapsed}>
         {items.map((childItemProps, i) => (
           <NavbarItem
             mobile
             isDropdownItem
             onClick={props.onClick}
-            activeClassName="menu__link--active"
+            activeClassName='menu__link--active'
             {...childItemProps}
             key={i}
           />
@@ -185,9 +186,9 @@ DropdownNavbarItemMobile.propTypes = {
   items: PropTypes.array,
   className: PropTypes.string,
   ...NavLink.propTypes,
-}
+};
 
-function DropdownNavbarItem({mobile = false, ...props}) {
+function DropdownNavbarItem({ mobile = false, ...props }) {
   /* eslint-disable-next-line react/prop-types */
   delete props.isDropdownItem;
   const Comp = mobile ? DropdownNavbarItemMobile : DropdownNavbarItemDesktop;
@@ -196,10 +197,10 @@ function DropdownNavbarItem({mobile = false, ...props}) {
 
 DropdownNavbarItem.propTypes = {
   mobile: PropTypes.bool,
-}
+};
 
 DropdownNavbarItem.defaultProps = {
   mobile: false,
-}
+};
 
 export default DropdownNavbarItem;
