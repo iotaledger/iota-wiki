@@ -118,7 +118,7 @@ It is important to mention here that users can only set up further wallets if th
 
 ### Wallet Detail View
 
-![wallet detail view](/img/learn/firefly/wallet_detail_view.png)
+[![wallet detail view](/img/learn/firefly/wallet_detail_view.png)](/img/learn/firefly/wallet_detail_view.png)
 
 A click of the mouse on one of the wallets in the dashboard overview opens the Wallet Detail Screen. Here users see the balance contained in this specific wallet and have the option to send and receive transactions.
 
