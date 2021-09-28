@@ -72,6 +72,7 @@ module.exports = {
             '. 1 3 2',
             '. 1 3 2',
             '. 1 3 2',
+            '. 1 3 2',
           ],
           items_: [
             {
@@ -83,7 +84,7 @@ module.exports = {
                   to: "docs/build/getting-started/architecture",
                   icon: "\ue908",
                   activeBaseRegex: 'docs/build/getting-started/.*'
-                }
+                },
               ]
             },
             {
@@ -162,6 +163,13 @@ module.exports = {
                   icon: "\ue905",
                   activeBaseRegex: 'identity.rs/.*'
                 },
+                {
+                  label: "Streams",
+                  sublabel: "Share data securely",
+                  to: "streams/welcome",
+                  icon: "\ue90b",
+                  activeBaseRegex: 'streams/.*'
+                },
               ],
             },
             {
@@ -237,8 +245,8 @@ module.exports = {
               to: "docs/participate/use-cases/industry-applications",
             },
             {
-              label: 'Solutions',
-              to: "docs/participate/solutions/streams/introduction",
+              label: 'Frameworks',
+              to: "docs/participate/frameworks/introduction",
             },
           ],
         },

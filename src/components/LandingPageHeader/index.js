@@ -31,7 +31,7 @@ function Action({ title, image, link, description }) {
 
   const handleClick = (e) => {
     e.preventDefault();
-    history.push(useBaseUrl(link));
+    history.push(link);
   }
 
   return (

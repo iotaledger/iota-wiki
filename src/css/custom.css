@@ -34,8 +34,13 @@
   cursor: pointer;
 }
 
+.card__image {
+  background: linear-gradient(180deg, #001C56 0%, #074DB6 100%);
+}
+
 .card__image img {
   width: 100%;
+  margin-bottom: -8px;
 }
 
 .footer__copyright {

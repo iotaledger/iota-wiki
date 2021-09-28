@@ -4,7 +4,7 @@ description: The IOTA Firefly Wallet sets a new standard for Software Wallets in
   DLT. Learn everything here.
 ---
 
-# The Firefly Wallet
+# Firefly Wallet
 
 ## Table of contents
 
@@ -20,7 +20,7 @@ description: The IOTA Firefly Wallet sets a new standard for Software Wallets in
     * [Transactions](#transactions)
     * [Settings](#settings)
     * [Troubleshooting](#troubleshooting)
-    * [migration](#migration)
+    * [Migration](#migration)
     * [Spent Addresses](#spent-addresses)
 
 ## General Overview and Introduction
@@ -70,7 +70,7 @@ The only thing you need to move your Tokens to the new network is your current I
 
 ---
 
-# **Firefly User Guide**
+## **Firefly User Guide**
 
 ## User guide for standard users
 
@@ -99,7 +99,7 @@ If different Users aim to use the same Firefly Wallet App, or if you have IOTA T
 
 ### Firefly Dashboard
 
-![dashboard](/img/learn/firefly/dashboard.png)
+[![dashboard](/img/learn/firefly/dashboard.png)](/img/learn/firefly/dashboard.png)
 
 The Firefly Dashboard is the main overview of a User Profile. Easily accessible information on the spot and the most common functions "Send" and "Receive" ordered in a nicely styled layout. Users are shown the total Profile balance here, the different Wallets that belong to the profile, and a list of the latest occurred transactions. IOTA Price or Profile value is shown in a chart and also a section with the basic security info of the Profile is displayed.
 
@@ -113,7 +113,7 @@ Important to mention here: Users can only set up further Wallets if the first Wa
 
 ### Wallet Detail view
 
-![wallet detail view](/img/learn/firefly/wallet_detail_view.png)
+[![wallet detail view](/img/learn/firefly/wallet_detail_view.png)](/img/learn/firefly/wallet_detail_view.png)
 
 A mouse click on one of the Wallets in the Dashboard overview opens the Wallet Detail Screen. Here Users see the Balance contained in this specific Wallet and have the option to send and receive transactions.
 
@@ -129,49 +129,49 @@ Also, you have will find **3 little dots** next to the Wallet balance.
 
 -   Possibility to change the Wallet name.
 
-    **View address history**
+**View address history**
 
 -   A list of all addresses that have been used by this wallet and the balance that sits currently on this address. You can copy this list and paste it into your documents.
 
-    **Hide Wallet**
+**Hide Wallet**
 
 -   Empty Wallets can be hidden to keep your Main Wallet overview organized. If a wallet still contains funds you will not be able to hide it by clicking this option but will be offered to transfer the funds to another Wallet and hide the Wallet afterward. A hidden Wallet can be shown again by enabling the function "show hidden wallets" in the advanced account settings.
 
 #### Transaction detail view.
 
-![transaction details view](/img/learn/firefly/transaction_details_view.png)
+[![transaction details view](/img/learn/firefly/transaction_details_view.png)](/img/learn/firefly/transaction_details_view.png)
 
 The following information about the transaction is displayed:
 
 -   A transaction flow that indicates: **from where > token amount > to where** followed by:
 
-    **Status**
+**Status**
 
 -   Confirmed or Pending status of the message
 
-    **Date**
+**Date**
 
 -   Date and Time when the transaction was issued or received (in local System time)
 
-    **Message ID**
+**Message ID**
 
 -   The unique identifier of this specific message (every transaction in IOTA is a message) in the IOTA Ledger.
 
-    **Send Address**
+**Send Address**
 
 -   The Address from where the transaction was initiated
 
-    **Receive Address**
+**Receive Address**
 
 -   The Address on which the tokens of this transaction have arrived. Several different receive Addresses may be shown in this view. The Addresses belonging to you are highlighted with the name of your wallet in brackets, other addresses that are shown without brackets do not belong to you. These are normally addresses of the sender. To these address the remaining funds that have not been used from the sender's address are transferred. This is related to the UTXO (unspent transaction output) Account model in IOTA.
 
 -   If a transaction is issued from a UTXO output (an address holding funds) that does not consume all funds that are part of this output, one transaction moves the funds that are planned to send away from the address, and a second transaction moves the rest of the unused funds from this UTXO to a new UTXO output. Both these transactions are part of the message and therefore shown in the Transaction detail. Read more about the UTXO Account model here: (*internal link to utxo*)
 
-    **Amount**
+**Amount**
 
 -   Amount of IOTA sent and current value in chosen Profile currency
 
-    **2 different charts**
+**2 different charts**
 
 -   **Wallet Value** and **Wallet activity** also provide a graphic overview of the activities in this wallet.
 
@@ -179,7 +179,7 @@ The following information about the transaction is displayed:
 
 -   The Send and Receive functions are available in the main Wallets dashboard, and also in every Wallet detail view.
 
-    **Receive**
+**Receive**
 
 <!---->
 
@@ -187,7 +187,7 @@ The following information about the transaction is displayed:
 
 -   If a user has received, but not yet spent funds from that receiving address, the user can manually decide to generate a fresh receive address using the small "refresh" button above the QR Code. This function is an essential privacy feature that is a standard approach in Crypto to reduce the traceability of your balances
 
-    **Send**
+**Send**
 
 <!---->
 
@@ -232,73 +232,73 @@ Note: If you are an existing IOTA user and secured IOTA with a Ledger before the
 
 Creating a new Ledger profile in Firefly is very quick and simple. Once you have downloaded Firefly, open the app and follow the setup instructions. You first need to review and accept the terms and conditions, set a theme (dark or light), and choose a profile name. Select "Create a new wallet".
 
-![setup a wallet ledger](/img/learn/firefly/setup_a_wallet_ledger.png)
+[![setup a wallet ledger](/img/learn/firefly/setup_a_wallet_ledger.png)](/img/learn/firefly/setup_a_wallet_ledger.png)
 
 Press "I want a hardware wallet" to begin the Ledger profile setup process.
 
-![create a wallet ledger](/img/learn/firefly/create_a_wallet_ledger.png)
+[![create a wallet ledger](/img/learn/firefly/create_a_wallet_ledger.png)](/img/learn/firefly/create_a_wallet_ledger.png)
 
 On the next page, you will be asked to set a PIN code. This PIN is used to log in to your wallet and blocks other people from logging in and viewing your balance transaction history. Choose a PIN that only you know. Re-enter your PIN on the next page to confirm.
 
-![set pin ledger](/img/learn/firefly/set_pin_ledger.png)
+[![set pin ledger](/img/learn/firefly/set_pin_ledger.png)](/img/learn/firefly/set_pin_ledger.png)
 
 Now, Firefly will check that your Ledger Nano is connected. Make sure the IOTA app is open on your device and that Ledger Live is closed. If you have connection problems follow the "Tips if your Ledger isn't connecting" guide in Firefly.
 
-![connect ledger ledger](/img/learn/firefly/connect_ledger.png)
+[![connect ledger ledger](/img/learn/firefly/connect_ledger.png)](/img/learn/firefly/connect_ledger.png)
 
 Hit "Continue", and that's all there is to it. It really is that simple. You can now enter the dashboard and begin exploring Firefly.
 
-![setup complete ledger](/img/learn/firefly/setup_complete_ledger.png)
+[![setup complete ledger](/img/learn/firefly/setup_complete_ledger.png)](/img/learn/firefly/setup_complete_ledger.png)
 
 ### Receiving tokens
 
 If you would like to receive funds to your new Ledger profile you can press the "Receive" button on the dashboard.
 
-![generate address ledger](/img/learn/firefly/generate_address_ledger.png)
+[![generate address ledger](/img/learn/firefly/generate_address_ledger.png)](/img/learn/firefly/generate_address_ledger.png)
 
 On this page you can select "Generate address" and Firefly will prompt you to confirm the address matches the one displayed on your Ledger device.
 
-![confirm receive address ledger](/img/learn/firefly/confirm_receive_address_ledger.png)
+[![confirm receive address ledger](/img/learn/firefly/confirm_receive_address_ledger.png)](/img/learn/firefly/confirm_receive_address_ledger.png)
 
 Scroll through the address on your Ledger device. Confirm it matches by pressing both buttons when your Ledger reads "Ok".
 
 Note: This is a security check to ensure that you are connected to the official, secure version of Firefly. It ensures that no malicious software can alter the address you receive to and that it matches the one generated by your Ledger.
 
-![display ledger address](/img/learn/firefly/display_ledger_address.png)![okay ledger display](/img/learn/firefly/okay_ledger_display.png)
+[![display ledger address](/img/learn/firefly/display_ledger_address.png)](/img/learn/firefly/display_ledger_address.png) [![okay ledger display](/img/learn/firefly/okay_ledger_display.png)](/img/learn/firefly/okay_ledger_display.png)
 
 You can now copy the address and share it with a friend or exchange from which you wish to receive tokens. Always make sure the address is the same as the one displayed on your Ledger device.
 
-![wallet view ledger](/img/learn/firefly/wallet_view_ledger.png)
+[![wallet view ledger](/img/learn/firefly/wallet_view_ledger.png)](/img/learn/firefly/wallet_view_ledger.png)
 
 ### Sending tokens
 
 Once you have received tokens to an address, your balance will update and you will be able to view the transaction in the transaction history. To send these tokens, press the "Send" button from the dashboard. Here you can fill in the address you want to send to, enter an amount, and hit "Send".
 
-![send payment ledger](/img/learn/firefly/send_payment_ledger.png)
+[![send payment ledger](/img/learn/firefly/send_payment_ledger.png)](/img/learn/firefly/send_payment_ledger.png)
 
 You will then need to confirm that the full transaction details match what is displayed on your Ledger device. In some cases, where you are not sending the total balance on your address, you will also need to approve a "Remainder address". Scroll through the transaction details on your Ledger. Confirm the details match by pressing both buttons when your Ledger reads "Accept". If they do not match press "Deny".
 
 Note: As with generating addresses, this is a security check to ensure that you are connected to the official, secure version of Firefly. It ensures that no malicious software can alter the contents of your transaction and ensures you are sending the right amount to the correct address.
 
-![confirm remainder address ledger](/img/learn/firefly/confirm_remainder_address_ledger.png)![confirm transaction ledger](/img/learn/firefly/confirm_transaction_ledger.png)![dispaly amount ledger](/img/learn/firefly/dispaly_amount_ledger.png)![display accept ledger](/img/learn/firefly/display_accept_ledger.png)
+[![confirm remainder address ledger](/img/learn/firefly/confirm_remainder_address_ledger.png)](/img/learn/firefly/confirm_remainder_address_ledger.png)[![confirm transaction ledger](/img/learn/firefly/confirm_transaction_ledger.png)](/img/learn/firefly/confirm_transaction_ledger.png)[![dispaly amount ledger](/img/learn/firefly/dispaly_amount_ledger.png)](/img/learn/firefly/dispaly_amount_ledger.png)[![display accept ledger](/img/learn/firefly/display_accept_ledger.png)](/img/learn/firefly/display_accept_ledger.png)
 
 ### Creating wallets and sending internal transfers
 
 Firefly makes it possible to organize your tokens into different wallets within your profile. These tokens are kept separate from one another. Technically speaking, they are stored on addresses generated on different sub-accounts on your Ledger. Press "Create" from the dashboard and choose a name to add another wallet.
 
-![multiple wallet view ledger](/img/learn/firefly/multiple_wallet_view_ledger.png)
+[![multiple wallet view ledger](/img/learn/firefly/multiple_wallet_view_ledger.png)](/img/learn/firefly/multiple_wallet_view_ledger.png)
 
 With multiple wallets, you can then send between them and split your tokens up to organize them however you like. You can select "Internal Transfer" from the Send view and select which wallet you would like to send to.
 
 Note: Your most recently created wallet must receive funds (i.e. not be empty) before you can create a new one. This ensures that your wallets can be more smoothly recovered if you need to restore your Ledger profile on a new device.
 
-![choose send from wallet ledger](/img/learn/firefly/choose_send_from_wallet_ledger.png)
+[![choose send from wallet ledger](/img/learn/firefly/choose_send_from_wallet_ledger.png)](/img/learn/firefly/choose_send_from_wallet_ledger.png)
 
 ### Restoring an existing Ledger profile
 
 If you need to restore an existing Firefly profile with a new device, or you somehow lose access to Firefly, you can plug in your Ledger and restore an existing profile in a few simple steps. To do so, select "Migrate or restore a wallet" in setup and then "I have a Firefly Ledger backup".
 
-![setup a wallet1 ledger](/img/learn/firefly/setup_a_wallet_ledger.png)![create a wallet1 ledger](/img/learn/firefly/create_a_wallet_ledger.png)
+[![setup a wallet1 ledger](/img/learn/firefly/setup_a_wallet_ledger.png)](/img/learn/firefly/setup_a_wallet_ledger.png)[![create a wallet1 ledger](/img/learn/firefly/create_a_wallet_ledger.png)](/img/learn/firefly/create_a_wallet_ledger.png)
 
 Note: Backups of your transaction history for Ledger Nano users are not currently supported but will be added in a later version. Once a profile is restored, Firefly will sync your transaction history. It will always find your balance. In a future version, we will add support for retrieving your full transaction history from a node that stores the complete history of the IOTA Tangle.
 
@@ -306,9 +306,9 @@ Note: Backups of your transaction history for Ledger Nano users are not currentl
 
 It is possible to have more than one Ledger device with the same Firefly app. You can add another device by creating an additional profile from the login page. Firefly will always check that the right device is connected and you will receive an error message if you try to generate an address or send a transaction with the wrong device.
 
-![ledger multiple profile view](/img/learn/firefly/ledger_multiple_profile_view.png)
+[![ledger multiple profile view](/img/learn/firefly/ledger_multiple_profile_view.png)](/img/learn/firefly/ledger_multiple_profile_view.png)
 
-# Firefly FAQ
+## Firefly FAQ
 
 ## Setup and installation
 
