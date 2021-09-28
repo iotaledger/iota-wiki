@@ -165,19 +165,23 @@ function BlogPostItem(props) {
 
 BlogPostItem.propTypes = {
   children: PropTypes.node,
-  frontMatter: PropTypes.string,
-  assets: PropTypes.string,
+  frontMatter: PropTypes.object,
+  assets: PropTypes.object,
   metadata: PropTypes.shape({
     date: PropTypes.string,
     formattedDate: PropTypes.string,
     permalink: PropTypes.string,
-    tags: PropTypes.arrayOf(PropTypes.string),
+    tags: PropTypes.arrayOf(PropTypes.object),
     readingTime: PropTypes.string,
     title: PropTypes.string,
     editUrl: PropTypes.string,
-    authors: PropTypes.arrayOf(PropTypes.string),
+    authors: PropTypes.arrayOf(PropTypes.object),
   }),
-  truncated: PropTypes.string,
+  truncated: PropTypes.bool,
+  isBlogPostPage: PropTypes.bool,
+}
+
+BlogPostItem.defaultProps = {
   isBlogPostPage: false,
 }
 
