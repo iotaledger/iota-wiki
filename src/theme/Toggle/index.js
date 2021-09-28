@@ -5,12 +5,13 @@
  * LICENSE file in the root directory of this source tree.
  */
 import React, {useState, useRef, memo} from 'react';
+import PropTypes from 'prop-types';
 import {useThemeConfig} from '@docusaurus/theme-common';
 import useIsBrowser from '@docusaurus/useIsBrowser';
 import clsx from 'clsx';
 import './styles.css';
 
-const Toggle = memo(
+const ToggleMemo = memo(
   ({className, styles, icons, checked: defaultChecked, disabled, onChange}) => {
     const [checked, setChecked] = useState(defaultChecked);
     const [focused, setFocused] = useState(false);
@@ -54,7 +55,23 @@ const Toggle = memo(
   },
 );
 
-export default function (props) {
+ToggleMemo.displayName = 'ToggleMemo';
+ToggleMemo.propTypes = {
+  className: PropTypes.string,
+  styles: PropTypes.shape({
+    unchecked: PropTypes.any,
+    checked: PropTypes.any,
+  }),
+  icons: PropTypes.shape({
+    unchecked: PropTypes.string,
+    checked: PropTypes.string,
+  }),
+  checked: PropTypes.bool,
+  disabled: PropTypes.bool,
+  onChange: PropTypes.func,
+}
+
+export default function Toggle(props) {
   const {
     colorMode: {
       switchConfig: {darkIcon, darkIconStyle, lightIcon, lightIconStyle},
@@ -62,7 +79,7 @@ export default function (props) {
   } = useThemeConfig();
   const isBrowser = useIsBrowser();
   return (
-    <Toggle
+    <ToggleMemo
       disabled={!isBrowser}
       styles={{
         unchecked: lightIconStyle,

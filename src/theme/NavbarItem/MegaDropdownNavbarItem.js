@@ -5,6 +5,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 import React, {useState, useRef, useEffect} from 'react';
+import PropTypes from 'prop-types';
 import clsx from 'clsx';
 import {
   isSamePath,
@@ -57,8 +58,8 @@ function createItemCursor({items, label, className, ...props}) {
   return cursor
 }
 
-function MegaDropdownItem({className, ...props}) {
-  if (props.to || props.href) {
+function MegaDropdownItem({className, to, href, label, ...props}) {
+  if (to || href) {
     return (
       <NavLink
         className={clsx(
@@ -66,16 +67,26 @@ function MegaDropdownItem({className, ...props}) {
           className,
         )}
         activeClassName={dropdownLinkActiveClass}
+        to={to}
+        href={href}
+        label={label}
         {...props}
       />
     )
   }
 
-  if (props.label) {
-    return <div className='dropdown__label'>{props.label}</div>
+  if (label) {
+    return <div className='dropdown__label'>{label}</div>
   }
 
   throw 'Mega dropdown item must be a link or a category header.'
+}
+
+MegaDropdownItem.propTypes = {
+  className: PropTypes.string,
+  to: PropTypes.string,
+  href: PropTypes.string,
+  label: PropTypes.string,
 }
 
 function MegaDropdownNavbarItemDesktop({items_: items, layout, position, className, ...props}) {
@@ -196,14 +207,24 @@ function MegaDropdownNavbarItemDesktop({items_: items, layout, position, classNa
   );
 }
 
+MegaDropdownNavbarItemDesktop.propTypes = {
+  items_: PropTypes.array,
+  layout: PropTypes.arrayOf(PropTypes.string),
+  position: PropTypes.string,
+  className: PropTypes.string,
+  ...NavLink.propTypes,
+}
+
 function MegaDropdownNavbarItemMobile({
   items_: items,
   className,
-  // Need to destructure position and layout from props so that it doesn't get passed on.
-  position: _position,
-  layout: _layout,
   ...props
 }) {
+  /* eslint-disable-next-line react/prop-types */
+  delete props.position;
+  /* eslint-disable-next-line react/prop-types */
+  delete props.layout;
+
   const localPathname = useLocalPathname();
   const containsActive = containsActiveItems(items, localPathname);
   const {collapsed, toggleCollapsed, setCollapsed} = useCollapsible({
@@ -246,9 +267,23 @@ function MegaDropdownNavbarItemMobile({
   );
 }
 
+MegaDropdownNavbarItemMobile.propTypes = {
+  items_: PropTypes.array,
+  className: PropTypes.string,
+  ...NavLink.propTypes,
+}
+
 function MegaDropdownNavbarItem({mobile = false, ...props}) {
   const Comp = mobile ? MegaDropdownNavbarItemMobile : MegaDropdownNavbarItemDesktop;
   return <Comp {...props} />;
+}
+
+MegaDropdownNavbarItem.propTypes = {
+  mobile: PropTypes.bool,
+}
+
+MegaDropdownNavbarItem.defaultProps = {
+  mobile: false,
 }
 
 export default MegaDropdownNavbarItem;

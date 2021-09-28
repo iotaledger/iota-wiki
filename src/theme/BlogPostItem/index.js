@@ -5,6 +5,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 import React from 'react';
+import PropTypes from 'prop-types';
 import clsx from 'clsx';
 import {MDXProvider} from '@mdx-js/react';
 import Translate, {translate} from '@docusaurus/Translate';
@@ -160,6 +161,28 @@ function BlogPostItem(props) {
       )}
     </article>
   );
+}
+
+BlogPostItem.propTypes = {
+  children: PropTypes.node,
+  frontMatter: PropTypes.object,
+  assets: PropTypes.object,
+  metadata: PropTypes.shape({
+    date: PropTypes.string,
+    formattedDate: PropTypes.string,
+    permalink: PropTypes.string,
+    tags: PropTypes.arrayOf(PropTypes.object),
+    readingTime: PropTypes.string,
+    title: PropTypes.string,
+    editUrl: PropTypes.string,
+    authors: PropTypes.arrayOf(PropTypes.object),
+  }),
+  truncated: PropTypes.bool,
+  isBlogPostPage: PropTypes.bool,
+}
+
+BlogPostItem.defaultProps = {
+  isBlogPostPage: false,
 }
 
 export default BlogPostItem;

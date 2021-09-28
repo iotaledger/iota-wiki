@@ -7,14 +7,15 @@
 import React from 'react';
 import Translate from '@docusaurus/Translate';
 import IconEdit from '@theme/IconEdit';
-import OriginalEditThisPage from '@theme-original/EditThisPage'
+import OriginalEditThisPage from '@theme-original/EditThisPage';
+import PropTypes from 'prop-types';
 
 /**
 This function will remove "external/anyOtherString"
 **/
 function reformatExternalProjectURL(editUrl)
 {
-    const externalDocsRegex =  new RegExp('external\/[^\/]*\/','i') ;
+    const externalDocsRegex =  new RegExp('external/[^/]*/','i') ;
     return editUrl.replace(externalDocsRegex, '');
 }
 
@@ -23,11 +24,11 @@ This function will check if docs is in "external/"
 **/
 function isExternalProjectURL(editUrl)
 {
-    const externalDocsRegex =  new RegExp('external\/[^\/]*\/','i') ;
+    const externalDocsRegex =  new RegExp('external/[^/]*/','i') ;
     return externalDocsRegex.test(editUrl)
 }
 
-export default function EditThisPage({editUrl}) {
+function EditThisPage({editUrl}) {
   const formattedEditURL = reformatExternalProjectURL(editUrl);
 
   return (
@@ -47,3 +48,9 @@ export default function EditThisPage({editUrl}) {
     </>
   );
 }
+
+EditThisPage.propTypes = {
+  editUrl: PropTypes.string,
+}
+
+export default EditThisPage;
