@@ -40,7 +40,7 @@ The Tangle data structure is a directed acyclic graph (DAG), where each message 
 
 **Tangle bottleneck**
 
-![tangle-bottleneck](/img/learn/tangle-bottleneck.gif)
+[![tangle-bottleneck](/img/learn/tangle-bottleneck.gif)](/img/learn/tangle-bottleneck.gif)
 
 Allowing parallel processing removes congestion.
 
