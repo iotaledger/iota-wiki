@@ -279,7 +279,7 @@ You will then need to confirm that the full transaction details match what is di
 
 Note: As with generating addresses, this is a security check to ensure that you are connected to the official, secure version of Firefly. It ensures that no malicious software can alter the contents of your transaction and ensures you are sending the right amount to the correct address.
 
-![confirm remainder address ledger](/img/learn/firefly/confirm_remainder_address_ledger.png)![confirm transaction ledger](/img/learn/firefly/confirm_transaction_ledger.png)![dispaly amount ledger](/img/learn/firefly/dispaly_amount_ledger.png)![display accept ledger](/img/learn/firefly/display_accept_ledger.png)
+[![confirm remainder address ledger](/img/learn/firefly/confirm_remainder_address_ledger.png)](/img/learn/firefly/confirm_remainder_address_ledger.png)[![confirm transaction ledger](/img/learn/firefly/confirm_transaction_ledger.png)](/img/learn/firefly/confirm_transaction_ledger.png)[![dispaly amount ledger](/img/learn/firefly/dispaly_amount_ledger.png)](/img/learn/firefly/dispaly_amount_ledger.png)[![display accept ledger](/img/learn/firefly/display_accept_ledger.png)](/img/learn/firefly/display_accept_ledger.png)
 
 ### Creating wallets and sending internal transfers
 
