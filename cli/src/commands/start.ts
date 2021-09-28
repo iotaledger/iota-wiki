@@ -20,7 +20,6 @@ export default class Start extends Command {
     const userConfig = await getLocalConfig()
     const WORKING_FOLDER = join(PWD, userConfig.localWikiFolder ?? '', userConfig.localWikiFolder ? 'iota-wiki' : '')
     const DOCUSAURUS_CONFIG_PATH = join(WORKING_FOLDER, 'docusaurus.config.js')
-    const log = this.log
 
     const EXTERNAL_DOCS_CONFIG = readFileSync(join(PWD, userConfig.configFolder ?? '', 'EXTERNAL_DOCS_CONFIG'), 'utf8')
     await replaceInFile({
@@ -44,8 +43,6 @@ export default class Start extends Command {
     const WIKI_CONTENT_REPO_FOLDER = join(WIKI_EXTERNAL_FOLDER, userConfig.repoName)
 
     copySync(join(PWD, 'static', 'img'), join(WORKING_FOLDER, 'static', 'img'))
-
-    log(resolve(join(PWD, '..')))
 
     const runYarn = debounce(() => {
       spawn('yarn', [

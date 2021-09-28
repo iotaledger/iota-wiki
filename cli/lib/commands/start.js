@@ -16,7 +16,6 @@ class Start extends command_1.Command {
         const userConfig = await local_config_1.getLocalConfig();
         const WORKING_FOLDER = path_1.join(PWD, (_b = userConfig.localWikiFolder) !== null && _b !== void 0 ? _b : '', userConfig.localWikiFolder ? 'iota-wiki' : '');
         const DOCUSAURUS_CONFIG_PATH = path_1.join(WORKING_FOLDER, 'docusaurus.config.js');
-        const log = this.log;
         const EXTERNAL_DOCS_CONFIG = fs_1.readFileSync(path_1.join(PWD, (_c = userConfig.configFolder) !== null && _c !== void 0 ? _c : '', 'EXTERNAL_DOCS_CONFIG'), 'utf8');
         await replaceInFile({
             files: DOCUSAURUS_CONFIG_PATH,
@@ -34,7 +33,6 @@ class Start extends command_1.Command {
         const WIKI_EXTERNAL_FOLDER = path_1.join(WORKING_FOLDER, 'external');
         const WIKI_CONTENT_REPO_FOLDER = path_1.join(WIKI_EXTERNAL_FOLDER, userConfig.repoName);
         fs_extra_1.copySync(path_1.join(PWD, 'static', 'img'), path_1.join(WORKING_FOLDER, 'static', 'img'));
-        log(path_1.resolve(path_1.join(PWD, '..')));
         const runYarn = debounce(() => {
             child_process_1.spawn('yarn', [
                 'start',
