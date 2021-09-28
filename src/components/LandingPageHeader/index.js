@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types';
 import { useHistory } from "react-router-dom";
 
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
@@ -49,6 +50,13 @@ function Action({ title, image, link, description }) {
       </div>
     </div>
   );
+}
+
+Action.propTypes = {
+  title: PropTypes.string,
+  image: PropTypes.string,
+  link: PropTypes.string,
+  description: PropTypes.string,
 }
 
 function LandingPageHeader() {

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import './styles.css';
 
@@ -63,6 +64,13 @@ function SocialLink({ title, imageUrl, url, backgroundColor }) {
       <div className='social__title'>{title}</div>
     </a>
   )
+}
+
+SocialLink.propTypes = {
+  title: PropTypes.string,
+  imageUrl: PropTypes.string,
+  url: PropTypes.string,
+  backgroundColor: PropTypes.string,
 }
 
 function Social() {
