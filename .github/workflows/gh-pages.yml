@@ -48,7 +48,7 @@ jobs:
           yarn cli start
       - name: Checkout external docs
         run: |
-          yarn cli checkout
+          yarn cli checkout --no-overwrite
       - name: Build
         run: |
           npm run build
