@@ -7,7 +7,7 @@ description: A basic introduction to the IOTA DLT Technology. The use-cases and
 
 # Introduction to IOTA
 
-**This topic describes some main differences between IOTA's Tangle and a blockchain.**
+**This topic describes some of the main differences between IOTA's Tangle and a blockchain.**
 
 Blockchains and the Tangle both fall under the same category of distributed ledger technology (DLT).
 
