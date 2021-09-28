@@ -575,7 +575,7 @@ If your Ledger is already connected and unlocked, make sure that you have closed
 
 ### Finding balances keeps stalling, why is this?
 
-If your Ledger device does not show “generating address…” while finding balances then try disconnecting and reconnecting the device. In rare cases, where you used an old version of the legacy app you may need to uninstall and reinstall the legacy app. Return to Ledger Live and reinstall this application on your Ledger device and try again.
+If your Ledger device does not show “Generating address…” while finding balances then try disconnecting and reconnecting the device. In rare cases, where you used an old version of the legacy app you may need to uninstall and reinstall the legacy app. Return to Ledger Live and reinstall this application on your Ledger device and try again.
 
 ### Why does my balance keep showing zero?
 
