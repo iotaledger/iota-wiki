@@ -267,7 +267,7 @@ Note: This is a security check to ensure that you are connected to the official,
 
 You can now copy the address and share it with a friend or exchange from which you wish to receive tokens. Always make sure the address is the same as the one displayed on your Ledger device.
 
-![wallet view ledger](/img/learn/firefly/wallet_view_ledger.png)
+[![wallet view ledger](/img/learn/firefly/wallet_view_ledger.png)](/img/learn/firefly/wallet_view_ledger.png)
 
 ### Sending tokens
 
