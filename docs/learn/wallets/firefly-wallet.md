@@ -239,7 +239,7 @@ Press "I want a hardware wallet" to begin the Ledger profile setup process.
 
 On the next page, you will be asked to set a PIN code. This PIN is used to log in to your wallet and blocks other people from logging in and viewing your balance transaction history. Choose a PIN that only you know. Re-enter your PIN on the next page to confirm.
 
-![set pin ledger](/img/learn/firefly/set_pin_ledger.png)
+[![set pin ledger](/img/learn/firefly/set_pin_ledger.png)](/img/learn/firefly/set_pin_ledger.png)
 
 Now, Firefly will check that your Ledger Nano is connected. Make sure the IOTA app is open on your device and that Ledger Live is closed. If you have connection problems follow the "Tips if your Ledger isn't connecting" guide in Firefly.
 
