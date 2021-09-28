@@ -285,7 +285,7 @@ Note: As with generating addresses, this is a security check to ensure that you 
 
 Firefly makes it possible to organize your tokens into different wallets within your profile. These tokens are kept separate from one another. Technically speaking, they are stored on addresses generated on different sub-accounts on your Ledger. Press "Create" from the dashboard and choose a name to add another wallet.
 
-![multiple wallet view ledger](/img/learn/firefly/multiple_wallet_view_ledger.png)
+[![multiple wallet view ledger](/img/learn/firefly/multiple_wallet_view_ledger.png)](/img/learn/firefly/multiple_wallet_view_ledger.png)
 
 With multiple wallets, you can then send between them and split your tokens up to organize them however you like. You can select "Internal Transfer" from the Send view and select which wallet you would like to send to.
 
