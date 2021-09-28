@@ -1,16 +1,15 @@
 ---
 id: why-is-iota-feeless
 title: Why is IOTA Feeless?
-description: The unique feature of IOTA is the absence of any Fee's in the protocol. Here we explain how this is achieved.
+description: The unique feature of IOTA is the absence of any Fee's in the
+  protocol. Here we explain how this is achieved.
 ---
-
 
 # Why IOTA is Feeless
 
-Most decentralized cryptocurrencies, including all of the best-known ones -- Bitcoin, Etherium, Dogecoin, and many others -- require that anyone making a transaction on the network pay a fee for the services provided. This is not merely an add-on feature of those cryptocurrencies that can easily be removed. It is a fundamental aspect of how they are meant to work.
+Most decentralized cryptocurrencies, including all of the best-known ones -- Bitcoin, Ethereum, Dogecoin, and many others -- require that anyone making a transaction on the network pay a fee for the services provided. This is not merely an add-on feature of those cryptocurrencies that can easily be removed. It is a fundamental aspect of how they are meant to work.
 
 IOTA was designed to require no fees for a transaction to be processed. In any transaction, the amount deducted from the sender's wallet is exactly the same as the amount added to the recipient's wallet.
-
 
 ## Blockchains
 
@@ -32,7 +31,7 @@ Because each block in the blockchain contains a double hash of the header of the
 
 So miners are critical to blockchain, but mining is expensive work and must be financially compensated.
 
-When a block is mined, the successful miner is allowed to add a number of coins -- the block reward -- to his or her own wallet, the number being set by the protocol. These newly minted coins can be sold by the miner and are currently the primary way the miners are paid for their work. Unfortunately for miners, many crypto protocols reduce the size of the block reward over time. But there is another way miners can still get paid.  This is where the user comes in.
+When a block is mined, the successful miner is allowed to add a number of coins -- the block reward -- to his or her own wallet, the number being set by the protocol. These newly minted coins can be sold by the miner and are currently the primary way the miners are paid for their work. Unfortunately for miners, many crypto protocols reduce the size of the block reward over time. But there is another way miners can still get paid. This is where the user comes in.
 
 The role of the user is simple. They buy, sell, and trade the currency native to their chosen blockchain. If blockchain transactions were feeless, the user needs only use their private key to sign a transaction putting a set value of crypto under the control of the recipient whose public key is included in the transaction.
 
@@ -40,22 +39,16 @@ But there is a problem for the user here. The target difficulty of mining blocks
 
 No solution has been proposed yet on blockchain that can get miners to adequately secure the system but which doesn't make users pay for it in some way.
 
-
 ## IOTA and the DAG
 
 To do. Users and miners are one and the same on a DAG (setting aside outsourced POW) and the POW itself is many orders of magnitude less difficult. Random tip selection ensures a fair and equal chance for any transaction to be the next one added to the DAG . . .
 
-
-
-<br/>
-
-----
-
-<br/>
+---
 
 **need to add a footer section for further content - (three cards)**
 
 ## Useful Links
-- **[a link](https://linkgoes.here)** - A description for the link
-- **[a link](https://linkgoes.here)** - A description for the link
-- **[a link](https://linkgoes.here)** - A description for the link
+
+- [**a link**](https://linkgoes.here/) - A description for the link
+- [**a link**](https://linkgoes.here/) - A description for the link
+- [**a link**](https://linkgoes.here/) - A description for the link
