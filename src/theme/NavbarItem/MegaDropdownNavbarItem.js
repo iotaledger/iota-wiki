@@ -4,7 +4,7 @@
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  */
-import React, {useState, useRef, useEffect} from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import clsx from 'clsx';
 import {
@@ -13,7 +13,7 @@ import {
   Collapsible,
   useLocalPathname,
 } from '@docusaurus/theme-common';
-import {NavLink} from '@theme/NavbarItem/DefaultNavbarItem';
+import { NavLink } from '@theme/NavbarItem/DefaultNavbarItem';
 import NavbarItem from '@theme/NavbarItem';
 import './styles.css';
 const dropdownLinkActiveClass = 'dropdown__link--active';
@@ -39,47 +39,46 @@ function isItemActive(item, localPathname) {
 
 function containsActiveItems(items, localPathname) {
   return items.some((item) => {
-    item.items ? containsActiveItems(item.items, localPathname) : isItemActive(item, localPathname)
+    item.items
+      ? containsActiveItems(item.items, localPathname)
+      : isItemActive(item, localPathname);
   });
 }
 
-function createItemCursor({items, label, className, ...props}) {
-  const cursor = {items: [], index: 0}
+function createItemCursor({ items, label, className, ...props }) {
+  const cursor = { items: [], index: 0 };
 
   if (items) {
     if (label) {
-      cursor.items.push({label, className})
+      cursor.items.push({ label, className });
     }
-    cursor.items.push(...items)
+    cursor.items.push(...items);
   } else {
-    cursor.items.push({label, className, ...props})
+    cursor.items.push({ label, className, ...props });
   }
 
-  return cursor
+  return cursor;
 }
 
-function MegaDropdownItem({className, to, href, label, ...props}) {
+function MegaDropdownItem({ className, to, href, label, ...props }) {
   if (to || href) {
     return (
       <NavLink
-        className={clsx(
-          'dropdown__link',
-          className,
-        )}
+        className={clsx('dropdown__link', className)}
         activeClassName={dropdownLinkActiveClass}
         to={to}
         href={href}
         label={label}
         {...props}
       />
-    )
+    );
   }
 
   if (label) {
-    return <div className='dropdown__label'>{label}</div>
+    return <div className='dropdown__label'>{label}</div>;
   }
 
-  throw 'Mega dropdown item must be a link or a category header.'
+  throw 'Mega dropdown item must be a link or a category header.';
 }
 
 MegaDropdownItem.propTypes = {
@@ -87,51 +86,57 @@ MegaDropdownItem.propTypes = {
   to: PropTypes.string,
   href: PropTypes.string,
   label: PropTypes.string,
-}
+};
 
-function MegaDropdownNavbarItemDesktop({items_: items, layout, position, className, ...props}) {
+function MegaDropdownNavbarItemDesktop({
+  items_: items,
+  layout,
+  position,
+  className,
+  ...props
+}) {
   const localPathname = useLocalPathname();
   const containsActive = containsActiveItems(items, localPathname);
   const dropdownRef = useRef(null);
   const [showDropdown, setShowDropdown] = useState(false);
 
-  const itemCursors = items.map(createItemCursor)
+  const itemCursors = items.map(createItemCursor);
 
   // Layout is in row major order due to CSS grid area syntax
-  const rowCount = layout.length
-  const columnCount = Math.max(...layout.map(row => row.split(/\s+/).length))
+  const rowCount = layout.length;
+  const columnCount = Math.max(...layout.map((row) => row.split(/\s+/).length));
 
   // Place indexes in column major order.
-  const gridIndexes = []
+  const gridIndexes = [];
   layout.forEach((row, rowOffset) => {
     row.split(/\s+/).forEach((column, columnOffset) => {
       if (column && column !== '.') {
-        gridIndexes[rowOffset + columnOffset * rowCount] = column
+        gridIndexes[rowOffset + columnOffset * rowCount] = column;
       }
-    })
-  })
+    });
+  });
 
   // Resolve items in column major order.
   const gridItems = gridIndexes.map((index) => {
-    const cursor = itemCursors[index]
+    const cursor = itemCursors[index];
     if (cursor) {
-        return cursor.items[cursor.index++] ?? null
+      return cursor.items[cursor.index++] ?? null;
     }
-  })
+  });
 
   // Place items in grid in row major order.
-  const grid = []
-  let lastItem = null
+  const grid = [];
+  let lastItem = null;
   for (let rowOffset = 0; rowOffset < rowCount; rowOffset++) {
-    const rows = []
+    const rows = [];
     for (let columnOffset = 0; columnOffset < columnCount; columnOffset++) {
-      const item = gridItems[rowOffset + columnOffset * rowCount]
-      rows.push(item)
+      const item = gridItems[rowOffset + columnOffset * rowCount];
+      rows.push(item);
       if (item) {
-        lastItem = item
+        lastItem = item;
       }
     }
-    grid.push(rows)
+    grid.push(rows);
   }
 
   // Add tab behavior to last item
@@ -139,7 +144,7 @@ function MegaDropdownNavbarItemDesktop({items_: items, layout, position, classNa
     if (e.key === 'Tab') {
       setShowDropdown(false);
     }
-  }
+  };
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -180,7 +185,8 @@ function MegaDropdownNavbarItemDesktop({items_: items, layout, position, classNa
               e.preventDefault();
               setShowDropdown(!showDropdown);
             }
-          }}>
+          }}
+        >
           {props.children ?? props.label}
         </NavLink>
       </div>
@@ -195,7 +201,10 @@ function MegaDropdownNavbarItemDesktop({items_: items, layout, position, classNa
           {grid.map((row, rowKey) => (
             <div className='row row--no-gutters dropdown__row' key={rowKey}>
               {row.map((column, columnKey) => (
-                <div className='col margin-horiz--xs dropdown__col' key={columnKey}>
+                <div
+                  className='col margin-horiz--xs dropdown__col'
+                  key={columnKey}
+                >
                   {column ? <MegaDropdownItem {...column} /> : null}
                 </div>
               ))}
@@ -213,13 +222,9 @@ MegaDropdownNavbarItemDesktop.propTypes = {
   position: PropTypes.string,
   className: PropTypes.string,
   ...NavLink.propTypes,
-}
+};
 
-function MegaDropdownNavbarItemMobile({
-  items_: items,
-  className,
-  ...props
-}) {
+function MegaDropdownNavbarItemMobile({ items_: items, className, ...props }) {
   /* eslint-disable-next-line react/prop-types */
   delete props.position;
   /* eslint-disable-next-line react/prop-types */
@@ -227,7 +232,7 @@ function MegaDropdownNavbarItemMobile({
 
   const localPathname = useLocalPathname();
   const containsActive = containsActiveItems(items, localPathname);
-  const {collapsed, toggleCollapsed, setCollapsed} = useCollapsible({
+  const { collapsed, toggleCollapsed, setCollapsed } = useCollapsible({
     initialState: () => !containsActive,
   }); // Expand/collapse if any item active after a navigation
 
@@ -240,24 +245,26 @@ function MegaDropdownNavbarItemMobile({
     <li
       className={clsx('menu__list-item', {
         'menu__list-item--collapsed': collapsed,
-      })}>
+      })}
+    >
       <NavLink
-        role="button"
+        role='button'
         className={clsx('menu__link menu__link--sublist', className)}
         {...props}
         onClick={(e) => {
           e.preventDefault();
           toggleCollapsed();
-        }}>
+        }}
+      >
         {props.children ?? props.label}
       </NavLink>
-      <Collapsible lazy as="ul" className="menu__list" collapsed={collapsed}>
+      <Collapsible lazy as='ul' className='menu__list' collapsed={collapsed}>
         {items.map((itemProps, itemKey) => (
           <NavbarItem
             mobile
             isDropdownItem
             onClick={props.onClick}
-            activeClassName="menu__link--active"
+            activeClassName='menu__link--active'
             {...itemProps}
             key={itemKey}
           />
@@ -271,19 +278,21 @@ MegaDropdownNavbarItemMobile.propTypes = {
   items_: PropTypes.array,
   className: PropTypes.string,
   ...NavLink.propTypes,
-}
+};
 
-function MegaDropdownNavbarItem({mobile = false, ...props}) {
-  const Comp = mobile ? MegaDropdownNavbarItemMobile : MegaDropdownNavbarItemDesktop;
+function MegaDropdownNavbarItem({ mobile = false, ...props }) {
+  const Comp = mobile
+    ? MegaDropdownNavbarItemMobile
+    : MegaDropdownNavbarItemDesktop;
   return <Comp {...props} />;
 }
 
 MegaDropdownNavbarItem.propTypes = {
   mobile: PropTypes.bool,
-}
+};
 
 MegaDropdownNavbarItem.defaultProps = {
   mobile: false,
-}
+};
 
 export default MegaDropdownNavbarItem;

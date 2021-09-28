@@ -52,8 +52,12 @@ function getComponentType(type, isDropdown, isMegaDropdown) {
   return type;
 }
 
-function NavbarItem({type, items, layout, ...props}) {
-  const componentType = getComponentType(type, items !== undefined, layout !== undefined);
+function NavbarItem({ type, items, layout, ...props }) {
+  const componentType = getComponentType(
+    type,
+    items !== undefined,
+    layout !== undefined,
+  );
   const NavbarItemComponent = getNavbarItemComponent(componentType);
   return <NavbarItemComponent items={items} layout={layout} {...props} />;
 }
@@ -62,6 +66,6 @@ NavbarItem.propTypes = {
   type: PropTypes.string,
   items: PropTypes.array,
   layout: PropTypes.arrayOf(PropTypes.string),
-}
+};
 
-export default NavbarItem
+export default NavbarItem;

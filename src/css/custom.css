@@ -1,7 +1,6 @@
-@import "fonts.css";
-@import "variables.css";
-@import "patches.css";
-
+@import 'fonts.css';
+@import 'variables.css';
+@import 'patches.css';
 
 .dropdown > .navbar__link:after,
 .menu__link--sublist:after {
@@ -12,7 +11,7 @@
 
 .dropdown__label,
 .footer__title {
-  font-family: "Metropolis Bold";
+  font-family: 'Metropolis Bold';
   font-size: 0.8rem;
   letter-spacing: 0.15rem;
   text-transform: uppercase;
@@ -23,11 +22,12 @@
 }
 
 .dropdown__menu--mega {
-  padding: calc(var(--ifm-navbar-padding-vertical) + 1rem) var(--ifm-navbar-padding-horizontal) !important;
+  padding: calc(var(--ifm-navbar-padding-vertical) + 1rem)
+    var(--ifm-navbar-padding-horizontal) !important;
 }
 
 .dropdown__menu--mega .link__label {
-  font-family: "Metropolis Semi Bold", sans-serif;
+  font-family: 'Metropolis Semi Bold', sans-serif;
 }
 
 .card {
@@ -35,7 +35,7 @@
 }
 
 .card__image {
-  background: linear-gradient(180deg, #001C56 0%, #074DB6 100%);
+  background: linear-gradient(180deg, #001c56 0%, #074db6 100%);
 }
 
 .card__image img {
@@ -98,7 +98,8 @@
 }
 
 .navbar {
-  border-bottom: var(--ifm-global-border-width) solid var(--ifm-color-emphasis-200);
+  border-bottom: var(--ifm-global-border-width) solid
+    var(--ifm-color-emphasis-200);
 }
 
 .navbar__item {
@@ -150,7 +151,7 @@ ul ul .table-of-contents__link {
   font-size: 1.25rem;
 }
 
-.theme-doc-toc-mobile .table-of-contents__link{
+.theme-doc-toc-mobile .table-of-contents__link {
   border-left: none;
   color: var(--ifm-menu-color);
 }
@@ -164,11 +165,13 @@ ul ul .table-of-contents__link {
 /**
 Search bar
  */
-.DocSearch-Button-Keys, .DocSearch-Button-Placeholder, .DocSearch-Footer{
+.DocSearch-Button-Keys,
+.DocSearch-Button-Placeholder,
+.DocSearch-Footer {
   display: none !important;
 }
 
-.DocSearch-Modal{
+.DocSearch-Modal {
   width: 80% !important;
   max-width: 80% !important;
   box-shadow: none !important;
@@ -195,11 +198,9 @@ html[data-theme='light'] .DocSearch {
   --docsearch-footer-background: var(--ifm-color-white);
 }
 
-
 html[data-theme='light'] .DocSearch-Hit-source {
   background: var(--ifm-color-white) !important;
 }
-
 
 html[data-theme='dark'] .DocSearch {
   --docsearch-text-color: var(--ifm-font-color-base);
@@ -208,17 +209,17 @@ html[data-theme='dark'] .DocSearch {
   /* Modal */
   --docsearch-modal-background: var(--ifm-background-color);
   /* Search box */
-  --docsearch-searchbox-background:  var(--ifm-background-color);
+  --docsearch-searchbox-background: var(--ifm-background-color);
   --docsearch-searchbox-focus-background: var(--ifm-color-black);
   /* Hit */
   --docsearch-hit-color: var(--ifm-font-color-base);
   --docsearch-hit-active-color: var(--ifm-color-white);
-  --docsearch-hit-background:  var(--ifm-background-color);
+  --docsearch-hit-background: var(--ifm-background-color);
   /* Footer */
-  --docsearch-footer-background:  var(--ifm-background-color);
+  --docsearch-footer-background: var(--ifm-background-color);
   --docsearch-key-gradient: linear-gradient(
-          -26.5deg,
-          var(--ifm-color-emphasis-200) 0%,
-          var(--ifm-color-emphasis-100) 100%
+    -26.5deg,
+    var(--ifm-color-emphasis-200) 0%,
+    var(--ifm-color-emphasis-100) 100%
   );
 }

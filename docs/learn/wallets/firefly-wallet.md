@@ -11,17 +11,17 @@ description: The IOTA Firefly Wallet sets a new standard for Software Wallets in
 - [General Overview and Introduction](#general-overview-and-introduction)
 - [Firefly Token Migration](#firefly-token-migration)
 - Firefly User Guide
-    * [User guide for standard users](#user-guide-for-standard-users)
-    * [User Guide for users of a Ledger Nano X or Ledger Nano S device](#user-guide-for-users-of-a-ledger-nano-x-or-ledger-nano-s-device)
+  - [User guide for standard users](#user-guide-for-standard-users)
+  - [User Guide for users of a Ledger Nano X or Ledger Nano S device](#user-guide-for-users-of-a-ledger-nano-x-or-ledger-nano-s-device)
 - Firefly FAQ
-    * [Setup and installation](#setup-and-installation)
-    * [Backups and recovery](#backups-and-recovery)
-    * [Profiles and wallets](#profiles-and-wallets)
-    * [Transactions](#transactions)
-    * [Settings](#settings)
-    * [Troubleshooting](#troubleshooting)
-    * [Migration](#migration)
-    * [Spent Addresses](#spent-addresses)
+  - [Setup and installation](#setup-and-installation)
+  - [Backups and recovery](#backups-and-recovery)
+  - [Profiles and wallets](#profiles-and-wallets)
+  - [Transactions](#transactions)
+  - [Settings](#settings)
+  - [Troubleshooting](#troubleshooting)
+  - [Migration](#migration)
+  - [Spent Addresses](#spent-addresses)
 
 ## General Overview and Introduction
 
@@ -127,15 +127,15 @@ Also, you have will find **3 little dots** next to the Wallet balance.
 
 **Customize Wallet**
 
--   Possibility to change the Wallet name.
+- Possibility to change the Wallet name.
 
 **View address history**
 
--   A list of all addresses that have been used by this wallet and the balance that sits currently on this address. You can copy this list and paste it into your documents.
+- A list of all addresses that have been used by this wallet and the balance that sits currently on this address. You can copy this list and paste it into your documents.
 
 **Hide Wallet**
 
--   Empty Wallets can be hidden to keep your Main Wallet overview organized. If a wallet still contains funds you will not be able to hide it by clicking this option but will be offered to transfer the funds to another Wallet and hide the Wallet afterward. A hidden Wallet can be shown again by enabling the function "show hidden wallets" in the advanced account settings.
+- Empty Wallets can be hidden to keep your Main Wallet overview organized. If a wallet still contains funds you will not be able to hide it by clicking this option but will be offered to transfer the funds to another Wallet and hide the Wallet afterward. A hidden Wallet can be shown again by enabling the function "show hidden wallets" in the advanced account settings.
 
 #### Transaction detail view.
 
@@ -143,49 +143,49 @@ Also, you have will find **3 little dots** next to the Wallet balance.
 
 The following information about the transaction is displayed:
 
--   A transaction flow that indicates: **from where > token amount > to where** followed by:
+- A transaction flow that indicates: **from where > token amount > to where** followed by:
 
 **Status**
 
--   Confirmed or Pending status of the message
+- Confirmed or Pending status of the message
 
 **Date**
 
--   Date and Time when the transaction was issued or received (in local System time)
+- Date and Time when the transaction was issued or received (in local System time)
 
 **Message ID**
 
--   The unique identifier of this specific message (every transaction in IOTA is a message) in the IOTA Ledger.
+- The unique identifier of this specific message (every transaction in IOTA is a message) in the IOTA Ledger.
 
 **Send Address**
 
--   The Address from where the transaction was initiated
+- The Address from where the transaction was initiated
 
 **Receive Address**
 
--   The Address on which the tokens of this transaction have arrived. Several different receive Addresses may be shown in this view. The Addresses belonging to you are highlighted with the name of your wallet in brackets, other addresses that are shown without brackets do not belong to you. These are normally addresses of the sender. To these address the remaining funds that have not been used from the sender's address are transferred. This is related to the UTXO (unspent transaction output) Account model in IOTA.
+- The Address on which the tokens of this transaction have arrived. Several different receive Addresses may be shown in this view. The Addresses belonging to you are highlighted with the name of your wallet in brackets, other addresses that are shown without brackets do not belong to you. These are normally addresses of the sender. To these address the remaining funds that have not been used from the sender's address are transferred. This is related to the UTXO (unspent transaction output) Account model in IOTA.
 
--   If a transaction is issued from a UTXO output (an address holding funds) that does not consume all funds that are part of this output, one transaction moves the funds that are planned to send away from the address, and a second transaction moves the rest of the unused funds from this UTXO to a new UTXO output. Both these transactions are part of the message and therefore shown in the Transaction detail. Read more about the UTXO Account model here: (*internal link to utxo*)
+- If a transaction is issued from a UTXO output (an address holding funds) that does not consume all funds that are part of this output, one transaction moves the funds that are planned to send away from the address, and a second transaction moves the rest of the unused funds from this UTXO to a new UTXO output. Both these transactions are part of the message and therefore shown in the Transaction detail. Read more about the UTXO Account model here: (_internal link to utxo_)
 
 **Amount**
 
--   Amount of IOTA sent and current value in chosen Profile currency
+- Amount of IOTA sent and current value in chosen Profile currency
 
 **2 different charts**
 
--   **Wallet Value** and **Wallet activity** also provide a graphic overview of the activities in this wallet.
+- **Wallet Value** and **Wallet activity** also provide a graphic overview of the activities in this wallet.
 
 ### Send and Receive Transactions
 
--   The Send and Receive functions are available in the main Wallets dashboard, and also in every Wallet detail view.
+- The Send and Receive functions are available in the main Wallets dashboard, and also in every Wallet detail view.
 
 **Receive**
 
 <!---->
 
--   Click on the "Receive" button to open the Receive Funds dialogue. Using a dropdown menu, the user can choose in which of the Wallets the incoming funds should be received. The receive address of the selected Wallet is displayed as a QR Code and as a written address. The button `Copy Address` copies the displayed receive address into the user's clipboard for convenient pasting into other applications or documents. **The receive address of a user will change every time funds have been received and spent again from that address. The wallet creates automatically a fresh address for the next receive attempt.**
+- Click on the "Receive" button to open the Receive Funds dialogue. Using a dropdown menu, the user can choose in which of the Wallets the incoming funds should be received. The receive address of the selected Wallet is displayed as a QR Code and as a written address. The button `Copy Address` copies the displayed receive address into the user's clipboard for convenient pasting into other applications or documents. **The receive address of a user will change every time funds have been received and spent again from that address. The wallet creates automatically a fresh address for the next receive attempt.**
 
--   If a user has received, but not yet spent funds from that receiving address, the user can manually decide to generate a fresh receive address using the small "refresh" button above the QR Code. This function is an essential privacy feature that is a standard approach in Crypto to reduce the traceability of your balances
+- If a user has received, but not yet spent funds from that receiving address, the user can manually decide to generate a fresh receive address using the small "refresh" button above the QR Code. This function is an essential privacy feature that is a standard approach in Crypto to reduce the traceability of your balances
 
 **Send**
 
