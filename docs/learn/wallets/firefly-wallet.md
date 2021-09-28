@@ -305,7 +305,7 @@ Note: Backups of your transaction history for Ledger Nano users are not currentl
 
 It is possible to have more than one Ledger device with the same Firefly app. You can add another device by creating an additional profile from the login page. Firefly will always check that the right device is connected and you will receive an error message if you try to generate an address or send a transaction with the wrong device.
 
-![ledger multiple profile view](/img/learn/firefly/ledger_multiple_profile_view.png)
+[![ledger multiple profile view](/img/learn/firefly/ledger_multiple_profile_view.png)](/img/learn/firefly/ledger_multiple_profile_view.png)
 
 ## Firefly FAQ
 
