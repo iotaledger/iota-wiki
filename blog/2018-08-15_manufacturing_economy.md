@@ -3,6 +3,7 @@ slug: manufacturing-economy
 title: "Manufacturing Economy"
 authors: dtrauth
 tags: [Community, IoT, IOTA LAB AACHEN]
+url: https://medium.com/industrial-iota-lab-aachen-wzl-of-rwth-aachen/manufacturing-economy-e541066889ee
 ---
 
 ![IOTA Lab Aachen](https://miro.medium.com/max/7500/1*2itDXVMO-8iOZF44ttIR6g.png)

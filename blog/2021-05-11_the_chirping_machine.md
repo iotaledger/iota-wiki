@@ -3,6 +3,7 @@ slug: the-chirping-machine
 title: "The Chirping Machine"
 authors: borg
 tags: [Community, Distributed Ledger, Gossip]
+url: https://medium.com/coinmonks/the-chirping-machine-4c73269c2871
 ---
 
 ![Die Zwitscher-Maschine](https://miro.medium.com/max/1400/0*-ldlm3IWjU4FOEBU.jpg)

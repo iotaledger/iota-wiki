@@ -3,6 +3,7 @@ slug: the-tech-behind-IOTA-2
 title: "The Tech Behind IOTA — Part 2 (Consensus)"
 authors: lstanisic
 tags: [Community, Coordicide, Mana]
+url: https://luka99.medium.com/the-tech-behind-iota-part-2-consensus-88c74917b993
 ---
 
 ![Coordicide](https://miro.medium.com/max/1400/1*9DcgQ-EnPojAQADRUsi8Rg.png)
