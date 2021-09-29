@@ -118,7 +118,7 @@ function BlogPostItem(props) {
         />
       )}
 
-      <div className='blogPost__body' itemProp='articleBody'>
+      <div className={clsx('markdown', [styles.blogPost__body])} itemProp='articleBody'>
         <MDXProvider components={MDXComponents}>{children}</MDXProvider>
       </div>
 
