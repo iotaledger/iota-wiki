@@ -6,10 +6,10 @@
  */
 
 .blogHeader a:hover {
-  border:none
+  text-decoration: none;
 }
 
- .blogPostTitle {
+.blogPostTitle {
   font-size: 3rem;
 }
 
@@ -29,7 +29,3 @@
   margin-bottom: 2px;
 }
 
-.tagsList a:hover {
-  border: 1px solid var(--docusaurus-tag-list-border);
-  padding: .3rem .5rem;
-}

@@ -3,6 +3,7 @@ slug: develop_prediction_market
 title: ISCP in a Private Network - Developing a Prediction Market
 authors: aklein
 tags: [Community, ISCP]
+url: https://medium.com/51nodes/exploring-iota-2-0-smart-contracts-in-a-private-network-developing-a-prediction-market-c2d81988f75e
 ---
 
 ![keyboard](https://miro.medium.com/max/700/1*wkujYx46q_Wb4V-Rj7iMRA.png)
