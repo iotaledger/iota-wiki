@@ -5,7 +5,7 @@ description: A basic introduction to the IOTA DLT Technology. The use-cases and
   the Ecosystem developed around it.
 ---
 
-# Introduction to IOTA
+# An Introduction to IOTA
 
 **This topic describes some of the main differences between IOTA's Tangle and a blockchain.**
 
@@ -22,7 +22,7 @@ To explain these points, you need to understand the differences between the data
 
 **Blockchain vs. Tangle**
 
-[![layer1-tangle](/img/learn/layer1-tangle.png)](/img/learn/layer1-tangle.png)
+![layer1-tangle](/img/learn/layer1-tangle.png)
 
 ## **The blockchain data structure**
 
@@ -30,7 +30,7 @@ The blockchain data structure consists of a chain of sequential blocks, where ea
 
 **Blockchain bottleneck**
 
-[![blockchain-bottleneck](/img/learn/blockchain-bottleneck.gif)](/img/learn/blockchain-bottleneck.gif)
+![blockchain-bottleneck](/img/learn/blockchain-bottleneck.gif)
 
 All transactions in a blockchain have to wait until they are included in a block. Due to limitations in block size and block production time, this creates congestion and waiting times for transactions.
 
@@ -40,7 +40,7 @@ The Tangle data structure is a directed acyclic graph (DAG), where each message 
 
 **Tangle bottleneck**
 
-[![tangle-bottleneck](/img/learn/tangle-bottleneck.gif)](/img/learn/tangle-bottleneck.gif)
+![tangle-bottleneck](/img/learn/tangle-bottleneck.gif)
 
 Allowing parallel processing removes congestion.
 
@@ -70,4 +70,4 @@ To allow the nodes to recognize the milestones, all nodes that participate in th
 
 To make sure that new messages always have a chance of being confirmed, the Coordinator sends indexed milestones at regular intervals. This way, nodes can compare the indexes of their milestones to check whether they are synchronized with the rest of the network.
 
-[![coordinator](/img/learn/milestones.gif)](/img/learn/milestones.gif)
+![coordinator](/img/learn/milestones.gif)
