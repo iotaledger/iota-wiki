@@ -11,4 +11,4 @@ New article: "My opinion on IOTA Smart Contract Protocol (ISCP) — security imp
 ISCP is IOTA’s take to bring Smart Contracts to their DLT.
 
 Read the article on:  
-[Medium](https://luka99.medium.com/my-opinion-on-iota-smart-contract-protocol-iscp-security-improvement-proposal-c6ca3ca3df23)  
+[Medium](https://luka99.medium.com/my-opinion-on-iota-smart-contract-protocol-iscp-security-improvement-proposal-c6ca3ca3df23)

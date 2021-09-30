@@ -6,12 +6,13 @@
  */
 import React from 'react';
 import clsx from 'clsx';
+import PropTypes from 'prop-types';
 import Link from '@docusaurus/Link';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import IconExternalLink from '@theme/IconExternalLink';
 import isInternalUrl from '@docusaurus/isInternalUrl';
 const dropdownLinkActiveClass = 'dropdown__link--active';
-export function NavLink({
+function NavLink({
   activeBasePath,
   activeBaseRegex,
   to,
@@ -33,11 +34,10 @@ export function NavLink({
   const isExternalLink = label && href && !isInternalUrl(href);
   const isDropdownLink = activeClassName === dropdownLinkActiveClass;
 
-  const checkIsActive = (_match, location) => (
+  const checkIsActive = (_match, location) =>
     activeBaseRegex
       ? new RegExp(activeBaseRegex).test(location.pathname)
-      : location.pathname.startsWith(activeBaseUrl)
-  )
+      : location.pathname.startsWith(activeBaseUrl);
 
   return (
     <Link
@@ -55,7 +55,8 @@ export function NavLink({
                 }
               : null),
           })}
-      {...props}>
+      {...props}
+    >
       <div className='link'>
         {icon && <div className='link__icon'>{icon}</div>}
         <div className='link__body'>
@@ -74,16 +75,30 @@ export function NavLink({
               label
             )}
           </div>
-          {sublabel && (
-            <div className='link__sublabel'>
-              {sublabel}
-            </div>
-          )}
+          {sublabel && <div className='link__sublabel'>{sublabel}</div>}
         </div>
       </div>
     </Link>
   );
 }
+
+NavLink.propTypes = {
+  activeBasePath: PropTypes.string,
+  activeBaseRegex: PropTypes.string,
+  to: PropTypes.string,
+  href: PropTypes.string,
+  label: PropTypes.string,
+  sublabel: PropTypes.string,
+  icon: PropTypes.string,
+  activeClassName: PropTypes.string,
+  prependBaseUrlToHref: PropTypes.bool,
+};
+
+NavLink.defaultProps = {
+  activeClassName: 'navbar__link--active',
+};
+
+export { NavLink };
 
 function DefaultNavbarItemDesktop({
   className,
@@ -107,46 +122,59 @@ function DefaultNavbarItemDesktop({
   return element;
 }
 
-function DefaultNavbarItemMobile({
-  className,
-  isDropdownItem: _isDropdownItem,
-  ...props
-}) {
+DefaultNavbarItemDesktop.propTypes = {
+  className: PropTypes.string,
+  isDropdownItem: PropTypes.bool,
+};
+
+DefaultNavbarItemDesktop.defaultProps = {
+  isDropdownItem: false,
+};
+
+function DefaultNavbarItemMobile({ className, ...props }) {
+  /* eslint-disable-next-line react/prop-types */
+  delete props.isDropdownItem;
+
   return (
-    <li className="menu__list-item">
+    <li className='menu__list-item'>
       <NavLink className={clsx('menu__link', className)} {...props} />
     </li>
   );
 }
 
-function DefaultNavbarItem({
-  mobile = false,
-  position: _position,
-  // Need to destructure position from props so that it doesn't get passed on.
-  ...props
-}) {
+DefaultNavbarItemMobile.propTypes = {
+  className: PropTypes.string,
+};
 
-    /**
-     * Added to enable non-clickable category headers.
-     * To use simply add an navBar items in the config
-     * with to:'category-header'
-     */
-    if(props.to === 'category-header')
-    {
-        const categorySeparatorStyles = {
-            fontSize: '10px',
-            color:'var(--ifm-color-emphasis-600)',
-            paddingTop:'10px'
-
-        }
-        return <li style={categorySeparatorStyles}>{props.label}</li>
-    }
-    else
-    {
-        const Comp = mobile ? DefaultNavbarItemMobile : DefaultNavbarItemDesktop;
-        return <Comp {...props} />;
-
-    }
+function DefaultNavbarItem({ mobile = false, to, label, ...props }) {
+  /* eslint-disable-next-line react/prop-types */
+  delete props.position;
+  /**
+   * Added to enable non-clickable category headers.
+   * To use simply add an navBar items in the config
+   * with to:'category-header'
+   */
+  if (to === 'category-header') {
+    const categorySeparatorStyles = {
+      fontSize: '10px',
+      color: 'var(--ifm-color-emphasis-600)',
+      paddingTop: '10px',
+    };
+    return <li style={categorySeparatorStyles}>{label}</li>;
+  } else {
+    const Comp = mobile ? DefaultNavbarItemMobile : DefaultNavbarItemDesktop;
+    return <Comp to={to} label={label} {...props} />;
+  }
 }
+
+DefaultNavbarItem.propTypes = {
+  mobile: PropTypes.bool,
+  to: PropTypes.string,
+  label: PropTypes.string,
+};
+
+DefaultNavbarItem.defaultProps = {
+  mobile: false,
+};
 
 export default DefaultNavbarItem;

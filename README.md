@@ -7,8 +7,6 @@
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
 
-
-
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
@@ -30,8 +28,6 @@
     .
   </p>
 </p>
-
-
 
 <!-- TABLE OF CONTENTS -->
 <details open="open">
@@ -55,9 +51,8 @@
   </ol>
 </details>
 
-
-
 <!-- MENU STRUCTURE - CONTENT CREATION IN PROGRESS -->
+
 ## Menu Structure - Content creation in progress - ASK FOR YOUR HELP!
 
 Please feel free to contribute to any of the available pages. This is the current state of progress:
@@ -68,8 +63,8 @@ https://www.notion.so/iotafoundation/Contribute-to-the-IOTA-Wiki-698e95b0bac8469
 
 Please mark the page you work on "in progress"
 
-
 <!-- ABOUT THE PROJECT -->
+
 ## About The Project
 
 The IOTA wiki is a central hub for entering into the IOTA eco-system. A community driven initiative to provide an up-to-date collection of introductions and further reading for the Tech, The Teams, The Community, and everything in between. So anyone can learn how to build, adopt, and engage with IOTA, all in one space.
@@ -79,6 +74,7 @@ The IOTA wiki is a central hub for entering into the IOTA eco-system. A communit
 The IOTA wiki and content is contained within this repo, and the system has been built using [Docusaurus v2.0](https://docusaurus.io/).
 
 <!-- GETTING STARTED -->
+
 ## Getting Started
 
 ### Prerequisites
@@ -88,10 +84,11 @@ Install [Node.js](https://nodejs.org/en/download/).
 ### Local Development
 
 1. Run `yarn install` in your terminal. If you want to also install the external docs use `yarn cli start` and `yarn cli checkout`
-3. Run `npx docusaurus start`
-2. Open `http://localhost:3000`
+2. Run `npx docusaurus start`
+3. Open `http://localhost:3000`
 
 <!-- CONTRIBUTING -->
+
 ## Contributing
 
 The IOTA wiki is a community development and we will review all pull-requests and issues posted to this repository. If you notice any errors, or feel we have forgot something, please feel free to create a pull request with any suggestions. Larger content additions and suggestions can start as issues which can further be discussed with the team maintaining the page.  
@@ -104,24 +101,24 @@ Have a look at [CONTRIBUTING](.github/CONTRIBUTING.md).
 5. Open a Pull Request
 
 <!-- CONTACT -->
+
 ## Contact
 
 Phylo - [Phyloiota](https://github.com/Phyloiota) - Phylo [Community DAO - lets go!]#2233  
 Jeroen van den Hout - [jlvandenhout](https://github.com/jlvandenhout) - jvdhout#4402  
 Dr.Electron - [Dr-Electron](https://github.com/Dr-Electron) - Dr.Electron#9370  
-Adamski - [AdamCroply](https://github.com/AdamCroply) - adamski#0458  
-
+Adamski - [AdamCroply](https://github.com/AdamCroply) - adamski#0458
 
 ## Donate
 
-The IOTA wiki is a completely voluntary project put together, maintained, and contributed to by a group of enthusiastic community members. 
+The IOTA wiki is a completely voluntary project put together, maintained, and contributed to by a group of enthusiastic community members.
 Feel free to support our work:
-
 
 #### iota1qzrmyrnfhfauhv6gax50ncx844uppq4c5dddp3gk99ha0lx5jeqkwk6dapx
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+
 [contributors-shield]: https://img.shields.io/github/contributors/iota-community/iota-wiki.svg?style=for-the-badge
 [contributors-url]: https://github.com/iota-community/iota-wiki/graphs/contributors
 [forks-shield]: https://img.shields.io/github/forks/iota-community/iota-wiki.svg?style=for-the-badge

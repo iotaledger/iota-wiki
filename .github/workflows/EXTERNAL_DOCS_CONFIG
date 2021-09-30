@@ -52,8 +52,8 @@
         path: "external/IOTA-2.0-Research-Specifications/docs",
         routeBasePath: "IOTA-2.0-Research-Specifications",
         sidebarPath: require.resolve("./external/IOTA-2.0-Research-Specifications/sidebars.js"),
-        remarkPlugins: [math],
-        rehypePlugins: [katex],
+        remarkPlugins: [require('remark-math')],
+        rehypePlugins: [require('rehype-katex')],
        }
     ],
     [
