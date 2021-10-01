@@ -8,12 +8,12 @@ The technical writing team takes up to two weeks to produce a text. In that time
 
 ## Do Your Homework
 
-Make sure that you did your [homework](./developer_guide.md) before making a request. Decide what a writer has to do for you. Think about how could you help. 
+Make sure that you did your [homework](./developer_guide.md) before making a request. Decide what a writer has to do for you. Think about how could you help.
 As always, feel free to reach out to a writer if you need advise.
 
 ## Prepare an Issue
 
-If you do not have a fitting GitHub issue yet, create it in your project's repository and tell what writers have to do in the description or in the comments. 
+If you do not have a fitting GitHub issue yet, create it in your project's repository and tell what writers have to do in the description or in the comments.
 
 Either use your feature branch or create a new branch with the `docs/` prefix. Commit all information that you have collected, be it drafts, prompts, or weblinks. You could place it directly in the documentation file to change, or inside the `documentation/docs/in_progress` directory. If you use external resources like Miro or Google Docs, add links in a text file, too. It is easier to write when you have everything in one place.
 

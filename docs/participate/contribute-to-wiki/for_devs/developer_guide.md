@@ -31,7 +31,7 @@ To help you help us, we have prepared a [toolbox](./toolbox/toolbox.md), a colle
 
 An API reference already has a structure. Each function gets its own entry. Every entry has a few fields. Every field needs only a sentence or two. Yet you need to understand the code in depth: programmers write better API references than technical writers do.
 
-Feel free to ask a technical writer for an advice or a review. 
+Feel free to ask a technical writer for an advice or a review.
 
 ## Make It Official
 

@@ -3,18 +3,17 @@ title: About Nodes
 description: Nodes are the core of an IOTA network. They run the node software that gives them read and write access to the Tangle.
 ---
 
-
 # About Nodes
 
 **Nodes are the core of an IOTA network. They run the node software that gives them read and write access to the Tangle. This section covers what nodes do in an IOTA network.**
 
 Nodes are responsible for the following:
 
-* Attaching new transactions to the Tangle
-* Synchronizing with the rest of the network
-* Deciding which transactions are confirmed
-* Keeping a record of the balances on addresses
-* Exposing APIs for clients
+- Attaching new transactions to the Tangle
+- Synchronizing with the rest of the network
+- Deciding which transactions are confirmed
+- Keeping a record of the balances on addresses
+- Exposing APIs for clients
 
 ## Attaching new transactions to the Tangle
 
@@ -49,24 +48,25 @@ When nodes detect double spends, they must decide which transaction to consider 
 
 All nodes keep a record of the balances of addresses, so they can do the following:
 
-* Check that a transaction is not transferring more IOTA tokens than are available on the address
-* Respond to clients' requests for their balance
-* Only when a transaction is confirmed, can nodes update their record of balances.
+- Check that a transaction is not transferring more IOTA tokens than are available on the address
+- Respond to clients' requests for their balance
+- Only when a transaction is confirmed, can nodes update their record of balances.
 
 ## Exposing APIs for clients
 
 Nodes come with two APIs:
 
-* HTTP API
-* Events API
+- HTTP API
+- Events API
+
 ### HTTP API
 
 The HTTP API allows clients to interact with the Tangle and ask nodes to do the following:
 
-* Get tip transactions
-* Attach new transactions to the Tangle
-* Do proof of work
-* Get transactions from the Tangle
+- Get tip transactions
+- Attach new transactions to the Tangle
+- Do proof of work
+- Get transactions from the Tangle
 
 ### Events API
 

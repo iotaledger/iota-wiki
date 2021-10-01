@@ -3,7 +3,6 @@ title: Discord
 description: The IOTA Discord id the melting pot for community engagement. Most of the IOTA members are active here. Join a welcoming and active community and chat about everything related to the project.
 ---
 
-
 # IOTA Discord
 
 **If you are new to [Discord](https://discord.iota.org/) as a platform, have a look at their [Beginner's Guide to Discord](https://support.discord.com/hc/en-us/articles/360045138571-Beginner-s-Guide-to-Discord) which is translated in different languages.**
@@ -32,7 +31,7 @@ Make sure to have DMs (direct messages) enabled.
 
 ![discord-enable-dm](/img/participate/discord/enable_dm_discord_3.png)
 
-*Note: After the verification process it is suggested to disable direct messages as those are sometimes used to send spam messages or scams.*
+_Note: After the verification process it is suggested to disable direct messages as those are sometimes used to send spam messages or scams._
 
 The verification system will send a direct message. Click on the **Click me to verify!** link to start with the verification.
 
@@ -55,13 +54,13 @@ Now that you are fully verified, you are able to see all the categories and chan
 **Next steps**
 
 - Visit the **#read-me-first** channel<br/>
-Read the information there to learn about our rules and tips.
+  Read the information there to learn about our rules and tips.
 
 - Access the **#stay safe** channel<br/>
-Read the tips there to understand how to stay safe on Discord.
+  Read the tips there to understand how to stay safe on Discord.
 
 - Access the **#get-your-badges** channel<br/>
-Within the IOTA Community, we use Discord roles as badges and for people to identify themselves within a group. The roles are also used to notify their members for specific or dedicated events.
+  Within the IOTA Community, we use Discord roles as badges and for people to identify themselves within a group. The roles are also used to notify their members for specific or dedicated events.
 
 ## The IOTA Discord Channels
 
@@ -119,11 +118,11 @@ Here are the channels of the IOTA X-Teams: a group of dedicated community member
 
 <br/>
 
-----
+---
 
 <br/>
 
 ## Useful Links
+
 - **[discord.iota.org](https://discord.iota.org)** - Join the IOTA Discord
 - **[support.discord.com](https://support.discord.com/hc/en-us/articles/360045138571-Beginner-s-Guide-to-Discord)** - Beginner's Guide to Discord
-
