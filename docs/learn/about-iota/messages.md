@@ -27,9 +27,9 @@ Overall, these payload structures are simple:
 
 Additionally, there can be three types of message payloads
 
-*   A transaction payload
-*   An indexation payload
-*   A milestone payload
+- A transaction payload
+- An indexation payload
+- A milestone payload
 
 ## Message payloads
 

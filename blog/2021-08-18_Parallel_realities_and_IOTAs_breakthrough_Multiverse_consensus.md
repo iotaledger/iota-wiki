@@ -12,4 +12,4 @@ Check out why #IOTA 2.0 is a breakthrough for the whole #Crypto space.
 
 Read the article on:  
 [Reddit](https://t.co/aN3IcKaTWg?amp=1)  
-[Medium](https://medium.com/@linus.naumann/parallel-realities-and-iotas-multiverse-consensus-bcfbf3b12aad)  
+[Medium](https://medium.com/@linus.naumann/parallel-realities-and-iotas-multiverse-consensus-bcfbf3b12aad)

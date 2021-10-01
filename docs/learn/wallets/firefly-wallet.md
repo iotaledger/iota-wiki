@@ -8,7 +8,6 @@ description: The IOTA Firefly Wallet sets a new standard for Software Wallets in
 
 ## Table of contents
 
-
 - [General Overview and Introduction](#general-overview-and-introduction)
 - [Firefly Token Migration](#firefly-token-migration)
 - Firefly User Guide
@@ -23,7 +22,6 @@ description: The IOTA Firefly Wallet sets a new standard for Software Wallets in
   - [Troubleshooting](#troubleshooting)
   - [Migration](#migration)
   - [Spent Addresses](#spent-addresses)
-
 
 ## General Overview and Introduction
 
@@ -174,7 +172,6 @@ The following information about the transaction is displayed:
 - Amount of IOTA sent and current value in chosen Profile currency
 
 **Two different charts**
-
 
 - **Wallet Value** and **Wallet activity** also provide a graphic overview of the activities in this wallet.
 

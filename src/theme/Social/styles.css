@@ -3,7 +3,8 @@
 }
 
 .social__link {
-  transition: background-color var(--ifm-transition-slow) var(--ifm-transition-timing-default);
+  transition: background-color var(--ifm-transition-slow)
+    var(--ifm-transition-timing-default);
   flex: 1;
   display: flex;
   align-items: center;
@@ -27,7 +28,7 @@
 
 @media (min-width: 1064px) {
   .social__image {
-    margin-right: .5rem;
+    margin-right: 0.5rem;
   }
 
   .social__title {

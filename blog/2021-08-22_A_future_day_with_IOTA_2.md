@@ -12,4 +12,4 @@ Check how a fully developed #IOTA changes our working life by enabling #data eco
 
 Read the article on:  
 [Reddit](https://t.co/6zF8ODsE8v?amp=1)  
-[Medium](https://medium.com/@linus.naumann/a-future-day-with-iota-part-ii-revelations-c3926202f3c4)  
+[Medium](https://medium.com/@linus.naumann/a-future-day-with-iota-part-ii-revelations-c3926202f3c4)
