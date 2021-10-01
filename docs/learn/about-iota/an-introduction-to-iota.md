@@ -70,4 +70,4 @@ To allow the nodes to recognize the milestones, all nodes that participate in th
 
 To make sure that new messages always have a chance of being confirmed, the Coordinator sends indexed milestones at regular intervals. This way, nodes can compare the indexes of their milestones to check whether they are synchronized with the rest of the network.
 
-![coordinator](/img/learn/milestones.gif)
+[![coordinator](/img/learn/milestones.gif)](/img/learn/milestones.gif)
