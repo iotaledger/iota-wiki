@@ -50,16 +50,8 @@ function BlogPostItem(props) {
     truncated,
     isBlogPostPage = false,
   } = props;
-  const {
-    date,
-    formattedDate,
-    permalink,
-    tags,
-    readingTime,
-    title,
-    editUrl,
-    authors,
-  } = metadata;
+  const { date, formattedDate, tags, readingTime, title, editUrl, authors } =
+    metadata;
   const image = assets.image ?? frontMatter.image;
   const url = frontMatter.url;
 
@@ -118,7 +110,10 @@ function BlogPostItem(props) {
         />
       )}
 
-      <div className={clsx('markdown', [styles.blogPost__body])} itemProp='articleBody'>
+      <div
+        className={clsx('markdown', [styles.blogPost__body])}
+        itemProp='articleBody'
+      >
         <MDXProvider components={MDXComponents}>{children}</MDXProvider>
       </div>
 
