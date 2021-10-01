@@ -3,6 +3,7 @@ slug: future_day_2
 title: A future day with IOTA — Part II
 authors: lnaumann
 tags: [Community]
+url: https://medium.com/@linus.naumann/a-future-day-with-iota-part-ii-revelations-c3926202f3c4
 ---
 
 ![keyboard](https://miro.medium.com/max/1400/1*b3PJxjzbZXmuCr8bhK-Jyw.png)

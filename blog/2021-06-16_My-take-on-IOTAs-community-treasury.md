@@ -3,6 +3,7 @@ slug: my-take-community-treasury
 title: 'My take on IOTA’s Community Treasury'
 authors: lstanisic
 tags: [Community, DAO, Commmunity Treasury]
+url: https://luka99.medium.com/my-take-on-iotas-community-treasury-f40deb7b56ba
 ---
 
 ![Treasuries](https://miro.medium.com/max/1400/1*Ydf9L3h3ZOKJ2NbHWmPIdw.png)

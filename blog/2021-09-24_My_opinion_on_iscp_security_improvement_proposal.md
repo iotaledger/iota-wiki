@@ -3,6 +3,7 @@ slug: iscp_security_proposal
 title: My opinion on ISCP — security improvement proposal
 authors: lstanisic
 tags: [Community, ISCP]
+url: https://luka99.medium.com/my-opinion-on-iota-smart-contract-protocol-iscp-security-improvement-proposal-c6ca3ca3df23
 ---
 
 ![keyboard](https://miro.medium.com/max/1400/1*mUjOq0Y8iBfLC-4ztXEiTg.jpeg)
