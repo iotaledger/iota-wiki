@@ -3,6 +3,7 @@ slug: multiverse_consensus
 title: Parallel realities and IOTAs breakthrough “Multiverse consensus”
 authors: lnaumann
 tags: [Community, OTV, Multiverse]
+url: https://medium.com/@linus.naumann/parallel-realities-and-iotas-multiverse-consensus-bcfbf3b12aad
 ---
 
 ![conflics](https://miro.medium.com/max/1400/1*uaihe82n_l6vkHMz-gMl4A.gif)
