@@ -6,63 +6,63 @@ import './styles.css';
 const SocialLinkList = [
   {
     title: 'Youtube',
-    imageUrl: '/img/youtube.svg',
+    icon: '\ue907',
     url: 'https://www.youtube.com/c/iotafoundation',
     backgroundColor: 'var(--ifm-color-gray-900)',
   },
   {
     title: 'GitHub',
-    imageUrl: '/img/github.svg',
+    icon: '\ue902',
     url: 'https://www.github.com/iotaledger/',
     backgroundColor: '#2C3850',
   },
   {
     title: 'Discord',
-    imageUrl: '/img/discord.svg',
+    icon: '\ue900',
     url: 'https://discord.iota.org/',
     backgroundColor: '#4B576F',
   },
   {
     title: 'Twitter',
-    imageUrl: '/img/twitter.svg',
+    icon: '\ue906',
     url: 'https://www.twitter.com/iota/',
     backgroundColor: '#6A768E',
   },
   {
     title: 'Reddit',
-    imageUrl: '/img/reddit.svg',
+    icon: '\ue905',
     url: 'https://www.reddit.com/r/iota/',
     backgroundColor: '#7D89A1',
   },
   {
     title: 'Linkedin',
-    imageUrl: '/img/linkedin.svg',
+    icon: '\ue904',
     url: 'https://www.linkedin.com/company/iotafoundation/',
     backgroundColor: '#8995AD',
   },
   {
     title: 'Instagram',
-    imageUrl: '/img/instagram.svg',
+    icon: '\ue903',
     url: 'https://www.instagram.com/iotafoundation/',
     backgroundColor: '#99A5BD',
   },
   {
     title: 'Facebook',
-    imageUrl: '/img/facebook.svg',
+    icon: '\ue901',
     url: 'https://www.facebook.com/TheIOTAFoundation/',
     backgroundColor: '#BAC6DE',
   },
 ];
 
-function SocialLink({ title, imageUrl, url, backgroundColor }) {
+function SocialLink({ title, icon, url, backgroundColor }) {
   return (
     <a
       className='social__link padding-horiz--sm padding-vert--md'
       style={{ backgroundColor: backgroundColor }}
       href={url}
     >
-      <img alt={title} className='social__image' src={useBaseUrl(imageUrl)} />
-      <div className='social__title'>{title}</div>
+      <div className='social__font social__icon'>{icon}</div>
+      <div className='social__font social__title'>{title}</div>
     </a>
   );
 }

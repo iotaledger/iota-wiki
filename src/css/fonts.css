@@ -57,3 +57,15 @@ Logo fonts
   font-style: normal;
   font-display: block;
 }
+
+@font-face {
+  font-family: 'socials_font';
+  src:  url('fonts/socials_font.eot?yl49be');
+  src:  url('fonts/socials_font.eot?yl49be#iefix') format('embedded-opentype'),
+  url('fonts/socials_font.ttf?yl49be') format('truetype'),
+  url('fonts/socials_font.woff?yl49be') format('woff'),
+  url('fonts/socials_font.svg?yl49be#socials_font') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
