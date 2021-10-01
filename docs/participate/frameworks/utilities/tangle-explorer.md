@@ -3,7 +3,6 @@ title: Tangle Explorer
 description: Find your transactions and messages, see it all alive and find historic data and statistics of all IOTA Networks.
 ---
 
-
 # The IOTA Tangle Network Explorer
 
 A tool to display every activity in the IOTA Networks.
@@ -20,20 +19,17 @@ The Explorers can display live and historical Data of events and addresses in th
 
 The current supported and displayed networks are:
 
-
 ## Mainnet
 
 The currently live and used Mainnet of IOTA. Implemented Protocol stage is Chrysalis (IOTA 1.5). This is the network where all real world-data and value transfers happen:
 
 - **[Mainnet](https://explorer.iota.org/mainnet)**
 
-
 ## Testnet
 
 Testnet used for further development of the current IOTA 1.5 Chrysalis Protocol. All transactions here use Testnet tokens without value. It is used by the community and the IOTA Foundation to test and develop applications and new features
 
 - **[Testnet](https://explorer.iota.org/testnet)**
-
 
 ## Legacy Mainnet
 

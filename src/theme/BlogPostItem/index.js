@@ -5,12 +5,13 @@
  * LICENSE file in the root directory of this source tree.
  */
 import React from 'react';
+import PropTypes from 'prop-types';
 import clsx from 'clsx';
-import {MDXProvider} from '@mdx-js/react';
-import Translate, {translate} from '@docusaurus/Translate';
+import { MDXProvider } from '@mdx-js/react';
+import Translate, { translate } from '@docusaurus/Translate';
 import Link from '@docusaurus/Link';
-import {useBaseUrlUtils} from '@docusaurus/useBaseUrl';
-import {usePluralForm} from '@docusaurus/theme-common';
+import { useBaseUrlUtils } from '@docusaurus/useBaseUrl';
+import { usePluralForm } from '@docusaurus/theme-common';
 import MDXComponents from '@theme/MDXComponents';
 import EditThisPage from '@theme/EditThisPage';
 import styles from './styles.module.css';
@@ -18,7 +19,7 @@ import TagsListInline from '@theme/TagsListInline';
 import BlogPostAuthors from '@theme/BlogPostAuthors'; // Very simple pluralization: probably good enough for now
 
 function useReadingTimePlural() {
-  const {selectMessage} = usePluralForm();
+  const { selectMessage } = usePluralForm();
   return (readingTimeFloat) => {
     const readingTime = Math.ceil(readingTimeFloat);
     return selectMessage(
@@ -40,7 +41,7 @@ function useReadingTimePlural() {
 
 function BlogPostItem(props) {
   const readingTimePlural = useReadingTimePlural();
-  const {withBaseUrl} = useBaseUrlUtils();
+  const { withBaseUrl } = useBaseUrlUtils();
   const {
     children,
     frontMatter,
@@ -66,11 +67,11 @@ function BlogPostItem(props) {
     // Move date to the right
     return (
       <header className={styles.blogHeader}>
-        <TitleHeading className={styles.blogPostTitle} itemProp="headline">
+        <TitleHeading className={styles.blogPostTitle} itemProp='headline'>
           {isBlogPostPage ? (
             title
           ) : (
-            <Link itemProp="url" to={permalink}>
+            <Link itemProp='url' to={permalink}>
               {title}
             </Link>
           )}
@@ -81,7 +82,7 @@ function BlogPostItem(props) {
           </div>
           <div className={clsx(styles.blogPostData, 'margin-vert--md', 'col')}>
             <div className={styles.blogPostDataContainer}>
-              <time dateTime={date} itemProp="datePublished">
+              <time dateTime={date} itemProp='datePublished'>
                 {formattedDate}
               </time>
 
@@ -101,21 +102,22 @@ function BlogPostItem(props) {
   return (
     <article
       className={!isBlogPostPage ? 'margin-bottom--xl' : undefined}
-      itemProp="blogPost"
+      itemProp='blogPost'
       itemScope
-      itemType="http://schema.org/BlogPosting">
+      itemType='http://schema.org/BlogPosting'
+    >
       {renderPostHeader()}
 
       {image && (
         <meta
-          itemProp="image"
+          itemProp='image'
           content={withBaseUrl(image, {
             absolute: true,
           })}
         />
       )}
 
-      <div className="markdown" itemProp="articleBody">
+      <div className='markdown' itemProp='articleBody'>
         <MDXProvider components={MDXComponents}>{children}</MDXProvider>
       </div>
 
@@ -123,12 +125,14 @@ function BlogPostItem(props) {
         <footer
           className={clsx('row docusaurus-mt-lg', {
             [styles.blogPostDetailsFull]: isBlogPostPage,
-          })}>
+          })}
+        >
           {tags.length > 0 && (
             <div
               className={clsx('col', {
                 'col--9': !isBlogPostPage,
-              })}>
+              })}
+            >
               <div className={styles.tagsList}>
                 <TagsListInline tags={tags} />
               </div>
@@ -136,20 +140,22 @@ function BlogPostItem(props) {
           )}
 
           {isBlogPostPage && editUrl && (
-            <div className="col margin-top--sm">
+            <div className='col margin-top--sm'>
               <EditThisPage editUrl={editUrl} />
             </div>
           )}
 
           {!isBlogPostPage && truncated && (
-            <div className="col col--3 text--right">
+            <div className='col col--3 text--right'>
               <Link
                 to={metadata.permalink}
-                aria-label={`Read more about ${title}`}>
+                aria-label={`Read more about ${title}`}
+              >
                 <b>
                   <Translate
-                    id="theme.blog.post.readMore"
-                    description="The label used in blog post item excerpts to link to full blog posts">
+                    id='theme.blog.post.readMore'
+                    description='The label used in blog post item excerpts to link to full blog posts'
+                  >
                     Read More
                   </Translate>
                 </b>
@@ -161,5 +167,27 @@ function BlogPostItem(props) {
     </article>
   );
 }
+
+BlogPostItem.propTypes = {
+  children: PropTypes.node,
+  frontMatter: PropTypes.object,
+  assets: PropTypes.object,
+  metadata: PropTypes.shape({
+    date: PropTypes.string,
+    formattedDate: PropTypes.string,
+    permalink: PropTypes.string,
+    tags: PropTypes.arrayOf(PropTypes.object),
+    readingTime: PropTypes.string,
+    title: PropTypes.string,
+    editUrl: PropTypes.string,
+    authors: PropTypes.arrayOf(PropTypes.object),
+  }),
+  truncated: PropTypes.bool,
+  isBlogPostPage: PropTypes.bool,
+};
+
+BlogPostItem.defaultProps = {
+  isBlogPostPage: false,
+};
 
 export default BlogPostItem;
