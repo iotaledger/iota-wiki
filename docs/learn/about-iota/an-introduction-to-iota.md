@@ -30,7 +30,7 @@ The blockchain data structure consists of a chain of sequential blocks, where ea
 
 **Blockchain bottleneck**
 
-![blockchain-bottleneck](/img/learn/blockchain-bottleneck.gif)
+[![blockchain-bottleneck](/img/learn/blockchain-bottleneck.gif)](/img/learn/blockchain-bottleneck.gif)
 
 All transactions in a blockchain have to wait until they are included in a block. Due to limitations in block size and block production time, this creates congestion and waiting times for transactions.
 
