@@ -22,7 +22,7 @@ To explain these points, you need to understand the differences between the data
 
 **Blockchain vs. Tangle**
 
-![layer1-tangle](/img/learn/layer1-tangle.png)
+[![layer1-tangle](/img/learn/layer1-tangle.png)](/img/learn/layer1-tangle.png)
 
 ## **The blockchain data structure**
 
