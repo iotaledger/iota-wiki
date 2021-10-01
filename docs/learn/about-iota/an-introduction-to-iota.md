@@ -5,7 +5,7 @@ description: A basic introduction to the IOTA DLT Technology. The use-cases and
   the Ecosystem developed around it.
 ---
 
-# Introduction to IOTA
+# An Introduction to IOTA
 
 **This topic describes some of the main differences between IOTA's Tangle and a blockchain.**
 
@@ -58,7 +58,7 @@ Producing blocks as a stacker in a proof of stake (PoS) Blockchain usually requi
 
 In the Tangle, messages require no fees because the network has no miners or stakers. In the Tangle, PoW is not used to secure the network. Instead, PoW is used only to discourage spam messages. To reach a consensus, all IOTA nodes validate messages and use different functions alongside messages in their confirmation. Currently, messages will only be considered valid if they have a reference to a milestone. These milestones are issued by a special network node – the Coordinator.
 
-## **The coordinator**
+## **The Coordinator**
 
 The Coordinator is a client that sends signed messages called milestones that nodes trust and use to confirm messages. This topic describes how nodes use milestones to determine which messages are confirmed.
 
