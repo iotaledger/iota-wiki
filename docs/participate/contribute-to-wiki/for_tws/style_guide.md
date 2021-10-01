@@ -79,7 +79,7 @@ Good:
 
 > Good night, sweet prince.
 
-Bad: 
+Bad:
 
 > Good n8, sweet prince.
 
@@ -91,7 +91,7 @@ Good:
 
 > Go to the designated evacuation point.
 
-Bad: 
+Bad:
 
 > Go :runner: :fire: to the designated evacuation point.
 
@@ -99,11 +99,11 @@ Bad:
 
 Never use contractions:
 
-Good: 
+Good:
 
 > I would rather use contractions.
 
-Bad: 
+Bad:
 
 > I'd rather use contractions.
 
@@ -144,7 +144,7 @@ Bad:
 ### Links
 
 - Use [meaningful link text](https://developers.google.com/style/link-text). Links should make sense when read out of context.
-- Don't use *click here* or *read this document*, use “For further reference” or “For further reading” or something along those lines.
+- Don't use _click here_ or _read this document_, use “For further reference” or “For further reading” or something along those lines.
 - If a link downloads a file, the link text needs to indicate this action as well as the file type.
 - Leave determiners out of the [link](#Links).
 - Never apply additional formatting for links.
@@ -168,7 +168,7 @@ Bad:
 - Use table headings for the first column and the first row only. Use the [th element](https://www.w3.org/TR/html4/struct/tables.html#edef-TH).
 - Avoid when possible tables in the middle of a numbered procedure.
 - Don't merge cells. Don't use colspan or rowspan attributes.
-- Don't use tables unless it's the best method to present your information. 
+- Don't use tables unless it's the best method to present your information.
 
 ### Referencing UI Elements
 
@@ -180,19 +180,19 @@ Never use color, size, location, or other visual cues as the primary way of desc
 - Don't use directional language to orient the reader, such as "above", "below", or "right-hand side". This type of language doesn't work well for accessibility or for localization reasons. If a [UI element](https://developers.google.com/style/ui-elements) is hard to find, [provide a screenshot](https://developers.google.com/style/images).
 - **Recommended:** Click menu **Menu**.
 - **Not recommended:** In the left-side panel, click the button with three lines.
-- Use *weak emphasis* in UI element names.
+- Use _weak emphasis_ in UI element names.
 
 ### Document Rendering and Formatting
 
-Markdown only [specifies](https://daringfireball.net/projects/markdown/syntax) what text elements are, but not how they look like. The final rendering could be affected by a rendering engine that could come from Docusaurus, IDE, or GitHub, a browser extension that changes CSS, or they could read a raw .md file or copy parts of your article as a plain text via messenger. Some users do not *see* text at all and rely on screen readers.
+Markdown only [specifies](https://daringfireball.net/projects/markdown/syntax) what text elements are, but not how they look like. The final rendering could be affected by a rendering engine that could come from Docusaurus, IDE, or GitHub, a browser extension that changes CSS, or they could read a raw .md file or copy parts of your article as a plain text via messenger. Some users do not _see_ text at all and rely on screen readers.
 
-Never rely on rendering in your work and make sure that everyone can read your article with no formatting at all. For example, use *weak* and **strong** emphasis, but never expect it to always be in italics and bold, respectively.
+Never rely on rendering in your work and make sure that everyone can read your article with no formatting at all. For example, use _weak_ and **strong** emphasis, but never expect it to always be in italics and bold, respectively.
 
 #### Emphasis
 
 In general, use emphasis notation sparingly. In most cases, you can emphasize anything by using right words and rearranging your sentences even in plain text.
 
-Always use *weak emphasis* for UI element names.
+Always use _weak emphasis_ for UI element names.
 
 #### Drawing attention
 
@@ -238,41 +238,41 @@ Put long quotes in a paragraph-style quote (`>`).
 
 - Use [present tense](https://developers.google.com/style/tense).
 - Write [dates and times](https://developers.google.com/style/dates-times) in the global way (DD/MM/YYYY and 00:00)
-- Use qualifying nouns for technical keywords. For example, when referring to a file called example.yaml, call it the *example.yaml* *file* and not *example.yaml* by itself. 
+- Use qualifying nouns for technical keywords. For example, when referring to a file called example.yaml, call it the _example.yaml_ _file_ and not _example.yaml_ by itself.
 - Provide context. Don't assume that the reader already knows what you're talking about.
-- Use negative constructions on a case by case basis, like when explaining what a feature does and what does and doesn’t work with it. 
+- Use negative constructions on a case by case basis, like when explaining what a feature does and what does and doesn’t work with it.
 
 ### Write Short, Clear, and Precise Sentences
 
 - Use active voice.
-- Address the reader directly. Use *you*, instead of *the user* or *they*.
-- Use a simple word. For example, don't use words like *commence* when you mean *start* or *begin*. Don't use *consequently* when you mean *so*. Don't use words like *utilize* or *leverage* when you mean *use*. However, do not avoid complex words where they do belong.
-- Use a single word when it conveys the same idea as a phrase. For example, don't use a phrase like *a number of* when you can use *some* or *many*.
-- Avoid phrasal verbs when possible. A phrasal verb combines multiple words to form a single verb phrase. These verbs are also known as compound verbs. Try to substitute a simpler verb first. There might not be a better verb; for example, a few exceptions to this rule include *set up*, *log in*, and *sign in*.
+- Address the reader directly. Use _you_, instead of _the user_ or _they_.
+- Use a simple word. For example, don't use words like _commence_ when you mean _start_ or _begin_. Don't use _consequently_ when you mean _so_. Don't use words like _utilize_ or _leverage_ when you mean _use_. However, do not avoid complex words where they do belong.
+- Use a single word when it conveys the same idea as a phrase. For example, don't use a phrase like _a number of_ when you can use _some_ or _many_.
+- Avoid phrasal verbs when possible. A phrasal verb combines multiple words to form a single verb phrase. These verbs are also known as compound verbs. Try to substitute a simpler verb first. There might not be a better verb; for example, a few exceptions to this rule include _set up_, _log in_, and _sign in_.
 - **Recommended:** This document uses the following terms:
 - **Not recommended:** This document makes use of the following terms:
 - Define abbreviations. Abbreviations can be confusing out of context, and they don't translate well. Spell things out whenever possible, at least the first time that you use a given term.
 - Don't use too many modifiers. In particular, don't use more than two nouns as modifiers of another noun.
 - **Recommended:** A cloud-native DevSecOps pipeline in a hybrid environment
 - **Not recommended:** A hybrid cloud-native DevSecOps pipeline
-- Don't misplace modifiers. For example, place a word like *only* immediately before the noun or verb that it relates to.
+- Don't misplace modifiers. For example, place a word like _only_ immediately before the noun or verb that it relates to.
 - **Recommended:** Developers need to apply for only one token.
 - **Not recommended:** Developers only need to apply for one token.
-- Don't omit relative pronouns. To provide clarity and to avoid ambiguity, use relative pronouns such as *that* and *who*.
+- Don't omit relative pronouns. To provide clarity and to avoid ambiguity, use relative pronouns such as _that_ and _who_.
 - **Recommended:** Running in a hybrid environment means that some of your processing happens on Google Cloud and other processing remains on-premises.
 - **Not recommended:** Running in a hybrid environment means some of your processing happens on Google Cloud and other processing remains on-premises.
 - Clarify antecedents. Using pronouns can get tricky when translators are working with small, unconnected strings of text. Help them out by making things as clear as possible. For example, if a pronoun is ambiguous, then replace it with the appropriate noun.
-- **Recommended:** If you use the term *green beer* in an ad, then make sure that the ad is targeted.
-- **Not recommended:** If you use the term *green beer* in an ad, then make sure that it's targeted.
-- Use helper words. Helper words, such as *if*, *then*, and *of*, are frequently left out of conversational English. Use these words to avoid ambiguity.
+- **Recommended:** If you use the term _green beer_ in an ad, then make sure that the ad is targeted.
+- **Not recommended:** If you use the term _green beer_ in an ad, then make sure that it's targeted.
+- Use helper words. Helper words, such as _if_, _then_, and _of_, are frequently left out of conversational English. Use these words to avoid ambiguity.
 
 ### Be Consistent
 
 - If you use a particular term for a particular concept in one place, then use that exact same term elsewhere, including the same capitalization.
 - Don't use the same word to mean different things. In particular, avoid using the same word as both a noun and a verb in close proximity. Use standardized phrases for frequently used sentences, introductory phrases, and other common tasks.
-- Use standard English word order. Sentences follow the *subject + verb + object* order.
+- Use standard English word order. Sentences follow the _subject + verb + object_ order.
 - Try to keep the main subject and verb as close to the beginning of the sentence as possible.
-- Use the conditional clause first. If you want to tell the audience to do something in a particular circumstance, mention the circumstance before you provide the instruction. 
+- Use the conditional clause first. If you want to tell the audience to do something in a particular circumstance, mention the circumstance before you provide the instruction.
 - Make list items consistent. Make list items parallel in structure.
 - Be consistent in your capitalization and punctuation.
 - Use consistent typographic formats.
@@ -284,7 +284,7 @@ Put long quotes in a paragraph-style quote (`>`).
 You are writing to people of many cultures. Keep that in mind.
 
 - Don't be too culturally specific. In particular, don't refer to specific holidays, cultural practices, or sports unless you're certain they're known worldwide.
-- Avoid colloquialisms, idioms, or slang. Phrases like *ballpark figure*, *back burner*, or *hang in there* can be confusing and difficult to translate.
+- Avoid colloquialisms, idioms, or slang. Phrases like _ballpark figure_, _back burner_, or _hang in there_ can be confusing and difficult to translate.
 
 ### Using Third-party Sources
 
@@ -311,9 +311,9 @@ Remember that many readers aren't fluent English speakers, many of them come fro
 - Buzzwords or technical jargon.
 - Being too cutesy.
 - [Ableist language](https://developers.google.com/style/inclusive-documentation#ableist-language) or figures of speech.
-- Placeholder phrases like *please note* and *at this time.*
+- Placeholder phrases like _please note_ and _at this time._
 - Choppy or long-winded sentences.
-- Starting all sentences with the same phrase (such as *You can* or *To do*).
+- Starting all sentences with the same phrase (such as _You can_ or _To do_).
 - Current pop-culture references.
 - Jokes at the expense of customers, competitors, or anyone else.
 - Exclamation marks, except in rare really exciting moments.
@@ -321,13 +321,13 @@ Remember that many readers aren't fluent English speakers, many of them come fro
 - Mixing metaphors or taking a metaphor too far.
 - Funny lines that aren't closely related to the topic, or that require much off-topic verbiage, or that obscure information.
 - Phrasing that denigrates or insults any group of people.
-- Phrasing in terms of *let's* do something.
-- Using phrases like *simply*, *It's that simple*, *It's easy*, or *quickly* in a procedure.
+- Phrasing in terms of _let's_ do something.
+- Using phrases like _simply_, _It's that simple_, _It's easy_, or _quickly_ in a procedure.
 
 ### Some Techniques and Approaches to Consider
 
 - If you're having trouble expressing something, step back and ask yourself, "What am I trying to say?" Often, the answer you give yourself reveals what you should be saying in the document.
 - If you're uncertain about your phrasing or tone, ask a colleague to take a look.
 - Try reading parts of your document out loud, or at least mouthing the words. Does it sound natural? Not every sentence has to sound natural when spoken; these are written documents. But if you come across a sentence that's awkward or confusing when spoken, consider whether you can make it more conversational.
-- Use transitions between sentences. Phrases like *Though* or *This way* can make paragraphs less stilted. (Then again, sometimes transitions like *However* or *Nonetheless* can make paragraphs more stilted.)
+- Use transitions between sentences. Phrases like _Though_ or _This way_ can make paragraphs less stilted. (Then again, sometimes transitions like _However_ or _Nonetheless_ can make paragraphs more stilted.)
 - Even if you're having trouble hitting the right tone, make sure you're communicating useful information in a clear and direct way; that's the most important part.

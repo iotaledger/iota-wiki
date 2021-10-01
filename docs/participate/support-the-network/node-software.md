@@ -7,7 +7,6 @@ description: IOTA networks consist of interconnected nodes that run the same nod
 
 **IOTA networks consist of interconnected nodes that run the same node software. This software gives nodes read/write access to the Tangle, allows them to validate transactions, and allows them to store transactions in their local ledgers.**
 
-
 ## Hornet
 
 HORNET is a powerful, community-driven IOTA node software written in Go. It is easy to install and runs on low-end devices like the Raspberry Pi 4. Hornet is being built and maintained by a group of community developers alongside the IOTA Foundation. Hornet is a full-fledged software providing full node capabilities including full support of the Chrysalis network update.
@@ -37,15 +36,14 @@ Standard installation following the Hornet Documentation:
 
 Guides and easy one - line installations scripts created by IOTA community members:
 
-* Nuriels playbook installation using Docker: [Nuriel's playbook](https://github.com/nuriel77/hornet-playbook)
-* DeMicheles one-liner using Nuriels Playbook: [Install Hornet](https://github.com/demichele/install-hornet-1.5)
-* Step-by-Step guide for Windows users by Phylo: 
-  - [Hornet node Installation guide Part 1](https://phyloiota.medium.com/iota-hornet-node-installation-81747de28338) 
-  - [Hornet node Installation guide Part 2](https://phyloiota.medium.com/iota-hornet-node-installation-2-8f2639e04d1d) 
-* Tanglebay Swarm Hornet Node installer: [Tanglebay Swarmnode](https://tanglebay.com/swarm/)
-* Install Hornet Mainnet Node using `apt`: [Svenger 87 Alphanet Tutorial](https://github.com/svenger87/hornet-alphanet-tutorial)
-* Run Hornet on a Raspberry Pi: [Raspihive Hornet](https://docs.raspihive.org/docs/install#45-first-start-of-raspihive-and-installation-of-the-hornet-node)
-
+- Nuriels playbook installation using Docker: [Nuriel's playbook](https://github.com/nuriel77/hornet-playbook)
+- DeMicheles one-liner using Nuriels Playbook: [Install Hornet](https://github.com/demichele/install-hornet-1.5)
+- Step-by-Step guide for Windows users by Phylo:
+  - [Hornet node Installation guide Part 1](https://phyloiota.medium.com/iota-hornet-node-installation-81747de28338)
+  - [Hornet node Installation guide Part 2](https://phyloiota.medium.com/iota-hornet-node-installation-2-8f2639e04d1d)
+- Tanglebay Swarm Hornet Node installer: [Tanglebay Swarmnode](https://tanglebay.com/swarm/)
+- Install Hornet Mainnet Node using `apt`: [Svenger 87 Alphanet Tutorial](https://github.com/svenger87/hornet-alphanet-tutorial)
+- Run Hornet on a Raspberry Pi: [Raspihive Hornet](https://docs.raspihive.org/docs/install#45-first-start-of-raspihive-and-installation-of-the-hornet-node)
 
 ## BEE
 
@@ -71,12 +69,11 @@ Standard installation following the Bee Documentation:
 
 - [Set up a BEE Node](https://bee.docs.iota.org/setup_a_node)
 
-
 ## GoShimmer
 
 GoShimmer is a prototype node software exploring the implementation of IOTA 2.0. It is a research and engineering project from the IOTA Foundation seeking to evaluate Coordicide concepts by implementing them in a node software.
 
-Due to the prototypical nature of the project, things written today may reflect how things are tomorrow. 
+Due to the prototypical nature of the project, things written today may reflect how things are tomorrow.
 
 The software is written in Go and is currently the software used in the IOTA 2.0 DevNet where the upcoming IOTA 2.0 version without a coordinator node is tested and optimized in collaboration with a huge amount of community contributors. GoShimmer allows testing and analyzing all upcoming features of IOTA and is therefore an essential part of the ongoing IOTA Research.
 
@@ -106,10 +103,10 @@ Standard installation following the Documentation:
 
 Chronicle provides tools for managing and accessing permanode solutions using the IOTA actor framework backstage. With Chronicle, you can:
 
-* Store IOTA messages in real-time, using one or more Scylla clusters
-* Explore stored messages using an HTTP API
-* Store the data you want by modifying incoming messages
-* Filter data to store it how and where you want (work in progress)
+- Store IOTA messages in real-time, using one or more Scylla clusters
+- Explore stored messages using an HTTP API
+- Store the data you want by modifying incoming messages
+- Filter data to store it how and where you want (work in progress)
 
 The full documentation for Chronicle Permanodes can be found here:
 

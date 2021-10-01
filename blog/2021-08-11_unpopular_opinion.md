@@ -1,6 +1,6 @@
 ---
 slug: bitcoin-middle-man
-title: "Unpopular opinion: Bitcoin did not get rid of the middle-man"
+title: 'Unpopular opinion: Bitcoin did not get rid of the middle-man'
 authors: lnaumann
 tags: [Community, Bitcoin]
 url: https://medium.com/@linus.naumann/unpopular-opinion-bitcoin-did-not-get-rid-of-the-middle-man-71aced8c5e3f
@@ -14,4 +14,4 @@ Only IOTA leaderless consensus enables Satoshis vision of peer-to-peer electroni
 
 Read the article on:  
 [Reddit](https://t.co/ZjnLlfJ5dw?amp=1)  
-[Medium](https://medium.com/@linus.naumann/unpopular-opinion-bitcoin-did-not-get-rid-of-the-middle-man-71aced8c5e3f)  
+[Medium](https://medium.com/@linus.naumann/unpopular-opinion-bitcoin-did-not-get-rid-of-the-middle-man-71aced8c5e3f)

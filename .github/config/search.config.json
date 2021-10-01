@@ -1,11 +1,7 @@
 {
   "index_name": "IOTAWiki",
-  "start_urls": [
-    "https://wiki.iota.org/"
-  ],
-  "sitemap_urls": [
-    "https://wiki.iota.org/sitemap.xml"
-  ],
+  "start_urls": ["https://wiki.iota.org/"],
+  "sitemap_urls": ["https://wiki.iota.org/sitemap.xml"],
   "stop_urls": [],
   "selectors": {
     "lvl0": {
@@ -34,11 +30,7 @@
       "type",
       "docusaurus_tag"
     ],
-    "attributesForFaceting" :[
-      "docusaurus_tag",
-      "language"
-    ]
+    "attributesForFaceting": ["docusaurus_tag", "language"]
   },
   "nb_hits": "OUTPUT OF THE CRAWL"
 }
-

@@ -10,7 +10,9 @@
 
 .dropdown__container {
   position: absolute;
-  padding-top: calc(var(--ifm-navbar-padding-vertical) + var(--ifm-global-border-width) + 5px);
+  padding-top: calc(
+    var(--ifm-navbar-padding-vertical) + var(--ifm-global-border-width) + 5px
+  );
   width: 100%;
   opacity: 0;
   visibility: hidden;
@@ -57,8 +59,10 @@
   width: 100%;
   position: static;
   transform: none;
-  padding: var(--ifm-navbar-padding-vertical) var(--ifm-navbar-padding-horizontal);
-  border-bottom: var(--ifm-global-border-width) solid var(--ifm-color-emphasis-200);
+  padding: var(--ifm-navbar-padding-vertical)
+    var(--ifm-navbar-padding-horizontal);
+  border-bottom: var(--ifm-global-border-width) solid
+    var(--ifm-color-emphasis-200);
 }
 
 .link {

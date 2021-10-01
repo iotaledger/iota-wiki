@@ -5,7 +5,7 @@ on:
     branches: [develop]
   workflow_dispatch:
   schedule:
-    - cron:  '0 0 * * *'
+    - cron: '0 0 * * *'
 
 jobs:
   checks:
@@ -68,4 +68,3 @@ jobs:
       - name: Update search indexes
         run: |
           docker run --env-file=./search.env -e "CONFIG=$(cat .github/config/search.config.json | jq -r tostring)" typesense/docsearch-scraper
-
