@@ -164,40 +164,32 @@ function MegaDropdownNavbarItemDesktop({
   }, [dropdownRef]);
 
   return (
-    <>
-      <div
-        ref={dropdownRef}
-        className={clsx('dropdown', 'dropdown--hoverable', {
-          'dropdown--right': position === 'right',
-          'dropdown--show': showDropdown,
+    <div
+      ref={dropdownRef}
+      className={clsx('dropdown', 'dropdown--hoverable', 'dropdown--mega', {
+        'dropdown--right': position === 'right',
+        'dropdown--show': showDropdown,
+      })}
+      onMouseLeave={() => setShowDropdown(false)}
+    >
+      <NavLink
+        className={clsx('navbar__item navbar__link', className, {
+          'navbar__link--active': containsActive,
         })}
+        {...props}
+        onClick={(e) => e.preventDefault()}
+        onKeyDown={(e) => {
+          if (e.key === 'Enter') {
+            e.preventDefault();
+            setShowDropdown(!showDropdown);
+          }
+        }}
         onMouseEnter={() => setShowDropdown(true)}
-        onMouseLeave={() => setShowDropdown(false)}
       >
-        <NavLink
-          className={clsx('navbar__item navbar__link', className, {
-            'navbar__link--active': containsActive,
-          })}
-          {...props}
-          onClick={(e) => e.preventDefault()}
-          onKeyDown={(e) => {
-            if (e.key === 'Enter') {
-              e.preventDefault();
-              setShowDropdown(!showDropdown);
-            }
-          }}
-        >
-          {props.children ?? props.label}
-        </NavLink>
-      </div>
-      <div
-        className={clsx('dropdown__container', {
-          'dropdown__container--show': showDropdown,
-        })}
-        onMouseEnter={() => setShowDropdown(true)}
-        onMouseLeave={() => setShowDropdown(false)}
-      >
-        <div className='dropdown__menu dropdown__menu--mega'>
+        {props.children ?? props.label}
+      </NavLink>
+      <div className='dropdown__container'>
+        <div className='dropdown__menu'>
           {grid.map((row, rowKey) => (
             <div className='row row--no-gutters dropdown__row' key={rowKey}>
               {row.map((column, columnKey) => (
@@ -212,7 +204,7 @@ function MegaDropdownNavbarItemDesktop({
           ))}
         </div>
       </div>
-    </>
+    </div>
   );
 }
 
