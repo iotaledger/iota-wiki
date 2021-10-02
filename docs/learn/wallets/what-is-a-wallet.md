@@ -44,11 +44,3 @@ IOTA currently supports the use of the Ledger Nano hardware wallet. Read how to 
 Only purchase a Ledger directly from the official store on the official website: [**Ledger Hardware Wallets**](https://www.ledger.com/)
 
 ---
-
-**need to add a footer section for further content - (three cards)**
-
-## Useful Links
-
-- [**a link**](https://linkgoes.here/) - A description for the link
-- [**a link**](https://linkgoes.here/) - A description for the link
-- [**a link**](https://linkgoes.here/) - A description for the link
