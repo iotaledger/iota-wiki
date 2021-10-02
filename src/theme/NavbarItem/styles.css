@@ -3,6 +3,10 @@
   color: var(--ifm-navbar-link-hover-color);
 }
 
+.dropdown--mega {
+  position: static;
+}
+
 .dropdown__col {
   display: flex;
   align-items: stretch;
@@ -25,8 +29,7 @@
   transition-timing-function: var(--ifm-transition-timing-default);
 }
 
-.dropdown__container:hover,
-.dropdown__container--show {
+.dropdown--show .dropdown__container {
   opacity: 1;
   visibility: visible;
 }
@@ -51,7 +54,7 @@
   color: var(--ifm-menu-color-active);
 }
 
-.dropdown__menu--mega {
+.dropdown--mega .dropdown__menu {
   visibility: inherit;
   border-radius: 0;
   opacity: 1;
