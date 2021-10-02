@@ -6,17 +6,17 @@ https://blog.iota.org/explaining-the-iota-congestion-control-algorithm/ 19.05.21
 
 Docs:
 
-https://hornet.docs.iota.org/ - Hornet docs
+https://wiki.iota.org/hornet/welcome - Hornet docs
 
-https://bee.docs.iota.org/ - Bee docs
+https://wiki.iota.org/bee/getting_started/getting_started - Bee docs
 
 IOTA 2.0
 
-http://goshimmer.docs.iota.org/ - goshimmer docs
+https://wiki.iota.org/goshimmer/welcome - goshimmer docs
 
-https://goshimmer.docs.iota.org/tutorials/setup.html
+https://wiki.iota.org/goshimmer/tutorials/setup
 
-https://goshimmer.docs.iota.org/application_logic/protocol.html
+https://wiki.iota.org/goshimmer/protocol_specification/overview
 
 Githubs:
 

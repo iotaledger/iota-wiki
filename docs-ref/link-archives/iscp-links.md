@@ -10,7 +10,7 @@ https://blog.iota.org/cartesi-and-iota-partner-to-accelerate-smar-contract-adopt
 
 Docs:
 
-https://iscp.docs.iota.org/welcome.html
+https://wiki.iota.org/wasp/welcome
 
 Github:
 

@@ -24,4 +24,4 @@ https://github.com/iotaledger/identity.rs
 
 DOCS:
 
-https://identity-docs.iota.org/welcome.html
+https://wiki.iota.org/identity.rs/introduction

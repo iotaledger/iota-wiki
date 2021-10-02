@@ -27,7 +27,7 @@ Drop in any other links you think may be helpful to readers such as external pos
 ## Main links
 
 - [github link](https://github.com/iotaledger/identity.rs)
-- [docs link](https://identity-docs.iota.org/)
+- [docs link](https://wiki.iota.org/identity.rs/introduction)
 - [discord link](https://discord.com/channels/397872799483428865/443602228813627392)
 - [X-Team Identity](https://iota-community.github.io/X-Team_IOTA_Identity/)
 - [IOTA Identity: Beta Release](http://blog.iota.org/iota-identity-beta-release/)
