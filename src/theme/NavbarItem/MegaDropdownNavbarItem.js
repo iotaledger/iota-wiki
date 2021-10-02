@@ -10,9 +10,11 @@ import clsx from 'clsx';
 import {
   isSamePath,
   useCollapsible,
+  useThemeConfig,
   Collapsible,
   useLocalPathname,
 } from '@docusaurus/theme-common';
+import useHideableNavbar from '@theme/hooks/useHideableNavbar';
 import { NavLink } from '@theme/NavbarItem/DefaultNavbarItem';
 import NavbarItem from '@theme/NavbarItem';
 import './styles.css';
@@ -99,6 +101,10 @@ function MegaDropdownNavbarItemDesktop({
   const containsActive = containsActiveItems(items, localPathname);
   const dropdownRef = useRef(null);
   const [showDropdown, setShowDropdown] = useState(false);
+  const {
+    navbar: { hideOnScroll },
+  } = useThemeConfig();
+  const { isNavbarVisible } = useHideableNavbar(hideOnScroll);
 
   const itemCursors = items.map(createItemCursor);
 
@@ -145,6 +151,12 @@ function MegaDropdownNavbarItemDesktop({
       setShowDropdown(false);
     }
   };
+
+  useEffect(() => {
+    if (!isNavbarVisible) {
+      setShowDropdown(false);
+    }
+  }, [isNavbarVisible]);
 
   useEffect(() => {
     const handleClickOutside = (event) => {
