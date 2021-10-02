@@ -41,7 +41,7 @@ All operating systems include firewall options. By having a firewall in place, y
 
 To join an IOTA network, you need to run one of the available node software.
 
-For a description of each node software as well as links to guides and tutorials for running them, see [**Node software**](https://wiki.iota.org/docs/participate/support-the-network/node-software).
+For a description of each node software as well as links to guides and tutorials for running them, see [**Node software**](/docs/participate/support-the-network/node-software).
 
 ### Deciding whether to enable remote proof of work
 
