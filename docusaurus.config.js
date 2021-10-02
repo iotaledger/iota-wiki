@@ -56,10 +56,12 @@ module.exports = {
         {
           label: 'Learn',
           to: 'docs/learn/about-iota/an-introduction-to-iota',
+          activeBaseRegex: 'docs/learn/.*',
         },
         {
           label: 'Participate',
           to: 'docs/participate/support-the-network/about-nodes',
+          activeBaseRegex: 'docs/participate/.*',
         },
         {
           label: 'Build',

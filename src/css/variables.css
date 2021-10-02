@@ -40,7 +40,7 @@
   --ifm-global-radius: 0.5rem;
 
   --ifm-heading-color: var(--ifm-color-emphasis-900);
-  --ifm-heading-font-family: "Metropolis Semi Bold", sans-serif;
+  --ifm-heading-font-family: 'Metropolis Semi Bold', sans-serif;
   --ifm-heading-font-weight: var(--ifm-font-weight-normal);
 
   --ifm-hero-background-color: var(--ifm-color-emphasis-100);

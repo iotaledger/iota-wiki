@@ -1,36 +1,36 @@
 # IOTA wiki Kick-Off Discussion
 
-
 **Location**: Discord #X-Team Voice Channel
-**Date**: Friday, 21-05-21 - 09:00 (CET) 
+**Date**: Friday, 21-05-21 - 09:00 (CET)
 
 ## Info
+
 The general Consensus among the community, IF, and X-Team members is that a central point of reference that can guide people to the information they require will benefit the entire community and eco-system as a whole.
 
 A rough proposal has been drafted up and will be discussed to establish a course of action to move forward with a potential project outline for the wiki.
 
-
 ## Outline
+
 - Intro
 - Discussion topics
 - Open Discussion
 
 ## Attendees
+
 - adamski
 - dr.electron
 - jvdhout
 - davinki
 - phylo
 
-
 ## Agenda
+
 - Outline a structured content proposal
 - Determine the most suitable development approach
 - Prepare a suggested administration hierarchy
 - Proposed content sources and editorial management
 - Outline possible requirements from X-Teams and IF
 - Discuss community user interaction levels
-
 
 ## Open Discussion
 
@@ -68,7 +68,6 @@ Do we need it? Will people commit? Will the community publicise it?
 What is currently missing?
 A central entry point to access everything about IOTA - this is what we will build, bringing everything into one place.
 
-
 ## Summary
 
 The meeting concluded on the understanding that an IOTA wiki is a required initiative to help establish an easy point of reference as an entry into information and further reading about the IOTA eco-system. To help establish marketing potential, as well as giving an easy linking system to the various documentation, repos, blogs, and websites that exist.
@@ -86,10 +85,9 @@ Investigate wiki.js, docusarus, or alternatives as possible starting tools for d
 - [docusaurus](https://docusaurus.io/docs/markdown-features)
 - [markdown editing tools](https://code.visualstudio.com/docs/languages/markdown)
 - [wiki.js](https://js.wiki)
-- [iota on wikipaedia](https://en.wikipedia.org/wiki/IOTA_(technology))
-- [all in one thread reddit](https://www.reddit.com/r/Iota/comments/md7mt7/iota_allinone_thread/) 
+- [iota on wikipaedia](<https://en.wikipedia.org/wiki/IOTA_(technology)>)
+- [all in one thread reddit](https://www.reddit.com/r/Iota/comments/md7mt7/iota_allinone_thread/)
 - [polkadot wiki](https://wiki.polkadot.network/)
-
 
 ### Feedback
 
