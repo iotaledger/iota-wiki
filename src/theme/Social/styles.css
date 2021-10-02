@@ -2,6 +2,16 @@
   display: flex;
 }
 
+.social__font {
+  color: var(--ifm-color-gray-0);
+  font-family: 'socials_font' !important;
+}
+
+.social__icon {
+  font-size: larger;
+  margin-right: 0.5rem;
+}
+
 .social__link {
   transition: background-color var(--ifm-transition-slow)
     var(--ifm-transition-timing-default);
@@ -13,11 +23,6 @@
 
 .social__link:hover {
   background-color: var(--ifm-color-primary) !important;
-}
-
-.social__image {
-  display: block;
-  width: 1.25rem;
 }
 
 .social__title {
