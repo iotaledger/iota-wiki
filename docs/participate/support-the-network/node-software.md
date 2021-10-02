@@ -20,11 +20,11 @@ The Hornet Software will be further developed to run in the upcoming decentraliz
 
 The full documentation for Hornet can be found here:
 
-- [Hornet Documentation](https://hornet.docs.iota.org/)
+- [Hornet Documentation](/hornet/welcome)
 
 The source code of the software can be found here:
 
-- [Hornet GitHub](https://github.com/iotaledger/hornet)
+- [Hornet GitHub](https://github.com/gohornet/hornet)
 
 ### Hornet Installation guides:
 
@@ -57,7 +57,7 @@ Bee will also be further developed to be a reference implementation in the upcom
 
 The full documentation for BEE can be found here:
 
-- [BEE Documentation](https://bee.docs.iota.org/)
+- [BEE Documentation](/bee/getting_started/getting_started)
 
 The source code of the software can be found here:
 
@@ -67,7 +67,7 @@ The source code of the software can be found here:
 
 Standard installation following the Bee Documentation:
 
-- [Set up a BEE Node](https://bee.docs.iota.org/setup_a_node)
+- [Set up a BEE Node](/bee/setup_a_node)
 
 ## GoShimmer
 
@@ -81,7 +81,7 @@ GoShimmer will not be developed as an upcoming Mainnet node Software.
 
 The full documentation for GoShimmer can be found here:
 
-- [GoShimmer Documentation](https://goshimmer.docs.iota.org/)
+- [GoShimmer Documentation](/goshimmer/welcome)
 
 The source code of the software can be found here:
 
@@ -91,7 +91,7 @@ The source code of the software can be found here:
 
 Standard installation following the Documentation:
 
-- [GoShimmer Node Setup](https://goshimmer.docs.iota.org/docs/tutorials/setup)
+- [GoShimmer Node Setup](/goshimmer/tutorials/setup)
 
 ### GoShimmer community tutorials:
 

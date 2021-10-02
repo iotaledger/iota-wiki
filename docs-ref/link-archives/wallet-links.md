@@ -12,7 +12,7 @@ https://firefly.iota.org/
 
 Wallet Docs:
 
-https://wallet-lib.docs.iota.org/welcome.html
+https://wiki.iota.org/wallet.rs/welcome
 
 Github:
 

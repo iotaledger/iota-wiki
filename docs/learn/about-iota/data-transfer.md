@@ -154,9 +154,9 @@ Below is a table of the currently specified core payloads with a link to their s
 
 | Payload Name                                                                                     | Type Value |
 | ------------------------------------------------------------------------------------------------ | ---------- |
-| [Signed Transaction](https://wallet-lib.docs.iota.org/specs/index.html#signedtransactionpayload) | 0          |
-| [Milestone Payload](https://github.com/jakubcech/protocol-rfcs/tree/jakubcech-milestonepayload)  | 1          |
-| [Indexation Payload](https://wallet-lib.docs.iota.org/specs/index.html#indexationpayload)        | 2          |
+| [Transaction Payload](https://github.com/luca-moser/protocol-rfcs/blob/signed-tx-payload/text/0000-transaction-payload/0000-transaction-payload.md) | 0          |
+| [Milestone Payload](https://github.com/jakubcech/protocol-rfcs/blob/jakubcech-milestonepayload/text/0019-milestone-payload/0019-milestone-payload.md)  | 1          |
+| [Indexation Payload](https://github.com/GalRogozinski/protocol-rfcs/blob/message/text/0017-message/0017-message.md#indexation-payload)        | 2          |
 
 A message containing only an **indexation payload** (Data) can be sent without a signature. It can hold any data the user wants to send, as long as it is parsable and follows the required syntax and size limit.
 
