@@ -62,7 +62,7 @@ function SocialLink({ title, icon, url, backgroundColor }) {
       href={url}
     >
       <div className='social__font social__icon'>{icon}</div>
-      <div className='social__font social__title'>{title}</div>
+      <div className='social__title'>{title}</div>
     </a>
   );
 }
