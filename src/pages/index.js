@@ -40,11 +40,13 @@ function Action({ title, image, link, description }) {
   return (
     <div className='col margin-vert--md'>
       <div className='card card--full-height' onClick={handleClick}>
-        <div className='card__image'>
-          <img alt={title} src={useBaseUrl(image)} />
-        </div>
+        {image && (
+          <div className='card__image'>
+            <img alt={title} src={useBaseUrl(image)} />
+          </div>
+        )}
         <div className='card__body padding-horiz--lg padding-bottom--lg'>
-          <h3>{title}</h3>
+          {title && <h3>{title}</h3>}
           {description}
         </div>
       </div>
