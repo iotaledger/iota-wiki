@@ -18,6 +18,7 @@ function NavLink({
   to,
   href,
   label,
+  mobile,
   sublabel,
   icon,
   activeClassName = 'navbar__link--active',
@@ -58,7 +59,7 @@ function NavLink({
       {...props}
     >
       <div className='link'>
-        {icon && <div className='link__icon'>{icon}</div>}
+        {!mobile && icon && <div className='link__icon'>{icon}</div>}
         <div className='link__body'>
           <div className='link__label'>
             {isExternalLink ? (
@@ -75,7 +76,9 @@ function NavLink({
               label
             )}
           </div>
-          {sublabel && <div className='link__sublabel'>{sublabel}</div>}
+          {!mobile && sublabel && (
+            <div className='link__sublabel'>{sublabel}</div>
+          )}
         </div>
       </div>
     </Link>
@@ -87,6 +90,7 @@ NavLink.propTypes = {
   activeBaseRegex: PropTypes.string,
   to: PropTypes.string,
   href: PropTypes.string,
+  mobile: PropTypes.bool,
   label: PropTypes.string,
   sublabel: PropTypes.string,
   icon: PropTypes.string,
@@ -96,6 +100,7 @@ NavLink.propTypes = {
 
 NavLink.defaultProps = {
   activeClassName: 'navbar__link--active',
+  mobile: false,
 };
 
 export { NavLink };
@@ -137,7 +142,11 @@ function DefaultNavbarItemMobile({ className, ...props }) {
 
   return (
     <li className='menu__list-item'>
-      <NavLink className={clsx('menu__link', className)} {...props} />
+      <NavLink
+        mobile={true}
+        className={clsx('menu__link', className)}
+        {...props}
+      />
     </li>
   );
 }
