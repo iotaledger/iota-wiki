@@ -654,7 +654,7 @@ With W-OTS, every time a signature is signed to spend tokens from a particular a
 
 So after the Chrysalis update, we are using the Ed25519, based on the EdDSA, scheme instead of W-OTS. The advantage is that the new scheme addresses all of the issues that W-OTS originally had, where Ed25519 verifies both single-signature and batch verification (taking care of the remaining tokens) very quickly, as well as faster key generation and smaller signatures (very secure).
 
-https://chrysalis.docs.iota.org/faq.html
+[Chrysalis FAQ](/chrysalis-docs/faq)
 
 ### Why is it not possible to migrate some of my tokens?
 

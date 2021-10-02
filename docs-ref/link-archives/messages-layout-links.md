@@ -2,12 +2,8 @@ IF Publications:
 
 Docs:
 
-https://client-lib.docs.iota.org/specs/index.html#message
+https://wiki.iota.org/iota.rs/specs#message
 
 IOTA 2.0
 
-https://goshimmer.docs.iota.org/concepts/layers.html#message
-
-https://goshimmer.docs.iota.org/apis/communication.html
-
-https://goshimmer.docs.iota.org/apis/value.html
+https://wiki.iota.org/goshimmer/apis/communication

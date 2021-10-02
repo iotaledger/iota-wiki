@@ -10,6 +10,6 @@ https://blog.iota.org/pollen-testnet-v0-5-5-release-notes/ 01.04.21 released in 
 
 Docs:
 
-https://goshimmer.docs.iota.org/specification/001-mana.html
+https://wiki.iota.org/goshimmer/protocol_specification/components/mana
 
-https://goshimmer.docs.iota.org/apis/mana.html
+https://wiki.iota.org/goshimmer/apis/mana

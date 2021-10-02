@@ -10,7 +10,7 @@ https://github.com/iotaledger/stronghold.rs/raw/dev/docs/meta/Audit.pdf - 28.04.
 
 Docs:
 
-https://stronghold.docs.iota.org/
+https://wiki.iota.org/stronghold.rs/welcome
 
 Github:
 
