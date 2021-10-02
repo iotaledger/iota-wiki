@@ -5,7 +5,7 @@ import Layout from '@theme/Layout';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-const actions = [
+const cards = [
   {
     title: 'Learn',
     image: 'img/learn.svg',
@@ -29,7 +29,7 @@ const actions = [
   },
 ];
 
-function Action({ title, image, link, description }) {
+function Card({ title, image, link, description }) {
   let history = useHistory();
 
   const handleClick = (e) => {
@@ -54,7 +54,7 @@ function Action({ title, image, link, description }) {
   );
 }
 
-Action.propTypes = {
+Card.propTypes = {
   title: PropTypes.string,
   image: PropTypes.string,
   link: PropTypes.string,
@@ -72,10 +72,10 @@ export default function Home() {
             <h1 className='hero__title margin--none'>{siteConfig.title}</h1>
             <p className='hero__subtitle margin--none'>{siteConfig.tagline}</p>
           </div>
-          {actions && (
+          {cards && (
             <div className='row'>
-              {actions.map((props, idx) => (
-                <Action key={idx} {...props} />
+              {cards.map((props, idx) => (
+                <Card key={idx} {...props} />
               ))}
             </div>
           )}
