@@ -71,6 +71,11 @@
                 "link": "https://github.com/Critical94"
             },
             {
+                "type": "Twitter",
+                "icon": "\ue906",
+                "link": "https://twitter.com/KilianCrit"
+            },
+            {
                 "type": "Discord",
                 "icon": "\ue900",
                 "link": "https://discordapp.com/users/476898087693058058/"
