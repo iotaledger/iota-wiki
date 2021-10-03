@@ -91,12 +91,6 @@ module.exports = {
     },
     {
       type: 'category',
-      label: 'Partnerships',
-      collapsed: true,
-      items: ['participate/partnerships/iota-partnerships'],
-    },
-    {
-      type: 'category',
       label: 'Funding',
       collapsed: true,
       items: [
