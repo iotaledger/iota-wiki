@@ -1,6 +1,8 @@
 ---
 title: Node Software
-description: IOTA networks consist of interconnected nodes that run the same node software. We introduce the different available types and provide guides that will help in setting those nodes up.
+description: IOTA networks consist of interconnected nodes that run the same
+  node software. We introduce the different available types and provide guides
+  that will help in setting those nodes up.
 ---
 
 # Node Software
@@ -13,8 +15,7 @@ HORNET is a powerful, community-driven IOTA node software written in Go. It is e
 
 By running your own node you have the following benefits:
 
-You have direct access to an IOTA network instead of having to connect to and trust someone else's node
-You help the IOTA network to become more distributed and more resilient by validating messages and value transactions in the IOTA network.
+You have direct access to an IOTA network instead of having to connect to and trust someone else's node You help the IOTA network to become more distributed and more resilient by validating messages and value transactions in the IOTA network.
 
 The Hornet Software will be further developed to run in the upcoming decentralized IOTA 2.0 network.
 
@@ -36,14 +37,20 @@ Standard installation following the Hornet Documentation:
 
 Guides and easy one - line installations scripts created by IOTA community members:
 
-- Nuriels playbook installation using Docker: [Nuriel's playbook](https://github.com/nuriel77/hornet-playbook)
-- DeMicheles one-liner using Nuriels Playbook: [Install Hornet](https://github.com/demichele/install-hornet-1.5)
-- Step-by-Step guide for Windows users by Phylo:
-  - [Hornet node Installation guide Part 1](https://phyloiota.medium.com/iota-hornet-node-installation-81747de28338)
-  - [Hornet node Installation guide Part 2](https://phyloiota.medium.com/iota-hornet-node-installation-2-8f2639e04d1d)
-- Tanglebay Swarm Hornet Node installer: [Tanglebay Swarmnode](https://tanglebay.com/swarm/)
-- Install Hornet Mainnet Node using `apt`: [Svenger 87 Alphanet Tutorial](https://github.com/svenger87/hornet-alphanet-tutorial)
-- Run Hornet on a Raspberry Pi: [Raspihive Hornet](https://docs.raspihive.org/docs/install#45-first-start-of-raspihive-and-installation-of-the-hornet-node)
+-   Nuriels playbook installation using Docker: [Nuriel's playbook](https://github.com/nuriel77/hornet-playbook)
+
+-   DeMicheles one-liner using Nuriels Playbook: [Install Hornet](https://github.com/demichele/install-hornet-1.5)
+
+-   Step-by-Step guide for Windows users by Phylo:
+
+    - [Hornet node Installation guide Part 1](https://phyloiota.medium.com/iota-hornet-node-installation-81747de28338)
+    - [Hornet node Installation guide Part 2](https://phyloiota.medium.com/iota-hornet-node-installation-2-8f2639e04d1d)
+
+-   Tanglebay Swarm Hornet Node installer: [Tanglebay Swarmnode](https://tanglebay.com/swarm/)
+
+-   Install Hornet Mainnet Node using `apt`: [Svenger 87 Alphanet Tutorial](https://github.com/svenger87/hornet-alphanet-tutorial)
+
+-   Run Hornet on a Raspberry Pi: [Raspihive Hornet](https://docs.raspihive.org/docs/install#45-first-start-of-raspihive-and-installation-of-the-hornet-node)
 
 ## BEE
 
@@ -121,3 +128,7 @@ Wasp is still a work in progress and is purely for development and testing purpo
 The full documentation for WASP Smart Contract Nodes can be found here:
 
 - [WASP Documentation/GitHub](https://github.com/iotaledger/wasp)
+
+Thanks to the great team of Zignartech, a docker image for a full installation of a wasp node with the corresponding goshimmer node is available, so you will have a super easy setup for your IOTA smartcontract development and tests:
+
+- [Wasp / Goshimmer Docker image](https://hub.docker.com/r/zignartech/wasp)
