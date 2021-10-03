@@ -30,8 +30,12 @@
   font-family: 'Metropolis Semi Bold', sans-serif;
 }
 
-.card {
+.card--pointer {
   cursor: pointer;
+}
+
+.card-radius--md {
+  border-radius: 60px;
 }
 
 .card__image {

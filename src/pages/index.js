@@ -16,7 +16,7 @@ function Card({ title, image, link, description }) {
 
   return (
     <div className='col margin-vert--md'>
-      <div className='card card--full-height' onClick={handleClick}>
+      <div className='card card--full-height card-radius--md card--pointer' onClick={handleClick}>
         {image && (
           <div className='card__image'>
             <img alt={title} src={useBaseUrl(image)} />

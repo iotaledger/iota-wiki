@@ -1,0 +1,54 @@
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import Card from '/src/theme/Card';
+
+# IOTA Documentation
+
+Hi!
+
+Welcome to the IOTA documentation. This is the entry point for developers. 
+IOTA is on its way to decentralization with IOTA 2.0, so below we try to show you
+what software and libraries you can use in the two different versions of IOTA.  
+IOTA 1.5 - The current main network  
+IOTA 2.0 - The future version without the coordinator   
+
+<Tabs>
+    <TabItem value="iota_1.5" label="IOTA 1.5" default>
+        <h1 className="margin-vert--md">General docs and node software</h1>
+        <div class="row">
+            <Card title="Chrysalis" link="chrysalis-docs/welcome" description="Mainnet documentation" icon="&#xe901;" />
+            <Card title="Hornet" link="/hornet/welcome" description="IOTA node written in Go" icon="&#xe904;" />
+            <Card title="Bee" link="/bee/getting_started/getting_started" description="IOTA node written in Rust" icon="&#xe900;" />
+        </div>
+        <h1 className="margin-vert--md">Libraries</h1>
+        <div className="row">
+            <Card title="Core" link="/iota.rs/welcome" description="IOTA core functionality" icon="&#xe907;" />
+            <Card title="Wallet" link="/wallet.rs/welcome" description="Build IOTA wallets" icon="&#xe90a;" />
+            <Card title="Stronghold" link="/stronghold.rs/welcome" description="Handle secrets securely" icon="&#xe909;" />
+            <Card title="Identity" link="/identity.rs/introduction" description="Identity framework" icon="&#xe905;" />
+            <Card title="Streams" link="/streams/welcome" description="Share data securely" icon="&#xe908;" />
+        </div>
+    </TabItem>
+    <TabItem value="iota_2.0" label="IOTA 2.0">
+        <div class="admonition admonition-caution alert alert--warning">
+            <div class="admonition-heading">
+                <h5>
+                    <span class="admonition-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.893 1.5c-.183-.31-.52-.5-.887-.5s-.703.19-.886.5L.138 13.499a.98.98 0 0 0 0 1.001c.193.31.53.501.886.501h13.964c.367 0 .704-.19.877-.5a1.03 1.03 0 0 0 .01-1.002L8.893 1.5zm.133 11.497H6.987v-2.003h2.039v2.003zm0-3.004H6.987V5.987h2.039v4.006z"></path></svg></span>
+                    caution
+                </h5>
+            </div>
+            <div class="admonition-content">
+                <p>IOTA 2.0 runs on its own development network. Everything is highly expermintal and suggest to change. </p>
+                <p>Also tokens in IOTA 2.0 DevNet don't have value.</p>
+            </div>
+        </div>
+        <h1 className="margin-vert--md">Node Software and IOTA 2.0 Specifications</h1>
+        <div class="row">
+            <Card title="GoShimmer" link="/goshimmer/welcome" description="IOTA 2.0 node" icon="&#xe903;" />
+            <Card title="Coordicide Specs" link="/IOTA-2.0-Research-Specifications/Preface" description="Decentralizing IOTA" icon="&#xe906;" />
+        </div>
+        <h1 className="margin-vert--md">IOTA Smart Contracts Protocol (ISCP)</h1>
+        <div class="row">
+            <Card title="Wasp" link="/goshimmer/welcome" description="Smart contract node" icon="&#xe90b;" />                        </div>
+    </TabItem>
+</Tabs>

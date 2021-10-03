@@ -225,6 +225,7 @@ module.exports = {
   ],
 
   build: [
+    'build/welcome',
     {
       type: 'category',
       label: 'Getting Started',

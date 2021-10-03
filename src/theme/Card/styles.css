@@ -1,0 +1,7 @@
+.icon {
+    font-family: 'iota_icons_font' !important;
+    font-size: 5rem;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}

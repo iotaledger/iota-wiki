@@ -63,7 +63,7 @@ module.exports = {
       {
         title: 'Build',
         image: 'img/build.svg',
-        link: 'docs/build/getting-started/architecture',
+        link: 'docs/build/welcome',
         description:
           'Access documentation and guides to build with IOTA in Rust, C, Go, Java or Python.',
       },
@@ -104,9 +104,9 @@ module.exports = {
                 {
                   label: 'Getting Started',
                   sublabel: 'IOTA development basics',
-                  to: 'docs/build/getting-started/architecture',
+                  to: 'docs/build/welcome',
                   icon: '\ue902',
-                  activeBaseRegex: 'docs/build/getting-started/.*',
+                  activeBaseRegex: 'docs/build/.*',
                 },
               ],
             },
