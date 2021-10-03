@@ -8,7 +8,7 @@ export default function Card({ title, link, description, icon }) {
     };
 
     return (
-        <div class="card card__pointer margin-horiz--md margin-vert--md shadow--md" onClick={handleClick}>
+        <div class="card card--pointer margin-horiz--md margin-vert--md shadow--md" onClick={handleClick}>
             <div class="card__header">
                 <h3>{title}</h3>
             </div>
