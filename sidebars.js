@@ -228,16 +228,6 @@ module.exports = {
     'build/welcome',
     {
       type: 'category',
-      label: 'Getting Started',
-      collapsed: false,
-      items: [
-        'build/getting-started/architecture',
-        'build/getting-started/environment',
-        'build/getting-started/send-a-first-message',
-      ],
-    },
-    {
-      type: 'category',
       label: 'Fundamentals',
       collapsed: true,
       items: [
