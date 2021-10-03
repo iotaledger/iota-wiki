@@ -11,7 +11,6 @@ module.exports = {
         'learn/about-iota/why-is-iota-feeless',
         'learn/about-iota/roadmap-to-decentralization',
         'learn/about-iota/messages',
-        'learn/about-iota/security',
         'learn/about-iota/energy-efficiency',
       ],
     },
@@ -20,11 +19,7 @@ module.exports = {
       label: 'IOTA Token',
       collapsed: true,
       items: [
-        'learn/iota-token/overview',
         'learn/iota-token/buying-iota',
-        'learn/iota-token/exchanges',
-        'learn/iota-token/transfering-tokens',
-        'learn/iota-token/token-security',
       ],
     },
     {
@@ -68,7 +63,6 @@ module.exports = {
       items: [
         'learn/research/research-outline',
         'learn/research/research-papers',
-        'learn/research/grants',
       ],
     },
   ],
@@ -82,7 +76,6 @@ module.exports = {
         'participate/support-the-network/about-nodes',
         'participate/support-the-network/become-a-node-operator',
         'participate/support-the-network/node-software',
-        'participate/support-the-network/create-an-application',
       ],
     },
     {
