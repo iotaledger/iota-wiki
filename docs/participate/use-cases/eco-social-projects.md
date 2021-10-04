@@ -1,6 +1,6 @@
 ---
 title: Eco-Social-Projects
-description: My document description from SEO
+description: IOTA is deeply commited to improve the life of humans and protect the natural ressources and environments on our planet
 ---
 
 # Environmental and Humanitarian impact
