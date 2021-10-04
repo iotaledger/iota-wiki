@@ -16,5 +16,7 @@ These assets may exist on Layer 1 (the IOTA mainnet, as customized IOTA tokens),
 
 The process of creating either type of digital asset is known as **minting.**
 
+[![tokenized-assets](img/learn/layer2-tokenized-assets.png)](img/learn/layer2-tokenized-assets.png)
+
 _Notes:_\
 _The terms asset and token may be used interchangeably (i.e. native asset, native token, smart asset, smart token). For example, if you are referring to a piece of artwork, you would probably call it an asset, but if you are referring to WenCoin, you would probably call it a token._
