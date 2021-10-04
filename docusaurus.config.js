@@ -45,6 +45,29 @@ module.exports = {
       matomoUrl: 'https://matomo.antonionardella.it/',
       siteId: '6',
     },
+    cards: [
+      {
+        title: 'Learn',
+        image: 'img/learn.svg',
+        link: 'docs/learn/about-iota/an-introduction-to-iota',
+        description:
+          'Learn about IOTA, the Tangle, its features, industry applications, network and more.',
+      },
+      {
+        title: 'Participate',
+        image: 'img/participate.svg',
+        link: 'docs/participate/support-the-network/about-nodes',
+        description:
+          'Join the network and start using solutions built on top of the Tangle.',
+      },
+      {
+        title: 'Build',
+        image: 'img/build.svg',
+        link: 'docs/build/getting-started/architecture',
+        description:
+          'Access documentation and guides to build with IOTA in Rust, C, Go, Java or Python.',
+      },
+    ],
     navbar: {
       hideOnScroll: true,
       logo: {
@@ -56,10 +79,12 @@ module.exports = {
         {
           label: 'Learn',
           to: 'docs/learn/about-iota/an-introduction-to-iota',
+          activeBaseRegex: 'docs/learn/.*',
         },
         {
           label: 'Participate',
           to: 'docs/participate/support-the-network/about-nodes',
+          activeBaseRegex: 'docs/participate/.*',
         },
         {
           label: 'Build',
@@ -302,6 +327,56 @@ module.exports = {
       },
       copyright: `© ${new Date().getFullYear()} IOTA Wiki. Built with Docusaurus.`,
     },
+    socials: [
+      {
+        title: 'Youtube',
+        icon: '\ue907',
+        url: 'https://www.youtube.com/c/iotafoundation',
+        backgroundColor: 'var(--ifm-color-gray-900)',
+      },
+      {
+        title: 'GitHub',
+        icon: '\ue902',
+        url: 'https://www.github.com/iotaledger/',
+        backgroundColor: '#2C3850',
+      },
+      {
+        title: 'Discord',
+        icon: '\ue900',
+        url: 'https://discord.iota.org/',
+        backgroundColor: '#4B576F',
+      },
+      {
+        title: 'Twitter',
+        icon: '\ue906',
+        url: 'https://www.twitter.com/iota/',
+        backgroundColor: '#6A768E',
+      },
+      {
+        title: 'Reddit',
+        icon: '\ue905',
+        url: 'https://www.reddit.com/r/iota/',
+        backgroundColor: '#7D89A1',
+      },
+      {
+        title: 'Linkedin',
+        icon: '\ue904',
+        url: 'https://www.linkedin.com/company/iotafoundation/',
+        backgroundColor: '#8995AD',
+      },
+      {
+        title: 'Instagram',
+        icon: '\ue903',
+        url: 'https://www.instagram.com/iotafoundation/',
+        backgroundColor: '#99A5BD',
+      },
+      {
+        title: 'Facebook',
+        icon: '\ue901',
+        url: 'https://www.facebook.com/TheIOTAFoundation/',
+        backgroundColor: '#BAC6DE',
+      },
+    ],
     colorMode: {
       defaultMode: 'dark',
       // Dark/light switch icon options

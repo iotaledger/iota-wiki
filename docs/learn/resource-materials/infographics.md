@@ -6,7 +6,6 @@ description: A picture says sometimes more than a thousand words... Downloadable
 
 # Infographics
 
-
 If You feel you can participate in this topic, please use the editor button below and start contributing.
 
 ### Thanks a lot

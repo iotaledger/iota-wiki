@@ -8,7 +8,10 @@ Text fonts
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url(https://webassets.iota.org/fonts/metropolis/Metropolis-Regular.woff2?v=11) format("woff2"), url(https://webassets.iota.org/fonts/metropolis/Metropolis-Regular.woff?v=11) format("woff")
+  src: url(https://webassets.iota.org/fonts/metropolis/Metropolis-Regular.woff2?v=11)
+      format('woff2'),
+    url(https://webassets.iota.org/fonts/metropolis/Metropolis-Regular.woff?v=11)
+      format('woff');
 }
 
 @font-face {
@@ -16,7 +19,10 @@ Text fonts
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url(https://webassets.iota.org/fonts/metropolis/Metropolis-Light.woff2?v=11) format("woff2"), url(https://webassets.iota.org/fonts/metropolis/Metropolis-Light.woff?v=11) format("woff")
+  src: url(https://webassets.iota.org/fonts/metropolis/Metropolis-Light.woff2?v=11)
+      format('woff2'),
+    url(https://webassets.iota.org/fonts/metropolis/Metropolis-Light.woff?v=11)
+      format('woff');
 }
 
 @font-face {
@@ -24,7 +30,10 @@ Text fonts
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url(https://webassets.iota.org/fonts/metropolis/Metropolis-Medium.woff2?v=11) format("woff2"), url(https://webassets.iota.org/fonts/metropolis/Metropolis-Medium.woff?v=11) format("woff")
+  src: url(https://webassets.iota.org/fonts/metropolis/Metropolis-Medium.woff2?v=11)
+      format('woff2'),
+    url(https://webassets.iota.org/fonts/metropolis/Metropolis-Medium.woff?v=11)
+      format('woff');
 }
 
 @font-face {
@@ -32,7 +41,10 @@ Text fonts
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url(https://webassets.iota.org/fonts/metropolis/Metropolis-SemiBold.woff2?v=11) format("woff2"), url(https://webassets.iota.org/fonts/metropolis/Metropolis-SemiBold.woff?v=11) format("woff")
+  src: url(https://webassets.iota.org/fonts/metropolis/Metropolis-SemiBold.woff2?v=11)
+      format('woff2'),
+    url(https://webassets.iota.org/fonts/metropolis/Metropolis-SemiBold.woff?v=11)
+      format('woff');
 }
 
 @font-face {
@@ -40,7 +52,10 @@ Text fonts
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url(https://webassets.iota.org/fonts/metropolis/Metropolis-Bold.woff2?v=11) format("woff2"), url(https://webassets.iota.org/fonts/metropolis/Metropolis-Bold.woff?v=11) format("woff")
+  src: url(https://webassets.iota.org/fonts/metropolis/Metropolis-Bold.woff2?v=11)
+      format('woff2'),
+    url(https://webassets.iota.org/fonts/metropolis/Metropolis-Bold.woff?v=11)
+      format('woff');
 }
 
 /**

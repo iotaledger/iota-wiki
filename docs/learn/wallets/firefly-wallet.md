@@ -8,7 +8,6 @@ description: The IOTA Firefly Wallet sets a new standard for Software Wallets in
 
 ## Table of contents
 
-
 - [General Overview and Introduction](#general-overview-and-introduction)
 - [Firefly Token Migration](#firefly-token-migration)
 - Firefly User Guide
@@ -23,7 +22,6 @@ description: The IOTA Firefly Wallet sets a new standard for Software Wallets in
   - [Troubleshooting](#troubleshooting)
   - [Migration](#migration)
   - [Spent Addresses](#spent-addresses)
-
 
 ## General Overview and Introduction
 
@@ -174,7 +172,6 @@ The following information about the transaction is displayed:
 - Amount of IOTA sent and current value in chosen Profile currency
 
 **Two different charts**
-
 
 - **Wallet Value** and **Wallet activity** also provide a graphic overview of the activities in this wallet.
 
@@ -657,7 +654,7 @@ With W-OTS, every time a signature is signed to spend tokens from a particular a
 
 So after the Chrysalis update, we are using the Ed25519, based on the EdDSA, scheme instead of W-OTS. The advantage is that the new scheme addresses all of the issues that W-OTS originally had, where Ed25519 verifies both single-signature and batch verification (taking care of the remaining tokens) very quickly, as well as faster key generation and smaller signatures (very secure).
 
-https://chrysalis.docs.iota.org/faq.html
+[Chrysalis FAQ](/chrysalis-docs/faq)
 
 ### Why is it not possible to migrate some of my tokens?
 

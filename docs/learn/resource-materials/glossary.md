@@ -8,11 +8,11 @@ description: Glossary of all specialized names and phrases used in the IOTA
 
 ## A
 
-- **Address Checksum:** Checksum validation is a way to determine if an address is valid and does not contain typos. 
+- **Address Checksum:** Checksum validation is a way to determine if an address is valid and does not contain typos.
 - **Adaptive PoW** (In development for IOTA 1.5): With this feature, the coordinator can issue a milestone and simultaneously set the future PoW score. This means that if the network is not fully utilized, the PoW will be reduced to the point where it can be executed by microdevices. Accordingly, the coordinator can also raise the PoW difficulty in case of high utilization and thus make an attack very expensive.
-- **Auto peering:** A mechanism that allows nodes to automatically select their neighbors without manual intervention by the node operator. 
-- **API(Application Programming Interfaces):** The way for applications to interact with the Tangle. 
-- **Atomic Transactions:** Instead of the bundle construct, IOTA 1.5 uses simpler Atomic Transactions. An Atomic Transaction includes everything related to a transaction in a single message instead of splitting  it up (Bundles). This reduces network overhead and signature verification load, improves spam protection and rate control, and shortens the length of Merkle proofs (for future sharding). It also reduces implementation overhead and increases maintainability of the core node software.
+- **Auto peering:** A mechanism that allows nodes to automatically select their neighbors without manual intervention by the node operator.
+- **API(Application Programming Interfaces):** The way for applications to interact with the Tangle.
+- **Atomic Transactions:** Instead of the bundle construct, IOTA 1.5 uses simpler Atomic Transactions. An Atomic Transaction includes everything related to a transaction in a single message instead of splitting it up (Bundles). This reduces network overhead and signature verification load, improves spam protection and rate control, and shortens the length of Merkle proofs (for future sharding). It also reduces implementation overhead and increases maintainability of the core node software.
 - **Application Layer (IOTA 2.0):** The top layer of the 3-layer communication protocol. The IOTA protocol allows a variety of external applications to run on the Message Tangle. Anyone can design an application and users can decide which applications to run on their nodes. These applications will all use the communication layer to transmit and store data.
 - **Approval Switch (IOTA 2.0):** When a message is selected as a parent, we can choose from the strong or weak tip pool. This mechanism is called Approval Switch.
 - **Approval Weight (IOTA 2.0):** A message gets Mana-weight by approving the message directly or indirectly. However, only strong parents can pass on the mana weight to the past, while weak parents receive the weight from their weak children but do not pass it on.
@@ -21,29 +21,28 @@ description: Glossary of all specialized names and phrases used in the IOTA
 ## B
 
 - **Balance:** Funds on the addresses (account). These are always available and cannot be deleted or forgotten.
-- **Blockchain Bottleneck:** The more transactions are issued, the more the block rate and size become a bottleneck in the system. It is no longer possible to capture all incoming transactions in a prompt manner. Attempts to speed up block rates result in more orphaned blocks (blocks are left behind) and reduce the security of the blockchain. 
+- **Blockchain Bottleneck:** The more transactions are issued, the more the block rate and size become a bottleneck in the system. It is no longer possible to capture all incoming transactions in a prompt manner. Attempts to speed up block rates result in more orphaned blocks (blocks are left behind) and reduce the security of the blockchain.
 - **Branch (IOTA 2.0):** A version of the ledger that temporarily coexists with other versions, each spawned by conflicting transactions.
 - **Bee:** Node software developed by the IOTA foundation using the Rust programming language.
 - **Bootstrapping attack:** An attack in which a node downloads malicious snapshot files, including invalid transactions and balances.
 
 ## C
 
-- **Curl:** This is one of the hash functions currently in use. It is based on the “sponge” construction of the Keccak inventors (SHA-3). 
+- **Curl:** This is one of the hash functions currently in use. It is based on the “sponge” construction of the Keccak inventors (SHA-3).
 - **Confirmed:** Confirmed transactions. In IOTA 1.5, messages in the Tangle are considered for confirmation only when they are directly or indirectly referenced by a milestone that the Coordinator node has validated.
-To allow the nodes to recognize the milestones, all nodes that participate in the same IOTA network are configured with the Merkle root address of a Coordinator that they trust to confirm messages. Using this address, nodes can validate the signatures in milestones to verify whether the trusted Coordinator signs them.
-To make sure that new messages always have a chance of being confirmed, the Coordinator sends indexed milestones at regular intervals. This way, nodes can compare the indexes of their milestones to check whether they are synchronized with the rest of the network.
+  To allow the nodes to recognize the milestones, all nodes that participate in the same IOTA network are configured with the Merkle root address of a Coordinator that they trust to confirm messages. Using this address, nodes can validate the signatures in milestones to verify whether the trusted Coordinator signs them.
+  To make sure that new messages always have a chance of being confirmed, the Coordinator sends indexed milestones at regular intervals. This way, nodes can compare the indexes of their milestones to check whether they are synchronized with the rest of the network.
 - **CTPS:** Confirmed transactions per second.
 - **Cumulative Weight:** A system for valuing transactions. Each additional transaction that references a transaction increases its cumulative weight. When tips are selected, a path through transactions that has a higher cumulative weight is preferred.
 - **ComNet:** The ComNet is a test-only network and is similar to the Testnet except that it is maintained by the IOTA community. The nodes in the ComNet continue to use a coordinator operated by the IOTA community.
 - **Chronicle:** A permanode solution of the IOTA Foundation. It allows to store all transactions reaching a node in a distributed database that is secure and scales well. Chronicle is used to store the Tangle’s unlimited data flow and make it queryable. In other words, permanence allows the entire history of the Tangle to be stored indefinitely and makes that data easily accessible.
-- **Consensus:** Agreement on a specific date or value in distributed multi-agent systems, in the presence of faulty processes. 
+- **Consensus:** Agreement on a specific date or value in distributed multi-agent systems, in the presence of faulty processes.
 - **Coordinator (only up to IOTA 2.0):** A trusted entity, as protection against malicious transactions. The Tangle is not yet a final product, it is still in beta. The network currently relies on a kind of shield, the so-called coordinator. It is open-source and runs on a Hornet node. The COO acts as a centralized, voluntary, and temporary alternative consensus mechanism for the Tangle. To do this, the COO sends honest transactions to the full nodes at regular intervals. These packets contain a signed message with no value, called a milestone. The full nodes in the Tangle consider a transaction as confirmed only if it is approved by a milestone. Important: The coordinator can only confirm transactions, but he cannot bypass the consensus rules. To create, freeze or steal tokens is not possible for him. This fixed rule and the COO address is hardcoded on each full node, so the coordinator’s influence on the tangle is very limited, since the tangle is also constantly monitored by all the other full nodes. > The Coo will be switched off with the IOTA 2.0 upgrade.
 - **Communication Layer (IOTA 2.0):** This layer stores and communicates information. This layer contains the distributed ledger or tangle. The rate control and timestamps are also located in this layer.
 - **Core Object type (IOTA 2.0):** An object type that must be parsed by all nodes. Parsers are computer programs responsible for decomposing and converting an input into a format more suitable for further processing.
-- **Core Application (IOTA 2.0):** Core application that must be executed by all nodes, for example the value transfer application.  
+- **Core Application (IOTA 2.0):** Core application that must be executed by all nodes, for example the value transfer application.
 - **Child (IOTA 2.0):** A transaction that gets referenced by Parents.
 - **Chrysalis:** The name of the IOTA 1.5 network upgrade.
-
 
 ## D
 
@@ -56,7 +55,7 @@ To make sure that new messages always have a chance of being confirmed, the Coor
 - **Double-spending:** Double-spending is a threat to a digital money system, where the same single digital token can be spent more than once. Unlike physical money, a digital token consists of a digital file that can be duplicated or counterfeited.
 - **dRNG (Decentralized Random Number Generator):** This random number generator is required in Fast Probabilistic Consensus (FPC) to make the consensus model more resilient to attacks. In the case of conflicting transactions, the FPC votes on the transactions in question in several rounds. The threshold at which a node changes its mind in this vote is 50% +/- a small random deviation (using dRNG). In order to avoid stalemate or a specific outcome in the voting, this additional random component prevents potentially malicious nodes from influencing the voting process.
 - **Dust Protection (IOTA 1.5):** Someone who wants to harm IOTA could automatically send 1i for years to repeatedly recreated addresses, driving up the ledger’s memory requirements to the point where a full-node would eventually only run on large servers. In Chrysalis if you want to create a microtransaction (<1Mi) you need to activate dust on the receiving address. That will alow you to receive a certain amount of dust. Also, the addresses with Colored Coins have to be tokenized. After the Coordicide, there will be another solution for IOTA 2.0.
-- **Directed Acyclic Graph (DAG):** A directed acyclic graph is DLT structure that consists of edges and vertices that never form a closed loop. The IOTA arcitecture "the Tangle" is a form of directed acyclic graph. 
+- **Directed Acyclic Graph (DAG):** A directed acyclic graph is DLT structure that consists of edges and vertices that never form a closed loop. The IOTA arcitecture "the Tangle" is a form of directed acyclic graph.
 
 ## E
 
@@ -99,7 +98,7 @@ To make sure that new messages always have a chance of being confirmed, the Coor
 
 ## M
 
-- **Merkle Tree:** A Merkle tree is a data structure used in computer science applications. In cryptocurrencies, Merkle trees are used to encode more efficiently and securely. 
+- **Merkle Tree:** A Merkle tree is a data structure used in computer science applications. In cryptocurrencies, Merkle trees are used to encode more efficiently and securely.
 - **Mainnet:** The public usable IOTA network, in which the IOTA tokens are used that are traded on cryptocurrency exchanges.
 - **Milestone (IOTA 1.5):** Milestones are messages that are signed and issued by the coordinator. Their main goal is to help the Tangle grow healthily and guarantee finality. When milestones directly or indirectly approve a transaction in the Tangle, nodes mark the status of that transaction and its entire history as confirmed.
 - **Message:** A message is a core data type that reflects a vertex in the communication layer DAG. It contains the following properties: References to other messages, the sender’s public key, the issuing time of the message, the message sequence number from the node that issued the message, the payload that can be interpreted by higher layers, the nonce that the message uses to satisfy the PoW requirement, a signature that signs all of the above fields. A message is not forwarded until it becomes “solid”, i.e., its history is known to the node. Messages must meet a PoW requirement, which currently is to find a nonce so that the hash of the message’s fields (minus the signature) has a certain number of leading zeros.
@@ -110,9 +109,9 @@ To make sure that new messages always have a chance of being confirmed, the Coor
 
 ## N
 
-- **Nakamoto Consensus:** Named after the creator of Bitcoin, Satoshi Nakamoto, the Nakamoto Consensus describes the replacement of coordination / communication between known agents with a cryptographic puzzle (Proof-of-Work). Completion of the puzzle determines which agent acts next. 
-- **Neighbors:** Network nodes that are directly connected and can exchange messages without intermediate nodes. 
-- **Nodes:** A node is any computer that connects to other nodes in the network via software. In principle, they serve as a connection point for data transfers. The Tangle works with different types of nodes, such as full nodes (Hornet, Bee), permanodes (Chronicle) or smart contract nodes (Wasp). 
+- **Nakamoto Consensus:** Named after the creator of Bitcoin, Satoshi Nakamoto, the Nakamoto Consensus describes the replacement of coordination / communication between known agents with a cryptographic puzzle (Proof-of-Work). Completion of the puzzle determines which agent acts next.
+- **Neighbors:** Network nodes that are directly connected and can exchange messages without intermediate nodes.
+- **Nodes:** A node is any computer that connects to other nodes in the network via software. In principle, they serve as a connection point for data transfers. The Tangle works with different types of nodes, such as full nodes (Hornet, Bee), permanodes (Chronicle) or smart contract nodes (Wasp).
 - **Network Layer (IOTA 2.0):** This layer manages the lower layers of Internet communication such as TCP. In this layer, the connections between the nodes are managed by the Auto peering and Peer Discovery modules and the Gossip protocol.
 - **Network ID:** The network ID enables user-specific subtangles in which nodes can only recognize messages from the network ID listed in their configuration file.
 
@@ -139,12 +138,12 @@ To make sure that new messages always have a chance of being confirmed, the Coor
 - **Private Tangle:** A private tangle is comparable to a test network under complete control of the operator. This allows companies and developers to test their applications under self-defined environment variables without external influences and protected from prying eyes. There is no interoperability between a private Tangle and the IOTA Tangle. So, sending from one to the other does not work either. Each private Tangle is an independent network with its own nodes, tokens, and coordinator.
 - **Proof of Work (PoW):** A time-consuming (expensive) mathematical calculation that uses computational power to prevent spam attacks. It consists of a difficult cryptographic puzzle that is easy to verify.
 - **Proof of Inclusion (PoI):** With PoI, one is able to provide evidence that a transaction was indirectly referenced by another transaction without having to present the full chain of actual transactions between the two transactions. This is done by using a sequence of hashes instead of the actual transaction data to prove the inclusion of a transaction (inclusion) in the referenced subtangle.
-- **Pruning:** In computer science, this is a term for simplifying, shortening, and optimizing decision trees. In IOTA, this is done by local snapshots on each full node. Old transactions that have already been confirmed are deleted from the database, leaving only a file (list) of credits on each address. 
+- **Pruning:** In computer science, this is a term for simplifying, shortening, and optimizing decision trees. In IOTA, this is done by local snapshots on each full node. Old transactions that have already been confirmed are deleted from the database, leaving only a file (list) of credits on each address.
 - **Public and private keys:** These are used in cryptographic systems which use key pairs. There are public keys which can be shared and private keys which are known only to the owner. The generation of such keys depends on cryptographic algorithms based on mathematical problems to generate one-way functions. Effective security requires keeping the private key to remain only known to the owner. Public keys derived from this private key can be shared and used by others to verify ownership of the private key, without exposing the private key. Public keys function as addresses in IOTA.
 
 ## R
 
-- **Rebroadcast:** Repeats the sending of a transaction. While a transaction is being sent to an IOTA node, it may go offline. In this case, the IOTA node may not forward the transactions to its neighbors, and the rest of the network will never see these transactions. As a result, that transaction will never be referenced by the coordinator and thus never confirmed. Resending a bundle means resending the same bundle to an IOTA node. This way you give your transactions another chance to be forwarded to the rest of the network. 
+- **Rebroadcast:** Repeats the sending of a transaction. While a transaction is being sent to an IOTA node, it may go offline. In this case, the IOTA node may not forward the transactions to its neighbors, and the rest of the network will never see these transactions. As a result, that transaction will never be referenced by the coordinator and thus never confirmed. Resending a bundle means resending the same bundle to an IOTA node. This way you give your transactions another chance to be forwarded to the rest of the network.
 - **Reusable Addresses:** With the introduction of the Ed25519 signature scheme, through the IOTA 1.5 Chrysalis upgrade, reusable addresses are now supported.
 - **Reattachment:** Resending a transaction by re-selecting a tip and referencing newer tips by repeating PoW.
 
@@ -162,17 +161,17 @@ To make sure that new messages always have a chance of being confirmed, the Coor
 - **Solidity (IOTA 2.0):** A message is marked as solid if its entire past cone until the Genesis (or the latest snapshot) is known.
 - **Subtangle:** A consistent section of the tangle (i.e., a subset of messages / value objects) such that each contained message / value object also contains its referenced messages / value objects.
 - **Streams:** IOTA Streams is a multifunctional second layer data transfer protocol that can be used for various types of data transfer (e.g., streaming data). For example, it allows sensors and other devices to encrypt entire data streams and anchor them in the IOTA Tangle. IOTA’s consensus protocol adds integrity and authenticity to these message streams. Given these characteristics, IOTA Streams fills an important need in industries where integrity, privacy, and immutability collide.
-- **Sybil Attack:** An attempt to gain control of a peer-to-peer network by forging multiple false identities. 
+- **Sybil Attack:** An attempt to gain control of a peer-to-peer network by forging multiple false identities.
 - **Snapshot:** A special feature of the Tangle. A snapshot deletes all transactions. Only transactions with a balance > 0 are kept. The metadata such as tags and messages are also deleted. What is left behind is just a list of addresses and balances. After a snapshot, the nodes use this list as “genesis”, a new starting point for the tangle. This reduces the size of the tangle network, allowing IOTA nodes to use less memory. Full nodes perform what are called “Local Snapshots” independently and at their own discretion.
 
 ## T
 
-- **Tangle:** The Tangle is the underlying core data structure. In mathematical terms it is a directed acyclic graph (DAG). The Tangle is the distributed ledger of IOTA that stores all transactions. 
-- **Ternary system:** A trit (trinary digit) can have exactly three states (3 x 1 = 3): -1, 0 and 1. Three trits result in one tryte (33 = 27) and can thus represent 27 combinations. In IOTA, the letters A-Z (26 pieces) and the number 9 are used for this purpose. 
+- **Tangle:** The Tangle is the underlying core data structure. In mathematical terms it is a directed acyclic graph (DAG). The Tangle is the distributed ledger of IOTA that stores all transactions.
+- **Ternary system:** A trit (trinary digit) can have exactly three states (3 x 1 = 3): -1, 0 and 1. Three trits result in one tryte (33 = 27) and can thus represent 27 combinations. In IOTA, the letters A-Z (26 pieces) and the number 9 are used for this purpose.
 - **Token:** The digital currency form (cryptocurrency). It is a powerful tool for value transfer between people and machines. Total number: 2,779,530,283,277,761 IOTA. The base units are Pi,
-Ti, Gi, Mi, ki, i 
+  Ti, Gi, Mi, ki, i
 - **Trinity (IOTA 1.0):** Depreciated IOTA Wallet
-- **Tip:** A transaction that has not yet been approved. 
+- **Tip:** A transaction that has not yet been approved.
 - **Tip Selection:** The process of selecting previous transactions to be referenced by a new transaction. In these references, a transaction ties into the existing data structure. IOTA only enforces that a transaction approves up to eight other transactions, the tip selection strategy is left to the user (with a good default provided by IOTA).
 - **Tip Transaction:** A solid end transaction that is not yet a parent.
 - **Transaction (IOTA 2.0):** A message that contains a Token transfer as a payload. The transferred tokens can be native IOTA Tokens or native IOTA Assets.

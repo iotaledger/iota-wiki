@@ -13,14 +13,12 @@ This procedure outlines how the Technical Writing team reviews and approves cont
 
    :::
 
-   
-
 2. The reviewers first round of feedback should be returned within the 36-48 hour timeframe per the request.
 
    - If there is a review deadline, the principal TW must notify the reviewers of the timeframe in which they have to work
 
-3. A single review iteration must be finished within the above timeframe, but the *cycle* of a review will continue until both the initial TW and reviewers are satisfied with the state of the content.
+3. A single review iteration must be finished within the above timeframe, but the _cycle_ of a review will continue until both the initial TW and reviewers are satisfied with the state of the content.
 
-4. To merge, the latest revision of PR needs at least two reviews, at least one of which has to be approving, and none of which are requesting changes. 
+4. To merge, the latest revision of PR needs at least two reviews, at least one of which has to be approving, and none of which are requesting changes.
 
 5. Once all content is approved, the initial TW can merge and close the PR, notifying the reviewers and any other applicable parties.

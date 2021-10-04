@@ -8,7 +8,8 @@
   height: 28px;
   border-radius: 50%;
   background-color: var(--ifm-color-emphasis-200);
-  transition: all var(--ifm-transition-fast) var(--ifm-transition-timing-default);
+  transition: all var(--ifm-transition-fast)
+    var(--ifm-transition-timing-default);
 }
 
 .toggle--disabled {
@@ -36,7 +37,8 @@
 
 .toggle__icon--checked {
   opacity: 0;
-  transition: opacity var(--ifm-transition-fast) var(--ifm-transition-timing-default);
+  transition: opacity var(--ifm-transition-fast)
+    var(--ifm-transition-timing-default);
 }
 
 .toggle--checked .toggle__icon--checked {
@@ -45,7 +47,8 @@
 
 .toggle__icon--unchecked {
   opacity: 1;
-  transition: opacity var(--ifm-transition-fast) var(--ifm-transition-timing-default);
+  transition: opacity var(--ifm-transition-fast)
+    var(--ifm-transition-timing-default);
 }
 
 .toggle--checked .toggle__icon--unchecked {

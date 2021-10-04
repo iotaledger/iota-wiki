@@ -6,7 +6,8 @@
 Patch to style scrollbars consistently
 */
 * {
-  scrollbar-color: var(--ifm-scrollbar-thumb-background-color) var(--ifm-scrollbar-track-background-color);
+  scrollbar-color: var(--ifm-scrollbar-thumb-background-color)
+    var(--ifm-scrollbar-track-background-color);
 }
 
 ::-webkit-scrollbar {
