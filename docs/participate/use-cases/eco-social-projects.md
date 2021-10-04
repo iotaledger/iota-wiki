@@ -3,28 +3,8 @@ title: Eco-Social-Projects
 description: My document description from SEO
 ---
 
-# Heading 1 (Page Title)
+# Environmental and Humanitarian impact
 
-content - introduction to the topic
+IOTA is deeply commited to improve the life of humans and protect the natural ressources and environments on our planet
 
-## Heading 2 (Sub topic 1)
-
-content
-
-## Heading 2 (Sub topic 2)
-
-content
-
-<br/>
-
----
-
-<br/>
-
-**need to add a footer section for further content - (three cards)**
-
-## Useful Links
-
-- **[a link](https://linkgoes.here)** - A description for the link
-- **[a link](https://linkgoes.here)** - A description for the link
-- **[a link](https://linkgoes.here)** - A description for the link
+[![environmaental](/img/participate/use-cases/environmental.png)](/img/participate/use-cases/environmental.png)
