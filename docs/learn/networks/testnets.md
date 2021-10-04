@@ -34,4 +34,4 @@ Comnet is a 100% community-driven test network. It can be used as a test network
 The official IOTA 1.5 Devnet. In this Devnet, the Coordinator and some public nodes are run by the IF. It can also be used to test apps for IOTA 1.5.
 The full documentation for the IOTA 1.5 Devnet can be found here:
 
-- **[IOTA 1.5 Devnet](https://wiki.iota.org/chrysalis-docs/devnet)**
+- **[IOTA 1.5 Devnet](/chrysalis-docs/devnet)**

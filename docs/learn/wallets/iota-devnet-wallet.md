@@ -10,7 +10,7 @@ Currently, there exist two wallets for the DevNet. A Command Line Wallet(cli-wal
 
 ## cli-wallet
 
-The cli wallet is the most feature complete wallet. You can find a guide for it [here](https://wiki.iota.org/goshimmer/tutorials/wallet_library).  
+The cli wallet is the most feature complete wallet. You can find a guide for it [here](/goshimmer/tutorials/wallet_library).  
 The cli wallet is located directly in the Goshimmer repo and pre-build binaries are released with each new GoShimmer version [here](https://github.com/iotaledger/goshimmer/releases).
 
 ## IOTA 2.0 DevNet GUI Wallet
