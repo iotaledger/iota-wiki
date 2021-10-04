@@ -31,7 +31,7 @@ The source code of the software can be found here:
 
 Standard installation following the Hornet Documentation:
 
-- [Hornet documentation - set up a node](https://wiki.iota.org/hornet/getting_started/getting_started)
+- [Hornet documentation - set up a node](/hornet/getting_started/getting_started)
 
 ### Hornet Community Tutorials:
 
