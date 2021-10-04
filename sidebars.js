@@ -109,7 +109,6 @@ module.exports = {
         'participate/use-cases/nfts',
         'participate/use-cases/data-confidence',
         'participate/use-cases/eco-social-projects',
-        'participate/use-cases/private-tangle',
       ],
     },
     {
