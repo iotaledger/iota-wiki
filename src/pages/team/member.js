@@ -31,9 +31,10 @@ const TeamMember = function (props) {
 
         <div className='card__footer'>
           <div className='link-list'>
-            {social_links.map((props, idx) => (
-              <SocialLink key={idx} {...props} />
-            ))}
+            {social_links &&
+              social_links.map((props, idx) => (
+                <SocialLink key={idx} {...props} />
+              ))}
           </div>
         </div>
       </div>
