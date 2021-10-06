@@ -1,4 +1,6 @@
 import React from 'react';
+import styles from './styles.module.css';
+import clsx from 'clsx';
 import { useHistory } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
@@ -17,7 +19,7 @@ export default function Card({ title, link, description, icon }) {
       <div className='card__header'>
         <h3>{title}</h3>
       </div>
-      <div className='card__body icon'>{icon}</div>
+      <div className={clsx(styles.icon, 'card__body')}>{icon}</div>
       <div className='card__footer'>
         <p>{description}</p>
       </div>
