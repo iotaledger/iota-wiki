@@ -5,5 +5,4 @@ description: IOTA delivers solutions to stremaline proccesses in international t
 
 # Global Trade and Supply Chain
 
-
-[![supply-chain](img/participate/use-cases/supply-chain.png)](img/participate/use-cases/supply-chain.png)
+[![supply-chain](/img/participate/use-cases/supply-chain.png)](/img/participate/use-cases/supply-chain.png)
