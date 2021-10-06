@@ -30,6 +30,10 @@
   font-family: 'Metropolis Semi Bold', sans-serif;
 }
 
+.card {
+  min-width: 14rem;
+}
+
 .card--pointer {
   cursor: pointer;
 }
