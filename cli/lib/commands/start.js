@@ -62,7 +62,7 @@ class Start extends command_1.Command {
      * @returns string
      */
     getGitRootDirectory(directory) {
-        while (!fs_1.existsSync(directory + '/.git')) {
+        while (!fs_1.existsSync(path_1.join(directory, '..'))) {
             directory = path_1.resolve(path_1.join(directory, '..'));
         }
         return directory;
