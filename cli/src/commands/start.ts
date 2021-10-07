@@ -2,7 +2,7 @@ import {Command, flags} from '@oclif/command'
 import {spawn} from 'child_process'
 import {join, resolve} from 'path'
 const  replaceInFile = require('replace-in-file')
-import {readFileSync} from 'fs'
+import {existsSync, readFileSync} from 'fs'
 import {copySync} from 'fs-extra'
 const syncDirectory = require('sync-directory')
 const debounce = require('lodash.debounce')
@@ -56,7 +56,9 @@ export default class Start extends Command {
       })
     }, 100)
 
-    syncDirectory(resolve(join(PWD, '..')), resolve(WIKI_CONTENT_REPO_FOLDER), {
+    const directoryToSync = this.getGitRootDirectory(PWD);
+
+    syncDirectory(resolve(directoryToSync), resolve(WIKI_CONTENT_REPO_FOLDER), {
       exclude: userConfig.excludeList,
       watch: true,
       afterSync: ({type, relativePath}: {type: string; relativePath: string}) => {
@@ -67,4 +69,18 @@ export default class Start extends Command {
       },
     })
   }
+
+  
+    /**
+     * Get the repository's GIT root directory
+     * @param directory string
+     * @returns string
+     */
+    getGitRootDirectory(directory:string){
+        while(!existsSync(directory+'/.git'))
+        {
+            directory = resolve(join(directory, '..'));
+        }
+        return directory;
+    }
 }
