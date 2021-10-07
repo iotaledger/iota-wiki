@@ -77,7 +77,7 @@ export default class Start extends Command {
      * @returns string
      */
     getGitRootDirectory(directory:string){
-        while(!existsSync(directory+'/.git'))
+        while(!existsSync(join(directory, '..')))
         {
             directory = resolve(join(directory, '..'));
         }
