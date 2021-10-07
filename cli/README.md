@@ -16,7 +16,7 @@ $ npm install -g iota-wiki-cli
 $ iota-wiki-cli COMMAND
 running command...
 $ iota-wiki-cli (-v|--version|version)
-iota-wiki-cli/1.4.0 linux-x64 node-v14.16.1
+iota-wiki-cli/1.4.1 linux-x64 node-v14.16.1
 $ iota-wiki-cli --help [COMMAND]
 USAGE
   $ iota-wiki-cli COMMAND
