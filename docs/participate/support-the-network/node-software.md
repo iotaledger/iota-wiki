@@ -46,7 +46,7 @@ Guides and easy one - line installations scripts created by IOTA community membe
     - [Hornet node Installation guide Part 1](https://phyloiota.medium.com/iota-hornet-node-installation-81747de28338)
     - [Hornet node Installation guide Part 2](https://phyloiota.medium.com/iota-hornet-node-installation-2-8f2639e04d1d)
 
--   Tanglebay Swarm Hornet Node installer: [Tanglebay Swarmnode](https://tanglebay.com/swarm/)
+-   [SWARM Hornet](https://github.com/tanglebay/swarm)
 
 -   Install Hornet Mainnet Node using `apt`: [Svenger 87 Alphanet Tutorial](https://github.com/svenger87/hornet-alphanet-tutorial)
 
@@ -76,6 +76,10 @@ Standard installation following the Bee Documentation:
 
 - [Set up a BEE Node](/bee/setup_a_node)
 
+### Bee Community Tutorials:
+
+- [SWARM Bee](https://github.com/tanglebay/swarm)
+
 ## GoShimmer
 
 GoShimmer is a prototype node software exploring the implementation of IOTA 2.0. It is a research and engineering project from the IOTA Foundation seeking to evaluate Coordicide concepts by implementing them in a node software.
@@ -104,7 +108,7 @@ Standard installation following the Documentation:
 
 - Nuriels GoShimmer Playbook: [Nuriel77 GoShimmer](https://github.com/nuriel77/goshimmer-playbook)
 - DeMichelle Shell Script: [DeMichelle GoShimmer](https://github.com/demichele/install-goshimmer)
-- Tanglebay Swarm Script: [Tanglebay Goshimmer Swarm](https://github.com/tanglebay/swarm/tree/0.6.5)
+- [SWARM GoShimmer](https://github.com/tanglebay/swarm)
 
 ## Chronicle Permanode
 
