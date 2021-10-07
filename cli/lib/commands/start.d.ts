@@ -5,4 +5,10 @@ export default class Start extends Command {
         help: import("@oclif/parser/lib/flags").IBooleanFlag<void>;
     };
     run(): Promise<void>;
+    /**
+     * Get the repository's GIT root directory
+     * @param directory string
+     * @returns string
+     */
+    getGitRootDirectory(directory: string): string;
 }

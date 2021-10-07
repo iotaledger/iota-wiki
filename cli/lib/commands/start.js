@@ -44,9 +44,8 @@ class Start extends command_1.Command {
                 stdio: 'inherit',
             });
         }, 100);
-
         const directoryToSync = this.getGitRootDirectory(PWD);
-        syncDirectory(directoryToSync, path_1.resolve(WIKI_CONTENT_REPO_FOLDER), {
+        syncDirectory(path_1.resolve(directoryToSync), path_1.resolve(WIKI_CONTENT_REPO_FOLDER), {
             exclude: userConfig.excludeList,
             watch: true,
             afterSync: ({ type, relativePath }) => {
@@ -57,15 +56,13 @@ class Start extends command_1.Command {
             },
         });
     }
-
     /**
      * Get the repository's GIT root directory
      * @param directory string
      * @returns string
      */
-    getGitRootDirectory(directory){
-        while(!fs_1.existsSync(directory+'/.git'))
-        {
+    getGitRootDirectory(directory) {
+        while (!fs_1.existsSync(directory + '/.git')) {
             directory = path_1.resolve(path_1.join(directory, '..'));
         }
         return directory;
