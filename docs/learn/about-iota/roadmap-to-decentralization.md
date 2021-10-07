@@ -7,7 +7,7 @@ description: IOTA moves quickly towards full decentralization. This page
 
 # Roadmap to Decentralization
 
-IOTA's long-awaited "Coordicide" update will completely decentralize the network.
+IOTA's long-awaited Coordicide update will completely decentralize the network.
 
 ## What is Coordicide?
 
