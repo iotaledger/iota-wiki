@@ -19,7 +19,7 @@ A blockchain is a ledger published to and tracked by any number of independent p
 
 A **block header** contains: a four-byte version number, a 32-byte double hash of the previous block's header, a 32-byte Merkle root of the transactions in the current block, the four-byte Unix time when the block was mined, a four-byte rounded off version of the target difficulty in mining that block, and finally a four-byte nonce that can be any value set by the miner in order to meet a specific condition we'll discuss more in a moment.
 
-The \*\*block body \*\*contains a protocol-dependent number of bytes, often 1,000,000 or more, of transaction data.
+The **block body** contains a protocol-dependent number of bytes, often 1,000,000 or more, of transaction data.
 
 We mentioned mining several times above. Here we look at what that means for cryptocurrencies built on a proof of work model. When a given block has just been added to the blockchain, a race begins. In this race, to mine the next block the participants – most commonly referred to as miners – gather as many open transactions as they can into a new block body and calculate the Merkle root from that, and they calculate other information for their new block header as well, all except the four-byte nonce we mentioned above.
 
