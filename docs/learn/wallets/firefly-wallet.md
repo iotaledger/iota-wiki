@@ -9,16 +9,11 @@ description: The IOTA Firefly Wallet sets a new standard for Software Wallets in
 ## Table of contents
 
 -   [General Overview and Introduction](#general-overview-and-introduction)
-
 -   [Firefly Token Migration](#firefly-token-migration)
-
 -   Firefly User Guide
-
     - [User guide for standard users](#user-guide-for-standard-users)
     - [User Guide for users of a Ledger Nano X or Ledger Nano S device](#user-guide-for-users-of-a-ledger-nano-x-or-ledger-nano-s-device)
-
 -   Firefly FAQ
-
     - [Setup and installation](#setup-and-installation)
     - [Backups and recovery](#backups-and-recovery)
     - [Profiles and wallets](#profiles-and-wallets)
@@ -182,9 +177,9 @@ The following information about the transaction is displayed:
 - The send function has two essential features. The first is **send payment**, which is a standard IOTA transaction where you type or copy in a full IOTA receive address in the form of `iotaxjdjfkfkldldd.......`. The user now defines the wallet from where the tokens should be sent in a dropdown menu and the number of tokens to be sent. While defining the amount, a user may choose **max**, the second essential feature, which will send all the tokens contained in the chosen wallet or specify the exact amount with manual input. A dropdown button provides the option to switch the amount between different unit sizes (Mi, Gi, and so on). **Make sure that you are entering the token amount in the correct unit size.**
 - To initiate the transaction, the user has to enter the stronghold password which confirms and signs the transaction. After this, the following steps are performed by the wallet to deliver the transaction to the recipient:
 - **Syncing wallet**: establishing the connection to the IOTA Ledger,
-- \*\*Performing PoW: \*\*a tiny amount of proof of work is performed by the device of the user,
-- \*\*Broadcasting transaction: \*\*sending the signed transaction to the connected node,
-- \*\*Transfer complete: \*\*confirmation that the transaction is accepted and included in the Ledger.
+- **Performing PoW:** a tiny amount of proof of work is performed by the device of the user,
+- **Broadcasting transaction:** sending the signed transaction to the connected node,
+- **Transfer complete:** confirmation that the transaction is accepted and included in the Ledger.
 
 This whole process happens in just a few seconds.
 

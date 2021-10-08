@@ -45,6 +45,29 @@ module.exports = {
       matomoUrl: 'https://matomo.antonionardella.it/',
       siteId: '6',
     },
+    cards: [
+      {
+        title: 'Learn',
+        image: 'img/learn.svg',
+        link: 'docs/learn/about-iota/an-introduction-to-iota',
+        description:
+          'Learn about IOTA, the Tangle, its features, industry applications, network and more.',
+      },
+      {
+        title: 'Participate',
+        image: 'img/participate.svg',
+        link: 'docs/participate/support-the-network/about-nodes',
+        description:
+          'Join the network and start using solutions built on top of the Tangle.',
+      },
+      {
+        title: 'Build',
+        image: 'img/build.svg',
+        link: 'docs/build/getting-started/architecture',
+        description:
+          'Access documentation and guides to build with IOTA in Rust, C, Go, Java or Python.',
+      },
+    ],
     navbar: {
       hideOnScroll: true,
       logo: {
@@ -56,10 +79,12 @@ module.exports = {
         {
           label: 'Learn',
           to: 'docs/learn/about-iota/an-introduction-to-iota',
+          activeBaseRegex: 'docs/learn/.*',
         },
         {
           label: 'Participate',
           to: 'docs/participate/support-the-network/about-nodes',
+          activeBaseRegex: 'docs/participate/.*',
         },
         {
           label: 'Build',
@@ -80,7 +105,7 @@ module.exports = {
                   label: 'Getting Started',
                   sublabel: 'IOTA development basics',
                   to: 'docs/build/getting-started/architecture',
-                  icon: '\ue908',
+                  icon: '\ue902',
                   activeBaseRegex: 'docs/build/getting-started/.*',
                 },
               ],
@@ -92,21 +117,21 @@ module.exports = {
                   label: 'Chrysalis Docs',
                   sublabel: 'Mainnet documentation',
                   to: 'chrysalis-docs/welcome',
-                  icon: '\ue909',
+                  icon: '\ue901',
                   activeBaseRegex: 'chrysalis-docs/.*',
                 },
                 {
                   label: 'Bee Node',
                   sublabel: 'IOTA node written in Rust',
                   to: 'bee/getting_started/getting_started',
-                  icon: '\ue90a',
+                  icon: '\ue900',
                   activeBaseRegex: 'bee/.*',
                 },
                 {
                   label: 'Hornet Node',
                   sublabel: 'IOTA node written in Go',
                   to: 'hornet/welcome',
-                  icon: '\ue906',
+                  icon: '\ue904',
                   activeBaseRegex: 'hornet/.*',
                 },
               ],
@@ -118,14 +143,14 @@ module.exports = {
                   label: 'Coordicide Specs',
                   sublabel: 'Decentralizing IOTA',
                   to: 'IOTA-2.0-Research-Specifications/Preface',
-                  icon: '\ue904',
+                  icon: '\ue906',
                   activeBaseRegex: 'IOTA-2.0-Research-Specifications/.*',
                 },
                 {
                   label: 'GoShimmer Node',
                   sublabel: 'IOTA 2.0 node',
                   to: 'goshimmer/welcome',
-                  icon: '\ue907',
+                  icon: '\ue903',
                   activeBaseRegex: 'goshimmer/.*',
                 },
               ],
@@ -137,21 +162,21 @@ module.exports = {
                   label: 'Core',
                   sublabel: 'IOTA core functionality',
                   to: 'iota.rs/welcome',
-                  icon: '\ue903',
+                  icon: '\ue907',
                   activeBaseRegex: 'iota.rs/.*',
                 },
                 {
                   label: 'Wallet',
                   sublabel: 'Build IOTA wallets',
                   to: 'wallet.rs/welcome',
-                  icon: '\ue901',
+                  icon: '\ue90a',
                   activeBaseRegex: 'wallet.rs/.*',
                 },
                 {
                   label: 'Stronghold',
                   sublabel: 'Handle secrets securely',
                   to: 'stronghold.rs/welcome',
-                  icon: '\ue902',
+                  icon: '\ue909',
                   activeBaseRegex: 'stronghold.rs/.*',
                 },
                 {
@@ -165,7 +190,7 @@ module.exports = {
                   label: 'Streams',
                   sublabel: 'Share data securely',
                   to: 'streams/welcome',
-                  icon: '\ue90b',
+                  icon: '\ue908',
                   activeBaseRegex: 'streams/.*',
                 },
               ],
@@ -177,7 +202,7 @@ module.exports = {
                   label: 'Wasp Node',
                   sublabel: 'Smart contract node',
                   to: 'wasp/welcome',
-                  icon: '\ue900',
+                  icon: '\ue90b',
                   activeBaseRegex: 'wasp/.*',
                 },
               ],
@@ -185,6 +210,7 @@ module.exports = {
           ],
         },
         { to: '/blog', label: 'Blog', position: 'right' },
+        { to: '/team', label: 'Team', position: 'right' },
       ],
     },
     footer: {
@@ -301,6 +327,56 @@ module.exports = {
       },
       copyright: `© ${new Date().getFullYear()} IOTA Wiki. Built with Docusaurus.`,
     },
+    socials: [
+      {
+        title: 'Youtube',
+        icon: '\ue907',
+        url: 'https://www.youtube.com/c/iotafoundation',
+        backgroundColor: 'var(--ifm-color-gray-900)',
+      },
+      {
+        title: 'GitHub',
+        icon: '\ue902',
+        url: 'https://www.github.com/iotaledger/',
+        backgroundColor: '#2C3850',
+      },
+      {
+        title: 'Discord',
+        icon: '\ue900',
+        url: 'https://discord.iota.org/',
+        backgroundColor: '#4B576F',
+      },
+      {
+        title: 'Twitter',
+        icon: '\ue906',
+        url: 'https://www.twitter.com/iota/',
+        backgroundColor: '#6A768E',
+      },
+      {
+        title: 'Reddit',
+        icon: '\ue905',
+        url: 'https://www.reddit.com/r/iota/',
+        backgroundColor: '#7D89A1',
+      },
+      {
+        title: 'Linkedin',
+        icon: '\ue904',
+        url: 'https://www.linkedin.com/company/iotafoundation/',
+        backgroundColor: '#8995AD',
+      },
+      {
+        title: 'Instagram',
+        icon: '\ue903',
+        url: 'https://www.instagram.com/iotafoundation/',
+        backgroundColor: '#99A5BD',
+      },
+      {
+        title: 'Facebook',
+        icon: '\ue901',
+        url: 'https://www.facebook.com/TheIOTAFoundation/',
+        backgroundColor: '#BAC6DE',
+      },
+    ],
     colorMode: {
       defaultMode: 'dark',
       // Dark/light switch icon options
