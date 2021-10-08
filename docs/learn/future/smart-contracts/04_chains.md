@@ -16,6 +16,12 @@ IOTA Smart Contracts is a multi-chain environment, that means, we can run many p
 
 ![](https://i.imgur.com/WU9cJhI.png)
 
+IOTA Smart Contracts are defined as immutable state machines:
+
+- State machine: Each smart contract has a state, which is attached to the Tangle. The state contains data such as account balances, input conditions and consequences over time. Each state update represents a state transition on the Tangle.
+- Immutable: The state and the smart contract program code are both immutable because they are stored on the Tangle. The state can be incrementally updated by attaching new transactions to the Tangle.
+  The Tangle provides a verifiable audit trail of the state transitions. It allows us to trust that the state transitions are valid and they cannot be corrupted by malicious or erroneous nodes.
+
 ### State of the chain
 
 The state of the chain consists of:
