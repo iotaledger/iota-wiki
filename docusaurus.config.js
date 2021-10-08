@@ -193,7 +193,7 @@ module.exports = {
                 {
                   label: 'Wasp Node',
                   sublabel: 'Smart contract node',
-                  to: 'wasp/welcome',
+                  to: 'wasp/overview',
                   icon: '\ue90b',
                   activeBaseRegex: 'wasp/.*',
                 },

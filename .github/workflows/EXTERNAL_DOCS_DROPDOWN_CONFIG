@@ -54,7 +54,7 @@
             },
             {
               label: "Wasp Node",
-              to: "wasp/welcome",
+              to: "wasp/overview",
               className: "icon-wasp",
               activeBaseRegex: 'wasp/.*',
             },
