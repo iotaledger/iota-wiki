@@ -71,6 +71,28 @@ module.exports = {
         'learn/research/grants',
       ],
     },
+    {
+      type: 'category',
+      label: 'Future of IOTA',
+      collapsed: true,
+      items: [
+        'learn/future/future-of-iota',
+        {
+          type: 'category',
+          label: 'Smart Contracts',
+          collapsed: false,
+          items: [
+            'learn/future/smart-contracts/smart-contracts-introduction',
+            'learn/future/smart-contracts/smart-contracts-VM-and-languages',
+            'learn/future/smart-contracts/smart-contracts-validators',
+            'learn/future/smart-contracts/smart-contracts-chains',
+            'learn/future/smart-contracts/smart-contracts-dapps',
+            'learn/future/smart-contracts/smart-contracts-consensus',
+            'learn/future/smart-contracts/smart-contracts-tangle',
+          ],
+        },
+      ],
+    },
   ],
 
   participate: [

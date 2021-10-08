@@ -216,6 +216,10 @@ module.exports = {
               label: 'Research',
               to: 'docs/learn/research/research-outline',
             },
+            {
+              label: 'Future of IOTA',
+              to: 'docs/learn/future/future-of-iota',
+            },
           ],
         },
         {
