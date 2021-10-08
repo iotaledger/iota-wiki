@@ -1,0 +1,85 @@
+[
+    {
+        "name": "Phylo",
+        "title": "How do I use this \"Git\" thingy again?",
+        "image_url": "https://avatars.githubusercontent.com/u/77154511?v=4",
+        "social_links": [
+            {
+                "type": "GitHub",
+                "icon": "\ue902",
+                "link": "https://github.com/Phyloiota"
+            },
+            {
+                "type": "Twitter",
+                "icon": "\ue906",
+                "link": "https://twitter.com/Phylo79288735"
+            },
+            {
+                "type": "Discord",
+                "icon": "\ue900",
+                "link": "https://discordapp.com/users/451662043506933780/"
+            }
+        ]
+    },
+    {
+        "name": "Dr. Electron",
+        "title": "Frontend what?",
+        "image_url": "https://avatars.githubusercontent.com/u/61637085?v=4",
+        "social_links": [
+            {
+                "type": "GitHub",
+                "icon": "\ue902",
+                "link": "https://github.com/dr-electron"
+            },
+            {
+                "type": "Twitter",
+                "icon": "\ue906",
+                "link": "https://twitter.com/Dr_Electron"
+            },
+            {
+                "type": "Discord",
+                "icon": "\ue900",
+                "link": "https://discordapp.com/users/452961361421664288/"
+            }
+        ]
+    },
+    {
+        "name": "Jeroen van den Hout",
+        "title": "Breathes frontend",
+        "image_url": "https://avatars.githubusercontent.com/u/22611689?v=4",
+        "social_links": [
+            {
+                "type": "GitHub",
+                "icon": "\ue902",
+                "link": "https://github.com/jlvandenhout"
+            },
+            {
+                "type": "Discord",
+                "icon": "\ue900",
+                "link": "https://discordapp.com/users/453235678386585601/"
+            }
+        ]
+    },
+    {
+        "name": "Critical",
+        "title": "The new guy. \"Guys do you still need coffee?\"",
+        "image_url": "https://avatars.githubusercontent.com/u/53269239?v=4",
+        "social_links": [
+            {
+                "type": "GitHub",
+                "icon": "\ue902",
+                "link": "https://github.com/Critical94"
+            },
+            {
+                "type": "Twitter",
+                "icon": "\ue906",
+                "link": "https://twitter.com/KilianCrit"
+            },
+            {
+                "type": "Discord",
+                "icon": "\ue900",
+                "link": "https://discordapp.com/users/476898087693058058/"
+            }
+        ]
+    }
+]

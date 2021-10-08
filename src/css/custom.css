@@ -141,6 +141,20 @@ ul ul .table-of-contents__link {
   font-weight: var(--ifm-font-weight-semibold);
 }
 
+.team__icon {
+  font-family: 'socials_font' !important;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.link-list {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+}
+
 .theme-doc-toc-mobile {
   color: var(--ifm-menu-color);
 }

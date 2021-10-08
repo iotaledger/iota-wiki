@@ -210,6 +210,7 @@ module.exports = {
           ],
         },
         { to: '/blog', label: 'Blog', position: 'right' },
+        { to: '/team', label: 'Team', position: 'right' },
       ],
     },
     footer: {
