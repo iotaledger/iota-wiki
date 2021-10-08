@@ -152,11 +152,11 @@ The message will only be accepted for processing if these parameters are met and
 A message may contain a payload. Three payload types are currently defined in the mainnet, but developers can create their custom payloads and attach them to messages as long as they fit the general requirements. This means an IOTA message can contain many types of information, and the IOTA Token as transaction payload is just one of many.
 Below is a table of the currently specified core payloads with a link to their specifications.
 
-| Payload Name                                                                                     | Type Value |
-| ------------------------------------------------------------------------------------------------ | ---------- |
-| [Transaction Payload](https://github.com/luca-moser/protocol-rfcs/blob/signed-tx-payload/text/0000-transaction-payload/0000-transaction-payload.md) | 0          |
-| [Milestone Payload](https://github.com/jakubcech/protocol-rfcs/blob/jakubcech-milestonepayload/text/0019-milestone-payload/0019-milestone-payload.md)  | 1          |
-| [Indexation Payload](https://github.com/GalRogozinski/protocol-rfcs/blob/message/text/0017-message/0017-message.md#indexation-payload)        | 2          |
+| Payload Name                                                                                                                                          | Type Value |
+| ----------------------------------------------------------------------------------------------------------------------------------------------------- | ---------- |
+| [Transaction Payload](https://github.com/luca-moser/protocol-rfcs/blob/signed-tx-payload/text/0000-transaction-payload/0000-transaction-payload.md)   | 0          |
+| [Milestone Payload](https://github.com/jakubcech/protocol-rfcs/blob/jakubcech-milestonepayload/text/0019-milestone-payload/0019-milestone-payload.md) | 1          |
+| [Indexation Payload](https://github.com/GalRogozinski/protocol-rfcs/blob/message/text/0017-message/0017-message.md#indexation-payload)                | 2          |
 
 A message containing only an **indexation payload** (Data) can be sent without a signature. It can hold any data the user wants to send, as long as it is parsable and follows the required syntax and size limit.
 
@@ -166,4 +166,4 @@ As you may have recognized, a message in the IOTA network does not need a specif
 
 A **Data message**, which is defined as an indexation Payload, can be easily found by everyone who knows that message's index. If you want to send an arbitrary message or sensitive data, you need to tell the receiver which index you are using. He can observe the network for all messages containing this index using an explorer.
 
-In a **value transaction**, the payment receiver - an IOTA address - will be specified in the "signed transaction payload" field. Then, only the owner of that specific address can use the contained funds by unlocking them with the private key that belongs to that receiving address. Read more about how sending value transactions in IOTA work here: [value transfer](/docs/learn/about-iota/value-transfer)
+In a **value transaction**, the payment receiver - an IOTA address - will be specified in the "signed transaction payload" field. Then, only the owner of that specific address can use the contained funds by unlocking them with the private key that belongs to that receiving address. Read more about how sending value transactions in IOTA work here: [value transfer](/internal/learn/about-iota/value-transfer)

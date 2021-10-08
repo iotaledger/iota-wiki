@@ -50,4 +50,4 @@ Questions like these are so ever-present so you might want to answer them even b
 
 ## Mind Maps
 
-The right questions help you with the content, but they do not lay out the structure. To plan a structure of a complex topic, use a [mind map](./mind_map.md) instead. It can cover as much as a whole project!
+The right questions help you with the content, but they do not lay out the structure. To plan a structure of a complex topic, use a [mind map](mind_map.md) instead. It can cover as much as a whole project!

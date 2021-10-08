@@ -5,7 +5,7 @@ description: IOTA's Ecosystem Development Fund is setup to support community bas
 
 # Ecosystem Development Fund
 
-The EDF is a fund to help get new innovation and ideas from the community off the ground. If you have an  idea that is
+The EDF is a fund to help get new innovation and ideas from the community off the ground. If you have an idea that is
 beneficial for the IOTA ecosystem, you can apply for funding.
 The EDF was funded by the community with donations.
 

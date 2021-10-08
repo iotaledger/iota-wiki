@@ -37,20 +37,20 @@ Standard installation following the Hornet Documentation:
 
 Guides and easy one - line installations scripts created by IOTA community members:
 
--   Nuriels playbook installation using Docker: [Nuriel's playbook](https://github.com/nuriel77/hornet-playbook)
+- Nuriels playbook installation using Docker: [Nuriel's playbook](https://github.com/nuriel77/hornet-playbook)
 
--   DeMicheles one-liner using Nuriels Playbook: [Install Hornet](https://github.com/demichele/install-hornet-1.5)
+- DeMicheles one-liner using Nuriels Playbook: [Install Hornet](https://github.com/demichele/install-hornet-1.5)
 
--   Step-by-Step guide for Windows users by Phylo:
+- Step-by-Step guide for Windows users by Phylo:
 
-    - [Hornet node Installation guide Part 1](https://phyloiota.medium.com/iota-hornet-node-installation-81747de28338)
-    - [Hornet node Installation guide Part 2](https://phyloiota.medium.com/iota-hornet-node-installation-2-8f2639e04d1d)
+  - [Hornet node Installation guide Part 1](https://phyloiota.medium.com/iota-hornet-node-installation-81747de28338)
+  - [Hornet node Installation guide Part 2](https://phyloiota.medium.com/iota-hornet-node-installation-2-8f2639e04d1d)
 
--   [SWARM Hornet](https://github.com/tanglebay/swarm)
+- [SWARM Hornet](https://github.com/tanglebay/swarm)
 
--   Install Hornet Mainnet Node using `apt`: [Svenger 87 Alphanet Tutorial](https://github.com/svenger87/hornet-alphanet-tutorial)
+- Install Hornet Mainnet Node using `apt`: [Svenger 87 Alphanet Tutorial](https://github.com/svenger87/hornet-alphanet-tutorial)
 
--   Run Hornet on a Raspberry Pi: [Raspihive Hornet](https://docs.raspihive.org/docs/install#45-first-start-of-raspihive-and-installation-of-the-hornet-node)
+- Run Hornet on a Raspberry Pi: [Raspihive Hornet](https://docs.raspihive.org/docs/install#45-first-start-of-raspihive-and-installation-of-the-hornet-node)
 
 ## BEE
 
