@@ -20,18 +20,10 @@ module.exports = {
     },
   ],
   themeConfig: {
-    typesense: {
-      typesenseCollectionName: 'IOTAWiki', // Replace with your own doc site's name. Should match the collection name in the scraper settings.
-      typesenseServerConfig: {
-        nodes: [
-          {
-            host: 'blog-search.iota.org',
-            port: 443,
-            protocol: 'https',
-          },
-        ],
-        apiKey: '5ji1bYzTgX8ewA6EheyH8hbS1w9RZZWT',
-      },
+    algolia: {
+      apiKey: '829457a9c9dd5a8ddd31d08c86e154c2',
+      indexName: 'iota',
+      contextualSearch: true,
     },
     announcementBar: {
       id: 'wip', // Any value that will identify this message.
@@ -416,8 +408,6 @@ module.exports = {
       },
     },
   },
-  themes: ['docusaurus-theme-search-typesense'],
-
   presets: [
     [
       '@docusaurus/preset-classic',
