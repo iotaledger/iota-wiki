@@ -1,8 +1,6 @@
 name: deploy
 
 on:
-  push:
-    branches: [feat/removeDocsPrefix ]
   pull_request:
     branches: [develop]
   workflow_dispatch:
