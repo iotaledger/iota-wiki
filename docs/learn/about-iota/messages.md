@@ -23,7 +23,12 @@ So, the UTXO is a part of a larger, self-contained, and flexible message structu
 
 Overall, these payload structures are simple:
 
-| Name | Type | Description | | ---- | ---- | ----------- | | Payload Type | uint32 | must be set to **2** | | Index | String | The index key of the message, a UTF-8 encoded string | |DATA| ByteArray | Data we are attaching |
+|Name |Type |Description | 
+|---- | ----| -----------| 
+| Payload Type | uint32 | must be set to **2** | 
+| Index | String | The index key of the message, a UTF-8 encoded string | 
+|DATA| ByteArray | Data we are attaching |
+
 
 Additionally, there can be three types of message payloads:
 
