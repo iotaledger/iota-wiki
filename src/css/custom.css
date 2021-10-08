@@ -184,7 +184,15 @@ Search bar
 .DocSearch-Footer {
   display: none !important;
 }
-
+.DocSearch.DocSearch-Button {
+  width: 28px;
+  height: 28px;
+  padding-left: 7px;
+}
+.DocSearch-Button-Container {
+  width: 15px;
+  height: 15px;
+}
 .DocSearch-Modal {
   width: 80% !important;
   max-width: 80% !important;
