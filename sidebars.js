@@ -110,6 +110,8 @@ module.exports = {
         'participate/use-cases/internet-of-things',
         'participate/use-cases/digital-assets',
         'participate/use-cases/nfts',
+        'participate/use-cases/mobility',
+        'participate/use-cases/trade-and-supply-chain',
         'participate/use-cases/data-confidence',
         'participate/use-cases/eco-social-projects',
       ],
