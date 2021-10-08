@@ -8,7 +8,6 @@ module.exports = {
         'support-the-network/about-nodes',
         'support-the-network/become-a-node-operator',
         'support-the-network/node-software',
-        'support-the-network/create-an-application',
       ],
     },
     {
@@ -23,10 +22,9 @@ module.exports = {
       ],
     },
     {
-      type: 'category',
+      type: 'link',
       label: 'Partnerships',
-      collapsed: true,
-      items: ['partnerships/iota-partnerships'],
+      href: 'https://www.iota.org/solutions/partnerships',
     },
     {
       type: 'category',
@@ -43,9 +41,10 @@ module.exports = {
         'use-cases/internet-of-things',
         'use-cases/digital-assets',
         'use-cases/nfts',
+        'use-cases/mobility',
+        'use-cases/trade-and-supply-chain',
         'use-cases/data-confidence',
         'use-cases/eco-social-projects',
-        'use-cases/private-tangle',
       ],
     },
     {

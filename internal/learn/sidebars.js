@@ -11,7 +11,6 @@ module.exports = {
         'about-iota/why-is-iota-feeless',
         'about-iota/roadmap-to-decentralization',
         'about-iota/messages',
-        'about-iota/security',
         'about-iota/energy-efficiency',
       ],
     },
@@ -19,13 +18,7 @@ module.exports = {
       type: 'category',
       label: 'IOTA Token',
       collapsed: true,
-      items: [
-        'iota-token/overview',
-        'iota-token/buying-iota',
-        'iota-token/exchanges',
-        'iota-token/transfering-tokens',
-        'iota-token/token-security',
-      ],
+      items: ['iota-token/buying-iota'],
     },
     {
       type: 'category',
@@ -65,11 +58,7 @@ module.exports = {
       type: 'category',
       label: 'Research',
       collapsed: true,
-      items: [
-        'research/research-outline',
-        'research/research-papers',
-        'research/grants',
-      ],
+      items: ['research/research-outline', 'research/research-papers'],
     },
   ],
 };

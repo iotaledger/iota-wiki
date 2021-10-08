@@ -216,7 +216,7 @@ module.exports = {
             },
             {
               label: 'IOTA Token',
-              to: 'docs/learn/iota-token/buying-iota',
+              to: 'learn/iota-token/buying-iota',
             },
             {
               label: 'Wallets',
@@ -241,7 +241,7 @@ module.exports = {
           items: [
             {
               label: 'Support the network',
-              to: 'docs/participate/support-the-network/about-nodes',
+              to: 'participate/support-the-network/about-nodes',
             },
             {
               label: 'The Community',
