@@ -18,9 +18,7 @@ module.exports = {
       type: 'category',
       label: 'IOTA Token',
       collapsed: true,
-      items: [
-        'learn/iota-token/buying-iota',
-      ],
+      items: ['learn/iota-token/buying-iota'],
     },
     {
       type: 'category',
@@ -88,6 +86,11 @@ module.exports = {
         'participate/the-community/git-hub',
         'participate/the-community/social-media',
       ],
+    },
+    {
+      type: 'link',
+      label: 'Partnerships',
+      href: 'https://www.iota.org/solutions/partnerships',
     },
     {
       type: 'category',
