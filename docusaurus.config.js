@@ -224,7 +224,7 @@ module.exports = {
             },
             {
               label: 'IOTA Token',
-              to: 'docs/learn/iota-token/overview',
+              to: 'docs/learn/iota-token/buying-iota',
             },
             {
               label: 'Wallets',
@@ -249,7 +249,7 @@ module.exports = {
           items: [
             {
               label: 'Support the network',
-              to: 'docs/participate/support-the-network/run-a-node',
+              to: 'docs/participate/support-the-network/about-nodes',
             },
             {
               label: 'The Community',
@@ -257,7 +257,7 @@ module.exports = {
             },
             {
               label: 'Partnerships',
-              to: 'docs/participate/partnerships/iota-partnerships',
+              href: 'https://www.iota.org/solutions/partnerships',
             },
             {
               label: 'Funding',
@@ -297,6 +297,10 @@ module.exports = {
         {
           title: 'WIKI',
           items: [
+            {
+              label: 'Team',
+              to: 'team',
+            },
             {
               label: 'Github',
               href: 'https://github.com/iota-community/iota-wiki',
