@@ -1,10 +1,10 @@
 ---
 id: smart-contracts-VM-and-languages
 title: Smart Contract VM & Languages
-description: This article explains the underlaying technologie IOTA Smart Contracts - the Virtual Machine and it's plugins.
+description: This article explains the underlaying technologies of IOTA Smart Contracts - the Virtual Machine and it's plugins.
 ---
 
-This article explains the underlying technologie IOTA Smart Contracts - the Virtual Machine and it's plugins.
+This article explains the underlying technologies of IOTA Smart Contracts - the Virtual Machine and it's plugins.
 
 You will learn:
 
@@ -29,7 +29,7 @@ Currently, there are two VM plugins available, the WASM VM and the Ethereum VM (
 
 ## WASM VM
 
-Theoretically any high level language can be used to write a IOTA Smart Contract to be compiled into Wasm. The WASM VM supports for now the programming languages Go and Rust. Please feel free to reach out if you want to support your favourite programming language.
+Theoretically any high level language can be used to write a IOTA Smart Contract to be compiled into Wasm. WebAssembly (abbreviated Wasm) is a binary instruction format for a stack-based virtual machine. The WASM VM supports for now the programming languages Go and Rust.
 
 ### Why we choose Rust
 
@@ -44,7 +44,9 @@ We use Rust as a high level language to write SC programs for several reasons:
 
 It's also possible to write an IOTA Smart Contract in the Go programming language.
 
-TODO: What are the advantages of Go for Wasm.
+- Wasp Node is programmed in Go, also the Test Framework Solo.
+- Go is easy to understand and learn.
+- Go is a very popular language within the community.
 
 ## Ethereum VM (EVM)
 
