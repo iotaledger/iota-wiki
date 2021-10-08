@@ -9,7 +9,7 @@ description: This topic explores messages, models, and payloads that encompass
 
 A message is an object that nodes gossip around in the network. It always references two to eight other messages, which are known as **parents**. It is stored as a vertex on the Tangle data structure maintained by the nodes.
 
-Messages can contain payloads. Some of them are core payloads that are processed by all nodes as part of the core protocol. Others are community payloads that enable the building of new functionalities on top of the Tangle. And some payloads have other nested payloads embedded inside. So upon parsing, it is done layer by layer.
+Messages can contain payloads. Some of them are core payloads that are processed by all nodes as part of the core protocol. Others are community payloads that enable the building of new functionalities on top of the Tangle. And some payloads have other nested payloads embedded inside. So, the parsing of the message is done layer by layer, to ensure also embedded payloads have a correct syntax structure.
 
 ## UTXO
 
