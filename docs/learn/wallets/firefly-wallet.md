@@ -8,20 +8,20 @@ description: The IOTA Firefly Wallet sets a new standard for Software Wallets in
 
 ## Table of contents
 
--   [General Overview and Introduction](#general-overview-and-introduction)
--   [Firefly Token Migration](#firefly-token-migration)
--   Firefly User Guide
-    - [User guide for standard users](#user-guide-for-standard-users)
-    - [User Guide for users of a Ledger Nano X or Ledger Nano S device](#user-guide-for-users-of-a-ledger-nano-x-or-ledger-nano-s-device)
--   Firefly FAQ
-    - [Setup and installation](#setup-and-installation)
-    - [Backups and recovery](#backups-and-recovery)
-    - [Profiles and wallets](#profiles-and-wallets)
-    - [Transactions](#transactions)
-    - [Settings](#settings)
-    - [Troubleshooting](#troubleshooting)
-    - [Migration](#migration)
-    - [Spent Addresses](#spent-addresses)
+- [General Overview and Introduction](#general-overview-and-introduction)
+- [Firefly Token Migration](#firefly-token-migration)
+- Firefly User Guide
+  - [User guide for standard users](#user-guide-for-standard-users)
+  - [User Guide for users of a Ledger Nano X or Ledger Nano S device](#user-guide-for-users-of-a-ledger-nano-x-or-ledger-nano-s-device)
+- Firefly FAQ
+  - [Setup and installation](#setup-and-installation)
+  - [Backups and recovery](#backups-and-recovery)
+  - [Profiles and wallets](#profiles-and-wallets)
+  - [Transactions](#transactions)
+  - [Settings](#settings)
+  - [Troubleshooting](#troubleshooting)
+  - [Migration](#migration)
+  - [Spent Addresses](#spent-addresses)
 
 ## General Overview and Introduction
 
@@ -31,10 +31,10 @@ It is built with a bright future in mind. It will evolve into a tool that offers
 
 Some of the most important features are:
 
-- *Written in Rust*: Rust offers security from the ground up – while maintaining speed, low memory usage and scalability. This allows us to build apps with better performance and higher security.
-- *Modular design*: Firefly separates different functionalities – like seed storage, handling transactions and cryptography – in module crates. A module crate groups together related functions so that the functionality is easy to share between multiple projects that aim to use the same feature.
-- *Secured with Stronghold*: Sensitive actions like address generation and transaction signing take place in isolated application memory built upon the IOTA Stronghold library, keeping the seed away from potential attackers.
-- *Crypto.rs*: Crypto.rs combines all cryptographic algorithms used by many of the projects at the IOTA Foundation. It reduces the risk of using unsafe crypto implementations, making it easier to audit, resulting in verifiably safer code.
+- _Written in Rust_: Rust offers security from the ground up – while maintaining speed, low memory usage and scalability. This allows us to build apps with better performance and higher security.
+- _Modular design_: Firefly separates different functionalities – like seed storage, handling transactions and cryptography – in module crates. A module crate groups together related functions so that the functionality is easy to share between multiple projects that aim to use the same feature.
+- _Secured with Stronghold_: Sensitive actions like address generation and transaction signing take place in isolated application memory built upon the IOTA Stronghold library, keeping the seed away from potential attackers.
+- _Crypto.rs_: Crypto.rs combines all cryptographic algorithms used by many of the projects at the IOTA Foundation. It reduces the risk of using unsafe crypto implementations, making it easier to audit, resulting in verifiably safer code.
 
 Find more information on the official website and download the Firefly wallet exclusively from:
 
@@ -637,7 +637,7 @@ In the original IOTA network, IOTA used Winternitz One Time Signatures (W-OTS): 
 
 With W-OTS, every time a signature is signed to spend tokens from a particular address, any remaining tokens need to be moved onto a new address to prevent malicious actors from brute-forcing (trial-and-error guessing) the remaining parts of the private key for the address. That’s the main reason why this signature scheme is considered to be a “one-time signature”.
 
-So after the Chrysalis update, we are using the Ed25519, based on the EdDSA, scheme instead of W-OTS. The advantage is that the new scheme addresses all of the issues that W-OTS originally had, where Ed25519 verifies both single-signature and batch verification (taking care of the remaining tokens) very quickly, as well as faster key generation and smaller signatures (very secure). Read more at <https://chrysalis.docs.iota.org/faq.html>.
+So after the Chrysalis update, we are using the Ed25519, based on the EdDSA, scheme instead of W-OTS. The advantage is that the new scheme addresses all of the issues that W-OTS originally had, where Ed25519 verifies both single-signature and batch verification (taking care of the remaining tokens) very quickly, as well as faster key generation and smaller signatures (very secure).
 
 ### Why is it not possible to migrate some of my tokens?
 

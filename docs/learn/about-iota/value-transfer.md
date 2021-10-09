@@ -58,9 +58,9 @@ Let's go a bit more into details and observe the single steps taken by the parti
 
 ## Clients
 
-Everything starts with a client. A client is a software that initiates and creates IOTA transactions for a user (whether human, machine or device). Most clients for users will come in the form of a wallet software like the [IOTA Firefly Wallet](https:/firefly.iota.org/).
+Everything starts with a client. A client is a software that initiates and creates IOTA transactions for a user (whether human, machine or device). Most clients for users will come in the form of a wallet software like the [IOTA Firefly Wallet](https://firefly.iota.org/).
 
-Simple command-line tools for professional users, like the [CLI Wallet](https:/https://github.com/iotaledger/cli-wallet/), are also available.
+Simple command-line tools for professional users, like the [CLI Wallet](https://github.com/iotaledger/cli-wallet/), are also available.
 
 Machines, sensors, and devices, etc. will use the code of the IOTA wallet libraries to create and execute the transactions autonomously.
 
