@@ -5,7 +5,7 @@ description: Links to all the Research papers published from IOTA Foundation Res
 
 # IOTA Foundation Research Papers
 
-The IOTA Research Department aims for academic validation of the whole protocol and regularly publishes papers and studies to the academic world following a strictly peer-reviewed approach in the protocol development.
+The research department of the IOTA Foundation aims for academic validation of the whole protocol and regularly publishes papers and studies to the academic world following a strictly peer-reviewed approach in the protocol development.
 
 You can find the papers here:
 
@@ -13,4 +13,4 @@ You can find the papers here:
 
 And here:
 
-- [Google Scholar](https://scholar.google.com/citations?user=_ZIH81gAAAAJ&hl=en)
+- [Google Scholar](https://scholar.google.com/citations?user=\_ZIH81gAAAAJ\&hl=en)
