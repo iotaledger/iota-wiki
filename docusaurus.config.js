@@ -420,6 +420,7 @@ module.exports = {
             require('remark-code-import'),
             require('remark-import-partial'),
           ],
+          showLastUpdateTime: true,
         },
         blog: {
           showReadingTime: false,
