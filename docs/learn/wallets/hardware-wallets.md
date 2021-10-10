@@ -6,9 +6,9 @@ description: Currently IOTA supports the Ledger Nano Hardware Wallet's. Get all
 
 # Hardware Wallets
 
-We are looking for contributors that would explain how Hardware Wallets work and how Ledger works together with IOTA.
+We are looking for contributors that would explain how hardware wallets work and how Ledger works together with IOTA.
 
-If You feel you can participate in this topic, please use the editor button below and start contributing.
+If you feel you can participate in this topic, please use the editor button below and start contributing.
 
 ### Thanks a lot
 
