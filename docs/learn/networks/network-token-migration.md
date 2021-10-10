@@ -6,9 +6,9 @@ description: We describe the process of migrating Tokens from the Legacy Network
 
 # Network Token migration:
 
-We are looking for contributors that would explain how the Migration of tokens from the IOTA legacy network to the IOTA Chrysalis Network takes place.\
+We are looking for contributors that would explain how the migration of tokens from the IOTA legacy network to the IOTA Chrysalis network takes place.\
 \
-If You feel you can participate in this topic, please use the editor button below and start contributing.
+If you feel you can participate in this topic, please use the editor button below and start contributing.
 
 ### Thanks a lot
 
