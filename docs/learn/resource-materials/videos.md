@@ -6,7 +6,7 @@ description: Great expalanation video's and short clips produced to explain all
 
 # Videos about IOTA
 
-### Here are some excellent YouTube channels and Videos that explain IOTA:
+### Here are some excellent YouTube channels and videos that explain IOTA:
 
 IOTA Foundation official YouTube channel: [IOTA Foundation - YouTube](https://www.youtube.com/c/iotafoundation)
 
@@ -29,10 +29,10 @@ Everything Tangle - short explainers:
 
 - [Everything Tangle - YouTube](https://www.youtube.com/channel/UCQaOR_QLI2tGceGAp3ZWfQw)
 
-Uncoined Community Channels - short easy explained Videos:
+Uncoined Community Channel - short and easy explained videos:
 
 - [UnCoined - YouTube](https://www.youtube.com/channel/UCtpz9oCJlMzviwSksDMNBLw)
 
-Einfach IOTA - Community Channel of the german IOTA Community:
+Einfach IOTA - channel of the german IOTA community:
 
 - [einfachIOTA - YouTube](https://www.youtube.com/channel/UClEhfr5oh-bbH42XoXO4Pqw)
