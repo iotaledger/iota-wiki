@@ -2,6 +2,12 @@
 id: smart-contracts-chains
 title: Smart Contract Chains
 description: In this article you will learn how the IOTA Smart Contract Chains works.
+keywords:
+  - Chains
+  - Smart Contracts
+  - wasp
+  - ISCP
+  - Multi-Chain
 ---
 
 ## 🏗 Work in Progress
