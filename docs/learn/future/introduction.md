@@ -2,6 +2,10 @@
 id: future-of-iota
 title: Introduction
 description: Future of IOTA
+keywords:
+  - Future of IOTA
+  - IOTA 2.0
+  - Smart Contracts
 ---
 
 # Future of IOTA
