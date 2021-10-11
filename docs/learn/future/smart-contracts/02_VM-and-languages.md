@@ -33,7 +33,7 @@ Any high-level language can be used to write an IOTA Smart Contract to be compil
 
 ### Why we choose Rust
 
-We use Rust as a high level language to write SC programs for several reasons:
+We use Rust as a high-level language to write Smart Contracts(SC) programs for several reasons:
 
 - The Wasm tooling is very advanced so Rust programs can easily be compiled into Wasm binaries
 - The flexibility and memory management model of Rust allows minimum runtime overhead in the Wasm binary
