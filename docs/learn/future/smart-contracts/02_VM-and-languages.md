@@ -56,4 +56,4 @@ Solidity is an object-oriented programming language specially developed to write
 
 The [IOTA Smart Contract EVM Plugin](https://wiki.iota.org/wasp/guide/evm/introduction/) leverages the current development of Solidity Smart Contracts and allows Blockchain developers to stay in their comfort zone.
 
-On the next chapter, you will learn everything about the IOTA Smart Contract validators.
+In the next article, you will learn everything about the IOTA Smart Contract validators.
