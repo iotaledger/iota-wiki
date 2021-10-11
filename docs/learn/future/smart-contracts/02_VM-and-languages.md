@@ -40,7 +40,7 @@ We use Rust as a high level language to write SC programs for several reasons:
 - Wasm binaries generated from Rust can be very small, just a few kilobytes
 - Rust is becoming a popular language of choice for SC development with good support and a wide developer community.
 
-### Why we choose Go
+### Why We Choose Go
 
 It's also possible to write an IOTA Smart Contract in the Go programming language.  Using Go has the following advantages:```
 
