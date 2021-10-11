@@ -1,6 +1,6 @@
 ---
-title: IOTA DevNet Wallet
-description: A Wallet for the current IOTA 2.o Development - and Testnet. Offers
+title: IOTA 2.0 DevNet Wallet
+description: A Wallet for the current IOTA 2.0 Development - and Testnet. Offers
   a lot of Functions that will become available in the IOTA 2.0 Mainnet. No real
   IOTA Tokens are used here.
 ---
@@ -11,7 +11,7 @@ With a wallet for the IOTA 2.0 DevNet you can request tokens from the faucet, tr
 
 ## cli-wallet
 
-The cli wallet is the most feature complete wallet. You can find a guide for it [here](/goshimmer/tutorials/wallet_library).\
+The cli wallet is the most feature complete wallet. You can find a guide for it [here](/goshimmer/tutorials/wallet_library).
 The cli wallet is located directly in the Goshimmer repo and pre-build binaries are released with each new GoShimmer version [here](https://github.com/iotaledger/goshimmer/releases).
 
 ## IOTA 2.0 DevNet GUI Wallet
