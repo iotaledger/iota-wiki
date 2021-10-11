@@ -25,7 +25,7 @@ The VM can be extended dynamically by adding VM plugins, the VM processors which
 
 By VM abstraction in IOTA Smart Contracts we understand a collection of generic interfaces which makes the whole architecture of IOTA Smart Contracts and the Wasp node agnostic about what exact kind of deterministic computation machinery is used to run smart contract programs.
 
-Currently, there are two VM plugins available, the WASM VM and the Ethereum VM (EVM).
+Currently, there are two VM plugins available, the [WASM VM](#wasm-vm) and the [Ethereum VM (EVM)](#ethereum-vm-evm).
 
 ## WASM VM
 
