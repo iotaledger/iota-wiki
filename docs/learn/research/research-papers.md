@@ -13,4 +13,4 @@ You can find the papers here:
 
 And here:
 
-- [Google Scholar](https://scholar.google.com/citations?user=\_ZIH81gAAAAJ\&hl=en)
+- [Google Scholar](https://scholar.google.com/citations?user=_ZIH81gAAAAJ&hl=en)
