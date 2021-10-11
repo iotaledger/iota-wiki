@@ -2,6 +2,12 @@
 id: smart-contracts-validators
 title: Validators
 description: In this article you will learn how the IOTA Smart Contract validators works.
+keywords:
+  - Validator
+  - Smart Contracts
+  - wasp
+  - ISCP
+  - Node
 ---
 
 ## 🏗 Work in Progress
