@@ -29,7 +29,7 @@ Currently, there are two VM plugins available, the [WASM VM](#wasm-vm) and the [
 
 ## WASM VM
 
-Theoretically any high level language can be used to write a IOTA Smart Contract to be compiled into Wasm. WebAssembly (abbreviated Wasm) is a binary instruction format for a stack-based virtual machine. The WASM VM supports for now the programming languages Go and Rust.
+Any high-level language can be used to write an IOTA Smart Contract to be compiled into Wasm. WebAssembly (abbreviated Wasm) is a binary instruction format for a stack-based virtual machine. The WASM VM currently supports the Go and Rust programming languages.
 
 ### Why we choose Rust
 
