@@ -2,6 +2,17 @@
 id: smart-contracts-VM-and-languages
 title: Smart Contract VM & Languages
 description: This article explains the underlying technologies of IOTA Smart Contracts - the Virtual Machine, and its plugins.
+keywords:
+  - Virtual Machines
+  - VM
+  - Smart Contracts
+  - wasp
+  - iscp
+  - Wasm
+  - EVM
+  - Rust
+  - Go
+  - Solidity
 ---
 
 This article explains the underlying technologies of IOTA Smart Contracts - the Virtual Machine, and its plugins.
@@ -31,7 +42,7 @@ Currently, there are two VM plugins available, the [WASM VM](#wasm-vm) and the [
 
 Any high-level language can be used to write an IOTA Smart Contract to be compiled into Wasm. WebAssembly (abbreviated Wasm) is a binary instruction format for a stack-based virtual machine. The WASM VM currently supports the Go and Rust programming languages.
 
-### Why we choose Rust
+### Why We Choose Rust
 
 We use Rust as a high-level language to write Smart Contracts(SC) programs for several reasons:
 
