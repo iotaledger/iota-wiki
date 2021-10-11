@@ -2,6 +2,12 @@
 id: smart-contracts-introduction
 title: Introduction
 description: IOTA Smart Contracts Series
+keywords:
+  - Smart Contracts
+  - wasp
+  - ISCP
+  - Wasm
+  - EVM
 ---
 
 This is a series of articles which brings an detailed overview of IOTA Smart Contracts.
