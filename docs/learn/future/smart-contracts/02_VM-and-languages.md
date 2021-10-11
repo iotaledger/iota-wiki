@@ -12,7 +12,7 @@ You will learn:
 - Differences between WASM-VM and EVM plugins?
 - Which programming languages are supported?
 
-## The Virtual machine
+## The Virtual Machine
 
 In IOTA Smart Contracts we distinguish two things:
 
