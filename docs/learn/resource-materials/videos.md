@@ -11,7 +11,7 @@ description: Great expalanation video's and short clips produced to explain all
 IOTA Foundation official YouTube channel: [IOTA Foundation - YouTube](https://www.youtube.com/c/iotafoundation)
 
 - [Announcements](https://www.youtube.com/playlist?list=PLMbc46iGTB_RLGHIQ8I01xtqijh5-hZAT)
-- [IOTA Quicktakes](https://www.youtube.com/playlist?list=PLMbc46iGTB_QyqqU-QwbFsrVd9-HN55i\_)
+- [IOTA Quicktakes](https://www.youtube.com/playlist?list=PLMbc46iGTB_QyqqU-QwbFsrVd9-HN55i_)
 - [Playlist for Developers](https://www.youtube.com/playlist?list=PLMbc46iGTB_TIkwgBrAMSi4NbjPKkxrr4)
 - [Playlist for Enterprises](https://www.youtube.com/playlist?list=PLMbc46iGTB_RU-86UsKtuhLMUVeWMfkUA)
 - [Our Ecosystem](https://www.youtube.com/playlist?list=PLMbc46iGTB_QBoTiYl0jwNIdA4Lvj7t_O)
@@ -23,7 +23,7 @@ IOTA Foundation official YouTube channel: [IOTA Foundation - YouTube](https://ww
 
 Weekly updates from the IOTA project by Chris Mueller:
 
-- [IOTA Weekly - YouTube](https://www.youtube.com/channel/UCfq6x\_5wCrXh0mUa-1iRX9g)
+- [IOTA Weekly - YouTube](https://www.youtube.com/channel/UCfq6x_5wCrXh0mUa-1iRX9g)
 
 Everything Tangle - short explainers:
 
