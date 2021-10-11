@@ -1,7 +1,7 @@
 ---
 id: smart-contracts-VM-and-languages
 title: Smart Contract VM & Languages
-description: This article explains the underlaying technologies of IOTA Smart Contracts - the Virtual Machine and it's plugins.
+description: This article explains the underlying technologies of IOTA Smart Contracts - the Virtual Machine, and its plugins.
 ---
 
 This article explains the underlying technologies of IOTA Smart Contracts - the Virtual Machine and it's plugins.
