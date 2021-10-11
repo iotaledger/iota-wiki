@@ -16,7 +16,7 @@ You will learn:
 
 In IOTA Smart Contracts we distinguish two things:
 
-- The VM (Virtual Machine) itself
+The Virtual Machine (VM) itself
 - and VM plugins (processors, smart contracts), a pluggable part of the VM.
 
 The VM itself is a deterministic executable, a "black box".
