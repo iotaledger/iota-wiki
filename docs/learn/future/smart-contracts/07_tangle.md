@@ -2,6 +2,11 @@
 id: smart-contracts-tangle
 title: IOTA Tangle
 description: In this article you will learn how the IOTA Smart Contracts interact with the IOTA Tangle.
+keywords:
+  - Tangle
+  - Smart Contracts
+  - wasp
+  - ISCP
 ---
 
 ## 🏗 Work in Progress
