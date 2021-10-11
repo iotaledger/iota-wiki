@@ -37,7 +37,7 @@ We use Rust as a high-level language to write Smart Contracts(SC) programs for s
 
 - The Wasm tooling is very advanced, so Rust programs can easily be compiled into Wasm binaries.
 - The flexibility and memory management model of Rust allows minimum runtime overhead in the Wasm binary.
-- Wasm binaries generated from Rust can be very small, just a few kilobytes
+- Wasm binaries generated from Rust are very small, just a few kilobytes
 - Rust is becoming a popular language of choice for SC development with good support and a wide developer community.
 
 ### Why We Choose Go
