@@ -54,6 +54,6 @@ The Ethereum Virtual Machine (EVM) is the runtime environment in Ethereum and al
 
 Solidity is an object-oriented programming language specially developed to write smart contracts.
 
-The IOTA Smart Contract EVM Plugin leverages the current development of Solidity Smart Contracts and allows Blockchain developers to stay in their comfort zone.
+The [IOTA Smart Contract EVM Plugin](https://wiki.iota.org/wasp/guide/evm/introduction/) leverages the current development of Solidity Smart Contracts and allows Blockchain developers to stay in their comfort zone.
 
 On the next chapter, you will learn everything about the IOTA Smart Contract validators.
