@@ -2,6 +2,11 @@
 id: smart-contracts-consensus
 title: Consensus
 description: In this article you will learn how the IOTA Smart Contract Consensus works.
+keywords:
+  - Cosensus
+  - Smart Contracts
+  - wasp
+  - ISCP
 ---
 
 ## 🏗 Work in Progress
