@@ -50,7 +50,7 @@ It's also possible to write an IOTA Smart Contract in the Go programming languag
 
 ## Ethereum VM (EVM)
 
-The Ethereum Virtual Machine (EVM) is the runtime environment in Ethereum and allows the development of Smart Contracts with the programming language Solidity.
+The [Ethereum Virtual Machine (EVM)](https://ethereum.org/en/developers/docs/evm/) is the runtime environment in Ethereum that allows the development of Smart Contracts with the [Solidity](https://docs.soliditylang.org/en/v0.8.9/) programming language.
 
 Solidity is an object-oriented programming language specially developed to write smart contracts.
 
