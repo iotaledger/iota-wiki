@@ -42,7 +42,7 @@ The chain also contains an on-ledger backlog of unprocessed requests.
 
 The data state is stored outside of the ledger, on the distributed database maintained by validators nodes.
 
-### Digital assets on the chain
+### Digital Assets on the Chain
 
 The native L1 accounts of IOTA UTXO ledger are represented by addresses, each controlled by the entity holding the corresponding private and public key pair. The L1 account is a collection of UTXOs belonging to the address.
 
