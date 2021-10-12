@@ -13,13 +13,13 @@ keywords:
 
 In this article you will learn how the IOTA Smart Contracts interact with the IOTA Tangle.
 
-Smart contracts are essential across many of IOTA’s verticals including Supply Chain, Smart Cities, Industrial IoT and others. IOTA Smart Contracts can automate contractual obligations within those industries.
+Smart contracts are essential across many of IOTA’s verticals including [Supply Chain](https://www.iota.org/solutions/global-trade-and-supply-chains), [Smart Cities](https://www.iota.org/solutions/smart-city), [Industrial IoT](https://www.iota.org/solutions/industrial-iot) amongst others. IOTA Smart Contracts can automate contractual obligations within many industries.
 
-IOTA Smart Contracts have many benefits, thanks to the Tangle’s properties of scalability, high throughput and feeless transactions.
+Thanks to the Tangle’s properties of scalability, high throughput, and feeless transactions, IOTA Smart Contracts have many benefits, 
 
-![](https://blog.iota.org/content/images/downloaded_images/an-introduction-to-iota-smart-contracts-16ea6f247936/0-dHkoFWGVvRebra9u.jpg)
+[![](https://blog.iota.org/content/images/downloaded_images/an-introduction-to-iota-smart-contracts-16ea6f247936/0-dHkoFWGVvRebra9u.jpg)](https://blog.iota.org/content/images/downloaded_images/an-introduction-to-iota-smart-contracts-16ea6f247936/0-dHkoFWGVvRebra9u.jpg)
 
-To facilitate IOTA’s use cases, including the Internet of Things, IOTA smart contracts running on layer 2, ”off-Tangle”.
+To facilitate IOTA’s use cases, including the Internet of Things, IOTA smart contracts run on top of the base layer, ”off-Tangle”.
 
 Although Ethereum’s “on-chain” smart contracts are popular due to their properties, they have some significant drawbacks. The most salient one is that for every smart contract in existence every node needs to keep a copy of the contract’s program code and state. Every node in the network has to execute the exact same code when the smart contract is triggered.
 
@@ -29,4 +29,4 @@ In addition to the transaction fees you need to pay to be considered for inclusi
 
 This is why IOTA Smart Contracts are not implemented as part of the core protocol but as a layer 2 protocol to leverages all advantages.
 
-![](https://i.imgur.com/Ynv8bYc.png)
+[![](https://i.imgur.com/Ynv8bYc.png)](https://i.imgur.com/Ynv8bYc.png)
