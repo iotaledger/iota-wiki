@@ -20,7 +20,7 @@ This article explains the underlying technologies of IOTA Smart Contracts - the 
 You will learn:
 
 - What is a Virtual Machine and what are plugins?
-Differences between WASM-VM and EVM plugins
+- Differences between WASM-VM and EVM plugins
 - Which programming languages are supported?
 
 ## The Virtual Machine
@@ -53,7 +53,7 @@ We use Rust as a high-level language to write Smart Contracts(SC) programs for s
 
 ### Why We Choose Go
 
-It's also possible to write an IOTA Smart Contract in the Go programming language.  Using Go has the following advantages:```
+It's also possible to write an IOTA Smart Contract in the Go programming language. Using Go has the following advantages:```
 
 - The [Wasp Node](https://wiki.iota.org/wasp/overview) is programmed in Go, as is the [Test Framework Solo]([https://wiki.iota.org/wasp/guide/solo/what-is-solo/]).
 - Go is easy to understand and learn.
