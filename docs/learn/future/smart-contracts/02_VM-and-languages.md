@@ -36,7 +36,7 @@ The VM can be extended dynamically by adding VM plugins, the VM processors which
 
 In IOTA Smart Contracts, an abstraction is a collection of generic interfaces which makes the whole architecture of IOTA Smart Contracts and the Wasp node agnostic about what exact kind of deterministic computation machinery is used to run smart contract programs.
 
-Currently, there are two VM plugins available, the [WASM VM](#wasm-vm) and the [Ethereum VM (EVM)](#ethereum-vm-evm).
+Currently, there are two VM plugins available, the [WASM VM](https://wiki.iota.org/wasp/guide/rust_wasm/introduction) and the [Ethereum VM (EVM)](https://wiki.iota.org/wasp/guide/evm/introduction/).
 
 ## WASM VM
 
@@ -55,7 +55,7 @@ We use Rust as a high-level language to write Smart Contracts(SC) programs for s
 
 It's also possible to write an IOTA Smart Contract in the Go programming language. Using Go has the following advantages:```
 
-- The [Wasp Node](https://wiki.iota.org/wasp/overview) is programmed in Go, as is the [Test Framework Solo]([https://wiki.iota.org/wasp/guide/solo/what-is-solo/]).
+- The [Wasp Node](https://github.com/iotaledger/wasp) is programmed in Go, as is the [Test Framework Solo](https://wiki.iota.org/wasp/guide/solo/what-is-solo/).
 - Go is easy to understand and learn.
 - Go is a very popular language within the community.
 
