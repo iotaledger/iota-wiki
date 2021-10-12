@@ -13,7 +13,6 @@ keywords:
 This is series of articles brings a detailed overview of IOTA Smart Contracts.
 
 IOTA Smart Contracts provide a more natural way of running distributed computations. Each smart contract can be executed in a localized context without forcing the whole network to execute it.
-Write Preview
 
 Learn more about the concepts in the following articles:
 
