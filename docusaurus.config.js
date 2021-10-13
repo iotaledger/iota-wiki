@@ -416,16 +416,6 @@ module.exports = {
     [
       '@docusaurus/preset-classic',
       {
-        docs: {
-          sidebarPath: require.resolve('./sidebars.js'),
-          // Please change this to your repo.
-          editUrl: 'https://github.com/iota-community/iota-wiki/edit/develop/',
-          remarkPlugins: [
-            require('remark-code-import'),
-            require('remark-import-partial'),
-          ],
-          showLastUpdateTime: true,
-        },
         blog: {
           showReadingTime: false,
           blogSidebarCount: 0,
@@ -464,6 +454,14 @@ module.exports = {
         path: 'internal/learn',
         routeBasePath: 'learn',
         sidebarPath: require.resolve('./internal/learn/sidebars.js'),
+        
+        // General config
+        editUrl: 'https://github.com/iota-community/iota-wiki/edit/develop/',
+        remarkPlugins: [
+          require('remark-code-import'),
+          require('remark-import-partial'),
+        ],
+        showLastUpdateTime: true,
       },
     ],
     [
@@ -473,6 +471,14 @@ module.exports = {
         path: 'internal/participate',
         routeBasePath: 'participate',
         sidebarPath: require.resolve('./internal/participate/sidebars.js'),
+        
+        // General config
+        editUrl: 'https://github.com/iota-community/iota-wiki/edit/develop/',
+        remarkPlugins: [
+          require('remark-code-import'),
+          require('remark-import-partial'),
+        ],
+        showLastUpdateTime: true,
       },
     ],
     [
@@ -482,6 +488,14 @@ module.exports = {
         path: 'internal/build',
         routeBasePath: 'build',
         sidebarPath: require.resolve('./internal/build/sidebars.js'),
+        
+        // General config
+        editUrl: 'https://github.com/iota-community/iota-wiki/edit/develop/',
+        remarkPlugins: [
+          require('remark-code-import'),
+          require('remark-import-partial'),
+        ],
+        showLastUpdateTime: true,
       },
     ],
     /* AUTO GENERATED EXTERNAL DOCS CONFIG */
