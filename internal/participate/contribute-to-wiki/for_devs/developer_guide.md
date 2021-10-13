@@ -25,7 +25,7 @@ The most consuming part of writing is not the writing itself but the research of
 
 Some tasks you can manage on your own. For some you would need advice. Some tasks are better left to technical writers. Contact the writers' team and distribute the effort early.
 
-To help you help us, we have prepared a [toolbox](./toolbox/toolbox.md), a collection of tools and tips for developers who write documentation.
+To help you help us, we have prepared a [toolbox](toolbox/toolbox.md), a collection of tools and tips for developers who write documentation.
 
 ## Do Your Work
 
@@ -35,4 +35,4 @@ Feel free to ask a technical writer for an advice or a review.
 
 ## Make It Official
 
-Once again, we are up for a chat. But there are more projects than there are technical writers, and we need to plan ahead for any substantial contribution. See [Requesting a Technical Writer](./request_tw.md) for details.
+Once again, we are up for a chat. But there are more projects than there are technical writers, and we need to plan ahead for any substantial contribution. See [Requesting a Technical Writer](request_tw.md) for details.

@@ -25,7 +25,7 @@ A software wallet is a computer program that is executed in the operating system
 
 But as software wallets are part of your operating system, the security of a software wallet can always be only as good as the security of the entire operating system. So you need to make sure that your operating system is free of malicious software, otherwise it will be easy for an attacker to get access your secret keys and your tokens. If you use a software wallet to handle your IOTA tokens, always have an up-to-date system, run quality antivirus and anti-malware programs, and follow best practices for cybersecurity.
 
-The IOTA Foundation has developed a software wallet that follows the highest standards to keep your secrets safe. Read about the Firefly wallet here: [**Firefly Wallet**](/docs/learn/wallets/firefly-wallet)
+The IOTA Foundation has developed a software wallet that follows the highest standards to keep your secrets safe. Read about the Firefly wallet here: [**Firefly Wallet**](/internal/learn/wallets/firefly-wallet)
 
 And download the Firefly wallet at the [**Firefly official website**](https://firefly.iota.org/)
 
@@ -39,7 +39,7 @@ Through sophisticated cryptographic concepts, the user can now interact with the
 
 A hardware wallet is therefore the most secure way to keep your secrets safe, but it also adds an extra layer of complexity to the use of your crypto, on top of what a software wallet provides.
 
-IOTA currently supports the use of the Ledger Nano hardware wallet. Read how to use it [**here.**](/docs/learn/wallets/firefly-wallet#user-guide-for-users-of-a-ledger-nano-x-or-ledger-nano-s-device)
+IOTA currently supports the use of the Ledger Nano hardware wallet. Read how to use it [**here.**](/internal/learn/wallets/firefly-wallet#user-guide-for-users-of-a-ledger-nano-x-or-ledger-nano-s-device)
 
 Only purchase a Ledger directly from the official store on the official website: [**Ledger Hardware Wallets**](https://www.ledger.com/)
 
