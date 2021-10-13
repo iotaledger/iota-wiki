@@ -5,14 +5,14 @@ on:
     branches: [develop]
   workflow_dispatch:
   schedule:
-    - cron:  '0 0 * * *'
+    - cron: '0 0 * * *'
 
 jobs:
   checks:
     if: github.event_name == 'pull_request'
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
         with:
           node-version: '14.x'
@@ -31,6 +31,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0 # Needed for showLastUpdateTime to work
       - uses: actions/setup-node@v1
         with:
           node-version: '14.x'
@@ -58,14 +60,3 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./build
           cname: wiki.iota.org
-      - name: Create search index env file
-        run: |
-          touch search.env
-          echo TYPESENSE_API_KEY=${{ secrets.TYPESENSE_API_KEY }} >> search.env
-          echo TYPESENSE_HOST=${{ secrets.TYPESENSE_HOST }} >> search.env
-          echo TYPESENSE_PORT=${{ secrets.TYPESENSE_PORT }} >> search.env
-          echo TYPESENSE_PROTOCOL=${{ secrets.TYPESENSE_PROTOCOL }} >> search.env
-      - name: Update search indexes
-        run: |
-          docker run --env-file=./search.env -e "CONFIG=$(cat .github/config/search.config.json | jq -r tostring)" typesense/docsearch-scraper
-

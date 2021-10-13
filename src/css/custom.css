@@ -35,12 +35,12 @@
 }
 
 .card__image {
-  background: linear-gradient(180deg, #001c56 0%, #074db6 100%);
+  background: linear-gradient(180deg, #001c56, #074db6);
 }
 
 .card__image img {
+  display: block;
   width: 100%;
-  margin-bottom: -8px;
 }
 
 .footer__copyright {
@@ -67,7 +67,7 @@
 }
 
 .link__icon {
-  font-family: 'icomoon' !important;
+  font-family: 'iota_icons_font' !important;
   font-size: 2.5rem;
 }
 
@@ -141,6 +141,20 @@ ul ul .table-of-contents__link {
   font-weight: var(--ifm-font-weight-semibold);
 }
 
+.team__icon {
+  font-family: 'socials_font' !important;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.link-list {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+}
+
 .theme-doc-toc-mobile {
   color: var(--ifm-menu-color);
 }
@@ -170,7 +184,15 @@ Search bar
 .DocSearch-Footer {
   display: none !important;
 }
-
+.DocSearch.DocSearch-Button {
+  width: 28px;
+  height: 28px;
+  padding-left: 7px;
+}
+.DocSearch-Button-Container {
+  width: 15px;
+  height: 15px;
+}
 .DocSearch-Modal {
   width: 80% !important;
   max-width: 80% !important;
