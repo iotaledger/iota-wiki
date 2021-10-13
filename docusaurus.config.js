@@ -236,7 +236,7 @@ module.exports = {
             },
             {
               label: 'Future of IOTA',
-              to: 'docs/learn/future/future-of-iota',
+              to: 'learn/future/future-of-iota',
             },
           ],
         },
