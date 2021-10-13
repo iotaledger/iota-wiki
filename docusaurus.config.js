@@ -453,7 +453,6 @@ module.exports = {
       },
     ],
     'docusaurus-plugin-matomo',
-    /* AUTO GENERATED EXTERNAL DOCS CONFIG */
     [
       '@docusaurus/plugin-content-docs',
       {
@@ -481,5 +480,6 @@ module.exports = {
         sidebarPath: require.resolve('./internal/build/sidebars.js'),
       },
     ],
+    /* AUTO GENERATED EXTERNAL DOCS CONFIG */
   ],
 };
