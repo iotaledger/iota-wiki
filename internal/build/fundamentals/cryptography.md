@@ -28,7 +28,7 @@ Say two people in the IOTA community want to conduct a transaction from differen
 
 Nowadays, a digital signature is more or less the authenticator and validator of a transaction. Taking the legal contract example a step further, a digital signature is _stronger_ than the old way of a legally binding agreement. It guarantees that nothing can change once a contract (in this case, your transaction) is signed. The signature in your transaction proves that you hold the [**private key**](/identity.rs/specs/iota_did_method_spec/#private-key-management) that controls the funds. And the transfer being made is held under a derived account, like a sub-account in your bank account.
 
-IOTA decided to use the [**Ed25519**](https://en.wikipedia.org/wiki/Curve25519) signature scheme, based on the popular [**EdDSA**](https://en.wikipedia.org/wiki/EdDSA) scheme. Using both of these schemes in collaboration makes the signature reusable! The Ed25519 can verify single signatures and batches of transactions very quickly which means those two IOTA users in different parts of the world can stagger big and small transactions between or with others _at the same time_ if they want. They can even do this with little delay in sending and receiving. And their transactions are even _more_ secure as this signature generates keys faster. In this case, that means a whole brand new, complex string of numbers and letters is created specifically for each of their transactions as security. [**This helps keep out malicious actors trying to get your money**](/docs/learn/wallets/firefly-wallet/#what-are-spent-addresses-and-why-are-they-dangerous).
+IOTA decided to use the [**Ed25519**](https://en.wikipedia.org/wiki/Curve25519) signature scheme, based on the popular [**EdDSA**](https://en.wikipedia.org/wiki/EdDSA) scheme. Using both of these schemes in collaboration makes the signature reusable! The Ed25519 can verify single signatures and batches of transactions very quickly which means those two IOTA users in different parts of the world can stagger big and small transactions between or with others _at the same time_ if they want. They can even do this with little delay in sending and receiving. And their transactions are even _more_ secure as this signature generates keys faster. In this case, that means a whole brand new, complex string of numbers and letters is created specifically for each of their transactions as security. [**This helps keep out malicious actors trying to get your money**](/internal/learn/wallets/firefly-wallet/#what-are-spent-addresses-and-why-are-they-dangerous).
 
 ## Addresses
 
@@ -48,5 +48,5 @@ There are, of course, a lot more details and concepts to explore within the worl
 
 ## Useful Links
 
-- [**IOTA's Chrysalis**](/docs/learn/networks/iota-1.5-chrysalis) - Our current, multiple project effort for the future of IOTA
-- [**Introduction to IOTA**](/docs/learn/about-iota/an-introduction-to-iota) - The basics of how IOTA works and what it does
+- [**IOTA's Chrysalis**](/internal/learn/networks/iota-1.5-chrysalis) - Our current, multiple project effort for the future of IOTA
+- [**Introduction to IOTA**](/internal/learn/about-iota/an-introduction-to-iota) - The basics of how IOTA works and what it does

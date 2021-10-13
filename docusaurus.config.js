@@ -41,21 +41,21 @@ module.exports = {
       {
         title: 'Learn',
         image: 'img/learn.svg',
-        link: 'docs/learn/about-iota/an-introduction-to-iota',
+        link: 'learn/about-iota/an-introduction-to-iota',
         description:
           'Learn about IOTA, the Tangle, its features, industry applications, network and more.',
       },
       {
         title: 'Participate',
         image: 'img/participate.svg',
-        link: 'docs/participate/support-the-network/about-nodes',
+        link: 'participate/support-the-network/about-nodes',
         description:
           'Join the network and start using solutions built on top of the Tangle.',
       },
       {
         title: 'Build',
         image: 'img/build.svg',
-        link: 'docs/build/getting-started/architecture',
+        link: 'build/getting-started/architecture',
         description:
           'Access documentation and guides to build with IOTA in Rust, C, Go, Java or Python.',
       },
@@ -70,13 +70,13 @@ module.exports = {
       items: [
         {
           label: 'Learn',
-          to: 'docs/learn/about-iota/an-introduction-to-iota',
-          activeBaseRegex: 'docs/learn/.*',
+          to: 'learn/about-iota/an-introduction-to-iota',
+          activeBaseRegex: 'learn/.*',
         },
         {
           label: 'Participate',
-          to: 'docs/participate/support-the-network/about-nodes',
-          activeBaseRegex: 'docs/participate/.*',
+          to: 'participate/support-the-network/about-nodes',
+          activeBaseRegex: 'participate/.*',
         },
         {
           label: 'Build',
@@ -96,9 +96,9 @@ module.exports = {
                 {
                   label: 'Getting Started',
                   sublabel: 'IOTA development basics',
-                  to: 'docs/build/getting-started/architecture',
+                  to: 'build/getting-started/architecture',
                   icon: '\ue902',
-                  activeBaseRegex: 'docs/build/getting-started/.*',
+                  activeBaseRegex: 'build/getting-started/.*',
                 },
               ],
             },
@@ -110,7 +110,7 @@ module.exports = {
                   sublabel: 'Mainnet documentation',
                   to: 'chrysalis-docs/welcome',
                   icon: '\ue901',
-                  activeBaseRegex: 'chrysalis-docs/.*',
+                  activeBaseRegex: 'chrysalis-docs.*',
                 },
                 {
                   label: 'Bee Node',
@@ -212,27 +212,27 @@ module.exports = {
           items: [
             {
               label: 'About IOTA',
-              to: 'docs/learn/about-iota/an-introduction-to-iota',
+              to: 'learn/about-iota/an-introduction-to-iota',
             },
             {
               label: 'IOTA Token',
-              to: 'docs/learn/iota-token/buying-iota',
+              to: 'learn/iota-token/buying-iota',
             },
             {
               label: 'Wallets',
-              to: 'docs/learn/wallets/what-is-a-wallet',
+              to: 'learn/wallets/what-is-a-wallet',
             },
             {
               label: 'Networks',
-              to: 'docs/learn/networks/iota-1.5-chrysalis',
+              to: 'learn/networks/iota-1.5-chrysalis',
             },
             {
               label: 'Resource Materials',
-              to: 'docs/learn/resource-materials/glossary',
+              to: 'learn/resource-materials/glossary',
             },
             {
               label: 'Research',
-              to: 'docs/learn/research/research-outline',
+              to: 'learn/research/research-outline',
             },
           ],
         },
@@ -241,11 +241,11 @@ module.exports = {
           items: [
             {
               label: 'Support the network',
-              to: 'docs/participate/support-the-network/about-nodes',
+              to: 'participate/support-the-network/about-nodes',
             },
             {
               label: 'The Community',
-              to: 'docs/participate/the-community/discord',
+              to: 'participate/the-community/discord',
             },
             {
               label: 'Partnerships',
@@ -253,15 +253,15 @@ module.exports = {
             },
             {
               label: 'Funding',
-              to: 'docs/participate/funding/edf-funding',
+              to: 'participate/funding/edf-funding',
             },
             {
               label: 'Use Cases',
-              to: 'docs/participate/use-cases/industry-applications',
+              to: 'participate/use-cases/industry-applications',
             },
             {
               label: 'Frameworks',
-              to: 'docs/participate/frameworks/introduction',
+              to: 'participate/frameworks/introduction',
             },
           ],
         },
@@ -270,19 +270,19 @@ module.exports = {
           items: [
             {
               label: 'Getting Started',
-              to: 'docs/build/getting-started/architecture',
+              to: 'build/getting-started/architecture',
             },
             {
               label: 'Fundamentals',
-              to: 'docs/build/fundamentals/cryptography',
+              to: 'build/fundamentals/cryptography',
             },
             {
               label: 'Exchange Integration',
-              to: 'docs/build/exchange-integration/exchange-integration-guide',
+              to: 'build/exchange-integration/exchange-integration-guide',
             },
             {
               label: 'Tutorials',
-              to: 'docs/build/tutorials/youtube',
+              to: 'build/tutorials/youtube',
             },
           ],
         },
@@ -311,7 +311,7 @@ module.exports = {
             },
             {
               label: 'Contribute',
-              to: 'docs/participate/contribute-to-wiki/welcome',
+              to: 'participate/contribute-to-wiki/welcome',
             },
           ],
         },
@@ -453,6 +453,33 @@ module.exports = {
       },
     ],
     'docusaurus-plugin-matomo',
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'learn',
+        path: 'internal/learn',
+        routeBasePath: 'learn',
+        sidebarPath: require.resolve('./internal/learn/sidebars.js'),
+      },
+    ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'participate',
+        path: 'internal/participate',
+        routeBasePath: 'participate',
+        sidebarPath: require.resolve('./internal/participate/sidebars.js'),
+      },
+    ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'build',
+        path: 'internal/build',
+        routeBasePath: 'build',
+        sidebarPath: require.resolve('./internal/build/sidebars.js'),
+      },
+    ],
     /* AUTO GENERATED EXTERNAL DOCS CONFIG */
   ],
 };

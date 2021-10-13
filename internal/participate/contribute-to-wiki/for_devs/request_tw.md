@@ -8,7 +8,7 @@ The technical writing team takes up to two weeks to produce a text. In that time
 
 ## Do Your Homework
 
-Make sure that you did your [homework](./developer_guide.md) before making a request. Decide what a writer has to do for you. Think about how could you help.
+Make sure that you did your [homework](developer_guide.md) before making a request. Decide what a writer has to do for you. Think about how could you help.
 As always, feel free to reach out to a writer if you need advise.
 
 ## Prepare an Issue
