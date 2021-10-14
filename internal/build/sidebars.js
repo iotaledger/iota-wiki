@@ -5,7 +5,7 @@ module.exports = {
       type: 'category',
       label: 'Networks',
       collapsed: true,
-      items: ['iota-1.5', 'iota-2.0'],
+      items: ['networks/iota-1.5', 'networks/iota-2.0'],
     },
     {
       type: 'category',
