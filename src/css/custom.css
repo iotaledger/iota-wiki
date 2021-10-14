@@ -51,6 +51,10 @@
   width: 100%;
 }
 
+.card-background:hover {
+  background: var(--ifm-color-emphasis-200);
+}
+
 .footer__copyright {
   margin: 0 var(--ifm-spacing-horizontal);
   margin-bottom: 0.9rem;

@@ -13,7 +13,7 @@ export default function Card({ title, link, description, icon }) {
 
   return (
     <div
-      className='card card--pointer margin-horiz--md margin-vert--md shadow--md'
+      className='card card-background card--pointer margin-horiz--md margin-vert--md shadow--md'
       onClick={handleClick}
     >
       <div className='card__header'>
