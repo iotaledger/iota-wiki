@@ -40,7 +40,7 @@ Currently, there are two VM plugins available, the [WASM VM](https://wiki.iota.o
 
 ## WASM VM
 
-WebAssembly (abbreviated Wasm) is a binary instruction format for a stack-based virtual machine. Any high-level language can be used to write an IOTA Smart Contract to be compiled into Wasm. The WASM VM currently supports the Go and Rust programming languages.
+WebAssembly (abbreviated Wasm) is a binary instruction format for a stack-based virtual machine. Any high-level language can be used to write an IOTA Smart Contract to be compiled into Wasm. The WASM VM currently supports TinyGo, a subset of Go, and the Rust programming language.
 
 ### Why We Choose Rust
 
@@ -51,13 +51,20 @@ We use Rust as a high-level language to write Smart Contracts(SC) programs for s
 - Wasm binaries generated from Rust are very small, just a few kilobytes
 - Rust is becoming a popular language of choice for SC development with good support and a wide developer community.
 
-### Why We Choose Go
+### Why We Choose TinyGo
 
-It's also possible to write an IOTA Smart Contract in the Go programming language. Using Go has the following advantages:```
+It's also possible to write an IOTA Smart Contract in the TinyGo programming language, which is a subset of Go. Using TinyGo has the following advantages:
 
-- The [Wasp Node](https://github.com/iotaledger/wasp) is programmed in Go, as is the [Test Framework Solo](https://wiki.iota.org/wasp/guide/solo/what-is-solo/).
-- Go is easy to understand and learn.
-- Go is a very popular language within the community.
+- TinyGo and Go are easy to understand and learn.
+- Go is a very popular language within the IOTA community.
+- A very extended and easy to use developer environment
+
+The [Wasp Node](https://github.com/iotaledger/wasp) is programmed in Go, as is the [Test Framework Solo](https://wiki.iota.org/wasp/guide/solo/what-is-solo/), which means that you don't have to constantly switch languages when testing your code. In fact, with Schema tool you can test in the exact same way as you program your Smart Contract.
+
+TinyGo code can be tested without compiling to Wasm, which means you can use the debugger to step through the code and inspect variables along the way. 
+
+
+Both Rust and TinyGo use identical ways of IOTA Smart Contract programming. If you look at the [examples in the docs](https://wiki.iota.org/wasp/guide/rust_wasm/introduction) and switch code tabs you can see that very clearly.
 
 ## Ethereum VM (EVM)
 
