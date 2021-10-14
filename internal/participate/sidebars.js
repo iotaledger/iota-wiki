@@ -125,18 +125,43 @@ module.exports = {
           items: [
             {
               type: 'doc',
-              label: "Technical Writer's Guide",
-              id: 'contribute-to-wiki/for_tws/writer_guide',
+              label: 'Technical Writer\'s Guide',
+              id: 'contribute-to-wiki/for_tws/writer_guide'
             },
             {
               type: 'doc',
-              label: 'Style Guide',
-              id: 'contribute-to-wiki/for_tws/style_guide',
+              label: 'Structure',
+              id: 'contribute-to-wiki/for_tws/structure'
             },
             {
               type: 'doc',
-              label: 'Internal Review Process',
-              id: 'contribute-to-wiki/for_tws/internal_review',
+              label: 'Matter',
+              id: 'contribute-to-wiki/for_tws/matter'
+            },
+            {
+              type: 'doc',
+              label: 'Form',
+              id: 'contribute-to-wiki/for_tws/form'
+            },
+            {
+              type: 'doc',
+              label: 'Mechanics',
+              id: 'contribute-to-wiki/for_tws/mechanics'
+            },
+            {
+              type: 'doc',
+              label: 'Formatting',
+              id: 'contribute-to-wiki/for_tws/formatting'
+            },
+            {
+              type: 'doc',
+              label: 'Third-Party Works',
+              id: 'contribute-to-wiki/for_tws/third-party_works'
+            },
+            {
+              type: 'doc',
+              label: 'Glossary',
+              id: 'contribute-to-wiki/for_tws/glossary'
             },
           ],
         },
