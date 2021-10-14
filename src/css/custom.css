@@ -31,7 +31,15 @@
 }
 
 .card {
+  min-width: 14rem;
+}
+
+.card--pointer {
   cursor: pointer;
+}
+
+.card-radius--md {
+  border-radius: 60px;
 }
 
 .card__image {

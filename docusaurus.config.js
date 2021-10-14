@@ -55,7 +55,7 @@ module.exports = {
       {
         title: 'Build',
         image: 'img/build.svg',
-        link: 'build/getting-started/architecture',
+        link: 'build/welcome',
         description:
           'Access documentation and guides to build with IOTA in Rust, C, Go, Java or Python.',
       },
@@ -96,9 +96,9 @@ module.exports = {
                 {
                   label: 'Getting Started',
                   sublabel: 'IOTA development basics',
-                  to: 'build/getting-started/architecture',
+                  to: 'build/welcome',
                   icon: '\ue902',
-                  activeBaseRegex: 'build/getting-started/.*',
+                  activeBaseRegex: '/build/.*',
                 },
               ],
             },
@@ -454,7 +454,7 @@ module.exports = {
         path: 'internal/learn',
         routeBasePath: 'learn',
         sidebarPath: require.resolve('./internal/learn/sidebars.js'),
-        
+
         // General config
         editUrl: 'https://github.com/iota-community/iota-wiki/edit/develop/',
         remarkPlugins: [
@@ -471,7 +471,7 @@ module.exports = {
         path: 'internal/participate',
         routeBasePath: 'participate',
         sidebarPath: require.resolve('./internal/participate/sidebars.js'),
-        
+
         // General config
         editUrl: 'https://github.com/iota-community/iota-wiki/edit/develop/',
         remarkPlugins: [
@@ -488,7 +488,7 @@ module.exports = {
         path: 'internal/build',
         routeBasePath: 'build',
         sidebarPath: require.resolve('./internal/build/sidebars.js'),
-        
+
         // General config
         editUrl: 'https://github.com/iota-community/iota-wiki/edit/develop/',
         remarkPlugins: [

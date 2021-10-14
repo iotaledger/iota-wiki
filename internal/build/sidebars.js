@@ -1,14 +1,11 @@
 module.exports = {
   build: [
+    'welcome',
     {
       type: 'category',
-      label: 'Getting Started',
-      collapsed: false,
-      items: [
-        'getting-started/architecture',
-        'getting-started/environment',
-        'getting-started/send-a-first-message',
-      ],
+      label: 'Networks',
+      collapsed: true,
+      items: ['iota-1.5', 'iota-2.0'],
     },
     {
       type: 'category',
