@@ -434,6 +434,10 @@ module.exports = {
     [
       '@jlvandenhout/docusaurus-plugin-docs-editor',
       {
+       docs: {
+          // The path to the docs section in your repository
+          path: 'internal/learn',
+        },
         // GitHub OAuth Application settings
         github: {
           // REQUIRED - The Client ID you got from the GitHub OAuth App setup
