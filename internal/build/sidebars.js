@@ -1,26 +1,17 @@
 module.exports = {
   build: [
+    'welcome',
     {
       type: 'category',
-      label: 'Getting Started',
-      collapsed: false,
-      items: [
-        'getting-started/architecture',
-        'getting-started/environment',
-        'getting-started/send-a-first-message',
-      ],
+      label: 'Networks',
+      collapsed: true,
+      items: ['networks/iota-1.5', 'networks/iota-2.0'],
     },
     {
       type: 'category',
       label: 'Fundamentals',
       collapsed: true,
-      items: [
-        'fundamentals/cryptography',
-        'fundamentals/consensus',
-        'fundamentals/mana',
-        'fundamentals/utxo',
-        'fundamentals/dapps',
-      ],
+      items: ['fundamentals/cryptography'],
     },
     {
       type: 'category',
@@ -32,7 +23,7 @@ module.exports = {
       type: 'category',
       label: 'Tutorials',
       collapsed: true,
-      items: ['tutorials/hackster', 'tutorials/youtube', 'tutorials/twitch'],
+      items: ['tutorials/youtube', 'tutorials/twitch'],
     },
   ],
 };
