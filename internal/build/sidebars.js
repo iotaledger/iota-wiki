@@ -29,7 +29,7 @@ module.exports = {
       type: 'category',
       label: 'Tutorials',
       collapsed: true,
-      items: ['tutorials/hackster', 'tutorials/youtube', 'tutorials/twitch'],
+      items: ['tutorials/youtube', 'tutorials/twitch'],
     },
   ],
 };
