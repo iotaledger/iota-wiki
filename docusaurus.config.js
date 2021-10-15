@@ -427,13 +427,6 @@ module.exports = {
           changefreq: 'daily',
           priority: 0.5,
         },
-        docs: {
-          path: 'internal/',
-          routeBasePath: '/',
-          sidebarPath: require.resolve('./internal/sidebars.js'),
-          editUrl:
-            'https://github.com/iota-community/iota-wiki/edit/develop/internal/',
-        },
       },
     ],
   ],
@@ -461,140 +454,20 @@ module.exports = {
     [
       '@docusaurus/plugin-content-docs',
       {
-        id: 'bee',
-        path: 'external/bee/documentation/docs',
-        routeBasePath: 'bee',
-        sidebarPath: require.resolve(
-          './external/bee/documentation/sidebars.js',
-        ),
+        id: 'learn',
+        path: 'internal/',
+        routeBasePath: '/',
+        sidebarPath: require.resolve('./internal/sidebars.js'),
+
+        // General config
+        editUrl: 'https://github.com/iota-community/iota-wiki/edit/develop/',
         remarkPlugins: [
           require('remark-code-import'),
           require('remark-import-partial'),
         ],
+        showLastUpdateTime: true,
       },
     ],
-    [
-      '@docusaurus/plugin-content-docs',
-      {
-        id: 'chrysalis-docs',
-        path: 'external/chrysalis-docs/docs',
-        routeBasePath: 'chrysalis-docs',
-        sidebarPath: require.resolve('./external/chrysalis-docs/sidebars.js'),
-      },
-    ],
-    [
-      '@docusaurus/plugin-content-docs',
-      {
-        id: 'goshimmer',
-        path: 'external/goshimmer/documentation/docs',
-        routeBasePath: 'goshimmer',
-        sidebarPath: require.resolve(
-          './external/goshimmer/documentation/sidebars.js',
-        ),
-      },
-    ],
-    [
-      '@docusaurus/plugin-content-docs',
-      {
-        id: 'hornet',
-        path: 'external/hornet/documentation/docs',
-        routeBasePath: 'hornet',
-        sidebarPath: require.resolve(
-          './external/hornet/documentation/sidebars.js',
-        ),
-      },
-    ],
-    [
-      '@docusaurus/plugin-content-docs',
-      {
-        id: 'identity-rs',
-        path: 'external/identity.rs/documentation/docs',
-        routeBasePath: 'identity.rs',
-        sidebarPath: require.resolve(
-          './external/identity.rs/documentation/sidebars.js',
-        ),
-        remarkPlugins: [
-          require('remark-code-import'),
-          require('remark-import-partial'),
-          require('remark-remove-comments'),
-        ],
-      },
-    ],
-    [
-      '@docusaurus/plugin-content-docs',
-      {
-        id: 'IOTA-Research-Specifications',
-        path: 'external/IOTA-2.0-Research-Specifications/docs',
-        routeBasePath: 'IOTA-2.0-Research-Specifications',
-        sidebarPath: require.resolve(
-          './external/IOTA-2.0-Research-Specifications/sidebars.js',
-        ),
-        remarkPlugins: [require('remark-math')],
-        rehypePlugins: [require('rehype-katex')],
-      },
-    ],
-    [
-      '@docusaurus/plugin-content-docs',
-      {
-        id: 'iota-rs',
-        path: 'external/iota.rs/documentation/docs',
-        routeBasePath: 'iota.rs',
-        sidebarPath: require.resolve(
-          './external/iota.rs/documentation/sidebars.js',
-        ),
-        remarkPlugins: [
-          require('remark-code-import'),
-          require('remark-import-partial'),
-        ],
-      },
-    ],
-    [
-      '@docusaurus/plugin-content-docs',
-      {
-        id: 'stronghold-rs',
-        path: 'external/stronghold.rs/documentation/docs',
-        routeBasePath: 'stronghold.rs',
-        sidebarPath: require.resolve(
-          './external/stronghold.rs/documentation/sidebars.js',
-        ),
-        remarkPlugins: [
-          require('remark-code-import'),
-          require('remark-import-partial'),
-        ],
-      },
-    ],
-    [
-      '@docusaurus/plugin-content-docs',
-      {
-        id: 'wallet-rs',
-        path: 'external/wallet.rs/documentation/docs',
-        routeBasePath: 'wallet.rs',
-        sidebarPath: require.resolve(
-          './external/wallet.rs/documentation/sidebars.js',
-        ),
-      },
-    ],
-    [
-      '@docusaurus/plugin-content-docs',
-      {
-        id: 'wasp',
-        path: 'external/wasp/documentation/docs',
-        routeBasePath: 'wasp',
-        sidebarPath: require.resolve(
-          './external/wasp/documentation/sidebars.js',
-        ),
-      },
-    ],
-    [
-      '@docusaurus/plugin-content-docs',
-      {
-        id: 'streams',
-        path: 'external/streams/documentation/docs',
-        routeBasePath: 'streams',
-        sidebarPath: require.resolve(
-          './external/streams/documentation/sidebars.js',
-        ),
-      },
-    ],
+    /* AUTO GENERATED EXTERNAL DOCS CONFIG */
   ],
 };
