@@ -112,7 +112,7 @@ Bad:
 
 Use acronyms sparingly. Always provide the full name the first time you mention something in an article:
 
-> Distributed Ledger Technology (DLT) make decentralized digital databases secure. Most DLTs use blockchains.
+> Distributed Ledger Technology (DLT) makes decentralized digital databases secure. Most DLTs use blockchains.
 
 Remind the reader what does the acronym mean if you have not mentioned it in the previous few paragraphs.
 
@@ -127,6 +127,8 @@ Good:
 Bad: 
 
 > I'd rather use contractions.
+
+Also see [Negations](./form.md#negations) for "don't"s.
 
 ### Emojis
 
