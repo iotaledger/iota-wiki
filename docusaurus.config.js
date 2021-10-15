@@ -427,6 +427,13 @@ module.exports = {
           changefreq: 'daily',
           priority: 0.5,
         },
+        docs: {
+          path: 'internal/',
+          routeBasePath: '/',
+          sidebarPath: require.resolve('./internal/sidebars.js'),
+          editUrl:
+            'https://github.com/iota-community/iota-wiki/edit/develop/internal/',
+        },
       },
     ],
   ],
@@ -451,23 +458,6 @@ module.exports = {
       },
     ],
     'docusaurus-plugin-matomo',
-    [
-      '@docusaurus/plugin-content-docs',
-      {
-        id: 'learn',
-        path: 'internal/',
-        routeBasePath: '/',
-        sidebarPath: require.resolve('./internal/sidebars.js'),
-
-        // General config
-        editUrl: 'https://github.com/iota-community/iota-wiki/edit/develop/',
-        remarkPlugins: [
-          require('remark-code-import'),
-          require('remark-import-partial'),
-        ],
-        showLastUpdateTime: true,
-      },
-    ],
     /* AUTO GENERATED EXTERNAL DOCS CONFIG */
   ],
 };
