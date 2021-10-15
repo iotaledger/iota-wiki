@@ -34,7 +34,7 @@ As a general rule, make sure that there is only one way to read your prompt and 
 
 ### Active Voice
 
-Active voice makes a sentence crisp. Not only it shortens a clause, but it also makes clear what does what and encourages you to put more information into the sentence and focus on humans and their actions.
+Active voice makes a sentence crisp. Not only does it shorten a clause, but it also makes clear what does what and encourages you to put more information into the sentence and focus on humans and their actions.
 
 Sometimes you can shorten a sentence by a half if you put it in active voice. Sometimes active voice would let you cut your text by paragraphs.
 

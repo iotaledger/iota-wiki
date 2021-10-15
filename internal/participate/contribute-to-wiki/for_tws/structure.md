@@ -24,7 +24,7 @@ Each paragraph should convey only one thought. If a paragraph has multiple ideas
 
 The reader should understand what a paragraph is about from its first sentence. Sometimes readers just skim over the article to quickly find a single bit of information — and your article should respect that. It also detaches a new paragraph from a previous thought and provides you with context to naturally elaborate on.
 
-The first sentence of the first paragraph convinces the reader to start reading. Never spend it on weak statements like "This is the opening article in series on the Topic, and it explains such basics as this and that." Best introductions are concrete.
+The first sentence of the first paragraph convinces the reader to start reading. Never spend it on weak statements like "This is the opening article in a series on the Topic, and it explains such basics as this and that." The best introductions are concrete.
 
 ## Miscellaneous
 

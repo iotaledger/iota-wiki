@@ -47,6 +47,6 @@ Contribute only your original work. Always make it clear where you include other
 
 If you copy whole sentences or paragraphs you are plagiarizing word-for-word. Copying separate phrases is mosaic plagiarism, and rewriting the source while you keep the author's reasoning is paraphrasing — yet another form of plagiarism. The best way you could avoid plagiarizing is to read the source to learn about the subject — and then explain it not just in your own words, but in your own understanding.
 
-## Materials From The IOTA Wiki
+## Materials From the IOTA Wiki
 
 If you cite IOTA Wiki within IOTA Wiki, just leave the link to the source article instead of full attribution.
