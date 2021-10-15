@@ -436,6 +436,10 @@ module.exports = {
       {
         // GitHub OAuth Application settings
         github: {
+          docs: {
+            // The path to the docs section in your repository
+            path: 'internal/',
+          },
           // REQUIRED - The Client ID you got from the GitHub OAuth App setup
           clientId: '30a8f5a21215004e81ca',
           // REQUIRED - The plugin will append the authorization code to this URL
@@ -454,7 +458,7 @@ module.exports = {
         path: 'internal/learn',
         routeBasePath: 'learn',
         sidebarPath: require.resolve('./internal/learn/sidebars.js'),
-        
+
         // General config
         editUrl: 'https://github.com/iota-community/iota-wiki/edit/develop/',
         remarkPlugins: [
@@ -471,7 +475,7 @@ module.exports = {
         path: 'internal/participate',
         routeBasePath: 'participate',
         sidebarPath: require.resolve('./internal/participate/sidebars.js'),
-        
+
         // General config
         editUrl: 'https://github.com/iota-community/iota-wiki/edit/develop/',
         remarkPlugins: [
@@ -488,7 +492,7 @@ module.exports = {
         path: 'internal/build',
         routeBasePath: 'build',
         sidebarPath: require.resolve('./internal/build/sidebars.js'),
-        
+
         // General config
         editUrl: 'https://github.com/iota-community/iota-wiki/edit/develop/',
         remarkPlugins: [
