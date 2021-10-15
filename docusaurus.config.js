@@ -436,6 +436,10 @@ module.exports = {
       {
         // GitHub OAuth Application settings
         github: {
+          docs: {
+            // The path to the docs section in your repository
+            path: 'internal/',
+          },
           // REQUIRED - The Client ID you got from the GitHub OAuth App setup
           clientId: '30a8f5a21215004e81ca',
           // REQUIRED - The plugin will append the authorization code to this URL
@@ -451,7 +455,7 @@ module.exports = {
       '@docusaurus/plugin-content-docs',
       {
         id: 'learn',
-        path: 'internal',
+        path: 'internal/',
         routeBasePath: '/',
         sidebarPath: require.resolve('./internal/sidebars.js'),
 
