@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkiota_wiki=self.webpackChunkiota_wiki||[]).push([[73402],{69453:function(t){t.exports=JSON.parse('{"github":{"docs":{"path":"internal/"},"clientId":"30a8f5a21215004e81ca","tokenUrl":"https://iota-wiki-github-oauth-login.iotaledger.workers.dev","method":"POST"},"id":"default"}')}}]);
