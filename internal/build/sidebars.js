@@ -11,13 +11,7 @@ module.exports = {
       type: 'category',
       label: 'Fundamentals',
       collapsed: true,
-      items: [
-        'fundamentals/cryptography',
-        'fundamentals/consensus',
-        'fundamentals/mana',
-        'fundamentals/utxo',
-        'fundamentals/dapps',
-      ],
+      items: ['fundamentals/cryptography'],
     },
     {
       type: 'category',
