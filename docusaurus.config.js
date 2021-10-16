@@ -25,14 +25,6 @@ module.exports = {
       indexName: 'iota',
       contextualSearch: true,
     },
-    announcementBar: {
-      id: 'wip', // Any value that will identify this message.
-      content:
-        'The work on this Wiki is still in progress. Consider contributing by using the in page editor or creating a <a href="https://github.com/iota-community/iota-wiki">PR directly</a>',
-      backgroundColor: '#ff0000', // Defaults to `#fff`.
-      textColor: '#fff', // Defaults to `#000`.
-      isCloseable: false, // Defaults to `true`.
-    },
     matomo: {
       matomoUrl: 'https://matomo.antonionardella.it/',
       siteId: '6',
