@@ -460,7 +460,7 @@ module.exports = {
         sidebarPath: require.resolve('./internal/learn/sidebars.js'),
 
         // General config
-        editUrl: 'https://github.com/iota-community/iota-wiki/edit/develop/',
+        editUrl: 'https://github.com/iota-community/iota-wiki/edit/main/',
         remarkPlugins: [
           require('remark-code-import'),
           require('remark-import-partial'),
@@ -477,7 +477,7 @@ module.exports = {
         sidebarPath: require.resolve('./internal/participate/sidebars.js'),
 
         // General config
-        editUrl: 'https://github.com/iota-community/iota-wiki/edit/develop/',
+        editUrl: 'https://github.com/iota-community/iota-wiki/edit/main/',
         remarkPlugins: [
           require('remark-code-import'),
           require('remark-import-partial'),
@@ -494,7 +494,7 @@ module.exports = {
         sidebarPath: require.resolve('./internal/build/sidebars.js'),
 
         // General config
-        editUrl: 'https://github.com/iota-community/iota-wiki/edit/develop/',
+        editUrl: 'https://github.com/iota-community/iota-wiki/edit/main/',
         remarkPlugins: [
           require('remark-code-import'),
           require('remark-import-partial'),

@@ -78,7 +78,7 @@ Otherwise, your feature may not be approved at all.
 
 ### Adding a new feature/topic
 
-To build a new feature/topic, check out a new branch based on the `develop` branch.
+To build a new feature/topic, check out a new branch based on the `main` branch.
 
 </details>
 
@@ -176,7 +176,7 @@ To add content to a page, you can use the implemented in-page editor. This will 
 
 We don't ask for perfection from everyone - it is a community-driven project and will grow and get better all the time, but we may have to change some things as we aim for a similar language and style throughout the whole website. This should give the readers the feeling that it is coming out of one source. So we will contact you on your GitHub account or comment directly in the Pull Request.
 
-You can also create content directly in GitHub by forking the **`develop`** branch and start editing the pages you wish to contribute. The Page documents will be found under https://github.com/iota-community/iota-wiki/tree/develop/docs
+You can also create content directly in GitHub by forking the **`main`** branch and start editing the pages you wish to contribute. The Page documents will be found under https://github.com/iota-community/iota-wiki/tree/main/docs
 
 To edit a document, click the pencil (edit this file) in the top right corner when viewing in GitHub.
 
