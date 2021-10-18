@@ -19,13 +19,7 @@ jobs:
       - name: Test Build
         run: |
           if [ -e yarn.lock ]; then
-          yarn install
-          elif [ -e package-lock.json ]; then
-          npm ci
-          else
-          npm i
-          fi
-          npm run build
+          yarn install --frozen-lockfile
   gh-release:
     if: github.event_name != 'pull_request'
     runs-on: ubuntu-latest
@@ -39,12 +33,7 @@ jobs:
       - name: Install dependencies
         run: |
           if [ -e yarn.lock ]; then
-          yarn install
-          elif [ -e package-lock.json ]; then
-          npm ci
-          else
-          npm i
-          fi
+          yarn install --frozen-lockfile
       - name: Add external doc config
         run: |
           yarn cli start
