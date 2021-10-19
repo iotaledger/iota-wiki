@@ -6960,9 +6960,9 @@ interpret@^1.0.0:
   resolved "https://registry.yarnpkg.com/interpret/-/interpret-1.4.0.tgz#665ab8bc4da27a774a40584e812e3e0fa45b1a1e"
   integrity sha512-agE4QfB2Lkp9uICn7BAqoscw4SZP9kTE2hxiFI3jBPmXJfdqiahTbUuKGsMoN2GtqL9AxhYioAcVvgsb1HvRbA==
 
-"iota-wiki-cli@https://github.com/iota-community/iota-wiki-cli.git#v1.4.1":
+"iota-wiki-cli@https://github.com/Critical94/iota-wiki-cli.git#v1.4.1":
   version "1.4.1"
-  resolved "https://github.com/iota-community/iota-wiki-cli.git#d5cc98a1412f042f22e8dac7238f17a198e21918"
+  resolved "https://github.com/Critical94/iota-wiki-cli.git#d5cc98a1412f042f22e8dac7238f17a198e21918"
   dependencies:
     "@oclif/command" "^1.8.0"
     "@oclif/config" "^1.17.0"
