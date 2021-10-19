@@ -60,27 +60,27 @@ module.exports = {
       collapsed: true,
       items: ['research/research-outline', 'research/research-papers'],
     },
-    {
-      type: 'category',
-      label: 'Future of IOTA',
-      collapsed: true,
-      items: [
-        'future/future-of-iota',
-        {
-          type: 'category',
-          label: 'Smart Contracts',
-          collapsed: false,
-          items: [
-            'future/smart-contracts/smart-contracts-introduction',
-            'future/smart-contracts/smart-contracts-VM-and-languages',
-            'future/smart-contracts/smart-contracts-validators',
-            'future/smart-contracts/smart-contracts-chains',
-            'future/smart-contracts/smart-contracts-dapps',
-            'future/smart-contracts/smart-contracts-consensus',
-            'future/smart-contracts/smart-contracts-tangle',
-          ],
-        },
-      ],
-    },
+    // {
+    //   type: 'category',
+    //   label: 'Future of IOTA',
+    //   collapsed: true,
+    //   items: [
+    //     'future/future-of-iota',
+    //     {
+    //       type: 'category',
+    //       label: 'Smart Contracts',
+    //       collapsed: false,
+    //       items: [
+    //         // 'future/smart-contracts/smart-contracts-introduction',
+    //         // 'future/smart-contracts/smart-contracts-VM-and-languages',
+    //         // 'future/smart-contracts/smart-contracts-validators',
+    //         // 'future/smart-contracts/smart-contracts-chains',
+    //         // 'future/smart-contracts/smart-contracts-dapps',
+    //         // 'future/smart-contracts/smart-contracts-consensus',
+    //         // 'future/smart-contracts/smart-contracts-tangle',
+    //       ],
+    //     },
+    //   ],
+    // },
   ],
 };
