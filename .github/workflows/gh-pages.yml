@@ -21,11 +21,11 @@ jobs:
           if [ -e yarn.lock ]; then
           yarn install --frozen-lockfile
           elif [ -e package-lock.json ]; then
-          npm ci
+          yarn install --frozen-lockfile
           else
-          npm i
+          yarn install
           fi
-          npm run build
+          yarn run build
   gh-release:
     if: github.event_name != 'pull_request'
     runs-on: ubuntu-latest
@@ -41,9 +41,9 @@ jobs:
           if [ -e yarn.lock ]; then
           yarn install --frozen-lockfile
           elif [ -e package-lock.json ]; then
-          npm ci
+          yarn install --frozen-lockfile
           else
-          npm i
+          yarn install
           fi
       - name: Add external doc config
         run: |
