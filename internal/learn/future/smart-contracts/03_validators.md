@@ -10,14 +10,20 @@ keywords:
   - Node
 ---
 
-## 🏗 Work in Progress
+# Validators
 
 In this article, you will learn how the IOTA Smart Contract validators work.
 
-A validator is someone who runs an IOTA Smart Contracts Node, called Wasp. You can learn how to set up a Wasp node [here in the Build section](/).
+A validator is a IOTA Smart Contracts Node, also called Wasp Node, which validates incoming messages from other nodes for their correctness. You can learn how to set up a Smart Contracts node [here in the Build section](/wasp/guide/chains_and_nodes/running-a-node).
 
-"Off-chain" smart contracts, like in IOTA Smart Contracts, are executed outside of the core protocol. Only a subset of nodes, called a committee, need to execute them and a consensus can be reached outside of the core protocol.
+## The Committee
 
-Each IOTA Smart Contract chain is run under the consensus of its validators, so each chain is a distributed system without a single point of failure.
+The committee of the chain is the main element of security of a smart contract on the chain. The significant characteristics of a committee are the number of participants, the `quorum` factor.
 
-How they form a group, management and rotation
+"Off-chain" smart contracts, like in IOTA Smart Contracts, are executed outside of the core protocol. That means, only a subset of validators, the committee, needs to execute the Smart Contracts and a consensus can be reached outside of the core protocol, which results in a scalable and efficiency system.
+
+Each IOTA Smart Contract chain is run under the consensus of its committee, so each chain is a distributed system without a single point of failure.
+
+Only when a supermajority of the validators of a committee reaches consensus the result gets added to the chain. The amount of the validators to reach a consensus is configurable for each chain.
+
+[Learn here](/wasp/guide/chains_and_nodes/wasp-cli#configuration) how to configurate the committee in the IOTA Smart Contract Node.
