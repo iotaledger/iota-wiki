@@ -409,6 +409,7 @@ module.exports = {
     [
       '@docusaurus/preset-classic',
       {
+        docs: false,
         blog: {
           showReadingTime: false,
           blogSidebarCount: 0,
