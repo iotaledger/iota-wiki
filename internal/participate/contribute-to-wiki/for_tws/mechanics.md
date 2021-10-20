@@ -82,7 +82,7 @@ Use the [International System of Units](https://www.bipm.org/en/measurement-unit
 
 Use the dot for decimal values (1.25, 0.025). If you need to split a large number to make it easier to understand, use spaces instead of commas to avoid confusion: "2 824 683 000 IOTA tokens".
 
-A spelled out number is often easier to read: "eleven nodes", "one million ticks".
+A spelled out integer is often easier to read: "eleven nodes", "one million ticks". This is usually the case for any round number and for any number that is less than a hundred.
 
 ## Abbreviations, Emojis, and Contractions
 
