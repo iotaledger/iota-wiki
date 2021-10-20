@@ -48,7 +48,7 @@
       "staticPath": "./documentation/static"
     },
     {
-      "repo": "https://github.com/iotaledger/chronicle.rs.git",
+      "repo": "https://github.com/iotaledger/chronicle.rs",
       "staticPath": "./documentation/static"
     }
   ]

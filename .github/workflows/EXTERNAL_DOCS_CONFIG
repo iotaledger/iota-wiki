@@ -106,7 +106,7 @@
     [
       "@docusaurus/plugin-content-docs",
       {
-        id: "chronicle.rs",
+        id: "chronicle",
         path: "external/chronicle.rs/documentation/docs",
         routeBasePath: "chronicle.rs",
         sidebarPath: require.resolve("./external/chronicle.rs/documentation/sidebars.js"),
