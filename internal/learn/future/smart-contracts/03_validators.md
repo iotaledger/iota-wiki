@@ -14,10 +14,9 @@ keywords:
 
 In this article, you will learn how the IOTA Smart Contract validators work.
 
-A validator is a IOTA Smart Contracts Node, which validates incoming messages from other nodes for their correctness. The current node implementation is called Wasp and is written in the programming language Go.
+A validator is a IOTA Smart Contracts Node, which validates incoming messages from other nodes for their correctness. The current node implementation is called Wasp and is written in the programming language Go. Each validator contains a copy of the whole chain. This redundancy makes the contract chain also a distributed database.
 
-Each chain is run by a committee of validator nodes.
-For this reason, the smart contract is a distributed and redundant structure - _a distributed processor_.
+Each contract chain is run by a fixed committee of validator nodes. For this reason, each contract chain is a distributed and redundant structure - **a distributed processor**.
 
 ## The Committee
 
@@ -28,6 +27,14 @@ The committee of the chain is the main element of security of a smart contract o
 Each IOTA Smart Contract chain is run under the consensus of its committee, so each chain is a distributed system without a single point of failure.
 
 Only when a supermajority of the validators of a committee reaches consensus the result gets added to the chain. The amount of the validators to reach a consensus is configurable for each chain.
+
+The committee itself can also be variable in size - a few nodes up to hundreds of nodes and each node can be part of many different committees.
+
+## Selection and Rotation of Committees
+
+The process of selecting nodes to form a committee, must be approached manually. This flexibility allows for different models suited to different use cases: selection can be based on an open market of nodes, it can be the decision of a consortium of interested parties, or indeed of a single entity.
+
+The committee running the contract chain can be changed (rotated) to a new committee with another set of private keys and another address.
 
 ## Further Readings
 
