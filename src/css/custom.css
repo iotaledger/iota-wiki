@@ -32,6 +32,7 @@
 
 .card {
   min-width: 14rem;
+  max-width: 224px;
 }
 
 .card--pointer {
