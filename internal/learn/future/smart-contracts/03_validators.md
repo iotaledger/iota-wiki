@@ -14,7 +14,10 @@ keywords:
 
 In this article, you will learn how the IOTA Smart Contract validators work.
 
-A validator is a IOTA Smart Contracts Node, also called Wasp Node, which validates incoming messages from other nodes for their correctness. You can learn how to set up a Smart Contracts node [here in the Build section](/wasp/guide/chains_and_nodes/running-a-node).
+A validator is a IOTA Smart Contracts Node, which validates incoming messages from other nodes for their correctness. The current node implementation is called Wasp and is written in the programming language Go.
+
+Each chain is run by a committee of validator nodes.
+For this reason, the smart contract is a distributed and redundant structure - _a distributed processor_.
 
 ## The Committee
 
@@ -26,4 +29,9 @@ Each IOTA Smart Contract chain is run under the consensus of its committee, so e
 
 Only when a supermajority of the validators of a committee reaches consensus the result gets added to the chain. The amount of the validators to reach a consensus is configurable for each chain.
 
-[Learn here](/wasp/guide/chains_and_nodes/wasp-cli#configuration) how to configurate the committee in the IOTA Smart Contract Node.
+## Further Readings
+
+- You can learn how to set up a Smart Contracts node [here in the Build section](/wasp/guide/chains_and_nodes/running-a-node).
+- [Learn here](/wasp/guide/chains_and_nodes/wasp-cli#configuration) how to configurate the committee in the IOTA Smart Contract Node.
+
+In the next article, you will learn everything about the chain, where you can deploy Smart Contracts.
