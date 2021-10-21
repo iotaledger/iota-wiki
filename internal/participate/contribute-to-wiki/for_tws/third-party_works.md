@@ -1,6 +1,6 @@
 # Third-Party Works
 
-Include third-party works with caution, as you could accidentialy infringe someone's copyright otherwise. Whenever you are unsure if you could use others' work or not, exclude it from your article or find an alternative.
+Include third-party works with caution, as you could accidentally infringe someone's copyright otherwise. Whenever you are unsure if you could use others' work or not, exclude it from your article or find an alternative.
 
 There is no universal ruling on copyright. Instead, each country has its own laws on the matter. The wiki is open to the whole world — meaning that we should try to satisfy even the strictest jurisdiction.
 
