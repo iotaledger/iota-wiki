@@ -119,6 +119,13 @@ module.exports = {
                   icon: '\ue904',
                   activeBaseRegex: 'hornet/.*',
                 },
+                {
+                  label: 'Chronicle Permanode',
+                  sublabel: 'IOTA permanode in Rust',
+                  to: 'chronicle.rs/welcome',
+                  icon: '\ue90c',
+                  activeBaseRegex: 'chronicle.rs/.*',
+                },
               ],
             },
             {
