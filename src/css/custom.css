@@ -51,6 +51,14 @@
   width: 100%;
 }
 
+.card__header {
+  text-align: center;
+}
+
+.card__footer {
+  text-align: center;
+}
+
 .card-background:hover {
   background: var(--ifm-color-emphasis-200);
 }
