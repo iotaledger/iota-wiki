@@ -4,7 +4,7 @@
 
 Use standard grammar.
 
-Never omit utility words like "if", "then", "of", "that". Put modifiers like "only" or "enough" next to the words they modify.
+Never omit utility words like "if", "then", "of", or "that". Put modifiers like "only" or "enough" next to the words they modify.
 
 ## Be Human
 
@@ -22,7 +22,7 @@ While subtle humor does help, avoid explicit jokes as they would distract the re
 
 ## The Wiki For The World
 
-You write for the whole world, and what is well known for you could not be that obvious abroad. If you mention a local practice or phenomena, make sure that the world knows that custom, or provide context. Keep it general: everyone knows Oktoberfest, but not so much Wiesn, and a Christmas tree is not necessary a Christmas spruce.
+You write for the whole world, and what is well known for you could confuse someone from abroad. If you mention a local practice or phenomenon, make sure that the world knows that custom, or provide context. Keep it general: everyone knows Oktoberfest, but not so much Wiesn, and a Christmas tree is not necessary a Christmas spruce.
 
 Avoid local or professional slang and idioms like "automagically" or "take a rain check".
 
@@ -68,15 +68,15 @@ Choose action verbs over utility verbs, passive verbs, or nouns that mean action
 
 Bad:
 
-> The IOTA's style guide sometimes makes use of exaggeration in its examples for the sake of point clarification.
+> The IOTA style guide sometimes makes use of exaggeration in its examples for the sake of point clarification.
 
 Good:
 
-> The IOTA's style guide sometimes exaggerates in its examples to convey a point clearer.
+> The IOTA style guide sometimes exaggerates in its examples to convey a point clearly.
 
 ### Tense
 
-In general, write in present tense. Feel free to use past or future tense anytime it would make more sense than present tense, but try to get back to present as soon as you can:
+In general, write in the present tense. Feel free to use the past or future tense anytime it would make more sense than the present tense, but try to get back to present as soon as you can:
 
 > Technical writers will let you know when their commission is ready. Check it and either approve or request changes.
 
@@ -86,7 +86,7 @@ In general, write in present tense. Feel free to use past or future tense anytim
 
 Negations often make puzzling instructions, muddy explanations, weak non-statements.
 
-Most problematic sentences involve the word "not" and other forms of negation tend to sound fine. Check a thesaurus for antonyms any time you write "does not catch", "not important", or "not safe" or the like.
+Most problematic sentences involve the word "not" and other forms of negation tend to sound fine. Check a thesaurus for antonyms any time you write "does not catch", "not important", "not safe", or the like.
 
 Bad:
 
@@ -98,7 +98,7 @@ Good:
 
 > Never share your seed with anyone.
 >
-> Keep your seed in secret.
+> Keep your seed secret.
 >
 > Connect only to healthy nodes.
 >
@@ -120,15 +120,15 @@ Good:
 
 ### Choice Of Words
 
-Prefer plain English over ornate or technical speech, but use technical or rare words any time they would convey your thought clearer. Keep in mind your target audience: while engineers validate data, users check input forms for typos. Note that whatever works for users works for programmers, too.
+Prefer plain English over ornate or technical speech, but use technical or rare words any time they would make your thought clearer. Keep in mind your target audience: while engineers validate data, users check input forms for typos. Note that whatever works for users works for programmers, too.
 
-If you could use a single word instead of a phrase, use a single word.
+If you can use a single word instead of a phrase, use a single word.
 
 > A small amount of tokens.
 >
 > A few tokens.
 
-If you have got a long string of qualifiers, break it up into phrases instead.
+If you have a long string of qualifiers, break it up into phrases instead.
 
 > A fee-less non-blockchain decentralized ledger technology.
 >
@@ -136,7 +136,7 @@ If you have got a long string of qualifiers, break it up into phrases instead.
 
 #### Terminology
 
-Use consistent [terminology](./glossary.md) within a paragraph, article, project, and whole Wiki. Avoid synonyms for technical terms unless you have mentioned that term beforehand and the relation is clear.
+Use consistent [terminology](./glossary.md) within a paragraph, article, project, and the whole Wiki. Avoid synonyms for technical terms unless you have mentioned that term beforehand and the relation is clear.
 
 If you refer to an object by its name, provide a qualifying noun: "the `sidebar.js` file", "the iota.rs library".
 
@@ -146,7 +146,7 @@ If you refer to an object by its name, provide a qualifying noun: "the `sidebar.
 >
 > *George Orwell, Politics and The English Language*
 
-In his essay, Orwell states two reasons why would you use a prefabricated phrase like "in the current state of affairs" or "put the effort in": either you have nothing to say and need to fill the void, or you have no clue how to say something. You have something to say, and you should know how to say it.
+In his essay, Orwell states two reasons why you would use a prefabricated phrase like "in the current state of affairs" or "put the effort in": either you have nothing to say and need to fill the void, or you have no clue how to say something. You have something to say, and you should know how to say it.
 
 #### Red Flags
 
@@ -154,7 +154,7 @@ Pay attention to words that end in "-ify", "-ize", "-tion", "-ing", "-ism", and 
 
 ### Metaphors
 
-Each metaphor has its limits. Use them sparingly, do not extend them too far, and never mix two metaphors.
+Each metaphor has its limits. Use them sparingly, do not stretch them too far, and never mix two metaphors.
 
 ### Pronouns
 
@@ -164,11 +164,11 @@ Try to avoid referring to yourself or your team, but if you have to, use the fir
 
 #### Singular Third-Person Pronouns
 
-Avoid singular third-person pronouns in gender-neutral context altogether. Sometimes you could remove a pronoun or replace it with something else (the, someone's, yours) or change the clause to plural without damaging clarity or style. Sometimes you could introduce real or fictional Alices and Bobs to eliminate gender-neutral context and give the reader someone to relate to.
+Avoid singular third-person pronouns in gender-neutral context altogether. Sometimes you could remove a pronoun or replace it with something else ("the", "someone's", "yours") or change the clause to plural without damaging clarity or style. Sometimes you could introduce real or fictional Alices and Bobs to eliminate gender-neutral context and give the reader someone to relate to.
 
 ## UI Elements and Navigation
 
-Refer to UI elements by their name, type, or function, not just by how they look like or where they are, as it could differ between screen sizes, platforms, and browsers.
+Refer to UI elements by their name, type, or function, not just by how they look like or where they are, as that could vary between different screen sizes, platforms, and browsers.
 
 Good:
 

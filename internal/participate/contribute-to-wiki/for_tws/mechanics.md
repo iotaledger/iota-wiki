@@ -32,7 +32,7 @@ Type em-dash ("—") and ellipsis ("…") with the designated symbols, not as a 
 
 ## Names
 
-Always use a personal or brand name in its owner's preferred spelling:
+Always write a personal or brand name in its owner's preferred spelling:
 
 Good:
 
