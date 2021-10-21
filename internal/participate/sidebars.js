@@ -158,11 +158,6 @@ module.exports = {
               label: 'Third-Party Works',
               id: 'contribute-to-wiki/for_tws/third-party_works'
             },
-            {
-              type: 'doc',
-              label: 'Glossary',
-              id: 'contribute-to-wiki/for_tws/glossary'
-            },
           ],
         },
       ],
