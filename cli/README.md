@@ -30,6 +30,7 @@ USAGE
 * [`iota-wiki-cli help [COMMAND]`](#iota-wiki-cli-help-command)
 * [`iota-wiki-cli setup`](#iota-wiki-cli-setup)
 * [`iota-wiki-cli start`](#iota-wiki-cli-start)
+* [`iota-wiki-cli test`](#iota-wiki-cli-test)
 
 ## `iota-wiki-cli checkout`
 
@@ -102,5 +103,17 @@ USAGE
 
 OPTIONS
   -h, --help  show CLI help
+```
+
+## `iota-wiki-cli test`
+
+test wiki build
+
+```
+USAGE
+$ iota-wiki-cli test
+
+OPTIONS
+-h, --help  show CLI help
 ```
 <!-- commandsstop -->
