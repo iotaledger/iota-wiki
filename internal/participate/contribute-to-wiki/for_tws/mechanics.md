@@ -6,31 +6,13 @@ Language mechanics govern the written English. Together with [formatting](./form
 
 Only use the American English spelling.
 
-## Punctuation
+### Glossary
 
-Use the American English punctuation.
+Whenever you use a technical term, check the [IOTA glossary](https://wiki.iota.org/learn/resource-materials/glossary) for the accepted notation. 
 
-Use serial commas:
+Whenever you encounter a term that is written in different ways across documentation, please propose a unified spelling and make a designated pull request that adds a new entry to the glossary and ideally replaces all occurrences of improper spelling in the wiki. This will help both writers and readers.
 
-> Lock, stock, and barrel. 
-
-Reserve exclamation marks only for special occasions.
-
-Unwrap text out of parentheses, especially if that text is lengthy, as they branch the thought in two different directions.
-
-> It makes no difference if you connect to a Hornet node (that are written by the community in Go) or a Bee node, as they are functionally equivalent.
->
-> It makes no difference if you connect to a Hornet or a Bee node, as they are functionally equivalent. Hornet is written by community in Go…
-
-### Typography
-
-Type em-dash ("—") and ellipsis ("…") with the designated symbols, not as a single or double en-dash ("-", "--") or a triple dot ("..."):
-
-> Somehow this invaluable tool is widely regarded as not quite proper — a bumpkin at the genteel dinner table of good English.
->
-> *On Writing Well by William Zinsser*
-
-## Names
+### Names
 
 Always write a personal or brand name in its owner's preferred spelling:
 
@@ -61,6 +43,30 @@ Good:
 > The iota.rs library connects to a node. A node could be a Bee node or a Hornet node, but iota.rs handles both the same way. Bee is written in Rust, and Hornet is written in Go.
 
 This case overrides other guidelines.
+
+## Punctuation
+
+Use the American English punctuation.
+
+Use serial commas:
+
+> Lock, stock, and barrel. 
+
+Reserve exclamation marks only for special occasions.
+
+Unwrap text out of parentheses, especially if that text is lengthy, as they branch the thought in two different directions.
+
+> It makes no difference if you connect to a Hornet node (that are written by the community in Go) or a Bee node, as they are functionally equivalent.
+>
+> It makes no difference if you connect to a Hornet or a Bee node, as they are functionally equivalent. Hornet is written by community in Go…
+
+### Typography
+
+Type em-dash ("—") and ellipsis ("…") with the designated symbols, not as a single or double en-dash ("-", "--") or a triple dot ("..."):
+
+> Somehow this invaluable tool is widely regarded as not quite proper — a bumpkin at the genteel dinner table of good English.
+>
+> *On Writing Well by William Zinsser*
 
 ## Quotes
 
