@@ -80,3 +80,9 @@
               className: "icon-streams",
               activeBaseRegex: 'streams/.*'
             },
+            {
+              label: "Chronicle",
+              to: "chronicle.rs/welcome",
+              className: "icon-chronicle",
+              activeBaseRegex: 'chronicle.rs/.*'
+            },
