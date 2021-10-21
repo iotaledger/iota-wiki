@@ -32,9 +32,11 @@
 
 .card {
   min-width: 14rem;
-  max-width: 224px;
 }
 
+article .card {
+  max-width: 224px;
+}
 .card--pointer {
   cursor: pointer;
 }
