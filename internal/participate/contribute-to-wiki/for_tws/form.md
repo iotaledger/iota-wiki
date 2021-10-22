@@ -62,11 +62,21 @@ There is still place for passive voice as you could use it to draw attention to 
 >
 > Your personal information is protected within the Tangle.
 
-            {
-              type: 'doc',
-              label: 'Glossary',
-              id: 'contribute-to-wiki/for_tws/glossary'
-            },
+### Verbs
+
+Choose action verbs over utility verbs, passive verbs, or nouns that mean actions. Avoid phrasal verbs: something uses something, not makes use of something. Prefer precise actions.
+
+Bad:
+
+> The IOTA style guide sometimes makes use of exaggeration in its examples for the sake of point clarification.
+
+Good:
+
+> The IOTA style guide sometimes exaggerates in its examples to convey a point clearly.
+
+### Tense
+
+In general, write in the present tense. Feel free to use the past or future tense anytime it would make more sense than the present tense, but try to get back to present as soon as you can:
 
 > Technical writers will let you know when their commission is ready. Check it and either approve or request changes.
 
