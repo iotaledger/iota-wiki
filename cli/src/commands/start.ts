@@ -28,13 +28,6 @@ export default class Start extends Command {
       to: EXTERNAL_DOCS_CONFIG,
     })
 
-    const EXTERNAL_DOCS_DROPDOWN_CONFIG = readFileSync(join(PWD, userConfig.configFolder ?? '', 'EXTERNAL_DOCS_DROPDOWN_CONFIG'), 'utf8')
-    await replaceInFile({
-      files: DOCUSAURUS_CONFIG_PATH,
-      from: /\/\* AUTO GENERATED EXTERNAL DOCS DROPDOWN CONFIG \*\//,
-      to: EXTERNAL_DOCS_DROPDOWN_CONFIG,
-    })
-
     if (!userConfig.localWikiFolder)
       return
 
