@@ -34,7 +34,7 @@ IOTA decided to use the [**Ed25519**](https://en.wikipedia.org/wiki/Curve25519) 
 
 Speaking of reusability, complex strings, and keys, there are [**addresses**](/chrysalis-docs/guides/developer/#iota-15-address-anatomy) which we talked about briefly before. Again, addresses in this case are like a personal account, something viewable and sendable to people you want to do business with. They are also linked closely to the digital signature as a [**keypair**](https://en.wikipedia.org/wiki/Public-key_cryptography) but that’s a concept for another time!
 
-This personal account belongs to a seed. In the world of cryptography, a seed refers to a “private key”. Simply put, you have the seed (your private key) keeping your address (your account) safe. In fact, [**the seed** **generates** **the address**](/chrysalis-docs/guides/dev_guide/#addresskey-space)! For now, we’ll keep out of the more technical concepts and explain what addresses can do inside IOTA.
+This personal account belongs to a seed. In the world of cryptography, a seed refers to a “private key”. Simply put, you have the seed (your private key) keeping your address (your account) safe. In fact, [**the seed** **generates** **the address**](/chrysalis-docs/guides/developer#addresskey-space)! For now, we’ll keep out of the more technical concepts and explain what addresses can do inside IOTA.
 
 Within IOTA, our [**new reusable addresses are “human readable**”](/chrysalis-docs/guides/dev_guide/#seed-and-addresses), meaning that addresses are entirely lower case, rather than mixed case. In this way, you will have an easier time sharing the address and typing one in. There is a lot to break down here but it’s not too difficult to grasp! Those old codemakers may have come up with coded messages that used upper and lowercase letters to make the messages even more complex. This would have been good for security but a pain to write, share, and receive amongst themselves.
 
@@ -48,5 +48,5 @@ There are, of course, a lot more details and concepts to explore within the worl
 
 ## Useful Links
 
-- [**IOTA's Chrysalis**](/internal/learn/networks/iota-1.5-chrysalis) - Our current, multiple project effort for the future of IOTA
-- [**Introduction to IOTA**](/internal/learn/about-iota/an-introduction-to-iota) - The basics of how IOTA works and what it does
+- [**IOTA's Chrysalis**](/chrysalis-docs/welcome) - Our current, multiple project effort for the future of IOTA
+- [**Introduction to IOTA**](/learn/about-iota/an-introduction-to-iota) - The basics of how IOTA works and what it does
