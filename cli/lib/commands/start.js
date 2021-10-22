@@ -11,7 +11,7 @@ const debounce = require('lodash.debounce');
 const local_config_1 = require("../local-config");
 class Start extends command_1.Command {
     async run() {
-        var _a, _b, _c, _d;
+        var _a, _b, _c;
         const PWD = (_a = process.env.PWD) !== null && _a !== void 0 ? _a : '';
         const userConfig = await local_config_1.getLocalConfig();
         const WORKING_FOLDER = path_1.join(PWD, (_b = userConfig.localWikiFolder) !== null && _b !== void 0 ? _b : '', userConfig.localWikiFolder ? 'iota-wiki' : '');
@@ -21,12 +21,6 @@ class Start extends command_1.Command {
             files: DOCUSAURUS_CONFIG_PATH,
             from: /\/\* AUTO GENERATED EXTERNAL DOCS CONFIG \*\//,
             to: EXTERNAL_DOCS_CONFIG,
-        });
-        const EXTERNAL_DOCS_DROPDOWN_CONFIG = fs_1.readFileSync(path_1.join(PWD, (_d = userConfig.configFolder) !== null && _d !== void 0 ? _d : '', 'EXTERNAL_DOCS_DROPDOWN_CONFIG'), 'utf8');
-        await replaceInFile({
-            files: DOCUSAURUS_CONFIG_PATH,
-            from: /\/\* AUTO GENERATED EXTERNAL DOCS DROPDOWN CONFIG \*\//,
-            to: EXTERNAL_DOCS_DROPDOWN_CONFIG,
         });
         if (!userConfig.localWikiFolder)
             return;
