@@ -274,7 +274,7 @@ module.exports = {
           items: [
             {
               label: 'Getting Started',
-              to: 'build/getting-started/architecture',
+              to: 'build/welcome',
             },
             {
               label: 'Fundamentals',
@@ -286,7 +286,7 @@ module.exports = {
             },
             {
               label: 'Tutorials',
-              to: 'build/tutorials/youtube',
+              to: 'build/tutorials/twitch',
             },
           ],
         },
