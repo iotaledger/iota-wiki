@@ -78,6 +78,7 @@ module.exports = {
             // 'future/smart-contracts/smart-contracts-dapps',
             // 'future/smart-contracts/smart-contracts-consensus',
             // 'future/smart-contracts/smart-contracts-tangle',
+            'future/smart-contracts/smart-contracts-community-tutorials',
           ],
         },
       ],
