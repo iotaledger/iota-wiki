@@ -1,6 +1,19 @@
 ---
-title: Community Tutorials for IOTA Smart Contracts
-description: Easy to follow Step by Step Tutorials for IOTA Smart Contracts created by community members. Use at your own risk.
+id: smart-contracts-community-tutorials
+title: Smart Contract Community Tutorials
+description: This provides links to tutorials created by the IOTA community explaining usage of the IOTA Smart Contracts
+  - Virtual Machines
+  - VM
+  - Smart Contracts
+  - wasp
+  - iscp
+  - Wasm
+  - EVM
+  - Rust
+  - Go
+  - Solidity
+  - Tutorial
+  - Guide
 ---
 
 # Community Tutorials for the IOTA EVM Testnet
