@@ -1,6 +1,6 @@
 ---
 id: smart-contracts-chains
-title: Smart Contract Chains
+title: Chains
 description: In this article you will learn how the IOTA Smart Contract Chains works.
 keywords:
   - Chains
@@ -10,15 +10,15 @@ keywords:
   - Multi-Chain
 ---
 
-IOTA Smart Contracts is a multi-chain environment, that means, you can run many parallel chains on the IOTA Tangle:
+IOTA Smart Contracts is a **multi-chain** environment, that means, you can run many **parallel chains** on the IOTA Tangle:
 
-- Each chain having own state, which can be updated in parallel, on Layer Two (L2).
-- Each chain state anchored on the IOTA Tangle (UTXO Ledger), on Layer One (L1).
-- Each chain validated by a set of validators, the committee.
+- Each chain has its own state, which can be updated in parallel, on Layer Two (L2).
+- Each chain state is anchored on the IOTA Tangle (UTXO Ledger), on Layer One (L1).
+- Each chain is validated by a set of validators, the committee.
 - Each chain can contain multiple smart contracts.
 - Each smart contract is enabled to exchange assets with other smart contracts on other chains in a trustless and distributed manner.
 
-[![](https://i.imgur.com/WU9cJhI.png)](https://i.imgur.com/WU9cJhI.png)
+[![](https://wiki.iota.org/assets/images/multichain-15b5a968088023b3bba05fe8441a2f20.png)](https://wiki.iota.org/assets/images/multichain-15b5a968088023b3bba05fe8441a2f20.png)
 
 IOTA Smart Contracts are defined as immutable state machines:
 
@@ -32,7 +32,7 @@ The Tangle provides a verifiable audit trail of the state transitions. It allows
 
 The state of the chain consists of:
 
-- **Balances of the native IOTA digital assets, or colored tokens**: The chain acts as a custodian for those funds
+- **Balances of the native IOTA digital assets, or colored tokens**: The chain acts as a custodian for those assets
 - **A collection of arbitrary key/value pairs, the data state**: Represents use case-specific data stored in the chain by its smart contracts outside of the UTXO ledger.
 
 The state of the chain is append-only (immutable) data structure maintained by the distributed
@@ -49,3 +49,9 @@ The native L1 accounts of IOTA UTXO ledger are represented by addresses, each co
 Similarly, the chain holds all tokens entrusted to it in one special UTXO, the state output which is always located in the address controlled by the chain.
 It is similar to how a bank holds all deposits in its vault. This way, the chain (entity controlling the
 state output) becomes a custodian for the assets owned by its clients, in the same sense the bank’s client owns the money deposited in the bank.
+
+## Further Readings​
+
+- Learn more about [State, Transitions, and State Anchoring](/wasp/guide/core_concepts/states).
+- Participate on [the public Testnet](/wasp/guide/chains_and_nodes/testnet).
+- Setup [a chain on your committee](/wasp/guide/chains_and_nodes/setting-up-a-chain).
