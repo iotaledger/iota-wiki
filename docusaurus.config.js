@@ -51,7 +51,7 @@ module.exports = {
         image: 'img/build.svg',
         link: 'build/welcome',
         description:
-          'Access documentation and guides to build with IOTA in Rust, C, Go, Java or Python.',
+          'Access documentation and guides to build with IOTA in Rust und viele mehr.',
       },
     ],
     navbar: {
