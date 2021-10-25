@@ -13,9 +13,15 @@ export default class Start extends Command {
 
   static flags = {
     help: flags.help({char: 'h'}),
+    "dry-run":  flags.boolean({
+      description: 'Test build the wiki with the current edited content',
+      default: false,
+      allowNo: false
+    })
   }
 
   async run() {
+    const {flags} = this.parse(Start)
     const PWD = process.env.PWD ?? ''
     const userConfig = await getLocalConfig()
     const WORKING_FOLDER = join(PWD, userConfig.localWikiFolder ?? '', userConfig.localWikiFolder ? 'iota-wiki' : '')
@@ -37,12 +43,21 @@ export default class Start extends Command {
 
     copySync(join(PWD, 'static', 'img'), join(WORKING_FOLDER, 'static', 'img'))
 
+    let yarnArgs = [
+      'start',
+      '--host',
+      '0.0.0.0',
+    ];
+
+    if(flags["dry-run"])
+    {
+      yarnArgs = [
+        'build',
+      ];
+    }
+
     const runYarn = debounce(() => {
-      spawn('yarn', [
-        'start',
-        '--host',
-        '0.0.0.0',
-      ], {
+      spawn('yarn', yarnArgs, {
         cwd: WORKING_FOLDER,
         shell: true,
         stdio: 'inherit',
@@ -63,7 +78,7 @@ export default class Start extends Command {
     })
   }
 
-  
+
     /**
      * Get the repository's GIT root directory
      * @param directory string
