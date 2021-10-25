@@ -26,7 +26,7 @@ You write for the whole world, and what is well known for you could confuse some
 
 Avoid local or professional slang and idioms like "automagically" or "take a rain check".
 
-Avoid references to current pop-culture, memes, and the like: most of it will fall out of fashion in a few years and your reference will lie dead.
+Avoid references to current pop culture, memes, and the like: most of it will fall out of fashion in a few years and your reference will lie dead.
 
 ## Clarity
 
