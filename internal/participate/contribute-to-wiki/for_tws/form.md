@@ -136,7 +136,7 @@ If you have a long string of qualifiers, break it up into phrases instead.
 
 #### Terminology
 
-Use consistent [terminology](./glossary.md) within a paragraph, article, project, and the whole Wiki. Avoid synonyms for technical terms unless you have mentioned that term beforehand and the relation is clear.
+Use consistent [terminology](/learn/resource-materials/glossary) within a paragraph, article, project, and the whole Wiki. Avoid synonyms for technical terms unless you have mentioned that term beforehand and the relation is clear.
 
 If you refer to an object by its name, provide a qualifying noun: "the `sidebar.js` file", "the iota.rs library".
 
@@ -144,7 +144,7 @@ If you refer to an object by its name, provide a qualifying noun: "the `sidebar.
 
 > […] Modern writing at its worst does not consist in picking out words for the sake of their meaning and inventing images in order to make the meaning clearer. It consists in gumming together long strips of words which have already been set in order by someone else, and making the results presentable by the sheer humbug.
 >
-> *George Orwell, Politics and The English Language*
+> _George Orwell, Politics and The English Language_
 
 In his essay, Orwell states two reasons why you would use a prefabricated phrase like "in the current state of affairs" or "put the effort in": either you have nothing to say and need to fill the void, or you have no clue how to say something. You have something to say, and you should know how to say it.
 
@@ -172,9 +172,9 @@ Refer to UI elements by their name, type, or function, not just by how they look
 
 Good:
 
-> Click *Proceed*
+> Click _Proceed_
 >
-> Click the *Proceed* button. It is located on the bottom right of the screen in the PC version.
+> Click the _Proceed_ button. It is located on the bottom right of the screen in the PC version.
 
 Bad:
 

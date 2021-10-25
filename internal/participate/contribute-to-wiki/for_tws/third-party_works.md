@@ -22,18 +22,18 @@ You can use any work under the [MIT license](https://mit-license.org/) or [CC BY
 
 The most of the world has accepted the Berne Convention for the Protection of Literary and Artistic Works. In [Article 10](https://en.wikisource.org/wiki/Convention_for_the_Protection_of_Literary_and_Artistic_Works/Articles_1_to_21#Article_10), it states:
 
-> (1) It shall be permissible to make quotations from a work which has already been lawfully made available to the public, provided that their making is compatible with fair practice, and their extent does not exceed that justified by the purpose, including quotations from newspaper articles and periodicals in the form of press summaries. 
+> (1) It shall be permissible to make quotations from a work which has already been lawfully made available to the public, provided that their making is compatible with fair practice, and their extent does not exceed that justified by the purpose, including quotations from newspaper articles and periodicals in the form of press summaries.
 
 This overrides copyrights — meaning that you can quote others or include parts of their work. You must treat the source and the author fairly, but different countries have different definition of fair practice. Follow the strictest guideline:
 
-* **The purpose of derived work:** you can quote for educational or research purposes, but typically not for advertisement.
-* **Usage:** Quote only to support your point. For example, do not put someone's painting in a blog post just so it would look prettier.
-* **Amount:** Quote just enough to support your point.
-* **Necessity:** Consider if there are alternative sources that are not protected by copyright.
-* **Business interests:** Do not quote something if it can conflict with the owner's business. For example, you can hurt the sales of a fresh book if you publish the last page.
-* **Ethics and morals:** You are allowed to criticize. However, you must never attack the author's honor or reputation. Never express or imply that the usage is endorsed by the source's author.
+- **The purpose of derived work:** you can quote for educational or research purposes, but typically not for advertisement.
+- **Usage:** Quote only to support your point. For example, do not put someone's painting in a blog post just so it would look prettier.
+- **Amount:** Quote just enough to support your point.
+- **Necessity:** Consider if there are alternative sources that are not protected by copyright.
+- **Business interests:** Do not quote something if it can conflict with the owner's business. For example, you can hurt the sales of a fresh book if you publish the last page.
+- **Ethics and morals:** You are allowed to criticize. However, you must never attack the author's honor or reputation. Never express or imply that the usage is endorsed by the source's author.
 
-You must [attribute](#Attributions) the author and the source.
+You must attribute the author and the source.
 
 ## Attributions
 

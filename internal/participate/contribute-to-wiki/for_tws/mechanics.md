@@ -8,7 +8,7 @@ Only use the American English spelling.
 
 ### Glossary
 
-Whenever you use a technical term, check the [IOTA glossary](https://wiki.iota.org/learn/resource-materials/glossary) for the accepted notation. 
+Whenever you use a technical term, check the [IOTA glossary](/learn/resource-materials/glossary) for the accepted notation.
 
 Whenever you encounter a term that is written in different ways across documentation, please propose a unified spelling and make a designated pull request that adds a new entry to the glossary and ideally replaces all occurrences of improper spelling in the wiki. This will help both writers and readers.
 
@@ -50,7 +50,7 @@ Use the American English punctuation.
 
 Use serial commas:
 
-> Lock, stock, and barrel. 
+> Lock, stock, and barrel.
 
 Reserve exclamation marks only for special occasions.
 
@@ -66,7 +66,7 @@ Type em-dash ("—") and ellipsis ("…") with the designated symbols, not as a 
 
 > Somehow this invaluable tool is widely regarded as not quite proper — a bumpkin at the genteel dinner table of good English.
 >
-> *On Writing Well by William Zinsser*
+> _On Writing Well by William Zinsser_
 
 ## Quotes
 
@@ -108,7 +108,7 @@ Good:
 >
 > Little John
 
-Bad: 
+Bad:
 
 > Lock, stock & barrel
 >
@@ -126,11 +126,11 @@ Remind the reader what does the acronym mean if you have not mentioned it in the
 
 Never use contractions:
 
-Good: 
+Good:
 
 > I would rather use contractions.
 
-Bad: 
+Bad:
 
 > I'd rather use contractions.
 
@@ -144,6 +144,6 @@ Good:
 
 > Go to the designated evacuation point.
 
-Bad: 
+Bad:
 
 > Go :runner: :fire: to the designated evacuation point.

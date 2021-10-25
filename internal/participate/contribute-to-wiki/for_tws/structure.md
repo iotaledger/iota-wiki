@@ -2,7 +2,7 @@
 
 ## The Wiki
 
-Articles for users belong either to the [Learn](https://wiki.iota.org/learn/about-iota/an-introduction-to-iota) or [Participate](https://wiki.iota.org/participate/support-the-network/about-nodes) spaces. The [Build](https://wiki.iota.org/build/getting-started/architecture) space contains technical explanations on the IOTA technology, as well a subspace for every IOTA product that contains information for its developers and anyone who builds upon IOTA.
+Articles for users belong either to the [Learn](/learn/about-iota/an-introduction-to-iota) or [Participate](/participate/support-the-network/about-nodes) spaces. The [Build](/build/welcome) space contains technical explanations on the IOTA technology, as well a subspace for every IOTA product that contains information for its developers and anyone who builds upon IOTA.
 
 ## Spaces and Subspaces
 
