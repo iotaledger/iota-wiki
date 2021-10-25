@@ -122,7 +122,7 @@ module.exports = {
                 },
                 {
                   label: 'Chronicle Permanode',
-                  sublabel: 'IOTA permanode in Rust',
+                  sublabel: 'IOTA permanode written in Rust',
                   to: 'chronicle.rs/welcome',
                   icon: '\ue90c',
                   activeBaseRegex: 'chronicle.rs/.*',
@@ -152,8 +152,8 @@ module.exports = {
               label: 'Libraries',
               items: [
                 {
-                  label: 'Core',
-                  sublabel: 'IOTA core functionality',
+                  label: 'IOTA Client',
+                  sublabel: 'Interact with the IOTA network',
                   to: 'iota.rs/welcome',
                   icon: '\ue907',
                   activeBaseRegex: 'iota.rs/.*',
