@@ -17,7 +17,7 @@ IOTA Smart Contracts provide a more natural way of running distributed computati
 Learn more about the concepts in the following articles:
 
 - [Smart Contract VM & Language](02_VM-and-languages.md)
-- Validators 🏗
+- [Validators](03_validators.md)
 - Smart Contract Chains 🏗
 - dApps & User interactions 🏗
 - Consensus 🏗
