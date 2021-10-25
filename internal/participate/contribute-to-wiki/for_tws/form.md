@@ -142,7 +142,7 @@ If you refer to an object by its name, provide a qualifying noun: "the `sidebar.
 
 #### Prefabricated Phrases
 
-> […] Modern writing at its worst does not consist in picking out words for the sake of their meaning and inventing images in order to make the meaning clearer. It consists in gumming together long strips of words which have already been set in order by someone else, and making the results presentable by the sheer humbug.
+> […] Modern writing at its worst does not consist in picking out words for the sake of their meaning and inventing images in order to make the meaning clearer. It consists in gumming together long strips of words which have already been set in order by someone else, and making the results presentable by sheer humbug.
 >
 > _George Orwell, Politics and The English Language_
 
