@@ -36,7 +36,7 @@ The VM can be extended dynamically by adding VM plugins, the VM processors which
 
 In IOTA Smart Contracts, an abstraction is a collection of generic interfaces which makes the whole architecture of IOTA Smart Contracts and the Wasp node agnostic about what exact kind of deterministic computation machinery is used to run smart contract programs.
 
-Currently, there are two VM plugins available, the [Wasm VM](https://wiki.iota.org/wasp/guide/rust_wasm/introduction) and the [Ethereum VM (EVM)](https://wiki.iota.org/wasp/guide/evm/introduction/).
+Currently, there are two VM plugins available, the [Wasm VM](/wasp/guide/wasm_vm/intro) and the [Ethereum VM (EVM)](/wasp/guide/evm/introduction).
 
 ## Wasm VM
 

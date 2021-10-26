@@ -34,6 +34,9 @@
   min-width: 14rem;
 }
 
+article .card {
+  max-width: 224px;
+}
 .card--pointer {
   cursor: pointer;
 }
@@ -49,6 +52,14 @@
 .card__image img {
   display: block;
   width: 100%;
+}
+
+.card__header {
+  text-align: center;
+}
+
+.card__footer {
+  text-align: center;
 }
 
 .card-background:hover {
