@@ -49,7 +49,7 @@
       "@docusaurus/plugin-content-docs",
       {
         id: "IOTA-Research-Specifications",
-        path: "external/IOTA-2.0-Research-Specifications/docs",
+        path: "external/IOTA-2.0-Research-Specifications",
         routeBasePath: "IOTA-2.0-Research-Specifications",
         sidebarPath: require.resolve("./external/IOTA-2.0-Research-Specifications/sidebars.js"),
         remarkPlugins: [require('remark-math')],
