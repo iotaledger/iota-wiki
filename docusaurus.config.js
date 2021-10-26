@@ -122,7 +122,7 @@ module.exports = {
                 },
                 {
                   label: 'Chronicle Permanode',
-                  sublabel: 'IOTA permanode written in Rust',
+                  sublabel: 'IOTA permanode',
                   to: 'chronicle.rs/welcome',
                   icon: '\ue90c',
                   activeBaseRegex: 'chronicle.rs/.*',
