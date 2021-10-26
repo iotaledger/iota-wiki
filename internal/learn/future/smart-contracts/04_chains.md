@@ -8,6 +8,7 @@ keywords:
   - wasp
   - ISCP
   - Multi-Chain
+image: /img/learn/multichain.png
 ---
 
 IOTA Smart Contracts is a **multi-chain** environment, that means, you can run many **parallel chains** on the IOTA Tangle:
@@ -18,7 +19,7 @@ IOTA Smart Contracts is a **multi-chain** environment, that means, you can run m
 - Each chain can contain multiple smart contracts.
 - Each smart contract is enabled to exchange assets with other smart contracts on other chains in a trustless and distributed manner.
 
-[![]( /img/multichain.png)]( /img/multichain.png)
+[![Multi-Chain environment](/img/learn/multichain.png)](/learn/img/multichain.png)
 
 IOTA Smart Contracts are defined as immutable state machines:
 
