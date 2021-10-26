@@ -24,7 +24,7 @@ To explain these points, you need to understand the differences between the data
 
 [![layer1-tangle](/img/learn/layer1-tangle.png)](/img/learn/layer1-tangle.png)
 
-## **The blockchain data structure**
+## The blockchain data structure
 
 The blockchain data structure consists of a chain of sequential blocks, where each block contains a limited number of messages. As a result, Validators can attach new messages to only one place: a block at the end of the chain. Due to this limitation, blockchain networks often experience slow confirmation times. This limitation is known as the blockchain bottleneck.
 
@@ -34,7 +34,7 @@ The blockchain data structure consists of a chain of sequential blocks, where ea
 
 All transactions in a blockchain have to wait until they are included in a block. Due to limitations in block size and block production time, this creates congestion and waiting times for transactions.
 
-## **The Tangle data structure**
+## The Tangle data structure
 
 The Tangle data structure is a directed acyclic graph (DAG), where each message is attached to two to eight previous ones. Rather than being limited to a single place for attaching new messages, you can attach messages in different places at the front of the Tangle. The protocol is able to process these various attachments in parallel.
 
@@ -44,7 +44,7 @@ The Tangle data structure is a directed acyclic graph (DAG), where each message 
 
 Allowing parallel processing removes congestion.
 
-## **Consensus in a blockchain**
+## Consensus in a blockchain
 
 In blockchains, the network participants are split into validators (Miners, stackers) and users. Miners consume large amounts of computing power to complete the proof of work (PoW) required to chain the blocks together. Miners and stakers are incentivized to validate messages and do PoW because of the following:
 
@@ -54,11 +54,11 @@ The reward that the network gives to miners for producing the bock faster than o
 
 Producing blocks as a stacker in a proof of stake (PoS) Blockchain usually requires the staker to own vast amounts of staked tokens. Often only a few selected or fixed Validators are granted to be block producers. These entities are either pre-defined by the creators of the protocol (a form of centralization)or emerge as validators holding the most significant stake of tokens. PoS blockchains do not require enormous amounts of energy wasted for PoW, but therefore only allow the wealthiest participants to write to the ledger and produce new blocks.
 
-## **Consensus in the Tangle**
+## Consensus in the Tangle
 
 In the Tangle, messages require no fees because the network has no miners or stakers. In the Tangle, PoW is not used to secure the network. Instead, PoW is used only to discourage spam messages. To reach a consensus, all IOTA nodes validate messages and use different functions alongside messages in their confirmation. Currently, messages will only be considered valid if they have a reference to a milestone. These milestones are issued by a special network node – the Coordinator.
 
-## **The Coordinator**
+## The Coordinator
 
 The Coordinator is a client that sends signed messages called milestones that nodes trust and use to confirm messages. This topic describes how nodes use milestones to determine which messages are confirmed.
 

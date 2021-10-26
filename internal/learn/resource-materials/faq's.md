@@ -4,6 +4,6 @@ description: Questions and answers collections. Clear outlined information for t
 ---
 
 - [Chrysalis FAQ](/chrysalis-docs/faq)
-- [Firefly FAQ](/internal/learn/wallets/firefly-wallet#faq)
+- [Firefly FAQ](/learn/wallets/firefly-wallet#firefly-faq)
 - [GoShimmer FAQ](/goshimmer/faq)
 - [Hornet FAQ](/hornet/faq)

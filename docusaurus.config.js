@@ -21,6 +21,7 @@ module.exports = {
     },
   ],
   themeConfig: {
+    image: 'img/iota-wiki.png',
     algolia: {
       apiKey: '829457a9c9dd5a8ddd31d08c86e154c2',
       indexName: 'iota',
@@ -50,7 +51,7 @@ module.exports = {
         image: 'img/build.svg',
         link: 'build/welcome',
         description:
-          'Access documentation and guides to build with IOTA in Rust, C, Go, Java or Python.',
+          'Access documentation and guides to build with IOTA in Rust and other languages.',
       },
     ],
     navbar: {
@@ -118,6 +119,13 @@ module.exports = {
                   to: 'hornet/welcome',
                   icon: '\ue904',
                   activeBaseRegex: 'hornet/.*',
+                },
+                {
+                  label: 'Chronicle Permanode',
+                  sublabel: 'IOTA permanode in Rust',
+                  to: 'chronicle.rs/welcome',
+                  icon: '\ue90c',
+                  activeBaseRegex: 'chronicle.rs/.*',
                 },
               ],
             },
@@ -267,7 +275,7 @@ module.exports = {
           items: [
             {
               label: 'Getting Started',
-              to: 'build/getting-started/architecture',
+              to: 'build/welcome',
             },
             {
               label: 'Fundamentals',
@@ -279,7 +287,7 @@ module.exports = {
             },
             {
               label: 'Tutorials',
-              to: 'build/tutorials/youtube',
+              to: 'build/tutorials/twitch',
             },
           ],
         },
@@ -409,6 +417,7 @@ module.exports = {
     [
       '@docusaurus/preset-classic',
       {
+        docs: false,
         blog: {
           showReadingTime: false,
           blogSidebarCount: 0,
