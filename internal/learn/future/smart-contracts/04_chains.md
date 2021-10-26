@@ -18,7 +18,7 @@ IOTA Smart Contracts is a **multi-chain** environment, that means, you can run m
 - Each chain can contain multiple smart contracts.
 - Each smart contract is enabled to exchange assets with other smart contracts on other chains in a trustless and distributed manner.
 
-[![](https://wiki.iota.org/assets/images/multichain-15b5a968088023b3bba05fe8441a2f20.png)](https://wiki.iota.org/assets/images/multichain-15b5a968088023b3bba05fe8441a2f20.png)
+[![]( /img/multichain.png)]( /img/multichain.png)
 
 IOTA Smart Contracts are defined as immutable state machines:
 
@@ -32,7 +32,7 @@ The Tangle provides a verifiable audit trail of the state transitions. It allows
 
 The state of the chain consists of:
 
-- **Balances of the native IOTA digital assets, or colored tokens**: The chain acts as a custodian for those assets
+- **Balances of the native IOTA digital assets, or colored tokens**: The chain acts as a custodian for those assets.
 - **A collection of arbitrary key/value pairs, the data state**: Represents use case-specific data stored in the chain by its smart contracts outside of the UTXO ledger.
 
 The state of the chain is append-only (immutable) data structure maintained by the distributed
@@ -54,4 +54,4 @@ state output) becomes a custodian for the assets owned by its clients, in the sa
 
 - Learn more about [State, Transitions, and State Anchoring](/wasp/guide/core_concepts/states).
 - Participate on [the public Testnet](/wasp/guide/chains_and_nodes/testnet).
-- Setup [a chain on your committee](/wasp/guide/chains_and_nodes/setting-up-a-chain).
+- Build [a chain on your committee](/wasp/guide/chains_and_nodes/setting-up-a-chain).
