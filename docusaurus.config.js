@@ -152,7 +152,7 @@ module.exports = {
               label: 'Libraries',
               items: [
                 {
-                  label: 'IOTA Client',
+                  label: 'Client',
                   sublabel: 'Interact with the IOTA network',
                   to: 'iota.rs/welcome',
                   icon: '\ue907',
