@@ -74,7 +74,7 @@ module.exports = {
             'future/smart-contracts/smart-contracts-introduction',
             'future/smart-contracts/smart-contracts-VM-and-languages',
             'future/smart-contracts/smart-contracts-validators',
-            // 'future/smart-contracts/smart-contracts-chains',
+            'future/smart-contracts/smart-contracts-chains',
             // 'future/smart-contracts/smart-contracts-dapps',
             // 'future/smart-contracts/smart-contracts-consensus',
             // 'future/smart-contracts/smart-contracts-tangle',
