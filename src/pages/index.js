@@ -46,7 +46,7 @@ export default function Home() {
   const { cards } = useThemeConfig();
 
   return (
-    <Layout title={`${siteConfig.title}`} description={`${siteConfig.tagline}`}>
+    <Layout description={`${siteConfig.tagline}`}>
       <div className='hero'>
         <div className='container'>
           <div className='text--center margin-bottom--lg'>
