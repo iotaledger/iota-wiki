@@ -12,46 +12,47 @@ keywords:
   - Wasp API
   - REST API
   - Fair roulette
+  image: http://blog.iota.org/content/images/size/w1600/2021/10/Group-4947.png
 ---
 
-In this article you decentralized applications (dApps) work and how users can interact with it.
+In this article, you will learn decentralized applications (dApps) work and how users can interact with them.
 
 ## Build dApps on IOTA Smart Contracts
 
-Decentralized applications (dApps) are in general computer applications which runs on a decentralized computing system like IOTA Smart Contracts.
+Decentralized applications (dApps) are computer applications that run on a decentralized computing system, like IOTA Smart Contracts.
 
-IOTA Smart Contracts enable you to use your preferred programming language, fees model for users, incentives for validators and committee structure.
+IOTA Smart Contracts enable you to use your preferred programming language, set a fee model for users, incentives for validators, and committee structure.
 
 There are some exciting aspects of dApps:
 
-- **No downtime** - Based on a peer-to-peer system ensures the dApps continue to work even if individual computers or parts of the network go offline.
-- **Censorship-resistant** - With no single point of failure and based on the Tangle, it’s impossible to takeover the Network.
-- **Open-source** - This brings even more trust to dApps - if the source code is public available and can be proven by many developers.
+- **No downtime**: dApps are based on a peer-to-peer system which ensures the dApps will continue to work even if individual computers, or parts of the network, go offline.
+- **Censorship-resistant**: As there is no single point of failure, and it is based on the Tangle, it is impossible to take over the Network.
+- **Open-source**: This brings even more trust to dApps. As the source code is publicly available, it can be verified and improved by many developers.
 
 ## Architecture
 
-Decentralized applications consist of one or multiple Smart Contracts and a User Interface. The user interface mostly results in a Website, which is interacting with the Smart Contracts.
+Decentralized applications consist of one or multiple Smart Contracts and a User Interface. The user interface is usually a Website, which interacts with the Smart Contracts.
 
-### Interacting with Smart Contracts
+### Interacting With Smart Contracts
 
 There are two ways to interact with IOTA Smart Contracts:
 
-- On-ledger: Requests to the smart contract as transactions on the Tangle.
-- Off-ledger: Requests by sending an API call to a Wasp node.
+- [On-ledger](/wasp/guide/core_concepts/smartcontract-interaction/on-ledger-requests): Requests to the smart contract are transactions on the Tangle.
+- [Off-ledger](/wasp/guide/core_concepts/smartcontract-interaction/off-ledger-requests): The requests are sent using an API call to a Wasp node.
 
-The Wasp node API can be found on your wasp node `<api base url>/doc` or on the public [Wasp REST API](https://api.wasp.sc.iota.org/doc).
+You can [configure your Wasp node's API URL] (/wasp/guide/chains_and_nodes/running-a-node#web-api), or use the [public Wasp REST API](https://api.wasp.sc.iota.org/doc).
 
 ## Examples
 
-There are several different example applications deployed on the public tesnet chain.
+There are several different example applications deployed on the [public test-net](/wasp/guide/chains_and_nodes/testnet) chain.
 
 ### Fair Roulette
 
-![](http://blog.iota.org/content/images/size/w1600/2021/10/Group-4947.png)
+[![Fair Roulette](http://blog.iota.org/content/images/size/w1600/2021/10/Group-4947.png)](http://blog.iota.org/content/images/size/w1600/2021/10/Group-4947.png)
 
-The Fair roulette example is a simple betting game in which players can bet on a number within a certain range.
+The [Fair roulette example](/wasp/guide/example_projects/fair_roulette) is a simple betting game in which players can bet on a number within a certain range.
 
-- Play the [Live Demo](https://demo.sc.iota.org/).
+- Play with the [Live Demo](https://demo.sc.iota.org/).
 - Discover the [Code Repository](https://github.com/iotaledger/wasp/tree/roulette_poc/contracts/rust/fairroulette).
 
 - Learn more about [On-ledger](/wasp/guide/core_concepts/smartcontract-interaction/on-ledger-requests) and [Off-ledger Requests](/wasp/guide/core_concepts/smartcontract-interaction/off-ledger-requests).
