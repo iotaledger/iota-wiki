@@ -19,6 +19,6 @@ Learn more about the concepts in the following articles:
 - [Smart Contract VM & Language](02_VM-and-languages.md)
 - [Validators](03_validators.md)
 - [Chains](04_chains.md)
-- dApps & User interactions 🏗
+- [dApps & User interactions](05_dapps.md)
 - Consensus 🏗
 - IOTA Tangle 🏗
