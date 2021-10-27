@@ -55,6 +55,10 @@ The [Fair roulette example](/wasp/guide/example_projects/fair_roulette) is a sim
 - Play with the [Live Demo](https://demo.sc.iota.org/).
 - Discover the [Code Repository](https://github.com/iotaledger/wasp/tree/roulette_poc/contracts/rust/fairroulette).
 
+More examples for Wasm Smart Contracts written in Rust and Go (TinyGo) can be found in the [code repository](https://github.com/iotaledger/wasp/tree/master/contracts/wasm).
+
+---
+
 - Learn more about [On-ledger](/wasp/guide/core_concepts/smartcontract-interaction/on-ledger-requests) and [Off-ledger Requests](/wasp/guide/core_concepts/smartcontract-interaction/off-ledger-requests).
 - Participate on the [public testnet](https://wiki.iota.org/wasp/guide/chains_and_nodes/testnet).
 - Build your first dApp with the [Schema Tool](https://wiki.iota.org/wasp/guide/schema/schema).
