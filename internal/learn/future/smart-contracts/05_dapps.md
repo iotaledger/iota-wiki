@@ -12,7 +12,7 @@ keywords:
   - Wasp API
   - REST API
   - Fair roulette
-  image: http://blog.iota.org/content/images/size/w1600/2021/10/Group-4947.png
+image: http://blog.iota.org/content/images/size/w1600/2021/10/Group-4947.png
 ---
 
 In this article, you will learn decentralized applications (dApps) work and how users can interact with them.
