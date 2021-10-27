@@ -17,9 +17,11 @@ IOTA Smart Contracts is a **multi-chain** environment, that means, you can run m
 - Each chain state is anchored on the IOTA Tangle (UTXO Ledger), on Layer One (L1).
 - Each chain is validated by a set of validators, the committee.
 - Each chain can contain multiple smart contracts.
-- Each smart contract is enabled to exchange assets with other smart contracts on other chains in a trustless and distributed manner.
+- Each smart contract can exchange assets with other smart contracts on other chains in a trustless and distributed manner.
+
 
 [![Multi-Chain environment](/img/learn/multichain.png)](/img/learn/multichain.png)
+
 
 IOTA Smart Contracts are defined as immutable state machines:
 
@@ -45,7 +47,7 @@ The data state is stored outside of the ledger, on the distributed database main
 
 ## Digital Assets on the Chain
 
-The native L1 accounts of IOTA UTXO ledger are represented by addresses, each controlled by the entity holding the corresponding private and public key pair. The L1 account is a collection of UTXOs belonging to the address.
+The native L1 accounts of the IOTA UTXO ledger are represented by addresses, each controlled by the entity holding the corresponding private and public key pair. The L1 account is a collection of UTXOs belonging to the address.
 
 Similarly, the chain holds all tokens entrusted to it in one special UTXO, the state output which is always located in the address controlled by the chain.
 It is similar to how a bank holds all deposits in its vault. This way, the chain (entity controlling the
