@@ -6,7 +6,7 @@
         routeBasePath: "bee",
         sidebarPath: require.resolve("./external/bee/documentation/sidebars.js"),
         remarkPlugins: [require("remark-code-import"), require("remark-import-partial")],
-        editUrl: 'https://github.com/iotaledger/bee/edit/dev'
+        editUrl: 'https://github.com/iotaledger/bee/edit/dev',
       }
     ],
     [
@@ -16,7 +16,7 @@
         path: "external/chrysalis-docs/docs",
         routeBasePath: "chrysalis-docs",
         sidebarPath: require.resolve("./external/chrysalis-docs/sidebars.js"),
-        editUrl: 'https://github.com/iotaledger/chrysalis-docs/edit/main'
+        editUrl: 'https://github.com/iotaledger/chrysalis-docs/edit/main',
       }
     ],
     [
@@ -26,7 +26,7 @@
         path: "external/goshimmer/documentation/docs",
         routeBasePath: "goshimmer",
         sidebarPath: require.resolve("./external/goshimmer/documentation/sidebars.js"),
-        editUrl: 'https://github.com/iotaledger/goshimmer/edit/develop'
+        editUrl: 'https://github.com/iotaledger/goshimmer/edit/develop',
       }
     ],
     [
@@ -36,7 +36,7 @@
         path: "external/hornet/documentation/docs",
         routeBasePath: "hornet",
         sidebarPath: require.resolve("./external/hornet/documentation/sidebars.js"),
-        editUrl: 'https://github.com/iotaledger/hornet/edit/develop'
+        editUrl: 'https://github.com/iotaledger/hornet/edit/develop',
       }
     ],
     [
@@ -47,7 +47,7 @@
         routeBasePath: "identity.rs",
         sidebarPath: require.resolve("./external/identity.rs/documentation/sidebars.js"),
         remarkPlugins: [require("remark-code-import"), require("remark-import-partial"), require('remark-remove-comments') ],
-        editUrl: 'https://github.com/iotaledger/identity.rs/edit/dev'
+        editUrl: 'https://github.com/iotaledger/identity.rs/edit/dev',
       }
     ],
     [
@@ -59,7 +59,7 @@
         sidebarPath: require.resolve("./external/IOTA-2.0-Research-Specifications/sidebars.js"),
         remarkPlugins: [require('remark-math')],
         rehypePlugins: [require('rehype-katex')],
-        editUrl: 'https://github.com/iotaledger/IOTA-2.0-Research-Specifications/edit/docusaurus'
+        editUrl: 'https://github.com/iotaledger/IOTA-2.0-Research-Specifications/edit/docusaurus',
        }
     ],
     [
@@ -70,7 +70,7 @@
         routeBasePath: "iota.rs",
         sidebarPath: require.resolve("./external/iota.rs/documentation/sidebars.js"),
         remarkPlugins: [require("remark-code-import"), require("remark-import-partial")],
-        editUrl: 'https://github.com/iotaledger/iota.rs/edit/dev'
+        editUrl: 'https://github.com/iotaledger/iota.rs/edit/dev',
       }
     ],
     [
@@ -81,7 +81,7 @@
         routeBasePath: "stronghold.rs",
         sidebarPath: require.resolve("./external/stronghold.rs/documentation/sidebars.js"),
         remarkPlugins: [require("remark-code-import"), require("remark-import-partial")],
-        editUrl: 'https://github.com/iotaledger/stronghold.rs/edit/dev'
+        editUrl: 'https://github.com/iotaledger/stronghold.rs/edit/dev',
       }
     ],
     [
@@ -91,7 +91,7 @@
         path: "external/wallet.rs/documentation/docs",
         routeBasePath: "wallet.rs",
         sidebarPath: require.resolve("./external/wallet.rs/documentation/sidebars.js"),
-        editUrl: 'https://github.com/iotaledger/wallet.rs/edit/dev'
+        editUrl: 'https://github.com/iotaledger/wallet.rs/edit/dev',
       }
     ],
     [
@@ -101,7 +101,7 @@
         path: "external/wasp/documentation/docs",
         routeBasePath: "wasp",
         sidebarPath: require.resolve("./external/wasp/documentation/sidebars.js"),
-        editUrl: 'https://github.com/iotaledger/wasp/edit/develop'
+        editUrl: 'https://github.com/iotaledger/wasp/edit/develop',
       }
     ],
     [
@@ -111,7 +111,7 @@
         path: "external/streams/documentation/docs",
         routeBasePath: "streams",
         sidebarPath: require.resolve("./external/streams/documentation/sidebars.js"),
-        editUrl: 'https://github.com/iotaledger/streams/edit/develop'
+        editUrl: 'https://github.com/iotaledger/streams/edit/develop',
       }
     ],
     [
@@ -121,6 +121,6 @@
         path: "external/chronicle.rs/documentation/docs",
         routeBasePath: "chronicle.rs",
         sidebarPath: require.resolve("./external/chronicle.rs/documentation/sidebars.js"),
-        editUrl: 'https://github.com/iotaledger/chronicle.rs/edit/main'
+        editUrl: 'https://github.com/iotaledger/chronicle.rs/edit/main',
       }
     ],
