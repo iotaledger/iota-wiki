@@ -40,7 +40,7 @@ There are two ways to interact with IOTA Smart Contracts:
 - [On-ledger](/wasp/guide/core_concepts/smartcontract-interaction/on-ledger-requests): Requests to the smart contract are transactions on the Tangle.
 - [Off-ledger](/wasp/guide/core_concepts/smartcontract-interaction/off-ledger-requests): The requests are sent using an API call to a Wasp node.
 
-You can [configure your Wasp node's API URL] (/wasp/guide/chains_and_nodes/running-a-node#web-api), or use the [public Wasp REST API](https://api.wasp.sc.iota.org/doc).
+You can [configure your Wasp node's API URL](/wasp/guide/chains_and_nodes/running-a-node#web-api), or use the [public Wasp REST API](https://api.wasp.sc.iota.org/doc).
 
 ## Examples
 
