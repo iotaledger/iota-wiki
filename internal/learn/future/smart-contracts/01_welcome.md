@@ -20,5 +20,5 @@ Learn more about the concepts in the following articles:
 - [Validators](03_validators.md)
 - [Chains](04_chains.md)
 - [dApps & User interactions](05_dapps.md)
-- Consensus 🏗
+- [Consensus](06_consensus.md)
 - IOTA Tangle 🏗
