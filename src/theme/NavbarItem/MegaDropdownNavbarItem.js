@@ -18,13 +18,13 @@ import useHideableNavbar from '@theme/hooks/useHideableNavbar';
 import { NavLink } from '@theme/NavbarItem/DefaultNavbarItem';
 import NavbarItem from '@theme/NavbarItem';
 import './styles.css';
+
 const dropdownLinkActiveClass = 'dropdown__link--active';
 
 function isItemActive(item, localPathname) {
   if (isSamePath(item.to, localPathname)) {
     return true;
   }
-
   if (
     item.activeBaseRegex &&
     new RegExp(item.activeBaseRegex).test(localPathname)
@@ -32,19 +32,11 @@ function isItemActive(item, localPathname) {
     return true;
   }
 
-  if (item.activeBasePath && localPathname.startsWith(item.activeBasePath)) {
-    return true;
-  }
-
-  return false;
+  return item.activeBasePath && localPathname.startsWith(item.activeBasePath);
 }
 
 function containsActiveItems(items, localPathname) {
-  return items.some((item) => {
-    item.items
-      ? containsActiveItems(item.items, localPathname)
-      : isItemActive(item, localPathname);
-  });
+  return items.some((item) => isItemActive(item, localPathname));
 }
 
 function createItemCursor({ items, label, className, ...props }) {
@@ -90,6 +82,37 @@ MegaDropdownItem.propTypes = {
   label: PropTypes.string,
 };
 
+/***
+ * Loop through the megamenu's grouped items and return ungrouped items
+ * @param groupedItems array
+ * @returns array of ungrouped items
+ */
+function getUngroupedItemsList(groupedItems) {
+  let items = [];
+  groupedItems.map((itemList) => {
+    itemList.items.map((item) => {
+      items.push(item);
+    });
+  });
+  return items;
+}
+
+/**
+ Add support for a changing label in dropdowns
+ according to the selected dropdown item
+ **/
+function getDropdownProps(props, items, localPathname) {
+  const activeItem = items.filter((item) => isItemActive(item, localPathname));
+  if (activeItem.length) {
+    return {
+      activeBaseRegex: activeItem[0].activeBaseRegex,
+      label: props.label + ' | ' + activeItem[0].label,
+    };
+  }
+
+  return props;
+}
+
 function MegaDropdownNavbarItemDesktop({
   items_: items,
   layout,
@@ -98,7 +121,6 @@ function MegaDropdownNavbarItemDesktop({
   ...props
 }) {
   const localPathname = useLocalPathname();
-  const containsActive = containsActiveItems(items, localPathname);
   const dropdownRef = useRef(null);
   const [showDropdown, setShowDropdown] = useState(false);
   const {
@@ -107,6 +129,16 @@ function MegaDropdownNavbarItemDesktop({
   const { isNavbarVisible } = useHideableNavbar(hideOnScroll);
 
   const itemCursors = items.map(createItemCursor);
+  /**
+   Added consts to get the dropdown label if a dropdown item is selected
+   **/
+  const ungroupedItems = getUngroupedItemsList(items);
+  const dropdownProps = getDropdownProps(
+    props,
+    ungroupedItems,
+    useLocalPathname(),
+  );
+  const containsActive = containsActiveItems(ungroupedItems, localPathname);
 
   // Layout is in row major order due to CSS grid area syntax
   const rowCount = layout.length;
@@ -188,7 +220,7 @@ function MegaDropdownNavbarItemDesktop({
         className={clsx('navbar__item navbar__link', className, {
           'navbar__link--active': containsActive,
         })}
-        {...props}
+        {...dropdownProps}
         onClick={(e) => e.preventDefault()}
         onKeyDown={(e) => {
           if (e.key === 'Enter') {
@@ -235,7 +267,16 @@ function MegaDropdownNavbarItemMobile({ items_: items, className, ...props }) {
   delete props.layout;
 
   const localPathname = useLocalPathname();
-  const containsActive = containsActiveItems(items, localPathname);
+  /**
+   Added const to get the dropdown label if a dropdown item is selected
+   **/
+  const ungroupedItems = getUngroupedItemsList(items);
+  const dropdownProps = getDropdownProps(
+    props,
+    ungroupedItems,
+    useLocalPathname(),
+  );
+  const containsActive = containsActiveItems(ungroupedItems, localPathname);
   const { collapsed, toggleCollapsed, setCollapsed } = useCollapsible({
     initialState: () => !containsActive,
   }); // Expand/collapse if any item active after a navigation
@@ -260,7 +301,7 @@ function MegaDropdownNavbarItemMobile({ items_: items, className, ...props }) {
           toggleCollapsed();
         }}
       >
-        {props.children ?? props.label}
+        {dropdownProps}
       </NavLink>
       <Collapsible lazy as='ul' className='menu__list' collapsed={collapsed}>
         {items.map((itemProps, itemKey) => (
