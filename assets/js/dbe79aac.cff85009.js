@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkiota_wiki=self.webpackChunkiota_wiki||[]).push([[26290],{60700:function(e){e.exports=JSON.parse('{"allTagsPath":"/blog/tags","slug":"/blog/tags/distributed-ledger","name":"Distributed Ledger","count":1,"permalink":"/blog/tags/distributed-ledger"}')}}]);

@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkiota_wiki=self.webpackChunkiota_wiki||[]).push([[84062],{99080:function(a){a.exports=JSON.parse('{"allTagsPath":"/blog/tags","slug":"/blog/tags/commmunity-treasury","name":"Commmunity Treasury","count":1,"permalink":"/blog/tags/commmunity-treasury"}')}}]);

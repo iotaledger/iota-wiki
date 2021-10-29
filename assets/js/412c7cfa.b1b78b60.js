@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkiota_wiki=self.webpackChunkiota_wiki||[]).push([[99089],{40190:function(s){s.exports=JSON.parse('{"allTagsPath":"/blog/tags","slug":"/blog/tags/iscp","name":"ISCP","count":2,"permalink":"/blog/tags/iscp"}')}}]);
