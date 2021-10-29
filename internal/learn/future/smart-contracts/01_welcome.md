@@ -21,4 +21,4 @@ Learn more about the concepts in the following articles:
 - [Chains](04_chains.md)
 - [dApps & User interactions](05_dapps.md)
 - [Consensus](06_consensus.md)
-- IOTA Tangle 🏗
+- [IOTA Tangle](07_tangle.mdx)
