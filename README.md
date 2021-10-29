@@ -107,7 +107,7 @@ Have a look at [CONTRIBUTING](.github/CONTRIBUTING.md).
 Phylo - [Phyloiota](https://github.com/Phyloiota) - Phylo [Community DAO - lets go!]#2233  
 Jeroen van den Hout - [jlvandenhout](https://github.com/jlvandenhout) - jvdhout#4402  
 Dr.Electron - [Dr-Electron](https://github.com/Dr-Electron) - Dr.Electron#9370  
-Adamski - [AdamCroply](https://github.com/AdamCroply) - adamski#0458
+Critical - [Critical94](https://github.com/Critical94) - Critical#7111
 
 ## Donate
 
