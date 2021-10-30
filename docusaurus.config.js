@@ -397,21 +397,6 @@ module.exports = {
         },
       },
     },
-    searchMode: {
-      switchConfig: {
-        closeIcon: 'close',
-
-        closeIconStyle: {
-          fontFamily: 'Material Icons',
-        },
-
-        searchIcon: 'search',
-
-        searchIconStyle: {
-          fontFamily: 'Material Icons',
-        },
-      },
-    },
   },
   presets: [
     [
