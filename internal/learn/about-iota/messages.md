@@ -17,18 +17,17 @@ Previously, the IOTA protocol used transactions (which were vertices in the Tang
 
 The UTXO model defines a ledger state where balances are not directly associated with addresses but with the outputs of transactions. In this model, transactions specify the outputs of previous transactions as inputs, which are consumed to create new outputs. A transaction must consume the entirety of the specified inputs.
 
-![utxo-model](https://user-images.githubusercontent.com/77154511/127794259-10071fbe-4f04-4ab2-81eb-a0589f025a00.png)
+![utxo-model](/img/learn/about-iota/utxo.png)
 
 So, the UTXO is a part of a larger, self-contained, and flexible message structure known as a **payload**. This approach is meant to enable a self-contained message structure defining the data of the entire transfer as a payload to be embedded into a message.
 
 Overall, these payload structures are simple:
 
-|Name |Type |Description | 
-|---- | ----| -----------| 
-| Payload Type | uint32 | must be set to **2** | 
-| Index | String | The index key of the message, a UTF-8 encoded string | 
-|DATA| ByteArray | Data we are attaching |
-
+| Name         | Type      | Description                                          |
+| ------------ | --------- | ---------------------------------------------------- |
+| Payload Type | uint32    | must be set to **2**                                 |
+| Index        | String    | The index key of the message, a UTF-8 encoded string |
+| DATA         | ByteArray | Data we are attaching                                |
 
 Additionally, there can be three types of message payloads:
 
