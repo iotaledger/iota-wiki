@@ -21,9 +21,13 @@ function Card({ title, image, link, description }) {
         onClick={handleClick}
       >
         {image && (
-          <div className='card__image'>
-            <img alt={title} src={useBaseUrl(image)} />
-          </div>
+          <img
+            alt={title}
+            className='card__image'
+            src={useBaseUrl(image)}
+            width='337'
+            height='342'
+          />
         )}
         <div className='card__body padding-horiz--lg padding-bottom--lg'>
           {title && <h3>{title}</h3>}
