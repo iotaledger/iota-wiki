@@ -244,18 +244,6 @@ function Navbar() {
     >
       <div className='navbar__inner'>
         <div className='navbar__items'>
-          {(items?.length > 0 || activeDocPlugin) && (
-            <button
-              aria-label='Navigation bar toggle'
-              className='navbar__toggle clean-btn'
-              type='button'
-              tabIndex={0}
-              onClick={mobileSidebar.toggle}
-              onKeyDown={mobileSidebar.toggle}
-            >
-              <IconMenu />
-            </button>
-          )}
           <Logo
             className='navbar__brand'
             imageClassName='navbar__logo'
@@ -269,14 +257,28 @@ function Navbar() {
           {rightItems.map((item, i) => (
             <NavbarItem {...item} key={i} />
           ))}
-          {!colorModeToggle.disabled && (
-            <Toggle
-              className={styles.toggle}
-              checked={colorModeToggle.isDarkTheme}
-              onChange={colorModeToggle.toggle}
-            />
-          )}
-          {!hasSearchNavbarItem && <SearchBar />}
+          <div className='navbar__item navbar__item--dock'>
+            {!colorModeToggle.disabled && (
+              <Toggle
+                className={styles.toggle}
+                checked={colorModeToggle.isDarkTheme}
+                onChange={colorModeToggle.toggle}
+              />
+            )}
+            {!hasSearchNavbarItem && <SearchBar />}
+            {(items?.length > 0 || activeDocPlugin) && (
+              <button
+                aria-label='Navigation bar toggle'
+                className='navbar__toggle clean-btn'
+                type='button'
+                tabIndex={0}
+                onClick={mobileSidebar.toggle}
+                onKeyDown={mobileSidebar.toggle}
+              >
+                <IconMenu />
+              </button>
+            )}
+          </div>
         </div>
       </div>
 
