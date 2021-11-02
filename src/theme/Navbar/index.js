@@ -26,6 +26,7 @@ import IconMenu from '@theme/IconMenu';
 import IconClose from '@theme/IconClose';
 import styles from './styles.module.css'; // retrocompatible with v1
 import PropTypes from 'prop-types';
+import './styles.css';
 
 const DefaultNavItemPosition = 'right';
 
