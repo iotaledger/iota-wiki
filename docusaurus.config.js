@@ -418,25 +418,29 @@ module.exports = {
     ],
   ],
   plugins: [
-    // [
-    //   '@jlvandenhout/docusaurus-plugin-docs-editor',
-    //   {
-    //     // GitHub OAuth Application settings
-    //     github: {
-    //       docs: {
-    //         // The path to the docs section in your repository
-    //         path: 'internal/',
-    //       },
-    //       // REQUIRED - The Client ID you got from the GitHub OAuth App setup
-    //       clientId: '30a8f5a21215004e81ca',
-    //       // REQUIRED - The plugin will append the authorization code to this URL
-    //       tokenUrl:
-    //         'https://iota-wiki-github-oauth-login.iotaledger.workers.dev',
-    //       // The request method to use (GET or POST), defaults to GET
-    //       method: 'POST',
-    //     },
-    //   },
-    // ],
+    [
+      '@jlvandenhout/docusaurus-plugin-docs-editor',
+      {
+        docs: {
+          // The path to the docs section in your repository
+          path: 'internal',
+          // The username that owns the docs, defaults to siteConfig.organizationName
+          owner: 'iota-community',
+          // The repository that contains the docs, defaults to siteConfig.projectName
+          repo: 'iota-wiki',
+        },
+        // GitHub OAuth Application settings
+        github: {
+          // REQUIRED - The Client ID you got from the GitHub OAuth App setup
+          clientId: '30a8f5a21215004e81ca',
+          // REQUIRED - The plugin will append the authorization code to this URL
+          tokenUrl:
+            'https://iota-wiki-github-oauth-login.iotaledger.workers.dev',
+          // The request method to use (GET or POST), defaults to GET
+          method: 'POST',
+        },
+      },
+    ],
     'docusaurus-plugin-matomo',
     [
       '@docusaurus/plugin-content-docs',
