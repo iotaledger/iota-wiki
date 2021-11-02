@@ -218,7 +218,7 @@ function NavbarMobileSidebar({ sidebarShown, toggleSidebar }) {
 
 NavbarMobileSidebar.propTypes = {
   sidebarShown: PropTypes.bool,
-  toggleSidebar: PropTypes.bool,
+  toggleSidebar: PropTypes.func,
 };
 
 function Navbar() {
