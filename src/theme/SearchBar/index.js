@@ -16,7 +16,6 @@ import useSearchQuery from '@theme/hooks/useSearchQuery';
 import { DocSearchButton, useDocSearchKeyboardEvents } from '@docsearch/react';
 import useAlgoliaContextualFacetFilters from '@theme/hooks/useAlgoliaContextualFacetFilters';
 import { translate } from '@docusaurus/Translate';
-import styles from './styles.module.css';
 import PropTypes from 'prop-types';
 
 let DocSearchModal = null;
@@ -185,7 +184,7 @@ function DocSearch({ contextualSearch, ...props }) {
         />
       </Head>
 
-      <div className={styles.searchBox}>
+      <div>
         <DocSearchButton
           onTouchStart={importDocSearchModalIfNeeded}
           onFocus={importDocSearchModalIfNeeded}
