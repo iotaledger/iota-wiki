@@ -3,5 +3,5 @@
 }
 
 .navbar__item--dock > * + * {
-  padding-left: var(--ifm-navbar-padding-horizontal);
+  margin-left: var(--ifm-navbar-padding-horizontal);
 }
