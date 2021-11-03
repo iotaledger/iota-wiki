@@ -2,6 +2,12 @@
   display: flex;
 }
 
+@media (max-width: 996px) {
+  .navbar__item--dock {
+    display: flex;
+  }
+}
+
 .navbar__item--dock > * + * {
   margin-left: var(--ifm-navbar-padding-horizontal);
 }
