@@ -50,8 +50,16 @@ function BlogPostItem(props) {
     truncated,
     isBlogPostPage = false,
   } = props;
-  const { date, formattedDate, tags, readingTime, title, editUrl, authors } =
-    metadata;
+  const {
+    date,
+    formattedDate,
+    permalink,
+    tags,
+    readingTime,
+    title,
+    editUrl,
+    authors,
+  } = metadata;
   const image = assets.image ?? frontMatter.image;
   const url = frontMatter.url;
 
@@ -64,7 +72,7 @@ function BlogPostItem(props) {
           {isBlogPostPage ? (
             title
           ) : (
-            <Link itemProp='url' to={url}>
+            <Link itemProp='url' to={url ? url : permalink}>
               {title}
             </Link>
           )}
