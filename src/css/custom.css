@@ -1,6 +1,7 @@
 @import 'fonts.css';
 @import 'variables.css';
 @import 'patches.css';
+@import '~react-image-gallery/styles/css/image-gallery.css';
 
 .dropdown > .navbar__link:after,
 .menu__link--sublist:after {
