@@ -12,6 +12,7 @@ const local_config_1 = require("../local-config");
 class Start extends command_1.Command {
     async run() {
         var _a, _b, _c;
+        const { flags } = this.parse(Start);
         const PWD = (_a = process.env.PWD) !== null && _a !== void 0 ? _a : '';
         const userConfig = await local_config_1.getLocalConfig();
         const WORKING_FOLDER = path_1.join(PWD, (_b = userConfig.localWikiFolder) !== null && _b !== void 0 ? _b : '', userConfig.localWikiFolder ? 'iota-wiki' : '');
@@ -27,12 +28,18 @@ class Start extends command_1.Command {
         const WIKI_EXTERNAL_FOLDER = path_1.join(WORKING_FOLDER, 'external');
         const WIKI_CONTENT_REPO_FOLDER = path_1.join(WIKI_EXTERNAL_FOLDER, userConfig.repoName);
         fs_extra_1.copySync(path_1.join(PWD, 'static', 'img'), path_1.join(WORKING_FOLDER, 'static', 'img'));
+        let yarnArgs = [
+            'start',
+            '--host',
+            '0.0.0.0',
+        ];
+        if (flags["dry-run"]) {
+            yarnArgs = [
+                'build',
+            ];
+        }
         const runYarn = debounce(() => {
-            child_process_1.spawn('yarn', [
-                'start',
-                '--host',
-                '0.0.0.0',
-            ], {
+            child_process_1.spawn('yarn', yarnArgs, {
                 cwd: WORKING_FOLDER,
                 shell: true,
                 stdio: 'inherit',
@@ -66,4 +73,9 @@ exports.default = Start;
 Start.description = 'start local wiki';
 Start.flags = {
     help: command_1.flags.help({ char: 'h' }),
+    "dry-run": command_1.flags.boolean({
+        description: 'Test build the wiki with the current edited content',
+        default: false,
+        allowNo: false
+    })
 };

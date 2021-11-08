@@ -3,6 +3,7 @@ export default class Start extends Command {
     static description: string;
     static flags: {
         help: import("@oclif/parser/lib/flags").IBooleanFlag<void>;
+        "dry-run": import("@oclif/parser/lib/flags").IBooleanFlag<boolean>;
     };
     run(): Promise<void>;
     /**
