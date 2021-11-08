@@ -4,9 +4,18 @@
         <title>IOTA Wiki Blog</title>
         <link>https://wiki.iota.org/blog</link>
         <description>IOTA Wiki Blog</description>
-        <lastBuildDate>Fri, 24 Sep 2021 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 05 Nov 2021 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
+        <item>
+            <title><![CDATA[IOTAs multi-asset multiverse is coming]]></title>
+            <link>https://wiki.iota.org/blog/multi-asset-multiverse-is-coming</link>
+            <guid>multi-asset-multiverse-is-coming</guid>
+            <pubDate>Fri, 05 Nov 2021 00:00:00 GMT</pubDate>
+            <description><![CDATA[keyboard]]></description>
+            <content:encoded><![CDATA[<p><img src="https://miro.medium.com/max/1400/1*8aPcRlHUFfOCOQC5QcSqOw.png" alt="keyboard"/></p><p>IOTAs multi-asset multiverse is coming! Huge implications for its tokenomics.</p><p>Read the article on:<br/>
+<a href="https://medium.com/@linus.naumann/iotas-multi-asset-multiverse-is-coming-huge-implications-for-its-tokenomics-454bfb1f1de1">Medium</a></p>]]></content:encoded>
+        </item>
         <item>
             <title><![CDATA[My opinion on ISCP — security improvement proposal]]></title>
             <link>https://wiki.iota.org/blog/iscp_security_proposal</link>

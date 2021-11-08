@@ -2,11 +2,24 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://wiki.iota.org/blog</id>
     <title>IOTA Wiki Blog</title>
-    <updated>2021-09-24T00:00:00.000Z</updated>
+    <updated>2021-11-05T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://wiki.iota.org/blog"/>
     <subtitle>IOTA Wiki Blog</subtitle>
     <icon>https://wiki.iota.org/img/favicon.ico</icon>
+    <entry>
+        <title type="html"><![CDATA[IOTAs multi-asset multiverse is coming]]></title>
+        <id>multi-asset-multiverse-is-coming</id>
+        <link href="https://wiki.iota.org/blog/multi-asset-multiverse-is-coming"/>
+        <updated>2021-11-05T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[keyboard]]></summary>
+        <content type="html"><![CDATA[<p><img src="https://miro.medium.com/max/1400/1*8aPcRlHUFfOCOQC5QcSqOw.png" alt="keyboard"/></p><p>IOTAs multi-asset multiverse is coming! Huge implications for its tokenomics.</p><p>Read the article on:<br/>
+<a href="https://medium.com/@linus.naumann/iotas-multi-asset-multiverse-is-coming-huge-implications-for-its-tokenomics-454bfb1f1de1">Medium</a></p>]]></content>
+        <author>
+            <name>Linus Naumann</name>
+            <uri>https://twitter.com/LinusNaumann</uri>
+        </author>
+    </entry>
     <entry>
         <title type="html"><![CDATA[My opinion on ISCP — security improvement proposal]]></title>
         <id>iscp_security_proposal</id>
