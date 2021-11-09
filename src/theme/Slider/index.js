@@ -3,28 +3,30 @@ import ImageGallery from 'react-image-gallery';
 import 'react-image-gallery/styles/css/image-gallery.css';
 import PropTypes from 'prop-types';
 
-export default function ImageSlider({ images }) {
-  const placeholderImages = [
-    {
-      original: 'https://picsum.photos/id/1018/1000/600/',
-      thumbnail: 'https://picsum.photos/id/1018/250/150/',
-    },
-    {
-      original: 'https://picsum.photos/id/1015/1000/600/',
-      thumbnail: 'https://picsum.photos/id/1015/250/150/',
-    },
-    {
-      original: 'https://picsum.photos/id/1019/1000/600/',
-      thumbnail: 'https://picsum.photos/id/1019/250/150/',
-    },
-  ];
-
-  return (
-    <ImageGallery
-      items={images ? images : placeholderImages}
-      showPlayButton={false}
-    />
+export default function ImageSlider() {
+  // Import images from the infographics folder
+  function importImages(r) {
+    return r.keys().map((x) => x.replace('./', ''));
+  }
+  const allImages = importImages(
+    require.context('/img/infographics/', false, /\.(png|jpe?g|svg)$/),
   );
+
+  // Create an array of objects with the image names
+  function getImages() {
+    let images = [];
+    for (let i = 0; i < allImages.length; i++) {
+      images.push({
+        original: `/img/infographics/${allImages[i]}`,
+        thumbnail: `/img/infographics/${allImages[i]}`,
+      });
+    }
+    return images;
+  }
+  const images = getImages();
+
+  // Create the image gallery
+  return <ImageGallery items={images} showPlayButton={false} lazyLoad={true} />;
 }
 
 ImageSlider.propTypes = {
