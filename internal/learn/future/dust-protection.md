@@ -12,7 +12,7 @@ keywords:
 
 This short note attempts to explain how dust protection has evolved with the needs of the IOTA network.
 
-## IOTA 1.0:
+## IOTA 1.0
 
 An account-based ledger.
 Each address has a balance of tokens.
@@ -20,9 +20,9 @@ Each address has a balance of tokens.
 There is no dust protection.
 Therefore addresses could hold any amount, down to 1 IOTA, and transactions could be as small as 1 IOTA.
 
-The ledger state was therefore likely to bloat+++.
+The ledger state was therefore likely to bloat.
 
-## IOTA 1.5:
+## IOTA 1.5
 
 IOTA switches to a UTXO-based ledger.
 Each address can now hold multiple [UTXOs](/learn/about-iota/messages#utxo), each with its own balance. For a more extensive description of UTXOs check [this](https://medium.com/bitbees/what-the-heck-is-utxo-ca68f2651819) medium article.
@@ -46,7 +46,7 @@ Users can also sweep the dust UTXOs - this means combining multiple dust UTXOs i
 
 This was a reasonable interim solution, but unfortunately it is not compatible with IOTA 2.0, as it requires total ordering of the Tangle (to determine if the transaction is valid, and that the dust protection rules are fulfilled). IOTA 2.0 does not have total ordering.
 
-## New Tokenisation Framework:
+## New Tokenisation Framework
 
 Various new UTXO types are introduced, which can add different amounts of data to the ledger (eg for NFTs, native assets, aliases), without requiring any IOTA by themselves. Therefore there is a very high risk of ledger bloat.
 The 1.5 dust protection is also not ready for IOTA 2.0. Therefore a new dust protection scheme is proposed, which deals with both issues.
@@ -66,10 +66,10 @@ Instead I use "conditional sending":
    a) The 10i is claimed by the recipient - the 10i is transferred together with the recipient's own minimal deposit to a new valid UTXO. The recipient needs their own 1 Mi deposit to claim the 10i. At the same time the sender's 1 Mi deposit is returned to the sender.
    b) The 10i is not claimed in a reasonable time period (set by the sender), and the total amount of 1.00001 Mi can now be reclaimed or spent by the sender (the mechanism is a bit more complex but this is the simplest way of describing it).
 
-#### Bonus:
+#### Bonus
 
 This conditional sending can also be used as a safety net to prevent sending to the wrong address. It is a common problem in crypto that funds are sometimes transferred to the incorrect address due to mistyping of the address - often this address has no owner and the tokens are lost forever! If this were to happen in a conditional send however, then the tokens are very unlikely to be claimed in the set time period, and the total amount can be claimed by the sender. A very useful feature!
 
-#### Final note:
+#### Final note
 
 We are also looking at other mechanisms for microtransactions which make the process simpler, while still respecting the dust protection rules. We hope to share more with you soon.
