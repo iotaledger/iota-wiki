@@ -69,7 +69,7 @@ module.exports = {
         {
           type: 'category',
           label: 'Smart Contracts',
-          collapsed: false,
+          collapsed: true,
           items: [
             'future/smart-contracts/smart-contracts-introduction',
             'future/smart-contracts/smart-contracts-VM-and-languages',
@@ -81,6 +81,7 @@ module.exports = {
             'future/smart-contracts/smart-contracts-community-tutorials',
           ],
         },
+        'future/dust-protection',
       ],
     },
   ],
