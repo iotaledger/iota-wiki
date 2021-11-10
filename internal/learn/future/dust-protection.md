@@ -1,5 +1,6 @@
 ---
-id: evolution-of-dust
+id: dust-protection
+title: Dust Protection
 description: Introduction to the history of dust protection in IOTA
 keywords:
   - Dust
@@ -34,7 +35,7 @@ The basic rule of IOTA 1.5 dust protection is that "UTXOs cannot hold under 1 mi
 Try to remember this very important rule as it makes sending amounts under 1 Mi very tricky!
 
 To understand why this is tricky, let's look at an example where I try to send 10i to an address that already contains 5 Mi. You may assume that you could add 10i to that 5 Mi, so that you have a total of 5.00001 Mi, which respects the basic dust protection rule.
-But no! 
+But no!
 
 Each UTXO is actually a self-contained pot, which only contains the output from a transaction. And in this case that pot would only contain the 10i you sent (ie the output of that transaction). So, as the UTXO only contains 10i, you have broken the dust protection rule.
 (You may need to re-read that a few times to understand it properly)

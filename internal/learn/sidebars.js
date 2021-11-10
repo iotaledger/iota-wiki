@@ -81,12 +81,7 @@ module.exports = {
             'future/smart-contracts/smart-contracts-community-tutorials',
           ],
         },
-        {
-          type: 'category',
-          label: 'Tokenisation Framework',
-          collapsed: true,
-          items: ['future/tokenisation-framework/evolution-of-dust'],
-        },
+        'future/dust-protection',
       ],
     },
   ],
