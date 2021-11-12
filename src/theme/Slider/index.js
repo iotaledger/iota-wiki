@@ -10,7 +10,7 @@ export default function ImageSlider({ path }) {
   }
 
   const allImages = importImages(
-    require.context('/img/', true, /\.(png|jpe?g|svg)$/),
+    require.context('/img/', true, /\.(png|jpe?g|svg|mp4)$/),
   );
 
   const requestedImages = allImages.filter((word) => word.startsWith(path));
