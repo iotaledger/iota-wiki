@@ -33,6 +33,5 @@ export default function ImageSlider({ path }) {
 }
 
 ImageSlider.propTypes = {
-  images: PropTypes.array,
-  path: PropTypes.string,
+  path: PropTypes.string.isRequired,
 };
