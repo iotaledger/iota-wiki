@@ -13,8 +13,6 @@ export default function ImageSlider({ path }) {
     require.context('/img/', true, /\.(png|jpe?g|svg)$/),
   );
 
-  console.log(allImages);
-
   const requestedImages = allImages.filter((word) => word.startsWith(path));
 
   // Create an array of objects with the image paths
