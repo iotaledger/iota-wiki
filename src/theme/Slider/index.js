@@ -6,12 +6,14 @@ import PropTypes from 'prop-types';
 export default function ImageSlider({ path }) {
   // Import images from the infographics folder
   function importImages(r) {
-    return r.keys().map((x) => x.replace('./', ''));
+    return r.keys().map((x) => x.replace('.', ''));
   }
 
   const allImages = importImages(
     require.context('/img/', true, /\.(png|jpe?g|svg)$/),
   );
+
+  console.log(allImages);
 
   const requestedImages = allImages.filter((word) => word.startsWith(path));
 
@@ -20,8 +22,8 @@ export default function ImageSlider({ path }) {
     let images = [];
     for (let i = 0; i < requestedImages.length; i++) {
       images.push({
-        original: `/img/${requestedImages[i]}`,
-        thumbnail: `/img/${requestedImages[i]}`,
+        original: `/img${requestedImages[i]}`,
+        thumbnail: `/img${requestedImages[i]}`,
       });
     }
     return images;
