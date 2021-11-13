@@ -2,6 +2,7 @@ import React from 'react';
 import ImageGallery from 'react-image-gallery';
 import 'react-image-gallery/styles/css/image-gallery.css';
 import PropTypes from 'prop-types';
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 export default function ImageSlider({ path }) {
   // Import images from the infographics folder
@@ -20,8 +21,10 @@ export default function ImageSlider({ path }) {
     let images = [];
     for (let i = 0; i < requestedImages.length; i++) {
       images.push({
-        original: `/img${requestedImages[i]}`,
-        thumbnail: `/img${requestedImages[i]}`,
+        // original: `/img${requestedImages[i]}`,
+        // thumbnail: `/img${requestedImages[i]}`,
+        original: useBaseUrl('/img' + requestedImages[i]),
+        thumbnail: useBaseUrl('/img' + requestedImages[i]),
       });
     }
     return images;
