@@ -1,5 +1,5 @@
 ---
-slug: bitcoin-middle-man
+slug: the-dao-landscape
 title: 'A vision of IOTA´s future ecosystem — The DAO-landscape'
 authors: lnaumann
 tags: [Community, DAO]
