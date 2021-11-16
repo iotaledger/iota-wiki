@@ -24,7 +24,7 @@ module.exports = {
     announcementBar: {
       id: 'shimmer',
       content:
-        'Interested in the new upcoming incentivized staging network and staking IOTAs? Read more about it <a target="_blank" href="https://shimmer.network">here</a>',
+        'Interested in the upcoming incentivized staging network and staking IOTA tokens? Read more about it <a target="_blank" href="https://shimmer.network">here</a>.',
       backgroundColor: '#00e0ca',
       textColor: '#000000',
       isCloseable: true,
