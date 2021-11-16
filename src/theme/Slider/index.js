@@ -14,23 +14,44 @@ export default function ImageSlider({ path }) {
   const allImages = importImages(
     require.context('/img/', true, /\.(png|jpe?g|svg|mp4)$/),
   );
-
   const requestedImages = allImages.filter((word) => word.startsWith(path));
+
+  // Get file extension
+  function getFileExtension(filename) {
+    return filename.split('.').pop();
+  }
 
   // Create an array of objects with the image paths
   function createImageArray() {
     let images = [];
     for (let i = 0; i < requestedImages.length; i++) {
-      images.push({
-        original: useBaseUrl('/img' + requestedImages[i]),
-        thumbnail: useBaseUrl('/img' + requestedImages[i]),
-      });
+      let image = useBaseUrl('/img' + requestedImages[i]);
+      if (getFileExtension(requestedImages[i]) === 'mp4') {
+        images.push({
+          original: image,
+          thumbnail: '/img/infographics/video-placeholder.svg',
+          renderItem: () => (
+            <video
+              controls
+              autoPlay='autoplay'
+              muted
+              className='image-gallery-video'
+            >
+              <source src={image} type='video/mp4' />
+            </video>
+          ),
+        });
+      } else {
+        images.push({
+          original: image,
+          thumbnail: image,
+        });
+      }
+      return images;
     }
-    return images;
   }
+  const carousel = useRef(null);
   const images = createImageArray();
-
-  let carousel = useRef(null);
 
   // Create the image gallery
   return (

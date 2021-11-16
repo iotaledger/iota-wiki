@@ -94,6 +94,10 @@ article .card {
   align-self: center;
 }
 
+.image-gallery-video {
+  max-width: 100%;
+}
+
 .link__icon {
   font-family: 'iota_icons_font' !important;
   font-size: 2.5rem;
