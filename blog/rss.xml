@@ -4,9 +4,19 @@
         <title>IOTA Wiki Blog</title>
         <link>https://wiki.iota.org/blog</link>
         <description>IOTA Wiki Blog</description>
-        <lastBuildDate>Fri, 05 Nov 2021 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 15 Nov 2021 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
+        <item>
+            <title><![CDATA[A vision of IOTA´s future ecosystem — The DAO-landscape]]></title>
+            <link>https://wiki.iota.org/blog/the-dao-landscape</link>
+            <guid>the-dao-landscape</guid>
+            <pubDate>Mon, 15 Nov 2021 00:00:00 GMT</pubDate>
+            <description><![CDATA[DAO ecosystem]]></description>
+            <content:encoded><![CDATA[<p><img src="https://miro.medium.com/max/1167/1*1CJWxBKb3ekwq-UBOaRI_g.gif" alt="DAO ecosystem"/></p><p>IOTAs future DAO ecosystem will bring a multitude of new opportunities for business, investment and communities!</p><p>All DAOs will be interconnected in a lively and pluralistic landscape</p><p>Read the article on:<br/>
+<a href="https://www.reddit.com/r/Iota/comments/qucwio/a_vision_of_iotas_future_ecosystem_the/">Reddit</a><br/>
+<a href="https://medium.com/@linus.naumann/a-vision-of-iota-s-future-ecosystem-the-dao-landscape-b93688d8acee">Medium</a></p>]]></content:encoded>
+        </item>
         <item>
             <title><![CDATA[IOTAs multi-asset multiverse is coming]]></title>
             <link>https://wiki.iota.org/blog/multi-asset-multiverse-is-coming</link>
