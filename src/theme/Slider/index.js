@@ -29,7 +29,7 @@ export default function ImageSlider({ path }) {
       if (getFileExtension(requestedImages[i]) === 'mp4') {
         images.push({
           original: image,
-          thumbnail: '/img/infographics/video-placeholder.svg',
+          thumbnail: '/img/infographics/video-placeholder.png',
           renderItem: () => (
             <video
               controls
