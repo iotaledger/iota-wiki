@@ -21,6 +21,14 @@ module.exports = {
     },
   ],
   themeConfig: {
+    announcementBar: {
+      id: 'shimmer',
+      content:
+        'Interested in the new incentivized staging network and staking IOTAs? Read more about it <a target="_blank" href="https://shimmer.network">here</a>',
+      backgroundColor: '#00e0ca',
+      textColor: '#000000',
+      isCloseable: true,
+    },
     image: 'img/iota-wiki.png',
     algolia: {
       apiKey: '829457a9c9dd5a8ddd31d08c86e154c2',
