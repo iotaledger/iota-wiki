@@ -16,7 +16,8 @@ To fairly distribute tokens on the new network, you can stake your IOTA tokens b
 
 Before the Shimmer network goes online, the IOTA Foundation will announce a start date for "pre-launch" staking.
 You will be able to make a transaction to yourself with a certain payload to declare that you want to stake that amount of IOTA tokens to receive SMR. Staking will now be possible for 90 days. You will earn 1 SMR for every 1Mi every 10 seconds.
-Let's take a closer look at how this works.
+There is no risk in staking your IOTA Tokens.
+Let's take a closer (simplified) look at the technology behind the process.
 
 ### Technical overview
 
