@@ -47,8 +47,8 @@ export default function ImageSlider({ path }) {
           thumbnail: image,
         });
       }
-      return images;
     }
+    return images;
   }
   const carousel = useRef(null);
   const images = createImageArray();
