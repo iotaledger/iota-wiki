@@ -25,7 +25,7 @@ Those who are already familiar with the Build/Burn Vote process will recognize t
 Hornet operators can enable this plugin. Hornet will then (after a certain milestone) start accumulating all outputs that have the specific Staking payload every 10 seconds. Until the 90 days are up.  
 Not clear enough? Let's use an example:  
 Bob wants to use the 1Mi in his wallet. He clicks the stake button in Firefly, which generates the transaction to himself with the specific payload. Hornet sees this message and starts accumulating the credit. So after a milestone, the value will be 1 SMR (remember that this token doesn't exist yet. It is just a number in a DB), after the second milestone in 10s you will have 2 SMR and so on. As long as your tokens stay where they are, you will accumulate "tokens".
-At the end of the 90 days, Hornet will create an file with all the "balances", which will be used to bootstrap the Shimmer network.  
+At the end of the 90 days, Hornet will create a file with all the "balances", which will be used to bootstrap the Shimmer network.  
 On this network, you can now claim your real SMR tokens, which are stored at the same address as your IOTA tokens on the mainnet.  
 So the initial amount of SMR is defined by the amount of IOTA tokens staked.
 
