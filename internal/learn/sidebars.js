@@ -81,6 +81,7 @@ module.exports = {
             'future/smart-contracts/smart-contracts-community-tutorials',
           ],
         },
+        'future/shimmer',
         'future/dust-protection',
       ],
     },
