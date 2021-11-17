@@ -90,6 +90,10 @@ article .card {
   display: grid;
 }
 
+.image-gallery-content {
+  overflow: hidden;
+}
+
 .image-gallery-content.fullscreen {
   align-self: center;
 }
