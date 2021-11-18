@@ -65,6 +65,71 @@ A side note - in the upcoming 2.0 IOTA version, this POW requirement will become
 
 This is the defined outer structure of every message in the IOTA protocol (the label of our package):
 
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td>NetworkID</td>
+        <td>uint64</td>
+        <td>Network identifier. This field will signify whether this message was meant for mainnet, testnet, or a private net. It also tells what protocol rules apply to the message. It is the first 8 bytes of the `BLAKE2b-256` hash of the concatenation of the network type and the protocol version string.</td>
+        </tr>
+    <tr>
+        <td> Parents' length </td>
+        <td> uint8</td>
+        <td> The number of messages we directly approve. Can be any value between 1-8.</td>
+    </tr>
+    <tr>
+        <td>Parents </td>
+        <td>ByteArray[32 * `parents length`]</td>
+        <td>The Message IDs that are referenced.</td>
+    </tr>
+    <tr>
+        <td>Payload Length</td>
+        <td>uint32</td>
+        <td> The length of the Payload. Since its type may be unknown to the node it must be declared in advance. 0 length means no payload will be attached.</td>
+    </tr>
+    <tr>
+        <td colspan="1">
+            Payload
+        </td>
+        <td colspan="2">
+            <details open="true">
+                <summary>Generic Payload</summary>
+                <blockquote>
+                An outline of a general payload
+                </blockquote>
+                <table>
+                    <tr>
+                        <th>Name</th>
+                        <th>Type</th>
+                        <th>Description</th>
+                    </tr>
+                    <tr>
+                        <td>Payload Type</td>
+                        <td>uint32</td>
+                        <td>
+                            The type of the payload. It will instruct the node on how to parse the fields that follow.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Data Fields</td>
+                        <td>ANY</td>
+                        <td>A sequence of fields, where the structure depends on <code>payload type</code>.</td>
+                    </tr>
+                </table>
+            </details>
+        </td>
+    </tr>
+    <tr>
+        <td>Nonce</td>
+        <td>uint64</td>
+        <td>The nonce which lets this message fulfill the Proof-of-Work requirement.</td>
+    </tr>
+</table>
+
 All this information must be created by a client (wallet software or other programs that generate IOTA messages) to issue a message to a node and make sure the node knows what to do with this message.
 
 ### Message validation
