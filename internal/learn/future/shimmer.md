@@ -8,7 +8,7 @@ keywords:
   - SMR
 ---
 
-[![Shimmer](/img/learn/future/shimmer.svg 'Click to see the full-size image.')](/img/learn/future/shimmer.svg)
+[![Shimmer](/img/learn/future/shimmer.png 'Click to see the full-size image.')](/img/learn/future/shimmer.png)
 
 IOTA Foundation [introduced](https://blog.iota.org/introducing-iota-staking/) Shimmer. An incentivized staging network.
 It can be used to work with upcoming IOTA updates before they arrive on the mainnet. It will also have its own token called [SMR](https://shimmer.network/token).
