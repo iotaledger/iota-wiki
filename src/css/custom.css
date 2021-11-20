@@ -98,8 +98,26 @@ article .card {
   align-self: center;
 }
 
+.image-gallery-icon:hover {
+  color: var(--ifm-color-emphasis-200) !important;
+}
+
+.image-gallery-image {
+  background: var(--ifm-color-emphasis-200);
+}
+
 .image-gallery-video {
   max-width: 100%;
+}
+
+.image-gallery-thumbnail-image {
+  object-fit: cover;
+}
+
+.image-gallery-thumbnail.active,
+.image-gallery-thumbnail:focus,
+.image-gallery-thumbnail:hover {
+  border: 4px solid var(--ifm-color-emphasis-500) !important;
 }
 
 .link__icon {
