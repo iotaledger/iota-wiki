@@ -9,6 +9,7 @@ var map = [
   { name: 'Facebook', icon: '\ue901' },
 ];
 
+// Returns an object with icon and name for given url
 export default function get_socials_data(url) {
   for (let i = 0; i < map.length; i++) {
     if (url.toLowerCase().includes(map[i].name.toLowerCase())) {
