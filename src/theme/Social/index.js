@@ -2,23 +2,23 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { useThemeConfig } from '@docusaurus/theme-common';
 import './styles.css';
+import get_socials_data from '../../../src/helper/socials';
 
-function SocialLink({ title, icon, url, backgroundColor }) {
+function SocialLink({ url, backgroundColor }) {
+  let data = get_socials_data(url);
   return (
     <a
       className='social__link padding-horiz--sm padding-vert--md'
       style={{ backgroundColor: backgroundColor }}
       href={url}
     >
-      <div className='social__font social__icon'>{icon}</div>
-      <div className='social__title'>{title}</div>
+      <div className='social__font social__icon'>{data.icon}</div>
+      <div className='social__title'>{data.name}</div>
     </a>
   );
 }
 
 SocialLink.propTypes = {
-  title: PropTypes.string,
-  icon: PropTypes.string,
   url: PropTypes.string,
   backgroundColor: PropTypes.string,
 };
