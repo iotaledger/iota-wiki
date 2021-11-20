@@ -1,13 +1,3 @@
-
-Untitled document
-Saved
-561 words
-DOCUMENT
-EDIT
-ACCOUNT
-BUSINESS
-Holger Webel
-holger.webel@iota.org
 ---
 
 id: shimmer
