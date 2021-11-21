@@ -25,10 +25,5 @@ module.exports = {
       collapsed: true,
       items: ['tutorials/youtube', 'tutorials/twitch'],
     },
-    {
-      type: 'doc',
-      label: 'Legacy',
-      id: 'legacy',
-    },
   ],
 };
