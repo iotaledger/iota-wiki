@@ -1,11 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import get_socials_data from '../../../src/helper/socials';
 
-function SocialLink({ label, icon, link }) {
+function SocialLink({ link }) {
+  let data = get_socials_data(link);
+
   return (
     <a className='team__icon margin-horiz--sm' href={link}>
-      <div>{icon}</div>
-      {label}
+      <div>{data.icon}</div>
     </a>
   );
 }
@@ -33,7 +35,7 @@ const TeamMember = function (props) {
           <div className='link-list'>
             {social_links &&
               social_links.map((props, idx) => (
-                <SocialLink key={idx} {...props} />
+                <SocialLink key={idx} link={props} />
               ))}
           </div>
         </div>
@@ -45,8 +47,6 @@ const TeamMember = function (props) {
 export default TeamMember;
 
 SocialLink.propTypes = {
-  label: PropTypes.string,
-  icon: PropTypes.string,
   link: PropTypes.string,
 };
 
@@ -54,5 +54,5 @@ TeamMember.propTypes = {
   name: PropTypes.string,
   title: PropTypes.string,
   image_url: PropTypes.string,
-  ...SocialLink.propTypes,
+  social_links: PropTypes.arrayOf(PropTypes.string),
 };
