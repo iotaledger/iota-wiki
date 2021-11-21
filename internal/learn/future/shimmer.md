@@ -8,7 +8,7 @@ keywords:
   - SMR
 ---
 
-![Shimmer](/img/learn/future/shimmer.svg "Click to see the full-size image.")
+[![Shimmer](/img/learn/future/shimmer.svg 'Click to see the full-size image.')](/img/learn/future/shimmer.svg)
 
 In November 2021, IOTA Foundation [introduced](https://blog.iota.org/introducing-iota-staking/) Shimmer, an incentivized staging network. Shimmer will function as a validation and staging network for upcoming IOTA updates before they arrive on the mainnet. It will also have its own token called [SMR](https://shimmer.network/token). To fairly distribute Shimmer tokens on the new network, you can stake your IOTA tokens before the launch of Shimmer, and will receive Shimmer tokens once the new network starts.
 
@@ -30,7 +30,7 @@ If Bob stakes 1 Mi for the full period of 90 days, he will receive 777,600 SMR t
 
 The initial token supply of SMR is defined by the amount of IOTA tokens staked, and for how long they were staked, during the 90 day staking period.
 
-![Staking Example](/img/learn/future/staking_example.svg "Click to see the full-size image.")
+[![Staking Example](/img/learn/future/staking_example.svg 'Click to see the full-size image.')](/img/learn/future/staking_example.svg)
 
 ## Post-launch staking
 
