@@ -46,13 +46,13 @@ Allowing parallel processing removes congestion.
 
 ## Consensus in a blockchain
 
-In blockchains, the network participants are split into validators (Miners, stackers) and users. Miners consume large amounts of computing power to complete the proof of work (PoW) required to chain the blocks together. Miners and stakers are incentivized to validate messages and do PoW because of the following:
+In blockchains, the network participants are split into validators (Miners, stakers) and users. Miners consume large amounts of computing power to complete the proof of work (PoW) required to chain the blocks together. Miners and stakers are incentivized to validate messages and do PoW because of the following:
 
 The fees that users are willing to pay to have their messages included in a block
 
 The reward that the network gives to miners for producing the block faster than other miners. The only way to reverse messages in a POW blockchain is to mine a new blockchain in the same amount of time it takes other miners to mine a single block. To do so, a miner would need 51% of the network's ability to do PoW, known as hash power. As a result, requiring validators to do PoW secures blockchain networks by making it difficult to attack, change, or stop. The more miners participate, the more secure the network is.
 
-Producing blocks as a stacker in a proof of stake (PoS) Blockchain usually requires the staker to own vast amounts of staked tokens. Often only a few selected or fixed Validators are granted to be block producers. These entities are either pre-defined by the creators of the protocol (a form of centralization)or emerge as validators holding the most significant stake of tokens. PoS blockchains do not require enormous amounts of energy wasted for PoW, but therefore only allow the wealthiest participants to write to the ledger and produce new blocks.
+Producing blocks as a staker in a proof of stake (PoS) Blockchain usually requires the staker to own vast amounts of staked tokens. Often only a few selected or fixed Validators are granted to be block producers. These entities are either pre-defined by the creators of the protocol (a form of centralization)or emerge as validators holding the most significant stake of tokens. PoS blockchains do not require enormous amounts of energy wasted for PoW, but therefore only allow the wealthiest participants to write to the ledger and produce new blocks.
 
 ## Consensus in the Tangle
 
