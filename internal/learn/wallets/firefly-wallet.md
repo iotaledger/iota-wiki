@@ -153,7 +153,7 @@ The following information about the transaction is displayed:
 **Receive Address**
 
 - The address on which the tokens of this transaction have arrived. Several different receive addresses may be shown in this view. The addresses belonging to you are highlighted with the name of your wallet in brackets, other addresses that are shown without brackets do not belong to you. These are normally the addresses of the sender. To these addresses, the remaining funds that have not been used from the sender's address are transferred. This is related to the UTXO (unspent transaction output) Account model in IOTA.
-- If a transaction is issued from a UTXO output (an address holding funds) that does not consume all funds that are part of this output, one transaction moves the funds that are planned to send away from the address, and a second transaction moves the rest of the unused funds from this UTXO to a new UTXO output. Both these transactions are part of the message and therefore shown in the Transaction detail. Read more about the UTXO Account model [here](https://wiki.iota.org/IOTA-2.0-Research-Specifications/5.1UTXO/).
+- If a transaction is issued from a UTXO output (an address holding funds) that does not consume all funds that are part of this output, one transaction moves the funds that are planned to send away from the address, and a second transaction moves the rest of the unused funds from this UTXO to a new UTXO output. Both these transactions are part of the message and therefore shown in the Transaction detail. Read more about the UTXO Account model [here](/IOTA-2.0-Research-Specifications/5.1UTXO/).
 
 **Amount**
 
