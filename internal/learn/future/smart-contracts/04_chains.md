@@ -19,9 +19,7 @@ IOTA Smart Contracts is a **multi-chain** environment, that means, you can run m
 - Each chain can contain multiple smart contracts.
 - Each smart contract can exchange assets with other smart contracts on other chains in a trustless and distributed manner.
 
-
 [![Multi-Chain environment](/img/learn/multichain.png)](/img/learn/multichain.png)
-
 
 IOTA Smart Contracts are defined as immutable state machines:
 
@@ -55,6 +53,6 @@ state output) becomes a custodian for the assets owned by its clients, in the sa
 
 ## Further Readings​
 
-- Learn more about [State, Transitions, and State Anchoring](/wasp/guide/core_concepts/states).
-- Participate on [the public Testnet](/wasp/guide/chains_and_nodes/testnet).
-- Build [a chain on your committee](/wasp/guide/chains_and_nodes/setting-up-a-chain).
+- Learn more about [State, Transitions, and State Anchoring](/smart-contracts/guide/core_concepts/states).
+- Participate on [the public Testnet](/smart-contracts/guide/chains_and_nodes/testnet).
+- Build [a chain on your committee](/smart-contracts/guide/chains_and_nodes/setting-up-a-chain).

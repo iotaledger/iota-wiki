@@ -36,7 +36,7 @@ The VM can be extended dynamically by adding VM plugins, the VM processors which
 
 In IOTA Smart Contracts, an abstraction is a collection of generic interfaces which makes the whole architecture of IOTA Smart Contracts and the Wasp node agnostic about what exact kind of deterministic computation machinery is used to run smart contract programs.
 
-Currently, there are two VM plugins available, the [Wasm VM](/wasp/guide/wasm_vm/intro) and the [Ethereum VM (EVM)](/wasp/guide/evm/introduction).
+Currently, there are two VM plugins available, the [Wasm VM](/smart-contracts/guide/wasm_vm/intro) and the [Ethereum VM (EVM)](/smart-contracts/guide/evm/introduction).
 
 ## Wasm VM
 
@@ -59,11 +59,11 @@ It's also possible to write an IOTA Smart Contract in the TinyGo programming lan
 - Go is a very popular language within the IOTA community.
 - A very extended and easy to use developer environment
 
-The [Wasp Node](https://github.com/iotaledger/wasp) is programmed in Go, as is the [Test Framework Solo](https://wiki.iota.org/wasp/guide/solo/what-is-solo/), which means that you don't have to constantly switch languages when testing your code. In fact, with Schema tool you can test in the exact same way as you program your Smart Contract.
+The [Wasp Node](https://github.com/iotaledger/wasp) is programmed in Go, as is the [Test Framework Solo](/smart-contracts/guide/solo/what-is-solo/), which means that you don't have to constantly switch languages when testing your code. In fact, with Schema tool you can test in the exact same way as you program your Smart Contract.
 
 TinyGo code can be tested without compiling to Wasm, which means you can use the debugger to step through the code and inspect variables along the way.
 
-Both Rust and TinyGo use identical ways of IOTA Smart Contract programming. If you look at the [examples in the docs](https://wiki.iota.org/wasp/guide/rust_wasm/introduction) and switch code tabs you can see that very clearly.
+Both Rust and TinyGo use identical ways of IOTA Smart Contract programming. If you look at the [examples in the docs](/smart-contracts/guide/rust_wasm/introduction) and switch code tabs you can see that very clearly.
 
 ## Ethereum VM (EVM)
 
@@ -71,6 +71,6 @@ The [Ethereum Virtual Machine (EVM)](https://ethereum.org/en/developers/docs/evm
 
 Solidity is an object-oriented programming language specially developed to write smart contracts.
 
-The [IOTA Smart Contract EVM Plugin](https://wiki.iota.org/wasp/guide/evm/introduction/) leverages the current development of Solidity Smart Contracts and allows Blockchain developers to stay in their comfort zone.
+The [IOTA Smart Contract EVM Plugin](/smart-contracts/guide/evm/introduction/) leverages the current development of Solidity Smart Contracts and allows Blockchain developers to stay in their comfort zone.
 
 In the next article, you will learn everything about the IOTA Smart Contract validators.
