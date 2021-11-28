@@ -48,7 +48,7 @@ There are several different example applications deployed on the [public test-ne
 
 ### Fair Roulette
 
-[![Fair Roulette](http://blog.iota.org/content/images/size/w1600/2021/10/Group-4947.png)](http://blog.iota.org/content/images/size/w1600/2021/10/Group-4947.png)
+![Fair Roulette](http://blog.iota.org/content/images/size/w1600/2021/10/Group-4947.png)
 
 The [Fair roulette example](/wasp/guide/example_projects/fair_roulette) is a simple betting game in which players can bet on a number within a certain range.
 

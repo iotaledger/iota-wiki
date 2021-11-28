@@ -1,8 +1,8 @@
 # Formatting
 
-Markdown only [specifies](https://daringfireball.net/projects/markdown/syntax) what text elements are, but not how they look like. The final rendering could be affected by a rendering engine that could come from Docusaurus, IDE, or GitHub, a browser extension that changes CSS, or someone could read a raw .md file or copy parts of your article as a plain text via messenger. Some users do not *see* text at all and rely on screen readers.
+Markdown only [specifies](https://daringfireball.net/projects/markdown/syntax) what text elements are, but not how they look like. The final rendering could be affected by a rendering engine that could come from Docusaurus, IDE, or GitHub, a browser extension that changes CSS, or someone could read a raw .md file or copy parts of your article as a plain text via messenger. Some users do not _see_ text at all and rely on screen readers.
 
-Never rely on rendering in your work and make sure that everyone can read your article with no formatting at all. For example, use *weak* and **strong** emphasis, but never expect it to always be in italics and bold, respectively.
+Never rely on rendering in your work and make sure that everyone can read your article with no formatting at all. For example, use _weak_ and **strong** emphasis, but never expect it to always be in italics and bold, respectively.
 
 Do not try to fix a shoddy writing with formatting: it will not work. Make sure that your prompt sounds great as a plain text, and apply minimal formatting to support it.
 
@@ -46,11 +46,11 @@ Never apply additional formatting to links.
 
 ### Emphasis
 
-In general, use emphasis notation sparingly. In most cases, you can emphasize anything by using right words and rearranging your sentences even in plain text. *Weak emphasis* is rare, **strong emphasis** is exceptional, and there is no good place for ***super strong emphasis*** ever.
+In general, use emphasis notation sparingly. In most cases, you can emphasize anything by using right words and rearranging your sentences even in plain text. _Weak emphasis_ is rare, **strong emphasis** is exceptional, and there is no good place for **_super strong emphasis_** ever.
 
 Never use emphasis notation for italics or bold: it only denotes emphasis, and the rendering might differ between engines.
 
-Always use *weak emphasis* for UI element names.
+Always use _weak emphasis_ for UI element names.
 
 ### Inline Code
 
@@ -70,7 +70,7 @@ Always introduce a freestanding element in the preceding paragraph, and never pu
 
 ### Attributions
 
-When using [someone else's work](./third-party_works.md), always attribute the author. In case of freestanding elements, put the attribution on a separate paragraph immediately below and put that whole paragraph in *weak emphasis*.
+When using [someone else's work](./third-party_works.md), always attribute the author. In case of freestanding elements, put the attribution on a separate paragraph immediately below and put that whole paragraph in _weak emphasis_.
 
 ```rust
 fn main(){
@@ -78,15 +78,15 @@ fn main(){
 }
 ```
 
-*[Hello-World](https://github.com/blackbird71SR/Hello-World) in all possible languages by blackbird71SR, MIT License.*
+_[Hello-World](https://github.com/blackbird71SR/Hello-World) in all possible languages by blackbird71SR, MIT License._
 
 ### Paragraph Quotes
 
-Put long quotes in a paragraph-style quote (`>`). Attribute the author on a separate paragraph within the quotation block. Put the attribution in *weak emphasis*.
+Put long quotes in a paragraph-style quote (`>`). Attribute the author on a separate paragraph within the quotation block. Put the attribution in _weak emphasis_.
 
 > […] the act of writing will make you a better student, a better worker, a better friend, a better citizen, a better parent, a better teacher, a better person.
 >
-> *From Writing Tools by Roy Peter Clark*
+> _From Writing Tools by Roy Peter Clark_
 
 ### Lists
 
@@ -98,8 +98,8 @@ Always put proper numbering in lists manually even though Markdown can do that f
 
 If you have a list of named elements that need a description, consider using headings and separate subsections instead of lists. As the final resort, use bullet lists with element names in **strong emphasis**:
 
-* **Roses** are red.
-* **Violets** are blue.
+- **Roses** are red.
+- **Violets** are blue.
 
 ### Admonitions
 
@@ -130,7 +130,7 @@ Use [Remark Math](https://docs.theochu.com/docusaurus/latex/) for math formulas.
 If the image only contains text, use the actual text like code blocks, tables, or math formulas instead. Only use `.svg` images or `.png` images in high resolution. Always provide the alt text with short but descriptive summary of the image's content. Always make images clickable:
 
 ```
-[![YOUR_ALT_TEXT](LINK_TO_YOUR_IMAGE "Click to see the full-size image.")](LINK_TO_YOUR_IMAGE)
+![YOUR_ALT_TEXT](LINK_TO_YOUR_IMAGE "Click to see the full-size image.")
 ```
 
 Try to not repeat images. Either change the structure of your text, or link the relevant section.
@@ -152,13 +152,13 @@ Use Markdown tables. Always provide headings and make sure it looks nice in the 
 Raw `.md`:
 
 ```markdown
-|Input          |Output                             |
-|---            |---                                |
-|"White Russian"|Throws `CocktailNotServedException`|
+| Input           | Output                              |
+| --------------- | ----------------------------------- |
+| "White Russian" | Throws `CocktailNotServedException` |
 ```
 
 Rendered result:
 
-|Input          |Output                             |
-|---            |---                                |
-|"White Russian"|Throws `CocktailNotServedException`|
+| Input           | Output                              |
+| --------------- | ----------------------------------- |
+| "White Russian" | Throws `CocktailNotServedException` |
