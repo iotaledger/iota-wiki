@@ -59,7 +59,7 @@ A definition of which kind of payload is contained in the message. The Node need
 
 That is the nonce that lets this message fulfill the Proof-of-Work requirement. Proof of work is mainly done locally on the device that issues the message and is a form of spam protection. But it can also be done by the node if the node allows this. That is a very useful feature as it enables very low-powered devices to issue messages (like sensors, chips, etc.) Those sensors can send a message to a node that allows messages without already performed POW, and then the POW is done by the node (which is usually running on a more powerful device). This is one of the key features of the protocol and the reason why IOTA is so suitable for IoT and Data applications. So users who want to issue many data messages from a huge amount of extremely low-power devices only need to connect those devices to a node that allows them to do the POW for them (which will be, in most cases, their own node). As the POW requirement is extremely low, it is no problem to do this even for a large number of devices for a node.
 
-A side note - in the upcoming 2.0 IOTA version, this POW requirement will become adaptive and is planned to be completely removed for times of normal network loads... Read more about IOTA 2.0 [here](https://wiki.iota.org/build/networks/iota-2.0).
+A side note - in the upcoming 2.0 IOTA version, this POW requirement will become adaptive and is planned to be completely removed for times of normal network loads... Read more about IOTA 2.0 [here](/build/networks/iota-2.0).
 
 ## Message structure
 
