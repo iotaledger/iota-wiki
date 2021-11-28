@@ -20,6 +20,7 @@ module.exports = {
       crossorigin: 'anonymous',
     },
   ],
+  clientModules: [require.resolve('./src/helper/fullscreenImages.js')],
   themeConfig: {
     announcementBar: {
       id: 'shimmer',
