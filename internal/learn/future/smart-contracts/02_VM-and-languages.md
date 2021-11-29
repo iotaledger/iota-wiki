@@ -63,7 +63,7 @@ The [Wasp Node](https://github.com/iotaledger/wasp) is programmed in Go, as is t
 
 TinyGo code can be tested without compiling to Wasm, which means you can use the debugger to step through the code and inspect variables along the way.
 
-Both Rust and TinyGo use identical ways of IOTA Smart Contract programming. If you look at the [examples in the docs](https://wiki.iota.org/wasp/guide/rust_wasm/introduction) and switch code tabs you can see that very clearly.
+You can find many Wasm Smart Contracts examples [here in the code repository](https://github.com/iotaledger/wasp/tree/master/contracts/wasm).
 
 ## Ethereum VM (EVM)
 
