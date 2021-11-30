@@ -1,4 +1,5 @@
 import React, { useState, useContext, createContext } from 'react';
+import './styles.css';
 
 const Context = createContext(() => {});
 
