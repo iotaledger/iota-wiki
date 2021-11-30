@@ -9,7 +9,7 @@ import Head from '@docusaurus/Head';
 import Link from '@docusaurus/Link';
 import CodeBlock from '@theme/CodeBlock';
 import Heading from '@theme/Heading';
-import Image from '@theme/Image';
+import FullscreenImage from '@theme/FullscreenImage';
 import Details from '@theme/Details';
 import './styles.css'; // MDX elements are wrapped through the MDX pragma
 // In some cases (notably usage with Head/Helmet) we need to unwrap those elements.
@@ -76,6 +76,6 @@ const MDXComponents = {
   h4: Heading('h4'),
   h5: Heading('h5'),
   h6: Heading('h6'),
-  img: (props) => <Image {...props} />,
+  img: (props) => <FullscreenImage.Source {...props} />,
 };
 export default MDXComponents;
