@@ -130,7 +130,7 @@ Use [Remark Math](https://docs.theochu.com/docusaurus/latex/) for math formulas.
 If the image only contains text, use the actual text like code blocks, tables, or math formulas instead. Only use `.svg` images or `.png` images in high resolution. Always provide the alt text with short but descriptive summary of the image's content. Always make images clickable:
 
 ```
-[![YOUR_ALT_TEXT](LINK_TO_YOUR_IMAGE "Click to see the full-size image.")](LINK_TO_YOUR_IMAGE)
+![YOUR_ALT_TEXT](LINK_TO_YOUR_IMAGE "Click to see the full-size image.")
 ```
 
 Try to not repeat images. Either change the structure of your text, or link the relevant section.
