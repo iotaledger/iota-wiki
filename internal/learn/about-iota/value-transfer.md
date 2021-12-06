@@ -68,7 +68,7 @@ To send a value transaction into the IOTA network, a client creates an IOTA mess
 
 The signed transaction payload must contain a digital signature that guarantees that the sender of the transaction is the owner of the address where those funds are currently stored. This is guaranteed through signing the transaction with the private key of that address. A public key, which is also part of the message, will be used to validate the ownership of the funds. Read more about how private and public keys work together to establish this here:
 
-The next step will be that the client connects to a node in the IOTA network and asks this node for valid tips to include in the message. After the tips (between one and eight previous already confirmed messages of the tangle) are known to the client, they can be included in the message and therefore create a reference path for this message in the Tangle. Finally, the client now submits this message (that includes the transaction payload) for validation and processing to the node.
+The next step will be that the client connects to a node in the IOTA network and asks this node for valid tips to include in the message. After the tips (between one and eight previous messages of the tangle) are known to the client, they can be included in the message and therefore create a reference path for this message in the Tangle. Finally, the client now submits this message (that includes the transaction payload) for validation and processing to the node.
 
 ## Nodes
 
