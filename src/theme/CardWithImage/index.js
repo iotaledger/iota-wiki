@@ -18,10 +18,10 @@ export default function HomePageCard({ title, image, link, description }) {
         onClick={handleClick}
       >
         {image && (
-          <img
-            alt={title}
+          <object
+            type='image/svg+xml'
+            data={useBaseUrl(image)}
             className='card__image'
-            src={useBaseUrl(image)}
             width='337'
             height='342'
           />
