@@ -51,8 +51,8 @@ Similarly, the chain holds all tokens entrusted to it in one special UTXO, the s
 It is similar to how a bank holds all deposits in its vault. This way, the chain (entity controlling the
 state output) becomes a custodian for the assets owned by its clients, in the same sense the bank’s client owns the money deposited in the bank.
 
-## Further Readings​
+## Further Readings
 
-- Learn more about [State, Transitions, and State Anchoring](/wasp/guide/core_concepts/states).
-- Participate on [the public Testnet](/wasp/guide/chains_and_nodes/testnet).
-- Build [a chain on your committee](/wasp/guide/chains_and_nodes/setting-up-a-chain).
+- Learn more about [State, Transitions, and State Anchoring](/smart-contracts/guide/core_concepts/states).
+- Participate on [the public Testnet](/smart-contracts/guide/chains_and_nodes/testnet).
+- Build [a chain on your committee](/smart-contracts/guide/chains_and_nodes/setting-up-a-chain).

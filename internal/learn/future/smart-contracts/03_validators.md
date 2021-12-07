@@ -38,9 +38,9 @@ The committee running the contract chain can be changed (rotated) to a new commi
 
 ## Further Readings
 
-- You can learn how to set up a Smart Contracts node in the [Build section](/wasp/guide/chains_and_nodes/running-a-node).
-- [Learn how to configure a committee](/wasp/guide/chains_and_nodes/wasp-cli#configuration)
-- [Participate in the network running a Smart Contracts node](/wasp/guide/chains_and_nodes/running-a-node)
-- [Build a network with trusted Smart Contract nodes](/wasp/guide/chains_and_nodes/setting-up-a-chain#trust-setup)
+- You can learn how to set up a Smart Contracts node in the [Build section](/smart-contracts/guide/chains_and_nodes/running-a-node).
+- [Learn how to configure a committee](/smart-contracts/guide/chains_and_nodes/wasp-cli#configuration)
+- [Participate in the network running a Smart Contracts node](/smart-contracts/guide/chains_and_nodes/running-a-node)
+- [Build a network with trusted Smart Contract nodes](/smart-contracts/guide/chains_and_nodes/setting-up-a-chain#trust-setup)
 
 In the next article, you will learn everything about the chain, where you can deploy Smart Contracts.
