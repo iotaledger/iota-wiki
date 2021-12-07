@@ -2,11 +2,25 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://wiki.iota.org/blog</id>
     <title>IOTA Wiki Blog</title>
-    <updated>2021-11-15T00:00:00.000Z</updated>
+    <updated>2021-12-04T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://wiki.iota.org/blog"/>
     <subtitle>IOTA Wiki Blog</subtitle>
     <icon>https://wiki.iota.org/img/favicon.ico</icon>
+    <entry>
+        <title type="html"><![CDATA[“Better than Coinbase” – IOTAs new Assembly network is the missing piece for Metaverse and Web3]]></title>
+        <id>Assembly better than Coinbase</id>
+        <link href="https://wiki.iota.org/blog/Assembly better than Coinbase"/>
+        <updated>2021-12-04T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Better than coinbase]]></summary>
+        <content type="html"><![CDATA[<p><img src="https://miro.medium.com/max/1400/1*8aPcRlHUFfOCOQC5QcSqOw.png" alt="Better than coinbase"/></p><p>Article about the implications of IOTAs new Assembly release.</p><p>Read the article on:<br/>
+<a href="https://www.reddit.com/r/Assembly_net/comments/r8n5at/better_than_coinbase_iotas_new_assembly_network/">Reddit</a><br/>
+<a href="https://medium.com/@linus.naumann/better-than-coinbase-why-the-new-iota-assembly-network-is-the-missing-piece-for-iota-based-f503420cc990">Medium</a></p>]]></content>
+        <author>
+            <name>Linus Naumann</name>
+            <uri>https://twitter.com/LinusNaumann</uri>
+        </author>
+    </entry>
     <entry>
         <title type="html"><![CDATA[A vision of IOTA´s future ecosystem — The DAO-landscape]]></title>
         <id>the-dao-landscape</id>

@@ -4,9 +4,19 @@
         <title>IOTA Wiki Blog</title>
         <link>https://wiki.iota.org/blog</link>
         <description>IOTA Wiki Blog</description>
-        <lastBuildDate>Mon, 15 Nov 2021 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Sat, 04 Dec 2021 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
+        <item>
+            <title><![CDATA[“Better than Coinbase” – IOTAs new Assembly network is the missing piece for Metaverse and Web3]]></title>
+            <link>https://wiki.iota.org/blog/Assembly better than Coinbase</link>
+            <guid>Assembly better than Coinbase</guid>
+            <pubDate>Sat, 04 Dec 2021 00:00:00 GMT</pubDate>
+            <description><![CDATA[Better than coinbase]]></description>
+            <content:encoded><![CDATA[<p><img src="https://miro.medium.com/max/1400/1*8aPcRlHUFfOCOQC5QcSqOw.png" alt="Better than coinbase"/></p><p>Article about the implications of IOTAs new Assembly release.</p><p>Read the article on:<br/>
+<a href="https://www.reddit.com/r/Assembly_net/comments/r8n5at/better_than_coinbase_iotas_new_assembly_network/">Reddit</a><br/>
+<a href="https://medium.com/@linus.naumann/better-than-coinbase-why-the-new-iota-assembly-network-is-the-missing-piece-for-iota-based-f503420cc990">Medium</a></p>]]></content:encoded>
+        </item>
         <item>
             <title><![CDATA[A vision of IOTA´s future ecosystem — The DAO-landscape]]></title>
             <link>https://wiki.iota.org/blog/the-dao-landscape</link>
