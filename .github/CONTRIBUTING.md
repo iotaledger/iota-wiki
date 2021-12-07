@@ -122,8 +122,7 @@ If the maintainer approves the PR, it will be merged.
 <details>
 <summary>Write Content ✏️:</summary>
 <br>
-   
-   
+
 # Contribute to the Iota-Wiki Content
 
 This document describes how to contribute and add content to the IOTA wiki.
@@ -231,7 +230,7 @@ Then on our page we can add the image using the same method as a link preceded w
 ### Image Links
 
 To make an image a link, we can combine the two methods, by putting the link within the text section of the image code:
-`[![Here is an example image](https://example.com/image.jpg)](https://example.com)`
+`![Here is an example image](https://example.com/image.jpg)`
 
 ### Lists
 
