@@ -25,7 +25,7 @@ The IOTA NFT marketplace is a feeless alternative to the expensive and energy-wa
 
 Their tests phase has ended. For the next steps they implement Smart Contracts and integrate Browser Wallets to make the NFT trading secure and accessible.
 
-- https://nftiota.org/
+- [nftiota.org](https://nftiota.org/)
 
 
 ## NFT Projects
