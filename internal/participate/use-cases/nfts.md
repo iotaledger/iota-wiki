@@ -35,7 +35,7 @@ The community also creates really amazing artworks and already dropping them on 
 Here is a list of communiy projects. Please feel free to add yours!
 
 Project collection page:
-- https://iota-nft.art/
+- - [iota-nft.art](https://iota-nft.art/)
 
 ## Useful Links
 
