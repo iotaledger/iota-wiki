@@ -30,7 +30,7 @@ Their tests phase has ended. For the next steps they implement Smart Contracts a
 
 ## NFT Projects
 
-The community also creates really amazing artworks and already dropping them on the Smart Contrat Testnet. Please note - all these NFTs are on the Testnet, and be careful that some NFT projects might do new drops when the mainnet launches.
+The community also creates really amazing artworks and already dropping them on the Smart Contract testnet. Please note - all these NFTs are on the testnet, and be careful that some NFT projects might do new drops when the mainnet launches.
 
 Here is a list of communiy projects. Please feel free to add yours!
 
