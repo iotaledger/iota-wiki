@@ -5,11 +5,11 @@ description: This article explains the different types of NFTs on IOTA and how y
 
 ## What is a NFT?
 
-A Non-fungile Token (NFT) was first invented by the Ethereum Community and describes as the ERC721 Token standart. The difference to normal tokens and a NFT is that, the NFT is unique and clearly verifiable and can be used to prove ownership of any digital good.
+A Non-fungile Token (NFT) was first invented by the Ethereum Community and describes as the ERC721 Token standard. The difference to normal tokens and a NFT is that, the NFT is unique and clearly verifiable and can be used to prove ownership of any digital good.
 
 There are many different use cases for NFTs, the most common use case is to link an image to it which becomes unqiue digital art which can be sold on open NFT marketplaces.
 
-Other use cases would be to use NFts as assets in games, for event tickets, for Decentraliced Finance (DeFi), for votings in dezentralced autonomous organisations (DAOs) or for any objects in the Metaverse.
+Other use cases would be to use NFTs as assets in games, for event tickets, for Decentraliced Finance (DeFi), for votings in dezentralced autonomous organisations (DAOs) or for any objects in the Metaverse.
 
 ## Different NFT Types on IOTA
 
@@ -21,8 +21,8 @@ Layer 1 Assets also known as "Digital Native Assets". With the [IOTA tokenizatio
 
 Layer 2 Assets are created within Smart Contracts and can be minted out of thin air. That means, you dont need any coins to mint new NFTs.
 
-- For the Wasm VM, they are ERC721 Standarts implemented in [Rust, Go and Typescript](https://github.com/iotaledger/wasp/tree/develop/contracts/wasm/erc721).
-- EVM Assets (known Ethereum standarts (like ERC721 or ERC1155) can be used in the IOTA Smart Contract EVM Chain. For exanoke, you can use the Open Source library from [OpenZeppelin Smart Contracts](https://github.com/OpenZeppelin/openzeppelin-contracts).
+- For the Wasm VM, there are ERC721 Standards implemented in [Rust, Go and Typescript](https://github.com/iotaledger/wasp/tree/develop/contracts/wasm/erc721).
+- EVM Assets (Ethereum standards like ERC721 or ERC1155) can be used in the IOTA Smart Contract EVM Chain. For example, you can use the Open Source library from [OpenZeppelin Smart Contracts](https://github.com/OpenZeppelin/openzeppelin-contracts).
 
 ## NFT Marketplaces
 
@@ -38,8 +38,8 @@ Their tests phase has ended. For the next steps they implement Smart Contracts a
 
 The community also creates really amazing artworks and already dropping them on the Smart Contract testnet. Please note - all these NFTs are on the testnet, and be careful that some NFT projects might do new drops when the mainnet launches.
 
-Here is a list of communiy projects. Please feel free to add yours!
-
-Project collection page:
+Here is a list of community projects. Please feel free to add yours!
 
 - [iota-nft.art](https://iota-nft.art/)
+- [iotabots.io](https://iotabots.io/)
+- [iotawhales](https://pixeldoggy.com/iotawhales)
