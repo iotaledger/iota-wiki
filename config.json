@@ -38,6 +38,7 @@
     },
     {
       "repo": "https://github.com/gohornet/hornet",
+      "checkoutParams": ["--branch develop"],
       "staticPath": "./documentation/static"
     },
     {
