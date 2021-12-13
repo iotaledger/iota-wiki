@@ -70,7 +70,7 @@
         routeBasePath: "iota.rs",
         sidebarPath: require.resolve("./external/iota.rs/documentation/sidebars.js"),
         remarkPlugins: [require("remark-code-import"), require("remark-import-partial")],
-        editUrl: 'https://github.com/iotaledger/iota.rs/edit/dev',
+        editUrl: 'https://github.com/iotaledger/iota.rs/edit/mainnet',
       }
     ],
     [
