@@ -31,7 +31,7 @@ The source code of the software can be found here:
 
 Standard installation following the Hornet Documentation:
 
-- [Hornet documentation - set up a node](/hornet/getting_started/getting_started)
+- [Hornet documentation - set up a node](/hornet/getting_started)
 
 ### Hornet Community Tutorials:
 
@@ -64,7 +64,7 @@ Bee will also be further developed to be a reference implementation in the upcom
 
 The full documentation for BEE can be found here:
 
-- [BEE Documentation](/bee/getting_started/getting_started)
+- [BEE Documentation](/bee/getting_started)
 
 The source code of the software can be found here:
 
