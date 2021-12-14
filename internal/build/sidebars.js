@@ -20,6 +20,11 @@ module.exports = {
       items: ['exchange-integration/exchange-integration-guide'],
     },
     {
+      type: 'link',
+      href: '/blueprints/introduction',
+      label: 'Blueprints',
+    },
+    {
       type: 'category',
       label: 'Tutorials',
       collapsed: true,
