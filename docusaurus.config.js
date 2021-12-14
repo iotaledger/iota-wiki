@@ -117,7 +117,7 @@ module.exports = {
                 {
                   label: 'Bee Node',
                   sublabel: 'IOTA node written in Rust',
-                  to: 'bee/getting_started',
+                  to: 'bee/welcome',
                   icon: '\ue900',
                   activeBaseRegex: 'bee/.*',
                 },
