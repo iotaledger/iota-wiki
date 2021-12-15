@@ -22,10 +22,10 @@ module.exports = {
   ],
   themeConfig: {
     announcementBar: {
-      id: 'shimmer',
+      id: 'assembly',
       content:
-        'Interested in the upcoming incentivized staging network Shimmer, and in staking your IOTA tokens? Read more about it <a target="_blank" href="https://shimmer.network">here</a>.',
-      backgroundColor: '#00e0ca',
+        'Interested in the upcoming permissionless Smart Contracts network Assembly, and in staking your IOTA tokens? Read more about it <a target="_blank" href="https://assembly.sc">here</a>.',
+      backgroundColor: '#da7ad7',
       textColor: '#000000',
       isCloseable: true,
     },
