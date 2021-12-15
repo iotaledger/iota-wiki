@@ -82,6 +82,7 @@ module.exports = {
           ],
         },
         'future/shimmer',
+        'future/assembly',
         'future/dust-protection',
       ],
     },
