@@ -19,7 +19,7 @@ Assembly is basically a permissionless ISCP network build on top of IOTA. It ful
 
 ## Permissionless Smart Contracts
 
-Assembly is IOTAs approach to permissionless Smart Contracts. For that, the root chain got introduced. The root chain is basically the backbone of Assembly. It slashes staked funds, manages and distributes Validator to the different chains. You as a chain creator can choose your validators based on different criteria. Those validators can then join your chain if they want-
+Assembly is IOTAs approach to permissionless Smart Contracts. For that, the root chain got introduced. The root chain is basically the backbone of Assembly. It distributes validators to the different chains and slashes staked funds in case of misbehavior. You as a chain creator can choose your validators based on different criteria. Those validators can then join your chain if they want to.
 
 ## The role of the IOTA Token
 
@@ -27,7 +27,7 @@ So you maybe asked yourself what the role of IOTA is in this Assembly network. A
 
 ### The new dust protection
 
-With the new [dust protection](https://github.com/muXxer/protocol-rfcs/blob/master/text/0032-dust-protection/0032-dust-protection.md), every data stored on the Tangle needs to be backed by IOTA Tokens. So every NFT, SC state update, Native Asset requires IOTA Tokens so that it can be stored on L1. You can also read more about the new dust protection in this [community blog post](https://github.com/muXxer/protocol-rfcs/blob/master/text/0032-dust-protection/0032-dust-protection.md).
+With the new [dust protection](https://github.com/muXxer/protocol-rfcs/blob/master/text/0032-dust-protection/0032-dust-protection.md), every data stored on the Tangle needs to be backed by IOTA Tokens. So every NFT, SC state update, Native Asset requires IOTA Tokens so that it can be stored on L1. You can also read more about the new dust protection in this [community blog post](https://medium.com/@wernerderchamp/dust-protection-on-the-iota-network-an-eli12-d8ca567a2d36).
 
 ### Mana
 
