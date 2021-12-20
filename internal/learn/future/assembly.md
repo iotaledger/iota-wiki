@@ -10,7 +10,7 @@ keywords:
 
 ![Assembly](/img/learn/future/assembly.png 'Click to see the full-size image.')
 
-In December 2021, IOTA Foundation [introduced](https://blog.assembly.sc/announcing-assembly-and-the-asmb-token/) Assembly, a permissionless Smart Contracts network. Assembly will function as an intermediate layer for permissionless and interoperable Smart Contracts. It will also have its own token called [ASMB](https://assembly.sc/token). The Token will help secure the network.
+In December 2021, IOTA Foundation [introduced](https://blog.assembly.sc/announcing-assembly-and-the-asmb-token/) Assembly, a permissionless Smart Contracts network. Assembly will function as an intermediate layer for permissionless and interoperable Smart Contracts, and will have its own token called [ASMB](https://assembly.sc/token).
 This introduction should only give you a brief overview of Assembly. For more information, check the official [Website](https://assembly.sc) or the [Assembly Wiki](https://wiki.assembly.com).
 
 ## What is Assembly?
