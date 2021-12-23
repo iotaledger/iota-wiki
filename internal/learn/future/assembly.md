@@ -23,5 +23,4 @@ With the new [dust protection](https://github.com/muXxer/protocol-rfcs/blob/mast
 
 ## Mana
 
-Assembly nodes want to anchor their state even if the Tangle is congested. After coordicide nodes will need Mana to get their fair share of the Tangle throughput. Mana is directly derived from the IOTA Token. 
-So the IOTA Nodes which anchor the Smart Contract state on L1 will need to have Mana (and therefore IOTA tokens) if the network is congested, creating even more demand for the IOTA token.
+Assembly nodes have to anchor the chain state often, even if the Tangle is congested. To get a fair share of the Tangle throughput in the [next version](https://v2.iota.org) of the IOTA protocol, you will need [Mana](/IOTA-2.0-Research-Specifications/5.3Mana), and Mana is derived directly from the IOTA Token.  Assembly nodes will have to hold IOTA tokens, which will create even more demand.
