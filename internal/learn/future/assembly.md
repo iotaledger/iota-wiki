@@ -23,5 +23,5 @@ With the new [dust protection](https://github.com/muXxer/protocol-rfcs/blob/mast
 
 ## Mana
 
-In the future, Mana will be used to give every node a fair share of the Tangle throughput. Mana is directly derived from IOTA Tokens.
-So the IOTA Nodes which anchor the Smart Contract state on L1 will need to have Mana (and therefore IOTA tokens) if the network is congested.
+Assembly nodes want to anchor their state even if the Tangle is congested. After coordicide nodes will need Mana to get their fair share of the Tangle throughput. Mana is directly derived from the IOTA Token. 
+So the IOTA Nodes which anchor the Smart Contract state on L1 will need to have Mana (and therefore IOTA tokens) if the network is congested, creating even more demand for the IOTA token.
