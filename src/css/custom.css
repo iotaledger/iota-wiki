@@ -49,6 +49,8 @@ article .card {
   background: linear-gradient(180deg, #001c56, #074db6);
   width: 100%;
   height: auto;
+  -webkit-mask-image: radial-gradient(circle, black 100%, black 50%);
+  mask-image: radial-gradient(circle, black 100%, black 50%);
 }
 
 .card__header {
