@@ -13,7 +13,7 @@ With those two new networks launching and the newly introduced tokenomics and in
 - And read the announcement of the staking start [here](https://blog.iota.org/iota-staking-start/)
 
 ### Currently, there are several different staking scenarios planned:
-1. Staking IOTA to bootstrap the Shimmer and Assembly networks to create the initial token supply for those two networks.
+1. Staking IOTA to bootstrap the Shimmer and Assembly networks, creating the initial token supply for those two networks.
 2. Staking IOTA to secure the Tangle as the base layer for the Assembly network and further distribute Assembly tokens to IOTA stakers. 
 3. Staking Assembly tokens to secure the Assembly network and reward Assembly token stakers.
 4. Staking Shimmer tokens to secure the Shimmer tangle and reward Shimmer token stakers.
@@ -21,11 +21,11 @@ With those two new networks launching and the newly introduced tokenomics and in
 
 ## 1.) 90 days staking period to create ASMB and SMR tokens
 
-This staking period aims to reward IOTA token holders for their participation and distribute the new tokens to them. In the case of Shimmer, it also creates the total initial supply of the network.
+This staking period aims to reward IOTA token holders for their participation and distribute the new network tokens to them. In the case of Shimmer, it also creates the total initial supply of the network.
 
-Starting from December 28, 3 pm CET, IOTA holders that possess IOTA tokens in the Firefly wallet and have chosen to participate in the staking period will generate Assembly and Shimmer tokens.
+Starting from 28th December 2021, 3 pm CET, IOTA holders that possess IOTA tokens in the Firefly wallet and have chosen to participate in the staking period will generate Assembly and Shimmer tokens.
 
-### Reward amounts:
+### Reward structure:
 #### Staking IOTA for Assembly ASMB:
 
 It is planned that IOTA token holders will receive 20% of the total initial Assembly supply of 100 Billion tokens. Read more about the Assembly token launch and distribution [in this blog.](https://blog.assembly.sc/assembly-fair-launch-token-distribution/)
