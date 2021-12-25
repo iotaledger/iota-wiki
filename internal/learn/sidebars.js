@@ -51,7 +51,7 @@ module.exports = {
         'resource-materials/fact-base',
         'resource-materials/infographics',
         'resource-materials/videos',
-        "resource-materials/faq's",
+        'resource-materials/faqs',
       ],
     },
     {
