@@ -19,8 +19,8 @@ Assembly is build on top of the Tangle, it will need the Tangle for anchored sta
 
 ### The new dust protection
 
-With the new [dust protection](https://github.com/iotaledger/tips/pull/39), every data stored on the Tangle needs to be backed by IOTA Tokens. So every NFT, SC state update, Native Asset requires IOTA Tokens so that it can be stored on L1. You can read more about the new dust protection in this [community blog post](https://medium.com/@wernerderchamp/dust-protection-on-the-iota-network-an-eli12-d8ca567a2d36).
+With the new [dust protection](https://github.com/iotaledger/tips/pull/39), all data stored on the Tangle needs to be backed by IOTA Tokens. For example, every NFT, SC chain state anchor or Native Asset requires a deposit of IOTA Tokens in order to be stored on L1. You can read more about the new dust protection in this [community blog post](https://medium.com/@wernerderchamp/dust-protection-on-the-iota-network-an-eli12-d8ca567a2d36).
 
 ### Mana
 
-Assembly nodes have to anchor the chain state often, even if the Tangle is congested. To get a fair share of the Tangle throughput in the [next version](https://v2.iota.org) of the IOTA protocol, you will need [Mana](/IOTA-2.0-Research-Specifications/5.3Mana), and Mana is derived directly from the IOTA Token. Assembly nodes will have to hold IOTA tokens, which will create even more demand.
+Assembly nodes have to anchor the chain state often, even if the Tangle is congested. To get a fair share of the Tangle throughput in the [next version](https://v2.iota.org) of the IOTA protocol, you will need [Mana](/IOTA-2.0-Research-Specifications/5.3Mana), and Mana is derived directly from the IOTA Token. Assembly nodes will have to hold IOTA tokens, which will increase demand even more.
