@@ -33,6 +33,9 @@ It is planned that IOTA token holders will receive 20% of the total initial Asse
 - In the initial 90 days staking period, a total of 8% of the Assembly supply can be distributed to IOTA token holders. 
 - This happens at a fixed rate for every IOTA token staked.
 - This rate has been set to `0,000004 ASMB tokens per 1 Miota per milestone`. That means for every 1 Miota that you hold in Firefly, you will receive 0,000004 ASMB tokens every 10 seconds (the interval of milestones issued in the IOTA tangle)
+
+[assembly staking](/img/learn/iota-token/assembly staking.png)
+
 On the Assembly website, you can read how to stake and calculate the rewards you can earn [here](https://assembly.sc/stake).
 - After the 90 days have passed, the total amount of IOTA tokens that have participated in the staking event for Assembly will have created a set amount of Assembly tokens (maximum 8 Billion if 100% of the IOTA supply has been staked for Assembly)
 - With the launch of the Assembly network, these generated Assembly tokens will be distributed to the IOTA stakers. This distribution will be implemented as a functionality within the Firefly wallet. As long as the Assembly network is not yet launched, Firefly will hold the record of rewards for the IOTA token holder. 
@@ -43,6 +46,9 @@ Shimmer, the incentivized Testnet and battlefield for IOTA's core technology inn
 
 - The same functionality that is used for Assembly in the Firefly Wallet will also be used for Shimmer
 - Shimmer tokens will be distributed at a fixed rate of `1 Shimmer per 1 Mioat per milestone`.
+
+[shimmer staking](/img/learn/iota-token/shimmer staking.png)
+
 On the Shimmer website, you can read how to stake and calculate the rewards you can earn [here](https://shimmer.network/claim).
 - With the launch of the Shimmer network, these generated Shimmer tokens will be distributed to the IOTA stakers. This distribution will be implemented as a functionality within the Firefly wallet. As long as the Shimmer network is not yet launched, Firefly will hold the record of rewards for the IOTA token holder. 
 
@@ -56,6 +62,8 @@ In Assembly [token launch and fair distribution sheme](https://blog.assembly.sc/
 The first distribution phase happens in the 90 days as described above.
 To further incentivize IOTA token owners to secure the IOTA network and help Assembly in its start phase, another ASMB distribution will happen during the first 21 months of the newly launched Assembly network.
 
+[assembly supply](/img/learn/iota-token/assembly supply.png)
+
 - the amount of ASMB tokens that can be distributed during these 21 months depends totally on the number of tokens that are still undistributed after the initial 90 days of staking. 
 - If less than 100% of IOTA tokens have been staked for Assembly (which would distribute 8 Billion ASMB tokens to IOTA stakers), the remaining ASMB tokens will be distributed together with the planned 12 Billion ASMB tokens to IOTA stakers.
 If only 6 Billion ASMB tokens could be distributed in the first 90 days, 14 Billion ASMB tokens will be available during the second 21 month staking period.
@@ -65,6 +73,7 @@ If only 6 Billion ASMB tokens could be distributed in the first 90 days, 14 Bill
     - the amount of individual received ASMB tokens per day depends on the total percentual part an IOTA staker holds of the total daily staked amount of IOTA tokens.
     - the fewer total IOTA tokens are staked, the higher the individual payout of theis 21.909.233 ASMB tokens per day for an IOTA staker.
 
+[assembly token release](/img/learn/iota-token/assembly token release.png)
 
 
 
