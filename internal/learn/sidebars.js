@@ -18,7 +18,7 @@ module.exports = {
       type: 'category',
       label: 'IOTA Token',
       collapsed: true,
-      items: ['iota-token/buying-iota'],
+      items: ['iota-token/buying-iota', 'iota-token/staking-iota'],
     },
     {
       type: 'category',
