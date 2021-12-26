@@ -1,7 +1,7 @@
 ---
 id: staking-iota
 title: Staking IOTA
-description: Stake your IOTA tokens to earn rewards and secure the Assembly network.
+description: Everything you need to know about all the different upcoming staking opportunities in IOTA, Assembly and Shimmer network.
 ---
 
 # Staking in the IOTA network ecosystem
@@ -87,6 +87,13 @@ Assembly will have two different ways to reward Assembly token stakers.
     - A Validator must deposit some amount of tokens that he owns himself and can also deposit tokens that Assembly tokens holders deposited to the validator.
     - For this delegated stake from usual Assembly holders, the validators will most likely be willing to pay a part of the gained profits from validating smart contracts to the Assembly holders that deposited their tokens to the validator.
     - This involves a potential risk, as a deposited stake in the Assembly root chain contract can be partially or fully slashed if the validator acts maliciously. But, besides this small theoretical risk, delegating stake to a validator will also offer higher rewards for Assembly stakers, as a share of the validators profit will be distributed to the stakers that delegate the stake to the validator.
+
+## 4.) Stake Shimmer tokens to help testing and securing the Shimmer network
+
+The Shimmer network has a planned yearly inflation of 8%. These new minted Shimmer tokens will be distributed to Shimmer stakers. 
+By staking your Shimmer tokens you will help the network to fullfill it's pupose of being an incentivised playground for applications to test new IOTA technology features in a real network with real value.
+
+Read some more info about the Shimmer network here in the [FAQ.](https://shimmer.network/faqs)
 
 
 ---
