@@ -16,7 +16,7 @@ With those two new networks launching and the newly introduced tokenomics and in
 1. Staking IOTA to bootstrap the Shimmer and Assembly networks, creating the initial token supply for those two networks.
 2. Staking IOTA to secure the Tangle as the base layer for the Assembly network and further distribute Assembly tokens to IOTA stakers. 
 3. Staking Assembly tokens to secure the Assembly network and reward Assembly token stakers.
-4. Staking Shimmer tokens to secure the Shimmer tangle and reward Shimmer token stakers.
+4. Staking Shimmer tokens to help testing and support the Shimmer network.
 
 
 ## 1.) 90 days staking period to create ASMB and SMR tokens
@@ -88,7 +88,7 @@ Assembly will have two different ways to reward Assembly token stakers.
     - For this delegated stake from usual Assembly holders, the validators will most likely be willing to pay a part of the gained profits from validating smart contracts to the Assembly holders that deposited their tokens to the validator.
     - This involves a potential risk, as a deposited stake in the Assembly root chain contract can be partially or fully slashed if the validator acts maliciously. But, besides this small theoretical risk, delegating stake to a validator will also offer higher rewards for Assembly stakers, as a share of the validators profit will be distributed to the stakers that delegate the stake to the validator.
 
-## 4.) Stake Shimmer tokens to help testing and securing the Shimmer network
+## 4.) Stake Shimmer tokens to help testing and support the Shimmer network
 
 The Shimmer network has a planned yearly inflation of 8%. These new minted Shimmer tokens will be distributed to Shimmer stakers. 
 By staking your Shimmer tokens you will help the network to fullfill it's pupose of being an incentivised playground for applications to test new IOTA technology features in a real network with real value.
