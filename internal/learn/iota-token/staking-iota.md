@@ -25,8 +25,7 @@ This staking period aims to reward IOTA token holders for their participation an
 
 Starting from 28th December 2021, 3 pm CET, IOTA holders that possess IOTA tokens in the Firefly wallet and have chosen to participate in the staking period will generate Assembly and Shimmer tokens for 90 days.
 
-### Reward structure:
-#### Staking IOTA for Assembly ASMB:
+### IOTA staking for ASMB rewards
 
 It is planned that IOTA token holders will receive 20% (20 billion tokens) of the total initial Assembly supply of 100 billion tokens. Read more about the Assembly token launch and distribution [in this blog.](https://blog.assembly.sc/assembly-fair-launch-token-distribution/)
 - To distribute the first batch of those Assembly tokens to IOTA holders, the staking functionality in the Firefly wallet has been developed. 
