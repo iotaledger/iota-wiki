@@ -89,7 +89,7 @@ Assembly will implement two different mechanisms to reward Assembly token staker
     - As this described mechanism of using delegated stake increases the total security bond a validator can offer, the validators will most likely be willing to pay a part of their earned profits to the Assembly holders who deposited their tokens to the validator.
     - This involves a potential risk, as a deposited stake in the Assembly root chain contract can be partially or fully slashed if the validator acts maliciously. But, besides this small theoretical risk, delegating stake to a validator will also offer higher rewards for Assembly stakers, as a share of the validators profit will be distributed to the stakers that delegate the stake to the validator.
 
-## 4.) Stake Shimmer tokens to help to test and support the Shimmer network
+## SMR staking
 
 The Shimmer network has yearly inflation of 8% planned. These newly minted Shimmer tokens will be distributed to Shimmer stakers. 
 By staking your Shimmer tokens, you will help the network fulfill its purpose of being an incentivized playground for applications to test new IOTA technology features in a real network with real value.
