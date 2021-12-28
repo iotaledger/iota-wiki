@@ -76,7 +76,7 @@ If only 6 Billion ASMB tokens had been distributed in the first 90 days, 14 Bill
 
 ![assembly token release](/img/learn/iota-token/assembly-token-release.png)
 
-## 3.) Stake Assembly tokens to secure and validate the Assembly network
+## ASMB staking
 
 Assembly will implement two different mechanisms to reward Assembly token stakers.
 1. Reward Assembly stakers for holding ASMB tokens and distributing newly minted ASMB tokens as part of the inflationary token distribution.
