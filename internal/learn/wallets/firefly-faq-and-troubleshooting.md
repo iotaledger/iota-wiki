@@ -197,6 +197,28 @@ The addresses and values must exactly match those displayed by Firefly. This is 
 
 You should thoroughly verify them before confirming the transaction.
 
+## Staking
+
+### Is staking secure? Will staked tokens stay in my control?
+
+Yes, absolutely. The staked tokens will always stay in your control. They neither need to be sent to a third party nor do private keys have to be shared with anyone. Firefly attaches a special message to IOTA tokens by sending them to the same address they currently reside on to stake IOTA tokens.
+
+### How soon do I receive staking rewards?
+
+Staking rewards are being generated immediately after starting a new staking period. Staking for a specific reward is announced by projects that want to distribute staking rewards. Once the staking period starts, stakers will be earning staking rewards, usually every 10 seconds. Reward tokens are automatically issued to the Firefly wallet of the staker and can only be accessed by that wallet holder. Depending on the project doing the token distribution, the tokens might only be accessible with the launch of the actual project. Please refer to the individual project for more information when your tokens become fully available.
+
+### How and when can I unstake my tokens?
+
+Whenever you want, staking on IOTA is completely fluid, and there are no freezing or activation periods.
+
+### Is this like airdrops?
+
+Somewhat. You could see IOTA staking as rolling airdrops or lock-drops, coming in every 10 seconds.
+
+### Why don’t you just airdrop tokens to random accounts?
+
+The idea is to incentivize active community members in order to allow new ecosystems to grow. To flourish, new economies need users that are willing to participate. Having users actively staking their IOTA tokens to gain rewards allows builders to separate the wheat from the chaff and only reward active users who care about upcoming economies and their opportunities. Simply speaking: builders are not interested in inactive, dormant users.
+
 ## Settings
 
 ### Where can I change my PIN and password?
