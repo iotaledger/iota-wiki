@@ -20,7 +20,7 @@ Both networks will launch with their own native tokens: SMR for Shimmer and ASMB
 4. Staking Shimmer tokens to help to test and support the Shimmer network (planned).
 
 
-## 1.) 90 days staking period to create ASMB and SMR tokens
+## Shimmer and Assembly pre-launch staking
 
 This staking period aims to reward IOTA token holders for their participation and distribute tokens of the two new networks to them. In the case of Shimmer, it also creates the total initial supply of the network. In the case of Assembly, it can produce up to 8% of the total initial supply.
 
