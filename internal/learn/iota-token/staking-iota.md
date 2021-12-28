@@ -51,7 +51,7 @@ Shimmer, the incentivized Testnet and battlefield for IOTA's core technology inn
 You can read how to stake and calculate the possible rewards [here](https://shimmer.network/claim).
 - With the launch of the Shimmer network, these generated Shimmer tokens will be distributed to the IOTA stakers. This distribution will be implemented as a functionality within the Firefly wallet. As long as the Shimmer network is not yet launched, Firefly will hold the record of rewards for the IOTA token holder. 
 
-## 2.) Staking IOTA tokens to bootstrap the Assembly network further.
+### Staking IOTA tokens to further bootstrap the Assembly network.
 
 Assembly, the Smart contract implementation connecting and governing thousands of independent Smart contract blockchains on top of IOTA's Tangle will have a deep connection with the IOTA tangle. The security of the Assembly network relies on the underlying security of the IOTA tangle as it solves the interconnection and exchange layer between different chains in Assembly and provides a secure anchor and immutable audit trail for state updates of IOTA smart contracts chains in Assembly.
 
@@ -76,7 +76,7 @@ If only 6 Billion ASMB tokens had been distributed in the first 90 days, 14 Bill
 
 ![assembly token release](/img/learn/iota-token/assembly-token-release.png)
 
-## ASMB staking
+## ASMB token staking
 
 Assembly will implement two different mechanisms to reward Assembly token stakers.
 1. Reward Assembly stakers for holding ASMB tokens and distributing newly minted ASMB tokens as part of the inflationary token distribution.
@@ -89,7 +89,7 @@ Assembly will implement two different mechanisms to reward Assembly token staker
     - As this described mechanism of using delegated stake increases the total security bond a validator can offer, the validators will most likely be willing to pay a part of their earned profits to the Assembly holders who deposited their tokens to the validator.
     - This involves a potential risk, as a deposited stake in the Assembly root chain contract can be partially or fully slashed if the validator acts maliciously. But, besides this small theoretical risk, delegating stake to a validator will also offer higher rewards for Assembly stakers, as a share of the validators profit will be distributed to the stakers that delegate the stake to the validator.
 
-## SMR staking
+## SMR token staking
 
 The Shimmer network has yearly inflation of 8% planned. These newly minted Shimmer tokens will be distributed to Shimmer stakers. 
 By staking your Shimmer tokens, you will help the network fulfill its purpose of being an incentivized playground for applications to test new IOTA technology features in a real network with real value.
