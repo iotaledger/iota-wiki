@@ -6,9 +6,8 @@ description: Everything you need to know about all the different upcoming stakin
 
 # Staking in the IOTA network ecosystem
 
-The introduction of the new Shimmer (SMR) and Assembly (ASMB) networks marks a historical event and a vast increase of utility for the IOTA token. 
-
-With those two new networks launching and the newly introduced tokenomics and incentive structure around those networks, it is now possible to stake IOTA tokens.
+IOTA introduced two new networks that will exist next to the main network: the Shimmer staging network and the Assembly trustless smart contract network. This marks a historical event and a vast increase of utility for the IOTA token.
+Both networks will launch with their own native tokens: SMR for Shimmer and ASMB for Assembly. With the new tokenomics and incentive structure around these networks, it is now possible to stake tokens.
 :::info
 - Find the blog post introducing IOTA staking [here](https://blog.iota.org/introducing-iota-staking/)
 - Find the announcement of the start of IOTA staking [here](https://blog.iota.org/iota-staking-start/)
