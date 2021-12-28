@@ -1,8 +1,7 @@
 ---
-title: Firefly user guide Ledger fardware wallet
+title: Firefly Ledger user guide
 description: Firefly user guide for owners of Ledger Nano hardware wallets
 ---
-
 
 ## User Guide for Users of a Ledger Nano X or Ledger Nano S device
 
