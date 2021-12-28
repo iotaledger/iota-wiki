@@ -13,23 +13,19 @@ Don't worry! All you need to do is download Firefly only from the official websi
 
 ### How do I back up my seed?
 
-IOTA now uses a 24-word mnemonic or a recovery phrase. After 28 April 2021, like with other cryptocurrencies, all you will need are 24 words to recover access to your tokens on the Tangle. You will be able to back up your recovery phrase using the recovery kit you create when you set up your wallet. You will have captured the 24-word recovery phrase in a safe location by saving a file and writing it down.
+IOTA Firefly now uses a 24-word mnemonic or a recovery phrase. Like with other cryptocurrencies, all you will need are 24 words to recover access to your tokens on the Tangle. You will be able to back up your recovery phrase using the recovery kit you create when you set up your wallet. You will have captured the 24-word recovery phrase in a safe location by saving a so-called "stronghold-file" and writing the 24 words down.
 
 This physical paper backup is recommended as computers can fail.
 
-Hardware wallets such as the Ledger will be supported soon after the initial migration period.
+Hardware wallets such as the Ledger Nano X and S are also supported. In case you use a Ledger Nano device, all relevant security measures are taken by using your ledger device together with the Firefly Wallet. Ledger Seeds are only stored on the Ledger device and never revealed to you.
 
 ### What is Stronghold?
 
-Stronghold is a secure software implementation developed by the IOTA Foundation with the sole purpose of isolating digital secrets from exposure to hackers and accidental leaks. It uses versioned, file-based backups (with the file extension .stronghold) with double encryption that can be easily backed up and securely shared between devices. You can read more about Stronghold here!
+Stronghold is a secure software implementation developed by the IOTA Foundation with the sole purpose of isolating digital secrets from exposure to hackers and accidental leaks. It uses versioned, file-based backups (with the file extension .stronghold) with double encryption that can be easily backed up and securely shared between devices. You can read more about Stronghold [here!](IOTA Stronghold: Beta Release)
 
 ### I have lost access to my device. How do I recover my wallet?
 
 There are several ways to recover your wallet, and both can be found in the backups you performed in the wallet setup. One way would be using your 24-word recovery phrase, while the other would be using the Stronghold file you backed up.
-
-### Do I need to have both the Trinity wallet installed on my computer as well as Firefly?
-
-No, you don't need Trinity anymore. Just connect your Ledger to your computer and open Firefly. The new Firefly wallet will lead you through all steps.
 
 ### Do you plan to support Trezor or other hardware wallets?
 
@@ -37,7 +33,7 @@ We do not currently have any plans to support Trezor, but if a community member 
 
 ### Which Ledger hardware do you support?
 
-The legacy and new IOTA apps are supported on Ledger Nano S/X via USB connection. Additionally, the legacy app works with Ledger Blue. Since official support is no longer provided for the Blue by Ledger, Blue can only be used for migrating funds.
+The IOTA app is supported on Ledger Nano S/X via a USB connection. Additionally, the IOTA legacy app, which would be needed for a network migration process from the deprecated legacy network, works with Ledger Blue. Since official support is no longer provided for the Blue by Ledger, Blue can only be used for migrating funds.
 
 ### Do I need to install the Ledger app on my computer? Where do I download this?
 
@@ -51,21 +47,13 @@ Most Micro-USB (for Nano S) and USB-C (for Nano X) cables should work. We do rec
 
 Yes, the legacy and the new applications may not be visible in Ledger Live without the current firmware. Make sure you have the latest versions of both apps on your device.
 
-### I don't have the original Ledger device that I used when I first set up Trinity. Will this be a problem?
+### I don't have the original Ledger device that I used when I first set up Firefly. Will this be a problem?
 
-The 24 words mnemonic (also known as the recovery phrase) and your Trinity account index (default 0) are all you need to regain access to your tokens on the IOTA Tangle. The tokens are in no way connected to the hardware itself. You can set up a new device with the same recovery phrase to access your tokens.
-
-### Does it matter if I use a Nano S or Nano X? Will the process be the same?
-
-Yes, the migration process will be the same.
+The 24 words mnemonic (also known as the recovery phrase) and your Firefly account index (default 0) are all you need to regain access to your tokens on the IOTA Tangle. The tokens are in no way connected to the hardware itself. You can set up a new device with the same recovery phrase to access your tokens.
 
 ### I have run out of space to install more applications on the Ledger. What should I do?
 
 If you're short on space, you may need to remove other cryptocurrency applications from your Ledger device temporarily. This will have no impact on the related cryptocurrencies. After reinstalling the apps, they will be available again. You should refer to the official Ledger support site if you need more help.
-
-### Do I need to keep the IOTA Legacy app installed on my Ledger Nano after I have finished migration?
-
-Once you have safely migrated all your account indexes to Firefly, the Legacy IOTA app will no longer be needed. Follow official Ledger guidance on how to remove Ledger Nano apps with Ledger Live.
 
 ## Backups and recovery
 
@@ -77,13 +65,9 @@ The recovery phrase works without a password or PIN. Just input the words at the
 
 Performing regular Stronghold backups will allow you to keep convenient, up-to-date digital backups should something happen, where you would then have a complete recovery of your funds.
 
-### I found an old seed from Trinity. Now that the migration period has already finished, how can I access these funds?
+### What is an internal transfer? Is it different from a standard transaction?
 
-Seed migrations can be made after the migration period ends, at least until Coordicide.
-
-### What is an internal transfer? Is it different from a normal transaction?
-
-An internal transfer is the same as a normal transaction. It is just made between your own wallets; it is also handled entirely on the Tangle. It is easier to perform because you don't need to input the address.
+An internal transfer is the same as a standard transaction. It is just made between your own wallets; it is also handled entirely on the Tangle. It is easier to perform because you don't need to input the address.
 
 ### I have forgotten my device pin. How do I recover my Ledger?
 
@@ -103,11 +87,7 @@ Strongholds are not used for Ledger profiles in Firefly.
 
 ### Can I put my 24 words from the Ledger into Firefly to see/use my funds with Firefly?
 
-You can, but it is not recommended because it circumvents the hardware wallet security model completely and is therefore strongly advised against it!
-
-### If I follow the Ledger migration procedures, can I migrate the Ledger accounts that have been created with the 25th "word" passphrase?
-
-The 25th word can be used with your Ledger, and Firefly will still find your tokens.
+You can, but it is not recommended because it circumvents the hardware wallet security model entirely and is therefore strongly advised against it!
 
 ## Profiles and wallets
 
@@ -145,7 +125,7 @@ If you want to delete a profile, it is recommended that you first transfer your 
 
 This function is in place to confirm that the receiving address hasn't been manipulated by malicious software or by a man-in-the-middle attack. Make sure you always double-check it matches what is displayed on your device.
 
-### Can I have a Ledger wallet under my normal Firefly profile, or do I need to set up a completely new profile for Ledger?
+### Can I have a Ledger wallet under my standard Firefly profile, or do I need to set up an entirely new profile for Ledger?
 
 Every seed and Ledger has its own profile in Firefly. You need to create a new Firefly profile for every Ledger device you own.
 
@@ -179,10 +159,6 @@ Your private keys are stored on the Ledger device for and can never be extracted
 
 Yes. You can use your own node to process your transaction if it is accessible over HTTPS.
 
-### How can I reattach transactions?
-
-There is no longer any need to do this.
-
 ### I accidentally sent funds to the wrong address. Can I get them back?
 
 There is no way to recover funds accidentally sent to the wrong address.
@@ -207,7 +183,7 @@ There is no search function in Firefly.
 
 ### What is a deep link, and how do I use it?
 
-Deep links are not available in the first version of Firefly. Deep links automatically fill transaction data in Firefly when you click on an "iota://" link.
+Deep links automatically fill transaction data in Firefly when you click on an "iota://" link.
 
 ### Can I have a fixed receive address?
 
@@ -229,7 +205,7 @@ You can change both your PIN and password under "Security" found in the settings
 
 ### Can I reuse an address? I know that this was always a problem in Trinity.
 
-Yes, you can reuse an address in Firefly due to the EdDSA reusable address format.
+You can reuse an address in Firefly due to the EdDSA reusable address format.
 
 ### Can I create NFTs or other digital assets in Firefly?
 
@@ -284,6 +260,18 @@ If your balance continues to display 0, you may have selected the wrong account 
 First, check if the migration is still in progress. If it is, then it should be complete on its own. Alternatively, you can check if you have a profile for that migration as it may have already been completed. If there are no profiles associated with the migration, you can simply create a new profile to start the migration again. If there is a profile, but the full set of migration transactions are not there, go to Advanced Settings and select "Migrate Another Index." You can continue where you left off by choosing the same account index and searching for more balance.
 
 ## Migration
+
+### I found an old seed from Trinity. Now that the migration period has already finished, how can I access these funds?
+
+Seed migrations can be made after the migration period ends, at least until Coordicide.
+
+### Do I need to keep the IOTA Legacy app installed on my Ledger Nano after I have finished migration?
+
+Once you have safely migrated all your account indexes to Firefly, the Legacy IOTA app will no longer be needed. Follow official Ledger guidance on how to remove Ledger Nano apps with Ledger Live.
+
+### If I follow the Ledger migration procedures, can I migrate the Ledger accounts that have been created with the 25th "word" passphrase?
+
+The 25th word can be used with your Ledger, and Firefly will still find your tokens.
 
 ### What if something goes wrong while I migrate? Who do I contact?
 
@@ -343,7 +331,7 @@ This process will take 10 minutes per spent address and, upon completion, you wi
 
 ## Spent Addresses
 
-### What are spent addresses and why are they dangerous?
+### What are spent addresses, and why are they dangerous?
 
 In the original IOTA network, IOTA used Winternitz One Time Signatures (W-OTS): think of these as, more or less, an authenticator and validator for a transaction. These keys and signatures are highly secure against malicious attacks for signing transactions. But, on the downside, by signing a transaction, W-OTS reveals parts of a private key for the specific address tokens are being spent from.
 
