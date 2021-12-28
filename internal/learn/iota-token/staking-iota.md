@@ -94,7 +94,7 @@ Assembly will implement two different mechanisms to reward Assembly token staker
 The Shimmer network has yearly inflation of 8% planned. These newly minted Shimmer tokens will be distributed to Shimmer stakers. 
 By staking your Shimmer tokens, you will help the network fulfill its purpose of being an incentivized playground for applications to test new IOTA technology features in a real network with real value.
 
-Read some more info about the Shimmer network here in the [FAQ.](https://shimmer.network/faqs)
+To learn more about the Shimmer network, read the Shimmer FAQ [here](https://shimmer.network/faqs).
 
 
 ---
