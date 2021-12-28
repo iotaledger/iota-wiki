@@ -1,6 +1,6 @@
 ---
 title: Firefly user guide
-description: User guide for standard Firefly software wallet users. We explain every finction here for you.
+description: User guide for standard Firefly software wallet users. We explain every function here for you.
 ---
 ## **Firefly User Guide**
 
@@ -127,3 +127,35 @@ The following information about the transaction is displayed:
 This whole process happens in just a few seconds.
 
 If you send and receive funds, they will always be organized under the wallet that you used to send or receive, so it is easier to keep track if you have a lot of transactions going on.
+
+## Firefly wallet staking instructions
+
+Staking IOTA will only be possible in IOTA’s Firefly wallet and is not supported by any third party. To begin staking (after Tuesday, the 21st of December at 3PM CET), make sure that you have downloaded the latest version of the Firefly wallet on the [firefly.iota.org](https"//firefly.iota.org) website, then complete the following steps:
+
+First, log in to your profile by entering your PIN and continue to navigate to the brand new staking tab.
+
+![image](https://user-images.githubusercontent.com/77154511/147533205-50bf67a6-e24c-4e7a-a4b8-67e824b8e9c1.png)
+
+Here you will either be able to “pre-stake” or “stake your tokens” (depending on which staking phase you are accessing your wallet). The pre-staking phase is a seven-day period before staking rewards begin on the 28th of December at 3PM CET, giving users ample time to decide on which staking event they want to take part in before staking starts. It also guarantees that users who want to stake IOTA tokens do not miss the start. Once the seven days are over, you will begin to receive staking rewards in your wallet.
+
+Each wallet of a user profile must be staked separately. When you mark IOTA tokens for staking, a transaction is sent to you with attached metadata to indicate that you wish to stake with the marked funds. Any funds staked in a given wallet will be sent to an address on the same wallet, requiring tokens in every wallet to be individually marked for staking.
+
+![image](https://user-images.githubusercontent.com/77154511/147533273-53c1b27c-8925-46d0-921d-7cc275a051e8.png)
+
+To stake a wallet, simply hit the stake button and select which airdrops you wish to participate in. Please note that the wallet does not have to be open to receive the airdrops once you initiated staking.
+
+
+![image](https://user-images.githubusercontent.com/77154511/147533318-ccc2f9b8-43d9-4023-8cf9-af46ea08d3fe.png)
+
+Once you hit confirm, Firefly will issue the special staking transaction. Once this transaction has been confirmed, the user interface will update to show that you are now ready for staking!
+
+![image](https://user-images.githubusercontent.com/77154511/147533354-7d3525ac-8ccd-44a5-bd7a-7067311fe6c3.png)
+
+
+You can begin staking at any point after the official start of the reward distribution. Your rewards will simply be less, as you won’t be participating during the full token distribution period.
+
+### Further important information for stakers
+
+You can send your staked tokens from a staked wallet at any time. But if you do, you will need to manually restake any remaining tokens. Firefly will warn you if you try to send staked tokens. Due to dust protection, there is a minimum number of token rewards you must earn in order to receive the tokens when the networks launch. The minimum reward for Shimmer is 10,000,000 SMR. The minimum reward for Assembly is 1 ASMB. Firefly will inform you if you haven’t yet reached the minimum reward value.
+
+If you receive additional funds on a staked wallet you will need to manually stake those tokens. Firefly will warn you if you receive tokens on a wallet that is already being staked from.
