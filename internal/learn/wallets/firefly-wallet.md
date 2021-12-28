@@ -32,8 +32,8 @@ A new staking tab has been added in the sidebar and staking IOTA tokens is as se
 
 Find more information in the blogposts:
 
-- [Introducing IOTA staking](https://blog.iota.org/introducing-iota-staking/)
-- [IOTA stsking start](https://blog.iota.org/iota-staking-start/)
+- [**Introducing IOTA staking**](https://blog.iota.org/introducing-iota-staking/)
+- [**IOTA stsking start**](https://blog.iota.org/iota-staking-start/)
 
 ## Firefly Token Migration
 
