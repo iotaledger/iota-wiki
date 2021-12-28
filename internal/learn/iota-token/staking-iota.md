@@ -35,7 +35,7 @@ It is planned that IOTA token holders will receive 20% (20 billion tokens) of th
 
 ![assembly staking](/img/learn/iota-token/assembly-staking.png)
 
- [here](https://assembly.sc/stake).
+ You can read how to stake and calculate the possible rewards [here](https://assembly.sc/stake).
 - After the 90 days have passed, the total amount of IOTA tokens that have participated in the staking event for Assembly will have created a set amount of Assembly tokens (maximum 8 Billion if 100% if the IOTA supply has been staked for Assembly)
 - With the launch of the Assembly network, these generated Assembly tokens will be distributed to the IOTA stakers. This distribution will be implemented as a functionality within the Firefly wallet. As long as the Assembly network is not yet launched, Firefly will hold the record of rewards for the IOTA token holder. 
 
