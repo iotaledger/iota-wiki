@@ -6,7 +6,7 @@ description: The IOTA Firefly Wallet sets a new standard for Software Wallets in
 # Firefly Wallet
 
 
-## General Overview and Introduction
+## General overview and introduction
 
 Firefly is the secure entry point to the IOTA ecosystem.
 
@@ -34,7 +34,7 @@ Find more information in the blogposts:
 - [**Introducing IOTA staking**](https://blog.iota.org/introducing-iota-staking/)
 - [**IOTA staking start**](https://blog.iota.org/iota-staking-start/)
 
-## Firefly Token Migration
+## Firefly token migration
 
 With the launch of the new IOTA 1.5 Chrysalis Mainnet end of 28 April 2021, every IOTA holder must migrate their entire funds from the old IOTA 1.0 network to the new, improved, and advanced 1.5 network. To make this process user-friendly and safe, the IOTA Foundation has integrated a migration tool into the Firefly wallet that takes care of the whole process and automatically moves your funds from the old into the new network.
 
