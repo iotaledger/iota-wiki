@@ -2,7 +2,6 @@
 title: Firefly user guide
 description: User guide for standard Firefly software wallet users. We explain every function here for you.
 ---
-## **Firefly User Guide**
 
 ## User guide for standard users
 
@@ -144,13 +143,11 @@ Each wallet of a user profile must be staked separately. When you mark IOTA toke
 
 To stake a wallet, simply hit the stake button and select which airdrops you wish to participate in. Please note that the wallet does not have to be open to receive the airdrops once you initiated staking.
 
-
 ![image](https://user-images.githubusercontent.com/77154511/147533318-ccc2f9b8-43d9-4023-8cf9-af46ea08d3fe.png)
 
 Once you hit confirm, Firefly will issue the special staking transaction. Once this transaction has been confirmed, the user interface will update to show that you are now ready for staking!
 
 ![image](https://user-images.githubusercontent.com/77154511/147533354-7d3525ac-8ccd-44a5-bd7a-7067311fe6c3.png)
-
 
 You can begin staking at any point after the official start of the reward distribution. Your rewards will simply be less, as you won’t be participating during the full token distribution period.
 

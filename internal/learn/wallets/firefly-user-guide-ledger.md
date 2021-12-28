@@ -3,29 +3,27 @@ title: Firefly Ledger user guide
 description: Firefly user guide for owners of Ledger Nano hardware wallets
 ---
 
-## User Guide for Users of a Ledger Nano X or Ledger Nano S device
-
 Firefly is available on Windows, Mac and Linux and supports Ledger Nano X and Ledger Nano S via USB connection. The Ledger Nano integration is straightforward and similar to using Firefly with a non-Ledger profile. This guide serves as an additional resource to help you understand how you can use your ledger to secure your tokens with Firefly and what you need to be aware of when you perform certain actions while using the wallet.
 
-### What is a Ledger Nano?
+## What is a Ledger Nano?
 
 [Ledger Nano](https://www.ledger.com/) is a hardware device that connects to your computer via USB (other models are available with bluetooth support but this is not currently supported in Firefly). When you set up your Ledger Nano, you are instructed to safely store a recovery phrase. This recovery phrase is used by the device to sign transactions and generate addresses. It is not possible to extract the recovery phrase (or private keys generated from it) from the Ledger device. So it is important to store your recovery phrase safely. The hardware device creates a boundary between your computer and the private keys needed to access your funds. It provides a level of security that is simply not possible with software alone.
 
-### Before you start, make sure:
+## Before you start, make sure
 
-- 1.) You have [initialized](https://support.ledgerwallet.com/hc/en-us/articles/360000613793) your Ledger device.
-- 2.) The latest firmware is [installed](https://support.ledgerwallet.com/hc/en-us/articles/360002731113).
-- 3.) Ledger Live is [installed and ready to use](https://www.ledger.com/ledger-live/download).
-- 4.) You have installed the latest version of Firefly
+- You have [initialized](https://support.ledgerwallet.com/hc/en-us/articles/360000613793) your Ledger device.
+- The latest firmware is [installed](https://support.ledgerwallet.com/hc/en-us/articles/360002731113).
+- Ledger Live is [installed and ready to use](https://www.ledger.com/ledger-live/download).
+- You have installed the latest version of Firefly
 
-### Install the IOTA app on your ledger device
+## Install the IOTA app on your ledger device
 
-- 1.) Open the Manager tab in Ledger Live.
-- 2.) Connect and unlock your Ledger device.
-- 3.) Follow the onscreen instructions and allow Ledger Manager.
-- 4.) Find and install IOTA (MIOTA) in the app catalog.
+- Open the Manager tab in Ledger Live.
+- Connect and unlock your Ledger device.
+- Follow the onscreen instructions and allow Ledger Manager.
+- Find and install IOTA (MIOTA) in the app catalog.
 
-### How to set up a Ledger Nano with Firefly
+## How to set up a Ledger Nano with Firefly
 
 Note: If you are an existing IOTA user and secured IOTA with a Ledger before the Chrysalis network upgrade on 28 April 2021, you will need to migrate your tokens over to the new network before you can begin using Firefly. There is a comprehensive written guide and a video guide to help you through the migration process.
 
