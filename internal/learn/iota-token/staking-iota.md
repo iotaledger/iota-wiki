@@ -13,12 +13,11 @@ Both networks will launch with their own native tokens: SMR for Shimmer and ASMB
 - Find the announcement of the start of IOTA staking [here](https://blog.iota.org/iota-staking-start/)
 :::
 
-### Currently, there are several different staking scenarios implemented or planned:
-1. Staking IOTA to bootstrap the Shimmer and Assembly networks, creating the initial token supply (Shimmer) or a part of the initial token supply (Assembly) for those two networks.
-2. Staking IOTA to secure the Tangle as the base layer for the Assembly network and further distribute Assembly tokens to IOTA stakers (planned). 
-3. Staking Assembly tokens to secure the Assembly network and reward Assembly token stakers (planned).
-4. Staking Shimmer tokens to help to test and support the Shimmer network (planned).
-
+There are several ways to stake your tokens and earn staking rewards:
+- Shimmer and Assembly pre-launch staking to create the initial token supply for both the SMR and the ASMB token and distribute them to those who stake their IOTA tokens.
+- Assembly post-launch staking to further distribute ASMB tokens among those who stake their IOTA tokens.
+- ASMB token staking to secure the Assembly network and reward the ones who stake their ASMB tokens.
+- SMR token staking to help testing on the Shimmer network and to support the network.
 
 ## Shimmer and Assembly pre-launch staking
 
