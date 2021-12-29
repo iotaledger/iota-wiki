@@ -26,9 +26,18 @@ module.exports = {
       collapsed: true,
       items: [
         'wallets/what-is-a-wallet',
-        'wallets/firefly-wallet',
+        {
+          type: 'category',
+          label: 'Firefly',
+          collapsed: true,
+          items: [
+            'wallets/firefly/general',
+            'wallets/firefly/user-guide',
+            'wallets/firefly/user-guide-ledger',
+            'wallets/firefly/faq-and-troubleshooting',
+          ],
+        },
         'wallets/iota-devnet-wallet',
-        'wallets/hardware-wallets',
       ],
     },
     {
