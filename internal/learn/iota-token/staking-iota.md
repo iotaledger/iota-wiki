@@ -51,7 +51,7 @@ Shimmer, the incentivized Testnet and battlefield for IOTA's core technology inn
 You can read how to stake and calculate the possible rewards [here](https://shimmer.network/claim).
 - With the launch of the Shimmer network, these generated Shimmer tokens will be distributed to the IOTA stakers. This distribution will be implemented as a functionality within the Firefly wallet. As long as the Shimmer network is not yet launched, Firefly will hold the record of rewards for the IOTA token holder. 
 
-### Staking IOTA tokens to further bootstrap the Assembly network
+## Staking IOTA tokens to further bootstrap the Assembly network
 
 Assembly, the Smart contract implementation connecting and governing thousands of independent Smart contract blockchains on top of IOTA's Tangle will have a deep connection with the IOTA tangle. The security of the Assembly network relies on the underlying security of the IOTA tangle as it solves the interconnection and exchange layer between different chains in Assembly and provides a secure anchor and immutable audit trail for state updates of IOTA smart contracts chains in Assembly.
 
