@@ -27,7 +27,7 @@ Starting from 28th December 2021, 3 pm CET, IOTA holders that possess IOTA token
 
 ### IOTA staking for ASMB rewards
 
-It is planned that IOTA token holders will receive 20% (20 billion tokens) of the total initial Assembly supply of 100 billion tokens. Read more about the Assembly token launch and distribution [in this blog.](https://blog.assembly.sc/assembly-fair-launch-token-distribution/)
+It is planned that IOTA token holders will receive 20% (20 billion tokens) of the total initial Assembly supply of 100 billion tokens. Read more about the Assembly token launch and distribution [in this blog](https://blog.assembly.sc/assembly-fair-launch-token-distribution/).
 - To distribute the first batch of those Assembly tokens to IOTA holders, the staking functionality in the Firefly wallet has been developed. 
 - In the initial 90 days staking period, a maximum of 8% of the Assembly supply can be distributed to IOTA token stakers. 
 - This happens at a fixed rate for every IOTA token staked.
@@ -51,7 +51,7 @@ Shimmer, the incentivized Testnet and battlefield for IOTA's core technology inn
 You can read how to stake and calculate the possible rewards [here](https://shimmer.network/claim).
 - With the launch of the Shimmer network, these generated Shimmer tokens will be distributed to the IOTA stakers. This distribution will be implemented as a functionality within the Firefly wallet. As long as the Shimmer network is not yet launched, Firefly will hold the record of rewards for the IOTA token holder. 
 
-### Staking IOTA tokens to further bootstrap the Assembly network.
+### Staking IOTA tokens to further bootstrap the Assembly network
 
 Assembly, the Smart contract implementation connecting and governing thousands of independent Smart contract blockchains on top of IOTA's Tangle will have a deep connection with the IOTA tangle. The security of the Assembly network relies on the underlying security of the IOTA tangle as it solves the interconnection and exchange layer between different chains in Assembly and provides a secure anchor and immutable audit trail for state updates of IOTA smart contracts chains in Assembly.
 
@@ -59,7 +59,7 @@ Also, the Tangle, with its newly implemented tokenization abilities and multi-as
 
 To further reward IOTA token stakers and give them a fair share in the new Assembly network, IOTA token holders can continue to stake their IOTA tokens in order to receive Assembly tokens for 21 months after the Assembly mainnet launch.
 
-As described in the Assembly [token launch and fair distribution sheme](https://blog.assembly.sc/assembly-fair-launch-token-distribution/), a total of 20% of the Assembly supply is given to IOTA token stakers. 
+As described in the Assembly [token launch and fair distribution scheme](https://blog.assembly.sc/assembly-fair-launch-token-distribution/), a total of 20% of the Assembly supply is given to IOTA token stakers. 
 The first distribution phase happens in the 90 days as described above.
 The second ASMB distribution will happen during the first 21 months of the newly launched Assembly network.
 
@@ -84,7 +84,7 @@ Assembly will implement two different mechanisms to reward Assembly token staker
     - The final mechanism of how this distribution will happen is not yet published.
 
 2. Reward Assembly stakers to secure the Assembly chains by staking their ASMB tokens with a Validator.
-    - This mechanism is crucial to the security and functionality of the Assembly smart contract chains. Validators processing the code executed in the IOTA smart contract chains deployed in Assembly are required to deposit Assembly tokens as a security bond in the Assembly Root chain smart contract. This stake deposited by validators is used as a security bond to grant a validator access to a smart contract chains validator committee. The higher the stake a validator can offer as a security deposit, the more likely this validator will be chosen to secure high-value smart contract chains. Those chains will likely be more profitable for the validator, so the incentive to deposit more stakes as a security deposit in Assembly is very high. You can read details of that mechanism [here.](https://blog.assembly.sc/meet-assembly-2-validators-and-committees/)
+    - This mechanism is crucial to the security and functionality of the Assembly smart contract chains. Validators processing the code executed in the IOTA smart contract chains deployed in Assembly are required to deposit Assembly tokens as a security bond in the Assembly Root chain smart contract. This stake deposited by validators is used as a security bond to grant a validator access to a smart contract chains validator committee. The higher the stake a validator can offer as a security deposit, the more likely this validator will be chosen to secure high-value smart contract chains. Those chains will likely be more profitable for the validator, so the incentive to deposit more stakes as a security deposit in Assembly is very high. You can read details of that mechanism [here](https://blog.assembly.sc/meet-assembly-2-validators-and-committees/).
     - A Validator must always deposit a certain amount of tokens that he owns himself but can additionally use tokens that Assembly tokens holders deposited to the validator.
     - As this described mechanism of using delegated stake increases the total security bond a validator can offer, the validators will most likely be willing to pay a part of their earned profits to the Assembly holders who deposited their tokens to the validator.
     - This involves a potential risk, as a deposited stake in the Assembly root chain contract can be partially or fully slashed if the validator acts maliciously. But, besides this small theoretical risk, delegating stake to a validator will also offer higher rewards for Assembly stakers, as a share of the validators profit will be distributed to the stakers that delegate the stake to the validator.
