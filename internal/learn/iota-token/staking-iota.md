@@ -9,8 +9,12 @@ description: Everything you need to know about all the different upcoming stakin
 IOTA introduced two new networks that will exist next to the main network: the Shimmer staging network and the Assembly trustless smart contract network. This marks a historical event and a vast increase of utility for the IOTA token.
 Both networks will launch with their own native tokens: SMR for Shimmer and ASMB for Assembly. With the new tokenomics and incentive structure around these networks, it is now possible to stake tokens.
 
-- Find the blog post introducing IOTA staking [here](https://blog.iota.org/introducing-iota-staking/).
-- Find the announcement of the start of IOTA staking [here](https://blog.iota.org/iota-staking-start/).
+:::info
+
+Find the blog post introducing IOTA staking [here](https://blog.iota.org/introducing-iota-staking/).
+Find the announcement of the start of IOTA staking [here](https://blog.iota.org/iota-staking-start/).
+
+:::
 
 
 There are several ways to stake your tokens and earn staking rewards:
@@ -51,7 +55,7 @@ Shimmer, the incentivized testnet and battlefield for IOTA's core technology inn
 You can read how to stake and calculate the possible rewards [here](https://shimmer.network/claim).
 - With the launch of the Shimmer network, these generated Shimmer tokens will be distributed to the IOTA stakers. This distribution will be implemented as a functionality within the Firefly wallet. As long as the Shimmer network is not yet launched, Firefly will hold the record of rewards for the IOTA token holder. 
 
-## Staking IOTA tokens to further bootstrap the Assembly network
+## Assembly post-launch staking
 
 Assembly, the smart contract implementation connecting and governing thousands of independent smart contract blockchains on top of IOTA's Tangle will have a deep connection with the IOTA tangle. The security of the Assembly network relies on the underlying security of the IOTA tangle as it solves the interconnection and exchange layer between different chains in Assembly and provides a secure anchor and immutable audit trail for state updates of IOTA smart contracts chains in Assembly.
 
@@ -69,7 +73,7 @@ The second ASMB distribution will happen during the first 21 months of the newly
 - If less than 100% of IOTA tokens have been staked for Assembly (which would distribute 8 billion ASMB tokens to IOTA stakers), the remaining ASMB tokens will be distributed in addition to the already planned 12 billion ASMB tokens to IOTA stakers.
 If only 6 billion ASMB tokens had been distributed in the first 90 days, 14 billion ASMB tokens would still be available during the second 21 month staking period.
 - The ASMB distribution during the second staking period will happen on a **daily fixed rate**.
-- Assuming 14 billion ASMB tokens will be available to distribute, this would lead to a daily payout of: 
+    - Assuming 14 billion ASMB tokens will be available to distribute, this would lead to a daily payout of: 
     - 21.909.233 ASMB tokens to the IOTA stakers over 639 days.
     - The amount of individual received ASMB tokens per day depends on the total percentual part an IOTA staker holds of the total daily staked amount of IOTA tokens.
     - The fewer total IOTA tokens are staked, the higher the individual payout of those 21.909.233 ASMB tokens per day for an individual IOTA staker.
