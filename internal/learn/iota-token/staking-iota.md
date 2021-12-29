@@ -68,7 +68,7 @@ The second ASMB distribution will happen during the first 21 months of the newly
 - the amount of ASMB tokens that can be distributed during these 21 months depends totally on the number of tokens that are still undistributed after the initial 90 days of staking. 
 - If less than 100% of IOTA tokens have been staked for Assembly (which would distribute 8 billion ASMB tokens to IOTA stakers), the remaining ASMB tokens will be distributed in addition to the already planned 12 billion ASMB tokens to IOTA stakers.
 If only 6 billion ASMB tokens had been distributed in the first 90 days, 14 billion ASMB tokens would still be available during the second 21 month staking period.
-- the ASMB distribution during the second staking period will happen on a **daily fixed rate**
+- the ASMB distribution during the second staking period will happen on a **daily fixed rate**.
 - assuming 14 billion ASMB tokens will be available to distribute, this would lead to a daily payout of: 
     - 21.909.233 ASMB tokens to the IOTA stakers over 639 days.
     - the amount of individual received ASMB tokens per day depends on the total percentual part an IOTA staker holds of the total daily staked amount of IOTA tokens.
