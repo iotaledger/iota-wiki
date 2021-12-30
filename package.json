@@ -19,8 +19,8 @@
   },
   "dependencies": {
     "@algolia/client-search": "^4.9.1",
-    "@docusaurus/core": "^2.0.0-beta.8",
-    "@docusaurus/preset-classic": "^2.0.0-beta.8",
+    "@docusaurus/core": "^2.0.0-beta.14",
+    "@docusaurus/preset-classic": "^2.0.0-beta.14",
     "@jlvandenhout/docusaurus-plugin-docs-editor": "jlvandenhout/docusaurus-plugin-docs-editor",
     "@mdx-js/react": "^1.6.21",
     "@svgr/webpack": "^5.5.0",
@@ -34,6 +34,7 @@
     "raw-loader": "^4.0.2",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
+    "react-image-gallery": "^1.2.7",
     "react-player": "^2.9.0",
     "rehype-katex": "4",
     "remark-code-import": "^0.3.0",

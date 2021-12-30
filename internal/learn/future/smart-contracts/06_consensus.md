@@ -21,10 +21,10 @@ Verification means re-running the program yourself whenever you need to determin
 
 This is the reason smart contracts are run by a distributed processor. The term “distributed processor” refers to many processors performing the same calculations and coming to a consensus on the result of these computations. This consensus is reflected in the next block which updates the state of the chain.
 
-In the case of Ethereum, the whole network is that distributed processor. 
+In the case of Ethereum, the whole network is that distributed processor.
 IOTA Smart Contracts use a quorum majority voting in the `BFT` setting to determine the consensus arrived at by the committee of different processors.
 
-It should only be possible to produce valid signatures of inputs of 
+It should only be possible to produce valid signatures of inputs of
 the anchor transaction by reaching the quorum in the committee of nodes. In this case, a confirmed anchor transaction
 becomes a cryptographical proof of consensus in the committee.
 
@@ -50,7 +50,6 @@ signature.
 
 ---
 
-- Learn more about consensus in the [IOTA Smart Contracts
-  Architecture description](https://github.com/iotaledger/wasp/raw/master/documentation/ISCP%20architecture%20description%20v3.pdf)
-- Participate and set up a [Wasp Node with Docker](/wasp/misc/docker).
-- Build a decentralized application with the [Schema Tool](/wasp/guide/schema/schema).
+- Learn more about consensus in the [IOTA Smart Contracts Architecture description](https://github.com/iotaledger/wasp/blob/master/documentation/ISC_WP_Nov_10_2021.pdf).
+- Participate and use the [preconfigured development Docker setup](/smart-contracts/guide/development_tools/docker_preconfigured).
+- Build a decentralized application with the [Schema Tool](/smart-contracts/guide/schema).

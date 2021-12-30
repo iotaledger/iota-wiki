@@ -7,4 +7,4 @@ description: IOTA is deeply commited to improve the life of humans and protect t
 
 IOTA is deeply commited to improve the life of humans and protect the natural ressources and environments on our planet
 
-[![environmaental](/img/participate/use-cases/environmental.png)](/img/participate/use-cases/environmental.png)
+![environmaental](/img/participate/use-cases/environmental.png)

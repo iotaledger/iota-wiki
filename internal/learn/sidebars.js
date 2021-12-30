@@ -18,7 +18,7 @@ module.exports = {
       type: 'category',
       label: 'IOTA Token',
       collapsed: true,
-      items: ['iota-token/buying-iota'],
+      items: ['iota-token/buying-iota', 'iota-token/staking-iota'],
     },
     {
       type: 'category',
@@ -26,9 +26,18 @@ module.exports = {
       collapsed: true,
       items: [
         'wallets/what-is-a-wallet',
-        'wallets/firefly-wallet',
+        {
+          type: 'category',
+          label: 'Firefly',
+          collapsed: true,
+          items: [
+            'wallets/firefly/general',
+            'wallets/firefly/user-guide',
+            'wallets/firefly/user-guide-ledger',
+            'wallets/firefly/faq-and-troubleshooting',
+          ],
+        },
         'wallets/iota-devnet-wallet',
-        'wallets/hardware-wallets',
       ],
     },
     {
@@ -51,7 +60,7 @@ module.exports = {
         'resource-materials/fact-base',
         'resource-materials/infographics',
         'resource-materials/videos',
-        "resource-materials/faq's",
+        'resource-materials/faqs',
       ],
     },
     {
@@ -69,7 +78,7 @@ module.exports = {
         {
           type: 'category',
           label: 'Smart Contracts',
-          collapsed: false,
+          collapsed: true,
           items: [
             'future/smart-contracts/smart-contracts-introduction',
             'future/smart-contracts/smart-contracts-VM-and-languages',
@@ -81,6 +90,9 @@ module.exports = {
             'future/smart-contracts/smart-contracts-community-tutorials',
           ],
         },
+        'future/shimmer',
+        'future/assembly',
+        'future/dust-protection',
       ],
     },
   ],

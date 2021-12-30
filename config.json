@@ -17,10 +17,12 @@
     },
     {
       "repo": "https://github.com/iotaledger/iota.rs",
+      "checkoutParams": ["--branch mainnet"],
       "staticPath": "./documentation/static"
     },
     {
       "repo": "https://github.com/iotaledger/wallet.rs",
+      "checkoutParams": ["--branch mainnet"],
       "staticPath": "./documentation/static"
     },
     {
@@ -37,6 +39,7 @@
     },
     {
       "repo": "https://github.com/gohornet/hornet",
+      "checkoutParams": ["--branch develop"],
       "staticPath": "./documentation/static"
     },
     {

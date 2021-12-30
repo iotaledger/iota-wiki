@@ -70,7 +70,7 @@
         routeBasePath: "iota.rs",
         sidebarPath: require.resolve("./external/iota.rs/documentation/sidebars.js"),
         remarkPlugins: [require("remark-code-import"), require("remark-import-partial")],
-        editUrl: 'https://github.com/iotaledger/iota.rs/edit/dev',
+        editUrl: 'https://github.com/iotaledger/iota.rs/edit/mainnet',
       }
     ],
     [
@@ -91,15 +91,15 @@
         path: "external/wallet.rs/documentation/docs",
         routeBasePath: "wallet.rs",
         sidebarPath: require.resolve("./external/wallet.rs/documentation/sidebars.js"),
-        editUrl: 'https://github.com/iotaledger/wallet.rs/edit/dev',
+        editUrl: 'https://github.com/iotaledger/wallet.rs/edit/mainnet',
       }
     ],
     [
       "@docusaurus/plugin-content-docs",
       {
-        id: "wasp",
+        id: "smart-contracts",
         path: "external/wasp/documentation/docs",
-        routeBasePath: "wasp",
+        routeBasePath: "smart-contracts",
         sidebarPath: require.resolve("./external/wasp/documentation/sidebars.js"),
         editUrl: 'https://github.com/iotaledger/wasp/edit/develop',
       }
