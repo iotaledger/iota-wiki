@@ -13,4 +13,8 @@ It provides its own peer-to-peer communication layer, so that different apps can
 
 This [blog](https://blog.iota.org/iota-stronghold-beta-release/) published for the beat release of stronghold gives great insights to readers.
 
-Read more about how Stronghold secures applications in the [documentation](/stronghold.rs/welcome)
+A general deeper introduction in the concepts is layed out in the [introduction article](https://blog.iota.org/iota-stronghold-6ce55d311d7c/)
+
+Read more about how Stronghold secures applications and how you can use it to build securely with it in the [documentation](/stronghold.rs/welcome)
+
+![stronghold](/static/img/infographics/frameworks/stronghold.png)
