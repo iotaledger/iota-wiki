@@ -17,4 +17,4 @@ A general deeper introduction in the concepts is layed out in the [introduction 
 
 Read more about how Stronghold secures applications and how you can use it to build securely with it in the [documentation](/stronghold.rs/welcome)
 
-![stronghold](/static/img/infographics/frameworks/stronghold.png)
+![stronghold](/img/infographics/frameworks/stronghold.png)
