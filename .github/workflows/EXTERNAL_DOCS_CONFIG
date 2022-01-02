@@ -91,7 +91,7 @@
         path: "external/wallet.rs/documentation/docs",
         routeBasePath: "wallet.rs",
         sidebarPath: require.resolve("./external/wallet.rs/documentation/sidebars.js"),
-        editUrl: 'https://github.com/iotaledger/wallet.rs/edit/dev',
+        editUrl: 'https://github.com/iotaledger/wallet.rs/edit/mainnet',
       }
     ],
     [

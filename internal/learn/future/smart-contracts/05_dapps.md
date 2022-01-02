@@ -61,4 +61,4 @@ More examples for Wasm Smart Contracts written in Rust and Go (TinyGo) can be fo
 
 - Learn more about [On-ledger](/smart-contracts/guide/core_concepts/smartcontract-interaction/on-ledger-requests) and [Off-ledger Requests](/smart-contracts/guide/core_concepts/smartcontract-interaction/off-ledger-requests).
 - Participate on the [public testnet](/smart-contracts/guide/chains_and_nodes/testnet).
-- Build your first dApp with the [Schema Tool](/smart-contracts/guide/schema/schema).
+- Build your first dApp with the [Schema Tool](/smart-contracts/guide/schema).
