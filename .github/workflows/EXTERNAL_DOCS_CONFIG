@@ -124,3 +124,13 @@
         editUrl: 'https://github.com/iotaledger/chronicle.rs/edit/main',
       }
     ],
+    [
+      "@docusaurus/plugin-content-docs",
+      {
+        id: "blueprints",
+        path: "external/blueprints/",
+        routeBasePath: "blueprints",
+        sidebarPath: require.resolve("./external/blueprints/sidebars.js"),
+        editUrl: 'https://github.com/iotaledger/blueprints/edit/main',
+      }
+    ],
