@@ -100,7 +100,7 @@ module.exports = {
                   sublabel: 'IOTA development basics',
                   to: 'build/welcome',
                   icon: '\ue902',
-                  activeBaseRegex: '^/build/.*',
+                  activeBaseRegex: '^/(build|blueprints)/.*',
                 },
               ],
             },
