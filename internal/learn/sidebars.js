@@ -53,15 +53,9 @@ module.exports = {
     },
     {
       type: 'category',
-      label: 'Resource Materials',
+      label: 'Media Library',
       collapsed: true,
-      items: [
-        'resource-materials/glossary',
-        'resource-materials/fact-base',
-        'resource-materials/infographics',
-        'resource-materials/videos',
-        'resource-materials/faqs',
-      ],
+      items: ['media-library/infographics', 'media-library/videos'],
     },
     {
       type: 'category',
@@ -95,5 +89,7 @@ module.exports = {
         'future/dust-protection',
       ],
     },
+    'glossary',
+    'faqs',
   ],
 };
