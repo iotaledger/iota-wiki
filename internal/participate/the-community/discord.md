@@ -142,14 +142,14 @@ Should Binance have issues with withdrawals, get in touch with Binance's support
   - https://people.eecs.berkeley.edu/~dawnsong/papers/sybil.pdf and https://www.cs.montana.edu/yang/paper/jamming.pdf
 - `!explain_consensus`
   - The current situation of Chrysalis until Coordicide
-<https://github.com/noneymous/iota-consensus-presentation/blob/master/README.md>
-The implementation after Coordicide:
-<https://arxiv.org/pdf/1905.10895.pdf>
+  <https://github.com/noneymous/iota-consensus-presentation/blob/master/README.md>
+  The implementation after Coordicide:
+  <https://arxiv.org/pdf/1905.10895.pdf>
 - `!faq`
   - Have a look at the Firefly/Migration FAQs here
-https://wiki.iota.org/learn/wallets/firefly/faq-and-troubleshooting
+  https://wiki.iota.org/learn/wallets/firefly/faq-and-troubleshooting
 - `!firefly-funds`
-  - This can occasionally happen and will be fixed in further releases. To fix it and get direct access to your funds do the following: Make sure that you have a backup of your  24 Seed words and also the stronghold backup file created in the initial profile setup for the migration. If you are sure you have this please uninstall Firefly from your operating System.
+  - This can occasionally happen and will be fixed in further releases. To fix it and get direct access to your funds do the following: Make sure that you have a backup of your    24 Seed words and also the stronghold backup file created in the initial profile setup for the migration. If you are sure you have this please uninstall Firefly from your  operating System.
   Now you need to delete the remaining Firefly folder on your OS located here:
 
   - Windows: "C:\Users[username]\AppData\Roaming\Firefly 
@@ -169,13 +169,13 @@ https://wiki.iota.org/learn/wallets/firefly/faq-and-troubleshooting
   - You can invite others to this discord with this link: https://discord.iota.org - The generated invite link is only valid for 1 person for a limited amount of time.
 - `!iotaseed`
   - Hello, available information has been published here:
-<https://github.com/iota-community/IOTA-Discord/blob/main/help/iota-recovery-tips.md#iotaseedio-or-online-seed-generator-scam>
+  <https://github.com/iota-community/IOTA-Discord/blob/main/help/iota-recovery-tips.md#iotaseedio-or-online-seed-generator-scam>
 
   There is the link to the AMA with the people involved
 - `!ledger-usb`
   - Having trouble with the Ledger and Firefly?
-Verify your USB connection according to the official Ledger support:
-<https://support.ledger.com/hc/en-us/articles/360019868977-Fix-USB-connection-issues-with-Ledger-Live?support=true>
+  Verify your USB connection according to the official Ledger support:
+  <https://support.ledger.com/hc/en-us/articles/360019868977-Fix-USB-connection-issues-with-Ledger-Live?support=true>
 
   *image link* https://media.discordapp.net/attachments/828625524510163024/873298026859491368/issue.JPG
 - `!marketcap`
@@ -202,25 +202,36 @@ Verify your USB connection according to the official Ledger support:
 
   https://media.discordapp.net/attachments/834486932666187848/834491858914377758/new--1-.png
 - `!rules`
-  - Please be mindful of the official Iota Discord rules and etiquette: 1️⃣ Be courteous and respectful to one another 2️⃣ This Discord is family-friendly, act accordingly 3️⃣ Speculation is only allowed in the speculation channel 4️⃣ No impersonation or obfuscation 5️⃣ No excessive trolling or questions like "wen moon/lambo" 6️⃣ No advertising without permission;  donation requests must be made in donations 7️⃣ No Shilling expect IOTA/Shimmer technology-related project information in the <#918064808383877130> channel 8️⃣ No talk about Politics/Religion 9️⃣ No public feedback on Mod decisions, DM a mod if you disagree 🔟 Questions about IOTA's development progress should be constructive and sincere. *️⃣ Please do not @mention IOTA Foundation members unless they are actively participating in the channel you are in at that very moment - Breaking any of these rules may result in mod action.
+  - Please be mindful of the official Iota Discord rules and etiquette: 
+  - 1️⃣ Be courteous and respectful to one another 
+  - 2️⃣ This Discord is family-friendly, act accordingly 
+  - 3️⃣ Speculation is only allowed in the speculation channel 
+  - 4️⃣ No impersonation or obfuscation 
+  - 5️⃣ No excessive trolling or questions like "wen moon/lambo" 
+  - 6️⃣ No advertising without permission;  donation requests must be made in donations 
+  - 7️⃣ No Shilling expect IOTA/Shimmer technology-related project information in the <#918064808383877130> channel 
+  - 8️⃣ No talk about Politics/Religion 
+  - 9️⃣ No public feedback on Mod decisions, DM a mod if you disagree 
+  - 🔟 Questions about IOTA's development progress should be constructive and sincere. 
+  - *️⃣ Please do not @mention IOTA Foundation members unless they are actively participating in the channel you are in at that very moment - Breaking any of these rules may result in mod action.
 - `!seed`
   - The IOTA SEED in the new network consists of a *24 WORDS MNEMONIC PHRASE*!
-Its is the most important part in the setup of your Firefly Wallet that you *BACKUP THE 24 WORDS*!
-:warning: **NEVER SHARE THOSE WORDS WITH ANYONE!!!**
+  Its is the most important part in the setup of your Firefly Wallet that you *BACKUP THE 24 WORDS*!
+  :warning: **NEVER SHARE THOSE WORDS WITH ANYONE!!!**
 - `!shilling-rules`
   - **Please remember one of the essential rules in the crypto space: you are your own bank and are responsible for researching the applications you use. No one can perform this due diligence for you.**
 
-  - Disclaimer: The IOTA Foundation does not provide personalized investment recommendations or advisory services. Any information provided in the <#918064808383877130> channel  to users regarding new projects is not, and should not be, considered advice of any kind and is for information purposes only. That a project is discussed on <#918064808383877130> does not mean that it is in any way approved, checked, audited, and/or associated with the IOTA Foundation.
+  - Disclaimer: The IOTA Foundation does not provide personalized investment recommendations or advisory services. Any information provided in the <#project-shilling> channel    to users regarding new projects is not, and should not be, considered advice of any kind and is for information purposes only. That a project is discussed on   <#project- shilling> does not mean that it is in any way approved, checked, audited, and/or associated with the IOTA Foundation.
 
-  - <#project-shilling> will only be visible to members that actively opt-in to get information about new projects by obtaining the "Shiller" role in the <#884705920028930068> channel.
+  - <#project-shilling> will only be visible to members that actively opt-in to get information about new projects by obtaining the "Shiller" role in the <#get-your-badges> channel.
   - Only links to project pages or articles/tweets about projects using IOTA or Shimmer technology are allowed.
   - Never ask for funding or advertise fundraising or ICO sales or similar offerings of a project. 
   - No donation requests, discord invites, ICO, STO, Airdrop announcements
   - No pitches for investors.
-  - Provide generic information about a project and be ready to answer questions about your motives and technical implementations of the project from the community that will evaluate the quality of the project. 
+  - Provide generic information about a project and be ready to answer questions about your motives and technical implementations of the project from the community that will   evaluate the quality of the project. 
   - Always provide context if you share a link to a project. Otherwise, it may be deleted.
   - Refrain from continuously posting the same links or information. Spamming will not be tolerated.
-  - Tolerate other projects and other opinions, even if they "compete" with your own idea or project. Keep the discussion respectful and constructive. Be prepared to deliver factual proof for your accusations if you criticize a project.
+  - Tolerate other projects and other opinions, even if they "compete" with your own idea or project. Keep the discussion respectful and constructive. Be prepared to deliver   factual proof for your accusations if you criticize a project.
 - `!spec`
   - Hello, please let's keep the discussion in {channel} on topic.
 
@@ -239,15 +250,15 @@ Its is the most important part in the setup of your Firefly Wallet that you *BAC
   Ignore these rules and the behavior will be subject to moderation.
 - `!supply`
   - Here's the conversion chart:
-https://cdn.discordapp.com/attachments/397872995127001108/440492145539809280/units.png
+  https://cdn.discordapp.com/attachments/397872995127001108/440492145539809280/units.png
 - `!trinity-migration`
-  - Check in trinity if your funds are out and sent to an address starting with "TRANSFER..." Check this transaction here <https://explorer.iota.org/legacy-mainnet> - if it is confirmed, your balance is correct and you have a backup of the 24 words and your stronghold file. You can close Firefly, the migration was successful.
+  - Check in trinity if your funds are out and sent to an address starting with "TRANSFER..." Check this transaction here <https://explorer.iota.org/legacy-mainnet> - if it is   confirmed, your balance is correct and you have a backup of the 24 words and your stronghold file. You can close Firefly, the migration was successful.
 
   https://cdn.discordapp.com/attachments/401389663236915200/836613006765981777/unknown.png
 - `!warn-scam`
-  - ⚠️ Reminder: don’t trust anyone asking for your seed, mnemonic phrase, passwords, or stronghold files even if they claim they’re IOTA Foundation members. Please report these scammers to one of the admins. ⚠️
+  - ⚠️ Reminder: don’t trust anyone asking for your seed, mnemonic phrase, passwords, or stronghold files even if they claim they’re IOTA Foundation members. Please report these   scammers to one of the admins. ⚠️
 
-  - 📣There does not exist any browser version of the Firefly wallet or a mobile version of it. Use Firefly only on your desktop and download it from the official site here: <https://firefly.iota.org/>
+  - 📣There does not exist any browser version of the Firefly wallet or a mobile version of it. Use Firefly only on your desktop and download it from the official site here:     <https://firefly.iota.org/>
 
   - ⚡⚡⚡NEVER click on links to sites that someone sends you in private messages.!
   There is no online website to sync your Firefly wallet. 
@@ -286,14 +297,14 @@ https://cdn.discordapp.com/attachments/397872995127001108/440492145539809280/uni
   - Make sure you follow the X-Teams on Twitter:
   <https://twitter.com/IOTAXTeams>
 - `!whitepaper`
-  - Check the latest one from Popov that describes the Tangle and the implementation in IOTA 1.0  <https://assets.ctfassets.net/r1dr6vzfxhev/2t4uxvsIqk0EUau6g2sw0g/45eae33637ca92f85dd9f4a3a218e1ec/iota1_4_3.pdf>
+  - Check the latest one from Popov that describes the Tangle and the implementation in IOTA 1.0    <https://assets.ctfassets.net/r1dr6vzfxhev/2t4uxvsIqk0EUau6g2sw0g/45eae33637ca92f85dd9f4a3a218e1ec/iota1_4_3.pdf>
 
   - The future of IOTA lies in here - all about Coordicide: <https://files.iota.org/papers/20200120_Coordicide_WP.pdf>
 - `!withdrawal`
   - If the exchange has suspended the token withdrawals or your withdrawal is still pending, get in touch with the exchange's support
 - `!zerofunds`
   - Have a look at this page for tips to recover your tokens first:
-<https://github.com/iota-community/IOTA-Discord/blob/main/help/iota-recovery-tips.md>
+  <https://github.com/iota-community/IOTA-Discord/blob/main/help/iota-recovery-tips.md>
 
 
 
