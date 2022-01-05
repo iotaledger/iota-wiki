@@ -236,8 +236,8 @@ module.exports = {
               to: 'learn/networks/iota-1.5-chrysalis',
             },
             {
-              label: 'Resource Materials',
-              to: 'learn/resource-materials/glossary',
+              label: 'Glossary',
+              to: 'learn/glossary',
             },
             {
               label: 'Research',
