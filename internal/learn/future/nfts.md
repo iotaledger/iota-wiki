@@ -1,6 +1,6 @@
 ---
 title: Non-fungile Token (NFTs)
-description: This article explains the different types of NFTs on IOTA and how you can participate.
+description: This article explains the different types of NFTs on IOTA.
 ---
 
 ## What is a NFT?
