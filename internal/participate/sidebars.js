@@ -40,7 +40,6 @@ module.exports = {
         'use-cases/industry-applications',
         'use-cases/internet-of-things',
         'use-cases/digital-assets',
-        'use-cases/nfts',
         'use-cases/mobility',
         'use-cases/trade-and-supply-chain',
         'use-cases/data-confidence',
@@ -125,38 +124,38 @@ module.exports = {
           items: [
             {
               type: 'doc',
-              label: 'Technical Writer\'s Guide',
-              id: 'contribute-to-wiki/for_tws/writer_guide'
+              label: "Technical Writer's Guide",
+              id: 'contribute-to-wiki/for_tws/writer_guide',
             },
             {
               type: 'doc',
               label: 'Structure',
-              id: 'contribute-to-wiki/for_tws/structure'
+              id: 'contribute-to-wiki/for_tws/structure',
             },
             {
               type: 'doc',
               label: 'Matter',
-              id: 'contribute-to-wiki/for_tws/matter'
+              id: 'contribute-to-wiki/for_tws/matter',
             },
             {
               type: 'doc',
               label: 'Form',
-              id: 'contribute-to-wiki/for_tws/form'
+              id: 'contribute-to-wiki/for_tws/form',
             },
             {
               type: 'doc',
               label: 'Mechanics',
-              id: 'contribute-to-wiki/for_tws/mechanics'
+              id: 'contribute-to-wiki/for_tws/mechanics',
             },
             {
               type: 'doc',
               label: 'Formatting',
-              id: 'contribute-to-wiki/for_tws/formatting'
+              id: 'contribute-to-wiki/for_tws/formatting',
             },
             {
               type: 'doc',
               label: 'Third-Party Works',
-              id: 'contribute-to-wiki/for_tws/third-party_works'
+              id: 'contribute-to-wiki/for_tws/third-party_works',
             },
           ],
         },
