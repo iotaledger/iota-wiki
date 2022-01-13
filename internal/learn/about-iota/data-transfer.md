@@ -40,7 +40,7 @@ The message ID is created as a unique cryptographic hash of the bytes contained 
 
 **Network ID**
 
-An identification in which IOTA network the message belongs (Mainnet / Testnet / private network) - Nodes will only accept messages that identify themself as part of the network the node belongs to.
+An identification in which IOTA network the message belongs (Mainnet / Testnet / private network) - Nodes will only accept messages that identify themselves as part of the network the node belongs to.
 
 **Parents length and Parents ID**
 
@@ -52,7 +52,7 @@ Because messages in IOTA are not allowed to exceed a size of 32kb, the message m
 
 **Payload type**
 
-A definition of which type of payload is part of the message. The node needs to know this, as some payload types need to proccessed differently than others.
+A definition of which type of payload is part of the message. The node needs to know this, as some payload types need to processed differently than others.
 
 **Nonce**
 
