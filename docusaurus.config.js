@@ -1,5 +1,6 @@
-/** @type {import('@docusaurus/types').DocusaurusConfig} */
+// @ts-check
 
+/** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
   title: 'IOTA Wiki',
   tagline: 'The complete reference for IOTA',
@@ -20,6 +21,7 @@ module.exports = {
       crossorigin: 'anonymous',
     },
   ],
+  /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
   themeConfig: {
     announcementBar: {
       id: 'assembly',
@@ -393,6 +395,7 @@ module.exports = {
   presets: [
     [
       '@docusaurus/preset-classic',
+      /** @type {import('@docusaurus/preset-classic').Options} */
       {
         docs: false,
         blog: {
