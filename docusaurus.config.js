@@ -443,7 +443,7 @@ module.exports = {
         id: 'learn',
         path: 'internal/learn',
         routeBasePath: 'learn',
-        sidebarPath: require.resolve('./internal/learn/sidebars.js'),
+        sidebarPath: require.resolve('./internal/learn/sidebars.ts'),
 
         // General config
         editUrl: 'https://github.com/iota-community/iota-wiki/edit/main/',
@@ -460,7 +460,7 @@ module.exports = {
         id: 'participate',
         path: 'internal/participate',
         routeBasePath: 'participate',
-        sidebarPath: require.resolve('./internal/participate/sidebars.js'),
+        sidebarPath: require.resolve('./internal/participate/sidebars.ts'),
 
         // General config
         editUrl: 'https://github.com/iota-community/iota-wiki/edit/main/',
@@ -477,7 +477,7 @@ module.exports = {
         id: 'build',
         path: 'internal/build',
         routeBasePath: 'build',
-        sidebarPath: require.resolve('./internal/build/sidebars.js'),
+        sidebarPath: require.resolve('./internal/build/sidebars.ts'),
 
         // General config
         editUrl: 'https://github.com/iota-community/iota-wiki/edit/main/',
