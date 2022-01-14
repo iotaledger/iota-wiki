@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 export default function HomePageCard({ title, image, link, description }) {
-  let history = useHistory();
+  const history = useHistory();
 
   const handleClick = (e) => {
     e.preventDefault();

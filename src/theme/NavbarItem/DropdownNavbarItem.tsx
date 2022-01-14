@@ -132,6 +132,7 @@ DropdownNavbarItemDesktop.propTypes = {
   items: PropTypes.array,
   position: PropTypes.string,
   className: PropTypes.string,
+  // @ts-expect-error ts-migrate(2339) FIXME: Property 'propTypes' does not exist on type '(prop... Remove this comment to see the full error message
   ...NavLink.propTypes,
 };
 
@@ -185,6 +186,7 @@ function DropdownNavbarItemMobile({ items, className, ...props }) {
 DropdownNavbarItemMobile.propTypes = {
   items: PropTypes.array,
   className: PropTypes.string,
+  // @ts-expect-error ts-migrate(2339) FIXME: Property 'propTypes' does not exist on type '(prop... Remove this comment to see the full error message
   ...NavLink.propTypes,
 };
 
@@ -192,6 +194,7 @@ function DropdownNavbarItem({ mobile = false, ...props }) {
   /* eslint-disable-next-line react/prop-types */
   delete props.isDropdownItem;
   const Comp = mobile ? DropdownNavbarItemMobile : DropdownNavbarItemDesktop;
+  // @ts-expect-error ts-migrate(2739) FIXME: Type '{}' is missing the following properties from... Remove this comment to see the full error message
   return <Comp {...props} />;
 }
 

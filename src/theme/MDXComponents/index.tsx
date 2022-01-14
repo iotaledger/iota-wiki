@@ -9,6 +9,7 @@ import Head from '@docusaurus/Head';
 import Link from '@docusaurus/Link';
 import CodeBlock from '@theme/CodeBlock';
 import Heading from '@theme/Heading';
+// @ts-expect-error ts-migrate(2307) FIXME: Cannot find module '@theme/FullscreenImage' or its... Remove this comment to see the full error message
 import FullscreenImage from '@theme/FullscreenImage';
 import Details from '@theme/Details';
 import './styles.css'; // MDX elements are wrapped through the MDX pragma
@@ -49,7 +50,9 @@ const MDXComponents = {
   pre: (props) => {
     const { children } = props; // See comment for `code` above
 
+    // @ts-expect-error ts-migrate(2339) FIXME: Property 'children' does not exist on type 'unknow... Remove this comment to see the full error message
     if (isValidElement(children) && isValidElement(children?.props?.children)) {
+      // @ts-expect-error ts-migrate(2339) FIXME: Property 'children' does not exist on type 'unknow... Remove this comment to see the full error message
       return children.props.children;
     }
 
@@ -62,6 +65,7 @@ const MDXComponents = {
   details: (props) => {
     const items = React.Children.toArray(props.children); // Split summary item from the rest to pass it as a separate prop to the Detais theme component
 
+    // @ts-expect-error ts-migrate(2339) FIXME: Property 'props' does not exist on type 'ReactChil... Remove this comment to see the full error message
     const summary = items.find((item) => item?.props?.mdxType === 'summary');
     const children = <>{items.filter((item) => item !== summary)}</>;
     return (

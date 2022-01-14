@@ -106,6 +106,7 @@ function DefaultNavbarItemDesktop({
   ...props
 }) {
   const element = (
+    // @ts-expect-error ts-migrate(2740) FIXME: Type '{ className: string; }' is missing the follo... Remove this comment to see the full error message
     <NavLink
       className={clsx(
         isDropdownItem ? 'dropdown__link' : 'navbar__item navbar__link',
@@ -137,6 +138,7 @@ function DefaultNavbarItemMobile({ className, ...props }) {
 
   return (
     <li className='menu__list-item'>
+      // @ts-expect-error ts-migrate(2740) FIXME: Type '{ className: string; }' is missing the follo... Remove this comment to see the full error message
       <NavLink className={clsx('menu__link', className)} {...props} />
     </li>
   );
@@ -163,6 +165,7 @@ function DefaultNavbarItem({ mobile = false, to, label, ...props }) {
     return <li style={categorySeparatorStyles}>{label}</li>;
   } else {
     const Comp = mobile ? DefaultNavbarItemMobile : DefaultNavbarItemDesktop;
+    // @ts-expect-error ts-migrate(2741) FIXME: Property 'className' is missing in type '{ to: any... Remove this comment to see the full error message
     return <Comp to={to} label={label} {...props} />;
   }
 }

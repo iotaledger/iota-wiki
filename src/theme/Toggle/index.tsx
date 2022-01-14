@@ -13,11 +13,17 @@ import './styles.css';
 
 const ToggleMemo = memo(
   ({
+    // @ts-expect-error ts-migrate(2339) FIXME: Property 'className' does not exist on type '{ chi... Remove this comment to see the full error message
     className,
+    // @ts-expect-error ts-migrate(2339) FIXME: Property 'styles' does not exist on type '{ childr... Remove this comment to see the full error message
     styles,
+    // @ts-expect-error ts-migrate(2339) FIXME: Property 'icons' does not exist on type '{ childre... Remove this comment to see the full error message
     icons,
+    // @ts-expect-error ts-migrate(2339) FIXME: Property 'checked' does not exist on type '{ child... Remove this comment to see the full error message
     checked: defaultChecked,
+    // @ts-expect-error ts-migrate(2339) FIXME: Property 'disabled' does not exist on type '{ chil... Remove this comment to see the full error message
     disabled,
+    // @ts-expect-error ts-migrate(2339) FIXME: Property 'onChange' does not exist on type '{ chil... Remove this comment to see the full error message
     onChange,
   }) => {
     const [checked, setChecked] = useState(defaultChecked);
@@ -69,6 +75,7 @@ const ToggleMemo = memo(
 );
 
 ToggleMemo.displayName = 'ToggleMemo';
+// @ts-expect-error ts-migrate(2339) FIXME: Property 'propTypes' does not exist on type 'Named... Remove this comment to see the full error message
 ToggleMemo.propTypes = {
   className: PropTypes.string,
   styles: PropTypes.shape({

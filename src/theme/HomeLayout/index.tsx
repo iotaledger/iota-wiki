@@ -1,10 +1,12 @@
 import React from 'react';
+// @ts-expect-error ts-migrate(2307) FIXME: Cannot find module '/src/theme/CardWithImage' or i... Remove this comment to see the full error message
 import CardWithImage from '/src/theme/CardWithImage';
 import Layout from '@theme/Layout';
 import { useThemeConfig } from '@docusaurus/theme-common';
 import PropTypes from 'prop-types';
 
 export default function HomeLayout({ description, title, tagline }) {
+  // @ts-expect-error ts-migrate(2339) FIXME: Property 'cards' does not exist on type 'ThemeConf... Remove this comment to see the full error message
   const { cards } = useThemeConfig();
 
   return (

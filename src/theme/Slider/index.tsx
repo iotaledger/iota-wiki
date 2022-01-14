@@ -12,6 +12,7 @@ export default function ImageSlider({ path }) {
   }
 
   const allImages = importImages(
+    // @ts-expect-error ts-migrate(2339) FIXME: Property 'context' does not exist on type 'NodeReq... Remove this comment to see the full error message
     require.context('/img/', true, /\.(png|jpe?g|svg|mp4)$/),
   );
   const requestedImages = allImages.filter((word) => word.startsWith(path));
@@ -23,9 +24,9 @@ export default function ImageSlider({ path }) {
 
   // Create an array of objects with the image paths
   function createImageArray() {
-    let images = [];
+    const images = [];
     for (let i = 0; i < requestedImages.length; i++) {
-      let image = useBaseUrl('/img' + requestedImages[i]);
+      const image = useBaseUrl('/img' + requestedImages[i]);
       if (getFileExtension(requestedImages[i]) === 'mp4') {
         images.push({
           original: image,
@@ -33,6 +34,7 @@ export default function ImageSlider({ path }) {
           renderItem: () => (
             <video
               controls
+              // @ts-expect-error ts-migrate(2322) FIXME: Type 'string' is not assignable to type 'boolean'.
               autoPlay='autoplay'
               muted
               className='image-gallery-video'

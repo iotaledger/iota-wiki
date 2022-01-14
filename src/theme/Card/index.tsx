@@ -5,7 +5,7 @@ import { useHistory } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 export default function Card({ title, link, description, icon }) {
-  let history = useHistory();
+  const history = useHistory();
   const handleClick = (e) => {
     e.preventDefault();
     history.push(link);

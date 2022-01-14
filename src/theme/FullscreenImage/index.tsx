@@ -8,6 +8,7 @@ function Provider({ children }) {
   const [imageProps, setImageProps] = useState();
 
   return (
+    // @ts-expect-error ts-migrate(2322) FIXME: Type 'Dispatch<(prevState: undefined) => undefined... Remove this comment to see the full error message
     <Context.Provider value={setImageProps}>
       {children}
       {imageProps && (
@@ -29,6 +30,7 @@ function Source(props) {
     <img
       {...props}
       className='fullscreen-image__source'
+      // @ts-expect-error ts-migrate(2554) FIXME: Expected 0 arguments, but got 1.
       onClick={() => setImageProps(props)}
     />
   );

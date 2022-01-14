@@ -88,7 +88,7 @@ MegaDropdownItem.propTypes = {
  * @returns array of ungrouped items
  */
 function getUngroupedItemsList(groupedItems) {
-  let items = [];
+  const items = [];
   groupedItems.map((itemList) => {
     itemList.items.map((item) => {
       items.push(item);
@@ -257,6 +257,7 @@ MegaDropdownNavbarItemDesktop.propTypes = {
   layout: PropTypes.arrayOf(PropTypes.string),
   position: PropTypes.string,
   className: PropTypes.string,
+  // @ts-expect-error ts-migrate(2339) FIXME: Property 'propTypes' does not exist on type '(prop... Remove this comment to see the full error message
   ...NavLink.propTypes,
 };
 
@@ -322,6 +323,7 @@ function MegaDropdownNavbarItemMobile({ items_: items, className, ...props }) {
 MegaDropdownNavbarItemMobile.propTypes = {
   items_: PropTypes.array,
   className: PropTypes.string,
+  // @ts-expect-error ts-migrate(2339) FIXME: Property 'propTypes' does not exist on type '(prop... Remove this comment to see the full error message
   ...NavLink.propTypes,
 };
 
@@ -329,6 +331,7 @@ function MegaDropdownNavbarItem({ mobile = false, ...props }) {
   const Comp = mobile
     ? MegaDropdownNavbarItemMobile
     : MegaDropdownNavbarItemDesktop;
+  // @ts-expect-error ts-migrate(2739) FIXME: Type '{}' is missing the following properties from... Remove this comment to see the full error message
   return <Comp {...props} />;
 }
 

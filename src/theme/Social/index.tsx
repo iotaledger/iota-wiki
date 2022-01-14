@@ -5,7 +5,7 @@ import './styles.css';
 import get_socials_data from '../../../src/helper/socials';
 
 function SocialLink({ url, backgroundColor }) {
-  let data = get_socials_data(url);
+  const data = get_socials_data(url);
   return (
     <a
       className='social__link padding-horiz--sm padding-vert--md'
@@ -24,6 +24,7 @@ SocialLink.propTypes = {
 };
 
 function Social() {
+  // @ts-expect-error ts-migrate(2339) FIXME: Property 'socials' does not exist on type 'ThemeCo... Remove this comment to see the full error message
   const { socials } = useThemeConfig();
 
   return (

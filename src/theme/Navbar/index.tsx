@@ -189,6 +189,7 @@ function NavbarMobileSidebar({ sidebarShown, toggleSidebar }) {
         <div className='navbar-sidebar__item menu'>
           <ul className='menu__list'>
             {items.map((item, i) => (
+              // @ts-expect-error ts-migrate(2322) FIXME: Type '{ onClick: any; key: number; type?: string; ... Remove this comment to see the full error message
               <NavbarItem mobile {...item} onClick={toggleSidebar} key={i} />
             ))}
           </ul>

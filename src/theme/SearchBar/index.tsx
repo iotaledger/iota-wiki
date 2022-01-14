@@ -12,8 +12,10 @@ import { useHistory } from '@docusaurus/router';
 import { useBaseUrlUtils } from '@docusaurus/useBaseUrl';
 import Link from '@docusaurus/Link';
 import Head from '@docusaurus/Head';
+// @ts-expect-error ts-migrate(2307) FIXME: Cannot find module '@theme/hooks/useSearchQuery' o... Remove this comment to see the full error message
 import useSearchQuery from '@theme/hooks/useSearchQuery';
 import { DocSearchButton, useDocSearchKeyboardEvents } from '@docsearch/react';
+// @ts-expect-error ts-migrate(2307) FIXME: Cannot find module '@theme/hooks/useAlgoliaContext... Remove this comment to see the full error message
 import useAlgoliaContextualFacetFilters from '@theme/hooks/useAlgoliaContextualFacetFilters';
 import { translate } from '@docusaurus/Translate';
 import PropTypes from 'prop-types';
@@ -142,6 +144,7 @@ function DocSearch({ contextualSearch, ...props }) {
     [onClose],
   );
 
+  // @ts-expect-error ts-migrate(2339) FIXME: Property 'displayName' does not exist on type '(fo... Remove this comment to see the full error message
   resultsFooterComponent.displayName = 'resultsFooterComponent';
 
   const transformSearchClient = useCallback(
@@ -220,6 +223,7 @@ function DocSearch({ contextualSearch, ...props }) {
 
 function SearchBar() {
   const { siteConfig } = useDocusaurusContext();
+  // @ts-expect-error ts-migrate(2322) FIXME: Type 'unknown' is not assignable to type 'Intrinsi... Remove this comment to see the full error message
   return <DocSearch {...siteConfig.themeConfig.algolia} />;
 }
 

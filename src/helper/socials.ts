@@ -1,4 +1,4 @@
-var map = [
+const map = [
   { name: 'Youtube', icon: '\ue907' },
   { name: 'GitHub', icon: '\ue902' },
   { name: 'Discord', icon: '\ue900' },

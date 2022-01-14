@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import get_socials_data from '../../../src/helper/socials';
 
 function SocialLink({ link }) {
-  let data = get_socials_data(link);
+  const data = get_socials_data(link);
 
   return (
     <a className='team__icon margin-horiz--sm' href={link}>
@@ -13,7 +13,7 @@ function SocialLink({ link }) {
 }
 
 const TeamMember = function (props) {
-  let { name, title, image_url, social_links } = props;
+  const { name, title, image_url, social_links } = props;
 
   return (
     <div className='col margin-vert--md'>
