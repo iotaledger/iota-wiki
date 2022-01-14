@@ -18,18 +18,12 @@ import { DocSearchButton, useDocSearchKeyboardEvents } from '@docsearch/react';
 // @ts-expect-error ts-migrate(2307) FIXME: Cannot find module '@theme/hooks/useAlgoliaContext... Remove this comment to see the full error message
 import useAlgoliaContextualFacetFilters from '@theme/hooks/useAlgoliaContextualFacetFilters';
 import { translate } from '@docusaurus/Translate';
-import PropTypes from 'prop-types';
 
 let DocSearchModal = null;
 
 function Hit({ hit, children }) {
   return <Link to={hit.url}>{children}</Link>;
 }
-
-Hit.propTypes = {
-  hit: PropTypes.node,
-  children: PropTypes.node,
-};
 
 function ResultsFooter({ state, onClose }) {
   const { generateSearchPageLink } = useSearchQuery();
@@ -40,11 +34,6 @@ function ResultsFooter({ state, onClose }) {
     </Link>
   );
 }
-
-ResultsFooter.propTypes = {
-  state: PropTypes.node,
-  onClose: PropTypes.func,
-};
 
 // eslint-disable-next-line react/prop-types
 function DocSearch({ contextualSearch, ...props }) {

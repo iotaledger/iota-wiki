@@ -25,7 +25,6 @@ import Logo from '@theme/Logo';
 import IconMenu from '@theme/IconMenu';
 import IconClose from '@theme/IconClose';
 import styles from './styles.module.css'; // retrocompatible with v1
-import PropTypes from 'prop-types';
 import './styles.css';
 
 const DefaultNavItemPosition = 'right';
@@ -141,11 +140,6 @@ function useSecondaryMenu({ sidebarShown, toggleSidebar }) {
   };
 }
 
-useSecondaryMenu.propTypes = {
-  sidebarShown: PropTypes.bool,
-  toggleSidebar: PropTypes.bool,
-};
-
 function NavbarMobileSidebar({ sidebarShown, toggleSidebar }) {
   useLockBodyScroll(sidebarShown);
   const items = useNavbarItems();
@@ -216,11 +210,6 @@ function NavbarMobileSidebar({ sidebarShown, toggleSidebar }) {
     </div>
   );
 }
-
-NavbarMobileSidebar.propTypes = {
-  sidebarShown: PropTypes.bool,
-  toggleSidebar: PropTypes.func,
-};
 
 function Navbar() {
   const {

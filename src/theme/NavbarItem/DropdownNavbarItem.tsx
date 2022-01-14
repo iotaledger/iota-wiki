@@ -6,7 +6,6 @@
  */
 import React, { useState, useRef, useEffect } from 'react';
 import clsx from 'clsx';
-import PropTypes from 'prop-types';
 import {
   isSamePath,
   useCollapsible,
@@ -128,14 +127,6 @@ function DropdownNavbarItemDesktop({ items, position, className, ...props }) {
   );
 }
 
-DropdownNavbarItemDesktop.propTypes = {
-  items: PropTypes.array,
-  position: PropTypes.string,
-  className: PropTypes.string,
-  // @ts-expect-error ts-migrate(2339) FIXME: Property 'propTypes' does not exist on type '(prop... Remove this comment to see the full error message
-  ...NavLink.propTypes,
-};
-
 function DropdownNavbarItemMobile({ items, className, ...props }) {
   delete props.position;
 
@@ -183,13 +174,6 @@ function DropdownNavbarItemMobile({ items, className, ...props }) {
   );
 }
 
-DropdownNavbarItemMobile.propTypes = {
-  items: PropTypes.array,
-  className: PropTypes.string,
-  // @ts-expect-error ts-migrate(2339) FIXME: Property 'propTypes' does not exist on type '(prop... Remove this comment to see the full error message
-  ...NavLink.propTypes,
-};
-
 function DropdownNavbarItem({ mobile = false, ...props }) {
   /* eslint-disable-next-line react/prop-types */
   delete props.isDropdownItem;
@@ -197,13 +181,5 @@ function DropdownNavbarItem({ mobile = false, ...props }) {
   // @ts-expect-error ts-migrate(2739) FIXME: Type '{}' is missing the following properties from... Remove this comment to see the full error message
   return <Comp {...props} />;
 }
-
-DropdownNavbarItem.propTypes = {
-  mobile: PropTypes.bool,
-};
-
-DropdownNavbarItem.defaultProps = {
-  mobile: false,
-};
 
 export default DropdownNavbarItem;

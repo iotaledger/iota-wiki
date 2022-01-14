@@ -8,7 +8,6 @@ import React from 'react';
 import Translate from '@docusaurus/Translate';
 import IconEdit from '@theme/IconEdit';
 import OriginalEditThisPage from '@theme-original/EditThisPage';
-import PropTypes from 'prop-types';
 
 /**
 This function will remove "external/anyOtherString"
@@ -47,9 +46,5 @@ function EditThisPage({ editUrl }) {
     </>
   );
 }
-
-EditThisPage.propTypes = {
-  editUrl: PropTypes.string,
-};
 
 export default EditThisPage;

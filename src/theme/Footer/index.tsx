@@ -9,7 +9,6 @@ import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import { useThemeConfig } from '@docusaurus/theme-common';
 import useBaseUrl from '@docusaurus/useBaseUrl';
-import PropTypes from 'prop-types';
 import ThemedImage from '@theme/ThemedImage';
 // @ts-expect-error ts-migrate(2307) FIXME: Cannot find module '@theme/Social' or its correspo... Remove this comment to see the full error message
 import Social from '@theme/Social';
@@ -36,24 +35,9 @@ function FooterLink({ to, href, label, prependBaseUrlToHref, ...props }) {
   );
 }
 
-FooterLink.propTypes = {
-  to: PropTypes.string,
-  href: PropTypes.string,
-  label: PropTypes.string,
-  prependBaseUrlToHref: PropTypes.bool,
-};
-
 const FooterLogo = ({ sources, alt }) => (
   <ThemedImage className='footer__logo' alt={alt} sources={sources} />
 );
-
-FooterLogo.propTypes = {
-  sources: PropTypes.shape({
-    light: PropTypes.string,
-    dark: PropTypes.string,
-  }),
-  alt: PropTypes.string,
-};
 
 function Footer() {
   const { footer } = useThemeConfig();

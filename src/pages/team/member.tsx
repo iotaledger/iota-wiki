@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import get_socials_data from '../../../src/helper/socials';
 
 function SocialLink({ link }) {
@@ -45,10 +44,6 @@ const TeamMember = function (props) {
 };
 
 export default TeamMember;
-
-SocialLink.propTypes = {
-  link: PropTypes.string,
-};
 
 TeamMember.propTypes = {
   name: PropTypes.string,

@@ -1,6 +1,5 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
-import PropTypes from 'prop-types';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 export default function HomePageCard({ title, image, link, description }) {

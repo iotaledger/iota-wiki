@@ -5,7 +5,6 @@
  * LICENSE file in the root directory of this source tree.
  */
 import React, { useState, useRef, useEffect } from 'react';
-import PropTypes from 'prop-types';
 import clsx from 'clsx';
 import {
   isSamePath,
@@ -74,13 +73,6 @@ function MegaDropdownItem({ className, to, href, label, ...props }) {
 
   throw 'Mega dropdown item must be a link or a category header.';
 }
-
-MegaDropdownItem.propTypes = {
-  className: PropTypes.string,
-  to: PropTypes.string,
-  href: PropTypes.string,
-  label: PropTypes.string,
-};
 
 /***
  * Loop through the megamenu's grouped items and return ungrouped items
@@ -252,15 +244,6 @@ function MegaDropdownNavbarItemDesktop({
   );
 }
 
-MegaDropdownNavbarItemDesktop.propTypes = {
-  items_: PropTypes.array,
-  layout: PropTypes.arrayOf(PropTypes.string),
-  position: PropTypes.string,
-  className: PropTypes.string,
-  // @ts-expect-error ts-migrate(2339) FIXME: Property 'propTypes' does not exist on type '(prop... Remove this comment to see the full error message
-  ...NavLink.propTypes,
-};
-
 function MegaDropdownNavbarItemMobile({ items_: items, className, ...props }) {
   /* eslint-disable-next-line react/prop-types */
   delete props.position;
@@ -320,13 +303,6 @@ function MegaDropdownNavbarItemMobile({ items_: items, className, ...props }) {
   );
 }
 
-MegaDropdownNavbarItemMobile.propTypes = {
-  items_: PropTypes.array,
-  className: PropTypes.string,
-  // @ts-expect-error ts-migrate(2339) FIXME: Property 'propTypes' does not exist on type '(prop... Remove this comment to see the full error message
-  ...NavLink.propTypes,
-};
-
 function MegaDropdownNavbarItem({ mobile = false, ...props }) {
   const Comp = mobile
     ? MegaDropdownNavbarItemMobile
@@ -334,13 +310,5 @@ function MegaDropdownNavbarItem({ mobile = false, ...props }) {
   // @ts-expect-error ts-migrate(2739) FIXME: Type '{}' is missing the following properties from... Remove this comment to see the full error message
   return <Comp {...props} />;
 }
-
-MegaDropdownNavbarItem.propTypes = {
-  mobile: PropTypes.bool,
-};
-
-MegaDropdownNavbarItem.defaultProps = {
-  mobile: false,
-};
 
 export default MegaDropdownNavbarItem;

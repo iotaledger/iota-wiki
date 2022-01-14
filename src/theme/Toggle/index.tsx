@@ -5,7 +5,6 @@
  * LICENSE file in the root directory of this source tree.
  */
 import React, { useState, useRef, memo } from 'react';
-import PropTypes from 'prop-types';
 import { useThemeConfig } from '@docusaurus/theme-common';
 import useIsBrowser from '@docusaurus/useIsBrowser';
 import clsx from 'clsx';
@@ -76,21 +75,6 @@ const ToggleMemo = memo(
 
 ToggleMemo.displayName = 'ToggleMemo';
 // @ts-expect-error ts-migrate(2339) FIXME: Property 'propTypes' does not exist on type 'Named... Remove this comment to see the full error message
-ToggleMemo.propTypes = {
-  className: PropTypes.string,
-  styles: PropTypes.shape({
-    unchecked: PropTypes.any,
-    checked: PropTypes.any,
-  }),
-  icons: PropTypes.shape({
-    unchecked: PropTypes.string,
-    checked: PropTypes.string,
-  }),
-  checked: PropTypes.bool,
-  disabled: PropTypes.bool,
-  onChange: PropTypes.func,
-};
-
 export default function Toggle(props) {
   const {
     colorMode: {

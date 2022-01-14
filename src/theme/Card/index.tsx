@@ -2,7 +2,6 @@ import React from 'react';
 import styles from './styles.module.css';
 import clsx from 'clsx';
 import { useHistory } from 'react-router-dom';
-import PropTypes from 'prop-types';
 
 export default function Card({ title, link, description, icon }) {
   const history = useHistory();

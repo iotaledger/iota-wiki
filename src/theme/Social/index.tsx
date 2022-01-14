@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { useThemeConfig } from '@docusaurus/theme-common';
 import './styles.css';
 import get_socials_data from '../../../src/helper/socials';
@@ -17,11 +16,6 @@ function SocialLink({ url, backgroundColor }) {
     </a>
   );
 }
-
-SocialLink.propTypes = {
-  url: PropTypes.string,
-  backgroundColor: PropTypes.string,
-};
 
 function Social() {
   // @ts-expect-error ts-migrate(2339) FIXME: Property 'socials' does not exist on type 'ThemeCo... Remove this comment to see the full error message

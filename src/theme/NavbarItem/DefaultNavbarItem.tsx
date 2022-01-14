@@ -6,7 +6,6 @@
  */
 import React from 'react';
 import clsx from 'clsx';
-import PropTypes from 'prop-types';
 import Link from '@docusaurus/Link';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import IconExternalLink from '@theme/IconExternalLink';
@@ -82,22 +81,6 @@ function NavLink({
   );
 }
 
-NavLink.propTypes = {
-  activeBasePath: PropTypes.string,
-  activeBaseRegex: PropTypes.string,
-  to: PropTypes.string,
-  href: PropTypes.string,
-  label: PropTypes.string,
-  sublabel: PropTypes.string,
-  icon: PropTypes.string,
-  activeClassName: PropTypes.string,
-  prependBaseUrlToHref: PropTypes.bool,
-};
-
-NavLink.defaultProps = {
-  activeClassName: 'navbar__link--active',
-};
-
 export { NavLink };
 
 function DefaultNavbarItemDesktop({
@@ -123,15 +106,6 @@ function DefaultNavbarItemDesktop({
   return element;
 }
 
-DefaultNavbarItemDesktop.propTypes = {
-  className: PropTypes.string,
-  isDropdownItem: PropTypes.bool,
-};
-
-DefaultNavbarItemDesktop.defaultProps = {
-  isDropdownItem: false,
-};
-
 function DefaultNavbarItemMobile({ className, ...props }) {
   /* eslint-disable-next-line react/prop-types */
   delete props.isDropdownItem;
@@ -142,10 +116,6 @@ function DefaultNavbarItemMobile({ className, ...props }) {
     </li>
   );
 }
-
-DefaultNavbarItemMobile.propTypes = {
-  className: PropTypes.string,
-};
 
 function DefaultNavbarItem({ mobile = false, to, label, ...props }) {
   /* eslint-disable-next-line react/prop-types */
@@ -167,15 +137,5 @@ function DefaultNavbarItem({ mobile = false, to, label, ...props }) {
     return <Comp to={to} label={label} {...props} />;
   }
 }
-
-DefaultNavbarItem.propTypes = {
-  mobile: PropTypes.bool,
-  to: PropTypes.string,
-  label: PropTypes.string,
-};
-
-DefaultNavbarItem.defaultProps = {
-  mobile: false,
-};
 
 export default DefaultNavbarItem;

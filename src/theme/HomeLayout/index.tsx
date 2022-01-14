@@ -3,7 +3,6 @@ import React from 'react';
 import CardWithImage from '/src/theme/CardWithImage';
 import Layout from '@theme/Layout';
 import { useThemeConfig } from '@docusaurus/theme-common';
-import PropTypes from 'prop-types';
 
 export default function HomeLayout({ description, title, tagline }) {
   // @ts-expect-error ts-migrate(2339) FIXME: Property 'cards' does not exist on type 'ThemeConf... Remove this comment to see the full error message

@@ -1,7 +1,6 @@
 import React from 'react';
 import ImageGallery from 'react-image-gallery';
 import 'react-image-gallery/styles/css/image-gallery.css';
-import PropTypes from 'prop-types';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import { useRef } from 'react';
 
