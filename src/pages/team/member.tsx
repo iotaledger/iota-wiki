@@ -1,5 +1,5 @@
 import React from 'react';
-import get_socials_data from '../../../src/helper/socials';
+import get_socials_data from '../../helper/socials';
 
 function SocialLink({ link }) {
   const data = get_socials_data(link);
