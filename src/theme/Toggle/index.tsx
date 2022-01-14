@@ -74,7 +74,7 @@ const ToggleMemo = memo(
 );
 
 ToggleMemo.displayName = 'ToggleMemo';
-// @ts-expect-error ts-migrate(2339) FIXME: Property 'propTypes' does not exist on type 'Named... Remove this comment to see the full error message
+
 export default function Toggle(props) {
   const {
     colorMode: {
