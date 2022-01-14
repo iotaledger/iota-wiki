@@ -66,7 +66,3 @@ export default function ImageSlider({ path }) {
     />
   );
 }
-
-ImageSlider.propTypes = {
-  path: PropTypes.string.isRequired,
-};

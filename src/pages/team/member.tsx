@@ -44,10 +44,3 @@ const TeamMember = function (props) {
 };
 
 export default TeamMember;
-
-TeamMember.propTypes = {
-  name: PropTypes.string,
-  title: PropTypes.string,
-  image_url: PropTypes.string,
-  social_links: PropTypes.arrayOf(PropTypes.string),
-};

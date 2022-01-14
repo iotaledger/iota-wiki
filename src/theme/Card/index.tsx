@@ -25,10 +25,3 @@ export default function Card({ title, link, description, icon }) {
     </div>
   );
 }
-
-Card.propTypes = {
-  title: PropTypes.string,
-  icon: PropTypes.string,
-  link: PropTypes.string,
-  description: PropTypes.string,
-};

@@ -33,10 +33,3 @@ export default function HomePageCard({ title, image, link, description }) {
     </div>
   );
 }
-
-HomePageCard.propTypes = {
-  title: PropTypes.string,
-  image: PropTypes.string,
-  link: PropTypes.string,
-  description: PropTypes.string,
-};

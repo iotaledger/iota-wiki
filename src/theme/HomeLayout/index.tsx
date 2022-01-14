@@ -28,9 +28,3 @@ export default function HomeLayout({ description, title, tagline }) {
     </Layout>
   );
 }
-
-HomeLayout.propTypes = {
-  description: PropTypes.string,
-  title: PropTypes.string,
-  tagline: PropTypes.string,
-};
