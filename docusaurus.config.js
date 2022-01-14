@@ -21,8 +21,8 @@ module.exports = {
       crossorigin: 'anonymous',
     },
   ],
-  /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
   themeConfig: {
+    /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     announcementBar: {
       id: 'assembly',
       content:
