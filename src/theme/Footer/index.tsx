@@ -7,38 +7,67 @@
 import React from 'react';
 import clsx from 'clsx';
 import Link from '@docusaurus/Link';
-import { useThemeConfig } from '@docusaurus/theme-common';
+import {
+  FooterLinkItem,
+  useThemeConfig,
+} from '@docusaurus/theme-common';
 import useBaseUrl from '@docusaurus/useBaseUrl';
-import ThemedImage from '@theme/ThemedImage';
+import isInternalUrl from '@docusaurus/isInternalUrl';
+import ThemedImage, { Props as ThemedImageProps } from '@theme/ThemedImage';
+import IconExternalLink from '@theme/IconExternalLink';
 import Social from '../Social';
 
-function FooterLink({ to, href, label, prependBaseUrlToHref, ...props }) {
+function FooterLink({
+  to,
+  href,
+  label,
+  prependBaseUrlToHref,
+  ...props
+}: FooterLinkItem) {
   const toUrl = useBaseUrl(to);
-  const normalizedHref = useBaseUrl(href, {
-    forcePrependBaseUrl: true,
-  });
+  const normalizedHref = useBaseUrl(href, { forcePrependBaseUrl: true });
+
   return (
     <Link
       className='footer__link-item'
       {...(href
         ? {
-            href: prependBaseUrlToHref ? normalizedHref : href,
-          }
+          href: prependBaseUrlToHref ? normalizedHref : href,
+        }
         : {
-            to: toUrl,
-          })}
-      {...props}
-    >
-      {label}
+          to: toUrl,
+        })}
+      {...props}>
+      {href && !isInternalUrl(href) ? (
+        <span>
+          {label}
+          <IconExternalLink />
+        </span>
+      ) : (
+        label
+      )}
     </Link>
   );
 }
 
-const FooterLogo = ({ sources, alt }) => (
-  <ThemedImage className='footer__logo' alt={alt} sources={sources} />
-);
+function FooterLogo({
+  sources,
+  alt,
+  width,
+  height,
+}: Pick<ThemedImageProps, 'sources' | 'alt' | 'width' | 'height'>) {
+  return (
+    <ThemedImage
+      className='footer__logo'
+      alt={alt}
+      sources={sources}
+      width={width}
+      height={height}
+    />
+  );
+}
 
-function Footer() {
+function Footer(): JSX.Element | null {
   const { footer } = useThemeConfig();
   const { copyright, links = [], logo = {} } = footer || {};
   const sources = {
@@ -120,4 +149,4 @@ function Footer() {
   );
 }
 
-export default Footer;
+export default React.memo(Footer);
