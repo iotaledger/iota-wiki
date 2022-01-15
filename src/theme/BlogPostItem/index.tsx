@@ -13,13 +13,16 @@ import { useBaseUrlUtils } from '@docusaurus/useBaseUrl';
 import { usePluralForm } from '@docusaurus/theme-common';
 import MDXComponents from '@theme/MDXComponents';
 import EditThisPage from '@theme/EditThisPage';
+import type { Props } from '@theme/BlogPostItem';
+
 import styles from './styles.module.css';
 import TagsListInline from '@theme/TagsListInline';
-import BlogPostAuthors from '@theme/BlogPostAuthors'; // Very simple pluralization: probably good enough for now
+import BlogPostAuthors from '@theme/BlogPostAuthors';
 
+// Very simple pluralization: probably good enough for now
 function useReadingTimePlural() {
   const { selectMessage } = usePluralForm();
-  return (readingTimeFloat) => {
+  return (readingTimeFloat: number) => {
     const readingTime = Math.ceil(readingTimeFloat);
     return selectMessage(
       readingTime,
@@ -28,7 +31,7 @@ function useReadingTimePlural() {
           id: 'theme.blog.post.readingTime.plurals',
           description:
             'Pluralized label for "{readingTime} min read". Use as much plural forms (separated by "|") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)',
-          message: 'One min read|{readingTime} min read',
+        message: 'One min read|{readingTime} min read',
         },
         {
           readingTime,
@@ -38,7 +41,7 @@ function useReadingTimePlural() {
   };
 }
 
-function BlogPostItem(props) {
+function BlogPostItem(props: Props): JSX.Element {
   const readingTimePlural = useReadingTimePlural();
   const { withBaseUrl } = useBaseUrlUtils();
   const {
