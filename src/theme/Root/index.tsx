@@ -1,6 +1,5 @@
 import React from 'react';
-// @ts-expect-error ts-migrate(2307) FIXME: Cannot find module '@theme/FullscreenImage' or its... Remove this comment to see the full error message
-import FullscreenImage from '@theme/FullscreenImage';
+import FullscreenImage from '../FullscreenImage';
 
 // eslint-disable-next-line react/prop-types
 function Root({ children }) {

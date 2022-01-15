@@ -10,8 +10,7 @@ import Link from '@docusaurus/Link';
 import { useThemeConfig } from '@docusaurus/theme-common';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import ThemedImage from '@theme/ThemedImage';
-// @ts-expect-error ts-migrate(2307) FIXME: Cannot find module '@theme/Social' or its correspo... Remove this comment to see the full error message
-import Social from '@theme/Social';
+import Social from '../Social';
 
 function FooterLink({ to, href, label, prependBaseUrlToHref, ...props }) {
   const toUrl = useBaseUrl(to);

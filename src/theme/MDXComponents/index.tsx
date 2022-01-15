@@ -9,8 +9,7 @@ import Head from '@docusaurus/Head';
 import Link from '@docusaurus/Link';
 import CodeBlock from '@theme/CodeBlock';
 import Heading from '@theme/Heading';
-// @ts-expect-error ts-migrate(2307) FIXME: Cannot find module '@theme/FullscreenImage' or its... Remove this comment to see the full error message
-import FullscreenImage from '@theme/FullscreenImage';
+import FullscreenImage from '../FullscreenImage';
 import Details from '@theme/Details';
 import './styles.css'; // MDX elements are wrapped through the MDX pragma
 // In some cases (notably usage with Head/Helmet) we need to unwrap those elements.
