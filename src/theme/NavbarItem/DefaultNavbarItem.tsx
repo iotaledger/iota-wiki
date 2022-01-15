@@ -8,10 +8,17 @@ import React from 'react';
 import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import type {
+  NavLinkProps,
+  DesktopOrMobileNavBarItemProps,
+  Props,
+} from '@theme/NavbarItem/DefaultNavbarItem';
 import IconExternalLink from '@theme/IconExternalLink';
 import isInternalUrl from '@docusaurus/isInternalUrl';
+
 const dropdownLinkActiveClass = 'dropdown__link--active';
-function NavLink({
+
+export function NavLink({
   activeBasePath,
   activeBaseRegex,
   to,
@@ -22,14 +29,12 @@ function NavLink({
   activeClassName = 'navbar__link--active',
   prependBaseUrlToHref,
   ...props
-}) {
+}: NavLinkProps): JSX.Element {
   // TODO all this seems hacky
   // {to: 'version'} should probably be forbidden, in favor of {to: '/version'}
   const toUrl = useBaseUrl(to);
   const activeBaseUrl = useBaseUrl(activeBasePath);
-  const normalizedHref = useBaseUrl(href, {
-    forcePrependBaseUrl: true,
-  });
+  const normalizedHref = useBaseUrl(href, { forcePrependBaseUrl: true });
   const isExternalLink = label && href && !isInternalUrl(href);
   const isDropdownLink = activeClassName === dropdownLinkActiveClass;
 
@@ -42,20 +47,19 @@ function NavLink({
     <Link
       {...(href
         ? {
-            href: prependBaseUrlToHref ? normalizedHref : href,
-          }
+          href: prependBaseUrlToHref ? normalizedHref : href,
+        }
         : {
-            isNavLink: true,
-            activeClassName,
-            to: toUrl,
-            ...(activeBasePath || activeBaseRegex
-              ? {
-                  isActive: checkIsActive,
-                }
-              : null),
-          })}
-      {...props}
-    >
+          isNavLink: true,
+          activeClassName,
+          to: toUrl,
+          ...(activeBasePath || activeBaseRegex
+            ? {
+              isActive: checkIsActive,
+            }
+            : null),
+        })}
+      {...props}>
       <div className='link'>
         {icon && <div className='link__icon'>{icon}</div>}
         <div className='link__body'>
@@ -81,15 +85,12 @@ function NavLink({
   );
 }
 
-export { NavLink };
-
 function DefaultNavbarItemDesktop({
   className,
   isDropdownItem = false,
   ...props
-}) {
+}: DesktopOrMobileNavBarItemProps) {
   const element = (
-    // @ts-expect-error ts-migrate(2740) FIXME: Type '{ className: string; }' is missing the follo... Remove this comment to see the full error message
     <NavLink
       className={clsx(
         isDropdownItem ? 'dropdown__link' : 'navbar__item navbar__link',
@@ -106,10 +107,11 @@ function DefaultNavbarItemDesktop({
   return element;
 }
 
-function DefaultNavbarItemMobile({ className, ...props }) {
-  /* eslint-disable-next-line react/prop-types */
-  delete props.isDropdownItem;
-
+function DefaultNavbarItemMobile({
+  className,
+  isDropdownItem: _isDropdownItem,
+  ...props
+}: DesktopOrMobileNavBarItemProps) {
   return (
     <li className='menu__list-item'>
       <NavLink className={clsx('menu__link', className)} {...props} />
@@ -117,15 +119,19 @@ function DefaultNavbarItemMobile({ className, ...props }) {
   );
 }
 
-function DefaultNavbarItem({ mobile = false, to, label, ...props }) {
-  /* eslint-disable-next-line react/prop-types */
-  delete props.position;
+function DefaultNavbarItem({
+  mobile = false,
+  to,
+  label,
+  position: _position, // Need to destructure position from props so that it doesn't get passed on.
+  ...props
+}: Props): JSX.Element {
   /**
    * Added to enable non-clickable category headers.
    * To use simply add an navBar items in the config
    * with to:'category-header'
    */
-  if (to === 'category-header') {
+   if (to === 'category-header') {
     const categorySeparatorStyles = {
       fontSize: '10px',
       color: 'var(--ifm-color-emphasis-600)',
