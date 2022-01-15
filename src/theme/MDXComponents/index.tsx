@@ -4,17 +4,21 @@
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  */
-import React, { isValidElement } from 'react';
+import React, { ComponentProps, isValidElement, ReactElement } from 'react';
 import Head from '@docusaurus/Head';
 import Link from '@docusaurus/Link';
-import CodeBlock from '@theme/CodeBlock';
+import CodeBlock, { Props } from '@theme/CodeBlock';
 import Heading from '@theme/Heading';
 import FullscreenImage from '../FullscreenImage';
 import Details from '@theme/Details';
-import './styles.css'; // MDX elements are wrapped through the MDX pragma
+import type { MDXComponentsObject } from '@theme/MDXComponents';
+
+import './styles.css';
+
+// MDX elements are wrapped through the MDX pragma
 // In some cases (notably usage with Head/Helmet) we need to unwrap those elements.
 
-function unwrapMDXElement(element) {
+function unwrapMDXElement(element: ReactElement) {
   if (element?.props?.mdxType && element?.props?.originalType) {
     // eslint-disable-next-line no-unused-vars
     const { mdxType, originalType, ...newProps } = element.props;
@@ -24,15 +28,17 @@ function unwrapMDXElement(element) {
   return element;
 }
 
-const MDXComponents = {
+const MDXComponents: MDXComponentsObject = {
   head: (props) => {
     const unwrappedChildren = React.Children.map(props.children, (child) =>
-      unwrapMDXElement(child),
+      unwrapMDXElement(child as ReactElement),
     );
     return <Head {...props}>{unwrappedChildren}</Head>;
   },
   code: (props) => {
-    const { children } = props; // For retrocompatibility purposes (pretty rare use case)
+    const { children } = props;
+
+    // For retrocompatibility purposes (pretty rare use case)
     // See https://github.com/facebook/docusaurus/pull/1584
 
     if (isValidElement(children)) {
@@ -47,26 +53,29 @@ const MDXComponents = {
   },
   a: (props) => <Link {...props} />,
   pre: (props) => {
-    const { children } = props; // See comment for `code` above
+    const { children } = props;
 
-    // @ts-expect-error ts-migrate(2339) FIXME: Property 'children' does not exist on type 'unknow... Remove this comment to see the full error message
+    // See comment for `code` above
     if (isValidElement(children) && isValidElement(children?.props?.children)) {
-      // @ts-expect-error ts-migrate(2339) FIXME: Property 'children' does not exist on type 'unknow... Remove this comment to see the full error message
       return children.props.children;
     }
 
     return (
       <CodeBlock
-        {...(isValidElement(children) ? children?.props : { ...props })}
+        {...((isValidElement(children)
+          ? children?.props
+          : { ...props }) as Props)}
       />
     );
   },
-  details: (props) => {
-    const items = React.Children.toArray(props.children); // Split summary item from the rest to pass it as a separate prop to the Detais theme component
-
-    // @ts-expect-error ts-migrate(2339) FIXME: Property 'props' does not exist on type 'ReactChil... Remove this comment to see the full error message
-    const summary = items.find((item) => item?.props?.mdxType === 'summary');
+  details: (props): JSX.Element => {
+    const items = React.Children.toArray(props.children) as ReactElement[];
+    // Split summary item from the rest to pass it as a separate prop to the Details theme component
+    const summary: ReactElement<ComponentProps<'summary'>> = items.find(
+      (item) => item?.props?.mdxType === 'summary',
+    )!;
     const children = <>{items.filter((item) => item !== summary)}</>;
+
     return (
       <Details {...props} summary={summary}>
         {children}
