@@ -6,11 +6,20 @@
  */
 import React from 'react';
 import DefaultNavbarItem from '@theme/NavbarItem/DefaultNavbarItem';
-import DropdownNavbarItem from '@theme/NavbarItem/DropdownNavbarItem';
+import DropdownNavbarItem, {
+  Props as DropdownNavbarItemProps,
+} from '@theme/NavbarItem/DropdownNavbarItem';
 import MegaDropdownNavbarItem from './MegaDropdownNavbarItem';
 import LocaleDropdownNavbarItem from '@theme/NavbarItem/LocaleDropdownNavbarItem';
 import SearchNavbarItem from '@theme/NavbarItem/SearchNavbarItem';
-const NavbarItemComponents = {
+import type { Types, Props } from '@theme/NavbarItem';
+
+const NavbarItemComponents: Record<
+  Exclude<Types, undefined>,
+  // TODO: properly type this
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  () => (props: any) => JSX.Element
+> = {
   default: () => DefaultNavbarItem,
   localeDropdown: () => LocaleDropdownNavbarItem,
   search: () => SearchNavbarItem,
@@ -18,40 +27,45 @@ const NavbarItemComponents = {
   megaDropdown: () => MegaDropdownNavbarItem,
   // Need to lazy load these items as we don't know for sure the docs plugin is loaded
   // See https://github.com/facebook/docusaurus/issues/3360
-
-  /* eslint-disable no-undef, global-require */
+  /* eslint-disable @typescript-eslint/no-var-requires, global-require */
   docsVersion: () => require('@theme/NavbarItem/DocsVersionNavbarItem').default,
   docsVersionDropdown: () =>
     require('@theme/NavbarItem/DocsVersionDropdownNavbarItem').default,
   doc: () => require('@theme/NavbarItem/DocNavbarItem').default,
-  /* eslint-enable no-undef, global-require */
-};
+  /* eslint-enable @typescript-eslint/no-var-requires, global-require */
+} as const;
 
-const getNavbarItemComponent = (type) => {
+type NavbarItemComponentType = keyof typeof NavbarItemComponents;
+
+const getNavbarItemComponent = (type: NavbarItemComponentType) => {
   const navbarItemComponentFn = NavbarItemComponents[type];
-
   if (!navbarItemComponentFn) {
     throw new Error(`No NavbarItem component found for type "${type}".`);
   }
-
   return navbarItemComponentFn();
 };
 
-function getComponentType(type, isDropdown, isMegaDropdown) {
+function getComponentType(
+  type: Types,
+  isDropdown: boolean,
+  isMegaDropdown: boolean,
+): NavbarItemComponentType | 'megaDropdown' {
   if (isMegaDropdown) {
     return 'megaDropdown';
   }
 
   // Backward compatibility: navbar item with no type set
-  // but containing dropdown items should use the type "dropdown"
+  // but containing dropdown items should use the type 'dropdown'
   if (!type || type === 'default') {
     return isDropdown ? 'dropdown' : 'default';
   }
-
-  return type;
+  return type as NavbarItemComponentType;
 }
 
-function NavbarItem({ type, items, layout, ...props }) {
+export const getInfimaActiveClassName = (mobile?: boolean): string =>
+  mobile ? 'menu__link--active' : 'navbar__link--active';
+
+export default function NavbarItem({ type, items, layout, ...props }: Props): JSX.Element {
   const componentType = getComponentType(
     type,
     items !== undefined,
@@ -60,5 +74,3 @@ function NavbarItem({ type, items, layout, ...props }) {
   const NavbarItemComponent = getNavbarItemComponent(componentType);
   return <NavbarItemComponent items={items} layout={layout} {...props} />;
 }
-
-export default NavbarItem;
