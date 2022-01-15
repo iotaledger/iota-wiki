@@ -5,26 +5,33 @@
  * LICENSE file in the root directory of this source tree.
  */
 import React, { useState, useRef, memo } from 'react';
-import { useThemeConfig } from '@docusaurus/theme-common';
+import type { Props } from '@theme/Toggle';
+import { useThemeConfig, ColorModeConfig } from '@docusaurus/theme-common';
 import useIsBrowser from '@docusaurus/useIsBrowser';
+
 import clsx from 'clsx';
 import './styles.css';
 
-const ToggleMemo = memo(
+const ToggleComponent = memo(
   ({
-    // @ts-expect-error ts-migrate(2339) FIXME: Property 'className' does not exist on type '{ chi... Remove this comment to see the full error message
     className,
-    // @ts-expect-error ts-migrate(2339) FIXME: Property 'styles' does not exist on type '{ childr... Remove this comment to see the full error message
-    styles,
-    // @ts-expect-error ts-migrate(2339) FIXME: Property 'icons' does not exist on type '{ childre... Remove this comment to see the full error message
-    icons,
-    // @ts-expect-error ts-migrate(2339) FIXME: Property 'checked' does not exist on type '{ child... Remove this comment to see the full error message
+    switchConfig,
     checked: defaultChecked,
-    // @ts-expect-error ts-migrate(2339) FIXME: Property 'disabled' does not exist on type '{ chil... Remove this comment to see the full error message
     disabled,
-    // @ts-expect-error ts-migrate(2339) FIXME: Property 'onChange' does not exist on type '{ chil... Remove this comment to see the full error message
     onChange,
-  }) => {
+  }: Props & {
+    switchConfig: ColorModeConfig['switchConfig'];
+    disabled: boolean;
+  }): JSX.Element => {
+    const { darkIcon, darkIconStyle, lightIcon, lightIconStyle } = switchConfig;
+    const styles = {
+      unchecked: lightIconStyle,
+      checked: darkIconStyle,
+    };
+    const icons = {
+      unchecked: lightIcon,
+      checked: darkIcon,
+    };
     const [checked, setChecked] = useState(defaultChecked);
     const [focused, setFocused] = useState(false);
     const inputRef = useRef(null);
@@ -73,26 +80,16 @@ const ToggleMemo = memo(
   },
 );
 
-ToggleMemo.displayName = 'ToggleMemo';
-
-export default function Toggle(props) {
+export default function Toggle(props: Props): JSX.Element {
   const {
-    colorMode: {
-      switchConfig: { darkIcon, darkIconStyle, lightIcon, lightIconStyle },
-    },
+    colorMode: { switchConfig },
   } = useThemeConfig();
   const isBrowser = useIsBrowser();
+
   return (
-    <ToggleMemo
+    <ToggleComponent
+      switchConfig={switchConfig}
       disabled={!isBrowser}
-      styles={{
-        unchecked: lightIconStyle,
-        checked: darkIconStyle,
-      }}
-      icons={{
-        unchecked: lightIcon,
-        checked: darkIcon,
-      }}
       {...props}
     />
   );
