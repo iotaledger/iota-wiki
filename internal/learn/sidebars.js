@@ -86,6 +86,7 @@ module.exports = {
         },
         'future/shimmer',
         'future/assembly',
+        'future/role-of-iota',
         'future/dust-protection',
         'future/nfts',
       ],
