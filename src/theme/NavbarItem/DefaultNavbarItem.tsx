@@ -24,7 +24,9 @@ export function NavLink({
   to,
   href,
   label,
+  // @ts-ignore
   sublabel,
+  // @ts-ignore
   icon,
   activeClassName = 'navbar__link--active',
   prependBaseUrlToHref,

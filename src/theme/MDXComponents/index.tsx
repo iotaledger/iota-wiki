@@ -88,6 +88,7 @@ const MDXComponents: MDXComponentsObject = {
   h4: Heading('h4'),
   h5: Heading('h5'),
   h6: Heading('h6'),
+  // @ts-ignore
   img: (props) => <FullscreenImage.Source {...props} />,
 };
 export default MDXComponents;

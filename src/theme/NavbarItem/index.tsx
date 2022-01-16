@@ -24,6 +24,7 @@ const NavbarItemComponents: Record<
   localeDropdown: () => LocaleDropdownNavbarItem,
   search: () => SearchNavbarItem,
   dropdown: () => DropdownNavbarItem,
+  // @ts-ignore
   megaDropdown: () => MegaDropdownNavbarItem,
   // Need to lazy load these items as we don't know for sure the docs plugin is loaded
   // See https://github.com/facebook/docusaurus/issues/3360
@@ -65,12 +66,14 @@ function getComponentType(
 export const getInfimaActiveClassName = (mobile?: boolean): string =>
   mobile ? 'menu__link--active' : 'navbar__link--active';
 
+// @ts-ignore
 export default function NavbarItem({ type, items, layout, ...props }: Props): JSX.Element {
   const componentType = getComponentType(
     type,
     items !== undefined,
     layout !== undefined,
   );
+  // @ts-ignore
   const NavbarItemComponent = getNavbarItemComponent(componentType);
   return <NavbarItemComponent items={items} layout={layout} {...props} />;
 }
