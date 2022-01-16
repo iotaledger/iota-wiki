@@ -12,9 +12,7 @@ import {
   useThemeConfig,
 } from '@docusaurus/theme-common';
 import useBaseUrl from '@docusaurus/useBaseUrl';
-import isInternalUrl from '@docusaurus/isInternalUrl';
 import ThemedImage, { Props as ThemedImageProps } from '@theme/ThemedImage';
-import IconExternalLink from '@theme/IconExternalLink';
 import Social from '../Social';
 
 function FooterLink({
@@ -38,14 +36,7 @@ function FooterLink({
           to: toUrl,
         })}
       {...props}>
-      {href && !isInternalUrl(href) ? (
-        <span>
-          {label}
-          <IconExternalLink />
-        </span>
-      ) : (
-        label
-      )}
+        {label}
     </Link>
   );
 }
