@@ -21,7 +21,7 @@ The EDAG CityBot is a multi-functional, fully autonomous robot vehicle with swar
 
 ### Filancore
 
-Filancore is a German based company with the mission to manage Industrial IoT in the most secure & efficient way in areas such as Automotive/Mobility, Health Care, Smart City, Industrial, Environmental/Farming and Smart Home/Building.
+Filancore is a German based company with the mission to manage Industrial IoT in the most secure and efficient way in areas such as Automotive and Mobility, Health Care, Smart City, Industrial, Environmental and Farming, Smart Home and Smart Building.
 
 - [Filancore Medium](https://filancoregmbh.medium.com/distributed-ledger-technology-for-automotive-cyber-systems-6eabb8196efb)
 - [Filancore Twitter](https://twitter.com/FilancoreGmbH/status/1417772013427560449?s=19)
