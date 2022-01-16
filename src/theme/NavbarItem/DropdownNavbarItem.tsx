@@ -70,7 +70,7 @@ function DropdownNavbarItemDesktop({
   ...props
 }: DesktopOrMobileNavBarItemProps) {
   const dropdownRef = useRef<HTMLDivElement>(null);
-  const dropdownMenuRef = useRef<HTMLDivElement>(null);
+  const dropdownMenuRef = useRef<HTMLUListElement>(null);
   const [showDropdown, setShowDropdown] = useState(false);
 
   /**
@@ -192,6 +192,7 @@ function DropdownNavbarItemMobile({
   );
 }
 
+// @ts-ignore
 function DropdownNavbarItem({ mobile = false, isDropdownItem: _isDropdownItem, ...props }: Props): JSX.Element {
   const Comp = mobile ? DropdownNavbarItemMobile : DropdownNavbarItemDesktop;
   return <Comp {...props} />;
