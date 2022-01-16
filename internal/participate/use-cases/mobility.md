@@ -15,7 +15,7 @@ MOBI is a nonprofit alliance of many of the world’s largest vehicle manufactur
 
 ### EDAG CityBot
 
-The EDAG CityBot is a multi-functional, fully autonomous robot vehicle with swarm intelligence, which is completely emission-free. EDAG CityBots are an integral part of a complete smart city operating system. EDAG Engineering Group AG roughly has 8000 employees and > 60 locations worldwide.
+The EDAG CityBot is a multi-functional, fully autonomous robot vehicle with swarm intelligence, which is completely emission-free. EDAG CityBots are an integral part of a complete smart city operating system. EDAG Engineering Group AG roughly has 8000 employees and more than 60 locations worldwide.
 
 - [EDAG CityBot](https://www.edag-citybot.de/en/)
 
