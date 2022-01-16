@@ -19,6 +19,10 @@ import styles from './styles.module.css';
 import TagsListInline from '@theme/TagsListInline';
 import BlogPostAuthors from '@theme/BlogPostAuthors';
 
+type UrlFrontmatter = {
+  url?: string;
+}
+
 // Very simple pluralization: probably good enough for now
 function useReadingTimePlural() {
   const { selectMessage } = usePluralForm();
@@ -63,7 +67,7 @@ function BlogPostItem(props: Props): JSX.Element {
     authors,
   } = metadata;
   const image = assets.image ?? frontMatter.image;
-  const url = frontMatter.url;
+  const url = (frontMatter as UrlFrontmatter).url;
 
   const renderPostHeader = () => {
     const TitleHeading = isBlogPostPage ? 'h1' : 'h2';
