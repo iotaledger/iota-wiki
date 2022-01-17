@@ -18,20 +18,23 @@ import isInternalUrl from '@docusaurus/isInternalUrl';
 
 const dropdownLinkActiveClass = 'dropdown__link--active';
 
+interface ExtendedNavLinkProps extends NavLinkProps {
+  sublabel?: string;
+  icon?: string;
+}
+
 export function NavLink({
   activeBasePath,
   activeBaseRegex,
   to,
   href,
   label,
-  // @ts-ignore
   sublabel,
-  // @ts-ignore
   icon,
   activeClassName = 'navbar__link--active',
   prependBaseUrlToHref,
   ...props
-}: NavLinkProps): JSX.Element {
+}: ExtendedNavLinkProps): JSX.Element {
   // TODO all this seems hacky
   // {to: 'version'} should probably be forbidden, in favor of {to: '/version'}
   const toUrl = useBaseUrl(to);
