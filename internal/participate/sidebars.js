@@ -37,13 +37,14 @@ module.exports = {
       label: 'Use Cases',
       collapsed: true,
       items: [
+        'use-cases/data-confidence',
+        'use-cases/digital-assets',
+        'use-cases/eco-social-projects',
         'use-cases/industry-applications',
         'use-cases/internet-of-things',
-        'use-cases/digital-assets',
         'use-cases/mobility',
+        'use-cases/real-estate',
         'use-cases/trade-and-supply-chain',
-        'use-cases/data-confidence',
-        'use-cases/eco-social-projects',
       ],
     },
     {
