@@ -13,6 +13,10 @@ import FullscreenImage from '../FullscreenImage';
 import Details from '@theme/Details';
 import type { MDXComponentsObject } from '@theme/MDXComponents';
 
+interface ExtendedMDXComponentsObject extends MDXComponentsObject {
+  readonly img: (props: ComponentProps<'img'>) => JSX.Element;
+}
+
 import './styles.css';
 
 // MDX elements are wrapped through the MDX pragma
@@ -28,7 +32,7 @@ function unwrapMDXElement(element: ReactElement) {
   return element;
 }
 
-const MDXComponents: MDXComponentsObject = {
+const MDXComponents: ExtendedMDXComponentsObject = {
   head: (props) => {
     const unwrappedChildren = React.Children.map(props.children, (child) =>
       unwrapMDXElement(child as ReactElement),
@@ -88,7 +92,7 @@ const MDXComponents: MDXComponentsObject = {
   h4: Heading('h4'),
   h5: Heading('h5'),
   h6: Heading('h6'),
-  // @ts-ignore
   img: (props) => <FullscreenImage.Source {...props} />,
 };
+
 export default MDXComponents;
