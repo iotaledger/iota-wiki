@@ -15,7 +15,7 @@ import {
 } from '@docusaurus/theme-common';
 import type {
   DesktopOrMobileNavBarItemProps,
-  Props,
+  Props as DropdownNavbarItemProps,
 } from '@theme/NavbarItem/DropdownNavbarItem';
 import type { LinkLikeNavbarItemProps } from '@theme/NavbarItem';
 
@@ -23,6 +23,10 @@ import { NavLink } from '@theme/NavbarItem/DefaultNavbarItem';
 import NavbarItem from '@theme/NavbarItem';
 
 const dropdownLinkActiveClass = 'dropdown__link--active';
+
+interface ExtendedDropdownNavbarItemProps extends DropdownNavbarItemProps {
+  isDropdownItem: boolean;
+}
 
 function isItemActive(
   item: LinkLikeNavbarItemProps,
@@ -192,8 +196,7 @@ function DropdownNavbarItemMobile({
   );
 }
 
-// @ts-ignore
-function DropdownNavbarItem({ mobile = false, isDropdownItem: _isDropdownItem, ...props }: Props): JSX.Element {
+function DropdownNavbarItem({ mobile = false, isDropdownItem: _isDropdownItem, ...props }: ExtendedDropdownNavbarItemProps): JSX.Element {
   const Comp = mobile ? DropdownNavbarItemMobile : DropdownNavbarItemDesktop;
   return <Comp {...props} />;
 }
