@@ -86,7 +86,6 @@ module.exports = {
           layout: [
             '0 1 3 4',
             '0 1 3 4',
-            '0 1 3 2',
             '. 1 3 2',
             '. 1 3 2',
             '. 1 3 2',
@@ -135,13 +134,6 @@ module.exports = {
                   to: 'chronicle.rs/welcome',
                   icon: '\ue90c',
                   activeBaseRegex: '^/chronicle.rs/.*',
-                },
-                {
-                  label: 'Integration Services',
-                  sublabel: 'Integrate IOTA seamlessly',
-                  to: 'integration-services/welcome',
-                  icon: '\ue90d',
-                  activeBaseRegex: '^/integration-services/.*',
                 },
               ],
             },
