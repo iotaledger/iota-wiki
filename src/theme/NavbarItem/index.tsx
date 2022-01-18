@@ -92,7 +92,6 @@ export default function NavbarItem({ type, items, layout, ...props }): JSX.Eleme
     items !== undefined,
     layout !== undefined,
   );
-  // @ts-ignore
   const NavbarItemComponent = getNavbarItemComponent(componentType);
   return <NavbarItemComponent items={items} layout={layout} {...props} />;
 }
