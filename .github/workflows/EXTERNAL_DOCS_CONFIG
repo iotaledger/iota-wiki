@@ -138,7 +138,7 @@
       "@docusaurus/plugin-content-docs",
       {
         id: "integration-services",
-        path: "external/integration-services//documentation/docs",
+        path: "external/integration-services/documentation/docs",
         routeBasePath: "integration-services",
         sidebarPath: require.resolve("./external/integration-services/documentation/sidebars.js"),
         editUrl: 'https://github.com/iotaledger/integration-services/edit/develop',
