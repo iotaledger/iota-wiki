@@ -17,8 +17,20 @@ import useHideableNavbar from '@theme/hooks/useHideableNavbar';
 import { NavLink } from '@theme/NavbarItem/DefaultNavbarItem';
 import NavbarItem from '@theme/NavbarItem';
 import './styles.css';
+import type {NavLinkProps} from '@theme/NavbarItem/DefaultNavbarItem';
 
 const dropdownLinkActiveClass = 'dropdown__link--active';
+
+interface DesktopOrMobileMegaDropdownNavbarItemProps extends NavLinkProps {
+  readonly position?: 'left' | 'right';
+  readonly items_: readonly any[];
+  readonly layout?: any;
+  readonly className?: string;
+}
+
+export interface Props extends DesktopOrMobileMegaDropdownNavbarItemProps {
+  readonly mobile?: boolean;
+}
 
 function isItemActive(item, localPathname) {
   if (isSamePath(item.to, localPathname)) {
@@ -111,7 +123,7 @@ function MegaDropdownNavbarItemDesktop({
   position,
   className,
   ...props
-}) {
+} : DesktopOrMobileMegaDropdownNavbarItemProps) {
   const localPathname = useLocalPathname();
   const dropdownRef = useRef(null);
   const [showDropdown, setShowDropdown] = useState(false);
@@ -244,7 +256,7 @@ function MegaDropdownNavbarItemDesktop({
   );
 }
 
-function MegaDropdownNavbarItemMobile({ items_: items, className, ...props }) {
+function MegaDropdownNavbarItemMobile({ items_: items, className, ...props } : DesktopOrMobileMegaDropdownNavbarItemProps) {
   /* eslint-disable-next-line react/prop-types */
   delete props.position;
   /* eslint-disable-next-line react/prop-types */
@@ -303,11 +315,10 @@ function MegaDropdownNavbarItemMobile({ items_: items, className, ...props }) {
   );
 }
 
-function MegaDropdownNavbarItem({ mobile = false, ...props }) {
+function MegaDropdownNavbarItem({ mobile = false, ...props }: Props): JSX.Element {
   const Comp = mobile
     ? MegaDropdownNavbarItemMobile
     : MegaDropdownNavbarItemDesktop;
-  // @ts-expect-error ts-migrate(2739) FIXME: Type '{}' is missing the following properties from... Remove this comment to see the full error message
   return <Comp {...props} />;
 }
 

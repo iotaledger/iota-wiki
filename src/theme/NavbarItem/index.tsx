@@ -5,14 +5,35 @@
  * LICENSE file in the root directory of this source tree.
  */
 import React from 'react';
+import type { ComponentProps } from 'react';
 import DefaultNavbarItem from '@theme/NavbarItem/DefaultNavbarItem';
-import DropdownNavbarItem, {
-  Props as DropdownNavbarItemProps,
-} from '@theme/NavbarItem/DropdownNavbarItem';
+import DropdownNavbarItem from '@theme/NavbarItem/DropdownNavbarItem';
 import MegaDropdownNavbarItem from './MegaDropdownNavbarItem';
 import LocaleDropdownNavbarItem from '@theme/NavbarItem/LocaleDropdownNavbarItem';
 import SearchNavbarItem from '@theme/NavbarItem/SearchNavbarItem';
-import type { Types, Props } from '@theme/NavbarItem';
+import type { LinkLikeNavbarItemProps } from '@theme/NavbarItem';
+import type { Props as DropdownNavbarItemProps } from '@theme/NavbarItem/DropdownNavbarItem';
+import type { Props as DocsVersionDropdownNavbarItemProps } from '@theme/NavbarItem/DocsVersionDropdownNavbarItem';
+import type { Props as LocaleDropdownNavbarItemProps } from '@theme/NavbarItem/LocaleDropdownNavbarItem';
+import type { Props as SearchNavbarItemProps } from '@theme/NavbarItem/SearchNavbarItem';
+import type { Props as MegaDropdownNavbarItemProps } from './MegaDropdownNavbarItem';
+
+type Props = ComponentProps<'a'> & {
+  readonly position?: 'left' | 'right';
+} & (
+    | LinkLikeNavbarItemProps
+    | ({ readonly type?: 'dropdown' } & DropdownNavbarItemProps)
+    | ({ readonly type: 'megaDropdown' } & MegaDropdownNavbarItemProps)
+    | ({
+      readonly type: 'docsVersionDropdown';
+    } & DocsVersionDropdownNavbarItemProps)
+    | ({ readonly type: 'localeDropdown' } & LocaleDropdownNavbarItemProps)
+    | ({
+      readonly type: 'search';
+    } & SearchNavbarItemProps)
+  );
+
+type Types = Props['type'];
 
 const NavbarItemComponents: Record<
   Exclude<Types, undefined>,
@@ -24,7 +45,6 @@ const NavbarItemComponents: Record<
   localeDropdown: () => LocaleDropdownNavbarItem,
   search: () => SearchNavbarItem,
   dropdown: () => DropdownNavbarItem,
-  // @ts-ignore
   megaDropdown: () => MegaDropdownNavbarItem,
   // Need to lazy load these items as we don't know for sure the docs plugin is loaded
   // See https://github.com/facebook/docusaurus/issues/3360
@@ -50,7 +70,7 @@ function getComponentType(
   type: Types,
   isDropdown: boolean,
   isMegaDropdown: boolean,
-): NavbarItemComponentType | 'megaDropdown' {
+): NavbarItemComponentType {
   if (isMegaDropdown) {
     return 'megaDropdown';
   }
@@ -66,8 +86,7 @@ function getComponentType(
 export const getInfimaActiveClassName = (mobile?: boolean): string =>
   mobile ? 'menu__link--active' : 'navbar__link--active';
 
-// @ts-ignore
-export default function NavbarItem({ type, items, layout, ...props }: Props): JSX.Element {
+export default function NavbarItem({ type, items, layout, ...props }): JSX.Element {
   const componentType = getComponentType(
     type,
     items !== undefined,
