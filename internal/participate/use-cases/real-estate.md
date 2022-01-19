@@ -1,6 +1,6 @@
 ---
 title: Real Estate
-description: IOTA is deeply commited to improve the life of humans and protect the natural ressources and environments on our planet
+description: IOTA is the underlying technology for many ground-breaking use cases. Real estate is one of them.
 ---
 
 # Real Estate

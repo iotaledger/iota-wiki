@@ -1,6 +1,6 @@
 ---
 title: Data Confidence
-description: Data on the Edge and in IOT solutions needs Trsut. IOTA has developed a solution together with Dell and INTEL that delivers exactly this trust.
+description: Evaluating the confidence in data before it is used by an application
 ---
 
 # Data Confidence

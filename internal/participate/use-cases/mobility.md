@@ -1,6 +1,6 @@
 ---
 title: Mobility
-description: My document description from SEO
+description: IOTA enables accessible, affordable, and sustainable connected mobility.
 ---
 
 # Mobility
