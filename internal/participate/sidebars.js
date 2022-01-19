@@ -38,10 +38,8 @@ module.exports = {
       collapsed: true,
       items: [
         'use-cases/data-confidence',
-        'use-cases/digital-assets',
         'use-cases/eco-social-projects',
         'use-cases/industry-applications',
-        'use-cases/internet-of-things',
         'use-cases/mobility',
         'use-cases/real-estate',
         'use-cases/trade-and-supply-chain',
