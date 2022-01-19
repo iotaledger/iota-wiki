@@ -3,7 +3,7 @@ import './styles.css';
 
 const Context = createContext((url : string) => {});
 
-// eslint-disable-next-line react/prop-types
+
 function Provider({ children }) {
   const [imageProps, setImageProps] = useState('');
 

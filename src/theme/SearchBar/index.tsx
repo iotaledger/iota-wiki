@@ -35,13 +35,13 @@ function ResultsFooter({ state, onClose }) {
   );
 }
 
-// eslint-disable-next-line react/prop-types
+
 function DocSearch({ contextualSearch, ...props }) {
   const { siteMetadata } = useDocusaurusContext();
 
   const contextualSearchFacetFilters = useAlgoliaContextualFacetFilters();
 
-  // eslint-disable-next-line react/prop-types
+  
   const configFacetFilters = props.searchParameters?.facetFilters ?? [];
 
   const facetFilters = contextualSearch
@@ -52,7 +52,7 @@ function DocSearch({ contextualSearch, ...props }) {
 
   // we let user override default searchParameters if he wants to
 
-  // eslint-disable-next-line react/prop-types
+  
   const searchParameters = {
     //eslint-disable-next-line react/prop-types
     ...props.searchParameters,
