@@ -1,7 +1,7 @@
 import React from 'react';
 import { useThemeConfig } from '@docusaurus/theme-common';
 import './styles.css';
-import get_socials_data from '../../../src/helper/socials';
+import get_socials_data from '@site/src/helper/socials';
 
 function SocialLink({ url, backgroundColor }) {
   const data = get_socials_data(url);
