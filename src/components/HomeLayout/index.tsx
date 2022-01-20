@@ -1,11 +1,15 @@
 import React from 'react';
-import CardWithImage from '@site/src/components/CardWithImage';
+import CardWithImage, { CardWithImageProps } from '@site/src/components/CardWithImage';
 import Layout from '@theme/Layout';
 import { useThemeConfig } from '@docusaurus/theme-common';
+import { ThemeConfig } from '@docusaurus/preset-classic';
+
+export interface HomeLayoutConfig extends ThemeConfig {
+  cards: CardWithImageProps[];
+}
 
 export default function HomeLayout({ description, title, tagline }) {
-  // @ts-expect-error ts-migrate(2339) FIXME: Property 'cards' does not exist on type 'ThemeConf... Remove this comment to see the full error message
-  const { cards } = useThemeConfig();
+  const { cards } = useThemeConfig() as HomeLayoutConfig;
 
   return (
     <Layout description={description}>

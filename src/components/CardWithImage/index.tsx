@@ -2,6 +2,13 @@ import React from 'react';
 import { useHistory } from 'react-router-dom';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
+export interface CardWithImageProps {
+  title: string;
+  image: string;
+  link: string;
+  description: string;
+};
+
 export default function HomePageCard({ title, image, link, description }) {
   const history = useHistory();
 
