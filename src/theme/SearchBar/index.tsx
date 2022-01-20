@@ -76,7 +76,11 @@ function DocSearch({
 
   const facetFilters = contextualSearch
     ? // Merge contextual search filters with config filters
-    [...contextualSearchFacetFilters, ...configFacetFilters]
+    typeof configFacetFilters === 'string'
+      ?
+      [...contextualSearchFacetFilters, configFacetFilters]
+      :
+      [...contextualSearchFacetFilters, ...configFacetFilters]
     : // ... or use config facetFilters
     configFacetFilters;
 
