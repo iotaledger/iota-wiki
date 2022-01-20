@@ -1,7 +1,18 @@
 import React from 'react';
 import get_socials_data from '../../helper/socials';
 
-function SocialLink({ link }) {
+interface SocialLinkProps {
+  link: string;
+}
+
+export interface TeamMemberProps {
+  name: string;
+  title: string;
+  image_url: string;
+  social_links: string[];
+}
+
+function SocialLink({ link } : SocialLinkProps) {
   const data = get_socials_data(link);
 
   return (
@@ -11,8 +22,7 @@ function SocialLink({ link }) {
   );
 }
 
-const TeamMember = function (props) {
-  const { name, title, image_url, social_links } = props;
+const TeamMember = function ({ name, title, image_url, social_links }: TeamMemberProps) {
 
   return (
     <div className='col margin-vert--md'>
@@ -33,8 +43,8 @@ const TeamMember = function (props) {
         <div className='card__footer'>
           <div className='link-list'>
             {social_links &&
-              social_links.map((props, idx) => (
-                <SocialLink key={idx} link={props} />
+              social_links.map((link, idx) => (
+                <SocialLink key={idx} link={link} />
               ))}
           </div>
         </div>
