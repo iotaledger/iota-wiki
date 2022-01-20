@@ -4,7 +4,11 @@ import 'react-image-gallery/styles/css/image-gallery.css';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import { useRef } from 'react';
 
-export default function ImageSlider({ path }) {
+export interface ImageSliderProps {
+  path: string;
+}
+
+export default function ImageSlider({ path }: ImageSliderProps) {
   // Import images from the infographics folder
   function importImages(r) {
     return r.keys().map((x) => x.replace('.', ''));
