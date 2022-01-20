@@ -32,8 +32,7 @@ export default function ImageSlider({ path }) {
           renderItem: () => (
             <video
               controls
-              // @ts-expect-error ts-migrate(2322) FIXME: Type 'string' is not assignable to type 'boolean'.
-              autoPlay='autoplay'
+              autoPlay={true}
               muted
               className='image-gallery-video'
             >
