@@ -171,7 +171,7 @@ function DocSearch({
   ).current;
 
   const resultsFooterComponent = useMemo(
-    // eslint-disable-next-line react/no-unstable-nested-components
+    // eslint-disable-next-line react/no-unstable-nested-components, react/display-name
     () => (footerProps: ResultsFooterProps) =>
       <ResultsFooter {...footerProps} onClose={onClose} />,
     [onClose],
