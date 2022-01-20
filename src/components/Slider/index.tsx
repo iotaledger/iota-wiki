@@ -11,7 +11,6 @@ export default function ImageSlider({ path }) {
   }
 
   const allImages = importImages(
-    // @ts-expect-error ts-migrate(2339) FIXME: Property 'context' does not exist on type 'NodeReq... Remove this comment to see the full error message
     require.context('/img/', true, /\.(png|jpe?g|svg|mp4)$/),
   );
   const requestedImages = allImages.filter((word) => word.startsWith(path));
