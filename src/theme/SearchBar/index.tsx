@@ -4,6 +4,7 @@
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  */
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 
 import React, { useState, useRef, useCallback, useMemo } from 'react';
 import { createPortal } from 'react-dom';
@@ -14,18 +15,45 @@ import Link from '@docusaurus/Link';
 import Head from '@docusaurus/Head';
 // @ts-expect-error ts-migrate(2307) FIXME: Cannot find module '@theme/hooks/useSearchQuery' o... Remove this comment to see the full error message
 import useSearchQuery from '@theme/hooks/useSearchQuery';
+import { isRegexpStringMatch } from '@docusaurus/theme-common';
 import { DocSearchButton, useDocSearchKeyboardEvents } from '@docsearch/react';
 // @ts-expect-error ts-migrate(2307) FIXME: Cannot find module '@theme/hooks/useAlgoliaContext... Remove this comment to see the full error message
 import useAlgoliaContextualFacetFilters from '@theme/hooks/useAlgoliaContextualFacetFilters';
 import { translate } from '@docusaurus/Translate';
 
-let DocSearchModal = null;
+import type {
+  DocSearchModal as DocSearchModalType,
+  DocSearchModalProps,
+} from '@docsearch/react';
+import type {
+  InternalDocSearchHit,
+  StoredDocSearchHit,
+} from '@docsearch/react/dist/esm/types';
+import type { AutocompleteState } from '@algolia/autocomplete-core';
 
-function Hit({ hit, children }) {
+type DocSearchProps = Omit<
+  DocSearchModalProps,
+  'onClose' | 'initialScrollY'
+> & {
+  contextualSearch?: string;
+  externalUrlRegex?: string;
+};
+
+let DocSearchModal: typeof DocSearchModalType | null = null;
+
+function Hit({ hit, children, }: {
+  hit: InternalDocSearchHit | StoredDocSearchHit;
+  children: React.ReactNode;
+}) {
   return <Link to={hit.url}>{children}</Link>;
 }
 
-function ResultsFooter({ state, onClose }) {
+type ResultsFooterProps = {
+  state: AutocompleteState<InternalDocSearchHit>;
+  onClose: () => void;
+};
+
+function ResultsFooter({ state, onClose }: ResultsFooterProps) {
   const { generateSearchPageLink } = useSearchQuery();
 
   return (
@@ -35,36 +63,37 @@ function ResultsFooter({ state, onClose }) {
   );
 }
 
-
-function DocSearch({ contextualSearch, ...props }) {
+function DocSearch({
+  contextualSearch,
+  externalUrlRegex,
+  ...props
+}: DocSearchProps) {
   const { siteMetadata } = useDocusaurusContext();
 
   const contextualSearchFacetFilters = useAlgoliaContextualFacetFilters();
 
-  
   const configFacetFilters = props.searchParameters?.facetFilters ?? [];
 
   const facetFilters = contextualSearch
     ? // Merge contextual search filters with config filters
-      [...contextualSearchFacetFilters, ...configFacetFilters]
+    [...contextualSearchFacetFilters, ...configFacetFilters]
     : // ... or use config facetFilters
-      configFacetFilters;
+    configFacetFilters;
 
   // we let user override default searchParameters if he wants to
-
-  
   const searchParameters = {
-    //eslint-disable-next-line react/prop-types
     ...props.searchParameters,
     facetFilters,
   };
 
   const { withBaseUrl } = useBaseUrlUtils();
   const history = useHistory();
-  const searchContainer = useRef(null);
-  const searchButtonRef = useRef(null);
+  const searchContainer = useRef<HTMLDivElement | null>(null);
+  const searchButtonRef = useRef<HTMLButtonElement>(null);
   const [isOpen, setIsOpen] = useState(false);
-  const [initialQuery, setInitialQuery] = useState(null);
+  const [initialQuery, setInitialQuery] = useState<string | undefined>(
+    undefined,
+  );
 
   const importDocSearchModalIfNeeded = useCallback(() => {
     if (DocSearchModal) {
@@ -72,7 +101,9 @@ function DocSearch({ contextualSearch, ...props }) {
     }
 
     return Promise.all([
+      // @ts-ignore
       import('@docsearch/react/modal'),
+      // @ts-ignore
       import('@docsearch/react/style'),
       import('./styles.css'),
     ]).then(([{ DocSearchModal: Modal }]) => {
@@ -93,7 +124,7 @@ function DocSearch({ contextualSearch, ...props }) {
 
   const onClose = useCallback(() => {
     setIsOpen(false);
-    searchContainer.current.remove();
+    searchContainer.current?.remove();
   }, [setIsOpen]);
 
   const onInput = useCallback(
@@ -107,34 +138,40 @@ function DocSearch({ contextualSearch, ...props }) {
   );
 
   const navigator = useRef({
-    navigate({ itemUrl }) {
-      history.push(itemUrl);
+    navigate({ itemUrl }: { itemUrl?: string }) {
+      // Algolia results could contain URL's from other domains which cannot
+      // be served through history and should navigate with window.location
+      if (isRegexpStringMatch(externalUrlRegex, itemUrl)) {
+        window.location.href = itemUrl!;
+      } else {
+        history.push(itemUrl!);
+      }
     },
   }).current;
 
-  const transformItems = useRef((items) => {
-    return items.map((item) => {
-      // We transform the absolute URL into a relative URL.
-      // Alternatively, we can use `new URL(item.url)` but it's not
-      // supported in IE.
-      const a = document.createElement('a');
-      a.href = item.url;
+  const transformItems = useRef<DocSearchModalProps['transformItems']>(
+    (items) =>
+      items.map((item) => {
+        // If Algolia contains a external domain, we should navigate without relative URL
+        if (isRegexpStringMatch(externalUrlRegex, item.url)) {
+          return item;
+        }
 
-      return {
-        ...item,
-        url: withBaseUrl(`${a.pathname}${a.hash}`),
-      };
-    });
-  }).current;
+        // We transform the absolute URL into a relative URL.
+        const url = new URL(item.url);
+        return {
+          ...item,
+          url: withBaseUrl(`${url.pathname}${url.hash}`),
+        };
+      }),
+  ).current;
 
   const resultsFooterComponent = useMemo(
-    // eslint-disable-next-line react/display-name
-    () => (footerProps) => <ResultsFooter {...footerProps} onClose={onClose} />,
+    // eslint-disable-next-line react/no-unstable-nested-components
+    () => (footerProps: ResultsFooterProps) =>
+      <ResultsFooter {...footerProps} onClose={onClose} />,
     [onClose],
   );
-
-  // @ts-expect-error ts-migrate(2339) FIXME: Property 'displayName' does not exist on type '(fo... Remove this comment to see the full error message
-  resultsFooterComponent.displayName = 'resultsFooterComponent';
 
   const transformSearchClient = useCallback(
     (searchClient) => {
@@ -170,7 +207,6 @@ function DocSearch({ contextualSearch, ...props }) {
         query faster, especially on mobile. */}
         <link
           rel='preconnect'
-          //eslint-disable-next-line react/prop-types
           href={`https://${props.appId}-dsn.algolia.net`}
           crossOrigin='anonymous'
         />
@@ -191,6 +227,8 @@ function DocSearch({ contextualSearch, ...props }) {
       </div>
 
       {isOpen &&
+        DocSearchModal &&
+        searchContainer.current &&
         createPortal(
           <DocSearchModal
             onClose={onClose}
@@ -210,9 +248,9 @@ function DocSearch({ contextualSearch, ...props }) {
   );
 }
 
-function SearchBar() {
+function SearchBar(): JSX.Element {
   const { siteConfig } = useDocusaurusContext();
-  // @ts-expect-error ts-migrate(2322) FIXME: Type 'unknown' is not assignable to type 'Intrinsi... Remove this comment to see the full error message
+  // @ts-ignore
   return <DocSearch {...siteConfig.themeConfig.algolia} />;
 }
 
