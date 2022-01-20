@@ -66,19 +66,15 @@ const getNavbarItemComponent = (type: NavbarItemComponentType) => {
   return navbarItemComponentFn();
 };
 
-function getComponentType(
-  type: Types,
-  isDropdown: boolean,
-  isMegaDropdown: boolean,
-): NavbarItemComponentType {
-  if (isMegaDropdown) {
+function getComponentType(type, props): NavbarItemComponentType {
+  if (props.items !== undefined) {
     return 'megaDropdown';
   }
 
   // Backward compatibility: navbar item with no type set
   // but containing dropdown items should use the type 'dropdown'
-  if (!type || type === 'default') {
-    return isDropdown ? 'dropdown' : 'default';
+  if (!props.type || props.type === 'default') {
+    return props.layout !== undefined ? 'dropdown' : 'default';
   }
   return type as NavbarItemComponentType;
 }
@@ -86,12 +82,8 @@ function getComponentType(
 export const getInfimaActiveClassName = (mobile?: boolean): string =>
   mobile ? 'menu__link--active' : 'navbar__link--active';
 
-export default function NavbarItem({ type, items, layout, ...props }): JSX.Element {
-  const componentType = getComponentType(
-    type,
-    items !== undefined,
-    layout !== undefined,
-  );
+export default function NavbarItem({ type, ...props }: Props): JSX.Element {
+  const componentType = getComponentType(type, props);
   const NavbarItemComponent = getNavbarItemComponent(componentType);
-  return <NavbarItemComponent items={items} layout={layout} {...props} />;
+  return <NavbarItemComponent {...props} />;
 }
