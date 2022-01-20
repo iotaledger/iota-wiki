@@ -4,11 +4,17 @@ import Layout from '@theme/Layout';
 import { useThemeConfig } from '@docusaurus/theme-common';
 import { ThemeConfig } from '@docusaurus/preset-classic';
 
+export interface HomeLayoutProps {
+  description: string;
+  title: string;
+  tagline: string;
+}
+
 export interface HomeLayoutConfig extends ThemeConfig {
   cards: CardWithImageProps[];
 }
 
-export default function HomeLayout({ description, title, tagline }) {
+export default function HomeLayout({ description, title, tagline }: HomeLayoutProps) {
   const { cards } = useThemeConfig() as HomeLayoutConfig;
 
   return (
