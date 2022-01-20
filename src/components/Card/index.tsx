@@ -3,7 +3,14 @@ import styles from './styles.module.css';
 import clsx from 'clsx';
 import { useHistory } from 'react-router-dom';
 
-export default function Card({ title, link, description, icon }) {
+export interface CardProps {
+  title: string;
+  link: string;
+  description: string;
+  icon: string;
+}
+
+export default function Card({ title, link, description, icon }: CardProps) {
   const history = useHistory();
   const handleClick = (e) => {
     e.preventDefault();

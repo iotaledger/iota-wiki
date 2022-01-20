@@ -9,7 +9,7 @@ export interface CardWithImageProps {
   description: string;
 };
 
-export default function HomePageCard({ title, image, link, description }) {
+export default function HomePageCard({ title, image, link, description } : CardWithImageProps) {
   const history = useHistory();
 
   const handleClick = (e) => {
