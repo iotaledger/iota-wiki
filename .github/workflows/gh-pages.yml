@@ -19,7 +19,7 @@ jobs:
       - name: Test Build
         run: |
           if [ -e yarn.lock ]; then
-          yarn install --immutable
+          yarn install
           elif [ -e package-lock.json ]; then
           npm ci
           else
@@ -39,7 +39,7 @@ jobs:
       - name: Install dependencies
         run: |
           if [ -e yarn.lock ]; then
-          yarn install --immutable
+          yarn install
           elif [ -e package-lock.json ]; then
           npm ci
           else
