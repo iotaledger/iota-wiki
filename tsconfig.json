@@ -2,5 +2,11 @@
   "extends": "@tsconfig/docusaurus/tsconfig.json",
   "compilerOptions": {
     "resolveJsonModule": true,
+    "baseUrl": ".",
+    "paths": {
+      "@site/*": [
+        "./*",
+      ]
+    }
   }
 }

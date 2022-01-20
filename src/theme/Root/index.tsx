@@ -1,5 +1,5 @@
 import React from 'react';
-import FullscreenImage from '../FullscreenImage';
+import FullscreenImage from '@site/src/components/FullscreenImage';
 
 
 function Root({ children }) {

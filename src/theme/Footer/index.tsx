@@ -13,7 +13,7 @@ import {
 } from '@docusaurus/theme-common';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import ThemedImage, { Props as ThemedImageProps } from '@theme/ThemedImage';
-import Social from '../Social';
+import Social from '@site/src/components/Social';
 
 function FooterLink({
   to,

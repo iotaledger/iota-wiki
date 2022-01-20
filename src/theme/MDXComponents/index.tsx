@@ -9,7 +9,7 @@ import Head from '@docusaurus/Head';
 import Link from '@docusaurus/Link';
 import CodeBlock, { Props } from '@theme/CodeBlock';
 import Heading from '@theme/Heading';
-import FullscreenImage from '../FullscreenImage';
+import FullscreenImage from '@site/src/components/FullscreenImage';
 import Details from '@theme/Details';
 import type { MDXComponentsObject } from '@theme/MDXComponents';
 

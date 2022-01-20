@@ -1,6 +1,5 @@
 import React from 'react';
-// @ts-expect-error ts-migrate(2307) FIXME: Cannot find module '/src/theme/CardWithImage' or i... Remove this comment to see the full error message
-import CardWithImage from '/src/theme/CardWithImage';
+import CardWithImage from '@site/src/components/CardWithImage';
 import Layout from '@theme/Layout';
 import { useThemeConfig } from '@docusaurus/theme-common';
 
