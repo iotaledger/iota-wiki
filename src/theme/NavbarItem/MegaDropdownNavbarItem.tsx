@@ -21,6 +21,13 @@ import type {NavLinkProps} from '@theme/NavbarItem/DefaultNavbarItem';
 
 const dropdownLinkActiveClass = 'dropdown__link--active';
 
+interface MegaDropdownItemProps extends NavLinkProps {
+  className: string;
+  to: string;
+  href: string;
+  label: string;
+}
+
 interface DesktopOrMobileMegaDropdownNavbarItemProps extends NavLinkProps {
   readonly position?: 'left' | 'right';
   readonly items_: readonly any[];
@@ -65,7 +72,7 @@ function createItemCursor({ items, label, className, ...props }) {
   return cursor;
 }
 
-function MegaDropdownItem({ className, to, href, label, ...props }) {
+function MegaDropdownItem({ className, to, href, label, ...props }: MegaDropdownItemProps) {
   if (to || href) {
     return (
       <NavLink
