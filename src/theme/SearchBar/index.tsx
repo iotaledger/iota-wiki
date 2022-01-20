@@ -13,11 +13,11 @@ import { useHistory } from '@docusaurus/router';
 import { useBaseUrlUtils } from '@docusaurus/useBaseUrl';
 import Link from '@docusaurus/Link';
 import Head from '@docusaurus/Head';
-// @ts-expect-error ts-migrate(2307) FIXME: Cannot find module '@theme/hooks/useSearchQuery' o... Remove this comment to see the full error message
+// @ts-ignore
 import useSearchQuery from '@theme/hooks/useSearchQuery';
 import { isRegexpStringMatch } from '@docusaurus/theme-common';
 import { DocSearchButton, useDocSearchKeyboardEvents } from '@docsearch/react';
-// @ts-expect-error ts-migrate(2307) FIXME: Cannot find module '@theme/hooks/useAlgoliaContext... Remove this comment to see the full error message
+// @ts-ignore
 import useAlgoliaContextualFacetFilters from '@theme/hooks/useAlgoliaContextualFacetFilters';
 import { translate } from '@docusaurus/Translate';
 
