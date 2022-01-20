@@ -256,12 +256,7 @@ function MegaDropdownNavbarItemDesktop({
   );
 }
 
-function MegaDropdownNavbarItemMobile({ items_: items, className, ...props } : DesktopOrMobileMegaDropdownNavbarItemProps) {
-  /* eslint-disable-next-line react/prop-types */
-  delete props.position;
-  /* eslint-disable-next-line react/prop-types */
-  delete props.layout;
-
+function MegaDropdownNavbarItemMobile({ items_: items, position: position_, layout: layout_, className, ...props } : DesktopOrMobileMegaDropdownNavbarItemProps) {
   const localPathname = useLocalPathname();
   /**
    Added const to get the dropdown label if a dropdown item is selected
