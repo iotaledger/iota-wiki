@@ -44,14 +44,6 @@
     "url-loader": "^4.1.1",
     "webpack": "^4.0.0"
   },
-  "dependenciesMeta": {
-    "@jlvandenhout/docusaurus-plugin-docs-editor": {
-      "build": false
-    },
-    "iota-wiki-cli": {
-      "build": false
-    }
-  },
   "browserslist": {
     "production": [
       ">0.5%",
