@@ -13,6 +13,8 @@ Other use cases would be to use NFTs as assets in games, for event tickets, for 
 
 ## Different NFT Types on IOTA
 
+![tokenized-assets](/img/learn/layer2-tokenized-assets.png)
+
 ### Digital Native Assets
 
 Layer 1 Assets also known as "Digital Native Assets". With the [IOTA tokenization framework](https://blog.iota.org/tokenization-on-the-tangle-iota-digital-assets-framework/), you can create NFTs on L1 using the NFT output type. Layer 1 NFTs can be transferred on the whole layer without any fees and enable you to transfer NFTs between different smart contract chains.
