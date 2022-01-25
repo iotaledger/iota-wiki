@@ -2183,7 +2183,7 @@ __metadata:
     unified: ^9.2.1
     utf8: ^3.0.0
     yaml: ^1.10.2
-  checksum: c4d66502d62e9e0ef9c14a2443e952457c3487f52673a05a63d8e073b8f1851deb33b8dfe7cbec0b9197b79db6807a939f91126d89b7841762dd421bc6eab978
+  checksum: 4419385fc65ac1a5d6c875a991fec253fd32a41143c0e9c9dd469d29482cd1d44a91e0d22e07c0b620f760c40f6583c8975712d606ff7cd71c3857b257548d0a
   languageName: node
   linkType: hard
 
@@ -8702,7 +8702,7 @@ __metadata:
     tslib: ^1.14.1
   bin:
     iota-wiki-cli: ./bin/run
-  checksum: 3ba4f86e0710e13b97a59e83e50824fb8ce5d70aee839b9292035a9f22ad248ed1810f4cc231f0987ca82a44904e7277d9251bf5ed2e7d17d145c3b544fcbba2
+  checksum: 5cbdaf2ca9d77631acf4f52e57aa677460ef7707b0be10e1af926dfb4e684d9c814ec6e18fd86eb768c497c0da2e30d63ee877440f1d4c9a3ed063445a8a0171
   languageName: node
   linkType: hard
 
