@@ -68,5 +68,6 @@
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": "eslint --cache --fix",
     "*.{js,jsx,ts,tsx,css,less,md,mdx,json}": "prettier --write"
-  }
+  },
+  "packageManager": "yarn@3.1.1"
 }
