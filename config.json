@@ -58,7 +58,6 @@
     },
     {
       "repo": "https://github.com/iotaledger/integration-services",
-      "checkoutParams": ["--branch develop"],
       "staticPath": "./documentation/static"
     }
   ]
