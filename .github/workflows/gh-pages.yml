@@ -18,7 +18,7 @@ jobs:
           node-version: '16.x'
       - name: Test Build
         run: |
-          yarn install
+          YARN_CHECKSUM_BEHAVIOR=update yarn install
           yarn build
   gh-release:
     if: github.event_name != 'pull_request'
@@ -32,7 +32,7 @@ jobs:
           node-version: '16.x'
       - name: Install dependencies
         run: |
-          yarn install
+          YARN_CHECKSUM_BEHAVIOR=update yarn install
       - name: Add external doc config
         run: |
           yarn cli start
