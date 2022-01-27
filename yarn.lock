@@ -8683,7 +8683,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-iota-wiki-cli@iota-community/iota-wiki-cli:
+"iota-wiki-cli@iota-community/iota-wiki-cli#v1.6.0":
   version: 1.6.0
   resolution: "iota-wiki-cli@https://github.com/iota-community/iota-wiki-cli.git#commit=0690529b784d4012c174496446c967afc2f4e131"
   dependencies:
@@ -8721,7 +8721,7 @@ iota-wiki-cli@iota-community/iota-wiki-cli:
     file-loader: ^6.2.0
     hast-util-is-element: 1.1.0
     husky: ">=6"
-    iota-wiki-cli: iota-community/iota-wiki-cli
+    iota-wiki-cli: "iota-community/iota-wiki-cli#v1.6.0"
     lint-staged: ">=10"
     prettier: ^2.4.1
     prop-types: ^15.7.2
