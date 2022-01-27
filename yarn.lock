@@ -2183,7 +2183,7 @@ __metadata:
     unified: ^9.2.1
     utf8: ^3.0.0
     yaml: ^1.10.2
-  checksum: 4419385fc65ac1a5d6c875a991fec253fd32a41143c0e9c9dd469d29482cd1d44a91e0d22e07c0b620f760c40f6583c8975712d606ff7cd71c3857b257548d0a
+  checksum: e445b4ba3b728836d0548247c0058c7c41cb6b749873a967fd763f3863520bf22ab6ab6f871f71801c7f85e2cf4685010f6baa3518dfaaaf8ea7b6bbb6a803b2
   languageName: node
   linkType: hard
 
@@ -2848,8 +2848,8 @@ __metadata:
   linkType: hard
 
 "@tiptap/core@npm:^2.0.0-beta.94":
-  version: 2.0.0-beta.167
-  resolution: "@tiptap/core@npm:2.0.0-beta.167"
+  version: 2.0.0-beta.170
+  resolution: "@tiptap/core@npm:2.0.0-beta.170"
   dependencies:
     "@types/prosemirror-commands": ^1.0.4
     "@types/prosemirror-keymap": ^1.0.4
@@ -2865,7 +2865,7 @@ __metadata:
     prosemirror-state: ^1.3.4
     prosemirror-transform: ^1.3.3
     prosemirror-view: ^1.23.6
-  checksum: 9a410afa59e106aeb71af4a36c1a89b9a8cb4c6e8f9926a58b12c17637dbc33e9e6918822bf32bc164d110d0b0502e05d6f8af2f3f6ba397ae0242affe25915c
+  checksum: 1df0931e1cf3ab1252936ea3afaacdb83848d4c9371b8eb6ad43ef8f00376cda8d9e175f84ded55a8d3c259c388c41963c21ce21f5c76d08a7784e3bead72002
   languageName: node
   linkType: hard
 
@@ -2910,10 +2910,10 @@ __metadata:
   linkType: hard
 
 "@tiptap/extension-code-block-lowlight@npm:^2.0.0-beta.33":
-  version: 2.0.0-beta.67
-  resolution: "@tiptap/extension-code-block-lowlight@npm:2.0.0-beta.67"
+  version: 2.0.0-beta.68
+  resolution: "@tiptap/extension-code-block-lowlight@npm:2.0.0-beta.68"
   dependencies:
-    "@tiptap/extension-code-block": ^2.0.0-beta.36
+    "@tiptap/extension-code-block": ^2.0.0-beta.37
     "@types/lowlight": ^0.0.3
     lowlight: ^1.20.0
     prosemirror-model: ^1.16.1
@@ -2921,18 +2921,18 @@ __metadata:
     prosemirror-view: ^1.23.6
   peerDependencies:
     "@tiptap/core": ^2.0.0-beta.1
-  checksum: c1507cd9e6519ead0ace0d7c99b165543d182e7831b9895912cc3bd8d9b097da321459a0558ee525b0ca117483e95cd0951c621ad86038f3c1de5fab13a5694c
+  checksum: 533928fee2834276a289a0c6c214250ffbc6e60bf50216ff63e6fd8e968fec49e6df867135c90c4fda906ecc609a71efa53f50d8a857301d87a77e7d999b5670
   languageName: node
   linkType: hard
 
-"@tiptap/extension-code-block@npm:^2.0.0-beta.17, @tiptap/extension-code-block@npm:^2.0.0-beta.36":
-  version: 2.0.0-beta.36
-  resolution: "@tiptap/extension-code-block@npm:2.0.0-beta.36"
+"@tiptap/extension-code-block@npm:^2.0.0-beta.17, @tiptap/extension-code-block@npm:^2.0.0-beta.37":
+  version: 2.0.0-beta.37
+  resolution: "@tiptap/extension-code-block@npm:2.0.0-beta.37"
   dependencies:
     prosemirror-state: ^1.3.4
   peerDependencies:
     "@tiptap/core": ^2.0.0-beta.1
-  checksum: 6ff71aada912f86a841e2bb49e1ceab7a87cb550c400143ef02f83dd137f04527301b0bf7ba87117d4a6eb360f5c81f330f01d7a3094a5ecee150c694a6b8ad9
+  checksum: 76c6bda847f2fa62ed59a599f0d61efdd2b5d021588de99d1f2f21fd83b10e60dfa3e906333db2d242d1b85057ce97fd9420d83d4c96f745a446637a06baf5be
   languageName: node
   linkType: hard
 
@@ -8683,9 +8683,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"iota-wiki-cli@https://github.com/iota-community/iota-wiki-cli.git#v1.5.0":
-  version: 1.5.0
-  resolution: "iota-wiki-cli@https://github.com/iota-community/iota-wiki-cli.git#commit=a49ae17c2ee9c527d9ff8adc408b17b3ee4aed6e"
+iota-wiki-cli@iota-community/iota-wiki-cli:
+  version: 1.6.0
+  resolution: "iota-wiki-cli@https://github.com/iota-community/iota-wiki-cli.git#commit=0690529b784d4012c174496446c967afc2f4e131"
   dependencies:
     "@oclif/command": ^1.8.0
     "@oclif/config": ^1.17.0
@@ -8697,7 +8697,7 @@ __metadata:
     tslib: ^1.14.1
   bin:
     iota-wiki-cli: ./bin/run
-  checksum: 5cbdaf2ca9d77631acf4f52e57aa677460ef7707b0be10e1af926dfb4e684d9c814ec6e18fd86eb768c497c0da2e30d63ee877440f1d4c9a3ed063445a8a0171
+  checksum: e942c0120d439ab78101a325fc27fa4e3425e271e49d3dc6ae7261bc81964d6534febbc497f7a9ce517bfa861972af5cdd5505c5eaa2107e68c4bcb6d5209a50
   languageName: node
   linkType: hard
 
@@ -8721,7 +8721,7 @@ __metadata:
     file-loader: ^6.2.0
     hast-util-is-element: 1.1.0
     husky: ">=6"
-    iota-wiki-cli: "https://github.com/iota-community/iota-wiki-cli.git#v1.5.0"
+    iota-wiki-cli: iota-community/iota-wiki-cli
     lint-staged: ">=10"
     prettier: ^2.4.1
     prop-types: ^15.7.2
