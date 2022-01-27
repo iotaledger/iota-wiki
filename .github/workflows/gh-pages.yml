@@ -32,7 +32,7 @@ jobs:
           node-version: '16.x'
       - name: Install dependencies
         run: |
-          YARN_CHECKSUM_BEHAVIOR=update yarn install
+          yarn install
       - name: Add external doc config
         run: |
           yarn cli start
