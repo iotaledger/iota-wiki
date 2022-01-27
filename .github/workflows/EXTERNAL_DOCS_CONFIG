@@ -59,7 +59,7 @@
         sidebarPath: require.resolve("./external/IOTA-2.0-Research-Specifications/sidebars.js"),
         remarkPlugins: [require('remark-math')],
         rehypePlugins: [require('rehype-katex')],
-        editUrl: 'https://github.com/iotaledger/IOTA-2.0-Research-Specifications/edit/docusaurus',
+        editUrl: 'https://github.com/iotaledger/IOTA-2.0-Research-Specifications/edit/main',
        }
     ],
     [
