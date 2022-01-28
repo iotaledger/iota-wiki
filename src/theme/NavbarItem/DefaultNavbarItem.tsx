@@ -9,9 +9,8 @@ import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import type {
-  NavLinkProps,
   DesktopOrMobileNavBarItemProps,
-  Props,
+  Props as NavLinkProps,
 } from '@theme/NavbarItem/DefaultNavbarItem';
 import IconExternalLink from '@theme/IconExternalLink';
 import isInternalUrl from '@docusaurus/isInternalUrl';
@@ -52,19 +51,20 @@ export function NavLink({
     <Link
       {...(href
         ? {
-          href: prependBaseUrlToHref ? normalizedHref : href,
-        }
+            href: prependBaseUrlToHref ? normalizedHref : href,
+          }
         : {
-          isNavLink: true,
-          activeClassName,
-          to: toUrl,
-          ...(activeBasePath || activeBaseRegex
-            ? {
-              isActive: checkIsActive,
-            }
-            : null),
-        })}
-      {...props}>
+            isNavLink: true,
+            activeClassName,
+            to: toUrl,
+            ...(activeBasePath || activeBaseRegex
+              ? {
+                  isActive: checkIsActive,
+                }
+              : null),
+          })}
+      {...props}
+    >
       <div className='link'>
         {icon && <div className='link__icon'>{icon}</div>}
         <div className='link__body'>
@@ -130,13 +130,13 @@ function DefaultNavbarItem({
   label,
   position: _position, // Need to destructure position from props so that it doesn't get passed on.
   ...props
-}: Props): JSX.Element {
+}: ExtendedNavLinkProps): JSX.Element {
   /**
    * Added to enable non-clickable category headers.
    * To use simply add an navBar items in the config
    * with to:'category-header'
    */
-   if (to === 'category-header') {
+  if (to === 'category-header') {
     const categorySeparatorStyles = {
       fontSize: '10px',
       color: 'var(--ifm-color-emphasis-600)',

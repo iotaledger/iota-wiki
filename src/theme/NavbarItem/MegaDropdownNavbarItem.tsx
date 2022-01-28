@@ -14,10 +14,10 @@ import {
   useLocalPathname,
 } from '@docusaurus/theme-common';
 import useHideableNavbar from '@theme/hooks/useHideableNavbar';
-import { NavLink } from '@theme/NavbarItem/DefaultNavbarItem';
+import { NavLink } from './DefaultNavbarItem';
 import NavbarItem from '@theme/NavbarItem';
 import './styles.css';
-import type {NavLinkProps} from '@theme/NavbarItem/DefaultNavbarItem';
+import type { Props as NavLinkProps } from '@theme/NavbarItem/DefaultNavbarItem';
 
 const dropdownLinkActiveClass = 'dropdown__link--active';
 
@@ -65,7 +65,13 @@ function createItemCursor({ items, label, className, ...props }) {
   return cursor;
 }
 
-function MegaDropdownItem({ className, to, href, label, ...props }: NavLinkProps) {
+function MegaDropdownItem({
+  className,
+  to,
+  href,
+  label,
+  ...props
+}: NavLinkProps) {
   if (to || href) {
     return (
       <NavLink
@@ -123,7 +129,7 @@ function MegaDropdownNavbarItemDesktop({
   position,
   className,
   ...props
-} : DesktopOrMobileMegaDropdownNavbarItemProps) {
+}: DesktopOrMobileMegaDropdownNavbarItemProps) {
   const localPathname = useLocalPathname();
   const dropdownRef = useRef(null);
   const [showDropdown, setShowDropdown] = useState(false);
@@ -256,7 +262,13 @@ function MegaDropdownNavbarItemDesktop({
   );
 }
 
-function MegaDropdownNavbarItemMobile({ items_: items, position: position_, layout: layout_, className, ...props } : DesktopOrMobileMegaDropdownNavbarItemProps) {
+function MegaDropdownNavbarItemMobile({
+  items_: items,
+  position: position_,
+  layout: layout_,
+  className,
+  ...props
+}: DesktopOrMobileMegaDropdownNavbarItemProps) {
   const localPathname = useLocalPathname();
   /**
    Added const to get the dropdown label if a dropdown item is selected
@@ -310,7 +322,10 @@ function MegaDropdownNavbarItemMobile({ items_: items, position: position_, layo
   );
 }
 
-function MegaDropdownNavbarItem({ mobile = false, ...props }: Props): JSX.Element {
+function MegaDropdownNavbarItem({
+  mobile = false,
+  ...props
+}: Props): JSX.Element {
   const Comp = mobile
     ? MegaDropdownNavbarItemMobile
     : MegaDropdownNavbarItemDesktop;

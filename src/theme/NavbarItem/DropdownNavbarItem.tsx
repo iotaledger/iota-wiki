@@ -19,7 +19,7 @@ import type {
 } from '@theme/NavbarItem/DropdownNavbarItem';
 import type { LinkLikeNavbarItemProps } from '@theme/NavbarItem';
 
-import { NavLink } from '@theme/NavbarItem/DefaultNavbarItem';
+import { NavLink } from './DefaultNavbarItem';
 import NavbarItem from '@theme/NavbarItem';
 
 const dropdownLinkActiveClass = 'dropdown__link--active';
@@ -108,7 +108,8 @@ function DropdownNavbarItemDesktop({
       className={clsx('dropdown', 'dropdown--hoverable', {
         'dropdown--right': position === 'right',
         'dropdown--show': showDropdown,
-      })}>
+      })}
+    >
       <NavLink
         className={clsx('navbar__item navbar__link', className)}
         {...dropdownProps}
@@ -118,7 +119,8 @@ function DropdownNavbarItemDesktop({
             e.preventDefault();
             setShowDropdown(!showDropdown);
           }
-        }}>
+        }}
+      >
         {props.children ?? props.label}
       </NavLink>
       <ul ref={dropdownMenuRef} className='dropdown__menu'>
@@ -169,7 +171,8 @@ function DropdownNavbarItemMobile({
     <li
       className={clsx('menu__list-item', {
         'menu__list-item--collapsed': collapsed,
-      })}>
+      })}
+    >
       <NavLink
         role='button'
         className={clsx('menu__link menu__link--sublist', className)}
@@ -177,7 +180,8 @@ function DropdownNavbarItemMobile({
         onClick={(e) => {
           e.preventDefault();
           toggleCollapsed();
-        }}>
+        }}
+      >
         {props.children ?? props.label}
       </NavLink>
       <Collapsible lazy as='ul' className='menu__list' collapsed={collapsed}>
@@ -196,7 +200,11 @@ function DropdownNavbarItemMobile({
   );
 }
 
-function DropdownNavbarItem({ mobile = false, isDropdownItem: _isDropdownItem, ...props }: ExtendedDropdownNavbarItemProps): JSX.Element {
+function DropdownNavbarItem({
+  mobile = false,
+  isDropdownItem: _isDropdownItem,
+  ...props
+}: ExtendedDropdownNavbarItemProps): JSX.Element {
   const Comp = mobile ? DropdownNavbarItemMobile : DropdownNavbarItemDesktop;
   return <Comp {...props} />;
 }

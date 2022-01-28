@@ -25,12 +25,12 @@ type Props = ComponentProps<'a'> & {
     | ({ readonly type?: 'dropdown' } & DropdownNavbarItemProps)
     | ({ readonly type: 'megaDropdown' } & MegaDropdownNavbarItemProps)
     | ({
-      readonly type: 'docsVersionDropdown';
-    } & DocsVersionDropdownNavbarItemProps)
+        readonly type: 'docsVersionDropdown';
+      } & DocsVersionDropdownNavbarItemProps)
     | ({ readonly type: 'localeDropdown' } & LocaleDropdownNavbarItemProps)
     | ({
-      readonly type: 'search';
-    } & SearchNavbarItemProps)
+        readonly type: 'search';
+      } & SearchNavbarItemProps)
   );
 
 type Types = Props['type'];
@@ -53,6 +53,7 @@ const NavbarItemComponents: Record<
   docsVersionDropdown: () =>
     require('@theme/NavbarItem/DocsVersionDropdownNavbarItem').default,
   doc: () => require('@theme/NavbarItem/DocNavbarItem').default,
+  docSidebar: () => require('@theme/DocSidebar').default,
   /* eslint-enable @typescript-eslint/no-var-requires, global-require */
 } as const;
 
