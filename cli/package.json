@@ -1,8 +1,7 @@
 {
-  "name": "iota-wiki-cli",
+  "name": "@iota-community/iota-wiki-cli",
   "version": "1.6.0",
   "author": "",
-  "private": "true",
   "bin": {
     "iota-wiki-cli": "./bin/run"
   },
