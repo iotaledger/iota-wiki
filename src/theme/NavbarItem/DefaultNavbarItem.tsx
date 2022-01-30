@@ -114,9 +114,10 @@ function DefaultNavbarItemDesktop({
 
 function DefaultNavbarItemMobile({
   className,
-  isDropdownItem: _isDropdownItem,
   ...props
 }: DesktopOrMobileNavBarItemProps) {
+  delete props.isDropdownItem;
+
   return (
     <li className='menu__list-item'>
       <NavLink className={clsx('menu__link', className)} {...props} />
@@ -128,9 +129,10 @@ function DefaultNavbarItem({
   mobile = false,
   to,
   label,
-  position: _position, // Need to destructure position from props so that it doesn't get passed on.
   ...props
 }: ExtendedNavLinkProps): JSX.Element {
+  delete props.position;
+
   /**
    * Added to enable non-clickable category headers.
    * To use simply add an navBar items in the config
