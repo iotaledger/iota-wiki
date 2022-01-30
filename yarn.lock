@@ -1589,8 +1589,8 @@
   integrity sha512-ZnQMnLV4e7hDlUvw8H+U8ASL02SS2Gn6+9Ac3wGGLIe7+je2AeAOxPY+izIPJDfFDb7eDjev0Us8MO1iFRN8hA==
 
 "@jlvandenhout/docusaurus-plugin-docs-editor@jlvandenhout/docusaurus-plugin-docs-editor":
-  version "0.5.0"
-  resolved "https://codeload.github.com/jlvandenhout/docusaurus-plugin-docs-editor/tar.gz/e4b41a86805f05606cdce7326c993c328349297d"
+  version "0.6.0"
+  resolved "https://codeload.github.com/jlvandenhout/docusaurus-plugin-docs-editor/tar.gz/2d3a41198200e3fe4e5bd7371dfed90118c9de1b"
   dependencies:
     "@octokit/core" "^3.5.1"
     "@octokit/plugin-rest-endpoint-methods" "^5.5.1"
@@ -2125,9 +2125,9 @@
     defer-to-connect "^1.0.1"
 
 "@tiptap/core@^2.0.0-beta.94":
-  version "2.0.0-beta.170"
-  resolved "https://registry.yarnpkg.com/@tiptap/core/-/core-2.0.0-beta.170.tgz#a52e9418114193bdf7db4999ac762ad5e554ffbb"
-  integrity sha512-OH4PirC89nN6YF0O2CLajJhqY0Y+96dGFsWWfnr1JdbqX/6OJwEUfSI466Z0J1M9XDtFAsXyksHDFNQOem4Ceg==
+  version "2.0.0-beta.171"
+  resolved "https://registry.yarnpkg.com/@tiptap/core/-/core-2.0.0-beta.171.tgz#e681964c443383b81d2638c51fc3bbfda034a4fb"
+  integrity sha512-4CdJfcchmBOFooWPBMJ7AxJISeTstMFriQv0RyReMt0Dpef/c9UoU+NkKLwwv5VRUX0M8dL5SzEhkB8wIODqlA==
   dependencies:
     "@types/prosemirror-commands" "^1.0.4"
     "@types/prosemirror-keymap" "^1.0.4"
@@ -2240,9 +2240,9 @@
     prosemirror-state "^1.3.4"
 
 "@tiptap/extension-image@^2.0.0-beta.15":
-  version "2.0.0-beta.24"
-  resolved "https://registry.yarnpkg.com/@tiptap/extension-image/-/extension-image-2.0.0-beta.24.tgz#1010676f79925cbe11a44b6d8eee1251910fbc1d"
-  integrity sha512-7oiX/Ovj9WN4xTBqWbQWd4H3SUO2eNzOiKHebVo3eqWG8NxzOGfuU0iRCENtEa7vTiRrFgyeBotneMALDpDnTQ==
+  version "2.0.0-beta.25"
+  resolved "https://registry.yarnpkg.com/@tiptap/extension-image/-/extension-image-2.0.0-beta.25.tgz#7fb001a6449a9a841ae4f42c258ad6a06022b523"
+  integrity sha512-RgW5jFVS2QNDvFhBOz7H1hY6LjYcbVAa/mE4F4c3RPg3o7GJZXNoL9s+k0QkEM2GXAvY6fX+OICMBn8TSENXKA==
 
 "@tiptap/extension-italic@^2.0.0-beta.15":
   version "2.0.0-beta.25"
