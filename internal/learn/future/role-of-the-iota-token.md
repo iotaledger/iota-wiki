@@ -8,7 +8,7 @@ keywords:
   - ASMB
 ---
 
-With the introduction of [Assemly](./assembly) it's important to understand the role of the IOTA token. Assembly is build on top of the Tangle, it will need the Tangle for anchored state updates, interoperability between chains, for Native Assets and general access to a congested network. There are two main usages of the IOTA token in Assembly and everyting build on top of IOTA.
+With the introduction of [Assembly](./assembly) it's important to understand the role of the IOTA token. Assembly is build on top of the Tangle, it will need the Tangle for anchored state updates, interoperability between chains, for Native Assets and general access to a congested network. There are two main usages of the IOTA token in Assembly and everyting build on top of IOTA.
 
 ## The new dust protection
 
