@@ -9,11 +9,11 @@ import clsx from 'clsx';
 import {
   isSamePath,
   useCollapsible,
+  useHideableNavbar,
   useThemeConfig,
   Collapsible,
   useLocalPathname,
 } from '@docusaurus/theme-common';
-import useHideableNavbar from '@theme/hooks/useHideableNavbar';
 import { NavLink } from './DefaultNavbarItem';
 import NavbarItem from '@theme/NavbarItem';
 import './styles.css';
