@@ -24,9 +24,9 @@ import './styles.css';
 
 function unwrapMDXElement(element: ReactElement) {
   if (element?.props?.mdxType && element?.props?.originalType) {
-    // eslint-disable-next-line no-unused-vars
-    const { mdxType, originalType, ...newProps } = element.props;
-    return React.createElement(element.props.originalType, newProps);
+    delete element.props.mdxType;
+    const { originalType, ...newProps } = element.props;
+    return React.createElement(originalType, newProps);
   }
 
   return element;
@@ -77,7 +77,7 @@ const MDXComponents: ExtendedMDXComponentsObject = {
     // Split summary item from the rest to pass it as a separate prop to the Details theme component
     const summary: ReactElement<ComponentProps<'summary'>> = items.find(
       (item) => item?.props?.mdxType === 'summary',
-    )!;
+    );
     const children = <>{items.filter((item) => item !== summary)}</>;
 
     return (
