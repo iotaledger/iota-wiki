@@ -19,8 +19,8 @@
   },
   "dependencies": {
     "@algolia/client-search": "^4.9.1",
-    "@docusaurus/core": "^2.0.0-beta.14",
-    "@docusaurus/preset-classic": "^2.0.0-beta.14",
+    "@docusaurus/core": "^2.0.0-beta.15",
+    "@docusaurus/preset-classic": "^2.0.0-beta.15",
     "@jlvandenhout/docusaurus-plugin-docs-editor": "jlvandenhout/docusaurus-plugin-docs-editor",
     "@mdx-js/react": "^1.6.21",
     "@svgr/webpack": "^5.5.0",
