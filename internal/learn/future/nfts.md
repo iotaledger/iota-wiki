@@ -1,5 +1,5 @@
 ---
-title: Non-fungile Tokens (NFTs)
+title: Non-fungible Tokens (NFTs)
 description: This article explains the different types of NFTs on IOTA.
 ---
 
