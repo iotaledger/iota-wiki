@@ -23,8 +23,8 @@ const dropdownLinkActiveClass = 'dropdown__link--active';
 
 interface DesktopOrMobileMegaDropdownNavbarItemProps extends NavLinkProps {
   readonly position?: 'left' | 'right';
-  readonly items_: readonly any[];
-  readonly layout?: any;
+  readonly items_: readonly [];
+  readonly layout?;
   readonly className?: string;
 }
 
@@ -264,11 +264,12 @@ function MegaDropdownNavbarItemDesktop({
 
 function MegaDropdownNavbarItemMobile({
   items_: items,
-  position: position_,
-  layout: layout_,
   className,
   ...props
 }: DesktopOrMobileMegaDropdownNavbarItemProps) {
+  delete props.position;
+  delete props.layout;
+
   const localPathname = useLocalPathname();
   /**
    Added const to get the dropdown label if a dropdown item is selected
