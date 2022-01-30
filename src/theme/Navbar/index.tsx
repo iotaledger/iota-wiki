@@ -9,18 +9,18 @@ import clsx from 'clsx';
 import Translate from '@docusaurus/Translate';
 import SearchBar from '@theme/SearchBar';
 import Toggle from '@theme/Toggle';
-import useThemeContext from '@theme/hooks/useThemeContext';
 import {
   useThemeConfig,
   useMobileSecondaryMenuRenderer,
   usePrevious,
   useHistoryPopHandler,
+  useHideableNavbar,
+  useLockBodyScroll,
+  useWindowSize,
+  useColorMode,
 } from '@docusaurus/theme-common';
-import useHideableNavbar from '@theme/hooks/useHideableNavbar';
-import useLockBodyScroll from '@theme/hooks/useLockBodyScroll';
-import useWindowSize from '@theme/hooks/useWindowSize';
-import { useActivePlugin } from '@theme/hooks/useDocs';
-import NavbarItem, { Props as NavbarItemConfig } from '@theme/NavbarItem';
+import { useActivePlugin } from '@docusaurus/plugin-content-docs/client';
+import NavbarItem, { type Props as NavbarItemConfig } from '@theme/NavbarItem';
 import Logo from '@theme/Logo';
 import IconMenu from '@theme/IconMenu';
 import IconClose from '@theme/IconClose';
@@ -87,7 +87,7 @@ function useColorModeToggle() {
   const {
     colorMode: { disableSwitch },
   } = useThemeConfig();
-  const { isDarkTheme, setLightTheme, setDarkTheme } = useThemeContext();
+  const { isDarkTheme, setLightTheme, setDarkTheme } = useColorMode();
   const toggle = useCallback(
     (e) => (e.target.checked ? setDarkTheme() : setLightTheme()),
     [setLightTheme, setDarkTheme],
@@ -179,7 +179,8 @@ function NavbarMobileSidebar({
         <button
           type='button'
           className='clean-btn navbar-sidebar__close'
-          onClick={toggleSidebar}>
+          onClick={toggleSidebar}
+        >
           <IconClose
             color='var(--ifm-color-emphasis-600)'
             className={styles.navbarSidebarCloseSvg}
@@ -190,7 +191,8 @@ function NavbarMobileSidebar({
       <div
         className={clsx('navbar-sidebar__items', {
           'navbar-sidebar__items--show-secondary': secondaryMenu.shown,
-        })}>
+        })}
+      >
         <div className='navbar-sidebar__item menu'>
           <ul className='menu__list'>
             {items.map((item, i) => (
@@ -204,10 +206,12 @@ function NavbarMobileSidebar({
             <button
               type='button'
               className='clean-btn navbar-sidebar__back'
-              onClick={secondaryMenu.hide}>
+              onClick={secondaryMenu.hide}
+            >
               <Translate
                 id='theme.navbar.mobileSidebarSecondaryMenu.backButtonLabel'
-                description='The label of the back button to return to main menu, inside the mobile navbar sidebar secondary menu (notably used to display the docs sidebar)'>
+                description='The label of the back button to return to main menu, inside the mobile navbar sidebar secondary menu (notably used to display the docs sidebar)'
+              >
                 ← Back to main menu
               </Translate>
             </button>
@@ -242,7 +246,8 @@ function Navbar(): JSX.Element {
         'navbar-sidebar--show': mobileSidebar.shown,
         [styles.navbarHideable]: hideOnScroll,
         [styles.navbarHidden]: hideOnScroll && !isNavbarVisible,
-      })}>
+      })}
+    >
       <div className='navbar__inner'>
         <div className='navbar__items'>
           <Logo
@@ -259,14 +264,14 @@ function Navbar(): JSX.Element {
             <NavbarItem {...item} key={i} />
           ))}
           <div className='navbar__item navbar__item--dock'>
-          {!colorModeToggle.disabled && (
-            <Toggle
-              className={styles.toggle}
-              checked={colorModeToggle.isDarkTheme}
-              onChange={colorModeToggle.toggle}
-            />
-          )}
-          {!hasSearchNavbarItem && <SearchBar />}
+            {!colorModeToggle.disabled && (
+              <Toggle
+                className={styles.toggle}
+                checked={colorModeToggle.isDarkTheme}
+                onChange={colorModeToggle.toggle}
+              />
+            )}
+            {!hasSearchNavbarItem && <SearchBar />}
             {(items?.length > 0 || activeDocPlugin) && (
               <button
                 aria-label='Navigation bar toggle'
