@@ -131,7 +131,7 @@ function DropdownNavbarItemDesktop({
               if (i === items.length - 1 && e.key === 'Tab') {
                 e.preventDefault();
                 setShowDropdown(false);
-                const nextNavbarItem = dropdownRef.current!.nextElementSibling;
+                const nextNavbarItem = dropdownRef.current?.nextElementSibling;
                 if (nextNavbarItem) {
                   (nextNavbarItem as HTMLElement).focus();
                 }
@@ -150,9 +150,9 @@ function DropdownNavbarItemDesktop({
 function DropdownNavbarItemMobile({
   items,
   className,
-  position: _position, // Need to destructure position from props so that it doesn't get passed on.
   ...props
 }: DesktopOrMobileNavBarItemProps) {
+  delete props.position;
   const localPathname = useLocalPathname();
   const containsActive = containsActiveItems(items, localPathname);
 
@@ -202,9 +202,9 @@ function DropdownNavbarItemMobile({
 
 function DropdownNavbarItem({
   mobile = false,
-  isDropdownItem: _isDropdownItem,
   ...props
 }: ExtendedDropdownNavbarItemProps): JSX.Element {
+  delete props.isDropdownItem;
   const Comp = mobile ? DropdownNavbarItemMobile : DropdownNavbarItemDesktop;
   return <Comp {...props} />;
 }
