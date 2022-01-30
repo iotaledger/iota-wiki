@@ -68,14 +68,14 @@ const getNavbarItemComponent = (type: NavbarItemComponentType) => {
 };
 
 function getComponentType(type, props): NavbarItemComponentType {
-  if (props.items !== undefined) {
+  if (props.layout !== undefined) {
     return 'megaDropdown';
   }
 
   // Backward compatibility: navbar item with no type set
   // but containing dropdown items should use the type 'dropdown'
   if (!props.type || props.type === 'default') {
-    return props.layout !== undefined ? 'dropdown' : 'default';
+    return props.items !== undefined ? 'dropdown' : 'default';
   }
   return type as NavbarItemComponentType;
 }
