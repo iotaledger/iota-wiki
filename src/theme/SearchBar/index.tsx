@@ -13,12 +13,9 @@ import { useHistory } from '@docusaurus/router';
 import { useBaseUrlUtils } from '@docusaurus/useBaseUrl';
 import Link from '@docusaurus/Link';
 import Head from '@docusaurus/Head';
-// @ts-ignore
-import useSearchQuery from '@theme/hooks/useSearchQuery';
-import { isRegexpStringMatch } from '@docusaurus/theme-common';
+import { isRegexpStringMatch, useSearchPage } from '@docusaurus/theme-common';
 import { DocSearchButton, useDocSearchKeyboardEvents } from '@docsearch/react';
-// @ts-ignore
-import useAlgoliaContextualFacetFilters from '@theme/hooks/useAlgoliaContextualFacetFilters';
+import { useAlgoliaContextualFacetFilters } from '@docusaurus/theme-search-algolia/client';
 import { translate } from '@docusaurus/Translate';
 
 import type {
@@ -57,13 +54,25 @@ type ResultsFooterProps = {
 };
 
 function ResultsFooter({ state, onClose }: ResultsFooterProps) {
-  const { generateSearchPageLink } = useSearchQuery();
+  const { generateSearchPageLink } = useSearchPage();
 
   return (
     <Link to={generateSearchPageLink(state.query)} onClick={onClose}>
       See all {state.context.nbHits} results
     </Link>
   );
+}
+
+type FacetFilters = Required<
+  Required<DocSearchProps>['searchParameters']
+>['facetFilters'];
+
+function mergeFacetFilters(f1: FacetFilters, f2: FacetFilters): FacetFilters {
+  const normalize = (
+    f: FacetFilters,
+  ): readonly string[] | ReadonlyArray<readonly string[]> =>
+    f instanceof Array ? f : [f];
+  return [...normalize(f1), ...normalize(f2)] as FacetFilters;
 }
 
 function DocSearch({
@@ -73,20 +82,20 @@ function DocSearch({
 }: DocSearchProps) {
   const { siteMetadata } = useDocusaurusContext();
 
-  const contextualSearchFacetFilters = useAlgoliaContextualFacetFilters();
+  const contextualSearchFacetFilters =
+    useAlgoliaContextualFacetFilters() as FacetFilters;
 
-  const configFacetFilters = props.searchParameters?.facetFilters ?? [];
+  const configFacetFilters: FacetFilters =
+    props.searchParameters?.facetFilters ?? [];
 
-  const facetFilters = contextualSearch
+  const facetFilters: FacetFilters = contextualSearch
     ? // Merge contextual search filters with config filters
-      typeof configFacetFilters === 'string'
-      ? [...contextualSearchFacetFilters, configFacetFilters]
-      : [...contextualSearchFacetFilters, ...configFacetFilters]
+      mergeFacetFilters(contextualSearchFacetFilters, configFacetFilters)
     : // ... or use config facetFilters
       configFacetFilters;
 
   // we let user override default searchParameters if he wants to
-  const searchParameters = {
+  const searchParameters: DocSearchProps['searchParameters'] = {
     ...props.searchParameters,
     facetFilters,
   };
@@ -171,12 +180,17 @@ function DocSearch({
       }),
   ).current;
 
-  const resultsFooterComponent = useMemo(
-    // eslint-disable-next-line react/no-unstable-nested-components, react/display-name
-    () => (footerProps: ResultsFooterProps) =>
-      <ResultsFooter {...footerProps} onClose={onClose} />,
-    [onClose],
-  );
+  const resultsFooterComponent: DocSearchProps['resultsFooterComponent'] =
+    useMemo(
+      () =>
+        // eslint-disable-next-line react/no-unstable-nested-components
+        function resultsFooter(
+          footerProps: Omit<ResultsFooterProps, 'onClose'>,
+        ): JSX.Element {
+          return <ResultsFooter {...footerProps} onClose={onClose} />;
+        },
+      [onClose],
+    );
 
   const transformSearchClient = useCallback(
     (searchClient) => {
