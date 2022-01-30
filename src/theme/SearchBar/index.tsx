@@ -41,7 +41,10 @@ type DocSearchProps = Omit<
 
 let DocSearchModal: typeof DocSearchModalType | null = null;
 
-function Hit({ hit, children, }: {
+function Hit({
+  hit,
+  children,
+}: {
   hit: InternalDocSearchHit | StoredDocSearchHit;
   children: React.ReactNode;
 }) {
@@ -76,13 +79,11 @@ function DocSearch({
 
   const facetFilters = contextualSearch
     ? // Merge contextual search filters with config filters
-    typeof configFacetFilters === 'string'
-      ?
-      [...contextualSearchFacetFilters, configFacetFilters]
-      :
-      [...contextualSearchFacetFilters, ...configFacetFilters]
+      typeof configFacetFilters === 'string'
+      ? [...contextualSearchFacetFilters, configFacetFilters]
+      : [...contextualSearchFacetFilters, ...configFacetFilters]
     : // ... or use config facetFilters
-    configFacetFilters;
+      configFacetFilters;
 
   // we let user override default searchParameters if he wants to
   const searchParameters = {
@@ -146,9 +147,9 @@ function DocSearch({
       // Algolia results could contain URL's from other domains which cannot
       // be served through history and should navigate with window.location
       if (isRegexpStringMatch(externalUrlRegex, itemUrl)) {
-        window.location.href = itemUrl!;
+        window.location.href = itemUrl;
       } else {
-        history.push(itemUrl!);
+        history.push(itemUrl);
       }
     },
   }).current;
