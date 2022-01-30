@@ -12,7 +12,7 @@ export interface TeamMemberProps {
   social_links: string[];
 }
 
-function SocialLink({ link } : SocialLinkProps) {
+function SocialLink({ link }: SocialLinkProps) {
   const data = get_socials_data(link);
 
   return (
@@ -22,8 +22,12 @@ function SocialLink({ link } : SocialLinkProps) {
   );
 }
 
-const TeamMember = function ({ name, title, image_url, social_links }: TeamMemberProps) {
-
+const TeamMember = function ({
+  name,
+  title,
+  image_url,
+  social_links,
+}: TeamMemberProps) {
   return (
     <div className='col margin-vert--md'>
       <div className='card card--full-height'>

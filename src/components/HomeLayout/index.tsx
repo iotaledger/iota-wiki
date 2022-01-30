@@ -1,5 +1,7 @@
 import React from 'react';
-import CardWithImage, { CardWithImageProps } from '@site/src/components/CardWithImage';
+import CardWithImage, {
+  CardWithImageProps,
+} from '@site/src/components/CardWithImage';
 import Layout from '@theme/Layout';
 import { useThemeConfig } from '@docusaurus/theme-common';
 import { ThemeConfig } from '@docusaurus/preset-classic';
@@ -14,7 +16,11 @@ export interface HomeLayoutConfig extends ThemeConfig {
   cards: CardWithImageProps[];
 }
 
-export default function HomeLayout({ description, title, tagline }: HomeLayoutProps) {
+export default function HomeLayout({
+  description,
+  title,
+  tagline,
+}: HomeLayoutProps) {
   const { cards } = useThemeConfig() as HomeLayoutConfig;
 
   return (

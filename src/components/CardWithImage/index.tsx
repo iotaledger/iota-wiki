@@ -7,9 +7,14 @@ export interface CardWithImageProps {
   image: string;
   link: string;
   description: string;
-};
+}
 
-export default function HomePageCard({ title, image, link, description } : CardWithImageProps) {
+export default function HomePageCard({
+  title,
+  image,
+  link,
+  description,
+}: CardWithImageProps) {
   const history = useHistory();
 
   const handleClick = (e) => {

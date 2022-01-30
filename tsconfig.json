@@ -4,12 +4,8 @@
     "resolveJsonModule": true,
     "baseUrl": ".",
     "paths": {
-      "@site/*": [
-        "./*",
-      ]
+      "@site/*": ["./*"]
     },
-    "types": [
-      "webpack-env",
-    ]
+    "types": ["webpack-env"]
   }
 }

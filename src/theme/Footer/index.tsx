@@ -7,10 +7,7 @@
 import React from 'react';
 import clsx from 'clsx';
 import Link from '@docusaurus/Link';
-import {
-  FooterLinkItem,
-  useThemeConfig,
-} from '@docusaurus/theme-common';
+import { FooterLinkItem, useThemeConfig } from '@docusaurus/theme-common';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import ThemedImage, { Props as ThemedImageProps } from '@theme/ThemedImage';
 import Social from '@site/src/components/Social';
@@ -30,13 +27,14 @@ function FooterLink({
       className='footer__link-item'
       {...(href
         ? {
-          href: prependBaseUrlToHref ? normalizedHref : href,
-        }
+            href: prependBaseUrlToHref ? normalizedHref : href,
+          }
         : {
-          to: toUrl,
-        })}
-      {...props}>
-        {label}
+            to: toUrl,
+          })}
+      {...props}
+    >
+      {label}
     </Link>
   );
 }

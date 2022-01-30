@@ -80,7 +80,7 @@ const ToggleComponent = memo(
   },
 );
 
-ToggleComponent.displayName = "ToggleComponent"
+ToggleComponent.displayName = 'ToggleComponent';
 
 export default function Toggle(props: Props): JSX.Element {
   const {

@@ -5,7 +5,7 @@ export interface RootProps {
   children: ReactNode;
 }
 
-function Root({ children } : RootProps) {
+function Root({ children }: RootProps) {
   return <FullscreenImage.Provider>{children}</FullscreenImage.Provider>;
 }
 

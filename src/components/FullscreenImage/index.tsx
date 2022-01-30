@@ -6,8 +6,7 @@ export interface FullscreenImageProviderProps {
 }
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars, @typescript-eslint/no-empty-function
-const Context = createContext((url : string) => {});
-
+const Context = createContext((url: string) => {});
 
 function Provider({ children }: FullscreenImageProviderProps) {
   const [imageProps, setImageProps] = useState('');
