@@ -1,11 +1,15 @@
-import React, { useState, useContext, createContext } from 'react';
+import React, { useState, useContext, createContext, ReactNode } from 'react';
 import './styles.css';
 
-const Context = createContext(() => {});
+export interface FullscreenImageProviderProps {
+  children: ReactNode;
+}
 
-// eslint-disable-next-line react/prop-types
-function Provider({ children }) {
-  const [imageProps, setImageProps] = useState();
+// eslint-disable-next-line @typescript-eslint/no-unused-vars, @typescript-eslint/no-empty-function
+const Context = createContext((url: string) => {});
+
+function Provider({ children }: FullscreenImageProviderProps) {
+  const [imageProps, setImageProps] = useState('');
 
   return (
     <Context.Provider value={setImageProps}>

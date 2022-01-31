@@ -5,21 +5,33 @@
  * LICENSE file in the root directory of this source tree.
  */
 import React, { useState, useRef, memo } from 'react';
-import PropTypes from 'prop-types';
-import { useThemeConfig } from '@docusaurus/theme-common';
+import type { Props } from '@theme/Toggle';
+import { useThemeConfig, ColorModeConfig } from '@docusaurus/theme-common';
 import useIsBrowser from '@docusaurus/useIsBrowser';
+
 import clsx from 'clsx';
 import './styles.css';
 
-const ToggleMemo = memo(
+const ToggleComponent = memo(
   ({
     className,
-    styles,
-    icons,
+    switchConfig,
     checked: defaultChecked,
     disabled,
     onChange,
-  }) => {
+  }: Props & {
+    switchConfig: ColorModeConfig['switchConfig'];
+    disabled: boolean;
+  }): JSX.Element => {
+    const { darkIcon, darkIconStyle, lightIcon, lightIconStyle } = switchConfig;
+    const styles = {
+      unchecked: lightIconStyle,
+      checked: darkIconStyle,
+    };
+    const icons = {
+      unchecked: lightIcon,
+      checked: darkIcon,
+    };
     const [checked, setChecked] = useState(defaultChecked);
     const [focused, setFocused] = useState(false);
     const inputRef = useRef(null);
@@ -68,40 +80,18 @@ const ToggleMemo = memo(
   },
 );
 
-ToggleMemo.displayName = 'ToggleMemo';
-ToggleMemo.propTypes = {
-  className: PropTypes.string,
-  styles: PropTypes.shape({
-    unchecked: PropTypes.any,
-    checked: PropTypes.any,
-  }),
-  icons: PropTypes.shape({
-    unchecked: PropTypes.string,
-    checked: PropTypes.string,
-  }),
-  checked: PropTypes.bool,
-  disabled: PropTypes.bool,
-  onChange: PropTypes.func,
-};
+ToggleComponent.displayName = 'ToggleComponent';
 
-export default function Toggle(props) {
+export default function Toggle(props: Props): JSX.Element {
   const {
-    colorMode: {
-      switchConfig: { darkIcon, darkIconStyle, lightIcon, lightIconStyle },
-    },
+    colorMode: { switchConfig },
   } = useThemeConfig();
   const isBrowser = useIsBrowser();
+
   return (
-    <ToggleMemo
+    <ToggleComponent
+      switchConfig={switchConfig}
       disabled={!isBrowser}
-      styles={{
-        unchecked: lightIconStyle,
-        checked: darkIconStyle,
-      }}
-      icons={{
-        unchecked: lightIcon,
-        checked: darkIcon,
-      }}
       {...props}
     />
   );

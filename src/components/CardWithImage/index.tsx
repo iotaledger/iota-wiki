@@ -1,10 +1,21 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
-import PropTypes from 'prop-types';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-export default function HomePageCard({ title, image, link, description }) {
-  let history = useHistory();
+export interface CardWithImageProps {
+  title: string;
+  image: string;
+  link: string;
+  description: string;
+}
+
+export default function HomePageCard({
+  title,
+  image,
+  link,
+  description,
+}: CardWithImageProps) {
+  const history = useHistory();
 
   const handleClick = (e) => {
     e.preventDefault();
@@ -34,10 +45,3 @@ export default function HomePageCard({ title, image, link, description }) {
     </div>
   );
 }
-
-HomePageCard.propTypes = {
-  title: PropTypes.string,
-  image: PropTypes.string,
-  link: PropTypes.string,
-  description: PropTypes.string,
-};
