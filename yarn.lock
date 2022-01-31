@@ -2167,9 +2167,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@jlvandenhout/docusaurus-plugin-docs-editor@jlvandenhout/docusaurus-plugin-docs-editor":
-  version: 0.6.0
-  resolution: "@jlvandenhout/docusaurus-plugin-docs-editor@https://github.com/jlvandenhout/docusaurus-plugin-docs-editor.git#commit=969906c71684ca11787c455218fb748b142ffcd1"
+"@jlvandenhout/docusaurus-plugin-docs-editor@npm:^0.7.0":
+  version: 0.7.0
+  resolution: "@jlvandenhout/docusaurus-plugin-docs-editor@npm:0.7.0"
   dependencies:
     "@octokit/core": ^3.5.1
     "@octokit/plugin-rest-endpoint-methods": ^5.5.1
@@ -2212,7 +2212,7 @@ __metadata:
     unified: ^9.2.1
     utf8: ^3.0.0
     yaml: ^1.10.2
-  checksum: 0054364b0d1af3a5067ba545819eaa99198f01224219c33da3b6d3c2a48c80752fc87f311ad99534fa946f0bd1b26fd59bf81f64ee991befee3284deb6c87299
+  checksum: c1457a610767fe09860400ce37027453bcb2db987714145eb162f6b7f7286388d96b713a41457e5d040596995ab2d6f11f3c94483dd976a0b9a76506ccdece12
   languageName: node
   linkType: hard
 
@@ -8906,7 +8906,7 @@ __metadata:
     "@docusaurus/module-type-aliases": ^2.0.0-beta.15
     "@docusaurus/preset-classic": ^2.0.0-beta.14
     "@iota-community/iota-wiki-cli": ^1.7.0
-    "@jlvandenhout/docusaurus-plugin-docs-editor": jlvandenhout/docusaurus-plugin-docs-editor
+    "@jlvandenhout/docusaurus-plugin-docs-editor": ^0.7.0
     "@mdx-js/react": ^1.6.21
     "@svgr/webpack": ^5.5.0
     "@tsconfig/docusaurus": ^1.0.4
