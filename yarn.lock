@@ -1626,7 +1626,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@docusaurus/core@npm:2.0.0-beta.15, @docusaurus/core@npm:^2.0.0-beta.14":
+"@docusaurus/core@npm:2.0.0-beta.15, @docusaurus/core@npm:^2.0.0-beta.15":
   version: 2.0.0-beta.15
   resolution: "@docusaurus/core@npm:2.0.0-beta.15"
   dependencies:
@@ -1906,7 +1906,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@docusaurus/preset-classic@npm:^2.0.0-beta.14":
+"@docusaurus/preset-classic@npm:^2.0.0-beta.15":
   version: 2.0.0-beta.15
   resolution: "@docusaurus/preset-classic@npm:2.0.0-beta.15"
   dependencies:
@@ -8902,9 +8902,9 @@ __metadata:
   resolution: "iota-wiki@workspace:."
   dependencies:
     "@algolia/client-search": ^4.9.1
-    "@docusaurus/core": ^2.0.0-beta.14
+    "@docusaurus/core": ^2.0.0-beta.15
     "@docusaurus/module-type-aliases": ^2.0.0-beta.15
-    "@docusaurus/preset-classic": ^2.0.0-beta.14
+    "@docusaurus/preset-classic": ^2.0.0-beta.15
     "@iota-community/iota-wiki-cli": ^1.7.0
     "@jlvandenhout/docusaurus-plugin-docs-editor": ^0.7.0
     "@mdx-js/react": ^1.6.21
