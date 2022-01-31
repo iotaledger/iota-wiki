@@ -2,10 +2,16 @@ import React from 'react';
 import styles from './styles.module.css';
 import clsx from 'clsx';
 import { useHistory } from 'react-router-dom';
-import PropTypes from 'prop-types';
 
-export default function Card({ title, link, description, icon }) {
-  let history = useHistory();
+export interface CardProps {
+  title: string;
+  link: string;
+  description: string;
+  icon: string;
+}
+
+export default function Card({ title, link, description, icon }: CardProps) {
+  const history = useHistory();
   const handleClick = (e) => {
     e.preventDefault();
     history.push(link);
@@ -26,10 +32,3 @@ export default function Card({ title, link, description, icon }) {
     </div>
   );
 }
-
-Card.propTypes = {
-  title: PropTypes.string,
-  icon: PropTypes.string,
-  link: PropTypes.string,
-  description: PropTypes.string,
-};

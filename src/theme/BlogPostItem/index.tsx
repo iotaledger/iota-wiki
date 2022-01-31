@@ -5,7 +5,6 @@
  * LICENSE file in the root directory of this source tree.
  */
 import React from 'react';
-import PropTypes from 'prop-types';
 import clsx from 'clsx';
 import { MDXProvider } from '@mdx-js/react';
 import Translate, { translate } from '@docusaurus/Translate';
@@ -14,13 +13,20 @@ import { useBaseUrlUtils } from '@docusaurus/useBaseUrl';
 import { usePluralForm } from '@docusaurus/theme-common';
 import MDXComponents from '@theme/MDXComponents';
 import EditThisPage from '@theme/EditThisPage';
+import type { Props } from '@theme/BlogPostItem';
+
 import styles from './styles.module.css';
 import TagsListInline from '@theme/TagsListInline';
-import BlogPostAuthors from '@theme/BlogPostAuthors'; // Very simple pluralization: probably good enough for now
+import BlogPostAuthors from '@theme/BlogPostAuthors';
 
+type UrlFrontmatter = {
+  url?: string;
+};
+
+// Very simple pluralization: probably good enough for now
 function useReadingTimePlural() {
   const { selectMessage } = usePluralForm();
-  return (readingTimeFloat) => {
+  return (readingTimeFloat: number) => {
     const readingTime = Math.ceil(readingTimeFloat);
     return selectMessage(
       readingTime,
@@ -39,7 +45,7 @@ function useReadingTimePlural() {
   };
 }
 
-function BlogPostItem(props) {
+function BlogPostItem(props: Props): JSX.Element {
   const readingTimePlural = useReadingTimePlural();
   const { withBaseUrl } = useBaseUrlUtils();
   const {
@@ -61,7 +67,7 @@ function BlogPostItem(props) {
     authors,
   } = metadata;
   const image = assets.image ?? frontMatter.image;
-  const url = frontMatter.url;
+  const url = (frontMatter as UrlFrontmatter).url;
 
   const renderPostHeader = () => {
     const TitleHeading = isBlogPostPage ? 'h1' : 'h2';
@@ -171,27 +177,5 @@ function BlogPostItem(props) {
     </article>
   );
 }
-
-BlogPostItem.propTypes = {
-  children: PropTypes.node,
-  frontMatter: PropTypes.object,
-  assets: PropTypes.object,
-  metadata: PropTypes.shape({
-    date: PropTypes.string,
-    formattedDate: PropTypes.string,
-    permalink: PropTypes.string,
-    tags: PropTypes.arrayOf(PropTypes.object),
-    readingTime: PropTypes.string,
-    title: PropTypes.string,
-    editUrl: PropTypes.string,
-    authors: PropTypes.arrayOf(PropTypes.object),
-  }),
-  truncated: PropTypes.bool,
-  isBlogPostPage: PropTypes.bool,
-};
-
-BlogPostItem.defaultProps = {
-  isBlogPostPage: false,
-};
 
 export default BlogPostItem;

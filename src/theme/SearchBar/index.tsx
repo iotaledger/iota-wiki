@@ -4,6 +4,7 @@
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  */
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 
 import React, { useState, useRef, useCallback, useMemo } from 'react';
 import { createPortal } from 'react-dom';
@@ -12,25 +13,48 @@ import { useHistory } from '@docusaurus/router';
 import { useBaseUrlUtils } from '@docusaurus/useBaseUrl';
 import Link from '@docusaurus/Link';
 import Head from '@docusaurus/Head';
-import useSearchQuery from '@theme/hooks/useSearchQuery';
+import { isRegexpStringMatch, useSearchPage } from '@docusaurus/theme-common';
 import { DocSearchButton, useDocSearchKeyboardEvents } from '@docsearch/react';
-import useAlgoliaContextualFacetFilters from '@theme/hooks/useAlgoliaContextualFacetFilters';
+import { useAlgoliaContextualFacetFilters } from '@docusaurus/theme-search-algolia/client';
 import { translate } from '@docusaurus/Translate';
-import PropTypes from 'prop-types';
 
-let DocSearchModal = null;
+import type {
+  DocSearchModal as DocSearchModalType,
+  DocSearchModalProps,
+} from '@docsearch/react';
+import type {
+  InternalDocSearchHit,
+  StoredDocSearchHit,
+} from '@docsearch/react/dist/esm/types';
+import type { AutocompleteState } from '@algolia/autocomplete-core';
 
-function Hit({ hit, children }) {
+type DocSearchProps = Omit<
+  DocSearchModalProps,
+  'onClose' | 'initialScrollY'
+> & {
+  contextualSearch?: string;
+  externalUrlRegex?: string;
+};
+
+let DocSearchModal: typeof DocSearchModalType | null = null;
+
+function Hit({
+  hit,
+  children,
+}: {
+  hit: InternalDocSearchHit | StoredDocSearchHit;
+  children: React.ReactNode;
+}) {
   return <Link to={hit.url}>{children}</Link>;
 }
 
-Hit.propTypes = {
-  hit: PropTypes.node,
-  children: PropTypes.node,
+type ResultsFooterProps = {
+  state: AutocompleteState<InternalDocSearchHit>;
+  onClose: () => void;
 };
 
-function ResultsFooter({ state, onClose }) {
-  const { generateSearchPageLink } = useSearchQuery();
+function ResultsFooter({ state, onClose }: ResultsFooterProps) {
+  const { generateSearchPageLink } = useSearchPage();
 
   return (
     <Link to={generateSearchPageLink(state.query)} onClick={onClose}>
@@ -39,41 +63,51 @@ function ResultsFooter({ state, onClose }) {
   );
 }
 
-ResultsFooter.propTypes = {
-  state: PropTypes.node,
-  onClose: PropTypes.func,
-};
+type FacetFilters = Required<
+  Required<DocSearchProps>['searchParameters']
+>['facetFilters'];
 
-// eslint-disable-next-line react/prop-types
-function DocSearch({ contextualSearch, ...props }) {
+function mergeFacetFilters(f1: FacetFilters, f2: FacetFilters): FacetFilters {
+  const normalize = (
+    f: FacetFilters,
+  ): readonly string[] | ReadonlyArray<readonly string[]> =>
+    f instanceof Array ? f : [f];
+  return [...normalize(f1), ...normalize(f2)] as FacetFilters;
+}
+
+function DocSearch({
+  contextualSearch,
+  externalUrlRegex,
+  ...props
+}: DocSearchProps) {
   const { siteMetadata } = useDocusaurusContext();
 
-  const contextualSearchFacetFilters = useAlgoliaContextualFacetFilters();
+  const contextualSearchFacetFilters =
+    useAlgoliaContextualFacetFilters() as FacetFilters;
 
-  // eslint-disable-next-line react/prop-types
-  const configFacetFilters = props.searchParameters?.facetFilters ?? [];
+  const configFacetFilters: FacetFilters =
+    props.searchParameters?.facetFilters ?? [];
 
-  const facetFilters = contextualSearch
+  const facetFilters: FacetFilters = contextualSearch
     ? // Merge contextual search filters with config filters
-      [...contextualSearchFacetFilters, ...configFacetFilters]
+      mergeFacetFilters(contextualSearchFacetFilters, configFacetFilters)
     : // ... or use config facetFilters
       configFacetFilters;
 
   // we let user override default searchParameters if he wants to
-
-  // eslint-disable-next-line react/prop-types
-  const searchParameters = {
-    //eslint-disable-next-line react/prop-types
+  const searchParameters: DocSearchProps['searchParameters'] = {
     ...props.searchParameters,
     facetFilters,
   };
 
   const { withBaseUrl } = useBaseUrlUtils();
   const history = useHistory();
-  const searchContainer = useRef(null);
-  const searchButtonRef = useRef(null);
+  const searchContainer = useRef<HTMLDivElement | null>(null);
+  const searchButtonRef = useRef<HTMLButtonElement>(null);
   const [isOpen, setIsOpen] = useState(false);
-  const [initialQuery, setInitialQuery] = useState(null);
+  const [initialQuery, setInitialQuery] = useState<string | undefined>(
+    undefined,
+  );
 
   const importDocSearchModalIfNeeded = useCallback(() => {
     if (DocSearchModal) {
@@ -81,7 +115,9 @@ function DocSearch({ contextualSearch, ...props }) {
     }
 
     return Promise.all([
+      // @ts-ignore
       import('@docsearch/react/modal'),
+      // @ts-ignore
       import('@docsearch/react/style'),
       import('./styles.css'),
     ]).then(([{ DocSearchModal: Modal }]) => {
@@ -102,7 +138,7 @@ function DocSearch({ contextualSearch, ...props }) {
 
   const onClose = useCallback(() => {
     setIsOpen(false);
-    searchContainer.current.remove();
+    searchContainer.current?.remove();
   }, [setIsOpen]);
 
   const onInput = useCallback(
@@ -116,33 +152,45 @@ function DocSearch({ contextualSearch, ...props }) {
   );
 
   const navigator = useRef({
-    navigate({ itemUrl }) {
-      history.push(itemUrl);
+    navigate({ itemUrl }: { itemUrl?: string }) {
+      // Algolia results could contain URL's from other domains which cannot
+      // be served through history and should navigate with window.location
+      if (isRegexpStringMatch(externalUrlRegex, itemUrl)) {
+        window.location.href = itemUrl;
+      } else {
+        history.push(itemUrl);
+      }
     },
   }).current;
 
-  const transformItems = useRef((items) => {
-    return items.map((item) => {
-      // We transform the absolute URL into a relative URL.
-      // Alternatively, we can use `new URL(item.url)` but it's not
-      // supported in IE.
-      const a = document.createElement('a');
-      a.href = item.url;
+  const transformItems = useRef<DocSearchModalProps['transformItems']>(
+    (items) =>
+      items.map((item) => {
+        // If Algolia contains a external domain, we should navigate without relative URL
+        if (isRegexpStringMatch(externalUrlRegex, item.url)) {
+          return item;
+        }
 
-      return {
-        ...item,
-        url: withBaseUrl(`${a.pathname}${a.hash}`),
-      };
-    });
-  }).current;
+        // We transform the absolute URL into a relative URL.
+        const url = new URL(item.url);
+        return {
+          ...item,
+          url: withBaseUrl(`${url.pathname}${url.hash}`),
+        };
+      }),
+  ).current;
 
-  const resultsFooterComponent = useMemo(
-    // eslint-disable-next-line react/display-name
-    () => (footerProps) => <ResultsFooter {...footerProps} onClose={onClose} />,
-    [onClose],
-  );
-
-  resultsFooterComponent.displayName = 'resultsFooterComponent';
+  const resultsFooterComponent: DocSearchProps['resultsFooterComponent'] =
+    useMemo(
+      () =>
+        // eslint-disable-next-line react/no-unstable-nested-components
+        function resultsFooter(
+          footerProps: Omit<ResultsFooterProps, 'onClose'>,
+        ): JSX.Element {
+          return <ResultsFooter {...footerProps} onClose={onClose} />;
+        },
+      [onClose],
+    );
 
   const transformSearchClient = useCallback(
     (searchClient) => {
@@ -178,7 +226,6 @@ function DocSearch({ contextualSearch, ...props }) {
         query faster, especially on mobile. */}
         <link
           rel='preconnect'
-          //eslint-disable-next-line react/prop-types
           href={`https://${props.appId}-dsn.algolia.net`}
           crossOrigin='anonymous'
         />
@@ -199,6 +246,8 @@ function DocSearch({ contextualSearch, ...props }) {
       </div>
 
       {isOpen &&
+        DocSearchModal &&
+        searchContainer.current &&
         createPortal(
           <DocSearchModal
             onClose={onClose}
@@ -218,8 +267,9 @@ function DocSearch({ contextualSearch, ...props }) {
   );
 }
 
-function SearchBar() {
+function SearchBar(): JSX.Element {
   const { siteConfig } = useDocusaurusContext();
+  // @ts-ignore
   return <DocSearch {...siteConfig.themeConfig.algolia} />;
 }
 

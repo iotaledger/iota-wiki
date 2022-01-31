@@ -1,11 +1,14 @@
 import React from 'react';
 import ImageGallery from 'react-image-gallery';
 import 'react-image-gallery/styles/css/image-gallery.css';
-import PropTypes from 'prop-types';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import { useRef } from 'react';
 
-export default function ImageSlider({ path }) {
+export interface ImageSliderProps {
+  path: string;
+}
+
+export default function ImageSlider({ path }: ImageSliderProps) {
   // Import images from the infographics folder
   function importImages(r) {
     return r.keys().map((x) => x.replace('.', ''));
@@ -23,9 +26,9 @@ export default function ImageSlider({ path }) {
 
   // Create an array of objects with the image paths
   function createImageArray() {
-    let images = [];
+    const images = [];
     for (let i = 0; i < requestedImages.length; i++) {
-      let image = useBaseUrl('/img' + requestedImages[i]);
+      const image = useBaseUrl('/img' + requestedImages[i]);
       if (getFileExtension(requestedImages[i]) === 'mp4') {
         images.push({
           original: image,
@@ -33,7 +36,7 @@ export default function ImageSlider({ path }) {
           renderItem: () => (
             <video
               controls
-              autoPlay='autoplay'
+              autoPlay={true}
               muted
               className='image-gallery-video'
             >
@@ -65,7 +68,3 @@ export default function ImageSlider({ path }) {
     />
   );
 }
-
-ImageSlider.propTypes = {
-  path: PropTypes.string.isRequired,
-};

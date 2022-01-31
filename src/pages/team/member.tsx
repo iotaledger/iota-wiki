@@ -1,9 +1,19 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import get_socials_data from '../../../src/helper/socials';
+import get_socials_data from '../../helper/socials';
 
-function SocialLink({ link }) {
-  let data = get_socials_data(link);
+interface SocialLinkProps {
+  link: string;
+}
+
+export interface TeamMemberProps {
+  name: string;
+  title: string;
+  image_url: string;
+  social_links: string[];
+}
+
+function SocialLink({ link }: SocialLinkProps) {
+  const data = get_socials_data(link);
 
   return (
     <a className='team__icon margin-horiz--sm' href={link}>
@@ -12,9 +22,12 @@ function SocialLink({ link }) {
   );
 }
 
-const TeamMember = function (props) {
-  let { name, title, image_url, social_links } = props;
-
+const TeamMember = function ({
+  name,
+  title,
+  image_url,
+  social_links,
+}: TeamMemberProps) {
   return (
     <div className='col margin-vert--md'>
       <div className='card card--full-height'>
@@ -34,8 +47,8 @@ const TeamMember = function (props) {
         <div className='card__footer'>
           <div className='link-list'>
             {social_links &&
-              social_links.map((props, idx) => (
-                <SocialLink key={idx} link={props} />
+              social_links.map((link, idx) => (
+                <SocialLink key={idx} link={link} />
               ))}
           </div>
         </div>
@@ -45,14 +58,3 @@ const TeamMember = function (props) {
 };
 
 export default TeamMember;
-
-SocialLink.propTypes = {
-  link: PropTypes.string,
-};
-
-TeamMember.propTypes = {
-  name: PropTypes.string,
-  title: PropTypes.string,
-  image_url: PropTypes.string,
-  social_links: PropTypes.arrayOf(PropTypes.string),
-};

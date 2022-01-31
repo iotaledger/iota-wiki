@@ -7,17 +7,21 @@
 import React from 'react';
 import clsx from 'clsx';
 import Link from '@docusaurus/Link';
-import { useThemeConfig } from '@docusaurus/theme-common';
+import { FooterLinkItem, useThemeConfig } from '@docusaurus/theme-common';
 import useBaseUrl from '@docusaurus/useBaseUrl';
-import PropTypes from 'prop-types';
-import ThemedImage from '@theme/ThemedImage';
-import Social from '@theme/Social';
+import ThemedImage, { Props as ThemedImageProps } from '@theme/ThemedImage';
+import Social from '@site/src/components/Social';
 
-function FooterLink({ to, href, label, prependBaseUrlToHref, ...props }) {
+function FooterLink({
+  to,
+  href,
+  label,
+  prependBaseUrlToHref,
+  ...props
+}: FooterLinkItem) {
   const toUrl = useBaseUrl(to);
-  const normalizedHref = useBaseUrl(href, {
-    forcePrependBaseUrl: true,
-  });
+  const normalizedHref = useBaseUrl(href, { forcePrependBaseUrl: true });
+
   return (
     <Link
       className='footer__link-item'
@@ -35,26 +39,24 @@ function FooterLink({ to, href, label, prependBaseUrlToHref, ...props }) {
   );
 }
 
-FooterLink.propTypes = {
-  to: PropTypes.string,
-  href: PropTypes.string,
-  label: PropTypes.string,
-  prependBaseUrlToHref: PropTypes.bool,
-};
+function FooterLogo({
+  sources,
+  alt,
+  width,
+  height,
+}: Pick<ThemedImageProps, 'sources' | 'alt' | 'width' | 'height'>) {
+  return (
+    <ThemedImage
+      className='footer__logo'
+      alt={alt}
+      sources={sources}
+      width={width}
+      height={height}
+    />
+  );
+}
 
-const FooterLogo = ({ sources, alt }) => (
-  <ThemedImage className='footer__logo' alt={alt} sources={sources} />
-);
-
-FooterLogo.propTypes = {
-  sources: PropTypes.shape({
-    light: PropTypes.string,
-    dark: PropTypes.string,
-  }),
-  alt: PropTypes.string,
-};
-
-function Footer() {
+function Footer(): JSX.Element | null {
   const { footer } = useThemeConfig();
   const { copyright, links = [], logo = {} } = footer || {};
   const sources = {
@@ -136,4 +138,4 @@ function Footer() {
   );
 }
 
-export default Footer;
+export default React.memo(Footer);

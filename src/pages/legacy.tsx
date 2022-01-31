@@ -1,5 +1,5 @@
 import React from 'react';
-import HomeLayout from '/src/theme/HomeLayout';
+import HomeLayout from '@site/src/components/HomeLayout';
 
 export default function LegacyHome() {
   const description =

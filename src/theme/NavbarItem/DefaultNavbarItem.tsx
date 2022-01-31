@@ -6,13 +6,23 @@
  */
 import React from 'react';
 import clsx from 'clsx';
-import PropTypes from 'prop-types';
 import Link from '@docusaurus/Link';
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import type {
+  DesktopOrMobileNavBarItemProps,
+  Props as NavLinkProps,
+} from '@theme/NavbarItem/DefaultNavbarItem';
 import IconExternalLink from '@theme/IconExternalLink';
 import isInternalUrl from '@docusaurus/isInternalUrl';
+
 const dropdownLinkActiveClass = 'dropdown__link--active';
-function NavLink({
+
+interface ExtendedNavLinkProps extends NavLinkProps {
+  sublabel?: string;
+  icon?: string;
+}
+
+export function NavLink({
   activeBasePath,
   activeBaseRegex,
   to,
@@ -23,14 +33,12 @@ function NavLink({
   activeClassName = 'navbar__link--active',
   prependBaseUrlToHref,
   ...props
-}) {
+}: ExtendedNavLinkProps): JSX.Element {
   // TODO all this seems hacky
   // {to: 'version'} should probably be forbidden, in favor of {to: '/version'}
   const toUrl = useBaseUrl(to);
   const activeBaseUrl = useBaseUrl(activeBasePath);
-  const normalizedHref = useBaseUrl(href, {
-    forcePrependBaseUrl: true,
-  });
+  const normalizedHref = useBaseUrl(href, { forcePrependBaseUrl: true });
   const isExternalLink = label && href && !isInternalUrl(href);
   const isDropdownLink = activeClassName === dropdownLinkActiveClass;
 
@@ -82,29 +90,11 @@ function NavLink({
   );
 }
 
-NavLink.propTypes = {
-  activeBasePath: PropTypes.string,
-  activeBaseRegex: PropTypes.string,
-  to: PropTypes.string,
-  href: PropTypes.string,
-  label: PropTypes.string,
-  sublabel: PropTypes.string,
-  icon: PropTypes.string,
-  activeClassName: PropTypes.string,
-  prependBaseUrlToHref: PropTypes.bool,
-};
-
-NavLink.defaultProps = {
-  activeClassName: 'navbar__link--active',
-};
-
-export { NavLink };
-
 function DefaultNavbarItemDesktop({
   className,
   isDropdownItem = false,
   ...props
-}) {
+}: DesktopOrMobileNavBarItemProps) {
   const element = (
     <NavLink
       className={clsx(
@@ -122,17 +112,10 @@ function DefaultNavbarItemDesktop({
   return element;
 }
 
-DefaultNavbarItemDesktop.propTypes = {
-  className: PropTypes.string,
-  isDropdownItem: PropTypes.bool,
-};
-
-DefaultNavbarItemDesktop.defaultProps = {
-  isDropdownItem: false,
-};
-
-function DefaultNavbarItemMobile({ className, ...props }) {
-  /* eslint-disable-next-line react/prop-types */
+function DefaultNavbarItemMobile({
+  className,
+  ...props
+}: DesktopOrMobileNavBarItemProps) {
   delete props.isDropdownItem;
 
   return (
@@ -142,13 +125,14 @@ function DefaultNavbarItemMobile({ className, ...props }) {
   );
 }
 
-DefaultNavbarItemMobile.propTypes = {
-  className: PropTypes.string,
-};
-
-function DefaultNavbarItem({ mobile = false, to, label, ...props }) {
-  /* eslint-disable-next-line react/prop-types */
+function DefaultNavbarItem({
+  mobile = false,
+  to,
+  label,
+  ...props
+}: ExtendedNavLinkProps): JSX.Element {
   delete props.position;
+
   /**
    * Added to enable non-clickable category headers.
    * To use simply add an navBar items in the config
@@ -166,15 +150,5 @@ function DefaultNavbarItem({ mobile = false, to, label, ...props }) {
     return <Comp to={to} label={label} {...props} />;
   }
 }
-
-DefaultNavbarItem.propTypes = {
-  mobile: PropTypes.bool,
-  to: PropTypes.string,
-  label: PropTypes.string,
-};
-
-DefaultNavbarItem.defaultProps = {
-  mobile: false,
-};
 
 export default DefaultNavbarItem;

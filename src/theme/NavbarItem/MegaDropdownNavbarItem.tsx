@@ -5,21 +5,32 @@
  * LICENSE file in the root directory of this source tree.
  */
 import React, { useState, useRef, useEffect } from 'react';
-import PropTypes from 'prop-types';
 import clsx from 'clsx';
 import {
   isSamePath,
   useCollapsible,
+  useHideableNavbar,
   useThemeConfig,
   Collapsible,
   useLocalPathname,
 } from '@docusaurus/theme-common';
-import useHideableNavbar from '@theme/hooks/useHideableNavbar';
-import { NavLink } from '@theme/NavbarItem/DefaultNavbarItem';
+import { NavLink } from './DefaultNavbarItem';
 import NavbarItem from '@theme/NavbarItem';
 import './styles.css';
+import type { Props as NavLinkProps } from '@theme/NavbarItem/DefaultNavbarItem';
 
 const dropdownLinkActiveClass = 'dropdown__link--active';
+
+interface DesktopOrMobileMegaDropdownNavbarItemProps extends NavLinkProps {
+  readonly position?: 'left' | 'right';
+  readonly items_: readonly [];
+  readonly layout?;
+  readonly className?: string;
+}
+
+export interface Props extends DesktopOrMobileMegaDropdownNavbarItemProps {
+  readonly mobile?: boolean;
+}
 
 function isItemActive(item, localPathname) {
   if (isSamePath(item.to, localPathname)) {
@@ -54,7 +65,13 @@ function createItemCursor({ items, label, className, ...props }) {
   return cursor;
 }
 
-function MegaDropdownItem({ className, to, href, label, ...props }) {
+function MegaDropdownItem({
+  className,
+  to,
+  href,
+  label,
+  ...props
+}: NavLinkProps) {
   if (to || href) {
     return (
       <NavLink
@@ -75,20 +92,13 @@ function MegaDropdownItem({ className, to, href, label, ...props }) {
   throw 'Mega dropdown item must be a link or a category header.';
 }
 
-MegaDropdownItem.propTypes = {
-  className: PropTypes.string,
-  to: PropTypes.string,
-  href: PropTypes.string,
-  label: PropTypes.string,
-};
-
 /***
  * Loop through the megamenu's grouped items and return ungrouped items
  * @param groupedItems array
  * @returns array of ungrouped items
  */
 function getUngroupedItemsList(groupedItems) {
-  let items = [];
+  const items = [];
   groupedItems.map((itemList) => {
     itemList.items.map((item) => {
       items.push(item);
@@ -119,7 +129,7 @@ function MegaDropdownNavbarItemDesktop({
   position,
   className,
   ...props
-}) {
+}: DesktopOrMobileMegaDropdownNavbarItemProps) {
   const localPathname = useLocalPathname();
   const dropdownRef = useRef(null);
   const [showDropdown, setShowDropdown] = useState(false);
@@ -252,18 +262,12 @@ function MegaDropdownNavbarItemDesktop({
   );
 }
 
-MegaDropdownNavbarItemDesktop.propTypes = {
-  items_: PropTypes.array,
-  layout: PropTypes.arrayOf(PropTypes.string),
-  position: PropTypes.string,
-  className: PropTypes.string,
-  ...NavLink.propTypes,
-};
-
-function MegaDropdownNavbarItemMobile({ items_: items, className, ...props }) {
-  /* eslint-disable-next-line react/prop-types */
+function MegaDropdownNavbarItemMobile({
+  items_: items,
+  className,
+  ...props
+}: DesktopOrMobileMegaDropdownNavbarItemProps) {
   delete props.position;
-  /* eslint-disable-next-line react/prop-types */
   delete props.layout;
 
   const localPathname = useLocalPathname();
@@ -319,25 +323,14 @@ function MegaDropdownNavbarItemMobile({ items_: items, className, ...props }) {
   );
 }
 
-MegaDropdownNavbarItemMobile.propTypes = {
-  items_: PropTypes.array,
-  className: PropTypes.string,
-  ...NavLink.propTypes,
-};
-
-function MegaDropdownNavbarItem({ mobile = false, ...props }) {
+function MegaDropdownNavbarItem({
+  mobile = false,
+  ...props
+}: Props): JSX.Element {
   const Comp = mobile
     ? MegaDropdownNavbarItemMobile
     : MegaDropdownNavbarItemDesktop;
   return <Comp {...props} />;
 }
-
-MegaDropdownNavbarItem.propTypes = {
-  mobile: PropTypes.bool,
-};
-
-MegaDropdownNavbarItem.defaultProps = {
-  mobile: false,
-};
 
 export default MegaDropdownNavbarItem;
