@@ -86,12 +86,12 @@ const MDXComponents: ExtendedMDXComponentsObject = {
       </Details>
     );
   },
-  h1: () => Heading({ as: 'h1' }),
-  h2: () => Heading({ as: 'h2' }),
-  h3: () => Heading({ as: 'h3' }),
-  h4: () => Heading({ as: 'h4' }),
-  h5: () => Heading({ as: 'h5' }),
-  h6: () => Heading({ as: 'h6' }),
+  h1: (props) => <Heading as='h1' {...props} />,
+  h2: (props) => <Heading as='h2' {...props} />,
+  h3: (props) => <Heading as='h3' {...props} />,
+  h4: (props) => <Heading as='h4' {...props} />,
+  h5: (props) => <Heading as='h5' {...props} />,
+  h6: (props) => <Heading as='h6' {...props} />,
   img: (props) => <FullscreenImage.Source {...props} />,
 };
 
