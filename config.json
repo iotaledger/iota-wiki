@@ -33,9 +33,7 @@
       "repo": "https://github.com/iotaledger/stronghold.rs"
     },
     {
-      "repo": "https://github.com/iotaledger/IOTA-2.0-Research-Specifications",
-      "checkoutParams": ["--branch docusaurus"],
-      "staticPath": "./static"
+      "repo": "https://github.com/iotaledger/IOTA-2.0-Research-Specifications"
     },
     {
       "repo": "https://github.com/iotaledger/chrysalis-docs",
@@ -56,6 +54,10 @@
     },
     {
       "repo": "https://github.com/iotaledger/chronicle.rs",
+      "staticPath": "./documentation/static"
+    },
+    {
+      "repo": "https://github.com/iotaledger/integration-services",
       "staticPath": "./documentation/static"
     }
   ]

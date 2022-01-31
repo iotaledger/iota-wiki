@@ -1,5 +1,5 @@
 ---
-title: Non-fungile Token (NFTs)
+title: Non-fungible Tokens (NFTs)
 description: This article explains the different types of NFTs on IOTA.
 ---
 
@@ -12,6 +12,8 @@ There are many use cases for NFTs, the most common use case is to link an image 
 Other use cases would be to use NFTs as assets in games, for event tickets, for Decentralized Finance (DeFi), for voting in decentralized autonomous organizations (DAOs) or for any objects in the Metaverse.
 
 ## Different NFT Types on IOTA
+
+![tokenized-assets](/img/learn/layer2-tokenized-assets.png)
 
 ### Digital Native Assets
 
