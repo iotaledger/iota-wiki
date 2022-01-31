@@ -2138,6 +2138,24 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@iota-community/iota-wiki-cli@npm:^1.7.0":
+  version: 1.7.0
+  resolution: "@iota-community/iota-wiki-cli@npm:1.7.0"
+  dependencies:
+    "@oclif/command": ^1.8.0
+    "@oclif/config": ^1.17.0
+    "@oclif/plugin-help": ^3.2.3
+    fs-extra: ^10.0.0
+    lodash.debounce: ^4.0.8
+    replace-in-file: ^6.2.0
+    sync-directory: ^2.2.22
+    tslib: ^1.14.1
+  bin:
+    iota-wiki-cli: bin/run
+  checksum: 011f335b21efb812c8a8df850eeb32807872ce9ac047edc554c1efcc1d1cfac670b4054ddbec0e9d44b7618e5e56bdec6441f00a69bcd798343183c0f03359e4
+  languageName: node
+  linkType: hard
+
 "@jlvandenhout/docusaurus-plugin-docs-editor@jlvandenhout/docusaurus-plugin-docs-editor":
   version: 0.5.0
   resolution: "@jlvandenhout/docusaurus-plugin-docs-editor@https://github.com/jlvandenhout/docusaurus-plugin-docs-editor.git#commit=e4b41a86805f05606cdce7326c993c328349297d"
@@ -8683,24 +8701,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"iota-wiki-cli@iota-community/iota-wiki-cli#v1.6.0":
-  version: 1.6.0
-  resolution: "iota-wiki-cli@https://github.com/iota-community/iota-wiki-cli.git#commit=0690529b784d4012c174496446c967afc2f4e131"
-  dependencies:
-    "@oclif/command": ^1.8.0
-    "@oclif/config": ^1.17.0
-    "@oclif/plugin-help": ^3.2.3
-    fs-extra: ^10.0.0
-    lodash.debounce: ^4.0.8
-    replace-in-file: ^6.2.0
-    sync-directory: ^2.2.22
-    tslib: ^1.14.1
-  bin:
-    iota-wiki-cli: ./bin/run
-  checksum: e942c0120d439ab78101a325fc27fa4e3425e271e49d3dc6ae7261bc81964d6534febbc497f7a9ce517bfa861972af5cdd5505c5eaa2107e68c4bcb6d5209a50
-  languageName: node
-  linkType: hard
-
 "iota-wiki@workspace:.":
   version: 0.0.0-use.local
   resolution: "iota-wiki@workspace:."
@@ -8708,6 +8708,7 @@ __metadata:
     "@algolia/client-search": ^4.9.1
     "@docusaurus/core": ^2.0.0-beta.14
     "@docusaurus/preset-classic": ^2.0.0-beta.14
+    "@iota-community/iota-wiki-cli": ^1.7.0
     "@jlvandenhout/docusaurus-plugin-docs-editor": jlvandenhout/docusaurus-plugin-docs-editor
     "@mdx-js/react": ^1.6.21
     "@svgr/webpack": ^5.5.0
@@ -8721,7 +8722,6 @@ __metadata:
     file-loader: ^6.2.0
     hast-util-is-element: 1.1.0
     husky: ">=6"
-    iota-wiki-cli: "iota-community/iota-wiki-cli#v1.6.0"
     lint-staged: ">=10"
     prettier: ^2.4.1
     prop-types: ^15.7.2
