@@ -12,11 +12,11 @@ Configure the utility with a config json. See a example [`here`](./config.exampl
 # Usage
 <!-- usage -->
 ```sh-session
-$ npm install -g iota-wiki-cli
+$ npm install -g @iota-community/iota-wiki-cli
 $ iota-wiki-cli COMMAND
 running command...
 $ iota-wiki-cli (-v|--version|version)
-iota-wiki-cli/1.6.0 linux-x64 node-v14.16.1
+@iota-community/iota-wiki-cli/1.7.0 linux-x64 node-v16.13.1
 $ iota-wiki-cli --help [COMMAND]
 USAGE
   $ iota-wiki-cli COMMAND
