@@ -38,7 +38,7 @@
   "keywords": [
     "oclif"
   ],
-  "license": "UNLICENSED",
+  "license": "MIT",
   "main": "lib/index.js",
   "oclif": {
     "commands": "./lib/commands",
