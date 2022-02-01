@@ -35,10 +35,10 @@ import {usePluralForm} from '@docusaurus/theme-common';
 
 import styles from './styles.module.css';
 
-const TITLE = 'Docusaurus Site Showcase';
-const DESCRIPTION = 'List of websites people are building with Docusaurus';
+const TITLE = 'Wiki Tutorials';
+const DESCRIPTION = 'List of great IOTA tutorials';
 const EDIT_URL =
-  'https://github.com/facebook/docusaurus/edit/main/website/src/data/users.tsx';
+  'https://github.com/Dr-Electron/iota-wiki/edit/main/src/data/users.tsx';
 
 type UserState = {
   scrollTopPosition: number;
@@ -130,7 +130,7 @@ function ShowcaseHeader() {
         target="_blank"
         rel="noreferrer">
         <Translate id="showcase.header.button">
-          🙏 Please add your site
+          🙏 Please add your tutorial
         </Translate>
       </a>
     </section>

@@ -50,15 +50,10 @@ export type Tag = {
 
 export type TagType =
     | 'favorite'
-    | 'opensource'
-    | 'product'
-    | 'design'
-    | 'i18n'
-    | 'versioning'
-    | 'large'
-    | 'meta'
-    | 'personal'
-    | 'rtl';
+    | 'scam'
+    | 'catlover'
+    | 'silkysmoth'
+    | 'meme';
 
 export type User = {
     title: string;
@@ -83,71 +78,60 @@ export const Tags: Record<TagType, Tag> = {
     },
 
     // For open-source sites, a link to the source code is required
-    opensource: {
-        label: 'Open-Source',
-        description: 'Open-Source Docusaurus sites can be useful for inspiration!',
+    scam: {
+        label: 'Scam',
+        description: 'This seems fishy',
         color: '#39ca30',
     },
 
-    product: {
-        label: 'Product',
-        description: 'Docusaurus sites associated to a commercial product!',
+    catlovers: {
+        label: 'Cat-Lover',
+        description: 'We love Cats(not the movie)!',
         color: '#dfd545',
     },
 
-    design: {
-        label: 'Design',
+    silkysmoth: {
+        label: 'Silky Smoth',
         description:
-            'Beautiful Docusaurus sites, polished and standing out from the initial template!',
+            'Only one person can make hair silky smoth',
         color: '#a44fb7',
     },
 
-    i18n: {
-        label: 'I18n',
+    meme: {
+        label: 'Meme',
         description:
-            'Translated Docusaurus sites using the internationalization support with more than 1 locale.',
+            'That\'s what we are here for, right?',
         color: '#127f82',
-    },
-
-    versioning: {
-        label: 'Versioning',
-        description:
-            'Docusaurus sites using the versioning feature of the docs plugin to manage multiple versions.',
-        color: '#fe6829',
-    },
-
-    // Large sites, with a lot of content (> 200 pages, excluding versions)
-    large: {
-        label: 'Large',
-        description:
-            'Very large Docusaurus sites, including many more pages than the average!',
-        color: '#8c2f00',
-    },
-
-    meta: {
-        label: 'Meta',
-        description: 'Docusaurus sites of Meta (formerly Facebook) projects',
-        color: '#4267b2', // Facebook blue
-    },
-
-    personal: {
-        label: 'Personal',
-        description:
-            'Personal websites, blogs and digital gardens built with Docusaurus',
-        color: '#14cfc3',
-    },
-
-    rtl: {
-        label: 'RTL Direction',
-        description:
-            'Docusaurus sites using the right-to-left reading direction support.',
-        color: '#ffcfc3',
     },
 };
 
 // Add your site to this list
 // prettier-ignore
 const Users: User[] = [
+    {
+        title: 'Hair like Jeroen',
+        description:
+            'Ever wanted to know how to get fabulous hair? Search no longer. In this tutorial we will show you how to style your hair perfectly',
+        preview: require('./showcase/the-weekend.png'),
+        website: 'https://www.youtube.com/watch?v=E1TB4USszBk',
+        tags: ['favorite', 'silkysmoth'],
+    },
+    {
+        title: 'Cats, Cats and Cats (not the movie)',
+        description:
+            'Learn from the GIF grandmaster himself.',
+        preview: require('./showcase/cat.png'),
+        website: 'https://youtu.be/dQw4w9WgXcQ',
+        tags: ['favorite', 'catlovers', 'meme'],
+    },
+    {
+        title: 'He is still 25 because of this little trick the beauty industry doesn\'t want you to know',
+        description:
+            'He went diving and came back as a 25 year old. How? Click here to learn',
+        preview: require('./showcase/firefly-scam.png'),
+        website: 'https://www.youtube.com/watch?v=Mh0uMbO78OM',
+        tags: ['favorite', 'scam'],
+    },
     /*
     Pro Tip: add your site in alphabetical order.
     Appending your site here (at the end) is more likely to produce Git conflicts.
