@@ -1,5 +1,6 @@
-/** @type {import('@docusaurus/types').DocusaurusConfig} */
+// @ts-check
 
+/** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
   title: 'IOTA Wiki',
   tagline: 'The complete reference for IOTA',
@@ -21,6 +22,7 @@ module.exports = {
     },
   ],
   themeConfig: {
+    /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     announcementBar: {
       id: 'assembly',
       content:
@@ -73,12 +75,12 @@ module.exports = {
         {
           label: 'Learn',
           to: 'learn/about-iota/an-introduction-to-iota',
-          activeBaseRegex: 'learn/.*',
+          activeBaseRegex: '^/learn/.*',
         },
         {
           label: 'Participate',
           to: 'participate/support-the-network/about-nodes',
-          activeBaseRegex: 'participate/.*',
+          activeBaseRegex: '^/participate/.*',
         },
         {
           label: 'Build',
@@ -86,7 +88,8 @@ module.exports = {
           layout: [
             '0 1 3 4',
             '0 1 3 4',
-            '. 1 3 2',
+            '5 1 3 2',
+            '5 1 3 2',
             '. 1 3 2',
             '. 1 3 2',
             '. 1 3 2',
@@ -100,7 +103,7 @@ module.exports = {
                   sublabel: 'IOTA development basics',
                   to: 'build/welcome',
                   icon: '\ue902',
-                  activeBaseRegex: '/build/.*',
+                  activeBaseRegex: '^/(build|blueprints)/.*',
                 },
               ],
             },
@@ -112,28 +115,28 @@ module.exports = {
                   sublabel: 'Mainnet documentation',
                   to: 'chrysalis-docs/welcome',
                   icon: '\ue901',
-                  activeBaseRegex: 'chrysalis-docs.*',
+                  activeBaseRegex: '^/chrysalis-docs.*',
                 },
                 {
                   label: 'Bee Node',
                   sublabel: 'IOTA node written in Rust',
                   to: 'bee/welcome',
                   icon: '\ue900',
-                  activeBaseRegex: 'bee/.*',
+                  activeBaseRegex: '^/bee/.*',
                 },
                 {
                   label: 'Hornet Node',
                   sublabel: 'IOTA node written in Go',
                   to: 'hornet/welcome',
                   icon: '\ue904',
-                  activeBaseRegex: 'hornet/.*',
+                  activeBaseRegex: '^/hornet/.*',
                 },
                 {
                   label: 'Chronicle Permanode',
                   sublabel: 'IOTA permanode',
                   to: 'chronicle.rs/welcome',
                   icon: '\ue90c',
-                  activeBaseRegex: 'chronicle.rs/.*',
+                  activeBaseRegex: '^/chronicle.rs/.*',
                 },
               ],
             },
@@ -152,7 +155,7 @@ module.exports = {
                   sublabel: 'IOTA 2.0 node',
                   to: 'goshimmer/welcome',
                   icon: '\ue903',
-                  activeBaseRegex: 'goshimmer/.*',
+                  activeBaseRegex: '^/goshimmer/.*',
                 },
               ],
             },
@@ -164,35 +167,35 @@ module.exports = {
                   sublabel: 'Interact with the IOTA network',
                   to: 'iota.rs/welcome',
                   icon: '\ue907',
-                  activeBaseRegex: 'iota.rs/.*',
+                  activeBaseRegex: '^/iota.rs/.*',
                 },
                 {
                   label: 'Wallet',
                   sublabel: 'Build IOTA wallets',
                   to: 'wallet.rs/welcome',
                   icon: '\ue90a',
-                  activeBaseRegex: 'wallet.rs/.*',
+                  activeBaseRegex: '^/wallet.rs/.*',
                 },
                 {
                   label: 'Stronghold',
                   sublabel: 'Handle secrets securely',
                   to: 'stronghold.rs/welcome',
                   icon: '\ue909',
-                  activeBaseRegex: 'stronghold.rs/.*',
+                  activeBaseRegex: '^/stronghold.rs/.*',
                 },
                 {
                   label: 'Identity',
                   sublabel: 'Identity framework',
                   to: 'identity.rs/introduction',
                   icon: '\ue905',
-                  activeBaseRegex: 'identity.rs/.*',
+                  activeBaseRegex: '^/identity.rs/.*',
                 },
                 {
                   label: 'Streams',
                   sublabel: 'Share data securely',
                   to: 'streams/welcome',
                   icon: '\ue908',
-                  activeBaseRegex: 'streams/.*',
+                  activeBaseRegex: '^/streams/.*',
                 },
               ],
             },
@@ -204,7 +207,19 @@ module.exports = {
                   sublabel: 'Smart contract node',
                   to: 'smart-contracts/overview',
                   icon: '\ue90b',
-                  activeBaseRegex: 'smart-contracts/.*',
+                  activeBaseRegex: '^/smart-contracts/.*',
+                },
+              ],
+            },
+            {
+              label: 'Integrations',
+              items: [
+                {
+                  label: 'Streams and Identity',
+                  sublabel: 'Integrate IOTA seamlessly',
+                  to: 'integration-services/welcome',
+                  icon: '\ue90d',
+                  activeBaseRegex: '^/integration-services/.*',
                 },
               ],
             },
@@ -236,8 +251,8 @@ module.exports = {
               to: 'learn/networks/iota-1.5-chrysalis',
             },
             {
-              label: 'Resource Materials',
-              to: 'learn/resource-materials/glossary',
+              label: 'Glossary',
+              to: 'learn/glossary',
             },
             {
               label: 'Research',
@@ -393,6 +408,7 @@ module.exports = {
   presets: [
     [
       '@docusaurus/preset-classic',
+      /** @type {import('@docusaurus/preset-classic').Options} */
       {
         docs: false,
         blog: {
@@ -440,7 +456,7 @@ module.exports = {
         id: 'learn',
         path: 'internal/learn',
         routeBasePath: 'learn',
-        sidebarPath: require.resolve('./internal/learn/sidebars.js'),
+        sidebarPath: require.resolve('./internal/learn/sidebars.ts'),
 
         // General config
         editUrl: 'https://github.com/iota-community/iota-wiki/edit/main/',
@@ -457,7 +473,7 @@ module.exports = {
         id: 'participate',
         path: 'internal/participate',
         routeBasePath: 'participate',
-        sidebarPath: require.resolve('./internal/participate/sidebars.js'),
+        sidebarPath: require.resolve('./internal/participate/sidebars.ts'),
 
         // General config
         editUrl: 'https://github.com/iota-community/iota-wiki/edit/main/',
@@ -474,7 +490,7 @@ module.exports = {
         id: 'build',
         path: 'internal/build',
         routeBasePath: 'build',
-        sidebarPath: require.resolve('./internal/build/sidebars.js'),
+        sidebarPath: require.resolve('./internal/build/sidebars.ts'),
 
         // General config
         editUrl: 'https://github.com/iota-community/iota-wiki/edit/main/',

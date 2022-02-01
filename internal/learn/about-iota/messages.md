@@ -7,7 +7,7 @@ description: This topic explores messages, models, and payloads that encompass
 
 # Messages
 
-A message is an object that nodes gossip around in the network. It always references two to eight other messages, which are known as **parents**. It is stored as a vertex on the Tangle data structure maintained by the nodes.
+A message is an object that nodes gossip around in the network. It always references one to eight other messages, which are known as **parents**. It is stored as a vertex on the Tangle data structure maintained by the nodes.
 
 Messages can contain payloads. Some of them are core payloads that are processed by all nodes as part of the core protocol. Others are community payloads that enable the building of new functionalities on top of the Tangle. And some payloads have other nested payloads embedded inside. So, the parsing of the message is done layer by layer, to ensure also embedded payloads have a correct syntax structure.
 
@@ -72,4 +72,4 @@ Finally, a message is considered valid if the following syntactic rules are met:
 2. When parsing the message is complete, there should not be any trailing bytes left that were not parsed.
 3. If the payload type is in the core payload range (0-127) and the node is familiar with it, or if it is above this range.
 4. If the Message Proof of Work Hash will contain at least the number of trailing 0 trits the node defines as required.
-5. Parents' length must be between two and eight.
+5. Parents' length must be between one and eight.

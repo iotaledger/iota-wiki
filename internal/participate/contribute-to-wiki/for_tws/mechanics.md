@@ -8,7 +8,7 @@ Only use the American English spelling.
 
 ### Glossary
 
-Whenever you use a technical term, check the [IOTA glossary](/learn/resource-materials/glossary) for the accepted notation.
+Whenever you use a technical term, check the [IOTA glossary](/learn/glossary) for the accepted notation.
 
 Whenever you encounter a term that is written in different ways across documentation, please propose a unified spelling and make a designated pull request that adds a new entry to the glossary and ideally replaces all occurrences of improper spelling in the wiki. This will help both writers and readers.
 
