@@ -241,7 +241,8 @@ module.exports = {
             },
           ],
         },
-        { to: '/blog', label: 'Community Blog', position: 'right' },
+        { to: '/showcase', label: 'Showcase', position: 'right' },
+        { to: '/blog', label: 'Blog', position: 'right' },
         { to: '/team', label: 'Team', position: 'right' },
       ],
     },
@@ -458,6 +459,7 @@ module.exports = {
         },
       },
     ],
+    '@docusaurus/plugin-ideal-image',
     'docusaurus-plugin-matomo',
     'docusaurus-plugin-hotjar',
     [
