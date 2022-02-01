@@ -3,7 +3,16 @@ iota-wiki-cli
 
 This utility requires [`yarn`](https://yarnpkg.com/) and [`git`](https://git-scm.com/) to be installed.
 
-Configure the utility with a config json. See a example [`here`](./config.example.json).
+Configure the utility with a `config.json`. See a example [`here`](./config.example.json).
+
+# Release
+
+1. Ensure commit signing is properly setup.
+2. Run `npm version minor`, `npm version major`, etc. depending on what's applicable.
+3. Push changes including the newly created tag.
+4. Create GitHub release using the commit above.
+
+# TOC
 
 <!-- toc -->
 * [Usage](#usage)
