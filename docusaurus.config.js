@@ -41,6 +41,9 @@ module.exports = {
       matomoUrl: 'https://matomo.antonionardella.it/',
       siteId: '6',
     },
+    hotjar: {
+      applicationId: '2809821',
+    },
     cards: [
       {
         title: 'Learn',
@@ -450,6 +453,7 @@ module.exports = {
       },
     ],
     'docusaurus-plugin-matomo',
+    'docusaurus-plugin-hotjar',
     [
       '@docusaurus/plugin-content-docs',
       {
