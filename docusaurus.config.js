@@ -341,6 +341,14 @@ module.exports = {
               label: 'Contribute',
               to: 'participate/contribute-to-wiki/welcome',
             },
+            {
+              label: 'Impressum',
+              to: 'https://www.iota.org/impressum',
+            },
+            {
+              label: 'Privacy Policy',
+              to: 'https://www.iota.org/privacy-policy',
+            },
           ],
         },
       ],
