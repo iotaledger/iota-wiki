@@ -18,6 +18,7 @@ IOTA is listed on most major cryptocurrency exchanges.
 - [**Bitfinex**](https://www.bitfinex.com/)
 - [**KuCoin**](https://www.kucoin.com/)
 - [**Binance**](https://www.binance.com)
+- [**Upbit**](https://upbit.com/)
 - [**Bybit**](https://www.bybit.com/)
 - [**Bitvavo**](https://bitvavo.com)
 - [**Indodax**](https://indodax.com/)
