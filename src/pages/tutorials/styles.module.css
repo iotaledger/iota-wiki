@@ -31,7 +31,7 @@
 }
 
 .checkboxList,
-.showcaseList {
+.tutorialList {
   padding: 0;
   list-style: none;
 }
@@ -60,28 +60,28 @@
   border: 1px solid gray;
 }
 
-.showcaseList {
+.tutorialList {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 24px;
 }
 
-.showcaseFavorite {
+.tutorialFavorite {
   padding-top: 2rem;
   padding-bottom: 2rem;
   background-color: var(--site-color-favorite-background);
 }
 
-.showcaseFavoriteHeader {
+.tutorialFavoriteHeader {
   display: flex;
   align-items: center;
 }
 
-.showcaseFavoriteHeader > h2 {
+.tutorialFavoriteHeader > h2 {
   margin-bottom: 0;
 }
 
-.showcaseFavoriteHeader > svg {
+.tutorialFavoriteHeader > svg {
   width: 30px;
   height: 30px;
 }

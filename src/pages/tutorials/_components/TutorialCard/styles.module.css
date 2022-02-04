@@ -5,24 +5,24 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-.showcaseCardImage {
+.tutorialCardImage {
   overflow: hidden;
   height: 150px;
   border-bottom: 2px solid var(--ifm-color-emphasis-200);
 }
 
-.showcaseCardHeader {
+.tutorialCardHeader {
   display: flex;
   align-items: center;
   margin-bottom: 12px;
 }
 
-.showcaseCardTitle {
+.tutorialCardTitle {
   margin-bottom: 0;
   flex: 1 1 auto;
 }
 
-.showcaseCardTitle a {
+.tutorialCardTitle a {
   text-decoration: none;
   background: linear-gradient(
       var(--ifm-color-primary),
@@ -32,40 +32,40 @@
   transition: background-size ease-out 200ms;
 }
 
-.showcaseCardTitle a:not(:focus):hover {
+.tutorialCardTitle a:not(:focus):hover {
   background-size: 100% 1px;
 }
 
-.showcaseCardTitle,
-.showcaseCardHeader .svgIconFavorite {
+.tutorialCardTitle,
+.tutorialCardHeader .svgIconFavorite {
   margin-right: 0.25rem;
 }
 
-.showcaseCardHeader .svgIconFavorite {
+.tutorialCardHeader .svgIconFavorite {
   color: var(--site-color-svg-icon-favorite);
 }
 
-.showcaseCardSrcBtn {
+.tutorialCardSrcBtn {
   margin-left: 6px;
   padding-left: 12px;
   padding-right: 12px;
   border: none;
 }
 
-.showcaseCardSrcBtn:focus-visible {
+.tutorialCardSrcBtn:focus-visible {
   background-color: var(--ifm-color-secondary-dark);
 }
 
-html[data-theme='dark'] .showcaseCardSrcBtn {
+html[data-theme='dark'] .tutorialCardSrcBtn {
   background-color: var(--ifm-color-emphasis-200) !important;
   color: inherit;
 }
 
-html[data-theme='dark'] .showcaseCardSrcBtn:hover {
+html[data-theme='dark'] .tutorialCardSrcBtn:hover {
   background-color: var(--ifm-color-emphasis-300) !important;
 }
 
-.showcaseCardBody {
+.tutorialCardBody {
   font-size: smaller;
   line-height: 1.66;
 }

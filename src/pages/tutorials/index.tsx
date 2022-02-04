@@ -11,14 +11,14 @@ import Layout from '@theme/Layout';
 import clsx from 'clsx';
 
 import FavoriteIcon from '@site/src/components/svgIcons/FavoriteIcon';
-import ShowcaseTagSelect, {
+import TutorialTagSelect, {
   readSearchTags,
-} from './_components/ShowcaseTagSelect';
-import ShowcaseFilterToggle, {
+} from './_components/TutorialTagSelect';
+import TutorialFilterToggle, {
   type Operator,
   readOperator,
-} from './_components/ShowcaseFilterToggle';
-import ShowcaseCard from './_components/ShowcaseCard';
+} from './_components/TutorialFilterToggle';
+import TutorialCard from './_components/TutorialCard';
 import {
   sortedUsers,
   Tags,
@@ -26,10 +26,9 @@ import {
   type User,
   type TagType,
 } from '@site/src/data/users';
-import ShowcaseTooltip from './_components/ShowcaseTooltip';
+import TutorialTooltip from './_components/TutorialTooltip';
 
 import ExecutionEnvironment from '@docusaurus/ExecutionEnvironment';
-import Translate, {translate} from '@docusaurus/Translate';
 import {useHistory, useLocation} from '@docusaurus/router';
 import {usePluralForm} from '@docusaurus/theme-common';
 
@@ -38,7 +37,7 @@ import styles from './styles.module.css';
 const TITLE = 'Wiki Tutorials';
 const DESCRIPTION = 'List of great IOTA tutorials';
 const EDIT_URL =
-  'https://github.com/Dr-Electron/iota-wiki/edit/main/src/data/users.tsx';
+  'https://github.com/Dr-Electron/iota-wiki/edit/feat/tuto-section/src/data/users.tsx';
 
 type UserState = {
   scrollTopPosition: number;
@@ -119,7 +118,7 @@ function useFilteredUsers() {
   );
 }
 
-function ShowcaseHeader() {
+function TutorialHeader() {
   return (
     <section className="margin-top--lg margin-bottom--lg text--center">
       <h1>{TITLE}</h1>
@@ -129,9 +128,7 @@ function ShowcaseHeader() {
         href={EDIT_URL}
         target="_blank"
         rel="noreferrer">
-        <Translate id="showcase.header.button">
-          🙏 Please add your tutorial
-        </Translate>
+        🙏 Please add your tutorial
       </a>
     </section>
   );
@@ -142,19 +139,11 @@ function useSiteCountPlural() {
   return (sitesCount: number) =>
     selectMessage(
       sitesCount,
-      translate(
-        {
-          id: 'showcase.filters.resultCount',
-          description:
-            'Pluralized label for the number of sites found on the showcase. Use as much plural forms (separated by "|") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)',
-          message: '1 site|{sitesCount} sites',
-        },
-        {sitesCount},
-      ),
+      "1 site|" + sitesCount + " sites",
     );
 }
 
-function ShowcaseFilters() {
+function TutorialFilters() {
   const filteredUsers = useFilteredUsers();
   const siteCountPlural = useSiteCountPlural();
   return (
@@ -162,24 +151,24 @@ function ShowcaseFilters() {
       <div className={clsx('margin-bottom--sm', styles.filterCheckbox)}>
         <div>
           <h2>
-            <Translate id="showcase.filters.title">Filters</Translate>
+            Filters
           </h2>
           <span>{siteCountPlural(filteredUsers.length)}</span>
         </div>
-        <ShowcaseFilterToggle />
+        <TutorialFilterToggle />
       </div>
       <ul className={styles.checkboxList}>
         {TagList.map((tag, i) => {
           const {label, description, color} = Tags[tag];
-          const id = `showcase_checkbox_id_${tag}`;
+          const id = `tutorial_checkbox_id_${tag}`;
 
           return (
             <li key={i} className={styles.checkboxListItem}>
-              <ShowcaseTooltip
+              <TutorialTooltip
                 id={id}
                 text={description}
                 anchorEl="#__docusaurus">
-                <ShowcaseTagSelect
+                <TutorialTagSelect
                   tag={tag}
                   id={id}
                   label={label}
@@ -199,7 +188,7 @@ function ShowcaseFilters() {
                     )
                   }
                 />
-              </ShowcaseTooltip>
+              </TutorialTooltip>
             </li>
           );
         })}
@@ -226,10 +215,7 @@ function SearchBar() {
     <div className={styles.searchContainer}>
       <input
         id="searchbar"
-        placeholder={translate({
-          message: 'Search for site name...',
-          id: 'showcase.searchBar.placeholder',
-        })}
+        placeholder="Search for tutorial name..."
         value={value ?? undefined}
         onInput={(e) => {
           setValue(e.currentTarget.value);
@@ -252,7 +238,7 @@ function SearchBar() {
   );
 }
 
-function ShowcaseCards() {
+function TutorialCards() {
   const filteredUsers = useFilteredUsers();
 
   if (filteredUsers.length === 0) {
@@ -260,7 +246,7 @@ function ShowcaseCards() {
       <section className="margin-top--lg margin-bottom--xl">
         <div className="container padding-vert--md text--center">
           <h2>
-            <Translate id="showcase.usersList.noResult">No result</Translate>
+            No result
           </h2>
           <SearchBar />
         </div>
@@ -272,35 +258,33 @@ function ShowcaseCards() {
     <section className="margin-top--lg margin-bottom--xl">
       {filteredUsers.length === sortedUsers.length ? (
         <>
-          <div className={styles.showcaseFavorite}>
+          <div className={styles.tutorialFavorite}>
             <div className="container">
               <div
                 className={clsx(
                   'margin-bottom--md',
-                  styles.showcaseFavoriteHeader,
+                  styles.tutorialFavoriteHeader,
                 )}>
                 <h2>
-                  <Translate id="showcase.favoritesList.title">
                     Our favorites
-                  </Translate>
                 </h2>
                 <FavoriteIcon svgClass={styles.svgIconFavorite} />
                 <SearchBar />
               </div>
-              <ul className={clsx('container', styles.showcaseList)}>
+              <ul className={clsx('container', styles.tutorialList)}>
                 {favoriteUsers.map((user) => (
-                  <ShowcaseCard key={user.title} user={user} />
+                  <TutorialCard key={user.title} user={user} />
                 ))}
               </ul>
             </div>
           </div>
           <div className="container margin-top--lg">
-            <h2 className={styles.showcaseHeader}>
-              <Translate id="showcase.usersList.allUsers">All sites</Translate>
+            <h2 className={styles.tutorialHeader}>
+              All tutorials
             </h2>
-            <ul className={styles.showcaseList}>
+            <ul className={styles.tutorialList}>
               {otherUsers.map((user) => (
-                <ShowcaseCard key={user.title} user={user} />
+                <TutorialCard key={user.title} user={user} />
               ))}
             </ul>
           </div>
@@ -310,13 +294,13 @@ function ShowcaseCards() {
           <div
             className={clsx(
               'margin-bottom--md',
-              styles.showcaseFavoriteHeader,
+              styles.tutorialFavoriteHeader,
             )}>
             <SearchBar />
           </div>
-          <ul className={styles.showcaseList}>
+          <ul className={styles.tutorialList}>
             {filteredUsers.map((user) => (
-              <ShowcaseCard key={user.title} user={user} />
+              <TutorialCard key={user.title} user={user} />
             ))}
           </ul>
         </div>
@@ -325,16 +309,16 @@ function ShowcaseCards() {
   );
 }
 
-function Showcase(): JSX.Element {
+function Tutorial(): JSX.Element {
   return (
     <Layout title={TITLE} description={DESCRIPTION}>
       <main className="margin-vert--lg">
-        <ShowcaseHeader />
-        <ShowcaseFilters />
-        <ShowcaseCards />
+        <TutorialHeader />
+        <TutorialFilters />
+        <TutorialCards />
       </main>
     </Layout>
   );
 }
 
-export default Showcase;
+export default Tutorial;

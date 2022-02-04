@@ -9,11 +9,10 @@ import React, {memo} from 'react';
 import clsx from 'clsx';
 import Image from '@theme/IdealImage';
 import Link from '@docusaurus/Link';
-import Translate from '@docusaurus/Translate';
 
 import styles from './styles.module.css';
 import FavoriteIcon from '@site/src/components/svgIcons/FavoriteIcon';
-import Tooltip from '../ShowcaseTooltip';
+import Tooltip from '../TutorialTooltip';
 import {
   Tags,
   TagList,
@@ -32,7 +31,7 @@ const TagComp = React.forwardRef<HTMLLIElement, Tag>(
   ),
 );
 
-function ShowcaseCardTag({tags}: {tags: TagType[]}) {
+function TutorialCardTag({tags}: {tags: TagType[]}) {
   const tagObjects = tags.map((tag) => ({tag, ...Tags[tag]}));
 
   // Keep same order for all tags
@@ -43,7 +42,7 @@ function ShowcaseCardTag({tags}: {tags: TagType[]}) {
   return (
     <>
       {tagObjectsSorted.map((tagObject, index) => {
-        const id = `showcase_card_tag_${tagObject.tag}`;
+        const id = `tutorial_card_tag_${tagObject.tag}`;
 
         return (
           <Tooltip
@@ -59,15 +58,15 @@ function ShowcaseCardTag({tags}: {tags: TagType[]}) {
   );
 }
 
-const ShowcaseCard = memo(({user}: {user: User}) => (
+const TutorialCard = memo(({user}: {user: User}) => (
   <li key={user.title} className="card shadow--md">
-    <div className={clsx('card__image', styles.showcaseCardImage)}>
+    <div className={clsx('card__image', styles.tutorialCardImage)}>
       <Image img={user.preview} alt={user.title} />
     </div>
     <div className="card__body">
-      <div className={clsx(styles.showcaseCardHeader)}>
-        <h4 className={styles.showcaseCardTitle}>
-          <Link href={user.website} className={styles.showcaseCardLink}>
+      <div className={clsx(styles.tutorialCardHeader)}>
+        <h4 className={styles.tutorialCardTitle}>
+          <Link href={user.website} className={styles.tutorialCardLink}>
             {user.title}
           </Link>
         </h4>
@@ -79,18 +78,18 @@ const ShowcaseCard = memo(({user}: {user: User}) => (
             href={user.source}
             className={clsx(
               'button button--secondary button--sm',
-              styles.showcaseCardSrcBtn,
+              styles.tutorialCardSrcBtn,
             )}>
-            <Translate id="showcase.card.sourceLink">source</Translate>
+            source
           </Link>
         )}
       </div>
-      <p className={styles.showcaseCardBody}>{user.description}</p>
+      <p className={styles.tutorialCardBody}>{user.description}</p>
     </div>
     <ul className={clsx('card__footer', styles.cardFooter)}>
-      <ShowcaseCardTag tags={user.tags} />
+      <TutorialCardTag tags={user.tags} />
     </ul>
   </li>
 ));
 
-export default ShowcaseCard;
+export default TutorialCard;

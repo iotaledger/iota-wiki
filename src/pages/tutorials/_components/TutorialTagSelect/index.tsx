@@ -39,7 +39,7 @@ function replaceSearchTags(search: string, newTags: TagType[]) {
   return searchParams.toString();
 }
 
-const ShowcaseTagSelect = React.forwardRef<HTMLLabelElement, Props>(
+const TutorialTagSelect = React.forwardRef<HTMLLabelElement, Props>(
   ({id, icon, label, tag, ...rest}, ref) => {
     const location = useLocation();
     const history = useHistory();
@@ -95,4 +95,4 @@ const ShowcaseTagSelect = React.forwardRef<HTMLLabelElement, Props>(
   },
 );
 
-export default ShowcaseTagSelect;
+export default TutorialTagSelect;

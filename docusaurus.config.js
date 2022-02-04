@@ -241,7 +241,7 @@ module.exports = {
             },
           ],
         },
-        { to: '/showcase', label: 'Showcase', position: 'right' },
+        { to: '/tutorials', label: 'Tutorials', position: 'right' },
         { to: '/blog', label: 'Blog', position: 'right' },
         { to: '/team', label: 'Team', position: 'right' },
       ],

@@ -22,8 +22,8 @@ export function readOperator(search: string): Operator {
     'OR') as Operator;
 }
 
-export default function ShowcaseFilterToggle(): JSX.Element {
-  const id = 'showcase_filter_toggle';
+export default function TutorialFilterToggle(): JSX.Element {
+  const id = 'tutorial_filter_toggle';
   const location = useLocation();
   const history = useHistory();
   const [operator, setOperator] = useState(false);
