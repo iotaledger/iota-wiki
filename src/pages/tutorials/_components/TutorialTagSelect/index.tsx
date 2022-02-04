@@ -64,7 +64,6 @@ const TutorialTagSelect = React.forwardRef<HTMLLabelElement, Props>(
           type="checkbox"
           id={id}
           className="screen-reader-only"
-          style={{ visibility: 'collapse' }}
           onKeyDown={(e) => {
             if (e.key === 'Enter') {
               toggleTag();

@@ -50,7 +50,6 @@ export default function TutorialFilterToggle(): JSX.Element {
         type="checkbox"
         id={id}
         className="screen-reader-only"
-        style={{visibility: 'collapse'}}
         aria-label="Toggle between or and and for the tags you selected"
         onChange={toggleOperator}
         onKeyDown={(e) => {
