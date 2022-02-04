@@ -73,7 +73,7 @@ export const Tags: Record<TagType, Tag> = {
         color: '#39ca30',
     },
 
-    catlovers: {
+    catlover: {
         label: 'Cat-Lover',
         description: 'We love Cats(not the movie)!',
         color: '#dfd545',
@@ -103,6 +103,7 @@ const Users: User[] = [
             'Ever wanted to know how to get fabulous hair? Search no longer. In this tutorial we will show you how to style your hair perfectly',
         preview: require('./tutorials/the-weekend.png'),
         website: 'https://www.youtube.com/watch?v=E1TB4USszBk',
+        source: null,
         tags: ['favorite', 'silkysmoth'],
     },
     {
@@ -111,7 +112,8 @@ const Users: User[] = [
             'Learn from the GIF grandmaster himself.',
         preview: require('./tutorials/cat.png'),
         website: 'https://youtu.be/dQw4w9WgXcQ',
-        tags: ['favorite', 'catlovers', 'meme'],
+        source: null,
+        tags: ['favorite', 'catlover', 'meme'],
     },
     {
         title: 'He is still 25 because of this little trick the beauty industry doesn\'t want you to know',
@@ -119,6 +121,7 @@ const Users: User[] = [
             'He went diving and came back as a 25 year old. How? Click here to learn',
         preview: require('./tutorials/firefly-scam.png'),
         website: 'https://www.youtube.com/watch?v=Mh0uMbO78OM',
+        source: null,
         tags: ['favorite', 'scam'],
     },
     /*
