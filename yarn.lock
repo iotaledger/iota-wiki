@@ -9782,6 +9782,7 @@ __metadata:
     prettier: ^2.4.1
     raw-loader: ^4.0.2
     react: ^17.0.1
+    react-collapsible: ^2.8.4
     react-dom: ^17.0.1
     react-image-gallery: ^1.2.7
     react-player: ^2.9.0
@@ -13592,6 +13593,38 @@ plugin-image-zoom@flexanalytics/plugin-image-zoom:
     react: ~15 || ~16 || ~17
     react-dom: ~15 || ~16 || ~17
   checksum: cbb42a0dbdabc71e50725dd53f0f8c03cd8e94a1a33a385e799b56bd2d8a822771cd524bc0503e572b23c82d83fa7259378d9ca0166a65e45a18cba277fae917
+  languageName: node
+  linkType: hard
+
+"react-dev-utils@npm:^12.0.0":
+  version: 12.0.0
+  resolution: "react-dev-utils@npm:12.0.0"
+  dependencies:
+    "@babel/code-frame": ^7.16.0
+    address: ^1.1.2
+    browserslist: ^4.18.1
+    chalk: ^4.1.2
+    cross-spawn: ^7.0.3
+    detect-port-alt: ^1.1.6
+    escape-string-regexp: ^4.0.0
+    filesize: ^8.0.6
+    find-up: ^5.0.0
+    fork-ts-checker-webpack-plugin: ^6.5.0
+    global-modules: ^2.0.0
+    globby: ^11.0.4
+    gzip-size: ^6.0.0
+    immer: ^9.0.7
+    is-root: ^2.1.0
+    loader-utils: ^3.2.0
+    open: ^8.4.0
+    pkg-up: ^3.1.0
+    prompts: ^2.4.2
+    react-error-overlay: ^6.0.11
+    recursive-readdir: ^2.2.2
+    shell-quote: ^1.7.3
+    strip-ansi: ^6.0.1
+    text-table: ^0.2.0
+  checksum: 2c6917e47f03d9595044770b0f883a61c6b660fcaa97b8ba459a1d57c9cca9aa374cd51296b22d461ff5e432105dbe6f04732dab128e52729c79239e1c23ab56
   languageName: node
   linkType: hard
 

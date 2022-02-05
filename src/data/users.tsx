@@ -47,7 +47,8 @@ export type TagType =
     | 'videotutorial'
     | 'livecoding'
     | 'texttutorial'
-    | 'identity';
+    | 'identity'
+    | 'gettingstarted';
 
 export type User = {
     title: string;
@@ -58,67 +59,140 @@ export type User = {
     tags: TagType[];
 };
 
+const colors: string[] = [
+    '#010067',
+    '#d5ff00',
+    '#ff0056',
+    '#9e008e',
+    '#0e4ca1',
+    '#ffe502',
+    '#005f39',
+    '#00ff00',
+    '#95003a',
+    '#ff937e',
+    '#a42400',
+    '#001544',
+    '#91d0cb',
+    '#620e00',
+    '#6b6882',
+    '#0000ff',
+    '#007db5',
+    '#6a826c',
+    '#00ae7e',
+    '#c28c9f',
+    '#be9970',
+    '#008f9c',
+    '#5fad4e',
+    '#ff0000',
+    '#ff00f6',
+    '#ff029d',
+    '#683d3b',
+    '#ff74a3',
+    '#968ae8',
+    '#98ff52',
+    '#a75740',
+    '#01fffe',
+    '#ffeee8',
+    '#fe8900',
+    '#bdc6ff',
+    '#01d0ff',
+    '#bb8800',
+    '#7544b1',
+    '#a5ffd2',
+    '#ffa6fe',
+    '#774d00',
+    '#7a4782',
+    '#263400',
+    '#004754',
+    '#43002c',
+    '#b500ff',
+    '#ffb167',
+    '#ffdb66',
+    '#90fb92',
+    '#7e2dd2',
+    '#bdd393',
+    '#e56ffe',
+    '#deff74',
+    '#00ff78',
+    '#009bff',
+    '#006401',
+    '#0076ff',
+    '#85a900',
+    '#00b917',
+    '#788231',
+    '#00ffc6',
+    '#ff6e41',
+    '#e85ebe'
+]
+
 // LIST OF AVAILABLE TAGS
 // Available tags to assign to your tutorial
 // Please choose all tags that you think might apply.
 // We'll remove inappropriate tags, but it's less likely that we add tags.
+// Colors for the tags are used from the 64 colors set here: http://godsnotwheregodsnot.blogspot.com/2012/09/color-distribution-methodology.html
 export const Tags: Record<TagType, Tag> = {
     // DO NOT USE THIS TAG: we choose tutorials to add to favorites
     favorite: {
         label: 'Favorite',
         description:
             'Our favorite IOTA tutorials that you must absolutely check-out!',
-        color: '#e9669e',
+        color: colors[0],
+    },
+
+    gettingstarted: {
+        label: 'Getting Started',
+        description: 'Easy Tutorials for getting started',
+        color: colors[1],
     },
 
     videotutorial: {
         label: 'Video Tutorial',
         description: 'Tutorial in video format',
-        color: '#39ca30',
+        color: colors[2],
     },
 
     texttutorial: {
         label: 'Text Tutorial',
         description: 'Tutorial in written format',
-        color: '#dfd545',
+        color: colors[3],
     },
 
     livecoding: {
         label: 'Live Coding Session',
         description: 'Recorded live coding session',
-        color: '#dfd545',
+        color: colors[4],
     },
 
     identity: {
         label: 'IOTA Identity',
         description: 'This Tutorial is using the IOTA Identity framework',
-        color: '#a44fb7',
+        color: colors[5],
     },
 
     scam: {
         label: 'Scam',
         description: 'This seems fishy',
-        color: '#127f82',
+        color: colors[6],
     },
 
     catlover: {
         label: 'Cat-Lover',
         description: 'We love Cats(not the movie)!',
-        color: '#fe6829',
+        color: colors[7],
     },
 
     silkysmoth: {
         label: 'Silky Smoth',
         description:
             'Only one person can make hair silky smoth',
-        color: '#4267b2',
+        color: colors[8],
     },
 
     meme: {
         label: 'Meme',
         description:
             'That\'s what we are here for, right?',
-        color: '#14cfc3',
+        color: colors[9],
     },
 };
 
