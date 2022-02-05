@@ -129,7 +129,7 @@ If you send and receive funds, they will always be organized under the wallet th
 
 ## Firefly wallet staking instructions
 
-Staking IOTA will only be possible in IOTA’s Firefly wallet and is not supported by any third party. To begin staking (after Tuesday, the 21st of December at 3PM CET), make sure that you have downloaded the latest version of the Firefly wallet on the [firefly.iota.org](https"//firefly.iota.org) website, then complete the following steps:
+Staking IOTA will only be possible in IOTA’s Firefly wallet and is not supported by any third party. To begin staking (after Tuesday, the 21st of December at 3PM CET), make sure that you have downloaded the latest version of the Firefly wallet on the [firefly.iota.org](https://firefly.iota.org) website, then complete the following steps:
 
 First, log in to your profile by entering your PIN and continue to navigate to the brand new staking tab.
 
