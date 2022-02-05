@@ -99,3 +99,11 @@
 .svgIconFavorite {
   margin-left: 1rem;
 }
+
+.counter {
+  margin-left: 10px;
+  background-color: var(--ifm-color-primary);
+  border-radius: 5rem;
+  padding-left: 5px;
+  padding-right: 5px;
+}
