@@ -169,3 +169,13 @@
         breadcrumbs: false,
       }
     ],
+    [
+      "@docusaurus/plugin-content-docs",
+      {
+        id: "zebra-tutorials",
+        path: "external/zebra-iota-edge-sdk/docs",
+        routeBasePath: "zebra-iota-edge-sdk",
+        sidebarPath: require.resolve("./external/zebra-iota-edge-sdk/docs/sidebars.js"),
+        editUrl: 'https://github.com/dr-electron/zebra-iota-edge-sdk/edit/docs/docusaurus',
+      }
+    ],
