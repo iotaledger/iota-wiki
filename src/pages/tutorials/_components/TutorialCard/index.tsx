@@ -17,9 +17,9 @@ import {
   Tags,
   TagList,
   type TagType,
-  type User,
+  type Tutorial,
   type Tag,
-} from '@site/src/data/users';
+} from '@site/src/data/tutorials';
 import {sortBy} from '@site/src/utils/jsUtils';
 
 const TagComp = React.forwardRef<HTMLLIElement, Tag>(
@@ -58,24 +58,24 @@ function TutorialCardTag({tags}: {tags: TagType[]}) {
   );
 }
 
-const TutorialCard = memo(({user}: {user: User}) => (
-  <li key={user.title} className="card shadow--md">
+const TutorialCard = memo(({tutorial}: {tutorial: Tutorial}) => (
+  <li key={tutorial.title} className="card shadow--md">
     <div className={clsx('card__image', styles.tutorialCardImage)}>
-      <Image img={user.preview} alt={user.title} />
+      <Image img={tutorial.preview} alt={tutorial.title} />
     </div>
     <div className="card__body">
       <div className={clsx(styles.tutorialCardHeader)}>
         <h4 className={styles.tutorialCardTitle}>
-          <Link href={user.website} className={styles.tutorialCardLink}>
-            {user.title}
+          <Link href={tutorial.website} className={styles.tutorialCardLink}>
+            {tutorial.title}
           </Link>
         </h4>
-        {user.tags.includes('favorite') && (
+        {tutorial.tags.includes('favorite') && (
           <FavoriteIcon svgClass={styles.svgIconFavorite} size="small" />
         )}
-        {user.source && (
+        {tutorial.source && (
           <Link
-            href={user.source}
+            href={tutorial.source}
             className={clsx(
               'button button--secondary button--sm',
               styles.tutorialCardSrcBtn,
@@ -84,10 +84,10 @@ const TutorialCard = memo(({user}: {user: User}) => (
           </Link>
         )}
       </div>
-      <p className={styles.tutorialCardBody}>{user.description}</p>
+      <p className={styles.tutorialCardBody}>{tutorial.description}</p>
     </div>
     <ul className={clsx('card__footer', styles.cardFooter)}>
-      <TutorialCardTag tags={user.tags} />
+      <TutorialCardTag tags={tutorial.tags} />
     </ul>
   </li>
 ));
