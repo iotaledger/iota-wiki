@@ -5,7 +5,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import React, {memo} from 'react';
+import React, { memo } from 'react';
 import clsx from 'clsx';
 import Image from '@theme/IdealImage';
 import Link from '@docusaurus/Link';
@@ -20,19 +20,26 @@ import {
   type Tutorial,
   type Tag,
 } from '@site/src/data/tutorials';
-import {sortBy} from '@site/src/utils/jsUtils';
+import { sortBy } from '@site/src/utils/jsUtils';
 
-const TagComp = React.forwardRef<HTMLLIElement, Tag>(
-  ({label, color, description}, ref) => (
+interface Props extends Tag {
+  color: string;
+  label: string;
+  description: string;
+}
+
+const TagComp = React.forwardRef<HTMLLIElement, Props>(
+  ({ label, color, description }, ref) => (
     <li ref={ref} className={styles.tag} title={description}>
       <span className={styles.textLabel}>{label.toLowerCase()}</span>
-      <span className={styles.colorLabel} style={{backgroundColor: color}} />
+      <span className={styles.colorLabel} style={{ backgroundColor: color }} />
     </li>
   ),
 );
+TagComp.displayName = 'TagComponent';
 
-function TutorialCardTag({tags}: {tags: TagType[]}) {
-  const tagObjects = tags.map((tag) => ({tag, ...Tags[tag]}));
+function TutorialCardTag({ tags }: { tags: TagType[] }) {
+  const tagObjects = tags.map((tag) => ({ tag, ...Tags[tag] }));
 
   // Keep same order for all tags
   const tagObjectsSorted = sortBy(tagObjects, (tagObject) =>
@@ -48,8 +55,9 @@ function TutorialCardTag({tags}: {tags: TagType[]}) {
           <Tooltip
             key={index}
             text={tagObject.description}
-            anchorEl="#__docusaurus"
-            id={id}>
+            anchorEl='#__docusaurus'
+            id={id}
+          >
             <TagComp key={index} {...tagObject} />
           </Tooltip>
         );
@@ -58,12 +66,12 @@ function TutorialCardTag({tags}: {tags: TagType[]}) {
   );
 }
 
-const TutorialCard = memo(({tutorial}: {tutorial: Tutorial}) => (
-  <li key={tutorial.title} className="card shadow--md">
+const TutorialCard = memo(({ tutorial }: { tutorial: Tutorial }) => (
+  <li key={tutorial.title} className='card shadow--md'>
     <div className={clsx('card__image', styles.tutorialCardImage)}>
       <Image img={tutorial.preview} alt={tutorial.title} />
     </div>
-    <div className="card__body">
+    <div className='card__body'>
       <div className={clsx(styles.tutorialCardHeader)}>
         <h4 className={styles.tutorialCardTitle}>
           <Link href={tutorial.website} className={styles.tutorialCardLink}>
@@ -71,7 +79,7 @@ const TutorialCard = memo(({tutorial}: {tutorial: Tutorial}) => (
           </Link>
         </h4>
         {tutorial.tags.includes('favorite') && (
-          <FavoriteIcon svgClass={styles.svgIconFavorite} size="small" />
+          <FavoriteIcon svgClass={styles.svgIconFavorite} size='small' />
         )}
         {tutorial.source && (
           <Link
@@ -79,7 +87,8 @@ const TutorialCard = memo(({tutorial}: {tutorial: Tutorial}) => (
             className={clsx(
               'button button--secondary button--sm',
               styles.tutorialCardSrcBtn,
-            )}>
+            )}
+          >
             source
           </Link>
         )}
@@ -91,5 +100,6 @@ const TutorialCard = memo(({tutorial}: {tutorial: Tutorial}) => (
     </ul>
   </li>
 ));
+TutorialCard.displayName = 'TutorialCard';
 
 export default TutorialCard;
