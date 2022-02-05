@@ -25,7 +25,7 @@ import { sortBy } from '@site/src/utils/jsUtils';
  *
  *
  * If you edit this file through the Github interface, you can:
- * - Submit first your users.tsx edit PR
+ * - Submit first your tutorials.tsx edit PR
  * - This will create a branch on your Docusaurus fork (usually "patch-1")
  * - Go to https://github.com/<username>/iota-wiki/tree/<branch>/src/data/tutorials
  * - Drag-and-drop an image here to add it to your existing PR
@@ -50,7 +50,7 @@ export type TagType =
     | 'identity'
     | 'gettingstarted';
 
-export type User = {
+export type Tutorial = {
     title: string;
     description: string;
     preview: string;
@@ -198,7 +198,7 @@ export const Tags: Record<TagType, Tag> = {
 
 // Add your tutorial to this list
 // prettier-ignore
-const Users: User[] = [
+const Tutorials: Tutorial[] = [
     {
         title: 'Digitally Validate a Degree',
         description:
@@ -269,13 +269,13 @@ const Users: User[] = [
 ];
 
 export const TagList = Object.keys(Tags) as TagType[];
-function sortUsers() {
-    let result = Users;
+function sortTutorials() {
+    let result = Tutorials;
     // Sort by tutorial name
-    result = sortBy(result, (user) => user.title.toLowerCase());
+    result = sortBy(result, (tutorial) => tutorial.title.toLowerCase());
     // Sort by favorite tag, favorites first
-    result = sortBy(result, (user) => !user.tags.includes('favorite'));
+    result = sortBy(result, (tutorial) => !tutorial.tags.includes('favorite'));
     return result;
 }
 
-export const sortedUsers = sortUsers();
+export const sortedTutorials = sortTutorials();

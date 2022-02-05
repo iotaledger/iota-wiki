@@ -21,12 +21,12 @@ import TutorialFilterToggle, {
 } from './_components/TutorialFilterToggle';
 import TutorialCard from './_components/TutorialCard';
 import {
-  sortedUsers,
+  sortedTutorials,
   Tags,
   TagList,
-  type User,
+  type Tutorial,
   type TagType,
-} from '@site/src/data/users';
+} from '@site/src/data/tutorials';
 import TutorialTooltip from './_components/TutorialTooltip';
 
 import ExecutionEnvironment from '@docusaurus/ExecutionEnvironment';
@@ -72,33 +72,33 @@ function readSearchName(search: string) {
   return new URLSearchParams(search).get(SearchNameQueryKey);
 }
 
-function filterUsers(
-  users: User[],
+function filterTutorials(
+  tutorials: Tutorial[],
   selectedTags: TagType[],
   operator: Operator,
   searchName: string | null,
 ) {
   if (searchName) {
     // eslint-disable-next-line no-param-reassign
-    users = users.filter((user) =>
-      user.title.toLowerCase().includes(searchName.toLowerCase()),
+    tutorials = tutorials.filter((tutorial) =>
+      tutorial.title.toLowerCase().includes(searchName.toLowerCase()),
     );
   }
   if (selectedTags.length === 0) {
-    return users;
+    return tutorials;
   }
-  return users.filter((user) => {
-    if (user.tags.length === 0) {
+  return tutorials.filter((tutorial) => {
+    if (tutorial.tags.length === 0) {
       return false;
     }
     if (operator === 'AND') {
-      return selectedTags.every((tag) => user.tags.includes(tag));
+      return selectedTags.every((tag) => tutorial.tags.includes(tag));
     }
-    return selectedTags.some((tag) => user.tags.includes(tag));
+    return selectedTags.some((tag) => tutorial.tags.includes(tag));
   });
 }
 
-function useFilteredUsers() {
+function useFilteredTutorials() {
   const location = useLocation<UserState>();
   const [operator, setOperator] = useState<Operator>('OR');
   // On SSR / first mount (hydration) no tag is selected
@@ -114,7 +114,7 @@ function useFilteredUsers() {
   }, [location]);
 
   return useMemo(
-    () => filterUsers(sortedUsers, selectedTags, operator, searchName),
+    () => filterTutorials(sortedTutorials, selectedTags, operator, searchName),
     [selectedTags, operator, searchName],
   );
 }
@@ -145,7 +145,7 @@ function useSiteCountPlural() {
 }
 
 function TutorialFilters() {
-  const filteredUsers = useFilteredUsers();
+  const filteredTutorials = useFilteredTutorials();
   const siteCountPlural = useSiteCountPlural();
   return (
     <section className="container margin-top--l margin-bottom--lg">
@@ -154,7 +154,7 @@ function TutorialFilters() {
           <h2>
             Filters
           </h2>
-          <span>{siteCountPlural(filteredUsers.length)}</span>
+          <span>{siteCountPlural(filteredTutorials.length)}</span>
         </div>
         <TutorialFilterToggle />
       </div>
@@ -198,17 +198,17 @@ function TutorialFilters() {
   );
 }
 
-const favoriteUsers = sortedUsers.filter((user) =>
-  user.tags.includes('favorite'),
+const favoriteTutorials = sortedTutorials.filter((tutorial) =>
+  tutorial.tags.includes('favorite'),
 );
-const otherUsers = sortedUsers.filter(
-  (user) => !user.tags.includes('favorite'),
+const otherTutorials = sortedTutorials.filter(
+  (tutorial) => !tutorial.tags.includes('favorite'),
 );
-const videoUsers = sortedUsers.filter(
-  (user) => user.tags.includes('videotutorial'),
+const videoTutorials = sortedTutorials.filter(
+  (tutorial) => tutorial.tags.includes('videotutorial'),
 );
-const starterUsers = sortedUsers.filter(
-  (user) => user.tags.includes('gettingstarted'),
+const starterTutorials = sortedTutorials.filter(
+  (tutorial) => tutorial.tags.includes('gettingstarted'),
 );
 
 function SearchBar() {
@@ -246,9 +246,9 @@ function SearchBar() {
 }
 
 function TutorialCards() {
-  const filteredUsers = useFilteredUsers();
+  const filteredTutorials = useFilteredTutorials();
 
-  if (filteredUsers.length === 0) {
+  if (filteredTutorials.length === 0) {
     return (
       <section className="margin-top--lg margin-bottom--xl">
         <div className="container padding-vert--md text--center">
@@ -263,7 +263,7 @@ function TutorialCards() {
 
   return (
     <section className="margin-top--lg margin-bottom--xl">
-      {filteredUsers.length === sortedUsers.length ? (
+      {filteredTutorials.length === sortedTutorials.length ? (
         <>
           <div className={styles.tutorialFavorite}>
             <div className="container">
@@ -279,36 +279,36 @@ function TutorialCards() {
                 <SearchBar />
               </div>
               <ul className={clsx('container', styles.tutorialList)}>
-                {favoriteUsers.map((user) => (
-                  <TutorialCard key={user.title} user={user} />
+                {favoriteTutorials.map((tutorial) => (
+                  <TutorialCard key={tutorial.title} tutorial={tutorial} />
                 ))}
               </ul>
             </div>
           </div>
           <div className="container margin-top--lg">
-            <Collapsible trigger={<Header text='Getting Started' count={starterUsers.length}/>}>
+            <Collapsible trigger={<Header text='Getting Started' count={starterTutorials.length}/>}>
               <ul className={styles.tutorialList}>
-                {starterUsers.map((user) => (
-                  <TutorialCard key={user.title} user={user} />
+                {starterTutorials.map((tutorial) => (
+                  <TutorialCard key={tutorial.title} tutorial={tutorial} />
                 ))}
               </ul>
             </Collapsible>
           </div>
           <div className="container margin-top--lg">
-            <Collapsible trigger={<Header text='Video Tutorials' count={videoUsers.length}/>}>
+            <Collapsible trigger={<Header text='Video Tutorials' count={videoTutorials.length}/>}>
               <ul className={styles.tutorialList}>
-                {videoUsers.map((user) => (
-                  <TutorialCard key={user.title} user={user} />
+                {videoTutorials.map((tutorial) => (
+                  <TutorialCard key={tutorial.title} tutorial={tutorial} />
                 ))}
               </ul>
             </Collapsible>
           </div>
 
           <div className="container margin-top--lg">
-            <Collapsible open={true} trigger={<Header text='All Tutorials' count={otherUsers.length}/>} >
+            <Collapsible open={true} trigger={<Header text='All Tutorials' count={otherTutorials.length}/>} >
               <ul className={styles.tutorialList}>
-                {otherUsers.map((user) => (
-                  <TutorialCard key={user.title} user={user} />
+                {otherTutorials.map((tutorial) => (
+                  <TutorialCard key={tutorial.title} tutorial={tutorial} />
                 ))}
               </ul>
             </Collapsible>
@@ -324,8 +324,8 @@ function TutorialCards() {
             <SearchBar />
           </div>
           <ul className={styles.tutorialList}>
-            {filteredUsers.map((user) => (
-              <TutorialCard key={user.title} user={user} />
+            {filteredTutorials.map((tutorial) => (
+              <TutorialCard key={tutorial.title} tutorial={tutorial} />
             ))}
           </ul>
         </div>
@@ -348,7 +348,7 @@ function Header(props: Props): JSX.Element {
   );
 }
 
-function Tutorial(): JSX.Element {
+function Tutorials(): JSX.Element {
   return (
     <Layout title={TITLE} description={DESCRIPTION}>
       <main className="margin-vert--lg">
@@ -360,4 +360,4 @@ function Tutorial(): JSX.Element {
   );
 }
 
-export default Tutorial;
+export default Tutorials;
