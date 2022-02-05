@@ -6,6 +6,7 @@
  */
 
 import React, {useState, useMemo, useEffect} from 'react';
+import Collapsible from 'react-collapsible';
 
 import Layout from '@theme/Layout';
 import clsx from 'clsx';
@@ -203,6 +204,12 @@ const favoriteUsers = sortedUsers.filter((user) =>
 const otherUsers = sortedUsers.filter(
   (user) => !user.tags.includes('favorite'),
 );
+const videoUsers = sortedUsers.filter(
+  (user) => user.tags.includes('videotutorial'),
+);
+const starterUsers = sortedUsers.filter(
+  (user) => user.tags.includes('gettingstarted'),
+);
 
 function SearchBar() {
   const history = useHistory();
@@ -279,14 +286,32 @@ function TutorialCards() {
             </div>
           </div>
           <div className="container margin-top--lg">
-            <h2 className={styles.tutorialHeader}>
-              All tutorials
-            </h2>
-            <ul className={styles.tutorialList}>
-              {otherUsers.map((user) => (
-                <TutorialCard key={user.title} user={user} />
-              ))}
-            </ul>
+            <Collapsible trigger={<h2>Getting Started</h2>}>
+              <ul className={styles.tutorialList}>
+                {starterUsers.map((user) => (
+                  <TutorialCard key={user.title} user={user} />
+                ))}
+              </ul>
+            </Collapsible>
+          </div>
+          <div className="container margin-top--lg">
+            <Collapsible trigger={<h2>Video tutorials</h2>}>
+              <ul className={styles.tutorialList}>
+                {videoUsers.map((user) => (
+                  <TutorialCard key={user.title} user={user} />
+                ))}
+              </ul>
+            </Collapsible>
+          </div>
+
+          <div className="container margin-top--lg">
+            <Collapsible open={true} trigger={<h2>All Tutorials</h2>} >
+              <ul className={styles.tutorialList}>
+                {otherUsers.map((user) => (
+                  <TutorialCard key={user.title} user={user} />
+                ))}
+              </ul>
+            </Collapsible>
           </div>
         </>
       ) : (
