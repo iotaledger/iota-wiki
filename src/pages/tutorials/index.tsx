@@ -286,7 +286,7 @@ function TutorialCards() {
             </div>
           </div>
           <div className="container margin-top--lg">
-            <Collapsible trigger={<h2>Getting Started</h2>}>
+            <Collapsible trigger={<Header text='Getting Started' count={starterUsers.length}/>}>
               <ul className={styles.tutorialList}>
                 {starterUsers.map((user) => (
                   <TutorialCard key={user.title} user={user} />
@@ -295,7 +295,7 @@ function TutorialCards() {
             </Collapsible>
           </div>
           <div className="container margin-top--lg">
-            <Collapsible trigger={<h2>Video tutorials</h2>}>
+            <Collapsible trigger={<Header text='Video Tutorials' count={videoUsers.length}/>}>
               <ul className={styles.tutorialList}>
                 {videoUsers.map((user) => (
                   <TutorialCard key={user.title} user={user} />
@@ -305,7 +305,7 @@ function TutorialCards() {
           </div>
 
           <div className="container margin-top--lg">
-            <Collapsible open={true} trigger={<h2>All Tutorials</h2>} >
+            <Collapsible open={true} trigger={<Header text='All Tutorials' count={otherUsers.length}/>} >
               <ul className={styles.tutorialList}>
                 {otherUsers.map((user) => (
                   <TutorialCard key={user.title} user={user} />
@@ -331,6 +331,20 @@ function TutorialCards() {
         </div>
       )}
     </section>
+  );
+}
+
+interface Props {
+  text: string,
+  count: number,
+}
+
+function Header(props: Props): JSX.Element {
+  return (
+    <div style={{display: "flex"}}>
+      <h2>{props.text}</h2>
+      <h2 className={styles.counter}>{props.count}</h2>
+    </div>
   );
 }
 
