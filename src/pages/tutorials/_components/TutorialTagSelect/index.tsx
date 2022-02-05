@@ -13,10 +13,10 @@ import React, {
   useState,
   useEffect,
 } from 'react';
-import {useHistory, useLocation} from '@docusaurus/router';
-import {toggleListItem} from '@site/src/utils/jsUtils';
-import {prepareUserState} from '../../index';
-import type {TagType} from '@site/src/data/tutorials';
+import { useHistory, useLocation } from '@docusaurus/router';
+import { toggleListItem } from '@site/src/utils/jsUtils';
+import { prepareUserState } from '../../index';
+import type { TagType } from '@site/src/data/tutorials';
 
 import styles from './styles.module.css';
 
@@ -32,6 +32,13 @@ export function readSearchTags(search: string): TagType[] {
   return new URLSearchParams(search).getAll(TagQueryStringKey) as TagType[];
 }
 
+interface Props extends ComponentProps<'input'> {
+  id: number;
+  icon: ReactElement<ComponentProps<'svg'>>;
+  label: ReactNode;
+  tag: TagType;
+}
+
 function replaceSearchTags(search: string, newTags: TagType[]) {
   const searchParams = new URLSearchParams(search);
   searchParams.delete(TagQueryStringKey);
@@ -40,7 +47,7 @@ function replaceSearchTags(search: string, newTags: TagType[]) {
 }
 
 const TutorialTagSelect = React.forwardRef<HTMLLabelElement, Props>(
-  ({id, icon, label, tag, ...rest}, ref) => {
+  ({ id, icon, label, tag, ...rest }, ref) => {
     const location = useLocation();
     const history = useHistory();
     const [selected, setSelected] = useState(false);
@@ -61,9 +68,9 @@ const TutorialTagSelect = React.forwardRef<HTMLLabelElement, Props>(
     return (
       <>
         <input
-          type="checkbox"
+          type='checkbox'
           id={id}
-          className="screen-reader-only"
+          className='screen-reader-only'
           onKeyDown={(e) => {
             if (e.key === 'Enter') {
               toggleTag();
@@ -93,5 +100,6 @@ const TutorialTagSelect = React.forwardRef<HTMLLabelElement, Props>(
     );
   },
 );
+TutorialTagSelect.displayName = 'TutorialTagSelect';
 
 export default TutorialTagSelect;

@@ -5,10 +5,10 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import React, {useState, useEffect, useCallback} from 'react';
-import {useHistory, useLocation} from '@docusaurus/router';
+import React, { useState, useEffect, useCallback } from 'react';
+import { useHistory, useLocation } from '@docusaurus/router';
 
-import {prepareUserState} from '../../index';
+import { prepareUserState } from '../../index';
 
 import styles from './styles.module.css';
 import clsx from 'clsx';
@@ -47,10 +47,10 @@ export default function TutorialFilterToggle(): JSX.Element {
   return (
     <div>
       <input
-        type="checkbox"
+        type='checkbox'
         id={id}
-        className="screen-reader-only"
-        aria-label="Toggle between or and and for the tags you selected"
+        className='screen-reader-only'
+        aria-label='Toggle between or and and for the tags you selected'
         onChange={toggleOperator}
         onKeyDown={(e) => {
           if (e.key === 'Enter') {
@@ -59,7 +59,7 @@ export default function TutorialFilterToggle(): JSX.Element {
         }}
         checked={operator}
       />
-      {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
+      {/* eslint-disable-next-line */}
       <label htmlFor={id} className={clsx(styles.checkboxLabel, 'shadow--md')}>
         <span className={styles.checkboxLabelOr}>OR</span>
         <span className={styles.checkboxLabelAnd}>AND</span>
