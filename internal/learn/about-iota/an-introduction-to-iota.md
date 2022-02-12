@@ -5,7 +5,7 @@ description: A basic introduction to the IOTA DLT Technology. The use-cases and
   the Ecosystem developed around it.
 ---
 
-# An Introduction to IOTA
+# An Introduction to IOTAwww
 
 **This topic gives a brief overview and describes some of the main differences between IOTA's Tangle and a blockchain.**
 
@@ -14,13 +14,9 @@ Blockchains and the Tangle both fall under the same category of distributed ledg
 The main differences between blockchains and the Tangle are the following:
 
 - In a blockchain, new transactions can only be attached to a single point (a new block). This block follows a previously produced block and is directly cryptographically linked to this previous block. Transactions in a blockchain can only become part of the ledger (the record of balances and accounts) if they are included in a newly issued block by the block producers (miners in PoW blockchains, stakers in PoS blockchains). In nearly all blockchains, the block producers can decide which new transactions they prefer to include and confirm in the blocks they produce. This leads to competition between the freshly issued transactions to become part of a new block. The fee-based incentivized structure of those blockchains favors users willing to pay a higher fee for transactions as they more likely included in the new block than those offering a lower fee.
-
-- In the Tangle, there are no block producers, and therefore every user is free to issue new transactions and attach them on different Tangle parts without an entity that acts as middlemen. The Tangle is not a single chain of blocks that follow each other. It is a network of parallel processed transactions (so-called Tips). This parallel transactions form the "front" of the Tangle and offer many different points for new issued transactions to be attached, which dramatically speeds up the processing of transactions.
-Every node in the network is free to attach new transactions to the network at any time. No entity is needed to decide when and if those transactions get included. As long as they follow the basic rules of the protocol (valid signatures / no double spending of funds) those transactions will become part of the ledger by just issuing them to a node.
-
-- Opposite to that, a blockchain transactions must be included in a block by a block producer. These are entities that collects new issued transactions, validate them and include them in the next block. A Blockchain must always select a single leader as a block producer to attach a new block to the blockchain. Only this single block producer will earn all the fees of the transactions that are part of the issued block and earn the reward (in the form of newly created tokens) for producing the block. This is also seen as a form of centralization in blockchains, as you need middlemen that process your transactions. Regular users are not allowed to write directly to the ledger. That leads to the well-known "miner race," where only the miner with the highest computational processing power, or stakers with the highest stake, have a reasonable chance of becoming a block producer and are allowed to attach a new block including their processed transactions to the ledger. All the electricity used by the other miners in this race of solving the cryptographic puzzle needed to fulfill the proof of work requirements while producing the current block has been wasted, as their attempted blocks are never becoming part of the blockchain. 
-
-- IOTA, in contrast, is a leaderless protocol. It does not require any middlemen to include transactions into the Tangle. Everyone is free to attach transactions as long as they are following the basic layout design of the protocol. There is no need to elect a leader as the Tangle is capable of implementing new transactions in parallel processing. IOTA is therefore  a multi - threaded ledger. This is one of the reasons why IOTA can reach a very high transaction throughput and remains feeless.
+- In the Tangle, there are no block producers, and therefore every user is free to issue new transactions and attach them on different Tangle parts without an entity that acts as middlemen. The Tangle is not a single chain of blocks that follow each other. It is a network of parallel processed transactions (so-called Tips). This parallel transactions form the "front" of the Tangle and offer many different points for new issued transactions to be attached, which dramatically speeds up the processing of transactions. Every node in the network is free to attach new transactions to the network at any time. No entity is needed to decide when and if those transactions get included. As long as they follow the basic rules of the protocol (valid signatures / no double spending of funds) those transactions will become part of the ledger by just issuing them to a node.
+- Opposite to that, a blockchain transactions must be included in a block by a block producer. These are entities that collects new issued transactions, validate them and include them in the next block. A Blockchain must always select a single leader as a block producer to attach a new block to the blockchain. Only this single block producer will earn all the fees of the transactions that are part of the issued block and earn the reward (in the form of newly created tokens) for producing the block. This is also seen as a form of centralization in blockchains, as you need middlemen that process your transactions. Regular users are not allowed to write directly to the ledger. That leads to the well-known "miner race," where only the miner with the highest computational processing power, or stakers with the highest stake, have a reasonable chance of becoming a block producer and are allowed to attach a new block including their processed transactions to the ledger. All the electricity used by the other miners in this race of solving the cryptographic puzzle needed to fulfill the proof of work requirements while producing the current block has been wasted, as their attempted blocks are never becoming part of the blockchain.
+- IOTA, in contrast, is a leaderless protocol. It does not require any middlemen to include transactions into the Tangle. Everyone is free to attach transactions as long as they are following the basic layout design of the protocol. There is no need to elect a leader as the Tangle is capable of implementing new transactions in parallel processing. IOTA is therefore a multi - threaded ledger. This is one of the reasons why IOTA can reach a very high transaction throughput and remains feeless.
 
 To explain these points, you need to understand the differences between the data structures and the consensus mechanisms in these DLTs.
 
@@ -48,15 +44,12 @@ The Tangle data structure is a directed acyclic graph (DAG), where each message 
 
 Allowing parallel processing removes congestion.
 
-
 ## Consensus in a blockchain
 
-In blockchains, the network participants are divided
-into validators (miners, stakers) and users. Miners consume large amounts of computing power to complete the proof of work (PoW) required to chain the blocks together. Miners and stakers are incentivized to validate messages because of the following:
+In blockchains, the network participants are divided into validators (miners, stakers) and users. Miners consume large amounts of computing power to complete the proof of work (PoW) required to chain the blocks together. Miners and stakers are incentivized to validate messages because of the following:
 
 - The fees that users are willing to pay to have their messages included in a block
-
-- The reward that the network pays out in the form of freshly created tokens to the validators for producing the new block. 
+- The reward that the network pays out in the form of freshly created tokens to the validators for producing the new block.
 
 The only way to reverse messages in a POW blockchain is to mine a new blockchain in the same amount of time it takes other miners to mine a single block. To do so, a miner would need 51% of the network's ability to do PoW, known as hash power. As a result, requiring validators to do PoW secures blockchain networks by making it difficult to attack, change, or stop. The more miners participate, the more secure the network is.
 
