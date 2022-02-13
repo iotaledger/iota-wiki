@@ -10,16 +10,12 @@ export interface ImageSliderProps {
 }
 
 export default function ImageSlider({ path }: ImageSliderProps) {
-  const directory = useBaseUrl('/img' + path);
+  const directory = useBaseUrl(path);
   const videoPlaceholder = useBaseUrl(
     '/img/infographics/video-placeholder.png',
   );
   const supportedImageExtensions = /(png|jpe?g|svg)$/;
   const [images, setImages] = useState([]);
-
-  function getFileExtension(filename) {
-    return filename.split('.').pop();
-  }
 
   useEffect(() => {
     const abortController = new AbortController();
@@ -31,7 +27,7 @@ export default function ImageSlider({ path }: ImageSliderProps) {
         const images = fileNames
           .map((fileName: string) => {
             const filePath = directory + '/' + fileName;
-            const fileExtension = getFileExtension(filePath);
+            const fileExtension = fileName.split('.').pop();
             let file = null;
 
             if (fileExtension === 'mp4') {
