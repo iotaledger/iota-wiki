@@ -25,7 +25,13 @@ export default function ImageSlider({ path }: ImageSliderProps) {
   const [images, setImages] = useState([]);
 
   useEffect(() => {
+    // This controller is needed to abort any pending
+    // axios requests when navigating away from the
+    // page containing this slider.
     const abortController = new AbortController();
+
+    // Get all files in a directory referenced by the path,
+    // check their file extensions and filter any unsupported ones.
     axios
       .get(directory, {
         signal: abortController.signal,
