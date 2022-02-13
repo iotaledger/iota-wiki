@@ -4,16 +4,23 @@ import 'react-image-gallery/styles/css/image-gallery.css';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import { useRef, useState, useEffect } from 'react';
 import axios from 'axios';
+import { useThemeConfig } from '@docusaurus/theme-common';
+import { ThemeConfig } from '@docusaurus/preset-classic';
 
 export interface ImageSliderProps {
   path: string;
 }
 
+export interface ImageSliderConfig extends ThemeConfig {
+  imageSlider: {
+    videoPlaceholder: string;
+  };
+}
+
 export default function ImageSlider({ path }: ImageSliderProps) {
+  const { imageSlider } = useThemeConfig() as ImageSliderConfig;
   const directory = useBaseUrl(path);
-  const videoPlaceholder = useBaseUrl(
-    '/img/infographics/video-placeholder.png',
-  );
+  const videoPlaceholder = useBaseUrl(imageSlider.videoPlaceholder);
   const supportedImageExtensions = /(png|jpe?g|svg)$/;
   const [images, setImages] = useState([]);
 

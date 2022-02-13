@@ -44,6 +44,9 @@ module.exports = {
     hotjar: {
       applicationId: '2809821',
     },
+    imageSlider: {
+      videoPlaceholder: '/img/infographics/video-placeholder.png',
+    },
     cards: [
       {
         title: 'Learn',
