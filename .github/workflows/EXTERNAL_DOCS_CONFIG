@@ -144,3 +144,13 @@
         editUrl: 'https://github.com/iotaledger/integration-services/edit/develop',
       }
     ],
+    [
+      "@docusaurus/plugin-content-docs",
+      {
+        id: "zebra-tutorials",
+        path: "external/zebra-iota-edge-sdk/docs",
+        routeBasePath: "zebra-iota-edge-sdk",
+        sidebarPath: require.resolve("./external/zebra-iota-edge-sdk/docs/sidebars.js"),
+        editUrl: 'https://github.com/zebradevs/zebra-iota-edge-sdk/edit/main',
+      }
+    ],
