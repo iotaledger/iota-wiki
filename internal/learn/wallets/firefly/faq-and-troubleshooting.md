@@ -1,17 +1,19 @@
 ---
-title: Firefly FAQ and troubleshooting
+title: Firefly FAQ
 description: Frequently asked questions and helpful troubleshooting information for users of the Firefly wallet.
 ---
+
+[Official website](https://firefly.iota.org/) | [User guide](/learn/wallets/firefly/user-guide) | [Ledger user guide](/learn/wallets/firefly/user-guide-ledger) | [Github](https://github.com/iotaledger/firefly)
 
 ## Setup and installation
 
 #### I'm worried I might make a mistake when setting up Firefly.
 
-Don't worry! All you need to do is download Firefly only from the official website for your preferred OS and start the setup. The application has been designed to guide you through setting up your profile, securing it, and migrating your tokens successfully.
+Don't worry! All you need to do is download Firefly only from the [official website](https://firefly.iota.org/) for your preferred OS and start the setup. The application has been designed to guide you through setting up your profile, securing it, and migrating your tokens successfully.
 
 #### How do I back up my seed?
 
-IOTA Firefly now uses a 24-word mnemonic or a recovery phrase. Like with other cryptocurrencies, all you will need are 24 words to recover access to your tokens on the Tangle. You will be able to back up your recovery phrase using the recovery kit you create when you set up your wallet. You will have captured the 24-word recovery phrase in a safe location by saving a so-called "stronghold-file" and writing the 24 words down.
+IOTA Firefly now uses a 24-word mnemonic or a recovery phrase. Like with other cryptocurrencies, all you will need are 24 words to recover access to your tokens on the Tangle. You will be able to back up your recovery phrase using the recovery kit you create when you set up your wallet. You will have captured the 24-word recovery phrase in a safe location by saving a so-called `stronghold` file and writing the 24 words down.
 
 This physical paper backup is recommended as computers can fail.
 
@@ -19,7 +21,7 @@ Hardware wallets such as the Ledger Nano X and S are also supported. In case you
 
 #### What is Stronghold?
 
-Stronghold is a secure software implementation developed by the IOTA Foundation with the sole purpose of isolating digital secrets from exposure to hackers and accidental leaks. It uses versioned, file-based backups (with the file extension .stronghold) with double encryption that can be easily backed up and securely shared between devices. You can read more about Stronghold [here!](IOTA Stronghold: Beta Release)
+Stronghold is a secure software implementation developed by the IOTA Foundation with the sole purpose of isolating digital secrets from exposure to hackers and accidental leaks. It uses versioned, file-based backups (with the file extension .stronghold) with double encryption that can be easily backed up and securely shared between devices. You can read more about Stronghold [here!](https://blog.iota.org/iota-stronghold-beta-release/)
 
 #### I have lost access to my device. How do I recover my wallet?
 
@@ -27,7 +29,7 @@ There are several ways to recover your wallet, and both can be found in the back
 
 #### Do you plan to support Trezor or other hardware wallets?
 
-We do not currently have any plans to support Trezor, but if a community member would like to work on the integration, please get in touch with Charlie#0123 on our Discord.
+We do not currently have any plans to support Trezor, but if a community member would like to work on the integration, please get in touch with Charlie#0123 on our [Discord](/participate/the-community/discord).
 
 #### Which Ledger hardware do you support?
 
@@ -51,13 +53,13 @@ The 24 words mnemonic (also known as the recovery phrase) and your Firefly accou
 
 #### I have run out of space to install more applications on the Ledger. What should I do?
 
-If you're short on space, you may need to remove other cryptocurrency applications from your Ledger device temporarily. This will have no impact on the related cryptocurrencies. After reinstalling the apps, they will be available again. You should refer to the official Ledger support site if you need more help.
+If you're short on space, you may need to remove other cryptocurrency applications from your Ledger device temporarily. This will have no impact on the related cryptocurrencies. After reinstalling the apps, they will be available again. You should refer to the [official Ledger support site](https://support.ledger.com/hc/en-us/categories/4404369571601-Support?support=true) if you need more help.
 
 ## Backups and recovery
 
 #### I have the seed words (recovery phrase) but don't remember the password; what can I do?
 
-The recovery phrase works without a password or PIN. Just input the words at the wallet set up, using the 'I have a text backup' option.
+The recovery phrase works without a password or PIN. Just input the words at the wallet set up, using the `I have a text backup` option.
 
 #### Why should I do regular Stronghold backups?
 
@@ -103,9 +105,9 @@ No, you cannot change a profile name after creating a profile just yet. But you 
 
 #### Can I change wallet names after I create the account?
 
-Yes. You can change your wallet name by clicking on the ellipses (three dots in a row) next to your wallet balance, giving you the "Customise wallet" option. There, you can change the name of the wallet you are currently in.
+Yes. You can change your wallet name by clicking on the ellipses (three dots in a row) next to your wallet balance, giving you the `Customise wallet` option. There, you can change the name of the wallet you are currently in.
 
-#### What is "resync wallet"? Why do I need it, and what happens when I resync my wallet?
+#### What is `resync wallet`? Why do I need it, and what happens when I resync my wallet?
 
 Resyncing your wallet starts a background task that makes sure all of your wallets are up to date; you would need it to ensure your wallet is correct so you can conduct the everyday functions of Firefly without issues.
 
@@ -171,9 +173,9 @@ You cannot send data transactions with Firefly at this point in time.
 
 #### Where can I see my transaction history?
 
-Your transaction history is broken down within your wallets. When you select "Wallets" from your dashboard, you will see a column with all of the transactions you made within the respective wallet.
+Your transaction history is broken down within your wallets. When you select `Wallets` from your dashboard, you will see a column with all of the transactions you made within the respective wallet.
 
-Additionally, there is an extra function, "wallet history," found in the ellipses (three dots) next to the "wallet balance" of your wallet page.
+Additionally, there is an extra function, `wallet history`, found in the ellipses (three dots) next to the `wallet balance` of your wallet page.
 
 #### How do I find a specific transaction that I did send/receive; I only know the day when it happened. Is there a search function?
 
@@ -181,7 +183,7 @@ There is no search function in Firefly.
 
 #### What is a deep link, and how do I use it?
 
-Deep links automatically fill transaction data in Firefly when you click on an "iota://" link.
+Deep links automatically fill transaction data in Firefly when you click on an `iota://` link.
 
 #### Can I have a fixed receive address?
 
@@ -221,7 +223,7 @@ The idea is to incentivize active community members in order to allow new ecosys
 
 #### Where can I change my PIN and password?
 
-You can change both your PIN and password under "Security" found in the settings of your dashboard.
+You can change both your PIN and password under `Security` found in the settings of your dashboard.
 
 #### Can I reuse an address? I know that this was always a problem in Trinity.
 
@@ -245,11 +247,11 @@ Without the password, you will not be able to recover your funds using the backu
 
 You can report to this GitHub page for any issues or errors: https://github.com/iotaledger/firefly/issues.
 
-#### I received an error: "client error: { }". What does it mean, and what can I do?
+#### I received an error: `client error: { }`. What does it mean, and what can I do?
 
 You can report to this GitHub page with any issues or errors: https://github.com/iotaledger/firefly/issues.
 
-#### I received the "operation timed out" error message. What does it mean, and how can I solve it?
+#### I received the `operation timed out` error message. What does it mean, and how can I solve it?
 
 You can report any issues or errors to this GitHub page: https://github.com/iotaledger/firefly/issues.
 
@@ -267,17 +269,17 @@ If your Ledger is already connected and unlocked, ensure that you have closed th
 
 #### Finding balances keeps stalling. Why is this?
 
-If your Ledger device does not show "Generating address…" while finding balances, then try disconnecting and reconnecting the device in rare cases where you used an old version of the legacy app. You may need to uninstall and reinstall the legacy app. Return to Ledger Live, reinstall this application on your Ledger device and try again.
+If your Ledger device does not show `Generating address…` while finding balances, then try disconnecting and reconnecting the device in rare cases where you used an old version of the legacy app. You may need to uninstall and reinstall the legacy app. Return to Ledger Live, reinstall this application on your Ledger device and try again.
 
 #### Why does my balance keep showing zero?
 
-Firstly, you can try "Check Again" to search for more addresses with balance.
+Firstly, you can try `Check Again` to search for more addresses with balance.
 
 If your balance continues to display 0, you may have selected the wrong account index number. The default account index number is 0, but it is possible to change this from 0-2147483647. If this was changed during your Trinity Ledger setup, you might wish to try alternative account indexes to reveal your funds.
 
 #### What happens if my computer falls asleep or restarts during the migration process?
 
-First, check if the migration is still in progress. If it is, then it should be complete on its own. Alternatively, you can check if you have a profile for that migration as it may have already been completed. If there are no profiles associated with the migration, you can simply create a new profile to start the migration again. If there is a profile, but the full set of migration transactions are not there, go to Advanced Settings and select "Migrate Another Index." You can continue where you left off by choosing the same account index and searching for more balance.
+First, check if the migration is still in progress. If it is, then it should be complete on its own. Alternatively, you can check if you have a profile for that migration as it may have already been completed. If there are no profiles associated with the migration, you can simply create a new profile to start the migration again. If there is a profile, but the full set of migration transactions are not there, go to Advanced Settings and select `Migrate Another Index.` You can continue where you left off by choosing the same account index and searching for more balance.
 
 ## Migration
 
@@ -331,19 +333,19 @@ Tax regulations are different from country to country. Contact your local tax of
 
 If you want to migrate more than one account index, you will need to manually go through the indexes one by one and migrate them. Once you have completed the migration for one index, you will be prompted to migrate another index on the same profile. Each migration is sent to a separate wallet within the same Firefly profile.
 
-You can also migrate additional indexes by going to the Advanced Settings in your dashboard and choosing "Migrate Ledger Index." This will migrate the funds to the same profile.
+You can also migrate additional indexes by going to the Advanced Settings in your dashboard and choosing `Migrate Ledger Index`. This will migrate the funds to the same profile.
 
 #### The balance that is shown is less than the balance I have on my Ledger. What can I do?
 
-Firefly provides a "check again" option to check more addresses for balance. If the balance is 0 and cannot be found by checking multiple times again, you likely selected the wrong account index.
+Firefly provides a `check again` option to check more addresses for balance. If the balance is 0 and cannot be found by checking multiple times again, you likely selected the wrong account index.
 
-#### Why does it say my "Funds are at risk" during migration?
+#### Why does it say my `Funds are at risk` during migration?
 
 It was a risk to send funds from the same address more than once in the old legacy network. If you see this message, Firefly will guide you through a process to help secure those addresses before migration. You can read more about spent addresses here.
 
 #### What is bundle mining?
 
-If you have spent addresses, it means you accidentally received funds to an address that was already spent from. These funds are not safe to send again due to the Winternitz type one-time signature scheme (see below under "Spent Addresses" for more details).
+If you have spent addresses, it means you accidentally received funds to an address that was already spent from. These funds are not safe to send again due to the Winternitz type one-time signature scheme (see below under [Spent Addresses](#spent-addresses) for more details).
 
 To secure your spent addresses during the migration, Firefly will try to find a new bundle that reveals the least amount of additional private key parts compared to previous signs.
 
