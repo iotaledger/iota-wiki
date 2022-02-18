@@ -246,7 +246,7 @@ const Tutorials: Tutorial[] = [
       description:
         'This tutorial shows you how to use the WASM IOTA client',
       preview: IOTAWASMClientImageUrl,
-      source: null,
+      source: 'https://github.com/Dr-Electron/identity-iota-svelte-example/tree/gitpod-integration',
       website: 'iota-client-wasm-tutorial/tutorial',
       tags: ['texttutorial', 'gettingstarted']
     },
