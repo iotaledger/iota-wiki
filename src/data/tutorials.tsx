@@ -279,10 +279,10 @@ const Tutorials: Tutorial[] = [
     {
         title: 'Zebra Tutorial',
         description:
-            'Use Zebra with IOTA DID',
+          'Use Zebra with IOTA DID',
         preview: require('./tutorials/zebra.png'),
-        website: 'zebra-iota-edge-sdk/tutorials/101/zebra-iota-edge-sdk-101-tutorial',
-        source: 'https://github.com/dr-electron/zebra-iota-edge-sdk',
+        website: 'zebra-iota-edge-sdk/tutorials/zebra-iota-edge-sdk/zebra-iota-edge-sdk-101-tutorial',
+        source: 'https://github.com/zebradevs/zebra-iota-edge-sdk',
         tags: ['integrationservices', 'texttutorial'],
     },
     /*
