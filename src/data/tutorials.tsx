@@ -8,6 +8,7 @@
 /* eslint-disable global-require */
 
 import { sortBy } from '@site/src/utils/jsUtils';
+import IOTAWASMClientImageUrl from '@site/static/img/iota_client.png';
 
 /*
  * ADD YOUR TUTORIAL TO THE WIKI:
@@ -239,6 +240,15 @@ const Tutorials: Tutorial[] = [
         website: 'https://www.youtube.com/watch?v=Mh0uMbO78OM',
         source: null,
         tags: ['favorite', 'scam'],
+    },
+    {
+      title: "IOTA Client WASM Tutorial",
+      description:
+        'This tutorial shows you how to use the WASM IOTA client',
+      preview: IOTAWASMClientImageUrl,
+      source: null,
+      website: 'iota-client-wasm-tutorial/tutorial',
+      tags: ['texttutorial', 'gettingstarted']
     },
     {
         title: 'ISCP Tutorials by Kumar Anirudha',
