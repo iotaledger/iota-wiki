@@ -2,62 +2,84 @@ import React from 'react';
 import ImageGallery from 'react-image-gallery';
 import 'react-image-gallery/styles/css/image-gallery.css';
 import useBaseUrl from '@docusaurus/useBaseUrl';
-import { useRef } from 'react';
+import { useRef, useState, useEffect } from 'react';
+import axios from 'axios';
+import { useThemeConfig } from '@docusaurus/theme-common';
+import { ThemeConfig } from '@docusaurus/preset-classic';
 
 export interface ImageSliderProps {
   path: string;
 }
 
+export interface ImageSliderConfig extends ThemeConfig {
+  imageSlider: {
+    videoPlaceholder: string;
+  };
+}
+
 export default function ImageSlider({ path }: ImageSliderProps) {
-  // Import images from the infographics folder
-  function importImages(r) {
-    return r.keys().map((x) => x.replace('.', ''));
-  }
+  const { imageSlider } = useThemeConfig() as ImageSliderConfig;
+  const directory = useBaseUrl(path);
+  const videoPlaceholder = useBaseUrl(imageSlider.videoPlaceholder);
+  const supportedImageExtensions = /(png|jpe?g|svg)$/;
+  const [images, setImages] = useState([]);
 
-  const allImages = importImages(
-    require.context('/img/', true, /\.(png|jpe?g|svg|mp4)$/),
-  );
-  const requestedImages = allImages.filter((word) => word.startsWith(path));
+  useEffect(() => {
+    // This controller is needed to abort any pending
+    // axios requests when navigating away from the
+    // page containing this slider.
+    const abortController = new AbortController();
 
-  // Get file extension
-  function getFileExtension(filename) {
-    return filename.split('.').pop();
-  }
+    // Get all files in a directory referenced by the path,
+    // check their file extensions and filter any unsupported ones.
+    axios
+      .get(directory, {
+        signal: abortController.signal,
+      })
+      .then(({ data: fileNames }) => {
+        const images = fileNames
+          .map((fileName: string) => {
+            const filePath = directory + '/' + fileName;
+            const fileExtension = fileName.split('.').pop();
+            let file = null;
 
-  // Create an array of objects with the image paths
-  function createImageArray() {
-    const images = [];
-    for (let i = 0; i < requestedImages.length; i++) {
-      const image = useBaseUrl('/img' + requestedImages[i]);
-      if (getFileExtension(requestedImages[i]) === 'mp4') {
-        images.push({
-          original: image,
-          thumbnail: useBaseUrl('/img/infographics/video-placeholder.png'),
-          renderItem: () => (
-            <video
-              controls
-              autoPlay={true}
-              muted
-              className='image-gallery-video'
-            >
-              <source src={image} type='video/mp4' />
-            </video>
-          ),
-        });
-      } else {
-        images.push({
-          original: image,
-          thumbnail: image,
-          thumbnailHeight: 48,
-        });
-      }
-    }
-    return images;
-  }
+            if (fileExtension === 'mp4') {
+              file = {
+                original: filePath,
+                thumbnail: videoPlaceholder,
+                renderItem: () => (
+                  <video
+                    controls
+                    autoPlay={true}
+                    muted
+                    className='image-gallery-video'
+                  >
+                    <source src={filePath} type='video/mp4' />
+                  </video>
+                ),
+              };
+            } else if (supportedImageExtensions.test(fileExtension)) {
+              file = {
+                original: filePath,
+                thumbnail: filePath,
+                thumbnailHeight: 48,
+              };
+            }
+
+            return file;
+          })
+          .filter((file: boolean) => file);
+
+        setImages(images);
+      });
+
+    return () => {
+      abortController.abort();
+    };
+  }, []);
+
   const carousel = useRef(null);
-  const images = createImageArray();
 
-  // Create the image gallery
   return (
     <ImageGallery
       onClick={() => carousel?.current?.fullScreen()}
