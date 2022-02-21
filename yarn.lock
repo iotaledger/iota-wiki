@@ -8932,6 +8932,7 @@ __metadata:
     hast-util-is-element: 1.1.0
     husky: ">=6"
     lint-staged: ">=10"
+    plugin-image-zoom: "jlvandenhout/plugin-image-zoom#allow-medium-zoom-config"
     prettier: ^2.4.1
     raw-loader: ^4.0.2
     react: ^17.0.1
@@ -10383,6 +10384,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"medium-zoom@npm:^1.0.4":
+  version: 1.0.6
+  resolution: "medium-zoom@npm:1.0.6"
+  checksum: 728b9f661262fd084da26f401ffe9bf98afc6d14ad93d4bfb08b95d32f9c4494a97dc8cb3a62353e8d350dc09c84a3f6f686a0fec321bfb609e5ba5e24bdb9d2
+  languageName: node
+  linkType: hard
+
 "memfs@npm:^3.1.2, memfs@npm:^3.2.2":
   version: 3.4.1
   resolution: "memfs@npm:3.4.1"
@@ -11635,6 +11643,15 @@ __metadata:
   dependencies:
     find-up: ^3.0.0
   checksum: 5bac346b7c7c903613c057ae3ab722f320716199d753f4a7d053d38f2b5955460f3e6ab73b4762c62fd3e947f58e04f1343e92089e7bb6091c90877406fcd8c8
+  languageName: node
+  linkType: hard
+
+"plugin-image-zoom@jlvandenhout/plugin-image-zoom#allow-medium-zoom-config":
+  version: 0.0.0
+  resolution: "plugin-image-zoom@https://github.com/jlvandenhout/plugin-image-zoom.git#commit=b625b7aeacff3dbd1a1c622f275585e5c69fe966"
+  dependencies:
+    medium-zoom: ^1.0.4
+  checksum: ff6997b073451775c82b83de175605cea958cae425792e2aec50bfe905170e9f798a5af53f674a032c2cc22d3efb6545dd80cb793e172927adb5716e0de09e90
   languageName: node
   linkType: hard
 

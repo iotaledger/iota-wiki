@@ -30,6 +30,7 @@
     "docusaurus-plugin-matomo": "^0.0.3",
     "file-loader": "^6.2.0",
     "hast-util-is-element": "1.1.0",
+    "plugin-image-zoom": "jlvandenhout/plugin-image-zoom#allow-medium-zoom-config",
     "raw-loader": "^4.0.2",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
