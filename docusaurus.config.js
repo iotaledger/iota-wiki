@@ -51,6 +51,8 @@ module.exports = {
       options: {
         background: 'rgba(0, 0, 0, 0.6)',
       },
+    imageSlider: {
+      videoPlaceholder: '/img/infographics/video-placeholder.png',
     },
     cards: [
       {
