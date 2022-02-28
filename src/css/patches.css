@@ -86,3 +86,9 @@ Patch to use transformed font icons in dropdowns and expanded menus
   content: '';
   justify-content: center;
 }
+
+/* Since the last update (or perhaps before?) the dark mode bg doesn't seem to work*/
+
+body{
+  background-color: var( --ifm-background-color);
+}
