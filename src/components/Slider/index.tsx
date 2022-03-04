@@ -2,8 +2,7 @@ import React from 'react';
 import ImageGallery from 'react-image-gallery';
 import 'react-image-gallery/styles/css/image-gallery.css';
 import useBaseUrl from '@docusaurus/useBaseUrl';
-import { useRef, useState, useEffect } from 'react';
-import axios from 'axios';
+import { useRef } from 'react';
 import { useThemeConfig } from '@docusaurus/theme-common';
 import { ThemeConfig } from '@docusaurus/preset-classic';
 
@@ -19,67 +18,57 @@ export interface ImageSliderConfig extends ThemeConfig {
 
 export default function ImageSlider({ path }: ImageSliderProps) {
   const { imageSlider } = useThemeConfig() as ImageSliderConfig;
-  const directory = useBaseUrl(path);
   const videoPlaceholder = useBaseUrl(imageSlider.videoPlaceholder);
-  const supportedImageExtensions = /(png|jpe?g|svg)$/;
-  const [images, setImages] = useState([]);
+  // Import images from the infographics folder
+  function importImages(r) {
+    return r.keys().map((x) => x.replace('.', ''));
+  }
 
-  useEffect(() => {
-    // This controller is needed to abort any pending
-    // axios requests when navigating away from the
-    // page containing this slider.
-    const abortController = new AbortController();
+  // Resolve images relative to the static folder
+  const allImages = importImages(
+    require.context('@site/static/', true, /\.(png|jpe?g|svg|mp4)$/),
+  );
+  const requestedImages = allImages.filter((word) => word.startsWith(path));
 
-    // Get all files in a directory referenced by the path,
-    // check their file extensions and filter any unsupported ones.
-    axios
-      .get(directory, {
-        signal: abortController.signal,
-      })
-      .then(({ data: fileNames }) => {
-        const images = fileNames
-          .map((fileName: string) => {
-            const filePath = directory + '/' + fileName;
-            const fileExtension = fileName.split('.').pop();
-            let file = null;
+  // Get file extension
+  function getFileExtension(filename) {
+    return filename.split('.').pop();
+  }
 
-            if (fileExtension === 'mp4') {
-              file = {
-                original: filePath,
-                thumbnail: videoPlaceholder,
-                renderItem: () => (
-                  <video
-                    controls
-                    autoPlay={true}
-                    muted
-                    className='image-gallery-video'
-                  >
-                    <source src={filePath} type='video/mp4' />
-                  </video>
-                ),
-              };
-            } else if (supportedImageExtensions.test(fileExtension)) {
-              file = {
-                original: filePath,
-                thumbnail: filePath,
-                thumbnailHeight: 48,
-              };
-            }
-
-            return file;
-          })
-          .filter((file: boolean) => file);
-
-        setImages(images);
-      });
-
-    return () => {
-      abortController.abort();
-    };
-  }, []);
-
+  // Create an array of objects with the image paths
+  function createImageArray() {
+    const images = [];
+    for (let i = 0; i < requestedImages.length; i++) {
+      const image = useBaseUrl(requestedImages[i]);
+      if (getFileExtension(requestedImages[i]) === 'mp4') {
+        images.push({
+          original: image,
+          thumbnail: videoPlaceholder,
+          renderItem: () => (
+            <video
+              controls
+              autoPlay={true}
+              muted
+              className='image-gallery-video'
+            >
+              <source src={image} type='video/mp4' />
+            </video>
+          ),
+        });
+      } else {
+        images.push({
+          original: image,
+          thumbnail: image,
+          thumbnailHeight: 48,
+        });
+      }
+    }
+    return images;
+  }
   const carousel = useRef(null);
+  const images = createImageArray();
 
+  // Create the image gallery
   return (
     <ImageGallery
       onClick={() => carousel?.current?.fullScreen()}
