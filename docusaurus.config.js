@@ -44,6 +44,14 @@ module.exports = {
     hotjar: {
       applicationId: '2809821',
     },
+    imageZoom: {
+      selector: '.markdown :not(a) > img',
+      // Optional medium-zoom options
+      // see: https://www.npmjs.com/package/medium-zoom#options
+      options: {
+        background: 'rgba(0, 0, 0, 0.6)',
+      },
+    },
     imageSlider: {
       videoPlaceholder: '/img/infographics/video-placeholder.png',
     },
@@ -440,6 +448,7 @@ module.exports = {
     ],
   ],
   plugins: [
+    'plugin-image-zoom',
     [
       '@jlvandenhout/docusaurus-plugin-docs-editor',
       {
