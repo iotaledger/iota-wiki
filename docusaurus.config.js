@@ -402,22 +402,6 @@ module.exports = {
     ],
     colorMode: {
       defaultMode: 'dark',
-      // Dark/light switch icon options
-      switchConfig: {
-        // Icon for the switch while in dark mode
-        darkIcon: 'light_mode',
-
-        // CSS to apply to dark icon
-        darkIconStyle: {
-          fontFamily: 'Material Icons',
-        },
-
-        lightIcon: 'dark_mode',
-
-        lightIconStyle: {
-          fontFamily: 'Material Icons',
-        },
-      },
     },
   },
   presets: [
