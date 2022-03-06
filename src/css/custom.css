@@ -156,6 +156,12 @@ article .card {
     var(--ifm-color-emphasis-200);
 }
 
+@media (max-width: 996px) {
+  .navbar__items {
+    justify-content: space-between;
+  }
+}
+
 .navbar__item {
   font-family: 'Metropolis Semi Bold';
   font-size: 0.9rem;
