@@ -2,11 +2,63 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://wiki.iota.org/blog</id>
     <title>IOTA Wiki Blog</title>
-    <updated>2021-12-04T00:00:00.000Z</updated>
+    <updated>2022-01-01T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://wiki.iota.org/blog"/>
     <subtitle>IOTA Wiki Blog</subtitle>
     <icon>https://wiki.iota.org/img/favicon.ico</icon>
+    <entry>
+        <title type="html"><![CDATA[Finality—Part 1: Two Generals]]></title>
+        <id>Finality—Part 1: Two Generals</id>
+        <link href="https://wiki.iota.org/blog/Finality—Part 1: Two Generals"/>
+        <updated>2022-01-01T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Finality—Part 1: Two Generals]]></summary>
+        <author>
+            <name>R. Brennan Kelly</name>
+            <uri>https://iologica.substack.com</uri>
+        </author>
+        <category label="Community" term="Community"/>
+        <category label="Consensus" term="Consensus"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Finality—Part 2: Bookkeeping]]></title>
+        <id>Finality—Part 2: Bookkeeping</id>
+        <link href="https://wiki.iota.org/blog/Finality—Part 2: Bookkeeping"/>
+        <updated>2022-01-01T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Finality—Part 2: Bookkeeping]]></summary>
+        <author>
+            <name>R. Brennan Kelly</name>
+            <uri>https://iologica.substack.com</uri>
+        </author>
+        <category label="Community" term="Community"/>
+        <category label="Consensus" term="Consensus"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Finality—Part 3: Total Order]]></title>
+        <id>Finality—Part 3: Total Order</id>
+        <link href="https://wiki.iota.org/blog/Finality—Part 3: Total Order"/>
+        <updated>2022-01-01T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Finality—Part 3: Total Order]]></summary>
+        <author>
+            <name>R. Brennan Kelly</name>
+            <uri>https://iologica.substack.com</uri>
+        </author>
+        <category label="Community" term="Community"/>
+        <category label="Consensus" term="Consensus"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Finality—Part 4: Many Worlds]]></title>
+        <id>Finality—Part 4: Many Worlds</id>
+        <link href="https://wiki.iota.org/blog/Finality—Part 4: Many Worlds"/>
+        <updated>2022-01-01T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Finality—Part 4: Many Worlds]]></summary>
+        <author>
+            <name>R. Brennan Kelly</name>
+            <uri>https://iologica.substack.com</uri>
+        </author>
+        <category label="Community" term="Community"/>
+        <category label="Consensus" term="Consensus"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[“Better than Coinbase” – IOTAs new Assembly network is the missing piece for Metaverse and Web3]]></title>
         <id>Assembly better than Coinbase</id>

@@ -4,9 +4,45 @@
         <title>IOTA Wiki Blog</title>
         <link>https://wiki.iota.org/blog</link>
         <description>IOTA Wiki Blog</description>
-        <lastBuildDate>Sat, 04 Dec 2021 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Sat, 01 Jan 2022 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
+        <item>
+            <title><![CDATA[Finality—Part 1: Two Generals]]></title>
+            <link>https://wiki.iota.org/blog/Finality—Part 1: Two Generals</link>
+            <guid>Finality—Part 1: Two Generals</guid>
+            <pubDate>Sat, 01 Jan 2022 00:00:00 GMT</pubDate>
+            <description><![CDATA[Finality—Part 1: Two Generals]]></description>
+            <category>Community</category>
+            <category>Consensus</category>
+        </item>
+        <item>
+            <title><![CDATA[Finality—Part 2: Bookkeeping]]></title>
+            <link>https://wiki.iota.org/blog/Finality—Part 2: Bookkeeping</link>
+            <guid>Finality—Part 2: Bookkeeping</guid>
+            <pubDate>Sat, 01 Jan 2022 00:00:00 GMT</pubDate>
+            <description><![CDATA[Finality—Part 2: Bookkeeping]]></description>
+            <category>Community</category>
+            <category>Consensus</category>
+        </item>
+        <item>
+            <title><![CDATA[Finality—Part 3: Total Order]]></title>
+            <link>https://wiki.iota.org/blog/Finality—Part 3: Total Order</link>
+            <guid>Finality—Part 3: Total Order</guid>
+            <pubDate>Sat, 01 Jan 2022 00:00:00 GMT</pubDate>
+            <description><![CDATA[Finality—Part 3: Total Order]]></description>
+            <category>Community</category>
+            <category>Consensus</category>
+        </item>
+        <item>
+            <title><![CDATA[Finality—Part 4: Many Worlds]]></title>
+            <link>https://wiki.iota.org/blog/Finality—Part 4: Many Worlds</link>
+            <guid>Finality—Part 4: Many Worlds</guid>
+            <pubDate>Sat, 01 Jan 2022 00:00:00 GMT</pubDate>
+            <description><![CDATA[Finality—Part 4: Many Worlds]]></description>
+            <category>Community</category>
+            <category>Consensus</category>
+        </item>
         <item>
             <title><![CDATA[“Better than Coinbase” – IOTAs new Assembly network is the missing piece for Metaverse and Web3]]></title>
             <link>https://wiki.iota.org/blog/Assembly better than Coinbase</link>
