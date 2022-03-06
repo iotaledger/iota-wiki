@@ -156,6 +156,7 @@ article .card {
     var(--ifm-color-emphasis-200);
 }
 
+/* Effectively center the logo in the navbar */
 @media (max-width: 996px) {
   .navbar__items {
     justify-content: space-between;
