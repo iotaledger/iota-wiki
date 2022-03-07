@@ -8,7 +8,7 @@ import React from 'react';
 import type { ComponentProps } from 'react';
 import DefaultNavbarItem from '@theme/NavbarItem/DefaultNavbarItem';
 import DropdownNavbarItem from '@theme/NavbarItem/DropdownNavbarItem';
-import MegaDropdownNavbarItem from './MegaDropdownNavbarItem';
+import MegaDropdownNavbarItem from '@site/src/components/MegaDropdownNavbarItem';
 import LocaleDropdownNavbarItem from '@theme/NavbarItem/LocaleDropdownNavbarItem';
 import SearchNavbarItem from '@theme/NavbarItem/SearchNavbarItem';
 import type { LinkLikeNavbarItemProps } from '@theme/NavbarItem';
@@ -16,7 +16,8 @@ import type { Props as DropdownNavbarItemProps } from '@theme/NavbarItem/Dropdow
 import type { Props as DocsVersionDropdownNavbarItemProps } from '@theme/NavbarItem/DocsVersionDropdownNavbarItem';
 import type { Props as LocaleDropdownNavbarItemProps } from '@theme/NavbarItem/LocaleDropdownNavbarItem';
 import type { Props as SearchNavbarItemProps } from '@theme/NavbarItem/SearchNavbarItem';
-import type { Props as MegaDropdownNavbarItemProps } from './MegaDropdownNavbarItem';
+import type { Props as MegaDropdownNavbarItemProps } from '@site/src/components/MegaDropdownNavbarItem';
+import './styles.css';
 
 type Props = ComponentProps<'a'> & {
   readonly position?: 'left' | 'right';

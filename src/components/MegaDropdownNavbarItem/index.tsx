@@ -16,8 +16,8 @@ import {
 } from '@docusaurus/theme-common';
 import NavLink from '@site/src/components/NavLink';
 import NavbarItem from '@theme/NavbarItem';
-import './styles.css';
 import type { Props as NavLinkProps } from '@theme/NavbarItem/DefaultNavbarItem';
+import './styles.css';
 
 const dropdownLinkActiveClass = 'dropdown__link--active';
 
