@@ -1,10 +1,11 @@
 import React from 'react';
+import './styles.css';
 
 function DropDownItem(): JSX.Element {
   return (
-    <div className='dropdown dropdown--hoverable'>
-      <button>DropTest</button>
-      <ul className='dropdown__menu'>
+    <div className='filter dropdown dropdown--hoverable'>
+      <button className='filter__button'>DropTest</button>
+      <ul className='filter__menu dropdown__menu'>
         <li>
           <a className='dropdown__link' href='#url'>
             Home
