@@ -33,7 +33,8 @@ module.exports = {
     },
     image: 'img/iota-wiki.png',
     algolia: {
-      apiKey: '829457a9c9dd5a8ddd31d08c86e154c2',
+      appId: 'YTLE56KAO4',
+      apiKey: '75358d60d302f7f93f630d63128abb03',
       indexName: 'iota',
       contextualSearch: true,
     },
@@ -409,22 +410,6 @@ module.exports = {
     ],
     colorMode: {
       defaultMode: 'dark',
-      // Dark/light switch icon options
-      switchConfig: {
-        // Icon for the switch while in dark mode
-        darkIcon: 'light_mode',
-
-        // CSS to apply to dark icon
-        darkIconStyle: {
-          fontFamily: 'Material Icons',
-        },
-
-        lightIcon: 'dark_mode',
-
-        lightIconStyle: {
-          fontFamily: 'Material Icons',
-        },
-      },
     },
   },
   presets: [
@@ -489,6 +474,7 @@ module.exports = {
           require('remark-import-partial'),
         ],
         showLastUpdateTime: true,
+        breadcrumbs: false,
       },
     ],
     [
@@ -506,6 +492,7 @@ module.exports = {
           require('remark-import-partial'),
         ],
         showLastUpdateTime: true,
+        breadcrumbs: false,
       },
     ],
     [
@@ -523,6 +510,7 @@ module.exports = {
           require('remark-import-partial'),
         ],
         showLastUpdateTime: true,
+        breadcrumbs: false,
       },
     ],
     /* AUTO GENERATED EXTERNAL DOCS CONFIG */
