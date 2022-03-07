@@ -6,6 +6,12 @@
 .filter__button {
   width: 100%;
   height: 100%;
+  background-color: var(--ifm-background-color);
+  color: var(--ifm-font-color-base);
+  border-radius: 5px;
+  border: 1px solid var(--ifm-color-gray-400);
+  text-align: left;
+  text-indent: 0.5rem;
 }
 
 .filter__menu {

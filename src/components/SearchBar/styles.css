@@ -3,8 +3,9 @@
 }
 
 .search-container__input {
-  height: 30px;
-  border-radius: 15px;
+  height: 48px;
+  border-radius: 5px;
   padding: 10px;
-  border: 1px solid gray;
+  border: 1px solid var(--ifm-color-gray-400);
+  background-color: var(--ifm-background-color);
 }

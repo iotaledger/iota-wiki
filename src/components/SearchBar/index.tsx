@@ -2,6 +2,7 @@ import { useHistory, useLocation } from '@docusaurus/router';
 import { prepareUserState } from '@site/src/pages/tutorials';
 import React from 'react';
 import { useEffect, useState } from 'react';
+import './styles.css';
 
 const SearchNameQueryKey = 'name';
 
@@ -21,7 +22,7 @@ function SearchBar() {
       <input
         className='search-container__input'
         id='searchbar'
-        placeholder='Search for tutorial name...'
+        placeholder='Search for tutorials'
         value={value ?? undefined}
         onInput={(e) => {
           setValue(e.currentTarget.value);
