@@ -29,8 +29,8 @@ import { useLocation } from '@docusaurus/router';
 import { usePluralForm } from '@docusaurus/theme-common';
 
 import styles from './styles.module.css';
-import DropDownItem from '@site/src/components/DropDownItem';
 import SearchBar, { readSearchName } from '@site/src/components/SearchBar';
+import Select from 'react-select';
 
 const TITLE = 'Tutorials';
 const DESCRIPTION = 'List of great IOTA tutorials';
@@ -130,6 +130,31 @@ function useSiteCountPlural() {
     selectMessage(sitesCount, '1 result|' + sitesCount + ' results');
 }
 
+const typeOptions = [
+  { value: 'text', label: 'Text' },
+  { value: 'video', label: 'Video' },
+];
+
+const topicOptions = [
+  { value: 'nft', label: 'NFT' },
+  { value: 'supply_chain', label: 'Supply Chain' },
+];
+
+const frameworkOptions = [
+  { value: 'identity', label: 'Identity' },
+  { value: 'streams', label: 'Streams' },
+  { value: 'wallet', label: 'Wallet' },
+  { value: 'client', label: 'Client' },
+  { value: 'stronghold', label: 'Stronghold' },
+  { value: 'iscp', label: 'Smart Contracts' },
+];
+
+const languageOptions = [
+  { value: 'chocolate', label: 'Chocolate' },
+  { value: 'strawberry', label: 'Strawberry' },
+  { value: 'vanilla', label: 'Vanilla' },
+];
+
 function TutorialFilters() {
   const filteredTutorials = useFilteredTutorials();
   const siteCountPlural = useSiteCountPlural();
@@ -145,16 +170,16 @@ function TutorialFilters() {
       </div>
       <div className='row'>
         <div className='col col--3'>
-          <DropDownItem />
+          <Select placeholder='Type' isMulti options={typeOptions} />
         </div>
         <div className='col col--3'>
-          <DropDownItem />
+          <Select placeholder='Topic' isMulti options={topicOptions} />
         </div>
         <div className='col col--3'>
-          <DropDownItem />
+          <Select placeholder='Frameworks' isMulti options={frameworkOptions} />
         </div>
         <div className='col col--3'>
-          <DropDownItem />
+          <Select placeholder='Languages' isMulti options={languageOptions} />
         </div>
       </div>
       <div className={clsx('margin-bottom--sm', styles.filterCheckbox)}>
