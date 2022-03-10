@@ -10,7 +10,7 @@
 .dropdown__container {
   position: absolute;
   padding-top: calc(
-    0.5 * var(--ifm-navbar-height) - 0.5rem * var(--ifm-line-height-base) -
+    0.5 * var(--ifm-navbar-height) - 0.5em * var(--ifm-line-height-base) -
       var(--ifm-navbar-item-padding-vertical) + 1px
   );
   width: 100%;
@@ -19,7 +19,7 @@
   display: none;
   z-index: var(--ifm-z-index-dropdown);
   top: calc(
-    0.5 * var(--ifm-navbar-height) + 0.5rem * var(--ifm-line-height-base) +
+    0.5 * var(--ifm-navbar-height) + 0.5em * var(--ifm-line-height-base) +
       var(--ifm-navbar-item-padding-vertical) - 1px
   );
   left: 0;
