@@ -40,6 +40,7 @@
         routeBasePath: "hornet",
         sidebarPath: require.resolve("./external/hornet/documentation/sidebars.js"),
         editUrl: 'https://github.com/gohornet/hornet/edit/mainnet',
+        breadcrumbs: false,
       }
     ],
     [
