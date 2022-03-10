@@ -7787,12 +7787,12 @@ __metadata:
   linkType: hard
 
 "follow-redirects@npm:^1.14.7":
-  version: 1.14.8
-  resolution: "follow-redirects@npm:1.14.8"
+  version: 1.14.9
+  resolution: "follow-redirects@npm:1.14.9"
   peerDependenciesMeta:
     debug:
       optional: true
-  checksum: 40c67899c2e3149a27e8b6498a338ff27f39fe138fde8d7f0756cb44b073ba0bfec3d52af28f20c5bdd67263d564d0d8d7b5efefd431de95c18c42f7b4aef457
+  checksum: f5982e0eb481818642492d3ca35a86989c98af1128b8e1a62911a3410621bc15d2b079e8170b35b19d3bdee770b73ed431a257ed86195af773771145baa57845
   languageName: node
   linkType: hard
 
@@ -9133,7 +9133,6 @@ __metadata:
     "@types/webpack-env": ^1.16.3
     "@typescript-eslint/eslint-plugin": ^5.9.1
     "@typescript-eslint/parser": ^5.9.1
-    axios: ^0.25.0
     clsx: ^1.1.1
     docusaurus-plugin-hotjar: ^0.0.2
     docusaurus-plugin-matomo: ^0.0.3
