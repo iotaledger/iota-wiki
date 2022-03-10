@@ -19,7 +19,7 @@ import type {
 } from '@theme/NavbarItem/DropdownNavbarItem';
 import type { LinkLikeNavbarItemProps } from '@theme/NavbarItem';
 
-import { NavLink } from './DefaultNavbarItem';
+import NavLink from '@site/src/components/NavLink';
 import NavbarItem from '@theme/NavbarItem';
 
 const dropdownLinkActiveClass = 'dropdown__link--active';
