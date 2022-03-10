@@ -6,7 +6,6 @@
  */
 
 import React, { useState, useMemo, useEffect } from 'react';
-import Collapsible from 'react-collapsible';
 
 import Layout from '@theme/Layout';
 import clsx from 'clsx';
@@ -203,12 +202,6 @@ const favoriteTutorials = sortedTutorials.filter((tutorial) =>
 const otherTutorials = sortedTutorials.filter(
   (tutorial) => !tutorial.tags.includes('favorite'),
 );
-const videoTutorials = sortedTutorials.filter((tutorial) =>
-  tutorial.tags.includes('videotutorial'),
-);
-const starterTutorials = sortedTutorials.filter((tutorial) =>
-  tutorial.tags.includes('gettingstarted'),
-);
 
 function TutorialCards() {
   const filteredTutorials = useFilteredTutorials();
@@ -247,48 +240,11 @@ function TutorialCards() {
             </div>
           </div>
           <div className='container margin-top--lg'>
-            <Collapsible
-              trigger={
-                <Header
-                  text='Getting Started'
-                  count={starterTutorials.length}
-                />
-              }
-            >
-              <ul className={styles.tutorialList}>
-                {starterTutorials.map((tutorial) => (
-                  <TutorialCard key={tutorial.title} tutorial={tutorial} />
-                ))}
-              </ul>
-            </Collapsible>
-          </div>
-          <div className='container margin-top--lg'>
-            <Collapsible
-              trigger={
-                <Header text='Video Tutorials' count={videoTutorials.length} />
-              }
-            >
-              <ul className={styles.tutorialList}>
-                {videoTutorials.map((tutorial) => (
-                  <TutorialCard key={tutorial.title} tutorial={tutorial} />
-                ))}
-              </ul>
-            </Collapsible>
-          </div>
-
-          <div className='container margin-top--lg'>
-            <Collapsible
-              open={true}
-              trigger={
-                <Header text='All Tutorials' count={otherTutorials.length} />
-              }
-            >
-              <ul className={styles.tutorialList}>
-                {otherTutorials.map((tutorial) => (
-                  <TutorialCard key={tutorial.title} tutorial={tutorial} />
-                ))}
-              </ul>
-            </Collapsible>
+            <ul className={styles.tutorialList}>
+              {otherTutorials.map((tutorial) => (
+                <TutorialCard key={tutorial.title} tutorial={tutorial} />
+              ))}
+            </ul>
           </div>
         </>
       ) : (
