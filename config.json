@@ -41,7 +41,7 @@
     },
     {
       "repo": "https://github.com/gohornet/hornet",
-      "checkoutParams": ["--branch develop"],
+      "checkoutParams": ["--branch mainnet"],
       "staticPath": "./documentation/static"
     },
     {
