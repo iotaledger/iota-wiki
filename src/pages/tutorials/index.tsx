@@ -116,18 +116,8 @@ function TutorialHeader() {
   return (
     <section className='container margin-top--lg margin-bottom--lg text--center'>
       <div className='row'>
-        <div className='col col--2 col--offset-5'>
-          <h1>Tutorials</h1>
-        </div>
-        <div className='col col--1 col--offset-3'>
-          <a
-            className='button button--outline button--primary'
-            href={EDIT_URL}
-            target='_blank'
-            rel='noreferrer'
-          >
-            Add tutorial
-          </a>
+        <div className='col col--2 col--offset-0'>
+          <h1 style={{ textAlign: 'left' }}>Tutorials</h1>
         </div>
       </div>
     </section>
@@ -149,7 +139,9 @@ function TutorialFilters() {
         <div className='col col--6'>
           <SearchBar />
         </div>
-        <div className='col col--1 col--offset-5'>Filter</div>
+        <div className='col col--1 col--offset-5'>
+          <button className='button button--primary'>Filter</button>
+        </div>
       </div>
       <div className='row'>
         <div className='col col--3'>
@@ -168,6 +160,12 @@ function TutorialFilters() {
       <div className={clsx('margin-bottom--sm', styles.filterCheckbox)}>
         <div>
           <span>{siteCountPlural(filteredTutorials.length)}</span>
+        </div>
+        <div className='col col--1 col--offset-3'>
+          <span>+</span>
+          <a href={EDIT_URL} target='_blank' rel='noreferrer'>
+            Add your tutorial
+          </a>
         </div>
       </div>
     </section>
