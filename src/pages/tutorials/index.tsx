@@ -10,7 +10,6 @@ import React, { useState, useMemo, useEffect } from 'react';
 import Layout from '@theme/Layout';
 import clsx from 'clsx';
 
-import FavoriteIcon from '@site/src/components/svgIcons/FavoriteIcon';
 import { readSearchTags } from './_components/TutorialTagSelect';
 import {
   type Operator,
@@ -196,13 +195,6 @@ function TutorialFilters() {
   );
 }
 
-const favoriteTutorials = sortedTutorials.filter((tutorial) =>
-  tutorial.tags.includes('favorite'),
-);
-const otherTutorials = sortedTutorials.filter(
-  (tutorial) => !tutorial.tags.includes('favorite'),
-);
-
 function TutorialCards() {
   const filteredTutorials = useFilteredTutorials();
 
@@ -219,48 +211,13 @@ function TutorialCards() {
 
   return (
     <section className='margin-top--lg margin-bottom--xl'>
-      {filteredTutorials.length === sortedTutorials.length ? (
-        <>
-          <div className={styles.tutorialFavorite}>
-            <div className='container'>
-              <div
-                className={clsx(
-                  'margin-bottom--md',
-                  styles.tutorialFavoriteHeader,
-                )}
-              >
-                <h2>Our favorites</h2>
-                <FavoriteIcon svgClass={styles.svgIconFavorite} />
-              </div>
-              <ul className={clsx('container', styles.tutorialList)}>
-                {favoriteTutorials.map((tutorial) => (
-                  <TutorialCard key={tutorial.title} tutorial={tutorial} />
-                ))}
-              </ul>
-            </div>
-          </div>
-          <div className='container margin-top--lg'>
-            <ul className={styles.tutorialList}>
-              {otherTutorials.map((tutorial) => (
-                <TutorialCard key={tutorial.title} tutorial={tutorial} />
-              ))}
-            </ul>
-          </div>
-        </>
-      ) : (
-        <div className='container'>
-          <div
-            className={clsx('margin-bottom--md', styles.tutorialFavoriteHeader)}
-          >
-            <SearchBar />
-          </div>
-          <ul className={styles.tutorialList}>
-            {filteredTutorials.map((tutorial) => (
-              <TutorialCard key={tutorial.title} tutorial={tutorial} />
-            ))}
-          </ul>
-        </div>
-      )}
+      <div className='container margin-top--lg'>
+        <ul className={styles.tutorialList}>
+          {filteredTutorials.map((tutorial) => (
+            <TutorialCard key={tutorial.title} tutorial={tutorial} />
+          ))}
+        </ul>
+      </div>
     </section>
   );
 }
