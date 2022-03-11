@@ -164,19 +164,22 @@ function TutorialFilters() {
   const filteredTutorials = useFilteredTutorials();
   const siteCountPlural = useSiteCountPlural();
 
-  const changeTags = useCallback((e) => {
-    const items = e.map((item) => {
-      return item['value'];
-    });
-    const tags = readSearchTags(location.search);
-    const newTags = toggleListItem(tags, items);
-    const newSearch = replaceSearchTags(location.search, newTags);
-    history.push({
-      ...location,
-      search: newSearch,
-      state: prepareUserState(),
-    });
-  }, []);
+  const changeTags = useCallback(
+    (e) => {
+      const items = e.map((item) => {
+        return item['value'];
+      });
+      const tags = readSearchTags(location.search);
+      const newTags = toggleListItem(tags, items);
+      const newSearch = replaceSearchTags(location.search, newTags);
+      history.push({
+        ...location,
+        search: newSearch,
+        state: prepareUserState(),
+      });
+    },
+    [history, location],
+  );
 
   return (
     <section className='container margin-top--l margin-bottom--lg'>
