@@ -5,7 +5,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import React, { useState, useMemo, useEffect } from 'react';
+import React, { useState, useMemo, useEffect, useCallback } from 'react';
 
 import Layout from '@theme/Layout';
 import clsx from 'clsx';
@@ -23,7 +23,7 @@ import {
 } from '@site/src/data/tutorials';
 
 import ExecutionEnvironment from '@docusaurus/ExecutionEnvironment';
-import { useLocation } from '@docusaurus/router';
+import { useHistory, useLocation } from '@docusaurus/router';
 import { usePluralForm } from '@docusaurus/theme-common';
 
 import styles from './styles.module.css';
@@ -82,10 +82,7 @@ function filterTutorials(
     if (tutorial.tags.length === 0) {
       return false;
     }
-    if (operator === 'AND') {
-      return selectedTags.every((tag) => tutorial.tags.includes(tag));
-    }
-    return selectedTags.some((tag) => tutorial.tags.includes(tag));
+    return selectedTags.every((tag) => tutorial.tags.includes(tag));
   });
 }
 
@@ -131,9 +128,13 @@ function useSiteCountPlural() {
 const typeOptions = [
   { value: 'text', label: 'Text' },
   { value: 'video', label: 'Video' },
+  { value: 'gettingstarted', label: 'Getting Started' },
 ];
 
 const topicOptions = [
+  { value: 'favorite', label: 'Favorite' },
+  { value: 'integrationservices', label: 'Integration Services' },
+  { value: 'livecoding', label: 'Live Coding' },
   { value: 'nft', label: 'NFT' },
   { value: 'supply_chain', label: 'Supply Chain' },
 ];
@@ -148,14 +149,35 @@ const frameworkOptions = [
 ];
 
 const languageOptions = [
-  { value: 'chocolate', label: 'Chocolate' },
-  { value: 'strawberry', label: 'Strawberry' },
-  { value: 'vanilla', label: 'Vanilla' },
+  { value: 'rust', label: 'Rust' },
+  { value: 'wasm', label: 'Wasm' },
+  { value: 'python', label: 'Python' },
+  { value: 'java', label: 'Java' },
+  { value: 'node_js', label: 'Node.js' },
+  { value: 'c', label: 'C' },
+  { value: 'go', label: 'Go' },
 ];
 
 function TutorialFilters() {
+  const location = useLocation();
+  const history = useHistory();
   const filteredTutorials = useFilteredTutorials();
   const siteCountPlural = useSiteCountPlural();
+
+  const changeTags = useCallback((e) => {
+    const items = e.map((item) => {
+      return item['value'];
+    });
+    const tags = readSearchTags(location.search);
+    const newTags = toggleListItem(tags, items);
+    const newSearch = replaceSearchTags(location.search, newTags);
+    history.push({
+      ...location,
+      search: newSearch,
+      state: prepareUserState(),
+    });
+  }, []);
+
   return (
     <section className='container margin-top--l margin-bottom--lg'>
       <div className='row'>
@@ -168,16 +190,36 @@ function TutorialFilters() {
       </div>
       <div className='row'>
         <div className='col col--3'>
-          <Select placeholder='Type' isMulti options={typeOptions} />
+          <Select
+            placeholder='Type'
+            isMulti
+            onChange={(e) => changeTags(e)}
+            options={typeOptions}
+          />
         </div>
         <div className='col col--3'>
-          <Select placeholder='Topic' isMulti options={topicOptions} />
+          <Select
+            placeholder='Topic'
+            isMulti
+            onChange={(e) => changeTags(e)}
+            options={topicOptions}
+          />
         </div>
         <div className='col col--3'>
-          <Select placeholder='Frameworks' isMulti options={frameworkOptions} />
+          <Select
+            placeholder='Frameworks'
+            isMulti
+            onChange={(e) => changeTags(e)}
+            options={frameworkOptions}
+          />
         </div>
         <div className='col col--3'>
-          <Select placeholder='Languages' isMulti options={languageOptions} />
+          <Select
+            placeholder='Languages'
+            isMulti
+            onChange={(e) => changeTags(e)}
+            options={languageOptions}
+          />
         </div>
       </div>
       <div className={clsx('margin-bottom--sm', styles.filterCheckbox)}>
@@ -203,7 +245,6 @@ function TutorialCards() {
       <section className='margin-top--lg margin-bottom--xl'>
         <div className='container padding-vert--md text--center'>
           <h2>No result</h2>
-          <SearchBar />
         </div>
       </section>
     );
@@ -249,3 +290,25 @@ function Tutorials(): JSX.Element {
 }
 
 export default Tutorials;
+
+function toggleListItem<T>(list: T[], newItems: T[]): T[] {
+  let newList = [...list];
+  newItems.forEach((item) => {
+    const itemIndex = newList.indexOf(item);
+    if (itemIndex === -1) {
+      newList = newList.concat(item);
+    } else {
+      newList.splice(itemIndex, 1);
+    }
+  });
+  return newList;
+}
+
+const TagQueryStringKey = 'tags';
+
+function replaceSearchTags(search: string, newTags: TagType[]) {
+  const searchParams = new URLSearchParams(search);
+  searchParams.delete(TagQueryStringKey);
+  newTags.forEach((tag) => searchParams.append(TagQueryStringKey, tag));
+  return searchParams.toString();
+}
