@@ -6,11 +6,10 @@
  */
 
 import React, { memo } from 'react';
-import clsx from 'clsx';
 import Image from '@theme/IdealImage';
 import Link from '@docusaurus/Link';
 
-import styles from './styles.module.css';
+import './styles.css';
 import FavoriteIcon from '@site/src/components/svgIcons/FavoriteIcon';
 import Tooltip from '../TutorialTooltip';
 import {
@@ -30,9 +29,9 @@ interface Props extends Tag {
 
 const TagComp = React.forwardRef<HTMLLIElement, Props>(
   ({ label, color, description }, ref) => (
-    <li ref={ref} className={styles.tag} title={description}>
-      <span className={styles.textLabel}>{label.toLowerCase()}</span>
-      <span className={styles.colorLabel} style={{ backgroundColor: color }} />
+    <li ref={ref} className='tag' title={description}>
+      <span className='textLabel'>{label.toLowerCase()}</span>
+      <span className='colorLabel' style={{ backgroundColor: color }} />
     </li>
   ),
 );
@@ -68,34 +67,31 @@ function TutorialCardTag({ tags }: { tags: TagType[] }) {
 
 const TutorialCard = memo(({ tutorial }: { tutorial: Tutorial }) => (
   <li key={tutorial.title} className='card shadow--md'>
-    <div className={clsx('card__image', styles.tutorialCardImage)}>
+    <div className='card__image tutorialCardImage'>
       <Image img={tutorial.preview} alt={tutorial.title} />
     </div>
     <div className='card__body'>
-      <div className={clsx(styles.tutorialCardHeader)}>
-        <h4 className={styles.tutorialCardTitle}>
-          <Link href={tutorial.website} className={styles.tutorialCardLink}>
+      <div className='tutorialCardHeader'>
+        <h4 className='tutorialCardTitle'>
+          <Link href={tutorial.website} className='tutorialCardLink'>
             {tutorial.title}
           </Link>
         </h4>
         {tutorial.tags.includes('favorite') && (
-          <FavoriteIcon svgClass={styles.svgIconFavorite} size='small' />
+          <FavoriteIcon svgClass='svgIconFavorite' size='small' />
         )}
         {tutorial.source && (
           <Link
             href={tutorial.source}
-            className={clsx(
-              'button button--secondary button--sm',
-              styles.tutorialCardSrcBtn,
-            )}
+            className='button button--secondary button--sm tutorialCardSrcBtn'
           >
             source
           </Link>
         )}
       </div>
-      <p className={styles.tutorialCardBody}>{tutorial.description}</p>
+      <p className='tutorialCardBody'>{tutorial.description}</p>
     </div>
-    <ul className={clsx('card__footer', styles.cardFooter)}>
+    <ul className='card__footer cardFooter'>
       <TutorialCardTag tags={tutorial.tags} />
     </ul>
   </li>

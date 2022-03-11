@@ -21,7 +21,7 @@ import ExecutionEnvironment from '@docusaurus/ExecutionEnvironment';
 import { useHistory, useLocation } from '@docusaurus/router';
 import { usePluralForm } from '@docusaurus/theme-common';
 
-import styles from './styles.module.css';
+import './styles.css';
 import SearchBar, { readSearchName } from '@site/src/components/SearchBar';
 import Select from 'react-select';
 
@@ -241,7 +241,7 @@ function TutorialFilters() {
           />
         </div>
       </div>
-      <div className={clsx('margin-bottom--sm', styles.filterCheckbox)}>
+      <div className='margin-bottom--sm filterCheckbox'>
         <div>
           <span>{siteCountPlural(filteredTutorials.length)}</span>
         </div>
@@ -272,7 +272,7 @@ function TutorialCards() {
   return (
     <section className='margin-top--lg margin-bottom--xl'>
       <div className='container margin-top--lg'>
-        <ul className={styles.tutorialList}>
+        <ul className='tutorialList'>
           {filteredTutorials.map((tutorial) => (
             <TutorialCard key={tutorial.title} tutorial={tutorial} />
           ))}

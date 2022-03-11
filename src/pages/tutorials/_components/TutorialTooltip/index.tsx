@@ -5,10 +5,10 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import React, {useEffect, useState, useRef} from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import ReactDOM from 'react-dom';
-import {usePopper} from 'react-popper';
-import styles from './styles.module.css';
+import { usePopper } from 'react-popper';
+import './styles.css';
 
 interface Props {
   anchorEl?: HTMLElement | string;
@@ -32,7 +32,7 @@ export default function Tooltip({
   const [popperElement, setPopperElement] = useState<HTMLElement | null>(null);
   const [arrowElement, setArrowElement] = useState<HTMLElement | null>(null);
   const [container, setContainer] = useState<Element | null>(null);
-  const {styles: popperStyles, attributes} = usePopper(
+  const { styles: popperStyles, attributes } = usePopper(
     referenceElement,
     popperElement,
     {
@@ -126,15 +126,16 @@ export default function Tooltip({
             open && (
               <div
                 id={tooltipId}
-                role="tooltip"
+                role='tooltip'
                 ref={setPopperElement}
-                className={styles.tooltip}
+                className='tooltip'
                 style={popperStyles.popper}
-                {...attributes.popper}>
+                {...attributes.popper}
+              >
                 {text}
                 <span
                   ref={setArrowElement}
-                  className={styles.tooltipArrow}
+                  className='tooltipArrow'
                   style={popperStyles.arrow}
                 />
               </div>
