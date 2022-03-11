@@ -193,7 +193,7 @@ function TutorialFilters() {
           <Select
             placeholder='Type'
             isMulti
-            onChange={(e) => changeTags(e)}
+            onChange={changeTags}
             options={typeOptions}
           />
         </div>
@@ -201,7 +201,7 @@ function TutorialFilters() {
           <Select
             placeholder='Topic'
             isMulti
-            onChange={(e) => changeTags(e)}
+            onChange={changeTags}
             options={topicOptions}
           />
         </div>
@@ -209,7 +209,7 @@ function TutorialFilters() {
           <Select
             placeholder='Frameworks'
             isMulti
-            onChange={(e) => changeTags(e)}
+            onChange={changeTags}
             options={frameworkOptions}
           />
         </div>
@@ -217,7 +217,7 @@ function TutorialFilters() {
           <Select
             placeholder='Languages'
             isMulti
-            onChange={(e) => changeTags(e)}
+            onChange={changeTags}
             options={languageOptions}
           />
         </div>
