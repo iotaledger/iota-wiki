@@ -45,12 +45,27 @@ export type TagType =
   | 'catlover'
   | 'silkysmoth'
   | 'meme'
-  | 'videotutorial'
+  | 'video'
   | 'livecoding'
-  | 'texttutorial'
+  | 'text'
   | 'identity'
   | 'gettingstarted'
-  | 'integrationservices';
+  | 'integrationservices'
+  | 'nft'
+  | 'supply_chain'
+  | 'identity'
+  | 'streams'
+  | 'wallet'
+  | 'client'
+  | 'stronghold'
+  | 'iscp'
+  | 'rust'
+  | 'wasm'
+  | 'python'
+  | 'java'
+  | 'node_js'
+  | 'c'
+  | 'go';
 
 export type Tutorial = {
   title: string;
@@ -147,13 +162,13 @@ export const Tags: Record<TagType, Tag> = {
     color: colors[1],
   },
 
-  videotutorial: {
+  video: {
     label: 'Video Tutorial',
     description: 'Tutorial in video format',
     color: colors[2],
   },
 
-  texttutorial: {
+  text: {
     label: 'Text Tutorial',
     description: 'Tutorial in written format',
     color: colors[3],
@@ -169,12 +184,6 @@ export const Tags: Record<TagType, Tag> = {
     label: 'IOTA Integration Services',
     description: 'Integrate IOTA seamlessly',
     color: colors[5],
-  },
-
-  identity: {
-    label: 'IOTA Identity',
-    description: 'This Tutorial is using the IOTA Identity framework',
-    color: colors[6],
   },
 
   scam: {
@@ -200,6 +209,96 @@ export const Tags: Record<TagType, Tag> = {
     description: "That's what we are here for, right?",
     color: colors[10],
   },
+
+  identity: {
+    label: 'IOTA Identity',
+    description: 'This Tutorial is using the IOTA Identity framework',
+    color: colors[6],
+  },
+
+  nft: {
+    label: 'NFT',
+    description: 'This Tutorial is related to non-fungible token(NFT)',
+    color: colors[7],
+  },
+
+  supply_chain: {
+    label: 'Supply chain',
+    description: 'This Tutorial is related to supply chain',
+    color: colors[8],
+  },
+
+  streams: {
+    label: 'IOTA Streams',
+    description: 'This Tutorial is using the IOTA Streams framework',
+    color: colors[9],
+  },
+
+  wallet: {
+    label: 'IOTA Wallet',
+    description: 'This Tutorial is using the IOTA Wallet framework',
+    color: colors[10],
+  },
+
+  client: {
+    label: 'IOTA Client',
+    description: 'This Tutorial is using the IOTA Client framework',
+    color: colors[11],
+  },
+
+  stronghold: {
+    label: 'IOTA Stronghold',
+    description: 'This Tutorial is using the IOTA Stronghold framework',
+    color: colors[12],
+  },
+
+  iscp: {
+    label: 'IOTA ISCP',
+    description: 'This Tutorial is using the IOTA Smart Contract framework',
+    color: colors[13],
+  },
+
+  rust: {
+    label: 'Rust',
+    description: 'This Tutorial is using the Rust programming language',
+    color: colors[14],
+  },
+
+  wasm: {
+    label: 'Wasm',
+    description: 'This Tutorial is using the Wasm programming language',
+    color: colors[14],
+  },
+
+  python: {
+    label: 'Python',
+    description: 'This Tutorial is using the Python programming language',
+    color: colors[15],
+  },
+
+  java: {
+    label: 'Java',
+    description: 'This Tutorial is using the Java programming language',
+    color: colors[16],
+  },
+
+  node_js: {
+    label: 'Node.js',
+    description: 'This Tutorial is using the Node.js programming language',
+    color: colors[17],
+  },
+
+  c: {
+    label: 'C',
+    description: 'This Tutorial is using the C programming language',
+    color: colors[18],
+  },
+
+  go: {
+    label: 'Go',
+    description: 'This Tutorial is using the Go programming language',
+    color: colors[19],
+  },
 };
 
 // Add your tutorial to this list
@@ -212,7 +311,7 @@ const Tutorials: Tutorial[] = [
         preview: require('./tutorials/validate-a-degree.png'),
         website: 'identity.rs/tutorials/validate_university_degree',
         source: 'https://github.com/adrian-grassl/iota-identity-tutorial/',
-        tags: ['favorite', 'identity', 'texttutorial'],
+        tags: ['favorite', 'identity', 'text', 'wasm'],
     },
     {
         title: 'Cats, Cats and Cats (not the movie)',
@@ -248,7 +347,7 @@ const Tutorials: Tutorial[] = [
       preview: IOTAWASMClientImageUrl,
       source: 'https://github.com/Dr-Electron/identity-iota-svelte-example/tree/gitpod-integration',
       website: 'iota-client-wasm-tutorial/tutorial',
-      tags: ['texttutorial', 'gettingstarted']
+      tags: ['text', 'gettingstarted', 'wasm', 'client']
     },
     {
         title: 'ISCP Tutorials by Kumar Anirudha',
@@ -257,7 +356,7 @@ const Tutorials: Tutorial[] = [
         preview: require('./tutorials/iscp-tutorials.png'),
         source: null,
         website: 'https://www.youtube.com/playlist?list=PLMbc46iGTB_SCQ-Ut_c8__ssMDFUusVBJ',
-        tags: ['videotutorial'],
+        tags: ['video', 'iscp'],
     },
     {
         title: 'Rust Live Coding Sessions with the Bee Team',
@@ -266,7 +365,7 @@ const Tutorials: Tutorial[] = [
         preview: require('./tutorials/rust-live-coding-bee.png'),
         website: 'https://www.youtube.com/playlist?list=PLMbc46iGTB_SBwcE5WfUIV5HthmH34U2R',
         source: null,
-        tags: ['livecoding'],
+        tags: ['livecoding', 'rust'],
     },
     {
         title: 'Streams and Identity',
@@ -275,7 +374,7 @@ const Tutorials: Tutorial[] = [
         preview: require('./tutorials/integration-streams-identity.png'),
         website: 'integration-services/welcome',
         source: 'https://github.com/iotaledger/integration-services',
-        tags: ['integrationservices', 'texttutorial'],
+        tags: ['integrationservices', 'text', 'identity', 'streams', 'wasm'],
     },
     {
         title: 'Open SSH Key Generation Linux and MacOS',
@@ -284,7 +383,7 @@ const Tutorials: Tutorial[] = [
         preview: require('./tutorials/openssh-generation.png'),
         website: 'https://www.youtube.com/watch?v=Cbuch9_NeYo&list=PLMbc46iGTB_RUu-Kd2EIUAc8lQShfaCD6',
         source: null,
-        tags: ['videotutorial'],
+        tags: ['video'],
     },
     {
         title: 'Zebra Tutorial',
@@ -293,7 +392,7 @@ const Tutorials: Tutorial[] = [
         preview: require('./tutorials/zebra.png'),
         website: 'zebra-iota-edge-sdk/tutorials/zebra-iota-edge-sdk/zebra-iota-edge-sdk-101-tutorial',
         source: 'https://github.com/zebradevs/zebra-iota-edge-sdk',
-        tags: ['integrationservices', 'texttutorial'],
+        tags: ['integrationservices', 'text', 'wasm'],
     },
     /*
     Pro Tip: add your tutorial in alphabetical order.
