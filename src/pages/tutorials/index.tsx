@@ -10,11 +10,6 @@ import React, { useState, useMemo, useEffect, useCallback } from 'react';
 import Layout from '@theme/Layout';
 import clsx from 'clsx';
 
-import { readSearchTags } from './_components/TutorialTagSelect';
-import {
-  type Operator,
-  readOperator,
-} from './_components/TutorialFilterToggle';
 import TutorialCard from './_components/TutorialCard';
 import {
   sortedTutorials,
@@ -45,7 +40,7 @@ function restoreUserState(userState: UserState | null) {
     scrollTopPosition: 0,
     focusedElementId: undefined,
   };
-  // @ts-expect-error: if focusedElementId is undefined it returns null
+
   document.getElementById(focusedElementId)?.focus();
   window.scrollTo({ top: scrollTopPosition });
 }
@@ -61,12 +56,35 @@ export function prepareUserState(): UserState | undefined {
   return undefined;
 }
 
-const SearchNameQueryKey = 'name';
+function toggleListItem<T>(list: T[], newItems: T[]): T[] {
+  let newList = [...list];
+  newItems.forEach((item) => {
+    const itemIndex = newList.indexOf(item);
+    if (itemIndex === -1) {
+      newList = newList.concat(item);
+    } else {
+      newList.splice(itemIndex, 1);
+    }
+  });
+  return newList;
+}
+
+const TagQueryStringKey = 'tags';
+
+function replaceSearchTags(search: string, newTags: TagType[]) {
+  const searchParams = new URLSearchParams(search);
+  searchParams.delete(TagQueryStringKey);
+  newTags.forEach((tag) => searchParams.append(TagQueryStringKey, tag));
+  return searchParams.toString();
+}
+
+function readSearchTags(search: string): TagType[] {
+  return new URLSearchParams(search).getAll(TagQueryStringKey) as TagType[];
+}
 
 function filterTutorials(
   tutorials: Tutorial[],
   selectedTags: TagType[],
-  operator: Operator,
   searchName: string | null,
 ) {
   if (searchName) {
@@ -88,7 +106,6 @@ function filterTutorials(
 
 function useFilteredTutorials() {
   const location = useLocation<UserState>();
-  const [operator, setOperator] = useState<Operator>('OR');
   // On SSR / first mount (hydration) no tag is selected
   const [selectedTags, setSelectedTags] = useState<TagType[]>([]);
   const [searchName, setSearchName] = useState<string | null>(null);
@@ -96,14 +113,13 @@ function useFilteredTutorials() {
   // hydration mismatch)
   useEffect(() => {
     setSelectedTags(readSearchTags(location.search));
-    setOperator(readOperator(location.search));
     setSearchName(readSearchName(location.search));
     restoreUserState(location.state);
   }, [location]);
 
   return useMemo(
-    () => filterTutorials(sortedTutorials, selectedTags, operator, searchName),
-    [selectedTags, operator, searchName],
+    () => filterTutorials(sortedTutorials, selectedTags, searchName),
+    [selectedTags, searchName],
   );
 }
 
@@ -266,20 +282,6 @@ function TutorialCards() {
   );
 }
 
-interface Props {
-  text: string;
-  count: number;
-}
-
-function Header(props: Props): JSX.Element {
-  return (
-    <div style={{ display: 'flex' }}>
-      <h2>{props.text}</h2>
-      <h2 className={styles.counter}>{props.count}</h2>
-    </div>
-  );
-}
-
 function Tutorials(): JSX.Element {
   return (
     <Layout title={TITLE} description={DESCRIPTION}>
@@ -293,25 +295,3 @@ function Tutorials(): JSX.Element {
 }
 
 export default Tutorials;
-
-function toggleListItem<T>(list: T[], newItems: T[]): T[] {
-  let newList = [...list];
-  newItems.forEach((item) => {
-    const itemIndex = newList.indexOf(item);
-    if (itemIndex === -1) {
-      newList = newList.concat(item);
-    } else {
-      newList.splice(itemIndex, 1);
-    }
-  });
-  return newList;
-}
-
-const TagQueryStringKey = 'tags';
-
-function replaceSearchTags(search: string, newTags: TagType[]) {
-  const searchParams = new URLSearchParams(search);
-  searchParams.delete(TagQueryStringKey);
-  newTags.forEach((tag) => searchParams.append(TagQueryStringKey, tag));
-  return searchParams.toString();
-}
