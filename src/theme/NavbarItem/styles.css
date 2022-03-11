@@ -11,7 +11,7 @@
   position: absolute;
   padding-top: calc(
     0.5 * var(--ifm-navbar-height) - 0.5em * var(--ifm-line-height-base) -
-      var(--ifm-navbar-item-padding-vertical) + 1px
+      var(--ifm-navbar-item-padding-vertical) + 5px
   );
   width: 100%;
   opacity: 0;
@@ -20,7 +20,7 @@
   z-index: var(--ifm-z-index-dropdown);
   top: calc(
     0.5 * var(--ifm-navbar-height) + 0.5em * var(--ifm-line-height-base) +
-      var(--ifm-navbar-item-padding-vertical) - 1px
+      var(--ifm-navbar-item-padding-vertical) - 5px
   );
   left: 0;
   transition-property: opacity, visibility;
