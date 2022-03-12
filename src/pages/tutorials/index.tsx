@@ -8,9 +8,8 @@
 import React, { useState, useMemo, useEffect, useCallback } from 'react';
 
 import Layout from '@theme/Layout';
-import clsx from 'clsx';
 
-import TutorialCard from './_components/TutorialCard';
+import TutorialCard from '../../components/tutorials/TutorialCard';
 import {
   sortedTutorials,
   type Tutorial,

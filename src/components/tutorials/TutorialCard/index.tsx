@@ -11,7 +11,7 @@ import Link from '@docusaurus/Link';
 
 import './styles.css';
 import FavoriteIcon from '@site/src/components/svgIcons/FavoriteIcon';
-import Tooltip from '../TutorialTooltip';
+import Tooltip from '../../tutorials/TutorialTooltip';
 import {
   Tags,
   TagList,
