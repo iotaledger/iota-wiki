@@ -433,6 +433,30 @@ module.exports = {
     ],
   ],
   plugins: [
+    [
+      './src/plugins/SliderPlugin',
+      {
+        id: 'infographics',
+        basePath: 'img/infographics',
+        pattern: '**/*.{png,jpg,jpeg,svg,mp4}',
+      },
+    ],
+    [
+      './src/plugins/SliderPlugin',
+      {
+        id: 'industry-applications',
+        basePath: 'img/participate/use-cases/industry-applications',
+        pattern: '**/*.{png,jpg,jpeg,svg,mp4}',
+      },
+    ],
+    [
+      './src/plugins/SliderPlugin',
+      {
+        id: 'trade-and-supply-chain',
+        basePath: 'img/participate/use-cases/trade-and-supply-chain',
+        pattern: '**/*.{png,jpg,jpeg,svg,mp4}',
+      },
+    ],
     'plugin-image-zoom',
     [
       '@jlvandenhout/docusaurus-plugin-docs-editor',
