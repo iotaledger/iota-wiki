@@ -23,7 +23,7 @@ import { usePluralForm } from '@docusaurus/theme-common';
 
 import './styles.css';
 import SearchBar, { readSearchName } from '@site/src/components/SearchBar';
-import Select from 'react-select';
+import Select, { ActionMeta } from 'react-select';
 
 const TITLE = 'Tutorials';
 const DESCRIPTION = 'List of great IOTA tutorials';
@@ -174,6 +174,31 @@ const languageOptions = [
   { value: 'go', label: 'Go' },
 ];
 
+function getItems(actionMeta: ActionMeta<any>): TagType[] {
+  const items = [];
+  switch (actionMeta.action) {
+    case 'select-option':
+      items.push(actionMeta.option);
+      break;
+    case 'deselect-option':
+      items.push(actionMeta.option);
+      break;
+    case 'remove-value':
+      items.push(actionMeta.removedValue);
+      break;
+    case 'pop-value':
+      items.push(actionMeta.removedValue);
+      break;
+    case 'clear':
+      items.push(...actionMeta.removedValues);
+      break;
+  }
+
+  return items.map((item) => {
+    return item['value'];
+  });
+}
+
 function TutorialFilters() {
   const location = useLocation();
   const history = useHistory();
@@ -181,10 +206,8 @@ function TutorialFilters() {
   const siteCountPlural = useSiteCountPlural();
 
   const changeTags = useCallback(
-    (e) => {
-      const items = e.map((item) => {
-        return item['value'];
-      });
+    (_, actionMeta) => {
+      const items = getItems(actionMeta);
       const tags = readSearchTags(location.search);
       const newTags = toggleListItem(tags, items);
       const newSearch = replaceSearchTags(location.search, newTags);
