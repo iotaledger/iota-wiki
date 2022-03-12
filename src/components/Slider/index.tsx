@@ -2,12 +2,19 @@ import React from 'react';
 import ImageGallery from 'react-image-gallery';
 import 'react-image-gallery/styles/css/image-gallery.css';
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import { usePluginData } from '@docusaurus/useGlobalData';
 import { useRef } from 'react';
 import { useThemeConfig } from '@docusaurus/theme-common';
 import { ThemeConfig } from '@docusaurus/preset-classic';
 
 export interface ImageSliderProps {
+  id: string;
   path: string;
+}
+
+export interface ImageSliderData {
+  basePath: string;
+  files: Array<string>;
 }
 
 export interface ImageSliderConfig extends ThemeConfig {
@@ -16,19 +23,20 @@ export interface ImageSliderConfig extends ThemeConfig {
   };
 }
 
-export default function ImageSlider({ path }: ImageSliderProps) {
-  const { imageSlider } = useThemeConfig() as ImageSliderConfig;
-  const videoPlaceholder = useBaseUrl(imageSlider.videoPlaceholder);
-  // Import images from the infographics folder
-  function importImages(r) {
-    return r.keys().map((x) => x.replace('.', ''));
-  }
+export default function ImageSlider(props: ImageSliderProps) {
+  const normalizedProps = Object.assign({}, { id: 'default', path: '' }, props);
 
-  // Resolve images relative to the static folder
-  const allImages = importImages(
-    require.context('@site/static/', true, /\.(png|jpe?g|svg|mp4)$/),
-  );
-  const requestedImages = allImages.filter((word) => word.startsWith(path));
+  const { imageSlider } = useThemeConfig() as ImageSliderConfig;
+  const { basePath, files } = usePluginData(
+    'iota-wiki-slider-plugin',
+    normalizedProps.id,
+  ) as ImageSliderData;
+
+  const videoPlaceholder = useBaseUrl(imageSlider.videoPlaceholder);
+
+  const requestedImages = files
+    .filter((file) => file.startsWith(normalizedProps.path))
+    .map((file) => basePath + '/' + file);
 
   // Get file extension
   function getFileExtension(filename) {
