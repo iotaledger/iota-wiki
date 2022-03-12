@@ -30,8 +30,8 @@ interface Props extends Tag {
 const TagComp = React.forwardRef<HTMLLIElement, Props>(
   ({ label, color, description }, ref) => (
     <li ref={ref} className='tag' title={description}>
-      <span className='textLabel'>{label.toLowerCase()}</span>
-      <span className='colorLabel' style={{ backgroundColor: color }} />
+      <span className='text-label'>{label.toLowerCase()}</span>
+      <span className='color-label' style={{ backgroundColor: color }} />
     </li>
   ),
 );
@@ -67,31 +67,31 @@ function TutorialCardTag({ tags }: { tags: TagType[] }) {
 
 const TutorialCard = memo(({ tutorial }: { tutorial: Tutorial }) => (
   <li key={tutorial.title} className='card shadow--md'>
-    <div className='card__image tutorialCardImage'>
+    <div className='card__image tutorial-card-image'>
       <Image img={tutorial.preview} alt={tutorial.title} />
     </div>
     <div className='card__body'>
-      <div className='tutorialCardHeader'>
-        <h4 className='tutorialCardTitle'>
+      <div className='tutorial-card-header'>
+        <h4 className='tutorial-card-title'>
           <Link href={tutorial.website} className='tutorialCardLink'>
             {tutorial.title}
           </Link>
         </h4>
         {tutorial.tags.includes('favorite') && (
-          <FavoriteIcon svgClass='svgIconFavorite' size='small' />
+          <FavoriteIcon svgClass='svg-icon-favorite' size='small' />
         )}
         {tutorial.source && (
           <Link
             href={tutorial.source}
-            className='button button--secondary button--sm tutorialCardSrcBtn'
+            className='button button--secondary button--sm tutorial-card-src-btn'
           >
             source
           </Link>
         )}
       </div>
-      <p className='tutorialCardBody'>{tutorial.description}</p>
+      <p className='tutorial-card-body'>{tutorial.description}</p>
     </div>
-    <ul className='card__footer cardFooter'>
+    <ul className='card__footer card-footer'>
       <TutorialCardTag tags={tutorial.tags} />
     </ul>
   </li>

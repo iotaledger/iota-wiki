@@ -135,7 +135,7 @@ export default function Tooltip({
                 {text}
                 <span
                   ref={setArrowElement}
-                  className='tooltipArrow'
+                  className='tooltip-arrow'
                   style={popperStyles.arrow}
                 />
               </div>
