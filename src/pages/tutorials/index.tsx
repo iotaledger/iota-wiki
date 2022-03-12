@@ -241,7 +241,7 @@ function TutorialFilters() {
           />
         </div>
       </div>
-      <div className='margin-bottom--sm filterCheckbox'>
+      <div className='margin-bottom--sm filter-checkbox'>
         <div>
           <span>{siteCountPlural(filteredTutorials.length)}</span>
         </div>
@@ -272,7 +272,7 @@ function TutorialCards() {
   return (
     <section className='margin-top--lg margin-bottom--xl'>
       <div className='container margin-top--lg'>
-        <ul className='tutorialList'>
+        <ul className='tutorial-list'>
           {filteredTutorials.map((tutorial) => (
             <TutorialCard key={tutorial.title} tutorial={tutorial} />
           ))}

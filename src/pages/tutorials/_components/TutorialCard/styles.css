@@ -5,24 +5,24 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-.tutorialCardImage {
+.tutorial-card-image {
   overflow: hidden;
   height: 150px;
   border-bottom: 2px solid var(--ifm-color-emphasis-200);
 }
 
-.tutorialCardHeader {
+.tutorial-card-header {
   display: flex;
   align-items: center;
   margin-bottom: 12px;
 }
 
-.tutorialCardTitle {
+.tutorial-card-title {
   margin-bottom: 0;
   flex: 1 1 auto;
 }
 
-.tutorialCardTitle a {
+.tutorial-card-title a {
   text-decoration: none;
   background: linear-gradient(
       var(--ifm-color-primary),
@@ -32,45 +32,45 @@
   transition: background-size ease-out 200ms;
 }
 
-.tutorialCardTitle a:not(:focus):hover {
+.tutorial-card-title a:not(:focus):hover {
   background-size: 100% 1px;
 }
 
-.tutorialCardTitle,
-.tutorialCardHeader .svgIconFavorite {
+.tutorial-card-title,
+.tutorial-card-header .svg-icon-favorite {
   margin-right: 0.25rem;
 }
 
-.tutorialCardHeader .svgIconFavorite {
+.tutorial-card-header .svg-icon-favorite {
   color: var(--site-color-svg-icon-favorite);
 }
 
-.tutorialCardSrcBtn {
+.tutorial-card-src-btn {
   margin-left: 6px;
   padding-left: 12px;
   padding-right: 12px;
   border: none;
 }
 
-.tutorialCardSrcBtn:focus-visible {
+.tutorial-card-src-btn:focus-visible {
   background-color: var(--ifm-color-secondary-dark);
 }
 
-html[data-theme='dark'] .tutorialCardSrcBtn {
+html[data-theme='dark'] .tutorial-card-src-btn {
   background-color: var(--ifm-color-emphasis-200) !important;
   color: inherit;
 }
 
-html[data-theme='dark'] .tutorialCardSrcBtn:hover {
+html[data-theme='dark'] .tutorial-card-src-btn:hover {
   background-color: var(--ifm-color-emphasis-300) !important;
 }
 
-.tutorialCardBody {
+.tutorial-card-body {
   font-size: smaller;
   line-height: 1.66;
 }
 
-.cardFooter {
+.card-footer {
   display: flex;
   flex-wrap: wrap;
 }
@@ -86,11 +86,11 @@ html[data-theme='dark'] .tutorialCardSrcBtn:hover {
   align-items: center;
 }
 
-.tag .textLabel {
+.tag .text-label {
   margin-left: 8px;
 }
 
-.tag .colorLabel {
+.tag .color-label {
   width: 7px;
   height: 7px;
   border-radius: 50%;

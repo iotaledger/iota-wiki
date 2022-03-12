@@ -18,28 +18,28 @@
   opacity: 0.92;
 }
 
-.tooltipArrow {
+.tooltip-arrow {
   visibility: hidden;
 }
 
-.tooltipArrow,
-.tooltipArrow::before {
+.tooltip-arrow,
+.tooltip-arrow::before {
   position: absolute;
   width: 8px;
   height: 8px;
   background: inherit;
 }
 
-.tooltipArrow::before {
+.tooltip-arrow::before {
   visibility: visible;
   content: '';
   transform: rotate(45deg);
 }
 
-.tooltip[data-popper-placement^='top'] > .tooltipArrow {
+.tooltip[data-popper-placement^='top'] > .tooltip-arrow {
   bottom: -4px;
 }
 
-.tooltip[data-popper-placement^='bottom'] > .tooltipArrow {
+.tooltip[data-popper-placement^='bottom'] > .tooltip-arrow {
   top: -4px;
 }
