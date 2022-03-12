@@ -232,6 +232,20 @@ function TutorialFilters() {
       </div>
       <div className='row'>
         <div className='col col--3'>
+          <h3>Type</h3>
+        </div>
+        <div className='col col--3'>
+          <h3>Topic</h3>
+        </div>
+        <div className='col col--3'>
+          <h3>Frameworks</h3>
+        </div>
+        <div className='col col--3'>
+          <h3>Languages</h3>
+        </div>
+      </div>
+      <div className='row'>
+        <div className='col col--3'>
           <Select
             placeholder='Type'
             isMulti
