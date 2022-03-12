@@ -46,7 +46,7 @@ module.exports = {
       applicationId: '2809821',
     },
     imageZoom: {
-      selector: '.markdown :not(a) > img',
+      selector: '.markdown :not(a) > img:not(.image-gallery-image)',
       // Optional medium-zoom options
       // see: https://www.npmjs.com/package/medium-zoom#options
       options: {
