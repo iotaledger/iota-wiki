@@ -1,0 +1,13 @@
+.tutorial-link {
+  text-align: right;
+}
+
+.tutorial-link > a {
+  color: var(--ifm-color-gray-400);
+  text-decoration: underline;
+}
+
+.filter-container {
+  display: flex;
+  align-items: center;
+}
