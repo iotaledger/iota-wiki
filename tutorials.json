@@ -1,0 +1,97 @@
+{
+  "title": "Tutorials",
+  "description": "List of great IOTA tutorials",
+  "edit_url": "https://github.com/iota-community/iota-wiki/edit/feat/tuto-section/src/data/tutorials.tsx",
+  "typeOptions": [
+    {
+      "value": "text",
+      "label": "Text"
+    },
+    {
+      "value": "video",
+      "label": "Video"
+    },
+    {
+      "value": "gettingstarted",
+      "label": "Getting Started"
+    }
+  ],
+  "topicOptions": [
+    {
+      "value": "favorite",
+      "label": "Favorite"
+    },
+    {
+      "value": "integrationservices",
+      "label": "Integration Services"
+    },
+    {
+      "value": "livecoding",
+      "label": "Live Coding"
+    },
+    {
+      "value": "nft",
+      "label": "NFT"
+    },
+    {
+      "value": "supply_chain",
+      "label": "Supply Chain"
+    }
+  ],
+  "frameworkOptions": [
+    {
+      "value": "identity",
+      "label": "Identity"
+    },
+    {
+      "value": "streams",
+      "label": "Streams"
+    },
+    {
+      "value": "wallet",
+      "label": "Wallet"
+    },
+    {
+      "value": "client",
+      "label": "Client"
+    },
+    {
+      "value": "stronghold",
+      "label": "Stronghold"
+    },
+    {
+      "value": "iscp",
+      "label": "Smart Contracts"
+    }
+  ],
+  "languageOptions": [
+    {
+      "value": "rust",
+      "label": "Rust"
+    },
+    {
+      "value": "wasm",
+      "label": "Wasm"
+    },
+    {
+      "value": "python",
+      "label": "Python"
+    },
+    {
+      "value": "java",
+      "label": "Java"
+    },
+    {
+      "value": "node_js",
+      "label": "Node.js"
+    },
+    {
+      "value": "c",
+      "label": "C"
+    },
+    {
+      "value": "go",
+      "label": "Go"
+    }
+  ]
+}

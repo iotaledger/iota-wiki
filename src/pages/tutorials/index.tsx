@@ -23,11 +23,7 @@ import { usePluralForm } from '@docusaurus/theme-common';
 import './styles.css';
 import SearchBar, { readSearchName } from '@site/src/components/SearchBar';
 import Select, { ActionMeta } from 'react-select';
-
-const TITLE = 'Tutorials';
-const DESCRIPTION = 'List of great IOTA tutorials';
-const EDIT_URL =
-  'https://github.com/Dr-Electron/iota-wiki/edit/feat/tuto-section/src/data/users.tsx';
+import config from '@site/tutorials.json';
 
 type UserState = {
   scrollTopPosition: number;
@@ -140,39 +136,6 @@ function useSiteCountPlural() {
     selectMessage(sitesCount, '1 result|' + sitesCount + ' results');
 }
 
-const typeOptions = [
-  { value: 'text', label: 'Text' },
-  { value: 'video', label: 'Video' },
-  { value: 'gettingstarted', label: 'Getting Started' },
-];
-
-const topicOptions = [
-  { value: 'favorite', label: 'Favorite' },
-  { value: 'integrationservices', label: 'Integration Services' },
-  { value: 'livecoding', label: 'Live Coding' },
-  { value: 'nft', label: 'NFT' },
-  { value: 'supply_chain', label: 'Supply Chain' },
-];
-
-const frameworkOptions = [
-  { value: 'identity', label: 'Identity' },
-  { value: 'streams', label: 'Streams' },
-  { value: 'wallet', label: 'Wallet' },
-  { value: 'client', label: 'Client' },
-  { value: 'stronghold', label: 'Stronghold' },
-  { value: 'iscp', label: 'Smart Contracts' },
-];
-
-const languageOptions = [
-  { value: 'rust', label: 'Rust' },
-  { value: 'wasm', label: 'Wasm' },
-  { value: 'python', label: 'Python' },
-  { value: 'java', label: 'Java' },
-  { value: 'node_js', label: 'Node.js' },
-  { value: 'c', label: 'C' },
-  { value: 'go', label: 'Go' },
-];
-
 function getItems(actionMeta: ActionMeta<any>): TagType[] {
   const items = [];
   switch (actionMeta.action) {
@@ -249,7 +212,7 @@ function TutorialFilters() {
             placeholder='Type'
             isMulti
             onChange={changeTags}
-            options={typeOptions}
+            options={config.typeOptions}
           />
         </div>
         <div className='col col--3'>
@@ -257,7 +220,7 @@ function TutorialFilters() {
             placeholder='Topic'
             isMulti
             onChange={changeTags}
-            options={topicOptions}
+            options={config.topicOptions}
           />
         </div>
         <div className='col col--3'>
@@ -265,7 +228,7 @@ function TutorialFilters() {
             placeholder='Frameworks'
             isMulti
             onChange={changeTags}
-            options={frameworkOptions}
+            options={config.frameworkOptions}
           />
         </div>
         <div className='col col--3'>
@@ -273,7 +236,7 @@ function TutorialFilters() {
             placeholder='Languages'
             isMulti
             onChange={changeTags}
-            options={languageOptions}
+            options={config.languageOptions}
           />
         </div>
       </div>
@@ -283,7 +246,7 @@ function TutorialFilters() {
         </div>
         <div className='col col--1 col--offset-3'>
           <span>+</span>
-          <a href={EDIT_URL} target='_blank' rel='noreferrer'>
+          <a href={config.edit_url} target='_blank' rel='noreferrer'>
             Add your tutorial
           </a>
         </div>
@@ -320,7 +283,7 @@ function TutorialCards() {
 
 function Tutorials(): JSX.Element {
   return (
-    <Layout title={TITLE} description={DESCRIPTION}>
+    <Layout title={config.title} description={config.description}>
       <main className='margin-vert--lg'>
         <TutorialHeader />
         <TutorialFilters />
