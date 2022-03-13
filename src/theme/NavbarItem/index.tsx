@@ -4,6 +4,12 @@
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  */
+
+/**
+ * REASONS TO SWIZZLE:
+ * - Addition of the mega dropdown menu.
+ */
+
 import React from 'react';
 import type { ComponentProps } from 'react';
 import DefaultNavbarItem from '@theme/NavbarItem/DefaultNavbarItem';

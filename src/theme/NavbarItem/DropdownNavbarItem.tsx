@@ -4,6 +4,12 @@
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  */
+
+/**
+ * REASONS TO SWIZZLE:
+ * - Label change reflecting selected item in dropdown.
+ */
+
 import React, { useState, useRef, useEffect } from 'react';
 import clsx from 'clsx';
 import {
