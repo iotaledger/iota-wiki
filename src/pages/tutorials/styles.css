@@ -1,37 +1,3 @@
-/**
- * Copyright (c) Facebook, Inc. and its affiliates.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */
-
-.filter-checkbox {
-  justify-content: space-between;
-}
-
-.filter-checkbox {
-  display: flex;
-  align-items: center;
-}
-
-.filter-checkbox > div:first-child {
-  display: flex;
-  flex: 1 1 auto;
-  align-items: center;
-}
-
-.filter-checkbox > div > * {
-  margin-bottom: 0;
-  margin-right: 8px;
-}
-
-.tutorial-list {
-  padding: 0;
-  list-style: none;
-}
-
-.tutorial-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 24px;
+.tutorial-header {
+  text-align: 'left';
 }
