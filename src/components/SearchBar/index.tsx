@@ -1,7 +1,7 @@
 import { useHistory, useLocation } from '@docusaurus/router';
-import { prepareUserState } from '@site/src/pages/tutorials';
 import React from 'react';
 import { useEffect, useState } from 'react';
+import { prepareUserState } from '../tutorials/TutorialFilters';
 import './styles.css';
 
 const SearchNameQueryKey = 'name';

@@ -105,7 +105,7 @@ function replaceSearchTags(search: string, newTags: TagType[]) {
   return searchParams.toString();
 }
 
-function prepareUserState(): UserState | undefined {
+export function prepareUserState(): UserState | undefined {
   if (ExecutionEnvironment.canUseDOM) {
     return {
       scrollTopPosition: window.scrollY,
@@ -162,25 +162,25 @@ function TutorialFilters() {
         <div className='col col--6'>
           <SearchBar />
         </div>
-        <div className='col col--1 col--offset-5'>
-          <button className='button button--primary filter-container'>
-            <span className='material-icons'>filter_list</span>
+        <div className='col col--2 col--offset-4'>
+          <button className='button filter-button'>
+            <span className='material-icons margin-right--md'>filter_list</span>
             Filter
           </button>
         </div>
       </div>
-      <div className='row'>
+      <div className='row margin-top--lg'>
         <div className='col col--3'>
-          <h3>Type</h3>
+          <h5>Type</h5>
         </div>
         <div className='col col--3'>
-          <h3>Topic</h3>
+          <h5>Topic</h5>
         </div>
         <div className='col col--3'>
-          <h3>Frameworks</h3>
+          <h5>Frameworks</h5>
         </div>
         <div className='col col--3'>
-          <h3>Languages</h3>
+          <h5>Languages</h5>
         </div>
       </div>
       <div className='row'>
@@ -190,6 +190,8 @@ function TutorialFilters() {
             isMulti
             onChange={changeTags}
             options={config.typeOptions}
+            className='react-select-container'
+            classNamePrefix='react-select'
           />
         </div>
         <div className='col col--3'>
@@ -198,6 +200,8 @@ function TutorialFilters() {
             isMulti
             onChange={changeTags}
             options={config.topicOptions}
+            className='react-select-container'
+            classNamePrefix='react-select'
           />
         </div>
         <div className='col col--3'>
@@ -206,6 +210,8 @@ function TutorialFilters() {
             isMulti
             onChange={changeTags}
             options={config.frameworkOptions}
+            className='react-select-container'
+            classNamePrefix='react-select'
           />
         </div>
         <div className='col col--3'>
@@ -214,6 +220,8 @@ function TutorialFilters() {
             isMulti
             onChange={changeTags}
             options={config.languageOptions}
+            className='react-select-container'
+            classNamePrefix='react-select'
           />
         </div>
       </div>
@@ -223,7 +231,12 @@ function TutorialFilters() {
         </div>
         <div className='col col--2 tutorial-link'>
           <span>+</span>
-          <a href={config.edit_url} target='_blank' rel='noreferrer'>
+          <a
+            className='tutorial-link__anchor'
+            href={config.edit_url}
+            target='_blank'
+            rel='noreferrer'
+          >
             Add your tutorial
           </a>
         </div>
