@@ -10,14 +10,18 @@
 .dropdown__container {
   position: absolute;
   padding-top: calc(
-    var(--ifm-navbar-padding-vertical) + var(--ifm-global-border-width) + 5px
+    0.5 * var(--ifm-navbar-height) - 0.5em * var(--ifm-line-height-base) -
+      var(--ifm-navbar-item-padding-vertical) + 5px
   );
   width: 100%;
   opacity: 0;
   visibility: hidden;
   display: none;
   z-index: var(--ifm-z-index-dropdown);
-  top: calc(100% - var(--ifm-navbar-padding-vertical) - 5px);
+  top: calc(
+    0.5 * var(--ifm-navbar-height) + 0.5em * var(--ifm-line-height-base) +
+      var(--ifm-navbar-item-padding-vertical) - 5px
+  );
   left: 0;
   transition-property: opacity, visibility;
   transition-duration: var(--ifm-transition-fast);
