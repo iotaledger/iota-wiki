@@ -10,6 +10,7 @@ import Select, { ActionMeta } from 'react-select';
 import './styles.css';
 
 import config from '@site/tutorials.json';
+import Collapsible from 'react-collapsible';
 
 type UserState = {
   scrollTopPosition: number;
@@ -141,6 +142,8 @@ function TutorialFilters() {
   const filteredTutorials = useFilteredTutorials();
   const siteCountPlural = useSiteCountPlural();
 
+  const [isOpen, setIsOpen] = useState(false);
+
   const changeTags = useCallback(
     (_, actionMeta) => {
       const items = getItems(actionMeta);
@@ -163,68 +166,73 @@ function TutorialFilters() {
           <SearchBar />
         </div>
         <div className='col col--2 col--offset-4'>
-          <button className='button filter-button'>
+          <button
+            className='button filter-button'
+            onClick={() => setIsOpen(!isOpen)}
+          >
             <span className='material-icons margin-right--md'>filter_list</span>
             Filter
           </button>
         </div>
       </div>
-      <div className='row margin-top--lg'>
-        <div className='col col--3'>
-          <h5>Type</h5>
+      <Collapsible trigger='' triggerDisabled={true} open={isOpen}>
+        <div className='row'>
+          <div className='col col--3'>
+            <h5>Type</h5>
+          </div>
+          <div className='col col--3'>
+            <h5>Topic</h5>
+          </div>
+          <div className='col col--3'>
+            <h5>Frameworks</h5>
+          </div>
+          <div className='col col--3'>
+            <h5>Languages</h5>
+          </div>
         </div>
-        <div className='col col--3'>
-          <h5>Topic</h5>
+        <div className='row'>
+          <div className='col col--3'>
+            <Select
+              placeholder='Type'
+              isMulti
+              onChange={changeTags}
+              options={config.typeOptions}
+              className='react-select-container'
+              classNamePrefix='react-select'
+            />
+          </div>
+          <div className='col col--3'>
+            <Select
+              placeholder='Topic'
+              isMulti
+              onChange={changeTags}
+              options={config.topicOptions}
+              className='react-select-container'
+              classNamePrefix='react-select'
+            />
+          </div>
+          <div className='col col--3'>
+            <Select
+              placeholder='Frameworks'
+              isMulti
+              onChange={changeTags}
+              options={config.frameworkOptions}
+              className='react-select-container'
+              classNamePrefix='react-select'
+            />
+          </div>
+          <div className='col col--3'>
+            <Select
+              placeholder='Languages'
+              isMulti
+              onChange={changeTags}
+              options={config.languageOptions}
+              className='react-select-container'
+              classNamePrefix='react-select'
+            />
+          </div>
         </div>
-        <div className='col col--3'>
-          <h5>Frameworks</h5>
-        </div>
-        <div className='col col--3'>
-          <h5>Languages</h5>
-        </div>
-      </div>
-      <div className='row'>
-        <div className='col col--3'>
-          <Select
-            placeholder='Type'
-            isMulti
-            onChange={changeTags}
-            options={config.typeOptions}
-            className='react-select-container'
-            classNamePrefix='react-select'
-          />
-        </div>
-        <div className='col col--3'>
-          <Select
-            placeholder='Topic'
-            isMulti
-            onChange={changeTags}
-            options={config.topicOptions}
-            className='react-select-container'
-            classNamePrefix='react-select'
-          />
-        </div>
-        <div className='col col--3'>
-          <Select
-            placeholder='Frameworks'
-            isMulti
-            onChange={changeTags}
-            options={config.frameworkOptions}
-            className='react-select-container'
-            classNamePrefix='react-select'
-          />
-        </div>
-        <div className='col col--3'>
-          <Select
-            placeholder='Languages'
-            isMulti
-            onChange={changeTags}
-            options={config.languageOptions}
-            className='react-select-container'
-            classNamePrefix='react-select'
-          />
-        </div>
-      </div>
+      </Collapsible>
       <div className='row margin-vert--lg'>
         <div className='col'>
           <span>{siteCountPlural(filteredTutorials.length)}</span>

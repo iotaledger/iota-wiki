@@ -41,3 +41,11 @@
 .react-select__multi-value__label {
   color: var(--ifm-font-color-base) !important;
 }
+
+.Collapsible__trigger {
+  cursor: auto;
+}
+
+.Collapsible__trigger::after {
+  color: transparent;
+}
