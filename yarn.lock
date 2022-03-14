@@ -9848,6 +9848,7 @@ __metadata:
     prettier: ^2.4.1
     raw-loader: ^4.0.2
     react: ^17.0.1
+    react-collapsible: ^2.8.4
     react-dom: ^17.0.1
     react-image-gallery: ^1.2.7
     react-player: ^2.9.0
@@ -13660,6 +13661,16 @@ plugin-image-zoom@flexanalytics/plugin-image-zoom:
     lodash.flow: ^3.3.0
     pure-color: ^1.2.0
   checksum: 00a12dddafc8a9025cca933b0dcb65fca41c81fa176d1fc3a6a9d0242127042e2c0a604f4c724a3254dd2c6aeb5ef55095522ff22f5462e419641c1341a658e4
+  languageName: node
+  linkType: hard
+
+"react-collapsible@npm:^2.8.4":
+  version: 2.8.4
+  resolution: "react-collapsible@npm:2.8.4"
+  peerDependencies:
+    react: ~15 || ~16 || ~17
+    react-dom: ~15 || ~16 || ~17
+  checksum: cbb42a0dbdabc71e50725dd53f0f8c03cd8e94a1a33a385e799b56bd2d8a822771cd524bc0503e572b23c82d83fa7259378d9ca0166a65e45a18cba277fae917
   languageName: node
   linkType: hard
 
