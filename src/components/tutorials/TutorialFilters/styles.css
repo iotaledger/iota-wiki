@@ -20,6 +20,7 @@
 .react-select__control {
   background-color: var(--ifm-color-emphasis-200) !important;
   border: 0 !important;
+  margin-bottom: 1rem !important;
 }
 
 .react-select__indicator-separator {
