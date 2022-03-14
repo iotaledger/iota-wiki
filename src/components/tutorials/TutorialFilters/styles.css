@@ -28,6 +28,7 @@
 
 .react-select__menu {
   background-color: var(--ifm-color-emphasis-200) !important;
+  z-index: 9999;
 }
 
 .react-select__option--is-focused {
@@ -48,4 +49,8 @@
 
 .Collapsible__trigger::after {
   color: transparent;
+}
+
+.Collapsible__contentOuter {
+  padding: 2px;
 }
