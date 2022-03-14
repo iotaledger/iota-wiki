@@ -10,16 +10,16 @@
     {
       "value": "video",
       "label": "Video"
-    },
-    {
-      "value": "gettingstarted",
-      "label": "Getting Started"
     }
   ],
   "topicOptions": [
     {
       "value": "favorite",
       "label": "Favorite"
+    },
+    {
+      "value": "gettingstarted",
+      "label": "Getting Started"
     },
     {
       "value": "integrationservices",
@@ -40,42 +40,38 @@
   ],
   "frameworkOptions": [
     {
+      "value": "client",
+      "label": "Client"
+    },
+    {
       "value": "identity",
       "label": "Identity"
+    },
+    {
+      "value": "iscp",
+      "label": "Smart Contracts"
     },
     {
       "value": "streams",
       "label": "Streams"
     },
     {
-      "value": "wallet",
-      "label": "Wallet"
-    },
-    {
-      "value": "client",
-      "label": "Client"
-    },
-    {
       "value": "stronghold",
       "label": "Stronghold"
     },
     {
-      "value": "iscp",
-      "label": "Smart Contracts"
+      "value": "wallet",
+      "label": "Wallet"
     }
   ],
   "languageOptions": [
     {
-      "value": "rust",
-      "label": "Rust"
+      "value": "c",
+      "label": "C"
     },
     {
-      "value": "wasm",
-      "label": "Wasm"
-    },
-    {
-      "value": "python",
-      "label": "Python"
+      "value": "go",
+      "label": "Go"
     },
     {
       "value": "java",
@@ -86,12 +82,16 @@
       "label": "Node.js"
     },
     {
-      "value": "c",
-      "label": "C"
+      "value": "python",
+      "label": "Python"
     },
     {
-      "value": "go",
-      "label": "Go"
+      "value": "rust",
+      "label": "Rust"
+    },
+    {
+      "value": "wasm",
+      "label": "Wasm"
     }
   ]
 }
