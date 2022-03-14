@@ -6,6 +6,7 @@ import React, { useState, useEffect, useMemo } from 'react';
 import { useCallback } from 'react';
 import SearchBar, { readSearchName } from '../../SearchBar';
 import Select, { ActionMeta } from 'react-select';
+import useIsBrowser from '@docusaurus/useIsBrowser';
 
 import './styles.css';
 
@@ -159,6 +160,18 @@ function TutorialFilters() {
     [history, location],
   );
 
+  const selectProps = {
+    isMulti: true,
+    onChange: changeTags,
+    menuPortalTarget: null,
+    className: 'react-select-container',
+    classNamePrefix: 'react-select',
+  };
+
+  if (useIsBrowser()) {
+    selectProps.menuPortalTarget = document.body;
+  }
+
   return (
     <section className='container margin-top--l margin-bottom--lg'>
       <div className='row'>
@@ -194,41 +207,29 @@ function TutorialFilters() {
           <div className='col col--3'>
             <Select
               placeholder='Type'
-              isMulti
-              onChange={changeTags}
               options={config.typeOptions}
-              className='react-select-container'
-              classNamePrefix='react-select'
+              {...selectProps}
             />
           </div>
           <div className='col col--3'>
             <Select
               placeholder='Topic'
-              isMulti
-              onChange={changeTags}
               options={config.topicOptions}
-              className='react-select-container'
-              classNamePrefix='react-select'
+              {...selectProps}
             />
           </div>
           <div className='col col--3'>
             <Select
               placeholder='Frameworks'
-              isMulti
-              onChange={changeTags}
               options={config.frameworkOptions}
-              className='react-select-container'
-              classNamePrefix='react-select'
+              {...selectProps}
             />
           </div>
           <div className='col col--3'>
             <Select
               placeholder='Languages'
-              isMulti
-              onChange={changeTags}
               options={config.languageOptions}
-              className='react-select-container'
-              classNamePrefix='react-select'
+              {...selectProps}
             />
           </div>
         </div>
