@@ -192,19 +192,6 @@ function TutorialFilters() {
         <div className='row'>
           <div className='col col--3'>
             <h5>Type</h5>
-          </div>
-          <div className='col col--3'>
-            <h5>Topic</h5>
-          </div>
-          <div className='col col--3'>
-            <h5>Frameworks</h5>
-          </div>
-          <div className='col col--3'>
-            <h5>Languages</h5>
-          </div>
-        </div>
-        <div className='row'>
-          <div className='col col--3'>
             <Select
               placeholder='Type'
               options={config.typeOptions}
@@ -212,6 +199,7 @@ function TutorialFilters() {
             />
           </div>
           <div className='col col--3'>
+            <h5>Topic</h5>
             <Select
               placeholder='Topic'
               options={config.topicOptions}
@@ -219,6 +207,7 @@ function TutorialFilters() {
             />
           </div>
           <div className='col col--3'>
+            <h5>Frameworks</h5>
             <Select
               placeholder='Frameworks'
               options={config.frameworkOptions}
@@ -226,6 +215,7 @@ function TutorialFilters() {
             />
           </div>
           <div className='col col--3'>
+            <h5>Languages</h5>
             <Select
               placeholder='Languages'
               options={config.languageOptions}
