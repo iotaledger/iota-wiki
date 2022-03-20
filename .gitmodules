@@ -1,0 +1,4 @@
+[submodule "content/tutorials/tutorial-template"]
+	path = content/tutorials/tutorial-template
+	url = https://github.com/Dr-Electron/tutorial-template
+	branch = test-tutorial
