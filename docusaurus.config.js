@@ -1,4 +1,5 @@
 // @ts-check
+const tutorials = require('./content/tutorials/docusaurus.config')
 
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
@@ -504,6 +505,7 @@ module.exports = {
         breadcrumbs: false,
       },
     ],
+    ...tutorials.plugins,
     /* AUTO GENERATED EXTERNAL DOCS CONFIG */
   ],
 };
