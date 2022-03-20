@@ -81,6 +81,7 @@
   },
   "packageManager": "yarn@3.2.0",
   "workspaces": [
-    "content/build"
+    "content/build",
+    "content/tutorials"
   ]
 }
