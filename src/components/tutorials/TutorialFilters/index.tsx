@@ -1,12 +1,14 @@
 import ExecutionEnvironment from '@docusaurus/ExecutionEnvironment';
 import { usePluralForm } from '@docusaurus/theme-common';
 import { useHistory, useLocation } from '@docusaurus/router';
-import { sortedTutorials, TagType, Tutorial } from '@site/src/data/tutorials';
+import { TagType, Tutorial } from '@site/src/data/tutorials';
 import React, { useState, useEffect, useMemo } from 'react';
 import { useCallback } from 'react';
 import SearchBar, { readSearchName } from '../../SearchBar';
 import Select, { ActionMeta } from 'react-select';
 import useIsBrowser from '@docusaurus/useIsBrowser';
+import { sortBy } from '@site/src/utils/jsUtils';
+import { usePluginData } from '@docusaurus/useGlobalData';
 
 import './styles.css';
 
@@ -131,8 +133,17 @@ export function useFilteredTutorials() {
     restoreUserState(location.state);
   }, [location]);
 
+  let tutorials: Tutorial[] = usePluginData('tutorials-plugin');
+  // Sort by tutorial name
+  tutorials = sortBy(tutorials, (tutorial) => tutorial.title.toLowerCase());
+  // Sort by favorite tag, favorites first
+  tutorials = sortBy(
+    tutorials,
+    (tutorial) => !tutorial.tags.includes('favorite'),
+  );
+
   return useMemo(
-    () => filterTutorials(sortedTutorials, selectedTags, searchName),
+    () => filterTutorials(tutorials, selectedTags, searchName),
     [selectedTags, searchName],
   );
 }
