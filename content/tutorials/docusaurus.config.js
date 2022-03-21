@@ -13,7 +13,6 @@ const reducer = function (_options, result, fileObject) {
     }
 
     const { tutorial, plugins, staticDirectories } = fileObject.exports;
-    console.log(result);
     if (Object.keys(result).length === 0) {
       result = {
         tutorials: [tutorial],
@@ -34,7 +33,12 @@ const reducer = function (_options, result, fileObject) {
   return result;
 };
 
-const config = requireGlob.sync('./*/**/docusaurus.config.js', { reducer });
+const config = requireGlob.sync(
+  ['./**/docusaurus.config.js', '!node_modules'],
+  {
+    reducer,
+  },
+);
 
 module.exports = {
   title: 'Tutorials',
