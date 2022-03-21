@@ -2,12 +2,12 @@
 title: Become a node operator
 description: Running a node is the best way to use IOTA. This topic provides a
   checklist of steps for running a reliable node.
-image: /img/learn/banner/banner_node_operator.png
+image: /img/participate/banner/banner_node_operator.png
 ---
 
 # Getting started as a node operator
 
-![Node Operator](/img/learn/banner/banner_node_operator.png)
+![Node Operator](/img/participate/banner/banner_node_operator.png)
 
 **Running a node is the best way to use IOTA. By doing so, you have direct access to the Tangle instead of having to connect to and trust someone else's node, and you help the IOTA network to become more distributed. This topic provides a checklist of steps for running a reliable node.**
 

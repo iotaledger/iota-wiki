@@ -3,12 +3,12 @@ title: Node Software
 description: IOTA networks consist of interconnected nodes that run the same
   node software. We introduce the different available types and provide guides
   that will help in setting those nodes up.
-image: /img/learn/banner/banner_node_software.png
+image: /img/participate/banner/banner_node_software.png
 ---
 
 # Node Software
 
-![Node Software](/img/learn/banner/banner_node_software.png)
+![Node Software](/img/participate/banner/banner_node_software.png)
 
 **IOTA networks consist of interconnected nodes that run the same node software. This software gives nodes read/write access to the Tangle, allows them to validate transactions, and allows them to store transactions in their local ledgers.**
 
