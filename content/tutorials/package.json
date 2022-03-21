@@ -28,6 +28,7 @@
         "react-dom": "^17.0.1"
     },
     "workspaces": [
-        "tutorial-template/documentation"
+        "tutorial-template/documentation",
+        "wasm-client-tutorial/documentation"
     ]
 }
