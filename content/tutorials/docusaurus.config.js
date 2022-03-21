@@ -22,11 +22,14 @@ const reducer = function (_options, result, fileObject) {
     } else {
       result.tutorials.push(tutorial);
 
-      if (!result.plugins) result.plugins = plugins;
-      else result.plugins.concat(plugins);
+      if (!result.plugins) 
+        result.plugins = plugins;
+      else 
+        result.plugins = result.plugins.concat(plugins);
       if (!result.staticDirectories)
         result.staticDirectories = staticDirectories;
-      else result.staticDirectories.concat(staticDirectories);
+      else 
+        result.staticDirectories = result.staticDirectories.concat(staticDirectories);
     }
   }
 
