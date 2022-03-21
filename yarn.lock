@@ -16750,6 +16750,23 @@ plugin-image-zoom@flexanalytics/plugin-image-zoom:
   languageName: node
   linkType: hard
 
+"wasm-client-tutorial@workspace:content/tutorials/wasm-client-tutorial/documentation":
+  version: 0.0.0-use.local
+  resolution: "wasm-client-tutorial@workspace:content/tutorials/wasm-client-tutorial/documentation"
+  dependencies:
+    "@docusaurus/core": latest
+    "@docusaurus/plugin-content-docs": ^2.0.0-beta.17
+    "@docusaurus/theme-classic": latest
+    react: ^17.0.1
+    react-dom: ^17.0.1
+  peerDependencies:
+    "@docusaurus/core": ^2.0.0-beta.17
+    "@docusaurus/theme-classic": ^2.0.0-beta.17
+    react: ^17.0.1
+    react-dom: ^17.0.1
+  languageName: unknown
+  linkType: soft
+
 "watchpack-chokidar2@npm:^2.0.1":
   version: 2.0.1
   resolution: "watchpack-chokidar2@npm:2.0.1"
