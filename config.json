@@ -41,7 +41,7 @@
     },
     {
       "repo": "https://github.com/gohornet/hornet",
-      "checkoutParams": ["--branch develop"],
+      "checkoutParams": ["--branch mainnet"],
       "staticPath": "./documentation/static"
     },
     {
@@ -59,6 +59,10 @@
     {
       "repo": "https://github.com/iotaledger/integration-services",
       "staticPath": "./documentation/static"
+    },
+    {
+      "repo": "https://github.com/zebradevs/zebra-iota-edge-sdk",
+      "staticPath": "./docs/static"
     }
   ]
 }

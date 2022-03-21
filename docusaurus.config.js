@@ -33,13 +33,29 @@ module.exports = {
     },
     image: 'img/iota-wiki.png',
     algolia: {
-      apiKey: '829457a9c9dd5a8ddd31d08c86e154c2',
+      appId: 'YTLE56KAO4',
+      apiKey: '75358d60d302f7f93f630d63128abb03',
       indexName: 'iota',
       contextualSearch: true,
     },
     matomo: {
       matomoUrl: 'https://matomo.antonionardella.it/',
       siteId: '6',
+    },
+    hotjar: {
+      applicationId: '2809821',
+    },
+    imageZoom: {
+      selector:
+        '.markdown :not(a) > img:not(.image-gallery-image):not(.image-gallery-thumbnail-image)',
+      // Optional medium-zoom options
+      // see: https://www.npmjs.com/package/medium-zoom#options
+      options: {
+        background: 'rgba(0, 0, 0, 0.6)',
+      },
+    },
+    imageSlider: {
+      videoPlaceholder: '/img/infographics/video-placeholder.png',
     },
     cards: [
       {
@@ -225,7 +241,7 @@ module.exports = {
             },
           ],
         },
-        { to: '/blog', label: 'Blog', position: 'right' },
+        { to: '/blog', label: 'Community Blog', position: 'right' },
         { to: '/team', label: 'Team', position: 'right' },
       ],
     },
@@ -341,6 +357,14 @@ module.exports = {
               label: 'Contribute',
               to: 'participate/contribute-to-wiki/welcome',
             },
+            {
+              label: 'Impressum',
+              to: 'https://www.iota.org/impressum',
+            },
+            {
+              label: 'Privacy Policy',
+              to: 'https://www.iota.org/privacy-policy',
+            },
           ],
         },
       ],
@@ -387,22 +411,6 @@ module.exports = {
     ],
     colorMode: {
       defaultMode: 'dark',
-      // Dark/light switch icon options
-      switchConfig: {
-        // Icon for the switch while in dark mode
-        darkIcon: 'light_mode',
-
-        // CSS to apply to dark icon
-        darkIconStyle: {
-          fontFamily: 'Material Icons',
-        },
-
-        lightIcon: 'dark_mode',
-
-        lightIconStyle: {
-          fontFamily: 'Material Icons',
-        },
-      },
     },
   },
   presets: [
@@ -426,6 +434,7 @@ module.exports = {
     ],
   ],
   plugins: [
+    'plugin-image-zoom',
     [
       '@jlvandenhout/docusaurus-plugin-docs-editor',
       {
@@ -450,6 +459,7 @@ module.exports = {
       },
     ],
     'docusaurus-plugin-matomo',
+    'docusaurus-plugin-hotjar',
     [
       '@docusaurus/plugin-content-docs',
       {
@@ -465,6 +475,7 @@ module.exports = {
           require('remark-import-partial'),
         ],
         showLastUpdateTime: true,
+        breadcrumbs: false,
       },
     ],
     [
@@ -482,6 +493,7 @@ module.exports = {
           require('remark-import-partial'),
         ],
         showLastUpdateTime: true,
+        breadcrumbs: false,
       },
     ],
     [
@@ -499,6 +511,7 @@ module.exports = {
           require('remark-import-partial'),
         ],
         showLastUpdateTime: true,
+        breadcrumbs: false,
       },
     ],
     /* AUTO GENERATED EXTERNAL DOCS CONFIG */

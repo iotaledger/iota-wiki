@@ -3,19 +3,30 @@ import ImageGallery from 'react-image-gallery';
 import 'react-image-gallery/styles/css/image-gallery.css';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import { useRef } from 'react';
+import { useThemeConfig } from '@docusaurus/theme-common';
+import { ThemeConfig } from '@docusaurus/preset-classic';
 
 export interface ImageSliderProps {
   path: string;
 }
 
+export interface ImageSliderConfig extends ThemeConfig {
+  imageSlider: {
+    videoPlaceholder: string;
+  };
+}
+
 export default function ImageSlider({ path }: ImageSliderProps) {
+  const { imageSlider } = useThemeConfig() as ImageSliderConfig;
+  const videoPlaceholder = useBaseUrl(imageSlider.videoPlaceholder);
   // Import images from the infographics folder
   function importImages(r) {
     return r.keys().map((x) => x.replace('.', ''));
   }
 
+  // Resolve images relative to the static folder
   const allImages = importImages(
-    require.context('/img/', true, /\.(png|jpe?g|svg|mp4)$/),
+    require.context('@site/static/', true, /\.(png|jpe?g|svg|mp4)$/),
   );
   const requestedImages = allImages.filter((word) => word.startsWith(path));
 
@@ -28,11 +39,11 @@ export default function ImageSlider({ path }: ImageSliderProps) {
   function createImageArray() {
     const images = [];
     for (let i = 0; i < requestedImages.length; i++) {
-      const image = useBaseUrl('/img' + requestedImages[i]);
+      const image = useBaseUrl(requestedImages[i]);
       if (getFileExtension(requestedImages[i]) === 'mp4') {
         images.push({
           original: image,
-          thumbnail: useBaseUrl('/img/infographics/video-placeholder.png'),
+          thumbnail: videoPlaceholder,
           renderItem: () => (
             <video
               controls
