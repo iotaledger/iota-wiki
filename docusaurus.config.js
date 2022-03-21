@@ -479,6 +479,6 @@ module.exports = {
     ...tutorials.plugins,
     /* AUTO GENERATED EXTERNAL DOCS CONFIG */
   ],
-  staticDirectories: ['./static', ...build.staticDirectories],
+  staticDirectories: ['./static', ...build.staticDirectories, ...tutorials.staticDirectories],
 };
 
