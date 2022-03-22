@@ -12,15 +12,17 @@ This utility requires [`yarn`](https://yarnpkg.com/) and [`git`](https://git-scm
 6. Create a GitHub release using the tag above.
 
 <!-- toc -->
-* [iota-wiki-cli](#iota-wiki-cli)
-* [Release](#release)
-* [Usage](#usage)
-* [Commands](#commands)
+
+- [iota-wiki-cli](#iota-wiki-cli)
+- [Release](#release)
+- [Usage](#usage)
+- [Commands](#commands)
 <!-- tocstop -->
 
 # Usage
 
 <!-- usage -->
+
 ```sh-session
 $ npm install -g @iota-community/iota-wiki-cli
 $ iota-wiki-cli COMMAND
@@ -32,23 +34,25 @@ USAGE
   $ iota-wiki-cli COMMAND
 ...
 ```
+
 <!-- usagestop -->
 
 # Commands
 
 <!-- commands -->
-* [`iota-wiki-cli hello PERSON`](#iota-wiki-cli-hello-person)
-* [`iota-wiki-cli hello world`](#iota-wiki-cli-hello-world)
-* [`iota-wiki-cli help [COMMAND]`](#iota-wiki-cli-help-command)
-* [`iota-wiki-cli plugins`](#iota-wiki-cli-plugins)
-* [`iota-wiki-cli plugins:install PLUGIN...`](#iota-wiki-cli-pluginsinstall-plugin)
-* [`iota-wiki-cli plugins:inspect PLUGIN...`](#iota-wiki-cli-pluginsinspect-plugin)
-* [`iota-wiki-cli plugins:install PLUGIN...`](#iota-wiki-cli-pluginsinstall-plugin-1)
-* [`iota-wiki-cli plugins:link PLUGIN`](#iota-wiki-cli-pluginslink-plugin)
-* [`iota-wiki-cli plugins:uninstall PLUGIN...`](#iota-wiki-cli-pluginsuninstall-plugin)
-* [`iota-wiki-cli plugins:uninstall PLUGIN...`](#iota-wiki-cli-pluginsuninstall-plugin-1)
-* [`iota-wiki-cli plugins:uninstall PLUGIN...`](#iota-wiki-cli-pluginsuninstall-plugin-2)
-* [`iota-wiki-cli plugins update`](#iota-wiki-cli-plugins-update)
+
+- [`iota-wiki-cli hello PERSON`](#iota-wiki-cli-hello-person)
+- [`iota-wiki-cli hello world`](#iota-wiki-cli-hello-world)
+- [`iota-wiki-cli help [COMMAND]`](#iota-wiki-cli-help-command)
+- [`iota-wiki-cli plugins`](#iota-wiki-cli-plugins)
+- [`iota-wiki-cli plugins:install PLUGIN...`](#iota-wiki-cli-pluginsinstall-plugin)
+- [`iota-wiki-cli plugins:inspect PLUGIN...`](#iota-wiki-cli-pluginsinspect-plugin)
+- [`iota-wiki-cli plugins:install PLUGIN...`](#iota-wiki-cli-pluginsinstall-plugin-1)
+- [`iota-wiki-cli plugins:link PLUGIN`](#iota-wiki-cli-pluginslink-plugin)
+- [`iota-wiki-cli plugins:uninstall PLUGIN...`](#iota-wiki-cli-pluginsuninstall-plugin)
+- [`iota-wiki-cli plugins:uninstall PLUGIN...`](#iota-wiki-cli-pluginsuninstall-plugin-1)
+- [`iota-wiki-cli plugins:uninstall PLUGIN...`](#iota-wiki-cli-pluginsuninstall-plugin-2)
+- [`iota-wiki-cli plugins update`](#iota-wiki-cli-plugins-update)
 
 ## `iota-wiki-cli hello PERSON`
 
@@ -161,7 +165,7 @@ ALIASES
   $ iota-wiki-cli plugins add
 
 EXAMPLES
-  $ iota-wiki-cli plugins:install myplugin 
+  $ iota-wiki-cli plugins:install myplugin
 
   $ iota-wiki-cli plugins:install https://github.com/someuser/someplugin
 
@@ -221,7 +225,7 @@ ALIASES
   $ iota-wiki-cli plugins add
 
 EXAMPLES
-  $ iota-wiki-cli plugins:install myplugin 
+  $ iota-wiki-cli plugins:install myplugin
 
   $ iota-wiki-cli plugins:install https://github.com/someuser/someplugin
 
@@ -339,4 +343,5 @@ FLAGS
 DESCRIPTION
   Update installed plugins.
 ```
+
 <!-- commandsstop -->
