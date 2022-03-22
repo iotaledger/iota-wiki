@@ -1,30 +1,31 @@
-iota-wiki-cli
-========
+# iota-wiki-cli
 
 This utility requires [`yarn`](https://yarnpkg.com/) and [`git`](https://git-scm.com/) to be installed.
 
-Configure the utility with a `config.json`. See a example [`here`](./config.example.json).
-
 # Release
 
-1. Ensure commit signing is properly setup.
-2. Run `npm version minor`, `npm version major`, etc. depending on what's applicable.
-3. Push changes including the newly created tag.
-4. Create GitHub release using the commit above.
-
-# TOC
+1. Ensure git commit signing is properly setup.
+2. Change the package version according [semantic versioning](https://semver.org/).
+3. Commit the version bump with `git commit -m "Bump version to v[VERSION]"`.
+4. Tag the commit with `git tag -a v[VERSION] -m "v[VERSION]"`.
+5. Push the commit including the tag with `git push --follow-tags`.
+6. Create a GitHub release using the tag above.
 
 <!-- toc -->
+* [iota-wiki-cli](#iota-wiki-cli)
+* [Release](#release)
 * [Usage](#usage)
 * [Commands](#commands)
 <!-- tocstop -->
+
 # Usage
+
 <!-- usage -->
 ```sh-session
 $ npm install -g @iota-community/iota-wiki-cli
 $ iota-wiki-cli COMMAND
 running command...
-$ iota-wiki-cli (-v|--version|version)
+$ iota-wiki-cli (--version)
 @iota-community/iota-wiki-cli/1.7.0 linux-x64 node-v16.13.1
 $ iota-wiki-cli --help [COMMAND]
 USAGE
@@ -32,85 +33,310 @@ USAGE
 ...
 ```
 <!-- usagestop -->
+
 # Commands
+
 <!-- commands -->
-* [`iota-wiki-cli checkout`](#iota-wiki-cli-checkout)
-* [`iota-wiki-cli clean`](#iota-wiki-cli-clean)
+* [`iota-wiki-cli hello PERSON`](#iota-wiki-cli-hello-person)
+* [`iota-wiki-cli hello world`](#iota-wiki-cli-hello-world)
 * [`iota-wiki-cli help [COMMAND]`](#iota-wiki-cli-help-command)
-* [`iota-wiki-cli setup`](#iota-wiki-cli-setup)
-* [`iota-wiki-cli start`](#iota-wiki-cli-start)
+* [`iota-wiki-cli plugins`](#iota-wiki-cli-plugins)
+* [`iota-wiki-cli plugins:install PLUGIN...`](#iota-wiki-cli-pluginsinstall-plugin)
+* [`iota-wiki-cli plugins:inspect PLUGIN...`](#iota-wiki-cli-pluginsinspect-plugin)
+* [`iota-wiki-cli plugins:install PLUGIN...`](#iota-wiki-cli-pluginsinstall-plugin-1)
+* [`iota-wiki-cli plugins:link PLUGIN`](#iota-wiki-cli-pluginslink-plugin)
+* [`iota-wiki-cli plugins:uninstall PLUGIN...`](#iota-wiki-cli-pluginsuninstall-plugin)
+* [`iota-wiki-cli plugins:uninstall PLUGIN...`](#iota-wiki-cli-pluginsuninstall-plugin-1)
+* [`iota-wiki-cli plugins:uninstall PLUGIN...`](#iota-wiki-cli-pluginsuninstall-plugin-2)
+* [`iota-wiki-cli plugins update`](#iota-wiki-cli-plugins-update)
 
-## `iota-wiki-cli checkout`
+## `iota-wiki-cli hello PERSON`
 
-checkout content repositories
-
-```
-USAGE
-  $ iota-wiki-cli checkout
-
-OPTIONS
-  -h, --help            show CLI help
-  -o, --[no-]overwrite  Disable/Enable overwriting of static content
-
-EXAMPLE
-  $ iota-wiki-cli checkout
-```
-
-## `iota-wiki-cli clean`
-
-completely removes local wiki
+Say hello
 
 ```
 USAGE
-  $ iota-wiki-cli clean
+  $ iota-wiki-cli hello [PERSON] -f <value>
 
-OPTIONS
-  -h, --help  show CLI help
+ARGUMENTS
+  PERSON  Person to say hello to
+
+FLAGS
+  -f, --from=<value>  (required) Whom is saying hello
+
+DESCRIPTION
+  Say hello
+
+EXAMPLES
+  $ oex hello friend --from oclif
+  hello friend from oclif! (./src/commands/hello/index.ts)
+```
+
+_See code: [dist/commands/hello/index.ts](https://github.com/iota-community/iota-wiki-cli/blob/v1.7.0/dist/commands/hello/index.ts)_
+
+## `iota-wiki-cli hello world`
+
+Say hello world
+
+```
+USAGE
+  $ iota-wiki-cli hello world
+
+DESCRIPTION
+  Say hello world
+
+EXAMPLES
+  $ oex hello world
+  hello world! (./src/commands/hello/world.ts)
 ```
 
 ## `iota-wiki-cli help [COMMAND]`
 
-display help for iota-wiki-cli
+Display help for iota-wiki-cli.
 
 ```
 USAGE
-  $ iota-wiki-cli help [COMMAND]
+  $ iota-wiki-cli help [COMMAND] [-n]
 
 ARGUMENTS
-  COMMAND  command to show help for
+  COMMAND  Command to show help for.
 
-OPTIONS
-  --all  see all commands in CLI
+FLAGS
+  -n, --nested-commands  Include all nested commands in the output.
+
+DESCRIPTION
+  Display help for iota-wiki-cli.
 ```
 
-_See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v3.2.3/src/commands/help.ts)_
+_See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v5.1.10/src/commands/help.ts)_
 
-## `iota-wiki-cli setup`
+## `iota-wiki-cli plugins`
 
-setup local wiki
-
-```
-USAGE
-  $ iota-wiki-cli setup
-
-OPTIONS
-  -h, --help     show CLI help
-  -r, --ref=ref  wiki revison to checkout
-
-EXAMPLE
-  $ iota-wiki-cli setup --ref main
-```
-
-## `iota-wiki-cli start`
-
-start local wiki
+List installed plugins.
 
 ```
 USAGE
-  $ iota-wiki-cli start
+  $ iota-wiki-cli plugins [--core]
 
-OPTIONS
-  -h, --help  show CLI help
-  --dry-run   Test build the wiki with the current edited content
+FLAGS
+  --core  Show core plugins.
+
+DESCRIPTION
+  List installed plugins.
+
+EXAMPLES
+  $ iota-wiki-cli plugins
+```
+
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v2.0.11/src/commands/plugins/index.ts)_
+
+## `iota-wiki-cli plugins:install PLUGIN...`
+
+Installs a plugin into the CLI.
+
+```
+USAGE
+  $ iota-wiki-cli plugins:install PLUGIN...
+
+ARGUMENTS
+  PLUGIN  Plugin to install.
+
+FLAGS
+  -f, --force    Run yarn install with force flag.
+  -h, --help     Show CLI help.
+  -v, --verbose
+
+DESCRIPTION
+  Installs a plugin into the CLI.
+
+  Can be installed from npm or a git url.
+
+  Installation of a user-installed plugin will override a core plugin.
+
+  e.g. If you have a core plugin that has a 'hello' command, installing a user-installed plugin with a 'hello' command
+  will override the core plugin implementation. This is useful if a user needs to update core plugin functionality in
+  the CLI without the need to patch and update the whole CLI.
+
+ALIASES
+  $ iota-wiki-cli plugins add
+
+EXAMPLES
+  $ iota-wiki-cli plugins:install myplugin 
+
+  $ iota-wiki-cli plugins:install https://github.com/someuser/someplugin
+
+  $ iota-wiki-cli plugins:install someuser/someplugin
+```
+
+## `iota-wiki-cli plugins:inspect PLUGIN...`
+
+Displays installation properties of a plugin.
+
+```
+USAGE
+  $ iota-wiki-cli plugins:inspect PLUGIN...
+
+ARGUMENTS
+  PLUGIN  [default: .] Plugin to inspect.
+
+FLAGS
+  -h, --help     Show CLI help.
+  -v, --verbose
+
+DESCRIPTION
+  Displays installation properties of a plugin.
+
+EXAMPLES
+  $ iota-wiki-cli plugins:inspect myplugin
+```
+
+## `iota-wiki-cli plugins:install PLUGIN...`
+
+Installs a plugin into the CLI.
+
+```
+USAGE
+  $ iota-wiki-cli plugins:install PLUGIN...
+
+ARGUMENTS
+  PLUGIN  Plugin to install.
+
+FLAGS
+  -f, --force    Run yarn install with force flag.
+  -h, --help     Show CLI help.
+  -v, --verbose
+
+DESCRIPTION
+  Installs a plugin into the CLI.
+
+  Can be installed from npm or a git url.
+
+  Installation of a user-installed plugin will override a core plugin.
+
+  e.g. If you have a core plugin that has a 'hello' command, installing a user-installed plugin with a 'hello' command
+  will override the core plugin implementation. This is useful if a user needs to update core plugin functionality in
+  the CLI without the need to patch and update the whole CLI.
+
+ALIASES
+  $ iota-wiki-cli plugins add
+
+EXAMPLES
+  $ iota-wiki-cli plugins:install myplugin 
+
+  $ iota-wiki-cli plugins:install https://github.com/someuser/someplugin
+
+  $ iota-wiki-cli plugins:install someuser/someplugin
+```
+
+## `iota-wiki-cli plugins:link PLUGIN`
+
+Links a plugin into the CLI for development.
+
+```
+USAGE
+  $ iota-wiki-cli plugins:link PLUGIN
+
+ARGUMENTS
+  PATH  [default: .] path to plugin
+
+FLAGS
+  -h, --help     Show CLI help.
+  -v, --verbose
+
+DESCRIPTION
+  Links a plugin into the CLI for development.
+
+  Installation of a linked plugin will override a user-installed or core plugin.
+
+  e.g. If you have a user-installed or core plugin that has a 'hello' command, installing a linked plugin with a 'hello'
+  command will override the user-installed or core plugin implementation. This is useful for development work.
+
+EXAMPLES
+  $ iota-wiki-cli plugins:link myplugin
+```
+
+## `iota-wiki-cli plugins:uninstall PLUGIN...`
+
+Removes a plugin from the CLI.
+
+```
+USAGE
+  $ iota-wiki-cli plugins:uninstall PLUGIN...
+
+ARGUMENTS
+  PLUGIN  plugin to uninstall
+
+FLAGS
+  -h, --help     Show CLI help.
+  -v, --verbose
+
+DESCRIPTION
+  Removes a plugin from the CLI.
+
+ALIASES
+  $ iota-wiki-cli plugins unlink
+  $ iota-wiki-cli plugins remove
+```
+
+## `iota-wiki-cli plugins:uninstall PLUGIN...`
+
+Removes a plugin from the CLI.
+
+```
+USAGE
+  $ iota-wiki-cli plugins:uninstall PLUGIN...
+
+ARGUMENTS
+  PLUGIN  plugin to uninstall
+
+FLAGS
+  -h, --help     Show CLI help.
+  -v, --verbose
+
+DESCRIPTION
+  Removes a plugin from the CLI.
+
+ALIASES
+  $ iota-wiki-cli plugins unlink
+  $ iota-wiki-cli plugins remove
+```
+
+## `iota-wiki-cli plugins:uninstall PLUGIN...`
+
+Removes a plugin from the CLI.
+
+```
+USAGE
+  $ iota-wiki-cli plugins:uninstall PLUGIN...
+
+ARGUMENTS
+  PLUGIN  plugin to uninstall
+
+FLAGS
+  -h, --help     Show CLI help.
+  -v, --verbose
+
+DESCRIPTION
+  Removes a plugin from the CLI.
+
+ALIASES
+  $ iota-wiki-cli plugins unlink
+  $ iota-wiki-cli plugins remove
+```
+
+## `iota-wiki-cli plugins update`
+
+Update installed plugins.
+
+```
+USAGE
+  $ iota-wiki-cli plugins update [-h] [-v]
+
+FLAGS
+  -h, --help     Show CLI help.
+  -v, --verbose
+
+DESCRIPTION
+  Update installed plugins.
 ```
 <!-- commandsstop -->

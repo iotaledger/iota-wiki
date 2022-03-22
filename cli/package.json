@@ -1,59 +1,72 @@
 {
   "name": "@iota-community/iota-wiki-cli",
   "version": "1.7.0",
-  "author": "",
-  "bin": {
-    "iota-wiki-cli": "./bin/run"
-  },
-  "engines": {
-    "node": ">=14.14.0"
-  },
-  "dependencies": {
-    "@oclif/command": "^1.8.0",
-    "@oclif/config": "^1.17.0",
-    "@oclif/plugin-help": "^3.2.3",
-    "fs-extra": "^10.0.0",
-    "lodash.debounce": "^4.0.8",
-    "replace-in-file": "^6.2.0",
-    "sync-directory": "^2.2.22",
-    "tslib": "^1.14.1"
-  },
-  "devDependencies": {
-    "@oclif/dev-cli": "^1.26.0",
-    "@types/fs-extra": "^9.0.12",
-    "@types/node": "^16.9.0",
-    "eslint": "^5.16.0",
-    "eslint-config-oclif": "^3.1.0",
-    "eslint-config-oclif-typescript": "^0.1.0",
-    "globby": "^10.0.2",
-    "ts-node": "^8.10.2",
-    "typescript": "^3.9.10"
-  },
+  "author": "IOTA community",
+  "bin": "./bin/run",
+  "homepage": "https://github.com/iota-community/iota-wiki-cli",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "repository": "iota-community/iota-wiki-cli",
   "files": [
     "/bin",
-    "/lib",
+    "/dist",
     "/npm-shrinkwrap.json",
     "/oclif.manifest.json"
   ],
+  "dependencies": {
+    "@oclif/core": "^1",
+    "@oclif/plugin-help": "^5",
+    "@oclif/plugin-plugins": "^2.0.1"
+  },
+  "devDependencies": {
+    "@oclif/test": "^2",
+    "@types/chai": "^4",
+    "@types/mocha": "^9.0.0",
+    "@types/node": "^16.9.4",
+    "@types/prettier": "^2",
+    "chai": "^4",
+    "eslint": "^7.32.0",
+    "eslint-config-oclif": "^4",
+    "eslint-config-oclif-typescript": "^1.0.2",
+    "eslint-config-prettier": "^8.5.0",
+    "globby": "^11",
+    "mocha": "^9",
+    "oclif": "^2",
+    "prettier": "2.6.0",
+    "shx": "^0.3.3",
+    "ts-node": "^10.2.1",
+    "tslib": "^2.3.1",
+    "typescript": "^4.4.3"
+  },
+  "oclif": {
+    "bin": "iota-wiki-cli",
+    "dirname": "iota-wiki-cli",
+    "commands": "./dist/commands",
+    "plugins": [
+      "@oclif/plugin-help",
+      "@oclif/plugin-plugins"
+    ],
+    "topicSeparator": " ",
+    "topics": {
+      "hello": {
+        "description": "Say hello to the world and others"
+      }
+    }
+  },
+  "scripts": {
+    "build": "shx rm -rf dist && tsc -b",
+    "postpack": "shx rm -f oclif.manifest.json",
+    "prepack": "yarn build && oclif manifest && oclif readme",
+    "test": "mocha --forbid-only \"test/**/*.test.ts\"",
+    "version": "oclif readme && git add README.md"
+  },
+  "engines": {
+    "node": ">=12.0.0"
+  },
+  "bugs": "https://github.com/iota-community/iota-wiki-cli/issues",
   "keywords": [
     "oclif"
   ],
-  "license": "MIT",
-  "main": "lib/index.js",
-  "oclif": {
-    "commands": "./lib/commands",
-    "bin": "iota-wiki-cli",
-    "plugins": [
-      "@oclif/plugin-help"
-    ]
-  },
-  "scripts": {
-    "postpack": "node -e 'require(`fs-extra`).remove(`oclif.manifest.json`);'",
-    "posttest": "eslint . --ext .ts --config .eslintrc",
-    "prepare": "echo INSTALLING",
-    "prepack": "node -e 'require(`fs-extra`).emptyDir(`lib`);' && tsc -b && oclif-dev manifest && oclif-dev readme",
-    "test": "echo NO TESTS",
-    "version": "oclif-dev readme && git add README.md"
-  },
-  "types": "lib/index.d.ts"
+  "types": "dist/index.d.ts",
+  "packageManager": "yarn@3.2.0"
 }
