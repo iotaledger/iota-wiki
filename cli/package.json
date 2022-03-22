@@ -55,6 +55,8 @@
   },
   "scripts": {
     "build": "shx rm -rf dist && tsc -b",
+    "format": "prettier --write .",
+    "lint": "eslint --cache --fix .",
     "postpack": "shx rm -f oclif.manifest.json",
     "prepack": "yarn build && oclif manifest && oclif readme",
     "test": "mocha --forbid-only \"test/**/*.test.ts\"",
