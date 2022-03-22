@@ -41,8 +41,6 @@ USAGE
 
 <!-- commands -->
 
-- [`iota-wiki-cli hello PERSON`](#iota-wiki-cli-hello-person)
-- [`iota-wiki-cli hello world`](#iota-wiki-cli-hello-world)
 - [`iota-wiki-cli help [COMMAND]`](#iota-wiki-cli-help-command)
 - [`iota-wiki-cli plugins`](#iota-wiki-cli-plugins)
 - [`iota-wiki-cli plugins:install PLUGIN...`](#iota-wiki-cli-pluginsinstall-plugin)
@@ -53,46 +51,7 @@ USAGE
 - [`iota-wiki-cli plugins:uninstall PLUGIN...`](#iota-wiki-cli-pluginsuninstall-plugin-1)
 - [`iota-wiki-cli plugins:uninstall PLUGIN...`](#iota-wiki-cli-pluginsuninstall-plugin-2)
 - [`iota-wiki-cli plugins update`](#iota-wiki-cli-plugins-update)
-
-## `iota-wiki-cli hello PERSON`
-
-Say hello
-
-```
-USAGE
-  $ iota-wiki-cli hello [PERSON] -f <value>
-
-ARGUMENTS
-  PERSON  Person to say hello to
-
-FLAGS
-  -f, --from=<value>  (required) Whom is saying hello
-
-DESCRIPTION
-  Say hello
-
-EXAMPLES
-  $ oex hello friend --from oclif
-  hello friend from oclif! (./src/commands/hello/index.ts)
-```
-
-_See code: [dist/commands/hello/index.ts](https://github.com/iota-community/iota-wiki-cli/blob/v1.7.0/dist/commands/hello/index.ts)_
-
-## `iota-wiki-cli hello world`
-
-Say hello world
-
-```
-USAGE
-  $ iota-wiki-cli hello world
-
-DESCRIPTION
-  Say hello world
-
-EXAMPLES
-  $ oex hello world
-  hello world! (./src/commands/hello/world.ts)
-```
+- [`iota-wiki-cli start`](#iota-wiki-cli-start)
 
 ## `iota-wiki-cli help [COMMAND]`
 
@@ -343,5 +302,19 @@ FLAGS
 DESCRIPTION
   Update installed plugins.
 ```
+
+## `iota-wiki-cli start`
+
+Start a development server to view your content.
+
+```
+USAGE
+  $ iota-wiki-cli start
+
+DESCRIPTION
+  Start a development server to view your content.
+```
+
+_See code: [dist/commands/start.ts](https://github.com/iota-community/iota-wiki-cli/blob/v1.7.0/dist/commands/start.ts)_
 
 <!-- commandsstop -->
