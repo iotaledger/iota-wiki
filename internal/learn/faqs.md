@@ -8,4 +8,4 @@ description: Questions and answers collections. Clear outlined information for
 - [Firefly wallet FAQ](/learn/wallets/firefly/faq-and-troubleshooting)
 - [GoShimmer devnet FAQ](/goshimmer/faq)
 - [Hornet mainnet node FAQ](/hornet/faq)
-- test
+- test 2
