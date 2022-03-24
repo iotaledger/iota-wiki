@@ -14,9 +14,13 @@
     "/oclif.manifest.json"
   ],
   "dependencies": {
+    "@docusaurus/core": "^2.0.0-beta.17",
     "@oclif/core": "^1",
     "@oclif/plugin-help": "^5",
-    "@oclif/plugin-plugins": "^2.0.1"
+    "@oclif/plugin-plugins": "^2.0.1",
+    "@yarnpkg/shell": "^3.2.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
   },
   "devDependencies": {
     "@oclif/test": "^2",
@@ -24,6 +28,8 @@
     "@types/mocha": "^9.0.0",
     "@types/node": "^16.9.4",
     "@types/prettier": "^2",
+    "@types/react": "^17",
+    "@types/react-dom": "^17",
     "chai": "^4",
     "eslint": "^7.32.0",
     "eslint-config-oclif": "^4",
@@ -74,5 +80,8 @@
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": "eslint --cache --fix",
     "*.{js,jsx,ts,tsx,json,yml,md,mdx,css}": "prettier --write"
-  }
+  },
+  "workspaces": [
+    "test/module"
+  ]
 }
