@@ -16,11 +16,14 @@ export default class Start extends Command {
   static flags = {
     port: Flags.integer({
       name: 'port',
-      description: 'the port of the dev server',
+      description: 'the port of the development server',
       env: 'WIKI_PORT',
       default: 3000,
     }),
     open: Flags.boolean({
+      name: 'open',
+      description: 'wether to automatically open the content in the browser',
+      env: 'WIKI_OPEN',
       default: true,
       allowNo: true,
     }),
@@ -38,12 +41,12 @@ export default class Start extends Command {
     );
 
     this.log(
-      'TODO:\n' +
+      '\nTODO:\n' +
+        '[ ] Set WIKI_SITE_DIR to the passed siteDir.\n' +
         '[ ] Find the module config file in the Wiki cli siteDir.\n' +
-        '[ ] Set WIKI_MODULE_CONFIG to the path of the module config.\n' +
-        '[ ] Optionally set WIKI_PORT to what is configured using the port flag.\n' +
         '[ ] Use the module config inside of the Wiki CLI internal config.\n' +
-        '[ ] Call docusaurus start using the internal config and the WIKI_PORT.\n',
+        '[ ] Set the Docusaurs CLI config flag to the Wiki CLI internal config\n' +
+        '[x] Call docusaurus start.\n',
     );
   }
 }

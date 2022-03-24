@@ -306,8 +306,8 @@ ARGUMENTS
   SITEDIR  [default: .] the path to the module
 
 FLAGS
-  --[no-]open
-  --port=<value>  [default: 3000] the port of the dev server
+  --[no-]open     wether to automatically open the content in the browser
+  --port=<value>  [default: 3000] the port of the development server
 
 DESCRIPTION
   Start a development server to preview your content.
