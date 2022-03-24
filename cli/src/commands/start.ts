@@ -1,6 +1,8 @@
 import { Command, Flags } from '@oclif/core';
 import { execute } from '@yarnpkg/shell';
 
+const internalConfig = require.resolve('../../internal/docusaurus.config.js');
+
 export default class Start extends Command {
   static description = 'Start a development server to preview your content.';
 
@@ -37,7 +39,7 @@ export default class Start extends Command {
     await execute(
       `WIKI_SITE_DIR=${siteDir} yarn docusaurus start ${
         open ? '' : '--no-open'
-      } --port ${port} ${siteDir}`,
+      } --port ${port} --config ${internalConfig} ${siteDir}`,
     );
 
     this.log(

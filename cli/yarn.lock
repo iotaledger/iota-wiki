@@ -1867,7 +1867,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@docusaurus/module-type-aliases@npm:2.0.0-beta.17":
+"@docusaurus/module-type-aliases@npm:2.0.0-beta.17, @docusaurus/module-type-aliases@npm:^2.0.0-beta.17":
   version: 2.0.0-beta.17
   resolution: "@docusaurus/module-type-aliases@npm:2.0.0-beta.17"
   dependencies:
@@ -3363,7 +3363,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react@npm:*, @types/react@npm:^17":
+"@types/react@npm:*, @types/react@npm:^17, @types/react@npm:^17.0.0":
   version: 17.0.42
   resolution: "@types/react@npm:17.0.42"
   dependencies:
@@ -3448,6 +3448,13 @@ __metadata:
     "@types/expect": ^1.20.4
     "@types/node": "*"
   checksum: 5012fb61e3a29e7deaac7e66b6d8cb73d87d15965c8a38cb69277c2beb851a9a8ec09d4a1b07a3151e143afc2e3a102ca368b9a0e08f2f29de9183c97f9c7d85
+  languageName: node
+  linkType: hard
+
+"@types/webpack-env@npm:^1.16.3":
+  version: 1.16.3
+  resolution: "@types/webpack-env@npm:1.16.3"
+  checksum: faefa7c0a75289fb469b9a5ae44059a00009de840e0e62d13b3f837d77647da76808e7839cdc414b8c585969cf6b6a7f290dc2cb437a9ccdf04cb214c68f3223
   languageName: node
   linkType: hard
 
@@ -8582,6 +8589,23 @@ __metadata:
   languageName: node
   linkType: hard
 
+"iota-wiki@workspace:internal":
+  version: 0.0.0-use.local
+  resolution: "iota-wiki@workspace:internal"
+  dependencies:
+    "@docusaurus/core": ^2.0.0-beta.17
+    "@docusaurus/module-type-aliases": ^2.0.0-beta.17
+    "@docusaurus/theme-classic": ^2.0.0-beta.17
+    "@tsconfig/docusaurus": ^1.0.4
+    "@types/react": ^17.0.0
+    "@types/webpack-env": ^1.16.3
+    plugin-image-zoom: flexanalytics/plugin-image-zoom
+    react: ^17.0.1
+    react-dom: ^17.0.1
+    typescript: ^4.5.4
+  languageName: unknown
+  linkType: soft
+
 "ip@npm:^1.1.0, ip@npm:^1.1.5":
   version: 1.1.5
   resolution: "ip@npm:1.1.5"
@@ -9761,6 +9785,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"medium-zoom@npm:^1.0.4":
+  version: 1.0.6
+  resolution: "medium-zoom@npm:1.0.6"
+  checksum: 728b9f661262fd084da26f401ffe9bf98afc6d14ad93d4bfb08b95d32f9c4494a97dc8cb3a62353e8d350dc09c84a3f6f686a0fec321bfb609e5ba5e24bdb9d2
+  languageName: node
+  linkType: hard
+
 "mem-fs-editor@npm:^8.1.2 || ^9.0.0":
   version: 9.4.0
   resolution: "mem-fs-editor@npm:9.4.0"
@@ -10140,18 +10171,13 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "module@workspace:test/module"
   dependencies:
-    "@docusaurus/core": 2.0.0-beta.17
     "@docusaurus/module-type-aliases": 2.0.0-beta.17
     "@docusaurus/plugin-content-blog": ^2.0.0-beta.17
     "@docusaurus/plugin-content-docs": ^2.0.0-beta.17
     "@docusaurus/plugin-content-pages": ^2.0.0-beta.17
-    "@docusaurus/theme-classic": ^2.0.0-beta.17
     "@mdx-js/react": ^1.6.22
     "@tsconfig/docusaurus": ^1.0.4
     clsx: ^1.1.1
-    prism-react-renderer: ^1.2.1
-    react: ^17.0.1
-    react-dom: ^17.0.1
     typescript: ^4.6.2
   peerDependencies:
     react: ^17.0.1
@@ -11214,6 +11240,15 @@ __metadata:
   dependencies:
     find-up: ^3.0.0
   checksum: 5bac346b7c7c903613c057ae3ab722f320716199d753f4a7d053d38f2b5955460f3e6ab73b4762c62fd3e947f58e04f1343e92089e7bb6091c90877406fcd8c8
+  languageName: node
+  linkType: hard
+
+plugin-image-zoom@flexanalytics/plugin-image-zoom:
+  version: 0.0.0
+  resolution: "plugin-image-zoom@https://github.com/flexanalytics/plugin-image-zoom.git#commit=86f6f0b4f927ded94dcfdc18c0a9ee702ffd8d06"
+  dependencies:
+    medium-zoom: ^1.0.4
+  checksum: ff6997b073451775c82b83de175605cea958cae425792e2aec50bfe905170e9f798a5af53f674a032c2cc22d3efb6545dd80cb793e172927adb5716e0de09e90
   languageName: node
   linkType: hard
 
@@ -14114,7 +14149,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@npm:^4.6.2":
+"typescript@npm:^4.5.4, typescript@npm:^4.6.2":
   version: 4.6.2
   resolution: "typescript@npm:4.6.2"
   bin:
@@ -14134,7 +14169,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@patch:typescript@^4.6.2#~builtin<compat/typescript>":
+"typescript@patch:typescript@^4.5.4#~builtin<compat/typescript>, typescript@patch:typescript@^4.6.2#~builtin<compat/typescript>":
   version: 4.6.2
   resolution: "typescript@patch:typescript@npm%3A4.6.2#~builtin<compat/typescript>::version=4.6.2&hash=bda367"
   bin:
