@@ -1,22 +1,13 @@
-# iota-wiki-cli
+# IOTA Wiki CLI
 
 This utility requires [`yarn`](https://yarnpkg.com/) and [`git`](https://git-scm.com/) to be installed.
 
-# Release
-
-1. Ensure git commit signing is properly setup.
-2. Change the package version according [semantic versioning](https://semver.org/).
-3. Commit the version bump with `git commit -m "Bump version to v[VERSION]"`.
-4. Tag the commit with `git tag -a v[VERSION] -m "v[VERSION]"`.
-5. Push the commit including the tag with `git push --follow-tags`.
-6. Create a GitHub release using the tag above.
-
 <!-- toc -->
 
-- [iota-wiki-cli](#iota-wiki-cli)
-- [Release](#release)
+- [IOTA Wiki CLI](#iota-wiki-cli)
 - [Usage](#usage)
 - [Commands](#commands)
+- [Release](#release)
 <!-- tocstop -->
 
 # Usage
@@ -309,13 +300,14 @@ Start a development server to preview your content.
 
 ```
 USAGE
-  $ iota-wiki-cli start [SITEDIR] [-p <value>]
+  $ iota-wiki-cli start [SITEDIR] [--port <value>] [--open]
 
 ARGUMENTS
   SITEDIR  [default: .] the path to the module
 
 FLAGS
-  -p, --port=<value>  [default: 3000] the port of the dev server
+  --[no-]open
+  --port=<value>  [default: 3000] the port of the dev server
 
 DESCRIPTION
   Start a development server to preview your content.
@@ -324,3 +316,12 @@ DESCRIPTION
 _See code: [dist/commands/start.ts](https://github.com/iota-community/iota-wiki-cli/blob/v1.7.0/dist/commands/start.ts)_
 
 <!-- commandsstop -->
+
+# Release
+
+1. Ensure git commit signing is properly setup.
+2. Change the package version according [semantic versioning](https://semver.org/).
+3. Commit the version bump with `git commit -m "Bump version to v[VERSION]"`.
+4. Tag the commit with `git tag -a v[VERSION] -m "v[VERSION]"`.
+5. Push the commit including the tag with `git push --follow-tags`.
+6. Create a GitHub release using the tag above.
