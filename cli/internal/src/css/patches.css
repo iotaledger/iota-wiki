@@ -1,0 +1,88 @@
+:root {
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/*
+Patch to style scrollbars consistently
+*/
+* {
+  scrollbar-color: var(--ifm-scrollbar-thumb-background-color)
+    var(--ifm-scrollbar-track-background-color);
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--ifm-scrollbar-track-background-color);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--ifm-scrollbar-thumb-background-color);
+  border-radius: 12px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--ifm-scrollbar-thumb-hover-background-color);
+}
+
+/*
+Patch to avoid displaying a double header in imported DOCS
+*/
+.markdown > p > header > h1 {
+  display: none;
+}
+
+/*
+Patch to unify hr with border styling
+*/
+hr {
+  background-color: var(--ifm-hr-border-color);
+  border: none;
+  height: var(--ifm-hr-border-width);
+}
+
+/*
+Patch to use transformed font icons in dropdowns and expanded menus
+*/
+.dropdown > .navbar__link:after {
+  border: none;
+  content: none;
+  display: none;
+  height: 100%;
+  margin-left: auto;
+  position: absolute;
+  top: 0;
+  transform: none;
+}
+
+.menu__link--sublist:after {
+  background: none;
+  content: none;
+  display: none;
+  filter: none;
+  min-width: auto;
+  transform: none;
+}
+
+.menu__list-item--collapsed .menu__link--sublist:after {
+  transform: rotate(-90deg);
+}
+
+.theme-doc-toc-mobile button::after {
+  background: none;
+  content: none;
+  display: none;
+  filter: none;
+  min-width: auto;
+}
+
+.dropdown > .navbar__link:after,
+.menu__link--sublist:after,
+.theme-doc-toc-mobile button::after {
+  align-items: center;
+  display: inline-flex;
+  content: '';
+  justify-content: center;
+}

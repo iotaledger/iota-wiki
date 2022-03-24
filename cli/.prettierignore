@@ -1,4 +1,5 @@
 /dist
+/internal
 node_modules
 
 # Yarn
