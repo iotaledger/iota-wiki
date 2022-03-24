@@ -41,14 +41,5 @@ export default class Start extends Command {
         open ? '' : '--no-open'
       } --port ${port} --config ${internalConfig} ${siteDir}`,
     );
-
-    this.log(
-      '\nTODO:\n' +
-        '[x] Set WIKI_SITE_DIR to the passed siteDir.\n' +
-        '[ ] Find the module config file in the Wiki cli siteDir.\n' +
-        '[ ] Use the module config inside of the Wiki CLI internal config.\n' +
-        '[ ] Set the Docusaurs CLI config flag to the Wiki CLI internal config\n' +
-        '[x] Call docusaurus start.\n',
-    );
   }
 }
