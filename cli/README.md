@@ -51,7 +51,7 @@ USAGE
 - [`iota-wiki-cli plugins:uninstall PLUGIN...`](#iota-wiki-cli-pluginsuninstall-plugin-1)
 - [`iota-wiki-cli plugins:uninstall PLUGIN...`](#iota-wiki-cli-pluginsuninstall-plugin-2)
 - [`iota-wiki-cli plugins update`](#iota-wiki-cli-plugins-update)
-- [`iota-wiki-cli start`](#iota-wiki-cli-start)
+- [`iota-wiki-cli start [SITEDIR]`](#iota-wiki-cli-start-sitedir)
 
 ## `iota-wiki-cli help [COMMAND]`
 
@@ -303,16 +303,22 @@ DESCRIPTION
   Update installed plugins.
 ```
 
-## `iota-wiki-cli start`
+## `iota-wiki-cli start [SITEDIR]`
 
-Start a development server to view your content.
+Start a development server to preview your content.
 
 ```
 USAGE
-  $ iota-wiki-cli start
+  $ iota-wiki-cli start [SITEDIR] [-p <value>]
+
+ARGUMENTS
+  SITEDIR  [default: .] the path to the module
+
+FLAGS
+  -p, --port=<value>  [default: 3000] the port of the dev server
 
 DESCRIPTION
-  Start a development server to view your content.
+  Start a development server to preview your content.
 ```
 
 _See code: [dist/commands/start.ts](https://github.com/iota-community/iota-wiki-cli/blob/v1.7.0/dist/commands/start.ts)_

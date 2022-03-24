@@ -3,7 +3,7 @@ import { expect, test } from '@oclif/test';
 describe('start', () => {
   test
     .stdout()
-    .command(['start'])
+    .command(['start', '--port=3001', '--no-open', './test/module'])
     .it('starts a server correctly', (ctx) => {
       expect(ctx.stdout).to.contain(
         '[ ] Find the module config file in the Wiki cli siteDir.',
