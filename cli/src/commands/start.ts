@@ -35,14 +35,14 @@ export default class Start extends Command {
     const { port, open } = flags;
 
     await execute(
-      `yarn docusaurus start ${
+      `WIKI_SITE_DIR=${siteDir} yarn docusaurus start ${
         open ? '' : '--no-open'
       } --port ${port} ${siteDir}`,
     );
 
     this.log(
       '\nTODO:\n' +
-        '[ ] Set WIKI_SITE_DIR to the passed siteDir.\n' +
+        '[x] Set WIKI_SITE_DIR to the passed siteDir.\n' +
         '[ ] Find the module config file in the Wiki cli siteDir.\n' +
         '[ ] Use the module config inside of the Wiki CLI internal config.\n' +
         '[ ] Set the Docusaurs CLI config flag to the Wiki CLI internal config\n' +
