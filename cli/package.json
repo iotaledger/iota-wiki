@@ -8,63 +8,33 @@
   "main": "dist/index.js",
   "repository": "iota-community/iota-wiki-cli",
   "files": [
-    "/bin",
     "/dist",
-    "/internal",
-    "/npm-shrinkwrap.json",
-    "/oclif.manifest.json"
+    "/internal"
   ],
   "dependencies": {
     "@docusaurus/core": "^2.0.0-beta.17",
-    "@oclif/core": "^1",
-    "@oclif/plugin-help": "^5",
-    "@oclif/plugin-plugins": "^2.0.1",
     "@yarnpkg/shell": "^3.2.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
   },
   "devDependencies": {
-    "@oclif/test": "^2",
-    "@types/chai": "^4",
-    "@types/mocha": "^9.0.0",
     "@types/node": "^16.9.4",
     "@types/prettier": "^2",
     "@types/react": "^17",
     "@types/react-dom": "^17",
-    "chai": "^4",
     "eslint": "^7.32.0",
-    "eslint-config-oclif": "^4",
-    "eslint-config-oclif-typescript": "^1.0.2",
     "eslint-config-prettier": "^8.5.0",
-    "globby": "^11",
     "husky": ">=6",
     "lint-staged": ">=10",
-    "mocha": "^9",
-    "oclif": "^2",
     "pinst": ">=2",
     "prettier": "2.6.0",
-    "ts-node": "^10.2.1",
-    "tslib": "^2.3.1",
     "typescript": "^4.4.3"
   },
-  "oclif": {
-    "bin": "iota-wiki-cli",
-    "dirname": "iota-wiki-cli",
-    "commands": "./dist/commands",
-    "plugins": [
-      "@oclif/plugin-help",
-      "@oclif/plugin-plugins"
-    ],
-    "topicSeparator": " "
-  },
   "scripts": {
-    "build": "rm -rf dist && tsc -b",
+    "build": "tsc -b",
     "format": "prettier --write .",
-    "lint": "eslint --cache --fix .",
-    "postpack": "rm -f oclif.manifest.json",
-    "prepack": "yarn build && oclif manifest && oclif readme && prettier --write ./README.md",
-    "test": "mocha --forbid-only \"test/**/*.test.ts\"",
-    "version": "oclif readme && git add README.md",
+    "lint": "eslint --cache --fix src/**/*",
+    "prepack": "yarn build",
     "postinstall": "husky install",
     "prepublishOnly": "pinst --disable",
     "postpublish": "pinst --enable"
@@ -73,9 +43,6 @@
     "node": ">=12.0.0"
   },
   "bugs": "https://github.com/iota-community/iota-wiki-cli/issues",
-  "keywords": [
-    "oclif"
-  ],
   "types": "dist/index.d.ts",
   "packageManager": "yarn@3.2.0",
   "lint-staged": {
@@ -83,7 +50,6 @@
     "*.{js,jsx,ts,tsx,json,yml,md,mdx,css}": "prettier --write"
   },
   "workspaces": [
-    "internal",
-    "test/module"
+    "internal"
   ]
 }
