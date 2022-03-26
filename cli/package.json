@@ -2,7 +2,6 @@
   "name": "@iota-community/iota-wiki-cli",
   "version": "1.7.0",
   "author": "IOTA community",
-  "bin": "./bin/run",
   "homepage": "https://github.com/iota-community/iota-wiki-cli",
   "license": "MIT",
   "main": "dist/index.js",
@@ -16,14 +15,12 @@
     "@yarnpkg/shell": "^3.2.0",
     "clipanion": "^3.2.0-rc.10",
     "ink": "^3.2.0",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react": "^17.0.2"
   },
   "devDependencies": {
     "@types/node": "^16.9.4",
     "@types/prettier": "^2",
     "@types/react": "^17",
-    "@types/react-dom": "^17",
     "eslint": "^7.32.0",
     "eslint-config-prettier": "^8.5.0",
     "husky": ">=6",
