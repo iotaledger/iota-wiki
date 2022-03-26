@@ -7,18 +7,23 @@
   "main": "dist/index.js",
   "repository": "iota-community/iota-wiki-cli",
   "files": [
-    "/dist"
+    "/dist",
+    "/internal"
   ],
   "bin": "dist/index.js",
   "dependencies": {
+    "@docusaurus/core": "^2.0.0-beta.18",
+    "@yarnpkg/shell": "^3.2.0",
     "clipanion": "^3.2.0-rc.10",
     "ink": "^3.2.0",
-    "react": "^17.0.2"
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
   },
   "devDependencies": {
     "@types/node": "^16.9.4",
     "@types/prettier": "^2",
     "@types/react": "^17",
+    "@types/react-dom": "^17",
     "@typescript-eslint/eslint-plugin": "^5.16.0",
     "@typescript-eslint/parser": "^5.16.0",
     "eslint": "^7.32.0",
@@ -49,5 +54,9 @@
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": "eslint --cache --fix",
     "*.{js,jsx,ts,tsx,json,yml,md,mdx,css}": "prettier --write"
-  }
+  },
+  "workspaces": [
+    "internal",
+    "test/module"
+  ]
 }

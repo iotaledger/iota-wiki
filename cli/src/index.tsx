@@ -15,9 +15,10 @@ class Start extends Command {
   static paths = [[`start`]];
 
   config = Option.String('-c,--config', './docusaurus.config.js');
+  siteDir = Option.String({ required: false });
 
   async execute() {
-    render(<Components.Start config={this.config} />);
+    render(<Components.Start config={this.config} siteDir={this.siteDir} />);
   }
 }
 
