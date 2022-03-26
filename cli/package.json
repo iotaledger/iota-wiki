@@ -7,12 +7,10 @@
   "main": "dist/index.js",
   "repository": "iota-community/iota-wiki-cli",
   "files": [
-    "/dist",
-    "/internal"
+    "/dist"
   ],
+  "bin": "dist/index.js",
   "dependencies": {
-    "@docusaurus/core": "^2.0.0-beta.17",
-    "@yarnpkg/shell": "^3.2.0",
     "clipanion": "^3.2.0-rc.10",
     "ink": "^3.2.0",
     "react": "^17.0.2"
@@ -34,15 +32,16 @@
   },
   "scripts": {
     "build": "tsc -b",
+    "start": "yarn build && dist/index.js",
     "format": "prettier --write .",
-    "lint": "eslint --cache --fix src/**/*",
+    "lint": "eslint --cache --fix .",
     "prepack": "yarn build",
     "postinstall": "husky install",
     "prepublishOnly": "pinst --disable",
     "postpublish": "pinst --enable"
   },
   "engines": {
-    "node": ">=12.0.0"
+    "node": ">=14.0.0"
   },
   "bugs": "https://github.com/iota-community/iota-wiki-cli/issues",
   "types": "dist/index.d.ts",
@@ -50,8 +49,5 @@
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": "eslint --cache --fix",
     "*.{js,jsx,ts,tsx,json,yml,md,mdx,css}": "prettier --write"
-  },
-  "workspaces": [
-    "internal"
-  ]
+  }
 }
