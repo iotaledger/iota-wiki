@@ -1,12 +1,13 @@
 {
   "compilerOptions": {
-    "declaration": true,
-    "importHelpers": true,
-    "esModuleInterop": true,
     "module": "commonjs",
-    "outDir": "dist",
-    "rootDir": "src",
-    "target": "es2019"
+    "moduleResolution": "node",
+    "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true,
+    "jsx": "react",
+    "esModuleInterop": true,
+    "outDir": "dist"
   },
-  "include": ["src/**/*"]
+  "include": ["src"]
 }
