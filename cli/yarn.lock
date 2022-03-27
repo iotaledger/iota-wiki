@@ -1892,7 +1892,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@iota-community/iota-wiki-cli@workspace:.":
+"@iota-community/iota-wiki-cli@workspace:., @iota-community/iota-wiki-cli@workspace:^":
   version: 0.0.0-use.local
   resolution: "@iota-community/iota-wiki-cli@workspace:."
   dependencies:
@@ -7890,10 +7890,12 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "module@workspace:test/module"
   dependencies:
+    "@docusaurus/core": ^2.0.0-beta.17
     "@docusaurus/module-type-aliases": 2.0.0-beta.17
     "@docusaurus/plugin-content-blog": ^2.0.0-beta.17
     "@docusaurus/plugin-content-docs": ^2.0.0-beta.17
     "@docusaurus/plugin-content-pages": ^2.0.0-beta.17
+    "@iota-community/iota-wiki-cli": "workspace:^"
     "@mdx-js/react": ^1.6.22
     "@tsconfig/docusaurus": ^1.0.4
     clsx: ^1.1.1
