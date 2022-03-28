@@ -19,14 +19,6 @@ This is the implementation of the upcoming fully decentralized IOTA 2.0 protocol
 - [**DevNet 2.0 Wallet**](https://github.com/iotaledger/IOTA-2.0-DevNet-wallet/releases/tag/v0.7.0)
 - [**Features**](https://v2.iota.org/)
 
-## IOTA 1.5 Comnet
-
-Comnet is a 100% community-driven test network. It can be used as a test network for your IOTA 1.5 apps and to test the latest versions of Hornet or Bee and future IOTA 1.5 upgrades.
-
-- [**API**](https://comnet.tanglebay.com/api/v1/info)
-- [**Explorer**](https://explorer.tanglebay.com/comnet/)
-- [**Faucet**](https://comnet.tanglekit.de/)
-
 ## IOTA 1.5 DevNet
 
 The official IOTA 1.5 DevNet. In this DevNet, the coordinator and some public nodes are run by the IOTA Foundation. It can also be used to test apps for IOTA 1.5. The full documentation for the IOTA 1.5 DevNet can be found here:
