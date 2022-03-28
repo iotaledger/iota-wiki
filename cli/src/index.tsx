@@ -1,31 +1,19 @@
 #!/usr/bin/env node
 
-import React from 'react';
-import { render } from 'ink';
-import { Command, Option, runExit } from 'clipanion';
-import { execute as shell } from '@yarnpkg/shell';
-import Components from './components';
+import { Start } from './commands/start';
+import { Builtins, Cli } from 'clipanion';
+import { Setup } from './commands/setup';
 
-const internalConfig = require.resolve('../internal/docusaurus.config.js');
+const args = process.argv.slice(2);
 
-class Default extends Command {
-  async execute() {
-    render(<Components.Default />);
-  }
-}
+const cli = new Cli({
+  binaryLabel: `IOTA Wiki Cli`,
+  binaryName: `wiki-cli`,
+  binaryVersion: `0.1.0`,
+});
 
-class Start extends Command {
-  static paths = [[`start`]];
-
-  siteDir = Option.String({ required: false });
-
-  async execute() {
-    const siteDir = this.siteDir || '.';
-
-    await shell(
-      `WIKI_SITE_DIR=${siteDir} docusaurus start --config ${internalConfig} ${siteDir}`,
-    );
-  }
-}
-
-runExit([Default, Start]);
+cli.register(Builtins.HelpCommand);
+cli.register(Builtins.VersionCommand);
+cli.register(Start);
+cli.register(Setup);
+cli.runExit(args);
