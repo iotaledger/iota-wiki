@@ -7,15 +7,37 @@
   text-decoration: underline;
 }
 
-.filter-button {
+.filter {
   display: flex;
-  height: 100%;
+  align-items: stretch;
+  justify-content: space-between;
+}
+
+.filter__search {
+  flex-grow: 1;
+  max-width: 50%;
+}
+
+.filter__button {
+  display: flex;
   align-items: center;
-  margin-right: 0;
-  margin-left: auto;
   color: var(--ifm-font-color-base);
   background-color: var(--ifm-color-emphasis-200);
   border-color: var(--ifm-color-emphasis-200);
+}
+
+.filter__button-label {
+  margin-left: 1rem;
+}
+
+@media screen and (max-width: 966px) {
+  .filter__search {
+    max-width: none;
+  }
+
+  .filter__button-label {
+    display: none;
+  }
 }
 
 .react-select__control {
