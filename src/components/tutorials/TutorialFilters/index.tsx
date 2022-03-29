@@ -185,14 +185,14 @@ function TutorialFilters() {
 
   return (
     <section className='container margin-bottom--lg'>
-      <div className='filter'>
-        <SearchBar className='filter__search' />
+      <div className='tutorial-filter'>
+        <SearchBar className='tutorial-filter__search' />
         <button
-          className='button filter__button'
+          className='button tutorial-filter__toggle'
           onClick={() => setIsOpen(!isOpen)}
         >
           <span className='material-icons'>filter_list</span>
-          <span className='filter__button-label'>Filter</span>
+          <span className='tutorial-filter__toggle-label'>Filter</span>
         </button>
       </div>
       <Collapsible trigger='' triggerDisabled={true} open={isOpen}>

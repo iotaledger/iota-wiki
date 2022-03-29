@@ -7,18 +7,18 @@
   text-decoration: underline;
 }
 
-.filter {
+.tutorial-filter {
   display: flex;
   align-items: stretch;
   justify-content: space-between;
 }
 
-.filter__search {
+.tutorial-filter__search {
   flex-grow: 1;
   max-width: 50%;
 }
 
-.filter__button {
+.tutorial-filter__toggle {
   display: flex;
   align-items: center;
   color: var(--ifm-font-color-base);
@@ -26,16 +26,16 @@
   border-color: var(--ifm-color-emphasis-200);
 }
 
-.filter__button-label {
+.tutorial-filter__toggle-label {
   margin-left: 1rem;
 }
 
 @media screen and (max-width: 966px) {
-  .filter__search {
+  .tutorial-filter__search {
     max-width: none;
   }
 
-  .filter__button-label {
+  .tutorial-filter__toggle-label {
     display: none;
   }
 }
