@@ -184,7 +184,7 @@ function TutorialFilters() {
   }
 
   return (
-    <section className='container margin-top--l margin-bottom--lg'>
+    <section className='container margin-bottom--lg'>
       <div className='row'>
         <div className='col col--6'>
           <SearchBar />
