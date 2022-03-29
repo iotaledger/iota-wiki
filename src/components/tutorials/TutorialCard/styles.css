@@ -5,24 +5,45 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-.tutorial-card-image {
+.tutorial-card {
+  height: 100%;
+  color: inherit;
+}
+
+.tutorial-card:hover {
+  text-decoration: none;
+  color: inherit;
+}
+
+.tutorial-card__image-container {
+  display: flex;
+  align-items: start;
+  justify-content: center;
   overflow: hidden;
   height: 150px;
   border-bottom: 2px solid var(--ifm-color-emphasis-200);
 }
 
-.tutorial-card-header {
+.tutorial-card__image {
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+}
+
+.tutorial-card__header {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   margin-bottom: 12px;
 }
 
-.tutorial-card-title {
-  margin-bottom: 0;
-  flex: 1 1 auto;
+.tutorial-card__title {
+  padding: 0;
+  margin: 0;
+  vertical-align: center;
 }
 
-.tutorial-card-title a {
+.tutorial-card__title {
   text-decoration: none;
   background: linear-gradient(
       var(--ifm-color-primary),
@@ -32,45 +53,26 @@
   transition: background-size ease-out 200ms;
 }
 
-.tutorial-card-title a:not(:focus):hover {
+.tutorial-card__title--hover {
   background-size: 100% 1px;
 }
 
-.tutorial-card-title,
-.tutorial-card-header .svg-icon-favorite {
+.svg-icon-favorite {
   margin-right: 0.25rem;
-}
-
-.tutorial-card-header .svg-icon-favorite {
   color: var(--site-color-svg-icon-favorite);
 }
 
-.tutorial-card-src-btn {
-  margin-left: 6px;
+.tutorial-card__source-button {
   padding-left: 12px;
   padding-right: 12px;
-  border: none;
 }
 
-.tutorial-card-src-btn:focus-visible {
-  background-color: var(--ifm-color-secondary-dark);
-}
-
-html[data-theme='dark'] .tutorial-card-src-btn {
-  background-color: var(--ifm-color-emphasis-200) !important;
-  color: inherit;
-}
-
-html[data-theme='dark'] .tutorial-card-src-btn:hover {
-  background-color: var(--ifm-color-emphasis-300) !important;
-}
-
-.tutorial-card-body {
+.tutorial-card__body {
   font-size: smaller;
   line-height: 1.66;
 }
 
-.card-footer {
+.tutorial-card__footer {
   display: flex;
   flex-wrap: wrap;
 }
