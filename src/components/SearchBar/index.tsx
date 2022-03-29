@@ -2,6 +2,7 @@ import { useHistory, useLocation } from '@docusaurus/router';
 import React from 'react';
 import { useEffect, useState } from 'react';
 import { prepareUserState } from '../tutorials/TutorialFilters';
+import clsx from 'clsx';
 import './styles.css';
 
 const SearchNameQueryKey = 'name';
@@ -10,7 +11,11 @@ export function readSearchName(search: string) {
   return new URLSearchParams(search).get(SearchNameQueryKey);
 }
 
-function SearchBar() {
+interface SearchBarProps {
+  className?: string;
+}
+
+function SearchBar({ className }: SearchBarProps) {
   const history = useHistory();
   const location = useLocation();
   const [value, setValue] = useState<string | null>(null);
@@ -18,7 +23,7 @@ function SearchBar() {
     setValue(readSearchName(location.search));
   }, [location]);
   return (
-    <div className='search-container'>
+    <div className={clsx('search-container', className)}>
       <input
         className='search-container__input'
         id='searchbar'
