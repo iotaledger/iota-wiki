@@ -185,23 +185,19 @@ function TutorialFilters() {
 
   return (
     <section className='container margin-bottom--lg'>
-      <div className='row'>
-        <div className='col col--6'>
-          <SearchBar />
-        </div>
-        <div className='col col--2 col--offset-4'>
-          <button
-            className='button filter-button'
-            onClick={() => setIsOpen(!isOpen)}
-          >
-            <span className='material-icons margin-right--md'>filter_list</span>
-            Filter
-          </button>
-        </div>
+      <div className='filter'>
+        <SearchBar className='filter__search' />
+        <button
+          className='button filter__button'
+          onClick={() => setIsOpen(!isOpen)}
+        >
+          <span className='material-icons'>filter_list</span>
+          <span className='filter__button-label'>Filter</span>
+        </button>
       </div>
       <Collapsible trigger='' triggerDisabled={true} open={isOpen}>
         <div className='row'>
-          <div className='col col--3'>
+          <div className='col'>
             <h5>Type</h5>
             <Select
               placeholder='Type'
@@ -209,7 +205,7 @@ function TutorialFilters() {
               {...selectProps}
             />
           </div>
-          <div className='col col--3'>
+          <div className='col'>
             <h5>Topic</h5>
             <Select
               placeholder='Topic'
@@ -217,7 +213,7 @@ function TutorialFilters() {
               {...selectProps}
             />
           </div>
-          <div className='col col--3'>
+          <div className='col'>
             <h5>Frameworks</h5>
             <Select
               placeholder='Frameworks'
@@ -225,7 +221,7 @@ function TutorialFilters() {
               {...selectProps}
             />
           </div>
-          <div className='col col--3'>
+          <div className='col'>
             <h5>Languages</h5>
             <Select
               placeholder='Languages'
