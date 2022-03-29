@@ -5,9 +5,10 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import React, { memo } from 'react';
+import React, { memo, useState } from 'react';
 import Image from '@theme/IdealImage';
 import Link from '@docusaurus/Link';
+import clsx from 'clsx';
 
 import './styles.css';
 import FavoriteIcon from '@site/src/components/svgIcons/FavoriteIcon';
@@ -65,37 +66,54 @@ function TutorialCardTag({ tags }: { tags: TagType[] }) {
   );
 }
 
-const TutorialCard = memo(({ tutorial }: { tutorial: Tutorial }) => (
-  <li key={tutorial.title} className='card shadow--md'>
-    <div className='card__image tutorial-card-image'>
-      <Image img={tutorial.preview} alt={tutorial.title} />
-    </div>
-    <div className='card__body'>
-      <div className='tutorial-card-header'>
-        <h4 className='tutorial-card-title'>
-          <Link href={tutorial.website} className='tutorialCardLink'>
-            {tutorial.title}
-          </Link>
-        </h4>
-        {tutorial.tags.includes('favorite') && (
-          <FavoriteIcon svgClass='svg-icon-favorite' size='small' />
-        )}
-        {tutorial.source && (
-          <Link
-            href={tutorial.source}
-            className='button button--secondary button--sm tutorial-card-src-btn'
-          >
-            source
-          </Link>
-        )}
-      </div>
-      <p className='tutorial-card-body'>{tutorial.description}</p>
-    </div>
-    <ul className='card__footer card-footer'>
-      <TutorialCardTag tags={tutorial.tags} />
-    </ul>
-  </li>
-));
+const TutorialCard = memo(({ tutorial }: { tutorial: Tutorial }) => {
+  const [hovering, setHovering] = useState(false);
+
+  return (
+    <li
+      key={tutorial.title}
+      onMouseOver={() => setHovering(true)}
+      onMouseOut={() => setHovering(false)}
+    >
+      <Link href={tutorial.source} className='card shadow--md tutorial-card'>
+        <div className='card__image tutorial-card__image-container'>
+          <Image
+            className='tutorial-card__image'
+            img={tutorial.preview}
+            alt={tutorial.title}
+          />
+        </div>
+        <div className='card__body'>
+          <div className='tutorial-card__header'>
+            <h4
+              className={clsx(
+                'tutorial-card__title',
+                hovering && 'tutorial-card__title--hover',
+              )}
+            >
+              {tutorial.title}
+            </h4>
+            {tutorial.tags.includes('favorite') && (
+              <FavoriteIcon svgClass='svg-icon-favorite' size='small' />
+            )}
+            {tutorial.source && (
+              <Link
+                href={tutorial.source}
+                className='button button--secondary button--sm tutorial-card__source-button'
+              >
+                source
+              </Link>
+            )}
+          </div>
+          <p className='tutorial-card__body'>{tutorial.description}</p>
+        </div>
+        <ul className='card__footer tutorial-card__footer'>
+          <TutorialCardTag tags={tutorial.tags} />
+        </ul>
+      </Link>
+    </li>
+  );
+});
 TutorialCard.displayName = 'TutorialCard';
 
 export default TutorialCard;
