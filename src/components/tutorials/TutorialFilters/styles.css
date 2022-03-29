@@ -9,6 +9,7 @@
 
 .filter-button {
   display: flex;
+  height: 100%;
   align-items: center;
   margin-right: 0;
   margin-left: auto;
