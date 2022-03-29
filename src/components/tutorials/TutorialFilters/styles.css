@@ -7,15 +7,37 @@
   text-decoration: underline;
 }
 
-.filter-button {
+.tutorial-filter {
   display: flex;
-  height: 100%;
+  align-items: stretch;
+  justify-content: space-between;
+}
+
+.tutorial-filter__search {
+  flex-grow: 1;
+  max-width: 50%;
+}
+
+.tutorial-filter__toggle {
+  display: flex;
   align-items: center;
-  margin-right: 0;
-  margin-left: auto;
   color: var(--ifm-font-color-base);
   background-color: var(--ifm-color-emphasis-200);
   border-color: var(--ifm-color-emphasis-200);
+}
+
+.tutorial-filter__toggle-label {
+  margin-left: 1rem;
+}
+
+@media screen and (max-width: 966px) {
+  .tutorial-filter__search {
+    max-width: none;
+  }
+
+  .tutorial-filter__toggle-label {
+    display: none;
+  }
 }
 
 .react-select__control {
