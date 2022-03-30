@@ -1910,7 +1910,6 @@ __metadata:
     eslint-plugin-react: ^7.29.4
     husky: ">=6"
     ink: ^3.2.0
-    ink-form: ^1.0.1
     lint-staged: ">=10"
     pinst: ">=2"
     prettier: 2.6.0
@@ -2364,13 +2363,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/has-ansi@npm:^3.0.0":
-  version: 3.0.0
-  resolution: "@types/has-ansi@npm:3.0.0"
-  checksum: 0010f490d4a1532d5e1ffa5dbb753d3981b028fd10476cf7c3645d56ae94764e2f552337da0c81500801b6ef93a9f3ce08d968901345d4f73d0f63dc884b6291
-  languageName: node
-  linkType: hard
-
 "@types/hast@npm:^2.0.0":
   version: 2.3.4
   resolution: "@types/hast@npm:2.3.4"
@@ -2416,22 +2408,6 @@ __metadata:
   dependencies:
     "@types/node": "*"
   checksum: e009a2bfb50e90ca9b7c6e8f648f8464067271fd99116f881073fa6fa76dc8d0133181dd65e6614d5fb1220d671d67b0124aef7d97dc02d7e342ab143a47779d
-  languageName: node
-  linkType: hard
-
-"@types/lodash.isequal@npm:^4.5.5":
-  version: 4.5.5
-  resolution: "@types/lodash.isequal@npm:4.5.5"
-  dependencies:
-    "@types/lodash": "*"
-  checksum: 9dd22ceb5453a711e3ce6cd5a31d0ba8fe2263b3c989bc3b64e398933dbe7e9fd22a77a585ab7ee4f27d80a00845e15602b2a4a4b113f01291e2fd236a7707f7
-  languageName: node
-  linkType: hard
-
-"@types/lodash@npm:*":
-  version: 4.14.180
-  resolution: "@types/lodash@npm:4.14.180"
-  checksum: fc42ae3473695cac6e91553f832fef8eb51a31c1c0381cafa81b00dc3efe18e279786bdda77caf0b90a8340ba2ba7aa46ae6541d69870565f775d04c89128bc1
   languageName: node
   linkType: hard
 
@@ -3160,13 +3136,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ansi-regex@npm:^3.0.0":
-  version: 3.0.1
-  resolution: "ansi-regex@npm:3.0.1"
-  checksum: 09daf180c5f59af9850c7ac1bd7fda85ba596cc8cbeb210826e90755f06c818af86d9fa1e6e8322fab2c3b9e9b03f56c537b42241139f824dd75066a1e7257cc
-  languageName: node
-  linkType: hard
-
 "ansi-regex@npm:^5.0.1":
   version: 5.0.1
   resolution: "ansi-regex@npm:5.0.1"
@@ -3246,13 +3215,6 @@ __metadata:
   version: 2.0.1
   resolution: "argparse@npm:2.0.1"
   checksum: 83644b56493e89a254bae05702abf3a1101b4fa4d0ca31df1c9985275a5a5bd47b3c27b7fa0b71098d41114d8ca000e6ed90cad764b306f8a503665e4d517ced
-  languageName: node
-  linkType: hard
-
-"arr-rotate@npm:^1.0.0":
-  version: 1.0.0
-  resolution: "arr-rotate@npm:1.0.0"
-  checksum: f996e94a7b8325c23fe3d7bf95f4f1a5fd1baba34c6bcebb5a8bd0f9b955569293f4cc61f02b0a242380923fca235948e95f6dbf544a6f183207d80e8f2d442d
   languageName: node
   linkType: hard
 
@@ -5513,24 +5475,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"figures@npm:^2.0.0":
-  version: 2.0.0
-  resolution: "figures@npm:2.0.0"
-  dependencies:
-    escape-string-regexp: ^1.0.5
-  checksum: 081beb16ea57d1716f8447c694f637668322398b57017b20929376aaf5def9823b35245b734cdd87e4832dc96e9c6f46274833cada77bfe15e5f980fea1fd21f
-  languageName: node
-  linkType: hard
-
-"figures@npm:^3.2.0":
-  version: 3.2.0
-  resolution: "figures@npm:3.2.0"
-  dependencies:
-    escape-string-regexp: ^1.0.5
-  checksum: 85a6ad29e9aca80b49b817e7c89ecc4716ff14e3779d9835af554db91bac41c0f289c418923519392a1e582b4d10482ad282021330cd045bb7b80c84152f2a2b
-  languageName: node
-  linkType: hard
-
 "file-entry-cache@npm:^6.0.1":
   version: 6.0.1
   resolution: "file-entry-cache@npm:6.0.1"
@@ -6027,15 +5971,6 @@ __metadata:
   version: 2.0.1
   resolution: "handle-thing@npm:2.0.1"
   checksum: 68071f313062315cd9dce55710e9496873945f1dd425107007058fc1629f93002a7649fcc3e464281ce02c7e809a35f5925504ab8105d972cf649f1f47cb7d6c
-  languageName: node
-  linkType: hard
-
-"has-ansi@npm:3.0.0":
-  version: 3.0.0
-  resolution: "has-ansi@npm:3.0.0"
-  dependencies:
-    ansi-regex: ^3.0.0
-  checksum: d52ff546c982fb8646e6aa6a4e3741c123a29dcd0342db0e98cd17561356fc47fb03cc0cab9ad2000887facc39b8e7ce385089bdce548e6ff5463858ed5c12c1
   languageName: node
   linkType: hard
 
@@ -6590,78 +6525,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ink-form@npm:^1.0.1":
-  version: 1.0.1
-  resolution: "ink-form@npm:1.0.1"
-  dependencies:
-    ink: ^3.0.8
-    ink-multi-select: ^2.0.0
-    ink-quicksearch-input: ^1.0.0
-    ink-select-input: ^4.2.0
-    ink-text-input: ^4.0.1
-    react: ^17.0.1
-  peerDependencies:
-    ink: ^3.0.8
-    react: ^17.0.1
-  checksum: 3db7a95c7483b1625f197835654e3f629b8d507c634ed883cef53e437e2c9931d3987e76b99c12bb2924c61deb73cc39bd41f2633b6c1d57c287b7ed215ad266
-  languageName: node
-  linkType: hard
-
-"ink-multi-select@npm:^2.0.0":
-  version: 2.0.0
-  resolution: "ink-multi-select@npm:2.0.0"
-  dependencies:
-    arr-rotate: ^1.0.0
-    figures: ^2.0.0
-    lodash.isequal: ^4.5.0
-    prop-types: ^15.5.10
-  checksum: c28804980f7a6b1f7b86c02a264a5d10c0f9bc21090b8b2608c7e2a488b29e229327fc166d2e5e8898b131aa3cd1f40bc4e3e04e7774bd1824f898655b88356a
-  languageName: node
-  linkType: hard
-
-"ink-quicksearch-input@npm:^1.0.0":
-  version: 1.0.0
-  resolution: "ink-quicksearch-input@npm:1.0.0"
-  dependencies:
-    "@types/has-ansi": ^3.0.0
-    "@types/lodash.isequal": ^4.5.5
-    has-ansi: 3.0.0
-    keypress: ^0.2.1
-    lodash.isequal: 4.5.0
-  peerDependencies:
-    ink: 2.6.x
-  checksum: c52f87c89f13d5d50ed43265cbd50f9b072831ac0d18d6df9c20bd93f14eabc89e5a7a1eb8cbb78ef36c40f81ac4497783fdaa7b58f6060f5eade943808bb73a
-  languageName: node
-  linkType: hard
-
-"ink-select-input@npm:^4.2.0":
-  version: 4.2.1
-  resolution: "ink-select-input@npm:4.2.1"
-  dependencies:
-    arr-rotate: ^1.0.0
-    figures: ^3.2.0
-    lodash.isequal: ^4.5.0
-  peerDependencies:
-    ink: ^3.0.5
-    react: ^16.5.2 || ^17.0.0
-  checksum: f01546aec03f20cb077db8809457f494fd4bf69c9af0cd4eec939b380472e61a625676d720934278cab5c9930febe36048935d700c45d9a6ca908f8449b6ad8c
-  languageName: node
-  linkType: hard
-
-"ink-text-input@npm:^4.0.1":
-  version: 4.0.3
-  resolution: "ink-text-input@npm:4.0.3"
-  dependencies:
-    chalk: ^4.1.0
-    type-fest: ^0.15.1
-  peerDependencies:
-    ink: ^3.0.0-3
-    react: ^16.5.2 || ^17.0.0
-  checksum: 2d309ec8ca386010d467822e317389e3c60b764fd04091df063a45c31f43104fd9f4a4e71a928a2c3c3cca461a9b8a526e90439616760f0f3726507132abbac5
-  languageName: node
-  linkType: hard
-
-"ink@npm:^3.0.8, ink@npm:^3.2.0":
+"ink@npm:^3.2.0":
   version: 3.2.0
   resolution: "ink@npm:3.2.0"
   dependencies:
@@ -7309,13 +7173,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"keypress@npm:^0.2.1":
-  version: 0.2.1
-  resolution: "keypress@npm:0.2.1"
-  checksum: 8f643113fc64d4ab873c98e6b6da54de511c0b32ecefcaa4315b7466dde6c94cba0b9231421655c71b1878c7bc7c932eb75c19d0d67b6af15677778f37cd3e9e
-  languageName: node
-  linkType: hard
-
 "keyv@npm:^3.0.0":
   version: 3.1.0
   resolution: "keyv@npm:3.1.0"
@@ -7537,13 +7394,6 @@ __metadata:
   version: 4.5.0
   resolution: "lodash.foreach@npm:4.5.0"
   checksum: a940386b158ca0d62994db41fc16529eb8ae67138f29ced38e91f912cb5435d1b0ed34b18e6f7b9ddfc32ab676afc6dfec60d1e22633d8e3e4b33413402ab4ad
-  languageName: node
-  linkType: hard
-
-"lodash.isequal@npm:4.5.0, lodash.isequal@npm:^4.5.0":
-  version: 4.5.0
-  resolution: "lodash.isequal@npm:4.5.0"
-  checksum: da27515dc5230eb1140ba65ff8de3613649620e8656b19a6270afe4866b7bd461d9ba2ac8a48dcc57f7adac4ee80e1de9f965d89d4d81a0ad52bb3eec2609644
   languageName: node
   linkType: hard
 
@@ -9305,7 +9155,7 @@ plugin-image-zoom@flexanalytics/plugin-image-zoom:
   languageName: node
   linkType: hard
 
-"prop-types@npm:^15.5.10, prop-types@npm:^15.6.2, prop-types@npm:^15.7.2, prop-types@npm:^15.8.1":
+"prop-types@npm:^15.6.2, prop-types@npm:^15.7.2, prop-types@npm:^15.8.1":
   version: 15.8.1
   resolution: "prop-types@npm:15.8.1"
   dependencies:
@@ -11086,13 +10936,6 @@ plugin-image-zoom@flexanalytics/plugin-image-zoom:
   version: 0.12.0
   resolution: "type-fest@npm:0.12.0"
   checksum: 407d6c1a6fcc907f6124c37e977ba4966205014787a32a27579da6e47c3b1bd210b68cc1c7764d904c8aa55fb4efa6945586f9b4fae742c63ed026a4559da07d
-  languageName: node
-  linkType: hard
-
-"type-fest@npm:^0.15.1":
-  version: 0.15.1
-  resolution: "type-fest@npm:0.15.1"
-  checksum: a1a0cdbd7f802d9784324f185df055739e97424ecb60914e9025574a4bc07e4a063c152e4510ebf5989de8a263220de1f6b5cf1b05f0b333dbd5b21d9b4a271b
   languageName: node
   linkType: hard
 
