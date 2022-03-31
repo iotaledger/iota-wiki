@@ -58,7 +58,7 @@ module.exports = {
       videoPlaceholder: '/img/infographics/video-placeholder.png',
     },
     prism: {
-      additionalLanguages: ['toml', 'rust', 'vbnet', 'java', 'solidity'],
+      additionalLanguages: ['java', 'rust', 'solidity', 'toml'],
     },
     cards: [
       {
