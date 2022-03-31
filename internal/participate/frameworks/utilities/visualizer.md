@@ -21,12 +21,6 @@ Testnet used for further development of the current IOTA 1.5 Chrysalis Protocol.
 
 - **[Testnet Visualizer](https://explorer.iota.org/testnet/visualizer/)**
 
-## Comnet
-
-Comnet is a public community testnet of the current IOTA 1.5 Chrysalis Protocol. It is created and maintained only bu the community and used by community developers to test new feautures of their own applications.
-
-- **[Comnet Visualizer](https://explorer.tanglebay.com/comnet/visualizer/)**
-
 ## Legacy Mainnet
 
 This is the still active, but old Mainnet of the IOTA 1.0 Protocol implementation. The only transactions happening here are migrations of the tokens into the new IOTA 1.5 Maninnet of users that did not yet migrate their Tokens into the new network.
