@@ -57,6 +57,9 @@ module.exports = {
     imageSlider: {
       videoPlaceholder: '/img/infographics/video-placeholder.png',
     },
+    prism: {
+      additionalLanguages: ['toml', 'rust', 'vbnet', 'java', 'solidity'],
+    },
     cards: [
       {
         title: 'Learn',
