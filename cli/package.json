@@ -12,8 +12,8 @@
     "iota-wiki": "dist/index.js"
   },
   "scripts": {
-    "build": "tsc -b",
-    "start": "yarn build && yarn iota-wiki",
+    "build": "tsc --build",
+    "watch": "yarn build --watch",
     "format": "prettier --write .",
     "lint": "eslint --cache --fix .",
     "prepack": "yarn build",
