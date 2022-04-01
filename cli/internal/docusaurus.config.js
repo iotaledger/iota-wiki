@@ -2,7 +2,7 @@
 const path = require('path');
 const config = require(path.resolve(
   process.cwd(),
-  process.env.WIKI_SITE_DIR,
+  process.env.IOTA_WIKI_DIRECTORY,
   './docusaurus.config.js',
 ));
 

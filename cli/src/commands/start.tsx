@@ -4,19 +4,21 @@ import { execute as shell } from '@yarnpkg/shell';
 const internalConfig = require.resolve('../../internal/docusaurus.config.js');
 
 export class Start extends Command {
-  static paths = [[`start`]];
+  static paths = [[`start`], [`tutorial`, `start`]];
 
-  siteDir = Option.String({ required: false });
+  directory = Option.String({
+    required: false,
+  });
 
   static usage = Command.Usage({
-    description: `Start local wiki`,
+    description: `Preview the provided directory (the current working directory by default).`,
   });
 
   async execute() {
-    const siteDir = this.siteDir || '.';
+    const directory = this.directory || '.';
 
     await shell(
-      `WIKI_SITE_DIR=${siteDir} docusaurus start --config ${internalConfig} ${siteDir}`,
+      `IOTA_WIKI_DIRECTORY=${directory} docusaurus start --config ${internalConfig} ${directory}`,
     );
   }
 }
