@@ -28,6 +28,7 @@
     "clipanion": "^3.2.0-rc.10",
     "ink": "^3.2.0",
     "ink-multi-select": "^2.0.0",
+    "ink-select-input": "^4.2.1",
     "ink-spinner": "^4.0.3",
     "ink-text-input": "^4.0.3",
     "react": "^17.0.2",

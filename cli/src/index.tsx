@@ -1,8 +1,10 @@
 #!/usr/bin/env node
 
-import { Start } from './commands/start';
 import { Builtins, Cli } from 'clipanion';
+
+import { Start } from './commands/start';
 import { Setup } from './commands/tutorial/configure';
+import { Default } from './commands/default';
 
 const args = process.argv.slice(2);
 
@@ -16,4 +18,5 @@ cli.register(Builtins.HelpCommand);
 cli.register(Builtins.VersionCommand);
 cli.register(Start);
 cli.register(Setup);
+cli.register(Default);
 cli.runExit(args);

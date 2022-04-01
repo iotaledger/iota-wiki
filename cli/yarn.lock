@@ -1912,6 +1912,7 @@ __metadata:
     husky: ">=6"
     ink: ^3.2.0
     ink-multi-select: ^2.0.0
+    ink-select-input: ^4.2.1
     ink-spinner: ^4.0.3
     ink-text-input: ^4.0.3
     lint-staged: ">=10"
@@ -5511,6 +5512,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"figures@npm:^3.2.0":
+  version: 3.2.0
+  resolution: "figures@npm:3.2.0"
+  dependencies:
+    escape-string-regexp: ^1.0.5
+  checksum: 85a6ad29e9aca80b49b817e7c89ecc4716ff14e3779d9835af554db91bac41c0f289c418923519392a1e582b4d10482ad282021330cd045bb7b80c84152f2a2b
+  languageName: node
+  linkType: hard
+
 "file-entry-cache@npm:^6.0.1":
   version: 6.0.1
   resolution: "file-entry-cache@npm:6.0.1"
@@ -6570,6 +6580,20 @@ __metadata:
     lodash.isequal: ^4.5.0
     prop-types: ^15.5.10
   checksum: c28804980f7a6b1f7b86c02a264a5d10c0f9bc21090b8b2608c7e2a488b29e229327fc166d2e5e8898b131aa3cd1f40bc4e3e04e7774bd1824f898655b88356a
+  languageName: node
+  linkType: hard
+
+"ink-select-input@npm:^4.2.1":
+  version: 4.2.1
+  resolution: "ink-select-input@npm:4.2.1"
+  dependencies:
+    arr-rotate: ^1.0.0
+    figures: ^3.2.0
+    lodash.isequal: ^4.5.0
+  peerDependencies:
+    ink: ^3.0.5
+    react: ^16.5.2 || ^17.0.0
+  checksum: f01546aec03f20cb077db8809457f494fd4bf69c9af0cd4eec939b380472e61a625676d720934278cab5c9930febe36048935d700c45d9a6ca908f8449b6ad8c
   languageName: node
   linkType: hard
 
