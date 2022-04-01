@@ -6,6 +6,7 @@ import MultiSelect, { ListedItem } from 'ink-multi-select';
 import { writeConfig, readCommandLine } from '../../utils';
 import { readdirSync } from 'fs';
 import axios from 'axios';
+import Spinner from 'ink-spinner';
 
 interface InputComponentProps {
   label: string;
@@ -64,11 +65,7 @@ const SelectComponent: FC<SelectComponentProps> = (props) => {
             .join(', ')}
         </Text>
       </Text>
-      <Box
-        flexDirection='column'
-        display={isFocused ? 'flex' : 'none'}
-        marginLeft={1}
-      >
+      <Box display={isFocused ? 'flex' : 'none'}>
         <MultiSelect
           focus={isFocused}
           items={props.items}
@@ -76,9 +73,6 @@ const SelectComponent: FC<SelectComponentProps> = (props) => {
           onSelect={onSelect}
           onUnselect={onUnselect}
         />
-        <Text dimColor={true} italic={true}>
-          Press SPACE to select
-        </Text>
       </Box>
     </Box>
   );
@@ -113,13 +107,17 @@ function getFirstPage() {
   return files[0].replace(/\.[^/.]+$/, '');
 }
 
-interface SetupComponentProps {
-  sourceUrl: string;
-  tags: Record<string, Array<ListedItem>>;
-}
+type TagCategory = Array<ListedItem>;
+type TagCategoryRecord = Record<string, TagCategory>;
 
-const SetupComponent: FC<SetupComponentProps> = (props) => {
+const SetupComponent: FC = () => {
   const { focusNext } = useFocusManager();
+  const [sourceUrl, setSourceUrl] = useState(undefined as string | undefined);
+  const [tagCategoryRecord, setTagCategoryRecord] = useState(
+    undefined as TagCategoryRecord | undefined,
+  );
+  const [loaded, setLoaded] = useState(false);
+
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
   const [preview, setPreview] = useState('');
@@ -143,8 +141,42 @@ const SetupComponent: FC<SetupComponentProps> = (props) => {
     );
   }, [typeTags, topicTags, frameworkTags, languageTags]);
 
+  const getSourceUrl = async () => {
+    const sourceUrl = await readCommandLine(
+      `git config --get remote.origin.url`,
+    );
+
+    setSourceUrl(sourceUrl);
+  };
+
+  const getTagCategoryRecord = async () => {
+    const {
+      data: { typeOptions, topicOptions, frameworkOptions, languageOptions },
+    } = await axios.get(
+      'https://raw.githubusercontent.com/iota-community/iota-wiki/feat/tuto-section/tutorials.json',
+    );
+
+    const tagCategoryRecord = {
+      typeOptions,
+      topicOptions,
+      frameworkOptions,
+      languageOptions,
+    };
+
+    setTagCategoryRecord(tagCategoryRecord);
+  };
+
+  useEffect(() => {
+    setLoaded(sourceUrl !== undefined && tagCategoryRecord !== undefined);
+  }, [sourceUrl, tagCategoryRecord]);
+
   useEffect(() => {
     focusNext();
+  }, [loaded]);
+
+  useEffect(() => {
+    getSourceUrl();
+    getTagCategoryRecord();
   }, []);
 
   useInput((_, key) => {
@@ -154,45 +186,58 @@ const SetupComponent: FC<SetupComponentProps> = (props) => {
 
   return (
     <Box flexDirection='column'>
-      <InputComponent label='Title' value={title} onChange={setTitle} />
-      <InputComponent
-        label='Description'
-        value={description}
-        onChange={setDescription}
-      />
-      <InputComponent
-        label='Preview image path'
-        value={preview}
-        onChange={setPreview}
-      />
-      <SelectComponent
-        label='Type Tags'
-        items={props.tags.typeOptions}
-        onChange={setTypeTags}
-      />
-      <SelectComponent
-        label='Topic Tags'
-        items={props.tags.topicOptions}
-        onChange={setTopicTags}
-      />
-      <SelectComponent
-        label='Framework Tags'
-        items={props.tags.frameworkOptions}
-        onChange={setFrameworkTags}
-      />
-      <SelectComponent
-        label='Language Tags'
-        items={props.tags.languageOptions}
-        onChange={setLanguageTags}
-      />
-      <SubmitComponent
-        title={title}
-        description={description}
-        preview={preview}
-        tags={tags}
-        sourceUrl={props.sourceUrl}
-        firstPage={firstPage}
-      />
+      <Text>Configure the tutorial using the options below.</Text>
+      <Box flexDirection='column' padding={1}>
+        <Text>Use ENTER, TAB and SHIFT+TAB to move up or down.</Text>
+        <Text>Use SPACE to select items.</Text>
+      </Box>
+      {loaded ? (
+        <>
+          <InputComponent label='Title' value={title} onChange={setTitle} />
+          <InputComponent
+            label='Description'
+            value={description}
+            onChange={setDescription}
+          />
+          <InputComponent
+            label='Preview image path'
+            value={preview}
+            onChange={setPreview}
+          />
+          <SelectComponent
+            label='Type Tags'
+            items={tagCategoryRecord.typeOptions}
+            onChange={setTypeTags}
+          />
+          <SelectComponent
+            label='Topic Tags'
+            items={tagCategoryRecord.topicOptions}
+            onChange={setTopicTags}
+          />
+          <SelectComponent
+            label='Framework Tags'
+            items={tagCategoryRecord.frameworkOptions}
+            onChange={setFrameworkTags}
+          />
+          <SelectComponent
+            label='Language Tags'
+            items={tagCategoryRecord.languageOptions}
+            onChange={setLanguageTags}
+          />
+          <SubmitComponent
+            title={title}
+            description={description}
+            preview={preview}
+            tags={tags}
+            sourceUrl={sourceUrl}
+            firstPage={firstPage}
+          />
+        </>
+      ) : (
+        <Text color={'cyan'}>
+          <Spinner type='dots' /> Loading data...
+        </Text>
+      )}
     </Box>
   );
 };
@@ -205,23 +250,6 @@ export class Setup extends Command {
   });
 
   async execute() {
-    const sourceUrl = await readCommandLine(
-      `git config --get remote.origin.url`,
-    );
-
-    const {
-      data: { typeOptions, topicOptions, frameworkOptions, languageOptions },
-    } = await axios.get(
-      'https://raw.githubusercontent.com/iota-community/iota-wiki/feat/tuto-section/tutorials.json',
-    );
-
-    const tags = {
-      typeOptions,
-      topicOptions,
-      frameworkOptions,
-      languageOptions,
-    };
-
-    render(<SetupComponent sourceUrl={sourceUrl} tags={tags} />);
+    render(<SetupComponent />);
   }
 }
