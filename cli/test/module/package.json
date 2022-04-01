@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "iota-wiki-cli start"
+    "start": "iota-wiki start"
   },
   "dependencies": {
     "@docusaurus/plugin-content-blog": "^2.0.0-beta.17",
