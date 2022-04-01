@@ -1,4 +1,6 @@
 import { writeFileSync } from 'fs';
+import { execute } from '@yarnpkg/shell';
+import { PassThrough } from 'stream';
 
 const createConfig = (data, id) =>
   `const path = require('path');
@@ -37,5 +39,17 @@ export function writeConfig(data) {
     .replace(/([a-z])([A-Z])/g, '$1-$2')
     .replace(/\s+/g, '-')
     .toLowerCase();
-  writeFileSync('documentation/docusaurus.config.js', createConfig(data, id));
+  writeFileSync('docusaurus.config.js', createConfig(data, id));
+}
+
+export async function readCommandLine(command: string) {
+  const chunks: Array<Buffer> = [];
+  const stdout = new PassThrough();
+  stdout.on(`data`, (chunk) => chunks.push(chunk));
+
+  await execute(command, [], { stdout });
+
+  return Buffer.concat(chunks)
+    .toString()
+    .replace(/[\r\n]+$/, ``);
 }

@@ -3,9 +3,8 @@ import { Command } from 'clipanion';
 import { render, Box, Text, useFocus, useFocusManager, useInput } from 'ink';
 import TextInput from 'ink-text-input';
 import MultiSelect, { ListedItem } from 'ink-multi-select';
-import { writeConfig } from '../utils';
+import { writeConfig, readCommandLine } from '../utils';
 import { readdirSync } from 'fs';
-import { exec } from 'shelljs';
 
 // TODO use actual list from Wiki
 const typeOptions = [
@@ -206,11 +205,15 @@ const SubmitComponent: FC<SubmitComponentProps> = (props) => {
 
 function getFirstPage() {
   // TODO First check if a sidebar with valid content exist, else:
-  const files = readdirSync('documentation/docs');
+  const files = readdirSync('docs');
   return files[0].replace(/\.[^/.]+$/, '');
 }
 
-const SetupComponent: FC = () => {
+interface SetupComponentProps {
+  sourceUrl: string;
+}
+
+const SetupComponent: FC<SetupComponentProps> = (props) => {
   const { focusNext } = useFocusManager();
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
@@ -220,12 +223,6 @@ const SetupComponent: FC = () => {
   const [frameworkTags, setFrameworkTags] = useState([]);
   const [languageTags, setLanguageTags] = useState([]);
   const [tags, setTags] = useState([]);
-  const [sourceUrl] = useState(
-    exec('git config --get remote.origin.url', { silent: true }).replace(
-      '\n',
-      '',
-    ),
-  );
   const [firstPage] = useState(getFirstPage());
 
   const getValues = (items) => items.map((item) => item.value);
@@ -288,7 +285,7 @@ const SetupComponent: FC = () => {
         description={description}
         preview={preview}
         tags={tags}
-        sourceUrl={sourceUrl}
+        sourceUrl={props.sourceUrl}
         firstPage={firstPage}
       />
     </Box>
@@ -303,6 +300,10 @@ export class Setup extends Command {
   });
 
   async execute() {
-    render(<SetupComponent />);
+    const sourceUrl = await readCommandLine(
+      `git config --get remote.origin.url`,
+    );
+
+    render(<SetupComponent sourceUrl={sourceUrl} />);
   }
 }
