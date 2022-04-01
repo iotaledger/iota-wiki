@@ -5,103 +5,7 @@ import TextInput from 'ink-text-input';
 import MultiSelect, { ListedItem } from 'ink-multi-select';
 import { writeConfig, readCommandLine } from '../../utils';
 import { readdirSync } from 'fs';
-
-// TODO use actual list from Wiki
-const typeOptions = [
-  {
-    label: 'Text',
-    value: 'text',
-  },
-  {
-    label: 'Video',
-    value: 'video',
-  },
-];
-
-const topicOptions = [
-  {
-    value: 'favorite',
-    label: 'Favorite',
-  },
-  {
-    value: 'gettingstarted',
-    label: 'Getting Started',
-  },
-  {
-    value: 'integrationservices',
-    label: 'Integration Services',
-  },
-  {
-    value: 'livecoding',
-    label: 'Live Coding',
-  },
-  {
-    value: 'nft',
-    label: 'NFT',
-  },
-  {
-    value: 'supply_chain',
-    label: 'Supply Chain',
-  },
-];
-
-const frameworkOptions = [
-  {
-    value: 'client',
-    label: 'Client',
-  },
-  {
-    value: 'identity',
-    label: 'Identity',
-  },
-  {
-    value: 'iscp',
-    label: 'Smart Contracts',
-  },
-  {
-    value: 'streams',
-    label: 'Streams',
-  },
-  {
-    value: 'stronghold',
-    label: 'Stronghold',
-  },
-  {
-    value: 'wallet',
-    label: 'Wallet',
-  },
-];
-
-const languageOptions = [
-  {
-    value: 'c',
-    label: 'C',
-  },
-  {
-    value: 'go',
-    label: 'Go',
-  },
-  {
-    value: 'java',
-    label: 'Java',
-  },
-  {
-    value: 'node_js',
-    label: 'Node.js',
-  },
-  {
-    value: 'python',
-    label: 'Python',
-  },
-  {
-    value: 'rust',
-    label: 'Rust',
-  },
-  {
-    value: 'wasm',
-    label: 'Wasm',
-  },
-];
+import axios from 'axios';
 
 interface InputComponentProps {
   label: string;
@@ -211,6 +115,7 @@ function getFirstPage() {
 
 interface SetupComponentProps {
   sourceUrl: string;
+  tags: Record<string, Array<ListedItem>>;
 }
 
 const SetupComponent: FC<SetupComponentProps> = (props) => {
@@ -262,22 +167,22 @@ const SetupComponent: FC<SetupComponentProps> = (props) => {
       />
       <SelectComponent
         label='Type Tags'
-        items={typeOptions}
+        items={props.tags.typeOptions}
         onChange={setTypeTags}
       />
       <SelectComponent
         label='Topic Tags'
-        items={topicOptions}
+        items={props.tags.topicOptions}
         onChange={setTopicTags}
       />
       <SelectComponent
         label='Framework Tags'
-        items={frameworkOptions}
+        items={props.tags.frameworkOptions}
         onChange={setFrameworkTags}
       />
       <SelectComponent
         label='Language Tags'
-        items={languageOptions}
+        items={props.tags.languageOptions}
         onChange={setLanguageTags}
       />
       <SubmitComponent
@@ -304,6 +209,19 @@ export class Setup extends Command {
       `git config --get remote.origin.url`,
     );
 
-    render(<SetupComponent sourceUrl={sourceUrl} />);
+    const {
+      data: { typeOptions, topicOptions, frameworkOptions, languageOptions },
+    } = await axios.get(
+      'https://raw.githubusercontent.com/iota-community/iota-wiki/feat/tuto-section/tutorials.json',
+    );
+
+    const tags = {
+      typeOptions,
+      topicOptions,
+      frameworkOptions,
+      languageOptions,
+    };
+
+    render(<SetupComponent sourceUrl={sourceUrl} tags={tags} />);
   }
 }
