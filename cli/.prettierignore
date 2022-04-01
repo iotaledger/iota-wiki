@@ -1,6 +1,6 @@
 /dist
 /internal
-/test/module
+/test/*
 node_modules
 
 # Yarn

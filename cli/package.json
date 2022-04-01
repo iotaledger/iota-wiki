@@ -53,7 +53,7 @@
   ],
   "workspaces": [
     "internal",
-    "test/module"
+    "test/*"
   ],
   "types": "dist/index.d.ts",
   "lint-staged": {

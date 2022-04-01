@@ -10966,6 +10966,24 @@ plugin-image-zoom@flexanalytics/plugin-image-zoom:
   languageName: node
   linkType: hard
 
+"tutorial@workspace:test/tutorial":
+  version: 0.0.0-use.local
+  resolution: "tutorial@workspace:test/tutorial"
+  dependencies:
+    "@docusaurus/core": ^2.0.0-beta.17
+    "@docusaurus/module-type-aliases": 2.0.0-beta.17
+    "@docusaurus/plugin-content-docs": ^2.0.0-beta.17
+    "@iota-community/iota-wiki-cli": "workspace:^"
+    "@mdx-js/react": ^1.6.22
+    "@tsconfig/docusaurus": ^1.0.4
+    typescript: ^4.6.2
+  peerDependencies:
+    "@docusaurus/core": ^2.0.0-beta.17
+    react: ^17.0.1
+    react-dom: ^17.0.1
+  languageName: unknown
+  linkType: soft
+
 "typanion@npm:^3.3.1":
   version: 3.7.1
   resolution: "typanion@npm:3.7.1"
@@ -11544,7 +11562,44 @@ plugin-image-zoom@flexanalytics/plugin-image-zoom:
   languageName: node
   linkType: hard
 
-"webpack@npm:^5.69.1, webpack@npm:^5.70.0":
+"webpack@npm:^5.69.1":
+  version: 5.71.0
+  resolution: "webpack@npm:5.71.0"
+  dependencies:
+    "@types/eslint-scope": ^3.7.3
+    "@types/estree": ^0.0.51
+    "@webassemblyjs/ast": 1.11.1
+    "@webassemblyjs/wasm-edit": 1.11.1
+    "@webassemblyjs/wasm-parser": 1.11.1
+    acorn: ^8.4.1
+    acorn-import-assertions: ^1.7.6
+    browserslist: ^4.14.5
+    chrome-trace-event: ^1.0.2
+    enhanced-resolve: ^5.9.2
+    es-module-lexer: ^0.9.0
+    eslint-scope: 5.1.1
+    events: ^3.2.0
+    glob-to-regexp: ^0.4.1
+    graceful-fs: ^4.2.9
+    json-parse-better-errors: ^1.0.2
+    loader-runner: ^4.2.0
+    mime-types: ^2.1.27
+    neo-async: ^2.6.2
+    schema-utils: ^3.1.0
+    tapable: ^2.1.1
+    terser-webpack-plugin: ^5.1.3
+    watchpack: ^2.3.1
+    webpack-sources: ^3.2.3
+  peerDependenciesMeta:
+    webpack-cli:
+      optional: true
+  bin:
+    webpack: bin/webpack.js
+  checksum: 84b273a15180d45dafe4fc4a3ccccba2f72210f327a1af39713b3ef78148768afb0e18fa0cddaea4af5dd54ace199fbbdfcef9aec8da7e9c248f8b1b7cc413e1
+  languageName: node
+  linkType: hard
+
+"webpack@npm:^5.70.0":
   version: 5.70.0
   resolution: "webpack@npm:5.70.0"
   dependencies:
