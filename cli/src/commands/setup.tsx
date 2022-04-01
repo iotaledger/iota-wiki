@@ -296,10 +296,10 @@ const SetupComponent: FC = () => {
 };
 
 export class Setup extends Command {
-  static paths = [[`setup`]];
+  static paths = [[`tutorial`, `configure`]];
 
   static usage = Command.Usage({
-    description: `Setup tutorial repos`,
+    description: `Configure the tutorial settings to properly list it on the IOTA Wiki.`,
   });
 
   async execute() {
