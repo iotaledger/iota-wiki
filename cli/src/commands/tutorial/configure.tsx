@@ -3,7 +3,7 @@ import { Command } from 'clipanion';
 import { render, Box, Text, useFocus, useFocusManager, useInput } from 'ink';
 import TextInput from 'ink-text-input';
 import MultiSelect, { ListedItem } from 'ink-multi-select';
-import { writeConfig, readCommandLine } from '../utils';
+import { writeConfig, readCommandLine } from '../../utils';
 import { readdirSync } from 'fs';
 
 // TODO use actual list from Wiki

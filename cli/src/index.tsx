@@ -2,7 +2,7 @@
 
 import { Start } from './commands/start';
 import { Builtins, Cli } from 'clipanion';
-import { Setup } from './commands/setup';
+import { Setup } from './commands/tutorial/configure';
 
 const args = process.argv.slice(2);
 
