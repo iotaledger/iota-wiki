@@ -1,7 +1,6 @@
 import ExecutionEnvironment from '@docusaurus/ExecutionEnvironment';
 import { usePluralForm } from '@docusaurus/theme-common';
 import { useHistory, useLocation } from '@docusaurus/router';
-import { TagType, Tutorial } from '@site/src/data/tutorials';
 import React, { useState, useEffect, useMemo } from 'react';
 import { useCallback } from 'react';
 import SearchBar, { readSearchName } from '../../SearchBar';
@@ -14,6 +13,7 @@ import './styles.css';
 
 import config from '@site/tutorials.json';
 import Collapsible from 'react-collapsible';
+import { tager, Tutorial } from '..';
 
 type UserState = {
   scrollTopPosition: number;
@@ -22,8 +22,8 @@ type UserState = {
 
 const TagQueryStringKey = 'tags';
 
-function readSearchTags(search: string): TagType[] {
-  return new URLSearchParams(search).getAll(TagQueryStringKey) as TagType[];
+function readSearchTags(search: string): string[] {
+  return new URLSearchParams(search).getAll(TagQueryStringKey) as string[];
 }
 
 function restoreUserState(userState: UserState | null) {
@@ -38,7 +38,7 @@ function restoreUserState(userState: UserState | null) {
 
 function filterTutorials(
   tutorials: Tutorial[],
-  selectedTags: TagType[],
+  selectedTags: string[],
   searchName: string | null,
 ) {
   if (searchName) {
@@ -64,7 +64,7 @@ function useSiteCountPlural() {
     selectMessage(sitesCount, '1 result|' + sitesCount + ' results');
 }
 
-function getItems(actionMeta: ActionMeta<any>): TagType[] {
+function getItems(actionMeta: ActionMeta<any>): string[] {
   const items = [];
   switch (actionMeta.action) {
     case 'select-option':
@@ -102,7 +102,7 @@ function toggleListItem<T>(list: T[], newItems: T[]): T[] {
   return newList;
 }
 
-function replaceSearchTags(search: string, newTags: TagType[]) {
+function replaceSearchTags(search: string, newTags: string[]) {
   const searchParams = new URLSearchParams(search);
   searchParams.delete(TagQueryStringKey);
   newTags.forEach((tag) => searchParams.append(TagQueryStringKey, tag));
@@ -123,7 +123,7 @@ export function prepareUserState(): UserState | undefined {
 export function useFilteredTutorials() {
   const location = useLocation<UserState>();
   // On SSR / first mount (hydration) no tag is selected
-  const [selectedTags, setSelectedTags] = useState<TagType[]>([]);
+  const [selectedTags, setSelectedTags] = useState<string[]>([]);
   const [searchName, setSearchName] = useState<string | null>(null);
   // Sync tags from QS to state (delayed on purpose to avoid SSR/Client
   // hydration mismatch)
@@ -153,6 +153,8 @@ function TutorialFilters() {
   const history = useHistory();
   const filteredTutorials = useFilteredTutorials();
   const siteCountPlural = useSiteCountPlural();
+
+  console.log(tager);
 
   const [isOpen, setIsOpen] = useState(false);
 
