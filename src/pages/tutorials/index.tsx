@@ -3,7 +3,6 @@ import React from 'react';
 import Layout from '@theme/Layout';
 
 import './styles.css';
-import config from '@site/tutorials.json';
 import TutorialFilters from '@site/src/components/tutorials/TutorialFilters';
 import TutorialCards from '@site/src/components/tutorials/TutorialCards';
 
@@ -21,7 +20,7 @@ function TutorialHeader() {
 
 function Tutorials(): JSX.Element {
   return (
-    <Layout title={config.title} description={config.description}>
+    <Layout title='Tutorials'>
       <main className='margin-vert--lg'>
         <TutorialHeader />
         <TutorialFilters />

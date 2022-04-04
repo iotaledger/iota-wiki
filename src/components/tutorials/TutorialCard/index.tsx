@@ -14,14 +14,11 @@ import './styles.css';
 import FavoriteIcon from '@site/src/components/svgIcons/FavoriteIcon';
 import Tooltip from '../../tutorials/TutorialTooltip';
 import {
-  Tags,
-  TagList,
-  type TagType,
-  type Tutorial,
   type Tag,
 } from '@site/src/data/tutorials';
 import { sortBy } from '@site/src/utils/jsUtils';
 import { useHistory } from '@docusaurus/router';
+import { TagList, Tags, Tutorial } from '..';
 
 interface Props extends Tag {
   color: string;
@@ -39,18 +36,18 @@ const TagComp = React.forwardRef<HTMLLIElement, Props>(
 );
 TagComp.displayName = 'TagComponent';
 
-function TutorialCardTag({ tags }: { tags: TagType[] }) {
-  const tagObjects = tags.map((tag) => ({ tag, ...Tags[tag] }));
+function TutorialCardTag({ tags }: { tags: string[] }) {
+  const tagObjects = Tags.filter(({ label, value }) => tags.includes(value));
 
   // Keep same order for all tags
   const tagObjectsSorted = sortBy(tagObjects, (tagObject) =>
-    TagList.indexOf(tagObject.tag),
+    TagList.indexOf(tagObject.value),
   );
 
   return (
     <>
       {tagObjectsSorted.map((tagObject, index) => {
-        const id = `tutorial_card_tag_${tagObject.tag}`;
+        const id = `tutorial_card_tag_${tagObject.value}`;
 
         return (
           <Tooltip
