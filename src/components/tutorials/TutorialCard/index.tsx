@@ -21,6 +21,7 @@ import {
   type Tag,
 } from '@site/src/data/tutorials';
 import { sortBy } from '@site/src/utils/jsUtils';
+import { useHistory } from '@docusaurus/router';
 
 interface Props extends Tag {
   color: string;
@@ -67,7 +68,13 @@ function TutorialCardTag({ tags }: { tags: TagType[] }) {
 }
 
 const TutorialCard = memo(({ tutorial }: { tutorial: Tutorial }) => {
+  const history = useHistory();
   const [hovering, setHovering] = useState(false);
+
+  const handleClick = (e) => {
+    e.preventDefault();
+    history.push(tutorial.website);
+  };
 
   return (
     <li
@@ -75,7 +82,7 @@ const TutorialCard = memo(({ tutorial }: { tutorial: Tutorial }) => {
       onMouseOver={() => setHovering(true)}
       onMouseOut={() => setHovering(false)}
     >
-      <Link href={tutorial.source} className='card shadow--md tutorial-card'>
+      <div onClick={handleClick} className='card shadow--md tutorial-card'>
         <div className='card__image tutorial-card__image-container'>
           <Image
             className='tutorial-card__image'
@@ -110,7 +117,7 @@ const TutorialCard = memo(({ tutorial }: { tutorial: Tutorial }) => {
         <ul className='card__footer tutorial-card__footer'>
           <TutorialCardTag tags={tutorial.tags} />
         </ul>
-      </Link>
+      </div>
     </li>
   );
 });
