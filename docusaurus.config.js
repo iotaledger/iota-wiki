@@ -325,38 +325,38 @@ module.exports = {
       ],
       logo: {
         alt: 'IOTA Logo',
-        src: 'img/iota_logo.svg',
-        href: 'https://www.iota.org',
+        src: 'img/logo.svg',
+        href: 'https://www.showcase.docker.com',
       },
-      copyright: `© ${new Date().getFullYear()} IOTA Wiki. Built with Docusaurus.`,
+      copyright: `© ${new Date().getFullYear()} Docker Showcase. Built with Docusaurus.`,
     },
     socials: [
       {
-        url: 'https://www.youtube.com/c/iotafoundation',
+        url: 'https://www.youtube.com/c/dockercommunity',
         backgroundColor: 'var(--ifm-color-gray-900)',
       },
       {
-        url: 'https://www.github.com/iotaledger/',
+        url: 'https://www.github.com/docker/',
         backgroundColor: '#2C3850',
       },
       {
-        url: 'https://discord.iota.org/',
+        url: 'https://discord.docker.org/',
         backgroundColor: '#4B576F',
       },
       {
-        url: 'https://www.twitter.com/iota/',
+        url: 'https://www.twitter.com/docker/',
         backgroundColor: '#6A768E',
       },
       {
-        url: 'https://www.reddit.com/r/iota/',
+        url: 'https://www.reddit.com/r/docker/',
         backgroundColor: '#7D89A1',
       },
       {
-        url: 'https://www.linkedin.com/company/iotafoundation/',
+        url: 'https://www.linkedin.com/company/dockerinc/',
         backgroundColor: '#8995AD',
       },
       {
-        url: 'https://www.instagram.com/iotafoundation/',
+        url: 'https://www.instagram.com/dockerinc/',
         backgroundColor: '#99A5BD',
       },
     ],
