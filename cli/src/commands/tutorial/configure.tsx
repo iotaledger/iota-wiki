@@ -107,39 +107,30 @@ function getFirstPage() {
   return files[0].replace(/\.[^/.]+$/, '');
 }
 
-type TagCategory = Array<ListedItem>;
-type TagCategoryRecord = Record<string, TagCategory>;
+export interface Tag {
+  label: string;
+  value: string;
+  description: string;
+  color: string;
+}
+
+type TagCategories = Map<string, Array<Tag>>;
 
 const SetupComponent: FC = () => {
   const { focusNext } = useFocusManager();
-  const [sourceUrl, setSourceUrl] = useState(undefined as string | undefined);
-  const [tagCategoryRecord, setTagCategoryRecord] = useState(
-    undefined as TagCategoryRecord | undefined,
+  const [sourceUrl, setSourceUrl] = useState('');
+  const [tagCategories, setTagCategories] = useState(
+    new Map() as TagCategories,
   );
   const [loaded, setLoaded] = useState(false);
 
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
   const [preview, setPreview] = useState('');
-  const [typeTags, setTypeTags] = useState([]);
-  const [topicTags, setTopicTags] = useState([]);
-  const [frameworkTags, setFrameworkTags] = useState([]);
-  const [languageTags, setLanguageTags] = useState([]);
-  const [tags, setTags] = useState([]);
+  const [tagsByCategory, setTagsByCategory] = useState(
+    new Map() as TagCategories,
+  );
   const [firstPage] = useState(getFirstPage());
-
-  const getValues = (items) => items.map((item) => item.value);
-
-  useEffect(() => {
-    setTags(
-      [
-        ...getValues(typeTags),
-        ...getValues(topicTags),
-        ...getValues(frameworkTags),
-        ...getValues(languageTags),
-      ].sort(),
-    );
-  }, [typeTags, topicTags, frameworkTags, languageTags]);
 
   const getSourceUrl = async () => {
     const sourceUrl = await readCommandLine(
@@ -149,26 +140,17 @@ const SetupComponent: FC = () => {
     setSourceUrl(sourceUrl);
   };
 
-  const getTagCategoryRecord = async () => {
-    const {
-      data: { typeOptions, topicOptions, frameworkOptions, languageOptions },
-    } = await axios.get(
+  const getTagCategories = async () => {
+    const { data } = await axios.get<Record<string, Array<Tag>>>(
       'https://raw.githubusercontent.com/iota-community/iota-wiki/feat/tuto-section/tutorials.json',
     );
 
-    const tagCategoryRecord = {
-      typeOptions,
-      topicOptions,
-      frameworkOptions,
-      languageOptions,
-    };
-
-    setTagCategoryRecord(tagCategoryRecord);
+    setTagCategories(new Map(Object.entries(data)));
   };
 
   useEffect(() => {
-    setLoaded(sourceUrl !== undefined && tagCategoryRecord !== undefined);
-  }, [sourceUrl, tagCategoryRecord]);
+    setLoaded(sourceUrl !== '' && tagCategories.size > 0);
+  }, [sourceUrl, tagCategories]);
 
   useEffect(() => {
     focusNext();
@@ -176,13 +158,18 @@ const SetupComponent: FC = () => {
 
   useEffect(() => {
     getSourceUrl();
-    getTagCategoryRecord();
+    getTagCategories();
   }, []);
 
   useInput((_, key) => {
     if (key.escape) process.exit();
     if (key.return) focusNext();
   });
+
+  const onChangeTags = (category: string) => (newCategoryTags: Array<Tag>) => {
+    tagsByCategory.set(category, newCategoryTags);
+    setTagsByCategory(tagsByCategory);
+  };
 
   return (
     <Box flexDirection='column'>
@@ -204,31 +191,21 @@ const SetupComponent: FC = () => {
             value={preview}
             onChange={setPreview}
           />
-          <SelectComponent
-            label='Type Tags'
-            items={tagCategoryRecord.typeOptions}
-            onChange={setTypeTags}
-          />
-          <SelectComponent
-            label='Topic Tags'
-            items={tagCategoryRecord.topicOptions}
-            onChange={setTopicTags}
-          />
-          <SelectComponent
-            label='Framework Tags'
-            items={tagCategoryRecord.frameworkOptions}
-            onChange={setFrameworkTags}
-          />
-          <SelectComponent
-            label='Language Tags'
-            items={tagCategoryRecord.languageOptions}
-            onChange={setLanguageTags}
-          />
+          {Array.from(tagCategories?.entries()).map(([category, tags]) => (
+            <SelectComponent
+              label={`${category} tags`}
+              items={tags}
+              onChange={onChangeTags(category)}
+              key={category}
+            />
+          ))}
           <SubmitComponent
             title={title}
             description={description}
             preview={preview}
-            tags={tags}
+            tags={Array.from(tagsByCategory.values())
+              .flat()
+              .map((tag) => tag.value)}
             sourceUrl={sourceUrl}
             firstPage={firstPage}
           />
