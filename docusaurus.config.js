@@ -332,7 +332,7 @@ module.exports = {
     },
     socials: [
       {
-        url: 'https://www.youtube.com/c/dockercommunity',
+        url: 'https://www.youtube.com/channel/UC76AVf2JkrwjxNKMuPpscHQ',
         backgroundColor: 'var(--ifm-color-gray-900)',
       },
       {
