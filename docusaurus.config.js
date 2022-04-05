@@ -2,16 +2,16 @@
 
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
-  title: 'IOTA Wiki',
-  tagline: 'The complete reference for IOTA',
-  url: 'https://wiki.iota.org',
+  title: 'Docker Awesome-Showcase',
+  tagline: 'Built for Community, by Community',
+  url: 'https://showcase.docker.com',
   baseUrl: '/',
   onBrokenLinks: 'log',
   onBrokenMarkdownLinks: 'log',
   favicon: 'img/favicon.ico',
   trailingSlash: false,
-  organizationName: 'iota-community', // Usually your GitHub org/user name.
-  projectName: 'iota-wiki', // Usually your repo name.
+  organizationName: 'ajeetraina', // Usually your GitHub org/user name.
+  projectName: 'docker-showcase', // Usually your repo name.
   stylesheets: [
     'https://fonts.googleapis.com/css?family=Material+Icons',
     {
@@ -26,7 +26,7 @@ module.exports = {
     announcementBar: {
       id: 'assembly',
       content:
-        'Would you like to stake your tokens? <a target="_blank" href="https://assembly.sc">Read more</a> about Assembly, the upcoming permissionless Smart Contract network.',
+        'Submit your app and get a chance to win Docker T-shirt <a target="_blank" href="https://stores.kotisdesign.com/docker">Click Here</a>',
       backgroundColor: '#da7ad7',
       textColor: '#000000',
       isCloseable: true,
@@ -62,44 +62,44 @@ module.exports = {
     },
     cards: [
       {
-        title: 'Learn',
-        image: 'img/learn.svg',
-        link: 'learn/about-iota/an-introduction-to-iota',
+        title: 'Mask Detection system using Python',
+        image: 'img/mask_detection.png',
+        link: 'python/mask-detection/',
         description:
-          'Learn about IOTA, the Tangle, its features, industry applications, network and more.',
+          'Learn how to build a mask detection system on IoT using Python and Docker.',
       },
       {
-        title: 'Participate',
-        image: 'img/participate.svg',
-        link: 'participate/support-the-network/about-nodes',
+        title: 'Clone Hackernews using NodeJS',
+        image: 'img/hackernewss.png',
+        link: 'nodejs/clone-hackernews',
         description:
-          'Join the network and start using solutions built on top of the Tangle.',
+          'Learn how to clone hackernews using NodeJS and Docker.',
       },
       {
-        title: 'Build',
+        title: 'Building Todo-list app using Python',
         image: 'img/build.svg',
-        link: 'build/welcome',
+        link: 'python/todo-list-app',
         description:
-          'Access documentation and guides to build with IOTA in Rust and other languages.',
+          'Build a todo-list app using Python and Docker Desktop.',
       },
-    ],
+     ],
     navbar: {
       hideOnScroll: true,
       logo: {
-        alt: 'IOTA Wiki Logo',
+        alt: 'Awesome-Showcase',
         src: 'img/logo.svg',
         srcDark: 'img/logo_dark.svg',
       },
       items: [
         {
           label: 'Learn',
-          to: 'learn/about-iota/an-introduction-to-iota',
+          to: 'learn/about-dockerdesktop/an-introduction-to-docker-desktop',
           activeBaseRegex: '^/learn/.*',
         },
         {
-          label: 'Participate',
-          to: 'participate/support-the-network/about-nodes',
-          activeBaseRegex: '^/participate/.*',
+          label: 'Collaborate',
+          to: 'collaborate/getting-started',
+          activeBaseRegex: '^/collaborate/.*',
         },
         {
           label: 'Build',
@@ -119,7 +119,7 @@ module.exports = {
               items: [
                 {
                   label: 'Getting Started',
-                  sublabel: 'IOTA development basics',
+                  sublabel: 'Docker Desktop',
                   to: 'build/welcome',
                   icon: '\ue902',
                   activeBaseRegex: '^/(build|blueprints)/.*',
@@ -127,31 +127,31 @@ module.exports = {
               ],
             },
             {
-              label: 'Chrysalis (IOTA 1.5)',
+              label: 'Programming Languages',
               items: [
                 {
-                  label: 'Chrysalis Docs',
+                  label: 'Build using Python',
                   sublabel: 'Mainnet documentation',
                   to: 'chrysalis-docs/welcome',
                   icon: '\ue901',
                   activeBaseRegex: '^/chrysalis-docs.*',
                 },
                 {
-                  label: 'Bee Node',
+                  label: 'Build using NodeJS',
                   sublabel: 'IOTA node written in Rust',
                   to: 'bee/welcome',
                   icon: '\ue900',
                   activeBaseRegex: '^/bee/.*',
                 },
                 {
-                  label: 'Hornet Node',
-                  sublabel: 'IOTA node written in Go',
+                  label: 'Build using React.js',
+                  sublabel: 'app written in React.js',
                   to: 'hornet/welcome',
                   icon: '\ue904',
                   activeBaseRegex: '^/hornet/.*',
                 },
                 {
-                  label: 'Chronicle Permanode',
+                  label: 'Build using Java',
                   sublabel: 'IOTA permanode',
                   to: 'chronicle.rs/welcome',
                   icon: '\ue90c',
@@ -160,17 +160,17 @@ module.exports = {
               ],
             },
             {
-              label: 'Coordicide (IOTA 2.0)',
+              label: 'Verticals',
               items: [
                 {
-                  label: 'Coordicide Specs',
+                  label: 'Banking',
                   sublabel: 'Decentralizing IOTA',
                   to: 'IOTA-2.0-Research-Specifications/Preface',
                   icon: '\ue906',
                   activeBaseRegex: 'IOTA-2.0-Research-Specifications/.*',
                 },
                 {
-                  label: 'GoShimmer Node',
+                  label: 'Retails',
                   sublabel: 'IOTA 2.0 node',
                   to: 'goshimmer/welcome',
                   icon: '\ue903',
@@ -179,38 +179,38 @@ module.exports = {
               ],
             },
             {
-              label: 'Libraries',
+              label: 'Buid on IoT',
               items: [
                 {
-                  label: 'Client',
-                  sublabel: 'Interact with the IOTA network',
+                  label: 'Using NVIDIA Jetson Nano',
+                  sublabel: 'Run Docker on Jetson Nano',
                   to: 'iota.rs/welcome',
                   icon: '\ue907',
                   activeBaseRegex: '^/iota.rs/.*',
                 },
                 {
-                  label: 'Wallet',
-                  sublabel: 'Build IOTA wallets',
+                  label: 'Using Raspberry Pi',
+                  sublabel: 'Build microservices on Raspberry Pi',
                   to: 'wallet.rs/welcome',
                   icon: '\ue90a',
                   activeBaseRegex: '^/wallet.rs/.*',
                 },
                 {
-                  label: 'Stronghold',
-                  sublabel: 'Handle secrets securely',
+                  label: 'Using NVIDIA Xavier',
+                  sublabel: 'Build Docker on Xavier',
                   to: 'stronghold.rs/welcome',
                   icon: '\ue909',
                   activeBaseRegex: '^/stronghold.rs/.*',
                 },
                 {
-                  label: 'Identity',
-                  sublabel: 'Identity framework',
+                  label: 'Using Jetson Nano 4GB',
+                  sublabel: 'Build app on Nano 4GB',
                   to: 'identity.rs/introduction',
                   icon: '\ue905',
                   activeBaseRegex: '^/identity.rs/.*',
                 },
                 {
-                  label: 'Streams',
+                  label: 'Using Zero Pi',
                   sublabel: 'Share data securely',
                   to: 'streams/welcome',
                   icon: '\ue908',
@@ -219,11 +219,11 @@ module.exports = {
               ],
             },
             {
-              label: 'Smart Contracts',
+              label: 'Build on Pi Cluster',
               items: [
                 {
-                  label: 'Wasp Node',
-                  sublabel: 'Smart contract node',
+                  label: 'Run Docker on Pi Cluster',
+                  sublabel: 'Run Docker Swarm on Pi Cluster',
                   to: 'smart-contracts/overview',
                   icon: '\ue90b',
                   activeBaseRegex: '^/smart-contracts/.*',
@@ -231,21 +231,21 @@ module.exports = {
               ],
             },
             {
-              label: 'Integrations',
+              label: 'Docker Compose',
               items: [
                 {
-                  label: 'Streams and Identity',
-                  sublabel: 'Integrate IOTA seamlessly',
-                  to: 'integration-services/welcome',
+                  label: 'Awesome Compose',
+                  sublabel: 'Start building your app',
+                  to: 'awesome-compose/start-building',
                   icon: '\ue90d',
-                  activeBaseRegex: '^/integration-services/.*',
+                  activeBaseRegex: '^/awesome-compose/.*',
                 },
               ],
             },
           ],
         },
         { to: '/blog', label: 'Community Blog', position: 'right' },
-        { to: '/team', label: 'Team', position: 'right' },
+        { to: '/contributors', label: 'Contributors', position: 'right' },
       ],
     },
     footer: {
@@ -254,32 +254,20 @@ module.exports = {
           title: 'LEARN',
           items: [
             {
-              label: 'About IOTA',
-              to: 'learn/about-iota/an-introduction-to-iota',
+              label: 'About Docker Desktop',
+              to: 'learn/about-docker-desktop/an-introduction-to-docker-desktop',
             },
             {
-              label: 'IOTA Token',
-              to: 'learn/iota-token/buying-iota',
+              label: 'Dev Environment',
+              to: 'learn/dev-environment/getting-started',
             },
             {
-              label: 'Wallets',
-              to: 'learn/wallets/what-is-a-wallet',
+              label: 'Docker Extensions',
+              to: 'learn/extensions/what-is-docker-extensions',
             },
             {
-              label: 'Networks',
-              to: 'learn/networks/iota-1.5-chrysalis',
-            },
-            {
-              label: 'Glossary',
-              to: 'learn/glossary',
-            },
-            {
-              label: 'Research',
-              to: 'learn/research/research-outline',
-            },
-            {
-              label: 'Future of IOTA',
-              to: 'learn/future/future-of-iota',
+              label: 'Docker Desktop for Linux',
+              to: 'learn/docker-desktop-for-linux/getting-started',
             },
           ],
         },
@@ -287,28 +275,12 @@ module.exports = {
           title: 'PARTICIPATE',
           items: [
             {
-              label: 'Support the network',
-              to: 'participate/support-the-network/about-nodes',
+              label: 'awesome-compose',
+              to: 'participate/contribute-to-awesome-compose/getting-started',
             },
             {
               label: 'The Community',
               to: 'participate/the-community/discord',
-            },
-            {
-              label: 'Partnerships',
-              href: 'https://www.iota.org/solutions/partnerships',
-            },
-            {
-              label: 'Funding',
-              to: 'participate/funding/edf-funding',
-            },
-            {
-              label: 'Use Cases',
-              to: 'participate/use-cases/industry-applications',
-            },
-            {
-              label: 'Frameworks',
-              to: 'participate/frameworks/introduction',
             },
           ],
         },
@@ -320,21 +292,13 @@ module.exports = {
               to: 'build/welcome',
             },
             {
-              label: 'Fundamentals',
-              to: 'build/fundamentals/cryptography',
-            },
-            {
-              label: 'Exchange Integration',
-              to: 'build/exchange-integration/exchange-integration-guide',
-            },
-            {
               label: 'Tutorials',
               to: 'build/tutorials/twitch',
             },
           ],
         },
         {
-          title: 'WIKI',
+          title: 'Docker Awesome-Showcase',
           items: [
             {
               label: 'Team',
@@ -342,15 +306,7 @@ module.exports = {
             },
             {
               label: 'Github',
-              href: 'https://github.com/iota-community/iota-wiki',
-            },
-            {
-              label: 'Editor Github',
-              href: 'https://github.com/jlvandenhout/docusaurus-plugin-docs-editor',
-            },
-            {
-              label: 'Docusaurus',
-              href: 'https://docusaurus.io',
+              href: 'https://github.com/docker/showcase',
             },
             {
               label: 'Blog',
@@ -361,12 +317,8 @@ module.exports = {
               to: 'participate/contribute-to-wiki/welcome',
             },
             {
-              label: 'Impressum',
-              to: 'https://www.iota.org/impressum',
-            },
-            {
               label: 'Privacy Policy',
-              to: 'https://www.iota.org/privacy-policy',
+              to: 'https://www.docker.com/privacy-policy',
             },
           ],
         },
