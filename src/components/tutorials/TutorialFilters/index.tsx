@@ -11,9 +11,8 @@ import { usePluginData } from '@docusaurus/useGlobalData';
 
 import './styles.css';
 
-import config from '@site/tutorials.json';
 import Collapsible from 'react-collapsible';
-import { tager, Tutorial } from '..';
+import { TagCategories, Tutorial } from '..';
 
 type UserState = {
   scrollTopPosition: number;
@@ -154,8 +153,6 @@ function TutorialFilters() {
   const filteredTutorials = useFilteredTutorials();
   const siteCountPlural = useSiteCountPlural();
 
-  console.log(tager);
-
   const [isOpen, setIsOpen] = useState(false);
 
   const changeTags = useCallback(
@@ -199,38 +196,12 @@ function TutorialFilters() {
       </div>
       <Collapsible trigger='' triggerDisabled={true} open={isOpen}>
         <div className='row'>
-          <div className='col'>
-            <h5>Type</h5>
-            <Select
-              placeholder='Type'
-              options={config.typeOptions}
-              {...selectProps}
-            />
-          </div>
-          <div className='col'>
-            <h5>Topic</h5>
-            <Select
-              placeholder='Topic'
-              options={config.topicOptions}
-              {...selectProps}
-            />
-          </div>
-          <div className='col'>
-            <h5>Frameworks</h5>
-            <Select
-              placeholder='Frameworks'
-              options={config.frameworkOptions}
-              {...selectProps}
-            />
-          </div>
-          <div className='col'>
-            <h5>Languages</h5>
-            <Select
-              placeholder='Languages'
-              options={config.languageOptions}
-              {...selectProps}
-            />
-          </div>
+          {Array.from(TagCategories.entries()).map(([category, tags]) => (
+            <div className='col' key={category}>
+              <h5>{category}</h5>
+              <Select placeholder={category} options={tags} {...selectProps} />
+            </div>
+          ))}
         </div>
       </Collapsible>
       <div className='row margin-vert--lg'>
@@ -241,7 +212,7 @@ function TutorialFilters() {
           <span>+</span>
           <a
             className='tutorial-link__anchor'
-            href={config.edit_url}
+            href='https://github.com/iota-wiki/tutorial-template'
             target='_blank'
             rel='noreferrer'
           >

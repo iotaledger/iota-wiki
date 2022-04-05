@@ -13,35 +13,24 @@ import clsx from 'clsx';
 import './styles.css';
 import FavoriteIcon from '@site/src/components/svgIcons/FavoriteIcon';
 import Tooltip from '../../tutorials/TutorialTooltip';
-import {
-  type Tag,
-} from '@site/src/data/tutorials';
 import { sortBy } from '@site/src/utils/jsUtils';
 import { useHistory } from '@docusaurus/router';
-import { TagList, Tags, Tutorial } from '..';
+import { Tag, TagValues, Tags, Tutorial } from '..';
 
-interface Props extends Tag {
-  color: string;
-  label: string;
-  description: string;
-}
-
-const TagComp = React.forwardRef<HTMLLIElement, Props>(
-  ({ label, color, description }, ref) => (
-    <li ref={ref} className='tag' title={description}>
-      <span className='text-label'>{label.toLowerCase()}</span>
-      <span className='color-label' style={{ backgroundColor: color }} />
-    </li>
-  ),
-);
+const TagComp = React.forwardRef<HTMLLIElement, Tag>((tag, ref) => (
+  <li ref={ref} className='tag' title={tag.description}>
+    <span className='text-label'>{tag.label.toLowerCase()}</span>
+    <span className='color-label' style={{ backgroundColor: tag.color }} />
+  </li>
+));
 TagComp.displayName = 'TagComponent';
 
 function TutorialCardTag({ tags }: { tags: string[] }) {
-  const tagObjects = Tags.filter(({ label, value }) => tags.includes(value));
+  const tagObjects = Tags.filter(({ value }) => tags.includes(value));
 
   // Keep same order for all tags
   const tagObjectsSorted = sortBy(tagObjects, (tagObject) =>
-    TagList.indexOf(tagObject.value),
+    TagValues.indexOf(tagObject.value),
   );
 
   return (

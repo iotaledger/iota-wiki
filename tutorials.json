@@ -1,5 +1,5 @@
 {
-  "typeOptions": [
+  "Type": [
     {
       "value": "text",
       "label": "Text Tutorial",
@@ -13,7 +13,7 @@
       "color": "#010067"
     }
   ],
-  "topicOptions": [
+  "Topic": [
     {
       "value": "favorite",
       "label": "Favorite",
@@ -51,7 +51,7 @@
       "color": "#00ff00"
     }
   ],
-  "frameworkOptions": [
+  "Framework": [
     {
       "value": "client",
       "label": "Client",
@@ -89,7 +89,7 @@
       "color": "#620e00"
     }
   ],
-  "languageOptions": [
+  "Language": [
     {
       "value": "c",
       "label": "C",
