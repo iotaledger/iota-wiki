@@ -38,17 +38,3 @@ The role of users is simple. They buy, sell, and trade the currency native to th
 But there is a problem for the user here. The target difficulty of mining blocks is designed to force new blocks to be mined at a relatively constant rate. And the blocks themselves usually have a fixed size which in turn fixes a limit on the number of transactions that can be included per block. If there are more transactions waiting to be included in a block, the miners will usually select transactions that include payment (a "tip") to whomever mines the block the transaction is included in. The higher the fee, the sooner it is selected.
 
 No solution has been proposed yet that can get miners on blockchain to adequately secure the system but doesn't make users pay for it in some way.
-
-## IOTA and the DAG
-
-To do. Users and miners are one and the same on a DAG (setting aside outsourced POW) and the POW itself is many orders of magnitude less difficult. Random tip selection ensures a fair and equal chance for any transaction to be the next one added to the DAG . . .
-
----
-
-**need to add a footer section for further content - (three cards)**
-
-## Useful Links
-
-- [**a link**](https://linkgoes.here/) - A description for the link
-- [**a link**](https://linkgoes.here/) - A description for the link
-- [**a link**](https://linkgoes.here/) - A description for the link

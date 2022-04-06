@@ -57,6 +57,9 @@ module.exports = {
     imageSlider: {
       videoPlaceholder: '/img/infographics/video-placeholder.png',
     },
+    prism: {
+      additionalLanguages: ['java', 'rust', 'solidity', 'toml'],
+    },
     cards: [
       {
         title: 'Learn',
@@ -403,10 +406,6 @@ module.exports = {
       {
         url: 'https://www.instagram.com/iotafoundation/',
         backgroundColor: '#99A5BD',
-      },
-      {
-        url: 'https://www.facebook.com/TheIOTAFoundation/',
-        backgroundColor: '#BAC6DE',
       },
     ],
     colorMode: {
