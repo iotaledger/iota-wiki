@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkiota_wiki=self.webpackChunkiota_wiki||[]).push([[80743],{77456:function(t){t.exports=JSON.parse('{"allTagsPath":"/blog/tags","name":"Introduction","count":1,"permalink":"/blog/tags/introduction"}')}}]);

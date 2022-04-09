@@ -7,6 +7,7 @@
         <lastBuildDate>Sat, 01 Jan 2022 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
+        <language>en</language>
         <item>
             <title><![CDATA[Finality—Part 1: Two Generals]]></title>
             <link>https://wiki.iota.org/blog/Finality—Part 1: Two Generals</link>
