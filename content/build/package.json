@@ -1,5 +1,6 @@
 {
     "workspaces": [
-        "*/*/documentation"
+        "*/*/documentation",
+        "*/documentation"
     ]
 }
