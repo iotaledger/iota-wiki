@@ -110,8 +110,9 @@ module.exports = {
             '5 1 3 2',
             '5 1 3 2',
             '. 1 3 2',
-            '. 1 3 2',
-            '. 1 3 2',
+            '. 1 3 6',
+            '. 1 3 6',
+            '. . . 6',
           ],
           items_: [
             {
@@ -239,6 +240,18 @@ module.exports = {
                   to: 'integration-services/welcome',
                   icon: '\ue90d',
                   activeBaseRegex: '^/integration-services/.*',
+                },
+              ],
+            },
+            {
+              label: 'Stardust',
+              items: [
+                {
+                  label: 'Stardust Docs',
+                  sublabel: 'Staging Node',
+                  to: 'stardust-docs/welcome',
+                  icon: '\ue90e',
+                  activeBaseRegex: '^/stardust-docs/.*',
                 },
               ],
             },
