@@ -1454,7 +1454,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@docusaurus/core@npm:2.0.0-beta.18, @docusaurus/core@npm:^2.0.0-beta.17, @docusaurus/core@npm:^2.0.0-beta.18":
+"@docusaurus/core@npm:2.0.0-beta.18, @docusaurus/core@npm:^2.0.0-beta.17, @docusaurus/core@npm:latest":
   version: 2.0.0-beta.18
   resolution: "@docusaurus/core@npm:2.0.0-beta.18"
   dependencies:
@@ -1604,7 +1604,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@docusaurus/module-type-aliases@npm:2.0.0-beta.18, @docusaurus/module-type-aliases@npm:^2.0.0-beta.17":
+"@docusaurus/module-type-aliases@npm:2.0.0-beta.18":
   version: 2.0.0-beta.18
   resolution: "@docusaurus/module-type-aliases@npm:2.0.0-beta.18"
   dependencies:
@@ -1620,7 +1620,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@docusaurus/plugin-content-blog@npm:2.0.0-beta.18, @docusaurus/plugin-content-blog@npm:^2.0.0-beta.17":
+"@docusaurus/plugin-content-blog@npm:2.0.0-beta.18, @docusaurus/plugin-content-blog@npm:^2.0.0-beta.17, @docusaurus/plugin-content-blog@npm:latest":
   version: 2.0.0-beta.18
   resolution: "@docusaurus/plugin-content-blog@npm:2.0.0-beta.18"
   dependencies:
@@ -1646,7 +1646,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@docusaurus/plugin-content-docs@npm:2.0.0-beta.18, @docusaurus/plugin-content-docs@npm:^2.0.0-beta.17":
+"@docusaurus/plugin-content-docs@npm:2.0.0-beta.18, @docusaurus/plugin-content-docs@npm:^2.0.0-beta.17, @docusaurus/plugin-content-docs@npm:latest":
   version: 2.0.0-beta.18
   resolution: "@docusaurus/plugin-content-docs@npm:2.0.0-beta.18"
   dependencies:
@@ -1671,7 +1671,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@docusaurus/plugin-content-pages@npm:2.0.0-beta.18, @docusaurus/plugin-content-pages@npm:^2.0.0-beta.17":
+"@docusaurus/plugin-content-pages@npm:2.0.0-beta.18, @docusaurus/plugin-content-pages@npm:^2.0.0-beta.17, @docusaurus/plugin-content-pages@npm:latest":
   version: 2.0.0-beta.18
   resolution: "@docusaurus/plugin-content-pages@npm:2.0.0-beta.18"
   dependencies:
@@ -1702,7 +1702,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@docusaurus/theme-classic@npm:^2.0.0-beta.17":
+"@docusaurus/theme-classic@npm:latest":
   version: 2.0.0-beta.18
   resolution: "@docusaurus/theme-classic@npm:2.0.0-beta.18"
   dependencies:
@@ -1896,7 +1896,11 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@iota-community/iota-wiki-cli@workspace:."
   dependencies:
-    "@docusaurus/core": ^2.0.0-beta.18
+    "@docusaurus/core": latest
+    "@docusaurus/plugin-content-blog": latest
+    "@docusaurus/plugin-content-docs": latest
+    "@docusaurus/plugin-content-pages": latest
+    "@docusaurus/theme-classic": latest
     "@types/node": ^16.9.4
     "@types/prettier": ^2
     "@types/react": ^17
@@ -1916,6 +1920,7 @@ __metadata:
     ink-spinner: ^4.0.3
     ink-text-input: ^4.0.3
     lint-staged: ">=10"
+    plugin-image-zoom: flexanalytics/plugin-image-zoom
     prettier: 2.6.0
     react: ^17.0.2
     react-dom: ^17.0.2
@@ -2528,7 +2533,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react@npm:*, @types/react@npm:^17, @types/react@npm:^17.0.0":
+"@types/react@npm:*, @types/react@npm:^17":
   version: 17.0.43
   resolution: "@types/react@npm:17.0.43"
   dependencies:
@@ -2594,13 +2599,6 @@ __metadata:
   version: 2.0.6
   resolution: "@types/unist@npm:2.0.6"
   checksum: 25cb860ff10dde48b54622d58b23e66214211a61c84c0f15f88d38b61aa1b53d4d46e42b557924a93178c501c166aa37e28d7f6d994aba13d24685326272d5db
-  languageName: node
-  linkType: hard
-
-"@types/webpack-env@npm:^1.16.3":
-  version: 1.16.3
-  resolution: "@types/webpack-env@npm:1.16.3"
-  checksum: faefa7c0a75289fb469b9a5ae44059a00009de840e0e62d13b3f837d77647da76808e7839cdc414b8c585969cf6b6a7f290dc2cb437a9ccdf04cb214c68f3223
   languageName: node
   linkType: hard
 
@@ -6692,23 +6690,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"iota-wiki@workspace:internal":
-  version: 0.0.0-use.local
-  resolution: "iota-wiki@workspace:internal"
-  dependencies:
-    "@docusaurus/core": ^2.0.0-beta.17
-    "@docusaurus/module-type-aliases": ^2.0.0-beta.17
-    "@docusaurus/theme-classic": ^2.0.0-beta.17
-    "@tsconfig/docusaurus": ^1.0.4
-    "@types/react": ^17.0.0
-    "@types/webpack-env": ^1.16.3
-    plugin-image-zoom: flexanalytics/plugin-image-zoom
-    react: ^17.0.1
-    react-dom: ^17.0.1
-    typescript: ^4.5.4
-  languageName: unknown
-  linkType: soft
-
 "ip@npm:^1.1.0, ip@npm:^1.1.5":
   version: 1.1.5
   resolution: "ip@npm:1.1.5"
@@ -9433,7 +9414,7 @@ plugin-image-zoom@flexanalytics/plugin-image-zoom:
   languageName: node
   linkType: hard
 
-"react-dom@npm:^17.0.1, react-dom@npm:^17.0.2":
+"react-dom@npm:^17.0.2":
   version: 17.0.2
   resolution: "react-dom@npm:17.0.2"
   dependencies:
@@ -9557,7 +9538,7 @@ plugin-image-zoom@flexanalytics/plugin-image-zoom:
   languageName: node
   linkType: hard
 
-"react@npm:^17.0.1, react@npm:^17.0.2":
+"react@npm:^17.0.2":
   version: 17.0.2
   resolution: "react@npm:17.0.2"
   dependencies:
@@ -11098,7 +11079,7 @@ plugin-image-zoom@flexanalytics/plugin-image-zoom:
   languageName: node
   linkType: hard
 
-"typescript@npm:^4.4.3, typescript@npm:^4.5.4, typescript@npm:^4.6.2":
+"typescript@npm:^4.4.3, typescript@npm:^4.6.2":
   version: 4.6.3
   resolution: "typescript@npm:4.6.3"
   bin:
@@ -11108,7 +11089,7 @@ plugin-image-zoom@flexanalytics/plugin-image-zoom:
   languageName: node
   linkType: hard
 
-"typescript@patch:typescript@^4.4.3#~builtin<compat/typescript>, typescript@patch:typescript@^4.5.4#~builtin<compat/typescript>, typescript@patch:typescript@^4.6.2#~builtin<compat/typescript>":
+"typescript@patch:typescript@^4.4.3#~builtin<compat/typescript>, typescript@patch:typescript@^4.6.2#~builtin<compat/typescript>":
   version: 4.6.3
   resolution: "typescript@patch:typescript@npm%3A4.6.3#~builtin<compat/typescript>::version=4.6.3&hash=bda367"
   bin:
