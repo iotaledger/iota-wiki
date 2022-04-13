@@ -18,7 +18,7 @@ export class Start extends Command {
     const directory = this.directory || '.';
 
     await shell(
-      `IOTA_WIKI_DIRECTORY=${directory} docusaurus start --config ${internalConfig} ${directory}`,
+      `IOTA_WIKI_DIRECTORY=${directory} npx docusaurus start --config ${internalConfig} ${directory}`,
     );
   }
 }
