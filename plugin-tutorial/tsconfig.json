@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "target": "ES2019",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "lib": ["ESNext", "DOM"],
+    "jsx": "react",
+    "types": [
+      "@docusaurus/module-type-aliases",
+      "@docusaurus/plugin-ideal-image"
+    ],
+    "esModuleInterop": true,
+    "baseUrl": ".",
+    "paths": {
+      "@theme/*": ["./src/theme/*"]
+    },
+    "rootDir": "src",
+    "outDir": "lib"
+  },
+  "exclude": ["test"]
+}
