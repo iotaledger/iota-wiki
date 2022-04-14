@@ -28,6 +28,7 @@ export default async function pluginTutorial(
       actions.addRoute({
         path: options.route,
         component: "@theme/Tutorials",
+        exact: true,
       });
     },
   };
@@ -38,8 +39,8 @@ export function validateOptions({
 }: OptionValidationContext<UserOptions, NormalizedOptions>): NormalizedOptions {
   return Object.assign(
     {
-      id: "default",
-      route: "tutorials",
+      id: options.route || "default",
+      route: "/tutorials",
     },
     options
   );

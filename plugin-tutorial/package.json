@@ -6,8 +6,10 @@
   },
   "scripts": {
     "clean": "rm -rf ./lib",
-    "build": "tsc --build && copyfiles -u 1 src/**/*.css ./lib",
-    "watch": "yarn build --watch"
+    "build": "yarn build:server && yarn build:client && yarn build:copy",
+    "build:server": "tsc --project tsconfig.server.json",
+    "build:client": "tsc --project tsconfig.client.json",
+    "build:copy": "copyfiles -u 1 src/**/*.css ./lib"
   },
   "packageManager": "yarn@3.2.0",
   "dependencies": {

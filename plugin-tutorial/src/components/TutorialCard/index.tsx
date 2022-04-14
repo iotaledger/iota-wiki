@@ -15,7 +15,7 @@ import FavoriteIcon from "../FavoriteIcon";
 import { sortBy } from "../../utils/jsUtils";
 import { useHistory } from "@docusaurus/router";
 import { NormalizedOptions as Tutorial } from "../../options";
-import { Tag, TagValues, Tags } from "../../utils/tags";
+import { Tag, TagValues, Tags } from "../../tags";
 
 const TagComp = React.forwardRef<HTMLLIElement, Tag>((tag, ref) => (
   <li ref={ref} className="tag" title={tag.description}>

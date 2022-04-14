@@ -12,7 +12,7 @@ import "./styles.css";
 
 import Collapsible from "react-collapsible";
 import { NormalizedOptions as Tutorial } from "../../options";
-import { TagCategories } from "../../utils/tags";
+import { TagCategories } from "../../tags";
 
 type UserState = {
   scrollTopPosition: number;
@@ -133,7 +133,7 @@ export function useFilteredTutorials() {
   }, [location]);
 
   let tutorials = Object.values(
-    useAllPluginInstancesData("tutorial-plugin")
+    useAllPluginInstancesData("@iota-wiki/plugin-tutorial")
   ) as Tutorial[];
   // Sort by tutorial name
   tutorials = sortBy(tutorials, (tutorial) => tutorial.title.toLowerCase());

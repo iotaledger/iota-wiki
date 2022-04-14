@@ -4,9 +4,9 @@
     "module": "commonjs",
     "moduleResolution": "node",
     "resolveJsonModule": true,
-    "lib": ["ESNext", "DOM"],
     "jsx": "react",
     "types": [
+      "node",
       "@docusaurus/module-type-aliases",
       "@docusaurus/plugin-ideal-image"
     ],
