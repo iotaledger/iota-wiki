@@ -37,10 +37,10 @@ Then register the tutorial page and any tutorials to list on it by providing inf
 
 ## Test
 
-Clone the repository and install dependencies:
+Clone the repository, install dependencies and build the plugins:
 
 ```
-git clone https://github.com/jlvandenhout/plugin-tutorial.git && cd plugin-tutorial && yarn
+git clone https://github.com/jlvandenhout/plugin-tutorial.git && cd plugin-tutorial && yarn && yarn build
 ```
 
 Then start the Docusaurs project contained in the test directory:
