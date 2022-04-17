@@ -1,15 +1,9 @@
 {
   "name": "@iota-wiki/plugin-tutorial",
-  "exports": {
-    ".": "./lib/plugin.js",
-    "./page": "./lib/page.js"
-  },
+  "main": "lib/index.js",
   "scripts": {
     "clean": "rm -rf ./lib",
-    "build": "yarn build:server && yarn build:client && yarn build:copy",
-    "build:server": "tsc --project tsconfig.server.json",
-    "build:client": "tsc --project tsconfig.client.json",
-    "build:copy": "copyfiles -u 1 src/**/*.css ./lib",
+    "build": "tsc --build",
     "prepack": "yarn build"
   },
   "packageManager": "yarn@3.2.0",

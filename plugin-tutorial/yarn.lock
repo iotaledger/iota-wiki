@@ -1994,6 +1994,26 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@iota-wiki/plugin-tutorial-page@iota-wiki/plugin-tutorial-page":
+  version: 0.0.0
+  resolution: "@iota-wiki/plugin-tutorial-page@https://github.com/iota-wiki/plugin-tutorial-page.git#commit=a926bd678e64f724e0d0f88a67d1e8eef0a45444"
+  dependencies:
+    "@docusaurus/plugin-ideal-image": ^2.0.0-beta.18
+    "@docusaurus/theme-common": ^2.0.0-beta.18
+    "@popperjs/core": ^2.11.5
+    clsx: ^1.1.1
+    react: ^17.0.2
+    react-collapsible: ^2.8.4
+    react-dom: ^17.0.2
+    react-popper: ^2.2.5
+    react-select: ^5.3.0
+  peerDependencies:
+    react: ^17.0.2
+    react-dom: ^17.0.2
+  checksum: d03a17881842bddc432fd7f79640e4b5407e165f658452f64c81f70a2c0d0192ae8fbde81c694a4321dd5e149ca03083eec4e5637ffd1c07937d51c2a7a01cae
+  languageName: node
+  linkType: hard
+
 "@iota-wiki/plugin-tutorial@workspace:.":
   version: 0.0.0-use.local
   resolution: "@iota-wiki/plugin-tutorial@workspace:."
@@ -10518,6 +10538,7 @@ plugin-image-zoom@flexanalytics/plugin-image-zoom:
   version: 0.0.0-use.local
   resolution: "test@workspace:test"
   dependencies:
+    "@iota-wiki/plugin-tutorial-page": iota-wiki/plugin-tutorial-page
     iota-wiki-cli: "iota-community/iota-wiki-cli#v2"
     require-glob: ^4.0.0
   languageName: unknown
