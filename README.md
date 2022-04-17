@@ -6,6 +6,7 @@
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
+[![Gitpod][gitpod-shield]][gitpod-url]
 
 <!-- PROJECT LOGO -->
 <br />
@@ -100,6 +101,12 @@ Have a look at [CONTRIBUTING](.github/CONTRIBUTING.md).
 4. Push to the Branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
+### Online one-click setup for contributing
+
+You can use Gitpod (a free, online, VS Code-like IDE) for contributing. With a single click it will prepare everything you need to build and contribute to the wiki. Just click on this button and skip step one from above.
+
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)][gitpod-url]
+
 <!-- CONTACT -->
 
 ## Contact
@@ -127,3 +134,5 @@ Feel free to support our work:
 [stars-url]: https://github.com/iota-community/iota-wiki/stargazers
 [issues-shield]: https://img.shields.io/github/issues/iota-community/iota-wiki.svg?style=for-the-badge
 [issues-url]: https://github.com/iota-community/iota-wiki/issues
+[gitpod-shield]: https://img.shields.io/badge/Gitpod-Ready--to--Code-blue?logo=gitpod&style=for-the-badge
+[gitpod-url]: https://gitpod.io/#https://github.com/iota-community/iota-wiki
