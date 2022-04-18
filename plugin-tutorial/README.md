@@ -1,26 +1,19 @@
 # Tutorial plugin
 
-This is a small plugin to register tutorials to be listed on the tutorial page, which is also provided by this plugin.
+This is a small plugin to register tutorials to be listed on the tutorial page plugin.
 
 ## Usage
 
 ```
-yarn add @jlvandenhout/plugin-tutorial
+yarn add @iota-wiki/plugin-tutorial
 ```
 
-Then register the tutorial page and any tutorials to list on it by providing information like the titles, routes and metadata of the tutorials:
+Then register any tutorials to list on the tutorial page by providing information like the titles, routes and metadata of the tutorials:
 
 ```js
   plugins: [
     [
-        '@jlvandenhout/plugin-tutorial/page',
-        {
-            id: 'default', // Defaults to the route or the default plugin id if not provided.
-            route: '/tutorials', // Defaults to this.
-        }
-    ],
-    [
-      '@jlvandenhout/plugin-tutorial',
+      '@iota-wiki/plugin-tutorial',
       {
         title: "EVM Tutorial",
         description:
