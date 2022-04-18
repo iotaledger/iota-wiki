@@ -1,5 +1,7 @@
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 var requireGlob = require('require-glob');
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+var path = require('path');
 
 const reducer = function (_options, result, fileObject) {
   if (fileObject && fileObject.exports) {
@@ -40,7 +42,13 @@ module.exports = {
   baseUrl: '/',
   themes: ['@docusaurus/theme-classic'],
   plugins: [
-    '@iota-wiki/plugin-tutorial-page',
+    [
+      '@docusaurus/plugin-content-pages',
+      {
+        id: 'tutorials',
+        path: path.resolve(__dirname, './src/pages'),
+      },
+    ],
     ...config.plugins,
   ],
   staticDirectories: [...config.staticDirectories],

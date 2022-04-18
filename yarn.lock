@@ -2798,9 +2798,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@iota-wiki/plugin-tutorial-page@iota-wiki/plugin-tutorial-page":
-  version: 0.0.0
-  resolution: "@iota-wiki/plugin-tutorial-page@https://github.com/iota-wiki/plugin-tutorial-page.git#commit=d6f8ecbb9cca47948a477f2e0f8d6a8b64dd625c"
+"@iota-wiki/plugin-tutorial@iota-wiki/plugin-tutorial":
+  version: 1.0.0
+  resolution: "@iota-wiki/plugin-tutorial@https://github.com/iota-wiki/plugin-tutorial.git#commit=97925e83b5273f5c2ca1e9576cc9b4026eef29a5"
   dependencies:
     "@docusaurus/plugin-ideal-image": ^2.0.0-beta.18
     "@docusaurus/theme-common": ^2.0.0-beta.18
@@ -2814,7 +2814,7 @@ __metadata:
   peerDependencies:
     react: ^17.0.2
     react-dom: ^17.0.2
-  checksum: a9a0d23b4bda6c0a35496bded9727ce68a2dda6aae93fa8d3f1e4f31e1a8b7a434af83bdd7cb8960867478855796924ffc5c8cab636e0b6def4317eb365dde97
+  checksum: 1088352eca620189a5a907a25a33e7af70f8261300379f8b2d32b57b1b21bff96497e4feeb413373c4665a257b0801c33e02608c25cdde2a0eef94e4ea0f8d93
   languageName: node
   linkType: hard
 
@@ -7604,6 +7604,7 @@ __metadata:
     "@docusaurus/core": latest
     "@docusaurus/plugin-content-docs": ^2.0.0-beta.17
     "@docusaurus/theme-classic": latest
+    "@iota-wiki/plugin-tutorial": iota-wiki/plugin-tutorial
     react: ^17.0.1
     react-dom: ^17.0.1
   peerDependencies:
@@ -16664,7 +16665,6 @@ plugin-image-zoom@flexanalytics/plugin-image-zoom:
     "@docusaurus/core": latest
     "@docusaurus/plugin-content-docs": ^2.0.0-beta.17
     "@docusaurus/theme-classic": latest
-    "@iota-wiki/plugin-tutorial-page": iota-wiki/plugin-tutorial-page
     react: ^17.0.1
     react-dom: ^17.0.1
     require-glob: ^4.0.0
@@ -17459,6 +17459,7 @@ plugin-image-zoom@flexanalytics/plugin-image-zoom:
     "@docusaurus/core": latest
     "@docusaurus/plugin-content-docs": ^2.0.0-beta.17
     "@docusaurus/theme-classic": latest
+    "@iota-wiki/plugin-tutorial": iota-wiki/plugin-tutorial
     react: ^17.0.1
     react-dom: ^17.0.1
   peerDependencies:
