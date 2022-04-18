@@ -19,10 +19,10 @@
   },
   "dependencies": {
     "@algolia/client-search": "^4.9.1",
-    "@docusaurus/core": "^2.0.0-beta.17",
-    "@docusaurus/plugin-ideal-image": "^2.0.0-beta.17",
-    "@docusaurus/preset-classic": "^2.0.0-beta.17",
-    "@iota-community/iota-wiki-cli": "^1.7.0",
+    "@docusaurus/core": "latest",
+    "@docusaurus/plugin-ideal-image": "latest",
+    "@docusaurus/preset-classic": "latest",
+    "@iota-community/iota-wiki-cli": "iota-community/iota-wiki-cli#v2",
     "@jlvandenhout/docusaurus-plugin-docs-editor": "^0.7.0",
     "@mdx-js/react": "^1.6.21",
     "@popperjs/core": "^2.11.2",
@@ -34,9 +34,9 @@
     "hast-util-is-element": "1.1.0",
     "plugin-image-zoom": "flexanalytics/plugin-image-zoom",
     "raw-loader": "^4.0.2",
-    "react": "^17.0.1",
+    "react": "^17.0.2",
     "react-collapsible": "^2.8.4",
-    "react-dom": "^17.0.1",
+    "react-dom": "^17.0.2",
     "react-image-gallery": "^1.2.7",
     "react-player": "^2.9.0",
     "react-popper": "^2.2.5",
@@ -62,7 +62,7 @@
     ]
   },
   "devDependencies": {
-    "@docusaurus/module-type-aliases": "^2.0.0-beta.17",
+    "@docusaurus/module-type-aliases": "latest",
     "@tsconfig/docusaurus": "^1.0.4",
     "@types/react": "^17.0.0",
     "@types/webpack-env": "^1.16.3",
@@ -76,6 +76,10 @@
     "lint-staged": ">=10",
     "prettier": "^2.4.1",
     "typescript": "^4.5.4"
+  },
+  "peerDependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": "eslint --cache --fix",
