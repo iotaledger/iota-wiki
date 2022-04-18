@@ -37,11 +37,8 @@ const config = requireGlob.sync(
 );
 
 module.exports = {
-  title: 'Tutorials',
-  url: '/',
-  baseUrl: '/',
-  themes: ['@docusaurus/theme-classic'],
   plugins: [
+    '@docusaurus/plugin-ideal-image',
     [
       '@docusaurus/plugin-content-pages',
       {
