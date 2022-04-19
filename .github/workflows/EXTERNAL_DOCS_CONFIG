@@ -179,12 +179,3 @@
         editUrl: 'https://github.com/dr-electron/zebra-iota-edge-sdk/edit/docs/docusaurus',
       }
     ],
-    [
-      "@docusaurus/plugin-content-docs",
-      {
-        id: "iota-client-wasm-tutorial",
-        path: "external/identity-iota-svelte-example/documentation/docs",
-        routeBasePath: "iota-client-wasm-tutorial",
-        sidebarPath: require.resolve("./external/identity-iota-svelte-example/documentation/sidebars.js"),
-      }
-    ],

@@ -63,11 +63,6 @@
     {
       "repo": "https://github.com/zebradevs/zebra-iota-edge-sdk",
       "staticPath": "./docs/static"
-    },
-    {
-      "repo": "https://github.com/Dr-Electron/identity-iota-svelte-example",
-      "checkoutParams": ["--branch gitpod-integration"],
-      "staticPath": "./documentation/static"
     }
   ]
 }
