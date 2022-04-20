@@ -30,7 +30,11 @@ const reducer = function (_options, result, fileObject) {
 };
 
 const config = requireGlob.sync(
-  ['*/**/docusaurus.config.js', '!node_modules'],
+  [
+    'content/*/documentation/docusaurus.config.js',
+    'content/single-page-tutorials/docusaurus.config.js',
+    '!node_modules',
+  ],
   {
     reducer,
   },
