@@ -1,6 +1,6 @@
 {
   "name": "@iota-wiki/plugin-tutorial",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "main": "lib/index.js",
   "scripts": {
     "clean": "rm -rf ./lib",
