@@ -1,8 +1,8 @@
-[submodule "content/tutorials/tutorial-template"]
-	path = content/tutorials/tutorial-template
+[submodule "content/tutorials/content/tutorial-template"]
+	path = content/tutorials/content/tutorial-template
 	url = https://github.com/Dr-Electron/tutorial-template
 	branch = use-new-cli-and-build-system
-[submodule "content/tutorials/wasm-client-tutorial"]
-	path = content/tutorials/wasm-client-tutorial
+[submodule "content/tutorials/content/wasm-client-tutorial"]
+	path = content/tutorials/content/wasm-client-tutorial
 	url = https://github.com/Dr-Electron/identity-iota-svelte-example/
 	branch = use-new-cli-and-build-system
