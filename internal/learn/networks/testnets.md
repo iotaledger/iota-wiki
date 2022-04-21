@@ -25,7 +25,7 @@ In this DevNet, the coordinator and some public nodes are run by the IOTA Founda
 
 Shimmer is an incentivized staging network for the IOTA Mainnet. Its beta testnet serves as the first testing ground for new and upcoming features that will get progressively added to Shimmer and later to IOTA.
 
-TheShimmer Beta Testnet will launch with the Stardust protocol.
+The Shimmer Beta Testnet will launch with the Stardust protocol.
 
 - [**API**](todo)
 - [**Explorer**](todo)
