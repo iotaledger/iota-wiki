@@ -11,8 +11,13 @@ Both networks will launch with their own native tokens: SMR for Shimmer and ASMB
 
 :::info
 
-Find the blog post introducing IOTA staking [here](https://blog.iota.org/introducing-iota-staking/).
-Find the announcement of the start of IOTA staking [here](https://blog.iota.org/iota-staking-start/).
+You can find the blog post introducing IOTA staking [here](https://blog.iota.org/introducing-iota-staking/).
+You can also find the announcement of the start of IOTA staking [here](https://blog.iota.org/iota-staking-start/).
+
+You should also know that:
+
+- Staking SMR for SMR will occur *after* the launch of Shimmer.
+- Additionally, Shimmer token staking in the shimmer network will not be available at launch.
 
 :::
 
