@@ -27,7 +27,7 @@ The first implementation of Coordicide is already live: you can learn everything
 
 The next evolution of this process will be to transfer the tested Coordicide protocol in a staging network. Therefore, the [Shimmer network](https://shimmer.network/) and the $SMR token will be created. It will be the first network with real value to battle test the Coordicide concepts in a production network. Once vested and proofed in the Shimmer network, the concepts will be applied to the IOTA mainnet.
 
-## When will Coordicide take place?
+## When Will Coordicide Take Place?
 
 Although no current roadmap date has been specified, Coordicide has been placed on the official IOTA [roadmap](https://roadmap.iota.org/coordicide), which shows the next steps to be taken before completion. 
 
