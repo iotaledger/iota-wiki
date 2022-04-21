@@ -1,8 +1,17 @@
+/**
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
 import React from 'react';
 import Link from '@docusaurus/Link';
 import useBaseUrl from '@docusaurus/useBaseUrl';
-import isInternalUrl from '@docusaurus/isInternalUrl';
+import type { Props } from '@theme/NavbarItem/NavbarNavLink';
 import IconExternalLink from '@theme/IconExternalLink';
+import isInternalUrl from '@docusaurus/isInternalUrl';
+import { isRegexpStringMatch } from '@docusaurus/theme-common';
 import type { Props as NavLinkProps } from '@theme/NavbarItem/DefaultNavbarItem';
 import './styles.css';
 
@@ -13,7 +22,7 @@ export interface ExtendedNavLinkProps extends NavLinkProps {
   icon?: string;
 }
 
-export default function NavLink({
+export default function NavbarNavLink({
   activeBasePath,
   activeBaseRegex,
   to,
@@ -21,7 +30,7 @@ export default function NavLink({
   label,
   sublabel,
   icon,
-  activeClassName = 'navbar__link--active',
+  activeClassName = '',
   prependBaseUrlToHref,
   ...props
 }: ExtendedNavLinkProps): JSX.Element {
@@ -33,29 +42,29 @@ export default function NavLink({
   const isExternalLink = label && href && !isInternalUrl(href);
   const isDropdownLink = activeClassName === dropdownLinkActiveClass;
 
-  const checkIsActive = (_match, location) =>
-    activeBaseRegex
-      ? new RegExp(activeBaseRegex).test(location.pathname)
-      : location.pathname.startsWith(activeBaseUrl);
 
   return (
     <Link
       {...(href
         ? {
-            href: prependBaseUrlToHref ? normalizedHref : href,
-          }
+          href: prependBaseUrlToHref ? normalizedHref : href,
+        }
         : {
-            isNavLink: true,
-            activeClassName,
-            to: toUrl,
-            ...(activeBasePath || activeBaseRegex
-              ? {
-                  isActive: checkIsActive,
-                }
-              : null),
-          })}
-      {...props}
-    >
+          isNavLink: true,
+          activeClassName: !props.className?.includes(activeClassName)
+            ? activeClassName
+            : '',
+          to: toUrl,
+          ...(activeBasePath || activeBaseRegex
+            ? {
+              isActive: (_match, location) =>
+                activeBaseRegex
+                  ? isRegexpStringMatch(activeBaseRegex, location.pathname)
+                  : location.pathname.startsWith(activeBaseUrl),
+            }
+            : null),
+        })}
+      {...props}>
       <div className='link'>
         {icon && <div className='link__icon'>{icon}</div>}
         <div className='link__body'>

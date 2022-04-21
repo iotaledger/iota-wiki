@@ -14,7 +14,7 @@ import {
   Collapsible,
   useLocalPathname,
 } from '@docusaurus/theme-common';
-import NavLink from '@site/src/components/NavLink';
+import NavLink from '@theme/NavbarItem/NavbarNavLink';
 import NavbarItem from '@theme/NavbarItem';
 import type { Props as NavLinkProps } from '@theme/NavbarItem/DefaultNavbarItem';
 import './styles.css';

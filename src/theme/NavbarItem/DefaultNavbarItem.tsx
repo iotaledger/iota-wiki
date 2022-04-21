@@ -5,16 +5,15 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-/**
- * REASONS TO SWIZZLE:
- * - Extension of NavLink component with optional icon and sublabel.
- * - Allow non-clickable category headers.
- */
-
 import React from 'react';
 import clsx from 'clsx';
+
+import NavbarNavLink, { ExtendedNavLinkProps } from '@theme/NavbarItem/NavbarNavLink';
+
 import type { DesktopOrMobileNavBarItemProps } from '@theme/NavbarItem/DefaultNavbarItem';
-import NavLink, { ExtendedNavLinkProps } from '@site/src/components/NavLink';
+
+import { getInfimaActiveClassName } from '@theme/NavbarItem/utils';
+
 
 function DefaultNavbarItemDesktop({
   className,
@@ -22,7 +21,7 @@ function DefaultNavbarItemDesktop({
   ...props
 }: DesktopOrMobileNavBarItemProps) {
   const element = (
-    <NavLink
+    <NavbarNavLink
       className={clsx(
         isDropdownItem ? 'dropdown__link' : 'navbar__item navbar__link',
         className,
@@ -40,41 +39,42 @@ function DefaultNavbarItemDesktop({
 
 function DefaultNavbarItemMobile({
   className,
+  isDropdownItem,
   ...props
 }: DesktopOrMobileNavBarItemProps) {
-  delete props.isDropdownItem;
-
   return (
     <li className='menu__list-item'>
-      <NavLink className={clsx('menu__link', className)} {...props} />
+      <NavbarNavLink className={clsx('menu__link', className)} {...props} />
     </li>
   );
 }
 
-function DefaultNavbarItem({
+export default function DefaultNavbarItem({
   mobile = false,
-  to,
-  label,
+  position, // Need to destructure position from props so that it doesn't get passed on.
   ...props
 }: ExtendedNavLinkProps): JSX.Element {
-  delete props.position;
-
   /**
    * Added to enable non-clickable category headers.
    * To use simply add an navBar items in the config
    * with to:'category-header'
    */
-  if (to === 'category-header') {
+  if (props.to === 'category-header') {
     const categorySeparatorStyles = {
       fontSize: '10px',
       color: 'var(--ifm-color-emphasis-600)',
       paddingTop: '10px',
     };
-    return <li style={categorySeparatorStyles}>{label}</li>;
+    return <li style={categorySeparatorStyles}>{props.label}</li>;
   } else {
     const Comp = mobile ? DefaultNavbarItemMobile : DefaultNavbarItemDesktop;
-    return <Comp to={to} label={label} {...props} />;
+    return (
+      <Comp
+        {...props}
+        activeClassName={
+          props.activeClassName ?? getInfimaActiveClassName(mobile)
+        }
+      />
+    );
   }
 }
-
-export default DefaultNavbarItem;
