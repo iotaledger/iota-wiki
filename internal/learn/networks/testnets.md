@@ -35,7 +35,7 @@ The Shimmer Beta Testnet will launch with the Stardust protocol.
 
 ## IOTA 2.0 Decentralized DevNet
 
-The IOTA 2.0 Decentralized DevNet implements the upcoming fully decentralized IOTA 2.0 protocol. This network does not use or need a coordinator. It uses Devnet IOTA tokens without value to fine-tune, test, and optimize the upcoming development stage of the IOTA protocol together with the IOTA community. This network is composed of [GoShimmer](https://wiki.iota.org/goshimmer/welcome) nodes. While many nodes in the 2.0 DevNet are run and maintained by the IOTA Foundation, you can [contribute by running your own nodes](https://wiki.iota.org/goshimmer/tutorials/setup). A more extensive network is beneficial for testing newly researched and developed concepts and ideas, catching bugs, and ironing out finished components.
+The IOTA 2.0 Decentralized DevNet implements the upcoming fully decentralized [IOTA 2.0 protocol](https://wiki.iota.org/IOTA-2.0-Research-Specifications/Preface). This network does not use or need a coordinator. It uses Devnet IOTA tokens without value to fine-tune, test, and optimize the upcoming development stage of the IOTA protocol together with the IOTA community. This network is composed of [GoShimmer](https://wiki.iota.org/goshimmer/welcome) nodes. While many nodes in the 2.0 DevNet are run and maintained by the IOTA Foundation, you can [contribute by running your own nodes](https://wiki.iota.org/goshimmer/tutorials/setup). A more extensive network is beneficial for testing newly researched and developed concepts and ideas, catching bugs, and ironing out finished components.
 
 - [**API**](https://nodes.nectar.iota.cafe/info)
 - [**Explorer**](https://v2.iota.org/explorer)
