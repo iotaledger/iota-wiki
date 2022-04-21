@@ -27,11 +27,11 @@ Shimmer is an incentivized staging network for the IOTA Mainnet. Its beta testne
 
 TheShimmer Beta Testnet will launch with the Stardust protocol.
 
-- [**API**]()
-- [**Explorer**]()
-- [**Visualizer**]()
-- [**Shimmer Beta Wallet**]()
-- [**Shimmer Beta Firefly Version**]()
+- [**API**](todo)
+- [**Explorer**](todo)
+- [**Visualizer**](todo)
+- [**Shimmer Beta Wallet**](todo)
+- [**Shimmer Beta Firefly Version**](todo)
 
 ## IOTA 2.0 Decentralized DevNet
 
