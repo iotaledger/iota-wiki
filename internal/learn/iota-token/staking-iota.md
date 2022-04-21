@@ -45,7 +45,7 @@ It is planned that IOTA token holders will receive 20% (20 billion tokens) of th
 
 ### IOTA staking for SMR rewards
 
-Shimmer, the incentivized testnet and battlefield for IOTA's core technology innovations, will be bootstrapped purely from IOTA token stakers. The initial token supply of the Shimmer network will only rely on the amount of IOTA tokens staked for Shimmer in the 90-day staking period, and 100% of the initial supply will be distributed to IOTA token holders.
+Shimmer, the staging network and battlefield for IOTA's core technology innovations, will be bootstrapped purely from IOTA token stakers. The initial token supply of the Shimmer network will only rely on the amount of IOTA tokens staked for Shimmer in the 90-day staking period, and 100% of the initial supply will be distributed to IOTA token holders.
 
 - The same staking functionality used for Assembly in the Firefly Wallet will also be used for Shimmer.
 - Shimmer tokens will be distributed at a fixed rate of `1 Shimmer per 1 MIOTA per milestone`.
