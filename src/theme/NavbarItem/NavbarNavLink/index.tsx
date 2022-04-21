@@ -8,16 +8,15 @@
 import React from 'react';
 import Link from '@docusaurus/Link';
 import useBaseUrl from '@docusaurus/useBaseUrl';
-import type { Props } from '@theme/NavbarItem/NavbarNavLink';
+import type { Props as OriginalProps } from '@theme/NavbarItem/NavbarNavLink';
 import IconExternalLink from '@theme/IconExternalLink';
 import isInternalUrl from '@docusaurus/isInternalUrl';
 import { isRegexpStringMatch } from '@docusaurus/theme-common';
-import type { Props as NavLinkProps } from '@theme/NavbarItem/DefaultNavbarItem';
 import './styles.css';
 
 const dropdownLinkActiveClass = 'dropdown__link--active';
 
-export interface ExtendedNavLinkProps extends NavLinkProps {
+export interface Props extends OriginalProps {
   sublabel?: string;
   icon?: string;
 }
@@ -33,7 +32,7 @@ export default function NavbarNavLink({
   activeClassName = '',
   prependBaseUrlToHref,
   ...props
-}: ExtendedNavLinkProps): JSX.Element {
+}: Props): JSX.Element {
   // TODO all this seems hacky
   // {to: 'version'} should probably be forbidden, in favor of {to: '/version'}
   const toUrl = useBaseUrl(to);
@@ -42,45 +41,41 @@ export default function NavbarNavLink({
   const isExternalLink = label && href && !isInternalUrl(href);
   const isDropdownLink = activeClassName === dropdownLinkActiveClass;
 
-
   return (
     <Link
       {...(href
         ? {
-          href: prependBaseUrlToHref ? normalizedHref : href,
-        }
+            href: prependBaseUrlToHref ? normalizedHref : href,
+          }
         : {
-          isNavLink: true,
-          activeClassName: !props.className?.includes(activeClassName)
-            ? activeClassName
-            : '',
-          to: toUrl,
-          ...(activeBasePath || activeBaseRegex
-            ? {
-              isActive: (_match, location) =>
-                activeBaseRegex
-                  ? isRegexpStringMatch(activeBaseRegex, location.pathname)
-                  : location.pathname.startsWith(activeBaseUrl),
-            }
-            : null),
-        })}
-      {...props}>
+            isNavLink: true,
+            activeClassName: !props.className?.includes(activeClassName)
+              ? activeClassName
+              : '',
+            to: toUrl,
+            ...(activeBasePath || activeBaseRegex
+              ? {
+                  isActive: (_match, location) =>
+                    activeBaseRegex
+                      ? isRegexpStringMatch(activeBaseRegex, location.pathname)
+                      : location.pathname.startsWith(activeBaseUrl),
+                }
+              : null),
+          })}
+      {...props}
+    >
       <div className='link'>
         {icon && <div className='link__icon'>{icon}</div>}
         <div className='link__body'>
           <div className='link__label'>
-            {isExternalLink ? (
-              <span>
-                {label}
-                <IconExternalLink
-                  {...(isDropdownLink && {
-                    width: 12,
-                    height: 12,
-                  })}
-                />
-              </span>
-            ) : (
-              label
+            {label}
+            {isExternalLink && (
+              <IconExternalLink
+                {...(isDropdownLink && {
+                  width: 12,
+                  height: 12,
+                })}
+              />
             )}
           </div>
           {sublabel && <div className='link__sublabel'>{sublabel}</div>}
