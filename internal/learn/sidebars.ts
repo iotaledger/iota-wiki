@@ -46,6 +46,7 @@ module.exports = {
       collapsed: true,
       items: [
         'networks/iota-1.5-chrysalis',
+        'networks/iota-1.5X-stardust',
         'networks/iota-2.0-coordicide',
         'networks/testnets',
         'networks/network-token-migration',
