@@ -11,43 +11,17 @@
  */
 
 import React from 'react';
-import type { ComponentProps } from 'react';
 import DefaultNavbarItem from '@theme/NavbarItem/DefaultNavbarItem';
 import DropdownNavbarItem, {
   type Props as DropdownNavbarItemProps,
 } from '@theme/NavbarItem/DropdownNavbarItem';
-import MegaDropdownNavbarItem from '@site/src/components/MegaDropdownNavbarItem';
+import MegaDropdownNavbarItem from '../../components/MegaDropdownNavbarItem';
 import LocaleDropdownNavbarItem from '@theme/NavbarItem/LocaleDropdownNavbarItem';
 import SearchNavbarItem from '@theme/NavbarItem/SearchNavbarItem';
-import type { LinkLikeNavbarItemProps } from '@theme/NavbarItem';
-import type { Props as DocsVersionDropdownNavbarItemProps } from '@theme/NavbarItem/DocsVersionDropdownNavbarItem';
-import type { Props as LocaleDropdownNavbarItemProps } from '@theme/NavbarItem/LocaleDropdownNavbarItem';
-import type { Props as SearchNavbarItemProps } from '@theme/NavbarItem/SearchNavbarItem';
-import type { Props as MegaDropdownNavbarItemProps } from '@site/src/components/MegaDropdownNavbarItem';
+import type { Types, Props } from '@theme/NavbarItem';
 import './styles.css';
 
-type Props = ComponentProps<'a'> & {
-  readonly position?: 'left' | 'right';
-} & (
-    | LinkLikeNavbarItemProps
-    | ({ readonly type?: 'dropdown' } & DropdownNavbarItemProps)
-    | ({ readonly type: 'megaDropdown' } & MegaDropdownNavbarItemProps)
-    | ({
-      readonly type: 'docsVersionDropdown';
-    } & DocsVersionDropdownNavbarItemProps)
-    | ({ readonly type: 'localeDropdown' } & LocaleDropdownNavbarItemProps)
-    | ({
-      readonly type: 'search';
-    } & SearchNavbarItemProps)
-  );
-
-type Types = Props['type'];
-
-const NavbarItemComponents: {
-  // Not really worth typing, as we pass all props down immediately
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  [type in Exclude<Types, undefined>]: () => (props: any) => JSX.Element;
-} = {
+const NavbarItemComponents = {
   default: () => DefaultNavbarItem,
   localeDropdown: () => LocaleDropdownNavbarItem,
   search: () => SearchNavbarItem,
@@ -80,9 +54,7 @@ function getComponentType(
   props,
   isDropdown: boolean,
 ): NavbarItemComponentType {
-  if (props.layout !== undefined)
-    return 'megaDropdown';
-
+  if (props.layout !== undefined) return 'megaDropdown';
   // Backward compatibility: navbar item with no type set
   // but containing dropdown items should use the type "dropdown"
   if (!type || type === 'default') {

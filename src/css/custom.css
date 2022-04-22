@@ -151,6 +151,10 @@ article .card {
   font-weight: var(--ifm-font-weight-semibold);
 }
 
+.menu__link--sublist {
+  justify-content: space-between;
+}
+
 .navbar {
   border-bottom: var(--ifm-global-border-width) solid
     var(--ifm-color-emphasis-200);
