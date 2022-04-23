@@ -1454,7 +1454,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@docusaurus/core@npm:2.0.0-beta.18, @docusaurus/core@npm:^2.0.0-beta.17, @docusaurus/core@npm:latest":
+"@docusaurus/core@npm:2.0.0-beta.18, @docusaurus/core@npm:latest":
   version: 2.0.0-beta.18
   resolution: "@docusaurus/core@npm:2.0.0-beta.18"
   dependencies:
@@ -1588,22 +1588,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@docusaurus/module-type-aliases@npm:2.0.0-beta.17":
-  version: 2.0.0-beta.17
-  resolution: "@docusaurus/module-type-aliases@npm:2.0.0-beta.17"
-  dependencies:
-    "@docusaurus/types": 2.0.0-beta.17
-    "@types/react": "*"
-    "@types/react-router-config": "*"
-    "@types/react-router-dom": "*"
-    react-helmet-async: "*"
-  peerDependencies:
-    react: "*"
-    react-dom: "*"
-  checksum: 4d876ce66806b8747e080726707ec1fac99f0ecfc1b6973f78169125c83ea863c12ca64ba439670800b5254bc0393c2837ebceab2a1bbae66f7ffc1951c996c5
-  languageName: node
-  linkType: hard
-
 "@docusaurus/module-type-aliases@npm:2.0.0-beta.18":
   version: 2.0.0-beta.18
   resolution: "@docusaurus/module-type-aliases@npm:2.0.0-beta.18"
@@ -1620,7 +1604,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@docusaurus/plugin-content-blog@npm:2.0.0-beta.18, @docusaurus/plugin-content-blog@npm:^2.0.0-beta.17, @docusaurus/plugin-content-blog@npm:latest":
+"@docusaurus/plugin-content-blog@npm:2.0.0-beta.18, @docusaurus/plugin-content-blog@npm:latest":
   version: 2.0.0-beta.18
   resolution: "@docusaurus/plugin-content-blog@npm:2.0.0-beta.18"
   dependencies:
@@ -1646,7 +1630,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@docusaurus/plugin-content-docs@npm:2.0.0-beta.18, @docusaurus/plugin-content-docs@npm:^2.0.0-beta.17, @docusaurus/plugin-content-docs@npm:latest":
+"@docusaurus/plugin-content-docs@npm:2.0.0-beta.18, @docusaurus/plugin-content-docs@npm:latest":
   version: 2.0.0-beta.18
   resolution: "@docusaurus/plugin-content-docs@npm:2.0.0-beta.18"
   dependencies:
@@ -1671,7 +1655,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@docusaurus/plugin-content-pages@npm:2.0.0-beta.18, @docusaurus/plugin-content-pages@npm:^2.0.0-beta.17, @docusaurus/plugin-content-pages@npm:latest":
+"@docusaurus/plugin-content-pages@npm:2.0.0-beta.18, @docusaurus/plugin-content-pages@npm:latest":
   version: 2.0.0-beta.18
   resolution: "@docusaurus/plugin-content-pages@npm:2.0.0-beta.18"
   dependencies:
@@ -1759,20 +1743,6 @@ __metadata:
     fs-extra: ^10.0.1
     tslib: ^2.3.1
   checksum: 5d42d9b21dcae2a6c1785badda2375bfb514f4da26d6a494184e18c88c8f6eb585fe14065839e156073e547c621ba88015f82ece22caa284c68a0f632989b1cb
-  languageName: node
-  linkType: hard
-
-"@docusaurus/types@npm:2.0.0-beta.17":
-  version: 2.0.0-beta.17
-  resolution: "@docusaurus/types@npm:2.0.0-beta.17"
-  dependencies:
-    commander: ^5.1.0
-    joi: ^17.6.0
-    querystring: 0.2.1
-    utility-types: ^3.10.0
-    webpack: ^5.69.1
-    webpack-merge: ^5.8.0
-  checksum: 496a2a90cc7bb396bb2bddeb5e3103da14a2f5d048b6eff7172cb496f3f484c5dc13fc1b6f4f24c45f50881c1f0a1fb53a1d1bf3805418b4bd7a56aba08b9d21
   languageName: node
   linkType: hard
 
@@ -1892,7 +1862,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@iota-community/iota-wiki-cli@workspace:., @iota-community/iota-wiki-cli@workspace:^":
+"@iota-community/iota-wiki-cli@workspace:.":
   version: 0.0.0-use.local
   resolution: "@iota-community/iota-wiki-cli@workspace:."
   dependencies:
@@ -2267,13 +2237,6 @@ __metadata:
   version: 0.2.0
   resolution: "@trysound/sax@npm:0.2.0"
   checksum: 11226c39b52b391719a2a92e10183e4260d9651f86edced166da1d95f39a0a1eaa470e44d14ac685ccd6d3df7e2002433782872c0feeb260d61e80f21250e65c
-  languageName: node
-  linkType: hard
-
-"@tsconfig/docusaurus@npm:^1.0.4":
-  version: 1.0.5
-  resolution: "@tsconfig/docusaurus@npm:1.0.5"
-  checksum: 3089de4a1ae9444c97caaee52dc5e429cc5e719fa596fb8862c19695259818d7e0b86c0eea15f6abe0749757cdc4048771d4b9332059f1b0bd8d4a80b32d51e9
   languageName: node
   linkType: hard
 
@@ -7970,27 +7933,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"module@workspace:test/module":
-  version: 0.0.0-use.local
-  resolution: "module@workspace:test/module"
-  dependencies:
-    "@docusaurus/core": ^2.0.0-beta.17
-    "@docusaurus/module-type-aliases": 2.0.0-beta.17
-    "@docusaurus/plugin-content-blog": ^2.0.0-beta.17
-    "@docusaurus/plugin-content-docs": ^2.0.0-beta.17
-    "@docusaurus/plugin-content-pages": ^2.0.0-beta.17
-    "@iota-community/iota-wiki-cli": "workspace:^"
-    "@mdx-js/react": ^1.6.22
-    "@tsconfig/docusaurus": ^1.0.4
-    clsx: ^1.1.1
-    typescript: ^4.6.2
-  peerDependencies:
-    "@docusaurus/core": ^2.0.0-beta.17
-    react: ^17.0.1
-    react-dom: ^17.0.1
-  languageName: unknown
-  linkType: soft
-
 "mrmime@npm:^1.0.0":
   version: 1.0.0
   resolution: "mrmime@npm:1.0.0"
@@ -9297,13 +9239,6 @@ plugin-image-zoom@flexanalytics/plugin-image-zoom:
   version: 6.9.7
   resolution: "qs@npm:6.9.7"
   checksum: 5bbd263332ccf320a1f36d04a2019a5834dc20bcb736431eaccde2a39dcba03fb26d2fd00174f5d7bc26aaad1cad86124b18440883ac042ea2a0fca6170c1bf1
-  languageName: node
-  linkType: hard
-
-"querystring@npm:0.2.1":
-  version: 0.2.1
-  resolution: "querystring@npm:0.2.1"
-  checksum: 7b83b45d641e75fd39cd6625ddfd44e7618e741c61e95281b57bbae8fde0afcc12cf851924559e5cc1ef9baa3b1e06e22b164ea1397d65dd94b801f678d9c8ce
   languageName: node
   linkType: hard
 
@@ -10991,24 +10926,6 @@ plugin-image-zoom@flexanalytics/plugin-image-zoom:
   languageName: node
   linkType: hard
 
-"tutorial@workspace:test/tutorial":
-  version: 0.0.0-use.local
-  resolution: "tutorial@workspace:test/tutorial"
-  dependencies:
-    "@docusaurus/core": ^2.0.0-beta.17
-    "@docusaurus/module-type-aliases": 2.0.0-beta.17
-    "@docusaurus/plugin-content-docs": ^2.0.0-beta.17
-    "@iota-community/iota-wiki-cli": "workspace:^"
-    "@mdx-js/react": ^1.6.22
-    "@tsconfig/docusaurus": ^1.0.4
-    typescript: ^4.6.2
-  peerDependencies:
-    "@docusaurus/core": ^2.0.0-beta.17
-    react: ^17.0.1
-    react-dom: ^17.0.1
-  languageName: unknown
-  linkType: soft
-
 "typanion@npm:^3.3.1":
   version: 3.7.1
   resolution: "typanion@npm:3.7.1"
@@ -11079,7 +10996,7 @@ plugin-image-zoom@flexanalytics/plugin-image-zoom:
   languageName: node
   linkType: hard
 
-"typescript@npm:^4.4.3, typescript@npm:^4.6.2":
+"typescript@npm:^4.4.3":
   version: 4.6.3
   resolution: "typescript@npm:4.6.3"
   bin:
@@ -11089,7 +11006,7 @@ plugin-image-zoom@flexanalytics/plugin-image-zoom:
   languageName: node
   linkType: hard
 
-"typescript@patch:typescript@^4.4.3#~builtin<compat/typescript>, typescript@patch:typescript@^4.6.2#~builtin<compat/typescript>":
+"typescript@patch:typescript@^4.4.3#~builtin<compat/typescript>":
   version: 4.6.3
   resolution: "typescript@patch:typescript@npm%3A4.6.3#~builtin<compat/typescript>::version=4.6.3&hash=bda367"
   bin:
@@ -11584,43 +11501,6 @@ plugin-image-zoom@flexanalytics/plugin-image-zoom:
   version: 3.2.3
   resolution: "webpack-sources@npm:3.2.3"
   checksum: 989e401b9fe3536529e2a99dac8c1bdc50e3a0a2c8669cbafad31271eadd994bc9405f88a3039cd2e29db5e6d9d0926ceb7a1a4e7409ece021fe79c37d9c4607
-  languageName: node
-  linkType: hard
-
-"webpack@npm:^5.69.1":
-  version: 5.71.0
-  resolution: "webpack@npm:5.71.0"
-  dependencies:
-    "@types/eslint-scope": ^3.7.3
-    "@types/estree": ^0.0.51
-    "@webassemblyjs/ast": 1.11.1
-    "@webassemblyjs/wasm-edit": 1.11.1
-    "@webassemblyjs/wasm-parser": 1.11.1
-    acorn: ^8.4.1
-    acorn-import-assertions: ^1.7.6
-    browserslist: ^4.14.5
-    chrome-trace-event: ^1.0.2
-    enhanced-resolve: ^5.9.2
-    es-module-lexer: ^0.9.0
-    eslint-scope: 5.1.1
-    events: ^3.2.0
-    glob-to-regexp: ^0.4.1
-    graceful-fs: ^4.2.9
-    json-parse-better-errors: ^1.0.2
-    loader-runner: ^4.2.0
-    mime-types: ^2.1.27
-    neo-async: ^2.6.2
-    schema-utils: ^3.1.0
-    tapable: ^2.1.1
-    terser-webpack-plugin: ^5.1.3
-    watchpack: ^2.3.1
-    webpack-sources: ^3.2.3
-  peerDependenciesMeta:
-    webpack-cli:
-      optional: true
-  bin:
-    webpack: bin/webpack.js
-  checksum: 84b273a15180d45dafe4fc4a3ccccba2f72210f327a1af39713b3ef78148768afb0e18fa0cddaea4af5dd54ace199fbbdfcef9aec8da7e9c248f8b1b7cc413e1
   languageName: node
   linkType: hard
 

@@ -1,10 +1,6 @@
 const path = require('path');
 
 module.exports = {
-    title: '',
-    url: '/',
-    baseUrl: '/',
-    themes: ['@docusaurus/theme-classic'],
     tutorial: {
         title: '',
         description: '',
@@ -17,13 +13,12 @@ module.exports = {
         [
             '@docusaurus/plugin-content-docs',
             {
-                id: '',
+                id: 'tutorial',
+                routeBasePath: '/',
                 path: path.resolve(__dirname, './docs'),
-                routeBasePath: '',
                 sidebarPath: path.resolve(__dirname, './sidebars.js'),
-                editUrl: '/edit/main/',
             },
         ],
     ],
-    staticDirectories: [path.resolve(__dirname, './images')],
+    staticDirectories: [path.resolve(__dirname, './static')],
 };
