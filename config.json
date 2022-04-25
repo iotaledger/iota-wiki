@@ -46,6 +46,7 @@
     },
     {
       "repo": "https://github.com/iotaledger/identity.rs",
+      "checkoutParams": ["--branch support/v0.5"],
       "staticPath": "./documentation/static"
     },
     {
