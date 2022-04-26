@@ -14,7 +14,6 @@ module.exports = {
             '@docusaurus/plugin-content-docs',
             {
                 id: 'tutorial',
-                routeBasePath: '/',
                 path: path.resolve(__dirname, './docs'),
                 sidebarPath: path.resolve(__dirname, './sidebars.js'),
             },

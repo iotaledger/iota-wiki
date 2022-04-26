@@ -35,6 +35,7 @@ module.exports = {
         customCss: path.resolve(__dirname, './src/css/custom.css'),
       },
     ],
+    path.resolve(__dirname, './plugins/theme-available-route'),
   ],
   themeConfig: {
     image: 'img/iota-wiki.png',
