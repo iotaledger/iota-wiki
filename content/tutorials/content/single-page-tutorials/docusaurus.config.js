@@ -17,7 +17,7 @@ module.exports = {
         title: 'Run a Wasp Node',
         description: 'In this tutorial you will learn how to run a wasp node.',
         preview: 'IOTA-Smart-Contract-Tutorials-A.jpg',
-        route: 'https://wiki.iota.org/smart-contracts/guide/chains_and_nodes/running-a-node',
+        route: 'smart-contracts/guide/chains_and_nodes/running-a-node',
         tags: ['text', 'video'],
       },
     ],
