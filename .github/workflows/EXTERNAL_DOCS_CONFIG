@@ -6,6 +6,8 @@
         routeBasePath: "bee",
         sidebarPath: require.resolve("./external/bee/documentation/sidebars.js"),
         remarkPlugins: [require("remark-code-import"), require("remark-import-partial")],
+        editUrl: 'https://github.com/iotaledger/bee/edit/dev',
+        breadcrumbs: false,
       }
     ],
     [
@@ -15,6 +17,8 @@
         path: "external/chrysalis-docs/docs",
         routeBasePath: "chrysalis-docs",
         sidebarPath: require.resolve("./external/chrysalis-docs/sidebars.js"),
+        editUrl: 'https://github.com/iotaledger/chrysalis-docs/edit/main',
+        breadcrumbs: false,
       }
     ],
     [
@@ -24,6 +28,8 @@
         path: "external/goshimmer/documentation/docs",
         routeBasePath: "goshimmer",
         sidebarPath: require.resolve("./external/goshimmer/documentation/sidebars.js"),
+        editUrl: 'https://github.com/iotaledger/goshimmer/edit/develop',
+        breadcrumbs: false,
       }
     ],
     [
@@ -33,6 +39,8 @@
         path: "external/hornet/documentation/docs",
         routeBasePath: "hornet",
         sidebarPath: require.resolve("./external/hornet/documentation/sidebars.js"),
+        editUrl: 'https://github.com/gohornet/hornet/edit/mainnet',
+        breadcrumbs: false,
       }
     ],
     [
@@ -43,17 +51,21 @@
         routeBasePath: "identity.rs",
         sidebarPath: require.resolve("./external/identity.rs/documentation/sidebars.js"),
         remarkPlugins: [require("remark-code-import"), require("remark-import-partial"), require('remark-remove-comments') ],
+        editUrl: 'https://github.com/iotaledger/identity.rs/edit/support/v0.5',
+        breadcrumbs: false,
       }
     ],
     [
       "@docusaurus/plugin-content-docs",
       {
         id: "IOTA-Research-Specifications",
-        path: "external/IOTA-2.0-Research-Specifications/docs",
+        path: "external/IOTA-2.0-Research-Specifications",
         routeBasePath: "IOTA-2.0-Research-Specifications",
         sidebarPath: require.resolve("./external/IOTA-2.0-Research-Specifications/sidebars.js"),
-        remarkPlugins: [math],
-        rehypePlugins: [katex],
+        remarkPlugins: [require('remark-math')],
+        rehypePlugins: [require('rehype-katex')],
+        editUrl: 'https://github.com/iotaledger/IOTA-2.0-Research-Specifications/edit/main',
+        breadcrumbs: false,
        }
     ],
     [
@@ -64,6 +76,8 @@
         routeBasePath: "iota.rs",
         sidebarPath: require.resolve("./external/iota.rs/documentation/sidebars.js"),
         remarkPlugins: [require("remark-code-import"), require("remark-import-partial")],
+        editUrl: 'https://github.com/iotaledger/iota.rs/edit/mainnet',
+        breadcrumbs: false,
       }
     ],
     [
@@ -74,6 +88,8 @@
         routeBasePath: "stronghold.rs",
         sidebarPath: require.resolve("./external/stronghold.rs/documentation/sidebars.js"),
         remarkPlugins: [require("remark-code-import"), require("remark-import-partial")],
+        editUrl: 'https://github.com/iotaledger/stronghold.rs/edit/dev',
+        breadcrumbs: false,
       }
     ],
     [
@@ -83,14 +99,73 @@
         path: "external/wallet.rs/documentation/docs",
         routeBasePath: "wallet.rs",
         sidebarPath: require.resolve("./external/wallet.rs/documentation/sidebars.js"),
+        editUrl: 'https://github.com/iotaledger/wallet.rs/edit/mainnet',
+        breadcrumbs: false,
       }
     ],
     [
       "@docusaurus/plugin-content-docs",
       {
-        id: "wasp",
+        id: "smart-contracts",
         path: "external/wasp/documentation/docs",
-        routeBasePath: "wasp",
+        routeBasePath: "smart-contracts",
         sidebarPath: require.resolve("./external/wasp/documentation/sidebars.js"),
+        editUrl: 'https://github.com/iotaledger/wasp/edit/develop',
+        breadcrumbs: false,
+      }
+    ],
+    [
+      "@docusaurus/plugin-content-docs",
+      {
+        id: "streams",
+        path: "external/streams/documentation/docs",
+        routeBasePath: "streams",
+        sidebarPath: require.resolve("./external/streams/documentation/sidebars.js"),
+        editUrl: 'https://github.com/iotaledger/streams/edit/develop',
+        breadcrumbs: false,
+      }
+    ],
+    [
+      "@docusaurus/plugin-content-docs",
+      {
+        id: "chronicle",
+        path: "external/chronicle.rs/documentation/docs",
+        routeBasePath: "chronicle.rs",
+        sidebarPath: require.resolve("./external/chronicle.rs/documentation/sidebars.js"),
+        editUrl: 'https://github.com/iotaledger/chronicle.rs/edit/main',
+        breadcrumbs: false,
+      }
+    ],
+    [
+      "@docusaurus/plugin-content-docs",
+      {
+        id: "blueprints",
+        path: "external/blueprints/",
+        routeBasePath: "blueprints",
+        sidebarPath: require.resolve("./external/blueprints/sidebars.js"),
+        editUrl: 'https://github.com/iotaledger/blueprints/edit/main',
+        breadcrumbs: false,
+      }
+    ],
+    [
+      "@docusaurus/plugin-content-docs",
+      {
+        id: "integration-services",
+        path: "external/integration-services/documentation/docs",
+        routeBasePath: "integration-services",
+        sidebarPath: require.resolve("./external/integration-services/documentation/sidebars.js"),
+        editUrl: 'https://github.com/iotaledger/integration-services/edit/develop',
+        breadcrumbs: false,
+      }
+    ],
+    [
+      "@docusaurus/plugin-content-docs",
+      {
+        id: "zebra-tutorials",
+        path: "external/zebra-iota-edge-sdk/docs",
+        routeBasePath: "zebra-iota-edge-sdk",
+        sidebarPath: require.resolve("./external/zebra-iota-edge-sdk/docs/sidebars.js"),
+        editUrl: 'https://github.com/zebradevs/zebra-iota-edge-sdk/edit/main',
+        breadcrumbs: false,
       }
     ],
