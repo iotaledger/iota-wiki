@@ -1,23 +1,25 @@
 const path = require('path');
 
 module.exports = {
-    tutorial: {
-        title: '',
-        description: '',
-        preview: './',
-        website: '/intro',
-        source: '',
-        tags: [''],
-    },
-    plugins: [
-        [
-            '@docusaurus/plugin-content-docs',
-            {
-                id: 'tutorial',
-                path: path.resolve(__dirname, './docs'),
-                sidebarPath: path.resolve(__dirname, './sidebars.js'),
-            },
-        ],
+  plugins: [
+    [
+      '@iota-wiki/plugin-tutorial',
+      {
+        title: 'Test tutorial',
+        description: 'This is a test tutorial.',
+        preview: '/img/docusaurus.png',
+        route: '/intro',
+        tags: ['text'],
+      }
     ],
-    staticDirectories: [path.resolve(__dirname, './static')],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+          id: 'tutorial',
+          path: path.resolve(__dirname, './docs'),
+          sidebarPath: path.resolve(__dirname, './sidebars.js'),
+      },
+    ],
+  ],
+  staticDirectories: [path.resolve(__dirname, './static')],
 };
