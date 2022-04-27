@@ -7,6 +7,7 @@
   content: 'expand_more';
   font-family: 'Material Icons';
   font-size: 1.25rem;
+  white-space: nowrap;
 }
 
 .dropdown__label,
@@ -149,6 +150,10 @@ article .card {
 
 .menu__link--active {
   font-weight: var(--ifm-font-weight-semibold);
+}
+
+.menu__link--sublist {
+  justify-content: space-between;
 }
 
 .navbar {
