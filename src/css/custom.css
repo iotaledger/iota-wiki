@@ -7,6 +7,7 @@
   content: 'expand_more';
   font-family: 'Material Icons';
   font-size: 1.25rem;
+  white-space: nowrap;
 }
 
 .dropdown__label,
