@@ -53,7 +53,7 @@ the dust protection rule, as his UTXO “envelope” was short of the necessary 
 A special UTXO called a "dust allowance output" was introduced to overcome this problem. Users can now lock 1-10 Mi on a
 dust allowance output and receive up to 10 dust UTXOs per Mi deposited on the associated address.
 
-To follow the previous example. If Alic creates a dust allowance output with 2 Mi locked on Address A, Bob can now send
+To follow the previous example. If Alice creates a dust allowance output with 2 Mi locked on Address A, Bob can now send
 up to 20 dust transactions (any transaction under 1 Mi) to Alice’s Address A.
 
 You can also sweep the dust UTXOs. This means combining multiple dust UTXOs into a single UTXO. For example, if you have
