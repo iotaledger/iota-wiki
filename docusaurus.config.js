@@ -246,6 +246,13 @@ module.exports = {
             },
           ],
         },
+        {
+          type: 'docsVersionDropdown',
+          position: 'right',
+          dropdownActiveClassDisabled: true,
+          //TODO Damnit
+          docsPluginId: 'learn',
+        },
         { to: '/blog', label: 'Community Blog', position: 'right' },
         { to: '/team', label: 'Team', position: 'right' },
       ],
