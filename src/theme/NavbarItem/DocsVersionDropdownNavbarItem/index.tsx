@@ -8,16 +8,13 @@
 import React from 'react';
 import DefaultNavbarItem from '@theme/NavbarItem/DefaultNavbarItem';
 import DropdownNavbarItem from '@theme/NavbarItem/DropdownNavbarItem';
-import {
-    useVersions,
-    useLatestVersion,
-    useActiveDocContext,
-} from '@docusaurus/plugin-content-docs/client';
+import { useLatestVersion } from '@docusaurus/plugin-content-docs/client';
 import type { Props } from '@theme/NavbarItem/DocsVersionDropdownNavbarItem';
-import { useDocsPreferredVersion } from '@docusaurus/theme-common';
 import { translate } from '@docusaurus/Translate';
 import type { GlobalVersion } from '@docusaurus/plugin-content-docs/client';
 import type { LinkLikeNavbarItemProps } from '@theme/NavbarItem';
+import { useLocation } from '@docusaurus/router';
+import { useAllActiveDocContexts, useAllVersions } from './utils';
 
 const getVersionMainDoc = (version: GlobalVersion) =>
     version.docs.find((doc) => doc.id === version.mainDocId)!;
@@ -30,27 +27,36 @@ export default function DocsVersionDropdownNavbarItem({
     dropdownItemsAfter,
     ...props
 }: Props): JSX.Element {
-    const activeDocContext = useActiveDocContext(docsPluginId);
-    const versions = useVersions(docsPluginId);
-    const latestVersion = useLatestVersion(docsPluginId);
+    // TODO
+    const pluginIds = ['bee', 'bee-shimmer'];
+    const { pathname } = useLocation();
+    if (!pathname.startsWith('/bee'))
+        return null;
 
-    const { preferredVersion, savePreferredVersionName } =
-        useDocsPreferredVersion(docsPluginId);
+    const activeDocContext = useAllActiveDocContexts(pluginIds);
+    const versions = useAllVersions(pluginIds);
+    const latestVersion = useLatestVersion(pluginIds[0]);
+
+    // TODO
+    //const {preferredVersion, savePreferredVersionName} =
+    //  useDocsPreferredVersion(docsPluginId);
 
     function getItems(): LinkLikeNavbarItemProps[] {
         const versionLinks = versions.map((version) => {
             // We try to link to the same doc, in another version
             // When not possible, fallback to the "main doc" of the version
+            // TODO Don't use label?
             const versionDoc =
-                activeDocContext?.alternateDocVersions[version.name] ||
+                activeDocContext?.alternateDocVersions[version.label] ||
                 getVersionMainDoc(version);
+
             return {
                 isNavLink: true,
                 label: version.label,
                 to: versionDoc.path,
                 isActive: () => version === activeDocContext?.activeVersion,
                 onClick: () => {
-                    savePreferredVersionName(version.name);
+                    //savePreferredVersionName(version.name);
                 },
             };
         });
@@ -60,8 +66,9 @@ export default function DocsVersionDropdownNavbarItem({
 
     const items = getItems();
 
+    // TODO
     const dropdownVersion =
-        activeDocContext.activeVersion ?? preferredVersion ?? latestVersion;
+        activeDocContext.activeVersion ?? /*preferredVersion ??*/ latestVersion;
 
     // Mobile dropdown is handled a bit differently
     const dropdownLabel =
