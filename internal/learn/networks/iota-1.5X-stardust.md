@@ -11,7 +11,7 @@ keywords:
 ---
 ## Vision
 
-Stardust is a comprehensive utility upgrade of the IOTA protocol. The main components of Stardust are support for IOTA Smart Contract chains, a new tokenization framework for native assets, revised Dust Protection, and many minor convenience and security updates. With Stardust, IOTA transforms into a multi-asset ledger and enables running smart contracts.
+Stardust is a comprehensive utility upgrade of the IOTA protocol. The main components of Stardust are support for IOTA smart contract (ISC) chains, a new tokenization framework for native assets, revised dust protection, and many minor convenience and security updates. With Stardust, IOTA transforms into a multi-asset ledger and enables running smart contracts.
 
 The origin of Stardust dates back to the first experimental research implementation of the IOTA 2.0 protocol. While working on the new protocol concepts of IOTA 2.0 for ISC, the IOTA Foundation identified that a standalone ledger module could be ported separately to the Mainnet without modifying the consensus-related aspects of Chrysalis.
 
