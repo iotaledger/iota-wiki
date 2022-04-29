@@ -18865,6 +18865,7 @@ plugin-image-zoom@flexanalytics/plugin-image-zoom:
   dependencies:
     "@docusaurus/plugin-ideal-image": latest
     "@iota-community/iota-wiki-cli": "iota-community/iota-wiki-cli#v2"
+    "@iota-wiki/plugin-tutorial": iota-wiki/plugin-tutorial
     react: ^17.0.2
     react-dom: ^17.0.2
     require-glob: ^4.0.0
