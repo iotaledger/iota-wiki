@@ -96,7 +96,9 @@ Assembly will implement two different mechanisms to reward Assembly token staker
 ## SMR Token Staking
 
 The Shimmer network has yearly inflation of 8% planned. These newly minted Shimmer tokens will be distributed to Shimmer stakers. 
-By staking your Shimmer tokens, you will help the network fulfill its purpose of being an incentivized playground for applications to test new IOTA technology features in a real network with real value.
+By staking your Shimmer tokens, you will help the network fulfill its purpose of being an incentivized playground for applications to test new IOTA technology features in a real network with real value. 
+
+Additionally, SMR staking for SMR in the live Shimmer network will not be possible on launch, but will be enabled via a protocol update later.
 
 To learn more about the Shimmer network, read the Shimmer FAQ [here](https://shimmer.network/faqs).
 
