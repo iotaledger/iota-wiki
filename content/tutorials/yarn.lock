@@ -1675,7 +1675,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@docusaurus/plugin-ideal-image@npm:^2.0.0-beta.18":
+"@docusaurus/plugin-ideal-image@npm:^2.0.0-beta.18, @docusaurus/plugin-ideal-image@npm:latest":
   version: 2.0.0-beta.18
   resolution: "@docusaurus/plugin-ideal-image@npm:2.0.0-beta.18"
   dependencies:
@@ -4746,15 +4746,6 @@ __metadata:
   checksum: 196ff74a0669126cf5fc901a5849b72f625bd7a4cb163b3f4d41fbe19ed0b017cf7674daef5b0acbd448c094fcd795e501d7066f301be428e4acecfcf3c5f336
   languageName: node
   linkType: hard
-
-"documentation@workspace:content/tutorial-template/documentation":
-  version: 0.0.0-use.local
-  resolution: "documentation@workspace:content/tutorial-template/documentation"
-  dependencies:
-    "@iota-community/iota-wiki-cli": "iota-community/iota-wiki-cli#v2"
-    "@iota-wiki/plugin-tutorial": iota-wiki/plugin-tutorial
-  languageName: unknown
-  linkType: soft
 
 "dom-converter@npm:^0.2.0":
   version: 0.2.0
@@ -10552,8 +10543,9 @@ plugin-image-zoom@flexanalytics/plugin-image-zoom:
   version: 0.0.0-use.local
   resolution: "tutorials@workspace:."
   dependencies:
-    "@docusaurus/plugin-ideal-image": ^2.0.0-beta.18
+    "@docusaurus/plugin-ideal-image": latest
     "@iota-community/iota-wiki-cli": "iota-community/iota-wiki-cli#v2"
+    "@iota-wiki/plugin-tutorial": iota-wiki/plugin-tutorial
     react: ^17.0.2
     react-dom: ^17.0.2
     require-glob: ^4.0.0
@@ -10969,15 +10961,6 @@ plugin-image-zoom@flexanalytics/plugin-image-zoom:
   checksum: 4f2cb6a9575e4faf71ddad9ad1ae7a00d0a75d24521c193fa464f30e6b04027bd97aa5d9546b0e13d3a150ab402eda216d59c1d0f2d6ca60124d96cd40dfa35c
   languageName: node
   linkType: hard
-
-"wasm-client-tutorial@workspace:content/wasm-client-tutorial/documentation":
-  version: 0.0.0-use.local
-  resolution: "wasm-client-tutorial@workspace:content/wasm-client-tutorial/documentation"
-  dependencies:
-    "@iota-community/iota-wiki-cli": "iota-community/iota-wiki-cli#v2"
-    "@iota-wiki/plugin-tutorial": iota-wiki/plugin-tutorial
-  languageName: unknown
-  linkType: soft
 
 "watchpack@npm:^2.3.1":
   version: 2.3.1
