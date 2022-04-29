@@ -361,7 +361,7 @@ module.exports = {
               to: 'participate/contribute-to-wiki/welcome',
             },
             {
-              label: 'Impressum',
+              label: 'Imprint',
               to: 'https://www.iota.org/impressum',
             },
             {
