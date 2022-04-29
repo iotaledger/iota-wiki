@@ -13,6 +13,9 @@ module.exports = {
         route: 'send-iota-tokens-with-javascript',
         tags: ['text'],
       },
+    ],
+    [
+      '@iota-wiki/plugin-tutorial',
       {
         title: 'Run a Wasp Node',
         description: 'In this tutorial you will learn how to run a wasp node.',
