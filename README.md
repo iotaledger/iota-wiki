@@ -52,18 +52,6 @@
   </ol>
 </details>
 
-<!-- MENU STRUCTURE - CONTENT CREATION IN PROGRESS -->
-
-## Menu Structure - Content creation in progress - ASK FOR YOUR HELP!
-
-Please feel free to contribute to any of the available pages. This is the current state of progress:
-
-In this document all current Menu pages are marked with current progress status. You can choose the page you would like to contribute and get linked directly to the editable .md file in our Repo here:
-
-https://www.notion.so/iotafoundation/Contribute-to-the-IOTA-Wiki-698e95b0bac8469d897fd13cf49574b3
-
-Please mark the page you work on "in progress"
-
 <!-- ABOUT THE PROJECT -->
 
 ## About The Project
@@ -85,7 +73,7 @@ Install [Node.js](https://nodejs.org/en/download/).
 ### Local Development
 
 1. Run `yarn install` in your terminal. If you want to also install the external docs use `yarn cli start` and `yarn cli checkout`
-2. Run `npx docusaurus start`
+2. Run `yarn start`
 3. Open `http://localhost:3000`
 
 <!-- CONTRIBUTING -->
@@ -96,9 +84,9 @@ The IOTA wiki is a community development and we will review all pull-requests an
 Have a look at [CONTRIBUTING](.github/CONTRIBUTING.md).
 
 1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+2. Create your Feature Branch (`git checkout -b feat/AmazingFeature`)
 3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
+4. Push to the Branch (`git push origin feat/AmazingFeature`)
 5. Open a Pull Request
 
 ### Online one-click setup for contributing
