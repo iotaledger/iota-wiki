@@ -3,7 +3,11 @@ import {
     useVersions,
     useActiveDocContext,
 } from '@docusaurus/plugin-content-docs/client';
-import { ActiveDocContext, GlobalVersion } from '@docusaurus/plugin-content-docs/client';
+import { 
+    ActiveDocContext, 
+    GlobalVersion, 
+    useAllDocsData 
+} from '@docusaurus/plugin-content-docs/client';
 
 export function useAllActiveDocContexts(pluginIds: string[]): ActiveDocContext{
     let active = {
@@ -45,4 +49,16 @@ export function useAllVersions(pluginIds: string[]): GlobalVersion[] {
         versions.push(...useVersions(element));
     });
     return versions;
+}
+
+// Gets all plugin ids with the current base route
+export function useCurrentDocPlugins(pathname: string): string[] {
+    let pluginIds = [];
+    const data = useAllDocsData();
+    for (const key in data){
+        const element = data[key];
+        if (pathname.startsWith(element.path))
+            pluginIds.push(key);
+    }
+    return pluginIds;
 }
