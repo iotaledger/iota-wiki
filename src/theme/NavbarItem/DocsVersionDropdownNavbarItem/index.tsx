@@ -14,7 +14,11 @@ import { translate } from '@docusaurus/Translate';
 import type { GlobalVersion } from '@docusaurus/plugin-content-docs/client';
 import type { LinkLikeNavbarItemProps } from '@theme/NavbarItem';
 import { useLocation } from '@docusaurus/router';
-import { useAllActiveDocContexts, useAllVersions } from './utils';
+import { 
+    useAllActiveDocContexts, 
+    useAllVersions, 
+    useCurrentDocPlugins 
+} from './utils';
 
 const getVersionMainDoc = (version: GlobalVersion) =>
     version.docs.find((doc) => doc.id === version.mainDocId)!;
@@ -27,14 +31,16 @@ export default function DocsVersionDropdownNavbarItem({
     dropdownItemsAfter,
     ...props
 }: Props): JSX.Element {
-    // TODO
-    const pluginIds = ['bee', 'bee-shimmer'];
     const { pathname } = useLocation();
-    if (!pathname.startsWith('/bee'))
+    const pluginIds = useCurrentDocPlugins(pathname);
+
+    // Check if multiple versions are available
+    if (pluginIds.length < 2)
         return null;
 
     const activeDocContext = useAllActiveDocContexts(pluginIds);
     const versions = useAllVersions(pluginIds);
+    // TODO Find way to specify last version
     const latestVersion = useLatestVersion(pluginIds[0]);
 
     // TODO
