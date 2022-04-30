@@ -20,6 +20,8 @@ jobs:
   gh-release:
     if: github.event_name != 'pull_request'
     runs-on: ubuntu-latest
+    env:
+      BUILD: '*'
     steps:
       - uses: actions/checkout@v3
         with:
