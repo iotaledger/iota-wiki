@@ -23,9 +23,9 @@
     <a href="https://wiki.iota.org"><strong>Explore the Wiki »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/iota-community/iota-wiki/issues">Report Error</a>
+    <a href="https://github.com/iota-community/iota-wiki/issues/new?labels=bug&template=bug_report.yml&title=%5BBug%5D%3A+">Report Bug</a>
     ·
-    <a href="https://github.com/iota-community/iota-wiki/issues">Request Topic</a>
+    <a href="https://github.com/iota-community/iota-wiki/issues/new?labels=documentation&template=topic_request.yml&title=%5BDocumentation%5D%3A+">Request Topic</a>
     .
   </p>
 </p>

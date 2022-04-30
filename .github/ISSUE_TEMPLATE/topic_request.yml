@@ -1,0 +1,33 @@
+name: Topic request
+description: Suggest a new topic/page or an update for an existing one
+title: "[Documentation]: "
+labels: "documentation"
+body:
+- type: markdown
+  attributes:
+    value: Before requesting a topic, please search for existing [topic requests](https://github.com/iota-community/iota-wiki/labels/documentation) to avoid creating duplicates.
+- type: dropdown
+  id: new-page
+  attributes:
+    label: Do you request a new topic/page or an update to an existing one?
+    options:
+      - New
+      - Update
+  validations:
+    required: true
+- type: input
+  id: wiki-link
+  attributes:
+    label: Wiki Link
+    description: "If this is an update request, please provide a link to the page which needs to be updated:"
+    value: "https://wiki.iota.org/"
+  validations:
+    required: true
+- type: textarea
+  id: topic-description
+  attributes:
+    label: Topic description
+    description: A clear and concise description of which topic you want to be added/updated and which info it should contain.
+  validations:
+    required: true
+

@@ -1,0 +1,77 @@
+name: Bug Report
+description: File a bug report
+title: "[Bug]: "
+labels: "bug"
+body:
+- type: markdown
+  attributes:
+    value: Before raising an issue, please search for existing [issues](https://github.com/iota-community/iota-wiki/labels/bug) to avoid creating duplicates.
+- type: textarea
+  id: bug-description
+  attributes:
+    label: Bug description
+    description: Summarize the bug encountered concisely
+  validations:
+    required: true
+- type: textarea
+  id: expected-behavior
+  attributes:
+    label: Expected behavior
+    description: Describe what you should see instead
+- type: textarea
+  id: screenshots
+  attributes:
+    label: Screenshots
+    description: If applicable, add screenshots to help explain your problem.
+- type: dropdown
+  id: can_repro
+  attributes:
+    label: Can the issue reliably be reproduced?
+    options:
+      - 'Yes'
+      - 'No'
+  validations:
+    required: true
+- type: textarea
+  id: steps-to-reproduce
+  attributes:
+    label: Steps to reproduce
+    description: Describe the steps to reproduce the issue
+    placeholder: |
+      1.  
+      2.  
+      3.  
+- type: input
+  id: browser
+  attributes:
+    label: Browser
+    description: Which browser are you using?
+    placeholder: [e.g. Firefox, Safari]
+  validations:
+    required: true
+- type: input
+  id: browser-version
+  attributes:
+    label: Browser Version
+    description: Which browser version are you using?
+    placeholder: [e.g. 22]
+  validations:
+    required: true
+- type: input
+  id: os
+  attributes:
+    label: OS
+    description: Which operating system are you using?
+    placeholder: [e.g. Windows11, macOS]
+- type: input
+  id: device-resolution
+  attributes:
+    label: Device/Resolution
+    description: If you are using a device with an unusual screen resolution/ratio (e.g. 4k, 4:3)  
+      please specify device and/or resolution
+    placeholder: [e.g. iPhone11, 4k]
+- type: textarea
+  id: anything-else
+  attributes:
+    label: Additional info
+    description: Let us know if you have any additional info like errors or logs from the web console
