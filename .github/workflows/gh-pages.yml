@@ -12,10 +12,7 @@ jobs:
     if: github.event_name == 'pull_request'
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
-        with:
-          node-version: '16.x'
+      - uses: actions/checkout@v3
       - name: Test Build
         run: |
           yarn install --immutable
@@ -23,13 +20,15 @@ jobs:
   gh-release:
     if: github.event_name != 'pull_request'
     runs-on: ubuntu-latest
+    env:
+      BUILD: '*'
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
         with:
           fetch-depth: 0 # Needed for showLastUpdateTime to work
-      - uses: actions/setup-node@v2
-        with:
-          node-version: '16.x'
+      - name: Init and update submodules
+        run: |
+          git submodule update --init --recursive --remote
       - name: Install dependencies
         run: |
           yarn install
