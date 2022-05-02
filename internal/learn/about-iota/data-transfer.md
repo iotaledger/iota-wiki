@@ -9,7 +9,7 @@ IOTA offers the ability to transfer Data for free. The Data transfer is fast, im
 
 Clients, which can be wallets or applications, send and receive messages (data objects) through nodes in IOTA. Nodes are the entry and exit points for these messages, and those nodes communicate with each other and with the connected clients.
 
-There are several types of messages implemented in IOTA. Some messages transfer value (the IOTA token or digital assets), while others transfer only pure data, and some message types can even contain both values and data. This flexible message structure enables the decentralized transport of data and value in a single message with the highest security grade and the total absence of fees. The network nodes take care of the secure distribution of all those messages in the Tangle.
+There are several types of messages implemented in IOTA. Some messages transfer value (the IOTA token or digital assets), while others transfer only pure data, and some message types can even contain both value and data. This flexible message structure enables the decentralized transport of data and value in a single message with the highest security grade and the total absence of fees. The network nodes take care of the secure distribution of all those messages in the Tangle.
 
 ## Data Usage
 
@@ -72,7 +72,7 @@ This is the defined syntactical structure of every message in the IOTA protocol 
 <table>
     <tr>
         <th>Name</th>
-        <th>Type</th>x
+        <th>Type</th>
         <th>Description</th>
     </tr>
     <tr>
@@ -96,7 +96,7 @@ This is the defined syntactical structure of every message in the IOTA protocol 
     <tr>
         <td>Payload Length</td>
         <td>uint32</td>
-        <td> The length of the following payload in bytes. A length of 0 means no payload will be attached.</td>
+        <td>The length of the following payload in bytes. A length of 0 means no payload will be attached.</td>
     </tr>
     <tr>
         <td colspan="1">
@@ -158,11 +158,11 @@ A message may contain a payload. Three payload types are currently defined in th
 
 | Payload Name                                                                                                    | Type Value |
 | --------------------------------------------------------------------------------------------------------------- | ---------- |
-| [Tagged Date](https://hackmd.io/TIP-0023/tip-0023.md)                                                           | 5          |
-| [Transaction](https://hackmd.io/TIP-0020/tip-0020.md)                                                           | 6          |
-| [Milestone](https://hackmd.io/TIP-0029/tip-0029.md)                                                             | 7          |
+| [Tagged Data](https://github.com/iotaledger/tips/pull/54)                                                       | 5          |
+| [Transaction](https://github.com/iotaledger/tips/pull/40)                                                       | 6          |
+| [Milestone](https://github.com/iotaledger/tips/pull/69)                                                         | 7          |
 
-A message containing only an **indexation payload** (Data) can be sent without a signature. It can hold any data the user wants to send, as long as it is parsable and follows the required syntax and size limit.
+A message containing only a **tagged data payload** (Data) can be sent without a signature. It can hold any data the user wants to send, as long as it is parsable and follows the required syntax and size limit.
 
 The message is specified by a **tag**, which will make it possible for any users to find this message and the containing data by searching the index in data indexer applications.
 
