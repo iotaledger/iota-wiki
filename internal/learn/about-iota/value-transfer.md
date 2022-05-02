@@ -16,10 +16,6 @@ To explain how IOTA tokens are transferred from one address to another, this top
 
 Charlie wants to transfer 10i to Bob.
 
-### What is in the Tangle
-
-In this example, Alice had 10i that she transferred to Bob. Therefore, the Tangle now includes a value message that transferred those 10i to Bob.
-
 ### Choosing Where to Attach Messages
 
 To transfer 10i to Bob, Charlie must attach a value message to the Tangle. For that, he needs between one and eight tip messages that he can attach to his own message.
@@ -46,7 +42,7 @@ Then Charlie puts all the messages in a UTXO and sends them to a node on an IOTA
 
 Anyone is free to send messages to a node at any time. As a result, it is not always a simple matter of selecting valid tip messages. The milestone, however, determines which messages are included and confirmed based on deterministic ordering.
 
-For example, what if Alice actually attached two messages to the Tangle: one that transferred 10i to Bob, and one that transferred 10i to Charlie? Together, these messages would be called a **double-spend** because they try to transfer the same IOTA tokens to different addresses.
+For example, what if Charlie actually attached two messages to the Tangle: one that transferred 10i to Bob, and one that transferred 10i to Alice? Together, these messages would be called a **double-spend** because they try to transfer the same IOTA tokens to different addresses.
 
 Both of Alice's messages could not be part of the ledger state because it would result in a negative balance for Alice’s address: minus 10i.
 
