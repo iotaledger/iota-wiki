@@ -20,6 +20,9 @@
     "contribute": "yarn install && husky install"
   },
   "dependencies": {
+    "@babel/generator": "^7.17.9",
+    "@babel/parser": "^7.17.9",
+    "@babel/types": "^7.17.0",
     "@docusaurus/core": "latest",
     "@docusaurus/plugin-content-blog": "latest",
     "@docusaurus/plugin-content-docs": "latest",
@@ -39,6 +42,7 @@
     "react-dom": "^17.0.2"
   },
   "devDependencies": {
+    "@types/babel__generator": "^7",
     "@types/node": "^16.9.4",
     "@types/prettier": "^2",
     "@types/react": "^17",

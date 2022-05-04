@@ -97,6 +97,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@babel/generator@npm:^7.17.9":
+  version: 7.17.9
+  resolution: "@babel/generator@npm:7.17.9"
+  dependencies:
+    "@babel/types": ^7.17.0
+    jsesc: ^2.5.1
+    source-map: ^0.5.0
+  checksum: afbdd4afbf731ba0a17e7e2d9a2291e6461259af887f88f1178f63514a86e9c18cec462ae8f9cd6df9ba15a18296f47b0e151202bb4f834f7338ac0c07ec8dc8
+  languageName: node
+  linkType: hard
+
 "@babel/helper-annotate-as-pure@npm:^7.16.7":
   version: 7.16.7
   resolution: "@babel/helper-annotate-as-pure@npm:7.16.7"
@@ -386,6 +397,15 @@ __metadata:
   bin:
     parser: ./bin/babel-parser.js
   checksum: 1771808491982cc47baa888a997aef6b58308e3844c8c00f730f8fd97defe57d32cdbf46075cd49aaee310fa31f3d2c80a0d41b41a4ee0ff336ee09e2ff6c222
+  languageName: node
+  linkType: hard
+
+"@babel/parser@npm:^7.17.9":
+  version: 7.17.9
+  resolution: "@babel/parser@npm:7.17.9"
+  bin:
+    parser: ./bin/babel-parser.js
+  checksum: ea59c985ebfae7c0299c8ea63ed34903202f51665db8d59c55b4366e20270b74d7367a2c211fdd2db20f25750df89adcc85ab6c8692061c6459a88efb79f43e6
   languageName: node
   linkType: hard
 
@@ -1453,7 +1473,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/types@npm:^7.12.7, @babel/types@npm:^7.15.6, @babel/types@npm:^7.16.0, @babel/types@npm:^7.16.7, @babel/types@npm:^7.16.8, @babel/types@npm:^7.17.0, @babel/types@npm:^7.4.4, @babel/types@npm:^7.8.3":
+"@babel/types@npm:^7.0.0, @babel/types@npm:^7.12.7, @babel/types@npm:^7.15.6, @babel/types@npm:^7.16.0, @babel/types@npm:^7.16.7, @babel/types@npm:^7.16.8, @babel/types@npm:^7.17.0, @babel/types@npm:^7.4.4, @babel/types@npm:^7.8.3":
   version: 7.17.0
   resolution: "@babel/types@npm:7.17.0"
   dependencies:
@@ -2054,12 +2074,16 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@iota-community/iota-wiki-cli@workspace:."
   dependencies:
+    "@babel/generator": ^7.17.9
+    "@babel/parser": ^7.17.9
+    "@babel/types": ^7.17.0
     "@docusaurus/core": latest
     "@docusaurus/plugin-content-blog": latest
     "@docusaurus/plugin-content-docs": latest
     "@docusaurus/plugin-content-pages": latest
     "@docusaurus/theme-classic": latest
     "@iota-wiki/plugin-tutorial": iota-wiki/plugin-tutorial
+    "@types/babel__generator": ^7
     "@types/node": ^16.9.4
     "@types/prettier": ^2
     "@types/react": ^17
@@ -2091,7 +2115,7 @@ __metadata:
 
 "@iota-wiki/plugin-tutorial@iota-wiki/plugin-tutorial":
   version: 1.0.3
-  resolution: "@iota-wiki/plugin-tutorial@https://github.com/iota-wiki/plugin-tutorial.git#commit=a5c9ecaea79b4715b0a26a5b82b63552fc840d52"
+  resolution: "@iota-wiki/plugin-tutorial@https://github.com/iota-wiki/plugin-tutorial.git#commit=1dd5aec9fae250187387f3be21b6ccd09fc7531c"
   dependencies:
     "@docusaurus/plugin-ideal-image": latest
     "@docusaurus/theme-common": latest
@@ -2105,7 +2129,7 @@ __metadata:
   peerDependencies:
     react: ^17.0.2
     react-dom: ^17.0.2
-  checksum: 2b69489987b4a067e9cffc7391067e4fbad6d2cdcd219fd403696ff741fa65fa45f2e9739c3acc75570d3803f80f6185e07272f355f7d7feb6dfdbf9499ebda1
+  checksum: b35a1ea5f4de4ae05b943184a14d55ea60aff858ef53df604a812e107fc00693deebe9eb9f16ac26465eb7669c197a50e9721508ee708b314e1109cd739b68d7
   languageName: node
   linkType: hard
 
@@ -2453,6 +2477,15 @@ __metadata:
   version: 0.2.0
   resolution: "@trysound/sax@npm:0.2.0"
   checksum: 11226c39b52b391719a2a92e10183e4260d9651f86edced166da1d95f39a0a1eaa470e44d14ac685ccd6d3df7e2002433782872c0feeb260d61e80f21250e65c
+  languageName: node
+  linkType: hard
+
+"@types/babel__generator@npm:^7":
+  version: 7.6.4
+  resolution: "@types/babel__generator@npm:7.6.4"
+  dependencies:
+    "@babel/types": ^7.0.0
+  checksum: 20effbbb5f8a3a0211e95959d06ae70c097fb6191011b73b38fe86deebefad8e09ee014605e0fd3cdaedc73d158be555866810e9166e1f09e4cfd880b874dcb0
   languageName: node
   linkType: hard
 
