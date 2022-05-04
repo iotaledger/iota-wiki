@@ -34,14 +34,6 @@ module.exports = {
 };
 `;
 
-export function writeConfig(data) {
-  const id = data.title
-    .replace(/([a-z])([A-Z])/g, '$1-$2')
-    .replace(/\s+/g, '-')
-    .toLowerCase();
-  writeFileSync('docusaurus.config.js', createConfig(data, id));
-}
-
 export async function readCommandLine(command: string) {
   const chunks: Array<Buffer> = [];
   const stdout = new PassThrough();
