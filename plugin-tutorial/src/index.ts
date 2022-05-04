@@ -4,7 +4,7 @@ import type {
   Plugin,
 } from "@docusaurus/types";
 
-interface Options {
+export interface Options {
   title: string;
   description: string;
   tags: string[];
@@ -12,7 +12,7 @@ interface Options {
   preview?: string;
 }
 
-interface DefaultOptions {
+export interface DefaultOptions {
   id: string;
   route: string;
 }
