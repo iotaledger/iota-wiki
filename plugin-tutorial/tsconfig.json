@@ -16,7 +16,8 @@
       "@theme/*": ["./src/theme/*"]
     },
     "rootDir": "src",
-    "outDir": "lib"
+    "outDir": "lib",
+    "declaration": true
   },
   "include": ["src/*.ts"],
   "exclude": ["test"]
