@@ -1,12 +1,39 @@
 import React, { FC, useEffect, useState } from 'react';
 import { Command } from 'clipanion';
-import { render, Box, Text, useFocus, useFocusManager, useInput } from 'ink';
+import {
+  render,
+  Box,
+  Text,
+  useFocus,
+  useFocusManager,
+  useInput,
+  Newline,
+} from 'ink';
 import TextInput from 'ink-text-input';
+import SelectInput from 'ink-select-input';
 import MultiSelect, { ListedItem } from 'ink-multi-select';
-import { writeConfig, readCommandLine } from '../../utils';
+import { readCommandLine } from '../../utils';
 import { readdirSync } from 'fs';
 import axios from 'axios';
 import Spinner from 'ink-spinner';
+import fs from 'fs';
+import { parse } from '@babel/parser';
+import {
+  Statement,
+  Expression,
+  ObjectExpression,
+  PatternLike,
+  memberExpression,
+  arrayExpression,
+  assignmentExpression,
+  identifier,
+  objectExpression,
+  objectProperty,
+  expressionStatement,
+  stringLiteral,
+} from '@babel/types';
+import generator from '@babel/generator';
+import { UserOptions as TutorialOptions } from '@iota-wiki/plugin-tutorial';
 
 interface InputComponentProps {
   label: string;
@@ -78,27 +105,30 @@ const SelectComponent: FC<SelectComponentProps> = (props) => {
   );
 };
 
+interface SubmitComponentItem {
+  label: string;
+  value: () => void;
+}
+
 export interface SubmitComponentProps {
-  title: string;
-  description: string;
-  preview: string;
-  tags: Array<string>;
-  sourceUrl: string;
-  firstPage: string;
+  label: string;
+  items: Array<SubmitComponentItem>;
 }
 
 const SubmitComponent: FC<SubmitComponentProps> = (props) => {
   const { isFocused } = useFocus();
 
-  writeConfig(props);
-
-  return isFocused ? (
-    <Box margin={1} padding={1} borderStyle={'single'} borderColor='green'>
-      <Text color='green'>
-        Config file docusaurus.config.js was created/initialized sucessfully
-      </Text>
+  return (
+    <Box display={isFocused ? 'flex' : 'none'} flexDirection='column'>
+      <Text color={'yellow'}>{props.label}:</Text>
+      <SelectInput
+        isFocused={isFocused}
+        items={props.items}
+        onSelect={(item) => item.value()}
+      />
+      <Newline />
     </Box>
-  ) : null;
+  );
 };
 
 function getFirstPage() {
@@ -116,21 +146,26 @@ export interface Tag {
 
 type TagCategories = Map<string, Array<Tag>>;
 
-const SetupComponent: FC = () => {
+interface SetupComponentProps {
+  addPlugin: (options: TutorialOptions) => void;
+}
+
+const SetupComponent: FC<SetupComponentProps> = (props) => {
   const { focusNext } = useFocusManager();
   const [sourceUrl, setSourceUrl] = useState('');
   const [tagCategories, setTagCategories] = useState(
     new Map() as TagCategories,
   );
   const [loaded, setLoaded] = useState(false);
+  const [firstPage] = useState(getFirstPage());
 
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
   const [preview, setPreview] = useState('');
+  const [route, setRoute] = useState(firstPage);
   const [tagsByCategory, setTagsByCategory] = useState(
     new Map() as TagCategories,
   );
-  const [firstPage] = useState(getFirstPage());
 
   const getSourceUrl = async () => {
     const sourceUrl = await readCommandLine(
@@ -142,7 +177,7 @@ const SetupComponent: FC = () => {
 
   const getTagCategories = async () => {
     const { data } = await axios.get<Record<string, Array<Tag>>>(
-      'https://raw.githubusercontent.com/iota-community/iota-wiki/feat/tuto-section/tutorials.json',
+      'https://raw.githubusercontent.com/iota-community/iota-wiki/feat/tuto-section/content/tutorials/tags.json',
     );
 
     setTagCategories(new Map(Object.entries(data)));
@@ -171,6 +206,20 @@ const SetupComponent: FC = () => {
     setTagsByCategory(tagsByCategory);
   };
 
+  const addPlugin = () => {
+    props.addPlugin({
+      title,
+      description,
+      preview,
+      route,
+      source: sourceUrl,
+      tags: Array.from(tagsByCategory.values())
+        .flat()
+        .map((tag) => tag.value),
+    });
+    process.exit();
+  };
+
   return (
     <Box flexDirection='column'>
       <Text>Configure the tutorial using the options below.</Text>
@@ -191,6 +240,11 @@ const SetupComponent: FC = () => {
             value={preview}
             onChange={setPreview}
           />
+          <InputComponent
+            label='Route to the tutorial'
+            value={route}
+            onChange={setRoute}
+          />
           {Array.from(tagCategories?.entries()).map(([category, tags]) => (
             <SelectComponent
               label={`${category} tags`}
@@ -200,14 +254,17 @@ const SetupComponent: FC = () => {
             />
           ))}
           <SubmitComponent
-            title={title}
-            description={description}
-            preview={preview}
-            tags={Array.from(tagsByCategory.values())
-              .flat()
-              .map((tag) => tag.value)}
-            sourceUrl={sourceUrl}
-            firstPage={firstPage}
+            label={'Choose what to do'}
+            items={[
+              {
+                label: 'Write the config to file.',
+                value: addPlugin,
+              },
+              {
+                label: 'Exit without writing config to file.',
+                value: process.exit,
+              },
+            ]}
           />
         </>
       ) : (
@@ -219,6 +276,66 @@ const SetupComponent: FC = () => {
   );
 };
 
+function tryModuleExports(statement: Statement): Expression {
+  if (
+    statement.type === 'ExpressionStatement' &&
+    statement.expression.type === 'AssignmentExpression' &&
+    statement.expression.left.type === 'MemberExpression' &&
+    statement.expression.left.object.type === 'Identifier' &&
+    statement.expression.left.object.name === 'module' &&
+    statement.expression.left.property.type === 'Identifier' &&
+    statement.expression.left.property.name === 'exports'
+  ) {
+    return statement.expression.right;
+  }
+}
+
+function getConfig(statements: Statement[]): Expression {
+  let expression = statements.reduce(
+    (previous, current) => previous || tryModuleExports(current),
+    null as Expression,
+  );
+
+  if (expression === null) {
+    expression = assignmentExpression(
+      '=',
+      memberExpression(identifier('module'), identifier('exports')),
+      objectExpression([]),
+    );
+
+    statements.push(expressionStatement(expression));
+  }
+
+  return expression;
+}
+
+function tryPlugins(
+  property: ObjectExpression['properties'][number],
+): Expression | PatternLike {
+  if (
+    property.type === 'ObjectProperty' &&
+    property.key.type === 'Identifier' &&
+    property.key.name === 'plugins'
+  ) {
+    return property.value;
+  }
+}
+
+function getPlugins(properties: ObjectExpression['properties']) {
+  let plugins = properties.reduce(
+    (previous, current) => previous || tryPlugins(current),
+    null as Expression | PatternLike,
+  );
+
+  if (plugins === null) {
+    plugins = arrayExpression([]);
+
+    properties.push(objectProperty(identifier('plugins'), plugins));
+  }
+
+  return plugins;
+}
+
 export class Setup extends Command {
   static paths = [[`tutorial`, `configure`]];
 
@@ -227,6 +344,41 @@ export class Setup extends Command {
   });
 
   async execute() {
-    render(<SetupComponent />);
+    const ast = parse(fs.readFileSync('docusaurus.config.js', 'utf-8'));
+    const config = getConfig(ast.program.body);
+
+    // TODO: Allow config exported via variable assigned to `module.exports`.
+    if (config.type !== 'ObjectExpression')
+      throw 'Module needs to export a config object.';
+
+    const plugins = getPlugins(config.properties);
+
+    // TODO: Allow variable and convert it to variable spread in array literal.
+    if (plugins.type !== 'ArrayExpression')
+      throw 'Plugins property needs to be an array.';
+
+    const addPlugin = (options: TutorialOptions) => {
+      const { tags, ...rest } = options;
+
+      plugins.elements.push(
+        arrayExpression([
+          stringLiteral('@iota-wiki/plugin-tutorial'),
+          objectExpression([
+            ...Object.entries(rest).map(([key, value]) =>
+              objectProperty(identifier(key), stringLiteral(value)),
+            ),
+            objectProperty(
+              identifier('tags'),
+              arrayExpression(tags.map((value) => stringLiteral(value))),
+            ),
+          ]),
+        ]),
+      );
+
+      const { code } = generator(ast);
+      fs.writeFileSync('docusaurus.config.js', code);
+    };
+
+    render(<SetupComponent addPlugin={addPlugin} />);
   }
 }
