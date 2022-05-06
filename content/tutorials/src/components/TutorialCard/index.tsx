@@ -7,13 +7,12 @@
 
 import React, { memo, useState } from 'react';
 import Image from '@theme/IdealImage';
-import Link from '@docusaurus/Link';
+import useBaseUrl from '@docusaurus/useBaseUrl';
 import clsx from 'clsx';
 
 import './styles.css';
 import FavoriteIcon from '../FavoriteIcon';
 import { sortBy } from '../../utils/jsUtils';
-import { useHistory } from '@docusaurus/router';
 import { NormalizedOptions as Tutorial } from '@iota-wiki/plugin-tutorial';
 import { Tag, TagValues, Tags } from '../../utils/tags';
 
@@ -43,12 +42,14 @@ function TutorialCardTag({ tags }: { tags: string[] }) {
 }
 
 const TutorialCard = memo(({ tutorial }: { tutorial: Tutorial }) => {
-  const history = useHistory();
+  const tutorialSource = tutorial.source && useBaseUrl(tutorial.source);
+  const tutorialRoute = tutorial.route && useBaseUrl(tutorial.route);
   const [hovering, setHovering] = useState(false);
 
-  const handleClick = (e) => {
-    e.preventDefault();
-    history.push(tutorial.route);
+  const handleClick = (event, url) => {
+    event.preventDefault();
+    event.stopPropagation();
+    window.location.href = url;
   };
 
   return (
@@ -57,7 +58,10 @@ const TutorialCard = memo(({ tutorial }: { tutorial: Tutorial }) => {
       onMouseOver={() => setHovering(true)}
       onMouseOut={() => setHovering(false)}
     >
-      <div onClick={handleClick} className='card shadow--md tutorial-card'>
+      <div
+        onClick={(event) => handleClick(event, tutorialRoute)}
+        className='card shadow--md tutorial-card'
+      >
         <div className='card__image tutorial-card__image-container'>
           <Image
             className='tutorial-card__image'
@@ -79,12 +83,12 @@ const TutorialCard = memo(({ tutorial }: { tutorial: Tutorial }) => {
               <FavoriteIcon svgClass='svg-icon-favorite' size='small' />
             )}
             {tutorial.source && (
-              <Link
-                href={tutorial.source}
+              <div
+                onClick={(event) => handleClick(event, tutorialSource)}
                 className='button button--secondary button--sm tutorial-card__source-button'
               >
                 source
-              </Link>
+              </div>
             )}
           </div>
           <p className='tutorial-card__body'>{tutorial.description}</p>
