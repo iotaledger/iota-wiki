@@ -18,8 +18,7 @@
     "require-glob": "^4.0.0"
   },
   "workspaces": [
-    "content/tutorial-template/documentation",
-    "content/wasm-client-tutorial/documentation"
+    "content/*/documentation"
   ],
   "devDependencies": {
     "@iota-community/iota-wiki-cli": "iota-community/iota-wiki-cli#v2"
