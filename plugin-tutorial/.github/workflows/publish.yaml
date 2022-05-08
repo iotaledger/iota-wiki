@@ -12,12 +12,12 @@ jobs:
           node-version: "16.x"
       - run: yarn install
       - run: |
-        yarn config set npmPublishAccess "public"
-        yarn config set npmRegistries["//registry.npmjs.org"].npmAuthToken "${{ secrets.NPM_TOKEN }}"
-        yarn config set npmRegistries["//npm.pkg.github.com"].npmAuthToken "${{ secrets.GITHUB_TOKEN }}"
+          yarn config set npmPublishAccess "public"
+          yarn config set npmRegistries["//registry.npmjs.org"].npmAuthToken "${{ secrets.NPM_TOKEN }}"
+          yarn config set npmRegistries["//npm.pkg.github.com"].npmAuthToken "${{ secrets.GITHUB_TOKEN }}"
       - run: |
-        yarn config set npmPublishRegistry "https://registry.npmjs.org"
-        yarn npm publish
+          yarn config set npmPublishRegistry "https://registry.npmjs.org"
+          yarn npm publish
       - run: |
-        yarn config set npmPublishRegistry "https://npm.pkg.github.com"
-        yarn npm publish
+          yarn config set npmPublishRegistry "https://npm.pkg.github.com"
+          yarn npm publish
