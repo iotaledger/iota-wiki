@@ -7,17 +7,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      # - uses: actions/setup-node@v3
-      #   with:
-      #     node-version: "16.x"
-      #     registry-url: "https://registry.npmjs.org"
-      # - run: yarn install
-      # - run: yarn npm publish --access public
-      #   env:
-      #     NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
       - uses: actions/setup-node@v3
         with:
           node-version: "16.x"
-          registry-url: "https://npm.pkg.github.com"
       - run: yarn install
-      - run: yarn npm publish --access public
+      - run: |
+        yarn config set npmPublishAccess "public"
+        yarn config set npmRegistries["//registry.npmjs.org"].npmAuthToken "${{ secrets.NPM_TOKEN }}"
+        yarn config set npmRegistries["//npm.pkg.github.com"].npmAuthToken "${{ secrets.GITHUB_TOKEN }}"
+      - run: |
+        yarn config set npmPublishRegistry "https://registry.npmjs.org"
+        yarn npm publish
+      - run: |
+        yarn config set npmPublishRegistry "https://npm.pkg.github.com"
+        yarn npm publish
