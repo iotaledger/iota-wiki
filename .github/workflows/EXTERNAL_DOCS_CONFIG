@@ -51,7 +51,7 @@
         routeBasePath: "identity.rs",
         sidebarPath: require.resolve("./external/identity.rs/documentation/sidebars.js"),
         remarkPlugins: [require("remark-code-import"), require("remark-import-partial"), require('remark-remove-comments') ],
-        editUrl: 'https://github.com/iotaledger/identity.rs/edit/dev',
+        editUrl: 'https://github.com/iotaledger/identity.rs/edit/support/v0.5',
         breadcrumbs: false,
       }
     ],
