@@ -32,19 +32,15 @@ export default async function pluginTutorial(
   };
 }
 
-function titleToLowerKebabcase(title: string): string {
-  return title.normalize().toLowerCase().replace(/\W/, "-");
-}
-
 export function validateOptions({
-  options,
+  options: userOptions,
 }: OptionValidationContext<UserOptions, NormalizedOptions>): NormalizedOptions {
-  const lowerKebabCaseTitle = titleToLowerKebabcase(options.title);
-  return Object.assign(
-    {
-      id: lowerKebabCaseTitle,
-      route: lowerKebabCaseTitle,
-    },
-    options
-  );
+  const id = userOptions.title.normalize().toLowerCase().replace(/\W/, "-");
+
+  const defaultOptions = {
+    id,
+    route: id,
+  };
+
+  return Object.assign(defaultOptions, userOptions);
 }
