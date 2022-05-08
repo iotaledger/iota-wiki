@@ -21,7 +21,7 @@
     },
     {
       "repo": "https://github.com/iotaledger/iota.rs",
-      "checkoutParams": ["--branch mainnet"],
+      "checkoutParams": ["--branch production"],
       "staticPath": "./documentation/static"
     },
     {
