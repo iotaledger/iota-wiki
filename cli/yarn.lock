@@ -2658,7 +2658,7 @@ __metadata:
     "@docusaurus/plugin-content-docs": ^2.0.0-beta.20
     "@docusaurus/plugin-content-pages": ^2.0.0-beta.20
     "@docusaurus/theme-classic": ^2.0.0-beta.20
-    "@iota-wiki/plugin-tutorial": iota-wiki/plugin-tutorial
+    "@iota-wiki/plugin-tutorial": ^1.0.4
     "@types/babel__generator": ^7
     "@types/node": ^16.9.4
     "@types/prettier": ^2
@@ -2689,9 +2689,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@iota-wiki/plugin-tutorial@iota-wiki/plugin-tutorial":
-  version: 1.0.3
-  resolution: "@iota-wiki/plugin-tutorial@https://github.com/iota-wiki/plugin-tutorial.git#commit=1dd5aec9fae250187387f3be21b6ccd09fc7531c"
+"@iota-wiki/plugin-tutorial@npm:^1.0.4":
+  version: 1.0.4
+  resolution: "@iota-wiki/plugin-tutorial@npm:1.0.4"
   dependencies:
     "@docusaurus/plugin-ideal-image": latest
     "@docusaurus/theme-common": latest
@@ -2705,7 +2705,7 @@ __metadata:
   peerDependencies:
     react: ^17.0.2
     react-dom: ^17.0.2
-  checksum: b35a1ea5f4de4ae05b943184a14d55ea60aff858ef53df604a812e107fc00693deebe9eb9f16ac26465eb7669c197a50e9721508ee708b314e1109cd739b68d7
+  checksum: 3220971a49ee2fb542e2ed2c0903b2648f1b7d1021a0063a4c05153b40de18777b4d07ad9508ed8f75c39cf46399ea44ef3feb0d347900ddc13e15da9cdd99df
   languageName: node
   linkType: hard
 

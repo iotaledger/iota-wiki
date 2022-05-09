@@ -28,7 +28,7 @@
     "@docusaurus/plugin-content-docs": "^2.0.0-beta.20",
     "@docusaurus/plugin-content-pages": "^2.0.0-beta.20",
     "@docusaurus/theme-classic": "^2.0.0-beta.20",
-    "@iota-wiki/plugin-tutorial": "iota-wiki/plugin-tutorial",
+    "@iota-wiki/plugin-tutorial": "^1.0.4",
     "@yarnpkg/shell": "^3.2.0",
     "axios": "^0.26.1",
     "clipanion": "^3.2.0-rc.10",
