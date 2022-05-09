@@ -12,14 +12,10 @@
 <br />
 <p align="center">
   <a href="https://wiki.iota.org">
-    <img src="static/img/logo.svg" alt="Logo" width="80" height="80" fill="#ffffff">
+    <img src="static/img/GitHub_Wiki_Banner.png" alt="IOTA Wiki GitHub Banner" width="830" height="300">
   </a>
 
-  <h3 align="center">IOTA Wiki</h3>
-
   <p align="center">
-    Everything you need to know about IOTA in one place.
-    <br />
     <a href="https://wiki.iota.org"><strong>Explore the Wiki »</strong></a>
     <br />
     <br />
