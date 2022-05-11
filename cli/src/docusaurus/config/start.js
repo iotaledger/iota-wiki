@@ -14,6 +14,7 @@ module.exports = {
   baseUrl: '/',
   onBrokenLinks: 'log',
   onBrokenMarkdownLinks: 'log',
+  onDuplicateRoutes: 'log',
   favicon: 'img/favicon.ico',
   trailingSlash: false,
   organizationName: 'iota-community', // Usually your GitHub org/user name.
