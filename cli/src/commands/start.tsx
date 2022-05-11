@@ -1,7 +1,7 @@
 import { Command, Option } from 'clipanion';
 import { execute as shell } from '@yarnpkg/shell';
 
-const internalConfig = require.resolve('../docusaurus/config.js');
+const internalConfig = require.resolve('../docusaurus/config/start.js');
 
 export class Start extends Command {
   static paths = [[`start`], [`tutorial`, `start`]];
