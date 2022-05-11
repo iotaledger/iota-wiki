@@ -49,6 +49,16 @@ module.exports = {
         background: 'rgba(0, 0, 0, 0.6)',
       },
     },
+    navbar: {
+      hideOnScroll: true,
+      logo: {
+        alt: 'IOTA Wiki Logo',
+        src: 'img/logo.svg',
+        srcDark: 'img/logo_dark.svg',
+        href: 'https://wiki.iota.org'
+      },
+      items: [],
+    },
   },
   staticDirectories: [
     path.resolve(__dirname, '../static'),
