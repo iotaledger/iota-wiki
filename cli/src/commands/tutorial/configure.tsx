@@ -1,5 +1,6 @@
 import React, { FC, useEffect, useState } from 'react';
 import { Command } from 'clipanion';
+import git from 'isomorphic-git';
 import {
   render,
   Box,
@@ -12,11 +13,9 @@ import {
 import TextInput from 'ink-text-input';
 import SelectInput from 'ink-select-input';
 import MultiSelect, { ListedItem } from 'ink-multi-select';
-import { readCommandLine } from '../../utils';
-import { readdirSync } from 'fs';
+import fs, { readdirSync } from 'fs';
 import axios from 'axios';
 import Spinner from 'ink-spinner';
-import fs from 'fs';
 import { parse } from '@babel/parser';
 import {
   Statement,
@@ -168,9 +167,16 @@ const SetupComponent: FC<SetupComponentProps> = (props) => {
   );
 
   const getSourceUrl = async () => {
-    const sourceUrl = await readCommandLine(
-      `git config --get remote.origin.url`,
-    );
+    const dir = await git.findRoot({
+      fs,
+      filepath: process.cwd(),
+    });
+
+    const sourceUrl = await git.getConfig({
+      fs,
+      dir,
+      path: 'remote.origin.url',
+    });
 
     setSourceUrl(sourceUrl);
   };
