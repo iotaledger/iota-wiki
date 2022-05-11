@@ -3,6 +3,7 @@
 import { Builtins, Cli } from 'clipanion';
 
 import { Start } from './commands/start';
+import { Build } from './commands/build';
 import { Setup } from './commands/tutorial/configure';
 import { Default } from './commands/default';
 
@@ -17,6 +18,7 @@ const cli = new Cli({
 cli.register(Builtins.HelpCommand);
 cli.register(Builtins.VersionCommand);
 cli.register(Start);
+cli.register(Build);
 cli.register(Setup);
 cli.register(Default);
 cli.runExit(args);
