@@ -12,8 +12,9 @@ module.exports = {
   tagline: 'The complete reference for IOTA',
   url: 'https://wiki.iota.org',
   baseUrl: '/',
-  onBrokenLinks: 'warn',
-  onBrokenMarkdownLinks: 'warn',
+  onBrokenLinks: 'throw',
+  onBrokenMarkdownLinks: 'throw',
+  onDuplicateRoutes: 'throw',
   favicon: 'img/favicon.ico',
   trailingSlash: false,
   organizationName: 'iota-community', // Usually your GitHub org/user name.
