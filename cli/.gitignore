@@ -8,6 +8,7 @@ node_modules
 oclif.manifest.json
 .eslintcache
 .docusaurus
+build
 
 # Yarn
 .pnp.*
