@@ -1,13 +1,17 @@
 {
   "compilerOptions": {
+    "target": "es2022",
     "module": "commonjs",
-    "target": "ES6",
     "moduleResolution": "node",
     "declaration": true,
     "declarationMap": true,
     "jsx": "react",
+    "allowJs": true,
     "esModuleInterop": true,
-    "outDir": "dist"
+    "rootDir": "src",
+    "outDir": "dist",
+    "types": ["@docusaurus/theme-classic"],
+    "skipLibCheck": true
   },
   "include": ["src"]
 }

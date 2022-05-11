@@ -1,12 +1,12 @@
-// @ts-check
-const path = require('path');
+import path from 'path';
+
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 const config = require(path.resolve(
   process.cwd(),
   process.env.IOTA_WIKI_DIRECTORY,
   './docusaurus.config.js',
 ));
 
-/** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
   title: 'IOTA Wiki',
   tagline: 'The complete reference for IOTA',
@@ -27,20 +27,23 @@ module.exports = {
       crossorigin: 'anonymous',
     },
   ],
-  plugins: [
-    'plugin-image-zoom',
-    ...config.plugins
-  ],
+  plugins: ['plugin-image-zoom', ...config.plugins],
   themes: [
     [
       '@docusaurus/theme-classic',
       {
-        customCss: path.resolve(__dirname, './src/css/custom.css'),
+        customCss: path.resolve(__dirname, 'css/custom.css'),
       },
     ],
-    path.resolve(__dirname, './plugins/theme-available-route'),
+    path.resolve(__dirname, 'theme'),
   ],
   themeConfig: {
+    announcementBar: {
+      id: 'preview',
+      content:
+        'This is a local preview. Please find available routes <a href="/404">here</a>.',
+      isCloseable: false,
+    },
     image: 'img/iota-wiki.png',
     imageZoom: {
       selector:

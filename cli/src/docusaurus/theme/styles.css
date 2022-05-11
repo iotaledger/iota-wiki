@@ -1,0 +1,12 @@
+div[class^='announcementBar_'] {
+  --site-announcement-bar-stripe-color1: rgb(255, 250, 228);
+  --site-announcement-bar-stripe-color2: rgb(255, 232, 141);
+  background: repeating-linear-gradient(
+    35deg,
+    var(--site-announcement-bar-stripe-color1),
+    var(--site-announcement-bar-stripe-color1) 20px,
+    var(--site-announcement-bar-stripe-color2) 10px,
+    var(--site-announcement-bar-stripe-color2) 40px
+  );
+  font-weight: bold;
+}

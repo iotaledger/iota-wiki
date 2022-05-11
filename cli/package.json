@@ -12,7 +12,11 @@
     "iota-wiki": "dist/index.js"
   },
   "scripts": {
-    "build": "tsc --build",
+    "clean": "rm -rf ./dist",
+    "build": "yarn build:ts && yarn build:css && yarn build:fonts",
+    "build:ts": "tsc --build",
+    "build:css": "cd src && cp --parents **/*.css ../dist",
+    "build:fonts": "cd src && cp --parents **/*.{eot,svg,ttf,woff} ../dist",
     "watch": "yarn build --watch",
     "format": "prettier --write .",
     "lint": "eslint --cache --fix .",
@@ -58,8 +62,7 @@
     "typescript": "^4.4.3"
   },
   "files": [
-    "dist",
-    "internal"
+    "dist"
   ],
   "types": "dist/index.d.ts",
   "lint-staged": {
