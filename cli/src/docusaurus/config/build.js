@@ -32,10 +32,10 @@ module.exports = {
     [
       '@docusaurus/theme-classic',
       {
-        customCss: path.resolve(__dirname, 'css/custom.css'),
+        customCss: path.resolve(__dirname, '../css/custom.css'),
       },
     ],
-    path.resolve(__dirname, 'theme'),
+    path.resolve(__dirname, '../theme'),
   ],
   themeConfig: {
     image: 'img/iota-wiki.png',
@@ -50,7 +50,7 @@ module.exports = {
     },
   },
   staticDirectories: [
-    path.resolve(__dirname, './static'),
+    path.resolve(__dirname, '../static'),
     ...config.staticDirectories,
   ],
 };
