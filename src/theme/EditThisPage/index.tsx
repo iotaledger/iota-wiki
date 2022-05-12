@@ -18,18 +18,21 @@ import IconEdit from '@theme/IconEdit';
 import OriginalEditThisPage from '@theme-original/EditThisPage';
 
 /**
-This function will remove "external/anyOtherString"
+This function will remove 
+"content/build/anyOtherString/anyOtherString/anyOtherString"
+or
+"external/anyOtherString"
 **/
 function reformatExternalProjectURL(editUrl) {
-  const externalDocsRegex = new RegExp('external/[^/]*/', 'i');
+  const externalDocsRegex = new RegExp('content/build/[^/]*/[^/]*/[^/]*/|external/[^/]*/', 'i');
   return editUrl.replace(externalDocsRegex, '');
 }
 
 /**
-This function will check if docs is in "external/"
+This function will check if docs is in "content/build/" or "external/"
 **/
 function isExternalProjectURL(editUrl) {
-  const externalDocsRegex = new RegExp('external/[^/]*/', 'i');
+  const externalDocsRegex = new RegExp('content/build/[^/]*/[^/]*/[^/]*/|external/[^/]*/', 'i');
   return externalDocsRegex.test(editUrl);
 }
 
