@@ -20,11 +20,6 @@
       "staticPath": "./documentation/static"
     },
     {
-      "repo": "https://github.com/iotaledger/iota.rs",
-      "checkoutParams": ["--branch production"],
-      "staticPath": "./documentation/static"
-    },
-    {
       "repo": "https://github.com/iotaledger/wallet.rs",
       "checkoutParams": ["--branch mainnet"],
       "staticPath": "./documentation/static"

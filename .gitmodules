@@ -1,0 +1,4 @@
+[submodule "content/build/iota.rs/production"]
+	path = content/build/iota.rs/production
+	url = https://github.com/iotaledger/iota.rs
+	branch = production
