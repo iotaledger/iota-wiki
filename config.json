@@ -15,11 +15,6 @@
       "staticPath": "./static"
     },
     {
-      "repo": "https://github.com/iotaledger/wasp",
-      "checkoutParams": ["--branch develop"],
-      "staticPath": "./documentation/static"
-    },
-    {
       "repo": "https://github.com/iotaledger/iota.rs",
       "checkoutParams": ["--branch production"],
       "staticPath": "./documentation/static"
