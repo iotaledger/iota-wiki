@@ -1,0 +1,4 @@
+[submodule "content/build/zebra-iota-edge-sdk/production"]
+	path = content/build/zebra-iota-edge-sdk/production
+	url = https://github.com/ZebraDevs/Zebra-Iota-Edge-SDK
+	branch = main
