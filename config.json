@@ -25,11 +25,6 @@
       "staticPath": "./documentation/static"
     },
     {
-      "repo": "https://github.com/iotaledger/wallet.rs",
-      "checkoutParams": ["--branch mainnet"],
-      "staticPath": "./documentation/static"
-    },
-    {
       "repo": "https://github.com/iotaledger/stronghold.rs",
       "staticPath": "./documentation/static"
     },
