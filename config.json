@@ -26,11 +26,6 @@
       "staticPath": "./static"
     },
     {
-      "repo": "https://github.com/gohornet/hornet",
-      "checkoutParams": ["--branch mainnet"],
-      "staticPath": "./documentation/static"
-    },
-    {
       "repo": "https://github.com/iotaledger/streams",
       "staticPath": "./documentation/static"
     },
