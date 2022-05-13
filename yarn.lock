@@ -10071,6 +10071,37 @@ __metadata:
   languageName: node
   linkType: hard
 
+"iota-wiki-cli@iota-community/iota-wiki-cli#v2":
+  version: 1.7.0
+  resolution: "iota-wiki-cli@https://github.com/iota-community/iota-wiki-cli.git#commit=ef2f73d6464205353a1660413a667b6318f378a7"
+  dependencies:
+    "@babel/generator": ^7.17.9
+    "@babel/parser": ^7.17.9
+    "@babel/types": ^7.17.0
+    "@docusaurus/core": ^2.0.0-beta.20
+    "@docusaurus/plugin-content-blog": ^2.0.0-beta.20
+    "@docusaurus/plugin-content-docs": ^2.0.0-beta.20
+    "@docusaurus/plugin-content-pages": ^2.0.0-beta.20
+    "@docusaurus/theme-classic": ^2.0.0-beta.20
+    "@iota-wiki/plugin-tutorial": ^1.0.4
+    "@yarnpkg/shell": ^3.2.0
+    axios: ^0.26.1
+    clipanion: ^3.2.0-rc.10
+    ink: ^3.2.0
+    ink-multi-select: ^2.0.0
+    ink-select-input: ^4.2.1
+    ink-spinner: ^4.0.3
+    ink-text-input: ^4.0.3
+    isomorphic-git: ^1.17.2
+    plugin-image-zoom: flexanalytics/plugin-image-zoom
+    react: ^17.0.2
+    react-dom: ^17.0.2
+  bin:
+    iota-wiki: dist/index.js
+  checksum: 346cdf5c237e251e35d08a77385e690f118fa4aa20fbb7beb450210c43f564100dabe06cf516b7706c18ed967d50ac7c2e658269944874d7a548d1f2b8f837a1
+  languageName: node
+  linkType: hard
+
 "iota-rs@workspace:content/build/iota.rs/production/documentation":
   version: 0.0.0-use.local
   resolution: "iota-rs@workspace:content/build/iota.rs/production/documentation"
@@ -17238,6 +17269,17 @@ plugin-image-zoom@flexanalytics/plugin-image-zoom:
   checksum: e4d62aa4145d99fe34747ccf7506d4b4d6e60dd677c0eb18a51e316d38116ace2d194e4b22a9eb7b767b0282f39878ddcc4ae9440dcb0c005c9150668747cf5b
   languageName: node
   linkType: hard
+
+"wallet-rs@workspace:content/build/wallet.rs/production/documentation":
+  version: 0.0.0-use.local
+  resolution: "wallet-rs@workspace:content/build/wallet.rs/production/documentation"
+  dependencies:
+    iota-wiki-cli: "iota-community/iota-wiki-cli#v2"
+    raw-loader: ^4.0.2
+    remark-code-import: ^0.3.0
+    remark-import-partial: ^0.0.2
+  languageName: unknown
+  linkType: soft
 
 "warning@npm:^4.0.2":
   version: 4.0.3
