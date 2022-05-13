@@ -46,18 +46,6 @@
     [
       "@docusaurus/plugin-content-docs",
       {
-        id: "identity-rs",
-        path: "external/identity.rs/documentation/docs",
-        routeBasePath: "identity.rs",
-        sidebarPath: require.resolve("./external/identity.rs/documentation/sidebars.js"),
-        remarkPlugins: [require("remark-code-import"), require("remark-import-partial"), require('remark-remove-comments') ],
-        editUrl: 'https://github.com/iotaledger/identity.rs/edit/support/v0.5',
-        breadcrumbs: false,
-      }
-    ],
-    [
-      "@docusaurus/plugin-content-docs",
-      {
         id: "IOTA-Research-Specifications",
         path: "external/IOTA-2.0-Research-Specifications",
         routeBasePath: "IOTA-2.0-Research-Specifications",

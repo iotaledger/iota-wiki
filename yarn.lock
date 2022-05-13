@@ -9801,6 +9801,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"identity@workspace:content/build/identity.rs/v0.5.0/documentation":
+  version: 0.0.0-use.local
+  resolution: "identity@workspace:content/build/identity.rs/v0.5.0/documentation"
+  dependencies:
+    "@iota-community/iota-wiki-cli": "iota-community/iota-wiki-cli#v2"
+    raw-loader: ^4.0.2
+    remark-code-import: ^0.3.0
+    remark-import-partial: ^0.0.2
+    remark-remove-comments: ^0.2.0
+  languageName: unknown
+  linkType: soft
+
 "ieee754@npm:^1.1.13, ieee754@npm:^1.1.4":
   version: 1.2.1
   resolution: "ieee754@npm:1.2.1"
