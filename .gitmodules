@@ -1,3 +1,19 @@
+[submodule "content/build/identity.rs/v0.5.0"]
+	path = content/build/identity.rs/v0.5.0
+	url = https://github.com/iotaledger/identity.rs
+	branch = support/v0.5
+[submodule "content/build/iota.rs/production"]
+	path = content/build/iota.rs/production
+	url = https://github.com/iotaledger/iota.rs
+	branch = production
+[submodule "content/build/wallet.rs/production"]
+	path = content/build/wallet.rs/production
+	url = https://github.com/iotaledger/wallet.rs
+  branch = production
+[submodule "content/build/wasp/develop"]
+	path = content/build/wasp/develop
+	url = https://github.com/iotaledger/wasp
+	branch = develop
 [submodule "content/build/zebra-iota-edge-sdk/production"]
 	path = content/build/zebra-iota-edge-sdk/production
 	url = https://github.com/ZebraDevs/Zebra-Iota-Edge-SDK

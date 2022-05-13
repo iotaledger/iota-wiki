@@ -46,18 +46,6 @@
     [
       "@docusaurus/plugin-content-docs",
       {
-        id: "identity-rs",
-        path: "external/identity.rs/documentation/docs",
-        routeBasePath: "identity.rs",
-        sidebarPath: require.resolve("./external/identity.rs/documentation/sidebars.js"),
-        remarkPlugins: [require("remark-code-import"), require("remark-import-partial"), require('remark-remove-comments') ],
-        editUrl: 'https://github.com/iotaledger/identity.rs/edit/support/v0.5',
-        breadcrumbs: false,
-      }
-    ],
-    [
-      "@docusaurus/plugin-content-docs",
-      {
         id: "IOTA-Research-Specifications",
         path: "external/IOTA-2.0-Research-Specifications",
         routeBasePath: "IOTA-2.0-Research-Specifications",
@@ -71,46 +59,12 @@
     [
       "@docusaurus/plugin-content-docs",
       {
-        id: "iota-rs",
-        path: "external/iota.rs/documentation/docs",
-        routeBasePath: "iota.rs",
-        sidebarPath: require.resolve("./external/iota.rs/documentation/sidebars.js"),
-        remarkPlugins: [require("remark-code-import"), require("remark-import-partial")],
-        editUrl: 'https://github.com/iotaledger/iota.rs/edit/mainnet',
-        breadcrumbs: false,
-      }
-    ],
-    [
-      "@docusaurus/plugin-content-docs",
-      {
         id: "stronghold-rs",
         path: "external/stronghold.rs/documentation/docs",
         routeBasePath: "stronghold.rs",
         sidebarPath: require.resolve("./external/stronghold.rs/documentation/sidebars.js"),
         remarkPlugins: [require("remark-code-import"), require("remark-import-partial")],
         editUrl: 'https://github.com/iotaledger/stronghold.rs/edit/dev',
-        breadcrumbs: false,
-      }
-    ],
-    [
-      "@docusaurus/plugin-content-docs",
-      {
-        id: "wallet-rs",
-        path: "external/wallet.rs/documentation/docs",
-        routeBasePath: "wallet.rs",
-        sidebarPath: require.resolve("./external/wallet.rs/documentation/sidebars.js"),
-        editUrl: 'https://github.com/iotaledger/wallet.rs/edit/mainnet',
-        breadcrumbs: false,
-      }
-    ],
-    [
-      "@docusaurus/plugin-content-docs",
-      {
-        id: "smart-contracts",
-        path: "external/wasp/documentation/docs",
-        routeBasePath: "smart-contracts",
-        sidebarPath: require.resolve("./external/wasp/documentation/sidebars.js"),
-        editUrl: 'https://github.com/iotaledger/wasp/edit/develop',
         breadcrumbs: false,
       }
     ],

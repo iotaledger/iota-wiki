@@ -4760,6 +4760,55 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@yarnpkg/fslib@npm:^2.6.1":
+  version: 2.6.1
+  resolution: "@yarnpkg/fslib@npm:2.6.1"
+  dependencies:
+    "@yarnpkg/libzip": ^2.2.3
+    tslib: ^1.13.0
+  checksum: e3bbd796a1c586372807da07207230c89901519e53a991b95c070cae59f570ac9617368713e9e83e77c4507d602e21ce026cc15fc70eb171d3477c5bcbbbf60e
+  languageName: node
+  linkType: hard
+
+"@yarnpkg/libzip@npm:^2.2.3":
+  version: 2.2.4
+  resolution: "@yarnpkg/libzip@npm:2.2.4"
+  dependencies:
+    "@types/emscripten": ^1.38.0
+    tslib: ^1.13.0
+  checksum: 974a286d4e7ff52bd924d56cb39492898a2306e95774362e4a3eb94690f180273a078243bf4044909e0fe29354552acc1cddd7d10d71ce332f7b1e1ff8eb54d9
+  languageName: node
+  linkType: hard
+
+"@yarnpkg/parsers@npm:^2.5.0":
+  version: 2.5.0
+  resolution: "@yarnpkg/parsers@npm:2.5.0"
+  dependencies:
+    js-yaml: ^3.10.0
+    tslib: ^1.13.0
+  checksum: 02678b7b910eb653c27f0043ac5295c96f2547164959a76e529cad628c2dd48748d1eec2e5d0ee77f79c7d0536549477f203274ca0533e1b478a7f1e0689bb75
+  languageName: node
+  linkType: hard
+
+"@yarnpkg/shell@npm:^3.2.0":
+  version: 3.2.0
+  resolution: "@yarnpkg/shell@npm:3.2.0"
+  dependencies:
+    "@yarnpkg/fslib": ^2.6.1
+    "@yarnpkg/parsers": ^2.5.0
+    chalk: ^3.0.0
+    clipanion: ^3.2.0-rc.4
+    cross-spawn: 7.0.3
+    fast-glob: ^3.2.2
+    micromatch: ^4.0.2
+    stream-buffers: ^3.0.2
+    tslib: ^1.13.0
+  bin:
+    shell: ./lib/cli.js
+  checksum: c1ec5f08a3512de538534492e895db631b4a92fdf907c605ba7c7ca60477a865ee796802b96de717fcdfa6ee820183f3d2bbd9962fe5ff302ab47b39fa93592f
+  languageName: node
+  linkType: hard
+
 "abbrev@npm:1":
   version: 1.1.1
   resolution: "abbrev@npm:1.1.1"
@@ -9801,6 +9850,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"identity@workspace:content/build/identity.rs/v0.5.0/documentation":
+  version: 0.0.0-use.local
+  resolution: "identity@workspace:content/build/identity.rs/v0.5.0/documentation"
+  dependencies:
+    "@iota-community/iota-wiki-cli": "iota-community/iota-wiki-cli#v2"
+    raw-loader: ^4.0.2
+    remark-code-import: ^0.3.0
+    remark-import-partial: ^0.0.2
+    remark-remove-comments: ^0.2.0
+  languageName: unknown
+  linkType: soft
+
 "ieee754@npm:^1.1.13, ieee754@npm:^1.1.4":
   version: 1.2.1
   resolution: "ieee754@npm:1.2.1"
@@ -10058,6 +10119,48 @@ __metadata:
   checksum: cc3182d793aad82a8d1f0af697b462939cb46066ec48bbf1707c150ad5fad6406137e91a262022c269702e01621f35ef60269f6c0d7fd178487959809acdfb14
   languageName: node
   linkType: hard
+
+"iota-wiki-cli@iota-community/iota-wiki-cli#v2":
+  version: 1.7.0
+  resolution: "iota-wiki-cli@https://github.com/iota-community/iota-wiki-cli.git#commit=ef2f73d6464205353a1660413a667b6318f378a7"
+  dependencies:
+    "@babel/generator": ^7.17.9
+    "@babel/parser": ^7.17.9
+    "@babel/types": ^7.17.0
+    "@docusaurus/core": ^2.0.0-beta.20
+    "@docusaurus/plugin-content-blog": ^2.0.0-beta.20
+    "@docusaurus/plugin-content-docs": ^2.0.0-beta.20
+    "@docusaurus/plugin-content-pages": ^2.0.0-beta.20
+    "@docusaurus/theme-classic": ^2.0.0-beta.20
+    "@iota-wiki/plugin-tutorial": ^1.0.4
+    "@yarnpkg/shell": ^3.2.0
+    axios: ^0.26.1
+    clipanion: ^3.2.0-rc.10
+    ink: ^3.2.0
+    ink-multi-select: ^2.0.0
+    ink-select-input: ^4.2.1
+    ink-spinner: ^4.0.3
+    ink-text-input: ^4.0.3
+    isomorphic-git: ^1.17.2
+    plugin-image-zoom: flexanalytics/plugin-image-zoom
+    react: ^17.0.2
+    react-dom: ^17.0.2
+  bin:
+    iota-wiki: dist/index.js
+  checksum: 346cdf5c237e251e35d08a77385e690f118fa4aa20fbb7beb450210c43f564100dabe06cf516b7706c18ed967d50ac7c2e658269944874d7a548d1f2b8f837a1
+  languageName: node
+  linkType: hard
+
+"iota-rs@workspace:content/build/iota.rs/production/documentation":
+  version: 0.0.0-use.local
+  resolution: "iota-rs@workspace:content/build/iota.rs/production/documentation"
+  dependencies:
+    "@iota-community/iota-wiki-cli": "iota-community/iota-wiki-cli#v2"
+    raw-loader: ^4.0.2
+    remark-code-import: ^0.3.0
+    remark-import-partial: ^0.0.2
+  languageName: unknown
+  linkType: soft
 
 "iota-wiki@workspace:.":
   version: 0.0.0-use.local
@@ -11186,6 +11289,13 @@ __metadata:
   version: 4.5.0
   resolution: "lodash.foreach@npm:4.5.0"
   checksum: a940386b158ca0d62994db41fc16529eb8ae67138f29ced38e91f912cb5435d1b0ed34b18e6f7b9ddfc32ab676afc6dfec60d1e22633d8e3e4b33413402ab4ad
+  languageName: node
+  linkType: hard
+
+"lodash.isequal@npm:^4.5.0":
+  version: 4.5.0
+  resolution: "lodash.isequal@npm:4.5.0"
+  checksum: da27515dc5230eb1140ba65ff8de3613649620e8656b19a6270afe4866b7bd461d9ba2ac8a48dcc57f7adac4ee80e1de9f965d89d4d81a0ad52bb3eec2609644
   languageName: node
   linkType: hard
 
@@ -17216,6 +17326,17 @@ plugin-image-zoom@flexanalytics/plugin-image-zoom:
   languageName: node
   linkType: hard
 
+"wallet-rs@workspace:content/build/wallet.rs/production/documentation":
+  version: 0.0.0-use.local
+  resolution: "wallet-rs@workspace:content/build/wallet.rs/production/documentation"
+  dependencies:
+    iota-wiki-cli: "iota-community/iota-wiki-cli#v2"
+    raw-loader: ^4.0.2
+    remark-code-import: ^0.3.0
+    remark-import-partial: ^0.0.2
+  languageName: unknown
+  linkType: soft
+
 "warning@npm:^4.0.2":
   version: 4.0.3
   resolution: "warning@npm:4.0.3"
@@ -17224,6 +17345,17 @@ plugin-image-zoom@flexanalytics/plugin-image-zoom:
   checksum: 4f2cb6a9575e4faf71ddad9ad1ae7a00d0a75d24521c193fa464f30e6b04027bd97aa5d9546b0e13d3a150ab402eda216d59c1d0f2d6ca60124d96cd40dfa35c
   languageName: node
   linkType: hard
+
+"wasp@workspace:content/build/wasp/develop/documentation":
+  version: 0.0.0-use.local
+  resolution: "wasp@workspace:content/build/wasp/develop/documentation"
+  dependencies:
+    iota-wiki-cli: "iota-community/iota-wiki-cli#v2"
+    remark-code-import: ^0.3.0
+    remark-import-partial: ^0.0.2
+    remark-remove-comments: ^0.2.0
+  languageName: unknown
+  linkType: soft
 
 "watchpack-chokidar2@npm:^2.0.1":
   version: 2.0.1
