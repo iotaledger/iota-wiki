@@ -20,11 +20,6 @@
       "staticPath": "./documentation/static"
     },
     {
-      "repo": "https://github.com/iotaledger/iota.rs",
-      "checkoutParams": ["--branch production"],
-      "staticPath": "./documentation/static"
-    },
-    {
       "repo": "https://github.com/iotaledger/stronghold.rs",
       "staticPath": "./documentation/static"
     },
@@ -38,11 +33,6 @@
     {
       "repo": "https://github.com/gohornet/hornet",
       "checkoutParams": ["--branch mainnet"],
-      "staticPath": "./documentation/static"
-    },
-    {
-      "repo": "https://github.com/iotaledger/identity.rs",
-      "checkoutParams": ["--branch support/v0.5"],
       "staticPath": "./documentation/static"
     },
     {
