@@ -476,7 +476,6 @@ module.exports = {
           require('remark-import-partial'),
         ],
         showLastUpdateTime: true,
-        breadcrumbs: false,
       },
     ],
     [
@@ -494,7 +493,6 @@ module.exports = {
           require('remark-import-partial'),
         ],
         showLastUpdateTime: true,
-        breadcrumbs: false,
       },
     ],
     [
@@ -512,7 +510,6 @@ module.exports = {
           require('remark-import-partial'),
         ],
         showLastUpdateTime: true,
-        breadcrumbs: false,
       },
     ],
     ...build.plugins,
