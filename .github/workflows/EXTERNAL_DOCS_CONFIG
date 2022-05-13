@@ -71,17 +71,6 @@
     [
       "@docusaurus/plugin-content-docs",
       {
-        id: "wallet-rs",
-        path: "external/wallet.rs/documentation/docs",
-        routeBasePath: "wallet.rs",
-        sidebarPath: require.resolve("./external/wallet.rs/documentation/sidebars.js"),
-        editUrl: 'https://github.com/iotaledger/wallet.rs/edit/mainnet',
-        breadcrumbs: false,
-      }
-    ],
-    [
-      "@docusaurus/plugin-content-docs",
-      {
         id: "smart-contracts",
         path: "external/wasp/documentation/docs",
         routeBasePath: "smart-contracts",
