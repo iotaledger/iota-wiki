@@ -10071,6 +10071,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"iota-rs@workspace:content/build/iota.rs/production/documentation":
+  version: 0.0.0-use.local
+  resolution: "iota-rs@workspace:content/build/iota.rs/production/documentation"
+  dependencies:
+    "@iota-community/iota-wiki-cli": "iota-community/iota-wiki-cli#v2"
+    raw-loader: ^4.0.2
+    remark-code-import: ^0.3.0
+    remark-import-partial: ^0.0.2
+  languageName: unknown
+  linkType: soft
+
 "iota-wiki@workspace:.":
   version: 0.0.0-use.local
   resolution: "iota-wiki@workspace:."
