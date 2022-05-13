@@ -10,4 +10,7 @@
 	path = content/build/wallet.rs/production
 	url = https://github.com/iotaledger/wallet.rs
   branch = production
-  
+[submodule "content/build/wasp/develop"]
+	path = content/build/wasp/develop
+	url = https://github.com/iotaledger/wasp
+	branch = develop
