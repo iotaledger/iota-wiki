@@ -1,0 +1,4 @@
+[submodule "content/build/identity.rs/v0.5.0"]
+	path = content/build/identity.rs/v0.5.0
+	url = https://github.com/iotaledger/identity.rs
+	branch = support/v0.5
