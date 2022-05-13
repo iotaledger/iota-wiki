@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkiota_wiki=self.webpackChunkiota_wiki||[]).push([[7553],{40293:function(s){s.exports=JSON.parse('{"plugin":{"name":"docusaurus-plugin-content-docs","id":"smart-contracts"}}')}}]);

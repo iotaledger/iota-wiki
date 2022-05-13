@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkiota_wiki=self.webpackChunkiota_wiki||[]).push([[20065],{84026:function(a){a.exports=JSON.parse('{"allTagsPath":"/blog/tags","name":"IOTA LAB AACHEN","count":2,"permalink":"/blog/tags/iota-lab-aachen"}')}}]);

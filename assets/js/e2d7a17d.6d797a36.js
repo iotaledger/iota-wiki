@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkiota_wiki=self.webpackChunkiota_wiki||[]).push([[14216],{22641:function(a){a.exports=JSON.parse('{"allTagsPath":"/blog/tags","name":"X-Teams","count":1,"permalink":"/blog/tags/x-teams"}')}}]);

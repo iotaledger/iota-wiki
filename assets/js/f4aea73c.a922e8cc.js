@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkiota_wiki=self.webpackChunkiota_wiki||[]).push([[43822],{5621:function(i){i.exports=JSON.parse('{"label":"Bitcoin","permalink":"/blog/tags/bitcoin","allTagsPath":"/blog/tags","count":2}')}}]);

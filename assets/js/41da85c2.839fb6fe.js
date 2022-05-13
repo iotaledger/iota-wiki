@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkiota_wiki=self.webpackChunkiota_wiki||[]).push([[74979],{96006:function(a){a.exports=JSON.parse('{"allTagsPath":"/blog/tags","name":"Mana","count":3,"permalink":"/blog/tags/mana"}')}}]);
