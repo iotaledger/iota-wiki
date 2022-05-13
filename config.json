@@ -15,11 +15,6 @@
       "staticPath": "./static"
     },
     {
-      "repo": "https://github.com/iotaledger/wasp",
-      "checkoutParams": ["--branch develop"],
-      "staticPath": "./documentation/static"
-    },
-    {
       "repo": "https://github.com/iotaledger/stronghold.rs",
       "staticPath": "./documentation/static"
     },
