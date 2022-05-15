@@ -18,3 +18,7 @@
 	path = content/build/zebra-iota-edge-sdk/production
 	url = https://github.com/ZebraDevs/Zebra-Iota-Edge-SDK
 	branch = main
+[submodule "content/build/hornet/production"]
+	path = content/build/hornet/production
+	url = https://github.com/gohornet/hornet
+	branch = mainnet
