@@ -9214,6 +9214,14 @@ __metadata:
   languageName: node
   linkType: hard
 
+"hornet@workspace:content/build/hornet/production/documentation":
+  version: 0.0.0-use.local
+  resolution: "hornet@workspace:content/build/hornet/production/documentation"
+  dependencies:
+    "@iota-community/iota-wiki-cli": "iota-community/iota-wiki-cli#v2"
+  languageName: unknown
+  linkType: soft
+
 "hpack.js@npm:^2.1.6":
   version: 2.1.6
   resolution: "hpack.js@npm:2.1.6"

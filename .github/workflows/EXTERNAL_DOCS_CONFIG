@@ -35,17 +35,6 @@
     [
       "@docusaurus/plugin-content-docs",
       {
-        id: "hornet",
-        path: "external/hornet/documentation/docs",
-        routeBasePath: "hornet",
-        sidebarPath: require.resolve("./external/hornet/documentation/sidebars.js"),
-        editUrl: 'https://github.com/gohornet/hornet/edit/mainnet',
-        breadcrumbs: false,
-      }
-    ],
-    [
-      "@docusaurus/plugin-content-docs",
-      {
         id: "IOTA-Research-Specifications",
         path: "external/IOTA-2.0-Research-Specifications",
         routeBasePath: "IOTA-2.0-Research-Specifications",
