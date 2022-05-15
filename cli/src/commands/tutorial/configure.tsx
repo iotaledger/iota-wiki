@@ -33,6 +33,7 @@ import {
 } from '@babel/types';
 import generator from '@babel/generator';
 import { UserOptions as TutorialOptions } from '@iota-wiki/plugin-tutorial';
+import prettier from 'prettier';
 
 interface InputComponentProps {
   label: string;
@@ -350,7 +351,10 @@ export class Setup extends Command {
   });
 
   async execute() {
-    const ast = parse(fs.readFileSync('docusaurus.config.js', 'utf-8'));
+    // TODO: Remove hardcoded config file path.
+    const filePath = 'docusaurus.config.js';
+
+    const ast = parse(fs.readFileSync(filePath, 'utf-8'));
     const config = getConfig(ast.program.body);
 
     // TODO: Allow config exported via variable assigned to `module.exports`.
@@ -382,7 +386,13 @@ export class Setup extends Command {
       );
 
       const { code } = generator(ast);
-      fs.writeFileSync('docusaurus.config.js', code);
+      const formattedCode = prettier.format(code, {
+        filepath: filePath,
+        singleQuote: true,
+        jsxSingleQuote: true,
+        trailingComma: 'all',
+      });
+      fs.writeFileSync(filePath, formattedCode);
     };
 
     render(<SetupComponent addPlugin={addPlugin} />);
