@@ -22,3 +22,7 @@
 	path = content/build/hornet/production
 	url = https://github.com/gohornet/hornet
 	branch = mainnet
+[submodule "content/build/goshimmer/develop"]
+	path = content/build/goshimmer/develop
+	url = https://github.com/iotaledger/goshimmer
+	branch = develop
