@@ -1,7 +1,15 @@
+[submodule "content/build/goshimmer/develop"]
+	path = content/build/goshimmer/develop
+	url = https://github.com/iotaledger/goshimmer
+	branch = develop
 [submodule "content/build/identity.rs/v0.5.0"]
 	path = content/build/identity.rs/v0.5.0
 	url = https://github.com/iotaledger/identity.rs
 	branch = support/v0.5
+[submodule "content/build/integration-services/production"]
+	path = content/build/integration-services/production
+	url = https://github.com/iotaledger/integration-services
+	branch = master
 [submodule "content/build/iota.rs/production"]
 	path = content/build/iota.rs/production
 	url = https://github.com/iotaledger/iota.rs
@@ -22,7 +30,3 @@
 	path = content/build/hornet/production
 	url = https://github.com/gohornet/hornet
 	branch = mainnet
-[submodule "content/build/integration-services/production"]
-	path = content/build/integration-services/production
-	url = https://github.com/iotaledger/integration-services
-	branch = master

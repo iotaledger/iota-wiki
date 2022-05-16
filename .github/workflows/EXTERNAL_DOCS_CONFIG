@@ -24,17 +24,6 @@
     [
       "@docusaurus/plugin-content-docs",
       {
-        id: "goshimmer",
-        path: "external/goshimmer/documentation/docs",
-        routeBasePath: "goshimmer",
-        sidebarPath: require.resolve("./external/goshimmer/documentation/sidebars.js"),
-        editUrl: 'https://github.com/iotaledger/goshimmer/edit/develop',
-        breadcrumbs: false,
-      }
-    ],
-    [
-      "@docusaurus/plugin-content-docs",
-      {
         id: "IOTA-Research-Specifications",
         path: "external/IOTA-2.0-Research-Specifications",
         routeBasePath: "IOTA-2.0-Research-Specifications",
