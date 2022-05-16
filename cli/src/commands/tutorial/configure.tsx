@@ -9,6 +9,7 @@ import {
   useFocusManager,
   useInput,
   Newline,
+  useApp,
 } from 'ink';
 import TextInput from 'ink-text-input';
 import SelectInput from 'ink-select-input';
@@ -283,6 +284,32 @@ const SetupComponent: FC<SetupComponentProps> = (props) => {
   );
 };
 
+interface SelectTutorialComponentItem {
+  label: string;
+  value: number;
+}
+
+interface SelectTutorialComponentProps {
+  items: SelectTutorialComponentItem[];
+  onSelect: (index: number) => void;
+}
+
+const SelectTutorialComponent: FC<SelectTutorialComponentProps> = (props) => {
+  const { exit } = useApp();
+
+  const handleSelect = (item) => {
+    props.onSelect(item.value);
+    exit();
+  };
+
+  return (
+    <Box flexDirection='column' marginBottom={1}>
+      <Text>Choose a plugin to configure or add a new one: </Text>
+      <SelectInput items={props.items} onSelect={handleSelect} />
+    </Box>
+  );
+};
+
 function tryModuleExports(statement: Statement): Expression {
   if (
     statement.type === 'ExpressionStatement' &&
@@ -367,23 +394,77 @@ export class Setup extends Command {
     if (plugins.type !== 'ArrayExpression')
       throw 'Plugins property needs to be an array.';
 
+    const pluginItems = plugins.elements.reduce((result, element, index) => {
+      console.log(index);
+      if (element.type === 'ArrayExpression') {
+        const pluginElement = element.elements[0];
+
+        if (
+          pluginElement.type !== 'StringLiteral' ||
+          pluginElement.value !== '@iota-wiki/plugin-tutorial'
+        ) {
+          return result;
+        }
+
+        const optionsElement = element.elements[1];
+
+        if (optionsElement.type !== 'ObjectExpression') return result;
+
+        const title = optionsElement.properties.reduce((result, property) => {
+          if (
+            property.type === 'ObjectProperty' &&
+            property.key.type === 'Identifier' &&
+            property.key.name === 'title' &&
+            property.value.type === 'StringLiteral'
+          ) {
+            return property.value.value;
+          }
+          return result;
+        }, '' as string);
+
+        if (title === '') return result;
+
+        return [...result, { label: title, value: index }];
+      }
+    }, [] as SelectTutorialComponentItem[]);
+
+    let pluginIndex = plugins.elements.length;
+
+    const setPluginIndex = (index) => {
+      pluginIndex = index;
+    };
+
+    if (pluginItems.length > 0) {
+      pluginItems.push({
+        label: 'Add new tutorial...',
+        value: plugins.elements.length,
+      });
+
+      const { waitUntilExit } = render(
+        <SelectTutorialComponent
+          items={pluginItems}
+          onSelect={setPluginIndex}
+        />,
+      );
+
+      await waitUntilExit();
+    }
+
     const addPlugin = (options: TutorialOptions) => {
       const { tags, ...rest } = options;
 
-      plugins.elements.push(
-        arrayExpression([
-          stringLiteral('@iota-wiki/plugin-tutorial'),
-          objectExpression([
-            ...Object.entries(rest).map(([key, value]) =>
-              objectProperty(identifier(key), stringLiteral(value)),
-            ),
-            objectProperty(
-              identifier('tags'),
-              arrayExpression(tags.map((value) => stringLiteral(value))),
-            ),
-          ]),
+      plugins.elements[pluginIndex] = arrayExpression([
+        stringLiteral('@iota-wiki/plugin-tutorial'),
+        objectExpression([
+          ...Object.entries(rest).map(([key, value]) =>
+            objectProperty(identifier(key), stringLiteral(value)),
+          ),
+          objectProperty(
+            identifier('tags'),
+            arrayExpression(tags.map((value) => stringLiteral(value))),
+          ),
         ]),
-      );
+      ]);
 
       const { code } = generator(ast);
       const formattedCode = prettier.format(code, {
@@ -395,6 +476,8 @@ export class Setup extends Command {
       fs.writeFileSync(filePath, formattedCode);
     };
 
-    render(<SetupComponent addPlugin={addPlugin} />);
+    const { waitUntilExit } = render(<SetupComponent addPlugin={addPlugin} />);
+
+    await waitUntilExit();
   }
 }
