@@ -13,11 +13,10 @@
   },
   "scripts": {
     "clean": "rm -rf ./dist",
-    "build": "yarn build:ts && yarn build:css && yarn build:fonts",
+    "build": "yarn build:ts && yarn build:copy",
     "build:ts": "tsc --build",
-    "build:css": "copyfiles -u 1 \"src/**/*.css\" dist",
-    "build:fonts": "copyfiles -u 1 \"src/**/*.{eot,svg,ttf,woff}\" dist",
-    "watch": "yarn build --watch",
+    "build:copy": "copyfiles -u 1 \"src/**/!(*.ts|*.tsx)\" dist",
+    "watch": "nodemon --watch src --ext '*' --exec yarn build",
     "format": "prettier --write .",
     "lint": "eslint --cache --fix .",
     "prepack": "yarn build",
@@ -62,6 +61,7 @@
     "eslint-plugin-react": "^7.29.4",
     "husky": ">=6",
     "lint-staged": ">=10",
+    "nodemon": "^2.0.16",
     "typescript": "^4.4.3"
   },
   "files": [
