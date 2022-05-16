@@ -9719,6 +9719,14 @@ __metadata:
   languageName: node
   linkType: hard
 
+"integration-services@workspace:content/build/integration-services/production/documentation":
+  version: 0.0.0-use.local
+  resolution: "integration-services@workspace:content/build/integration-services/production/documentation"
+  dependencies:
+    "@iota-community/iota-wiki-cli": "iota-community/iota-wiki-cli#v2"
+  languageName: unknown
+  linkType: soft
+
 "internal-slot@npm:^1.0.3":
   version: 1.0.3
   resolution: "internal-slot@npm:1.0.3"
