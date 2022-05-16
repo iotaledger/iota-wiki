@@ -22,3 +22,7 @@
 	path = content/build/hornet/production
 	url = https://github.com/gohornet/hornet
 	branch = mainnet
+[submodule "content/build/integration-services/production"]
+	path = content/build/integration-services/production
+	url = https://github.com/iotaledger/integration-services
+	branch = master
