@@ -8762,6 +8762,14 @@ __metadata:
   languageName: node
   linkType: hard
 
+"goshimmer@workspace:content/build/goshimmer/develop/documentation":
+  version: 0.0.0-use.local
+  resolution: "goshimmer@workspace:content/build/goshimmer/develop/documentation"
+  dependencies:
+    iota-wiki-cli: "iota-community/iota-wiki-cli#v2"
+  languageName: unknown
+  linkType: soft
+
 "got@npm:^9.6.0":
   version: 9.6.0
   resolution: "got@npm:9.6.0"
