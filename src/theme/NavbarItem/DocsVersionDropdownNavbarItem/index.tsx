@@ -7,7 +7,8 @@ import {
 } from '@docusaurus/theme-common';
 import {translate} from '@docusaurus/Translate';
 import { useLocation } from '@docusaurus/router';
-import { useAllActiveDocContexts, useAllVersions, useCurrentDocPlugins } from './utils';
+import { useAllActiveDocContexts, useAllVersions, useCurrentDocPlugins, useWikiVersionCandidates } from './utils';
+import { useWikiPreferredVersion } from '@site/src/contexts/wikiPreferredVersion';
 
 const getVersionMainDoc = (version) =>
   version.docs.find((doc) => doc.id === version.mainDocId);
@@ -29,7 +30,7 @@ export default function DocsVersionDropdownNavbarItem({
 
   const activeDocContext = useAllActiveDocContexts(pluginIds);
   const versions = useAllVersions(pluginIds);
-  //const { savePreferredVersionName } = useDocsPreferredVersion(pluginIds[0]);
+  const { preferredVersion , savePreferredVersionName } = useWikiPreferredVersion(pluginIds);
 
   const versionLinks = versions.map((version) => {
     // We try to link to the same doc, in another version
@@ -44,7 +45,7 @@ export default function DocsVersionDropdownNavbarItem({
       to: versionDoc.path,
       isActive: () => version === activeDocContext?.activeVersion,
       onClick: () => {
-        //savePreferredVersionName(version.label),
+        savePreferredVersionName(version.label)
       },
     };
   });
@@ -54,8 +55,7 @@ export default function DocsVersionDropdownNavbarItem({
     ...dropdownItemsAfter,
   ];
 
-  const dropdownVersion = useDocsVersionCandidates(docsPluginId)[0]; // Mobile dropdown is handled a bit differently
-
+  const dropdownVersion = useWikiVersionCandidates(preferredVersion, activeDocContext.activeVersion, pluginIds)[0]; // Mobile dropdown is handled a bit differently
   const dropdownLabel =
     mobile && items.length > 1
       ? translate({
