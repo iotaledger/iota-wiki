@@ -15669,6 +15669,17 @@ plugin-image-zoom@flexanalytics/plugin-image-zoom:
   languageName: node
   linkType: hard
 
+"stronghold@workspace:content/build/stronghold.rs/develop/documentation":
+  version: 0.0.0-use.local
+  resolution: "stronghold@workspace:content/build/stronghold.rs/develop/documentation"
+  dependencies:
+    iota-wiki-cli: "iota-community/iota-wiki-cli#v2"
+    remark-code-import: ^0.3.0
+    remark-import-partial: ^0.0.2
+    remark-remove-comments: ^0.2.0
+  languageName: unknown
+  linkType: soft
+
 "style-to-object@npm:0.3.0, style-to-object@npm:^0.3.0":
   version: 0.3.0
   resolution: "style-to-object@npm:0.3.0"

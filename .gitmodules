@@ -30,3 +30,7 @@
 	path = content/build/hornet/production
 	url = https://github.com/gohornet/hornet
 	branch = mainnet
+[submodule "content/build/stronghold.rs/develop"]
+	path = content/build/stronghold.rs/develop
+	url = https://github.com/iotaledger/stronghold.rs
+	branch = dev-refactor
