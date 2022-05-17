@@ -37,18 +37,6 @@
     [
       "@docusaurus/plugin-content-docs",
       {
-        id: "stronghold-rs",
-        path: "external/stronghold.rs/documentation/docs",
-        routeBasePath: "stronghold.rs",
-        sidebarPath: require.resolve("./external/stronghold.rs/documentation/sidebars.js"),
-        remarkPlugins: [require("remark-code-import"), require("remark-import-partial")],
-        editUrl: 'https://github.com/iotaledger/stronghold.rs/edit/dev',
-        breadcrumbs: false,
-      }
-    ],
-    [
-      "@docusaurus/plugin-content-docs",
-      {
         id: "streams",
         path: "external/streams/documentation/docs",
         routeBasePath: "streams",

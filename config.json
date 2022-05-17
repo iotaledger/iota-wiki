@@ -11,10 +11,6 @@
       "staticPath": "./static"
     },
     {
-      "repo": "https://github.com/iotaledger/stronghold.rs",
-      "staticPath": "./documentation/static"
-    },
-    {
       "repo": "https://github.com/iotaledger/IOTA-2.0-Research-Specifications"
     },
     {
