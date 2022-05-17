@@ -35,7 +35,7 @@ export function useWikiPreferredVersion(
 } {
     // Use string at index 1 as pathname starts with a '/'
     const projectId = useLocation().pathname.split('/')[1];
-    const persistence = "persistance" as DocsVersionPersistence;
+    const persistence = "localStorage";
     const preferredVersionLabel = DocsPreferredVersionStorage.read(projectId, persistence);
 
     // TODO Check if pluginID should be part of the key too
@@ -50,7 +50,7 @@ export function useWikiPreferredVersion(
             }, null as GlobalVersion | null
         );
 
-    if (preferredVersion && preferredVersionLabel)
+    if (!preferredVersion && preferredVersionLabel)
             DocsPreferredVersionStorage.clear(projectId, persistence);
     
     const savePreferredVersionName = useCallback(
