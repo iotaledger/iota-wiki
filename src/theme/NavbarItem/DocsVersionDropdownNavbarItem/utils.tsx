@@ -6,8 +6,15 @@ import {
 import { 
     ActiveDocContext, 
     GlobalVersion, 
-    useAllDocsData 
+    useAllDocsData,
+    useLatestVersion,
 } from '@docusaurus/plugin-content-docs/client';
+import { useMemo } from 'react';
+
+function uniq<T>(arr: T[]): T[] {
+    // Note: had problems with [...new Set()]: https://github.com/facebook/docusaurus/issues/4972#issuecomment-863895061
+    return Array.from(new Set(arr));
+}
 
 export function useAllActiveDocContexts(pluginIds: string[]): ActiveDocContext{
     let active = {
@@ -27,7 +34,6 @@ export function useAllActiveDocContexts(pluginIds: string[]): ActiveDocContext{
     //TODO Check if loop is needed
     pluginIds.forEach(element => {
         if (active.activeDoc) {
-            console.log(element);
             const data = useDocsData(element);
             data.versions.forEach((version) => {
                 version.docs.forEach((doc) => {
@@ -36,7 +42,6 @@ export function useAllActiveDocContexts(pluginIds: string[]): ActiveDocContext{
                         active.alternateDocVersions[version.label] = doc;
                 });
             });
-            console.log(active.alternateDocVersions);
         }
     })
 
@@ -62,3 +67,48 @@ export function useCurrentDocPlugins(pathname: string): string[] {
     }
     return pluginIds;
 }
+
+export function useAllLatestVersion(pluginIds: string[]): GlobalVersion {
+    return pluginIds.reduce((previousVersion, currentPluginId) => {
+        const currentVersion = useLatestVersion(currentPluginId);
+
+        //TODO: compare result number of slashes with current pluginId number of slashes
+        // and return the one with the least slashes.
+        if (previousVersion.path.split('/').length <= currentVersion.path.split('/').length)
+            return previousVersion;
+        return currentVersion;
+    }, useLatestVersion(pluginIds[0]));
+}
+
+/**
+ * "Version candidates" are mostly useful for the layout components, which must
+ * be able to work on all pages. For example, if a user has `{ type: "doc",
+ * docId: "intro" }` as a navbar item, which version does that refer to? We
+ * believe that it could refer to at most three version candidates:
+ *
+ * 1. The **active version**, the one that the user is currently browsing. See
+ * {@link useActiveDocContext}.
+ * 2. The **preferred version**, the one that the user last visited. See
+ * {@link useDocsPreferredVersion}.
+ * 3. The **latest version**, the "default". See {@link useLatestVersion}.
+ *
+ * @param preferredVersion The preferred version of the current plugin IDs.
+ * @param activeVersion The active version of the current plugin IDs.
+ * @param docsPluginIds The plugin IDs to get latest version from.
+ * @returns An array of 1~3 versions with priorities defined above, guaranteed
+ * to be unique and non-sparse. Will be memoized, hence stable for deps array.
+ */
+ export function useWikiVersionCandidates(
+    preferredVersion: GlobalVersion,
+    activeVersion: GlobalVersion,
+    docsPluginIds?: string[],
+  ): [GlobalVersion, ...GlobalVersion[]] {
+    const latestVersion = useAllLatestVersion(docsPluginIds);
+    return useMemo(
+      () =>
+        uniq(
+          [activeVersion, preferredVersion, latestVersion].filter(Boolean),
+        ) as [GlobalVersion, ...GlobalVersion[]],
+      [activeVersion, preferredVersion, latestVersion],
+    );
+  }
