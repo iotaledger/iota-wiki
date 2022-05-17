@@ -16,13 +16,13 @@ Messages can contain payloads. Some of them are core payloads that are processed
 
 ## UTXO
 
-Previously, the IOTA protocol used transactions (which were vertices in the Tangle), where each transaction defined either an input or an output. A grouping of those input and output transaction vertices made up a bundle that transferred the given values as an atomic unit. But this approach was seen as too time-consuming. So, we adopted a new transaction structure called the **unspent transaction outputs **(UTXO)**.
+Previously, the IOTA protocol used transactions (which were vertices in the Tangle), where each transaction defined either an input or an output. A grouping of those input and output transaction vertices made up a bundle that transferred the given values as an atomic unit. But this approach was seen as too time-consuming. So, we adopted a new transaction structure called the **unspent transaction outputs (UTXO)**.
 
 The UTXO model defines a ledger state where balances are not directly associated with addresses but with the outputs of transactions. In this model, transactions specify the outputs of previous transactions as inputs, which are consumed to create new outputs. A transaction must consume the entirety of the specified inputs.
 
 ![utxo-model](/img/learn/about-iota/utxo.png)
 
-So, the UTXO is a part of a larger, self-contained, and flexible message structure known as a **payload**. This approach is helps enable a self-contained message structure defining the data of the entire transfer as a payload to be embedded into a message.
+So, the UTXO is a part of a larger, self-contained, and flexible message structure known as a **payload**. This approach helps enable a self-contained message structure defining the data of the entire transfer as a payload to be embedded into a message.
 
 ## Message Payloads
 
@@ -33,7 +33,7 @@ A transaction payload (defined in [TIP-0020](https://github.com/lzpap/tips/blob/
 1. The Transaction Essence part, which contains the inputs, outputs, and an optional embedded payload.
 2. The Unlock Blocks, which unlocks the Transaction Essence's inputs. In case the unlock block contains a signature, it signs the entire Transaction Essence part.
 
-In general, all parts of a transaction payload begin with a byte describing the type of a given part. This helps keep the flexibility of introducing new types or versions of the given part in the future.
+In general, all parts of a transaction payload begin with a byte describing the type of a given part. This allows the introduction of new types or versions of the given part in the future.
 
 And, as mentioned above, the payload part of a Transaction Essence can hold an optional payload. This payload does not affect the validity of the Transaction Essence. If the transaction is not valid, then the payload must also be discarded.
 
