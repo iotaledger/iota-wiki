@@ -27,7 +27,7 @@ export function useAllActiveDocContexts(pluginIds: string[]): ActiveDocContext{
         const activeDocContext = useActiveDocContext(element);
         if (activeDocContext.activeDoc)
             active.activeDoc = activeDocContext.activeDoc;
-        if (activeDocContext.activeVersion)
+        if (activeDocContext.activeDoc)
             active.activeVersion = activeDocContext.activeVersion;
     });
 
