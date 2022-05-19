@@ -25,10 +25,10 @@ export function useAllActiveDocContexts(pluginIds: string[]): ActiveDocContext{
 
     pluginIds.forEach(element => {
         const activeDocContext = useActiveDocContext(element);
-        if (activeDocContext.activeDoc)
+        if (activeDocContext.activeDoc) {
             active.activeDoc = activeDocContext.activeDoc;
-        if (activeDocContext.activeDoc)
             active.activeVersion = activeDocContext.activeVersion;
+        }
     });
 
     //TODO Check if loop is needed
