@@ -395,7 +395,6 @@ export class Setup extends Command {
       throw 'Plugins property needs to be an array.';
 
     const pluginItems = plugins.elements.reduce((result, element, index) => {
-      console.log(index);
       if (element.type === 'ArrayExpression') {
         const pluginElement = element.elements[0];
 
