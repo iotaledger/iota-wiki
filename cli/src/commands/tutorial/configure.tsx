@@ -394,59 +394,63 @@ export class Setup extends Command {
     if (plugins.type !== 'ArrayExpression')
       throw 'Plugins property needs to be an array.';
 
-    const pluginItems = plugins.elements.reduce((result, element, index) => {
-      if (element.type === 'ArrayExpression') {
-        const pluginElement = element.elements[0];
+    const tutorialPlugins = plugins.elements.reduce(
+      (result, element, index) => {
+        if (element.type === 'ArrayExpression') {
+          const pluginElement = element.elements[0];
 
-        if (
-          pluginElement.type !== 'StringLiteral' ||
-          pluginElement.value !== '@iota-wiki/plugin-tutorial'
-        ) {
-          return result;
-        }
-
-        const optionsElement = element.elements[1];
-
-        if (optionsElement.type !== 'ObjectExpression') return result;
-
-        const title = optionsElement.properties.reduce((result, property) => {
           if (
-            property.type === 'ObjectProperty' &&
-            property.key.type === 'Identifier' &&
-            property.key.name === 'title' &&
-            property.value.type === 'StringLiteral'
+            pluginElement.type !== 'StringLiteral' ||
+            pluginElement.value !== '@iota-wiki/plugin-tutorial'
           ) {
-            return property.value.value;
+            return result;
           }
-          return result;
-        }, '' as string);
 
-        if (title === '') return result;
+          const optionsElement = element.elements[1];
 
-        return [...result, { label: title, value: index }];
-      }
-    }, [] as SelectTutorialComponentItem[]);
+          if (optionsElement.type !== 'ObjectExpression') return result;
 
-    let pluginIndex = plugins.elements.length;
+          const title = optionsElement.properties.reduce((result, property) => {
+            if (
+              property.type === 'ObjectProperty' &&
+              property.key.type === 'Identifier' &&
+              property.key.name === 'title' &&
+              property.value.type === 'StringLiteral'
+            ) {
+              return property.value.value;
+            }
+            return result;
+          }, '' as string);
 
-    const setPluginIndex = (index) => {
-      pluginIndex = index;
-    };
+          if (title === '') return result;
 
-    if (pluginItems.length > 0) {
-      pluginItems.push({
-        label: 'Add new tutorial...',
+          return result.set(index, { title });
+        }
+      },
+      new Map<number, Partial<TutorialOptions>>(),
+    );
+
+    let pluginIndex: number | undefined;
+    const setPluginIndex = (index) => (pluginIndex = index);
+
+    if (tutorialPlugins.size > 0) {
+      const items = Array.from(tutorialPlugins, ([index, options]) => ({
+        label: options.title,
+        value: index,
+      }));
+
+      items.push({
+        label: 'Add a new tutorial...',
         value: plugins.elements.length,
       });
 
       const { waitUntilExit } = render(
-        <SelectTutorialComponent
-          items={pluginItems}
-          onSelect={setPluginIndex}
-        />,
+        <SelectTutorialComponent items={items} onSelect={setPluginIndex} />,
       );
 
       await waitUntilExit();
+
+      if (pluginIndex === undefined) process.exit();
     }
 
     const addPlugin = (options: TutorialOptions) => {
