@@ -1,13 +1,15 @@
 import React from 'react';
 import DefaultNavbarItem from '@theme/NavbarItem/DefaultNavbarItem';
 import DropdownNavbarItem from '@theme/NavbarItem/DropdownNavbarItem';
-import {
-  useDocsPreferredVersion,
-  useDocsVersionCandidates,
-} from '@docusaurus/theme-common';
-import {translate} from '@docusaurus/Translate';
+import { Props as DocsVersionDropdownNavbarItemProps } from '@theme/NavbarItem/DocsVersionDropdownNavbarItem';
+import { translate } from '@docusaurus/Translate';
 import { useLocation } from '@docusaurus/router';
-import { useAllActiveDocContexts, useAllVersions, useCurrentDocPlugins, useWikiVersionCandidates } from './utils';
+import {
+  useAllActiveDocContexts,
+  useAllVersions,
+  useCurrentDocPlugins,
+  useWikiVersionCandidates,
+} from './utils';
 import { useWikiPreferredVersion } from '@site/src/contexts/wikiPreferredVersion';
 
 const getVersionMainDoc = (version) =>
@@ -15,22 +17,24 @@ const getVersionMainDoc = (version) =>
 
 export default function DocsVersionDropdownNavbarItem({
   mobile,
-  docsPluginId,
   dropdownActiveClassDisabled,
   dropdownItemsBefore,
   dropdownItemsAfter,
   ...props
-}) {
+}: DocsVersionDropdownNavbarItemProps) {
+  // Avoid unrecognized prop warning
+  delete props.docsPluginId;
+
   const { pathname } = useLocation();
   const pluginIds = useCurrentDocPlugins(pathname);
 
   // Check if multiple versions are available
-  if (pluginIds.length < 2)
-    return null;
+  if (pluginIds.length < 2) return null;
 
   const activeDocContext = useAllActiveDocContexts(pluginIds);
   const versions = useAllVersions(pluginIds);
-  const { preferredVersion , savePreferredVersionName } = useWikiPreferredVersion(pluginIds);
+  const { preferredVersion, savePreferredVersionName } =
+    useWikiPreferredVersion(pathname, pluginIds);
 
   const versionLinks = versions.map((version) => {
     // We try to link to the same doc, in another version
@@ -45,7 +49,7 @@ export default function DocsVersionDropdownNavbarItem({
       to: versionDoc.path,
       isActive: () => version === activeDocContext?.activeVersion,
       onClick: () => {
-        savePreferredVersionName(version.label)
+        savePreferredVersionName(version.label);
       },
     };
   });
@@ -55,7 +59,11 @@ export default function DocsVersionDropdownNavbarItem({
     ...dropdownItemsAfter,
   ];
 
-  const dropdownVersion = useWikiVersionCandidates(preferredVersion, activeDocContext.activeVersion, pluginIds)[0]; // Mobile dropdown is handled a bit differently
+  const dropdownVersion = useWikiVersionCandidates(
+    preferredVersion,
+    activeDocContext.activeVersion,
+    pluginIds,
+  )[0]; // Mobile dropdown is handled a bit differently
   const dropdownLabel =
     mobile && items.length > 1
       ? translate({
