@@ -14,7 +14,7 @@ import {
 import TextInput from 'ink-text-input';
 import SelectInput from 'ink-select-input';
 import MultiSelect, { ListedItem } from 'ink-multi-select';
-import fs, { readdirSync } from 'fs';
+import fs from 'fs';
 import axios from 'axios';
 import Spinner from 'ink-spinner';
 import { parse } from '@babel/parser';
@@ -132,12 +132,6 @@ const SubmitComponent: FC<SubmitComponentProps> = (props) => {
   );
 };
 
-function getFirstPage() {
-  // TODO First check if a sidebar with valid content exist, else:
-  const files = readdirSync('docs');
-  return files[0].replace(/\.[^/.]+$/, '');
-}
-
 export interface Tag {
   label: string;
   value: string;
@@ -148,39 +142,41 @@ export interface Tag {
 type TagCategories = Map<string, Array<Tag>>;
 
 interface SetupComponentProps {
+  defaultOptions: Partial<TutorialOptions>;
   addPlugin: (options: TutorialOptions) => void;
 }
 
 const SetupComponent: FC<SetupComponentProps> = (props) => {
   const { focusNext } = useFocusManager();
-  const [sourceUrl, setSourceUrl] = useState('');
-  const [tagCategories, setTagCategories] = useState(
-    new Map() as TagCategories,
-  );
+  const [options, setOptions] = useState(props.defaultOptions);
   const [loaded, setLoaded] = useState(false);
-  const [firstPage] = useState(getFirstPage());
-
-  const [title, setTitle] = useState('');
-  const [description, setDescription] = useState('');
-  const [preview, setPreview] = useState('');
-  const [route, setRoute] = useState(firstPage);
-  const [tagsByCategory, setTagsByCategory] = useState(
-    new Map() as TagCategories,
+  const [availableTags, setAvailableTags] = useState<
+    TagCategories | undefined
+  >();
+  const [tagsByCategory, setTagsByCategory] = useState<TagCategories>(
+    new Map(),
   );
 
-  const getSourceUrl = async () => {
+  const getRoute = async () => {
+    // TODO First check if a sidebar with valid content exist, else:
+    const files = await fs.promises.readdir('docs');
+    const route = files[0].replace(/\.[^/.]+$/, '');
+    setOptions({ ...options, route });
+  };
+
+  const getSource = async () => {
     const dir = await git.findRoot({
       fs,
       filepath: process.cwd(),
     });
 
-    const sourceUrl = await git.getConfig({
+    const source = await git.getConfig({
       fs,
       dir,
       path: 'remote.origin.url',
     });
 
-    setSourceUrl(sourceUrl);
+    setOptions({ ...options, source });
   };
 
   const getTagCategories = async () => {
@@ -188,19 +184,20 @@ const SetupComponent: FC<SetupComponentProps> = (props) => {
       'https://raw.githubusercontent.com/iota-community/iota-wiki/feat/tuto-section/content/tutorials/tags.json',
     );
 
-    setTagCategories(new Map(Object.entries(data)));
+    setAvailableTags(new Map(Object.entries(data)));
   };
 
   useEffect(() => {
-    setLoaded(sourceUrl !== '' && tagCategories.size > 0);
-  }, [sourceUrl, tagCategories]);
+    setLoaded(options.source && availableTags !== undefined);
+  }, [options, availableTags]);
 
   useEffect(() => {
     focusNext();
   }, [loaded]);
 
   useEffect(() => {
-    getSourceUrl();
+    if (!options.route) getRoute();
+    if (!options.source) getSource();
     getTagCategories();
   }, []);
 
@@ -209,22 +206,35 @@ const SetupComponent: FC<SetupComponentProps> = (props) => {
     if (key.return) focusNext();
   });
 
-  const onChangeTags = (category: string) => (newCategoryTags: Array<Tag>) => {
-    tagsByCategory.set(category, newCategoryTags);
-    setTagsByCategory(tagsByCategory);
+  const onChangeTags = (category: string) => (tags: Array<Tag>) => {
+    const newTagsByCategory = tagsByCategory.set(category, tags);
+    const newTags = Array.from(newTagsByCategory.values())
+      .flat()
+      .map((tag) => tag.value);
+
+    setTagsByCategory(newTagsByCategory);
+    setOptions({ ...options, tags: newTags });
+  };
+
+  const onChangeOption = (option: keyof typeof options) => (value) => {
+    setOptions({ ...options, [option]: value });
   };
 
   const addPlugin = () => {
-    props.addPlugin({
-      title,
-      description,
-      preview,
-      route,
-      source: sourceUrl,
-      tags: Array.from(tagsByCategory.values())
-        .flat()
-        .map((tag) => tag.value),
-    });
+    // TODO: Handle invalid or missing required options.
+    const normalizedOptions = Object.assign<
+      TutorialOptions,
+      Partial<TutorialOptions>
+    >(
+      {
+        title: '',
+        description: '',
+        tags: [],
+      },
+      options,
+    );
+
+    props.addPlugin(normalizedOptions);
     process.exit();
   };
 
@@ -237,23 +247,27 @@ const SetupComponent: FC<SetupComponentProps> = (props) => {
       </Box>
       {loaded ? (
         <>
-          <InputComponent label='Title' value={title} onChange={setTitle} />
+          <InputComponent
+            label='Title'
+            value={options.title || ''}
+            onChange={onChangeOption('title')}
+          />
           <InputComponent
             label='Description'
-            value={description}
-            onChange={setDescription}
+            value={options.description || ''}
+            onChange={onChangeOption('description')}
           />
           <InputComponent
             label='Preview image path'
-            value={preview}
-            onChange={setPreview}
+            value={options.preview || ''}
+            onChange={onChangeOption('preview')}
           />
           <InputComponent
             label='Route to the tutorial'
-            value={route}
-            onChange={setRoute}
+            value={options.route || ''}
+            onChange={onChangeOption('route')}
           />
-          {Array.from(tagCategories?.entries()).map(([category, tags]) => (
+          {Array.from(availableTags, ([category, tags]) => (
             <SelectComponent
               label={`${category} tags`}
               items={tags}
@@ -479,7 +493,12 @@ export class Setup extends Command {
       fs.writeFileSync(filePath, formattedCode);
     };
 
-    const { waitUntilExit } = render(<SetupComponent addPlugin={addPlugin} />);
+    const { waitUntilExit } = render(
+      <SetupComponent
+        defaultOptions={tutorialPlugins.get(pluginIndex) || {}}
+        addPlugin={addPlugin}
+      />,
+    );
 
     await waitUntilExit();
   }
