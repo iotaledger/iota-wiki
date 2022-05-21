@@ -9,15 +9,16 @@ module.exports = {
         description: 'This is a test tutorial.',
         preview: '/img/docusaurus.png',
         route: '/intro',
-        tags: ['text'],
-      }
+        source: 'https://github.com/iota-community/iota-wiki-cli.git',
+        tags: ['text', 'video', 'c'],
+      },
     ],
     [
       '@docusaurus/plugin-content-docs',
       {
-          id: 'tutorial',
-          path: path.resolve(__dirname, './docs'),
-          sidebarPath: path.resolve(__dirname, './sidebars.js'),
+        id: 'tutorial',
+        path: path.resolve(__dirname, './docs'),
+        sidebarPath: path.resolve(__dirname, './sidebars.js'),
       },
     ],
   ],
