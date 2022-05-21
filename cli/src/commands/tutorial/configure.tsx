@@ -63,41 +63,39 @@ const InputComponent: FC<InputComponentProps> = (props) => {
 interface SelectComponentProps {
   label: string;
   items: ListedItem[];
-  onChange?: (items: ListedItem[]) => void;
+  value: ListedItem[];
+  onChange: (items: ListedItem[]) => void;
 }
 
 const SelectComponent: FC<SelectComponentProps> = (props) => {
   const { isFocused } = useFocus();
-  const [value, setValue] = useState([]);
 
   const onSelect = (item) => {
-    setValue([...value, item]);
+    props.onChange([...props.value, item]);
   };
 
   const onUnselect = (item) => {
-    setValue(value.filter((o) => o !== item));
+    props.onChange(props.value.filter((o) => o !== item));
   };
-
-  useEffect(() => {
-    props.onChange(value);
-  }, [value]);
 
   return (
     <Box flexDirection='column'>
       <Text dimColor={!isFocused}>
         <Text>{props.label}: </Text>
-        <Text>
-          {value
-            .map((item) => item.label)
-            .sort()
-            .join(', ')}
-        </Text>
+        {props.value && (
+          <Text>
+            {props.value
+              .map((item) => item.label)
+              .sort()
+              .join(', ')}
+          </Text>
+        )}
       </Text>
       <Box display={isFocused ? 'flex' : 'none'}>
         <MultiSelect
           focus={isFocused}
           items={props.items}
-          selected={value}
+          selected={props.value}
           onSelect={onSelect}
           onUnselect={onUnselect}
         />
@@ -153,9 +151,9 @@ const SetupComponent: FC<SetupComponentProps> = (props) => {
   const [availableTags, setAvailableTags] = useState<
     TagCategories | undefined
   >();
-  const [tagsByCategory, setTagsByCategory] = useState<TagCategories>(
-    new Map(),
-  );
+  const [tagsByCategory, setTagsByCategory] = useState<
+    TagCategories | undefined
+  >();
 
   const getRoute = async () => {
     // TODO First check if a sidebar with valid content exist, else:
@@ -179,7 +177,7 @@ const SetupComponent: FC<SetupComponentProps> = (props) => {
     setOptions({ ...options, source });
   };
 
-  const getTagCategories = async () => {
+  const getAvailableTags = async () => {
     const { data } = await axios.get<Record<string, Array<Tag>>>(
       'https://raw.githubusercontent.com/iota-community/iota-wiki/feat/tuto-section/content/tutorials/tags.json',
     );
@@ -188,17 +186,36 @@ const SetupComponent: FC<SetupComponentProps> = (props) => {
   };
 
   useEffect(() => {
-    setLoaded(options.source && availableTags !== undefined);
-  }, [options, availableTags]);
+    setLoaded(options.route && options.source && tagsByCategory !== undefined);
+  }, [options, tagsByCategory]);
 
   useEffect(() => {
     focusNext();
   }, [loaded]);
 
   useEffect(() => {
+    if (availableTags) {
+      if (options.tags !== undefined) {
+        setTagsByCategory(
+          new Map(
+            Array.from(availableTags, ([category, tags]) => {
+              return [
+                category,
+                tags.filter((tag) => options.tags.includes(tag.value)),
+              ];
+            }),
+          ),
+        );
+      } else {
+        setTagsByCategory(new Map());
+      }
+    }
+  }, [availableTags]);
+
+  useEffect(() => {
     if (!options.route) getRoute();
     if (!options.source) getSource();
-    getTagCategories();
+    getAvailableTags();
   }, []);
 
   useInput((_, key) => {
@@ -271,6 +288,7 @@ const SetupComponent: FC<SetupComponentProps> = (props) => {
             <SelectComponent
               label={`${category} tags`}
               items={tags}
+              value={tagsByCategory.get(category)}
               onChange={onChangeTags(category)}
               key={category}
             />
@@ -409,7 +427,7 @@ export class Setup extends Command {
       throw 'Plugins property needs to be an array.';
 
     const tutorialPlugins = plugins.elements.reduce(
-      (result, element, index) => {
+      (plugins, element, index) => {
         if (element.type === 'ArrayExpression') {
           const pluginElement = element.elements[0];
 
@@ -417,29 +435,43 @@ export class Setup extends Command {
             pluginElement.type !== 'StringLiteral' ||
             pluginElement.value !== '@iota-wiki/plugin-tutorial'
           ) {
-            return result;
+            return plugins;
           }
 
           const optionsElement = element.elements[1];
 
-          if (optionsElement.type !== 'ObjectExpression') return result;
+          if (optionsElement.type !== 'ObjectExpression') return plugins;
 
-          const title = optionsElement.properties.reduce((result, property) => {
+          const options = optionsElement.properties.reduce<
+            Partial<TutorialOptions>
+          >((properties, property) => {
             if (
               property.type === 'ObjectProperty' &&
-              property.key.type === 'Identifier' &&
-              property.key.name === 'title' &&
-              property.value.type === 'StringLiteral'
+              property.key.type === 'Identifier'
             ) {
-              return property.value.value;
+              if (property.value.type === 'StringLiteral') {
+                properties[property.key.name] = property.value.value;
+              }
+
+              if (
+                property.key.name === 'tags' &&
+                property.value.type === 'ArrayExpression'
+              ) {
+                properties.tags = property.value.elements.reduce<string[]>(
+                  (tags, tag) => {
+                    if (tag.type === 'StringLiteral') tags.push(tag.value);
+                    return tags;
+                  },
+                  [],
+                );
+              }
             }
-            return result;
-          }, '' as string);
+            return properties;
+          }, {});
 
-          if (title === '') return result;
-
-          return result.set(index, { title });
+          return plugins.set(index, options);
         }
+        return plugins;
       },
       new Map<number, Partial<TutorialOptions>>(),
     );
