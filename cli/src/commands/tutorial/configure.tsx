@@ -146,7 +146,9 @@ interface SetupComponentProps {
 
 const SetupComponent: FC<SetupComponentProps> = (props) => {
   const { focusNext } = useFocusManager();
-  const [options, setOptions] = useState(props.defaultOptions);
+  const [options, setOptions] = useState<
+    Partial<TutorialOptions> | undefined
+  >();
   const [loaded, setLoaded] = useState(false);
   const [availableTags, setAvailableTags] = useState<
     TagCategories | undefined
@@ -155,14 +157,11 @@ const SetupComponent: FC<SetupComponentProps> = (props) => {
     TagCategories | undefined
   >();
 
-  const getRoute = async () => {
+  const getOptions = async () => {
     // TODO First check if a sidebar with valid content exist, else:
     const files = await fs.promises.readdir('docs');
     const route = files[0].replace(/\.[^/.]+$/, '');
-    setOptions({ ...options, route });
-  };
 
-  const getSource = async () => {
     const dir = await git.findRoot({
       fs,
       filepath: process.cwd(),
@@ -174,7 +173,7 @@ const SetupComponent: FC<SetupComponentProps> = (props) => {
       path: 'remote.origin.url',
     });
 
-    setOptions({ ...options, source });
+    setOptions(Object.assign({ route, source }, props.defaultOptions));
   };
 
   const getAvailableTags = async () => {
@@ -186,37 +185,33 @@ const SetupComponent: FC<SetupComponentProps> = (props) => {
   };
 
   useEffect(() => {
-    setLoaded(options.route && options.source && tagsByCategory !== undefined);
-  }, [options, tagsByCategory]);
-
-  useEffect(() => {
-    focusNext();
-  }, [loaded]);
+    getAvailableTags();
+    getOptions();
+  }, []);
 
   useEffect(() => {
     if (availableTags) {
-      if (options.tags !== undefined) {
-        setTagsByCategory(
-          new Map(
+      const tagsByCategory = !options.tags
+        ? new Map()
+        : new Map(
             Array.from(availableTags, ([category, tags]) => {
               return [
                 category,
                 tags.filter((tag) => options.tags.includes(tag.value)),
               ];
             }),
-          ),
-        );
-      } else {
-        setTagsByCategory(new Map());
-      }
+          );
+      setTagsByCategory(tagsByCategory);
     }
   }, [availableTags]);
 
   useEffect(() => {
-    if (!options.route) getRoute();
-    if (!options.source) getSource();
-    getAvailableTags();
-  }, []);
+    setLoaded(!!options && !!tagsByCategory);
+  }, [options, tagsByCategory]);
+
+  useEffect(() => {
+    if (loaded) focusNext();
+  }, [loaded]);
 
   useInput((_, key) => {
     if (key.escape) process.exit();
@@ -288,7 +283,7 @@ const SetupComponent: FC<SetupComponentProps> = (props) => {
             <SelectComponent
               label={`${category} tags`}
               items={tags}
-              value={tagsByCategory.get(category)}
+              value={tagsByCategory.get(category) || []}
               onChange={onChangeTags(category)}
               key={category}
             />
