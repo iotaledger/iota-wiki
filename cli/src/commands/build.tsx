@@ -17,7 +17,7 @@ export class Build extends Command {
   async execute() {
     const directory = this.directory || '.';
 
-    await shell(
+    return await shell(
       `IOTA_WIKI_DIRECTORY=${directory} npx docusaurus build --config ${internalConfig} ${directory}`,
     );
   }
