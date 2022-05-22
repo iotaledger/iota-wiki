@@ -10,7 +10,7 @@ image: /img/participate/banner/banner_node_software.png
 
 ![Node Software](/img/participate/banner/banner_node_software.png)
 
-**IOTA networks consist of interconnected nodes that run a node software. This software gives nodes read/write access to the Tangle, allows them to validate transactions, and allows them to store transactions in their local ledgers.**
+**IOTA networks consist of interconnected nodes that run a node software. This software gives nodes read and write access to the Tangle, allows them to validate transactions, and allows them to store transactions in their local ledgers.**
 
 ## Hornet
 
