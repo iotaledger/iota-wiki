@@ -46,7 +46,7 @@ When you're configuring your node, you may have the option to allow it to do pro
 
 Proof of work takes time and uses your node's computational power. So, you may want to keep this feature disabled by default.
 
-## Load balancing
+## Load Balancing
 
 If you run more than one node, it's best practice to make sure that API requests are distributed among all of them. To evenly distribute the API requests among all your nodes, you can run a reverse proxy server that will act as a load balancer.
 
