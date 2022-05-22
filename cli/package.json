@@ -15,7 +15,7 @@
     "clean": "rm -rf ./dist",
     "build": "yarn build:ts && yarn build:copy",
     "build:ts": "tsc --build",
-    "build:copy": "copyfiles -u 1 \"src/**/!(*.ts|*.tsx)\" dist",
+    "build:copy": "copyfiles -u 1 \"src/**/!(*.ts|*.js|*.tsx)\" dist",
     "watch": "nodemon --watch src --ext '*' --exec yarn build",
     "format": "prettier --write .",
     "lint": "eslint --cache --fix .",
