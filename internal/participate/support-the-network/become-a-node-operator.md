@@ -36,7 +36,7 @@ If you log into your device through SSH, you should use measures to protect it f
 
 Attackers can abuse any open ports on your device. To secure your device against attacks on unused open ports, you should close all ports except those that are in use. To do so, you can use a firewall. All operating systems include firewall options. By having a firewall in place, you can completely block unused and unnecessary ports.
 
-## Choosing a node software
+## Choosing a Node Software
 
 To join an IOTA network, you need to run one of the available node softwares. For a description of each node software as well as links to guides and tutorials for running them, see [Node software](/participate/support-the-network/node-software).
 
