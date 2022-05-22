@@ -72,8 +72,6 @@ export function useAllLatestVersion(pluginIds: string[]): GlobalVersion {
     return pluginIds.reduce((previousVersion, currentPluginId) => {
         const currentVersion = useLatestVersion(currentPluginId);
 
-        //TODO: compare result number of slashes with current pluginId number of slashes
-        // and return the one with the least slashes.
         if (previousVersion.path.split('/').length <= currentVersion.path.split('/').length)
             return previousVersion;
         return currentVersion;
