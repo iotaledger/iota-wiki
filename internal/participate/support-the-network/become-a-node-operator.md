@@ -1,17 +1,17 @@
 ---
-title: Become a node operator
+title: Node Operator Guide
 description: Running a node is the best way to use IOTA. This topic provides a
   checklist of steps for running a reliable node.
 image: /img/participate/banner/banner_node_operator.png
 ---
 
-# Getting started as a node operator
+# Node Operator Guide
 
 ![Node Operator](/img/participate/banner/banner_node_operator.png)
 
 **Running a node is the best way to use IOTA. By doing so, you have direct access to the Tangle instead of having to connect to and trust someone else's node, and you help the IOTA network to become more distributed. This topic provides a checklist of steps for running a reliable node.**
 
-## Setting up a reliable architecture
+## Minimum requirements
 
 To handle high rates of transactions per second, nodes need enough computational power to run reliably, including the following minimum requirements:
 
@@ -34,25 +34,19 @@ If you log into your device through SSH, you should use measures to protect it f
 
 ### Blocking unnecessary ports
 
-Attackers can abuse any open ports on your device.
+Attackers can abuse any open ports on your device. To secure your device against attacks on unused open ports, you should close all ports except those that are in use. To do so, you can use a firewall. All operating systems include firewall options. By having a firewall in place, you can completely block unused and unnecessary ports.
 
-To secure your device against attacks on unused open ports, you should close all ports except those that are in use. To do so, you can use a firewall.
+## Choosing a node software
 
-All operating systems include firewall options. By having a firewall in place, you can completely block unused and unnecessary ports.
+To join an IOTA network, you need to run one of the available node softwares. For a description of each node software as well as links to guides and tutorials for running them, see [Node software](/participate/support-the-network/node-software).
 
-### Choosing a node software
-
-To join an IOTA network, you need to run one of the available node software.
-
-For a description of each node software as well as links to guides and tutorials for running them, see [**Node software**](/participate/support-the-network/node-software).
-
-### Deciding whether to enable remote proof of work
+## Enable remote proof of work
 
 When you're configuring your node, you may have the option to allow it to do proof of work. When this feature is enabled, clients can ask your node to do remote proof of work.
 
 Proof of work takes time and uses your node's computational power. So, you may want to keep this feature disabled by default.
 
-### Load balancing
+## Load balancing
 
 If you run more than one node, it's best practice to make sure that API requests are distributed among all of them. To evenly distribute the API requests among all your nodes, you can run a reverse proxy server that will act as a load balancer.
 
