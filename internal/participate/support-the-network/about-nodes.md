@@ -40,7 +40,7 @@ All nodes keep a record of the balances of addresses, so they can do the followi
 - Verify that transactions do not transfer more IOTA tokens than are available on the address
 - Nodes update their record of balances when a transaction is confirmed
 
-## Exposing APIs for clients
+## Exposing APIs for Clients
 
 ### HTTP API
 
