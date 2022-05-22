@@ -1,11 +1,11 @@
 ---
-title: Node Operator Guide
+title: Become a Node Operator
 description: Running a node is the best way to use IOTA. This topic provides a
   checklist of steps for running a reliable node.
 image: /img/participate/banner/banner_node_operator.png
 ---
 
-# Node Operator Guide
+# Become a Node Operator
 
 ![Node Operator](/img/participate/banner/banner_node_operator.png)
 
