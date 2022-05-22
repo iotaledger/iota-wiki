@@ -74,7 +74,7 @@ The full documentation and the source code for GoShimmer can be found here:
 - [GoShimmer GitHub](https://github.com/iotaledger/goshimmer)
 - [GoShimmer Installation guide](/goshimmer/tutorials/setup)
 
-### GoShimmer community tutorials
+### GoShimmer Community Tutorials
 
 - [SWARM GoShimmer](https://github.com/tanglebay/swarm)
 - [Nuriels GoShimmer Playbook](https://github.com/nuriel77/goshimmer-playbook)
