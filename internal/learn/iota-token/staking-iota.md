@@ -4,7 +4,7 @@ title: Staking IOTA
 description: Everything you need to know about all the different upcoming staking opportunities in IOTA, Assembly, and Shimmer network.
 ---
 
-# Staking in the IOTA network ecosystem
+# Staking in the IOTA Network Ecosystem
 
 IOTA introduced two new networks that will exist next to the main network: the Shimmer staging network and the Assembly trustless smart contract network. This marks a historical event and a vast increase of utility for the IOTA token.
 Both networks will launch with their own native tokens: SMR for Shimmer and ASMB for Assembly. With the new tokenomics and incentive structure around these networks, it is now possible to stake tokens.
@@ -23,13 +23,13 @@ There are several ways to stake your tokens and earn staking rewards:
 - ASMB token staking to secure the Assembly network and reward the ones who stake their ASMB tokens.
 - SMR token staking to help testing on the Shimmer network and to support the network.
 
-## Shimmer and Assembly pre-launch staking
+## Shimmer and Assembly Pre-launch Staking
 
 This staking period aims to reward IOTA token holders for their participation and distribute tokens of the two new networks to them. In the case of Shimmer, it also creates the total initial supply of the network. In the case of Assembly, it can produce up to 8% of the total initial supply.
 
 Starting from 28th December 2021, 3 p.m. CET, IOTA holders that possess IOTA tokens in the Firefly wallet and have chosen to participate in the staking period will generate Assembly and Shimmer tokens for 90 days.
 
-### IOTA staking for ASMB rewards
+### IOTA Staking for ASMB Rewards
 
 It is planned that IOTA token holders will receive 20% (20 billion tokens) of the total initial Assembly supply of 100 billion tokens. Read more about the Assembly token launch and distribution [in this blog](https://blog.assembly.sc/assembly-fair-launch-token-distribution/).
 - To distribute the first batch of those Assembly tokens to IOTA holders, the staking functionality in the Firefly wallet has been developed. 
@@ -43,9 +43,9 @@ It is planned that IOTA token holders will receive 20% (20 billion tokens) of th
 - After the 90 days have passed, the total amount of IOTA tokens that have participated in the staking event for Assembly will have created a set amount of Assembly tokens (maximum 8 billion if 100% if the IOTA supply has been staked for Assembly)
 - With the launch of the Assembly network, these generated Assembly tokens will be distributed to the IOTA stakers. This distribution will be implemented as a functionality within the Firefly wallet. As long as the Assembly network is not yet launched, Firefly will hold the record of rewards for the IOTA token holder. 
 
-### IOTA staking for SMR rewards
+### IOTA Staking for SMR Rewards
 
-Shimmer, the incentivized testnet and battlefield for IOTA's core technology innovations, will be bootstrapped purely from IOTA token stakers. The initial token supply of the Shimmer network will only rely on the amount of IOTA tokens staked for Shimmer in the 90-day staking period, and 100% of the initial supply will be distributed to IOTA token holders.
+Shimmer, the staging network and battlefield for IOTA's core technology innovations, will be bootstrapped purely from IOTA token stakers. The initial token supply of the Shimmer network will only rely on the amount of IOTA tokens staked for Shimmer in the 90-day staking period, and 100% of the initial supply will be distributed to IOTA token holders.
 
 - The same staking functionality used for Assembly in the Firefly Wallet will also be used for Shimmer.
 - Shimmer tokens will be distributed at a fixed rate of `1 Shimmer per 1 MIOTA per milestone`.
@@ -55,7 +55,7 @@ Shimmer, the incentivized testnet and battlefield for IOTA's core technology inn
 You can read how to stake and calculate the possible rewards [here](https://shimmer.network/claim).
 - With the launch of the Shimmer network, these generated Shimmer tokens will be distributed to the IOTA stakers. This distribution will be implemented as a functionality within the Firefly wallet. As long as the Shimmer network is not yet launched, Firefly will hold the record of rewards for the IOTA token holder. 
 
-## Assembly post-launch staking
+## Assembly Post-launch Staking
 
 Assembly, the smart contract implementation connecting and governing thousands of independent smart contract blockchains on top of IOTA's Tangle will have a deep connection with the IOTA tangle. The security of the Assembly network relies on the underlying security of the IOTA tangle as it solves the interconnection and exchange layer between different chains in Assembly and provides a secure anchor and immutable audit trail for state updates of IOTA smart contracts chains in Assembly.
 
@@ -80,7 +80,7 @@ If only 6 billion ASMB tokens had been distributed in the first 90 days, 14 bill
 
 ![assembly token release](/img/learn/iota-token/assembly-token-release.png)
 
-## ASMB token staking
+## ASMB Token Staking
 
 Assembly will implement two different mechanisms to reward Assembly token stakers.
 1. Reward Assembly stakers for holding ASMB tokens and distributing newly minted ASMB tokens as part of the inflationary token distribution.
@@ -93,10 +93,12 @@ Assembly will implement two different mechanisms to reward Assembly token staker
     - As this described mechanism of using delegated stake increases the total security bond a validator can offer, the validators will most likely be willing to pay a part of their earned profits to the Assembly holders who deposited their tokens to the validator.
     - This involves a potential risk, as a deposited stake in the Assembly root chain contract can be partially or fully slashed if the validator acts maliciously. But, besides this small theoretical risk, delegating stake to a validator will also offer higher rewards for Assembly stakers, as a share of the validators profit will be distributed to the stakers that delegate the stake to the validator.
 
-## SMR token staking
+## SMR Token Staking
 
 The Shimmer network has yearly inflation of 8% planned. These newly minted Shimmer tokens will be distributed to Shimmer stakers. 
-By staking your Shimmer tokens, you will help the network fulfill its purpose of being an incentivized playground for applications to test new IOTA technology features in a real network with real value.
+By staking your Shimmer tokens, you will help the network fulfill its purpose of being an incentivized playground for applications to test new IOTA technology features in a real network with real value. 
+
+Additionally, SMR staking for SMR in the live Shimmer network will not be possible on launch, but will be enabled via a protocol update later.
 
 To learn more about the Shimmer network, read the Shimmer FAQ [here](https://shimmer.network/faqs).
 
