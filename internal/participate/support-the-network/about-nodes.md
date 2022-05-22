@@ -36,10 +36,6 @@ All transactions remain in a pending state until the node is sure of its validit
 
 All nodes keep a record of the balances of addresses, so they can respond to client requests for their balance and verify that transactions do not transfer more IOTA tokens than are available on the address. Nodes update their record of balances when a transaction is confirmed.
 
-- Respond to client requests for their balance
-- Verify that transactions do not transfer more IOTA tokens than are available on the address
-- Nodes update their record of balances when a transaction is confirmed
-
 ## Exposing APIs for Clients
 
 ### HTTP API
