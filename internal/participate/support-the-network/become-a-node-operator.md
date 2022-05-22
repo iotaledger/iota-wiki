@@ -11,7 +11,7 @@ image: /img/participate/banner/banner_node_operator.png
 
 **Running a node is the best way to use IOTA. By doing so, you have direct access to the Tangle instead of having to connect to and trust someone else's node, and you help the IOTA network to become more distributed. This topic provides a checklist of steps for running a reliable node.**
 
-## Minimum requirements
+## Minimum Requirements
 
 To handle high rates of transactions per second, nodes need enough computational power to run reliably, including the following minimum requirements:
 
