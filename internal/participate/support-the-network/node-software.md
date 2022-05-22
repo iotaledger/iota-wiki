@@ -14,7 +14,7 @@ image: /img/participate/banner/banner_node_software.png
 
 ## Hornet
 
-HORNET is a powerful, community-driven IOTA node software written in Go. It is easy to install and runs on low-end devices like the Raspberry Pi 4. Hornet is being built and maintained by a group of community developers alongside the IOTA Foundation. Hornet is a full-fledged software providing full node capabilities including full support of the Chrysalis network update. The Hornet Software will be further developed to run in the upcoming decentralized IOTA 2.0 network.
+Hornet is a powerful, community-driven IOTA node software written in Go. It is easy to install and runs on low-end devices like the Raspberry Pi 4. Hornet is being built and maintained by a group of community developers alongside the IOTA Foundation. Hornet is a full-fledged software providing full node capabilities including full support of the Chrysalis network update. The Hornet software will be further developed to run in the upcoming decentralized IOTA 2.0 network.
 
 By running your own node you have the following benefits:
 
