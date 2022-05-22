@@ -40,7 +40,7 @@ Attackers can abuse any open ports on your device. To secure your device against
 
 To join an IOTA network, you need to run one of the available node softwares. For a description of each node software as well as links to guides and tutorials for running them, see [Node software](/participate/support-the-network/node-software).
 
-## Enable remote proof of work
+## Enable Remote Proof of Work
 
 When you're configuring your node, you may have the option to allow it to do proof of work. When this feature is enabled, clients can ask your node to do remote proof of work.
 
