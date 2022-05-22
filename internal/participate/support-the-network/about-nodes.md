@@ -26,7 +26,7 @@ When nodes receive a new transaction, they attach it to the Tangle by adding it 
 
 Like any distributed system, nodes in an IOTA network synchronize their databases with their neighboring nodes to form a single source of truth. When one node, no matter where it is in the world, receives a transaction, it will try to gossip it to all its neighbors. This way, all nodes eventually see all transactions and store them in their local databases.
 
-To synchronize, nodes in IOTA networks use milestones. If a node has the history of transactions that a milestone references in his database, that milestone is solid. Therefore, nodes know if they are synchronized if the index of their latest solid milestone is the same as the index of the latest milestone that it has received. When a node is synchronized, it then has enough information to decide which transactions it considers confirmed.
+To synchronize, nodes in IOTA networks use milestones. If a node has the history of transactions that a milestone references in its database, that milestone is solid. Therefore, nodes know if they are synchronized if the index of their latest solid milestone is the same as the index of the latest milestone that it has received. When a node is synchronized, it then has enough information to decide which transactions it considers confirmed.
 
 ## Transaction confirmation
 
