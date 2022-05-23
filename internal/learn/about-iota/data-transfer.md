@@ -48,7 +48,7 @@ This is an identification in which the IOTA protocol version of the message belo
 
 ### Parents Count and Parents ID
 
-The parent counts and the parents ID is the amount and the identifier of the messages referenced by the new message, respectively. To build up the graph structure of the Tangle, every new message in the Tangle must reference 2 - 8 previous messages. The node selects those two messages and sends the IDs to the client, and the client must include this information into the message “label.” Therefore, nodes make sure the data structure of the Tangle evolves as specified in the protocol.
+The parent counts and the parents ID is the amount and the identifier of the messages referenced by the new message, respectively. To build up the graph structure of the Tangle, every new message in the Tangle must reference 2 - 8 previous messages. The node selects those two messages and sends the IDs to the client, and the client must include this information into the message “label”. Therefore, nodes make sure the data structure of the Tangle evolves as specified in the protocol.
 
 ### Payload Length
 
