@@ -10,78 +10,53 @@ image: /img/participate/banner/banner_node_software.png
 
 ![Node Software](/img/participate/banner/banner_node_software.png)
 
-**IOTA networks consist of interconnected nodes that run the same node software. This software gives nodes read/write access to the Tangle, allows them to validate transactions, and allows them to store transactions in their local ledgers.**
+**IOTA networks consist of interconnected nodes that run a node software. This software gives nodes read and write access to the Tangle, allows them to validate transactions, and allows them to store transactions in their local ledgers.**
 
 ## Hornet
 
-HORNET is a powerful, community-driven IOTA node software written in Go. It is easy to install and runs on low-end devices like the Raspberry Pi 4. Hornet is being built and maintained by a group of community developers alongside the IOTA Foundation. Hornet is a full-fledged software providing full node capabilities including full support of the Chrysalis network update.
+Hornet is a powerful, community-driven IOTA node software written in Go. It is easy to install and runs on low-end devices like the Raspberry Pi 4. Hornet is being built and maintained by a group of community developers alongside the IOTA Foundation. Hornet is a full-fledged software providing full node capabilities including full support of the Chrysalis network update. The Hornet software will be further developed to run in the upcoming decentralized IOTA 2.0 network.
 
 By running your own node you have the following benefits:
 
-You have direct access to an IOTA network instead of having to connect to and trust someone else's node You help the IOTA network to become more distributed and more resilient by validating messages and value transactions in the IOTA network.
+- Direct access to an IOTA network instead of having to connect to and trust someone else's node
+- You help the IOTA network to become more distributed and more resilient by validating messages and value transactions in the IOTA network
 
-The Hornet Software will be further developed to run in the upcoming decentralized IOTA 2.0 network.
-
-The full documentation for Hornet can be found here:
+The full documentation and the source code for Hornet can be found here:
 
 - [Hornet Documentation](/hornet/welcome)
-
-The source code of the software can be found here:
-
 - [Hornet GitHub](https://github.com/gohornet/hornet)
+- [Hornet Installation guide](/hornet/getting_started)
 
-### Hornet Installation guides:
+### Hornet Community Tutorials
 
-Standard installation following the Hornet Documentation:
+Guides and easy one line installation scripts created by IOTA community members:
 
-- [Hornet documentation - set up a node](/hornet/getting_started)
+- [SWARM Hornet](https://github.com/tanglebay/swarm-releases)
+- [Nuriel's playbook](https://github.com/nuriel77/hornet-playbook)
+- [DeMicheles one-liner using Nuriels Playbook](https://github.com/demichele/install-hornet-1.5)
+- [Install Hornet Mainnet Node using `apt` – Tutorial by Svenger 87 ](https://github.com/svenger87/hornet-alphanet-tutorial)
+- [Run Hornet on a Raspberry Pi – Raspihive Hornet](https://docs.raspihive.com/docs/install#45-first-start-of-raspihive-and-installation-of-the-hornet-node)
 
-### Hornet Community Tutorials:
+Step-by-Step guide for Windows users by Phylo:
 
-Guides and easy one - line installations scripts created by IOTA community members:
+- [Hornet node Installation guide Part 1](https://phyloiota.medium.com/iota-hornet-node-installation-81747de28338)
+- [Hornet node Installation guide Part 2](https://phyloiota.medium.com/iota-hornet-node-installation-2-8f2639e04d1d)
 
-- Nuriels playbook installation using Docker: [Nuriel's playbook](https://github.com/nuriel77/hornet-playbook)
+## Bee
 
-- DeMicheles one-liner using Nuriels Playbook: [Install Hornet](https://github.com/demichele/install-hornet-1.5)
+The IOTA Foundation aims to allow machines of all performance levels to contribute to the IOTA network, from microcontrollers to phones, web browsers and servers. Therefore, Bee is being developed as a modular collection of extendable crates, which expose foreign function interfaces (FFIs) for the next iteration of client libraries.
 
-- Step-by-Step guide for Windows users by Phylo:
+Bee is together with Hornet the second Node software implemented to run on the IOTA Mainnet. Bee will also be further developed to be a reference implementation in the upcoming decentralized IOTA 2.0 Mainnet.
 
-  - [Hornet node Installation guide Part 1](https://phyloiota.medium.com/iota-hornet-node-installation-81747de28338)
-  - [Hornet node Installation guide Part 2](https://phyloiota.medium.com/iota-hornet-node-installation-2-8f2639e04d1d)
+The full documentation and the source code for Bee can be found here:
 
-- [SWARM Hornet](https://github.com/tanglebay/swarm)
-
-- Install Hornet Mainnet Node using `apt`: [Svenger 87 Alphanet Tutorial](https://github.com/svenger87/hornet-alphanet-tutorial)
-
-- Run Hornet on a Raspberry Pi: [Raspihive Hornet](https://docs.raspihive.com/docs/install#45-first-start-of-raspihive-and-installation-of-the-hornet-node)
-
-## BEE
-
-The IOTA Foundation aims to allow machines of all performance levels to contribute to the IOTA network, from microcontrollers to phones, web browsers, and servers.
-
-Therefore, Bee is being developed as a modular collection of extendable crates, which expose foreign function interfaces (FFIs) for the next iteration of client libraries.
-
-Bee is together with Hornet the second Node software implemented to run on the IOTA Mainnet.
-
-Bee will also be further developed to be a reference implementation in the upcoming decentralized IOTA 2.0 Mainnet.
-
-The full documentation for BEE can be found here:
-
-- [BEE Documentation](/bee/getting_started)
-
-The source code of the software can be found here:
-
+- [Bee Documentation](/bee/getting_started)
 - [Bee GitHub](https://github.com/iotaledger/bee)
+- [Bee Installation guide](/bee/setup_a_node)
 
-### BEE Installation guides
+### Bee Community Tutorials
 
-Standard installation following the Bee Documentation:
-
-- [Set up a BEE Node](/bee/setup_a_node)
-
-### Bee Community Tutorials:
-
-- [SWARM Bee](https://github.com/tanglebay/swarm)
+- [SWARM Bee](https://github.com/tanglebay/swarm-releases)
 
 ## GoShimmer
 
@@ -93,25 +68,17 @@ The software is written in Go and is currently the software used in the IOTA 2.0
 
 GoShimmer will not be developed as an upcoming Mainnet node Software.
 
-The full documentation for GoShimmer can be found here:
+The full documentation and the source code for GoShimmer can be found here:
 
 - [GoShimmer Documentation](/goshimmer/welcome)
-
-The source code of the software can be found here:
-
 - [GoShimmer GitHub](https://github.com/iotaledger/goshimmer)
+- [GoShimmer Installation guide](/goshimmer/tutorials/setup)
 
-### GoShimmer Installation guides
+### GoShimmer Community Tutorials
 
-Standard installation following the Documentation:
-
-- [GoShimmer Node Setup](/goshimmer/tutorials/setup)
-
-### GoShimmer community tutorials:
-
-- Nuriels GoShimmer Playbook: [Nuriel77 GoShimmer](https://github.com/nuriel77/goshimmer-playbook)
-- DeMichelle Shell Script: [DeMichelle GoShimmer](https://github.com/demichele/install-goshimmer)
 - [SWARM GoShimmer](https://github.com/tanglebay/swarm)
+- [Nuriels GoShimmer Playbook](https://github.com/nuriel77/goshimmer-playbook)
+- [DeMichelle Shell Script](https://github.com/demichele/install-goshimmer)
 
 ## Chronicle Permanode
 
@@ -122,19 +89,22 @@ Chronicle provides tools for managing and accessing permanode solutions using th
 - Store the data you want by modifying incoming messages
 - Filter data to store it how and where you want (work in progress)
 
-The full documentation for Chronicle Permanodes can be found here:
+The full documentation and the source code for Chronicle can be found here:
 
-- [Chronicle Documentation/GitHub](https://github.com/iotaledger/chronicle.rs)
+- [Chronicle Documentation](/chronicle.rs/welcome)
+- [Chronicle GitHub](https://github.com/iotaledger/chronicle.rs)
+- [Chronicle Installation guide](/chronicle.rs/getting_started)
 
-## WASP Smart Contract Node
+## Wasp Smart Contract Node
 
 Wasp is a node software developed by the IOTA Foundation to run the IOTA Smart Contract Protocol (ISCP in short) on top of the IOTA Tangle.
 
 Wasp is still a work in progress and is purely for development and testing purposes. It runs in combination with GoShimmer Nodes on the IOTA 2.0 DevNet.
 
-The full documentation for WASP Smart Contract Nodes can be found here:
+The full documentation and the source code for Wasp can be found here:
 
-- [WASP Documentation/GitHub](https://github.com/iotaledger/wasp)
+- [Wasp Documentation](/smart-contracts/overview)
+- [Wasp GitHub](https://github.com/iotaledger/wasp)
 
 Thanks to the great team of Zignartech, a docker image for a full installation of a wasp node with the corresponding goshimmer node is available, so you will have a super easy setup for your IOTA smartcontract development and tests:
 
