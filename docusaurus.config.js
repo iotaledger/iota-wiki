@@ -28,7 +28,7 @@ module.exports = {
     announcementBar: {
       id: 'govern',
       content:
-        'If you would like to get more involved in the future Governance of Shimmer, IOTA, and the Assembly network, join the discussions with the community in our <a target="_blank" href="https://govern.iota.org">governance forum 🏛️</a>',
+        'If you would like to get more involved in the future governance of Shimmer, IOTA, and the Assembly network, join the discussions with the community in our <a target="_blank" href="https://govern.iota.org">governance forum</a> 🏛️',
       backgroundColor: '#5991c7',
       textColor: '#ffffff',
       isCloseable: true,
