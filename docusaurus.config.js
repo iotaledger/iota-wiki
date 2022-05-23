@@ -26,10 +26,10 @@ module.exports = {
   themeConfig: {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     announcementBar: {
-      id: 'assembly',
+      id: 'govern',
       content:
-        'Would you like to stake your tokens? <a target="_blank" href="https://assembly.sc">Read more</a> about Assembly, the upcoming permissionless Smart Contract network.',
-      backgroundColor: '#da7ad7',
+        'If you would like to get more involved in the future Governance of Shimmer, IOTA, and the Assembly network, join the discussions with the community in our [governance forum](https://govern.iota.org)',
+      backgroundColor: '#5991c7',
       textColor: '#000000',
       isCloseable: true,
     },
