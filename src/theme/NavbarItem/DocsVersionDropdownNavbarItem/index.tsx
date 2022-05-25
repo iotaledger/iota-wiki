@@ -11,6 +11,7 @@ import {
   useWikiVersionCandidates,
 } from './utils';
 import { useWikiPreferredVersion } from '@site/src/contexts/wikiPreferredVersion';
+import useIsBrowser from '@docusaurus/useIsBrowser';
 
 const getVersionMainDoc = (version) =>
   version.docs.find((doc) => doc.id === version.mainDocId);
@@ -33,8 +34,12 @@ export default function DocsVersionDropdownNavbarItem({
 
   const activeDocContext = useAllActiveDocContexts(pluginIds);
   const versions = useAllVersions(pluginIds);
-  const { preferredVersion, savePreferredVersionName } =
-    useWikiPreferredVersion(pathname, pluginIds);
+  const { preferredVersion, savePreferredVersionName } = useIsBrowser()
+    ? useWikiPreferredVersion(pathname, pluginIds)
+    : {
+        preferredVersion: null,
+        savePreferredVersionName: (version: string) => null,
+      };
 
   const versionLinks = versions.map((version) => {
     // We try to link to the same doc, in another version
