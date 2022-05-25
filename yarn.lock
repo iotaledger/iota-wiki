@@ -5185,6 +5185,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"bee@workspace:content/build/bee/production/documentation":
+  version: 0.0.0-use.local
+  resolution: "bee@workspace:content/build/bee/production/documentation"
+  dependencies:
+    "@iota-community/iota-wiki-cli": "iota-community/iota-wiki-cli#v2"
+    remark-code-import: ^0.3.0
+    remark-import-partial: ^0.0.2
+    remark-remove-comments: ^0.2.0
+  languageName: unknown
+  linkType: soft
+
 "before-after-hook@npm:^2.2.0":
   version: 2.2.2
   resolution: "before-after-hook@npm:2.2.2"

@@ -1,18 +1,6 @@
     [
       "@docusaurus/plugin-content-docs",
       {
-        id: "bee",
-        path: "external/bee/documentation/docs",
-        routeBasePath: "bee",
-        sidebarPath: require.resolve("./external/bee/documentation/sidebars.js"),
-        remarkPlugins: [require("remark-code-import"), require("remark-import-partial")],
-        editUrl: 'https://github.com/iotaledger/bee/edit/dev',
-        breadcrumbs: false,
-      }
-    ],
-    [
-      "@docusaurus/plugin-content-docs",
-      {
         id: "chrysalis-docs",
         path: "external/chrysalis-docs/docs",
         routeBasePath: "chrysalis-docs",
