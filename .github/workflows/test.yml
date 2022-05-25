@@ -1,0 +1,31 @@
+name: test
+
+on:
+  workflow_dispatch:
+  pull_request:
+    branches: [main]
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    env:
+      BUILD: '*/*/documentation'
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0 # Needed for showLastUpdateTime to work
+      - name: Init and update submodules
+        run: |
+          yarn checkout:remote
+      - name: Install dependencies
+        run: |
+          yarn install --immutable
+      - name: Add external doc config
+        run: |
+          yarn cli start
+      - name: Checkout external docs
+        run: |
+          yarn cli checkout --no-overwrite
+      - name: Build
+        run: |
+          yarn build
