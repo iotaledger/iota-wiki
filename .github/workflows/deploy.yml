@@ -16,7 +16,7 @@ jobs:
           fetch-depth: 0 # Needed for showLastUpdateTime to work
       - name: Init and update submodules
         run: |
-          yarn checkout:remote
+          git submodule update --init --recursive --remote
       - name: Install dependencies
         run: |
           yarn install
