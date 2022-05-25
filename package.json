@@ -15,9 +15,7 @@
     "lint": "eslint --cache --fix src",
     "format": "prettier --write .",
     "prepare": "husky install",
-    "cli": "iota-wiki-cli",
-    "checkout": "git submodule update --init --recursive",
-    "checkout:remote": "yarn checkout --remote"
+    "cli": "iota-wiki-cli"
   },
   "dependencies": {
     "@algolia/client-search": "^4.9.1",
