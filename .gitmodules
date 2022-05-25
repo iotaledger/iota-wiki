@@ -34,3 +34,7 @@
 	path = content/build/stronghold.rs/develop
 	url = https://github.com/iotaledger/stronghold.rs
 	branch = dev-refactor
+[submodule "content/build/bee/production"]
+	path = content/build/bee/production
+	url = https://github.com/iotaledger/bee.git
+	branch = production
