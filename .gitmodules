@@ -38,3 +38,7 @@
 	path = content/build/bee/production
 	url = https://github.com/iotaledger/bee.git
 	branch = production
+[submodule "content/build/blueprints/production"]
+	path = content/build/blueprints/production
+	url = https://github.com/iotaledger/blueprints
+	branch = main
