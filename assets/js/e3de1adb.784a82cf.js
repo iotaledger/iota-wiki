@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkiota_wiki=self.webpackChunkiota_wiki||[]).push([[72110],{21795:function(a){a.exports=JSON.parse('{"label":"Economic","permalink":"/blog/tags/economic","allTagsPath":"/blog/tags","count":1}')}}]);
