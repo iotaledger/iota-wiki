@@ -9,7 +9,8 @@ import Social from '@site/src/components/Social';
 
 
 /**
- * REASONS TO SWIZZLE:
+ * SWIZZLED VERSION: 2.0.0-beta.20
+ * REASONS:
  * - The socials bar needed full width, so needed to be placed outside the default container.
  */
 
