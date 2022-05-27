@@ -50,7 +50,11 @@ This is an identification in which the IOTA protocol version of the message belo
 
 The parent counts and the parents ID is the amount and the identifier of the messages referenced by the new message, respectively. To build up the graph structure of the Tangle, every new message in the Tangle must reference 2 - 8 previous messages. The node selects those two messages and sends the IDs to the client, and the client must include this information into the message “label”. Therefore, nodes make sure the data structure of the Tangle evolves as specified in the protocol.
 
-### Payload Length
+:::note
+
+In the upcoming Stardust release, the parent length and ID functions will be updated.
+
+This is the amount and the identifier of the messages referenced by the new message. To build up the graph structure of the Tangle, every new message in the Tangle must reference 2 - 8 previous messages. The node selects those two messages and sends the IDs to the client, and the client must include this information into the message "label." Therefore nodes make sure the data structure of the Tangle evolves as specified in the protocol.
 
 Because messages in IOTA are not allowed to exceed a size of 32kb, the message must declare the size of its payload to the node, like you would need to report the weight of a package if you want to send it with a courier in advance.
 
@@ -69,6 +73,12 @@ A side note - in the upcoming 2.0 IOTA version, this PoW requirement will become
 :::
 
 ## Message Structure
+
+:::note
+
+Protocol Version and uint8 have replaced the formed NetworkID and uint64 ahead of the Stardust release.
+
+:::
 
 This is the defined syntactical structure of every message in the IOTA protocol (the label of our package):
 
@@ -144,6 +154,12 @@ All this information must be created by a client (wallet software or other progr
 
 ### Message Validation
 
+:::note
+
+The message validation rules have been updated to reflect the upcoming Stardust release.
+
+:::
+
 A message is considered valid if the following syntactic rules are met:
 
 1. The message size must not exceed 32 KiB (32 \* 1024 bytes).
@@ -156,6 +172,12 @@ A message is considered valid if the following syntactic rules are met:
 The message will only be accepted for processing if these parameters are met and readable by the node.
 
 ### Payloads
+
+:::note
+
+The three payload types have been updated for the upcoming Stardust release. You can read more about the changes in our [Messages](internal/learn/about-iota/messages.md) section.
+
+:::
 
 A message may contain a payload. Three payload types are currently defined in the mainnet, but developers can create their custom payloads and attach them to messages as long as they fit the general requirements. This means an IOTA message can contain many types of information, and the IOTA token as transaction payload is just one of many. Below is a table of the currently specified core payloads with a link to their specifications.
 
