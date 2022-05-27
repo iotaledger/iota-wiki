@@ -26,6 +26,16 @@ So, the UTXO is a part of a larger, self-contained, and flexible message structu
 
 ## Message Payloads
 
+:::note
+
+In the upcoming Stardust release, there are updates to the three message payload types and their functions:
+
+- [Transaction Payloads](#transaction-payload)
+- [Tagged Data Payloads](#tagged-data-payload)
+- [Milestone Payloads](#milestone-payload)
+
+:::
+
 ### Transaction Payload
 
 A transaction payload (defined in [TIP-0020](https://github.com/lzpap/tips/blob/tx-updates/tips/TIP-0020/tip-0020.md)) is made up of two parts:
