@@ -38,3 +38,7 @@
 	path = content/build/bee/production
 	url = https://github.com/iotaledger/bee.git
 	branch = production
+[submodule "content/build/chronicle/production"]
+	path = content/build/chronicle/production
+	url = https://github.com/iotaledger/chronicle.rs
+	branch = main
