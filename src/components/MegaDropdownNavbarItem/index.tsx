@@ -16,7 +16,6 @@ import {
   useHideableNavbar,
   useThemeConfig,
 } from '@docusaurus/theme-common';
-import useIsBrowser from '@docusaurus/useIsBrowser';
 import type { DesktopOrMobileNavBarItemProps } from '@theme/NavbarItem/DropdownNavbarItem';
 import type { LinkLikeNavbarItemProps } from '@theme/NavbarItem';
 
@@ -357,9 +356,7 @@ function resolveVersion(
     const pathname = `/${projectId}/${docsPath}`;
     const pluginIds = useCurrentDocPlugins(pathname);
 
-    const { preferredVersion } = useIsBrowser()
-      ? useWikiPreferredVersion(pathname, pluginIds)
-      : { preferredVersion: null };
+    const { preferredVersion } = useWikiPreferredVersion(pathname, pluginIds);
 
     if (preferredVersion !== null) {
       return {
