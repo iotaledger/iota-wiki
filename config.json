@@ -2,35 +2,8 @@
   "configFolder": ".github/workflows/",
   "content": [
     {
-      "repo": "https://github.com/iotaledger/bee",
-      "checkoutParams": ["--branch dev"],
-      "staticPath": "./documentation/static"
-    },
-    {
-      "repo": "https://github.com/iotaledger/goshimmer",
-      "staticPath": "./documentation/static"
-    },
-    {
       "repo": "https://github.com/iotaledger/blueprints",
       "staticPath": "./static"
-    },
-    {
-      "repo": "https://github.com/iotaledger/wasp",
-      "checkoutParams": ["--branch develop"],
-      "staticPath": "./documentation/static"
-    },
-    {
-      "repo": "https://github.com/iotaledger/iota.rs",
-      "checkoutParams": ["--branch mainnet"],
-      "staticPath": "./documentation/static"
-    },
-    {
-      "repo": "https://github.com/iotaledger/wallet.rs",
-      "checkoutParams": ["--branch mainnet"],
-      "staticPath": "./documentation/static"
-    },
-    {
-      "repo": "https://github.com/iotaledger/stronghold.rs"
     },
     {
       "repo": "https://github.com/iotaledger/IOTA-2.0-Research-Specifications"
@@ -40,29 +13,12 @@
       "staticPath": "./static"
     },
     {
-      "repo": "https://github.com/gohornet/hornet",
-      "checkoutParams": ["--branch mainnet"],
-      "staticPath": "./documentation/static"
-    },
-    {
-      "repo": "https://github.com/iotaledger/identity.rs",
-      "staticPath": "./documentation/static"
-    },
-    {
       "repo": "https://github.com/iotaledger/streams",
       "staticPath": "./documentation/static"
     },
     {
       "repo": "https://github.com/iotaledger/chronicle.rs",
       "staticPath": "./documentation/static"
-    },
-    {
-      "repo": "https://github.com/iotaledger/integration-services",
-      "staticPath": "./documentation/static"
-    },
-    {
-      "repo": "https://github.com/zebradevs/zebra-iota-edge-sdk",
-      "staticPath": "./docs/static"
     }
   ]
 }

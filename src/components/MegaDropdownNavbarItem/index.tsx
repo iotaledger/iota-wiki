@@ -4,50 +4,37 @@
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  */
+
 import React, { useState, useRef, useEffect } from 'react';
 import clsx from 'clsx';
 import {
   isSamePath,
   useCollapsible,
+  Collapsible,
+  isRegexpStringMatch,
+  useLocalPathname,
   useHideableNavbar,
   useThemeConfig,
-  Collapsible,
-  useLocalPathname,
 } from '@docusaurus/theme-common';
-import NavLink from '@site/src/components/NavLink';
+import type { DesktopOrMobileNavBarItemProps } from '@theme/NavbarItem/DropdownNavbarItem';
+import type { LinkLikeNavbarItemProps } from '@theme/NavbarItem';
+
+import NavbarNavLink, {
+  Props as NavbarNavLinkProps,
+} from '@theme/NavbarItem/NavbarNavLink';
 import NavbarItem from '@theme/NavbarItem';
-import type { Props as NavLinkProps } from '@theme/NavbarItem/DefaultNavbarItem';
 import './styles.css';
 
 const dropdownLinkActiveClass = 'dropdown__link--active';
 
-interface DesktopOrMobileMegaDropdownNavbarItemProps extends NavLinkProps {
-  readonly position?: 'left' | 'right';
+interface DesktopOrMobileMegaDropdownNavbarItemProps
+  extends Omit<DesktopOrMobileNavBarItemProps, 'items'> {
   readonly items_: readonly [];
   readonly layout?;
-  readonly className?: string;
 }
 
 export interface Props extends DesktopOrMobileMegaDropdownNavbarItemProps {
   readonly mobile?: boolean;
-}
-
-function isItemActive(item, localPathname) {
-  if (isSamePath(item.to, localPathname)) {
-    return true;
-  }
-  if (
-    item.activeBaseRegex &&
-    new RegExp(item.activeBaseRegex).test(localPathname)
-  ) {
-    return true;
-  }
-
-  return item.activeBasePath && localPathname.startsWith(item.activeBasePath);
-}
-
-function containsActiveItems(items, localPathname) {
-  return items.some((item) => isItemActive(item, localPathname));
 }
 
 function createItemCursor({ items, label, className, ...props }) {
@@ -71,10 +58,10 @@ function MegaDropdownItem({
   href,
   label,
   ...props
-}: NavLinkProps) {
+}: NavbarNavLinkProps) {
   if (to || href) {
     return (
-      <NavLink
+      <NavbarNavLink
         className={clsx('dropdown__link', className)}
         activeClassName={dropdownLinkActiveClass}
         to={to}
@@ -123,6 +110,29 @@ function getDropdownProps(props, items, localPathname) {
   return props;
 }
 
+function isItemActive(
+  item: LinkLikeNavbarItemProps,
+  localPathname: string,
+): boolean {
+  if (isSamePath(item.to, localPathname)) {
+    return true;
+  }
+  if (isRegexpStringMatch(item.activeBaseRegex, localPathname)) {
+    return true;
+  }
+  if (item.activeBasePath && localPathname.startsWith(item.activeBasePath)) {
+    return true;
+  }
+  return false;
+}
+
+function containsActiveItems(
+  items: readonly LinkLikeNavbarItemProps[],
+  localPathname: string,
+): boolean {
+  return items.some((item) => isItemActive(item, localPathname));
+}
+
 function MegaDropdownNavbarItemDesktop({
   items_: items,
   layout,
@@ -130,9 +140,10 @@ function MegaDropdownNavbarItemDesktop({
   className,
   ...props
 }: DesktopOrMobileMegaDropdownNavbarItemProps) {
-  const localPathname = useLocalPathname();
-  const dropdownRef = useRef(null);
+  const dropdownRef = useRef<HTMLDivElement>(null);
   const [showDropdown, setShowDropdown] = useState(false);
+  const localPathname = useLocalPathname();
+
   const {
     navbar: { hideOnScroll },
   } = useThemeConfig();
@@ -201,16 +212,19 @@ function MegaDropdownNavbarItemDesktop({
   }, [isNavbarVisible]);
 
   useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (!dropdownRef.current || dropdownRef.current.contains(event.target)) {
+    const handleClickOutside = (event: MouseEvent | TouchEvent) => {
+      if (
+        !dropdownRef.current ||
+        dropdownRef.current.contains(event.target as Node)
+      ) {
         return;
       }
-
       setShowDropdown(false);
     };
 
     document.addEventListener('mousedown', handleClickOutside);
     document.addEventListener('touchstart', handleClickOutside);
+
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
       document.removeEventListener('touchstart', handleClickOutside);
@@ -226,7 +240,7 @@ function MegaDropdownNavbarItemDesktop({
       })}
       onMouseLeave={() => setShowDropdown(false)}
     >
-      <NavLink
+      <NavbarNavLink
         className={clsx('navbar__item navbar__link', className, {
           'navbar__link--active': containsActive,
         })}
@@ -241,7 +255,7 @@ function MegaDropdownNavbarItemDesktop({
         onMouseEnter={() => setShowDropdown(true)}
       >
         {props.children ?? props.label}
-      </NavLink>
+      </NavbarNavLink>
       <div className='dropdown__container'>
         <div className='dropdown__menu'>
           {grid.map((row, rowKey) => (
@@ -267,36 +281,38 @@ function MegaDropdownNavbarItemMobile({
   className,
   ...props
 }: DesktopOrMobileMegaDropdownNavbarItemProps) {
+  // Delete props to not pass them on
   delete props.position;
   delete props.layout;
 
+  const ungroupedItems = getUngroupedItemsList(items);
+
   const localPathname = useLocalPathname();
+  const containsActive = containsActiveItems(ungroupedItems, localPathname);
+
   /**
    Added const to get the dropdown label if a dropdown item is selected
    **/
-  const ungroupedItems = getUngroupedItemsList(items);
-  const dropdownProps = getDropdownProps(
-    props,
-    ungroupedItems,
-    useLocalPathname(),
-  );
-  const containsActive = containsActiveItems(ungroupedItems, localPathname);
+  const dropdownProps = getDropdownProps(props, ungroupedItems, localPathname);
+
   const { collapsed, toggleCollapsed, setCollapsed } = useCollapsible({
     initialState: () => !containsActive,
-  }); // Expand/collapse if any item active after a navigation
+  });
 
+  // Expand/collapse if any item active after a navigation
   useEffect(() => {
     if (containsActive) {
       setCollapsed(!containsActive);
     }
-  }, [localPathname, containsActive]);
+  }, [localPathname, containsActive, setCollapsed]);
+
   return (
     <li
       className={clsx('menu__list-item', {
         'menu__list-item--collapsed': collapsed,
       })}
     >
-      <NavLink
+      <NavbarNavLink
         role='button'
         className={clsx('menu__link menu__link--sublist', className)}
         {...props}
@@ -306,16 +322,16 @@ function MegaDropdownNavbarItemMobile({
         }}
       >
         {dropdownProps}
-      </NavLink>
+      </NavbarNavLink>
       <Collapsible lazy as='ul' className='menu__list' collapsed={collapsed}>
-        {items.map((itemProps, itemKey) => (
+        {items.map((childItemProps, i) => (
           <NavbarItem
             mobile
             isDropdownItem
             onClick={props.onClick}
             activeClassName='menu__link--active'
-            {...itemProps}
-            key={itemKey}
+            {...childItemProps}
+            key={i}
           />
         ))}
       </Collapsible>
@@ -323,7 +339,7 @@ function MegaDropdownNavbarItemMobile({
   );
 }
 
-function MegaDropdownNavbarItem({
+export default function MegaDropdownNavbarItem({
   mobile = false,
   ...props
 }: Props): JSX.Element {
@@ -332,5 +348,3 @@ function MegaDropdownNavbarItem({
     : MegaDropdownNavbarItemDesktop;
   return <Comp {...props} />;
 }
-
-export default MegaDropdownNavbarItem;

@@ -1,0 +1,40 @@
+[submodule "content/build/goshimmer/develop"]
+	path = content/build/goshimmer/develop
+	url = https://github.com/iotaledger/goshimmer
+	branch = develop
+[submodule "content/build/identity.rs/v0.5.0"]
+	path = content/build/identity.rs/v0.5.0
+	url = https://github.com/iotaledger/identity.rs
+	branch = support/v0.5
+[submodule "content/build/integration-services/production"]
+	path = content/build/integration-services/production
+	url = https://github.com/iotaledger/integration-services
+	branch = master
+[submodule "content/build/iota.rs/production"]
+	path = content/build/iota.rs/production
+	url = https://github.com/iotaledger/iota.rs
+	branch = production
+[submodule "content/build/wallet.rs/production"]
+	path = content/build/wallet.rs/production
+	url = https://github.com/iotaledger/wallet.rs
+  branch = production
+[submodule "content/build/wasp/develop"]
+	path = content/build/wasp/develop
+	url = https://github.com/iotaledger/wasp
+	branch = develop
+[submodule "content/build/zebra-iota-edge-sdk/production"]
+	path = content/build/zebra-iota-edge-sdk/production
+	url = https://github.com/ZebraDevs/Zebra-Iota-Edge-SDK
+	branch = main
+[submodule "content/build/hornet/production"]
+	path = content/build/hornet/production
+	url = https://github.com/gohornet/hornet
+	branch = mainnet
+[submodule "content/build/stronghold.rs/develop"]
+	path = content/build/stronghold.rs/develop
+	url = https://github.com/iotaledger/stronghold.rs
+	branch = dev-refactor
+[submodule "content/build/bee/production"]
+	path = content/build/bee/production
+	url = https://github.com/iotaledger/bee.git
+	branch = production
