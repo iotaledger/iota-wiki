@@ -65,12 +65,12 @@ article .card {
 }
 
 .footer__copyright {
+  text-align: left;
   margin: 0 var(--ifm-spacing-horizontal);
-  margin-bottom: 0.9rem;
 }
 
 .footer__bottom {
-  align-items: flex-end;
+  align-items: center;
   display: flex;
   flex-wrap: wrap;
   margin-left: max(1rem, calc(20% - 10rem));
@@ -79,8 +79,7 @@ article .card {
 
 .footer__links {
   font-size: 1rem;
-  margin-left: max(1rem, calc(20% - 10rem));
-  margin-right: max(1rem, calc(20% - 10rem));
+  margin: 2rem max(1rem, calc(20% - 10rem));
 }
 
 .footer__logo {
