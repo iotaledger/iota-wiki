@@ -3,6 +3,7 @@
 var requireGlob = require('require-glob');
 
 const env = process.env.BUILD;
+const globs = env.split(',').map(item => `${item}/docusaurus.config.js`);
 
 const reducer = function (_options, result, fileObject) {
     if (fileObject && fileObject.exports) {
@@ -29,7 +30,7 @@ const reducer = function (_options, result, fileObject) {
 
 const config = requireGlob.sync(
     [
-        env + '/docusaurus.config.js',
+        ...globs,
         '!node_modules',
     ],
     {
