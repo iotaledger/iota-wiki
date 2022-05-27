@@ -1,24 +1,12 @@
 name: deploy
 
 on:
-  pull_request:
-    branches: [main]
   workflow_dispatch:
   schedule:
     - cron: '0 0 * * *'
 
 jobs:
-  checks:
-    if: github.event_name == 'pull_request'
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - name: Test Build
-        run: |
-          yarn install --immutable
-          yarn build
-  gh-release:
-    if: github.event_name != 'pull_request'
+  deploy:
     runs-on: ubuntu-latest
     env:
       BUILD: '*/*/documentation,*/*'
