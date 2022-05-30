@@ -112,7 +112,7 @@ module.exports = {
             '0 1 3 4',
             '5 1 3 2',
             '5 1 3 2',
-            '. 1 3 2',
+            '5 1 3 2',
             '. 1 3 2',
             '. 1 3 2',
           ],
@@ -234,7 +234,7 @@ module.exports = {
               ],
             },
             {
-              label: 'Integrations',
+              label: 'Integrations & Tools',
               items: [
                 {
                   label: 'Streams and Identity',
@@ -242,6 +242,13 @@ module.exports = {
                   to: 'integration-services/welcome',
                   icon: '\ue90d',
                   activeBaseRegex: '^/integration-services/.*',
+                },
+                {
+                  label: 'CLI Wallet',
+                  sublabel: 'CLI Wallet for Shimmer',
+                  to: 'cli-wallet/welcome',
+                  icon: '\ue90a',
+                  activeBaseRegex: '^/cli-wallet/.*',
                 },
               ],
             },
