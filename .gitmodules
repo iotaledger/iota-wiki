@@ -42,3 +42,7 @@
 	path = content/build/blueprints/production
 	url = https://github.com/iotaledger/blueprints
 	branch = main
+[submodule "content/build/cli-wallet/develop"]
+	path = content/build/cli-wallet/develop
+	url = https://github.com/iotaledger/cli-wallet
+	branch = develop
