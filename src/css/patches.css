@@ -46,6 +46,12 @@ hr {
 /*
 Patch to use transformed font icons in dropdowns and expanded menus
 */
+.navbar__item.dropdown,
+.dropdown .navbar__item {
+  position: relative;
+  padding-right: calc(1rem + var(--ifm-navbar-item-padding-horizontal))
+}
+
 .dropdown > .navbar__link:after {
   border: none;
   content: none;
@@ -54,6 +60,7 @@ Patch to use transformed font icons in dropdowns and expanded menus
   margin-left: auto;
   position: absolute;
   top: 0;
+  right: 1rem;
   transform: none;
 }
 
