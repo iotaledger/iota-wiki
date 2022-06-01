@@ -31,6 +31,17 @@
   font-family: 'Metropolis Semi Bold', sans-serif;
 }
 
+.version .navbar__item,
+.version .menu__list-item {
+  border-radius: var(--ifm-global-radius);
+  background-color: var(--ifm-color-emphasis-200);
+}
+
+.version .menu__link--active,
+.version .menu__link:hover {
+  background-color: unset;
+}
+
 .card {
   min-width: 14rem;
 }

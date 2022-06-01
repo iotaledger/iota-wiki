@@ -70,5 +70,9 @@ export default function NavbarItem({ type, ...props }: Props): JSX.Element {
     (props as DropdownNavbarItemProps).items !== undefined,
   );
   const NavbarItemComponent = getNavbarItemComponent(componentType);
-  return <NavbarItemComponent {...props} />;
+  return (
+    ['docsVersion', 'docsVersionDropdown'].includes(type)
+      ? <div className='version'><NavbarItemComponent {...props} /></div>
+      : <NavbarItemComponent {...props} />
+  );
 }
