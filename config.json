@@ -2,10 +2,6 @@
   "configFolder": ".github/workflows/",
   "content": [
     {
-      "repo": "https://github.com/iotaledger/blueprints",
-      "staticPath": "./static"
-    },
-    {
       "repo": "https://github.com/iotaledger/IOTA-2.0-Research-Specifications"
     },
     {
