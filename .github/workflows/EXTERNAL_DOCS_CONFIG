@@ -33,14 +33,3 @@
         breadcrumbs: false,
       }
     ],
-    [
-      "@docusaurus/plugin-content-docs",
-      {
-        id: "chronicle",
-        path: "external/chronicle.rs/documentation/docs",
-        routeBasePath: "chronicle.rs",
-        sidebarPath: require.resolve("./external/chronicle.rs/documentation/sidebars.js"),
-        editUrl: 'https://github.com/iotaledger/chronicle.rs/edit/main',
-        breadcrumbs: false,
-      }
-    ],
