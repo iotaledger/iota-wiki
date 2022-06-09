@@ -41,8 +41,8 @@ module.exports = {
       contextualSearch: true,
     },
     matomo: {
-      matomoUrl: 'https://matomo.antonionardella.it/',
-      siteId: '6',
+      matomoUrl: 'https://matomo.iota-community.org/',
+      siteId: '13',
     },
     hotjar: {
       applicationId: '2809821',
