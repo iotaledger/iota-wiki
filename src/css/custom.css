@@ -130,7 +130,7 @@ article .card {
 }
 
 .markdown {
-  margin: 2rem 3rem;
+  margin: 2rem 0rem;
 }
 
 @media screen and (max-width: 966px) {
