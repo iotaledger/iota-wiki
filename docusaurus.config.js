@@ -246,10 +246,6 @@ module.exports = {
             },
           ],
         },
-        {
-          type: 'docsVersionDropdown',
-          position: 'right',
-        },
         { to: '/blog', label: 'Community Blog', position: 'right' },
         { to: '/team', label: 'Team', position: 'right' },
       ],
