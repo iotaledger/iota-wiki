@@ -47,8 +47,6 @@ export default function VersionPicker() {
     };
   });
 
-  console.log(...versionLinks.map(link => link.isActive()));
-
   const dropdownVersion = useWikiVersionCandidates(
     preferredVersion,
     activeDocContext.activeVersion,
