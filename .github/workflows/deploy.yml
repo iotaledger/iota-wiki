@@ -49,6 +49,8 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           branch: 'bot/update-dependencies'
           delete-branch: true
+          add-paths: |
+            yarn.lock
           commit-message: Update dependencies
           title: '[BOT] Update dependencies'
           reviewers: 'Dr-Electron, jlvandenhout'
