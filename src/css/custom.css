@@ -133,12 +133,6 @@ article .card {
   margin: 2rem 0rem;
 }
 
-@media screen and (max-width: 966px) {
-  .markdown {
-    margin: 2rem 0;
-  }
-}
-
 .menu {
   border-top: var(--ifm-global-border-width) solid var(--ifm-color-emphasis-200);
   font-weight: var(--ifm-font-weight-normal);
