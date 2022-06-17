@@ -65,6 +65,11 @@ export function useCurrentDocPlugins(pathname: string): string[] {
         if (pathname.startsWith(element.path))
             pluginIds.push(key);
     }
+
+    // Sort plugins in reverse alphabetic order so that the most recent version is first
+    // Plugins with name as id may need to prepend a number to sort their versions
+    pluginIds.sort((a, b) => (a < b ? 1 : b < a ? -1 : 0));
+    
     return pluginIds;
 }
 
