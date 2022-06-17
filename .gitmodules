@@ -46,3 +46,7 @@
 	path = content/build/chronicle/production
 	url = https://github.com/iotaledger/chronicle.rs
   branch = main
+[submodule "content/build/identity.rs/v0.6.0"]
+	path = content/build/identity.rs/v0.6.0
+	url = https://github.com/iotaledger/identity.rs
+	branch = support/v0.6
