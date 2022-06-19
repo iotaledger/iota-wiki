@@ -15694,7 +15694,7 @@ plugin-image-zoom@flexanalytics/plugin-image-zoom:
   version: 0.0.0-use.local
   resolution: "stronghold@workspace:content/build/stronghold.rs/develop/documentation"
   dependencies:
-    iota-wiki-cli: "iota-community/iota-wiki-cli#v2"
+    "@iota-community/iota-wiki-cli": "iota-community/iota-wiki-cli#v2"
     remark-code-import: ^0.3.0
     remark-import-partial: ^0.0.2
     remark-remove-comments: ^0.2.0
