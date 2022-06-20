@@ -12,7 +12,7 @@ The Chrysalis network update in April 2021 changed the core functionalities of t
 
 - The [chrysalis website](https://chrysalis.iota.org/) gives detailed information on why this happened and what has been changed.
 
-- The [Chrysalis documentation](/chrysalis-docs/welcome) gives detailed insight into the new network and its specifications.
+- The [Chrysalis documentation](/introduction/welcome) gives detailed insight into the new network and its specifications.
 
 To continue the guaranteed accessibility of tokens, all owners of tokens in the old IOTA 1.0 network are therefore asked to move the funds they own into the new Chrysalis IOTA 1.5 network.
 
@@ -28,7 +28,7 @@ It follows the following steps:
 - 4.) Your funds become available on the new network on the EdDSA address Firefly created for you.
 - 5.) Your funds are successfully migrated.
 
-The technical details are explained in the [chrysalis documentation](/chrysalis-docs/guides/migration_mechanism)
+The technical details are explained in the [chrysalis documentation](/introduction/guides/migration_mechanism)
 
 Exact guides how to migrate your funds are located here:
 

@@ -1,17 +1,6 @@
     [
       "@docusaurus/plugin-content-docs",
       {
-        id: "chrysalis-docs",
-        path: "external/chrysalis-docs/docs",
-        routeBasePath: "chrysalis-docs",
-        sidebarPath: require.resolve("./external/chrysalis-docs/sidebars.js"),
-        editUrl: 'https://github.com/iotaledger/chrysalis-docs/edit/main',
-        breadcrumbs: false,
-      }
-    ],
-    [
-      "@docusaurus/plugin-content-docs",
-      {
         id: "IOTA-Research-Specifications",
         path: "external/IOTA-2.0-Research-Specifications",
         routeBasePath: "IOTA-2.0-Research-Specifications",

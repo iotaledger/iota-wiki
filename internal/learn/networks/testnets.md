@@ -23,4 +23,4 @@ This is the implementation of the upcoming fully decentralized IOTA 2.0 protocol
 
 The official IOTA 1.5 DevNet. In this DevNet, the coordinator and some public nodes are run by the IOTA Foundation. It can also be used to test apps for IOTA 1.5. The full documentation for the IOTA 1.5 DevNet can be found here:
 
-- [**IOTA 1.5 Devnet**](/chrysalis-docs/devnet)
+- [**IOTA 1.5 Devnet**](/introduction/devnet)

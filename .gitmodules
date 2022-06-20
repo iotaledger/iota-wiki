@@ -54,3 +54,7 @@
 	path = content/build/identity.rs/develop
 	url = https://github.com/iotaledger/identity.rs
 	branch = dev
+[submodule "content/build/introduction-docs/production"]
+	path = content/build/introduction-docs/production
+	url = https://github.com/iotaledger/chrysalis-docs
+	branch = main

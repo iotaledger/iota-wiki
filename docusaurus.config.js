@@ -134,9 +134,9 @@ module.exports = {
                 {
                   label: 'Chrysalis Docs',
                   sublabel: 'Mainnet documentation',
-                  to: 'chrysalis-docs/welcome',
+                  to: 'introduction/welcome',
                   icon: '\ue901',
-                  activeBaseRegex: '^/chrysalis-docs.*',
+                  activeBaseRegex: '^/introduction.*',
                 },
                 {
                   label: 'Bee Node',
