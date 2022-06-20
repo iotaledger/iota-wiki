@@ -8307,6 +8307,14 @@ __metadata:
   languageName: node
   linkType: hard
 
+"hornet-develop@workspace:content/build/hornet/develop/documentation":
+  version: 0.0.0-use.local
+  resolution: "hornet-develop@workspace:content/build/hornet/develop/documentation"
+  dependencies:
+    "@iota-community/iota-wiki-cli": "iota-community/iota-wiki-cli#v2"
+  languageName: unknown
+  linkType: soft
+
 "hornet@workspace:content/build/hornet/production/documentation":
   version: 0.0.0-use.local
   resolution: "hornet@workspace:content/build/hornet/production/documentation"
