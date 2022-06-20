@@ -3,42 +3,26 @@ var requireGlob = require('require-glob');
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 var path = require('path');
 
-const reducer = function (_options, result, fileObject) {
-  if (fileObject && fileObject.exports) {
-    const { tutorial, plugins, staticDirectories } = fileObject.exports;
+const { TUTORIALS = '' } = process.env;
+const configs = TUTORIALS.split(',').map(item => `${item}/docusaurus.config.js`);
 
-    if (Object.keys(result).length === 0) {
-      result = {
-        tutorials: [tutorial],
-        plugins,
-        staticDirectories,
-      };
-    } else {
-      result.tutorials.push(tutorial);
+function reducer(_options, result, fileObject) {
+    // TODO: pass default object after shannonmoeller/require-glob#24 is merged.
+    if (Object.keys(result).length === 0) result = { plugins: [], staticDirectories: [] };
 
-      if (!result.plugins) result.plugins = plugins;
-      else result.plugins = result.plugins.concat(plugins);
-      if (!result.staticDirectories)
-        result.staticDirectories = staticDirectories;
-      else
-        result.staticDirectories =
-          result.staticDirectories.concat(staticDirectories);
+    if (fileObject && fileObject.exports) {
+        const { plugins = [], staticDirectories = []} = fileObject.exports;
+        result.plugins.push(...plugins);
+        result.staticDirectories.push(...staticDirectories);
     }
-  }
 
-  return result;
+    return result;
 };
 
-const config = requireGlob.sync(
-  [
-    'content/*/documentation/docusaurus.config.js',
-    'content/single-page-tutorials/docusaurus.config.js',
-    '!node_modules',
-  ],
-  {
-    reducer,
-  },
-);
+let config = requireGlob.sync([...configs, '!node_modules'], {reducer});
+
+// TODO: remove after shannonmoeller/require-glob#24 is merged.
+if (Object.keys(config).length === 0) config = { plugins: [], staticDirectories: [] };
 
 module.exports = {
   plugins: [
