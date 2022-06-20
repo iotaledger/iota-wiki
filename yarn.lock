@@ -5256,6 +5256,14 @@ __metadata:
   languageName: node
   linkType: hard
 
+"cli-wallet@workspace:content/build/cli-wallet/develop/documentation":
+  version: 0.0.0-use.local
+  resolution: "cli-wallet@workspace:content/build/cli-wallet/develop/documentation"
+  dependencies:
+    "@iota-community/iota-wiki-cli": "iota-community/iota-wiki-cli#v2"
+  languageName: unknown
+  linkType: soft
+
 "clipanion@npm:^3.2.0-rc.10, clipanion@npm:^3.2.0-rc.4":
   version: 3.2.0-rc.11
   resolution: "clipanion@npm:3.2.0-rc.11"
@@ -8859,6 +8867,17 @@ __metadata:
   checksum: cc3182d793aad82a8d1f0af697b462939cb46066ec48bbf1707c150ad5fad6406137e91a262022c269702e01621f35ef60269f6c0d7fd178487959809acdfb14
   languageName: node
   linkType: hard
+
+"iota-rs-develop@workspace:content/build/iota.rs/develop/documentation":
+  version: 0.0.0-use.local
+  resolution: "iota-rs-develop@workspace:content/build/iota.rs/develop/documentation"
+  dependencies:
+    "@iota-community/iota-wiki-cli": "iota-community/iota-wiki-cli#v2"
+    raw-loader: ^4.0.2
+    remark-code-import: ^0.3.0
+    remark-import-partial: ^0.0.2
+  languageName: unknown
+  linkType: soft
 
 "iota-rs@workspace:content/build/iota.rs/production/documentation":
   version: 0.0.0-use.local

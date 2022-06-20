@@ -70,3 +70,7 @@
 	path = content/build/cli-wallet/develop
 	url = https://github.com/iotaledger/cli-wallet
 	branch = develop
+[submodule "content/build/iota.rs/develop"]
+	path = content/build/iota.rs/develop
+	url = https://github.com/iotaledger/iota.rs
+	branch = develop
