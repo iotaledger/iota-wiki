@@ -517,3 +517,4 @@ module.exports = {
   ],
   staticDirectories: ['./static', ...build.staticDirectories],
 };
+
