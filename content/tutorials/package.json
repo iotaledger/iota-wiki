@@ -1,30 +1,9 @@
 {
-  "name": "tutorials",
-  "version": "0.0.0",
-  "scripts": {
-    "start": "npx iota-wiki start",
-    "configure": "npx iota-wiki configure",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "license": "UNLICENSED",
-  "engines": {
-    "node": ">=14.14.0"
-  },
   "dependencies": {
-    "@docusaurus/plugin-ideal-image": "latest",
-    "@iota-wiki/plugin-tutorial": "^1.0.4",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
     "require-glob": "^4.0.0"
   },
   "workspaces": [
+    "content/single-page-tutorials",
     "content/*/documentation"
-  ],
-  "devDependencies": {
-    "@iota-community/iota-wiki-cli": "iota-community/iota-wiki-cli#v2"
-  },
-  "peerDependencies": {
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1"
-  }
+  ]
 }

@@ -1,7 +1,6 @@
+import React, { useEffect, useState } from 'react';
 import { useHistory, useLocation } from '@docusaurus/router';
-import React from 'react';
-import { useEffect, useState } from 'react';
-import { prepareUserState } from '../tutorials/TutorialFilters';
+import { prepareUserState } from '../TutorialFilters';
 import clsx from 'clsx';
 import './styles.css';
 

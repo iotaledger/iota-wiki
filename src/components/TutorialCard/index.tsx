@@ -11,7 +11,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import clsx from 'clsx';
 
 import './styles.css';
-import FavoriteIcon from '../FavoriteIcon';
+import FavoriteIcon from '../svgIcons/FavoriteIcon';
 import { sortBy } from '../../utils/jsUtils';
 import { NormalizedOptions as Tutorial } from '@iota-wiki/plugin-tutorial';
 import { Tag, TagValues, Tags } from '../../utils/tags';

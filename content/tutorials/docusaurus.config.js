@@ -24,17 +24,4 @@ let config = requireGlob.sync([...configs, '!node_modules'], {reducer});
 // TODO: remove after shannonmoeller/require-glob#24 is merged.
 if (Object.keys(config).length === 0) config = { plugins: [], staticDirectories: [] };
 
-module.exports = {
-  plugins: [
-    '@docusaurus/plugin-ideal-image',
-    [
-      '@docusaurus/plugin-content-pages',
-      {
-        id: 'tutorials',
-        path: path.resolve(__dirname, './src/pages'),
-      },
-    ],
-    ...config.plugins,
-  ],
-  staticDirectories: [...config.staticDirectories],
-};
+module.exports = config;

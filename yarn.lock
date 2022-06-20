@@ -18317,6 +18317,15 @@ plugin-image-zoom@flexanalytics/plugin-image-zoom:
   languageName: node
   linkType: hard
 
+"single-page-tutorials@workspace:content/tutorials/content/single-page-tutorials":
+  version: 0.0.0-use.local
+  resolution: "single-page-tutorials@workspace:content/tutorials/content/single-page-tutorials"
+  dependencies:
+    "@iota-community/iota-wiki-cli": "iota-community/iota-wiki-cli#v2"
+    "@iota-wiki/plugin-tutorial": ^1.0.4
+  languageName: unknown
+  linkType: soft
+
 "sirv@npm:^1.0.7":
   version: 1.0.19
   resolution: "sirv@npm:1.0.19"
@@ -19422,19 +19431,11 @@ plugin-image-zoom@flexanalytics/plugin-image-zoom:
   languageName: node
   linkType: hard
 
-"tutorials@workspace:content/tutorials":
+"tutorials-dd8696@workspace:content/tutorials":
   version: 0.0.0-use.local
-  resolution: "tutorials@workspace:content/tutorials"
+  resolution: "tutorials-dd8696@workspace:content/tutorials"
   dependencies:
-    "@docusaurus/plugin-ideal-image": latest
-    "@iota-community/iota-wiki-cli": "iota-community/iota-wiki-cli#v2"
-    "@iota-wiki/plugin-tutorial": ^1.0.4
-    react: ^17.0.2
-    react-dom: ^17.0.2
     require-glob: ^4.0.0
-  peerDependencies:
-    react: ^17.0.1
-    react-dom: ^17.0.1
   languageName: unknown
   linkType: soft
 
