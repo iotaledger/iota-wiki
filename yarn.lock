@@ -8822,9 +8822,33 @@ __metadata:
   languageName: node
   linkType: hard
 
-"identity@workspace:content/build/identity.rs/v0.5.0/documentation":
+"identity-0.5@workspace:content/build/identity.rs/v0.5.0/documentation":
   version: 0.0.0-use.local
-  resolution: "identity@workspace:content/build/identity.rs/v0.5.0/documentation"
+  resolution: "identity-0.5@workspace:content/build/identity.rs/v0.5.0/documentation"
+  dependencies:
+    "@iota-community/iota-wiki-cli": "iota-community/iota-wiki-cli#v2"
+    raw-loader: ^4.0.2
+    remark-code-import: ^0.3.0
+    remark-import-partial: ^0.0.2
+    remark-remove-comments: ^0.2.0
+  languageName: unknown
+  linkType: soft
+
+"identity-0.6@workspace:content/build/identity.rs/v0.6.0/documentation":
+  version: 0.0.0-use.local
+  resolution: "identity-0.6@workspace:content/build/identity.rs/v0.6.0/documentation"
+  dependencies:
+    "@iota-community/iota-wiki-cli": "iota-community/iota-wiki-cli#v2"
+    raw-loader: ^4.0.2
+    remark-code-import: ^0.3.0
+    remark-import-partial: ^0.0.2
+    remark-remove-comments: ^0.2.0
+  languageName: unknown
+  linkType: soft
+
+"identity-develop@workspace:content/build/identity.rs/develop/documentation":
+  version: 0.0.0-use.local
+  resolution: "identity-develop@workspace:content/build/identity.rs/develop/documentation"
   dependencies:
     "@iota-community/iota-wiki-cli": "iota-community/iota-wiki-cli#v2"
     raw-loader: ^4.0.2
@@ -9106,7 +9130,7 @@ __metadata:
 
 "iota-wiki-cli@iota-community/iota-wiki-cli#v2":
   version: 1.7.0
-  resolution: "iota-wiki-cli@https://github.com/iota-community/iota-wiki-cli.git#commit=ef2f73d6464205353a1660413a667b6318f378a7"
+  resolution: "iota-wiki-cli@https://github.com/iota-community/iota-wiki-cli.git#commit=ee983421e6029e4802c69c9adf812c8ab80b0c42"
   dependencies:
     "@babel/generator": ^7.17.9
     "@babel/parser": ^7.17.9
@@ -9127,11 +9151,12 @@ __metadata:
     ink-text-input: ^4.0.3
     isomorphic-git: ^1.17.2
     plugin-image-zoom: flexanalytics/plugin-image-zoom
+    prettier: 2.6.0
     react: ^17.0.2
     react-dom: ^17.0.2
   bin:
     iota-wiki: dist/index.js
-  checksum: 346cdf5c237e251e35d08a77385e690f118fa4aa20fbb7beb450210c43f564100dabe06cf516b7706c18ed967d50ac7c2e658269944874d7a548d1f2b8f837a1
+  checksum: dae3c9d1ec7389ba670b45e577b2b09ef944463a47ac43b62755873b66d9bbc6a99a0fedc464bad87085360eb101ba4de2474ddcf2bcf69222c12e1692400f68
   languageName: node
   linkType: hard
 
@@ -12354,6 +12379,15 @@ plugin-image-zoom@flexanalytics/plugin-image-zoom:
   languageName: node
   linkType: hard
 
+"prettier@npm:2.6.0":
+  version: 2.6.0
+  resolution: "prettier@npm:2.6.0"
+  bin:
+    prettier: bin-prettier.js
+  checksum: 3e527ad62279676778a8404d18174d7ca2365ada4caba6eebbcdd9907d1187afd3bc6ade5b4e5f5d4549bb9fb71e45ca8930d71500017635524f8fc05bc52e93
+  languageName: node
+  linkType: hard
+
 "prettier@npm:^2.4.1":
   version: 2.6.2
   resolution: "prettier@npm:2.6.2"
@@ -14626,7 +14660,7 @@ plugin-image-zoom@flexanalytics/plugin-image-zoom:
   version: 0.0.0-use.local
   resolution: "stronghold@workspace:content/build/stronghold.rs/develop/documentation"
   dependencies:
-    iota-wiki-cli: "iota-community/iota-wiki-cli#v2"
+    "@iota-community/iota-wiki-cli": "iota-community/iota-wiki-cli#v2"
     remark-code-import: ^0.3.0
     remark-import-partial: ^0.0.2
     remark-remove-comments: ^0.2.0
@@ -15755,7 +15789,7 @@ plugin-image-zoom@flexanalytics/plugin-image-zoom:
   version: 0.0.0-use.local
   resolution: "wallet-rs@workspace:content/build/wallet.rs/production/documentation"
   dependencies:
-    iota-wiki-cli: "iota-community/iota-wiki-cli#v2"
+    "@iota-community/iota-wiki-cli": "iota-community/iota-wiki-cli#v2"
     raw-loader: ^4.0.2
     remark-code-import: ^0.3.0
     remark-import-partial: ^0.0.2
