@@ -2,6 +2,27 @@
 @import 'variables.css';
 @import 'patches.css';
 
+.version-picker {
+  background-color: var(--ifm-color-emphasis-200);
+  margin-bottom: 2rem;
+  margin-top: 1rem;
+}
+
+.version-picker__toggle:hover {
+  background-color: unset;
+}
+
+.version-picker__item,
+.version-picker__list-item {
+  border-radius: var(--ifm-global-radius);
+  background-color: var(--ifm-color-emphasis-200);
+}
+
+.version-picker__link--active,
+.version-picker__link:hover {
+  background-color: unset;
+}
+
 .dropdown > .navbar__link:after,
 .menu__link--sublist:after {
   content: 'expand_more';
