@@ -78,3 +78,7 @@
 	path = content/build/wallet.rs/develop
 	url = https://github.com/iotaledger/wallet.rs
 	branch = develop
+[submodule "content/build/hornet/develop"]
+	path = content/build/hornet/develop
+	url = https://github.com/iotaledger/hornet
+	branch = develop
