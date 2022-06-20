@@ -24,12 +24,19 @@ import NavbarNavLink, {
 } from '@theme/NavbarItem/NavbarNavLink';
 import NavbarItem from '@theme/NavbarItem';
 import './styles.css';
+import { useCurrentDocPlugins } from '@site/src/theme/NavbarItem/DocsVersionDropdownNavbarItem/utils';
+import { useWikiPreferredVersion } from '@site/src/contexts/wikiPreferredVersion';
 
 const dropdownLinkActiveClass = 'dropdown__link--active';
 
+interface MegaDropdownCategory {
+  label: string;
+  items: LinkLikeNavbarItemProps[];
+}
+
 interface DesktopOrMobileMegaDropdownNavbarItemProps
   extends Omit<DesktopOrMobileNavBarItemProps, 'items'> {
-  readonly items_: readonly [];
+  readonly items_: MegaDropdownCategory[];
   readonly layout?;
 }
 
@@ -339,12 +346,43 @@ function MegaDropdownNavbarItemMobile({
   );
 }
 
+function resolveVersion(
+  item: LinkLikeNavbarItemProps,
+): LinkLikeNavbarItemProps {
+  if (item.to !== undefined) {
+    // TODO: Not rely on `{projectId}/{docsPath}` formatted url
+    const [projectId, ...docsPathItems] = item.to.split('/');
+    const docsPath = docsPathItems.join('/');
+    const pathname = `/${projectId}/${docsPath}`;
+    const pluginIds = useCurrentDocPlugins(pathname);
+
+    const { preferredVersion } = useWikiPreferredVersion(pathname, pluginIds);
+
+    if (preferredVersion !== null) {
+      return {
+        ...item,
+        to: `${preferredVersion.path}/${docsPath}`,
+      };
+    }
+  }
+
+  return item;
+}
+
 export default function MegaDropdownNavbarItem({
   mobile = false,
+  items_: megamenuItems,
   ...props
 }: Props): JSX.Element {
+  // TODO: change mega dropdown implementation to accept Docusaurus provided navbar items
+  // and do version resolving in the proper places.
+  const items_ = megamenuItems.map((megamenuItem) => ({
+    ...megamenuItem,
+    items: megamenuItem.items.map(resolveVersion),
+  }));
+
   const Comp = mobile
     ? MegaDropdownNavbarItemMobile
     : MegaDropdownNavbarItemDesktop;
-  return <Comp {...props} />;
+  return <Comp items_={items_} {...props} />;
 }
