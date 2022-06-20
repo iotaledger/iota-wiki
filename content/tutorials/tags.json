@@ -132,5 +132,25 @@
       "description": "This Tutorial is using the Wasm programming language",
       "color": "#be9970"
     }
+  ],
+  "Network": [
+    {
+      "value": "testnet",
+      "label": "Testnet",
+      "description": "The test network",
+      "color": "#6b6882"
+    },
+    {
+      "value": "shimmer",
+      "label": "Shimmer",
+      "description": "The staging network",
+      "color": "#6b6882"
+    },
+    {
+      "value": "mainnet",
+      "label": "Mainnet",
+      "description": "The IOTA network",
+      "color": "#6b6882"
+    }
   ]
 }
