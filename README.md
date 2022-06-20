@@ -68,8 +68,13 @@ Install [Node.js](https://nodejs.org/en/download/).
 
 ### Local Development
 
-1. Run `yarn install` in your terminal. If you want to also install the external docs use `yarn cli start` and `yarn cli checkout`
-2. Run `yarn start`
+1. Run `yarn install` in your terminal. If you want to also install the external docs use:
+```
+git submodule update --init --recursive --remote
+yarn cli start
+yarn cli checkout
+```
+2. Run `yarn start` to build the basic Wiki structure or `BUILD=*/*/documentation,*/* yarn start` to also include external docs
 3. Open `http://localhost:3000`
 
 <!-- CONTRIBUTING -->
@@ -98,8 +103,8 @@ You can use Gitpod (a free, online, VS Code-like IDE) for contributing. With a s
 Phylo - [Phyloiota](https://github.com/Phyloiota) - Phylo [Community DAO - lets go!]#2233  
 Jeroen van den Hout - [jlvandenhout](https://github.com/jlvandenhout) - jvdhout#4402  
 Dr.Electron - [Dr-Electron](https://github.com/Dr-Electron) - Dr.Electron#9370  
-Critical - [Critical94](https://github.com/Critical94) - Critical#7111
-JSto - [JSto91](https://github.com/JSto91) - JSto#3746
+Critical - [Critical94](https://github.com/Critical94) - Critical#7111  
+JSto - [JSto91](https://github.com/JSto91) - JSto#3746  
 
 ## Donate
 
