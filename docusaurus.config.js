@@ -200,7 +200,7 @@ module.exports = {
                 {
                   label: 'Stronghold',
                   sublabel: 'Handle secrets securely',
-                  to: 'stronghold.rs/welcome',
+                  to: 'stronghold.rs/getting_started',
                   icon: '\ue909',
                   activeBaseRegex: '^/stronghold.rs/.*',
                 },
