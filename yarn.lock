@@ -15369,6 +15369,17 @@ plugin-image-zoom@flexanalytics/plugin-image-zoom:
   languageName: node
   linkType: hard
 
+"wallet-rs-develop@workspace:content/build/wallet.rs/develop/documentation":
+  version: 0.0.0-use.local
+  resolution: "wallet-rs-develop@workspace:content/build/wallet.rs/develop/documentation"
+  dependencies:
+    iota-wiki-cli: "iota-community/iota-wiki-cli#v2"
+    raw-loader: ^4.0.2
+    remark-code-import: ^0.3.0
+    remark-import-partial: ^0.0.2
+  languageName: unknown
+  linkType: soft
+
 "wallet-rs@workspace:content/build/wallet.rs/production/documentation":
   version: 0.0.0-use.local
   resolution: "wallet-rs@workspace:content/build/wallet.rs/production/documentation"
