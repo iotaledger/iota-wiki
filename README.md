@@ -74,7 +74,7 @@ git submodule update --init --recursive --remote
 yarn cli start
 yarn cli checkout
 ```
-2. Run `yarn start` or `BUILD=*/*/documentation,*/* yarn start` to inclue external docs
+2. Run `yarn start` to build the basic Wiki structure or `BUILD=*/*/documentation,*/* yarn start` to also include external docs
 3. Open `http://localhost:3000`
 
 <!-- CONTRIBUTING -->
