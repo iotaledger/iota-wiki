@@ -1,7 +1,5 @@
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 var requireGlob = require('require-glob');
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-var path = require('path');
 
 const { TUTORIALS = '' } = process.env;
 const configs = TUTORIALS.split(',').map(item => `${item}/docusaurus.config.js`);
