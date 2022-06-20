@@ -235,7 +235,6 @@ module.exports = {
             },
           ],
         },
-        { to: '/tutorials', label: 'Tutorials', position: 'right' },
         { to: '/blog', label: 'Blog', position: 'right' },
         { to: '/team', label: 'Team', position: 'right' },
       ],
