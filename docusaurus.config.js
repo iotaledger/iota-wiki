@@ -110,8 +110,8 @@ module.exports = {
           layout: [
             '0 1 3 4',
             '0 1 3 4',
-            '. 1 3 2',
-            '. 1 3 2',
+            '5 1 3 2',
+            '5 1 3 2',
             '. 1 3 2',
             '. 1 3 2',
             '. 1 3 2',
@@ -230,6 +230,18 @@ module.exports = {
                   to: 'smart-contracts/overview',
                   icon: '\ue90b',
                   activeBaseRegex: '^/smart-contracts/.*',
+                },
+              ],
+            },
+            {
+              label: 'Integrations',
+              items: [
+                {
+                  label: 'Streams and Identity',
+                  sublabel: 'Integrate IOTA seamlessly',
+                  to: 'integration-services/welcome',
+                  icon: '\ue90d',
+                  activeBaseRegex: '^/integration-services/.*',
                 },
               ],
             },
