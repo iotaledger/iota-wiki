@@ -18,7 +18,7 @@
 
 .tutorial-card__image-container {
   display: flex;
-  align-items: start;
+  align-items: flex-start;
   justify-content: center;
   overflow: hidden;
   height: 150px;
