@@ -1,3 +1,10 @@
+---
+keywords:
+- getting started
+description: A mind map is a technique that can help you to grasp a large project and start writing about it.
+image: /img/participate.sng
+---
+
 # Mind Maps
 
 Each software project at IOTA is vast. As with any other complex entity, your brain cannot hold all details of it at once. Instead, it dissects that entity into large blocks. In a case of a software project these blocks could be separate program modules, classes, use cases and so on. Then you focus onto one of the blocks and dismantle it as well. You continue zooming in until you reach the level of detail that suits your momentary thought.

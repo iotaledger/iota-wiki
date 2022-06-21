@@ -1,4 +1,11 @@
-# Developer's Guide
+---
+keywords:
+- how to
+description: How to get your project documented.
+image: /img/participate.sng
+---
+
+# Writing as a Dev
 
 Developers rarely revel in reading documentation, let alone in writing it. Writing documentation is hard, and it is even harder to write a captivating one. Luckily, IOTA has a team of dedicated technical writers. We can help you, and you can help us. This document explains how.
 
@@ -8,14 +15,16 @@ This document will evolve as we invent more ways to help each other. Check for u
 
 ## Make a Friend
 
-If you have not gotten in a contact with a technical writer yet, do it! We can advise you, ask the right questions, and plan together. Reach out to us through Slack DMs, `#dev-documentation` Slack channel, or via e-mail. If you come from outside IOTA, check the [Welcome](../welcome.md#contact-technical-writers) page for the external contacts.
+If you have not gotten in a contact with a technical writer yet, do it! We can advise you, ask the right questions, and plan together. Reach out to us through the `#iota-wiki` Discord channel,the `#dev-documentation` Slack channel, Slack DMs or via e-mail — whatever you have access to.
 
 Active technical writers:
 
 - Aleksei Korolev
-- Charles Thompson
 - Lucas Tortora
-- Sebastian Heusser
+
+## Prepare Your Repository
+
+See [Setting Up Documentation](documentation_setup.md).
 
 ## Do Your Homework
 
@@ -25,7 +34,7 @@ The most consuming part of writing is not the writing itself but the research of
 
 Some tasks you can manage on your own. For some you would need advice. Some tasks are better left to technical writers. Contact the writers' team and distribute the effort early.
 
-To help you help us, we have prepared a [toolbox](toolbox/toolbox.md), a collection of tools and tips for developers who write documentation.
+To help you help us, we have prepared a [collection](../getting_started/getting_better/introduction) of tools and tips for those who write documentation.
 
 ## Do Your Work
 

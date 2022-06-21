@@ -125,154 +125,9 @@ If the maintainer approves the PR, it will be merged.
 
 # Contribute to the Iota-Wiki Content
 
-This document describes how to contribute and add content to the IOTA wiki.
+See the [contribution guidelines](../internal/participate/contribute-to-wiki/welcome.md).
 
-We encourage everyone with knowledge of IOTA technology to share this knowledge with the community and help so help new people to get a better understanding and help the onboarding of new users.
-
-Thanks! :heart:
-
-<br>
-
-## Content strategy
-
-The general menu structure of the WIKI website can be found in this Google shhet - you will see which content is still open to produce and clicking on the Link of the cell will directly open the content page in HitHub - Status of Work in Progress is currently this:
-
-https://docs.google.com/spreadsheets/d/1GjYFRrNhloVyR6kSAVlMAEWadY3onRv6UFnpQGRl0Z8/edit?usp=sharing
-
-We want every contributor to understand the purpose of the Wiki and our way of delivering content.
-
-We want the Wiki to be the one single reference and source of truth and up-to-date information for everyone that needs information about the IOTA project. And the Wiki is meant as a gateway to provide everyone quick access to all information regarding IOTA.
-
-We aim to deliver basic introduction content on the pages and whenever possible link the reader to more detailed content provided by the IOTA Foundation (Blog posts / Websites / Guides / Docs / GitHub). So you don't need to write an in-depth explanation about Mana for the Wiki if there is already very good up-to-date information available to where we can provide a link. So we would more give a general introduction to Mana in the Wiki and leave the detailed explanation in the Links.
-
-But if you feel that the available information is insufficient, outdated, or too complex to understand for normal users, we are happy about detailed understandable content about a topic. As IOTA has been moving fast forward this might be the situation in many fields of the project atm.
-
-We decided to split the WIKI into 4 major thematic areas that focus on the user/reader and the needs of those who visit the Wiki and we aim to deliver tailored content for that user group.
-
-## Learn
-
-The Learn section aims to describe most of IOTAs core functions and technology. Content should be explained understandably for normal random users that have no, or just a small knowledge about IOTA. We want to welcome interested people and show them the way into understanding IOTA and get fascinated about it. Perfect would be if we could provide also links to external sources that deliver further detailed content in different levels of complexity. Also welcome to link to an IF YouTube video.
-
-As we know the protocol has changed a lot and quickly we might not find up-to-date information, so we will write it ourselves.
-
-## Use
-
-Content for people that may be looking to use IOTA in their project / Company / Industry. Showcase of all the possibilities the protocol delivers, the several technologies developed for use cases. Explain and provide useful links to lead the reader into the project.
-
-## Participate
-
-How can someone become active in the project? Where to interact with the community, how to engage with others or the technologies, and get a hands-on experience with IOTA.
-
-Collect general info and link to Guides / POC's / Showcases / IF community sites. Create an interesting "how-to" explanation... everything that invites users: "oh yeah, I wanna do this"!
-
-## Develop
-
-The gateway for Developers. Introduces the core functionalities on a more technical level and aims to bring developers directly into the correct framework for them to start working with IOTA. Also, deliver guides and tools that help to get started and to understand the concepts behind the protocol. This section will directly link to the underlying IOTA Docs and GitHub, so please provide correct links to the specific content in the IOTA Docs.
-
-## Adding content
-
-To edit a document, click the pencil (edit this file) in the top right corner when viewing in GitHub. This will open up the GitHub editor, so you can edit your file.
-
-We don't ask for perfection from everyone - it is a community-driven project and will grow and get better all the time, but we may have to change some things as we aim for a similar language and style throughout the whole website. This should give the readers the feeling that it is coming out of one source. So we will contact you on your GitHub account or comment directly in the Pull Request.
-
-You can also create content directly in GitHub by forking the **`main`** branch and start editing the pages you wish to contribute. The Page documents will be found under https://github.com/iota-community/iota-wiki/tree/main/docs.
-
-All pages are themed and styled automatically and follow a standardized format throughout the wiki.
-
-Each page’s content is preceded by its front-matter information. This tells the wiki what it needs to know about the page to add it to the front-end in the right place. This does not need to be edited
-
-```
----
-id: my-doc-id
-title: My document title
-description: My document description
-slug: /my-custom-url
----
-```
-
-`# Header 1` – should only be used for page title/header using a single hash
-
-`## Header 2` – should be used for main sub-sections of the topic using a double hash
-
-`### Header 3` – should be used for internal sections of these sub-sections using treble hash
-
-### Content
-
-All page content should be written as standard text.
-
-A paragraph can be created by leaving a double line break between two text blocks
-
-### Formatting
-
-Use single asterisk to make a word or sentence `*italic*`
-
-Use double asterisk to make a word or sentence `**bold**`
-
-Use triple asterisk to make a word or sentence `***bold and italic***`
-
-Use double tilde to `~~strike through~~` a word or sentence
-
-### Links
-
-To add a link to a page we use square brackets to contain the link text followed by round brackets containing the link address:
-`[this is a link](https://www.website.com)`
-
-### Images
-
-To add an image to a page, we first need to upload the page to the [image folder]()
-Then on our page we can add the image using the same method as a link preceded with an exclamation mark:
-`![image text](https://image.link/here.jpg)`
-
-### Image Links
-
-To make an image a link, we can combine the two methods, by putting the link within the text section of the image code:
-`![Here is an example image](https://example.com/image.jpg)`
-
-### Lists
-
-To create lists we use two different methods.
-
-```
--	Bullet point
--	lists
--	using a hyphen
-```
-
-```
-1.	Numbered
-2.	Lists
-3.	Using numbers
-```
-
-### Quotes
-
-```
-   >To add a quoted or embedded text, we use the greater than symbol at the start of the section. To close off a quote we create a new paragraph.
-```
-
-### Adding Code
-
-There are two types of code entry we use `` `inline code` `` which is wrapped with single backticks
-
-````
-```Code blocks can be added in page where required
-either to demonstrate function,
-or to add an exclamation to a section,
-by wrapping the section with treble backticks
-````
-
-````
-
-
-### Line Divider
-
-We can add a line divider to break up the page by adding 4 dashes
-```----
-````
-
----
-
-### Submitting your contribution
+## Submitting your contribution
 
 Once you have completed your contribution goes to the bottom of the edit page to the commit changes section.
 
@@ -285,7 +140,7 @@ Once you have completed your contribution goes to the bottom of the edit page to
 - This will open a pull request, where you can fill out the basic information for your updates.
 - Then click the create pull request button
 
-### Working with the Project Board
+## Working with the Project Board
 
 To keep our WIKI Project organized and help everyone understand the current state of work that's going on, we decided to use a Kanban Style Project Board. Everything related to content creation should be represented in this board. You will find it under the projects tab:
 
@@ -323,7 +178,7 @@ Every card in the Kanban can be converted into an open issue. You should use thi
 
 ![image](https://user-images.githubusercontent.com/77154511/126052529-ddc9f83c-9c53-46eb-9e8c-1033d42fab14.png)
 
-### Using issues to organize the Project Flow
+## Using issues to organize the Project Flow
 
 Once you have converted your Project Board card into an open issue, you can add some attributes to the issue that will structure our workflow
 
@@ -359,7 +214,7 @@ As soon as you have opened a pull request for the content, link the issue to thi
 
 ![image](https://user-images.githubusercontent.com/77154511/126052695-7b28f4c5-da09-4492-86e0-c5e4009862b0.png)
 
-### Congratulations! You’re all done!
+## Congratulations! You’re all done!
 
 Enjoy contributing and if you have any questions or ideas send us an issue!
 

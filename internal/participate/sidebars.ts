@@ -75,87 +75,68 @@ module.exports = {
       label: 'Contribute To Wiki',
       collapsed: true,
       items: [
-        'contribute-to-wiki/welcome',
         {
           type: 'category',
-          label: 'For Community',
-          items: ['contribute-to-wiki/for_community/community_guide'],
+          label: 'Getting Started',
+          items: [
+              'contribute-to-wiki/getting_started/welcome',
+              'contribute-to-wiki/getting_started/quick_advice',
+          ],
         },
         {
           type: 'category',
-          label: 'For Developers',
+          label: 'How Tos',
           items: [
-            {
-              type: 'doc',
-              label: "Developer's Guide",
-              id: 'contribute-to-wiki/for_devs/developer_guide',
-            },
+            'contribute-to-wiki/how_tos/developer',
+            'contribute-to-wiki/how_tos/documentation_setup',
+            'contribute-to-wiki/how_tos/request_tw',
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Concepts',
+          items: [
+              'contribute-to-wiki/concepts/third-party_works',
             {
               type: 'category',
-              label: 'Toolbox',
+              label: 'Writing Tools',
               items: [
-                {
-                  type: 'doc',
-                  label: 'Introduction',
-                  id: 'contribute-to-wiki/for_devs/toolbox/toolbox',
-                },
-                {
-                  type: 'doc',
-                  label: 'The Right Questions',
-                  id: 'contribute-to-wiki/for_devs/toolbox/questions',
-                },
-                {
-                  type: 'doc',
-                  label: 'Mind Map',
-                  id: 'contribute-to-wiki/for_devs/toolbox/mind_map',
-                },
+                'contribute-to-wiki/concepts/tools/overview',
+                'contribute-to-wiki/concepts/tools/questions',
+                'contribute-to-wiki/concepts/tools/mind_map',
               ],
-            },
-            {
-              type: 'doc',
-              label: 'Request a Technical Writer',
-              id: 'contribute-to-wiki/for_devs/request_tw',
             },
           ],
         },
         {
           type: 'category',
-          label: 'For Writers',
+          label: 'Reference',
           items: [
             {
-              type: 'doc',
-              label: "Technical Writer's Guide",
-              id: 'contribute-to-wiki/for_tws/writer_guide',
+              type: 'category',
+              label: 'Style Guidelines',
+              items:
+              [
+                'contribute-to-wiki/reference/style/manifesto',
+                'contribute-to-wiki/reference/style/structure',
+                'contribute-to-wiki/reference/style/matter',
+                'contribute-to-wiki/reference/style/form',
+                'contribute-to-wiki/reference/style/mechanics',
+                'contribute-to-wiki/reference/style/formatting',
+              ],
             },
             {
-              type: 'doc',
-              label: 'Structure',
-              id: 'contribute-to-wiki/for_tws/structure',
-            },
-            {
-              type: 'doc',
-              label: 'Matter',
-              id: 'contribute-to-wiki/for_tws/matter',
-            },
-            {
-              type: 'doc',
-              label: 'Form',
-              id: 'contribute-to-wiki/for_tws/form',
-            },
-            {
-              type: 'doc',
-              label: 'Mechanics',
-              id: 'contribute-to-wiki/for_tws/mechanics',
-            },
-            {
-              type: 'doc',
-              label: 'Formatting',
-              id: 'contribute-to-wiki/for_tws/formatting',
-            },
-            {
-              type: 'doc',
-              label: 'Third-Party Works',
-              id: 'contribute-to-wiki/for_tws/third-party_works',
+              type: 'category',
+              label: 'Documentation Structure',
+              items:
+              [
+                'contribute-to-wiki/reference/structure/overview',
+                'contribute-to-wiki/reference/structure/getting_started',
+                'contribute-to-wiki/reference/structure/how_tos',
+                'contribute-to-wiki/reference/structure/tutorials',
+                'contribute-to-wiki/reference/structure/concepts',
+                'contribute-to-wiki/reference/structure/reference',
+              ],
             },
           ],
         },

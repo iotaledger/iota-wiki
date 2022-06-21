@@ -1,3 +1,10 @@
+---
+keywords:
+- getting started
+description: No matter what you write about, you probably need to answer the same questions every time.
+image: /img/participate.sng
+---
+
 # The Right Questions
 
 No matter what you are working on, we will always ask you the same questions:
