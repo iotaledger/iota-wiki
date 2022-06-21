@@ -27,6 +27,30 @@
       "color": "#0e4ca1"
     },
     {
+      "value": "hornet",
+      "label": "Hornet",
+      "description": "Hornet node software",
+      "color": "#0e4ca1"
+    },
+    {
+      "value": "bee",
+      "label": "Bee",
+      "description": "Bee node software",
+      "color": "#0e4ca1"
+    },
+    {
+      "value": "wasp",
+      "label": "Wasp",
+      "description": "Wasp smart contracts node software",
+      "color": "#0e4ca1"
+    },
+    {
+      "value": "chronicle",
+      "label": "Chronicle",
+      "description": "Chronicle permanode software",
+      "color": "#0e4ca1"
+    },
+    {
       "value": "live-coding",
       "label": "Live Coding",
       "description": "Recorded live coding session",
