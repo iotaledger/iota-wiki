@@ -21,7 +21,7 @@
       "color": "#9e008e"
     },
     {
-      "value": "integrationservices",
+      "value": "integration-services",
       "label": "Integration Services",
       "description": "Integrate IOTA seamlessly",
       "color": "#0e4ca1"
