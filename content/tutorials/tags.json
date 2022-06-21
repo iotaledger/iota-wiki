@@ -15,12 +15,6 @@
   ],
   "Topic": [
     {
-      "value": "favorite",
-      "label": "Favorite",
-      "description": "Our favorite IOTA tutorials that you must absolutely check-out!",
-      "color": "#ff0056"
-    },
-    {
       "value": "gettingstarted",
       "label": "Getting Started",
       "description": "Easy Tutorials for getting started",
