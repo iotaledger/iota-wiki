@@ -133,7 +133,7 @@ export function useFilteredTutorials() {
   }, [location]);
 
   let tutorials = Object.values(
-    useAllPluginInstancesData('@iota-wiki/plugin-tutorial'),
+    useAllPluginInstancesData('@iota-wiki/plugin-tutorial') || {},
   ) as Tutorial[];
   // Sort by tutorial name
   tutorials = sortBy(tutorials, (tutorial) => tutorial.title.toLowerCase());
