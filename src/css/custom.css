@@ -273,3 +273,7 @@ ul ul .table-of-contents__link {
   color: var(--docsearch-highlight-color) !important;
   text-decoration: none;
 }
+
+.theme-doc-sidebar-container {
+  margin-right: 1rem;
+}
