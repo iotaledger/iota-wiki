@@ -21,7 +21,7 @@
   font-size: 0.9rem;
   position: relative;
   display: flex;
-  align-items: end;
+  align-items: flex-end;
 }
 
 .blogPostDetailsFull {
