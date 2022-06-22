@@ -82,7 +82,7 @@
 	path = content/build/hornet/develop
 	url = https://github.com/iotaledger/hornet
 	branch = develop
-[submodule "content/build/chrysalis-docs/develop"]
-	path = content/build/chrysalis-docs/develop
-	url = https://github.com/iotaledger/chrysalis-docs
+[submodule "content/build/introduction-docs/develop"]
+	path = content/build/introduction-docs/develop
+	url = https://github.com/iotaledger/introduction-docs
 	branch = develop
