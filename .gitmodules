@@ -29,7 +29,7 @@
 [submodule "content/build/hornet/production"]
 	path = content/build/hornet/production
 	url = https://github.com/gohornet/hornet
-	branch = mainnet
+	branch = production
 [submodule "content/build/stronghold.rs/develop"]
 	path = content/build/stronghold.rs/develop
 	url = https://github.com/iotaledger/stronghold.rs
