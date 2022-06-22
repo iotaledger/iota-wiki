@@ -351,7 +351,7 @@ module.exports = {
               href: 'https://docusaurus.io',
             },
             {
-              label: 'Blog',
+              label: 'Community Blog',
               to: 'blog',
             },
             {
