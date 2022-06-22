@@ -2,7 +2,7 @@
 keywords:
 - getting started
 description: How to contribute to the IOTA wiki.
-image: /img/participate.sng
+image: /img/participate.svg
 ---
 
 # Welcome

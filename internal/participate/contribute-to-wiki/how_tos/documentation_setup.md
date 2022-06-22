@@ -2,7 +2,7 @@
 keywords:
 - how to
 description: How to setup documentation of a software project.
-image: /img/participate.sng
+image: /img/participate.svg
 ---
 
 # Setting Up Documentation

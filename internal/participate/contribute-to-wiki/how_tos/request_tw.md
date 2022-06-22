@@ -2,7 +2,7 @@
 keywords:
 - how to
 description: How to request help from a technical writer.
-image: /img/participate.sng
+image: /img/participate.svg
 ---
 
 # Requesting a Technical Writer

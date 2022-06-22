@@ -2,7 +2,7 @@
 keywords:
 - reference
 description: The technical writer's guide for IOTA Wiki.
-image: /img/participate.sng
+image: /img/participate.svg
 ---
 
 # Matter

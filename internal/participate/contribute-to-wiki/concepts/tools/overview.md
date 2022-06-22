@@ -3,7 +3,7 @@ title: Overview
 keywords:
 - getting started
 description: How to improve your writing.
-image: /img/participate.sng
+image: /img/participate.svg
 ---
 
 # Writing Tools

@@ -125,7 +125,7 @@ If the maintainer approves the PR, it will be merged.
 
 # Contribute to the Iota-Wiki Content
 
-See the [contribution guidelines](../internal/participate/contribute-to-wiki/welcome.md).
+See the [contribution guidelines](https://wiki.iota.org/participate/contribute-to-wiki/welcome).
 
 ## Submitting your contribution
 

@@ -18,7 +18,11 @@ This structure is based on the [Diataxis framework](https://diataxis.fr/) by Dan
 > 
 > In Diátaxis, each of these modes (or types) answers to a different user need, fulfils a different purpose and requires a different approach to its creation.
 
-The documentation should be split in the following folders: Getting Started, How Tos, Tutorials, Key Concepts, and Reference, and the following files: Troubleshooting and Contribute. You do not have to use all of these sections.
+The documentation should be split in the following folders: Getting Started, How Tos, Tutorials, Concepts, and Reference, and the following files: Welcome, Troubleshooting and Contribute. You do not have to use all of these sections.
+
+## Welcome
+
+The Welcome article is the first page of your project documentation. Tell the reader what your project is about and provide links to the GitHub repository and additional resources like roadmaps, educational materials, or research specifications.
 
 ## Getting Started
 
@@ -32,9 +36,9 @@ The [How Tos folder](how_tos.md) should only address concrete examples, or [how-
 
 The [Tutorials folder](tutorials.md) should contain articles which guide the user step by step through a series of how-tos with the relevant explanations to achieve a project or real world use case. [Tutorials](https://diataxis.fr/tutorials/) are **learning-oriented**.
 
-## Key Concepts
+## Concepts
 
-The [Key Concepts folder](concepts.md) revolves around [explanations](https://diataxis.fr/explanation/), and are therefore **understanding-oriented**.
+The [Concepts folder](concepts.md) revolves around [explanations](https://diataxis.fr/explanation/), and is **understanding-oriented**.
 
 ## Reference
 

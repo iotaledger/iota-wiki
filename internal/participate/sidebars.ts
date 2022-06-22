@@ -76,18 +76,22 @@ module.exports = {
       collapsed: true,
       items: [
         {
+          type: 'docs',
+          label: 'Welcome',
+          id:  'contribute-to-wiki/welcome',
+        },
+        {
           type: 'category',
           label: 'Getting Started',
           items: [
-              'contribute-to-wiki/getting_started/welcome',
               'contribute-to-wiki/getting_started/quick_advice',
+              'contribute-to-wiki/getting_started/developer',
           ],
         },
         {
           type: 'category',
           label: 'How Tos',
           items: [
-            'contribute-to-wiki/how_tos/developer',
             'contribute-to-wiki/how_tos/documentation_setup',
             'contribute-to-wiki/how_tos/request_tw',
           ],

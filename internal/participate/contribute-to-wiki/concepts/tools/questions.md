@@ -2,7 +2,7 @@
 keywords:
 - getting started
 description: No matter what you write about, you probably need to answer the same questions every time.
-image: /img/participate.sng
+image: /img/participate.svg
 ---
 
 # The Right Questions
