@@ -11,6 +11,12 @@
       "label": "Video Tutorial",
       "description": "Tutorial in video format",
       "color": "#010067"
+    },
+    {
+      "value": "live-coding",
+      "label": "Live Coding",
+      "description": "Recorded live coding session",
+      "color": "#ffe502"
     }
   ],
   "Topic": [
@@ -49,12 +55,6 @@
       "label": "Chronicle",
       "description": "Chronicle permanode software",
       "color": "#0e4ca1"
-    },
-    {
-      "value": "live-coding",
-      "label": "Live Coding",
-      "description": "Recorded live coding session",
-      "color": "#ffe502"
     },
     {
       "value": "nft",
