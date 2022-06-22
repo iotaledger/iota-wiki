@@ -28,7 +28,7 @@
 	branch = main
 [submodule "content/build/hornet/production"]
 	path = content/build/hornet/production
-	url = https://github.com/gohornet/hornet
+	url = https://github.com/iotaledger/hornet
 	branch = production
 [submodule "content/build/stronghold.rs/develop"]
 	path = content/build/stronghold.rs/develop
@@ -56,5 +56,5 @@
 	branch = dev
 [submodule "content/build/introduction-docs/production"]
 	path = content/build/introduction-docs/production
-	url = https://github.com/iotaledger/chrysalis-docs
+	url = https://github.com/iotaledger/introduction-docs
 	branch = main
