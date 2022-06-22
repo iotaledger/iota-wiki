@@ -3,7 +3,7 @@
 }
 
 .tutorial-link__anchor {
-  color: var(--ifm-color-gray-400);
+  color: var(--ifm-font-color-base);
   text-decoration: underline;
 }
 
@@ -26,6 +26,10 @@
   border-color: var(--ifm-color-emphasis-200);
 }
 
+.tutorial-filter__toggle:hover {
+  color: var(--ifm-color-emphasis-900);
+}
+
 .tutorial-filter__toggle-label {
   margin-left: 1rem;
 }
@@ -40,10 +44,22 @@
   }
 }
 
+.search-container__input::placeholder {
+  color: var(--ifm-color-emphasis-400);
+}
+
 .react-select__control {
   background-color: var(--ifm-color-emphasis-200) !important;
   border: 0 !important;
   margin-bottom: 1rem !important;
+}
+
+.react-select__placeholder {
+  color: var(--ifm-font-color-base) !important;
+}
+
+.react-select__indicator {
+  color: var(--ifm-font-color-base) !important;
 }
 
 .react-select__indicator-separator {
