@@ -1,15 +1,14 @@
 ---
-description: Key concepts clarify a single topic.
+description: Explanations clarify a single topic.
 image: /img/logo/iota_logo.svg
 keywords:
-  - explanation
-  - key concepts
+  - explanations
   - clarify
 ---
 
-# Concepts
+# Explanations
 
-Concepts are analogous to [explanations in Diataxis](https://diataxis.fr/explanation/). You should use this folder to give in depth explanations on any topic that's relevant to your project.
+You should use the Explanations folder to give in-depth [explanations](https://diataxis.fr/explanation/) on any topic that's relevant to your project.
 
 ## Single Responsibility Principle
 

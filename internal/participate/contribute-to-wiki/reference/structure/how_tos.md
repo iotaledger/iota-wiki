@@ -4,7 +4,6 @@ image: /img/logo/iota_logo.svg
 keywords:
   - How Tos
   - action oriented
-  - how
 ---
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
@@ -22,7 +21,7 @@ How Tos are the same as [how-tos in Diataxis](https://diataxis.fr/how-to-guides/
 
 How To files should be **action-oriented**. This means that you should first think of what you want the user to achieve
 with this How To, and explain only that. You may shortly introduce a concept and add 
-a link to the [main article](concepts.md), but make sure you leave the full explanation to the main key concept article.
+a link to the [main article](explanations.md), but make sure you leave the full explanation to the main key concept article.
 
 ### Use Tabs For Each Programming Language
 
@@ -53,4 +52,4 @@ should follow hierarchically by using the appropriate header tag level.
 
 ## Related Articles
 
-Your How To will probably be related to one or more concepts, [Tutorials](tutorials.md), or other How Tos. Please make sure to list them in the article so the user can carry on learning in an oriented way.
+Your How To will probably be related to one or more [explanations](explanations.md), [Tutorials](tutorials.md), or other How Tos. Please make sure to list them in the article so the user can carry on learning in an oriented way.

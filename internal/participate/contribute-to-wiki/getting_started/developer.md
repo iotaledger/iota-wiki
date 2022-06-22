@@ -34,7 +34,7 @@ The most consuming part of writing is not the writing itself but the research of
 
 Some tasks you can manage on your own. For some you would need advice. Some tasks are better left to technical writers. Contact the writers' team and distribute the effort early.
 
-To help you help us, we have prepared a [collection](../concepts/tools/overview.md) of tools and tips for those who write documentation.
+To help you help us, we have prepared a [collection](../explanations/tools/overview.md) of tools and tips for those who write documentation.
 
 ## Do Your Work
 

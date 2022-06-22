@@ -76,7 +76,7 @@ module.exports = {
       collapsed: true,
       items: [
         {
-          type: 'docs',
+          type: 'doc',
           label: 'Welcome',
           id:  'contribute-to-wiki/welcome',
         },
@@ -99,16 +99,16 @@ module.exports = {
         },
         {
           type: 'category',
-          label: 'Concepts',
+          label: 'Explanations',
           items: [
-              'contribute-to-wiki/concepts/third-party_works',
+              'contribute-to-wiki/explanations/third-party_works',
             {
               type: 'category',
               label: 'Writing Tools',
               items: [
-                'contribute-to-wiki/concepts/tools/overview',
-                'contribute-to-wiki/concepts/tools/questions',
-                'contribute-to-wiki/concepts/tools/mind_map',
+                'contribute-to-wiki/explanations/tools/overview',
+                'contribute-to-wiki/explanations/tools/questions',
+                'contribute-to-wiki/explanations/tools/mind_map',
               ],
             },
           ],
@@ -139,7 +139,7 @@ module.exports = {
                 'contribute-to-wiki/reference/structure/getting_started',
                 'contribute-to-wiki/reference/structure/how_tos',
                 'contribute-to-wiki/reference/structure/tutorials',
-                'contribute-to-wiki/reference/structure/concepts',
+                'contribute-to-wiki/reference/structure/explanations',
                 'contribute-to-wiki/reference/structure/reference',
               ],
             },
