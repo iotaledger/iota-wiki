@@ -334,7 +334,6 @@ function MegaDropdownNavbarItemMobile({
         {items.map((childItemProps, i) => (
           <NavbarItem
             mobile
-            isDropdownItem
             onClick={props.onClick}
             activeClassName='menu__link--active'
             {...childItemProps}
