@@ -9,7 +9,6 @@
 
 .tutorial-filter {
   display: flex;
-  box-sizing: border-box;
   align-items: stretch;
   justify-content: space-between;
 }
@@ -21,7 +20,6 @@
 
 .tutorial-filter__toggle {
   display: flex;
-  box-sizing: border-box;
   align-items: center;
   color: var(--ifm-font-color-base);
   background-color: var(--ifm-color-emphasis-200);
