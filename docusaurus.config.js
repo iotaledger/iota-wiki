@@ -1,6 +1,7 @@
 // @ts-check
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const build = require('./content/build/docusaurus.config');
+const tutorials = require('./content/tutorials/docusaurus.config')
 
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
@@ -434,6 +435,7 @@ module.exports = {
     'plugin-image-zoom',
     'docusaurus-plugin-matomo',
     'docusaurus-plugin-hotjar',
+    '@docusaurus/plugin-ideal-image',
     [
       '@docusaurus/plugin-content-docs',
       {
@@ -486,8 +488,9 @@ module.exports = {
       },
     ],
     ...build.plugins,
+    ...tutorials.plugins,
     /* AUTO GENERATED EXTERNAL DOCS CONFIG */
   ],
-  staticDirectories: ['./static', ...build.staticDirectories],
+  staticDirectories: ['./static', ...build.staticDirectories, ...tutorials.staticDirectories],
 };
 

@@ -68,9 +68,18 @@
   --ifm-toc-link-color: var(--ifm-menu-color);
   --ifm-toc-padding-vertical: 0.25rem;
   --ifm-toc-padding-horizontal: 1rem;
+
+  --site-color-favorite-background: var(--ifm-color-emphasis-100);
+  --site-color-tooltip: #fff;
+  --site-color-tooltip-background: #353738;
+  --site-color-svg-icon-favorite: #e9669e;
+  --site-color-checkbox-checked-bg: hsl(167deg 56% 73% / 25%);
 }
 
 :root[data-theme='dark'] {
+  --ifm-color-content: var(--ifm-color-emphasis-900);
+  --ifm-color-content-inverse: var(--ifm-color-emphasis-300);
+
   --ifm-background-color: var(--ifm-color-emphasis-0);
   --ifm-background-surface-color: var(--ifm-color-emphasis-0);
 
