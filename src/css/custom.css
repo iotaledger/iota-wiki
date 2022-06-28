@@ -131,6 +131,9 @@ article .card {
 
 .markdown {
   margin: 2rem 0rem;
+
+  /*TODO: Remove after banner fix*/
+  max-width: 862px;
 }
 
 .menu {
