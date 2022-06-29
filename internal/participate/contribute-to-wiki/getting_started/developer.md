@@ -2,7 +2,7 @@
 keywords:
 - how to
 description: How to get your project documented.
-image: /img/participate.svg
+image: /img/iota-wiki.png
 ---
 
 # Writing as a Dev

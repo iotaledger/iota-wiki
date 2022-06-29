@@ -2,7 +2,7 @@
 keywords:
 - getting started
 description: No matter what you write about, you probably need to answer the same questions every time.
-image: /img/participate.svg
+image: /img/iota-wiki.png
 ---
 
 # The Right Questions
