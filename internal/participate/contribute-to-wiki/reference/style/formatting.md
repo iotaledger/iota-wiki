@@ -1,3 +1,10 @@
+---
+keywords:
+- reference
+description: The technical writer's guide for IOTA Wiki.
+image: /img/participate.svg
+---
+
 # Formatting
 
 Markdown only [specifies](https://daringfireball.net/projects/markdown/syntax) what text elements are, but not how they look like. The final rendering could be affected by a rendering engine that could come from Docusaurus, IDE, or GitHub, a browser extension that changes CSS, or someone could read a raw .md file or copy parts of your article as a plain text via messenger. Some users do not _see_ text at all and rely on screen readers.
@@ -36,7 +43,7 @@ Bad:
 
 > Hornet([link](/hornet/welcome)) is made by our community.
 
-Always leave determiners out of the link. When using structures like "the Mind Map tool" or "the Hornet node", only wrap the name of the object: "the [Mind Map](../for_devs/toolbox/mind_map.md) tool" and "the [Hornet](/hornet/welcome) node."
+Always leave determiners out of the link. When using structures like "the Mind Map tool" or "the Hornet node", only wrap the name of the object: "the [Mind Map](../../explanations/tools/mind_map.md) tool" and "the [Hornet](/hornet/welcome) node."
 
 Call links in the way the reader could safely assume the link's destination without looking at the URL. When linking to a file download, mention that and the file's extension.
 
@@ -70,7 +77,7 @@ Always introduce a freestanding element in the preceding paragraph, and never pu
 
 ### Attributions
 
-When using [someone else's work](./third-party_works.md), always attribute the author. In case of freestanding elements, put the attribution on a separate paragraph immediately below and put that whole paragraph in _weak emphasis_.
+When using [someone else's work](../../explanations/third-party_works.md), always attribute the author. In case of freestanding elements, put the attribution on a separate paragraph immediately below and put that whole paragraph in _weak emphasis_.
 
 ```rust
 fn main(){
