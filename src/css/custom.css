@@ -177,13 +177,10 @@ article .card {
 }
 
 .markdown {
-  margin: 2rem 3rem;
-}
+  margin: 2rem 0rem;
 
-@media screen and (max-width: 966px) {
-  .markdown {
-    margin: 2rem 0;
-  }
+  /*TODO: Remove after banner fix*/
+  max-width: 862px;
 }
 
 .menu {
@@ -345,4 +342,8 @@ ul ul .table-of-contents__link {
 .DocSearch .DocSearch-Hit[aria-selected='true'] mark {
   color: var(--docsearch-highlight-color) !important;
   text-decoration: none;
+}
+
+.theme-doc-sidebar-container {
+  margin-right: 1rem;
 }
