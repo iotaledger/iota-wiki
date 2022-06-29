@@ -2,7 +2,7 @@
 keywords:
 - getting started
 description: How to get yourself writing.
-image: /img/participate.svg
+image: /img/iota-wiki.png
 ---
 
 # Quick Advice

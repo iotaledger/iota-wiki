@@ -2,7 +2,7 @@
 keywords:
 - how to
 description: How to setup documentation of a software project.
-image: /img/participate.svg
+image: /img/iota-wiki.png
 ---
 
 # Setting Up Documentation
