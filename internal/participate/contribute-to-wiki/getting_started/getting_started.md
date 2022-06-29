@@ -25,7 +25,7 @@ If you want to edit a document to elaborate on a topic or fix a typo, you need t
 
 Once you find the source file, you can edit it directly in GitHub by clicking the pencil-icon button on the top right of it:
 
-![Screenshot of a GitHub page.](img/participate/contribute_to_wiki/github_edit.png "Click to see the full-sized image.")
+![Screenshot of a GitHub page.](/img/participate/contribute_to_wiki/github_edit.png "Click to see the full-sized image.")
 
 *Screenshot of a GitHub page.*
 
