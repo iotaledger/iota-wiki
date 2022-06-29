@@ -3,7 +3,7 @@ title: Overview
 keywords:
 - getting started
 description: How to improve your writing.
-image: /img/participate.svg
+image: /img/iota-wiki.png
 ---
 
 # Writing Tools

@@ -3,7 +3,7 @@ title: Manifesto
 keywords:
 - reference
 description: The IOTA Wiki's technical writers' manifesto.
-image: /img/participate.svg
+image: /img/iota-wiki.png
 ---
 
 # The Technical Writers' Manifesto

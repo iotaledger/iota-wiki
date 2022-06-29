@@ -2,7 +2,7 @@
 keywords:
 - getting started
 description: A mind map is a technique that can help you to grasp a large project and start writing about it.
-image: /img/participate.svg
+image: /img/iota-wiki.png
 ---
 
 # Mind Maps
