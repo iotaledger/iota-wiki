@@ -1,19 +1,6 @@
     [
       "@docusaurus/plugin-content-docs",
       {
-        id: "IOTA-Research-Specifications",
-        path: "external/IOTA-2.0-Research-Specifications",
-        routeBasePath: "IOTA-2.0-Research-Specifications",
-        sidebarPath: require.resolve("./external/IOTA-2.0-Research-Specifications/sidebars.js"),
-        remarkPlugins: [require('remark-math')],
-        rehypePlugins: [require('rehype-katex')],
-        editUrl: 'https://github.com/iotaledger/IOTA-2.0-Research-Specifications/edit/main',
-        breadcrumbs: false,
-       }
-    ],
-    [
-      "@docusaurus/plugin-content-docs",
-      {
         id: "streams",
         path: "external/streams/documentation/docs",
         routeBasePath: "streams",
