@@ -9,7 +9,7 @@ image: /img/participate.svg
 
 If you want to edit a document to elaborate on a topic or fix a typo, you need to edit its source file. General topics and most of the user-oriented content is stored directly in the [IOTA Wiki's repository] (https://github.com/iota-community/iota-wiki), but most of its content comes from repositories of projects within IOTA ecosystem:
 
-* [Bee](https://github.com/iotaledger/bee.git)
+* [Bee](https://github.com/iotaledger/bee)
 * [Blueprints](https://github.com/iotaledger/blueprints)
 * [Chronicle](https://github.com/iotaledger/chronicle.rs)
 * [Chrysalis Documentation](https://github.com/iotaledger/chrysalis-docs)
