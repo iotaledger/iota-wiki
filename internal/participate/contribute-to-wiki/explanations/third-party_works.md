@@ -1,3 +1,10 @@
+---
+keywords:
+- reference
+description: The technical writer's guide for IOTA Wiki.
+image: /img/participate.svg
+---
+
 # Third-Party Works
 
 Include third-party works with caution, as you could accidentally infringe someone's copyright otherwise. Whenever you are unsure if you could use others' work or not, exclude it from your article or find an alternative.
@@ -39,7 +46,7 @@ You must attribute the author and the source.
 
 Always attribute the author even if it is not legally required. State the author's name and the source. Provide link to the source, if possible. Mention the license if applicable and provide link to its text. If you have modified the work anyhow, mention that, too.
 
-Also see the [formatting](./formatting.md#attributions).
+Also see the [Formatting](../reference/style/formatting.md#attributions) reference.
 
 ## Plagiarism
 

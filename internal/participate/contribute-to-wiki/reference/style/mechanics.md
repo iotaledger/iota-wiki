@@ -1,3 +1,10 @@
+---
+keywords:
+- reference
+description: The technical writer's guide for IOTA Wiki.
+image: /img/participate.svg
+---
+
 # Language Mechanics
 
 Language mechanics govern the written English. Together with [formatting](./formatting.md) guidelines, they let us present our articles in the same way across the whole wiki — meaning that the reader can focus on the matter, not the form.

@@ -1,3 +1,10 @@
+---
+keywords:
+- reference
+description: The technical writer's guide for IOTA Wiki.
+image: /img/participate.svg
+---
+
 # Form
 
 ## Grammar

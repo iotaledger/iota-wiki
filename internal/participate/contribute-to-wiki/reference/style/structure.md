@@ -1,3 +1,10 @@
+---
+keywords:
+- reference
+description: The technical writer's guide for IOTA Wiki.
+image: /img/participate.svg
+---
+
 # Structure
 
 ## The Wiki
@@ -5,6 +12,12 @@
 Articles for users belong either to the [Learn](/learn/about-iota/an-introduction-to-iota) or [Participate](/participate/support-the-network/about-nodes) spaces. The [Build](/build/welcome) space contains technical explanations on the IOTA technology, as well a subspace for every IOTA product that contains information for its developers and anyone who builds upon IOTA.
 
 ## Spaces and Subspaces
+
+:::note
+
+For software project documentation, see [additional guidelines](../structure/overview.md).
+
+:::
 
 Each Wiki's space and subspace has its own table of contents. Always include a welcoming page that would also serve as the landing page of the space. Briefly explain what kind of information the reader could find there and briefly mention points of interest like getting started articles, contribution guidelines, or API reference.
 
