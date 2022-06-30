@@ -14,8 +14,7 @@
     "write-heading-ids": "docusaurus write-heading-ids",
     "lint": "eslint --cache --fix src",
     "format": "prettier --write .",
-    "prepare": "husky install",
-    "cli": "iota-wiki-cli"
+    "prepare": "husky install"
   },
   "dependencies": {
     "@algolia/client-search": "^4.9.1",
