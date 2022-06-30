@@ -14380,6 +14380,14 @@ plugin-image-zoom@flexanalytics/plugin-image-zoom:
   languageName: node
   linkType: hard
 
+"streams@workspace:content/build/streams/develop/documentation":
+  version: 0.0.0-use.local
+  resolution: "streams@workspace:content/build/streams/develop/documentation"
+  dependencies:
+    "@iota-community/iota-wiki-cli": "iota-community/iota-wiki-cli#v2"
+  languageName: unknown
+  linkType: soft
+
 "string-argv@npm:^0.3.1":
   version: 0.3.1
   resolution: "string-argv@npm:0.3.1"
