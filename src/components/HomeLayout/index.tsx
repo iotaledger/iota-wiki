@@ -1,43 +1,29 @@
 import React from 'react';
-import CardWithImage, {
-  CardWithImageProps,
-} from '@site/src/components/CardWithImage';
 import Layout from '@theme/Layout';
-import { useThemeConfig } from '@docusaurus/theme-common';
-import { ThemeConfig } from '@docusaurus/preset-classic';
+import Link from '@docusaurus/Link';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+import './styles.css';
 
-export interface HomeLayoutProps {
-  description: string;
-  title: string;
-  tagline: string;
-}
-
-export interface HomeLayoutConfig extends ThemeConfig {
-  cards: CardWithImageProps[];
-}
-
-export default function HomeLayout({
-  description,
-  title,
-  tagline,
-}: HomeLayoutProps) {
-  const { cards } = useThemeConfig() as HomeLayoutConfig;
+export default function HomeLayout() {
+  const { siteConfig } = useDocusaurusContext();
 
   return (
-    <Layout description={description}>
-      <div className='hero'>
-        <div className='container'>
-          <div className='text--center margin-bottom--lg'>
-            <h1 className='hero__title margin--none'>{title}</h1>
-            <p className='hero__subtitle margin--none'>{tagline}</p>
-          </div>
-          {cards && (
-            <div className='row'>
-              {cards.map((props, idx) => (
-                <CardWithImage key={idx} {...props} />
-              ))}
+    <Layout description={siteConfig.tagline} >
+      <div className='homepage'>
+        <div className='homepage__section homepage__section--gradient'>
+          <section className='homepage__container header'>
+            <div className='header__text'>
+              <h1 className='header__title'>The complete reference for IOTA</h1>
+              <p className='header__paragraph' >
+                Build apps capable of taking millions of users on journeys they’ve never been on before. Simple. Scalable. Secure.
+              </p>
+              <div className='header__buttons'>
+                <Link className='header__button button button--outline button--primary'>Learn about IOTA</Link>
+                <Link className='header__button button button--primary'>Start building</Link>
+              </div>
             </div>
-          )}
+            <img className='header__image' src='img/learn.svg' />
+          </section>
         </div>
       </div>
     </Layout>
