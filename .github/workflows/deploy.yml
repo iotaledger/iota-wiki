@@ -21,12 +21,6 @@ jobs:
         id: install
         run: |
           yarn install
-      - name: Add external doc config
-        run: |
-          yarn cli start
-      - name: Checkout external docs
-        run: |
-          yarn cli checkout --no-overwrite
       - name: Build
         run: |
           yarn build

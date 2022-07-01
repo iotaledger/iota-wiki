@@ -1,9 +1,0 @@
-{
-  "configFolder": ".github/workflows/",
-  "content": [
-    {
-      "repo": "https://github.com/iotaledger/streams",
-      "staticPath": "./documentation/static"
-    }
-  ]
-}
