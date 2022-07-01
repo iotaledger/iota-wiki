@@ -14,14 +14,12 @@
     "write-heading-ids": "docusaurus write-heading-ids",
     "lint": "eslint --cache --fix src",
     "format": "prettier --write .",
-    "prepare": "husky install",
-    "cli": "iota-wiki-cli"
+    "prepare": "husky install"
   },
   "dependencies": {
     "@algolia/client-search": "^4.9.1",
     "@docusaurus/core": "^2.0.0-beta.20",
     "@docusaurus/preset-classic": "^2.0.0-beta.20",
-    "@iota-community/iota-wiki-cli": "^1.7.1",
     "@mdx-js/react": "^1.6.21",
     "@popperjs/core": "^2.11.2",
     "@svgr/webpack": "^5.5.0",

@@ -62,3 +62,7 @@
 	path = content/build/iota-2.0-research-specifications
 	url = https://github.com/iotaledger/IOTA-2.0-Research-Specifications.git
 	branch = main
+[submodule "content/build/streams/develop"]
+	path = content/build/streams/develop
+	url = https://github.com/iotaledger/streams
+	branch = develop
