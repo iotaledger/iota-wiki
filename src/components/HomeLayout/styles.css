@@ -3,7 +3,7 @@
   justify-content: center;
 }
 
-.homepage__section--gradient {
+:root[data-theme='dark'] .homepage__section--gradient {
   background: linear-gradient(rgba(41, 56, 88, 0.3), rgba(19, 31, 55, 0.3));
 }
 
@@ -54,3 +54,4 @@
     display: none;
   }  
 }
+
