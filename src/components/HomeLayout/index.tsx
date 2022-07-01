@@ -22,7 +22,7 @@ export default function HomeLayout() {
                 <Link className='header__button button button--primary'>Start building</Link>
               </div>
             </div>
-            <img className='header__image' src='img/learn.svg' />
+            <img className='header__image' src='img/homepage/header.svg' />
           </section>
         </div>
       </div>

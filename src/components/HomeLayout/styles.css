@@ -47,7 +47,6 @@
 
 .header__image {
   height: 80%;
-  margin-right: 4rem;
 }
 
 @media (max-width: 996px) {
