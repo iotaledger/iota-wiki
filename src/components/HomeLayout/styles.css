@@ -1,6 +1,7 @@
 .homepage__section {
   display: flex;
   justify-content: center;
+  margin-bottom: 8rem;
 }
 
 :root[data-theme='dark'] .homepage__section--gradient {
@@ -11,12 +12,16 @@
   margin: 0 8rem;
   width: 100%;
   max-width: var(--ifm-container-width);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .header {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
+  width: 100%;
 }
 
 .header__text {
