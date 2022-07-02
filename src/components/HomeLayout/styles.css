@@ -41,8 +41,8 @@
 
 .header__button {
   flex: 1 1 0;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+  padding-top: .75rem;
+  padding-bottom: .75rem;
 }
 
 .header__image {
@@ -54,4 +54,3 @@
     display: none;
   }  
 }
-
