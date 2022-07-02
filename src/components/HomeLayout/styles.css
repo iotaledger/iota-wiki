@@ -1,7 +1,21 @@
+.homepage {
+  padding-bottom: 8rem;
+  background-color: var(--ifm-color-emphasis-100);
+}
+
+:root[data-theme='dark'] .homepage {
+  background-color: var(--ifm-color-emphasis-0);
+}
+
 .homepage__section {
   display: flex;
   justify-content: center;
   margin-bottom: 8rem;
+}
+
+.homepage__section--gradient {
+  background-color: var(--ifm-color-emphasis-0);
+  border-bottom: 1px solid var(--ifm-color-emphasis-200);
 }
 
 :root[data-theme='dark'] .homepage__section--gradient {
@@ -76,12 +90,18 @@
   align-items: center;
   justify-content: center;
   aspect-ratio: 1/1;
-  background-color: var(--ifm-color-emphasis-100);
+  background-color: var(--ifm-color-emphasis-0);
+  box-shadow: 0 0 5px 0 var(--ifm-color-emphasis-300);
   border: 1px solid var(--ifm-color-emphasis-200);
   border-radius: var(--ifm-global-radius);
   padding: 3rem;
   color: inherit;
   cursor: pointer;
+}
+
+:root[data-theme='dark'] .about__card {
+  box-shadow: none;
+  background-color: var(--ifm-color-emphasis-100);
 }
 
 .about__icon {
