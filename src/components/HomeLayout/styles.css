@@ -17,6 +17,10 @@
   align-items: center;
 }
 
+.homepage__header {
+  margin-bottom: 2rem;
+}
+
 .header {
   display: flex;
   justify-content: space-between;
@@ -58,4 +62,50 @@
   .header__image {
     display: none;
   }  
+}
+
+.about__cards {
+  display: flex;
+  gap: 1.5rem;
+  width: 100%;
+}
+
+.about__card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 1/1;
+  background-color: var(--ifm-color-emphasis-100);
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: var(--ifm-global-radius);
+  padding: 3rem;
+  color: inherit;
+  cursor: pointer;
+}
+
+.about__icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--ifm-color-emphasis-200);
+  border-radius: var(--ifm-global-radius);
+
+  width: 4rem;
+  height: 4rem;
+
+  font-family: 'iota_icons_font';
+  font-size: 3rem;
+}
+
+.about__title {
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.about__paragraph {
+  text-align: center;
+  font-size: 0.8rem;
+  font-weight: 200;
+  letter-spacing: 0.75px;
 }
