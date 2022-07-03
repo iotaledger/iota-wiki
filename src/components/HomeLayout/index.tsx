@@ -30,36 +30,36 @@ export default function HomeLayout() {
     <Layout description={siteConfig.tagline} >
       <div className='homepage'>
         <HomepageSection className='homepage__section--gradient'>
-          <div className='header'>
-            <div className='header__text'>
-              <h1 className='header__title'>The complete reference for IOTA</h1>
-              <p className='header__paragraph' >
+          <div className='intro'>
+            <div className='intro__section'>
+              <h1 className='intro__header'>The complete reference for IOTA</h1>
+              <p className='intro__description' >
                 Build apps capable of taking millions of users on journeys they’ve never been on before. Simple. Scalable. Secure.
               </p>
-              <div className='header__buttons'>
-                <Link className='header__button button button--outline button--primary'>Learn about IOTA</Link>
-                <Link className='header__button button button--primary'>Start building</Link>
+              <div className='intro__buttons'>
+                <Link className='intro__button button button--outline button--primary'>Learn about IOTA</Link>
+                <Link className='intro__button button button--primary'>Start building</Link>
               </div>
             </div>
-            <img className='header__image' src='img/homepage/header.svg' />
+            <img className='intro__image' src='img/homepage/header.svg' />
           </div>
         </HomepageSection>
         <HomepageSection header='About IOTA'>
           <div className='about__cards'>
             <Link className='about__card'>
               <div className='about__icon'>{'\ue907'}</div>
-              <h3 className='about__title'>What is IOTA?</h3>
-              <p className='about__paragraph'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Velit, pharetra proin quis egestas.</p>
+              <h3 className='about__header'>What is IOTA?</h3>
+              <p className='about__description'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Velit, pharetra proin quis egestas.</p>
             </Link>
             <Link className='about__card'>
               <div className='about__icon'>{'\ue907'}</div>
-              <h3 className='about__title'>Get IOTA token</h3>
-              <p className='about__paragraph'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Velit, pharetra proin quis egestas.</p>
+              <h3 className='about__header'>Get IOTA token</h3>
+              <p className='about__description'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Velit, pharetra proin quis egestas.</p>
             </Link>
             <Link className='about__card'>
               <div className='about__icon'>{'\ue90a'}</div>
-              <h3 className='about__title'>Pick a wallet</h3>
-              <p className='about__paragraph'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Velit, pharetra proin quis egestas.</p>
+              <h3 className='about__header'>Pick a wallet</h3>
+              <p className='about__description'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Velit, pharetra proin quis egestas.</p>
             </Link>
           </div>
         </HomepageSection>
@@ -69,15 +69,15 @@ export default function HomeLayout() {
         >
           <div className='networks__cards'>
             <div className='networks__card'>
-              <div className='networks__body'>
+              <div className='networks__section'>
                 <div className='networks__icon networks__icon--shimmer'>{'\ue907'}</div>
                 <span className='networks__label'>Experimental</span>
-                <h2 className='networks__title'>Shimmer Network</h2>
-                <p className='networks__paragraph'>
+                <h2 className='networks__header'>Shimmer Network</h2>
+                <p className='networks__description'>
                   Build and test your project.<br/>Port it later on to the mainnet.
                 </p>
               </div>
-              <div className='networks__body'>
+              <div className='networks__section'>
                 <ul className='networks__features'>
                   <li className='networks__feature networks__feature--done'>Lorem ipsum ipsum</li>
                   <li className='networks__feature networks__feature--done'>Lorem ipsum</li>
@@ -89,15 +89,15 @@ export default function HomeLayout() {
               </div>
             </div>
             <div className='networks__card'>
-              <div className='networks__body'>
+              <div className='networks__section'>
                 <div className='networks__icon networks__icon--iota'>{'\ue907'}</div>
                 <span className='networks__label'>Stable</span>
-                <h2 className='networks__title'>IOTA Mainnet</h2>
-                <p className='networks__paragraph'>
+                <h2 className='networks__header'>IOTA Mainnet</h2>
+                <p className='networks__description'>
                   Sit amet, consectetur adipiscing elit. Augue faucibus pellentesque convallis magna.
                 </p>
               </div>
-              <div className='networks__body'>
+              <div className='networks__section'>
                 <ul className='networks__features'>
                   <li className='networks__feature networks__feature--done'>Lorem ipsum ipsum</li>
                   <li className='networks__feature'>To be announced</li>
