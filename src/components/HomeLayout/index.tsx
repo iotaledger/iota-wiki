@@ -49,6 +49,56 @@ export default function HomeLayout() {
             </div>
           </div>
         </div>
+        <div className='homepage__section'>
+          <div className='homepage__container'>
+            <h2 className='homepage__header'>Shimmer &amp; IOTA</h2>
+            <p className='homepage__description'>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Velit, pharetra proin quis egestas risus augue ante justo. Pharetra proin quis egestas risus augue ante justo.
+            </p>
+            <div className='networks__cards'>
+              <div className='networks__card'>
+                <div className='networks__body'>
+                  <div className='networks__icon networks__icon--shimmer'>{'\ue907'}</div>
+                  <span className='networks__label'>Experimental</span>
+                  <h2 className='networks__title'>Shimmer Network</h2>
+                  <p className='networks__paragraph'>
+                    Build and test your project.<br/>Port it later on to the mainnet.
+                  </p>
+                </div>
+                <div className='networks__body'>
+                  <ul className='networks__features'>
+                    <li className='networks__feature networks__feature--done'>Lorem ipsum ipsum</li>
+                    <li className='networks__feature networks__feature--done'>Lorem ipsum</li>
+                    <li className='networks__feature networks__feature--done'>Lorem ipsum Lorem ipsum</li>
+                  </ul>
+                  <Link className='networks__button button button--outline button--primary'>
+                    Learn more
+                  </Link>
+                </div>
+              </div>
+              <div className='networks__card'>
+                <div className='networks__body'>
+                  <div className='networks__icon networks__icon--iota'>{'\ue907'}</div>
+                  <span className='networks__label'>Stable</span>
+                  <h2 className='networks__title'>IOTA Mainnet</h2>
+                  <p className='networks__paragraph'>
+                    Sit amet, consectetur adipiscing elit. Augue faucibus pellentesque convallis magna.
+                  </p>
+                </div>
+                <div className='networks__body'>
+                  <ul className='networks__features'>
+                    <li className='networks__feature networks__feature--done'>Lorem ipsum ipsum</li>
+                    <li className='networks__feature'>To be announced</li>
+                    <li className='networks__feature'>To be announced</li>
+                  </ul>
+                  <Link className='networks__button button button--outline button--primary'>
+                    Learn more
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </Layout>
   );

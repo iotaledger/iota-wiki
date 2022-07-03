@@ -1,5 +1,7 @@
 .homepage {
+  letter-spacing: 0.75px;
   padding-bottom: 8rem;
+  color: var(--ifm-color-emphasis-700);
   background-color: var(--ifm-color-emphasis-100);
 }
 
@@ -35,6 +37,13 @@
   margin-bottom: 2rem;
 }
 
+.homepage__description {
+  width: 70%;
+  font-weight: 200;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
 .header {
   display: flex;
   justify-content: space-between;
@@ -54,7 +63,6 @@
 
 .header__paragraph {
   font-weight: 200;
-  letter-spacing: 0.75px;
 }
 
 .header__buttons {
@@ -128,4 +136,104 @@
   font-size: 0.8rem;
   font-weight: 200;
   letter-spacing: 0.75px;
+}
+
+.networks__cards {
+  display: flex;
+  align-items: stretch;
+  width: 100%;
+  background-color: var(--ifm-color-emphasis-0);
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: var(--ifm-global-radius);
+  color: inherit;
+}
+
+:root[data-theme='dark'] .networks__cards {
+  background-color: var(--ifm-color-emphasis-100);
+}
+
+.networks__card {
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: space-between;
+  padding: 3rem 4rem;
+}
+
+.networks__card + .networks__card {
+  border-left: 1px solid var(--ifm-color-emphasis-200);
+}
+
+.networks__body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.networks__icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+
+  width: 5rem;
+  height: 5rem;
+
+  font-family: 'iota_icons_font';
+  font-size: 5rem;
+}
+
+.networks__icon--shimmer {
+  color: white;
+  background-color: #16D4BF;
+}
+
+.networks__icon--iota {
+  color: white;
+  background-color: var(--ifm-color-gray-900);
+}
+
+:root[data-theme='dark'] .networks__icon--iota {
+  background-color: var(--ifm-color-gray-800);
+}
+
+.networks__label {
+  font-weight: 800;
+  letter-spacing: 0.75px;
+  font-size: 0.8rem;
+  color: var(--ifm-color-emphasis-500);
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.networks__paragraph {
+  text-align: center;
+}
+
+.networks__features {
+  list-style-type: none;
+  margin-bottom: var(--ifm-paragraph-margin-bottom);
+}
+
+.networks__feature {
+  display: flex;
+  align-items: center;
+  margin: 0.5rem 0;
+}
+
+.networks__feature::before {
+  content: url('/homepage/loading.svg');
+  width: 24px;
+  height: 24px;
+  margin-right: 1rem;
+}
+
+.networks__feature--done::before {
+  content: url('/homepage/checkmark.svg');
+}
+
+.networks__button {
+  padding-top: .75rem;
+  padding-bottom: .75rem;
 }
