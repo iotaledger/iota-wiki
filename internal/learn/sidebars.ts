@@ -6,9 +6,11 @@ module.exports = {
       collapsed: false,
       items: [
         'about-iota/an-introduction-to-iota',
+        'about-iota/tangle',
         'about-iota/data-transfer',
         'about-iota/value-transfer',
         'about-iota/why-is-iota-feeless',
+        'about-iota/coordinator',
         'about-iota/roadmap-to-decentralization',
         'about-iota/messages',
         'about-iota/energy-efficiency',
