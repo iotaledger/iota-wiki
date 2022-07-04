@@ -3,7 +3,7 @@ id: roadmap-to-decentralization
 title: Roadmap to Decentralization
 description: IOTA moves quickly towards full decentralization. This page
   describes the plan to reach this goal.
-image: /img/learn.svg
+image: /img/iota-wiki.png
 keywords:
 - explanation
 ---

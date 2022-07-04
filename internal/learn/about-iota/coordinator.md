@@ -2,7 +2,7 @@
 id: coordinator
 title: The Coordinator
 description: What is the Coordinator in the IOTA network.
-image: /img/learn.svg
+image: /img/iota-wiki.png
 keywords:
 - explanation
 ---
