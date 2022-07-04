@@ -4813,7 +4813,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "build-0dfe5b@workspace:content/build"
   dependencies:
-    require-glob: ^4.0.0
+    require-glob: ^4.1.0
   languageName: unknown
   linkType: soft
 
@@ -13085,7 +13085,7 @@ plugin-image-zoom@flexanalytics/plugin-image-zoom:
   languageName: node
   linkType: hard
 
-"require-glob@npm:^4.0.0":
+"require-glob@npm:^4.1.0":
   version: 4.1.0
   resolution: "require-glob@npm:4.1.0"
   dependencies:
@@ -14747,7 +14747,7 @@ plugin-image-zoom@flexanalytics/plugin-image-zoom:
   version: 0.0.0-use.local
   resolution: "tutorials-dd8696@workspace:content/tutorials"
   dependencies:
-    require-glob: ^4.0.0
+    require-glob: ^4.1.0
   languageName: unknown
   linkType: soft
 

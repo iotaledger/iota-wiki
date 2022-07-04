@@ -4,6 +4,6 @@
         "*/documentation"
     ],
     "dependencies": {
-        "require-glob": "^4.0.0"
+        "require-glob": "^4.1.0"
     }
 }
