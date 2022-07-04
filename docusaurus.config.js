@@ -488,5 +488,5 @@ module.exports = {
     ],
     ...content.plugins,
   ],
-  staticDirectories: ['./static', ...content.staticDirectories, ...content.staticDirectories],
+  staticDirectories: ['./static', ...content.staticDirectories],
 };
