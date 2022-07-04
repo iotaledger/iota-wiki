@@ -1,6 +1,9 @@
 ---
 title: Data Transfer
 description: A major use-case for the IOTA Technology is Data Transfer. Learn how it works.
+image: /img/learn.svg
+keywords:
+- explanation
 ---
 
 # Data Transfer

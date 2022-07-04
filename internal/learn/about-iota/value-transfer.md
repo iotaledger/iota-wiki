@@ -2,6 +2,9 @@
 id: value-transfer
 title: Value Transfer
 description: Learn how the IOTA Cryptocurrency Protocol transfers the native IOTA Tokens.
+image: /img/learn.svg
+keywords:
+- explanation
 ---
 
 # IOTA Value Transactions

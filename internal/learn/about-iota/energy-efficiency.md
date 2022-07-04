@@ -2,6 +2,9 @@
 id: energy-efficiency
 title: Energy efficiency
 description: Energy efficiency of transactions in the IOTA Network.
+image: /img/learn.svg
+keywords:
+- explanation
 ---
 
 # Energy Efficiency
