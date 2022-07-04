@@ -3,7 +3,7 @@ id: messages
 title: Messages
 description: This topic explores messages, models, and payloads that encompass
   the transfer of data within the Tangle.
-image: /img/learn.svg
+image: /img/iota-wiki.png
 keywords:
 - explanation
 ---

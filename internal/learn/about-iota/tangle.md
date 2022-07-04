@@ -2,7 +2,7 @@
 id: tangle
 title: The Tangle
 description: The Tangle is the data structure behind IOTA and it is different from a blockchain.
-image: /img/learn.svg
+image: /img/iota-wiki.png
 keywords:
 - explanation
 ---
