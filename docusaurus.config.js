@@ -1,7 +1,6 @@
 // @ts-check
 // eslint-disable-next-line @typescript-eslint/no-var-requires
-const build = require('./content/build/docusaurus.config');
-const tutorials = require('./content/tutorials/docusaurus.config')
+const content = require('./content/docusaurus.config');
 
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
@@ -487,8 +486,7 @@ module.exports = {
         showLastUpdateTime: true,
       },
     ],
-    ...build.plugins,
-    ...tutorials.plugins,
+    ...content.plugins,
   ],
-  staticDirectories: ['./static', ...build.staticDirectories, ...tutorials.staticDirectories],
+  staticDirectories: ['./static', ...content.staticDirectories, ...content.staticDirectories],
 };
