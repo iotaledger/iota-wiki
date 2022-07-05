@@ -47,19 +47,25 @@ export default function HomeLayout() {
         <HomepageSection header='About IOTA'>
           <div className='about__cards'>
             <Link className='about__card'>
-              <div className='about__icon'>{'\ue907'}</div>
-              <h3 className='about__header'>What is IOTA?</h3>
-              <p className='about__description'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Velit, pharetra proin quis egestas.</p>
+              <div className='about__section'>
+                <div className='about__icon'>{'\ue907'}</div>
+                <h3 className='about__header'>What is IOTA?</h3>
+                <p className='about__description'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Velit, pharetra proin quis egestas.</p>
+              </div>
             </Link>
             <Link className='about__card'>
-              <div className='about__icon'>{'\ue907'}</div>
-              <h3 className='about__header'>Get IOTA token</h3>
-              <p className='about__description'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Velit, pharetra proin quis egestas.</p>
+              <div className='about__section'>
+                <div className='about__icon'>{'\ue907'}</div>
+                <h3 className='about__header'>Get IOTA tokens</h3>
+                <p className='about__description'>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+              </div>
             </Link>
             <Link className='about__card'>
-              <div className='about__icon'>{'\ue90a'}</div>
-              <h3 className='about__header'>Pick a wallet</h3>
-              <p className='about__description'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Velit, pharetra proin quis egestas.</p>
+              <div className='about__section'>
+                <div className='about__icon'>{'\ue90a'}</div>
+                <h3 className='about__header'>Pick a wallet</h3>
+                <p className='about__description'>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+              </div>
             </Link>
           </div>
         </HomepageSection>
