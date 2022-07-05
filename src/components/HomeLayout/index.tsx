@@ -23,6 +23,30 @@ const HomepageSection: FC<HomepageSectionProps> = (props) => {
   )
 }
 
+interface LibrariesLanguagesProps {
+  languages?: { [key: string]: string; };
+}
+
+const LibrariesLanguages: FC<LibrariesLanguagesProps> = (props) => {
+  return (
+    <>
+      {Object.entries(props.languages).length > 0 && (
+        <div className='libraries__languages'>
+          {Object.entries(props.languages).map(([language, to], key) => (
+            <Link
+              className='libraries__language button button--outline button--primary'
+              to={to}
+              key={key}
+            >
+              {language}
+            </Link>
+          ))}
+        </div>
+      )}
+    </>
+  )
+} 
+
 export default function HomeLayout() {
   const { siteConfig } = useDocusaurusContext();
 
@@ -126,6 +150,112 @@ export default function HomeLayout() {
               <div className='start-building__buttons'>
                 <Link className='start-building__button button button--outline button--primary'>Learn about ISCP</Link>
                 <Link className='start-building__button button button--primary'>Run a smart contract</Link>
+              </div>
+            </div>
+          </div>
+        </HomepageSection>
+        <HomepageSection
+          header='Libraries'
+          description='With the IOTA client libraries you can easily integrate IOTA into your own applications.'
+        >
+          <div className='libraries__cards'>
+            <div className='libraries__card libraries__card--identity'>
+              <div className='libraries__section'>
+                <div className='libraries__head'>
+                  <div className='libraries__icon'>{'\ue907'}</div>
+                  <LibrariesLanguages languages={{
+                    'rust': '/',
+                  }}/>
+                </div>
+                <h3 className='libraries__header'>IDENTITY</h3>
+                <ul className='libraries__features'>
+                  <li className='libraries__feature'>Identity framework</li>
+                  <li className='libraries__feature'>Decentralized Identifiers (DID)</li>
+                  <li className='libraries__feature'>Verifiable Credentials (VC)</li>
+                </ul>
+                <Link className='libraries__button button button--outline button--primary'>
+                  Create an identity
+                </Link>
+              </div>
+            </div>
+            <div className='libraries__card'>
+              <div className='libraries__section'>
+                <div className='libraries__head'>
+                  <div className='libraries__icon'>{'\ue907'}</div>
+                  <LibrariesLanguages languages={{
+                    'rust': '/',
+                    'c': '/',
+                    'python': '/',
+                    'java': '/',
+                    'wasm': '/',
+                  }}/>
+                </div>
+                <h3 className='libraries__header'>IDENTITY</h3>
+                <ul className='libraries__features'>
+                  <li className='libraries__feature'>Identity framework</li>
+                  <li className='libraries__feature'>Decentralized Identifiers (DID)</li>
+                  <li className='libraries__feature'>Verifiable Credentials (VC)</li>
+                </ul>
+                <Link className='libraries__button button button--outline button--primary'>
+                  Create an identity
+                </Link>
+              </div>
+            </div>
+            <div className='libraries__card'>
+              <div className='libraries__section'>
+                <div className='libraries__head'>
+                  <div className='libraries__icon'>{'\ue907'}</div>
+                  <LibrariesLanguages languages={{
+                    'rust': '/',
+                  }}/>
+                </div>
+                <h3 className='libraries__header'>IDENTITY</h3>
+                <ul className='libraries__features'>
+                  <li className='libraries__feature'>Identity framework</li>
+                  <li className='libraries__feature'>Decentralized Identifiers (DID)</li>
+                  <li className='libraries__feature'>Verifiable Credentials (VC)</li>
+                </ul>
+                <Link className='libraries__button button button--outline button--primary'>
+                  Create an identity
+                </Link>
+              </div>
+            </div>
+            <div className='libraries__card'>
+              <div className='libraries__section'>
+                <div className='libraries__head'>
+                  <div className='libraries__icon'>{'\ue907'}</div>
+                  <LibrariesLanguages languages={{
+                    'rust': '/',
+                  }}/>
+                </div>
+                <h3 className='libraries__header'>IDENTITY</h3>
+                <ul className='libraries__features'>
+                  <li className='libraries__feature'>Identity framework</li>
+                  <li className='libraries__feature'>Decentralized Identifiers (DID)</li>
+                  <li className='libraries__feature'>Verifiable Credentials (VC)</li>
+                </ul>
+                <Link className='libraries__button button button--outline button--primary'>
+                  Create an identity
+                </Link>
+              </div>
+            </div>
+            <div className='libraries__card'>
+              <div className='libraries__section'>
+                <div className='libraries__head'>
+                  <div className='libraries__icon'>{'\ue907'}</div>
+                  <LibrariesLanguages languages={{
+                    'rust': '/',
+                  }}/>
+                </div>
+                <h3 className='libraries__header'>IDENTITY</h3>
+                <ul className='libraries__features'>
+                  <li className='libraries__feature'>Identity framework</li>
+                  <li className='libraries__feature'>Decentralized Identifiers (DID)</li>
+                  <li className='libraries__feature'>Verifiable Credentials (VC)</li>
+                </ul>
+                <Link className='libraries__button button button--outline button--primary'>
+                  Create an identity
+                </Link>
               </div>
             </div>
           </div>

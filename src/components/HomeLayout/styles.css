@@ -274,7 +274,7 @@
     background: right bottom no-repeat url("/homepage/smartcontracts_circle.svg");
     padding: 2rem;
     min-height: auto;
-}
+  }
 }
 
 .start-building__header {
@@ -305,4 +305,97 @@
 
 .start-building__button {
   padding: .75rem 2rem;
+}
+
+.libraries__cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(22rem, 1fr));
+  gap: 1.5rem;
+  max-width: 100%;
+}
+
+.libraries__card {
+  background-color: var(--ifm-color-emphasis-0);
+  box-shadow: 0 0 5px 0 var(--ifm-color-emphasis-300);
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: var(--ifm-global-radius);
+  color: inherit;
+  padding: 1rem;
+  min-height: 20rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (min-width: 997px) {
+  .libraries__card--identity {
+    background: left center / 50% auto no-repeat url("/homepage/identity_logo.svg");
+    grid-column: span 2;
+    justify-content: right;
+  }
+}
+
+:root[data-theme='dark'] .libraries__card {
+  box-shadow: none;
+  background-color: var(--ifm-color-emphasis-100);
+}
+
+.libraries__section {
+  aspect-ratio: 1/1;
+  display: flex;
+  flex-direction: column;
+  width: 20rem;
+}
+
+.libraries__head {
+  display: flex;
+}
+
+.libraries__icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--ifm-color-emphasis-200);
+  border-radius: var(--ifm-global-radius);
+
+  width: 4rem;
+  height: 4rem;
+
+  font-family: 'iota_icons_font';
+  font-size: 3rem;
+}
+
+.libraries__languages {
+  flex-grow: 1;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: flex-end;
+  gap: 0.2rem;
+}
+
+.libraries__language {
+  padding: 0.25rem 0.5rem;
+}
+
+.libraries__header {
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.libraries__features {
+  flex-grow: 1;
+  margin: 0;
+  font-size: 0.8rem;
+  font-weight: 200;
+  letter-spacing: 0.8px;
+}
+
+.libraries__feature {
+  margin: 0.5rem 0;
+}
+
+.libraries__button {
+  padding-top: .75rem;
+  padding-bottom: .75rem;
 }
