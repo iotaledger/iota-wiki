@@ -55,6 +55,7 @@
     width: 90%;
   }
 }
+
 .intro {
   display: flex;
   justify-content: space-between;
@@ -254,4 +255,54 @@
 .networks__button {
   padding-top: .75rem;
   padding-bottom: .75rem;
+}
+
+.start-building {
+  background: left top / 40% auto no-repeat url("/homepage/smartcontracts_bot.svg"), right bottom no-repeat url("/homepage/smartcontracts_circle.svg");
+  width: 100%;
+  min-height: 30rem;
+  padding-right: 2rem;
+  padding-left: 40%;
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: var(--ifm-global-radius);
+}
+
+@media (max-width: 996px) {
+  .start-building {
+    background: right bottom no-repeat url("/homepage/smartcontracts_circle.svg");
+    padding: 2rem;
+    min-height: auto;
+}
+}
+
+.start-building__header {
+  font-family: "Metropolis Regular";
+  letter-spacing: 0.8px;
+  display: flex;
+  align-items: center;
+}
+
+.start-building__header::before {
+  content: url('/homepage/smartcontracts_logo.svg');
+  width: 65px;
+  height: 65px;
+  margin-right: 1rem;
+}
+
+.start-building__description {
+  letter-spacing: 0.8px;
+  margin: 2rem 0;
+  max-width: 38rem;
+}
+
+.start-building__buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.start-building__button {
+  padding: .75rem 2rem;
 }

@@ -116,6 +116,20 @@ export default function HomeLayout() {
             </div>
           </div>
         </HomepageSection>
+        <HomepageSection header='Start Building'>
+          <div className='start-building'>
+            <div className='start-building__section'>
+              <h2 className='start-building__header'>IOTA Smart Contracts</h2>
+              <p className='start-building__description' >
+                The IOTA Smart Contracts is a protocol that brings scalable and flexible smart contracts into the IOTA ecosystem.
+              </p>
+              <div className='start-building__buttons'>
+                <Link className='start-building__button button button--outline button--primary'>Learn about ISCP</Link>
+                <Link className='start-building__button button button--primary'>Run a smart contract</Link>
+              </div>
+            </div>
+          </div>
+        </HomepageSection>
       </div>
     </Layout>
   );
