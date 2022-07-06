@@ -9,7 +9,6 @@
 
 .social__icon {
   font-size: larger;
-  margin-right: 0.5rem;
 }
 
 .social__link {
@@ -28,6 +27,7 @@
 .social__title {
   display: none;
   font-weight: 500;
+  margin-left: 0.5rem;
   color: var(--ifm-color-gray-0);
 }
 
