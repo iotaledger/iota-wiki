@@ -344,6 +344,25 @@ export default function HomeLayout() {
             </div>
           </div>
         </HomepageSection>
+        <HomepageSection header='Developer resources'>
+          <div className='resources__cards'>
+            <div className='resources__card resources__card--logo' />
+            <div className='resources__card'>
+              <div className='resources__icon'>{'\ue907'}</div>
+              <h3 className='resources__header'>Try a tutorial</h3>
+              <p className='resources__description'>
+                Now that you understand the basics of IOTA, it’s time to start your own project!
+              </p>
+            </div>
+            <div className='resources__card'>
+              <div className='resources__icon'>{'\ue907'}</div>
+              <h3 className='resources__header'>Try a tutorial</h3>
+              <p className='resources__description'>
+                Now that you understand the basics of IOTA.
+              </p>
+            </div>
+          </div>
+        </HomepageSection>
       </div>
     </Layout>
   );
