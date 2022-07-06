@@ -23,18 +23,18 @@ const HomepageSection: FC<HomepageSectionProps> = (props) => {
   )
 }
 
-interface LibrariesLanguagesProps {
+interface LanguagesProps {
   languages?: { [key: string]: string; };
 }
 
-const LibrariesLanguages: FC<LibrariesLanguagesProps> = (props) => {
+const Languages: FC<LanguagesProps> = (props) => {
   return (
     <>
       {Object.entries(props.languages).length > 0 && (
-        <div className='libraries__languages'>
+        <div className='languages'>
           {Object.entries(props.languages).map(([language, to], key) => (
             <Link
-              className='libraries__language button button--outline button--primary'
+              className='language button button--outline button--primary'
               to={to}
               key={key}
             >
@@ -163,7 +163,7 @@ export default function HomeLayout() {
               <div className='libraries__section'>
                 <div className='libraries__head'>
                   <div className='libraries__icon'>{'\ue907'}</div>
-                  <LibrariesLanguages languages={{
+                  <Languages languages={{
                     'rust': '/',
                   }}/>
                 </div>
@@ -182,7 +182,7 @@ export default function HomeLayout() {
               <div className='libraries__section'>
                 <div className='libraries__head'>
                   <div className='libraries__icon'>{'\ue907'}</div>
-                  <LibrariesLanguages languages={{
+                  <Languages languages={{
                     'rust': '/',
                     'c': '/',
                     'python': '/',
@@ -205,7 +205,7 @@ export default function HomeLayout() {
               <div className='libraries__section'>
                 <div className='libraries__head'>
                   <div className='libraries__icon'>{'\ue907'}</div>
-                  <LibrariesLanguages languages={{
+                  <Languages languages={{
                     'rust': '/',
                   }}/>
                 </div>
@@ -224,7 +224,7 @@ export default function HomeLayout() {
               <div className='libraries__section'>
                 <div className='libraries__head'>
                   <div className='libraries__icon'>{'\ue907'}</div>
-                  <LibrariesLanguages languages={{
+                  <Languages languages={{
                     'rust': '/',
                   }}/>
                 </div>
@@ -243,7 +243,7 @@ export default function HomeLayout() {
               <div className='libraries__section'>
                 <div className='libraries__head'>
                   <div className='libraries__icon'>{'\ue907'}</div>
-                  <LibrariesLanguages languages={{
+                  <Languages languages={{
                     'rust': '/',
                   }}/>
                 </div>
@@ -254,6 +254,90 @@ export default function HomeLayout() {
                   <li className='libraries__feature'>Verifiable Credentials (VC)</li>
                 </ul>
                 <Link className='libraries__button button button--outline button--primary'>
+                  Create an identity
+                </Link>
+              </div>
+            </div>
+          </div>
+        </HomepageSection>
+        <HomepageSection
+          header='Nodes'
+          description='Nodes are the core of an IOTA network. They run the node software that gives them read and write access to the IOTA network.'
+        >
+          <div className='nodes__cards'>
+            <div className='nodes__card'>
+              <div className='nodes__icon'>{'\ue907'}</div>
+              <div className='nodes__section'>
+                <div className='nodes__head'>
+                  <h3 className='nodes__header'>IDENTITY</h3>
+                  <Languages languages={{
+                    'rust': '/',
+                    'c': '/',
+                  }}/>
+                </div>
+                <ul className='nodes__features'>
+                  <li className='nodes__feature'>Identity framework</li>
+                  <li className='nodes__feature'>Decentralized Identifiers (DID)</li>
+                  <li className='nodes__feature'>Verifiable Credentials (VC)</li>
+                </ul>
+                <Link className='nodes__button button button--outline button--primary'>
+                  Create an identity
+                </Link>
+              </div>
+            </div>
+            <div className='nodes__card'>
+              <div className='nodes__icon'>{'\ue907'}</div>
+              <div className='nodes__section'>
+                <div className='nodes__head'>
+                  <h3 className='nodes__header'>IDENTITY</h3>
+                  <Languages languages={{
+                    'rust': '/',
+                  }}/>
+                </div>
+                <ul className='nodes__features'>
+                  <li className='nodes__feature'>Identity framework</li>
+                  <li className='nodes__feature'>Decentralized Identifiers (DID)</li>
+                  <li className='nodes__feature'>Verifiable Credentials (VC)</li>
+                </ul>
+                <Link className='nodes__button button button--outline button--primary'>
+                  Create an identity
+                </Link>
+              </div>
+            </div>
+            <div className='nodes__card'>
+              <div className='nodes__icon'>{'\ue907'}</div>
+              <div className='nodes__section'>
+                <div className='nodes__head'>
+                  <h3 className='nodes__header'>IDENTITY</h3>
+                  <Languages languages={{
+                    'rust': '/',
+                  }}/>
+                </div>
+                <ul className='nodes__features'>
+                  <li className='nodes__feature'>Identity framework</li>
+                  <li className='nodes__feature'>Decentralized Identifiers (DID)</li>
+                  <li className='nodes__feature'>Verifiable Credentials (VC)</li>
+                </ul>
+                <Link className='nodes__button button button--outline button--primary'>
+                  Create an identity
+                </Link>
+              </div>
+            </div>
+            <div className='nodes__card'>
+              <div className='nodes__icon'>{'\ue907'}</div>
+              <div className='nodes__section'>
+                <div className='nodes__head'>
+                  <h3 className='nodes__header'>IDENTITY</h3>
+                  <Languages languages={{
+                    'rust': '/',
+                  }}/>
+                </div>
+                <ul className='nodes__features'>
+                  <li className='nodes__feature'>Identity framework</li>
+                  <li className='nodes__feature'>Decentralized Identifiers (DID)</li>
+                  <li className='nodes__feature'>Verifiable Credentials (VC)</li>
+                </ul>
+                <Link className='nodes__button button button--outline button--primary'>
                   Create an identity
                 </Link>
               </div>
