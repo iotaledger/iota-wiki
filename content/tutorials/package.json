@@ -1,5 +1,6 @@
 {
-  "dependencies": {
-    "require-glob": "^4.0.0"
-  }
+    "workspaces": [
+        "*/*/documentation",
+        "*/documentation"
+    ]
 }
