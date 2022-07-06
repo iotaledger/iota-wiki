@@ -363,6 +363,31 @@ export default function HomeLayout() {
             </div>
           </div>
         </HomepageSection>
+        <HomepageSection header='Further links'>
+          <div className='further__cards'>
+            <Link className='further__card'>
+              <div className='further__section'>
+                <div className='further__icon'>{'\ue907'}</div>
+                <h3 className='further__header'>What is IOTA?</h3>
+                <p className='further__description'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Velit, pharetra proin quis egestas.</p>
+              </div>
+            </Link>
+            <Link className='further__card'>
+              <div className='further__section'>
+                <div className='further__icon'>{'\ue907'}</div>
+                <h3 className='further__header'>Get IOTA tokens</h3>
+                <p className='further__description'>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+              </div>
+            </Link>
+            <Link className='further__card'>
+              <div className='further__section'>
+                <div className='further__icon'>{'\ue90a'}</div>
+                <h3 className='further__header'>Pick a wallet</h3>
+                <p className='further__description'>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+              </div>
+            </Link>
+          </div>
+        </HomepageSection>
       </div>
     </Layout>
   );
