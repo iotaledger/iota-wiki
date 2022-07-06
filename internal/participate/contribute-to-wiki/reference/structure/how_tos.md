@@ -10,6 +10,8 @@ import TabItem from "@theme/TabItem";
 
 # How Tos
 
+Also see [How To Write Banger How Tos](../../how_tos/how_to_write_how_tos.md).
+
 How Tos are the same as [how-tos in Diataxis](https://diataxis.fr/how-to-guides/). You should use this folder to give in depth guides on how to complete concrete single tasks. For example:
 
 - Connect to a Server

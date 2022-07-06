@@ -94,6 +94,7 @@ module.exports = {
           label: 'How Tos',
           items: [
             'contribute-to-wiki/how_tos/documentation_setup',
+            'contribute-to-wiki/how_tos/how_to_write_how_tos',
             'contribute-to-wiki/how_tos/request_tw',
           ],
         },
