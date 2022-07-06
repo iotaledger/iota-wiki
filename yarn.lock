@@ -4812,8 +4812,6 @@ __metadata:
 "build-0dfe5b@workspace:content/build":
   version: 0.0.0-use.local
   resolution: "build-0dfe5b@workspace:content/build"
-  dependencies:
-    require-glob: ^4.0.0
   languageName: unknown
   linkType: soft
 
@@ -5575,6 +5573,14 @@ __metadata:
   checksum: f7ac8c6d0b6e4e0c77340a1d47a3574e25abd580bfd99ad707b26ff7618596cf1a5e5ce9caf44715e9e01d4a5d12cb3b4edaf1176f34c19adb2874815a56e64f
   languageName: node
   linkType: hard
+
+"content-b2d1d2@workspace:content":
+  version: 0.0.0-use.local
+  resolution: "content-b2d1d2@workspace:content"
+  dependencies:
+    require-glob: ^4.1.0
+  languageName: unknown
+  linkType: soft
 
 "content-disposition@npm:0.5.2":
   version: 0.5.2
@@ -13085,7 +13091,7 @@ plugin-image-zoom@flexanalytics/plugin-image-zoom:
   languageName: node
   linkType: hard
 
-"require-glob@npm:^4.0.0":
+"require-glob@npm:^4.1.0":
   version: 4.1.0
   resolution: "require-glob@npm:4.1.0"
   dependencies:
@@ -14746,8 +14752,6 @@ plugin-image-zoom@flexanalytics/plugin-image-zoom:
 "tutorials-dd8696@workspace:content/tutorials":
   version: 0.0.0-use.local
   resolution: "tutorials-dd8696@workspace:content/tutorials"
-  dependencies:
-    require-glob: ^4.0.0
   languageName: unknown
   linkType: soft
 

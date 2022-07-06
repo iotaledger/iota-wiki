@@ -9,7 +9,7 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     env:
-      BUILD: '*/*/documentation,*/*'
+      CONTENT: '*/*/*/documentation,*/*/*,*/*'
     steps:
       - uses: actions/checkout@v3
         with:
