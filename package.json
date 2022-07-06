@@ -19,6 +19,7 @@
   "dependencies": {
     "@algolia/client-search": "^4.9.1",
     "@docusaurus/core": "^2.0.0-beta.20",
+    "@docusaurus/plugin-ideal-image": "^2.0.0-beta.21",
     "@docusaurus/preset-classic": "^2.0.0-beta.20",
     "@mdx-js/react": "^1.6.21",
     "@popperjs/core": "^2.11.2",
