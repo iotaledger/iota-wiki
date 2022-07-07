@@ -167,7 +167,7 @@ export default function HomeLayout() {
             <div className='libraries__card libraries__card--identity'>
               <div className='libraries__section'>
                 <div className='libraries__head'>
-                  <div className='libraries__icon'>{'\ue907'}</div>
+                  <div className='libraries__icon'>{'\ue905'}</div>
                   <Languages languages={{
                     'Rust': '/',
                     'WASM': '/',
@@ -210,7 +210,7 @@ export default function HomeLayout() {
             <div className='libraries__card'>
               <div className='libraries__section'>
                 <div className='libraries__head'>
-                  <div className='libraries__icon'>{'\ue907'}</div>
+                  <div className='libraries__icon'>{'\ue90a'}</div>
                   <Languages languages={{
                     'Rust': '/',
                     'NodeJS': '/',
@@ -232,7 +232,7 @@ export default function HomeLayout() {
             <div className='libraries__card'>
               <div className='libraries__section'>
                 <div className='libraries__head'>
-                  <div className='libraries__icon'>{'\ue907'}</div>
+                  <div className='libraries__icon'>{'\ue908'}</div>
                   <Languages languages={{
                     'Rust': '/',
                     'WASM': '/',
@@ -253,7 +253,7 @@ export default function HomeLayout() {
             <div className='libraries__card'>
               <div className='libraries__section'>
                 <div className='libraries__head'>
-                  <div className='libraries__icon'>{'\ue907'}</div>
+                  <div className='libraries__icon'>{'\ue909'}</div>
                   <Languages languages={{
                     'Rust': '/',
                   }}/>
@@ -277,7 +277,7 @@ export default function HomeLayout() {
         >
           <div className='nodes__cards'>
             <div className='nodes__card'>
-              <div className='nodes__icon'>{'\ue907'}</div>
+              <div className='nodes__icon'>{'\ue90b'}</div>
               <div className='nodes__section'>
                 <div className='nodes__head'>
                   <h3 className='nodes__header'>WASP</h3>
@@ -294,7 +294,7 @@ export default function HomeLayout() {
               </div>
             </div>
             <div className='nodes__card'>
-              <div className='nodes__icon'>{'\ue907'}</div>
+              <div className='nodes__icon'>{'\ue900'}</div>
               <div className='nodes__section'>
                 <div className='nodes__head'>
                   <h3 className='nodes__header'>BEE</h3>
@@ -313,7 +313,7 @@ export default function HomeLayout() {
               </div>
             </div>
             <div className='nodes__card'>
-              <div className='nodes__icon'>{'\ue907'}</div>
+              <div className='nodes__icon'>{'\ue904'}</div>
               <div className='nodes__section'>
                 <div className='nodes__head'>
                   <h3 className='nodes__header'>HORNET</h3>
@@ -332,7 +332,7 @@ export default function HomeLayout() {
               </div>
             </div>
             <div className='nodes__card'>
-              <div className='nodes__icon'>{'\ue907'}</div>
+              <div className='nodes__icon'>{'\ue90c'}</div>
               <div className='nodes__section'>
                 <div className='nodes__head'>
                   <h3 className='nodes__header'>CHRONICLE</h3>
@@ -358,14 +358,14 @@ export default function HomeLayout() {
           <div className='resources__cards'>
             <div className='resources__card resources__card--logo' />
             <div className='resources__card'>
-              <div className='resources__icon'>{'\ue907'}</div>
+              <div className='resources__icon'>{'\ue902'}</div>
               <h3 className='resources__header'>Try a tutorial</h3>
               <p className='resources__description'>
                 Now that you understand the basics of IOTA, it’s time to start your own project!
               </p>
             </div>
             <div className='resources__card'>
-              <div className='resources__icon'>{'\ue907'}</div>
+              <div className='resources__icon'>{'\ue90d'}</div>
               <h3 className='resources__header'>Discover integrations & tools</h3>
               <p className='resources__description'>
                 Speed up integration with IOTA tools & solutions
