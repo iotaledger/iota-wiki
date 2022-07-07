@@ -601,3 +601,9 @@
   margin: 0;
   font-size: 0.8rem;
 }
+
+.about__card:hover,
+.resources__card:hover,
+.further__card:hover {
+  text-decoration: none;
+}
