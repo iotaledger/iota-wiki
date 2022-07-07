@@ -83,7 +83,6 @@
 
 .intro__header {
   font-size: 40px;
-  letter-spacing: 0.8px;
 }
 
 .intro__description {
@@ -169,7 +168,6 @@
   margin: 0;
   font-size: 0.8rem;
   font-weight: 200;
-  letter-spacing: 0.75px;
 }
 
 .networks__cards {
@@ -230,7 +228,6 @@
 
 .networks__label {
   font-weight: 800;
-  letter-spacing: 0.75px;
   font-size: 0.8rem;
   color: var(--ifm-color-emphasis-500);
   margin-top: 1rem;
@@ -292,7 +289,6 @@
 
 .start-building__header {
   font-family: "Metropolis Regular";
-  letter-spacing: 0.8px;
   display: flex;
   align-items: center;
 }
@@ -305,7 +301,6 @@
 }
 
 .start-building__description {
-  letter-spacing: 0.8px;
   margin: 2rem 0;
   max-width: 38rem;
 }
@@ -388,7 +383,6 @@
   margin: 0;
   font-size: 0.8rem;
   font-weight: 200;
-  letter-spacing: 0.8px;
 }
 
 .libraries__feature {
@@ -460,7 +454,6 @@
   margin: 1rem 0;
   font-size: 0.8rem;
   font-weight: 200;
-  letter-spacing: 0.8px;
 }
 
 .nodes__feature {
@@ -537,7 +530,6 @@
   margin: 0;
   font-size: 0.8rem;
   font-weight: 200;
-  letter-spacing: 0.8px;
 }
 
 .further__cards {
@@ -595,5 +587,4 @@
   margin: 0;
   font-size: 0.8rem;
   font-weight: 200;
-  letter-spacing: 0.75px;
 }
