@@ -448,7 +448,7 @@ export default function HomeLayout() {
               className='further__card'
             >
               <div className='further__section'>
-                <div className='further__icon'>{'\ue907'}</div>
+                <div className='further__icon social__font'>{'\ue900'}</div>
                 <h3 className='further__header'>Join Discord</h3>
                 <p className='further__description'>Check out the IOTA community on Discord.</p>
               </div>
@@ -468,7 +468,7 @@ export default function HomeLayout() {
               className='further__card'
             >
               <div className='further__section'>
-                <div className='further__icon'>{'\ue90a'}</div>
+                <div className='further__icon'>{'\ue907'}</div>
                 <h3 className='further__header'>Visit the explorer</h3>
                 <p className='further__description'>View transactions and data stored on the IOTA Tangle.</p>
               </div>
