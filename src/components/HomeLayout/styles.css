@@ -458,7 +458,7 @@
 
 .resources__cards {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(max(18rem, calc(50% - 0.75rem)), 1fr));
   gap: 1.5rem;
   width: 100%;
 }
