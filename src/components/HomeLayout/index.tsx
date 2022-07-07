@@ -352,7 +352,7 @@ export default function HomeLayout() {
                 <div className='nodes__head'>
                   <h3 className='nodes__header'>BEE</h3>
                   <Languages languages={{
-                    'Rust': '/',
+                    'Rust': null,
                   }}/>
                 </div>
                 <ul className='nodes__features'>
@@ -374,7 +374,7 @@ export default function HomeLayout() {
                 <div className='nodes__head'>
                   <h3 className='nodes__header'>HORNET</h3>
                   <Languages languages={{
-                    'Go': '/',
+                    'Go': null,
                   }}/>
                 </div>
                 <ul className='nodes__features'>
@@ -396,9 +396,9 @@ export default function HomeLayout() {
                 <div className='nodes__head'>
                   <h3 className='nodes__header'>CHRONICLE</h3>
                   <Languages languages={{
-                    'Rust': '/',
-                    'WASM': '/',
-                    'C': '/',
+                    'Rust': null,
+                    'WASM': null,
+                    'C': null,
                   }}/>
                 </div>
                 <ul className='nodes__features'>
