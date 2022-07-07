@@ -117,6 +117,12 @@
   border-radius: var(--ifm-global-radius);
   color: inherit;
   cursor: pointer;
+  transition: border-color 200ms ease-in-out;
+}
+
+.about__card:hover {
+  color: inherit;
+  border-color: var(--ifm-color-emphasis-400);
 }
 
 :root[data-theme='dark'] .about__card {
@@ -472,6 +478,13 @@
   padding: 2rem;
   display: flex;
   flex-direction: column;
+  cursor: pointer;
+  transition: border-color 200ms ease-in-out;
+}
+
+.resources__card:hover {
+  color: inherit;
+  border-color: var(--ifm-color-emphasis-300);
 }
 
 :root[data-theme='dark'] .resources__card {
@@ -483,6 +496,7 @@
   background: center center / 80% no-repeat url("/homepage/resources_bot.svg");
   grid-row: span 2;
   justify-content: right;
+  cursor: unset;
 }
 
 @media (max-width: 996px) {
@@ -533,6 +547,12 @@
   border-radius: var(--ifm-global-radius);
   color: inherit;
   cursor: pointer;
+  transition: border-color 200ms ease-in-out;
+}
+
+.further__card:hover {
+  color: inherit;
+  border-color: var(--ifm-color-emphasis-300);
 }
 
 :root[data-theme='dark'] .further__card {
