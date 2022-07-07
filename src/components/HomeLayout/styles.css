@@ -484,7 +484,7 @@
 
 .resources__card:hover {
   color: inherit;
-  border-color: var(--ifm-color-emphasis-300);
+  border-color: var(--ifm-color-emphasis-400);
 }
 
 :root[data-theme='dark'] .resources__card {
@@ -552,7 +552,7 @@
 
 .further__card:hover {
   color: inherit;
-  border-color: var(--ifm-color-emphasis-300);
+  border-color: var(--ifm-color-emphasis-400);
 }
 
 :root[data-theme='dark'] .further__card {
