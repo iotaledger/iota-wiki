@@ -53,7 +53,7 @@ export default function HomeLayout() {
   return (
     <Layout description={siteConfig.tagline} >
       <div className='homepage'>
-        <HomepageSection className='homepage__section--gradient'>
+        <HomepageSection className='homepage__section--intro'>
           <div className='intro'>
             <div className='intro__section'>
               <h1 className='intro__header'>The complete reference for IOTA</h1>
@@ -65,7 +65,6 @@ export default function HomeLayout() {
                 <Link className='intro__button button button--primary'>Start building</Link>
               </div>
             </div>
-            <img className='intro__image' src='img/homepage/header.svg' />
           </div>
         </HomepageSection>
         <HomepageSection header='About IOTA'>
