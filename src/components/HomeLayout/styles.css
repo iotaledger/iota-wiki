@@ -12,7 +12,7 @@
 .homepage__section {
   display: flex;
   justify-content: center;
-  margin-bottom: 8rem;
+  padding-bottom: 8rem;
 }
 
 .homepage__section--intro {
@@ -493,10 +493,19 @@
 }
 
 .resources__card--logo {
-  background: center center / 80% no-repeat url("/homepage/resources_bot.svg");
+  background: center center / 80% no-repeat url("/homepage/resources_bot.svg"), var(--ifm-color-emphasis-0);
   grid-row: span 2;
   justify-content: right;
   cursor: unset;
+}
+
+:root[data-theme='dark'] .resources__card--logo {
+  background: center center / 80% no-repeat url("/homepage/resources_bot.svg"), var(--ifm-color-emphasis-100);
+}
+
+.resources__card--logo:hover {
+  color: inherit;
+  border-color: var(--ifm-color-emphasis-200);
 }
 
 @media (max-width: 996px) {
