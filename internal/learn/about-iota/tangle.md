@@ -33,9 +33,9 @@ Only the blockchain leader collects the reward for producing a block. Only the l
 
 ### The Tangle
 
-The Tangle is a network of parallel processed transactions. These parallel transactions form the "front" of the Tangle and offer multiple points for newly issued transactions to attach to. There are no block producers, and it is enough to issue your transaction to any node to imprint into the Tangle.
+The Tangle is a network of parallel processed messages. These parallel messages form the "front" of the Tangle and offer multiple points for newly issued messages to attach to. There are no block producers, and it is enough to issue your transaction to any node so it would wrap it into a message and attach it to the Tangle.
 
-IOTA is a leaderless protocol. Multiple nodes attach multiple transactions to multiple points of the Tangle at the same time. IOTA has no bottlenecks, no middlemen, and no fees.
+IOTA is a leaderless protocol. Multiple nodes attach multiple transaction messages to multiple points of the Tangle at the same time. IOTA has no bottlenecks, no middlemen, and no fees.
 
 ![An animation of the Tangle where the passage is much wider and allows multiple transactions at a time.](/img/learn/tangle-bottleneck.gif)
 
