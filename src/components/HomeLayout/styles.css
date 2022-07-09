@@ -3,6 +3,7 @@
   font-weight: 200;
   color: var(--ifm-color-emphasis-700);
   background-color: var(--ifm-color-emphasis-100);
+  overflow: auto;
 }
 
 :root[data-theme="dark"] .homepage {
@@ -12,7 +13,7 @@
 .homepage__section {
   display: flex;
   justify-content: center;
-  padding-bottom: 8rem;
+  margin-bottom: 8rem;
 }
 
 .homepage__section--intro {
