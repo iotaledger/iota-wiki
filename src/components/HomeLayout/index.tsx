@@ -4,6 +4,25 @@ import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import clsx from 'clsx';
 import './styles.css';
+import {
+  Bee,
+  Chronicle,
+  Discord,
+  Hornet,
+  Identity,
+  IntegrationServices,
+  IotaCore,
+  IotaToken,
+  PickAWallet,
+  Search,
+  Shimmer,
+  Streams,
+  Stronghold,
+  Tips,
+  Tutorials,
+  Wallet,
+  Wasp,
+} from '../../icons';
 
 interface HomepageSectionProps {
   header?: string;
@@ -84,7 +103,9 @@ export default function HomeLayout() {
               className='about__card'
             >
               <div className='about__section'>
-                <div className='about__icon'>{'\ue909'}</div>
+                <div className='about__icon'>
+                  <IotaCore />
+                </div>
                 <h3 className='about__header'>What is IOTA?</h3>
                 <p className='about__description'>
                   An open, feeless and scalable distributed ledger, designed to support data and value transfer.
@@ -96,7 +117,9 @@ export default function HomeLayout() {
               className='about__card'
             >
               <div className='about__section'>
-                <div className='about__icon'>{'\ue90a'}</div>
+                <div className='about__icon'>
+                  <IotaToken />
+                </div>
                 <h3 className='about__header'>Get IOTA tokens</h3>
                 <p className='about__description'>
                   The IOTA token (listed as MIOTA) is used to transact value on the IOTA distributed ledger. 
@@ -108,7 +131,9 @@ export default function HomeLayout() {
               className='about__card'
             >
               <div className='about__section'>
-                <div className='about__icon'>{'\ue90b'}</div>
+                <div className='about__icon'>
+                  <PickAWallet />
+                </div>
                 <h3 className='about__header'>Pick a wallet</h3>
                 <p className='about__description'>
                   Choose a wallet to store your public and private keys and interact with the IOTA network.
@@ -124,7 +149,9 @@ export default function HomeLayout() {
           <div className='networks__cards'>
             <div className='networks__card'>
               <div className='networks__section'>
-                <div className='networks__icon networks__icon--shimmer'>{'\ue90d'}</div>
+                <div className='networks__icon networks__icon--shimmer'>
+                  <Shimmer />
+                </div>
                 <span className='networks__label'>Experimental</span>
                 <h2 className='networks__header'>Shimmer Stagenet</h2>
                 <p className='networks__description'>
@@ -147,7 +174,9 @@ export default function HomeLayout() {
             </div>
             <div className='networks__card'>
               <div className='networks__section'>
-                <div className='networks__icon networks__icon--iota'>{'\ue909'}</div>
+                <div className='networks__icon networks__icon--iota'>
+                  <IotaCore />
+                </div>
                 <span className='networks__label'>Stable</span>
                 <h2 className='networks__header'>IOTA Mainnet</h2>
                 <p className='networks__description'>
@@ -202,7 +231,9 @@ export default function HomeLayout() {
             <div className='libraries__card libraries__card--identity'>
               <div className='libraries__section'>
                 <div className='libraries__head'>
-                  <div className='libraries__icon'>{'\ue906'}</div>
+                  <div className='libraries__icon'>
+                    <Identity />
+                  </div>
                   <Languages languages={{
                     'Rust': 'identity.rs/libraries/rust/getting_started',
                     'WASM': 'identity.rs/libraries/wasm/getting_started',
@@ -225,7 +256,9 @@ export default function HomeLayout() {
             <div className='libraries__card'>
               <div className='libraries__section'>
                 <div className='libraries__head'>
-                  <div className='libraries__icon'>{'\ue909'}</div>
+                  <div className='libraries__icon'>
+                    <IotaCore />
+                  </div>
                   <Languages languages={{
                     'Rust': 'iota.rs/develop/libraries/rust/getting_started',
                     'NodeJS': 'iota.rs/develop/libraries/nodejs/getting_started',
@@ -251,7 +284,9 @@ export default function HomeLayout() {
             <div className='libraries__card'>
               <div className='libraries__section'>
                 <div className='libraries__head'>
-                  <div className='libraries__icon'>{'\ue913'}</div>
+                  <div className='libraries__icon'>
+                    <Wallet />
+                  </div>
                   <Languages languages={{
                     'Rust': 'wallet.rs/libraries/rust/getting_started',
                     'NodeJS': 'wallet.rs/libraries/nodejs/getting_started',
@@ -276,7 +311,9 @@ export default function HomeLayout() {
             <div className='libraries__card'>
               <div className='libraries__section'>
                 <div className='libraries__head'>
-                  <div className='libraries__icon'>{'\ue90e'}</div>
+                  <div className='libraries__icon'>
+                    <Streams />
+                  </div>
                   <Languages languages={{
                     'Rust': 'streams/libraries/rust/getting_started',
                     'WASM': 'streams/libraries/wasm/getting_started',
@@ -300,7 +337,9 @@ export default function HomeLayout() {
             <div className='libraries__card'>
               <div className='libraries__section'>
                 <div className='libraries__head'>
-                  <div className='libraries__icon'>{'\ue90f'}</div>
+                  <div className='libraries__icon'>
+                    <Stronghold />
+                  </div>
                   <Languages languages={{
                     'Rust': 'stronghold.rs/reference/overview',
                   }}/>
@@ -327,7 +366,9 @@ export default function HomeLayout() {
         >
           <div className='nodes__cards'>
             <div className='nodes__card'>
-              <div className='nodes__icon'>{'\ue914'}</div>
+              <div className='nodes__icon'>
+                <Wasp />
+              </div>
               <div className='nodes__section'>
                 <div className='nodes__head'>
                   <h3 className='nodes__header'>WASP</h3>
@@ -347,7 +388,9 @@ export default function HomeLayout() {
               </div>
             </div>
             <div className='nodes__card'>
-              <div className='nodes__icon'>{'\ue900'}</div>
+              <div className='nodes__icon'>
+                <Bee />
+              </div>
               <div className='nodes__section'>
                 <div className='nodes__head'>
                   <h3 className='nodes__header'>BEE</h3>
@@ -369,7 +412,9 @@ export default function HomeLayout() {
               </div>
             </div>
             <div className='nodes__card'>
-              <div className='nodes__icon'>{'\ue905'}</div>
+              <div className='nodes__icon'>
+                <Hornet />
+              </div>
               <div className='nodes__section'>
                 <div className='nodes__head'>
                   <h3 className='nodes__header'>HORNET</h3>
@@ -391,7 +436,9 @@ export default function HomeLayout() {
               </div>
             </div>
             <div className='nodes__card'>
-              <div className='nodes__icon'>{'\ue901'}</div>
+              <div className='nodes__icon'>
+                <Chronicle />
+              </div>
               <div className='nodes__section'>
                 <div className='nodes__head'>
                   <h3 className='nodes__header'>CHRONICLE</h3>
@@ -423,7 +470,9 @@ export default function HomeLayout() {
               to='tutorials'
               className='resources__card'
             >
-              <div className='resources__icon'>{'\ue912'}</div>
+              <div className='resources__icon'>
+                <Tutorials />
+              </div>
               <h3 className='resources__header'>Try a tutorial</h3>
               <p className='resources__description'>
                 Now that you understand the basics of IOTA, it’s time to start your own project!
@@ -433,7 +482,9 @@ export default function HomeLayout() {
               to='integration-services/welcome'
               className='resources__card'
             >
-              <div className='resources__icon'>{'\ue911'}</div>
+              <div className='resources__icon'>
+                <IntegrationServices />
+              </div>
               <h3 className='resources__header'>Discover integrations & tools</h3>
               <p className='resources__description'>
                 Speed up integration with IOTA tools & solutions
@@ -448,7 +499,9 @@ export default function HomeLayout() {
               className='further__card'
             >
               <div className='further__section'>
-                <div className='further__icon social__font'>{'\ue900'}</div>
+                <div className='further__icon'>
+                  <Discord />
+                </div>
                 <h3 className='further__header'>Join Discord</h3>
                 <p className='further__description'>Check out the IOTA community on Discord.</p>
               </div>
@@ -458,7 +511,9 @@ export default function HomeLayout() {
               className='further__card'
             >
               <div className='further__section'>
-                <div className='further__icon'>{'\ue910'}</div>
+                <div className='further__icon'>
+                  <Tips />
+                </div>
                 <h3 className='further__header'>Tangle Improvement Proposals</h3>
                 <p className='further__description'>Propose, discuss and debate ideas.</p>
               </div>
@@ -468,7 +523,9 @@ export default function HomeLayout() {
               className='further__card'
             >
               <div className='further__section'>
-                <div className='further__icon'>{'\ue90c'}</div>
+                <div className='further__icon'>
+                  <Search />
+                </div>
                 <h3 className='further__header'>Visit the explorer</h3>
                 <p className='further__description'>View transactions and data stored on the IOTA Tangle.</p>
               </div>

@@ -145,12 +145,15 @@
   align-items: center;
   background-color: var(--ifm-color-emphasis-200);
   border-radius: var(--ifm-global-radius);
+  fill: var(--ifm-color-emphasis-900);
 
   width: 4rem;
   height: 4rem;
+}
 
-  font-family: "iota_icons_font";
-  font-size: 3rem;
+.about__icon > svg {
+  width: 48px;
+  height: 48px;
 }
 
 .about__header {
@@ -198,21 +201,23 @@
   justify-content: center;
   align-items: center;
   border-radius: 50%;
-
+  
   width: 5rem;
   height: 5rem;
+}
 
-  font-family: "iota_icons_font";
-  font-size: 5rem;
+.networks__icon > svg {
+  width: 4rem;
+  height: 4rem;
 }
 
 .networks__icon--shimmer {
-  color: white;
+  fill: white;
   background-color: #16D4BF;
 }
 
 .networks__icon--iota {
-  color: white;
+  fill: white;
   background-color: var(--ifm-color-gray-900);
 }
 
@@ -364,8 +369,12 @@
   width: 4rem;
   height: 4rem;
 
-  font-family: "iota_icons_font";
-  font-size: 3rem;
+  fill: var(--ifm-color-emphasis-900);
+}
+
+.libraries__icon > svg {
+  width: 3rem;
+  height: 3rem;
 }
 
 .libraries__header {
@@ -419,11 +428,12 @@
   align-items: center;
   background-color: var(--ifm-color-emphasis-200);
   border-radius: var(--ifm-global-radius);
-
-  font-family: "iota_icons_font";
-  font-size: 6rem;
-
+  fill: var(--ifm-color-emphasis-900);
   width: 30%;
+}
+
+.nodes__icon > svg {
+  width: 6rem;
 }
 
 @media (max-width: 996px) {
@@ -521,12 +531,13 @@
   align-items: center;
   background-color: var(--ifm-color-emphasis-200);
   border-radius: var(--ifm-global-radius);
-
+  fill: var(--ifm-color-emphasis-900);
   width: 3rem;
   height: 3rem;
+}
 
-  font-family: "iota_icons_font";
-  font-size: 3rem;
+.resources__icon > svg {
+  width: 3rem;
 }
 
 .resources__header {
@@ -584,12 +595,14 @@
   align-items: center;
   background-color: var(--ifm-color-emphasis-200);
   border-radius: var(--ifm-global-radius);
-
+  fill: var(--ifm-color-emphasis-900);
   width: 4rem;
   height: 4rem;
+}
 
-  font-family: "iota_icons_font";
-  font-size: 3rem;
+.further__icon > svg {
+  width: 3rem;
+  height: 3rem;
 }
 
 .further__header {
