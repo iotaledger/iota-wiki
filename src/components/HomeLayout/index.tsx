@@ -122,7 +122,7 @@ export default function HomeLayout() {
                 </div>
                 <h3 className='about__header'>Get IOTA tokens</h3>
                 <p className='about__description'>
-                  The IOTA token (listed as MIOTA) is used to transact value on the IOTA distributed ledger. 
+                  The IOTA token is used to transact value on the IOTA distributed ledger. 
                 </p>
               </div>
             </Link>
@@ -144,7 +144,7 @@ export default function HomeLayout() {
         </HomepageSection>
         <HomepageSection
           header='Shimmer & IOTA'
-          description='Shimmer is the official incentivized staging network of IOTA. All major upgrades of IOTA are first made available on the Shimmer network, offering builders and users a dedicated network to get early access to new innovations and opportunities.'
+          description='Shimmer is an L1 innovation network providing the core building blocks for a scalable, modular multi-chain architecture. It is a validation ground for innovations geared for the IOTA network and its native token is $SMR.'
         >
           <div className='networks__cards'>
             <div className='networks__card'>
@@ -153,15 +153,15 @@ export default function HomeLayout() {
                   <Shimmer />
                 </div>
                 <span className='networks__label'>Experimental</span>
-                <h2 className='networks__header'>Shimmer Stagenet</h2>
+                <h2 className='networks__header'>Shimmer Network</h2>
                 <p className='networks__description'>
-                  Build and test your project.<br/>Port it later on to the mainnet.
+                  The L1 innovation network to build and test your project and to validate innovations destined for IOTA.
                 </p>
               </div>
               <div className='networks__section'>
                 <ul className='networks__features'>
-                  <li className='networks__feature networks__feature--done'>Staking</li>
                   <li className='networks__feature networks__feature--done'>Permissionless</li>
+                  <li className='networks__feature networks__feature--done'>DeFi enabled</li>
                   <li className='networks__feature networks__feature--done'>Newest features</li>
                 </ul>
                 <Link
@@ -178,9 +178,9 @@ export default function HomeLayout() {
                   <IotaCore />
                 </div>
                 <span className='networks__label'>Stable</span>
-                <h2 className='networks__header'>IOTA Mainnet</h2>
+                <h2 className='networks__header'>IOTA Network</h2>
                 <p className='networks__description'>
-                  Mainnet is the IOTA network that uses the IOTA tokens. This network is the most stable.
+                  The IOTA main network that uses the IOTA tokens. This network is the most stable.
                 </p>
               </div>
               <div className='networks__section'>
@@ -239,7 +239,7 @@ export default function HomeLayout() {
                     'WASM': 'identity.rs/libraries/wasm/getting_started',
                   }}/>
                 </div>
-                <h3 className='libraries__header'>IDENTITY</h3>
+                <h3 className='libraries__header'>Identity</h3>
                 <ul className='libraries__features'>
                   <li className='libraries__feature'>Identity framework</li>
                   <li className='libraries__feature'>Decentralized Identifiers (DID)</li>
@@ -267,7 +267,7 @@ export default function HomeLayout() {
                     'WASM': 'iota.rs/develop/libraries/wasm/getting_started',
                   }}/>
                 </div>
-                <h3 className='libraries__header'>CLIENT</h3>
+                <h3 className='libraries__header'>Client</h3>
                 <ul className='libraries__features'>
                   <li className='libraries__feature'>Interact with the IOTA network</li>
                   <li className='libraries__feature'>Create messages and transactions</li>
@@ -294,7 +294,7 @@ export default function HomeLayout() {
                     'WASM': 'wallet.rs/libraries/wasm/getting_started',
                   }}/>
                 </div>
-                <h3 className='libraries__header'>WALLET</h3>
+                <h3 className='libraries__header'>Wallet</h3>
                 <ul className='libraries__features'>
                   <li className='libraries__feature'>Integrate an IOTA wallet</li>
                   <li className='libraries__feature'>Store account data</li>
@@ -320,7 +320,7 @@ export default function HomeLayout() {
                     'C': 'streams/libraries/c/getting_started',
                   }}/>
                 </div>
-                <h3 className='libraries__header'>STREAMS</h3>
+                <h3 className='libraries__header'>Streams</h3>
                 <ul className='libraries__features'>
                   <li className='libraries__feature'>Organize and share data securely</li>
                   <li className='libraries__feature'>Integrity and authenticity</li>
@@ -344,7 +344,7 @@ export default function HomeLayout() {
                     'Rust': 'stronghold.rs/reference/overview',
                   }}/>
                 </div>
-                <h3 className='libraries__header'>STRONGHOLD</h3>
+                <h3 className='libraries__header'>Stronghold</h3>
                 <ul className='libraries__features'>
                   <li className='libraries__feature'>Secure management of passwords</li>
                   <li className='libraries__feature'>Secure personal data and private keys</li>
@@ -370,10 +370,7 @@ export default function HomeLayout() {
                 <Wasp />
               </div>
               <div className='nodes__section'>
-                <div className='nodes__head'>
-                  <h3 className='nodes__header'>WASP</h3>
-                  <Languages languages={{}}/>
-                </div>
+                <h3 className='nodes__header'>Wasp</h3>
                 <ul className='nodes__features'>
                   <li className='nodes__feature'>Validate smart contracts</li>
                   <li className='nodes__feature'>Run the IOTA Smart Contract Protocol</li>
@@ -392,16 +389,11 @@ export default function HomeLayout() {
                 <Bee />
               </div>
               <div className='nodes__section'>
-                <div className='nodes__head'>
-                  <h3 className='nodes__header'>BEE</h3>
-                  <Languages languages={{
-                    'Rust': null,
-                  }}/>
-                </div>
+                <h3 className='nodes__header'>Bee</h3>
                 <ul className='nodes__features'>
-                  <li className='nodes__feature'>Installing the Bee Node</li>
-                  <li className='nodes__feature'>Updating the Bee Node</li>
-                  <li className='nodes__feature'>Compiling the Bee Node</li>
+                  <li className='nodes__feature'>A node implementation in Rust</li>
+                  <li className='nodes__feature'>Participate in the network</li>
+                  <li className='nodes__feature'>Become a node operator</li>
                 </ul>
                 <Link
                   to='bee/welcome'
@@ -416,16 +408,11 @@ export default function HomeLayout() {
                 <Hornet />
               </div>
               <div className='nodes__section'>
-                <div className='nodes__head'>
-                  <h3 className='nodes__header'>HORNET</h3>
-                  <Languages languages={{
-                    'Go': null,
-                  }}/>
-                </div>
+                <h3 className='nodes__header'>Hornet</h3>
                 <ul className='nodes__features'>
-                  <li className='nodes__feature'>Installing the Hornet node</li>
-                  <li className='nodes__feature'>Updating the Hornet node</li>
-                  <li className='nodes__feature'>Compiling the Hornet Node</li>
+                  <li className='nodes__feature'>A node implementation writtin in Go</li>
+                  <li className='nodes__feature'>Participate in the network</li>
+                  <li className='nodes__feature'>Manage your node</li>
                 </ul>
                 <Link
                   to='hornet/welcome'
@@ -440,14 +427,7 @@ export default function HomeLayout() {
                 <Chronicle />
               </div>
               <div className='nodes__section'>
-                <div className='nodes__head'>
-                  <h3 className='nodes__header'>CHRONICLE</h3>
-                  <Languages languages={{
-                    'Rust': null,
-                    'WASM': null,
-                    'C': null,
-                  }}/>
-                </div>
+                <h3 className='nodes__header'>Chronicle</h3>
                 <ul className='nodes__features'>
                   <li className='nodes__feature'>Efficient and reliable permanodes</li>
                   <li className='nodes__feature'>Solution for storing all transactions</li>

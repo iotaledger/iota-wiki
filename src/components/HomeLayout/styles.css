@@ -380,6 +380,7 @@
 .libraries__header {
   margin-top: 2rem;
   margin-bottom: 0.5rem;
+  text-transform: uppercase;
 }
 
 .libraries__features {
@@ -448,12 +449,9 @@
   flex-direction: column;
 }
 
-.nodes__head {
-  display: flex;
-}
-
 .nodes__header {
   margin: 0;
+  text-transform: uppercase;
 }
 
 .nodes__features {
