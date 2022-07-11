@@ -3,6 +3,9 @@ id: why-is-iota-feeless
 title: Why is IOTA Feeless?
 description: The unique feature of IOTA is the absence of any Fee's in the
   protocol. Here we explain how this is achieved.
+image: /img/iota-wiki.png
+keywords:
+- explanation
 ---
 
 # Why is IOTA Feeless?
