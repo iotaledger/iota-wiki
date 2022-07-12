@@ -229,6 +229,7 @@ export default function HomeLayout() {
         >
           <div className='libraries__cards'>
             <div className='libraries__card libraries__card--identity'>
+              <img className='libraries__logo' src='/img/homepage/identity_logo.svg' />
               <div className='libraries__section'>
                 <div className='libraries__head'>
                   <div className='libraries__icon'>
