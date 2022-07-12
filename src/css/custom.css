@@ -126,7 +126,7 @@ article .card {
 
 .footer__links {
   font-size: 1rem;
-  margin: 2rem max(1rem, calc(20% - 10rem));
+  margin: 2rem max(1rem, calc(1% -1rem));
 }
 
 .footer__logo {
