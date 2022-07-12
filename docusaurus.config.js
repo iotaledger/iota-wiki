@@ -175,7 +175,7 @@ module.exports = {
             },
             {
               label: 'Developer',
-              href: 'https://stardust.iota-community.org/cli-wallet/welcome',
+              href: 'cli-wallet/welcome',
             },
           ],
         },
@@ -295,7 +295,7 @@ module.exports = {
             },
             {
               label: 'Layer One',
-              href: 'https://stardust.iota-community.org/hornet/welcome',
+              href: 'hornet/welcome',
             },
             {
               label: 'Layer Two',

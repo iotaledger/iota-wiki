@@ -39,7 +39,7 @@ module.exports = {
           {
             type: 'link',
             label: 'CLI Wallet',
-            href:  'https://stardust.iota-community.org/cli-wallet/welcome'
+            href:  'cli-wallet/welcome'
           },
           'developer/iota-devnet-wallet'
         ],
