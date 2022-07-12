@@ -9,8 +9,8 @@ module.exports = {
         label: 'Explanations',
         collapsed: false,
         items: [
-            'explanations/nodes_101.md',
-            'explanations/security_101.md',
+            'explanations/nodes_101',
+            'explanations/security_101',
         ]
       },
       {
