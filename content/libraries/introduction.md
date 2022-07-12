@@ -11,15 +11,15 @@ The IOTA foundation maintains and develops a collection of frameworks building o
 
 ![Layer2-frameworks](/img/learn/layer2-frameworks.png)
 
-- [Streams](/participate/frameworks/streams):
+- [Streams](streams):
   Streams is an organizational tool for structuring and navigating secure data through the Tangle. Streams organizes data by ordering it in a uniform and interoperable structure.
-- [Identity](/participate/frameworks/identity):
+- [Identity](identity):
   The IOTA Identity framework implements the most common standards and patterns for Decentralized Identity in both a DLT agnostic and iota method specification manner.
-- [Smart Contracts](/participate/frameworks/smart-contracts):
+- [Smart Contracts](smart-contracts):
   The IOTA Smart Contract Protocol (ISCP) is the implementation of Smart Contracts on IOTA.
-- [Access](/participate/frameworks/access):
+- [Access](access):
   IOTA Access is an open-source framework used to build access control systems for smart devices. It is designed to work with any IoT resource, whether it's a vehicle, smart lock, or embedded sensor.
-- [Stronghold](/participate/frameworks/stronghold):
+- [Stronghold](stronghold):
   A library for secure secret handling and storage.
-- [Oracles](/participate/frameworks/oracles):
+- [Oracles](oracles):
   IOTA Oracles bring off-chain data to decentralized applications and smart contracts on the IOTA network.
