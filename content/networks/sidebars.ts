@@ -12,12 +12,12 @@ module.exports = {
                 {
                     type: 'link',
                     label: 'Chrysalis',
-                    href:  'https://stardust.iota-community.org/introduction/welcome'
+                    href:  'introduction/welcome'
                 },
                 {
                     type: 'link',
                     label: 'Stardust',
-                    href:  'https://stardust.iota-community.org/introduction/develop/welcome'
+                    href:  'introduction/develop/welcome'
                 }
             ],
         },
