@@ -127,7 +127,7 @@ export default function HomeLayout() {
               </div>
             </Link>
             <Link
-              to='learn/wallets/what-is-a-wallet'
+              to='wallets/what-is-a-wallet'
               className='about__card'
             >
               <div className='about__section'>
