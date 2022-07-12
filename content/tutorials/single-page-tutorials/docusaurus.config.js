@@ -101,7 +101,18 @@ module.exports = {
                 route: 'https://www.youtube.com/watch?v=P5HMgmY3DMM',
                 tags: ['video'],
             }
-        ]
+        ],
+        [
+            '@iota-wiki/plugin-tutorial',
+            {
+                title: 'Send Shimmer Tokens with wallet.rs',
+                description:
+                    'In this tutorial you will learn how to send Shimmer Tokens with wallet.rs.',
+                preview: 'send-shimmer-tokens-with-wallet-lib.png',
+                route: 'send-shimmer-tokens-with-wallet-lib',
+                tags: ['text'],
+            },
+        ],
     ],
     staticDirectories: [path.resolve(__dirname, './images')],
 };
