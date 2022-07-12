@@ -25,6 +25,8 @@
   --ifm-color-content: var(--ifm-color-emphasis-700);
   --ifm-color-content-inverse: var(--ifm-color-emphasis-300);
 
+  --ifm-container-width: 1340;
+
   --ifm-dropdown-link-color: var(--ifm-color-emphasis-700);
 
   --ifm-font-family-base: Inter, sans-serif;
