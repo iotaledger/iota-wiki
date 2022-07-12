@@ -163,11 +163,11 @@ module.exports = {
           items: [
             {
               label: 'What Is A Wallet?',
-              to: 'http://localhost:3000/wallets/what-is-a-wallet',
+              to: 'wallets/what-is-a-wallet',
             },
             {
               label: 'Official',
-              to: 'http://localhost:3000/wallets/firefly/general',
+              to: 'wallets/firefly/general',
             },
             {
               label: 'Third Party',
@@ -184,35 +184,35 @@ module.exports = {
           items: [
             {
               label: 'Overview',
-              to: 'http://localhost:3000/smart-contracts/overview',
+              to: 'smart-contracts/overview',
             },
             {
               label: 'Core Concepts',
-              to: 'http://localhost:3000/smart-contracts/guide/core_concepts/smart-contracts',
+              to: 'smart-contracts/guide/core_concepts/smart-contracts',
             },
             {
               label: 'ISC Chains And Nodes',
-              to: 'http://localhost:3000/smart-contracts/guide/chains_and_nodes/running-a-node',
+              to: 'smart-contracts/guide/chains_and_nodes/running-a-node',
             },
             {
               label: 'Wasm VM',
-              to: 'http://localhost:3000/smart-contracts/guide/wasm_vm/intro',
+              to: 'smart-contracts/guide/wasm_vm/intro',
             },
             {
               label: 'EVM',
-              to: 'http://localhost:3000/smart-contracts/guide/evm/introduction',
+              to: 'smart-contracts/guide/evm/introduction',
             },
             {
               label: 'Example Projects',
-              to: 'http://localhost:3000/smart-contracts/guide/example_projects/fair_roulette',
+              to: 'smart-contracts/guide/example_projects/fair_roulette',
             },
             {
               label: 'Development Tools',
-              to: 'http://localhost:3000/smart-contracts/guide/development_tools/docker_preconfigured',
+              to: 'smart-contracts/guide/development_tools/docker_preconfigured',
             },
             {
               label: 'Metrics',
-              to: 'http://localhost:3000/smart-contracts/metrics',
+              to: 'smart-contracts/metrics',
             },
           ],
         },
@@ -221,19 +221,19 @@ module.exports = {
           items: [
             {
               label: 'IOTA 1.5 Chrysalis',
-              to: 'http://localhost:3000/networks/iota-1.5-chrysalis',
+              to: 'networks/iota-1.5-chrysalis',
             },
             {
               label: 'IOTA 2.0 Coordicide',
-              to: 'http://localhost:3000/networks/iota-2.0-coordicide',
+              to: 'networks/iota-2.0-coordicide',
             },
             {
               label: 'Testnets',
-              to: 'http://localhost:3000/networks/testnets',
+              to: 'networks/testnets',
             },
             {
               label: 'Network Token Migration',
-              to: 'http://localhost:3000/networks/network-token-migration',
+              to: 'networks/network-token-migration',
             }
           ],
         },
@@ -242,31 +242,31 @@ module.exports = {
           items: [
             {
               label: 'Introduction',
-              to: 'http://localhost:3000/libraries/introduction',
+              to: 'libraries/introduction',
             },
             {
               label: 'Streams',
-              to: 'http://localhost:3000/libraries/streams',
+              to: 'libraries/streams',
             },
             {
               label: 'Identity',
-              to: 'http://localhost:3000/libraries/identity',
+              to: 'libraries/identity',
             },
             {
               label: 'Smart Contracts',
-              to: 'http://localhost:3000/libraries/smart-contracts',
+              to: 'libraries/smart-contracts',
             },
             {
               label: 'Access',
-              to: 'http://localhost:3000/libraries/access',
+              to: 'libraries/access',
             },
             {
               label: 'Stronghold',
-              to: 'http://localhost:3000/libraries/stronghold',
+              to: 'libraries/stronghold',
             },
             {
               label: 'Oracles',
-              to: 'http://localhost:3000/libraries/oracles',
+              to: 'libraries/oracles',
             },
           ],
         },
@@ -275,23 +275,23 @@ module.exports = {
           items: [
             {
               label: 'About Nodes',
-              to: 'http://localhost:3000/nodes/about-nodes',
+              to: 'nodes/about-nodes',
             },
             {
               label: 'Become A Node Operator',
-              to: 'http://localhost:3000/nodes/become-a-node-operator',
+              to: 'nodes/become-a-node-operator',
             },
             {
               label: 'Node Software',
-              to: 'http://localhost:3000/nodes/node-software',
+              to: 'nodes/node-software',
             },
             {
               label: 'API Reference',
-              to: 'http://localhost:3000/nodes/api_reference',
+              to: 'nodes/api_reference',
             },
             {
               label: 'Explanations',
-              to: 'http://localhost:3000/nodes/explanations/nodes_101',
+              to: 'nodes/explanations/nodes_101',
             },
             {
               label: 'Layer One',
@@ -308,11 +308,11 @@ module.exports = {
           items: [
             {
               label: 'Research Outline',
-              to: 'http://localhost:3000/research/research-outline',
+              to: 'research/research-outline',
             },
             {
               label: 'Research Papers',
-              to: 'http://localhost:3000/research/research-papers',
+              to: 'research/research-papers',
             }, 
             {
               label: 'Coordicide Specs',
