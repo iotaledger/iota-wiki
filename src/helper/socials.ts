@@ -1,12 +1,23 @@
+import {
+  Youtube,
+  Github,
+  Discord,
+  Twitter,
+  Reddit,
+  LinkedIn,
+  Instagram,
+  Facebook
+} from '../icons'
+
 const map = [
-  { name: 'Youtube', icon: '\ue907' },
-  { name: 'GitHub', icon: '\ue902' },
-  { name: 'Discord', icon: '\ue900' },
-  { name: 'Twitter', icon: '\ue906' },
-  { name: 'Reddit', icon: '\ue905' },
-  { name: 'LinkedIn', icon: '\ue904' },
-  { name: 'Instagram', icon: '\ue903' },
-  { name: 'Facebook', icon: '\ue901' },
+  { name: 'Youtube', Icon: Youtube },
+  { name: 'GitHub', Icon: Github },
+  { name: 'Discord', Icon: Discord },
+  { name: 'Twitter', Icon: Twitter },
+  { name: 'Reddit', Icon: Reddit },
+  { name: 'LinkedIn', Icon: LinkedIn },
+  { name: 'Instagram', Icon: Instagram },
+  { name: 'Facebook', Icon: Facebook },
 ];
 
 // Returns an object with icon and name for given url
