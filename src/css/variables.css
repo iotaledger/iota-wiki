@@ -154,3 +154,15 @@ html[data-theme='dark'] .DocSearch {
   --docsearch-logo-color: var(--docsearch-muted-color);
   --docsearch-muted-color: var(--ifm-color-emphasis-400);
 }
+
+@media (max-width: 1160px) {
+  :root {
+    --ifm-navbar-item-padding-horizontal: 1rem;
+  }
+}
+
+@media (max-width: 1040px) {
+  :root {
+    --ifm-navbar-item-padding-horizontal: 0.8rem;
+  }
+}

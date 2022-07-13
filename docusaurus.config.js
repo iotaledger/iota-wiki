@@ -113,20 +113,12 @@ module.exports = {
           title: 'About IOTA',
           items: [
             {
-              label: 'About IOTA',
+              label: 'Introduction',
               to: 'learn/about-iota/an-introduction-to-iota',
             },
             {
-              label: 'IOTA Token',
+              label: 'IOTA token',
               to: 'learn/iota-token/buying-iota',
-            },
-            {
-              label: 'Media Library',
-              to: 'learn/media-library/infographics',
-            },
-            {
-              label: 'Future of IOTA',
-              to: 'learn/future/future-of-iota',
             },
             {
               label: 'Glossary',
@@ -137,7 +129,7 @@ module.exports = {
               to: 'learn/faqs',
             },
             {
-              label: 'Use Cases',
+              label: 'Use cases',
               to: 'learn/use-cases/data-confidence',
             },
             {
@@ -149,70 +141,8 @@ module.exports = {
               href: 'https://www.iota.org/solutions/partnerships',
             },
             {
-              label: 'The Community',
+              label: 'The community',
               to: 'learn/the-community/discord',
-            },
-            {
-              label: 'Contribute To Wiki',
-              to: 'learn/contribute-to-wiki/welcome',
-            }
-          ],
-        },
-        {
-          title: 'Wallets',
-          items: [
-            {
-              label: 'What Is A Wallet?',
-              to: 'wallets/what-is-a-wallet',
-            },
-            {
-              label: 'Official',
-              to: 'wallets/firefly/general',
-            },
-            {
-              label: 'Third Party',
-              href: 'https://tanglepay.com/',
-            },
-            {
-              label: 'Developer',
-              href: 'cli-wallet/welcome',
-            },
-          ],
-        },
-        {
-          title: 'Smart Contracts',
-          items: [
-            {
-              label: 'Overview',
-              to: 'smart-contracts/overview',
-            },
-            {
-              label: 'Core Concepts',
-              to: 'smart-contracts/guide/core_concepts/smart-contracts',
-            },
-            {
-              label: 'ISC Chains And Nodes',
-              to: 'smart-contracts/guide/chains_and_nodes/running-a-node',
-            },
-            {
-              label: 'Wasm VM',
-              to: 'smart-contracts/guide/wasm_vm/intro',
-            },
-            {
-              label: 'EVM',
-              to: 'smart-contracts/guide/evm/introduction',
-            },
-            {
-              label: 'Example Projects',
-              to: 'smart-contracts/guide/example_projects/fair_roulette',
-            },
-            {
-              label: 'Development Tools',
-              to: 'smart-contracts/guide/development_tools/docker_preconfigured',
-            },
-            {
-              label: 'Metrics',
-              to: 'smart-contracts/metrics',
             },
           ],
         },
@@ -232,7 +162,7 @@ module.exports = {
               to: 'networks/testnets',
             },
             {
-              label: 'Network Token Migration',
+              label: 'Token migration',
               to: 'networks/network-token-migration',
             }
           ],
@@ -253,7 +183,7 @@ module.exports = {
               to: 'libraries/identity',
             },
             {
-              label: 'Smart Contracts',
+              label: 'Smart contracts',
               to: 'libraries/smart-contracts',
             },
             {
@@ -271,61 +201,44 @@ module.exports = {
           ],
         },
         {
-          title: 'Nodes',
+          title: 'Smart contracts',
           items: [
             {
-              label: 'About Nodes',
-              to: 'nodes/about-nodes',
+              label: 'Overview',
+              to: 'smart-contracts/overview',
             },
             {
-              label: 'Become A Node Operator',
-              to: 'nodes/become-a-node-operator',
+              label: 'Core concepts',
+              to: 'smart-contracts/guide/core_concepts/smart-contracts',
             },
             {
-              label: 'Node Software',
-              to: 'nodes/node-software',
+              label: 'Chains and nodes',
+              to: 'smart-contracts/guide/chains_and_nodes/running-a-node',
             },
             {
-              label: 'API Reference',
-              to: 'nodes/api_reference',
+              label: 'Wasm VM',
+              to: 'smart-contracts/guide/wasm_vm/intro',
             },
             {
-              label: 'Explanations',
-              to: 'nodes/explanations/nodes_101',
+              label: 'Ethereum VM',
+              to: 'smart-contracts/guide/evm/introduction',
             },
             {
-              label: 'Layer One',
-              href: 'hornet/welcome',
+              label: 'Example projects',
+              to: 'smart-contracts/guide/example_projects/fair_roulette',
             },
             {
-              label: 'Layer Two',
-              href: 'https://github.com/iotaledger/inx-indexer',
+              label: 'Tools',
+              to: 'smart-contracts/guide/development_tools/docker_preconfigured',
+            },
+            {
+              label: 'Metrics',
+              to: 'smart-contracts/metrics',
             },
           ],
         },
         {
-          title: 'Research',
-          items: [
-            {
-              label: 'Research Outline',
-              to: 'research/research-outline',
-            },
-            {
-              label: 'Research Papers',
-              to: 'research/research-papers',
-            }, 
-            {
-              label: 'Coordicide Specs',
-              href: 'https://wiki.iota.org/IOTA-2.0-Research-Specifications/Preface',
-            }, 
-            {
-              label: 'GoShimmer',
-              href: 'https://wiki.iota.org/goshimmer/welcome',
-            },
-          ],
-        },
-        {
-          title: 'WIKI',
+          title: 'Wiki',
           items: [
             {
               label: 'Team',
@@ -340,7 +253,7 @@ module.exports = {
               href: 'https://docusaurus.io',
             },
             {
-              label: 'Community Blog',
+              label: 'Community blog',
               to: 'blog',
             },
             {
