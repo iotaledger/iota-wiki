@@ -206,8 +206,11 @@ article .card {
 
 /* Effectively center the logo in the navbar */
 @media (max-width: 996px) {
-  .navbar__items {
-    justify-content: space-between;
+  .navbar__brand {
+    margin-left: auto;
+    margin-right: auto;
+    /* Because of absolutely placed search icon */
+    padding-right: 28px;
   }
 }
 
