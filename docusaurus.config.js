@@ -71,166 +71,46 @@ module.exports = {
       },
       items: [
         {
-          label: 'Learn',
+          label: 'About IOTA',
           to: 'learn/about-iota/an-introduction-to-iota',
           activeBaseRegex: '^/learn/.*',
         },
         {
-          label: 'Participate',
-          to: 'participate/support-the-network/about-nodes',
-          activeBaseRegex: '^/participate/.*',
+          label: 'Wallets',
+          to: 'wallets/what-is-a-wallet',
+          activeBaseRegex: '^/wallets/.*',
         },
         {
-          label: 'Build',
-          to: '#',
-          layout: [
-            '0 1 3 4',
-            '0 1 3 4',
-            '5 1 3 2',
-            '5 1 3 2',
-            '5 1 3 2',
-            '. 1 3 2',
-            '. 1 3 2',
-          ],
-          items_: [
-            {
-              label: 'Getting Started',
-              items: [
-                {
-                  label: 'Getting Started',
-                  sublabel: 'IOTA development basics',
-                  to: 'introduction/welcome',
-                  icon: '\ue902',
-                  activeBaseRegex: '^/introduction/.*',
-                },
-              ],
-            },
-            {
-              label: 'Nodes & INX Plugins',
-              items: [
-                {
-                  label: 'Hornet Node',
-                  sublabel: 'IOTA node written in Go',
-                  to: 'hornet/welcome',
-                  icon: '\ue904',
-                  activeBaseRegex: '^/hornet/.*',
-                },
-                {
-                  label: 'Bee Node',
-                  sublabel: 'IOTA node written in Rust',
-                  to: 'bee/welcome',
-                  icon: '\ue900',
-                  activeBaseRegex: '^/bee/.*',
-                },
-                {
-                  label: 'Chronicle Permanode',
-                  sublabel: 'IOTA permanode',
-                  to: 'chronicle.rs/welcome',
-                  icon: '\ue90c',
-                  activeBaseRegex: '^/chronicle.rs/.*',
-                },
-              ],
-            },
-            {
-              label: 'Coordicide (IOTA 2.0)',
-              items: [
-                {
-                  label: 'Coordicide Specs',
-                  sublabel: 'Decentralizing IOTA',
-                  to: 'IOTA-2.0-Research-Specifications/Preface',
-                  icon: '\ue906',
-                  activeBaseRegex: 'IOTA-2.0-Research-Specifications/.*',
-                },
-                {
-                  label: 'GoShimmer Node',
-                  sublabel: 'IOTA 2.0 node',
-                  to: 'goshimmer/welcome',
-                  icon: '\ue903',
-                  activeBaseRegex: '^/goshimmer/.*',
-                },
-              ],
-            },
-            {
-              label: 'Libraries',
-              items: [
-                {
-                  label: 'Client',
-                  sublabel: 'Interact with the IOTA network',
-                  to: 'iota.rs/welcome',
-                  icon: '\ue907',
-                  activeBaseRegex: '^/iota.rs/.*',
-                },
-                {
-                  label: 'Wallet',
-                  sublabel: 'Build IOTA wallets',
-                  to: 'wallet.rs/welcome',
-                  icon: '\ue90a',
-                  activeBaseRegex: '^/wallet.rs/.*',
-                },
-                {
-                  label: 'Stronghold',
-                  sublabel: 'Handle secrets securely',
-                  to: 'stronghold.rs/getting_started',
-                  icon: '\ue909',
-                  activeBaseRegex: '^/stronghold.rs/.*',
-                },
-                {
-                  label: 'Identity',
-                  sublabel: 'Identity framework',
-                  to: 'identity.rs/introduction',
-                  icon: '\ue905',
-                  activeBaseRegex: '^/identity.rs/.*',
-                },
-                {
-                  label: 'Streams',
-                  sublabel: 'Share data securely',
-                  to: 'streams/welcome',
-                  icon: '\ue908',
-                  activeBaseRegex: '^/streams/.*',
-                },
-              ],
-            },
-            {
-              label: 'Smart Contracts',
-              items: [
-                {
-                  label: 'Wasp Node',
-                  sublabel: 'Smart contract node',
-                  to: 'smart-contracts/overview',
-                  icon: '\ue90b',
-                  activeBaseRegex: '^/smart-contracts/.*',
-                },
-              ],
-            },
-            {
-              label: 'Integrations & Tools',
-              items: [
-                {
-                  label: 'Streams and Identity',
-                  sublabel: 'Integrate IOTA seamlessly',
-                  to: 'integration-services/welcome',
-                  icon: '\ue90d',
-                  activeBaseRegex: '^/integration-services/.*',
-                },
-                {
-                  label: 'CLI Wallet',
-                  sublabel: 'CLI Wallet for Shimmer',
-                  to: 'cli-wallet/welcome',
-                  icon: '\ue90a',
-                  activeBaseRegex: '^/cli-wallet/.*',
-                },
-              ],
-            },
-          ],
+          label: 'Smart Contracts',
+          to: 'smart-contracts/overview',
+          activeBaseRegex: '^/smart-contracts/.*',
         },
-        { to: '/blog', label: 'Community Blog', position: 'right' },
-        { to: '/team', label: 'Team', position: 'right' },
+        {
+          label: 'Networks',
+          to: 'networks/iota-1.5-chrysalis',
+          activeBaseRegex: '^/networks/.*',
+        },
+        {
+          label: 'Libraries',
+          to: 'libraries/introduction',
+          activeBaseRegex: '^/libraries/.*',
+        },
+        {
+          label: 'Nodes',
+          to: 'nodes/about-nodes',
+          activeBaseRegex: '^/nodes/.*',
+        },
+        {
+          label: 'Research',
+          to: 'research/research-outline',
+          activeBaseRegex: '^/research/.*',
+        }
       ],
     },
     footer: {
       links: [
         {
-          title: 'LEARN',
+          title: 'About IOTA',
           items: [
             {
               label: 'About IOTA',
@@ -241,74 +121,206 @@ module.exports = {
               to: 'learn/iota-token/buying-iota',
             },
             {
-              label: 'Wallets',
-              to: 'learn/wallets/what-is-a-wallet',
+              label: 'Media Library',
+              to: 'learn/media-library/infographics',
             },
             {
-              label: 'Networks',
-              to: 'learn/networks/iota-1.5-chrysalis',
+              label: 'Future of IOTA',
+              to: 'learn/future/future-of-iota',
             },
             {
               label: 'Glossary',
               to: 'learn/glossary',
             },
             {
-              label: 'Research',
-              to: 'learn/research/research-outline',
+              label: 'FAQ\'s',
+              to: 'learn/faqs',
             },
             {
-              label: 'Future of IOTA',
-              to: 'learn/future/future-of-iota',
-            },
-          ],
-        },
-        {
-          title: 'PARTICIPATE',
-          items: [
-            {
-              label: 'Support the network',
-              to: 'participate/support-the-network/about-nodes',
+              label: 'Use Cases',
+              to: 'learn/use-cases/data-confidence',
             },
             {
-              label: 'The Community',
-              to: 'participate/the-community/discord',
+              label: 'Funding',
+              to: 'learn/funding/edf-funding',
             },
             {
               label: 'Partnerships',
               href: 'https://www.iota.org/solutions/partnerships',
             },
             {
-              label: 'Funding',
-              to: 'participate/funding/edf-funding',
+              label: 'The Community',
+              to: 'learn/the-community/discord',
             },
             {
-              label: 'Use Cases',
-              to: 'participate/use-cases/industry-applications',
+              label: 'Contribute To Wiki',
+              to: 'learn/contribute-to-wiki/welcome',
+            }
+          ],
+        },
+        {
+          title: 'Wallets',
+          items: [
+            {
+              label: 'What Is A Wallet?',
+              to: 'wallets/what-is-a-wallet',
             },
             {
-              label: 'Frameworks',
-              to: 'participate/frameworks/introduction',
+              label: 'Official',
+              to: 'wallets/firefly/general',
+            },
+            {
+              label: 'Third Party',
+              href: 'https://tanglepay.com/',
+            },
+            {
+              label: 'Developer',
+              href: 'cli-wallet/welcome',
             },
           ],
         },
         {
-          title: 'BUILD',
+          title: 'Smart Contracts',
           items: [
             {
-              label: 'Getting Started',
-              to: 'build/welcome',
+              label: 'Overview',
+              to: 'smart-contracts/overview',
             },
             {
-              label: 'Fundamentals',
-              to: 'build/fundamentals/cryptography',
+              label: 'Core Concepts',
+              to: 'smart-contracts/guide/core_concepts/smart-contracts',
             },
             {
-              label: 'Exchange Integration',
-              to: 'build/exchange-integration/exchange-integration-guide',
+              label: 'ISC Chains And Nodes',
+              to: 'smart-contracts/guide/chains_and_nodes/running-a-node',
             },
             {
-              label: 'Tutorials',
-              to: 'build/tutorials/twitch',
+              label: 'Wasm VM',
+              to: 'smart-contracts/guide/wasm_vm/intro',
+            },
+            {
+              label: 'EVM',
+              to: 'smart-contracts/guide/evm/introduction',
+            },
+            {
+              label: 'Example Projects',
+              to: 'smart-contracts/guide/example_projects/fair_roulette',
+            },
+            {
+              label: 'Development Tools',
+              to: 'smart-contracts/guide/development_tools/docker_preconfigured',
+            },
+            {
+              label: 'Metrics',
+              to: 'smart-contracts/metrics',
+            },
+          ],
+        },
+        {
+          title: 'Networks',
+          items: [
+            {
+              label: 'IOTA 1.5 Chrysalis',
+              to: 'networks/iota-1.5-chrysalis',
+            },
+            {
+              label: 'IOTA 2.0 Coordicide',
+              to: 'networks/iota-2.0-coordicide',
+            },
+            {
+              label: 'Testnets',
+              to: 'networks/testnets',
+            },
+            {
+              label: 'Network Token Migration',
+              to: 'networks/network-token-migration',
+            }
+          ],
+        },
+        {
+          title: 'Libraries',
+          items: [
+            {
+              label: 'Introduction',
+              to: 'libraries/introduction',
+            },
+            {
+              label: 'Streams',
+              to: 'libraries/streams',
+            },
+            {
+              label: 'Identity',
+              to: 'libraries/identity',
+            },
+            {
+              label: 'Smart Contracts',
+              to: 'libraries/smart-contracts',
+            },
+            {
+              label: 'Access',
+              to: 'libraries/access',
+            },
+            {
+              label: 'Stronghold',
+              to: 'libraries/stronghold',
+            },
+            {
+              label: 'Oracles',
+              to: 'libraries/oracles',
+            },
+          ],
+        },
+        {
+          title: 'Nodes',
+          items: [
+            {
+              label: 'About Nodes',
+              to: 'nodes/about-nodes',
+            },
+            {
+              label: 'Become A Node Operator',
+              to: 'nodes/become-a-node-operator',
+            },
+            {
+              label: 'Node Software',
+              to: 'nodes/node-software',
+            },
+            {
+              label: 'API Reference',
+              to: 'nodes/api_reference',
+            },
+            {
+              label: 'Explanations',
+              to: 'nodes/explanations/nodes_101',
+            },
+            {
+              label: 'Layer One',
+              href: 'hornet/welcome',
+            },
+            {
+              label: 'Layer Two',
+              href: 'https://github.com/iotaledger/inx-indexer',
+            },
+          ],
+        },
+        {
+          title: 'Research',
+          items: [
+            {
+              label: 'Research Outline',
+              to: 'research/research-outline',
+            },
+            {
+              label: 'Research Papers',
+              to: 'research/research-papers',
+            }, 
+            {
+              label: 'Coordicide Specs',
+              href: 'https://wiki.iota.org/IOTA-2.0-Research-Specifications/Preface',
+            }, 
+            {
+              label: 'GoShimmer',
+              href: 'https://wiki.iota.org/goshimmer/welcome',
             },
           ],
         },
@@ -432,10 +444,79 @@ module.exports = {
     [
       '@docusaurus/plugin-content-docs',
       {
-        id: 'participate',
-        path: 'internal/participate',
-        routeBasePath: 'participate',
-        sidebarPath: require.resolve('./internal/participate/sidebars.ts'),
+        id: 'wallets',
+        path: 'content/wallets',
+        routeBasePath: 'wallets',
+        sidebarPath: require.resolve('./content/wallets/sidebars.ts'),
+
+        // General config
+        editUrl: 'https://github.com/iota-community/iota-wiki/edit/main/',
+        remarkPlugins: [
+          require('remark-code-import'),
+          require('remark-import-partial'),
+        ],
+        showLastUpdateTime: true,
+      },
+    ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'networks',
+        path: 'content/networks',
+        routeBasePath: 'networks',
+        sidebarPath: require.resolve('./content/networks/sidebars.ts'),
+
+        // General config
+        editUrl: 'https://github.com/iota-community/iota-wiki/edit/main/',
+        remarkPlugins: [
+          require('remark-code-import'),
+          require('remark-import-partial'),
+        ],
+        showLastUpdateTime: true,
+      },
+    ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'libraries',
+        path: 'content/libraries',
+        routeBasePath: 'libraries',
+        sidebarPath: require.resolve('./content/libraries/sidebars.ts'),
+
+        // General config
+        editUrl: 'https://github.com/iota-community/iota-wiki/edit/main/',
+        remarkPlugins: [
+          require('remark-code-import'),
+          require('remark-import-partial'),
+        ],
+        showLastUpdateTime: true,
+      },
+    ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'nodes',
+        //docItemComponent: "@theme/ApiItem",
+        path: 'content/nodes',
+        routeBasePath: 'nodes',
+        sidebarPath: require.resolve('./content/nodes/sidebars.ts'),
+
+        // General config
+        editUrl: 'https://github.com/iota-community/iota-wiki/edit/main/',
+        remarkPlugins: [
+          require('remark-code-import'),
+          require('remark-import-partial'),
+        ],
+        showLastUpdateTime: true,
+      },
+    ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'research',
+        path: 'content/research',
+        routeBasePath: 'research',
+        sidebarPath: require.resolve('./content/research/sidebars.ts'),
 
         // General config
         editUrl: 'https://github.com/iota-community/iota-wiki/edit/main/',

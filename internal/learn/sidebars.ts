@@ -22,46 +22,9 @@ module.exports = {
     },
     {
       type: 'category',
-      label: 'Wallets',
-      collapsed: true,
-      items: [
-        'wallets/what-is-a-wallet',
-        {
-          type: 'category',
-          label: 'Firefly',
-          collapsed: true,
-          items: [
-            'wallets/firefly/general',
-            'wallets/firefly/user-guide',
-            'wallets/firefly/user-guide-ledger',
-            'wallets/firefly/faq-and-troubleshooting',
-          ],
-        },
-        'wallets/iota-devnet-wallet',
-      ],
-    },
-    {
-      type: 'category',
-      label: 'Networks',
-      collapsed: true,
-      items: [
-        'networks/iota-1.5-chrysalis',
-        'networks/iota-2.0-coordicide',
-        'networks/testnets',
-        'networks/network-token-migration',
-      ],
-    },
-    {
-      type: 'category',
       label: 'Media Library',
       collapsed: true,
       items: ['media-library/infographics','media-library/project-presentations', 'media-library/videos'],
-    },
-    {
-      type: 'category',
-      label: 'Research',
-      collapsed: true,
-      items: ['research/research-outline', 'research/research-papers'],
     },
     {
       type: 'category',
@@ -93,5 +56,132 @@ module.exports = {
     },
     'glossary',
     'faqs',
+    {
+      type: 'category',
+      label: 'Use Cases',
+      collapsed: true,
+      items: [
+        'use-cases/data-confidence',
+        'use-cases/eco-social-projects',
+        'use-cases/healthcare',
+        'use-cases/industry-applications',
+        'use-cases/mobility',
+        'use-cases/real-estate',
+        'use-cases/trade-and-supply-chain',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Funding',
+      collapsed: true,
+      items: ['funding/edf-funding', 'funding/community-treasury'],
+    },
+    {
+      type: 'link',
+      label: 'Partnerships',
+      href: 'https://www.iota.org/solutions/partnerships',
+    },
+    {
+      type: 'category',
+      label: 'The Community',
+      collapsed: true,
+      items: [
+        'the-community/discord',
+        'the-community/x-teams',
+        'the-community/git-hub',
+        'the-community/social-media',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Contribute To Wiki',
+      collapsed: true,
+      items: [
+        'contribute-to-wiki/welcome',
+        {
+          type: 'category',
+          label: 'For Community',
+          items: ['contribute-to-wiki/for_community/community_guide'],
+        },
+        {
+          type: 'category',
+          label: 'For Developers',
+          items: [
+            {
+              type: 'doc',
+              label: "Developer's Guide",
+              id: 'contribute-to-wiki/for_devs/developer_guide',
+            },
+            {
+              type: 'category',
+              label: 'Toolbox',
+              items: [
+                {
+                  type: 'doc',
+                  label: 'Introduction',
+                  id: 'contribute-to-wiki/for_devs/toolbox/toolbox',
+                },
+                {
+                  type: 'doc',
+                  label: 'The Right Questions',
+                  id: 'contribute-to-wiki/for_devs/toolbox/questions',
+                },
+                {
+                  type: 'doc',
+                  label: 'Mind Map',
+                  id: 'contribute-to-wiki/for_devs/toolbox/mind_map',
+                },
+              ],
+            },
+            {
+              type: 'doc',
+              label: 'Request a Technical Writer',
+              id: 'contribute-to-wiki/for_devs/request_tw',
+            },
+          ],
+        },
+        {
+          type: 'category',
+          label: 'For Writers',
+          items: [
+            {
+              type: 'doc',
+              label: "Technical Writer's Guide",
+              id: 'contribute-to-wiki/for_tws/writer_guide',
+            },
+            {
+              type: 'doc',
+              label: 'Structure',
+              id: 'contribute-to-wiki/for_tws/structure',
+            },
+            {
+              type: 'doc',
+              label: 'Matter',
+              id: 'contribute-to-wiki/for_tws/matter',
+            },
+            {
+              type: 'doc',
+              label: 'Form',
+              id: 'contribute-to-wiki/for_tws/form',
+            },
+            {
+              type: 'doc',
+              label: 'Mechanics',
+              id: 'contribute-to-wiki/for_tws/mechanics',
+            },
+            {
+              type: 'doc',
+              label: 'Formatting',
+              id: 'contribute-to-wiki/for_tws/formatting',
+            },
+            {
+              type: 'doc',
+              label: 'Third-Party Works',
+              id: 'contribute-to-wiki/for_tws/third-party_works',
+            },
+          ],
+        },
+      ],
+    },
   ],
 };
