@@ -14,15 +14,15 @@ export interface SocialsConfig extends ThemeConfig {
 }
 
 function SocialLink({ url, backgroundColor }: Social) {
-  const data = get_socials_data(url);
+  const {name, Icon} = get_socials_data(url);
   return (
     <a
       className='social__link padding-horiz--sm padding-vert--md'
       style={{ backgroundColor: backgroundColor }}
       href={url}
     >
-      <div className='social__font social__icon'>{data.icon}</div>
-      <div className='social__title'>{data.name}</div>
+      <Icon className='social__icon' />
+      <div className='social__title'>{name}</div>
     </a>
   );
 }

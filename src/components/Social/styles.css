@@ -2,13 +2,9 @@
   display: flex;
 }
 
-.social__font {
-  color: var(--ifm-color-gray-0);
-  font-family: 'socials_font' !important;
-}
-
 .social__icon {
-  font-size: larger;
+  fill: var(--ifm-color-gray-0);
+  height: 1.2rem;
   margin-right: 0.5rem;
 }
 
