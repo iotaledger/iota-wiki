@@ -14263,6 +14263,7 @@ plugin-image-zoom@flexanalytics/plugin-image-zoom:
   resolution: "stronghold@workspace:content/build/stronghold.rs/develop/documentation"
   dependencies:
     "@iota-community/iota-wiki-cli": "iota-community/iota-wiki-cli#v2"
+    raw-loader: ^4.0.2
     remark-code-import: ^0.3.0
     remark-import-partial: ^0.0.2
     remark-remove-comments: ^0.2.0
