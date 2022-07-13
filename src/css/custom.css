@@ -264,8 +264,8 @@ ul ul .table-of-contents__link {
 }
 
 .team__icon {
-  font-family: 'socials_font' !important;
-  font-size: 1rem;
+  fill: var(--ifm-color-primary);
+  height: 1rem;
   display: flex;
   align-items: center;
   justify-content: center;

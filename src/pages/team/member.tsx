@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from '@docusaurus/Link';
 import get_socials_data from '../../helper/socials';
 
 interface SocialLinkProps {
@@ -13,12 +14,12 @@ export interface TeamMemberProps {
 }
 
 function SocialLink({ link }: SocialLinkProps) {
-  const data = get_socials_data(link);
+  const { Icon } = get_socials_data(link);
 
   return (
-    <a className='team__icon margin-horiz--sm' href={link}>
-      <div>{data.icon}</div>
-    </a>
+    <Link className='margin-horiz--sm' to={link}>
+      <Icon className='team__icon' />
+    </Link>
   );
 }
 
