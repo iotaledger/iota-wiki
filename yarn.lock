@@ -8978,6 +8978,7 @@ __metadata:
     remark-import-partial: ^0.0.2
     remark-math: 3
     remark-remove-comments: ^0.2.0
+    svgo: ^2.8.0
     typescript: ^4.5.4
     url-loader: ^4.1.1
     webpack: ^4.0.0
@@ -14296,6 +14297,7 @@ plugin-image-zoom@flexanalytics/plugin-image-zoom:
   resolution: "stronghold@workspace:content/build/stronghold.rs/develop/documentation"
   dependencies:
     "@iota-community/iota-wiki-cli": "iota-community/iota-wiki-cli#v2"
+    raw-loader: ^4.0.2
     remark-code-import: ^0.3.0
     remark-import-partial: ^0.0.2
     remark-remove-comments: ^0.2.0
@@ -14394,7 +14396,7 @@ plugin-image-zoom@flexanalytics/plugin-image-zoom:
   languageName: node
   linkType: hard
 
-"svgo@npm:^2.5.0, svgo@npm:^2.7.0":
+"svgo@npm:^2.5.0, svgo@npm:^2.7.0, svgo@npm:^2.8.0":
   version: 2.8.0
   resolution: "svgo@npm:2.8.0"
   dependencies:
