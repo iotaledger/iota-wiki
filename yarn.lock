@@ -7946,7 +7946,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "goshimmer@workspace:content/build/goshimmer/develop/documentation"
   dependencies:
-    iota-wiki-cli: "iota-community/iota-wiki-cli#v2"
+    "@iota-community/iota-wiki-cli": "iota-community/iota-wiki-cli#v2"
   languageName: unknown
   linkType: soft
 
