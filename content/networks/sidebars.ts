@@ -12,12 +12,12 @@ module.exports = {
                 {
                     type: 'link',
                     label: 'Chrysalis',
-                    href:  'introduction/welcome'
+                    href:  '/introduction/welcome'
                 },
                 {
                     type: 'link',
                     label: 'Stardust',
-                    href:  'introduction/develop/welcome'
+                    href:  '/introduction/develop/welcome'
                 }
             ],
         },

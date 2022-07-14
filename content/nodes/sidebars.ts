@@ -21,12 +21,12 @@ module.exports = {
               {
                   type: 'link',
                   label: 'Hornet',
-                  href: 'hornet/welcome',  
+                  href: '/hornet/welcome',  
               },
               {
                   type: 'link',
                   label: 'Bee',
-                  href: 'bee/welcome',  
+                  href: '/bee/welcome',  
               },
           ],
       },
@@ -60,12 +60,12 @@ module.exports = {
             {
                 type: 'link',
                 label: 'Wasp',
-                href: 'smart-contracts/guide/chains_and_nodes/running-a-node',
+                href: '/smart-contracts/guide/chains_and_nodes/running-a-node',
             },
             {
                 type: 'link',
                 label: 'Chronicle',
-                href: 'chronicle.rs/welcome',   
+                href: '/chronicle.rs/welcome',   
             },
         ],
       },
