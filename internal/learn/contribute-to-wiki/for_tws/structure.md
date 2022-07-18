@@ -15,7 +15,7 @@ Articles for users belong either to the [Learn](/learn/about-iota/an-introductio
 
 :::note
 
-For software project documentation, see [additional guidelines](../structure/overview.md).
+For software project documentation, see [additional guidelines](../reference/structure/overview.md).
 
 :::
 
