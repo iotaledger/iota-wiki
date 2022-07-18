@@ -8988,6 +8988,17 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"iotajs@workspace:content/build/iota.js/develop/documentation":
+  version: 0.0.0-use.local
+  resolution: "iotajs@workspace:content/build/iota.js/develop/documentation"
+  dependencies:
+    "@iota-community/iota-wiki-cli": "iota-community/iota-wiki-cli#v2"
+    raw-loader: ^4.0.2
+    remark-code-import: ^0.3.0
+    remark-import-partial: ^0.0.2
+  languageName: unknown
+  linkType: soft
+
 "ip@npm:^1.1.5":
   version: 1.1.8
   resolution: "ip@npm:1.1.8"
