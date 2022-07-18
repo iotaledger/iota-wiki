@@ -1,6 +1,6 @@
 ---
 keywords:
-- how to
+  - how to
 description: How to setup documentation of a software project.
 image: /img/iota-wiki.png
 ---

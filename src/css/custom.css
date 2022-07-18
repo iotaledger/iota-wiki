@@ -104,11 +104,11 @@ article .card {
   right: 10px;
   top: 10px;
   display: block;
-  transition: transform 300ms; 
+  transition: transform 300ms;
 }
 
 .Collapsible__trigger.is-open:after {
-    transform: rotateZ(180deg); 
+  transform: rotateZ(180deg);
 }
 
 .footer {
@@ -148,7 +148,7 @@ article .card {
 @media (max-width: 966px) {
   .footer__col {
     width: 14rem;
-  }  
+  }
 }
 
 .footer__logo {

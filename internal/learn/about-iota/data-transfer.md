@@ -3,7 +3,7 @@ title: Data Transfer
 description: A major use-case for the IOTA Technology is Data Transfer. Learn how it works.
 image: /img/iota-wiki.png
 keywords:
-- explanation
+  - explanation
 ---
 
 # Data Transfer
@@ -160,7 +160,7 @@ A message containing only an **indexation payload** (Data) can be sent without a
 
 The message is specified by an **index**, which will make it possible for any users to find this message and the containing Data by searching the network for this index.
 
-As you may have recognized, a message in the IOTA network does not need a specific receiver. All messages in the network are propagated to all nodes and are visible to every network user. Also, the data payload (if not encrypted by the sender) is visible for everyone that sees the message. If you want to send a data message using the IOTA protocol that should only be visible to a selected group of receivers, the IOTA Streams framework is built precisely for this purpose. It will enable a direct gateway to receivers and encrypt the information from everyone else in the network. 
+As you may have recognized, a message in the IOTA network does not need a specific receiver. All messages in the network are propagated to all nodes and are visible to every network user. Also, the data payload (if not encrypted by the sender) is visible for everyone that sees the message. If you want to send a data message using the IOTA protocol that should only be visible to a selected group of receivers, the IOTA Streams framework is built precisely for this purpose. It will enable a direct gateway to receivers and encrypt the information from everyone else in the network.
 
 A **data message**, which is defined as an indexation payload, can be easily found by everyone who knows that message's index. If you want to send an arbitrary message or sensitive data, you need to tell the receiver which index you are using. He can observe the network for all messages containing this index using an explorer.
 

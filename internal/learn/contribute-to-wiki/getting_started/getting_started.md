@@ -1,6 +1,6 @@
 ---
 keywords:
-- getting started
+  - getting started
 description: How to start editing IOTA Wiki pages.
 image: /img/iota-wiki.png
 ---

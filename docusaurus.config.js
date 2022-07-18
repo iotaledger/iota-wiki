@@ -104,7 +104,7 @@ module.exports = {
           label: 'Research',
           to: 'research/research-outline',
           activeBaseRegex: '^/research/.*',
-        }
+        },
       ],
     },
     footer: {
@@ -125,7 +125,7 @@ module.exports = {
               to: 'learn/glossary',
             },
             {
-              label: 'FAQ\'s',
+              label: "FAQ's",
               to: 'learn/faqs',
             },
             {
@@ -164,7 +164,7 @@ module.exports = {
             {
               label: 'Token migration',
               to: 'networks/network-token-migration',
-            }
+            },
           ],
         },
         {
