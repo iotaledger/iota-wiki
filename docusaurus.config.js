@@ -258,7 +258,7 @@ module.exports = {
             },
             {
               label: 'Contribute',
-              to: 'participate/contribute-to-wiki/welcome',
+              to: 'learn/contribute-to-wiki/welcome',
             },
             {
               label: 'Imprint',

@@ -37,8 +37,8 @@ Decentralized applications consist of one or multiple Smart Contracts and a User
 
 There are two ways to interact with IOTA Smart Contracts:
 
-- [On-ledger](/smart-contracts/guide/core_concepts/smartcontract-interaction/on-ledger-requests): Requests to the smart contract are transactions on the Tangle.
-- [Off-ledger](/smart-contracts/guide/core_concepts/smartcontract-interaction/off-ledger-requests): The requests are sent using an API call to a Wasp node.
+- [On-ledger](/smart-contracts/guide/core_concepts/invocation#on-ledger): Requests to the smart contract are transactions on the Tangle.
+- [Off-ledger](/smart-contracts/guide/core_concepts/invocation#off-ledger): The requests are sent using an API call to a Wasp node.
 
 You can [configure your Wasp node's API URL](/smart-contracts/guide/chains_and_nodes/running-a-node#web-api), or use the [public Wasp REST API](https://api.wasp.sc.iota.org/doc).
 
@@ -59,6 +59,6 @@ More examples for Wasm Smart Contracts written in Rust and Go (TinyGo) can be fo
 
 ---
 
-- Learn more about [On-ledger](/smart-contracts/guide/core_concepts/smartcontract-interaction/on-ledger-requests) and [Off-ledger Requests](/smart-contracts/guide/core_concepts/smartcontract-interaction/off-ledger-requests).
+- Learn more about [On-ledger](/smart-contracts/guide/core_concepts/invocation#on-ledger) and [Off-ledger Requests](/smart-contracts/guide/core_concepts/invocation#off-ledger).
 - Participate on the [public testnet](/smart-contracts/guide/chains_and_nodes/testnet).
 - Build your first dApp with the [Schema Tool](/smart-contracts/guide/schema).

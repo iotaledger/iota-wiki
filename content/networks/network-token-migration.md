@@ -32,7 +32,7 @@ The technical details are explained in the [chrysalis documentation](/introducti
 
 Exact guides how to migrate your funds are located here:
 
-- [Firefly token migration](/learn/wallets/firefly/general#firefly-token-migration)
+- [Firefly token migration](/wallets/firefly/general#firefly-token-migration)
 
 We urge every IOTA token holder who still has not completed the migration to follow the steps and move the tokens into the new network.
 
