@@ -87,7 +87,7 @@ export default function HomeLayout() {
                   Learn about IOTA
                 </Link>
                 <Link
-                  to='introduction/welcome'
+                  to='libraries/introduction'
                   className='intro__button button button--primary'
                 >
                   Start building
@@ -214,7 +214,7 @@ export default function HomeLayout() {
                   Learn about ISCP
                 </Link>
                 <Link
-                  to='smart-contracts/guide/evm/examples/ERC20'
+                  to='smart-contracts/guide/evm/examples/introduction'
                   className='start-building__button button button--primary'
                 >
                   Run a smart contract
@@ -362,26 +362,26 @@ export default function HomeLayout() {
           </div>
         </HomepageSection>
         <HomepageSection
-          header='Nodes'
-          description='Nodes are the core of an IOTA network. They run the node software that gives them read and write access to the IOTA network.'
+          header='Nodes and extensions'
+          description='Nodes are the core of an IOTA network. They run the node software, which gives them read and write access to the IOTA network. You can extend their functionality with additional extensions such as INX plugins or the Wasp software for Smart Contracts'
         >
           <div className='nodes__cards'>
             <div className='nodes__card'>
               <div className='nodes__icon'>
-                <Wasp />
+                <Hornet />
               </div>
               <div className='nodes__section'>
-                <h3 className='nodes__header'>Wasp</h3>
+                <h3 className='nodes__header'>Hornet</h3>
                 <ul className='nodes__features'>
-                  <li className='nodes__feature'>Validate smart contracts</li>
-                  <li className='nodes__feature'>Run the IOTA Smart Contract Protocol</li>
-                  <li className='nodes__feature'>Deploy your IOTA Smart Contracts</li>
+                  <li className='nodes__feature'>A node implementation writtin in Go</li>
+                  <li className='nodes__feature'>Participate in the network</li>
+                  <li className='nodes__feature'>Manage your node</li>
                 </ul>
                 <Link
-                  to='smart-contracts/overview'
+                  to='hornet/how_tos/hornet_apt_repository'
                   className='nodes__button button button--outline button--primary'
                 >
-                  Run a smart contract
+                  Set up a Hornet node
                 </Link>
               </div>
             </div>
@@ -397,7 +397,7 @@ export default function HomeLayout() {
                   <li className='nodes__feature'>Become a node operator</li>
                 </ul>
                 <Link
-                  to='bee/welcome'
+                  to='bee/how_tos/setup_a_node'
                   className='nodes__button button button--outline button--primary'
                 >
                   Set up a Bee node
@@ -406,20 +406,20 @@ export default function HomeLayout() {
             </div>
             <div className='nodes__card'>
               <div className='nodes__icon'>
-                <Hornet />
+                <Wasp />
               </div>
               <div className='nodes__section'>
-                <h3 className='nodes__header'>Hornet</h3>
+                <h3 className='nodes__header'>Wasp</h3>
                 <ul className='nodes__features'>
-                  <li className='nodes__feature'>A node implementation writtin in Go</li>
-                  <li className='nodes__feature'>Participate in the network</li>
-                  <li className='nodes__feature'>Manage your node</li>
+                  <li className='nodes__feature'>Validate smart contracts</li>
+                  <li className='nodes__feature'>Run the IOTA Smart Contract Protocol</li>
+                  <li className='nodes__feature'>Deploy your IOTA Smart Contracts</li>
                 </ul>
                 <Link
-                  to='hornet/welcome'
+                  to='smart-contracts/guide/chains_and_nodes/running-a-node'
                   className='nodes__button button button--outline button--primary'
                 >
-                  Set up a Hornet node
+                  Run a smart contract node
                 </Link>
               </div>
             </div>
@@ -435,7 +435,7 @@ export default function HomeLayout() {
                   <li className='nodes__feature'>Managing and accessing permanode</li>
                 </ul>
                 <Link
-                  to='chronicle.rs/welcome'
+                  to='chronicle.rs/getting_started'
                   className='nodes__button button button--outline button--primary'
                 >
                   Try the permanode framework
@@ -488,7 +488,7 @@ export default function HomeLayout() {
               </div>
             </Link>
             <Link
-              to='https://github.com/iotaledger/tips'
+              to='https://iotaledger.github.io/tips'
               className='further__card'
             >
               <div className='further__section'>
