@@ -26,7 +26,11 @@ module.exports = {
       type: 'category',
       label: 'Media Library',
       collapsed: true,
-      items: ['media-library/infographics','media-library/project-presentations', 'media-library/videos'],
+      items: [
+        'media-library/infographics',
+        'media-library/project-presentations',
+        'media-library/videos',
+      ],
     },
     {
       type: 'category',

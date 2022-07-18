@@ -3,7 +3,7 @@ id: an-introduction-to-iota
 title: IOTA
 description: IOTA is a distributed ledger technology running on the Tangle instead of a blockchain.
 keywords:
-- explanation
+  - explanation
 image: /img/iota-wiki.png
 ---
 

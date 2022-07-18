@@ -1,7 +1,7 @@
 ---
 title: Overview
 keywords:
-- getting started
+  - getting started
 description: How to improve your writing.
 image: /img/iota-wiki.png
 ---

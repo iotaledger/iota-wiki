@@ -1,86 +1,88 @@
 import {
-    useDocsData,
-    useVersions,
-    useActiveDocContext,
+  useDocsData,
+  useVersions,
+  useActiveDocContext,
 } from '@docusaurus/plugin-content-docs/client';
-import { 
-    ActiveDocContext, 
-    GlobalVersion, 
-    useAllDocsData,
-    useLatestVersion,
+import {
+  ActiveDocContext,
+  GlobalVersion,
+  useAllDocsData,
+  useLatestVersion,
 } from '@docusaurus/plugin-content-docs/client';
 import { useMemo } from 'react';
 
 function uniq<T>(arr: T[]): T[] {
-    // Note: had problems with [...new Set()]: https://github.com/facebook/docusaurus/issues/4972#issuecomment-863895061
-    return Array.from(new Set(arr));
+  // Note: had problems with [...new Set()]: https://github.com/facebook/docusaurus/issues/4972#issuecomment-863895061
+  return Array.from(new Set(arr));
 }
 
-export function useAllActiveDocContexts(pluginIds: string[]): ActiveDocContext{
-    let active = {
-        activeVersion: undefined,
-        activeDoc: undefined,
-        alternateDocVersions: {}
-    } as ActiveDocContext;
+export function useAllActiveDocContexts(pluginIds: string[]): ActiveDocContext {
+  const active = {
+    activeVersion: undefined,
+    activeDoc: undefined,
+    alternateDocVersions: {},
+  } as ActiveDocContext;
 
-    pluginIds.forEach(element => {
-        const activeDocContext = useActiveDocContext(element);
-        if (activeDocContext.activeDoc) {
-            active.activeDoc = activeDocContext.activeDoc;
-            active.activeVersion = activeDocContext.activeVersion;
-        }
-    });
+  pluginIds.forEach((element) => {
+    const activeDocContext = useActiveDocContext(element);
+    if (activeDocContext.activeDoc) {
+      active.activeDoc = activeDocContext.activeDoc;
+      active.activeVersion = activeDocContext.activeVersion;
+    }
+  });
 
-    //TODO Check if loop is needed
-    pluginIds.forEach(element => {
-        if (active.activeDoc) {
-            const data = useDocsData(element);
-            data.versions.forEach((version) => {
-                version.docs.forEach((doc) => {
-                    if (doc.id === active.activeDoc.id)
-                        // TODO Don't use label?
-                        active.alternateDocVersions[version.label] = doc;
-                });
-            });
-        }
-    })
+  //TODO Check if loop is needed
+  pluginIds.forEach((element) => {
+    if (active.activeDoc) {
+      const data = useDocsData(element);
+      data.versions.forEach((version) => {
+        version.docs.forEach((doc) => {
+          if (doc.id === active.activeDoc.id)
+            // TODO Don't use label?
+            active.alternateDocVersions[version.label] = doc;
+        });
+      });
+    }
+  });
 
-    return active;
+  return active;
 }
 
 export function useAllVersions(pluginIds: string[]): GlobalVersion[] {
-    let versions = [];
-    pluginIds.forEach(element => {
-        versions.push(...useVersions(element));
-    });
-    return versions;
+  const versions = [];
+  pluginIds.forEach((element) => {
+    versions.push(...useVersions(element));
+  });
+  return versions;
 }
 
 // Gets all plugin ids with the current base route
 export function useCurrentDocPlugins(pathname: string): string[] {
-    let pluginIds = [];
-    const data = useAllDocsData();
-    for (const key in data){
-        const element = data[key];
-        if (pathname.startsWith(element.path))
-            pluginIds.push(key);
-    }
+  const pluginIds = [];
+  const data = useAllDocsData();
+  for (const key in data) {
+    const element = data[key];
+    if (pathname.startsWith(element.path)) pluginIds.push(key);
+  }
 
-    // Sort plugins in reverse alphabetic order so that the most recent version is first
-    // Plugins with name as id may need to prepend a number to sort their versions
-    pluginIds.sort((a, b) => (a < b ? 1 : b < a ? -1 : 0));
-    
-    return pluginIds;
+  // Sort plugins in reverse alphabetic order so that the most recent version is first
+  // Plugins with name as id may need to prepend a number to sort their versions
+  pluginIds.sort((a, b) => (a < b ? 1 : b < a ? -1 : 0));
+
+  return pluginIds;
 }
 
 export function useAllLatestVersion(pluginIds: string[]): GlobalVersion {
-    return pluginIds.reduce((previousVersion, currentPluginId) => {
-        const currentVersion = useLatestVersion(currentPluginId);
+  return pluginIds.reduce((previousVersion, currentPluginId) => {
+    const currentVersion = useLatestVersion(currentPluginId);
 
-        if (previousVersion.path.split('/').length <= currentVersion.path.split('/').length)
-            return previousVersion;
-        return currentVersion;
-    }, useLatestVersion(pluginIds[0]));
+    if (
+      previousVersion.path.split('/').length <=
+      currentVersion.path.split('/').length
+    )
+      return previousVersion;
+    return currentVersion;
+  }, useLatestVersion(pluginIds[0]));
 }
 
 /**
@@ -101,17 +103,17 @@ export function useAllLatestVersion(pluginIds: string[]): GlobalVersion {
  * @returns An array of 1~3 versions with priorities defined above, guaranteed
  * to be unique and non-sparse. Will be memoized, hence stable for deps array.
  */
- export function useWikiVersionCandidates(
-    preferredVersion: GlobalVersion,
-    activeVersion: GlobalVersion,
-    docsPluginIds?: string[],
-  ): [GlobalVersion, ...GlobalVersion[]] {
-    const latestVersion = useAllLatestVersion(docsPluginIds);
-    return useMemo(
-      () =>
-        uniq(
-          [activeVersion, preferredVersion, latestVersion].filter(Boolean),
-        ) as [GlobalVersion, ...GlobalVersion[]],
-      [activeVersion, preferredVersion, latestVersion],
-    );
-  }
+export function useWikiVersionCandidates(
+  preferredVersion: GlobalVersion,
+  activeVersion: GlobalVersion,
+  docsPluginIds?: string[],
+): [GlobalVersion, ...GlobalVersion[]] {
+  const latestVersion = useAllLatestVersion(docsPluginIds);
+  return useMemo(
+    () =>
+      uniq(
+        [activeVersion, preferredVersion, latestVersion].filter(Boolean),
+      ) as [GlobalVersion, ...GlobalVersion[]],
+    [activeVersion, preferredVersion, latestVersion],
+  );
+}

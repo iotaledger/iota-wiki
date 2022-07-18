@@ -5,7 +5,7 @@ description: The unique feature of IOTA is the absence of any Fee's in the
   protocol. Here we explain how this is achieved.
 image: /img/iota-wiki.png
 keywords:
-- explanation
+  - explanation
 ---
 
 # Why is IOTA Feeless?

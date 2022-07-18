@@ -1,6 +1,6 @@
 ---
 keywords:
-- getting started
+  - getting started
 description: How to get yourself writing.
 image: /img/iota-wiki.png
 ---

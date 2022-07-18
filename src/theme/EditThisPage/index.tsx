@@ -24,7 +24,10 @@ or
 "external/anyOtherString"
 **/
 function reformatExternalProjectURL(editUrl) {
-  const externalDocsRegex = new RegExp('content/build/[^/]*/[^/]*/[^/]*/|external/[^/]*/', 'i');
+  const externalDocsRegex = new RegExp(
+    'content/build/[^/]*/[^/]*/[^/]*/|external/[^/]*/',
+    'i',
+  );
   return editUrl.replace(externalDocsRegex, '');
 }
 
@@ -32,7 +35,10 @@ function reformatExternalProjectURL(editUrl) {
 This function will check if docs is in "content/build/" or "external/"
 **/
 function isExternalProjectURL(editUrl) {
-  const externalDocsRegex = new RegExp('content/build/[^/]*/[^/]*/[^/]*/|external/[^/]*/', 'i');
+  const externalDocsRegex = new RegExp(
+    'content/build/[^/]*/[^/]*/[^/]*/|external/[^/]*/',
+    'i',
+  );
   return externalDocsRegex.test(editUrl);
 }
 

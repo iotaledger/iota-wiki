@@ -1,6 +1,6 @@
 ---
 keywords:
-- how to
+  - how to
 description: How to get your project documented.
 image: /img/iota-wiki.png
 ---

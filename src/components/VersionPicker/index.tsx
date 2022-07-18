@@ -1,8 +1,5 @@
 import React from 'react';
-import {
-  Collapsible,
-  useCollapsible,
-} from '@docusaurus/theme-common';
+import { Collapsible, useCollapsible } from '@docusaurus/theme-common';
 import Link from '@docusaurus/Link';
 import { useLocation } from '@docusaurus/router';
 import {
@@ -53,22 +50,28 @@ export default function VersionPicker() {
     pluginIds,
   )[0];
 
-  const {collapsed, toggleCollapsed} = useCollapsible({ initialState: true });
+  const { collapsed, toggleCollapsed } = useCollapsible({ initialState: true });
 
   return (
     <div className='version-picker'>
-      <div className='version-picker__toggle menu__link menu__link--sublist'
+      <div
+        className='version-picker__toggle menu__link menu__link--sublist'
         onClick={(e) => {
           e.preventDefault();
-          toggleCollapsed()
+          toggleCollapsed();
         }}
       >
         Version: {dropdownVersion.label}
       </div>
 
-      <Collapsible lazy as="ul" className="version-picker__list menu__list" collapsed={collapsed}>
+      <Collapsible
+        lazy
+        as='ul'
+        className='version-picker__list menu__list'
+        collapsed={collapsed}
+      >
         {versionLinks.map((versionLink, key) => (
-          <li key={key} className="version-picker__list-item menu__list-item">
+          <li key={key} className='version-picker__list-item menu__list-item'>
             <Link
               {...versionLink}
               className='version-picker__link menu__link'

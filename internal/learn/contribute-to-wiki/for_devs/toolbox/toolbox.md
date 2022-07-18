@@ -8,6 +8,6 @@ To quote Roy Peter Clark, an American journalist and teacher:
 
 > Remember, these are tools, not rules. They work outside the territory of right and wrong, and inside the land of cause and effect.
 >
-> *An excerpt from Writing Tools*
+> _An excerpt from Writing Tools_
 
 You use a tool only when you need it, anticipating a certain result. Remember your goal and pick the right tool for the job.

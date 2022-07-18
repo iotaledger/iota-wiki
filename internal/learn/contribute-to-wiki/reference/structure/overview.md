@@ -13,9 +13,9 @@ We encourage software development teams to apply this documentation structure ac
 This structure is based on the [Diataxis framework](https://diataxis.fr/) by Daniele Procida. As the author describes it:
 
 > The Diátaxis framework aims to solve the problem of structure in technical documentation. It adopts a systematic approach to understanding the needs of documentation users in their cycle of interaction with a product.
-> 
+>
 > Diátaxis identifies four modes of documentation - tutorials, how-to guides, technical reference and explanation. It derives its structure from the relationship between them.
-> 
+>
 > In Diátaxis, each of these modes (or types) answers to a different user need, fulfils a different purpose and requires a different approach to its creation.
 
 The documentation should be split in the following folders: Getting Started, How Tos, Tutorials, Explanations, and Reference and the following files: Welcome, Troubleshooting, and Contribute. You do not have to use all of these sections.
@@ -50,4 +50,4 @@ The Troubleshooting file should contain instructions or links to where users can
 
 ## Contribute
 
-The Contribute file should encourage users to contribute to the project and contain directions for that. 
+The Contribute file should encourage users to contribute to the project and contain directions for that.
