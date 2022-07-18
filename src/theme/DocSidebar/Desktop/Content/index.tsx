@@ -1,4 +1,11 @@
-import React, {useState} from 'react';
+/**
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+import React, { useState } from 'react';
 import clsx from 'clsx';
 import {
   ThemeClassNames,
@@ -6,13 +13,16 @@ import {
   useScrollPosition,
 } from '@docusaurus/theme-common';
 import DocSidebarItems from '@theme/DocSidebarItems';
+import type { Props } from '@theme/DocSidebar/Desktop/Content';
+
 import styles from './styles.module.css';
-import VersionPicker from '@site/src/components/VersionPicker';
+
 function useShowAnnouncementBar() {
-  const {isActive} = useAnnouncementBar();
+  const { isActive } = useAnnouncementBar();
   const [showAnnouncementBar, setShowAnnouncementBar] = useState(isActive);
+
   useScrollPosition(
-    ({scrollY}) => {
+    ({ scrollY }) => {
       if (isActive) {
         setShowAnnouncementBar(scrollY === 0);
       }
@@ -21,8 +31,14 @@ function useShowAnnouncementBar() {
   );
   return isActive && showAnnouncementBar;
 }
-export default function DocSidebarDesktopContent({path, sidebar, className}) {
+
+export default function DocSidebarDesktopContent({
+  path,
+  sidebar,
+  className,
+}: Props): JSX.Element {
   const showAnnouncementBar = useShowAnnouncementBar();
+
   return (
     <nav
       className={clsx(
@@ -30,8 +46,8 @@ export default function DocSidebarDesktopContent({path, sidebar, className}) {
         styles.menu,
         showAnnouncementBar && styles.menuWithAnnouncementBar,
         className,
-      )}>
-      <VersionPicker />
+      )}
+    >
       <ul className={clsx(ThemeClassNames.docs.docSidebarMenu, 'menu__list')}>
         <DocSidebarItems items={sidebar} activePath={path} level={1} />
       </ul>
