@@ -4,7 +4,7 @@ title: The Coordinator
 description: What is the Coordinator in the IOTA network.
 image: /img/iota-wiki.png
 keywords:
-- explanation
+  - explanation
 ---
 
 # The Coordinator
@@ -21,6 +21,6 @@ To allow the nodes to recognize valid milestones, all IOTA nodes on the same net
 
 To ensure that new messages always have a chance of being confirmed, the Coordinator sends indexed milestones signed with those signatures regularly (every 10 seconds). This way ensures that nodes can compare the indexes of their milestones to check if they are synchronized with the rest of the network.
 
-![An artist's depiction of Coordinator.](/img/learn/milestones.gif "Click to see the full-sized image.")
+![An artist's depiction of Coordinator.](/img/learn/milestones.gif 'Click to see the full-sized image.')
 
-*The Coordinator*
+_The Coordinator_

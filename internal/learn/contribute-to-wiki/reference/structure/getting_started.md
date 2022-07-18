@@ -60,14 +60,14 @@ after installing it, as well as minimal explanations if required. Keep in mind t
 ### NodeJS Usage Example
 
 ```js
-const iota = require("@iota/client-wasm/node");
+const iota = require('@iota/client-wasm/node');
 
 async function main() {
   // Get the nodeinfo
   let iota_client = await iota.Client.withNode(
-    "https://api.lb-0.h.chrysalis-devnet.iota.cafe/"
+    'https://api.lb-0.h.chrysalis-devnet.iota.cafe/',
   );
-  console.log("Nodeinfo: ", await iota_client.getInfo());
+  console.log('Nodeinfo: ', await iota_client.getInfo());
 }
 main();
 ```

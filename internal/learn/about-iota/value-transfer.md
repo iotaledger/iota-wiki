@@ -4,7 +4,7 @@ title: Value Transfer
 description: Learn how the IOTA Cryptocurrency Protocol transfers the native IOTA Tokens.
 image: /img/iota-wiki.png
 keywords:
-- explanation
+  - explanation
 ---
 
 # IOTA Value Transactions
@@ -65,7 +65,7 @@ Machines, sensors, and devices, etc. will use the code of the IOTA wallet librar
 
 To send a value transaction into the IOTA network, a client creates an IOTA message that includes a **signed transaction payload**. In this payload, all the data is specified to tell the IOTA network how many tokens from address A (owned by the issuer of the message) should be transferred to address B and makes it possible to upgrade the state of the IOTA Ledger accordingly.
 
-The signed transaction payload must contain a digital signature that guarantees that the sender of the transaction is the owner of the address where those funds are currently stored. This is guaranteed through signing the transaction with the private key of that address. A public key, which is also part of the message, is used to validate the ownership of the funds. 
+The signed transaction payload must contain a digital signature that guarantees that the sender of the transaction is the owner of the address where those funds are currently stored. This is guaranteed through signing the transaction with the private key of that address. A public key, which is also part of the message, is used to validate the ownership of the funds.
 
 The next step is that the client connects to a node in the IOTA network and asks this node for valid tips to include in the message. After the tips (between one and eight previous messages of the Tangle) are known to the client, they can be included in the message and therefore create a reference path for this message in the Tangle. Finally, the client submits this message (that includes the transaction payload) for validation and processing to the node.
 

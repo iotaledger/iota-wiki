@@ -6,8 +6,8 @@ import {
   Reddit,
   LinkedIn,
   Instagram,
-  Facebook
-} from '../icons'
+  Facebook,
+} from '../icons';
 
 const map = [
   { name: 'Youtube', Icon: Youtube },

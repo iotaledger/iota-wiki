@@ -1,14 +1,27 @@
+/**
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
 import React from 'react';
 import clsx from 'clsx';
 import {
   NavbarSecondaryMenuFiller,
+  type NavbarSecondaryMenuComponent,
   ThemeClassNames,
   useNavbarMobileSidebar,
 } from '@docusaurus/theme-common';
 import DocSidebarItems from '@theme/DocSidebarItems';
+import type { Props } from '@theme/DocSidebar/Mobile';
 import VersionPicker from '@site/src/components/VersionPicker';
+
 // eslint-disable-next-line react/function-component-definition
-const DocSidebarMobileSecondaryMenu = ({sidebar, path}) => {
+const DocSidebarMobileSecondaryMenu: NavbarSecondaryMenuComponent<Props> = ({
+  sidebar,
+  path,
+}: Props) => {
   const mobileSidebar = useNavbarMobileSidebar();
   return (
     <>
@@ -32,7 +45,8 @@ const DocSidebarMobileSecondaryMenu = ({sidebar, path}) => {
     </>
   );
 };
-function DocSidebarMobile(props) {
+
+function DocSidebarMobile(props: Props) {
   return (
     <NavbarSecondaryMenuFiller
       component={DocSidebarMobileSecondaryMenu}
@@ -40,4 +54,5 @@ function DocSidebarMobile(props) {
     />
   );
 }
+
 export default React.memo(DocSidebarMobile);

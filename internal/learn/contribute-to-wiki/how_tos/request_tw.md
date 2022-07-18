@@ -1,6 +1,6 @@
 ---
 keywords:
-- how to
+  - how to
 description: How to request help from a technical writer.
 image: /img/iota-wiki.png
 ---
