@@ -15,7 +15,6 @@ import DefaultNavbarItem from '@theme/NavbarItem/DefaultNavbarItem';
 import DropdownNavbarItem, {
   type Props as DropdownNavbarItemProps,
 } from '@theme/NavbarItem/DropdownNavbarItem';
-import MegaDropdownNavbarItem from '../../components/MegaDropdownNavbarItem';
 import LocaleDropdownNavbarItem from '@theme/NavbarItem/LocaleDropdownNavbarItem';
 import SearchNavbarItem from '@theme/NavbarItem/SearchNavbarItem';
 import type { Types, Props } from '@theme/NavbarItem';
@@ -26,7 +25,6 @@ const NavbarItemComponents = {
   localeDropdown: () => LocaleDropdownNavbarItem,
   search: () => SearchNavbarItem,
   dropdown: () => DropdownNavbarItem,
-  megaDropdown: () => MegaDropdownNavbarItem,
 
   // Need to lazy load these items as we don't know for sure the docs plugin is
   // loaded. See https://github.com/facebook/docusaurus/issues/3360
