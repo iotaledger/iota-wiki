@@ -1,184 +1,222 @@
-# Send Shimmer Tokens with wallet.rs
-
+# Send Shimmer tokens with wallet.rs
 
 ## Introduction
 
-This tutorial shows how to get Shimmer Testnet tokens and send them to another address. 
+This tutorial shows how to get Shimmer testnet tokens and send them to another address.
 
 ### What you will learn
 
-- Create an Stronghold account
-- Generate an Shimmer Address
-- Get some Shimmer Testnet Tokens
-- Fetch your Balance
-- Send Tokens to another address
+- Create a Stronghold account
+- Generate a Shimmer address
+- Get some Shimmer testnet tokens
+- Fetch your balance
+- Send tokens to another address
 
+## Setup your environment
 
-## Setup Environment
-First step is to clone and prepare the wallet.rs repository. Be sure, you have the newest version of rust!
+[Install Rust](https://doc.rust-lang.org/cargo/getting-started/installation.html) and update to the latest stable version by running `rustup update stable`.
 
-```bash=
+The next step is to clone the `wallet.rs` repository and change to the `develop` branch.
+
+```bash
 git clone https://github.com/iotaledger/wallet.rs
 cd wallet.rs
+git checkout develop
 ```
 
-Open it in your favourite code editor, in this case - we will using Visual Studio Code (VSC) so we can open the code with this command
+Open the repository in your favorite code editor and navigate to the first example in the `examples` directory called `01_create_wallet.rs`.
 
-```bash=
-code .
+We will go through the code line by line later, so don't worry if you don't understand it all yet. First we will configure the environment variables the example needs. It will read them from a `.env` file, for which there is an example available in the root of the repository.
+
+In the root of the repository, copy the `.env.example` to a new `.env` file.
+
+```bash
+cp .env.example .env
 ```
 
-Open the examples directory and the first example `01_create_wallet.rs` and read the code a bit.
-If you don't understand everything - dont worry, we will go through the code line by line.
+If you want, you can change the [BIP39 mnemonic](https://en.bitcoin.it/wiki/BIP_0039) and choose a different password, but be sure to set the node URLs to a Shimmer testnet node (we use the nodes provided by IF in this tutorial). For example:
 
-If you're done. we need to create a valid `.env` file, so let's remove the example ending a the `.env.example` file to and name it to `.env`. Don't forget the point at the beginning, it's a "dot env '' file. 
-
-Now, set a new MNEMONIC and choose a stronghold password. For example
-
-```bash=
-NONSECURE_USE_OF_DEVELOPMENT_MNEMONIC="spot rain split grant habit office increase friend useful arrest entry obey gas amateur teach"
-STRONGHOLD_PASSWORD="my_super_secure_password"
-````
-
-### Shimmer Alphanet Connection
-
-You can use the example with a custom node, or use the public Shimmer Alphanet which is reachable here:
-
-> **https://api.alphanet.iotaledger.net/**
-
-You need to replace the localhost part in Line 33 in the `ClientOptions`.
-```rust=
-// Create the account manager with the secret_manager and client options
-let client_options = ClientOptions::new()
-    .with_node("https://api.alphanet.iotaledger.net/")?
-    .with_node_sync_disabled();
 ```
-
-
-That's all for the preparation - let's start with the fun stuff!
+NON_SECURE_USE_OF_DEVELOPMENT_MNEMONIC="curve live black weird verb salon box increase hidden bread edit yard match mercy unable depart dismiss wife stock strong estate isolate such gasp"
+STRONGHOLD_PASSWORD="some_hopefully_secure_password"
+NODE_URL="https://api.testnet.shimmer.network"
+FAUCET_URL="https://faucet.testnet.shimmer.network/api/enqueue"
+```
 
 ## Create an account
 
-Just run the first example, you can choose your account name (Alias) in Line 45.
+Now that we have all details, let's go through the example code.
 
-```bash=
+After including the needed dependencies, we have have the main function that loads the environment variables from the `.env` file we created earlier. It uses the information to set up [Stronghold](https://stardust.iota-community.org/stronghold.rs/welcome) to store our seed safely.
+
+```rust
+    // This example uses dotenv, which is not safe for use in production
+    dotenv().ok();
+
+    // Setup Stronghold secret_manager
+    let mut secret_manager = StrongholdSecretManager::builder()
+        .password(&env::var("STRONGHOLD_PASSWORD").unwrap())
+        .try_build(PathBuf::from("wallet.stronghold"))?;
+
+    // Only required the first time, can also be generated with `manager.generate_mnemonic()?`
+    let mnemonic = env::var("NON_SECURE_USE_OF_DEVELOPMENT_MNEMONIC").unwrap();
+
+    // The mnemonic only needs to be stored the first time
+    secret_manager.store_mnemonic(mnemonic).await?;
+```
+
+It then uses the Stronghold manager and client options to create an account manager which we can use to interact with the Shimmer token accounts in our wallet.
+
+```rust
+    // Create the account manager with the secret_manager and client options
+    let client_options = ClientOptions::new()
+        .with_node(&env::var("NODE_URL").unwrap())?
+        .with_node_sync_disabled();
+
+    let manager = AccountManager::builder()
+        .with_secret_manager(SecretManager::Stronghold(secret_manager))
+        .with_client_options(client_options)
+        .with_coin_type(SHIMMER_COIN_TYPE)
+        .finish()
+        .await?;
+```
+
+With the account manager set up, we are ready to create an account to receive some tokens. The account is created with alias `Alice`, so we can easily retrieve it at a later time.
+
+```rust
+    // Create a new account
+    let _account = manager
+        .create_account()
+        .with_alias("Alice".to_string())
+        .finish()
+        .await?;
+```
+
+Now that we understand the code, let's run it and create our account.
+
+```
 cargo run --example 01_create_wallet
 ```
 
-This should take a while and print this in your console, if you get the message `Generated a new account`everything worked correct!
-```bash=
-cargo run --example 01_create_wallet
-    Finished dev [unoptimized + debuginfo] target(s) in 1.56s
-     Running `target/debug/examples/01_create_wallet`
-[riker::system] Starting actor system: System[riker]
-[riker::system] Actor system [9811b844-2930-4ae4-be3f-61876eea24fb] [riker] started
-[iota_wallet::account_manager::builder] [AccountManagerBuilder]
-[iota_wallet::storage::manager] get_account_manager_data
-[iota_wallet::storage::manager] save_account_manager_data
-[iota_wallet::account_manager] creating account
-[iota_wallet::account::builder] [ACCOUNT BUILDER] creating new account Alice with index 0
-[reqwest::connect] starting new connection: https://api.alphanet.iotaledger.net/
-[rustls::client::hs] No cached session for DnsName(DnsName(DnsName("api.alphanet.iotaledger.net")))
-[rustls::client::hs] Not resuming any session
-[rustls::client::hs] Using ciphersuite TLS13_AES_128_GCM_SHA256
-[rustls::client::tls13] Not resuming
-[rustls::client::tls13] TLS1.3 encrypted extensions: [Protocols([6832])]
-[rustls::client::hs] ALPN protocol is Some(b"h2")
-[rustls::client::tls13] Ticket saved
-[reqwest::async_impl::client] response '200 OK' for https://api.alphanet.iotaledger.net/api/v2/info
-[iota_wallet::account::handle] [save] saving account to database
-**Generated a new account**
-[rustls::conn] Sending warning alert CloseNotify
+If everything worked correctly, you will see the message `Generated a new account` and you will find a Stronghold file and a database directory have been created to store the current state of your wallet.
+
+## Generate an address
+
+In this step, we will generate a new address to receive some testnet tokens. For this we will use the second example called `02_generate_address.rs`.
+
+Here again we read the environment variables from the `.env` file and then we recreate the account manager which will use the Stronghold file and database that were created in the previous step.
+
+```rust
+    // This example uses dotenv, which is not safe for use in production
+    dotenv().ok();
+
+    // Create the account manager
+    let manager = AccountManager::builder().finish().await?;
 ```
 
-This will create two new things in your directory - a stronghold and a folder with a DB to track your state. That's because wallet.rs is a stateful library. 
+Then we will get the account using the alias we set earlier and provide the Stronghold password to unlock it.
 
+```rust
+    // Get the account we generated with `01_create_wallet`
+    let account = manager.get_account("Alice").await?;
 
-### Example 01_create_wallet in Detail
-
-Let's take a deeper look into the code
-```rust=
-// Setup Stronghold secret_manager
-let mut secret_manager = StrongholdSecretManager::builder()
-    .password(&env::var("STRONGHOLD_PASSWORD").unwrap())
-    .snapshot_path(PathBuf::from("wallet.stronghold"))
-    .try_build()?;
+    // Set the stronghold password
+    manager
+        .set_stronghold_password(&env::var("STRONGHOLD_PASSWORD").unwrap())
+        .await?;
 ```
-In this line, we create a secret_manager which handles the creation of the Account and takes care of the security. Within the next lines, we will set a mnemonic, which is a secure password with a good human readability.  
 
+Now we are ready to generate a new address, which will be derived from the mnemonic that we set earlier. For our convenience, we will print the address in [Bech32 format](https://en.bitcoin.it/wiki/Bech32) so we can copy it and use it to send and receive tokens and find the address in the [testnet explorer](https://explorer.testnet.shimmer.network/testnet).
 
+```rust
+    let address = account.generate_addresses(1, None).await?;
+    println!("Generated address: {}", address[0].address().to_bech32());
+```
 
-### Generate Address
+Let's run it and get our address.
 
-In the next step, we will generate a new address. We need this address for sending some Alphanet Tokens to it. TO generate an new address, just run the second example like this:
-```bash=
+```bash
 cargo run --example 02_generate_address
 ```
 
-This is how your console should look like
+You can see all testnet addresses begin with `rms`, which is the reverse of what real Shimmer addresses start with. This is how you can tell testnet and real addresses apart.
 
-```bash=
-[riker::system] Starting actor system: System[riker]
-[riker::system] Actor system [a0527bd1-521e-42b2-882e-cde7fdd2eadd] [riker] started
-[iota_wallet::account::operations::address_generation] [ADDRESS GENERATION] generating 1 addresses
-[iota_wallet::account::operations::address_generation] [ADDRESS GENERATION] storing account 0
-[iota_wallet::account::handle] [save] saving account to database
-Generated address: rms1qqtkaevcr205mcn6ae08reljxgd57mqd5xru7krn7scvc6jeagtzu0x6s8z
+## Get some tokens
+
+To get tokens, you can either use the [faucet webpage](https://faucet.testnet.shimmer.network) or use the third example called `03_get_funds.rs` by running `cargo run --example 03_get_funds`. Either way you will receive tokens on the address we just generated.
+
+## Check the balance
+
+Now you should have some tokens. To validate that, we can use the library to inspect our account, like in the fourth example called `04_get_balance.rs`. Same as previously it will recreate the manager and open the account.
+
+```rust
+    // Create the account manager
+    let manager = AccountManager::builder().finish().await?;
+
+    // Get the account we generated with `01_create_wallet`
+    let account = manager.get_account("Alice").await?;
 ```
 
-You can see, all Alphanet addresses begin with "rms1" which is reverse for shimmer (smr).
+Now to find your balance, first your account needs to be synced so your local state is synchronized with the state of your account in the network.
 
-### Get some Alphanet Tokens
+```rust
+    // Sync and get the balance
+    let _account_balance = account.sync(None).await?;
+    // If already synced, just get the balance
+    let account_balance = account.balance().await?;
+```
 
-You can get some Alphanet Tokens on the online faucet or with the third example, please check that you're using the correct Node Url!
-
-- [Online Web Faucet](https://faucet.alphanet.iotaledger.net/)
-- Run `cargo run --example  03_get_funds`
-
-If you ran the example, please be sure you have the correct faucet URL - for the public Testnet, you can sue this URL: [https://faucet.alphanet.iotaledger.net/api/enqueue](https://faucet.alphanet.iotaledger.net/api/enqueue)
-
-### Check the balance
-Now you should have some tokens and to validate that, we can ask the wallet.rs which balance our account have. Just run the next example to validate that!
-
+Let's run the code and see if we did receive the tokens.
 
 ```bash=
 cargo run --example 04_get_balance
 ```
 
-You should see something like this in your logs! If yes - congratulations! You have some Shimmer Testnet Tokens!
+This should show a positive balance. If no tokens appear, try to request tokens from the faucet again. If that still doesn't work, please come over to [our Discord](https://discord.iota.org/) and we'll sort it out.
 
-```bash=
-AccountBalance { total: 1000000000, available: 1000000000, required_storage_deposit: 213000, native_tokens: NativeTokens(BoxedSlicePrefix([])), nfts: [], aliases: [], foundries: [], potentially_locked_outputs: {} }
+## Send tokens
 
+Now that we have some tokens, we can send them around. Open the fifth example called `05_transaction.rs`. If you want you can use another testnet address or ask someone in [our Discord](https://discord.iota.org/) to send you their testnet address and change line 31 to that address.
+
+This will again set up a manager, open our account and unlock it using our password.
+
+```rust
+    // This example uses dotenv, which is not safe for use in production
+    dotenv().ok();
+
+    // Create the account manager
+    let manager = AccountManager::builder().finish().await?;
+
+    // Get the account we generated with `01_create_wallet`
+    let account = manager.get_account("Alice").await?;
+
+    // Set the stronghold password
+    manager
+        .set_stronghold_password(&env::var("STRONGHOLD_PASSWORD").unwrap())
+        .await?;
 ```
-If no coins appear, try the faucet again and use the other faucet described above. If this still does not work - please raise a message in [our Discord!](https://discord.iota.org/).
 
+Next we will tell the account manager the amount of tokens we want to send to what address by defining an output. The function to send tokens accepts a list of outputs, so in this case we will provide a list with one entry.
 
-### Send Tokens
+```rust
+    // Send a transaction with 1 Mi
+    let outputs = vec![AddressWithAmount {
+        address: "rms1qpszqzadsym6wpppd6z037dvlejmjuke7s24hm95s9fg9vpua7vluaw60xu".to_string(),
+        amount: 1_000_000,
+    }];
+    let transaction = account.send_amount(outputs, None).await?;
+```
 
-Now we have some tokens and we can send them around. Ask a friend. if he can send you the address and you will send some Shimmer Testnet Tokens. 
+Let's send the transaction.
 
-In this case, we will send our lovly Developer Advocate Kumar Anirudha some tokens! Let's go!
-
-Open the next example `05_transaction.rs` and change the address in line 31 - in your case, we use `rms1qran2dq9pvmp7shxpgj9c5jn9ygxwc3zpcge3rl3rkac2lyp98xuyylf6s6`.
-
-Now we can run the example with just this command:
-
-```bash=
+```bash
 cargo run --example 05_transaction
 ```
 
-This could take some time - and you should see something like this, after the transaction:
+This could take some time. The manager will automatically go through your addresses to find enough tokens to match the amount you want to send. Then it will sign the resulting transaction and send it to the node. It will warn you when you don't have enough balance, but otherwise it will show you the transaction ID, which you can use to find your transaction in the [testnet explorer](https://explorer.testnet.shimmer.network/testnet).
 
-```bash=
-Transaction: 0x9d0cbb183bd38bb3e4d00c714da5f62015af4d273c48b971371cb3669f873b90 Block sent: http://localhost:14265/api/v2/blocks/0x1e4ba0c2c1316d8fb3e199040bff3c643ab160c6dcad8afe67385475fd881b0e
-```
-
-This was everything! You can replace the `http://localhost:14265` part with the explorer and discover the transaction more `https://explorer.alphanet.iotaledger.net/alphanet/block`
-For this example, here is the transaction made by the turorial :[https://explorer.alphanet.iotaledger.net/alphanet/block/0x1e4ba0c2c1316d8fb3e199040bff3c643ab160c6dcad8afe67385475fd881b0e](https://explorer.alphanet.iotaledger.net/alphanet/block/0x1e4ba0c2c1316d8fb3e199040bff3c643ab160c6dcad8afe67385475fd881b0e)
-
+Congratulations, you are now able to manage your tokens programmatically!
 
 ## What's next?
 
-You now can create an account, generate your address and transfering Tokens. Now you can go further and create some Native Tokens, Non-fungible tokens (NFTs) and develop your own application with Rust! Have fun and good luck!
-
+You now can create an account, generate addresses and transfer tokens. Check out the [documentation](https://stardust.iota-community.org/wallet.rs/welcome) to see what more you can do. Create some native tokens, non-fungible tokens (NFTs) and develop your own application! Have fun and good luck!
