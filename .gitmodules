@@ -86,3 +86,7 @@
 	path = content/build/introduction-docs/develop
 	url = https://github.com/iotaledger/introduction-docs
 	branch = develop
+[submodule "content/build/iota.js/develop"]
+	path = content/build/iota.js/develop
+	url = https://github.com/iotaledger/iota.js
+	branch = feat/stardust
