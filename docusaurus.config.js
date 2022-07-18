@@ -175,6 +175,18 @@ module.exports = {
               to: 'libraries/introduction',
             },
             {
+              label: 'Client',
+              to: 'iota.rs/welcome',
+            },
+            {
+              label: 'iota.js',
+              to: 'iotajs/welcome',
+            },
+            {
+              label: 'Wallet',
+              to: 'wallet.rs/welcome',
+            },
+            {
               label: 'Streams',
               to: 'libraries/streams',
             },
@@ -183,20 +195,8 @@ module.exports = {
               to: 'libraries/identity',
             },
             {
-              label: 'Smart contracts',
-              to: 'libraries/smart-contracts',
-            },
-            {
-              label: 'Access',
-              to: 'libraries/access',
-            },
-            {
               label: 'Stronghold',
               to: 'libraries/stronghold',
-            },
-            {
-              label: 'Oracles',
-              to: 'libraries/oracles',
             },
           ],
         },
