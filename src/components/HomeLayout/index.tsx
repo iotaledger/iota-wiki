@@ -77,10 +77,9 @@ export default function HomeLayout() {
         <HomepageSection className='homepage__section--intro'>
           <div className='intro'>
             <div className='intro__section'>
-              <h1 className='intro__header'>The complete reference for IOTA</h1>
-              <p className='intro__description'>
-                Build apps capable of taking millions of users on journeys
-                they’ve never been on before. Simple. Scalable. Secure.
+              <h1 className='intro__header'>{siteConfig.tagline}</h1>
+              <p className='intro__description' >
+                Build apps capable of taking millions of users on journeys they’ve never been on before. Simple. Scalable. Secure.
               </p>
               <div className='intro__buttons'>
                 <Link
