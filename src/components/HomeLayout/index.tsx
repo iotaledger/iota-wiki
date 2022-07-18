@@ -266,6 +266,7 @@ export default function HomeLayout() {
                     'Python': 'iota.rs/getting_started/python',
                     'Java': 'iota.rs/getting_started/java/getting_started',
                     'Wasm': 'iota.rs/getting_started/wasm',
+                    'Javascript': 'iotajs/welcome',
                   }}/>
                 </div>
                 <h3 className='libraries__header'>Client</h3>

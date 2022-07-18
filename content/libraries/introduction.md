@@ -11,6 +11,8 @@ The IOTA foundation maintains and develops a collection of frameworks building o
 
 - [Client](/iota.rs/welcome): 
   The client library with bindings for popular languages to send/receive funds, data, create native assets and more.
+- [iota.js](/iotajs/welcome):
+  The native javascipt client library.
 - [Wallet](/wallet.rs/welcome):
   The statefull high level client library with account managment and secure storing of secrets with stronghold.
 - [Streams](streams):
