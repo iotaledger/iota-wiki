@@ -3,10 +3,7 @@ module.exports = {
         'introduction',
         'streams',
         'identity',
-        'smart-contracts',
-        'access',
         'stronghold',
-        'oracles',
         {
             type: 'category',
             label: 'Utilities',
