@@ -110,7 +110,7 @@ module.exports = {
                     'In this tutorial you will learn how to send Shimmer Tokens with wallet.rs.',
                 preview: 'send-shimmer-tokens-with-wallet-lib.png',
                 route: 'send-shimmer-tokens-with-wallet-lib',
-                tags: ['text'],
+                tags: ['text', 'wallet', 'getting-started', 'rust', 'testnet'],
             },
         ],
     ],
