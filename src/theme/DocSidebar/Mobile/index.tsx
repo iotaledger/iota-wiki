@@ -15,6 +15,7 @@ import {
 } from '@docusaurus/theme-common';
 import DocSidebarItems from '@theme/DocSidebarItems';
 import type { Props } from '@theme/DocSidebar/Mobile';
+import VersionPicker from '@site/src/components/VersionPicker';
 
 // eslint-disable-next-line react/function-component-definition
 const DocSidebarMobileSecondaryMenu: NavbarSecondaryMenuComponent<Props> = ({
@@ -23,22 +24,25 @@ const DocSidebarMobileSecondaryMenu: NavbarSecondaryMenuComponent<Props> = ({
 }: Props) => {
   const mobileSidebar = useNavbarMobileSidebar();
   return (
-    <ul className={clsx(ThemeClassNames.docs.docSidebarMenu, 'menu__list')}>
-      <DocSidebarItems
-        items={sidebar}
-        activePath={path}
-        onItemClick={(item) => {
-          // Mobile sidebar should only be closed if the category has a link
-          if (item.type === 'category' && item.href) {
-            mobileSidebar.toggle();
-          }
-          if (item.type === 'link') {
-            mobileSidebar.toggle();
-          }
-        }}
-        level={1}
-      />
-    </ul>
+    <>
+      <VersionPicker />
+      <ul className={clsx(ThemeClassNames.docs.docSidebarMenu, 'menu__list')}>
+        <DocSidebarItems
+          items={sidebar}
+          activePath={path}
+          onItemClick={(item) => {
+            // Mobile sidebar should only be closed if the category has a link
+            if (item.type === 'category' && item.href) {
+              mobileSidebar.toggle();
+            }
+            if (item.type === 'link') {
+              mobileSidebar.toggle();
+            }
+          }}
+          level={1}
+        />
+      </ul>
+    </>
   );
 };
 

@@ -14,6 +14,7 @@ import {
 } from '@docusaurus/theme-common';
 import DocSidebarItems from '@theme/DocSidebarItems';
 import type { Props } from '@theme/DocSidebar/Desktop/Content';
+import VersionPicker from '@site/src/components/VersionPicker';
 
 import styles from './styles.module.css';
 
@@ -48,6 +49,7 @@ export default function DocSidebarDesktopContent({
         className,
       )}
     >
+      <VersionPicker />
       <ul className={clsx(ThemeClassNames.docs.docSidebarMenu, 'menu__list')}>
         <DocSidebarItems items={sidebar} activePath={path} level={1} />
       </ul>
