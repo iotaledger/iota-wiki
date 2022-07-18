@@ -52,7 +52,7 @@ The full documentation and the source code for Bee can be found here:
 
 - [Bee Documentation](/bee/getting_started)
 - [Bee GitHub](https://github.com/iotaledger/bee)
-- [Bee Installation guide](/bee/setup_a_node)
+- [Bee Installation guide](/bee/how_tos/setup_a_node)
 
 ### Bee Community Tutorials
 

@@ -261,11 +261,11 @@ export default function HomeLayout() {
                     <IotaCore />
                   </div>
                   <Languages languages={{
-                    'Rust': 'iota.rs/develop/libraries/rust/getting_started',
-                    'NodeJS': 'iota.rs/develop/libraries/nodejs/getting_started',
-                    'Python': 'iota.rs/develop/libraries/python/getting_started',
-                    'Java': 'iota.rs/develop/libraries/java/getting_started',
-                    'WASM': 'iota.rs/develop/libraries/wasm/getting_started',
+                    'Rust': 'iota.rs/getting_started/rust',
+                    'NodeJS': 'iota.rs/getting_started/nodejs',
+                    'Python': 'iota.rs/getting_started/python',
+                    'Java': 'iota.rs/getting_started/java/getting_started',
+                    'Wasm': 'iota.rs/getting_started/wasm',
                   }}/>
                 </div>
                 <h3 className='libraries__header'>Client</h3>
@@ -275,7 +275,7 @@ export default function HomeLayout() {
                   <li className='libraries__feature'>Sign transactions</li>
                 </ul>
                 <Link
-                  to='iota.rs/develop/welcome'
+                  to='iota.rs/welcome'
                   className='libraries__button button button--outline button--primary'
                 >
                   Interact with the network
@@ -289,10 +289,10 @@ export default function HomeLayout() {
                     <Wallet />
                   </div>
                   <Languages languages={{
-                    'Rust': 'wallet.rs/libraries/rust/getting_started',
-                    'NodeJS': 'wallet.rs/libraries/nodejs/getting_started',
-                    'Python': 'wallet.rs/libraries/python/getting_started',
-                    'WASM': 'wallet.rs/libraries/wasm/getting_started',
+                    'Rust': 'wallet.rs/getting_started/rust',
+                    'NodeJS': 'wallet.rs/getting_started/nodejs',
+                    'Python': 'wallet.rs/getting_started/python',
+                    'Java': 'wallet.rs/getting_started/java',
                   }}/>
                 </div>
                 <h3 className='libraries__header'>Wallet</h3>
