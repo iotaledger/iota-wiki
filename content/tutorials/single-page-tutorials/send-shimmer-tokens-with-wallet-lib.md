@@ -47,7 +47,7 @@ FAUCET_URL="https://faucet.testnet.shimmer.network/api/enqueue"
 
 Now that we have all details, let's go through the example code.
 
-After including the needed dependencies, we have have the main function that loads the environment variables from the `.env` file we created earlier. It uses the information to set up [Stronghold](https://stardust.iota-community.org/stronghold.rs/welcome) to store our seed safely.
+After including the needed dependencies, we have have the main function that loads the environment variables from the `.env` file we created earlier. It uses the information to set up [Stronghold](/stronghold.rs/welcome) to store our seed safely.
 
 ```rust
     // This example uses dotenv, which is not safe for use in production
@@ -219,4 +219,4 @@ Congratulations, you are now able to manage your tokens programmatically!
 
 ## What's next?
 
-You now can create an account, generate addresses and transfer tokens. Check out the [documentation](https://stardust.iota-community.org/wallet.rs/welcome) to see what more you can do. Create some native tokens, non-fungible tokens (NFTs) and develop your own application! Have fun and good luck!
+You now can create an account, generate addresses and transfer tokens. Check out the [documentation](/wallet.rs/welcome) to see what more you can do. Create some native tokens, non-fungible tokens (NFTs) and develop your own application! Have fun and good luck!
