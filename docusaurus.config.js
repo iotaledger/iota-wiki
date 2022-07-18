@@ -179,7 +179,7 @@ module.exports = {
               to: 'iota.rs/welcome',
             },
             {
-              label: 'iota.js',
+              label: 'JS Client',
               to: 'iotajs/welcome',
             },
             {
