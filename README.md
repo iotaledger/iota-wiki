@@ -64,20 +64,15 @@ The IOTA wiki and content is contained within this repo, and the system has been
 
 ### Prerequisites
 
-Install [Node.js](https://nodejs.org/en/download/).
+Install [Node.js 16.10 or above](https://nodejs.org/en/download/) and run `corepack enable` to enable modern Yarn.
 
 ### Local Development
 
-1. Run `yarn install` in your terminal. If you want to also install the external docs use:
+1. Optionally run `git submodule update --init --recursive --remote` to include all external documentation. Run `yarn` to install the needed dependencies.
 
-```
-git submodule update --init --recursive --remote
-yarn cli start
-yarn cli checkout
-```
+2. Run `yarn start` to build the basic Wiki structure, run `CONTENT=*/*/*/documentation,*/*/*,*/* yarn start` build the full Wiki. Alternatively you can use the `CONTENT` environment variable to select the content you want to include, it accepts glob patterns relative to the `content` subdirectory.
 
-2. Run `yarn start` to build the basic Wiki structure or `BUILD=*/*/documentation,*/* yarn start` to also include external docs
-3. Open `http://localhost:3000`
+3. Open `http://localhost:3000`.
 
 <!-- CONTRIBUTING -->
 
