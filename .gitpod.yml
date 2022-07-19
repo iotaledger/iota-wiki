@@ -1,5 +1,9 @@
 tasks:
-  - init: yarn install && yarn run build
+  - name: Install and run core wiki
+    init: |
+      corepack enable
+      yarn install
+      yarn run build
     command: yarn run start
 github:
   prebuilds:
