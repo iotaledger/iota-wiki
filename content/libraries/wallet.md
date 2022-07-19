@@ -1,14 +1,13 @@
 ---
 title: Wallet Library
-description: 'Wallet libraries contain all the features you need to safely build wallets or integrations that require value-based
+description: 'WThe wallet library has everything that you need to safely build wallets or integrations that require value-based
 transfers, such as exchanges and pay-as-you-go systems.'
 ---
 
 # Wallet Libraries
 
-Wallet libraries have everything that you need to safely build wallets or integrations that require value-based
-transfers, such as exchanges and pay-as-you-go systems. 
-
+The wallet library has everything that you need to safely build wallets or integrations that require value-based
+transfers, such as exchanges and pay-as-you-go systems.
 
 ![Layered Overview](/img/libraries/wallet_layers_overview.svg)
 
@@ -21,5 +20,4 @@ has bindings for [Java](/wallet.rs/getting_started/java)
 , [NodeJs](/wallet.rs/getting_started/nodejs)
 , and [Python](/wallet.rs/getting_started/python).
 
-Both the IOTA Foundation and the IOTA community maintain the library and this
-wiki, which means that you can rely on it as a source of knowledge on wallet.rs.
+This library and its documentation are maintained by both IOTA Foundation and the IOTA community.
