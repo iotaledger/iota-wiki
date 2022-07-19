@@ -14,6 +14,13 @@ jobs:
       - uses: actions/checkout@v3
         with:
           fetch-depth: 0 # Needed for showLastUpdateTime to work
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          cache: 'yarn'
+      - name: Allow modern Yarn
+        run: |
+          corepack enable
       - name: Init and update submodules
         run: |
           git submodule update --init --recursive --remote
@@ -40,6 +47,7 @@ jobs:
         if: always() && (steps.update.outcome == 'success')
         uses: peter-evans/create-pull-request@v3
         with:
+          author: GitHub <noreply@github.com>
           token: ${{ secrets.GITHUB_TOKEN }}
           branch: 'bot/update-dependencies'
           delete-branch: true
