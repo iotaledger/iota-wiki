@@ -19,6 +19,7 @@
 
 .social__link:hover {
   background-color: var(--ifm-color-primary) !important;
+  text-decoration: none;
 }
 
 .social__title {
