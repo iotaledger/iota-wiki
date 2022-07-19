@@ -1,6 +1,8 @@
 module.exports = {
     libraries: [
         'introduction',
+        'clients',
+        'wallet',
         'streams',
         'identity',
         'stronghold',
