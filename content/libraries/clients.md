@@ -21,8 +21,7 @@ has bindings for [Java](/iota.rs/getting_started/java/getting_started)
 , [Python](/iota.rs/getting_started/python)
 and [Wasm](/iota.rs/getting_started/wasm).
 
-Both the IOTA Foundation and the IOTA community maintain the library and this
-wiki, which means that you can rely on it as a source of knowledge on iota.rs.
+This library and its documentation are maintained by both IOTA Foundation and the IOTA community.
 
 ## Iota.js
 
