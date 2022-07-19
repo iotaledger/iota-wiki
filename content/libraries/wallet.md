@@ -9,7 +9,7 @@ transfers, such as exchanges and pay-as-you-go systems.'
 The wallet library has everything that you need to safely build wallets or integrations that require value-based
 transfers, such as exchanges and pay-as-you-go systems.
 
-![Layered Overview](/img/libraries/wallet_layers_overview.svg)
+![Layered Overview](/img/libraries/wallet-rs-layer.drawio.svg)
 
 ## wallet.rs
 
