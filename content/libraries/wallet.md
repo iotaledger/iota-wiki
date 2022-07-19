@@ -6,7 +6,7 @@ transfers, such as exchanges and pay-as-you-go systems.'
 
 # Wallet Libraries
 
-Wallet libraries contain all the features you need to safely build wallets or integrations that require value-based
+Wallet libraries have everything that you need to safely build wallets or integrations that require value-based
 transfers, such as exchanges and pay-as-you-go systems. 
 
 
