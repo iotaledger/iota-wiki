@@ -391,23 +391,6 @@ module.exports = {
     [
       '@docusaurus/plugin-content-docs',
       {
-        id: 'libraries',
-        path: 'content/libraries',
-        routeBasePath: 'libraries',
-        sidebarPath: require.resolve('./content/libraries/sidebars.ts'),
-
-        // General config
-        editUrl: 'https://github.com/iota-community/iota-wiki/edit/main/',
-        remarkPlugins: [
-          require('remark-code-import'),
-          require('remark-import-partial'),
-        ],
-        showLastUpdateTime: true,
-      },
-    ],
-    [
-      '@docusaurus/plugin-content-docs',
-      {
         id: 'nodes',
         //docItemComponent: "@theme/ApiItem",
         path: 'content/nodes',
