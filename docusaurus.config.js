@@ -92,8 +92,8 @@ module.exports = {
         },
         {
           label: 'Libraries',
-          to: 'libraries/introduction',
-          activeBaseRegex: '^/libraries/.*',
+          to: 'libraries',
+          activeBaseRegex: '^/libraries.*',
         },
         {
           label: 'Nodes',
