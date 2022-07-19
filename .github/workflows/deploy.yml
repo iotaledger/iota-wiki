@@ -40,6 +40,7 @@ jobs:
         if: always() && (steps.update.outcome == 'success')
         uses: peter-evans/create-pull-request@v3
         with:
+          author: GitHub <noreply@github.com>
           token: ${{ secrets.GITHUB_TOKEN }}
           branch: 'bot/update-dependencies'
           delete-branch: true
