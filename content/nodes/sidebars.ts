@@ -15,7 +15,7 @@ module.exports = {
       },
       {
           type: 'category',
-          label: 'Layer One',
+          label: 'Nodes',
           collapsed: false,
           items: [
               {
@@ -32,7 +32,7 @@ module.exports = {
       },
       {
         type: 'category',
-        label: 'Layer Two',
+        label: 'Extensions',
         collapsed: false,
         items: [
             {
