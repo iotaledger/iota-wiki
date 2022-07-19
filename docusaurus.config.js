@@ -440,23 +440,6 @@ module.exports = {
         showLastUpdateTime: true,
       },
     ],
-    [
-      '@docusaurus/plugin-content-docs',
-      {
-        id: 'build',
-        path: 'internal/build',
-        routeBasePath: 'build',
-        sidebarPath: require.resolve('./internal/build/sidebars.ts'),
-
-        // General config
-        editUrl: 'https://github.com/iota-community/iota-wiki/edit/main/',
-        remarkPlugins: [
-          require('remark-code-import'),
-          require('remark-import-partial'),
-        ],
-        showLastUpdateTime: true,
-      },
-    ],
     ...content.plugins,
   ],
   staticDirectories: ['./static', ...content.staticDirectories],
