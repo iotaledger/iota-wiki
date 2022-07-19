@@ -61,7 +61,7 @@ A definition of which type of payload is part of the message. The node needs to 
 
 That is the nonce that lets this message fulfill the Proof-of-Work requirement. Proof of work is mainly done locally on the device that issues the message and is a form of spam protection. But if the node allows it, PoW can be done by the node instead of the client. This is a handy feature as it enables very low-powered devices to issue messages (like sensors, chips, etc.) without doing the PoW in the local device. If connected to a node that allows remote PoW, those low-power devices can send messages, and the node (which is usually running on a more powerful device) does the PoW for them. This is one of the reasons why IOTA is so suitable for IoT and data applications. Users planning to issue many data messages from a huge amount of extremely low-power devices only need to connect those devices to a node that allows them to do the PoW for them (which will be, in most cases, their own node). As the PoW requirement in IOTA, in general, is extremely low, it is no problem to do this even for a large number of devices by a node.
 
-A side note - in the upcoming 2.0 IOTA version, this PoW requirement will become adaptive and is planned to be completely removed for times of normal network loads... Read more about [IOTA 2.0](https://wiki.iota.org/goshimmer/welcome).
+A side note - in the upcoming 2.0 IOTA version, this PoW requirement will become adaptive and is planned to be completely removed for times of normal network loads... Read more about [IOTA 2.0](/goshimmer/welcome).
 
 ## Message structure
 
