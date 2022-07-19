@@ -5,10 +5,10 @@ description: Client libraries handle communications between your software and th
 
 # Client Libraries
 
-Client libraries handle communications between your software and the IOTA network. You can use a client library
+Client libraries handle communications between your software and the IOTA network. For example, you can use a client library
 to [connect to a node](/iota.rs/examples/get_info)
 , [post a message](/iota.rs/examples/simple_message)
-, [send a signed transaction](/iota.rs/examples/transaction), and many other operations.
+, [send a signed transaction](/iota.rs/examples/transaction).
 
 ![Layered Overview](/img/libraries/layered_overview.svg)
 
