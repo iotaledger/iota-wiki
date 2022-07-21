@@ -184,9 +184,9 @@ new
 data: Converter.utf8ToHex(JSON.stringify(METADATA), true)
 ```
 
-That's all, now you need to compile the Typescript file again to Javascript and run the example!
+After you have customized your NFT, you will need to compile the Typescript filet o Javascript again, and run the example:
 
-```bash=
+```bash
 npm run dist
 npm start
 ```
