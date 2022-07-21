@@ -90,3 +90,7 @@
 	path = content/build/iota.js/develop
 	url = https://github.com/iotaledger/iota.js
 	branch = feat/stardust
+[submodule "content/build/inx-indexer/develop"]
+	path = content/build/inx-indexer/develop
+	url = https://github.com/iotaledger/inx-indexer
+	branch = develop

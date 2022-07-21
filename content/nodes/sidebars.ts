@@ -43,7 +43,7 @@ module.exports = {
                     {
                         type: 'link',
                         label: 'Indexer',
-                        href: 'https://github.com/iotaledger/inx-indexer',
+                        href: '/inx-indexer/develop/welcome',
                     },
                     {
                         type: 'link',
