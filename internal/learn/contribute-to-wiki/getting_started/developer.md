@@ -43,11 +43,9 @@ The natural way to plan documentation is to create a ticket before every release
 |You write one small piece at a time.              | You write in huge intimidating chunks.                                           |                                     
 |You write regularily and build a habit.           | You write once in a few months and you treat writing as an unpleasant odd job.   |
 
-### Let Writers Know
+## Further Reads
 
 Once again, technical writers are here to help. To let us know that you got some work for us, see [Request a Technical Writer](../how_tos/request_tw.md).
-
-## Further Reads
 
 Technical writers follow the [full style guide](../reference/style/manifesto.md), but we have prepared a [single-page version](./quick_advice.md) of it for you.
 
