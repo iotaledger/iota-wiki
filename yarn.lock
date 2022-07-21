@@ -8882,6 +8882,14 @@ __metadata:
   languageName: node
   linkType: hard
 
+"inx-indexer-develop@workspace:content/build/inx-indexer/develop/documentation":
+  version: 0.0.0-use.local
+  resolution: "inx-indexer-develop@workspace:content/build/inx-indexer/develop/documentation"
+  dependencies:
+    "@iota-community/iota-wiki-cli": "iota-community/iota-wiki-cli#v2"
+  languageName: unknown
+  linkType: soft
+
 "iota-rs-develop@workspace:content/build/iota.rs/develop/documentation":
   version: 0.0.0-use.local
   resolution: "iota-rs-develop@workspace:content/build/iota.rs/develop/documentation"
