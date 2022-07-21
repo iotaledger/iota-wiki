@@ -39,7 +39,7 @@ The natural way to plan documentation is to create a ticket before every release
 |You have it listed for every feature by default.  | You can forget to create it.                                                     |
 |You release the feature documented.               | You can keep the ticket at the bottom of the backlog forever and never write it. |
 |The polished version is in the work right away.   | Documentation tickets get deprioritized over features and bugfixes. TWs get involved weeks later, shortly before a major version release.  |
-|You write it while it fresh.                      | You will have to recall every detail later.                                      |
+|You write it while it is fresh.                   | You will have to recall every detail later.                                      |
 |You write one small piece at a time.              | You write in huge intimidating chunks.                                           |                                     
 |You write regularily and build a habit.           | You write once in a few months and you treat writing as an unpleasant odd job.   |
 
