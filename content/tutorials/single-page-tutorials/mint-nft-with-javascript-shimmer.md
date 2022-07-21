@@ -6,7 +6,7 @@ tags: [Shimmer, NFT, beginner, Javascript, iota.js]
 
 # How to mint an NFT with Javascript
 
-> Learn how to mint an NFT on the Shimmer Network with Javascript
+A non-fungible token (NFT) is a token that is verifiably unique and can be used to prove and transfer ownership of a digital asset. You can create NFTs in the Shimmer ledger as a native asset or use smart contracts as a smart asset. This tutorial uses Javascript to mint a native NFT in the Shimmer ledger.
 
 ## What you will learn
 
