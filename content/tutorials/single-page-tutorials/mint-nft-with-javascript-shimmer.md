@@ -210,8 +210,9 @@ The maximum length of a Metadata field in the Shimmer Network is 8192 bytes and 
 :::
 
 Minting must respect the following constraints:
+
  - _NFT ID_ must be zeroed out. The protocol will replace it with the blake2b-256 hash of the _Output ID_ upon booking.
- - _Issuer_ address must be unlocked on the input side,
+ - _Issuer_ address must be unlocked on the input side.
  - _Immutable Metadata_ length must not exceed _Maximum Metadata Length_ defined in [TIP-22 (IOTA)](https://github.com/Wollac/protocol-rfcs/blob/protocol-parameters/tips/TIP-0022/tip-0022.md) or [TIP-32 (Shimmer)](https://github.com/iotaledger/tips/blob/shimmer-params/tips/TIP-0032/tip-0032.md).
 
 
