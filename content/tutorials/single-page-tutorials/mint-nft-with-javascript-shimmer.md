@@ -190,7 +190,8 @@ After you have customized your NFT, you will need to compile the Typescript file
 npm run dist
 npm start
 ```
-This should be the console output: 
+
+**Expected output:** 
 
 ```bash
 Required Storage Deposit of the NFT output:  342500
