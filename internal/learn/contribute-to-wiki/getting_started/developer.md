@@ -49,6 +49,6 @@ Once again, technical writers are here to help. To let us know that you got some
 
 ## Further Reads
 
-Technical writers follow the [full style guide](../reference/style/manifesto.md), but we prepared a [single-page version](./quick_advice.md) of it for you.
+Technical writers follow the [full style guide](../reference/style/manifesto.md), but we have prepared a [single-page version](./quick_advice.md) of it for you.
 
 We also keep a list of techniques that might help you: see [Writing Tools](../explanations/tools/).
