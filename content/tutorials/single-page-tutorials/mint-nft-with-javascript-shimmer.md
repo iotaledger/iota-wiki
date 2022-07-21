@@ -134,7 +134,7 @@ In this example, the data is a text called `This is where the immutable NFT meta
 
 ## NFT Metadata
 
-You can define any data as **Immutable Metadata**, which will be stored in the Tangle. The community defined a standard for the metadata called [IRC27](https://github.com/iotaledger/tips/pull/65). This enables interoperability so the standardized metadata can be used by decentral applications like NFT marketplaces. 
+You can define any data as **immutable metadata**, which will be stored in the Tangle. The community defined a standard for the metadata called [IRC27](https://github.com/iotaledger/tips/pull/65). This enables interoperability so the standardized metadata can be used by decentral applications like NFT marketplaces. 
 
 This is a simple example of a IRC27 compatible metadata. 
 ```javascript=
