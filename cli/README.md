@@ -9,7 +9,8 @@ A command line utility to manage Wiki content and preview content locally.
 
 ## Requirements
 
-This utility requires [`yarn`](https://yarnpkg.com/) and [`git`](https://git-scm.com/) to be installed.
+- [`git`](https://git-scm.com/)
+- [NodeJS 16.10](https://nodejs.org/en/download/) or higher with [corepack](https://nodejs.org/en/download/) enabled by running `corepack enable`.
 
 ## Install
 
