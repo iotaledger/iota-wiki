@@ -9,6 +9,8 @@ keywords:
 
 # Energy Efficiency
 
+![IOTA Energy Efficiency](/img/Banner/banner_energy_efficiency.svg)
+
 An important measurement of any distributed ledger technology is the energy cost per transaction. The IOTA network is designed to be lightweight and energy-efficient. This page provides an overview of the process and results of tests conducted by the IOTA Foundation to measure the energy efficiency of the Tangle. To read the full details of the test, this [IOTA Foundation blog post](https://blog.iota.org/internal-energy-benchmarks-for-iota/) covers the process in depth.
 
 ## The Tests

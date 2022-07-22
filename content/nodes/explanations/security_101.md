@@ -12,7 +12,7 @@ keywords:
 
 # Security 101
 
-![Hornet Node Security 101](/img/Banner/banner_hornet_security_101.png)
+![Node Security 101](/img/Banner/banner_security_101.svg)
 
 You can follow the checklists below to run your node securely.
 

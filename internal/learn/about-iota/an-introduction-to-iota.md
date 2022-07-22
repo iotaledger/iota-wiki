@@ -9,6 +9,8 @@ image: /img/iota-wiki.png
 
 # IOTA
 
+![IOTA Introduction](/img/Banner/banner_iota.svg)
+
 IOTA is a distributed ledger technology, a DLT. With the right approach, DLTs let us control our own [private data](https://wiki.iota.org/identity.rs/introduction), run [programs](https://wiki.iota.org/smart-contracts/overview) that nobody can meddle with, and trade and own assets without intermediaries.
 
 As in the name, a distributed ledger technology maintains a ledger — a tally of token ownership — between multiple nodes. That would be trivial if all nodes were controlled by the same entity, but in DLTs the ledger state has to be agreed on by a collective of independent nodes. There is always a chance that a malicious node joins the network, so any DLT needs a way to protect itself. The way that IOTA takes makes it differ from other protocols.
