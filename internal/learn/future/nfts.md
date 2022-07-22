@@ -13,8 +13,6 @@ keywords:
 
 ## What are Non-fungible Tokens (NFTs)?
 
-![NFTs](/img/Banner/banner_nft.svg)
-
 Ethereum was the first blockchain to support NFTs with its ERC-721 standard. The difference from normal tokens is that
 the NFT is unique and clearly verifiable and can be used to prove ownership of any digital good.
 
