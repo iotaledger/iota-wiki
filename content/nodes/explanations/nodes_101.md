@@ -1,6 +1,6 @@
 ---
 description: Introducing nodes and what they can do in the IOTA network (Tangle). 
-image: /img/Banner/banner_hornet_nodes_101.png
+image: /img/iota-wiki.png
 keywords:
 - IOTA Node 
 - Hornet Node
