@@ -49,4 +49,4 @@ Once again, technical writers are here to help. To let us know that you got some
 
 Technical writers follow the [full style guide](../reference/style/manifesto.md), but we have prepared a [single-page version](./quick_advice.md) of it for you.
 
-We also keep a list of [writing tools](../explanations/tools/) that might help you.
+We also keep a list of [writing tools](../explanations/tools/overview.md) that might help you.
