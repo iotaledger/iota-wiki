@@ -6,15 +6,15 @@ image: /img/iota-wiki.png
 ---
 # How To Write Banger How Tos
 
-A person would read a how to guide to learn how to solve a real task at their hands, and different people would perform the same task under different circumstances. Even a trivial thing like connection to a node can be thwarted by unstable internet connection, firewall settings, or the node not being healthy.
+A person reads a how to guide to learn how to solve a concrete task, and different people will perform the same task under different circumstances. Even a trivial task like connecting to a node can be thwarted by an unstable internet connection, firewall settings, or the node not being healthy.
 
-A how to guide helps readers to achieve their goal. It explains how to use a function of the product in a safe way to get a desired result. A big part of it is explaining what to look at before using the product, and helping to interpret the output to see if everything went as the user have intended.
+A how to guide helps readers to achieve their goal. It explains how to use a product function safely to get the desired result. A big part of it is explaining what to look at before using the product, and helping to interpret the output to see if everything went as the user have intended.
 
 Keep how tos atomic: let each describe one particular task at a time. It is easier for the reader to compose multiple smaller guides to solve a larger issue than to extract a smaller bit out of a long and complex article. And it's easier to write multiple small articles over a long read.
 
 ## How To Template
 
-If you don't know where to start, just take this template and replace everything in {CURLY BRACKETS} or rewrite whole sentences:
+If you do not know where to start, just take this template and replace everything in {CURLY BRACES} or rewrite whole sentences:
 
 ```markdown
 # How To {DO SOMETHING}
