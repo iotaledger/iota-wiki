@@ -113,8 +113,8 @@ module.exports = {
           label: 'Getting Started',
           items: [
             'contribute-to-wiki/getting_started/getting_started',
-            'contribute-to-wiki/getting_started/quick_advice',
             'contribute-to-wiki/getting_started/developer',
+            'contribute-to-wiki/getting_started/quick_advice',
           ],
         },
         {
