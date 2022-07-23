@@ -15,10 +15,17 @@ export class Start extends Command {
   });
 
   async execute() {
-    const directory = this.directory || '.';
+    const directory = this.directory || process.cwd();
 
     return await shell(
-      `IOTA_WIKI_DIRECTORY=${directory} npx docusaurus start --config ${internalConfig} ${directory}`,
+      'npx docusaurus start --config',
+      [internalConfig, directory],
+      {
+        env: {
+          IOTA_WIKI_DIRECTORY: directory,
+          ...process.env,
+        },
+      },
     );
   }
 }
