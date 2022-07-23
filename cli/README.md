@@ -9,7 +9,6 @@ A command line utility to manage Wiki content and preview content locally.
 
 ## Requirements
 
-- [`git`](https://git-scm.com/)
 - [NodeJS 16.10](https://nodejs.org/en/download/) or higher with [corepack](https://nodejs.org/en/download/) enabled by running `corepack enable`.
 
 ## Install
