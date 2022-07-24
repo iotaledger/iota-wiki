@@ -12,32 +12,32 @@ module.exports = {
         {
           type: 'link',
           label: 'Identity',
-          href: 'identity.rs/introduction',
+          href: '/identity.rs/introduction',
         },
         {
           type: 'link',
           label: 'Client',
-          href: 'iota.rs/welcome',
+          href: '/iota.rs/welcome',
         },
         {
           type: 'link',
           label: 'JS Client',
-          href: 'iotajs/welcome',
+          href: '/iotajs/welcome',
         },
         {
           type: 'link',
           label: 'Wallet',
-          href: 'wallet.rs/welcome',
+          href: '/wallet.rs/welcome',
         },
         {
           type: 'link',
           label: 'Streams',
-          href: 'streams/welcome',
+          href: '/streams/welcome',
         },
         {
           type: 'link',
           label: 'Stronghold',
-          href: 'stronghold.rs/getting_started',
+          href: '/stronghold.rs/getting_started',
         },
       ],
       collapsible: false,
