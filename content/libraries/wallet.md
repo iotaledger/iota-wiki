@@ -13,7 +13,7 @@ transfers, such as exchanges and pay-as-you-go systems.
 
 ## wallet.rs
 
-The [wallet.rs library](/wallet.rs/wallet.rs/welcome) is written
+The [wallet.rs library](/wallet.rs/welcome) is written
 in [Rust](/wallet.rs/getting_started/rust), and
 has bindings for [Java](/wallet.rs/getting_started/java)
 [Java for Android](/wallet.rs/getting_started/java_for_android),
