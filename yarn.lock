@@ -8890,6 +8890,14 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"inx-mqtt-develop@workspace:content/build/inx-mqtt/documentation":
+  version: 0.0.0-use.local
+  resolution: "inx-mqtt-develop@workspace:content/build/inx-mqtt/documentation"
+  dependencies:
+    "@iota-community/iota-wiki-cli": "iota-community/iota-wiki-cli#v2"
+  languageName: unknown
+  linkType: soft
+
 "iota-rs-develop@workspace:content/build/iota.rs/develop/documentation":
   version: 0.0.0-use.local
   resolution: "iota-rs-develop@workspace:content/build/iota.rs/develop/documentation"
