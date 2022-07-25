@@ -3071,6 +3071,19 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@docusaurus/lqip-loader@npm:2.0.0-rc.1":
+  version: 2.0.0-rc.1
+  resolution: "@docusaurus/lqip-loader@npm:2.0.0-rc.1"
+  dependencies:
+    "@docusaurus/logger": 2.0.0-rc.1
+    file-loader: ^6.2.0
+    lodash: ^4.17.21
+    sharp: ^0.30.7
+    tslib: ^2.4.0
+  checksum: 003717527f49aedd5446613d8852a7eaee994fa1664e6d78310340a74dfb2b6d8f910e2229aab91913b3d94e29e978610e674d04628c9a05caf07e85ebb179c7
+  languageName: node
+  linkType: hard
+
 "@docusaurus/mdx-loader@npm:2.0.0-beta.21":
   version: 2.0.0-beta.21
   resolution: "@docusaurus/mdx-loader@npm:2.0.0-beta.21"
@@ -3349,6 +3362,32 @@ __metadata:
     react: ^16.8.4 || ^17.0.0
     react-dom: ^16.8.4 || ^17.0.0
   checksum: 36590a4ef980775f504af857cd128709f0fde28a028a725657373a7bfbfb590b6bba7fc3b81d45299369e77486f221eca22df7643f65c316dcbdf912d3518c37
+  languageName: node
+  linkType: hard
+
+"@docusaurus/plugin-ideal-image@npm:^2.0.0-rc.1":
+  version: 2.0.0-rc.1
+  resolution: "@docusaurus/plugin-ideal-image@npm:2.0.0-rc.1"
+  dependencies:
+    "@docusaurus/core": 2.0.0-rc.1
+    "@docusaurus/lqip-loader": 2.0.0-rc.1
+    "@docusaurus/responsive-loader": ^1.7.0
+    "@docusaurus/theme-translations": 2.0.0-rc.1
+    "@docusaurus/types": 2.0.0-rc.1
+    "@docusaurus/utils-validation": 2.0.0-rc.1
+    "@endiliey/react-ideal-image": ^0.0.11
+    react-waypoint: ^10.3.0
+    sharp: ^0.30.7
+    tslib: ^2.4.0
+    webpack: ^5.73.0
+  peerDependencies:
+    jimp: "*"
+    react: ^16.8.4 || ^17.0.0
+    react-dom: ^16.8.4 || ^17.0.0
+  peerDependenciesMeta:
+    jimp:
+      optional: true
+  checksum: adf9afc9dafd77b19306350050b08452b2680bf41e0ccb72780d59600c25a0cd5f4c1cb7743d396c863632dee066a422f0b037252b0431f8bfa91babc02efa75
   languageName: node
   linkType: hard
 
@@ -10644,6 +10683,7 @@ __metadata:
     "@algolia/client-search": ^4.9.1
     "@docusaurus/core": ^2.0.0-rc.1
     "@docusaurus/module-type-aliases": ^2.0.0-rc.1
+    "@docusaurus/plugin-ideal-image": ^2.0.0-rc.1
     "@docusaurus/preset-classic": ^2.0.0-rc.1
     "@mdx-js/react": ^1.6.21
     "@popperjs/core": ^2.11.2
@@ -13728,7 +13768,7 @@ plugin-image-zoom@flexanalytics/plugin-image-zoom:
   languageName: node
   linkType: hard
 
-"prebuild-install@npm:^7.1.0":
+"prebuild-install@npm:^7.1.0, prebuild-install@npm:^7.1.1":
   version: 7.1.1
   resolution: "prebuild-install@npm:7.1.1"
   dependencies:
@@ -14411,7 +14451,7 @@ plugin-image-zoom@flexanalytics/plugin-image-zoom:
   languageName: node
   linkType: hard
 
-"react-waypoint@npm:^10.1.0":
+"react-waypoint@npm:^10.1.0, react-waypoint@npm:^10.3.0":
   version: 10.3.0
   resolution: "react-waypoint@npm:10.3.0"
   dependencies:
@@ -15399,6 +15439,23 @@ plugin-image-zoom@flexanalytics/plugin-image-zoom:
     tar-fs: ^2.1.1
     tunnel-agent: ^0.6.0
   checksum: 2560b5769d78ee660d767e59f6fa56531c448d16383f9700e4ecb8016382104c1bb42991bdd4ea741c0f4d934ea5246c5d602fc5f39062bcc1c2c8786421fd5a
+  languageName: node
+  linkType: hard
+
+"sharp@npm:^0.30.7":
+  version: 0.30.7
+  resolution: "sharp@npm:0.30.7"
+  dependencies:
+    color: ^4.2.3
+    detect-libc: ^2.0.1
+    node-addon-api: ^5.0.0
+    node-gyp: latest
+    prebuild-install: ^7.1.1
+    semver: ^7.3.7
+    simple-get: ^4.0.1
+    tar-fs: ^2.1.1
+    tunnel-agent: ^0.6.0
+  checksum: bbc63ca3c7ea8a5bff32cd77022cfea30e25a03f5bd031e935924bf6cf0e11e3388e8b0e22b3137bf8816aa73407f1e4fbeb190f3a35605c27ffca9f32b91601
   languageName: node
   linkType: hard
 
