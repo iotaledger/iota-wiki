@@ -149,6 +149,12 @@
       "label": "Wasm",
       "description": "This Tutorial is using the Wasm programming language",
       "color": "#be9970"
+    },
+    {
+      "value": "js",
+      "label": "JavaScript",
+      "description": "This Tutorial is using the JavaScript programming language",
+      "color": "#f8a454"
     }
   ],
   "Network": [
