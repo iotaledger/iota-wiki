@@ -47,6 +47,11 @@ module.exports = {
                     },
                     {
                         type: 'link',
+                        label: 'MQTT',
+                        href: '/inx-mqtt/develop/welcome',
+                    },
+                    {
+                        type: 'link',
                         label: 'Dashboard',
                         href: 'https://github.com/iotaledger/inx-dashboard',   
                     },
