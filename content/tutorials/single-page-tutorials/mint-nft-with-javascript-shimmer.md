@@ -10,10 +10,10 @@ A non-fungible token (NFT) is a token that is verifiably unique and can be used 
 
 ## What you will learn
 
-- How NFTs work on Layer 1 (L1)
-- How you can mint an NFT
-- How to use and read the Shimmer Explorer
-- How the Immutable Metadata works
+- [How NFTs work on Layer 1 (L1)](#What_is_an_NFT?)
+- [How you can mint an NFT](#Mint_a_NFT)
+- [How to use and read the Shimmer Explorer](#)
+- [How the Immutable Metadata works](#How_to_add_Metadata_to_an_NFT)
 
 :::info
 ## Why we have iota.js and iota.rs with Node.js bindings
@@ -68,7 +68,7 @@ An NFT is short-term for Non Fungible Tokens - so it's a unique token that can r
 Here in the tutorial, we will mint an NFT with a permanently linked image. The term `mint` means the process of creating a new NFT in the network. 
 
 
-## Getting Started
+## Mint a NFT
 
 The example leads us through the process of creating an NFT. We can mint for a specific address or mint one to a temporary account. Keep in mind, that this is just an example and should not be used to store NFTs in the Mainnet.  
 
@@ -121,7 +121,11 @@ Check out the transaction at  https://explorer.alphanet.iotaledger.net/alphanet/
 Done
 ```
 
-You can click on the link, and discover the information on the Shimmer network Explorer. 
+### Shimmer Explorer
+
+> [Visit Shimmer Explorer here](https://explorer.alphanet.iotaledger.net/alphanet)
+
+You can click on the link above and discover the information on the Shimmer network Explorer. 
 
 ![Shimmer Explorer](./images/mint-nft-with-javascript-shimmer/explorer.png)
 
@@ -200,10 +204,7 @@ Check out the transaction at  https://explorer.alphanet.iotaledger.net/alphanet/
 Done
 ```
 
-
-#### NFT with IRC27 compatible metadata
-
-![IRC27 Standard](./images/mint-nft-with-javascript-shimmer/irc27.png)
+![NFT with IRC27 compatible metadata](./images/mint-nft-with-javascript-shimmer/irc27.png)
 
 
 :::info
