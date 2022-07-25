@@ -123,12 +123,12 @@ Done
 
 You can click on the link, and discover the information on the Shimmer network Explorer. 
 
-![](./images/mint-nft-with-javascript-shimmer/explorer.png)
+![Shimmer Explorer](./images/mint-nft-with-javascript-shimmer/explorer.png)
 
 You can open the details on the NFT output to see the connected NFT Metadata. Just click on the `NFT Output`and the `Immutable Metadata` to view the data.
 
 
-![](./images/mint-nft-with-javascript-shimmer/metadata.png)
+![NFT Metadata](./images/mint-nft-with-javascript-shimmer/metadata.png)
 
 In this example, the data is a text called `This is where the immutable NFT metadata goes`. Let's discover what NFT Metadata is in detail and how you can add some custom Metadata and learn how other applications can use it.  
 
@@ -203,7 +203,7 @@ Done
 
 #### NFT with IRC27 compatible metadata
 
-![](./images/mint-nft-with-javascript-shimmer/irc27.png)
+![IRC27 Standard](./images/mint-nft-with-javascript-shimmer/irc27.png)
 
 
 :::info
