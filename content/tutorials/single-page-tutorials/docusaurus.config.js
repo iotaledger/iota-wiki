@@ -56,9 +56,9 @@ module.exports = {
             '@iota-wiki/plugin-tutorial',
             {
                 title: 'Run a EVM Chain',
-                description: 'In this tutorial you will learn how to run an EVM node.',
+                description: 'In this tutorial you will learn how to use an EVM chain.',
                 preview: 'IOTA-Smart-Contract-Tutorials-D.jpg',
-                route: 'smart-contracts/guide/evm/create-chain',
+                route: 'smart-contracts/guide/evm/using',
                 tags: ['text', 'video'],
             }
         ],
