@@ -98,3 +98,7 @@
 	path = content/build/inx-mqtt
 	url = https://github.com/iotaledger/inx-mqtt.git
 	branch = develop
+[submodule "content/build/inx-poi/develop"]
+	path = content/build/inx-poi/develop
+	url = https://github.com/iotaledger/inx-poi
+	branch = develop
