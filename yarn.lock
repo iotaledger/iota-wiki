@@ -8898,6 +8898,14 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"inx-poi-develop@workspace:content/build/inx-poi/develop/documentation":
+  version: 0.0.0-use.local
+  resolution: "inx-poi-develop@workspace:content/build/inx-poi/develop/documentation"
+  dependencies:
+    "@iota-community/iota-wiki-cli": "iota-community/iota-wiki-cli#v2"
+  languageName: unknown
+  linkType: soft
+
 "iota-rs-develop@workspace:content/build/iota.rs/develop/documentation":
   version: 0.0.0-use.local
   resolution: "iota-rs-develop@workspace:content/build/iota.rs/develop/documentation"
@@ -15441,9 +15449,20 @@ plugin-image-zoom@flexanalytics/plugin-image-zoom:
   languageName: node
   linkType: hard
 
-"wasp@workspace:content/build/wasp/develop/documentation":
+"wasp-develop@workspace:content/build/wasp/develop/documentation":
   version: 0.0.0-use.local
-  resolution: "wasp@workspace:content/build/wasp/develop/documentation"
+  resolution: "wasp-develop@workspace:content/build/wasp/develop/documentation"
+  dependencies:
+    "@iota-community/iota-wiki-cli": "iota-community/iota-wiki-cli#v2"
+    remark-code-import: ^0.3.0
+    remark-import-partial: ^0.0.2
+    remark-remove-comments: ^0.2.0
+  languageName: unknown
+  linkType: soft
+
+"wasp@workspace:content/build/wasp/production/documentation":
+  version: 0.0.0-use.local
+  resolution: "wasp@workspace:content/build/wasp/production/documentation"
   dependencies:
     "@iota-community/iota-wiki-cli": "iota-community/iota-wiki-cli#v2"
     remark-code-import: ^0.3.0
