@@ -102,3 +102,7 @@
 	path = content/build/wasp/production
 	url = https://github.com/iotaledger/wasp
 	branch = master
+[submodule "content/build/inx-poi/develop"]
+	path = content/build/inx-poi/develop
+	url = https://github.com/iotaledger/inx-poi
+  branch = develop
