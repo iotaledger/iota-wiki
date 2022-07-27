@@ -98,3 +98,7 @@
 	path = content/build/inx-mqtt
 	url = https://github.com/iotaledger/inx-mqtt.git
 	branch = develop
+[submodule "content/build/wasp/production"]
+	path = content/build/wasp/production
+	url = https://github.com/iotaledger/wasp
+	branch = master
