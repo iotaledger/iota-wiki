@@ -377,6 +377,13 @@ ul ul .table-of-contents__link {
   margin-right: 1rem;
 }
 
+.__react_component_tooltip{
+  max-width: 80%;
+}
+.tooltip{
+  color: var(--ifm-link-color);
+}
+
 @media (max-width: 1227px) {
   .navbar__item {
     font-size: 0.8rem;
