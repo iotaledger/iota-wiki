@@ -7,7 +7,7 @@ keywords:
 image: /img/iota-wiki.png
 ---
 
-# IOTA
+# IOTA EDIT
 
 IOTA is a distributed ledger technology, a DLT. With the right approach, DLTs let us control our own [private data](https://wiki.iota.org/identity.rs/introduction), run [programs](https://wiki.iota.org/smart-contracts/overview) that nobody can meddle with, and trade and own assets without intermediaries.
 
