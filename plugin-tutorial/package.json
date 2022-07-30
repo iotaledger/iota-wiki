@@ -7,10 +7,10 @@
     "build": "tsc --build",
     "prepack": "yarn build"
   },
-  "packageManager": "yarn@3.2.0",
+  "packageManager": "yarn@3.2.2",
   "dependencies": {
-    "@docusaurus/plugin-ideal-image": "latest",
-    "@docusaurus/theme-common": "latest",
+    "@docusaurus/plugin-ideal-image": "2.0.0-rc.1",
+    "@docusaurus/theme-common": "2.0.0-rc.1",
     "@popperjs/core": "^2.11.5",
     "clsx": "^1.1.1",
     "react": "^17.0.2",
@@ -20,8 +20,8 @@
     "react-select": "^5.3.0"
   },
   "devDependencies": {
-    "@docusaurus/module-type-aliases": "latest",
-    "@docusaurus/types": "latest",
+    "@docusaurus/module-type-aliases": "2.0.0-rc.1",
+    "@docusaurus/types": "2.0.0-rc.1",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "typescript": "^4.6.3"
