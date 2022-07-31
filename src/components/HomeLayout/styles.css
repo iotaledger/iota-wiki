@@ -417,6 +417,13 @@
   margin: 0.5rem 0;
 }
 
+.libraries__feature>a {
+  color: var(--ifm-color-emphasis-700);
+}
+
+.libraries__feature:hover>a {
+  color: var(--ifm-color-emphasis-700);
+}
 .libraries__button {
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
