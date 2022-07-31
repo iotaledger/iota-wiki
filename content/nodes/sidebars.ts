@@ -52,6 +52,11 @@ module.exports = {
                     },
                     {
                         type: 'link',
+                        label: 'PoI',
+                        href: '/inx-poi/develop/welcome',
+                    },
+                    {
+                        type: 'link',
                         label: 'Dashboard',
                         href: 'https://github.com/iotaledger/inx-dashboard',   
                     },
