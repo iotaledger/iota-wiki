@@ -123,7 +123,7 @@ article .card {
 
 .footer__bottom {
   display: flex;
-  align-items: center;
+  align-items: baseline;
   flex-wrap: wrap;
 }
 
@@ -152,7 +152,8 @@ article .card {
 }
 
 .footer__logo {
-  margin: 0 var(--ifm-spacing-horizontal);
+  height: 3rem;
+  margin: 0 var(--ifm-spacing-horizontal) -0.8rem var(--ifm-spacing-horizontal);
 }
 
 .image-gallery {

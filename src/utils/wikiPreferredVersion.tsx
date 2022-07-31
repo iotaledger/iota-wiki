@@ -3,7 +3,7 @@ import {
   useDocsData,
   type GlobalVersion,
 } from '@docusaurus/plugin-content-docs/client';
-import { createStorageSlot } from '../theme/NavbarItem/DocsVersionDropdownNavbarItem/storageUtils';
+import { createStorageSlot } from './storageUtils';
 import { DocsVersionPersistence } from '@docusaurus/theme-common/src/utils/useThemeConfig';
 import useIsBrowser from '@docusaurus/useIsBrowser';
 
