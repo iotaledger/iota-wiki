@@ -92,8 +92,8 @@ module.exports = {
         },
         {
           label: 'Libraries',
-          to: 'libraries/introduction',
-          activeBaseRegex: '^/libraries/.*',
+          to: 'categories/libraries',
+          activeBaseRegex: '^(/categories)?/libraries.*',
         },
         {
           label: 'Nodes',
@@ -340,6 +340,19 @@ module.exports = {
     [
       '@docusaurus/plugin-content-docs',
       {
+        id: 'categories',
+        path: 'internal/categories',
+        routeBasePath: 'categories',
+        sidebarPath: require.resolve('./internal/categories/sidebars.ts'),
+
+        // General config
+        editUrl: 'https://github.com/iota-community/iota-wiki/edit/main/',
+        showLastUpdateTime: true,
+      },
+    ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
         id: 'learn',
         path: 'internal/learn',
         routeBasePath: 'learn',
@@ -378,23 +391,6 @@ module.exports = {
         path: 'content/networks',
         routeBasePath: 'networks',
         sidebarPath: require.resolve('./content/networks/sidebars.ts'),
-
-        // General config
-        editUrl: 'https://github.com/iota-community/iota-wiki/edit/main/',
-        remarkPlugins: [
-          require('remark-code-import'),
-          require('remark-import-partial'),
-        ],
-        showLastUpdateTime: true,
-      },
-    ],
-    [
-      '@docusaurus/plugin-content-docs',
-      {
-        id: 'libraries',
-        path: 'content/libraries',
-        routeBasePath: 'libraries',
-        sidebarPath: require.resolve('./content/libraries/sidebars.ts'),
 
         // General config
         editUrl: 'https://github.com/iota-community/iota-wiki/edit/main/',
