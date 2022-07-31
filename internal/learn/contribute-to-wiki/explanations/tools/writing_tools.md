@@ -14,7 +14,7 @@ tags:
 # Writing Tools
 
 There are several writing tools you can use to improve your [style and grammar](#style-and-grammar)
-, [structure](#structure), add [diagrams](https://wiki.iota.org/learn/contribute-to-wiki/reference/structure/overview)
+, [structure](#structure), add [diagrams](../../reference/structure/overview)
 and learn about [markdown and Docusaurus components](#markdown-and-components).
 
 ## Style and Grammar
@@ -57,7 +57,7 @@ flowchart maker, network diagram software, to create UMLs online.
 
 You can find IOTA Wiki themed graphic resources in
 the [Design Resources repository](https://github.com/iota-wiki/Design-Resources). You can add this repository
-to [diaggrams.net](#diagramsnet) in three simple steps:
+to [diagrams.net](#diagramsnet) in three simple steps:
 
 1. Open [diagrams.net](https://app.diagrams.net/).
 2. Click **File** > **Open Library From** > **URL**.

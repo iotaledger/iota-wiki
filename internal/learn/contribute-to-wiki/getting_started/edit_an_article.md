@@ -49,7 +49,7 @@ marked in green will be added.
 
 ## 3. Propose Your Changes
 
-After you have [updated the article](#2.update-the-article) in any way, the `Propose changes` button will be
+After you have [updated the article](#2-update-the-article) in any way, the `Propose changes` button will be
 automatically enabled. This button will create the first [commit](https://github.com/git-guides/git-commit) in your
 upcoming
 [pull request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests)
