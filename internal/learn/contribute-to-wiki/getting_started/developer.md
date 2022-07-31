@@ -26,7 +26,7 @@ See [Setting Up Documentation](../how_tos/documentation_setup.md).
 
 There are [four kinds of documentation](../reference/structure/overview.md). The reference can be generated automatically from inline comments in your code: say, with [rustdoc](https://doc.rust-lang.org/rustdoc/index.html), [typedoc](https://typedoc.org/), [javadoc](https://docs.oracle.com/javase/8/docs/technotes/tools/windows/javadoc.html), or [pydoc](https://docs.python.org/3/library/pydoc.html). Tutorials are handled by the IOTA Foundation's DevX team. This leaves you with [how to guides](../how_tos/how_to_write_how_tos.md) and explanation articles.
 
-You do not have to write perfectly. It is a technical writer's job to produce a perfectly polished article. But we need to base our writing on something, and when it comes to a brand new feature or a code change, you momentarily become the world's only expert in it. If you write a rough, flawed article when release your software, your users would already prefer it over a blank page. And it is much less work for technical writers to streamline your text a bit instead of doing our own research of your project.
+You do not have to write perfectly. It is a technical writer's job to produce a perfectly polished article. But we need to base our writing on something, and when it comes to a brand new feature or a code change, you momentarily become the world's only expert in it. Keep in mind your users prefer even a rough, flawed article over a blank page when you release your software. And it is much less work for technical writers to streamline your text a bit instead of doing our own research of your project.
 
 ### Write Documentation As You Work
 
