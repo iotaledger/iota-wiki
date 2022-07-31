@@ -112,16 +112,19 @@ module.exports = {
           type: 'category',
           label: 'Getting Started',
           items: [
-            'contribute-to-wiki/getting_started/getting_started',
-            'contribute-to-wiki/getting_started/quick_advice',
+            'contribute-to-wiki/getting_started/edit_an_article',
             'contribute-to-wiki/getting_started/developer',
+            'contribute-to-wiki/getting_started/quick_advice',
           ],
         },
         {
           type: 'category',
           label: 'How Tos',
           items: [
+            'contribute-to-wiki/how_tos/create_an_issue',
+            'contribute-to-wiki/how_tos/write_a_good_tutorial',
             'contribute-to-wiki/how_tos/documentation_setup',
+            'contribute-to-wiki/how_tos/how_to_write_how_tos',
             'contribute-to-wiki/how_tos/request_tw',
           ],
         },
@@ -134,7 +137,7 @@ module.exports = {
               type: 'category',
               label: 'Writing Tools',
               items: [
-                'contribute-to-wiki/explanations/tools/overview',
+                'contribute-to-wiki/explanations/tools/writing_tools',
                 'contribute-to-wiki/explanations/tools/questions',
                 'contribute-to-wiki/explanations/tools/mind_map',
               ],

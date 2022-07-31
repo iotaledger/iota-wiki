@@ -94,3 +94,15 @@
 	path = content/build/inx-indexer/develop
 	url = https://github.com/iotaledger/inx-indexer
 	branch = develop
+[submodule "content/build/inx-mqtt"]
+	path = content/build/inx-mqtt
+	url = https://github.com/iotaledger/inx-mqtt.git
+	branch = develop
+[submodule "content/build/wasp/production"]
+	path = content/build/wasp/production
+	url = https://github.com/iotaledger/wasp
+	branch = master
+[submodule "content/build/inx-poi/develop"]
+	path = content/build/inx-poi/develop
+	url = https://github.com/iotaledger/inx-poi
+  branch = develop
