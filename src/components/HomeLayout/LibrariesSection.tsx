@@ -50,11 +50,21 @@ const LibrariesSection: FC = () => (
         </div>
         <h3 className='libraries__header'>Identity</h3>
         <ul className='libraries__features'>
-          <li className='libraries__feature'>Identity framework</li>
           <li className='libraries__feature'>
-            Decentralized Identifiers (DID)
+            <Link to='/identity.rs/develop/decentralized_identity'>
+              Decentralized Identities (SSI)
+            </Link>
           </li>
-          <li className='libraries__feature'>Verifiable Credentials (VC)</li>
+          <li className='libraries__feature'>
+            <Link to='/identity.rs/develop/concepts/decentralized_identifiers/overview'>
+              Decentralized Identifiers (DID)
+            </Link>
+          </li>
+          <li className='libraries__feature'>
+            <Link to='/identity.rs/develop/concepts/verifiable_credentials/overview'>
+              Verifiable Credentials (VC)
+            </Link>
+          </li>
         </ul>
         <Link
           to='/identity.rs/introduction'
@@ -77,23 +87,31 @@ const LibrariesSection: FC = () => (
               Python: '/iota.rs/getting_started/python',
               Java: '/iota.rs/getting_started/java/getting_started',
               Wasm: '/iota.rs/getting_started/wasm',
-              Javascript: '/iotajs/welcome',
+              TypeScript: '/iotajs/welcome',
             }}
           />
         </div>
         <h3 className='libraries__header'>Client</h3>
         <ul className='libraries__features'>
-          <li className='libraries__feature'>Interact with the IOTA network</li>
           <li className='libraries__feature'>
-            Create messages and transactions
+            <Link to='/iota.rs/examples/get_info'>
+              Interact with the IOTA network
+            </Link>
           </li>
-          <li className='libraries__feature'>Sign transactions</li>
+          <li className='libraries__feature'>
+            <Link to='/iota.rs/examples/data_message'>Send a data message</Link>
+          </li>
+          <li className='libraries__feature'>
+            <Link to='/iota.rs/explanations/messages_payloads_and_transactions'>
+              Learn about transactions
+            </Link>
+          </li>
         </ul>
         <Link
           to='/iota.rs/welcome'
           className='libraries__button button button--outline button--primary'
         >
-          Interact with the network
+          Get started
         </Link>
       </div>
     </div>
@@ -114,9 +132,21 @@ const LibrariesSection: FC = () => (
         </div>
         <h3 className='libraries__header'>Wallet</h3>
         <ul className='libraries__features'>
-          <li className='libraries__feature'>Integrate an IOTA wallet</li>
-          <li className='libraries__feature'>Store account data</li>
-          <li className='libraries__feature'>State management and backup</li>
+          <li className='libraries__feature'>
+            <Link to='/wallet.rs/explanations/nutshell'>
+              The library in a nutshell
+            </Link>
+          </li>
+          <li className='libraries__feature'>
+            <Link to='/wallet.rs/examples/rust#backup-and-restore-example'>
+              Store account data
+            </Link>
+          </li>
+          <li className='libraries__feature'>
+            <Link to='/wallet.rs/examples/rust#transfer-example'>
+              Transfer tokens
+            </Link>
+          </li>
         </ul>
         <Link
           to='/wallet.rs/welcome'
@@ -143,9 +173,11 @@ const LibrariesSection: FC = () => (
         <h3 className='libraries__header'>Streams</h3>
         <ul className='libraries__features'>
           <li className='libraries__feature'>
-            Organize and share data securely
+            <Link to='/streams/overview'>Organize and share data securely</Link>
           </li>
-          <li className='libraries__feature'>Integrity and authenticity</li>
+          <li className='libraries__feature'>
+            <Link to='/streams/specs'>Read the specification</Link>
+          </li>
           <li className='libraries__feature'>Control the ownership of data</li>
         </ul>
         <Link
@@ -170,11 +202,21 @@ const LibrariesSection: FC = () => (
         </div>
         <h3 className='libraries__header'>Stronghold</h3>
         <ul className='libraries__features'>
-          <li className='libraries__feature'>Secure management of passwords</li>
           <li className='libraries__feature'>
-            Secure personal data and private keys
+            <Link to='/stronghold.rs/how_tos/cli/store_read_write'>
+              Read and write to the vault
+            </Link>
           </li>
-          <li className='libraries__feature'>Isolating digital secrets</li>
+          <li className='libraries__feature'>
+            <Link to='/stronghold.rs/how_tos/cli/read_snapshot'>
+              Manage snapshots
+            </Link>
+          </li>
+          <li className='libraries__feature'>
+            <Link to='/stronghold.rs/explanations/p2p'>
+              Peer to peer communication
+            </Link>
+          </li>
         </ul>
         <Link
           to='/stronghold.rs/getting_started'
