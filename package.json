@@ -21,6 +21,7 @@
     "@algolia/client-search": "^4.9.1",
     "@docusaurus/core": "2.0.0-rc.1",
     "@docusaurus/preset-classic": "2.0.0-rc.1",
+    "@iota-wiki/plugin-tutorial": "^1.0.5",
     "@mdx-js/react": "^1.6.21",
     "@popperjs/core": "^2.11.2",
     "@svgr/webpack": "^5.5.0",
