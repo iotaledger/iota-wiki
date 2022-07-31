@@ -1,7 +1,7 @@
 import React from 'react';
 import Link, { Props } from '@docusaurus/Link';
-import { useCurrentDocPlugins } from '@site/src/theme/NavbarItem/DocsVersionDropdownNavbarItem/utils';
-import { useWikiPreferredVersion } from '@site/src/contexts/wikiPreferredVersion';
+import { useCurrentDocPlugins } from '@site/src/utils/wikiVersion';
+import { useWikiPreferredVersion } from '@site/src/utils/wikiPreferredVersion';
 
 export default function VersionedLink({to, ...props}: Props): JSX.Element {
   if (to !== undefined) {

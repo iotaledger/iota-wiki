@@ -1,8 +1,7 @@
 /**
- * Copyright (c) Facebook, Inc. and its affiliates.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
+ * SWIZZLED VERSION: 2.0.0-rc.1
+ * REASONS:
+ *  - Add version picker.
  */
 
 import React from 'react';
@@ -11,8 +10,8 @@ import {
   NavbarSecondaryMenuFiller,
   type NavbarSecondaryMenuComponent,
   ThemeClassNames,
-  useNavbarMobileSidebar,
 } from '@docusaurus/theme-common';
+import { useNavbarMobileSidebar } from '@docusaurus/theme-common/internal';
 import DocSidebarItems from '@theme/DocSidebarItems';
 import type { Props } from '@theme/DocSidebar/Mobile';
 import VersionPicker from '@site/src/components/VersionPicker';
