@@ -1,6 +1,6 @@
 ---
 description: Introducing nodes and what they can do in the IOTA network (Tangle). 
-image: /img/Banner/banner_hornet_nodes_101.png
+image: /img/iota-wiki.png
 keywords:
 - IOTA Node 
 - Hornet Node
@@ -14,7 +14,7 @@ keywords:
 
 # Nodes 101
 
-![Hornet Node 101](/img/Banner/banner_hornet_nodes_101.png)
+![Node 101](/img/Banner/banner_nodes_101.svg)
 
 The IOTA network is a distributed type of network called Tangle. The network is distributed among several servers
 called nodes which are the backbone of an IOTA network.

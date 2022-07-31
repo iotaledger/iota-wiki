@@ -5,6 +5,8 @@ description: The vision of a fully decentralized, feeless and highly scalable DL
 
 # IOTA 2.0 Coordicide
 
+![Coordicide](/img/Banner/banner_coordicide.svg)
+
 ## Vision
 
 The vision of a fully decentralized, feeless and highly scalable distributed ledger technology.
