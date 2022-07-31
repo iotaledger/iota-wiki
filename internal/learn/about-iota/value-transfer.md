@@ -9,6 +9,8 @@ keywords:
 
 # IOTA Value Transactions
 
+![IOTA Value Transactions](/img/Banner/banner_value_transfer.svg)
+
 This page explains how IOTA tokens are sent and received in the IOTA network with references to more detailed content.
 
 ## Simple Example
