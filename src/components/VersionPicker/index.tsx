@@ -7,8 +7,8 @@ import {
   useAllVersions,
   useCurrentDocPlugins,
   useWikiVersionCandidates,
-} from '@site/src/theme/NavbarItem/DocsVersionDropdownNavbarItem/utils';
-import { useWikiPreferredVersion } from '@site/src/contexts/wikiPreferredVersion';
+} from '@site/src/utils/wikiVersion';
+import { useWikiPreferredVersion } from '@site/src/utils/wikiPreferredVersion';
 import './styles.css';
 
 const getVersionMainDoc = (version) =>

@@ -1,7 +1,7 @@
 import React from 'react';
 import { useThemeConfig } from '@docusaurus/theme-common';
 import './styles.css';
-import get_socials_data from '@site/src/helper/socials';
+import get_socials_data from '@site/src/utils/socials';
 import { ThemeConfig } from '@docusaurus/preset-classic';
 
 export interface Social {

@@ -1,21 +1,15 @@
 /**
- * Copyright (c) Facebook, Inc. and its affiliates.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */
-
-/**
- * REASONS TO SWIZZLE:
- * - The default component exposed by the editor doesn't work with external repos.
+ * SWIZZLED VERSION: 2.0.0-rc.1
+ * REASONS:
+ *  - Support external repo edit URLs.
  */
 
 import React from 'react';
-import Translate from '@docusaurus/Translate';
+import EditThisPage from '@theme-original/EditThisPage';
+import type EditThisPageType from '@theme/EditThisPage';
+import type { WrapperProps } from '@docusaurus/types';
 
-import type { Props } from '@theme/EditThisPage';
-import IconEdit from '@theme/IconEdit';
-import OriginalEditThisPage from '@theme-original/EditThisPage';
+type Props = WrapperProps<typeof EditThisPageType>;
 
 /**
 This function will remove 
@@ -42,24 +36,13 @@ function isExternalProjectURL(editUrl) {
   return externalDocsRegex.test(editUrl);
 }
 
-export default function EditThisPage({ editUrl }: Props): JSX.Element {
-  const formattedEditURL = reformatExternalProjectURL(editUrl);
+export default function EditThisPageWrapper({
+  editUrl,
+  ...props
+}: Props): JSX.Element {
+  const formattedEditURL = isExternalProjectURL(editUrl)
+    ? reformatExternalProjectURL(editUrl)
+    : editUrl;
 
-  return (
-    <>
-      {isExternalProjectURL(editUrl) ? (
-        <a href={formattedEditURL} target='_blank' rel='noreferrer noopener'>
-          <IconEdit />
-          <Translate
-            id='theme.common.editThisPage'
-            description='The link label to edit the current page'
-          >
-            Edit this page
-          </Translate>
-        </a>
-      ) : (
-        <OriginalEditThisPage editUrl={editUrl} />
-      )}
-    </>
-  );
+  return <EditThisPage editUrl={formattedEditURL} {...props} />;
 }
