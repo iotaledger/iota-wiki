@@ -39,7 +39,7 @@
     "react-player": "^2.9.0",
     "react-popper": "^2.3.0",
     "react-select": "^5.2.2",
-    "rehype-katex": "^6.0.2",
+    "rehype-katex": "4",
     "remark-code-import": "^0.3.0",
     "remark-import-partial": "^0.0.2",
     "remark-math": "^3.0.1",
