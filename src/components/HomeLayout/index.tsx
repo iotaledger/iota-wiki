@@ -208,7 +208,7 @@ export default function HomeLayout() {
                   to='smart-contracts/overview'
                   className='start-building__button button button--outline button--primary'
                 >
-                  Learn about ISCP
+                  Learn about ISC
                 </Link>
                 <Link
                   to='smart-contracts/guide/evm/examples/introduction'
