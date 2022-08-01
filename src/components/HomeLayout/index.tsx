@@ -200,8 +200,7 @@ export default function HomeLayout() {
             <div className='start-building__section'>
               <h2 className='start-building__header'>IOTA Smart Contracts</h2>
               <p className='start-building__description'>
-                The IOTA Smart Contracts is a protocol that brings scalable and
-                flexible smart contracts into the IOTA ecosystem.
+                The IOTA Smart Contracts Protocol brings scalable and flexible smart contracts into the IOTA ecosystem.
               </p>
               <div className='start-building__buttons'>
                 <Link
