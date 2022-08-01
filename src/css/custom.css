@@ -2,6 +2,9 @@
 @import 'variables.css';
 @import 'patches.css';
 
+html {
+  scroll-behavior: smooth;
+}
 .version-picker {
   background-color: var(--ifm-color-emphasis-200);
   margin-bottom: 2rem;

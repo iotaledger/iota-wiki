@@ -28,10 +28,23 @@ interface HomepageSectionProps {
 }
 
 const HomepageSection: FC<HomepageSectionProps> = (props) => {
+  const toKebabCase = (header) =>
+    header &&
+    header
+      .match(
+        /[A-Z]{2,}(?=[A-Z][a-z]+[0-9]*|\b)|[A-Z]?[a-z]+[0-9]*|[A-Z]|[0-9]+/g,
+      )
+      .map((parts) => parts.toLowerCase())
+      .join('-');
+
   return (
     <div className={clsx('homepage__section', props.className)}>
       <div className='homepage__container'>
-        {props.header && <h2 className='homepage__header'>{props.header}</h2>}
+        {props.header && (
+          <h2 className='homepage__header' id={toKebabCase(props.header)}>
+            {props.header}
+          </h2>
+        )}
         {props.description && (
           <p className='homepage__description'>{props.description}</p>
         )}
@@ -51,8 +64,9 @@ export default function HomeLayout() {
           <div className='intro'>
             <div className='intro__section'>
               <h1 className='intro__header'>{siteConfig.tagline}</h1>
-              <p className='intro__description' >
-                Build apps capable of taking millions of users on journeys they’ve never been on before. Simple. Scalable. Secure.
+              <p className='intro__description'>
+                Build apps capable of taking millions of users on journeys
+                they’ve never been on before. Simple. Scalable. Secure.
               </p>
               <div className='intro__buttons'>
                 <Link
@@ -62,7 +76,7 @@ export default function HomeLayout() {
                   Learn about IOTA
                 </Link>
                 <Link
-                  to='libraries/introduction'
+                  to='#libraries'
                   className='intro__button button button--primary'
                 >
                   Start building
