@@ -120,8 +120,8 @@ module.exports = {
                 description:
                     'Learn how to mint an NFT on the Shimmer Network with Javascript',
                 preview: 'send-shimmer-tokens-with-wallet-lib.png',
-                route: 'mint-nft-with-javascript-shimmer/thumbnail',
-                tags: ['text', 'Shimmer', 'NFT', 'beginner', 'javascript', 'iota.js'],
+                route: 'mint-nft-with-javascript-shimmer',
+                tags: ['text', 'shimmer', 'nft', 'getting-started', 'js', 'client'],
             },
         ],
     ],
