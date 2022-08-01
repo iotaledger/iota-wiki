@@ -1,5 +1,5 @@
 ---
-title: How to mint an NFT” with Javascript
+title: How to mint a native NFT with Javascript on Shimmer
 description: Learn how to mint an NFT on the Shimmer Network with Javascript
 tags: [Shimmer, NFT, beginner, Javascript, iota.js, client]
 ---
