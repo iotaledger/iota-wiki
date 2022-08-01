@@ -18,16 +18,16 @@
     "prepare": "husky install"
   },
   "dependencies": {
-    "@algolia/client-search": "^4.9.1",
+    "@algolia/client-search": "^4.14.1",
     "@docusaurus/core": "2.0.0-rc.1",
     "@docusaurus/preset-classic": "2.0.0-rc.1",
     "@iota-wiki/plugin-tutorial": "^1.0.5",
     "@mdx-js/react": "^1.6.21",
-    "@popperjs/core": "^2.11.2",
+    "@popperjs/core": "^2.11.5",
     "@svgr/webpack": "^5.5.0",
-    "clsx": "^1.1.1",
+    "clsx": "^1.2.1",
     "docusaurus-plugin-hotjar": "^0.0.2",
-    "docusaurus-plugin-matomo": "^0.0.3",
+    "docusaurus-plugin-matomo": "^0.0.5",
     "file-loader": "^6.2.0",
     "hast-util-is-element": "1.1.0",
     "plugin-image-zoom": "flexanalytics/plugin-image-zoom",
@@ -37,15 +37,15 @@
     "react-dom": "^17.0.2",
     "react-image-gallery": "^1.2.7",
     "react-player": "^2.9.0",
-    "react-popper": "^2.2.5",
+    "react-popper": "^2.3.0",
     "react-select": "^5.2.2",
     "rehype-katex": "4",
     "remark-code-import": "^0.3.0",
     "remark-import-partial": "^0.0.2",
-    "remark-math": "3",
+    "remark-math": "^3.0.1",
     "remark-remove-comments": "^0.2.0",
     "url-loader": "^4.1.1",
-    "webpack": "^4.0.0"
+    "webpack": "^5.73.0"
   },
   "browserslist": {
     "production": [
