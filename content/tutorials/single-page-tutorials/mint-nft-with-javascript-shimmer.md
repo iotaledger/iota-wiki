@@ -17,49 +17,51 @@ A non-fungible token (NFT) is a token that is verifiably unique and can be used 
 
 :::info
 ## Why we have iota.js and iota.rs with Node.js bindings
-- iota.js can be used in the browser, this is not possible with the Node.js bindings on iota.rs
-- iora.rs Node.js bindings are recommended to use in Node.js applications
-- for wallet integrations, we recommend to use wallet.rs, which offers abstractions to handle IOTA payments and can optionally interact with IOTA Stronghold for seed
+- You can use [iota.js](https://wiki.iota.org/iotajs/welcome) in a browser. This is not possible with the Node.js bindings on iota.rs.
+- [iora.rs Node.js](https://wiki.iota.org/iota.rs/getting_started/nodejs) bindings are recommended to use in Node.js applications.
+- For wallet integrations, we recommend using [wallet.rs](https://wiki.iota.org/wallet.rs/welcome), which offers abstractions to handle IOTA payments and can optionally interact with IOTA Stronghold for seed.
 :::
 
 And now, let's start with preparing the development environment. This tutorial assumes that you have Node.js installed.
 
-## Setup Development Environment. 
+## Set Up the Development Environment. 
 
-First, let's copy the iota.js library to your computer, so we can run the example and go through it
+First, copy the iota.js library to your computer, so you can run the example and go through it. 
 
 ```bash
 git clone --branch feat/stardust https://github.com/iotaledger/iota.js shimmer-nft-example
 ```
 
-Now let's switch to the example directory in our `mint-nft`example.
+Now you should switch to the example directory in the `mint-nft`example.
+
 ```bash
 cd shimmer-nft-example/packages/iota/examples/mint-nft
 ```
 
-Here you need to update the iota.js library for the Stardust update and install all the dependencies of the example.
-```bash=
+You will need to update the iota.js library for the Stardust update and install all the dependencies of the example.
+
+```bash
 npm inpm install @iota/crypto.js@next @iota/iota.js@next @iota/util.js@next @iota/po
 npm install
 ```
 
-The next step is to compile the typescript Code into Javascript, so you can run it. To compile it, just run it into your console:
+The next step is compiling the typescript code into Javascript so you can run it. You can do so by running the following command:
 
-```bash=
+```bash
 npm run dist
 ```
 
-This will create a new directory `dist` with a Javascript file called `ìndex.js`. You can run it by simple type this into your console:
+This will create a new directory `dist` with a Javascript file called `index.js`. You can run it by simple type this into your console:
 
-```bash=
+```bash
 npm start
 ```
 
 If you can read this prompt, your setup is complete and the script is running successfully.
 
-> Target address (Bech32 encoded) where to mint the NFT or leave empty and we will generate an address for you: 
+> Target address (Bech32 encoded) where to mint the NFT. Leave empty, and the script will generate an address for you: 
 
-This means, you can input an address to create an NFT and mint it to a given address - so you can input an address by a friend or add an address from a Shimmer wallet. If you leave the address blank, the script will generate a temporary account and mint the NFT to the address of the temporary account.
+This means you can input an address to create an NFT and mint it to a given address - so you can input a friend's address or add an address from a Shimmer wallet. If you leave the address blank, the script will generate a temporary account and mint the NFT to the address of the temporary account.
 
 ## What is an NFT?
 
@@ -75,7 +77,7 @@ The example leads us through the process of creating an NFT. We can mint for a s
 
 So, let's assume you have already started the minting script - if now, just run this in your `mint-nft` example directory:
 
-```bash=
+```bash
 npm start
 ```
 
@@ -99,12 +101,20 @@ Sender Address:
         Address Bech32 rms1qpjd5led59eu79magcyrd8y4hfm5jge06v47p85w8j7cjq6l4wleqycsa63
 ```
 
-Now the script will request some test tokens by the faucet, create the NFT and send it to the `target` address. After some time, the script will output a link to the new Shimmer Network explorer, where you can find more information about the transaction within the NFT. 
+Now the script will:
+1. Request some test tokens from the faucet.
+2. Create the NFT.
+3. Send it to the `target` address. 
 
-Tip: If you need some Testnet tokens, you can use the [online faucet for Shimmer](https://faucet.alphanet.iotaledger.net/).
+After some time, the script will output a link to the new [Shimmer Network explorer](https://explorer.shimmer.network/), where you can find more information about the transaction within the NFT. 
+
+:::tip Testnet Tokens
+
+If you need some Testnet tokens, you can use the [online faucet for Shimmer](https://faucet.alphanet.iotaledger.net/).
+
 
 ```bash
-tputId:  0x3acd3f42a03d595cb9d134635ed67aa4721bdb4ccb15ef10ebb8646daabb04910000
+OutputId:  0x3acd3f42a03d595cb9d134635ed67aa4721bdb4ccb15ef10ebb8646daabb04910000
 To be consumed output:  {
   type: 3,
   amount: '1000000000',
@@ -140,8 +150,9 @@ In this example, the data is a text called `This is where the immutable NFT meta
 
 You can define any data as **immutable metadata**, which will be stored in the Tangle. The community defined a standard for the metadata called [IRC27](https://github.com/iotaledger/tips/pull/65). This enables interoperability so the standardized metadata can be used by decentral applications like NFT marketplaces. 
 
-This is a simple example of a IRC27 compatible metadata. 
-```javascript=
+This is a simple example of IRC27 compatible metadata. 
+
+```javascript
 const METADATA = {
     standard: "IRC27",
     version: "v1.0",
@@ -153,17 +164,19 @@ const METADATA = {
 };
 ```
 
-You can find a more complex example with royalties and NFT attributes in the [IRC27](https://github.com/iotaledger/tips/pull/65), but for us in the tutorial, the simple example is enough. 
+You can find a more complex example with royalties and NFT attributes in the [IRC27](https://github.com/iotaledger/tips/pull/65), but for this tutorial, the simple example is enough. 
 
 
 ### How to add Metadata to an NFT
 
-For our example, we need to extend the code for our custom Metadata. For this, you need to open the source file in `src/index.ts` and we need to add 2 things, our Metadata Object and a converter to input the data into the transaction.
+For this example, you need to extend the code for your custom Metadata. To do so, you need to open the source file in `src/index.ts` and add your Metadata Object and a converter to input the data into the transaction.
 
-Add your metadata as a constant on line 35 below the EXPLORER, API_ENDPOINT, and FAUCET constants.
-Please feel free to use another name, issuerName, description and uri of the image, so you will create your unique NFT.
+Add your metadata as a constant on line 35 below the `EXPLORER`, `API_ENDPOINT`, and `FAUCET` constants.
 
-```javascript=
+Please feel free to use another `name`, `issuerName`, `description`, and `uri` for the image to create your unique NFT.
+
+
+```javascript
 const METADATA = {
     standard: "IRC27",
     version: "v1.0",
@@ -175,16 +188,17 @@ const METADATA = {
 };
 ```
 
-Now you need to convert the Javascript object into a Hex format, so the library can send the transaction.
-To solve this, just replace line 106 with the following changes:
+You will need to convert the Javascript object into a Hex format so the library can send the transaction.
+You can do so by replacing line 106 with the following changes:
 
-old
-```javascript=
+**Old**:
+
+```javascript
 data: Converter.utf8ToHex("This is where the immutable NFT metadata goes", true)
 ```
+**New**:
 
-new
-```javascript=
+```javascript
 data: Converter.utf8ToHex(JSON.stringify(METADATA), true)
 ```
 
