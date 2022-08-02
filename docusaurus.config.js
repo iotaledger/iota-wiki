@@ -273,7 +273,7 @@ module.exports = {
       ],
       logo: {
         alt: 'IOTA Logo',
-        src: 'img/iota_logo.svg',
+        src: 'img/footer_logo.svg',
         href: 'https://www.iota.org',
       },
       copyright: `© ${new Date().getFullYear()} IOTA Wiki. Built with Docusaurus.`,
