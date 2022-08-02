@@ -20,6 +20,7 @@
   "dependencies": {
     "@algolia/client-search": "^4.14.1",
     "@docusaurus/core": "^2.0.1",
+    "@docusaurus/plugin-ideal-image": "^2.0.1",
     "@docusaurus/preset-classic": "^2.0.1",
     "@iota-wiki/plugin-tutorial": "^1.0.6",
     "@mdx-js/react": "^1.6.21",
