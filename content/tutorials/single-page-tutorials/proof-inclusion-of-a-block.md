@@ -57,10 +57,7 @@ Add the following dependencies to the `package.json` file.
   'main': 'create-notarization.js',
   'dependencies':
     {
-      '@iota/crypto.js': 'next',
-      '@iota/iota.js': 'next',
-      '@iota/util.js': 'next',
-      'blake2': '^4.1.1',
+      '@iota/iota.js': 'next'
     },
   'scripts': { 'test': 'echo "Error: no test specified" && exit 1' },
   'author': '',
@@ -196,65 +193,52 @@ run().catch((err) => console.error(err));
 Create new file `verify-notarization.js` and add the following code.
 
 ```javascript
-const { serializeBlock } = require('@iota/iota.js');
-const { Converter, WriteStream } = require('@iota/util.js');
-const { Blake2b } = require('@iota/crypto.js');
+
+const { TransactionHelper } = require('@iota/iota.js');
 const fs = require('fs');
-const fetch = require('node-fetch');
+const fetch = require('node-fetch')
 
 // Network configuration
-const { networkConfig } = require('./networkConfig.js');
+const { networkConfig } = require("./networkConfig.js");
 const nodeURL = networkConfig.node;
 const explorerURL = networkConfig.explorer;
+
 
 // For the sake of this tutorial, some console output will be printed in a different color for better readability
 const consoleColor = '\x1b[36m%s\x1b[0m';
 
+
 async function run() {
-  // Read and parse notarized block from file path
-  const filePath = './notarized-block.json';
-  const file = fs.readFileSync(filePath);
-  const notarizedBlock = JSON.parse(file);
-  console.log(consoleColor, 'Successfully imported notarized block from path:');
-  console.log(filePath, '\n');
+    // Read and parse notarized block from file path
+    const filePath = './notarized-block.json';
+    const file = fs.readFileSync(filePath);
+    const notarizedBlock = JSON.parse(file);
+    console.log(consoleColor, 'Successfully imported notarized block from path:');
+    console.log(filePath, '\n');
 
-  // Generate blockId from block content and log explorer link
-  // The blockId is defined as the BLAKE2b-256 hash of the entire serialized block
-  const blockId = await blockIdFromBlock(notarizedBlock.block);
-  console.log(consoleColor, 'BlockID of notarized block:');
-  console.log(explorerURL + 'block/' + blockId, '\n');
+    // Generate blockId from block content and log explorer link
+    // The blockId is defined as the BLAKE2b-256 hash of the entire serialized block
+    const blockId = TransactionHelper.calculateBlockId(notarizedBlock.block);
+    console.log(consoleColor, 'Notarized block:');
+    console.log(explorerURL+"block/"+blockId, '\n');
 
-  // Verify provided notarization/proof of inclusion for block
-  const validity = await verifyNotarization(nodeURL, notarizedBlock);
-  console.log(consoleColor, 'Validity of provided notarization:');
-  console.log(validity, '\n');
+    // Verify provided notarization/proof of inclusion for block
+    const validity = await verifyNotarization(nodeURL, notarizedBlock);
+    console.log(consoleColor, 'Validity of provided notarization:');
+    console.log(validity, '\n');
 }
 
 async function verifyNotarization(nodeURL, notarizedBlock) {
-  // Call "validate" endpoint of PoI plugin with notarized block and return boolean answer
-  const poiPluginUrl = `${nodeURL}/api/poi/v1/validate`;
-  const response = await fetch(poiPluginUrl, {
-    method: 'POST',
-    body: JSON.stringify(notarizedBlock),
-    headers: { 'Content-Type': 'application/json' },
-  });
-  const result = await response.json();
+    // Call "validate" endpoint of PoI plugin with notarized block and return boolean answer
+    const poiPluginUrl = `${nodeURL}/api/poi/v1/validate`;
+    const response = await fetch(poiPluginUrl, {
+        method: 'POST', 
+        body: JSON.stringify(notarizedBlock),
+        headers: { 'Content-Type': 'application/json' }
+    })
+    const result = await response.json();
 
-  return result.valid;
-}
-
-// Returns the BLAKE2b-256 hash of the entire serialized block => blockId
-async function blockIdFromBlock(block) {
-  const writeStream = new WriteStream();
-
-  serializeBlock(writeStream, block);
-
-  const blockFinal = writeStream.finalBytes();
-  const blockHash = Blake2b.sum256(blockFinal);
-
-  const blockId = Converter.bytesToHex(blockHash, true);
-
-  return blockId;
+    return result.valid;
 }
 
 run().catch((err) => console.error(err));
