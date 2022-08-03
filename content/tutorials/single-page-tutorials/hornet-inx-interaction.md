@@ -311,5 +311,4 @@ node ./ListenToLatestMilestones.js
 node ./ReadUnspentOutputs.js
 ```
 
-
-Feel free to try out additional endpoints of the interface defined in the `inx-proto`, depending on your usecase.
+Feel free to try out additional endpoints of the interface as defined in the `inx-proto`.
