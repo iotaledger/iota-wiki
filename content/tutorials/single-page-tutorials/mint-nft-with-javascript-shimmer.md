@@ -21,9 +21,18 @@ A non-fungible token (NFT) is a token that is verifiably unique and can be used 
 - For wallet integrations, we recommend using [wallet.rs](https://wiki.iota.org/wallet.rs/welcome), which offers abstractions to handle IOTA payments and can optionally interact with IOTA Stronghold for seed.
 :::
 
-And now, let's start with preparing the development environment. This tutorial assumes that you have Node.js installed.
+# Prerequisites
+- [Node.js](https://nodejs.org/en/)
 
-## Set Up the Development Environment. 
+## What is an NFT?
+
+An NFT is short-term for Non Fungible Tokens - so it's a unique token that can represent a digital asset within its immutable data. This is a new decentral way to prove ownership and brings a lot of functionality and expandability which can be used in DApp and Games. An NFT can represent tangible assets like a house or a car or digital assets like a membership. The common use case is NFTs with linked Images, which often bring special membership, and access to private places.
+
+Here in the tutorial, we will mint an NFT with a permanently linked image. The term `mint` means the process of creating a new NFT in the network. 
+
+
+## Set Up 
+Let's start with preparing the development environment. This tutorial assumes that you have Node.js installed.
 
 First, copy the iota.js library to your computer, so you can run the example and go through it. 
 
@@ -50,7 +59,10 @@ The next step is compiling the typescript code into Javascript so you can run it
 npm run dist
 ```
 
-This will create a new directory `dist` with a Javascript file called `index.js`. You can run it by simple type this into your console:
+This will create a new directory `dist` with a Javascript file called `index.js`. 
+
+## Run
+You can run the previous build file `index.js` by simple type this into your terminal:
 
 ```bash
 npm start
@@ -62,25 +74,18 @@ If you can read this prompt, your setup is complete and the script is running su
 
 This means you can input an address to create an NFT and mint it to a given address - so you can input a friend's address or add an address from a Shimmer wallet. If you leave the address blank, the script will generate a temporary account and mint the NFT to the address of the temporary account.
 
-## What is an NFT?
-
-An NFT is short-term for Non Fungible Tokens - so it's a unique token that can represent a digital asset within its immutable data. This is a new decentral way to prove ownership and brings a lot of functionality and expandability which can be used in DApp and Games. An NFT can represent tangible assets like a house or a car or digital assets like a membership. The common use case is NFTs with linked Images, which often bring special membership, and access to private places.
-
-Here in the tutorial, we will mint an NFT with a permanently linked image. The term `mint` means the process of creating a new NFT in the network. 
-
-
 ## Mint a NFT
 
 The example leads us through the process of creating an NFT. We can mint for a specific address or mint one to a temporary account. Keep in mind, that this is just an example and should not be used to store NFTs in the Mainnet.  
 
 
-So, let's assume you have already started the minting script - if now, just run this in your `mint-nft` example directory:
+So, let's assume you have already started the minting script - to do this, just run this in your `mint-nft` example directory:
 
 ```bash
 npm start
 ```
 
-Now, just hit Enter - and the script does some magic things. After a while, we created an NFT. 
+Now, just hit Enter - and the script does some magic things in the background. After a while, we created an NFT. 
 
 Congratulations! You have now created your first Layer 1 NFT on Shimmer. How easy was that? 
 
