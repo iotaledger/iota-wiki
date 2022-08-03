@@ -49,7 +49,7 @@ cd shimmer-nft-example/packages/iota/examples/mint-nft
 You will need to update the iota.js library for the Stardust update and install all the dependencies of the example.
 
 ```bash
-npm inpm install @iota/crypto.js@next @iota/iota.js@next @iota/util.js@next @iota/po
+npm install @iota/crypto.js@next @iota/iota.js@next @iota/util.js@next @iota/pow-neon.js @types/node --save-dev
 npm install
 ```
 
