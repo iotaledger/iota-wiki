@@ -32,7 +32,7 @@ You do not have to write perfectly. It is a technical writer's job to produce a 
 
 Documentation is not optional. If a feature is new and undocumented, then nobody knows that they can use it. This feature does not exist. If you change an existing feature and forget to update the documentation, then users will follow your instructions only to fail. From their point of view, you have introduced a bug. Documentation is fused with your code, and you should treat it as an inherent part of your job, in the same right as coding and testing is.
 
-To help you help us, we have prepared a [collection](../explanations/tools/writing_tools.md) of tools and tips for those who write documentation.
+To help you help us, we have prepared a [collection of tools](../explanations/tools/writing_tools.md) and tips for those who write documentation.
 The naive approach to planning documentation is to create a separate ticket before every release, to treat documentation as one of the product's features. We would instead suggest your team to treat documentation as a mandatory part of every task:
 
 |Documentation as a part of every ticket           |Documentation as a separate ticket                                                |
@@ -50,4 +50,4 @@ Once again, technical writers are here to help. To let us know that you got some
 
 Technical writers follow the [full style guide](../reference/style/manifesto.md), but we have prepared a [single-page version](./quick_advice.md) of it for you.
 
-We also keep a list of [writing tools](../explanations/tools/overview.md) that might help you.
+We also keep a list of [writing tools](../explanations/tools/writing_tools.md) that might help you.
