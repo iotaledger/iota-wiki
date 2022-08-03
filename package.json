@@ -5,7 +5,10 @@
   "scripts": {
     "docusaurus": "docusaurus",
     "start": "docusaurus start",
+    "start:tutorials": "CONTENT=\"tutorials/**\" yarn start",
+    "start:all": "CONTENT=\"*/*/*/documentation,*/*/*,*/*\" yarn start",
     "build": "docusaurus build",
+    "build:all": "CONTENT=\"*/*/*/documentation,*/*/*,*/*\" yarn build",
     "swizzle": "docusaurus swizzle",
     "deploy": "docusaurus deploy",
     "clear": "docusaurus clear",
