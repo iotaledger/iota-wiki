@@ -42,7 +42,7 @@ First, copy the iota.js library to your computer, so you can run the example and
 git clone --branch feat/stardust https://github.com/iotaledger/iota.js shimmer-nft-example
 ```
 
-Now you should switch to the example directory in the `mint-nft`example.
+Now you should switch to the example directory in the `mint-nft` example.
 
 ```bash
 cd shimmer-nft-example/packages/iota/examples/mint-nft
@@ -61,7 +61,7 @@ The next step is compiling the typescript code into Javascript so you can run it
 npm run dist
 ```
 
-This will create a new directory `dist` with a Javascript file called `index.js`. 
+The compilation will create a new directory `dist` with a Javascript file called `index.js`. 
 
 ## Run
 You can run the previous build file `index.js` by simple type this into your terminal:
@@ -70,15 +70,15 @@ You can run the previous build file `index.js` by simple type this into your ter
 npm start
 ```
 
-If you can read this prompt, your setup is complete and the script is running successfully.
+If you can read this prompt, your setup is complete and the script runs successfully.
 
 > Target address (Bech32 encoded) where to mint the NFT. Leave empty, and the script will generate an address for you: 
 
-This means you can input an address to create an NFT and mint it to a given address - so you can input a friend's address or add an address from a Shimmer wallet. If you leave the address blank, the script will generate a temporary account and mint the NFT to the address of the temporary account.
+This means you can input an address to create an NFT and mint it to a given address - so you can input a friend's address or add one from a Shimmer wallet. If you leave the address blank, the script will generate a temporary account and mint the NFT to the address of the temporary account.
 
-## Mint a NFT
+## Mint an NFT
 
-The example leads us through the process of creating an NFT. We can mint for a specific address or mint one to a temporary account. Keep in mind, that this is just an example and should not be used to store NFTs in the Mainnet.  
+The example leads us through the process of creating an NFT. We can mint for a specific address or mint one to a temporary account. Remember, that this is just an example and should not be used to store NFTs in the Mainnet.  
 
 
 So, let's assume you have already started the minting script - to do this, just run this in your `mint-nft` example directory:
@@ -87,13 +87,13 @@ So, let's assume you have already started the minting script - to do this, just 
 npm start
 ```
 
-Now, just hit Enter - and the script does some magic things in the background. After a while, we created an NFT. 
+Now, just hit Enter - and the script does some magical things in the background. After a while, we created an NFT. 
 
 Congratulations! You have now created your first Layer 1 NFT on Shimmer. How easy was that? 
 
-But let's dive a bit deeper and discover the steps which did the magic.
+But let's dive deeper and discover the steps that did the magic.
 
-You can see, after you hit Enter - the script created two addresses - a `target` address, where to send the NFT, and a `Sender`address, from which the NFT got sent. 
+You can see, after you hit Enter - the script created two addresses - a `target` address, where to send the NFT, and a `Sender` address, from which the NFT got sent. 
 
 ```bash
 Target address (Bech32 encoded) where to mint the NFT or leave empty and we will generate an address for you: 
@@ -118,6 +118,8 @@ After some time, the script will output a link to the new [Shimmer Network explo
 
 If you need some Testnet tokens, you can use the [online faucet for Shimmer](https://faucet.alphanet.iotaledger.net/).
 
+:::
+
 
 ```bash
 OutputId:  0x3acd3f42a03d595cb9d134635ed67aa4721bdb4ccb15ef10ebb8646daabb04910000
@@ -133,7 +135,7 @@ Input:  {
 }
 Required Storage Deposit of the NFT output:  270500
 Submitted blockId is:  0xfdfd9cdd92c6d710cafc96c8f0c9c010aca4286faad1722c45a08bc23e15d6bb
-Check out the transaction at  https://explorer.alphanet.iotaledger.net/alphanet/block/0xfdfd9cdd92c6d710cafc96c8f0c9c010aca4286faad1722c45a08bc23e15d6bb
+Check out the transaction at  https://explorer.alphanet.iotaledger.net/alphanet/block/0xfdfd9cdd92c6d710cafc96c8f0c9c010aca4286faad1722c45a08bc23e15d6bb.
 Done
 ```
 
@@ -141,11 +143,11 @@ Done
 
 > [Visit Shimmer Explorer here](https://explorer.alphanet.iotaledger.net/alphanet)
 
-You can click on the link above and discover the information on the Shimmer network Explorer. 
+You can click on the link above and discover the information on the Shimmer Network Explorer. 
 
 ![Shimmer Explorer](./images/mint-nft-with-javascript-shimmer/explorer.png)
 
-You can open the details on the NFT output to see the connected NFT Metadata. Just click on the `NFT Output`and the `Immutable Metadata` to view the data.
+You can open the details on the NFT output to see the connected NFT Metadata. Just click on the `NFT Output` and the `Immutable Metadata` to view the data.
 
 
 ![NFT Metadata](./images/mint-nft-with-javascript-shimmer/metadata.png)
@@ -154,9 +156,9 @@ In this example, the data is a text called `This is where the immutable NFT meta
 
 ## NFT Metadata
 
-You can define any data as **immutable metadata**, which will be stored in the Tangle. The community defined a standard for the metadata called [IRC27](https://github.com/iotaledger/tips/pull/65). This enables interoperability so the standardized metadata can be used by decentral applications like NFT marketplaces. 
+You can define any data as **immutable metadata** stored on the Tangle. The community defined a standard for the metadata called [IRC27](https://github.com/iotaledger/tips/pull/65). The standard enables interoperability, so decentralized applications like NFT marketplaces can use the standardized metadata.
 
-This is a simple example of IRC27 compatible metadata. 
+A simple example of IRC27 compatible metadata could be: 
 
 ```javascript
 const METADATA = {
@@ -179,7 +181,7 @@ For this example, you need to extend the code for your custom Metadata. To do so
 
 Add your metadata as a constant on line 35 below the `EXPLORER`, `API_ENDPOINT`, and `FAUCET` constants.
 
-Please feel free to use another `name`, `issuerName`, `description`, and `uri` for the image to create your unique NFT.
+Use another `name`, `issuerName`, `description`, and `uri` for the image to create your unique NFT.
 
 
 ```javascript
@@ -208,7 +210,7 @@ data: Converter.utf8ToHex("This is where the immutable NFT metadata goes", true)
 data: Converter.utf8ToHex(JSON.stringify(METADATA), true)
 ```
 
-After you have customized your NFT, you will need to compile the Typescript filet o Javascript again, and run the example:
+After you have customized your NFT, you will need to recompile and run the example:
 
 ```bash
 npm run dist
@@ -228,7 +230,9 @@ Done
 
 
 :::info
+
 The maximum length of a Metadata field in the Shimmer Network is 8192 bytes and is defined in [TIP-22 (IOTA)](https://github.com/Wollac/protocol-rfcs/blob/protocol-parameters/tips/TIP-0022/tip-0022.md) or [TIP-32 (Shimmer)](https://github.com/iotaledger/tips/blob/shimmer-params/tips/TIP-0032/tip-0032.md)
+
 :::
 
 Minting must respect the following constraints:
@@ -236,6 +240,3 @@ Minting must respect the following constraints:
  - _NFT ID_ must be zeroed out. The protocol will replace it with the blake2b-256 hash of the _Output ID_ upon booking.
  - _Issuer_ address must be unlocked on the input side.
  - _Immutable Metadata_ length must not exceed _Maximum Metadata Length_ defined in [TIP-22 (IOTA)](https://github.com/Wollac/protocol-rfcs/blob/protocol-parameters/tips/TIP-0022/tip-0022.md) or [TIP-32 (Shimmer)](https://github.com/iotaledger/tips/blob/shimmer-params/tips/TIP-0032/tip-0032.md).
-
-
-
