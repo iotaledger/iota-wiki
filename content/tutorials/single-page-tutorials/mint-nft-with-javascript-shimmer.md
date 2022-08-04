@@ -30,7 +30,7 @@ A non-fungible token (NFT) is a token that is verifiably unique and can be used 
 
 An NFT is short-term for Non Fungible Tokens - so it's a unique token that can represent a digital asset within its immutable data. This is a new decentral way to prove ownership and brings a lot of functionality and expandability, which can be used in DApp and Games. An NFT can represent tangible assets like a house or a car or digital assets like a membership. The typical use case is NFTs with linked Images, which often bring special membership, and access to private places.
 
-Here in the tutorial, we will mint an NFT with a permanently linked image. The term `mint` means the process of creating a new NFT in the network. 
+We will mint an NFT with a permanently linked image in this tutorial. The term `mint` means creating a new NFT in the network.
 
 
 ## Set Up 
