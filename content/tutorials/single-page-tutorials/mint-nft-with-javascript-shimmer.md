@@ -16,9 +16,11 @@ A non-fungible token (NFT) is a token that is verifiably unique and can be used 
 - [How the Immutable Metadata works](#How_to_add_Metadata_to_an_NFT)
 
 :::info Why we have iota.js and iota.rs with Node.js bindings
-- You can use [iota.js](https://wiki.iota.org/iotajs/welcome) in a browser. This is not possible with the Node.js bindings on iota.rs.
+
+- You can use [iota.js](https://wiki.iota.org/iotajs/welcome) in a browser, which is impossible with the Node.js bindings on iota.rs.
 - [iora.rs Node.js](https://wiki.iota.org/iota.rs/getting_started/nodejs) bindings are recommended to use in Node.js applications.
 - For wallet integrations, we recommend using [wallet.rs](https://wiki.iota.org/wallet.rs/welcome), which offers abstractions to handle IOTA payments and can optionally interact with IOTA Stronghold for seed.
+
 :::
 
 # Prerequisites
