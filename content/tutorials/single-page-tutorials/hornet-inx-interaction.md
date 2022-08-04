@@ -1,7 +1,9 @@
 # INX Interface Interaction
-In this tutorial you will learn how to interact with the IOTA Node Extension ([INX](https://github.com/iotaledger/inx)) Interface via javascript (NodeJS) with both simple requests and streaming requests. The extension uses the [inx.proto](https://github.com/iotaledger/inx/blob/develop/proto/inx.proto) file to generate the required gRPC client to connect to HORNET. [gRPC](https://grpc.io/) is a modern open source high performance Remote Procedure Call (RPC) framework that can run in any environment.
+
+In this tutorial, you will learn how to interact with the IOTA Node Extension ([INX](https://github.com/iotaledger/inx)) Interface via javascript (NodeJS) with both simple requests and streaming requests. The extension uses the [inx.proto](https://github.com/iotaledger/inx/blob/develop/proto/inx.proto) file to generate the required gRPC client to connect to HORNET. [gRPC](https://grpc.io/) is a modern open source high performance Remote Procedure Call (RPC) framework that can run in any environment.
 
 ### Prerequisites
+
 - Network
 	- Option 1: Running [Hornet Private Tangle](https://github.com/iotaledger/hornet/tree/develop/private_tangle) (Branch **develop** for the latest [Stardust](https://blog.shimmer.network/stardust-upgrade-in-a-nutshell/) features)
 	- Option 2: Running a node in [Shimmer Beta Network](https://blog.shimmer.network/shimmer-beta-network-is-live/)
@@ -13,6 +15,7 @@ In this tutorial you will learn how to interact with the IOTA Node Extension ([I
 ### Set Up
 
 #### Prepare development environment
+
 Create a new folder for the tutorial in a location of your choice and navigate to it.
 
 ```bash
@@ -89,6 +92,7 @@ module.exports = client;
 
 
 #### Prepare proto file
+
 Copy the `inx-proto` file from [here](https://github.com/iotaledger/inx/blob/develop/proto/inx.proto) into your folder. The `inx-proto` file contains the definition of all available endpoints and below you will see a few example of both simple requests and streaming requests.
 
 ***
@@ -278,6 +282,7 @@ call.on('status', function (status) {
 
 
 ### Run
+
 Now you can execute the created files one by one and check out the console output.
 
 ***
