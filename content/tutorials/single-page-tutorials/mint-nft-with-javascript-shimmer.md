@@ -12,7 +12,7 @@ A non-fungible token (NFT) is a token that is verifiably unique and can be used 
 
 - [How NFTs work on Layer 1 (L1)](#What_is_an_NFT?)
 - [How you can mint an NFT](#Mint_a_NFT)
-- [How to use and read the Shimmer Explorer](#)
+- [How to use and read the Shimmer Explorer](#Shimmer_Explorer)
 - [How the Immutable Metadata works](#How_to_add_Metadata_to_an_NFT)
 
 :::info Why we have iota.js and iota.rs with Node.js bindings
