@@ -1,36 +1,30 @@
 # Tokenless Data Notarization
 
-- This tutorial shows how one can proof that a block was part of the past Tangle, even if this part of the Tangle was already pruned from network nodes
+This tutorial shows how one can prove that a block was part of the past Tangle, even if this part of the Tangle was already pruned from network nodes.
 
 ## User Story
 
-- A **Prover** wants to prove to a **Verifier**, that a dataset/file was not altered since a specific time in the past by notarizing it via the public and permissionless Tangle
-- A good example could be the government (**Verifier**) obligating companies (**Prover**) to write their daily CO2 emissions to the Tangle
-- The government has no interest in providing storage for all the companies, but wants to receive veriably immutable data in the case of an audit, therefore all the data remains with the respective company until an audit occurs
+A **Prover** wants to prove to a **Verifier**, that a dataset or file was not altered since a specific time in the past, by notarizing it via the public and permissionless Tangle. A good example could be the government (**Verifier**) obligating companies (**Prover**) to write their daily CO2 emissions to the Tangle, in order to create immutable logs. The government has no interest in providing storage for all the companies, but wants to receive verifiable, immutable data in the case of an audit, therefore all the data remains with the respective company until an audit occurs.
 
 ### Architecture
 
-- This pattern does not rely on a Permanode storing the full Tangle history
-- The party writing to the Tangle (**Prover**) is the same party reading from it, which allows reading a block by its block Id
-- All a **Verifier** needs to verify this proof, is the chain of milestones back to the milestone that referenced this exact block
-  - Every milestone directly references the previous milestone
-  - This creates a unique and verifiable chain of milestones in the Tangle
-  - This means if the **Verifier's** notarization plugin didn't record the milestone history already, it could even download the milestone chain from another source and verify its correctness before using it for further notarization verifications
-- Since the pattern assumes trusted access to the network, it is strongly recommended that both, the **Prover** and the **Verifier** operate their own network node and run the [INX Notarization/PoI Plugin](https://github.com/iotaledger/inx-poi)
+In this use-case pattern, the party writing to the Tangle (**Prover**) is the same party reading from it, which allows reading a block by its block Id together with a proof. All a **Verifier** needs to verify this proof, is the chain of milestones back to the milestone that referenced this exact block. Every milestone directly references the previous milestone, which leads to a unique and verifiable chain of milestones in the Tangle. This means even if the **Verifier's** notarization plugin didn't record the milestone history already, it could still download the milestone chain from another source and verify its correctness, before using it for further notarization verifications.
 
-![alt text](proof-inclusion-of-a-block-architecture.png)
+Since the pattern assumes trusted access to the network, it is strongly recommended that both, the **Prover** and the **Verifier** operate their own network node and run the [INX Notarization/PoI Plugin](https://github.com/iotaledger/inx-poi). It is also noteworthy that this pattern does not rely on a Permanode storing the full Tangle history, which drastically reduces the storage requirements on the node operator side.
 
-### Used Components
+![PoI-Architecture](proof-inclusion-of-a-block-architecture.png)
+
+### Prerequisites
 
 - Network
 
   - Running [Hornet Private Tangle](https://github.com/iotaledger/hornet/tree/develop/private_tangle) (Branch **develop** for the latest [Stardust](https://blog.shimmer.network/stardust-upgrade-in-a-nutshell/) features)
-    - The node(s) will start with the necessary [INX-POI](https://github.com/iotaledger/inx-poi) plugin by default
+  - The node(s) will start with the necessary [INX-POI](https://github.com/iotaledger/inx-poi) plugin by default
 
 - Development Environment and Libraries
   - Installed [Node.js](https://nodejs.org/en/)
 
-### Preparation Steps
+### Set Up
 
 #### Prepare development environment
 
@@ -244,19 +238,17 @@ async function verifyNotarization(nodeURL, notarizedBlock) {
 run().catch((err) => console.error(err));
 ```
 
-### Execution Steps
+### Run
 
 Now you can execute the two created files in the correct order (First create-notarization then verify-notarization) and check the log output to follow along.
 
 #### Create Notarization
 
-_Command_
-
 ```bash
 node create-notarization.js
 ```
 
-_Steps_
+##### Steps
 
 1. Setup client and define block content
 2. Attach block to the Tangle
@@ -264,9 +256,9 @@ _Steps_
 4. Read block from Tangle together with notarization
 5. Store block with notarization in a JSON file within your local folder
 
-_Console output should look something like this_
+Your console output should look something like this:
 
-```console
+```
 Attached block:
 http://localhost:8082/dashboard/explorer/block/<id_of_your_notarized_block>
 
@@ -283,20 +275,18 @@ Notarized block can now be handed over to the verifier
 
 #### Verify Notarization
 
-_Command_
-
 ```bash
 node verify-notarization.js
 ```
 
-_Steps_
+##### Steps
 
 1. Read block with notarization from your local folder
 2. Verify block with notarization
 
-_Console output should look something like this_
+Your console output should look something like this:
 
-```console
+```
 Successfully imported notarized block from path:
 ./notarized-block.json
 
