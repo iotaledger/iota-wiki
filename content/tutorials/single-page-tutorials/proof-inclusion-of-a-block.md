@@ -27,42 +27,30 @@ Since the pattern assumes trusted access to the network, we recommend that both 
 
 - [Node.js](https://nodejs.org/en/).
 
-### Set Up
+## Set Up
 
-#### Prepare development environment
+### Prepare Your Development Environment
 
-Create a new folder for the tutorial in a location of your choice.
+1. Create a new folder for the tutorial in a location of your choice, for example:
 
 ```bash
 mkdir notarization-tutorial
 cd notarization-tutorial
 ```
 
-Now we need to run the Node.js initializer to configure the project.
+2.  You should run the Node.js initializer to configure the project.
 
 ```bash
 npm init --yes
 ```
 
-Add the following dependencies to the `package.json` file.
+3. Add [`@iota/iota.js`](https://www.npmjs.com/package/@iota/iota.js) as a dependency by running the following command:
 
-```yaml
-{
-  'name': 'proof-of-inclusion',
-  'version': '1.0.0',
-  'description': 'Proof of Inclusion to the Tangle',
-  'main': 'create-notarization.js',
-  'dependencies':
-    {
-      '@iota/iota.js': 'next'
-    },
-  'scripts': { 'test': 'echo "Error: no test specified" && exit 1' },
-  'author': '',
-  'license': 'Apache-2.0',
-}
+```bash
+npm install @iota/iota.js
 ```
 
-Install dependencies.
+5. Install dependencies by running the following command:
 
 ```bash
 npm install
