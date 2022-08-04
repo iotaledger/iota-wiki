@@ -220,61 +220,49 @@ async function verifyNotarization(nodeURL, notarizedBlock) {
 run().catch((err) => console.error(err));
 ```
 
-### Run
+## Run Your Scripts
 
-Now you can execute the two created files in the correct order (First create-notarization then verify-notarization) and check the log output to follow along.
+Once you have [created your scripts](#create-your-scripts), you can execute the two created files in the order. 
+Naturally, you will need to run `create-notarization` before you can run `verify-notarization` and check the log output to follow along.
 
-#### Create Notarization
+### Create the Notarization
+
+You can create the notarization in the Tangle by running the following command:
 
 ```bash
 node create-notarization.js
 ```
 
-##### Steps
-
-1. Setup client and define block content
-2. Attach block to the Tangle
-3. Wait for block to be confirmed by a milestone
-4. Read block from Tangle together with notarization
-5. Store block with notarization in a JSON file within your local folder
-
 Your console output should look something like this:
 
-```
+```plaintext
 Attached block:
 http://localhost:8082/dashboard/explorer/block/<id_of_your_notarized_block>
-
 Wait for milestone confirmation to get notarized block:
 Try 1: Block was not yet referenced by a milestone
 Try 2: Block was not yet referenced by a milestone
 Try 3: Block was referenced by milestone <number_of_milestone_referencing_your_block>
-
 Block successfully notarized and stored at:
 ./notarized-block.json
-
 Notarized block can now be handed over to the verifier
 ```
 
-#### Verify Notarization
+### Verify Notarization
+
+
+You can verify the notarization by running the following command:
 
 ```bash
 node verify-notarization.js
 ```
 
-##### Steps
-
-1. Read block with notarization from your local folder
-2. Verify block with notarization
-
 Your console output should look something like this:
 
-```
+```plaintext
 Successfully imported notarized block from path:
 ./notarized-block.json
-
 Notarized block:
 http://localhost:8082/dashboard/explorer/block/<id_of_your_notarized_block>
-
 Validity of provided notarization:
 true
 ```
