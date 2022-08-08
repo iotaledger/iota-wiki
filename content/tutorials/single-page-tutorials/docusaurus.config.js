@@ -118,7 +118,7 @@ module.exports = {
             {
                 title: 'Tokenless Data Notarization',
                 description:
-                    'Proof that a block was part of the past Tangle, even if this part of the Tangle was already pruned from network nodes.',
+                    'Proove that a block was part of the past Tangle, even if this part of the Tangle was already pruned from network nodes.',
                 preview: 'proof-inclusion-of-a-block.png',
                 route: 'proof-inclusion-of-a-block',
                 tags: ['text', 'getting-started', 'js', 'client'],
