@@ -97,7 +97,7 @@ Copy the `inx-proto` file from [here](https://github.com/iotaledger/inx/blob/dev
 
 ***
 
-### Prepare files for simple requests
+### Prepare and run files for simple requests
 #### Create new file `ReadBlock.js` and add the following code.
 ```javascript
 const client = require("./config.js");
@@ -152,6 +152,11 @@ async function run() {
 run().catch((err) => console.error(err));
 ```
 
+#### Run `ReadBlock.js`
+```sh
+node ./ReadBlock.js
+```
+
 ***
 
 #### Create new file `ReadNodeConfiguration.js` and add the following code.
@@ -176,6 +181,11 @@ async function run() {
 
 
 run().catch((err) => console.error(err));
+```
+
+#### Run `ReadNodeConfiguration.js`
+```sh
+node ./ReadNodeConfiguration.js
 ```
 
 ***
@@ -204,9 +214,14 @@ async function run() {
 run().catch((err) => console.error(err));
 ```
 
+#### Run `ReadNodeStatus.js`
+```sh
+node ./ReadNodeStatus.js
+```
+
 ***
 
-### Prepare files for streaming requests
+### Prepare and run files for streaming requests
 #### Create new file `ListenToBlocks.js` and add the following code.
 ```javascript
 const client = require("./config.js");
@@ -232,6 +247,11 @@ call.on('status', function (status) {
 });
 ```
 
+#### Run `ListenToBlocks.js`
+```sh
+node ./ListenToBlocks.js
+```
+
 ***
 
 #### Create new file `ListenToLatestMilestones.js` and add the following code.
@@ -253,6 +273,11 @@ call.on('error', function (error) {
 call.on('status', function (status) {
     // process status
 });
+```
+
+#### Run `ListenToLatestMilestones.js`
+```sh
+node ./ListenToLatestMilestones.js
 ```
 
 ***
@@ -278,37 +303,11 @@ call.on('status', function (status) {
 });
 ```
 
-***
-
-
-### Run
-
-Now you can execute the created files one by one and check out the console output.
-
-***
-
-#### Simple request examples
-```sh
-node ./ReadBlock.js
-```
-```sh
-node ./ReadNodeConfiguration.js
-```
-```sh
-node ./ReadNodeStatus.js
-```
-
-***
-
-#### Streaming request examples
-```sh
-node ./ListenToBlocks.js
-```
-```sh
-node ./ListenToLatestMilestones.js
-```
+#### Run `ReadUnspentOutputs.js`
 ```sh
 node ./ReadUnspentOutputs.js
 ```
 
-Feel free to try out additional endpoints of the interface as defined in the `inx-proto` file.
+***
+
+Feel free to try out additional endpoints of the interface as defined in the [inx-proto](https://github.com/iotaledger/inx/blob/develop/proto/inx.proto) file.
