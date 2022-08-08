@@ -1,6 +1,6 @@
 # INX Interface Interaction
 
-In this tutorial, you will learn how to interact with the IOTA Node Extension ([INX](https://github.com/iotaledger/inx)) Interface via javascript (NodeJS) with both simple requests and streaming requests. The extension uses the [inx.proto](https://github.com/iotaledger/inx/blob/develop/proto/inx.proto) file to generate the required gRPC client to connect to HORNET. [gRPC](https://grpc.io/) is a modern open source high performance Remote Procedure Call (RPC) framework that can run in any environment.
+In this tutorial, you will learn how to interact with the IOTA Node Extension ([INX](https://github.com/iotaledger/inx)) interface via JavaScript (NodeJS) with both simple requests and streaming requests. The extension uses the [inx.proto](https://github.com/iotaledger/inx/blob/develop/proto/inx.proto) file to generate the required gRPC client to connect to HORNET. [gRPC](https://grpc.io/) is a modern open source high performance Remote Procedure Call (RPC) framework that can run in any environment.
 
 ### Prerequisites
 
@@ -16,19 +16,21 @@ In this tutorial, you will learn how to interact with the IOTA Node Extension ([
 
 #### Prepare development environment
 
-Create a new folder for the tutorial in a location of your choice and navigate to it.
+Create a new folder for the tutorial in a location of your choice and navigate to it:
 
 ```bash
 mkdir inx-interaction
 cd inx-interaction
 ```
 
-Run the Node.js initializer to configure the project.
+Run the Node.js initializer to configure the project:
+
 ```bash
 npm init --yes
 ```
 
-Overwrite the `package.json` file with the following content.
+Overwrite the `package.json` file with the following content:
+
 ```yaml
 {
   "name": "inx-interaction",
@@ -49,16 +51,18 @@ Overwrite the `package.json` file with the following content.
 }
 ```
 
-Install new dependencies.
+Install new dependencies:
+
 ```bash
 npm install
 ```
 
 ***
 
-
 #### Prepare configuration file
-Create new file `config.js` and add the following code.
+
+Create new file `config.js` and add the following code:
+
 ```javascript
 const grpc = require("@grpc/grpc-js");
 const protoLoader = require("@grpc/proto-loader");
@@ -90,7 +94,6 @@ module.exports = client;
 
 ***
 
-
 #### Prepare proto file
 
 Copy the `inx-proto` file from [here](https://github.com/iotaledger/inx/blob/develop/proto/inx.proto) into your folder. The `inx-proto` file contains the definition of all available endpoints and below you will see a few example of both simple requests and streaming requests.
@@ -98,7 +101,9 @@ Copy the `inx-proto` file from [here](https://github.com/iotaledger/inx/blob/dev
 ***
 
 ### Prepare and run files for simple requests
+
 #### Create new file `ReadBlock.js` and add the following code.
+
 ```javascript
 const client = require("./config.js");
 
@@ -160,7 +165,9 @@ node ./ReadBlock.js
 ***
 
 #### Create new file `ReadNodeConfiguration.js` and add the following code.
+
 ```javascript
+
 const client = require("./config.js");
 
 
@@ -248,6 +255,7 @@ call.on('status', function (status) {
 ```
 
 #### Run `ListenToBlocks.js`
+
 ```sh
 node ./ListenToBlocks.js
 ```
@@ -255,6 +263,7 @@ node ./ListenToBlocks.js
 ***
 
 #### Create new file `ListenToLatestMilestones.js` and add the following code.
+
 ```javascript
 const client = require("./config.js");
 
@@ -276,6 +285,7 @@ call.on('status', function (status) {
 ```
 
 #### Run `ListenToLatestMilestones.js`
+
 ```sh
 node ./ListenToLatestMilestones.js
 ```
@@ -283,6 +293,7 @@ node ./ListenToLatestMilestones.js
 ***
 
 #### Create new file `ReadUnspentOutputs.js` and add the following code.
+
 ```javascript
 const client = require("./config.js");
 
@@ -304,6 +315,7 @@ call.on('status', function (status) {
 ```
 
 #### Run `ReadUnspentOutputs.js`
+
 ```sh
 node ./ReadUnspentOutputs.js
 ```
