@@ -12,7 +12,7 @@ In this use-case pattern, the party writing to the Tangle (**Prover**) is the sa
 
 Since the pattern assumes trusted access to the network, it is strongly recommended that both, the **Prover** and the **Verifier** operate their own network node and run the [INX Notarization/PoI Plugin](https://github.com/iotaledger/inx-poi). It is also noteworthy that this pattern does not rely on a Permanode storing the full Tangle history, which drastically reduces the storage requirements on the node operator side.
 
-![PoI-Architecture](proof-inclusion-of-a-block-architecture.png)
+![PoI-Architecture](./images/proof-inclusion-of-a-block-architecture.png)
 
 ### Prerequisites
 
