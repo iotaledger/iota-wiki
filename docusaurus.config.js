@@ -77,8 +77,19 @@ module.exports = {
         },
         {
           label: 'Wallets',
-          to: 'wallets/what-is-a-wallet',
+          to: '/wallets/what-is-a-wallet',
           activeBaseRegex: '^/wallets/.*',
+          type: 'dropdown',
+          items: [
+            {
+              label: 'Firefly',
+              href: '/wallets/firefly/general',
+            },
+            {
+              label: 'Tangle Pay',
+              href: 'https://tanglepay.com/',
+            },
+          ],
         },
         {
           label: 'Smart Contracts',
@@ -89,21 +100,77 @@ module.exports = {
           label: 'Networks',
           to: 'networks/iota-1.5-chrysalis',
           activeBaseRegex: '^/networks/.*',
+          type: 'dropdown',
+          items: [
+            {
+              label: 'Chrysalis',
+              href: '/introduction/welcome',
+            },
+            {
+              label: 'Stardust',
+              href: '/introduction/develop/welcome',
+            },
+          ],
         },
         {
           label: 'Libraries',
-          to: 'categories/libraries',
+          to: '/categories/libraries',
           activeBaseRegex: '^(/categories)?/libraries.*',
+          type: 'dropdown',
+          items: [
+            {
+              label: 'Client.rs',
+              href: '/client.rs/welcome',
+            },
+            {
+              label: 'Client.js',
+              href: '/clientjs/welcome',
+            },
+            {
+              label: 'Identity',
+              to:'/identity.rs/develop/introduction'
+            },
+            {
+              label: 'Streams',
+              to:'/streams/welcome'
+            },
+            {
+              label: 'Stronghold',
+              to:'/stronghold/welcome'
+            }
+          ],
         },
         {
           label: 'Nodes',
-          to: 'nodes/about-nodes',
+          to: '/nodes/about-nodes',
           activeBaseRegex: '^/nodes/.*',
+          type: 'dropdown',
+          items: [
+            {
+              label: 'Bee',
+              href: '/bee/welcome',
+            },
+            {
+              label: 'Hornet',
+              href: '/hornet/welcome',
+            },
+          ],
         },
         {
           label: 'Research',
           to: 'research/research-outline',
           activeBaseRegex: '^/research/.*',
+          type: 'dropdown',
+          items: [
+            {
+              label: 'Coordicide Specs',
+              href: '/IOTA-2.0-Research-Specifications/Preface',
+            },
+            {
+              label: 'GoShimmer',
+              href: '/goshimmer/welcome',
+            },
+          ],
         },
       ],
     },
