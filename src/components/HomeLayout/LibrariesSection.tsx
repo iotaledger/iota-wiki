@@ -178,7 +178,9 @@ const LibrariesSection: FC = () => (
           <li className='libraries__feature'>
             <Link to='/streams/specs'>Read the specification</Link>
           </li>
-          <li className='libraries__feature'>Control the ownership of data</li>
+          <li className='libraries__feature'>
+            <Link to='/streams/explanations/channels_protocol/overview'>Control the ownership of data</Link>
+          </li>
         </ul>
         <Link
           to='/streams/welcome'

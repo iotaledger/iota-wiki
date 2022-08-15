@@ -113,6 +113,17 @@ module.exports = {
                 tags: ['text', 'wallet', 'getting-started', 'rust', 'testnet'],
             },
         ],
+        [
+            '@iota-wiki/plugin-tutorial',
+            {
+                title: 'Interact with IOTA Node Extension (INX)',
+                description:
+                    'In this tutorial you will learn how to interact with the IOTA Node Extension (INX) interface based on gRPC.',
+                preview: 'hornet-inx-interaction.png',
+                route: 'hornet-inx-interaction',
+                tags: ['text', 'getting-started', 'testnet', 'js'],
+            },
+        ],
     ],
     staticDirectories: [path.resolve(__dirname, './images')],
 };

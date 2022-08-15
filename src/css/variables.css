@@ -155,14 +155,26 @@ html[data-theme='dark'] .DocSearch {
   --docsearch-muted-color: var(--ifm-color-emphasis-400);
 }
 
-@media (max-width: 1160px) {
+@media (max-width: 1365px) {
   :root {
     --ifm-navbar-item-padding-horizontal: 1rem;
   }
 }
 
-@media (max-width: 1040px) {
+@media (max-width: 1227px) {
   :root {
     --ifm-navbar-item-padding-horizontal: 0.8rem;
+  }
+}
+
+@media (max-width: 1105px) {
+  :root {
+    --ifm-navbar-item-padding-horizontal: 0.6rem;
+  }
+}
+
+@media (max-width: 900px) {
+  :root {
+    --ifm-navbar-item-padding-horizontal: 0.4rem;
   }
 }
