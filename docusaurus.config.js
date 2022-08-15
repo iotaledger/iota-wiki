@@ -105,6 +105,11 @@ module.exports = {
           to: 'research/research-outline',
           activeBaseRegex: '^/research/.*|^/IOTA-2.0-Research-Specifications/.*|^/goshimmer/.*',
         },
+        {
+          label: 'Developer Resources',
+          to: '/#developer-resources',
+          activeBaseRegex: '^/tutorials/.*|^/integration-services/.*',
+        },
       ],
     },
     footer: {
