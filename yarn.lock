@@ -7914,6 +7914,16 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"iota-2.0-specifications@workspace:content/build/iota-2.0-research-specifications/docusaurus":
+  version: 0.0.0-use.local
+  resolution: "iota-2.0-specifications@workspace:content/build/iota-2.0-research-specifications/docusaurus"
+  dependencies:
+    "@iota-community/iota-wiki-cli": "iota-community/iota-wiki-cli#v2"
+    rehype-katex: 4
+    remark-math: 3
+  languageName: unknown
+  linkType: soft
+
 "iota-rs-develop@workspace:content/build/iota.rs/develop/documentation":
   version: 0.0.0-use.local
   resolution: "iota-rs-develop@workspace:content/build/iota.rs/develop/documentation"
@@ -11389,7 +11399,7 @@ plugin-image-zoom@flexanalytics/plugin-image-zoom:
   languageName: node
   linkType: hard
 
-"remark-math@npm:^3.0.1":
+"remark-math@npm:3, remark-math@npm:^3.0.1":
   version: 3.0.1
   resolution: "remark-math@npm:3.0.1"
   checksum: 690256f27f2b42dadcf41806fec443056e09592454622ae77f03b1a8474e8c83cc7610e694be7e17de92c96cc272c61209e59a6e7a24e3af6ede47d48b185ccd
