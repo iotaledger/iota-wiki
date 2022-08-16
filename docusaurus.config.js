@@ -114,8 +114,9 @@ module.exports = {
         },
         {
           label: 'Libraries',
-          to: '/categories/libraries',
-          activeBaseRegex: '^(/categories)?/libraries.*|^/identity.rs/.*|^/iota.rs/.*|^/iotajs/.*|^/wallet.rs/.*|^/streams/.*|^/stronghold.rs/.*',
+          to: '/#libraries',
+          activeBaseRegex:
+            '^(/categories)?/libraries.*|^/identity.rs/.*|^/iota.rs/.*|^/iotajs/.*|^/wallet.rs/.*|^/streams/.*|^/stronghold.rs/.*',
           type: 'dropdown',
           items: [
             {
@@ -128,26 +129,27 @@ module.exports = {
             },
             {
               label: 'Identity',
-              to:'/identity.rs/develop/introduction'
+              to: '/identity.rs/develop/introduction',
             },
             {
               label: 'Streams',
-              to:'/streams/welcome'
+              to: '/streams/welcome',
             },
             {
               label: 'Stronghold',
-              to:'/stronghold.rs/welcome'
+              to: '/stronghold.rs/welcome',
             },
             {
               label: 'Wallet.rs',
-              to:'/wallet.rs/welcome'
-            }
+              to: '/wallet.rs/welcome',
+            },
           ],
         },
         {
           label: 'Nodes',
           to: '/nodes/about-nodes',
-          activeBaseRegex: '^/nodes/.*|^/hornet/.*|^/bee/.*|^/inx-.*/.*|^/chronicle.rs/.*',
+          activeBaseRegex:
+            '^/nodes/.*|^/hornet/.*|^/bee/.*|^/inx-.*/.*|^/chronicle.rs/.*',
           type: 'dropdown',
           items: [
             {
@@ -163,7 +165,8 @@ module.exports = {
         {
           label: 'Research',
           to: 'research/research-outline',
-          activeBaseRegex: '^/research/.*|^/IOTA-2.0-Research-Specifications/.*|^/goshimmer/.*',
+          activeBaseRegex:
+            '^/research/.*|^/IOTA-2.0-Research-Specifications/.*|^/goshimmer/.*',
           type: 'dropdown',
           items: [
             {
@@ -413,19 +416,6 @@ module.exports = {
     'docusaurus-plugin-matomo',
     'docusaurus-plugin-hotjar',
     '@docusaurus/plugin-ideal-image',
-    [
-      '@docusaurus/plugin-content-docs',
-      {
-        id: 'categories',
-        path: 'internal/categories',
-        routeBasePath: 'categories',
-        sidebarPath: require.resolve('./internal/categories/sidebars.ts'),
-
-        // General config
-        editUrl: 'https://github.com/iota-community/iota-wiki/edit/main/',
-        showLastUpdateTime: true,
-      },
-    ],
     [
       '@docusaurus/plugin-content-docs',
       {
