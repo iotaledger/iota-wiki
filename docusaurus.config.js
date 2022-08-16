@@ -92,8 +92,8 @@ module.exports = {
         },
         {
           label: 'Libraries',
-          to: 'categories/libraries',
-          activeBaseRegex: '^(/categories)?/libraries.*|^/identity.rs/.*|^/iota.rs/.*|^/iotajs/.*|^/wallet.rs/.*|^/streams/.*|^/stronghold.rs/.*',
+          to: '/#libraries',
+          activeBaseRegex: '^/identity.rs/.*|^/iota.rs/.*|^/iotajs/.*|^/wallet.rs/.*|^/streams/.*|^/stronghold.rs/.*',
         },
         {
           label: 'Nodes',
@@ -342,19 +342,6 @@ module.exports = {
     'docusaurus-plugin-matomo',
     'docusaurus-plugin-hotjar',
     '@docusaurus/plugin-ideal-image',
-    [
-      '@docusaurus/plugin-content-docs',
-      {
-        id: 'categories',
-        path: 'internal/categories',
-        routeBasePath: 'categories',
-        sidebarPath: require.resolve('./internal/categories/sidebars.ts'),
-
-        // General config
-        editUrl: 'https://github.com/iota-community/iota-wiki/edit/main/',
-        showLastUpdateTime: true,
-      },
-    ],
     [
       '@docusaurus/plugin-content-docs',
       {
