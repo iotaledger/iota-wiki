@@ -103,11 +103,11 @@ module.exports = {
           type: 'dropdown',
           items: [
             {
-              label: 'Chrysalis',
+              label: 'IOTA',
               href: '/introduction/welcome',
             },
             {
-              label: 'Stardust',
+              label: 'Shimmer',
               href: '/introduction/develop/welcome',
             },
           ],
@@ -137,6 +137,10 @@ module.exports = {
             {
               label: 'Stronghold',
               to:'/stronghold/welcome'
+            },
+            {
+              label: 'Wallet.rs',
+              to:'/wallet.rs/welcome'
             }
           ],
         },
