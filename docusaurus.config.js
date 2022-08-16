@@ -120,11 +120,11 @@ module.exports = {
           items: [
             {
               label: 'Client.rs',
-              href: '/client.rs/welcome',
+              href: '/iota.rs/welcome',
             },
             {
               label: 'Client.js',
-              href: '/clientjs/welcome',
+              href: '/iotajs/welcome',
             },
             {
               label: 'Identity',
@@ -136,7 +136,7 @@ module.exports = {
             },
             {
               label: 'Stronghold',
-              to:'/stronghold/welcome'
+              to:'/stronghold.rs/welcome'
             },
             {
               label: 'Wallet.rs',
