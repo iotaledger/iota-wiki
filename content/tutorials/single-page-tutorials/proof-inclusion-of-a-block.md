@@ -94,12 +94,16 @@ const {
 } = require('@iota/iota.js');
 const fs = require('fs');
 const fetch = require('node-fetch');
+
 // Network configuration
 const { networkConfig } = require('./networkConfig.js');
 const nodeURL = networkConfig.node;
 const explorerURL = networkConfig.explorer;
+
 // For the sake of this tutorial, some console output will be printed in a different color for better readability
 const consoleColor = '\x1b[36m%s\x1b[0m';
+
+
 async function run() {
   // Setup client and define block content
   const client = new SingleNodeClient(nodeURL, {
@@ -107,25 +111,34 @@ async function run() {
   });
   const tag = 'This is my Tag';
   const data = 'This is my data';
+
   // Attach block to Tangle and log explorer link
   const sendResult = await sendData(client, tag, data);
   const blockId = sendResult.blockId;
   console.log(consoleColor, 'Attached block:');
   console.log(explorerURL + 'block/' + blockId, '\n');
+
   // Wait for block confirmation by milestone and read it with proof of inclusion from INX plugin
   const result = await getNotarization(client, nodeURL, blockId);
+
   // Store block with proof of inclusion in local json file
   if (result != false) {
     const filePath = `./notarized-block.json`;
     fs.writeFileSync(filePath, JSON.stringify(result, null, 4));
-    console.log(consoleColor, 'Block successfully notarized and stored at:');
+
+    console.log(
+      consoleColor,
+      'Block successfully notarized and stored at:'
+    );
     console.log(filePath, '\n');
+
     console.log(
       consoleColor,
       'The Notarized block can now be handed over to the verifier',
     );
   }
 }
+
 // Function that regularly checks for block confirmation and returns proof of inclusion if confirmed after n tries
 async function getNotarization(client, nodeURL, blockId) {
   try {
@@ -133,29 +146,37 @@ async function getNotarization(client, nodeURL, blockId) {
       consoleColor,
       'Wait for milestone confirmation to get notarized block:',
     );
+
     let i = 0;
     while (i < 10) {
       i++;
       // Function waits for a certain time between iterations
       await sleep(1000);
+
       const blockMetadata = await client.blockMetadata(blockId);
+
       // If a block was referenced by a milestone, the node will return its metadata with the key 'referencedByMilestoneIndex', otherwise the key won't be there
       if ('referencedByMilestoneIndex' in blockMetadata) {
         console.log(
           `Try ${i}: Block was referenced by milestone #${blockMetadata.referencedByMilestoneIndex}`,
           '\n',
         );
+        
         // Call "create" endpoint of PoI plugin with blockId and return the result
         const poiPluginUrl = `${nodeURL}/api/poi/v1/create/${blockId}`;
         const response = await fetch(poiPluginUrl);
         const result = await response.json();
+
         return result;
+
       } else {
         console.log(`Try ${i}: Block was not yet referenced by a milestone`);
       }
     }
     console.log(`Block was not referenced by a milestone after ${i} seconds.`);
+
     return false;
+
   } catch (error) {
     console.log(error);
   }
@@ -183,12 +204,16 @@ You should create a new file called `verify-notarization.js` and add the followi
 const { TransactionHelper } = require('@iota/iota.js');
 const fs = require('fs');
 const fetch = require('node-fetch')
+
 // Network configuration
 const { networkConfig } = require("./networkConfig.js");
 const nodeURL = networkConfig.node;
 const explorerURL = networkConfig.explorer;
+
 // For the sake of this tutorial, some console output will be printed in a different color for better readability
 const consoleColor = '\x1b[36m%s\x1b[0m';
+
+
 async function run() {
     // Read and parse notarized block from file path
     const filePath = './notarized-block.json';
@@ -196,16 +221,19 @@ async function run() {
     const notarizedBlock = JSON.parse(file);
     console.log(consoleColor, 'Successfully imported notarized block from path:');
     console.log(filePath, '\n');
+
     // Generate blockId from block content and log explorer link
     // The blockId is defined as the BLAKE2b-256 hash of the entire serialized block
     const blockId = TransactionHelper.calculateBlockId(notarizedBlock.block);
     console.log(consoleColor, 'Notarized block:');
     console.log(explorerURL+"block/"+blockId, '\n');
+
     // Verify provided notarization/proof of inclusion for block
     const validity = await verifyNotarization(nodeURL, notarizedBlock);
     console.log(consoleColor, 'Validity of provided notarization:');
     console.log(validity, '\n');
 }
+
 async function verifyNotarization(nodeURL, notarizedBlock) {
     // Call "validate" endpoint of PoI plugin with notarized block and return boolean answer
     const poiPluginUrl = `${nodeURL}/api/poi/v1/validate`;
@@ -215,8 +243,10 @@ async function verifyNotarization(nodeURL, notarizedBlock) {
         headers: { 'Content-Type': 'application/json' }
     })
     const result = await response.json();
+    
     return result.valid;
 }
+
 run().catch((err) => console.error(err));
 ```
 
