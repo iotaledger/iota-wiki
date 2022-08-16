@@ -99,7 +99,7 @@ module.exports = {
         {
           label: 'Networks',
           to: 'networks/iota-1.5-chrysalis',
-          activeBaseRegex: '^/networks/.*',
+          activeBaseRegex: '^/networks/.*|^/introduction/.*',
           type: 'dropdown',
           items: [
             {
@@ -115,7 +115,7 @@ module.exports = {
         {
           label: 'Libraries',
           to: '/categories/libraries',
-          activeBaseRegex: '^(/categories)?/libraries.*',
+          activeBaseRegex: '^(/categories)?/libraries.*|^/identity.rs/.*|^/iota.rs/.*|^/iotajs/.*|^/wallet.rs/.*|^/streams/.*|^/stronghold.rs/.*',
           type: 'dropdown',
           items: [
             {
@@ -147,7 +147,7 @@ module.exports = {
         {
           label: 'Nodes',
           to: '/nodes/about-nodes',
-          activeBaseRegex: '^/nodes/.*',
+          activeBaseRegex: '^/nodes/.*|^/hornet/.*|^/bee/.*|^/inx-.*/.*|^/chronicle.rs/.*',
           type: 'dropdown',
           items: [
             {
@@ -163,7 +163,7 @@ module.exports = {
         {
           label: 'Research',
           to: 'research/research-outline',
-          activeBaseRegex: '^/research/.*',
+          activeBaseRegex: '^/research/.*|^/IOTA-2.0-Research-Specifications/.*|^/goshimmer/.*',
           type: 'dropdown',
           items: [
             {
@@ -175,6 +175,11 @@ module.exports = {
               href: '/goshimmer/welcome',
             },
           ],
+        },
+        {
+          label: 'Developer Resources',
+          to: '/#developer-resources',
+          activeBaseRegex: '^/tutorials/.*|^/integration-services/.*',
         },
       ],
     },

@@ -49,7 +49,7 @@ Anyone is free to send messages to a node at any time. As a result, it is not al
 
 For example, what if Charlie actually attached two messages to the Tangle: one that transferred 10i to Bob, and one that transferred 10i to Alice? Together, these messages would be called a **double-spend** because they try to transfer the same IOTA tokens to different addresses.
 
-Both of Alice's messages could not be part of the ledger state because it would result in a negative balance for Alice’s address: minus 10i.
+Both of Charlie's messages could not be part of the ledger state because it would result in a negative balance for Charlie’s address: minus 10i.
 
 Messages in the Tangle are confirmed by special messages called **milestones**. Milestones are issued by a special node called Coordinator, which is operated by the IOTA Foundation and is therefore still a centralized part of the Consensus.
 
