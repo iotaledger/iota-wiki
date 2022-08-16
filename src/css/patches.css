@@ -13,7 +13,7 @@ Patch to style scrollbars consistently
 
 ::-webkit-scrollbar {
   height: var(--ifm-scrollbar-size);
-    width: var(--ifm-scrollbar-size);
+  width: var(--ifm-scrollbar-size);
 }
 
 ::-webkit-scrollbar-track {
