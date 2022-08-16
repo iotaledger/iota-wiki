@@ -1,18 +1,20 @@
 # Tokenless Data Notarization
 
-This tutorial shows how you can prove that a block was part of the Tangle, even if this part of the Tangle was already pruned from network nodes.
+This tutorial shows how you can prove that a block was part of the Tangle, even if it was already pruned from network nodes.
 
 ## User Story
 
-A **Prover** wants to prove to a **Verifier** that a dataset or file was not altered by notarizing it using the public and permissionless Tangle. 
+A prover wants to prove to a verifier that a dataset or file was not altered by notarizing it using the public and permissionless Tangle. 
 
-A good example could be the government (**Verifier**) obligating companies (**Prover**) to write their daily CO2 emissions to the Tangle to create immutable logs. The government has no interest in providing storage for all the companies but wants to receive verifiable, immutable data in the case of an audit. Therefore, all the data remains with the respective company until an audit occurs.
+A good example could be the government (verifier) obligating companies (prover) to write their daily CO₂ emissions to the Tangle to create immutable logs. The government has no interest in providing storage for all the companies but wants to receive verifiable, immutable data in the case of an audit. Therefore, all the data remains with the respective company until an audit occurs.
 
 ### Architecture
 
-In this use case, the party writing to the Tangle (**Prover**) is the same party reading from it. This allows reading a block by its block Id together with proof. All a **Verifier** needs to verify this proof is the chain of milestones back to the milestone that referenced this exact block. Every milestone directly references the previous milestone, which leads to a unique and verifiable chain of milestones in the Tangle. Even if the **Verifier's** notarization plugin didn't record the milestone history already, it could still download the milestone chain from another source and verify its correctness before using it to notarize verifications.
+In this use case, the party writing to the Tangle (prover) is the same party reading from it. This allows reading a block by its block Id together with proof. The only information a verifier needs to verify this proof, is the chain of milestones back to the exact milestone that referenced the respective block. Every milestone directly references the previous milestone, which leads to a unique and verifiable chain of milestones in the Tangle. Even if the verifier's notarization plugin didn't record the milestone history already, it could still download the milestone chain from another source and verify its correctness before using it to notarize verifications.
 
-Since the pattern assumes trusted access to the network, we recommend that both the **Prover** and the **Verifier** operate their own network node and run the [INX Notarization/PoI Plugin](https://github.com/iotaledger/inx-poi). It is also noteworthy that this pattern does not rely on a Permanode storing the entire Tangle history, drastically reducing the node operator's storage requirements.
+Since the pattern assumes trusted access to the network, we recommend that both the prover and the verifier operate their own network node and run the [INX Notarization/PoI Plugin](https://github.com/iotaledger/inx-poi). Only if you operate your own node together with the plugin, you can be sure the returned information is trustworthy.
+
+Please note that this pattern does not rely on a Permanode storing the entire Tangle history, as it was the case in almost all data-related use cases in the past. In comparison to a Permanode, storing selected blocks with their proof of inclusion to the Tangle, drastically reduces the node operator's storage requirements.
 
 ![PoI-Architecture](./images/proof-inclusion-of-a-block-architecture.png)
 
@@ -61,7 +63,7 @@ npm install
 ### Network Configuration Script
 
 Both the script that will [create](#create-notarization-script) and [verify](#verify-notarization-script) the notarization will need to share a network.
-You should create a new file named `networkConfig.js` and add the following code:
+Create a new file named `networkConfig.js` and add the following code:
 
 ```javascript
 var networkConfig = {};
@@ -84,7 +86,7 @@ The `create-notorization.js` script will:
 4. Read the block from Tangle, together with the notarization.
 5. Store the block with its notarization in a JSON file within your local folder.
 
-You should create a new file called `create-notarization.js` and add the following code:
+Create a new file named `create-notarization.js` and add the following code:
 
 ```javascript
 const {
@@ -191,14 +193,14 @@ run().catch((err) => console.error(err));
 
 ### Verify Notarization Script
 
-Since you want to verify the notarization, you will also need to create a new file called `verify-notarization.js`. 
+Since you want to verify the notarization, you also need to create a new file called `verify-notarization.js`. 
 
 The `verify-notorization.js` will:
 
 1. Read the block with the notarization from your local folder.
 2. Verify the block with the notarization.
 
-You should create a new file called `verify-notarization.js` and add the following code:
+Create a new file named `verify-notarization.js` and add the following code:
 
 ```javascript
 const { TransactionHelper } = require('@iota/iota.js');
@@ -243,7 +245,7 @@ async function verifyNotarization(nodeURL, notarizedBlock) {
         headers: { 'Content-Type': 'application/json' }
     })
     const result = await response.json();
-    
+
     return result.valid;
 }
 
@@ -252,7 +254,7 @@ run().catch((err) => console.error(err));
 
 ## Run Your Scripts
 
-Once you have [created your scripts](#create-your-scripts), you can execute the two created files in the order. 
+Once you have [created your scripts](#create-your-scripts), you can execute the two created files in order. 
 Naturally, you will need to run `create-notarization` before you can run `verify-notarization` and check the log output to follow along.
 
 ### Create the Notarization
@@ -263,15 +265,17 @@ You can create the notarization in the Tangle by running the following command:
 node create-notarization.js
 ```
 
-Your console output should look something like this:
+Your console output should look similar to this:
 
 ```plaintext
 Attached block:
 http://localhost:8082/dashboard/explorer/block/<id_of_your_notarized_block>
+
 Wait for milestone confirmation to get notarized block:
 Try 1: Block was not yet referenced by a milestone
 Try 2: Block was not yet referenced by a milestone
 Try 3: Block was referenced by milestone <number_of_milestone_referencing_your_block>
+
 Block successfully notarized and stored at:
 ./notarized-block.json
 Notarized block can now be handed over to the verifier
@@ -279,20 +283,21 @@ Notarized block can now be handed over to the verifier
 
 ### Verify Notarization
 
-
 You can verify the notarization by running the following command:
 
 ```bash
 node verify-notarization.js
 ```
 
-Your console output should look something like this:
+Your console output should look similar to this:
 
 ```plaintext
 Successfully imported notarized block from path:
 ./notarized-block.json
+
 Notarized block:
 http://localhost:8082/dashboard/explorer/block/<id_of_your_notarized_block>
+
 Validity of provided notarization:
 true
 ```
