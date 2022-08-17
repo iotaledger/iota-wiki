@@ -18,6 +18,8 @@ Please note that this pattern does not rely on a Permanode storing the entire Ta
 
 ![PoI-Architecture](./images/proof-inclusion-of-a-block-architecture.png)
 
+---
+
 ## Prerequisites
 
 ### Network
@@ -52,16 +54,11 @@ npm init --yes
 npm install @iota/iota.js
 ```
 
-5. Install dependencies by running the following command:
-
-```bash
-npm install
-```
+---
 
 ## Create Your Scripts
 
 ### Network Configuration Script
-
 Both the script that will [create](#create-notarization-script) and [verify](#verify-notarization-script) the notarization will need to share a network.
 Create a new file named `networkConfig.js` and add the following code:
 
@@ -74,19 +71,13 @@ networkConfig.explorer = 'http://localhost:8082/dashboard/explorer/';
 module.exports = { networkConfig };
 ```
 
+---
+
 ### Create Notarization Script
+Create a new file named `create-notarization.js`. For better comprehensability, the code below is separated into distinct code snippets together with an explanation. After you have followed along the different steps, you can copy all snippets into the newly created file, following their respective order.
 
-The first script you will need to create is `create-notorization.js`.
-
-The `create-notorization.js` script will:
-
-1. Set up the client and define block content.
-2. Attach the block to the Tangle.
-3. Wait for the block to be confirmed by a milestone.
-4. Read the block from Tangle, together with the notarization.
-5. Store the block with its notarization in a JSON file within your local folder.
-
-Create a new file named `create-notarization.js` and add the following code:
+#### 1. Imports and parameters
+This part imports all necessary packages and network configuration parameters.
 
 ```javascript
 const {
@@ -102,27 +93,43 @@ const { networkConfig } = require('./networkConfig.js');
 const nodeURL = networkConfig.node;
 const explorerURL = networkConfig.explorer;
 
-// For the sake of this tutorial, some console output will be printed in a different color for better readability
+// For better readability, some console output will be printed in a different color
 const consoleColor = '\x1b[36m%s\x1b[0m';
+```
 
+#### 2. Main function
+The `main()` function will be called when running the `create-notarization.js` file and consists of the following steps.
 
-async function run() {
+Declare the function and setup a node client for the interaction with the network.
+```javascript
+async function main() {
   // Setup client and define block content
   const client = new SingleNodeClient(nodeURL, {
     powProvider: new LocalPowProvider(),
   });
+```
+
+Define the content (`tag` & `data`), attach new block to the Tangle and log out the explorer link.
+```javascript
+  // Define block content, attach block to the Tangle and log out the explorer link
   const tag = 'This is my Tag';
   const data = 'This is my data';
 
-  // Attach block to Tangle and log explorer link
   const sendResult = await sendData(client, tag, data);
   const blockId = sendResult.blockId;
+
   console.log(consoleColor, 'Attached block:');
   console.log(explorerURL + 'block/' + blockId, '\n');
+```
 
+Wait for block confirmation by a milestone and read the block with proof of inclusion from INX plugin. The function `getNotarization()` will be explained in more detail in the next section.
+```javascript
   // Wait for block confirmation by milestone and read it with proof of inclusion from INX plugin
   const result = await getNotarization(client, nodeURL, blockId);
+```
 
+This part will only be exectured, if the respective block was confirmed by a milestone after a defined time. If that is the case, the returned notarization result will be stored in a *.json file and the file path will be logged out.
+```javascript
   // Store block with proof of inclusion in local json file
   if (result != false) {
     const filePath = `./notarized-block.json`;
@@ -140,8 +147,13 @@ async function run() {
     );
   }
 }
+```
 
-// Function that regularly checks for block confirmation and returns proof of inclusion if confirmed after n tries
+#### 3. Get notarization
+As described in the previous step, the `getNotarization()` function is called from within `main()`. The function fetches the metadata of a given blockId 10 times while pausing for 1 second after each try via the `sleep()` function. As soon as a block was referenced by a milestone, the notarization for the block is fetched from the proof of inclusion plugin and  returned by the function. In case the block was not referenced by a milestone after 10 seconds, the function returns `false`.
+
+```javascript
+// Check for block confirmation and return proof of inclusion, if confirmed after n tries
 async function getNotarization(client, nodeURL, blockId) {
   try {
     console.log(
@@ -157,13 +169,13 @@ async function getNotarization(client, nodeURL, blockId) {
 
       const blockMetadata = await client.blockMetadata(blockId);
 
-      // If a block was referenced by a milestone, the node will return its metadata with the key 'referencedByMilestoneIndex', otherwise the key won't be there
+      // If a block was referenced by a milestone, the metadata contains the field 'referencedByMilestoneIndex'
       if ('referencedByMilestoneIndex' in blockMetadata) {
         console.log(
           `Try ${i}: Block was referenced by milestone #${blockMetadata.referencedByMilestoneIndex}`,
           '\n',
         );
-        
+
         // Call "create" endpoint of PoI plugin with blockId and return the result
         const poiPluginUrl = `${nodeURL}/api/poi/v1/create/${blockId}`;
         const response = await fetch(poiPluginUrl);
@@ -183,24 +195,34 @@ async function getNotarization(client, nodeURL, blockId) {
     console.log(error);
   }
 }
+```
+
+#### 4. Delay function
+The function `sleep()` receives a number of milliseconds and acts as a time delay for whichever function is calling it.
+
+```javascript
 function sleep(ms) {
   return new Promise((resolve) => {
     setTimeout(resolve, ms);
   });
 }
-run().catch((err) => console.error(err));
 ```
+
+#### 5. Execute main function
+As a final step the function `main()` is called in order to trigger the process as described above.
+
+```javascript
+main().catch((err) => console.error(err));
+```
+
+---
 
 ### Verify Notarization Script
 
-Since you want to verify the notarization, you also need to create a new file called `verify-notarization.js`. 
+Create a new file named `verify-notarization.js`. As with the previous script (`create-notarization.js`), the code below is separated into distinct code snippets together with an explanation. After you have followed along the different steps, you can copy all snippets into the newly created file, following their respective order.
 
-The `verify-notorization.js` will:
-
-1. Read the block with the notarization from your local folder.
-2. Verify the block with the notarization.
-
-Create a new file named `verify-notarization.js` and add the following code:
+#### 1. Imports and parameters
+This part imports all necessary packages and network configuration parameters.
 
 ```javascript
 const { TransactionHelper } = require('@iota/iota.js');
@@ -212,30 +234,47 @@ const { networkConfig } = require("./networkConfig.js");
 const nodeURL = networkConfig.node;
 const explorerURL = networkConfig.explorer;
 
-// For the sake of this tutorial, some console output will be printed in a different color for better readability
+// For better readability, some console output will be printed in a different color
 const consoleColor = '\x1b[36m%s\x1b[0m';
+```
 
+#### 2. Main function
+The `main()` function will be called when running the `verify-notarization.js` file and consists of the following steps.
 
+Declare the function, read the notarization file and parse it.
+```javascript
 async function run() {
     // Read and parse notarized block from file path
     const filePath = './notarized-block.json';
     const file = fs.readFileSync(filePath);
     const notarizedBlock = JSON.parse(file);
+
     console.log(consoleColor, 'Successfully imported notarized block from path:');
     console.log(filePath, '\n');
+```
 
+Derive the blockId from the block content and log out the explorer link.
+```javascript
     // Generate blockId from block content and log explorer link
     // The blockId is defined as the BLAKE2b-256 hash of the entire serialized block
     const blockId = TransactionHelper.calculateBlockId(notarizedBlock.block);
     console.log(consoleColor, 'Notarized block:');
     console.log(explorerURL+"block/"+blockId, '\n');
+```
 
+Fetch validity (`true`/`false`) of the notarization from the proof of inclusion plugin. The function `verifyNotarization()` will be explained in more detail in the next section.
+```javascript
     // Verify provided notarization/proof of inclusion for block
     const validity = await verifyNotarization(nodeURL, notarizedBlock);
     console.log(consoleColor, 'Validity of provided notarization:');
     console.log(validity, '\n');
 }
+```
 
+#### 3. Verify notarization
+As described in the previous step, the `verifyNotarization()` function is called from within `main()`. The function sends the notarized block to the `validate` endpoint of the proof of inclusion plugin and returns the booolean result.
+
+```javascript
 async function verifyNotarization(nodeURL, notarizedBlock) {
     // Call "validate" endpoint of PoI plugin with notarized block and return boolean answer
     const poiPluginUrl = `${nodeURL}/api/poi/v1/validate`;
@@ -248,16 +287,23 @@ async function verifyNotarization(nodeURL, notarizedBlock) {
 
     return result.valid;
 }
-
-run().catch((err) => console.error(err));
 ```
+
+#### 4. Execute main function
+As a final step the function `main()` is called in order to trigger the process as described above.
+
+```javascript
+main().catch((err) => console.error(err));
+```
+
+---
 
 ## Run Your Scripts
 
 Once you have [created your scripts](#create-your-scripts), you can execute the two created files in order. 
 Naturally, you will need to run `create-notarization` before you can run `verify-notarization` and check the log output to follow along.
 
-### Create the Notarization
+### Create Notarization
 
 You can create the notarization in the Tangle by running the following command:
 
@@ -280,6 +326,8 @@ Block successfully notarized and stored at:
 ./notarized-block.json
 Notarized block can now be handed over to the verifier
 ```
+
+---
 
 ### Verify Notarization
 
