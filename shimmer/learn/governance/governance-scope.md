@@ -4,16 +4,20 @@
 
 
 Changes are allowed in the following areas:
-- Installment of Inflation, changes to the Inflation scheme, and ways of distribution of newly minted Shimmer tokens towards network participants (when and how, how much, and to whom)
-   - As examples: This could be decisions about splitting the new shimmer tokens that are created through inflation between certain participants or groups in the network. Deciding on the interval of reward payouts for inflation, or further specific parameters around inflation and distribution of inflation, once the technical possibilities have been developed.
 
-- Installment and changes to protocol parameters as defined by the protocol specifications or where possible to change, such as potential Incentive models for network participants (See [ShimmerEVM Discussion](https://govern.iota.org/t/discussion-shimmerevm-governance-tokenomics-and-scaling/1301))
-   - For example, certain network parameters could be defined as totally open or open in a certain range to be set by governance. This could be how rewards in the network get distributed and how a certain parameter in the code should be set. The IF engineering team will work on defining such parameters that could be influenced by governance in the future.
-Community-wide definition of standards (Token and NFT naming conventions …)
-Currently, there are already suggestions about specific metadata schemes to use in IOTA native assets, and there might be attempts to introduce IOTA name services. All such network-wide standards that help the users to have an overall better or safer user experience could be defined using this framework.
+- Installment and changes to the following protocol parameters as defined by the protocol specifications in [TIP-32](https://github.com/iotaledger/tips/blob/main/tips/TIP-0032/tip-0032.md#detailed-design)
 
-- Installment and changes to the used governance processes, but not its scope, (proposing, voting mechanics, other technology used, all points presented in the specification section of this framework), with the exclusion of any core development required to fulfill Shimmers purpose as a validation network 
-   - If any changes to this “Shimmer governance framework” should be made, they would need to follow the currently designed governance framework process in an attempt to change certain aspects of it.
+- [Shimmer units](https://github.com/iotaledger/tips/blob/main/tips/TIP-0032/tip-0032.md#shimmer-units)
+
+- [Global Parameters](https://github.com/iotaledger/tips/blob/main/tips/TIP-0032/tip-0032.md#global-parameters)
+ 
+| Name                                  | Value            | Class   | Type   | Description                                                                                                                                                                               |
+|---------------------------------------|------------------|---------|--------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------| 
+| Max Shimmer Genesis Supply            | 1450896407249092 | static  | uint64 | Total amount of Shimmer genesis supply denominated in `glow`. 1 `glow` = 0.000001 `SMR` 
+| VByte Cost                            | 100              | dynamic | uint32 | Minimum amount of Shimmer (denominated in `glow`) that need to be deposited per vbyte of an output.                                                                                       |
+
+- Installment and changes to the governance processes, but not its scope, (proposing, voting mechanics, other technology used, all points presented in the specification section of the Shimmer Governance Framework), with the exclusion of any core development required to fulfill Shimmers purpose as a validation network 
+   - If any changes to the “Shimmer governance framework” should be made, they would need to follow the currently designed Governance Framework process in an attempt to change certain aspects of it.
 
 - Installment and structure of governance processes used in the community Treasury DAO
-   - The rules of how this treasury should operate could be proposed, defined, and decided on by using this framework.
+   - The rules of how the Shimmer community treasury should operate can be proposed, defined, and decided on by using the Shimmer Governance Framework.
