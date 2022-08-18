@@ -2,6 +2,7 @@
 
 (Defined by the IOTA Foundation) 
 
+This list will be extended with the maturity of the Shimmer protocol by the IF engineering Team with the goal to open most programm parameters to governance.
 
 Changes are allowed in the following areas:
 
