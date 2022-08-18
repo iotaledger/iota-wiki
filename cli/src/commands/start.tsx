@@ -18,7 +18,7 @@ export class Start extends Command {
     const directory = this.directory || process.cwd();
 
     return await shell(
-      'docusaurus start --config',
+      'npx docusaurus start --config',
       [internalConfig, directory],
       {
         env: {

@@ -18,7 +18,7 @@ export class Build extends Command {
     const directory = this.directory || process.cwd();
 
     return await shell(
-      'docusaurus build --config',
+      'npx docusaurus build --config',
       [internalConfig, directory],
       {
         env: {
