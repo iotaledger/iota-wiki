@@ -275,3 +275,8 @@ ul ul .table-of-contents__link {
   color: var(--docsearch-highlight-color) !important;
   text-decoration: none;
 }
+
+.math {
+  overflow-x: auto;
+  margin-bottom: 1em;
+}
