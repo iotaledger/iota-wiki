@@ -59,6 +59,7 @@ npm install @iota/iota.js
 ## Create Your Scripts
 
 ### Network Configuration Script
+
 Both the script that will [create](#create-notarization-script) and [verify](#verify-notarization-script) the notarization will need to share a network.
 Create a new file named `networkConfig.js` and add the following code:
 
@@ -74,9 +75,13 @@ module.exports = { networkConfig };
 ---
 
 ### Create Notarization Script
-Create a new file named `create-notarization.js`. For better comprehensability, the code below is separated into distinct code snippets together with an explanation. After you have followed along the different steps, you can copy all snippets into the newly created file, following their respective order.
+
+Create a new file named `create-notarization.js`.
+
+We broke the code into separate snippets to help you understand it better. To make it work, copy all code snippets one after another into the file that you have just created.
 
 #### 1. Imports and parameters
+
 This part imports all necessary packages and network configuration parameters.
 
 ```javascript
@@ -98,9 +103,11 @@ const consoleColor = '\x1b[36m%s\x1b[0m';
 ```
 
 #### 2. Main function
-The `main()` function will be called when running the `create-notarization.js` file and consists of the following steps.
+
+The `main()` function will be called when running the `create-notarization.js` file and consists of the following steps:
 
 Declare the function and setup a node client for the interaction with the network.
+
 ```javascript
 async function main() {
   // Setup client and define block content
@@ -110,6 +117,7 @@ async function main() {
 ```
 
 Define the content (`tag` & `data`), attach new block to the Tangle and log out the explorer link.
+
 ```javascript
   // Define block content, attach block to the Tangle and log out the explorer link
   const tag = 'This is my Tag';
@@ -123,6 +131,7 @@ Define the content (`tag` & `data`), attach new block to the Tangle and log out 
 ```
 
 Wait for block confirmation by a milestone and read the block with proof of inclusion from INX plugin. The function `getNotarization()` will be explained in more detail in the next section.
+
 ```javascript
   // Wait for block confirmation by milestone and read it with proof of inclusion from INX plugin
   const result = await getNotarization(client, nodeURL, blockId);
@@ -150,7 +159,8 @@ This part will only be exectured, if the respective block was confirmed by a mil
 ```
 
 #### 3. Get notarization
-As described in the previous step, the `getNotarization()` function is called from within `main()`. The function fetches the metadata of a given blockId 10 times while pausing for 1 second after each try via the `sleep()` function. As soon as a block was referenced by a milestone, the notarization for the block is fetched from the proof of inclusion plugin and  returned by the function. In case the block was not referenced by a milestone after 10 seconds, the function returns `false`.
+
+As described in the previous step, the `getNotarization()` function is called from within `main()`. As soon as a block was referenced by a milestone, the notarization for the block is fetched from the proof of inclusion plugin and returned by the function. The function tries to fetch the metadata of a given blockId 10 times, waiting for a second before each try. In case the block was still not referenced by a milestone, the function returns `false`.
 
 ```javascript
 // Check for block confirmation and return proof of inclusion, if confirmed after n tries
@@ -198,6 +208,7 @@ async function getNotarization(client, nodeURL, blockId) {
 ```
 
 #### 4. Delay function
+
 The function `sleep()` receives a number of milliseconds and acts as a time delay for whichever function is calling it.
 
 ```javascript
@@ -209,6 +220,7 @@ function sleep(ms) {
 ```
 
 #### 5. Execute main function
+
 As a final step the function `main()` is called in order to trigger the process as described above.
 
 ```javascript
@@ -219,9 +231,12 @@ main().catch((err) => console.error(err));
 
 ### Verify Notarization Script
 
-Create a new file named `verify-notarization.js`. As with the previous script (`create-notarization.js`), the code below is separated into distinct code snippets together with an explanation. After you have followed along the different steps, you can copy all snippets into the newly created file, following their respective order.
+Create a new file named `verify-notarization.js`.
+
+Just like with the [Create Notarization](#create-notarization-script) script, we broke the code into separate snippets. To make it work, copy all code snippets one after another into the file that you have just created.
 
 #### 1. Imports and parameters
+
 This part imports all necessary packages and network configuration parameters.
 
 ```javascript
@@ -239,9 +254,11 @@ const consoleColor = '\x1b[36m%s\x1b[0m';
 ```
 
 #### 2. Main function
-The `main()` function will be called when running the `verify-notarization.js` file and consists of the following steps.
+
+The `main()` function will be called when running the `verify-notarization.js` file and consists of the following steps:
 
 Declare the function, read the notarization file and parse it.
+
 ```javascript
 async function run() {
     // Read and parse notarized block from file path
@@ -254,6 +271,7 @@ async function run() {
 ```
 
 Derive the blockId from the block content and log out the explorer link.
+
 ```javascript
     // Generate blockId from block content and log explorer link
     // The blockId is defined as the BLAKE2b-256 hash of the entire serialized block
@@ -263,6 +281,7 @@ Derive the blockId from the block content and log out the explorer link.
 ```
 
 Fetch validity (`true`/`false`) of the notarization from the proof of inclusion plugin. The function `verifyNotarization()` will be explained in more detail in the next section.
+
 ```javascript
     // Verify provided notarization/proof of inclusion for block
     const validity = await verifyNotarization(nodeURL, notarizedBlock);
@@ -272,6 +291,7 @@ Fetch validity (`true`/`false`) of the notarization from the proof of inclusion 
 ```
 
 #### 3. Verify notarization
+
 As described in the previous step, the `verifyNotarization()` function is called from within `main()`. The function sends the notarized block to the `validate` endpoint of the proof of inclusion plugin and returns the booolean result.
 
 ```javascript
@@ -290,6 +310,7 @@ async function verifyNotarization(nodeURL, notarizedBlock) {
 ```
 
 #### 4. Execute main function
+
 As a final step the function `main()` is called in order to trigger the process as described above.
 
 ```javascript
