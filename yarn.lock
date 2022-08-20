@@ -7890,6 +7890,14 @@ __metadata:
   languageName: node
   linkType: hard
 
+"inx-coordinator-develop@workspace:content/build/inx-coordinator/develop/documentation":
+  version: 0.0.0-use.local
+  resolution: "inx-coordinator-develop@workspace:content/build/inx-coordinator/develop/documentation"
+  dependencies:
+    "@iota-community/iota-wiki-cli": "iota-community/iota-wiki-cli#v2"
+  languageName: unknown
+  linkType: soft
+
 "inx-indexer-develop@workspace:content/build/inx-indexer/develop/documentation":
   version: 0.0.0-use.local
   resolution: "inx-indexer-develop@workspace:content/build/inx-indexer/develop/documentation"
@@ -7901,6 +7909,14 @@ __metadata:
 "inx-mqtt-develop@workspace:content/build/inx-mqtt/documentation":
   version: 0.0.0-use.local
   resolution: "inx-mqtt-develop@workspace:content/build/inx-mqtt/documentation"
+  dependencies:
+    "@iota-community/iota-wiki-cli": "iota-community/iota-wiki-cli#v2"
+  languageName: unknown
+  linkType: soft
+
+"inx-participation-develop@workspace:content/build/inx-participation/develop/documentation":
+  version: 0.0.0-use.local
+  resolution: "inx-participation-develop@workspace:content/build/inx-participation/develop/documentation"
   dependencies:
     "@iota-community/iota-wiki-cli": "iota-community/iota-wiki-cli#v2"
   languageName: unknown
