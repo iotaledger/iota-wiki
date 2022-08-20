@@ -5,6 +5,7 @@
 html {
   scroll-behavior: smooth;
 }
+
 .version-picker {
   background-color: var(--ifm-color-emphasis-200);
   margin-bottom: 2rem;
@@ -389,4 +390,9 @@ ul ul .table-of-contents__link {
   .navbar__item {
     font-size: 0.7rem;
   }
+}
+
+.math {
+  overflow-x: auto;
+  margin-bottom: 1em;
 }
