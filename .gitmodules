@@ -106,3 +106,7 @@
 	path = content/build/inx-poi/develop
 	url = https://github.com/iotaledger/inx-poi
   branch = develop
+[submodule "content/build/inx-faucet/develop"]
+	path = content/build/inx-faucet/develop
+	url = https://github.com/iotaledger/inx-faucet
+	branch = develop
