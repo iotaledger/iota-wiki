@@ -4986,7 +4986,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"commander@npm:^8.3.0":
+"commander@npm:^8.0.0, commander@npm:^8.3.0":
   version: 8.3.0
   resolution: "commander@npm:8.3.0"
   checksum: 0f82321821fc27b83bd409510bb9deeebcfa799ff0bf5d102128b500b7af22872c0c92cb6a0ebc5a4cf19c6b550fba9cedfa7329d18c6442a625f851377bacf0
@@ -7914,6 +7914,17 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"iota-2.0-specifications@workspace:content/build/iota-2.0-research-specifications/docusaurus":
+  version: 0.0.0-use.local
+  resolution: "iota-2.0-specifications@workspace:content/build/iota-2.0-research-specifications/docusaurus"
+  dependencies:
+    "@iota-community/iota-wiki-cli": "iota-community/iota-wiki-cli#v2"
+    hast-util-is-element: 1.1.0
+    rehype-katex: 5
+    remark-math: 3
+  languageName: unknown
+  linkType: soft
+
 "iota-rs-develop@workspace:content/build/iota.rs/develop/documentation":
   version: 0.0.0-use.local
   resolution: "iota-rs-develop@workspace:content/build/iota.rs/develop/documentation"
@@ -8621,6 +8632,17 @@ __metadata:
   bin:
     katex: cli.js
   checksum: f424c90b2b43034163cee37dd75f7c1f93206580cbaea07703a322010b615c32249d4648974d58f7345ad113431a43c2e8ae2118aed3a06fe37ad46dfdcf6d10
+  languageName: node
+  linkType: hard
+
+"katex@npm:^0.13.0":
+  version: 0.13.24
+  resolution: "katex@npm:0.13.24"
+  dependencies:
+    commander: ^8.0.0
+  bin:
+    katex: cli.js
+  checksum: 1b7c8295867073d0db4f6fb41ef1c0e3418b8e23924ff61b446b36134cb74cdadc7242dfbfb922d9c32f0b15eda6160a08cd30948c4e78141966ca2991a1726b
   languageName: node
   linkType: hard
 
@@ -11335,6 +11357,20 @@ plugin-image-zoom@flexanalytics/plugin-image-zoom:
   languageName: node
   linkType: hard
 
+"rehype-katex@npm:5":
+  version: 5.0.0
+  resolution: "rehype-katex@npm:5.0.0"
+  dependencies:
+    "@types/katex": ^0.11.0
+    hast-util-to-text: ^2.0.0
+    katex: ^0.13.0
+    rehype-parse: ^7.0.0
+    unified: ^9.0.0
+    unist-util-visit: ^2.0.0
+  checksum: b20e24c5326a718581619761057a30d03615519eccd0693ada2c7c710064dceaf08f038ae3a1131550f1f7c47ca54a254ba8e45547da384867e956ceca73f6bf
+  languageName: node
+  linkType: hard
+
 "rehype-parse@npm:^7.0.0":
   version: 7.0.1
   resolution: "rehype-parse@npm:7.0.1"
@@ -11389,7 +11425,7 @@ plugin-image-zoom@flexanalytics/plugin-image-zoom:
   languageName: node
   linkType: hard
 
-"remark-math@npm:^3.0.1":
+"remark-math@npm:3, remark-math@npm:^3.0.1":
   version: 3.0.1
   resolution: "remark-math@npm:3.0.1"
   checksum: 690256f27f2b42dadcf41806fec443056e09592454622ae77f03b1a8474e8c83cc7610e694be7e17de92c96cc272c61209e59a6e7a24e3af6ede47d48b185ccd
