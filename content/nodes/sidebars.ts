@@ -73,7 +73,7 @@ module.exports = {
                     {
                         type: 'link',
                         label: 'Dashboard',
-                        href: 'https://github.com/iotaledger/inx-dashboard',   
+                        href: '/inx-dashboard/develop/welcome',   
                     },
                     {
                         type: 'link',
