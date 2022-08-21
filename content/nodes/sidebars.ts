@@ -63,7 +63,7 @@ module.exports = {
                     {
                         type: 'link',
                         label: 'Spammer',
-                        href: 'https://github.com/iotaledger/inx-spammer',  
+                        href: '/inx-spammer/develop/welcome',  
                     }
                 ],  
             },
