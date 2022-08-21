@@ -57,6 +57,11 @@ module.exports = {
                     },
                     {
                         type: 'link',
+                        label: 'Coordinator',
+                        href: '/inx-coordinator/develop/welcome',
+                    },
+                    {
+                        type: 'link',
                         label: 'Dashboard',
                         href: 'https://github.com/iotaledger/inx-dashboard',   
                     },
