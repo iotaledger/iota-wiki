@@ -22,10 +22,10 @@ jobs:
           corepack enable
       - name: Init and update submodules
         run: |
-          git submodule update --init --recursive --remote
+          git submodule update --init --recursive
       - name: Install dependencies
         run: |
-          yarn install --immutable
+          yarn install
       - name: Build
         run: |
           yarn build
