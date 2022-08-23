@@ -67,6 +67,11 @@ module.exports = {
                     },
                     {
                         type: 'link',
+                        label: 'Faucet',
+                        href: '/inx-faucet/develop/welcome',
+                    },
+                    {
+                        type: 'link',
                         label: 'Dashboard',
                         href: 'https://github.com/iotaledger/inx-dashboard',   
                     },

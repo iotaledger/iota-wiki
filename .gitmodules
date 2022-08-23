@@ -114,3 +114,7 @@
 	path = content/build/inx-coordinator/develop
 	url = https://github.com/iotaledger/inx-coordinator
 	branch = develop
+[submodule "content/build/inx-faucet/develop"]
+	path = content/build/inx-faucet/develop
+  url = https://github.com/iotaledger/inx-faucet
+  branch = develop
