@@ -7906,6 +7906,14 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"inx-participation-develop@workspace:content/build/inx-participation/develop/documentation":
+  version: 0.0.0-use.local
+  resolution: "inx-participation-develop@workspace:content/build/inx-participation/develop/documentation"
+  dependencies:
+    "@iota-community/iota-wiki-cli": "iota-community/iota-wiki-cli#v2"
+  languageName: unknown
+  linkType: soft
+
 "inx-poi-develop@workspace:content/build/inx-poi/develop/documentation":
   version: 0.0.0-use.local
   resolution: "inx-poi-develop@workspace:content/build/inx-poi/develop/documentation"
