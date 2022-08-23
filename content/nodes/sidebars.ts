@@ -62,6 +62,11 @@ module.exports = {
                     },
                     {
                         type: 'link',
+                        label: 'Coordinator',
+                        href: '/inx-coordinator/develop/welcome',
+                    },
+                    {
+                        type: 'link'
                         label: 'Faucet',
                         href: '/inx-faucet/develop/welcome',
                     },
