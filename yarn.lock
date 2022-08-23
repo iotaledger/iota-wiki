@@ -7898,6 +7898,14 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"inx-faucet-develop@workspace:content/build/inx-faucet/develop/documentation":
+  version: 0.0.0-use.local
+  resolution: "inx-faucet-develop@workspace:content/build/inx-faucet/develop/documentation"
+  dependencies:
+    "@iota-community/iota-wiki-cli": "iota-community/iota-wiki-cli#v2"
+  languageName: unknown
+  linkType: soft
+
 "inx-indexer-develop@workspace:content/build/inx-indexer/develop/documentation":
   version: 0.0.0-use.local
   resolution: "inx-indexer-develop@workspace:content/build/inx-indexer/develop/documentation"
