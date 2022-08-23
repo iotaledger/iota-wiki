@@ -106,6 +106,10 @@
 	path = content/build/inx-poi/develop
 	url = https://github.com/iotaledger/inx-poi
   branch = develop
+[submodule "content/build/inx-participation/develop"]
+	path = content/build/inx-participation/develop
+	url = https://github.com/iotaledger/inx-participation
+  branch = develop
 [submodule "content/build/inx-coordinator/develop"]
 	path = content/build/inx-coordinator/develop
 	url = https://github.com/iotaledger/inx-coordinator

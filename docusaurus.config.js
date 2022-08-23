@@ -17,9 +17,10 @@ module.exports = {
   stylesheets: [
     'https://fonts.googleapis.com/css?family=Material+Icons',
     {
-      href: 'https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/katex.min.css',
+      href: 'https://cdn.jsdelivr.net/npm/katex@0.13.24/dist/katex.min.css',
+      type: 'text/css',
       integrity:
-        'sha384-Um5gpz1odJg5Z4HAmzPtgZKdTBHZdw8S29IecapCSB31ligYPhHQZMIlWLYQGVoc',
+        'sha384-odtC+0UGzzFL/6PNoE8rX/SPcQDXBJ+uRepguP4QkPCm2LBxH3FA3y+fKSiJ+AmM',
       crossorigin: 'anonymous',
     },
   ],
@@ -77,8 +78,19 @@ module.exports = {
         },
         {
           label: 'Wallets',
-          to: 'wallets/what-is-a-wallet',
+          to: '/wallets/what-is-a-wallet',
           activeBaseRegex: '^/wallets/.*',
+          type: 'dropdown',
+          items: [
+            {
+              label: 'Firefly',
+              href: '/wallets/firefly/general',
+            },
+            {
+              label: 'Tangle Pay',
+              href: 'https://tanglepay.com/',
+            },
+          ],
         },
         {
           label: 'Smart Contracts',
@@ -89,21 +101,84 @@ module.exports = {
           label: 'Networks',
           to: 'networks/iota-1.5-chrysalis',
           activeBaseRegex: '^/networks/.*|^/introduction/.*',
+          type: 'dropdown',
+          items: [
+            {
+              label: 'IOTA',
+              href: '/introduction/welcome',
+            },
+            {
+              label: 'Shimmer',
+              href: '/introduction/develop/welcome',
+            },
+          ],
         },
         {
           label: 'Libraries',
           to: '/#libraries',
-          activeBaseRegex: '^/identity.rs/.*|^/iota.rs/.*|^/iotajs/.*|^/wallet.rs/.*|^/streams/.*|^/stronghold.rs/.*',
+          activeBaseRegex:
+            '^(/categories)?/libraries.*|^/identity.rs/.*|^/iota.rs/.*|^/iotajs/.*|^/wallet.rs/.*|^/streams/.*|^/stronghold.rs/.*',
+          type: 'dropdown',
+          items: [
+            {
+              label: 'Client.rs',
+              href: '/iota.rs/welcome',
+            },
+            {
+              label: 'Client.js',
+              href: '/iotajs/welcome',
+            },
+            {
+              label: 'Identity',
+              to: '/identity.rs/develop/introduction',
+            },
+            {
+              label: 'Streams',
+              to: '/streams/welcome',
+            },
+            {
+              label: 'Stronghold',
+              to: '/stronghold.rs/welcome',
+            },
+            {
+              label: 'Wallet.rs',
+              to: '/wallet.rs/welcome',
+            },
+          ],
         },
         {
           label: 'Nodes',
-          to: 'nodes/about-nodes',
-          activeBaseRegex: '^/nodes/.*|^/hornet/.*|^/bee/.*|^/inx-.*/.*|^/chronicle.rs/.*',
+          to: '/nodes/about-nodes',
+          activeBaseRegex:
+            '^/nodes/.*|^/hornet/.*|^/bee/.*|^/inx-.*/.*|^/chronicle.rs/.*',
+          type: 'dropdown',
+          items: [
+            {
+              label: 'Bee',
+              href: '/bee/welcome',
+            },
+            {
+              label: 'Hornet',
+              href: '/hornet/welcome',
+            },
+          ],
         },
         {
           label: 'Research',
           to: 'research/research-outline',
-          activeBaseRegex: '^/research/.*|^/IOTA-2.0-Research-Specifications/.*|^/goshimmer/.*',
+          activeBaseRegex:
+            '^/research/.*|^/IOTA-2.0-Research-Specifications/.*|^/goshimmer/.*',
+          type: 'dropdown',
+          items: [
+            {
+              label: 'Coordicide Specs',
+              href: '/IOTA-2.0-Research-Specifications/Preface',
+            },
+            {
+              label: 'GoShimmer',
+              href: '/goshimmer/welcome',
+            },
+          ],
         },
         {
           label: 'Developer Resources',

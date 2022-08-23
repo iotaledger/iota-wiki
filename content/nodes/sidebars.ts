@@ -57,6 +57,11 @@ module.exports = {
                     },
                     {
                         type: 'link',
+                        label: 'Participation',
+                        href: '/inx-participation/develop/welcome',
+                    },
+                    {
+                        type: 'link',
                         label: 'Coordinator',
                         href: '/inx-coordinator/develop/welcome',
                     },
