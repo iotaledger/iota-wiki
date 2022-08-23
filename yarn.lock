@@ -7890,17 +7890,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"inx-faucet-develop@workspace:content/build/inx-faucet/develop/documentation":
+"inx-coordinator-develop@workspace:content/build/inx-coordinator/develop/documentation":
   version: 0.0.0-use.local
-  resolution: "inx-faucet-develop@workspace:content/build/inx-faucet/develop/documentation"
+  resolution: "inx-coordinator-develop@workspace:content/build/inx-coordinator/develop/documentation"
   dependencies:
     "@iota-community/iota-wiki-cli": "iota-community/iota-wiki-cli#v2"
   languageName: unknown
   linkType: soft
   
-"inx-coordinator-develop@workspace:content/build/inx-coordinator/develop/documentation":
+"inx-faucet-develop@workspace:content/build/inx-faucet/develop/documentation":
   version: 0.0.0-use.local
-  resolution: "inx-coordinator-develop@workspace:content/build/inx-coordinator/develop/documentation"
+  resolution: "inx-faucet-develop@workspace:content/build/inx-faucet/develop/documentation"
   dependencies:
     "@iota-community/iota-wiki-cli": "iota-community/iota-wiki-cli#v2"
   languageName: unknown
