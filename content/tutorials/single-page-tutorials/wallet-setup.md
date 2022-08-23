@@ -64,7 +64,7 @@ npm install
 
 ### Prepare network configuration
 
-Create new file `config.js` and add the following code:
+Create new file `networkConfig.js` and add the following code:
 
 ```javascript
 var networkConfig = {};
@@ -118,7 +118,7 @@ run();
 
 Run the script `create-mnemonic.js` and check the console output for your new mnemonic seed phrase:
 ```console
-node create-notarization.js
+node create-mnemonic.js
 ```
 Now you can copy the seed phrase and paste it into the previously created `.env` file.
 
@@ -208,7 +208,7 @@ Run the script `setup-account.js` and check the console output:
 ```console
 node setup-account.js
 ```
-You should see your new account and a newly created address, which you can use to receive funds from the faucet. But let's check the balance of your address(es) first.
+Stronghold will create a new database older `<accountName>-database` and a file called `wallet.stronghold`, which will hold your secret(s). Also the console log should display your new account and a newly created address, which you can use to receive funds from the faucet. But let's check the balance of your address(es) first.
 
 ***
 
@@ -246,7 +246,6 @@ async function run() {
     });
     await manager.setStrongholdPassword(password);
 
-    console.log(`${accountName}:`)
     const account = await manager.getAccount(accountName);
 ```
 
