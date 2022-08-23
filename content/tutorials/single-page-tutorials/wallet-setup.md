@@ -1,12 +1,6 @@
 # Setup testnet address and receive funds from faucet
 
-## What you will learn
-
-- Create a mnemonic seed phrase
-- Create a Stronghold account
-- Generate a Shimmer testnet address
-- Get some Shimmer testnet tokens
-- Check your balance
+In this tutorial you will create a new mnemonic seed phrase in order to setup a Stronghold account with the [NodeJS binding of wallet.rs](https://github.com/iotaledger/wallet.rs/tree/develop/bindings/nodejs). Afterwards you will generate a new address, request funds from the Shimmer testnet faucet and check your account balance.
 
 ## Prerequisites
 
