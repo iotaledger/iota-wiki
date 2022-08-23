@@ -57,6 +57,11 @@ module.exports = {
                     },
                     {
                         type: 'link',
+                        label: 'Participation',
+                        href: '/inx-participation/develop/welcome',
+                    },
+                    {
+                        type: 'link',
                         label: 'Faucet',
                         href: '/inx-faucet/develop/welcome',
                     },
