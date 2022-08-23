@@ -41,7 +41,7 @@ Overwrite the `package.json` file with the following content:
   "description": "",
   "main": "create-mnemonic.js",
   "dependencies": {
-    "@iota/wallet": "next",
+    "@iota/wallet": "2.0.2-alpha.21",
     "bip39": "^3.0.4",
     "dotenv": "^16.0.1"
   },
