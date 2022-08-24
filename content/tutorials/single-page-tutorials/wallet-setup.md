@@ -58,14 +58,15 @@ npm install
 
 ### Prepare network configuration
 
-Create new file `networkConfig.js` and add the following code:
+Create a new file `networkConfig.js` and add the following code:
 
 ```javascript
 var networkConfig = {};
 
-// Shimmer Testnet
+// Shimmer Beta network configuration
 networkConfig.node = 'https://api.testnet.shimmer.network';
-networkConfig.faucet = 'https://faucet.testnet.shimmer.network/';
+networkConfig.faucetWebsite = 'https://faucet.testnet.shimmer.network';
+networkConfig.faucetApi = 'https://faucet.testnet.shimmer.network/api/enqueue';
 networkConfig.explorer = 'https://explorer.shimmer.network/testnet';
 
 module.exports = { networkConfig };
@@ -75,13 +76,15 @@ module.exports = { networkConfig };
 
 ### Prepare environment variables
 
-Create new file `.env` and add the following code:
+Create a new file `.env` and add the content below:
 
 ```javascript
 ACCOUNT_NAME = "<Enter_your_name_here>"
 SH_PASSWORD = "<Enter_your_password_here>"
-MNEMONIC = "You will create your own mnemonic seed phrase in the next step and paste it here"
+MNEMONIC = "<You_will_create_your_own_mnemonic_seed_phrase_in_the_next_step_and_paste_it_in_here>"
 ```
+
+Enter your desired account name as well as a secure Stronghold password. Your new mnemonic seed phrase will be created in the next step and you will paste it in here afterwards.
 
 ***
 
@@ -89,7 +92,7 @@ MNEMONIC = "You will create your own mnemonic seed phrase in the next step and p
 
 ### Create mnemonic script
 
-Create new file `create-mnemonic.js` and add the following code:
+Create a new file `create-mnemonic.js` and add the following code:
 
 ```javascript
 // Libraries
@@ -100,9 +103,8 @@ const consoleColor = '\x1b[36m%s\x1b[0m';
 
 
 async function run() {
-	// 256-bits of entropy lead to a 24 word mnemonic seed phrase
+	// A 256-bits entropy leads to a 24 word mnemonic seed phrase
 	const mnemonic = bip39.generateMnemonic(256);
-
 	console.log(consoleColor, 'Copy your mnemonic seed phrase and paste it into the .env file:');
 	console.log(mnemonic, '\n');
 }
@@ -120,7 +122,7 @@ Now you can copy the seed phrase and paste it into the previously created `.env`
 
 ### Setup account script
 
-Create new file `setup-account.js` and add the following code:
+Create a new file `setup-account.js` and add the following code:
 
 > **NOTE:**  We broke the code into separate snippets to help you understand it better. To make it work, copy all code snippets one after another into the file that you have just created.
 
@@ -135,7 +137,6 @@ This part imports all necessary packages, network configuration parameters and e
 // Network configuration
 const { networkConfig } = require("./networkConfig.js");
 const nodeURL = networkConfig.node;
-const faucetURL = networkConfig.faucet;
  
 // Environment variables
 require('dotenv').config({ path: './.env' });
@@ -153,7 +154,7 @@ Create a new account manager with defined options and store your mnemonic seed p
 
 ```javascript
 async function run() {
-    // Define the account manager options with your set account name, password and node URL
+    // Define the account manager options with the imported network configuration and environment variables
     const accountManagerOptions = {
         storagePath: `./${accountName}-database`,
         clientOptions: {
@@ -174,12 +175,12 @@ async function run() {
     // Store your mnemonic seed phrase in Stronghold
     await manager.storeMnemonic(mnemonic);
 
-    // Create a new account with your set account name and log it out
-	const account = await manager.createAccount({
-		alias: accountName,
-	});
-	console.log(consoleColor, `${accountName}'s account:`);
-	console.log(account, '\n');
+    // Create a new account with your set account name
+    const account = await manager.createAccount({
+      alias: accountName,
+    });
+    console.log(consoleColor, `${accountName}'s account:`);
+    console.log(account, '\n');
 ```
 
 #### 3. Create address
@@ -187,7 +188,7 @@ async function run() {
 This step creates a new address in your account.
 
 ```javascript
-    // Generate a new address for your account and log it out
+    // Generate a new address for your account
 	const address = await account.generateAddress();
 	console.log(consoleColor, `${accountName}'s new address:`);
 	console.log(address.address, '\n');
@@ -202,13 +203,41 @@ Run the script `setup-account.js` and check the console output:
 ```console
 node setup-account.js
 ```
-Stronghold will create a new database older `<accountName>-database` and a file called `wallet.stronghold`, which will hold your secret(s). Also the console log should display your new account and a newly created address, which you can use to receive funds from the faucet. But let's check the balance of your address(es) first.
+
+Stronghold will create a new wallet database folder `<accountName>-database` and a snaphsot file called `wallet.stronghold`, which savely stores your mnemonic seed phrase.
+
+The console output should look similar to this:
+
+```json
+<account_name>'s account:
+Account {
+  meta: {
+    index: 0,
+    coinType: 4219,
+    alias: '<account_name>',
+    publicAddresses: [ [Object] ],
+    internalAddresses: [],
+    addressesWithUnspentOutputs: [],
+    outputs: {},
+    lockedOutputs: [],
+    unspentOutputs: {},
+    transactions: {},
+    pendingTransactions: [],
+    incomingTransactions: {}
+  },
+  messageHandler: MessageHandler { messageHandler: [External: 277668a8e40] }
+} 
+
+<account_name>'s new address:
+<your_new_address>
+```
+You can see your new account and the generated address, which you will use in order to receive funds from the faucet. But let's check the balance of your account first.
 
 ***
 
 ### Check balance script
 
-Create new file `check-balance.js` and add the following code:
+Create a new file `check-balance.js` and add the following code:
 
 > **NOTE:**  We broke the code into separate snippets to help you understand it better. To make it work, copy all code snippets one after another into the file that you have just created.
 
@@ -235,11 +264,15 @@ Create new account manager from previously created Stronghold database path.
 
 ```javascript
 async function run() {
+    // Create a new account manager from existing database path
     const manager = new AccountManager({
         storagePath: `./${accountName}-database`,
     });
+
+    // Pass password to manager
     await manager.setStrongholdPassword(password);
 
+    // Get specific account from account manager
     const account = await manager.getAccount(accountName);
 ```
 
@@ -248,7 +281,7 @@ async function run() {
 Synchronize your account and fetch balance for imported account.
 
 ```javascript
-    // Always sync before calling getBalance()
+    // Always sync before getting the account balance
     await account.sync();
     const balance = await account.getBalance();
 
@@ -262,13 +295,14 @@ run();
 ```
 
 Run the script `check-balance.js` and check the console output:
+
 ```console
 node check-balance.js
 ```
 
 If you created a new mnemonic seed phrase at the beginning of this tutorial, you should see an entirely empty balance on your account.
 
-```
+```json
 <Account Name>'s Balance:
 {
   baseCoin: { total: '0', available: '0' },
@@ -281,18 +315,83 @@ If you created a new mnemonic seed phrase at the beginning of this tutorial, you
 }
 ```
 
-
 ***
 
-## Request funds from faucet
+## Request tokens from faucet
 
-Now you can go to [Shimmer Testnet Faucet](https://faucet.testnet.shimmer.network/), paste in your newly created address and request funds.
+Below you can find two ways to request funds from the Shimmer testnet faucet. You can either request funds via the Shimmer faucet website, or programmatically by directly calling the API of the faucet.
+
+### Request tokens via faucet website
+
+Now you can go to the [Shimmer Testnet Faucet Website](https://faucet.testnet.shimmer.network/), paste in your newly created address and request funds.
 
 > **NOTE:**  The 'Request' button will become clickable as soon as a valid Shimmer address is recognized.
 
 ![Shimmer Testnet Faucet](./images/shimmer-testnet-faucet.png)
 
-After waiting a few seconds, you can check your balance again by running the script `check-balance.js`:
+***
+
+### Request tokens via faucet API
+
+Create a new file `request-faucet.js` and add the code below:
+
+Make sure to paste your previously generated address into the variable `receivingAddress`. The function `requestFunds` receives the URL of the faucet API as well as a valid Shimmer testnet address and sends a request to the faucet API for tokens.
+
+```javascript
+// Libraries
+const fetch = require("node-fetch");
+
+// Network configuration
+const { networkConfig } = require("./networkConfig.js");
+const faucetApi = networkConfig.faucetApi;
+
+// Address to receive faucet tokens
+const receivingAddress = '<paste_your_previously_generated_address_here>';
+
+
+async function run() {
+    const request = await requestFunds(faucetApi, receivingAddress);
+    console.log(request);
+}
+
+// Request tokens from faucet via API call
+async function requestFunds(faucetUrl, addressBech32) {
+    const requestFunds = await fetch(faucetUrl, {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ address: addressBech32 })
+        });
+
+    return await requestFunds.json();
+}
+
+run();
+```
+
+Run the script `request-faucet.js` and check the console output:
+
+```console
+node request-faucet.js
+```
+
+If the request was successfull, the console output should look similar to this:
+
+```json
+{
+  address: '<your_address>',
+  waitingRequests: 1
+}
+```
+
+***
+
+### Check balance again
+
+After a few seconds you can check your balance again by running the script `check-balance.js`:
+
 ```console
 node check-balance.js
 ```
@@ -300,7 +399,7 @@ node check-balance.js
 If the faucet successfully transferred testnet tokens to your address, your balance should look similar to the content below. In case the total balance for the `baseCoin` is still 0, repeat the process of running the `check-balance.js` script, since it might take a little until the funds have been transferred:
 
 ```
-<Account Name>'s Balance:
+<account_name>'s Balance:
 {
   baseCoin: { total: '1000000000', available: '1000000000' },
   requiredStorageDeposit: '42600',
