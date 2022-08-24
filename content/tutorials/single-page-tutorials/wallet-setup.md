@@ -398,7 +398,7 @@ node check-balance.js
 
 If the faucet successfully transferred testnet tokens to your address, your balance should look similar to the content below. In case the total balance for the `baseCoin` is still 0, repeat the process of running the `check-balance.js` script, since it might take a little until the funds have been transferred:
 
-```
+```json
 <account_name>'s Balance:
 {
   baseCoin: { total: '1000000000', available: '1000000000' },
