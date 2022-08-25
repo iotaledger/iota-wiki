@@ -124,6 +124,17 @@ module.exports = {
                 tags: ['text', 'getting-started', 'testnet', 'js'],
             },
         ],
+        [
+            '@iota-wiki/plugin-tutorial',
+            {
+                title: 'Create a NFT with wallet.rs and IPFS',
+                description:
+                    'In this tutorial you will learn how to create a NFT on the Shimmer network with wallet.rs and IPFS.',
+                preview: 'create-nft-with-wallet-lib.png',
+                route: 'create-nft-with-wallet-lib',
+                tags: ['text', 'getting-started', 'node_js', 'client', 'ipfs', 'shimmer'],
+            },
+        ],
     ],
     staticDirectories: [path.resolve(__dirname, './images')],
 };
