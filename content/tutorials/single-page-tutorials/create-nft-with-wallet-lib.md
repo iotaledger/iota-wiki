@@ -1,6 +1,6 @@
 # Create a NFT with wallet library and IPFS
 
-In this tutorial you will upload your desired image to IPFS and create a NFT from the unique IPFS URL on the Shimmer testnet. This tutorial will build on the tutorial "Setup testnet address and receive funds from faucet" **(Add link as soon as available!!!)**. If you haven't completed it, please do so and afterwards come back here. You will use the same folder and development environment as in the mentioned prerequired tutorial, which will allow you to reuse the Stronghold account with funds on it.
+In this tutorial you will upload your desired image to IPFS and create a NFT from the unique IPFS URL on the Shimmer testnet. This tutorial will build on the tutorial "Setup testnet address and receive funds from faucet" ([IOTA Wiki PR under review](https://github.com/iota-community/iota-wiki/pull/711)). If you haven't completed it, please do so and afterwards come back here. You will use the same folder and development environment as in the mentioned prerequired tutorial, which will allow you to reuse the Stronghold account with funds on it.
 
 ## Prerequisites
 
