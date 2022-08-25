@@ -1,8 +1,6 @@
 # Create a NFT with wallet library and IPFS
 
-- Upload NFT image file to IPFS
-- Create NFT on Shimmer testnet
-This tutorial assumes you have walked through the tutorial "Setup testnet address and receive funds from faucet", which creates a Stronghold account and an address with funds on it (Add link!!!)
+In this tutorial you will upload your desired image to IPFS and create a NFT from the unique IPFS URL on the Shimmer testnet. This tutorial will build on the tutorial "Setup testnet address and receive funds from faucet" **(Add link as soon as available!!!)**. If you haven't completed it, please do so and afterwards come back here. You will use the same folder and development environment as in the mentioned prerequired tutorial, which will allow you to reuse the Stronghold account with funds on it.
 
 ## Prerequisites
 
@@ -13,32 +11,33 @@ This tutorial assumes you have walked through the tutorial "Setup testnet addres
 
 ### Prepare development environment
 
-Create a new folder for the tutorial in a location of your choice and navigate to it:
+Navigate to the folder of the prerequired tutorial "Setup testnet address and receive funds from faucet":
 
 ```bash
-mkdir create-nft
-cd create-nft
+cd wallet-setup
 ```
 
-Run the Node.js initializer to configure the project:
+Next to the existing dependencies of the wallet setup tutorial, you will only need to add two more packages:
 
 ```bash
-npm init --yes
+npm install @iota/client
+npm install ipfs-core@0.10.8
 ```
 
-Overwrite the `package.json` file with the following content:
+Afterwards your `package.json` should at least contain the following dependencies:
 
-```yaml
+```json
 {
-  "name": "create-nft",
+  "name": "wallet-setup",
   "version": "1.0.0",
   "description": "",
-  "main": "create-nft.js",
+  "main": "create-mnemonic.js",
   "dependencies": {
-    "@iota/wallet": "2.0.2-alpha.21",
-    "@iota/client": "3.0.0-alpha.5",
-    "ipfs-core": "0.10.8",
-    "dotenv": "^16.0.1"
+    "@iota/client": "^3.0.0-alpha.7",
+    "@iota/wallet": "^2.0.2-alpha.21",
+    "bip39": "^3.0.4",
+    "dotenv": "^16.0.1",
+    "ipfs-core": "^0.15.4"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -48,50 +47,14 @@ Overwrite the `package.json` file with the following content:
 }
 ```
 
-Install new dependencies:
-> **NOTE:**  Installation might take a while, if there is no prebuilt client/wallet NPM package for your combination of OS and NodeJS version.
-
-```bash
-npm install
-```
-
-***
-
-### Prepare network configuration
-
-Create a new file `networkConfig.js` and add the following code:
-
-```javascript
-var networkConfig = {};
-
-// Shimmer Beta network configuration
-networkConfig.node = 'https://api.testnet.shimmer.network';
-networkConfig.faucetWebsite = 'https://faucet.testnet.shimmer.network';
-networkConfig.faucetApi = 'https://faucet.testnet.shimmer.network/api/enqueue';
-networkConfig.explorer = 'https://explorer.shimmer.network/testnet';
-
-module.exports = { networkConfig };
-```
-
-***
-
-### Prepare environment variables
-
-Create a new file `.env` and add the content below:
-
-```javascript
-ACCOUNT_NAME = "<Enter_your_name_here>"
-SH_PASSWORD = "<Enter_your_password_here>"
-MNEMONIC = "<You_will_create_your_own_mnemonic_seed_phrase_in_the_next_step_and_paste_it_in_here>"
-```
-
-Enter your desired account name as well as a secure Stronghold password. Your new mnemonic seed phrase will be created in the next step and you will paste it in here afterwards.
 
 ***
 
 ### Prepare image for NFT
 
-Add your desired *.jpg file to this folder and rename it to `nft-image.jpg`. For this tutorial we'll use the following image:
+Add your desired `*.jpg` file to this folder and rename it to `nft-image.jpg`.
+
+For this tutorial we'll use the following image:
 
 ![NFT Image](./images/nft-image.jpg)
 
@@ -99,64 +62,22 @@ Add your desired *.jpg file to this folder and rename it to `nft-image.jpg`. For
 
 ## Scripts
 
-### Upload to IPFS script
+### Create NFT
+
+Create a new file `create-nft.js` and add the following code:
+
+> **NOTE:**  We broke the code into separate snippets to help you understand it better. To make it work, copy all code snippets one after another into the file that you have just created.
+
+#### 1. Imports and parameters
 
 ```javascript
+// Libraries
+const { utf8ToHex } = require('@iota/client');
+const { AccountManager } = require('@iota/wallet');
 const IPFS = require('ipfs-core');
 const fs = require('fs');
 
-// For better readability, some console output will be printed in a different color
-const consoleColor = '\x1b[36m%s\x1b[0m';
-
-let node;
-
-const uploadByPath = async filePath => {
-  try {
-    console.log('\n')
-    console.log(consoleColor, `Start local IPFS node for upload:`);
-
-    // Set up local IPFS node for upload
-    if (!node) {
-      node = await IPFS.create({
-        repo: `ipfs_node`,
-      }); 
-    }
-
-    // Read file
-    const file = fs.readFileSync(filePath);
-
-    // Upload file
-    const fileAdded = await node.add(file);
-    const { path } = fileAdded;
-
-    console.log('\n')
-    console.log(consoleColor, `Your file was uploaded to IPFS with the following Content Identifier (CID):`);
-    console.log(path, '\n')
-
-    console.log(consoleColor, `Check your file on IPFS:`);
-    console.log(`https://ipfs.io/ipfs/${path}`, '\n')
-
-    return { path };
-  } catch (error) {
-    console.error('IPFS upload error', error);
-  }
-}
-
-module.exports = {
-  uploadByPath
-};
-```
-
-***
-
-### Create NFT script
-
-```javascript
-const { utf8ToHex } = require('@iota/client');
-const { uploadByPath } = require('./ipfs');
-const { AccountManager } = require('@iota/wallet');
-
-// Import password and seed phrase
+// Environment variables
 require('dotenv').config({ path: './.env' });
 const password = process.env.SH_PASSWORD;
 const accountName = process.env.ACCOUNT_NAME;
@@ -167,25 +88,72 @@ const explorerURL = networkConfig.explorer;
 
 // For better readability, some console output will be printed in a different color
 const consoleColor = '\x1b[36m%s\x1b[0m';
+```
 
+#### 2. Upload file to IPFS
 
+The function `uploadByPath()` starts a local IPFS node, reads the file from the provided path, uploads it to IPFS and returns the unique IPFS content identifer.
+
+```javascript
+async function uploadByPath(filePath) {
+    try {
+        console.log('\n')
+        console.log(consoleColor, `Start local IPFS node for upload:`);
+    
+        // Set up local IPFS node for upload
+        let node;
+        if (!node) {
+            node = await IPFS.create({
+                repo: `ipfs_node`,
+            }); 
+        }
+    
+        // Read file from path
+        const file = fs.readFileSync(filePath);
+    
+        // Upload file to IPFS
+        const fileAdded = await node.add(file);
+        const contentIdentifier = fileAdded.path;
+    
+        console.log('\n')
+        console.log(consoleColor, `Your file was uploaded to IPFS with the following Content Identifier (CID):`);
+        console.log(contentIdentifier, '\n')
+    
+        console.log(consoleColor, `Check your file on IPFS:`);
+        console.log(`https://ipfs.io/ipfs/${contentIdentifier}`, '\n')
+    
+        return contentIdentifier;
+    } catch (error) {
+      console.error('IPFS upload error', error);
+    }
+}
+```
+
+#### 3. Prepare NFT metadata
+
+This part calls the `uploadByPath()` function described above and prepares the metadata of your NFT. Make sure to give your NFT a nice name here.
+
+```javascript
 async function run() {
     try {
-
         const filePath = "nft-image.jpg";
         const ipfsCid = await uploadByPath(filePath);
 
         // Define NFT metadata
         const metadataObject = {
-        standard: "IRC27",
-        type: "image/jpeg",
-        version: "v1.0",
-        name: "<Enter_your_desired_name_here>",
-        uri: `https://ipfs.io/ipfs/${ipfsCid.path}`
+            standard: "IRC27",
+            type: "image/jpeg",
+            version: "v1.0",
+            name: "<Enter_your_desired_name_here>",
+            uri: `https://ipfs.io/ipfs/${ipfsCid}`
         };
 
         const metadataBytes = utf8ToHex(JSON.stringify(metadataObject));
+```
 
+#### 4. Import Stronghold account and synchronize
+
+```javascript
         const manager = new AccountManager({
             storagePath: `./${accountName}-database`,
         });
@@ -193,14 +161,18 @@ async function run() {
         const account = await manager.getAccount(accountName);
         
         await account.sync();
+```
 
+#### 5. Mint NFT
+
+```javascript
         const response = await account.mintNfts([
             {
                 immutableMetadata: metadataBytes
             }
         ]);
 
-        console.log(consoleColor, `Check your block on the explorer:`);
+        console.log(consoleColor, `Your NFT was successfully minted in this block:`);
         console.log(`${explorerURL}/block/${response.blockId}`, '\n')
     } catch (error) {
         console.log('Error: ', error);
@@ -210,3 +182,11 @@ async function run() {
 
 run();
 ```
+
+Run the script `create-nft.js` and check the console output to follow along the steps described above:
+
+```
+node create-nft.js
+```
+
+Make sure to check out the transaction block that minted your NFT in the Shimmer explorer. If everything went according to plan, the transaction spent a basic output and created two new unpsent outputs, one NFT output and a new basic output. In the newly created NFT output, you can see the immutable metadata of your NFT together with the unique IPFS URL.
