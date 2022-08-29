@@ -2,6 +2,31 @@
 @import 'variables.css';
 @import 'patches.css';
 
+html {
+  scroll-behavior: smooth;
+}
+
+.version-picker {
+  background-color: var(--ifm-color-emphasis-200);
+  margin-bottom: 2rem;
+  margin-top: 1rem;
+}
+
+.version-picker__toggle:hover {
+  background-color: unset;
+}
+
+.version-picker__item,
+.version-picker__list-item {
+  border-radius: var(--ifm-global-radius);
+  background-color: var(--ifm-color-emphasis-200);
+}
+
+.version-picker__link--active,
+.version-picker__link:hover {
+  background-color: unset;
+}
+
 .dropdown > .navbar__link:after,
 .menu__link--sublist:after {
   content: 'expand_more';
@@ -64,27 +89,75 @@ article .card {
   background: var(--ifm-color-emphasis-200);
 }
 
+.Collapsible__trigger {
+  cursor: pointer;
+  display: block;
+  position: relative;
+  padding: 10px;
+  /* background-color: rgb(102, 104, 201); */
+  /* border: 1px solid red; */
+  border-radius: 5rem;
+}
+
+.Collapsible__trigger:after {
+  font-size: var(--ifm-h2-font-size);
+  font-weight: var(--ifm-heading-font-weight);
+  font-family: 'Material Icons';
+  content: '\e5cf';
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  display: block;
+  transition: transform 300ms;
+}
+
+.Collapsible__trigger.is-open:after {
+  transform: rotateZ(180deg);
+}
+
+.footer {
+  padding-left: 0;
+  padding-right: 0;
+}
+
 .footer__copyright {
+  text-align: left;
   margin: 0 var(--ifm-spacing-horizontal);
-  margin-bottom: 0.9rem;
 }
 
 .footer__bottom {
-  align-items: flex-end;
   display: flex;
+  align-items: baseline;
   flex-wrap: wrap;
-  margin-left: max(1rem, calc(20% - 10rem));
-  margin-right: max(1rem, calc(20% - 10rem));
 }
 
 .footer__links {
   font-size: 1rem;
-  margin-left: max(1rem, calc(20% - 10rem));
-  margin-right: max(1rem, calc(20% - 10rem));
+  margin: 2rem 0;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+@media (max-width: 966px) {
+  .footer__links {
+    justify-content: left;
+  }
+}
+
+.footer__col {
+  flex: unset;
+  width: unset;
+}
+
+@media (max-width: 966px) {
+  .footer__col {
+    width: 14rem;
+  }
 }
 
 .footer__logo {
-  margin: 0 var(--ifm-spacing-horizontal);
+  height: 3rem;
+  margin: 0 var(--ifm-spacing-horizontal) -0.8rem var(--ifm-spacing-horizontal);
 }
 
 .image-gallery {
@@ -131,13 +204,10 @@ article .card {
 }
 
 .markdown {
-  margin: 2rem 3rem;
-}
+  margin: 2rem 0rem;
 
-@media screen and (max-width: 966px) {
-  .markdown {
-    margin: 2rem 0;
-  }
+  /*TODO: Remove after banner fix*/
+  max-width: 862px;
 }
 
 .menu {
@@ -148,7 +218,9 @@ article .card {
   padding-top: calc(1rem + var(--ifm-toc-padding-vertical)) !important;
 }
 
-.menu__link--active {
+.menu__link--active,
+.navbar__link.active {
+  color: var(--ifm-navbar-link-hover-color);
   font-weight: var(--ifm-font-weight-semibold);
 }
 
@@ -163,8 +235,11 @@ article .card {
 
 /* Effectively center the logo in the navbar */
 @media (max-width: 996px) {
-  .navbar__items {
-    justify-content: space-between;
+  .navbar__brand {
+    margin-left: auto;
+    margin-right: auto;
+    /* Because of absolutely placed search icon */
+    padding-right: 28px;
   }
 }
 
@@ -172,6 +247,19 @@ article .card {
   font-family: 'Metropolis Semi Bold';
   font-size: 0.9rem;
   letter-spacing: 1px;
+}
+
+.screen-reader-only {
+  border: 0;
+  clip: rect(0 0 0 0);
+  clip-path: polygon(0 0, 0 0, 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  white-space: nowrap;
 }
 
 .table-of-contents,
@@ -208,11 +296,18 @@ ul ul .table-of-contents__link {
 }
 
 .team__icon {
-  font-family: 'socials_font' !important;
-  font-size: 1rem;
+  fill: var(--ifm-color-primary);
+  height: 1rem;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+/** Remove badge on desktop */
+@media (min-width: 997px) {
+  .theme-doc-version-badge {
+    display: none;
+  }
 }
 
 .link-list {
@@ -279,4 +374,25 @@ ul ul .table-of-contents__link {
 .DocSearch .DocSearch-Hit[aria-selected='true'] mark {
   color: var(--docsearch-highlight-color) !important;
   text-decoration: none;
+}
+
+.theme-doc-sidebar-container {
+  margin-right: 1rem;
+}
+
+@media (max-width: 1227px) {
+  .navbar__item {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 1105px) {
+  .navbar__item {
+    font-size: 0.7rem;
+  }
+}
+
+.math {
+  overflow-x: auto;
+  margin-bottom: 1em;
 }

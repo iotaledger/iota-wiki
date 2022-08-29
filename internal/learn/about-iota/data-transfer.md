@@ -1,6 +1,9 @@
 ---
 title: Data Transfer
 description: A major use-case for the IOTA Technology is Data Transfer. Learn how it works.
+image: /img/iota-wiki.png
+keywords:
+  - explanation
 ---
 
 # Data Transfer
@@ -58,7 +61,7 @@ A definition of which type of payload is part of the message. The node needs to 
 
 That is the nonce that lets this message fulfill the Proof-of-Work requirement. Proof of work is mainly done locally on the device that issues the message and is a form of spam protection. But if the node allows it, PoW can be done by the node instead of the client. This is a handy feature as it enables very low-powered devices to issue messages (like sensors, chips, etc.) without doing the PoW in the local device. If connected to a node that allows remote PoW, those low-power devices can send messages, and the node (which is usually running on a more powerful device) does the PoW for them. This is one of the reasons why IOTA is so suitable for IoT and data applications. Users planning to issue many data messages from a huge amount of extremely low-power devices only need to connect those devices to a node that allows them to do the PoW for them (which will be, in most cases, their own node). As the PoW requirement in IOTA, in general, is extremely low, it is no problem to do this even for a large number of devices by a node.
 
-A side note - in the upcoming 2.0 IOTA version, this PoW requirement will become adaptive and is planned to be completely removed for times of normal network loads... Read more about [IOTA 2.0](/build/networks/iota-2.0).
+A side note - in the upcoming 2.0 IOTA version, this PoW requirement will become adaptive and is planned to be completely removed for times of normal network loads... Read more about [IOTA 2.0](/goshimmer/welcome).
 
 ## Message structure
 
@@ -157,7 +160,7 @@ A message containing only an **indexation payload** (Data) can be sent without a
 
 The message is specified by an **index**, which will make it possible for any users to find this message and the containing Data by searching the network for this index.
 
-As you may have recognized, a message in the IOTA network does not need a specific receiver. All messages in the network are propagated to all nodes and are visible to every network user. Also, the data payload (if not encrypted by the sender) is visible for everyone that sees the message. If you want to send a data message using the IOTA protocol that should only be visible to a selected group of receivers, the IOTA Streams framework is built precisely for this purpose. It will enable a direct gateway to receivers and encrypt the information from everyone else in the network. 
+As you may have recognized, a message in the IOTA network does not need a specific receiver. All messages in the network are propagated to all nodes and are visible to every network user. Also, the data payload (if not encrypted by the sender) is visible for everyone that sees the message. If you want to send a data message using the IOTA protocol that should only be visible to a selected group of receivers, the IOTA Streams framework is built precisely for this purpose. It will enable a direct gateway to receivers and encrypt the information from everyone else in the network.
 
 A **data message**, which is defined as an indexation payload, can be easily found by everyone who knows that message's index. If you want to send an arbitrary message or sensitive data, you need to tell the receiver which index you are using. He can observe the network for all messages containing this index using an explorer.
 

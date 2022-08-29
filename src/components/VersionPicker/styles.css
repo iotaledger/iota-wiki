@@ -1,0 +1,23 @@
+.version-picker__toggle {
+  color: var(--ifm-menu-color-active);
+  font-weight: var(--ifm-font-weight-semibold);
+  cursor: pointer;
+}
+
+.version-picker__toggle:hover {
+  color: var(--ifm-menu-color-active);
+  font-weight: var(--ifm-font-weight-semibold);
+}
+
+.version-picker__list {
+  padding-left: var(--ifm-menu-link-padding-horizontal);
+}
+
+.version-picker__link--active {
+  color: var(--ifm-menu-color-active);
+  font-weight: var(--ifm-font-weight-semibold);
+}
+
+.version-picker__link--active:hover {
+  color: var(--ifm-menu-color-active);
+}

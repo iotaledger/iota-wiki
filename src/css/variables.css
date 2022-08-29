@@ -1,9 +1,11 @@
 :root {
-  --ifm-color-primary: hsl(186, 52%, 44%);
-  --ifm-color-success: hsl(162, 52%, 44%);
-  --ifm-color-info: hsl(194, 52%, 44%);
-  --ifm-color-warning: hsl(56, 52%, 44%);
-  --ifm-color-danger: hsl(4, 52%, 44%);
+  --ifm-color-primary: #14cabf;
+  --ifm-color-primary-dark: #10a299;
+  --ifm-color-primary-darker: #0c7973;
+  --ifm-color-primary-darkest: #08514c;
+  --ifm-color-primary-light: #21e9dd;
+  --ifm-color-primary-lighter: #4aede3;
+  --ifm-color-primary-lightest: #72f1e9;
 
   --ifm-color-gray-0: hsl(220, 100%, 100%);
   --ifm-color-gray-100: hsl(220, 65%, 98%);
@@ -23,7 +25,7 @@
   --ifm-card-background-color: var(--ifm-color-emphasis-0);
 
   --ifm-color-content: var(--ifm-color-emphasis-700);
-  --ifm-color-content-inverse: var(--ifm-color-emphasis-300);
+  --ifm-color-content-inverse: var(--ifm-color-emphasis-0);
 
   --ifm-dropdown-link-color: var(--ifm-color-emphasis-700);
 
@@ -68,9 +70,18 @@
   --ifm-toc-link-color: var(--ifm-menu-color);
   --ifm-toc-padding-vertical: 0.25rem;
   --ifm-toc-padding-horizontal: 1rem;
+
+  --site-color-favorite-background: var(--ifm-color-emphasis-100);
+  --site-color-tooltip: #fff;
+  --site-color-tooltip-background: #353738;
+  --site-color-svg-icon-favorite: #e9669e;
+  --site-color-checkbox-checked-bg: hsl(167deg 56% 73% / 25%);
 }
 
 :root[data-theme='dark'] {
+  --ifm-color-content: var(--ifm-color-emphasis-900);
+  --ifm-color-content-inverse: var(--ifm-color-emphasis-900);
+
   --ifm-background-color: var(--ifm-color-emphasis-0);
   --ifm-background-surface-color: var(--ifm-color-emphasis-0);
 
@@ -142,4 +153,28 @@ html[data-theme='dark'] .DocSearch {
   --docsearch-footer-shadow: none;
   --docsearch-logo-color: var(--docsearch-muted-color);
   --docsearch-muted-color: var(--ifm-color-emphasis-400);
+}
+
+@media (max-width: 1365px) {
+  :root {
+    --ifm-navbar-item-padding-horizontal: 1rem;
+  }
+}
+
+@media (max-width: 1227px) {
+  :root {
+    --ifm-navbar-item-padding-horizontal: 0.8rem;
+  }
+}
+
+@media (max-width: 1105px) {
+  :root {
+    --ifm-navbar-item-padding-horizontal: 0.6rem;
+  }
+}
+
+@media (max-width: 900px) {
+  :root {
+    --ifm-navbar-item-padding-horizontal: 0.4rem;
+  }
 }

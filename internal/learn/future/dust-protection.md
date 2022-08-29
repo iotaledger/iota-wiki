@@ -10,6 +10,8 @@ keywords:
 
 # The Evolution of Dust Protection on IOTA
 
+![IOTA Dust Protection](/img/Banner/banner_dust_protection.svg)
+
 This short note attempts to explain how dust protection has evolved with the needs of the IOTA network.
 
 ## IOTA 1.0

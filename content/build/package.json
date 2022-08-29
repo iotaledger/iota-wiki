@@ -1,9 +1,7 @@
 {
     "workspaces": [
         "*/*/documentation",
-        "*/documentation"
-    ],
-    "dependencies": {
-        "require-glob": "^4.0.0"
-    }
+        "*/documentation",
+        "./iota-2.0-research-specifications/docusaurus"
+    ]
 }

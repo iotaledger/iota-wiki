@@ -6,9 +6,11 @@ module.exports = {
       collapsed: false,
       items: [
         'about-iota/an-introduction-to-iota',
+        'about-iota/tangle',
         'about-iota/data-transfer',
         'about-iota/value-transfer',
         'about-iota/why-is-iota-feeless',
+        'about-iota/coordinator',
         'about-iota/roadmap-to-decentralization',
         'about-iota/messages',
         'about-iota/energy-efficiency',
@@ -22,46 +24,13 @@ module.exports = {
     },
     {
       type: 'category',
-      label: 'Wallets',
-      collapsed: true,
-      items: [
-        'wallets/what-is-a-wallet',
-        {
-          type: 'category',
-          label: 'Firefly',
-          collapsed: true,
-          items: [
-            'wallets/firefly/general',
-            'wallets/firefly/user-guide',
-            'wallets/firefly/user-guide-ledger',
-            'wallets/firefly/faq-and-troubleshooting',
-          ],
-        },
-        'wallets/iota-devnet-wallet',
-      ],
-    },
-    {
-      type: 'category',
-      label: 'Networks',
-      collapsed: true,
-      items: [
-        'networks/iota-1.5-chrysalis',
-        'networks/iota-2.0-coordicide',
-        'networks/testnets',
-        'networks/network-token-migration',
-      ],
-    },
-    {
-      type: 'category',
       label: 'Media Library',
       collapsed: true,
-      items: ['media-library/infographics','media-library/project-presentations', 'media-library/videos'],
-    },
-    {
-      type: 'category',
-      label: 'Research',
-      collapsed: true,
-      items: ['research/research-outline', 'research/research-papers'],
+      items: [
+        'media-library/infographics',
+        'media-library/project-presentations',
+        'media-library/videos',
+      ],
     },
     {
       type: 'category',
@@ -93,5 +62,121 @@ module.exports = {
     },
     'glossary',
     'faqs',
+    {
+      type: 'category',
+      label: 'Use Cases',
+      collapsed: true,
+      items: [
+        'use-cases/data-confidence',
+        'use-cases/eco-social-projects',
+        'use-cases/healthcare',
+        'use-cases/industry-applications',
+        'use-cases/mobility',
+        'use-cases/real-estate',
+        'use-cases/trade-and-supply-chain',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Funding',
+      collapsed: true,
+      items: ['funding/edf-funding', 'funding/community-treasury'],
+    },
+    {
+      type: 'link',
+      label: 'Partnerships',
+      href: 'https://www.iota.org/solutions/partnerships',
+    },
+    {
+      type: 'category',
+      label: 'The Community',
+      collapsed: true,
+      items: [
+        'the-community/discord',
+        'the-community/x-teams',
+        'the-community/git-hub',
+        'the-community/social-media',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Contribute To Wiki',
+      collapsed: true,
+      items: [
+        {
+          type: 'doc',
+          label: 'Welcome',
+          id:  'contribute-to-wiki/welcome',
+        },
+        {
+          type: 'category',
+          label: 'Getting Started',
+          items: [
+            'contribute-to-wiki/getting_started/edit_an_article',
+            'contribute-to-wiki/getting_started/developer',
+            'contribute-to-wiki/getting_started/quick_advice',
+          ],
+        },
+        {
+          type: 'category',
+          label: 'How Tos',
+          items: [
+            'contribute-to-wiki/how_tos/create_an_issue',
+            'contribute-to-wiki/how_tos/write_a_good_tutorial',
+            'contribute-to-wiki/how_tos/documentation_setup',
+            'contribute-to-wiki/how_tos/how_to_write_how_tos',
+            'contribute-to-wiki/how_tos/request_tw',
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Explanations',
+          items: [
+              'contribute-to-wiki/explanations/third-party_works',
+            {
+              type: 'category',
+              label: 'Writing Tools',
+              items: [
+                'contribute-to-wiki/explanations/tools/writing_tools',
+                'contribute-to-wiki/explanations/tools/questions',
+                'contribute-to-wiki/explanations/tools/mind_map',
+              ],
+            },
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Reference',
+          items: [
+            {
+              type: 'category',
+              label: 'Style Guidelines',
+              items:
+              [
+                'contribute-to-wiki/reference/style/manifesto',
+                'contribute-to-wiki/reference/style/structure',
+                'contribute-to-wiki/reference/style/matter',
+                'contribute-to-wiki/reference/style/form',
+                'contribute-to-wiki/reference/style/mechanics',
+                'contribute-to-wiki/reference/style/formatting',
+              ],
+            },
+            {
+              type: 'category',
+              label: 'Documentation Structure',
+              items:
+              [
+                'contribute-to-wiki/reference/structure/overview',
+                'contribute-to-wiki/reference/structure/getting_started',
+                'contribute-to-wiki/reference/structure/how_tos',
+                'contribute-to-wiki/reference/structure/tutorials',
+                'contribute-to-wiki/reference/structure/explanations',
+                'contribute-to-wiki/reference/structure/reference',
+              ],
+            },
+          ],
+        },
+      ],
+    },
   ],
 };

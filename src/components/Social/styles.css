@@ -2,14 +2,9 @@
   display: flex;
 }
 
-.social__font {
-  color: var(--ifm-color-gray-0);
-  font-family: 'socials_font' !important;
-}
-
 .social__icon {
-  font-size: larger;
-  margin-right: 0.5rem;
+  fill: var(--ifm-color-gray-0);
+  height: 1.2rem;
 }
 
 .social__link {
@@ -23,11 +18,13 @@
 
 .social__link:hover {
   background-color: var(--ifm-color-primary) !important;
+  text-decoration: none;
 }
 
 .social__title {
   display: none;
   font-weight: 500;
+  margin-left: 0.5rem;
   color: var(--ifm-color-gray-0);
 }
 

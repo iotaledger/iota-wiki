@@ -28,9 +28,93 @@
 	branch = main
 [submodule "content/build/hornet/production"]
 	path = content/build/hornet/production
-	url = https://github.com/gohornet/hornet
-	branch = mainnet
+	url = https://github.com/iotaledger/hornet
+	branch = production
 [submodule "content/build/stronghold.rs/develop"]
 	path = content/build/stronghold.rs/develop
 	url = https://github.com/iotaledger/stronghold.rs
-	branch = dev-refactor
+	branch = dev
+[submodule "content/build/bee/production"]
+	path = content/build/bee/production
+	url = https://github.com/iotaledger/bee.git
+	branch = production
+[submodule "content/build/blueprints/production"]
+	path = content/build/blueprints/production
+	url = https://github.com/iotaledger/blueprints
+	branch = main
+[submodule "content/build/chronicle/production"]
+	path = content/build/chronicle/production
+	url = https://github.com/iotaledger/chronicle.rs
+  	branch = main
+[submodule "content/build/identity.rs/v0.6.0"]
+	path = content/build/identity.rs/v0.6.0
+	url = https://github.com/iotaledger/identity.rs
+	branch = support/v0.6
+[submodule "content/build/identity.rs/develop"]
+	path = content/build/identity.rs/develop
+	url = https://github.com/iotaledger/identity.rs
+	branch = dev
+[submodule "content/build/introduction-docs/production"]
+	path = content/build/introduction-docs/production
+	url = https://github.com/iotaledger/introduction-docs
+	branch = main
+[submodule "content/build/iota-2.0-research-specifications"]
+	path = content/build/iota-2.0-research-specifications
+	url = https://github.com/iotaledger/IOTA-2.0-Research-Specifications.git
+	branch = main
+[submodule "content/build/streams/develop"]
+	path = content/build/streams/develop
+	url = https://github.com/iotaledger/streams
+	branch = develop
+[submodule "content/build/cli-wallet/develop"]
+	path = content/build/cli-wallet/develop
+	url = https://github.com/iotaledger/cli-wallet
+	branch = develop
+[submodule "content/build/iota.rs/develop"]
+	path = content/build/iota.rs/develop
+	url = https://github.com/iotaledger/iota.rs
+	branch = develop
+[submodule "content/build/wallet.rs/develop"]
+	path = content/build/wallet.rs/develop
+	url = https://github.com/iotaledger/wallet.rs
+	branch = develop
+[submodule "content/build/hornet/develop"]
+	path = content/build/hornet/develop
+	url = https://github.com/iotaledger/hornet
+	branch = develop
+[submodule "content/build/introduction-docs/develop"]
+	path = content/build/introduction-docs/develop
+	url = https://github.com/iotaledger/introduction-docs
+	branch = develop
+[submodule "content/build/iota.js/develop"]
+	path = content/build/iota.js/develop
+	url = https://github.com/iotaledger/iota.js
+	branch = feat/stardust
+[submodule "content/build/inx-indexer/develop"]
+	path = content/build/inx-indexer/develop
+	url = https://github.com/iotaledger/inx-indexer
+	branch = develop
+[submodule "content/build/inx-mqtt"]
+	path = content/build/inx-mqtt
+	url = https://github.com/iotaledger/inx-mqtt.git
+	branch = develop
+[submodule "content/build/wasp/production"]
+	path = content/build/wasp/production
+	url = https://github.com/iotaledger/wasp
+	branch = master
+[submodule "content/build/inx-poi/develop"]
+	path = content/build/inx-poi/develop
+	url = https://github.com/iotaledger/inx-poi
+  branch = develop
+[submodule "content/build/inx-participation/develop"]
+	path = content/build/inx-participation/develop
+	url = https://github.com/iotaledger/inx-participation
+  branch = develop
+[submodule "content/build/inx-coordinator/develop"]
+	path = content/build/inx-coordinator/develop
+	url = https://github.com/iotaledger/inx-coordinator
+	branch = develop
+[submodule "content/build/inx-faucet/develop"]
+	path = content/build/inx-faucet/develop
+  url = https://github.com/iotaledger/inx-faucet
+  branch = develop

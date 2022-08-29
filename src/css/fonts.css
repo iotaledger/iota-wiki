@@ -57,30 +57,3 @@ Text fonts
     url(https://webassets.iota.org/fonts/metropolis/Metropolis-Bold.woff?v=11)
       format('woff');
 }
-
-/**
-Logo fonts
-**/
-@font-face {
-  font-family: 'iota_icons_font';
-  src: url('fonts/iota_icons_font.eot?yl49be');
-  src: url('fonts/iota_icons_font.eot?yl49be#iefix') format('embedded-opentype'),
-    url('fonts/iota_icons_font.ttf?yl49be') format('truetype'),
-    url('fonts/iota_icons_font.woff?yl49be') format('woff'),
-    url('fonts/iota_icons_font.svg?yl49be#iota_icons_font') format('svg');
-  font-weight: normal;
-  font-style: normal;
-  font-display: block;
-}
-
-@font-face {
-  font-family: 'socials_font';
-  src: url('fonts/socials_font.eot?yl49be');
-  src: url('fonts/socials_font.eot?yl49be#iefix') format('embedded-opentype'),
-    url('fonts/socials_font.ttf?yl49be') format('truetype'),
-    url('fonts/socials_font.woff?yl49be') format('woff'),
-    url('fonts/socials_font.svg?yl49be#socials_font') format('svg');
-  font-weight: normal;
-  font-style: normal;
-  font-display: block;
-}
