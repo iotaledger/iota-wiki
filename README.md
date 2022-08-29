@@ -5,11 +5,12 @@
 <div align="center">
 
   <!-- PROJECT SHIELDS -->
-  [![Contributors][contributors-shield]][contributors-url]
-  [![Forks][forks-shield]][forks-url]
-  [![Stargazers][stars-shield]][stars-url]
-  [![Issues][issues-shield]][issues-url]
-  [![Gitpod][gitpod-shield]][gitpod-url]
+
+[![Contributors][contributors-shield]][contributors-url]
+[![Forks][forks-shield]][forks-url]
+[![Stargazers][stars-shield]][stars-url]
+[![Issues][issues-shield]][issues-url]
+[![Gitpod][gitpod-shield]][gitpod-url]
 
   <!-- PROJECT LOGO -->
   <p>
@@ -21,14 +22,15 @@
     <a href="https://wiki.iota.org"><strong>EXPLORE THE WIKI</strong></a>
   </p>
   <p>
-    <a href="https://github.com/iota-community/iota-Wiki/issues">Report Error</a>
+    <a href="https://github.com/iota-wiki/iota-wiki/issues">Report Error</a>
     ·
-    <a href="https://github.com/iota-community/iota-Wiki/issues">Request Topic</a>
+    <a href="https://github.com/iota-wiki/iota-wiki/issues">Request Topic</a>
   </p>
 
 </div>
 
 <!-- TABLE OF CONTENTS -->
+
 ## Table of Contents
 
 - [About The Project](#about-the-project)
@@ -39,8 +41,8 @@
 - [Contributing](#contributing)
 - [Contact](#contact)
 
-
 <!-- ABOUT THE PROJECT -->
+
 ## About The Project
 
 The IOTA Wiki is a central hub for entering into the IOTA ecosystem. A community driven initiative to provide an up-to-date collection of introductions and further reading about the technology, the teams, the community, and everything in between. So anyone can learn how to build, adopt, and engage with IOTA, all in one space.
@@ -50,6 +52,7 @@ The IOTA Wiki is a central hub for entering into the IOTA ecosystem. A community
 The IOTA Wiki is built using [TypeScript](https://www.typescriptlang.org/), [ReactJS](https://reactjs.org/) and [Docusaurus v2.0](https://docusaurus.io/).
 
 <!-- GETTING STARTED -->
+
 ## Getting Started
 
 ### Prerequisites
@@ -60,7 +63,7 @@ The IOTA Wiki is built using [TypeScript](https://www.typescriptlang.org/), [Rea
 
 ### Local Development
 
-1. Clone the repository by running `git clone https://github.com/iota-community/iota-wiki.git` and go to the directory with `cd iota-wiki`.
+1. Clone the repository by running `git clone https://github.com/iota-wiki/iota-wiki.git` and go to the directory with `cd iota-wiki`.
 
 2. Run `git submodule update --init --recursive` to check out the project submodules. Optionally you can add the `--remote` flag to get the latest changes.
 
@@ -69,6 +72,7 @@ The IOTA Wiki is built using [TypeScript](https://www.typescriptlang.org/), [Rea
 4. Start the local development server with `yarn start` to preview a minimal Wiki or with `yarn start:all` to preview the entire Wiki. Alternatively you can use the `CONTENT` environment variable to select the content you want to include in the preview. It accepts a list of glob patterns relative to the `content` subdirectory (i.e. `CONTENT=identity.rs/*/documentation yarn start` would give you a minimal Wiki with only `identity.rs` documentation included).
 
 <!-- CONTRIBUTING -->
+
 ## Contributing
 
 The IOTA Wiki is maintained by the community. We will review all issues and pull requests posted to this repository. If you notice any mistakes, or feel something is missing, feel free to create an issue to discuss with the team or directly create a pull request with suggestions. Here is a basic workflow to open a pull request:
@@ -89,6 +93,7 @@ You can use Gitpod (a free, online, VS Code-like IDE) for contributing. With a s
 [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)][gitpod-url]
 
 <!-- CONTACT -->
+
 ## Contact
 
 Phylo - [Phyloiota](https://github.com/Phyloiota) - Phylo [Community DAO - lets go!]#2233  
@@ -107,13 +112,13 @@ Feel free to support our work:
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 
-[contributors-shield]: https://img.shields.io/github/contributors/iota-community/iota-Wiki.svg?style=for-the-badge
-[contributors-url]: https://github.com/iota-community/iota-Wiki/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/iota-community/iota-Wiki.svg?style=for-the-badge
-[forks-url]: https://github.com/iota-community/iota-Wiki/network/members
-[stars-shield]: https://img.shields.io/github/stars/iota-community/iota-Wiki.svg?style=for-the-badge
-[stars-url]: https://github.com/iota-community/iota-Wiki/stargazers
-[issues-shield]: https://img.shields.io/github/issues/iota-community/iota-Wiki.svg?style=for-the-badge
-[issues-url]: https://github.com/iota-community/iota-Wiki/issues
+[contributors-shield]: https://img.shields.io/github/contributors/iota-wiki/iota-wiki.svg?style=for-the-badge
+[contributors-url]: https://github.com/iota-wiki/iota-wiki/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/iota-wiki/iota-wiki.svg?style=for-the-badge
+[forks-url]: https://github.com/iota-wiki/iota-wiki/network/members
+[stars-shield]: https://img.shields.io/github/stars/iota-wiki/iota-wiki.svg?style=for-the-badge
+[stars-url]: https://github.com/iota-wiki/iota-wiki/stargazers
+[issues-shield]: https://img.shields.io/github/issues/iota-wiki/iota-wiki.svg?style=for-the-badge
+[issues-url]: https://github.com/iota-wiki/iota-wiki/issues
 [gitpod-shield]: https://img.shields.io/badge/Gitpod-Ready--to--Code-blue?logo=gitpod&style=for-the-badge
 [gitpod-url]: https://gitpod.io/#https://github.com/iota-community/iota-Wiki
