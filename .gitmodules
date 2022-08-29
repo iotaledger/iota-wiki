@@ -105,11 +105,11 @@
 [submodule "content/build/inx-poi/develop"]
 	path = content/build/inx-poi/develop
 	url = https://github.com/iotaledger/inx-poi
-  branch = develop
+	branch = develop
 [submodule "content/build/inx-participation/develop"]
 	path = content/build/inx-participation/develop
 	url = https://github.com/iotaledger/inx-participation
-  branch = develop
+  	branch = develop
 [submodule "content/build/inx-coordinator/develop"]
 	path = content/build/inx-coordinator/develop
 	url = https://github.com/iotaledger/inx-coordinator
@@ -118,6 +118,10 @@
 	path = content/build/inx-faucet/develop
   url = https://github.com/iotaledger/inx-faucet
   branch = develop
+[submodule "content/build/inx-dashboard/develop"]
+	path = content/build/inx-dashboard/develop
+	url = https://github.com/iotaledger/inx-dashboard
+	branch = develop
 [submodule "content/build/inx-spammer/develop"]
 	path = content/build/inx-spammer/develop
   url = https://github.com/iotaledger/inx-spammer

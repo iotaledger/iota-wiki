@@ -130,7 +130,7 @@ module.exports = {
             },
             {
               label: 'Identity',
-              to: '/identity.rs/develop/introduction',
+              to: '/identity.rs/introduction',
             },
             {
               label: 'Streams',
