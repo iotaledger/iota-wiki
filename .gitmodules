@@ -116,9 +116,13 @@
 	branch = develop
 [submodule "content/build/inx-faucet/develop"]
 	path = content/build/inx-faucet/develop
-  	url = https://github.com/iotaledger/inx-faucet
-  	branch = develop
+  url = https://github.com/iotaledger/inx-faucet
+  branch = develop
 [submodule "content/build/inx-dashboard/develop"]
 	path = content/build/inx-dashboard/develop
 	url = https://github.com/iotaledger/inx-dashboard
 	branch = develop
+[submodule "content/build/inx-spammer/develop"]
+	path = content/build/inx-spammer/develop
+        url = https://github.com/iotaledger/inx-spammer
+        branch = develop
