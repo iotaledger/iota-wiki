@@ -7946,6 +7946,14 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"inx-spammer-develop@workspace:content/build/inx-spammer/develop/documentation":
+  version: 0.0.0-use.local
+  resolution: "inx-spammer-develop@workspace:content/build/inx-spammer/develop/documentation"
+  dependencies:
+    "@iota-community/iota-wiki-cli": "iota-community/iota-wiki-cli#v2"
+  languageName: unknown
+  linkType: soft
+
 "iota-2.0-specifications@workspace:content/build/iota-2.0-research-specifications/docusaurus":
   version: 0.0.0-use.local
   resolution: "iota-2.0-specifications@workspace:content/build/iota-2.0-research-specifications/docusaurus"
