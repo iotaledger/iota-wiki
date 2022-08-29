@@ -124,5 +124,5 @@
 	branch = develop
 [submodule "content/build/inx-spammer/develop"]
 	path = content/build/inx-spammer/develop
-  url = https://github.com/iotaledger/inx-spammer
-  branch = develop
+        url = https://github.com/iotaledger/inx-spammer
+        branch = develop
