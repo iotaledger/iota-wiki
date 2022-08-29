@@ -132,7 +132,7 @@ module.exports = {
                     'In this tutorial you will learn how to send Shimmer Tokens in the testnet.',
                 preview: 'send-shimmer-tokens-with-javascript.png',
                 route: 'send-shimmer-tokens-with-javascript',
-                tags: ['text', 'shimmer', 'javascrit', 'client', 'getting-started', 'iota.rs (js binding)', 'testnet'],
+                tags: ['text', 'shimmer', 'javascript', 'client', 'getting-started', 'iota.rs (js binding)', 'testnet'],
             },
         ],
     ],
