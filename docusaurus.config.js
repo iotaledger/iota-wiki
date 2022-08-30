@@ -326,7 +326,7 @@ module.exports = {
             },
             {
               label: 'Github',
-              href: 'https://github.com/iota-community/iota-wiki',
+              href: 'https://github.com/iota-wiki/iota-wiki',
             },
             {
               label: 'Docusaurus',
@@ -426,7 +426,7 @@ module.exports = {
         sidebarPath: require.resolve('./internal/learn/sidebars.ts'),
 
         // General config
-        editUrl: 'https://github.com/iota-community/iota-wiki/edit/main/',
+        editUrl: 'https://github.com/iota-wiki/iota-wiki/edit/main/',
         remarkPlugins: [
           require('remark-code-import'),
           require('remark-import-partial'),
@@ -443,7 +443,7 @@ module.exports = {
         sidebarPath: require.resolve('./content/wallets/sidebars.ts'),
 
         // General config
-        editUrl: 'https://github.com/iota-community/iota-wiki/edit/main/',
+        editUrl: 'https://github.com/iota-wiki/iota-wiki/edit/main/',
         remarkPlugins: [
           require('remark-code-import'),
           require('remark-import-partial'),
@@ -460,7 +460,7 @@ module.exports = {
         sidebarPath: require.resolve('./content/networks/sidebars.ts'),
 
         // General config
-        editUrl: 'https://github.com/iota-community/iota-wiki/edit/main/',
+        editUrl: 'https://github.com/iota-wiki/iota-wiki/edit/main/',
         remarkPlugins: [
           require('remark-code-import'),
           require('remark-import-partial'),
@@ -478,7 +478,7 @@ module.exports = {
         sidebarPath: require.resolve('./content/nodes/sidebars.ts'),
 
         // General config
-        editUrl: 'https://github.com/iota-community/iota-wiki/edit/main/',
+        editUrl: 'https://github.com/iota-wiki/iota-wiki/edit/main/',
         remarkPlugins: [
           require('remark-code-import'),
           require('remark-import-partial'),
@@ -495,7 +495,7 @@ module.exports = {
         sidebarPath: require.resolve('./content/research/sidebars.ts'),
 
         // General config
-        editUrl: 'https://github.com/iota-community/iota-wiki/edit/main/',
+        editUrl: 'https://github.com/iota-wiki/iota-wiki/edit/main/',
         remarkPlugins: [
           require('remark-code-import'),
           require('remark-import-partial'),

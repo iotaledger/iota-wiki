@@ -21,9 +21,9 @@
     <a href="https://wiki.iota.org"><strong>EXPLORE THE WIKI</strong></a>
   </p>
   <p>
-    <a href="https://github.com/iota-community/iota-Wiki/issues">Report Error</a>
+    <a href="https://github.com/iota-wiki/iota-wiki/issues">Report Error</a>
     ·
-    <a href="https://github.com/iota-community/iota-Wiki/issues">Request Topic</a>
+    <a href="https://github.com/iota-wiki/iota-wiki/issues">Request Topic</a>
   </p>
 
 </div>
@@ -38,7 +38,6 @@
   - [Local Development](#local-development)
 - [Contributing](#contributing)
 - [Contact](#contact)
-
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
@@ -60,7 +59,7 @@ The IOTA Wiki is built using [TypeScript](https://www.typescriptlang.org/), [Rea
 
 ### Local Development
 
-1. Clone the repository by running `git clone https://github.com/iota-community/iota-wiki.git` and go to the directory with `cd iota-wiki`.
+1. Clone the repository by running `git clone https://github.com/iota-wiki/iota-wiki.git` and go to the directory with `cd iota-wiki`.
 
 2. Run `git submodule update --init --recursive` to check out the project submodules. Optionally you can add the `--remote` flag to get the latest changes.
 
@@ -107,13 +106,13 @@ Feel free to support our work:
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 
-[contributors-shield]: https://img.shields.io/github/contributors/iota-community/iota-Wiki.svg?style=for-the-badge
-[contributors-url]: https://github.com/iota-community/iota-Wiki/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/iota-community/iota-Wiki.svg?style=for-the-badge
-[forks-url]: https://github.com/iota-community/iota-Wiki/network/members
-[stars-shield]: https://img.shields.io/github/stars/iota-community/iota-Wiki.svg?style=for-the-badge
-[stars-url]: https://github.com/iota-community/iota-Wiki/stargazers
-[issues-shield]: https://img.shields.io/github/issues/iota-community/iota-Wiki.svg?style=for-the-badge
-[issues-url]: https://github.com/iota-community/iota-Wiki/issues
+[contributors-shield]: https://img.shields.io/github/contributors/iota-wiki/iota-wiki.svg?style=for-the-badge
+[contributors-url]: https://github.com/iota-wiki/iota-wiki/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/iota-wiki/iota-wiki.svg?style=for-the-badge
+[forks-url]: https://github.com/iota-wiki/iota-wiki/network/members
+[stars-shield]: https://img.shields.io/github/stars/iota-wiki/iota-wiki.svg?style=for-the-badge
+[stars-url]: https://github.com/iota-wiki/iota-wiki/stargazers
+[issues-shield]: https://img.shields.io/github/issues/iota-wiki/iota-wiki.svg?style=for-the-badge
+[issues-url]: https://github.com/iota-wiki/iota-wiki/issues
 [gitpod-shield]: https://img.shields.io/badge/Gitpod-Ready--to--Code-blue?logo=gitpod&style=for-the-badge
 [gitpod-url]: https://gitpod.io/#https://github.com/iota-community/iota-Wiki
