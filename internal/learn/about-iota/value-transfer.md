@@ -27,7 +27,7 @@ To transfer 10i to Bob, Charlie must attach a value message to the Tangle. For t
 
 To get these tip messages, Charlie requests them from a node.
 
-The node selects these messages by using an algorithm called **Uniform Random Tip Selection** (URTS). This algorithm selects between one and eight valid tip messages that lead to a valid ledger state.
+The node selects these messages by using an algorithm called **Uniform Random Tip Selection** [URTS](https://wiki.iota.org/IOTA-2.0-Research-Specifications/4.3TipSelectionAlgorithm). This algorithm selects between one and eight valid tip messages that lead to a valid ledger state.
 
 - The ledger state is a record of all the value messages that have transferred IOTA tokens in the Tangle, including the state of all balances on addresses. This state must always be balanced: the total number of IOTA tokens must always add up to the total supply.
 
@@ -41,7 +41,7 @@ To prove to nodes that he is indeed the owner of the IOTA tokens in his address,
 
 Charlie then creates an output message to deposit that 10i into Bob's address. This message does not need a signature because it is not withdrawing IOTA tokens.
 
-Then Charlie puts all the messages in a UTXO and sends them to a node on an IOTA network.
+Then Charlie puts all the messages in a [UTXO](https://wiki.iota.org/IOTA-2.0-Research-Specifications/5.1UTXO) and sends them to a node on an IOTA network.
 
 ### Waiting for the Messages to be Confirmed
 
