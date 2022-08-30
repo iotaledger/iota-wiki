@@ -124,6 +124,17 @@ module.exports = {
                 tags: ['text', 'getting-started', 'testnet', 'js'],
             },
         ],
+        [
+            '@iota-wiki/plugin-tutorial',
+            {
+                title: 'How to Setup iota.js for Development',
+                description:
+                    'In this tutorial you will learn how to create a new project, generate a new address and receive testnet funds from the faucet.',
+                preview: 'setup_iota-js_for_development.png',
+                route: 'setup_iota-js_for_development',
+                tags: ['text', 'getting-started', 'testnet', 'js'],
+            },
+        ],
     ],
     staticDirectories: [path.resolve(__dirname, './images')],
 };
