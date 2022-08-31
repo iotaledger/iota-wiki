@@ -57,12 +57,6 @@ The company account of IOTA Foundation can be found here. See recent job posting
 
 [IOTA Foundation LinkedIn](https://www.linkedin.com/company/iotafoundation/)
 
-## Twitch
-
-The company account of IOTA Foundation can be found here. See recent job postings and engage on business level:
-
-[IOTA Foundation LinkedIn](https://www.linkedin.com/company/iotafoundation/)
-
 ## Security Disclaimer
 
 Please be always cautious on Social Media. Only the sites linked here are officially supported channels and should be used to engage with the IOTA Foundation. A lot of scammers on social media will declare to be official representatives of the project, but we advise you to be very cautious.

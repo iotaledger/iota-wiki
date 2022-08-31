@@ -26,3 +26,19 @@ More information can be found in the [#experience Channel](https://discord.com/c
 Join our initiatives to improve the IOTA Experience. We want to invite community members to get involved with this initiative. If you are interested in contributing please complete this form: [X-Team application](https://docs.google.com/forms/d/e/1FAIpQLScBFw-xPHy1s8W3RnA3MFAni590p4VlGBXi75obGWUzUoB59A/viewform)
 
 You don't necessarily need to be a developer to take part in the initiative. Every IOTA community member that is willing to contribute is welcome and can find a team and a task that fits the skills.
+
+Most Teams conduct weekly meetings to exchange ideas. Currently, the following X-Teams already exist:
+
+- X-Team Access
+- X-Team Bee
+- X-Team GoShimmer
+- X-Team Identity
+- X-Team Libs
+- X-Team Simplify
+- X-Team Permanode
+- X-Team Stronghold
+- X-Team Smartcontracts
+- X-Team Streams
+- X-Team Goshimmer drng committee
+- X-Team Legacy IOTA
+- X-Team Blog Translations
