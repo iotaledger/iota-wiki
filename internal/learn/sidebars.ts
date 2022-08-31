@@ -92,7 +92,8 @@ module.exports = {
       label: 'The Community',
       collapsed: true,
       items: [
-        'the-community/discord',
+        'the-community/how-to-support',
+        'the-community/discord-verification',
         'the-community/x-teams',
         'the-community/git-hub',
         'the-community/social-media',
