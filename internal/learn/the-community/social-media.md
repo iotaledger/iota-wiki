@@ -59,9 +59,9 @@ The company account of IOTA Foundation can be found here. See recent job posting
 
 ## Twitch
 
-The company account of IOTA Foundation can be found here. See recent job postings and engage on business level:
+On Twitch our Developer Experience expert Kumar Anirudha codes Decentralised applications, talks about programming and products. Please bear in mind that this is a technical stream.
 
-[IOTA Foundation LinkedIn](https://www.linkedin.com/company/iotafoundation/)
+[IOTADev](https://www.twitch.tv/iotadev/)
 
 ## Security Disclaimer
 
