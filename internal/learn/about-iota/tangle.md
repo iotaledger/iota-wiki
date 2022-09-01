@@ -1,41 +1,49 @@
 ---
 id: tangle
 title: The Tangle
-description: The Tangle is the data structure behind IOTA and it is different from a blockchain.
+description: The Tangle is IOTA's distributed ledger that contains all the information necessary to track token ownership.
 image: /img/iota-wiki.png
 keywords:
-  - explanation
+- explanation
 ---
 
 # The Tangle
 
-The Tangle is a structure that holds all necessary information to keep track of token ownership. It is a directed acyclic graph (DAG) of messages, where each newer message is attached to two to eight older ones. The protocol can process these various attachments in parallel.
+The Tangle is IOTA's distributed ledger. It's a data structure replicated across a network of computers (also called 'nodes') that contains all the information necessary to track token ownership. It forms a directed acyclic graph of blocks (a block-DAG), where each newer block is attached to multiple older ones.
 
-IOTA nodes reach consensus on the ledger state by validating massages. Anyone can send a message [for free](./why-is-iota-feeless.md). Currently, messages will only be considered valid if they reference a milestone. Milestones are issued by a special network node that is called [Coordinator](./coordinator.md).
+IOTA nodes currently reach consensus on the ledger state with the help of milestone blocks (also called 'milestones'). Milestones are issued by a central node called the [Coordinator](./coordinator.md). The Coordinator represents a temporary solution and will be eliminated as part of IOTA's decentralization efforts.
 
 ## The Tangle Versus Blockchains
 
-The Tangle and blockchains serve the same function of maintaining their ledger states, but the Tangle's different implementation leads to unique benefits.
+While the Tangle and blockchains have the same function of maintaining their ledger status, the Tangle overcomes the difficulties blockchains face.
+The Tangle naturally succeeds the blockchain as its next evolutionary step as it offers features suited to establish more efficient and scalable distributed ledger solutions.
+
+This section refers to the latest research around the Tangle:
+- [Tangle 2.0 Leaderless Nakamoto Consensus on the Heaviest DAG](https://arxiv.org/abs/2205.02177)
+- [Reality-Based UTXO Ledger](https://arxiv.org/abs/2205.01345)
+- [Robustness Of The Tangle 2.0 Consensus](https://arxiv.org/abs/2208.08254)
+
 
 ### Blockchains
 
-In a blockchain, new transactions can only be attached to a single point, a new block. This block is directly linked to the previous block, so the network can work only on a single block at a time. You need to wait until a new block with your transaction is formed, and if there are too many transactions some of them will be postponed until the next block or later. This is called the _blockchain bottleneck_ effect.
+A blockchain consists of a growing list of records also called blocks that are linked together using cryptography.
+Transactions can only become part of the ledger if they are included in a newly issued block.
+If not all new transactions fit into one block then some of them have to be delayed to the next block or later.
 
 ![An animation of a blockchain where new transactions have to pass through a narrow gap one by one.](/img/learn/blockchain-bottleneck.gif 'Click to see the full-sized image.')
 
 _The blockchain bottleneck._
 
-Transactions in a blockchain can only become part of the ledger if they are included in a newly issued block by the block producer (a miner in Proof of Work blockchains, a staker in Proof of Stake blockchains). In nearly all blockchains, the block producers can decide which new transactions they include in their blocks. They of course favor users willing to pay higher fees for their transactions. Any time there are more transactions that can pass through the blockchain bottleneck, the transaction fees ramp up.
+It´s well known that accelerating block creation and/or increasing block sizes compromises security. In other words, to guarantee the security of the system, the throughput of the system is artificially suppressed so that each block propagates fully before the next block is created. The fact that only one block producer can advance the ledger state creates an obvious bottleneck with well-known performance limitations.
 
-There is more. In blockchains, each block producer works on a potential new block, but only a single producer will become the leader of the blockchain and get its block attached. All other potential blocks will be discarded — and in case of PoW systems, all effort and electricity put into computing them will be wasted.
+Blockchains further face several problems with the intermediary miners or validators e.g. mining races, centralisation, miner extractable value, and negative externalities.
 
-Only the blockchain leader collects the reward for producing a block. Only the largest miners and stakers can collect this reward consistently. It promotes a system with fewer but bigger players, which can be perceived as a form of centralization.
 
 ### The Tangle
 
-The Tangle is a network of parallel processed messages. These parallel messages form the "front" of the Tangle and offer multiple points for newly issued messages to attach to. There are no block producers, and it is enough to issue your transaction to any node so it would wrap it into a message and attach it to the Tangle.
 
-IOTA is a leaderless protocol. Multiple nodes attach multiple transaction messages to multiple points of the Tangle at the same time. IOTA has no bottlenecks, no middlemen, and no fees.
+The Tangle is a novel leaderless, probabilistic consensus protocol that enables parallel validation of transactions without requiring total ordering. It also enables the elimination of intermediary miners and validators.
+The parallelisation, the absence of intermediaries, the capability to work in an asynchronous setting and the leaderless approach offers a highly performant consensus and ledger solution.
 
 ![An animation of the Tangle where the passage is much wider and allows multiple transactions at a time.](/img/learn/tangle-bottleneck.gif)
 
