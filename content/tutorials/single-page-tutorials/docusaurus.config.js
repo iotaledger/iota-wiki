@@ -124,6 +124,17 @@ module.exports = {
                 tags: ['text', 'getting-started', 'testnet', 'js'],
             },
         ],
+        [
+            '@iota-wiki/plugin-tutorial',
+            {
+                title: 'Tokenless Data Notarization',
+                description:
+                    'Proove that a block was part of the past Tangle, even if this part of the Tangle was already pruned from network nodes.',
+                preview: 'proof-inclusion-of-a-block.png',
+                route: 'proof-inclusion-of-a-block',
+                tags: ['text', 'getting-started', 'js', 'client'],
+            },
+        ],
     ],
     staticDirectories: [path.resolve(__dirname, './images')],
 };
