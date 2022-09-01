@@ -127,6 +127,17 @@ module.exports = {
         [
             '@iota-wiki/plugin-tutorial',
             {
+                title: 'Tokenless Data Notarization',
+                description:
+                    'Proove that a block was part of the past Tangle, even if this part of the Tangle was already pruned from network nodes.',
+                preview: 'proof-inclusion-of-a-block.png',
+                route: 'proof-inclusion-of-a-block',
+                tags: ['text', 'getting-started', 'js', 'client'],
+            },
+        ],
+        [
+            '@iota-wiki/plugin-tutorial',
+            {
                 title: 'Setup testnet address and receive funds from faucet',
                 description:
                     'In this tutorial you will learn how to create a seed and address with wallet.rs and receive testnet tokens from the faucet.',
