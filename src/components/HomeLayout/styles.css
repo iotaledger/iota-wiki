@@ -417,10 +417,12 @@
   margin: 0.5rem 0;
 }
 
+.nodes__feature > a,
 .libraries__feature>a {
   color: var(--ifm-color-emphasis-700);
 }
 
+.nodes__feature > a,
 .libraries__feature:hover>a {
   color: var(--ifm-color-emphasis-700);
 }

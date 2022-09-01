@@ -57,13 +57,28 @@ module.exports = {
                     },
                     {
                         type: 'link',
+                        label: 'Participation',
+                        href: '/inx-participation/develop/welcome',
+                    },
+                    {
+                        type: 'link',
+                        label: 'Coordinator',
+                        href: '/inx-coordinator/develop/welcome',
+                    },
+                    {
+                        type: 'link',
+                        label: 'Faucet',
+                        href: '/inx-faucet/develop/welcome',
+                    },
+                    {
+                        type: 'link',
                         label: 'Dashboard',
-                        href: 'https://github.com/iotaledger/inx-dashboard',   
+                        href: '/inx-dashboard/develop/welcome',   
                     },
                     {
                         type: 'link',
                         label: 'Spammer',
-                        href: 'https://github.com/iotaledger/inx-spammer',  
+                        href: '/inx-spammer/develop/welcome',  
                     }
                 ],  
             },

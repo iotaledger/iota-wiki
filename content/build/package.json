@@ -1,6 +1,7 @@
 {
     "workspaces": [
         "*/*/documentation",
-        "*/documentation"
+        "*/documentation",
+        "./iota-2.0-research-specifications/docusaurus"
     ]
 }

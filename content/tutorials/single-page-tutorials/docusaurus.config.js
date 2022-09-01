@@ -116,6 +116,17 @@ module.exports = {
         [
             '@iota-wiki/plugin-tutorial',
             {
+                title: 'Interact with IOTA Node Extension (INX)',
+                description:
+                    'In this tutorial you will learn how to interact with the IOTA Node Extension (INX) interface based on gRPC.',
+                preview: 'hornet-inx-interaction.png',
+                route: 'hornet-inx-interaction',
+                tags: ['text', 'getting-started', 'testnet', 'js'],
+            },
+        ],
+        [
+            '@iota-wiki/plugin-tutorial',
+            {
                 title: 'Tokenless Data Notarization',
                 description:
                     'Proove that a block was part of the past Tangle, even if this part of the Tangle was already pruned from network nodes.',

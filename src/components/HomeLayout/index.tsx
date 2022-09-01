@@ -238,10 +238,20 @@ export default function HomeLayout() {
                 <h3 className='nodes__header'>Hornet</h3>
                 <ul className='nodes__features'>
                   <li className='nodes__feature'>
-                    A node implementation writtin in Go
+                    <Link to='/hornet/welcome'>
+                      A node implementation written in Go
+                    </Link>
                   </li>
-                  <li className='nodes__feature'>Participate in the network</li>
-                  <li className='nodes__feature'>Manage your node</li>
+                  <li className='nodes__feature'>
+                    <Link to='/hornet/getting_started'>
+                    Participate in the network
+                    </Link>
+                  </li>
+                  <li className='nodes__feature'>
+                    <Link to='/hornet/how_tos/managing_a_node'>
+                    Manage your node
+                    </Link>
+                  </li>
                 </ul>
                 <Link
                   to='hornet/how_tos/hornet_apt_repository'
@@ -259,10 +269,20 @@ export default function HomeLayout() {
                 <h3 className='nodes__header'>Bee</h3>
                 <ul className='nodes__features'>
                   <li className='nodes__feature'>
-                    A node implementation in Rust
+                    <Link to='/bee/welcome'>
+                      A node implementation in Rust
+                    </Link>
                   </li>
-                  <li className='nodes__feature'>Participate in the network</li>
-                  <li className='nodes__feature'>Become a node operator</li>
+                  <li className='nodes__feature'>
+                    <Link to='/bee/getting_started'>
+                      Participate in the network
+                    </Link>
+                  </li>
+                  <li className='nodes__feature'>
+                    <Link to='/bee/how_tos/docker'>
+                      Become a node operator
+                    </Link>
+                  </li>
                 </ul>
                 <Link
                   to='bee/how_tos/setup_a_node'
@@ -279,12 +299,20 @@ export default function HomeLayout() {
               <div className='nodes__section'>
                 <h3 className='nodes__header'>Wasp</h3>
                 <ul className='nodes__features'>
-                  <li className='nodes__feature'>Validate smart contracts</li>
                   <li className='nodes__feature'>
-                    Run the IOTA Smart Contract Protocol
+                    <Link to='/smart-contracts/guide/core_concepts/validators'>
+                      Validate smart contracts
+                    </Link>
                   </li>
                   <li className='nodes__feature'>
-                    Deploy your IOTA Smart Contracts
+                    <Link to='/smart-contracts/guide/chains_and_nodes/docker_standalone'>
+                      Run the IOTA Smart Contract Protocol
+                    </Link>
+                  </li>
+                  <li className='nodes__feature'>
+                    <Link to='/smart-contracts/guide/evm/introduction'>
+                      Run EVM/Solidity Smart Contract
+                    </Link>
                   </li>
                 </ul>
                 <Link
@@ -303,13 +331,19 @@ export default function HomeLayout() {
                 <h3 className='nodes__header'>Chronicle</h3>
                 <ul className='nodes__features'>
                   <li className='nodes__feature'>
-                    Efficient and reliable permanodes
+                    <Link to='/chronicle.rs/welcome'>
+                      Efficient and reliable permanodes
+                    </Link>
                   </li>
                   <li className='nodes__feature'>
-                    Solution for storing all transactions
+                    <Link to='/chronicle.rs/welcome#project-structure'>
+                      Solution for storing all transactions
+                    </Link>
                   </li>
                   <li className='nodes__feature'>
-                    Managing and accessing permanode
+                    <Link to='/chronicle.rs/config_reference'>
+                      Managing and accessing the permanode
+                    </Link>
                   </li>
                 </ul>
                 <Link
