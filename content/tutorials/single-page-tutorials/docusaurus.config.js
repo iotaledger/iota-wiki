@@ -127,13 +127,21 @@ module.exports = {
         [
             '@iota-wiki/plugin-tutorial',
             {
+                title: 'Tokenless Data Notarization',
+                description:
+                    'Proove that a block was part of the past Tangle, even if this part of the Tangle was already pruned from network nodes.',
+                preview: 'proof-inclusion-of-a-block.png',
+                route: 'proof-inclusion-of-a-block',
+                tags: ['text', 'getting-started', 'js', 'client'],
+            },
+        ],
+        [
                 title: 'Send Shimmer Tokens with Javascript (client lib)',
                 description:
                     'In this tutorial you will learn how to send Shimmer Tokens in the testnet.',
                 preview: 'send-shimmer-tokens-with-javascript.png',
                 route: 'send-shimmer-tokens-with-javascript',
                 tags: ['text', 'shimmer', 'javascript', 'client', 'getting-started', 'iota.rs (js binding)', 'testnet'],
-            },
         ],
     ],
     staticDirectories: [path.resolve(__dirname, './images')],

@@ -47,7 +47,7 @@ An identification in which IOTA network the message belongs (Mainnet / Testnet /
 
 **Parents length and Parents ID**
 
-This is the amount and the identifier of the messages referenced by the new message. To build up the graph structure of the Tangle, every new message in the Tangle must reference 2 - 8 previous messages. The node selects those two messages and sends the IDs to the client, and the client must include this information into the message "label." Therefore nodes make sure the data structure of the Tangle evolves as specified in the protocol.
+This is the amount and the identifier of the messages referenced by the new message. To build up the graph structure of the Tangle, every new message in the Tangle must reference 1 - 8 previous messages. The node selects those two messages and sends the IDs to the client, and the client must include this information into the message "label." Therefore nodes make sure the data structure of the Tangle evolves as specified in the protocol.
 
 **Payload length**
 

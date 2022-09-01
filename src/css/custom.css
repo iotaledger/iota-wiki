@@ -5,6 +5,7 @@
 html {
   scroll-behavior: smooth;
 }
+
 .version-picker {
   background-color: var(--ifm-color-emphasis-200);
   margin-bottom: 2rem;
@@ -217,7 +218,9 @@ article .card {
   padding-top: calc(1rem + var(--ifm-toc-padding-vertical)) !important;
 }
 
-.menu__link--active {
+.menu__link--active,
+.navbar__link.active {
+  color: var(--ifm-navbar-link-hover-color);
   font-weight: var(--ifm-font-weight-semibold);
 }
 
@@ -387,4 +390,9 @@ ul ul .table-of-contents__link {
   .navbar__item {
     font-size: 0.7rem;
   }
+}
+
+.math {
+  overflow-x: auto;
+  margin-bottom: 1em;
 }
