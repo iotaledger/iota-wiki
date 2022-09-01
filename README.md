@@ -65,7 +65,12 @@ The IOTA Wiki is built using [TypeScript](https://www.typescriptlang.org/), [Rea
 
 3. Install needed dependencies with `yarn`.
 
-4. Start the local development server with `yarn start` to preview a minimal Wiki or with `yarn start:all` to preview the entire Wiki. Alternatively you can use the `CONTENT` environment variable to select the content you want to include in the preview. It accepts a list of glob patterns relative to the `content` subdirectory (i.e. `CONTENT=identity.rs/*/documentation yarn start` would give you a minimal Wiki with only `identity.rs` documentation included).
+4. Install `require-glob` with `yarn add require-glob -W` to avoid the following error  
+```
+error Running this command will add the dependency to the workspace root rather than the workspace itself, which might not be what you want - if you really meant it, make it explicit by running this command again with the -W flag (or --ignore-workspace-root-check).
+```
+
+5. Start the local development server with `yarn start` to preview a minimal Wiki or with `yarn start:all` to preview the entire Wiki. Alternatively you can use the `CONTENT` environment variable to select the content you want to include in the preview. It accepts a list of glob patterns relative to the `content` subdirectory (i.e. `CONTENT=identity.rs/*/documentation yarn start` would give you a minimal Wiki with only `identity.rs` documentation included).
 
 <!-- CONTRIBUTING -->
 ## Contributing
