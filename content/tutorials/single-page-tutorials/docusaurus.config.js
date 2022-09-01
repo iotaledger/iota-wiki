@@ -136,6 +136,7 @@ module.exports = {
             },
         ],
         [
+            '@iota-wiki/plugin-tutorial',
             {
                 title: 'Send Shimmer Tokens with Javascript (client lib)',
                 description:
