@@ -28,18 +28,17 @@ This section refers to the most recent "Tangle" research findings:
 A blockchain consists of a growing list of records also called blocks that are linked together using cryptography.
 Transactions can only become part of the ledger if they are included in a newly issued block.
 In the case that not all new transactions fit into one block, some of them have to be postponed to the next block or later.
+Accelerating block creation and/or increasing block sizes is not a solution, as it is well known that this would compromise safety. In other words, to guarantee the security of the system, the throughput of the system is artificially suppressed so that each block propagates fully before the next block is created.
 
 ![An animation of a blockchain where new transactions have to pass through a narrow gap one by one.](/img/learn/blockchain-bottleneck.gif 'Click to see the full-sized image.')
 
 _The blockchain bottleneck._
 
-It´s well known that accelerating block creation and/or increasing block sizes compromises security. In other words, to guarantee the security of the system, the throughput of the system is artificially suppressed so that each block propagates fully before the next block is created. The fact that only one block producer can advance the ledger state creates an obvious bottleneck with well-known performance limitations.
+The fact that only one block producer can advance the ledger state does not only create a bottleneck with well-known performance limitations, but also causes other block candidates that do not win the race to be discarded - and in the case of PoW systems, all the effort and electricity put into their calculation might be wasted.
 
 Blockchains further face several problems with the intermediary miners or validators e.g. mining races, centralisation, miner extractable value, and negative externalities.
 
-
 ### The Tangle
-
 
 The Tangle is a novel leaderless, probabilistic consensus protocol that enables parallel validation of transactions without requiring total ordering. It also enables the elimination of intermediary miners and validators.
 The parallelisation, the absence of intermediaries, the capability to work in an asynchronous setting and the leaderless approach offers a highly performant consensus and ledger solution.
