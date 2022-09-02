@@ -136,6 +136,7 @@ module.exports = {
             },
         ],
         [
+            '@iota-wiki/plugin-tutorial',
             {
                 title: 'How to Setup iota.js for Development',
                 description:
