@@ -59,12 +59,12 @@ The company account of IOTA Foundation can be found here. See recent job posting
 
 ## Twitch
 
-On Twitch our Developer Experience expert Kumar Anirudha codes Decentralised applications, talks about programming and products. Please bear in mind that this is a technical stream.
+On Twitch, our Developer Experience expert Kumar Anirudha codes Decentralised applications, and talks about programming and products. Please bear in mind that this is a technical stream.
 
 [IOTADev](https://www.twitch.tv/iotadev/)
 
 ## Security Disclaimer
 
-Please be always cautious on Social Media. Only the sites linked here are officially supported channels and should be used to engage with the IOTA Foundation. A lot of scammers on social media will declare to be official representatives of the project, but we advise you to be very cautious.
+Please be always cautious on Social Media. Only the sites linked here are officially supported channels and should be used to engage with the IOTA Foundation. Many scammers on social media will declare to be official representatives of the project, but we advise you to be very cautious.
 
 No employee of the IOTA Foundation will ever actively approach you in private messages. Never share personal and private secret information like passwords or your IOTA Seed with anyone on social media. The IOTA Foundation members and moderators of those social media channels will never ask you for this information. Sadly impersonators cannot be detected directly, so we ask you to report suspicious contacts and approaches to the moderators/admins of the sites so that these accounts can be banned.

@@ -15,7 +15,7 @@ Go to [discord.iota.org](https://discord.iota.org) to join the IOTA Discord.
 
 A verified Discord account is required to get access to the IOTA Discord.
 
-**First Steps**
+### First Steps
 
 Make sure to read the server rules and accept them.
 
@@ -31,7 +31,11 @@ Make sure to have DMs (direct messages) enabled.
 
 ![discord-enable-dm](/img/participate/discord-verification/enable_dm_discord_3.png)
 
-**Note**: After the verification process, it is suggested to disable direct messages as those are prone to be used to send spam messages or scams.
+:::note
+
+After the verification process, it is suggested to disable direct messages as those are prone to be used to send spam messages or scams.
+
+:::
 
 The verification system will send a direct message. Click on the **Click me to verify!** link to start with the verification.
 
@@ -41,7 +45,7 @@ Discord will warn you before opening a browser. Click **Yep** to continue.
 
 ![discord-warning](/img/participate/discord-verification/warning_discord_5.png)
 
-Once verified, the IOTA Discord will display channels.
+Once you are verified, the IOTA Discord will display channels.
 
 ![discord-success](/img/participate/discord-verification/success_discord_6.png)
 
@@ -67,11 +71,9 @@ A series of channels and categories are unlocked once your account is verified.
 - Access the 📛 ｜ get-your-badges channel<br/>
   Within the IOTA Community, we use Discord roles as badges and to enable members to identify themselves within a group or get write access in regional channels. The roles are also used to notify the members of specific or dedicated events and polls or surveys.
 
-<br/>
 
 ---
 
-<br/>
 
 ## Useful Links
 
