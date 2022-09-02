@@ -127,6 +127,16 @@ module.exports = {
         [
             '@iota-wiki/plugin-tutorial',
             {
+                title: 'Tokenless Data Notarization',
+                description:
+                    'Proove that a block was part of the past Tangle, even if this part of the Tangle was already pruned from network nodes.',
+                preview: 'proof-inclusion-of-a-block.png',
+                route: 'proof-inclusion-of-a-block',
+                tags: ['text', 'getting-started', 'js', 'client'],
+            },
+        ],
+        [
+            {
                 title: 'How to Setup iota.js for Development',
                 description:
                     'In this tutorial you will learn how to create a new project, generate a new address and receive testnet funds from the faucet.',
