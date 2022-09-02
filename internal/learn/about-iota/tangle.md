@@ -18,17 +18,16 @@ IOTA nodes currently reach consensus on the ledger state with the help of milest
 While the Tangle and blockchains have the same function of maintaining their ledger status, the Tangle overcomes the difficulties blockchains face.
 The Tangle naturally succeeds the blockchain as its next evolutionary step as it offers features suited to establish more efficient and scalable distributed ledger solutions.
 
-This section refers to the latest research around the Tangle:
+This section refers to the most recent "Tangle" research findings:
 - [Tangle 2.0 Leaderless Nakamoto Consensus on the Heaviest DAG](https://arxiv.org/abs/2205.02177)
 - [Reality-Based UTXO Ledger](https://arxiv.org/abs/2205.01345)
 - [Robustness Of The Tangle 2.0 Consensus](https://arxiv.org/abs/2208.08254)
-
 
 ### Blockchains
 
 A blockchain consists of a growing list of records also called blocks that are linked together using cryptography.
 Transactions can only become part of the ledger if they are included in a newly issued block.
-If not all new transactions fit into one block then some of them have to be delayed to the next block or later.
+In the case that not all new transactions fit into one block, some of them have to be postponed to the next block or later.
 
 ![An animation of a blockchain where new transactions have to pass through a narrow gap one by one.](/img/learn/blockchain-bottleneck.gif 'Click to see the full-sized image.')
 
