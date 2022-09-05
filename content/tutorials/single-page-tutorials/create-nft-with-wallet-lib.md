@@ -1,33 +1,36 @@
-# Create a NFT with wallet library and IPFS
+# Create an NFT with the Wallet Library and IPFS
 
-In this tutorial you will upload your desired image to IPFS and create a NFT from the unique IPFS URL on the Shimmer testnet. This tutorial will build on the tutorial "Setup testnet address and receive funds from faucet" ([IOTA Wiki PR under review](https://github.com/iota-community/iota-wiki/pull/711)). If you haven't completed it, please do so and afterwards come back here. You will use the same folder and development environment as in the mentioned prerequired tutorial, which will allow you to reuse the Stronghold account with funds on it.
+In this tutorial, you will upload your desired image to [IPFS](https://ipfs.tech/) and create an NFT from the unique IPFS URL on the Shimmer testnet. This tutorial will build on the tutorial "Setup testnet address and receive funds from the faucet" ([IOTA Wiki PR under review](https://github.com/iota-community/iota-wiki/pull/711)). If you haven't completed it, please do so, and afterward, come back here. You will use the same folder and development environment as in the mentioned prerequired tutorial, allowing you to reuse the Stronghold account with funds on it.
 
 ## Prerequisites
 
-- Installed [Node.js](https://nodejs.org/en/)
-- Finished [Setup testnet address and receive funds from faucet](https://wiki.iota.org/wallet-setup) tutorial
+- [Node.js](https://nodejs.org/en/).
+- Finish the [Set up testnet address and receive funds from faucet](https://wiki.iota.org/wallet-setup) tutorial.
 
-## Setup
+## Set Up
 
-### Prepare development environment
+### Prepare Your Development Environment
 
-Navigate to the folder of the prerequired tutorial [Setup testnet address and receive funds from faucet](https://wiki.iota.org/wallet-setup):
+Navigate to the folder you created when completing the [set up a testnet address and receive funds from the faucet tutorial](https://wiki.iota.org/wallet-setup):
 
 
 ```bash
 cd wallet-setup
 ```
 
-Next to the existing dependencies of the wallet setup tutorial, you will only need to add two more packages:
+#### Install Packages
+
+Next to the existing dependencies of the wallet setup tutorial, you will only need to add two more packages by running the following commands:
+
 
 ```bash
 npm install @iota/client
 npm install ipfs-core@0.10.8
 ```
 
-Afterwards your `package.json` should at least contain the following dependencies:
+Afterward, your `package.json` file should contain the following dependencies:
 
-```json
+```json {6-12}
 {
   "name": "wallet-setup",
   "version": "1.0.0",
@@ -51,7 +54,7 @@ Afterwards your `package.json` should at least contain the following dependencie
 
 ***
 
-### Prepare image for NFT
+### Prepare an Image for the NFT
 
 Add your desired `*.jpg` file to this folder and rename it to `nft-image.jpg`.
 
@@ -194,4 +197,5 @@ Run the script `create-nft.js` and check the console output to follow along the 
 node create-nft.js
 ```
 
-Make sure to check out the transaction block that minted your NFT in the Shimmer explorer. If everything went according to plan, the transaction spent a basic output and created two new unspent outputs, one NFT output and a new basic output. In the newly created NFT output, you can see the immutable metadata of your NFT together with the unique IPFS URL.
+Make sure to check out the transaction block that minted your NFT in the Shimmer explorer. If everything went according to plan, the transaction spent a basic output and created two new unspent outputs, one NFT output, and a new basic output. In the newly created NFT output, you can see the immutable metadata of your NFT together with the unique IPFS URL.
+
