@@ -107,7 +107,11 @@ Generated public address: rms1qpzkrdmt0dja3sch2mt2sapj46j4ywatxlxrgneynqtcp8ltyz
 
 Save your Mnemonic in a file, we need this to send your tokens in the last step.
 
-Tip: In testnet addresses begin with `rms...`, whereas in the Mainnet addresses will begin with `smr...`.
+:::tip
+
+In testnet addresses begin with `rms...`, whereas in the Mainnet addresses will begin with `smr...`.
+
+:::
 
 ## 2. Get some testnet Tokens.
 
@@ -247,8 +251,7 @@ This code sends some Shimmer Tokens to a public address.
 Run it:
 
 ```bash
-node src/send_tokens.js
-```
+node scripts/send_tokens.js
 
 You can see the transaction if you follow the link in the console output.
 
@@ -256,7 +259,7 @@ You can see the transaction if you follow the link in the console output.
 
 If you check your balance again, it should be less than before!
 
-> Your balance: 998000000glow.
+> Your balance: 999000000glow.
 
 Congratulations! You sent some Shimmer testnet tokens!
 
