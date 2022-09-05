@@ -132,7 +132,7 @@ module.exports = {
                     'In this tutorial you will learn how to create a NFT on the Shimmer network with wallet.rs and IPFS.',
                 preview: 'create-nft-with-wallet-lib.png',
                 route: 'create-nft-with-wallet-lib',
-                tags: ['text', 'getting-started', 'node_js', 'client', 'ipfs', 'shimmer'],
+                tags: ['text', 'getting-started', 'node_js', 'wallet', 'ipfs', 'shimmer'],
             },
         ],
     ],

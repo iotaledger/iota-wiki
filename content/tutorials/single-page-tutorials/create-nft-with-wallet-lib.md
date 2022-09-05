@@ -5,13 +5,14 @@ In this tutorial you will upload your desired image to IPFS and create a NFT fro
 ## Prerequisites
 
 - Installed [Node.js](https://nodejs.org/en/)
-- Finished tutorial "Setup testnet address and receive funds from faucet"
+- Finished [Setup testnet address and receive funds from faucet](https://wiki.iota.org/wallet-setup) tutorial
 
 ## Setup
 
 ### Prepare development environment
 
-Navigate to the folder of the prerequired tutorial "Setup testnet address and receive funds from faucet":
+Navigate to the folder of the prerequired tutorial [Setup testnet address and receive funds from faucet](https://wiki.iota.org/wallet-setup):
+
 
 ```bash
 cd wallet-setup
@@ -66,7 +67,11 @@ For this tutorial we'll use the following image:
 
 Create a new file `create-nft.js` and add the following code:
 
-> **NOTE:**  We broke the code into separate snippets to help you understand it better. To make it work, copy all code snippets one after another into the file that you have just created.
+:::note
+
+We broke the code into separate snippets to help you understand it better. To make it work, copy all code snippets one after another into the file that you have just created.
+
+:::
 
 #### 1. Imports and parameters
 
