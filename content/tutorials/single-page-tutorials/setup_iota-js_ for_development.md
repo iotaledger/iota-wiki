@@ -1,6 +1,10 @@
 # New Tutorial - How to setup iota.js for development
 
-> In this tutorial you will learn how to create a new project, generate a new address and receive testnet funds from the faucet.
+:::info
+
+In this tutorial you will learn how to create a new project, generate a new address and receive testnet funds from the faucet.
+
+:::
 
 
 ## Prerequisites
@@ -29,7 +33,11 @@ npm init --yes
 
 
 Install the iota.js library and other helper dependencies:
-> **NOTE:**  Installation might take a while
+:::note
+
+Installation might take a while
+
+:::
 ```bash
 npm install @iota/iota.js@next
 npm install bip39 dotenv
@@ -42,7 +50,7 @@ Now create a new file `.env` and add the content below:
 MNEMONIC = "<You_will_create_your_own_mnemonic_seed_phrase_in_the_next_step_and_paste_it_in_here>"
 ```
 
-Enter your desired account name as well as a secure Stronghold password. Your new mnemonic seed phrase will be created in the next step and you will paste it in here afterwards.
+Your new mnemonic seed phrase will be created in the next step and you will paste it in here afterwards.
 
 ***
 
@@ -102,7 +110,7 @@ Your `package.json` file should look something like this:
 Create a new file `create-address.js` and add the following code:
 
 
-```javascript!
+```javascript
 const { Converter } = require("@iota/util.js");
 const { Bip32Path, Bip39 } = require("@iota/crypto.js");
 const {
@@ -160,9 +168,9 @@ run()
 
 ```
 
-If you run it, it will get your mnemonic from the `.env`file, creates a seed from it and genrates a new address. Just run the following command and you will see your testnet shimmer address in your console!
+If you run it, it will get your mnemonic from the `.env`file, create a seed from it and generate a new address. Just run the following command and you will see your testnet shimmer address in your console!
 
-```bash!
+```bash
 node create-address.js
 ```
 
@@ -170,7 +178,11 @@ node create-address.js
 
 Now you can go to the [Shimmer Testnet Faucet Website](https://faucet.testnet.shimmer.network/), paste in your newly created address and request funds.
 
-> **NOTE:**  The 'Request' button will become clickable as soon as a valid Shimmer address is recognized.
+:::note
+
+The 'Request' button will become clickable as soon as a valid Shimmer address is recognized.
+
+:::
 ![Shimmer Testnet Faucet](./images/shimmer-testnet-faucet.png)
 
 ***
