@@ -57,7 +57,7 @@ Afterward, your `package.json` file should contain the following dependencies:
 
 ### Prepare an Image for the NFT
 
-Add your desired `*.jpg` file to this folder and rename it to `nft-image.jpg`.
+Add your desired `*.jpg` file to the `wallet-setup` folder you created and rename it to `nft-image.jpg`.
 
 For this tutorial we'll use the following image:
 
