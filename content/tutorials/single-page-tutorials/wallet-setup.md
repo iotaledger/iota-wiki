@@ -37,8 +37,10 @@ Overwrite the `package.json` file with the following content:
   "dependencies": {
     "@iota/wallet": "2.0.2-alpha.21",
     "bip39": "^3.0.4",
-    "dotenv": "^16.0.1"
+    "dotenv": "^16.0.1",
+    "node-fetch": "^2.6.7"
   },
+
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -48,8 +50,11 @@ Overwrite the `package.json` file with the following content:
 ```
 
 Install new dependencies:
-> **NOTE:**  Installation might take a while, if there is no prebuilt wallet NPM package for your combination of OS and NodeJS version.
+:::note
 
+Installation might take a while, if there is no prebuilt wallet NPM package for your combination of OS and NodeJS version.
+
+:::
 ```bash
 npm install
 ```
@@ -124,7 +129,11 @@ Now you can copy the seed phrase and paste it into the previously created `.env`
 
 Create a new file `setup-account.js` and add the following code:
 
-> **NOTE:**  We broke the code into separate snippets to help you understand it better. To make it work, copy all code snippets one after another into the file that you have just created.
+:::note
+
+We broke the code into separate snippets to help you understand it better. To make it work, copy all code snippets one after another into the file that you have just created.
+
+:::
 
 #### 1. Imports and parameters
 
@@ -239,7 +248,11 @@ You can see your new account and the generated address, which you will use in or
 
 Create a new file `check-balance.js` and add the following code:
 
-> **NOTE:**  We broke the code into separate snippets to help you understand it better. To make it work, copy all code snippets one after another into the file that you have just created.
+:::note
+
+We broke the code into separate snippets to help you understand it better. To make it work, copy all code snippets one after another into the file that you have just created.
+
+:::
 
 #### 1. Imports and parameters
 
@@ -325,7 +338,11 @@ Below you can find two ways to request funds from the Shimmer testnet faucet. Yo
 
 Now you can go to the [Shimmer Testnet Faucet Website](https://faucet.testnet.shimmer.network/), paste in your newly created address and request funds.
 
-> **NOTE:**  The 'Request' button will become clickable as soon as a valid Shimmer address is recognized.
+:::note
+
+The 'Request' button will become clickable as soon as a valid Shimmer address is recognized.
+
+:::
 
 ![Shimmer Testnet Faucet](./images/shimmer-testnet-faucet.png)
 
