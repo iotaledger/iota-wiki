@@ -44,17 +44,26 @@ npm install @iota/iota.js@next
 npm install bip39 dotenv
 ```
 
+Your `package.json` file should look something like this:
 
-4. Create a new `.env` file and add the content below:
-
-```javascript
-MNEMONIC = "<You_will_create_your_own_mnemonic_seed_phrase_in_the_next_step_and_paste_it_in_here>"
+```json
+{
+  "name": "iota-js-setup",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "@iota/iota.js": "^1.9.0-stardust.25",
+    "bip39": "^3.0.4",
+    "dotenv": "^16.0.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "Apache-2.0"
+}
 ```
-
-Your new mnemonic seed phrase will be created in the next step and you will paste it in here afterwards.
-
-***
-
 
 ## Create Mnemonic Script
 
@@ -81,32 +90,11 @@ run();
 node create-mnemonic.js
 ```
 
-3. Copy the seed phrase and paste it into the previously created `.env` file.
+3. Create a new `.env` file and add your mnemonic:
 
-***
-
-Your `package.json` file should look something like this:
-
-```json
-{
-  "name": "iota-js-setup",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "dependencies": {
-    "@iota/iota.js": "^1.9.0-stardust.25",
-    "bip39": "^3.0.4",
-    "dotenv": "^16.0.1"
-  },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "",
-  "license": "Apache-2.0"
-}
+```javascript
+MNEMONIC = "<add_your_mnemonic_here>"
 ```
-***
-
 
 ## Create an Address
 
