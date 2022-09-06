@@ -1,34 +1,37 @@
-# Setup testnet address and receive funds from faucet
+# Setup a Testnet Address and Receive Funds from the 
+ Faucet
 
-In this tutorial you will create a new mnemonic seed phrase in order to setup a Stronghold account with the [NodeJS binding of wallet.rs](https://github.com/iotaledger/wallet.rs/tree/develop/bindings/nodejs). Afterwards you will generate a new address, request funds from the Shimmer testnet faucet and check your account balance.
+In this tutorial, you will [create a new mnemonic seed phrase](#create-mnemonic-script) to set up a Stronghold account with the [NodeJS binding of wallet.rs](https://github.com/iotaledger/wallet.rs/tree/develop/bindings/nodejs). Afterward, you will [generate a new address](#3-create-address), [request funds from the Shimmer testnet faucet](#request-tokens-from-faucet), and [check your account balance](#check-balance-again).
 
 ## Prerequisites
 
-- Development Environment and Libraries
-  - Installed [Node.js](https://nodejs.org/en/)
+### Development Environment and Libraries
+
+- [Node.js](https://nodejs.org/en/)
 
 ***
 
-## Setup
+## Set Up
 
-### Prepare development environment
+### Prepare Your Development Environment
 
-Create a new folder for the tutorial in a location of your choice and navigate to it:
+1. Create a new folder for the tutorial in a location of your choice and navigate to it:
 
 ```bash
 mkdir wallet-setup
 cd wallet-setup
 ```
 
-Run the Node.js initializer to configure the project:
+2. Run the Node.js initializer to configure the project:
 
 ```bash
 npm init --yes
 ```
 
-Overwrite the `package.json` file with the following content:
+3. Overwrite the `package.json` file with the following content:
 
-```yaml
+
+```json {6-12}
 {
   "name": "wallet-setup",
   "version": "1.0.0",
@@ -49,10 +52,10 @@ Overwrite the `package.json` file with the following content:
 }
 ```
 
-Install new dependencies:
+4. Install new dependencies by running the following command:
 :::note
 
-Installation might take a while, if there is no prebuilt wallet NPM package for your combination of OS and NodeJS version.
+The installation might take a while if there is no prebuilt wallet NPM package for your combination of OS and NodeJS version.
 
 :::
 ```bash
@@ -61,7 +64,7 @@ npm install
 
 ***
 
-### Prepare network configuration
+### Prepare the Network Configuration
 
 Create a new file `networkConfig.js` and add the following code:
 
@@ -79,9 +82,9 @@ module.exports = { networkConfig };
 
 ***
 
-### Prepare environment variables
+### Prepare the Environment Variables
 
-Create a new file `.env` and add the content below:
+Create a new `.env` file  and add the content below:
 
 ```javascript
 ACCOUNT_NAME = "<Enter_your_name_here>"
@@ -89,15 +92,15 @@ SH_PASSWORD = "<Enter_your_password_here>"
 MNEMONIC = "<You_will_create_your_own_mnemonic_seed_phrase_in_the_next_step_and_paste_it_in_here>"
 ```
 
-Enter your desired account name as well as a secure Stronghold password. Your new mnemonic seed phrase will be created in the next step and you will paste it in here afterwards.
+Enter your desired account name as well as a secure Stronghold password. You will create your new mnemonic seed phrase in the next step and paste it here afterward.
 
 ***
 
 ## Scripts
 
-### Create mnemonic script
+### Create Mnemonic Script
 
-Create a new file `create-mnemonic.js` and add the following code:
+Create a new file called `create-mnemonic.js`, and add the following code:
 
 ```javascript
 // Libraries
@@ -121,23 +124,25 @@ Run the script `create-mnemonic.js` and check the console output for your new mn
 ```console
 node create-mnemonic.js
 ```
-Now you can copy the seed phrase and paste it into the previously created `.env` file.
+You can now copy the seed phrase and paste it into the previously [created `.env` file](#prepare-environment-variables).
+
 
 ***
 
-### Setup account script
+### Setup Account Script
 
-Create a new file `setup-account.js` and add the following code:
+Create a new file called `setup-account.js` and add the following code:
 
 :::note
 
-We broke the code into separate snippets to help you understand it better. To make it work, copy all code snippets one after another into the file that you have just created.
+We broke the code into separate snippets to help you understand it better. To make it work, copy all code snippets one after another into the file you have just created.
+
 
 :::
 
 #### 1. Imports and parameters
 
-This part imports all necessary packages, network configuration parameters and environment variables.
+This part imports all necessary packages, network configuration parameters, and environment variables.
 
 ```javascript
 // Libraries
@@ -159,7 +164,10 @@ const consoleColor = '\x1b[36m%s\x1b[0m';
 
 #### 2. Create an account
 
-Create a new account manager with defined options and store your mnemonic seed phrase.
+This part of the code will:
+
+1. Create a new account manager with defined options 
+2. Store your mnemonic seed phrase.
 
 ```javascript
 async function run() {
@@ -208,12 +216,17 @@ This step creates a new address in your account.
 run();
 ```
 
+#### Run the script
+
 Run the script `setup-account.js` and check the console output:
+
 ```console
 node setup-account.js
 ```
 
-Stronghold will create a new wallet database folder `<accountName>-database` and a snaphsot file called `wallet.stronghold`, which savely stores your mnemonic seed phrase.
+
+Stronghold will create a new wallet database folder, `<accountName>-database`, and a snapshot file called `wallet.stronghold`, which safely stores your mnemonic seed phrase.
+
 
 The console output should look similar to this:
 
@@ -240,17 +253,18 @@ Account {
 <account_name>'s new address:
 <your_new_address>
 ```
-You can see your new account and the generated address, which you will use in order to receive funds from the faucet. But let's check the balance of your account first.
+You can see your new account and the generated address, which you will use to receive funds from the faucet. Before you request funds, let's check your account balance.
 
 ***
 
-### Check balance script
+### Check Balance Script
 
-Create a new file `check-balance.js` and add the following code:
+
+Create a new file called `check-balance.js` and add the following code:
 
 :::note
 
-We broke the code into separate snippets to help you understand it better. To make it work, copy all code snippets one after another into the file that you have just created.
+We broke the code into separate snippets to help you understand it better. To make it work, copy all code snippets one after another into the file you have just created.
 
 :::
 
@@ -273,7 +287,7 @@ const consoleColor = '\x1b[36m%s\x1b[0m';
 
 #### 2. Import Stronghold account
 
-Create new account manager from previously created Stronghold database path.
+The following part of the script will create a new account manager from the previously created Stronghold database path.
 
 ```javascript
 async function run() {
@@ -291,7 +305,7 @@ async function run() {
 
 #### 3. Get balance
 
-Synchronize your account and fetch balance for imported account.
+This script will synchronize your account and fetch the balance for the imported account.
 
 ```javascript
     // Always sync before getting the account balance
@@ -307,13 +321,15 @@ Synchronize your account and fetch balance for imported account.
 run();
 ```
 
-Run the script `check-balance.js` and check the console output:
+#### Run the script
+
+You can now run the `check-balance.js`  script and check the console output:
 
 ```console
 node check-balance.js
 ```
 
-If you created a new mnemonic seed phrase at the beginning of this tutorial, you should see an entirely empty balance on your account.
+If you [created a new mnemonic seed phrase](#create-mnemonic-script)  at the beginning of this tutorial, you should see an entirely empty balance on your account.
 
 ```json
 <Account Name>'s Balance:
@@ -330,13 +346,14 @@ If you created a new mnemonic seed phrase at the beginning of this tutorial, you
 
 ***
 
-## Request tokens from faucet
+## Request Tokens from the Faucet
 
-Below you can find two ways to request funds from the Shimmer testnet faucet. You can either request funds via the Shimmer faucet website, or programmatically by directly calling the API of the faucet.
 
-### Request tokens via faucet website
+Below you can find two ways to request funds from the [Shimmer testnet faucet](https://faucet.testnet.shimmer.network/). You can either [request funds via the Shimmer faucet website](#request-tokens-via-faucet-website) or programmatically by directly [calling the API of the faucet](#request-tokens-via-faucet-api).
 
-Now you can go to the [Shimmer Testnet Faucet Website](https://faucet.testnet.shimmer.network/), paste in your newly created address and request funds.
+### Request Tokens via the Faucet Website
+
+After you have [set up your account](#setup-account-script), you can go to the [Shimmer Testnet Faucet Website](https://faucet.testnet.shimmer.network/), paste in your newly created address, and request funds.
 
 :::note
 
@@ -348,11 +365,12 @@ The 'Request' button will become clickable as soon as a valid Shimmer address is
 
 ***
 
-### Request tokens via faucet API
+### Request Tokens via the Faucet API
 
-Create a new file `request-faucet.js` and add the code below:
+Create a new file called `request-faucet.js`, add the code below, and replace the `receivingAddress` variable.
 
-Make sure to paste your previously generated address into the variable `receivingAddress`. The function `requestFunds` receives the URL of the faucet API as well as a valid Shimmer testnet address and sends a request to the faucet API for tokens.
+Make sure to paste your previously generated address into the variable `receivingAddress`. The function `requestFunds` receives the URL of the faucet API and a valid Shimmer testnet address and sends a request to the faucet API for tokens.
+
 
 ```javascript
 // Libraries
@@ -388,7 +406,10 @@ async function requestFunds(faucetUrl, addressBech32) {
 run();
 ```
 
+#### Run the script
+
 Run the script `request-faucet.js` and check the console output:
+
 
 ```console
 node request-faucet.js
@@ -405,15 +426,16 @@ If the request was successfull, the console output should look similar to this:
 
 ***
 
-### Check balance again
+### Check Your Account Balance Again
 
-After a few seconds you can check your balance again by running the script `check-balance.js`:
+After a few seconds you can check your balance again by running [the `check-balance.js` script](#check-balance-script):
+
 
 ```console
 node check-balance.js
 ```
 
-If the faucet successfully transferred testnet tokens to your address, your balance should look similar to the content below. In case the total balance for the `baseCoin` is still 0, repeat the process of running the `check-balance.js` script, since it might take a little until the funds have been transferred:
+If the faucet successfully transferred testnet tokens to your address, your balance should look similar to the content below. If the total balance for the `baseCoin` is still 0, repeat the process of running the `check-balance.js` script since it might take a little time for the funds to be transferred.
 
 ```json
 <account_name>'s Balance:
@@ -428,4 +450,4 @@ If the faucet successfully transferred testnet tokens to your address, your bala
 }
 ```
 
-Congratulations, your account is now ready to explore other exciting features of the Shimmer network, such as native tokens and NFT's on L1.
+Congratulations, your account is now ready to explore other exciting features of the Shimmer network, such as native tokens and NFTs on L1.
