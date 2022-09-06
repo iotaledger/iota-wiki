@@ -31,6 +31,12 @@ Next you need to install the [iota client library](https://github.com/iotaledger
 npm i @iota/client
 ```
 
+When the previous call failed with `'tsc' is not recognized as an internal or external command, operable program or batch file.` it could help to install the typescript package globally by running:
+
+```bash
+npm install typescript@latest -g
+``` 
+
 ## 1. Create and save your seed.
 
 Create a new directory, a new file called `create_seed.js` and add the content below:
