@@ -15,7 +15,7 @@ IOTA nodes currently reach consensus on the ledger state with the help of milest
 
 ## The Tangle Versus Blockchains
 
-While the Tangle and blockchains have the same function of maintaining their ledger status, the Tangle overcomes the difficulties blockchains face.
+While the Tangle and blockchains have the same function of maintaining their ledger state, the Tangle overcomes the difficulties blockchains face.
 The Tangle naturally succeeds the blockchain as its next evolutionary step as it offers features suited to establish more efficient and scalable distributed ledger solutions.
 
 This section refers to the most recent "Tangle" research findings:
