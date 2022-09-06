@@ -17,6 +17,7 @@ These activities require to register accounts on different platforms and time.
 
 **First and foremost** join the IOTA Community on [the IOTA Discord](discord.md) server. Click on [this link](http://discord.iota.org/) to get the invitation to the server and get in touch with the IOTA Foundation members and the awesome IOTA community members.
 
+<<<<<<< HEAD
 <!--
 ### Be a Tanglenaut
 
@@ -25,6 +26,9 @@ A Tanglenaut supports the project on various social networks like [Twitter](http
 
 Optional: Rank as *Tanglenaut* on the IOTA Discord to be notified when news comes out. To do so, join the **#get-your-badges** channel, type **!addrank tanglenaut** as a message, and send it. From now on, if someone *pings* the Tanglenauts by typing **@Tanglenaut** in Discord, you will get a notification.
 -->
+=======
+## Socuial media platforms
+>>>>>>> 55e9b57aa0 (proposed corrections)
 
 Register an account <u>using a nickname</u> at the following sites and follow, subscribe, like, star, upvote the activities by the IOTA Foundation and the Ecosystem.
 
@@ -82,19 +86,3 @@ https://github.com/iotaledger/iota.c
 https://github.com/iotaledger/iota.go  
 https://github.com/iotaledger/iota.js  
 https://github.com/iotaledger/stronghold.rs
-
-<!--
-### Reddit
-
-Follow the community to keep up to date with news around IOTA and the ecosystem
-
-Difficulty level: **easy**
-
-Time necessary: **15-20 minutes/week**
-
-Sign up to Reddit: https://www.reddit.com/register/ or connect using your Google Account
-
-Join the IOTA subreddit https://www.reddit.com/r/Iota/ and engage with the community there.
-
- ![image-20210115164131145](/img/participate/how-to-support/image-20210115164131145.png)
--->
