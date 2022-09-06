@@ -1,4 +1,4 @@
-# New Tutorial - How to setup iota.js for development
+# New Tutorial - How to Set Up Iota.JS for Development
 
 :::info
 
@@ -9,42 +9,43 @@ In this tutorial you will learn how to create a new project, generate a new addr
 
 ## Prerequisites
 
-- Development Environment and Libraries
-  - Installed [Node.js](https://nodejs.org/en/)
+### Development Environment and Libraries
+  - [Node.js](https://nodejs.org/en/)
 
 ***
 
-## Setup
+## Set Up
 
-### Prepare development environment
+### Prepare Your Development Environment
 
-Create a new folder for the tutorial in a location of your choice and navigate to it:
+1. Create a new folder for the tutorial in a location of your choice and navigate to it:
 
 ```bash
 mkdir iota-js-setup
 cd iota-js-setup
 ```
 
-Run the Node.js initializer to configure the project:
+2. Run the Node.js initializer to configure the project:
 
 ```bash
 npm init --yes
 ```
 
 
-Install the iota.js library and other helper dependencies:
+3. Install the iota.js library and other helper dependencies:
 :::note
 
-Installation might take a while
+The installation process might take a while
 
 :::
+
 ```bash
 npm install @iota/iota.js@next
 npm install bip39 dotenv
 ```
 
 
-Now create a new file `.env` and add the content below:
+4. Create a new `.env` file and add the content below:
 
 ```javascript
 MNEMONIC = "<You_will_create_your_own_mnemonic_seed_phrase_in_the_next_step_and_paste_it_in_here>"
@@ -55,9 +56,9 @@ Your new mnemonic seed phrase will be created in the next step and you will past
 ***
 
 
-## Create mnemonic script
+## Create Mnemonic Script
 
-Create a new file `create-mnemonic.js` and add the following code:
+1. Create a new file `create-mnemonic.js` and add the following code:
 
 ```javascript
 // Libraries
@@ -74,17 +75,19 @@ async function run() {
 run();
 ```
 
-Run the script `create-mnemonic.js` and check the console output for your new mnemonic seed phrase:
+2. Run the script `create-mnemonic.js` and check the console output for your new mnemonic seed phrase:
+
 ```console
 node create-mnemonic.js
 ```
-Now you can copy the seed phrase and paste it into the previously created `.env` file.
+
+3. Copy the seed phrase and paste it into the previously created `.env` file.
 
 ***
 
 Your `package.json` file should look something like this:
 
-```yaml
+```json
 {
   "name": "iota-js-setup",
   "version": "1.0.0",
@@ -105,9 +108,9 @@ Your `package.json` file should look something like this:
 ***
 
 
-## Create an address
+## Create an Address
 
-Create a new file `create-address.js` and add the following code:
+Create a new file called `create-address.js` and add the following code:
 
 
 ```javascript
@@ -168,15 +171,21 @@ run()
 
 ```
 
-If you run it, it will get your mnemonic from the `.env`file, create a seed from it and generate a new address. Just run the following command and you will see your testnet shimmer address in your console!
+If you run it, it will:
+
+1. Get your mnemonic from the `.env`file.
+2. Create a seed from it.
+3. Generate a new address. 
+
+Just run the following command, and you will see your testnet shimmer address in your console!
 
 ```bash
 node create-address.js
 ```
 
-## Request tokens via faucet website
+## Request Tokens via the Faucet Website
 
-Now you can go to the [Shimmer Testnet Faucet Website](https://faucet.testnet.shimmer.network/), paste in your newly created address and request funds.
+Now, you can go to the [Shimmer Testnet Faucet Website](https://faucet.testnet.shimmer.network/), paste your newly created address, and request funds.
 
 :::note
 
