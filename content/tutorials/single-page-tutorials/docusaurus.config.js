@@ -138,6 +138,17 @@ module.exports = {
         [
             '@iota-wiki/plugin-tutorial',
             {
+                title: 'Setup testnet address and receive funds from faucet',
+                description:
+                    'In this tutorial you will learn how to create a seed and address with wallet.rs and receive testnet tokens from the faucet.',
+                preview: 'wallet-setup.png',
+                route: 'wallet-setup',
+                tags: ['text', 'getting-started', 'node_js', 'wallet', 'testnet', 'shimmer'],
+            },
+        ],
+        [
+            '@iota-wiki/plugin-tutorial',
+            {
                 title: 'How to Setup iota.js for Development',
                 description:
                     'In this tutorial you will learn how to create a new project, generate a new address and receive testnet funds from the faucet.',
