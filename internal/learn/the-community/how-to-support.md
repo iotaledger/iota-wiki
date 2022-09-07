@@ -58,7 +58,7 @@ Watch the videos by the IOTA Foundation, learn about solutions built with IOTA a
 
 ### GitHub
 
-Starring a repository has some potentially beneficial effects for the repository. When a developer looks for a repository for certain functionalities, the number of stars gives a rough indication about the popularity and therefore the quality of the repository.
+Starring a repository has some potentially beneficial effects for the repository. When a developer looks for a repository for certain functionalities, the number of stars gives a rough indication of the popularity and, therefore, the quality of the repository.
 
 - Difficulty level: **medium**.
 - Time needed: **30 minutes the first time, 5 minutes for every new repository (when they are published)**.
