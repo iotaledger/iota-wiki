@@ -138,6 +138,39 @@ module.exports = {
         [
             '@iota-wiki/plugin-tutorial',
             {
+                title: 'Setup testnet address and receive funds from faucet',
+                description:
+                    'In this tutorial you will learn how to create a seed and address with wallet.rs and receive testnet tokens from the faucet.',
+                preview: 'wallet-setup.png',
+                route: 'wallet-setup',
+                tags: ['text', 'getting-started', 'node_js', 'wallet', 'testnet', 'shimmer'],
+            },
+        ],
+        [
+            '@iota-wiki/plugin-tutorial',
+            {
+                title: 'How to Setup iota.js for Development',
+                description:
+                    'In this tutorial you will learn how to create a new project, generate a new address and receive testnet funds from the faucet.',
+                preview: 'setup_iota-js_for_development.png',
+                route: 'setup_iota-js_for_development',
+                tags: ['text', 'getting-started', 'client', 'testnet', 'js'],
+            },
+        ],
+        [
+            '@iota-wiki/plugin-tutorial',
+            {
+                title: 'Create a NFT with wallet.rs and IPFS',
+                description:
+                    'In this tutorial you will learn how to create a NFT on the Shimmer network with wallet.rs and IPFS.',
+                preview: 'create-nft-with-wallet-lib.png',
+                route: 'create-nft-with-wallet-lib',
+                tags: ['text', 'getting-started', 'node_js', 'wallet', 'ipfs', 'shimmer'],
+            },
+        ],
+        [
+            '@iota-wiki/plugin-tutorial',
+            {
                 title: 'Send Shimmer Tokens with Javascript (client lib)',
                 description:
                     'In this tutorial you will learn how to send Shimmer Tokens in the testnet.',
