@@ -7,41 +7,41 @@ In this tutorial you will learn how to send Shimmer Tokens in the testnet. We wi
 - 3. Read your balance.
 - 4. And finally, send the Tokens to another address.
 
-And now, let's start with preparing the development environment. This tutorial assumes that you have [Node.js](https://nodejs.org/en/) installed.
+This tutorial assumes that you have [Node.js](https://nodejs.org/en/) installed.
 
-## 0. Setup Development Environment.
+## 0. Set Up Your Development Environment.
 
-First let's create a new folder for the tutorial in your favourite location.
+First, you should create a new folder for the tutorial. 
 
 ```bash
 mkdir send-shimmer-tutorial
 cd send-shimmer-tutorial
 ```
 
-Now we need to run the Node.js initializer to configure the project.
+Now you need to run the Node.js initializer to configure the project.
 
 ```bash
 npm init --yes
 ```
 
-Next you need to install the [iota client library](https://github.com/iotaledger/iota.rs/tree/develop/bindings/nodejs). Be sure, you install the `@next` version to use the Shimmer network. 
+Next, you must install the [iota.js client library](https://github.com/iotaledger/iota.rs/tree/develop/bindings/nodejs). Install the `@next` version to use the Shimmer network. 
 ```bash
 npm i @iota/client@3.0.0-alpha.6
 ```
 
 
-## 1. Get your first address.
+## 1. Create Your First Address
 
-Next we want to generate an address, where we want to deposit some Shimmer testnet Tokens.
+Next, you should generate an address where you can deposit some Shimmer testnet Tokens.
 
-Just create a new file called `get_address.js` in a `scripts` directory and add the content below. On Linux based machines, you can use the command `touch` to create a new file.
+Create a new file called `get_address.js` in a `scripts` directory and add the content below. On Linux-based machines, you can use the command `touch` to create a new file.
 
-```bash!
+```bash
 mkdir scripts
 touch scripts/get_address.js
 ```
 
-Content:
+Add the following content to the `get_address.js` file you just created:
 
 ```javascript
 
@@ -94,49 +94,51 @@ run().then(() => process.exit());
 
 ```
 
-If we run this script, you should see your Shimmer address in your console output.
+This script will:
+
+1. Create a `Client` and connect to the [Shimmer testnet API](https://api.testnet.shimmer.network).
+2. Generate a mnemonic.
+3. Generate an address.
+
+If you run this script, you should see your mnemonic and Shimmer address in your console output. You can run it using the following command:
 
 ```bash
 node scripts/get_address.js
 ```
 
-This prints something like this:
+The output should look something like this:
 
 > Mnemonic: deputy cousin oxygen quiz also odor clever candy borrow know junk method logic alert give history toy dolphin enact shift tooth wreck verify evil
 Generated public address: rms1qpzkrdmt0dja3sch2mt2sapj46j4ywatxlxrgneynqtcp8ltyzf7yz75ser
 
-Save your Mnemonic in a file, we need this to send your tokens in the last step.
+Save your mnemonic in a file, you will need this to send your tokens.
 
-:::tip
+:::tip Address Anatomy
 
-In testnet addresses begin with `rms...`, whereas in the Mainnet addresses will begin with `smr...`.
+Testnet addresses begin with `rms...`, while Mainnet addresses will begin with `smr...`.
 
 :::
 
-## 2. Get some testnet Tokens.
+## 2. Get Some Testnet Tokens.
 
-Now we need to visit the Faucet to get some tokens. Just input your address on the website and you will get some testnet tokens!
+You will need to visit the [Faucet](https://faucet.testnet.shimmer.network/) to get some tokens. Just input your address, and you will get some testnet tokens.
 
-> Shimmer testnet faucet: https://faucet.testnet.shimmer.network/
 
-Did it work? Let's check our address balance!
+## 3. Read Your Balance
 
-## 3. Read your balance
-
-Now, let's create a new file called `get_balance.js` and add the code below!
+Create a new file called `get_balance.js` and add the code below and replace the YOUR_ADDRESS constant with the address just added the testnet tokens to:
 
 ```bash
 touch scripts/get_balance.js
 ```
 
-Content:
 
 ```javascript
 const {
     Client,
   } = require("@iota/client");
  
-// Input here your address which you generate in the first step
+// Input  the address which you generated in the first step
 const YOUR_ADDRESSS = "rms1qpzkrdmt0dja3sch2mt2sapj46j4ywatxlxrgneynqtcp8ltyzf7yz75ser"
 
 // In this example we will get the outputs of an address that has no additional unlock
@@ -168,7 +170,7 @@ async function run() {
         }
 
         console.log(
-            `Address Outputs have: ${totalAmount}glow.`
+            `Address Outputs have ${totalAmount} glow.`
         );
     } catch (error) {
         console.log("Error: ", error)
@@ -178,29 +180,34 @@ async function run() {
 run().then(() => process.exit());
 ```
 
-Just run the code and you will see your balance:
+This script will:
+
+1. Create a `Client` and connect to the [Shimmer testnet API](https://api.testnet.shimmer.network).
+2. Get all the unlocked basic outputs associated with your address.
+3. Get the outputs from step 2. using their output ID by calling the `Client.getOutputs(outputIds)` function. 
+4. Loop through all the retrieved outputs from step 3 and add their value in the `totalAmount` variable.
+5. Log the `totalAmount` variable to the console.
+
+If you run the script, you should see your address's balance:
 
 ```bash
 node scripts/get_balance.js
 ```
 
-If it shows a balance of zero, wait a bit and run the script again.
+If it shows zero balance, wait a bit and rerun the script.
 
 Your console output should look like this:
 
-> Address Outputs have: 1000000000glow.
+```plaintext
+ Address Outputs have 1000000000 glow.
+ ```
 
 Now you should have 1000000000 glow Tokens, which are equal to 1000 Shimmer Tokens.
 
 ## 4. Send Shimmer Tokens.
 
-The last step is to send the tokens to another address, let's create a file for that and add the content below!
+The last step is to send the tokens to another address. Create a file for that and add the content below. You can replace `SEND_TO_ADDRESSS` constant with any valid testnet address. You should replace the `YOUR_MNEMONIC` constant with the mnemonic you generated in the first step. 
 
-```bash
-touch scripts/send_tokens.js
-```
-
-Content:
 
 ```javascript
 const {
@@ -246,20 +253,31 @@ async function run() {
 run().then(() => process.exit());
 ```
 
-This code sends some Shimmer Tokens to a public address.
+This script will:
+1. Create a `Client` and connect to the [Shimmer testnet API](https://api.testnet.shimmer.network).
+2. Instantiate a `SecretManager` with the mnemonic you generated in the first step.
+3. Build and post a block using the `Client.buildAndPostBlock()`  function.
+4. Log the transaction's [Shimmer Explorer URL](https://explorer.shimmer.network/) to the console.
 
-Run it:
+
+You can run it with the following command:
 
 ```bash
 node scripts/send_tokens.js
+```
+Your output should look something like this:
 
-You can see the transaction if you follow the link in the console output.
+```plaintext
+Transaction sent: https://explorer.shimmer.network/testnet/block/0xd1edfc557025600e7fcf7ddc99bc1a4fa1b10335c584f0406174a45d7a992554
+```
 
-> Transaction sent: https://explorer.shimmer.network/testnet/block/0xd1edfc557025600e7fcf7ddc99bc1a4fa1b10335c584f0406174a45d7a992554
+If you follow the link in the console output, you can see the transaction in the [Shimmer Explorer](https://explorer.shimmer.network).
 
-If you check your balance again, it should be less than before!
+You can check your balance again by running the `scripts/get_balance.js` script again.  Your output should be less than before.
 
-> Your balance: 999000000glow.
+```plaintext
+ Address Outputs have 999000000 glow.
+```
 
-Congratulations! You sent some Shimmer testnet tokens!
+Congratulations! You have sent some Shimmer testnet tokens!
 
