@@ -9,7 +9,7 @@ description: IOTA Discord verification and onboarding process explained
 
 Go to [discord.iota.org](https://discord.iota.org) to join the IOTA Discord.
 
-**Requirements**
+### Requirements
 
 A verified Discord account is required to get access to the IOTA Discord.
 
