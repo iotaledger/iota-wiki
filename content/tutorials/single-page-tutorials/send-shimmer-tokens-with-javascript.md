@@ -2,10 +2,11 @@
 
 In this tutorial you will learn how to send Shimmer Tokens in the testnet. We will go through the following steps:
 
-- 1. Get your first address.
-- 2. Get some testnet Tokens.
-- 3. Read your balance.
-- 4. And finally, send the Tokens to another address.
+- 0. [Set Up Your Development Environment](#0-Set-Up-Your-Development-Environment).
+- 1. [Create Your First Address](#1-Create-Your-First-Address).
+- 2. [Get some testnet Tokens](#2-Get-Some-Testnet-Tokens).
+- 3. [Read your balance](#3-Read-Your-Balance).
+- 4. And finally, [send the Tokens to another address](#4-Send-Shimmer-Tokens).
 
 This tutorial assumes that you have [Node.js](https://nodejs.org/en/) installed.
 
