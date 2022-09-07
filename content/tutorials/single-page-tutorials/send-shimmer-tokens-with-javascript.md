@@ -27,7 +27,7 @@ npm init --yes
 
 Next, you must install the [iota.js client library](https://github.com/iotaledger/iota.rs/tree/develop/bindings/nodejs). Install the `@next` version to use the Shimmer network. 
 ```bash
-npm i @iota/client@3.0.0-alpha.6
+npm i @iota/client@next
 ```
 
 
