@@ -66,7 +66,7 @@ A series of channels and categories are unlocked once your account is verified.
 - Access the 🦺 ｜ stay-safe channel
   Read the tips there to understand how to stay safe on Discord.
 
-- Access the 📛 ｜ get-your-badges channel<br/>
+- Access the 📛 ｜ get-your-badges channel
   Within the IOTA Community, we use Discord roles as badges and to enable members to identify themselves within a group or get write access in regional channels. The roles are also used to notify the members of specific or dedicated events and polls or surveys.
 
 ---
