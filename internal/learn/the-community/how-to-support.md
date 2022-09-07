@@ -3,7 +3,7 @@ title: How to support the vision
 description: This page shows a list of ways to suport the vision
 ---
 
-# How can you support the vision?
+# How Can You Support the Vision?
 
 As ecosystem members there are different ways to support the vision.
 
