@@ -29,7 +29,7 @@ Register an account <u>using a nickname</u> at the following sites and follow, s
 - Time needed: **15 minutes/week**
 - Requirements: [Sign up to Twitter](https://twitter.com/i/flow/signup)
 
-Follow the [IOTA Foundation](https://twitter.com/iota/) and [Shimmer](https://twitter.com/shimmernet) on Twitter and follow them daily to _like_ and _retweet_. Look for other projects or ecosystem members, follow them, and like their tweets.
+Follow the [IOTA Foundation](https://twitter.com/iota/) and [Shimmer](https://twitter.com/shimmernet) on Twitter and follow them daily to *like* and *retweet*. Look for other projects or ecosystem members, follow them, and like their tweets.
 
 These are some [interesting IOTA related projects](<(https://twitter.com/i/lists/1564924491850989575)>) you can follow as well.
 
@@ -41,7 +41,7 @@ Like and reshare news from the IOTA Foundation and other ecosystem members with 
 - Time needed: **15 minutes/week**
 - Requirements: [Sign up to LinkedIn](https://www.linkedin.com/signup/cold-join). You can also connect using your Google Account.
 
-Follow the IOTA Foundation on LinkedIn [here](https://www.linkedin.com/company/iotafoundation/) by clicking on the three dots and then **+ Follow** to _like_ and _share_ the articles
+Follow the IOTA Foundation on LinkedIn [here](https://www.linkedin.com/company/iotafoundation/) by clicking on the three dots and then **+ Follow** to *like* and *share* the articles
 
 ![image-20210115161351884](/img/participate/how-to-support/image-20210115161351884.png)
 
@@ -64,7 +64,7 @@ Starring a repository has some potentially beneficial effects for the repository
 - Time needed: **30 minutes the first time, 5 minutes for every new repository (when they are published)**.
 - Requirements: [Sign up to GitHub](https://github.com/join).
 
-After you have fulfilled the requirements, open the following repositories and _star_ them:
+After you have fulfilled the requirements, open the following repositories and *star* them:
 
 ![image-20210115162757470](/img/participate/how-to-support/image-20210115162757470.png)
 
