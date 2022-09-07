@@ -68,10 +68,16 @@ After you have fulfilled the requirements, open the following repositories and *
 
 ![image-20210115162757470](/img/participate/how-to-support/image-20210115162757470.png)
 
-https://github.com/iotaledger/hornet  
-https://github.com/iotaledger/firefly  
-https://github.com/iotaledger/iota.rs  
-https://github.com/iotaledger/iota.c  
-https://github.com/iotaledger/iota.go  
-https://github.com/iotaledger/iota.js  
-https://github.com/iotaledger/stronghold.rs
+* [Firefly](https://github.com/iotaledger/firefly).
+* [GoShimmer](https://github.com/iotaledger/goshimmer).
+* [Hornet](https://github.com/iotaledger/hornet).
+* [Identity](https://github.com/iotaledger/identity.rs).
+* [iota.rs](https://github.com/iotaledger/iota.rs).
+* [iota.c](https://github.com/iotaledger/iota.c ).
+* [iota.go](https://github.com/iotaledger/iota.go).
+* [iota.js](https://github.com/iotaledger/iota.js ).
+* [IOTA 2.0 Research Specifications](https://github.com/iotaledger/IOTA-2.0-Research-Specifications).
+* [IOTA Wiki](https://github.com/iota-wiki/iota-wiki).
+* [Streams](https://github.com/iotaledger/streams).
+* [Stronghold](https://github.com/iotaledger/stronghold.rs).
+* [Wasp](https://github.com/iotaledger/wasp).
