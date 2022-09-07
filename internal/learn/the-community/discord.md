@@ -55,7 +55,7 @@ A series of channels and categories are unlocked once your account is verified.
 
 **Onboarding**
 
-- Visit the 🏁 ｜ first-steps channel<br/>
+- Visit the 🏁 ｜ first-steps channel
   Click on the button there to start with the onboarding and unlocking further categories and channels based on your interests.
 
 ## Next steps
