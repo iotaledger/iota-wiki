@@ -92,6 +92,7 @@ module.exports = {
       label: 'The Community',
       collapsed: true,
       items: [
+        'the-community/how-to-support',
         'the-community/discord',
         'the-community/x-teams',
         'the-community/git-hub',
@@ -106,7 +107,7 @@ module.exports = {
         {
           type: 'doc',
           label: 'Welcome',
-          id:  'contribute-to-wiki/welcome',
+          id: 'contribute-to-wiki/welcome',
         },
         {
           type: 'category',
@@ -132,7 +133,7 @@ module.exports = {
           type: 'category',
           label: 'Explanations',
           items: [
-              'contribute-to-wiki/explanations/third-party_works',
+            'contribute-to-wiki/explanations/third-party_works',
             {
               type: 'category',
               label: 'Writing Tools',
@@ -151,8 +152,7 @@ module.exports = {
             {
               type: 'category',
               label: 'Style Guidelines',
-              items:
-              [
+              items: [
                 'contribute-to-wiki/reference/style/manifesto',
                 'contribute-to-wiki/reference/style/structure',
                 'contribute-to-wiki/reference/style/matter',
@@ -164,8 +164,7 @@ module.exports = {
             {
               type: 'category',
               label: 'Documentation Structure',
-              items:
-              [
+              items: [
                 'contribute-to-wiki/reference/structure/overview',
                 'contribute-to-wiki/reference/structure/getting_started',
                 'contribute-to-wiki/reference/structure/how_tos',
