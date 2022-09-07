@@ -57,7 +57,6 @@ const {
 async function run() {
 
   const client = new Client({
-    // Insert your node URL in the .env.
     nodes: ['https://api.testnet.shimmer.network'],
   });
 
@@ -127,11 +126,7 @@ You will need to visit the [Faucet](https://faucet.testnet.shimmer.network/) to 
 
 ## 3. Read Your Balance
 
-Create a new file called `get_balance.js` and add the code below and replace the YOUR_ADDRESS constant with the address just added the testnet tokens to:
-
-```bash
-touch scripts/get_balance.js
-```
+Create a new file called `get_balance.js` and add the code below and replace the YOUR_ADDRESS constant with the address just added the testnet tokens to.
 
 
 ```javascript
@@ -146,7 +141,6 @@ const YOUR_ADDRESSS = "rms1qpzkrdmt0dja3sch2mt2sapj46j4ywatxlxrgneynqtcp8ltyzf7y
 // conditions and sum the amounts and native tokens
 async function run() {
     const client = new Client({
-        // Insert your node URL in the .env.
         nodes: ['https://api.testnet.shimmer.network'],
       });
     
@@ -164,7 +158,6 @@ async function run() {
 
         // Calculate the total amount and native tokens
         let totalAmount = 0;
-        const totalNativeTokens = {};
         for (const outputResponse of addressOutputs) {
             const output = outputResponse['output'];
             totalAmount += parseInt(output.amount);
@@ -222,7 +215,6 @@ const YOUR_MNEMONIC = "deputy cousin oxygen quiz also odor clever candy borrow k
 // In this example we will send a transaction
 async function run() {
     const client = new Client({
-        // Insert your node URL in the .env.
         nodes: ['https://api.testnet.shimmer.network'],
         localPow: true,
       });
