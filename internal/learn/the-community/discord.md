@@ -60,7 +60,7 @@ A series of channels and categories are unlocked once your account is verified.
 
 ## Next steps
 
-- Visit the 📋 ｜ learn-the-rules channel<br/>
+- Visit the 📋 ｜ learn-the-rules channel
   Please read the information there to learn about our rules and tips.
 
 - Access the 🦺 ｜ stay-safe channel<br/>
