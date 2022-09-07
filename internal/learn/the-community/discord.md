@@ -1,9 +1,7 @@
 ---
-title: Discord Verification
+title: Discord
 description: IOTA Discord verification and onboarding process explained
 ---
-
-# IOTA Discord
 
 **If you are new to [Discord](https://discord.iota.org/) as a platform, have a look at their [Beginner's Guide to Discord](https://support.discord.com/hc/en-us/articles/360045138571-Beginner-s-Guide-to-Discord) which is translated in different languages.**
 
