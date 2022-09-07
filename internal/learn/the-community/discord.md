@@ -63,7 +63,7 @@ A series of channels and categories are unlocked once your account is verified.
 - Visit the 📋 ｜ learn-the-rules channel
   Please read the information there to learn about our rules and tips.
 
-- Access the 🦺 ｜ stay-safe channel<br/>
+- Access the 🦺 ｜ stay-safe channel
   Read the tips there to understand how to stay safe on Discord.
 
 - Access the 📛 ｜ get-your-badges channel<br/>
