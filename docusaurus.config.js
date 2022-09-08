@@ -183,8 +183,8 @@ module.exports = {
         {
           label: 'Developer Resources',
           to: '/#developer-resources',
-          activeBaseRegex: '^/tutorials/.*|^/integration-services/.*',
-        },
+          activeBaseRegex: '^/tutorials*|^/integration-services/.*',
+                },
       ],
     },
     footer: {
