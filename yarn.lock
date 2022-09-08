@@ -2319,6 +2319,7 @@ __metadata:
     "@docusaurus/utils": 2.0.1
     "@docusaurus/utils-common": 2.0.1
     "@docusaurus/utils-validation": 2.0.1
+<<<<<<< HEAD
     "@mdx-js/react": ^1.6.22
     clsx: ^1.2.1
     copy-text-to-clipboard: ^3.0.1
@@ -3445,13 +3446,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/emscripten@npm:^1.38.0":
-  version: 1.39.6
-  resolution: "@types/emscripten@npm:1.39.6"
-  checksum: 437f2f9cdfd9057255662508fa9a415fe704ba484c6198f3549c5b05feebcdcd612b1ec7b10026d2566935d05d3c36f9366087cb42bc90bd25772a88fcfc9343
-  languageName: node
-  linkType: hard
-
 "@types/eslint-scope@npm:^3.7.3":
   version: 3.7.4
   resolution: "@types/eslint-scope@npm:3.7.4"
@@ -3779,13 +3773,6 @@ __metadata:
   dependencies:
     "@types/node": "*"
   checksum: 0ce46f850d41383fcdc2149bcacc86d7232fa7a233f903d2246dff86e31701a02f8566f40af5f8b56d1834779255c04ec6ec78660fe0f9b2a69cf3d71937e4ae
-  languageName: node
-  linkType: hard
-
-"@types/yoga-layout@npm:1.9.2":
-  version: 1.9.2
-  resolution: "@types/yoga-layout@npm:1.9.2"
-  checksum: dbc3d6ab997d50fe1fcca5dd6822982c8fe586145ab648e0e97c3bc4ebc93d0b40c9edd75febaba374d61f60c1379b639f6be652965c776a901bf1068f2eac87
   languageName: node
   linkType: hard
 
@@ -4309,7 +4296,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ansi-escapes@npm:^4.2.1, ansi-escapes@npm:^4.3.0":
+"ansi-escapes@npm:^4.3.0":
   version: 4.3.2
   resolution: "ansi-escapes@npm:4.3.2"
   dependencies:
@@ -4416,13 +4403,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"arr-rotate@npm:^1.0.0":
-  version: 1.0.0
-  resolution: "arr-rotate@npm:1.0.0"
-  checksum: f996e94a7b8325c23fe3d7bf95f4f1a5fd1baba34c6bcebb5a8bd0f9b955569293f4cc61f02b0a242380923fca235948e95f6dbf544a6f183207d80e8f2d442d
-  languageName: node
-  linkType: hard
-
 "array-flatten@npm:1.1.1":
   version: 1.1.1
   resolution: "array-flatten@npm:1.1.1"
@@ -4510,13 +4490,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"auto-bind@npm:4.0.0":
-  version: 4.0.0
-  resolution: "auto-bind@npm:4.0.0"
-  checksum: 00cad71cce5742faccb7dd65c1b55ebc4f45add4b0c9a1547b10b05bab22813230133b0c892c67ba3eb969a4524710c5e43cc45c72898ec84e56f3a596e7a04f
-  languageName: node
-  linkType: hard
-
 "autoprefixer@npm:^10.3.7, autoprefixer@npm:^10.4.7":
   version: 10.4.8
   resolution: "autoprefixer@npm:10.4.8"
@@ -4541,15 +4514,6 @@ __metadata:
   dependencies:
     follow-redirects: ^1.14.7
   checksum: 2a8a3787c05f2a0c9c3878f49782357e2a9f38945b93018fb0c4fd788171c43dceefbb577988628e09fea53952744d1ecebde234b561f1e703aa43e0a598a3ad
-  languageName: node
-  linkType: hard
-
-"axios@npm:^0.26.1":
-  version: 0.26.1
-  resolution: "axios@npm:0.26.1"
-  dependencies:
-    follow-redirects: ^1.14.8
-  checksum: d9eb58ff4bc0b36a04783fc9ff760e9245c829a5a1052ee7ca6013410d427036b1d10d04e7380c02f3508c5eaf3485b1ae67bd2adbfec3683704745c8d7a6e1a
   languageName: node
   linkType: hard
 
@@ -4679,17 +4643,6 @@ __metadata:
   checksum: 61f9934c7378a51dce61b915586191078ef7f1c3eca707fdd58b96ff2ff56d9e0af2bdab66b1462301a73c73374239e6542d9821c0af787f3209a23365d07e7f
   languageName: node
   linkType: hard
-
-"bee@workspace:content/build/bee/production/documentation":
-  version: 0.0.0-use.local
-  resolution: "bee@workspace:content/build/bee/production/documentation"
-  dependencies:
-    "@iota-community/iota-wiki-cli": "iota-community/iota-wiki-cli#v2"
-    remark-code-import: ^0.3.0
-    remark-import-partial: ^0.0.2
-    remark-remove-comments: ^0.2.0
-  languageName: unknown
-  linkType: soft
 
 "big.js@npm:^5.2.2":
   version: 5.2.2
@@ -4846,12 +4799,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"build-0dfe5b@workspace:content/build":
-  version: 0.0.0-use.local
-  resolution: "build-0dfe5b@workspace:content/build"
-  languageName: unknown
-  linkType: soft
-
 "bytes@npm:3.0.0":
   version: 3.0.0
   resolution: "bytes@npm:3.0.0"
@@ -4985,16 +4932,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"chalk@npm:^3.0.0":
-  version: 3.0.0
-  resolution: "chalk@npm:3.0.0"
-  dependencies:
-    ansi-styles: ^4.1.0
-    supports-color: ^7.1.0
-  checksum: 8e3ddf3981c4da405ddbd7d9c8d91944ddf6e33d6837756979f7840a29272a69a5189ecae0ff84006750d6d1e92368d413335eab4db5476db6e6703a1d1e0505
-  languageName: node
-  linkType: hard
-
 "chalk@npm:^4.0.0, chalk@npm:^4.1.0, chalk@npm:^4.1.2":
   version: 4.1.2
   resolution: "chalk@npm:4.1.2"
@@ -5095,16 +5032,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"chronicle@workspace:content/build/chronicle/production/documentation":
-  version: 0.0.0-use.local
-  resolution: "chronicle@workspace:content/build/chronicle/production/documentation"
-  dependencies:
-    "@iota-community/iota-wiki-cli": "iota-community/iota-wiki-cli#v2"
-    remark-code-import: ^0.3.0
-    remark-import-partial: ^0.0.2
-  languageName: unknown
-  linkType: soft
-
 "ci-info@npm:^2.0.0":
   version: 2.0.0
   resolution: "ci-info@npm:2.0.0"
@@ -5117,14 +5044,7 @@ __metadata:
   resolution: "clean-css@npm:5.3.1"
   dependencies:
     source-map: ~0.6.0
-  checksum: 860696c60503cbfec480b5f92f62729246304b55950571af7292f2687b57f86b277f2b9fefe6f64643d409008018b78383972b55c2cc859792dcc8658988fb16
-  languageName: node
-  linkType: hard
-
-"clean-git-ref@npm:^2.0.1":
-  version: 2.0.1
-  resolution: "clean-git-ref@npm:2.0.1"
-  checksum: b25f585ed47040ea5d699d40a2bb84d1f35afd651f3fcc05fb077224358ffd3d7509fc9edbfc4570f1fc732c987e03ac7d8ec31524ac503ac35c53cb1f5e3bf9
+  checksum: 29e15ef4678e1eb571546128cb7a922c5301c1bd12ee30a6e8141c72789b8130739a9a5b335435a6ee108400336a561ebd9faabe1a7d8808eb48d39cff390cd7
   languageName: node
   linkType: hard
 
@@ -5135,7 +5055,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"cli-boxes@npm:^2.2.0, cli-boxes@npm:^2.2.1":
+"cli-boxes@npm:^2.2.1":
   version: 2.2.1
   resolution: "cli-boxes@npm:2.2.1"
   checksum: be79f8ec23a558b49e01311b39a1ea01243ecee30539c880cf14bf518a12e223ef40c57ead0cb44f509bffdffc5c129c746cd50d863ab879385370112af4f585
@@ -5266,15 +5186,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"code-excerpt@npm:^3.0.0":
-  version: 3.0.0
-  resolution: "code-excerpt@npm:3.0.0"
-  dependencies:
-    convert-to-spaces: ^1.0.1
-  checksum: fa3a8ed15967076a43a4093b0c824cf0ada15d9aab12ea3c028851b72a69b56495aac1eadf18c3b6ae4baf0a95bb1e1faa9dbeeb0a2b2b5ae058da23328e9dd8
-  languageName: node
-  linkType: hard
-
 "collapse-white-space@npm:^1.0.2":
   version: 1.0.6
   resolution: "collapse-white-space@npm:1.0.6"
@@ -5392,7 +5303,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"commander@npm:^8.0.0, commander@npm:^8.3.0":
+"commander@npm:^8.3.0":
   version: 8.3.0
   resolution: "commander@npm:8.3.0"
   checksum: 0f82321821fc27b83bd409510bb9deeebcfa799ff0bf5d102128b500b7af22872c0c92cb6a0ebc5a4cf19c6b550fba9cedfa7329d18c6442a625f851377bacf0
@@ -5526,13 +5437,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"convert-to-spaces@npm:^1.0.1":
-  version: 1.0.2
-  resolution: "convert-to-spaces@npm:1.0.2"
-  checksum: e73f2ae39eb2b184f0796138eaab9c088b03b94937377d31be5b2282aef6a6ccce6b46f51bd99b3b7dfc70f516e2a6b16c0dd911883bfadf8d1073f462480224
-  languageName: node
-  linkType: hard
-
 "cookie-signature@npm:1.0.6":
   version: 1.0.6
   resolution: "cookie-signature@npm:1.0.6"
@@ -5627,15 +5531,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"crc-32@npm:^1.2.0":
-  version: 1.2.2
-  resolution: "crc-32@npm:1.2.2"
-  bin:
-    crc32: bin/crc32.njs
-  checksum: ad2d0ad0cbd465b75dcaeeff0600f8195b686816ab5f3ba4c6e052a07f728c3e70df2e3ca9fd3d4484dc4ba70586e161ca5a2334ec8bf5a41bf022a6103ff243
-  languageName: node
-  linkType: hard
-
 "cross-fetch@npm:^3.1.5":
   version: 3.1.5
   resolution: "cross-fetch@npm:3.1.5"
@@ -5645,7 +5540,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"cross-spawn@npm:7.0.3, cross-spawn@npm:^7.0.2, cross-spawn@npm:^7.0.3":
+"cross-spawn@npm:^7.0.2, cross-spawn@npm:^7.0.3":
   version: 7.0.3
   resolution: "cross-spawn@npm:7.0.3"
   dependencies:
@@ -6082,13 +5977,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"diff3@npm:0.0.3":
-  version: 0.0.3
-  resolution: "diff3@npm:0.0.3"
-  checksum: 28d883f1057b9873dfcb38cd2750337e6b32bf184bb1c0fb3292efeb83c597f1ce9b8f508bdd0d623a58b9ca1c917b1f297b90cb7fce3a62b26b0dde496f70e6
-  languageName: node
-  linkType: hard
-
 "dir-glob@npm:^3.0.1":
   version: 3.0.1
   resolution: "dir-glob@npm:3.0.1"
@@ -6510,13 +6398,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"escape-string-regexp@npm:^2.0.0":
-  version: 2.0.0
-  resolution: "escape-string-regexp@npm:2.0.0"
-  checksum: 9f8a2d5743677c16e85c810e3024d54f0c8dea6424fad3c79ef6666e81dd0846f7437f5e729dfcdac8981bc9e5294c39b4580814d114076b8d36318f46ae4395
-  languageName: node
-  linkType: hard
-
 "escape-string-regexp@npm:^4.0.0":
   version: 4.0.0
   resolution: "escape-string-regexp@npm:4.0.0"
@@ -6863,7 +6744,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fast-glob@npm:^3.2.11, fast-glob@npm:^3.2.2, fast-glob@npm:^3.2.9":
+"fast-glob@npm:^3.2.11, fast-glob@npm:^3.2.9":
   version: 3.2.11
   resolution: "fast-glob@npm:3.2.11"
   dependencies:
@@ -6954,24 +6835,6 @@ __metadata:
   dependencies:
     xml-js: ^1.6.11
   checksum: 2e6992a675a049511eef7bda8ca6c08cb9540cd10e8b275ec4c95d166228ec445a335fa8de990358759f248a92861e51decdcd32bf1c54737d5b7aed7c7ffe97
-  languageName: node
-  linkType: hard
-
-"figures@npm:^2.0.0":
-  version: 2.0.0
-  resolution: "figures@npm:2.0.0"
-  dependencies:
-    escape-string-regexp: ^1.0.5
-  checksum: 081beb16ea57d1716f8447c694f637668322398b57017b20929376aaf5def9823b35245b734cdd87e4832dc96e9c6f46274833cada77bfe15e5f980fea1fd21f
-  languageName: node
-  linkType: hard
-
-"figures@npm:^3.2.0":
-  version: 3.2.0
-  resolution: "figures@npm:3.2.0"
-  dependencies:
-    escape-string-regexp: ^1.0.5
-  checksum: 85a6ad29e9aca80b49b817e7c89ecc4716ff14e3779d9835af554db91bac41c0f289c418923519392a1e582b4d10482ad282021330cd045bb7b80c84152f2a2b
   languageName: node
   linkType: hard
 
@@ -7103,7 +6966,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"follow-redirects@npm:^1.0.0, follow-redirects@npm:^1.14.7, follow-redirects@npm:^1.14.8":
+"follow-redirects@npm:^1.0.0, follow-redirects@npm:^1.14.7":
   version: 1.15.1
   resolution: "follow-redirects@npm:1.15.1"
   peerDependenciesMeta:
@@ -7484,14 +7347,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"goshimmer@workspace:content/build/goshimmer/develop/documentation":
-  version: 0.0.0-use.local
-  resolution: "goshimmer@workspace:content/build/goshimmer/develop/documentation"
-  dependencies:
-    "@iota-community/iota-wiki-cli": "iota-community/iota-wiki-cli#v2"
-  languageName: unknown
-  linkType: soft
-
 "got@npm:^9.6.0":
   version: 9.6.0
   resolution: "got@npm:9.6.0"
@@ -7752,22 +7607,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"hornet-develop@workspace:content/build/hornet/develop/documentation":
-  version: 0.0.0-use.local
-  resolution: "hornet-develop@workspace:content/build/hornet/develop/documentation"
-  dependencies:
-    "@iota-community/iota-wiki-cli": "iota-community/iota-wiki-cli#v2"
-  languageName: unknown
-  linkType: soft
-
-"hornet@workspace:content/build/hornet/production/documentation":
-  version: 0.0.0-use.local
-  resolution: "hornet@workspace:content/build/hornet/production/documentation"
-  dependencies:
-    "@iota-community/iota-wiki-cli": "iota-community/iota-wiki-cli#v2"
-  languageName: unknown
-  linkType: soft
-
 "hpack.js@npm:^2.1.6":
   version: 2.1.6
   resolution: "hpack.js@npm:2.1.6"
@@ -8019,42 +7858,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"identity-0.5@workspace:content/build/identity.rs/v0.5.0/documentation":
-  version: 0.0.0-use.local
-  resolution: "identity-0.5@workspace:content/build/identity.rs/v0.5.0/documentation"
-  dependencies:
-    "@iota-community/iota-wiki-cli": "iota-community/iota-wiki-cli#v2"
-    raw-loader: ^4.0.2
-    remark-code-import: ^0.3.0
-    remark-import-partial: ^0.0.2
-    remark-remove-comments: ^0.2.0
-  languageName: unknown
-  linkType: soft
-
-"identity-0.6@workspace:content/build/identity.rs/v0.6.0/documentation":
-  version: 0.0.0-use.local
-  resolution: "identity-0.6@workspace:content/build/identity.rs/v0.6.0/documentation"
-  dependencies:
-    "@iota-community/iota-wiki-cli": "iota-community/iota-wiki-cli#v2"
-    raw-loader: ^4.0.2
-    remark-code-import: ^0.3.0
-    remark-import-partial: ^0.0.2
-    remark-remove-comments: ^0.2.0
-  languageName: unknown
-  linkType: soft
-
-"identity-develop@workspace:content/build/identity.rs/develop/documentation":
-  version: 0.0.0-use.local
-  resolution: "identity-develop@workspace:content/build/identity.rs/develop/documentation"
-  dependencies:
-    "@iota-community/iota-wiki-cli": "iota-community/iota-wiki-cli#v2"
-    raw-loader: ^4.0.2
-    remark-code-import: ^0.3.0
-    remark-import-partial: ^0.0.2
-    remark-remove-comments: ^0.2.0
-  languageName: unknown
-  linkType: soft
-
 "ieee754@npm:^1.1.13":
   version: 1.2.1
   resolution: "ieee754@npm:1.2.1"
@@ -8062,7 +7865,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ignore@npm:^5.1.4, ignore@npm:^5.2.0":
+"ignore@npm:^5.2.0":
   version: 5.2.0
   resolution: "ignore@npm:5.2.0"
   checksum: 6b1f926792d614f64c6c83da3a1f9c83f6196c2839aa41e1e32dd7b8d174cef2e329d75caabb62cb61ce9dc432f75e67d07d122a037312db7caa73166a1bdb77
@@ -8170,108 +7973,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ink-multi-select@npm:^2.0.0":
-  version: 2.0.0
-  resolution: "ink-multi-select@npm:2.0.0"
-  dependencies:
-    arr-rotate: ^1.0.0
-    figures: ^2.0.0
-    lodash.isequal: ^4.5.0
-    prop-types: ^15.5.10
-  checksum: c28804980f7a6b1f7b86c02a264a5d10c0f9bc21090b8b2608c7e2a488b29e229327fc166d2e5e8898b131aa3cd1f40bc4e3e04e7774bd1824f898655b88356a
-  languageName: node
-  linkType: hard
-
-"ink-select-input@npm:^4.2.1":
-  version: 4.2.1
-  resolution: "ink-select-input@npm:4.2.1"
-  dependencies:
-    arr-rotate: ^1.0.0
-    figures: ^3.2.0
-    lodash.isequal: ^4.5.0
-  peerDependencies:
-    ink: ^3.0.5
-    react: ^16.5.2 || ^17.0.0
-  checksum: f01546aec03f20cb077db8809457f494fd4bf69c9af0cd4eec939b380472e61a625676d720934278cab5c9930febe36048935d700c45d9a6ca908f8449b6ad8c
-  languageName: node
-  linkType: hard
-
-"ink-spinner@npm:^4.0.3":
-  version: 4.0.3
-  resolution: "ink-spinner@npm:4.0.3"
-  dependencies:
-    cli-spinners: ^2.3.0
-  peerDependencies:
-    ink: ">=3.0.5"
-    react: ">=16.8.2"
-  checksum: d3785d688dd1ba19fb7a850b7a2c1dd8b2d06e4c77e6a7cc6c5bbd366a5a721e9ea45d036447016a9028f7519994077ce603a60a43a495e17b7b443b8a513ddc
-  languageName: node
-  linkType: hard
-
-"ink-text-input@npm:^4.0.3":
-  version: 4.0.3
-  resolution: "ink-text-input@npm:4.0.3"
-  dependencies:
-    chalk: ^4.1.0
-    type-fest: ^0.15.1
-  peerDependencies:
-    ink: ^3.0.0-3
-    react: ^16.5.2 || ^17.0.0
-  checksum: 2d309ec8ca386010d467822e317389e3c60b764fd04091df063a45c31f43104fd9f4a4e71a928a2c3c3cca461a9b8a526e90439616760f0f3726507132abbac5
-  languageName: node
-  linkType: hard
-
-"ink@npm:^3.2.0":
-  version: 3.2.0
-  resolution: "ink@npm:3.2.0"
-  dependencies:
-    ansi-escapes: ^4.2.1
-    auto-bind: 4.0.0
-    chalk: ^4.1.0
-    cli-boxes: ^2.2.0
-    cli-cursor: ^3.1.0
-    cli-truncate: ^2.1.0
-    code-excerpt: ^3.0.0
-    indent-string: ^4.0.0
-    is-ci: ^2.0.0
-    lodash: ^4.17.20
-    patch-console: ^1.0.0
-    react-devtools-core: ^4.19.1
-    react-reconciler: ^0.26.2
-    scheduler: ^0.20.2
-    signal-exit: ^3.0.2
-    slice-ansi: ^3.0.0
-    stack-utils: ^2.0.2
-    string-width: ^4.2.2
-    type-fest: ^0.12.0
-    widest-line: ^3.1.0
-    wrap-ansi: ^6.2.0
-    ws: ^7.5.5
-    yoga-layout-prebuilt: ^1.9.6
-  peerDependencies:
-    "@types/react": ">=16.8.0"
-    react: ">=16.8.0"
-  peerDependenciesMeta:
-    "@types/react":
-      optional: true
-  checksum: 35f1b733b94bf12cc0bf7acb4d3fcba9d961ede15cee9c64a7325606b74cee78e1009eaffbac127f4d7d28e758d8259dea8d0850bfacb991b8d93632f41d3fa2
-  languageName: node
-  linkType: hard
-
 "inline-style-parser@npm:0.1.1":
   version: 0.1.1
   resolution: "inline-style-parser@npm:0.1.1"
   checksum: 5d545056a3e1f2bf864c928a886a0e1656a3517127d36917b973de581bd54adc91b4bf1febcb0da054f204b4934763f1a4e09308b4d55002327cf1d48ac5d966
   languageName: node
   linkType: hard
-
-"integration-services@workspace:content/build/integration-services/production/documentation":
-  version: 0.0.0-use.local
-  resolution: "integration-services@workspace:content/build/integration-services/production/documentation"
-  dependencies:
-    "@iota-community/iota-wiki-cli": "iota-community/iota-wiki-cli#v2"
-  languageName: unknown
-  linkType: soft
 
 "internal-slot@npm:^1.0.3":
   version: 1.0.3
@@ -8966,7 +8673,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"js-yaml@npm:^3.10.0, js-yaml@npm:^3.13.1":
+"js-yaml@npm:^3.13.1":
   version: 3.14.1
   resolution: "js-yaml@npm:3.14.1"
   dependencies:
@@ -9082,17 +8789,6 @@ __metadata:
   bin:
     katex: cli.js
   checksum: f424c90b2b43034163cee37dd75f7c1f93206580cbaea07703a322010b615c32249d4648974d58f7345ad113431a43c2e8ae2118aed3a06fe37ad46dfdcf6d10
-  languageName: node
-  linkType: hard
-
-"katex@npm:^0.13.0":
-  version: 0.13.24
-  resolution: "katex@npm:0.13.24"
-  dependencies:
-    commander: ^8.0.0
-  bin:
-    katex: cli.js
-  checksum: 1b7c8295867073d0db4f6fb41ef1c0e3418b8e23924ff61b446b36134cb74cdadc7242dfbfb922d9c32f0b15eda6160a08cd30948c4e78141966ca2991a1726b
   languageName: node
   linkType: hard
 
@@ -9295,13 +8991,6 @@ __metadata:
   version: 3.5.0
   resolution: "lodash.flow@npm:3.5.0"
   checksum: a9a62ad344e3c5a1f42bc121da20f64dd855aaafecee24b1db640f29b88bd165d81c37ff7e380a7191de6f70b26f5918abcebbee8396624f78f3618a0b18634c
-  languageName: node
-  linkType: hard
-
-"lodash.isequal@npm:^4.5.0":
-  version: 4.5.0
-  resolution: "lodash.isequal@npm:4.5.0"
-  checksum: da27515dc5230eb1140ba65ff8de3613649620e8656b19a6270afe4866b7bd461d9ba2ac8a48dcc57f7adac4ee80e1de9f965d89d4d81a0ad52bb3eec2609644
   languageName: node
   linkType: hard
 
@@ -9696,15 +9385,6 @@ __metadata:
   version: 1.2.6
   resolution: "minimist@npm:1.2.6"
   checksum: d15428cd1e11eb14e1233bcfb88ae07ed7a147de251441d61158619dfb32c4d7e9061d09cab4825fdee18ecd6fce323228c8c47b5ba7cd20af378ca4048fb3fb
-  languageName: node
-  linkType: hard
-
-"minimisted@npm:^2.0.0":
-  version: 2.0.1
-  resolution: "minimisted@npm:2.0.1"
-  dependencies:
-    minimist: ^1.2.5
-  checksum: 6bc3df14558481c96764cfd6bf77a59f5838dec715c38c1e338193c1e56f536ba792ccbae84ff6632d13a7dd37ac888141c091d23733229b8d100148eec930aa
   languageName: node
   linkType: hard
 
@@ -10323,13 +10003,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"pako@npm:^1.0.10":
-  version: 1.0.11
-  resolution: "pako@npm:1.0.11"
-  checksum: 1be2bfa1f807608c7538afa15d6f25baa523c30ec870a3228a89579e474a4d992f4293859524e46d5d87fd30fa17c5edf34dbef0671251d9749820b488660b16
-  languageName: node
-  linkType: hard
-
 "param-case@npm:^3.0.4":
   version: 3.0.4
   resolution: "param-case@npm:3.0.4"
@@ -10434,13 +10107,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"patch-console@npm:^1.0.0":
-  version: 1.0.0
-  resolution: "patch-console@npm:1.0.0"
-  checksum: 8cd738aa470f2e9463fca35da6a19403384ac555004f698ddd3dfdb69135ab60fe9bd2edd1dbdd8c09d92c0a2190fd0f7337fe48123013baf8ffec8532885a3a
-  languageName: node
-  linkType: hard
-
 "path-exists@npm:^3.0.0":
   version: 3.0.0
   resolution: "path-exists@npm:3.0.0"
@@ -10540,13 +10206,6 @@ __metadata:
   bin:
     pidtree: bin/pidtree.js
   checksum: 8fbc073ede9209dd15e80d616e65eb674986c93be49f42d9ddde8dbbd141bb53d628a7ca4e58ab5c370bb00383f67d75df59a9a226dede8fa801267a7030c27a
-  languageName: node
-  linkType: hard
-
-"pify@npm:^4.0.1":
-  version: 4.0.1
-  resolution: "pify@npm:4.0.1"
-  checksum: 9c4e34278cb09987685fa5ef81499c82546c033713518f6441778fbec623fc708777fe8ac633097c72d88470d5963094076c7305cafc7ad340aae27cfacd856b
   languageName: node
   linkType: hard
 
@@ -11058,15 +10717,6 @@ plugin-image-zoom@flexanalytics/plugin-image-zoom:
   languageName: node
   linkType: hard
 
-"prettier@npm:2.6.0":
-  version: 2.6.0
-  resolution: "prettier@npm:2.6.0"
-  bin:
-    prettier: bin-prettier.js
-  checksum: 3e527ad62279676778a8404d18174d7ca2365ada4caba6eebbcdd9907d1187afd3bc6ade5b4e5f5d4549bb9fb71e45ca8930d71500017635524f8fc05bc52e93
-  languageName: node
-  linkType: hard
-
 "prettier@npm:^2.4.1":
   version: 2.7.1
   resolution: "prettier@npm:2.7.1"
@@ -11152,7 +10802,7 @@ plugin-image-zoom@flexanalytics/plugin-image-zoom:
   languageName: node
   linkType: hard
 
-"prop-types@npm:^15.0.0, prop-types@npm:^15.5.10, prop-types@npm:^15.6.0, prop-types@npm:^15.6.2, prop-types@npm:^15.7.2, prop-types@npm:^15.8.1":
+"prop-types@npm:^15.0.0, prop-types@npm:^15.6.0, prop-types@npm:^15.6.2, prop-types@npm:^15.7.2, prop-types@npm:^15.8.1":
   version: 15.8.1
   resolution: "prop-types@npm:15.8.1"
   dependencies:
@@ -11508,19 +11158,6 @@ plugin-image-zoom@flexanalytics/plugin-image-zoom:
   languageName: node
   linkType: hard
 
-"react-reconciler@npm:^0.26.2":
-  version: 0.26.2
-  resolution: "react-reconciler@npm:0.26.2"
-  dependencies:
-    loose-envify: ^1.1.0
-    object-assign: ^4.1.1
-    scheduler: ^0.20.2
-  peerDependencies:
-    react: ^17.0.2
-  checksum: 2ebceace56f547f51eaf142becefef9cca980eae4f42d90ee5a966f54a375f5082d78b71b00c40bbd9bca69e0e0f698c7d4e81cc7373437caa19831fddc1d01b
-  languageName: node
-  linkType: hard
-
 "react-router-config@npm:^5.1.1":
   version: 5.1.1
   resolution: "react-router-config@npm:5.1.1"
@@ -11814,20 +11451,6 @@ plugin-image-zoom@flexanalytics/plugin-image-zoom:
   languageName: node
   linkType: hard
 
-"rehype-katex@npm:5":
-  version: 5.0.0
-  resolution: "rehype-katex@npm:5.0.0"
-  dependencies:
-    "@types/katex": ^0.11.0
-    hast-util-to-text: ^2.0.0
-    katex: ^0.13.0
-    rehype-parse: ^7.0.0
-    unified: ^9.0.0
-    unist-util-visit: ^2.0.0
-  checksum: b20e24c5326a718581619761057a30d03615519eccd0693ada2c7c710064dceaf08f038ae3a1131550f1f7c47ca54a254ba8e45547da384867e956ceca73f6bf
-  languageName: node
-  linkType: hard
-
 "rehype-parse@npm:^7.0.0":
   version: 7.0.1
   resolution: "rehype-parse@npm:7.0.1"
@@ -11882,7 +11505,7 @@ plugin-image-zoom@flexanalytics/plugin-image-zoom:
   languageName: node
   linkType: hard
 
-"remark-math@npm:3, remark-math@npm:^3.0.1":
+"remark-math@npm:^3.0.1":
   version: 3.0.1
   resolution: "remark-math@npm:3.0.1"
   checksum: 690256f27f2b42dadcf41806fec443056e09592454622ae77f03b1a8474e8c83cc7610e694be7e17de92c96cc272c61209e59a6e7a24e3af6ede47d48b185ccd
@@ -12420,18 +12043,6 @@ plugin-image-zoom@flexanalytics/plugin-image-zoom:
   languageName: node
   linkType: hard
 
-"sha.js@npm:^2.4.9":
-  version: 2.4.11
-  resolution: "sha.js@npm:2.4.11"
-  dependencies:
-    inherits: ^2.0.1
-    safe-buffer: ^5.0.1
-  bin:
-    sha.js: ./bin.js
-  checksum: ebd3f59d4b799000699097dadb831c8e3da3eb579144fd7eb7a19484cbcbb7aca3c68ba2bb362242eb09e33217de3b4ea56e4678184c334323eca24a58e3ad07
-  languageName: node
-  linkType: hard
-
 "shallow-clone@npm:^3.0.0":
   version: 3.0.1
   resolution: "shallow-clone@npm:3.0.1"
@@ -12481,7 +12092,7 @@ plugin-image-zoom@flexanalytics/plugin-image-zoom:
   languageName: node
   linkType: hard
 
-"shell-quote@npm:^1.6.1, shell-quote@npm:^1.7.3":
+"shell-quote@npm:^1.7.3":
   version: 1.7.3
   resolution: "shell-quote@npm:1.7.3"
   checksum: aca58e73a3a5d933d02e0bdddedc53ee14f7c2ec264f97ac915b9d4482d077a38e422aa664631d60a672cd3cdb4054eb2e6c0303f54882453dacb6483e482d34
@@ -12758,15 +12369,6 @@ plugin-image-zoom@flexanalytics/plugin-image-zoom:
   languageName: node
   linkType: hard
 
-"stack-utils@npm:^2.0.2":
-  version: 2.0.5
-  resolution: "stack-utils@npm:2.0.5"
-  dependencies:
-    escape-string-regexp: ^2.0.0
-  checksum: 76b69da0f5b48a34a0f93c98ee2a96544d2c4ca2557f7eef5ddb961d3bdc33870b46f498a84a7c4f4ffb781df639840e7ebf6639164ed4da5e1aeb659615b9c7
-  languageName: node
-  linkType: hard
-
 "state-toggle@npm:^1.0.0":
   version: 1.0.3
   resolution: "state-toggle@npm:1.0.3"
@@ -12789,9 +12391,9 @@ plugin-image-zoom@flexanalytics/plugin-image-zoom:
   linkType: hard
 
 "std-env@npm:^3.0.1":
-  version: 3.2.1
-  resolution: "std-env@npm:3.2.1"
-  checksum: c046af2573ba6e02c9ffcfd5a2c3f94f160404915941be177b93d6d1695078e487293fed6ab4fa95680e75a331eccf0f6dbe0b86babda15056c594e600a99dc4
+  version: 3.1.1
+  resolution: "std-env@npm:3.1.1"
+  checksum: 7c8b34e9b81ec0da3c63c96414dafd5c4ef6cfb5914f2cf8727314f9f3532eb0325cfbbfe5a04a43c2aa6ab5960571581a89db2c4f26e73a5c954eb1fe5aa68b
   languageName: node
   linkType: hard
 
@@ -12958,18 +12560,6 @@ plugin-image-zoom@flexanalytics/plugin-image-zoom:
   checksum: 1074ccb63270d32ca28edfb0a281c96b94dc679077828135141f27d52a5a398ef5e78bcf22809d23cadc2b81dfbe345eb5fd8699b385c8b1128907dec4a7d1e1
   languageName: node
   linkType: hard
-
-"stronghold@workspace:content/build/stronghold.rs/develop/documentation":
-  version: 0.0.0-use.local
-  resolution: "stronghold@workspace:content/build/stronghold.rs/develop/documentation"
-  dependencies:
-    "@iota-community/iota-wiki-cli": "iota-community/iota-wiki-cli#v2"
-    raw-loader: ^4.0.2
-    remark-code-import: ^0.3.0
-    remark-import-partial: ^0.0.2
-    remark-remove-comments: ^0.2.0
-  languageName: unknown
-  linkType: soft
 
 "style-to-object@npm:0.3.0, style-to-object@npm:^0.3.0":
   version: 0.3.0
@@ -13288,7 +12878,7 @@ plugin-image-zoom@flexanalytics/plugin-image-zoom:
   languageName: node
   linkType: hard
 
-"tslib@npm:^1.13.0, tslib@npm:^1.8.1":
+"tslib@npm:^1.8.1":
   version: 1.14.1
   resolution: "tslib@npm:1.14.1"
   checksum: dbe628ef87f66691d5d2959b3e41b9ca0045c3ee3c7c7b906cc1e328b39f199bb1ad9e671c39025bd56122ac57dfbf7385a94843b1cc07c60a4db74795829acd
@@ -13341,20 +12931,6 @@ plugin-image-zoom@flexanalytics/plugin-image-zoom:
   dependencies:
     prelude-ls: ^1.2.1
   checksum: ec688ebfc9c45d0c30412e41ca9c0cdbd704580eb3a9ccf07b9b576094d7b86a012baebc95681999dd38f4f444afd28504cb3a89f2ef16b31d4ab61a0739025a
-  languageName: node
-  linkType: hard
-
-"type-fest@npm:^0.12.0":
-  version: 0.12.0
-  resolution: "type-fest@npm:0.12.0"
-  checksum: 407d6c1a6fcc907f6124c37e977ba4966205014787a32a27579da6e47c3b1bd210b68cc1c7764d904c8aa55fb4efa6945586f9b4fae742c63ed026a4559da07d
-  languageName: node
-  linkType: hard
-
-"type-fest@npm:^0.15.1":
-  version: 0.15.1
-  resolution: "type-fest@npm:0.15.1"
-  checksum: a1a0cdbd7f802d9784324f185df055739e97424ecb60914e9025574a4bc07e4a063c152e4510ebf5989de8a263220de1f6b5cf1b05f0b333dbd5b21d9b4a271b
   languageName: node
   linkType: hard
 
@@ -13863,28 +13439,6 @@ plugin-image-zoom@flexanalytics/plugin-image-zoom:
   languageName: node
   linkType: hard
 
-"wallet-rs-develop@workspace:content/build/wallet.rs/develop/documentation":
-  version: 0.0.0-use.local
-  resolution: "wallet-rs-develop@workspace:content/build/wallet.rs/develop/documentation"
-  dependencies:
-    iota-wiki-cli: "iota-community/iota-wiki-cli#v2"
-    raw-loader: ^4.0.2
-    remark-code-import: ^0.3.0
-    remark-import-partial: ^0.0.2
-  languageName: unknown
-  linkType: soft
-
-"wallet-rs@workspace:content/build/wallet.rs/production/documentation":
-  version: 0.0.0-use.local
-  resolution: "wallet-rs@workspace:content/build/wallet.rs/production/documentation"
-  dependencies:
-    "@iota-community/iota-wiki-cli": "iota-community/iota-wiki-cli#v2"
-    raw-loader: ^4.0.2
-    remark-code-import: ^0.3.0
-    remark-import-partial: ^0.0.2
-  languageName: unknown
-  linkType: soft
-
 "warning@npm:^4.0.2":
   version: 4.0.3
   resolution: "warning@npm:4.0.3"
@@ -13893,28 +13447,6 @@ plugin-image-zoom@flexanalytics/plugin-image-zoom:
   checksum: 4f2cb6a9575e4faf71ddad9ad1ae7a00d0a75d24521c193fa464f30e6b04027bd97aa5d9546b0e13d3a150ab402eda216d59c1d0f2d6ca60124d96cd40dfa35c
   languageName: node
   linkType: hard
-
-"wasp-develop@workspace:content/build/wasp/develop/documentation":
-  version: 0.0.0-use.local
-  resolution: "wasp-develop@workspace:content/build/wasp/develop/documentation"
-  dependencies:
-    "@iota-community/iota-wiki-cli": "iota-community/iota-wiki-cli#v2"
-    remark-code-import: ^0.3.0
-    remark-import-partial: ^0.0.2
-    remark-remove-comments: ^0.2.0
-  languageName: unknown
-  linkType: soft
-
-"wasp@workspace:content/build/wasp/production/documentation":
-  version: 0.0.0-use.local
-  resolution: "wasp@workspace:content/build/wasp/production/documentation"
-  dependencies:
-    "@iota-community/iota-wiki-cli": "iota-community/iota-wiki-cli#v2"
-    remark-code-import: ^0.3.0
-    remark-import-partial: ^0.0.2
-    remark-remove-comments: ^0.2.0
-  languageName: unknown
-  linkType: soft
 
 "watchpack@npm:^2.4.0":
   version: 2.4.0
@@ -14333,23 +13865,6 @@ plugin-image-zoom@flexanalytics/plugin-image-zoom:
   checksum: f77b3d8d00310def622123df93d4ee654fc6a0096182af8bd60679ddcdfb3474c56c6c7190817c84a2785648cdee9d721c0154eb45698c62176c322fb46fc700
   languageName: node
   linkType: hard
-
-"yoga-layout-prebuilt@npm:^1.9.6":
-  version: 1.10.0
-  resolution: "yoga-layout-prebuilt@npm:1.10.0"
-  dependencies:
-    "@types/yoga-layout": 1.9.2
-  checksum: 6954c7c7b04c585a1c974391bea4734611adb85702b5e9131549a1d3dc5b94e69bcfea34121cdaeb5e702663bf290fcce5374910128e54d1031503a57c062865
-  languageName: node
-  linkType: hard
-
-"zebra-tutorials@workspace:content/build/zebra-iota-edge-sdk/production/documentation":
-  version: 0.0.0-use.local
-  resolution: "zebra-tutorials@workspace:content/build/zebra-iota-edge-sdk/production/documentation"
-  dependencies:
-    "@iota-community/iota-wiki-cli": "iota-community/iota-wiki-cli#v2"
-  languageName: unknown
-  linkType: soft
 
 "zwitch@npm:^1.0.0":
   version: 1.0.5
