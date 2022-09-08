@@ -8,6 +8,7 @@ module.exports = {
             {
                 id: 'single-page-tutorials',
                 path: __dirname,
+                routeBasePath: '/tutorials',
                 include: ['**.{md, mdx}'],
             },
         ],
@@ -18,7 +19,7 @@ module.exports = {
                 description:
                     'In this tutorial you will learn how to send IOTA Tokens in the Devnet.',
                 preview: 'send-iota-tokens-with-javascript.png',
-                route: 'send-iota-tokens-with-javascript',
+                route: 'tutorials/send-iota-tokens-with-javascript',
                 tags: ['text', 'getting-started', 'client', 'js', 'mainnet'],
             },
         ],
@@ -109,7 +110,7 @@ module.exports = {
                 description:
                     'In this tutorial you will learn how to send Shimmer Tokens with wallet.rs.',
                 preview: 'send-shimmer-tokens-with-wallet-lib.png',
-                route: 'send-shimmer-tokens-with-wallet-lib',
+                route: 'tutorials/send-shimmer-tokens-with-wallet-lib',
                 tags: ['text', 'wallet', 'getting-started', 'rust', 'testnet'],
             },
         ],
@@ -120,7 +121,7 @@ module.exports = {
                 description:
                     'In this tutorial you will learn how to interact with the IOTA Node Extension (INX) interface based on gRPC.',
                 preview: 'hornet-inx-interaction.png',
-                route: 'hornet-inx-interaction',
+                route: 'tutorials/hornet-inx-interaction',
                 tags: ['text', 'getting-started', 'testnet', 'js'],
             },
         ],
@@ -131,7 +132,7 @@ module.exports = {
                 description:
                     'Proove that a block was part of the past Tangle, even if this part of the Tangle was already pruned from network nodes.',
                 preview: 'proof-inclusion-of-a-block.png',
-                route: 'proof-inclusion-of-a-block',
+                route: 'tutorials/proof-inclusion-of-a-block',
                 tags: ['text', 'getting-started', 'js', 'client'],
             },
         ],
@@ -142,7 +143,7 @@ module.exports = {
                 description:
                     'In this tutorial you will learn how to create a seed and address with wallet.rs and receive testnet tokens from the faucet.',
                 preview: 'wallet-setup.png',
-                route: 'wallet-setup',
+                route: 'tutorials/wallet-setup',
                 tags: ['text', 'getting-started', 'node_js', 'wallet', 'testnet', 'shimmer'],
             },
         ],
@@ -153,7 +154,7 @@ module.exports = {
                 description:
                     'In this tutorial you will learn how to create a new project, generate a new address and receive testnet funds from the faucet.',
                 preview: 'setup_iota-js_for_development.png',
-                route: 'setup_iota-js_for_development',
+                route: 'tutorials/setup_iota-js_for_development',
                 tags: ['text', 'getting-started', 'client', 'testnet', 'js'],
             },
         ],
@@ -164,7 +165,7 @@ module.exports = {
                 description:
                     'In this tutorial you will learn how to create a NFT on the Shimmer network with wallet.rs and IPFS.',
                 preview: 'create-nft-with-wallet-lib.png',
-                route: 'create-nft-with-wallet-lib',
+                route: 'tutorials/create-nft-with-wallet-lib',
                 tags: ['text', 'getting-started', 'node_js', 'wallet', 'ipfs', 'shimmer'],
             },
         ],
