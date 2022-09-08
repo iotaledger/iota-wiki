@@ -24,16 +24,6 @@ module.exports = {
     },
     {
       type: 'category',
-      label: 'Media Library',
-      collapsed: true,
-      items: [
-        'media-library/infographics',
-        'media-library/project-presentations',
-        'media-library/videos',
-      ],
-    },
-    {
-      type: 'category',
       label: 'Future of IOTA',
       collapsed: true,
       items: [
@@ -62,10 +52,5 @@ module.exports = {
     },
     'glossary',
     'faqs',
-    {
-      type: 'link',
-      label: 'Partnerships',
-      href: 'https://www.iota.org/solutions/partnerships',
-    },
   ],
 };
