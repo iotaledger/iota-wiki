@@ -168,6 +168,17 @@ module.exports = {
                 tags: ['text', 'getting-started', 'node_js', 'wallet', 'ipfs', 'shimmer'],
             },
         ],
+        [
+            '@iota-wiki/plugin-tutorial',
+            {
+                title: 'Send Shimmer Tokens with Javascript (client lib)',
+                description:
+                    'In this tutorial you will learn how to send Shimmer Tokens in the testnet.',
+                preview: 'send-shimmer-tokens-with-javascript.png',
+                route: 'send-shimmer-tokens-with-javascript',
+                tags: ['text', 'shimmer', 'javascript', 'client', 'getting-started', 'iota.rs (js binding)', 'testnet'],
+            },
+        ],
     ],
     staticDirectories: [path.resolve(__dirname, './images')],
 };
