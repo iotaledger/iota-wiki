@@ -95,13 +95,18 @@ module.exports = {
           '^/stronghold.rs/.*|' +
           '^/hornet/.*|' +
           '^/bee/.*|' +
-          '^/chronicle/.*|' +
+          '^/chronicle.rs/.*|' +
+          '^/introduction/.*|' +
+          '^/inx-*|' +
           '^/tutorials*',
         },
         {
           label: 'Community',
           to: '/community/the-community/discord',
-          activeBaseRegex: '^/community/.*',
+          activeBaseRegex: 
+          '^/community/.*|' +
+          '^/IOTA-2.0-Research-Specifications/.*|' +
+          '^/goshimmer/.*',
         },
       ],
     },
