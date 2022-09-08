@@ -111,6 +111,100 @@ module.exports = {
       ],
     },
     footer: {
+      links: [
+        {
+          title: 'Use',
+          items: [
+            {
+              label: 'Wallets',
+              to: 'wallets/what-is-a-wallet'
+            },
+          ],
+        },
+        {
+          title: 'About',
+          items: [
+            {
+              label: 'How It Works',
+              to: 'about-iota/an-introduction-to-iota',
+            },
+            {
+              label: 'IOTA Token',
+              to: 'iota-token/buying-iota',
+            },
+            {
+              label: 'Media Library',
+              to: 'media-library/infographics',
+            },
+            {
+              label: 'Future of IOTA',
+              to: 'future/future-of-iota',
+            },
+            {
+              label: 'Use Cases',
+              to: 'use-cases/data-confidence',
+            },
+            {
+              label: 'Glossary',
+              to: 'glossary',
+            },
+            {
+              label: 'FAQs',
+              to: 'faqs',
+            },
+            {
+              label: 'Partnerships',
+              href: 'https://www.iota.org/solutions/partnerships',
+            },
+          ],
+        },
+        {
+          title: 'Develop',
+          items: [
+            {
+              label: 'Smart Contracts',
+              href: '/smart-contracts/overview',
+            },
+            {
+              label: 'Nodes',
+              to: 'nodes/about-nodes',
+            },
+            {
+              label: 'Wasp',
+              href: '/smart-contracts/guide/chains_and_nodes/running-a-node',
+            },
+            {
+              label: 'Chronicle',
+              href: '/chronicle.rs/welcome',   
+            },
+            {
+              label: 'Tutorials',
+              href: '/tutorials',
+            },
+          ],
+        },
+        {
+          title: 'Community',
+          items: [
+            {
+              label: 'Funding',
+              to: 'funding/edf-funding',
+            },
+            {
+              label: 'The Community',
+              to: 'the-community/how-to-support',
+            },
+            {
+              label: 'Research',
+              to: 'research/research-outline',
+            },
+            {
+              label: 'Contribute To Wiki',
+              to: 'contribute-to-wiki/welcome',
+            },
+          ],
+        },
+      ],
       logo: {
         alt: 'IOTA Logo',
         src: 'img/footer_logo.svg',
