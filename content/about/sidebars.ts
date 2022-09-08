@@ -60,20 +60,6 @@ module.exports = {
         'future/nfts',
       ],
     },
-    {
-      type: 'category',
-      label: 'Use Cases',
-      collapsed: true,
-      items: [
-        'use-cases/data-confidence',
-        'use-cases/eco-social-projects',
-        'use-cases/healthcare',
-        'use-cases/industry-applications',
-        'use-cases/mobility',
-        'use-cases/real-estate',
-        'use-cases/trade-and-supply-chain',
-      ],
-    },
     'glossary',
     'faqs',
     {
