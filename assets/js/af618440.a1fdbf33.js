@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkiota_wiki=self.webpackChunkiota_wiki||[]).push([[14137],{93230:e=>{e.exports=JSON.parse('{"name":"docusaurus-plugin-content-docs","id":"inx-poi-develop"}')}}]);

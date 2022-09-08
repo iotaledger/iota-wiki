@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkiota_wiki=self.webpackChunkiota_wiki||[]).push([[49936],{93754:a=>{a.exports=JSON.parse('{"label":"Tokenization","permalink":"/blog/tags/tokenization","allTagsPath":"/blog/tags","count":1}')}}]);

@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkiota_wiki=self.webpackChunkiota_wiki||[]).push([[28004],{63890:a=>{a.exports=JSON.parse('{"label":"Layer One","permalink":"/blog/tags/layer-one","allTagsPath":"/blog/tags","count":3}')}}]);

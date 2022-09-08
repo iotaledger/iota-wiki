@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkiota_wiki=self.webpackChunkiota_wiki||[]).push([[70562],{19360:function(i){i.exports=JSON.parse('{"name":"docusaurus-plugin-content-docs","id":"cli-wallet"}')}}]);
