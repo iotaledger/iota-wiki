@@ -1,16 +1,12 @@
-# Send Shimmer Tokens with Javascript (client lib)
+# Send Shimmer Tokens with Javascript
 
-In this tutorial you will learn how to send Shimmer Tokens in the testnet. We will go through the following steps:
+In this tutorial you will learn how to send Shimmer Tokens in the testnet.
 
-- 0. [Set Up Your Development Environment](#0-Set-Up-Your-Development-Environment).
-- 1. [Create Your First Address](#1-Create-Your-First-Address).
-- 2. [Get some testnet Tokens](#2-Get-Some-Testnet-Tokens).
-- 3. [Read your balance](#3-Read-Your-Balance).
-- 4. And finally, [send the Tokens to another address](#4-Send-Shimmer-Tokens).
+
 
 This tutorial assumes that you have [Node.js](https://nodejs.org/en/) installed.
 
-## 0. Set Up Your Development Environment.
+## Set Up Your Development Environment.
 
 First, you should create a new folder for the tutorial. 
 
@@ -31,7 +27,7 @@ npm i @iota/client@next
 ```
 
 
-## 1. Create Your First Address
+## Create Your First Address
 
 Next, you should generate an address where you can deposit some Shimmer testnet Tokens.
 
@@ -119,12 +115,12 @@ Testnet addresses begin with `rms...`, while Mainnet addresses will begin with `
 
 :::
 
-## 2. Get Some Testnet Tokens.
+## Get Some Testnet Tokens.
 
 You will need to visit the [Faucet](https://faucet.testnet.shimmer.network/) to get some tokens. Just input your address, and you will get some testnet tokens.
 
 
-## 3. Read Your Balance
+## Read Your Balance
 
 Create a new file called `get_balance.js` and add the code below and replace the YOUR_ADDRESS constant with the address just added the testnet tokens to.
 
@@ -198,7 +194,7 @@ Your console output should look like this:
 
 Now you should have 1000000000 glow Tokens, which are equal to 1000 Shimmer Tokens.
 
-## 4. Send Shimmer Tokens.
+## Send Shimmer Tokens.
 
 The last step is to send the tokens to another address. Create a file for that and add the content below. You can replace `SEND_TO_ADDRESSS` constant with any valid testnet address. You should replace the `YOUR_MNEMONIC` constant with the mnemonic you generated in the first step. 
 
