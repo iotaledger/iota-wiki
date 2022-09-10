@@ -4870,14 +4870,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"content-b2d1d2@workspace:content":
-  version: 0.0.0-use.local
-  resolution: "content-b2d1d2@workspace:content"
-  dependencies:
-    require-glob: ^4.1.0
-  languageName: unknown
-  linkType: soft
-
 "content-disposition@npm:0.5.2":
   version: 0.5.2
   resolution: "content-disposition@npm:0.5.2"
@@ -7478,6 +7470,14 @@ __metadata:
   checksum: cc3182d793aad82a8d1f0af697b462939cb46066ec48bbf1707c150ad5fad6406137e91a262022c269702e01621f35ef60269f6c0d7fd178487959809acdfb14
   languageName: node
   linkType: hard
+
+"iota-871159@workspace:iota":
+  version: 0.0.0-use.local
+  resolution: "iota-871159@workspace:iota"
+  dependencies:
+    require-glob: ^4.1.0
+  languageName: unknown
+  linkType: soft
 
 "iota-wiki@workspace:.":
   version: 0.0.0-use.local
@@ -12189,9 +12189,9 @@ plugin-image-zoom@flexanalytics/plugin-image-zoom:
   languageName: node
   linkType: hard
 
-"tutorials-dd8696@workspace:content/tutorials":
+"tutorials-950f11@workspace:iota/tutorials":
   version: 0.0.0-use.local
-  resolution: "tutorials-dd8696@workspace:content/tutorials"
+  resolution: "tutorials-950f11@workspace:iota/tutorials"
   languageName: unknown
   linkType: soft
 

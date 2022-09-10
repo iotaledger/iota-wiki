@@ -1,6 +1,6 @@
 // @ts-check
 // eslint-disable-next-line @typescript-eslint/no-var-requires
-const content = require('./content/docusaurus.config');
+const content = require('./iota/docusaurus.config');
 
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
@@ -268,9 +268,9 @@ module.exports = {
       '@docusaurus/plugin-content-docs',
       {
         id: 'use',
-        path: 'content/use',
+        path: 'iota/use',
         routeBasePath: 'use',
-        sidebarPath: require.resolve('./content/use/sidebars.ts'),
+        sidebarPath: require.resolve('./iota/use/sidebars.ts'),
 
         // General config
         editUrl: 'https://github.com/iota-wiki/iota-wiki/edit/main/',
@@ -285,9 +285,9 @@ module.exports = {
       '@docusaurus/plugin-content-docs',
       {
         id: 'learn',
-        path: 'content/learn',
+        path: 'iota/learn',
         routeBasePath: 'learn',
-        sidebarPath: require.resolve('./content/learn/sidebars.ts'),
+        sidebarPath: require.resolve('./iota/learn/sidebars.ts'),
 
         // General config
         editUrl: 'https://github.com/iota-wiki/iota-wiki/edit/main/',
@@ -302,9 +302,9 @@ module.exports = {
       '@docusaurus/plugin-content-docs',
       {
         id: 'develop',
-        path: 'content/develop',
+        path: 'iota/develop',
         routeBasePath: 'develop',
-        sidebarPath: require.resolve('./content/develop/sidebars.ts'),
+        sidebarPath: require.resolve('./iota/develop/sidebars.ts'),
 
         // General config
         editUrl: 'https://github.com/iota-wiki/iota-wiki/edit/main/',
@@ -319,9 +319,9 @@ module.exports = {
       '@docusaurus/plugin-content-docs',
       {
         id: 'community',
-        path: 'content/community',
+        path: 'iota/community',
         routeBasePath: 'community',
-        sidebarPath: require.resolve('./content/community/sidebars.ts'),
+        sidebarPath: require.resolve('./iota/community/sidebars.ts'),
 
         // General config
         editUrl: 'https://github.com/iota-wiki/iota-wiki/edit/main/',

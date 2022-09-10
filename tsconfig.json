@@ -5,6 +5,6 @@
     "lib": ["DOM", "ES2015"],
   },
   "exclude": [
-    "content/build/**/*",
+    "iota/build/**/*",
   ]
 }
