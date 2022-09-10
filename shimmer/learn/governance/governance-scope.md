@@ -22,3 +22,5 @@ Changes are allowed in the following areas:
 
 - Installment and structure of governance processes used in the community Treasury DAO
    - The rules of how the Shimmer community treasury should operate can be proposed, defined, and decided on by using the Shimmer Governance Framework.
+
+- Decisions on spending tokens from the community Treasury that require a community-wide vote as defined in the Shimmer community grant committee process. These are final decisions on Tier 3 and Tier 4 grants that will be presented to the community by the grant committee after evaluation.
