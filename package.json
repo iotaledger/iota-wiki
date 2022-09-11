@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "docusaurus": "docusaurus",
-    "start": "docusaurus start",
+    "start": "docusaurus build && docusaurus build --config docusaurus-shimmer.config.js --out-dir build/shimmer && yarn serve",
     "start:tutorials": "CONTENT=\"tutorials/**\" yarn start",
     "start:all": "CONTENT=\"*/*/*/documentation,*/*/*,*/*\" yarn start",
     "build": "docusaurus build",
@@ -91,6 +91,7 @@
   },
   "packageManager": "yarn@3.2.0",
   "workspaces": [
-    "iota"
+    "iota",
+    "shimmer"
   ]
 }
