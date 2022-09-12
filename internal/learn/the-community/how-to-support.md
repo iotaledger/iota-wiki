@@ -91,7 +91,7 @@ Starring a repository has some potentially beneficial effects for the repository
 - Time needed: **30 minutes the first time, 5 minutes for every new repository (when they are published)**.
 - Requirements: [Sign up to GitHub](https://github.com/join).
 
-After you have fulfilled the requirements, open the following repositories and _star_ ⭐ them:
+After you have fulfilled the requirements, open the following repositories and *star* ⭐ them:
 ![image-20210115162757470](/img/participate/how-to-support/github_iota_star.png)
 
 - [Firefly](https://github.com/iotaledger/firefly)
