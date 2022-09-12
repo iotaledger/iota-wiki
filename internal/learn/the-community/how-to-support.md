@@ -22,19 +22,19 @@ This page is a non-exhaustive collection of ideas and smaller to bigger ways to 
 Register an account or use your existing Binance.com account.
 Add [IOTA](https://coinmarketcap.com/currencies/iota/) and [Shimmer](https://coinmarketcap.com/currencies/shimmer/) to your watchlist by clicking on the ⭐
 
-![coinmarketcap_iota_watchlist.png](/img/participate/how-to-support/coinmarketcap_iota_watchlist.png)
+![Add IOTA to Coinmarketcap watchlist](/img/participate/how-to-support/coinmarketcap_iota_watchlist.png)
 
 #### Follow @IOTA
 
 Follow [IOTA](https://coinmarketcap.com/community/profile/IOTA)'s profile on Coinmarketcap
 
-![coinmarketcap_iota_follow.png](/img/participate/how-to-support/coinmarketcap_iota_follow.png)
+![Follow @IOTA on Coinmarketcap](/img/participate/how-to-support/coinmarketcap_iota_follow.png)
 
 #### Be active on the CMC community page
 
 Post a daily comment about your sentiment and what you think about [IOTA](https://coinmarketcap.com/currencies/iota/) and [Shimmer](https://coinmarketcap.com/currencies/shimmer/)
 
-![coinmarketcap_iota_chat.png](/img/participate/how-to-support/coinmarketcap_iota_chat.png)
+![Interact in the IOTA chat on Coinmarketcap](/img/participate/how-to-support/coinmarketcap_iota_chat.png)
 
 ### Coingecko
 
@@ -43,7 +43,7 @@ Post a daily comment about your sentiment and what you think about [IOTA](https:
 Register an account.
 Like [IOTA](https://www.coingecko.com/en/coins/iota) by clicking on the ⭐
 
-![coingecko_iota_like.png](/img/participate/how-to-support/coingecko_iota_like.png)
+![Add IOTA to Coingecko watchlist](/img/participate/how-to-support/coingecko_iota_like.png)
 
 ## Social Media platforms
 
@@ -70,7 +70,7 @@ Like and reshare news from the IOTA Foundation and other ecosystem members with 
 - Requirements: [Sign up to LinkedIn](https://www.linkedin.com/signup/cold-join). You can also connect using your Google Account.
 
 Follow the IOTA Foundation on LinkedIn [here](https://www.linkedin.com/company/iotafoundation/) by clicking on the three dots and then **+ Follow** to *like* and *share* the articles
-![linkedin_iota_follow.png](/img/participate/how-to-support/linkedin_iota_follow.png)
+![Follow IOTA on LinkedIn](/img/participate/how-to-support/linkedin_iota_follow.png)
 
 ### YouTube
 
@@ -81,7 +81,7 @@ Watch the videos by the IOTA Foundation, learn about solutions built with IOTA a
 - Requirements: [Sign up to YouTube](https://www.youtube.com/signup) and
   [subscribe to the IOTA Foundation channel](https://www.youtube.com/c/iotafoundation).
 
-![youtube_iota_subscribe.png](/img/participate/how-to-support/youtube_iota_subscribe.png)
+![Subscribe to IOTA channel on Youtube](/img/participate/how-to-support/youtube_iota_subscribe.png)
 
 ### GitHub
 
@@ -92,7 +92,7 @@ Starring a repository has some potentially beneficial effects for the repository
 - Requirements: [Sign up to GitHub](https://github.com/join).
 
 After you have fulfilled the requirements, open the following repositories and *star* ⭐ them:
-![image-20210115162757470](/img/participate/how-to-support/github_iota_star.png)
+![Add a star to IOTA's repositories on Github](/img/participate/how-to-support/github_iota_star.png)
 
 - [Firefly](https://github.com/iotaledger/firefly)
 - [GoShimmer](https://github.com/iotaledger/goshimmer)
