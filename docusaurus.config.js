@@ -77,9 +77,9 @@ module.exports = {
           activeBaseRegex: '^/use/.*',
         },
         {
-          label: 'About',
-          to: '/about/about-iota/an-introduction-to-iota',
-          activeBaseRegex: '^/about/.*',
+          label: 'Learn',
+          to: '/learn/about-iota/an-introduction-to-iota',
+          activeBaseRegex: '^/learn/.*',
         },
         {
           label: 'Develop',
@@ -123,7 +123,7 @@ module.exports = {
           ],
         },
         {
-          title: 'About',
+          title: 'Learn',
           items: [
             {
               label: 'How It Works',
@@ -152,10 +152,6 @@ module.exports = {
             {
               label: 'FAQs',
               to: 'faqs',
-            },
-            {
-              label: 'Partnerships',
-              href: 'https://www.iota.org/solutions/partnerships',
             },
           ],
         },
@@ -292,10 +288,10 @@ module.exports = {
     [
       '@docusaurus/plugin-content-docs',
       {
-        id: 'about',
-        path: 'content/about',
-        routeBasePath: 'about',
-        sidebarPath: require.resolve('./content/about/sidebars.ts'),
+        id: 'learn',
+        path: 'content/learn',
+        routeBasePath: 'learn',
+        sidebarPath: require.resolve('./content/learn/sidebars.ts'),
 
         // General config
         editUrl: 'https://github.com/iota-wiki/iota-wiki/edit/main/',
