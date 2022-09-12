@@ -118,7 +118,11 @@ module.exports = {
           items: [
             {
               label: 'Wallets',
-              to: 'wallets/what-is-a-wallet'
+              to: '/use/wallets/what-is-a-wallet'
+            },
+            {
+              label: 'Use Cases',
+              to: '/use/use-cases/data-confidence',
             },
           ],
         },
@@ -127,31 +131,27 @@ module.exports = {
           items: [
             {
               label: 'How It Works',
-              to: 'about-iota/an-introduction-to-iota',
+              to: '/learn/about-iota/an-introduction-to-iota',
             },
             {
               label: 'IOTA Token',
-              to: 'iota-token/buying-iota',
-            },
-            {
-              label: 'Media Library',
-              to: 'media-library/infographics',
+              to: '/learn/iota-token/buying-iota',
             },
             {
               label: 'Future of IOTA',
-              to: 'future/future-of-iota',
+              to: '/learn/future/future-of-iota',
             },
             {
-              label: 'Use Cases',
-              to: 'use-cases/data-confidence',
+              label: 'Research',
+              to: '/learn/research/research-outline',
             },
             {
               label: 'Glossary',
-              to: 'glossary',
+              to: '/learn/glossary',
             },
             {
               label: 'FAQs',
-              to: 'faqs',
+              to: '/learn/faqs',
             },
           ],
         },
@@ -164,7 +164,7 @@ module.exports = {
             },
             {
               label: 'Nodes',
-              to: 'nodes/about-nodes',
+              to: '/develop/nodes/about-nodes',
             },
             {
               label: 'Wasp',
@@ -185,19 +185,15 @@ module.exports = {
           items: [
             {
               label: 'Funding',
-              to: 'funding/edf-funding',
+              to: '/community/funding/edf-funding',
             },
             {
               label: 'The Community',
-              to: 'the-community/how-to-support',
-            },
-            {
-              label: 'Research',
-              to: 'research/research-outline',
+              to: '/community/the-community/how-to-support',
             },
             {
               label: 'Contribute To Wiki',
-              to: 'contribute-to-wiki/welcome',
+              to: '/community/contribute-to-wiki/welcome',
             },
           ],
         },

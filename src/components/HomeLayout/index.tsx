@@ -114,7 +114,7 @@ export default function HomeLayout() {
                 </p>
               </div>
             </Link>
-            <Link to='wallets/what-is-a-wallet' className='about__card'>
+            <Link to='/use/wallets/what-is-a-wallet' className='about__card'>
               <div className='about__section'>
                 <div className='about__icon'>
                   <PickAWallet />
