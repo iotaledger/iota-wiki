@@ -69,7 +69,7 @@ Like and reshare news from the IOTA Foundation and other ecosystem members with 
 - Time needed: **15 minutes/week**
 - Requirements: [Sign up to LinkedIn](https://www.linkedin.com/signup/cold-join). You can also connect using your Google Account.
 
-Follow the IOTA Foundation on LinkedIn [here](https://www.linkedin.com/company/iotafoundation/) by clicking on the three dots and then **+ Follow** to _like_ and _share_ the articles
+Follow the IOTA Foundation on LinkedIn [here](https://www.linkedin.com/company/iotafoundation/) by clicking on the three dots and then **+ Follow** to *like* and *share* the articles
 ![linkedin_iota_follow.png](/img/participate/how-to-support/linkedin_iota_follow.png)
 
 ### YouTube
