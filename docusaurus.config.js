@@ -98,6 +98,7 @@ module.exports = {
           '^/chronicle.rs/.*|' +
           '^/introduction/.*|' +
           '^/inx-*|' +
+          '^/integration-services/.*|' +
           '^/tutorials*',
         },
         {
