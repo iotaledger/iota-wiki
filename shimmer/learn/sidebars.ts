@@ -50,6 +50,26 @@ module.exports = {
         'future/nfts',
       ],
     },
+    {
+      type: 'category',
+      label: 'Research',
+      collapsed: true,
+      items: [
+        'research/research-outline',
+        'research/research-papers',
+        {
+          type: 'link',
+          label: 'Coordicide Specs',
+          href: '/IOTA-2.0-Research-Specifications/Preface'
+        },
+        {
+          type: 'link',
+          label: 'GoShimmer',
+          href: '/goshimmer/welcome'
+        },
+        'research/iota-devnet-wallet',
+      ],
+    },
     'glossary',
     'faqs',
   ],

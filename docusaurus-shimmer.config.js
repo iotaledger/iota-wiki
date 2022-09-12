@@ -77,9 +77,12 @@ module.exports = {
           activeBaseRegex: '^/use/.*',
         },
         {
-          label: 'About',
-          to: '/about/about-iota/an-introduction-to-iota',
-          activeBaseRegex: '^/about/.*',
+          label: 'Learn',
+          to: '/learn/about-iota/an-introduction-to-iota',
+          activeBaseRegex: 
+          '^/learn/.*|' +
+          '^/IOTA-2.0-Research-Specifications/.*|' +
+          '^/goshimmer/.*',
         },
         {
           label: 'Develop',
@@ -100,10 +103,7 @@ module.exports = {
         {
           label: 'Community',
           to: '/community/the-community/discord',
-          activeBaseRegex: 
-          '^/community/.*|' +
-          '^/IOTA-2.0-Research-Specifications/.*|' +
-          '^/goshimmer/.*',
+          activeBaseRegex: '^/community/.*'
         },
       ],
     },
@@ -116,34 +116,38 @@ module.exports = {
               label: 'Wallets',
               to: '/use/wallets/what-is-a-wallet'
             },
-          ],
-        },
-        {
-          title: 'About',
-          items: [
-            {
-              label: 'How It Works',
-              to: '/about/about-iota/an-introduction-to-iota',
-            },
-            {
-              label: 'IOTA Token',
-              to: '/about/iota-token/buying-iota',
-            },
-            {
-              label: 'Future of IOTA',
-              to: '/about/future/future-of-iota',
-            },
             {
               label: 'Use Cases',
               to: '/use/use-cases/data-confidence',
             },
+          ],
+        },
+        {
+          title: 'Learn',
+          items: [
+            {
+              label: 'How It Works',
+              to: '/learn/about-iota/an-introduction-to-iota',
+            },
+            {
+              label: 'IOTA Token',
+              to: '/learn/iota-token/buying-iota',
+            },
+            {
+              label: 'Future of IOTA',
+              to: '/learn/future/future-of-iota',
+            },
+            {
+              label: 'Research',
+              to: '/learn/research/research-outline',
+            },
             {
               label: 'Glossary',
-              to: '/about/glossary',
+              to: '/learn/glossary',
             },
             {
               label: 'FAQs',
-              to: '/about/faqs',
+              to: '/learn/faqs',
             },
           ],
         },
@@ -276,10 +280,10 @@ module.exports = {
     [
       '@docusaurus/plugin-content-docs',
       {
-        id: 'about',
-        path: 'shimmer/about',
-        routeBasePath: 'about',
-        sidebarPath: require.resolve('./shimmer/about/sidebars.ts'),
+        id: 'learn',
+        path: 'shimmer/learn',
+        routeBasePath: 'learn',
+        sidebarPath: require.resolve('./shimmer/learn/sidebars.ts'),
 
         // General config
         editUrl: 'https://github.com/iota-wiki/iota-wiki/edit/main/',
