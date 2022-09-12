@@ -1,4 +1,4 @@
-# New Tutorial - How to Set Up Iota.JS for Development
+# How to Set Up Iota.JS for Development
 
 :::info
 
