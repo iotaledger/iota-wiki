@@ -89,10 +89,8 @@ module.exports = {
           to: '/develop/nodes/about-nodes',
           activeBaseRegex: 
           '^/develop.*|' + 
-          '^/smart-contracts/.*|' +
           '^/identity.rs/.*|' +
           '^/iota.rs/.*|' +
-          '^/iotajs/.*|' +
           '^/wallet.rs/.*|' +
           '^/streams/.*|' +
           '^/stronghold.rs/.*|' +
@@ -100,7 +98,6 @@ module.exports = {
           '^/bee/.*|' +
           '^/chronicle/.*|' +
           '^/introduction/.*|' +
-          '^/inx-*|' +
           '^/integration-services/.*|' +
           '^/tutorials*',
         },
@@ -159,16 +156,8 @@ module.exports = {
           title: 'Develop',
           items: [
             {
-              label: 'Smart Contracts',
-              href: '/smart-contracts/overview',
-            },
-            {
               label: 'Nodes',
               to: '/develop/nodes/about-nodes',
-            },
-            {
-              label: 'Wasp',
-              href: '/smart-contracts/guide/chains_and_nodes/running-a-node',
             },
             {
               label: 'Chronicle',
@@ -190,6 +179,10 @@ module.exports = {
             {
               label: 'The Community',
               to: '/community/the-community/how-to-support',
+            },
+            {
+              label: 'Research',
+              to: '/community/research/research-outline',
             },
             {
               label: 'Contribute To Wiki',

@@ -33,11 +33,6 @@ module.exports = {
                 href: '/iota.rs/welcome',
             },
             {
-                label: 'Client.js',
-                type: 'link',
-                href: '/iotajs/welcome',
-            },
-            {
                 label: 'Identity',
                 type: 'link',
                 href: '/identity.rs/introduction',
@@ -94,71 +89,12 @@ module.exports = {
                 type: 'link',
                 href: '/bee/welcome',
             },
-            {
-                type: 'category',
-                label: 'INX Plugins',
-                collapsed: true,
-                items: [
-                    {
-                        type: 'link',
-                        label: 'Indexer',
-                        href: '/inx-indexer/develop/welcome',
-                    },
-                    {
-                        type: 'link',
-                        label: 'MQTT',
-                        href: '/inx-mqtt/develop/welcome',
-                    },
-                    {
-                        type: 'link',
-                        label: 'PoI',
-                        href: '/inx-poi/develop/welcome',
-                    },
-                    {
-                        type: 'link',
-                        label: 'Participation',
-                        href: '/inx-participation/develop/welcome',
-                    },
-                    {
-                        type: 'link',
-                        label: 'Coordinator',
-                        href: '/inx-coordinator/develop/welcome',
-                    },
-                    {
-                        type: 'link',
-                        label: 'Faucet',
-                        href: '/inx-faucet/develop/welcome',
-                    },
-                    {
-                        type: 'link',
-                        label: 'Dashboard',
-                        href: '/inx-dashboard/develop/welcome',   
-                    },
-                    {
-                        type: 'link',
-                        label: 'Spammer',
-                        href: '/inx-spammer/develop/welcome',  
-                    },
-                ],
-            },
-            {
-                type: 'category',
-                label: 'Extensions',
-                collapsed: true,
-                items: [
-                    {
-                        type: 'link',
-                        label: 'Wasp',
-                        href: '/smart-contracts/guide/chains_and_nodes/running-a-node',
-                    },
-                    {
-                        type: 'link',
-                        label: 'Chronicle',
-                        href: '/chronicle/welcome',   
-                    },
-                ],
-            },
         ],
+      },
+      {
+        type: 'link',
+        label: 'Chronicle',
+        href: '/chronicle/welcome',   
       },
       {
         type: 'category',
@@ -169,21 +105,9 @@ module.exports = {
             'networks/testnets',
             'networks/network-token-migration',
             {
-                type: 'category',
-                label: 'Developer',
-                collapsed: false,
-                items: [
-                    {
-                        type: 'link',
-                        label: 'Chrysalis',
-                        href:  '/introduction/welcome'
-                    },
-                    {
-                        type: 'link',
-                        label: 'Stardust',
-                        href:  '/introduction/develop/welcome'
-                    }
-                ],
+                type: 'link',
+                label: 'Chrysalis',
+                href:  '/introduction/welcome'
             },
         ],
       },

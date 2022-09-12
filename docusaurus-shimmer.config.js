@@ -87,17 +87,14 @@ module.exports = {
           activeBaseRegex: 
           '^/develop.*|' + 
           '^/smart-contracts/.*|' +
-          '^/identity.rs/.*|' +
           '^/iota.rs/.*|' +
           '^/iotajs/.*|' +
           '^/wallet.rs/.*|' +
-          '^/streams/.*|' +
           '^/stronghold.rs/.*|' +
           '^/hornet/.*|' +
           '^/bee/.*|' +
           '^/chronicle.rs/.*|' +
           '^/introduction/.*|' +
-          '^/inx-*|' +
           '^/tutorials*',
         },
         {
@@ -117,7 +114,7 @@ module.exports = {
           items: [
             {
               label: 'Wallets',
-              to: 'wallets/what-is-a-wallet'
+              to: '/use/wallets/what-is-a-wallet'
             },
           ],
         },
@@ -126,35 +123,27 @@ module.exports = {
           items: [
             {
               label: 'How It Works',
-              to: 'about-iota/an-introduction-to-iota',
+              to: '/about/about-iota/an-introduction-to-iota',
             },
             {
               label: 'IOTA Token',
-              to: 'iota-token/buying-iota',
-            },
-            {
-              label: 'Media Library',
-              to: 'media-library/infographics',
+              to: '/about/iota-token/buying-iota',
             },
             {
               label: 'Future of IOTA',
-              to: 'future/future-of-iota',
+              to: '/about/future/future-of-iota',
             },
             {
               label: 'Use Cases',
-              to: 'use-cases/data-confidence',
+              to: '/use/use-cases/data-confidence',
             },
             {
               label: 'Glossary',
-              to: 'glossary',
+              to: '/about/glossary',
             },
             {
               label: 'FAQs',
-              to: 'faqs',
-            },
-            {
-              label: 'Partnerships',
-              href: 'https://www.iota.org/solutions/partnerships',
+              to: '/about/faqs',
             },
           ],
         },
@@ -167,15 +156,11 @@ module.exports = {
             },
             {
               label: 'Nodes',
-              to: 'nodes/about-nodes',
+              to: '/develop/nodes/about-nodes',
             },
             {
               label: 'Wasp',
               href: '/smart-contracts/guide/chains_and_nodes/running-a-node',
-            },
-            {
-              label: 'Chronicle',
-              href: '/chronicle.rs/welcome',   
             },
             {
               label: 'Tutorials',
@@ -188,19 +173,19 @@ module.exports = {
           items: [
             {
               label: 'Funding',
-              to: 'funding/edf-funding',
+              to: '/community/funding/edf-funding',
             },
             {
               label: 'The Community',
-              to: 'the-community/how-to-support',
+              to: '/community/the-community/how-to-support',
             },
             {
               label: 'Research',
-              to: 'research/research-outline',
+              to: '/community/research/research-outline',
             },
             {
               label: 'Contribute To Wiki',
-              to: 'contribute-to-wiki/welcome',
+              to: '/community/contribute-to-wiki/welcome',
             },
           ],
         },
