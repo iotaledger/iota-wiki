@@ -9,27 +9,55 @@ As ecosystem members there are different ways to support the vision.
 
 This page is a non-exhaustive collection of ideas and smaller to bigger ways to support the growth and expansion of the ecosystem.
 
-## Basic level
-
-These activities require to register accounts on different platforms and time.
-
 ## Join the IOTA Discord
 
 **First and foremost** join the IOTA Community on [the IOTA Discord](discord.md) server. Click on [this link](http://discord.iota.org/) to get the invitation to the server and get in touch with the IOTA Foundation members and the awesome IOTA community members.
 
+## Crypto platforms
+
+### Coinmarketcap
+
+#### Watchlist
+
+Register an account or use your existing Binance.com account.
+Add [IOTA](https://coinmarketcap.com/currencies/iota/) and [Shimmer](https://coinmarketcap.com/currencies/shimmer/) to your watchlist by clicking on the ⭐
+
+![coinmarketcap_iota_watchlist.png](/img/participate/how-to-support/coinmarketcap_iota_watchlist.png)
+
+#### Follow @IOTA
+
+Follow [IOTA](https://coinmarketcap.com/community/profile/IOTA)'s profile on Coinmarketcap
+
+![coinmarketcap_iota_follow.png](/img/participate/how-to-support/coinmarketcap_iota_follow.png)
+
+#### Be active on the CMC community page
+
+Post a daily comment about your sentiment and what you think about [IOTA](https://coinmarketcap.com/currencies/iota/) and [Shimmer](https://coinmarketcap.com/currencies/shimmer/)
+
+![coinmarketcap_iota_chat.png](/img/participate/how-to-support/coinmarketcap_iota_chat.png)
+
+### Coingecko
+
+#### Watchlist
+
+Register an account.
+Like [IOTA](https://www.coingecko.com/en/coins/iota) by clicking on the ⭐
+
+![coingecko_iota_like.png](/img/participate/how-to-support/coingecko_iota_like.png)
+
 ## Social Media platforms
 
-Register an account <u>using a nickname</u> at the following sites and follow, subscribe, like, star, upvote the activities by the IOTA Foundation and the Ecosystem.
+Register an account at the following sites and follow, subscribe, like, star, upvote the activities by the IOTA Foundation and the ecosystem projects.
 
 ### Twitter
 
-#### Like and retweet news in the ecosystem.
+Like and retweet news in the ecosystem.
 
 - Difficulty level: **easy**
 - Time needed: **15 minutes/week**
 - Requirements: [Sign up to Twitter](https://twitter.com/i/flow/signup)
 
-Follow the [IOTA Foundation](https://twitter.com/iota/) and [Shimmer](https://twitter.com/shimmernet) on Twitter and follow them daily to *like* and *retweet*. Look for other projects or ecosystem members, follow them, and like their tweets.
+Follow the [IOTA Foundation](https://twitter.com/iota/) and [Shimmer](https://twitter.com/shimmernet) on Twitter and follow them daily to _like_ and _retweet_. Look for other projects or ecosystem members, follow them, and like their tweets.
 
 These are some [interesting IOTA related projects](<(https://twitter.com/i/lists/1564924491850989575)>) you can follow as well.
 
@@ -41,9 +69,8 @@ Like and reshare news from the IOTA Foundation and other ecosystem members with 
 - Time needed: **15 minutes/week**
 - Requirements: [Sign up to LinkedIn](https://www.linkedin.com/signup/cold-join). You can also connect using your Google Account.
 
-Follow the IOTA Foundation on LinkedIn [here](https://www.linkedin.com/company/iotafoundation/) by clicking on the three dots and then **+ Follow** to *like* and *share* the articles
-
-![image-20210115161351884](/img/participate/how-to-support/image-20210115161351884.png)
+Follow the IOTA Foundation on LinkedIn [here](https://www.linkedin.com/company/iotafoundation/) by clicking on the three dots and then **+ Follow** to _like_ and _share_ the articles
+![linkedin_iota_follow.png](/img/participate/how-to-support/linkedin_iota_follow.png)
 
 ### YouTube
 
@@ -54,7 +81,7 @@ Watch the videos by the IOTA Foundation, learn about solutions built with IOTA a
 - Requirements: [Sign up to YouTube](https://www.youtube.com/signup) and
   [subscribe to the IOTA Foundation channel](https://www.youtube.com/c/iotafoundation).
 
-![image-20210115164439927](/img/participate/how-to-support/image-20210115164439927.png)
+![youtube_iota_subscribe.png](/img/participate/how-to-support/youtube_iota_subscribe.png)
 
 ### GitHub
 
@@ -64,9 +91,8 @@ Starring a repository has some potentially beneficial effects for the repository
 - Time needed: **30 minutes the first time, 5 minutes for every new repository (when they are published)**.
 - Requirements: [Sign up to GitHub](https://github.com/join).
 
-After you have fulfilled the requirements, open the following repositories and *star* them:
-
-![image-20210115162757470](/img/participate/how-to-support/image-20210115162757470.png)
+After you have fulfilled the requirements, open the following repositories and _star_ ⭐ them:
+![image-20210115162757470](/img/participate/how-to-support/github_iota_star.png)
 
 - [Firefly](https://github.com/iotaledger/firefly)
 - [GoShimmer](https://github.com/iotaledger/goshimmer)
