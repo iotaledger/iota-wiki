@@ -79,7 +79,10 @@ module.exports = {
         {
           label: 'Learn',
           to: '/learn/about-iota/an-introduction-to-iota',
-          activeBaseRegex: '^/learn/.*',
+          activeBaseRegex: 
+          '^/learn/.*|' +
+          '^/IOTA-2.0-Research-Specifications/.*|' +
+          '^/goshimmer/.*',
         },
         {
           label: 'Develop',
@@ -104,10 +107,7 @@ module.exports = {
         {
           label: 'Community',
           to: '/community/the-community/discord',
-          activeBaseRegex: 
-          '^/community/.*|' +
-          '^/IOTA-2.0-Research-Specifications/.*|' +
-          '^/goshimmer/.*',
+          activeBaseRegex: '^/community/.*'
         },
       ],
     },
