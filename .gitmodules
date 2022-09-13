@@ -17,7 +17,7 @@
 [submodule "content/build/wallet.rs/production"]
 	path = content/build/wallet.rs/production
 	url = https://github.com/iotaledger/wallet.rs
-  branch = production
+  	branch = production
 [submodule "content/build/wasp/develop"]
 	path = content/build/wasp/develop
 	url = https://github.com/iotaledger/wasp
@@ -116,13 +116,17 @@
 	branch = develop
 [submodule "content/build/inx-faucet/develop"]
 	path = content/build/inx-faucet/develop
-  url = https://github.com/iotaledger/inx-faucet
-  branch = develop
+  	url = https://github.com/iotaledger/inx-faucet
+  	branch = develop
 [submodule "content/build/inx-dashboard/develop"]
 	path = content/build/inx-dashboard/develop
 	url = https://github.com/iotaledger/inx-dashboard
 	branch = develop
 [submodule "content/build/inx-spammer/develop"]
 	path = content/build/inx-spammer/develop
-        url = https://github.com/iotaledger/inx-spammer
-        branch = develop
+    url = https://github.com/iotaledger/inx-spammer
+    branch = develop
+[submodule "content/build/chronicle/develop"]
+	path = content/build/chronicle/develop
+	url = https://github.com/iotaledger/inx-chronicle
+	branch = main

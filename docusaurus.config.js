@@ -267,10 +267,10 @@ module.exports = {
     [
       '@docusaurus/plugin-content-docs',
       {
-        id: 'use',
-        path: 'content/use',
-        routeBasePath: 'use',
-        sidebarPath: require.resolve('./content/use/sidebars.ts'),
+        id: 'learn',
+        path: 'internal/learn',
+        routeBasePath: 'learn',
+        sidebarPath: require.resolve('./internal/learn/sidebars.ts'),
 
         // General config
         editUrl: 'https://github.com/iota-wiki/iota-wiki/edit/main/',

@@ -331,23 +331,23 @@ export default function HomeLayout() {
                 <h3 className='nodes__header'>Chronicle</h3>
                 <ul className='nodes__features'>
                   <li className='nodes__feature'>
-                    <Link to='/chronicle.rs/welcome'>
+                    <Link to='/chronicle/welcome'>
                       Efficient and reliable permanodes
                     </Link>
                   </li>
                   <li className='nodes__feature'>
-                    <Link to='/chronicle.rs/welcome#project-structure'>
+                    <Link to='/chronicle/welcome#project-structure'>
                       Solution for storing all transactions
                     </Link>
                   </li>
                   <li className='nodes__feature'>
-                    <Link to='/chronicle.rs/config_reference'>
+                    <Link to='/chronicle/config_reference'>
                       Managing and accessing the permanode
                     </Link>
                   </li>
                 </ul>
                 <Link
-                  to='chronicle.rs/getting_started'
+                  to='chronicle/getting_started'
                   className='nodes__button button button--outline button--primary'
                 >
                   Try the permanode framework
