@@ -96,7 +96,7 @@ module.exports = {
           '^/stronghold.rs/.*|' +
           '^/hornet/.*|' +
           '^/bee/.*|' +
-          '^/chronicle.rs/.*|' +
+          '^/chronicle/.*|' +
           '^/introduction/.*|' +
           '^/tutorials*',
         },
