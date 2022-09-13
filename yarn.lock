@@ -8300,6 +8300,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"inx-chronicle-develop@workspace:content/build/chronicle/develop/documentation":
+  version: 0.0.0-use.local
+  resolution: "inx-chronicle-develop@workspace:content/build/chronicle/develop/documentation"
+  dependencies:
+    "@iota-community/iota-wiki-cli": "iota-community/iota-wiki-cli#v2"
+    raw-loader: ^4.0.2
+    remark-code-import: ^0.3.0
+    remark-import-partial: ^0.0.2
+  languageName: unknown
+  linkType: soft
+
 "inx-coordinator-develop@workspace:content/build/inx-coordinator/develop/documentation":
   version: 0.0.0-use.local
   resolution: "inx-coordinator-develop@workspace:content/build/inx-coordinator/develop/documentation"
