@@ -98,7 +98,7 @@ module.exports = {
           '^/stronghold.rs/.*|' +
           '^/hornet/.*|' +
           '^/bee/.*|' +
-          '^/chronicle.rs/.*|' +
+          '^/chronicle/.*|' +
           '^/introduction/.*|' +
           '^/inx-*|' +
           '^/integration-services/.*|' +
@@ -172,7 +172,7 @@ module.exports = {
             },
             {
               label: 'Chronicle',
-              href: '/chronicle.rs/welcome',   
+              href: '/chronicle/welcome',   
             },
             {
               label: 'Tutorials',
@@ -267,10 +267,10 @@ module.exports = {
     [
       '@docusaurus/plugin-content-docs',
       {
-        id: 'learn',
-        path: 'internal/learn',
-        routeBasePath: 'learn',
-        sidebarPath: require.resolve('./internal/learn/sidebars.ts'),
+        id: 'use',
+        path: 'content/use',
+        routeBasePath: 'use',
+        sidebarPath: require.resolve('./content/use/sidebars.ts'),
 
         // General config
         editUrl: 'https://github.com/iota-wiki/iota-wiki/edit/main/',
