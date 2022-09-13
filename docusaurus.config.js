@@ -257,7 +257,7 @@ module.exports = {
           blogSidebarCount: 0,
         },
         theme: {
-          customCss: require.resolve('./src/css/custom.css'),
+          customCss: require.resolve('./src/css/iota/custom.css'),
         },
         sitemap: {
           changefreq: 'daily',

@@ -27,11 +27,11 @@ module.exports = {
   themeConfig: {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     announcementBar: {
-      id: 'govern',
+      id: 'shimmer',
       content:
-        'If you would like to get more involved in the future governance of Shimmer, IOTA, and the Assembly network, join the discussions with the community in our <a target="_blank" href="https://govern.iota.org">governance forum</a> 🏛️',
-      backgroundColor: '#5991c7',
-      textColor: '#ffffff',
+        'This are the docs for the Shimmer staging network',
+      backgroundColor: '#00e0ca',
+      textColor: '#000000',
       isCloseable: true,
     },
     image: 'img/iota-wiki.png',
@@ -260,7 +260,7 @@ module.exports = {
           blogSidebarCount: 0,
         },
         theme: {
-          customCss: require.resolve('./src/css/custom.css'),
+          customCss: require.resolve('./src/css/shimmer/custom.css'),
         },
         sitemap: {
           changefreq: 'daily',

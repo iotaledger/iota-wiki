@@ -1,6 +1,6 @@
-@import 'fonts.css';
+@import '../fonts.css';
+@import '../patches.css';
 @import 'variables.css';
-@import 'patches.css';
 
 html {
   scroll-behavior: smooth;
