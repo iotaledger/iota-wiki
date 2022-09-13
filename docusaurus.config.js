@@ -106,6 +106,20 @@ module.exports = {
           to: '/community/the-community/discord',
           activeBaseRegex: '^/community/.*'
         },
+        {
+          type: 'custom-network-dropdown',
+          content: 'Hello',
+          position: 'right',
+          networks: [
+            {
+              label: 'IOTA',
+            },
+            {
+              label: 'Shimmer',
+              routeBasePath: 'shimmer',
+            },
+          ]
+        },
       ],
     },
     footer: {
