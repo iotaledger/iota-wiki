@@ -91,9 +91,9 @@ Chronicle provides tools for managing and accessing permanode solutions using th
 
 The full documentation and the source code for Chronicle can be found here:
 
-- [Chronicle Documentation](/chronicle.rs/welcome)
+- [Chronicle Documentation](/chronicle/welcome)
 - [Chronicle GitHub](https://github.com/iotaledger/chronicle.rs)
-- [Chronicle Installation guide](/chronicle.rs/getting_started)
+- [Chronicle Installation guide](/chronicle/getting_started)
 
 ## Wasp Smart Contract Node
 
