@@ -150,7 +150,7 @@ module.exports = {
           label: 'Nodes',
           to: '/nodes/about-nodes',
           activeBaseRegex:
-            '^/nodes/.*|^/hornet/.*|^/bee/.*|^/inx-.*/.*|^/chronicle.rs/.*',
+            '^/nodes/.*|^/hornet/.*|^/bee/.*|^/inx-.*/.*|^/chronicle/.*',
           type: 'dropdown',
           items: [
             {
