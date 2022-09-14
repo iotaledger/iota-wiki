@@ -2,28 +2,6 @@ module.exports = {
     develop: [
       {
         type: 'category',
-        label: 'Smart Contracts',
-        collapsed: true,
-        items: [
-            {
-                label: 'Documentation',
-                type: 'link',
-                href: '/smart-contracts/overview',
-            },
-            {
-                label: 'Node (WASP)',
-                type: 'link',
-                href: '/smart-contracts/guide/chains_and_nodes/running-a-node',
-            },
-            {
-                label: 'Schema Tool',
-                type: 'link',
-                href: '/smart-contracts/guide/schema'
-            }
-        ],
-      },
-      {
-        type: 'category',
         label: 'Libraries',
         collapsed: true,
         items: [
@@ -31,6 +9,11 @@ module.exports = {
                 label: 'Client.rs',
                 type: 'link',
                 href: '/iota.rs/welcome',
+            },
+            {
+              label: 'Wallet.rs',
+              type: 'link',
+              href: '/wallet.rs/welcome',
             },
             {
                 label: 'Identity',
@@ -46,11 +29,6 @@ module.exports = {
                 label: 'Stronghold',
                 type: 'link',
                 href: '/stronghold.rs/welcome',
-            },
-            {
-                label: 'Wallet.rs',
-                type: 'link',
-                href: '/wallet.rs/welcome',
             },
         ],
       },

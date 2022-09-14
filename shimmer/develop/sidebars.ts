@@ -28,29 +28,24 @@ module.exports = {
         collapsed: true,
         items: [
             {
-                label: 'Client.rs',
+                label: 'Client',
                 type: 'link',
                 href: '/iota.rs/welcome',
-            },
-            {
-                label: 'Identity',
-                type: 'link',
-                href: '/identity.rs/introduction',
-            },
-            {
-                label: 'Streams',
-                type: 'link',
-                href: '/streams/welcome',
-            },
-            {
-                label: 'Stronghold',
-                type: 'link',
-                href: '/stronghold.rs/welcome',
             },
             {
                 label: 'Wallet.rs',
                 type: 'link',
                 href: '/wallet.rs/welcome',
+            },
+            {
+                label: 'Client Typescipt',
+                type: 'link',
+                href: '/iotajs/welcome',
+            },
+            {
+                label: 'Stronghold',
+                type: 'link',
+                href: '/stronghold.rs/welcome',
             },
         ],
       },
@@ -83,11 +78,6 @@ module.exports = {
                 label: 'Hornet',
                 type: 'link',
                 href: '/hornet/welcome',
-            },
-            {
-                label: 'Bee',
-                type: 'link',
-                href: '/bee/welcome',
             },
             {
               type: 'category',
