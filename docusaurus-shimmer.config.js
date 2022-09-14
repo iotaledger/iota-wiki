@@ -265,6 +265,9 @@ module.exports = {
           changefreq: 'daily',
           priority: 0.5,
         },
+        pages: {
+          path: 'src/pages/shimmer',
+        },
       },
     ],
   ],
@@ -339,6 +342,13 @@ module.exports = {
           require('remark-import-partial'),
         ],
         showLastUpdateTime: true,
+      },
+    ],
+    [
+      '@docusaurus/plugin-content-pages',
+      {
+        id: 'common',
+        path: 'src/pages/common',
       },
     ],
     ...content.plugins,

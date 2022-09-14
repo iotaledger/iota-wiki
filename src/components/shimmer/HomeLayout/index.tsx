@@ -18,8 +18,9 @@ import {
   Tips,
   Tutorials,
   Wasp,
-} from '../../icons';
-import LibrariesSection from './LibrariesSection';
+} from '../../../icons';
+import CoreLibrariesSection from './CoreLibrariesSection';
+import AppLibrariesSection from './AppLibrariesSection';
 
 interface HomepageSectionProps {
   header?: string;
@@ -73,7 +74,7 @@ export default function HomeLayout() {
                   to='learn/about-iota/an-introduction-to-iota'
                   className='intro__button button button--outline button--primary'
                 >
-                  Learn about IOTA
+                  Learn about Shimmer
                 </Link>
                 <Link
                   to='#libraries'
@@ -85,7 +86,7 @@ export default function HomeLayout() {
             </div>
           </div>
         </HomepageSection>
-        <HomepageSection header='About IOTA'>
+        <HomepageSection header='Use Shimmer'>
           <div className='about__cards'>
             <Link
               to='learn/about-iota/an-introduction-to-iota'
@@ -95,7 +96,7 @@ export default function HomeLayout() {
                 <div className='about__icon'>
                   <IotaCore />
                 </div>
-                <h3 className='about__header'>What is IOTA?</h3>
+                <h3 className='about__header'>What is Shimmer?</h3>
                 <p className='about__description'>
                   An open, feeless and scalable distributed ledger, designed to
                   support data and value transfer.
@@ -107,9 +108,9 @@ export default function HomeLayout() {
                 <div className='about__icon'>
                   <IotaToken />
                 </div>
-                <h3 className='about__header'>Get IOTA tokens</h3>
+                <h3 className='about__header'>Get Shimmer tokens</h3>
                 <p className='about__description'>
-                  The IOTA token is used to transact value on the IOTA
+                  The Shimmer token is used to transact value on the Shimmer
                   distributed ledger.
                 </p>
               </div>
@@ -122,112 +123,27 @@ export default function HomeLayout() {
                 <h3 className='about__header'>Pick a wallet</h3>
                 <p className='about__description'>
                   Choose a wallet to store your public and private keys and
-                  interact with the IOTA network.
+                  interact with the Shimmer network.
                 </p>
               </div>
             </Link>
           </div>
         </HomepageSection>
         <HomepageSection
-          header='Shimmer & IOTA'
-          description='Shimmer is an L1 innovation network providing the core building blocks for a scalable, modular multi-chain architecture. It is a validation ground for innovations geared for the IOTA network and its native token is $SMR.'
+          header='Core Libraries'
+          description='With the Shimmer core libraries you can easily integrate Shimmer into your own applications.'
         >
-          <div className='networks__cards'>
-            <div className='networks__card'>
-              <div className='networks__section'>
-                <div className='networks__icon networks__icon--shimmer'>
-                  <Shimmer />
-                </div>
-                <span className='networks__label'>Experimental</span>
-                <h2 className='networks__header'>Shimmer Network</h2>
-                <p className='networks__description'>
-                  The L1 innovation network to build and test your project and
-                  to validate innovations destined for IOTA.
-                </p>
-              </div>
-              <div className='networks__section'>
-                <ul className='networks__features'>
-                  <li className='networks__feature networks__feature--done'>
-                    Permissionless
-                  </li>
-                  <li className='networks__feature networks__feature--done'>
-                    DeFi enabled
-                  </li>
-                  <li className='networks__feature networks__feature--done'>
-                    Newest features
-                  </li>
-                </ul>
-                <Link
-                  to='introduction/develop/welcome'
-                  className='networks__button button button--outline button--primary'
-                >
-                  Learn more
-                </Link>
-              </div>
-            </div>
-            <div className='networks__card'>
-              <div className='networks__section'>
-                <div className='networks__icon networks__icon--iota'>
-                  <IotaCore />
-                </div>
-                <span className='networks__label'>Stable</span>
-                <h2 className='networks__header'>IOTA Network</h2>
-                <p className='networks__description'>
-                  The IOTA main network that uses the IOTA tokens. This network
-                  is the most stable.
-                </p>
-              </div>
-              <div className='networks__section'>
-                <ul className='networks__features'>
-                  <li className='networks__feature networks__feature--done'>
-                    Permissionless
-                  </li>
-                  <li className='networks__feature'>DeFi enabled</li>
-                  <li className='networks__feature'>DApps and DAOs</li>
-                </ul>
-                <Link
-                  to='introduction/welcome'
-                  className='networks__button button button--outline button--primary'
-                >
-                  Learn more
-                </Link>
-              </div>
-            </div>
-          </div>
-        </HomepageSection>
-        <HomepageSection header='Start building'>
-          <div className='start-building'>
-            <div className='start-building__section'>
-              <h2 className='start-building__header'>IOTA Smart Contracts</h2>
-              <p className='start-building__description'>
-                The IOTA Smart Contracts Protocol brings scalable and flexible smart contracts into the IOTA ecosystem.
-              </p>
-              <div className='start-building__buttons'>
-                <Link
-                  to='smart-contracts/overview'
-                  className='start-building__button button button--outline button--primary'
-                >
-                  Learn about ISC
-                </Link>
-                <Link
-                  to='smart-contracts/guide/evm/examples/introduction'
-                  className='start-building__button button button--primary'
-                >
-                  Run a smart contract
-                </Link>
-              </div>
-            </div>
-          </div>
+          <CoreLibrariesSection />
         </HomepageSection>
         <HomepageSection
-          header='Libraries'
-          description='With the IOTA client libraries you can easily integrate IOTA into your own applications.'
+          header='Application Libraries'
+          description='With the Shimmer application libraries you can easily integrate Shimmer into your own applications.'
         >
-          <LibrariesSection />
+          <AppLibrariesSection />
         </HomepageSection>
         <HomepageSection
           header='Nodes and extensions'
-          description='Nodes are the core of an IOTA network. They run the node software, which gives them read and write access to the IOTA network. You can extend their functionality with additional extensions such as INX plugins or the Wasp software for Smart Contracts'
+          description='Nodes are the core of an Shimmer network. They run the node software, which gives them read and write access to the Shimmer network. You can extend their functionality with additional extensions such as INX plugins or the Wasp software for Smart Contracts'
         >
           <div className='nodes__cards'>
             <div className='nodes__card'>
@@ -263,37 +179,6 @@ export default function HomeLayout() {
             </div>
             <div className='nodes__card'>
               <div className='nodes__icon'>
-                <Bee />
-              </div>
-              <div className='nodes__section'>
-                <h3 className='nodes__header'>Bee</h3>
-                <ul className='nodes__features'>
-                  <li className='nodes__feature'>
-                    <Link to='/bee/welcome'>
-                      A node implementation in Rust
-                    </Link>
-                  </li>
-                  <li className='nodes__feature'>
-                    <Link to='/bee/getting_started'>
-                      Participate in the network
-                    </Link>
-                  </li>
-                  <li className='nodes__feature'>
-                    <Link to='/bee/how_tos/docker'>
-                      Become a node operator
-                    </Link>
-                  </li>
-                </ul>
-                <Link
-                  to='bee/how_tos/setup_a_node'
-                  className='nodes__button button button--outline button--primary'
-                >
-                  Set up a Bee node
-                </Link>
-              </div>
-            </div>
-            <div className='nodes__card'>
-              <div className='nodes__icon'>
                 <Wasp />
               </div>
               <div className='nodes__section'>
@@ -306,7 +191,7 @@ export default function HomeLayout() {
                   </li>
                   <li className='nodes__feature'>
                     <Link to='/smart-contracts/guide/chains_and_nodes/docker_standalone'>
-                      Run the IOTA Smart Contract Protocol
+                      Run the Shimmer Smart Contract Protocol
                     </Link>
                   </li>
                   <li className='nodes__feature'>
@@ -365,11 +250,11 @@ export default function HomeLayout() {
               </div>
               <h3 className='resources__header'>Try a tutorial</h3>
               <p className='resources__description'>
-                Now that you understand the basics of IOTA, it’s time to start
+                Now that you understand the basics of Shimmer, it’s time to start
                 your own project!
               </p>
             </Link>
-            <Link to='integration-services/welcome' className='resources__card'>
+            <Link className='resources__card'>
               <div className='resources__icon'>
                 <IntegrationServices />
               </div>
@@ -384,14 +269,14 @@ export default function HomeLayout() {
         </HomepageSection>
         <HomepageSection header='Further links'>
           <div className='further__cards'>
-            <Link to='https://discord.iota.org/' className='further__card'>
+            <Link to='https://discord.shimmer.network/' className='further__card'>
               <div className='further__section'>
                 <div className='further__icon'>
                   <Discord />
                 </div>
                 <h3 className='further__header'>Join Discord</h3>
                 <p className='further__description'>
-                  Check out the IOTA community on Discord.
+                  Check out the Shimmer community on Discord.
                 </p>
               </div>
             </Link>
@@ -412,7 +297,7 @@ export default function HomeLayout() {
               </div>
             </Link>
             <Link
-              to='https://explorer.iota.org/mainnet'
+              to='https://explorer.shimmer.network/testnet'
               className='further__card'
             >
               <div className='further__section'>
@@ -421,7 +306,7 @@ export default function HomeLayout() {
                 </div>
                 <h3 className='further__header'>Visit the explorer</h3>
                 <p className='further__description'>
-                  View transactions and data stored on the IOTA Tangle.
+                  View transactions and data stored on the Shimmer Tangle.
                 </p>
               </div>
             </Link>

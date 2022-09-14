@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from '@docusaurus/Link';
-import get_socials_data from '../../utils/socials';
+import get_socials_data from '../../../utils/socials';
 
 interface SocialLinkProps {
   link: string;
