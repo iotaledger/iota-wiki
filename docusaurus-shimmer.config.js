@@ -107,7 +107,6 @@ module.exports = {
         },
         {
           type: 'custom-network-dropdown',
-          content: 'Hello',
           position: 'right',
           networks: [
             {

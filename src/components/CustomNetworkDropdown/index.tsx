@@ -11,7 +11,6 @@ interface Network {
 }
 
 export default function CustomNetworkDropdown(props: {
-    content: string;
     mobile?: boolean;
     networks: Network[];
 }): JSX.Element | null {
