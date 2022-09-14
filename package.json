@@ -4,10 +4,10 @@
   "private": true,
   "scripts": {
     "docusaurus": "docusaurus",
-    "start": "docusaurus build && docusaurus build --config docusaurus-shimmer.config.js --out-dir build/shimmer && yarn serve",
+    "start": "yarn build && yarn serve",
     "start:tutorials": "CONTENT=\"tutorials/**\" yarn start",
     "start:all": "CONTENT=\"*/*/*/documentation,*/*/*,*/*\" yarn start",
-    "build": "docusaurus build",
+    "build": "docusaurus build && docusaurus build --config docusaurus-shimmer.config.js --out-dir build/shimmer",
     "build:all": "CONTENT=\"*/*/*/documentation,*/*/*,*/*\" yarn build",
     "swizzle": "docusaurus swizzle",
     "deploy": "docusaurus deploy",
