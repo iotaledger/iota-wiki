@@ -47,7 +47,6 @@ const LibrariesSection: FC = () => (
               Python: '/iota.rs/getting_started/python',
               Java: '/iota.rs/getting_started/java/getting_started',
               Wasm: '/iota.rs/getting_started/wasm',
-              TypeScript: '/iotajs/welcome',
             }}
           />
         </div>

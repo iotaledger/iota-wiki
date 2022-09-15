@@ -77,7 +77,7 @@ export default function HomeLayout() {
                   Learn about Shimmer
                 </Link>
                 <Link
-                  to='#libraries'
+                  to='#core-libraries'
                   className='intro__button button button--primary'
                 >
                   Start building
@@ -170,7 +170,7 @@ export default function HomeLayout() {
                   </li>
                 </ul>
                 <Link
-                  to='hornet/how_tos/hornet_apt_repository'
+                  to='/hornet/how_tos/hornet_apt_repository'
                   className='nodes__button button button--outline button--primary'
                 >
                   Set up a Hornet node
@@ -201,7 +201,7 @@ export default function HomeLayout() {
                   </li>
                 </ul>
                 <Link
-                  to='smart-contracts/guide/chains_and_nodes/running-a-node'
+                  to='/smart-contracts/guide/chains_and_nodes/running-a-node'
                   className='nodes__button button button--outline button--primary'
                 >
                   Run a smart contract node
@@ -232,7 +232,7 @@ export default function HomeLayout() {
                   </li>
                 </ul>
                 <Link
-                  to='chronicle/getting_started'
+                  to='/chronicle/getting_started'
                   className='nodes__button button button--outline button--primary'
                 >
                   Try the permanode framework

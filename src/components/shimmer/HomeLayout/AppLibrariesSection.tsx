@@ -92,13 +92,13 @@ const LibrariesSection: FC = () => (
         <ul/>
         <div className='start-building__buttons'>
           <Link
-            to='smart-contracts/overview'
+            to='/smart-contracts/overview'
             className='start-building__button button button--outline button--primary'
           >
             Learn about ISC
           </Link>
           <Link
-            to='smart-contracts/guide/evm/examples/introduction'
+            to='/smart-contracts/guide/evm/examples/introduction'
             className='start-building__button button button--primary'
           >
             Run a smart contract

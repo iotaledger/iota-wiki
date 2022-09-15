@@ -77,7 +77,7 @@ export default function HomeLayout() {
                   Learn about IOTA
                 </Link>
                 <Link
-                  to='#libraries'
+                  to='#core-libraries'
                   className='intro__button button button--primary'
                 >
                   Start building
