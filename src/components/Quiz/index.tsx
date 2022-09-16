@@ -43,7 +43,7 @@ export default function Quiz(_questions) {
             You scored {score} out of {questions.length}
           </p>
           <a
-            className='button button--outline button--primary"'
+            className='button button--outline button--primary'
             onClick={() => reset()}
           >
             {'Replay'}
@@ -51,28 +51,30 @@ export default function Quiz(_questions) {
         </div>
       ) : (
         <>
-          <div className='question-section'>
-            <div className='question-count'>
-              <span>Question {currentQuestion + 1}</span>/{questions.length}
+          <div className='card'>
+            <div className='card__header'>
+              <h3>Question {currentQuestion + 1}/{questions.length}</h3>
             </div>
-            <div className='question-text'>
+            <div className='card__body'>
               {questions[currentQuestion]?.questionText}
             </div>
-          </div>
-          <div className='answer-section'>
-            {questions[currentQuestion]?.answerOptions.map(
-              (answerOption, index) => (
-                <a
-                  className='button button--outline button--primary"'
-                  key={'answer-' + index}
-                  onClick={() =>
-                    handleAnswerOptionClick(answerOption.isCorrect)
-                  }
-                >
-                  {answerOption.answerText}
-                </a>
-              ),
-            )}
+            <div className='card__footer'>
+              <div className='button-group button-group--block'>
+                {questions[currentQuestion]?.answerOptions.map(
+                  (answerOption, index) => (
+                    <a
+                      className='button button--outline button--primary'
+                      key={'answer-' + index}
+                      onClick={() =>
+                        handleAnswerOptionClick(answerOption.isCorrect)
+                      }
+                    >
+                      {answerOption.answerText}
+                    </a>
+                  ),
+                )}
+              </div>
+            </div>
           </div>
         </>
       )}
