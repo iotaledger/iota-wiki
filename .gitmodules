@@ -138,3 +138,7 @@
 	path = shimmer/external/iota-2.0-research-specifications
 	url = https://github.com/iotaledger/IOTA-2.0-Research-Specifications.git
 	branch = main
+[submodule "shimmer/external/stronghold.rs/develop"]
+	path = shimmer/external/stronghold.rs/develop
+	url = https://github.com/iotaledger/stronghold.rs
+	branch = dev
