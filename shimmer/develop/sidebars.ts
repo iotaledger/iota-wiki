@@ -30,12 +30,12 @@ module.exports = {
             {
                 label: 'Client',
                 type: 'link',
-                href: '/iota.rs/welcome',
+                href: '/iota.rs/develop/welcome',
             },
             {
                 label: 'Wallet.rs',
                 type: 'link',
-                href: '/wallet.rs/welcome',
+                href: '/wallet.rs/develop/welcome',
             },
             {
                 label: 'Client Typescipt',
@@ -77,7 +77,7 @@ module.exports = {
             {
                 label: 'Hornet',
                 type: 'link',
-                href: '/hornet/welcome',
+                href: '/hornet/develop/welcome',
             },
             {
               type: 'category',
@@ -132,7 +132,7 @@ module.exports = {
                   {
                     type: 'link',
                     label: 'Chronicle',
-                    href: '/chronicle/welcome',   
+                    href: '/chronicle/develop/welcome',   
                   },
               ],
             },
@@ -148,8 +148,8 @@ module.exports = {
             'networks/network-token-migration',
             {
                 type: 'link',
-                label: 'Chrysalis',
-                href:  '/introduction/welcome'
+                label: 'Shimmer',
+                href:  '/introduction/develop/welcome'
             },
         ],
       },

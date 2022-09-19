@@ -154,23 +154,23 @@ export default function HomeLayout() {
                 <h3 className='nodes__header'>Hornet</h3>
                 <ul className='nodes__features'>
                   <li className='nodes__feature'>
-                    <Link to='/hornet/welcome'>
+                    <Link to='/hornet/develop/welcome'>
                       A node implementation written in Go
                     </Link>
                   </li>
                   <li className='nodes__feature'>
-                    <Link to='/hornet/getting_started'>
+                    <Link to='/hornet/develop/getting_started'>
                     Participate in the network
                     </Link>
                   </li>
                   <li className='nodes__feature'>
-                    <Link to='/hornet/how_tos/managing_a_node'>
+                    <Link to='/hornet/develop/how_tos/post_installation'>
                     Manage your node
                     </Link>
                   </li>
                 </ul>
                 <Link
-                  to='/hornet/how_tos/hornet_apt_repository'
+                  to='/hornet/develop/how_tos/using_docker'
                   className='nodes__button button button--outline button--primary'
                 >
                   Set up a Hornet node
@@ -216,23 +216,23 @@ export default function HomeLayout() {
                 <h3 className='nodes__header'>Chronicle</h3>
                 <ul className='nodes__features'>
                   <li className='nodes__feature'>
-                    <Link to='/chronicle/welcome'>
+                    <Link to='/chronicle/develop/welcome'>
                       Efficient and reliable permanodes
                     </Link>
                   </li>
                   <li className='nodes__feature'>
-                    <Link to='/chronicle/welcome#project-structure'>
-                      Solution for storing all transactions
+                    <Link to='/chronicle/develop/reference/authentication'>
+                      Configure authentication
                     </Link>
                   </li>
                   <li className='nodes__feature'>
-                    <Link to='/chronicle/config_reference'>
-                      Managing and accessing the permanode
+                    <Link to='/chronicle/develop/reference/api'>
+                    Using the API of your permanode
                     </Link>
                   </li>
                 </ul>
                 <Link
-                  to='/chronicle/getting_started'
+                  to='/chronicle/develop/getting_started/docker'
                   className='nodes__button button button--outline button--primary'
                 >
                   Try the permanode framework

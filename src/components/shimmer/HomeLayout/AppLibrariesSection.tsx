@@ -79,12 +79,6 @@ const LibrariesSection: FC = () => (
           <div className='libraries__icon'>
             <Identity />
           </div>
-          <Languages
-            languages={{
-              Rust: '/identity.rs/libraries/rust/getting_started',
-              WASM: '/identity.rs/libraries/wasm/getting_started',
-            }}
-          />
         </div>
         <h3 className='libraries__header'>IOTA Smart Contracts</h3>
         <ul/>
