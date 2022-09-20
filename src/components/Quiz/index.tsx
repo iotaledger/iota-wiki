@@ -8,8 +8,6 @@ export default function Quiz(_questions) {
   console.log('questions', questions[0]);
   useEffect(() => {
     setTimeout(() => {
-      console.log('start');
-
       reset();
     }, 1000);
   }, [questions]);
@@ -17,24 +15,31 @@ export default function Quiz(_questions) {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [showScore, setShowScore] = useState(false);
   const [score, setScore] = useState(0);
+  const [clicked, setClicked] = useState(-1);
 
-  const handleAnswerOptionClick = (isCorrect) => {
+  const handleAnswerOptionClick = (isCorrect, index) => {
+    setClicked(index);
     if (isCorrect) {
       setScore(score + 1);
+    } else {
     }
 
-    const nextQuestion = currentQuestion + 1;
-    if (nextQuestion < questions.length) {
-      setCurrentQuestion(nextQuestion);
-    } else {
-      setShowScore(true);
-    }
+    setTimeout(() => {
+      const nextQuestion = currentQuestion + 1;
+      if (nextQuestion < questions.length) {
+        setCurrentQuestion(nextQuestion);
+      } else {
+        setShowScore(true);
+      }
+      setClicked(-1);
+    }, 1000);
   };
   const reset = () => {
     setShowScore(false);
     setScore(0);
     setCurrentQuestion(0);
   };
+
   return (
     <div className='app'>
       {showScore ? (
@@ -53,7 +58,9 @@ export default function Quiz(_questions) {
         <>
           <div className='card'>
             <div className='card__header'>
-              <h3>Question {currentQuestion + 1}/{questions.length}</h3>
+              <h3>
+                Question {currentQuestion + 1}/{questions.length}
+              </h3>
             </div>
             <div className='card__body'>
               {questions[currentQuestion]?.questionText}
@@ -63,10 +70,18 @@ export default function Quiz(_questions) {
                 {questions[currentQuestion]?.answerOptions.map(
                   (answerOption, index) => (
                     <a
-                      className='button button--outline button--primary'
+                      className={`button button--primary ${
+                        clicked >= 0 && answerOption.isCorrect
+                          ? 'button--success'
+                          : ''
+                      } ${
+                        clicked === index && !answerOption.isCorrect
+                          ? 'button--danger'
+                          : ''
+                      }`}
                       key={'answer-' + index}
                       onClick={() =>
-                        handleAnswerOptionClick(answerOption.isCorrect)
+                        handleAnswerOptionClick(answerOption.isCorrect, index)
                       }
                     >
                       {answerOption.answerText}
