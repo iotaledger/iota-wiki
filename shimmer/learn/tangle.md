@@ -1,7 +1,7 @@
 ---
 id: tangle
 title: The Tangle
-description: The Tangle is the data structure behind the Shimmer.
+description: The Tangle is the data structure behind Shimmer that contains all information about token ownership.
 image: /img/iota-wiki.png
 keywords:
 - explanation

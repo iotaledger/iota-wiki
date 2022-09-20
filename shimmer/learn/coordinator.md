@@ -12,7 +12,7 @@ keywords:
 
 :::note
 
-The Coordinator is a temporary solution. The protocol will remove the Coordinator in the future [IOTA 2.0 update](./roadmap-to-decentralization.md).
+The Coordinator is a temporary solution which will be removed in the future [IOTA 2.0 update](./roadmap-to-decentralization.md).
 
 :::
 
