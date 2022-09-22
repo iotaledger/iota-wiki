@@ -71,7 +71,7 @@ export default function HomeLayout() {
               </p>
               <div className='intro__buttons'>
                 <Link
-                  to='learn/about-iota/an-introduction-to-iota'
+                  to='learn/welcome'
                   className='intro__button button button--outline button--primary'
                 >
                   Learn about Shimmer
@@ -89,7 +89,7 @@ export default function HomeLayout() {
         <HomepageSection header='Use Shimmer'>
           <div className='about__cards'>
             <Link
-              to='learn/about-iota/an-introduction-to-iota'
+              to='learn/welcome'
               className='about__card'
             >
               <div className='about__section'>

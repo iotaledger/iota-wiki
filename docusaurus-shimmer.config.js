@@ -78,7 +78,7 @@ module.exports = {
         },
         {
           label: 'Learn',
-          to: '/learn/about-iota/an-introduction-to-iota',
+          to: '/learn/welcome',
           activeBaseRegex: 
           '^/learn/.*|' +
           '^/IOTA-2.0-Research-Specifications/.*|' +
@@ -141,27 +141,7 @@ module.exports = {
             {
               label: 'How It Works',
               to: '/learn/about-iota/an-introduction-to-iota',
-            },
-            {
-              label: 'IOTA Token',
-              to: '/learn/iota-token/buying-iota',
-            },
-            {
-              label: 'Future of IOTA',
-              to: '/learn/future/future-of-iota',
-            },
-            {
-              label: 'Research',
-              to: '/learn/research/research-outline',
-            },
-            {
-              label: 'Glossary',
-              to: '/learn/glossary',
-            },
-            {
-              label: 'FAQs',
-              to: '/learn/faqs',
-            },
+            }
           ],
         },
         {
