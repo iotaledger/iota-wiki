@@ -43,9 +43,6 @@ html {
   min-width: 14rem;
 }
 
-article .card {
-  max-width: 224px;
-}
 .card--pointer {
   cursor: pointer;
 }
