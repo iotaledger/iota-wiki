@@ -38,7 +38,7 @@ module.exports = {
                 href: '/wallet.rs/develop/welcome',
             },
             {
-                label: 'Client Typescipt',
+                label: 'Client Typescript',
                 type: 'link',
                 href: '/iotajs/welcome',
             },
