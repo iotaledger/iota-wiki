@@ -347,7 +347,7 @@
 }
 
 @media (min-width: 997px) {
-  .libraries__card--identity {
+  .libraries__card--wide {
     grid-column: span 2;
   }
 }
@@ -361,6 +361,7 @@
   flex: 1 1 0;
   aspect-ratio: 1/1;
   width: calc(50% - 2rem - 1px);
+  border-radius: var(--ifm-global-radius);
 }
 
 @media (max-width: 996px) {
@@ -418,12 +419,12 @@
 }
 
 .nodes__feature > a,
-.libraries__feature>a {
+.libraries__feature > a {
   color: var(--ifm-color-emphasis-700);
 }
 
 .nodes__feature > a,
-.libraries__feature:hover>a {
+.libraries__feature:hover > a {
   color: var(--ifm-color-emphasis-700);
 }
 .libraries__button {

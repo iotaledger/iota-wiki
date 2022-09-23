@@ -357,7 +357,7 @@
 }
 
 @media (min-width: 997px) {
-  .libraries__card--identity {
+  .libraries__card--wide {
     grid-column: span 2;
   }
 }
@@ -371,6 +371,7 @@
   flex: 1 1 0;
   aspect-ratio: 1/1;
   width: calc(50% - 2rem - 1px);
+  border-radius: var(--ifm-global-radius);
 }
 
 @media (max-width: 996px) {
@@ -413,6 +414,12 @@
   margin-top: 1.5rem;
   margin-bottom: 0rem;
   text-transform: uppercase;
+}
+
+.libraries__body {
+  flex-grow: 1;
+  margin: 0.5rem 0;
+  font-size: 0.8rem;
 }
 
 .libraries__features {

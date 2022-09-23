@@ -66,7 +66,7 @@ const LibrariesSection: FC = () => (
         </Link>
       </div>
     </div>
-    <div className='libraries__card libraries__card--identity'>
+    <div className='libraries__card libraries__card--wide'>
       <img
         className='libraries__logo'
         src='/img/homepage/smartcontracts_bot.svg'
@@ -78,10 +78,10 @@ const LibrariesSection: FC = () => (
           </div>
         </div>
         <h3 className='libraries__header'>IOTA Smart Contracts</h3>
-        <ul />
-        The IOTA Smart Contracts Protocol brings scalable and flexible smart
-        contracts into the IOTA ecosystem.
-        <ul />
+        <p className='libraries__body'>
+          The IOTA Smart Contracts Protocol brings scalable and flexible smart
+          contracts into the IOTA ecosystem.
+        </p>
         <div className='start-building__buttons'>
           <Link
             to='/smart-contracts/overview'
@@ -89,12 +89,12 @@ const LibrariesSection: FC = () => (
           >
             Learn about ISC
           </Link>
-          <Link
+          {/* <Link
             to='/smart-contracts/guide/evm/examples/introduction'
             className='start-building__button button button--primary'
           >
             Run a smart contract
-          </Link>
+          </Link> */}
         </div>
       </div>
     </div>

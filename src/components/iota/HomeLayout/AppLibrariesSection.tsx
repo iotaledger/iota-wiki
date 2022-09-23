@@ -34,7 +34,7 @@ const Languages: FC<LanguagesProps> = (props) => {
 
 const LibrariesSection: FC = () => (
   <div className='libraries__cards'>
-    <div className='libraries__card libraries__card--identity'>
+    <div className='libraries__card libraries__card--wide'>
       <img className='libraries__logo' src='/img/homepage/identity_logo.svg' />
       <div className='libraries__section'>
         <div className='libraries__head'>
@@ -97,7 +97,9 @@ const LibrariesSection: FC = () => (
             <Link to='/streams/specs'>Read the specification</Link>
           </li>
           <li className='libraries__feature'>
-            <Link to='/streams/explanations/channels_protocol/overview'>Control the ownership of data</Link>
+            <Link to='/streams/explanations/channels_protocol/overview'>
+              Control the ownership of data
+            </Link>
           </li>
         </ul>
         <Link
