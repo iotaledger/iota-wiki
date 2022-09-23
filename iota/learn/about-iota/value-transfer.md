@@ -5,6 +5,7 @@ description: Learn how the IOTA Cryptocurrency Protocol transfers the native IOT
 image: /img/iota-wiki.png
 keywords:
   - explanation
+  - transactions
 ---
 
 # IOTA Value Transactions
