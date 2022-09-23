@@ -72,11 +72,21 @@
   justify-content: space-between;
   align-items: flex-end;
   width: 100%;
-  background: right bottom / 45% no-repeat url('/img/homepage/header.svg');
+  background: right bottom / 45% no-repeat url('/img/homepage/shimmer.svg');
+}
+
+:root[data-theme='dark'] .intro {
+  background: right bottom / 45% no-repeat url('/img/homepage/shimmer_dark.svg');
 }
 
 @media (max-width: 996px) {
   .intro {
+    background: none;
+  }
+}
+
+@media (max-width: 996px) {
+  :root[data-theme='dark'] .intro {
     background: none;
   }
 }
@@ -418,12 +428,12 @@
 }
 
 .nodes__feature > a,
-.libraries__feature>a {
+.libraries__feature > a {
   color: var(--ifm-color-emphasis-700);
 }
 
 .nodes__feature > a,
-.libraries__feature:hover>a {
+.libraries__feature:hover > a {
   color: var(--ifm-color-emphasis-700);
 }
 .libraries__button {
