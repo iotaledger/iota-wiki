@@ -12,7 +12,7 @@ With the introduction of [Assembly](./assembly) it's important to understand the
 
 ## The new storage deposit
 
-With the new [storage deposit](https://github.com/iotaledger/tips/pull/39), all data stored on the Tangle needs to be backed by IOTA tokens. For example, every NFT, SC chain state anchor or Native Asset requires a deposit of IOTA tokens in order to be stored on L1. You can read more about the new storage deposit function in this [community blog post](https://medium.com/@wernerderchamp/dust-protection-on-the-iota-network-an-eli12-d8ca567a2d36) or in [this Wiki article](./dust-protection#new-tokenisation-framework) about the history of the dust protection in IOTA.
+With the new [storage deposit](https://github.com/iotaledger/tips/pull/39), all data stored on the Tangle needs to be backed by IOTA tokens. For example, every NFT, SC chain state anchor or Native Asset requires a deposit of IOTA tokens in order to be stored on L1. You can read more about the new storage deposit functionality in this [community blog post](https://medium.com/@wernerderchamp/dust-protection-on-the-iota-network-an-eli12-d8ca567a2d36) or in [this Wiki article](./dust-protection#new-tokenisation-framework) about the history of the dust protection in IOTA.
 
 ## Mana
 
