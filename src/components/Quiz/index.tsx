@@ -2,10 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 export default function Quiz(_questions) {
   const { questions } = _questions;
-  console.log('questions', questions);
-  console.log('questions', questions instanceof Array);
 
-  console.log('questions', questions[0]);
   useEffect(() => {
     setTimeout(() => {
       reset();
