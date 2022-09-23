@@ -154,6 +154,32 @@ module.exports = {
         ],
       },
       {
+        type: 'category',
+        label: 'Tools',
+        link: {
+            type: 'generated-index',
+            title: 'Tools',
+            slug: '/tools',
+        },
+        items: [
+            {
+                type: 'link',
+                label: 'CLI Wallet',
+                href:  '/cli-wallet/welcome'
+            },
+            {
+                type: 'link',
+                label: 'WASP CLI',
+                href: '/smart-contracts/guide/chains_and_nodes/wasp-cli'
+            },
+            {
+                label: 'Schema Tool',
+                type: 'link',
+                href: '/smart-contracts/guide/schema'
+            }
+        ]
+      },
+      {
         type: 'link',
         label: 'Tutorials',
         href: '/tutorials',
