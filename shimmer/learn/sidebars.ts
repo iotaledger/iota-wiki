@@ -8,6 +8,7 @@ module.exports = {
         'welcome',
         'tangle',
         'coordinator',
+        'maintenance',
         'glossary',
       ],
     },
