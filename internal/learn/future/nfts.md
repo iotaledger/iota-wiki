@@ -69,6 +69,7 @@ marketplace is a feeless alternative to the expensive and energy-wasting approac
 Their tests phase has ended. For the next steps, they implement Smart Contracts and integrate Browser Wallets to make
 the NFT trading is secure and accessible.
 
+- [Soonaverse](https://soonaverse.com/)
 - [nftiota.org](https://nftiota.org/)
 
 ## NFT Projects
