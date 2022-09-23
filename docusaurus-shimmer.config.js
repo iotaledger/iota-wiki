@@ -62,36 +62,36 @@ module.exports = {
         {
           label: 'Use Shimmer',
           to: '/use/wallets/what-is-a-wallet',
-          activeBaseRegex: '^/use/.*',
+          activeBaseRegex: '^(/[^/]+)?/use/.*',
         },
         {
           label: 'Learn',
           to: '/learn/welcome',
           activeBaseRegex: 
-          '^/learn/.*|' +
-          '^/IOTA-2.0-Research-Specifications/.*|' +
-          '^/goshimmer/.*',
+          '^(/[^/]+)?/learn/.*|' +
+          '^(/[^/]+)?/IOTA-2.0-Research-Specifications/.*|' +
+          '^(/[^/]+)?/goshimmer/.*',
         },
         {
           label: 'Develop',
           to: '/develop/nodes/about-nodes',
           activeBaseRegex: 
-          '^/develop.*|' + 
-          '^/smart-contracts/.*|' +
-          '^/iota.rs/.*|' +
-          '^/iotajs/.*|' +
-          '^/wallet.rs/.*|' +
-          '^/stronghold.rs/.*|' +
-          '^/hornet/.*|' +
-          '^/bee/.*|' +
-          '^/chronicle/.*|' +
-          '^/introduction/.*|' +
-          '^/tutorials*',
+          '^(/[^/]+)?/develop.*|' + 
+          '^(/[^/]+)?/smart-contracts/.*|' +
+          '^(/[^/]+)?/iota.rs/.*|' +
+          '^(/[^/]+)?/iotajs/.*|' +
+          '^(/[^/]+)?/wallet.rs/.*|' +
+          '^(/[^/]+)?/stronghold.rs/.*|' +
+          '^(/[^/]+)?/hornet/.*|' +
+          '^(/[^/]+)?/bee/.*|' +
+          '^(/[^/]+)?/chronicle/.*|' +
+          '^(/[^/]+)?/introduction/.*|' +
+          '^(/[^/]+)?/tutorials*',
         },
         {
           label: 'Community',
           to: '/community/the-community/discord',
-          activeBaseRegex: '^/community/.*'
+          activeBaseRegex: '^(/[^/]+)?/community/.*'
         },
         {
           type: 'custom-network-dropdown',

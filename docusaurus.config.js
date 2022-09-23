@@ -74,37 +74,37 @@ module.exports = {
         {
           label: 'Use IOTA',
           to: '/use/wallets/what-is-a-wallet',
-          activeBaseRegex: '^/use/.*',
+          activeBaseRegex: '^(/[^/]+)?/use/.*',
         },
         {
           label: 'Learn',
           to: '/learn/about-iota/an-introduction-to-iota',
           activeBaseRegex: 
-          '^/learn/.*|' +
-          '^/IOTA-2.0-Research-Specifications/.*|' +
-          '^/goshimmer/.*',
+          '^(/[^/]+)?/learn/.*|' +
+          '^(/[^/]+)?/IOTA-2.0-Research-Specifications/.*|' +
+          '^(/[^/]+)?/goshimmer/.*',
         },
         {
           label: 'Develop',
           to: '/develop/nodes/about-nodes',
           activeBaseRegex: 
-          '^/develop.*|' + 
-          '^/identity.rs/.*|' +
-          '^/iota.rs/.*|' +
-          '^/wallet.rs/.*|' +
-          '^/streams/.*|' +
-          '^/stronghold.rs/.*|' +
-          '^/hornet/.*|' +
-          '^/bee/.*|' +
-          '^/chronicle/.*|' +
-          '^/introduction/.*|' +
-          '^/integration-services/.*|' +
-          '^/tutorials*',
+          '^(/[^/]+)?/develop.*|' + 
+          '^(/[^/]+)?/identity.rs/.*|' +
+          '^(/[^/]+)?/iota.rs/.*|' +
+          '^(/[^/]+)?/wallet.rs/.*|' +
+          '^(/[^/]+)?/streams/.*|' +
+          '^(/[^/]+)?/stronghold.rs/.*|' +
+          '^(/[^/]+)?/hornet/.*|' +
+          '^(/[^/]+)?/bee/.*|' +
+          '^(/[^/]+)?/chronicle/.*|' +
+          '^(/[^/]+)?/introduction/.*|' +
+          '^(/[^/]+)?/integration-services/.*|' +
+          '^(/[^/]+)?/tutorials*',
         },
         {
           label: 'Community',
           to: '/community/the-community/discord',
-          activeBaseRegex: '^/community/.*'
+          activeBaseRegex: '^(/[^/]+)?/community/.*'
         },
         {
           type: 'custom-network-dropdown',
