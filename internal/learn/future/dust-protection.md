@@ -56,14 +56,14 @@ The 1.5 dust protection is also not ready for IOTA 2.0. Therefore a new dust pro
 The rules of the new dust protection are:
 
 1. Any UTXO must contain a minimum deposit (for the sake of simplicity, let's make this 1 Mi for our examples).
-2. The amount of data any UTXO can hold is proportional to the amount of IOTA on that UTXO. The IOTA acts as a deposit to secure that data on the Tangle, and you can add more IOTA to add more data. The actual cost of IOTA per byte is currently being decided, and can change over time.
+2. The amount of data any UTXO can hold is proportional to the amount of IOTA on that UTXO. The IOTA acts as a deposit to secure that data on the Tangle, and you can add more IOTA to add more data. This is why the official name for the new dust protection was chosen to be *storage deposit* The actual cost of IOTA per byte is currently being decided, and can change over time.
 
 To send amounts smaller than 1 Mi, or to send native assets, we introduce a new system of "conditional sending", which does not require total ordering of the Tangle (and is therefore ready for IOTA 2.0).
 Let's look at how this works if I want to send 10i to an address which already holds 5 Mi (assuming the minimum deposit is 1 Mi). As before I cannot just send 10i, because the UTXO will have a value of 10i (well below the minimal amount of 1 Mi).
 I cannot use a special dust-UTXO as in 1.5, because these need total ordering of the Tangle.
 Instead I use "conditional sending":
 
-1. I send the 10i together with the minimal deposit amount (1 Mi) - a total of 1.00001 Mi (which meets the dust protection criteria) - to the target address.
+1. I send the 10i together with the minimal deposit amount (1 Mi) - a total of 1.00001 Mi (which meets the storage deposit criteria) - to the target address.
 2. This is however a special type of transaction which needs a further step to complete. It has to be "claimed" by the recipient. 2 things can therefore happen to this transaction:
    a) The 10i is claimed by the recipient - the 10i is transferred together with the recipient's own minimal deposit to a new valid UTXO. The recipient needs their own 1 Mi deposit to claim the 10i. At the same time the sender's 1 Mi deposit is returned to the sender.
    b) The 10i is not claimed in a reasonable time period (set by the sender), and the total amount of 1.00001 Mi can now be reclaimed or spent by the sender (the mechanism is a bit more complex but this is the simplest way of describing it).
