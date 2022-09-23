@@ -56,7 +56,7 @@ module.exports = {
       logo: {
         alt: 'Shimmer Wiki Logo',
         src: 'img/logo_shimmer.svg',
-        srcDark: 'img/logo_shimmer.svg',
+        srcDark: 'img/logo_shimmer_dark.svg',
       },
       items: [
         {
@@ -67,31 +67,31 @@ module.exports = {
         {
           label: 'Learn',
           to: '/learn/welcome',
-          activeBaseRegex: 
-          '^(/[^/]+)?/learn/.*|' +
-          '^(/[^/]+)?/IOTA-2.0-Research-Specifications/.*|' +
-          '^(/[^/]+)?/goshimmer/.*',
+          activeBaseRegex:
+            '^(/[^/]+)?/learn/.*|' +
+            '^(/[^/]+)?/IOTA-2.0-Research-Specifications/.*|' +
+            '^(/[^/]+)?/goshimmer/.*',
         },
         {
           label: 'Develop',
           to: '/develop/nodes/about-nodes',
-          activeBaseRegex: 
-          '^(/[^/]+)?/develop.*|' + 
-          '^(/[^/]+)?/smart-contracts/.*|' +
-          '^(/[^/]+)?/iota.rs/.*|' +
-          '^(/[^/]+)?/iotajs/.*|' +
-          '^(/[^/]+)?/wallet.rs/.*|' +
-          '^(/[^/]+)?/stronghold.rs/.*|' +
-          '^(/[^/]+)?/hornet/.*|' +
-          '^(/[^/]+)?/bee/.*|' +
-          '^(/[^/]+)?/chronicle/.*|' +
-          '^(/[^/]+)?/introduction/.*|' +
-          '^(/[^/]+)?/tutorials*',
+          activeBaseRegex:
+            '^(/[^/]+)?/develop.*|' +
+            '^(/[^/]+)?/smart-contracts/.*|' +
+            '^(/[^/]+)?/iota.rs/.*|' +
+            '^(/[^/]+)?/iotajs/.*|' +
+            '^(/[^/]+)?/wallet.rs/.*|' +
+            '^(/[^/]+)?/stronghold.rs/.*|' +
+            '^(/[^/]+)?/hornet/.*|' +
+            '^(/[^/]+)?/bee/.*|' +
+            '^(/[^/]+)?/chronicle/.*|' +
+            '^(/[^/]+)?/introduction/.*|' +
+            '^(/[^/]+)?/tutorials*',
         },
         {
           label: 'Community',
           to: '/community/the-community/discord',
-          activeBaseRegex: '^(/[^/]+)?/community/.*'
+          activeBaseRegex: '^(/[^/]+)?/community/.*',
         },
         {
           type: 'custom-network-dropdown',
@@ -104,7 +104,7 @@ module.exports = {
               label: 'Shimmer',
               routeBasePath: 'shimmer',
             },
-          ]
+          ],
         },
       ],
     },
@@ -115,7 +115,7 @@ module.exports = {
           items: [
             {
               label: 'Wallets',
-              to: '/use/wallets/what-is-a-wallet'
+              to: '/use/wallets/what-is-a-wallet',
             },
             {
               label: 'Use Cases',
@@ -129,7 +129,7 @@ module.exports = {
             {
               label: 'How It Works',
               to: '/learn/about-iota/an-introduction-to-iota',
-            }
+            },
           ],
         },
         {
@@ -324,24 +324,16 @@ module.exports = {
       {
         createRedirects(existingPath) {
           if (existingPath.includes('/iota.rs/develop')) {
-            return [
-              existingPath.replace('/iota.rs/develop', '/iota.rs'),
-            ];
+            return [existingPath.replace('/iota.rs/develop', '/iota.rs')];
           }
           if (existingPath.includes('/wallet.rs/develop')) {
-            return [
-              existingPath.replace('/wallet.rs/develop', '/wallet.rs'),
-            ];
+            return [existingPath.replace('/wallet.rs/develop', '/wallet.rs')];
           }
           if (existingPath.includes('/hornet/develop')) {
-            return [
-              existingPath.replace('/hornet/develop', '/hornet'),
-            ];
+            return [existingPath.replace('/hornet/develop', '/hornet')];
           }
           if (existingPath.includes('/chronicle/develop')) {
-            return [
-              existingPath.replace('/chronicle/develop', '/chronicle'),
-            ];
+            return [existingPath.replace('/chronicle/develop', '/chronicle')];
           }
           if (existingPath.includes('/introduction/develop')) {
             return [
