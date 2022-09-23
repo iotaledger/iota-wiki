@@ -12,6 +12,7 @@ export { default as IotaToken } from './iota_token.svg';
 export { default as PickAWallet } from './pick_a_wallet.svg';
 export { default as Search } from './search.svg';
 export { default as Shimmer } from './shimmer.svg';
+export { default as SmartContracts } from './smart_contracts.svg';
 export { default as Streams } from './streams.svg';
 export { default as Stronghold } from './stronghold.svg';
 export { default as Tips } from './tips.svg';

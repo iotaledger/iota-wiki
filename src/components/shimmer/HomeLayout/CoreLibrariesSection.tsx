@@ -1,12 +1,6 @@
 import React, { FC } from 'react';
 import Link from '@docusaurus/Link';
-import {
-  Identity,
-  IotaCore,
-  Streams,
-  Stronghold,
-  Wallet,
-} from '../../../icons';
+import { Shimmer, Wallet } from '../../../icons';
 
 interface LanguagesProps {
   languages?: { [key: string]: string };
@@ -38,7 +32,7 @@ const LibrariesSection: FC = () => (
       <div className='libraries__section'>
         <div className='libraries__head'>
           <div className='libraries__icon'>
-            <IotaCore />
+            <Shimmer />
           </div>
           <Languages
             languages={{
@@ -57,7 +51,9 @@ const LibrariesSection: FC = () => (
             </Link>
           </li>
           <li className='libraries__feature'>
-            <Link to='/iota.rs/develop/examples/data_message'>Send a data message</Link>
+            <Link to='/iota.rs/develop/examples/data_message'>
+              Send a data message
+            </Link>
           </li>
           <li className='libraries__feature'>
             <Link to='/iota.rs/develop/explanations/messages_payloads_and_transactions'>
@@ -117,7 +113,7 @@ const LibrariesSection: FC = () => (
       <div className='libraries__section'>
         <div className='libraries__head'>
           <div className='libraries__icon'>
-            <IotaCore />
+            <Shimmer />
           </div>
           <Languages
             languages={{

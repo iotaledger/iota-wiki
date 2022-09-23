@@ -1,12 +1,6 @@
 import React, { FC } from 'react';
 import Link from '@docusaurus/Link';
-import {
-  Identity,
-  IotaCore,
-  Streams,
-  Stronghold,
-  Wallet,
-} from '../../../icons';
+import { SmartContracts, Stronghold } from '../../../icons';
 
 interface LanguagesProps {
   languages?: { [key: string]: string };
@@ -73,17 +67,21 @@ const LibrariesSection: FC = () => (
       </div>
     </div>
     <div className='libraries__card libraries__card--identity'>
-      <img className='libraries__logo' src='/img/homepage/smartcontracts_bot.svg' />
+      <img
+        className='libraries__logo'
+        src='/img/homepage/smartcontracts_bot.svg'
+      />
       <div className='libraries__section'>
         <div className='libraries__head'>
           <div className='libraries__icon'>
-            <Identity />
+            <SmartContracts />
           </div>
         </div>
         <h3 className='libraries__header'>IOTA Smart Contracts</h3>
-        <ul/>
-        The IOTA Smart Contracts Protocol brings scalable and flexible smart contracts into the IOTA ecosystem.
-        <ul/>
+        <ul />
+        The IOTA Smart Contracts Protocol brings scalable and flexible smart
+        contracts into the IOTA ecosystem.
+        <ul />
         <div className='start-building__buttons'>
           <Link
             to='/smart-contracts/overview'

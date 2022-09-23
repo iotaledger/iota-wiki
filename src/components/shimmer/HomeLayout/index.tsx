@@ -5,12 +5,10 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import clsx from 'clsx';
 import './styles.css';
 import {
-  Bee,
   Chronicle,
   Discord,
   Hornet,
   IntegrationServices,
-  IotaCore,
   IotaToken,
   PickAWallet,
   Search,
@@ -88,13 +86,10 @@ export default function HomeLayout() {
         </HomepageSection>
         <HomepageSection header='Use Shimmer'>
           <div className='about__cards'>
-            <Link
-              to='learn/welcome'
-              className='about__card'
-            >
+            <Link to='learn/welcome' className='about__card'>
               <div className='about__section'>
                 <div className='about__icon'>
-                  <IotaCore />
+                  <Shimmer />
                 </div>
                 <h3 className='about__header'>What is Shimmer?</h3>
                 <p className='about__description'>
@@ -160,12 +155,12 @@ export default function HomeLayout() {
                   </li>
                   <li className='nodes__feature'>
                     <Link to='/hornet/develop/getting_started'>
-                    Participate in the network
+                      Participate in the network
                     </Link>
                   </li>
                   <li className='nodes__feature'>
                     <Link to='/hornet/develop/how_tos/post_installation'>
-                    Manage your node
+                      Manage your node
                     </Link>
                   </li>
                 </ul>
@@ -227,7 +222,7 @@ export default function HomeLayout() {
                   </li>
                   <li className='nodes__feature'>
                     <Link to='/chronicle/develop/reference/api'>
-                    Using the API of your permanode
+                      Using the API of your permanode
                     </Link>
                   </li>
                 </ul>
@@ -250,8 +245,8 @@ export default function HomeLayout() {
               </div>
               <h3 className='resources__header'>Try a tutorial</h3>
               <p className='resources__description'>
-                Now that you understand the basics of Shimmer, it’s time to start
-                your own project!
+                Now that you understand the basics of Shimmer, it’s time to
+                start your own project!
               </p>
             </Link>
             <Link className='resources__card'>
@@ -269,7 +264,10 @@ export default function HomeLayout() {
         </HomepageSection>
         <HomepageSection header='Further links'>
           <div className='further__cards'>
-            <Link to='https://discord.shimmer.network/' className='further__card'>
+            <Link
+              to='https://discord.shimmer.network/'
+              className='further__card'
+            >
               <div className='further__section'>
                 <div className='further__icon'>
                   <Discord />
