@@ -27,14 +27,6 @@ html {
   background-color: unset;
 }
 
-.dropdown > .navbar__link:after,
-.menu__link--sublist:after {
-  content: 'expand_more';
-  font-family: 'Material Icons';
-  font-size: 1.25rem;
-  white-space: nowrap;
-}
-
 .dropdown__label,
 .footer__title {
   font-family: 'Metropolis Bold';
@@ -45,15 +37,6 @@ html {
 
 .dropdown__link {
   font-size: 1rem;
-}
-
-.dropdown__menu--mega {
-  padding: calc(var(--ifm-navbar-padding-vertical) + 1rem)
-    var(--ifm-navbar-padding-horizontal) !important;
-}
-
-.dropdown__menu--mega .link__label {
-  font-family: 'Metropolis Semi Bold', sans-serif;
 }
 
 .card {
@@ -222,10 +205,6 @@ article .card {
 .navbar__link.active {
   color: var(--ifm-navbar-link-hover-color);
   font-weight: var(--ifm-font-weight-semibold);
-}
-
-.menu__link--sublist {
-  justify-content: space-between;
 }
 
 .navbar {

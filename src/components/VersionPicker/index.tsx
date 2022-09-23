@@ -55,7 +55,7 @@ export default function VersionPicker() {
   return (
     <div className='version-picker'>
       <div
-        className='version-picker__toggle menu__link menu__link--sublist'
+        className='version-picker__toggle menu__link menu__link--sublist menu__link--sublist-caret'
         onClick={(e) => {
           e.preventDefault();
           toggleCollapsed();
