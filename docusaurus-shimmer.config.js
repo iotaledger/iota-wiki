@@ -12,7 +12,7 @@ module.exports = {
   onBrokenMarkdownLinks: 'log',
   favicon: 'img/favicon.ico',
   trailingSlash: false,
-  organizationName: 'iota-community', // Usually your GitHub org/user name.
+  organizationName: 'iota-wiki', // Usually your GitHub org/user name.
   projectName: 'iota-wiki', // Usually your repo name.
   stylesheets: [
     'https://fonts.googleapis.com/css?family=Material+Icons',
@@ -25,15 +25,6 @@ module.exports = {
     },
   ],
   themeConfig: {
-    /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
-    announcementBar: {
-      id: 'shimmer',
-      content:
-        'This are the docs for the Shimmer staging network',
-      backgroundColor: '#00e0ca',
-      textColor: '#000000',
-      isCloseable: true,
-    },
     image: 'img/iota-wiki.png',
     algolia: {
       appId: 'YTLE56KAO4',
@@ -56,9 +47,6 @@ module.exports = {
       options: {
         background: 'rgba(0, 0, 0, 0.6)',
       },
-    },
-    imageSlider: {
-      videoPlaceholder: '/img/infographics/video-placeholder.png',
     },
     prism: {
       additionalLanguages: ['java', 'rust', 'solidity', 'toml'],
