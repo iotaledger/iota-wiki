@@ -18,7 +18,7 @@ module.exports = {
                 title: 'Send IOTA Tokens with Javascript',
                 description:
                     'In this tutorial you will learn how to send IOTA Tokens in the Devnet.',
-                preview: 'send-iota-tokens-with-javascript.png',
+                preview: 'send-iota-tokens-with-javascript.svg',
                 route: 'tutorials/send-iota-tokens-with-javascript',
                 tags: ['text', 'getting-started', 'client', 'js', 'mainnet'],
             },
