@@ -18,7 +18,6 @@ export default function Quiz(_questions) {
     setClicked(index);
     if (isCorrect) {
       setScore(score + 1);
-    } else {
     }
 
     setTimeout(() => {
@@ -31,6 +30,7 @@ export default function Quiz(_questions) {
       setClicked(-1);
     }, 1000);
   };
+  
   const reset = () => {
     setShowScore(false);
     setScore(0);
