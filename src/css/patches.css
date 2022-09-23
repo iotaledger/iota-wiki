@@ -58,20 +58,6 @@ hr {
   height: var(--ifm-hr-border-width);
 }
 
-/*
-Patch to use transformed font icons in dropdowns and expanded menus
-*/
-.dropdown > .navbar__link:after {
-  border: none;
-  content: none;
-  display: none;
-  height: 100%;
-  margin-left: auto;
-  position: absolute;
-  top: 0;
-  transform: none;
-}
-
 .theme-doc-toc-mobile button::after {
   background: none;
   content: none;
