@@ -32,6 +32,4 @@ The initial token supply of SMR is defined by the amount of IOTA tokens staked, 
 
 ![Staking Example](/img/learn/future/staking_example.svg 'Click to see the full-size image.')
 
-## Post-launch staking
 
-Once the Shimmer network is live, you will be able to stake your SMR tokens directly. An initial APY of 8% is planned. This can be changed later by the community. More information on "post-launch" staking will follow.
