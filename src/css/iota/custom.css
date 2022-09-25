@@ -356,18 +356,6 @@ ul ul .table-of-contents__link {
   margin-right: 1rem;
 }
 
-@media (max-width: 1227px) {
-  .navbar__item {
-    font-size: 0.8rem;
-  }
-}
-
-@media (max-width: 1105px) {
-  .navbar__item {
-    font-size: 0.7rem;
-  }
-}
-
 .math {
   overflow-x: auto;
   margin-bottom: 1em;

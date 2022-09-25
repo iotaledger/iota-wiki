@@ -65,3 +65,21 @@ hr {
   filter: none;
   min-width: auto;
 }
+
+/*
+Patch to unify arrows in sidebar and navbar
+*/
+.dropdown > .navbar__link:after {
+  background: var(--ifm-menu-link-sublist-icon) 50% / 1.5rem 1.5rem;
+  border: none;
+  filter: var(--ifm-menu-link-sublist-icon-filter);
+  transform: rotate(180deg);
+  height: 0.9rem;
+  width: 0.9rem;
+}
+
+.menu__link--sublist-caret:after {
+  background: var(--ifm-menu-link-sublist-icon) 50% / 1.5rem 1.5rem;
+  height: 0.9rem;
+  width: 0.9rem;
+}
