@@ -1,6 +1,11 @@
 module.exports = {
     develop: [
       {
+        type: 'link',
+        label: 'Protocol Overview',
+        href:  '/introduction/develop/welcome'
+      },
+      {
         type: 'category',
         label: 'Smart Contracts',
         collapsed: true,
@@ -148,21 +153,6 @@ module.exports = {
                   'nodes/explanations/nodes_101',
                   'nodes/explanations/security_101',
               ]
-            },
-        ],
-      },
-      {
-        type: 'category',
-        label: 'Networks',
-        items: [
-            'networks/iota-1.5-chrysalis',
-            'networks/iota-2.0-coordicide',
-            'networks/testnets',
-            'networks/network-token-migration',
-            {
-                type: 'link',
-                label: 'Shimmer',
-                href:  '/introduction/develop/welcome'
             },
         ],
       },

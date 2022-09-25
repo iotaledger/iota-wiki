@@ -1,6 +1,11 @@
 module.exports = {
     develop: [
       {
+        type: 'link',
+        label: 'Protocol Overview',
+        href:  '/introduction/welcome'
+      },
+      {
         type: 'category',
         label: 'Libraries',
         collapsed: true,
@@ -82,21 +87,7 @@ module.exports = {
             },
         ],
       },
-      {
-        type: 'category',
-        label: 'Networks',
-        items: [
-            'networks/iota-1.5-chrysalis',
-            'networks/iota-2.0-coordicide',
-            'networks/testnets',
-            'networks/network-token-migration',
-            {
-                type: 'link',
-                label: 'Chrysalis',
-                href:  '/introduction/welcome'
-            },
-        ],
-      },
+      'network-token-migration',
       {
         type: 'link',
         label: 'Tutorials',

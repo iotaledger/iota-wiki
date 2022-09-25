@@ -71,6 +71,7 @@ module.exports = {
       items: [
         'research/research-outline',
         'research/research-papers',
+        'research/iota-2.0-coordicide',
         {
           type: 'link',
           label: 'Coordicide Specs',
