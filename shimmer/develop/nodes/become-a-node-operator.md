@@ -1,6 +1,6 @@
 ---
 title: Become a Node Operator
-description: Running a node is the best way to use IOTA. This topic provides a
+description: Running a node is the best way to use Shimmer. This topic provides a
   checklist of steps for running a reliable node.
 image: /img/iota-wiki.png
 ---
@@ -9,7 +9,7 @@ image: /img/iota-wiki.png
 
 ![Node Operator](/img/Banner/banner_node_operator.svg)
 
-**Running a node is the best way to use IOTA. By doing so, you have direct access to the Tangle instead of having to connect to and trust someone else's node, and you help the IOTA network to become more distributed. This topic provides a checklist of steps for running a reliable node.**
+**Running a node is the best way to use Shimmer. By doing so, you have direct access to the Tangle instead of having to connect to and trust someone else's node, and you help the Shimmer network to become more distributed. This topic provides a checklist of steps for running a reliable node.**
 
 ## Minimum Requirements
 
@@ -38,7 +38,7 @@ Attackers can abuse any open ports on your device. To secure your device against
 
 ## Choosing a Node Software
 
-To join an IOTA network, you need to run one of the available node softwares. For a description of each node software as well as links to guides and tutorials for running them, see [Node software](./node-software).
+To join the Shimmer network, you need to run one of the available node softwares. For a description of each node software as well as links to guides and tutorials for running them, see [Node software](./node-software).
 
 ## Enable Remote Proof of Work
 

@@ -22,7 +22,7 @@ called nodes which are the backbone of an IOTA network.
 Nodes are responsible for:
 
 - Providing an API to interact with the Tangle/IOTA network.
-- Validating [messages](https://wiki.iota.org/chrysalis-docs/guides/developer#messages-payloads-and-transactions) and ledger mutations for consistency.
+- Validating [messages](/introduction/reference/details#messages-payloads-and-transactions) and ledger mutations for consistency.
 - Providing data for other nodes to synchronize to the latest state of the network.
 
 ## Attaching New Messages to the Tangle
@@ -56,7 +56,7 @@ When nodes detect double spends, they must decide which message to consider conf
 
 ## Keeping a Record of the Balances on Addresses Via `UTXO`
 
-All nodes keep a record of the [Unspent Transaction Outputs (UTXO)](https://wiki.iota.org/chrysalis-docs/guides/developer#unspent-transaction-output-utxo) so they can:
+All nodes keep a record of the [Unspent Transaction Outputs (UTXO)](/introduction/reference/details#unspent-transaction-output-utxo) so they can:
 
 * Check that a transaction is not transferring more IOTA tokens than are available on the address.
 * Respond to clients' requests for their balance.
@@ -71,7 +71,7 @@ Nodes come with two sets of low-level APIs:
 
 :::note
 
-Developers do not need to communicate with nodes using a mentioned low-level API. Developers can leverage the [iota client libraries](https://wiki.iota.org/iota.rs/libraries/overview/) that provide a high-level abstraction to all features IOTA nodes provide, either on HTTP API level or Event API level.
+Developers do not need to communicate with nodes using a mentioned low-level API. Developers can leverage the [iota client libraries](iota.rs/welcome) that provide a high-level abstraction to all features IOTA nodes provide, either on HTTP API level or Event API level.
 
 :::
 

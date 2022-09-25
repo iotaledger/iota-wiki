@@ -30,7 +30,7 @@ To synchronize, nodes in IOTA networks use milestones. If a node has the history
 
 ## Transaction confirmation
 
-All transactions remain in a pending state until the node is sure of its validity. However, even when a transaction is valid, nodes may not immediately be able to confirm a transaction due to conflicts, like in the case of a double spend. When nodes detect conflicting transactions, they must decide which transaction to consider confirmed. Nodes do this by using [consensus rules](/learn/about-iota/an-introduction-to-iota#consensus-in-the-tangle) that are built into their node software.
+All transactions remain in a pending state until the node is sure of its validity. However, even when a transaction is valid, nodes may not immediately be able to confirm a transaction due to conflicts, like in the case of a double spend. When nodes detect conflicting transactions, they must decide which transaction to consider confirmed. Nodes do this by using consensus rules that are built into their node software.
 
 ## Balances on addresses
 
