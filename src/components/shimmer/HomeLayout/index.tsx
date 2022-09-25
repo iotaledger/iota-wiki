@@ -249,7 +249,7 @@ export default function HomeLayout() {
                 start your own project!
               </p>
             </Link>
-            <Link className='resources__card'>
+            <Link to='develop/tools' className='resources__card'>
               <div className='resources__icon'>
                 <IntegrationServices />
               </div>
