@@ -56,29 +56,14 @@ module.exports = {
       },
       {
         type: 'category',
-        label: 'Nodes',
-        collapsed: true,
-        items: [
-            'nodes/about-nodes',
-            'nodes/become-a-node-operator',
-            'nodes/node-software',
-            'nodes/api_reference',
-            {
-              type: 'category',
-              label: 'Explanations',
-              collapsed: false,
-              items: [
-                  'nodes/explanations/nodes_101',
-                  'nodes/explanations/security_101',
-              ]
-            },
-        ],
-      },
-      {
-        type: 'category',
         label: 'Node Software',
         collapsed: true,
         items: [
+            {
+                label: 'Introduction',
+                type: 'doc',
+                id: 'nodes/node-software',
+            },
             {
                 label: 'Hornet',
                 type: 'link',
@@ -140,6 +125,29 @@ module.exports = {
                     href: '/chronicle/develop/welcome',   
                   },
               ],
+            },
+        ],
+      },
+      {
+        type: 'category',
+        label: 'About Nodes',
+        collapsed: true,
+        items: [
+            {
+                label: 'Introduction',
+                type: 'doc',
+                id: 'nodes/about-nodes',
+            },
+            'nodes/become-a-node-operator',
+            'nodes/api_reference',
+            {
+              type: 'category',
+              label: 'Explanations',
+              collapsed: false,
+              items: [
+                  'nodes/explanations/nodes_101',
+                  'nodes/explanations/security_101',
+              ]
             },
         ],
       },

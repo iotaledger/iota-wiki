@@ -34,12 +34,42 @@ module.exports = {
       },
       {
         type: 'category',
-        label: 'Nodes',
+        label: 'Node Software',
         collapsed: true,
         items: [
-            'nodes/about-nodes',
+            {
+                label: 'Introduction',
+                type: 'doc',
+                id: 'nodes/node-software',
+            },
+            {
+                label: 'Hornet',
+                type: 'link',
+                href: '/hornet/welcome',
+            },
+            {
+                label: 'Bee',
+                type: 'link',
+                href: '/bee/welcome',
+            },
+            {
+              label: 'Chronicle',
+              type: 'link',
+              href: '/chronicle/welcome',   
+            },
+        ],
+      },
+      {
+        type: 'category',
+        label: 'About Nodes',
+        collapsed: true,
+        items: [
+            {
+                label: 'Introduction',
+                type: 'doc',
+                id: 'nodes/about-nodes',
+            },
             'nodes/become-a-node-operator',
-            'nodes/node-software',
             'nodes/api_reference',
             {
               type: 'category',
@@ -51,28 +81,6 @@ module.exports = {
               ]
             },
         ],
-      },
-      {
-        type: 'category',
-        label: 'Node Software',
-        collapsed: true,
-        items: [
-            {
-                label: 'Hornet',
-                type: 'link',
-                href: '/hornet/welcome',
-            },
-            {
-                label: 'Bee',
-                type: 'link',
-                href: '/bee/welcome',
-            },
-        ],
-      },
-      {
-        type: 'link',
-        label: 'Chronicle',
-        href: '/chronicle/welcome',   
       },
       {
         type: 'category',
