@@ -1,15 +1,15 @@
 ---
 title: Firefly Wallet
-description: The IOTA Firefly Wallet sets a new standard for Software Wallets in DLT. Learn everything here.
+description: The Shimmer Firefly Wallet sets a new standard for Software Wallets in DLT. Learn everything here.
 ---
 
 # Firefly Wallet
 
 ## General overview and introduction
 
-Firefly is the secure entry point to the IOTA ecosystem.
+Firefly is the secure entry point to the Shimmer ecosystem.
 
-It is built with a bright future in mind. It will evolve into a tool that offers much more than just a software wallet for your IOTA tokens. Firefly provides a modular design that makes it easy to add innovative new features later on. IOTA’s new wallet guides you through the complexities of crypto, protected and with ease while using cutting-edge technology to secure your tokens.
+It is built with a bright future in mind. It will evolve into a tool that offers much more than just a software wallet for your Shimmer tokens. Firefly provides a modular design that makes it easy to add innovative new features later on. Shimmer’s new wallet guides you through the complexities of crypto, protected and with ease while using cutting-edge technology to secure your tokens.
 
 Some of the most important features are:
 
@@ -22,27 +22,6 @@ Find more information on the official website and download the Firefly wallet ex
 
 - [**Firefly**](https://firefly.iota.org/)**:** official Website
 - [**Firefly Github Releases**](https://github.com/iotaledger/firefly/releases): official Firefly GitHub Repo with the latest release version
-
-## Firefly staking
-
-Announced in November 2021 and realized with the update to Firefly version 1.30, IOTA token holders can now use the Firefly Wallet to earn SMR and ASMB tokens rewards by staking IOTA tokens directly in the Firefly Wallet.
-A new staking tab has been added in the sidebar, and staking IOTA tokens is as secure and easy as sending transactions within your wallet.
-
-Find more information in the blogposts:
-
-- [**Introducing IOTA staking**](https://blog.iota.org/introducing-iota-staking/)
-- [**IOTA staking start**](https://blog.iota.org/iota-staking-start/)
-
-## Firefly token migration
-
-With the launch of the new IOTA 1.5 Chrysalis Mainnet end of 28 April 2021, every IOTA holder must migrate their entire funds from the old IOTA 1.0 network to the new, improved, and advanced 1.5 network. To make this process user-friendly and safe, the IOTA Foundation has integrated a migration tool into the Firefly wallet that takes care of the whole process and automatically moves your funds from the old into the new network.
-
-The only thing you need to move your tokens to the new network is your current IOTA 1.0 network seed, represented as a combination of 81 characters, or a `.kdbx seed vault file` that you have backed up from the Trinity wallet and the password that belongs to the file, or your Ledger Nano device. With this information entered in the Firefly Wallet Migration Process, a fully automated migration will start, and all your funds will be moved securely into the new network. Upon completion, you will have access to them through Firefly. Read everything about the process here:
-
-- [**Chrysalis Migration**](https://blog.iota.org/the-chrysalis-token-migration-starts-now/)**:** The Chrysalis network migration process
-- [**Firefly Migration Process**](https://blog.iota.org/firefly-token-migration/): The whole migration process explained (for non-Ledger users)
-- [**Ledger Nano Migration Guide**](https://blog.iota.org/firefly-token-migration-guide-for-ledger-users/): The whole migration process explained for Ledger users
-- [**Migration Security**](https://blog.iota.org/security-during-token-migration/): Important advice for a safe migration process
 
 ## Useful Links
 

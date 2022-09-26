@@ -209,6 +209,17 @@ html {
     var(--ifm-color-emphasis-200);
 }
 
+.navbar__brand {
+  align-self: flex-start;
+  margin: calc(-1 * var(--ifm-navbar-padding-vertical)) 0
+    calc(-1 * var(--ifm-navbar-padding-vertical))
+    calc(-1 * var(--ifm-navbar-padding-horizontal));
+}
+
+.navbar__logo {
+  height: calc(var(--ifm-navbar-height) - var(--ifm-global-border-width));
+}
+
 /* Effectively center the logo in the navbar */
 @media (max-width: 996px) {
   .navbar__brand {

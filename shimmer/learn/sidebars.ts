@@ -10,6 +10,7 @@ module.exports = {
         'coordinator',
         'data-and-value-transfer',
         'outputs',
+        'maintenance',
         'glossary',
       ],
     },

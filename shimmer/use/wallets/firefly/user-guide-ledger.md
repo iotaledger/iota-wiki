@@ -16,16 +16,12 @@ Firefly is available on Windows, Mac and Linux and supports Ledger Nano X and Le
 - Ledger Live is [installed and ready to use](https://www.ledger.com/ledger-live/download).
 - You have installed the latest version of Firefly
 
-## Install the IOTA app on your ledger device
+## Install the Shimmer app on your ledger device
 
 - Open the Manager tab in Ledger Live.
 - Connect and unlock your Ledger device.
 - Follow the onscreen instructions and allow Ledger Manager.
-- Find and install IOTA (MIOTA) in the app catalog.
-
-## How to set up a Ledger Nano with Firefly
-
-Note: If you are an existing IOTA user and secured IOTA with a Ledger before the Chrysalis network upgrade on 28 April 2021, you will need to migrate your tokens over to the new network before you can begin using Firefly. There is a comprehensive written guide and a video guide to help you through the migration process.
+- Find and install Shimmer in the app catalog.
 
 ### Creating a new Ledger profile
 
@@ -41,7 +37,7 @@ On the next page, you will be asked to set a PIN code. This PIN is used to log i
 
 ![set pin ledger](/img/learn/firefly/set_pin_ledger.png)
 
-Now, Firefly will check that your Ledger Nano is connected. Make sure the IOTA app is open on your device and that Ledger Live is closed. If you have connection problems follow the "Tips if your Ledger isn't connecting" guide in Firefly.
+Now, Firefly will check that your Ledger Nano is connected. Make sure the Shimmer app is open on your device and that Ledger Live is closed. If you have connection problems follow the "Tips if your Ledger isn't connecting" guide in Firefly.
 
 ![connect ledger ledger](/img/learn/firefly/connect_ledger.png)
 
@@ -99,7 +95,7 @@ If you need to restore an existing Firefly profile with a new device, or you som
 
 ![setup a wallet1 ledger](/img/learn/firefly/setup_a_wallet_ledger.png)![create a wallet1 ledger](/img/learn/firefly/create_a_wallet_ledger.png)
 
-Note: Backups of your transaction history for Ledger Nano users are not currently supported but will be added in a later version. Once a profile is restored, Firefly will sync your transaction history. It will always find your balance. In a future version, we will add support for retrieving your full transaction history from a node that stores the complete history of the IOTA Tangle.
+Note: Backups of your transaction history for Ledger Nano users are not currently supported but will be added in a later version. Once a profile is restored, Firefly will sync your transaction history. It will always find your balance. In a future version, we will add support for retrieving your full transaction history from a node that stores the complete history of the Shimmer Tangle.
 
 ### Adding a second Ledger device to Firefly
 
