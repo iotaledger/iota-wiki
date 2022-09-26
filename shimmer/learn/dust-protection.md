@@ -1,10 +1,11 @@
 ---
 id: dust-protection
-title: Dust Protection
-description: Introduction to the history of dust protection in IOTA
+title: History of Dust Protection
+description: Introduction to the history of dust protection in IOTA/Shimmer
 keywords:
   - Dust
   - Chrysalis
+  - Stardust
   - Legacy
 ---
 
