@@ -96,13 +96,11 @@ module.exports = {
         {
           type: 'custom-network-dropdown',
           position: 'right',
-          networks: [
+          label: 'Shimmer',
+          items: [
             {
               label: 'IOTA',
-            },
-            {
-              label: 'Shimmer',
-              routeBasePath: 'shimmer',
+              routeBasePath: '/',
             },
           ],
         },

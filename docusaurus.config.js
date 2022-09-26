@@ -79,45 +79,43 @@ module.exports = {
         {
           label: 'Learn',
           to: '/learn/about-iota/an-introduction-to-iota',
-          activeBaseRegex: 
-          '^(/[^/]+)?/learn/.*|' +
-          '^(/[^/]+)?/IOTA-2.0-Research-Specifications/.*|' +
-          '^(/[^/]+)?/goshimmer/.*',
+          activeBaseRegex:
+            '^(/[^/]+)?/learn/.*|' +
+            '^(/[^/]+)?/IOTA-2.0-Research-Specifications/.*|' +
+            '^(/[^/]+)?/goshimmer/.*',
         },
         {
           label: 'Develop',
           to: '/develop/welcome',
-          activeBaseRegex: 
-          '^(/[^/]+)?/develop.*|' + 
-          '^(/[^/]+)?/identity.rs/.*|' +
-          '^(/[^/]+)?/iota.rs/.*|' +
-          '^(/[^/]+)?/wallet.rs/.*|' +
-          '^(/[^/]+)?/streams/.*|' +
-          '^(/[^/]+)?/stronghold.rs/.*|' +
-          '^(/[^/]+)?/hornet/.*|' +
-          '^(/[^/]+)?/bee/.*|' +
-          '^(/[^/]+)?/chronicle/.*|' +
-          '^(/[^/]+)?/introduction/.*|' +
-          '^(/[^/]+)?/integration-services/.*|' +
-          '^(/[^/]+)?/tutorials*',
+          activeBaseRegex:
+            '^(/[^/]+)?/develop.*|' +
+            '^(/[^/]+)?/identity.rs/.*|' +
+            '^(/[^/]+)?/iota.rs/.*|' +
+            '^(/[^/]+)?/wallet.rs/.*|' +
+            '^(/[^/]+)?/streams/.*|' +
+            '^(/[^/]+)?/stronghold.rs/.*|' +
+            '^(/[^/]+)?/hornet/.*|' +
+            '^(/[^/]+)?/bee/.*|' +
+            '^(/[^/]+)?/chronicle/.*|' +
+            '^(/[^/]+)?/introduction/.*|' +
+            '^(/[^/]+)?/integration-services/.*|' +
+            '^(/[^/]+)?/tutorials*',
         },
         {
           label: 'Community',
           to: '/community/the-community/discord',
-          activeBaseRegex: '^(/[^/]+)?/community/.*'
+          activeBaseRegex: '^(/[^/]+)?/community/.*',
         },
         {
           type: 'custom-network-dropdown',
           position: 'right',
-          networks: [
-            {
-              label: 'IOTA',
-            },
+          label: 'IOTA',
+          items: [
             {
               label: 'Shimmer',
-              routeBasePath: 'shimmer',
+              routeBasePath: '/shimmer/',
             },
-          ]
+          ],
         },
       ],
     },
@@ -128,7 +126,7 @@ module.exports = {
           items: [
             {
               label: 'Wallets',
-              to: '/use/wallets/what-is-a-wallet'
+              to: '/use/wallets/what-is-a-wallet',
             },
             {
               label: 'Use Cases',
@@ -174,7 +172,7 @@ module.exports = {
             },
             {
               label: 'Chronicle',
-              href: '/chronicle/welcome',   
+              href: '/chronicle/welcome',
             },
             {
               label: 'Tutorials',
