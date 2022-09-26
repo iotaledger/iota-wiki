@@ -1,5 +1,6 @@
 module.exports = {
     develop: [
+      'welcome',
       {
         type: 'link',
         label: 'Protocol Overview',

@@ -86,7 +86,7 @@ module.exports = {
         },
         {
           label: 'Develop',
-          to: '/develop/nodes/about-nodes',
+          to: '/develop/welcome',
           activeBaseRegex: 
           '^(/[^/]+)?/develop.*|' + 
           '^(/[^/]+)?/identity.rs/.*|' +
