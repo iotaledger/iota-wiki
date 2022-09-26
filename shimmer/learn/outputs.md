@@ -13,7 +13,7 @@ keywords:
 # Output Types and Features
 
 Stardust
-introduces [changes to the UTXO model](https://wiki.iota-community.org/shimmer/introduction/develop/explanations/what_is_stardust/rethink_utxo)
+introduces [changes to the UTXO model](/introduction/develop/explanations/what_is_stardust/rethink_utxo)
 that make it possible for outputs novel [output types](#output-types),  [unlock conditions](#unlock-conditions)
 and [features](#features).
 
@@ -28,26 +28,26 @@ of [features](#features) and [unlock conditions](#unlock-conditions).
 ### NFT Output
 
 You can mint NFTs by creating NFT outputs and sending
-an [NFT transaction](https://wiki.iota-community.org/shimmer/introduction/develop/explanations/ledger/nft). You can
+an [NFT transaction](/introduction/develop/explanations/ledger/nft). You can
 define immutable metadata and a [verified issuer](#issuer) while you create it.
 
 ### Alias Output
 
-An [alias](https://wiki.iota-community.org/shimmer/introduction/develop/explanations/ledger/alias) output is essentially
+An [alias](/introduction/develop/explanations/ledger/alias) output is essentially
 a UTXO state machine that stores the state second layer smart contract chains and allows
 for two controllers, which can be rotated and create custom native tokens linked to the alias address.
 
 ### Foundry Output
 
 You can create a foundry output to control the supply of
-your [native tokens](https://wiki.iota-community.org/shimmer/introduction/develop/explanations/ledger/foundry).
+your [native tokens](/introduction/develop/explanations/ledger/foundry).
 
 ## Unlock Conditions
 
 ### Address
 
 The most traditional unlock condition is
-the [address](https://wiki.iota-community.org/shimmer/introduction/develop/explanations/what_is_stardust/unlock_conditions#address)
+the [address](/introduction/develop/explanations/what_is_stardust/unlock_conditions#address)
 .
 Addresses can only unlock outputs with their signatures.
 
@@ -61,7 +61,7 @@ to send the minimum deposit, which will be returned once the micro-transaction i
 ### Expiration
 
 In Shimmer, you can define
-an [expiration date and time](https://wiki.iota-community.org/shimmer/introduction/develop/explanations/what_is_stardust/unlock_conditions#expiration)
+an [expiration date and time](/introduction/develop/explanations/what_is_stardust/unlock_conditions#expiration)
 for an output. This way, if the output isn't consumed by the expiration
 date, it will be returned to your account. This is particularly useful if you want to cancel a transfer if a deadline
 isn't met.
@@ -69,38 +69,38 @@ isn't met.
 ## Timelock
 
 Similar to the [expiration unlock condition](#expiration), you can add
-a [timelock](https://wiki.iota-community.org/shimmer/introduction/develop/explanations/what_is_stardust/unlock_conditions#timelock)
+a [timelock](/introduction/develop/explanations/what_is_stardust/unlock_conditions#timelock)
 to outputs. This means that the output
 will be locked until a specific date and time.
 
 ## Features
 
 Outputs in Shimmer
-have [new features](https://wiki.iota-community.org/shimmer/introduction/develop/explanations/what_is_stardust/output_features)
+have [new features](/introduction/develop/explanations/what_is_stardust/output_features)
 that aim to make the Stardust ledger more flexible and give the users more
-than [simple transactions](https://wiki.iota-community.org/shimmer/introduction/develop/explanations/ledger/simple_transfers).
+than [simple transactions](/introduction/develop/explanations/ledger/simple_transfers).
 
 ### Metadata
 
-The [metadata](https://wiki.iota-community.org/shimmer/introduction/develop/explanations/what_is_stardust/output_features#metadata)
+The [metadata](/introduction/develop/explanations/what_is_stardust/output_features#metadata)
 feature allows you to store any piece of data within an output. However, there are size constraints as
 transactions are limited in size. This is hardly an issue as you can slice data into manageable chunks.
 
 ### Sender
 
-The [sender](https://wiki.iota-community.org/shimmer/introduction/develop/explanations/what_is_stardust/output_features#sender)
+The [sender](/introduction/develop/explanations/what_is_stardust/output_features#sender)
 feature lets you define a sender address within the output. You could combine this feature
 with [metadata](#metadata) to create verified data sources.
 
 ### Issuer
 
-The [issuer](https://wiki.iota-community.org/shimmer/introduction/develop/explanations/what_is_stardust/output_features#issuer)
+The [issuer](/introduction/develop/explanations/what_is_stardust/output_features#issuer)
 feature is quite similar to the [sender feature](#sender), but it is only available when you mint an NFT.
 Artists can use this feature to add a verified Issuer to the NFT and protect buyers and traders from counterfeits.
 
 ### Tag
 
-The [tag](https://wiki.iota-community.org/shimmer/introduction/develop/explanations/what_is_stardust/output_features#tag)
+The [tag](/introduction/develop/explanations/what_is_stardust/output_features#tag)
 feature is similar to the metadata features, but it aims to serve a different purpose. Though both features allow you to
 store data in an output, tags can be indexed. This means you could map data [metadata](#metadata) from
 a [verified sender](#sender).
@@ -108,7 +108,7 @@ a [verified sender](#sender).
 :::tip Stardust Ledger Anatomy
 
 You can find a more detailed description Stardust Ledger in
-the [Stardust Protocol docs](https://wiki.iota-community.org/shimmer/introduction/develop/welcome).
+the [Stardust Protocol docs](/introduction/develop/welcome).
 
 :::
 

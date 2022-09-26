@@ -41,9 +41,6 @@ and eight valid tips that lead to a valid ledger state.
   the state of all balances on addresses. This state must always be balanced: the total number of Shimmer tokens must
   always add to the total supply.
 
-By using the tip blocks that the node gave him, Charlie lets the network know that he is also approving them and their
-history. If any of those blocks turn out to be invalid, Charlie's blocks will also be treated as invalid, and other
-nodes will not select Charlie's blocks during tip selection.
 
 
 
@@ -72,8 +69,6 @@ For example, what if Charlie actually attached two blocks to the Tangle: one tha
 that transferred 10 SMR to Alice? Together, these blocks would be called a **double-spend** because they try to
 transfer the same Shimmer tokens to different addresses.
 
-Both of Charlie's blocks could not be part of the ledger state because it would result in a negative balance for
-Charlie’s address: minus 10 SMR.
 
 Messages in the Tangle are confirmed by special blocks called **milestones**. Milestones are issued by a special node
 called Coordinator, which is operated by the Shimmer Foundation and is therefore still a centralized part of the
