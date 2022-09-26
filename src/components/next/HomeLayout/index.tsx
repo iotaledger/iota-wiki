@@ -64,8 +64,9 @@ export default function HomeLayout() {
             <div className='intro__section'>
               <h1 className='intro__header'>{siteConfig.tagline}</h1>
               <p className='intro__description'>
-                Build apps capable of taking millions of users on journeys
-                they’ve never been on before. Simple. Scalable. Secure.
+                This is unreleased documentation in active development. For
+                up-to-date releases, please see <a href='/shimmer'>Shimmer</a>{' '}
+                and <a href='/'>IOTA</a> documentation.
               </p>
               <div className='intro__buttons'>
                 <Link

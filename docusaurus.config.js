@@ -116,7 +116,7 @@ module.exports = {
               routeBasePath: '/shimmer/',
             },
             {
-              label: 'Next 🚧',
+              label: 'Next',
               routeBasePath: '/next/',
             },
           ],

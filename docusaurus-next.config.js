@@ -5,7 +5,7 @@ const content = require('./next/docusaurus.config');
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
   title: 'Danger Zone',
-  tagline: 'The complete reference for crazy future stuff',
+  tagline: 'Unreleased documentation',
   url: 'http://wiki.iota-community.org',
   baseUrl: '/next/',
   onBrokenLinks: 'log',
@@ -61,8 +61,8 @@ module.exports = {
       hideOnScroll: true,
       logo: {
         alt: 'Shimmer Wiki Logo',
-        src: 'img/logo_shimmer.svg',
-        srcDark: 'img/logo_shimmer_dark.svg',
+        src: 'img/logo_next.svg',
+        srcDark: 'img/logo_next_dark.svg',
       },
       items: [
         {
@@ -102,11 +102,11 @@ module.exports = {
         {
           type: 'custom-network-dropdown',
           position: 'right',
-          label: 'Next 🚧',
+          label: 'Next',
           items: [
             {
               label: 'IOTA',
-              routeBasePath: '/'
+              routeBasePath: '/',
             },
             {
               label: 'Shimmer',

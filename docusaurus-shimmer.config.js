@@ -103,7 +103,7 @@ module.exports = {
               routeBasePath: '/',
             },
             {
-              label: 'Next 🚧',
+              label: 'Next',
               routeBasePath: '/next/',
             },
           ],
