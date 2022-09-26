@@ -15,11 +15,11 @@ keywords:
 
 Layer 1 Assets are also known as "[Native Assets](https://github.com/iotaledger/tips/pull/38)". With the
 [IOTA tokenization framework](https://blog.iota.org/tokenization-on-the-tangle-iota-digital-assets-framework/), you can
-create NFTs and new Tokens on L1 using the new output types. Native assets can be transferred on the Tangle without any fees and between different smart contract chains.
+create NFTs and new Tokens on L1 using the new output types. You can transfer native assets on the Tangle without any fees and between different smart contract chains.
 
 ## Native Tokens
 
-In Shimmer you can basically create Native out of thin air as long as you fullfill the [storage deposit](/learn/welcome#storage-deposits).  
+In Shimmer, you can create Native out of thin air as long as you fulfill the [storage deposit](/learn/welcome#storage-deposits).  
 Native tokens can have different types of metadata.
 
 :::tip Interesting Tangle Improvement Proposals (TIPs)
@@ -31,9 +31,9 @@ Native tokens can have different types of metadata.
 
 ## NFTs
 
-Ethereum was the first blockchain to support NFTs with its ERC-721 standard. The difference from normal tokens is that the NFT is unique and clearly verifiable and can be used to prove ownership of any digital good.
+Ethereum was the first blockchain to support NFTs with its ERC-721 standard. The difference from regular tokens is that the NFT is unique and verifiable and can be used to prove ownership of any digital good.
 
-There are many use cases for NFTs. The most common use case is to link an image to it, which becomes a unique digital art which can be sold on open NFT marketplaces.
+There are many use cases for NFTs. The most common use case is to link an image to it, which becomes a unique digital art that can be sold on open NFT marketplaces.
 
 Other use cases would be to use NFTs as assets in games, for event tickets, for Decentralized Finance (DeFi), for voting
 in decentralized autonomous organizations (DAOs) or for any objects in the Metaverse.
