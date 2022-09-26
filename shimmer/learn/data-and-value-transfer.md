@@ -21,8 +21,7 @@ content.
 
 ## Simple Example
 
-To explain how Shimmer tokens are transferred from one address to another, this topic follows three characters: Alice,
-Bob, and Charlie.
+To explain how Shimmer tokens are transferred from one address to another, this topic follows three characters: Alice, Bob, and Charlie.
 
 ### The Goal
 
@@ -30,14 +29,13 @@ Charlie wants to transfer 10 SMR to Bob.
 
 ### Choosing Where to Attach Messages
 
-To transfer 10 SMR to Bob, Charlie must attach a value block to the Tangle. For that, he needs between one and eight
-tip blocks that he can attach to his block.
+To transfer 10 SMR to Bob, Charlie must attach a value block to the Tangle. For that, he needs between one and eight tip blocks that he can attach to his block.
 
 To get these tip blocks, Charlie requests them from a node.
 
 The node selects these blocks by using an algorithm called **Uniform Random Tip
 Selection** [URTS](https://iotaledger.github.io/tips/tips/TIP-0003/tip-0003.html). This algorithm selects between one
-and eight valid tip blocks that lead to a valid ledger state.
+and eight valid tips that lead to a valid ledger state.
 
 - The ledger state is a record of all the value blocks that have transferred Shimmer tokens in the Tangle, including
   the state of all balances on addresses. This state must always be balanced: the total number of Shimmer tokens must
@@ -47,7 +45,6 @@ By using the tip blocks that the node gave him, Charlie lets the network know th
 history. If any of those blocks turn out to be invalid, Charlie's blocks will also be treated as invalid, and other
 nodes will not select Charlie's blocks during tip selection.
 
-- Nodes ignore invalid parts of the Tangle during tip selection. The term for these is **invalid subtangle**.
 
 
 :::tip Send Data
