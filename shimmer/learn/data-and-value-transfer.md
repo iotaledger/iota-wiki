@@ -57,8 +57,7 @@ Anyone is free to send blocks to a node at any time. As a result, selecting vali
 
 For example, what if Charlie actually attached two blocks to the Tangle: one that transferred 10 SMR to Bob, and one that transferred 10 SMR to Alice? Together, these blocks would be called a **double-spend** because they try to transfer the same Shimmer tokens to different addresses.
 
-Messages in the Tangle are confirmed by special blocks called **milestones**. Milestones are issued by a special node called Coordinator, which is operated by the Shimmer Foundation and is therefore still a centralized part of the
-Consensus.
+Messages in the Tangle are confirmed by special blocks called **milestones**. Milestones are issued by a special node called Coordinator, which is operated by the Shimmer Foundation and is therefore still a centralized part of the Consensus.
 
 After Charlie's block is confirmed by a milestone, the nodes update his and Bob's balances to reflect the transfer of 10 SMR to Bob's address. Bob can now spend his new Shimmer tokens.
 
