@@ -26,7 +26,7 @@ module.exports = {
             'smart-contracts/smart-contracts-community-tutorials',
           ],
         },
-        'nfts',
+        'native-assets',
         'glossary',
       ],
     },
