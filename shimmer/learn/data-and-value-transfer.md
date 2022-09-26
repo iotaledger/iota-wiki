@@ -57,7 +57,7 @@ Charlie signs an input block with his private key to prove to nodes that he is i
 Charlie then creates an output block to deposit that 10 SMR into Bob's address. This block does not need a signature
 because it is not withdrawing Shimmer tokens.
 
-Then Charlie puts all the blocks in a [UTXO](https://wiki.iota-community.org/shimmer/introduction/develop/explanations/what_is_stardust/rethink_utxo) and
+Then Charlie puts all the blocks in a [UTXO](/introduction/develop/explanations/what_is_stardust/rethink_utxo) and
 sends them to a node on a Shimmer network.
 
 ### Waiting for the Messages to be Confirmed
@@ -143,11 +143,11 @@ considered solid. It will now be added to the tip pool of every node and can be 
 :::tip More Transaction Types
 
 You can find more detailed descriptions
-of [simple](https://wiki.iota-community.org/shimmer/introduction/develop/explanations/ledger/simple_transfers)
-, [alias](https://wiki.iota-community.org/shimmer/introduction/develop/explanations/ledger/alias),
-[native tokens and foundry](https://wiki.iota-community.org/shimmer/introduction/develop/explanations/ledger/foundry),
-and [NFT](https://wiki.iota-community.org/shimmer/introduction/develop/explanations/ledger/nft) transactions
-the [Stardust Protocol docs](https://wiki.iota-community.org/shimmer/introduction/develop/welcome).
+of [simple](/introduction/develop/explanations/ledger/simple_transfers)
+, [alias](/introduction/develop/explanations/ledger/alias),
+[native tokens and foundry](/introduction/develop/explanations/ledger/foundry),
+and [NFT](/introduction/develop/explanations/ledger/nft) transactions
+the [Stardust Protocol docs](/introduction/develop/welcome).
 
 :::
 
