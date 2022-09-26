@@ -24,34 +24,6 @@ module.exports = {
     },
     {
       type: 'category',
-      label: 'Future of IOTA',
-      collapsed: true,
-      items: [
-        'future/future-of-iota',
-        {
-          type: 'category',
-          label: 'Smart Contracts',
-          collapsed: true,
-          items: [
-            'future/smart-contracts/smart-contracts-introduction',
-            'future/smart-contracts/smart-contracts-VM-and-languages',
-            'future/smart-contracts/smart-contracts-validators',
-            'future/smart-contracts/smart-contracts-chains',
-            'future/smart-contracts/smart-contracts-dapps',
-            'future/smart-contracts/smart-contracts-consensus',
-            'future/smart-contracts/smart-contracts-tangle',
-            'future/smart-contracts/smart-contracts-community-tutorials',
-          ],
-        },
-        'future/shimmer',
-        'future/assembly',
-        'future/role-of-iota',
-        'future/dust-protection',
-        'future/nfts',
-      ],
-    },
-    {
-      type: 'category',
       label: 'Use Cases',
       collapsed: true,
       items: [

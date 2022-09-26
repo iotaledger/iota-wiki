@@ -5,7 +5,7 @@ const content = require('./iota/docusaurus.config');
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
   title: 'IOTA Wiki',
-  tagline: 'The complete reference for IOTA and Shimmer',
+  tagline: 'The complete reference for IOTA',
   url: 'https://wiki.iota-community.org',
   baseUrl: '/',
   onBrokenLinks: 'log',
