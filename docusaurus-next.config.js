@@ -1,13 +1,13 @@
 // @ts-check
 // eslint-disable-next-line @typescript-eslint/no-var-requires
-const content = require('./iota/docusaurus.config');
+const content = require('./next/docusaurus.config');
 
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
-  title: 'IOTA Wiki',
-  tagline: 'The complete reference for IOTA',
-  url: 'https://wiki.iota-community.org',
-  baseUrl: '/',
+  title: 'Danger Zone',
+  tagline: 'The complete reference for crazy future stuff',
+  url: 'http://wiki.iota-community.org',
+  baseUrl: '/next/',
   onBrokenLinks: 'log',
   onBrokenMarkdownLinks: 'log',
   favicon: 'img/favicon.ico',
@@ -27,12 +27,9 @@ module.exports = {
   themeConfig: {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     announcementBar: {
-      id: 'govern',
-      content:
-        'If you would like to get more involved in the future governance of Shimmer, IOTA, and the Assembly network, join the discussions with the community in our <a target="_blank" href="https://govern.iota.org">governance forum</a> 🏛️',
-      backgroundColor: '#5991c7',
-      textColor: '#ffffff',
-      isCloseable: true,
+      id: 'next',
+      content: '.',
+      isCloseable: false,
     },
     image: 'img/iota-wiki.png',
     algolia: {
@@ -57,28 +54,25 @@ module.exports = {
         background: 'rgba(0, 0, 0, 0.6)',
       },
     },
-    imageSlider: {
-      videoPlaceholder: '/img/infographics/video-placeholder.png',
-    },
     prism: {
       additionalLanguages: ['java', 'rust', 'solidity', 'toml'],
     },
     navbar: {
       hideOnScroll: true,
       logo: {
-        alt: 'IOTA Wiki Logo',
-        src: 'img/logo.svg',
-        srcDark: 'img/logo_dark.svg',
+        alt: 'Shimmer Wiki Logo',
+        src: 'img/logo_shimmer.svg',
+        srcDark: 'img/logo_shimmer_dark.svg',
       },
       items: [
         {
-          label: 'Use IOTA',
+          label: 'Use Shimmer',
           to: '/use/wallets/what-is-a-wallet',
           activeBaseRegex: '^(/[^/]+)?/use/.*',
         },
         {
           label: 'Learn',
-          to: '/learn/about-iota/an-introduction-to-iota',
+          to: '/learn/welcome',
           activeBaseRegex:
             '^(/[^/]+)?/learn/.*|' +
             '^(/[^/]+)?/IOTA-2.0-Research-Specifications/.*|' +
@@ -89,16 +83,15 @@ module.exports = {
           to: '/develop/welcome',
           activeBaseRegex:
             '^(/[^/]+)?/develop.*|' +
-            '^(/[^/]+)?/identity.rs/.*|' +
+            '^(/[^/]+)?/smart-contracts/.*|' +
             '^(/[^/]+)?/iota.rs/.*|' +
+            '^(/[^/]+)?/iotajs/.*|' +
             '^(/[^/]+)?/wallet.rs/.*|' +
-            '^(/[^/]+)?/streams/.*|' +
             '^(/[^/]+)?/stronghold.rs/.*|' +
             '^(/[^/]+)?/hornet/.*|' +
             '^(/[^/]+)?/bee/.*|' +
             '^(/[^/]+)?/chronicle/.*|' +
             '^(/[^/]+)?/introduction/.*|' +
-            '^(/[^/]+)?/integration-services/.*|' +
             '^(/[^/]+)?/tutorials*',
         },
         {
@@ -109,15 +102,15 @@ module.exports = {
         {
           type: 'custom-network-dropdown',
           position: 'right',
-          label: 'IOTA',
+          label: 'Next 🚧',
           items: [
+            {
+              label: 'IOTA',
+              routeBasePath: '/'
+            },
             {
               label: 'Shimmer',
               routeBasePath: '/shimmer/',
-            },
-            {
-              label: 'Next 🚧',
-              routeBasePath: '/next/',
             },
           ],
         },
@@ -145,38 +138,22 @@ module.exports = {
               label: 'How It Works',
               to: '/learn/about-iota/an-introduction-to-iota',
             },
-            {
-              label: 'IOTA Token',
-              to: '/learn/iota-token/buying-iota',
-            },
-            {
-              label: 'Future of IOTA',
-              to: '/learn/future/future-of-iota',
-            },
-            {
-              label: 'Research',
-              to: '/learn/research/research-outline',
-            },
-            {
-              label: 'Glossary',
-              to: '/learn/glossary',
-            },
-            {
-              label: 'FAQs',
-              to: '/learn/faqs',
-            },
           ],
         },
         {
           title: 'Develop',
           items: [
             {
+              label: 'Smart Contracts',
+              href: '/smart-contracts/overview',
+            },
+            {
               label: 'Nodes',
               to: '/develop/nodes/about-nodes',
             },
             {
-              label: 'Chronicle',
-              href: '/chronicle/welcome',
+              label: 'Wasp',
+              href: '/smart-contracts/guide/chains_and_nodes/running-a-node',
             },
             {
               label: 'Tutorials',
@@ -207,9 +184,9 @@ module.exports = {
         },
       ],
       logo: {
-        alt: 'IOTA Logo',
+        alt: 'Shimmer Logo',
         src: 'img/footer_logo.svg',
-        href: 'https://www.iota.org',
+        href: 'https://www.shimmer.network',
       },
       copyright: `© ${new Date().getFullYear()} IOTA Wiki. Built with Docusaurus.`,
     },
@@ -223,11 +200,11 @@ module.exports = {
         backgroundColor: '#2C3850',
       },
       {
-        url: 'https://discord.iota.org/',
+        url: 'https://discord.shimmer.network/',
         backgroundColor: '#4B576F',
       },
       {
-        url: 'https://www.twitter.com/iota/',
+        url: 'https://www.twitter.com/shimmer/',
         backgroundColor: '#6A768E',
       },
       {
@@ -258,14 +235,14 @@ module.exports = {
           blogSidebarCount: 0,
         },
         theme: {
-          customCss: require.resolve('./src/css/iota/custom.css'),
+          customCss: require.resolve('./src/css/next/custom.css'),
         },
         sitemap: {
           changefreq: 'daily',
           priority: 0.5,
         },
         pages: {
-          path: 'src/pages/iota',
+          path: 'src/pages/next',
         },
       },
     ],
@@ -279,9 +256,9 @@ module.exports = {
       '@docusaurus/plugin-content-docs',
       {
         id: 'use',
-        path: 'iota/use',
+        path: 'next/use',
         routeBasePath: 'use',
-        sidebarPath: require.resolve('./iota/use/sidebars.ts'),
+        sidebarPath: require.resolve('./next/use/sidebars.ts'),
 
         // General config
         editUrl: 'https://github.com/iota-wiki/iota-wiki/edit/main/',
@@ -296,9 +273,9 @@ module.exports = {
       '@docusaurus/plugin-content-docs',
       {
         id: 'learn',
-        path: 'iota/learn',
+        path: 'next/learn',
         routeBasePath: 'learn',
-        sidebarPath: require.resolve('./iota/learn/sidebars.ts'),
+        sidebarPath: require.resolve('./next/learn/sidebars.ts'),
 
         // General config
         editUrl: 'https://github.com/iota-wiki/iota-wiki/edit/main/',
@@ -313,9 +290,9 @@ module.exports = {
       '@docusaurus/plugin-content-docs',
       {
         id: 'develop',
-        path: 'iota/develop',
+        path: 'next/develop',
         routeBasePath: 'develop',
-        sidebarPath: require.resolve('./iota/develop/sidebars.ts'),
+        sidebarPath: require.resolve('./next/develop/sidebars.ts'),
 
         // General config
         editUrl: 'https://github.com/iota-wiki/iota-wiki/edit/main/',
@@ -330,9 +307,9 @@ module.exports = {
       '@docusaurus/plugin-content-docs',
       {
         id: 'community',
-        path: 'iota/community',
+        path: 'next/community',
         routeBasePath: 'community',
-        sidebarPath: require.resolve('./iota/community/sidebars.ts'),
+        sidebarPath: require.resolve('./next/community/sidebars.ts'),
 
         // General config
         editUrl: 'https://github.com/iota-wiki/iota-wiki/edit/main/',

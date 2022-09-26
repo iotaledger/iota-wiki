@@ -8894,6 +8894,14 @@ __metadata:
   languageName: node
   linkType: hard
 
+"next-8b377f@workspace:next":
+  version: 0.0.0-use.local
+  resolution: "next-8b377f@workspace:next"
+  dependencies:
+    require-glob: ^4.1.0
+  languageName: unknown
+  linkType: soft
+
 "no-case@npm:^3.0.4":
   version: 3.0.4
   resolution: "no-case@npm:3.0.4"
@@ -12217,6 +12225,12 @@ plugin-image-zoom@flexanalytics/plugin-image-zoom:
   checksum: 05f6510358f8afc62a057b8b692f05d70c1782b70db86d6a1e0d5e28a32389e52fa6e7707b6c5ecccacc031462e4bc35af85ecfe4bbc341767917b7cf6965711
   languageName: node
   linkType: hard
+
+"tutorials-054a03@workspace:next/tutorials":
+  version: 0.0.0-use.local
+  resolution: "tutorials-054a03@workspace:next/tutorials"
+  languageName: unknown
+  linkType: soft
 
 "tutorials-5e447e@workspace:shimmer/tutorials":
   version: 0.0.0-use.local

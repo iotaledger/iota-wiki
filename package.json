@@ -8,8 +8,12 @@
     "start:tutorials": "CONTENT=\"tutorials/**\" yarn start",
     "start:iota": "CONTENT=\"*/*/*/documentation,*/*/*,*/*\" yarn start",
     "start:shimmer": "CONTENT=\"*/*/*/documentation,*/*/*,*/*\" yarn start --config docusaurus-shimmer.config.js",
+    "start:next": "CONTENT=\"*/*/*/documentation,*/*/*,*/*\" yarn start --config docusaurus-next.config.js",
     "start:all": "CONTENT=\"*/*/*/documentation,*/*/*,*/*\" yarn build && yarn serve",
-    "build": "docusaurus build && docusaurus build --config docusaurus-shimmer.config.js --out-dir build/shimmer",
+    "build": "yarn build:iota && yarn build:shimmer && yarn build:next",
+    "build:iota": "docusaurus build",
+    "build:shimmer": "docusaurus build --config docusaurus-shimmer.config.js --out-dir build/shimmer",
+    "build:next": "docusaurus build --config docusaurus-next.config.js --out-dir build/next",
     "build:all": "CONTENT=\"*/*/*/documentation,*/*/*,*/*\" yarn build",
     "swizzle": "docusaurus swizzle",
     "deploy": "docusaurus deploy",
@@ -95,6 +99,7 @@
   "packageManager": "yarn@3.2.0",
   "workspaces": [
     "iota",
-    "shimmer"
+    "shimmer",
+    "next"
   ]
 }
