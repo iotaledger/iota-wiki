@@ -9,6 +9,7 @@ export { default as IntegrationServices } from './integration_services.svg';
 export { default as Iota20 } from './iota_20.svg';
 export { default as IotaCore } from './iota_core.svg';
 export { default as IotaToken } from './iota_token.svg';
+export { default as Next } from './next.svg';
 export { default as PickAWallet } from './pick_a_wallet.svg';
 export { default as Search } from './search.svg';
 export { default as Shimmer } from './shimmer.svg';

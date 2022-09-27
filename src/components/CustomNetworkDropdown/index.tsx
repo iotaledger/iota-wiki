@@ -12,7 +12,7 @@ import type {
 } from '@theme/NavbarItem/DropdownNavbarItem';
 import './styles.css';
 
-import { IotaCore, Shimmer } from '../../icons';
+import { IotaCore, Shimmer, Next } from '../../icons';
 
 interface NetworkDropdownItem {
   label: string;
@@ -175,6 +175,7 @@ export default function NetworkDropdownNavbarItem({
   const basePathToIcon = {
     '/': IotaCore,
     '/shimmer/': Shimmer,
+    '/next/': Next,
   };
 
   const subpath = pathname.substring(baseUrl.length);

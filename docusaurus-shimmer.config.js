@@ -102,6 +102,10 @@ module.exports = {
               label: 'IOTA',
               routeBasePath: '/',
             },
+            {
+              label: 'Next',
+              routeBasePath: '/next/',
+            },
           ],
         },
       ],
