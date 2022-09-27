@@ -4,7 +4,7 @@
       "answerOptions": [
         { "answerText": "Assembly", "isCorrect": false },
         { "answerText": "Soon Network", "isCorrect": false },
-        { "answerText": "IOTA 2.", "isCorrect": false },
+        { "answerText": "IOTA 2.0", "isCorrect": false },
         { "answerText": "Shimmer", "isCorrect": true }
       ]
     },
