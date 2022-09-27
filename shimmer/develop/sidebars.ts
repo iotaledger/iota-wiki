@@ -83,42 +83,42 @@ module.exports = {
                   {
                       type: 'link',
                       label: 'Indexer',
-                      href: '/inx-indexer/develop/welcome',
+                      href: '/inx-indexer/welcome',
                   },
                   {
                       type: 'link',
                       label: 'MQTT',
-                      href: '/inx-mqtt/develop/welcome',
+                      href: '/inx-mqtt/welcome',
                   },
                   {
                       type: 'link',
                       label: 'PoI',
-                      href: '/inx-poi/develop/welcome',
+                      href: '/inx-poi/welcome',
                   },
                   {
                       type: 'link',
                       label: 'Participation',
-                      href: '/inx-participation/develop/welcome',
+                      href: '/inx-participation/welcome',
                   },
                   {
                       type: 'link',
                       label: 'Coordinator',
-                      href: '/inx-coordinator/develop/welcome',
+                      href: '/inx-coordinator/welcome',
                   },
                   {
                       type: 'link',
                       label: 'Faucet',
-                      href: '/inx-faucet/develop/welcome',
+                      href: '/inx-faucet/welcome',
                   },
                   {
                       type: 'link',
                       label: 'Dashboard',
-                      href: '/inx-dashboard/develop/welcome',   
+                      href: '/inx-dashboard/welcome',   
                   },
                   {
                       type: 'link',
                       label: 'Spammer',
-                      href: '/inx-spammer/develop/welcome',  
+                      href: '/inx-spammer/welcome',  
                   },
                   {
                     type: 'link',
