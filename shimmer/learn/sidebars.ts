@@ -8,6 +8,8 @@ module.exports = {
         'welcome',
         'tangle',
         'coordinator',
+        'data-and-value-transfer',
+        'outputs',
         'maintenance',
         'role-of-token',
         'dust-protection',
