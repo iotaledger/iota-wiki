@@ -142,3 +142,79 @@
 	path = shimmer/external/stronghold.rs/develop
 	url = https://github.com/iotaledger/stronghold.rs
 	branch = dev
+[submodule "next/external/cli-wallet"]
+	path = next/external/cli-wallet
+	url = https://github.com/iotaledger/cli-wallet
+	branch = develop
+[submodule "next/external/iota.rs"]
+	path = next/external/iota.rs
+	url = https://github.com/iotaledger/iota.rs
+	branch = develop
+[submodule "next/external/wallet.rs"]
+	path = next/external/wallet.rs
+	url = https://github.com/iotaledger/wallet.rs
+	branch = develop
+[submodule "next/external/hornet"]
+	path = next/external/hornet
+	url = https://github.com/iotaledger/hornet
+	branch = develop
+[submodule "next/external/introduction-docs"]
+	path = next/external/introduction-docs
+	url = https://github.com/iotaledger/introduction-docs
+	branch = develop
+[submodule "next/external/iota.js"]
+	path = next/external/iota.js
+	url = https://github.com/iotaledger/iota.js
+	branch = feat/stardust
+[submodule "next/external/inx-indexer"]
+	path = next/external/inx-indexer
+	url = https://github.com/iotaledger/inx-indexer
+	branch = develop
+[submodule "next/external/inx-mqtt"]
+	path = next/external/inx-mqtt
+	url = https://github.com/iotaledger/inx-mqtt.git
+	branch = develop
+[submodule "next/external/wasp"]
+	path = next/external/wasp
+	url = https://github.com/iotaledger/wasp
+	branch = master
+[submodule "next/external/inx-poi"]
+	path = next/external/inx-poi
+	url = https://github.com/iotaledger/inx-poi
+	branch = develop
+[submodule "next/external/inx-participation"]
+	path = next/external/inx-participation
+	url = https://github.com/iotaledger/inx-participation
+	branch = develop
+[submodule "next/external/inx-coordinator"]
+	path = next/external/inx-coordinator
+	url = https://github.com/iotaledger/inx-coordinator
+	branch = develop
+[submodule "next/external/inx-faucet"]
+	path = next/external/inx-faucet
+	url = https://github.com/iotaledger/inx-faucet
+	branch = develop
+[submodule "next/external/inx-dashboard"]
+	path = next/external/inx-dashboard
+	url = https://github.com/iotaledger/inx-dashboard
+	branch = develop
+[submodule "next/external/inx-spammer"]
+	path = next/external/inx-spammer
+	url = https://github.com/iotaledger/inx-spammer
+	branch = develop
+[submodule "next/external/chronicle"]
+	path = next/external/chronicle
+	url = https://github.com/iotaledger/inx-chronicle
+	branch = main
+[submodule "next/external/goshimmer"]
+	path = next/external/goshimmer
+	url = https://github.com/iotaledger/goshimmer
+	branch = develop
+[submodule "next/external/iota-2.0-research-specifications"]
+	path = next/external/iota-2.0-research-specifications
+	url = https://github.com/iotaledger/IOTA-2.0-Research-Specifications.git
+	branch = main
+[submodule "next/external/stronghold.rs/develop"]
+	path = next/external/stronghold.rs/develop
+	url = https://github.com/iotaledger/stronghold.rs
+	branch = dev
