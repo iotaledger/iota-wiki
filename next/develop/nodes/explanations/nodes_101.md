@@ -55,7 +55,7 @@ When nodes detect double spends, they must decide which block to consider confir
 
 ## Keeping a Record of the Balances on Addresses Via `UTXO`
 
-All nodes keep a record of the [Unspent Transaction Outputs (UTXO)](/introduction/develop/explanations/what_is_stardust/rethink_utxo) so they can:
+All nodes keep a record of the [Unspent Transaction Outputs (UTXO)](/introduction/explanations/what_is_stardust/rethink_utxo) so they can:
 
 * Check that a transaction is not transferring more Shimmer tokens than are available on the address.
 * Respond to clients' requests for their balance.

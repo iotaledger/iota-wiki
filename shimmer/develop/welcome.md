@@ -4,7 +4,7 @@
 
 Welcome to the Developer Section. Here you will find all information to start development. 
 
-- [Protocol Overview](/introduction/develop/welcome)
+- [Protocol Overview](/introduction/welcome)
 - Smart Contracts
     - [Documentation](/smart-contracts/overview)
     - [Node (WASP)](/smart-contracts/guide/chains_and_nodes/running-a-node)

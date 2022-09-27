@@ -47,7 +47,7 @@ Charlie signs an input block with his private key to prove to nodes that he is i
 
 Charlie then creates an output block to deposit that 10 SMR into Bob's address. This block does not need a signature because it is not withdrawing Shimmer tokens.
 
-Then Charlie puts all the blocks in a [UTXO](/introduction/develop/explanations/what_is_stardust/rethink_utxo) and sends them to a node on a Shimmer network.
+Then Charlie puts all the blocks in a [UTXO](/introduction/explanations/what_is_stardust/rethink_utxo) and sends them to a node on a Shimmer network.
 
 ### Waiting for the Messages to be Confirmed
 
@@ -94,10 +94,10 @@ This leads to a fast propagation of ledger updates through the network, and in a
 :::tip More Transaction Types
 
 You can find more detailed descriptions
-of [simple](/introduction/develop/explanations/ledger/simple_transfers)
-, [alias](/introduction/develop/explanations/ledger/alias),
-[native tokens and foundry](/introduction/develop/explanations/ledger/foundry),
-and [NFT](/introduction/develop/explanations/ledger/nft) transactions
-the [Stardust Protocol docs](/introduction/develop/welcome).
+of [simple](/introduction/explanations/ledger/simple_transfers)
+, [alias](/introduction/explanations/ledger/alias),
+[native tokens and foundry](/introduction/explanations/ledger/foundry),
+and [NFT](/introduction/explanations/ledger/nft) transactions
+the [Stardust Protocol docs](/introduction/welcome).
 
 :::

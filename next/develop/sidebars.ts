@@ -4,7 +4,7 @@ module.exports = {
       {
         type: 'link',
         label: 'Protocol Overview',
-        href:  '/introduction/develop/welcome'
+        href:  '/introduction/welcome'
       },
       {
         type: 'category',
