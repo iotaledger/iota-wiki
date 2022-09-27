@@ -4,10 +4,16 @@
   "private": true,
   "scripts": {
     "docusaurus": "docusaurus",
-    "start": "docusaurus start",
+    "start": "yarn docusaurus start",
     "start:tutorials": "CONTENT=\"tutorials/**\" yarn start",
-    "start:all": "CONTENT=\"*/*/*/documentation,*/*/*,*/*\" yarn start",
-    "build": "docusaurus build",
+    "start:iota": "CONTENT=\"*/*/*/documentation,*/*/*,*/*\" yarn start",
+    "start:shimmer": "CONTENT=\"*/*/*/documentation,*/*/*,*/*\" yarn start --config docusaurus-shimmer.config.js",
+    "start:next": "CONTENT=\"*/*/*/documentation,*/*/*,*/*\" yarn start --config docusaurus-next.config.js",
+    "start:all": "CONTENT=\"*/*/*/documentation,*/*/*,*/*\" yarn build && yarn serve",
+    "build": "yarn build:iota && yarn build:shimmer && yarn build:next",
+    "build:iota": "docusaurus build",
+    "build:shimmer": "docusaurus build --config docusaurus-shimmer.config.js --out-dir build/shimmer",
+    "build:next": "docusaurus build --config docusaurus-next.config.js --out-dir build/next",
     "build:all": "CONTENT=\"*/*/*/documentation,*/*/*,*/*\" yarn build",
     "swizzle": "docusaurus swizzle",
     "deploy": "docusaurus deploy",
@@ -23,6 +29,7 @@
   "dependencies": {
     "@algolia/client-search": "^4.14.1",
     "@docusaurus/core": "^2.0.1",
+    "@docusaurus/plugin-client-redirects": "^2.1.0",
     "@docusaurus/plugin-ideal-image": "^2.0.1",
     "@docusaurus/preset-classic": "^2.0.1",
     "@iota-wiki/plugin-tutorial": "^1.0.6",
@@ -91,6 +98,8 @@
   },
   "packageManager": "yarn@3.2.0",
   "workspaces": [
-    "content"
+    "iota",
+    "shimmer",
+    "next"
   ]
 }

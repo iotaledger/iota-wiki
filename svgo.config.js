@@ -14,12 +14,6 @@ module.exports = {
         },
       },
     },
-    {
-      name: 'removeAttrs',
-      params: {
-        attrs: '*:(fill|stroke):none',
-      },
-    },
     'removeDimensions',
     'convertStyleToAttrs',
   ],

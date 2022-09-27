@@ -1,18 +1,18 @@
 // @ts-check
 // eslint-disable-next-line @typescript-eslint/no-var-requires
-const content = require('./content/docusaurus.config');
+const content = require('./iota/docusaurus.config');
 
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
   title: 'IOTA Wiki',
-  tagline: 'The complete reference for IOTA and Shimmer',
+  tagline: 'The complete reference for IOTA',
   url: 'https://wiki.iota.org',
   baseUrl: '/',
   onBrokenLinks: 'log',
   onBrokenMarkdownLinks: 'log',
   favicon: 'img/favicon.ico',
   trailingSlash: false,
-  organizationName: 'iota-community', // Usually your GitHub org/user name.
+  organizationName: 'iota-wiki', // Usually your GitHub org/user name.
   projectName: 'iota-wiki', // Usually your repo name.
   stylesheets: [
     'https://fonts.googleapis.com/css?family=Material+Icons',
@@ -72,281 +72,136 @@ module.exports = {
       },
       items: [
         {
-          label: 'About IOTA',
-          to: 'learn/about-iota/an-introduction-to-iota',
-          activeBaseRegex: '^/learn/.*',
+          label: 'Use IOTA',
+          to: '/use/wallets/what-is-a-wallet',
+          activeBaseRegex: '^(/[^/]+)?/use/.*',
         },
         {
-          label: 'Wallets',
-          to: '/wallets/what-is-a-wallet',
-          activeBaseRegex: '^/wallets/.*',
-          type: 'dropdown',
+          label: 'Learn',
+          to: '/learn/about-iota/an-introduction-to-iota',
+          activeBaseRegex:
+            '^(/[^/]+)?/learn/.*|' +
+            '^(/[^/]+)?/IOTA-2.0-Research-Specifications/.*|' +
+            '^(/[^/]+)?/goshimmer/.*',
+        },
+        {
+          label: 'Develop',
+          to: '/develop/welcome',
+          activeBaseRegex:
+            '^(/[^/]+)?/develop.*|' +
+            '^(/[^/]+)?/identity.rs/.*|' +
+            '^(/[^/]+)?/iota.rs/.*|' +
+            '^(/[^/]+)?/wallet.rs/.*|' +
+            '^(/[^/]+)?/streams/.*|' +
+            '^(/[^/]+)?/stronghold.rs/.*|' +
+            '^(/[^/]+)?/hornet/.*|' +
+            '^(/[^/]+)?/bee/.*|' +
+            '^(/[^/]+)?/chronicle/.*|' +
+            '^(/[^/]+)?/introduction/.*|' +
+            '^(/[^/]+)?/integration-services/.*|' +
+            '^(/[^/]+)?/tutorials*',
+        },
+        {
+          label: 'Community',
+          to: '/community/the-community/discord',
+          activeBaseRegex: '^(/[^/]+)?/community/.*',
+        },
+        {
+          type: 'custom-network-dropdown',
+          position: 'right',
+          label: 'IOTA',
           items: [
-            {
-              label: 'Firefly',
-              href: '/wallets/firefly/general',
-            },
-            {
-              label: 'Tangle Pay',
-              href: 'https://tanglepay.com/',
-            },
-          ],
-        },
-        {
-          label: 'Smart Contracts',
-          to: 'smart-contracts/overview',
-          activeBaseRegex: '^/smart-contracts/.*',
-        },
-        {
-          label: 'Networks',
-          to: 'networks/iota-1.5-chrysalis',
-          activeBaseRegex: '^/networks/.*|^/introduction/.*',
-          type: 'dropdown',
-          items: [
-            {
-              label: 'IOTA',
-              href: '/introduction/welcome',
-            },
             {
               label: 'Shimmer',
-              href: '/introduction/develop/welcome',
+              routeBasePath: '/shimmer/',
+            },
+            {
+              label: 'Next',
+              routeBasePath: '/next/',
             },
           ],
         },
-        {
-          label: 'Libraries',
-          to: '/#libraries',
-          activeBaseRegex:
-            '^(/categories)?/libraries.*|^/identity.rs/.*|^/iota.rs/.*|^/iotajs/.*|^/wallet.rs/.*|^/streams/.*|^/stronghold.rs/.*',
-          type: 'dropdown',
-          items: [
-            {
-              label: 'Client.rs',
-              href: '/iota.rs/welcome',
-            },
-            {
-              label: 'Client.js',
-              href: '/iotajs/welcome',
-            },
-            {
-              label: 'Identity',
-              to: '/identity.rs/introduction',
-            },
-            {
-              label: 'Streams',
-              to: '/streams/welcome',
-            },
-            {
-              label: 'Stronghold',
-              to: '/stronghold.rs/welcome',
-            },
-            {
-              label: 'Wallet.rs',
-              to: '/wallet.rs/welcome',
-            },
-          ],
-        },
-        {
-          label: 'Nodes',
-          to: '/nodes/about-nodes',
-          activeBaseRegex:
-            '^/nodes/.*|^/hornet/.*|^/bee/.*|^/inx-.*/.*|^/chronicle/.*',
-          type: 'dropdown',
-          items: [
-            {
-              label: 'Bee',
-              href: '/bee/welcome',
-            },
-            {
-              label: 'Hornet',
-              href: '/hornet/welcome',
-            },
-          ],
-        },
-        {
-          label: 'Research',
-          to: 'research/research-outline',
-          activeBaseRegex:
-            '^/research/.*|^/IOTA-2.0-Research-Specifications/.*|^/goshimmer/.*',
-          type: 'dropdown',
-          items: [
-            {
-              label: 'Coordicide Specs',
-              href: '/IOTA-2.0-Research-Specifications/Preface',
-            },
-            {
-              label: 'GoShimmer',
-              href: '/goshimmer/welcome',
-            },
-          ],
-        },
-        {
-          label: 'Developer Resources',
-          to: '/#developer-resources',
-          activeBaseRegex: '^/tutorials*|^/integration-services/.*',
-                },
       ],
     },
     footer: {
       links: [
         {
-          title: 'About IOTA',
+          title: 'Use',
           items: [
             {
-              label: 'Introduction',
-              to: 'learn/about-iota/an-introduction-to-iota',
+              label: 'Wallets',
+              to: '/use/wallets/what-is-a-wallet',
             },
             {
-              label: 'IOTA token',
-              to: 'learn/iota-token/buying-iota',
+              label: 'Use Cases',
+              to: '/use/use-cases/data-confidence',
+            },
+          ],
+        },
+        {
+          title: 'Learn',
+          items: [
+            {
+              label: 'How It Works',
+              to: '/learn/about-iota/an-introduction-to-iota',
+            },
+            {
+              label: 'IOTA Token',
+              to: '/learn/iota-token/buying-iota',
+            },
+            {
+              label: 'Future of IOTA',
+              to: '/learn/future/future-of-iota',
+            },
+            {
+              label: 'Research',
+              to: '/learn/research/research-outline',
             },
             {
               label: 'Glossary',
-              to: 'learn/glossary',
+              to: '/learn/glossary',
             },
             {
-              label: "FAQ's",
-              to: 'learn/faqs',
+              label: 'FAQs',
+              to: '/learn/faqs',
+            },
+          ],
+        },
+        {
+          title: 'Develop',
+          items: [
+            {
+              label: 'Nodes',
+              to: '/develop/nodes/about-nodes',
             },
             {
-              label: 'Use cases',
-              to: 'learn/use-cases/data-confidence',
+              label: 'Chronicle',
+              href: '/chronicle/welcome',
             },
+            {
+              label: 'Tutorials',
+              href: '/tutorials',
+            },
+          ],
+        },
+        {
+          title: 'Community',
+          items: [
             {
               label: 'Funding',
-              to: 'learn/funding/edf-funding',
+              to: '/community/funding/edf-funding',
             },
             {
-              label: 'Partnerships',
-              href: 'https://www.iota.org/solutions/partnerships',
+              label: 'The Community',
+              to: '/community/the-community/how-to-support',
             },
             {
-              label: 'The community',
-              to: 'learn/the-community/discord',
-            },
-          ],
-        },
-        {
-          title: 'Networks',
-          items: [
-            {
-              label: 'IOTA 1.5 Chrysalis',
-              to: 'networks/iota-1.5-chrysalis',
+              label: 'Research',
+              to: '/community/research/research-outline',
             },
             {
-              label: 'IOTA 2.0 Coordicide',
-              to: 'networks/iota-2.0-coordicide',
-            },
-            {
-              label: 'Testnets',
-              to: 'networks/testnets',
-            },
-            {
-              label: 'Token migration',
-              to: 'networks/network-token-migration',
-            },
-          ],
-        },
-        {
-          title: 'Libraries',
-          items: [
-            {
-              label: 'Introduction',
-              to: 'libraries/introduction',
-            },
-            {
-              label: 'Client',
-              to: 'iota.rs/welcome',
-            },
-            {
-              label: 'JS Client',
-              to: 'iotajs/welcome',
-            },
-            {
-              label: 'Wallet',
-              to: 'wallet.rs/welcome',
-            },
-            {
-              label: 'Streams',
-              to: 'libraries/streams',
-            },
-            {
-              label: 'Identity',
-              to: 'libraries/identity',
-            },
-            {
-              label: 'Stronghold',
-              to: 'libraries/stronghold',
-            },
-          ],
-        },
-        {
-          title: 'Smart contracts',
-          items: [
-            {
-              label: 'Overview',
-              to: 'smart-contracts/overview',
-            },
-            {
-              label: 'Core concepts',
-              to: 'smart-contracts/guide/core_concepts/smart-contracts',
-            },
-            {
-              label: 'Chains and nodes',
-              to: 'smart-contracts/guide/chains_and_nodes/running-a-node',
-            },
-            {
-              label: 'Wasm VM',
-              to: 'smart-contracts/guide/wasm_vm/intro',
-            },
-            {
-              label: 'Ethereum VM',
-              to: 'smart-contracts/guide/evm/introduction',
-            },
-            {
-              label: 'Example projects',
-              to: 'smart-contracts/guide/example_projects/fair_roulette',
-            },
-            {
-              label: 'Tools',
-              to: 'smart-contracts/guide/development_tools/docker_preconfigured',
-            },
-            {
-              label: 'Metrics',
-              to: 'smart-contracts/metrics',
-            },
-          ],
-        },
-        {
-          title: 'Wiki',
-          items: [
-            {
-              label: 'Team',
-              to: 'team',
-            },
-            {
-              label: 'Github',
-              href: 'https://github.com/iota-wiki/iota-wiki',
-            },
-            {
-              label: 'Docusaurus',
-              href: 'https://docusaurus.io',
-            },
-            {
-              label: 'Community blog',
-              to: 'blog',
-            },
-            {
-              label: 'Contribute',
-              to: 'learn/contribute-to-wiki/welcome',
-            },
-            {
-              label: 'Imprint',
-              to: 'https://www.iota.org/impressum',
-            },
-            {
-              label: 'Privacy Policy',
-              to: 'https://www.iota.org/privacy-policy',
+              label: 'Contribute To Wiki',
+              to: '/community/contribute-to-wiki/welcome',
             },
           ],
         },
@@ -403,11 +258,14 @@ module.exports = {
           blogSidebarCount: 0,
         },
         theme: {
-          customCss: require.resolve('./src/css/custom.css'),
+          customCss: require.resolve('./src/css/iota/custom.css'),
         },
         sitemap: {
           changefreq: 'daily',
           priority: 0.5,
+        },
+        pages: {
+          path: 'src/pages/iota',
         },
       },
     ],
@@ -420,10 +278,27 @@ module.exports = {
     [
       '@docusaurus/plugin-content-docs',
       {
+        id: 'use',
+        path: 'iota/use',
+        routeBasePath: 'use',
+        sidebarPath: require.resolve('./iota/use/sidebars.ts'),
+
+        // General config
+        editUrl: 'https://github.com/iota-wiki/iota-wiki/edit/main/',
+        remarkPlugins: [
+          require('remark-code-import'),
+          require('remark-import-partial'),
+        ],
+        showLastUpdateTime: true,
+      },
+    ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
         id: 'learn',
-        path: 'internal/learn',
+        path: 'iota/learn',
         routeBasePath: 'learn',
-        sidebarPath: require.resolve('./internal/learn/sidebars.ts'),
+        sidebarPath: require.resolve('./iota/learn/sidebars.ts'),
 
         // General config
         editUrl: 'https://github.com/iota-wiki/iota-wiki/edit/main/',
@@ -437,10 +312,10 @@ module.exports = {
     [
       '@docusaurus/plugin-content-docs',
       {
-        id: 'wallets',
-        path: 'content/wallets',
-        routeBasePath: 'wallets',
-        sidebarPath: require.resolve('./content/wallets/sidebars.ts'),
+        id: 'develop',
+        path: 'iota/develop',
+        routeBasePath: 'develop',
+        sidebarPath: require.resolve('./iota/develop/sidebars.ts'),
 
         // General config
         editUrl: 'https://github.com/iota-wiki/iota-wiki/edit/main/',
@@ -454,10 +329,10 @@ module.exports = {
     [
       '@docusaurus/plugin-content-docs',
       {
-        id: 'networks',
-        path: 'content/networks',
-        routeBasePath: 'networks',
-        sidebarPath: require.resolve('./content/networks/sidebars.ts'),
+        id: 'community',
+        path: 'iota/community',
+        routeBasePath: 'community',
+        sidebarPath: require.resolve('./iota/community/sidebars.ts'),
 
         // General config
         editUrl: 'https://github.com/iota-wiki/iota-wiki/edit/main/',
@@ -469,38 +344,10 @@ module.exports = {
       },
     ],
     [
-      '@docusaurus/plugin-content-docs',
+      '@docusaurus/plugin-content-pages',
       {
-        id: 'nodes',
-        //docItemComponent: "@theme/ApiItem",
-        path: 'content/nodes',
-        routeBasePath: 'nodes',
-        sidebarPath: require.resolve('./content/nodes/sidebars.ts'),
-
-        // General config
-        editUrl: 'https://github.com/iota-wiki/iota-wiki/edit/main/',
-        remarkPlugins: [
-          require('remark-code-import'),
-          require('remark-import-partial'),
-        ],
-        showLastUpdateTime: true,
-      },
-    ],
-    [
-      '@docusaurus/plugin-content-docs',
-      {
-        id: 'research',
-        path: 'content/research',
-        routeBasePath: 'research',
-        sidebarPath: require.resolve('./content/research/sidebars.ts'),
-
-        // General config
-        editUrl: 'https://github.com/iota-wiki/iota-wiki/edit/main/',
-        remarkPlugins: [
-          require('remark-code-import'),
-          require('remark-import-partial'),
-        ],
-        showLastUpdateTime: true,
+        id: 'common',
+        path: 'src/pages/common',
       },
     ],
     ...content.plugins,

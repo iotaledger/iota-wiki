@@ -1,0 +1,180 @@
+{
+  "Type": [
+    {
+      "value": "text",
+      "label": "Text Tutorial",
+      "description": "Tutorial in written format",
+      "color": "#010067"
+    },
+    {
+      "value": "video",
+      "label": "Video Tutorial",
+      "description": "Tutorial in video format",
+      "color": "#010067"
+    },
+    {
+      "value": "live-coding",
+      "label": "Live Coding",
+      "description": "Recorded live coding session",
+      "color": "#ffe502"
+    }
+  ],
+  "Topic": [
+    {
+      "value": "getting-started",
+      "label": "Getting Started",
+      "description": "Easy Tutorials for getting started",
+      "color": "#9e008e"
+    },
+    {
+      "value": "integration-services",
+      "label": "Integration Services",
+      "description": "Integrate IOTA seamlessly",
+      "color": "#0e4ca1"
+    },
+    {
+      "value": "hornet",
+      "label": "Hornet",
+      "description": "Hornet node software",
+      "color": "#0e4ca1"
+    },
+    {
+      "value": "bee",
+      "label": "Bee",
+      "description": "Bee node software",
+      "color": "#0e4ca1"
+    },
+    {
+      "value": "wasp",
+      "label": "Wasp",
+      "description": "Wasp smart contracts node software",
+      "color": "#0e4ca1"
+    },
+    {
+      "value": "chronicle",
+      "label": "Chronicle",
+      "description": "Chronicle permanode software",
+      "color": "#0e4ca1"
+    },
+    {
+      "value": "nft",
+      "label": "NFT",
+      "description": "This Tutorial is related to non-fungible token(NFT)",
+      "color": "#005f39"
+    },
+    {
+      "value": "supply-chain",
+      "label": "Supply Chain",
+      "description": "This Tutorial is related to supply chain",
+      "color": "#00ff00"
+    }
+  ],
+  "Framework": [
+    {
+      "value": "client",
+      "label": "Client",
+      "description": "This Tutorial is using the IOTA Client framework",
+      "color": "#95003a"
+    },
+    {
+      "value": "identity",
+      "label": "Identity",
+      "description": "This Tutorial is using the IOTA Identity framework",
+      "color": "#ff937e"
+    },
+    {
+      "value": "iscp",
+      "label": "Smart Contracts",
+      "description": "This Tutorial is using the IOTA Smart Contract framework",
+      "color": "#a42400"
+    },
+    {
+      "value": "streams",
+      "label": "Streams",
+      "description": "This Tutorial is using the IOTA Streams framework",
+      "color": "#001544"
+    },
+    {
+      "value": "stronghold",
+      "label": "Stronghold",
+      "description": "This Tutorial is using the IOTA Stronghold framework",
+      "color": "#91d0cb"
+    },
+    {
+      "value": "wallet",
+      "label": "Wallet",
+      "description": "This Tutorial is using the IOTA Wallet framework",
+      "color": "#620e00"
+    }
+  ],
+  "Language": [
+    {
+      "value": "c",
+      "label": "C",
+      "description": "This Tutorial is using the C programming language",
+      "color": "#6b6882"
+    },
+    {
+      "value": "go",
+      "label": "Go",
+      "description": "This Tutorial is using the Go programming language",
+      "color": "#0000ff"
+    },
+    {
+      "value": "java",
+      "label": "Java",
+      "description": "This Tutorial is using the Java programming language",
+      "color": "#007db5"
+    },
+    {
+      "value": "node_js",
+      "label": "Node.js",
+      "description": "This Tutorial is using the Node.js programming language",
+      "color": "#6a826c"
+    },
+    {
+      "value": "python",
+      "label": "Python",
+      "description": "This Tutorial is using the Python programming language",
+      "color": "#00ae7e"
+    },
+    {
+      "value": "rust",
+      "label": "Rust",
+      "description": "This Tutorial is using the Rust programming language",
+      "color": "#c28c9f"
+    },
+    {
+      "value": "wasm",
+      "label": "Wasm",
+      "description": "This Tutorial is using the Wasm programming language",
+      "color": "#be9970"
+    },
+    {
+      "value": "js",
+      "label": "JavaScript",
+      "description": "This Tutorial is using the JavaScript programming language",
+      "color": "#f8a454"
+    }
+  ],
+  "Network": [
+    {
+      "value": "testnet",
+      "label": "Testnet",
+      "description": "The test network",
+      "color": "#6b6882"
+    },
+    {
+      "value": "shimmer",
+      "label": "Shimmer",
+      "description": "The staging network",
+      "color": "#6b6882"
+    },
+    {
+      "value": "mainnet",
+      "label": "Mainnet",
+      "description": "The IOTA network",
+      "color": "#6b6882"
+    }
+  ]
+}

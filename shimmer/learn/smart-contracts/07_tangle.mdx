@@ -1,0 +1,60 @@
+---
+id: smart-contracts-tangle
+title: IOTA Tangle
+description: In this article you will learn how the IOTA Smart Contracts interact with the IOTA Tangle.
+keywords:
+  - Tangle
+  - Smart Contracts
+  - wasp
+  - ISCP
+---
+
+import ReactPlayer from 'react-player';
+
+In this article you will learn how the IOTA Smart Contracts interact with the IOTA Tangle.
+
+as Smart Contracts can automate contractual obligations within many industries, they are essential across many of IOTA’s verticals including [Supply Chains](https://www.iota.org/solutions/global-trade-and-supply-chains), [Smart Cities](https://www.iota.org/solutions/smart-city), and [Industrial IoT](https://www.iota.org/solutions/industrial-iot) amongst others.
+
+Thanks to the Tangle’s properties of scalability, high throughput, and feeless transactions, IOTA Smart Contracts have many benefits.
+
+<ReactPlayer
+  playing
+  muted
+  url='https://files.iota.org/media/PiD020_sfx_LowRez.mp4'
+  width='100%'
+/>
+
+<br />
+
+To facilitate IOTA’s use cases, including the Internet of Things, IOTA Smart Contracts run on top of the base layer - Layer 1 (L1), ”off-Tangle”.
+
+Although Ethereum’s “on-chain” smart contracts are popular, they have some significant drawbacks. The most salient one is that for every smart contract in existence every node needs to keep a copy of the contract’s program code and state. Every node in the network has to execute the exact same code when the smart contract is triggered.
+
+There is no limit to the number of nodes that have to run this identical code just to generate a single result. And as the network grows, the amount of processing needed to produce that same result increases. This is a huge barrier to scalability.
+
+In addition to the transaction fees you need to pay to be considered for inclusion in the ledger, you also need to pay gas fees to keep the program running long enough for it to complete. This means the cost to run these smart contracts becomes prohibitively high for anything but certain classes of use cases where the cost overhead is relatively insignificant.
+
+This is why IOTA Smart Contracts are not implemented as part of the core protocol but as a layer 2 (L2) protocol to leverage all the advantages.
+
+<ReactPlayer
+  playing
+  muted
+  url='https://files.iota.org/media/Pid022_sfx_LowRez.mp4'
+  width='100%'
+/>
+
+<br />
+
+## Architecture Overview
+
+![IOTA Smart Contracts Network Overview](/img/learn/sc_overview.png)
+
+The current IOTA Smart Contracts implementation runs on the experimental next-generation of [IOTA 2.0](https://v2.iota.org/), deployed on the fully decentralized [IOTA 2.0 DevNet](https://v2.iota.org/visualizer), powered by [GoShimmer nodes](/goshimmer/welcome). As IOTA Smart Contracts should be available on the IOTA mainnet before switching to the fully decentralized IOTA 2.0 protocol (in a process known as “Coordicide”), an important deliverable for the next release will be to support anchoring to the current IOTA mainnet. The current IOTA mainnet and the fully decentralized future IOTA 2.0 protocol have some fundamental differences, making it difficult to support both at the same time. The primary team focus is therefore to support smart contracts on the current IOTA mainnet using the [Hornet node](/hornet/welcome) software.
+
+---
+
+## Further Readings​​
+
+- Learn more about the [IOTA 2.0 (Coordicide) Research Specifications](/IOTA-2.0-Research-Specifications/Preface).
+- Participate and add your tutorials on the [Community Tutorials](/learn/future/smart-contracts/smart-contracts-community-tutorials).
+- Build on top of [IOTA Smart Contracts](/smart-contracts/overview).

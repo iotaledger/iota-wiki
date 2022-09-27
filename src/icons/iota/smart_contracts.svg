@@ -1,0 +1,4 @@
+<svg viewBox="0 0 84 84" xmlns="http://www.w3.org/2000/svg">
+  <path opacity=".5" d="M31 32h22v4H31v-4Zm0 8h22v4H31v-4Zm0 8h22v4H31v-4Z"/>
+  <path d="M37.5 17.598a9 9 0 0 1 9 0l14.383 8.304a9 9 0 0 1 4.5 7.794v16.608a9 9 0 0 1-4.5 7.794L46.5 66.402a9 9 0 0 1-9 0l-14.383-8.304a9 9 0 0 1-4.5-7.794V33.696a9 9 0 0 1 4.5-7.794L37.5 17.598Z" fill="none" stroke="var(--ifm-color-emphasis-900)" stroke-width="6"/>
+</svg>

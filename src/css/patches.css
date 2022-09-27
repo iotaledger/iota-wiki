@@ -58,24 +58,28 @@ hr {
   height: var(--ifm-hr-border-width);
 }
 
-/*
-Patch to use transformed font icons in dropdowns and expanded menus
-*/
-.dropdown > .navbar__link:after {
-  border: none;
-  content: none;
-  display: none;
-  height: 100%;
-  margin-left: auto;
-  position: absolute;
-  top: 0;
-  transform: none;
-}
-
 .theme-doc-toc-mobile button::after {
   background: none;
   content: none;
   display: none;
   filter: none;
   min-width: auto;
+}
+
+/*
+Patch to unify arrows in sidebar and navbar
+*/
+.dropdown > .navbar__link:after {
+  background: var(--ifm-menu-link-sublist-icon) 50% / 1.5rem 1.5rem;
+  border: none;
+  filter: var(--ifm-menu-link-sublist-icon-filter);
+  transform: rotate(180deg);
+  height: 0.9rem;
+  width: 0.9rem;
+}
+
+.menu__link--sublist-caret:after {
+  background: var(--ifm-menu-link-sublist-icon) 50% / 1.5rem 1.5rem;
+  height: 0.9rem;
+  width: 0.9rem;
 }

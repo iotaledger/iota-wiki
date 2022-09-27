@@ -1,0 +1,16 @@
+.network-dropdown {
+  border: calc(2 * var(--ifm-global-border-width)) solid
+    var(--ifm-color-emphasis-300);
+  border-radius: var(--ifm-global-radius);
+  margin-right: var(--ifm-navbar-item-padding-horizontal);
+}
+
+.network-dropdown__link {
+  display: flex;
+  align-items: center;
+}
+
+.network-dropdown__icon {
+  height: 3rem;
+  fill: var(--ifm-navbar-link-color);
+}
