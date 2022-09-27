@@ -15,8 +15,7 @@ keywords:
 
 # Output Types and Features
 
-Stardust introduces [changes to the UTXO model](/introduction/develop/explanations/what_is_stardust/rethink_utxo) that
-make it possible for outputs novel [output types](#output-types),  [unlock conditions](#unlock-conditions) and [features](#features).
+Stardust introduces [changes to the UTXO model](/introduction/develop/explanations/what_is_stardust/rethink_utxo), introducing novel [output types](#output-types),  [unlock conditions](#unlock-conditions), and [features](#features).
 
 ## Output Types
 
