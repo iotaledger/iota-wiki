@@ -325,22 +325,8 @@ module.exports = {
       '@docusaurus/plugin-client-redirects',
       {
         createRedirects(existingPath) {
-          if (existingPath.includes('/iota.rs/develop')) {
-            return [existingPath.replace('/iota.rs/develop', '/iota.rs')];
-          }
-          if (existingPath.includes('/wallet.rs/develop')) {
-            return [existingPath.replace('/wallet.rs/develop', '/wallet.rs')];
-          }
-          if (existingPath.includes('/hornet/develop')) {
-            return [existingPath.replace('/hornet/develop', '/hornet')];
-          }
           if (existingPath.includes('/chronicle/develop')) {
             return [existingPath.replace('/chronicle/develop', '/chronicle')];
-          }
-          if (existingPath.includes('/introduction/develop')) {
-            return [
-              existingPath.replace('/introduction/develop', '/introduction'),
-            ];
           }
           return undefined; // Return a falsy value: no redirect created
         },
