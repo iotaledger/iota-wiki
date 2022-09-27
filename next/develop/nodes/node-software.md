@@ -23,9 +23,9 @@ By running your own node you have the following benefits:
 
 The full documentation and the source code for Hornet can be found here:
 
-- [Hornet Documentation](/hornet/develop/welcome)
+- [Hornet Documentation](/hornet/welcome)
 - [Hornet GitHub](https://github.com/gohornet/hornet)
-- [Hornet Installation guide](/hornet/develop/how_tos/using_docker)
+- [Hornet Installation guide](/hornet/how_tos/using_docker)
 
 ### Hornet Community Tutorials
 

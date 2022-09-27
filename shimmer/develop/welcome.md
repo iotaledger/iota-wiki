@@ -17,7 +17,7 @@ Welcome to the Developer Section. Here you will find all information to start de
     - [Stronghold](/stronghold.rs/welcome)
 - Node Software
     - [Introduction](nodes/node-software)
-    - [Hornet](/hornet/develop/welcome)
+    - [Hornet](/hornet/welcome)
     - INX Plugins
         - [Indexer](/inx-indexer/develop/welcome)
         - [MQTT](/inx-mqtt/develop/welcome)

@@ -73,7 +73,7 @@ module.exports = {
             {
                 label: 'Hornet',
                 type: 'link',
-                href: '/hornet/develop/welcome',
+                href: '/hornet/welcome',
             },
             {
               type: 'category',

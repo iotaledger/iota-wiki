@@ -150,23 +150,23 @@ export default function HomeLayout() {
                 <h3 className='nodes__header'>Hornet</h3>
                 <ul className='nodes__features'>
                   <li className='nodes__feature'>
-                    <Link to='/hornet/develop/welcome'>
+                    <Link to='/hornet/welcome'>
                       A node implementation written in Go
                     </Link>
                   </li>
                   <li className='nodes__feature'>
-                    <Link to='/hornet/develop/getting_started'>
+                    <Link to='/hornet/getting_started'>
                       Participate in the network
                     </Link>
                   </li>
                   <li className='nodes__feature'>
-                    <Link to='/hornet/develop/how_tos/post_installation'>
+                    <Link to='/hornet/how_tos/post_installation'>
                       Manage your node
                     </Link>
                   </li>
                 </ul>
                 <Link
-                  to='/hornet/develop/how_tos/using_docker'
+                  to='/hornet/how_tos/using_docker'
                   className='nodes__button button button--outline button--primary'
                 >
                   Set up a Hornet node
