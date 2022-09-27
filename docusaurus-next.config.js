@@ -6,7 +6,7 @@ const content = require('./next/docusaurus.config');
 module.exports = {
   title: 'Danger Zone',
   tagline: 'Unreleased documentation',
-  url: 'http://wiki.iota.org',
+  url: 'https://wiki.iota.org',
   baseUrl: '/next/',
   onBrokenLinks: 'log',
   onBrokenMarkdownLinks: 'log',
