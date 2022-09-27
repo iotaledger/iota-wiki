@@ -15,7 +15,7 @@ keywords:
 
 # Output Types and Features
 
-Stardust introduces [changes to the UTXO model](/introduction/develop/explanations/what_is_stardust/rethink_utxo), introducing novel [output types](#output-types),  [unlock conditions](#unlock-conditions), and [features](#features).
+Stardust introduces [changes to the UTXO model](/introduction/develop/explanations/what_is_stardust/rethink_utxo), introducing novel [output types](#output-types) with new [unlock conditions](#unlock-conditions) and [features](#features).
 
 ## Output Types
 
@@ -37,6 +37,8 @@ You can create a foundry output to control the supply of your [native tokens](/i
 
 ## Unlock Conditions
 
+Unlock conditions have always been present in crypto. The first and clearest example es the recipient [address](#address). The stardust upgrade adds new unlock conditions that will allow you to add [expirations](#expiration), [timelocks](#timelocks) and specify the [storage deposits](#storage-deposit-return).
+
 ### Address
 
 The most traditional unlock condition is the [address](/introduction/develop/explanations/what_is_stardust/unlock_conditions#address).
@@ -50,7 +52,7 @@ Due to the [storage deposit rules](welcome.md#storage-deposits), you cannot crea
 
 In Shimmer, you can define an [expiration date and time](/introduction/develop/explanations/what_is_stardust/unlock_conditions#expiration) for an output. This way, if the output isn't consumed by the expiration date, it will be returned to your account. This is particularly useful if you want to cancel a transfer if a deadline isn't met. 
 
-## Timelock
+### Timelock
 
 Similar to the [expiration unlock condition](#expiration), you can add a [timelock](/introduction/develop/explanations/what_is_stardust/unlock_conditions#timelock) to outputs. This means that the output will be locked until a specific date and time.
 
