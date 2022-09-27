@@ -41,12 +41,12 @@ module.exports = {
             {
                 label: 'Client',
                 type: 'link',
-                href: '/iota.rs/develop/welcome',
+                href: '/iota.rs/welcome',
             },
             {
                 label: 'Wallet.rs',
                 type: 'link',
-                href: '/wallet.rs/develop/welcome',
+                href: '/wallet.rs/welcome',
             },
             {
                 label: 'Client Typescript',
