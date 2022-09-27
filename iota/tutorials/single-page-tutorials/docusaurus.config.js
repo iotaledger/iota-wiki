@@ -111,7 +111,7 @@ module.exports = {
                     'In this tutorial you will learn how to send Shimmer Tokens with wallet.rs.',
                 preview: 'send-shimmer-tokens-with-wallet-lib.png',
                 route: 'tutorials/send-shimmer-tokens-with-wallet-lib',
-                tags: ['text', 'wallet', 'getting-started', 'rust', 'testnet'],
+                tags: ['text', 'wallet', 'getting-started', 'rust', 'shimmer'],
             },
         ],
         [
@@ -122,7 +122,7 @@ module.exports = {
                     'In this tutorial you will learn how to interact with the IOTA Node Extension (INX) interface based on gRPC.',
                 preview: 'hornet-inx-interaction.png',
                 route: 'tutorials/hornet-inx-interaction',
-                tags: ['text', 'getting-started', 'testnet', 'js'],
+                tags: ['text', 'getting-started', 'shimmer', 'js'],
             },
         ],
         [
@@ -133,7 +133,7 @@ module.exports = {
                     'Proove that a block was part of the past Tangle, even if this part of the Tangle was already pruned from network nodes.',
                 preview: 'proof-inclusion-of-a-block.png',
                 route: 'tutorials/proof-inclusion-of-a-block',
-                tags: ['text', 'getting-started', 'js', 'client'],
+                tags: ['text', 'getting-started', 'js', 'client', 'shimmer'],
             },
         ],
         [
@@ -144,7 +144,7 @@ module.exports = {
                     'In this tutorial you will learn how to create a seed and address with wallet.rs and receive testnet tokens from the faucet.',
                 preview: 'wallet-setup.png',
                 route: 'tutorials/wallet-setup',
-                tags: ['text', 'getting-started', 'node_js', 'wallet', 'testnet', 'shimmer'],
+                tags: ['text', 'getting-started', 'node_js', 'wallet', 'shimmer'],
             },
         ],
         [
@@ -152,10 +152,10 @@ module.exports = {
             {
                 title: 'How to Setup iota.js for Development',
                 description:
-                    'In this tutorial you will learn how to create a new project, generate a new address and receive testnet funds from the faucet.',
+                    'In this tutorial you will learn how to create a new project, generate a new address and receive x funds from the faucet.',
                 preview: 'setup_iota-js_for_development.png',
                 route: 'tutorials/setup_iota-js_for_development',
-                tags: ['text', 'getting-started', 'client', 'testnet', 'js'],
+                tags: ['text', 'getting-started', 'client', 'shimmer', 'js'],
             },
         ],
         [
@@ -177,7 +177,7 @@ module.exports = {
                     'In this tutorial you will learn how to send Shimmer Tokens in the testnet.',
                 preview: 'send-shimmer-tokens-with-javascript.png',
                 route: 'tutorials/send-shimmer-tokens-with-javascript',
-                tags: ['text', 'shimmer', 'javascript', 'client', 'getting-started', 'iota.rs (js binding)', 'testnet'],
+                tags: ['text', 'shimmer', 'javascript', 'client', 'getting-started', 'iota.rs (js binding)', 'shimmer'],
             },
         ],
     ],
