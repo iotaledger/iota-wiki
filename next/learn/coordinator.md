@@ -10,12 +10,6 @@ keywords:
 
 # The Coordinator
 
-:::note
-
-The Coordinator is a temporary solution which will be removed in the future [IOTA 2.0 update](./roadmap-to-decentralization.md).
-
-:::
-
 The Coordinator is a client that sends signed messages called milestones that nodes trust and use to confirm messages. Messages in the Tangle are considered for confirmation only when they are directly or indirectly referenced by a milestone that nodes have validated.
 
 To allow the nodes to recognize valid milestones, all Shimmer nodes on the same network are configured with the signatures of a coordinator node which they trust. By knowing those signatures, nodes can validate the signatures in issued milestones to verify whether the trusted Coordinator did sign them.
