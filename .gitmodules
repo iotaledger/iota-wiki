@@ -177,7 +177,7 @@
 [submodule "next/external/wasp"]
 	path = next/external/wasp
 	url = https://github.com/iotaledger/wasp
-	branch = master
+	branch = develop
 [submodule "next/external/inx-poi"]
 	path = next/external/inx-poi
 	url = https://github.com/iotaledger/inx-poi
