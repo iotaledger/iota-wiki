@@ -80,7 +80,7 @@ const LibrariesSection: FC = () => (
         <h3 className='libraries__header'>IOTA Smart Contracts</h3>
         <p className='libraries__body'>
           The IOTA Smart Contracts Protocol brings scalable and flexible smart
-          contracts into the IOTA ecosystem.
+          contracts to the early stage and still experimental test chain.
         </p>
         <div className='start-building__buttons'>
           <Link
