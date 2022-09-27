@@ -72,11 +72,11 @@
   justify-content: space-between;
   align-items: flex-end;
   width: 100%;
-  background: right bottom / 45% no-repeat url('/img/homepage/next.svg');
+  background: right center / 35% no-repeat url('/img/homepage/next.svg');
 }
 
 :root[data-theme='dark'] .intro {
-  background: right bottom / 45% no-repeat url('/img/homepage/next_dark.svg');
+  background: right center / 35% no-repeat url('/img/homepage/next_dark.svg');
 }
 
 @media (max-width: 996px) {
