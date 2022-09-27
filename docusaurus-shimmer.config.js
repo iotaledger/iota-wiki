@@ -6,7 +6,7 @@ const content = require('./shimmer/docusaurus.config');
 module.exports = {
   title: 'Shimmer Wiki',
   tagline: 'The complete reference for Shimmer',
-  url: 'https://wiki.iota-community.org',
+  url: 'https://wiki.iota.org',
   baseUrl: '/shimmer/',
   onBrokenLinks: 'log',
   onBrokenMarkdownLinks: 'log',

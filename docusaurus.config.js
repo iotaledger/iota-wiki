@@ -6,7 +6,7 @@ const content = require('./iota/docusaurus.config');
 module.exports = {
   title: 'IOTA Wiki',
   tagline: 'The complete reference for IOTA',
-  url: 'https://wiki.iota-community.org',
+  url: 'https://wiki.iota.org',
   baseUrl: '/',
   onBrokenLinks: 'log',
   onBrokenMarkdownLinks: 'log',
