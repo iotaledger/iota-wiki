@@ -11,8 +11,8 @@ Welcome to the Developer Section. Here you will find all information to start de
     - [WASP CLI](/smart-contracts/guide/chains_and_nodes/wasp-cli)
     - [Schema Tool](/smart-contracts/guide/schema)
 - Libraries
-    - [Client.rs](/iota.rs/develop/welcome)
-    - [Wallet.rs](/wallet.rs/develop/welcome)
+    - [Client.rs](/iota.rs/welcome)
+    - [Wallet.rs](/wallet.rs/welcome)
     - [Client.js](/iotajs/welcome)
     - [Stronghold](/stronghold.rs/welcome)
 - Node Software
