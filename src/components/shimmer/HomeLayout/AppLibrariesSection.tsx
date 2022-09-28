@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import Link from '@docusaurus/Link';
-import { SmartContracts, Stronghold } from '../../../icons';
+import { Identity, SmartContracts, Stronghold } from '../../../icons';
 
 interface LanguagesProps {
   languages?: { [key: string]: string };
@@ -95,6 +95,28 @@ const LibrariesSection: FC = () => (
           >
             Run a smart contract
           </Link> */}
+        </div>
+      </div>
+    </div>
+    <div className='libraries__card libraries__card--wide'>
+      <img className='libraries__logo' src='img/homepage/identity_logo.svg' />
+      <div className='libraries__section'>
+        <div className='libraries__head'>
+          <div className='libraries__icon'>
+            <Identity />
+          </div>
+        </div>
+        <h3 className='libraries__header'>IOTA Identity</h3>
+        <p className='libraries__body'>
+        The Shimmer Identity framework for Decentralized Identity brings an first experiemental version to Shimmer
+        </p>
+        <div className='start-building__buttons'>
+          <Link
+            to='/identity.rs/introduction'
+            className='start-building__button button button--outline button--primary'
+          >
+            Learn about Identity
+          </Link>
         </div>
       </div>
     </div>
