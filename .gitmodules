@@ -214,3 +214,11 @@
 	path = next/external/stronghold.rs/develop
 	url = https://github.com/iotaledger/stronghold.rs
 	branch = dev
+[submodule "shimmer/external/identity.rs/develop"]
+	path = shimmer/external/identity.rs/develop
+	url = https://github.com/iotaledger/identity.rs
+	branch = main
+[submodule "next/external/identity.rs/develop"]
+	path = next/external/identity.rs/develop
+	url = https://github.com/iotaledger/identity.rs
+	branch = main

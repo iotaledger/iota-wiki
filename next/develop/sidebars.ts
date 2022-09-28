@@ -54,6 +54,11 @@ module.exports = {
                 href: '/iotajs/welcome',
             },
             {
+                label: 'Identity',
+                type: 'link',
+                href: '/identity.rs/introduction',
+            },
+            {
                 label: 'Stronghold',
                 type: 'link',
                 href: '/stronghold.rs/welcome',
