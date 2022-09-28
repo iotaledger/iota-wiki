@@ -32,5 +32,11 @@ module.exports = {
         'glossary',
       ],
     },
+    {
+      type: 'category',
+      label: 'Shimmer Token',
+      collapsed: true,
+      items: ['token/buying'],
+    },
   ],
 };
