@@ -50,10 +50,6 @@
 	path = iota/external/identity.rs/v0.6.0
 	url = https://github.com/iotaledger/identity.rs
 	branch = support/v0.6
-[submodule "iota/external/identity.rs/develop"]
-	path = iota/external/identity.rs/develop
-	url = https://github.com/iotaledger/identity.rs
-	branch = dev
 [submodule "iota/external/introduction-docs/production"]
 	path = iota/external/introduction-docs/production
 	url = https://github.com/iotaledger/introduction-docs
