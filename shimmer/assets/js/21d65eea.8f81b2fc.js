@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkiota_wiki=self.webpackChunkiota_wiki||[]).push([[62492],{40714:s=>{s.exports=JSON.parse('{"label":"Gossip","permalink":"/shimmer/blog/tags/gossip","allTagsPath":"/shimmer/blog/tags","count":1}')}}]);

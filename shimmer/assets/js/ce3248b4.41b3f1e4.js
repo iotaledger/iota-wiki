@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkiota_wiki=self.webpackChunkiota_wiki||[]).push([[907],{11744:a=>{a.exports=JSON.parse('{"label":"Commmunity Treasury","permalink":"/shimmer/blog/tags/commmunity-treasury","allTagsPath":"/shimmer/blog/tags","count":1}')}}]);

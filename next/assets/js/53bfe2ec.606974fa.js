@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkiota_wiki=self.webpackChunkiota_wiki||[]).push([[60016],{45251:e=>{e.exports=JSON.parse('{"label":"Multiverse","permalink":"/next/blog/tags/multiverse","allTagsPath":"/next/blog/tags","count":1}')}}]);

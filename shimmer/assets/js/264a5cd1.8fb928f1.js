@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkiota_wiki=self.webpackChunkiota_wiki||[]).push([[30975],{59050:e=>{e.exports=JSON.parse('{"title":"Tools","slug":"/tools","permalink":"/shimmer/develop/tools","navigation":{"previous":{"title":"Security 101","permalink":"/shimmer/develop/nodes/explanations/security_101"}}}')}}]);

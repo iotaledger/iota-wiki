@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkiota_wiki=self.webpackChunkiota_wiki||[]).push([[23460],{7496:a=>{a.exports=JSON.parse('{"label":"IoT","permalink":"/next/blog/tags/io-t","allTagsPath":"/next/blog/tags","count":2}')}}]);

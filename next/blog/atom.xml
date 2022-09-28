@@ -1,0 +1,426 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://wiki.iota.org/next/blog</id>
+    <title>Danger Zone Blog</title>
+    <updated>2022-01-01T00:00:00.000Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://wiki.iota.org/next/blog"/>
+    <subtitle>Danger Zone Blog</subtitle>
+    <icon>https://wiki.iota.org/next/img/favicon.ico</icon>
+    <entry>
+        <title type="html"><![CDATA[Finality—Part 1: Two Generals]]></title>
+        <id>Finality—Part 1: Two Generals</id>
+        <link href="https://wiki.iota.org/next/blog/Finality—Part 1: Two Generals"/>
+        <updated>2022-01-01T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Finality—Part 1: Two Generals]]></summary>
+        <content type="html"><![CDATA[<p><img loading="lazy" src="https://cdn.substack.com/image/fetch/w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2Fa6cbfee0-91fe-480c-86c5-8d5afa588548_972x639.jpeg" alt="Finality—Part 1: Two Generals" class="img_ev3q"></p><p>Finality is a four-part exploration into the inner workings and technological significance of the IOTA tangle’s many-worlds Nakamoto consensus mechanism.</p><p>Read the article on:<br>
+<a href="https://iologica.substack.com/p/two-generals" target="_blank" rel="noopener noreferrer">iologica</a></p>]]></content>
+        <author>
+            <name>R. Brennan Kelly</name>
+            <uri>https://iologica.substack.com</uri>
+        </author>
+        <category label="Community" term="Community"/>
+        <category label="Consensus" term="Consensus"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Finality—Part 2: Bookkeeping]]></title>
+        <id>Finality—Part 2: Bookkeeping</id>
+        <link href="https://wiki.iota.org/next/blog/Finality—Part 2: Bookkeeping"/>
+        <updated>2022-01-01T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Finality—Part 2: Bookkeeping]]></summary>
+        <content type="html"><![CDATA[<p><img loading="lazy" src="https://cdn.substack.com/image/fetch/w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2F5f9e5370-706a-41dd-8648-8ff1b334eb7e_800x450.jpeg" alt="Finality—Part 2: Bookkeeping" class="img_ev3q"></p><p>Finality is a four-part exploration into the inner workings and technological significance of the IOTA tangle’s many-worlds Nakamoto consensus mechanism.</p><p>Read the article on:<br>
+<a href="https://iologica.substack.com/p/bookkeeping" target="_blank" rel="noopener noreferrer">iologica</a></p>]]></content>
+        <author>
+            <name>R. Brennan Kelly</name>
+            <uri>https://iologica.substack.com</uri>
+        </author>
+        <category label="Community" term="Community"/>
+        <category label="Consensus" term="Consensus"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Finality—Part 3: Total Order]]></title>
+        <id>Finality—Part 3: Total Order</id>
+        <link href="https://wiki.iota.org/next/blog/Finality—Part 3: Total Order"/>
+        <updated>2022-01-01T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Finality—Part 3: Total Order]]></summary>
+        <content type="html"><![CDATA[<p><img loading="lazy" src="https://cdn.substack.com/image/fetch/w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2Fe5dc558e-2918-444a-a5de-061bb7da72f8_1200x630.jpeg" alt="Finality—Part 3: Total Order" class="img_ev3q"></p><p>Finality is a four-part exploration into the inner workings and technological significance of the IOTA tangle’s many-worlds Nakamoto consensus mechanism.</p><p>Read the article on:<br>
+<a href="https://iologica.substack.com/p/total-order" target="_blank" rel="noopener noreferrer">iologica</a></p>]]></content>
+        <author>
+            <name>R. Brennan Kelly</name>
+            <uri>https://iologica.substack.com</uri>
+        </author>
+        <category label="Community" term="Community"/>
+        <category label="Consensus" term="Consensus"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Finality—Part 4: Many Worlds]]></title>
+        <id>Finality—Part 4: Many Worlds</id>
+        <link href="https://wiki.iota.org/next/blog/Finality—Part 4: Many Worlds"/>
+        <updated>2022-01-01T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Finality—Part 4: Many Worlds]]></summary>
+        <content type="html"><![CDATA[<p><img loading="lazy" src="https://cdn.substack.com/image/fetch/w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2F142700f1-2627-436e-af69-e10efadb5c82_800x450.jpeg" alt="Finality—Part 4: Many Worlds" class="img_ev3q"></p><p>Finality is a four-part exploration into the inner workings and technological significance of the IOTA tangle’s many-worlds Nakamoto consensus mechanism.</p><p>Read the article on:<br>
+<a href="https://iologica.substack.com/p/many-worlds" target="_blank" rel="noopener noreferrer">Substack</a></p>]]></content>
+        <author>
+            <name>R. Brennan Kelly</name>
+            <uri>https://iologica.substack.com</uri>
+        </author>
+        <category label="Community" term="Community"/>
+        <category label="Consensus" term="Consensus"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[“Better than Coinbase” – IOTAs new Assembly network is the missing piece for Metaverse and Web3]]></title>
+        <id>Assembly better than Coinbase</id>
+        <link href="https://wiki.iota.org/next/blog/Assembly better than Coinbase"/>
+        <updated>2021-12-04T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Better than coinbase]]></summary>
+        <content type="html"><![CDATA[<p><img loading="lazy" src="https://miro.medium.com/max/1400/1*8aPcRlHUFfOCOQC5QcSqOw.png" alt="Better than coinbase" class="img_ev3q"></p><p>Article about the implications of IOTAs new Assembly release.</p><p>Read the article on:<br>
+<a href="https://www.reddit.com/r/Assembly_net/comments/r8n5at/better_than_coinbase_iotas_new_assembly_network/" target="_blank" rel="noopener noreferrer">Reddit</a><br>
+<a href="https://medium.com/@linus.naumann/better-than-coinbase-why-the-new-iota-assembly-network-is-the-missing-piece-for-iota-based-f503420cc990" target="_blank" rel="noopener noreferrer">Medium</a></p>]]></content>
+        <author>
+            <name>Linus Naumann</name>
+            <uri>https://twitter.com/LinusNaumann</uri>
+        </author>
+        <category label="Assembly" term="Assembly"/>
+        <category label="Metaverse" term="Metaverse"/>
+        <category label="Web3" term="Web3"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[A vision of IOTA´s future ecosystem — The DAO-landscape]]></title>
+        <id>the-dao-landscape</id>
+        <link href="https://wiki.iota.org/next/blog/the-dao-landscape"/>
+        <updated>2021-11-15T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[DAO ecosystem]]></summary>
+        <content type="html"><![CDATA[<p><img loading="lazy" src="https://miro.medium.com/max/1167/1*1CJWxBKb3ekwq-UBOaRI_g.gif" alt="DAO ecosystem" class="img_ev3q"></p><p>IOTAs future DAO ecosystem will bring a multitude of new opportunities for business, investment and communities!</p><p>All DAOs will be interconnected in a lively and pluralistic landscape</p><p>Read the article on:<br>
+<a href="https://www.reddit.com/r/Iota/comments/qucwio/a_vision_of_iotas_future_ecosystem_the/" target="_blank" rel="noopener noreferrer">Reddit</a><br>
+<a href="https://medium.com/@linus.naumann/a-vision-of-iota-s-future-ecosystem-the-dao-landscape-b93688d8acee" target="_blank" rel="noopener noreferrer">Medium</a></p>]]></content>
+        <author>
+            <name>Linus Naumann</name>
+            <uri>https://twitter.com/LinusNaumann</uri>
+        </author>
+        <category label="Community" term="Community"/>
+        <category label="DAO" term="DAO"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[IOTAs multi-asset multiverse is coming]]></title>
+        <id>multi-asset-multiverse-is-coming</id>
+        <link href="https://wiki.iota.org/next/blog/multi-asset-multiverse-is-coming"/>
+        <updated>2021-11-05T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[keyboard]]></summary>
+        <content type="html"><![CDATA[<p><img loading="lazy" src="https://miro.medium.com/max/1400/1*8aPcRlHUFfOCOQC5QcSqOw.png" alt="keyboard" class="img_ev3q"></p><p>IOTAs multi-asset multiverse is coming! Huge implications for its tokenomics.</p><p>Read the article on:<br>
+<a href="https://medium.com/@linus.naumann/iotas-multi-asset-multiverse-is-coming-huge-implications-for-its-tokenomics-454bfb1f1de1" target="_blank" rel="noopener noreferrer">Medium</a></p>]]></content>
+        <author>
+            <name>Linus Naumann</name>
+            <uri>https://twitter.com/LinusNaumann</uri>
+        </author>
+        <category label="Community" term="Community"/>
+        <category label="Tokenization" term="Tokenization"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[My opinion on ISCP — security improvement proposal]]></title>
+        <id>iscp_security_proposal</id>
+        <link href="https://wiki.iota.org/next/blog/iscp_security_proposal"/>
+        <updated>2021-09-24T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[keyboard]]></summary>
+        <content type="html"><![CDATA[<p><img loading="lazy" src="https://miro.medium.com/max/1400/1*mUjOq0Y8iBfLC-4ztXEiTg.jpeg" alt="keyboard" class="img_ev3q"></p><p>New article: "My opinion on IOTA Smart Contract Protocol (ISCP) — security improvement proposal".<br>
+<!-- -->ISCP is IOTA’s take to bring Smart Contracts to their DLT.</p><p>Read the article on:<br>
+<a href="https://luka99.medium.com/my-opinion-on-iota-smart-contract-protocol-iscp-security-improvement-proposal-c6ca3ca3df23" target="_blank" rel="noopener noreferrer">Medium</a></p>]]></content>
+        <author>
+            <name>Luka Stanisic</name>
+            <uri>https://luka99.medium.com</uri>
+        </author>
+        <category label="Community" term="Community"/>
+        <category label="ISCP" term="ISCP"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[ISCP in a Private Network - Developing a Prediction Market]]></title>
+        <id>develop_prediction_market</id>
+        <link href="https://wiki.iota.org/next/blog/develop_prediction_market"/>
+        <updated>2021-09-16T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[keyboard]]></summary>
+        <content type="html"><![CDATA[<p><img loading="lazy" src="https://miro.medium.com/max/700/1*wkujYx46q_Wb4V-Rj7iMRA.png" alt="keyboard" class="img_ev3q"></p><p>New article: "Exploring IOTA 2.0 Smart Contracts in a Private Network: Developing a Prediction Market".<br>
+<!-- -->To help interested developers and the IOTA community to more quickly try out smart contracts, this article describes how to set up a private IOTA network with the latest state of the software and demonstrates a workable prediction market smart contract developed in Rust.</p><p>Read the article on:<br>
+<a href="https://medium.com/51nodes/exploring-iota-2-0-smart-contracts-in-a-private-network-developing-a-prediction-market-c2d81988f75e" target="_blank" rel="noopener noreferrer">Medium</a></p>]]></content>
+        <author>
+            <name>Dr. Achim Klein</name>
+            <uri>https://medium.com/@draklein</uri>
+        </author>
+        <category label="Community" term="Community"/>
+        <category label="ISCP" term="ISCP"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[A future day with IOTA — Part II]]></title>
+        <id>future_day_2</id>
+        <link href="https://wiki.iota.org/next/blog/future_day_2"/>
+        <updated>2021-08-22T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[keyboard]]></summary>
+        <content type="html"><![CDATA[<p><img loading="lazy" src="https://miro.medium.com/max/1400/1*b3PJxjzbZXmuCr8bhK-Jyw.png" alt="keyboard" class="img_ev3q"></p><p>New article: "A Future Day with IOTA Part II - "Revelations"".<br>
+<!-- -->Check how a fully developed #IOTA changes our working life by enabling #data economy!</p><p>Read the article on:<br>
+<a href="https://t.co/6zF8ODsE8v?amp=1" target="_blank" rel="noopener noreferrer">Reddit</a><br>
+<a href="https://medium.com/@linus.naumann/a-future-day-with-iota-part-ii-revelations-c3926202f3c4" target="_blank" rel="noopener noreferrer">Medium</a></p>]]></content>
+        <author>
+            <name>Linus Naumann</name>
+            <uri>https://twitter.com/LinusNaumann</uri>
+        </author>
+        <category label="Community" term="Community"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Parallel realities and IOTAs breakthrough “Multiverse consensus”]]></title>
+        <id>multiverse_consensus</id>
+        <link href="https://wiki.iota.org/next/blog/multiverse_consensus"/>
+        <updated>2021-08-18T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[conflics]]></summary>
+        <content type="html"><![CDATA[<p><img loading="lazy" src="https://miro.medium.com/max/1400/1*uaihe82n_l6vkHMz-gMl4A.gif" alt="conflics" class="img_ev3q"></p><p>New article: "Parallel realities and IOTAs breakthrough “Multiverse consensus"".<br>
+<!-- -->Check out why #IOTA 2.0 is a breakthrough for the whole #Crypto space.</p><p>Read the article on:<br>
+<a href="https://t.co/aN3IcKaTWg?amp=1" target="_blank" rel="noopener noreferrer">Reddit</a><br>
+<a href="https://medium.com/@linus.naumann/parallel-realities-and-iotas-multiverse-consensus-bcfbf3b12aad" target="_blank" rel="noopener noreferrer">Medium</a></p>]]></content>
+        <author>
+            <name>Linus Naumann</name>
+            <uri>https://twitter.com/LinusNaumann</uri>
+        </author>
+        <category label="Community" term="Community"/>
+        <category label="OTV" term="OTV"/>
+        <category label="Multiverse" term="Multiverse"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Wiki Alpha release!]]></title>
+        <id>wiki-alpha</id>
+        <link href="https://wiki.iota.org/next/blog/wiki-alpha"/>
+        <updated>2021-08-15T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[We proudly present the first alpha release of the IOTA wiki. Built by the community for the community. The wiki is at an early stage, and we would really appreciate your contribution.]]></summary>
+        <content type="html"><![CDATA[<p>We proudly present the first alpha release of the IOTA wiki. Built by the community for the community. The wiki is at an early stage, and we would really appreciate your contribution.
+<a href="https://github.com/jlvandenhout" target="_blank" rel="noopener noreferrer">Jeroen</a> has built a great in-page editor, which makes it easy to contribute to the wiki content without being a GitHub expert. You will however need a GitHub account.</p><p>The wiki blog will also contain a collection of curated community posts in the future. The wiki will be a one-stop shop for IOTA information.. Let's BUIDL it together!</p><p><img loading="lazy" alt="BUIDL" src="/next/assets/images/buidl-bridge-4bfed292a723fb0d7ac5f4bc64e2201d.gif" width="320" height="320" class="img_ev3q"></p>]]></content>
+        <author>
+            <name>Dr. Electron</name>
+            <uri>https://github.com/Dr-Electron</uri>
+        </author>
+        <category label="X-Teams" term="X-Teams"/>
+        <category label="IOTA-Wiki" term="IOTA-Wiki"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[A future day with IOTA — Part I]]></title>
+        <id>future_day_1</id>
+        <link href="https://wiki.iota.org/next/blog/future_day_1"/>
+        <updated>2021-08-14T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[morning]]></summary>
+        <content type="html"><![CDATA[<p><img loading="lazy" src="https://miro.medium.com/max/1400/1*QBPB-rYtEpp37SPnWJ3QvA.jpeg" alt="morning" class="img_ev3q"></p><p>New article: "A Future Day with #IOTA - Part I"</p><p>Let´s explore how IOTA will change our everyday lives in the future in this little fun and educational scenario!</p><p>Read the article on:<br>
+<a href="https://t.co/IHXnA8qW6y?amp=1" target="_blank" rel="noopener noreferrer">Reddit</a><br>
+<a href="https://medium.com/@linus.naumann/a-future-day-with-iota-part-i-239c16a011f3" target="_blank" rel="noopener noreferrer">Medium</a></p>]]></content>
+        <author>
+            <name>Linus Naumann</name>
+            <uri>https://twitter.com/LinusNaumann</uri>
+        </author>
+        <category label="Community" term="Community"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Unpopular opinion: Bitcoin did not get rid of the middle-man]]></title>
+        <id>bitcoin-middle-man</id>
+        <link href="https://wiki.iota.org/next/blog/bitcoin-middle-man"/>
+        <updated>2021-08-11T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[miners]]></summary>
+        <content type="html"><![CDATA[<p><img loading="lazy" src="https://miro.medium.com/max/1400/1*Tacwi1EDsoRkqR7b_weUBg.png" alt="miners" class="img_ev3q"></p><p>Miners are companies with 0 interest in crypto-freedom. 4 mining pools control 51% of hash!</p><p>Only IOTA leaderless consensus enables Satoshis vision of peer-to-peer electronic cash!</p><p>Read the article on:<br>
+<a href="https://t.co/ZjnLlfJ5dw?amp=1" target="_blank" rel="noopener noreferrer">Reddit</a><br>
+<a href="https://medium.com/@linus.naumann/unpopular-opinion-bitcoin-did-not-get-rid-of-the-middle-man-71aced8c5e3f" target="_blank" rel="noopener noreferrer">Medium</a></p>]]></content>
+        <author>
+            <name>Linus Naumann</name>
+            <uri>https://twitter.com/LinusNaumann</uri>
+        </author>
+        <category label="Community" term="Community"/>
+        <category label="Bitcoin" term="Bitcoin"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Layer One—Part 1: Assimilation]]></title>
+        <id>layer_one_1</id>
+        <link href="https://wiki.iota.org/next/blog/layer_one_1"/>
+        <updated>2021-08-06T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Assimilation]]></summary>
+        <content type="html"><![CDATA[<p><img loading="lazy" src="https://cdn.substack.com/image/fetch/w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2F902fa1ea-6e2e-44aa-82b3-1bf4d2d7ef37_1920x1080.jpeg" alt="Assimilation" class="img_ev3q"></p><p>Biological organisms programmed by the data structures that we call DNA have shaped the world for nearly 3.5 billion years.</p><p>Throughout this time period, all living things have battled resource scarcity in the physical environment to replicate their DNA from one generation to the next in the process of natural selection.</p><p>Read the article on:<br>
+<a href="https://iologica.substack.com/p/assimilation" target="_blank" rel="noopener noreferrer">Medium</a></p>]]></content>
+        <author>
+            <name>R. Brennan Kelly</name>
+            <uri>https://iologica.substack.com</uri>
+        </author>
+        <category label="Community" term="Community"/>
+        <category label="Layer One" term="Layer One"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Layer One—Part 2: Error Correction]]></title>
+        <id>layer_one_2</id>
+        <link href="https://wiki.iota.org/next/blog/layer_one_2"/>
+        <updated>2021-08-06T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Error Correction]]></summary>
+        <content type="html"><![CDATA[<p><img loading="lazy" src="https://cdn.substack.com/image/fetch/w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2F21ced77a-e1b6-4315-80c4-15f2e9223402_510x570.jpeg" alt="Error Correction" class="img_ev3q"></p><p>For thousands of years, the best minds have been consumed by the existential questions of the universe:</p><p>What is the meaning of it all? How did everything get here? How does it all work? How will it all end? Are we special?</p><p>These rational inquiries have pushed humanity to astounding intellectual heights in philosophy, mathematics, physical science, and even the humanities.</p><p>Read the article on:<br>
+<a href="https://iologica.substack.com/p/error-correction" target="_blank" rel="noopener noreferrer">Medium</a></p>]]></content>
+        <author>
+            <name>R. Brennan Kelly</name>
+            <uri>https://iologica.substack.com</uri>
+        </author>
+        <category label="Community" term="Community"/>
+        <category label="Layer One" term="Layer One"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Layer One—Part 3: Metamoney]]></title>
+        <id>layer_one_3</id>
+        <link href="https://wiki.iota.org/next/blog/layer_one_3"/>
+        <updated>2021-08-06T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Parallel Reality]]></summary>
+        <content type="html"><![CDATA[<p><img loading="lazy" src="https://cdn.substack.com/image/fetch/w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2Fa8b72adf-7a43-4c69-98c9-01fd061c302d_6915x3889.jpeg" alt="Parallel Reality" class="img_ev3q"></p><p>What is the distributed ledger value proposition? Is the elegant distributed ledger solution even possible? What is the killer distributed ledger application?</p><p>These are the three fundamental questions that participants in the distributed ledger space have reflected on for years—all while falling far short of the answers and their inescapable consequences.</p><p>Read the article on:<br>
+<a href="https://iologica.substack.com/p/metamoney" target="_blank" rel="noopener noreferrer">Medium</a></p>]]></content>
+        <author>
+            <name>R. Brennan Kelly</name>
+            <uri>https://iologica.substack.com</uri>
+        </author>
+        <category label="Community" term="Community"/>
+        <category label="Layer One" term="Layer One"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[An introduction to DLT concepts and why I think IOTAs Tangle is superior to Blockchains]]></title>
+        <id>An introduction to DLT Concepts</id>
+        <link href="https://wiki.iota.org/next/blog/An introduction to DLT Concepts"/>
+        <updated>2021-06-26T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Blockchain vs Tangle]]></summary>
+        <content type="html"><![CDATA[<p><img loading="lazy" src="https://medium.com/p/an-introduction-to-dlt-concepts-and-why-i-think-iotas-tangle-is-superior-to-blockchains-550b69ec86d6" alt="Blockchain vs Tangle" class="img_ev3q"></p><p>The goal of this article is to help newcomers in the cryptocurrency space or anyone unfamiliar with the technology behind it to understand what Distributed Ledger Technologies (DLTs) are and why we need them. Therefore, I will try not to go too deep into the technical details of DLTs, but rather give an overview of the principles used. I know this is a long article, but I wanted to explain everything in one document so you don’t have to look in different places if you want to get a basic understanding. Feel free to skip parts you already know. It’s important to note, that I won’t discuss all possible attack vectors or every detail of the tech. This article should only be an introduction to the topic and the first stepping stone to dig deeper if it sparks your interest.</p><p>Read the article on:<br>
+<a href="https://medium.com/p/an-introduction-to-dlt-concepts-and-why-i-think-iotas-tangle-is-superior-to-blockchains-550b69ec86d6" target="_blank" rel="noopener noreferrer">Medium</a></p>]]></content>
+        <author>
+            <name>Jonas Ehnle</name>
+            <uri>https://medium.com/@jonas-ehnle</uri>
+        </author>
+        <category label="Community" term="Community"/>
+        <category label="DLT" term="DLT"/>
+        <category label="Tangle" term="Tangle"/>
+        <category label="Introduction" term="Introduction"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[My take on IOTA’s Community Treasury]]></title>
+        <id>my-take-community-treasury</id>
+        <link href="https://wiki.iota.org/next/blog/my-take-community-treasury"/>
+        <updated>2021-06-16T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Treasuries]]></summary>
+        <content type="html"><![CDATA[<p><img loading="lazy" src="https://miro.medium.com/max/1400/1*Ydf9L3h3ZOKJ2NbHWmPIdw.png" alt="Treasuries" class="img_ev3q"></p><p>We had our first meeting on Discord to discuss the community treasury. We were more or less unanimous that we want to have a treasury, but we couldn’t agree how it should look like. This is totally normal. We all come from different parts of the world, have different backgrounds and experiences. It’s hard and more or less impossible to agree on a single governance structure.</p><p>Read the article on:<br>
+<a href="https://luka99.medium.com/my-take-on-iotas-community-treasury-f40deb7b56ba" target="_blank" rel="noopener noreferrer">Medium</a></p>]]></content>
+        <author>
+            <name>Luka Stanisic</name>
+            <uri>https://luka99.medium.com</uri>
+        </author>
+        <category label="Community" term="Community"/>
+        <category label="DAO" term="DAO"/>
+        <category label="Commmunity Treasury" term="Commmunity Treasury"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[The Chirping Machine]]></title>
+        <id>the-chirping-machine</id>
+        <link href="https://wiki.iota.org/next/blog/the-chirping-machine"/>
+        <updated>2021-05-11T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Die Zwitscher-Maschine]]></summary>
+        <content type="html"><![CDATA[<p><img loading="lazy" src="https://miro.medium.com/max/1400/0*-ldlm3IWjU4FOEBU.jpg" alt="Die Zwitscher-Maschine" class="img_ev3q"></p><p>One way you could describe a distributed ledger is a network of machines which tell each other the truth.<br>
+<!-- -->In a distributed ledger networked nodes send messages back and forth that look this:<br>
+<code>[statement] is true</code><br>
+<!-- -->Nodes send and receive these truth statements, verify if they are true, and collect them into a list of true statements which we call the ledger...</p><p>Read the article on:<br>
+<a href="https://medium.com/coinmonks/the-chirping-machine-4c73269c2871" target="_blank" rel="noopener noreferrer">Medium</a></p>]]></content>
+        <author>
+            <name>Borg</name>
+            <uri>https://b0rg.medium.com</uri>
+        </author>
+        <category label="Community" term="Community"/>
+        <category label="Distributed Ledger" term="Distributed Ledger"/>
+        <category label="Gossip" term="Gossip"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[The Tech Behind IOTA — Part 2 (Consensus)]]></title>
+        <id>the-tech-behind-IOTA-2</id>
+        <link href="https://wiki.iota.org/next/blog/the-tech-behind-IOTA-2"/>
+        <updated>2021-01-31T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Coordicide]]></summary>
+        <content type="html"><![CDATA[<p><img loading="lazy" src="https://miro.medium.com/max/1400/1*9DcgQ-EnPojAQADRUsi8Rg.png" alt="Coordicide" class="img_ev3q"></p><p>I’ve long thought of how to structure these tech series. It’s hard to choose a technical level of proficiency that everyone can follow, because everyone comes from a different background.<br>
+<!-- -->If you’re new, take a look at the first article of the series to get a general idea how the Tangle works and how it’s different from a blockchain.</p><p>Read the article on:<br>
+<a href="https://luka99.medium.com/the-tech-behind-iota-part-2-consensus-88c74917b993" target="_blank" rel="noopener noreferrer">Medium</a></p>]]></content>
+        <author>
+            <name>Luka Stanisic</name>
+            <uri>https://luka99.medium.com</uri>
+        </author>
+        <category label="Community" term="Community"/>
+        <category label="Coordicide" term="Coordicide"/>
+        <category label="Mana" term="Mana"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Why IOTA?]]></title>
+        <id>why-iota</id>
+        <link href="https://wiki.iota.org/next/blog/why-iota"/>
+        <updated>2021-01-23T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[IOTA]]></summary>
+        <content type="html"><![CDATA[<p><img loading="lazy" src="https://miro.medium.com/max/1400/1*WWI0yj4CW3ynmBS168N8vg.png" alt="IOTA" class="img_ev3q"></p><p>I’ll try to explain my view why I chose IOTA over all other projects in this space.</p><p>Read the article on:<br>
+<a href="https://luka99.medium.com/why-iota-4f563c375afb" target="_blank" rel="noopener noreferrer">Medium</a></p>]]></content>
+        <author>
+            <name>Luka Stanisic</name>
+            <uri>https://luka99.medium.com</uri>
+        </author>
+        <category label="Community" term="Community"/>
+        <category label="Ethereum" term="Ethereum"/>
+        <category label="Bitcoin" term="Bitcoin"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[The Tech Behind IOTA — Part 1 (Introduction)]]></title>
+        <id>the-tech-behind-IOTA-1</id>
+        <link href="https://wiki.iota.org/next/blog/the-tech-behind-IOTA-1"/>
+        <updated>2021-01-20T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Tangle]]></summary>
+        <content type="html"><![CDATA[<p><img loading="lazy" src="https://miro.medium.com/max/1400/1*p2lxgHwQd4yr_cje9NOwSg.jpeg" alt="Tangle" class="img_ev3q"></p><p>In this article, I will try to explain how IOTA will work in the post-Coordicide (the removal of the Coordinator) era.
+There will probably be many series on this topic, each covering part of the solution.
+This post will try to give you the general idea how IOTA compares to other traditional blockchains.</p><p>Read the article on:<br>
+<a href="https://luka99.medium.com/the-tech-behind-iota-part-1-introduction-b8f82775325a" target="_blank" rel="noopener noreferrer">Medium</a></p>]]></content>
+        <author>
+            <name>Luka Stanisic</name>
+            <uri>https://luka99.medium.com</uri>
+        </author>
+        <category label="Community" term="Community"/>
+        <category label="Coordicide" term="Coordicide"/>
+        <category label="Mana" term="Mana"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[The Economic Model of IOTA]]></title>
+        <id>the-economic-model</id>
+        <link href="https://wiki.iota.org/next/blog/the-economic-model"/>
+        <updated>2021-01-19T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[IOTA]]></summary>
+        <content type="html"><![CDATA[<p><img loading="lazy" src="https://miro.medium.com/max/776/1*4lxkm50oJ02YOPo8MLgnKQ.png" alt="IOTA" class="img_ev3q"></p><p>I’ll try to explain the token economics of IOTA and why it will have real tangible and intrinsic value.</p><p>Read the article on:<br>
+<a href="https://luka99.medium.com/the-economic-model-of-iota-c28732143d51" target="_blank" rel="noopener noreferrer">Medium</a></p>]]></content>
+        <author>
+            <name>Luka Stanisic</name>
+            <uri>https://luka99.medium.com</uri>
+        </author>
+        <category label="Community" term="Community"/>
+        <category label="Economic" term="Economic"/>
+        <category label="Mana" term="Mana"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[IILA x IOTA — Finite Element Method As A Service]]></title>
+        <id>/2019/03/02/_finite_element_method_as_a_service</id>
+        <link href="https://wiki.iota.org/next/blog/2019/03/02/_finite_element_method_as_a_service"/>
+        <updated>2019-03-02T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[IOTA Lab Aachen]]></summary>
+        <content type="html"><![CDATA[<p><img loading="lazy" src="https://miro.medium.com/max/7500/1*hSwB4GL_DqsPck5Dtg9o-A.png" alt="IOTA Lab Aachen" class="img_ev3q"></p><p>Imagine a scenario in which a machine would autonomously have an FE twin for each workpiece, with data that could not be physically measured. This opens up completely new possibilities for AI in mechanical engineering. That’s huge in my field of expertise.</p><p>Read the article on:<br>
+<a href="https://medium.com/industrial-iota-lab-aachen-wzl-of-rwth-aachen/iila-x-iota-finite-element-method-as-a-service-2a782a479516" target="_blank" rel="noopener noreferrer">Medium</a></p>]]></content>
+        <author>
+            <name>Daniel Trauth</name>
+            <uri>https://medium.com/industrial-iota-lab-aachen-wzl-of-rwth-aachen</uri>
+        </author>
+        <category label="Community" term="Community"/>
+        <category label="IoT" term="IoT"/>
+        <category label="IOTA LAB AACHEN" term="IOTA LAB AACHEN"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Manufacturing Economy]]></title>
+        <id>manufacturing-economy</id>
+        <link href="https://wiki.iota.org/next/blog/manufacturing-economy"/>
+        <updated>2018-08-15T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[IOTA Lab Aachen]]></summary>
+        <content type="html"><![CDATA[<p><img loading="lazy" src="https://miro.medium.com/max/7500/1*2itDXVMO-8iOZF44ttIR6g.png" alt="IOTA Lab Aachen" class="img_ev3q"></p><p>The possibilities and challenges of the Industrial Internet of Things have been investigated for years at the Laboratory for Machine Tools and Production Engineering WZL of RWTH Aachen University under the topic of Internet of Production (IoP). The IoP focuses on interdisciplinary optimization approaches along with the entire value chain, especially in the areas of data acquisition, machine learning and artificial intelligence. This article evaluates whether and how the vision of IoP can be extended to a Manufacturing Economy. Distributed ledgers in general, and IOTA in particular, were examined for this purpose. Subsequently, IoP potential use cases for the area of manufacturing technologies were outlined, but it turned out to have greater potential in manufacturing economy.</p><p>Read the article on:<br>
+<a href="https://medium.com/industrial-iota-lab-aachen-wzl-of-rwth-aachen/manufacturing-economy-e541066889ee" target="_blank" rel="noopener noreferrer">Medium</a></p>]]></content>
+        <author>
+            <name>Daniel Trauth</name>
+            <uri>https://medium.com/industrial-iota-lab-aachen-wzl-of-rwth-aachen</uri>
+        </author>
+        <category label="Community" term="Community"/>
+        <category label="IoT" term="IoT"/>
+        <category label="IOTA LAB AACHEN" term="IOTA LAB AACHEN"/>
+    </entry>
+</feed>

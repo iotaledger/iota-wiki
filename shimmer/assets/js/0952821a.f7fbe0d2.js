@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkiota_wiki=self.webpackChunkiota_wiki||[]).push([[97712],{28121:e=>{e.exports=JSON.parse('{"permalink":"/shimmer/blog/page/3","page":3,"postsPerPage":10,"totalPages":3,"totalCount":26,"previousPage":"/shimmer/blog/page/2","blogDescription":"Blog","blogTitle":"Blog"}')}}]);
