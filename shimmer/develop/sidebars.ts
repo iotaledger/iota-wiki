@@ -29,7 +29,7 @@ module.exports = {
             {
                 label: 'Schema Tool',
                 type: 'link',
-                href: '/smart-contracts/guide/schema'
+                href: '/smart-contracts/guide/wasm_vm/schema'
             }
         ],
       },
@@ -179,7 +179,7 @@ module.exports = {
             {
                 label: 'Schema Tool',
                 type: 'link',
-                href: '/smart-contracts/guide/schema'
+                href: '/smart-contracts/guide/wasm_vm/schema'
             }
         ]
       },

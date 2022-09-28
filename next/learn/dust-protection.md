@@ -28,7 +28,7 @@ The ledger state was therefore likely to bloat.
 ## IOTA 1.5
 
 IOTA switches to a UTXO-based ledger.
-Each address can now hold multiple [UTXOs](/learn/about-iota/messages#utxo), each with its own balance. For a more extensive description of UTXOs check [this](https://medium.com/bitbees/what-the-heck-is-utxo-ca68f2651819) medium article.
+Each address can now hold multiple [UTXOs](/learn/outputs), each with its own balance. For a more extensive description of UTXOs check [this](https://medium.com/bitbees/what-the-heck-is-utxo-ca68f2651819) medium article.
 The address balance is calculated as the total of the UTXO balances on that address.
 
 Recognising the risk of ledger bloat, a dust protection mechanism is introduced.
@@ -57,7 +57,7 @@ The 1.5 dust protection is also not ready for IOTA 2.0. Therefore a new dust pro
 The rules of the new dust protection are:
 
 1. Any UTXO must contain a minimum deposit (for the sake of simplicity, let's make this 1 Mi for our examples).
-2. The amount of data any UTXO can hold is proportional to the amount of IOTA on that UTXO. The IOTA acts as a deposit to secure that data on the Tangle, and you can add more IOTA to add more data. This is why the official name for the new dust protection was chosen to be _storage deposit_ The actual cost of IOTA per byte is currently being decided, and can change over time.
+2. The amount of data any UTXO can hold is proportional to the amount of IOTA on that UTXO. The IOTA acts as a deposit to secure that data on the Tangle, and you can add more IOTA to add more data. This is why the official name for the new dust protection was chosen to be *storage deposit* The actual cost of IOTA per byte is currently being decided, and can change over time.
 
 To send amounts smaller than 1 Mi, or to send native assets, we introduce a new system of "conditional sending", which does not require total ordering of the Tangle (and is therefore ready for IOTA 2.0).
 Let's look at how this works if I want to send 10i to an address which already holds 5 Mi (assuming the minimum deposit is 1 Mi). As before I cannot just send 10i, because the UTXO will have a value of 10i (well below the minimal amount of 1 Mi).

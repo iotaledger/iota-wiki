@@ -36,18 +36,6 @@ module.exports = {
             }
           ],
         },
-        {
-          type: 'category',
-          label: 'Developer',
-          collapsed: true,
-          items: [
-            {
-              type: 'link',
-              label: 'CLI Wallet',
-              href:  '/cli-wallet/welcome'
-            },
-          ],
-        },
       ],
     }
   ]
