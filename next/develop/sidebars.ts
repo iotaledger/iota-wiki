@@ -128,7 +128,7 @@ module.exports = {
                   {
                     type: 'link',
                     label: 'Chronicle',
-                    href: '/chronicle/develop/welcome',   
+                    href: '/chronicle/welcome',   
                   },
               ],
             },

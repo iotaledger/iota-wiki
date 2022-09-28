@@ -28,7 +28,7 @@ Welcome to the Developer Section. Here you will find all information to start de
         - [Dashboard](/inx-dashboard/welcome)   
         - [Spammer](/inx-spammer/welcome)  
         - [Wasp](/smart-contracts/guide/chains_and_nodes/running-a-node)
-        - [Chronicle](/chronicle/develop/welcome)
+        - [Chronicle](/chronicle/welcome)
 - About Nodes
     - [Introduction](nodes/about-nodes)
     - [Become a Node Operator](nodes/become-a-node-operator)
