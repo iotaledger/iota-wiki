@@ -9,7 +9,7 @@ Welcome to the Developer Section. Here you will find all information to start de
     - [Documentation](/smart-contracts/overview)
     - [Node (WASP)](/smart-contracts/guide/chains_and_nodes/running-a-node)
     - [WASP CLI](/smart-contracts/guide/chains_and_nodes/wasp-cli)
-    - [Schema Tool](/smart-contracts/guide/schema)
+    - [Schema Tool](/smart-contracts/guide/wasm_vm/schema)
 - Libraries
     - [Client.rs](/iota.rs/welcome)
     - [Wallet.rs](/wallet.rs/welcome)
@@ -39,5 +39,5 @@ Welcome to the Developer Section. Here you will find all information to start de
 - [Tools](/develop/tools)
     - [CLI Wallet](/cli-wallet/welcome)
     - [WASP CLI](/smart-contracts/guide/chains_and_nodes/wasp-cli)
-    - [Schema Tool](/smart-contracts/guide/schema)
+    - [Schema Tool](/smart-contracts/guide/wasm_vm/schema)
 - [Tutorials](/tutorials)

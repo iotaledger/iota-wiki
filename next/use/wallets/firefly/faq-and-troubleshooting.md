@@ -3,7 +3,7 @@ title: Firefly FAQ
 description: Frequently asked questions and helpful troubleshooting information for users of the Firefly wallet.
 ---
 
-[Official website](https://firefly.iota.org/) | [User guide](/wallets/firefly/user-guide) | [Ledger user guide](/wallets/firefly/user-guide-ledger) | [Github](https://github.com/iotaledger/firefly)
+[Official website](https://firefly.iota.org/) | [User guide](/use/wallets/firefly/user-guide) | [Ledger user guide](/use/wallets/firefly/user-guide-ledger) | [Github](https://github.com/iotaledger/firefly)
 
 ## Setup and installation
 
@@ -29,7 +29,7 @@ There are several ways to recover your wallet, and both can be found in the back
 
 #### Do you plan to support Trezor or other hardware wallets?
 
-We do not currently have any plans to support Trezor, but if a community member would like to work on the integration, please get in touch with Charlie#0123 on our [Discord](/learn/the-community/discord).
+We do not currently have any plans to support Trezor, but if a community member would like to work on the integration, please get in touch with Charlie#0123 on our [Discord](/community/the-community/discord).
 
 #### Which Ledger hardware do you support?
 

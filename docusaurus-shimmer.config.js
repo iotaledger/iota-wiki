@@ -119,10 +119,6 @@ module.exports = {
               label: 'Wallets',
               to: '/use/wallets/what-is-a-wallet',
             },
-            {
-              label: 'Use Cases',
-              to: '/use/use-cases/data-confidence',
-            },
           ],
         },
         {
@@ -130,7 +126,7 @@ module.exports = {
           items: [
             {
               label: 'How It Works',
-              to: '/learn/about-iota/an-introduction-to-iota',
+              to: '/learn/welcome',
             },
           ],
         },

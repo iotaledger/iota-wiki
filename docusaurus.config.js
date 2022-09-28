@@ -132,10 +132,6 @@ module.exports = {
               label: 'Wallets',
               to: '/use/wallets/what-is-a-wallet',
             },
-            {
-              label: 'Use Cases',
-              to: '/use/use-cases/data-confidence',
-            },
           ],
         },
         {
@@ -148,10 +144,6 @@ module.exports = {
             {
               label: 'IOTA Token',
               to: '/learn/iota-token/buying-iota',
-            },
-            {
-              label: 'Future of IOTA',
-              to: '/learn/future/future-of-iota',
             },
             {
               label: 'Research',

@@ -9,7 +9,7 @@ image: /img/iota-wiki.png
 
 ## The Wiki
 
-Articles for users belong either to the [Learn](/learn/about-iota/an-introduction-to-iota) or [Participate](/nodes/about-nodes) spaces. 
+Articles for users belong either to the [Learn](/learn/about-iota/an-introduction-to-iota) or [Participate](/develop/nodes/about-nodes) spaces. 
 
 ## Spaces and Subspaces
 

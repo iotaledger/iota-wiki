@@ -28,11 +28,11 @@ It follows the following steps:
 - 4.) Your funds become available on the new network on the EdDSA address Firefly created for you.
 - 5.) Your funds are successfully migrated.
 
-The technical details are explained in the [chrysalis documentation](/introduction/guides/migration_mechanism)
+The technical details are explained in the [chrysalis documentation](introduction/explanations/update/migration_mechanism)
 
 Exact guides how to migrate your funds are located here:
 
-- [Firefly token migration](/wallets/firefly/general#firefly-token-migration)
+- [Firefly token migration](/use/wallets/firefly/general#firefly-token-migration)
 
 We urge every IOTA token holder who still has not completed the migration to follow the steps and move the tokens into the new network.
 

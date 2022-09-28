@@ -28,7 +28,7 @@ The ledger state was therefore likely to bloat.
 ## IOTA 1.5
 
 IOTA switches to a UTXO-based ledger.
-Each address can now hold multiple [UTXOs](/learn/about-iota/messages#utxo), each with its own balance. For a more extensive description of UTXOs check [this](https://medium.com/bitbees/what-the-heck-is-utxo-ca68f2651819) medium article.
+Each address can now hold multiple [UTXOs](/learn/outputs), each with its own balance. For a more extensive description of UTXOs check [this](https://medium.com/bitbees/what-the-heck-is-utxo-ca68f2651819) medium article.
 The address balance is calculated as the total of the UTXO balances on that address.
 
 Recognising the risk of ledger bloat, a dust protection mechanism is introduced.
