@@ -3,13 +3,13 @@ module.exports = {
     {
       type: 'category',
       label: 'Wallets',
-      collapsed: true,
+      collapsed: false,
       items: [
         'wallets/what-is-a-wallet',
         {
           type: 'category',
           label: 'Official',
-          collapsed: true,
+          collapsed: false,
           items: [
             {
               type: 'category',
