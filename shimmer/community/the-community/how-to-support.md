@@ -59,7 +59,7 @@ Like and retweet news in the ecosystem.
 
 Follow the [IOTA Foundation](https://twitter.com/iota/) and [Shimmer](https://twitter.com/shimmernet) on Twitter and follow them daily to *like* and *retweet*. Look for other projects or ecosystem members, follow them, and like their tweets.
 
-These are some [interesting IOTA related projects](<(https://twitter.com/i/lists/1564924491850989575)>) you can follow as well.
+These are some [interesting IOTA related projects](https://twitter.com/i/lists/1564924491850989575) you can follow as well.
 
 ### LinkedIn
 

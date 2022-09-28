@@ -98,7 +98,7 @@ export default function HomeLayout() {
                 </p>
               </div>
             </Link>
-            <Link to='learn/iota-token/buying-iota' className='about__card'>
+            <Link to='learn/token/buying' className='about__card'>
               <div className='about__section'>
                 <div className='about__icon'>
                   <IotaToken />
