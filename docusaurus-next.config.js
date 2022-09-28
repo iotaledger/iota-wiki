@@ -92,6 +92,7 @@ module.exports = {
             '^(/[^/]+)?/bee/.*|' +
             '^(/[^/]+)?/chronicle/.*|' +
             '^(/[^/]+)?/introduction/.*|' +
+            '^(/[^/]+)?/identity.rs/.*|' +
             '^(/[^/]+)?/tutorials*',
         },
         {
