@@ -211,23 +211,23 @@ export default function HomeLayout() {
                 <h3 className='nodes__header'>Chronicle</h3>
                 <ul className='nodes__features'>
                   <li className='nodes__feature'>
-                    <Link to='/chronicle/develop/welcome'>
+                    <Link to='/chronicle/welcome'>
                       Efficient and reliable permanodes
                     </Link>
                   </li>
                   <li className='nodes__feature'>
-                    <Link to='/chronicle/develop/reference/authentication'>
+                    <Link to='/chronicle/reference/authentication'>
                       Configure authentication
                     </Link>
                   </li>
                   <li className='nodes__feature'>
-                    <Link to='/chronicle/develop/reference/api'>
+                    <Link to='/chronicle/reference/api'>
                       Using the API of your permanode
                     </Link>
                   </li>
                 </ul>
                 <Link
-                  to='/chronicle/develop/getting_started/docker'
+                  to='/chronicle/getting_started/docker'
                   className='nodes__button button button--outline button--primary'
                 >
                   Try the permanode framework

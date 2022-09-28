@@ -317,17 +317,6 @@ module.exports = {
         path: 'src/pages/common',
       },
     ],
-    [
-      '@docusaurus/plugin-client-redirects',
-      {
-        createRedirects(existingPath) {
-          if (existingPath.includes('/chronicle/develop')) {
-            return [existingPath.replace('/chronicle/develop', '/chronicle')];
-          }
-          return undefined; // Return a falsy value: no redirect created
-        },
-      },
-    ],
     ...content.plugins,
   ],
   staticDirectories: ['./static', ...content.staticDirectories],
