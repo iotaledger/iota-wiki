@@ -69,7 +69,7 @@ const LibrariesSection: FC = () => (
     <div className='libraries__card libraries__card--wide'>
       <img
         className='libraries__logo'
-        src='/img/homepage/smartcontracts_bot.svg'
+        src='img/homepage/smartcontracts_bot.svg'
       />
       <div className='libraries__section'>
         <div className='libraries__head'>
