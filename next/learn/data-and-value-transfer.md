@@ -3,12 +3,14 @@ title: Data and Value Transfer
 description: Learn how the Shimmer Protocol transfers the native Shimmer Tokens.
 image: /img/iota-wiki.png
 keywords:
-  - explanation
-  - data transfer
-  - value transfer
-  - transactions
-  - outputs
-  - blocks
+
+- explanation
+- data transfer
+- value transfer
+- transactions
+- outputs
+- blocks
+
 ---
 
 # Shimmer Value Transactions
