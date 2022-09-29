@@ -14,6 +14,7 @@ Welcome to the Developer Section. Here you will find all information to start de
     - [Client.rs](/iota.rs/welcome)
     - [Wallet.rs](/wallet.rs/welcome)
     - [Client.js](/iotajs/welcome)
+    - [Identity](/identity.rs/introduction)
     - [Stronghold](/stronghold.rs/welcome)
 - Node Software
     - [Introduction](nodes/node-software)
