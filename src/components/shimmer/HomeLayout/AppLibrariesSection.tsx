@@ -108,7 +108,7 @@ const LibrariesSection: FC = () => (
         </div>
         <h3 className='libraries__header'>IOTA Identity</h3>
         <p className='libraries__body'>
-        The Shimmer Identity framework for Decentralized Identity brings an first experiemental version to Shimmer
+        The IOTA Identity framework for Decentralized Identity brings a first experimental version to Shimmer
         </p>
         <div className='start-building__buttons'>
           <Link
