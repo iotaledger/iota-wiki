@@ -30,7 +30,7 @@ export default function Quiz(_questions) {
       setClicked(-1);
     }, 1000);
   };
-  
+
   const reset = () => {
     setShowScore(false);
     setScore(0);
@@ -63,29 +63,27 @@ export default function Quiz(_questions) {
               {questions[currentQuestion]?.questionText}
             </div>
             <div className='card__footer'>
-              <div className='button-group button-group--block'>
-                {questions[currentQuestion]?.answerOptions.map(
-                  (answerOption, index) => (
-                    <a
-                      className={`button button--primary ${
-                        clicked >= 0 && answerOption.isCorrect
-                          ? 'button--success'
-                          : ''
-                      } ${
-                        clicked === index && !answerOption.isCorrect
-                          ? 'button--danger'
-                          : ''
-                      }`}
-                      key={'answer-' + index}
-                      onClick={() =>
-                        handleAnswerOptionClick(answerOption.isCorrect, index)
-                      }
-                    >
-                      {answerOption.answerText}
-                    </a>
-                  ),
-                )}
-              </div>
+              {questions[currentQuestion]?.answerOptions.map(
+                (answerOption, index) => (
+                  <button
+                    className={`button button--block button--primary margin-bottom--xs   ${
+                      clicked >= 0 && answerOption.isCorrect
+                        ? 'button--success'
+                        : ''
+                    } ${
+                      clicked === index && !answerOption.isCorrect
+                        ? 'button--danger'
+                        : ''
+                    }`}
+                    key={'answer-' + index}
+                    onClick={() =>
+                      handleAnswerOptionClick(answerOption.isCorrect, index)
+                    }
+                  >
+                    {answerOption.answerText}
+                  </button>
+                ),
+              )}
             </div>
           </div>
         </>
