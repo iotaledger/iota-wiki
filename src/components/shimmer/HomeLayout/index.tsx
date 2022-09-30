@@ -295,7 +295,7 @@ export default function HomeLayout() {
               </div>
             </Link>
             <Link
-              to='https://explorer.shimmer.network/testnet'
+              to='https://explorer.shimmer.network/shimmer'
               className='further__card'
             >
               <div className='further__section'>
