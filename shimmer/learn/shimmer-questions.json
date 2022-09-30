@@ -3,13 +3,13 @@
       "questionText": "The staging and innovation network of IOTA is called ...?",
       "answerOptions": [
         { "answerText": "Assembly", "isCorrect": false },
-        { "answerText": "Soon Network", "isCorrect": false },
+        { "answerText": "Soon network", "isCorrect": false },
         { "answerText": "IOTA 2.0", "isCorrect": false },
         { "answerText": "Shimmer", "isCorrect": true }
       ]
     },
     {
-      "questionText": "What's the beginning of a Shimmer Testnet address?",
+      "questionText": "What's the beginning of a Testnet address?",
       "answerOptions": [
         { "answerText": "smrtest", "isCorrect": false },
         { "answerText": "rms", "isCorrect": true },
@@ -18,7 +18,7 @@
       ]
     },
     {
-      "questionText": "How many bytes can be used for the immutable data output, which is used for example for NFT Metadata?",
+      "questionText": "How many bytes can be used for the immutable data output, which is used for example for NFT metadata?",
       "answerOptions": [
         { "answerText": "1337", "isCorrect": false },
         { "answerText": "4096", "isCorrect": false },
@@ -49,26 +49,26 @@
       "answerOptions": [
         { "answerText": "Dungeon Entry 10", "isCorrect": false },
         { "answerText": "Disturbed Experience", "isCorrect": false },
-        { "answerText": "Decentralised Exchange", "isCorrect": true },
+        { "answerText": "Decentralized Exchange", "isCorrect": true },
         { "answerText": "Distributed Edge Cross", "isCorrect": false }
       ]
     },
     {
-      "questionText": "What does DAO stands for?",
+      "questionText": "What does DAO stand for?",
       "answerOptions": [
         { "answerText": "Don't Allow Onigrams", "isCorrect": false },
-        { "answerText": "Decentralised Autonomous Organisation", "isCorrect": true },
-        { "answerText": "Decentralised Aggregated Organisation", "isCorrect": false },
+        { "answerText": "Decentralized Autonomous Organisation", "isCorrect": true },
+        { "answerText": "Decentralized Aggregated Organisation", "isCorrect": false },
         { "answerText": "Distributed Anywhere Organisation", "isCorrect": false }
       ]
     },
     {
-      "questionText": "How do we call Tokens on Layer 1 (L1)?",
+      "questionText": "What do we call tokens on Layer 1 (L1)?",
       "answerOptions": [
-        { "answerText": "Natural Tokens", "isCorrect": false },
-        { "answerText": "New Tokens", "isCorrect": false },
-        { "answerText": "Native Tokens", "isCorrect": true },
-        { "answerText": "Necend Tokens", "isCorrect": false }
+        { "answerText": "Natural tokens", "isCorrect": false },
+        { "answerText": "New tokens", "isCorrect": false },
+        { "answerText": "Native tokens", "isCorrect": true },
+        { "answerText": "Necend tokens", "isCorrect": false }
       ]
     },
     {
@@ -77,7 +77,7 @@
         { "answerText": "Feeless", "isCorrect": true },
         { "answerText": "Free", "isCorrect": false },
         { "answerText": "Decentral", "isCorrect": false },
-        { "answerText": "a Blockchain", "isCorrect": false }
+        { "answerText": "A blockchain", "isCorrect": false }
       ]
     }
   ]
