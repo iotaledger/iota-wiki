@@ -9,6 +9,9 @@ keywords:
 image: /img/iota-wiki.png
 ---
 
+import Quiz from '../../src/components/Quiz';
+import questions from './shimmer-questions.json';
+
 # Welcome to Shimmer
 
 Shimmer is a distributed ledger with the support of NFTs, native tokens, and smart contracts. It is an innovation network where the community tries out the new protocol changes before they are deployed on the more conservative [IOTA network](https://wiki.iota.org). It has its own supply of tokens which are called $SMR.
@@ -48,3 +51,7 @@ Shimmer supports smart contracts as a double-layered system. On the Layer 2, the
 Shimmer is completely feeless. There are no fees for sending transactions, minting NFTs, or anchoring smart contract chains. But all this additional information has to be stored on the actual physical hardware. If not limited, that would cause node owners to add terabytes upon terabytes of additional storage space to their computers. For this reason, the available storage is bound to the amount of $SMR tokens in outputs. If there is some data in the output (an NFT or a list of native tokens), the $SMR tokens turn into its *storage deposit*. If during a transfer the new output has too much data and too little $SMR tokens, the network will deny the transaction.
 
 This means that when you trade an NFT you can also have to send some $SMR tokens with it. You will get them back, though. With advanced unlock conditions, you can force the recepient to replace your tokens in the storage deposit.
+
+### Quiz
+
+<Quiz questions={questions} />
