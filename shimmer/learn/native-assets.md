@@ -40,7 +40,7 @@ in decentralized autonomous organizations (DAOs) or for any objects in the Metav
 
 :::tip Interesting Tangle Improvement Proposals (TIPs)
 
-- [TIP-27: IOTA NFT standards](https://github.com/iotaledger/tips/blob/main/tips/TIP-0027/tip-0027.md)
+- [TIP-27: IOTA NFT standards](https://github.com/Kami-Labs/tips/blob/main/tips/TIP-0027/tip-0027.md)
 
 :::
 
