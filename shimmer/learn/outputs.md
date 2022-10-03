@@ -46,7 +46,7 @@ Addresses can only unlock outputs with their signatures.
 
 ### Storage Deposit Return
 
-Due to the [storage deposit rules](welcome.md#storage-deposits), you cannot create transactions smaller than the minimum deposit. However, with the storage deposit return unlock condition, you can specify an amount that will need to be returned once the funds are unlocked. This way, you can send micro-transactions as small as you want. You will only need to send the minimum deposit, which will be returned once the micro-transaction is processed.
+Due to the [storage deposit rules](./welcome.mdx#storage-deposits), you cannot create transactions smaller than the minimum deposit. However, with the storage deposit return unlock condition, you can specify an amount that will need to be returned once the funds are unlocked. This way, you can send micro-transactions as small as you want. You will only need to send the minimum deposit, which will be returned once the micro-transaction is processed.
 
 ### Expiration
 
