@@ -1,6 +1,8 @@
 // @ts-check
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const content = require('./shimmer/docusaurus.config');
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const tutorials = require('./tutorials/single-page-tutorials/docusaurus.config');
 
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
@@ -319,6 +321,11 @@ module.exports = {
       },
     ],
     ...content.plugins,
+    ...tutorials.plugins,
   ],
-  staticDirectories: ['./static', ...content.staticDirectories],
+  staticDirectories: [
+    './static',
+    ...content.staticDirectories,
+    ...tutorials.staticDirectories,
+  ],
 };

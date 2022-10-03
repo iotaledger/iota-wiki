@@ -1,5 +1,5 @@
 //TODO tutorial.json should propably be a key-value dictionary
-import config from '../../iota/tutorials/tags.json';
+import config from '../../tutorials/tags.json';
 
 export interface Tag {
   label: string;
