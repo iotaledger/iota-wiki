@@ -1,4 +1,4 @@
-# How to Set Up Iota.JS for Development
+# New Tutorial - How to Set Up Iota.JS for Development
 
 :::info
 
@@ -6,13 +6,13 @@ In this tutorial you will learn how to create a new project, generate a new addr
 
 :::
 
-
 ## Prerequisites
 
 ### Development Environment and Libraries
-  - [Node.js](https://nodejs.org/en/)
 
-***
+- [Node.js](https://nodejs.org/en/)
+
+---
 
 ## Set Up
 
@@ -31,9 +31,8 @@ cd iota-js-setup
 npm init --yes
 ```
 
-
 3. Install the iota.js library and other helper dependencies:
-:::note
+   :::note
 
 The installation process might take a while
 
@@ -71,15 +70,18 @@ Your `package.json` file should look something like this:
 
 ```javascript
 // Libraries
-const bip39 = require('bip39')
- 
+const bip39 = require('bip39');
+
 // For better readability, some console output will be printed in a different color
 const consoleColor = '\x1b[36m%s\x1b[0m';
 async function run() {
-	// A 256-bits entropy leads to a 24 word mnemonic seed phrase
-	const mnemonic = bip39.generateMnemonic(256);
-	console.log(consoleColor, 'Copy your mnemonic seed phrase and paste it into the .env file:');
-	console.log(mnemonic, '\n');
+  // A 256-bits entropy leads to a 24 word mnemonic seed phrase
+  const mnemonic = bip39.generateMnemonic(256);
+  console.log(
+    consoleColor,
+    'Copy your mnemonic seed phrase and paste it into the .env file:',
+  );
+  console.log(mnemonic, '\n');
 }
 run();
 ```
@@ -93,17 +95,16 @@ node create-mnemonic.js
 3. Create a new `.env` file and add your mnemonic:
 
 ```javascript
-MNEMONIC = "<add_your_mnemonic_here>"
+MNEMONIC = '<add_your_mnemonic_here>';
 ```
 
 ## Create an Address
 
 Create a new file called `create-address.js` and add the following code:
 
-
 ```javascript
-const { Converter } = require("@iota/util.js");
-const { Bip32Path, Bip39 } = require("@iota/crypto.js");
+const { Converter } = require('@iota/util.js');
+const { Bip32Path, Bip39 } = require('@iota/crypto.js');
 const {
   Bech32Helper,
   Ed25519Address,
@@ -112,26 +113,26 @@ const {
   generateBip44Address,
   IOTA_BIP44_BASE_PATH,
   SingleNodeClient,
-} = require("@iota/iota.js");
+} = require('@iota/iota.js');
 
-require("dotenv").config({ path: "./.env" });
+require('dotenv').config({ path: './.env' });
 
-const API_ENDPOINT = "https://api.testnet.shimmer.network";
+const API_ENDPOINT = 'https://api.testnet.shimmer.network';
 
 async function run() {
   const client = new SingleNodeClient(API_ENDPOINT);
 
   const info = await client.info();
 
-  console.log("Base");
+  console.log('Base');
 
   // Generate the seed from the Mnemonic
   const baseSeed = Ed25519Seed.fromMnemonic(process.env.MNEMONIC);
-  console.log("\tSeed", Converter.bytesToHex(baseSeed.toBytes()));
+  console.log('\tSeed', Converter.bytesToHex(baseSeed.toBytes()));
 
   // Generate the next addresses for your account.
   console.log();
-  console.log("Generated Addresses...");
+  console.log('Generated Addresses...');
   const addressGeneratorAccountState = {
     accountIndex: 0,
     addressIndex: 0,
@@ -144,26 +145,25 @@ async function run() {
   const indexPublicKeyAddress = indexEd25519Address.toAddress();
 
   console.log(
-    "\tAddress (Bech32)",
+    '\tAddress (Bech32)',
     Bech32Helper.toBech32(
       ED25519_ADDRESS_TYPE,
       indexPublicKeyAddress,
-      info.protocol.bech32Hrp
-    )
+      info.protocol.bech32Hrp,
+    ),
   );
 }
 
 run()
-  .then(() => console.log("Done"))
+  .then(() => console.log('Done'))
   .catch((err) => console.error(err));
-
 ```
 
 If you run it, it will:
 
 1. Get your mnemonic from the `.env`file.
 2. Create a seed from it.
-3. Generate a new address. 
+3. Generate a new address.
 
 Just run the following command, and you will see your testnet shimmer address in your console!
 
@@ -182,6 +182,6 @@ The 'Request' button will become clickable as soon as a valid Shimmer address is
 :::
 ![Shimmer Testnet Faucet](./images/shimmer-testnet-faucet.png)
 
-***
+---
 
 Congratulations, you are now ready to explore other exciting features of the Shimmer network, such as native tokens and NFT's.

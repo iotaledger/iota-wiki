@@ -1,9 +1,8 @@
 {
-    "dependencies": {
-        "require-glob": "^4.1.0"
-    },
-    "workspaces": [
-        "build",
-        "tutorials"
-    ]
+  "dependencies": {
+    "require-glob": "^4.1.0"
+  },
+  "workspaces": [
+    "build"
+  ]
 }
