@@ -40,6 +40,9 @@ module.exports = {
       apiKey: '75358d60d302f7f93f630d63128abb03',
       indexName: 'iota',
       contextualSearch: true,
+      searchParameters: {
+        facetFilters: ['environment:iota'],
+      },
     },
     matomo: {
       matomoUrl: 'https://matomo.iota-community.org/',
