@@ -8,6 +8,7 @@ module.exports = {
   tagline: 'Unreleased documentation',
   url: 'https://wiki.iota.org',
   baseUrl: '/next/',
+  noIndex: true,
   onBrokenLinks: 'log',
   onBrokenMarkdownLinks: 'log',
   favicon: 'img/favicon.ico',
