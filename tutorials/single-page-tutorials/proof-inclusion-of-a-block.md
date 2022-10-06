@@ -4,7 +4,7 @@ This tutorial shows how you can prove that a block was part of the Tangle, even 
 
 ## User Story
 
-A prover wants to prove to a verifier that a dataset or file was not altered by notarizing it using the public and permissionless Tangle. 
+A prover wants to prove to a verifier that a dataset or file was not altered by notarizing it using the public and permissionless Tangle.
 
 A good example could be the government (verifier) obligating companies (prover) to write their daily CO₂ emissions to the Tangle to create immutable logs. The government has no interest in providing storage for all the companies but wants to receive verifiable, immutable data in the case of an audit. Therefore, all the data remains with the respective company until an audit occurs.
 
@@ -119,25 +119,26 @@ async function main() {
 Define the content (`tag` & `data`), attach new block to the Tangle and log out the explorer link.
 
 ```javascript
-  // Define block content, attach block to the Tangle and log out the explorer link
-  const tag = 'This is my Tag';
-  const data = 'This is my data';
+// Define block content, attach block to the Tangle and log out the explorer link
+const tag = 'This is my Tag';
+const data = 'This is my data';
 
-  const sendResult = await sendData(client, tag, data);
-  const blockId = sendResult.blockId;
+const sendResult = await sendData(client, tag, data);
+const blockId = sendResult.blockId;
 
-  console.log(consoleColor, 'Attached block:');
-  console.log(explorerURL + 'block/' + blockId, '\n');
+console.log(consoleColor, 'Attached block:');
+console.log(explorerURL + 'block/' + blockId, '\n');
 ```
 
 Wait for block confirmation by a milestone and read the block with proof of inclusion from INX plugin. The function `getNotarization()` will be explained in more detail in the next section.
 
 ```javascript
-  // Wait for block confirmation by milestone and read it with proof of inclusion from INX plugin
-  const result = await getNotarization(client, nodeURL, blockId);
+// Wait for block confirmation by milestone and read it with proof of inclusion from INX plugin
+const result = await getNotarization(client, nodeURL, blockId);
 ```
 
-This part will only be exectured, if the respective block was confirmed by a milestone after a defined time. If that is the case, the returned notarization result will be stored in a *.json file and the file path will be logged out.
+This part will only be exectured, if the respective block was confirmed by a milestone after a defined time. If that is the case, the returned notarization result will be stored in a \*.json file and the file path will be logged out.
+
 ```javascript
   // Store block with proof of inclusion in local json file
   if (result != false) {
@@ -192,7 +193,6 @@ async function getNotarization(client, nodeURL, blockId) {
         const result = await response.json();
 
         return result;
-
       } else {
         console.log(`Try ${i}: Block was not yet referenced by a milestone`);
       }
@@ -200,7 +200,6 @@ async function getNotarization(client, nodeURL, blockId) {
     console.log(`Block was not referenced by a milestone after ${i} seconds.`);
 
     return false;
-
   } catch (error) {
     console.log(error);
   }
@@ -242,10 +241,10 @@ This part imports all necessary packages and network configuration parameters.
 ```javascript
 const { TransactionHelper } = require('@iota/iota.js');
 const fs = require('fs');
-const fetch = require('node-fetch')
+const fetch = require('node-fetch');
 
 // Network configuration
-const { networkConfig } = require("./networkConfig.js");
+const { networkConfig } = require('./networkConfig.js');
 const nodeURL = networkConfig.node;
 const explorerURL = networkConfig.explorer;
 
@@ -273,11 +272,11 @@ async function run() {
 Derive the blockId from the block content and log out the explorer link.
 
 ```javascript
-    // Generate blockId from block content and log explorer link
-    // The blockId is defined as the BLAKE2b-256 hash of the entire serialized block
-    const blockId = TransactionHelper.calculateBlockId(notarizedBlock.block);
-    console.log(consoleColor, 'Notarized block:');
-    console.log(explorerURL+"block/"+blockId, '\n');
+// Generate blockId from block content and log explorer link
+// The blockId is defined as the BLAKE2b-256 hash of the entire serialized block
+const blockId = TransactionHelper.calculateBlockId(notarizedBlock.block);
+console.log(consoleColor, 'Notarized block:');
+console.log(explorerURL + 'block/' + blockId, '\n');
 ```
 
 Fetch validity (`true`/`false`) of the notarization from the proof of inclusion plugin. The function `verifyNotarization()` will be explained in more detail in the next section.
@@ -296,16 +295,16 @@ As described in the previous step, the `verifyNotarization()` function is called
 
 ```javascript
 async function verifyNotarization(nodeURL, notarizedBlock) {
-    // Call "validate" endpoint of PoI plugin with notarized block and return boolean answer
-    const poiPluginUrl = `${nodeURL}/api/poi/v1/validate`;
-    const response = await fetch(poiPluginUrl, {
-        method: 'POST', 
-        body: JSON.stringify(notarizedBlock),
-        headers: { 'Content-Type': 'application/json' }
-    })
-    const result = await response.json();
+  // Call "validate" endpoint of PoI plugin with notarized block and return boolean answer
+  const poiPluginUrl = `${nodeURL}/api/poi/v1/validate`;
+  const response = await fetch(poiPluginUrl, {
+    method: 'POST',
+    body: JSON.stringify(notarizedBlock),
+    headers: { 'Content-Type': 'application/json' },
+  });
+  const result = await response.json();
 
-    return result.valid;
+  return result.valid;
 }
 ```
 
@@ -321,7 +320,7 @@ main().catch((err) => console.error(err));
 
 ## Run Your Scripts
 
-Once you have [created your scripts](#create-your-scripts), you can execute the two created files in order. 
+Once you have [created your scripts](#create-your-scripts), you can execute the two created files in order.
 Naturally, you will need to run `create-notarization` before you can run `verify-notarization` and check the log output to follow along.
 
 ### Create Notarization
