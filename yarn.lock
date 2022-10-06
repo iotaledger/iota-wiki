@@ -12226,21 +12226,9 @@ plugin-image-zoom@flexanalytics/plugin-image-zoom:
   languageName: node
   linkType: hard
 
-"tutorials-054a03@workspace:next/tutorials":
+"tutorials-5d1150@workspace:tutorials":
   version: 0.0.0-use.local
-  resolution: "tutorials-054a03@workspace:next/tutorials"
-  languageName: unknown
-  linkType: soft
-
-"tutorials-5e447e@workspace:shimmer/tutorials":
-  version: 0.0.0-use.local
-  resolution: "tutorials-5e447e@workspace:shimmer/tutorials"
-  languageName: unknown
-  linkType: soft
-
-"tutorials-950f11@workspace:iota/tutorials":
-  version: 0.0.0-use.local
-  resolution: "tutorials-950f11@workspace:iota/tutorials"
+  resolution: "tutorials-5d1150@workspace:tutorials"
   languageName: unknown
   linkType: soft
 

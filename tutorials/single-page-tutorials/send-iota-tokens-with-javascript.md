@@ -35,7 +35,7 @@ When the previous call failed with `'tsc' is not recognized as an internal or ex
 
 ```bash
 npm install typescript@latest -g
-``` 
+```
 
 ## 1. Create and save your seed.
 
