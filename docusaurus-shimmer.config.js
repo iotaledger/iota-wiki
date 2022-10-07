@@ -226,10 +226,7 @@ module.exports = {
       /** @type {import('@docusaurus/preset-classic').Options} */
       {
         docs: false,
-        blog: {
-          showReadingTime: false,
-          blogSidebarCount: 0,
-        },
+        blog: false,
         theme: {
           customCss: require.resolve('./src/css/shimmer/custom.css'),
         },
