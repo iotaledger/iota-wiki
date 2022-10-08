@@ -80,6 +80,7 @@ const LibrariesSection: FC = () => (
               Rust: '/wallet.rs/getting_started/rust',
               NodeJS: '/wallet.rs/getting_started/nodejs',
               Python: '/wallet.rs/getting_started/python',
+              Java: '/wallet.rs/getting_started/java',
             }}
           />
         </div>
