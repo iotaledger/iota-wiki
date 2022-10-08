@@ -37,7 +37,7 @@ You can create a foundry output to control the supply of your [native tokens](/i
 
 ## Unlock Conditions
 
-Unlock conditions have always been present in crypto. The first and clearest example es the recipient [address](#address). The stardust upgrade adds new unlock conditions that will allow you to add [expirations](#expiration), [timelocks](#timelocks) and specify the [storage deposits](#storage-deposit-return).
+Unlock conditions have always been present in crypto. The first and clearest example is the recipient [address](#address). The stardust upgrade adds new unlock conditions that will allow you to add [expirations](#expiration), [timelocks](#timelocks) and specify the [storage deposits](#storage-deposit-return).
 
 ### Address
 
