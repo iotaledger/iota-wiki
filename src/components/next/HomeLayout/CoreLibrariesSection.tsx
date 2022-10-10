@@ -92,13 +92,13 @@ const LibrariesSection: FC = () => (
             </Link>
           </li>
           <li className='libraries__feature'>
-            <Link to='wallet.rs/how_tos/native_tokens/mint_native_token'>
-              Mint Native Tokens and NFTs
+            <Link to='/wallet.rs/how_tos/outputs_and_transactions/send_transaction'>
+              Send and receive tokens
             </Link>
           </li>
           <li className='libraries__feature'>
-            <Link to='/wallet.rs/how_tos/outputs_and_transactions/send_transaction'>
-              Transfer tokens
+            <Link to='wallet.rs/how_tos/native_tokens/mint_native_token'>
+              Mint your Native Tokens and NFTs
             </Link>
           </li>
         </ul>
