@@ -57,7 +57,7 @@ const LibrariesSection: FC = () => (
           </li>
           <li className='libraries__feature'>
             <Link to='/iota.rs/how_tos/get_address_balances'>
-              Query the ledger state
+              Query balances
             </Link>
           </li>
         </ul>
