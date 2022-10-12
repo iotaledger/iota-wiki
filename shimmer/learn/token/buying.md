@@ -5,7 +5,7 @@ description: Where and how to buy the Shimmer Cryptocurrency.
 ---
 
 # Buying Shimmer
-You can buy Shimmer tokens currently on the following exchanges / marketplaces:
+You can buy Shimmer tokens currently on the following exchanges and marketplaces:
 
 - [Bitfinex](https://bitfinex.com): Buy with US-Dollar or USDT
 - [Bitforex](https://bitforex.com): Buy with USDT
