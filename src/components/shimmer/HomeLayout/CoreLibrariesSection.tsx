@@ -47,17 +47,17 @@ const LibrariesSection: FC = () => (
         <ul className='libraries__features'>
           <li className='libraries__feature'>
             <Link to='/iota.rs/how_tos/get_node_info'>
-              Interact with the IOTA network
-            </Link>
-          </li>
-          <li className='libraries__feature'>
-            <Link to='/iota.rs/how_tos/post_block'>
-              Send a data block
+              Interact with the Shimmer network
             </Link>
           </li>
           <li className='libraries__feature'>
             <Link to='/iota.rs/how_tos/prepare_sign_transaction'>
-              Send a transactions
+              Send blocks and transactions
+            </Link>
+          </li>
+          <li className='libraries__feature'>
+            <Link to='/iota.rs/how_tos/get_address_balances'>
+              Query balances
             </Link>
           </li>
         </ul>
@@ -87,18 +87,18 @@ const LibrariesSection: FC = () => (
         <h3 className='libraries__header'>Wallet</h3>
         <ul className='libraries__features'>
           <li className='libraries__feature'>
-            <Link to='/wallet.rs/explanations/library_overview'>
-              The library in a nutshell
-            </Link>
-          </li>
-          <li className='libraries__feature'>
-            <Link to='wallet.rs/how_tos/accounts_and_addresses/create_a_wallet_account'>
-              Create and store an account
+            <Link to='/wallet.rs/how_tos/accounts_and_addresses/create_a_wallet_account'>
+              Create and manage a wallet
             </Link>
           </li>
           <li className='libraries__feature'>
             <Link to='/wallet.rs/how_tos/outputs_and_transactions/send_transaction'>
-              Transfer tokens
+              Send and receive tokens
+            </Link>
+          </li>
+          <li className='libraries__feature'>
+            <Link to='/wallet.rs/how_tos/native_tokens/mint_native_token'>
+              Mint your Native Tokens and NFTs
             </Link>
           </li>
         </ul>
