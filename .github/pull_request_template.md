@@ -19,7 +19,7 @@ Choose a type of change, and delete any options that are not relevant.
 
 Tick the boxes that are relevant to your changes, and delete any items that are not.
 
-- [ ] I have followed the contribution guidelines for this project
+- [ ] I have followed the [contribution guidelines](https://github.com/iota-wiki/iota-wiki/blob/main/.github/CONTRIBUTING.md) for this project
 - [ ] I have performed a self-review of my own changes
 - [ ] I have made sure that added/changed links still work
 - [ ] I have commented my code, particularly in hard-to-understand areas
