@@ -97,7 +97,7 @@ const LibrariesSection: FC = () => (
             </Link>
           </li>
           <li className='libraries__feature'>
-            <Link to='wallet.rs/how_tos/native_tokens/mint_native_token'>
+            <Link to='/wallet.rs/how_tos/native_tokens/mint_native_token'>
               Mint your Native Tokens and NFTs
             </Link>
           </li>
