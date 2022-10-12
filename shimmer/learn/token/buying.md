@@ -10,8 +10,6 @@ You can buy Shimmer tokens currently on the following exchanges / marketplaces:
 - [Bitfinex](https://bitfinex.com): Buy with US-Dollar or USDT
 - [Bitforex](https://bitforex.com): Buy with USDT
 - [Soonaverse](https://soonaverse.com/tokens/all): Buy with IOTA Tokens
-
-Token Swap
 - [Iotabee](https://iotabee.com/swap): Swap IOTA for SMR
 
 
