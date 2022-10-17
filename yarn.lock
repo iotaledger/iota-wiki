@@ -7491,14 +7491,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"iota-871159@workspace:iota":
-  version: 0.0.0-use.local
-  resolution: "iota-871159@workspace:iota"
-  dependencies:
-    require-glob: ^4.1.0
-  languageName: unknown
-  linkType: soft
-
 "iota-wiki@workspace:.":
   version: 0.0.0-use.local
   resolution: "iota-wiki@workspace:."
@@ -7544,6 +7536,7 @@ __metadata:
     remark-import-partial: ^0.0.2
     remark-math: ^3.0.1
     remark-remove-comments: ^0.2.0
+    require-glob: ^4.1.0
     svgo: ^2.8.0
     typescript: ^4.5.4
     url-loader: ^4.1.1
@@ -8893,14 +8886,6 @@ __metadata:
   checksum: deac9f8d00eda7b2e5cd1b2549e26e10a0faa70adaa6fdadca701cc55f49ee9018e427f424bac0c790b7c7e2d3068db97f3093f1093975f2acb8f8818b936ed9
   languageName: node
   linkType: hard
-
-"next-8b377f@workspace:next":
-  version: 0.0.0-use.local
-  resolution: "next-8b377f@workspace:next"
-  dependencies:
-    require-glob: ^4.1.0
-  languageName: unknown
-  linkType: soft
 
 "no-case@npm:^3.0.4":
   version: 3.0.4
@@ -11433,14 +11418,6 @@ plugin-image-zoom@flexanalytics/plugin-image-zoom:
   languageName: node
   linkType: hard
 
-"shimmer-24ce12@workspace:shimmer":
-  version: 0.0.0-use.local
-  resolution: "shimmer-24ce12@workspace:shimmer"
-  dependencies:
-    require-glob: ^4.1.0
-  languageName: unknown
-  linkType: soft
-
 "side-channel@npm:^1.0.4":
   version: 1.0.4
   resolution: "side-channel@npm:1.0.4"
@@ -12225,12 +12202,6 @@ plugin-image-zoom@flexanalytics/plugin-image-zoom:
   checksum: 05f6510358f8afc62a057b8b692f05d70c1782b70db86d6a1e0d5e28a32389e52fa6e7707b6c5ecccacc031462e4bc35af85ecfe4bbc341767917b7cf6965711
   languageName: node
   linkType: hard
-
-"tutorials-5d1150@workspace:tutorials":
-  version: 0.0.0-use.local
-  resolution: "tutorials-5d1150@workspace:tutorials"
-  languageName: unknown
-  linkType: soft
 
 "type-check@npm:^0.4.0, type-check@npm:~0.4.0":
   version: 0.4.0
