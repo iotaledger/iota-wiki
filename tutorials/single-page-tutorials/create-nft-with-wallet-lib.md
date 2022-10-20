@@ -1,17 +1,17 @@
 # Create an NFT with the Wallet Library and IPFS
 
-In this tutorial, you will upload your desired image to [IPFS](https://ipfs.tech/) and create an NFT from the unique IPFS URL on the Shimmer testnet. This tutorial will build on the tutorial "Setup testnet address and receive funds from the faucet" ([IOTA Wiki PR under review](https://wiki.iota.org/wallet-setup)). If you haven't completed it, please do so, and afterward, come back here, or make sure you have a prefunded wallet. You will use the same folder and development environment as in the mentioned prerequired tutorial, allowing you to reuse the Stronghold account with funds on it.
+In this tutorial, you will upload your desired image to [IPFS](https://ipfs.tech/) and create an NFT from the unique IPFS URL on the Shimmer testnet. This tutorial will build on the tutorial "Setup testnet address and receive funds from the faucet" ([IOTA Wiki PR under review](https://wiki.iota.org/tutorials/wallet-setup)). If you haven't completed it, please do so, and afterward, come back here, or make sure you have a prefunded wallet. You will use the same folder and development environment as in the mentioned prerequired tutorial, allowing you to reuse the Stronghold account with funds on it.
 
 ## Prerequisites
 
 - [Node.js](https://nodejs.org/en/).
-- Finish the [Set up testnet address and receive funds from faucet](https://wiki.iota.org/wallet-setup) tutorial.
+- Finish the [Set up testnet address and receive funds from faucet](https://wiki.iota.org/tutorials/wallet-setup) tutorial.
 
 ## Set Up
 
 ### Prepare Your Development Environment
 
-Navigate to the folder you created when completing the [set up a testnet address and receive funds from the faucet tutorial](https://wiki.iota.org/wallet-setup):
+Navigate to the folder you created when completing the [set up a testnet address and receive funds from the faucet tutorial](https://wiki.iota.org/tutorials/wallet-setup):
 
 ```bash
 cd wallet-setup
