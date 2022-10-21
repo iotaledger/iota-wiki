@@ -2,7 +2,7 @@
 
 (Defined by the IOTA Foundation) 
 
-This list will be extended with the maturity of the Shimmer protocol by the IF engineering Team with the goal to open more programm parameters to governance.
+This list will be extended with the maturity of the Shimmer protocol by the IF engineering Team with the goal to open more programmable parameters to governance.
 
 Changes are allowed in the following areas:
 
@@ -17,7 +17,7 @@ Changes are allowed in the following areas:
 | Max Shimmer Genesis Supply            | 1450896407249092 | static  | uint64 | Total amount of Shimmer genesis supply denominated in `glow`. 1 `glow` = 0.000001 `SMR` 
 | VByte Cost                            | 100              | dynamic | uint32 | Minimum amount of Shimmer (denominated in `glow`) that need to be deposited per vbyte of an output.                                                                                       |
 
-- Installment and changes to the governance processes, but not its scope, (proposing, voting mechanics, other technology used, all points presented in the specification section of the Shimmer Governance Framework), with the exclusion of any core development required to fulfill Shimmers purpose as a validation network 
+- Installment and changes to the governance processes, but not its scope, (proposing, voting mechanics, other technology used, all points presented in the specification section of the Shimmer Governance Framework), with the exclusion of any core development required to fulfill Shimmer's purpose as a validation network 
    - If any changes to the “Shimmer governance framework” should be made, they would need to follow the currently designed Governance Framework process in an attempt to change certain aspects of it.
 
 - Installment and structure of governance processes used in the community Treasury DAO
