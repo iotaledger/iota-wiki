@@ -1,6 +1,4 @@
-# Setup a Testnet Address and Receive Funds from the
-
-Faucet
+# Setup a Testnet Wallet and Receive Funds from the Faucet
 
 In this tutorial, you will [create a new mnemonic seed phrase](#create-mnemonic-script) to set up a Stronghold account with the [NodeJS binding of wallet.rs](https://github.com/iotaledger/wallet.rs/tree/develop/bindings/nodejs). Afterward, you will [generate a new address](#3-create-address), [request funds from the Shimmer testnet faucet](#request-tokens-from-faucet), and [check your account balance](#check-balance-again).
 
@@ -38,12 +36,11 @@ npm init --yes
   "description": "",
   "main": "create-mnemonic.js",
   "dependencies": {
-    "@iota/wallet": "2.0.2-alpha.21",
-    "bip39": "^3.0.4",
-    "dotenv": "^16.0.1",
-    "node-fetch": "^2.6.7"
+    "@iota/wallet": "2.0.3-rc.1",
+    "bip39": "3.0.4",
+    "dotenv": "16.0.1",
+    "node-fetch": "2.6.7"
   },
-
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -53,7 +50,8 @@ npm init --yes
 ```
 
 4. Install new dependencies by running the following command:
-   :::note
+
+:::note
 
 The installation might take a while if there is no prebuilt wallet NPM package for your combination of OS and NodeJS version.
 
@@ -175,19 +173,20 @@ This part of the code will:
 
 ```javascript
 async function run() {
+  try {
     // Define the account manager options with the imported network configuration and environment variables
     const accountManagerOptions = {
-        storagePath: `./${accountName}-database`,
-        clientOptions: {
-            nodes: [nodeURL],
-            localPow: true,},
-        coinType: CoinType.Shimmer,
-        secretManager: {
-            Stronghold: {
-                snapshotPath: `./wallet.stronghold`,
-                password: `${password}`,
-            },
+      storagePath: `./${accountName}-database`,
+      clientOptions: {
+        nodes: [nodeURL],
+        localPow: true,},
+      coinType: CoinType.Shimmer,
+      secretManager: {
+        Stronghold: {
+          snapshotPath: `./wallet.stronghold`,
+          password: `${password}`,
         },
+      },
     };
 
     // Create a new account manager
@@ -198,7 +197,7 @@ async function run() {
 
     // Create a new account with your set account name
     const account = await manager.createAccount({
-      alias: accountName,
+    alias: accountName,
     });
     console.log(consoleColor, `${accountName}'s account:`);
     console.log(account, '\n');
@@ -210,11 +209,14 @@ This step creates a new address in your account.
 
 ```javascript
     // Generate a new address for your account
-	const address = await account.generateAddress();
-	console.log(consoleColor, `${accountName}'s new address:`);
-	console.log(address.address, '\n');
+    const address = await account.generateAddress();
+    console.log(consoleColor, `${accountName}'s new address:`);
+    console.log(address.address, '\n');
 
-	process.exit(0);
+  } catch (error) {
+    console.log('Error: ', error);
+  }
+  process.exit(0);
 }
 
 run();
@@ -293,9 +295,10 @@ The following part of the script will create a new account manager from the prev
 
 ```javascript
 async function run() {
+  try {
     // Create a new account manager from existing database path
     const manager = new AccountManager({
-        storagePath: `./${accountName}-database`,
+      storagePath: `./${accountName}-database`,
     });
 
     // Pass password to manager
@@ -317,7 +320,10 @@ This script will synchronize your account and fetch the balance for the imported
     console.log(consoleColor, `${accountName}'s Balance:`);
     console.log(balance, '\n');
 
-    process.exit(0);
+  } catch (error) {
+      console.log('Error: ', error);
+  }
+  process.exit(0);
 };
 
 run();
@@ -380,12 +386,17 @@ const fetch = require('node-fetch');
 const { networkConfig } = require('./networkConfig.js');
 const faucetApi = networkConfig.faucetApi;
 
+// For better readability, some console output will be printed in a different color
+const consoleColor = '\x1b[36m%s\x1b[0m';
+
 // Address to receive faucet tokens
 const receivingAddress = '<paste_your_previously_generated_address_here>';
 
 async function run() {
   const request = await requestFunds(faucetApi, receivingAddress);
-  console.log(request);
+
+  console.log(consoleColor, `Funds were requested from faucet:`);
+  console.log(request, '\n');
 }
 
 // Request tokens from faucet via API call
@@ -415,7 +426,8 @@ node request-faucet.js
 
 If the request was successfull, the console output should look similar to this:
 
-```json
+```console
+Funds were requested from faucet:
 {
   "address": "<your_address>",
   "waitingRequests": 1
@@ -426,7 +438,7 @@ If the request was successfull, the console output should look similar to this:
 
 ### Check Your Account Balance Again
 
-After a few seconds you can check your balance again by running [the `check-balance.js` script](#check-balance-script):
+After a few seconds you can check your balance again by running the [check-balance.js](#check-balance-script) script:
 
 ```console
 node check-balance.js
