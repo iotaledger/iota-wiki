@@ -173,34 +173,34 @@ This part of the code will:
 
 ```javascript
 async function run() {
-  	try {
-		// Define the account manager options with the imported network configuration and environment variables
-		const accountManagerOptions = {
-			storagePath: `./${accountName}-database`,
-			clientOptions: {
-				nodes: [nodeURL],
-				localPow: true,},
-			coinType: CoinType.Shimmer,
-			secretManager: {
-				Stronghold: {
-					snapshotPath: `./wallet.stronghold`,
-					password: `${password}`,
-				},
-			},
-		};
+  try {
+    // Define the account manager options with the imported network configuration and environment variables
+    const accountManagerOptions = {
+      storagePath: `./${accountName}-database`,
+      clientOptions: {
+        nodes: [nodeURL],
+        localPow: true,},
+      coinType: CoinType.Shimmer,
+      secretManager: {
+        Stronghold: {
+          snapshotPath: `./wallet.stronghold`,
+          password: `${password}`,
+        },
+      },
+    };
 
-		// Create a new account manager
-		const manager = new AccountManager(accountManagerOptions);
+    // Create a new account manager
+    const manager = new AccountManager(accountManagerOptions);
 
-		// Store your mnemonic seed phrase in Stronghold
-		await manager.storeMnemonic(mnemonic);
+    // Store your mnemonic seed phrase in Stronghold
+    await manager.storeMnemonic(mnemonic);
 
-		// Create a new account with your set account name
-		const account = await manager.createAccount({
-		alias: accountName,
-		});
-		console.log(consoleColor, `${accountName}'s account:`);
-		console.log(account, '\n');
+    // Create a new account with your set account name
+    const account = await manager.createAccount({
+    alias: accountName,
+    });
+    console.log(consoleColor, `${accountName}'s account:`);
+    console.log(account, '\n');
 ```
 
 #### 3. Create address
@@ -208,15 +208,15 @@ async function run() {
 This step creates a new address in your account.
 
 ```javascript
-		// Generate a new address for your account
-		const address = await account.generateAddress();
-		console.log(consoleColor, `${accountName}'s new address:`);
-		console.log(address.address, '\n');
+    // Generate a new address for your account
+    const address = await account.generateAddress();
+    console.log(consoleColor, `${accountName}'s new address:`);
+    console.log(address.address, '\n');
 
-	} catch (error) {
-		console.log('Error: ', error);
-	}
-	process.exit(0);
+  } catch (error) {
+    console.log('Error: ', error);
+  }
+  process.exit(0);
 }
 
 run();
@@ -295,17 +295,17 @@ The following part of the script will create a new account manager from the prev
 
 ```javascript
 async function run() {
-	try {
-		// Create a new account manager from existing database path
-		const manager = new AccountManager({
-			storagePath: `./${accountName}-database`,
-		});
+  try {
+    // Create a new account manager from existing database path
+    const manager = new AccountManager({
+      storagePath: `./${accountName}-database`,
+    });
 
-		// Pass password to manager
-		await manager.setStrongholdPassword(password);
+    // Pass password to manager
+    await manager.setStrongholdPassword(password);
 
-		// Get specific account from account manager
-		const account = await manager.getAccount(accountName);
+    // Get specific account from account manager
+    const account = await manager.getAccount(accountName);
 ```
 
 #### 3. Get balance
@@ -313,17 +313,17 @@ async function run() {
 This script will synchronize your account and fetch the balance for the imported account.
 
 ```javascript
-		// Always sync before getting the account balance
-		await account.sync();
-		const balance = await account.getBalance();
+    // Always sync before getting the account balance
+    await account.sync();
+    const balance = await account.getBalance();
 
-		console.log(consoleColor, `${accountName}'s Balance:`);
-		console.log(balance, '\n');
+    console.log(consoleColor, `${accountName}'s Balance:`);
+    console.log(balance, '\n');
 
-    } catch (error) {
-        console.log('Error: ', error);
-    }
-    process.exit(0);
+  } catch (error) {
+      console.log('Error: ', error);
+  }
+  process.exit(0);
 };
 
 run();
