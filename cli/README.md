@@ -29,7 +29,7 @@ yarn iota-wiki --help
 
 1. Ensure git commit signing is properly setup.
 2. Change the package version according [semantic versioning](https://semver.org/).
-3. Commit the version bump with `git commit -m "Bump version to v[VERSION]"`.
-4. Tag the commit with `git tag -a v[VERSION] -m "v[VERSION]"`.
+3. Commit the version bump with `git commit -m "Bump version to [VERSION]"`.
+4. Tag the commit with `git tag -a cli-[VERSION] -m "[VERSION]"`.
 5. Push the commit including the tag with `git push --follow-tags`.
 6. Create a GitHub release using the tag above.

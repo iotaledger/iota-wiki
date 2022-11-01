@@ -1,14 +1,8 @@
-*-debug.log
-*-error.log
-/.nyc_output
-/dist
-/package-lock.json
-/tmp
+# Dependencies
 node_modules
-oclif.manifest.json
-.eslintcache
-.docusaurus
-build
+
+# Generated files
+dist
 
 # Yarn
 .pnp.*

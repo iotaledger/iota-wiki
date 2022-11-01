@@ -1,8 +1,0 @@
-/dist
-/internal
-/test/*
-node_modules
-
-# Yarn
-.pnp.*
-.yarn/*
