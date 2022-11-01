@@ -2,7 +2,7 @@ version: 2
 updates:
   - package-ecosystem: 'npm'
     versioning-strategy: increase
-    directory: '/'
+    directory: '/cli'
     schedule:
       interval: 'monthly'
     labels:

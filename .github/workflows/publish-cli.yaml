@@ -1,7 +1,8 @@
 name: Publish
 on:
-  release:
-    types: [created]
+  push:
+    tags:
+      - 'cli-*'
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -11,13 +12,13 @@ jobs:
         with:
           node-version: '14.x'
           registry-url: 'https://registry.npmjs.org'
-      - run: yarn install
-      - run: yarn npm publish --access public
+      - run: yarn workspace @iota-community/iota-wiki-cli install
+      - run: yarn workspace @iota-community/iota-wiki-cli npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
       - uses: actions/setup-node@v2
         with:
           registry-url: 'https://npm.pkg.github.com'
-      - run: yarn npm publish --access public
+      - run: yarn workspace @iota-community/iota-wiki-cli npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
