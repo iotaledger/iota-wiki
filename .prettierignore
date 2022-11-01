@@ -1,12 +1,14 @@
 # Dependencies
-/node_modules
-
-# Production
-/build
+node_modules
 
 # Generated files
 .docusaurus
 .cache-loader
+/cli/dist
 
+# Yarn
 .yarn
-iota/**
+.pnp.*
+
+# Misc
+/cli/test

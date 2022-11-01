@@ -1,16 +1,13 @@
 # Dependencies
 node_modules
 
-# Production
-/build
-
 # Generated files
 .docusaurus
 .cache-loader
 
 # External
-/external/*
-!/external/.keep
+/*/external
+!/*/external/.keep
 
 # Yarn
 .pnp.*

@@ -4,9 +4,9 @@
   "author": "IOTA community",
   "license": "MIT",
   "version": "1.7.0",
-  "homepage": "https://github.com/iota-community/iota-wiki-cli",
-  "bugs": "https://github.com/iota-community/iota-wiki-cli/issues",
-  "repository": "iota-community/iota-wiki-cli",
+  "homepage": "https://github.com/iota-wiki/iota-wiki/cli",
+  "bugs": "https://github.com/iota-wiki/iota-wiki/issues",
+  "repository": "iota-wiki/iota-wiki",
   "main": "dist/index.js",
   "bin": {
     "iota-wiki": "dist/index.js"
@@ -59,7 +59,6 @@
     "eslint": "^7.32.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-react": "^7.29.4",
-    "husky": ">=6",
     "lint-staged": ">=10",
     "nodemon": "^2.0.16",
     "typescript": "^4.4.3"
@@ -68,10 +67,6 @@
     "dist"
   ],
   "types": "dist/index.d.ts",
-  "lint-staged": {
-    "*.{js,jsx,ts,tsx}": "eslint --cache --fix",
-    "*.{js,jsx,ts,tsx,json,yml,md,mdx,css}": "prettier --write"
-  },
   "packageManager": "yarn@3.2.0",
   "engines": {
     "node": ">=14.0.0"
