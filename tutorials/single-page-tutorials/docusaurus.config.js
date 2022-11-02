@@ -179,6 +179,7 @@ module.exports = {
           'wallet',
           'ipfs',
           'shimmer',
+          'nft',
         ],
       },
     ],
@@ -198,6 +199,25 @@ module.exports = {
           'getting-started',
           'iota.rs (js binding)',
           'shimmer',
+        ],
+      },
+    ],
+    [
+      '@iota-wiki/plugin-tutorial',
+      {
+        title: `Create nested NFTs with wallet.rs`,
+        description:
+          'In this tutorial you will learn how to create nested NFTs with wallet.rs and IPFS.',
+        preview: 'nested-nfts.png',
+        route: 'tutorials/nested-nfts-with-wallet-lib',
+        tags: [
+          'text',
+          'getting-started',
+          'node_js',
+          'wallet',
+          'ipfs',
+          'shimmer',
+          'nft',
         ],
       },
     ],
