@@ -1,11 +1,14 @@
-# Create nested NFT's with the Wallet Library
+# Create nested NFTs with the Wallet Library
 
-In this tutorial you will create two NFT's on the Shimmer testnet. In order to illustrate the concept of nested NFT's, meaning a NFT owns another NFT, you will send the second NFT to the address of the first NFT. So instead of just holding a bunch of NFT's on one user address without any affiliation, this functionality allows the user to represent hierarchies and dependencies between NFT's.
+In this tutorial you will create two NFTs on the Shimmer testnet. In order to illustrate the concept of nested NFTs, meaning a NFT owns another NFT, you will send the second NFT to the address of the first NFT. So instead of just holding a bunch of NFTs on one user address without any affiliation, this functionality allows the user to represent hierarchies and dependencies between NFTs.
 
 ## User Story
 
-- An in-game avatar is represented as a NFT and holds several in-game items, which themselves are represented as NFT's as well
-- The avatar NFT owns the item NFT's wo the hierarchies and dependencies for the game are reperesented directly on-chain
+- An in-game avatar is represented as a NFT and holds several in-game items, which themselves are represented as NFTs as well
+- The avatar NFT owns the item NFTs wo the hierarchies and dependencies for the game are reperesented directly on-chain
+
+**ToDo:** Polish User Story
+**ToDo:** Add Visuals of Warrior Avatar and different Items
 
 ## Prerequisites
 
@@ -56,17 +59,17 @@ Afterward, your `package.json` file should contain the following dependencies:
 
 ---
 
-### Prepare Images for your nested NFT's
+### Prepare Images for your nested NFTs
 
-Add the images to your folder and make sure they are named correctly as `avatar.jpg`, `sword.jpg` and `mask.jpg`.
+Add three images to your folder and make sure they are named correctly with `avatar.jpg`, `sword.jpg` and `mask.jpg`.
 
-**ToDo:** Insert blank warrior and items here.
+**ToDo:** Insert visuals for all three images.
 
 ---
 
 ## Scripts
 
-### Create NFT's
+### Create NFTs
 
 Create a new file `create-nfts.js` and add the following code.
 
@@ -79,6 +82,7 @@ We broke the code into separate snippets to help you understand it better. To ma
 #### 1. Imports and parameters
 
 ```javascript
+// Libraries
 const { utf8ToHex } = require('@iota/client');
 const { AccountManager } = require('@iota/wallet');
 const IPFS = require('ipfs-core');
@@ -145,17 +149,17 @@ async function uploadToIPFS(ipfsNode, filePath) {
 
 #### 4. Mint NFT
 
-The function `mintNFT()` takes a NFT name, the previously created and unique IPFS identifier and an unlocked stronghold account in order to mint an NFT on the configurated network.
+The function `mintNFT()` takes a NFT name, the previously created and unique IPFS identifier and an unlocked Stronghold account in order to mint an NFT on the configurated network. The metadata will be stored in the immutable metadata field, meaning it will remain unchanged for as long as the NFT itself exists on the network. Also note that the function does not pass a specific address to the Stronghold Account method `mintNfts()`. By default the method will mint all NFTs on the first address of the used Stronghold account, as long as it holds enough funds for Storage Deposit.
 
 :::note
 
-The used metadata follows [Tangle Improvement Proposal (TIP) 27](https://github.com/Kami-Labs/tips/blob/main/tips/TIP-0027/tip-0027.md).
+The NFT metadata follows [Tangle Improvement Proposal (TIP 27)](https://github.com/Kami-Labs/tips/blob/main/tips/TIP-0027/tip-0027.md).
 
 :::
 
 ```javascript
 // This function creates NFT metadata and mints a new NFT
-async function mintNFT(itemName, ipfsCid, strongholdAccount) {
+async function mintNFT(itemName, ipfsCid, StrongholdAccount) {
   // Define NFT metadata
   const metadataObject = {
     standard: 'IRC27',
@@ -167,7 +171,7 @@ async function mintNFT(itemName, ipfsCid, strongholdAccount) {
 
   const metadataBytes = utf8ToHex(JSON.stringify(metadataObject));
 
-  const response = await strongholdAccount.mintNfts([
+  const response = await StrongholdAccount.mintNfts([
     {
       immutableMetadata: metadataBytes,
     },
@@ -178,20 +182,20 @@ async function mintNFT(itemName, ipfsCid, strongholdAccount) {
 }
 ```
 
-#### 5. Start
+#### 5. Main Script
 
-This is the main function, which first loads and unlocks a stronghold account and then triggers the IPFS upload as well as NFT minting process for a list of provided file names. This part will mint three NFT's (Avatar, Mask, Sword).
+This is the main function, which loads and unlocks a Stronghold account, triggers the IPFS upload and mints a NFT for every file provided in a list. In this case we will mint three NFTs (Avatar, Mask, Sword).
 
 ```javascript
-// This function loads a stronghold account and triggers the IPFS upload as well as NFT minting process for a list of files
-async function run() {
+// This function loads a Stronghold account and triggers the IPFS upload as well as NFT minting process for a list of files
+async function main() {
   try {
     const manager = new AccountManager({
       storagePath: `./${accountName}-database`,
     });
     await manager.setStrongholdPassword(password);
-    const strongholdAccount = await manager.getAccount(accountName);
-    await strongholdAccount.sync();
+    const StrongholdAccount = await manager.getAccount(accountName);
+    await StrongholdAccount.sync();
 
     const ipfsNode = await startIpfsNode();
 
@@ -200,7 +204,7 @@ async function run() {
     // This loop through the list of file names
     for (const item of items) {
       let cid = await uploadToIPFS(ipfsNode, `${item}.jpg`);
-      await mintNFT(item, cid, strongholdAccount);
+      await mintNFT(item, cid, StrongholdAccount);
     }
   } catch (error) {
     console.log('Error: ', error);
@@ -208,7 +212,7 @@ async function run() {
   process.exit(0);
 }
 
-run();
+main();
 ```
 
 Run the script `create-nfts.js` and check the console output to follow along the steps described above:
@@ -217,12 +221,197 @@ Run the script `create-nfts.js` and check the console output to follow along the
 node create-nfts.js
 ```
 
-# Open ToDo's:
+Since you were minting three NFTs, your console output should look like this:
 
-- Polish user storys
-- Add visuals of warriors to the user story
-  - Ideally a short animation starting with a blank avatar, which then receives items step by step.
-- Show how all NFT's belong to one address
-  - No hierarchy => show with graphic and explorer
-- Send item nft's to avatar nft
-  - Show hierarchy with graphic (similar to thumbnail) and explorer
+```console
+Start local IPFS node for upload:
+<IPFS-node-swarm-information>
+
+
+Your file "avatar.jpg" was successfully uploaded to IPFS:
+https://ipfs.io/ipfs/<ipfs-content-identifier>
+
+Your NFT was successfully minted in this block:
+https://explorer.shimmer.network/testnet/block/<blockId>
+
+
+
+Your file "mask.jpg" was successfully uploaded to IPFS:
+https://ipfs.io/ipfs/<ipfs-content-identifier>
+
+Your NFT was successfully minted in this block:
+https://explorer.shimmer.network/testnet/block/<blockId>
+
+
+
+Your file "sword.jpg" was successfully uploaded to IPFS:
+https://ipfs.io/ipfs/<ipfs-content-identifier>
+
+Your NFT was successfully minted in this block:
+https://explorer.shimmer.network/testnet/block/<blockId>
+```
+
+### Ownership Hierarchy
+
+As described in the `mintNFT()` function and as you can see on the Shimmer explorer, all three NFTs have been minted on the same user address. Of course this is not a bad thing, but if you want your NFTs to reflect a certain hierarchy between them on-DLT, this doesn't really help:
+
+```console
+User Address
+├── avatar_nft
+├── mask_nft
+└── sword_nft
+```
+
+In this example we want to show that both, the Mask NFT and the Sword NFT are items that belong to your unique Avatar NFT. On Shimmer, NFTs are not just dumb tokens, instead they have their own unique addresses and thus are able to own other assets and NFTs. In order to achieve a ownership hierarchy as presented below, you will send the Mask NFT and the Sword NFT to the unique address of the Avatar NFT:
+
+```console
+User Address
+└── avatar_nft
+    ├── mask_nft
+    └── sword_nft
+```
+
+### Preparation
+
+In order to be able to send a NFT you will need its NFT ID and of course an address to send it to. In this case we will need the address of the Avatar NFT and the IDs of both, the Mask and Sword NFT. Since this tutorial here is based on the [Testnet Wallet Setup](https://wiki.iota.org/tutorials/wallet-setup) tutorial, you should already have a script to check your Stronghold account balance.
+
+Run the script `check-balance.js` and you should see three NFT IDs:
+
+```console
+node check-balance.js
+```
+
+Your console output should look similar to this:
+
+```console
+<accountName>'s Balance:
+{
+  baseCoin: { total: '1000000000', available: '1000000000' },
+  requiredStorageDeposit: '822000',
+  nativeTokens: [],
+  nfts: [
+    '<nft-id-avatar>',
+    '<nft-id-mask>',
+    '<nft-id-sword>'
+  ],
+  aliases: [],
+  foundries: [],
+  potentiallyLockedOutputs: {}
+}
+```
+
+Now, one by one, copy the NFT IDs into the [Shimmer Testnet Explorer](https://explorer.shimmer.network/testnet/) and find out the one that belongs to the Avatar NFT, by checking their immutable metadata. Before you move to the next section, note the NFT Address of the Avatar NFT and also the NFT ID's of the Mask and Sword NFT.
+
+```text
+Avatar NFT Address:
+rms...
+
+Mask NFT ID:
+0x...
+
+Sword NFT ID:
+0x...
+```
+
+### Send NFTs
+
+Now that you have all needed information you can create a new file `send-nft.js` and add the following code:
+
+:::note
+
+We broke the code into separate snippets to help you understand it better. To make it work, copy all code snippets one after another into the file that you have just created.
+
+:::
+
+#### 1. Imports and parameters
+
+```javascript
+// Libraries
+const { AccountManager } = require('@iota/wallet');
+
+// Environment variables
+require('dotenv').config({ path: './.env' });
+const password = process.env.SH_PASSWORD;
+const accountName = process.env.ACCOUNT_NAME;
+
+// Network configuration
+const { networkConfig } = require('./networkConfig.js');
+
+// For better readability, some console output will be printed in a different color
+const consoleColor = '\x1b[36m%s\x1b[0m';
+```
+
+#### 2. Send NFT's
+
+The function `main()` loads and unlocks a Stronghold account and sends a NFT to a target address. Make sure to insert the address of the Avatar NFT (rms...) as target address and the NFT ID of the Mask NFT (0x...).
+
+```javascript
+// This function loads a Stronghold account and sends a NFT to a specified address
+  try {
+    const manager = new AccountManager({
+      storagePath: `./${accountName}-database`,
+    });
+    await manager.setStrongholdPassword(password);
+    const account = await manager.getAccount(accountName);
+
+    await account.sync();
+
+    // Sends a NFT output to a specified address
+    const response = await account.sendNft([{
+      address: '<insert-target-address-of-avatar-nft>',
+      nftId: '<insert-id-of-nft-you-want-to-send>',
+    }]);
+
+    console.log(consoleColor, `Your NFT was successfully sent to the target address in this block:`);
+    console.log(`${explorerURL}/block/${response.blockId}`, '\n');
+
+  } catch (error) {
+      console.log('Error: ', error);
+  }
+  process.exit(0);
+}
+
+main();
+```
+
+Run the script `send-nft.js`:
+
+```console
+node send-nft.js
+```
+
+Now replace the Mask NFT ID with the Sword NFT ID and run the script `send-nft.js` again.
+
+### Wrap-up
+
+If everything went according to plan, there should only be a single NFT left on your used Stronghold account address, the Avatar NFT. Run the script `check-balance.js` to check this:
+
+```console
+node check-balance.js
+```
+
+Your console output should look similar to this:
+
+```console
+<accountName>'s Balance:
+{
+  baseCoin: { total: '1000000000', available: '1000000000' },
+  requiredStorageDeposit: '822000',
+  nativeTokens: [],
+  nfts: [
+    '<nft-id-avatar>'
+  ],
+  aliases: [],
+  foundries: [],
+  potentiallyLockedOutputs: {}
+}
+```
+
+Now you can check the Avatar NFT ID again on the [Shimmer Testnet Explorer](https://explorer.shimmer.network/testnet/). Next to `General` information and the `Immutable Features` of the NFT, the explorer should also display a section with two `Associated Outputs`. These two outputs represent the Mask and the Sword NFT, which are only unlockable by the Avatar NFT address. The Avatar NFT, on the other hand, is only unlockable by your account address. This means you have successfully created the targeted hierarchy of ownership:
+
+```console
+User Address
+└── avatar_nft
+    ├── mask_nft
+    └── sword_nft
+```
