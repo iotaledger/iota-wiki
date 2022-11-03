@@ -255,7 +255,7 @@ https://explorer.shimmer.network/testnet/block/<blockId>
 
 As described in the `mintNFT()` function and as you can see on the Shimmer explorer, all three NFTs have been minted on the same user address. Of course this is not a bad thing, but if you want your NFTs to reflect a certain hierarchy between them on-DLT, this doesn't really help:
 
-```console
+```text
 User Address
 ├── avatar_nft
 ├── mask_nft
@@ -264,7 +264,7 @@ User Address
 
 In this example we want to show that both, the Mask NFT and the Sword NFT are items that belong to your unique Avatar NFT. On Shimmer, NFTs are not just dumb tokens, instead they have their own unique addresses and thus are able to own other assets and NFTs. In order to achieve a ownership hierarchy as presented below, you will send the Mask NFT and the Sword NFT to the unique address of the Avatar NFT:
 
-```console
+```text
 User Address
 └── avatar_nft
     ├── mask_nft
@@ -409,7 +409,7 @@ Your console output should look similar to this:
 
 Now you can check the Avatar NFT ID again on the [Shimmer Testnet Explorer](https://explorer.shimmer.network/testnet/). Next to `General` information and the `Immutable Features` of the NFT, the explorer should also display a section with two `Associated Outputs`. These two outputs represent the Mask and the Sword NFT, which are only unlockable by the Avatar NFT address. The Avatar NFT, on the other hand, is only unlockable by your account address. This means you have successfully created the targeted hierarchy of ownership:
 
-```console
+```text
 User Address
 └── avatar_nft
     ├── mask_nft
