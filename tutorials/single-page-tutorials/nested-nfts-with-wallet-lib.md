@@ -2,13 +2,11 @@
 
 In this tutorial you will create two NFTs on the Shimmer testnet. In order to illustrate the concept of nested NFTs, meaning a NFT owns another NFT, you will send the second NFT to the address of the first NFT. So instead of just holding a bunch of NFTs on one user address without any affiliation, this functionality allows the user to represent hierarchies and dependencies between NFTs.
 
-## User Story
+## Story
 
-- An in-game avatar is represented as a NFT and holds several in-game items, which themselves are represented as NFTs as well
-- The avatar NFT owns the item NFTs wo the hierarchies and dependencies for the game are reperesented directly on-chain
+Let's imagine a game with avatars and items, which all are represented as unique NFTs on the Shimmer network. On Shimmer, NFTs are not just dumb tokens, instead they have their own unique addresses and are able to own other NFTs. This concept is known as nested NFTs. In this example it allows an avatar to not only hold items in-game, but its avatar NFT to also own its unique item NFTs in order to represent the dependencies between in-game components directly on-DLT.
 
-**ToDo:** Polish User Story
-**ToDo:** Add Visuals of Warrior Avatar and different Items
+![Blue Warrior](./images/warrior-blue.gif)
 
 ## Prerequisites
 
@@ -61,9 +59,11 @@ Afterward, your `package.json` file should contain the following dependencies:
 
 ### Prepare Images for your nested NFTs
 
-Add three images to your folder and make sure they are named correctly with `avatar.jpg`, `sword.jpg` and `mask.jpg`.
+Add three images to your folder and make sure they are named correctly with `avatar.jpg`, `mask.jpg` and `weapon.jpg`. You can use the images below, or pick your own images as desired:
 
-**ToDo:** Insert visuals for all three images.
+![Warrior avatar](./images/warrior-avatar.png)
+![Warrior mask](./images/warrior-mask.png)
+![Warrior weapon](./images/warrior-weapon.png)
 
 ---
 
@@ -184,7 +184,7 @@ async function mintNFT(itemName, ipfsCid, StrongholdAccount) {
 
 #### 5. Main Script
 
-This is the main function, which loads and unlocks a Stronghold account, triggers the IPFS upload and mints a NFT for every file provided in a list. In this case we will mint three NFTs (Avatar, Mask, Sword).
+This is the main function, which loads and unlocks a Stronghold account, triggers the IPFS upload and mints a NFT for every file provided in a list. In this case we will mint three NFTs (avatar, mask, weapon).
 
 ```javascript
 // This function loads a Stronghold account and triggers the IPFS upload as well as NFT minting process for a list of files
@@ -199,7 +199,7 @@ async function main() {
 
     const ipfsNode = await startIpfsNode();
 
-    const items = ['avatar', 'mask', 'sword'];
+    const items = ['avatar', 'mask', 'weapon'];
 
     // This loop through the list of file names
     for (const item of items) {
@@ -244,7 +244,7 @@ https://explorer.shimmer.network/testnet/block/<blockId>
 
 
 
-Your file "sword.jpg" was successfully uploaded to IPFS:
+Your file "weapon.jpg" was successfully uploaded to IPFS:
 https://ipfs.io/ipfs/<ipfs-content-identifier>
 
 Your NFT was successfully minted in this block:
@@ -259,21 +259,21 @@ As described in the `mintNFT()` function and as you can see on the Shimmer explo
 User Address
 ├── avatar_nft
 ├── mask_nft
-└── sword_nft
+└── weapon_nft
 ```
 
-In this example we want to show that both, the Mask NFT and the Sword NFT are items that belong to your unique Avatar NFT. On Shimmer, NFTs are not just dumb tokens, instead they have their own unique addresses and thus are able to own other assets and NFTs. In order to achieve a ownership hierarchy as presented below, you will send the Mask NFT and the Sword NFT to the unique address of the Avatar NFT:
+In this example we want to show that both, the mask NFT and the weapon NFT are items that belong to your unique avatar NFT. In order to achieve a ownership hierarchy as presented below, you will send the mask NFT and the weapon NFT to the unique address of the avatar NFT:
 
 ```text
 User Address
 └── avatar_nft
     ├── mask_nft
-    └── sword_nft
+    └── weapon_nft
 ```
 
 ### Preparation
 
-In order to be able to send a NFT you will need its NFT ID and of course an address to send it to. In this case we will need the address of the Avatar NFT and the IDs of both, the Mask and Sword NFT. Since this tutorial here is based on the [Testnet Wallet Setup](https://wiki.iota.org/tutorials/wallet-setup) tutorial, you should already have a script to check your Stronghold account balance.
+In order to be able to send a NFT you will need its NFT ID and of course an address to send it to. In this case we will need the address of the avatar NFT and the IDs of both, the mask and weapon NFT. Since this tutorial here is based on the [Testnet Wallet Setup](https://wiki.iota.org/tutorials/wallet-setup) tutorial, you should already have a script to check your Stronghold account balance.
 
 Run the script `check-balance.js` and you should see three NFT IDs:
 
@@ -292,7 +292,7 @@ Your console output should look similar to this:
   nfts: [
     '<nft-id-avatar>',
     '<nft-id-mask>',
-    '<nft-id-sword>'
+    '<nft-id-weapon>'
   ],
   aliases: [],
   foundries: [],
@@ -300,16 +300,16 @@ Your console output should look similar to this:
 }
 ```
 
-Now, one by one, copy the NFT IDs into the [Shimmer Testnet Explorer](https://explorer.shimmer.network/testnet/) and find out the one that belongs to the Avatar NFT, by checking their immutable metadata. Before you move to the next section, note the NFT Address of the Avatar NFT and also the NFT ID's of the Mask and Sword NFT.
+Now, one by one, copy the NFT IDs into the [Shimmer Testnet Explorer](https://explorer.shimmer.network/testnet/) and find out the one that belongs to the avatar NFT, by checking their immutable metadata. Before you move to the next section, note the NFT Address of the avatar NFT and also the NFT ID's of the mask and weapon NFT.
 
 ```text
-Avatar NFT Address:
+avatar NFT Address:
 rms...
 
-Mask NFT ID:
+mask NFT ID:
 0x...
 
-Sword NFT ID:
+weapon NFT ID:
 0x...
 ```
 
@@ -343,7 +343,7 @@ const consoleColor = '\x1b[36m%s\x1b[0m';
 
 #### 2. Send NFT's
 
-The function `main()` loads and unlocks a Stronghold account and sends a NFT to a target address. Make sure to insert the address of the Avatar NFT (rms...) as target address and the NFT ID of the Mask NFT (0x...).
+The function `main()` loads and unlocks a Stronghold account and sends a NFT to a target address. Make sure to insert the address of the avatar NFT (rms...) as target address and the NFT ID of the mask NFT (0x...).
 
 ```javascript
 // This function loads a Stronghold account and sends a NFT to a specified address
@@ -380,11 +380,11 @@ Run the script `send-nft.js`:
 node send-nft.js
 ```
 
-Now replace the Mask NFT ID with the Sword NFT ID and run the script `send-nft.js` again.
+Now replace the mask NFT ID with the weapon NFT ID and run the script `send-nft.js` again.
 
 ### Wrap-up
 
-If everything went according to plan, there should only be a single NFT left on your used Stronghold account address, the Avatar NFT. Run the script `check-balance.js` to check this:
+If everything went according to plan, there should only be a single NFT left on your used Stronghold account address, the avatar NFT. Run the script `check-balance.js` to check this:
 
 ```console
 node check-balance.js
@@ -407,11 +407,17 @@ Your console output should look similar to this:
 }
 ```
 
-Now you can check the Avatar NFT ID again on the [Shimmer Testnet Explorer](https://explorer.shimmer.network/testnet/). Next to `General` information and the `Immutable Features` of the NFT, the explorer should also display a section with two `Associated Outputs`. These two outputs represent the Mask and the Sword NFT, which are only unlockable by the Avatar NFT address. The Avatar NFT, on the other hand, is only unlockable by your account address. This means you have successfully created the targeted hierarchy of ownership:
+Now you can check the avatar NFT ID again on the [Shimmer Testnet Explorer](https://explorer.shimmer.network/testnet/). Next to `General` information and the `Immutable Features` of the NFT, the explorer should also display a section with two `Associated Outputs`. These two outputs represent the mask and the weapon NFT, which are only unlockable by the avatar NFT address. The avatar NFT, on the other hand, is only unlockable by your account address. This means you have successfully created the targeted hierarchy of ownership:
 
 ```text
 User Address
 └── avatar_nft
     ├── mask_nft
-    └── sword_nft
+    └── weapon_nft
 ```
+
+:::warning
+
+Sending a NFT also means loosing ownership over all NFTs controlled by it. In this example, whoever holds the avatar NFT also has control over the mask and weapon NFT, so be cautious when using this concept.
+
+:::
