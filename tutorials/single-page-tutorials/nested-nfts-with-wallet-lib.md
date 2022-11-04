@@ -1,10 +1,10 @@
 # Create nested NFTs with the Wallet Library
 
-In this tutorial you will create two NFTs on the Shimmer testnet. In order to illustrate the concept of nested NFTs, meaning a NFT owns another NFT, you will send the second NFT to the address of the first NFT. So instead of just holding a bunch of NFTs on one user address without any affiliation, this functionality allows the user to represent hierarchies and dependencies between NFTs.
+In this tutorial you will create three NFTs on the Shimmer testnet. On Shimmer, NFTs are not just dumb tokens, instead they have their own unique addresses and are able to own other NFTs. This concept is known as nested NFTs. In order to illustrate this concept, you will follow along the storyline below.
 
-## Story
+## Storyline
 
-Let's imagine a game with avatars and items, which all are represented as unique NFTs on the Shimmer network. On Shimmer, NFTs are not just dumb tokens, instead they have their own unique addresses and are able to own other NFTs. This concept is known as nested NFTs. In this example it allows an avatar to not only hold items in-game, but its avatar NFT to also own its unique item NFTs in order to represent the dependencies between in-game components directly on-DLT.
+Let's imagine a game with avatars and items, which all are represented as unique NFTs on the Shimmer network. In this example it allows an avatar to not only hold items in-game, but its avatar NFT to also own its unique item NFTs directly on-DLT, in order to represent the dependencies between in-game components on the Shimmer network.
 
 ![Blue Warrior](./images/warrior-blue.gif)
 
