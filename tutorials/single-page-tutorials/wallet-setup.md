@@ -203,15 +203,17 @@ async function run() {
     console.log(account, '\n');
 ```
 
-#### 3. Create address
+#### 3. Return account address
 
-This step creates a new address in your account.
+Every newly created Stronghold account has one address to receive funds at. This part of the function gets the address from the account and logs it out on your console.
 
 ```javascript
-    // Generate a new address for your account
-    const address = await account.generateAddress();
-    console.log(consoleColor, `${accountName}'s new address:`);
-    console.log(address.address, '\n');
+    // Right after account creation, there should only be one address returned at keyIndex = 0
+    await account.sync();
+    const address = await account.addresses();
+
+    console.log(consoleColor, `${accountName}'s Address:`);
+    console.log(address, '\n');
 
   } catch (error) {
     console.log('Error: ', error);
@@ -235,7 +237,7 @@ Stronghold will create a new wallet database folder, `<accountName>-database`, a
 The console output should look similar to this:
 
 ```json
-<account_name>'s account:
+<account_name>'s Account:
 Account {
   meta: {
     index: 0,
@@ -254,11 +256,18 @@ Account {
   messageHandler: MessageHandler { messageHandler: [External: 277668a8e40] }
 }
 
-<account_name>'s new address:
-<your_new_address>
+<account_name>'s Address:
+[
+  {
+    address: 'rms1qqrmnqwysw6y7n0lhyju39p68fwwdv3a4m3khh0paczh2wft2wy853pmqmz',
+    keyIndex: 0,
+    internal: false,
+    used: false
+  }
+]
 ```
 
-You can see your new account and the generated address, which you will use to receive funds from the faucet. Before you request funds, let's check your account balance.
+You can see your new account and its associated address, which you will use to receive funds from the faucet. Before you request funds, let's check your account balance.
 
 ---
 
@@ -308,16 +317,20 @@ async function run() {
     const account = await manager.getAccount(accountName);
 ```
 
-#### 3. Get balance
+#### 3. Return account address(es) and balance
 
-This script will synchronize your account and fetch the balance for the imported account.
+This script will synchronize your account and fetch its address(es) and balance.
 
 ```javascript
     // Always sync before getting the account balance
     await account.sync();
     const balance = await account.getBalance();
+    const addresses = await account.addresses();
 
-    console.log(consoleColor, `${accountName}'s Balance:`);
+    console.log(consoleColor, `${accountName}'s Address(es):`);
+    console.log(addresses, '\n');
+
+    console.log(consoleColor, `${accountName}'s Total Balance:`);
     console.log(balance, '\n');
 
   } catch (error) {
@@ -337,10 +350,20 @@ You can now run the `check-balance.js` script and check the console output:
 node check-balance.js
 ```
 
-If you [created a new mnemonic seed phrase](#create-mnemonic-script) at the beginning of this tutorial, you should see an entirely empty balance on your account.
+If you [created a new mnemonic seed phrase](#create-mnemonic-script) at the beginning of this tutorial, you should see exactly one address and an entirely empty balance on your account.
 
 ```json
-<Account Name>'s Balance:
+<Account Name>'s Address(es):
+[
+  {
+    address: 'rms1qqrmnqwysw6y7n0lhyju39p68fwwdv3a4m3khh0paczh2wft2wy853pmqmz',
+    keyIndex: 0,
+    internal: false,
+    used: false
+  }
+]
+
+<Account Name>'s Total Balance:
 {
   baseCoin: { total: '0', available: '0' },
   requiredStorageDeposit: '0',
@@ -447,7 +470,17 @@ node check-balance.js
 If the faucet successfully transferred testnet tokens to your address, your balance should look similar to the content below. If the total balance for the `baseCoin` is still 0, repeat the process of running the `check-balance.js` script since it might take a little time for the funds to be transferred.
 
 ```json
-<account_name>'s Balance:
+<Account Name>'s Address(es):
+[
+  {
+    address: 'rms1qqrmnqwysw6y7n0lhyju39p68fwwdv3a4m3khh0paczh2wft2wy853pmqmz',
+    keyIndex: 0,
+    internal: false,
+    used: false
+  }
+]
+
+<Account Name>'s Total Balance:
 {
   baseCoin: { total: '1000000000', available: '1000000000' },
   requiredStorageDeposit: '42600',
