@@ -85,11 +85,17 @@ module.exports = { networkConfig };
 
 Create a new `.env` file and add the content below:
 
+:::note
+
+In the .env file you don't need to end lines with comas or semicolons and you also don't need to enclose variables with quotation marks. Just make sure to use a new line for every variable.
+
+:::
+
 ```javascript
-ACCOUNT_NAME = '<Enter_your_name_here>';
-SH_PASSWORD = '<Enter_your_password_here>';
+ACCOUNT_NAME = Enter_your_name_here;
+SH_PASSWORD = Enter_your_password_here;
 MNEMONIC =
-  '<You_will_create_your_own_mnemonic_seed_phrase_in_the_next_step_and_paste_it_in_here>';
+  You_will_create_your_own_mnemonic_seed_phrase_in_the_next_step_and_paste_it_in_here;
 ```
 
 Enter your desired account name as well as a secure Stronghold password. You will create your new mnemonic seed phrase in the next step and paste it here afterward.
@@ -413,7 +419,7 @@ const faucetApi = networkConfig.faucetApi;
 const consoleColor = '\x1b[36m%s\x1b[0m';
 
 // Address to receive faucet tokens
-const receivingAddress = '<paste_your_previously_generated_address_here>';
+const receivingAddress = '<paste_your_address_here>';
 
 async function run() {
   const request = await requestFunds(faucetApi, receivingAddress);
