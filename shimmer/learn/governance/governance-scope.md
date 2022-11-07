@@ -14,7 +14,7 @@ Changes are allowed in the following areas:
  
 | Name                                  | Value            | Class   | Type   | Description                                                                                                                                                                               |
 |---------------------------------------|------------------|---------|--------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------| 
-| Max Shimmer Genesis Supply            | 1450896407249092 | static  | uint64 | Total amount of Shimmer genesis supply denominated in `glow`. 1 `glow` = 0.000001 `SMR` 
+| Max Shimmer Genesis Supply            | 1813620509061365 | static  | uint64 | Total amount of Shimmer genesis supply denominated in `glow`. 1 `glow` = 0.000001 `SMR` 
 | VByte Cost                            | 100              | dynamic | uint32 | Minimum amount of Shimmer (denominated in `glow`) that need to be deposited per vbyte of an output.                                                                                       |
 
 ## The Shimmer Governance Framework also covers decision proccesses in the following sectors:
