@@ -5504,13 +5504,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"docusaurus-plugin-hotjar@npm:^0.0.2":
-  version: 0.0.2
-  resolution: "docusaurus-plugin-hotjar@npm:0.0.2"
-  checksum: 9e1ab8ebca9b44426f4f4ad6650cb4908f07450c58458de45c495c0ce9843b1df3ea40a866369236c2f1b9d379af4c1dfe2b072451fbe92d10f124df9db896e3
-  languageName: node
-  linkType: hard
-
 "docusaurus-plugin-matomo@npm:^0.0.5":
   version: 0.0.5
   resolution: "docusaurus-plugin-matomo@npm:0.0.5"
@@ -7511,7 +7504,6 @@ __metadata:
     "@typescript-eslint/eslint-plugin": ^5.9.1
     "@typescript-eslint/parser": ^5.9.1
     clsx: ^1.2.1
-    docusaurus-plugin-hotjar: ^0.0.2
     docusaurus-plugin-matomo: ^0.0.5
     eslint: ^8.6.0
     eslint-config-prettier: ^8.3.0
