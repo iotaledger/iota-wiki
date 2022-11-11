@@ -86,10 +86,10 @@ module.exports = { networkConfig };
 Create a new `.env` file and add the content below:
 
 ```javascript
-ACCOUNT_NAME = '<Enter_your_name_here>'
-SH_PASSWORD = '<Enter_your_password_here>'
+ACCOUNT_NAME = "<Enter_your_name_here>"
+SH_PASSWORD = "<Enter_your_password_here>"
 MNEMONIC =
-  '<You_will_create_your_own_mnemonic_seed_phrase_in_the_next_step_and_paste_it_in_here>'
+  "<You_will_create_your_own_mnemonic_seed_phrase_in_the_next_step_and_paste_it_in_here>"
 ```
 
 Enter your desired account name as well as a secure Stronghold password. You will create your new mnemonic seed phrase in the next step and paste it here afterward.
