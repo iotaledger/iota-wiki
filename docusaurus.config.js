@@ -50,9 +50,6 @@ module.exports = {
       matomoUrl: 'https://matomo.iota-community.org/',
       siteId: '13',
     },
-    hotjar: {
-      applicationId: '2809821',
-    },
     imageZoom: {
       selector:
         '.markdown :not(a) > img:not(.image-gallery-image):not(.image-gallery-thumbnail-image)',
@@ -270,7 +267,6 @@ module.exports = {
   plugins: [
     'plugin-image-zoom',
     'docusaurus-plugin-matomo',
-    'docusaurus-plugin-hotjar',
     '@docusaurus/plugin-ideal-image',
     [
       '@docusaurus/plugin-content-docs',

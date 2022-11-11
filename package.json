@@ -37,7 +37,6 @@
     "@popperjs/core": "^2.11.5",
     "@svgr/webpack": "^5.5.0",
     "clsx": "^1.2.1",
-    "docusaurus-plugin-hotjar": "^0.0.2",
     "docusaurus-plugin-matomo": "^0.0.5",
     "file-loader": "^6.2.0",
     "hast-util-is-element": "1.1.0",
