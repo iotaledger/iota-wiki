@@ -68,15 +68,13 @@ npm install
 Create a new file `networkConfig.js` and add the following code:
 
 ```javascript
-var networkConfig = {};
-
-// Shimmer Beta network configuration
-networkConfig.node = 'https://api.testnet.shimmer.network';
-networkConfig.faucetWebsite = 'https://faucet.testnet.shimmer.network';
-networkConfig.faucetApi = 'https://faucet.testnet.shimmer.network/api/enqueue';
-networkConfig.explorer = 'https://explorer.shimmer.network/testnet';
-
-module.exports = { networkConfig };
+module.exports = {
+  // Shimmer Beta network configuration
+  node = 'https://api.testnet.shimmer.network';
+  faucetWebsite = 'https://faucet.testnet.shimmer.network';
+  faucetApi = 'https://faucet.testnet.shimmer.network/api/enqueue';
+  explorer = 'https://explorer.shimmer.network/testnet';
+};
 ```
 
 ---
@@ -151,7 +149,7 @@ This part imports all necessary packages, network configuration parameters, and 
 const { AccountManager, CoinType } = require('@iota/wallet');
 
 // Network configuration
-const { networkConfig } = require('./networkConfig.js');
+const networkConfig = require('./networkConfig.js');
 const nodeURL = networkConfig.node;
 
 // Environment variables
