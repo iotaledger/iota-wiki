@@ -153,7 +153,7 @@ const networkConfig = require('./networkConfig.js');
 const nodeURL = networkConfig.node;
 
 // Environment variables
-require('dotenv').config({ path: './.env' });
+require('dotenv').config();
 const password = process.env.SH_PASSWORD;
 const mnemonic = process.env.MNEMONIC;
 const accountName = process.env.ACCOUNT_NAME;
@@ -279,7 +279,7 @@ This part imports all necessary packages, network configuration parameters and e
 const { AccountManager } = require('@iota/wallet');
 
 // Environment variables
-require('dotenv').config({ path: './.env' });
+require('dotenv').config();
 const password = process.env.SH_PASSWORD;
 const accountName = process.env.ACCOUNT_NAME;
 
