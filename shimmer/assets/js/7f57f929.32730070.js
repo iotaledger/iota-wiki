@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkiota_wiki=self.webpackChunkiota_wiki||[]).push([[2133],{83263:a=>{a.exports=JSON.parse('{"label":"OTV","permalink":"/shimmer/blog/tags/otv","allTagsPath":"/shimmer/blog/tags","count":1}')}}]);

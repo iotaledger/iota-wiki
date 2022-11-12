@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkiota_wiki=self.webpackChunkiota_wiki||[]).push([[79724],{97247:e=>{e.exports=JSON.parse('{"label":"Ethereum","permalink":"/next/blog/tags/ethereum","allTagsPath":"/next/blog/tags","count":1}')}}]);

@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkiota_wiki=self.webpackChunkiota_wiki||[]).push([[887],{65836:a=>{a.exports=JSON.parse('{"label":"DAO","permalink":"/next/blog/tags/dao","allTagsPath":"/next/blog/tags","count":2}')}}]);

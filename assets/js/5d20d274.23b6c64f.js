@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkiota_wiki=self.webpackChunkiota_wiki||[]).push([[14983],{91953:s=>{s.exports=JSON.parse('{"label":"Gossip","permalink":"/blog/tags/gossip","allTagsPath":"/blog/tags","count":1}')}}]);

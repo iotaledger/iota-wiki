@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkiota_wiki=self.webpackChunkiota_wiki||[]).push([[47205],{50247:i=>{i.exports=JSON.parse('{"label":"Coordicide","permalink":"/shimmer/blog/tags/coordicide","allTagsPath":"/shimmer/blog/tags","count":2}')}}]);

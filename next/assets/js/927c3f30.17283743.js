@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkiota_wiki=self.webpackChunkiota_wiki||[]).push([[21570],{48905:e=>{e.exports=JSON.parse('{"permalink":"/next/blog/page/3","page":3,"postsPerPage":10,"totalPages":3,"totalCount":26,"previousPage":"/next/blog/page/2","blogDescription":"Blog","blogTitle":"Blog"}')}}]);

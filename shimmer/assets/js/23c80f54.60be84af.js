@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkiota_wiki=self.webpackChunkiota_wiki||[]).push([[44014],{8809:a=>{a.exports=JSON.parse('{"label":"Economic","permalink":"/shimmer/blog/tags/economic","allTagsPath":"/shimmer/blog/tags","count":1}')}}]);

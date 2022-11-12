@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkiota_wiki=self.webpackChunkiota_wiki||[]).push([[28961],{21705:e=>{e.exports=JSON.parse('{"label":"Ethereum","permalink":"/shimmer/blog/tags/ethereum","allTagsPath":"/shimmer/blog/tags","count":1}')}}]);
