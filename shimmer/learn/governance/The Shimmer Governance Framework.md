@@ -66,13 +66,13 @@ This framework defines the governance process for [selected topics](#parameters-
 [8.) Recommended readings, knowledge library](https://github.com/iota-community/Shimmer-Governance/blob/main/The%20Shimmer%20Governance%20Framework.md#8-recommended-readings-knowledge-library)
 
 
-This proposal is written and structured following its proposed rules.
 
 
-# **[SGP - 0001] The Shimmer Governance Framework (Phase 1)** 
+
+# **The Shimmer Governance Framework** 
 
 
-## **1.) Simple summary:**
+## **1.) Simple summary**
 
 As a community and a project, we need to define our processes to enable and empower community participation and decision-making in Shimmer. In our opinion, we need such structures and processes to find shared ground on governance and establish an efficient way to propose changes to the project’s current state.
 
@@ -431,11 +431,6 @@ The requirements to achieve Trust level 1 are set as follows:
 * has spent a minimum of 45 minutes (aggregated) reading posts in the forum
 
 
-![|624x251](upload://cXMFChkdRcpY5NuaAioTibRjNCf.png)
-
-
-
-
 - #### **Firefly voters (phase 3):**
 
 Everybody who is in control of the minimum amount of Shimmer tokens required to produce one vote. This amount is currently defined as 1000 Glow and follows the[ technical specification](https://github.com/iota-community/treasury/blob/main/specifications/hornet-participation-plugin.md) for the Hornet INX - participation plugin.
@@ -504,9 +499,6 @@ The outcome of this process in phase 1 should be a defined and specified proposa
 
 To initiate an idea's discussion and decision-making process, a [forum moderator](#governance-forum-moderators-17) will only allow a post to be published in the [Shimmer Governance Proposals / Phase 1 Discussions] subcategory and grant the phase 1 status to a discussion if the topic of the proposal fits one of the [defined governance parameters](#parameters-that-are-open-for-community-governance-in-shimmer-8) and follows the Shimmer governance framework [guiding principles.](#h-_42-shimmer-governance-framework-guiding-principles_-11)
 
-![image|201x500](upload://eoRFoAqSx2V86kKGMtE12A0a8Xo.png)
-
-
 
 ##### **Proposal Acceptance Requirements Phase 1:**
 
@@ -533,8 +525,6 @@ The [Governance Proposal submitter](#governance-proposal-submitter) feels confid
 
 
 Phase 2 polls are non-binding decisions and only show sentiment in the community that allows distinguishing if a topic receives enough support to justify a vote in Firefly. All changes to the Shimmer protocol will require a decision by all IOTA token holders in a phase 3 vote in Firefly.
-
-![image|201x500](upload://tw0sjTnJRE3uHQOsWLG7k9EO8Ce.png)
 
 
 ##### **Proposal Acceptance Requirements Phase 2:**
@@ -593,19 +583,18 @@ A forum moderator publishes an [announcement post](#the-announcement-forum-post-
 
 The same announcement will also be posted on the [Shimmer governance Twitter account](https://twitter.com/ShimmerGov), which the moderators run.
 
-![image|200x500](upload://gBfjyl3HTunYnMBEKSYbuHOlFrY.png)
 
 
 ##### **The announcement forum-post in phase 3 uses this template:**
 
- \
-_[Phase 3] Shimmer Governance Vote announcement: \
+ 
+_[Phase 3] Shimmer Governance Vote announcement: 
 The proposal [unique identifier and title] has reached soft consensus by the community in the governance forum phase 2 poll [link to the phase 2 poll]. It has fulfilled all requirements to be presented to the community in a governance vote using the Shimmer Firefly Wallet._
 
- \
+ 
 _The vote in your Shimmer Firefly Wallet will begin on [date and time in UTC] with a seven-day pre-vote phase during which you can cast your vote before the counting phase begins._
 
-_The seven-day counting period during which you are required to hold your Shimmer tokens in the vote to receive your maximum possible votes will begin on [date and time in UTC]. \
+_The seven-day counting period during which you are required to hold your Shimmer tokens in the vote to receive your maximum possible votes will begin on [date and time in UTC]. 
 The voting process will end on [date and time in UTC]_
 
 _[Governance vote title] [unique identifier]:_
@@ -1057,9 +1046,6 @@ Once a proposal has successfully passed the phase 2 poll. A forum moderator will
 
 * The [average number of counted votes ](#average-votes-per-milestone-65)per milestone is the essential metric here because of the nature of the currently used voting system. The number of votes counted increases steadily with the time passed in a vote (every 10 seconds, new votes are added based on used tokens).
 
-![|624x320](upload://dtQbzDF2NUEzRoZE3S4KSX16ay2.png)
-
-
 
 
 * This makes average votes per milestone the only reasonable metric to follow here. It directly measures participation. Therefore shows us if a large number of voters are interested in executing an emergency decision. 
@@ -1201,7 +1187,6 @@ The exact definition of the participation event can be found here:  [https://git
 
 An example of how such an event file looks like is the event we used for the BUILD/BURN vote: \
 [https://github.com/iotaledger/participation-events/blob/master/events/vote/governance_01.json](https://github.com/iotaledger/participation-events/blob/master/events/vote/governance_01.json)
-![|624x199](upload://qDYJ7mdE4dzBLBJgPhXeZrMUW8A.png)
 
 
 
