@@ -10,7 +10,7 @@ A first draft version of this proposal was posted in this governance forum on Ma
 Since June 2022, this proposal has been publicly discussed in the IOTA community during the Governance calls in the IOTA Discord every Tuesday at 4 pm CEST and Thursday at 5 pm CEST. All meetings are recorded and available here on our [Youtube channel.](https://youtube.com/playlist?list=PL5joP0FyJQU4eKPWfQWradNVjMIPq86ID) 
 Further, several action meetings have happened that also took place in the public General-voice channel of the IOTA Discord. 
 
-The framework Google document that was publicly shared through Discord, Telegram, and Twitter in many different IOTA community channels and was used to collect input from the community can be found [here.](https://docs.google.com/document/d/1yRWmYlA9rCEzI9hLjeVzgPLsKkDt-KcISOz2G-LP2qw/edit?usp=sharing
+The framework Google document that was publicly shared through Discord, Telegram, and Twitter in many different IOTA community channels and was used to collect input from the community can be found [here](https://docs.google.com/document/d/1yRWmYlA9rCEzI9hLjeVzgPLsKkDt-KcISOz2G-LP2qw/edit?usp=sharing0
 
  
 ## **_TL: DR_**
