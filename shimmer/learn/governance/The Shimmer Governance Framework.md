@@ -1,6 +1,5 @@
 # **The Shimmer Governance Framework**
 
-![image|690x310](upload://icAkDGyDmy6ddOaOkVGaJpMOewI.jpeg)
 
 
 ### **Introduction**
@@ -49,57 +48,15 @@ This framework defines the governance process for [selected topics](#parameters-
 
 [4.3) Defining the stakeholders of the governance process](#h-_43-defining-the-stakeholders-of-the-governance-process_-12)
 
-- [Governance Forum members](#governance-forum-members-13)
-
-- [Governance Proposal submitter](#governance-proposal-submitter-phase-1-14)
-
-- [Governance Forum voters (phase 2)](#governance-forum-voters-phase-2-15)
-
-- [Firefly voters (phase 3)](#firefly-voters-phase-3-16)
-
-- [Governance Forum Moderators](#governance-forum-moderators-17)
-
-   - [Tasks and responsibilities](#tasks-and-responsibilities-18)
-
-- [Governance Forum admins](#governance-forum-admins-19)
-
 [4.4) Phase 1 - Discussion phase](h-44-phase-1-discussion-phase-20)
-
-- [Proposal Acceptance Requirements Phase 1](#proposal-acceptance-requirements-phase-1-21)
-
-- [Requirements for a phase 1 proposal to move forward in the process and become a phase 2 temperature check proposal](#requirements-for-a-phase-1-proposal-to-move-forward-in-the-process-and-become-a-phase-2-temperature-check-proposal-22)
-
-- [Requirements to close a proposal in phase 1](#requirements-to-close-a-proposal-in-phase-1-23)
 
 [4.5) Phase 2 - Temperature check phase](#h-_45-phase-2-temperature-check-phase_-24)
 
-- [Proposal Acceptance Requirements Phase 2](#proposal-acceptance-requirements-phase-2-25)
-
-- [Requirements to win a phase 2 poll in the forum and qualify to process to phase 3:](#requirements-to-win-a-phase-2-poll-in-the-forum-and-qualify-to-process-to-phase-3-26)
-
-- [Requirements to close a proposal in phase 2](#requirements-to-close-a-proposal-in-phase-2-27)
-
 [4.6) Phase 3 - Voting](#h-_46-phase-3-voting_-28)
-
-- [The announcement post in phase 3 uses this template](#the-announcement-forum-post-in-phase-3-uses-this-template-29)
-
-- [Proposal Acceptance Requirements Phase 3](#proposal-acceptance-requirements-phase-3-30)
-
-- [Requirements to win a phase 3 vote](#requirements-to-win-a-phase-3-vote-31)
 
 [4.7) Counter proposals](#h-_47-counter-proposals_-32)
 
-- [Conditions for the runoff poll:](#conditions-for-the-runoff-poll-33)
-
 [4.8) Seasons](#h-_48-seasons_-34)
-
-- [Purpose of the seasons](#purpose-of-the-seasons-35)
-
-- [Guaranteeing stability - Resubmital Delay](#guaranteeing-stability-resubmital-delay-36)
-
-- [Allowing flexible parameter change by soft consensus in phase 2](#allowing-flexible-parameter-change-by-soft-consensus-in-phase-2-37)
-
-- [Specification parameters under probation](#specification-parameters-under-probation-38)
 
 [4.9) Timing / Planning of proposals and votes](#h-_49-timing-planning-of-proposals-and-votes_-39)
 
@@ -107,27 +64,7 @@ This framework defines the governance process for [selected topics](#parameters-
 
 [4.11) Phase - 3 Emergency proposals](#h-_411-phase-3-emergency-proposals_-41)
 
-- [Acceptance Requirements Emergency proposals](7#acceptance-requirements-emergency-proposals-42)
-
-- [Requirements for a successful emergency move against a proposal](#requirements-for-a-successful-emergency-move-against-a-proposal-43)
-
 [4.12) Governance proposal template (phase 2 & 3 & emergency proposal)](#h-_412-governance-proposal-template-phase-2-3-emergency-proposal_-44)
-
-- [Unique identifier](#h-_unique-identifier_-45)
-
-- [Simple Summary](#h-_simple-summary_-46)
-
-- [Abstract](#h-_abstract_-47)
-
-- [Motivation](#h-_motivation_-48)
-
-- [Specification](#specification-49)
-
-- [Rationale](#h-_rationale_-50)
-
-- [Implementation](#h-_implementation_-51)
-
-- [Vote Name, question, answer, and optionally additional information](#h-_vote-name-question-answer-and-optionally-additional-information_-52)
 
 [4.13) Hosting of the specification in Github](#h-_413-hosting-of-the-specification-in-github_-53)
 
@@ -135,32 +72,9 @@ This framework defines the governance process for [selected topics](#parameters-
 
 [5.) Rationale:](#h-_5-rationale_-55)
 
-- [The reasoning behind the chosen metrics in the proposal process:](7#the-reasoning-behind-the-chosen-metrics-in-the-proposal-process-56)
-
-- [Here are some examples to clarify the principles used for the emergency proposal:](#here-are-some-examples-to-clarify-the-principles-used-for-the-emergency-proposal-57)
-
-- [Scenario 1](#scenario-1-58)
-
-
-- [Scenario 2](#scenario-2-59)
-
 [6.) Implementation](#h-_6-implementation_-60)
 
 [7.) Glossary](#h-7-glossary-61)
-
-- [Participation event](#participation-event-62)
-
-- [Simple Majority](#simple-majority-63)
-
-- [Maximum achievable votes](#maximum-achievable-votes-64)
-
-- [Average votes per milestone](#average-votes-per-milestone-65)
-
-- [Total supply / circulating supply](#total-supply-circulating-supply-66)
-
-- [Maximum supply](#maximum-supply-67)
-
-- [Proposal submitter](#proposal-submitter-68)
 
 [8.) Recommended readings, knowledge library](#h-8-recommended-readings-knowledge-library-69)
 
