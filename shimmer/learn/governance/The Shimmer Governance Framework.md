@@ -10,18 +10,7 @@ A first draft version of this proposal was posted in this governance forum on Ma
 Since June 2022, this proposal has been publicly discussed in the IOTA community during the Governance calls in the IOTA Discord every Tuesday at 4 pm CEST and Thursday at 5 pm CEST. All meetings are recorded and available here on our [Youtube channel.](https://youtube.com/playlist?list=PL5joP0FyJQU4eKPWfQWradNVjMIPq86ID) 
 Further, several action meetings have happened that also took place in the public General-voice channel of the IOTA Discord. 
 
-The framework Google document that was publicly shared through Discord, Telegram, and Twitter in many different IOTA community channels and was used to collect input from the community can be found [here.](https://docs.google.com/document/d/1yRWmYlA9rCEzI9hLjeVzgPLsKkDt-KcISOz2G-LP2qw/edit?usp=sharing)
-
-**With this post in the forum, we ask every community member to give a last round of input to this proposal and invite you to post any questions that may arise here in this topic thread so that we can answer and clarify them and come to a final version that has been reviewed by the community and agreed on.**
-
-The plan is to collect this last round of input from the community and then treat this proposal following the below-described process. 
-
-The final version will be published in this governance forum as a Phase 2 post. This Phase 2 post will also include a Poll to collect the community's sentiment. In this poll, the community would have seven days to signal support for the proposal. 
-
-If the Poll receives 100 supporting votes, this governance framework proposal will be implemented as a Phase 3 vote amongst all Shimmer token holders in Firefly as soon as possible once the Shimmer Mainnet is released.
-
-Please give this post a "**like :heart:**" at the bottom of the post if you think this proposal is useful to our community. Please add any questions or suggestions as comments to this post.
-
+The framework Google document that was publicly shared through Discord, Telegram, and Twitter in many different IOTA community channels and was used to collect input from the community can be found [here.](https://docs.google.com/document/d/1yRWmYlA9rCEzI9hLjeVzgPLsKkDt-KcISOz2G-LP2qw/edit?usp=sharing
 
  
 ## **_TL: DR_**
@@ -32,51 +21,49 @@ This framework defines the governance process for [selected topics](#parameters-
 **Table of contents**
 
 
-[1.) Simple summary:](#h-1-simple-summary-5)
+[1.) Simple summary:](https://github.com/iota-community/Shimmer-Governance/blob/main/The%20Shimmer%20Governance%20Framework.md#1-simple-summary)
 
-[2.) Abstract](#h-2-abstract-6)
+[2.) Abstract](https://github.com/iota-community/Shimmer-Governance/blob/main/The%20Shimmer%20Governance%20Framework.md#2-abstract)
 
-[3.) Motivation](#h-3-motivation-7)
+[3.) Motivation](https://github.com/iota-community/Shimmer-Governance/blob/main/The%20Shimmer%20Governance%20Framework.md#3-motivation)
 
-- [Parameters that are open for Community Governance in Shimmer](#parameters-that-are-open-for-community-governance-in-shimmer-8)
+[4.) Governance Specification](https://github.com/iota-community/Shimmer-Governance/blob/main/The%20Shimmer%20Governance%20Framework.md#4-governance-specification)
 
-[4.) Governance Specification](#h-4-governance-specification-9)
+[4.1) Proposal Lifecycle](https://github.com/iota-community/Shimmer-Governance/blob/main/The%20Shimmer%20Governance%20Framework.md#41-proposal-lifecycle)
 
-[4.1) Proposal Lifecycle](#h-41-proposal-lifecycle-10)
+[4.2) Shimmer Governance Framework Guiding Principles](https://github.com/iota-community/Shimmer-Governance/blob/main/The%20Shimmer%20Governance%20Framework.md#42-shimmer-governance-framework-guiding-principles)
 
-[4.2) Shimmer Governance Framework Guiding Principles](#h-_42-shimmer-governance-framework-guiding-principles_-11)
+[4.3) Defining the stakeholders of the governance process](https://github.com/iota-community/Shimmer-Governance/blob/main/The%20Shimmer%20Governance%20Framework.md#43-defining-the-stakeholders-of-the-governance-process)
 
-[4.3) Defining the stakeholders of the governance process](#h-_43-defining-the-stakeholders-of-the-governance-process_-12)
+[4.4) Phase 1 - Discussion phase](https://github.com/iota-community/Shimmer-Governance/blob/main/The%20Shimmer%20Governance%20Framework.md#44-phase-1---discussion-phase)
 
-[4.4) Phase 1 - Discussion phase](h-44-phase-1-discussion-phase-20)
+[4.5) Phase 2 - Temperature check phase](https://github.com/iota-community/Shimmer-Governance/blob/main/The%20Shimmer%20Governance%20Framework.md#45-phase-2---temperature-check-phase)
 
-[4.5) Phase 2 - Temperature check phase](#h-_45-phase-2-temperature-check-phase_-24)
+[4.6) Phase 3 - Voting](https://github.com/iota-community/Shimmer-Governance/blob/main/The%20Shimmer%20Governance%20Framework.md#46-phase-3---voting)
 
-[4.6) Phase 3 - Voting](#h-_46-phase-3-voting_-28)
+[4.7) Counter proposals](https://github.com/iota-community/Shimmer-Governance/blob/main/The%20Shimmer%20Governance%20Framework.md#47-counter-proposals)
 
-[4.7) Counter proposals](#h-_47-counter-proposals_-32)
+[4.8) Seasons](https://github.com/iota-community/Shimmer-Governance/blob/main/The%20Shimmer%20Governance%20Framework.md#48-seasons)
 
-[4.8) Seasons](#h-_48-seasons_-34)
+[4.9) Timing / Planning of proposals and votes](https://github.com/iota-community/Shimmer-Governance/blob/main/The%20Shimmer%20Governance%20Framework.md#49-timing--planning-of-proposals-and-votes)
 
-[4.9) Timing / Planning of proposals and votes](#h-_49-timing-planning-of-proposals-and-votes_-39)
+[4.10) Execution of a decision - cooldown period](https://github.com/iota-community/Shimmer-Governance/blob/main/The%20Shimmer%20Governance%20Framework.md#410-execution-of-a-decision---cooldown-period)
 
-[4.10) Execution of a decision - cooldown period](#h-_410-execution-of-a-decision-cooldown-period_-40)
+[4.11) Phase - 3 Emergency proposals](https://github.com/iota-community/Shimmer-Governance/blob/main/The%20Shimmer%20Governance%20Framework.md#411-phase---3-emergency-proposals)
 
-[4.11) Phase - 3 Emergency proposals](#h-_411-phase-3-emergency-proposals_-41)
+[4.12) Governance proposal template (phase 2 & 3 & emergency proposal)](https://github.com/iota-community/Shimmer-Governance/blob/main/The%20Shimmer%20Governance%20Framework.md#412-governance-proposal-template-phase-2--3--emergency-proposal)
 
-[4.12) Governance proposal template (phase 2 & 3 & emergency proposal)](#h-_412-governance-proposal-template-phase-2-3-emergency-proposal_-44)
+[4.13) Hosting of the specification in Github](https://github.com/iota-community/Shimmer-Governance/blob/main/The%20Shimmer%20Governance%20Framework.md#413-hosting-of-the-specification-in-github)
 
-[4.13) Hosting of the specification in Github](#h-_413-hosting-of-the-specification-in-github_-53)
+[4.14) Hosting of the participation events for Governance votes on GitHub](https://github.com/iota-community/Shimmer-Governance/blob/main/The%20Shimmer%20Governance%20Framework.md#414-hosting-of-the-participation-events-for-governance-votes-on-github)
 
-[4.14) Hosting of the participation events for Governance votes on GitHub](#h-_414-hosting-of-the-participation-events-for-governance-votes-on-github_-54)
+[5.) Rationale:](https://github.com/iota-community/Shimmer-Governance/blob/main/The%20Shimmer%20Governance%20Framework.md#5-rationale)
 
-[5.) Rationale:](#h-_5-rationale_-55)
+[6.) Implementation](https://github.com/iota-community/Shimmer-Governance/blob/main/The%20Shimmer%20Governance%20Framework.md#6-implementation)
 
-[6.) Implementation](#h-_6-implementation_-60)
+[7.) Glossary](https://github.com/iota-community/Shimmer-Governance/blob/main/The%20Shimmer%20Governance%20Framework.md#7-glossary)
 
-[7.) Glossary](#h-7-glossary-61)
-
-[8.) Recommended readings, knowledge library](#h-8-recommended-readings-knowledge-library-69)
+[8.) Recommended readings, knowledge library](https://github.com/iota-community/Shimmer-Governance/blob/main/The%20Shimmer%20Governance%20Framework.md#8-recommended-readings-knowledge-library)
 
 
 This proposal is written and structured following its proposed rules.
