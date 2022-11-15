@@ -21,6 +21,7 @@ import {
 } from '@site/src/common/icons';
 import CoreLibrariesSection from './CoreLibrariesSection';
 import AppLibrariesSection from './AppLibrariesSection';
+import FeaturedSlider from "../../FeaturedSlider";
 
 interface HomepageSectionProps {
   header?: string;
@@ -61,31 +62,7 @@ export default function HomeLayout() {
   return (
     <Layout description={siteConfig.tagline}>
       <div className='homepage'>
-        <HomepageSection className='homepage__section--intro'>
-          <div className='intro'>
-            <div className='intro__section'>
-              <h1 className='intro__header'>{siteConfig.tagline}</h1>
-              <p className='intro__description'>
-                Build apps capable of taking millions of users on journeys
-                they’ve never been on before. Simple. Scalable. Secure.
-              </p>
-              <div className='intro__buttons'>
-                <Link
-                  to='learn/about-iota/an-introduction-to-iota'
-                  className='intro__button button button--outline button--primary'
-                >
-                  Learn about IOTA
-                </Link>
-                <Link
-                  to='#core-libraries'
-                  className='intro__button button button--primary'
-                >
-                  Start building
-                </Link>
-              </div>
-            </div>
-          </div>
-        </HomepageSection>
+        <FeaturedSlider />
         <HomepageSection header='Use IOTA'>
           <div className='about__cards'>
             <Link

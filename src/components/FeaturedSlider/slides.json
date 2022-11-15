@@ -1,0 +1,34 @@
+[
+  {
+    "title": "The complete reference for IOTA",
+    "description": "Build apps capable of taking millions of users on journeys they’ve never been on before. Simple. Scalable. Secure.",
+    "outlinedButton": {
+      "buttonText": "Learn About IOTA",
+      "url": "/learn/about-iota/an-introduction-to-iota"
+    },
+    "solidButton": {
+      "buttonText": "Start building",
+      "url": "/develop/welcome"
+    },
+    "imagePath": "/img/homepage/header.svg"
+
+  },
+  {
+    "title": "Create an NFT with the Wallet Library",
+    "description": "Upload an image to IPFS anc create an NFT from the unique IPFS URL on the Shimmer testnet.",
+    "imagePath": "/img/homepage/resources_bot.svg",
+    "solidButton": {
+      "buttonText": "Start tutorial",
+      "url": "tutorials/create-nft-with-wallet-lib"
+    }
+  },
+  {
+    "title": "Set up a Testnet Wallet",
+    "description": "Create a new mnemonic seed phrase to set up a Stronghold account, generate a new address, request funds from the Shimmer testnet faucet, and check your account balance with the NodeJS binding of wallet.rs.",
+    "imagePath": "/img/homepage/smartcontracts_bot.svg",
+    "outlinedButton": {
+      "buttonText": "Start tutorial",
+      "url": "/tutorials/wallet-setup"
+    }
+  }
+]
