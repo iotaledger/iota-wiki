@@ -162,7 +162,7 @@ The NFT metadata follows [Tangle Improvement Proposal (TIP 27)](https://github.c
 
 ```javascript
 // This function creates NFT metadata and mints a new NFT
-async function mintNFT(itemName, ipfsCid, StrongholdAccount) {
+async function mintNFT(itemName, ipfsCid, strongholdAccount) {
   // Define NFT metadata
   const metadataObject = {
     standard: 'IRC27',
@@ -174,18 +174,61 @@ async function mintNFT(itemName, ipfsCid, StrongholdAccount) {
 
   const metadataBytes = utf8ToHex(JSON.stringify(metadataObject));
 
-  const response = await StrongholdAccount.mintNfts([
+  const response = await strongholdAccount.mintNfts([
     {
       immutableMetadata: metadataBytes,
     },
   ]);
 
-  console.log(consoleColor, `Your NFT was successfully minted in this block:`);
-  console.log(`${explorerURL}/block/${response.blockId}`, '\n');
+  const transactionId = response.transactionId;
+  console.log(consoleColor, `Wait for transaction confirmation:`);
+  console.log(`${explorerURL}/transaction/${transactionId}`, '\n');
+
+  // This makes sure the transaction, your NFT is minted in, is confirmed before you mint the next one
+  // The function checkInclusion() returns 'true' if the provided transaction has been confirmed
+  if (await checkInclusion(strongholdAccount, transactionId, 20)) {
+    console.log('\n');
+    console.log(
+      consoleColor,
+      `Your NFT was successfully minted in this block:`,
+    );
+    console.log(`${explorerURL}/block/${response.blockId}`, '\n');
+  }
 }
 ```
 
-#### 5. Main Script
+#### 5. Wait for confirmation
+
+The function `checkInclusion()` receives an unlocked Stronghold account, a transaction ID and a defined time period in seconds. It then checks every second, if the provided transaction has already been confirmed.
+
+```javascript
+// This function receives a transaction ID and the number of seconds you want to wait for confirmation
+// Returns 'true' when confirmed and 'false' when not confirmed within time period
+async function checkInclusion(strongholdAccount, transactionId, seconds) {
+  try {
+    for (let i = 1; i <= seconds; i++) {
+      strongholdAccount.sync();
+      let transactionObject = await strongholdAccount.getTransaction(
+        transactionId,
+      );
+      console.log(`Transaction ${transactionObject.inclusionState}`);
+
+      await new Promise((resolve) => setTimeout(resolve, 1000));
+
+      if (transactionObject.inclusionState === 'Confirmed') {
+        return true;
+      }
+    }
+
+    console.log(`Transaction was not confirmed within ${seconds} seconds.`);
+    return false;
+  } catch (error) {
+    console.log('Error: ', error);
+  }
+}
+```
+
+#### 6. Main Script
 
 This is the main function, which loads and unlocks a Stronghold account, triggers the IPFS upload and mints a NFT for every file provided in a list. In this case we will mint three NFTs (avatar, mask, weapon).
 
