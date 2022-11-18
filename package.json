@@ -13,8 +13,8 @@
     "build:iota": "ENVIRONMENT=iota docusaurus build --out-dir build",
     "build:shimmer": "ENVIRONMENT=shimmer docusaurus build --out-dir build/shimmer",
     "build:next": "ENVIRONMENT=next docusaurus build --out-dir build/next",
-    "build:all": "(CONTENT=\"*,*/*,*/*/*\"; yarn build)",
-    "build:production": "(MODE=\"production\" CONTENT=\"*,*/*,*/*/*\"; yarn build)",
+    "build:all": "(CONTENT=\"*,*/*,*/*/*\"; yarn checkout && yarn build)",
+    "build:production": "(MODE=\"production\" CONTENT=\"*,*/*,*/*/*\"; yarn checkout:remote && yarn build)",
     "swizzle": "docusaurus swizzle",
     "deploy": "docusaurus deploy",
     "clear": "docusaurus clear",
@@ -24,7 +24,9 @@
     "lint": "eslint --cache --fix src",
     "format": "prettier --write .",
     "format:svg": "svgo ./src/**/*.svg",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "checkout": "git submodule update --init --recursive",
+    "checkout:remote": "yarn checkout --remote"
   },
   "dependencies": {
     "@algolia/client-search": "^4.14.1",
