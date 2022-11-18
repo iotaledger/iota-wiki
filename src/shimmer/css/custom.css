@@ -1,5 +1,5 @@
-@import '@site/src/common/css/fonts.css';
-@import '@site/src/common/css/patches.css';
+@import '../../common/css/fonts.css';
+@import '../../common/css/patches.css';
 @import 'variables.css';
 
 html {
