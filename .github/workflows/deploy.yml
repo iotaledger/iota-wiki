@@ -30,7 +30,7 @@ jobs:
           yarn install
       - name: Build
         run: |
-          yarn build:all
+          yarn build:production
       - name: Release to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:

@@ -14,6 +14,7 @@
     "build:shimmer": "ENVIRONMENT=shimmer docusaurus build --out-dir build/shimmer",
     "build:next": "ENVIRONMENT=next docusaurus build --out-dir build/next",
     "build:all": "(CONTENT=\"*,*/*,*/*/*\"; yarn build)",
+    "build:production": "(MODE=\"production\" CONTENT=\"*,*/*,*/*/*\"; yarn build)",
     "swizzle": "docusaurus swizzle",
     "deploy": "docusaurus deploy",
     "clear": "docusaurus clear",
