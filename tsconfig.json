@@ -1,10 +1,8 @@
 {
   "extends": "@tsconfig/docusaurus/tsconfig.json",
   "compilerOptions": {
+    "baseUrl": ".",
     "resolveJsonModule": true,
-    "lib": ["DOM", "ES2015"],
-  },
-  "exclude": [
-    "iota/build/**/*",
-  ]
+    "lib": ["DOM", "ES2015"]
+  }
 }
