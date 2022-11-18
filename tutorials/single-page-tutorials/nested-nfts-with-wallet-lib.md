@@ -59,7 +59,7 @@ Afterward, your `package.json` file should contain the following dependencies:
 
 ### Prepare Images for your nested NFTs
 
-Add three images to your folder and make sure they are named correctly with `avatar.jpg`, `mask.jpg` and `weapon.jpg`. You can use the images below, or pick your own images as desired:
+Add three images to your folder and make sure they are named correctly with `avatar.png`, `mask.png` and `weapon.png`. You can use the images below, or pick your own images as desired:
 
 ![Warrior avatar](./images/warrior-avatar.png)
 ![Warrior mask](./images/warrior-mask.png)
@@ -137,7 +137,10 @@ async function uploadToIPFS(ipfsNode, filePath) {
     const contentIdentifier = fileAdded.path;
 
     console.log('\n');
-    console.log(consoleColor, `Your file was successfully uploaded to IPFS:`);
+    console.log(
+      consoleColor,
+      `Your file "${filePath}" was successfully uploaded to IPFS:`,
+    );
     console.log(`https://ipfs.io/ipfs/${contentIdentifier}`, '\n');
 
     return contentIdentifier;
@@ -203,7 +206,7 @@ async function main() {
 
     // This loop through the list of file names
     for (const item of items) {
-      let cid = await uploadToIPFS(ipfsNode, `${item}.jpg`);
+      let cid = await uploadToIPFS(ipfsNode, `${item}.png`);
       await mintNFT(item, cid, StrongholdAccount);
     }
   } catch (error) {
@@ -228,7 +231,7 @@ Start local IPFS node for upload:
 <IPFS-node-swarm-information>
 
 
-Your file "avatar.jpg" was successfully uploaded to IPFS:
+Your file "avatar.png" was successfully uploaded to IPFS:
 https://ipfs.io/ipfs/<ipfs-content-identifier>
 
 Your NFT was successfully minted in this block:
@@ -236,7 +239,7 @@ https://explorer.shimmer.network/testnet/block/<blockId>
 
 
 
-Your file "mask.jpg" was successfully uploaded to IPFS:
+Your file "mask.png" was successfully uploaded to IPFS:
 https://ipfs.io/ipfs/<ipfs-content-identifier>
 
 Your NFT was successfully minted in this block:
@@ -244,7 +247,7 @@ https://explorer.shimmer.network/testnet/block/<blockId>
 
 
 
-Your file "weapon.jpg" was successfully uploaded to IPFS:
+Your file "weapon.png" was successfully uploaded to IPFS:
 https://ipfs.io/ipfs/<ipfs-content-identifier>
 
 Your NFT was successfully minted in this block:
