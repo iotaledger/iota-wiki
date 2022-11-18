@@ -57,7 +57,7 @@ Add your desired `*.jpg` file to the `wallet-setup` folder you created and renam
 
 For this tutorial we'll use the following image:
 
-![NFT Image](./images/nft-image.jpg)
+![NFT Image](/nft-image.jpg)
 
 ---
 

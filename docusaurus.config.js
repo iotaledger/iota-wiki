@@ -4,7 +4,7 @@ const path = require('path');
 const { CONTENT = '', ENVIRONMENT = 'iota' } = process.env;
 
 const external = glob(CONTENT, path.join(ENVIRONMENT, 'external'));
-const tutorials = require('./tutorials/single-page-tutorials/docusaurus.config');
+const tutorials = require('./tutorials/docusaurus.config');
 const common = require('./common/docusaurus.config');
 const environment = require(`./${ENVIRONMENT}/docusaurus.config`);
 const production = {

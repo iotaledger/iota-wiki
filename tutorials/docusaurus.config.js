@@ -1,4 +1,3 @@
-// eslint-disable-next-line @typescript-eslint/no-var-requires
 const path = require('path');
 
 module.exports = {
@@ -7,9 +6,8 @@ module.exports = {
       '@docusaurus/plugin-content-pages',
       {
         id: 'single-page-tutorials',
-        path: __dirname,
+        path: path.resolve(__dirname, 'pages'),
         routeBasePath: '/tutorials',
-        include: ['**.{md, mdx}'],
       },
     ],
     [
@@ -202,5 +200,5 @@ module.exports = {
       },
     ],
   ],
-  staticDirectories: [path.resolve(__dirname, './images')],
+  staticDirectories: [path.resolve(__dirname, 'static')],
 };
