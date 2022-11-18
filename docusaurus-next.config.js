@@ -1,65 +1,15 @@
-// @ts-check
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-const content = require('./next/docusaurus.config');
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-const tutorials = require('./tutorials/single-page-tutorials/docusaurus.config');
-
-/** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
   title: 'Danger Zone',
   tagline: 'Unreleased documentation',
-  url: 'https://wiki.iota.org',
   baseUrl: '/next/',
   noIndex: true,
-  onBrokenLinks: 'log',
-  onBrokenMarkdownLinks: 'log',
-  favicon: 'img/favicon.ico',
-  trailingSlash: false,
-  organizationName: 'iota-wiki', // Usually your GitHub org/user name.
-  projectName: 'iota-wiki', // Usually your repo name.
-  stylesheets: [
-    'https://fonts.googleapis.com/css?family=Material+Icons',
-    {
-      href: 'https://cdn.jsdelivr.net/npm/katex@0.13.24/dist/katex.min.css',
-      type: 'text/css',
-      integrity:
-        'sha384-odtC+0UGzzFL/6PNoE8rX/SPcQDXBJ+uRepguP4QkPCm2LBxH3FA3y+fKSiJ+AmM',
-      crossorigin: 'anonymous',
-    },
-  ],
   themeConfig: {
-    /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     announcementBar: {
       id: 'next',
       content: '.',
       isCloseable: false,
     },
     image: 'img/shimmer-wiki.png',
-    algolia: {
-      appId: 'YTLE56KAO4',
-      apiKey: '75358d60d302f7f93f630d63128abb03',
-      indexName: 'iota',
-      contextualSearch: true,
-      searchParameters: {
-        facetFilters: ['environment:next'],
-      },
-    },
-    matomo: {
-      matomoUrl: 'https://matomo.iota-community.org/',
-      siteId: '13',
-    },
-    imageZoom: {
-      selector:
-        '.markdown :not(a) > img:not(.image-gallery-image):not(.image-gallery-thumbnail-image)',
-      // Optional medium-zoom options
-      // see: https://www.npmjs.com/package/medium-zoom#options
-      options: {
-        background: 'rgba(0, 0, 0, 0.6)',
-      },
-    },
-    prism: {
-      additionalLanguages: ['java', 'rust', 'solidity', 'toml'],
-    },
     navbar: {
       hideOnScroll: true,
       logo: {
@@ -220,14 +170,10 @@ module.exports = {
         backgroundColor: '#99A5BD',
       },
     ],
-    colorMode: {
-      defaultMode: 'dark',
-    },
   },
   presets: [
     [
       '@docusaurus/preset-classic',
-      /** @type {import('@docusaurus/preset-classic').Options} */
       {
         docs: false,
         blog: false,
@@ -245,9 +191,6 @@ module.exports = {
     ],
   ],
   plugins: [
-    'plugin-image-zoom',
-    'docusaurus-plugin-matomo',
-    '@docusaurus/plugin-ideal-image',
     [
       '@docusaurus/plugin-content-docs',
       {
@@ -316,19 +259,5 @@ module.exports = {
         showLastUpdateTime: true,
       },
     ],
-    [
-      '@docusaurus/plugin-content-pages',
-      {
-        id: 'common',
-        path: 'src/common/pages',
-      },
-    ],
-    ...content.plugins,
-    ...tutorials.plugins,
-  ],
-  staticDirectories: [
-    './static',
-    ...content.staticDirectories,
-    ...tutorials.staticDirectories,
   ],
 };
