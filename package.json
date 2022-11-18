@@ -36,6 +36,7 @@
     "@mdx-js/react": "^1.6.21",
     "@popperjs/core": "^2.11.5",
     "@svgr/webpack": "^5.5.0",
+    "callsite": "^1.0.0",
     "clsx": "^1.2.1",
     "docusaurus-plugin-matomo": "^0.0.5",
     "file-loader": "^6.2.0",
