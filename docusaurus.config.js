@@ -6,7 +6,7 @@ const { CONTENT = '', ENVIRONMENT = 'iota' } = process.env;
 const external = glob(CONTENT, path.join(ENVIRONMENT, 'external'));
 const tutorials = require('./tutorials/single-page-tutorials/docusaurus.config');
 const common = require('./docusaurus-common.config');
-const environment = require(`./docusaurus-${ENVIRONMENT}.config`);
+const environment = require(`./${ENVIRONMENT}/docusaurus.config`);
 const production = {
   themeConfig: {
     algolia: {

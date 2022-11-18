@@ -1,3 +1,5 @@
+const path = require('path');
+
 module.exports = {
   title: 'Danger Zone',
   tagline: 'Unreleased documentation',
@@ -178,14 +180,14 @@ module.exports = {
         docs: false,
         blog: false,
         theme: {
-          customCss: require.resolve('./src/next/css/custom.css'),
+          customCss: require.resolve('../src/next/css/custom.css'),
         },
         sitemap: {
           changefreq: 'daily',
           priority: 0.5,
         },
         pages: {
-          path: 'src/next/pages',
+          path: path.resolve(__dirname, '../src/next/pages'),
         },
       },
     ],
@@ -195,9 +197,9 @@ module.exports = {
       '@docusaurus/plugin-content-docs',
       {
         id: 'use',
-        path: 'next/use',
+        path: path.resolve(__dirname, 'use'),
         routeBasePath: 'use',
-        sidebarPath: require.resolve('./next/use/sidebars.ts'),
+        sidebarPath: require.resolve('./use/sidebars.ts'),
 
         // General config
         editUrl: 'https://github.com/iota-wiki/iota-wiki/edit/main/',
@@ -212,9 +214,9 @@ module.exports = {
       '@docusaurus/plugin-content-docs',
       {
         id: 'learn',
-        path: 'next/learn',
+        path: path.resolve(__dirname, 'learn'),
         routeBasePath: 'learn',
-        sidebarPath: require.resolve('./next/learn/sidebars.ts'),
+        sidebarPath: require.resolve('./learn/sidebars.ts'),
 
         // General config
         editUrl: 'https://github.com/iota-wiki/iota-wiki/edit/main/',
@@ -229,9 +231,9 @@ module.exports = {
       '@docusaurus/plugin-content-docs',
       {
         id: 'develop',
-        path: 'next/develop',
+        path: path.resolve(__dirname, 'develop'),
         routeBasePath: 'develop',
-        sidebarPath: require.resolve('./next/develop/sidebars.ts'),
+        sidebarPath: require.resolve('./develop/sidebars.ts'),
 
         // General config
         editUrl: 'https://github.com/iota-wiki/iota-wiki/edit/main/',
@@ -246,9 +248,9 @@ module.exports = {
       '@docusaurus/plugin-content-docs',
       {
         id: 'community',
-        path: 'next/community',
+        path: path.resolve(__dirname, 'community'),
         routeBasePath: 'community',
-        sidebarPath: require.resolve('./next/community/sidebars.ts'),
+        sidebarPath: require.resolve('./community/sidebars.ts'),
 
         // General config
         editUrl: 'https://github.com/iota-wiki/iota-wiki/edit/main/',

@@ -1,3 +1,5 @@
+const path = require('path');
+
 module.exports = {
   title: 'Shimmer Wiki',
   tagline: 'The complete reference for Shimmer',
@@ -172,14 +174,14 @@ module.exports = {
         docs: false,
         blog: false,
         theme: {
-          customCss: require.resolve('./src/shimmer/css/custom.css'),
+          customCss: require.resolve('../src/shimmer/css/custom.css'),
         },
         sitemap: {
           changefreq: 'daily',
           priority: 0.5,
         },
         pages: {
-          path: 'src/shimmer/pages',
+          path: path.resolve(__dirname, '../src/shimmer/pages'),
         },
       },
     ],
@@ -189,9 +191,9 @@ module.exports = {
       '@docusaurus/plugin-content-docs',
       {
         id: 'use',
-        path: 'shimmer/use',
+        path: path.resolve(__dirname, 'use'),
         routeBasePath: 'use',
-        sidebarPath: require.resolve('./shimmer/use/sidebars.ts'),
+        sidebarPath: require.resolve('./use/sidebars.ts'),
 
         // General config
         editUrl: 'https://github.com/iota-wiki/iota-wiki/edit/main/',
@@ -206,9 +208,9 @@ module.exports = {
       '@docusaurus/plugin-content-docs',
       {
         id: 'learn',
-        path: 'shimmer/learn',
+        path: path.resolve(__dirname, 'learn'),
         routeBasePath: 'learn',
-        sidebarPath: require.resolve('./shimmer/learn/sidebars.ts'),
+        sidebarPath: require.resolve('./learn/sidebars.ts'),
 
         // General config
         editUrl: 'https://github.com/iota-wiki/iota-wiki/edit/main/',
@@ -223,9 +225,9 @@ module.exports = {
       '@docusaurus/plugin-content-docs',
       {
         id: 'develop',
-        path: 'shimmer/develop',
+        path: path.resolve(__dirname, 'develop'),
         routeBasePath: 'develop',
-        sidebarPath: require.resolve('./shimmer/develop/sidebars.ts'),
+        sidebarPath: require.resolve('./develop/sidebars.ts'),
 
         // General config
         editUrl: 'https://github.com/iota-wiki/iota-wiki/edit/main/',
@@ -240,9 +242,9 @@ module.exports = {
       '@docusaurus/plugin-content-docs',
       {
         id: 'community',
-        path: 'shimmer/community',
+        path: path.resolve(__dirname, 'community'),
         routeBasePath: 'community',
-        sidebarPath: require.resolve('./shimmer/community/sidebars.ts'),
+        sidebarPath: require.resolve('./community/sidebars.ts'),
 
         // General config
         editUrl: 'https://github.com/iota-wiki/iota-wiki/edit/main/',

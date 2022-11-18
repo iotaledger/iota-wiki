@@ -1,3 +1,5 @@
+const path = require('path');
+
 module.exports = {
   title: 'IOTA Wiki',
   tagline: 'The complete reference for IOTA',
@@ -192,14 +194,14 @@ module.exports = {
         docs: false,
         blog: false,
         theme: {
-          customCss: require.resolve('./src/iota/css/custom.css'),
+          customCss: require.resolve('../src/iota/css/custom.css'),
         },
         sitemap: {
           changefreq: 'daily',
           priority: 0.5,
         },
         pages: {
-          path: 'src/iota/pages',
+          path: path.resolve(__dirname, '../src/iota/pages'),
         },
       },
     ],
@@ -209,9 +211,9 @@ module.exports = {
       '@docusaurus/plugin-content-docs',
       {
         id: 'use',
-        path: 'iota/use',
+        path: path.resolve(__dirname, 'use'),
         routeBasePath: 'use',
-        sidebarPath: require.resolve('./iota/use/sidebars.ts'),
+        sidebarPath: require.resolve('./use/sidebars.ts'),
 
         // General config
         editUrl: 'https://github.com/iota-wiki/iota-wiki/edit/main/',
@@ -226,9 +228,9 @@ module.exports = {
       '@docusaurus/plugin-content-docs',
       {
         id: 'learn',
-        path: 'iota/learn',
+        path: path.resolve(__dirname, 'learn'),
         routeBasePath: 'learn',
-        sidebarPath: require.resolve('./iota/learn/sidebars.ts'),
+        sidebarPath: require.resolve('./learn/sidebars.ts'),
 
         // General config
         editUrl: 'https://github.com/iota-wiki/iota-wiki/edit/main/',
@@ -243,9 +245,9 @@ module.exports = {
       '@docusaurus/plugin-content-docs',
       {
         id: 'develop',
-        path: 'iota/develop',
+        path: path.resolve(__dirname, 'develop'),
         routeBasePath: 'develop',
-        sidebarPath: require.resolve('./iota/develop/sidebars.ts'),
+        sidebarPath: require.resolve('./develop/sidebars.ts'),
 
         // General config
         editUrl: 'https://github.com/iota-wiki/iota-wiki/edit/main/',
@@ -260,9 +262,9 @@ module.exports = {
       '@docusaurus/plugin-content-docs',
       {
         id: 'community',
-        path: 'iota/community',
+        path: path.resolve(__dirname, 'community'),
         routeBasePath: 'community',
-        sidebarPath: require.resolve('./iota/community/sidebars.ts'),
+        sidebarPath: require.resolve('./community/sidebars.ts'),
 
         // General config
         editUrl: 'https://github.com/iota-wiki/iota-wiki/edit/main/',
