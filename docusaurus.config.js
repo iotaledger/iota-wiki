@@ -1,13 +1,19 @@
 const { glob, merge } = require('./src/utils/config');
 const path = require('path');
 
-const { CONTENT = '', ENVIRONMENT = 'iota' } = process.env;
+const {
+  CONTENT = '',
+  ENVIRONMENT = 'iota',
+  MODE = 'development',
+} = process.env;
+
+const isProduction = MODE === 'production';
 
 const external = glob(CONTENT, path.join(ENVIRONMENT, 'external'));
 const tutorials = require('./tutorials/docusaurus.config');
 const common = require('./common/docusaurus.config');
 const environment = require(`./${ENVIRONMENT}/docusaurus.config`);
-const production = {
+const search = {
   themeConfig: {
     algolia: {
       appId: 'YTLE56KAO4',
@@ -18,6 +24,10 @@ const production = {
         facetFilters: [`environment:${ENVIRONMENT}`],
       },
     },
+  },
+};
+const production = {
+  themeConfig: {
     matomo: {
       matomoUrl: 'https://matomo.iota-community.org/',
       siteId: '13',
@@ -26,4 +36,11 @@ const production = {
   plugins: ['docusaurus-plugin-matomo'],
 };
 
-module.exports = merge(...external, tutorials, common, environment, production);
+module.exports = merge(
+  ...external,
+  tutorials,
+  common,
+  environment,
+  search,
+  isProduction ? production : {},
+);
