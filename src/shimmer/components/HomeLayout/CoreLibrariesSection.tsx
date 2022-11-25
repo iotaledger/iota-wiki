@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import Link from '@docusaurus/Link';
-import { Shimmer, Wallet } from '../../../common/icons';
+import { Shimmer, Wallet } from '@site/src/common/icons';
 
 interface LanguagesProps {
   languages?: { [key: string]: string };

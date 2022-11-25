@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import Link from '@docusaurus/Link';
-import { SmartContracts, Stronghold } from '../../../common/icons';
+import { SmartContracts, Stronghold } from '@site/src/common/icons';
 
 interface LanguagesProps {
   languages?: { [key: string]: string };
