@@ -9,7 +9,7 @@ image: /img/iota-wiki.png
 
 ## The Wiki
 
-Articles for users belong either to the Learn or Participate spaces.
+Articles for users belong to the Learn space.
 
 ## Spaces and Subspaces
 
