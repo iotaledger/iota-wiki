@@ -6,7 +6,7 @@ import {
   Streams,
   Stronghold,
   Wallet,
-} from '../../../common/icons';
+} from '@site/src/common/icons';
 
 interface LanguagesProps {
   languages?: { [key: string]: string };

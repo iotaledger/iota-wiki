@@ -16,7 +16,7 @@ import {
   Tips,
   Tutorials,
   Wasp,
-} from '../../../common/icons';
+} from '@site/src/common/icons';
 import CoreLibrariesSection from './CoreLibrariesSection';
 import AppLibrariesSection from './AppLibrariesSection';
 
