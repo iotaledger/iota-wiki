@@ -249,14 +249,14 @@ module.exports = {
         docs: false,
         blog: false,
         theme: {
-          customCss: require.resolve('./src/css/iota/custom.css'),
+          customCss: require.resolve('./src/iota/css/custom.css'),
         },
         sitemap: {
           changefreq: 'daily',
           priority: 0.5,
         },
         pages: {
-          path: 'src/pages/iota',
+          path: 'src/iota/pages',
         },
       },
     ],
@@ -337,7 +337,7 @@ module.exports = {
       '@docusaurus/plugin-content-pages',
       {
         id: 'common',
-        path: 'src/pages/common',
+        path: 'src/common/pages',
       },
     ],
     ...content.plugins,

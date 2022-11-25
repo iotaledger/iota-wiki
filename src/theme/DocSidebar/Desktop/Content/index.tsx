@@ -13,7 +13,7 @@ import {
 } from '@docusaurus/theme-common/internal';
 import DocSidebarItems from '@theme/DocSidebarItems';
 import type { Props } from '@theme/DocSidebar/Desktop/Content';
-import VersionPicker from '@site/src/components/VersionPicker';
+import VersionPicker from '@site/src/common/components/VersionPicker';
 
 import styles from './styles.module.css';
 

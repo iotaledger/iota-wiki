@@ -14,7 +14,7 @@ import {
 import { useNavbarMobileSidebar } from '@docusaurus/theme-common/internal';
 import DocSidebarItems from '@theme/DocSidebarItems';
 import type { Props } from '@theme/DocSidebar/Mobile';
-import VersionPicker from '@site/src/components/VersionPicker';
+import VersionPicker from '@site/src/common/components/VersionPicker';
 
 // eslint-disable-next-line react/function-component-definition
 const DocSidebarMobileSecondaryMenu: NavbarSecondaryMenuComponent<Props> = ({
