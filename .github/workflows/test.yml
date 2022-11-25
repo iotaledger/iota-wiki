@@ -8,7 +8,6 @@ jobs:
   test:
     runs-on: ubuntu-latest
     env:
-      CONTENT: '*/*/*/documentation,*/*/*,*/*'
       NODE_OPTIONS: '--max-old-space-size=3072'
     steps:
       - uses: actions/checkout@v3
