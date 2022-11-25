@@ -20,12 +20,9 @@ jobs:
       - name: Allow modern Yarn
         run: |
           corepack enable
-      - name: Init and update submodules
-        run: |
-          git submodule update --init --recursive
       - name: Install dependencies
         run: |
           yarn install
       - name: Build
         run: |
-          yarn build
+          yarn build:all
