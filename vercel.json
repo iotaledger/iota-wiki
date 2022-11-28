@@ -1,0 +1,11 @@
+{
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/api"
+    }
+  ],
+  "outputDirectory": "build",
+  "cleanUrls": true,
+  "installCommand": "git submodule update --init --recursive && yarn install"
+}
