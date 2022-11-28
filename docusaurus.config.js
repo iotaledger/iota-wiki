@@ -36,10 +36,17 @@ const production = {
   plugins: ['docusaurus-plugin-matomo'],
 };
 const analytics = {
-  gtag: {
-    trackingID: 'G-KVB88SVNF8',
-    anonymizeIP: true,
-  },
+  presets: [
+    [
+      '@docusaurus/preset-classic',
+      {
+        gtag: {
+          trackingID: 'G-KVB88SVNF8',
+          anonymizeIP: true,
+        },
+      },
+    ],
+  ],
 };
 
 module.exports = merge(
