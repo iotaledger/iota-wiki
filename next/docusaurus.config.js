@@ -1,4 +1,5 @@
 const path = require('path');
+const googleAnalytics = require('../analytics.config');
 
 module.exports = {
   title: 'Danger Zone',
@@ -189,6 +190,7 @@ module.exports = {
         pages: {
           path: path.resolve(__dirname, '../src/next/pages'),
         },
+        ...googleAnalytics.analytics,
       },
     ],
   ],

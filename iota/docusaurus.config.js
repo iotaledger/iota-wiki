@@ -1,4 +1,5 @@
 const path = require('path');
+const googleAnalytics = require('../analytics.config');
 
 module.exports = {
   title: 'IOTA Wiki',
@@ -203,6 +204,7 @@ module.exports = {
         pages: {
           path: path.resolve(__dirname, '../src/iota/pages'),
         },
+        ...googleAnalytics.analytics,
       },
     ],
   ],

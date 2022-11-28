@@ -1,4 +1,5 @@
 const path = require('path');
+const googleAnalytics = require('../analytics.config');
 
 module.exports = {
   title: 'Shimmer Wiki',
@@ -183,6 +184,7 @@ module.exports = {
         pages: {
           path: path.resolve(__dirname, '../src/shimmer/pages'),
         },
+        ...googleAnalytics.analytics,
       },
     ],
   ],
