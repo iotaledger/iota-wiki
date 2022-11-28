@@ -1,7 +1,7 @@
-# Setup ShimmerEVM and run Solidity Smart Contract
+# Connect to Shimmer EVM Testnet and deploy a Solidity Smart Contract
 
 :::info
-In this tutorial, we will setup ShimmerEVM, connect Metamask to it, get funded and deploy a smart contract in Solidity.
+In this tutorial, we will connect to Shimmer EVM Testnet, connect Metamask to it, get funded and deploy a smart contract in Solidity.
 :::
 
 ## Prerequisites
@@ -9,7 +9,7 @@ In this tutorial, we will setup ShimmerEVM, connect Metamask to it, get funded a
 - [Metamask](https://metamask.io/) or any other wallet of your choice.
 - [Remix](https://remix-project.org/) or any other development environment of your choice.
 
-## Set Up ShimmerEVM
+## Connect to Shimmer EVM Testnet
 
 First, let's setup our Metamask with ShimmerEVM. For this exercise, we will use the testnet ShimmerEVM. You can find all endpoints [here](https://wiki.iota.org/shimmer/smart-contracts/guide/chains_and_nodes/testnet).
 
@@ -18,15 +18,15 @@ Add a new network on your Metamask, as shown below:
 - Network Name: `ShimmerEVM Testnet`
 - New RPC URL: `https://api.sc.testnet.shimmer.network/evm/jsonrpc`
 - Chain ID: `1076`
-- Currency Symbol: `SMR`
+- Currency Symbol: `RMS` (Can be anything you wish)
 
 ![Metamask Adding New Network](https://i.imgur.com/6pa6DcN.png "Metamask Adding New Network")
 
-Alternatively, you can setup your own ShimmerEVM and provide a custom URL, which might look something like: `https://api.sc.testnet.shimmer.network/chain/rms1prr4r7az8e46qhagz5atugjm6x0xrg27d84677e3lurg0s6s76jr59dw4ls/evm/jsonrpc` as well as your own custom Chain ID.
+Alternatively, you can setup your own EVM Smart Contract Chain on top of the Shimmer network and provide a custom URL, which might look something like: `https://api.sc.testnet.shimmer.network/chain/rms1prr4r7az8e46qhagz5atugjm6x0xrg27d84677e3lurg0s6s76jr59dw4ls/evm/jsonrpc` as well as your own custom Chain ID.
 
 Hit `Save` and wait for Metamask to connect to the network.
 
-At this point, our ShimmerEVM is setup on Metamask but we don't have any funds in it. So, let's try to get some.
+At this point, our Metamask wallet is connected to the Shimmer EVM Testnet, but we don't have any funds in it. So, let's try to get some.
 
 ## Get ShimmerEVM Account Funded
 Open [Wasp EVM Toolkit](https://toolkit.sc.testnet.shimmer.network/) and enter the chain address and your EVM address as shown below:
