@@ -36,11 +36,9 @@ const production = {
   plugins: ['docusaurus-plugin-matomo'],
 };
 const analytics = {
-  analytics: {
-    gtag: {
-      trackingID: 'G-KVB88SVNF8',
-      anonymizeIP: true,
-    },
+  gtag: {
+    trackingID: 'G-KVB88SVNF8',
+    anonymizeIP: true,
   },
 };
 
