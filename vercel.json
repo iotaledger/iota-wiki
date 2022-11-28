@@ -7,6 +7,6 @@
   ],
   "outputDirectory": "build",
   "cleanUrls": true,
-  "installCommand": "git submodule update --init --recursive && yarn install",
-  "buildCommand": "yarn build:all"
+  "installCommand": "yarn install",
+  "buildCommand": "yarn build:production"
 }
