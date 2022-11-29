@@ -1,12 +1,11 @@
 {
-  "rewrites": [
-    {
-      "source": "/(.*)",
-      "destination": "/api"
-    }
+  "routes": [
+    { "handle": "filesystem" },
+    { "src": "/shimmer/(.*)", "status": 404, "dest": "/shimmer/404.html" },
+    { "src": "/next/(.*)", "status": 404, "dest": "/next/404.html" },
+    { "src": "/(.*)", "status": 404, "dest": "/404.html" }
   ],
   "outputDirectory": "build",
-  "cleanUrls": true,
-  "installCommand": "git submodule update --init --recursive && yarn install",
-  "buildCommand": "yarn build:all"
+  "installCommand": "yarn install",
+  "buildCommand": "yarn build:production"
 }
