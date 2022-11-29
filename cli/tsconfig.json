@@ -3,15 +3,19 @@
     "target": "es2022",
     "module": "commonjs",
     "moduleResolution": "node",
-    "declaration": true,
-    "declarationMap": true,
+    "resolveJsonModule": true,
     "jsx": "react",
     "allowJs": true,
     "esModuleInterop": true,
-    "rootDir": "src",
+    "rootDir": "..",
     "outDir": "dist",
     "types": ["@docusaurus/theme-classic"],
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "paths": {
+      "@wiki/*": ["../src/*"],
+      "@cli/*": ["./src/*"],
+      "@site/*": ["../*"]
+    }
   },
-  "include": ["src"]
+  "include": ["./src", "../src/utils", "../tutorials/tags.json"]
 }

@@ -7,66 +7,73 @@
   "homepage": "https://github.com/iota-wiki/iota-wiki/cli",
   "bugs": "https://github.com/iota-wiki/iota-wiki/issues",
   "repository": "iota-wiki/iota-wiki",
-  "main": "dist/index.js",
+  "main": "dist/cli/src/index.js",
   "bin": {
-    "iota-wiki": "dist/index.js"
+    "iota-wiki": "dist/cli/src/index.js"
   },
   "scripts": {
     "clean": "rm -rf ./dist",
-    "build": "yarn build:ts && yarn build:copy",
-    "build:ts": "tsc --build",
-    "build:copy": "copyfiles -u 1 \"src/**/!(*.ts|*.js|*.tsx)\" dist",
+    "build": "tsc --build && tsc-alias && yarn copy",
+    "copy:internal": "copyfiles \"src/**/!(*.ts|*.js|*.tsx)\" dist/cli",
+    "copy:external": "copyfiles \"../src/common/css/**/!(*.ts|*.js|*.tsx)\" \"../src/common/icons/**/!(*.ts|*.js|*.tsx)\" \"../src/next/css/**/!(*.ts|*.js|*.tsx)\" dist/cli",
+    "copy": "yarn copy:internal && yarn copy:external",
     "watch": "nodemon --watch src --ext '*' --exec yarn build",
-    "format": "prettier --write .",
-    "lint": "eslint --cache --fix .",
-    "prepack": "yarn build",
-    "contribute": "yarn install && husky install"
+    "prepack": "yarn build"
   },
   "dependencies": {
     "@babel/generator": "^7.17.9",
     "@babel/parser": "^7.17.9",
     "@babel/types": "^7.17.0",
-    "@docusaurus/core": "^2.0.0-beta.20",
-    "@docusaurus/plugin-content-blog": "^2.0.0-beta.20",
-    "@docusaurus/plugin-content-docs": "^2.0.0-beta.20",
-    "@docusaurus/plugin-content-pages": "^2.0.0-beta.20",
-    "@docusaurus/theme-classic": "^2.0.0-beta.20",
+    "@docusaurus/core": "2.1.0",
+    "@docusaurus/plugin-content-blog": "2.1.0",
+    "@docusaurus/plugin-content-docs": "2.1.0",
+    "@docusaurus/plugin-content-pages": "2.1.0",
+    "@docusaurus/theme-classic": "2.1.0",
     "@iota-wiki/plugin-tutorial": "^1.0.4",
     "@yarnpkg/shell": "^3.2.0",
     "axios": "^0.26.1",
     "clipanion": "^3.2.0-rc.10",
     "ink": "^3.2.0",
-    "ink-multi-select": "^2.0.0",
+    "ink-multi-select": "2.0.0",
     "ink-select-input": "^4.2.1",
     "ink-spinner": "^4.0.3",
     "ink-text-input": "^4.0.3",
     "isomorphic-git": "^1.17.2",
     "plugin-image-zoom": "flexanalytics/plugin-image-zoom",
     "prettier": "2.6.0",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react": "17.0.2",
+    "react-dom": "17.0.2"
   },
   "devDependencies": {
+    "@docusaurus/module-type-aliases": "2.1.0",
+    "@tsconfig/docusaurus": "^1.0.6",
     "@types/babel__generator": "^7",
     "@types/copyfiles": "^2",
     "@types/node": "^16.9.4",
     "@types/prettier": "^2",
-    "@types/react": "^17",
-    "@types/react-dom": "^17",
-    "@typescript-eslint/eslint-plugin": "^5.16.0",
-    "@typescript-eslint/parser": "^5.16.0",
+    "@types/react": "17.0.2",
+    "@types/react-dom": "17.0.2",
     "copyfiles": "^2.4.1",
-    "eslint": "^7.32.0",
-    "eslint-config-prettier": "^8.5.0",
-    "eslint-plugin-react": "^7.29.4",
-    "lint-staged": ">=10",
     "nodemon": "^2.0.16",
-    "typescript": "^4.4.3"
+    "tsc-alias": "^1.7.1",
+    "typescript": "^4.5.4"
+  },
+  "peerDependencies": {
+    "@docusaurus/core": "*",
+    "@docusaurus/plugin-content-blog": "*",
+    "@docusaurus/plugin-content-docs": "*",
+    "@docusaurus/plugin-content-pages": "*",
+    "@docusaurus/theme-classic": "*",
+    "react": "*",
+    "react-dom": "*"
+  },
+  "resolutions": {
+    "@types/react": "17.0.2",
+    "@types/react-dom": "17.0.2"
   },
   "files": [
     "dist"
   ],
-  "types": "dist/index.d.ts",
   "packageManager": "yarn@3.2.0",
   "engines": {
     "node": ">=14.0.0"
