@@ -35,11 +35,13 @@ const production = {
   },
   plugins: [
     'docusaurus-plugin-matomo',
-    '@docusaurus/plugin-google-gtag',
-    {
-      trackingID: 'G-KVB88SVNF8',
-      anonymizeIP: true,
-    },
+    [
+      '@docusaurus/plugin-google-gtag',
+      {
+        trackingID: 'G-KVB88SVNF8',
+        anonymizeIP: true,
+      },
+    ],
   ],
 };
 
