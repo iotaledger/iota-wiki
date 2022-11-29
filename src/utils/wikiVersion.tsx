@@ -2,13 +2,13 @@ import {
   useDocsData,
   useVersions,
   useActiveDocContext,
-} from '@docusaurus/plugin-content-docs/client';
+} from '@docusaurus/plugin-content-docs/lib/client';
 import {
   ActiveDocContext,
   GlobalVersion,
   useAllDocsData,
   useLatestVersion,
-} from '@docusaurus/plugin-content-docs/client';
+} from '@docusaurus/plugin-content-docs/lib/client';
 import { useMemo } from 'react';
 
 function uniq<T>(arr: T[]): T[] {
