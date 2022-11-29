@@ -2,7 +2,7 @@ import { useCallback } from 'react';
 import {
   useDocsData,
   type GlobalVersion,
-} from '@docusaurus/plugin-content-docs/lib/client';
+} from '@docusaurus/plugin-content-docs/client';
 import { createStorageSlot } from './storageUtils';
 import { DocsVersionPersistence } from '@docusaurus/theme-common/src/utils/useThemeConfig';
 import useIsBrowser from '@docusaurus/useIsBrowser';

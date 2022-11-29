@@ -17,5 +17,5 @@
       "@site/*": ["../*"]
     }
   },
-  "include": ["./src", "../src/utils", "../tutorials/tags.json"]
+  "include": ["./src", "../src/utils/config.js"]
 }
