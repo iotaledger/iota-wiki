@@ -7,18 +7,26 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
         with:
-          node-version: '14.x'
+          node-version: 16
           registry-url: 'https://registry.npmjs.org'
-      - run: yarn
-      - run: yarn workspace @iota-community/iota-wiki-cli npm publish --access public
+          cache: 'yarn'
+      - name: Allow modern Yarn
+        run: |
+          corepack enable
+      - name: Install dependencies
+        run: |
+          yarn install
+      - name: Publish to NPM
+        run: yarn workspace @iota-community/iota-wiki-cli npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-      - uses: actions/setup-node@v2
+      - uses: actions/setup-node@v3
         with:
           registry-url: 'https://npm.pkg.github.com'
-      - run: yarn workspace @iota-community/iota-wiki-cli npm publish --access public
+      - name: Publish to GitHub
+        run: yarn workspace @iota-community/iota-wiki-cli npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
