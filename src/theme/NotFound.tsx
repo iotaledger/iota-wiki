@@ -63,7 +63,7 @@ export default function NotFound() {
               </h1>
               {possibleMatchingEntries.length > 0 ? (
                 <>
-                  <p>Maybe you were looking for these:</p>
+                  <p>It seems we could not find what you're looking for, but you may be interested in:</p>
                   <ul>
                     {possibleMatchingEntries.map((entry) => {
                       return (
