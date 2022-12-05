@@ -33,7 +33,16 @@ const production = {
       siteId: '13',
     },
   },
-  plugins: ['docusaurus-plugin-matomo'],
+  plugins: [
+    'docusaurus-plugin-matomo',
+    [
+      '@docusaurus/plugin-google-gtag',
+      {
+        trackingID: 'G-KVB88SVNF8',
+        anonymizeIP: true,
+      },
+    ],
+  ],
 };
 
 module.exports = merge(
