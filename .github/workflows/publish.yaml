@@ -1,17 +1,34 @@
 name: Publish
-on:
-  push:
-    tags:
-      - 'cli-*'
+on: push
 jobs:
-  build:
+  version-changed:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
           node-version: 16
-          registry-url: 'https://registry.npmjs.org'
+          cache: 'yarn'
+      - name: cli
+        id: cli
+        uses: EndBug/version-check@v2
+        with:
+          diff-search: true
+          file-name: ./cli/package.json
+    outputs:
+      cli: ${{ steps.cli.outputs.changed }}
+  publish-cli:
+    runs-on: ubuntu-latest
+    needs: version-changed
+    if: ${{ needs.version-changed.outputs.cli }}
+    env:
+      # Only set 'latest' tag when pushing to main
+      npm_config_tag: ${{ github.ref == 'refs/heads/main' && 'latest' || 'experimental' }}
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
           cache: 'yarn'
       - name: Allow modern Yarn
         run: |
@@ -19,10 +36,15 @@ jobs:
       - name: Install dependencies
         run: |
           yarn install
+      # Publish to NMP
+      - uses: actions/setup-node@v3
+        with:
+          registry-url: 'https://registry.npmjs.org'
       - name: Publish to NPM
         run: yarn workspace @iota-community/iota-wiki-cli npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      # Publish to GitHub
       - uses: actions/setup-node@v3
         with:
           registry-url: 'https://npm.pkg.github.com'
