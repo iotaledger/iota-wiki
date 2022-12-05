@@ -199,6 +199,25 @@ module.exports = {
         ],
       },
     ],
+    [
+      '@iota-wiki/plugin-tutorial',
+      {
+        title: 'Connect to Shimmer EVM Testnet and deploy a Solidity Smart Contract',
+        description:
+          'In this tutorial, we will connect to Shimmer EVM Testnet, connect Metamask to it, get funded and deploy a smart contract in Solidity.',
+        preview: 'connect-shimmerevm-testnet-and-deploy.png',
+        route: 'tutorials/shimmerevm-setup',
+        tags: [
+          'text',
+          'shimmer',
+          'shimmerevm',
+          'solidity',
+          'connect',
+          'jsonrpc',
+          'evm',
+        ],
+      },
+    ],
   ],
   staticDirectories: [path.resolve(__dirname, 'static')],
 };
