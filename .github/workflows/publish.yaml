@@ -40,10 +40,13 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           registry-url: 'https://registry.npmjs.org'
-      - name: Publish to NPM
-        run: yarn workspace @iota-community/iota-wiki-cli npm publish --access public
+      - name: Prepare .yarnrc
+        run: |
+           echo npmAuthToken: "$NODE_AUTH_TOKEN" >> ./.yarnrc.yml
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      - name: Publish to NPM
+        run: yarn workspace @iota-community/iota-wiki-cli npm publish --access public
       # Publish to GitHub
       - uses: actions/setup-node@v3
         with:
