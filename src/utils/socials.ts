@@ -7,7 +7,7 @@ import {
   LinkedIn,
   Instagram,
   Facebook,
-} from '../icons';
+} from '@site/src/common/icons';
 
 const map = [
   { name: 'Youtube', Icon: Youtube },
