@@ -43,7 +43,7 @@ jobs:
       - name: Publish to NPM
         run: yarn workspace @iota-community/iota-wiki-cli npm publish --access public
         env:
-          NPM_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
       # Publish to GitHub
       - uses: actions/setup-node@v3
         with:
