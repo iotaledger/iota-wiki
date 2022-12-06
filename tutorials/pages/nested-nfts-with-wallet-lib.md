@@ -6,7 +6,7 @@ In this tutorial you will create three NFTs on the Shimmer testnet. On Shimmer, 
 
 Let's imagine a game with avatars and items, which all are represented as unique NFTs on the Shimmer network. In this example it allows an avatar to not only hold items in-game, but its avatar NFT to also own its unique item NFTs directly on-DLT, in order to represent the dependencies between in-game components on the Shimmer network.
 
-![Blue Warrior](./images/warrior-blue.gif)
+![Blue Warrior](../static/warrior-blue.gif)
 
 ## Prerequisites
 
@@ -61,9 +61,9 @@ Afterward, your `package.json` file should contain the following dependencies:
 
 Add three images to your folder and make sure they are named correctly with `avatar.png`, `mask.png` and `weapon.png`. You can use the images below, or pick your own images as desired:
 
-![Warrior avatar](./images/warrior-avatar.png)
-![Warrior mask](./images/warrior-mask.png)
-![Warrior weapon](./images/warrior-weapon.png)
+![Warrior avatar](../static/warrior-avatar.png)
+![Warrior mask](../static/warrior-mask.png)
+![Warrior weapon](../static/warrior-weapon.png)
 
 ---
 
