@@ -89,7 +89,7 @@ const IPFS = require('ipfs-core');
 const fs = require('fs');
 
 // Environment variables
-require('dotenv').config({ path: './.env' });
+require('dotenv').config();
 const password = process.env.SH_PASSWORD;
 const accountName = process.env.ACCOUNT_NAME;
 
@@ -111,13 +111,9 @@ async function startIpfsNode() {
   console.log('\n');
   console.log(consoleColor, `Start local IPFS node for upload:`);
 
-  let node;
-  if (!node) {
-    node = await IPFS.create({
-      repo: `ipfs_node`,
-    });
-  }
-  return node;
+  return await IPFS.create({
+    repo: `ipfs_node`,
+  });
 }
 ```
 
@@ -255,7 +251,6 @@ async function main() {
   } catch (error) {
     console.log('Error: ', error);
   }
-  process.exit(0);
 }
 
 main();
@@ -376,7 +371,7 @@ We broke the code into separate snippets to help you understand it better. To ma
 const { AccountManager } = require('@iota/wallet');
 
 // Environment variables
-require('dotenv').config({ path: './.env' });
+require('dotenv').config();
 const password = process.env.SH_PASSWORD;
 const accountName = process.env.ACCOUNT_NAME;
 
@@ -414,7 +409,6 @@ The function `main()` loads and unlocks a Stronghold account and sends a NFT to 
   } catch (error) {
       console.log('Error: ', error);
   }
-  process.exit(0);
 }
 
 main();
