@@ -50,6 +50,7 @@ jobs:
         with:
           registry-url: 'https://npm.pkg.github.com'
       - name: Publish to GitHub
-        run: yarn workspace @iota-community/iota-wiki-cli npm publish --access public
+        run: |
+          yarn workspace @iota-community/iota-wiki-cli npm publish --access public
         env:
           YARN_NPM_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
