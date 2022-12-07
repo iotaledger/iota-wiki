@@ -1,0 +1,11 @@
+{
+  "routes": [
+    { "handle": "filesystem" },
+    { "src": "/shimmer/(.*)", "status": 404, "dest": "/shimmer/404.html" },
+    { "src": "/next/(.*)", "status": 404, "dest": "/next/404.html" },
+    { "src": "/(.*)", "status": 404, "dest": "/404.html" }
+  ],
+  "outputDirectory": "build",
+  "installCommand": "yarn install",
+  "buildCommand": "yarn build:production"
+}
