@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import React from 'react';
 import Translate, { translate } from '@docusaurus/Translate';
 import { PageMetadata } from '@docusaurus/theme-common';
@@ -61,15 +62,18 @@ export default function NotFound() {
                   Page Not Found
                 </Translate>
               </h1>
-              {possibleMatchingEntries.length > 0 ? (
+              {possibleMatchingEntries?.length > 0 ? (
                 <>
-                  <p>It seems we could not find what you're looking for, but you may be interested in:</p>
+                  <p>
+                    It seems we could not find what you're looking for, but you
+                    may be interested in:
+                  </p>
                   <ul>
                     {possibleMatchingEntries.map((entry) => {
                       return (
-                        <li key={entry.id}>
-                          <a title={entry.id} href={entry.path}>
-                            {entry.id}
+                        <li key={entry.path}>
+                          <a title={entry.path} href={entry.path}>
+                            {entry.path}
                           </a>
                         </li>
                       );
