@@ -5,7 +5,7 @@ module.exports = {
   onBrokenLinks: 'log',
   onBrokenMarkdownLinks: 'log',
   favicon: 'img/favicon.ico',
-  trailingSlash: false,
+  trailingSlash: true,
   organizationName: 'iota-wiki', // Usually your GitHub org/user name.
   projectName: 'iota-wiki', // Usually your repo name.
   stylesheets: [
