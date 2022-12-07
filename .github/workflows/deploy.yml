@@ -1,5 +1,7 @@
 name: deploy
-
+env:
+  VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+  VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
 on:
   workflow_dispatch:
   schedule:
@@ -21,17 +23,11 @@ jobs:
       - name: Allow modern Yarn
         run: |
           corepack enable
-      - name: Install dependencies
-        run: |
-          yarn install
-      - name: Build
-        run: |
-          yarn build:production
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./build
-          user_name: 'github-action[bot]'
-          user_email: 'github-action[bot]@noreply@github.com'
-          cname: wiki.iota.org
+      - name: Install Vercel CLI
+        run: npm install --global vercel@latest
+      - name: Pull Vercel Environment Information
+        run: vercel pull --yes --environment=preview --token=${{ secrets.VERCEL_TOKEN }}
+      - name: Build Project Artifacts
+        run: vercel build --token=${{ secrets.VERCEL_TOKEN }}
+      - name: Deploy Project Artifacts to Vercel
+        run: vercel deploy --prebuilt --token=${{ secrets.VERCEL_TOKEN }}
