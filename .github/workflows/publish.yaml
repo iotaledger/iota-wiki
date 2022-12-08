@@ -14,13 +14,14 @@ jobs:
         uses: EndBug/version-check@v2
         with:
           diff-search: true
+          assume-same-version: new
           file-name: ./cli/package.json
     outputs:
       cli: ${{ steps.cli.outputs.changed }}
   publish-cli:
     runs-on: ubuntu-latest
     needs: version-changed
-    if: ${{ needs.version-changed.outputs.cli }}
+    if: needs.version-changed.outputs.cli == 'true'
     env:
       # Only set 'latest' tag when pushing to main
       npm_config_tag: ${{ github.ref == 'refs/heads/main' && 'latest' || 'experimental' }}
