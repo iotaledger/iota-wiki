@@ -25,7 +25,7 @@
     "format": "prettier --write .",
     "format:svg": "svgo ./src/**/*.svg",
     "prepare": "husky install",
-    "checkout": "git submodule update --init --recursive",
+    "checkout": "git submodule update --init",
     "checkout:remote": "yarn checkout --remote"
   },
   "dependencies": {
