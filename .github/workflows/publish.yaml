@@ -25,7 +25,7 @@ jobs:
     env:
       # Only set 'latest' tag when pushing to main
       IS_MAIN: ${{ github.ref == 'refs/heads/main' }}
-      TAG: ${{ $IS_MAIN && 'latest' || 'experimental' }}
+      TAG: ${{ github.ref == 'refs/heads/main' && 'latest' || 'experimental' }}
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
