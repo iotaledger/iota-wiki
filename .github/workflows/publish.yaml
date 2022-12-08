@@ -41,7 +41,7 @@ jobs:
       - uses: actions/setup-node@v3
       - name: Publish to NPM
         run: |
-          yarn workspace @iota-community/iota-wiki-cli npm publish --access public --tag $TAG
+          yarn workspace @iota-wiki/cli npm publish --access public --tag $TAG
         env:
           YARN_NPM_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
           YARN_NPM_REGISTRY_SERVER: 'https://registry.npmjs.org'
@@ -49,7 +49,7 @@ jobs:
       - uses: actions/setup-node@v3
       - name: Publish to GitHub
         run: |
-          yarn workspace @iota-community/iota-wiki-cli npm publish --access public --tag $TAG
+          yarn workspace @iota-wiki/cli npm publish --access public --tag $TAG
         env:
           YARN_NPM_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           YARN_NPM_REGISTRY_SERVER: 'https://npm.pkg.github.com'

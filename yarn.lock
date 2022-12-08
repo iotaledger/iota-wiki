@@ -2840,9 +2840,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@iota-community/iota-wiki-cli@workspace:cli":
+"@iota-wiki/cli@workspace:cli":
   version: 0.0.0-use.local
-  resolution: "@iota-community/iota-wiki-cli@workspace:cli"
+  resolution: "@iota-wiki/cli@workspace:cli"
   dependencies:
     "@babel/generator": ^7.17.9
     "@babel/parser": ^7.17.9

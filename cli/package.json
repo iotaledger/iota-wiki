@@ -1,9 +1,9 @@
 {
-  "name": "@iota-community/iota-wiki-cli",
+  "name": "@iota-wiki/cli",
   "description": "A command line utility to manage Wiki content and preview content locally.",
   "author": "IOTA community",
   "license": "MIT",
-  "version": "2.0.0-beta.5",
+  "version": "2.0.0-beta.6",
   "homepage": "https://github.com/iota-wiki/iota-wiki/cli",
   "bugs": "https://github.com/iota-wiki/iota-wiki/issues",
   "repository": "iota-wiki/iota-wiki",

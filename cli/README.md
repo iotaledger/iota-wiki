@@ -14,7 +14,7 @@ A command line utility to manage Wiki content and preview content locally.
 ## Install
 
 ```bash
-yarn add @iota-community/iota-wiki-cli
+yarn add @iota-wiki/cli
 ```
 
 ## Use

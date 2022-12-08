@@ -19,4 +19,4 @@ jobs:
         run: |
           yarn install
       - name: Test
-        run: yarn workspace @iota-community/iota-wiki-cli pack --dry-run
+        run: yarn workspace @iota-wiki/cli pack --dry-run
