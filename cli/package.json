@@ -24,7 +24,7 @@
     "@babel/generator": "^7.17.9",
     "@babel/parser": "^7.17.9",
     "@babel/types": "^7.17.0",
-    "@docusaurus/core": "2.1.0",
+    "@docusaurus/core": "2.2.0",
     "@docusaurus/plugin-content-blog": "2.1.0",
     "@docusaurus/plugin-content-docs": "2.1.0",
     "@docusaurus/plugin-content-pages": "2.1.0",
