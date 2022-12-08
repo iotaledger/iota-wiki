@@ -27,7 +27,7 @@
     "@docusaurus/core": "2.1.0",
     "@docusaurus/plugin-content-blog": "2.1.0",
     "@docusaurus/plugin-content-docs": "2.1.0",
-    "@docusaurus/plugin-content-pages": "2.1.0",
+    "@docusaurus/plugin-content-pages": "2.2.0",
     "@docusaurus/theme-classic": "2.1.0",
     "@iota-wiki/plugin-tutorial": "^1.0.4",
     "@yarnpkg/shell": "^3.2.0",
