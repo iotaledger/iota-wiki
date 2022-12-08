@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "target": "es2022",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "jsx": "react",
+    "allowJs": true,
+    "esModuleInterop": true,
+    "rootDir": "..",
+    "outDir": "dist",
+    "types": ["@docusaurus/theme-classic"],
+    "skipLibCheck": true,
+    "paths": {
+      "@wiki/*": ["../src/*"],
+      "@cli/*": ["./src/*"],
+      "@site/*": ["../*"]
+    }
+  },
+  "include": ["./src", "../src/utils/config.js"]
+}

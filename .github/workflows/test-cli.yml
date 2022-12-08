@@ -1,0 +1,22 @@
+name: test-cli
+on:
+  pull_request:
+    branches: [main]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          registry-url: 'https://registry.npmjs.org'
+          cache: 'yarn'
+      - name: Allow modern Yarn
+        run: |
+          corepack enable
+      - name: Install dependencies
+        run: |
+          yarn install
+      - name: Test
+        run: yarn workspace @iota-wiki/cli pack --dry-run
