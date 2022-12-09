@@ -524,7 +524,7 @@ To initiate an idea's discussion and decision-making process, a [forum moderator
 The [Governance Proposal submitter](#governance-proposal-submitter) feels confident that the proposal includes everything he or she deems necessary. Hence, a solid and specified proposal has been developed, considering suggestions and refinements raised in phase 1. The proposal is structured using the provided [governance proposal template](https://docs.google.com/document/d/1EDfwbxR3vxOisdLcZOCriHc3Lxhj5mHd2GTPzt7LWd4/edit?usp=sharing) which is implemented as a preconfigured template for all posts in the [Phase 2] - Temperature check subcategory. The submission contains a 7-day lasting Poll conducted by the [Governance Forum voters](#governance-forum-voters-phase-2-15). If the poll receives enough engagement, it signals support and confidence that the community wants to do a public vote on the manner, which will then be part of the following phase 3.
 
 
-Phase 2 polls are non-binding decisions and only show sentiment in the community that allows distinguishing if a topic receives enough support to justify a vote in Firefly. All changes to the Shimmer protocol will require a decision by all IOTA token holders in a phase 3 vote in Firefly.
+Phase 2 polls are non-binding decisions and only show sentiment in the community that allows distinguishing if a topic receives enough support to justify a vote in Firefly. All changes to the Shimmer protocol will require a decision by all Shimmer token holders in a phase 3 vote in Firefly.
 
 
 ##### **Proposal Acceptance Requirements Phase 2:**
