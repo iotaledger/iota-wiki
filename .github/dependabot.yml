@@ -2,14 +2,9 @@ version: 2
 updates:
   - package-ecosystem: 'npm'
     versioning-strategy: increase
-    directory: '/cli'
+    directory: '/'
     schedule:
       interval: 'monthly'
-    labels:
-      - 'dependencies'
-    open-pull-requests-limit: 100
-    pull-request-branch-name:
-      separator: '-'
     ignore:
       - dependency-name: 'fs-extra'
       - dependency-name: '*'
