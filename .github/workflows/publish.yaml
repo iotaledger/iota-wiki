@@ -101,7 +101,6 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 16
-          cache: 'yarn'
       - name: Allow modern Yarn
         run: |
           corepack enable
@@ -129,7 +128,6 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 16
-          cache: 'yarn'
       - name: Allow modern Yarn
         run: |
           corepack enable
