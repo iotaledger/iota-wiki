@@ -212,7 +212,8 @@ module.exports = {
           'shimmer',
           'solidity',
           'getting-started',
-          'wasp'
+          'wasp',
+          'iscp'
         ],
       },
     ],
