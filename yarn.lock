@@ -2847,20 +2847,11 @@ __metadata:
     "@babel/generator": ^7.17.9
     "@babel/parser": ^7.17.9
     "@babel/types": ^7.17.0
-    "@docusaurus/core": 2.1.0
-    "@docusaurus/module-type-aliases": 2.1.0
-    "@docusaurus/plugin-content-blog": 2.1.0
-    "@docusaurus/plugin-content-docs": 2.1.0
-    "@docusaurus/plugin-content-pages": 2.1.0
-    "@docusaurus/theme-classic": 2.1.0
-    "@iota-wiki/plugin-tutorial": ^1.0.4
-    "@tsconfig/docusaurus": ^1.0.6
+    "@iota-wiki/core": "workspace:^"
     "@types/babel__generator": ^7
     "@types/copyfiles": ^2
     "@types/node": ^16.9.4
     "@types/prettier": ^2
-    "@types/react": 17.0.2
-    "@types/react-dom": 17.0.2
     "@yarnpkg/shell": ^3.2.0
     axios: ^0.26.1
     clipanion: ^3.2.0-rc.10
@@ -2872,26 +2863,73 @@ __metadata:
     ink-text-input: ^4.0.3
     isomorphic-git: ^1.17.2
     nodemon: ^2.0.16
-    plugin-image-zoom: flexanalytics/plugin-image-zoom
     prettier: 2.6.0
-    react: 17.0.2
-    react-dom: 17.0.2
     tsc-alias: ^1.7.1
-    typescript: ^4.5.4
   peerDependencies:
-    "@docusaurus/core": "*"
-    "@docusaurus/plugin-content-blog": "*"
-    "@docusaurus/plugin-content-docs": "*"
-    "@docusaurus/plugin-content-pages": "*"
-    "@docusaurus/theme-classic": "*"
     react: "*"
     react-dom: "*"
+    typescript: "*"
   bin:
     iota-wiki: dist/cli/src/index.js
   languageName: unknown
   linkType: soft
 
-"@iota-wiki/plugin-tutorial@npm:^1.0.4, @iota-wiki/plugin-tutorial@npm:^1.0.6":
+"@iota-wiki/core@workspace:., @iota-wiki/core@workspace:^":
+  version: 0.0.0-use.local
+  resolution: "@iota-wiki/core@workspace:."
+  dependencies:
+    "@algolia/client-search": ^4.14.1
+    "@docusaurus/core": 2.1.0
+    "@docusaurus/module-type-aliases": 2.1.0
+    "@docusaurus/plugin-client-redirects": 2.1.0
+    "@docusaurus/plugin-google-gtag": ^2.2.0
+    "@docusaurus/plugin-ideal-image": 2.1.0
+    "@docusaurus/preset-classic": 2.1.0
+    "@iota-wiki/plugin-tutorial": ^1.0.6
+    "@mdx-js/react": ^1.6.21
+    "@popperjs/core": ^2.11.5
+    "@svgr/webpack": ^5.5.0
+    "@tsconfig/docusaurus": ^1.0.6
+    "@types/react": 17.0.2
+    "@types/react-dom": 17.0.2
+    "@types/webpack-env": ^1.16.3
+    "@typescript-eslint/eslint-plugin": ^5.9.1
+    "@typescript-eslint/parser": ^5.9.1
+    callsite: ^1.0.0
+    clsx: ^1.2.1
+    docusaurus-plugin-matomo: ^0.0.5
+    eslint: ^8.6.0
+    eslint-config-prettier: ^8.3.0
+    eslint-plugin-react: ^7.26.0
+    eslint-plugin-react-hooks: ^4.2.0
+    file-loader: ^6.2.0
+    hast-util-is-element: 1.1.0
+    husky: ">=6"
+    lint-staged: ">=10"
+    plugin-image-zoom: flexanalytics/plugin-image-zoom
+    prettier: ^2.4.1
+    raw-loader: ^4.0.2
+    react: 17.0.2
+    react-collapsible: ^2.8.4
+    react-dom: 17.0.2
+    react-image-gallery: ^1.2.7
+    react-player: ^2.9.0
+    react-popper: ^2.3.0
+    react-select: ^5.2.2
+    rehype-katex: 4
+    remark-code-import: ^0.3.0
+    remark-import-partial: ^0.0.2
+    remark-math: ^3.0.1
+    remark-remove-comments: ^0.2.0
+    require-glob: ^4.1.0
+    svgo: ^2.8.0
+    typescript: ^4.5.4
+    url-loader: ^4.1.1
+    webpack: ^5.73.0
+  languageName: unknown
+  linkType: soft
+
+"@iota-wiki/plugin-tutorial@npm:^1.0.6":
   version: 1.0.6
   resolution: "@iota-wiki/plugin-tutorial@npm:1.0.6"
   dependencies:
@@ -8391,61 +8429,6 @@ __metadata:
   checksum: cc3182d793aad82a8d1f0af697b462939cb46066ec48bbf1707c150ad5fad6406137e91a262022c269702e01621f35ef60269f6c0d7fd178487959809acdfb14
   languageName: node
   linkType: hard
-
-"iota-wiki@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "iota-wiki@workspace:."
-  dependencies:
-    "@algolia/client-search": ^4.14.1
-    "@docusaurus/core": 2.1.0
-    "@docusaurus/module-type-aliases": 2.1.0
-    "@docusaurus/plugin-client-redirects": 2.1.0
-    "@docusaurus/plugin-google-gtag": ^2.2.0
-    "@docusaurus/plugin-ideal-image": 2.1.0
-    "@docusaurus/preset-classic": 2.1.0
-    "@iota-wiki/plugin-tutorial": ^1.0.6
-    "@mdx-js/react": ^1.6.21
-    "@popperjs/core": ^2.11.5
-    "@svgr/webpack": ^5.5.0
-    "@tsconfig/docusaurus": ^1.0.6
-    "@types/react": 17.0.2
-    "@types/react-dom": 17.0.2
-    "@types/webpack-env": ^1.16.3
-    "@typescript-eslint/eslint-plugin": ^5.9.1
-    "@typescript-eslint/parser": ^5.9.1
-    callsite: ^1.0.0
-    clsx: ^1.2.1
-    docusaurus-plugin-matomo: ^0.0.5
-    eslint: ^8.6.0
-    eslint-config-prettier: ^8.3.0
-    eslint-plugin-react: ^7.26.0
-    eslint-plugin-react-hooks: ^4.2.0
-    file-loader: ^6.2.0
-    hast-util-is-element: 1.1.0
-    husky: ">=6"
-    lint-staged: ">=10"
-    plugin-image-zoom: flexanalytics/plugin-image-zoom
-    prettier: ^2.4.1
-    raw-loader: ^4.0.2
-    react: 17.0.2
-    react-collapsible: ^2.8.4
-    react-dom: 17.0.2
-    react-image-gallery: ^1.2.7
-    react-player: ^2.9.0
-    react-popper: ^2.3.0
-    react-select: ^5.2.2
-    rehype-katex: 4
-    remark-code-import: ^0.3.0
-    remark-import-partial: ^0.0.2
-    remark-math: ^3.0.1
-    remark-remove-comments: ^0.2.0
-    require-glob: ^4.1.0
-    svgo: ^2.8.0
-    typescript: ^4.5.4
-    url-loader: ^4.1.1
-    webpack: ^5.73.0
-  languageName: unknown
-  linkType: soft
 
 "ip@npm:^2.0.0":
   version: 2.0.0
