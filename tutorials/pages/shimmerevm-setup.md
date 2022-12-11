@@ -40,7 +40,7 @@ Now, open [remix ide](https://remix.ethereum.org/) or your favourite IDE and let
 
 ## Deploy Solidity Smart Contract
 Here's a sample solidity smart contract that we will be deploying:
-```solidity=
+```solidity
 // SPDX-License-Identifier: GPL-3.0
 pragma solidity >=0.7.0 <0.9.0;
 contract Storage {

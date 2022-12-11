@@ -210,11 +210,9 @@ module.exports = {
         tags: [
           'text',
           'shimmer',
-          'shimmerevm',
           'solidity',
-          'connect',
-          'jsonrpc',
-          'evm',
+          'getting-started',
+          'wasp'
         ],
       },
     ],
