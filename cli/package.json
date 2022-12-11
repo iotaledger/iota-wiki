@@ -22,7 +22,7 @@
   },
   "dependencies": {
     "@babel/generator": "^7.17.9",
-    "@babel/parser": "^7.17.9",
+    "@babel/parser": "^7.20.5",
     "@babel/types": "^7.17.0",
     "@iota-wiki/core": "workspace:^",
     "@yarnpkg/shell": "^3.2.0",
