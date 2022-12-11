@@ -228,6 +228,7 @@ module.exports = {
         path: path.resolve(__dirname, 'develop'),
         routeBasePath: 'develop',
         sidebarPath: require.resolve('./develop/sidebars.ts'),
+        docItemComponent: "@theme/ApiItem",
 
         // General config
         editUrl: 'https://github.com/iota-wiki/iota-wiki/edit/main/',
