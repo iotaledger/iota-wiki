@@ -238,5 +238,21 @@ module.exports = {
         showLastUpdateTime: true,
       },
     ],
+    [
+      'docusaurus-plugin-openapi-docs',
+      {
+        id: "openapi",
+        docsPluginId: "develop", // e.g. "classic" or the plugin-content-docs id
+        config: {
+          core_rest_api: {
+            specPath: "https://raw.githubusercontent.com/iotaledger/tips/main/tips/TIP-0025/core-rest-api.yaml",
+            outputDir: path.resolve(__dirname, 'develop/nodes/core-rest-api'),
+            sidebarOptions: {
+              groupPathsBy: "tag",
+            },
+          }
+        }
+      },
+    ],
   ],
 };
