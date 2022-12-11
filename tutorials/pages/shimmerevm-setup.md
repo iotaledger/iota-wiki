@@ -34,7 +34,7 @@ At this point, our Metamask wallet is connected to the Shimmer EVM Testnet, but 
 Open [Wasp EVM Toolkit](https://toolkit.sc.testnet.shimmer.network/) and enter the chain address and your EVM address as shown below:
 ![Wasm EVM Toolkit](https://i.imgur.com/fb2Ugfd.png "Wasm EVM Toolkit")
 
-In case, you've setup a custom ShimmerEVM, you'd need to edit the Chain Address as well. Please add your own chain address and select the relevant network.
+In case, you've setup a custom EVM chain, you'd need to edit the Chain Address as well. Please add your own chain address and select the relevant network.
 
 Once you're done, click on `Send funds` and wait for a few minutes for the faucet to process. You should start seeing some funds on your Metamask wallet soon.
 
