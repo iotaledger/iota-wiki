@@ -36,7 +36,7 @@ In case, you've setup a custom ShimmerEVM, you'd need to edit the Chain Address 
 
 Once you're done, click on `Send funds` and wait for a few minutes for the faucet to process. You should start seeing some funds on your Metamask wallet soon.
 
-Now, open [remix ide](https://remix.ethereum.org/) or your favourite IDE and let's try to deploy a solidity smart contract.
+Now, open [Remix ide](https://remix.ethereum.org/) or your favourite IDE and let's try to deploy a solidity smart contract.
 
 ## Deploy Solidity Smart Contract
 Here's a sample solidity smart contract that we will be deploying:
