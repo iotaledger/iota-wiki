@@ -43,7 +43,7 @@
     "@types/prettier": "^2",
     "copyfiles": "^2.4.1",
     "nodemon": "^2.0.16",
-    "tsc-alias": "^1.7.1"
+    "tsc-alias": "^1.8.2"
   },
   "peerDependencies": {
     "react": "*",
