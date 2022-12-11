@@ -33,7 +33,7 @@
     "ink-select-input": "^4.2.1",
     "ink-spinner": "^4.0.3",
     "ink-text-input": "^4.0.3",
-    "isomorphic-git": "^1.17.2",
+    "isomorphic-git": "^1.21.0",
     "prettier": "2.6.0"
   },
   "devDependencies": {
