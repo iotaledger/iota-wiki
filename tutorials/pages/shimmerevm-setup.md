@@ -66,5 +66,7 @@ Then, click on Deploy and confirm the Metamask transaction as shown below:
 
 And voila—it's done!
 :::info
+
 Feel free to play around and reach out to us on [discord](https://discord.shimmer.network/) on `#evm-contracts-dev` in case you're facing any issues.
+
 :::
