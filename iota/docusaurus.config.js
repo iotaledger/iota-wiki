@@ -265,9 +265,9 @@ module.exports = {
         id: "openapi",
         docsPluginId: "develop", // e.g. "classic" or the plugin-content-docs id
         config: {
-          core_api: {
+          rest_api: {
             specPath: "https://raw.githubusercontent.com/iotaledger/tips/main/tips/TIP-0013/rest-api.yaml",
-            outputDir: path.resolve(__dirname, 'develop/nodes/core-api'),
+            outputDir: path.resolve(__dirname, 'develop/nodes/rest-api'),
             sidebarOptions: {
               groupPathsBy: "tag",
             },
