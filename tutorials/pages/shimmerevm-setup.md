@@ -1,7 +1,9 @@
 # Connect to Shimmer EVM Testnet and deploy a Solidity Smart Contract
 
 :::info
+
 In this tutorial, we will connect to Shimmer EVM Testnet, connect Metamask to it, get funded and deploy a smart contract in Solidity.
+
 :::
 
 ## Prerequisites
