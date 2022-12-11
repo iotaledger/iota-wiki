@@ -30,7 +30,7 @@ Hit `Save` and wait for Metamask to connect to the network.
 
 At this point, our Metamask wallet is connected to the Shimmer EVM Testnet, but we don't have any funds in it. So, let's try to get some.
 
-## Get ShimmerEVM Account Funded
+## Get EVM Account Funded
 Open [Wasp EVM Toolkit](https://toolkit.sc.testnet.shimmer.network/) and enter the chain address and your EVM address as shown below:
 ![Wasm EVM Toolkit](https://i.imgur.com/fb2Ugfd.png "Wasm EVM Toolkit")
 
