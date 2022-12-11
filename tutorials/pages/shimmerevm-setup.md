@@ -11,7 +11,7 @@ In this tutorial, we will connect to Shimmer EVM Testnet, connect Metamask to it
 
 ## Connect to Shimmer EVM Testnet
 
-First, let's setup our Metamask with ShimmerEVM. For this exercise, we will use the testnet ShimmerEVM. You can find all endpoints [here](https://wiki.iota.org/shimmer/smart-contracts/guide/chains_and_nodes/testnet).
+First, let's setup our Metamask with the EVM. For this exercise, we will use the testnet EVM chain. You can find all endpoints [here](https://wiki.iota.org/shimmer/smart-contracts/guide/chains_and_nodes/testnet).
 
 Add a new network on your Metamask, as shown below:
 
