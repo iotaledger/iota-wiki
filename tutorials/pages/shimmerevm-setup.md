@@ -17,7 +17,7 @@ First, let's setup our Metamask with the EVM. For this exercise, we will use the
 
 Add a new network on your Metamask, as shown below:
 
-- Network Name: `ShimmerEVM Testnet`
+- Network Name: `Shimmer EVM Testnet`
 - New RPC URL: `https://api.sc.testnet.shimmer.network/evm/jsonrpc`
 - Chain ID: `1076`
 - Currency Symbol: `RMS` (Can be anything you wish)
