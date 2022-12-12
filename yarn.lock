@@ -1951,7 +1951,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@docusaurus/plugin-google-gtag@npm:2.2.0, @docusaurus/plugin-google-gtag@npm:^2.2.0":
+"@docusaurus/plugin-google-gtag@npm:2.2.0":
   version: 2.2.0
   resolution: "@docusaurus/plugin-google-gtag@npm:2.2.0"
   dependencies:
@@ -2493,7 +2493,7 @@ __metadata:
     "@docusaurus/core": 2.2.0
     "@docusaurus/module-type-aliases": 2.2.0
     "@docusaurus/plugin-client-redirects": 2.2.0
-    "@docusaurus/plugin-google-gtag": ^2.2.0
+    "@docusaurus/plugin-google-gtag": 2.2.0
     "@docusaurus/plugin-ideal-image": 2.2.0
     "@docusaurus/preset-classic": 2.2.0
     "@iota-wiki/plugin-tutorial": ^1.0.6
