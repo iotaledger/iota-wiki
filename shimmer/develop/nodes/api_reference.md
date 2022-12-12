@@ -10,7 +10,7 @@ keywords:
 - Reference
 ---
 
-# API Reference
+# Introduction
 
 You can find specifications for the Core REST API for the IOTA node software in the [next](../core-rest-api/iota-rest-api) section.
 
