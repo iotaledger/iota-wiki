@@ -2903,6 +2903,8 @@ __metadata:
     eslint-plugin-react: ^7.26.0
     eslint-plugin-react-hooks: ^4.2.0
     file-loader: ^6.2.0
+    flickity: 2.3.0
+    flickity-fade: ^2.0.0
     hast-util-is-element: 1.1.0
     husky: ">=6"
     lint-staged: ">=10"
@@ -2912,6 +2914,7 @@ __metadata:
     react: 17.0.2
     react-collapsible: ^2.8.4
     react-dom: 17.0.2
+    react-flickity-component: ^3.6.3
     react-image-gallery: ^1.2.7
     react-player: ^2.9.0
     react-popper: ^2.3.0
@@ -6222,6 +6225,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"desandro-matches-selector@npm:^2.0.0":
+  version: 2.0.2
+  resolution: "desandro-matches-selector@npm:2.0.2"
+  checksum: 30979e6b45d7720d259d4db11ec026fcbee242deee5ec0944c265d7e386a7358ab29f7417cbc3631830d0dbe6e827940dee31f789ed865dba22880d209fc9f8e
+  languageName: node
+  linkType: hard
+
 "destroy@npm:1.2.0":
   version: 1.2.0
   resolution: "destroy@npm:1.2.0"
@@ -6927,6 +6937,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"ev-emitter@npm:^1.0.0, ev-emitter@npm:^1.0.1, ev-emitter@npm:^1.1.1":
+  version: 1.1.1
+  resolution: "ev-emitter@npm:1.1.1"
+  checksum: 3dd78a7620701ef8095794f611dd251bdd9023badf322b3d6fa5e10a660c50e83eec5ee5bbc7654682635cf7b8858c94e2c77e1d10bdc188a2b0593436403476
+  languageName: node
+  linkType: hard
+
 "eval@npm:^0.1.8":
   version: 0.1.8
   resolution: "eval@npm:0.1.8"
@@ -7265,6 +7282,22 @@ __metadata:
   languageName: node
   linkType: hard
 
+"fizzy-ui-utils@npm:^2.0.7":
+  version: 2.0.7
+  resolution: "fizzy-ui-utils@npm:2.0.7"
+  dependencies:
+    desandro-matches-selector: ^2.0.0
+  checksum: 001e54effa22c4f62728b90a25e8eb5477057ab53d0184e1c3231bbdfc7c34e278418fbcaf7d63c75ede823d82e61245e668ce8cba90e1c5699de960188c654f
+  languageName: node
+  linkType: hard
+
+"fizzy-ui-utils@npm:^3.0.0":
+  version: 3.0.0
+  resolution: "fizzy-ui-utils@npm:3.0.0"
+  checksum: 73b53e5dc89e033bad3eb9cf111d220502afae083c84fbc842d9453202673284de270f7bbe6cc77a806678e62cf8068da1b4280f0d3a1bf1310110248dfa96cd
+  languageName: node
+  linkType: hard
+
 "flat-cache@npm:^3.0.4":
   version: 3.0.4
   resolution: "flat-cache@npm:3.0.4"
@@ -7279,6 +7312,31 @@ __metadata:
   version: 3.2.7
   resolution: "flatted@npm:3.2.7"
   checksum: 427633049d55bdb80201c68f7eb1cbd533e03eac541f97d3aecab8c5526f12a20ccecaeede08b57503e772c769e7f8680b37e8d482d1e5f8d7e2194687f9ea35
+  languageName: node
+  linkType: hard
+
+"flickity-fade@npm:^2.0.0":
+  version: 2.0.0
+  resolution: "flickity-fade@npm:2.0.0"
+  dependencies:
+    fizzy-ui-utils: ^3.0.0
+  peerDependencies:
+    flickity: ^3.0.0
+  checksum: 44e108f7ef202953d4f2376f0826fd5d4ae76ee67afef223f14777b6a0b386f5703c59a7a36478678f0ba457489a5f38deae0448694238c19415f68582d84fca
+  languageName: node
+  linkType: hard
+
+"flickity@npm:2.3.0":
+  version: 2.3.0
+  resolution: "flickity@npm:2.3.0"
+  dependencies:
+    desandro-matches-selector: ^2.0.0
+    ev-emitter: ^1.1.1
+    fizzy-ui-utils: ^2.0.7
+    get-size: ^2.0.3
+    unidragger: ^2.4.0
+    unipointer: ^2.4.0
+  checksum: bf3ffc471e8bbbb05bb1a400dd571b835f55eed35284ea623e6d7aa9eb0cac550e3986250e78730e60b7af0ffc77195d7c5fcf8c57aefeb6563556a88b07c906
   languageName: node
   linkType: hard
 
@@ -7499,6 +7557,13 @@ __metadata:
   version: 3.0.2
   resolution: "get-own-enumerable-property-symbols@npm:3.0.2"
   checksum: 8f0331f14159f939830884799f937343c8c0a2c330506094bc12cbee3665d88337fe97a4ea35c002cc2bdba0f5d9975ad7ec3abb925015cdf2a93e76d4759ede
+  languageName: node
+  linkType: hard
+
+"get-size@npm:^2.0.3":
+  version: 2.0.3
+  resolution: "get-size@npm:2.0.3"
+  checksum: 18d5a5fdb3f541db8b1e6ad46a5411d4bb7da3061d2ef7e544db3bbce7a13543f05c91fd40c7f68b4bc4bc035c160fed23c45514cde7d5fb18de1cce10208b19
   languageName: node
   linkType: hard
 
@@ -8215,6 +8280,15 @@ __metadata:
   bin:
     image-size: bin/image-size.js
   checksum: 01745fdb47f87cecf538e69c63f9adc5bfab30a345345c2de91105f3afbd1bfcfba1256af02bf3323077b33b0004469a837e077bf0cbb9c907e9c1e9e7547585
+  languageName: node
+  linkType: hard
+
+"imagesloaded@npm:^4.1.4":
+  version: 4.1.4
+  resolution: "imagesloaded@npm:4.1.4"
+  dependencies:
+    ev-emitter: ^1.0.0
+  checksum: 6c25b6c11d7595f2c5a116723cf82b99e7b1a21e0e787e4b32a5813b371152980602e9eb1ea95019d848c0e775fbd5d39fbde5e54e9a0b6e0434be503370c0a2
   languageName: node
   linkType: hard
 
@@ -11420,6 +11494,20 @@ plugin-image-zoom@flexanalytics/plugin-image-zoom:
   languageName: node
   linkType: hard
 
+"react-flickity-component@npm:^3.6.3":
+  version: 3.6.3
+  resolution: "react-flickity-component@npm:3.6.3"
+  dependencies:
+    imagesloaded: ^4.1.4
+    prop-types: ^15.7.2
+  peerDependencies:
+    flickity: ^2.2.1
+    react: ">= 16.14.0 < 18"
+    react-dom: ">= 16.14.0 < 18"
+  checksum: 7165b44582efcfdc0225f7465a3d08db9a8b1c8a5c27ed1a024f36253c50a8480578158903b5c9133f093b9a826fd55a7895163f410c693697aca84ac191e490
+  languageName: node
+  linkType: hard
+
 "react-helmet-async@npm:*, react-helmet-async@npm:^1.3.0":
   version: 1.3.0
   resolution: "react-helmet-async@npm:1.3.0"
@@ -13543,6 +13631,15 @@ plugin-image-zoom@flexanalytics/plugin-image-zoom:
   languageName: node
   linkType: hard
 
+"unidragger@npm:^2.4.0":
+  version: 2.4.0
+  resolution: "unidragger@npm:2.4.0"
+  dependencies:
+    unipointer: ^2.4.0
+  checksum: c9c5c684c93931c4c5170f13819db7847ea0979e50b89f59654313f988334d7e9e4d7fb3d343df7c4d9ba260f3fe80ccefa14d6fd68303ab7ec1b37cd10090f9
+  languageName: node
+  linkType: hard
+
 "unified@npm:9.2.0":
   version: 9.2.0
   resolution: "unified@npm:9.2.0"
@@ -13568,6 +13665,15 @@ plugin-image-zoom@flexanalytics/plugin-image-zoom:
     trough: ^1.0.0
     vfile: ^4.0.0
   checksum: 7c24461be7de4145939739ce50d18227c5fbdf9b3bc5a29dabb1ce26dd3e8bd4a1c385865f6f825f3b49230953ee8b591f23beab3bb3643e3e9dc37aa8a089d5
+  languageName: node
+  linkType: hard
+
+"unipointer@npm:^2.4.0":
+  version: 2.4.0
+  resolution: "unipointer@npm:2.4.0"
+  dependencies:
+    ev-emitter: ^1.0.1
+  checksum: 82a3583850d25ff9f345c7679af87d9730f5e0bd4ceba086ec1989c7acbaae8a2900987e996f77e1f6c1c214275740598ead1792b261be14463d72f7bd1d4689
   languageName: node
   linkType: hard
 
