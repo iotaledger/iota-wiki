@@ -11,24 +11,14 @@
       "url": "/develop/welcome"
     },
     "imagePath": "/img/homepage/header.svg"
-
   },
   {
-    "title": "Create an NFT with the Wallet Library",
-    "description": "Upload an image to IPFS anc create an NFT from the unique IPFS URL on the Shimmer testnet.",
+    "title": "Send IOTA Tokens with Javascript",
+    "description": "Learn how to create your seed, addres, send IOTA Tokens and retrieve your balance in the Devnet.",
     "imagePath": "/img/homepage/resources_bot.svg",
     "solidButton": {
       "buttonText": "Start tutorial",
-      "url": "tutorials/create-nft-with-wallet-lib"
-    }
-  },
-  {
-    "title": "Set up a Testnet Wallet",
-    "description": "Create a new mnemonic seed phrase to set up a Stronghold account, generate a new address, request funds from the Shimmer testnet faucet, and check your account balance with the NodeJS binding of wallet.rs.",
-    "imagePath": "/img/homepage/smartcontracts_bot.svg",
-    "outlinedButton": {
-      "buttonText": "Start tutorial",
-      "url": "/tutorials/wallet-setup"
+      "url": "/tutorials/send-iota-tokens-with-javascript"
     }
   }
 ]
