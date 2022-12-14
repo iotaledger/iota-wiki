@@ -22,7 +22,7 @@ Add a new network on your Metamask, as shown below:
 - Chain ID: `1076`
 - Currency Symbol: `RMS` (Can be anything you wish)
 
-![Metamask Adding New Network](https://i.imgur.com/6pa6DcN.png "Metamask Adding New Network")
+![Metamask Adding New Network](https://i.imgur.com/6pa6DcN.png 'Metamask Adding New Network')
 
 Alternatively, you can setup your own EVM Smart Contract Chain on top of the Shimmer network and provide a custom URL, which might look something like: `https://api.sc.testnet.shimmer.network/chain/rms1prr4r7az8e46qhagz5atugjm6x0xrg27d84677e3lurg0s6s76jr59dw4ls/evm/jsonrpc` as well as your own custom Chain ID.
 
@@ -31,8 +31,9 @@ Hit `Save` and wait for Metamask to connect to the network.
 At this point, our Metamask wallet is connected to the Shimmer EVM Testnet, but we don't have any funds in it. So, let's try to get some.
 
 ## Get EVM Account Funded
+
 Open [Wasp EVM Toolkit](https://toolkit.sc.testnet.shimmer.network/) and enter the chain address and your EVM address as shown below:
-![Wasm EVM Toolkit](https://i.imgur.com/fb2Ugfd.png "Wasm EVM Toolkit")
+![Wasm EVM Toolkit](https://i.imgur.com/fb2Ugfd.png 'Wasm EVM Toolkit')
 
 In case, you've setup a custom EVM chain, you'd need to edit the Chain Address as well. Please add your own chain address and select the relevant network.
 
@@ -41,7 +42,9 @@ Once you're done, click on `Send funds` and wait for a few minutes for the fauce
 Now, open [Remix ide](https://remix.ethereum.org/) or your favourite IDE and let's try to deploy a solidity smart contract.
 
 ## Deploy Solidity Smart Contract
+
 Here's a sample solidity smart contract that we will be deploying:
+
 ```solidity
 // SPDX-License-Identifier: GPL-3.0
 pragma solidity >=0.7.0 <0.9.0;
@@ -59,10 +62,10 @@ contract Storage {
 If you've a different smart contract that you wish to deploy, feel free to.
 
 Go to the Run tab and Select `Injected Provider - Metamask` as your enviroment as shown below:
-![Injected Provider - MetaMask](https://i.imgur.com/0Ot1ije.png "Injected Provider - MetaMask")
+![Injected Provider - MetaMask](https://i.imgur.com/0Ot1ije.png 'Injected Provider - MetaMask')
 
 Then, click on Deploy and confirm the Metamask transaction as shown below:
-![Metamask Confirm](https://i.imgur.com/Ma9Ds8H.png "Metamask Confirm")
+![Metamask Confirm](https://i.imgur.com/Ma9Ds8H.png 'Metamask Confirm')
 
 And voila—it's done!
 :::info

@@ -32,11 +32,11 @@ module.exports = {
             {
               type: 'link',
               label: 'Tanglepay',
-              href:  'https://tanglepay.com'
-            }
+              href: 'https://tanglepay.com',
+            },
           ],
-        }
+        },
       ],
-    }
-  ]
+    },
+  ],
 };

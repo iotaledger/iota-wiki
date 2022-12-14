@@ -63,7 +63,7 @@ function useSiteCountPlural() {
     selectMessage(sitesCount, '1 result|' + sitesCount + ' results');
 }
 
-function getItems(actionMeta: ActionMeta<any>): string[] {
+function getItems(actionMeta: ActionMeta<string>): string[] {
   const items = [];
   switch (actionMeta.action) {
     case 'select-option':

@@ -24,31 +24,31 @@
 }
 
 .get > .menu__link::before {
-  content: "get";
+  content: 'get';
   background-color: var(--ifm-color-primary);
 }
 
 .post > .menu__link::before {
-  content: "post";
+  content: 'post';
   background-color: var(--openapi-code-green);
 }
 
 .delete > .menu__link::before {
-  content: "del";
+  content: 'del';
   background-color: var(--openapi-code-red);
 }
 
 .put > .menu__link::before {
-  content: "put";
+  content: 'put';
   background-color: var(--openapi-code-blue);
 }
 
 .patch > .menu__link::before {
-  content: "patch";
+  content: 'patch';
   background-color: var(--openapi-code-orange);
 }
 
 .head > .menu__link::before {
-  content: "head";
+  content: 'head';
   background-color: var(--ifm-color-secondary-darkest);
 }

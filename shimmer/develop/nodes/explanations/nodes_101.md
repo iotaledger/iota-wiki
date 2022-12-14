@@ -1,15 +1,14 @@
 ---
-description: Introducing nodes and what they can do in the Shimmer network (Tangle). 
+description: Introducing nodes and what they can do in the Shimmer network (Tangle).
 image: /img/iota-wiki.png
 keywords:
-- Shimmer Node 
-- Hornet Node
-- blocks
-- syncing
-- synchronizing
-- UTXO
-- explanation
-
+  - Shimmer Node
+  - Hornet Node
+  - blocks
+  - syncing
+  - synchronizing
+  - UTXO
+  - explanation
 ---
 
 # Nodes 101
@@ -57,16 +56,16 @@ When nodes detect double spends, they must decide which block to consider confir
 
 All nodes keep a record of the [Unspent Transaction Outputs (UTXO)](/introduction/explanations/what_is_stardust/rethink_utxo) so they can:
 
-* Check that a transaction is not transferring more Shimmer tokens than are available on the address.
-* Respond to clients' requests for their balance.
-* Once the node has confirmed a transaction with the Tangle, update the node's record of balances. 
+- Check that a transaction is not transferring more Shimmer tokens than are available on the address.
+- Respond to clients' requests for their balance.
+- Once the node has confirmed a transaction with the Tangle, update the node's record of balances.
 
 ## Exposing APIs for Clients
 
 Nodes come with two sets of low-level APIs:
 
-* HTTP(rest) API.
-* Event API.
+- HTTP(rest) API.
+- Event API.
 
 :::note
 
@@ -78,10 +77,10 @@ Developers do not need to communicate with nodes using a mentioned low-level API
 
 The HTTP API allows clients to interact with the Tangle and ask nodes to:
 
-* Get tips.
-* Attach new block to the Tangle.
-* Do proof of work (POW).
-* Get blocks from the Tangle.
+- Get tips.
+- Attach new block to the Tangle.
+- Do proof of work (POW).
+- Get blocks from the Tangle.
 
 ### Event API
 
