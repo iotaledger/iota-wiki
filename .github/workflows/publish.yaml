@@ -1,3 +1,5 @@
+# TODO: Remove assumption version is increased to unreleased version.
+
 name: Publish
 on: push
 jobs:
@@ -10,25 +12,41 @@ jobs:
         with:
           node-version: 16
           cache: 'yarn'
-      - name: core
-        id: core
+      # Check if core changed
+      - name: Check @iota-wiki/core changed in current branch
+        id: core-to-current
         uses: EndBug/version-check@v2
         with:
           diff-search: true
-          assume-same-version: new
           file-name: ./package.json
-      - name: cli
-        id: cli
+      - name: Check @iota-wiki/core changed compared to main branch
+        id: core-to-main
         uses: EndBug/version-check@v2
         with:
           diff-search: true
-          assume-same-version: new
+          file-name: ./package.json
+          file-url: https://raw.githubusercontent.com/iota-wiki/iota-wiki/main/package.json
+          static-checking: localIsNew
+      # Check if cli changed
+      - name: Check @iota-wiki/cli changed in current branch
+        id: cli-to-current
+        uses: EndBug/version-check@v2
+        with:
+          diff-search: true
           file-name: ./cli/package.json
+      - name: Check @iota-wiki/cli changed compared to main branch
+        id: cli-to-main
+        uses: EndBug/version-check@v2
+        with:
+          diff-search: true
+          file-name: ./cli/package.json
+          file-url: https://raw.githubusercontent.com/iota-wiki/iota-wiki/main/cli/package.json
+          static-checking: localIsNew
     outputs:
-      core-changed: ${{ steps.core.outputs.changed }}
-      core-version: ${{ steps.core.outputs.version }}
-      cli-changed: ${{ steps.cli.outputs.changed }}
-      cli-version: ${{ steps.cli.outputs.version }}
+      core-changed: ${{ steps.core-to-current.outputs.changed && steps.core-to-main.outputs.changed}}
+      core-version: ${{ steps.core-to-current.outputs.version }}
+      cli-changed: ${{ steps.cli-to-current.outputs.changed && steps.cli-to-main.outputs.changed}}
+      cli-version: ${{ steps.cli-to-current.outputs.version }}
   publish-core:
     # If not on main and version changed, publish with experimental tag
     runs-on: ubuntu-latest
