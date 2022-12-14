@@ -23,7 +23,6 @@
     "lint": "eslint --cache --fix src",
     "format": "prettier --write .",
     "format:svg": "svgo ./src/**/*.svg",
-    "prepare": "husky install",
     "checkout": "git submodule update --init",
     "checkout:remote": "yarn checkout --remote",
     "gen-api-docs": "docusaurus gen-api-docs all"
@@ -95,7 +94,6 @@
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-react": "^7.26.0",
     "eslint-plugin-react-hooks": "^4.2.0",
-    "husky": ">=6",
     "lint-staged": ">=10",
     "prettier": "^2.4.1",
     "svgo": "^2.8.0",

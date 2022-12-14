@@ -2538,7 +2538,6 @@ __metadata:
     flickity: 2.3.0
     flickity-fade: ^2.0.0
     hast-util-is-element: 1.1.0
-    husky: ">=6"
     lint-staged: ">=10"
     plugin-image-zoom: flexanalytics/plugin-image-zoom
     prettier: ^2.4.1
@@ -8506,15 +8505,6 @@ __metadata:
   dependencies:
     ms: ^2.0.0
   checksum: 9c7a74a2827f9294c009266c82031030eae811ca87b0da3dceb8d6071b9bde22c9f3daef0469c3c533cc67a97d8a167cd9fc0389350e5f415f61a79b171ded16
-  languageName: node
-  linkType: hard
-
-"husky@npm:>=6":
-  version: 8.0.2
-  resolution: "husky@npm:8.0.2"
-  bin:
-    husky: lib/bin.js
-  checksum: e101656fcb56163d610488f186448c78b132626aa427094489d886ce9374955a90274912b0f3a34af3326eaa74977883b032e5f701d7aaf4554daa5a7931be43
   languageName: node
   linkType: hard
 
