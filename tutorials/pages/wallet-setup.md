@@ -49,7 +49,7 @@ npm init --yes
 }
 ```
 
-4. Install new dependencies by running the following command:
+4. Install new dependencies by running the following command: 
 
 :::note
 
@@ -68,15 +68,13 @@ npm install
 Create a new file `networkConfig.js` and add the following code:
 
 ```javascript
-var networkConfig = {};
-
-// Shimmer Beta network configuration
-networkConfig.node = 'https://api.testnet.shimmer.network';
-networkConfig.faucetWebsite = 'https://faucet.testnet.shimmer.network';
-networkConfig.faucetApi = 'https://faucet.testnet.shimmer.network/api/enqueue';
-networkConfig.explorer = 'https://explorer.shimmer.network/testnet';
-
-module.exports = { networkConfig };
+module.exports = {
+  // Shimmer Beta network configuration
+  node = 'https://api.testnet.shimmer.network';
+  faucetWebsite = 'https://faucet.testnet.shimmer.network';
+  faucetApi = 'https://faucet.testnet.shimmer.network/api/enqueue';
+  explorer = 'https://explorer.shimmer.network/testnet';
+};
 ```
 
 ---
@@ -92,10 +90,10 @@ In the .env file you don't need to end lines with comas or semicolons and you al
 :::
 
 ```javascript
-ACCOUNT_NAME = Enter_your_name_here;
-SH_PASSWORD = Enter_your_password_here;
+ACCOUNT_NAME = "<Enter_your_name_here>"
+SH_PASSWORD = "<Enter_your_password_here>"
 MNEMONIC =
-  You_will_create_your_own_mnemonic_seed_phrase_in_the_next_step_and_paste_it_in_here;
+  "<You_will_create_your_own_mnemonic_seed_phrase_in_the_next_step_and_paste_it_in_here>"
 ```
 
 Enter your desired account name as well as a secure Stronghold password. You will create your new mnemonic seed phrase in the next step and paste it here afterward.
@@ -157,11 +155,11 @@ This part imports all necessary packages, network configuration parameters, and 
 const { AccountManager, CoinType } = require('@iota/wallet');
 
 // Network configuration
-const { networkConfig } = require('./networkConfig.js');
+const networkConfig = require('./networkConfig.js');
 const nodeURL = networkConfig.node;
 
 // Environment variables
-require('dotenv').config({ path: './.env' });
+require('dotenv').config();
 const password = process.env.SH_PASSWORD;
 const mnemonic = process.env.MNEMONIC;
 const accountName = process.env.ACCOUNT_NAME;
@@ -296,7 +294,7 @@ This part imports all necessary packages, network configuration parameters and e
 const { AccountManager } = require('@iota/wallet');
 
 // Environment variables
-require('dotenv').config({ path: './.env' });
+require('dotenv').config();
 const password = process.env.SH_PASSWORD;
 const accountName = process.env.ACCOUNT_NAME;
 

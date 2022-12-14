@@ -11,7 +11,7 @@ module.exports = {
       content: '.',
       isCloseable: false,
     },
-    image: 'img/shimmer-wiki.png',
+    image: 'img/next-wiki.png',
     navbar: {
       hideOnScroll: true,
       logo: {
