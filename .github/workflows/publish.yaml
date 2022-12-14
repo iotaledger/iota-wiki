@@ -58,6 +58,7 @@ jobs:
           echo "core-version: ${{ needs.version.outputs.core-version }}"
           echo "cli-changed: ${{ needs.version.outputs.cli-changed }}"
           echo "cli-version: ${{ needs.version.outputs.cli-version }}"
+          echo "github.ref != 'refs/heads/main' && needs.version.outputs.core-changed: ${{ github.ref != 'refs/heads/main' && needs.version.outputs.core-changed }}"
   publish-core:
     # If not on main and version changed, publish with experimental tag
     runs-on: ubuntu-latest
