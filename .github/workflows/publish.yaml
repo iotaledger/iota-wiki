@@ -45,15 +45,15 @@ jobs:
           file-url: https://raw.githubusercontent.com/iota-wiki/iota-wiki/main/cli/package.json
           static-checking: localIsNew
     outputs:
-      core-changed: ${{ steps.core-to-current.outputs.changed && (github.ref == 'refs/heads/main' || steps.core-to-main.outputs.changed) }}
+      core-changed: ${{ steps.core-to-current.outputs.changed == 'true' && (github.ref == 'refs/heads/main' || steps.core-to-main.outputs.changed == 'true') }}
       core-version: ${{ steps.core-to-current.outputs.version }}
-      cli-changed: ${{ steps.cli-to-current.outputs.changed && (github.ref == 'refs/heads/main' || steps.cli-to-main.outputs.changed) }}
+      cli-changed: ${{ steps.cli-to-current.outputs.changed == 'true' && (github.ref == 'refs/heads/main' || steps.cli-to-main.outputs.changed == 'true') }}
       cli-version: ${{ steps.cli-to-current.outputs.version }}
   publish-core:
     # If not on main and version changed, publish with experimental tag
     runs-on: ubuntu-latest
     needs: version
-    if: github.ref != 'refs/heads/main' && needs.version.outputs.core-changed == 'true'
+    if: github.ref != 'refs/heads/main' && needs.version.outputs.core-changed
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
@@ -84,7 +84,7 @@ jobs:
     # If not on main and version changed, publish with experimental tag
     runs-on: ubuntu-latest
     needs: version
-    if: github.ref != 'refs/heads/main' && needs.version.outputs.cli-changed == 'true'
+    if: github.ref != 'refs/heads/main' && needs.version.outputs.cli-changed
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
@@ -115,7 +115,7 @@ jobs:
     # If on main and version changed, change tag to latest
     runs-on: ubuntu-latest
     needs: version
-    if: github.ref == 'refs/heads/main' && needs.version.outputs.core-changed == 'true'
+    if: github.ref == 'refs/heads/main' && needs.version.outputs.core-changed
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
@@ -142,7 +142,7 @@ jobs:
     # If on main and version changed, change tag to latest
     runs-on: ubuntu-latest
     needs: version
-    if: github.ref == 'refs/heads/main' && needs.version.outputs.cli-changed == 'true'
+    if: github.ref == 'refs/heads/main' && needs.version.outputs.cli-changed
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
