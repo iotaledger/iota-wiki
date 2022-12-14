@@ -47,12 +47,12 @@ module.exports = {
         {
           type: 'link',
           label: 'Coordicide Specs',
-          href: '/IOTA-2.0-Research-Specifications/Preface'
+          href: '/IOTA-2.0-Research-Specifications/Preface',
         },
         {
           type: 'link',
           label: 'GoShimmer',
-          href: '/goshimmer/welcome'
+          href: '/goshimmer/welcome',
         },
         'research/iota-devnet-wallet',
       ],

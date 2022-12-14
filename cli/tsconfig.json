@@ -15,7 +15,8 @@
       "@wiki/*": ["../src/*"],
       "@cli/*": ["./src/*"],
       "@site/*": ["../*"]
-    }
+    },
+    "plugins": [{ "name": "typescript-plugin-css-modules" }]
   },
   "include": ["./src", "../src/utils/config.js"]
 }

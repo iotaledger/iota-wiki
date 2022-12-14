@@ -50,7 +50,7 @@ Due to the [storage deposit rules](./welcome.mdx#storage-deposits), you cannot c
 
 ### Expiration
 
-In Shimmer, you can define an [expiration date and time](/introduction/explanations/what_is_stardust/unlock_conditions#expiration) for an output. This way, if the output isn't consumed by the expiration date, it will be returned to your account. This is particularly useful if you want to cancel a transfer if a deadline isn't met. 
+In Shimmer, you can define an [expiration date and time](/introduction/explanations/what_is_stardust/unlock_conditions#expiration) for an output. This way, if the output isn't consumed by the expiration date, it will be returned to your account. This is particularly useful if you want to cancel a transfer if a deadline isn't met.
 
 ### Timelock
 

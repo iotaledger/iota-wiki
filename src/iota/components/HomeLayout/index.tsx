@@ -14,14 +14,12 @@ import {
   IotaToken,
   PickAWallet,
   Search,
-  Shimmer,
   Tips,
   Tutorials,
-  Wasp,
 } from '@site/src/common/icons';
 import CoreLibrariesSection from './CoreLibrariesSection';
 import AppLibrariesSection from './AppLibrariesSection';
-import FeaturedSlider from "@site/src/common/components/FeaturedSlider";
+import FeaturedSlider from '@site/src/common/components/FeaturedSlider';
 
 interface HomepageSectionProps {
   header?: string;

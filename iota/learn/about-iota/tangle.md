@@ -4,8 +4,8 @@ title: The Tangle
 description: The Tangle is the data structure behind IOTA that contains all information about token ownership.
 image: /img/iota-wiki.png
 keywords:
-- explanation
-- IOTA
+  - explanation
+  - IOTA
 ---
 
 # The Tangle
@@ -20,6 +20,7 @@ While the Tangle and blockchains have the same function of maintaining their led
 The Tangle naturally succeeds the blockchain as its next evolutionary step as it offers features suited to establish more efficient and scalable distributed ledger solutions.
 
 This section refers to the most recent "Tangle" research findings:
+
 - [Tangle 2.0 Leaderless Nakamoto Consensus on the Heaviest DAG](https://arxiv.org/abs/2205.02177)
 - [Reality-Based UTXO Ledger](https://arxiv.org/abs/2205.01345)
 - [Robustness Of The Tangle 2.0 Consensus](https://arxiv.org/abs/2208.08254)
