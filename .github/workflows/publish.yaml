@@ -49,6 +49,15 @@ jobs:
       core-version: ${{ steps.core-to-current.outputs.version }}
       cli-changed: ${{ steps.cli-to-current.outputs.changed && (github.ref == 'refs/heads/main' || steps.cli-to-main.outputs.changed) }}
       cli-version: ${{ steps.cli-to-current.outputs.version }}
+  print-output:
+    runs-on: ubuntu-latest
+    needs: version
+    steps:
+      - run: |
+          echo "core-changed: ${{ needs.version.outputs.core-changed }}"
+          echo "core-version: ${{ needs.version.outputs.core-version }}"
+          echo "cli-changed: ${{ needs.version.outputs.cli-changed }}"
+          echo "cli-version: ${{ needs.version.outputs.cli-version }}"
   publish-core:
     # If not on main and version changed, publish with experimental tag
     runs-on: ubuntu-latest
