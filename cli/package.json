@@ -1,0 +1,60 @@
+{
+  "name": "@iota-wiki/cli",
+  "description": "A command line utility to manage Wiki content and preview content locally.",
+  "author": "IOTA community",
+  "license": "MIT",
+  "version": "2.0.2",
+  "homepage": "https://github.com/iota-wiki/iota-wiki/cli",
+  "bugs": "https://github.com/iota-wiki/iota-wiki/issues",
+  "repository": "iota-wiki/iota-wiki",
+  "main": "dist/cli/src/index.js",
+  "bin": {
+    "iota-wiki": "dist/cli/src/index.js"
+  },
+  "scripts": {
+    "clean": "rm -rf ./dist",
+    "build": "npx tsc --build && tsc-alias && yarn copy",
+    "copy:internal": "copyfiles \"src/**/!(*.ts|*.js|*.tsx)\" dist/cli",
+    "copy:external": "copyfiles \"../src/common/css/**/!(*.ts|*.js|*.tsx)\" \"../src/common/icons/**/!(*.ts|*.js|*.tsx)\" \"../src/next/css/**/!(*.ts|*.js|*.tsx)\" dist/cli",
+    "copy": "yarn copy:internal && yarn copy:external",
+    "watch": "nodemon --watch src --ext '*' --exec yarn build",
+    "prepack": "yarn build"
+  },
+  "dependencies": {
+    "@babel/generator": "^7.17.9",
+    "@babel/parser": "^7.17.9",
+    "@babel/types": "^7.17.0",
+    "@iota-wiki/core": "workspace:^",
+    "@yarnpkg/shell": "^3.2.0",
+    "axios": "^0.26.1",
+    "clipanion": "^3.2.0-rc.10",
+    "ink": "^3.2.0",
+    "ink-multi-select": "2.0.0",
+    "ink-select-input": "^4.2.1",
+    "ink-spinner": "^4.0.3",
+    "ink-text-input": "^4.0.3",
+    "isomorphic-git": "^1.17.2",
+    "prettier": "2.6.0"
+  },
+  "devDependencies": {
+    "@types/babel__generator": "^7",
+    "@types/copyfiles": "^2",
+    "@types/node": "^16.9.4",
+    "@types/prettier": "^2",
+    "copyfiles": "^2.4.1",
+    "nodemon": "^2.0.16",
+    "tsc-alias": "^1.7.1"
+  },
+  "peerDependencies": {
+    "react": "*",
+    "react-dom": "*",
+    "typescript": "*"
+  },
+  "files": [
+    "dist"
+  ],
+  "packageManager": "yarn@3.2.0",
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}

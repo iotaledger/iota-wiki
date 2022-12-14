@@ -1,0 +1,11 @@
+version: 2
+updates:
+  - package-ecosystem: 'npm'
+    versioning-strategy: increase
+    directory: '/'
+    schedule:
+      interval: 'monthly'
+    ignore:
+      - dependency-name: 'fs-extra'
+      - dependency-name: '*'
+        update-types: ['version-update:semver-major']

@@ -1,0 +1,57 @@
+---
+keywords:
+  - how to
+description: How to add a Quiz for the IOTA Wiki.
+image: /img/iota-wiki.png
+---
+
+import Quiz from '@site/src/common/components/Quiz';
+import questions from './example-questions.json';
+
+# How To Add A Quiz
+
+You can simply add a Quiz to every page you like in the Wiki!
+
+## Example Quiz
+
+<Quiz questions={questions} />
+
+## Add Your Quiz
+
+Just add the following lines on top of the page.
+
+```javascript
+import Quiz from '@site/src/common/components/Quiz';
+import questions from './example-questions.json';
+```
+
+Make sure that the Quiz path fits your folder structure. You may need to remove or add some `../`.
+
+Add your questions in a seperate `.json` file with the following format:
+
+```json
+[
+  {
+    "questionText": "First Question?",
+    "answerOptions": [
+      { "answerText": "1. Answer", "isCorrect": false },
+      { "answerText": "2. Answer", "isCorrect": false },
+      { "answerText": "3. Answer", "isCorrect": true },
+      { "answerText": "4. Answer", "isCorrect": false }
+    ]
+  },
+  ...
+]
+```
+
+Now you need to include the Quiz components where you want to show it
+
+```
+
+## Your Quiz
+
+<Quiz questions={questions} />
+
+```
+
+That's all. Congratulations, you have created your own Quiz!

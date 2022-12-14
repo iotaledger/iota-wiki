@@ -1,20 +1,19 @@
 {
-  "name": "iota-wiki",
-  "version": "0.0.0",
-  "private": true,
+  "name": "@iota-wiki/core",
+  "version": "1.0.0",
   "scripts": {
     "docusaurus": "docusaurus",
-    "start": "yarn docusaurus start",
-    "start:tutorials": "CONTENT=\"tutorials/**\" yarn start",
-    "start:iota": "CONTENT=\"*/*/*/documentation,*/*/*,*/*\" yarn start",
-    "start:shimmer": "CONTENT=\"*/*/*/documentation,*/*/*,*/*\" yarn start --config docusaurus-shimmer.config.js",
-    "start:next": "CONTENT=\"*/*/*/documentation,*/*/*,*/*\" yarn start --config docusaurus-next.config.js",
-    "start:all": "CONTENT=\"*/*/*/documentation,*/*/*,*/*\" yarn build && yarn serve",
+    "start": "yarn build && yarn serve",
+    "start:iota": "ENVIRONMENT=iota docusaurus start",
+    "start:shimmer": "ENVIRONMENT=shimmer docusaurus start",
+    "start:next": "ENVIRONMENT=next docusaurus start",
+    "start:all": "yarn build:all && yarn serve",
     "build": "yarn build:iota && yarn build:shimmer && yarn build:next",
-    "build:iota": "docusaurus build",
-    "build:shimmer": "docusaurus build --config docusaurus-shimmer.config.js --out-dir build/shimmer",
-    "build:next": "docusaurus build --config docusaurus-next.config.js --out-dir build/next",
-    "build:all": "CONTENT=\"*/*/*/documentation,*/*/*,*/*\" yarn build",
+    "build:iota": "ENVIRONMENT=iota docusaurus build --out-dir build",
+    "build:shimmer": "ENVIRONMENT=shimmer docusaurus build --out-dir build/shimmer",
+    "build:next": "ENVIRONMENT=next docusaurus build --out-dir build/next",
+    "build:all": "(CONTENT=\"*,*/*,*/*/*\"; yarn checkout && yarn build)",
+    "build:production": "(MODE=\"production\" CONTENT=\"*,*/*,*/*/*\"; yarn checkout:remote && yarn build)",
     "swizzle": "docusaurus swizzle",
     "deploy": "docusaurus deploy",
     "clear": "docusaurus clear",
@@ -24,28 +23,30 @@
     "lint": "eslint --cache --fix src",
     "format": "prettier --write .",
     "format:svg": "svgo ./src/**/*.svg",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "checkout": "git submodule update --init",
+    "checkout:remote": "yarn checkout --remote"
   },
   "dependencies": {
     "@algolia/client-search": "^4.14.1",
-    "@docusaurus/core": "^2.1.0",
-    "@docusaurus/plugin-client-redirects": "^2.1.0",
-    "@docusaurus/plugin-ideal-image": "^2.1.0",
-    "@docusaurus/preset-classic": "^2.1.0",
+    "@docusaurus/core": "2.1.0",
+    "@docusaurus/plugin-client-redirects": "2.1.0",
+    "@docusaurus/plugin-ideal-image": "2.1.0",
+    "@docusaurus/preset-classic": "2.1.0",
     "@iota-wiki/plugin-tutorial": "^1.0.6",
     "@mdx-js/react": "^1.6.21",
     "@popperjs/core": "^2.11.5",
     "@svgr/webpack": "^5.5.0",
+    "callsite": "^1.0.0",
     "clsx": "^1.2.1",
-    "docusaurus-plugin-hotjar": "^0.0.2",
     "docusaurus-plugin-matomo": "^0.0.5",
     "file-loader": "^6.2.0",
     "hast-util-is-element": "1.1.0",
     "plugin-image-zoom": "flexanalytics/plugin-image-zoom",
     "raw-loader": "^4.0.2",
-    "react": "^17.0.2",
+    "react": "17.0.2",
     "react-collapsible": "^2.8.4",
-    "react-dom": "^17.0.2",
+    "react-dom": "17.0.2",
     "react-image-gallery": "^1.2.7",
     "react-player": "^2.9.0",
     "react-popper": "^2.3.0",
@@ -58,6 +59,10 @@
     "require-glob": "^4.1.0",
     "url-loader": "^4.1.1",
     "webpack": "^5.73.0"
+  },
+  "resolutions": {
+    "@types/react": "17.0.2",
+    "@types/react-dom": "17.0.2"
   },
   "browserslist": {
     "production": [
@@ -72,9 +77,11 @@
     ]
   },
   "devDependencies": {
-    "@docusaurus/module-type-aliases": "^2.1.0",
+    "@docusaurus/module-type-aliases": "2.1.0",
+    "@docusaurus/plugin-google-gtag": "^2.2.0",
     "@tsconfig/docusaurus": "^1.0.6",
-    "@types/react": "^17.0.0",
+    "@types/react": "17.0.2",
+    "@types/react-dom": "17.0.2",
     "@types/webpack-env": "^1.16.3",
     "@typescript-eslint/eslint-plugin": "^5.9.1",
     "@typescript-eslint/parser": "^5.9.1",
@@ -88,14 +95,14 @@
     "svgo": "^2.8.0",
     "typescript": "^4.5.4"
   },
-  "peerDependencies": {
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2"
-  },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": "eslint --cache --fix",
     "*.{js,jsx,ts,tsx,css,less,md,mdx,json}": "prettier --write",
     "*.svg": "svgo"
   },
-  "packageManager": "yarn@3.2.0"
+  "packageManager": "yarn@3.2.0",
+  "workspaces": [
+    "cli"
+  ],
+  "files": []
 }

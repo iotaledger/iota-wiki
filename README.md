@@ -5,11 +5,12 @@
 <div align="center">
 
   <!-- PROJECT SHIELDS -->
-  [![Contributors][contributors-shield]][contributors-url]
-  [![Forks][forks-shield]][forks-url]
-  [![Stargazers][stars-shield]][stars-url]
-  [![Issues][issues-shield]][issues-url]
-  [![Gitpod][gitpod-shield]][gitpod-url]
+
+[![Contributors][contributors-shield]][contributors-url]
+[![Forks][forks-shield]][forks-url]
+[![Stargazers][stars-shield]][stars-url]
+[![Issues][issues-shield]][issues-url]
+[![Gitpod][gitpod-shield]][gitpod-url]
 
   <!-- PROJECT LOGO -->
   <p>
@@ -29,6 +30,7 @@
 </div>
 
 <!-- TABLE OF CONTENTS -->
+
 ## Table of Contents
 
 - [About The Project](#about-the-project)
@@ -40,6 +42,7 @@
 - [Contact](#contact)
 
 <!-- ABOUT THE PROJECT -->
+
 ## About The Project
 
 The IOTA Wiki is a central hub for entering into the IOTA ecosystem. A community driven initiative to provide an up-to-date collection of introductions and further reading about the technology, the teams, the community, and everything in between. So anyone can learn how to build, adopt, and engage with IOTA, all in one space.
@@ -49,6 +52,7 @@ The IOTA Wiki is a central hub for entering into the IOTA ecosystem. A community
 The IOTA Wiki is built using [TypeScript](https://www.typescriptlang.org/), [ReactJS](https://reactjs.org/) and [Docusaurus v2.0](https://docusaurus.io/).
 
 <!-- GETTING STARTED -->
+
 ## Getting Started
 
 ### Prerequisites
@@ -65,9 +69,10 @@ The IOTA Wiki is built using [TypeScript](https://www.typescriptlang.org/), [Rea
 
 3. Install needed dependencies with `yarn`.
 
-4. Start the local development server with `yarn start` to preview a minimal Wiki or with `yarn start:all` to preview the entire Wiki. Alternatively you can use the `CONTENT` environment variable to select the content you want to include in the preview. It accepts a list of glob patterns relative to the `iota` subdirectory (i.e. `CONTENT=identity.rs/*/documentation yarn start` would give you a minimal Wiki with only `identity.rs` documentation included).
+4. Start a local development server with `yarn start:iota`, `yarn start:shimmer`, or `yarn start:next` to preview a minimal Wiki for the respective environment. You can use the `CONTENT` environment variable to select what external content you want to include in the preview. It accepts a list of comma delimited glob patterns relative to the `external` subdirectory of the selected environment (i.e. `CONTENT=identity.rs/*/documentation yarn start:iota` would give you a minimal IOTA Wiki with only `identity.rs` external documentation included). Alternatively, you can build and preview the entire Wiki with `yarn start:all`, but note that this does not use the development server, but does a full production build and will take a long time.
 
 <!-- CONTRIBUTING -->
+
 ## Contributing
 
 The IOTA Wiki is maintained by the community. We will review all issues and pull requests posted to this repository. If you notice any mistakes, or feel something is missing, feel free to create an issue to discuss with the team or directly create a pull request with suggestions. Here is a basic workflow to open a pull request:
@@ -88,6 +93,7 @@ You can use Gitpod (a free, online, VS Code-like IDE) for contributing. With a s
 [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)][gitpod-url]
 
 <!-- CONTACT -->
+
 ## Contact
 
 Phylo - [Phyloiota](https://github.com/Phyloiota) - Phylo [Community DAO - lets go!]#2233  
