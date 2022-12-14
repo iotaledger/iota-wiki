@@ -1,6 +1,6 @@
 {
   "name": "@iota-wiki/core",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "scripts": {
     "docusaurus": "docusaurus",
     "start": "yarn build && yarn serve",
@@ -29,10 +29,10 @@
   },
   "dependencies": {
     "@algolia/client-search": "^4.14.1",
-    "@docusaurus/core": "2.1.0",
-    "@docusaurus/plugin-client-redirects": "2.1.0",
-    "@docusaurus/plugin-ideal-image": "2.1.0",
-    "@docusaurus/preset-classic": "2.1.0",
+    "@docusaurus/core": "2.2.0",
+    "@docusaurus/plugin-client-redirects": "2.2.0",
+    "@docusaurus/plugin-ideal-image": "2.2.0",
+    "@docusaurus/preset-classic": "2.2.0",
     "@iota-wiki/plugin-tutorial": "^1.0.6",
     "@mdx-js/react": "^1.6.21",
     "@popperjs/core": "^2.11.5",
@@ -80,8 +80,8 @@
     ]
   },
   "devDependencies": {
-    "@docusaurus/module-type-aliases": "2.1.0",
-    "@docusaurus/plugin-google-gtag": "^2.2.0",
+    "@docusaurus/module-type-aliases": "2.2.0",
+    "@docusaurus/plugin-google-gtag": "2.2.0",
     "@tsconfig/docusaurus": "^1.0.6",
     "@types/react": "17.0.2",
     "@types/react-dom": "17.0.2",
