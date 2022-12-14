@@ -20,6 +20,7 @@ jobs:
           diff-search: true
           file-name: ./package.json
       - name: Check @iota-wiki/core changed compared to main branch
+        if: github.ref != 'refs/heads/main'
         id: core-to-main
         uses: EndBug/version-check@v2
         with:
@@ -35,6 +36,7 @@ jobs:
           diff-search: true
           file-name: ./cli/package.json
       - name: Check @iota-wiki/cli changed compared to main branch
+        if: github.ref != 'refs/heads/main'
         id: cli-to-main
         uses: EndBug/version-check@v2
         with:
@@ -43,9 +45,9 @@ jobs:
           file-url: https://raw.githubusercontent.com/iota-wiki/iota-wiki/main/cli/package.json
           static-checking: localIsNew
     outputs:
-      core-changed: ${{ steps.core-to-current.outputs.changed && steps.core-to-main.outputs.changed}}
+      core-changed: ${{ steps.core-to-current.outputs.changed && (github.ref == 'refs/heads/main' || steps.core-to-main.outputs.changed) }}
       core-version: ${{ steps.core-to-current.outputs.version }}
-      cli-changed: ${{ steps.cli-to-current.outputs.changed && steps.cli-to-main.outputs.changed}}
+      cli-changed: ${{ steps.cli-to-current.outputs.changed && (github.ref == 'refs/heads/main' || steps.cli-to-main.outputs.changed) }}
       cli-version: ${{ steps.cli-to-current.outputs.version }}
   publish-core:
     # If not on main and version changed, publish with experimental tag
