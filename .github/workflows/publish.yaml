@@ -87,7 +87,7 @@ jobs:
           YARN_NPM_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           YARN_NPM_REGISTRY_SERVER: 'https://npm.pkg.github.com'
   publish-cli:
-    # If not on main and version changed, publish with experimental tag
+    # If version changed, publish with experimental tag
     runs-on: ubuntu-latest
     needs: version
     if: needs.version.outputs.cli-changed == 'true'
