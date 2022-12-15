@@ -1,9 +1,7 @@
-# TODO: Remove assumption version is increased to unreleased version.
-
-name: publish packages
+name: tag packages
 on:
   workflow_dispatch:
-  pull_request:
+  push:
     branches:
       - main
 jobs:
@@ -26,13 +24,6 @@ jobs:
           # Only compare before and after if before exists, else check commits
           file-url: ${{ github.event.before && '::before' }}
           static-checking: ${{ github.event.before && 'localIsNew' }}
-      - name: Check @iota-wiki/core changed compared to main branch
-        id: core-to-main
-        uses: EndBug/version-check@v2
-        with:
-          file-name: ./package.json
-          file-url: https://raw.githubusercontent.com/iota-wiki/iota-wiki/main/package.json
-          static-checking: localIsNew
       # Check if cli changed
       - name: Check @iota-wiki/cli changed in current branch
         id: cli-to-current
@@ -43,20 +34,13 @@ jobs:
           # Only compare before and after if before exists, else check commits
           file-url: ${{ github.event.before && '::before' }}
           static-checking: ${{ github.event.before && 'localIsNew' }}
-      - name: Check @iota-wiki/cli changed compared to main branch
-        id: cli-to-main
-        uses: EndBug/version-check@v2
-        with:
-          file-name: ./cli/package.json
-          file-url: https://raw.githubusercontent.com/iota-wiki/iota-wiki/main/cli/package.json
-          static-checking: localIsNew
     outputs:
-      core-changed: ${{ steps.core-to-current.outputs.changed == 'true' && steps.core-to-main.outputs.changed == 'true' }}
+      core-changed: ${{ steps.core-to-current.outputs.changed }}
       core-version: ${{ steps.core-to-current.outputs.version }}
-      cli-changed: ${{ steps.cli-to-current.outputs.changed == 'true' && steps.cli-to-main.outputs.changed == 'true' }}
+      cli-changed: ${{ steps.cli-to-current.outputs.changed }}
       cli-version: ${{ steps.cli-to-current.outputs.version }}
-  publish-core:
-    # If version changed, publish with experimental tag
+  tag-core:
+    # If version changed, change tag to latest
     runs-on: ubuntu-latest
     needs: version
     if: needs.version.outputs.core-changed == 'true'
@@ -65,29 +49,25 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 16
-          cache: 'yarn'
       - name: Allow modern Yarn
         run: |
           corepack enable
-      - name: Install dependencies
-        run: |
-          yarn install
-      # Publish to NMP
+      # Tag on NMP
       - name: Publish to NPM
         run: |
-          yarn npm publish --access public --tag experimental
+          yarn npm tag add @iota-wiki/core@${{ needs.version.outputs.core-version }} latest
         env:
           YARN_NPM_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
           YARN_NPM_REGISTRY_SERVER: 'https://registry.npmjs.org'
-      # Publish to GitHub
+      # Tag on GitHub
       - name: Publish to GitHub
         run: |
-          yarn npm publish --access public --tag experimental
+          yarn npm tag add @iota-wiki/core@${{ needs.version.outputs.core-version }} latest
         env:
           YARN_NPM_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           YARN_NPM_REGISTRY_SERVER: 'https://npm.pkg.github.com'
-  publish-cli:
-    # If version changed, publish with experimental tag
+  tag-cli:
+    # If version changed, change tag to latest
     runs-on: ubuntu-latest
     needs: version
     if: needs.version.outputs.cli-changed == 'true'
@@ -96,25 +76,20 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 16
-          cache: 'yarn'
       - name: Allow modern Yarn
         run: |
           corepack enable
-      - name: Install dependencies
-        run: |
-          yarn install
-      # Publish to NMP
+      # Tag on NMP
       - name: Publish to NPM
         run: |
-          yarn workspace @iota-wiki/cli npm publish --access public --tag experimental
+          yarn npm tag add @iota-wiki/cli@${{ needs.version.outputs.cli-version }} latest
         env:
           YARN_NPM_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
           YARN_NPM_REGISTRY_SERVER: 'https://registry.npmjs.org'
-      # Publish to GitHub
+      # Tag on GitHub
       - name: Publish to GitHub
         run: |
-          yarn workspace @iota-wiki/cli npm publish --access public --tag experimental
+          yarn npm tag add @iota-wiki/cli@${{ needs.version.outputs.cli-version }} latest
         env:
           YARN_NPM_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           YARN_NPM_REGISTRY_SERVER: 'https://npm.pkg.github.com'
-
