@@ -16,6 +16,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
         with:
+          submodules: 'true'
           fetch-depth: 0 # Needed for showLastUpdateTime to work
       - uses: actions/setup-node@v3
         with:
@@ -24,11 +25,20 @@ jobs:
       - name: Allow modern Yarn
         run: |
           corepack enable
-      - name: Install Vercel CLI
-        run: npm install --global vercel@latest
-      - name: Pull Vercel Environment Information
-        run: vercel pull --yes --environment=preview --token=${{ secrets.VERCEL_TOKEN }}
-      - name: Build Project Artifacts
-        run: vercel build --token=${{ secrets.VERCEL_TOKEN }}
-      - name: Deploy Project Artifacts to Vercel
-        run: vercel deploy --prebuilt --token=${{ secrets.VERCEL_TOKEN }}
+      - name: Install dependencies
+        run: |
+          yarn
+      - name: Cache Docusaurus artifacts
+        uses: actions/cache@v3
+        with:
+          path: node_modules/.cache
+          key: ${{ runner.os }}-wiki-build-${{ hashFiles('package.json', 'yarn.lock', 'src/**/*.*') }}
+      - name: Build Docusaurus artifacts
+        run: |
+          yarn build:production
+      - name: Pull Vercel environment information
+        run: yarn vercel pull --yes --environment=preview --token=${{ secrets.VERCEL_TOKEN }}
+      - name: Build project artifacts
+        run: yarn vercel build --token=${{ secrets.VERCEL_TOKEN }}
+      - name: Deploy project artifacts to Vercel
+        run: yarn vercel deploy --prebuilt --token=${{ secrets.VERCEL_TOKEN }}
