@@ -9,9 +9,9 @@
     "start:next": "ENVIRONMENT=next docusaurus start",
     "start:all": "yarn build:all && yarn serve",
     "build": "yarn build:iota && yarn build:shimmer && yarn build:next",
-    "build:iota": "ENVIRONMENT=iota docusaurus build --out-dir build",
-    "build:shimmer": "ENVIRONMENT=shimmer docusaurus build --out-dir build/shimmer",
-    "build:next": "ENVIRONMENT=next docusaurus build --out-dir build/next",
+    "build:iota": "(ENVIRONMENT=iota; yarn gen-api-docs && docusaurus build --out-dir build)",
+    "build:shimmer": "(ENVIRONMENT=shimmer; yarn gen-api-docs && docusaurus build --out-dir build/shimmer)",
+    "build:next": "(ENVIRONMENT=next; yarn gen-api-docs && docusaurus build --out-dir build/next)",
     "build:all": "(CONTENT=\"*,*/*,*/*/*\"; yarn checkout && yarn build)",
     "build:production": "(MODE=\"production\" CONTENT=\"*,*/*,*/*/*\"; yarn checkout:remote && yarn build)",
     "swizzle": "docusaurus swizzle",
@@ -25,7 +25,8 @@
     "format:svg": "svgo ./src/**/*.svg",
     "prepare": "husky install",
     "checkout": "git submodule update --init",
-    "checkout:remote": "yarn checkout --remote"
+    "checkout:remote": "yarn checkout --remote",
+    "gen-api-docs": "docusaurus gen-api-docs all"
   },
   "dependencies": {
     "@algolia/client-search": "^4.14.1",
@@ -40,6 +41,8 @@
     "callsite": "^1.0.0",
     "clsx": "^1.2.1",
     "docusaurus-plugin-matomo": "^0.0.5",
+    "docusaurus-plugin-openapi-docs": "^1.4.7",
+    "docusaurus-theme-openapi-docs": "^1.4.7",
     "file-loader": "^6.2.0",
     "flickity": "2.3.0",
     "flickity-fade": "^2.0.0",

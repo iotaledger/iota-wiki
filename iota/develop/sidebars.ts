@@ -76,7 +76,20 @@ module.exports = {
                 id: 'nodes/about-nodes',
             },
             'nodes/become-a-node-operator',
-            'nodes/api_reference',
+            {
+              type: 'category',
+              label: 'API Reference',
+              collapsed: true,
+              items: [
+                'nodes/api_reference',
+                {
+                  type: 'category',
+                  label: 'REST API',
+                  collapsed: true,
+                  items: require('./nodes/rest-api/sidebar'),
+                }
+              ]
+            },
             {
               type: 'category',
               label: 'Explanations',
