@@ -66,5 +66,6 @@ module.exports = {
       },
     ],
   ],
+  themes: ["docusaurus-theme-openapi-docs"],
   staticDirectories: [path.resolve(__dirname, '../static')],
 };

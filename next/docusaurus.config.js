@@ -234,6 +234,7 @@ module.exports = {
         path: path.resolve(__dirname, 'develop'),
         routeBasePath: 'develop',
         sidebarPath: require.resolve('./develop/sidebars.ts'),
+        docItemComponent: "@theme/ApiItem",
 
         // General config
         editUrl: 'https://github.com/iota-wiki/iota-wiki/edit/main/',
@@ -242,6 +243,22 @@ module.exports = {
           require('remark-import-partial'),
         ],
         showLastUpdateTime: true,
+      },
+    ],
+    [
+      'docusaurus-plugin-openapi-docs',
+      {
+        id: "openapi",
+        docsPluginId: "develop", // e.g. "classic" or the plugin-content-docs id
+        config: {
+          core_rest_api: {
+            specPath: "https://raw.githubusercontent.com/iotaledger/tips/main/tips/TIP-0025/core-rest-api.yaml",
+            outputDir: path.resolve(__dirname, 'develop/nodes/core-rest-api'),
+            sidebarOptions: {
+              groupPathsBy: "tag",
+            },
+          }
+        }
       },
     ],
   ],
