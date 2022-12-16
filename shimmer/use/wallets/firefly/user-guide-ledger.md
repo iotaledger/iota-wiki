@@ -71,7 +71,7 @@ Note: This is a security check to ensure that you are connected to the official,
 
 Firefly makes it possible to organize your tokens into different wallets within your profile. These tokens are kept separate from one another. Technically speaking, they are stored on addresses generated on different sub-accounts on your Ledger. To add a new wallet to your profile, navigate to the wallet summary view and press "Add a wallet". Choose a name for your new wallet and press "Create".
 
-Note: Your Ledger device must be unlocked and the Shimmer app must be opened in order to generate an address for the new wallet. 
+Note: Your Ledger device must be unlocked and the Shimmer app must be opened in order to generate an address for the new wallet.
 
 ![add wallet ledger](/img/learn/firefly/add_wallet_ledger.png)![new wallet name ledger](/img/learn/firefly/new_wallet_name_ledger.png)
 
