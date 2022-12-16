@@ -28,7 +28,7 @@ Even though Shimmer is lightweight, malicious actors could still possibly misuse
 
 ### Storage Deposit
 
-Each unspent output has to be stored on every node's hardware. For example, a basic output would store the number of tokens and their owner's address. Without limitations, someone could split his tokens into millions of outputs or create an NFT output with extremely long metadata. To solve this issue, the available data storage is allocated in proportion to the $SMR tokens tied to the output. This is called *storage deposit*, and if a newly created output has too few $SMR tokens to cover the output's size, its containing block will be rejected by the network's nodes. These measures keep the ledger's database size under XXX GB.
+Each unspent output has to be stored on every node's hardware. For example, a basic output would store the number of tokens and their owner's address. Without limitations, someone could split his tokens into millions of outputs or create an NFT output with extremely long metadata. To solve this issue, the available data storage is allocated in proportion to the $SMR tokens tied to the output. This is called _storage deposit_, and if a newly created output has too few $SMR tokens to cover the output's size, its containing block will be rejected by the network's nodes. These measures keep the ledger's database size under XXX GB.
 
 ### Proof of Work
 

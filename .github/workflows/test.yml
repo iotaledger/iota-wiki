@@ -23,6 +23,12 @@ jobs:
       - name: Install dependencies
         run: |
           yarn install
+      - name: Lint Wiki
+        run: |
+          yarn lint:check
+      - name: Format Wiki
+        run: |
+          yarn format:check
       - name: Build Wiki
         run: |
           yarn build:all

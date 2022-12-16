@@ -2,13 +2,12 @@
 description: This section provides a checklist of steps for running a reliable and secure node.
 image: /img/iota-wiki.png
 keywords:
-- IOTA Node 
-- Hornet Node
-- Hornet
-- Security
-- explanation
+  - IOTA Node
+  - Hornet Node
+  - Hornet
+  - Security
+  - explanation
 ---
-
 
 # Security 101
 
@@ -27,8 +26,6 @@ Servers that are reachable from the Internet are a constant target from security
 The security of the device running your node is of the utmost importance to stop attackers from gaining access to the node.
 
 You should consider [securing SSH logins](#securing-ssh-logins) and [blocking unnecessary ports](#blocking-unnecessary-ports) before running a node on your device.
-
-
 
 ### Securing SSH logins
 
@@ -60,7 +57,7 @@ Since broadcasted messages are atomic and nodes provide RESTful API to communica
 
 We recommend that you use a reverse proxy in front of a node is even if you are deploying a single node. Using a reverse proxy adds an additional security layer that can handle tasks such as:
 
-- IP address filtering. 
-- Abuse rate limiting. 
+- IP address filtering.
+- Abuse rate limiting.
 - SSL encrypting.
 - Additional authorization layer.

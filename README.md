@@ -80,9 +80,10 @@ The IOTA Wiki is maintained by the community. We will review all issues and pull
 1. Fork this repository to your own account and clone it (`git clone https://github.com/<YOUR_USERNAME>/iota-wiki.git`)
 2. Create a feature branch for your changes (`git checkout -b feat/amazing-feature`).
 3. Make your changes.
-4. Commit your changes (`git commit -m 'Add some amazing feature'`).
-5. Push your changes to your fork (`git push origin feat/amazing-feature`).
-6. Open a pull request to the `main` branch of this repository.
+4. Run `yarn lint` and `yarn format` and fix any remaining errors and warnings.
+5. Commit your changes (`git commit -m 'Add some amazing feature'`).
+6. Push your changes to your fork (`git push origin feat/amazing-feature`).
+7. Open a pull request to the `main` branch of this repository.
 
 Have a look at [CONTRIBUTING](.github/CONTRIBUTING.md) for further guidance.
 
