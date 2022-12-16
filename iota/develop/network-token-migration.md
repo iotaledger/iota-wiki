@@ -1,6 +1,7 @@
 ---
 title: Network Token Migration
-description: We describe the process of migrating tokens from the IOTA legacy network
+description:
+  We describe the process of migrating tokens from the IOTA legacy network
   into the new Chrysalis network
 ---
 
@@ -37,5 +38,3 @@ Exact guides how to migrate your funds are located here:
 We urge every IOTA token holder who still has not completed the migration to follow the steps and move the tokens into the new network.
 
 The possibility of using the Firefly token migration will end at the latest with the upgrade to the fully decentralized IOTA 2.0 network (Coordicide).
-
-

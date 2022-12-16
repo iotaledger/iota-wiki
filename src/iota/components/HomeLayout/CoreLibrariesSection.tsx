@@ -1,12 +1,6 @@
 import React, { FC } from 'react';
 import Link from '@docusaurus/Link';
-import {
-  Identity,
-  IotaCore,
-  Streams,
-  Stronghold,
-  Wallet,
-} from '@site/src/common/icons';
+import { IotaCore, Wallet } from '@site/src/common/icons';
 
 interface LanguagesProps {
   languages?: { [key: string]: string };

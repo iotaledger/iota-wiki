@@ -1,6 +1,7 @@
 ---
 title: Node Software
-description: The Shimmer networks consist of interconnected nodes that run the same
+description:
+  The Shimmer networks consist of interconnected nodes that run the same
   node software. We introduce the different available types and provide guides
   that will help in setting those nodes up.
 image: /img/participate/banner/banner_node_software.png

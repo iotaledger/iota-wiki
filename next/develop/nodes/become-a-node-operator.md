@@ -1,6 +1,7 @@
 ---
 title: Become a Node Operator
-description: Running a node is the best way to use Shimmer. This topic provides a
+description:
+  Running a node is the best way to use Shimmer. This topic provides a
   checklist of steps for running a reliable node.
 image: /img/iota-wiki.png
 ---

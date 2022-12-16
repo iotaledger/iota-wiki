@@ -28,7 +28,6 @@ function NetworkDropdownNavbarItemDesktop({
   items,
   position,
   className,
-  onClick,
   ...props
 }: DesktopOrMobileNavBarItemProps) {
   const dropdownRef = useRef<HTMLDivElement>(null);
@@ -93,14 +92,15 @@ function NetworkDropdownNavbarItemDesktop({
               if (i === items.length - 1 && e.key === 'Tab') {
                 e.preventDefault();
                 setShowDropdown(false);
-                const nextNavbarItem = dropdownRef.current!.nextElementSibling;
+                const nextNavbarItem =
+                  dropdownRef.current?.nextElementSibling ?? null;
                 if (nextNavbarItem) {
                   const targetItem =
                     nextNavbarItem instanceof HTMLAnchorElement
                       ? nextNavbarItem
                       : // Next item is another dropdown; focus on the inner
                         // anchor element instead so there's outline
-                        nextNavbarItem.querySelector('a')!;
+                        nextNavbarItem.querySelector('a');
                   targetItem.focus();
                 }
               }
@@ -118,10 +118,10 @@ function NetworkDropdownNavbarItemDesktop({
 function NetworkDropdownNavbarItemMobile({
   items,
   className,
-  position, // Need to destructure position from props so that it doesn't get passed on.
   onClick,
   ...props
 }: DesktopOrMobileNavBarItemProps) {
+  delete props.position;
   const { collapsed, toggleCollapsed } = useCollapsible({
     initialState: () => true,
   });
