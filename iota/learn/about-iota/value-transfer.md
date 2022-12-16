@@ -27,7 +27,7 @@ To transfer 10i to Bob, Charlie must attach a value message to the Tangle. For t
 
 To get these tip messages, Charlie requests them from a node.
 
-The node selects these messages by using an algorithm called **Uniform Random Tip Selection** [URTS](https://iotaledger.github.io/tips/tips/TIP-0003/tip-0003.html). This algorithm selects between one and eight valid tip messages that lead to a valid ledger state.
+The node selects these messages by using an algorithm called **Uniform Random Tip Selection** [URTS](/tips/tips/TIP-0003). This algorithm selects between one and eight valid tip messages that lead to a valid ledger state.
 
 - The ledger state is a record of all the value messages that have transferred IOTA tokens in the Tangle, including the state of all balances on addresses. This state must always be balanced: the total number of IOTA tokens must always add up to the total supply.
 

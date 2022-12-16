@@ -29,7 +29,7 @@ If a node decides that a message is valid, it will send it to its direct neighbo
 A Message consists of basic information that defines the type and structure of the message, and it can also contain different **payloads**. A payload is an attachment that can include an IOTA transaction and many other kinds of data.
 
 The IOTA protocol categorizes these information packages into different types and handles certain types differently than others. Therefore, every message sent to the network must contain a unique label as an identifier that describes what this message is and what should be done with it. Only if this information is stated correctly, a node will accept and process a message.
-A more detailed description of this process on protocol level can be found in [TIP-0006 (Tangle Message)](https://github.com/iotaledger/tips/blob/main/tips/TIP-0006/tip-0006.md).
+A more detailed description of this process on protocol level can be found in [TIP-0006 (Tangle Message)](/tips/tips/TIP-0006).
 
 ## Sending a message in IOTA
 
@@ -150,11 +150,11 @@ The message will only be accepted for processing if these parameters are met and
 
 A message may contain a payload. Three payload types are currently defined in the mainnet, but developers can create their custom payloads and attach them to messages as long as they fit the general requirements. This means an IOTA message can contain many types of information, and the IOTA token as transaction payload is just one of many. Below is a table of the currently specified core payloads with a link to their specifications.
 
-| Payload Name                                                                                                    | Type Value |
-| --------------------------------------------------------------------------------------------------------------- | ---------- |
-| [Transaction Payload](https://github.com/iotaledger/tips/blob/main/tips/TIP-0007/tip-0007.md)                   | 0          |
-| [Milestone Payload](https://github.com/iotaledger/tips/blob/main/tips/TIP-0008/tip-0008.md)                     | 1          |
-| [Indexation Payload](https://github.com/iotaledger/tips/blob/main/tips/TIP-0006/tip-0006.md#indexation-payload) | 2          |
+| Payload Name                                                 | Type Value |
+| ------------------------------------------------------------ | ---------- |
+| [Transaction Payload](/tips/tips/TIP-0007)                   | 0          |
+| [Milestone Payload](/tips/tips/TIP-0008)                     | 1          |
+| [Indexation Payload](/tips/tips/TIP-0006#indexation-payload) | 2          |
 
 A message containing only an **indexation payload** (Data) can be sent without a signature. It can hold any data the user wants to send, as long as it is parsable and follows the required syntax and size limit.
 

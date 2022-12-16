@@ -24,7 +24,7 @@ Native tokens can have different types of metadata.
 
 :::tip Interesting Tangle Improvement Proposals (TIPs)
 
-- [TIP-30: Native Token Metadata Standard](https://github.com/iotaledger/tips/blob/main/tips/TIP-0030/tip-0030.md)
+- [TIP-30: Native Token Metadata Standard](/tips/tips/TIP-0030)
 - [TIP-33: IOTA Public Token Registry](https://github.com/Kami-Labs/tips/blob/tip-33/tips/TIP-0033/tip-0033.md)
 
 :::

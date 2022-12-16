@@ -279,7 +279,7 @@ export default function HomeLayout() {
               </div>
             </Link>
             <Link
-              to='https://iotaledger.github.io/tips'
+              to='/tips'
               className='further__card'
             >
               <div className='further__section'>

@@ -31,7 +31,7 @@ To transfer 10 SMR to Bob, Charlie must attach a value block to the Tangle. For 
 
 To get these tip blocks, Charlie requests them from a node.
 
-The node selects these blocks by using an algorithm called **Uniform Random Tip Selection** [URTS](https://iotaledger.github.io/tips/tips/TIP-0003/tip-0003.html). This algorithm selects between one and eight valid tips that lead to a valid ledger state.
+The node selects these blocks by using an algorithm called **Uniform Random Tip Selection** [URTS](/tips/tips/TIP-0003). This algorithm selects between one and eight valid tips that lead to a valid ledger state.
 
 - The ledger state is a record of all the value blocks that have transferred Shimmer tokens in the Tangle, including the state of all balances on addresses. This state must always be balanced: the total number of Shimmer tokens must always add to the total supply.
 
