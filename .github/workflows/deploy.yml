@@ -15,8 +15,16 @@ jobs:
     steps:
       - uses: actions/checkout@v3
         with:
-          submodules: 'true'
           fetch-depth: 0 # Needed for showLastUpdateTime to work
+      - name: Cache submodules
+        uses: actions/cache@v3
+        with:
+          path: |
+            */external
+            .git/modules
+          key: ${{ runner.os }}-wiki-submodules-${{ hashFiles('.gitmodules') }}
+          restore-keys: |
+            ${{ runner.os }}-wiki-submodules
       - uses: actions/setup-node@v3
         with:
           node-version: 16
