@@ -18,10 +18,6 @@
 	path = iota/external/wallet.rs/production
 	url = https://github.com/iotaledger/wallet.rs
   	branch = production
-[submodule "iota/external/wasp/develop"]
-	path = iota/external/wasp/develop
-	url = https://github.com/iotaledger/wasp
-	branch = develop
 [submodule "iota/external/zebra-iota-edge-sdk/production"]
 	path = iota/external/zebra-iota-edge-sdk/production
 	url = https://github.com/ZebraDevs/Zebra-Iota-Edge-SDK
@@ -97,7 +93,7 @@
 [submodule "shimmer/external/wasp"]
 	path = shimmer/external/wasp
 	url = https://github.com/iotaledger/wasp
-	branch = master
+	branch = develop
 [submodule "shimmer/external/inx-poi"]
 	path = shimmer/external/inx-poi
 	url = https://github.com/iotaledger/inx-poi
