@@ -120,21 +120,6 @@ module.exports = {
               label: 'Dashboard',
               href: '/inx-dashboard/welcome',
             },
-            'nodes/become-a-node-operator',
-            {
-              type: 'category',
-              label: 'API Reference',
-              collapsed: true,
-              items: [
-                'nodes/api_reference',
-                {
-                  type: 'category',
-                  label: 'Core REST API',
-                  collapsed: true,
-                  items: require('./nodes/core-rest-api/sidebar'),
-                },
-              ],
-            },
             {
               type: 'link',
               label: 'Spammer',
@@ -165,7 +150,20 @@ module.exports = {
           id: 'nodes/about-nodes',
         },
         'nodes/become-a-node-operator',
-        'nodes/api_reference',
+        {
+          type: 'category',
+          label: 'API Reference',
+          collapsed: true,
+          items: [
+            'nodes/api_reference',
+            {
+              type: 'category',
+              label: 'Core REST API',
+              collapsed: true,
+              items: require('./nodes/core-rest-api/sidebar'),
+            },
+          ],
+        },
         {
           type: 'category',
           label: 'Explanations',
