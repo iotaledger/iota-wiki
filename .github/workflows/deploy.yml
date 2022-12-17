@@ -28,10 +28,18 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 16
-          cache: 'yarn'
       - name: Allow modern Yarn
         run: |
           corepack enable
+      - name: Cache dependencies
+        uses: actions/cache@v3
+        with:
+          path: |
+            .yarn/cache
+            .git/modules
+          key: ${{ runner.os }}-wiki-dependencies-${{ hashFiles('yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-wiki-dependencies
       - name: Install dependencies
         run: |
           yarn
