@@ -8,8 +8,11 @@ on:
     - cron: '0 0 * * *'
 
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        environment: [iota, shimmer, next]
     env:
       NODE_OPTIONS: '--max-old-space-size=3072'
     steps:
@@ -47,13 +50,50 @@ jobs:
         uses: actions/cache@v3
         with:
           path: node_modules/.cache
-          key: ${{ runner.os }}-wiki-build-${{ hashFiles('package.json', 'yarn.lock', 'src/**/*.*') }}
+          key: ${{ runner.os }}-${{ matrix.environment }}-wiki-build-${{ hashFiles('package.json', 'yarn.lock', 'src/**/*.*') }}
       - name: Build Docusaurus artifacts
         run: |
-          yarn build:production
-      - name: Pull Vercel environment information
-        run: yarn vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
-      - name: Build project artifacts
-        run: yarn vercel build --prod --token=${{ secrets.VERCEL_TOKEN }}
-      - name: Deploy project artifacts to Vercel
-        run: yarn vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }}
+          yarn vercel:${{ matrix.environment }}
+      - name: Create Docusaurus artifacts archive
+        run: |
+          tar -cf ${{ matrix.environment }}.tar build
+      - name: Upload Docusaurus artifacts archive
+        uses: actions/upload-artifact@v3
+        with:
+          name: artifacts
+          path: ${{ matrix.environment }}.tar
+  config:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Upload Vercel config
+        uses: actions/upload-artifact@v3
+        with:
+          name: artifacts
+          path: vercel.json
+  deploy:
+    runs-on: ubuntu-latest
+    needs:
+      - build
+      - config
+    steps:
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+      - name: Download artifacts
+        uses: actions/download-artifact@v3
+        with:
+          name: artifacts
+      - name: Extract Docusaurus artifacts archives
+        run: |
+          tar -xf iota.tar
+          tar -xf shimmer.tar
+          tar -xf next.tar
+      - name: Install Vercel CLI
+        run: npm install --global vercel@latest
+      - name: Pull Vercel Environment Information
+        run: vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
+      - name: Build Project Artifacts
+        run: vercel build --prod --token=${{ secrets.VERCEL_TOKEN }}
+      - name: Deploy Project Artifacts to Vercel
+        run: vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }}
