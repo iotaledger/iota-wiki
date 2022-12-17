@@ -251,10 +251,7 @@ export default function HomeLayout() {
                 </p>
               </div>
             </Link>
-            <Link
-              to='/tips'
-              className='further__card'
-            >
+            <Link to='/tips' className='further__card'>
               <div className='further__section'>
                 <div className='further__icon'>
                   <Tips />
