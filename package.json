@@ -14,9 +14,9 @@
     "build:next": "(ENVIRONMENT=next; yarn gen-api-docs && docusaurus build --out-dir build/next)",
     "build:all": "(CONTENT=\"*,*/*,*/*/*\"; yarn checkout && yarn build)",
     "build:production": "(MODE=\"production\" CONTENT=\"*,*/*,*/*/*\"; yarn checkout:remote && yarn build)",
-    "vercel:iota": "(MODE=\"production\" CONTENT=\"*,*/*,*/*/*\"; yarn checkout:remote && yarn build:iota)",
-    "vercel:shimmer": "(MODE=\"production\" CONTENT=\"*,*/*,*/*/*\"; yarn checkout:remote && yarn build:shimmer)",
-    "vercel:next": "(MODE=\"production\" CONTENT=\"*,*/*,*/*/*\"; yarn checkout:remote && yarn build:next)",
+    "vercel:iota": "(MODE=\"production\" CONTENT=\"*,*/*,*/*/*\"; yarn checkout:remote:iota && yarn build:iota)",
+    "vercel:shimmer": "(MODE=\"production\" CONTENT=\"*,*/*,*/*/*\"; yarn checkout:remote:shimmer && yarn build:shimmer)",
+    "vercel:next": "(MODE=\"production\" CONTENT=\"*,*/*,*/*/*\"; yarn checkout:remote:next && yarn build:next)",
     "swizzle": "docusaurus swizzle",
     "deploy": "docusaurus deploy",
     "clear": "docusaurus clear",
@@ -30,6 +30,9 @@
     "format:svg": "svgo ./src/**/*.svg",
     "checkout": "git submodule update --init",
     "checkout:remote": "yarn checkout --remote",
+    "checkout:remote:iota": "yarn checkout:remote iota/external/*",
+    "checkout:remote:shimmer": "yarn checkout:remote shimmer/external/*",
+    "checkout:remote:next": "yarn checkout:remote next/external/*",
     "gen-api-docs": "docusaurus gen-api-docs all"
   },
   "dependencies": {

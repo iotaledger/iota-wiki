@@ -23,11 +23,11 @@ jobs:
         uses: actions/cache@v3
         with:
           path: |
-            */external
+            ${{ matrix.environment }}/external
             .git/modules
-          key: ${{ runner.os }}-wiki-submodules-${{ hashFiles('.gitmodules') }}
+          key: ${{ matrix.environment }}-submodules-${{ hashFiles('.gitmodules') }}
           restore-keys: |
-            ${{ runner.os }}-wiki-submodules
+            ${{ matrix.environment }}-submodules
       - uses: actions/setup-node@v3
         with:
           node-version: 16
@@ -39,28 +39,27 @@ jobs:
         with:
           path: |
             .yarn/cache
-            .git/modules
-          key: ${{ runner.os }}-wiki-dependencies-${{ hashFiles('yarn.lock') }}
+          key: wiki-dependencies-${{ hashFiles('yarn.lock') }}
           restore-keys: |
-            ${{ runner.os }}-wiki-dependencies
+            wiki-dependencies
       - name: Install dependencies
         run: |
           yarn
-      - name: Cache Docusaurus artifacts
+      - name: Cache build artifacts
         uses: actions/cache@v3
         with:
           path: node_modules/.cache
-          key: ${{ runner.os }}-${{ matrix.environment }}-wiki-build-${{ hashFiles('package.json', 'yarn.lock', 'src/**/*.*') }}
-      - name: Build Docusaurus artifacts
+          key: ${{ matrix.environment }}-build-artifacts-${{ hashFiles('package.json', 'yarn.lock', 'src/**/*.*') }}
+      - name: Build ${{ matrix.environment }}
         run: |
           yarn vercel:${{ matrix.environment }}
-      - name: Create Docusaurus artifacts archive
+      - name: Archive ${{ matrix.environment }}
         run: |
           tar -cf ${{ matrix.environment }}.tar build
-      - name: Upload Docusaurus artifacts archive
+      - name: Upload ${{ matrix.environment }}
         uses: actions/upload-artifact@v3
         with:
-          name: artifacts
+          name: build
           path: ${{ matrix.environment }}.tar
   config:
     runs-on: ubuntu-latest
@@ -69,7 +68,7 @@ jobs:
       - name: Upload Vercel config
         uses: actions/upload-artifact@v3
         with:
-          name: artifacts
+          name: build
           path: vercel.json
   deploy:
     runs-on: ubuntu-latest
@@ -80,11 +79,11 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 16
-      - name: Download artifacts
+      - name: Download build
         uses: actions/download-artifact@v3
         with:
-          name: artifacts
-      - name: Extract Docusaurus artifacts archives
+          name: build
+      - name: Extract build
         run: |
           tar -xf iota.tar
           tar -xf shimmer.tar
