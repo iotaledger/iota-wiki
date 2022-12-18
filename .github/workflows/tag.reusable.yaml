@@ -12,6 +12,7 @@ on:
         type: string
 jobs:
   check:
+    # TODO: Output `changed: true` only when version is higher than previous, not just changed
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3

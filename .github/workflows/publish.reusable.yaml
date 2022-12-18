@@ -1,5 +1,3 @@
-# TODO: Remove assumption version is increased to unreleased version.
-
 name: publish package
 on:
   workflow_call:
@@ -14,6 +12,7 @@ on:
         type: string
 jobs:
   check:
+    # TODO: Output `changed: true` only when version is higher than previous, not just changed
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -53,6 +52,7 @@ jobs:
       - name: Install dependencies
         run: |
           yarn
+      # Test if packaging will succeed
       - name: Pack
         run: |
           yarn workspace ${{ inputs.workspace }} pack --dry-run

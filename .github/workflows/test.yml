@@ -6,10 +6,8 @@ on:
     branches:
       - main
 jobs:
-  deploy:
+  consistency:
     runs-on: ubuntu-latest
-    env:
-      NODE_OPTIONS: '--max-old-space-size=3072'
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
@@ -21,7 +19,7 @@ jobs:
           corepack enable
       - name: Install dependencies
         run: |
-          yarn install
+          yarn
       - name: Lint Wiki
         run: |
           yarn lint:check
