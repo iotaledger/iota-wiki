@@ -52,7 +52,7 @@ jobs:
           key: ${{ matrix.environment }}-build-artifacts-${{ hashFiles('package.json', 'yarn.lock', 'src/**/*.*') }}
       - name: Build ${{ matrix.environment }}
         run: |
-          yarn vercel:${{ matrix.environment }}
+          yarn build:production:${{ matrix.environment }}
       - name: Archive ${{ matrix.environment }}
         run: |
           tar -cf ${{ matrix.environment }}.tar build

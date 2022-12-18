@@ -2,14 +2,22 @@ const { glob, merge } = require('./src/utils/config');
 const path = require('path');
 
 const {
-  CONTENT = '',
   ENVIRONMENT = 'iota',
+  EXTERNAL = '',
   MODE = 'development',
 } = process.env;
 
+if (!['iota', 'shimmer', 'next'].includes(ENVIRONMENT)) {
+  throw "Set ENVIRONMENT to 'iota', 'shimmer', or 'next'";
+}
+
+if (!['development', 'production'].includes(MODE)) {
+  throw "Set MODE to 'development', or 'production'";
+}
+
 const isProduction = MODE === 'production';
 
-const external = glob(CONTENT, path.join(ENVIRONMENT, 'external'));
+const external = glob(EXTERNAL, path.join(ENVIRONMENT, 'external'));
 const tutorials = require('./tutorials/docusaurus.config');
 const common = require('./common/docusaurus.config');
 const environment = require(`./${ENVIRONMENT}/docusaurus.config`);
