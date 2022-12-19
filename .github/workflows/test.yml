@@ -1,18 +1,15 @@
 name: test
 
 on:
+  workflow_dispatch:
   pull_request:
-    branches: [main]
-
+    branches:
+      - main
 jobs:
-  test:
+  consistency:
     runs-on: ubuntu-latest
-    env:
-      NODE_OPTIONS: '--max-old-space-size=3072'
     steps:
       - uses: actions/checkout@v3
-        with:
-          fetch-depth: 0 # Needed for showLastUpdateTime to work
       - uses: actions/setup-node@v3
         with:
           node-version: 16
@@ -22,16 +19,10 @@ jobs:
           corepack enable
       - name: Install dependencies
         run: |
-          yarn install
+          yarn
       - name: Lint Wiki
         run: |
           yarn lint:check
       - name: Format Wiki
         run: |
           yarn format:check
-      - name: Build Wiki
-        run: |
-          yarn build:all
-      - name: Pack Wiki CLI
-        run: |
-          yarn workspace @iota-wiki/cli pack --dry-run

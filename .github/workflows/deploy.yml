@@ -8,21 +8,36 @@ on:
     - cron: '0 0 * * *'
 
 jobs:
+  build:
+    strategy:
+      matrix:
+        environment: [iota, shimmer, next]
+    uses: ./.github/workflows/build.reusable.yaml
+    with:
+      environment: ${{ matrix.environment }}
+  config:
+    uses: ./.github/workflows/config.reusable.yaml
   deploy:
     runs-on: ubuntu-latest
-    env:
-      NODE_OPTIONS: '--max-old-space-size=3072'
+    needs:
+      - build
+      - config
     steps:
-      - uses: actions/checkout@v3
-        with:
-          fetch-depth: 0 # Needed for showLastUpdateTime to work
       - uses: actions/setup-node@v3
         with:
           node-version: 16
-          cache: 'yarn'
-      - name: Allow modern Yarn
+      # All previous jobs upload to same artifact so only a single download required
+      - name: Download build
+        uses: actions/download-artifact@v3
+        with:
+          name: build
+      # Paths of the build artifacts are preserved (`build`, `build/shimmer`, and `build/next`)
+      - name: Extract build
         run: |
-          corepack enable
+          tar -xf iota.tar
+          tar -xf shimmer.tar
+          tar -xf next.tar
+      # Convert to Vercel project and upload
       - name: Install Vercel CLI
         run: npm install --global vercel@latest
       - name: Pull Vercel Environment Information
