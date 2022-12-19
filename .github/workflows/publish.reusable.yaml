@@ -1,0 +1,87 @@
+name: publish package
+on:
+  workflow_call:
+    inputs:
+      path:
+        description: 'Path to the package.json file'
+        required: true
+        type: string
+      workspace:
+        description: 'Workspace name'
+        required: true
+        type: string
+jobs:
+  check:
+    # TODO: Output `changed: true` only when version is higher than previous, not just changed
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Check version change in push
+        id: relative
+        uses: EndBug/version-check@v2
+        with:
+          file-name: ${{ inputs.path }}
+          diff-search: true
+          # Only compare before and after if before exists, else check commits
+          file-url: ${{ github.event.before && '::before' }}
+          static-checking: ${{ github.event.before && 'localIsNew' }}
+      - name: Check version change compared to default branch
+        if: steps.relative.outputs.changed == 'true'
+        id: absolute
+        uses: EndBug/version-check@v2
+        with:
+          file-name: ${{ inputs.path }}
+          file-url: ${{ format('https://raw.githubusercontent.com/{0}/{1}/{2}', github.event.repository.full_name, github.event.repository.default_branch, inputs.path) }}
+          static-checking: localIsNew
+    outputs:
+      changed: ${{ steps.absolute.outputs.changed }}
+  test:
+    runs-on: ubuntu-latest
+    needs:
+      - check
+    if: needs.check.outputs.changed != 'true'
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          cache: 'yarn'
+      - name: Allow modern Yarn
+        run: |
+          corepack enable
+      - name: Install dependencies
+        run: |
+          yarn
+      # Test if packaging will succeed
+      - name: Pack
+        run: |
+          yarn workspace ${{ inputs.workspace }} pack --dry-run
+  publish:
+    runs-on: ubuntu-latest
+    needs:
+      - check
+    if: needs.check.outputs.changed == 'true'
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          cache: 'yarn'
+      - name: Allow modern Yarn
+        run: |
+          corepack enable
+      - name: Install dependencies
+        run: |
+          yarn
+      - name: Publish to NPM
+        run: |
+          yarn workspace ${{ inputs.workspace }} npm publish --access public --tag experimental
+        env:
+          YARN_NPM_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          YARN_NPM_REGISTRY_SERVER: 'https://registry.npmjs.org'
+      - name: Publish to GitHub
+        run: |
+          yarn workspace ${{ inputs.workspace }} npm publish --access public --tag experimental
+        env:
+          YARN_NPM_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          YARN_NPM_REGISTRY_SERVER: 'https://npm.pkg.github.com'

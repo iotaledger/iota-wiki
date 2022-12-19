@@ -2,9 +2,9 @@ tasks:
   - name: Install and run core wiki
     init: |
       corepack enable
-      yarn install
-      yarn run build
-    command: yarn run start
+      yarn
+      yarn build:all
+    command: yarn serve
 github:
   prebuilds:
     pullRequestsFromForks: true

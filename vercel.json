@@ -6,6 +6,6 @@
     { "src": "/(.*)", "status": 404, "dest": "/404.html" }
   ],
   "outputDirectory": "build",
-  "installCommand": "yarn install",
-  "buildCommand": "yarn build:production"
+  "installCommand": "",
+  "buildCommand": ""
 }

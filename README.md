@@ -43,7 +43,7 @@
 
 <!-- ABOUT THE PROJECT -->
 
-## About The Project
+## About the Project
 
 The IOTA Wiki is a central hub for entering into the IOTA ecosystem. A community driven initiative to provide an up-to-date collection of introductions and further reading about the technology, the teams, the community, and everything in between. So anyone can learn how to build, adopt, and engage with IOTA, all in one space.
 
@@ -61,15 +61,42 @@ The IOTA Wiki is built using [TypeScript](https://www.typescriptlang.org/), [Rea
 - [Node.js 16.10 or above](https://nodejs.org/en/download/).
 - [Modern Yarn](https://yarnpkg.com/getting-started/install) enabled by running `corepack enable`.
 
-### Local Development
+### Preview Locally
+
+Because the Wiki is a large project composed of several Docusaurus builds and external documentation, a full build takes a while. To speed up development, we provide environment variables to select different configurations, and some convenience scripts with environment variables pre-configured.
+
+To preview the entire Wiki locally, use the following steps. For more selective preview and build configurations, see [Environment variables](#environment-variables) and [Pre-configured scripts](#pre-configured-scripts) for reference.
 
 1. Clone the repository by running `git clone https://github.com/iota-wiki/iota-wiki.git` and go to the directory with `cd iota-wiki`.
+2. Install dependencies with `yarn`.
+3. Check out the latest version of external documentation with `yarn checkout:remote`.
+4. Build all environments including external documentation and serve the result with `EXTERNAL="*,*/*,*/*/*" yarn start:all`.
 
-2. Run `git submodule update --init --recursive` to check out the project submodules. Optionally you can add the `--remote` flag to get the latest changes.
+#### Environment variables
 
-3. Install needed dependencies with `yarn`.
+| Variable    | Accepts                                 | Default       | Explanation                                                                                                                  |
+| ----------- | --------------------------------------- | ------------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| ENVIRONMENT | One of `iota`, `shimmer`, or `next`     | `iota`        | The environment to build.                                                                                                    |
+| EXTERNAL    | A comma separated list of glob patterns |               | What external documentation to include in the build. Glob patterns are relative to the `<environment>/external` directories. |
+| MODE        | One of `development`, or `production`   | `development` | Depending on the mode chosen, some functionalities are included or excluded (analytics for example).                         |
 
-4. Start a local development server with `yarn start:iota`, `yarn start:shimmer`, or `yarn start:next` to preview a minimal Wiki for the respective environment. You can use the `CONTENT` environment variable to select what external content you want to include in the preview. It accepts a list of comma delimited glob patterns relative to the `external` subdirectory of the selected environment (i.e. `CONTENT=identity.rs/*/documentation yarn start:iota` would give you a minimal IOTA Wiki with only `identity.rs` external documentation included). Alternatively, you can build and preview the entire Wiki with `yarn start:all`, but note that this does not use the development server, but does a full production build and will take a long time.
+> For example `ENVIRONMENT=iota EXTERNAL=identity.rs/**,wallet.rs/** yarn start` starts a development server for the `iota` environment with all `identity.rs` and `wallet.rs` versions included.
+
+#### Pre-configured scripts
+
+| Script                          | Explanation                                                                                                                                                         |
+| ------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `start:<environment>`           | Start a development server for the `iota`, `shimmer`, or `next` environment, with hot reloading on changes.                                                         |
+| `start:all`                     | Build all environments and serve the result, without hot reloading on changes.                                                                                      |
+| `build:<environment>`           | Build the `iota`, `shimmer`, or `next` environment.                                                                                                                 |
+| `build:all`                     | Build all environments.                                                                                                                                             |
+| `checkout`                      | Check out external documentation.                                                                                                                                   |
+| `checkout:<environment>`        | Check out external documentation for the `iota`, `shimmer`, or `next` environment.                                                                                  |
+| `checkout:remote:<environment>` | Check out the latest version of external documentation.                                                                                                             |
+| `checkout:remote`               | Check out the latest version of external documentation for the `iota`, `shimmer`, or `next` environment.                                                            |
+| `generate:api`                  | Generate available API documentation configured through the [Docusaurus OpenAPI plugin](https://www.npmjs.com/package/@paloaltonetworks/docusaurus-plugin-openapi). |
+
+> For example `EXTERNAL=identity.rs/**,wallet.rs/** yarn start:iota` starts a development server for the `iota` environment with all `identity.rs` and `wallet.rs` versions included.
 
 <!-- CONTRIBUTING -->
 
@@ -79,7 +106,7 @@ The IOTA Wiki is maintained by the community. We will review all issues and pull
 
 1. Fork this repository to your own account and clone it (`git clone https://github.com/<YOUR_USERNAME>/iota-wiki.git`)
 2. Create a feature branch for your changes (`git checkout -b feat/amazing-feature`).
-3. Make your changes.
+3. Make your changes and optionally [preview them locally](#preview-locally).
 4. Run `yarn lint` and `yarn format` and fix any remaining errors and warnings.
 5. Commit your changes (`git commit -m 'Add some amazing feature'`).
 6. Push your changes to your fork (`git push origin feat/amazing-feature`).
@@ -108,7 +135,7 @@ JSto - [JSto91](https://github.com/JSto91) - JSto#3746
 The IOTA Wiki is a completely voluntary project put together, maintained, and contributed to by a group of enthusiastic community members.
 Feel free to support our work:
 
-#### iota1qzrmyrnfhfauhv6gax50ncx844uppq4c5dddp3gk99ha0lx5jeqkwk6dapx
+`iota1qzrmyrnfhfauhv6gax50ncx844uppq4c5dddp3gk99ha0lx5jeqkwk6dapx`
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
