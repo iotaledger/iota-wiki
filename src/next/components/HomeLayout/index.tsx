@@ -235,6 +235,14 @@ export default function HomeLayout() {
                 </Link>
               </div>
             </div>
+            <div className='spaceholder__card__img'>
+              <ThemedImage alt="Nodes Setup"
+                sources={{
+                  light: NodesImg,
+                  dark: NodesImgDark,
+                }}
+              />
+            </div>
           </div>
         </HomepageSection>
         <HomepageSection header='Developer resources'>
