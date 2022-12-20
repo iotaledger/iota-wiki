@@ -1,4 +1,4 @@
-import CoreLibImg from '@site/static/img/section_core_libraries.png';
+import CoreLibImg from '@site/static/img/homepage/section_core_libraries.png';
 import CoreLibImgDark from '@site/static/img/homepage/section_core_libraries_dark.png';
 import ThemedImage from '@theme/ThemedImage';
 import React, { FC } from 'react';
