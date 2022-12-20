@@ -1,3 +1,6 @@
+import NodesImg from '@site/static/img/homepage/section_nodes.png';
+import NodesImgDark from '@site/static/img/homepage/section_nodes_dark.png';
+import ThemedImage from '@theme/ThemedImage';
 import React, { FC } from 'react';
 import Layout from '@theme/Layout';
 import Link from '@docusaurus/Link';
