@@ -113,7 +113,8 @@ const LibrariesSection: FC = () => (
       </div>
     </div>
     <div className='spaceholder__card__img'>
-      <ThemedImage alt="Core Libraries"
+      <ThemedImage
+        alt='Core Libraries'
         sources={{
           light: CoreLibImg,
           dark: CoreLibImgDark,

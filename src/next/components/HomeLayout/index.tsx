@@ -239,7 +239,8 @@ export default function HomeLayout() {
               </div>
             </div>
             <div className='spaceholder__card__img'>
-              <ThemedImage alt="Nodes Setup"
+              <ThemedImage
+                alt='Nodes Setup'
                 sources={{
                   light: NodesImg,
                   dark: NodesImgDark,
