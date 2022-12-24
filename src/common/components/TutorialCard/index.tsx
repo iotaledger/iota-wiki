@@ -6,7 +6,6 @@
  */
 
 import React, { memo, useState } from 'react';
-import Image from '@theme/IdealImage';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import clsx from 'clsx';
 
@@ -63,9 +62,9 @@ const TutorialCard = memo(({ tutorial }: { tutorial: Tutorial }) => {
         className='card shadow--md tutorial-card'
       >
         <div className='card__image tutorial-card__image-container'>
-          <Image
+          <img
             className='tutorial-card__image'
-            img={tutorial.preview}
+            src={tutorial.preview}
             alt={tutorial.title}
           />
         </div>

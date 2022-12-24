@@ -41,7 +41,6 @@
     "@algolia/client-search": "^4.14.1",
     "@docusaurus/core": "2.2.0",
     "@docusaurus/plugin-client-redirects": "2.2.0",
-    "@docusaurus/plugin-ideal-image": "2.2.0",
     "@docusaurus/preset-classic": "2.2.0",
     "@iota-wiki/plugin-tutorial": "^1.0.6",
     "@mdx-js/react": "^1.6.21",
