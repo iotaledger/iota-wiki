@@ -40,7 +40,6 @@ module.exports = {
   },
   plugins: [
     'plugin-image-zoom',
-    '@docusaurus/plugin-ideal-image',
     [
       '@docusaurus/plugin-content-pages',
       {

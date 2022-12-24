@@ -1985,7 +1985,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@docusaurus/plugin-ideal-image@npm:2.2.0, @docusaurus/plugin-ideal-image@npm:^2.0.1":
+"@docusaurus/plugin-ideal-image@npm:^2.0.1":
   version: 2.2.0
   resolution: "@docusaurus/plugin-ideal-image@npm:2.2.0"
   dependencies:
@@ -2521,7 +2521,6 @@ __metadata:
     "@docusaurus/module-type-aliases": 2.2.0
     "@docusaurus/plugin-client-redirects": 2.2.0
     "@docusaurus/plugin-google-gtag": 2.2.0
-    "@docusaurus/plugin-ideal-image": 2.2.0
     "@docusaurus/preset-classic": 2.2.0
     "@iota-wiki/plugin-tutorial": ^1.0.6
     "@mdx-js/react": ^1.6.21
