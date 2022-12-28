@@ -674,7 +674,8 @@
   text-decoration: none;
 }
 
-.spaceholder__card__img {
-  display: flex;
-  gap: 1.5rem;
+@media (max-width: 996px) {
+  .spaceholder__card__img {
+    display: none;
+  }
 }
