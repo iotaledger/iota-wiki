@@ -689,3 +689,9 @@
 .further__card:hover {
   text-decoration: none;
 }
+
+@media (max-width: 996px) {
+  .spaceholder__card__img {
+    display: none;
+  }
+}
