@@ -28,7 +28,7 @@ cd wallet-setup
 Next to the existing dependencies of the wallet setup tutorial, you will only need to add two more packages by running the following commands:
 
 ```bash
-npm install @iota/client
+npm install @iota/client@3.0.0-rc.5
 npm install ipfs-core@0.10.8
 ```
 
@@ -41,11 +41,12 @@ Afterward, your `package.json` file should contain the following dependencies:
   "description": "",
   "main": "create-mnemonic.js",
   "dependencies": {
-    "@iota/client": "^3.0.0-alpha.7",
-    "@iota/wallet": "^2.0.2-alpha.21",
-    "bip39": "^3.0.4",
-    "dotenv": "^16.0.1",
-    "ipfs-core": "^0.15.4"
+    "@iota/client": "3.0.0-rc.5",
+    "@iota/wallet": "2.0.3-rc.9",
+    "bip39": "3.0.4",
+    "dotenv": "16.0.1",
+    "node-fetch": "2.6.7",
+    "ipfs-core": "0.10.8"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -94,7 +95,7 @@ const password = process.env.SH_PASSWORD;
 const accountName = process.env.ACCOUNT_NAME;
 
 // Network configuration
-const { networkConfig } = require('./networkConfig.js');
+const networkConfig = require('./networkConfig.js');
 const explorerURL = networkConfig.explorer;
 
 // For better readability, some console output will be printed in a different color

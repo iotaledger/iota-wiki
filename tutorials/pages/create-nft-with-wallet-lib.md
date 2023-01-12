@@ -22,7 +22,7 @@ cd wallet-setup
 Next to the existing dependencies of the wallet setup tutorial, you will only need to add two more packages by running the following commands:
 
 ```bash
-npm install @iota/client
+npm install @iota/client@3.0.0-rc.5
 npm install ipfs-core@0.10.8
 ```
 
@@ -35,11 +35,12 @@ Afterward, your `package.json` file should contain the following dependencies:
   "description": "",
   "main": "create-mnemonic.js",
   "dependencies": {
-    "@iota/client": "^3.0.0-alpha.7",
-    "@iota/wallet": "^2.0.2-alpha.21",
-    "bip39": "^3.0.4",
-    "dotenv": "^16.0.1",
-    "ipfs-core": "^0.15.4"
+    "@iota/client": "3.0.0-rc.5",
+    "@iota/wallet": "2.0.3-rc.9",
+    "bip39": "3.0.4",
+    "dotenv": "16.0.1",
+    "node-fetch": "2.6.7",
+    "ipfs-core": "0.10.8"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -57,7 +58,7 @@ Add your desired `*.jpg` file to the `wallet-setup` folder you created and renam
 
 For this tutorial we'll use the following image:
 
-![NFT Image](/nft-image.jpg)
+![NFT Image](../static/nft-image.jpg)
 
 ---
 
@@ -88,7 +89,7 @@ const password = process.env.SH_PASSWORD;
 const accountName = process.env.ACCOUNT_NAME;
 
 // Network configuration
-const { networkConfig } = require('./networkConfig.js');
+const networkConfig = require('./networkConfig.js');
 const explorerURL = networkConfig.explorer;
 
 // For better readability, some console output will be printed in a different color
@@ -143,20 +144,20 @@ This part calls the `uploadByPath()` function described above and prepares the m
 
 ```javascript
 async function run() {
-    try {
-        const filePath = "nft-image.jpg";
-        const ipfsCid = await uploadByPath(filePath);
+  try {
+    const filePath = "nft-image.jpg";
+    const ipfsCid = await uploadByPath(filePath);
 
-        // Define NFT metadata
-        const metadataObject = {
-            standard: "IRC27",
-            type: "image/jpeg",
-            version: "v1.0",
-            name: "<Enter_your_desired_name_here>",
-            uri: `https://ipfs.io/ipfs/${ipfsCid}`
-        };
+    // Define NFT metadata
+    const metadataObject = {
+        standard: "IRC27",
+        type: "image/jpeg",
+        version: "v1.0",
+        name: "<Enter_your_desired_name_here>",
+        uri: `https://ipfs.io/ipfs/${ipfsCid}`
+    };
 
-        const metadataBytes = utf8ToHex(JSON.stringify(metadataObject));
+    const metadataBytes = utf8ToHex(JSON.stringify(metadataObject));
 ```
 
 #### 4. Import Stronghold account and synchronize
@@ -174,18 +175,19 @@ await account.sync();
 #### 5. Mint NFT
 
 ```javascript
-        const response = await account.mintNfts([
-            {
-                immutableMetadata: metadataBytes
-            }
-        ]);
+    const response = await account.mintNfts([
+      {
+        immutableMetadata: metadataBytes
+      }
+    ]);
 
-        console.log(consoleColor, `Your NFT was successfully minted in this block:`);
-        console.log(`${explorerURL}/block/${response.blockId}`, '\n')
-    } catch (error) {
-        console.log('Error: ', error);
-    }
-    process.exit(0);
+    console.log(consoleColor, `Your NFT was successfully minted in this block:`);
+    console.log(`${explorerURL}/block/${response.blockId}`, '\n')
+
+  } catch (error) {
+    console.log('Error: ', error);
+  }
+  process.exit(0);
 }
 
 run();

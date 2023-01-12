@@ -36,7 +36,7 @@ npm init --yes
   "description": "",
   "main": "create-mnemonic.js",
   "dependencies": {
-    "@iota/wallet": "2.0.3-rc.1",
+    "@iota/wallet": "2.0.3-rc.9",
     "bip39": "3.0.4",
     "dotenv": "16.0.1",
     "node-fetch": "2.6.7"
@@ -76,7 +76,7 @@ networkConfig.faucetWebsite = 'https://faucet.testnet.shimmer.network';
 networkConfig.faucetApi = 'https://faucet.testnet.shimmer.network/api/enqueue';
 networkConfig.explorer = 'https://explorer.shimmer.network/testnet';
 
-module.exports = { networkConfig };
+module.exports = networkConfig;
 ```
 
 ---
@@ -86,10 +86,10 @@ module.exports = { networkConfig };
 Create a new `.env` file and add the content below:
 
 ```javascript
-ACCOUNT_NAME = '<Enter_your_name_here>';
-SH_PASSWORD = '<Enter_your_password_here>';
+ACCOUNT_NAME = 'Enter_your_name_here';
+SH_PASSWORD = 'Enter_your_password_here';
 MNEMONIC =
-  '<You_will_create_your_own_mnemonic_seed_phrase_in_the_next_step_and_paste_it_in_here>';
+  'You_will_create_your_own_mnemonic_seed_phrase_in_the_next_step_and_paste_it_in_here';
 ```
 
 Enter your desired account name as well as a secure Stronghold password. You will create your new mnemonic seed phrase in the next step and paste it here afterward.
@@ -128,7 +128,7 @@ Run the script `create-mnemonic.js` and check the console output for your new mn
 node create-mnemonic.js
 ```
 
-You can now copy the seed phrase and paste it into the previously [created `.env` file](#prepare-environment-variables).
+You can now copy the seed phrase and paste it into the previously created file [created file](#prepare-the-environment-variables) `.env`.
 
 ---
 
@@ -151,7 +151,7 @@ This part imports all necessary packages, network configuration parameters, and 
 const { AccountManager, CoinType } = require('@iota/wallet');
 
 // Network configuration
-const { networkConfig } = require('./networkConfig.js');
+const networkConfig = require('./networkConfig.js');
 const nodeURL = networkConfig.node;
 
 // Environment variables
@@ -368,7 +368,7 @@ The 'Request' button will become clickable as soon as a valid Shimmer address is
 
 :::
 
-![Shimmer Testnet Faucet](/shimmer-testnet-faucet.png)
+![Shimmer Testnet Faucet](../static/shimmer-testnet-faucet.png)
 
 ---
 
@@ -383,7 +383,7 @@ Make sure to paste your previously generated address into the variable `receivin
 const fetch = require('node-fetch');
 
 // Network configuration
-const { networkConfig } = require('./networkConfig.js');
+const networkConfig = require('./networkConfig.js');
 const faucetApi = networkConfig.faucetApi;
 
 // For better readability, some console output will be printed in a different color
