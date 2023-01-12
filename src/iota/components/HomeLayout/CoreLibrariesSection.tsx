@@ -1,3 +1,6 @@
+import CoreLibImg from '@site/static/img/homepage/section_core_libraries.png';
+import CoreLibImgDark from '@site/static/img/homepage/section_core_libraries_dark.png';
+import ThemedImage from '@theme/ThemedImage';
 import React, { FC } from 'react';
 import Link from '@docusaurus/Link';
 import { IotaCore, Wallet } from '@site/src/common/icons';
@@ -108,6 +111,15 @@ const LibrariesSection: FC = () => (
           Integrate a wallet
         </Link>
       </div>
+    </div>
+    <div className='spaceholder__card__img'>
+      <ThemedImage
+        alt='Core Libraries'
+        sources={{
+          light: CoreLibImg,
+          dark: CoreLibImgDark,
+        }}
+      />
     </div>
   </div>
 );

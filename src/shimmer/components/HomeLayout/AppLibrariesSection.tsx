@@ -1,3 +1,6 @@
+import AppLibImg from '@site/static/img/homepage/section_application_libraries.png';
+import AppLibImgDark from '@site/static/img/homepage/section_application_libraries_dark.png';
+import ThemedImage from '@theme/ThemedImage';
 import React, { FC } from 'react';
 import Link from '@docusaurus/Link';
 import { Identity, SmartContracts, Stronghold } from '@site/src/common/icons';
@@ -120,6 +123,15 @@ const LibrariesSection: FC = () => (
           </Link>
         </div>
       </div>
+    </div>
+    <div className='spaceholder__card__img'>
+      <ThemedImage
+        alt='Core Libraries'
+        sources={{
+          light: AppLibImg,
+          dark: AppLibImgDark,
+        }}
+      />
     </div>
   </div>
 );
