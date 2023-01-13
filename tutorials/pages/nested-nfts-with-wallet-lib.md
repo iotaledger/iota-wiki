@@ -252,6 +252,7 @@ async function main() {
   } catch (error) {
     console.log('Error: ', error);
   }
+  process.exit(0);
 }
 
 main();
@@ -410,6 +411,7 @@ The function `main()` loads and unlocks a Stronghold account and sends a NFT to 
   } catch (error) {
       console.log('Error: ', error);
   }
+  process.exit(0);
 }
 
 main();
