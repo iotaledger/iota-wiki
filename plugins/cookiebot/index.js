@@ -1,6 +1,6 @@
 module.exports = function () {
   return {
-    name: 'docusaurus-cookie-plugin',
+    name: 'docusaurus-cookiebot-plugin',
     injectHtmlTags() {
       return {
         headTags: [
