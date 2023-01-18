@@ -1,9 +1,5 @@
 var waitForTrackerCount = 0;
 
-// needed to avoid site crash
-// var _paq = window._paq = window._paq || [];
-//
-
 function matomoWaitForTracker() {
   if (typeof _paq === 'undefined' || typeof Cookiebot === 'undefined') {
     if (waitForTrackerCount < 40) {
