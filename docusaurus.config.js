@@ -60,5 +60,5 @@ module.exports = merge(
   common,
   environment,
   search,
-  isProduction ? production : {},
+  production,
 );

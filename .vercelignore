@@ -1,0 +1,5 @@
+.docusaurus
+.husky
+node_modules
+shimmer
+next

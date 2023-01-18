@@ -38,3 +38,4 @@ yarn-error.log*
 /iota/develop/nodes/rest-api
 /shimmer/develop/nodes/core-rest-api
 /next/develop/nodes/core-rest-api
+.vercel

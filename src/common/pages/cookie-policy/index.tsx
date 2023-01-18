@@ -29,7 +29,9 @@ export default function CookiePolicy() {
     });
 
     appendCookiebotCdReport.then(() => {
+      console.log('appendCookiebotCdReport Loaded')
       appendCookiebotDeclaration.then(() => {
+        console.log('appendCookiebotDeclaration Loaded')
         const cookieDeclarations = document.getElementsByClassName('CookieDeclaration')
         // Remove all duplicates
         if (cookieDeclarations?.length > 1) {

@@ -5,7 +5,6 @@
     { "src": "/next/(.*)", "status": 404, "dest": "/next/404.html" },
     { "src": "/(.*)", "status": 404, "dest": "/404.html" }
   ],
-  "outputDirectory": "build",
   "installCommand": "",
   "buildCommand": ""
 }
