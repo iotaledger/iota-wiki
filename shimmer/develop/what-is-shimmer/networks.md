@@ -9,10 +9,11 @@ you can rest assured that your experience will be stable and reliable.
 
 ### Public APIs
 
-The IOTA Foundation provides the following public
+The [IOTA Foundation](https://www.iota.org/) provides the following public
 load-balanced [endpoints](https://wiki.iota.org/shimmer/introduction/reference/networks/shimmer/) that have MQTT
-exposed  (via
-WebSockets and raw TCP) and offer the HTTP REST API over [TLS](https://en.wikipedia.org/wiki/Transport_Layer_Security)
+exposed  (via WebSockets and raw TCP) and offer
+the [HTTP REST API](../start-building/nodes/core-rest-api/iota-core-rest-api.info.mdx)
+over [TLS](https://en.wikipedia.org/wiki/Transport_Layer_Security)
 according to the specifications provided
 in [TIP-25](https://editor.swagger.io/?url=https://raw.githubusercontent.com/iotaledger/tips/main/tips/TIP-0025/core-rest-api.yaml),
 [TIP-26](https://editor.swagger.io/?url=https://raw.githubusercontent.com/iotaledger/tips/main/tips/TIP-0026/indexer-rest-api.yaml),
@@ -36,7 +37,7 @@ software.
 ### The Faucet
 
 As the [Shimmer Beta](#shimmer-beta) network is a testing network, you can request test token from
-the [Shimmer Faucet](https://faucet.testnet.shimmer.network/)
+the [Shimmer Faucet](https://faucet.testnet.shimmer.network/), you only need to enter the desired address  
 
 ### Public APIs
 

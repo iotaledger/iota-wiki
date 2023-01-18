@@ -26,8 +26,9 @@ module.exports = {
                     items:
                         [
                             'what-is-shimmer/libraries/client-libraries',
-                            'what-is-shimmer/libraries/stronghold',
-                            'what-is-shimmer/libraries/identity',]
+                            // 'what-is-shimmer/libraries/stronghold',
+                            // 'what-is-shimmer/libraries/identity',
+                        ]
                 }
             ],
         },
@@ -49,7 +50,7 @@ module.exports = {
                     items: [
                         'start-building/clients-in-shimmer/output-features',
                         'start-building/clients-in-shimmer/unlock-conditions',
-                        'start-building/clients-in-shimmer/alias-transactions',
+                        'start-building/clients-in-shimmer/alias-outputs',
                         'start-building/clients-in-shimmer/foundries-and-native-tokens',
                         'start-building/clients-in-shimmer/NFTs',
                     ],
