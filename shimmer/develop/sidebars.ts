@@ -11,25 +11,8 @@ module.exports = {
             items: [
                 'what-is-shimmer/networks',
                 'what-is-shimmer/tokens-and-wallets',
-                {
-                    type: 'category',
-                    label: 'Node Software',
-                    items:
-                        [
-                            'what-is-shimmer/nodes/about-nodes',
-                            'what-is-shimmer/nodes/hornet',
-                            'what-is-shimmer/nodes/node-plugins']
-                },
-                {
-                    type: 'category',
-                    label: 'Libraries',
-                    items:
-                        [
-                            'what-is-shimmer/libraries/client-libraries',
-                            // 'what-is-shimmer/libraries/stronghold',
-                            // 'what-is-shimmer/libraries/identity',
-                        ]
-                }
+                'what-is-shimmer/nodes/about-nodes',
+                'what-is-shimmer/libraries/client-libraries',
             ],
         },
         {

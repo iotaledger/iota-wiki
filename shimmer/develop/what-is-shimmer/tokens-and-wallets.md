@@ -20,6 +20,12 @@ the [Faucet](networks.md#the-faucet).
 
 :::
 
+## Buying Shimmer
+
+You can find up-to-date instructions on how to buy `SMR` in
+the [Buying Shimmer section](https://wiki.iota.org/shimmer/learn/token/buying/) of this wiki.
+
+
 ## Wallets
 
 A wallet is a tool to access, transfer and manipulate your tokens on the Shimmer network. It gives you a convenient
@@ -36,9 +42,3 @@ tokens on the Shimmer network, and has full control over all ledger functions.
 the [Shimmer Network](networks.md). It is a secure entry point to the Shimmer ecosystem. If you are interested in using
 [Firefly](https://firefly.iota.org/), you can follow this
 wiki's [Firefly user guide](https://wiki.iota.org/shimmer/use/wallets/firefly/user-guide/).
-
-## Buying Shimmer
-
-You can find up-to-date instructions on how to buy `SMR` in
-the [Buying Shimmer section](https://wiki.iota.org/shimmer/learn/token/buying/) of this wiki.
-
