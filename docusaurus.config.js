@@ -43,7 +43,7 @@ const production = {
   },
   plugins: [
     path.resolve(__dirname, 'plugins', 'cookiebot'),
-    // 'docusaurus-plugin-matomo',
+    path.resolve(__dirname, 'plugins', 'matomo'),
     [
       '@docusaurus/plugin-google-gtag',
       {
