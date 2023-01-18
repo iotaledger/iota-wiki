@@ -11,7 +11,16 @@ module.exports = {
             items: [
                 'what-is-shimmer/networks',
                 'what-is-shimmer/tokens-and-wallets',
-                'what-is-shimmer/nodes/about-nodes',
+                {
+                    type:'category',
+                    label: 'Nodes',
+                        link:{
+                        type:'doc',
+                            id:'what-is-shimmer/nodes/about-nodes',
+                        },
+                        items:[
+                'what-is-shimmer/nodes/hornet',]
+                },
                 'what-is-shimmer/libraries/client-libraries',
             ],
         },
