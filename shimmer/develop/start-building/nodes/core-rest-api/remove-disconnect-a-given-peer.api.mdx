@@ -1,0 +1,49 @@
+---
+id: remove-disconnect-a-given-peer
+title: "Remove/disconnect a given peer."
+description: "Remove/disconnect a given peer."
+sidebar_label: "Remove/disconnect a given peer."
+hide_title: true
+hide_table_of_contents: true
+api: {"tags":["peers"],"description":"Remove/disconnect a given peer.","parameters":[{"in":"path","name":"peerId","schema":{"type":"string"},"example":"12D3KooWMajsSUxSUFb3CRgmJvygYCGd27uMDdppVYNGud7xuKG5","required":true,"description":"Identifier of the peer."}],"responses":{"204":{"description":"Successful operation."},"400":{"description":"Unsuccessful operation: indicates that the provided data is invalid."},"403":{"description":"Unsuccessful operation: indicates that the endpoint is not available for public use."},"404":{"description":"Unsuccessful operation: indicates that the requested data was not found."},"500":{"description":"Unsuccessful operation: indicates that an unexpected, internal server error happened which prevented the node from fulfilling the request."}},"method":"delete","path":"/api/core/v2/peers/{peerId}","servers":[{"url":"http://127.0.0.1:14265"}],"info":{"title":"IOTA CORE REST API","description":"This document specifies the REST API for IOTA CORE node software.","contact":{"email":"contact@iota.org"},"license":{"name":"Apache 2.0","url":"http://www.apache.org/licenses/LICENSE-2.0.html"},"version":"2.0.0"},"postman":{"name":"Remove/disconnect a given peer.","description":{"content":"Remove/disconnect a given peer.","type":"text/plain"},"url":{"path":["api","core","v2","peers",":peerId"],"host":["{{baseUrl}}"],"query":[],"variable":[{"disabled":false,"description":{"content":"(Required) Identifier of the peer.","type":"text/plain"},"type":"any","value":"","key":"peerId"}]},"method":"DELETE"}}
+sidebar_class_name: "delete api-method"
+info_path: develop/nodes/core-rest-api/iota-core-rest-api
+---
+
+import ApiTabs from "@theme/ApiTabs";
+import MimeTabs from "@theme/MimeTabs";
+import ParamsItem from "@theme/ParamsItem";
+import ResponseSamples from "@theme/ResponseSamples";
+import SchemaItem from "@theme/SchemaItem"
+import SchemaTabs from "@theme/SchemaTabs";
+import DiscriminatorTabs from "@theme/DiscriminatorTabs";
+import TabItem from "@theme/TabItem";
+
+## Remove/disconnect a given peer.
+
+
+
+Remove/disconnect a given peer.
+
+<details style={{"marginBottom":"1rem"}} data-collapsed={false} open={true}><summary style={{}}><strong>Path Parameters</strong></summary><div><ul><ParamsItem className={"paramsItem"} param={{"in":"path","name":"peerId","schema":{"type":"string"},"example":"12D3KooWMajsSUxSUFb3CRgmJvygYCGd27uMDdppVYNGud7xuKG5","required":true,"description":"Identifier of the peer."}}></ParamsItem></ul></div></details><div><ApiTabs><TabItem label={"204"} value={"204"}><div>
+
+Successful operation.
+
+</div><div></div></TabItem><TabItem label={"400"} value={"400"}><div>
+
+Unsuccessful operation: indicates that the provided data is invalid.
+
+</div><div></div></TabItem><TabItem label={"403"} value={"403"}><div>
+
+Unsuccessful operation: indicates that the endpoint is not available for public use.
+
+</div><div></div></TabItem><TabItem label={"404"} value={"404"}><div>
+
+Unsuccessful operation: indicates that the requested data was not found.
+
+</div><div></div></TabItem><TabItem label={"500"} value={"500"}><div>
+
+Unsuccessful operation: indicates that an unexpected, internal server error happened which prevented the node from fulfilling the request.
+
+</div><div></div></TabItem></ApiTabs></div>
+      

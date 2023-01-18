@@ -29,7 +29,7 @@ module.exports = {
         },
         {
           label: 'Develop',
-          to: '/develop/welcome',
+          to: '/develop/getting-started',
           activeBaseRegex:
             '^(/[^/]+)?/develop.*|' +
             '^(/[^/]+)?/smart-contracts/.*|' +
