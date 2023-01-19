@@ -36,9 +36,11 @@ export default function CookiePolicy() {
       script.onerror = reject;
     });
 
+    let interval = null;
+
     Promise.all([appendCookiebotCdReport, appendCookiebotDeclaration]).then(() => {
       const cookieDeclarations = document.getElementsByClassName('CookieDeclaration')
-      const interval = setInterval(() => {
+      interval = setInterval(() => {
         // Remove all duplicates
         if (cookieDeclarations?.length > 1) {
           for (let i = 1; i < cookieDeclarations.length; i++) {
@@ -50,6 +52,10 @@ export default function CookiePolicy() {
     })
     .then(() => console.error("Cookiebot loaded"))
     .catch((err) => console.error(err))
+    
+    return () => {
+      clearInterval(interval)
+    }
   }, []);
 
   return (
