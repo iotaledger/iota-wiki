@@ -32,7 +32,13 @@ module.exports = {
                 {
                     type: 'category',
                     label: 'Intro to Clients',
+                    link:{
+                        type:'doc',
+                        id: 'start-building/intro-to-clients/getting-started',
+                    },
                     items: [
+                        'start-building/intro-to-clients/getting-started',
+                        'start-building/intro-to-clients/getting-started-with-imports',
                         'start-building/intro-to-clients/seeds-accounts-and-addresses',
                         'start-building/intro-to-clients/outputs-and-transactions'
                     ],
@@ -83,5 +89,145 @@ module.exports = {
                 },
             ],
         },
+
+        {
+            type: 'category',
+            label: 'Documentation',
+            items:[
+                {
+                    type: 'link',
+                    label: 'Protocol Overview',
+                    href: '/introduction/welcome',
+                },
+                {
+                    type: 'category',
+                    label: 'Smart Contracts',
+                    collapsed: true,
+                    items: [
+                        {
+                            label: 'Documentation',
+                            type: 'link',
+                            href: '/smart-contracts/overview',
+                        },
+                        {
+                            label: 'Node (WASP)',
+                            type: 'link',
+                            href: '/smart-contracts/guide/chains_and_nodes/running-a-node',
+                        },
+                        {
+                            type: 'link',
+                            label: 'WASP CLI',
+                            href: '/smart-contracts/guide/chains_and_nodes/wasp-cli',
+                        },
+                        {
+                            label: 'Schema Tool',
+                            type: 'link',
+                            href: '/smart-contracts/guide/wasm_vm/schema',
+                        },
+                    ],
+                },
+                {
+                    type: 'category',
+                    label: 'Libraries',
+                    collapsed: false,
+                    items: [
+                        {
+                            label: 'Client',
+                            type: 'link',
+                            href: '/iota.rs/welcome',
+                        },
+                        {
+                            label: 'Wallet.rs',
+                            type: 'link',
+                            href: '/wallet.rs/welcome',
+                        },
+                        {
+                            label: 'Client Typescript',
+                            type: 'link',
+                            href: '/iotajs/welcome',
+                        },
+                        {
+                            label: 'Identity',
+                            type: 'link',
+                            href: '/identity.rs/introduction',
+                        },
+                        {
+                            label: 'Stronghold',
+                            type: 'link',
+                            href: '/stronghold.rs/welcome',
+                        },
+                    ],
+                },
+                {
+                    type: 'category',
+                    label: 'Node Software',
+                    collapsed: false,
+                    items: [
+                        {
+                            label: 'Hornet',
+                            type: 'link',
+                            href: '/hornet/welcome',
+                        },
+                        {
+                            type: 'category',
+                            label: 'INX Plugins',
+                            collapsed: true,
+                            items: [
+                                {
+                                    type: 'link',
+                                    label: 'Indexer',
+                                    href: '/inx-indexer/welcome',
+                                },
+                                {
+                                    type: 'link',
+                                    label: 'MQTT',
+                                    href: '/inx-mqtt/welcome',
+                                },
+                                {
+                                    type: 'link',
+                                    label: 'PoI',
+                                    href: '/inx-poi/welcome',
+                                },
+                                {
+                                    type: 'link',
+                                    label: 'Participation',
+                                    href: '/inx-participation/welcome',
+                                },
+                                {
+                                    type: 'link',
+                                    label: 'Coordinator',
+                                    href: '/inx-coordinator/welcome',
+                                },
+                                {
+                                    type: 'link',
+                                    label: 'Faucet',
+                                    href: '/inx-faucet/welcome',
+                                },
+                                {
+                                    type: 'link',
+                                    label: 'Dashboard',
+                                    href: '/inx-dashboard/welcome',
+                                },
+                                {
+                                    type: 'link',
+                                    label: 'Spammer',
+                                    href: '/inx-spammer/welcome',
+                                },
+                                {
+                                    type: 'link',
+                                    label: 'Wasp',
+                                    href: '/smart-contracts/guide/chains_and_nodes/running-a-node',
+                                },
+                                {
+                                    type: 'link',
+                                    label: 'Chronicle',
+                                    href: '/chronicle/welcome',
+                                },
+                            ],
+                        },
+                    ],
+                },
+            ]
+        }
     ],
 };
