@@ -2,6 +2,14 @@ import Layout from '@theme/Layout';
 import React, { useEffect } from 'react';
 
 export default function CookiePolicy() {
+
+
+  // Why is this needed?
+  // Injecting CookieBot as a global script in the HTML file 
+  // would make it load when the page loads instead of when the component is mounted
+  // And this would make it error because it would not be able to find where to inject the declaration
+  // So, we are injecting it twice, and just to be sure, we delete any extra cookie declaration, 
+  // as we only want to show one
   useEffect(() => {
 
     const appendCookiebotCdReport = new Promise((resolve, reject) => {
@@ -28,21 +36,20 @@ export default function CookiePolicy() {
       script.onerror = reject;
     });
 
-    appendCookiebotCdReport.then(() => {
-      appendCookiebotDeclaration.then(() => {
-        const cookieDeclarations = document.getElementsByClassName('CookieDeclaration')
+    Promise.all([appendCookiebotCdReport, appendCookiebotDeclaration]).then(() => {
+      const cookieDeclarations = document.getElementsByClassName('CookieDeclaration')
+      const interval = setInterval(() => {
         // Remove all duplicates
         if (cookieDeclarations?.length > 1) {
           for (let i = 1; i < cookieDeclarations.length; i++) {
             cookieDeclarations[i].remove();
           }
+          clearInterval(interval)
         }
-      }).catch((error) => {
-        console.error(error)
-      });
-    }).catch((error) => {
-      console.error(error)
+      }, 100);
     })
+    .then(() => console.error("Cookiebot loaded"))
+    .catch((err) => console.error(err))
   }, []);
 
   return (
