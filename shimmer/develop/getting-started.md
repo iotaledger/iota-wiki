@@ -1,5 +1,7 @@
 # Getting Started
 
+TODO replace with card components.
+
 ## What is Shimmer?
 
 Introduction to Shimmer, its node software, and libraries.
