@@ -19,14 +19,15 @@ module.exports = {
                             id:'what-is-shimmer/nodes/about-nodes',
                         },
                         items:[
-                'what-is-shimmer/nodes/hornet',]
+                        'what-is-shimmer/nodes/about-nodes',
+                        'what-is-shimmer/nodes/hornet',]
                 },
                 'what-is-shimmer/libraries/client-libraries',
             ],
         },
         {
             type: 'category',
-            label: 'Start building',
+            label: 'Start Building',
             items: [
                 {
                     type: 'category',

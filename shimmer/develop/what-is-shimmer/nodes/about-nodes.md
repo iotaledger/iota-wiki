@@ -1,6 +1,7 @@
 ---
 title: About Nodes
-description: "Nodes are the core of the Shimmer network. They run the node software that gives them read and write access
+description: "Nodes are the core of the Shimmer network. They run the node software that gives them read and write
+access
 to the Tangle."
 image: /img/participate/banner/banner_about_nodes.png
 ---
@@ -10,10 +11,9 @@ image: /img/participate/banner/banner_about_nodes.png
 ![About Nodes](/img/participate/banner/banner_about_nodes.png)
 
 The Shimmer network is consists of distributed interconnected computers, known as nodes which run the
-same [Hornet software](hornet.md). This gives nodes read and write access to [the Tangle](https://wiki.iota.org/shimmer/learn/tangle/), allows them to
-validate and store transactions issued by themselves or other nodes in the network.
-
-Nodes are responsible for the following:
+same [Hornet software](hornet.md). This gives nodes read and write access to
+[the Tangle](https://wiki.iota.org/shimmer/learn/tangle/), and allows them to validate and store transactions issued by
+themselves or other nodes in the network. Nodes are responsible for the following:
 
 ## Attaching new transactions to the Tangle
 
