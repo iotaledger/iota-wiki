@@ -16,18 +16,6 @@ which combine multiple atomic REST-API commands under the hood and use sensible 
 customize
 your application by overriding the default parameters or combining atomic REST-API commands to suit your needs.
 
-:::info Start Building
-
-You can use client libraries to:
-
-* [Generate seeds, accounts and addresses](../../start-building/intro-to-clients/seeds-accounts-and-addresses.md).
-* [Send and claim value transactions](../../start-building/intro-to-clients/outputs-and-transactions.md).
-* [Create, transition and destroy Alias outputs](../../start-building/clients-in-shimmer/alias-outputs.md).
-* [Mint, send and burn NFTs](../../start-building/clients-in-shimmer/NFTs.md),
-* [Create Foundries to mint, send, melt and burn native tokens](../../start-building/clients-in-shimmer/foundries-and-native-tokens.md).
-
-:::
-
 ## wallet.rs
 
 The [wallet.rs library](https://wiki.iota.org/shimmer/wallet.rs/welcome/) is a **stateful** package that you can use to
@@ -85,3 +73,16 @@ a [Hornet Node](../nodes/hornet.md) through API calls, and you can use it both b
 
 Keep in mind that though iota.js is functionally complete, [iota.rs](#iotars) is maintained by more contributors and has
 the latest features.
+
+
+:::info Start Building
+
+* [Set up a client library](../../start-building/intro-to-clients/getting-started-with-imports.mdx)
+* [Set up a client library 2](../../start-building/intro-to-clients/getting-started.mdx)
+* [Generate seeds, accounts and addresses](../../start-building/intro-to-clients/seeds-accounts-and-addresses.mdx).
+* [Send and claim value transactions](../../start-building/intro-to-clients/outputs-and-transactions.mdx).
+* [Create, transition and destroy Alias outputs](../../start-building/clients-in-shimmer/alias-outputs.md).
+* [Mint, send and burn NFTs](../../start-building/clients-in-shimmer/NFTs.md),
+* [Create Foundries to mint, send, melt and burn native tokens](../../start-building/clients-in-shimmer/foundries-and-native-tokens.md).
+
+:::
