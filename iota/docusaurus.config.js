@@ -154,7 +154,7 @@ module.exports = {
         src: 'img/footer_logo.svg',
         href: 'https://www.iota.org',
       },
-      copyright: `© ${new Date().getFullYear()} IOTA Wiki. Built with Docusaurus.`,
+      copyright: `© ${new Date().getFullYear()} IOTA Wiki. Built with Docusaurus. <a href="/cookie-policy"> Cookie Policy. </a>`,
     },
     socials: [
       {
