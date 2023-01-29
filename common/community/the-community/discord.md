@@ -19,7 +19,7 @@ Make sure to read the server rules and accept them.
 
 ![discord-first-steps](/img/participate/discord-verification/first_steps_discord_1.png)
 
-Before verification, the list of channels will be very limited. Use the **#1｜verification** channel to verify your user.
+Before verification, the list of channels will be very limited. Use the **#1 ｜ verification** channel to verify your user.
 
 ![discord-verify-yourself](/img/participate/discord-verification/verify_yourself_discord_2.png)
 
