@@ -52,18 +52,18 @@ A series of channels and categories are unlocked once your account is verified.
 
 **Onboarding**
 
-- Visit **Channels & Roles**
+- Visit **Channels & Roles**  
   Click on the buttons there to start with the onboarding and unlocking further categories and channels based on your interests.
 
 ## Next steps
 
-- Visit the 📋 ｜ learn-the-rules channel
+- Visit the 📋 ｜ learn-the-rules channel  
   Please read the information there to learn about our rules and tips.
 
-- Access the 🦺 ｜ stay-safe channel
+- Access the 🦺 ｜ stay-safe channel  
   Read the tips there to understand how to stay safe on Discord.
 
-- Access the 📛 ｜ get-your-badges channel
+- Access the 📛 ｜ get-your-badges channel  
   Within the IOTA Community, we use Discord roles as badges and to enable members to identify themselves within a group or get write access in regional channels. The roles are also used to notify the members of specific or dedicated events and polls or surveys.
 
 ---
