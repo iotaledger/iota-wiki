@@ -19,23 +19,20 @@ Make sure to read the server rules and accept them.
 
 ![discord-first-steps](/img/participate/discord-verification/first_steps_discord_1.png)
 
-Before verification, the list of channels will be very limited. Use the **#verification-help** channel to get support for the verification.
+Before verification, the list of channels will be very limited. Use the **#1｜verification** channel to verify your user.
 
 ![discord-verify-yourself](/img/participate/discord-verification/verify_yourself_discord_2.png)
 
 ## Verification Process
 
-Make sure to have DMs (direct messages) enabled.
-
-![discord-enable-dm](/img/participate/discord-verification/enable_dm_discord_3.png)
-
-:::note
-
-After the verification process, it is suggested to disable direct messages as those are prone to be used to send spam messages or scams.
-
 :::
 
-The verification system will send a direct message. Click on the **Click me to verify!** link to start with the verification.
+Click on the **Verify** button in the channel
+
+![discord-panel](/img/participate/discord-verification/panel_discord_3.png)
+
+The verification system will send a message in the channel.
+Click on the **Click me to verify!** link to start with the verification.
 
 ![discord-verify](/img/participate/discord-verification/verify_click_discord_4.png)
 
@@ -55,8 +52,8 @@ A series of channels and categories are unlocked once your account is verified.
 
 **Onboarding**
 
-- Visit the 🏁 ｜ first-steps channel
-  Click on the button there to start with the onboarding and unlocking further categories and channels based on your interests.
+- Visit **Channels & Roles**
+  Click on the buttons there to start with the onboarding and unlocking further categories and channels based on your interests.
 
 ## Next steps
 
