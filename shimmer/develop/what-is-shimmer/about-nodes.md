@@ -6,12 +6,12 @@ to the Tangle."
 image: /img/participate/banner/banner_about_nodes.png
 ---
 
-# About Nodes
+# Nodes
 
 ![About Nodes](/img/participate/banner/banner_about_nodes.png)
 
 The Shimmer network is consists of distributed interconnected computers, known as nodes which run the
-same [Hornet software](hornet.md). This gives nodes read and write access to
+same [Hornet software](../start-building/nodes/hornet.md). This gives nodes read and write access to
 [the Tangle](https://wiki.iota.org/shimmer/learn/tangle/), and allows them to validate and store transactions issued by
 themselves or other nodes in the network. Nodes are responsible for the following:
 
@@ -63,3 +63,5 @@ The HTTP API allows clients to interact with the Tangle and ask nodes to do the 
 The Events API allows clients to poll nodes for new transactions and other events that happen on nodes. This API is
 useful for building applications such as custodial wallets that need to monitor the Tangle for updates to the balances
 of certain addresses.
+
+

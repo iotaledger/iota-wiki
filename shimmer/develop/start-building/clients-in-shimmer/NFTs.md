@@ -1,3 +1,0 @@
-- Mint
-- Send
-- Burn

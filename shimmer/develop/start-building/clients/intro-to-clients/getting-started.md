@@ -1,4 +1,4 @@
-# Client Libraries in Shimmer
+# Getting Started with the IOTA Client Libraries
 
 :::tip Free and Open-Sourced
 
@@ -10,11 +10,10 @@ the [IOTA Community](https://wiki.iota.org/shimmer/community/the-community/how-t
 
 ## Simple by Default, as Complex as You May Need
 
-Client libraries handle the communications between your software and the [Shimmer network](../networks.md). They are
+IOTA Client libraries handle the communications between your software and the [Shimmer network](../../../what-is-shimmer/networks.md). They are
 designed to simplify how you connect and interact with nodes in the network by providing high-level helper functions
 which combine multiple atomic REST-API commands under the hood and use sensible defaults. However, you can still
-customize
-your application by overriding the default parameters or combining atomic REST-API commands to suit your needs.
+customize your application by overriding the default parameters or combining atomic REST-API commands to suit your needs.
 
 ## wallet.rs
 
@@ -23,19 +22,19 @@ build **any application that manages funds** in the Shimmer network, for example
 
 ### Secured by Stronghold
 
-The wallet.rs library uses [Stronghold](stronghold.md) to generate and store encrypted seeds at rest. By design,
+The wallet.rs library uses [Stronghold](../../../what-is-shimmer/libraries/stronghold.md) to generate and store encrypted seeds at rest. By design,
 Stronghold uses [non-contiguous data types](https://wiki.iota.org/stronghold.rs/explanations/non-contiguous-data-types/)
 and [cryptographic procedures](https://wiki.iota.org/stronghold.rs/explanations/procedures/) to create password
 protected snapshots which you can easily back up or share between devices.
 
-### Flexible Account Approaches
+### Flexible Account Models
 
 The library supports
 both [single-ccount](https://wiki.iota.org/shimmer/wallet.rs/explanations/account_approaches/#single-account-approach)
 and [multi-account](https://wiki.iota.org/shimmer/wallet.rs/explanations/account_approaches/#multi-account-approach)
-models. You can use the multi-account approach if you want to create an individual account for each of your users, or
+models. You can use the multi-account model if you want to create an individual account for each of your users, or
 the
-single-account approach if you want to control a single account from which you can generate an address for each of your
+single-account model if you want to control a single account from which you can generate an address for each of your
 users.
 
 ### Available Languages
@@ -69,20 +68,9 @@ and [Python](https://wiki.iota.org/shimmer/iota.rs/getting_started/python/).
 
 The [iota.js library](https://wiki.iota.org/shimmer/iotajs/welcome/) is based on [iota.rs](#iotars). Since the iota.js
 library is written in Typescript, it can strongly type objects it sends to and receives from
-a [Hornet Node](../nodes/hornet.md) through API calls, and you can use it both browser or Node.js environments.
+a [Hornet Node](../../../what-is-shimmer/nodes/hornet.md) through API calls, and you can use it both browser or Node.js environments.
 
 Keep in mind that though iota.js is functionally complete, [iota.rs](#iotars) is maintained by more contributors and has
 the latest features.
 
 
-:::info Start Building
-
-* [Set up a client library](../../start-building/intro-to-clients/getting-started-with-imports.mdx)
-* [Set up a client library 2](../../start-building/intro-to-clients/getting-started.mdx)
-* [Generate seeds, accounts and addresses](../../start-building/intro-to-clients/seeds-accounts-and-addresses.mdx).
-* [Send and claim value transactions](../../start-building/intro-to-clients/outputs-and-transactions.mdx).
-* [Create, transition and destroy Alias outputs](../../start-building/clients-in-shimmer/alias-outputs.md).
-* [Mint, send and burn NFTs](../../start-building/clients-in-shimmer/NFTs.md),
-* [Create Foundries to mint, send, melt and burn native tokens](../../start-building/clients-in-shimmer/foundries-and-native-tokens.md).
-
-:::
