@@ -21,7 +21,7 @@
     "prepack": "yarn build"
   },
   "dependencies": {
-    "@babel/generator": "^7.17.9",
+    "@babel/generator": "^7.20.14",
     "@babel/parser": "^7.17.9",
     "@babel/types": "^7.17.0",
     "@iota-wiki/core": "workspace:^",
