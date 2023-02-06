@@ -25,7 +25,6 @@ Before verification, the list of channels will be very limited. Use the **#1 ｜
 
 ## Verification Process
 
-
 Click on the **Verify** button in the channel
 
 ![discord-panel](/img/participate/discord-verification/panel_discord_3.png)
