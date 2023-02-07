@@ -11,28 +11,22 @@ import type { WrapperProps } from '@docusaurus/types';
 
 type Props = WrapperProps<typeof EditThisPageType>;
 
+const externalDocsRegex = new RegExp(
+    'shimmer/external/[^/]*/[^/]*/[^/]*/|iota/external/[^/]*/[^/]*/[^/]*/',
+    'i',
+);
+
 /**
-This function will remove 
-"content/build/anyOtherString/anyOtherString/anyOtherString"
-or
-"external/anyOtherString"
+This function will remove the links in the regex above
 **/
 function reformatExternalProjectURL(editUrl) {
-  const externalDocsRegex = new RegExp(
-    'shimmer/external/[^/]*/[^/]*/|iota/external/[^/]*/[^/]*/[^/]*/',
-    'i',
-  );
   return editUrl.replace(externalDocsRegex, '');
 }
 
 /**
-This function will check if docs is in "content/build/" or "external/"
+This function will check if docs is one of the links from the regex above"
 **/
 function isExternalProjectURL(editUrl) {
-  const externalDocsRegex = new RegExp(
-    'shimmer/external/[^/]*/[^/]*/|iota/external/[^/]*/[^/]*/[^/]*/',
-    'i',
-  );
   return externalDocsRegex.test(editUrl);
 }
 
