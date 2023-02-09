@@ -16,7 +16,7 @@ export default function CookiePolicy() {
       script.onerror = reject;
       script.async = true;
       script.src =
-        'https://consent.cookiebot.com/8f051d60-4ecb-41a0-abb9-4874fd999e4f/cdreport.js?referer=iota-wiki-fawn.vercel.app';
+        'https://consent.cookiebot.com/8f051d60-4ecb-41a0-abb9-4874fd999e4f/cdreport.js?referer=wiki.iota.org';
     });
 
     const appendCookiebotDeclaration = new Promise((resolve, reject) => {
