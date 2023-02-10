@@ -9,10 +9,10 @@ function matomoWaitForTracker() {
     }
   } else {
     _paq.push(['requireConsent']);
-    window.addEventListener('CookiebotOnAccept', function (e) {
+    window.addEventListener('CookiebotOnAccept', function () {
       consentSet();
     });
-    window.addEventListener('CookiebotOnDecline', function (e) {
+    window.addEventListener('CookiebotOnDecline', function () {
       consentSet();
     });
   }
