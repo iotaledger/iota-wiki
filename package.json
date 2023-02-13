@@ -48,7 +48,6 @@
     "@svgr/webpack": "^5.5.0",
     "callsite": "^1.0.0",
     "clsx": "^1.2.1",
-    "docusaurus-plugin-matomo": "^0.0.5",
     "docusaurus-plugin-openapi-docs": "^1.4.7",
     "docusaurus-theme-openapi-docs": "^1.4.7",
     "file-loader": "^6.2.0",

@@ -2534,7 +2534,6 @@ __metadata:
     "@typescript-eslint/parser": ^5.9.1
     callsite: ^1.0.0
     clsx: ^1.2.1
-    docusaurus-plugin-matomo: ^0.0.5
     docusaurus-plugin-openapi-docs: ^1.4.7
     docusaurus-theme-openapi-docs: ^1.4.7
     eslint: ^8.6.0
@@ -6376,15 +6375,6 @@ __metadata:
   dependencies:
     esutils: ^2.0.2
   checksum: fd7673ca77fe26cd5cba38d816bc72d641f500f1f9b25b83e8ce28827fe2da7ad583a8da26ab6af85f834138cf8dae9f69b0cd6ab925f52ddab1754db44d99ce
-  languageName: node
-  linkType: hard
-
-"docusaurus-plugin-matomo@npm:^0.0.5":
-  version: 0.0.5
-  resolution: "docusaurus-plugin-matomo@npm:0.0.5"
-  peerDependencies:
-    "@docusaurus/core": ^2.0.0-alpha.56
-  checksum: 8719dc9aa0c6350dc83c56bbc35dcc52d0aeb112f5aaf77e65ce5cdec9e06776dd56a4008d3cb10cbb64d258f93dfb538b557f9fa333d70e7cf618fd47ac3e21
   languageName: node
   linkType: hard
 
