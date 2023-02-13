@@ -4,7 +4,7 @@ The Shimmer community, supported by the IOTA Foundation, has developed a Governa
 
 ## **The Main Features of Shimmer Governance**
 
-**1. Open discussions in the Shimmer Discord** fostered by group of community members that regularly discuss and meet publicly to progress and develop Governance systems and tools for the Shimmer Community. You can participate in this activity in The [#Governance-Discussions](https://discord.com/channels/397872799483428865/839927402242637834) channels (make sure to activate the Governance role in the IOTA/Shimmer Discord) and participate in the [weekly meetings](https://youtube.com/playlist?list=PL5joP0FyJQU4eKPWfQWradNVjMIPq86ID). Every Community member is welcome and invited to join this critical work.
+**1. Open discussions in the Shimmer Discord** fostered by a group of community members that regularly discuss and meet publicly to progress and develop Governance systems and tools for the Shimmer Community. You can participate in this activity in The [#Governance-Discussions](https://discord.com/channels/397872799483428865/839927402242637834) channels (make sure to activate the Governance role in the IOTA/Shimmer Discord) and participate in the [weekly meetings](https://youtube.com/playlist?list=PL5joP0FyJQU4eKPWfQWradNVjMIPq86ID). Every Community member is welcome and invited to join this critical work.
 
 **2. The official IOTA/Shimmer [Governance forum](https://govern.iota.org)**- Here is the place for specific discussions about proposals. It is the first stage of reaching community consensus on proposed changes through soft consensus polling in the forum.
 
