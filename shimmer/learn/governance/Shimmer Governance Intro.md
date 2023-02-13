@@ -63,6 +63,7 @@ A detailed description on how to participate in Governance votes can be found in
 - - [Firefly Handbook](https://iotaledger.github.io/firefly/specifications/governance/) A short definition and explainer of the Firefly Governance functions
 - [YouTube Playlist](https://youtube.com/playlist?list=PL5joP0FyJQU4eKPWfQWradNVjMIPq86ID) with recording of all Governance meetings.
 - [Meeting minutes](https://www.shimmergov.community/governance-and-treasury-minutes) of all governance meetings collected on a community-driven website.
+- [Shimmer Governance](https://twitter.com/ShimmerGov) Twitter account of the Governance working group.
 - [Shimmer Governance](https://github.com/iota-community/Shimmer-Governance) Github Repo for the Shimmer Governance system.
 - [INX Participation](https://github.com/iotaledger/inx-participation) Github Repo for the INX Participation Node Plugin that counts the votes.
 - [Community Governance](https://github.com/iota-community/Community-Governance) Github Repo for the initial IOTA Governance system and first vote.
