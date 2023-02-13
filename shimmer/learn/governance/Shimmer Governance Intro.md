@@ -55,3 +55,13 @@ This feature consists of 2 components:
 
 
 A detailed description on how to participate in Governance votes can be found in the Firefly Shimmer Governance how-to guide.
+
+### Shimmer Governance Ressources:
+
+- [IOTA/Shimmer Governance Forum](https://govern.iota.org) where all proposals are discussed
+- [Shimmer Governance Guide](https://govern.iota.org/t/read-first-shimmer-governance-guide/1406) A short introduction how to use the Governance forum and how to create proposals.
+- [YouTube Playlist](https://youtube.com/playlist?list=PL5joP0FyJQU4eKPWfQWradNVjMIPq86ID) with recording of all Governance meetings
+- [Meeting minutes](https://www.shimmergov.community/governance-and-treasury-minutes) of all governance meetings collected on a community-driven website.
+- [IOTA Treasury](https://iotatreasury.org/) Website developed for the first Governance vote in our Communities history, which explains the core features of the voting system
+- [Shimmer Governance](https://github.com/iota-community/Shimmer-Governance) Github Repo for the Shimmer Governance system
+- [Community Governance](https://github.com/iota-community/Community-Governance) Github Repo for the initial IOTA Governance decision
