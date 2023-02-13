@@ -137,7 +137,7 @@
 [submodule "shimmer/external/identity.rs/0.7-alpha"]
 	path = shimmer/external/identity.rs/0.7-alpha
 	url = https://github.com/iotaledger/identity.rs
-	branch = main
+	branch = chore/fix-doc-links-md
 [submodule "next/external/cli-wallet"]
 	path = next/external/cli-wallet
 	url = https://github.com/iotaledger/cli-wallet
