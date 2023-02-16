@@ -68,7 +68,28 @@ Once you have voted on proposals, the Governance Dashboard will indicate in whic
 ![](https://i.imgur.com/27DqFe4.png)
 
 
-### **5. Adding custom community proposals to Firefly**
+### **5. Change / reduce voting power**
+
+Once you are actively voting on proposals but wish to either free some tokens to use ot for something else. or add more tokens to your voting power, you can easily do this by using the "Manage voting power function" again.
+
+- Reduce your Voting power using the slider or type it in the field
+
+![](https://i.imgur.com/ltW7RgW.png)
+
+
+- Confirm
+
+![](https://i.imgur.com/pt8c3bQ.png)
+
+
+- And because reducing the voting power stopps your current votes, revote on all proposlas with the new voting power now.
+
+
+![](https://i.imgur.com/Qx9QhNi.png)
+
+
+
+### **6. Adding custom community proposals to Firefly**
 
 To enable decentralized governance, you can also use Firefly to vote on proposlas that are not added to the official IOTA Foundation nodes to which the Firefly Wallet connects by default. 
 Every community can theoretically use the Firefly Wallet and ask SMR token holders to decide on proposals. Therefore those proposals need to be added to a Hornet node (via the hornet dashboard), and then the user can tell Firefly to display this proposal to enable voting on it.
