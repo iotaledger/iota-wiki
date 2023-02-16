@@ -41,7 +41,7 @@ To vote on a proposal, you must tell the Wallet how many SMR tokens you want to 
 
 ![](https://i.imgur.com/oPuAHjF.png)
 
-The amount of SMR tokens you choose for governance are now transferred to a separate output and can only use for governance now. If you want to send them out of your Wallet, you will have to remove them from governance by reducing your voting power.
+The amount of SMR tokens you choose for governance are now transferred to a separate output and can only be used for governance now. If you want to send them out of your Wallet, or use them for anything else you will have to remove them from the governance output by reducing your voting power.
 
 ### **4. Vote on a proposal:**
 
@@ -50,17 +50,15 @@ The amount of SMR tokens you choose for governance are now transferred to a sepa
 
 ![](https://i.imgur.com/b7FkzxV.png)
 
-- You are free to participate in all or only a subset of the questions and answers of a proposal. Not participating will automatically count as "Abstain".
-- Click on the answer/s you want to choose and then the "vote" button.
+- You are free to participate in all or only a subset of the questions of a proposal. Not participating will automatically count as "Abstain".
+- Click on the answer you want to choose and then use the "vote" button.
 - Confirm your decision
 
 ![](https://i.imgur.com/4mMk1SM.png)
 
 
-Voting on proposlas as long as they are only in the "voting phase" does not yet lead to counting votes. 
-In this phase, you can always change your opinion without any outcome on the final amount of votes counted for you.
-Once a proposal has reached the "counting" phase, every 5 seconds, the Tokens you have allocated for governance are counted and accumulated for the answers you choose. 
-This means the counted votes for you increase every 5 seconds by the amount of voting power you have allocated.
+Voting on proposlas as long as they are only in the "voting open" phase does not yet lead to counting of votes. In this phase, you can always change your opinion without any outcome on the final amount of votes counted for you.
+Once a proposal has reached the "counting" phase, the Tokens you have allocated for governance are counted and accumulated for the answers you choose every 5 seconds. This means the counted votes for you increase every 5 seconds by the amount of voting power you have allocated.
 
 ![](https://i.imgur.com/2hgMTWO.png)
 
@@ -72,14 +70,14 @@ Once you have voted on proposals, the Governance Dashboard will indicate in whic
 
 ### **5. Adding custom community proposals to Firefly**
 
-To enable decentralized governance, You can also use Firefly to vote on proposlas that are not added to the official IOTA Foundation nodes to which the Firefly Wallet connects by default. 
-Every community can theoretically use the Firefly Wallet and ask SMR token holders to decide on proposals. Therefore those proposals need to be added to a Hornet node (via the hornet dashboard), and then the user can tell Firefly to display this proposal to be able to vote on it.
+To enable decentralized governance, you can also use Firefly to vote on proposlas that are not added to the official IOTA Foundation nodes to which the Firefly Wallet connects by default. 
+Every community can theoretically use the Firefly Wallet and ask SMR token holders to decide on proposals. Therefore those proposals need to be added to a Hornet node (via the hornet dashboard), and then the user can tell Firefly to display this proposal to enable voting on it.
 
 - Click on "Add Proposals"
 
 ![](https://i.imgur.com/QzmdgnN.png)
 
-In the menu, add the URL of the node you want Firefly to connect to and the proposal ID of the proposal you wish to add.
+Add the URL of the node you want Firefly to connect to and the proposal ID of the proposal you wish to add.
 
 
 ![](https://i.imgur.com/bezrsXj.png)
