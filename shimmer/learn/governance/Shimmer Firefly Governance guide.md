@@ -82,7 +82,7 @@ Once you are actively voting on proposals but wish to either free some tokens to
 ![](https://i.imgur.com/pt8c3bQ.png)
 
 
-- And because reducing the voting power stopps your current votes, revote on all proposlas with the new voting power now.
+- And because reducing the voting power stopps your current votes, revote with one click on all proposals with the new voting power.
 
 
 ![](https://i.imgur.com/Qx9QhNi.png)
