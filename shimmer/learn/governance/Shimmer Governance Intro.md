@@ -54,13 +54,13 @@ This feature consists of 2 components:
         - **Ended:** The Proposal counting is over, and the final vote result is displayed.
 
 
-A detailed description on how to participate in Governance votes can be found in the Firefly Shimmer Governance how-to guide.
+A detailed description on how to participate in Governance votes can be found in the [Firefly Shimmer Governance Guide](https://github.com/iota-community/Shimmer-Governance/blob/main/Shimmer%20Firefly%20Governance%20guide.md)
 
 ### Shimmer Governance Ressources:
 
 - [IOTA/Shimmer Governance Forum](https://govern.iota.org) where all official proposals are discussed.
 - [Shimmer Governance Guide](https://govern.iota.org/t/read-first-shimmer-governance-guide/1406) A short introduction how to use the Governance forum and how to create proposals.
-- - [Firefly Handbook](https://iotaledger.github.io/firefly/specifications/governance/) A short definition and explainer of the Firefly Governance functions
+- [Firefly Handbook](https://iotaledger.github.io/firefly/specifications/governance/) A short definition and explainer of the Firefly Governance functions
 - [YouTube Playlist](https://youtube.com/playlist?list=PL5joP0FyJQU4eKPWfQWradNVjMIPq86ID) with recording of all Governance meetings.
 - [Meeting minutes](https://www.shimmergov.community/governance-and-treasury-minutes) of all governance meetings collected on a community-driven website.
 - [Shimmer Governance](https://twitter.com/ShimmerGov) Twitter account of the Governance working group.
