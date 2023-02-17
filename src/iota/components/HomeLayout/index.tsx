@@ -141,14 +141,9 @@ export default function HomeLayout() {
                       Participate in the network
                     </Link>
                   </li>
-                  <li className='nodes__feature'>
-                    <Link to='/hornet/how_tos/managing_a_node'>
-                      Manage your node
-                    </Link>
-                  </li>
                 </ul>
                 <Link
-                  to='hornet/how_tos/hornet_apt_repository'
+                  to='/hornet/how_tos/using_docker'
                   className='nodes__button button button--outline button--primary'
                 >
                   Set up a Hornet node
