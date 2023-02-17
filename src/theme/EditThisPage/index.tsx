@@ -12,8 +12,8 @@ import type { WrapperProps } from '@docusaurus/types';
 type Props = WrapperProps<typeof EditThisPageType>;
 
 const externalDocsRegex = new RegExp(
-    'shimmer/external/[^/]*/[^/]*/[^/]*/|iota/external/[^/]*/[^/]*/[^/]*/',
-    'i',
+  'shimmer/external/[^/]*/[^/]*/[^/]*/|iota/external/[^/]*/[^/]*/[^/]*/',
+  'i',
 );
 
 /**
