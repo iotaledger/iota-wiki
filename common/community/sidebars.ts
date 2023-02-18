@@ -2,12 +2,6 @@ module.exports = {
   learn: [
     {
       type: 'category',
-      label: 'Funding',
-      collapsed: true,
-      items: ['funding/edf-funding', 'funding/community-treasury'],
-    },
-    {
-      type: 'category',
       label: 'The Community',
       collapsed: true,
       items: [
@@ -17,6 +11,23 @@ module.exports = {
         'the-community/git-hub',
         'the-community/social-media',
       ],
+    },
+    {
+      type: 'category',
+      label: 'Governance',
+      collapsed: true,
+      items: [
+        'governance/shimmer-governance-intro',
+        'governance/the-shimmer-governance-framework',
+        'governance/governance-scope',
+        'governance/shimmer-firefly-governance-guide',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Funding',
+      collapsed: true,
+      items: ['funding/edf-funding', 'funding/community-treasury'],
     },
     {
       type: 'category',
