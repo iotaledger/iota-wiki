@@ -1,4 +1,6 @@
-# Shimmer Governance
+---
+title: Shimmer Governance
+---
 
 The Shimmer community, supported by the IOTA Foundation, has developed a Governance system for Shimmer.
 

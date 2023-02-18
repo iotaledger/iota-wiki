@@ -1,3 +1,7 @@
+---
+title: Governance Scope
+---
+
 ## Parameters that are open for Community Governance in Shimmer
 
 (Defined by the IOTA Foundation)

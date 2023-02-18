@@ -1,4 +1,6 @@
-# Governance Guide to Shimmer Firefly
+---
+title: Governance Guide to Shimmer Firefly
+---
 
 With the newest release, Shimmer Firefly enables decentralized voting with SMR tokens directly in the Wallet.
 

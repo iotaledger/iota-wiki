@@ -1,4 +1,6 @@
-# Shimmer Community Grant Committee - Version 3 - 17/01/23
+---
+title: Shimmer Community Grant Committee - Version 3 - 17/01/23
+---
 
 ## Boosting the Shimmer Ecosystem as a community
 

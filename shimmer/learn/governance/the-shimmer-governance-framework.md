@@ -1,4 +1,6 @@
-# **The Shimmer Governance Framework**
+---
+title: The Shimmer Governance Framework
+---
 
 ### **Introduction**
 
