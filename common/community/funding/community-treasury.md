@@ -12,4 +12,3 @@ The IOTA community treasury will be set up as soon as the IOTA network gets upgr
 ## Initial Voting
 
 The IOTA community has decided to set up the IOTA Community Treasury in IOTA's first-ever Governance vote completed on 14 June 2022. In the following [Blog - article](https://blog.iota.org/community-treasury-vote-final-results/), you will be able to see the vote results and find all further information regarding the initial vote to set up the IOTA Treasury.
-
