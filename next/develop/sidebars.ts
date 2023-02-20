@@ -7,6 +7,11 @@ module.exports = {
       href: '/introduction/welcome',
     },
     {
+      type: 'link',
+      label: 'Tangle Improvement Proposals (TIPS)',
+      href: '/tips',
+    },
+    {
       type: 'category',
       label: 'Smart Contracts',
       collapsed: true,
