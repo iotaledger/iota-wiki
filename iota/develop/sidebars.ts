@@ -106,6 +106,23 @@ module.exports = {
         },
       ],
     },
+    {
+      type: 'category',
+      label: 'Endpoints',
+      collapsed: true,
+      items: [            
+        {
+          type: 'doc',
+          id: 'endpoints/mainnet',
+          label: 'Mainnet'
+        },
+        {
+          type: 'doc',
+          id: 'endpoints/devnet',
+          label: 'Devnet'
+        },
+      ]
+    },
     'network-token-migration',
     {
       type: 'link',
