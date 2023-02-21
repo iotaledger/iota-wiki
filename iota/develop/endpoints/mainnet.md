@@ -16,8 +16,8 @@ keywords:
 
 IOTA currently provides two load-balanced public mainnet endpoints:
 
-- chrysalis-nodes.iota.org.
-- chrysalis-nodes.iota.cafe.
+- https://chrysalis-nodes.iota.org.
+- https://chrysalis-nodes.iota.cafe.
 
 These endpoints have MQTT (via WebSockets) exposed and offer the HTTP REST API (according to this [specification](https://editor.swagger.io/?url=https://raw.githubusercontent.com/rufsam/protocol-rfcs/master/text/0026-rest-api/0026-rest-api.yaml))
 over TLS.
