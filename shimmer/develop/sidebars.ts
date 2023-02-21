@@ -187,12 +187,12 @@ module.exports = {
       items: [            
         {
           type: 'doc',
-          id: 'endpoints/mainnet',
+          id: 'endpoints/shimmer',
           label: 'Mainnet'
         },
         {
           type: 'doc',
-          id: 'endpoints/devnet',
+          id: 'endpoints/testnet',
           label: 'Devnet'
         },
       ]

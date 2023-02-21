@@ -1,5 +1,5 @@
 ---
-description: The IOTA foundation provides load-balanced public Shimmer Beta endpoints, where MQTT and the HTTP REST API are enabled.
+description: The IOTA foundation provides load-balanced public testnet endpoints, where MQTT and the HTTP REST API are enabled.
 image: /img/logo/preview.png
 keywords:
 - devnet
@@ -9,13 +9,13 @@ keywords:
 - reference
 - Endpoints
 ---
-# Shimmer Beta
+# Testnet
 
-Shimmer Beta is a pre-release of the Shimmer network that is currently under development.
+Testnet is a pre-release of the Shimmer network that is currently under development.
 
 ## Public Infrastructure
 
-We currently provide load-balanced public Shimmer Beta endpoints:
+We currently provide load-balanced public testnet endpoints:
 
  - Node API: https://api.testnet.shimmer.network
    - Example info endpoint: https://api.testnet.shimmer.network/api/core/v2/info
@@ -32,6 +32,3 @@ These endpoints have MQTT (via WebSockets and raw TCP) exposed and offer the HTT
 - [Online Faucet](https://faucet.testnet.shimmer.network)
 - Faucet Info API: https://faucet.testnet.shimmer.network/api/info
 - Faucet Enqueue API: https://faucet.testnet.shimmer.network/api/enqueue
-- [Cli-Wallet](https://github.com/iotaledger/cli-wallet/tree/develop)
-- [shimmer-faucet code (nodejs + svelte)](https://github.com/iotaledger/chrysalis-faucet/tree/hornet)
-- [shimmer-faucet backend](https://github.com/iotaledger/inx-faucet)
