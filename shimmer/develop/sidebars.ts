@@ -184,18 +184,18 @@ module.exports = {
       type: 'category',
       label: 'Endpoints',
       collapsed: true,
-      items: [            
+      items: [
         {
           type: 'doc',
           id: 'endpoints/shimmer',
-          label: 'Mainnet'
+          label: 'Mainnet',
         },
         {
           type: 'doc',
           id: 'endpoints/testnet',
-          label: 'Devnet'
+          label: 'Devnet',
         },
-      ]
+      ],
     },
     {
       type: 'category',

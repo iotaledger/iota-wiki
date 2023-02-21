@@ -110,18 +110,18 @@ module.exports = {
       type: 'category',
       label: 'Endpoints',
       collapsed: true,
-      items: [            
+      items: [
         {
           type: 'doc',
           id: 'endpoints/mainnet',
-          label: 'Mainnet'
+          label: 'Mainnet',
         },
         {
           type: 'doc',
           id: 'endpoints/devnet',
-          label: 'Devnet'
+          label: 'Devnet',
         },
-      ]
+      ],
     },
     'network-token-migration',
     {
