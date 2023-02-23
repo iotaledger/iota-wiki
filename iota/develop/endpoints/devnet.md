@@ -34,7 +34,7 @@ We also provide single node endpoints that expose native [MQTT](https://mqtt.org
 - mqtt.lb-0.h.chrysalis-devnet.iota.cafe:1883
 - mqtt.lb-1.h.chrysalis-devnet.iota.cafe:1883
 
-These endpoints have MQTT (via WebSockets and raw TCP) exposed and offer the HTTP REST API (according to this [specification](https://editor.swagger.io/?url=https://raw.githubusercontent.com/rufsam/protocol-rfcs/master/text/0026-rest-api/rest-api.yaml)) over TLS.
+These endpoints have MQTT (via WebSockets and raw TCP) exposed and offer the HTTP REST API (according to this [specification](nodes/rest-api/iota-rest-api.info.mdx)) over TLS.
 
 ## Developer Tools
 
