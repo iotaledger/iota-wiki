@@ -15,7 +15,7 @@ keywords:
 
 ## Public Infrastructure
 
-IOTA currently provides two load-balanced public mainnet endpoints:
+The IOTA Foundation currently provides the following public load-balanced mainnet endpoints:
 
 - https://chrysalis-nodes.iota.org.
 - https://chrysalis-nodes.iota.cafe.

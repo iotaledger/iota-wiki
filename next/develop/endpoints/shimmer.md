@@ -15,7 +15,7 @@ keywords:
 
 ## Public Infrastructure
 
-The IOTA Foundation currently provides these public load-balanced Shimmer endpoints:
+The IOTA Foundation currently provides the following public load-balanced Shimmer endpoints:
 
 Node API: https://api.shimmer.network  
 Example info endpoint: https://api.shimmer.network/api/core/v2/info  

@@ -16,7 +16,7 @@ Testnet is a pre-release of the Shimmer network that is currently under developm
 
 ## Public Infrastructure
 
-We currently provide load-balanced public testnet endpoints:
+The IOTA Foundation currently provides the following public load-balanced testnet endpoints:
 
 - Node API: https://api.testnet.shimmer.network
   - Example info endpoint: https://api.testnet.shimmer.network/api/core/v2/info

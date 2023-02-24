@@ -16,7 +16,7 @@ Since the Chrysalis update, the `testnet` is now called `devnet`. We recommend u
 
 ## Public Infrastructure
 
-IOTA currently provides a load-balanced public devnet endpoint:
+The IOTA Foundation currently provides the following public load-balanced devnet endpoints:
 
 - [https://api.lb-0.h.chrysalis-devnet.iota.cafe/](https://api.lb-0.h.chrysalis-devnet.iota.cafe/).
 - [https://api.lb-1.h.chrysalis-devnet.iota.cafe/](https://api.lb-1.h.chrysalis-devnet.iota.cafe/).
