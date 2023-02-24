@@ -45,7 +45,7 @@ Choose the JavaScript project and go through these steps to compile, test and de
 If you're comfortable in typescript, feel free to select. There's not much difference for this project anyway. However, some syntax might differ.
 :::
 
-Your hardhat project should like something this:
+Your hardhat project should look like something this:
 ```md
 .
 ├── README.md
