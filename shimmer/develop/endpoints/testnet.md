@@ -10,9 +10,9 @@ keywords:
   - Endpoints
 ---
 
-# Testnet
+# Public Testnet
 
-Testnet is a pre-release of the Shimmer network that is currently under development.
+The testnet is the public infrastructure for developers. It runs on top of the beta releases of IOTA software and runs a faucet to easily get tokens for testing.
 
 ## Public Infrastructure
 
