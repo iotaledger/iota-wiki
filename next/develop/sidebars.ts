@@ -230,7 +230,7 @@ module.exports = {
           label: 'Testnet Faucet',
           type: 'link',
           href: 'https://faucet.testnet.shimmer.network',
-        }
+        },
       ],
     },
     {

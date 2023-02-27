@@ -141,7 +141,7 @@ module.exports = {
           label: 'Devnet Faucet',
           type: 'link',
           href: 'https://faucet.chrysalis-devnet.iota.cafe',
-        }
+        },
       ],
     },
     'network-token-migration',
