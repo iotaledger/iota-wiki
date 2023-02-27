@@ -221,6 +221,16 @@ module.exports = {
           type: 'link',
           href: '/smart-contracts/guide/wasm_vm/schema',
         },
+        {
+          label: 'Explorer',
+          type: 'link',
+          href: 'https://explorer.shimmer.network',
+        },
+        {
+          label: 'Testnet Faucet',
+          type: 'link',
+          href: 'https://faucet.testnet.shimmer.network',
+        }
       ],
     },
     {

@@ -12,7 +12,7 @@ keywords:
 
 # Public Testnet
 
-The testnet is the public infrastructure for developers. It runs on top of the beta releases of IOTA software and runs a faucet to easily get tokens for testing.
+The testnet is the public infrastructure for developers. It runs on top of the beta releases of IOTA software and runs a [faucet](https://faucet.testnet.shimmer.network) to easily get tokens for testing.
 
 ## Public Infrastructure
 
@@ -23,13 +23,8 @@ The IOTA Foundation currently provides the following public load-balanced testne
   - Available routes: https://api.testnet.shimmer.network/api/routes
   - Health endpoint: https://api.testnet.shimmer.network/health
 - MQTT: wss://api.testnet.shimmer.network:443/api/mqtt/v1
+- Faucet Info API: https://faucet.testnet.shimmer.network/api/info
+- Faucet Enqueue API: https://faucet.testnet.shimmer.network/api/enqueue
 - Chronicle API: https://chronicle.testnet.shimmer.network
 
 These endpoints have MQTT (via WebSockets and raw TCP) exposed and offer the HTTP REST API (according to this specifications [TIP-25](https://editor.swagger.io/?url=https://raw.githubusercontent.com/iotaledger/tips/main/tips/TIP-0025/core-rest-api.yaml), [TIP-26](https://editor.swagger.io/?url=https://raw.githubusercontent.com/iotaledger/tips/main/tips/TIP-0026/indexer-rest-api.yaml) over TLS.
-
-## Developer Tools
-
-- [Explorer](https://explorer.shimmer.network)
-- [Online Faucet](https://faucet.testnet.shimmer.network)
-- Faucet Info API: https://faucet.testnet.shimmer.network/api/info
-- Faucet Enqueue API: https://faucet.testnet.shimmer.network/api/enqueue

@@ -22,7 +22,3 @@ The IOTA Foundation currently provides the following public load-balanced mainne
 
 These endpoints have MQTT (via WebSockets) exposed and offer the HTTP REST API (according to this [specification](nodes/rest-api/iota-rest-api.info.mdx))
 over TLS.
-
-## Developer Tools
-
-- [Explorer](https://explorer.iota.org/mainnet).

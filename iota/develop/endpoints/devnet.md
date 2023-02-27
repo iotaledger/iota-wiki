@@ -35,10 +35,3 @@ We also provide single node endpoints that expose native [MQTT](https://mqtt.org
 - mqtt.lb-1.h.chrysalis-devnet.iota.cafe:1883
 
 These endpoints have MQTT (via WebSockets and raw TCP) exposed and offer the HTTP REST API (according to this [specification](nodes/rest-api/iota-rest-api.info.mdx)) over TLS.
-
-## Developer Tools
-
-- [Explorer](https://explorer.iota.org/devnet).
-- [Online Faucet](https://faucet.chrysalis-devnet.iota.cafe).
-- [cli-wallet](https://github.com/iotaledger/cli-wallet).
-- [chrysalis-faucet Code (nodejs + svelte)](https://github.com/iotaledger/chrysalis-faucet).
