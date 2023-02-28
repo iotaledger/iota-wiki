@@ -1,7 +1,7 @@
 # Deploy a Smart Contract Using Hardhat
 
 :::info
-Hardhat is an Ethereum development environment that provides an easy way to deploy smart contracts, run tests and debug Solidity code locally.
+Hardhat is a powerful development environment for building smart contracts on the Ethereum blockchain. Whether you're new to blockchain development or an experienced developer, Hardhat can help you build better, more reliable smart contracts.
 
 In this tutorial, you will learn how to set up Hardhat and use it to build, test and deploy a simple smart contract on ShimmerEVM.
 :::
@@ -101,6 +101,8 @@ contract Lock {
     }
 }
 ```
+The above is an auto-generated smart contract by hardhat. You can replace it with your own smart contract. But if you need to understand what the above smart contract does, it's a Lock contract, which will lock funds for a specific time period and allows withdrawls only past that point.
+Some important things to note are data types. `event` means that we can subscribe to it like a webhook and wait for a ping to the client side whenever Withdrawl is triggered with `emit` from inside the function `withdraw()`.
 
 ### Setting up the contract
 
@@ -166,6 +168,6 @@ Run this command in root of the project directory:
 npx hardhat run scripts/deploy.js --network shimmerevm-testnet
 ```
 
-The contract will be deployed on ShimmerEVM Testnet, and you can check the deployment status here: [<explorer link>](https://explorer.evm.testnet.shimmer.network/)
+The contract will be deployed on ShimmerEVM Testnet, and you can check the deployment status here on the [explorer](https://explorer.evm.testnet.shimmer.network/).
 
 And Voila! You've successfully deployed your first Hardhat Smart Contract on ShimmerEVM.
