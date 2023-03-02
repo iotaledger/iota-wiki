@@ -27,4 +27,4 @@ The IOTA Foundation currently provides the following public load-balanced testne
 - Faucet Enqueue API: https://faucet.testnet.shimmer.network/api/enqueue
 - Chronicle API: https://chronicle.testnet.shimmer.network
 
-These endpoints have MQTT (via WebSockets and raw TCP) exposed and offer the HTTP REST API (according to this specifications [TIP-25](https://editor.swagger.io/?url=https://raw.githubusercontent.com/iotaledger/tips/main/tips/TIP-0025/core-rest-api.yaml), [TIP-26](https://editor.swagger.io/?url=https://raw.githubusercontent.com/iotaledger/tips/main/tips/TIP-0026/indexer-rest-api.yaml) over TLS.
+These endpoints have MQTT (via WebSockets and raw TCP) exposed and offer the HTTP REST API (according to this specifications [TIP-25](nodes/rest-api/iota-rest-api.info.mdx), [TIP-26](https://editor.swagger.io/?url=https://raw.githubusercontent.com/iotaledger/tips/main/tips/TIP-0026/indexer-rest-api.yaml) over TLS.
