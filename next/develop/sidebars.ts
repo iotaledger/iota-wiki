@@ -188,12 +188,12 @@ module.exports = {
         {
           type: 'doc',
           id: 'endpoints/shimmer',
-          label: 'Mainnet',
+          label: 'Shimmer',
         },
         {
           type: 'doc',
           id: 'endpoints/testnet',
-          label: 'Devnet',
+          label: 'Testnet',
         },
       ],
     },
