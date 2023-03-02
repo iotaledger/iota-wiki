@@ -46,4 +46,22 @@ jobs:
       - name: Build Project Artifacts
         run: vercel build --token=${{ secrets.VERCEL_TOKEN }}
       - name: Deploy Project Artifacts to Vercel
-        run: vercel deploy --prebuilt --token=${{ secrets.VERCEL_TOKEN }}
+        run: vercel deploy --prebuilt --token=${{ secrets.VERCEL_TOKEN }} > vercel_output.txt
+      # Set the deploy URL as an output
+      - name: Set deploy url
+        id: deploy_url
+        run: echo "DEPLOY_URL=$(cat vercel_output.txt)" >> $GITHUB_OUTPUT
+      # Create a comment on the pull request with the deployed URL
+      - name: Comment on pull request
+        uses: actions/github-script@v6.4.0
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const DEPLOY_URL = '${{ steps.deploy_url.outputs.DEPLOY_URL }}'
+            const COMMIT_SHA = '${{ github.event.pull_request.head.sha }}'
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: `This pull request has been deployed to Vercel.\n\n\nLatest commit: ${COMMIT_SHA}\n\n:white_check_mark: Preview: ${DEPLOY_URL}`
+            })
