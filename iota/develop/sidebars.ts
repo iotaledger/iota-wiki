@@ -106,6 +106,44 @@ module.exports = {
         },
       ],
     },
+    {
+      type: 'category',
+      label: 'Endpoints',
+      collapsed: true,
+      items: [
+        {
+          type: 'doc',
+          id: 'endpoints/mainnet',
+          label: 'Mainnet',
+        },
+        {
+          type: 'doc',
+          id: 'endpoints/devnet',
+          label: 'Devnet',
+        },
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Tools',
+      link: {
+        type: 'generated-index',
+        title: 'Tools',
+        slug: '/tools',
+      },
+      items: [
+        {
+          label: 'Explorer',
+          type: 'link',
+          href: 'https://explorer.iota.org',
+        },
+        {
+          label: 'Devnet Faucet',
+          type: 'link',
+          href: 'https://faucet.chrysalis-devnet.iota.cafe',
+        },
+      ],
+    },
     'network-token-migration',
     {
       type: 'link',

@@ -182,6 +182,23 @@ module.exports = {
     },
     {
       type: 'category',
+      label: 'Endpoints',
+      collapsed: true,
+      items: [
+        {
+          type: 'doc',
+          id: 'endpoints/shimmer',
+          label: 'Shimmer',
+        },
+        {
+          type: 'doc',
+          id: 'endpoints/testnet',
+          label: 'Testnet',
+        },
+      ],
+    },
+    {
+      type: 'category',
       label: 'Tools',
       link: {
         type: 'generated-index',
@@ -203,6 +220,16 @@ module.exports = {
           label: 'Schema Tool',
           type: 'link',
           href: '/smart-contracts/guide/wasm_vm/schema',
+        },
+        {
+          label: 'Explorer',
+          type: 'link',
+          href: 'https://explorer.shimmer.network',
+        },
+        {
+          label: 'Testnet Faucet',
+          type: 'link',
+          href: 'https://faucet.testnet.shimmer.network',
         },
       ],
     },
