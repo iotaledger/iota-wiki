@@ -227,7 +227,7 @@ We reserve the ability to place specific projects into different tiers even if p
 **All decisions by the grant committee will be published without naming the individual grant committee members who worked on a proposal to avoid becoming vulnerable to potential complaints and attacks from declined projects.**
 
 The committee will host a publicly accessible database (Notion) where all accepted proposals are listed, and all spending can be tracked by the community (including the respective Links to Stablecoin Payouts)
-[**Proposed structure example Notion by JD Sutton**](https://www.shimmergov.community/treasury-expenses)
+[**Proposed structure example by JD Sutton**](https://www.shimmergov.community/treasury-expenses)
 
 ### Complaint process:
 
