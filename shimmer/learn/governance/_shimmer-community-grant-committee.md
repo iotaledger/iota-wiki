@@ -68,9 +68,12 @@ The 12 months period will start on the day when the Firefly vote (Phase 3) resul
 ### Selection process for committee members and the Program Lead:
 
 - Please review [the selection process specification](https://govern.iota.org/t/community-grant-committee-selection-proccess-specification/1436) that describes the community-driven selection process
-- Phase 1 started on 6 November - you can check the applications here:
+- Phase 1 started on 6 November 22 - you can check the applications here:
   - [Grant Committee Lead applications](https://govern.iota.org/c/shimmer-governance-proposals/shimmer-community-treasury-coommittee-lead-appli/59)
   - [Grant Reviewer Applications](https://govern.iota.org/c/shimmer-governance-proposals/community-treasury-grant-reviewer-applications/58)
+- Phase 2 started on 9 December 22 - you can see the Poll and results here:
+  - [SGP - 0001 Shimmer Community Grant Committee - Lead selection](https://govern.iota.org/t/sgp-0001-shimmer-community-grant-committee-lead-selection/1544)
+  - [SGP - 0002 Shimmer Community Grant Committee Grant Reviewer selection](https://govern.iota.org/t/sgp-0002-shimmer-community-grant-committee-grant-reviewer-selection/1546)
 
 ### 4.2 Funding Priorities
 
@@ -128,7 +131,7 @@ As long as the market cap of Shimmer is low, we need to take a considerably more
 
 ### 4.4 Application and scoring process
 
-The teams must provide the following details in an [**application questionnaire form**](https://shimmer-community-treasury.notion.site/Test-Treasury-Grant-Application-d07087e75aa14317b36c2ae3c6f6954e):
+The teams must provide the following details in an [**application questionnaire form**](https://www.shimmergov.community/airtable-proposal-form):
 
 **Proposal Title**
 
@@ -213,7 +216,7 @@ The teams must provide the following details in an [**application questionnaire 
 
 **This does not imply that automatically such an offer will lead to granting the extra points. Granting these additional points is decided on a case by case basis.**
 
-[**JD Sutton has built a Notion Database for this selection process**](https://shimmer-community-treasury.notion.site/6c31a43cd24a4a94822559be6fbe17a0?v=ed47a1af7e2641d0841d0b956143170f)
+[**JD Sutton has built a Notion Database for this selection process**](https://airtable.com/shrvZgn3NVsXLTXev/tblAzVWXeTSvUyZI3)
 
 The scoring system is a guideline for reviewers. We understand that it may only sometimes apply to some kinds of projects.
 
@@ -224,7 +227,7 @@ We reserve the ability to place specific projects into different tiers even if p
 **All decisions by the grant committee will be published without naming the individual grant committee members who worked on a proposal to avoid becoming vulnerable to potential complaints and attacks from declined projects.**
 
 The committee will host a publicly accessible database (Notion) where all accepted proposals are listed, and all spending can be tracked by the community (including the respective Links to Stablecoin Payouts)
-[**Proposed structure example Notion by JD Sutton**](https://shimmer-community-treasury.notion.site/cf6eff9879f04c9e9afc3fdddda72ded?v=54898c0985b24602bfd7683aa330b3fd)
+[**Proposed structure example by JD Sutton**](https://www.shimmergov.community/treasury-expenses)
 
 ### Complaint process:
 
