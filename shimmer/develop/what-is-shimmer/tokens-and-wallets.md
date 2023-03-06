@@ -1,7 +1,8 @@
 ---
-description: "Learn about the role of the shimmer token, storage deposits, where to buy SMR and the recommended wallets."
+description: 'Learn about the role of the shimmer token, storage deposits, where to buy SMR and the recommended wallets.'
 image: /img/shimmer-wiki.png
 ---
+
 # Tokens and Wallets
 
 As Shimmer supports [ISC(IOTA Smart Contracts)](https://wiki.iota.org/shimmer/smart-contracts/overview/), the base token

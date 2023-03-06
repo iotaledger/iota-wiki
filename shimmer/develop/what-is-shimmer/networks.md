@@ -1,7 +1,8 @@
 ---
-description: "Shimmer public load-balanced networks, APIs and tools."
+description: 'Shimmer public load-balanced networks, APIs and tools.'
 image: /img/shimmer-wiki.png
 ---
+
 # Networks
 
 ## Shimmer Mainnet

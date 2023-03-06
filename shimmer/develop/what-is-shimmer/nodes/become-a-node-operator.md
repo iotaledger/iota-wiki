@@ -1,7 +1,8 @@
 ---
-description: "Running a node is the best way to use Shimmer. This topic provides a checklist of steps for running a reliable node."
+description: 'Running a node is the best way to use Shimmer. This topic provides a checklist of steps for running a reliable node.'
 image: /img/shimmer-wiki.png
 ---
+
 # Become a Node Operator
 
 ![Node Operator](/img/Banner/banner_node_operator.svg)
@@ -32,7 +33,6 @@ If you log into your device through SSH, you should use measures to protect it f
 ### Block Unnecessary Ports
 
 Attackers can abuse any open ports on your device. To secure your device against attacks on unused open ports, you should close all ports except those in use. To do so, you can use a firewall. All operating systems include firewall options. With a firewall, you can completely block unused and unnecessary ports.
-
 
 ## Enable Remote Proof of Work
 

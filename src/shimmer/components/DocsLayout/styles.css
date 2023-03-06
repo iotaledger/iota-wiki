@@ -35,11 +35,9 @@
   row-gap: 1rem;
 }
 
-
 .docssection__container {
   margin: 0 1rem;
 }
-
 
 .docssection__description {
   width: 70%;
@@ -76,7 +74,8 @@
 }
 
 :root[data-theme='dark'] .intro {
-  background: right bottom / 45% no-repeat url('/img/docssection/shimmer_dark.svg');
+  background: right bottom / 45% no-repeat
+    url('/img/docssection/shimmer_dark.svg');
 }
 
 @media (max-width: 996px) {

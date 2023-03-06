@@ -52,8 +52,8 @@ const ProtocolSection: FC = () => (
           </li>
         </ul>
         <Link
-            to='https://wiki.iota.org/shimmer/introduction/welcome'
-            className='nodes__button button button--outline button--primary'
+          to='https://wiki.iota.org/shimmer/introduction/welcome'
+          className='nodes__button button button--outline button--primary'
         >
           Learn more about Stardust
         </Link>
@@ -78,8 +78,8 @@ const ProtocolSection: FC = () => (
           </li>
         </ul>
         <Link
-            to='https://wiki.iota.org/shimmer/tips/'
-            className='nodes__button button button--outline button--primary'
+          to='https://wiki.iota.org/shimmer/tips/'
+          className='nodes__button button button--outline button--primary'
         >
           Browse the latest TIPs
         </Link>

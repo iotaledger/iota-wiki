@@ -17,7 +17,7 @@ You can use this section to get a high-level overview of the IOTA and Shimmer ne
 ## High-Level Overview
 
 |                                                                | IOTA                                                                                                   | Shimmer                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
-|----------------------------------------------------------------|--------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| -------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Protocol                                                       | [Chrysalis](https://wiki.iota.org/introduction/welcome/)                                               | [Stardust](https://wiki.iota.org/shimmer/introduction/welcome/)                                                                                                                                                                                                                                                                                                                                                                                                                               |
 | [Stability](#stability)                                        | Excellent                                                                                              | Good                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
 | Transaction fees                                               | None                                                                                                   | None                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
@@ -73,7 +73,7 @@ minimum [storage deposit](#storage-deposits).
 
 ### IOTA
 
-There are no data storage deposits in the IOTA network, as it relies  on [dust protection](https://wiki.iota.org/introduction/reference/details/#dust-protection), which means you can only
+There are no data storage deposits in the IOTA network, as it relies on [dust protection](https://wiki.iota.org/introduction/reference/details/#dust-protection), which means you can only
 send microtransactions of less than 1Mi if the target address already has at least 1Mi.
 
 ### Shimmer
@@ -100,14 +100,14 @@ that allow you to specify not only
 the [unlock address](https://wiki.iota.org/shimmer/introduction/explanations/what_is_stardust/unlock_conditions/#address),
 but also:
 
-* [Storage deposit
+- [Storage deposit
   returns](https://wiki.iota.org/shimmer/introduction/explanations/what_is_stardust/unlock_conditions/#storage-deposit-return):
   This feature allows you to specify a return amount that has to be refunded to the sender's account, which enables
   micro-transactions of any size.
-* [Expirations](https://wiki.iota.org/shimmer/introduction/explanations/what_is_stardust/unlock_conditions/#expiration):
+- [Expirations](https://wiki.iota.org/shimmer/introduction/explanations/what_is_stardust/unlock_conditions/#expiration):
   If you define an expiration date-time for your output, it will be returned if it hasn't been claimed by said
   date-time.
-* [Time-locks](https://wiki.iota.org/shimmer/introduction/explanations/what_is_stardust/unlock_conditions/#timelock):
+- [Time-locks](https://wiki.iota.org/shimmer/introduction/explanations/what_is_stardust/unlock_conditions/#timelock):
   Conversely to expirations, you can also specify a date-time until which the recipient won't be able to claim the
   output.
 

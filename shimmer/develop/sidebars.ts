@@ -15,8 +15,8 @@ module.exports = {
           label: 'About Nodes',
           collapsed: true,
           link: {
-          type: 'doc',
-          id: 'what-is-shimmer/nodes/about-nodes',
+            type: 'doc',
+            id: 'what-is-shimmer/nodes/about-nodes',
           },
           items: [
             'what-is-shimmer/nodes/hornet',
@@ -38,6 +38,10 @@ module.exports = {
           type: 'category',
           label: 'Core REST API',
           collapsed: true,
+          link: {
+            type: 'doc',
+            id: 'nodes/core-rest-api/iota-core-rest-api',
+          },
           items: require('./nodes/core-rest-api/sidebar'),
         },
       ],
@@ -64,11 +68,11 @@ module.exports = {
     {
       type: 'category',
       label: 'Documentation',
-      link:{
+      link: {
         type: 'doc',
-        id: 'docs'
+        id: 'docs',
       },
-      items:[
+      items: [
         {
           type: 'link',
           label: 'Protocol Overview',
@@ -207,7 +211,7 @@ module.exports = {
             },
           ],
         },
-      ]
+      ],
     },
     {
       type: 'category',

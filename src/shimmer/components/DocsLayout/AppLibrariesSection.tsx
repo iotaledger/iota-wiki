@@ -1,6 +1,6 @@
-import React, {FC} from 'react';
+import React, { FC } from 'react';
 import Link from '@docusaurus/Link';
-import {Identity, SmartContracts, Stronghold} from '@site/src/common/icons';
+import { Identity, SmartContracts, Stronghold } from '@site/src/common/icons';
 
 interface LanguagesProps {
   languages?: { [key: string]: string };
@@ -71,8 +71,7 @@ const LibrariesSection: FC = () => (
         <SmartContracts />
       </div>
       <div className='nodes__section'>
-        <div className='nodes__head'>
-        </div>
+        <div className='nodes__head'></div>
         <h3 className='nodes__header'>IOTA Smart Contracts</h3>
         <p className='nodes__body'>
           The IOTA Smart Contracts Protocol brings scalable and flexible smart
@@ -93,8 +92,7 @@ const LibrariesSection: FC = () => (
         <Identity />
       </div>
       <div className='nodes__section'>
-        <div className='nodes__head'>
-        </div>
+        <div className='nodes__head'></div>
         <h3 className='nodes__header'>IOTA Identity</h3>
         <p className='nodes__body'>
           The IOTA Identity framework for Decentralized Identity brings a first
