@@ -29,20 +29,27 @@ module.exports = {
         },
         {
           label: 'Develop',
-          to: '/develop/welcome',
+          to: '/develop/what-is-shimmer/introduction',
           activeBaseRegex:
             '^(/[^/]+)?/develop.*|' +
-            '^(/[^/]+)?/smart-contracts/.*|' +
-            '^(/[^/]+)?/iota.rs/.*|' +
-            '^(/[^/]+)?/iotajs/.*|' +
-            '^(/[^/]+)?/wallet.rs/.*|' +
-            '^(/[^/]+)?/stronghold.rs/.*|' +
-            '^(/[^/]+)?/hornet/.*|' +
-            '^(/[^/]+)?/bee/.*|' +
-            '^(/[^/]+)?/chronicle/.*|' +
-            '^(/[^/]+)?/introduction/.*|' +
-            '^(/[^/]+)?/identity.rs/.*|' +
             '^(/[^/]+)?/tutorials*',
+        },
+        {
+          label: 'Documentation',
+          to: '/develop/docs',
+          activeBaseRegex:
+              '^(/[^/]+)?/develop/docs|' +
+              '^(/[^/]+)?/smart-contracts/.*|' +
+              '^(/[^/]+)?/iota.rs/.*|' +
+              '^(/[^/]+)?/iotajs/.*|' +
+              '^(/[^/]+)?/wallet.rs/.*|' +
+              '^(/[^/]+)?/stronghold.rs/.*|' +
+              '^(/[^/]+)?/hornet/.*|' +
+              '^(/[^/]+)?/bee/.*|' +
+              '^(/[^/]+)?/chronicle/.*|' +
+              '^(/[^/]+)?/introduction/.*|' +
+              '^(/[^/]+)?/identity.rs/.*|' +
+              '^(/[^/]+)?/tips*',
         },
         {
           label: 'Community',

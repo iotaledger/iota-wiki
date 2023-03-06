@@ -8,7 +8,11 @@ image: /img/participate/banner/banner_about_nodes.png
 
 ![About Nodes](/img/participate/banner/banner_about_nodes.png)
 
-**Nodes are the core of the Shimmer network. They run the node software that gives them read and write access to the Tangle. This section covers what nodes do in the Shimmer network.**
+:::note tl;dr;
+
+Nodes are the core of the Shimmer network. They run the node software that gives them read and write access to the Tangle. This section covers what nodes do in the Shimmer network.
+
+:::
 
 Nodes are responsible for the following:
 
