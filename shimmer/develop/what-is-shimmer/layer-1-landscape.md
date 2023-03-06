@@ -1,27 +1,31 @@
+---
+description: "As Shimmer is an innovation network, you will always find more features like NFTs, native tokens, and smart contracts
+than on the IOTA network at the cost of some stability."
+image: /img/shimmer-wiki.png
+---
+
 # Layer 1 Networks in the IOTA Ecosystem
 
 :::note tl;dr;
 
-As Shimmer is an innovation network, you will always find more features like NFTs, native tokens and smart contracts
-than on the IOTA network at the cost of some
-stability.
+As Shimmer is an innovation network, you will always find more features like NFTs, native tokens, and smart contracts than on the IOTA network at the cost of some stability.
 
 :::
 
 You can use this section to get a high-level overview of the IOTA and Shimmer networks.
 
-## High Level Overview
+## High-Level Overview
 
 |                                                                | IOTA                                                                                                   | Shimmer                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
 |----------------------------------------------------------------|--------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Protocol                                                       | [Chrysalis](https://wiki.iota.org/introduction/welcome/)                                               | [Stardust](https://wiki.iota.org/shimmer/introduction/welcome/)                                                                                                                                                                                                                                                                                                                                                                                                                               |
-| Stability                                                      | Excellent                                                                                              | Good                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+| [Stability](#stability)                                        | Excellent                                                                                              | Good                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
 | Transaction fees                                               | None                                                                                                   | None                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
 | Native token                                                   | IOTA                                                                                                   | SMR                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
 | Data structure                                                 | DAG(Tangle)                                                                                            | DAG(Tangle)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
 | Transaction execution                                          | Parallel                                                                                               | Parallel                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
 | Value transactions                                             | Yes                                                                                                    | Yes                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
-| [Data blocks](#data-blocks)                                    | Yes                                                                                                    | Yes, with Proof of Inclusion                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+| [Store data](#store-data)                                      | Yes                                                                                                    | Yes, with Proof of Inclusion                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
 | [Tokenization](#tokenization)                                  | None                                                                                                   | NFTs, Native Tokens, Alias Outputs                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
 | [Storage deposits](#storage-deposits)                          | None                                                                                                   | Yes                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
 | [Output unlock conditions](#output-unlock-conditions)          | [Address](https://wiki.iota.org/shimmer/introduction/explanations/what_is_stardust/unlock_conditions/) | [Address](https://wiki.iota.org/shimmer/introduction/explanations/what_is_stardust/unlock_conditions/), [Storage Deposit Returns](https://wiki.iota.org/shimmer/introduction/explanations/what_is_stardust/unlock_conditions/#storage-deposit-return), [Expiration](https://wiki.iota.org/shimmer/introduction/explanations/what_is_stardust/unlock_conditions/#expiration), [Timelock](https://wiki.iota.org/shimmer/introduction/explanations/what_is_stardust/unlock_conditions/#timelock) |
@@ -29,12 +33,11 @@ You can use this section to get a high-level overview of the IOTA and Shimmer ne
 
 ## Stability
 
-As Shimmer is designed as a staging network to publicly test features before they are deployed on the IOTA network, it
-will always have more features than IOTA. As this may come at the cost of some stability, before any protocol changes
-are deployed on the [Shimmer Mainnet](https://wiki.iota.org/shimmer/develop/endpoints/shimmer/), they have been tested
+Shimmer is designed as a staging network to test features publicly before deploying them on the IOTA network, so it
+will always have more features than IOTA. As this may come at the cost of some stability, before any protocol changes are deployed on the [Shimmer Mainnet](https://wiki.iota.org/shimmer/develop/endpoints/shimmer/), they have been tested
 in the [Shimmer Testnet](https://wiki.iota.org/shimmer/develop/endpoints/testnet/).
 
-## Data Blocks
+## Store Data
 
 ### IOTA
 
@@ -42,12 +45,12 @@ In IOTA, you can attach
 an [IndexationPayload](https://wiki.iota.org/iota.rs/explanations/messages_payloads_and_transactions/#indexationpayload)
 to
 any [SignedTransaction](https://wiki.iota.org/iota.rs/explanations/messages_payloads_and_transactions/#signedtransaction).
-The IndexationPayload allows you to add an index to a data message, as well as arbitrary data.
+The IndexationPayload allows you to add an index to a data message and arbitrary data.
 
 ### Shimmer
 
 You can use the [INX-PoI](https://wiki.iota.org/shimmer/inx-poi/welcome/) node extension to verify if any piece of data
-was included in the Tangle. This does not rely on the [Chronicle](https://wiki.iota.org/shimmer/chronicle/welcome/)
+was included in the Tangle. This feature does not rely on the [Chronicle](https://wiki.iota.org/shimmer/chronicle/welcome/)
 permanode, so it drastically reduces the node operator's storage requirements.
 
 ## Tokenization
@@ -63,22 +66,21 @@ a [tokenization framework](https://wiki.iota.org/shimmer/introduction/explanatio
 that enables [Alias outputs](https://wiki.iota.org/shimmer/introduction/explanations/ledger/alias/),
 [NFTs](https://wiki.iota.org/shimmer/introduction/explanations/ledger/nft/)
 and [native tokens and foundries](https://wiki.iota.org/shimmer/introduction/explanations/ledger/foundry/)
-on layer 1 as long as you can cover the
+on layer 1, as long as you can cover the
 minimum [storage deposit](#storage-deposits).
 
 ## Storage Deposits
 
 ### IOTA
 
-There are no data storage deposits in the IOTA network as it relies
-on [dust protection](https://wiki.iota.org/introduction/reference/details/#dust-protection), which means you can only
+There are no data storage deposits in the IOTA network, as it relies  on [dust protection](https://wiki.iota.org/introduction/reference/details/#dust-protection), which means you can only
 send microtransactions of less than 1Mi if the target address already has at least 1Mi.
 
 ### Shimmer
 
-The Stardust protocol improves on IOTA dust protection by
+The Stardust protocol improves IOTA dust protection by
 introducing [storage deposits](https://wiki.iota.org/shimmer/introduction/explanations/what_is_stardust/storage_deposit/).
-In a nutshell, this means that you have to back up any data you store on the Tangle
+You must back up any data you store on the Tangle
 with [SMR tokens](tokens-and-wallets.md#storage-deposits). **The
 deposit is not a fee**, and it can be refunded as soon as the output is cleaned up.
 
@@ -88,8 +90,7 @@ deposit is not a fee**, and it can be refunded as soon as the output is cleaned 
 
 At the time, IOTA's Chrysalis protocol only allows the
 traditional [address](https://wiki.iota.org/shimmer/introduction/explanations/what_is_stardust/unlock_conditions/#address)
-unlock condition. That is to say, outputs in Chrysalis can only be unlocked by whoever controls the keys associated to
-the target address.
+unlock condition. That is to say, outputs in Chrysalis can only be unlocked by whoever controls the keys associated with the target address.
 
 ### Shimmer
 
@@ -121,7 +122,7 @@ IOTA ecosystem.
 
 You can use [Ethereum Virtual Machine (EVM)](https://wiki.iota.org/shimmer/smart-contracts/guide/evm/introduction/)
 smart contracts on any IOTA smart contract chain by using
-the [`evm`](https://wiki.iota.org/shimmer/smart-contracts/guide/core_concepts/core_contracts/evm/) [core contract](https://wiki.iota.org/shimmer/smart-contracts/guide/core_concepts/core_contracts/overview/),
+the [`evm`](https://wiki.iota.org/shimmer/smart-contracts/guide/core_concepts/core_contracts/evm/) [core contract](https://wiki.iota.org/shimmer/smart-contracts/guide/core_concepts/core_contracts/overview/)
 that can run the EVM/Solidity based smart contracts.
 
 #### JSON-RPC
@@ -132,9 +133,9 @@ pointing the JSON-RPC service included in Wasp nodes.
 
 ### IOTA
 
-The IOTA networks does not yet support IOTA Smart Contracts.
+The IOTA network does not yet support IOTA Smart Contracts.
 
 ### Shimmer
 
 You can use the ISC protocol
-by [spinning up your own private Tangle with the preconfigured Dockker image](https://wiki.iota.org/shimmer/smart-contracts/guide/development_tools/docker_preconfigured/).
+by [spinning up your own private Tangle with the preconfigured Docker image](https://wiki.iota.org/shimmer/smart-contracts/guide/development_tools/docker_preconfigured/).

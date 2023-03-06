@@ -144,11 +144,6 @@ module.exports = {
           collapsed: true,
           items: [
             {
-              label: 'Introduction',
-              type: 'doc',
-              id: 'nodes/node-software',
-            },
-            {
               label: 'Hornet',
               type: 'link',
               href: '/hornet/welcome',

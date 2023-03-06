@@ -1,3 +1,10 @@
+---
+title: Become a Node Operator
+description: "You can use the IOTA client libraries to handle communications between your node and
+your Layer 1 network of choice."
+image: /img/shimmer-wiki.png
+---
+
 # IOTA Client Libraries
 
 :::note tl;dr;
@@ -5,7 +12,7 @@
 You can use the IOTA client libraries to handle communications between your node and
 your [Layer 1 network](layer-1-landscape.md) of choice.
 
-If you plan on sending value transactions, the IOTA foundation recommends that you use [wallet.rs](#walletrs).
+The IOTA foundation recommends using [wallet.rs](#walletrs) for value transactions.
 
 :::
 
@@ -20,7 +27,7 @@ the [IOTA Community](https://wiki.iota.org/shimmer/community/the-community/how-t
 ## Simple by Default, as Complex as You May Need
 
 IOTA Client libraries handle the communications between your software and
-the Shimmer network. They are designed to simplify how you connect and interact with nodes in the network by providing 
+the Shimmer network. They are designed to simplify how you connect and interact with nodes in the network by providing
 high-level helper functions which combine multiple atomic REST-API commands under the hood and use sensible defaults.
 However, you can still customize your application by overriding the default parameters or combining atomic REST-API
 commands to suit your needs.
@@ -41,7 +48,7 @@ commands to suit your needs.
 ## wallet.rs
 
 The [wallet.rs library](https://wiki.iota.org/shimmer/wallet.rs/welcome/) is a **stateful** package that you can use to
-build **any application that manages funds** in the Shimmer network, for example an exchange.
+build **any application that manages funds** in the Shimmer network, for example, an exchange.
 
 ### Secured by Stronghold
 
@@ -49,7 +56,7 @@ The wallet.rs library uses [Stronghold](https://wiki.iota.org/shimmer/stronghold
 encrypted seeds at rest. By design,
 Stronghold uses [non-contiguous data types](https://wiki.iota.org/stronghold.rs/explanations/non-contiguous-data-types/)
 and [cryptographic procedures](https://wiki.iota.org/stronghold.rs/explanations/procedures/) to create password
-protected snapshots which you can easily back up or share between devices.
+protected snapshots that you can easily back up or share between devices.
 
 ### Flexible Account Models
 
@@ -63,7 +70,7 @@ users.
 
 ### Available Languages
 
-The wallet.rs library is written in [Rust](https://wiki.iota.org/shimmer/wallet.rs/getting_started/rust/), and has
+The wallet.rs library is written in [Rust](https://wiki.iota.org/shimmer/wallet.rs/getting_started/rust/) and has
 bindings in [Java](https://wiki.iota.org/shimmer/wallet.rs/getting_started/java/),
 [Node.js](https://wiki.iota.org/shimmer/wallet.rs/getting_started/nodejs/)
 and [Python](https://wiki.iota.org/shimmer/wallet.rs/getting_started/python/).
