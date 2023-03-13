@@ -1,5 +1,4 @@
 ---
-title: Become a Node Operator
 description: "You can use the IOTA client libraries to handle communications between your node and
 your Layer 1 network of choice."
 image: /img/shimmer-wiki.png
@@ -41,7 +40,7 @@ commands to suit your needs.
 | Python binding                     | Yes                    | Yes                | No                |
 | NodeJs binding                     | Yes                    | Yes                | No                |
 | Stateful                           | Yes                    | No                 | No                |
-| Recommended for value transactions | Yes                    | Yes                | No                |
+| Recommended for value transactions | Yes                    | No                 | No                |
 | Secured by Stronghold              | Always                 | Optional           | Optional          |
 | Latest Features                    | Yes                    | Yes                | Almost            |
 

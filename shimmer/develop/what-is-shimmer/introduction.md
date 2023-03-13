@@ -1,5 +1,4 @@
 ---
-title: Become a Node Operator
 description: "Shimmer is an innovation network where the community tries out the new protocol changes
 before they are deployed on the more conservative IOTA network. "
 image: /img/shimmer-wiki.png

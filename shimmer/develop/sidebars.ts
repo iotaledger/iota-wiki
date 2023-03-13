@@ -49,7 +49,7 @@ module.exports = {
 
     {
       type: 'category',
-      label: 'Public Node Endpoints',
+      label: 'Endpoints',
       collapsed: true,
       items: [
         {
@@ -121,7 +121,7 @@ module.exports = {
               href: '/iota.rs/welcome',
             },
             {
-              label: 'Wallet.rs',
+              label: 'wallet.rs',
               type: 'link',
               href: '/wallet.rs/welcome',
             },
