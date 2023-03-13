@@ -116,7 +116,7 @@ module.exports = {
           collapsed: true,
           items: [
             {
-              label: 'Client',
+              label: 'iota.rs',
               type: 'link',
               href: '/iota.rs/welcome',
             },

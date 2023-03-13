@@ -19,7 +19,7 @@ require a deposit of Shimmer tokens to be stored on L1.
 
 :::tip Test Faucet
 
-If you are experimenting with Shimmer on the [Betanet](networks.md#shimmer-beta), you can request test funds from
+If you are experimenting with Shimmer on the [testnet](networks.md#public-testnet), you can request test funds from
 the [Faucet](networks.md#the-faucet).
 
 :::
