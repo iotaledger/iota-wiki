@@ -50,7 +50,7 @@ jobs:
       # Set the deploy URL as an output
       - name: Set deploy url
         id: deploy_url
-        run: echo "DEPLOY_URL=$(cat vercel_output.txt)" >> $GITHUB_OUTPUT
+        run: echo "DEPLOY_URL=$(cat vercel_output.txt | awk 'END{print}')" >> $GITHUB_OUTPUT
       # Create a comment on the pull request with the deployed URL
       - name: Comment on pull request
         uses: actions/github-script@v6.4.0
