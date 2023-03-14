@@ -1,6 +1,6 @@
 ---
-description: "You can use the IOTA client libraries to handle communications between your node and
-your Layer 1 network of choice."
+description: 'You can use the IOTA client libraries to handle communications between your node and
+your Layer 1 network of choice.'
 image: /img/shimmer-wiki.png
 ---
 
