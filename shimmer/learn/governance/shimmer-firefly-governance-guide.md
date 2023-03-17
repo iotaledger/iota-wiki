@@ -55,8 +55,12 @@ To vote on a proposal, you must tell the Wallet how many SMR tokens you want to 
 
 The amount of SMR tokens you choose for governance are now transferred to a separate output and can only be used for governance now. If you want to send them out of your Wallet, or use them for anything else you will have to remove them from the governance output by reducing your voting power.
 
-::: info Token Ownership
+:::info Token Ownership
+
 The voting output belongs to your own private key! By voting, you are never losing control over your Tokens. The voting output is just a specified output that is only used for your governance activities but the tokens never leave your control in this process.
+
+:::
+
 ### 4. Vote on a proposal
 
 - You can only vote on proposals in the "voting open" or "counting" phase.
