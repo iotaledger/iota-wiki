@@ -42,7 +42,8 @@ const production = {
     },
   },
   plugins: [
-    path.resolve(__dirname, 'plugins', 'cookiebot'),
+    // Temporarily disabled because of Cookiebot blocking required scripts.
+    // path.resolve(__dirname, 'plugins', 'cookiebot'),
     path.resolve(__dirname, 'plugins', 'matomo'),
     [
       '@docusaurus/plugin-google-gtag',
