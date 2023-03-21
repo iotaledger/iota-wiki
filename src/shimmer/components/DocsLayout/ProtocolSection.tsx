@@ -2,30 +2,6 @@ import React, { FC } from 'react';
 import Link from '@docusaurus/Link';
 import { Shimmer, Tips } from '@site/src/common/icons';
 
-interface LanguagesProps {
-  languages?: { [key: string]: string };
-}
-
-const Languages: FC<LanguagesProps> = (props) => {
-  return (
-    <>
-      {Object.entries(props.languages).length > 0 && (
-        <div className='languages'>
-          {Object.entries(props.languages).map(([language, to], key) => (
-            <Link
-              className='language button button--outline button--primary'
-              to={to}
-              key={key}
-            >
-              {language}
-            </Link>
-          ))}
-        </div>
-      )}
-    </>
-  );
-};
-
 const ProtocolSection: FC = () => (
   <div className='nodes__cards'>
     <div className='nodes__card'>

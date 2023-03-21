@@ -8,10 +8,8 @@ import {
   Hornet,
   IntegrationServices,
   Search,
-  Tips,
   Tutorials,
   Wasp,
-  Shimmer,
 } from '@site/src/common/icons';
 import CoreLibrariesSection from './CoreLibrariesSection';
 import AppLibrariesSection from './AppLibrariesSection';
