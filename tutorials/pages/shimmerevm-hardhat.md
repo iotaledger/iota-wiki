@@ -114,9 +114,9 @@ etherscan: {
     customChains: [
         {
             network: "shimmerevm-testnet",
-            chainId: 1070,
+            chainId: 1071,
             urls: {
-                apiURL: "https://explorer.evm.testnet.shimmer.network/api",
+                apiURL: "https://api.evm.testnet.shimmer.network/",
                 browserURL: "https://explorer.evm.testnet.shimmer.network/"
             }
         }
