@@ -1,6 +1,3 @@
-import AppLibImg from '@site/static/img/homepage/section_application_libraries.png';
-import AppLibImgDark from '@site/static/img/homepage/section_application_libraries_dark.png';
-import ThemedImage from '@theme/ThemedImage';
 import React, { FC } from 'react';
 import Link from '@docusaurus/Link';
 import { Identity, SmartContracts, Stronghold } from '@site/src/common/icons';
@@ -30,22 +27,22 @@ const Languages: FC<LanguagesProps> = (props) => {
 };
 
 const LibrariesSection: FC = () => (
-  <div className='libraries__cards'>
-    <div className='libraries__card'>
-      <div className='libraries__section'>
-        <div className='libraries__head'>
-          <div className='libraries__icon'>
-            <Stronghold />
-          </div>
+  <div className='nodes__cards'>
+    <div className='nodes__card'>
+      <div className='nodes__icon'>
+        <Stronghold />
+      </div>
+      <div className='nodes__section'>
+        <div className='nodes__head'>
           <Languages
             languages={{
               Rust: '/stronghold.rs/reference/overview',
             }}
           />
         </div>
-        <h3 className='libraries__header'>Stronghold</h3>
-        <ul className='libraries__features'>
-          <li className='libraries__feature'>
+        <h3 className='nodes__header'>Stronghold</h3>
+        <ul className='nodes__features'>
+          <li className='nodes__feature'>
             <Link to='/stronghold.rs/how_tos/cli/store_read_write'>
               Read and write to the vault
             </Link>
@@ -55,7 +52,7 @@ const LibrariesSection: FC = () => (
               Create a snapshot
             </Link>
           </li>
-          <li className='libraries__feature'>
+          <li className='nodes__feature'>
             <Link to='/stronghold.rs/how_tos/cli/read_snapshot'>
               Manage snapshots
             </Link>
@@ -63,26 +60,20 @@ const LibrariesSection: FC = () => (
         </ul>
         <Link
           to='/stronghold.rs/getting_started'
-          className='libraries__button button button--outline button--primary'
+          className='nodes__button button button--outline button--primary'
         >
           Get to know Stronghold
         </Link>
       </div>
     </div>
-    <div className='libraries__card libraries__card--wide'>
-      <img
-        alt='ISC'
-        className='libraries__logo'
-        src='img/homepage/smartcontracts_bot.svg'
-      />
-      <div className='libraries__section'>
-        <div className='libraries__head'>
-          <div className='libraries__icon'>
-            <SmartContracts />
-          </div>
-        </div>
-        <h3 className='libraries__header'>IOTA Smart Contracts</h3>
-        <p className='libraries__body'>
+    <div className='nodes__card '>
+      <div className='nodes__icon'>
+        <SmartContracts />
+      </div>
+      <div className='nodes__section'>
+        <div className='nodes__head'></div>
+        <h3 className='nodes__header'>IOTA Smart Contracts</h3>
+        <p className='nodes__body'>
           The IOTA Smart Contracts Protocol brings scalable and flexible smart
           contracts to the early stage and still experimental test chain.
         </p>
@@ -93,29 +84,17 @@ const LibrariesSection: FC = () => (
           >
             Learn about ISC
           </Link>
-          {/* <Link
-            to='/smart-contracts/guide/evm/examples/introduction'
-            className='start-building__button button button--primary'
-          >
-            Run a smart contract
-          </Link> */}
         </div>
       </div>
     </div>
-    <div className='libraries__card libraries__card--wide'>
-      <img
-        className='libraries__logo'
-        src='img/homepage/identity_logo.svg'
-        alt='Identity'
-      />
-      <div className='libraries__section'>
-        <div className='libraries__head'>
-          <div className='libraries__icon'>
-            <Identity />
-          </div>
-        </div>
-        <h3 className='libraries__header'>IOTA Identity</h3>
-        <p className='libraries__body'>
+    <div className='nodes__card'>
+      <div className='nodes__icon'>
+        <Identity />
+      </div>
+      <div className='nodes__section'>
+        <div className='nodes__head'></div>
+        <h3 className='nodes__header'>IOTA Identity</h3>
+        <p className='nodes__body'>
           The IOTA Identity framework for Decentralized Identity brings a first
           experimental version to Shimmer
         </p>
@@ -128,15 +107,6 @@ const LibrariesSection: FC = () => (
           </Link>
         </div>
       </div>
-    </div>
-    <div className='spaceholder__card__img'>
-      <ThemedImage
-        alt='Core Libraries'
-        sources={{
-          light: AppLibImg,
-          dark: AppLibImgDark,
-        }}
-      />
     </div>
   </div>
 );

@@ -188,7 +188,7 @@ export default function HomeLayout() {
                     </Link>
                   </li>
                   <li className='nodes__feature'>
-                    <Link to='/smart-contracts/guide/chains_and_nodes/docker_standalone'>
+                    <Link to='/smart-contracts/guide/chains_and_nodes/running-a-node'>
                       Run the Shimmer Smart Contract Protocol
                     </Link>
                   </li>
@@ -251,7 +251,7 @@ export default function HomeLayout() {
         <HomepageSection header='Developer resources'>
           <div className='resources__cards'>
             <div className='resources__card resources__card--logo' />
-            <Link to='tutorials' className='resources__card'>
+            <Link to='/tutorials?tags=shimmer' className='resources__card'>
               <div className='resources__icon'>
                 <Tutorials />
               </div>
