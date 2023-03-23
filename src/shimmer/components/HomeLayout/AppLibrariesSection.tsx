@@ -103,7 +103,11 @@ const LibrariesSection: FC = () => (
       </div>
     </div>
     <div className='libraries__card libraries__card--wide'>
-      <img className='libraries__logo' src='img/homepage/identity_logo.svg' alt='Identity' />
+      <img
+        className='libraries__logo'
+        src='img/homepage/identity_logo.svg'
+        alt='Identity'
+      />
       <div className='libraries__section'>
         <div className='libraries__head'>
           <div className='libraries__icon'>
