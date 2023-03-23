@@ -118,12 +118,12 @@ export default function DocsLayout() {
                   </Link>
                 </li>
                 <li className='nodes__feature'>
-                  <Link to='/smart-contracts/guide/chains_and_nodes/docker_standalone'>
+                  <Link to='/smart-contracts/guide/chains_and_nodes/running-a-node'>
                     Run the Shimmer Smart Contract Protocol
                   </Link>
                 </li>
                 <li className='nodes__feature'>
-                  <Link to='/smart-contracts/guide/evmhttps://wiki.iota.org/shimmer/introduction'>
+                  <Link to='/smart-contracts/guide/evm/introduction'>
                     Run EVM/Solidity Smart Contract
                   </Link>
                 </li>
@@ -171,7 +171,7 @@ export default function DocsLayout() {
       </DocsSection>
       <DocsSection header='Developer resources'>
         <div className='resources__cards'>
-          <Link to='tutorials' className='resources__card'>
+          <Link to='/tutorials?tags=shimmer' className='resources__card'>
             <div className='resources__icon'>
               <Tutorials />
             </div>
@@ -181,7 +181,7 @@ export default function DocsLayout() {
               your own project!
             </p>
           </Link>
-          <Link to='develop/tools' className='resources__card'>
+          <Link to='/develop/tools' className='resources__card'>
             <div className='resources__icon'>
               <IntegrationServices />
             </div>

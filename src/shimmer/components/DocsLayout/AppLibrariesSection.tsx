@@ -48,13 +48,13 @@ const LibrariesSection: FC = () => (
             </Link>
           </li>
           <li className='nodes__feature'>
-            <Link to='/stronghold.rs/how_tos/cli/read_snapshot'>
-              Manage snapshots
+            <Link to='/stronghold.rs/how_tos/cli/create_snapshot/'>
+              Create a snapshot
             </Link>
           </li>
           <li className='nodes__feature'>
-            <Link to='/stronghold.rs/explanations/p2p'>
-              Peer to peer communication
+            <Link to='/stronghold.rs/how_tos/cli/read_snapshot'>
+              Manage snapshots
             </Link>
           </li>
         </ul>
