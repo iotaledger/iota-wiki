@@ -38,5 +38,16 @@ module.exports = {
       collapsed: true,
       items: ['token/buying'],
     },
+    {
+      type: 'category',
+      label: 'Governance',
+      collapsed: true,
+      items: [
+        'governance/shimmer-governance-intro',
+        'governance/the-shimmer-governance-framework',
+        'governance/governance-scope',
+        'governance/shimmer-firefly-governance-guide',
+      ],
+    },
   ],
 };

@@ -6,7 +6,7 @@ Welcome to the Developer Section. Here you will find all information to start de
 
 - [Protocol Overview](/introduction/welcome)
 - Libraries
-  - [Client.rs](/iota.rs/welcome)
+  - [iota.rs](/iota.rs/welcome)
   - [Wallet.rs](/wallet.rs/welcome)
   - [Identity](/identity.rs/introduction)
   - [Streams](/streams/welcome)
