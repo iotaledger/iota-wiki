@@ -110,21 +110,20 @@ Some important things to note are data types. `event` means that we can subscrib
 - Update the `hardhat-config` with shimmer network details as shown below:
 
 ```js
-etherscan: {
-    customChains: [
-        {
-            network: "shimmerevm-testnet",
-            chainId: 1071,
-            urls: {
-                apiURL: "https://api.evm.testnet.shimmer.network/",
-                browserURL: "https://explorer.evm.testnet.shimmer.network/"
-            }
-        }
-    ]
-}
+module.exports = {
+  solidity: "0.8.18",
+  defaultNetwork: "shimmerevm-testnet",
+  networks: {
+    "shimmerevm-testnet": {
+      url: 'https://json-rpc.evm.testnet.shimmer.network',
+      chainId: 1071,
+      accounts: [priv_key]
+    }
+  }
+};
 ```
 
-- Create `.env` file in the root to store your network id and jsonrpc in-case you'd like to keep it private.
+- Create `.env` file in the root to store your network id and jsonrpc in-case you'd like to keep it private. You can then refer them by `process.env.SHIMMEREVM_TESTNET_JSONRPC`.
 
 :::note
 
@@ -170,4 +169,26 @@ npx hardhat run scripts/deploy.js --network shimmerevm-testnet
 
 The contract will be deployed on ShimmerEVM Testnet, and you can check the deployment status here on the [explorer](https://explorer.evm.testnet.shimmer.network/).
 
-And Voila! You've successfully deployed your first Hardhat Smart Contract on ShimmerEVM.
+If you want to further verify your contract, add the following to your `hardhat.config.js`:
+```js
+etherscan: {
+  customChains: [
+      {
+          network: "shimmerevm-testnet",
+          chainId: 1071,
+          urls: {
+              apiURL: "https://api.evm.testnet.shimmer.network/",
+              browserURL: "https://explorer.evm.testnet.shimmer.network/"
+          }
+      }
+  ]
+}
+```
+
+Then you can verify by running:
+
+```sh
+npx hardhat verify --network shimmerevm-testnet <address> <unlock time>
+```
+
+And Voila! You've successfully deployed your first Hardhat Smart Contract on ShimmerEVM and also verified it on explorer.
