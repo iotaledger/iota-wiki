@@ -11,7 +11,7 @@ keywords:
   - Governance
 ---
 
-On-chain governance is important for any decentralized DLT. With Shimmer's Firefly Wallet, Shimmer token holders can participate in the governance of the network. 
+On-chain governance is essential for any decentralized DLT. The ability to make decisions through voting functionalities executed on the Blockchain / DAG removes a centralization point and gives token holders the power to make their own decisions. With Shimmer's Firefly Wallet, Shimmer token holders can now participate in the governance of the network. 
 With the support of the IOTA Foundation, the Shimmer community has developed a highly flexible and secure system for casting votes directly on the Shimmer Tangle 
 through the Firefly Wallet and counting the votes in the network’s Hornet nodes.
 
