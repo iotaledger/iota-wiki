@@ -101,7 +101,7 @@ If the counting phase is seven days and a user has a balance of 100 SMR in their
 - 100 SMR are allocated for three days to option A, which means that around 42.8% (3/7) of the users' maximum achievable votes are counted for option A.
 - Changing the vote for the remaining four days to option B results in the remaining 57.2% (5/7) of the users' available votes being counted towards option B.
 
-![Voting weight examples](/img/learn/governance/vote-graphic03.png)
+![Voting weight examples](/img/learn/governance/vote_graphic03.png)
 
 This solution ensures that voters always have control over their tokens. The tokens never leave the user’s wallet and are never locked or unusable, and owners can remove, send, revoke, or change their opinion on them at any time, even during the counting phase, following familiar Firefly staking rules.
 Creating and adding new governance events
