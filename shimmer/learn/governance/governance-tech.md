@@ -26,26 +26,26 @@ The Voting phase of a governance vote is divided into four stages:
 
 ### Voting Details
 
-The voting mechanism utilizes Shimmer’s ability to issue value transactions with attached metadata. 
+The voting mechanism utilizes Shimmer’s ability to issue value transactions with [attached metadata](https://wiki.iota.org/shimmer/introduction/explanations/what_is_stardust/output_features/#metadata). 
 To participate in voting, the user must define the amount of SMR tokens that should be used for governance votes, which represents their voting power, 
 for each wallet associated with their Shimmer Firefly profile. 
-The tokens that represent the voting power will be sent to a new output (UTXO) at the same address (i.e., the user sends the tokens to themselves) using the 
-Manage Voting Power function in the new Governance section of Shimmer Firefly.
+The tokens that represent the voting power will be sent to a new output ([UTXO](https://wiki.iota.org/shimmer/introduction/explanations/what_is_stardust/rethink_utxo/)) at the same address (i.e., the users send the tokens to themselves) using the 
+`Manage Voting Power` function in the new Governance section of Shimmer Firefly.
 
 This Governance Output to which the tokens are allocated will now be used for all governance votes of this wallet. 
 The voter can decide to vote on all kinds of governance questions with the allocated voting weight.
-Whenever a vote is cast, it uses the tokens that are stored in the Governance Output for a transaction 
-(again, the user sends the tokens to themselves, to the same output, using the same address). 
+Whenever a vote is cast, it uses the tokens stored in the Governance Output for a transaction. To reiterate, the user sends the tokens to themselves, to the same output, using the same address. 
 
 During this transaction, metadata that includes the ballot event ID, question ID, and answer will be attached to the UTXO where the tokens reside. 
 This immutably writes the metadata onto the UTXOs of this address in the Tangle. So, after the voting transaction is complete, 
-the tokens will still reside at the same address as before but now they will have attached metadata representing the voter's opinion for the referendum.
+the tokens will still reside at the same address as before, but now they will have attached metadata representing the voter's opinion for the referendum.
 
-:::👉Tip: 
+:::tip Storage Deposits
 If you plan to send, mint, or receive tokens, native assets, or NFTs during the Voting period, you may set aside a small amount of SMR tokens from the vote to cover the required storage deposit for those transfers. You can always free some SMR tokens from the governance votes by simply using the Manage Voting Power function of the Firefly Wallet.
 :::
 
 #### Counting votes
+
 Because every node in the SMR network knows the status of every UTXO in the Tangle, they can observe and register changes to these UTXOs. 
 As soon as a vote transaction is issued and confirmed, the UTXO will hold a piece of attached metadata information.
 Hornet nodes with activated INX participation plugin monitor the ledger for UTXOs that contain this specific metadata. 
@@ -57,7 +57,7 @@ This database includes the following information for every milestone:
 - The voter’s opinion (question ID and answer) that is written to this UTXO.
 - The number of tokens that are stored on the UTXO at a milestone.
 
-### Voting results
+### Voting Results
 
 The result will be produced and verified in a decentralized manner through every node that participates in the counting. 
 Each node can make the current and final result of its counting publicly available through an API endpoint.
