@@ -87,7 +87,7 @@ This is a crucial security feature of the voting mechanism that rewards long-ter
 This is achieved by requiring voters to lock their capital over a longer period and making any attempt to buy votes a speculative risk 
 due to the potential volatility of the SMR price during the seven-day counting phase.
 
-![Hornet vote counting](/img/learn/governance/vote-graphic02.png)
+![Hornet vote counting](/img/learn/governance/vote_graphic02.png)
 
 #### Voting weight examples
 
