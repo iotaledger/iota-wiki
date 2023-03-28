@@ -117,7 +117,7 @@ In contrast to the earlier voting system developed for the IOTA network, this Sh
 Community members, projects, or other ecosystem participants are free to create their own governance events and invite the Shimmer token holders to participate in such votes.
 Decentralized and community-driven
 
-To summarize: Voting in SMR is
+To summarize, voting in SMR is:
 
 - Free and feeless: A vote is a transaction in the Tangle without fees.
 - Decentralized: No one gatekeeps the creation and implementation of governance votes.
