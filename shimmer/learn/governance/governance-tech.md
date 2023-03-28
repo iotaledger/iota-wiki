@@ -61,7 +61,7 @@ This database includes the following information for every milestone:
 
 The result will be produced and verified in a decentralized manner through every node that participates in the counting. 
 Each node can make the current and final result of its counting publicly available through an API endpoint.
-After the commencement of the Counting Start phase (which is the milestone in the Tangle that has been designated as the starting point), 
+After the Counting Start phase begins (which is the milestone in the Tangle that has been designated as the starting point), 
 the number of votes will be tallied for every milestone where tokens are recognized on a UTXO that has the attached voting metadata. 
 The community has determined that 1000 Glow (0.001 SMR) represents one vote per milestone.
 
