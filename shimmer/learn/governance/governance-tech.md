@@ -1,5 +1,5 @@
 ---
-title: Governance voting in Shimmer Explained
+title: Governance Voting in Shimmer Explained
 description: A technical description of the Governance functionality in Shimmer
 image: /img/learn/governance/vote-graphic04.png
 keywords:
