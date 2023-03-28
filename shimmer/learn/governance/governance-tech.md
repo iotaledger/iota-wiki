@@ -17,7 +17,7 @@ through the Firefly Wallet and counting the votes in the network’s Hornet node
 
 ## Voting Phase
 
-The Voting phase of a governance vote is further divided into four stages:
+The Voting phase of a governance vote is divided into four stages:
 
 - **Proposal announcement:** Upon publishing the voting ballot to the [GitHub repository](https://github.com/iota-community/Shimmer-governance-participation-events), Hornet node operators can activate the voting ballot in their nodes’ Participation Plugin to be prepared to count any votes that are cast.
 - **Voting Open:** The Voting Open stage lasts seven days and starts when a predefined milestone in the Shimmer network is reached. After the network has passed this milestone, users can cast, change, revoke, or redo the vote using the governance functionality of the Shimmer Firefly wallet. It's important to note that changes of opinion during this timeframe will not affect the final vote count. Ideally, voters should cast their votes before the next stage begins to ensure the highest possible vote count.
