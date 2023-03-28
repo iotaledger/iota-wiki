@@ -74,7 +74,7 @@ Therefore, a vote using an amount of 1 SMR for an option will be counted as foll
 - 1000 votes are counted at the third milestone, and so on.
 
 Let's assume that the counting period lasts for 1,500 milestones:
-The method described above updates the nodes' database with newly counted every time a new milestone is reached. For instance, if a voter uses 1 SMR token in a vote, 
+The method described above updates the nodes' voting database every time a new milestone is reached. For instance, if a voter uses 1 SMR token in a vote, 
 after 10 milestones, they would have gained 10,000 votes. 
 After 100 milestones, the accumulated votes would be 100,000, and after 1,500 milestones, the total counted votes would reach 1.5 million.
 
