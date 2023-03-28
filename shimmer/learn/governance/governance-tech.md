@@ -80,7 +80,7 @@ After 100 milestones, the accumulated votes would be 100,000, and after 1,500 mi
 
 ![Vote counting example](/img/learn/governance/vote-graphic01.png)
 
-This counting mechanism also means that the result is greatly influenced by the tokens' Vote Holding Time. 
+This counting mechanism also means that the token's Vote Holding Time greatly influences the result. 
 Votes gain “weight” based on the length of time they are kept on an address during the counting phase.
 
 This is a crucial security feature of the voting mechanism that rewards long-term token holders and punishes voting speculators or vote buyers. 
