@@ -17,7 +17,7 @@ The Shimmer community, supported by the IOTA Foundation, has developed a Governa
 
 **2. The official IOTA/Shimmer [Governance forum](https://govern.iota.org)**- Here is the place for specific discussions about proposals. It is the first stage of reaching community consensus on proposed changes through soft consensus polling in the forum.
 
-**3. Fully utilized decentralized and immutable On-Chain Governance** voting functionality integrated into the [Firefly Shimmer Wallet](https://firefly.iota.org/) and the [Hornet Nodes](/hornet/welcome). This allows every SMR Token holder to make decisions in the SMR network based on proposals passed through the forum's governance process. Voting is a protocol feature of L1, so no Smart Contracts are needed for this type of voting.
+**3. Fully utilized decentralized and immutable On-Chain Governance [voting functionality](./governance-tech.md)** integrated into the [Firefly Shimmer Wallet](https://firefly.iota.org/) and the [Hornet Nodes](/hornet/welcome). This allows every SMR Token holder to make decisions in the SMR network based on proposals passed through the forum's governance process. Voting is a protocol feature of L1, so no Smart Contracts are needed for this type of voting.
 
 Governance processes in SMR are defined in the **[Shimmer Governance Framework](./the-shimmer-governance-framework.md)**. This framework has been developed by the Community Governance working group in many months of discussions and is the foundational building block of how Governance in SMR works.
 It mainly defines:
@@ -70,6 +70,8 @@ This feature consists of 2 components:
     - **Voting open:** The user can cast a vote on the proposal. Votes are now only registered, but counting votes has yet to start. In this phase, voters are free to change their vote without directly influencing the following count of their votes.
     - **Counting:** Now all participating Nodes are actively counting and accumulating votes on this proposal. The longer a user keeps its tokens actively voting on this proposal. The more votes will be counted for the user. Users can change their voting power and opinions during the counting phase. Still, this change only influences the future count from the time of the change and does not influence the already counted votes of a user on this proposal.
     - **Ended:** The Proposal counting is over, and the final vote result is displayed.
+
+A detailed technical description of this voting funftionality can be found in the [Governance - tech](./governance-tech.md) section of the Wiki.
 
 A detailed description on how to participate in Governance votes can be found in the [Firefly Shimmer Governance Guide](./shimmer-firefly-governance-guide.md)
 
