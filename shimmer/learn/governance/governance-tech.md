@@ -24,7 +24,7 @@ The Voting phase of a governance vote is divided into four stages:
 - **Counting Start:** This directly follows the Voting Open stage. The node software counts the user's vote, which gains weight with increasing holding time at every milestone passed (a milestone is issued every five seconds). If the voter holds their vote for the predefined number of milestones, the voter will reach 100% of the possible votes related to their voting power (i.e. the number of tokens they have used in the vote). If users change their vote in this stage, the participation plugin updates these changes from the time when they were made. However, the previously counted votes are still valid and do not change, even if the voter’s opinion or voting power changes (examples are provided below for clarification).
 - **Counting Stops:** The accumulation of votes ends. All nodes will now be able to produce and verify the final result of the vote.
 
-### Voting details
+### Voting Details
 
 The voting mechanism utilizes Shimmer’s ability to issue value transactions with attached metadata. 
 To participate in voting, the user must define the amount of SMR tokens that should be used for governance votes, which represents their voting power, 
