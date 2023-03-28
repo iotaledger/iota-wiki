@@ -78,7 +78,7 @@ The method described above updates the nodes' voting database every time a new m
 after 10 milestones, they would have gained 10,000 votes. 
 After 100 milestones, the accumulated votes would be 100,000, and after 1,500 milestones, the total counted votes would reach 1.5 million.
 
-![Vote counting example](/img/learn/governance/vote-graphic01.png)
+![Vote counting example](/img/learn/governance/vote_graphic01.png)
 
 This counting mechanism also means that the token's Vote Holding Time greatly influences the result. 
 Votes gain “weight” based on the length of time they are kept on an address during the counting phase.
