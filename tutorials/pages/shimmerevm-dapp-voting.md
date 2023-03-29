@@ -19,10 +19,6 @@ You need the following before you get started:
 - **Smart Contract**: You will need a smart contract to deploy on-chain to handle all state records on-chain and any changes made to them.
 - **Code Editor or IDE**: Have an IDE or any code editor ready to start working.
 
-## Prerequisites
-- [ShimmerEVM](https://wiki.iota.org/shimmer/smart-contracts/guide/evm/introduction/)
-- [Metamask](https://metamask.io/)
-- [Ethers](https://docs.ethers.org/v5/)
 
 
 ## Project Setup
