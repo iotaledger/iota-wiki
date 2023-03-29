@@ -18,18 +18,21 @@ You need the following before you get started:
 - **Wallet**: You will need an interface to connect to the network, verify your identity, and pay the transaction fees. You can use any wallet you choose; this tutorial will use [Metamask](https://metamask.io/), but you can use any wallet you are comfortable with.
 - **Smart Contract**: You will need a smart contract to deploy on-chain to handle all state records on-chain and any changes made to them.
 - **Code Editor or IDE**: Have an IDE or any code editor ready to start working.
-
+- **Client Library**: This tutorial will use [Ethers](https://docs.ethers.org/v5/). But you can use any other library that you feel more comfortable in.
 
 
 ## Project Setup
-This tutorial will use a vanilla js project. However, most of it should still work on any js framework like react, vue, sveltekit, and so on.
+This tutorial will use a vanilla js project. However, most of it should still work on any js framework like react, vue, sveltekit, etc.
 
 
-### Smart Contracts in Solidity
-We will use a simple Voting Smart Contract, calling it `Voting.sol`.
-Let's start with writing it.
+## Create a Smart Contracts in Solidity
 
-First thing we need is a `struct` called `Voter`:
+This tutorial will use a simple Voting Smart Contract, that will be called `Voting.sol`.
+	
+#### Create and map the structs
+
+The first thing you need is a `struct` called `Voter`:
+
 ```solidity!
 struct Voter {
     uint weight; // weight is accumulated by delegation
@@ -38,45 +41,60 @@ struct Voter {
     uint vote;   // index of the voted proposal
 }
 ```
-And what you need is to create a map with address to struct for voters:
+
+Once you have created the `Voter`, you will need `Proposal` `struct` to nominate who to vote on:
+
 ```solidity!
 mapping(address => Voter) public voters;
 ```
 
 Once we've a voter, we'll need `Proposal` to nominate who to vote on:
+
 ```solidity!
 struct Proposal {
     bytes32 name;   // short name (up to 32 bytes)
     uint voteCount; // number of accumulated votes
 }
 ```
+
+:::tip Gas Fees
+	
 If you can, limit the length to a certain number of bytes. You must cover gas fees for any data you store on the chain if you use one of bytes1 to bytes32 as they are much cheaper. In other words, if you use short names, your gas fees will be lower.
 
-Next, you need to add a vote function, which will register the vote of every user toward a proposal. Let’s start with the following:
+:::
+
+Next, you need to add a vote function, which will register the vote of every user toward a proposal. Let's start with the following:
+
 ```solidity!
 function vote(uint proposal) public {
     Voter storage sender = voters[msg.sender];
 }
 ```
 
-You need to check if the voter is allowed to vote, add the following:
+As you need to check if the voter is allowed to vote, you should add the following:
+
 ```solidity!
 require(sender.weight != 0, "Has no right to vote");
 ```
 
-And you should also add the following conditional to check if the voter has already voted:
+You also need to check if the voter has already voted, so you should also add the following conditional :
+
 ```solidity!
 require(!sender.voted, "Already voted.");
 ```
 
 If everything looks okay, register the vote:
+
 ```solidity!
 sender.voted = true;
 sender.vote = proposal;
 proposals[proposal].voteCount += sender.weight;
 ```
 
-You will also need a function to let the results be known, so add a function, `winningProposal` which will return the index of the winning proposal:
+#### Create functions to count the votes
+
+You will also need a function to count the votes and let the results be known. To do so, add a function called `winningProposal` which will return the index of the winning proposal:
+
 ```solidity!
 function winningProposal() public view returns (uint winningProposal_) {
     uint winningVoteCount = 0;
@@ -88,15 +106,19 @@ function winningProposal() public view returns (uint winningProposal_) {
     }
 }
 ```
+
 To make things a little more human readable, add a function `winnerName` that returns the name of the winner:
+
 ```solidity!
 function winnerName() public view returns (bytes32 winnerName_) {
     winnerName_ = proposals[winningProposal()].name;
 }
 ```
 
-At this point, the basic functionalities of the smart contract are taken care of. However, you’d also need a few more functionalities to extend further, such as delegating votes and giving someone else the right to vote. I have added those in the final code, so feel free to keep or remove them as you see fit.
+At this point, the basic functionalities of the smart contract are taken care of. However, you could also need a few more functionalities, such as delegating votes and giving someone else the right to vote. I have added those in the final code, so feel free to keep or remove them as you see fit.
+
 Here's the complete smart contract code:
+
 ```solidity!=
 // SPDX-License-Identifier: GPL-3.0
 pragma solidity >=0.7.0 <0.9.0;
@@ -238,35 +260,42 @@ contract Voting {
 }
 ```
 
-Now, you can deploy the above smart contract using Remix, Hardhat, or any tool you prefer. Here’s a tutorial to follow to deploy to [ShimmerEVM using Remix](#todo).
+Now, you can deploy the above smart contract using Remix, Hardhat, or any tool you prefer. Here's a tutorial to follow to deploy to [ShimmerEVM using Remix](https://wiki.iota.org/shimmer/tutorials/shimmerevm-setup).
 
-Once you’ve deployed your contract, you can check the Explorer to see if it’s confirmed. You can also verify your contract on the Explorer by going to your [contract page](https://explorer.evm.testnet.shimmer.network/address/0x1154ACEc3b5Bc2A275f51A05400A8592465566fb).
+Once you've deployed your contract, you can check the [Explorer](https://explorer.evm.testnet.shimmer.network) to see if it's confirmed. You can verify your contract on the Explorer by going to your [contract page](https://explorer.evm.testnet.shimmer.network/address/0x1154ACEc3b5Bc2A275f51A05400A8592465566fb).
 
-:::info
-Please make a note of the ABI while you’re compiling it. You will need it later.
+:::info ABI
+
+Please make a note of the ABI while you're compiling it. You will need it later.
+
 :::
 
 ## Front-end
-Now, let's start writing our front-end app.
-Most of the front end is design work which is not the focus of this tutorial, so let’s jump to the js part. You can use [this project](https://github.com/anistark/smart-contracts-demo/tree/main/voting) if you’re looking for a ready design to get started.
+
+Most of the front end is design work which is not the focus of this tutorial, so let’s jump to the js part. You can use [this project](https://github.com/anistark/smart-contracts-demo/tree/main/voting) if you’re looking for a ready design to get started. Feel free to make changes to the design to suit your needs.
 
 We will also use [Metamask](https://wiki.iota.org/shimmer/smart-contracts/guide/evm/tooling/#metamask) in this section, so please ensure you have installed and logged in to Metamask.
 The first thing you need to do is check that Metamask is accessible from your dApp:
+
 ```javascript!
 const provider = new ethers.providers.Web3Provider(window.ethereum);
 ```
-If you're able to access `provider`, it's all good. Let's proceed.
 
-:::info
+If you can access `provider`, it's all good.
+
+:::info Ethers
+
 Learn more about what else you can do with ethers from the [ethers docs](https://docs.ethers.org/v5/getting-started/).
+
 :::
 
 You need to create a `signer` which will be used to sign transactions from your dApp:
+
 ```javascript!
 const signer = provider.getSigner();
 ```
 
-Create a contract client which will represent the contract and help with calling functions of it using `CONTRACT_ADDRESS` and `CONTRACT_ABI`, which you should have from the above steps:
+Create a contract client which will represent the contract and help with calling the contract's functions using `CONTRACT_ADDRESS` and `CONTRACT_ABI`, which you should have from the above steps:
 
 ```javascript!
 const contractClient = new ethers.Contract(
@@ -275,8 +304,13 @@ const contractClient = new ethers.Contract(
     signer
 );
 ```
+
 Use the `contractClient` for all fetch methods, such as fetching proposals:
-`await contractClient.getProposals(i)`.
+
+```js
+await contractClient.getProposals(i)
+```
+
 If you want to use state-changing methods, you need to create a `contractSigner` instance:
 
 ```javascript!
