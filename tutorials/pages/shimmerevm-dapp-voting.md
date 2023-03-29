@@ -1,6 +1,6 @@
 # Create a simple Voting dApp on ShimmerEVM
 
-:::info
+## Goal
 
 This tutorial will guide you as you write and deploy a voting dApp on ShimmerEVM. You can vote on a few options and view the results; all data will be stored on-chain. Please note this is meant only for learning purposes.
 
