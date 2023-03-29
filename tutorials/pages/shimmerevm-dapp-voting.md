@@ -48,7 +48,7 @@ Once you have created the `Voter`, you will need `Proposal` `struct` to nominate
 mapping(address => Voter) public voters;
 ```
 
-Once we've a voter, we'll need `Proposal` to nominate who to vote on:
+Once you have created the `Voter`, you will need `Proposal` `struct` to nominate who to vote on:
 
 ```solidity!
 struct Proposal {
