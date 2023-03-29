@@ -292,7 +292,8 @@ Now you can assign the `contractSigner.vote` action to a button and call:
 ```javascript!
 let tx = contractSigner.vote(i);
 ```
-where `i` is the index of the proposal you want to vote for.
+
+* Where `i` is the index of the proposal you want to vote for.
 
 ## Result
 If you followed everything above, it should look something like this:
