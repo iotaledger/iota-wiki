@@ -147,7 +147,7 @@ Then, simply run to compile:
 npx hardhat compile
 ```
 
-### Testing the Contract
+## Test the Contract
 
 To run tests with Hardhat, you just need to type the following:
 
