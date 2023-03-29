@@ -146,7 +146,7 @@ Find more instructions on how to use DOTENV in the [<ins>DOTENV npm package</ins
 
 ## Compile the Contract
 
-To compile the contract, you first need to install Hardhat Toolbox:
+To compile the contract, you first need to install the [Hardhat Toolbox package](https://www.npmjs.com/package/@nomicfoundation/hardhat-toolbox):
 
 ```sh
 npm install --save-dev @nomicfoundation/hardhat-toolbox
