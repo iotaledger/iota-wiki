@@ -159,7 +159,7 @@ And this is an expected output:
 
 ![Hardhat Test](../static/shimmer-hardhat-test.png 'Hardhat Test')
 
-### Deploying on ShimmerEVM
+## Deploy Your Contract on ShimmerEVM
 
 Run this command in root of the project directory:
 
