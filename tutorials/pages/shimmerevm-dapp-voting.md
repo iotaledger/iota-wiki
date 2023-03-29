@@ -7,7 +7,7 @@ This tutorial will guide you as you write and deploy a voting dApp on ShimmerEVM
 
 ## Expected Outcome
 
-By the end of this tutorial, you will be able to cast your vote from several available options and view the results, with all the data stored securely on the blockchain.
+By the end of this tutorial, you will be able to cast your vote from several available options and view the results. All the data is stored securely on the blockchain.
 
 _Please note that this tutorial is solely intended for educational purposes._
 
