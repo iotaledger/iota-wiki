@@ -52,7 +52,7 @@ You should see the following prompt:
 Choose the JavaScript project and go through these steps to compile, test and deploy the sample contract. 
 
 :::note Typescript
-If you're comfortable in typescript, feel free to select. There's not much difference for this project anyway. However, some syntax might differ.
+If you're comfortable with typescript, feel free to select it. There's not much difference for this project. However, some syntax might differ.
 :::
 
 Your hardhat project should look like something this:
