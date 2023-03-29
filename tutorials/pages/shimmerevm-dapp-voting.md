@@ -1,4 +1,4 @@
-# Create a simple Voting dApp on ShimmerEVM
+# Create a Simple Voting dApp on ShimmerEVM
 
 ## Goal
 
