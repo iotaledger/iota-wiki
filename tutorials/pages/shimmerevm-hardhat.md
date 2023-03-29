@@ -13,20 +13,26 @@ In this tutorial, you will learn how to set up Hardhat and use it to build, test
 - [Git](https://git-scm.com/)
 
 Let's start by creating a new node project:
+
 ```sh
 mkdir projectname
 cd projectname
 ```
+
 Initiate npm:
+
 ```sh
 npm init -y
 ```
+
 Install hardhat:
+
 ```sh
 npm install --save-dev hardhat
 ```
 
 Now, let's create a new hardhat project. Run in your project root:
+
 ```sh
 npx hardhat
 ```
@@ -170,6 +176,7 @@ npx hardhat run scripts/deploy.js --network shimmerevm-testnet
 The contract will be deployed on ShimmerEVM Testnet, and you can check the deployment status here on the [explorer](https://explorer.evm.testnet.shimmer.network/).
 
 If you want to further verify your contract, add the following to your `hardhat.config.js`:
+
 ```js
 etherscan: {
   customChains: [
