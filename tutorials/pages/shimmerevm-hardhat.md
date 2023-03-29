@@ -117,8 +117,8 @@ Some important things to note are data types. `event` means that we can subscrib
 
 ## Set Up the Contract
 
-- Go to `hardhat.config.js`
-- Update the `hardhat-config` with shimmer network details as shown below:
+1. Go to `hardhat.config.js`
+2. Update the `hardhat-config` with shimmer network details as shown below:
 
 ```js
 module.exports = {
