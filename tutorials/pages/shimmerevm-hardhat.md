@@ -136,7 +136,7 @@ module.exports = {
 
 3. Create a `.env` file in the project root to store your network id and jsonrpc if you want to keep it private. You can then refer to them by `process.env.SHIMMEREVM_TESTNET_JSONRPC`.
 
-:::note
+:::note DOTENV
 
 Note that the file above requires DOTENV to manage environment variables and ethers and etherscan. Make sure to install all those packages. 
 
