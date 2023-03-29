@@ -115,7 +115,7 @@ contract Lock {
 The above is an auto-generated smart contract by hardhat. You can replace it with your own smart contract. If you want to understand what the smart contract does, it's a Lock contract, which will lock funds for a specific time period and allows withdrawals only past that point.
 Some important things to note are data types. `event` means that we can subscribe to it like a webhook and wait for a ping to the client side whenever a withdrawal is triggered with `emit` from inside the function `withdraw()`.
 
-### Setting up the contract
+## Set Up the Contract
 
 - Go to `hardhat.config.js`
 - Update the `hardhat-config` with shimmer network details as shown below:
