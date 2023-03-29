@@ -13,6 +13,7 @@ By the end of this tutorial, you will be able to cast your vote from several ava
 ## Requirements
 
 You need the following before you get started:
+
 - Network: A network where you will deploy and interact with the smart contract. In this case, it’s the ShimmerEVM.
 - Wallet: You will need an interface to connect to the network, verify your identity, and pay the transaction fees. You can use any wallet you choose; this tutorial will use Metamask. Any wallet of your choice will work if you are used to some other wallet.
 - Smart Contract: You will need a smart contract to deploy on-chain to handle all state records on-chain and any changes made to them.
