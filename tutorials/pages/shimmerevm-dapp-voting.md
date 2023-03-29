@@ -16,7 +16,7 @@ You need the following before you get started:
 
 - **Network**: A network where you will deploy and interact with the smart contract. In this case, the ShimmerEVM.
 - **Wallet**: You will need an interface to connect to the network, verify your identity, and pay the transaction fees. You can use any wallet you choose; this tutorial will use [Metamask](https://metamask.io/), but you can use any wallet you are comfortable with.
-- Smart Contract: You will need a smart contract to deploy on-chain to handle all state records on-chain and any changes made to them.
+- **Smart Contract**: You will need a smart contract to deploy on-chain to handle all state records on-chain and any changes made to them.
 - App: Finally, the app, which you’ll have after we finish this tutorial.
 - Code Editor or IDE: Have an IDE or any code editor ready to start working.
 
