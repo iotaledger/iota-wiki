@@ -296,6 +296,7 @@ let tx = contractSigner.vote(i);
 * Where `i` is the index of the proposal you want to vote for.
 
 ## Result
+
 If you followed everything above, it should look something like this:
 ![Voting Demo](../static/voting-dapp.jpg "Voting dApp UI")
 
