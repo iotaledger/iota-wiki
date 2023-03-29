@@ -11,8 +11,8 @@ keywords:
   - Governance
 ---
 
-On-chain governance is essential for any decentralized DLT. The ability to make decisions through voting functionalities executed on the Blockchain / DAG removes a centralization point and gives token holders the power to make their own decisions. With Shimmer's Firefly Wallet, Shimmer token holders can now participate in the governance of the network. 
-With the support of the IOTA Foundation, the Shimmer community has developed a highly flexible and secure system for casting votes directly on the Shimmer Tangle 
+On-chain governance is essential for any decentralized DLT. The ability to make decisions through voting functionalities executed on the Blockchain / DAG removes a centralization point and gives token holders the power to make their own decisions. With Shimmer's Firefly Wallet, Shimmer token holders can now participate in the governance of the network.
+With the support of the IOTA Foundation, the Shimmer community has developed a highly flexible and secure system for casting votes directly on the Shimmer Tangle
 through the Firefly Wallet and counting the votes in the network’s Hornet nodes.
 
 ## Voting Phase
@@ -26,18 +26,18 @@ The Voting phase of a governance vote is divided into four stages:
 
 ### Voting Details
 
-The voting mechanism utilizes Shimmer’s ability to issue value transactions with [attached metadata](.../introduction/explanations/what_is_stardust/output_features/#metadata.md). 
-To participate in voting, the user must define the amount of SMR tokens that should be used for governance votes, which represents their voting power, 
-for each wallet associated with their Shimmer Firefly profile. 
-The tokens that represent the voting power will be sent to a new output ([UTXO](.../introduction/explanations/what_is_stardust/rethink_utxo.md)) at the same address (i.e., the users send the tokens to themselves) using the 
+The voting mechanism utilizes Shimmer’s ability to issue value transactions with [attached metadata](.../introduction/explanations/what_is_stardust/output_features/#metadata.md).
+To participate in voting, the user must define the amount of SMR tokens that should be used for governance votes, which represents their voting power,
+for each wallet associated with their Shimmer Firefly profile.
+The tokens that represent the voting power will be sent to a new output ([UTXO](.../introduction/explanations/what_is_stardust/rethink_utxo.md)) at the same address (i.e., the users send the tokens to themselves) using the
 `Manage Voting Power` function in the new Governance section of Shimmer Firefly.
 
-This Governance Output to which the tokens are allocated will now be used for all governance votes of this wallet. 
+This Governance Output to which the tokens are allocated will now be used for all governance votes of this wallet.
 The voter can decide to vote on all kinds of governance questions with the allocated voting weight.
-Whenever a vote is cast, it uses the tokens stored in the Governance Output for a transaction. To reiterate, the user sends the tokens to themselves, to the same output, using the same address. 
+Whenever a vote is cast, it uses the tokens stored in the Governance Output for a transaction. To reiterate, the user sends the tokens to themselves, to the same output, using the same address.
 
-During this transaction, metadata that includes the ballot event ID, question ID, and answer will be attached to the UTXO where the tokens reside. 
-This immutably writes the metadata onto the UTXOs of this address in the Tangle. So, after the voting transaction is complete, 
+During this transaction, metadata that includes the ballot event ID, question ID, and answer will be attached to the UTXO where the tokens reside.
+This immutably writes the metadata onto the UTXOs of this address in the Tangle. So, after the voting transaction is complete,
 the tokens will still reside at the same address as before, but now they will have attached metadata representing the voter's opinion for the referendum.
 
 :::tip Storage Deposits
@@ -46,10 +46,10 @@ If you plan to send, mint, or receive tokens, native assets, or NFTs during the 
 
 #### Counting votes
 
-Because every node in the SMR network knows the status of every UTXO in the Tangle, they can observe and register changes to these UTXOs. 
+Because every node in the SMR network knows the status of every UTXO in the Tangle, they can observe and register changes to these UTXOs.
 As soon as a vote transaction is issued and confirmed, the UTXO will hold a piece of attached metadata information.
-Hornet nodes with activated [INX participation plugin](.../inx-participation/welcome.md) monitor the ledger for UTXOs that contain this specific metadata. 
-They count all UTXOs that have this metadata for every new milestone in the Tangle and create a database for the counted votes of this event. 
+Hornet nodes with activated [INX participation plugin](.../inx-participation/welcome.md) monitor the ledger for UTXOs that contain this specific metadata.
+They count all UTXOs that have this metadata for every new milestone in the Tangle and create a database for the counted votes of this event.
 
 This database includes the following information for every milestone:
 
@@ -59,32 +59,32 @@ This database includes the following information for every milestone:
 
 ### Voting Results
 
-The result will be produced and verified in a decentralized manner through every node that participates in the counting. 
+The result will be produced and verified in a decentralized manner through every node that participates in the counting.
 Each node can make the current and final result of its counting publicly available through an API endpoint.
-After the Counting Start phase begins (which is the milestone in the Tangle that has been designated as the starting point), 
-the number of votes will be tallied for every milestone where tokens are recognized on a UTXO that has the attached voting metadata. 
+After the Counting Start phase begins (which is the milestone in the Tangle that has been designated as the starting point),
+the number of votes will be tallied for every milestone where tokens are recognized on a UTXO that has the attached voting metadata.
 The community has determined that 1000 Glow (0.001 SMR) represents one vote per milestone.
 
 Therefore, a vote using an amount of 1 SMR for an option will be counted as follows:
 
-- Since 1000 Glow represents one vote, a vote with one million Glow (equal to 1 SMR)  will result in 1000 votes per milestone.
+- Since 1000 Glow represents one vote, a vote with one million Glow (equal to 1 SMR) will result in 1000 votes per milestone.
 - The counting occurs at every milestone of the “counting period, meaning that:
 - 1000 votes are counted at the first milestone.
 - 1000 votes are counted at the second milestone.
 - 1000 votes are counted at the third milestone, and so on.
 
 Let's assume that the counting period lasts for 1,500 milestones:
-The method described above updates the nodes' voting database every time a new milestone is reached. For instance, if a voter uses 1 SMR token in a vote, 
-after 10 milestones, they would have gained 10,000 votes. 
+The method described above updates the nodes' voting database every time a new milestone is reached. For instance, if a voter uses 1 SMR token in a vote,
+after 10 milestones, they would have gained 10,000 votes.
 After 100 milestones, the accumulated votes would be 100,000, and after 1,500 milestones, the total counted votes would reach 1.5 million.
 
 ![Vote counting example](/img/learn/governance/vote_graphic01.png)
 
-This counting mechanism also means that the token's Vote Holding Time greatly influences the result. 
+This counting mechanism also means that the token's Vote Holding Time greatly influences the result.
 Votes gain “weight” based on the length of time they are kept on an address during the counting phase.
 
-This is a crucial security feature of the voting mechanism that rewards long-term token holders and punishes voting speculators or vote buyers. 
-This is achieved by requiring voters to lock their capital over a longer period and making any attempt to buy votes a speculative risk 
+This is a crucial security feature of the voting mechanism that rewards long-term token holders and punishes voting speculators or vote buyers.
+This is achieved by requiring voters to lock their capital over a longer period and making any attempt to buy votes a speculative risk
 due to the potential volatility of the SMR price during the seven-day counting phase.
 
 ![Hornet vote counting](/img/learn/governance/vote_graphic02.png)
@@ -104,6 +104,7 @@ If the counting phase is seven days and a user has a balance of 100 SMR in their
 ![Voting weight examples](/img/learn/governance/vote_graphic03.png)
 
 This solution ensures that voters always have control over their tokens. The tokens never leave the user’s wallet and are never locked or unusable, and owners can remove, send, revoke, or change their opinion on them at any time, even during the counting phase, following familiar Firefly staking rules.
+
 #### Creating and adding new governance events
 
 Shimmer's voting system builds upon IOTA's [first governance vote in 2022](https://blog.iota.org/iota-community-treasury-vote/), with key improvements for a fully decentralized implementation.
@@ -115,6 +116,7 @@ In contrast to the earlier voting system developed for the IOTA network, this Sh
 - Vote on this event with SMR tokens
 
 Community members, projects, or other ecosystem participants are free to create their own governance events and invite the Shimmer token holders to participate in such votes.
+
 #### Decentralized and community-driven
 
 To summarize, voting in SMR is:
@@ -124,5 +126,3 @@ To summarize, voting in SMR is:
 - Secure: Just like the Shimmer ledger and every Shimmer transaction.
 - Flexible: Users have complete control over their funds.
 - Voluntary: No one is forced to vote.
-
-
