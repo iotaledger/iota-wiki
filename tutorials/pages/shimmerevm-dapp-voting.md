@@ -2,7 +2,7 @@
 
 ## Goal
 
-This tutorial will guide you as you write and deploy a voting dApp on ShimmerEVM. You can vote on a few options and view the results; all data will be stored on-chain. Please note this is meant only for learning purposes.
+This tutorial will guide you as you write and deploy a voting dApp on ShimmerEVM. You can vote on a few options and view the results; all data will be stored on-chain. Please note **this tutorial is meant for learning purposes only **.
 
 
 ## Expected Outcome
