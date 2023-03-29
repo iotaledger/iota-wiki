@@ -19,9 +19,9 @@ through the Firefly Wallet and counting the votes in the network’s Hornet node
 
 The Voting phase of a governance vote is divided into four stages:
 
-- **Proposal announcement:** Upon publishing the voting ballot to the [GitHub repository](https://github.com/iota-community/Shimmer-governance-participation-events), Hornet node operators can activate the voting ballot in their nodes’ Participation Plugin to be prepared to count any votes that are cast.
-- **Voting Open:** The Voting Open stage lasts seven days and starts when a predefined milestone in the Shimmer network is reached. After the network has passed this milestone, users can cast, change, revoke, or redo the vote using the governance functionality of the Shimmer Firefly wallet. It's important to note that changes of opinion during this timeframe will not affect the final vote count. Ideally, voters should cast their votes before the next stage begins to ensure the highest possible vote count.
-- **Counting Start:** This directly follows the Voting Open stage. The node software counts the user's vote, which gains weight with increasing holding time at every milestone passed (a milestone is issued every five seconds). If the voter holds their vote for the predefined number of milestones, the voter will reach 100% of the possible votes related to their voting power (i.e. the number of tokens they have used in the vote). If users change their vote in this stage, the participation plugin updates these changes from the time when they were made. However, the previously counted votes are still valid and do not change, even if the voter’s opinion or voting power changes (examples are provided below for clarification).
+- **1. Proposal announcement:** Upon publishing the voting ballot to the [GitHub repository](https://github.com/iota-community/Shimmer-governance-participation-events), [Hornet](./develop/what-is-shimmer/nodes/hornet/) node operators can activate the voting ballot in their nodes’ Participation Plugin to be prepared to count any votes that are cast.
+- **2. Voting Open:** The Voting Open stage lasts seven days and starts when a predefined milestone in the Shimmer network is reached. After the network has passed this milestone, users can cast, change, revoke, or redo the vote using the governance functionality of the Shimmer Firefly wallet. It's important to note that changes of opinion during this timeframe will not affect the final vote count. Ideally, voters should cast their votes before the next stage begins to ensure the highest possible vote count.
+- **3. Counting Start:** This directly follows the Voting Open stage. The node software counts the user's vote, which gains weight with increasing holding time at every milestone passed (a milestone is issued every five seconds). If the voter holds their vote for the predefined number of milestones, the voter will reach 100% of the possible votes related to their voting power (i.e. the number of tokens they have used in the vote). If users change their vote in this stage, the participation plugin updates these changes from the time when they were made. However, the previously counted votes are still valid and do not change, even if the voter’s opinion or voting power changes ([examples](# voting weight examples) are provided below for clarification).
 - **Counting Stops:** The accumulation of votes ends. All nodes will now be able to produce and verify the final result of the vote.
 
 ### Voting Details
@@ -48,7 +48,7 @@ If you plan to send, mint, or receive tokens, native assets, or NFTs during the 
 
 Because every node in the SMR network knows the status of every UTXO in the Tangle, they can observe and register changes to these UTXOs. 
 As soon as a vote transaction is issued and confirmed, the UTXO will hold a piece of attached metadata information.
-Hornet nodes with activated INX participation plugin monitor the ledger for UTXOs that contain this specific metadata. 
+Hornet nodes with activated [INX participation plugin](./inx-participation/welcome/) monitor the ledger for UTXOs that contain this specific metadata. 
 They count all UTXOs that have this metadata for every new milestone in the Tangle and create a database for the counted votes of this event. 
 
 This database includes the following information for every milestone:
@@ -104,7 +104,7 @@ If the counting phase is seven days and a user has a balance of 100 SMR in their
 ![Voting weight examples](/img/learn/governance/vote_graphic03.png)
 
 This solution ensures that voters always have control over their tokens. The tokens never leave the user’s wallet and are never locked or unusable, and owners can remove, send, revoke, or change their opinion on them at any time, even during the counting phase, following familiar Firefly staking rules.
-Creating and adding new governance events
+#### Creating and adding new governance events
 
 Shimmer's voting system builds upon IOTA's [first governance vote in 2022](https://blog.iota.org/iota-community-treasury-vote/), with key improvements for a fully decentralized implementation.
 In contrast to the earlier voting system developed for the IOTA network, this Shimmer version does not rely on the IOTA Foundation to add governance events to the Firefly wallet. Every community member can:
@@ -115,7 +115,7 @@ In contrast to the earlier voting system developed for the IOTA network, this Sh
 - Vote on this event with SMR tokens
 
 Community members, projects, or other ecosystem participants are free to create their own governance events and invite the Shimmer token holders to participate in such votes.
-Decentralized and community-driven
+#### Decentralized and community-driven
 
 To summarize, voting in SMR is:
 
