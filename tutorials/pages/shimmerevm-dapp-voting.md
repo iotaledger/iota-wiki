@@ -300,4 +300,3 @@ let tx = contractSigner.vote(i);
 If you followed everything above, it should look something like this:
 ![Voting Demo](../static/voting-dapp.jpg "Voting dApp UI")
 
-Feel free to make changes to the design to suit your needs.
