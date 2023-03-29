@@ -287,7 +287,7 @@ If you want to use state-changing methods, you need to create a `contractSigner`
 const contractSigner = contractClient.connect(signer);
 ```
 
-Now, for instance, to vote, you can assign the action to a button and simply call:
+Now you can assign the `contractSigner.vote` action to a button and call:
 
 ```javascript!
 let tx = contractSigner.vote(i);
