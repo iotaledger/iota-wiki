@@ -144,7 +144,7 @@ Find more instructions on how to use DOTENV in the [<ins>DOTENV npm package</ins
 
 :::
 
-### Compiling the contract
+## Compile the Contract
 
 To compile the contract, you first need to install Hardhat Toolbox:
 
