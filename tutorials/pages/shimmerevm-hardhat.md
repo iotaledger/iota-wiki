@@ -12,6 +12,8 @@ In this tutorial, you will learn how to set up Hardhat and use it to build, test
 - [Node.js Stable Version](https://nodejs.org/en/)
 - [Git](https://git-scm.com/)
 
+## Create the Project
+
 Let's start by creating a new node project:
 
 ```sh
