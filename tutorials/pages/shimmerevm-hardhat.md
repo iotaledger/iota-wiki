@@ -56,6 +56,7 @@ If you're comfortable with typescript, feel free to select it. There's not much 
 :::
 
 Your hardhat project should look like something this:
+
 ```md
 .
 ├── README.md
