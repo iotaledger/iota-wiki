@@ -49,7 +49,7 @@ You should see the following prompt:
 
 Choose the JavaScript project and go through these steps to compile, test and deploy the sample contract. 
 
-:::note
+:::note Typescript
 If you're comfortable in typescript, feel free to select. There's not much difference for this project anyway. However, some syntax might differ.
 :::
 
