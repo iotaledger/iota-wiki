@@ -71,7 +71,7 @@ Your hardhat project should look like something this:
 ```
 
 ---
-### Checking the contract
+## Check the Contract
 
 The `contracts` folder contains `Lock.sol`, which is a sample contract which consistis of a simple digital lock, where users could only withdraw funds after a given period of time.
 
