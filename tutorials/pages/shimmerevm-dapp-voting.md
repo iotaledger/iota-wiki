@@ -281,7 +281,8 @@ const contractClient = new ethers.Contract(
 ```
 Use the `contractClient` for all fetch methods, such as fetching proposals:
 `await contractClient.getProposals(i)`.
-However, to use state-changing methods, you need a `contractSigner` instance, like:
+If you want to use state-changing methods, you need to create a `contractSigner` instance:
+
 ```javascript!
 const contractSigner = contractClient.connect(signer);
 ```
