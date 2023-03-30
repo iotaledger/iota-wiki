@@ -74,7 +74,7 @@ As you need to check if the voter is allowed to vote, you should add the followi
 require(sender.weight != 0, "Has no right to vote");
 ```
 
-You also need to check if the voter has already voted, so you should also add the following conditional :
+You also need to check if the voter has already voted, so you should also add the following conditional:
 
 ```solidity!
 require(!sender.voted, "Already voted.");
