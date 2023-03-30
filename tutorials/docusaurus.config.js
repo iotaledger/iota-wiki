@@ -218,6 +218,25 @@ module.exports = {
         ],
       },
     ],
+    [
+      '@iota-wiki/plugin-tutorial',
+      {
+        title:
+          'Deploy a Solidity Smart Contract Using Hardhat',
+        description:
+          'In this tutorial, you will learn how to set up Hardhat and use it to build, test and deploy a simple smart contract on ShimmerEVM.',
+        preview: '/shimmerevm-hardhat.png',
+        route: 'tutorials/shimmerevm-hardhat',
+        tags: [
+          'text',
+          'shimmer',
+          'solidity',
+          'shimmerevm',
+          'hardhat',
+          'isc',
+        ],
+      },
+    ],
   ],
   staticDirectories: [path.resolve(__dirname, 'static')],
 };
