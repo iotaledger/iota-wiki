@@ -229,11 +229,8 @@ module.exports = {
         tags: [
           'text',
           'shimmer',
-          'shimmerevm',
           'solidity',
-          'dapp',
-          'voting',
-          'isc',
+          'iscp',
         ],
       },
     ],
