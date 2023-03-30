@@ -141,7 +141,7 @@ module.exports = {
 
 Note that the file above requires DOTENV to manage environment variables and ethers and etherscan. Make sure to install all those packages.
 
-Find more instructions on how to use DOTENV in the [<ins>DOTENV npm package</ins>](https://www.npmjs.com/package/dotenv).
+Find more instructions on how to use DOTENV in the [DOTENV npm package](https://www.npmjs.com/package/dotenv).
 
 :::
 
