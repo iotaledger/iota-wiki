@@ -139,7 +139,29 @@ module.exports = {
 };
 ```
 
-3. Create a `.env` file in the project root to store your network id and jsonrpc if you want to keep it private. You can then refer to them by `process.env.SHIMMEREVM_TESTNET_JSONRPC`.
+:::info Private Key
+
+How to export the MetaMask private key of an account?
+
+- Click on the logo in the upper right corner
+
+- Select the account you want to export
+
+- On the account page, click the menu (three dots) in the upper right corner, then click the "Account Details" button:
+
+- Click "Export Private Key"
+
+- To access your private key, you will now need to enter your wallet password. When done, click Confirm to continue.
+
+- Your private key will now be displayed. Click to copy it and save it in a safe place. (Note: For obvious reasons, we didn't show it in the screenshots below - but yours will be there.)
+
+- Click close icon on top to close the screen.
+
+Follow [this article](https://helpwithpenny.com/export-and-import-metamask-private-key/) for further detail.
+
+:::
+
+1. Create a `.env` file in the project root to store your network id and jsonrpc if you want to keep it private. You can then refer to them by `process.env.SHIMMEREVM_TESTNET_JSONRPC`.
 
 :::note DOTENV
 
