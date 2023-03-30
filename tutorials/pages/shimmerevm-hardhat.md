@@ -173,7 +173,7 @@ npx hardhat test
 
 And this is an expected output:
 
-![Hardhat Test](../static/shimmer-hardhat-test.png 'Hardhat Test')
+![Hardhat Test](/shimmer-hardhat-test.png 'Hardhat Test')
 
 ## Deploy Your Contract on ShimmerEVM
 
