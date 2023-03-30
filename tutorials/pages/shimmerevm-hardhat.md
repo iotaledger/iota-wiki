@@ -48,7 +48,7 @@ The sample project used here comes from the [Hardhat Quickstart guide](https://h
 
 You should see the following prompt:
 
-![Hardhat Setup](../static/shimmer-hardhat-setup.png 'Hardhat Setup')
+![Hardhat Setup](/shimmer-hardhat-setup.png 'Hardhat Setup')
 
 Choose the JavaScript project and go through these steps to compile, test and deploy the sample contract.
 
