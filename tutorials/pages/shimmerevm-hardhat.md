@@ -163,18 +163,6 @@ Then, simply run to compile:
 npx hardhat compile
 ```
 
-## Test the Contract
-
-To run tests with Hardhat, you just need to type the following:
-
-```sh
-npx hardhat test
-```
-
-And this is an expected output:
-
-![Hardhat Test](/shimmer-hardhat-test.png 'Hardhat Test')
-
 ## Deploy Your Contract on ShimmerEVM
 
 Run this command in root of the project directory:
