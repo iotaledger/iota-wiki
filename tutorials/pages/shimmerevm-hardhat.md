@@ -6,7 +6,6 @@ Hardhat is a powerful development environment for building smart contracts on th
 In this tutorial, you will learn how to set up Hardhat and use it to build, test and deploy a simple smart contract on ShimmerEVM.
 :::
 
-
 ## Pre-requisites
 
 - [Node.js Stable Version](https://nodejs.org/en/)
@@ -49,7 +48,7 @@ You should see the following prompt:
 
 ![Hardhat Setup](../static/shimmer-hardhat-setup.png 'Hardhat Setup')
 
-Choose the JavaScript project and go through these steps to compile, test and deploy the sample contract. 
+Choose the JavaScript project and go through these steps to compile, test and deploy the sample contract.
 
 :::note Typescript
 If you're comfortable with typescript, feel free to select it. There's not much difference for this project. However, some syntax might differ.
@@ -61,17 +60,18 @@ Your hardhat project should look like something this:
 .
 ├── README.md
 ├── contracts
-│   └── Lock.sol
+│ └── Lock.sol
 ├── hardhat.config.js
 ├── package-lock.json
 ├── package.json
 ├── scripts
-│   └── deploy.js
+│ └── deploy.js
 └── test
-    └── Lock.js
+└── Lock.js
 ```
 
 ---
+
 ## Check the Contract
 
 The `contracts` folder contains `Lock.sol`, which is a sample contract which consistis of a simple digital lock, where users could only withdraw funds after a given period of time.
@@ -112,6 +112,7 @@ contract Lock {
     }
 }
 ```
+
 The above is an auto-generated smart contract by hardhat. You can replace it with your own smart contract. If you want to understand what the smart contract does, it's a Lock contract, which will lock funds for a specific time period and allows withdrawals only past that point.
 Some important things to note are data types. `event` means that we can subscribe to it like a webhook and wait for a ping to the client side whenever a withdrawal is triggered with `emit` from inside the function `withdraw()`.
 
@@ -122,15 +123,15 @@ Some important things to note are data types. `event` means that we can subscrib
 
 ```js
 module.exports = {
-  solidity: "0.8.18",
-  defaultNetwork: "shimmerevm-testnet",
+  solidity: '0.8.18',
+  defaultNetwork: 'shimmerevm-testnet',
   networks: {
-    "shimmerevm-testnet": {
+    'shimmerevm-testnet': {
       url: 'https://json-rpc.evm.testnet.shimmer.network',
       chainId: 1071,
-      accounts: [priv_key]
-    }
-  }
+      accounts: [priv_key],
+    },
+  },
 };
 ```
 
@@ -138,7 +139,7 @@ module.exports = {
 
 :::note DOTENV
 
-Note that the file above requires DOTENV to manage environment variables and ethers and etherscan. Make sure to install all those packages. 
+Note that the file above requires DOTENV to manage environment variables and ethers and etherscan. Make sure to install all those packages.
 
 Find more instructions on how to use DOTENV in the [<ins>DOTENV npm package</ins>](https://www.npmjs.com/package/dotenv).
 
@@ -185,16 +186,16 @@ If you want to further verify your contract, add the following to your `hardhat.
 ```js
 etherscan: {
   customChains: [
-      {
-          network: "shimmerevm-testnet",
-          chainId: 1071,
-          apiKey: "ABCDE12345ABCDE12345ABCDE123456789",
-          urls: {
-              apiURL: "https://api.evm.testnet.shimmer.network/",
-              browserURL: "https://explorer.evm.testnet.shimmer.network/"
-          }
-      }
-  ]
+    {
+      network: 'shimmerevm-testnet',
+      chainId: 1071,
+      apiKey: 'ABCDE12345ABCDE12345ABCDE123456789',
+      urls: {
+        apiURL: 'https://api.evm.testnet.shimmer.network/',
+        browserURL: 'https://explorer.evm.testnet.shimmer.network/',
+      },
+    },
+  ];
 }
 ```
 
