@@ -4,11 +4,9 @@
 
 This tutorial will guide you as you write and deploy a voting dApp on ShimmerEVM. You can vote on a few options and view the results; all data will be stored on-chain. Please note **this tutorial is meant for learning purposes only **.
 
-
 ## Expected Outcome
 
 By the end of this tutorial, you will be able to cast your vote from several available options and view the results. All the data is stored securely on the blockchain.
-
 
 ## Requirements
 
@@ -20,15 +18,14 @@ You need the following before you get started:
 - **Code Editor or IDE**: Have an IDE or any code editor ready to start working.
 - **Client Library**: This tutorial will use [Ethers](https://docs.ethers.org/v5/). But you can use any other library that you feel more comfortable in.
 
-
 ## Project Setup
-This tutorial will use a vanilla js project. However, most of it should still work on any js framework like react, vue, sveltekit, etc.
 
+This tutorial will use a vanilla js project. However, most of it should still work on any js framework like react, vue, sveltekit, etc.
 
 ## Create a Smart Contracts in Solidity
 
 This tutorial will use a simple Voting Smart Contract, that will be called `Voting.sol`.
-	
+
 #### Create and map the structs
 
 The first thing you need is a `struct` called `Voter`:
@@ -58,7 +55,6 @@ struct Proposal {
 ```
 
 :::tip Gas Fees
-	
 If you can, limit the length to a certain number of bytes. You must cover gas fees for any data you store on the chain if you use one of bytes1 to bytes32 as they are much cheaper. In other words, if you use short names, your gas fees will be lower.
 
 :::
@@ -123,7 +119,7 @@ Here's the complete smart contract code:
 // SPDX-License-Identifier: GPL-3.0
 pragma solidity >=0.7.0 <0.9.0;
 
-/** 
+/**
  * @title Voting
  * @dev Implements voting process along with vote delegation
  */
@@ -137,7 +133,7 @@ contract Voting {
     }
 
     struct Proposal {
-        // If you can limit the length to a certain number of bytes, 
+        // If you can limit the length to a certain number of bytes,
         // always use one of bytes1 to bytes32 because they are much cheaper
         bytes32 name;   // short name (up to 32 bytes)
         uint voteCount; // number of accumulated votes
@@ -149,7 +145,7 @@ contract Voting {
 
     Proposal[] public proposals;
 
-    /** 
+    /**
      * @dev Create a new ballot to choose one of 'proposalNames'.
      * @param proposalNames names of proposals
      * ["0x63616e6469646174653100000000000000000000000000000000000000000000","0x6332000000000000000000000000000000000000000000000000000000000000","0x6333000000000000000000000000000000000000000000000000000000000000"]
@@ -168,8 +164,8 @@ contract Voting {
             }));
         }
     }
-    
-    /** 
+
+    /**
      * @dev Give 'voter' the right to vote on this ballot. May only be called by 'chairperson'.
      * @param voter address of voter
      */
@@ -232,7 +228,7 @@ contract Voting {
         proposals[proposal].voteCount += sender.weight;
     }
 
-    /** 
+    /**
      * @dev Computes the winning proposal taking all previous votes into account.
      * @return winningProposal_ index of winning proposal in the proposals array
      */
@@ -248,7 +244,7 @@ contract Voting {
         }
     }
 
-    /** 
+    /**
      * @dev Calls winningProposal() function to get the index of the winner contained in the proposals array and then
      * @return winnerName_ the name of the winner
      */
@@ -308,7 +304,7 @@ const contractClient = new ethers.Contract(
 Use the `contractClient` for all fetch methods, such as fetching proposals:
 
 ```js
-await contractClient.getProposals(i)
+await contractClient.getProposals(i);
 ```
 
 If you want to use state-changing methods, you need to create a `contractSigner` instance:
@@ -323,10 +319,9 @@ Now you can assign the `contractSigner.vote` action to a button and call:
 let tx = contractSigner.vote(i);
 ```
 
-* Where `i` is the index of the proposal you want to vote for.
+- Where `i` is the index of the proposal you want to vote for.
 
 ## Result
 
 If you followed everything above, it should look something like this:
-![Voting Demo](../static/voting-dapp.jpg "Voting dApp UI")
-
+![Voting Demo](../static/voting-dapp.jpg 'Voting dApp UI')

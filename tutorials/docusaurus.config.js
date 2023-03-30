@@ -221,8 +221,7 @@ module.exports = {
     [
       '@iota-wiki/plugin-tutorial',
       {
-        title:
-          'Create a Simple Voting dApp on ShimmerEVM',
+        title: 'Create a Simple Voting dApp on ShimmerEVM',
         description:
           'This tutorial will guide you as you write and deploy a voting dApp on ShimmerEVM. You can vote on a few options and view the results; all data will be stored on-chain.',
         preview: '/shimmerevm-dapp-voting.jpg',
