@@ -1,9 +1,11 @@
 # Deploy a Smart Contract Using Hardhat
 
 :::info
+
 Hardhat is a powerful development environment for building smart contracts on the Ethereum blockchain. Whether you're new to blockchain development or an experienced developer, Hardhat can help you build better, more reliable smart contracts.
 
 In this tutorial, you will learn how to set up Hardhat and use it to build, test and deploy a simple smart contract on ShimmerEVM.
+
 :::
 
 ## Pre-requisites
