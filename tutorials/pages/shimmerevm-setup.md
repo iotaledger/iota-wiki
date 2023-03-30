@@ -23,7 +23,7 @@ Add a new network on your Metamask, as shown below:
 - Currency Symbol: `SMR` (Can be anything you wish)
 - Explorer URL: https://explorer.evm.testnet.shimmer.network
 
-![Metamask Adding New Network](metamask-shimmerevm.png 'Metamask Adding New Network')
+![Metamask Adding New Network](/metamask-shimmerevm.png 'Metamask Adding New Network')
 
 Alternatively, you can setup your own EVM Smart Contract Chain on top of the Shimmer network and provide a custom URL, which might look something like: `https://api.sc.testnet.shimmer.network/chain/rms1prr4r7az8e46qhagz5atugjm6x0xrg27d84677e3lurg0s6s76jr59dw4ls/evm/jsonrpc` as well as your own custom Chain ID.
 
