@@ -17,12 +17,13 @@ First, let's setup our Metamask with the EVM. For this exercise, we will use the
 
 Add a new network on your Metamask, as shown below:
 
-- Network Name: `Shimmer EVM Testnet`
-- New RPC URL: `https://api.sc.testnet.shimmer.network/evm/jsonrpc`
-- Chain ID: `1076`
-- Currency Symbol: `RMS` (Can be anything you wish)
+- Network Name: `ShimmerEVM Testnet`
+- New RPC URL: `https://json-rpc.evm.testnet.shimmer.network`
+- Chain ID: `1071`
+- Currency Symbol: `SMR` (Can be anything you wish)
+- Explorer URL: https://explorer.evm.testnet.shimmer.network
 
-![Metamask Adding New Network](https://i.imgur.com/6pa6DcN.png 'Metamask Adding New Network')
+![Metamask Adding New Network](/metamask-shimmerevm.png 'Metamask Adding New Network')
 
 Alternatively, you can setup your own EVM Smart Contract Chain on top of the Shimmer network and provide a custom URL, which might look something like: `https://api.sc.testnet.shimmer.network/chain/rms1prr4r7az8e46qhagz5atugjm6x0xrg27d84677e3lurg0s6s76jr59dw4ls/evm/jsonrpc` as well as your own custom Chain ID.
 
