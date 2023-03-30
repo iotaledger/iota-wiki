@@ -46,7 +46,6 @@ module.exports = {
         'governance/shimmer-governance-intro',
         'governance/governance-tech',
         'governance/the-shimmer-governance-framework',
-        'governance/shimmer-community-grant-committee',
         'governance/governance-scope',
         'governance/shimmer-firefly-governance-guide',
       ],
