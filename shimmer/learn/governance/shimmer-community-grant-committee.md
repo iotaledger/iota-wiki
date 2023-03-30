@@ -17,7 +17,7 @@ The Committee received a budget of 27.204.307 SMR for one year of operation from
 
 ## 4. Specification
 
-### _Mission of the Shimmer Community Grant Committee:_
+### Mission of the Shimmer Community Grant Committee:
 
 _A community-led committee-based grant program to support the Shimmer network and empower its ecosystem_
 
@@ -131,7 +131,7 @@ As long as the market cap of Shimmer is low, we need to take a considerably more
 
 ### 4.4 Application and scoring process
 
-The teams must provide the following details in an [**application questionnaire form**](https://www.shimmergov.community/airtable-proposal-form):
+The teams must provide the following details in an [**application questionnaire form**](https://www.tangletreasury.org/airtable-proposal-form):
 
 **Proposal Title**
 
@@ -227,7 +227,7 @@ We reserve the ability to place specific projects into different tiers even if p
 **All decisions by the grant committee will be published without naming the individual grant committee members who worked on a proposal to avoid becoming vulnerable to potential complaints and attacks from declined projects.**
 
 The committee will host a publicly accessible database (Notion) where all accepted proposals are listed, and all spending can be tracked by the community (including the respective Links to Stablecoin Payouts)
-[**Proposed structure example by JD Sutton**](https://www.shimmergov.community/treasury-expenses)
+[**Proposed structure example by JD Sutton**](https://www.tangletreasury.org/treasury-expenses)
 
 ### Complaint process:
 
