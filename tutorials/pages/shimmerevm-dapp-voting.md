@@ -55,6 +55,7 @@ struct Proposal {
 ```
 
 :::tip Gas Fees
+
 If you can, limit the length to a certain number of bytes. You must cover gas fees for any data you store on the chain if you use one of bytes1 to bytes32 as they are much cheaper. In other words, if you use short names, your gas fees will be lower.
 
 :::
