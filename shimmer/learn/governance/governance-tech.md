@@ -41,7 +41,9 @@ This immutably writes the metadata onto the UTXOs of this address in the Tangle.
 the tokens will still reside at the same address as before, but now they will have attached metadata representing the voter's opinion for the referendum.
 
 :::tip Storage Deposits
+
 If you plan to send, mint, or receive tokens, native assets, or NFTs during the Voting period, you may set aside a small amount of SMR tokens from the vote to cover the required storage deposit for those transfers. You can always free some SMR tokens from the governance votes by simply using the Manage Voting Power function of the Firefly Wallet.
+
 :::
 
 #### Counting votes
