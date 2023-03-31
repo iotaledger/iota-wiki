@@ -221,4 +221,10 @@ Then you can verify by running:
 npx hardhat verify --network shimmerevm-testnet <address> <unlock time>
 ```
 
+:::tip Address and unlock time
+
+You can easily copy the address and unlock time from the output of the [deploy step](#deploy-your-contract-on-shimmerevm) above
+
+:::
+
 And Voila! You've successfully deployed your first Hardhat Smart Contract on ShimmerEVM and verified it on explorer.
