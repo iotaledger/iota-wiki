@@ -207,7 +207,7 @@ etherscan: {
       network: 'shimmerevm-testnet',
       chainId: 1071,
       urls: {
-        apiURL: 'https://api.evm.testnet.shimmer.network/',
+        apiURL: 'https://explorer.evm.testnet.shimmer.network/api',
         browserURL: 'https://explorer.evm.testnet.shimmer.network/',
       },
     },
