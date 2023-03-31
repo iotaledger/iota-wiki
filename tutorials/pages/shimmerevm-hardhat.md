@@ -199,17 +199,19 @@ If you want to further verify your contract, add the following to your `hardhat.
 
 ```js
 etherscan: {
+  apiKey: {
+    'shimmerevm-testnet': 'ABCDE12345ABCDE12345ABCDE123456789',
+  },
   customChains: [
     {
       network: 'shimmerevm-testnet',
       chainId: 1071,
-      apiKey: 'ABCDE12345ABCDE12345ABCDE123456789',
       urls: {
         apiURL: 'https://api.evm.testnet.shimmer.network/',
         browserURL: 'https://explorer.evm.testnet.shimmer.network/',
       },
     },
-  ];
+  ],
 }
 ```
 
