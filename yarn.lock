@@ -264,7 +264,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/generator@npm:^7.12.5, @babel/generator@npm:^7.17.9, @babel/generator@npm:^7.18.7, @babel/generator@npm:^7.20.5":
+"@babel/generator@npm:^7.12.5, @babel/generator@npm:^7.18.7, @babel/generator@npm:^7.20.5":
   version: 7.20.5
   resolution: "@babel/generator@npm:7.20.5"
   dependencies:
@@ -272,6 +272,18 @@ __metadata:
     "@jridgewell/gen-mapping": ^0.3.2
     jsesc: ^2.5.1
   checksum: 31c10d1e122f08cf755a24bd6f5d197f47eceba03f1133759687d00ab72d210e60ba4011da42f368b6e9fa85cbfda7dc4adb9889c2c20cc5c34bb2d57c1deab7
+  languageName: node
+  linkType: hard
+
+"@babel/generator@npm:^7.21.4":
+  version: 7.21.4
+  resolution: "@babel/generator@npm:7.21.4"
+  dependencies:
+    "@babel/types": ^7.21.4
+    "@jridgewell/gen-mapping": ^0.3.2
+    "@jridgewell/trace-mapping": ^0.3.17
+    jsesc: ^2.5.1
+  checksum: 9ffbb526a53bb8469b5402f7b5feac93809b09b2a9f82fcbfcdc5916268a65dae746a1f2479e03ba4fb0776facd7c892191f63baa61ab69b2cfdb24f7b92424d
   languageName: node
   linkType: hard
 
@@ -1651,6 +1663,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@babel/types@npm:^7.21.4":
+  version: 7.21.4
+  resolution: "@babel/types@npm:7.21.4"
+  dependencies:
+    "@babel/helper-string-parser": ^7.19.4
+    "@babel/helper-validator-identifier": ^7.19.1
+    to-fast-properties: ^2.0.0
+  checksum: 587bc55a91ce003b0f8aa10d70070f8006560d7dc0360dc0406d306a2cb2a10154e2f9080b9c37abec76907a90b330a536406cb75e6bdc905484f37b75c73219
+  languageName: node
+  linkType: hard
+
 "@colors/colors@npm:1.5.0":
   version: 1.5.0
   resolution: "@colors/colors@npm:1.5.0"
@@ -2497,7 +2520,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@iota-wiki/cli@workspace:cli"
   dependencies:
-    "@babel/generator": ^7.17.9
+    "@babel/generator": ^7.21.4
     "@babel/parser": ^7.21.2
     "@babel/types": ^7.17.0
     "@iota-wiki/core": "workspace:^"
@@ -2679,7 +2702,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@jridgewell/trace-mapping@npm:^0.3.14, @jridgewell/trace-mapping@npm:^0.3.9":
+"@jridgewell/trace-mapping@npm:^0.3.14, @jridgewell/trace-mapping@npm:^0.3.17, @jridgewell/trace-mapping@npm:^0.3.9":
   version: 0.3.17
   resolution: "@jridgewell/trace-mapping@npm:0.3.17"
   dependencies:
