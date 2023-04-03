@@ -15,7 +15,6 @@ You need the following before you get started:
 - **Network**: A network where you will deploy and interact with the smart contract. In this case, the ShimmerEVM.
 - **Wallet**: You will need an interface to connect to the network, verify your identity, and pay the transaction fees. You can use any wallet you choose; this tutorial will use [Metamask](https://metamask.io/), but you can use any wallet you are comfortable with.
 - **Smart Contract**: You will need a smart contract to deploy on-chain to handle all state records on-chain and any changes made to them.
-- **Code Editor or IDE**: Have an IDE or any code editor ready to start working.
 - **Client Library**: This tutorial will use [Ethers](https://docs.ethers.org/v5/). But you can use any other library that you feel more comfortable in.
 
 ## Project Setup
@@ -39,7 +38,7 @@ struct Voter {
 }
 ```
 
-Once you have created the `Voter`, you will need `Proposal` `struct` to nominate who to vote on:
+and also map it to address of voters:
 
 ```solidity!
 mapping(address => Voter) public voters;
@@ -71,13 +70,26 @@ function vote(uint proposal) public {
 As you need to check if the voter is allowed to vote, you should add the following:
 
 ```solidity!
-require(sender.weight != 0, "Has no right to vote");
+function vote(uint proposal) public {
+    Voter storage sender = voters[msg.sender];
+    // highlight-next-line
+    require(sender.weight != 0, "Has no right to vote");
+}
 ```
 
 You also need to check if the voter has already voted, so you should also add the following conditional:
 
 ```solidity!
-require(!sender.voted, "Already voted.");
+function vote(uint proposal) public {
+    Voter storage sender = voters[msg.sender];
+    require(sender.weight != 0, "Has no right to vote");
+    require(!sender.voted, "Already voted.");
+    // highlight-start
+    sender.voted = true;
+    sender.vote = proposal;
+    proposals[proposal].voteCount += sender.weight;
+    // highlight-end
+}
 ```
 
 If everything looks okay, register the vote:
