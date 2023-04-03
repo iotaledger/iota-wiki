@@ -12,7 +12,7 @@ const args = process.argv.slice(2);
 const cli = new Cli({
   binaryLabel: `IOTA Wiki Cli`,
   binaryName: `iota-wiki`,
-  binaryVersion: `0.1.0`,
+  binaryVersion: `2.1.1`,
 });
 
 cli.register(Builtins.HelpCommand);
