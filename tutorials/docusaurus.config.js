@@ -229,6 +229,17 @@ module.exports = {
         tags: ['text', 'shimmer', 'solidity', 'shimmerevm', 'hardhat', 'iscp'],
       },
     ],
+    [
+      '@iota-wiki/plugin-tutorial',
+      {
+        title: 'Create a Simple Voting dApp on ShimmerEVM',
+        description:
+          'This tutorial will guide you as you write and deploy a voting dApp on ShimmerEVM. You can vote on a few options and view the results; all data will be stored on-chain.',
+        preview: '/shimmerevm-dapp-voting.jpg',
+        route: 'tutorials/shimmerevm-dapp-voting',
+        tags: ['text', 'shimmer', 'solidity', 'iscp'],
+      },
+    ],
   ],
   staticDirectories: [path.resolve(__dirname, 'static')],
 };
