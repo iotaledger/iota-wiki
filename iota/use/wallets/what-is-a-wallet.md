@@ -8,7 +8,7 @@ description: A wallet helps you to securely store and handle your Tokens. We
 
 ![Wallets](/img/Banner/banner_wallets.svg)
 
-A wallet is a tool that gives you access to your IOTA tokens. One very important fact that you need to understand from the beginning is **your IOTA tokens are never stored INSIDE a wallet**.
+A wallet is a tool that gives you access to your ${network} tokens. One very important fact that you need to understand from the beginning is **your IOTA tokens are never stored INSIDE a wallet**.
 
 This is a common misunderstanding. All your IOTA tokens only exist in the Tangle network and cannot leave this network. So you do not physically “store” them “inside” anything.
 

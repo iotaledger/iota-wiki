@@ -2577,6 +2577,7 @@ __metadata:
     react-popper: ^2.3.0
     react-select: ^5.2.2
     rehype-katex: 4
+    rehype-lodash-template: ^0.2.1
     remark-code-import: ^0.3.0
     remark-import-partial: ^0.0.2
     remark-math: ^3.0.1
@@ -3559,6 +3560,13 @@ __metadata:
   dependencies:
     "@types/node": "*"
   checksum: e009a2bfb50e90ca9b7c6e8f648f8464067271fd99116f881073fa6fa76dc8d0133181dd65e6614d5fb1220d671d67b0124aef7d97dc02d7e342ab143a47779d
+  languageName: node
+  linkType: hard
+
+"@types/lodash@npm:^4.14.191":
+  version: 4.14.192
+  resolution: "@types/lodash@npm:4.14.192"
+  checksum: 31e1f0543a04158d2c429c45efd7c77882736630d0652f82eb337d6159ec0c249c5d175c0af731537b53271e665ff8d76f43221d75d03646d31cb4bd6f0056b1
   languageName: node
   linkType: hard
 
@@ -10022,6 +10030,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"lodash._reinterpolate@npm:^3.0.0":
+  version: 3.0.0
+  resolution: "lodash._reinterpolate@npm:3.0.0"
+  checksum: 06d2d5f33169604fa5e9f27b6067ed9fb85d51a84202a656901e5ffb63b426781a601508466f039c720af111b0c685d12f1a5c14ff8df5d5f27e491e562784b2
+  languageName: node
+  linkType: hard
+
 "lodash.camelcase@npm:^4.3.0":
   version: 4.3.0
   resolution: "lodash.camelcase@npm:4.3.0"
@@ -10068,6 +10083,25 @@ __metadata:
   version: 4.6.2
   resolution: "lodash.merge@npm:4.6.2"
   checksum: ad580b4bdbb7ca1f7abf7e1bce63a9a0b98e370cf40194b03380a46b4ed799c9573029599caebc1b14e3f24b111aef72b96674a56cfa105e0f5ac70546cdc005
+  languageName: node
+  linkType: hard
+
+"lodash.template@npm:^4.5.0":
+  version: 4.5.0
+  resolution: "lodash.template@npm:4.5.0"
+  dependencies:
+    lodash._reinterpolate: ^3.0.0
+    lodash.templatesettings: ^4.0.0
+  checksum: ca64e5f07b6646c9d3dbc0fe3aaa995cb227c4918abd1cef7a9024cd9c924f2fa389a0ec4296aa6634667e029bc81d4bbdb8efbfde11df76d66085e6c529b450
+  languageName: node
+  linkType: hard
+
+"lodash.templatesettings@npm:^4.0.0":
+  version: 4.2.0
+  resolution: "lodash.templatesettings@npm:4.2.0"
+  dependencies:
+    lodash._reinterpolate: ^3.0.0
+  checksum: 863e025478b092997e11a04e9d9e735875eeff1ffcd6c61742aa8272e3c2cddc89ce795eb9726c4e74cef5991f722897ff37df7738a125895f23fc7d12a7bb59
   languageName: node
   linkType: hard
 
@@ -13607,6 +13641,17 @@ plugin-image-zoom@flexanalytics/plugin-image-zoom:
     unified: ^9.0.0
     unist-util-visit: ^2.0.0
   checksum: 974670a12f327b2fab447e16b9db5c2bdcf2d632a40d2123380696eb976fdeb73165376fe79dfd667667969930071275d567c0abc2802570d3bba1023578ad35
+  languageName: node
+  linkType: hard
+
+"rehype-lodash-template@npm:^0.2.1":
+  version: 0.2.1
+  resolution: "rehype-lodash-template@npm:0.2.1"
+  dependencies:
+    "@types/lodash": ^4.14.191
+    lodash.template: ^4.5.0
+    unist-util-visit-parents: ^5.1.1
+  checksum: 0a30ded80d2e05ce4eaf4aecc1c19ea3ebedfef4adab384c1db4c92b196dbfb21ce90aeb475fa5e7da20709f1a866cc4913266b72e988f622800fda66bcf18ca
   languageName: node
   linkType: hard
 
