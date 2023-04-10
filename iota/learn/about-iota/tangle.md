@@ -39,7 +39,7 @@ _The blockchain bottleneck._
 
 The fact that only one block producer can advance the ledger state does not only create a bottleneck with well-known performance limitations, but also causes other block candidates that do not win the race to be discarded - and in the case of PoW systems, all the effort and electricity put into their calculation might be wasted.
 
-Blockchains further face several problems with the intermediary miners or validators e.g. mining races, centralisation, miner extractable value, and negative externalities.
+Blockchains further face several problems with the intermediary miners or validators e.g. mining races, centralization, miner extractable value, and negative externalities.
 
 ### The Tangle
 
