@@ -1,14 +1,5 @@
-import path from 'path';
+import external from '@iota-wiki/core/docusaurus.config';
 import { merge } from '@wiki/utils/config';
-import common from './common';
-
-const { IOTA_WIKI_DIRECTORY } = process.env;
-
-const external = require(path.resolve(
-  process.cwd(),
-  IOTA_WIKI_DIRECTORY,
-  'docusaurus.config.js',
-));
 
 const internal = {
   onBrokenLinks: 'throw',
@@ -23,4 +14,4 @@ const internal = {
   },
 };
 
-module.exports = merge(external, common, internal);
+module.exports = merge(external, internal);
