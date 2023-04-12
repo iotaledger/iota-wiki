@@ -13,6 +13,10 @@ import type {
 import './styles.css';
 
 import { IotaCore, Shimmer, Next } from '../../icons';
+import {
+  fetchSitemapUrlsFromNetwork,
+  getBestNetworkUrlMatch,
+} from '@site/src/utils/networkUtils';
 
 interface NetworkDropdownItem {
   label: string;
@@ -22,6 +26,12 @@ interface NetworkDropdownItem {
 interface NetworkDropdownProps extends DropdownNavbarItemProps {
   label: string;
   items: NetworkDropdownItem[];
+}
+
+enum Network {
+  Iota = '/',
+  Shimmer = '/shimmer/',
+  Next = '/next/',
 }
 
 function NetworkDropdownNavbarItemDesktop({
@@ -180,16 +190,69 @@ export default function NetworkDropdownNavbarItem({
 
   const subpath = pathname.substring(baseUrl.length);
 
+  const {
+    siteConfig: { url: siteUrl },
+  } = useDocusaurusContext();
+
+  const networkPaths: Network[] = [Network.Iota, Network.Shimmer, Network.Next];
+
+  const [basePathSitemap, setBasePathSitemap] = useState<
+    Record<string, string[]>
+  >({});
+
+  useEffect(() => {
+    for (const networkPath of networkPaths) {
+      if (networkPath === Network.Next) {
+        continue;
+      }
+      if (!basePathSitemap[networkPath]) {
+        fetchSitemapUrlsFromNetwork(siteUrl, networkPath)
+          .then((urlsFromNetwork) => {
+            if (!urlsFromNetwork?.length) {
+              throw new Error(
+                `No urls found for network ${networkPath} in sitemap`,
+              );
+            }
+            setBasePathSitemap((prevUrls) => ({
+              ...prevUrls,
+              [networkPath]: urlsFromNetwork,
+            }));
+            if (networkPath === Network.Shimmer) {
+              // Use the urls from the Shimmer network in Next
+              setBasePathSitemap((prevUrls) => ({
+                ...prevUrls,
+                [Network.Next]: urlsFromNetwork,
+              }));
+            }
+          })
+          .catch((err) => console.error(err));
+      }
+    }
+  }, []);
+
   const htmlItems = items.map<LinkLikeNavbarItemProps>((value) => {
     const Icon = basePathToIcon[value.routeBasePath];
+
+    let url = value.routeBasePath + subpath;
+    // only do if we are not in homepage
+    if (subpath) {
+      const bestMatch = getBestNetworkUrlMatch(
+        subpath,
+        basePathSitemap[value.routeBasePath],
+      );
+
+      // If no match make url be the landing
+      if (bestMatch === '/' || !bestMatch) {
+        url = value.routeBasePath;
+      } else {
+        url = value.routeBasePath + bestMatch;
+      }
+    }
 
     return {
       type: 'html',
       value: renderToString(
-        <a
-          className='dropdown__link network-dropdown__link'
-          href={value.routeBasePath + subpath}
-        >
+        <a className='dropdown__link network-dropdown__link' href={url}>
           <Icon className='network-dropdown__icon' />
           {value.label}
         </a>,
