@@ -18,6 +18,10 @@ const DefaultComponent: FC<DefaultComponentProps> = (props) => {
       value: 'build',
     },
     {
+      label: 'Check the current directory.',
+      value: 'check',
+    },
+    {
       label:
         'Configure the tutorial settings to properly list it on the IOTA Wiki.',
       value: 'configure',
@@ -30,6 +34,9 @@ const DefaultComponent: FC<DefaultComponentProps> = (props) => {
     }
     if (item.value === 'build') {
       props.command.cli.run(['build']);
+    }
+    if (item.value === 'check') {
+      props.command.cli.run(['check']);
     }
     if (item.value === 'configure') {
       props.command.cli.run(['tutorial', 'configure']);
