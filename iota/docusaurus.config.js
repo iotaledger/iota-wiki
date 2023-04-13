@@ -220,7 +220,6 @@ module.exports = {
         remarkPlugins: [
           require('remark-code-import'),
           require('remark-import-partial'),
-          require('remark-lint-no-dead-urls')
         ],
         showLastUpdateTime: true,
       },
