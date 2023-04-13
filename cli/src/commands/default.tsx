@@ -18,7 +18,7 @@ const DefaultComponent: FC<DefaultComponentProps> = (props) => {
       value: 'build',
     },
     {
-      label: 'Check the current directory.',
+      label: 'Check the current directory for broken links.',
       value: 'check',
     },
     {

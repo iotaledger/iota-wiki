@@ -15,7 +15,7 @@ export class Check extends Command {
   });
 
   static usage = Command.Usage({
-    description: `Build the provided directory (the current working directory by default).`,
+    description: `Check the provided directory for broken links (the current working directory by default).`,
   });
 
   async execute() {
