@@ -10,6 +10,6 @@ image: /img/shimmer-wiki.png
 before they are deployed on the more conservative [IOTA network](https://wiki.iota.org/introduction/welcome/). It has
 its own supply of tokens which are called [$SMR](tokens-and-wallets.md).
 
-The Shimmer network uses the new [Stardust protocol](https://wiki.iota.org/shimmer/introduction/welcome/) that upgrades
+The Shimmer network uses the new [Stardust protocol](../what-is-stardust/welcome.md) that upgrades
 the current [Chrysalis](https://wiki.iota.org/introduction/welcome/) protocol by introducing computation and utility to
 the ledger by introducing several new features.

@@ -1,0 +1,44 @@
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Accounts and Addresses
+
+Since the Chrysalis protocol, addresses in the IOTA ecosystem are reusable. This means you map them to your
+users in a clear and concise way. You can use your [seed](seeds.mdx) to generate any number of accounts. You create
+one [account for each user](https://wiki.iota.org/shimmer/wallet.rs/explanations/account_approaches/#single-account-approach)
+or [use a single account and generate multiple addresses](https://wiki.iota.org/shimmer/wallet.rs/explanations/account_approaches/#single-account-approach),
+which you can then link to the users in your database.
+
+## Accounts
+
+Accounts are related to a specific [IOTA Layer 1 Network](#todo-add-link). You can create as many accounts as you want
+per seed, and then use those accounts to generate as many addresses as you want.
+
+## Addresses
+
+The client libraries use the [BIP32](https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki) method to generate
+addresses as [Ed25519](https://en.wikipedia.org/wiki/EdDSA#Ed25519) key pairs generated that follow the
+[BIP44](https://github.com/bitcoin/bips/blob/master/bip-0044.mediawiki) logical hierarchy.
+
+## Related How-to Guides and Tutorials
+
+<Tabs groupId={'libraries'}>
+<TabItem value="wallet.rs" label="wallet.rs" >
+
+- [Create a wallet account](https://wiki.iota.org/shimmer/wallet.rs/how_tos/accounts_and_addresses/create_a_wallet_account/)
+- [Create an address](https://wiki.iota.org/shimmer/wallet.rs/how_tos/accounts_and_addresses/generate_address/)
+
+</TabItem>
+<TabItem value="iota.rs" label="iota.rs">
+
+- [Generate addresses](https://wiki.iota.org/shimmer/iota.rs/how_tos/generate_addresses/).
+
+</TabItem>
+<TabItem value="iota.js" label="iota.js">
+
+- [Create an address](https://wiki.iota.org/shimmer/iotajs/how_tos/address/)
+- [Create a addresses](https://wiki.iota.org/shimmer/iotajs/tutorials/value-transactions/generate-addresses/)
+- [Create a public addresses](https://wiki.iota.org/shimmer/iotajs/tutorials/value-transactions/public-addresses/)
+
+</TabItem>
+</Tabs>
