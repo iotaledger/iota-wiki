@@ -39,11 +39,7 @@ export class Check extends Command {
       return pluginPaths;
     }, []);
 
-    function done(error) {
-      if (error) throw error
-    }
-
-    engine(
+    return await new Promise<number>((resolve, reject) => engine(
       {
         processor: remark(),
         files: pluginPaths,
@@ -51,8 +47,9 @@ export class Check extends Command {
         plugins: ['remark-lint-no-dead-urls'],
         color: true,
         quiet: true,
+        frail: true,
       },
-      done
-    )
+      (error, status) => { error ? reject(error) : resolve(status) }
+    ));
   }
 }
