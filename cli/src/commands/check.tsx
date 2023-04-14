@@ -32,6 +32,8 @@ export class Check extends Command {
         const [ name, config ] = plugin;
         
         if (SUPPORTED_PLUGINS.includes(name)) {
+          // Our build system relies on `path` being set for these plugins,
+          // so it is safe to assume it exists in the config object.
           const pluginPath = path.relative('', config.path);
           return [ ...pluginPaths, pluginPath ];
         }
