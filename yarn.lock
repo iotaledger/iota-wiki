@@ -2493,7 +2493,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@iota-wiki/cli@workspace:cli":
+"@iota-wiki/cli@workspace:^, @iota-wiki/cli@workspace:cli":
   version: 0.0.0-use.local
   resolution: "@iota-wiki/cli@workspace:cli"
   dependencies:
@@ -2517,6 +2517,7 @@ __metadata:
     isomorphic-git: ^1.17.2
     nodemon: ^2.0.16
     prettier: 2.6.0
+    raw-loader: ^4.0.2
     tsc-alias: ^1.7.1
     typescript-plugin-css-modules: ^4.1.1
   peerDependencies:
@@ -2538,6 +2539,7 @@ __metadata:
     "@docusaurus/plugin-client-redirects": 2.2.0
     "@docusaurus/plugin-google-gtag": 2.2.0
     "@docusaurus/preset-classic": 2.2.0
+    "@iota-wiki/cli": "workspace:^"
     "@iota-wiki/plugin-tutorial": ^1.0.6
     "@mdx-js/react": ^1.6.21
     "@popperjs/core": ^2.11.5
