@@ -6,8 +6,8 @@ declare module '@theme/CodeSnippetBlock' {
   export interface Props extends Omit<BaseProps, "children"> {
     language: string;
     code: string;
-    startString: string;
-    endString: string;
+    startString?: string;
+    endString?: string;
   }
 
   export default function CodeSnippetBlock(props: Props): JSX.Element;
