@@ -70,6 +70,11 @@ Then, click on Deploy and confirm the Metamask transaction as shown below:
 ![Metamask Confirm](https://i.imgur.com/Ma9Ds8H.png 'Metamask Confirm')
 
 And voila—it's done!
+
+## Video Tutorial
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/0_rmmprEKrM" title="ShimmerEVM Tutorial: Connect to ShimmerEVM Testnet & Deploy a Solidity Smart Contract" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 :::info
 
 Feel free to play around and reach out to us on [discord](https://discord.shimmer.network/) on `#evm-contracts-dev` in case you're facing any issues.
