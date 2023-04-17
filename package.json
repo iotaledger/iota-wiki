@@ -48,6 +48,7 @@
     "@docusaurus/preset-classic": "2.2.0",
     "@iota-wiki/plugin-tutorial": "^1.0.6",
     "@mdx-js/react": "^1.6.21",
+    "@metamask/providers": "^10.2.1",
     "@popperjs/core": "^2.11.5",
     "@svgr/webpack": "^5.5.0",
     "clsx": "^1.2.1",

@@ -1,9 +1,12 @@
 import React from 'react';
+import type { MetaMaskInpageProvider } from "@metamask/providers";
+
 declare global {
   interface Window {
-    ethereum: any;
+    ethereum?: MetaMaskInpageProvider;
   }
 }
+
 export default function AddToMetaMaskButton() {
   async function addNetwork() {
     if (typeof window.ethereum !== 'undefined') {
