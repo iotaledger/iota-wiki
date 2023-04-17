@@ -29,7 +29,7 @@ export default function CodeSnippetBlock({
 
   // Only include the lines between the matched lines,
   // excluding any whitespace.
-  let snippet = code
+  const snippet = code
     .slice(
       startIndex >= 0 ? startIndex : undefined,
       endIndex >= 0 ? endIndex : undefined,
