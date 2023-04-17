@@ -8,7 +8,7 @@
     "composite": true,
     "incremental": true,
     "tsBuildInfoFile": "./dist/.tsbuildinfo-client",
-    "module": "ESNext",
+    "module": "ESNext"
   },
   "include": ["src/theme", "src/*.d.ts"],
   "exclude": ["**/__tests__/**"]

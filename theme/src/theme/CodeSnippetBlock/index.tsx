@@ -1,7 +1,7 @@
-import React from "react";
-import CodeBlock from "@theme/CodeBlock";
-import { type Props } from "@theme/CodeSnippetBlock";
-import { clsx } from "clsx";
+import React from 'react';
+import CodeBlock from '@theme/CodeBlock';
+import { type Props } from '@theme/CodeSnippetBlock';
+import { clsx } from 'clsx';
 
 export default function CodeSnippetBlock({
   language,
@@ -35,18 +35,13 @@ export default function CodeSnippetBlock({
       endIndex >= 0 ? endIndex : undefined,
     )
     .split(/\r\n|\r|\n/)
-    .slice(
-      startIndex >= 0 ? 1 : undefined,
-      endIndex >= 0 ? -1 : undefined
-    )
+    .slice(startIndex >= 0 ? 1 : undefined, endIndex >= 0 ? -1 : undefined)
     .join('\n')
     .trim();
 
   return (
-    <CodeBlock
-      className={clsx(className, "language-" + language)}
-      {...props}>
-        {snippet}
+    <CodeBlock className={clsx(className, 'language-' + language)} {...props}>
+      {snippet}
     </CodeBlock>
   );
 }
