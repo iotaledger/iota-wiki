@@ -3,9 +3,9 @@ import path from 'path';
 
 const internalConfig = require.resolve('../docusaurus/config/build.js');
 const SUPPORTED_PLUGINS = [
-  "@docusaurus/plugin-content-docs",
-  "@docusaurus/plugin-content-pages",
-]
+  '@docusaurus/plugin-content-docs',
+  '@docusaurus/plugin-content-pages',
+];
 
 export class Check extends Command {
   static paths = [[`check`]];
@@ -24,34 +24,38 @@ export class Check extends Command {
 
     const directory = this.directory || process.cwd();
 
-    process.env["IOTA_WIKI_DIRECTORY"] = directory;
+    process.env['IOTA_WIKI_DIRECTORY'] = directory;
     const { plugins = [] } = require(internalConfig);
 
     const pluginPaths = plugins.reduce((pluginPaths, plugin) => {
       if (Array.isArray(plugin)) {
-        const [ name, config ] = plugin;
-        
+        const [name, config] = plugin;
+
         if (SUPPORTED_PLUGINS.includes(name)) {
           // Our build system relies on `path` being set for these plugins,
           // so it is safe to assume it exists in the config object.
           const pluginPath = path.relative('', config.path);
-          return [ ...pluginPaths, pluginPath ];
+          return [...pluginPaths, pluginPath];
         }
       }
       return pluginPaths;
     }, []);
 
-    return await new Promise<number>((resolve, reject) => engine(
-      {
-        processor: remark(),
-        files: pluginPaths,
-        extensions: ['md', 'mdx'],
-        plugins: ['remark-lint-no-dead-urls'],
-        color: true,
-        quiet: true,
-        frail: true,
-      },
-      (error, status) => { error ? reject(error) : resolve(status) }
-    ));
+    return await new Promise<number>((resolve, reject) =>
+      engine(
+        {
+          processor: remark(),
+          files: pluginPaths,
+          extensions: ['md', 'mdx'],
+          plugins: ['remark-lint-no-dead-urls'],
+          color: true,
+          quiet: true,
+          frail: true,
+        },
+        (error, status) => {
+          error ? reject(error) : resolve(status);
+        },
+      ),
+    );
   }
 }
