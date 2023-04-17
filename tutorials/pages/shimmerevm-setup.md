@@ -34,7 +34,7 @@ At this point, our Metamask wallet is connected to the Shimmer EVM Testnet, but 
 ## Get EVM Account Funded
 
 Open [EVM Toolkit](https://evm-toolkit.evm.testnet.shimmer.network/) and enter your EVM address as shown below:
-![EVM Toolkit](evm-toolkit.png 'EVM Toolkit')
+![EVM Toolkit](/evm-toolkit.png 'EVM Toolkit')
 
 In case, you've setup a custom EVM chain, you'd need to add your custom network first. Please add your own chain address and select the relevant network as shown below:
 ![EVM Toolkit Custom Network](evm-toolkit-custom-network.png 'EVM Toolkit Custom Network')
