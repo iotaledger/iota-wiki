@@ -144,4 +144,4 @@ The IOTA network does not yet support IOTA Smart Contracts.
 ### Shimmer
 
 You can use the ISC protocol
-by [spinning up your own private Tangle with the preconfigured Docker image](https://wiki.iota.org/shimmer/smart-contracts/guide/development_tools/docker_preconfigured/).
+by [spinning up your own private Tangle with the preconfigured Docker image](https://github.com/iotaledger/wasp/tree/develop/tools/local-setup).
