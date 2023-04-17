@@ -26,7 +26,7 @@ Stardust removes any data processing from the core protocol, as supporting use-c
 in the core protocol is unfeasible – and anyway, it would jeopardize node performance and hence transaction throughput
 in the network.
 
-Data in Stardust is published via [Tagged Data Payloads](https://github.com/iotaledger/tips/blob/main/tips/TIP-0023/tip-0023.md), which are treated
+Data in Stardust is published via [Tagged Data Payloads](https://wiki.iota.org/shimmer/tips/tips/TIP-0023), which are treated
 as binary data by the protocol. It is recommended that processing and exposure of application-specific data published
 through these payloads is implemented by second layer protocols. One major benefit of this approach is its flexibility:
 each application can define and implement their own requirements, for example to authenticate data payloads based on
