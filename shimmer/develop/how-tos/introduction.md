@@ -12,6 +12,5 @@ A UTXO is allowed to be spent if its owner presents a valid digital signature co
 that is generally called the owner address. Stardust extends this concept by letting users define additional
 spending constraints on UTXOs, for example that an output can only be spent after a certain time.
 
-The following sections will show you how to start building on Shimmer using the Stardust protocol, from generating a 
+The following sections will show you how to start building on Shimmer using the Stardust protocol, from generating a
 seed, accounts and addresses, to minting NFT collections.
-

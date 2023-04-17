@@ -1,6 +1,7 @@
 # Unlock Funds Owned by an Alias
 
 An alias account may own funds in the ledger two ways:
+
 - Locked directly in its alias output.
 - Locked in other outputs to the address of the alias.
 
@@ -8,14 +9,14 @@ The global alias address is derived from the unique _Alias ID_. Technically, the
 the _Alias Address Type_ and the _Alias ID_. A practical example from
 [TIP-31](https://github.com/iotaledger/tips/blob/add-smr-hrps/tips/TIP-0031/tip-0031.md):
 
- - _Output ID_ (34-byte) that created the alias: `52fdfc072182654f163f5f0f9a621d729566c74d10037c4d7bbb0407d1e2c6490000`
- - _Alias ID_, BLAKE2b-256 hash (32-byte): `fe80c2eb7c736da2f7c98ecf135ee9e34e4e076afe6e1dfebc9ec578b8f56d2f`
- - Serialized alias address (33-byte): `08fe80c2eb7c736da2f7c98ecf135ee9e34e4e076afe6e1dfebc9ec578b8f56d2f`
- - Bech32 string:
- - IOTA (64-char): `iota1prlgpsht03ekmghhex8v7y67a835uns8dtlxu807hj0v279c74kj76j6rev`
- - IOTA Testnet (64-char): `atoi1prlgpsht03ekmghhex8v7y67a835uns8dtlxu807hj0v279c74kj7autzrp`
- - Shimmer (63-char): `smr1prlgpsht03ekmghhex8v7y67a835uns8dtlxu807hj0v279c74kj7dzrr0a`
- - Shimmer Testnet (63-char): `rms1prlgpsht03ekmghhex8v7y67a835uns8dtlxu807hj0v279c74kj7e9ge5y`
+- _Output ID_ (34-byte) that created the alias: `52fdfc072182654f163f5f0f9a621d729566c74d10037c4d7bbb0407d1e2c6490000`
+- _Alias ID_, BLAKE2b-256 hash (32-byte): `fe80c2eb7c736da2f7c98ecf135ee9e34e4e076afe6e1dfebc9ec578b8f56d2f`
+- Serialized alias address (33-byte): `08fe80c2eb7c736da2f7c98ecf135ee9e34e4e076afe6e1dfebc9ec578b8f56d2f`
+- Bech32 string:
+- IOTA (64-char): `iota1prlgpsht03ekmghhex8v7y67a835uns8dtlxu807hj0v279c74kj76j6rev`
+- IOTA Testnet (64-char): `atoi1prlgpsht03ekmghhex8v7y67a835uns8dtlxu807hj0v279c74kj7autzrp`
+- Shimmer (63-char): `smr1prlgpsht03ekmghhex8v7y67a835uns8dtlxu807hj0v279c74kj7dzrr0a`
+- Shimmer Testnet (63-char): `rms1prlgpsht03ekmghhex8v7y67a835uns8dtlxu807hj0v279c74kj7e9ge5y`
 
 Anyone can send funds in the ledger to the address of the alias, while only the current state controller is able to
 unlock those funds by including the alias itself in the very same transaction. An alias address doesn't have

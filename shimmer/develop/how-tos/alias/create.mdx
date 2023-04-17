@@ -1,47 +1,49 @@
 ---
 keywords:
-- Ledger
-- UTXO
-- explanation
-- how to
-- create
+  - Ledger
+  - UTXO
+  - explanation
+  - how to
+  - create
 description: Create Alias Transfers in Stardust.
 image: /img/logo/preview.png
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 # Create an Alias
 
 Just like a _Basic Output_, an _Alias Output_ also must have:
- - __Amount__ to hold base token.
- - __Unlock Conditions__ that define how the output can be unlocked.
- - __Features__ that don't modify the unlocking.
+
+- **Amount** to hold base token.
+- **Unlock Conditions** that define how the output can be unlocked.
+- **Features** that don't modify the unlocking.
 
 On top of these, it also defines:
 
- - __State Index__ that has to be incremented in every transaction initiated by the _State Controller_.
- - __State Metadata__ that may hold binary data.
- - __Foundry Counter__ that defines how many foundries the alias has created.
- - __Immutable Features__ that are regular _Features_ defined upon creation which can never be modified afterward.
+- **State Index** that has to be incremented in every transaction initiated by the _State Controller_.
+- **State Metadata** that may hold binary data.
+- **Foundry Counter** that defines how many foundries the alias has created.
+- **Immutable Features** that are regular _Features_ defined upon creation which can never be modified afterward.
 
 ## Available Unlock Conditions
 
 Alias outputs only support two type of unlock conditions:
 
- - __State Controller Address Unlock Condition__ that defines the state controller.
- - __Governor Address Unlock Condition__ that defines the governor of the alias.
+- **State Controller Address Unlock Condition** that defines the state controller.
+- **Governor Address Unlock Condition** that defines the governor of the alias.
 
 ## Example Transaction
 
 Transaction A shows the process of creating a new alias output and hence an alias account. Notice the creation
 constraints enforced by the protocol:
 
- - __Alias ID__ must be zeroed out. This signals to the protocol that the alias account is new and when the transaction
-confirms, a unique __Alias ID__ must be generated.
- - __State Index__ must be zero as this is the first possible state the alias represents.
- - __Foundry Counter__ must be zero as the alias doesn't control any foundries yet.
- - __Issuer__ and __Sender__ addresses must be unlocked in the transaction if present.
+- **Alias ID** must be zeroed out. This signals to the protocol that the alias account is new and when the transaction
+  confirms, a unique **Alias ID** must be generated.
+- **State Index** must be zero as this is the first possible state the alias represents.
+- **Foundry Counter** must be zero as the alias doesn't control any foundries yet.
+- **Issuer** and **Sender** addresses must be unlocked in the transaction if present.
 
 ![Transaction A - Creating an Alias](/img/stardust_explanations/stardust_ledger_anatomy/alias_transaction/tx_A.svg)
 
@@ -64,7 +66,7 @@ _Output ID_ of _Alias Output #1_.
 <Tabs groupId={'libraries'}>
 <TabItem value="wallet.rs" label="wallet.rs" >
 
-* [Mint a Native Token](https://wiki.iota.org/shimmer/wallet.rs/how_tos/native_tokens/mint_native_token/)
+- [Mint a Native Token](https://wiki.iota.org/shimmer/wallet.rs/how_tos/native_tokens/mint_native_token/)
 
 </TabItem>
 
@@ -75,14 +77,12 @@ _Output ID_ of _Alias Output #1_.
 </TabItem>
 </Tabs>
 
-
 ## Related Code Examples
 
 <Tabs groupId={'libraries'}>
 <TabItem value="iota.js" label="iota.js">
 
-* [Alias Transactions]https://wiki.iota.org/shimmer/iotajs/tutorials/alias-transactions/introduction/
+- [Alias Transactions]https://wiki.iota.org/shimmer/iotajs/tutorials/alias-transactions/introduction/
 
 </TabItem>
 </Tabs>
-

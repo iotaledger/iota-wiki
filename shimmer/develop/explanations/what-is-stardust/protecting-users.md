@@ -1,14 +1,14 @@
 ---
 keywords:
-- Stardust
-- Shimmer
-- Upgrades
-- Security
-- User Protection
-- Replay Protection
-- Inputs Commitment
-- Protocol Improvements
-- explanation
+  - Stardust
+  - Shimmer
+  - Upgrades
+  - Security
+  - User Protection
+  - Replay Protection
+  - Inputs Commitment
+  - Protocol Improvements
+  - explanation
 description: The Stardust protocol prevents transaction replay and client eclipse attacks.
 image: /img/logo/preview.png
 ---

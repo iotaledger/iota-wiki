@@ -5,8 +5,9 @@ In Stardust, NFTs are implemented as a standalone output type called
 [_NFT Output_](https://github.com/lzpap/tips/blob/master/tips/TIP-0018/tip-0018.md#nft-output).
 Once minted, the _NFT Output_ gets assigned a unique _NFT ID_ by the protocol based on the minting transaction. Issuers
 may choose to define immutable properties on the output upon minting, such as:
- - The [issuer](https://github.com/lzpap/tips/blob/master/tips/TIP-0018/tip-0018.md#issuer-feature) identity, namely the address of the issuer.
- - The [metadata](https://github.com/lzpap/tips/blob/master/tips/TIP-0018/tip-0018.md#metadata-feature) treated as binary data by the protocol.
+
+- The [issuer](https://github.com/lzpap/tips/blob/master/tips/TIP-0018/tip-0018.md#issuer-feature) identity, namely the address of the issuer.
+- The [metadata](https://github.com/lzpap/tips/blob/master/tips/TIP-0018/tip-0018.md#metadata-feature) treated as binary data by the protocol.
 
 ## NFTs as a Wallet
 
@@ -40,8 +41,9 @@ smart contract chain interactions.
 
 The alert reader might be wondering: can't we just set the maximum supply of a [native token](../native-token/introduction.mdx) to one to have a unique native token, therefore an NFT?
 The answer is yes, we could do that, but this approach has its limitations compared to the output based approach:
+
 - NFTs link the actual owned asset via metadata to the token. Metadata of a native token sits in the foundry output,
-while the native token itself may reside in any other output. Therefore, the NFT and its metadata are detached from each other.
+  while the native token itself may reside in any other output. Therefore, the NFT and its metadata are detached from each other.
 - The owner of the NFT as a native token has no control of the foundry, therefore it is impossible to melt the native token
-without the involvement of the issuer. The owner may still burn it, but then the storage deposit of the foundry can never be refunded.
+  without the involvement of the issuer. The owner may still burn it, but then the storage deposit of the foundry can never be refunded.
 - Native tokens can not own other asset in the ledger.

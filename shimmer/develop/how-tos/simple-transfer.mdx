@@ -1,20 +1,22 @@
 ---
 keywords:
-- Ledger
-- UTXO
-- explanation
+  - Ledger
+  - UTXO
+  - explanation
 description: Simple Transfers in Stardust.
 image: /img/logo/preview.png
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 # Transfer Funds to an Address
 
 A simple transaction moves funds from one user account to another. On a high level, a transaction must define 3 things:
- - **Inputs**: previously created unspent transaction outputs holding funds that the transaction consumes.
- - **Unlock Blocks**: they hold the signatures authorizing the consumption of inputs.
- - **Outputs**: newly created outputs holding transferred funds.
+
+- **Inputs**: previously created unspent transaction outputs holding funds that the transaction consumes.
+- **Unlock Blocks**: they hold the signatures authorizing the consumption of inputs.
+- **Outputs**: newly created outputs holding transferred funds.
 
 In Stardust, you can create a simple transfer using a [Basic Output](https://github.com/iotaledger/tips/blob/master/tips/TIP-0018/tip-0018.md#basic-output).
 Basic Outputs define the base token funds they hold in the _Amount_ field.
@@ -32,7 +34,7 @@ The figure below shows transaction A, which:
 
 1. Consumes as input a _Basic Output_ with _100i_ locked under _ownerAddress_,
 2. Provides an _Unlock_, namely a _Signature Unlock_ that contains a valid signature of the transaction content corresponding
-to the private key behind _ownerAddress_,
+   to the private key behind _ownerAddress_,
 3. Creates a new _Basic Output_ with _100i_ locked under the recipient's address, namely _recipientAddress_.
 
 ![Transaction A - Changing Owner](/img/stardust_explanations/stardust_ledger_anatomy/simple_transaction/tx_A.svg)

@@ -19,10 +19,10 @@ unlocks it, different commands or state mutations are possible.
 
 ## State Controller
 
- The _State Controller_ is allowed to change the state data stored in the output and also to manipulate token balances
- of the alias account. If the _State Controller_ unlocks the alias output in a transaction, it must
- [transition the alias into its new state](state-transitions.mdx), meaning the alias output must appear in the
- transaction as a created output.
+The _State Controller_ is allowed to change the state data stored in the output and also to manipulate token balances
+of the alias account. If the _State Controller_ unlocks the alias output in a transaction, it must
+[transition the alias into its new state](state-transitions.mdx), meaning the alias output must appear in the
+transaction as a created output.
 
 ## Governor
 
@@ -38,4 +38,3 @@ ownership. So how does one prove that they own the funds locked under an alias a
 The trick is to require the unlocking of the alias output that defines the address in the same transaction that tries
 to unlock funds sitting on the alias address. _If you can prove you own the alias account by successfully unlocking its
 alias output in a transaction, you can access the funds locked under its address._
-

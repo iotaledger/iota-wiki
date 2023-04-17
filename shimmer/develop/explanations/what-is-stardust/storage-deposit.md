@@ -1,14 +1,14 @@
 ---
 keywords:
-- Stardust
-- Shimmer
-- Upgrades
-- Storage
-- Deposit
-- Data
-- Protocol Improvements
-- explanation
-description: Stardust introduces the new storage deposit system where data storage on protocol level is tied to refundable token deposits. 
+  - Stardust
+  - Shimmer
+  - Upgrades
+  - Storage
+  - Deposit
+  - Data
+  - Protocol Improvements
+  - explanation
+description: Stardust introduces the new storage deposit system where data storage on protocol level is tied to refundable token deposits.
 image: /img/logo/preview.png
 ---
 
@@ -20,6 +20,7 @@ are feeless, a malicious user might bloat the ledger size by creating a lot of a
 (dust) on them.
 
 Chrysalis already implemented a mechanism that prevents this attack, but not without caveats:
+
 - it relies on total ordering of transactions, hence renders it useless for IOTA 2.0,
 - and it doesn't take into account that users can store arbitrary data in accounts too.
 
@@ -41,6 +42,7 @@ Why is it so important to store data in the ledger? Any application specific dat
 shared via the ledger. The data is available on all network nodes as long as the outputs storing them are unspent.
 
 Arbitrary data storage becomes a general feature of outputs. Some examples of where is it useful:
+
 - smart contract chains store L2 state commitments in their alias accounts,
 - smart contract users put L2 smart contract call data in transfers sent to the chain's account,
 - NFTs have immutable attached metadata stored on-chain,

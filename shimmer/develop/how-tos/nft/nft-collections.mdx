@@ -16,6 +16,7 @@ A Collection NFT is a just a normal _NFT Output_ but with special purpose: it is
 The Collection NFT becomes the _Issuer_ of the _NFT Outputs_ representing NFTs within the collection.
 
 It is possible to:
+
 - Permanently lock the Collection NFT to prevent any future minting. No diluting is ever possible by issuers.
 - Lock the Collection NFT for some time to prevent minting,
 - Deposit the Collection NFT into a L2 chain where minting activity can be governed via smart contracts or DAOs.
@@ -24,9 +25,10 @@ It is possible to:
 
 Transaction H mints a Collection NFT the same way as Transaction A mints a regular one. The metadata makes it clear
 that the intended use of this NFT is to serve as a Collection NFT.
- - The _name_ defines the name of the collection,
- - The _uri_ points to a website with more information about the project. Note, that _type_ defines the resource type
-for _uri_.
+
+- The _name_ defines the name of the collection,
+- The _uri_ points to a website with more information about the project. Note, that _type_ defines the resource type
+  for _uri_.
 
 ![Transaction H - Creation of a Collection NFT](/img/stardust_explanations/stardust_ledger_anatomy/nft_transaction/tx_H.svg)
 
@@ -86,12 +88,12 @@ ted Code Examples
 <Tabs groupId={'libraries'}>
 <TabItem value="wallet.rs" label="wallet.rs" >
 
-* [Rust - NFT Collection](https://github.com/iotaledger/wallet.rs/tree/develop/wallet/examples/nft_collection)
+- [Rust - NFT Collection](https://github.com/iotaledger/wallet.rs/tree/develop/wallet/examples/nft_collection)
 
 </TabItem>
 <TabItem value="iota.js" label="iota.js">
 
-* [Create an NFT Collection](https://github.com/iotaledger/iota.js/blob/feat/stardust/packages/iota/examples/nft-collection/src/index.ts)
+- [Create an NFT Collection](https://github.com/iotaledger/iota.js/blob/feat/stardust/packages/iota/examples/nft-collection/src/index.ts)
 
 </TabItem>
 </Tabs>

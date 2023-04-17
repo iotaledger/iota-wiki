@@ -1,12 +1,12 @@
 ---
 keywords:
-- Stardust
-- Shimmer
-- Upgrades
-- Ledger
-- UTXO
-- Protocol Improvements
-- explanation
+  - Stardust
+  - Shimmer
+  - Upgrades
+  - Ledger
+  - UTXO
+  - Protocol Improvements
+  - explanation
 description: Extending the UTXO ledger concept with Stardust.
 image: /img/logo/preview.png
 ---
@@ -29,10 +29,12 @@ a transaction once the output is unlocked. This is what we call the cryptocurren
 digital cash.
 
 Stardust introduces new output types that are more expressive:
+
 - output types define additional fields for outputs,
 - output unlocking is configurable via unlock conditions, moreover, output types might define additional unlocking constraints based on the context of transaction that tries to unlock them.
 
 At first glance, this might look as just a small improvement, but notice that if we can
+
 - record any state as data in outputs, and
 - program how that state can be manipulated in transactions,
 
