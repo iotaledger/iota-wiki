@@ -232,4 +232,3 @@ And Voila! You've successfully deployed your first Hardhat Smart Contract on Shi
 ## Video Tutorial
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/rRscvKirroo" title="ShimmerEVM Tutorial: Deploying a Smart Contract with Hardhat" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
