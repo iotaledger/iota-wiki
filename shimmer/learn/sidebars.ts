@@ -25,7 +25,6 @@ module.exports = {
             'smart-contracts/smart-contracts-dapps',
             'smart-contracts/smart-contracts-consensus',
             'smart-contracts/smart-contracts-tangle',
-            'smart-contracts/smart-contracts-community-tutorials',
           ],
         },
         'native-assets',
