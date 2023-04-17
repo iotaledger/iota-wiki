@@ -13,7 +13,7 @@ import ReactPlayer from 'react-player';
 
 In this article you will learn how the IOTA Smart Contracts interact with the IOTA Tangle.
 
-as Smart Contracts can automate contractual obligations within many industries, they are essential across many of IOTA’s verticals including [Supply Chains](https://www.iota.org/solutions/global-trade-and-supply-chains), [Smart Cities](https://www.iota.org/solutions/smart-city), and [Industrial IoT](https://www.iota.org/solutions/industrial-iot) amongst others.
+As Smart Contracts can automate contractual obligations within many industries, they are essential across many of IOTA’s verticals including [Supply Chains](https://www.iota.org/solutions/global-trade-and-supply-chains), [Smart Cities](https://www.iota.org/solutions/smart-city), and [Industrial IoT](https://www.iota.org/solutions/industrial-iot) amongst others.
 
 Thanks to the Tangle’s properties of scalability, high throughput, and feeless transactions, IOTA Smart Contracts have many benefits.
 
@@ -47,14 +47,15 @@ This is why IOTA Smart Contracts are not implemented as part of the core protoco
 
 ## Architecture Overview
 
-![IOTA Smart Contracts Network Overview](/img/learn/sc_overview.png)
+The IOTA Smart Contracts implementation has successfully evolved since its initial experimental phase on [IOTA 2.0 DevNet](https://v2.iota.org/visualizer), powered by the research [GoShimmer nodes](https://github.com/iotaledger/goshimmer). The team's primary focus was to support smart contracts on the mainnet using the Hornet node software, and they have almost achieved this goal with the release of the "Stardust" version. This milestone has led to the creation of the [Shimmer Network](https://shimmer.network/), where WASP is now a Hornet plugin.
 
-The current IOTA Smart Contracts implementation runs on the experimental next-generation of [IOTA 2.0](https://v2.iota.org/), deployed on the fully decentralized [IOTA 2.0 DevNet](https://v2.iota.org/visualizer), powered by [GoShimmer nodes](/goshimmer/welcome). As IOTA Smart Contracts should be available on the IOTA mainnet before switching to the fully decentralized IOTA 2.0 protocol (in a process known as “Coordicide”), an important deliverable for the next release will be to support anchoring to the current IOTA mainnet. The current IOTA mainnet and the fully decentralized future IOTA 2.0 protocol have some fundamental differences, making it difficult to support both at the same time. The primary team focus is therefore to support smart contracts on the current IOTA mainnet using the [Hornet node](/hornet/welcome) software.
+As a result of these advancements, the Shimmer Network now hosts the public ShimmerEVM Testnet, enabling developers to build and test smart contracts written in Solidity. With WASP designed as an INX plugin, it is necessary for developers to run the WASP node alongside their own Hornet node. To simplify this process, the team provides a convenient docker-compose setup for easy deployment and management of both nodes.
 
+The updated IOTA Smart Contracts implementation on the Shimmer Network, with WASP as a Hornet plugin and the availability of the ShimmerEVM Testnet, showcases the team's commitment to innovation and progress in the IOTA ecosystem.
 ---
 
 ## Further Readings​​
 
 - Learn more about the [IOTA 2.0 (Coordicide) Research Specifications](/IOTA-2.0-Research-Specifications/Preface).
-- Participate and add your tutorials on the [Community Tutorials](./smart-contracts-community-tutorials).
+- Participate and follow some tutorials on the [Tutorial Portal](./tutorials?tags=shimmer&tags=iscp).
 - Build on top of [IOTA Smart Contracts](/smart-contracts/overview).

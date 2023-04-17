@@ -52,8 +52,7 @@ There are several different example applications deployed on the [public test-ne
 
 The [Fair roulette example](/smart-contracts/guide/example_projects/fair_roulette) is a simple betting game in which players can bet on a number within a certain range.
 
-- Play with the [Live Demo](https://demo.sc.iota.org/).
-- Discover the [Code Repository](https://github.com/iotaledger/wasp/tree/roulette_poc/contracts/rust/fairroulette).
+- Discover the [Code Repository](https://github.com/iotaledger/wasp/tree/develop/contracts/wasm/fairroulette).
 
 More examples for Wasm Smart Contracts written in Rust and Go (TinyGo) can be found in the [Wasp code repository](https://github.com/iotaledger/wasp/tree/master/contracts/wasm).
 
