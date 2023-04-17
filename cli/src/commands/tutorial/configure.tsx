@@ -1,6 +1,5 @@
 import React, { FC, useEffect, useState } from 'react';
 import { Command } from 'clipanion';
-import git from 'isomorphic-git';
 import {
   render,
   Box,
@@ -158,6 +157,7 @@ const SetupComponent: FC<SetupComponentProps> = (props) => {
   >();
 
   const getOptions = async () => {
+    const git = await import('isomorphic-git');
     // TODO First check if a sidebar with valid content exist, else:
     const files = await fs.promises.readdir('docs');
     const route = files[0].replace(/\.[^/.]+$/, '');
