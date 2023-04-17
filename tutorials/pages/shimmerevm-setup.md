@@ -37,7 +37,7 @@ Open [EVM Toolkit](https://evm-toolkit.evm.testnet.shimmer.network/) and enter y
 ![EVM Toolkit](/evm-toolkit.png 'EVM Toolkit')
 
 In case, you've setup a custom EVM chain, you'd need to add your custom network first. Please add your own chain address and select the relevant network as shown below:
-![EVM Toolkit Custom Network](evm-toolkit-custom-network.png 'EVM Toolkit Custom Network')
+![EVM Toolkit Custom Network](/evm-toolkit-custom-network.png 'EVM Toolkit Custom Network')
 
 Once you're done, click on `Send funds` and wait for a few minutes for the faucet to process. You should start seeing some funds on your Metamask wallet soon.
 
