@@ -1,0 +1,15 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    /* Emit */
+    "rootDir": "src",
+    "outDir": "dist",
+    "noEmit": false,
+    "composite": true,
+    "incremental": true,
+    "tsBuildInfoFile": "./dist/.tsbuildinfo-client",
+    "module": "ESNext"
+  },
+  "include": ["src/theme", "src/*.d.ts"],
+  "exclude": ["**/__tests__/**"]
+}
