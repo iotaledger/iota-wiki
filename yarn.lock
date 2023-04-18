@@ -2545,7 +2545,6 @@ __metadata:
     "@iota-wiki/cli": "workspace:^"
     "@iota-wiki/plugin-tutorial": ^1.0.6
     "@mdx-js/react": ^1.6.21
-    "@metamask/providers": ^10.2.1
     "@popperjs/core": ^2.11.5
     "@svgr/webpack": ^5.5.0
     "@tsconfig/docusaurus": ^1.0.6
@@ -2766,44 +2765,6 @@ __metadata:
   version: 1.6.22
   resolution: "@mdx-js/util@npm:1.6.22"
   checksum: 4b393907e39a1a75214f0314bf72a0adfa5e5adffd050dd5efe9c055b8549481a3cfc9f308c16dfb33311daf3ff63added7d5fd1fe52db614c004f886e0e559a
-  languageName: node
-  linkType: hard
-
-"@metamask/object-multiplex@npm:^1.1.0":
-  version: 1.2.0
-  resolution: "@metamask/object-multiplex@npm:1.2.0"
-  dependencies:
-    end-of-stream: ^1.4.4
-    once: ^1.4.0
-    readable-stream: ^2.3.3
-  checksum: 7c622639cc164c3b780294d790311e4bcb327faf14626717728022e95da5834f32fe4e242d8f4e7d9b8c2b83f0c76450922786b2f6ef50e777bfe119b78bdab7
-  languageName: node
-  linkType: hard
-
-"@metamask/providers@npm:^10.2.1":
-  version: 10.2.1
-  resolution: "@metamask/providers@npm:10.2.1"
-  dependencies:
-    "@metamask/object-multiplex": ^1.1.0
-    "@metamask/safe-event-emitter": ^2.0.0
-    "@types/chrome": ^0.0.136
-    detect-browser: ^5.2.0
-    eth-rpc-errors: ^4.0.2
-    extension-port-stream: ^2.0.1
-    fast-deep-equal: ^2.0.1
-    is-stream: ^2.0.0
-    json-rpc-engine: ^6.1.0
-    json-rpc-middleware-stream: ^4.2.1
-    pump: ^3.0.0
-    webextension-polyfill-ts: ^0.25.0
-  checksum: e88b2db8c4673cc6a7e47d9f0531df3fac73f05f8e9ff6d02c3420dfb3c7a82335d9c44876f2d472c44eac36d66491d2022be4f39600bee561d5de8ad59c5b07
-  languageName: node
-  linkType: hard
-
-"@metamask/safe-event-emitter@npm:^2.0.0":
-  version: 2.0.0
-  resolution: "@metamask/safe-event-emitter@npm:2.0.0"
-  checksum: 8b717ac5d53df0027c05509f03d0534700b5898dd1c3a53fb2dc4c0499ca5971b14aae67f522d09eb9f509e77f50afa95fdb3eda1afbff8b071c18a3d2905e93
   languageName: node
   linkType: hard
 
@@ -3396,16 +3357,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/chrome@npm:^0.0.136":
-  version: 0.0.136
-  resolution: "@types/chrome@npm:0.0.136"
-  dependencies:
-    "@types/filesystem": "*"
-    "@types/har-format": "*"
-  checksum: af96fdc79fb019d827fdb6269f831921f8f36215ee05a2624436dd2ad4d84d7be12333cc6f54912fb8bae0ca49cbfde5a78de94723bfbd20d309d2e71e274a1b
-  languageName: node
-  linkType: hard
-
 "@types/concat-stream@npm:^2.0.0":
   version: 2.0.0
   resolution: "@types/concat-stream@npm:2.0.0"
@@ -3511,29 +3462,6 @@ __metadata:
     "@types/qs": "*"
     "@types/serve-static": "*"
   checksum: 15c1af46d02de834e4a225eccaa9d85c0370fdbb3ed4e1bc2d323d24872309961542b993ae236335aeb3e278630224a6ea002078d39e651d78a3b0356b1eaa79
-  languageName: node
-  linkType: hard
-
-"@types/filesystem@npm:*":
-  version: 0.0.32
-  resolution: "@types/filesystem@npm:0.0.32"
-  dependencies:
-    "@types/filewriter": "*"
-  checksum: 4b9079d200a3b241722b90e1c5806c4b32c4dac87d42a1c7ef76a2c0dafdbe7d5f1a379b873ad5de73622b44de6599e1522908f67b938d54e785bd1c36e302a0
-  languageName: node
-  linkType: hard
-
-"@types/filewriter@npm:*":
-  version: 0.0.29
-  resolution: "@types/filewriter@npm:0.0.29"
-  checksum: 0c58aa875c2c245be7dbc42b20212f3203e13d11ec013a4a5cd0febf0e8b87214be5882c05ff9d7bdf0398f145a4fdbc24b7e6cf7b094e134a3b4c7a0598502f
-  languageName: node
-  linkType: hard
-
-"@types/har-format@npm:*":
-  version: 1.2.10
-  resolution: "@types/har-format@npm:1.2.10"
-  checksum: 14c0118d809e77a0bac9deec0a87159c28beab21105cfce3aa291b51e28d4c07142851c4e6b93b7ecb4ea237fe07d39ba98a42bb2de2f5891144733411ac76b7
   languageName: node
   linkType: hard
 
@@ -6476,13 +6404,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"detect-browser@npm:^5.2.0":
-  version: 5.3.0
-  resolution: "detect-browser@npm:5.3.0"
-  checksum: dd6e08d55da1d9e0f22510ac79872078ae03d9dfa13c5e66c96baedc1c86567345a88f96949161f6be8f3e0fafa93bf179bdb1cd311b14f5f163112fcc70ab49
-  languageName: node
-  linkType: hard
-
 "detect-libc@npm:^2.0.0, detect-libc@npm:^2.0.1":
   version: 2.0.1
   resolution: "detect-libc@npm:2.0.1"
@@ -6900,7 +6821,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"end-of-stream@npm:^1.1.0, end-of-stream@npm:^1.4.1, end-of-stream@npm:^1.4.4":
+"end-of-stream@npm:^1.1.0, end-of-stream@npm:^1.4.1":
   version: 1.4.4
   resolution: "end-of-stream@npm:1.4.4"
   dependencies:
@@ -7296,15 +7217,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eth-rpc-errors@npm:^4.0.2":
-  version: 4.0.3
-  resolution: "eth-rpc-errors@npm:4.0.3"
-  dependencies:
-    fast-safe-stringify: ^2.0.6
-  checksum: 5fa31d1a10fdb340733b9a55e38e7687222c501052ca20743cef4d0c911a9bbcc0cad54aa6bf3e4b428604c071ff519803060e1cbc79ddb7c9257c11d407d32a
-  languageName: node
-  linkType: hard
-
 "ev-emitter@npm:^1.0.0, ev-emitter@npm:^1.0.1, ev-emitter@npm:^1.1.1":
   version: 1.1.1
   resolution: "ev-emitter@npm:1.1.1"
@@ -7422,22 +7334,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"extension-port-stream@npm:^2.0.1":
-  version: 2.0.1
-  resolution: "extension-port-stream@npm:2.0.1"
-  dependencies:
-    webextension-polyfill-ts: ^0.22.0
-  checksum: e127fd94a9b7b2b847d5f292fa940b6f63d1088ea5ed6a1e3142628b358a503881f1a04e2d8ad5aec2642f7672e054e16accd933bf9cdcfa75465aba32470d07
-  languageName: node
-  linkType: hard
-
-"fast-deep-equal@npm:^2.0.1":
-  version: 2.0.1
-  resolution: "fast-deep-equal@npm:2.0.1"
-  checksum: b701835a87985e0ec4925bdf1f0c1e7eb56309b5d12d534d5b4b69d95a54d65bb16861c081781ead55f73f12d6c60ba668713391ee7fbf6b0567026f579b7b0b
-  languageName: node
-  linkType: hard
-
 "fast-deep-equal@npm:^3.1.1, fast-deep-equal@npm:^3.1.3":
   version: 3.1.3
   resolution: "fast-deep-equal@npm:3.1.3"
@@ -7472,7 +7368,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fast-safe-stringify@npm:^2.0.6, fast-safe-stringify@npm:^2.0.7, fast-safe-stringify@npm:^2.1.1":
+"fast-safe-stringify@npm:^2.0.7, fast-safe-stringify@npm:^2.1.1":
   version: 2.1.1
   resolution: "fast-safe-stringify@npm:2.1.1"
   checksum: a851cbddc451745662f8f00ddb622d6766f9bd97642dabfd9a405fb0d646d69fc0b9a1243cbf67f5f18a39f40f6fa821737651ff1bceeba06c9992ca2dc5bd3d
@@ -9822,26 +9718,6 @@ __metadata:
   bin:
     json-refs: ./bin/json-refs
   checksum: ad77ac11eb0c6992ac870691eeb97a43663224ab32d41b02af500d253c49ea902a4c8792ebb8f1ec6df9c2369c99a62038a0ebe45ef7d3610f984ca6f32e4927
-  languageName: node
-  linkType: hard
-
-"json-rpc-engine@npm:^6.1.0":
-  version: 6.1.0
-  resolution: "json-rpc-engine@npm:6.1.0"
-  dependencies:
-    "@metamask/safe-event-emitter": ^2.0.0
-    eth-rpc-errors: ^4.0.2
-  checksum: 33b6c9bbd81abf8e323a0281ee05871713203c40d34a4d0bda27706cd0a0935c7b51845238ba89b73027e44ebc8034bbd82db9f962e6c578eb922d9b95acc8bd
-  languageName: node
-  linkType: hard
-
-"json-rpc-middleware-stream@npm:^4.2.1":
-  version: 4.2.1
-  resolution: "json-rpc-middleware-stream@npm:4.2.1"
-  dependencies:
-    "@metamask/safe-event-emitter": ^2.0.0
-    readable-stream: ^2.3.3
-  checksum: 207c34ba2c55ff072864422ba48b03f49dd1bc488f0d9c017c7474d3f2514bd4b1cc14daf5324f96887cdaf8e5c1018701960f55fb45e9c3224e3d7db9f70765
   languageName: node
   linkType: hard
 
@@ -13518,21 +13394,6 @@ plugin-image-zoom@flexanalytics/plugin-image-zoom:
   languageName: node
   linkType: hard
 
-"readable-stream@npm:^2.3.3":
-  version: 2.3.8
-  resolution: "readable-stream@npm:2.3.8"
-  dependencies:
-    core-util-is: ~1.0.0
-    inherits: ~2.0.3
-    isarray: ~1.0.0
-    process-nextick-args: ~2.0.0
-    safe-buffer: ~5.1.1
-    string_decoder: ~1.1.1
-    util-deprecate: ~1.0.1
-  checksum: 65645467038704f0c8aaf026a72fbb588a9e2ef7a75cd57a01702ee9db1c4a1e4b03aaad36861a6a0926546a74d174149c8c207527963e0c2d3eee2f37678a42
-  languageName: node
-  linkType: hard
-
 "readable-stream@npm:^3.0.2":
   version: 3.6.2
   resolution: "readable-stream@npm:3.6.2"
@@ -16544,31 +16405,6 @@ plugin-image-zoom@flexanalytics/plugin-image-zoom:
   version: 2.0.1
   resolution: "web-namespaces@npm:2.0.1"
   checksum: b6d9f02f1a43d0ef0848a812d89c83801d5bbad57d8bb61f02eb6d7eb794c3736f6cc2e1191664bb26136594c8218ac609f4069722c6f56d9fc2d808fa9271c6
-  languageName: node
-  linkType: hard
-
-"webextension-polyfill-ts@npm:^0.22.0":
-  version: 0.22.0
-  resolution: "webextension-polyfill-ts@npm:0.22.0"
-  dependencies:
-    webextension-polyfill: ^0.7.0
-  checksum: b7d60c787c2041458117f837914b6bc4f03c1685174ff7b751ad19192e232fa7e71a0ac7a22d73e898856a86de198e61e9cd59c63764279127c7ee973f3202d8
-  languageName: node
-  linkType: hard
-
-"webextension-polyfill-ts@npm:^0.25.0":
-  version: 0.25.0
-  resolution: "webextension-polyfill-ts@npm:0.25.0"
-  dependencies:
-    webextension-polyfill: ^0.7.0
-  checksum: c4dc82c86e34cea717a26af549f2822d63e92af52632f5e909ea13b5e7bd9d6110781f10313e36ada2b54c770ebca018bc3784756d12ba3b0b623d285f1a14a7
-  languageName: node
-  linkType: hard
-
-"webextension-polyfill@npm:^0.7.0":
-  version: 0.7.0
-  resolution: "webextension-polyfill@npm:0.7.0"
-  checksum: fb738a5de07feb593875e02f25c3ab4276c8736118929556c8d4bdf965bb0f11c96ea263cd397b9b21259e8faf2dce2eaaa42ce08c922d96de7adb5896ec7d10
   languageName: node
   linkType: hard
 
