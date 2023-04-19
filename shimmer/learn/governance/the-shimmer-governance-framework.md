@@ -306,7 +306,7 @@ Currently, the following community members are selected as governance forum mode
 - Observe the forum and the governance process and propose required adjustments to the [parameters under probation](#specification-parameters-under-probation) after consent in the moderator group has been achieved.
 - Prepare the [seasonal vote](#48-seasons) to ratify the new seasonal specification that includes all recently made changes.
 - Moderators will manage discussions during the phases to ensure they are not disrespectful and focus on the proposal topic in a positive manner.
-- If a participant is aggressive during the discussions and continues to add negative comments within a discussion thread, a minimum of 2 moderators and one admin should discuss and ban a member if decided upon.
+- If a participant is aggressive during the discussions and continues to add negative comments within a discussion thread, a minimum of 2 moderators and one admin should discuss and ban a member if decided upon. Guiding principles are described in the forum's [Terms of Service](https://govern.iota.org/tos) that regulate all users' activities. They build the foundation for all moderator actions regarding moderation.
 - If a submittal is rejected, a moderator or admin will write a brief (one to three sentence) summary stating how the submittal did not follow guiding principles and/or the defined requirements set for submittals.
 - The forum moderators will only be granted access to the functionalities required to fulfill the above-described tasks in the forums [Governance] section. This does not provide special access to other administrative functions or the [Research] section of the forum.
 
