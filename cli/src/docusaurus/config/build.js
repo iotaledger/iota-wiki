@@ -1,26 +1,19 @@
-import path from 'path';
-import { merge } from '@wiki/utils/config';
-import common from './common';
+const { merge } = require('@wiki/utils/config');
+const common = require('./common');
 
-const { IOTA_WIKI_DIRECTORY } = process.env;
-
-const external = require(path.resolve(
-  process.cwd(),
-  IOTA_WIKI_DIRECTORY,
-  'docusaurus.config.js',
-));
-
-const internal = {
-  onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'throw',
-  onDuplicateRoutes: 'throw',
-  themeConfig: {
-    navbar: {
-      logo: {
-        href: 'https://wiki.iota.org',
+module.exports = async () => {
+  const internal = {
+    onBrokenLinks: 'throw',
+    onBrokenMarkdownLinks: 'throw',
+    onDuplicateRoutes: 'throw',
+    themeConfig: {
+      navbar: {
+        logo: {
+          href: 'https://wiki.iota.org',
+        },
       },
     },
-  },
-};
+  };
 
-module.exports = merge(external, common, internal);
+  return merge(await common(), internal);
+};
