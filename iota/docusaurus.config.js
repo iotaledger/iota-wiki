@@ -1,6 +1,6 @@
 const path = require('path');
 
-async function createConfig() {
+module.exports = async () => {
   const rehype_lodash_template = (await import('rehype-lodash-template')).default;
 
   return {
@@ -290,5 +290,3 @@ async function createConfig() {
     ],
   };
 }
-
-module.exports = createConfig;
