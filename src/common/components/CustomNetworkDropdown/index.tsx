@@ -200,6 +200,8 @@ export default function NetworkDropdownNavbarItem({
     Record<string, string[]>
   >({});
 
+  const FALlBACK_ROUTE = '/404';
+
   useEffect(() => {
     for (const networkPath of networkPaths) {
       if (networkPath === Network.Next) {
@@ -241,9 +243,13 @@ export default function NetworkDropdownNavbarItem({
         basePathSitemap[value.routeBasePath],
       );
 
-      // If no match make url be the landing
+      // If no match redirect to /404
       if (bestMatch === '/' || !bestMatch) {
-        url = value.routeBasePath;
+        const basePath = value.routeBasePath.endsWith('/')
+          ? value.routeBasePath.slice(0, -1)
+          : value.routeBasePath;
+
+        url = basePath + FALlBACK_ROUTE;
       } else {
         url = value.routeBasePath + bestMatch;
       }
