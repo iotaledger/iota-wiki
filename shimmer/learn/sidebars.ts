@@ -34,6 +34,39 @@ module.exports = {
     },
     {
       type: 'category',
+      label: 'Shimmer EVM',
+      collapsed: true,
+      items: [
+        'shimmer-EVM/introduction',
+        {
+          type: 'doc',
+          id: 'shimmer-EVM/bridging',
+          label: 'Bridging',
+        },
+        {
+          type: 'doc',
+          id: 'shimmer-EVM/composability',
+          label: 'Composability',
+        },
+        {
+          type: 'doc',
+          id: 'shimmer-EVM/feeless',
+          label: 'Feeless',
+        },
+        {
+          type: 'doc',
+          id: 'shimmer-EVM/governance',
+          label: 'Governance',
+        },
+        {
+          type: 'doc',
+          id: 'shimmer-EVM/multichain',
+          label: 'Multichain',
+        },
+      ],
+    },
+    {
+      type: 'category',
       label: 'Shimmer Token',
       collapsed: true,
       items: ['token/buying'],
