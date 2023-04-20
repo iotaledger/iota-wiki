@@ -35,10 +35,6 @@ module.exports = {
     {
       type: 'category',
       label: 'Shimmer EVM',
-      link: {
-        type: 'doc',
-        id: 'shimmer-EVM/introduction',
-      },
       collapsed: true,
       items: [
         'shimmer-EVM/introduction',
