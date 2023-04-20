@@ -102,6 +102,7 @@ module.exports = {
             'how-tos/seeds-accounts-and-addresses/accounts-and-addresses',
           ],
         },
+        'how-tos/request-testnet-funds',
         'how-tos/simple-transfer',
         {
           type: 'category',
