@@ -31,11 +31,7 @@ The full documentation and the source code for Hornet can be found here:
 
 Guides and easy one line installation scripts created by IOTA community members:
 
-- [SWARM Hornet](https://github.com/tanglebay/swarm-releases)
-- [Nuriel's playbook](https://github.com/nuriel77/hornet-playbook)
-- [DeMicheles one-liner using Nuriels Playbook](https://github.com/demichele/install-hornet-1.5)
-- [Install Hornet Mainnet Node using `apt` – Tutorial by Svenger 87 ](https://github.com/svenger87/hornet-alphanet-tutorial)
-- [Run Hornet on a Raspberry Pi – Raspihive Hornet](https://docs.raspihive.com/docs/install#45-first-start-of-raspihive-and-installation-of-the-hornet-node)
+- [SWARM Hornet](https://github.com/tanglebay/swarm)
 
 Step-by-Step guide for Windows users by Phylo:
 
@@ -56,7 +52,7 @@ The full documentation and the source code for Bee can be found here:
 
 ### Bee Community Tutorials
 
-- [SWARM Bee](https://github.com/tanglebay/swarm-releases)
+- [SWARM Bee](https://github.com/tanglebay/swarm)
 
 ## GoShimmer
 
@@ -77,8 +73,6 @@ The full documentation and the source code for GoShimmer can be found here:
 ### GoShimmer Community Tutorials
 
 - [SWARM GoShimmer](https://github.com/tanglebay/swarm)
-- [Nuriels GoShimmer Playbook](https://github.com/nuriel77/goshimmer-playbook)
-- [DeMichelle Shell Script](https://github.com/demichele/install-goshimmer)
 
 ## Chronicle Permanode
 
