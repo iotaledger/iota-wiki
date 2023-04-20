@@ -2553,7 +2553,6 @@ __metadata:
     "@types/webpack-env": ^1.16.3
     "@typescript-eslint/eslint-plugin": ^5.9.1
     "@typescript-eslint/parser": ^5.9.1
-    callsite: ^1.0.0
     clsx: ^1.2.1
     docusaurus-plugin-openapi-docs: ^1.4.7
     docusaurus-theme-openapi-docs: ^1.4.7
@@ -2564,6 +2563,7 @@ __metadata:
     file-loader: ^6.2.0
     flickity: 2.3.0
     flickity-fade: ^2.0.0
+    globby: ^13.1.4
     hast-util-is-element: 1.1.0
     plugin-image-zoom: flexanalytics/plugin-image-zoom
     prettier: ^2.4.1
@@ -2581,7 +2581,6 @@ __metadata:
     remark-import-partial: ^0.0.2
     remark-math: ^3.0.1
     remark-remove-comments: ^0.2.0
-    require-glob: ^4.1.0
     svgo: ^2.8.0
     typescript: ^4.5.4
     url-loader: ^4.1.1
@@ -5066,14 +5065,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"callsite@npm:^1.0.0":
-  version: 1.0.0
-  resolution: "callsite@npm:1.0.0"
-  checksum: 569686d622a288a4f0a827466c2f967b6d7a98f2ee1e6ada9dcf5a6802267a5e2a995d40f07113b5f95c7b2b2d5cbff4fdde590195f2a8bed24b829d048688f8
-  languageName: node
-  linkType: hard
-
-"callsites@npm:^3.0.0, callsites@npm:^3.1.0":
+"callsites@npm:^3.0.0":
   version: 3.1.0
   resolution: "callsites@npm:3.1.0"
   checksum: 072d17b6abb459c2ba96598918b55868af677154bec7e73d222ef95a8fdb9bbf7dae96a8421085cdad8cd190d86653b5b6dc55a4484f2e5b2e27d5e0c3fc15b3
@@ -7986,7 +7978,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"glob-parent@npm:^6.0.0, glob-parent@npm:^6.0.1, glob-parent@npm:^6.0.2":
+"glob-parent@npm:^6.0.1, glob-parent@npm:^6.0.2":
   version: 6.0.2
   resolution: "glob-parent@npm:6.0.2"
   dependencies:
@@ -8113,7 +8105,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"globby@npm:^11.0.1, globby@npm:^11.0.3, globby@npm:^11.0.4, globby@npm:^11.1.0":
+"globby@npm:^11.0.1, globby@npm:^11.0.4, globby@npm:^11.1.0":
   version: 11.1.0
   resolution: "globby@npm:11.1.0"
   dependencies:
@@ -8137,6 +8129,19 @@ __metadata:
     merge2: ^1.4.1
     slash: ^4.0.0
   checksum: c148fcda0c981f00fb434bb94ca258f0a9d23cedbde6fb3f37098e1abde5b065019e2c63fe2aa2fad4daf2b54bf360b4d0423d85fb3a63d09ed75a2837d4de0f
+  languageName: node
+  linkType: hard
+
+"globby@npm:^13.1.4":
+  version: 13.1.4
+  resolution: "globby@npm:13.1.4"
+  dependencies:
+    dir-glob: ^3.0.1
+    fast-glob: ^3.2.11
+    ignore: ^5.2.0
+    merge2: ^1.4.1
+    slash: ^4.0.0
+  checksum: e8bc13879972082d590cd1b0e27080d90d2e12fff7eeb2cee9329c29115ace14cc5b9f899e3d6beb136ba826307a727016658919a6f383e1511d698acee81741
   languageName: node
   linkType: hard
 
@@ -11775,15 +11780,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"parent-module@npm:^2.0.0":
-  version: 2.0.0
-  resolution: "parent-module@npm:2.0.0"
-  dependencies:
-    callsites: ^3.1.0
-  checksum: f131f13d687a938556a01033561fb1b274b39921eb4425c7a691f0d91dcfbe9b19759c2b8d425a3ee7c8a46874e57fa418a690643880c3c7c56827aba12f78dd
-  languageName: node
-  linkType: hard
-
 "parse-entities@npm:^2.0.0":
   version: 2.0.0
   resolution: "parse-entities@npm:2.0.0"
@@ -13834,17 +13830,6 @@ plugin-image-zoom@flexanalytics/plugin-image-zoom:
   version: 2.0.2
   resolution: "require-from-string@npm:2.0.2"
   checksum: a03ef6895445f33a4015300c426699bc66b2b044ba7b670aa238610381b56d3f07c686251740d575e22f4c87531ba662d06937508f0f3c0f1ddc04db3130560b
-  languageName: node
-  linkType: hard
-
-"require-glob@npm:^4.1.0":
-  version: 4.1.0
-  resolution: "require-glob@npm:4.1.0"
-  dependencies:
-    glob-parent: ^6.0.0
-    globby: ^11.0.3
-    parent-module: ^2.0.0
-  checksum: 8abc9dfa2052685ddec91f0fe4676dffe5792d3020629d11f32613befc1da57faf01c1d957450c182d5b4feb2348e2561914c73c431252067fddf46283d4377d
   languageName: node
   linkType: hard
 
