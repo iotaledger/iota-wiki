@@ -26,8 +26,8 @@ Stardust removes any data processing from the core protocol, as supporting use-c
 in the core protocol is unfeasible – and anyway, it would jeopardize node performance and hence transaction throughput
 in the network.
 
-You can add additional data to outputs that can be used by dApps built on the Tangle. The protocol will treat this 
-metadata as pure binary data, it has no effect on the validity of an output, but it will increase the required 
+You can add additional data to outputs that can be used by dApps built on the Tangle. The protocol will treat this
+metadata as pure binary data, it has no effect on the validity of an output, but it will increase the required
 [storage deposit](storage-deposit.md).
 
 ## Tagged Data Payloads
@@ -53,6 +53,6 @@ module.
 :::warning Impermanence
 
 Since the tag serves as a marker for second layer dApps, it is not actually considered by the Stardust protocol. This
-means that it could be removed completely. 
+means that it could be removed completely.
 
 :::

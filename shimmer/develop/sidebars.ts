@@ -98,7 +98,7 @@ module.exports = {
           type: 'category',
           label: 'Seeds, Accounts and Addresses',
           items: [
-            'how-tos/seeds-accounts-and-addresses/seeds',
+            'how-tos/seeds-accounts-and-addresses/seed-mnemonics',
             'how-tos/seeds-accounts-and-addresses/accounts-and-addresses',
           ],
         },

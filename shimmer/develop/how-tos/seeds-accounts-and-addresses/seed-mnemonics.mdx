@@ -19,19 +19,13 @@ import TabItem from '@theme/TabItem';
 If you want to send any type of [transaction](./../simple-transfer.mdx), you will need to use
 your [seed](#seeds) to generate [accounts](#accounts) and [addresses](#addresses).
 
-## Seeds
-
-You can use a [seed](https://wiki.iota.org/iota.rs/explanations/seeds/) to deterministically generate private keys and
-[addresses](#addresses). As the seed is the only key to your accounts and addresses, you should avoid using online
-seed generators as these could potentially be used to take control of your accounts.
-
-### Seed Mnemonics or Phrases
+## Seed Mnemonics or Phrases
 
 The client libraries use the [BIP39 standard](https://en.bitcoin.it/wiki/BIP_0039). This means that the libraries can
 derive the seed from a mnemonic or seed phrase, making it easier for you to write down or remember. The mnemonic itself
 is simply a random list of english words.
 
-#### Related How-to Guides
+### Related How-to Guides
 
 <Tabs groupId={'libraries'}>
 <TabItem value="wallet.rs" label="wallet.rs" >
