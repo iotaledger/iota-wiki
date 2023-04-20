@@ -1,3 +1,16 @@
+---
+image: /img/iota-wiki.png
+description: 'Learn how the Shimmer network enables composability and interoperability in a multi-chain environment, offering full customization of smart contract chains and increased throughput.'
+keywords:
+  - Shimmer network
+  - composability
+  - interoperability
+  - multi-chain environment
+  - smart contract chains
+  - horizontal scaling
+  - DLT landscape
+---
+
 # Composability in a Multi-Chain Environment with Shimmer Network
 
 :::note tl;dr;

@@ -1,3 +1,15 @@
+---
+image: /img/iota-wiki.png
+description: 'Discover how Shimmer enables a multi-chain environment with parallel processing, feeless anchoring, and unlimited smart contract chains, revolutionizing the world of dApps and digital assets.'
+keywords:
+  - Shimmer network
+  - multi-chain environment
+  - smart contract chains
+  - L1 Shimmer network
+  - anchoring
+  - parallel processing
+---
+
 # Multi-Chain Environment
 
 :::note tl;dr;

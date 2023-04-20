@@ -1,3 +1,16 @@
+---
+image: /img/iota-wiki.png
+description: 'Discover Shimmer EVM offering scalability, composability, and interoperability for a seamless multi-chain experience on the Shimmer network.'
+keywords:
+  - Shimmer EVM
+  - IOTA ecosystem
+  - scalability
+  - composability
+  - interoperability
+  - multi-chain
+  - smart contracts
+---
+
 # What is Shimmer EVM?
 
 :::note tl;dr;

@@ -1,3 +1,16 @@
+---
+image: /img/iota-wiki.png
+description: 'Discover how the Shimmer network enables feeless token creation and transfers, simplifies chain bridging, and offers more control over fees, revolutionizing the management of digital assets.'
+keywords:
+  - Shimmer network
+  - feeless token creation
+  - chain bridging
+  - digital assets
+  - smart contract chains
+  - dApps
+  - $SMR token
+---
+
 # Create and Transfer Tokens Freely in the Shimmer Network
 
 :::note tl;dr;

@@ -1,3 +1,16 @@
+---
+image: /img/iota-wiki.png
+description: 'Learn about the governance of the ShimmerEVM Chain, its initial Proof of Authority model, and the plan to transition to a decentralized community-driven model.'
+keywords:
+  - ShimmerEVM Chain
+  - governance
+  - Proof of Authority
+  - IOTA Foundation
+  - decentralized
+  - community-driven
+  - smart contracts
+---
+
 # Governance of the ShimmerEVM Chain
 
 :::note tl;dr;

@@ -1,3 +1,16 @@
+---
+image: /img/iota-wiki.png
+description: 'Discover how the Shimmer network connects smart contract kingdoms, providing seamless and feeless trading between them, eliminating the need for traditional bridges.'
+keywords:
+  - Shimmer network
+  - bridging
+  - smart contract kingdoms
+  - interconnected chains
+  - feeless trading
+  - ShimmerEVM chain
+  - Layer 2 ecosystems
+---
+
 # Bridging: Connecting Universes with Shimmer Network
 
 :::note tl;dr;
