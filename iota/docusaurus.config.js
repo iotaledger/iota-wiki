@@ -1,7 +1,8 @@
 const path = require('path');
 
 module.exports = async () => {
-  const rehype_lodash_template = (await import('rehype-lodash-template')).default;
+  const rehype_lodash_template = (await import('rehype-lodash-template'))
+    .default;
 
   return {
     title: 'IOTA Wiki',
@@ -229,7 +230,7 @@ module.exports = async () => {
                 values: {
                   network: 'IOTA',
                 },
-              }
+              },
             ],
           ],
           showLastUpdateTime: true,
@@ -289,4 +290,4 @@ module.exports = async () => {
       ],
     ],
   };
-}
+};
