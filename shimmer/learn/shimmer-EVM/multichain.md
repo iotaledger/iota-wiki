@@ -37,11 +37,10 @@ information is anchored and made available.
 
 - Parallel processing instead of predefined block intervals with limited block space.
 - No fee bidding wars to be included in the next block.
-- Secure anchor for an unlimited number of smart contract chains, allowing for a multi-chain environment.
+- Secure anchor for unlimited smart contract chains, allowing for a multi-chain environment.
 - Feeless anchoring that secures smart contract execution by making changes or execution results transparent to anyone.
 
 ### Value in a Multi-Chain Environment
 
-The Shimmer network comes with a powerful layer 1 tokenization framework, allowing anyone to mint, manage, melt, or burn
-their own custom layer 1 tokens and NFTs. For more information on this, check out the high-level introduction and deep
-dive articles.
+The Shimmer network has a powerful layer 1 tokenization framework, allowing anyone to mint, manage, melt, or burn
+their custom layer 1 tokens and NFTs.

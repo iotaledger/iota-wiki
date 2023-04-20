@@ -15,7 +15,7 @@ keywords:
 
 :::note tl;dr;
 The Shimmer network enables full customization of smart contract chains while retaining interoperability and
-composability between them, allowing for near limitless capacity and horizontal scaling.
+composability between them, allowing for near-limitless capacity and horizontal scaling.
 :::
 
 ## Tailoring Smart Contract Chains to Your Needs
@@ -34,7 +34,7 @@ demand outpacing capacity, resulting in bidding wars for fees or clogged chains.
 chains, is a quick fix to increase throughput. However, this introduces challenges for frictionless interoperability and
 composability between chains.
 
-By committing state changes of smart contracts [feelessly](feeless.md) to the Shimmer network, chaining of smart
+By committing state changes of smart contracts [feelessly](feeless.md) to the Shimmer network, chaining smart
 contracts becomes possible, allowing the result of one execution to be used as input for another. This property, known
 as "composability," enables seamless interaction between smart contracts across chains.
 

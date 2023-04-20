@@ -24,7 +24,7 @@ experience.
 [Shimmer EVM](https://wiki.iota.org/shimmer/smart-contracts/guide/evm/introduction/) is a groundbreaking addition to the
 IOTA ecosystem that brings unparalleled scalability, composability, and interoperability to the smart contract
 landscape. As the first fully EVM-compatible smart contract chain on the Shimmer network, it overcomes major drawbacks
-in existing blockchain solutions and offers higher utility by an order of magnitude.
+in existing blockchain solutions and offers higher utility.
 
 ## The Significance of Parallelization in the Shimmer Network
 

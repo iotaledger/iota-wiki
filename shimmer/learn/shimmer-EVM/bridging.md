@@ -26,7 +26,7 @@ kingdoms involve costly and hard-to-maintain bridges, which often fail with disa
 
 The Shimmer network, on the other hand, offers a different approach. Instead of moats and drawbridges, Shimmer provides
 omnidirectional hyperloops that connect every kingdom with all others. This creates a vast, interconnected network of
-smart contract chains, enabling seamless communication and trading between them.
+smart contract chains, enabling seamless communication and trading.
 
 ## Full Freedom and Control with Shimmer Network
 
@@ -34,7 +34,7 @@ The Shimmer network allows you to define and customize your own smart contract k
 You can choose to keep your realm closed off, controlling access and routes available to users, or open it up for
 trading with other kingdoms.
 
-Shimmer serves as the infrastructure connecting all smart contract chains anchored to it. It functions as a universal
+Shimmer serves as the infrastructure connecting all smart contract chains anchored to it. It is a universal
 marketplace where everyone speaks the same language and accepts the same base currency. Best of all, trading on this
 marketplace is [feeless](feeless.md), making it highly attractive for users.
 
