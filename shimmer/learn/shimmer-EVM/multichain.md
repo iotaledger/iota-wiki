@@ -14,7 +14,7 @@ keywords:
 
 :::note tl;dr;
 Shimmer enables a multi-chain environment where anyone can deploy their own smart contract chains and anchor them to the
-L1 Shimmer network. This allows for parallel processing, feeless anchoring, and unlimited smart contract chains.
+L1 Shimmer network. This allows for parallel processing, [feeless](feeless.md) anchoring, and unlimited smart contract chains.
 :::
 
 ## ShimmerEVM and Beyond

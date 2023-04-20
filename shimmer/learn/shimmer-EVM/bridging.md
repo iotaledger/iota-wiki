@@ -36,7 +36,7 @@ trading with other kingdoms.
 
 Shimmer serves as the infrastructure connecting all smart contract chains anchored to it. It functions as a universal
 marketplace where everyone speaks the same language and accepts the same base currency. Best of all, trading on this
-marketplace is feeless, making it highly attractive for users.
+marketplace is [feeless](feeless.md), making it highly attractive for users.
 
 For those who do not wish to create their own kingdom or deploy their own chain, the public ShimmerEVM chain offers an
 easy alternative to participate in this interconnected universe.
