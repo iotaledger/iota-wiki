@@ -17,16 +17,16 @@ keywords:
 
 ## Security Checklist
 
-- I use Stronghold.
-- I use a strong password (32 character length, Shannon Entropy ~ 4.0) for encrypting the stronghold.
-- I rotate the stronghold password on a regular basis.
-- I create a daily backup of the stronghold.snapshot file.
-- I keep a secure history of passwords used for recovery.
-- I use a secure password management service that integrates with the server.
-- I use a linux based server (best memory security).
-- I have isolated my server behind a DMZ.
-- Don't use SQLite.
-- Don't store passwords and backups on the same device.
+- [ ] I use Stronghold.
+- [ ] I use a strong password (32 character length, Shannon Entropy ~ 4.0) for encrypting the stronghold.
+- [ ] I rotate the stronghold password on a regular basis.
+- [ ] I create a daily backup of the stronghold.snapshot file.
+- [ ] I keep a secure history of passwords used for recovery.
+- [ ] I use a secure password management service that integrates with the server.
+- [ ] I use a linux based server (best memory security).
+- [ ] I have isolated my server behind a DMZ.
+- [ ] Don't use SQLite.
+- [ ] Don't store passwords and backups on the same device.
 
 ## How to Backup Your Account
 

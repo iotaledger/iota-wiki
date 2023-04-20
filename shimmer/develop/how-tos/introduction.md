@@ -1,3 +1,18 @@
+---
+image: /img/iota-wiki.png
+description: 'An introduction to the Stardust ledger, UTXO model, and Shimmer network. Learn how to start building on Shimmer using the Stardust protocol, from generating a seed, accounts, and addresses, to minting NFT collections.'
+keywords:
+  - Stardust
+  - Ledger
+  - UTXO
+  - Shimmer
+  - IOTA
+  - Seed
+  - Accounts
+  - Addresses
+  - NFT
+---
+
 # Introduction
 
 The Stardust ledger is a distributed database that records ownership of funds in the network. Users modify the ledger by
@@ -13,4 +28,6 @@ that is generally called the owner address. Stardust extends this concept by let
 spending constraints on UTXOs, for example that an output can only be spent after a certain time.
 
 The following sections will show you how to start building on Shimmer using the Stardust protocol, from generating a
-seed, accounts and addresses, to minting NFT collections.
+[seed](seeds-accounts-and-addresses/seeds.mdx),
+[accounts and addresses](seeds-accounts-and-addresses/accounts-and-addresses.mdx), to
+[minting NFT collections](nft/nft-collections.mdx).
