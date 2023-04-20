@@ -14,9 +14,11 @@ keywords:
 # Governance of the ShimmerEVM Chain
 
 :::note tl;dr;
+
 The ShimmerEVM chain initially uses Proof of Authority (PoA) with 12 validators chosen by the IOTA Foundation. Over
 time, control will be handed over to the community, and the ShimmerEVM chain will transition to a more decentralized
 model.
+
 :::
 
 ## Proof of Authority and Community Involvement

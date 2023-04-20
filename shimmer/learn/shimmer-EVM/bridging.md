@@ -14,8 +14,10 @@ keywords:
 # Bridging: Connecting Universes with Shimmer Network
 
 :::note tl;dr;
+
 The Shimmer network allows you to create interconnected smart contract kingdoms with ease, enabling seamless and feeless
 trading between them and eliminating the need for costly, unreliable bridges.
+
 :::
 
 ## Your Own Kingdom in a Sea of Opportunity

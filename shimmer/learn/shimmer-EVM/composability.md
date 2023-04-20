@@ -14,8 +14,10 @@ keywords:
 # Composability in a Multi-Chain Environment with Shimmer Network
 
 :::note tl;dr;
+
 The Shimmer network enables full customization of smart contract chains while retaining interoperability and
 composability between them, allowing for near-limitless capacity and horizontal scaling.
+
 :::
 
 ## Tailoring Smart Contract Chains to Your Needs

@@ -14,8 +14,10 @@ keywords:
 # Create and Transfer Tokens Freely in the Shimmer Network
 
 :::note tl;dr;
+
 The Shimmer network enables you to create and transfer tokens without fees, simplifies [bridging](bridging.md) chains, and offers you
 more control over fees, making it a powerful solution for managing digital assets.
+
 :::
 
 ## Feeless Token Creation and Transfers
