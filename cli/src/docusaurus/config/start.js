@@ -1,7 +1,9 @@
-import external from '@iota-wiki/core/docusaurus.config';
 import { merge } from '@wiki/utils/config';
+import chokidar from 'chokidar';
 
-const internal = {
+let externalConfig = require('@site/docusaurus.config.js');
+
+let internalConfig = {
   onBrokenLinks: 'log',
   onBrokenMarkdownLinks: 'log',
   onDuplicateRoutes: 'log',
@@ -15,4 +17,11 @@ const internal = {
   },
 };
 
-module.exports = merge(external, internal);
+// Watch for changes on the external configuration file
+chokidar.watch(externalConfig).on('change', () => {
+  console.log('External configuration file changed, reloading...');
+  externalConfig = require('@site/docusaurus.config.js');
+  internalConfig = merge(externalConfig, internalConfig);
+});
+
+module.exports = internalConfig;

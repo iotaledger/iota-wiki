@@ -1,5 +1,6 @@
-import external from '@iota-wiki/core/docusaurus.config';
 import { merge } from '@wiki/utils/config';
+
+const external = require('@site/docusaurus.config.js');
 
 const internal = {
   onBrokenLinks: 'throw',

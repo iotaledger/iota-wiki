@@ -2507,6 +2507,7 @@ __metadata:
     "@types/prettier": ^2
     "@yarnpkg/shell": ^3.2.0
     axios: ^0.26.1
+    chokidar: ^3.5.3
     clipanion: ^3.2.0-rc.10
     copyfiles: ^2.4.1
     ink: ^3.2.0
