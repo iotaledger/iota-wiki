@@ -1,5 +1,5 @@
 import React from 'react';
-import type { MetaMaskInpageProvider } from "@metamask/providers";
+import type { MetaMaskInpageProvider } from '@metamask/providers';
 
 declare global {
   interface Window {
