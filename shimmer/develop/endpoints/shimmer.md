@@ -26,4 +26,4 @@ Chronicle API: https://chronicle.shimmer.network
 
 These endpoints have MQTT (via WebSockets) exposed and offer the HTTP REST API (according to the
 specifications [TIP-25](https://wiki.iota.org/shimmer/tips/tips/TIP-0025), [TIP-26](https://wiki.iota.org/shimmer/tips/tips/TIP-0026)
-and [TIP-28](https://wiki.iota.org/shimmer//tips/tips/TIP-0028)) over TLS
+and [TIP-28](https://wiki.iota.org/shimmer/tips/tips/TIP-0028)) over TLS
