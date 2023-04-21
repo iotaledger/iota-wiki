@@ -26,6 +26,10 @@ module.exports = async () => {
 
   const internal = await glob(['tutorials', 'common', ENVIRONMENT]);
 
+  const scripts = {
+    scripts: ['/js/search-environment-observer.js'],
+  };
+
   const search = {
     themeConfig: {
       algolia: {
@@ -65,5 +69,6 @@ module.exports = async () => {
     ...internal,
     search,
     isProduction ? production : {},
+    scripts,
   );
 };
