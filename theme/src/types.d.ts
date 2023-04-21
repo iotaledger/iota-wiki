@@ -12,3 +12,7 @@ declare module '@theme/CodeSnippetBlock' {
 
   export default function CodeSnippetBlock(props: Props): JSX.Element;
 }
+
+declare module '@theme/AddToMetaMaskButton' {
+  export default function AddToMetaMaskButton(): JSX.Element;
+}
