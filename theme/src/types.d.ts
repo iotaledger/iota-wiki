@@ -11,4 +11,5 @@ declare module '@theme/CodeSnippetBlock' {
   }
 
   export default function CodeSnippetBlock(props: Props): JSX.Element;
+  export default function AddToMetaMaskButton(): JSX.Element;
 }

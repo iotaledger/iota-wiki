@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "@docusaurus/theme-classic": "2.2.0",
+    "@metamask/providers": "^10.2.1",
     "clsx": "^1.2.1"
   },
   "devDependencies": {
