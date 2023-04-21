@@ -9,7 +9,7 @@ declare global {
 
 export default function AddToMetaMaskButton() {
   async function addNetwork() {
-    if (typeof window.ethereum !== 'undefined') {
+    if (window.ethereum) {
       try {
         await window.ethereum.request({
           method: 'wallet_addEthereumChain',
