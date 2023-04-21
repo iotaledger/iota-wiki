@@ -24,8 +24,8 @@ price accounts for it or the owner should be refunded by the recipient via a _St
 Transaction B sends the newly issued _NFT Output #1_ to the _recipient_:
 
 - Since it has just been minted in Transaction A, The _NFT ID_ is all zeros in _NFT Output #1_. While the value of the
-  field ([explicit NFT ID](https://github.com/lzpap/tips/blob/master/tips/TIP-0018/tip-0018.md#additional-transaction-semantic-validation-rules-3))
-  is all zeroes, based on the protocol rules we know that the [implicit NFT ID](https://github.com/lzpap/tips/blob/master/tips/TIP-0018/tip-0018.md#additional-transaction-semantic-validation-rules-3)
+  field ([explicit NFT ID](https://wiki.iota.org/shimmer/tips/tips/TIP-0018/tip-0018.md#additional-transaction-semantic-validation-rules-3))
+  is all zeroes, based on the protocol rules we know that the [implicit NFT ID](https://wiki.iota.org/shimmer/tips/tips/TIP-0018/tip-0018.md#additional-transaction-semantic-validation-rules-3)
   can be calculated from the _Output ID_ of _NFT Output #1_.
 - When the minted NFT is transferred for the first time, the _NFT ID_ must be set as the implicit NFT ID of the mint
   output. Therefore, _NFT Output #2_ sets the value of the _NFT ID_ field as the blake2b-256 hash of _NFT Output #1 ID_.

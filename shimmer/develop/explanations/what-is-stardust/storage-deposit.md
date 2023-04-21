@@ -30,7 +30,7 @@ amount of base currency tokens to cover for the storage on nodes. The amount dep
 ledger entry.
 
 The storage deposit is not a fee, because it is fully refunded as soon as the ledger entry is cleaned up. Read more
-about the new storage deposit system in [TIP-19](https://github.com/iotaledger/tips/blob/main/tips/TIP-0019/tip-0019.md).
+about the new storage deposit system in [TIP-19](https://wiki.iota.org/shimmer/tips/tips/TIP-0019/).
 
 ## Data Storage in Outputs
 

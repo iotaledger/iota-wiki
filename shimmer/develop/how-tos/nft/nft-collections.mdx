@@ -68,14 +68,14 @@ also provide the storage deposit for the newly minted NFTs, therefore _Basic Out
 :::note
 
 If you need to mint more than _Max Outputs Count_
-([TIP-22](https://github.com/Wollac/protocol-rfcs/blob/protocol-parameters/tips/TIP-0022/tip-0022.md#detailed-design) IOTA,
-[TIP-32](https://github.com/iotaledger/tips/blob/shimmer-params/tips/TIP-0032/tip-0032.md#global-parameters) Shimmer)
+([TIP-22](https://wiki.iota.org/shimmer/tips/tips/TIP-0022/#detailed-design) IOTA,
+[TIP-32](https://wiki.iota.org/shimmer/tips/tips/TIP-0032/#global-parameters) Shimmer)
 NFTs, you must do it via chaining together more transactions.
 
 :::
 
 Once the minting transaction confirms, it is possible to fetch all NFT outputs within the collection via the
-[Indexer API TIP-26](https://github.com/iotaledger/tips/blob/indexer-api/tips/TIP-0026/tip-0026.md). The following query
+[Indexer API TIP-26](https://wiki.iota.org/shimmer/tips/tips/TIP-0026/). The following query
 returns all NFT outputs (their _Output IDs_) that have been issued by the Collection NFT:
 
 ```

@@ -46,4 +46,4 @@ A _Tag Feature_ is a small piece of data intended to be used as an indexation ta
 built around the network. It becomes possible to map data (Metadata Feature) stored in the ledger by a specific party
 (Sender Feature) for a specific purpose (Tag Feature).
 
-To read more about outputs, the Stardust ledger and tokenization concepts check out [TIP-18](https://github.com/lzpap/tips/blob/master/tips/TIP-0018/tip-0018.md).
+To read more about outputs, the Stardust ledger and tokenization concepts check out [TIP-18](https://wiki.iota.org/shimmer/tips/tips/TIP-0018/).

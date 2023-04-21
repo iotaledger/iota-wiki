@@ -23,7 +23,7 @@ Stardust introduces a _Network Identifier_ field in the signed part of transacti
 in any other network. Even if a transaction is otherwise correct, a different network than the intended would
 immediately reject it based on the mismatching network identifier.
 
-For more information, browse [TIP-20](https://github.com/iotaledger/tips/pull/40) that describes the updated transaction payload.
+For more information, browse [TIP-20](https://wiki.iota.org/shimmer/tips/tips/TIP-0020/) that describes the updated transaction payload.
 
 ## Transaction Inputs Commitment
 

@@ -12,7 +12,7 @@ keywords:
 # NFT as a Wallet
 
 Each NFT has its own unique _NFT ID_ that also functions as an address on protocol level. The address can be deterministically
-generated from the ID as outlined in [TIP-31](https://github.com/iotaledger/tips/blob/main/tips/TIP-0031/tip-0031.md), basically
+generated from the ID as outlined in [TIP-31](https://wiki.iota.org/shimmer/tips/tips/TIP-0031/), basically
 prepending _NFT ID_ with the _NFT Address Type_ and encoding it as a [Bech32](https://github.com/bitcoin/bips/blob/master/bip-0173.mediawiki) string.
 
 This means that any output (except for a foundry) can be locked to an _NFT Address_ in the protocol. An _NFT Address_
@@ -32,8 +32,8 @@ but it would also be possible to place them in any output after _Basic Output #4
 owner of the NFT to define what outputs to create in the transaction.
 
 Just like any other output, an _NFT Output_ supports holding up to _Max Native Token Count_ (defined in
-[TIP-22](https://github.com/Wollac/protocol-rfcs/blob/protocol-parameters/tips/TIP-0022/tip-0022.md#detailed-design)
-for IOTA and [TIP-32](https://github.com/iotaledger/tips/blob/shimmer-params/tips/TIP-0032/tip-0032.md#global-parameters)
+[TIP-22](https://wiki.iota.org/shimmer/tips/tips/TIP-0022/#detailed-design)
+for IOTA and [TIP-32](https://wiki.iota.org/shimmer/tips/tips/TIP-0032/#global-parameters)
 for Shimmer). In case you need to store more native tokens, distribute them in _Basic Outputs_ that are owned by the NFT.
 
 ![Transaction F - Unlocking funds owned by the NFT](/img/stardust_explanations/stardust_ledger_anatomy/nft_transaction/tx_F.svg)

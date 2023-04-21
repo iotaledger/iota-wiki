@@ -23,14 +23,14 @@ A simple transaction moves funds from one user account to another. On a high lev
 - **Unlock Blocks**: they hold the signatures authorizing the consumption of inputs.
 - **Outputs**: newly created outputs holding transferred funds.
 
-In Stardust, you can create a simple transfer using a [Basic Output](https://github.com/iotaledger/tips/blob/master/tips/TIP-0018/tip-0018.md#basic-output).
+In Stardust, you can create a simple transfer using a [Basic Output](https://wiki.iota.org/shimmer/tips/tips/TIP-0018/#basic-output).
 Basic Outputs define the base token funds they hold in the _Amount_ field.
 
 ## Add the Recipient Address
 
 Basic Outputs need to have at least one
-[Unlock Condition](https://github.com/iotaledger/tips/blob/master/tips/TIP-0018/tip-0018.md#unlock-conditions): the
-[Address Unlock Condition](https://github.com/iotaledger/tips/blob/master/tips/TIP-0018/tip-0018.md#address-unlock-condition).
+[Unlock Condition](https://wiki.iota.org/shimmer/tips/tips/TIP-0018#unlock-conditions): the
+[Address Unlock Condition](https://wiki.iota.org/shimmer/tips/tips/TIP-0018#address-unlock-condition).
 This means that to unlock the output in a transaction, you have to present a valid signature for the recipient's address.
 The signature signs the whole transaction content, thereby authorizing the consumption of inputs and declaring the
 intention to create new outputs.

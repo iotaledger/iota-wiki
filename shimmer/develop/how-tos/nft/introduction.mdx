@@ -13,18 +13,18 @@ keywords:
 
 A non-fungible token (NFT) is a globally unique token representing ownership of any distinct asset.
 In Stardust, NFTs are implemented as a standalone output type called
-[_NFT Output_](https://github.com/lzpap/tips/blob/master/tips/TIP-0018/tip-0018.md#nft-output).
+[_NFT Output_](https://wiki.iota.org/shimmer/tips/tips/TIP-0018/#nft-output).
 Once minted, the _NFT Output_ gets assigned a unique _NFT ID_ by the protocol based on the minting transaction. Issuers
 may choose to define immutable properties on the output upon minting, such as:
 
-- The [issuer](https://github.com/lzpap/tips/blob/master/tips/TIP-0018/tip-0018.md#issuer-feature) identity, namely the address of the issuer.
-- The [metadata](https://github.com/lzpap/tips/blob/master/tips/TIP-0018/tip-0018.md#metadata-feature) treated as binary data by the protocol.
+- The [issuer](https://wiki.iota.org/shimmer/tips/tips/TIP-0018/#issuer-feature) identity, namely the address of the issuer.
+- The [metadata](https://wiki.iota.org/shimmer/tips/tips/TIP-0018/#metadata-feature) treated as binary data by the protocol.
 
 ## NFTs as a Wallet
 
 A distinct feature of L1 NFTs is the ability to function as standalone wallets. Each NFT owns an address derived from its
 unique _NFT ID_, called _NFT Address_. NFT addresses look pretty much like regular Ed25519 addresses when encoded in bech32,
-except they [always start with](https://github.com/lzpap/tips/blob/master/tips/TIP-0018/tip-0018.md#address-unlock-condition)
+except they [always start with](https://wiki.iota.org/shimmer/tips/tips/TIP-0018/#address-unlock-condition)
 the character `z` after the separator. (`iota1z...`, `smr1z...`).
 
 ### Unlocking NFT-owned Funds
@@ -41,11 +41,11 @@ forever, since it is impossible to recreate the same output with the same _NFT I
 ## Supported Features
 
 _NFT Outputs_ support all possible (mutable) _Features_ and _Unlock Conditions_, just like _Basic Outputs_. Therefore,
-you can define [timelocks](https://github.com/lzpap/tips/blob/master/tips/TIP-0018/tip-0018.md#timelock-unlock-condition),
-[expiration](https://github.com/lzpap/tips/blob/master/tips/TIP-0018/tip-0018.md#expiration-unlock-condition)
-and [storage deposit return](https://github.com/lzpap/tips/blob/master/tips/TIP-0018/tip-0018.md#storage-deposit-return-unlock-condition)
-conditions on NFTs, but also features like [sender](https://github.com/lzpap/tips/blob/master/tips/TIP-0018/tip-0018.md#sender-feature),
-[metadata](https://github.com/lzpap/tips/blob/master/tips/TIP-0018/tip-0018.md#metadata-feature) or [tag](https://github.com/lzpap/tips/blob/master/tips/TIP-0018/tip-0018.md#tag-feature). With such a powerful feature set, NFTs become first-class citizens in the ledger and also support
+you can define [timelocks](https://wiki.iota.org/shimmer/tips/tips/TIP-0018/#timelock-unlock-condition),
+[expiration](https://wiki.iota.org/shimmer/tips/tips/TIP-0018/#expiration-unlock-condition)
+and [storage deposit return](https://wiki.iota.org/shimmer/tips/tips/TIP-0018/#storage-deposit-return-unlock-condition)
+conditions on NFTs, but also features like [sender](https://wiki.iota.org/shimmer/tips/tips/TIP-0018/#sender-feature),
+[metadata](https://wiki.iota.org/shimmer/tips/tips/TIP-0018/#metadata-feature) or [tag](https://wiki.iota.org/shimmer/tips/tips/TIP-0018/#tag-feature). With such a powerful feature set, NFTs become first-class citizens in the ledger and also support
 smart contract chain interactions.
 
 ## NFTs as native tokens?
