@@ -14,7 +14,7 @@ image: /img/logo/preview.png
 
 # Dynamic Proof of Work
 
-:::info 
+:::info
 
 This mechanism will be supported by the network after the first ever fluid protocol upgrade, meaning the feature will
 be activated in the already running, live network without any downtime. The node software is being refactored to
