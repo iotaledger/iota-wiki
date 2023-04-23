@@ -2,7 +2,7 @@ import type {
   OptionValidationContext,
   LoadContext,
   Plugin,
-} from "@docusaurus/types";
+} from '@docusaurus/types';
 
 export interface Options {
   title: string;
@@ -22,10 +22,10 @@ export type NormalizedOptions = Options & DefaultOptions;
 
 export default async function pluginTutorial(
   context: LoadContext,
-  options: NormalizedOptions
+  options: NormalizedOptions,
 ): Promise<Plugin> {
   return {
-    name: "@iota-wiki/plugin-tutorial",
+    name: '@iota-wiki/plugin-tutorial',
     async contentLoaded({ actions }) {
       actions.setGlobalData(options);
     },
@@ -35,7 +35,7 @@ export default async function pluginTutorial(
 export function validateOptions({
   options: userOptions,
 }: OptionValidationContext<UserOptions, NormalizedOptions>): NormalizedOptions {
-  const id = userOptions.title.normalize().toLowerCase().replace(/\W/, "-");
+  const id = userOptions.title.normalize().toLowerCase().replace(/\W/, '-');
 
   const defaultOptions = {
     id,
