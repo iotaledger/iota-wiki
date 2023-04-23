@@ -46,7 +46,7 @@
     "@docusaurus/core": "2.2.0",
     "@docusaurus/plugin-client-redirects": "2.2.0",
     "@docusaurus/preset-classic": "2.2.0",
-    "@iota-wiki/plugin-tutorial": "^1.0.6",
+    "@iota-wiki/plugin-tutorial": "workspace:^",
     "@mdx-js/react": "^1.6.21",
     "@popperjs/core": "^2.11.5",
     "@svgr/webpack": "^5.5.0",
@@ -113,6 +113,7 @@
   "packageManager": "yarn@3.2.0",
   "workspaces": [
     "cli",
+    "plugin-tutorial",
     "theme"
   ],
   "files": []
