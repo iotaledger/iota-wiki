@@ -34,7 +34,7 @@ jobs:
             wiki-dependencies
       - name: Install dependencies
         run: |
-          yarn
+          yarn && yarn ./plugin-tutorial build
       # Submodules cached per environment to save time
       - name: Cache submodules
         uses: actions/cache@v3
