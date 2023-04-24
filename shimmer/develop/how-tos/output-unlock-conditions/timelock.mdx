@@ -1,0 +1,27 @@
+---
+image: /img/iota-wiki.png
+description: 'Learn about locking funds based on time using the Timelock Unlock Condition in Stardust. Understand how to create a timelocked output and how to move funds once the timelock expires.'
+keywords:
+  - Timelock Unlock Condition
+  - Stardust
+  - IOTA Outputs
+  - Ledger Time
+  - Milestone Timestamp
+---
+
+# Timelock Funds in Transfers
+
+With Stardust, you can lock funds away based on time. When an output has a [Timelock Unlock Condition](https://wiki.iota.org/shimmer/tips/tips/TIP-0018#timelock-unlock-condition)
+defined, not even its rightful owner can unlock it before the timelock expires. Just like in the case of [transaction C](expiration.mdx#claim-non-expired-funds) and [transaction D](expiration.mdx#claim-expired-funds),
+the notion of time in the ledger is determined by the timestamp of the milestone that confirms the transaction.
+
+## Example Transaction
+
+Transaction E creates an output owned by the recipient but timelocked until _May 24 2022 18:00:00_.
+
+![Transaction E - Sending funds with timelock](/img/stardust_explanations/stardust_ledger_anatomy/simple_transaction/tx_E.svg)
+
+The recipient has no way to unlock the output before the deadline. Once the timelock expired, the funds can be moved, as
+depicted on Transaction F.
+
+![Transaction F - Recipient unlocks timelocked funds](/img/stardust_explanations/stardust_ledger_anatomy/simple_transaction/tx_F.svg)

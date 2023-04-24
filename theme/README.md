@@ -24,6 +24,16 @@ module.exports = {
 
 ## Components
 
+### AddToMetaMaskButton
+
+A button to add the ShimmerEVM network to MetaMask.
+
+```
+import AddToMetaMaskButton from '@theme/AddToMetaMaskButton'
+
+<AddToMetaMaskButton />
+```
+
 ### CodeSnippetBlock
 
 This component finds `startString` and `endString` in a code listing and displays the snippet in between.

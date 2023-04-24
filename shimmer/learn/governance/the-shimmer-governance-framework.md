@@ -306,7 +306,7 @@ Currently, the following community members are selected as governance forum mode
 - Observe the forum and the governance process and propose required adjustments to the [parameters under probation](#specification-parameters-under-probation) after consent in the moderator group has been achieved.
 - Prepare the [seasonal vote](#48-seasons) to ratify the new seasonal specification that includes all recently made changes.
 - Moderators will manage discussions during the phases to ensure they are not disrespectful and focus on the proposal topic in a positive manner.
-- If a participant is aggressive during the discussions and continues to add negative comments within a discussion thread, a minimum of 2 moderators and one admin should discuss and ban a member if decided upon. Guiding principles are described in the forum's [Terms of Service](https://govern.iota.org/t/terms-of-service/4) that regulate all users' activities. They build the foundation for all moderator actions regarding moderation.
+- If a participant is aggressive during the discussions and continues to add negative comments within a discussion thread, a minimum of 2 moderators and one admin should discuss and ban a member if decided upon. Guiding principles are described in the forum's [Terms of Service](https://govern.iota.org/tos) that regulate all users' activities. They build the foundation for all moderator actions regarding moderation.
 - If a submittal is rejected, a moderator or admin will write a brief (one to three sentence) summary stating how the submittal did not follow guiding principles and/or the defined requirements set for submittals.
 - The forum moderators will only be granted access to the functionalities required to fulfill the above-described tasks in the forums [Governance] section. This does not provide special access to other administrative functions or the [Research] section of the forum.
 
@@ -751,7 +751,7 @@ Read some examples about emergency proposal votes in this section [Here are some
 
 ### 4.13 Hosting of the specification in Github
 
-- This framework will be hosted on the IOTA Wiki Github under [this repository:](https://github.com/iota-wiki/iota-wiki/tree/main/shimmer/learn/Governance).
+- This framework will be hosted on the IOTA Wiki Github under [this repository:](https://github.com/iota-wiki/iota-wiki/tree/main/shimmer/learn/governance).
 - Starting with Season 1, the specification agreed on by the voters in the Phase 3 vote will be hosted as the “main” branch of the repository.
 - Any changes that happened during a season based on the [parameters under probation](#specification-parameters-under-probation) rules will be added as a pull request.
 - Once the voters have accepted the specification for the next season in a phase 3 vote, the community managers will merge the pull request containing the changes into the “main” branch.
@@ -927,8 +927,8 @@ An example of how such an event file looks like is the event we used for the BUI
 
 ## 8. Recommended readings, knowledge library
 
-- [Library of DAO Tools & Governance frameworks](https://www.notion.so/f11f6bb9a4ee4f90855794dfd8d28927?v=a6eb959920f54452a4e2dd13e21e6104)
-- [Library of high-level Governance Research papers](https://www.notion.so/bf9572db4a65414a8bfd08909fa31580?v=3d336999fc9a46f582ebfc4500b53de8)
-- [Collection of recommended articles and readings around DAO’s](https://www.notion.so/DAO-recommended-articles-bd07c25ef4974f5096a09e6babe82a9a)
-- [Collection of DAO & Governance focussed Podcasts and Videos](https://www.notion.so/bf56e6c56dd542f984c1366f807cebd8?v=dbec62901b014d478a5dd6c307d59c0b)
+- [Library of DAO Tools & Governance frameworks](https://seemly-seer-d1b.notion.site/f11f6bb9a4ee4f90855794dfd8d28927?v=a6eb959920f54452a4e2dd13e21e6104)
+- [Library of high-level Governance Research papers](https://seemly-seer-d1b.notion.site/bf9572db4a65414a8bfd08909fa31580?v=3d336999fc9a46f582ebfc4500b53de8)
+- [Collection of recommended articles and readings around DAO’s](https://seemly-seer-d1b.notion.site/DAO-recommended-articles-bd07c25ef4974f5096a09e6babe82a9a)
+- [Collection of DAO & Governance focussed Podcasts and Videos](https://seemly-seer-d1b.notion.site/bf56e6c56dd542f984c1366f807cebd8?v=dbec62901b014d478a5dd6c307d59c0b)
 - [IOTA DAO Pioneers learning circle Session Documents](https://github.com/iota-community/DAO-Pioneers#-iota-dao-pioneers-initiative)

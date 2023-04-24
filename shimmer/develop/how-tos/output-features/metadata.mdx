@@ -1,0 +1,46 @@
+---
+image: /img/iota-wiki.png
+description: 'Discover the Metadata Feature in outputs, allowing you to store arbitrary data in outputs, providing a data storage option available 24/7 on any network node.'
+keywords:
+  - Metadata Feature
+  - Data Storage
+  - IOTA Outputs
+  - Base Tokens
+  - Network Node
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Metadata
+
+The _Metadata Feature_ of allows you to store arbitrary data in outputs.
+Of course, storing data in outputs increases the minimum base token requirement, but in turn it provides a data storage
+option that is available 24/7 on any network node.
+
+As soon as the output with metadata is consumed, it is pruned from nodes' databases and base tokens used as storage
+deposit are freed up.
+
+## Example Transaction
+
+![Transaction K - Metadata Feature](/img/stardust_explanations/stardust_ledger_anatomy/simple_transaction/tx_K.svg)
+
+## Related How-to Guides
+
+<Tabs groupId={'libraries'}>
+<TabItem value="wallet.rs" label="wallet.rs" >
+
+- [Send a Transaction](https://wiki.iota.org/shimmer/wallet.rs/how_tos/outputs_and_transactions/send_transaction/)
+
+</TabItem>
+<TabItem value="iota.rs" label="iota.rs">
+
+- [Post a Data Block](https://wiki.iota.org/shimmer/iota.rs/how_tos/post_block/)
+
+</TabItem>
+<TabItem value="iota.js" label="iota.js">
+
+- [Send and Retrieve Data](https://wiki.iota.org/shimmer/iotajs/how_tos/data/)
+
+</TabItem>
+</Tabs>
