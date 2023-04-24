@@ -27,17 +27,3 @@ Then register any tutorials to list on the tutorial page by providing informatio
     ...
   ...
 ```
-
-## Test
-
-Clone the repository, install dependencies and build the plugins:
-
-```
-git clone https://github.com/iota-wiki/plugin-tutorial.git && cd plugin-tutorial && yarn && yarn build
-```
-
-Then start the Docusaurs project contained in the test directory:
-
-```
-yarn workspace test start
-```
