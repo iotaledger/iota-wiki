@@ -3,22 +3,9 @@
     "target": "ES2019",
     "module": "commonjs",
     "moduleResolution": "node",
-    "resolveJsonModule": true,
-    "jsx": "react",
-    "types": [
-      "node",
-      "@docusaurus/module-type-aliases",
-      "@docusaurus/plugin-ideal-image"
-    ],
     "esModuleInterop": true,
-    "baseUrl": ".",
-    "paths": {
-      "@theme/*": ["./src/theme/*"]
-    },
-    "rootDir": "src",
-    "outDir": "lib",
+    "outDir": "dist",
     "declaration": true
   },
-  "include": ["src/*.ts"],
-  "exclude": ["test"]
+  "include": ["src"],
 }

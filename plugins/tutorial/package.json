@@ -1,36 +1,18 @@
 {
   "name": "@iota-wiki/plugin-tutorial",
   "version": "1.0.6",
-  "main": "lib/index.js",
+  "main": "dist/index.js",
   "scripts": {
     "clean": "rm -rf ./lib",
     "build": "tsc --build",
     "prepack": "yarn build"
   },
   "packageManager": "yarn@3.2.2",
-  "dependencies": {
-    "@docusaurus/plugin-ideal-image": "^2.0.1",
-    "@docusaurus/theme-common": "^2.0.1",
-    "@popperjs/core": "^2.11.5",
-    "clsx": "^1.1.1",
-    "react": "^17.0.2",
-    "react-collapsible": "^2.8.4",
-    "react-dom": "^17.0.2",
-    "react-popper": "^2.2.5",
-    "react-select": "^5.3.0"
-  },
   "devDependencies": {
-    "@docusaurus/module-type-aliases": "^2.0.1",
-    "@docusaurus/types": "^2.0.1",
-    "@types/react": "^18",
-    "@types/react-dom": "^18",
+    "@docusaurus/types": "2.2.0",
     "typescript": "^4.6.3"
   },
-  "peerDependencies": {
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2"
-  },
   "files": [
-    "lib"
+    "dist"
   ]
 }
