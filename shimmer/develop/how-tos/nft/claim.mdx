@@ -1,0 +1,43 @@
+---
+image: /img/iota-wiki.png
+description: 'Claims NFTs in the IOTA Stardust protocol.'
+keywords:
+  - IOTA Stardust
+  - nft
+  - claim
+  - conditional transfer
+  - expiration unlock
+  - storage deposit return
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Claim a Conditional NFT Transfer
+
+## Example Transaction
+
+Transaction D shows how a _recipient_ can claim the conditional transfer initiated in
+[Transaction C](transfer.mdx):
+
+- The _recipient_ has to fund the transaction with the to-be refunded storage deposit, therefore _Basic Output #2_ is
+  unlocked on the input side.
+- _NFT Output #4_ removes the additional unlocks from the NFT and places it solely into the ownership of _recipient_.
+- _Basic Output #3_ refunds the _owner_ with the storage deposit defined in the _Storage Deposit Return Unlock Condition_
+  of _NFT Output #3_.
+- Transaction D is only valid if the confirming milestone has a timestamp earlier than the one defined in the
+  _Expiration Unlock Condition_ of _NFT Output #3_.
+- Since both _NFT Output #3_ and _Basic Output #2_ are unlocked by _recipient_ address, it is enough to sign the transaction
+  once in _Signature Unlock #1_ and reference this unlock in _Reference Unlock #2_.
+
+![Transaction D - Claiming a conditional NFT transfer](/img/stardust_explanations/stardust_ledger_anatomy/nft_transaction/tx_D.svg)
+
+## Related Tutorials
+
+<Tabs groupId={'libraries'}>
+<TabItem value="iota.js" label="iota.js">
+
+- [NFTTransactions](https://wiki.iota.org/shimmer/iotajs/tutorials/nft-transactions/introduction/)
+
+</TabItem>
+</Tabs>

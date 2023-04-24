@@ -1,0 +1,73 @@
+---
+image: /img/iota-wiki.png
+description: 'Learn about Storage Deposit Returns in Transfers and how to use the Storage Deposit Return Unlock Condition in Stardust to send and receive micro-transactions while protecting the ledger size and node storage resources.'
+keywords:
+  - Storage Deposit Return Unlock Condition
+  - Stardust
+  - Micro-transactions
+  - IOTA Outputs
+  - Ledger Size
+  - Node Storage
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Storage Deposit Returns in Transfers
+
+Stardust introduces a new system to protect the ledger size and hence node storage resources, called Byte-cost based
+Storage Deposit System. You can read more about it in [TIP-19](https://wiki.iota.org/shimmer/tips/tips/TIP-0019/).
+In short, every output in the ledger need to carry enough base tokens to cover for its network storage use.
+
+Implicitly this means that an output has to have a minimum amount of base tokens, otherwise it is considered invalid.
+The exact minimum depends on the size of the output and the protocol parameter _Virtual Byte Cost_. The implication of
+this is that is no longer possible to store microfunds in an output. So suppose you wanted to send 1i (0.000001 MIOTA):
+is it still possible?
+
+The answer is yes. With the [Storage Deposit Return Unlock Condition](https://wiki.iota.org/shimmer/tips/tips/TIP-0018#storage-deposit-return-unlock-condition)
+it is possible to define spending constraints on outputs that you create. Let's assume that the minimum amount of funds
+that need to be present in an output is 100i. If you wanted to send only 1i to the recipient, you should transfer
+101i to the recipient's address with the extra condition that recipient can only use the funds if the recipient refunds
+you in the very same transaction with 100i.
+
+## Example Transactions
+
+### Send a Micro-transaction
+
+Transaction G show the creation of an output with _Storage Deposit Return Unlock Condition_. Notice, that _Basic Output #11_
+holds 101i, and the unlock condition defines the _Return Amount_ of 100i to _ReturnAddress_ _ownerAddress_. All in all,
+the recipient can only freely use 1i when recipient consumes the output in Transaction H.
+
+![Transaction G - Sending a Micro-transaction](/img/stardust_explanations/stardust_ledger_anatomy/simple_transaction/tx_G.svg)
+
+### Receive a Micro-transaction
+
+In order for the recipient to claim the 1i, the recipient needs to sweep it into one of their own outputs. Therefore,
+the recipient consumes _Basic Output #12_ in the transaction that holds the funds. On the output side, the recipient has
+to have _Basic Output #13_ that refunds the original sender, and create _Basic Output #14_ that sweeps the 1i.
+
+![Transaction H - Receiving a Micro-transaction](/img/stardust_explanations/stardust_ledger_anatomy/simple_transaction/tx_H.svg)
+
+What forces the recipient to post and execute Transaction H? Nothing. The recipient can just keep the sender's 100i in
+limbo forever. That is why it is handy that you can combine unlock conditions. For example, the sender can add an [expiration
+condition](expiration.mdx) to _Basic Output #11_. Once the output is expired, the recipient won't be able to claim the
+1i and the sender takes full custody of the 101i in the output.
+
+#### Related How-to Guides
+
+## Related How-to Guides
+
+<Tabs groupId={'libraries'}>
+<TabItem value="wallet.rs" label="wallet.rs" >
+
+- [Send a Micro-transaction](https://wiki.iota.org/shimmer/wallet.rs/how_tos/outputs_and_transactions/send_micro_transaction/)
+- [Claim Outputs](https://wiki.iota.org/shimmer/wallet.rs/how_tos/outputs_and_transactions/claim_outputs/)
+- [Check Unlock Conditions](https://wiki.iota.org/shimmer/wallet.rs/how_tos/outputs_and_transactions/check_unlock_conditions/)
+
+</TabItem>
+<TabItem value="iota.js" label="iota.js">
+
+- [Claim NFT Under Conditional Transfer](https://wiki.iota.org/shimmer/iotajs/tutorials/nft-transactions/claim-nft/)
+
+</TabItem>
+</Tabs>

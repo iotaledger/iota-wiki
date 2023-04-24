@@ -1,0 +1,110 @@
+---
+image: /img/iota-wiki.png
+description: 'Discover the concept of NFT Collections in the Stardust Protocol and how they can be created, minted, and locked for scarcity.'
+keywords:
+  - NFT Collections
+  - Stardust Protocol
+  - Collection NFT
+  - Minting NFTs
+  - Locking Collections
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# NFT Collections
+
+NFTs rarely exist in isolation, usually they are part of a bigger set, a collection. In smart contract based NFTs like
+ERC1155, a collection and the NFTs in it are all tracked in a single contract. In UTXO based systems like IOTA/Shimmer
+this is not possible, so a new way of linking NFTs together is needed.
+
+The Stardust protocol allows linking NFTs together via the _Issuer Feature_. Since NFTs are first class citizens in
+the protocol, they can function as issuers themselves. This feature is exploited for L1 NFT collections.
+
+## Create of a Collection NFT
+
+A Collection NFT is a just a normal _NFT Output_ but with special purpose: it is used to mint all NFTs in the collection.
+The Collection NFT becomes the _Issuer_ of the _NFT Outputs_ representing NFTs within the collection.
+
+It is possible to:
+
+- Permanently lock the Collection NFT to prevent any future minting. No diluting is ever possible by issuers.
+- Lock the Collection NFT for some time to prevent minting,
+- Deposit the Collection NFT into a L2 chain where minting activity can be governed via smart contracts or DAOs.
+
+### Example Transaction
+
+Transaction H mints a Collection NFT the same way as Transaction A mints a regular one. The metadata makes it clear
+that the intended use of this NFT is to serve as a Collection NFT.
+
+- The _name_ defines the name of the collection,
+- The _uri_ points to a website with more information about the project. Note, that _type_ defines the resource type
+  for _uri_.
+
+![Transaction H - Creation of a Collection NFT](/img/stardust_explanations/stardust_ledger_anatomy/nft_transaction/tx_H.svg)
+
+## Minting NFTs Within the Collection
+
+NFTs within the collection must be minted in a way that their _issuer_ is the Collection NFT. Therefore, we include
+_NFT Output #10_, the freshly minted Collection NFT from Transaction H in Transaction J, and define the _Issuer Feature_
+of all minted NFTs to hold the _NFT Address_ of the Collection NFT.
+
+We also place unique metadata in each NFT within the collection. The metadata is formatted according to IRC27 and
+contains information about:
+
+- Where the asset represented by the NFT resides.
+- The issuer or artist.
+- The collection the NFT belongs to.
+- Optional royalty addresses.
+- Custom attributes.
+
+### Example Transaction
+
+Transaction J mints a very limited collection, there are only 3 items _NFT Output #12, #13 and #14_. The issuer must
+also provide the storage deposit for the newly minted NFTs, therefore _Basic Output #7_ is consumed in the transaction.
+
+![Transaction J - Minting NFTs within the collection](/img/stardust_explanations/stardust_ledger_anatomy/nft_transaction/tx_J.svg)
+
+:::note
+
+If you need to mint more than _Max Outputs Count_
+([TIP-22](https://wiki.iota.org/shimmer/tips/tips/TIP-0022#detailed-design) IOTA,
+[TIP-32](https://wiki.iota.org/shimmer/tips/tips/TIP-0032#global-parameters) Shimmer)
+NFTs, you must do it via chaining together more transactions.
+
+:::
+
+Once the minting transaction confirms, it is possible to fetch all NFT outputs within the collection via the
+[Indexer API TIP-26](https://wiki.iota.org/shimmer/tips/tips/TIP-0026/). The following query
+returns all NFT outputs (their _Output IDs_) that have been issued by the Collection NFT:
+
+```
+GET <indexer-base-url>/api/indexer/v1/outputs/nft?issuer=<collection-nft-address>
+```
+
+## Lock the NFT Collection
+
+The best way to ensure scarcity of collections is to prevent future minting activity. You can lock the NFT Collection in
+the ledger for some time via a _Timelock Unlock Condition_, or for eternity by sending it to the zero address.
+
+The zero address is an Ed25519 address where the hash of the Ed255129 public key is all zeroes, therefore there is no
+private key that can successfully unlock it.
+
+### Example Transaction
+
+![Transaction K - Locking Collection NFT](/img/stardust_explanations/stardust_ledger_anatomy/nft_transaction/tx_K.svg)
+
+ted Code Examples
+
+<Tabs groupId={'libraries'}>
+<TabItem value="wallet.rs" label="wallet.rs" >
+
+- [Rust - NFT Collection](https://github.com/iotaledger/wallet.rs/tree/develop/wallet/examples/nft_collection)
+
+</TabItem>
+<TabItem value="iota.js" label="iota.js">
+
+- [Create an NFT Collection](https://github.com/iotaledger/iota.js/blob/feat/stardust/packages/iota/examples/nft-collection/src/index.ts)
+
+</TabItem>
+</Tabs>
