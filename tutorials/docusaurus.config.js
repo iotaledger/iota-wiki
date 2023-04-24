@@ -240,6 +240,17 @@ module.exports = {
         tags: ['text', 'shimmer', 'solidity', 'iscp'],
       },
     ],
+    [
+      '@iota-wiki/plugin-tutorial',
+      {
+        title: 'How to Build and Deploy an NFT Marketplace on ShimmerEVM',
+        description:
+          'In this tutorial, we will guide you through building and deploying a full-stack NFT marketplace on ShimmerEVM using, Solidity, IPFS, and Next.js.',
+        preview: '',
+        route: 'tutorials/evm-nft-marketplace',
+        tags: ['text', 'shimmer', 'shimmerEVM', 'solidity', 'isc', 'ipfs', 'nft', 'hardhat', 'nextjs'],
+      },
+    ],
   ],
   staticDirectories: [path.resolve(__dirname, 'static')],
 };
