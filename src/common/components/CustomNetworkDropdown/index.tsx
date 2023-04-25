@@ -200,7 +200,7 @@ export default function NetworkDropdownNavbarItem({
     Record<string, string[]>
   >({});
 
-  const FALlBACK_ROUTE = '/404';
+  const FALLBACK_ROUTE = '/404';
 
   useEffect(() => {
     for (const networkPath of networkPaths) {
@@ -249,7 +249,7 @@ export default function NetworkDropdownNavbarItem({
           ? value.routeBasePath.slice(0, -1)
           : value.routeBasePath;
 
-        url = basePath + FALlBACK_ROUTE;
+        url = basePath + FALLBACK_ROUTE;
       } else {
         url = value.routeBasePath + bestMatch;
       }
