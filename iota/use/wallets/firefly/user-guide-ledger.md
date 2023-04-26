@@ -11,8 +11,8 @@ Firefly is available on Windows, Mac and Linux and supports Ledger Nano X and Le
 
 ## Before you start, make sure
 
-- You have [initialized](https://support.ledgerwallet.com/hc/en-us/articles/360000613793) your Ledger device.
-- The latest firmware is [installed](https://support.ledgerwallet.com/hc/en-us/articles/360002731113).
+- You have [initialized](https://support.ledger.com/hc/en-us/articles/360000613793) your Ledger device.
+- The latest firmware is [installed](https://support.ledger.com/hc/en-us/articles/360002731113).
 - Ledger Live is [installed and ready to use](https://www.ledger.com/ledger-live/download).
 - You have installed the latest version of Firefly
 

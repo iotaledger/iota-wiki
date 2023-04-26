@@ -1,0 +1,98 @@
+---
+image: /img/iota-wiki.png
+description: 'Learn how to transfer NFTs in the Stardust Protocol, including transferring without storage deposit return and with storage deposit return.'
+keywords:
+  - Transfer NFT
+  - Stardust Protocol
+  - Storage Deposit
+  - NFT ID
+  - Expiration Unlock Condition
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Transfer an NFT
+
+## Transfer Without Storage Deposit Return
+
+When an NFT is sold via a marketplace, it is the platform that decides how to handle the storage deposit, whether the buying
+price accounts for it or the owner should be refunded by the recipient via a _Storage Deposit Return Unlock Condition_.
+
+### Example Transaction
+
+Transaction B sends the newly issued _NFT Output #1_ to the _recipient_:
+
+- Since it has just been minted in Transaction A, The _NFT ID_ is all zeros in _NFT Output #1_. While the value of the
+  field ([explicit NFT ID](https://wiki.iota.org/shimmer/tips/tips/TIP-0018/tip-0018.md#additional-transaction-semantic-validation-rules-3))
+  is all zeroes, based on the protocol rules we know that the [implicit NFT ID](https://wiki.iota.org/shimmer/tips/tips/TIP-0018/tip-0018.md#additional-transaction-semantic-validation-rules-3)
+  can be calculated from the _Output ID_ of _NFT Output #1_.
+- When the minted NFT is transferred for the first time, the _NFT ID_ must be set as the implicit NFT ID of the mint
+  output. Therefore, _NFT Output #2_ sets the value of the _NFT ID_ field as the blake2b-256 hash of _NFT Output #1 ID_.
+  **If you miss this step and leave it as all zeroes, the protocol interprets the transaction as the
+  [burning of the minted NFT](burn.mdx) and the creation of a new NFT.**
+- Notice that the immutable features are not allowed to change. Their values are carried together with the NFT until
+  it is burned.
+- To change ownership of the NFT, unlock the address of the _Address Unlock Condition_ (_owner_) in the transaction and
+  set a new owner (_recipient_) on the output side.
+- Without further unlock conditions, the _owner_ loses the 100i storage deposit which is now controlled by _recipient_.
+
+![Transaction B - Transferring NFT](/img/stardust_explanations/stardust_ledger_anatomy/nft_transaction/tx_B.svg)
+
+### Why Can't the NFT ID be Set Directly Upon Minting?
+
+It was shown in Transaction A that _NFT ID_ must be zeroed out on minting, and via Transaction B that it has to be set to
+the protocol generated value in the first transfer. The reason for this is the chicken and egg situation rooted in how
+unique values are generated on protocol level:
+
+A unique _NFT ID_ is computed from _Output ID_, that is computed from the minting transaction content. The transaction
+content contains the value of the _NFT ID_ field of the output. On minting, the _NFT ID_ is set to zero to signal the
+minting operation. As soon as the transaction is prepared (you don't even need to submit it yet) the _Output ID_ is
+known. Therefore, _NFT ID_ can be computed locally, but it is not possible to place it inside the minting output, as
+that would alter the transaction content, and therefore the _Output ID_ and the _NFT ID_ itself.
+
+## Transfer an NFT With Storage Deposit Return
+
+If you want the original owner to get the storage deposit back, you will need to add the
+[_Storage Deposit Return Unlock Condition_](../output-unlock-conditions/storage-deposit-return.mdx), and since the deposit
+won't be returned until the NFT is claimed, you may also want to add the
+[_Expiration Unlock Condition_](../output-unlock-conditions/expiration.mdx).
+
+### Example Transaction
+
+Transaction C shows a conditional transfer of an NFT. By defining a _Storage Deposit Return Unlock Condition_ and an
+_Expiration Unlock Condition_, the recipient has to claim the NFT transfer in a transaction that:
+
+- Refunds the storage deposit to the _owner_ address,
+- within the timeframe specified in the expiration condition.
+
+If the recipient fails to claim the transfer in time, the ownership of _NFT Output #3_ falls back to the _owner_
+address defined in the _Expiration Unlock Condition_. An expired output can be unlocked by this address without having
+to fulfill the _Storage Deposit Return Unlock Condition_.
+
+Transaction C defines that _recipient_ has to claim the output in a transaction such that:
+
+- _owner_ is refunded with 100i via a _Basic Output_,
+- the claiming transaction may only be carried out until _May 24 2022 18:00:00_.
+
+![Transaction C - Transferring NFT with storage deposit return](/img/stardust_explanations/stardust_ledger_anatomy/nft_transaction/tx_C.svg)
+
+## Related Tutorials
+
+<Tabs groupId={'libraries'}>
+<TabItem value="iota.js" label="iota.js">
+
+- [NFTTransactions](https://wiki.iota.org/shimmer/iotajs/tutorials/nft-transactions/introduction/)
+
+</TabItem>
+</Tabs>
+
+## Related How-to Guides
+
+<Tabs groupId={'libraries'}>
+<TabItem value="wallet.rs" label="wallet.rs" >
+
+- [Send an NFT](https://wiki.iota.org/shimmer/wallet.rs/how_tos/NFT/send_nft/)
+
+</TabItem>
+</Tabs>

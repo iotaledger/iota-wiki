@@ -29,7 +29,7 @@ module.exports = {
         },
         {
           label: 'Develop',
-          to: '/develop/what-is-shimmer/introduction',
+          to: '/develop/explanations/what-is-shimmer/introduction',
           activeBaseRegex: '^(/[^/]+)?/develop.*|' + '^(/[^/]+)?/tutorials*',
         },
         {

@@ -12,7 +12,7 @@ const internal = {
         href: 'https://wiki.iota.org',
       },
     },
-  },
+  }
 };
 
 module.exports = merge(external, internal);

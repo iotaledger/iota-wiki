@@ -14,7 +14,7 @@ let internalConfig = {
         'This is a local preview. Please find available routes <a href="/404">here</a>.',
       isCloseable: false,
     },
-  },
+  }
 };
 
 // Watch for changes on the external configuration file

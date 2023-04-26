@@ -1,0 +1,61 @@
+---
+image: /img/iota-wiki.png
+description: 'Explore the concept of NFTs as wallets in the Stardust Protocol, and learn how to unlock and transfer funds using NFT addresses.'
+keywords:
+  - Stardust Protocol
+  - NFT as Wallet
+  - NFT Addresses
+  - Fund Unlocking
+  - Fund Transfer
+---
+
+# NFT as a Wallet
+
+Each NFT has its own unique _NFT ID_ that also functions as an address on protocol level. The address can be deterministically
+generated from the ID as outlined in [TIP-31](https://wiki.iota.org/shimmer/tips/tips/TIP-0031/), basically
+prepending _NFT ID_ with the _NFT Address Type_ and encoding it as a [Bech32](https://github.com/bitcoin/bips/blob/master/bip-0173.mediawiki) string.
+
+This means that any output (except for a foundry) can be locked to an _NFT Address_ in the protocol. An _NFT Address_
+is a first class citizen on protocol level, just like an _Ed25519 Address_.
+
+To unlock outputs locked under an _NFT Address_, the owner of the NFT must also unlock the _NFT Output_ that defines it,
+hence proving ownership of the address. Note, that this is a significant difference compared to _Ed25519 Addresses_, where
+ownership is proved via a signing the transaction with a private key
+
+## Example Transactions
+
+### Unlock Funds Owned by the NFT
+
+Transaction F shows how one can unlock an output locked to an _NFT Address_. Notice, that _Basic Output #4_ contains
+not only base tokens, but also native tokens. An _NFT Output_ supports holding these native token directly in the output itself,
+but it would also be possible to place them in any output after _Basic Output #4_ is unlocked. It is the decision of the
+owner of the NFT to define what outputs to create in the transaction.
+
+Just like any other output, an _NFT Output_ supports holding up to _Max Native Token Count_ (defined in
+[TIP-22](https://wiki.iota.org/shimmer/tips/tips/TIP-0022#detailed-design)
+for IOTA and [TIP-32](https://wiki.iota.org/shimmer/tips/tips/TIP-0032#global-parameters)
+for Shimmer). In case you need to store more native tokens, distribute them in _Basic Outputs_ that are owned by the NFT.
+
+![Transaction F - Unlocking funds owned by the NFT](/img/stardust_explanations/stardust_ledger_anatomy/nft_transaction/tx_F.svg)
+
+### Transfer an NFT owned by the NFT
+
+So far in the examples the NFTs were always owned by a private key backed address, therefore they were unlocked via
+a signature. What happens when an NFT is owned by another NFT?
+
+Similarly to Transaction F, the NFT that owns the other one must be unlocked in the transaction to prove the ownership.
+Transaction G shows how the "owner NFT" can unlock the "owned NFT" and transfer it to a new recipient.
+
+![Transaction G - Transferring NFT owned by the NFT](/img/stardust_explanations/stardust_ledger_anatomy/nft_transaction/tx_G.svg)
+
+:::warning Circular Ownership
+It is possible to introduce circular ownership with _NFT Addresses_ (and also with _Alias Addresses_). In such a case,
+NFT A is owned by NFT B, while NFT B is owned by NFT A. This would mean that unlocking them in a transaction doesn't
+require a signature, therefore anyone could unlock them that leads to race conditions on protocol level.
+
+To prevent this undesired property, the protocol forces an _NFT Unlock_ to only be able to reference a previous _Unlock_. As a result,
+circular ownership becomes a deadlock, as neither NFTs can be unlocked anymore.
+
+Wallets and applications should implement mitigation strategies to prevent a deadlock: always perform circular ownership
+checks before sending an NFT to another NFT!
+:::

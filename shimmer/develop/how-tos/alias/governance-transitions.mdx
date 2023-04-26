@@ -1,0 +1,27 @@
+---
+image: /img/iota-wiki.png
+description: 'Learn about governance transitions of aliases in the IOTA Stardust protocol, and what actions can be performed during such transitions.'
+keywords:
+  - IOTA Stardust
+  - Governance Transition
+  - Alias
+  - Governor Address Unlock Condition
+  - State Controller Address Unlock Condition
+---
+
+# Governance Transitions
+
+Transaction C depicts a governance transition of the alias. Such a transaction must be signed by the address in
+_Governor Address Unlock Condition_.
+
+A valid governance can do the following:
+
+- The alias output may be destroyed by the governor (see Transaction D in [Destroy an Alias](destroy.mdx)).
+- The _State Controller Address Unlock Condition_ may be changed.
+- The _Governor Address Unlock Condition_ may be changed.
+- The _Metadata Feature_ may be changed.
+
+No other fields are allowed to change in the next alias state, therefore **a governance transition can't modify token
+balances or create foundries**.
+
+![Transaction C - Governance transition of an alias](/img/stardust_explanations/stardust_ledger_anatomy/alias_transaction/tx_C.svg)

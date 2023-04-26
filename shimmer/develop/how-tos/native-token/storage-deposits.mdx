@@ -1,0 +1,86 @@
+---
+image: /img/iota-wiki.png
+description: 'Learn how to transfer native tokens in the Stardust Protocol using storage deposit and explore the different methods to ensure secure transactions.'
+keywords:
+  - Stardust Protocol
+  - Native Tokens
+  - Storage Deposit
+  - Secure Transactions
+  - Transfer Methods
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Transfer Native Tokens with Storage Deposit
+
+Transferring native tokens is similar to transferring base tokens. The output that you create on the receiver's address
+however needs to have base tokens to cover for the storage deposit. Therefore, there are two ways to transfer native tokens:
+
+- Sending native tokens together with the required storage deposit. The sender loses access to the storage deposit in
+  this case, as shown in transaction E.
+- Sending native tokens using the _Storage Deposit Return Unlock Condition_. The receiver has to claim the transfer by
+  refunding the sender's storage deposit. The sender doesn't lose the storage deposit this case, as shown in transaction F.
+
+## Example Transactions
+
+![Transaction E - Transferring native tokens with storage deposit](/img/stardust_explanations/stardust_ledger_anatomy/native_tokens_foundries/tx_E.svg)
+
+### Conditional Transfer of Native Tokens
+
+#### Add the unlock conditions
+
+In order not to lose access to the storage deposit, two additional unlock conditions are defined on
+_Basic Output #7_ in Transaction F:
+
+- A [_Storage Deposit Return Unlock Condition_](../output-unlock-conditions/storage-deposit-return.mdx) that forces the
+  consumer of the output to refund _Return Amount_ of base tokens to _Return Address_.
+- An [_Expiration Unlock Condition_](../output-unlock-conditions/expiration.mdx) that defines a time window
+  the recipient has to claim the transfer. If they don't do so, ownership of _Basic Output #7_ bounces back to the sender
+  and the _Storage Deposit Return Unlock Condition_ is ignored.
+- The expiration time is compared to the timestamp of the confirming milestone to decide whether the unlock is valid or not.
+
+Transaction F shows the creation of a conditional transfer:
+
+![Transaction F - Conditional transfer of native tokens](/img/stardust_explanations/stardust_ledger_anatomy/native_tokens_foundries/tx_F.svg)
+
+#### Claim the transfer
+
+Once the transaction is created, the recipient can claim the transfer before the expiration deadline. Transaction G shows
+a successful claiming. Note that:
+
+- The recipient needs to sweep the native tokens into an output they already own to cover for the storage deposit, hence
+  _Basic Output #8_ is unlocked in the transaction.
+- _Basic Output #9_ refunds the sender with the storage deposit used to create _Basic Output #7_.
+
+![Transaction G - Claiming conditional transfer](/img/stardust_explanations/stardust_ledger_anatomy/native_tokens_foundries/tx_G.svg)
+
+## Related Tutorials
+
+<Tabs groupId={'libraries'}>
+<TabItem value="iota.js" label="iota.js">
+
+- [Native Token Transactions](https://wiki.iota.org/shimmer/iotajs/tutorials/native-token-transactions/introduction/)
+
+</TabItem>
+</Tabs>
+
+## Related How-to Guides
+
+<Tabs groupId={'libraries'}>
+<TabItem value="wallet.rs" label="wallet.rs" >
+
+- [Send Native Tokens](https://wiki.iota.org/shimmer/wallet.rs/how_tos/native_tokens/send_native_token/)
+
+</TabItem>
+</Tabs>
+
+## Related Code Examples
+
+<Tabs groupId={'libraries'}>
+<TabItem value="iota.js" label="iota.js">
+
+- [Native Token Tour](https://github.com/iotaledger/iota.js/blob/feat/stardust/packages/iota/examples/native-token-tour/src/index.ts)
+
+</TabItem>
+</Tabs>

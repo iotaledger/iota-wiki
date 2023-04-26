@@ -1,0 +1,49 @@
+---
+image: /img/iota-wiki.png
+description: 'Unlock Funds Owned by an Alias in the IOTA Stardust protocol'
+keywords:
+  - IOTA
+  - stardust
+  - alias
+  - unlock
+  - funds
+  - transactions
+---
+
+# Unlock Funds Owned by an Alias
+
+An alias account may own funds in the ledger two ways:
+
+- Locked directly in its alias output.
+- Locked in other outputs to the address of the alias.
+
+The global alias address is derived from the unique _Alias ID_. Technically, the alias address is the concatenation of
+the _Alias Address Type_ and the _Alias ID_. A practical example from
+[TIP-31](https://wiki.iota.org/shimmer/tips/tips/TIP-0031/):
+
+- _Output ID_ (34-byte) that created the alias: `52fdfc072182654f163f5f0f9a621d729566c74d10037c4d7bbb0407d1e2c6490000`
+- _Alias ID_, BLAKE2b-256 hash (32-byte): `fe80c2eb7c736da2f7c98ecf135ee9e34e4e076afe6e1dfebc9ec578b8f56d2f`
+- Serialized alias address (33-byte): `08fe80c2eb7c736da2f7c98ecf135ee9e34e4e076afe6e1dfebc9ec578b8f56d2f`
+- Bech32 string:
+- IOTA (64-char): `iota1prlgpsht03ekmghhex8v7y67a835uns8dtlxu807hj0v279c74kj76j6rev`
+- IOTA Testnet (64-char): `atoi1prlgpsht03ekmghhex8v7y67a835uns8dtlxu807hj0v279c74kj7autzrp`
+- Shimmer (63-char): `smr1prlgpsht03ekmghhex8v7y67a835uns8dtlxu807hj0v279c74kj7dzrr0a`
+- Shimmer Testnet (63-char): `rms1prlgpsht03ekmghhex8v7y67a835uns8dtlxu807hj0v279c74kj7e9ge5y`
+
+Anyone can send funds in the ledger to the address of the alias, while only the current state controller is able to
+unlock those funds by including the alias itself in the very same transaction. An alias address doesn't have
+a private key for signing unlocks, therefore one has to prove that they can unlock the alias output that created the
+alias address.
+
+## Example Transaction
+
+Transaction E shows the process of alias unlocking. _Basic Output #3_ holds funds that are locked to the address of the
+alias. The state controller initiates a state transition and includes the basic output in the same transaction.
+The _Unlock_ for _Basic Output #3_ is an _Alias Unlock_ that references the _Unlock_ of the alias that defines
+_aliasAddress_.
+
+You should note that an _Alias Unlock_ may only reference an unlock at a lower index within the transaction to
+prevent circular unlocking without any signature. Due to this reason, it is possible to intentionally deadlock aliases
+by locking them to each other's alias address. Clients should implement safety mechanisms to prevent accidental user errors.
+
+![Transaction E - Consuming Alias owned funds](/img/stardust_explanations/stardust_ledger_anatomy/alias_transaction/tx_E.svg)
