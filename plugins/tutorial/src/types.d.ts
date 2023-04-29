@@ -12,4 +12,4 @@ export interface DefaultOptions {
 }
 
 export type UserOptions = Options & Partial<DefaultOptions>;
-export type NormalizedOptions = Options & DefaultOptions;  
+export type NormalizedOptions = Options & DefaultOptions;
