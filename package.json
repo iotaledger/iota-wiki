@@ -75,7 +75,7 @@
     "remark-math": "^3.0.1",
     "remark-remove-comments": "^0.2.0",
     "url-loader": "^4.1.1",
-    "webpack": "^5.73.0"
+    "webpack": "^5.81.0"
   },
   "resolutions": {
     "@types/react": "17.0.2",
