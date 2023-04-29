@@ -32,7 +32,7 @@ import {
   stringLiteral,
 } from '@babel/types';
 import generator from '@babel/generator';
-import { UserOptions as TutorialOptions } from '@iota-wiki/plugin-tutorial';
+import { type UserOptions as TutorialOptions } from '@iota-wiki/plugin-tutorial';
 import prettier from 'prettier';
 
 interface InputComponentProps {

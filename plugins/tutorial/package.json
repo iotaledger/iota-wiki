@@ -2,6 +2,7 @@
   "name": "@iota-wiki/plugin-tutorial",
   "version": "1.0.6",
   "main": "dist/index.js",
+  "types": "src/types.d.ts",
   "scripts": {
     "clean": "rm -rf ./lib",
     "build": "tsc --build",
@@ -13,6 +14,7 @@
     "typescript": "^4.6.3"
   },
   "files": [
-    "dist"
+    "dist",
+    "src/types.d.ts"
   ]
 }
