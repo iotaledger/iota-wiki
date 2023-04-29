@@ -2520,7 +2520,7 @@ __metadata:
     raw-loader: ^4.0.2
     remark: ^14.0.2
     remark-lint-no-dead-urls: ^1.1.0
-    tsc-alias: ^1.7.1
+    tsc-alias: ^1.8.6
     typescript-plugin-css-modules: ^4.1.1
     unified-engine: ^10.1.0
   peerDependencies:
@@ -15573,9 +15573,9 @@ plugin-image-zoom@flexanalytics/plugin-image-zoom:
   languageName: node
   linkType: hard
 
-"tsc-alias@npm:^1.7.1":
-  version: 1.8.1
-  resolution: "tsc-alias@npm:1.8.1"
+"tsc-alias@npm:^1.8.6":
+  version: 1.8.6
+  resolution: "tsc-alias@npm:1.8.6"
   dependencies:
     chokidar: ^3.5.3
     commander: ^9.0.0
@@ -15585,7 +15585,7 @@ plugin-image-zoom@flexanalytics/plugin-image-zoom:
     plimit-lit: ^1.2.6
   bin:
     tsc-alias: dist/bin/index.js
-  checksum: 685106e6775d288fd17e7e7d50fbc61f1b7809ab34bd69345d6d79c9c9f513c25328d1d8a2a76fe01fe41c07a8f9e3780341ec97bbb7c77c4d727d20fceb2d1a
+  checksum: e177c155e1501a1021cec8b201be582afabb3e2651b2e44883bf18efdce7f49fe0132497ab1df1d9f3bddd6e972db15d4de148b9514c6847e05f0ddd53896286
   languageName: node
   linkType: hard
 

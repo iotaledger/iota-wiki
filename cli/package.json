@@ -47,7 +47,7 @@
     "copyfiles": "^2.4.1",
     "nodemon": "^2.0.16",
     "raw-loader": "^4.0.2",
-    "tsc-alias": "^1.7.1",
+    "tsc-alias": "^1.8.6",
     "typescript-plugin-css-modules": "^4.1.1"
   },
   "peerDependencies": {
