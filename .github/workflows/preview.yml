@@ -19,6 +19,7 @@ jobs:
   config:
     uses: ./.github/workflows/config.reusable.yaml
   deploy:
+    if: ${{ github.actor != 'dependabot[bot]' }}
     runs-on: ubuntu-latest
     needs:
       - build
