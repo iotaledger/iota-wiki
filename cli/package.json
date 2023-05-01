@@ -34,7 +34,7 @@
     "ink-spinner": "^4.0.3",
     "ink-text-input": "^4.0.3",
     "isomorphic-git": "^1.17.2",
-    "prettier": "2.6.0",
+    "prettier": "2.8.8",
     "remark": "^14.0.2",
     "remark-lint-no-dead-urls": "^1.1.0",
     "unified-engine": "^10.1.0"

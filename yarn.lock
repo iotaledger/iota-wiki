@@ -2546,7 +2546,7 @@ __metadata:
     ink-text-input: ^4.0.3
     isomorphic-git: ^1.17.2
     nodemon: ^2.0.16
-    prettier: 2.6.0
+    prettier: 2.8.8
     raw-loader: ^4.0.2
     remark: ^14.0.2
     remark-lint-no-dead-urls: ^1.1.0
@@ -2596,7 +2596,7 @@ __metadata:
     globby: ^13.1.4
     hast-util-is-element: 1.1.0
     plugin-image-zoom: flexanalytics/plugin-image-zoom
-    prettier: ^2.4.1
+    prettier: ^2.8.8
     raw-loader: ^4.0.2
     react: 17.0.2
     react-collapsible: ^2.8.4
@@ -2650,7 +2650,7 @@ __metadata:
     clsx: ^1.2.1
     copyfiles: ^2.4.1
     nodemon: ^2.0.16
-    prettier: ^2.4.1
+    prettier: ^2.8.8
     react: 17.0.2
     typescript: ^4.9
   peerDependencies:
@@ -13005,21 +13005,12 @@ plugin-image-zoom@flexanalytics/plugin-image-zoom:
   languageName: node
   linkType: hard
 
-"prettier@npm:2.6.0":
-  version: 2.6.0
-  resolution: "prettier@npm:2.6.0"
+"prettier@npm:2.8.8, prettier@npm:^2.8.8":
+  version: 2.8.8
+  resolution: "prettier@npm:2.8.8"
   bin:
     prettier: bin-prettier.js
-  checksum: 3e527ad62279676778a8404d18174d7ca2365ada4caba6eebbcdd9907d1187afd3bc6ade5b4e5f5d4549bb9fb71e45ca8930d71500017635524f8fc05bc52e93
-  languageName: node
-  linkType: hard
-
-"prettier@npm:^2.4.1":
-  version: 2.8.0
-  resolution: "prettier@npm:2.8.0"
-  bin:
-    prettier: bin-prettier.js
-  checksum: 72004ce0cc9bb097daf3e3833f62495768724392c1d5b178dd47372337616e9e50ecbb0804f236596223f7b5eb1bbe69cefc8957dca21112c5777e77ef73a564
+  checksum: b49e409431bf129dd89238d64299ba80717b57ff5a6d1c1a8b1a28b590d998a34e083fa13573bc732bb8d2305becb4c9a4407f8486c81fa7d55100eb08263cf8
   languageName: node
   linkType: hard
 
