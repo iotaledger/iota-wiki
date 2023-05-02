@@ -1,0 +1,59 @@
+---
+image: /img/iota-wiki.png
+description: 'Melt native tokens in the IOTA Stardust protocol.'
+keywords:
+  - IOTA
+  - foundry
+  - alias output
+  - melt tokens
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Melt Tokens
+
+Melting tokens removes them from the circulating supply. Melting can only be carried out if the foundry is included in
+the transaction.
+
+## Example Transaction
+
+Transaction C assumes that the token issuer is in control of _mintAddress_ where the to-be melted tokens are locked.
+This transaction will melt 250 of the foundry's tokens:
+
+- _Melted Tokens_ of _Foundry Output #3_ is increased by the amount of melted tokens, 250.
+- _Basic Output #3_ now has 250 tokens remaining. The input side of the transaction contains 500 tokens, but the output
+  side only 250. By increasing _Melted Tokens_ on _Foundry Output #3_ the transaction becomes balanced.
+- Looking at _Foundry Output #3_ you can determine that the circulating supply of the token is _Minted Tokens_ - _Melted Tokens_ = 750.
+- In a subsequent transaction you could mint 250 tokens to reach _Maximum Supply_ again.
+
+![Transaction C - Melting tokens](/img/stardust_explanations/stardust_ledger_anatomy/native_tokens_foundries/tx_C.svg)
+
+## Related Tutorials
+
+<Tabs groupId={'libraries'}>
+<TabItem value="iota.js" label="iota.js">
+
+- [Native Token Transactions](https://wiki.iota.org/shimmer/iotajs/tutorials/native-token-transactions/introduction/)
+
+</TabItem>
+</Tabs>
+
+## Related How-to Guides
+
+<Tabs groupId={'libraries'}>
+<TabItem value="wallet.rs" label="wallet.rs" >
+
+- [Melt Native Tokens](https://wiki.iota.org/shimmer/wallet.rs/how_tos/native_tokens/melt_native_token/)
+
+</TabItem>
+</Tabs>
+
+## Related Code Examples
+
+<Tabs groupId={'libraries'}>
+  <TabItem value='iota.js' label='iota.js'>
+    * [Native Token
+    Tour](https://github.com/iotaledger/iota.js/blob/feat/stardust/packages/iota/examples/native-token-tour/src/index.ts)
+  </TabItem>
+</Tabs>

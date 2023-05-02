@@ -1,6 +1,6 @@
 # Setup a Testnet Wallet and Receive Funds from the Faucet
 
-In this tutorial, you will [create a new mnemonic seed phrase](#create-mnemonic-script) to set up a Stronghold account with the [NodeJS binding of wallet.rs](https://github.com/iotaledger/wallet.rs/tree/develop/bindings/nodejs). Afterward, you will [generate a new address](#3-create-address), [request funds from the Shimmer testnet faucet](#request-tokens-from-faucet), and [check your account balance](#check-balance-again).
+In this tutorial, you will [create a new mnemonic seed phrase](#create-mnemonic-script) to set up a Stronghold account with the [NodeJS binding of wallet.rs](https://github.com/iotaledger/wallet.rs/tree/develop/wallet/bindings/nodejs). Afterward, you will [generate a new address](#3-create-address), [request funds from the Shimmer testnet faucet](#request-tokens-from-faucet), and [check your account balance](#check-balance-again).
 
 ## Prerequisites
 

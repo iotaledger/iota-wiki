@@ -13,7 +13,7 @@ operate between chains, mint Native Assets, and access the network. However, the
 ## Storage Deposits
 
 With the introduction
-of [storage deposits](https://wiki.iota.org/shimmer/introduction/explanations/what_is_stardust/storage_deposit/), any
+of [storage deposits](../what-is-stardust/storage-deposit.md), any
 data you want to store on the Tangle needs to be backed by Shimmer tokens. NFTs, Smart Contract chain state anchors, and Native Assets
 require a deposit of Shimmer tokens to be stored on L1.
 

@@ -24,6 +24,10 @@
     "generate:api": "docusaurus gen-api-docs all",
     "lint": "eslint --cache --fix .",
     "lint:check": "eslint --cache .",
+    "lint:links": "iota-wiki check",
+    "lint:links:iota": "(ENVIRONMENT=iota; yarn iota-wiki check)",
+    "lint:links:shimmer": "(ENVIRONMENT=shimmer; yarn iota-wiki check)",
+    "lint:links:next": "(ENVIRONMENT=next; yarn iota-wiki check)",
     "format": "prettier --cache --write .",
     "format:check": "prettier --cache --check .",
     "format:svg": "svgo ./src/**/*.svg",
@@ -46,13 +50,13 @@
     "@mdx-js/react": "^1.6.21",
     "@popperjs/core": "^2.11.5",
     "@svgr/webpack": "^5.5.0",
-    "callsite": "^1.0.0",
     "clsx": "^1.2.1",
     "docusaurus-plugin-openapi-docs": "^1.4.7",
     "docusaurus-theme-openapi-docs": "^1.4.7",
     "file-loader": "^6.2.0",
     "flickity": "2.3.0",
     "flickity-fade": "^2.0.0",
+    "globby": "^13.1.4",
     "hast-util-is-element": "1.1.0",
     "plugin-image-zoom": "flexanalytics/plugin-image-zoom",
     "raw-loader": "^4.0.2",
@@ -65,13 +69,13 @@
     "react-popper": "^2.3.0",
     "react-select": "^5.2.2",
     "rehype-katex": "4",
+    "rehype-lodash-template": "^0.2.1",
     "remark-code-import": "^0.3.0",
     "remark-import-partial": "^0.0.2",
     "remark-math": "^3.0.1",
     "remark-remove-comments": "^0.2.0",
-    "require-glob": "^4.1.0",
     "url-loader": "^4.1.1",
-    "webpack": "^5.73.0"
+    "webpack": "^5.81.0"
   },
   "resolutions": {
     "@types/react": "17.0.2",
@@ -92,6 +96,7 @@
   "devDependencies": {
     "@docusaurus/module-type-aliases": "2.2.0",
     "@docusaurus/plugin-google-gtag": "2.2.0",
+    "@iota-wiki/cli": "workspace:^",
     "@tsconfig/docusaurus": "^1.0.6",
     "@types/react": "17.0.2",
     "@types/react-dom": "17.0.2",
@@ -108,7 +113,8 @@
   },
   "packageManager": "yarn@3.2.0",
   "workspaces": [
-    "cli"
+    "cli",
+    "theme"
   ],
   "files": []
 }

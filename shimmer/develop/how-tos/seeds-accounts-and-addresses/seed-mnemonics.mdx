@@ -1,0 +1,50 @@
+---
+image: /img/iota-wiki.png
+description: 'Learn how to create a seed and understand the importance of seed mnemonics or phrases for generating private keys and addresses securely in the IOTA ecosystem.'
+keywords:
+  - Seed
+  - IOTA
+  - Mnemonics
+  - Phrases
+  - BIP39
+  - Private Keys
+  - Addresses
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Create a Seed
+
+If you want to send any type of [transaction](./../simple-transfer.mdx), you will need to use
+your [seed](#seeds) to generate [accounts](#accounts) and [addresses](#addresses).
+
+## Seed Mnemonics or Phrases
+
+The client libraries use the [BIP39 standard](https://en.bitcoin.it/wiki/BIP_0039). This means that the libraries can
+derive the seed from a mnemonic or seed phrase, making it easier for you to write down or remember. The mnemonic itself
+is simply a random list of english words.
+
+### Related How-to Guides
+
+<Tabs groupId={'libraries'}>
+<TabItem value="wallet.rs" label="wallet.rs" >
+
+The wallet.rs library is secured by [Stronghold](https://wiki.iota.org/shimmer/stronghold/welcome) by default. This
+means that you can simply create an `AccountManager` instance, and Stronghold will generate and store your seed securely.
+
+You can still use the library to generate a mnemonic by calling the `AccountManager.generateMnemonic()` function.
+
+</TabItem>
+<TabItem value="iota.rs" label="iota.rs">
+
+- [Generate a seed mnemonic](https://wiki.iota.org/shimmer/iota.rs/how_tos/generate_mnemonic/)
+
+</TabItem>
+<TabItem value="iota.js" label="iota.js">
+
+- [Generate a seed](https://wiki.iota.org/shimmer/iotajs/how_tos/address/#generate-a-seed)
+- [Generate a seed mnemonic and master seed](https://wiki.iota.org/shimmer/iotajs/tutorials/value-transactions/generate-a-seed/#generate-an-ed25519-master-seed)
+
+</TabItem>
+</Tabs>

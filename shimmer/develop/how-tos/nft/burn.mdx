@@ -1,0 +1,37 @@
+---
+image: /img/iota-wiki.png
+description: 'Burn NFTs in the IOTA Stardust protocol.'
+keywords:
+  - IOTA Stardust
+  - nft
+  - burn
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Burn an NFT
+
+The owner of the NFT may choose to burn it to retrieve the storage deposit of the _NFT Output_. Burning on protocol
+level simply means that the _NFT Output_ is unlocked in a transaction, but it doesn't appear on the output side.
+
+:::warning
+Before burning an NFT, always check whether its _NFT Address_ owns something in the ledger. Otherwise, you may lose those
+funds forever!
+:::
+
+## Example Transaction
+
+Transaction E shows how to burn an NFT and claim its storage deposit into a _Basic Output_.
+
+![Transaction E - Burning an NFT](/img/stardust_explanations/stardust_ledger_anatomy/nft_transaction/tx_E.svg)
+
+## Related How-to Guides
+
+<Tabs groupId={'libraries'}>
+<TabItem value="wallet.rs" label="wallet.rs" >
+
+- [Burn an NFT](https://wiki.iota.org/shimmer/wallet.rs/how_tos/NFT/burn_nft/)
+
+</TabItem>
+</Tabs>

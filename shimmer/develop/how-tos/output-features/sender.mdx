@@ -1,0 +1,35 @@
+---
+image: /img/iota-wiki.png
+description: 'Explore the Sender feature in Stardust, which allows the creator of an output to define an explicit Sender Address attribute, providing a protocol-validated proof of output creation.'
+keywords:
+  - Sender Feature
+  - Stardust
+  - Sender Address
+  - IOTA Outputs
+  - Smart Contracts
+---
+
+# Sender
+
+Stardust allows you to define optional _Features_ on outputs of a transfer that do not impact the actual unlocking of
+the created output. The _Sender_ feature lets the creator of the output define an explicit _Sender Address_ attribute
+for the output.
+
+The _Sender_ attribute is validated on protocol level. Validation ensures that the transaction that created the output
+unlocked the _Sender_ address on the input side. Therefore, this feature is a protocol validated proof that the output
+was created by someone who controls the _Sender_ address.
+
+## Example Transaction
+
+Transaction J shows how you can add a sender attribute to a created output. Note, that Transaction J would be invalid
+if:
+
+- _Basic Output #15_ wouldn't be locked to _senderAddress_, or
+- _Basic Output #16_ would define _Sender_ as anything else than the _senderAddress_ from _Basic Output #15_.
+
+![Transaction J - Sender Feature](/img/stardust_explanations/stardust_ledger_anatomy/simple_transaction/tx_J.svg)
+
+On-ledger requests (originating from L1) of IOTA Smart Contracts use this feature heavily, but it is also possible to
+fetch outputs created by a specific party with the _Sender Feature_ through the
+[INX UTXO indexer application](https://github.com/gohornet/inx-indexer) and
+[REST API](https://wiki.iota.org/shimmer/tips/tips/TIP-0026/).

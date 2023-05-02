@@ -19,7 +19,7 @@ To continue the guaranteed accessibility of tokens, all owners of tokens in the 
 
 ## Migration process
 
-The migration of tokens from the old to the new network is a special process executed in the [IOTA Firefly Wallet](https://firely.iota.org)
+The migration of tokens from the old to the new network is a special process executed in the [IOTA Firefly Wallet](https://firefly.iota.org)
 
 It follows the following steps:
 

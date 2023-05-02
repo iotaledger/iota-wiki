@@ -1,6 +1,7 @@
-import path from 'path';
+const path = require('path');
+const { merge } = require('@wiki/utils/config');
 
-module.exports = {
+const common = {
   title: 'IOTA Wiki',
   tagline: 'The complete reference for IOTA',
   url: 'https://wiki.iota.org',
@@ -30,6 +31,7 @@ module.exports = {
         ),
       },
     ],
+    '@iota-wiki/theme',
     path.resolve(__dirname, '../theme'),
   ],
   themeConfig: {
@@ -54,4 +56,23 @@ module.exports = {
     },
   },
   staticDirectories: [path.resolve(__dirname, '../static')],
+};
+
+module.exports = async () => {
+  const { IOTA_WIKI_DIRECTORY } = process.env;
+
+  // Get relative configuration path and import it.
+  const configPath = path
+    .relative(
+      __dirname,
+      path.join(process.cwd(), IOTA_WIKI_DIRECTORY, 'docusaurus.config.js'),
+    )
+    .split(path.sep)
+    .join(path.posix.sep);
+  const config = require(configPath);
+
+  // Allow async functions returning a configuration object.
+  const external = typeof config === 'function' ? await config() : config;
+
+  return merge(external, common);
 };

@@ -21,20 +21,23 @@
     "prepack": "yarn build"
   },
   "dependencies": {
-    "@babel/generator": "^7.17.9",
+    "@babel/generator": "^7.21.5",
     "@babel/parser": "^7.21.2",
-    "@babel/types": "^7.17.0",
+    "@babel/types": "^7.21.5",
     "@iota-wiki/core": "workspace:^",
     "@yarnpkg/shell": "^3.2.0",
     "axios": "^0.26.1",
     "clipanion": "^3.2.0-rc.10",
     "ink": "^3.2.0",
     "ink-multi-select": "2.0.0",
-    "ink-select-input": "^4.2.1",
+    "ink-select-input": "^4.2.2",
     "ink-spinner": "^4.0.3",
     "ink-text-input": "^4.0.3",
     "isomorphic-git": "^1.17.2",
-    "prettier": "2.6.0"
+    "prettier": "2.6.0",
+    "remark": "^14.0.2",
+    "remark-lint-no-dead-urls": "^1.1.0",
+    "unified-engine": "^10.1.0"
   },
   "devDependencies": {
     "@types/babel__generator": "^7",
@@ -43,7 +46,8 @@
     "@types/prettier": "^2",
     "copyfiles": "^2.4.1",
     "nodemon": "^2.0.16",
-    "tsc-alias": "^1.7.1",
+    "raw-loader": "^4.0.2",
+    "tsc-alias": "^1.8.6",
     "typescript-plugin-css-modules": "^4.1.1"
   },
   "peerDependencies": {

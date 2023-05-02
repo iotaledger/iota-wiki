@@ -15,7 +15,7 @@ export class Build extends Command {
   });
 
   async execute() {
-    const directory = this.directory || process.cwd();
+    const directory = this.directory || '.';
 
     return await shell(
       'npx docusaurus build --config',

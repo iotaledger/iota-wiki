@@ -1,0 +1,23 @@
+{
+  "references": [
+    { "path": "./tsconfig.client.json" },
+    { "path": "./tsconfig.server.json" }
+  ],
+  "compilerOptions": {
+    /* Emit */
+    "target": "ES2020",
+    "declaration": true,
+    "jsx": "react-native",
+    "noEmit": true,
+    // Will be overridden for client code
+    "module": "NodeNext",
+
+    /* Module Resolution */
+    "moduleResolution": "NodeNext",
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "isolatedModules": true,
+    "skipLibCheck": true,
+    "allowJs": true
+  }
+}
