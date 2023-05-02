@@ -215,6 +215,7 @@ module.exports = {
           'getting-started',
           'wasp',
           'iscp',
+          'video',
         ],
       },
     ],
@@ -226,7 +227,7 @@ module.exports = {
           'In this tutorial, you will learn how to set up Hardhat and use it to build, test and deploy a simple smart contract on ShimmerEVM.',
         preview: '/shimmerevm-hardhat.jpg',
         route: 'tutorials/shimmerevm-hardhat',
-        tags: ['text', 'shimmer', 'solidity', 'shimmerevm', 'hardhat', 'iscp'],
+        tags: ['text', 'shimmer', 'solidity', 'shimmerevm', 'hardhat', 'iscp', 'video'],
       },
     ],
     [
@@ -237,7 +238,7 @@ module.exports = {
           'This tutorial will guide you as you write and deploy a voting dApp on ShimmerEVM. You can vote on a few options and view the results; all data will be stored on-chain.',
         preview: '/shimmerevm-dapp-voting.jpg',
         route: 'tutorials/shimmerevm-dapp-voting',
-        tags: ['text', 'shimmer', 'solidity', 'iscp', 'video'],
+        tags: ['text', 'shimmer', 'solidity', 'iscp'],
       },
     ],
     [
