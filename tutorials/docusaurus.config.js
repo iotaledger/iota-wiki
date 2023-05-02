@@ -237,7 +237,19 @@ module.exports = {
           'This tutorial will guide you as you write and deploy a voting dApp on ShimmerEVM. You can vote on a few options and view the results; all data will be stored on-chain.',
         preview: '/shimmerevm-dapp-voting.jpg',
         route: 'tutorials/shimmerevm-dapp-voting',
-        tags: ['text', 'shimmer', 'solidity', 'iscp'],
+        tags: ['text', 'shimmer', 'solidity', 'iscp', 'video'],
+      },
+    ],
+    [
+      '@iota-wiki/plugin-tutorial',
+      {
+        title: 'Setup WASP locally using Docker',
+        description:
+          'In this tutorial you will learn how to setup WASP and Hornet locally for Development setup.',
+        preview: '/wasp-setup-shimmer.png',
+        route:
+          'https://youtu.be/ltem9Bh_4hA',
+        tags: ['text', 'shimmer', 'video'],
       },
     ],
   ],
