@@ -1,10 +1,11 @@
 ---
 image: /img/iota-wiki.png
-description: 'Understand the concept of accounts and addresses in the IOTA ecosystem, the differences between the multi-account and single account approaches, and the BIP32 tree structure for address and key space generation.'
+description: 'Understand the concept of accounts and addresses in the IOTA and Shimmer ecosystem, the differences between the multi-account and single account approaches, and the BIP32 tree structure for address and key space generation.'
 keywords:
   - Accounts
   - Addresses
   - IOTA
+  - Shimmer
   - Seeds
   - BIP32
   - BIP44
@@ -16,7 +17,7 @@ import TabItem from '@theme/TabItem';
 
 # Accounts and Addresses
 
-Since the Chrysalis protocol, addresses in the IOTA ecosystem are reusable. This means you map them to your
+Since the Chrysalis protocol, addresses in the IOTA/Shimmer ecosystem are reusable. This means you map them to your
 users in a clear and concise way. You can use your [seed](seed-mnemonics.mdx) to generate any number of accounts. You create
 one [account for each user](#single-account-approach)
 or [use a single account and generate multiple addresses](#multiple-account-approach),
@@ -24,7 +25,7 @@ which you can then link to the users in your database.
 
 ## Accounts
 
-Accounts are related to a specific [IOTA Layer 1 Network](../../explanations/what-is-shimmer/layer-1-landscape.md). You can create as many accounts as you want per seed, and then use those accounts to generate as many addresses as you want.
+Accounts are related to a specific [IOTA or Shimmer Layer 1 Network](../../explanations/what-is-shimmer/layer-1-landscape.md). You can create as many accounts as you want per seed, and then use those accounts to generate as many addresses as you want.
 
 ## Addresses
 
@@ -64,7 +65,7 @@ m / purpose / coin_type / account / change / address_index
 - `change`: Change index which is `{0, 1}`, also known as `wallet chain`.
 
 There are two independent chains of addresses or keys. `0` is reserved for public addresses (to receive coins) and `1` is
-reserved for internal addresses (also known as change) to which transaction change is returned. Since IOTA allows address
+reserved for internal addresses (also known as change) to which transaction change is returned. Since IOTA/Shimmer allows address
 reuse, it is valid to return transaction change to the same originating address.
 
 - `address_index`: Address index. Zero-based increasing `int` that indicates an address index.
