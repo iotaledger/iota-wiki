@@ -250,7 +250,7 @@ module.exports = {
         preview: '/wasp-setup-shimmer.png',
         route:
           'https://youtu.be/ltem9Bh_4hA',
-        tags: ['text', 'shimmer', 'video'],
+        tags: ['text', 'shimmer', 'video', 'wasp', 'iscp'],
       },
     ],
   ],
