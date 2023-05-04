@@ -256,8 +256,7 @@ module.exports = {
         description:
           'In this tutorial you will learn how to setup WASP and Hornet locally for Development setup.',
         preview: '/wasp-setup-shimmer.png',
-        route:
-          'https://youtu.be/ltem9Bh_4hA',
+        route: 'https://youtu.be/ltem9Bh_4hA',
         tags: ['text', 'shimmer', 'video', 'wasp', 'iscp'],
       },
     ],
