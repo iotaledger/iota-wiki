@@ -227,7 +227,15 @@ module.exports = {
           'In this tutorial, you will learn how to set up Hardhat and use it to build, test and deploy a simple smart contract on ShimmerEVM.',
         preview: '/shimmerevm-hardhat.jpg',
         route: 'tutorials/shimmerevm-hardhat',
-        tags: ['text', 'shimmer', 'solidity', 'shimmerevm', 'hardhat', 'iscp', 'video'],
+        tags: [
+          'text',
+          'shimmer',
+          'solidity',
+          'shimmerevm',
+          'hardhat',
+          'iscp',
+          'video',
+        ],
       },
     ],
     [
@@ -248,8 +256,7 @@ module.exports = {
         description:
           'In this tutorial you will learn how to setup WASP and Hornet locally for Development setup.',
         preview: '/wasp-setup-shimmer.png',
-        route:
-          'https://youtu.be/ltem9Bh_4hA',
+        route: 'https://youtu.be/ltem9Bh_4hA',
         tags: ['text', 'shimmer', 'video'],
       },
     ],
