@@ -260,6 +260,17 @@ module.exports = {
         tags: ['text', 'shimmer', 'video', 'wasp', 'iscp'],
       },
     ],
+    [
+      '@iota-wiki/plugin-tutorial',
+      {
+        title: 'Bridge USDC Testnet Tokens using Multichain',
+        description:
+          'This tutorial provides a step-by-step guide on how to use the Multichain testnet token bridge to bridge USDC Testnet tokens between the blockchains Goerli (Ethereum Testnetwork) and ShimmerEVM Testnet.',
+        preview: '/bridge-multichain.png',
+        route: 'tutorials/bridge-usdc-testnet-tokens',
+        tags: ['text', 'shimmer', 'iscp'],
+      },
+    ],
   ],
   staticDirectories: [path.resolve(__dirname, 'static')],
 };
