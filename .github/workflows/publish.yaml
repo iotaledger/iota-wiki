@@ -8,7 +8,7 @@ jobs:
   publish:
     strategy:
       matrix:
-        package: [core, cli]
+        package: [core, cli, plugin-tutorial]
         include:
           - package: core
             path: 'package.json'
@@ -16,6 +16,9 @@ jobs:
           - package: cli
             path: 'cli/package.json'
             workspace: '@iota-wiki/cli'
+          - package: plugin-tutorial
+            path: 'plugins/tutorial/package.json'
+            workspace: '@iota-wiki/plugin-tutorial'
     uses: ./.github/workflows/publish.reusable.yaml
     with:
       path: ${{ matrix.path }}

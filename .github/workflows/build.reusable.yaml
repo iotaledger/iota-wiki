@@ -35,6 +35,9 @@ jobs:
       - name: Install dependencies
         run: |
           yarn
+      - name: Build plugins
+        run: |
+          yarn build:plugins
       # Submodules cached per environment to save time
       - name: Cache submodules
         uses: actions/cache@v3

@@ -1,0 +1,20 @@
+{
+  "name": "@iota-wiki/plugin-tutorial",
+  "version": "1.0.6",
+  "main": "dist/index.js",
+  "types": "src/types.d.ts",
+  "scripts": {
+    "clean": "rm -rf ./lib",
+    "build": "tsc --build",
+    "prepack": "yarn build"
+  },
+  "packageManager": "yarn@3.2.2",
+  "devDependencies": {
+    "@docusaurus/types": "2.2.0",
+    "typescript": "^4.6.3"
+  },
+  "files": [
+    "dist",
+    "src/types.d.ts"
+  ]
+}
