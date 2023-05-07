@@ -9,12 +9,6 @@ export class Lint extends Command {
   args = Option.Rest()
 
   async execute() {
-    console.log(internalConfig)
-    console.log("Running linting...")
-    console.log(this.config)
-    console.log(this.args)
-    console.log("CLI:", process.cwd())
-    console.log('npx markdownlint-cli2-config', internalConfig, ...this.args)
     return await shell(
       'npx markdownlint-cli2-config ' + internalConfig + ' ',
       this.args,
