@@ -11,19 +11,15 @@ if (env.CUSTOM_CONFIG) {
 
 const default_config = {
   config: {
-    "MD007": {
-        "indent": 4
+    MD007: {
+      indent: 4,
     },
-    "MD013": false,
-    "MD033": {
-        "allowed_elements": [
-            "Tabs", 
-            "TabItem",
-            "CodeBlock"
-        ],
+    MD013: false,
+    MD033: {
+        allowed_elements: ['Tabs', 'TabItem', 'CodeBlock'],
     },
-    "MD034": false,
-    "MD041": false,
+    MD034: false,
+    MD041: false,
   },
 };
 
