@@ -356,6 +356,21 @@ module.exports = {
                   label: 'Chronicle',
                   href: '/chronicle/welcome',
                 },
+                {
+                  type: 'link',
+                  label: 'API Core v0',
+                  href: '/inx-api-core-v0/welcome',
+                },
+                {
+                  type: 'link',
+                  label: 'API Core v1',
+                  href: '/inx-api-core-v1/welcome',
+                },
+                {
+                  type: 'link',
+                  label: 'IRC Metadata',
+                  href: '/inx-irc-metadata/welcome',
+                },
               ],
             },
           ],

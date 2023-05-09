@@ -34,3 +34,6 @@ over [gRPC](https://grpc.io). They can track ledger updates, check the node stat
 - [Spammer](https://wiki.iota.org/shimmer/inx-spammer/welcome/): Generates transactions in the network thereby increasing reference and confirmation rates
 - [Wasp](https://wiki.iota.org/shimmer/smart-contracts/guide/chains_and_nodes/running-a-node/): Runs the IOTA Smart Contracts protocol.
 - [Chronicle](https://wiki.iota.org/shimmer/chronicle/welcome/): Listens to all blocks in the Tangle referenced by a milestone and stores them in a MongoDB database.
+- [API Core v0](https://wiki.iota.org/shimmer/inx-api-core-v0/welcome/): Provides historical tangle data from a hornet legacy database via IOTA legacy API.
+- [API Core v1](https://wiki.iota.org/shimmer/inx-api-core-v1/welcome/): Provides historical tangle data from a hornet chrysalis database via IOTA chrysalis API.
+- [IRC Metadata](https://wiki.iota.org/shimmer/inx-irc-metadata/welcome/): Enables to query the metadata of NFT following the [IRC27 - IOTA NFT](https://github.com/iotaledger/tips/blob/main/tips/TIP-0027/tip-0027.md) standards and native tokens following the [IRC30 - Native Token Metadata Standard](https://github.com/iotaledger/tips/blob/main/tips/TIP-0030/tip-0030.md). Given a piece of data or transaction and the proof, you can verify whether it was included in the Tangle at any given time.
