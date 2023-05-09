@@ -222,3 +222,15 @@
 	path = next/external/tips
 	url = https://github.com/iotaledger/tips
 	branch = main
+[submodule "shimmer/external/inx-api-core-v0"]
+	path = shimmer/external/inx-api-core-v0
+	url = https://github.com/iotaledger/inx-api-core-v0
+	branch = develop
+[submodule "shimmer/external/inx-api-core-v1"]
+	path = shimmer/external/inx-api-core-v1
+	url = https://github.com/iotaledger/inx-api-core-v1
+	branch = develop
+[submodule "shimmer/external/inx-irc-metadata"]
+	path = shimmer/external/inx-irc-metadata
+	url = https://github.com/iotaledger/inx-irc-metadata
+	branch = develop
