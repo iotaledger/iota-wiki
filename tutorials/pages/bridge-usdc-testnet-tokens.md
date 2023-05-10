@@ -20,13 +20,13 @@ In order to get the needed networks to your Metamask wallet, you can use [Chainl
 
 <p style="text-align: center">
     <kbd>
-        <img src="https://i.imgur.com/x3ZgPH0.png"  width="500">
+        <img src="/static/search-goerli.png"  width="500">
     </kbd>
 </p>
 
 <p style="text-align: center">
     <kbd>
-        <img src="https://i.imgur.com/8aCjoT8.png"  width="400">
+        <img src="/static/goerli-chainid.png"  width="400">
     </kbd>
 </p>
 
@@ -36,8 +36,7 @@ You can find the faucet for the ShimmerEVM Testnet in the [ShimmerEVM Toolkit](h
 
 <p style="text-align: center">
     <kbd>
-        <img src="https://i.imgur.com/CrGHufp.png"  width="500
-                                                           ">
+        <img src="/static/evm-faucet-multichain.png"  width="500">
     </kbd>
 </p>
 
@@ -47,7 +46,7 @@ The faucet that proved to be most reliable for GoerliETH, is the Proof-of-Work (
 
 <p style="text-align: center">
     <kbd>
-        <img src="https://i.imgur.com/udXYVnV.png"  width="300">
+        <img src="/static/goerli-faucet.png"  width="300">
     </kbd>
 </p>
 
@@ -57,7 +56,7 @@ Visit the [USDC Faucet](https://usdcfaucet.com/), select Ethereum (ETH), enter y
 
 <p style="text-align: center">
     <kbd>
-        <img src="https://i.imgur.com/PSPV4nW.png"  width="400">
+        <img src="/static/usdc-faucet.png"  width="400">
     </kbd>
 </p>
 
@@ -69,20 +68,19 @@ Connect your Metmask wallet to the site and select Goerli as the source network.
 
 <p style="text-align: center">
     <kbd>
-        <img src="https://i.imgur.com/sK4HcIV.png"  width="400">
+        <img src="/static/select-chain-multichain.png"  width="400">
     </kbd>
 </p>
 
 <p style="text-align: center">
     <kbd>
-        <img src="https://i.imgur.com/v4zmdkI.png"  width="400">
+        <img src="/static/select-usdc.png"  width="400">
     </kbd>
 </p>
 
 <p style="text-align: center">
     <kbd>
-        <img src="https://i.imgur.com/6BTq0HU.png"  width="300
-                                                           ">
+        <img src="/static/add-usdc.png"  width="300">
     </kbd>
 </p>
 
@@ -90,10 +88,10 @@ If the previous steps were successful, your wallet should show balances for Goer
 
 <p style="text-align: center">
     <kbd>
-        <img src="https://i.imgur.com/wuyV98k.png"  width="300">
+        <img src="/static/usdc-metamask.png"  width="300">
     </kbd>
     <kbd>
-        <img src="https://i.imgur.com/w7saYQ9.png"  width="300">
+        <img src="/static/smr-balance-metamask.png"  width="300">
     </kbd>
 </p>
 
@@ -107,7 +105,7 @@ Go to our [Token Bridge](https://iota-bridge.vercel.app/) and connect your Metma
 
 <p style="text-align: center">
     <kbd>
-        <img src="https://i.imgur.com/ljk4Rk4.png"  width="500">
+        <img src="/static/bridge-assets.png"  width="500">
     </kbd>
 </p>
 
@@ -115,7 +113,7 @@ The page will summarize your selections and ask you to confirm the transaction.
 
 <p style="text-align: center">
     <kbd>
-        <img src="https://i.imgur.com/zdPVSst.png"  width="500">
+        <img src="/static/confirm-swap.png"  width="500">
     </kbd>
 </p>
 
@@ -123,13 +121,13 @@ Metamask will ask you to set, review and confirm the max amount of USDC token th
 
 <p style="text-align: center">
     <kbd>
-        <img src="https://i.imgur.com/L6Q2ejA.png"  height="350">
+        <img src="/static/metamask-spending-cap.png"  height="350">
     </kbd>
     <kbd>
-        <img src="https://i.imgur.com/3mmFZIV.png"  height="350">
+        <img src="/static/metamask-spending-cap-review.png"  height="350">
     </kbd>
     <kbd>
-        <img src="https://i.imgur.com/UgVCQTm.png"  height="350">
+        <img src="/static/metamask-tx.png"  height="350">
     </kbd>
 </p>
 
@@ -137,10 +135,10 @@ After the transaction was confirmed on Metamask, you can follow the status of th
 
 <p style="text-align: center">
     <kbd>
-        <img src="https://i.imgur.com/hx5rVYU.png"  width="300">
+        <img src="/static/multichain-tx.png"  width="300">
     </kbd>
     <kbd>
-        <img src="https://i.imgur.com/jJvIqF5.png"  width="300">
+        <img src="/static/multichain-tx-sent.png"  width="300">
     </kbd>
 </p>
 
@@ -150,7 +148,7 @@ Now you can connect your Metmask wallet to the ShimmerEVM Testnet and check if t
 
 <p style="text-align: center">
     <kbd>
-        <img src="https://i.imgur.com/2JML0O8.png"  width="300">
+        <img src="/static/metamask-usdc-balance.png"  width="300">
     </kbd>
 </p>
 
