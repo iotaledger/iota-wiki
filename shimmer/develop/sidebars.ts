@@ -289,6 +289,23 @@ module.exports = {
               type: 'link',
               href: '/stronghold.rs/welcome',
             },
+            {
+              type: 'category',
+              label: 'Community Driven Libraries',
+              collapsed: true,
+              items: [
+                {
+                  label: 'tanglePHP',
+                  type: 'link',
+                  href: 'https://tanglephp.com',
+                },
+                {
+                  label: 'IotaWallet.NET',
+                  type: 'link',
+                  href: 'https://github.com/IOTA-NET/IotaWallet.NET',
+                },
+              ],
+            },
           ],
         },
         {
@@ -370,6 +387,18 @@ module.exports = {
                   type: 'link',
                   label: 'IRC Metadata',
                   href: '/inx-irc-metadata/welcome',
+                },
+                {
+                  type: 'category',
+                  label: 'Community Driven INX Plugins',
+                  collapsed: true,
+                  items: [
+                    {
+                      label: 'INX Collector',
+                      type: 'link',
+                      href: 'https://github.com/teleconsys/inx-collector',
+                    },
+                  ],
                 },
               ],
             },
