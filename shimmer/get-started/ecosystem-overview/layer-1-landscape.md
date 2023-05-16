@@ -17,7 +17,7 @@ You can use this section to get a high-level overview of the IOTA and Shimmer ne
 ## High-Level Overview
 
 |                                                                | IOTA                                                     | Shimmer                                                                                                                                                                                                                                                                           |
-| -------------------------------------------------------------- | -------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|----------------------------------------------------------------|----------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Protocol                                                       | [Chrysalis](https://wiki.iota.org/introduction/welcome/) | [Stardust](../what-is-stardust/what-is-stardust.md)                                                                                                                                                                                                                               |
 | [Stability](#stability)                                        | Excellent                                                | Good                                                                                                                                                                                                                                                                              |
 | Transaction fees                                               | None                                                     | None                                                                                                                                                                                                                                                                              |
@@ -69,9 +69,9 @@ The IOTA network does not support custom tokens yet.
 
 The Stardust protocol introduces
 a [tokenization framework](../what-is-stardust/tokenization.md)
-that enables [Alias outputs](../../how-tos/alias/introduction.mdx),
-[NFTs](../../how-tos/nft/introduction.mdx)
-and [native tokens and foundries](../../how-tos/native-token/introduction.mdx)
+that enables [Alias outputs](./../../develop/how-tos/alias/introduction.mdx),
+[NFTs](./../../develop/how-tos/nft/introduction.mdx)
+and [native tokens and foundries](./../../develop/how-tos/native-token/introduction.mdx)
 on layer 1, as long as you can cover the
 minimum [storage deposit](#storage-deposits).
 
@@ -108,7 +108,7 @@ but also:
 
 - [Storage deposit return](../what-is-stardust/unlock-conditions.md#storage-deposit-return):
   This feature allows you to specify a return amount that has to be refunded to the sender's account, which enables
-  micro-transactions of any size.
+  microtransactions of any size.
 - [Expirations](../what-is-stardust/unlock-conditions.md#expiration):
   If you define an expiration date-time for your output, it will be returned if it hasn't been claimed by said
   date-time.

@@ -2,6 +2,33 @@ module.exports = {
   about: [
     {
       type: 'category',
+      label: 'Ecosystem Overview',
+      link: {
+        type: 'doc',
+        id: 'ecosystem-overview/introduction',
+      },
+      items: [
+        'ecosystem-overview/layer-1-landscape',
+        'ecosystem-overview/networks',
+        {
+          type: 'category',
+          label: 'About Nodes',
+          link: {
+            type: 'doc',
+            id: 'ecosystem-overview/nodes/about-nodes',
+          },
+          items: [
+            'ecosystem-overview/nodes/about-nodes',
+            'ecosystem-overview/nodes/hornet',
+            'ecosystem-overview/nodes/become-a-node-operator',
+          ],
+        },
+        'ecosystem-overview/clients',
+        'ecosystem-overview/tokens-and-wallets',
+      ],
+    },
+    {
+      type: 'category',
       label: 'How It Works',
       items: [
         'welcome',
@@ -35,33 +62,7 @@ module.exports = {
       ],
     },
 
-    {
-      type: 'category',
-      label: 'What is Shimmer?',
-      link: {
-        type: 'doc',
-        id: 'what-is-shimmer/introduction',
-      },
-      items: [
-        'what-is-shimmer/layer-1-landscape',
-        'what-is-shimmer/networks',
-        {
-          type: 'category',
-          label: 'About Nodes',
-          link: {
-            type: 'doc',
-            id: 'what-is-shimmer/nodes/about-nodes',
-          },
-          items: [
-            'what-is-shimmer/nodes/about-nodes',
-            'what-is-shimmer/nodes/hornet',
-            'what-is-shimmer/nodes/become-a-node-operator',
-          ],
-        },
-        'what-is-shimmer/clients',
-        'what-is-shimmer/tokens-and-wallets',
-      ],
-    },
+
     {
       type: 'category',
       label: 'What is Stardust?',
