@@ -7,82 +7,87 @@ module.exports = {
         'introduction',
         {
           type: 'category',
-          label: 'Seeds, Accounts and Addresses',
-          items: [
-            'seeds-accounts-and-addresses/seed-mnemonics',
-            'seeds-accounts-and-addresses/accounts-and-addresses',
-          ],
-        },
-        'request-testnet-funds',
-        'simple-transfer',
-        {
-          type: 'category',
-          label: 'Output Unlock Conditions',
-          items: [
-            'output-unlock-conditions/expiration',
-            'output-unlock-conditions/timelock',
-            'output-unlock-conditions/storage-deposit-return',
-          ],
-        },
-        {
-          type: 'category',
-          label: 'Output Features',
-          items: [
-            'output-features/sender',
-            'output-features/metadata',
-            'output-features/tag',
-          ],
-        },
-        {
-          type: 'category',
-          label: 'Alias Transactions',
-          link: {
-            type: 'doc',
-            id: 'alias/introduction',
-          },
+          label: 'Intro to Clients',
           items: [
             {
-              type: 'doc',
-              id: 'alias/introduction',
-              label: 'Introduction',
+              type: 'category',
+              label: 'Seeds, Accounts and Addresses',
+              items: [
+                'intro-to-clients/seeds-accounts-and-addresses/seed-mnemonics',
+                'intro-to-clients/seeds-accounts-and-addresses/accounts-and-addresses',
+              ],
             },
-            'alias/create',
-            'alias/state-transitions',
-            'alias/governance-transitions',
-            'alias/destroy',
-            'alias/unlock-alias-funds',
-          ],
+            'intro-to-clients/request-testnet-funds',
+            'intro-to-clients/simple-transfer',
+            'intro-to-clients/backup-security',
+          ]
         },
         {
           type: 'category',
-          label: 'Native Tokens and Foundries',
+          label: 'Clients in Shimmer',
           items: [
-            'native-token/introduction',
-            'native-token/create-foundry',
-            'native-token/mint-tokens',
-            'native-token/melt-tokens',
-            'native-token/burn-tokens',
-            'native-token/storage-deposits',
-          ],
-        },
-        {
-          type: 'category',
-          label: 'NFTs',
-          items: [
-            'nft/introduction',
-            'nft/mint',
-            'nft/transfer',
-            'nft/claim',
-            'nft/burn',
-            'nft/nft-as-a-wallet',
-            'nft/nft-collections',
-          ],
-        },
-        {
-          type: 'doc',
-          id: 'backup_security',
-          label: 'Backup and Security',
-        },
+
+            {
+              type: 'category',
+              label: 'Output Unlock Conditions',
+              items: [
+                'clients-in-shimmer/output-unlock-conditions/expiration',
+                'clients-in-shimmer/output-unlock-conditions/timelock',
+                'clients-in-shimmer/output-unlock-conditions/storage-deposit-return',
+              ],
+            },
+            {
+              type: 'category',
+              label: 'Output Features',
+              items: [
+                'clients-in-shimmer/output-features/sender',
+                'clients-in-shimmer/output-features/metadata',
+                'clients-in-shimmer/output-features/tag',
+              ],
+            },
+            {
+              type: 'category',
+              label: 'Alias Transactions',
+              items: [
+                {
+                  type: 'doc',
+                  id: 'clients-in-shimmer/alias/introduction',
+                  label: 'Introduction',
+                },
+                'clients-in-shimmer/alias/create',
+                'clients-in-shimmer/alias/state-transitions',
+                'clients-in-shimmer/alias/governance-transitions',
+                'clients-in-shimmer/alias/destroy',
+                'clients-in-shimmer/alias/unlock-alias-funds',
+              ],
+            },
+            {
+              type: 'category',
+              label: 'Native Tokens and Foundries',
+              items: [
+                'clients-in-shimmer/native-token/introduction',
+                'clients-in-shimmer/native-token/create-foundry',
+                'clients-in-shimmer/native-token/mint-tokens',
+                'clients-in-shimmer/native-token/melt-tokens',
+                'clients-in-shimmer/native-token/burn-tokens',
+                'clients-in-shimmer/native-token/storage-deposits',
+              ],
+            },
+            {
+              type: 'category',
+              label: 'NFTs',
+              items: [
+                'clients-in-shimmer/nft/introduction',
+                'clients-in-shimmer/nft/mint',
+                'clients-in-shimmer/nft/transfer',
+                'clients-in-shimmer/nft/claim',
+                'clients-in-shimmer/nft/burn',
+                'clients-in-shimmer/nft/nft-as-a-wallet',
+                'clients-in-shimmer/nft/nft-collections',
+              ],
+            },
+          ]},
+
 
         {
           type: 'category',

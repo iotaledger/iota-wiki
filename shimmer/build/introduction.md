@@ -15,19 +15,55 @@ keywords:
 
 # Introduction
 
-The Stardust ledger is a distributed database that records ownership of funds in the network. Users modify the ledger by
-posting transactions to the network that move these funds between user accounts.
 
-IOTA uses the Unspent Transaction Output Model (UTXO) to model ledger entries. A transaction consumes ledger entries
-(previously created transaction outputs) and creates new ones. When a UTXO is consumed, it is marked as spent and is
-removed from the database, while newly created UTXOs are added. All currently unspent UTXOs comprise the most recent
-ledger state.
+The following sections will show you how to start building on IOTA and Shimmer using the Stardust protocol, from generating a
+[seed](intro-to-clients/seeds-accounts-and-addresses/seed-mnemonics.mdx),
+[accounts and addresses](intro-to-clients/seeds-accounts-and-addresses/accounts-and-addresses.mdx), to
+[minting NFT collections](clients-in-shimmer/nft/nft-collections.mdx).
 
-A UTXO is allowed to be spent if its owner presents a valid digital signature corresponding to the owner of the UTXO
-that is generally called the owner address. Stardust extends this concept by letting users define additional
-spending constraints on UTXOs, for example that an output can only be spent after a certain time.
+## Content Overview
 
-The following sections will show you how to start building on Shimmer using the Stardust protocol, from generating a
-[seed](seeds-accounts-and-addresses/seed-mnemonics.mdx),
-[accounts and addresses](seeds-accounts-and-addresses/accounts-and-addresses.mdx), to
-[minting NFT collections](nft/nft-collections.mdx).
+### Intro To Clients - perhaps Clients in IOTA?
+
+[TODO add description and list chapters]
+
+[seed-mnemonics.mdx](intro-to-clients/seeds-accounts-and-addresses/seed-mnemonics.mdx)
+[accounts-and-addresses.mdx](intro-to-clients/seeds-accounts-and-addresses/accounts-and-addresses.mdx)
+[request-testnet-funds.mdx](intro-to-clients/request-testnet-funds.mdx)0
+[simple-transfer.mdx](intro-to-clients/simple-transfer.mdx)
+
+### Advanced Clients - perhaps Clients in Shimmer?
+
+[TODO add description and list chapters]
+
+
+* [output-unlock-conditions](clients-in-shimmer/output-unlock-conditions)
+    * [expiration.mdx](clients-in-shimmer/output-unlock-conditions/expiration.mdx)
+    * [storage-deposit-return.mdx](clients-in-shimmer/output-unlock-conditions/storage-deposit-return.mdx)
+    * [timelock.mdx](clients-in-shimmer/output-unlock-conditions/timelock.mdx)
+* [output-features](clients-in-shimmer/output-features)
+    * [metadata.mdx](clients-in-shimmer/output-features/metadata.mdx)
+    * [sender.mdx](clients-in-shimmer/output-features/sender.mdx)
+    * [tag.mdx](clients-in-shimmer/output-features/tag.mdx)
+* [alias](clients-in-shimmer/alias)
+  * [create.mdx](clients-in-shimmer/alias/create.mdx)
+  * [destroy.mdx](clients-in-shimmer/alias/destroy.mdx)
+  * [governance-transitions.mdx](clients-in-shimmer/alias/governance-transitions.mdx)
+  * [introduction.mdx](clients-in-shimmer/alias/introduction.mdx)
+  * [state-transitions.mdx](clients-in-shimmer/alias/state-transitions.mdx)
+  * [unlock-alias-funds.mdx](clients-in-shimmer/alias/unlock-alias-funds.mdx)
+* [native-token](clients-in-shimmer/native-token)
+  * [burn-tokens.mdx](clients-in-shimmer/native-token/burn-tokens.mdx)
+  * [create-foundry.mdx](clients-in-shimmer/native-token/create-foundry.mdx)
+  * [introduction.mdx](clients-in-shimmer/native-token/introduction.mdx)
+  * [melt-tokens.mdx](clients-in-shimmer/native-token/melt-tokens.mdx)
+  * [mint-tokens.mdx](clients-in-shimmer/native-token/mint-tokens.mdx)
+  * [storage-deposits.mdx](clients-in-shimmer/native-token/storage-deposits.mdx)
+* [nft](clients-in-shimmer/nft)
+  * [burn.mdx](clients-in-shimmer/nft/burn.mdx)
+  * [claim.mdx](clients-in-shimmer/nft/claim.mdx)
+  * [introduction.mdx](clients-in-shimmer/nft/introduction.mdx)
+  * [mint.mdx](clients-in-shimmer/nft/mint.mdx)
+  * [nft-as-a-wallet.mdx](clients-in-shimmer/nft/nft-as-a-wallet.mdx)
+  * [nft-collections.mdx](clients-in-shimmer/nft/nft-collections.mdx)
+  * [transfer.mdx](clients-in-shimmer/nft/transfer.mdx)
