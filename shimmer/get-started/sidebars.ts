@@ -62,7 +62,6 @@ module.exports = {
       ],
     },
 
-
     {
       type: 'category',
       label: 'What is Stardust?',

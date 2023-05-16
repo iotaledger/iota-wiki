@@ -1,6 +1,6 @@
 ---
 title: Why are IOTA and Shimmer Feeless?
-description: The unique feature of IOTA and Shimmer is the absence of any Fee's in the protocol. 
+description: The unique feature of IOTA and Shimmer is the absence of any Fee's in the protocol.
 image: /img/iota-wiki.png
 keywords:
   - explanation
