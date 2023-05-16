@@ -1,18 +1,17 @@
 ---
-id: why-is-iota-feeless
-title: Why is IOTA Feeless?
-description: The unique feature of IOTA is the absence of any Fee's in the
-  protocol. Here we explain how this is achieved.
+title: Why are IOTA and Shimmer Feeless?
+description: The unique feature of IOTA and Shimmer is the absence of any Fee's in the protocol. 
 image: /img/iota-wiki.png
 keywords:
   - explanation
+  - feeless
 ---
 
-# Why is IOTA Feeless?
+# Why are IOTA and Shimmer Feeless?
 
 Most decentralized cryptocurrencies, including all of the best-known ones – Bitcoin, Ethereum, Dogecoin, and many others – require that anyone making a transaction on the network pay a fee for the services provided. This is not merely an add-on feature of those cryptocurrencies that can easily be removed. It is a fundamental aspect of how they work.
 
-IOTA was designed to require no fees to process a transaction. In any transaction, the amount deducted from the sender's wallet is exactly the same as the amount added to the recipient's wallet.
+IOTA and Shimmer were designed to require no fees to process a transaction. In any transaction, the amount deducted from the sender's wallet is exactly the same as the amount added to the recipient's wallet.
 
 ## Blockchains
 

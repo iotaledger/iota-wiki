@@ -21,7 +21,7 @@ Stardust introduces [changes to the UTXO model](/introduction/explanations/what_
 
 ### Basic Output
 
-The simplest output is the basic output. At the minimum, you will need to specify an address and amount of tokens. However, you can customize this basic output to include a variety of [features](#features) and [unlock conditions](#unlock-conditions).
+The simplest output is the basic output, which is also available in IOTA. At the minimum, you will need to specify an address and amount of tokens. However, you can customize this basic output to include a variety of [features](#features) and [unlock conditions](#unlock-conditions).
 
 ### NFT Output
 
@@ -41,7 +41,7 @@ Unlock conditions have always been present in crypto. The first and clearest exa
 
 ### Address
 
-The most traditional unlock condition is the [address](/introduction/explanations/what_is_stardust/unlock_conditions#address).
+The most traditional unlock condition is the [address](/introduction/explanations/what_is_stardust/unlock_conditions#address), which is also available in IOTA.
 Addresses can only unlock outputs with their signatures.
 
 ### Storage Deposit Return
@@ -78,6 +78,6 @@ The [tag](/introduction/explanations/what_is_stardust/output_features#tag) featu
 
 :::tip Stardust Ledger Anatomy
 
-You can find a more detailed description Stardust Ledger in the [Stardust Protocol docs](/introduction/welcome).
+You can find a more detailed description Stardust Ledger in the [What is Stardust? section](/what-is-stardust).
 
 :::

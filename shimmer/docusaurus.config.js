@@ -20,10 +20,10 @@ module.exports = {
           activeBaseRegex: '^(/[^/]+)?/use/.*',
         },
         {
-          label: 'Learn',
-          to: '/learn/welcome',
+          label: 'Get Started',
+          to: '/get-started/welcome',
           activeBaseRegex:
-            '^(/[^/]+)?/learn/.*|' +
+            '^(/[^/]+)?/get-started/.*|' +
             '^(/[^/]+)?/IOTA-2.0-Research-Specifications/.*|' +
             '^(/[^/]+)?/goshimmer/.*',
         },
@@ -83,11 +83,11 @@ module.exports = {
           ],
         },
         {
-          title: 'Learn',
+          title: 'Get Started',
           items: [
             {
               label: 'How It Works',
-              to: '/learn/welcome',
+              to: '/get-started/welcome',
             },
           ],
         },
@@ -212,10 +212,10 @@ module.exports = {
     [
       '@docusaurus/plugin-content-docs',
       {
-        id: 'learn',
-        path: path.resolve(__dirname, 'learn'),
-        routeBasePath: 'learn',
-        sidebarPath: require.resolve('./learn/sidebars.ts'),
+        id: 'get-started',
+        path: path.resolve(__dirname, 'get-started'),
+        routeBasePath: 'get-started',
+        sidebarPath: require.resolve('./get-started/sidebars.ts'),
 
         // General config
         editUrl: 'https://github.com/iota-wiki/iota-wiki/edit/main/',

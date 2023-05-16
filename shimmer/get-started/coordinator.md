@@ -21,6 +21,7 @@ The Coordinator is the central node that sends signed blocks called milestones t
 To allow the nodes to recognize valid milestones, all Shimmer nodes on the same network are configured with the signatures of a coordinator node which they trust. By knowing those signatures, nodes can validate the signatures in issued milestones to verify whether the trusted Coordinator did sign them.
 
 To ensure that new blocks always have a chance of being confirmed fast, the Coordinator regularly sends milestones (every 5 seconds). And for the nodes to check if they are synchronized with the rest of the network, they can compare the milestones they know.
+
 ![An artist's depiction of Coordinator.](/img/learn/milestones.gif 'Click to see the full-sized image.')
 
 _The Coordinator_

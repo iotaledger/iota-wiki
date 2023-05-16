@@ -1,18 +1,19 @@
 ---
 id: tangle
 title: The Tangle
-description: The Tangle is the data structure behind IOTA that contains all information about token ownership.
+description: The Tangle is the data structure behind IOTA and Shimmer that contains all information about token ownership.
 image: /img/iota-wiki.png
 keywords:
   - explanation
   - IOTA
+  - shimmer
 ---
 
 # The Tangle
 
 The Tangle is a data structure that is replicated across a network of computers (also called 'nodes') that contains all the information necessary to track token ownership. It forms a directed acyclic graph of blocks (a block-DAG), where each newer block is attached to multiple older ones.
 
-IOTA nodes currently reach consensus on the ledger state with the help of milestone blocks (also called 'milestones'). Milestones are issued by a central node called the [Coordinator](./coordinator.md). The Coordinator represents a temporary solution and will be eliminated as part of IOTA's decentralization efforts.
+IOTA and Shimmer nodes currently reach consensus on the ledger state with the help of milestone blocks (also called 'milestones'). Milestones are issued by a central node called the [Coordinator](./coordinator.md). The Coordinator represents a temporary solution and will be eliminated as part of IOTA and Shimmer's decentralization efforts.
 
 ## The Tangle Versus Blockchains
 
