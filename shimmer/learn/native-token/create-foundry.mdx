@@ -1,0 +1,72 @@
+---
+image: /img/iota-wiki.png
+description: 'Create a Foundry in the IOTA Stardust protocol.'
+keywords:
+  - IOTA
+  - foundry
+  - alias output
+  - create foundry
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Create a Foundry
+
+Only an alias can create new foundries, therefore the process starts with an existing
+[_Alias Output_](../alias/introduction.mdx). To create a new foundry you only need to transition the alias' state and
+create a new _Foundry Output_ on the output side of the transaction.
+
+## Example Transaction
+
+Transaction A shows an example transaction that creates a foundry:
+
+- The controlling alias' state is transitioned, its _State Index_ and _Foundry Counter_ are incremented.
+- To cover for the storage deposit of the created _Foundry Output_, the alias deposits 100i into the output.
+- The _Serial Number_ of the foundry must correspond to the updated _Foundry Counter_. Each foundry created by the alias
+  is unique because of the unique _Serial Number_.
+- The foundry uses the _Simple Token Scheme_ as a supply control rule. It defines an upper cap (_Maximum Supply_) for
+  tokens in circulation.
+- _Minted Tokens_ defines how many tokens have been minted by the foundry. Since we don't immediately mint tokens in this
+  transaction, it is set to 0.
+- _Melted Tokens_ defines how many tokens have been melted by the foundry. At creation there are no tokens to be melted,
+  therefore this must be 0.
+- Foundries support only one unlock condition, the _Immutable Alias Address Unlock Condition_. It can never be changed
+  during the foundry's lifetime, therefore the issuer role can only be transferred via the controlling alias.
+- Metadata about the token may be put in the _Immutable Metadata Feature_ of the foundry. For example, it may hold an
+  [IRC30](https://wiki.iota.org/shimmer/tips/tips/TIP-0030/) compatible JSON file.
+  By hosting token metadata on-chain in a foundry output, we make the data available on all network nodes 24/7. There is
+  no need for additional, off-chain metadata servers.
+
+![Transaction A - Creating a Foundry](/img/stardust_explanations/stardust_ledger_anatomy/native_tokens_foundries/tx_A.svg)
+
+## Related Tutorials
+
+<Tabs groupId={'libraries'}>
+<TabItem value="iota.js" label="iota.js">
+
+- [Native Token Transactions](https://wiki.iota.org/shimmer/iotajs/tutorials/native-token-transactions/introduction/)
+
+</TabItem>
+</Tabs>
+
+## Related How-to Guides
+
+<Tabs groupId={'libraries'}>
+<TabItem value='iota.rs' label='iota.rs'>
+
+- [Build a Foundry Output](https://wiki.iota.org/shimmer/iota.rs/how_tos/build_foundry_output/)
+
+</TabItem>
+</Tabs>
+
+## Related Code Examples
+
+<Tabs groupId={'libraries'}>
+<TabItem value="iota.js" label="iota.js">
+
+- [Mint Native Tokens](https://github.com/iotaledger/iota.js/blob/feat/stardust/packages/iota/examples/mint-native-tokens/src/index.ts)
+- [Native Token Tour](https://github.com/iotaledger/iota.js/blob/feat/stardust/packages/iota/examples/native-token-tour/src/index.ts)
+
+</TabItem>
+</Tabs>

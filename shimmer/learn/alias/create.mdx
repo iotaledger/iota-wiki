@@ -1,0 +1,89 @@
+---
+image: /img/iota-wiki.png
+description: 'Learn how to create an Alias in the IOTA Stardust protocol, including the available unlock conditions, features, and an example transaction.'
+keywords:
+  - IOTA Stardust
+  - Alias Output
+  - Unlock Conditions
+  - State Controller
+  - Governor Address
+  - create
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Create an Alias
+
+Just like a _Basic Output_, an _Alias Output_ also must have:
+
+- **Amount** to hold base token.
+- **Unlock Conditions** that define how the output can be unlocked.
+- **Features** that don't modify the unlocking.
+
+On top of these, it also defines:
+
+- **State Index** that has to be incremented in every transaction initiated by the _State Controller_.
+- **State Metadata** that may hold binary data.
+- **Foundry Counter** that defines how many foundries the alias has created.
+- **Immutable Features** that are regular _Features_ defined upon creation which can never be modified afterward.
+
+## Available Unlock Conditions
+
+Alias outputs only support two type of unlock conditions:
+
+- **State Controller Address Unlock Condition** that defines the state controller.
+- **Governor Address Unlock Condition** that defines the governor of the alias.
+
+## Example Transaction
+
+Transaction A shows the process of creating a new alias output and hence an alias account. Notice the creation
+constraints enforced by the protocol:
+
+- **Alias ID** must be zeroed out. This signals to the protocol that the alias account is new and when the transaction
+  confirms, a unique **Alias ID** must be generated.
+- **State Index** must be zero as this is the first possible state the alias represents.
+- **Foundry Counter** must be zero as the alias doesn't control any foundries yet.
+- **Issuer** and **Sender** addresses must be unlocked in the transaction if present.
+
+![Transaction A - Creating an Alias](/img/stardust_explanations/stardust_ledger_anatomy/alias_transaction/tx_A.svg)
+
+When _Alias Output #1_ from Transaction A is consumed in a subsequent transaction, the _Alias ID_ field in the
+transitioned alias must be set to the protocol generated unique identifier, which is the Blake2b-256 hash of the
+_Output ID_ of _Alias Output #1_.
+
+## Related Tutorials
+
+<Tabs groupId={'libraries'}>
+<TabItem value="iota.js" label="iota.js">
+
+- [Alias Transactions Tutorial](https://wiki.iota.org/shimmer/iotajs/tutorials/alias-transactions/introduction/)
+
+</TabItem>
+</Tabs>
+
+## Related How-to Guides
+
+<Tabs groupId={'libraries'}>
+<TabItem value="wallet.rs" label="wallet.rs" >
+
+- [Mint a Native Token](https://wiki.iota.org/shimmer/wallet.rs/how_tos/native_tokens/mint_native_token/)
+
+</TabItem>
+
+<TabItem value="iota.rs" label="iota.rs">
+
+- [Build an Alias Output](https://wiki.iota.org/shimmer/iota.rs/how_tos/build_alias_output/).
+
+</TabItem>
+</Tabs>
+
+## Related Code Examples
+
+<Tabs groupId={'libraries'}>
+<TabItem value="iota.js" label="iota.js">
+
+- [Alias Transactions]https://wiki.iota.org/shimmer/iotajs/tutorials/alias-transactions/introduction/
+
+</TabItem>
+</Tabs>

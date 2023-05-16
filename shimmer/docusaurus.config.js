@@ -23,27 +23,16 @@ module.exports = {
             '^(/[^/]+)?/goshimmer/.*',
         },
         {
-          label: 'Develop',
-          to: '/develop/explanations/what-is-shimmer/introduction',
-          activeBaseRegex: '^(/[^/]+)?/develop.*|' + '^(/[^/]+)?/tutorials*',
+          label: 'Learn',
+          to: '/learn/introduction',
+          activeBaseRegex: '^(/[^/]+)?/learn.*|' + '^(/[^/]+)?/tutorials*',
         },
         {
-          label: 'Documentation',
-          to: '/develop/docs',
-          activeBaseRegex:
-            '^(/[^/]+)?/develop/docs|' +
-            '^(/[^/]+)?/smart-contracts/.*|' +
-            '^(/[^/]+)?/iota.rs/.*|' +
-            '^(/[^/]+)?/iotajs/.*|' +
-            '^(/[^/]+)?/wallet.rs/.*|' +
-            '^(/[^/]+)?/stronghold.rs/.*|' +
-            '^(/[^/]+)?/hornet/.*|' +
-            '^(/[^/]+)?/bee/.*|' +
-            '^(/[^/]+)?/chronicle/.*|' +
-            '^(/[^/]+)?/introduction/.*|' +
-            '^(/[^/]+)?/identity.rs/.*|' +
-            '^(/[^/]+)?/tips*',
+          label: 'Build',
+          to: '/build/introduction',
+          activeBaseRegex: '^(/[^/]+)?/build.*|' + '^(/[^/]+)?/tutorials*',
         },
+
         {
           label: 'Community',
           to: '/community/the-community/discord',
@@ -78,7 +67,7 @@ module.exports = {
           ],
         },
         {
-          title: 'Develop',
+          title: 'Build',
           items: [
             {
               label: 'Smart Contracts',
@@ -86,7 +75,7 @@ module.exports = {
             },
             {
               label: 'Nodes',
-              to: '/develop/nodes/about-nodes',
+              to: '/build/nodes/about-nodes',
             },
             {
               label: 'Wasp',
@@ -198,11 +187,10 @@ module.exports = {
     [
       '@docusaurus/plugin-content-docs',
       {
-        id: 'develop',
-        path: path.resolve(__dirname, 'develop'),
-        routeBasePath: 'develop',
-        sidebarPath: require.resolve('./develop/sidebars.ts'),
-        docItemComponent: '@theme/ApiItem',
+        id: 'learn',
+        path: path.resolve(__dirname, 'learn'),
+        routeBasePath: 'learn',
+        sidebarPath: require.resolve('./learn/sidebars.ts'),
 
         // General config
         editUrl: 'https://github.com/iota-wiki/iota-wiki/edit/main/',
@@ -214,20 +202,20 @@ module.exports = {
       },
     ],
     [
-      'docusaurus-plugin-openapi-docs',
+      '@docusaurus/plugin-content-docs',
       {
-        id: 'openapi',
-        docsPluginId: 'develop', // e.g. "classic" or the plugin-content-docs id
-        config: {
-          core_rest_api: {
-            specPath:
-              'https://raw.githubusercontent.com/iotaledger/tips/main/tips/TIP-0025/core-rest-api.yaml',
-            outputDir: path.resolve(__dirname, 'develop/nodes/core-rest-api'),
-            sidebarOptions: {
-              groupPathsBy: 'tag',
-            },
-          },
-        },
+        id: 'build',
+        path: path.resolve(__dirname, 'build'),
+        routeBasePath: 'build',
+        sidebarPath: require.resolve('./build/sidebars.ts'),
+
+        // General config
+        editUrl: 'https://github.com/iota-wiki/iota-wiki/edit/main/',
+        remarkPlugins: [
+          require('remark-code-import'),
+          require('remark-import-partial'),
+        ],
+        showLastUpdateTime: true,
       },
     ],
   ],

@@ -1,36 +1,36 @@
 module.exports = {
-  develop: [
+  build: [
     {
       type: 'category',
-      label: 'Start Building',
+      label: 'Build',
       items: [
-        'how-tos/introduction',
+        'introduction',
         {
           type: 'category',
           label: 'Seeds, Accounts and Addresses',
           items: [
-            'how-tos/seeds-accounts-and-addresses/seed-mnemonics',
-            'how-tos/seeds-accounts-and-addresses/accounts-and-addresses',
+            'seeds-accounts-and-addresses/seed-mnemonics',
+            'seeds-accounts-and-addresses/accounts-and-addresses',
           ],
         },
-        'how-tos/request-testnet-funds',
-        'how-tos/simple-transfer',
+        'request-testnet-funds',
+        'simple-transfer',
         {
           type: 'category',
           label: 'Output Unlock Conditions',
           items: [
-            'how-tos/output-unlock-conditions/expiration',
-            'how-tos/output-unlock-conditions/timelock',
-            'how-tos/output-unlock-conditions/storage-deposit-return',
+            'output-unlock-conditions/expiration',
+            'output-unlock-conditions/timelock',
+            'output-unlock-conditions/storage-deposit-return',
           ],
         },
         {
           type: 'category',
           label: 'Output Features',
           items: [
-            'how-tos/output-features/sender',
-            'how-tos/output-features/metadata',
-            'how-tos/output-features/tag',
+            'output-features/sender',
+            'output-features/metadata',
+            'output-features/tag',
           ],
         },
         {
@@ -38,93 +38,130 @@ module.exports = {
           label: 'Alias Transactions',
           link: {
             type: 'doc',
-            id: 'how-tos/alias/introduction',
+            id: 'alias/introduction',
           },
           items: [
             {
               type: 'doc',
-              id: 'how-tos/alias/introduction',
+              id: 'alias/introduction',
               label: 'Introduction',
             },
-            'how-tos/alias/create',
-            'how-tos/alias/state-transitions',
-            'how-tos/alias/governance-transitions',
-            'how-tos/alias/destroy',
-            'how-tos/alias/unlock-alias-funds',
+            'alias/create',
+            'alias/state-transitions',
+            'alias/governance-transitions',
+            'alias/destroy',
+            'alias/unlock-alias-funds',
           ],
         },
         {
           type: 'category',
           label: 'Native Tokens and Foundries',
           items: [
-            'how-tos/native-token/introduction',
-            'how-tos/native-token/create-foundry',
-            'how-tos/native-token/mint-tokens',
-            'how-tos/native-token/melt-tokens',
-            'how-tos/native-token/burn-tokens',
-            'how-tos/native-token/storage-deposits',
+            'native-token/introduction',
+            'native-token/create-foundry',
+            'native-token/mint-tokens',
+            'native-token/melt-tokens',
+            'native-token/burn-tokens',
+            'native-token/storage-deposits',
           ],
         },
         {
           type: 'category',
           label: 'NFTs',
           items: [
-            'how-tos/nft/introduction',
-            'how-tos/nft/mint',
-            'how-tos/nft/transfer',
-            'how-tos/nft/claim',
-            'how-tos/nft/burn',
-            'how-tos/nft/nft-as-a-wallet',
-            'how-tos/nft/nft-collections',
+            'nft/introduction',
+            'nft/mint',
+            'nft/transfer',
+            'nft/claim',
+            'nft/burn',
+            'nft/nft-as-a-wallet',
+            'nft/nft-collections',
           ],
         },
         {
           type: 'doc',
-          id: 'how-tos/backup_security',
+          id: 'backup_security',
           label: 'Backup and Security',
         },
-        {
-          type: 'doc',
-          id: 'how-tos/verify_download',
-          label: 'Verify Firefly Download',
-        },
-      ],
-    },
-    {
-      type: 'category',
-      label: 'Node API Reference',
-      collapsed: true,
-      items: [
-        'nodes/api_reference',
+
         {
           type: 'category',
-          label: 'Core REST API',
+          label: 'Node API Reference',
           collapsed: true,
-          link: {
-            type: 'doc',
-            id: 'nodes/core-rest-api/iota-core-rest-api',
-          },
-          items: require('./nodes/core-rest-api/sidebar'),
-        },
-      ],
-    },
-    {
-      type: 'category',
-      label: 'Endpoints',
-      items: [
-        {
-          type: 'doc',
-          id: 'endpoints/shimmer',
-          label: 'Shimmer',
+          items: [
+            'nodes/api_reference',
+            {
+              type: 'category',
+              label: 'Core REST API',
+              collapsed: true,
+              link: {
+                type: 'doc',
+                id: 'nodes/core-rest-api/iota-core-rest-api',
+              },
+              items: require('./nodes/core-rest-api/sidebar'),
+            },
+          ],
         },
         {
-          type: 'doc',
-          id: 'endpoints/testnet',
-          label: 'Testnet',
+          type: 'category',
+          label: 'Endpoints',
+          items: [
+            {
+              type: 'doc',
+              id: 'endpoints/shimmer',
+              label: 'Shimmer',
+            },
+            {
+              type: 'doc',
+              id: 'endpoints/testnet',
+              label: 'Testnet',
+            },
+          ],
         },
-      ],
-    },
 
+        {
+          type: 'category',
+          label: 'Tools',
+          link: {
+            type: 'generated-index',
+            title: 'Tools',
+            slug: '/tools',
+          },
+          items: [
+            {
+              type: 'link',
+              label: 'CLI Wallet',
+              href: '/cli-wallet/welcome',
+            },
+            {
+              type: 'link',
+              label: 'WASP CLI',
+              href: '/smart-contracts/guide/chains_and_nodes/wasp-cli',
+            },
+            {
+              label: 'Schema Tool',
+              type: 'link',
+              href: '/smart-contracts/guide/wasm_vm/schema',
+            },
+            {
+              label: 'Explorer',
+              type: 'link',
+              href: 'https://explorer.shimmer.network',
+            },
+            {
+              label: 'Testnet Faucet',
+              type: 'link',
+              href: 'https://faucet.testnet.shimmer.network',
+            },
+          ],
+        },
+        {
+          type: 'link',
+          label: 'Tutorials',
+          href: '/tutorials',
+        },
+      ],
+    },
     {
       type: 'category',
       label: 'Documentation',
@@ -287,47 +324,6 @@ module.exports = {
           ],
         },
       ],
-    },
-    {
-      type: 'category',
-      label: 'Tools',
-      link: {
-        type: 'generated-index',
-        title: 'Tools',
-        slug: '/tools',
-      },
-      items: [
-        {
-          type: 'link',
-          label: 'CLI Wallet',
-          href: '/cli-wallet/welcome',
-        },
-        {
-          type: 'link',
-          label: 'WASP CLI',
-          href: '/smart-contracts/guide/chains_and_nodes/wasp-cli',
-        },
-        {
-          label: 'Schema Tool',
-          type: 'link',
-          href: '/smart-contracts/guide/wasm_vm/schema',
-        },
-        {
-          label: 'Explorer',
-          type: 'link',
-          href: 'https://explorer.shimmer.network',
-        },
-        {
-          label: 'Testnet Faucet',
-          type: 'link',
-          href: 'https://faucet.testnet.shimmer.network',
-        },
-      ],
-    },
-    {
-      type: 'link',
-      label: 'Tutorials',
-      href: '/tutorials',
     },
   ],
 };

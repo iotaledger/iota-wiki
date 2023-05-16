@@ -69,9 +69,9 @@ The IOTA network does not support custom tokens yet.
 
 The Stardust protocol introduces
 a [tokenization framework](../what-is-stardust/tokenization.md)
-that enables [Alias outputs](./../../develop/how-tos/alias/introduction.mdx),
-[NFTs](./../../develop/how-tos/nft/introduction.mdx)
-and [native tokens and foundries](./../../develop/how-tos/native-token/introduction.mdx)
+that enables [Alias outputs](../../develop/how-tos/alias/introduction.mdx),
+[NFTs](../../develop/how-tos/nft/introduction.mdx)
+and [native tokens and foundries](../../develop/how-tos/native-token/introduction.mdx)
 on layer 1, as long as you can cover the
 minimum [storage deposit](#storage-deposits).
 

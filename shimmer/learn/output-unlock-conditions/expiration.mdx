@@ -1,0 +1,54 @@
+---
+image: /img/iota-wiki.png
+description: 'Discover how to use the Expiration Unlock Condition in Stardust to transfer funds with an expiration deadline, allowing the recipient to claim non-expired funds or the original sender to claim expired funds.'
+keywords:
+  - Expiration Unlock Condition
+  - Stardust
+  - Transfer of Funds
+  - IOTA Outputs
+  - Expiration Deadline
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Transfer of Funds with Expiration
+
+The first new _Unlock Condition_ we are going to look at is the [Expiration Unlock Condition](https://wiki.iota.org/shimmer/tips/tips/TIP-0018#expiration-unlock-condition).
+It lets the creator of the output define an _Expiration Deadline_. Before the deadline, the recipient can consume and
+unlock the output in a transaction, but once the deadline expired, only the _Return Address_ defined in the
+_Expiration Unlock Condition_ can unlock it.
+
+## Example Transactions
+
+### Send Funds with Expiration
+
+Transaction B defines an output that can only be unlocked by the recipient in a transaction that is confirmed by a
+milestone where _Milestone Unix Timestamp_ is less, than the _Unix Time_ defined in the _Expiration Unlock Condition_.
+
+![Transaction B - Sending funds with expiration](/img/stardust_explanations/stardust_ledger_anatomy/simple_transaction/tx_B.svg)
+
+### Claim Non-Expired Funds
+
+Transaction C shows how the recipient can consume the output before the deadline and take the funds into full, unconditional
+custody.
+
+![Transaction C - Recipient claims non-expired funds](/img/stardust_explanations/stardust_ledger_anatomy/simple_transaction/tx_C.svg)
+
+### Claim Expired Funds
+
+Transaction D depicts how the original sender claims an expired output. Note, that it is not necessary for the sender
+to sweep the funds into their own wallet, they can just treat it as funds they have full custody of.
+
+![Transaction D - Original sender claims expired funds](/img/stardust_explanations/stardust_ledger_anatomy/simple_transaction/tx_D.svg)
+
+## Related How-to Guides
+
+<Tabs groupId={'libraries'}>
+<TabItem value="wallet.rs" label="wallet.rs" >
+
+- [Claim Outputs](https://wiki.iota.org/shimmer/wallet.rs/how_tos/outputs_and_transactions/claim_outputs/)
+- [Check Unlock Conditions](https://wiki.iota.org/shimmer/wallet.rs/how_tos/outputs_and_transactions/check_unlock_conditions/)
+
+</TabItem>
+</Tabs>

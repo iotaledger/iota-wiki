@@ -1,0 +1,268 @@
+---
+id: returns-tips-that-are-ideal-for-attaching-a-block
+title: 'Returns tips that are ideal for attaching a block.'
+description: 'Returns tips that are ideal for attaching a block. The tips can be considered as `non-lazy` and are therefore ideal for attaching a block.'
+sidebar_label: 'Returns tips that are ideal for attaching a block.'
+hide_title: true
+hide_table_of_contents: true
+api:
+  {
+    'tags': ['tangle'],
+    'description': 'Returns tips that are ideal for attaching a block. The tips can be considered as `non-lazy` and are therefore ideal for attaching a block.',
+    'responses':
+      {
+        '200':
+          {
+            'description': 'Successful operation.',
+            'content':
+              {
+                'application/json':
+                  {
+                    'schema':
+                      {
+                        'description': 'Returns tips that are ideal for attaching a block.',
+                        'properties':
+                          {
+                            'tips':
+                              {
+                                'type': 'array',
+                                'items': { 'type': 'string' },
+                                'description': 'The block identifiers that can be used to a attach a block to. Hex-encoded with 0x prefix.',
+                              },
+                          },
+                        'required': ['tips'],
+                      },
+                    'examples':
+                      {
+                        'default':
+                          {
+                            'value':
+                              {
+                                'tips':
+                                  [
+                                    '0xf532a53545103276b46876c473846d98648ee418468bce76df4868648dd73e5d',
+                                    '0x78d546b46aec4557872139a48f66bc567687e8413578a14323548732358914a2',
+                                  ],
+                              },
+                          },
+                      },
+                  },
+              },
+          },
+        '403':
+          {
+            'description': 'Unsuccessful operation: indicates that the endpoint is not available for public use.',
+            'content':
+              {
+                'application/json':
+                  {
+                    'schema':
+                      {
+                        'description': 'Indicates that this endpoint is not available for public use.',
+                        'allOf':
+                          [
+                            {
+                              'description': 'The error format.',
+                              'properties':
+                                {
+                                  'error':
+                                    {
+                                      'type': 'object',
+                                      'properties':
+                                        {
+                                          'code':
+                                            {
+                                              'type': 'string',
+                                              'description': 'The application error code.',
+                                            },
+                                          'message':
+                                            {
+                                              'type': 'string',
+                                              'description': 'The error reason.',
+                                            },
+                                        },
+                                      'required': ['code', 'message'],
+                                    },
+                                },
+                              'required': ['error'],
+                            },
+                          ],
+                        'example':
+                          {
+                            'error':
+                              {
+                                'code': 403,
+                                'message': 'not available for public use',
+                              },
+                          },
+                      },
+                  },
+              },
+          },
+        '500':
+          {
+            'description': 'Unsuccessful operation: indicates that an unexpected, internal server error happened which prevented the node from fulfilling the request.',
+            'content':
+              {
+                'application/json':
+                  {
+                    'schema':
+                      {
+                        'description': 'Indicates that the server encountered an unexpected condition, which prevented it from fulfilling the request by the client.',
+                        'allOf':
+                          [
+                            {
+                              'description': 'The error format.',
+                              'properties':
+                                {
+                                  'error':
+                                    {
+                                      'type': 'object',
+                                      'properties':
+                                        {
+                                          'code':
+                                            {
+                                              'type': 'string',
+                                              'description': 'The application error code.',
+                                            },
+                                          'message':
+                                            {
+                                              'type': 'string',
+                                              'description': 'The error reason.',
+                                            },
+                                        },
+                                      'required': ['code', 'message'],
+                                    },
+                                },
+                              'required': ['error'],
+                            },
+                          ],
+                        'example':
+                          {
+                            'error':
+                              {
+                                'code': 500,
+                                'message': 'internal server error',
+                              },
+                          },
+                      },
+                  },
+              },
+          },
+        '503':
+          {
+            'description': 'Unsuccessful operation: indicates that there are no tips available or the node isn´t synced.',
+            'content':
+              {
+                'application/json':
+                  {
+                    'schema':
+                      {
+                        'description': 'Indicates that the service is unavailable.',
+                        'allOf':
+                          [
+                            {
+                              'description': 'The error format.',
+                              'properties':
+                                {
+                                  'error':
+                                    {
+                                      'type': 'object',
+                                      'properties':
+                                        {
+                                          'code':
+                                            {
+                                              'type': 'string',
+                                              'description': 'The application error code.',
+                                            },
+                                          'message':
+                                            {
+                                              'type': 'string',
+                                              'description': 'The error reason.',
+                                            },
+                                        },
+                                      'required': ['code', 'message'],
+                                    },
+                                },
+                              'required': ['error'],
+                            },
+                          ],
+                        'example':
+                          {
+                            'error':
+                              { 'code': 503, 'message': 'service unavailable' },
+                          },
+                      },
+                  },
+              },
+          },
+      },
+    'method': 'get',
+    'path': '/api/core/v2/tips',
+    'servers': [{ 'url': 'http://127.0.0.1:14265' }],
+    'info':
+      {
+        'title': 'IOTA CORE REST API',
+        'description': 'This document specifies the REST API for IOTA CORE node software.',
+        'contact': { 'email': 'contact@iota.org' },
+        'license':
+          {
+            'name': 'Apache 2.0',
+            'url': 'http://www.apache.org/licenses/LICENSE-2.0.html',
+          },
+        'version': '2.0.0',
+      },
+    'postman':
+      {
+        'name': 'Returns tips that are ideal for attaching a block.',
+        'description':
+          {
+            'content': 'Returns tips that are ideal for attaching a block. The tips can be considered as `non-lazy` and are therefore ideal for attaching a block.',
+            'type': 'text/plain',
+          },
+        'url':
+          {
+            'path': ['api', 'core', 'v2', 'tips'],
+            'host': ['{{baseUrl}}'],
+            'query': [],
+            'variable': [],
+          },
+        'header': [{ 'key': 'Accept', 'value': 'application/json' }],
+        'method': 'GET',
+      },
+  }
+sidebar_class_name: 'get api-method'
+info_path: develop/nodes/core-rest-api/iota-core-rest-api
+---
+
+import ApiTabs from '@theme/ApiTabs';
+import MimeTabs from '@theme/MimeTabs';
+import ParamsItem from '@theme/ParamsItem';
+import ResponseSamples from '@theme/ResponseSamples';
+import SchemaItem from '@theme/SchemaItem';
+import SchemaTabs from '@theme/SchemaTabs';
+import DiscriminatorTabs from '@theme/DiscriminatorTabs';
+import TabItem from '@theme/TabItem';
+
+## Returns tips that are ideal for attaching a block.
+
+Returns tips that are ideal for attaching a block. The tips can be considered as `non-lazy` and are therefore ideal for attaching a block.
+
+<div><ApiTabs><TabItem label={"200"} value={"200"}><div>
+
+Successful operation.
+
+</div><div><MimeTabs schemaType={"response"}><TabItem label={"application/json"} value={"application/json"}><SchemaTabs><TabItem label={"Schema"} value={"Schema"}><details style={{}} data-collapsed={false} open={true}><summary style={{"textAlign":"left"}}><strong>Schema</strong></summary><div style={{"textAlign":"left","marginLeft":"1rem"}}></div><ul style={{"marginLeft":"1rem"}}><SchemaItem collapsible={false} name={"tips"} required={false} schemaDescription={"The block identifiers that can be used to a attach a block to. Hex-encoded with 0x prefix."} schemaName={"string[]"} qualifierMessage={undefined} defaultValue={undefined}></SchemaItem></ul></details></TabItem><TabItem label={"Example (from schema)"} value={"Example (from schema)"}><ResponseSamples responseExample={"{\n  \"tips\": [\n    \"string\"\n  ]\n}"} language={"json"}></ResponseSamples></TabItem><TabItem label={"Default"} value={"Default"}><ResponseSamples responseExample={"{\n  \"tips\": [\n    \"0xf532a53545103276b46876c473846d98648ee418468bce76df4868648dd73e5d\",\n    \"0x78d546b46aec4557872139a48f66bc567687e8413578a14323548732358914a2\"\n  ]\n}"} language={"json"}></ResponseSamples></TabItem></SchemaTabs></TabItem></MimeTabs></div></TabItem><TabItem label={"403"} value={"403"}><div>
+
+Unsuccessful operation: indicates that the endpoint is not available for public use.
+
+</div><div><MimeTabs schemaType={"response"}><TabItem label={"application/json"} value={"application/json"}><SchemaTabs><TabItem label={"Schema"} value={"Schema"}><details style={{}} data-collapsed={false} open={true}><summary style={{"textAlign":"left"}}><strong>Schema</strong></summary><div style={{"textAlign":"left","marginLeft":"1rem"}}></div><ul style={{"marginLeft":"1rem"}}><SchemaItem collapsible={true} className={"schemaItem"}><details style={{}}><summary style={{}}><strong>error</strong><span style={{"opacity":"0.6"}}> object</span></summary><div style={{"marginLeft":"1rem"}}><SchemaItem collapsible={false} name={"code"} required={false} schemaDescription={"The application error code."} schemaName={"string"} qualifierMessage={undefined} defaultValue={undefined}></SchemaItem><SchemaItem collapsible={false} name={"message"} required={false} schemaDescription={"The error reason."} schemaName={"string"} qualifierMessage={undefined} defaultValue={undefined}></SchemaItem></div></details></SchemaItem></ul></details></TabItem><TabItem label={"Example (from schema)"} value={"Example (from schema)"}><ResponseSamples responseExample={"{\n  \"error\": {\n    \"code\": 403,\n    \"message\": \"not available for public use\"\n  }\n}"} language={"json"}></ResponseSamples></TabItem></SchemaTabs></TabItem></MimeTabs></div></TabItem><TabItem label={"500"} value={"500"}><div>
+
+Unsuccessful operation: indicates that an unexpected, internal server error happened which prevented the node from fulfilling the request.
+
+</div><div><MimeTabs schemaType={"response"}><TabItem label={"application/json"} value={"application/json"}><SchemaTabs><TabItem label={"Schema"} value={"Schema"}><details style={{}} data-collapsed={false} open={true}><summary style={{"textAlign":"left"}}><strong>Schema</strong></summary><div style={{"textAlign":"left","marginLeft":"1rem"}}></div><ul style={{"marginLeft":"1rem"}}><SchemaItem collapsible={true} className={"schemaItem"}><details style={{}}><summary style={{}}><strong>error</strong><span style={{"opacity":"0.6"}}> object</span></summary><div style={{"marginLeft":"1rem"}}><SchemaItem collapsible={false} name={"code"} required={false} schemaDescription={"The application error code."} schemaName={"string"} qualifierMessage={undefined} defaultValue={undefined}></SchemaItem><SchemaItem collapsible={false} name={"message"} required={false} schemaDescription={"The error reason."} schemaName={"string"} qualifierMessage={undefined} defaultValue={undefined}></SchemaItem></div></details></SchemaItem></ul></details></TabItem><TabItem label={"Example (from schema)"} value={"Example (from schema)"}><ResponseSamples responseExample={"{\n  \"error\": {\n    \"code\": 500,\n    \"message\": \"internal server error\"\n  }\n}"} language={"json"}></ResponseSamples></TabItem></SchemaTabs></TabItem></MimeTabs></div></TabItem><TabItem label={"503"} value={"503"}><div>
+
+Unsuccessful operation: indicates that there are no tips available or the node isn´t synced.
+
+</div><div><MimeTabs schemaType={"response"}><TabItem label={"application/json"} value={"application/json"}><SchemaTabs><TabItem label={"Schema"} value={"Schema"}><details style={{}} data-collapsed={false} open={true}><summary style={{"textAlign":"left"}}><strong>Schema</strong></summary><div style={{"textAlign":"left","marginLeft":"1rem"}}></div><ul style={{"marginLeft":"1rem"}}><SchemaItem collapsible={true} className={"schemaItem"}><details style={{}}><summary style={{}}><strong>error</strong><span style={{"opacity":"0.6"}}> object</span></summary><div style={{"marginLeft":"1rem"}}><SchemaItem collapsible={false} name={"code"} required={false} schemaDescription={"The application error code."} schemaName={"string"} qualifierMessage={undefined} defaultValue={undefined}></SchemaItem><SchemaItem collapsible={false} name={"message"} required={false} schemaDescription={"The error reason."} schemaName={"string"} qualifierMessage={undefined} defaultValue={undefined}></SchemaItem></div></details></SchemaItem></ul></details></TabItem><TabItem label={"Example (from schema)"} value={"Example (from schema)"}><ResponseSamples responseExample={"{\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"service unavailable\"\n  }\n}"} language={"json"}></ResponseSamples></TabItem></SchemaTabs></TabItem></MimeTabs></div></TabItem></ApiTabs></div>
+
