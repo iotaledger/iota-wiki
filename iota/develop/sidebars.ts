@@ -41,6 +41,18 @@ module.exports = {
           type: 'link',
           href: '/stronghold.rs/welcome',
         },
+        {
+          type: 'category',
+          label: 'Community Driven Libraries',
+          collapsed: true,
+          items: [
+            {
+              label: 'tanglePHP',
+              type: 'link',
+              href: 'https://tanglephp.com',
+            },
+          ],
+        },
       ],
     },
     {
