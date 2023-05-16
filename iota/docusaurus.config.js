@@ -214,48 +214,6 @@ module.exports = async () => {
       [
         '@docusaurus/plugin-content-docs',
         {
-          id: 'use',
-          path: path.resolve(__dirname, 'use'),
-          routeBasePath: 'use',
-          sidebarPath: require.resolve('./use/sidebars.ts'),
-
-          // General config
-          editUrl: 'https://github.com/iota-wiki/iota-wiki/edit/main/',
-          remarkPlugins: [
-            require('remark-code-import'),
-            require('remark-import-partial'),
-            [
-              rehype_lodash_template,
-              {
-                values: {
-                  network: 'IOTA',
-                },
-              },
-            ],
-          ],
-          showLastUpdateTime: true,
-        },
-      ],
-      [
-        '@docusaurus/plugin-content-docs',
-        {
-          id: 'learn',
-          path: path.resolve(__dirname, 'learn'),
-          routeBasePath: 'learn',
-          sidebarPath: require.resolve('./learn/sidebars.ts'),
-
-          // General config
-          editUrl: 'https://github.com/iota-wiki/iota-wiki/edit/main/',
-          remarkPlugins: [
-            require('remark-code-import'),
-            require('remark-import-partial'),
-          ],
-          showLastUpdateTime: true,
-        },
-      ],
-      [
-        '@docusaurus/plugin-content-docs',
-        {
           id: 'develop',
           path: path.resolve(__dirname, 'develop'),
           routeBasePath: 'develop',

@@ -15,11 +15,6 @@ module.exports = {
       },
       items: [
         {
-          label: 'Use Shimmer',
-          to: '/use/wallets/what-is-a-wallet',
-          activeBaseRegex: '^(/[^/]+)?/use/.*',
-        },
-        {
           label: 'Get Started',
           to: '/get-started/welcome',
           activeBaseRegex:
@@ -73,15 +68,6 @@ module.exports = {
     },
     footer: {
       links: [
-        {
-          title: 'Use',
-          items: [
-            {
-              label: 'Wallets',
-              to: '/use/wallets/what-is-a-wallet',
-            },
-          ],
-        },
         {
           title: 'Get Started',
           items: [
@@ -192,23 +178,6 @@ module.exports = {
     ],
   ],
   plugins: [
-    [
-      '@docusaurus/plugin-content-docs',
-      {
-        id: 'use',
-        path: path.resolve(__dirname, 'use'),
-        routeBasePath: 'use',
-        sidebarPath: require.resolve('./use/sidebars.ts'),
-
-        // General config
-        editUrl: 'https://github.com/iota-wiki/iota-wiki/edit/main/',
-        remarkPlugins: [
-          require('remark-code-import'),
-          require('remark-import-partial'),
-        ],
-        showLastUpdateTime: true,
-      },
-    ],
     [
       '@docusaurus/plugin-content-docs',
       {

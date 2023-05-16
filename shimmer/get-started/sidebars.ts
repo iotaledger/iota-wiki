@@ -3,7 +3,6 @@ module.exports = {
     {
       type: 'category',
       label: 'How It Works',
-      collapsed: false,
       items: [
         'welcome',
         'tangle',
@@ -19,7 +18,6 @@ module.exports = {
         {
           type: 'category',
           label: 'Smart Contracts',
-          collapsed: true,
           items: [
             'smart-contracts/smart-contracts-introduction',
             'smart-contracts/smart-contracts-VM-and-languages',
@@ -50,7 +48,6 @@ module.exports = {
         {
           type: 'category',
           label: 'About Nodes',
-          collapsed: true,
           link: {
             type: 'doc',
             id: 'what-is-shimmer/nodes/about-nodes',
@@ -129,18 +126,15 @@ module.exports = {
     {
       type: 'category',
       label: 'Wallets',
-      collapsed: false,
       items: [
         'wallets/what-is-a-wallet',
         {
           type: 'category',
           label: 'Official',
-          collapsed: false,
           items: [
             {
               type: 'category',
               label: 'Firefly',
-              collapsed: false,
               items: [
                 'wallets/firefly/general',
                 'wallets/firefly/user-guide',
@@ -153,7 +147,6 @@ module.exports = {
         {
           type: 'category',
           label: 'Third Party',
-          collapsed: false,
           items: [
             {
               type: 'link',
@@ -167,7 +160,6 @@ module.exports = {
     {
       type: 'category',
       label: 'Research',
-      collapsed: true,
       items: [
         'research/research-outline',
         'research/research-papers',
@@ -188,19 +180,16 @@ module.exports = {
     {
       type: 'category',
       label: 'IOTA Token',
-      collapsed: true,
       items: ['iota-token/buying-iota', 'iota-token/staking-iota'],
     },
     {
       type: 'category',
       label: 'Shimmer Token',
-      collapsed: true,
       items: ['token/buying'],
     },
     {
       type: 'category',
       label: 'Governance',
-      collapsed: true,
       items: [
         'governance/shimmer-governance-intro',
         'governance/governance-tech',
@@ -214,7 +203,6 @@ module.exports = {
     {
       type: 'category',
       label: 'Use Cases',
-      collapsed: true,
       items: [
         'use-cases/data-confidence',
         'use-cases/eco-social-projects',
