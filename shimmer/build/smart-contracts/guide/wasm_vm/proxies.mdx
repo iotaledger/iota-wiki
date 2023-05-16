@@ -1,0 +1,105 @@
+---
+keywords:
+- proxies
+- sandbox
+- wasm
+- value proxies
+- container proxies
+- array proxies
+- map proxies
+- explanation
+
+description: As there is no way for the Wasm code to access any memory outside its own memory space, the WasmLib interface provides a number of proxies to make accessing data within the ISC sandbox as seamless as possible.
+
+image: /img/ISC/wasm_vm/Proxies.png
+---
+
+# Data Access Proxies
+
+As we cannot call the ISC sandbox functions directly, we need some library to access the
+sandbox functionality. There is no way for the Wasm code to access any memory outside its
+wn memory space. Therefore, any data that is governed by the ISC sandbox has to be copied
+in and out of that memory space through well-defined protected channels in the Wasm
+runtime system.
+
+To make this whole process as seamless as possible the WasmLib interface uses so-called
+`proxies`. Proxies are objects that can perform the underlying data transfers between the
+separate systems. Proxies are like data references in that regard, they refer to the
+actual objects or values stored on the ISC host, and know how to manipulate them. Proxies
+provide a consistent interface to access the smart contract data.
+
+At the lowest level data is stored on the ISC host in maps that take a byte string as key
+and a byte string as value. There are 3 predefined maps from the viewpoint of WasmLib.
+They are:
+
+- the [State](state.mdx) map, which holds all state storage values
+- the [Params](params.mdx) map, which holds the current function call's parameter values
+- the [Results](results.mdx) map, which returns the function call's result values
+
+The [Schema Tool](usage.mdx) is able to build a more complex, JSON-like data structure
+on top of these maps, but in the end it all translates to simple key/value access on the
+underlying map.
+
+## Value Proxies
+
+The most basic proxies are value proxies. They refer to a single value instance of a
+predetermined data type. Value proxies refer to their values through a proxy object that
+defines the underlying map and the key that uniquely defines the value's location in that
+map. Value proxies can manipulate the value they refer to and will perform appropriate
+type conversion of the byte string that makes up the stored value.
+
+The [Schema Tool](usage.mdx) will make sure that the type-safe code that it generates
+always uses the appropriate proxy type.
+
+## Container Proxies
+
+Container proxies create a virtual nesting system on the underlying map. Just as with
+value proxies, they refer to their virtual container through a proxy object that defines
+the underlying map and the key that uniquely defines the virtual container in that map.
+Contrary to value proxies these virtual containers need no storage.
+
+The [Schema Tool](usage.mdx) automatically generates code that allows the user to navigate
+the virtual path through the nested virtual containers. In the end this path leads to
+access to value proxies of all values that are located in that virtual container.
+
+To keep things as simple and understandable we imitate the way JSON and YAML nest
+containers. That means there are only two different kinds of container proxies: array
+proxies and map proxies. Because we allow nesting of containers, these are enough to be
+able to define surprisingly complex data structures.
+
+### Map Proxies
+
+A map is a key/value store where the key is one of our supported value types. Within a
+map, keys are always of the same data type. The root maps ([State](state.mdx),
+[Params](params.mdx), and [Results](results.mdx)) can store elements of any type, but
+their keys are limited to human-readable strings. This is because these keys needs to be
+defined in the schema definition file. Virtual maps, which are nested under a root map,
+can hold values of a single associated data type, which can be one of our supported value
+types, a user-defined data type, or a virtual container object (map or array).
+
+### Array Proxies
+
+An array can be seen as a special kind of map. Its key is an Int32 value that has the
+property that keys always form a sequence from 0 to N-1 for an array with N elements.
+Arrays always store elements of a single associated data type, which can be one of our
+supported value types, a user-defined type, or a virtual container object (map or array).
+
+## Example That Shows the Use of Proxies in WasmLib
+
+[![Proxies in WasmLib](/img/ISC/wasm_vm/Proxies.png)](/img/ISC/wasm_vm/Proxies.png)
+
+In this example we have a single map in the ISC state storage that contains a number of
+key/value combinations (Key 1 through Key 4). One of them (Key 4) refers to an array,
+which in turn contains indexed values stored at indexes 0 through N.
+
+Notice how the WasmLib proxies mirror these exactly. There is a container proxy for each
+container, and a value proxy for each value stored.
+
+Also note that despite the one-to-one correspondence in the example it is not necessary
+for a smart contract function to define a proxy for every value or container in the ISC
+state storage. In practice a function will only use proxies to data that it actually
+needs to access.
+
+
+In the next section we will go into more detail about the supported
+[WasmLib Data Types](types.mdx).
