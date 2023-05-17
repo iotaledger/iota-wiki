@@ -2,18 +2,18 @@
 description: Links to the IRC-Metadata REST API reference.
 image: /img/logo/HornetLogo.png
 keywords:
-- IOTA Node
-- Hornet Node
-- INX
-- Metadata
-- IRC
-- IRC27
-- IRC30
-- NFT
-- Native Token
-- REST API
-- API
-- Reference
+  - IOTA Node
+  - Hornet Node
+  - INX
+  - Metadata
+  - IRC
+  - IRC27
+  - IRC30
+  - NFT
+  - Native Token
+  - REST API
+  - API
+  - Reference
 ---
 
 # API Reference

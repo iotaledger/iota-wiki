@@ -2,11 +2,11 @@
 description: Links to the REST API reference and the Node event API reference.
 image: /img/hornet/logo/HornetLogo.png
 keywords:
-- IOTA Node 
-- HORNET Node
-- REST API
-- API
-- Reference
+  - IOTA Node
+  - HORNET Node
+  - REST API
+  - API
+  - Reference
 ---
 
 # API Reference

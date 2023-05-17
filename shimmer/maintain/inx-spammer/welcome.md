@@ -2,15 +2,15 @@
 description: INX-Spammer is a tool to generate transactions in the network thereby increasing reference and confirmation rates.
 image: /img/Banner/banner_hornet.png
 keywords:
-- IOTA Node
-- Hornet Node
-- INX
-- Spammer
-- IOTA
-- Shimmer
-- Node Software
-- Welcome
-- explanation
+  - IOTA Node
+  - Hornet Node
+  - INX
+  - Spammer
+  - IOTA
+  - Shimmer
+  - Node Software
+  - Welcome
+  - explanation
 ---
 
 # About INX-Spammer
@@ -35,9 +35,11 @@ The spammer can also be used to create value spam in the network.
 For this to work, you need to fund an address upfront and pass the environment variable `SPAMMER_MNEMONIC` with the corresponding 24 word Mnemonic for the private key of the address.
 
 In case you use the recommended Docker setup, you can create a new Mnemonic and address using the following command:
+
 ```
 docker compose run hornet tool ed25519-key --hrp BECH32HRP
 ```
+
 `BECH32HRP` must be replaced with the correct HRP for your network.
 
 The value spam can be enabled via Dashboard or by setting the parameter `valueSpamEnabled` to `true` in the configuration.
@@ -45,7 +47,6 @@ The value spam can be enabled via Dashboard or by setting the parameter `valueSp
 :::warning
 You must not use the spammer in a network with real funds. You may loose access to your funds if you do so.
 :::
-
 
 ## Dashboard
 

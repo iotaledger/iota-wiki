@@ -2,14 +2,13 @@
 description: How to run your own private Chrysalis Tangle
 image: /img/hornet/Banner/banner_hornet_private_tangle.png
 keywords:
-- IOTA Node 
-- HORNET Node
-- Private Tangle
-- Chrysalis
-- Coordinator
-- Wallet
-- how to
-
+  - IOTA Node
+  - HORNET Node
+  - Private Tangle
+  - Chrysalis
+  - Coordinator
+  - Wallet
+  - how to
 ---
 
 # Run a Private Tangle
@@ -17,7 +16,7 @@ keywords:
 ![HORNET Node Private Tangle](/img/hornet/Banner/banner_hornet_private_tangle.png)
 
 This guide explains how you can run your own private tangle.
-Private tangles are targetted at developers wanting to test their solutions in a private network environment. 
+Private tangles are targetted at developers wanting to test their solutions in a private network environment.
 
 ## Requirements
 
@@ -38,6 +37,7 @@ tar -zxf HORNET-2.0.0-rc.1-private_tangle.tar.gz
 ## Bootstrap your network
 
 To bootstrap the network you should run:
+
 ```sh
 ./bootstrap.sh
 ```
@@ -45,6 +45,7 @@ To bootstrap the network you should run:
 ## Run your network
 
 To run the private tangle you should run:
+
 ```sh
 ./run.sh
 ```
@@ -58,6 +59,7 @@ The `inx-coordinator` container always starts together with the other containers
 It may happen that the node startup takes longer than expected due to bigger databases or slow host machines. In that case the `inx-coordinator` container shuts down and won't be restarted automatically for security reasons.
 
 If you want to restart the `inx-coordinator` separately, run the following command:
+
 ```sh
 docker compose start inx-coordinator
 ```

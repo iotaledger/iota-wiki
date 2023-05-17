@@ -4,15 +4,14 @@
 description: This section describes the configuration parameters and their types for your HORNET node.
 image: /img/hornet/Banner/banner_hornet_configuration.png
 keywords:
-- IOTA Node 
-- HORNET Node
-- Configuration
-- JSON
-- Customize
-- Config
-- reference
+  - IOTA Node
+  - HORNET Node
+  - Configuration
+  - JSON
+  - Customize
+  - Config
+  - reference
 ---
-
 
 # Configuration
 
@@ -23,6 +22,7 @@ HORNET uses a JSON standard format as a config file. If you are unsure about JSO
 You can change the path of the config file by using the `-c` or `--config` argument while executing `hornet` executable.
 
 For example:
+
 ```bash
 hornet -c config_example.json
 ```
@@ -57,18 +57,18 @@ hornet -h --full
 Example:
 
 ```json
-  {
-    "app": {
-      "checkForUpdates": true,
-      "shutdown": {
-        "stopGracePeriod": "5m",
-        "log": {
-          "enabled": true,
-          "filePath": "shutdown.log"
-        }
+{
+  "app": {
+    "checkForUpdates": true,
+    "shutdown": {
+      "stopGracePeriod": "5m",
+      "log": {
+        "enabled": true,
+        "filePath": "shutdown.log"
       }
     }
   }
+}
 ```
 
 ## <a id="logger"></a> 2. Logger
@@ -86,19 +86,17 @@ Example:
 Example:
 
 ```json
-  {
-    "logger": {
-      "level": "info",
-      "disableCaller": true,
-      "disableStacktrace": false,
-      "stacktraceLevel": "panic",
-      "encoding": "console",
-      "outputPaths": [
-        "stdout"
-      ],
-      "disableEvents": true
-    }
+{
+  "logger": {
+    "level": "info",
+    "disableCaller": true,
+    "disableStacktrace": false,
+    "stacktraceLevel": "panic",
+    "encoding": "console",
+    "outputPaths": ["stdout"],
+    "disableEvents": true
   }
+}
 ```
 
 ## <a id="node"></a> 3. Node
@@ -111,12 +109,12 @@ Example:
 Example:
 
 ```json
-  {
-    "node": {
-      "profile": "auto",
-      "alias": "HORNET node"
-    }
+{
+  "node": {
+    "profile": "auto",
+    "alias": "HORNET node"
   }
+}
 ```
 
 ## <a id="protocol"></a> 4. Protocol
@@ -150,72 +148,72 @@ Example:
 Example:
 
 ```json
-  {
-    "protocol": {
-      "targetNetworkName": "shimmer",
-      "milestonePublicKeyCount": 7,
-      "baseToken": {
-        "name": "Shimmer",
-        "tickerSymbol": "SMR",
-        "unit": "SMR",
-        "subunit": "glow",
-        "decimals": 6,
-        "useMetricPrefix": false
+{
+  "protocol": {
+    "targetNetworkName": "shimmer",
+    "milestonePublicKeyCount": 7,
+    "baseToken": {
+      "name": "Shimmer",
+      "tickerSymbol": "SMR",
+      "unit": "SMR",
+      "subunit": "glow",
+      "decimals": 6,
+      "useMetricPrefix": false
+    },
+    "publicKeyRanges": [
+      {
+        "key": "a507d2a592a5f0424ed8530603c08acebe088ae26211e90b79bfec0970a2397f",
+        "start": 0,
+        "end": 0
       },
-      "publicKeyRanges": [
-        {
-          "key": "a507d2a592a5f0424ed8530603c08acebe088ae26211e90b79bfec0970a2397f",
-          "start": 0,
-          "end": 0
-        },
-        {
-          "key": "71a09774449a081450a51e0245a1e9850190f93508fd8f21bb9b9ca169765f30",
-          "start": 0,
-          "end": 0
-        },
-        {
-          "key": "a375515bfe5adf7fedb64ef4cebe1e621e85a056b0ccd5db72bc0d474325bf38",
-          "start": 0,
-          "end": 0
-        },
-        {
-          "key": "1df26178a7914126fd8cb934c7a7437073794c1c8ce99319172436b1d4973eba",
-          "start": 0,
-          "end": 0
-        },
-        {
-          "key": "45432d7c767e16586403262331a725c7eaa0b2dd79ea442f373c845ae3443aa9",
-          "start": 0,
-          "end": 0
-        },
-        {
-          "key": "9d87b4d2538b10799b582e25ace4726d92d7798ddfb696ff08e450db7917c9ad",
-          "start": 0,
-          "end": 0
-        },
-        {
-          "key": "a921841628d64c3f08bd344118b8106ade072e68c774beff30135e036194493a",
-          "start": 0,
-          "end": 0
-        },
-        {
-          "key": "16ee3356c21e410a0aaab42896021b1a857eb8d97a14a66fed9b13d634c21317",
-          "start": 0,
-          "end": 0
-        },
-        {
-          "key": "99c7d9752c295cb56b550191015ab5a40226fb632e8b02ec15cfe574ea17cf67",
-          "start": 0,
-          "end": 0
-        },
-        {
-          "key": "4af647910ba47000108b87c63abe0545643f9b203eacee2b713729b0450983fe",
-          "start": 0,
-          "end": 0
-        }
-      ]
-    }
+      {
+        "key": "71a09774449a081450a51e0245a1e9850190f93508fd8f21bb9b9ca169765f30",
+        "start": 0,
+        "end": 0
+      },
+      {
+        "key": "a375515bfe5adf7fedb64ef4cebe1e621e85a056b0ccd5db72bc0d474325bf38",
+        "start": 0,
+        "end": 0
+      },
+      {
+        "key": "1df26178a7914126fd8cb934c7a7437073794c1c8ce99319172436b1d4973eba",
+        "start": 0,
+        "end": 0
+      },
+      {
+        "key": "45432d7c767e16586403262331a725c7eaa0b2dd79ea442f373c845ae3443aa9",
+        "start": 0,
+        "end": 0
+      },
+      {
+        "key": "9d87b4d2538b10799b582e25ace4726d92d7798ddfb696ff08e450db7917c9ad",
+        "start": 0,
+        "end": 0
+      },
+      {
+        "key": "a921841628d64c3f08bd344118b8106ade072e68c774beff30135e036194493a",
+        "start": 0,
+        "end": 0
+      },
+      {
+        "key": "16ee3356c21e410a0aaab42896021b1a857eb8d97a14a66fed9b13d634c21317",
+        "start": 0,
+        "end": 0
+      },
+      {
+        "key": "99c7d9752c295cb56b550191015ab5a40226fb632e8b02ec15cfe574ea17cf67",
+        "start": 0,
+        "end": 0
+      },
+      {
+        "key": "4af647910ba47000108b87c63abe0545643f9b203eacee2b713729b0450983fe",
+        "start": 0,
+        "end": 0
+      }
+    ]
   }
+}
 ```
 
 ## <a id="db"></a> 5. Database
@@ -230,14 +228,14 @@ Example:
 Example:
 
 ```json
-  {
-    "db": {
-      "engine": "rocksdb",
-      "path": "shimmer/database",
-      "autoRevalidation": false,
-      "checkLedgerStateOnStartup": false
-    }
+{
+  "db": {
+    "engine": "rocksdb",
+    "path": "shimmer/database",
+    "autoRevalidation": false,
+    "checkLedgerStateOnStartup": false
   }
+}
 ```
 
 ## <a id="pow"></a> 6. Proof of Work
@@ -249,11 +247,11 @@ Example:
 Example:
 
 ```json
-  {
-    "pow": {
-      "refreshTipsInterval": "5s"
-    }
+{
+  "pow": {
+    "refreshTipsInterval": "5s"
   }
+}
 ```
 
 ## <a id="p2p"></a> 7. Peer to Peer
@@ -302,38 +300,35 @@ Example:
 Example:
 
 ```json
-  {
-    "p2p": {
-      "bindMultiAddresses": [
-        "/ip4/0.0.0.0/tcp/15600",
-        "/ip6/::/tcp/15600"
+{
+  "p2p": {
+    "bindMultiAddresses": ["/ip4/0.0.0.0/tcp/15600", "/ip6/::/tcp/15600"],
+    "connectionManager": {
+      "highWatermark": 10,
+      "lowWatermark": 5
+    },
+    "identityPrivateKey": "",
+    "db": {
+      "path": "shimmer/p2pstore"
+    },
+    "reconnectInterval": "30s",
+    "gossip": {
+      "unknownPeersLimit": 4,
+      "streamReadTimeout": "1m",
+      "streamWriteTimeout": "10s"
+    },
+    "autopeering": {
+      "enabled": false,
+      "bindAddress": "0.0.0.0:14626",
+      "entryNodes": [
+        "/dns/entry-hornet-0.h.shimmer.network/udp/14626/autopeering/HK6EKbNtjwve9HMbL6PH6R3uLXZYQoBoqNPD5LsoWuA6",
+        "/dns/entry-hornet-1.h.shimmer.network/udp/14626/autopeering/BT8EiSRXTixnH2wMoy4ecNpVtiAXxfXKfYsJ2KvU3WLx"
       ],
-      "connectionManager": {
-        "highWatermark": 10,
-        "lowWatermark": 5
-      },
-      "identityPrivateKey": "",
-      "db": {
-        "path": "shimmer/p2pstore"
-      },
-      "reconnectInterval": "30s",
-      "gossip": {
-        "unknownPeersLimit": 4,
-        "streamReadTimeout": "1m",
-        "streamWriteTimeout": "10s"
-      },
-      "autopeering": {
-        "enabled": false,
-        "bindAddress": "0.0.0.0:14626",
-        "entryNodes": [
-          "/dns/entry-hornet-0.h.shimmer.network/udp/14626/autopeering/HK6EKbNtjwve9HMbL6PH6R3uLXZYQoBoqNPD5LsoWuA6",
-          "/dns/entry-hornet-1.h.shimmer.network/udp/14626/autopeering/BT8EiSRXTixnH2wMoy4ecNpVtiAXxfXKfYsJ2KvU3WLx"
-        ],
-        "entryNodesPreferIPv6": false,
-        "runAsEntryNode": false
-      }
+      "entryNodesPreferIPv6": false,
+      "runAsEntryNode": false
     }
   }
+}
 ```
 
 ## <a id="requests"></a> 8. Requests
@@ -346,12 +341,12 @@ Example:
 Example:
 
 ```json
-  {
-    "requests": {
-      "discardOlderThan": "15s",
-      "pendingReEnqueueInterval": "5s"
-    }
+{
+  "requests": {
+    "discardOlderThan": "15s",
+    "pendingReEnqueueInterval": "5s"
   }
+}
 ```
 
 ## <a id="tangle"></a> 9. Tangle
@@ -366,14 +361,14 @@ Example:
 Example:
 
 ```json
-  {
-    "tangle": {
-      "milestoneTimeout": "30s",
-      "maxDeltaBlockYoungestConeRootIndexToCMI": 8,
-      "maxDeltaBlockOldestConeRootIndexToCMI": 13,
-      "whiteFlagParentsSolidTimeout": "2s"
-    }
+{
+  "tangle": {
+    "milestoneTimeout": "30s",
+    "maxDeltaBlockYoungestConeRootIndexToCMI": 8,
+    "maxDeltaBlockOldestConeRootIndexToCMI": 13,
+    "whiteFlagParentsSolidTimeout": "2s"
   }
+}
 ```
 
 ## <a id="snapshots"></a> 10. Snapshots
@@ -399,23 +394,23 @@ Example:
 Example:
 
 ```json
-  {
-    "snapshots": {
-      "enabled": false,
-      "depth": 50,
-      "interval": 200,
-      "fullPath": "shimmer/snapshots/full_snapshot.bin",
-      "deltaPath": "shimmer/snapshots/delta_snapshot.bin",
-      "deltaSizeThresholdPercentage": 50,
-      "deltaSizeThresholdMinSize": "50M",
-      "downloadURLs": [
-        {
-          "full": "https://files.shimmer.network/snapshots/latest-full_snapshot.bin",
-          "delta": "https://files.shimmer.network/snapshots/latest-delta_snapshot.bin"
-        }
-      ]
-    }
+{
+  "snapshots": {
+    "enabled": false,
+    "depth": 50,
+    "interval": 200,
+    "fullPath": "shimmer/snapshots/full_snapshot.bin",
+    "deltaPath": "shimmer/snapshots/delta_snapshot.bin",
+    "deltaSizeThresholdPercentage": 50,
+    "deltaSizeThresholdMinSize": "50M",
+    "downloadURLs": [
+      {
+        "full": "https://files.shimmer.network/snapshots/latest-full_snapshot.bin",
+        "delta": "https://files.shimmer.network/snapshots/latest-delta_snapshot.bin"
+      }
+    ]
   }
+}
 ```
 
 ## <a id="pruning"></a> 11. Pruning
@@ -445,21 +440,21 @@ Example:
 Example:
 
 ```json
-  {
-    "pruning": {
-      "milestones": {
-        "enabled": false,
-        "maxMilestonesToKeep": 60480
-      },
-      "size": {
-        "enabled": true,
-        "targetSize": "30GB",
-        "thresholdPercentage": 10,
-        "cooldownTime": "5m"
-      },
-      "pruneReceipts": false
-    }
+{
+  "pruning": {
+    "milestones": {
+      "enabled": false,
+      "maxMilestonesToKeep": 60480
+    },
+    "size": {
+      "enabled": true,
+      "targetSize": "30GB",
+      "thresholdPercentage": 10,
+      "cooldownTime": "5m"
+    },
+    "pruneReceipts": false
   }
+}
 ```
 
 ## <a id="profiling"></a> 12. Profiling
@@ -472,26 +467,26 @@ Example:
 Example:
 
 ```json
-  {
-    "profiling": {
-      "enabled": false,
-      "bindAddress": "localhost:6060"
-    }
+{
+  "profiling": {
+    "enabled": false,
+    "bindAddress": "localhost:6060"
   }
+}
 ```
 
 ## <a id="restapi"></a> 13. RestAPI
 
-| Name                        | Description                                                                                    | Type    | Default value                                                                                                                                                                                                                                                                                                                                                                                                |
-| --------------------------- | ---------------------------------------------------------------------------------------------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| enabled                     | Whether the REST API plugin is enabled                                                         | boolean | true                                                                                                                                                                                                                                                                                                                                                                                                         |
-| bindAddress                 | The bind address on which the REST API listens on                                              | string  | "0.0.0.0:14265"                                                                                                                                                                                                                                                                                                                                                                                              |
+| Name                        | Description                                                                                     | Type    | Default value                                                                                                                                                                                                                                                                                                                                                                                                          |
+| --------------------------- | ----------------------------------------------------------------------------------------------- | ------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| enabled                     | Whether the REST API plugin is enabled                                                          | boolean | true                                                                                                                                                                                                                                                                                                                                                                                                                   |
+| bindAddress                 | The bind address on which the REST API listens on                                               | string  | "0.0.0.0:14265"                                                                                                                                                                                                                                                                                                                                                                                                        |
 | publicRoutes                | The HTTP REST routes which can be called without authorization. Wildcards using \* are allowed  | array   | /health<br/>/api/routes<br/>/api/core/v2/info<br/>/api/core/v2/tips<br/>/api/core/v2/blocks\*<br/>/api/core/v2/transactions\*<br/>/api/core/v2/milestones\*<br/>/api/core/v2/outputs\*<br/>/api/core/v2/treasury<br/>/api/core/v2/receipts\*<br/>/api/debug/v1/\*<br/>/api/indexer/v1/\*<br/>/api/mqtt/v1<br/>/api/participation/v1/events\*<br/>/api/participation/v1/outputs\*<br/>/api/participation/v1/addresses\* |
-| protectedRoutes             | The HTTP REST routes which need to be called with authorization. Wildcards using \* are allowed | array   | /api/\*                                                                                                                                                                                                                                                                                                                                                                                                       |
-| debugRequestLoggerEnabled   | Whether the debug logging for requests should be enabled                                       | boolean | false                                                                                                                                                                                                                                                                                                                                                                                                        |
-| [jwtAuth](#restapi_jwtauth) | Configuration for JWT Auth                                                                     | object  |                                                                                                                                                                                                                                                                                                                                                                                                              |
-| [pow](#restapi_pow)         | Configuration for Proof of Work                                                                | object  |                                                                                                                                                                                                                                                                                                                                                                                                              |
-| [limits](#restapi_limits)   | Configuration for limits                                                                       | object  |                                                                                                                                                                                                                                                                                                                                                                                                              |
+| protectedRoutes             | The HTTP REST routes which need to be called with authorization. Wildcards using \* are allowed | array   | /api/\*                                                                                                                                                                                                                                                                                                                                                                                                                |
+| debugRequestLoggerEnabled   | Whether the debug logging for requests should be enabled                                        | boolean | false                                                                                                                                                                                                                                                                                                                                                                                                                  |
+| [jwtAuth](#restapi_jwtauth) | Configuration for JWT Auth                                                                      | object  |                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| [pow](#restapi_pow)         | Configuration for Proof of Work                                                                 | object  |                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| [limits](#restapi_limits)   | Configuration for limits                                                                        | object  |                                                                                                                                                                                                                                                                                                                                                                                                                        |
 
 ### <a id="restapi_jwtauth"></a> JWT Auth
 
@@ -516,45 +511,43 @@ Example:
 Example:
 
 ```json
-  {
-    "restAPI": {
-      "enabled": true,
-      "bindAddress": "0.0.0.0:14265",
-      "publicRoutes": [
-        "/health",
-        "/api/routes",
-        "/api/core/v2/info",
-        "/api/core/v2/tips",
-        "/api/core/v2/blocks*",
-        "/api/core/v2/transactions*",
-        "/api/core/v2/milestones*",
-        "/api/core/v2/outputs*",
-        "/api/core/v2/treasury",
-        "/api/core/v2/receipts*",
-        "/api/debug/v1/*",
-        "/api/indexer/v1/*",
-        "/api/mqtt/v1",
-        "/api/participation/v1/events*",
-        "/api/participation/v1/outputs*",
-        "/api/participation/v1/addresses*"
-      ],
-      "protectedRoutes": [
-        "/api/*"
-      ],
-      "debugRequestLoggerEnabled": false,
-      "jwtAuth": {
-        "salt": "HORNET"
-      },
-      "pow": {
-        "enabled": false,
-        "workerCount": 1
-      },
-      "limits": {
-        "maxBodyLength": "1M",
-        "maxResults": 1000
-      }
+{
+  "restAPI": {
+    "enabled": true,
+    "bindAddress": "0.0.0.0:14265",
+    "publicRoutes": [
+      "/health",
+      "/api/routes",
+      "/api/core/v2/info",
+      "/api/core/v2/tips",
+      "/api/core/v2/blocks*",
+      "/api/core/v2/transactions*",
+      "/api/core/v2/milestones*",
+      "/api/core/v2/outputs*",
+      "/api/core/v2/treasury",
+      "/api/core/v2/receipts*",
+      "/api/debug/v1/*",
+      "/api/indexer/v1/*",
+      "/api/mqtt/v1",
+      "/api/participation/v1/events*",
+      "/api/participation/v1/outputs*",
+      "/api/participation/v1/addresses*"
+    ],
+    "protectedRoutes": ["/api/*"],
+    "debugRequestLoggerEnabled": false,
+    "jwtAuth": {
+      "salt": "HORNET"
+    },
+    "pow": {
+      "enabled": false,
+      "workerCount": 1
+    },
+    "limits": {
+      "maxBodyLength": "1M",
+      "maxResults": 1000
     }
   }
+}
 ```
 
 ## <a id="warpsync"></a> 14. WarpSync
@@ -567,12 +560,12 @@ Example:
 Example:
 
 ```json
-  {
-    "warpsync": {
-      "enabled": true,
-      "advancementRange": 150
-    }
+{
+  "warpsync": {
+    "enabled": true,
+    "advancementRange": 150
   }
+}
 ```
 
 ## <a id="tipsel"></a> 15. Tipselection
@@ -602,21 +595,21 @@ Example:
 Example:
 
 ```json
-  {
-    "tipsel": {
-      "enabled": true,
-      "nonLazy": {
-        "retentionRulesTipsLimit": 100,
-        "maxReferencedTipAge": "3s",
-        "maxChildren": 30
-      },
-      "semiLazy": {
-        "retentionRulesTipsLimit": 20,
-        "maxReferencedTipAge": "3s",
-        "maxChildren": 2
-      }
+{
+  "tipsel": {
+    "enabled": true,
+    "nonLazy": {
+      "retentionRulesTipsLimit": 100,
+      "maxReferencedTipAge": "3s",
+      "maxChildren": 30
+    },
+    "semiLazy": {
+      "retentionRulesTipsLimit": 20,
+      "maxReferencedTipAge": "3s",
+      "maxChildren": 2
     }
   }
+}
 ```
 
 ## <a id="receipts"></a> 16. Receipts
@@ -660,27 +653,27 @@ Example:
 Example:
 
 ```json
-  {
-    "receipts": {
+{
+  "receipts": {
+    "enabled": false,
+    "backup": {
       "enabled": false,
-      "backup": {
-        "enabled": false,
-        "path": "receipts"
+      "path": "receipts"
+    },
+    "validator": {
+      "validate": false,
+      "ignoreSoftErrors": false,
+      "api": {
+        "address": "http://localhost:14266",
+        "timeout": "5s"
       },
-      "validator": {
-        "validate": false,
-        "ignoreSoftErrors": false,
-        "api": {
-          "address": "http://localhost:14266",
-          "timeout": "5s"
-        },
-        "coordinator": {
-          "address": "UDYXTZBE9GZGPM9SSQV9LTZNDLJIZMPUVVXYXFYVBLIEUHLSEWFTKZZLXYRHHWVQV9MNNX9KZC9D9UZWZ",
-          "merkleTreeDepth": 24
-        }
+      "coordinator": {
+        "address": "UDYXTZBE9GZGPM9SSQV9LTZNDLJIZMPUVVXYXFYVBLIEUHLSEWFTKZZLXYRHHWVQV9MNNX9KZC9D9UZWZ",
+        "merkleTreeDepth": 24
       }
     }
   }
+}
 ```
 
 ## <a id="prometheus"></a> 17. Prometheus
@@ -713,28 +706,28 @@ Example:
 Example:
 
 ```json
-  {
-    "prometheus": {
+{
+  "prometheus": {
+    "enabled": false,
+    "bindAddress": "localhost:9311",
+    "fileServiceDiscovery": {
       "enabled": false,
-      "bindAddress": "localhost:9311",
-      "fileServiceDiscovery": {
-        "enabled": false,
-        "path": "target.json",
-        "target": "localhost:9311"
-      },
-      "databaseMetrics": true,
-      "nodeMetrics": true,
-      "gossipMetrics": true,
-      "cachesMetrics": true,
-      "restAPIMetrics": true,
-      "inxMetrics": true,
-      "migrationMetrics": true,
-      "debugMetrics": false,
-      "goMetrics": false,
-      "processMetrics": false,
-      "promhttpMetrics": false
-    }
+      "path": "target.json",
+      "target": "localhost:9311"
+    },
+    "databaseMetrics": true,
+    "nodeMetrics": true,
+    "gossipMetrics": true,
+    "cachesMetrics": true,
+    "restAPIMetrics": true,
+    "inxMetrics": true,
+    "migrationMetrics": true,
+    "debugMetrics": false,
+    "goMetrics": false,
+    "processMetrics": false,
+    "promhttpMetrics": false
   }
+}
 ```
 
 ## <a id="inx"></a> 18. INX
@@ -754,15 +747,15 @@ Example:
 Example:
 
 ```json
-  {
-    "inx": {
-      "enabled": false,
-      "bindAddress": "localhost:9029",
-      "pow": {
-        "workerCount": 0
-      }
+{
+  "inx": {
+    "enabled": false,
+    "bindAddress": "localhost:9029",
+    "pow": {
+      "workerCount": 0
     }
   }
+}
 ```
 
 ## <a id="debug"></a> 19. Debug
@@ -774,10 +767,9 @@ Example:
 Example:
 
 ```json
-  {
-    "debug": {
-      "enabled": false
-    }
+{
+  "debug": {
+    "enabled": false
   }
+}
 ```
-

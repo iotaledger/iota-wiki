@@ -2,15 +2,14 @@
 description: Learn how to install and run a HORNET node using Docker. It is recommended for macOS and Windows.
 image: /img/hornet/Banner/banner_hornet_using_docker.png
 keywords:
-- IOTA Node
-- HORNET Node
-- Docker
-- Install
-- Run
-- macOS
-- Windows
-- how to
-
+  - IOTA Node
+  - HORNET Node
+  - Docker
+  - Install
+  - Run
+  - macOS
+  - Windows
+  - how to
 ---
 
 # Install HORNET using Docker
@@ -19,6 +18,7 @@ keywords:
 
 This guide represents the recommended setup to run a HORNET node.
 It includes everything required to setup a public node accessible by wallets and applications:
+
 - [HORNET](https://github.com/iotaledger/hornet)
 - [Traefik](https://traefik.io) - Reverse proxy using SSL certificates to secure access to the node API and dashboard.
 - [Prometheus](https://prometheus.io) - Metrics scraper configured to collect all metrics from HORNET and INX extensions.
@@ -37,16 +37,19 @@ Please take into consideration the points explained in the [Security 101](https:
 HORNET Docker images (amd64/x86_64 and arm64 architecture) are available at the [iotaledger/hornet](https://hub.docker.com/r/iotaledger/hornet) Docker hub.
 
 ## Requirements
+
 1. A recent release of Docker enterprise or community edition. You can find installation instructions in the [official Docker documentation](https://docs.docker.com/engine/install/).
 2. [Docker Compose CLI plugin](https://docs.docker.com/compose/install/linux/).
 3. A registered domain name pointing to the public IP address of your server. _(optional if not using HTTPS)_
 4. Opening up the following ports in your servers firewall:
-  - `15600 TCP` - Used for HORNET gossip.
-  - `14626 UDP` - Used for HORNET autopeering.
-  - `80 TCP` - Used for HTTP. _(can be changed, see below)_
-  - `443 TCP` - Used for HTTPS. _(optional if not using HTTPS)_
-  - `4000 UDP` - Used for Wasp gossip. _(optional if not using Wasp)_
-  - `5550 TCP` - Used for Wasp nanomsg events. _(optional if not using Wasp)_
+
+- `15600 TCP` - Used for HORNET gossip.
+- `14626 UDP` - Used for HORNET autopeering.
+- `80 TCP` - Used for HTTP. _(can be changed, see below)_
+- `443 TCP` - Used for HTTPS. _(optional if not using HTTPS)_
+- `4000 UDP` - Used for Wasp gossip. _(optional if not using Wasp)_
+- `5550 TCP` - Used for Wasp nanomsg events. _(optional if not using Wasp)_
+
 5. [curl](https://curl.se/).
 
 ## Download the latest release
@@ -80,13 +83,13 @@ ACME_EMAIL=your-email@example.com
 NODE_HOST=node.your-domain.com
 ```
 
-* Replace `your-email@example.com` with the e-mail used for issuing a [Let's Encrypt](https://letsencrypt.org) SSL certificate.
-* Replace `node.your-domain.com` with the domain pointing to your public IP address as described in the [requirements](#requirements).
+- Replace `your-email@example.com` with the e-mail used for issuing a [Let's Encrypt](https://letsencrypt.org) SSL certificate.
+- Replace `node.your-domain.com` with the domain pointing to your public IP address as described in the [requirements](#requirements).
 
 #### 1.2 HTTP
 
 By default this setup will expose the Traefik reverse proxy on the default HTTP port `80`.
-If you want to change the port to a different value you can create a file named  `.env` and add the following to e.g. expose it over port `9000`:
+If you want to change the port to a different value you can create a file named `.env` and add the following to e.g. expose it over port `9000`:
 
 ```
 HTTP_PORT=9000
@@ -100,7 +103,6 @@ Add your HORNET neighbor addresses to the `peering.json` file.
 This step is recommended, but optional if you are using autopeering.
 See [peering](../references/peering.md) for more information.
 :::
-
 
 ### 3. Create the `data` folder
 
@@ -128,7 +130,7 @@ DASHBOARD_PASSWORD=0000000000000000000000000000000000000000000000000000000000000
 DASHBOARD_SALT=0000000000000000000000000000000000000000000000000000000000000000
 ```
 
-* Update the `DASHBOARD_PASSWORD` and `DASHBOARD_SALT` values in the `.env` file with the result of the previous command.
+- Update the `DASHBOARD_PASSWORD` and `DASHBOARD_SALT` values in the `.env` file with the result of the previous command.
 
 If you want to change the default `admin` username, you can add this line to your `.env` file:
 
@@ -155,10 +157,10 @@ COMPOSE_PROFILES=wasp
 ```
 
 If you already enabled the `monitoring` profile, modify the profiles:
+
 ```
 COMPOSE_PROFILES=monitoring,wasp
 ```
-
 
 ## Run
 
@@ -170,21 +172,22 @@ You can start the HORNET node and INX extensions by running:
 docker compose up -d
 ```
 
-* `-d` Instructs Docker to start the containers in the background.
+- `-d` Instructs Docker to start the containers in the background.
 
 #### HTTPS
 
 After starting the node you will be able to access your services at the following endpoints:
+
 - API: `https://node.your-domain.com/api/routes`
 - HORNET Dashboard: `https://node.your-domain.com/dashboard`
-- Grafana: `https://node.your-domain.com/grafana`  _(optional if using "monitoring" profile)_
-- Wasp API: `https://node.your-domain.com/wasp/api`  _(optional if using "wasp" profile)_
-- Wasp Dashboard: `https://node.your-domain.com/wasp/dashboard`  _(optional if using "wasp" profile)_
+- Grafana: `https://node.your-domain.com/grafana` _(optional if using "monitoring" profile)_
+- Wasp API: `https://node.your-domain.com/wasp/api` _(optional if using "wasp" profile)_
+- Wasp Dashboard: `https://node.your-domain.com/wasp/dashboard` _(optional if using "wasp" profile)_
 
 :::warning
-   After starting your node for the first time, please change the default grafana credentials<br />
-   User: `admin`<br />
-   Password: `admin`
+After starting your node for the first time, please change the default grafana credentials<br />
+User: `admin`<br />
+Password: `admin`
 :::
 
 You can configure your wallet software to use `https://node.your-domain.com`
@@ -192,14 +195,15 @@ You can configure your wallet software to use `https://node.your-domain.com`
 #### HTTP
 
 After starting the node you will be able to access your services at the following endpoints:
+
 - API: `http://localhost/api/routes`
 - HORNET Dashboard: `http://localhost/dashboard`
-- Grafana: `http://localhost/grafana`  _(optional if using "monitoring" profile)_
-- Wasp API: `http://localhost/wasp/api`  _(optional if using "wasp" profile)_
-- Wasp Dashboard: `http://localhost/wasp/dashboard`  _(optional if using "wasp" profile)_
+- Grafana: `http://localhost/grafana` _(optional if using "monitoring" profile)_
+- Wasp API: `http://localhost/wasp/api` _(optional if using "wasp" profile)_
+- Wasp Dashboard: `http://localhost/wasp/dashboard` _(optional if using "wasp" profile)_
 
 :::note
-   If you changed the default `HTTP_PORT` value, you will need to add the port to the urls.
+If you changed the default `HTTP_PORT` value, you will need to add the port to the urls.
 :::
 
 You can configure your wallet software to use `http://localhost`
@@ -207,16 +211,18 @@ You can configure your wallet software to use `http://localhost`
 ### Displaying Log Output
 
 You can display the HORNET logs by running:
+
 ```sh
 docker compose logs -f hornet
 ```
 
-* `-f`
-Instructs Docker to continue displaying the log to `stdout` until CTRL+C is pressed.
+- `-f`
+  Instructs Docker to continue displaying the log to `stdout` until CTRL+C is pressed.
 
 ### Stopping the node
 
 You can stop the HORNET node and INX extensions by running:
+
 ```sh
 docker compose down
 ```
@@ -224,11 +230,13 @@ docker compose down
 ### Tools
 
 To access the tools provided inside HORNET you can use:
+
 ```sh
 docker compose run hornet tool <tool-name>
 ```
 
 To see the list of tools included run:
+
 ```sh
 docker compose run hornet tool -h
 ```
@@ -236,11 +244,12 @@ docker compose run hornet tool -h
 ## JWT Auth
 
 To generate a JWT token to be used to access protected routes you can run:
+
 ```sh
 docker compose run hornet tool jwt-api --databasePath data/p2pstore
 ```
 
-* If you changed the `restAPI.jwtAuth.salt` value in the `config.json`, then you need to pass that value as a parameter as `--salt <restAPI.jwtAuth.salt value from your config.json>`
+- If you changed the `restAPI.jwtAuth.salt` value in the `config.json`, then you need to pass that value as a parameter as `--salt <restAPI.jwtAuth.salt value from your config.json>`
 
 ## INX
 

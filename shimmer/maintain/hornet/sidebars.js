@@ -10,7 +10,5 @@
  */
 
 module.exports = {
-    docs: [
-
-    ]
+  docs: [],
 };
