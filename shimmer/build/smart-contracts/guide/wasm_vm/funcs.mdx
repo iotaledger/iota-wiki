@@ -1,18 +1,19 @@
 ---
 keywords:
-- functions
-- views
-- state
-- access
-- params
-- results
+  - functions
+  - views
+  - state
+  - access
+  - params
+  - results
 
 image: /img/ISC/logo/WASP_logo_dark.png
 
-description:  The code generated for Funcs will be able to inspect and modify the smart contract state, whereas the code generated for Views will only be able to inspect the state.
+description: The code generated for Funcs will be able to inspect and modify the smart contract state, whereas the code generated for Views will only be able to inspect the state.
 ---
-import Tabs from "@theme/Tabs"
-import TabItem from "@theme/TabItem"
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 # Function Definitions
 
@@ -79,10 +80,9 @@ Functions are defined as named subsections in the schema definition file. The na
 subsection will become the name of the function. In turn, there can be 3 optional
 subsections under each function subsection.
 
-* `access` indicates who is allowed to access the function.
-* `params` holds the field definitions that describe the function parameters.
-* `results` holds the field definitions that describe the function results.
-
+- `access` indicates who is allowed to access the function.
+- `params` holds the field definitions that describe the function parameters.
+- `results` holds the field definitions that describe the function results.
 
 We will now examine each subsection in more detail. In the next section we will first look
 at the [`access`](access.mdx) subsection.

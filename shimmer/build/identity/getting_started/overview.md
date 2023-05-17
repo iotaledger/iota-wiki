@@ -2,12 +2,12 @@
 description: Using IOTA Identity, a new digital identity can be created by anyone or anything at any time by generating a Decentralized Identifier (DID) combined with Verifiable Credentials
 image: /img/identity/Identity_icon.png
 keywords:
-- Identity
-- verifiable
-- credentials
-- Rust
-- WASM
-- reference
+  - Identity
+  - verifiable
+  - credentials
+  - Rust
+  - WASM
+  - reference
 ---
 
 # Overview
@@ -25,7 +25,6 @@ You can use this framework in processes such as:
 - (Authority) Login: Customers can prove who they are and gain access to their account,
   without passwords. This can be useful for many websites, including eGovernment and
   banking.
-
 
 ## Implementations
 

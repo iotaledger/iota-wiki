@@ -4,8 +4,8 @@ sidebar_label: Getting Started
 description: Getting started with the IOTA Identity Rust Library.
 image: /img/identity/Identity_icon.png
 keywords:
-- Rust
-- Identity
+  - Rust
+  - Identity
 ---
 
 ## Requirements
@@ -35,7 +35,6 @@ This version matches the `main` branch of this repository. It has all the **late
 identity_iota = { git = "https://github.com/iotaledger/identity.rs", branch = "main"}
 ```
 
-
 ## Examples
 
 To try out the [examples](https://github.com/iotaledger/identity.rs/tree/main/examples), you should:
@@ -45,11 +44,13 @@ To try out the [examples](https://github.com/iotaledger/identity.rs/tree/main/ex
 ```bash
 git clone https://github.com/iotaledger/identity.rs
 ```
+
 2. Build the repository:
 
 ```bash
 cargo build
 ```
+
 3. Run your first example:
 
 ```bash

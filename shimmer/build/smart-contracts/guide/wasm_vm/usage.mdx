@@ -1,24 +1,25 @@
 ---
 keywords:
-- functions
-- schema tool
-- definition file
-- Rust
-- Go
-- init
-- json
-- yml
+  - functions
+  - schema tool
+  - definition file
+  - Rust
+  - Go
+  - init
+  - json
+  - yml
 
 description: The `schema` tool will assist in creating a smart contract as unobtrusively as possible.
 
 image: /img/ISC/logo/WASP_logo_dark.png
 ---
-import Tabs from "@theme/Tabs"
-import TabItem from "@theme/TabItem"
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 # Using the Schema Tool
 
-We tried to make the creation of smart contracts as simple as possible. The *Schema Tool*
+We tried to make the creation of smart contracts as simple as possible. The _Schema Tool_
 will assist you along the way as unobtrusively as possible. This section will walk you
 through the steps to create a new smart contract from scratch.
 
@@ -262,24 +263,30 @@ pub fn view_get_owner(_ctx: &ScViewContext, f: &GetOwnerContext) {
 <TabItem value="ts">
 
 ```ts
-import * as wasmlib from "wasmlib";
-import * as wasmtypes from "wasmlib/wasmtypes";
-import * as sc from "./index";
+import * as wasmlib from 'wasmlib';
+import * as wasmtypes from 'wasmlib/wasmtypes';
+import * as sc from './index';
 
 export function funcInit(ctx: wasmlib.ScFuncContext, f: sc.InitContext): void {
-    if (f.params.owner().exists()) {
-        f.state.owner().setValue(f.params.owner().value());
-        return;
-    }
-    f.state.owner().setValue(ctx.requestSender());
-}
-
-export function funcSetOwner(ctx: wasmlib.ScFuncContext, f: sc.SetOwnerContext): void {
+  if (f.params.owner().exists()) {
     f.state.owner().setValue(f.params.owner().value());
+    return;
+  }
+  f.state.owner().setValue(ctx.requestSender());
 }
 
-export function viewGetOwner(ctx: wasmlib.ScViewContext, f: sc.GetOwnerContext): void {
-    f.results.owner().setValue(f.state.owner().value());
+export function funcSetOwner(
+  ctx: wasmlib.ScFuncContext,
+  f: sc.SetOwnerContext,
+): void {
+  f.state.owner().setValue(f.params.owner().value());
+}
+
+export function viewGetOwner(
+  ctx: wasmlib.ScViewContext,
+  f: sc.GetOwnerContext,
+): void {
+  f.results.owner().setValue(f.state.owner().value());
 }
 ```
 
@@ -298,14 +305,29 @@ definition file has been modified since the last time it generated the code. You
 the schema tool to regenerate all code by adding the `-force` flag to its command line
 parameter.
 
-
 In the next section we will look at how a smart contract can access its associated
 storage by using [Data Access Proxies](proxies.mdx).
 
 ## Video Tutorial
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/aTwXHuzwqZ0" title="Deploying with Schema Tool" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe
+  width='560'
+  height='315'
+  src='https://www.youtube.com/embed/aTwXHuzwqZ0'
+  title='Deploying with Schema Tool'
+  frameborder='0'
+  allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
+  allowfullscreen
+></iframe>
 
 ### Creating Smart Contracts using AssemblyScript
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/P5HMgmY3DMM" title="Creating Smart Contracts using AssemblyScript" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe
+  width='560'
+  height='315'
+  src='https://www.youtube.com/embed/P5HMgmY3DMM'
+  title='Creating Smart Contracts using AssemblyScript'
+  frameborder='0'
+  allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
+  allowfullscreen
+></iframe>

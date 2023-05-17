@@ -1,18 +1,16 @@
 ---
 keywords:
-- functions
-- thunk
-- insert operations
+  - functions
+  - thunk
+  - insert operations
 
 description: Thunk functions encapsulate access and parameter checking and set up the type-safe function-specific contexts. Thunks are used to insert operations at the beginning or end of the wrapped function to adapt it to changing requirements
 
 image: /img/ISC/logo/WASP_logo_dark.png
 ---
 
-
-
-import Tabs from "@theme/Tabs"
-import TabItem from "@theme/TabItem"
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 # Thunk Functions
 
@@ -121,28 +119,20 @@ fn view_get_owner_thunk(ctx: &ScViewContext) {}
 
 ```ts
 const exportMap: wasmlib.ScExportMap = {
-	names: [
-		sc.FuncDivide,
-		sc.FuncInit,
-		sc.FuncMember,
-		sc.FuncSetOwner,
-		sc.ViewGetFactor,
-		sc.ViewGetOwner,
-	],
-	funcs: [
-		funcDivideThunk,
-		funcInitThunk,
-		funcMemberThunk,
-		funcSetOwnerThunk,
-	],
-	views: [
-		viewGetFactorThunk,
-		viewGetOwnerThunk,
-	],
+  names: [
+    sc.FuncDivide,
+    sc.FuncInit,
+    sc.FuncMember,
+    sc.FuncSetOwner,
+    sc.ViewGetFactor,
+    sc.ViewGetOwner,
+  ],
+  funcs: [funcDivideThunk, funcInitThunk, funcMemberThunk, funcSetOwnerThunk],
+  views: [viewGetFactorThunk, viewGetOwnerThunk],
 };
 
 export function on_dispatch(index: i32): void {
-    exportMap.dispatch(index);
+  exportMap.dispatch(index);
 }
 
 function funcDivideThunk(ctx: ScFuncContext) {}
@@ -255,17 +245,17 @@ fn on_load() {
 <TabItem value="ts">
 
 ```ts
-import * as wasmvmhost from "wasmvmhost";
-import * as sc from "./dividend";
+import * as wasmvmhost from 'wasmvmhost';
+import * as sc from './dividend';
 
 export function on_call(index: i32): void {
-    wasmvmhost.WasmVMHost.connect();
-    sc.onDispatch(index);
+  wasmvmhost.WasmVMHost.connect();
+  sc.onDispatch(index);
 }
 
 export function on_load(): void {
-    wasmvmhost.WasmVMHost.connect();
-    sc.onDispatch(-1);
+  wasmvmhost.WasmVMHost.connect();
+  sc.onDispatch(-1);
 }
 ```
 
@@ -347,22 +337,26 @@ fn func_set_owner_thunk(ctx: &ScFuncContext) {
 ```ts
 // this class is actually defined in contract.ts
 export class SetOwnerContext {
-	params: sc.ImmutableSetOwnerParams = new sc.ImmutableSetOwnerParams(wasmlib.paramsProxy());
-	state: sc.MutableDividendState = new sc.MutableDividendState(wasmlib.ScState.proxy());
+  params: sc.ImmutableSetOwnerParams = new sc.ImmutableSetOwnerParams(
+    wasmlib.paramsProxy(),
+  );
+  state: sc.MutableDividendState = new sc.MutableDividendState(
+    wasmlib.ScState.proxy(),
+  );
 }
 
 function funcSetOwnerThunk(ctx: wasmlib.ScFuncContext): void {
-	ctx.log("dividend.funcSetOwner");
-	let f = new sc.SetOwnerContext();
+  ctx.log('dividend.funcSetOwner');
+  let f = new sc.SetOwnerContext();
 
-	// only defined owner of contract can change owner
-	const access = f.state.owner();
-	ctx.require(access.exists(), "access not set: owner");
-	ctx.require(ctx.caller().equals(access.value()), "no permission");
+  // only defined owner of contract can change owner
+  const access = f.state.owner();
+  ctx.require(access.exists(), 'access not set: owner');
+  ctx.require(ctx.caller().equals(access.value()), 'no permission');
 
-	ctx.require(f.params.owner().exists(), "missing mandatory owner");
-	sc.funcSetOwner(ctx, f);
-	ctx.log("dividend.funcSetOwner ok");
+  ctx.require(f.params.owner().exists(), 'missing mandatory owner');
+  sc.funcSetOwner(ctx, f);
+  ctx.log('dividend.funcSetOwner ok');
 }
 ```
 
@@ -396,6 +390,5 @@ we would process the returned results for those functions that have any (in this
 obviously don't have results), and finally we log that the contract function has completed
 successfully. Remember that any error within the user function will cause a panic, so this
 logging will never occur in case that happens.
-
 
 In the next section we will look at the specifics of [view functions](views.mdx).

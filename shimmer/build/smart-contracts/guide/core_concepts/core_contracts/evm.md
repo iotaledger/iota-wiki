@@ -82,12 +82,12 @@ Only the foundry owner can call this endpoint.
 
 - Amount of accounts `n` (`uint32`).
 - `n` times:
-    - Ethereum address (`[]byte` prefixed with `uint32` size).
-    - Account code (`[]byte` prefixed with `uint32` size).
-    - Amount of storage key/value pairs `m`(`uint32`).
-    - `m` times:
-        - Key (`[]byte` prefixed with `uint32` size).
-        - Value(`[]byte` prefixed with `uint32` size).
-    - Account balance (must be 0)(`[]byte` prefixed with `uint32` size).
-    - Account nonce  (`uint64`).
-    - Account private key (may be used for tests)(`uint64`).
+  - Ethereum address (`[]byte` prefixed with `uint32` size).
+  - Account code (`[]byte` prefixed with `uint32` size).
+  - Amount of storage key/value pairs `m`(`uint32`).
+  - `m` times:
+    - Key (`[]byte` prefixed with `uint32` size).
+    - Value(`[]byte` prefixed with `uint32` size).
+  - Account balance (must be 0)(`[]byte` prefixed with `uint32` size).
+  - Account nonce (`uint64`).
+  - Account private key (may be used for tests)(`uint64`).

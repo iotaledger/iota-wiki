@@ -2,15 +2,13 @@
 description: Calling smart contract view functions with Solo.
 image: /img/ISC/tutorial/call_view.png
 keywords:
-
-- how to
-- testing
-- solo
-- views
-- call
-- synchronous
-- entry points
-
+  - how to
+  - testing
+  - solo
+  - views
+  - call
+  - synchronous
+  - entry points
 ---
 
 # Calling a View
@@ -54,7 +52,7 @@ type Dict map[kv.Key][]byte
 the [`kv.KVStore`](https://github.com/iotaledger/wasp/blob/develop/packages/kv/kv.go) interface. The `kv` package and
 subpackages provide many useful functions to work with the `Dict` type.
 
-:::note 
+:::note
 
 Both view and non-view entry points can produce results.
 In normal operation, retrieving the result of an on-ledger request is impossible since it is an asynchronous operation.
@@ -74,6 +72,3 @@ from the `Dict` and decode it:
 ```go
 var value string = codec.MustDecodeString(res["str"])
 ```
-
-
-

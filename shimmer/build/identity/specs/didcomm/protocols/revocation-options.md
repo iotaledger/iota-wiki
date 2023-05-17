@@ -14,6 +14,7 @@ The IOTA DIDComm Specification is in the RFC phase and may undergo changes. Sugg
 - Last Updated: 2021-10-29
 
 ## Overview
+
 Allows discovery of available [`RevocationInfo`](./revocation#RevocationInfo) types for use with the [revocation](./revocation) protocol.
 
 ### Relationships
@@ -21,6 +22,7 @@ Allows discovery of available [`RevocationInfo`](./revocation#RevocationInfo) ty
 - [revocation](./revocation): this protocol is used to discover the `revocationInfoType` options available to a [trusted-party](#roles) for use in a [revocation-request](./revocation#revocation-request).
 
 ### Roles
+
 - Trusted-Party: requests supported methods of revocation.
 - Revoker: offers supported methods of revocation.
 
@@ -34,8 +36,8 @@ Allows discovery of available [`RevocationInfo`](./revocation#RevocationInfo) ty
 
 </div>
 
-
 ## Messages
+
 ### 1. revocation-options-request {#revocation-options-request}
 
 - Type: `iota/revocation-options/0.1/revocation-options-request`
@@ -44,6 +46,7 @@ Allows discovery of available [`RevocationInfo`](./revocation#RevocationInfo) ty
 Empty message requesting all available [`RevocationInfo`](./revocation#RevocationInfo) types.
 
 #### Structure
+
 ```json
 {}
 ```
@@ -56,15 +59,16 @@ Empty message requesting all available [`RevocationInfo`](./revocation#Revocatio
 Response including all available [RevocationInfo](./revocation#RevocationInfo) types supported by the [revoker](#roles).
 
 #### Structure
+
 ```json
 {
   "revocationInfoTypes": [string], // REQUIRED
 }
 ```
 
-| Field | Description | Required |
-| :--- | :--- | :--- |
-| `revocationInfoTypes` | List of supported [RevocationInfo](./revocation#RevocationInfo) types.[^1] | ✔ |
+| Field                 | Description                                                                | Required |
+| :-------------------- | :------------------------------------------------------------------------- | :------- |
+| `revocationInfoTypes` | List of supported [RevocationInfo](./revocation#RevocationInfo) types.[^1] | ✔        |
 
 [^1] The actual list of supported types may be vague or exact depending on how much the [revoker](#roles) trusts the requester. The supported types may also differ per requester.
 
@@ -74,7 +78,11 @@ Response including all available [RevocationInfo](./revocation#RevocationInfo) t
 
 ```json
 {
-  "revocationInfoTypes": ["KeyRevocation2021", "CredentialRevocation2021", "CredentialStatusRevocation2021"]
+  "revocationInfoTypes": [
+    "KeyRevocation2021",
+    "CredentialRevocation2021",
+    "CredentialStatusRevocation2021"
+  ]
 }
 ```
 
@@ -92,8 +100,8 @@ The following problem-report codes may be raised in the course of this protocol 
 
 For guidance on problem-reports and a list of general codes see [problem reports](../resources/problem-reports).
 
-| Code | Message | Description |
-| :--- | :--- | :--- |
+| Code                                             | Message                                   | Description                                             |
+| :----------------------------------------------- | :---------------------------------------- | :------------------------------------------------------ |
 | `e.p.msg.iota.revocation-options.reject-request` | [revocation-options](#revocation-options) | The [revoker](#roles) rejects a request for any reason. |
 
 ## Considerations

@@ -4,16 +4,16 @@ sidebar_label: Introduction
 description: The Decentralized Identifiers (DID) standard from W3C is the fundamental standard that supports the concept of a decentralized digital identity. Explore the basic aspects of the DID standard.
 image: /img/identity/Identity_icon.png
 keywords:
-- public keys
-- Method Specification
-- Decentralized Identifiers
-- overview
-- DLT
+  - public keys
+  - Method Specification
+  - Decentralized Identifiers
+  - overview
+  - DLT
 ---
 
 # Decentralized Identifiers (DID)
 
-A DID is a unique identifier that can be resolved to a DID Document. This document contains data such as public keys, enabling the holder to prove ownership over their personal data, but also URIs that link to public information about the identity. DIDs are the fundamental building blocks of decentralized digital identity. 
+A DID is a unique identifier that can be resolved to a DID Document. This document contains data such as public keys, enabling the holder to prove ownership over their personal data, but also URIs that link to public information about the identity. DIDs are the fundamental building blocks of decentralized digital identity.
 This implementation complies to the [DID specifications v1.0](https://www.w3.org/TR/did-core//) from the World Wide Web Consortium (W3C).
 
 In the IOTA Identity framework, we have implemented the DID standard according to the `iota` [DID Method Specification](../../specs/did/iota_did_method_spec.md). Other implementations of DID on IOTA must follow the `iota` DID Method Specification if they also want to use the `iota` method name. It should not be necessary to re-implement the specification, if you can use library though.
@@ -73,11 +73,10 @@ As DID Documents are stored in the ledger state by being covered by the storage 
 
 DID Document are stored in an Alias Outputs, this allows them to directly interact with Layer 1 artifacts like NFTs and native assets. For instance an Alias Output representing a DID can hold native assets or control NFTs. Transferring funds between DIDs is also possible on Layer 1.
 
-
 ### Ease-of-use
 
 Iota Identity helps with abstracting the details of the DID standard by providing easy-to-use APIs that allow standardized behavior. It also allows more flexible and complex management of DID Documents.
 
 ### Storage solution
 
-IOTA Identity provides a [Stronghold](https://wiki.iota.org/stronghold.rs/welcome/ "Stronghold is an open-source software library that was originally built to protect IOTA Seeds, but can be used to protect any digital secret.") solution for managing secrets securely, without requiring developers to reinvent the security wheel.
+IOTA Identity provides a [Stronghold](https://wiki.iota.org/stronghold.rs/welcome/ 'Stronghold is an open-source software library that was originally built to protect IOTA Seeds, but can be used to protect any digital secret.') solution for managing secrets securely, without requiring developers to reinvent the security wheel.

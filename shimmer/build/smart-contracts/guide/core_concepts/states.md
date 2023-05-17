@@ -12,6 +12,7 @@ keywords:
 - transitions
 - explanation
 ---
+
 # State, Transitions, and State Anchoring
 
 ## State of the Chain
@@ -71,8 +72,8 @@ state, consuming the previous state UTXO and producing a new one.
 
 The data state is stored outside the ledger, on the distributed database maintained by validator nodes.
 _Anchoring the state_ means placing the hash of the data state into the state UTXO and adding it to the L1 UTXO ledger.
-The UTXO ledger guarantees that there is *exactly one* such output for each chain on the ledger at every moment.
-We call this output the *state output* (or state anchor) and the containing transaction the *state transaction* (or
+The UTXO ledger guarantees that there is _exactly one_ such output for each chain on the ledger at every moment.
+We call this output the _state output_ (or state anchor) and the containing transaction the _state transaction_ (or
 anchor transaction) of the chain.
 The state output is controlled (i.e., can be unlocked/consumed) by the entity running the chain.
 
@@ -94,7 +95,7 @@ The data state is updated by mutations of its key/value pairs.
 Each mutation either sets a value for a key or deletes a key (and the associated value).
 Any update to the data state can be reduced to a partially ordered sequence of mutations.
 
-A *block* is a collection of mutations to the data state that is applied in a state transition:
+A _block_ is a collection of mutations to the data state that is applied in a state transition:
 
 ```go
 next data state = apply(current data state, block)
@@ -119,4 +120,3 @@ The ISC virtual machine (VM) computes the blocks and state outputs that anchor t
 transitions are calculated deterministically and consistently.
 
 ![Chain](/img/ISC/chain1.png)
-

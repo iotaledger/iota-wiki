@@ -1,18 +1,18 @@
 ---
 keywords:
-- functions
-- state
-- structures
-- storage
-- named fields
+  - functions
+  - state
+  - structures
+  - storage
+  - named fields
 
 description: The smart contracts can trigger events that the user can subscribe to and that convey changes to its state.
 
 image: /img/ISC/logo/WASP_logo_dark.png
 ---
 
-import Tabs from "@theme/Tabs"
-import TabItem from "@theme/TabItem"
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 # Triggering Events
 
@@ -225,65 +225,64 @@ impl FairRouletteEvents {
 <TabItem value="ts">
 
 ```ts
-import * as wasmlib from "wasmlib";
-import * as wasmtypes from "wasmlib/wasmtypes";
+import * as wasmlib from 'wasmlib';
+import * as wasmtypes from 'wasmlib/wasmtypes';
 
 export class FairRouletteEvents {
+  bet(
+    // address of better
+    address: wasmtypes.ScAddress,
+    // amount of tokens to bet
+    amount: u64,
+    // number to bet on
+    number: u16,
+  ): void {
+    const evt = new wasmlib.EventEncoder('fairroulette.bet');
+    evt.encode(wasmtypes.addressToString(address));
+    evt.encode(wasmtypes.uint64ToString(amount));
+    evt.encode(wasmtypes.uint16ToString(number));
+    evt.emit();
+  }
 
-	bet(
-		// address of better
-		address: wasmtypes.ScAddress,
-		// amount of tokens to bet
-		amount: u64,
-		// number to bet on
-		number: u16,
-	): void {
-		const evt = new wasmlib.EventEncoder("fairroulette.bet");
-		evt.encode(wasmtypes.addressToString(address));
-		evt.encode(wasmtypes.uint64ToString(amount));
-		evt.encode(wasmtypes.uint16ToString(number));
-		evt.emit();
-	}
+  payout(
+    // address of winner
+    address: wasmtypes.ScAddress,
+    // amount of tokens won
+    amount: u64,
+  ): void {
+    const evt = new wasmlib.EventEncoder('fairroulette.payout');
+    evt.encode(wasmtypes.addressToString(address));
+    evt.encode(wasmtypes.uint64ToString(amount));
+    evt.emit();
+  }
 
-	payout(
-		// address of winner
-		address: wasmtypes.ScAddress,
-		// amount of tokens won
-		amount: u64,
-	): void {
-		const evt = new wasmlib.EventEncoder("fairroulette.payout");
-		evt.encode(wasmtypes.addressToString(address));
-		evt.encode(wasmtypes.uint64ToString(amount));
-		evt.emit();
-	}
+  round(
+    // current betting round number
+    number: u32,
+  ): void {
+    const evt = new wasmlib.EventEncoder('fairroulette.round');
+    evt.encode(wasmtypes.uint32ToString(number));
+    evt.emit();
+  }
 
-	round(
-		// current betting round number
-		number: u32,
-	): void {
-		const evt = new wasmlib.EventEncoder("fairroulette.round");
-		evt.encode(wasmtypes.uint32ToString(number));
-		evt.emit();
-	}
+  start(): void {
+    const evt = new wasmlib.EventEncoder('fairroulette.start');
+    evt.emit();
+  }
 
-	start(): void {
-		const evt = new wasmlib.EventEncoder("fairroulette.start");
-		evt.emit();
-	}
+  stop(): void {
+    const evt = new wasmlib.EventEncoder('fairroulette.stop');
+    evt.emit();
+  }
 
-	stop(): void {
-		const evt = new wasmlib.EventEncoder("fairroulette.stop");
-		evt.emit();
-	}
-
-	winner(
-		// the winning number
-		number: u16,
-	): void {
-		const evt = new wasmlib.EventEncoder("fairroulette.winner");
-		evt.encode(wasmtypes.uint16ToString(number));
-		evt.emit();
-	}
+  winner(
+    // the winning number
+    number: u16,
+  ): void {
+    const evt = new wasmlib.EventEncoder('fairroulette.winner');
+    evt.encode(wasmtypes.uint16ToString(number));
+    evt.emit();
+  }
 }
 ```
 
@@ -293,7 +292,6 @@ export class FairRouletteEvents {
 Notice how the generated functions use the WasmLib EventEncoder to encode the parameters
 into a single string before emitting it. Here is the way in which `fairroulette` emits the
 `bet` event in its smart contract code:
-
 
 <Tabs defaultValue="go"
       groupId="language"
@@ -320,7 +318,7 @@ into a single string before emitting it. Here is the way in which `fairroulette`
 <TabItem value="ts">
 
 ```ts
-    f.events.bet(bet.better.address(), bet.amount, bet.number);
+f.events.bet(bet.better.address(), bet.amount, bet.number);
 ```
 
 </TabItem>
@@ -331,7 +329,6 @@ stream and respond to any events it deems noteworthy. The [Schema Tool](usage.md
 automatically generate the necessary client side code that properly listens for the
 events, parses the event strings into a type-safe structure, and passes this structure to
 the corresponding handler function.
-
 
 In the next section we will explore how the [Schema Tool](usage.mdx) helps to simplify
 smart contract [function definitions](funcs.mdx).

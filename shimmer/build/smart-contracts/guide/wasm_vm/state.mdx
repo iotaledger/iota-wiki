@@ -1,18 +1,19 @@
 ---
 keywords:
-- state
-- access
-- storage
-- key
-- data
-- value
+  - state
+  - access
+  - storage
+  - key
+  - data
+  - value
 
 description: The smart contract state storage on the host consists of a single key/value map, as long as you access the data in the same way that you used to store it, you will always get valid data back.
 
 image: /img/ISC/logo/WASP_logo_dark.png
 ---
-import Tabs from "@theme/Tabs"
-import TabItem from "@theme/TabItem"
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 # Smart Contract State
 
@@ -149,29 +150,29 @@ impl MutableDividendState {
 
 ```ts
 export class MutableDividendState extends wasmtypes.ScProxy {
-	asImmutable(): sc.ImmutableDividendState {
-		return new sc.ImmutableDividendState(this.proxy);
-	}
+  asImmutable(): sc.ImmutableDividendState {
+    return new sc.ImmutableDividendState(this.proxy);
+  }
 
-	// array with all the recipients of this dividend
-	memberList(): sc.ArrayOfMutableAddress {
-		return new sc.ArrayOfMutableAddress(this.proxy.root(sc.StateMemberList));
-	}
+  // array with all the recipients of this dividend
+  memberList(): sc.ArrayOfMutableAddress {
+    return new sc.ArrayOfMutableAddress(this.proxy.root(sc.StateMemberList));
+  }
 
-	// map with all the recipient factors of this dividend
-	members(): sc.MapAddressToMutableUint64 {
-		return new sc.MapAddressToMutableUint64(this.proxy.root(sc.StateMembers));
-	}
+  // map with all the recipient factors of this dividend
+  members(): sc.MapAddressToMutableUint64 {
+    return new sc.MapAddressToMutableUint64(this.proxy.root(sc.StateMembers));
+  }
 
-	// owner of contract, the only one who can call 'member' func
-	owner(): wasmtypes.ScMutableAgentID {
-		return new wasmtypes.ScMutableAgentID(this.proxy.root(sc.StateOwner));
-	}
+  // owner of contract, the only one who can call 'member' func
+  owner(): wasmtypes.ScMutableAgentID {
+    return new wasmtypes.ScMutableAgentID(this.proxy.root(sc.StateOwner));
+  }
 
-	// sum of all recipient factors
-	totalFactor(): wasmtypes.ScMutableUint64 {
-		return new wasmtypes.ScMutableUint64(this.proxy.root(sc.StateTotalFactor));
-	}
+  // sum of all recipient factors
+  totalFactor(): wasmtypes.ScMutableUint64 {
+    return new wasmtypes.ScMutableUint64(this.proxy.root(sc.StateTotalFactor));
+  }
 }
 ```
 
@@ -186,7 +187,6 @@ any necessary intermediate map and array proxy types that force the usage of the
 respective homogenous types. In the above example both `ArrayOfMutableAddress` and
 `MapAddressToMutableUint64` are examples of such automatically generated proxy types.
 See the full `state.xx` for more details.
-
 
 In the next section we will explore how the [Schema Tool](usage.mdx) helps to simplify
 [triggering events](events.mdx).

@@ -4,12 +4,13 @@ sidebar_label: Verifiable Presentations
 description: Explain how a VC is created and verified
 image: /img/identity/Identity_icon.png
 keywords:
-- verifiable
-- presentations
+  - verifiable
+  - presentations
 ---
-import create_vp_ts from '!!raw-loader!/shimmer/external/identity.rs/0.7-alpha/bindings/wasm/examples/src/0_basic/6_create_vp.ts'
-import create_vp_rs from  '!!raw-loader!/shimmer/external/identity.rs/0.7-alpha/examples/0_basic/6_create_vp.rs';
-import CodeSnippet from '/src/common/components/CodeSnippetComponent'
+
+import create_vp_ts from '!!raw-loader!/shimmer/external/identity.rs/0.7-alpha/bindings/wasm/examples/src/0_basic/6_create_vp.ts';
+import create_vp_rs from '!!raw-loader!/shimmer/external/identity.rs/0.7-alpha/examples/0_basic/6_create_vp.rs';
+import CodeSnippet from '/src/common/components/CodeSnippetComponent';
 
 A verifiable presentation is the recommended data format for sharing one or more [verifiable credentials](./overview.md).
 It is constructed and signed by a holder to prove control over their credentials and can be presented to a verifier for [validation](#validation).
@@ -86,7 +87,7 @@ The framework checks:
 
 Note that a verifier may specify which DID Documents to use for the holder and issuers, otherwise they are resolved from the Tangle automatically.
 
-Currently, the following are *not* checked automatically:
+Currently, the following are _not_ checked automatically:
 
 - **Data schemas**: credentials that specify a [schema](https://www.w3.org/TR/vc-data-model/#data-schemas) property should be examined to ensure conformance.
 - **Fitness for purpose**: whether the credentials in a presentation and the data within them are acceptable and valid depends on the context in which they are used. Verifiers should ensure that the credential types, subjects, and schemas sent by a holder match what was requested.
@@ -167,8 +168,8 @@ The following code demonstrates how to use the IOTA Identity Framework end-to-en
 serialize it to JSON for transmission, deserialize it on the receiving side as a verifier, and finally validate it with various options.
 
 <CodeSnippet
-    nodeContent={create_vp_ts}
-    rustContent={create_vp_rs}
-    nodeGithubLink = "https://github.com/iotaledger/identity.rs/blob/main/bindings/wasm/examples/src/0_basic/6_create_vp.ts"
-    rustGithubLink = "https://github.com/iotaledger/identity.rs/blob/main/examples/0_basic/6_create_vp.rs"
+  nodeContent={create_vp_ts}
+  rustContent={create_vp_rs}
+  nodeGithubLink='https://github.com/iotaledger/identity.rs/blob/main/bindings/wasm/examples/src/0_basic/6_create_vp.ts'
+  rustGithubLink='https://github.com/iotaledger/identity.rs/blob/main/examples/0_basic/6_create_vp.rs'
 />

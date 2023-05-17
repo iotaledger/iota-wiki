@@ -14,8 +14,6 @@ Get a high level overview of [client libraries](../../get-started/ecosystem-over
 
 ### Wallet Lib
 
-
 ### Client Lib
-
 
 ### Client.js

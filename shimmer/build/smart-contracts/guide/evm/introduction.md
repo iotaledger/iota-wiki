@@ -43,6 +43,3 @@ storing the EVM state.
 The Wasp node also provides a standard JSON-RPC service, which allows you to interact with the EVM layer using existing
 tooling like [MetaMask](https://metamask.io/), [Remix](https://remix.ethereum.org/) or [Hardhat](https://hardhat.org/).
 Deploying EVM contracts is as easy as pointing your tools to the JSON-RPC endpoint.
-
-
-

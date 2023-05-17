@@ -1,11 +1,11 @@
 ---
 title: WASM API Reference
 sidebar_label: API Reference
-description: WASM API reference.  
+description: WASM API reference.
 image: /img/identity/Identity_icon.png
 keywords:
-- WASM
-- API Reference
+  - WASM
+  - API Reference
 ---
 
 ```mdx-code-block

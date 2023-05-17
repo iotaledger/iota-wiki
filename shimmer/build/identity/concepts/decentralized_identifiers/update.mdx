@@ -11,12 +11,12 @@ keywords:
   - Publish
 ---
 
-import update_did_rust from "!!raw-loader!/shimmer/external/identity.rs/0.7-alpha/examples/0_basic/1_update_did.rs";
-import update_did_node from "!!raw-loader!/shimmer/external/identity.rs/0.7-alpha/bindings/wasm/examples/src/0_basic/1_update_did.ts";
-import CodeSnippet from "/src/common/components/CodeSnippetComponent";
-import Tabs from "@theme/Tabs";
-import TabItem from "@theme/TabItem";
-import CodeBlock from "@theme/CodeBlock";
+import update_did_rust from '!!raw-loader!/shimmer/external/identity.rs/0.7-alpha/examples/0_basic/1_update_did.rs';
+import update_did_node from '!!raw-loader!/shimmer/external/identity.rs/0.7-alpha/bindings/wasm/examples/src/0_basic/1_update_did.ts';
+import CodeSnippet from '/src/common/components/CodeSnippetComponent';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import CodeBlock from '@theme/CodeBlock';
 
 DID Documents can be extended by adding [verification methods](#verification-methods), [services](#services) and custom properties.
 A verification method adds public keys, which can be used to digitally sign things like a DID message or a verifiable credential, while a service can provide metadata around the identity via URIs.
@@ -74,8 +74,8 @@ The following example demonstrates managing verification methods and services in
 <CodeSnippet
   nodeContent={update_did_node}
   rustContent={update_did_rust}
-  nodeGithubLink="https://github.com/iotaledger/identity.rs/blob/main/bindings/wasm/examples/src/0_basic/1_update_did.ts"
-  rustGithubLink="https://github.com/iotaledger/identity.rs/blob/main/examples/0_basic/1_update_did.rs"
+  nodeGithubLink='https://github.com/iotaledger/identity.rs/blob/main/bindings/wasm/examples/src/0_basic/1_update_did.ts'
+  rustGithubLink='https://github.com/iotaledger/identity.rs/blob/main/examples/0_basic/1_update_did.rs'
 />
 
 ### Creating Identity
@@ -105,7 +105,7 @@ let (_, did): (Address, StardustDID) = create_did(&client, &mut secret_manager).
 <TabItem value="node" label="Node.js">
 
 ```js
-const {didClient, secretManager, did} = await createIdentity();
+const { didClient, secretManager, did } = await createIdentity();
 ```
 
 </TabItem>
@@ -152,7 +152,12 @@ This creates and publishes an Alias Output containing a DID Document with one ve
 ```js
 // Insert a new Ed25519 verification method in the DID document.
 let keypair = new KeyPair(KeyType.Ed25519);
-let method = new IotaVerificationMethod(document.id(), keypair.type(), keypair.public(), "#key-2");
+let method = new IotaVerificationMethod(
+  document.id(),
+  keypair.type(),
+  keypair.public(),
+  '#key-2',
+);
 document.insertMethod(method, MethodScope.VerificationMethod());
 ```
 
@@ -209,7 +214,10 @@ document.attach_method_relationship(
 
 ```js
 // Attach a new method relationship to the existing method.
-document.attachMethodRelationship(did.join("#key-1"), MethodRelationship.Authentication);
+document.attachMethodRelationship(
+  did.join('#key-1'),
+  MethodRelationship.Authentication,
+);
 ```
 
 </TabItem>
@@ -235,7 +243,9 @@ This will add `Authentication` relationship to the verification method with the 
         "publicKeyMultibase": "zHiCj7kbZdWznNvBhqxXwgoEChYseKrArLFdi5kPKAVRq"
       }
     ],
-    "authentication": ["did:iota:rms:0x6fdcc441ab461aaee2ec1837ea5068fe2bc643a9ac0729a055ef5df42a762483#key-2"]
+    "authentication": [
+      "did:iota:rms:0x6fdcc441ab461aaee2ec1837ea5068fe2bc643a9ac0729a055ef5df42a762483#key-2"
+    ]
   },
   "meta": {
     "created": "2022-09-12T21:58:06Z",
@@ -266,9 +276,9 @@ document.metadata.updated = Some(Timestamp::now_utc());
 ```js
 // Add a new Service.
 const service: StardustService = new StardustService({
-  id: did.join("#linked-domain"),
-  type: "LinkedDomains",
-  serviceEndpoint: "https://iota.org/"
+  id: did.join('#linked-domain'),
+  type: 'LinkedDomains',
+  serviceEndpoint: 'https://iota.org/',
 });
 document.insertService(service);
 document.setMetadataUpdated(Timestamp.nowUTC());
@@ -299,7 +309,9 @@ The updated Document with the newly created service looks as follows.
         "publicKeyMultibase": "zHiCj7kbZdWznNvBhqxXwgoEChYseKrArLFdi5kPKAVRq"
       }
     ],
-    "authentication": ["did:iota:rms:0x6fdcc441ab461aaee2ec1837ea5068fe2bc643a9ac0729a055ef5df42a762483#key-2"],
+    "authentication": [
+      "did:iota:rms:0x6fdcc441ab461aaee2ec1837ea5068fe2bc643a9ac0729a055ef5df42a762483#key-2"
+    ],
     "service": [
       {
         "id": "did:iota:rms:0x6fdcc441ab461aaee2ec1837ea5068fe2bc643a9ac0729a055ef5df42a762483#linked-domain",
@@ -352,7 +364,9 @@ This removes the original verification method with the fragment `key-1`.
         "publicKeyMultibase": "zHiCj7kbZdWznNvBhqxXwgoEChYseKrArLFdi5kPKAVRq"
       }
     ],
-    "authentication": ["did:iota:rms:0x6fdcc441ab461aaee2ec1837ea5068fe2bc643a9ac0729a055ef5df42a762483#key-2"],
+    "authentication": [
+      "did:iota:rms:0x6fdcc441ab461aaee2ec1837ea5068fe2bc643a9ac0729a055ef5df42a762483#key-2"
+    ],
     "service": [
       {
         "id": "did:iota:rms:0x6fdcc441ab461aaee2ec1837ea5068fe2bc643a9ac0729a055ef5df42a762483#linked-domain",
@@ -400,10 +414,16 @@ const aliasOutput: IAliasOutput = await didClient.updateDidOutput(document);
 // Because the size of the DID document increased, we have to increase the allocated storage deposit.
 // This increases the deposit amount to the new minimum.
 const rentStructure: IRent = await didClient.getRentStructure();
-aliasOutput.amount = TransactionHelper.getStorageDeposit(aliasOutput, rentStructure).toString();
+aliasOutput.amount = TransactionHelper.getStorageDeposit(
+  aliasOutput,
+  rentStructure,
+).toString();
 
 // Publish the output.
-const updated: StardustDocument = await didClient.publishDidOutput(secretManager, aliasOutput);
+const updated: StardustDocument = await didClient.publishDidOutput(
+  secretManager,
+  aliasOutput,
+);
 ```
 
 </TabItem>

@@ -2,13 +2,12 @@
 description: Each smart contract instance has a program with a collection of entry points and a state.
 image: /img/ISC/tutorial/SC-structure.png
 keywords:
-- smart contracts
-- structure
-- state
-- entry points
-- Wasm
-- explanation
-
+  - smart contracts
+  - structure
+  - state
+  - entry points
+  - Wasm
+  - explanation
 ---
 
 # Anatomy of a Smart Contract
@@ -36,7 +35,7 @@ The smart contract state is the data owned by the smart contract and stored on t
 The state is a collection of key/value pairs.
 Each key and value are byte arrays of arbitrary size (there are practical limits set by the underlying database, of
 course).
-You can think of the smart contract state as a _partition of the chain's data state, which can only be written by the
+You can think of the smart contract state as a \_partition of the chain's data state, which can only be written by the
 smart contract program itself.
 
 The smart contract also owns an _account_ on the chain, stored as part of the chain state.
@@ -75,4 +74,3 @@ Any events dispatched by the smart contract in context of this execution will al
 Smart contract calls can fail: for example, if they are interrupted for any reason (e.g., an exception) or if it
 produces an error (missing parameter or other inconsistency).
 Any gas spent will be charged to the sender, and the error message or value is stored in the receipt.
-

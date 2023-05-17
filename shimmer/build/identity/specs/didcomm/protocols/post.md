@@ -22,10 +22,12 @@ Allows the sending of a single message with arbitrary data. Multiple [post](#pos
 - [Authentication](./authentication): can be used to authenticate both parties and establish [sender authenticated encryption](https://identity.foundation/didcomm-messaging/spec/#sender-authenticated-encryption).
 
 ### Example Use-Cases
+
 - Instant messaging between two parties, where the text payload is displayed in a chat.
 - IoT devices transmit sensor data to be aggregated in a central hub for processing.
 
 ### Roles
+
 - Sender: sends the message.
 - Receiver: receives the message.
 
@@ -39,7 +41,6 @@ Allows the sending of a single message with arbitrary data. Multiple [post](#pos
 
 </div>
 
-
 ## Messages
 
 ### 1. post {#post-message}
@@ -50,15 +51,16 @@ Allows the sending of a single message with arbitrary data. Multiple [post](#pos
 The [sender](#roles) transmits a JSON `payload` to the [receiver](#roles). This MAY take advantage of [sender authenticated encryption](https://identity.foundation/didcomm-messaging/spec/#sender-authenticated-encryption) or be a [signed DIDComm message](https://identity.foundation/didcomm-messaging/spec/#didcomm-signed-message) or both.
 
 #### Structure
+
 ```json
 {
   "payload": JSON // REQUIRED
 }
 ```
 
-| Field | Description | Required |
-| :--- | :--- | :--- |
-| `payload` | Any valid [JSON](https://datatracker.ietf.org/doc/html/rfc7159) text. | ✔ |
+| Field     | Description                                                           | Required |
+| :-------- | :-------------------------------------------------------------------- | :------- |
+| `payload` | Any valid [JSON](https://datatracker.ietf.org/doc/html/rfc7159) text. | ✔        |
 
 #### Examples
 
@@ -84,7 +86,7 @@ The [sender](#roles) transmits a JSON `payload` to the [receiver](#roles). This 
 {
   "payload": {
     "status_code": 100,
-    "status": "Okay",
+    "status": "Okay"
   }
 }
 ```
@@ -95,8 +97,8 @@ The following problem-report codes may be raised in the course of this protocol 
 
 For guidance on problem-reports and a list of general codes see [problem reports](../resources/problem-reports).
 
-| Code | Message | Description |
-| :--- | :--- | :--- |
+| Code                            | Message               | Description                                                                |
+| :------------------------------ | :-------------------- | :------------------------------------------------------------------------- |
 | `e.p.msg.iota.post.reject-post` | [post](#post-message) | [Receiver](#roles) rejects a [post](#post-message) message for any reason. |
 
 ## Considerations

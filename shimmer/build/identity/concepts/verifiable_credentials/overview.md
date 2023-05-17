@@ -4,9 +4,9 @@ sidebar_label: Overview
 description: Verifiable Credentials are statements about the holder. They can be verified online or in person, and the holder decides who to share them with.
 image: /img/identity/Identity_icon.png
 keywords:
-- verifiable
-- credentials
-- person
+  - verifiable
+  - credentials
+  - person
 ---
 
 Credentials are statements about an entity, such as properties that the entity possesses or capabilities that they have (like drivers licences, passports, or a person's age). Verifiable Credentials (VCs) are statements (eg. Alice has a drivers licence) that can be cryptographically verified by a third party, either online or in person. Additionally, the holder of the VC decides what is shared and who it is shared with.

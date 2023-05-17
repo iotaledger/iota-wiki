@@ -2,15 +2,13 @@
 description: How to install a Wasp node on Linux, macOS and Windows.
 image: /img/ISC/logo/WASP_logo_dark.png
 keywords:
-
-- Wasp
-- Installing wasp
-- Go-lang
-- Hornet
-- windows
-- macOS
-- linux
-
+  - Wasp
+  - Installing wasp
+  - Go-lang
+  - Hornet
+  - windows
+  - macOS
+  - linux
 ---
 
 import Tabs from "@theme/Tabs"
@@ -78,7 +76,7 @@ make install
 On Windows, we recommend you to use [WSL](https://docs.microsoft.com/en-us/windows/wsl/install) and follow
 the [Linux/macOS](#linuxmacos) instructions above.
 
-##  Add Binaries to Path
+## Add Binaries to Path
 
 The install command will place the applications binaries in `$GOPATH/bin`.
 Ensure that the directory is part of your `$PATH` environment variable.

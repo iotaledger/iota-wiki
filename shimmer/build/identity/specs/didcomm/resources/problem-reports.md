@@ -26,10 +26,7 @@ A problem report is a standard DIDComm message:
   "body": {
     "code": "e.p.xfer.cant-use-endpoint",
     "comment": "Unable to use the {1} endpoint for {2}.",
-    "args": [
-      "https://agents.r.us/inbox",
-      "did:sov:C805sNYhMrjHiqZDTUASHg"
-    ],
+    "args": ["https://agents.r.us/inbox", "did:sov:C805sNYhMrjHiqZDTUASHg"],
     "escalate_to": "mailto:admin@foo.org"
   }
 }
@@ -39,26 +36,27 @@ Note that problem reports may still use [sender authenticated encryption](https:
 
 ## IOTA Problem Codes
 
-We follow the notation for [problem codes defined by the DIDComm specification](https://github.com/decentralized-identity/didcomm-messaging/blob/84e5a7c66c87440d39e93df81e4440855273f987/docs/spec-files/problems.md#problem-codes). In general, we use the error sorter `e` and protocol scope `p` to indicate that problem reports result in the abandonment of a protocol. 
+We follow the notation for [problem codes defined by the DIDComm specification](https://github.com/decentralized-identity/didcomm-messaging/blob/84e5a7c66c87440d39e93df81e4440855273f987/docs/spec-files/problems.md#problem-codes). In general, we use the error sorter `e` and protocol scope `p` to indicate that problem reports result in the abandonment of a protocol.
 
 In addition to the [problem report descriptors in the DIDComm specification](https://github.com/decentralized-identity/didcomm-messaging/blob/84e5a7c66c87440d39e93df81e4440855273f987/docs/spec-files/problems.md#descriptors), we define the following non-exhaustive list of general problem report codes that may be sent during the course of any protocol:
 
-| Code | Description |
-| :--- | :--- |
-| `e.p.msg.invalid-message` | The message is malformed or fails field constraints validation. |
-| `e.p.msg.unsupported-message` | The message type is unrecognised or unsupported by the recipient. |
-| `e.p.msg.invalid-state` | The recipient is unable to handle the type of message in its current state. Typically when an unexpected message is received in the middle of a protocol on the same thread. |
-| `e.p.msg.trust.not-authenticated` | The sender is required to authenticate to perform the requested action. | 
-| `e.p.msg.trust.not-authorised` | The sender is authenticated but lacks sufficient permissions to perform the requested action. | 
-| `e.p.msg.trust.not-sender-authenticated` | The recipient requires the message to use [sender authenticated encryption](https://identity.foundation/didcomm-messaging/spec/#sender-authenticated-encryption). | 
-| `e.p.msg.trust.not-encrypted` | The recipient requires the message to use [anonymous encryption](https://identity.foundation/didcomm-messaging/spec/#anonymous-encryption) | 
-| `e.p.msg.trust.not-signed` | The recipient requires a [signed DIDComm message](https://identity.foundation/didcomm-messaging/spec/#didcomm-signed-message). | 
-| `e.p.msg.trust.crypto` | Any general cryptography-related error. E.g. the signature in a message payload or on a [signed DIDComm message](https://identity.foundation/didcomm-messaging/spec/#didcomm-signed-message) fails validation, or [sender authenticated encryption](https://identity.foundation/didcomm-messaging/spec/#sender-authenticated-encryption) fails. |
-| `e.p.req.time` | The party has timed out waiting for a response. |
+| Code                                     | Description                                                                                                                                                                                                                                                                                                                                     |
+| :--------------------------------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `e.p.msg.invalid-message`                | The message is malformed or fails field constraints validation.                                                                                                                                                                                                                                                                                 |
+| `e.p.msg.unsupported-message`            | The message type is unrecognised or unsupported by the recipient.                                                                                                                                                                                                                                                                               |
+| `e.p.msg.invalid-state`                  | The recipient is unable to handle the type of message in its current state. Typically when an unexpected message is received in the middle of a protocol on the same thread.                                                                                                                                                                    |
+| `e.p.msg.trust.not-authenticated`        | The sender is required to authenticate to perform the requested action.                                                                                                                                                                                                                                                                         |
+| `e.p.msg.trust.not-authorised`           | The sender is authenticated but lacks sufficient permissions to perform the requested action.                                                                                                                                                                                                                                                   |
+| `e.p.msg.trust.not-sender-authenticated` | The recipient requires the message to use [sender authenticated encryption](https://identity.foundation/didcomm-messaging/spec/#sender-authenticated-encryption).                                                                                                                                                                               |
+| `e.p.msg.trust.not-encrypted`            | The recipient requires the message to use [anonymous encryption](https://identity.foundation/didcomm-messaging/spec/#anonymous-encryption)                                                                                                                                                                                                      |
+| `e.p.msg.trust.not-signed`               | The recipient requires a [signed DIDComm message](https://identity.foundation/didcomm-messaging/spec/#didcomm-signed-message).                                                                                                                                                                                                                  |
+| `e.p.msg.trust.crypto`                   | Any general cryptography-related error. E.g. the signature in a message payload or on a [signed DIDComm message](https://identity.foundation/didcomm-messaging/spec/#didcomm-signed-message) fails validation, or [sender authenticated encryption](https://identity.foundation/didcomm-messaging/spec/#sender-authenticated-encryption) fails. |
+| `e.p.req.time`                           | The party has timed out waiting for a response.                                                                                                                                                                                                                                                                                                 |
 
 These messages may be raised during or between protocols to inform the other party that something went wrong. A problem report with the error sorter `e` and protocol scope `p` terminates the protocol on the current thread and MAY be followed by a connection [termination](../protocols/termination).
 
 ## Unresolved Questions
+
 - Should we support the message scope `m` to allow resending / retrying individual messages?
 
 ## Further Reading

@@ -2,12 +2,12 @@
 description: IOTA Smart Contracts consensus is how Layer 2 validators agree to change the chain state in the same way.
 image: /img/ISC/logo/WASP_logo_dark.png
 keywords:
-- smart contracts
-- consensus
-- validator committee
-- validators
-- validator nodes
-- explanation
+  - smart contracts
+  - consensus
+  - validator committee
+  - validators
+  - validator nodes
+  - explanation
 ---
 
 # Consensus
@@ -24,12 +24,12 @@ random delays in a random order, and, finally, all computers run on their own al
 
 ## Batch Proposals
 
-As the first step, each node provides its vision, a *batch proposal*. The proposal contains a local timestamp, a list of
+As the first step, each node provides its vision, a _batch proposal_. The proposal contains a local timestamp, a list of
 unprocessed requests, and the node's partial signature of the commitment to the current state.
 
 Then the nodes must agree on which batch proposals they want to work on. In short, nodes A, B, and C have to confirm
 that they plan to work on proposals from A, B, and C, and from no one else. As long as there are more than two thirds of
-honest nodes, they will be able to find an *asynchronous common subset* of the batch proposals. From that point, nodes
+honest nodes, they will be able to find an _asynchronous common subset_ of the batch proposals. From that point, nodes
 have the same input and will produce the same result independently.
 
 ## The Batch

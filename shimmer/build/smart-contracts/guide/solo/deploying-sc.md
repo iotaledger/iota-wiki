@@ -2,18 +2,16 @@
 description: Deploying Wasm smart contracts with Solo.
 image: /img/ISC/tutorial/send_request.png
 keywords:
-
-- testing
-- PostRequestSync
-- PostRequestOffLedger
-- send
-- requests
-- post
-- solo
-- on-ledger
-- off-ledger
-- how-to
-
+  - testing
+  - PostRequestSync
+  - PostRequestOffLedger
+  - send
+  - requests
+  - post
+  - solo
+  - on-ledger
+  - off-ledger
+  - how-to
 ---
 
 # Deploying Wasm Smart Contracts
@@ -53,7 +51,7 @@ default parameters. You can access the wallet calling `chain.OriginatorPrivateKe
 
 #### Deployer's Key Pair
 
-The first parameter to `DeployWasmContract`  is the key pair of the deployer of the smart contract. You can pass `nil`
+The first parameter to `DeployWasmContract` is the key pair of the deployer of the smart contract. You can pass `nil`
 to use a default wallet, which can be accessed as `chain.OriginatorPrivateKey`.
 
 #### Smart Contract Name
@@ -71,4 +69,3 @@ It is possible to disable the option and have manual control of the storage depo
 of the smart contract will have to be done "by hand".
 
 In most cases it is recommended to leave it enabled.
-

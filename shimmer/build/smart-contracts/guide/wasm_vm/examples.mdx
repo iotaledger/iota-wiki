@@ -14,8 +14,8 @@ description: Use the SoloContext to create full-blown tests for the dividend exa
 image: /img/ISC/logo/WASP_logo_dark.png
 ---
 
-import Tabs from "@theme/Tabs"
-import TabItem from "@theme/TabItem"
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 # Example Tests
 
@@ -245,8 +245,8 @@ afterwards.
 
 Next we will show how to test [Views](views.mdx) and/or [Funcs](funcs.mdx) that return
 a result. Note that even though Funcs are usually invoked through a [`post()`](post.mdx)
-request,  in which case any return values are inaccessible, they still can be invoked
-through a [call()](call.mdx)  from within another Func, in which these return values can
+request, in which case any return values are inaccessible, they still can be invoked
+through a [call()](call.mdx) from within another Func, in which these return values can
 be used normally. Since solo executes [`post()`](post.mdx) requests synchronously, it is
 possible to have a Func return a result and test for certain result values.
 
@@ -292,7 +292,6 @@ func TestGetFactor(t *testing.T) {
 
 Here we first set up the same 3 dispersion factors, and then we retrieve the dispersion
 factors for each member in reverse order and verify their values.
-
 
 In the [next section](timelock.mdx) we will describe a few more helper member functions
 of the SoloContext.

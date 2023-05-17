@@ -28,6 +28,7 @@ Allows a trusted-party to request the signing of an unsigned verifiable credenti
 - An IOT device generates an unsigned credential and requests a secure server to sign it.
 
 ### Roles
+
 - Trusted-Party: trusted by the issuer to generate unsigned credentials asserting claims about one or more subjects.
 - [Issuer](https://www.w3.org/TR/vc-data-model/#dfn-issuers): has the capability to cryptographically sign credentials.
 
@@ -41,7 +42,6 @@ Allows a trusted-party to request the signing of an unsigned verifiable credenti
 
 </div>
 
-
 ## Messages
 
 ### 1. signing-request {#signing-request}
@@ -51,18 +51,19 @@ Allows a trusted-party to request the signing of an unsigned verifiable credenti
 
 Request by a [trusted-party](#roles) for an [issuer](#roles) to sign a credential.
 
-To authenticate the [trusted-party](#roles), this SHOULD be sent using [sender authenticated encryption][SAE] established in a preceding [authentication](./authentication) protocol. For non-repudiation or auditing, the [issuer](#role) MAY enforce that the [signing-request](#signing-request) be a [signed DIDComm message][SDM].
+To authenticate the [trusted-party](#roles), this SHOULD be sent using [sender authenticated encryption][sae] established in a preceding [authentication](./authentication) protocol. For non-repudiation or auditing, the [issuer](#role) MAY enforce that the [signing-request](#signing-request) be a [signed DIDComm message][sdm].
 
 #### Structure
+
 ```json
 {
   "unsignedCredential": Credential // REQUIRED
 }
 ```
 
-| Field | Description | Required |
-| :--- | :--- | :--- |
-| [`unsignedCredential`][VC] | Unsigned [verifiable credential][VC] requested to be signed by the [issuer](#roles).[^1] | ✔ |
+| Field                      | Description                                                                              | Required |
+| :------------------------- | :--------------------------------------------------------------------------------------- | :------- |
+| [`unsignedCredential`][vc] | Unsigned [verifiable credential][vc] requested to be signed by the [issuer](#roles).[^1] | ✔        |
 
 [^1] The initial credential MUST NOT have a `proof` section.
 
@@ -100,15 +101,16 @@ To authenticate the [trusted-party](#roles), this SHOULD be sent using [sender a
 Response from the [issuer](#roles) returning the signed credential back to the [trusted-party](#roles).
 
 #### Structure
+
 ```json
 {
   "signedCredential": Credential // REQUIRED
 }
 ```
 
-| Field | Description | Required |
-| :--- | :--- | :--- |
-| [`signedCredential`][VC] | Signed [verifiable credential][VC] matching the [signing-request](#signing-request).[^1] | ✔ |
+| Field                    | Description                                                                              | Required |
+| :----------------------- | :--------------------------------------------------------------------------------------- | :------- |
+| [`signedCredential`][vc] | Signed [verifiable credential][vc] matching the [signing-request](#signing-request).[^1] | ✔        |
 
 [^1] The [trusted-party](#roles) MUST validate the signature in the `proof` section and issue a problem-report if invalid. The [trusted-party](#roles) SHOULD also verify that the contents of the `signedCredential` sent back by the [issuer](#roles) are complete and unaltered from the [signing-request](#signing-request).
 
@@ -146,18 +148,19 @@ The [issuer](#roles) may request in turn that the credential be signed by a diff
 - Type: `iota/signing/0.1/signing-acknowledgement`
 - Role: [trusted-party](#roles)
 
-Acknowledgement by the [trusted-party](#roles) that the credential was received and accepted. The [issuer](#roles) MAY revoke the credential if no acknowledgement is received. For auditing or non-repudiation the [issuer](#roles) MAY require that the [signing-acknowledgement](#signing-acknowledgement) be a [signed DIDComm message][SDM].
+Acknowledgement by the [trusted-party](#roles) that the credential was received and accepted. The [issuer](#roles) MAY revoke the credential if no acknowledgement is received. For auditing or non-repudiation the [issuer](#roles) MAY require that the [signing-acknowledgement](#signing-acknowledgement) be a [signed DIDComm message][sdm].
 
 #### Structure
+
 ```json
 {
   "accepted": bool // REQUIRED
 }
 ```
 
-| Field | Description | Required |
-| :--- | :--- | :--- |
-| `accepted` | Indicates that the `signedCredential` was received and validated by the [trusted-party](#roles).[^1] | ✔ |
+| Field      | Description                                                                                          | Required |
+| :--------- | :--------------------------------------------------------------------------------------------------- | :------- |
+| `accepted` | Indicates that the `signedCredential` was received and validated by the [trusted-party](#roles).[^1] | ✔        |
 
 [^1] `accepted` MUST be `true`. Invalid signatures or credentials SHOULD result in problem-reports by the [trusted-party](#roles).
 
@@ -170,16 +173,17 @@ Acknowledgement by the [trusted-party](#roles) that the credential was received 
   "accepted": true
 }
 ```
+
 ### Problem Reports {#problem-reports}
 
 The following problem-report codes may be raised in the course of this protocol and are expected to be recognised and handled in addition to any general problem-reports. Implementers may also introduce their own application-specific problem-reports.
 
 For guidance on problem-reports and a list of general codes see [problem reports](../resources/problem-reports).
 
-| Code | Message | Description |
-| :--- | :--- | :--- |
-| `e.p.msg.iota.signing.reject-request` | [signing-request](#signing-request) | The [issuer](#roles) rejects a signing request for any reason, e.g. malformed credential, unrecognised credential type, or unwillingness to sign the specific credential for the [trusted-party](#roles). |
-| `e.p.msg.iota.signing.reject-response` | [signing-response](#signing-response) | The [trusted-party](#roles) rejects a signing response for any reason, e.g. mismatch between request and response credentials. |
+| Code                                   | Message                               | Description                                                                                                                                                                                               |
+| :------------------------------------- | :------------------------------------ | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `e.p.msg.iota.signing.reject-request`  | [signing-request](#signing-request)   | The [issuer](#roles) rejects a signing request for any reason, e.g. malformed credential, unrecognised credential type, or unwillingness to sign the specific credential for the [trusted-party](#roles). |
+| `e.p.msg.iota.signing.reject-response` | [signing-response](#signing-response) | The [trusted-party](#roles) rejects a signing response for any reason, e.g. mismatch between request and response credentials.                                                                            |
 
 ## Unresolved Questions
 
@@ -189,7 +193,7 @@ For guidance on problem-reports and a list of general codes see [problem reports
 
 This section is non-normative.
 
-- **Security**: implementors SHOULD transmit credentials over an encrypted channel to prevent leaking sensitive information on subjects. See [sender-authenticated encryption][SAE].
+- **Security**: implementors SHOULD transmit credentials over an encrypted channel to prevent leaking sensitive information on subjects. See [sender-authenticated encryption][sae].
 - **Authentication**: it is RECOMMENDED to use sender-authenticated encryption for continuous authentication of both parties in the DIDComm thread. Anonymous encryption and/or once-off authentication may be insufficient.
 - **Authorisation**: the [issuer](#roles) should establish whether a trusted-party is allowed to request signing of a particular credential or at all.
 - **Validation**: apart from verifying the proof on the signed credential returned in the [signing-response](#signing-response), how the [issuer](#roles) validates the contents of a well-formed credential from a [trusted-party](#roles) and chooses whether or not to sign it is out-of-scope.
@@ -203,6 +207,7 @@ This section is non-normative.
 - [Verifiable Credentials Data Model 1.0](https://www.w3.org/TR/vc-data-model)
 
 <!--- LINKS --->
-[VC]: https://www.w3.org/TR/vc-data-model/#credentials
-[SAE]: https://identity.foundation/didcomm-messaging/spec/#sender-authenticated-encryption
-[SDM]: https://identity.foundation/didcomm-messaging/spec/#didcomm-signed-message
+
+[vc]: https://www.w3.org/TR/vc-data-model/#credentials
+[sae]: https://identity.foundation/didcomm-messaging/spec/#sender-authenticated-encryption
+[sdm]: https://identity.foundation/didcomm-messaging/spec/#didcomm-signed-message

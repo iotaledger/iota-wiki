@@ -14,7 +14,7 @@ keywords:
 - views
 - reference
 
---- 
+---
 
 # The `errors` Contract
 
@@ -76,6 +76,3 @@ Returns the message template stored for a given error code.
 - The error code ([`ErrorCode`](#errorcode)).
 - CRC32 checksum of the formatted string (`uint32`).
 - The JSON-encoded list of parameters for the template (`string` prefixed with `uint16` size).
-
-
-

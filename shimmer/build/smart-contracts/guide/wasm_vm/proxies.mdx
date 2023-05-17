@@ -1,13 +1,13 @@
 ---
 keywords:
-- proxies
-- sandbox
-- wasm
-- value proxies
-- container proxies
-- array proxies
-- map proxies
-- explanation
+  - proxies
+  - sandbox
+  - wasm
+  - value proxies
+  - container proxies
+  - array proxies
+  - map proxies
+  - explanation
 
 description: As there is no way for the Wasm code to access any memory outside its own memory space, the WasmLib interface provides a number of proxies to make accessing data within the ISC sandbox as seamless as possible.
 
@@ -99,7 +99,6 @@ Also note that despite the one-to-one correspondence in the example it is not ne
 for a smart contract function to define a proxy for every value or container in the ISC
 state storage. In practice a function will only use proxies to data that it actually
 needs to access.
-
 
 In the next section we will go into more detail about the supported
 [WasmLib Data Types](types.mdx).

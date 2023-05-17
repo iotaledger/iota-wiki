@@ -2,19 +2,17 @@
 description: Invoking smart contracts with on-ledger and off-ledger requests with Solo.
 image: /img/ISC/tutorial/send_request.png
 keywords:
-
-- how-to
-- explanation
-- testing
-- PostRequestSync
-- PostRequestOffLedger
-- send
-- requests
-- post
-- solo
-- on-ledger
-- off-ledger
-
+  - how-to
+  - explanation
+  - testing
+  - PostRequestSync
+  - PostRequestOffLedger
+  - send
+  - requests
+  - post
+  - solo
+  - on-ledger
+  - off-ledger
 ---
 
 # Invoking Smart Contracts

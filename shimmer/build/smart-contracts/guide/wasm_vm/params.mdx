@@ -1,20 +1,21 @@
 ---
 keywords:
-- params
-- parameters
-- field definition
-- field type
-- optional
-- schema tool
-- structure
-- immutable
+  - params
+  - parameters
+  - field definition
+  - field type
+  - optional
+  - schema tool
+  - structure
+  - immutable
 
 description: The optional params subsection contains field definitions for each of the parameters that a function takes.
 
 image: /img/ISC/logo/WASP_logo_dark.png
 ---
-import Tabs from "@theme/Tabs"
-import TabItem from "@theme/TabItem"
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 # Function Parameters
 
@@ -89,15 +90,15 @@ impl ImmutableMemberParams {
 
 ```ts
 export class ImmutableMemberParams extends wasmtypes.ScProxy {
-	// address of dividend recipient
-	address(): wasmtypes.ScImmutableAddress {
-		return new wasmtypes.ScImmutableAddress(this.proxy.root(sc.ParamAddress));
-	}
+  // address of dividend recipient
+  address(): wasmtypes.ScImmutableAddress {
+    return new wasmtypes.ScImmutableAddress(this.proxy.root(sc.ParamAddress));
+  }
 
-	// relative division factor
-	factor(): wasmtypes.ScImmutableUint64 {
-		return new wasmtypes.ScImmutableUint64(this.proxy.root(sc.ParamFactor));
-	}
+  // relative division factor
+  factor(): wasmtypes.ScImmutableUint64 {
+    return new wasmtypes.ScImmutableUint64(this.proxy.root(sc.ParamFactor));
+  }
 }
 ```
 
@@ -107,6 +108,5 @@ export class ImmutableMemberParams extends wasmtypes.ScProxy {
 Note that the [Schema Tool](usage.mdx) will also generate a mutable version of the
 structure, suitable for providing the parameters when calling this smart contract function
 from any [Call Context](context.mdx).
-
 
 In the next section, we will look at the [`results`](results.mdx) subsection.

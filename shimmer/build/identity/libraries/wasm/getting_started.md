@@ -4,13 +4,13 @@ sidebar_label: Getting Started
 description: Getting started with the IOTA Identity WASM Library.
 image: /img/identity/Identity_icon.png
 keywords:
-- WASM
-- install
-- npm
-- yarn
-- build
-- nodejs
-- webpack
+  - WASM
+  - install
+  - npm
+  - yarn
+  - build
+  - nodejs
+  - webpack
 ---
 
 ```mdx-code-block

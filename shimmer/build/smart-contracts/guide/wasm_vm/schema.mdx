@@ -1,11 +1,11 @@
 ---
 keywords:
-- code generation
-- schema tool
-- automatic
-- repetitive code fragments
-- robust
-- schema definition file
+  - code generation
+  - schema tool
+  - automatic
+  - repetitive code fragments
+  - robust
+  - schema definition file
 
 description: To facilitate code generation, we decided to use a _schema definition file_ for smart contracts. All aspects of a smart contract that should be known by someone who wants to use the contract are clearly defined in a schema definition file.
 
@@ -36,12 +36,12 @@ During the initial experiences with creating demo smart contracts for WasmLib, w
 identified a number of areas where there was a lot of repetitive coding going on. Some
 examples of repetition were:
 
-* Setting up the `on_load` function and keeping it up to date
-* Checking function access rights
-* Verifying function parameter types
-* Verifying the presence of mandatory function parameters
-* Setting up access to [State](state.mdx), [Params](params.mdx), and [Results](results.mdx) maps
-* Defining common strings as constants
+- Setting up the `on_load` function and keeping it up to date
+- Checking function access rights
+- Verifying function parameter types
+- Verifying the presence of mandatory function parameters
+- Setting up access to [State](state.mdx), [Params](params.mdx), and [Results](results.mdx) maps
+- Defining common strings as constants
 
 To facilitate the code generation, it was decided to use a _schema definition file_ for
 smart contracts. The aspects of a smart contract that should be known by someone who wants
@@ -80,6 +80,5 @@ being generated.
 
 The schema definition file can also provide a starting point for other tooling, for
 example a tool that automatically audits a smart contract.
-
 
 In the next section we will look at how the [Schema Tool](usage.mdx) works.

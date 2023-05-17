@@ -41,7 +41,6 @@ Indicates the graceful termination of a connection. It is expected that no recon
 
 </div>
 
-
 ## Messages
 
 ### 1. termination {#termination}
@@ -49,9 +48,10 @@ Indicates the graceful termination of a connection. It is expected that no recon
 - Type: `iota/termination/0.1/termination`
 - Role: [sender](#roles)
 
-Used to inform the [receiver](#roles) that the [sender](#roles) wishes to terminate the established connection. 
+Used to inform the [receiver](#roles) that the [sender](#roles) wishes to terminate the established connection.
 
 #### Structure
+
 ```json
 {}
 ```
@@ -61,9 +61,10 @@ Used to inform the [receiver](#roles) that the [sender](#roles) wishes to termin
 - Type: `iota/termination/0.1/termination-response`
 - Role: [receiver](#roles)
 
-Response from the [receiver](#roles) that the request to terminate the connection was acknowledged. MUST be sent if the field [`please_ack`](https://identity.foundation/didcomm-messaging/spec/#acks) is present in the [termination](#termination) message. 
+Response from the [receiver](#roles) that the request to terminate the connection was acknowledged. MUST be sent if the field [`please_ack`](https://identity.foundation/didcomm-messaging/spec/#acks) is present in the [termination](#termination) message.
 
 #### Structure
+
 ```json
 {}
 ```

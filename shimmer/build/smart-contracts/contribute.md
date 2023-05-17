@@ -1,14 +1,14 @@
 ---
-description:  How to contribute to IOTA Smart Contracts. How to create better pull requests by running tests and the linter locally.
+description: How to contribute to IOTA Smart Contracts. How to create better pull requests by running tests and the linter locally.
 image: /img/ISC/logo/WASP_logo_dark.png
 keywords:
-- smart contracts
-- Contribute
-- pull request
-- linting
-- Go-lang
-- golangci-lint
-- how to
+  - smart contracts
+  - Contribute
+  - pull request
+  - linting
+  - Go-lang
+  - golangci-lint
+  - how to
 ---
 
 # Contributing
@@ -110,12 +110,12 @@ Adjust your VS Code settings as follows:
 
 1. Install the [golintci](https://plugins.jetbrains.com/plugin/12496-go-linter) plugin.
 
-![A screenshot that shows how to install golintci in GoLand.](/img/ISC/contributing/golintci-goland-1.png "Click to see the full-sized image.")
+![A screenshot that shows how to install golintci in GoLand.](/img/ISC/contributing/golintci-goland-1.png 'Click to see the full-sized image.')
 
 2. Configure path for golangci.
 
-![A screenshot that shows how to configure path for golangci in GoLand.](/img/ISC/contributing/golintci-goland-2.png "Click to see the full-sized image.")
+![A screenshot that shows how to configure path for golangci in GoLand.](/img/ISC/contributing/golintci-goland-2.png 'Click to see the full-sized image.')
 
 3. Add a golangci file watcher with a custom command. We recommend you to use it with the `--fix` parameter.
 
-![A screenshot that shows how to add a golangci file watcher in GoLand.](/img/ISC/contributing/golintci-goland-3.png "Click to see the full-sized image.")
+![A screenshot that shows how to add a golangci file watcher in GoLand.](/img/ISC/contributing/golintci-goland-3.png 'Click to see the full-sized image.')

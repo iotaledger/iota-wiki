@@ -2,12 +2,13 @@
 description: Decentralized Identity defines a new method for identity management and authentication by removing centralized aspects.
 image: /img/identity/Identity_icon.png
 keywords:
-- Self Sovereign Identity
-- decentralized
-- Permissionless
-- authentication
-- explanation
+  - Self Sovereign Identity
+  - decentralized
+  - Permissionless
+  - authentication
+  - explanation
 ---
+
 # Introduction to Decentralized Identity
 
 ![IOTA Decentralized Identity](/img/identity/Banner/banner_decentralized_identity.svg)
@@ -25,7 +26,7 @@ With digital identity, the user can decide what information to share and with wh
 
 ## Identity for People
 
-:::note 
+:::note
 
 IOTA Identity builds a new internet, without usernames, passwords, endless repeated forums, or uncontrolled data harvesting.
 
@@ -73,7 +74,7 @@ Security is a major barrier in advancing technologies that use IoT. Whether it i
 
 :::note Framework
 
- The IOTA Identity framework serves as the invisible layer of trust for the internet. This framework must be open, scalable, and free, so that everyone and everything can enjoy trust as a basic digital right.
+The IOTA Identity framework serves as the invisible layer of trust for the internet. This framework must be open, scalable, and free, so that everyone and everything can enjoy trust as a basic digital right.
 
 :::
 
@@ -95,7 +96,7 @@ IOTA is uniquely suited for a single unifying identity implementation. The netwo
 2. **Public**: Everyone can observe (unless using optional encryption) the transactions in the network. The network is inherently transparent.
 3. **Feeless**: All data and value transactions on the network are free. Unlike other DLTs such as Bitcoin or Ethereum, registration and communication of identities can be written to the network without a requirement to purchase a cryptocurrency token.
 4. **Open Source**: Everyone can view and contribute to the code.
-5. **Easy to use**: IOTA Identity is inherently easier to use due to the lack of fees or requirements to set up an entire private network. In addition, the framework is designed to have an easy to use high-level API, with accessibility to the low-level, more complex and more flexible API. Through integration with the [Stronghold](https://wiki.iota.org/stronghold.rs/welcome "Stronghold is an open-source software library that was originally built to protect IOTA Seeds, but can be used to protect any digital secret.") project, we also provide out-of-the-box security for secrets.
+5. **Easy to use**: IOTA Identity is inherently easier to use due to the lack of fees or requirements to set up an entire private network. In addition, the framework is designed to have an easy to use high-level API, with accessibility to the low-level, more complex and more flexible API. Through integration with the [Stronghold](https://wiki.iota.org/stronghold.rs/welcome 'Stronghold is an open-source software library that was originally built to protect IOTA Seeds, but can be used to protect any digital secret.') project, we also provide out-of-the-box security for secrets.
 
 Data must be immutably stored on a distributed ledger to ensure the decentralized nature of the digital identity protocol. With the network’s continual uptime, credentials are always verifiable without a dependency on the servers of credential issuers. This system also increases individual privacy, because contact with the Issuer is removed from the interaction between Holder and Verifier. Issuers will not be able to track when and how often the Holder uses their credentials. The flexibility afforded from the Tangle means that the digital identity framework remains extendable in the future.
 

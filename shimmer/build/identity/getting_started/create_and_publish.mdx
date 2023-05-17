@@ -4,18 +4,20 @@ sidebar_label: Create a DID Document
 description: Create DID Documents and publish them
 image: /img/identity/Identity_icon.png
 keywords:
-- Documents
-- DID
-- Create
-- Publish
+  - Documents
+  - DID
+  - Create
+  - Publish
 ---
-import CodeSnippet from '/src/common/components/CodeSnippetComponent'
-import create_did_rust from "!!raw-loader!/shimmer/external/identity.rs/0.7-alpha/examples/0_basic/0_create_did.rs";
-import create_did_node from "!!raw-loader!/shimmer/external/identity.rs/0.7-alpha/bindings/wasm/examples/src/0_basic/0_create_did.ts";
+
+import CodeSnippet from '/src/common/components/CodeSnippetComponent';
+import create_did_rust from '!!raw-loader!/shimmer/external/identity.rs/0.7-alpha/examples/0_basic/0_create_did.rs';
+import create_did_node from '!!raw-loader!/shimmer/external/identity.rs/0.7-alpha/bindings/wasm/examples/src/0_basic/0_create_did.ts';
 
 If you want to benefit from Self-Sovereign Identity, you need to create a [Decentralized Identity](../concepts/decentralized_identifiers/overview). This identity consists of many parts that have different functions. This page will cover the basics about identity creation and publishing.
 
 ## Identity Generation Process
+
 1. The generation of an identity requires a address with funds to cover the [Storage Deposit](../concepts/decentralized_identifiers/alias#storage-deposit). In test networks, a faucet can be used to request funds.
 2. Create the content of the DID Document, a minimal document contains one verification method.
 3. Construct a new [Alias Output](../concepts/decentralized_identifiers/alias) that includes the DID Document in the [State Metadata](../concepts/decentralized_identifiers/alias).
@@ -28,9 +30,8 @@ See the example below to create an identity in Rust or Node.js.
 As this page is a simple overview about creating an identity, further wiki pages are available for more in-depth explanation. Note that the Iota Identity Framework follows [IOTA DID Method Specification](../specs/did/iota_did_method_spec).
 
 <CodeSnippet
-    nodeContent={create_did_node}
-    rustContent={create_did_rust}
-    nodeGithubLink = "https://github.com/iotaledger/identity.rs/blob/main/bindings/wasm/examples/src/0_basic/0_create_did.ts"
-    rustGithubLink = "https://github.com/iotaledger/identity.rs/blob/main/examples/0_basic/0_create_did.rs"
+  nodeContent={create_did_node}
+  rustContent={create_did_rust}
+  nodeGithubLink='https://github.com/iotaledger/identity.rs/blob/main/bindings/wasm/examples/src/0_basic/0_create_did.ts'
+  rustGithubLink='https://github.com/iotaledger/identity.rs/blob/main/examples/0_basic/0_create_did.rs'
 />
-

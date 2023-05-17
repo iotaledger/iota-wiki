@@ -2,16 +2,14 @@
 description: Compatibility between the ISC EVM layer and existing Ethereum smart contracts and tooling.
 image: /img/ISC/logo/WASP_logo_dark.png
 keywords:
-
-- smart contracts
-- EVM
-- Ethereum
-- Solidity
-- limitations
-- compatibility
-- fees
-- reference
-
+  - smart contracts
+  - EVM
+  - Ethereum
+  - Solidity
+  - limitations
+  - compatibility
+  - fees
+  - reference
 ---
 
 # EVM Compatibility in IOTA Smart Contracts
@@ -63,15 +61,14 @@ Here are some of the most important properties and limitations of EVM support in
 - Each stored block contains the executed Ethereum transactions and corresponding Ethereum receipts. If storage is
   limited, you can configure EVM so that only the latest N blocks are stored.
 
-- There is no guaranteed *block time*. A new EVM "block" will be created only when an ISC block is created, and ISC does
+- There is no guaranteed _block time_. A new EVM "block" will be created only when an ISC block is created, and ISC does
   not enforce an average block time.
 
 - Any Ethereum address is accepted as a valid `AgentID`, and thus can own L2 tokens on an IOTA Smart Contract chain,
   just like IOTA addresses.
 
-- The Ethereum balance of an account is tied to its L2 ISC balance in the token used to pay for gas. For example, 
+- The Ethereum balance of an account is tied to its L2 ISC balance in the token used to pay for gas. For example,
   by default `eth_getBalance` will return the L2 base token balance of the given Ethereum account.
-
 
 - To manipulate the owned ISC tokens and access ISC functionality in general, there is
   a [special Ethereum contract](magic.md) that provides bindings to the ISC sandbox (e.g. call `isc.send(...)` to send

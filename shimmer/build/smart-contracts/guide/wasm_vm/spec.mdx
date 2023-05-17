@@ -1,8 +1,8 @@
 ---
 keywords:
-- spec
-- meta-programming
-- compile
+  - spec
+  - meta-programming
+  - compile
 description: The spec of schema tool and how to develop schema tool.
 image: /img/ISC/logo/WASP_logo_dark.png
 ---
@@ -30,9 +30,9 @@ name: TestName
 description: This is test description
 ```
 
-For keywords that can have multiple values can be seen as either a one layer map (i.e., `typedefs` and `state`) 
-or two layer map (i.e., `typedefs` and `state`). A one layer map will be converted into  `DefMap` which 
-is a map whose key and value are both `DefElt`. And a two layer map will be converted into  `DefMapMap` which 
+For keywords that can have multiple values can be seen as either a one layer map (i.e., `typedefs` and `state`)
+or two layer map (i.e., `typedefs` and `state`). A one layer map will be converted into `DefMap` which
+is a map whose key and value are both `DefElt`. And a two layer map will be converted into `DefMapMap` which
 is a map whose key is `DefElt` and value is `DefMap`.
 
 The definition of `DefElt` is shown as following,
@@ -45,7 +45,7 @@ type DefElt struct {
 }
 ```
 
-It contains the raw value of the YAML attributes (without extracting the information), the comment belongs to the 
+It contains the raw value of the YAML attributes (without extracting the information), the comment belongs to the
 YAML attribute, and the line number of the YAML attribute.
 
 Here is an example of one layer map
@@ -98,7 +98,7 @@ type SchemaDef struct {
 
 ### model.Schema
 
-By calling `Schema.Compile()`, `model.SchemaDef` object will be compiled into `model.Schema`. 
+By calling `Schema.Compile()`, `model.SchemaDef` object will be compiled into `model.Schema`.
 During the compilation, schema tool will extract the rules from the YAML attributes.
 
 Here is the definition of a `Schema` object.
@@ -138,7 +138,7 @@ type Field struct {
 }
 ```
 
-As you can see `typedefs` was a simple `DefMap`, which consists a map whose key and value are both `DefElt`, 
+As you can see `typedefs` was a simple `DefMap`, which consists a map whose key and value are both `DefElt`,
 and `DefElt` a simple object contains only raw string of the YAML attribute, comment and line number.
 However, after the compilation, information is extracted from the raw string, so do some checks are conducted in this step.
 
@@ -165,7 +165,7 @@ same YAML attribute, then schema tool will keep only the header comment.
 
 ### Comment Block
 
-A comment block is a chunk of comment that doesn't have a line break to separate it. Schema tool would take the 
+A comment block is a chunk of comment that doesn't have a line break to separate it. Schema tool would take the
 header comment that immediately followed by the YAML attribute or the line comment block if header comment block is not
 presented.
 
@@ -178,11 +178,12 @@ typedefs:
 
   # header comment 3
   # header comment 4
-  TestTypedef: String # line comment 1
-                      # line comment 2
+  TestTypedef:
+    String # line comment 1
+    # line comment 2
 ```
 
-only these 2 lines 
+only these 2 lines
 
 ```yaml
 # header comment 3
@@ -191,18 +192,19 @@ only these 2 lines
 
 will be kept and presented in the final Smart Contract.
 
-And the next case 
+And the next case
 
 ```yaml
 typedefs:
-  TestTypedef: String # line comment 1
-                      # line comment 2
+  TestTypedef:
+    String # line comment 1
+    # line comment 2
 
-                      # line comment 3
-                      # line comment 4
+    # line comment 3
+    # line comment 4
 ```
 
-only these 2 lines 
+only these 2 lines
 
 ```yaml
 # line comment 1
@@ -215,12 +217,12 @@ will be kept and presented in the final Smart Contract.
 
 ### Access Keys
 
-With `$` prepending a key (keys are set in `GenBase.setCommonKeys()`, `GenBase.setFieldKeys()`, `GenBase.setFuncKeys()`),  schema tool can access the value of the key in `GenBase.keys` according to the current context. For example, if you want to access lower case package name, you can access it with `$package`.
+With `$` prepending a key (keys are set in `GenBase.setCommonKeys()`, `GenBase.setFieldKeys()`, `GenBase.setFuncKeys()`), schema tool can access the value of the key in `GenBase.keys` according to the current context. For example, if you want to access lower case package name, you can access it with `$package`.
 To dynamically add a new key in templates (under gotemplates, rstemplates, and tstemplates), you can call `$#set` instruction, see section [set](#set) for more information.
 
 ### Key And Plain String Concatenation
 
-To concatenate a value from accessing key and a plain string, you should use `$+` operator. 
+To concatenate a value from accessing key and a plain string, you should use `$+` operator.
 For example, here `FuncName` is a key that preserves the name of the function under current context, and we want to concatenate the function name with "Mutable" and "Results".
 In other words, we want to do the same task as the following python code and get the result in `result` variable.
 
@@ -236,17 +238,17 @@ In the schema template language, we should call `Mutable$FuncName$+Results`.
 Keywords follows `$#` are the instructions defined in our schema template language. One thing you should aware, now, all the instruction should be presented at the beginning of each line. In other words, no spaces and characters are allowed to exist ahead of an instruction.
 Here is the list of all the instruction keywords.
 
-* emit
-* each
-* func
-* if
-* set
+- emit
+- each
+- func
+- if
+- set
 
 We are going to introduce how to use each instruction as follows. Or you can check the implementation of `GenBase.emit()` to know how are they implemented in detailed.
 
 #### emit
 
-`emit` is using for expanding templates. The syntax of `emit` instruction is 
+`emit` is using for expanding templates. The syntax of `emit` instruction is
 
 ```
 $#emit template
@@ -254,7 +256,7 @@ $#emit template
 
 Here, `template` is any template which defined under gotemplates,rstemplates).
 Templates are defined in `model.StringMap`. In the instruction call of `emit` just simply use the name of the template (the key in `model.StringMap`).
-If you want to insert the `copyright` template to a assigned location, then you should call 
+If you want to insert the `copyright` template to a assigned location, then you should call
 
 ```
 $#emit copyright
@@ -325,7 +327,7 @@ Currently not used.
 
 #### if
 
-The syntax of `if` is 
+The syntax of `if` is
 
 ```
 $#if condition template [elseTemplate]
@@ -448,7 +450,7 @@ Here `else` is a predefined empty template, which is defined at[`tools/schema/ge
 $#set key value
 ```
 
-For example, if you want to dynamically add a new key `initFunc` with the value in key `nil` you can call 
+For example, if you want to dynamically add a new key `initFunc` with the value in key `nil` you can call
 
 ```
 $#set initFunc $nil
