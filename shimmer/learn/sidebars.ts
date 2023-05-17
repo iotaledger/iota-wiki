@@ -104,16 +104,11 @@ module.exports = {
               type: 'category',
               label: 'Decentralized Identifiers (DID)',
               items: [
-                'identity/concepts/decentralized_identifiers/overview',
-                'identity/concepts/decentralized_identifiers/alias',
+                'identity/decentralized_identifiers/overview',
+                'identity/decentralized_identifiers/alias',
               ],
             },
-
-            {
-              type: 'category',
-              label: 'Verifiable Credentials',
-              items: ['identity/concepts/verifiable_credentials/overview'],
-            },
+            'identity/verifiable_credentials',
             'identity/glossary',
             'identity/faq',
           ],
