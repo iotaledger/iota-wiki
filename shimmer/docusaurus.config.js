@@ -18,14 +18,12 @@ module.exports = {
           label: 'Get Started',
           to: '/get-started/welcome',
           activeBaseRegex:
-            '^(/[^/]+)?/get-started/.*|' +
-            '^(/[^/]+)?/IOTA-2.0-Research-Specifications/.*|' +
-            '^(/[^/]+)?/goshimmer/.*',
+            '^(/[^/]+)?/get-started/.*|'
         },
         {
           label: 'Learn',
           to: '/learn/introduction',
-          activeBaseRegex: '^(/[^/]+)?/learn.*|' + '^(/[^/]+)?/tutorials*',
+          activeBaseRegex: '^(/[^/]+)?/learn/.*',
         },
         {
           label: 'Build',
@@ -33,6 +31,11 @@ module.exports = {
           activeBaseRegex: '^(/[^/]+)?/build.*|' + '^(/[^/]+)?/tutorials*',
         },
 
+        {
+          label: 'Maintain',
+          to: '/maintain/introduction',
+          activeBaseRegex: '^(/[^/]+)?/maintain/.*',
+        },
         {
           label: 'Community',
           to: '/community/the-community/discord',
@@ -208,6 +211,23 @@ module.exports = {
         path: path.resolve(__dirname, 'build'),
         routeBasePath: 'build',
         sidebarPath: require.resolve('./build/sidebars.ts'),
+
+        // General config
+        editUrl: 'https://github.com/iota-wiki/iota-wiki/edit/main/',
+        remarkPlugins: [
+          require('remark-code-import'),
+          require('remark-import-partial'),
+        ],
+        showLastUpdateTime: true,
+      },
+    ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'maintain',
+        path: path.resolve(__dirname, 'maintain'),
+        routeBasePath: 'maintain',
+        sidebarPath: require.resolve('./maintain/sidebars.ts'),
 
         // General config
         editUrl: 'https://github.com/iota-wiki/iota-wiki/edit/main/',
