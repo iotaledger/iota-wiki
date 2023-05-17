@@ -105,16 +105,13 @@ module.exports = {
             {
               type: 'category',
               label: 'Verifiable Credentials',
-              items: [
-                'identity/concepts/verifiable_credentials/overview',
-              ],
+              items: ['identity/concepts/verifiable_credentials/overview'],
             },
             'identity/glossary',
             'identity/faq',
           ],
         },
       ],
-
     },
   ],
 };
