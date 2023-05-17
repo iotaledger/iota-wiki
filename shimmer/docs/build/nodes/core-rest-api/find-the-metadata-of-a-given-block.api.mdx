@@ -1,0 +1,497 @@
+---
+id: find-the-metadata-of-a-given-block
+title: 'Find the metadata of a given block.'
+description: 'Find the metadata of a given block.'
+sidebar_label: 'Find the metadata of a given block.'
+hide_title: true
+hide_table_of_contents: true
+api:
+  {
+    'tags': ['blocks'],
+    'description': 'Find the metadata of a given block.',
+    'parameters':
+      [
+        {
+          'in': 'path',
+          'name': 'blockId',
+          'schema': { 'type': 'string' },
+          'example': '0xf532a53545103276b46876c473846d98648ee418468bce76df4868648dd73e5d',
+          'required': true,
+          'description': 'Identifier of the block.',
+        },
+      ],
+    'responses':
+      {
+        '200':
+          {
+            'description': 'Successful operation.',
+            'content':
+              {
+                'application/json':
+                  {
+                    'schema':
+                      {
+                        'description': 'Returns the metadata of a given block.',
+                        'properties':
+                          {
+                            'blockId':
+                              {
+                                'type': 'string',
+                                'description': 'The identifier of the block. Hex-encoded with 0x prefix.',
+                              },
+                            'parents':
+                              {
+                                'type': 'array',
+                                'description': 'The identifiers of the blocks this block references. Hex-encoded with 0x prefix.',
+                                'items': { 'type': 'string' },
+                              },
+                            'isSolid':
+                              {
+                                'type': 'boolean',
+                                'description': 'Tells if the block could get solidified by the node or not.',
+                              },
+                            'referencedByMilestoneIndex':
+                              {
+                                'type': 'integer',
+                                'description': 'Tells which milestone references this block.',
+                              },
+                            'milestoneIndex':
+                              {
+                                'type': 'integer',
+                                'description': "If set, this block can be considered as a valid milestone block. This field therefore describes the milestone index of the involved milestone. A block can be considered as a valid milestone block if the milestone payload is valid and if the referenced parents in the milestone payload do match the referenced parents in the block itself. Note it's possible to have different milestone blocks that all represent the same milestone.",
+                              },
+                            'ledgerInclusionState':
+                              {
+                                'type': 'string',
+                                'enum':
+                                  ['included', 'conflicting', 'noTransaction'],
+                                'description': 'If `included`, the block contains a transaction that has been included in the ledger. If `conflicitng`, the block contains a transaction that has not been included in the ledger because it conflicts with another transaction. If the block does not contain a transaction, `ledgerInclusionState` is set to `noTransaction`.',
+                              },
+                            'conflictReason':
+                              {
+                                'type': 'integer',
+                                'enum':
+                                  [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 255],
+                                'description': "Values:\n  * `1` - denotes that the referenced UTXO was already spent.\n  * `2` - denotes that the referenced UTXO was already spent while confirming this milestone.\n  * `3` - denotes that the referenced UTXO cannot be found.\n  * `4` - denotes that the sum of the inputs and output values does not match.\n  * `5` - denotes that the unlock block signature is invalid.\n  * `6` - denotes that the configured timelock is not yet expired.\n  * `7` - denotes that the given native tokens are invalid.\n  * `8` - denotes that the return amount in a transaction is not fulfilled by the output side.\n  * `9` - denotes that the input unlock is invalid.\n  * `10` - denotes that the inputs commitment is invalid.\n  * `11` - denotes that an output contains a Sender with an ident (address) which is not unlocked.\n  * `12` - denotes that the chain state transition is invalid.\n  * `255` - denotes that the semantic validation failed.\n",
+                              },
+                            'whiteFlagIndex':
+                              {
+                                'type': 'integer',
+                                'description': 'If set, defines the order of the block in the white flag traversal during milestone solidification. Only referenced blocks have this information.',
+                              },
+                            'shouldPromote':
+                              {
+                                'type': 'boolean',
+                                'description': 'Tells if the block should be promoted to get more likely picked up by the Coordinator.',
+                              },
+                            'shouldReattach':
+                              {
+                                'type': 'boolean',
+                                'description': 'Tells if the block should be reattached.',
+                              },
+                          },
+                        'required': ['blockId', 'parents', 'isSolid'],
+                      },
+                    'examples':
+                      {
+                        'New Block':
+                          {
+                            'value':
+                              {
+                                'blockId': '0xf532a53545103276b46876c473846d98648ee418468bce76df4868648dd73e5d',
+                                'parents':
+                                  [
+                                    '0x7ed3d67fc7b619e72e588f51fef2379e43e6e9a856635843b3f29aa3a3f1f006',
+                                    '0xd97e89e49ed263b763afeda192515fe154ec826ceb92ef08926cd68ec02c9510',
+                                  ],
+                                'isSolid': false,
+                                'shouldPromote': true,
+                                'shouldReattach': false,
+                              },
+                          },
+                        'Solid':
+                          {
+                            'value':
+                              {
+                                'blockId': '0xf532a53545103276b46876c473846d98648ee418468bce76df4868648dd73e5d',
+                                'parents':
+                                  [
+                                    '0x7ed3d67fc7b619e72e588f51fef2379e43e6e9a856635843b3f29aa3a3f1f006',
+                                    '0xd97e89e49ed263b763afeda192515fe154ec826ceb92ef08926cd68ec02c9510',
+                                  ],
+                                'isSolid': true,
+                                'shouldPromote': false,
+                                'shouldReattach': false,
+                              },
+                          },
+                        'Included':
+                          {
+                            'value':
+                              {
+                                'blockId': '0xf532a53545103276b46876c473846d98648ee418468bce76df4868648dd73e5d',
+                                'parents':
+                                  [
+                                    '0x7ed3d67fc7b619e72e588f51fef2379e43e6e9a856635843b3f29aa3a3f1f006',
+                                    '0xd97e89e49ed263b763afeda192515fe154ec826ceb92ef08926cd68ec02c9510',
+                                  ],
+                                'isSolid': true,
+                                'referencedByMilestoneIndex': 15465,
+                                'whiteFlagIndex': 25,
+                                'ledgerInclusionState': 'included',
+                              },
+                          },
+                        'Conflicting':
+                          {
+                            'value':
+                              {
+                                'blockId': '0xf532a53545103276b46876c473846d98648ee418468bce76df4868648dd73e5d',
+                                'parents':
+                                  [
+                                    '0x7ed3d67fc7b619e72e588f51fef2379e43e6e9a856635843b3f29aa3a3f1f006',
+                                    '0xd97e89e49ed263b763afeda192515fe154ec826ceb92ef08926cd68ec02c9510',
+                                  ],
+                                'isSolid': true,
+                                'referencedByMilestoneIndex': 15465,
+                                'whiteFlagIndex': 25,
+                                'ledgerInclusionState': 'conflicting',
+                                'conflictReason': 1,
+                              },
+                          },
+                      },
+                  },
+              },
+          },
+        '400':
+          {
+            'description': 'Unsuccessful operation: indicates that the provided data is invalid.',
+            'content':
+              {
+                'application/json':
+                  {
+                    'schema':
+                      {
+                        'description': 'Indicates that the request was bad.',
+                        'allOf':
+                          [
+                            {
+                              'description': 'The error format.',
+                              'properties':
+                                {
+                                  'error':
+                                    {
+                                      'type': 'object',
+                                      'properties':
+                                        {
+                                          'code':
+                                            {
+                                              'type': 'string',
+                                              'description': 'The application error code.',
+                                            },
+                                          'message':
+                                            {
+                                              'type': 'string',
+                                              'description': 'The error reason.',
+                                            },
+                                        },
+                                      'required': ['code', 'message'],
+                                    },
+                                },
+                              'required': ['error'],
+                            },
+                          ],
+                        'example':
+                          {
+                            'error':
+                              {
+                                'code': 400,
+                                'message': 'invalid data provided',
+                              },
+                          },
+                      },
+                  },
+              },
+          },
+        '403':
+          {
+            'description': 'Unsuccessful operation: indicates that the endpoint is not available for public use.',
+            'content':
+              {
+                'application/json':
+                  {
+                    'schema':
+                      {
+                        'description': 'Indicates that this endpoint is not available for public use.',
+                        'allOf':
+                          [
+                            {
+                              'description': 'The error format.',
+                              'properties':
+                                {
+                                  'error':
+                                    {
+                                      'type': 'object',
+                                      'properties':
+                                        {
+                                          'code':
+                                            {
+                                              'type': 'string',
+                                              'description': 'The application error code.',
+                                            },
+                                          'message':
+                                            {
+                                              'type': 'string',
+                                              'description': 'The error reason.',
+                                            },
+                                        },
+                                      'required': ['code', 'message'],
+                                    },
+                                },
+                              'required': ['error'],
+                            },
+                          ],
+                        'example':
+                          {
+                            'error':
+                              {
+                                'code': 403,
+                                'message': 'not available for public use',
+                              },
+                          },
+                      },
+                  },
+              },
+          },
+        '404':
+          {
+            'description': 'Unsuccessful operation: indicates that the requested data was not found.',
+            'content':
+              {
+                'application/json':
+                  {
+                    'schema':
+                      {
+                        'description': 'Indicates that the data was not found.',
+                        'allOf':
+                          [
+                            {
+                              'description': 'The error format.',
+                              'properties':
+                                {
+                                  'error':
+                                    {
+                                      'type': 'object',
+                                      'properties':
+                                        {
+                                          'code':
+                                            {
+                                              'type': 'string',
+                                              'description': 'The application error code.',
+                                            },
+                                          'message':
+                                            {
+                                              'type': 'string',
+                                              'description': 'The error reason.',
+                                            },
+                                        },
+                                      'required': ['code', 'message'],
+                                    },
+                                },
+                              'required': ['error'],
+                            },
+                          ],
+                        'example':
+                          {
+                            'error':
+                              { 'code': 404, 'message': 'could not find data' },
+                          },
+                      },
+                  },
+              },
+          },
+        '500':
+          {
+            'description': 'Unsuccessful operation: indicates that an unexpected, internal server error happened which prevented the node from fulfilling the request.',
+            'content':
+              {
+                'application/json':
+                  {
+                    'schema':
+                      {
+                        'description': 'Indicates that the server encountered an unexpected condition, which prevented it from fulfilling the request by the client.',
+                        'allOf':
+                          [
+                            {
+                              'description': 'The error format.',
+                              'properties':
+                                {
+                                  'error':
+                                    {
+                                      'type': 'object',
+                                      'properties':
+                                        {
+                                          'code':
+                                            {
+                                              'type': 'string',
+                                              'description': 'The application error code.',
+                                            },
+                                          'message':
+                                            {
+                                              'type': 'string',
+                                              'description': 'The error reason.',
+                                            },
+                                        },
+                                      'required': ['code', 'message'],
+                                    },
+                                },
+                              'required': ['error'],
+                            },
+                          ],
+                        'example':
+                          {
+                            'error':
+                              {
+                                'code': 500,
+                                'message': 'internal server error',
+                              },
+                          },
+                      },
+                  },
+              },
+          },
+        '503':
+          {
+            'description': 'Unsuccessful operation: indicates that the node is not synced.',
+            'content':
+              {
+                'application/json':
+                  {
+                    'schema':
+                      {
+                        'description': 'Indicates that the service is unavailable.',
+                        'allOf':
+                          [
+                            {
+                              'description': 'The error format.',
+                              'properties':
+                                {
+                                  'error':
+                                    {
+                                      'type': 'object',
+                                      'properties':
+                                        {
+                                          'code':
+                                            {
+                                              'type': 'string',
+                                              'description': 'The application error code.',
+                                            },
+                                          'message':
+                                            {
+                                              'type': 'string',
+                                              'description': 'The error reason.',
+                                            },
+                                        },
+                                      'required': ['code', 'message'],
+                                    },
+                                },
+                              'required': ['error'],
+                            },
+                          ],
+                        'example':
+                          {
+                            'error':
+                              { 'code': 503, 'message': 'service unavailable' },
+                          },
+                      },
+                  },
+              },
+          },
+      },
+    'method': 'get',
+    'path': '/api/core/v2/blocks/{blockId}/metadata',
+    'servers': [{ 'url': 'http://127.0.0.1:14265' }],
+    'info':
+      {
+        'title': 'IOTA CORE REST API',
+        'description': 'This document specifies the REST API for IOTA CORE node software.',
+        'contact': { 'email': 'contact@iota.org' },
+        'license':
+          {
+            'name': 'Apache 2.0',
+            'url': 'http://www.apache.org/licenses/LICENSE-2.0.html',
+          },
+        'version': '2.0.0',
+      },
+    'postman':
+      {
+        'name': 'Find the metadata of a given block.',
+        'description':
+          {
+            'content': 'Find the metadata of a given block.',
+            'type': 'text/plain',
+          },
+        'url':
+          {
+            'path': ['api', 'core', 'v2', 'blocks', ':blockId', 'metadata'],
+            'host': ['{{baseUrl}}'],
+            'query': [],
+            'variable':
+              [
+                {
+                  'disabled': false,
+                  'description':
+                    {
+                      'content': '(Required) Identifier of the block.',
+                      'type': 'text/plain',
+                    },
+                  'type': 'any',
+                  'value': '',
+                  'key': 'blockId',
+                },
+              ],
+          },
+        'header': [{ 'key': 'Accept', 'value': 'application/json' }],
+        'method': 'GET',
+      },
+  }
+sidebar_class_name: 'get api-method'
+info_path: develop/nodes/core-rest-api/iota-core-rest-api
+---
+
+import ApiTabs from '@theme/ApiTabs';
+import MimeTabs from '@theme/MimeTabs';
+import ParamsItem from '@theme/ParamsItem';
+import ResponseSamples from '@theme/ResponseSamples';
+import SchemaItem from '@theme/SchemaItem';
+import SchemaTabs from '@theme/SchemaTabs';
+import DiscriminatorTabs from '@theme/DiscriminatorTabs';
+import TabItem from '@theme/TabItem';
+
+## Find the metadata of a given block.
+
+Find the metadata of a given block.
+
+<details style={{"marginBottom":"1rem"}} data-collapsed={false} open={true}><summary style={{}}><strong>Path Parameters</strong></summary><div><ul><ParamsItem className={"paramsItem"} param={{"in":"path","name":"blockId","schema":{"type":"string"},"example":"0xf532a53545103276b46876c473846d98648ee418468bce76df4868648dd73e5d","required":true,"description":"Identifier of the block."}}></ParamsItem></ul></div></details><div><ApiTabs><TabItem label={"200"} value={"200"}><div>
+
+Successful operation.
+
+</div><div><MimeTabs schemaType={"response"}><TabItem label={"application/json"} value={"application/json"}><SchemaTabs><TabItem label={"Schema"} value={"Schema"}><details style={{}} data-collapsed={false} open={true}><summary style={{"textAlign":"left"}}><strong>Schema</strong></summary><div style={{"textAlign":"left","marginLeft":"1rem"}}></div><ul style={{"marginLeft":"1rem"}}><SchemaItem collapsible={false} name={"blockId"} required={false} schemaDescription={"The identifier of the block. Hex-encoded with 0x prefix."} schemaName={"string"} qualifierMessage={undefined} defaultValue={undefined}></SchemaItem><SchemaItem collapsible={false} name={"parents"} required={false} schemaDescription={"The identifiers of the blocks this block references. Hex-encoded with 0x prefix."} schemaName={"string[]"} qualifierMessage={undefined} defaultValue={undefined}></SchemaItem><SchemaItem collapsible={false} name={"isSolid"} required={false} schemaDescription={"Tells if the block could get solidified by the node or not."} schemaName={"boolean"} qualifierMessage={undefined} defaultValue={undefined}></SchemaItem><SchemaItem collapsible={false} name={"referencedByMilestoneIndex"} required={false} schemaDescription={"Tells which milestone references this block."} schemaName={"integer"} qualifierMessage={undefined} defaultValue={undefined}></SchemaItem><SchemaItem collapsible={false} name={"milestoneIndex"} required={false} schemaDescription={"If set, this block can be considered as a valid milestone block. This field therefore describes the milestone index of the involved milestone. A block can be considered as a valid milestone block if the milestone payload is valid and if the referenced parents in the milestone payload do match the referenced parents in the block itself. Note it's possible to have different milestone blocks that all represent the same milestone."} schemaName={"integer"} qualifierMessage={undefined} defaultValue={undefined}></SchemaItem><SchemaItem collapsible={false} name={"ledgerInclusionState"} required={false} schemaDescription={"If `included`, the block contains a transaction that has been included in the ledger. If `conflicitng`, the block contains a transaction that has not been included in the ledger because it conflicts with another transaction. If the block does not contain a transaction, `ledgerInclusionState` is set to `noTransaction`."} schemaName={"string"} qualifierMessage={"**Possible values:** [`included`, `conflicting`, `noTransaction`]"} defaultValue={undefined}></SchemaItem><SchemaItem collapsible={false} name={"conflictReason"} required={false} schemaDescription={"Values:\n  * `1` - denotes that the referenced UTXO was already spent.\n  * `2` - denotes that the referenced UTXO was already spent while confirming this milestone.\n  * `3` - denotes that the referenced UTXO cannot be found.\n  * `4` - denotes that the sum of the inputs and output values does not match.\n  * `5` - denotes that the unlock block signature is invalid.\n  * `6` - denotes that the configured timelock is not yet expired.\n  * `7` - denotes that the given native tokens are invalid.\n  * `8` - denotes that the return amount in a transaction is not fulfilled by the output side.\n  * `9` - denotes that the input unlock is invalid.\n  * `10` - denotes that the inputs commitment is invalid.\n  * `11` - denotes that an output contains a Sender with an ident (address) which is not unlocked.\n  * `12` - denotes that the chain state transition is invalid.\n  * `255` - denotes that the semantic validation failed.\n"} schemaName={"integer"} qualifierMessage={"**Possible values:** [`1`, `2`, `3`, `4`, `5`, `6`, `7`, `8`, `9`, `10`, `11`, `12`, `255`]"} defaultValue={undefined}></SchemaItem><SchemaItem collapsible={false} name={"whiteFlagIndex"} required={false} schemaDescription={"If set, defines the order of the block in the white flag traversal during milestone solidification. Only referenced blocks have this information."} schemaName={"integer"} qualifierMessage={undefined} defaultValue={undefined}></SchemaItem><SchemaItem collapsible={false} name={"shouldPromote"} required={false} schemaDescription={"Tells if the block should be promoted to get more likely picked up by the Coordinator."} schemaName={"boolean"} qualifierMessage={undefined} defaultValue={undefined}></SchemaItem><SchemaItem collapsible={false} name={"shouldReattach"} required={false} schemaDescription={"Tells if the block should be reattached."} schemaName={"boolean"} qualifierMessage={undefined} defaultValue={undefined}></SchemaItem></ul></details></TabItem><TabItem label={"Example (from schema)"} value={"Example (from schema)"}><ResponseSamples responseExample={"{\n  \"blockId\": \"string\",\n  \"parents\": [\n    \"string\"\n  ],\n  \"isSolid\": true,\n  \"referencedByMilestoneIndex\": 0,\n  \"milestoneIndex\": 0,\n  \"ledgerInclusionState\": \"included\",\n  \"conflictReason\": 1,\n  \"whiteFlagIndex\": 0,\n  \"shouldPromote\": true,\n  \"shouldReattach\": true\n}"} language={"json"}></ResponseSamples></TabItem><TabItem label={" New  Block"} value={" New  Block"}><ResponseSamples responseExample={"{\n  \"blockId\": \"0xf532a53545103276b46876c473846d98648ee418468bce76df4868648dd73e5d\",\n  \"parents\": [\n    \"0x7ed3d67fc7b619e72e588f51fef2379e43e6e9a856635843b3f29aa3a3f1f006\",\n    \"0xd97e89e49ed263b763afeda192515fe154ec826ceb92ef08926cd68ec02c9510\"\n  ],\n  \"isSolid\": false,\n  \"shouldPromote\": true,\n  \"shouldReattach\": false\n}"} language={"json"}></ResponseSamples></TabItem><TabItem label={" Solid"} value={" Solid"}><ResponseSamples responseExample={"{\n  \"blockId\": \"0xf532a53545103276b46876c473846d98648ee418468bce76df4868648dd73e5d\",\n  \"parents\": [\n    \"0x7ed3d67fc7b619e72e588f51fef2379e43e6e9a856635843b3f29aa3a3f1f006\",\n    \"0xd97e89e49ed263b763afeda192515fe154ec826ceb92ef08926cd68ec02c9510\"\n  ],\n  \"isSolid\": true,\n  \"shouldPromote\": false,\n  \"shouldReattach\": false\n}"} language={"json"}></ResponseSamples></TabItem><TabItem label={" Included"} value={" Included"}><ResponseSamples responseExample={"{\n  \"blockId\": \"0xf532a53545103276b46876c473846d98648ee418468bce76df4868648dd73e5d\",\n  \"parents\": [\n    \"0x7ed3d67fc7b619e72e588f51fef2379e43e6e9a856635843b3f29aa3a3f1f006\",\n    \"0xd97e89e49ed263b763afeda192515fe154ec826ceb92ef08926cd68ec02c9510\"\n  ],\n  \"isSolid\": true,\n  \"referencedByMilestoneIndex\": 15465,\n  \"whiteFlagIndex\": 25,\n  \"ledgerInclusionState\": \"included\"\n}"} language={"json"}></ResponseSamples></TabItem><TabItem label={" Conflicting"} value={" Conflicting"}><ResponseSamples responseExample={"{\n  \"blockId\": \"0xf532a53545103276b46876c473846d98648ee418468bce76df4868648dd73e5d\",\n  \"parents\": [\n    \"0x7ed3d67fc7b619e72e588f51fef2379e43e6e9a856635843b3f29aa3a3f1f006\",\n    \"0xd97e89e49ed263b763afeda192515fe154ec826ceb92ef08926cd68ec02c9510\"\n  ],\n  \"isSolid\": true,\n  \"referencedByMilestoneIndex\": 15465,\n  \"whiteFlagIndex\": 25,\n  \"ledgerInclusionState\": \"conflicting\",\n  \"conflictReason\": 1\n}"} language={"json"}></ResponseSamples></TabItem></SchemaTabs></TabItem></MimeTabs></div></TabItem><TabItem label={"400"} value={"400"}><div>
+
+Unsuccessful operation: indicates that the provided data is invalid.
+
+</div><div><MimeTabs schemaType={"response"}><TabItem label={"application/json"} value={"application/json"}><SchemaTabs><TabItem label={"Schema"} value={"Schema"}><details style={{}} data-collapsed={false} open={true}><summary style={{"textAlign":"left"}}><strong>Schema</strong></summary><div style={{"textAlign":"left","marginLeft":"1rem"}}></div><ul style={{"marginLeft":"1rem"}}><SchemaItem collapsible={true} className={"schemaItem"}><details style={{}}><summary style={{}}><strong>error</strong><span style={{"opacity":"0.6"}}> object</span></summary><div style={{"marginLeft":"1rem"}}><SchemaItem collapsible={false} name={"code"} required={false} schemaDescription={"The application error code."} schemaName={"string"} qualifierMessage={undefined} defaultValue={undefined}></SchemaItem><SchemaItem collapsible={false} name={"message"} required={false} schemaDescription={"The error reason."} schemaName={"string"} qualifierMessage={undefined} defaultValue={undefined}></SchemaItem></div></details></SchemaItem></ul></details></TabItem><TabItem label={"Example (from schema)"} value={"Example (from schema)"}><ResponseSamples responseExample={"{\n  \"error\": {\n    \"code\": 400,\n    \"message\": \"invalid data provided\"\n  }\n}"} language={"json"}></ResponseSamples></TabItem></SchemaTabs></TabItem></MimeTabs></div></TabItem><TabItem label={"403"} value={"403"}><div>
+
+Unsuccessful operation: indicates that the endpoint is not available for public use.
+
+</div><div><MimeTabs schemaType={"response"}><TabItem label={"application/json"} value={"application/json"}><SchemaTabs><TabItem label={"Schema"} value={"Schema"}><details style={{}} data-collapsed={false} open={true}><summary style={{"textAlign":"left"}}><strong>Schema</strong></summary><div style={{"textAlign":"left","marginLeft":"1rem"}}></div><ul style={{"marginLeft":"1rem"}}><SchemaItem collapsible={true} className={"schemaItem"}><details style={{}}><summary style={{}}><strong>error</strong><span style={{"opacity":"0.6"}}> object</span></summary><div style={{"marginLeft":"1rem"}}><SchemaItem collapsible={false} name={"code"} required={false} schemaDescription={"The application error code."} schemaName={"string"} qualifierMessage={undefined} defaultValue={undefined}></SchemaItem><SchemaItem collapsible={false} name={"message"} required={false} schemaDescription={"The error reason."} schemaName={"string"} qualifierMessage={undefined} defaultValue={undefined}></SchemaItem></div></details></SchemaItem></ul></details></TabItem><TabItem label={"Example (from schema)"} value={"Example (from schema)"}><ResponseSamples responseExample={"{\n  \"error\": {\n    \"code\": 403,\n    \"message\": \"not available for public use\"\n  }\n}"} language={"json"}></ResponseSamples></TabItem></SchemaTabs></TabItem></MimeTabs></div></TabItem><TabItem label={"404"} value={"404"}><div>
+
+Unsuccessful operation: indicates that the requested data was not found.
+
+</div><div><MimeTabs schemaType={"response"}><TabItem label={"application/json"} value={"application/json"}><SchemaTabs><TabItem label={"Schema"} value={"Schema"}><details style={{}} data-collapsed={false} open={true}><summary style={{"textAlign":"left"}}><strong>Schema</strong></summary><div style={{"textAlign":"left","marginLeft":"1rem"}}></div><ul style={{"marginLeft":"1rem"}}><SchemaItem collapsible={true} className={"schemaItem"}><details style={{}}><summary style={{}}><strong>error</strong><span style={{"opacity":"0.6"}}> object</span></summary><div style={{"marginLeft":"1rem"}}><SchemaItem collapsible={false} name={"code"} required={false} schemaDescription={"The application error code."} schemaName={"string"} qualifierMessage={undefined} defaultValue={undefined}></SchemaItem><SchemaItem collapsible={false} name={"message"} required={false} schemaDescription={"The error reason."} schemaName={"string"} qualifierMessage={undefined} defaultValue={undefined}></SchemaItem></div></details></SchemaItem></ul></details></TabItem><TabItem label={"Example (from schema)"} value={"Example (from schema)"}><ResponseSamples responseExample={"{\n  \"error\": {\n    \"code\": 404,\n    \"message\": \"could not find data\"\n  }\n}"} language={"json"}></ResponseSamples></TabItem></SchemaTabs></TabItem></MimeTabs></div></TabItem><TabItem label={"500"} value={"500"}><div>
+
+Unsuccessful operation: indicates that an unexpected, internal server error happened which prevented the node from fulfilling the request.
+
+</div><div><MimeTabs schemaType={"response"}><TabItem label={"application/json"} value={"application/json"}><SchemaTabs><TabItem label={"Schema"} value={"Schema"}><details style={{}} data-collapsed={false} open={true}><summary style={{"textAlign":"left"}}><strong>Schema</strong></summary><div style={{"textAlign":"left","marginLeft":"1rem"}}></div><ul style={{"marginLeft":"1rem"}}><SchemaItem collapsible={true} className={"schemaItem"}><details style={{}}><summary style={{}}><strong>error</strong><span style={{"opacity":"0.6"}}> object</span></summary><div style={{"marginLeft":"1rem"}}><SchemaItem collapsible={false} name={"code"} required={false} schemaDescription={"The application error code."} schemaName={"string"} qualifierMessage={undefined} defaultValue={undefined}></SchemaItem><SchemaItem collapsible={false} name={"message"} required={false} schemaDescription={"The error reason."} schemaName={"string"} qualifierMessage={undefined} defaultValue={undefined}></SchemaItem></div></details></SchemaItem></ul></details></TabItem><TabItem label={"Example (from schema)"} value={"Example (from schema)"}><ResponseSamples responseExample={"{\n  \"error\": {\n    \"code\": 500,\n    \"message\": \"internal server error\"\n  }\n}"} language={"json"}></ResponseSamples></TabItem></SchemaTabs></TabItem></MimeTabs></div></TabItem><TabItem label={"503"} value={"503"}><div>
+
+Unsuccessful operation: indicates that the node is not synced.
+
+</div><div><MimeTabs schemaType={"response"}><TabItem label={"application/json"} value={"application/json"}><SchemaTabs><TabItem label={"Schema"} value={"Schema"}><details style={{}} data-collapsed={false} open={true}><summary style={{"textAlign":"left"}}><strong>Schema</strong></summary><div style={{"textAlign":"left","marginLeft":"1rem"}}></div><ul style={{"marginLeft":"1rem"}}><SchemaItem collapsible={true} className={"schemaItem"}><details style={{}}><summary style={{}}><strong>error</strong><span style={{"opacity":"0.6"}}> object</span></summary><div style={{"marginLeft":"1rem"}}><SchemaItem collapsible={false} name={"code"} required={false} schemaDescription={"The application error code."} schemaName={"string"} qualifierMessage={undefined} defaultValue={undefined}></SchemaItem><SchemaItem collapsible={false} name={"message"} required={false} schemaDescription={"The error reason."} schemaName={"string"} qualifierMessage={undefined} defaultValue={undefined}></SchemaItem></div></details></SchemaItem></ul></details></TabItem><TabItem label={"Example (from schema)"} value={"Example (from schema)"}><ResponseSamples responseExample={"{\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"service unavailable\"\n  }\n}"} language={"json"}></ResponseSamples></TabItem></SchemaTabs></TabItem></MimeTabs></div></TabItem></ApiTabs></div>

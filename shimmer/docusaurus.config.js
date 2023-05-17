@@ -3,7 +3,7 @@ const path = require('path');
 module.exports = {
   title: 'Shimmer Wiki',
   tagline: 'The complete reference for Shimmer',
-  baseUrl: '/shimmer/',
+  baseUrl: '/',
   themeConfig: {
     image: 'img/shimmer-wiki.png',
     navbar: {
@@ -172,61 +172,10 @@ module.exports = {
     [
       '@docusaurus/plugin-content-docs',
       {
-        id: 'get-started',
-        path: path.resolve(__dirname, 'get-started'),
-        routeBasePath: 'get-started',
-        sidebarPath: require.resolve('./get-started/sidebars.ts'),
-
-        // General config
-        editUrl: 'https://github.com/iota-wiki/iota-wiki/edit/main/',
-        remarkPlugins: [
-          require('remark-code-import'),
-          require('remark-import-partial'),
-        ],
-        showLastUpdateTime: true,
-      },
-    ],
-    [
-      '@docusaurus/plugin-content-docs',
-      {
-        id: 'learn',
-        path: path.resolve(__dirname, 'learn'),
-        routeBasePath: 'learn',
-        sidebarPath: require.resolve('./learn/sidebars.ts'),
-
-        // General config
-        editUrl: 'https://github.com/iota-wiki/iota-wiki/edit/main/',
-        remarkPlugins: [
-          require('remark-code-import'),
-          require('remark-import-partial'),
-        ],
-        showLastUpdateTime: true,
-      },
-    ],
-    [
-      '@docusaurus/plugin-content-docs',
-      {
-        id: 'build',
-        path: path.resolve(__dirname, 'build'),
-        routeBasePath: 'build',
-        sidebarPath: require.resolve('./build/sidebars.ts'),
-
-        // General config
-        editUrl: 'https://github.com/iota-wiki/iota-wiki/edit/main/',
-        remarkPlugins: [
-          require('remark-code-import'),
-          require('remark-import-partial'),
-        ],
-        showLastUpdateTime: true,
-      },
-    ],
-    [
-      '@docusaurus/plugin-content-docs',
-      {
-        id: 'maintain',
-        path: path.resolve(__dirname, 'maintain'),
-        routeBasePath: 'maintain',
-        sidebarPath: require.resolve('./maintain/sidebars.ts'),
+        id: 'docs',
+        path: path.resolve(__dirname, 'docs'),
+        routeBasePath: '/',
+        sidebarPath: require.resolve('./docs/sidebars.ts'),
 
         // General config
         editUrl: 'https://github.com/iota-wiki/iota-wiki/edit/main/',
