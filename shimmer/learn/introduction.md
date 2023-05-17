@@ -28,6 +28,6 @@ that is generally called the owner address. Stardust extends this concept by let
 spending constraints on UTXOs, for example that an output can only be spent after a certain time.
 
 The following sections will show you how to start building on Shimmer using the Stardust protocol, from generating a
-[seed](seeds-accounts-and-addresses/seed-mnemonics.mdx),
-[accounts and addresses](seeds-accounts-and-addresses/accounts-and-addresses.mdx), to
-[minting NFT collections](nft/nft-collections.mdx).
+[seed](intro-to-clients/seeds-accounts-and-addresses/seed-mnemonics.mdx),
+[accounts and addresses](intro-to-clients/seeds-accounts-and-addresses/accounts-and-addresses.mdx), to
+[minting NFT collections](clients-in-shimmer/nft/nft-collections.mdx).
