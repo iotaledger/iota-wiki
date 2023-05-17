@@ -77,12 +77,44 @@ module.exports = {
             'nft/nft-collections',
           ],
         },
+
+        //Identity
+        {
+          type: 'category',
+          label: 'Identity',
+          items: [
+            {
+              type: 'doc',
+              id: 'identity/introduction',
+              label: 'Introduction',
+            },
+            {
+              type: 'doc',
+              id: 'identity/decentralized_identity',
+              label: 'Decentralized Identity',
+            },
+            {
+              type: 'category',
+              label: 'Decentralized Identifiers (DID)',
+              items: [
+                'identity/concepts/decentralized_identifiers/overview',
+                'identity/concepts/decentralized_identifiers/alias',
+              ],
+            },
+
+            {
+              type: 'category',
+              label: 'Verifiable Credentials',
+              items: [
+                'identity/concepts/verifiable_credentials/overview',
+              ],
+            },
+            'identity/glossary',
+            'identity/faq',
+          ],
+        },
       ],
-    },
-    {
-      type: 'link',
-      label: 'Tutorials',
-      href: '/tutorials',
+
     },
   ],
 };
