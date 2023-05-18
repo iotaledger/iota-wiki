@@ -16,7 +16,7 @@ module.exports = {
       items: [
         {
           label: 'Get Started',
-          to: '/get-started/welcome',
+          to: '/get-started/ecosystem-overview/layer-1-landscape',
           activeBaseRegex: '^(/[^/]+)?/get-started/.*',
         },
         {
@@ -34,11 +34,6 @@ module.exports = {
           label: 'Maintain',
           to: '/maintain/introduction',
           activeBaseRegex: '^(/[^/]+)?/maintain/.*',
-        },
-        {
-          label: 'Community',
-          to: '/community/the-community/discord',
-          activeBaseRegex: '^(/[^/]+)?/community/.*',
         },
         {
           type: 'custom-network-dropdown',
