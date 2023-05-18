@@ -3,7 +3,7 @@ const path = require('path');
 module.exports = {
   title: 'Shimmer Wiki',
   tagline: 'The complete reference for Shimmer',
-  baseUrl: '/',
+  baseUrl: '/shimmer/',
   themeConfig: {
     image: 'img/shimmer-wiki.png',
     navbar: {
