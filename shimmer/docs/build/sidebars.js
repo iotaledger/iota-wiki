@@ -533,7 +533,7 @@ module.exports = [
   // build/identity
   {
     type: 'category',
-    label: 'build/identity',
+    label: 'Identity',
     items: [
       {
         type: 'category',
