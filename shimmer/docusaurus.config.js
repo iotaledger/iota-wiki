@@ -17,7 +17,7 @@ module.exports = {
         {
           label: 'Get Started',
           to: '/get-started/welcome',
-          activeBaseRegex: '^(/[^/]+)?/get-started/.*|',
+          activeBaseRegex: '^(/[^/]+)?/get-started/.*',
         },
         {
           label: 'Learn',
