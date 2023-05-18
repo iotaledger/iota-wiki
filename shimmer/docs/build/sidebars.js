@@ -643,24 +643,24 @@ module.exports = [
     ],
   },
   // API REF
-  {
-    type: 'category',
-    label: 'Node API Reference',
-    collapsed: true,
-    items: [
-      'build/nodes/api_reference',
-      {
-        type: 'category',
-        label: 'Core REST API',
-        collapsed: true,
-        link: {
-          type: 'doc',
-          id: 'build/nodes/core-rest-api/iota-core-rest-api',
-        },
-        items: require('./nodes/core-rest-api/sidebar'),
-      },
-    ],
-  },
+  // {
+  //   type: 'category',
+  //   label: 'Node API Reference',
+  //   collapsed: true,
+  //   items: [
+  //     'build/nodes/api_reference',
+  //     {
+  //       type: 'category',
+  //       label: 'Core REST API',
+  //       collapsed: true,
+  //       link: {
+  //         type: 'doc',
+  //         id: 'build/nodes/core-rest-api/iota-core-rest-api',
+  //       },
+  //       items: require('./nodes/core-rest-api/sidebar'),
+  //     },
+  //   ],
+  // },
   {
     type: 'category',
     label: 'Endpoints',
