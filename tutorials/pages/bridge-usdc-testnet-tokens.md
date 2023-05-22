@@ -89,12 +89,6 @@ After the transaction was confirmed on Metamask, you can follow the status of th
 
 Now you can connect your Metmask wallet to the ShimmerEVM Testnet and check if the USDC tokens have arrived successfully. Since you have already added the USDC token contract on ShimmerEVM Testnet to your Metamask wallet, you should now see the USDC token balance there.
 
-<p style="text-align: center">
-    <kbd>
-        <img src="/metamask-usdc-balance.png"  width="300">
-    </kbd>
-</p>
-
 ![USDC Balance on Metamask](/metamask-usdc-balance.png 'USDC Balance on Metamask')
 
 ## Bridge USDC from ShimmerEVM Testnet to Goerli
