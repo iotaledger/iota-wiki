@@ -1,5 +1,8 @@
 const { merge } = require('@wiki/utils/config');
-const common = require('./common');
+
+const path = require('path');
+const externalPath = path.resolve(process.cwd(), 'docusaurus.config.js')
+const external = require(externalPath);
 
 module.exports = async () => {
   const internal = {
@@ -15,5 +18,5 @@ module.exports = async () => {
     },
   };
 
-  return merge(await common(), internal);
+  return merge(await external(), internal);
 };
