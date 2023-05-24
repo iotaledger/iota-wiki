@@ -5,7 +5,7 @@ import path from 'path';
 const internalConfigPath = require.resolve('../docusaurus/config/start.js');
 const externalConfigPath = path.resolve(process.cwd(), 'docusaurus.config.js')
 
-const startCommand = `npx docusaurus start --config ${internalConfigPath}`;
+const startCommand = `npx docusaurus start --config ${internalConfigPath} --no-open`;
 
 export class Start extends Command {
   static paths = [[`start`], [`tutorial`, `start`]];
@@ -22,7 +22,7 @@ export class Start extends Command {
     const directory = this.directory || '.';
 
     return await shell(
-      `npx nodemon --watch ${externalConfigPath} --quiet --exec "${startCommand} --no-open"`,
+      `npx nodemon --watch ${externalConfigPath} --quiet --exec "${startCommand}"`,
       [],
       {
         env: {
