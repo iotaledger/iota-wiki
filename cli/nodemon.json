@@ -1,0 +1,5 @@
+{
+    "events": {
+        "start": "node -e \"setTimeout(() => require('open')('http://localhost:3000'), 5000)\""
+      }
+}
