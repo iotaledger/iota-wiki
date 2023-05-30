@@ -38,8 +38,6 @@ Step-by-Step guide for Windows users by Phylo:
 - [Hornet node Installation guide Part 1](https://phyloiota.medium.com/iota-hornet-node-installation-81747de28338)
 - [Hornet node Installation guide Part 2](https://phyloiota.medium.com/iota-hornet-node-installation-2-8f2639e04d1d)
 
-#
-
 ## GoShimmer
 
 GoShimmer is a prototype node software exploring the implementation of IOTA 2.0. It is a research and engineering project from the IOTA Foundation seeking to evaluate Coordicide concepts by implementing them in a node software.

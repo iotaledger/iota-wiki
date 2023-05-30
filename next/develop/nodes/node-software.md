@@ -40,14 +40,6 @@ INX plugins are Node extensions (IOTA Node Extension interface) which communicat
 
 - [INX Github](https://github.com/iotaledger/inx)
 
-## Bee
-
-The Shimmer version of Bee is in maintenance mode and may not always be up-to-date.
-
-The full documentation and the source code for Bee can be found here:
-
-- [Bee GitHub](https://github.com/iotaledger/bee)
-
 ## GoShimmer
 
 GoShimmer is a prototype node software exploring the implementation of IOTA 2.0. It is a research and engineering project from the IOTA Foundation seeking to evaluate Coordicide concepts by implementing them in a node software.

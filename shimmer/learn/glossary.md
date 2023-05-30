@@ -22,7 +22,6 @@ description: Glossary of all specialized names and phrases used in the Shimmer T
 - **Balance:** Funds on the addresses (account). These are always available and cannot be deleted or forgotten.
 - **Blockchain Bottleneck:** The more transactions are issued, the more the block rate and size become a bottleneck in the system. It is no longer possible to capture all incoming transactions in a prompt manner. Attempts to speed up block rates result in more orphaned blocks (blocks are left behind) and reduce the security of the blockchain.
 - **Branch (IOTA 2.0):** A version of the ledger that temporarily coexists with other versions, each spawned by conflicting transactions.
-- **Bee:** Node software developed by the IOTA foundation using the Rust programming language.
 - **Bootstrapping attack:** An attack in which a node downloads malicious snapshot files, including invalid transactions and balances.
 
 ## C
@@ -73,7 +72,7 @@ description: Glossary of all specialized names and phrases used in the Shimmer T
 ## G
 
 - **Genesis transaction:** The Genesis transaction is the first transaction that created all Shimmer tokens and distributed them to the addresses of the buyers.
-- **GoShimmer (No Main net):** Prototype of the coordinator less version of IOTA written in the Go programming language. GoShimmer implements the various modules of Coordicide, such as auto peering, node identities, Mana, etc. GoShimmer serves as a test environment for the first alpha version and the test network. Everything tested here will be gradually merged with Hornet and Bee.
+- **GoShimmer (No Main net):** Prototype of the coordinator less version of IOTA written in the Go programming language. GoShimmer implements the various modules of Coordicide, such as auto peering, node identities, Mana, etc. GoShimmer serves as a test environment for the first alpha version and the test network. Everything tested here will be gradually merged with Hornet.
 - **Generic Data Object (IOTA 2.0):** The most basic object type. All unrecognized data objects are defined this way.
 
 ## H
@@ -108,7 +107,7 @@ description: Glossary of all specialized names and phrases used in the Shimmer T
 
 - **Nakamoto Consensus:** Named after the creator of Bitcoin, Satoshi Nakamoto, the Nakamoto Consensus describes the replacement of coordination / communication between known agents with a cryptographic puzzle (Proof-of-Work). Completion of the puzzle determines which agent acts next.
 - **Neighbors:** Network nodes that are directly connected and can exchange messages without intermediate nodes.
-- **Nodes:** A node is any computer that connects to other nodes in the network via software. In principle, they serve as a connection point for data transfers. The Tangle works with different types of nodes, such as full nodes (Hornet, Bee), permanodes (Chronicle) or smart contract nodes (Wasp).
+- **Nodes:** A node is any computer that connects to other nodes in the network via software. In principle, they serve as a connection point for data transfers. The Tangle works with different types of nodes, such as full nodes like Hornet, permanodes (Chronicle) or smart contract nodes (Wasp).
 - **Network Layer (IOTA 2.0):** This layer manages the lower layers of Internet communication such as TCP. In this layer, the connections between the nodes are managed by the Auto peering and Peer Discovery modules and the Gossip protocol.
 - **Network ID:** The network ID enables user-specific subtangles in which nodes can only recognize messages from the network ID listed in their configuration file.
 

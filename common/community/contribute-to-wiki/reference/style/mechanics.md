@@ -41,13 +41,13 @@ This case overrides other guidelines.
 
 Refer to IOTA libraries by their filenames: iota.rs, wallet.rs, etc. Always use the lower-case notation. Note that it is harder to spot a sentence if it starts in lower case. Consider using the following clause instead: "The iota.rs library".
 
-Other IOTA products have an actual name. Always capitalize it: "A Hornet node, a Bee software. Hornet and Bee."
+Other IOTA products have an actual name. Always capitalize it: "A Hornet node. Hornet and Identity."
 
 Note that there are no determiners (the) when you refer to something by its name: "the iota.rs library" as in "the library named iota.rs", but simply "iota.rs".
 
 Good:
 
-> The iota.rs library connects to a node. A node could be a Bee node or a Hornet node, but iota.rs handles both the same way. Bee is written in Rust, and Hornet is written in Go.
+> The iota.rs library connects to a node. A node could be a Hornet node, but iota.rs handles both the same way. 
 
 This case overrides other guidelines.
 
@@ -60,12 +60,6 @@ Use serial commas:
 > Lock, stock, and barrel.
 
 Reserve exclamation marks only for special occasions.
-
-Unwrap text out of parentheses, especially if that text is lengthy, as they branch the thought in two different directions.
-
-> It makes no difference if you connect to a Hornet node (that are written by the community in Go) or a Bee node, as they are functionally equivalent.
->
-> It makes no difference if you connect to a Hornet or a Bee node, as they are functionally equivalent. Hornet is written by community in Go…
 
 ### Typography
 
