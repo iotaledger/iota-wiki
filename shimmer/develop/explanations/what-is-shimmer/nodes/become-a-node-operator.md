@@ -13,9 +13,10 @@ image: /img/shimmer-wiki.png
 
 Nodes need enough computational power to reliably handle high rates of transactions per second, including the following minimum requirements:
 
-- A dual-core CPU
-- 2 GB RAM
-- SSD storage
+- 4 cores or 4 vCPU.
+- 8 GB RAM.
+- SSD storage.
+- A public IP address.
 
 The amount of storage you need will depend on whether you plan on pruning transactions from your local database.
 
