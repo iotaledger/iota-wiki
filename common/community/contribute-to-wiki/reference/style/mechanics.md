@@ -47,7 +47,7 @@ Note that there are no determiners (the) when you refer to something by its name
 
 Good:
 
-> The iota.rs library connects to a node. A node could be a Hornet node, but iota.rs handles both the same way. 
+> The iota.rs library connects to a node. A node could be a Hornet node, but iota.rs handles both the same way.
 
 This case overrides other guidelines.
 
