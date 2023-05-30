@@ -71,11 +71,6 @@ module.exports = {
           href: '/hornet/welcome',
         },
         {
-          label: 'Bee',
-          type: 'link',
-          href: '/bee/welcome',
-        },
-        {
           label: 'Chronicle',
           type: 'link',
           href: '/chronicle/welcome',

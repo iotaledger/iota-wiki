@@ -30,10 +30,6 @@
 	path = iota/external/stronghold.rs/develop
 	url = https://github.com/iotaledger/stronghold.rs
 	branch = dev
-[submodule "iota/external/bee/production"]
-	path = iota/external/bee/production
-	url = https://github.com/iotaledger/bee.git
-	branch = production
 [submodule "iota/external/blueprints/production"]
 	path = iota/external/blueprints/production
 	url = https://github.com/iotaledger/blueprints
