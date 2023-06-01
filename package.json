@@ -49,7 +49,7 @@
     "@docusaurus/preset-classic": "2.2.0",
     "@iota-wiki/plugin-tutorial": "workspace:^",
     "@mdx-js/react": "^1.6.21",
-    "@popperjs/core": "^2.11.5",
+    "@popperjs/core": "^2.11.8",
     "@svgr/webpack": "^5.5.0",
     "clsx": "^1.2.1",
     "docusaurus-plugin-openapi-docs": "^1.4.7",
