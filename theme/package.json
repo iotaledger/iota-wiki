@@ -17,7 +17,7 @@
     "clsx": "^1.2.1"
   },
   "devDependencies": {
-    "@docusaurus/types": "2.2.0",
+    "@docusaurus/types": "2.4.1",
     "@types/react": "17.0.2",
     "copyfiles": "^2.4.1",
     "nodemon": "^2.0.16",
