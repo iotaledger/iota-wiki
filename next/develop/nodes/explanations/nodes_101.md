@@ -69,7 +69,7 @@ Nodes come with two sets of low-level APIs:
 
 :::note
 
-Developers do not need to communicate with nodes using a mentioned low-level API. Developers can leverage the IOT SDK that provides a high-level abstraction to all features IOTA nodes provide, either on HTTP API level or Event API level.
+Developers do not need to communicate with nodes using a mentioned low-level API. Developers can leverage the IOTA SDK that provides a high-level abstraction to all features IOTA nodes provide, either on HTTP API level or Event API level.
 
 :::
 
