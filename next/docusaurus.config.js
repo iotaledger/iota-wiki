@@ -39,9 +39,7 @@ module.exports = {
           activeBaseRegex:
             '^(/[^/]+)?/develop.*|' +
             '^(/[^/]+)?/smart-contracts/.*|' +
-            '^(/[^/]+)?/iota.rs/.*|' +
-            '^(/[^/]+)?/iotajs/.*|' +
-            '^(/[^/]+)?/wallet.rs/.*|' +
+            '^(/[^/]+)?/iota-sdk/.*|' +
             '^(/[^/]+)?/stronghold.rs/.*|' +
             '^(/[^/]+)?/hornet/.*|' +
             '^(/[^/]+)?/bee/.*|' +

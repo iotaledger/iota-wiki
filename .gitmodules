@@ -134,14 +134,6 @@
 	path = shimmer/external/identity.rs/0.7-alpha
 	url = https://github.com/iotaledger/identity.rs
 	branch = main
-[submodule "next/external/iota.rs"]
-	path = next/external/iota.rs
-	url = https://github.com/iotaledger/iota.rs
-	branch = develop
-[submodule "next/external/wallet.rs"]
-	path = next/external/wallet.rs
-	url = https://github.com/iotaledger/wallet.rs
-	branch = develop
 [submodule "next/external/hornet"]
 	path = next/external/hornet
 	url = https://github.com/iotaledger/hornet
@@ -150,10 +142,6 @@
 	path = next/external/introduction-docs
 	url = https://github.com/iotaledger/introduction-docs
 	branch = develop
-[submodule "next/external/iota.js"]
-	path = next/external/iota.js
-	url = https://github.com/iotaledger/iota.js
-	branch = feat/stardust
 [submodule "next/external/inx-indexer"]
 	path = next/external/inx-indexer
 	url = https://github.com/iotaledger/inx-indexer
@@ -233,4 +221,8 @@
 [submodule "shimmer/external/inx-irc-metadata"]
 	path = shimmer/external/inx-irc-metadata
 	url = https://github.com/iotaledger/inx-irc-metadata
+	branch = develop
+[submodule "next/external/iota-sdk"]
+	path = next/external/iota-sdk
+	url = https://github.com/iotaledger/iota-sdk
 	branch = develop
