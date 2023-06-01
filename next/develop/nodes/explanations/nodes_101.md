@@ -85,3 +85,6 @@ The HTTP API allows clients to interact with the Tangle and ask nodes to:
 ### Event API
 
 The Event API allows clients to poll nodes for new blocks and other events that happen on nodes. This type of API is useful for building applications such as custodial wallets that need to monitor the Tangle for updates to the balances of certain addresses.
+
+
+
