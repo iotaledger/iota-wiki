@@ -2470,7 +2470,7 @@ __metadata:
     "@types/prettier": ^2
     "@yarnpkg/shell": ^3.2.0
     axios: ^0.26.1
-    clipanion: ^3.2.0-rc.10
+    clipanion: ^3.2.1
     copyfiles: ^2.4.1
     ink: ^3.2.0
     ink-multi-select: 2.0.0
@@ -5549,14 +5549,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"clipanion@npm:^3.2.0-rc.10":
-  version: 3.2.0-rc.14
-  resolution: "clipanion@npm:3.2.0-rc.14"
+"clipanion@npm:^3.2.1":
+  version: 3.2.1
+  resolution: "clipanion@npm:3.2.1"
   dependencies:
     typanion: ^3.8.0
   peerDependencies:
     typanion: "*"
-  checksum: 0bedf6c70d8f3f986fe105ba4a2182cf8d398201ed639095927ceef5d50f370ee2bb7e14239be2b5ddcf3dc8f3b72a1666d67e903ee405fcddf1f378a4704c54
+  checksum: 448efd122ead3c802e61ba7a2002e2080c8cce01ce8a0a789d9b9e4f8fe70fd887dcf163ef8c778f5364a9e6f4b498b9f1853f709d7ed4291713e78bcfb88ee8
   languageName: node
   linkType: hard
 
