@@ -35,7 +35,7 @@
     "ink-text-input": "^4.0.3",
     "isomorphic-git": "^1.17.2",
     "prettier": "2.6.0",
-    "remark": "^14.0.2",
+    "remark": "^14.0.3",
     "remark-lint-no-dead-urls": "^1.1.0",
     "unified-engine": "^10.1.0"
   },
