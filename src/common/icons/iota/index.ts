@@ -1,4 +1,3 @@
-export { default as Bee } from './bee.svg';
 export { default as Chronicle } from './chronicle.svg';
 export { default as Chrysalis } from './chrysalis.svg';
 export { default as GettingStarted } from './getting_started.svg';

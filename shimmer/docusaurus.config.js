@@ -43,7 +43,6 @@ module.exports = {
             '^(/[^/]+)?/wallet.rs/.*|' +
             '^(/[^/]+)?/stronghold.rs/.*|' +
             '^(/[^/]+)?/hornet/.*|' +
-            '^(/[^/]+)?/bee/.*|' +
             '^(/[^/]+)?/chronicle/.*|' +
             '^(/[^/]+)?/introduction/.*|' +
             '^(/[^/]+)?/identity.rs/.*|' +

@@ -50,7 +50,6 @@ module.exports = async () => {
               '^(/[^/]+)?/streams/.*|' +
               '^(/[^/]+)?/stronghold.rs/.*|' +
               '^(/[^/]+)?/hornet/.*|' +
-              '^(/[^/]+)?/bee/.*|' +
               '^(/[^/]+)?/chronicle/.*|' +
               '^(/[^/]+)?/introduction/.*|' +
               '^(/[^/]+)?/integration-services/.*|' +

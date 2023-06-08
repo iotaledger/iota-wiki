@@ -38,22 +38,6 @@ Step-by-Step guide for Windows users by Phylo:
 - [Hornet node Installation guide Part 1](https://phyloiota.medium.com/iota-hornet-node-installation-81747de28338)
 - [Hornet node Installation guide Part 2](https://phyloiota.medium.com/iota-hornet-node-installation-2-8f2639e04d1d)
 
-## Bee
-
-The IOTA Foundation aims to allow machines of all performance levels to contribute to the IOTA network, from microcontrollers to phones, web browsers and servers. Therefore, Bee is being developed as a modular collection of extendable crates, which expose foreign function interfaces (FFIs) for the next iteration of client libraries.
-
-Bee is together with Hornet the second Node software implemented to run on the IOTA Mainnet. Bee will also be further developed to be a reference implementation in the upcoming decentralized IOTA 2.0 Mainnet.
-
-The full documentation and the source code for Bee can be found here:
-
-- [Bee Documentation](/bee/getting_started)
-- [Bee GitHub](https://github.com/iotaledger/bee)
-- [Bee Installation guide](/bee/how_tos/setup_a_node)
-
-### Bee Community Tutorials
-
-- [SWARM Bee](https://github.com/tanglebay/swarm)
-
 ## GoShimmer
 
 GoShimmer is a prototype node software exploring the implementation of IOTA 2.0. It is a research and engineering project from the IOTA Foundation seeking to evaluate Coordicide concepts by implementing them in a node software.

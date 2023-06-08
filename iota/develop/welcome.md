@@ -14,7 +14,6 @@ Welcome to the Developer Section. Here you will find all information to start de
 - Node Software
   - [Introduction](nodes/node-software.md)
   - [Hornet](/hornet/welcome)
-  - [Bee](/bee/welcome)
   - [Chronicle](/chronicle/welcome)
 - About Nodes
   - [Introduction](nodes/about-nodes.md)

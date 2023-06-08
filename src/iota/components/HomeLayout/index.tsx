@@ -8,7 +8,6 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import clsx from 'clsx';
 import './styles.css';
 import {
-  Bee,
   Chronicle,
   Discord,
   Hornet,
@@ -147,33 +146,6 @@ export default function HomeLayout() {
                   className='nodes__button button button--outline button--primary'
                 >
                   Set up a Hornet node
-                </Link>
-              </div>
-            </div>
-            <div className='nodes__card'>
-              <div className='nodes__icon'>
-                <Bee />
-              </div>
-              <div className='nodes__section'>
-                <h3 className='nodes__header'>Bee</h3>
-                <ul className='nodes__features'>
-                  <li className='nodes__feature'>
-                    <Link to='/bee/welcome'>A node implementation in Rust</Link>
-                  </li>
-                  <li className='nodes__feature'>
-                    <Link to='/bee/getting_started'>
-                      Participate in the network
-                    </Link>
-                  </li>
-                  <li className='nodes__feature'>
-                    <Link to='/bee/how_tos/docker'>Become a node operator</Link>
-                  </li>
-                </ul>
-                <Link
-                  to='bee/how_tos/setup_a_node'
-                  className='nodes__button button button--outline button--primary'
-                >
-                  Set up a Bee node
                 </Link>
               </div>
             </div>
