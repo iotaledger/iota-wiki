@@ -51,7 +51,7 @@ const LibrariesSection: FC = () => (
             </Link>
           </li>
           <li className='nodes__feature'>
-            <Link to='/iota-sdk/simple_transaction/simple_transaction'>
+            <Link to='/iota-sdk/how_tos/simple_transaction'>
               Send a transaction
             </Link>
           </li>
