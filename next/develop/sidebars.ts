@@ -265,7 +265,7 @@ module.exports = {
           collapsed: true,
           items: [
             {
-              label: 'iota-sdk',
+              label: 'IOTA SDK',
               type: 'link',
               href: '/iota-sdk/welcome',
             },
