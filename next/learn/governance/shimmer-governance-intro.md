@@ -17,7 +17,7 @@ The Shimmer community, supported by the IOTA Foundation, has developed a Governa
 
 **2. The official IOTA/Shimmer [Governance forum](https://govern.iota.org)**- Here is the place for specific discussions about proposals. It is the first stage of reaching community consensus on proposed changes through soft consensus polling in the forum.
 
-**3. Fully utilized decentralized and immutable On-Chain Governance** voting functionality integrated into the [Firefly Shimmer Wallet](https://firefly.iota.org/) and the [Hornet Nodes](/hornet/welcome). This allows every SMR Token holder to make decisions in the SMR network based on proposals passed through the forum's governance process. Voting is a protocol feature of L1, so no Smart Contracts are needed for this type of voting.
+**3. Fully utilized decentralized and immutable On-Chain Governance [voting functionality](./governance-tech.md)** integrated into the [Firefly Shimmer Wallet](https://firefly.iota.org/) and the [Hornet Nodes](/develop/what-is-shimmer/nodes/hornet). This allows every SMR Token holder to make decisions in the SMR network based on proposals passed through the forum's governance process. Voting is a protocol feature of L1, so no Smart Contracts are needed for this type of voting.
 
 Governance processes in SMR are defined in the **[Shimmer Governance Framework](./the-shimmer-governance-framework.md)**. This framework has been developed by the Community Governance working group in many months of discussions and is the foundational building block of how Governance in SMR works.
 It mainly defines:
@@ -71,6 +71,8 @@ This feature consists of 2 components:
     - **Counting:** Now all participating Nodes are actively counting and accumulating votes on this proposal. The longer a user keeps its tokens actively voting on this proposal. The more votes will be counted for the user. Users can change their voting power and opinions during the counting phase. Still, this change only influences the future count from the time of the change and does not influence the already counted votes of a user on this proposal.
     - **Ended:** The Proposal counting is over, and the final vote result is displayed.
 
+A detailed technical description of this voting funftionality can be found in the [Governance - tech](./governance-tech.md) section of the Wiki.
+
 A detailed description on how to participate in Governance votes can be found in the [Firefly Shimmer Governance Guide](./shimmer-firefly-governance-guide.md)
 
 ### Shimmer Governance Ressources
@@ -79,7 +81,7 @@ A detailed description on how to participate in Governance votes can be found in
 - [Shimmer Governance Guide](https://govern.iota.org/t/read-first-shimmer-governance-guide/1406) A short introduction how to use the Governance forum and how to create proposals.
 - [Firefly Handbook](https://iotaledger.github.io/firefly/specifications/governance/) A short definition and explainer of the Firefly Governance functions
 - [YouTube Playlist](https://youtube.com/playlist?list=PL5joP0FyJQU4eKPWfQWradNVjMIPq86ID) with recording of all Governance meetings.
-- [Meeting minutes](https://www.shimmergov.community/governance-and-treasury-minutes) of all governance meetings collected on a community-driven website.
+- [Meeting minutes](https://www.tangletreasury.org/governance-and-treasury-minutes) of all governance meetings collected on a community-driven website.
 - [Shimmer Governance](https://twitter.com/ShimmerGov) Twitter account of the Governance working group.
 - [Shimmer Governance](https://github.com/iota-community/Shimmer-Governance) Github Repo for the Shimmer Governance system.
 - [INX Participation](https://github.com/iotaledger/inx-participation) Github Repo for the INX Participation Node Plugin that counts the votes.

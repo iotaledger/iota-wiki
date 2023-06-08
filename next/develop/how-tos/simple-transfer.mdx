@@ -1,0 +1,67 @@
+---
+image: /img/iota-wiki.png
+description: 'Learn how to transfer funds to an address on the Shimmer network using Basic Outputs, Unlock Conditions, and Address Unlock Conditions.'
+keywords:
+  - Shimmer
+  - Transfer
+  - Funds
+  - Address
+  - Basic Output
+  - Unlock Condition
+  - Address Unlock Condition
+  - IOTA Stardust
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Transfer Funds to an Address
+
+A simple transaction moves funds from one user account to another. On a high level, a transaction must define 3 things:
+
+- **Inputs**: previously created unspent transaction outputs holding funds that the transaction consumes.
+- **Unlock Blocks**: they hold the signatures authorizing the consumption of inputs.
+- **Outputs**: newly created outputs holding transferred funds.
+
+In Stardust, you can create a simple transfer using a [Basic Output](https://wiki.iota.org/shimmer/tips/tips/TIP-0018#basic-output).
+Basic Outputs define the base token funds they hold in the _Amount_ field.
+
+## Add the Recipient Address
+
+Basic Outputs need to have at least one
+[Unlock Condition](https://wiki.iota.org/shimmer/tips/tips/TIP-0018#unlock-conditions): the
+[Address Unlock Condition](https://wiki.iota.org/shimmer/tips/tips/TIP-0018#address-unlock-condition).
+This means that to unlock the output in a transaction, you have to present a valid signature for the recipient's address.
+The signature signs the whole transaction content, thereby authorizing the consumption of inputs and declaring the
+intention to create new outputs.
+
+The figure below shows transaction A, which:
+
+1. Consumes as input a _Basic Output_ with _100i_ locked under _ownerAddress_,
+2. Provides an _Unlock_, namely a _Signature Unlock_ that contains a valid signature of the transaction content corresponding
+   to the private key behind _ownerAddress_,
+3. Creates a new _Basic Output_ with _100i_ locked under the recipient's address, namely _recipientAddress_.
+
+![Transaction A - Changing Owner](/img/stardust_explanations/stardust_ledger_anatomy/simple_transaction/tx_A.svg)
+
+## Related How-to Guides
+
+<Tabs groupId={'libraries'}>
+<TabItem value="wallet.rs" label="wallet.rs" >
+
+- [Send a Transaction](https://wiki.iota.org/shimmer/wallet.rs/how_tos/outputs_and_transactions/send_transaction/)
+
+</TabItem>
+<TabItem value="iota.rs" label="iota.rs">
+
+- [Build a Basic Output](https://wiki.iota.org/shimmer/iota.rs/how_tos/build_output/)
+- [Send a Transaction](https://wiki.iota.org/shimmer/iota.rs/how_tos/prepare_sign_transaction/)
+
+</TabItem>
+<TabItem value="iota.js" label="iota.js">
+
+- [Send a Transaction](https://wiki.iota.org/shimmer/iotajs/how_tos/transaction/)
+- [Value Transaction Tutorial](https://wiki.iota.org/shimmer/iotajs/tutorials/value-transactions/introduction/)
+
+</TabItem>
+</Tabs>

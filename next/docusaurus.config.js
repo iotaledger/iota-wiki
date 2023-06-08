@@ -35,9 +35,14 @@ module.exports = {
         },
         {
           label: 'Develop',
-          to: '/develop/welcome',
+          to: '/develop/explanations/what-is-shimmer/introduction',
+          activeBaseRegex: '^(/[^/]+)?/develop.*|' + '^(/[^/]+)?/tutorials*',
+        },
+        {
+          label: 'Documentation',
+          to: '/develop/docs',
           activeBaseRegex:
-            '^(/[^/]+)?/develop.*|' +
+            '^(/[^/]+)?/develop/docs|' +
             '^(/[^/]+)?/smart-contracts/.*|' +
             '^(/[^/]+)?/iota.rs/.*|' +
             '^(/[^/]+)?/iotajs/.*|' +
@@ -48,7 +53,7 @@ module.exports = {
             '^(/[^/]+)?/chronicle/.*|' +
             '^(/[^/]+)?/introduction/.*|' +
             '^(/[^/]+)?/identity.rs/.*|' +
-            '^(/[^/]+)?/tutorials*',
+            '^(/[^/]+)?/tips*',
         },
         {
           label: 'Community',

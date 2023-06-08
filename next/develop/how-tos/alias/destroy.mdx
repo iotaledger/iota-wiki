@@ -1,0 +1,34 @@
+---
+image: /img/iota-wiki.png
+description: 'Understand the process of destroying an alias in the IOTA Stardust protocol and the implications of such an action.'
+keywords:
+  - IOTA Stardust
+  - Destroy Alias
+  - Storage Deposit
+  - Governance Transition
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Destroy an Alias
+
+When an alias is destroyed, the storage deposit is refunded to a governor defined address. Keep in mind that once the
+alias is destroyed, any funds locked in the ledger in outputs that belong to the alias address (derived from _Alias ID_)
+are essentially lost, as it is not possible to unlock them.
+
+## Example Transaction
+
+Transaction D shows a governance transition that destroys the alias.
+
+![Transaction D - Destroying an alias](/img/stardust_explanations/stardust_ledger_anatomy/alias_transaction/tx_D.svg)
+
+## Related How-To Guides
+
+<Tabs groupId={'libraries'}>
+<TabItem value="wallet.rs" label="wallet.rs" >
+
+- [Destroy an Alias Output](https://wiki.iota.org/shimmer/wallet.rs/how_tos/native_tokens/destroy_alias_output/)
+
+</TabItem>
+</Tabs>

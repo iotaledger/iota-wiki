@@ -40,7 +40,7 @@ There are two ways to interact with IOTA Smart Contracts:
 - [On-ledger](/smart-contracts/guide/core_concepts/invocation#on-ledger): Requests to the smart contract are transactions on the Tangle.
 - [Off-ledger](/smart-contracts/guide/core_concepts/invocation#off-ledger): The requests are sent using an API call to a Wasp node.
 
-You can [configure your Wasp node's API URL](/smart-contracts/guide/chains_and_nodes/running-a-node#web-api), or use the [public Wasp REST API](https://api.wasp.sc.iota.org/doc).
+You can [configure your Wasp node's API URL](/smart-contracts/guide/chains_and_nodes/running-a-node#web-api), or use the [public Wasp REST API](https://wiki.iota.org/shimmer/smart-contracts/guide/chains_and_nodes/testnet/#endpoints).
 
 ## Examples
 
@@ -53,7 +53,7 @@ There are several different example applications deployed on the [public test-ne
 The [Fair roulette example](/smart-contracts/guide/example_projects/fair_roulette) is a simple betting game in which players can bet on a number within a certain range.
 
 - Play with the [Live Demo](https://demo.sc.iota.org/).
-- Discover the [Code Repository](https://github.com/iotaledger/wasp/tree/roulette_poc/contracts/rust/fairroulette).
+- Discover the [Code Repository](https://github.com/iotaledger/wasp/tree/develop/contracts/wasm/fairroulette).
 
 More examples for Wasm Smart Contracts written in Rust and Go (TinyGo) can be found in the [Wasp code repository](https://github.com/iotaledger/wasp/tree/master/contracts/wasm).
 
