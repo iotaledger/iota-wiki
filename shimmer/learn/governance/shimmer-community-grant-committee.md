@@ -216,7 +216,7 @@ The teams must provide the following details in an [**application questionnaire 
 
 **This does not imply that automatically such an offer will lead to granting the extra points. Granting these additional points is decided on a case by case basis.**
 
-[**JD Sutton has built a Notion Database for this selection process**](https://airtable.com/shrvZgn3NVsXLTXev/tblAzVWXeTSvUyZI3)
+[**JD Sutton has built the Tangle Treasury website for the selection process**](https://www.tangletreasury.org/proposals)
 
 The scoring system is a guideline for reviewers. We understand that it may only sometimes apply to some kinds of projects.
 
