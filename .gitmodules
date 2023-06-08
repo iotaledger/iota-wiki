@@ -230,3 +230,15 @@
 	path = shimmer/external/inx-irc-metadata
 	url = https://github.com/iotaledger/inx-irc-metadata
 	branch = develop
+[submodule "next/external/inx-api-core-v0"]
+	path = next/external/inx-api-core-v0
+	url = https://github.com/iotaledger/inx-api-core-v0
+	branch = develop
+[submodule "next/external/inx-api-core-v1"]
+	path = next/external/inx-api-core-v1
+	url = https://github.com/iotaledger/inx-api-core-v1
+	branch = develop
+[submodule "next/external/inx-irc-metadata"]
+	path = next/external/inx-irc-metadata
+	url = https://github.com/iotaledger/inx-irc-metadata
+	branch = develop
