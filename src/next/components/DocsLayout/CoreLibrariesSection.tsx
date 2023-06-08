@@ -43,7 +43,7 @@ const LibrariesSection: FC = () => (
             }}
           />
         </div>
-        <h3 className='nodes__header'>Client</h3>
+        <h3 className='nodes__header'>IOTA SDK</h3>
         <ul className='nodes__features'>
           <li className='nodes__feature'>
             <Link to='/iota-sdk/how_tos/accounts_and_addresses/create_address'>
