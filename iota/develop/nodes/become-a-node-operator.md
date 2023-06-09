@@ -38,7 +38,7 @@ Attackers can abuse any open ports on your device. To secure your device against
 
 ## Choosing a Node Software
 
-To join an IOTA network, you need to run one of the available node softwares. For a description of each node software as well as links to guides and tutorials for running them, see [Node software](./node-software).
+To join an IOTA network, you need to run one of the available node software. For a description of each node software as well as links to guides and tutorials for running them, see [Node software](https://wiki.iota.org/develop/nodes/node-software).
 
 ## Enable Remote Proof of Work
 

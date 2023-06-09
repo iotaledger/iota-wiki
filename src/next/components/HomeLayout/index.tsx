@@ -189,7 +189,7 @@ export default function HomeLayout() {
                     </Link>
                   </li>
                   <li className='nodes__feature'>
-                    <Link to='/smart-contracts/guide/chains_and_nodes/docker_standalone'>
+                    <Link to='/smart-contracts/guide/chains_and_nodes/running-a-node'>
                       Run the Shimmer Smart Contract Protocol
                     </Link>
                   </li>

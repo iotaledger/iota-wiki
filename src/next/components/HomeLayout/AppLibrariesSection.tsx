@@ -53,8 +53,8 @@ const LibrariesSection: FC = () => (
             </Link>
           </li>
           <li className='libraries__feature'>
-            <Link to='/stronghold.rs/explanations/p2p'>
-              Peer to peer communication
+            <Link to='/stronghold.rs/explanations/non-contiguous-data-types'>
+              Learn about non-contiguous data types
             </Link>
           </li>
         </ul>
