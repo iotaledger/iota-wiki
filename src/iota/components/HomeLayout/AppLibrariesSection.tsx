@@ -79,19 +79,19 @@ const LibrariesSection: FC = () => (
           </div>
           <Languages
             languages={{
-              Rust: '/streams/libraries/rust/getting_started/',
+              Rust: '/streams/libraries/rust/getting_started',
             }}
           />
         </div>
         <h3 className='libraries__header'>Streams</h3>
         <ul className='libraries__features'>
           <li className='libraries__feature'>
-            <Link to='/streams/getting_started/'>
+            <Link to='/streams/getting_started'>
               Organize and share data securely
             </Link>
           </li>
           <li className='libraries__feature'>
-            <Link to='/streams/specs/'>Read the specification</Link>
+            <Link to='/streams/specs'>Read the specification</Link>
           </li>
         </ul>
         <Link
