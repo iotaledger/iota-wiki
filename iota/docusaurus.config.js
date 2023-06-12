@@ -287,6 +287,19 @@ module.exports = async () => {
           },
         },
       ],
+      [
+        '@docusaurus/plugin-content-docs',
+        {
+            id: 'blueprints',
+            path: path.resolve(__dirname, 'external/blueprints'),
+            routeBasePath: 'blueprints',
+            sidebarPath: require.resolve('./external/blueprints/sidebars.js'),
+            editUrl: 'https://github.com/iota-wiki/iota-wiki/edit/main/',
+        }
+      ]
+    ],
+    staticDirectories: [
+      path.resolve(__dirname, 'external/blueprints/static'),
     ],
   };
 };
