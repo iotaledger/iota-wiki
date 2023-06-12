@@ -1,0 +1,64 @@
+---
+title: Request Funds
+description: 'How to programmatically request testnet funds.'
+image: /img/logo/iota_mark_light.png
+keywords:
+- how to
+- faucet
+- testnet
+- test funds
+- nodejs
+- python
+- rust
+---
+
+import CodeBlock from '@theme/CodeBlock';
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import TipFaucet from "../../_admonitions/_tip_faucet.md";
+
+Once you have [created your account](../accounts_and_addresses/create_account.mdx),
+you can start using the IOTA SDK for value transactions. Since these examples target the testnet, you can request funds
+using the `request_funds_from_faucet` function.
+
+<TipFaucet/>
+
+## Code Example
+
+The following example will:
+
+1. Create a wallet.
+2. Get Alice's account which was [created in the first guide](../accounts_and_addresses/create_account.mdx).
+3. Retrieve an address related to Alice's account.
+4. Request funds to the `FAUCET_URL` you defined in the `.env` file.
+
+<Tabs groupId="language">
+<TabItem value="rust" label="Rust">
+
+```rust reference
+https://github.com/iotaledger/iota-sdk/tree/develop/sdk/examples/how_tos/simple_transaction/request_funds.rs
+```
+
+</TabItem>
+<TabItem value="nodejs" label="Nodejs">
+
+```typescript reference
+https://github.com/iotaledger/iota-sdk/tree/develop/bindings/nodejs/examples/how_tos/simple_transaction/request_funds.ts
+```
+
+</TabItem>
+<TabItem value="python" label="Python">
+
+```python reference
+https://github.com/iotaledger/iota-sdk/tree/develop/bindings/python/examples/how_tos/simple_transaction/request_funds.py
+```
+
+</TabItem>
+</Tabs>
+
+## Expected Output
+
+```plaintext
+rms1qpjt6zr7rfvl27le5xjcv0qhr90l92wtm6eu6v6jhtgvrjp7mwufq6nqxn8
+{"address":"rms1qpjt6zr7rfvl27le5xjcv0qhr90l92wtm6eu6v6jhtgvrjp7mwufq6nqxn8","waitingRequests":11}
+```

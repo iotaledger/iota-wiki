@@ -265,5 +265,39 @@ module.exports = {
         },
       },
     ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'iota-sdk',
+        path: path.resolve(__dirname, 'external/iota-sdk/docs'),
+        routeBasePath: 'iota-sdk',
+        sidebarPath: require.resolve('./external/iota-sdk/sidebars.js'),
+        editUrl: 'https://github.com/iota-wiki/iota-wiki/edit/main/',
+        remarkPlugins: [require('remark-code-import'), require('remark-import-partial')],
+        //overriding default exclude array to include the python api's classes with _ at the beginning
+        //but still exclude any _admonitions
+        exclude: [
+          // '**/_*.{js,jsx,ts,tsx,md}',
+          // '**/_*/**',
+          '**/*.test.{js,jsx,ts,tsx}',
+          '**/__tests__/**',
+          '**/_admonitions/_**',
+        ],
+      }
+    ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+          id: 'cli-wallet',
+          path: path.resolve(__dirname, 'external/cli-wallet/docs'),
+          routeBasePath: 'cli-wallet',
+          sidebarPath: require.resolve('./external/cli-wallet/sidebars.js'),
+          editUrl: 'https://github.com/iota-wiki/iota-wiki/edit/main/',
+      }
+    ],
+  ],
+  staticDirectories: [
+    path.resolve(__dirname, 'external/iota-sdk/static'),
+    path.resolve(__dirname, 'external/cli-wallet/static'),
   ],
 };

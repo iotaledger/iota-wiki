@@ -238,7 +238,3 @@
 	path = next/external/inx-irc-metadata
 	url = https://github.com/iotaledger/inx-irc-metadata
 	branch = develop
-[submodule "next/external/iota-sdk"]
-	path = next/external/iota-sdk
-	url = https://github.com/iotaledger/iota-sdk
-	branch = develop

@@ -2509,6 +2509,7 @@ __metadata:
     "@iota-wiki/plugin-tutorial": "workspace:^"
     "@mdx-js/react": ^1.6.21
     "@popperjs/core": ^2.11.5
+    "@saucelabs/theme-github-codeblock": ^0.2.3
     "@svgr/webpack": ^5.5.0
     "@tsconfig/docusaurus": ^1.0.6
     "@types/react": 17.0.2
@@ -2963,6 +2964,13 @@ __metadata:
     react-redux:
       optional: true
   checksum: e6700a0d45198ab525c96ff0425fa0125fbdc37ce514f0c77c30225837113279ceec9190ac3da35cb20e77553e56342021788bbf17465819068c4db34cb3d87f
+  languageName: node
+  linkType: hard
+
+"@saucelabs/theme-github-codeblock@npm:^0.2.3":
+  version: 0.2.3
+  resolution: "@saucelabs/theme-github-codeblock@npm:0.2.3"
+  checksum: e34fb0909486aa7e374124197c606ffea9c2a73bd8ce320ea06817ded24669d9500dad8762abcbfdb8787f8d9c7f4f393446139ae1a8906c6d5177986ae95cb4
   languageName: node
   linkType: hard
 
