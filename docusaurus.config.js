@@ -21,7 +21,7 @@ module.exports = async () => {
   const externalPathPatterns = EXTERNAL.split(',')
     .map((pathPattern) => pathPattern.trim())
     .filter((pathPattern) => pathPattern !== '');
-  const externalDirectory = path.join(ENVIRONMENT, 'external');
+  const externalDirectory = path.join(ENVIRONMENT, 'docs');
   const external = await glob(externalPathPatterns, externalDirectory);
 
   const internal = await glob(['tutorials', 'common', ENVIRONMENT]);
