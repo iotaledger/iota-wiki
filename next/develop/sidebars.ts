@@ -265,19 +265,9 @@ module.exports = {
           collapsed: true,
           items: [
             {
-              label: 'iota.rs',
+              label: 'IOTA SDK',
               type: 'link',
-              href: '/iota.rs/welcome',
-            },
-            {
-              label: 'wallet.rs',
-              type: 'link',
-              href: '/wallet.rs/welcome',
-            },
-            {
-              label: 'Client Typescript',
-              type: 'link',
-              href: '/iotajs/welcome',
+              href: '/iota-sdk/welcome',
             },
             {
               label: 'Identity',
