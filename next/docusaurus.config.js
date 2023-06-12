@@ -104,7 +104,7 @@ module.exports = {
             },
             {
               label: 'Nodes',
-              to: '/develop/nodes/about-nodes',
+              to: '/develop/explanations/what-is-shimmer/nodes/about-nodes',
             },
             {
               label: 'Wasp',

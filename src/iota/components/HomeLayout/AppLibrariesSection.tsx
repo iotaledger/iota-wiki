@@ -48,17 +48,17 @@ const LibrariesSection: FC = () => (
         <h3 className='libraries__header'>Identity</h3>
         <ul className='libraries__features'>
           <li className='libraries__feature'>
-            <Link to='/identity.rs/develop/decentralized_identity'>
+            <Link to='/identity.rs/decentralized_identity'>
               Decentralized Identities (SSI)
             </Link>
           </li>
           <li className='libraries__feature'>
-            <Link to='/identity.rs/develop/concepts/decentralized_identifiers/overview'>
+            <Link to='/identity.rs/concepts/decentralized_identifiers/overview'>
               Decentralized Identifiers (DID)
             </Link>
           </li>
           <li className='libraries__feature'>
-            <Link to='/identity.rs/develop/concepts/verifiable_credentials/overview'>
+            <Link to='/identity.rs/concepts/verifiable_credentials/overview'>
               Verifiable Credentials (VC)
             </Link>
           </li>
@@ -79,26 +79,19 @@ const LibrariesSection: FC = () => (
           </div>
           <Languages
             languages={{
-              Rust: '/streams/getting_started/rust_getting_started',
-              WASM: '/streams/getting_started/wasm_getting_started',
-              C: '/streams/getting_started/c_getting_started',
+              Rust: '/streams/libraries/rust/getting_started',
             }}
           />
         </div>
         <h3 className='libraries__header'>Streams</h3>
         <ul className='libraries__features'>
           <li className='libraries__feature'>
-            <Link to='/streams/getting_started/overview'>
+            <Link to='/streams/getting_started'>
               Organize and share data securely
             </Link>
           </li>
           <li className='libraries__feature'>
-            <Link to='/streams/reference/specs'>Read the specification</Link>
-          </li>
-          <li className='libraries__feature'>
-            <Link to='/streams/explanations/channels_protocol/overview'>
-              Control the ownership of data
-            </Link>
+            <Link to='/streams/specs'>Read the specification</Link>
           </li>
         </ul>
         <Link
@@ -134,8 +127,8 @@ const LibrariesSection: FC = () => (
             </Link>
           </li>
           <li className='libraries__feature'>
-            <Link to='/stronghold.rs/explanations/p2p'>
-              Peer to peer communication
+            <Link to='/stronghold.rs/explanations/non-contiguous-data-types'>
+              Learn about non-contiguous data types
             </Link>
           </li>
         </ul>

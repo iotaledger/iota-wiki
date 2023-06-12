@@ -29,7 +29,7 @@ It follows the following steps:
 - 4.) Your funds become available on the new network on the EdDSA address Firefly created for you.
 - 5.) Your funds are successfully migrated.
 
-The technical details are explained in the [chrysalis documentation](introduction/explanations/update/migration_mechanism)
+The technical details are explained in the [chrysalis documentation](/introduction/explanations/update/migration_mechanism)
 
 Exact guides how to migrate your funds are located here:
 
