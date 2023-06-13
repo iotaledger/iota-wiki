@@ -434,7 +434,7 @@ module.exports = async () => {
       [
         '@docusaurus/plugin-content-docs',
         {
-          id: 'iota-tips',
+          id: 'iota-tips-iota',
           path: path.resolve(__dirname, 'external/tips'),
           routeBasePath: 'tips',
           editUrl: 'https://github.com/iotaledger/tips/edit/main/',
