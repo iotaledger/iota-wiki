@@ -290,21 +290,7 @@ module.exports = async () => {
           },
         },
       ],
-      [
-        '@docusaurus/plugin-content-docs',
-        {
-          id: 'blueprints-iota',
-          path: path.resolve(__dirname, 'external/blueprints/'),
-          routeBasePath: 'blueprints',
-          sidebarPath: path.resolve(
-            __dirname,
-            'external/blueprints/sidebars.js',
-          ),
-          editUrl: 'https://github.com/iotaledger/blueprints/edit/main',
-          include: ['**.md'],
-          exclude: ['README.md', 'node_modules'],
-        },
-      ],
+
 
       [
         '@docusaurus/plugin-content-docs',
