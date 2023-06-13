@@ -1,0 +1,2823 @@
+openapi: 3.0.3
+info:
+  title: IOTA REST API
+  description: This document specifies the REST API for IOTA node software.
+  contact:
+    email: contact@iota.org
+  license:
+    name: Apache 2.0
+    url: 'http://www.apache.org/licenses/LICENSE-2.0.html'
+  version: 1.0.0
+externalDocs:
+  description: Find out more about IOTA
+  url: 'https://iota.org'
+servers:
+  - url: 'http://127.0.0.1:14265'
+tags:
+  - name: node
+    description: Everything about the node itself.
+  - name: tangle
+    description: Everything about the tangle itself.
+  - name: messages
+    description: Everything about messages.
+  - name: UTXO
+    description: Everything about UTXOs.
+  - name: milestones
+    description: Everything about milestones.
+  - name: peers
+    description: Everything about the peers of the node.
+paths:
+  /health:
+    get:
+      tags:
+        - node
+      summary: Returns the health of the node.
+      description: >-
+        Returns the health of the node. A node considers itself healthy if its solid
+        milestone is at most two delta away from the latest known milestone, has at
+        least one ongoing gossip stream and the latest known milestone is newer
+        than 5 minutes. This information might be useful for load-balancing
+        or uptime monitoring.
+      responses:
+        '200':
+          description: "Successful operation: indicates that the node is healthy."
+        '403':
+          description: "Unsuccessful operation: indicates that the endpoint is not available for public use."
+        '500':
+          description: "Unsuccessful operation: indicates that an unexpected, internal server error happened which prevented the node from fulfilling the request."
+        '503':
+          description: "Unsuccessful operation: indicates that the node isn´t healthy."
+  /api/v1/info:
+    get:
+      tags:
+        - node
+      summary: Returns general information about the node.
+      description: Returns general information about the node.
+      responses:
+        '200':
+          description: "Successful operation."
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InfoResponse'
+              examples:
+                default:
+                  $ref: '#/components/examples/get-info-response-example'
+        '403':
+          description: "Unsuccessful operation: indicates that the endpoint is not available for public use."
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ForbiddenResponse'
+        '500':
+          description: "Unsuccessful operation: indicates that an unexpected, internal server error happened which prevented the node from fulfilling the request."
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalErrorResponse'
+  /api/v1/tips:
+    get:
+      tags:
+        - tangle
+      summary: Returns tips that are ideal for attaching a message.
+      description: >-
+        Returns tips that are ideal for attaching a message. The tips can be considered as `non-lazy` and are therefore ideal for attaching a message.
+      responses:
+        '200':
+          description: "Successful operation."
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TipsResponse'
+              examples:
+                default:
+                  $ref: '#/components/examples/get-tips-response-example'
+        '403':
+          description: "Unsuccessful operation: indicates that the endpoint is not available for public use."
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ForbiddenResponse'
+        '500':
+          description: "Unsuccessful operation: indicates that an unexpected, internal server error happened which prevented the node from fulfilling the request."
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalErrorResponse'
+        '503':
+          description: "Unsuccessful operation: indicates that there are no tips available or the node isn´t synced."
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ServiceUnavailableResponse'
+  /api/v1/messages:
+    post:
+      tags:
+        - messages
+      summary: Submit a message.
+      description: >-
+        Submit a message. The node takes care of missing* fields and tries to
+        build the message. On success, the message will be stored in the Tangle.
+        This endpoint will return the identifier of the built message. *The
+        node will try to auto-fill the following fields in case they are
+        missing: `networkId`, `parentMessageIds`, `nonce`.
+        If `payload` is missing, the message will be built without a payload.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SubmitMessageRequest'
+            examples:
+              Full message with Indexation Payload:
+                $ref: >-
+                  #/components/examples/post-indexation-message-request-example-full
+              Minimal Message with Indexation Payload:
+                $ref: >-
+                  #/components/examples/post-indexation-message-request-example-minimal
+              Full message with Transaction Payload:
+                $ref: >-
+                  #/components/examples/post-transaction-message-request-example-full
+              Minimal Message with Transaction Payload:
+                $ref: >-
+                  #/components/examples/post-transaction-message-request-example-minimal
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+              description: message in raw binary format
+        required: true
+      responses:
+        '201':
+          description: "Successful operation."
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SubmitMessageResponse'
+              examples:
+                default:
+                  $ref: '#/components/examples/post-messages-response-example'
+        '400':
+          description: "Unsuccessful operation: indicates that the provided data is invalid."
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequestResponse'
+        '403':
+          description: "Unsuccessful operation: indicates that the endpoint is not available for public use."
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ForbiddenResponse'
+        '500':
+          description: "Unsuccessful operation: indicates that an unexpected, internal server error happened which prevented the node from fulfilling the request."
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalErrorResponse'
+        '503':
+          description: "Unsuccessful operation: indicates that the node can´t auto-fill the parents or perform Proof-of-Work."
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ServiceUnavailableResponse'
+    get:
+      tags:
+        - messages
+      summary: Search for messages matching a given indexation key.
+      description: Search for messages matching a given indexation key.
+      parameters:
+        - in: query
+          name: index
+          schema:
+            type: string
+          example: 68656c6c6f20776f726c64
+          required: true
+          description: Hex-encoded indexation key that should be searched for.
+      responses:
+        '200':
+          description: "Successful operation."
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessagesFindResponse'
+              examples:
+                default:
+                  $ref: '#/components/examples/get-messages-by-index-response-example'
+        '400':
+          description: "Unsuccessful operation: indicates that the provided data is invalid."
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequestResponse'
+        '403':
+          description: "Unsuccessful operation: indicates that the endpoint is not available for public use."
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ForbiddenResponse'
+        '500':
+          description: "Unsuccessful operation: indicates that an unexpected, internal server error happened which prevented the node from fulfilling the request."
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalErrorResponse'
+  '/api/v1/messages/{messageId}':
+    get:
+      tags:
+        - messages
+      summary: Returns message data as JSON by its identifier.
+      description: >-
+        Find a message by its identifer. This endpoint returns the given message
+        as JSON.
+      parameters:
+        - in: path
+          name: messageId
+          schema:
+            type: string
+          example: f532a53545103276b46876c473846d98648ee418468bce76df4868648dd73e5d
+          required: true
+          description: Identifier of the message.
+      responses:
+        '200':
+          description: "Successful operation."
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageResponse'
+              examples:
+                Empty Payload:
+                  $ref: >-
+                    #/components/examples/get-message-by-id-empty-response-example
+                Transaction Payload:
+                  $ref: >-
+                    #/components/examples/get-message-by-id-transaction-response-example
+                Milestone Payload:
+                  $ref: >-
+                    #/components/examples/get-message-by-id-milestone-response-example
+                Indexation Payload:
+                  $ref: >-
+                    #/components/examples/get-message-by-id-indexation-response-example
+        '400':
+          description: "Unsuccessful operation: indicates that the provided data is invalid."
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequestResponse'
+        '403':
+          description: "Unsuccessful operation: indicates that the endpoint is not available for public use."
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ForbiddenResponse'
+        '404':
+          description: "Unsuccessful operation: indicates that the requested data was not found."
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFoundResponse'
+        '500':
+          description: "Unsuccessful operation: indicates that an unexpected, internal server error happened which prevented the node from fulfilling the request."
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalErrorResponse'
+  '/api/v1/messages/{messageId}/metadata':
+    get:
+      tags:
+        - messages
+      summary: Find the metadata of a given message.
+      description: >-
+        Find the metadata of a given message.
+      parameters:
+        - in: path
+          name: messageId
+          schema:
+            type: string
+          example: f532a53545103276b46876c473846d98648ee418468bce76df4868648dd73e5d
+          required: true
+          description: Identifier of the message.
+      responses:
+        '200':
+          description: "Successful operation."
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageMetadataResponse'
+              examples:
+                New Message:
+                  $ref: '#/components/examples/get-message-by-id-response-example-new'
+                Solid:
+                  $ref: >-
+                    #/components/examples/get-message-by-id-response-example-solid
+                Included:
+                  $ref: >-
+                    #/components/examples/get-message-by-id-response-example-included
+                Conflicting:
+                  $ref: >-
+                    #/components/examples/get-message-by-id-response-example-conflicting
+        '400':
+          description: "Unsuccessful operation: indicates that the provided data is invalid."
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequestResponse'
+        '403':
+          description: "Unsuccessful operation: indicates that the endpoint is not available for public use."
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ForbiddenResponse'
+        '404':
+          description: "Unsuccessful operation: indicates that the requested data was not found."
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFoundResponse'
+        '500':
+          description: "Unsuccessful operation: indicates that an unexpected, internal server error happened which prevented the node from fulfilling the request."
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalErrorResponse'
+        '503':
+          description: "Unsuccessful operation: indicates that the node is not synced."
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ServiceUnavailableResponse'
+  '/api/v1/messages/{messageId}/raw':
+    get:
+      tags:
+        - messages
+      summary: Returns message raw bytes by its identifier.
+      description: >-
+        Find a message by its identifer. This endpoint returns the given message
+        raw data.
+      parameters:
+        - in: path
+          name: messageId
+          schema:
+            type: string
+          example: f532a53545103276b46876c473846d98648ee418468bce76df4868648dd73e5d
+          required: true
+          description: Identifier of the message.
+      responses:
+        '200':
+          description: "Successful operation."
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+              example: >-
+                0100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000eb000000000000000000000001000000000000000000000000000000000000000000000000000000000000000000000000020000016920b176f613ec7be59e68fc68f597eb3393af80f74c7c3db78198147d5f1f92640000000000000000018afe1f314622cc1ef52f16d619d1baccff81816b7e4e35fe268dc247b730acd65d5d2dd3f7df09000000000001000001f7868ab6bb55800b77b8b74191ad8285a9bf428ace579d541fda47661803ff44e0af5c34ad4edf475a01fb46e089a7afcab158b4a0133f32e889083e1c77eef65548933e0c6d2c3b0ac006cd77e77d778bf37b8d38d219fb62a9a2f718d4c9095100000000000000
+        '400':
+          description: "Unsuccessful operation: indicates that the provided data is invalid."
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequestResponse'
+        '403':
+          description: "Unsuccessful operation: indicates that the endpoint is not available for public use."
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ForbiddenResponse'
+        '404':
+          description: "Unsuccessful operation: indicates that the requested data was not found."
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFoundResponse'
+        '500':
+          description: "Unsuccessful operation: indicates that an unexpected, internal server error happened which prevented the node from fulfilling the request."
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalErrorResponse'
+  '/api/v1/messages/{messageId}/children':
+    get:
+      tags:
+        - messages
+      summary: Returns the children of a message.
+      description: Returns the children of a message.
+      parameters:
+        - in: path
+          name: messageId
+          schema:
+            type: string
+          example: f532a53545103276b46876c473846d98648ee418468bce76df4868648dd73e5d
+          required: true
+          description: Identifier of the message.
+      responses:
+        '200':
+          description: "Successful operation."
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageChildrenResponse'
+              examples:
+                Children were found:
+                  $ref: >-
+                    #/components/examples/get-messages-by-id-response-example-children
+                No children were found:
+                  $ref: >-
+                    #/components/examples/get-messages-by-id-response-example-nochildren
+        '400':
+          description: "Unsuccessful operation: indicates that the provided data is invalid."
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequestResponse'
+        '403':
+          description: "Unsuccessful operation: indicates that the endpoint is not available for public use."
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ForbiddenResponse'
+        '500':
+          description: "Unsuccessful operation: indicates that an unexpected, internal server error happened which prevented the node from fulfilling the request."
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalErrorResponse'
+  '/api/v1/outputs/{outputId}':
+    get:
+      tags:
+        - UTXO
+      summary: Find an output by its identifier.
+      description: Find an output by its identifier.
+      parameters:
+        - in: path
+          name: outputId
+          schema:
+            type: string
+          required: true
+          description: >-
+            Identifier of the output encoded in hex. An output is identified by
+            the concatenation of `transaction_id+output_index`.
+      responses:
+        '200':
+          description: "Successful operation."
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OutputResponse'
+              examples:
+                unspent:
+                  $ref: '#/components/examples/get-outputs-by-id-response-unspent-example'
+                spent:
+                  $ref: '#/components/examples/get-outputs-by-id-response-spent-example'
+        '400':
+          description: "Unsuccessful operation: indicates that the provided data is invalid."
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequestResponse'
+        '403':
+          description: "Unsuccessful operation: indicates that the endpoint is not available for public use."
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ForbiddenResponse'
+        '404':
+          description: "Unsuccessful operation: indicates that the requested data was not found."
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFoundResponse'
+        '500':
+          description: "Unsuccessful operation: indicates that an unexpected, internal server error happened which prevented the node from fulfilling the request."
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalErrorResponse'
+  '/api/v1/addresses/{address}':
+    get:
+      tags:
+        - UTXO
+      summary: Get the balance of a bech32-encoded address.
+      description: >-
+        Get the balance of a bech32-encoded address.
+      parameters:
+        - in: path
+          name: address
+          schema:
+            type: string
+          example: iota1qrhacyfwlcnzkvzteumekfkrrwks98mpdm37cj4xx3drvmjvnep6xqgyzyx
+          required: true
+          description: bech32 encoded address
+      responses:
+        '200':
+          description: "Successful operation."
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BalanceAddressResponse'
+              examples:
+                default:
+                  $ref: >-
+                    #/components/examples/get-address-balance-response-example
+        '400':
+          description: "Unsuccessful operation: indicates that the provided data is invalid."
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequestResponse'
+        '403':
+          description: "Unsuccessful operation: indicates that the endpoint is not available for public use."
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ForbiddenResponse'
+        '500':
+          description: "Unsuccessful operation: indicates that an unexpected, internal server error happened which prevented the node from fulfilling the request."
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalErrorResponse'
+        '503':
+          description: "Unsuccessful operation: indicates that the node is not synced."
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ServiceUnavailableResponse'
+
+  '/api/v1/addresses/ed25519/{address}':
+    get:
+      tags:
+        - UTXO
+      summary: Get the balance of a hex-encoded Ed25519 address.
+      description: >-
+        Get the balance of a hex-encoded Ed25519 address.
+      parameters:
+        - in: path
+          name: address
+          schema:
+            type: string
+          example: efdc112efe262b304bcf379b26c31bad029f616ee3ec4aa6345a366e4c9e43a3
+          required: true
+          description: hex-encoded Ed25519 address
+      responses:
+        '200':
+          description: "Successful operation."
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BalanceAddressResponse'
+              examples:
+                default:
+                  $ref: >-
+                    #/components/examples/get-address-balance-response-example
+        '400':
+          description: "Unsuccessful operation: indicates that the provided data is invalid."
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequestResponse'
+        '403':
+          description: "Unsuccessful operation: indicates that the endpoint is not available for public use."
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ForbiddenResponse'
+        '500':
+          description: "Unsuccessful operation: indicates that an unexpected, internal server error happened which prevented the node from fulfilling the request."
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalErrorResponse'
+        '503':
+          description: "Unsuccessful operation: indicates that the node is not synced."
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ServiceUnavailableResponse'
+
+  '/api/v1/addresses/{address}/outputs':
+    get:
+      tags:
+        - UTXO
+      summary: Get all outputs that use a given bech32-encoded address.
+      description: >-
+        Get all outputs that use a given bech32-encoded address. If count equals
+        maxResults, then there might be more outputs available but those were
+        skipped for performance reasons. User should sweep the address to reduce
+        the amount of outputs.
+      parameters:
+        - in: path
+          name: address
+          schema:
+            type: string
+          example: iota1qrhacyfwlcnzkvzteumekfkrrwks98mpdm37cj4xx3drvmjvnep6xqgyzyx
+          required: true
+          description: bech32-encoded address that is referenced by the outputs.
+        - in: query
+          name: include-spent
+          schema:
+            type: boolean
+          example: true
+          required: false
+          description: >-
+            Set to true to also include the known spent outputs for the given
+            address.
+        - in: query
+          name: type
+          schema:
+            type: integer
+          example: 0
+          description: >-
+            Allows to filter the results by output type. Set to value `0` to filter outputs of type `SigLockedSingleOutput`. Set to value `1` to filter outputs of type `SigLockedDustAllowanceOutput`.
+      responses:
+        '200':
+          description: "Successful operation."
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OutputsAddressResponse'
+              examples:
+                default:
+                  $ref: '#/components/examples/get-address-outputs-response-example'
+        '400':
+          description: "Unsuccessful operation: indicates that the provided data is invalid."
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequestResponse'
+        '403':
+          description: "Unsuccessful operation: indicates that the endpoint is not available for public use."
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ForbiddenResponse'
+        '500':
+          description: "Unsuccessful operation: indicates that an unexpected, internal server error happened which prevented the node from fulfilling the request."
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalErrorResponse'
+        '503':
+          description: "Unsuccessful operation: indicates that the node is not synced."
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ServiceUnavailableResponse'
+
+  '/api/v1/addresses/ed25519/{address}/outputs':
+    get:
+      tags:
+        - UTXO
+      summary: Get all outputs that use a given hex-encoded Ed25519 address.
+      description: >-
+        Get all outputs that use a given hex-encoded Ed25519 address. If count
+        equals maxResults, then there might be more outputs available but those
+        were skipped for performance reasons. User should sweep the address to
+        reduce the amount of outputs.
+      parameters:
+        - in: path
+          name: address
+          schema:
+            type: string
+          example: efdc112efe262b304bcf379b26c31bad029f616ee3ec4aa6345a366e4c9e43a3
+          required: true
+          description: hex-encoded Ed25519 address that is referenced by the outputs.
+        - in: query
+          name: include-spent
+          schema:
+            type: boolean
+          example: true
+          required: false
+          description: >-
+            Set to true to also include the known spent outputs for the given
+            address.
+        - in: query
+          name: type
+          schema:
+            type: integer
+          example: 0
+          description: >-
+            Allows to filter the results by output type. Set to value `0` to filter outputs of type `SigLockedSingleOutput`. Set to value `1` to filter outputs of type `SigLockedDustAllowanceOutput`.
+      responses:
+        '200':
+          description: "Successful operation."
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OutputsAddressResponse'
+              examples:
+                default:
+                  $ref: '#/components/examples/get-address-outputs-response-example'
+        '400':
+          description: "Unsuccessful operation: indicates that the provided data is invalid."
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequestResponse'
+        '403':
+          description: "Unsuccessful operation: indicates that the endpoint is not available for public use."
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ForbiddenResponse'
+        '500':
+          description: "Unsuccessful operation: indicates that an unexpected, internal server error happened which prevented the node from fulfilling the request."
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalErrorResponse'
+        '503':
+          description: "Unsuccessful operation: indicates that the node is not synced."
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ServiceUnavailableResponse'
+
+  '/api/v1/receipts':
+    get:
+      tags:
+        - UTXO
+      summary: Returns all stored receipts.
+      description: >-
+        Returns all stored receipts.
+      responses:
+        '200':
+          description: "Successful operation."
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ReceiptsResponse'
+              examples:
+                default:
+                  $ref: '#/components/examples/get-receipts-response-example'
+        '400':
+          description: "Unsuccessful operation: indicates that the provided data is invalid."
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequestResponse'
+        '403':
+          description: "Unsuccessful operation: indicates that the endpoint is not available for public use."
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ForbiddenResponse'
+        '500':
+          description: "Unsuccessful operation: indicates that an unexpected, internal server error happened which prevented the node from fulfilling the request."
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalErrorResponse'
+        '503':
+          description: "Unsuccessful operation: indicates that the node is not synced."
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ServiceUnavailableResponse'
+
+  '/api/v1/receipts/{migratedAt}':
+    get:
+      tags:
+        - UTXO
+      summary: Returns all stored receipts for a given migration index.
+      description: >-
+        Returns all stored receipts for a given migration index.
+      parameters:
+        - in: path
+          name: migratedAt
+          schema:
+            type: number
+          example: 1000
+          required: true
+          description: Migration index to look up.
+      responses:
+        '200':
+          description: "Successful operation."
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ReceiptsResponse'
+              examples:
+                default:
+                  $ref: '#/components/examples/get-receipts-response-example'
+        '400':
+          description: "Unsuccessful operation: indicates that the provided data is invalid."
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequestResponse'
+        '403':
+          description: "Unsuccessful operation: indicates that the endpoint is not available for public use."
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ForbiddenResponse'
+        '500':
+          description: "Unsuccessful operation: indicates that an unexpected, internal server error happened which prevented the node from fulfilling the request."
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalErrorResponse'
+        '503':
+          description: "Unsuccessful operation: indicates that the node is not synced."
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ServiceUnavailableResponse'
+
+
+  '/api/v1/treasury':
+    get:
+      tags:
+        - UTXO
+      summary: Returns information about the treasury.
+      description: >-
+        Returns information about the treasury.
+      responses:
+        '200':
+          description: "Successful operation."
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TreasuryResponse'
+              examples:
+                default:
+                  $ref: '#/components/examples/get-treasury-response-example'
+        '400':
+          description: "Unsuccessful operation: indicates that the provided data is invalid."
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequestResponse'
+        '403':
+          description: "Unsuccessful operation: indicates that the endpoint is not available for public use."
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ForbiddenResponse'
+        '500':
+          description: "Unsuccessful operation: indicates that an unexpected, internal server error happened which prevented the node from fulfilling the request."
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalErrorResponse'
+        '503':
+          description: "Unsuccessful operation: indicates that the node is not synced."
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ServiceUnavailableResponse'
+
+  '/api/v1/transactions/{transactionId}/included-message':
+    get:
+      tags:
+        - UTXO
+      summary: Returns the included message of a transaction.
+      description: Returns the included message of a transaction.
+      parameters:
+        - in: path
+          name: transactionId
+          schema:
+            type: string
+          example: af7579fb57746219561072c2cc0e4d0fbb8d493d075bd21bf25ae81a450c11ef
+          required: true
+          description: Identifier of the transaction to look up.
+      responses:
+        '200':
+          description: "Successful operation."
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageResponse'
+              examples:
+                default:
+                  $ref: '#/components/examples/get-included-message-of-transaction-example'
+        '400':
+          description: "Unsuccessful operation: indicates that the provided data is invalid."
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequestResponse'
+        '403':
+          description: "Unsuccessful operation: indicates that the endpoint is not available for public use."
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ForbiddenResponse'
+        '404':
+          description: "Unsuccessful operation: indicates that the requested data was not found."
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFoundResponse'
+        '500':
+          description: "Unsuccessful operation: indicates that an unexpected, internal server error happened which prevented the node from fulfilling the request."
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalErrorResponse'
+
+  '/api/v1/transactions/{transactionId}/included-message/metadata':
+    get:
+      tags:
+        - UTXO
+      summary: Find the metadata of the included message of a transaction.
+      description: >-
+        Find the metadata of the included message of a transaction.
+      parameters:
+        - in: path
+          name: transactionId
+          schema:
+            type: string
+          example: af7579fb57746219561072c2cc0e4d0fbb8d493d075bd21bf25ae81a450c11ef
+          required: true
+          description: Identifier of the transaction to look up.
+      responses:
+        '200':
+          description: "Successful operation."
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageMetadataResponse'
+              examples:
+                default:
+                  $ref: >-
+                    #/components/examples/get-message-by-id-response-example-included
+        '400':
+          description: "Unsuccessful operation: indicates that the provided data is invalid."
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequestResponse'
+        '403':
+          description: "Unsuccessful operation: indicates that the endpoint is not available for public use."
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ForbiddenResponse'
+        '404':
+          description: "Unsuccessful operation: indicates that the requested data was not found."
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFoundResponse'
+        '500':
+          description: "Unsuccessful operation: indicates that an unexpected, internal server error happened which prevented the node from fulfilling the request."
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalErrorResponse'
+        '503':
+          description: "Unsuccessful operation: indicates that the node is not synced."
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ServiceUnavailableResponse'
+  '/api/v1/transactions/{transactionId}/included-message/raw':
+    get:
+      tags:
+        - UTXO
+      summary: Returns the raw bytes of the included message of a transaction.
+      description: >-
+        Returns the raw bytes of the included message of a transaction.
+      parameters:
+        - in: path
+          name: transactionId
+          schema:
+            type: string
+          example: af7579fb57746219561072c2cc0e4d0fbb8d493d075bd21bf25ae81a450c11ef
+          required: true
+          description: Identifier of the transaction to look up.
+      responses:
+        '200':
+          description: "Successful operation."
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+              example: >-
+                0100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000eb000000000000000000000001000000000000000000000000000000000000000000000000000000000000000000000000020000016920b176f613ec7be59e68fc68f597eb3393af80f74c7c3db78198147d5f1f92640000000000000000018afe1f314622cc1ef52f16d619d1baccff81816b7e4e35fe268dc247b730acd65d5d2dd3f7df09000000000001000001f7868ab6bb55800b77b8b74191ad8285a9bf428ace579d541fda47661803ff44e0af5c34ad4edf475a01fb46e089a7afcab158b4a0133f32e889083e1c77eef65548933e0c6d2c3b0ac006cd77e77d778bf37b8d38d219fb62a9a2f718d4c9095100000000000000
+        '400':
+          description: "Unsuccessful operation: indicates that the provided data is invalid."
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequestResponse'
+        '403':
+          description: "Unsuccessful operation: indicates that the endpoint is not available for public use."
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ForbiddenResponse'
+        '404':
+          description: "Unsuccessful operation: indicates that the requested data was not found."
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFoundResponse'
+        '500':
+          description: "Unsuccessful operation: indicates that an unexpected, internal server error happened which prevented the node from fulfilling the request."
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalErrorResponse'
+  '/api/v1/transactions/{transactionId}/included-message/children':
+    get:
+      tags:
+        - UTXO
+      summary: Returns the children of the included message of a transaction.
+      description: Returns the children of the included message of a transaction.
+      parameters:
+        - in: path
+          name: transactionId
+          schema:
+            type: string
+          example: af7579fb57746219561072c2cc0e4d0fbb8d493d075bd21bf25ae81a450c11ef
+          required: true
+          description: Identifier of the transaction to look up.
+      responses:
+        '200':
+          description: "Successful operation."
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageChildrenResponse'
+              examples:
+                Children were found:
+                  $ref: >-
+                    #/components/examples/get-messages-by-id-response-example-children
+                No children were found:
+                  $ref: >-
+                    #/components/examples/get-messages-by-id-response-example-nochildren
+        '400':
+          description: "Unsuccessful operation: indicates that the provided data is invalid."
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequestResponse'
+        '403':
+          description: "Unsuccessful operation: indicates that the endpoint is not available for public use."
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ForbiddenResponse'
+        '500':
+          description: "Unsuccessful operation: indicates that an unexpected, internal server error happened which prevented the node from fulfilling the request."
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalErrorResponse'
+
+  '/api/v1/milestones/{index}':
+    get:
+      tags:
+        - milestones
+      summary: Look up a milestone by a given milestone index.
+      description: Look up a milestone by a given milestone index.
+      parameters:
+        - in: path
+          name: index
+          schema:
+            type: number
+          example: 154862
+          required: true
+          description: Index of the milestone to look up.
+      responses:
+        '200':
+          description: "Successful operation."
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MilestoneResponse'
+              examples:
+                default:
+                  $ref: >-
+                    #/components/examples/get-milestone-by-index-response-example
+        '400':
+          description: "Unsuccessful operation: indicates that the provided data is invalid."
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequestResponse'
+        '403':
+          description: "Unsuccessful operation: indicates that the endpoint is not available for public use."
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ForbiddenResponse'
+        '404':
+          description: "Unsuccessful operation: indicates that the requested data was not found."
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFoundResponse'
+        '500':
+          description: "Unsuccessful operation: indicates that an unexpected, internal server error happened which prevented the node from fulfilling the request."
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalErrorResponse'
+
+  '/api/v1/milestones/{index}/utxo-changes':
+    get:
+      tags:
+        - milestones
+      summary: Get all UTXO changes of a given milestone.
+      description: Get all UTXO changes of a given milestone.
+      parameters:
+        - in: path
+          name: index
+          schema:
+            type: number
+          example: 154862
+          required: true
+          description: Index of the milestone to look up.
+      responses:
+        '200':
+          description: "Successful operation."
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UTXOChangesResponse'
+              examples:
+                default:
+                  $ref: >-
+                    #/components/examples/get-utxo-changes-response-example
+        '400':
+          description: "Unsuccessful operation: indicates that the provided data is invalid."
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequestResponse'
+        '403':
+          description: "Unsuccessful operation: indicates that the endpoint is not available for public use."
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ForbiddenResponse'
+        '404':
+          description: "Unsuccessful operation: indicates that the requested data was not found."
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFoundResponse'
+        '500':
+          description: "Unsuccessful operation: indicates that an unexpected, internal server error happened which prevented the node from fulfilling the request."
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalErrorResponse'
+
+
+  /api/v1/peers:
+    get:
+      tags:
+        - peers
+      summary: Get information about the peers of the node.
+      description: Get information about the peers of the node.
+      responses:
+        '200':
+          description: "Successful operation."
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PeersResponse'
+              examples:
+                default:
+                  $ref: '#/components/examples/get-peers-response-example'
+        '403':
+          description: "Unsuccessful operation: indicates that the endpoint is not available for public use."
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ForbiddenResponse'
+        '500':
+          description: "Unsuccessful operation: indicates that an unexpected, internal server error happened which prevented the node from fulfilling the request."
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalErrorResponse'
+    post:
+      tags:
+        - peers
+      summary: Add a given peer to the node.
+      description: Add a given peer to the node.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AddPeerRequest'
+            examples:
+              default:
+                $ref: '#/components/examples/post-peer-request-example'
+        required: true
+      responses:
+        '200':
+          description: "Successful operation."
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AddPeerResponse'
+              examples:
+                default:
+                  $ref: '#/components/examples/post-peer-response-example'
+        '403':
+          description: "Unsuccessful operation: indicates that the endpoint is not available for public use."
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ForbiddenResponse'
+        '404':
+          description: "Unsuccessful operation: indicates that the requested data was not found."
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFoundResponse'
+        '500':
+          description: "Unsuccessful operation: indicates that an unexpected, internal server error happened which prevented the node from fulfilling the request."
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalErrorResponse'
+  '/api/v1/peers/{peerId}':
+    get:
+      tags:
+        - peers
+      summary: Get information about a given peer.
+      description: Get information about a given peer.
+      parameters:
+        - in: path
+          name: peerId
+          schema:
+            type: string
+          example: 12D3KooWMajsSUxSUFb3CRgmJvygYCGd27uMDdppVYNGud7xuKG5
+          required: true
+          description: Identifier of the message.
+      responses:
+        '200':
+          description: "Successful operation."
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PeerResponse'
+              examples:
+                default:
+                  $ref: '#/components/examples/get-peer-response-example'
+        '400':
+          description: "Unsuccessful operation: indicates that the provided data is invalid."
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequestResponse'
+        '403':
+          description: "Unsuccessful operation: indicates that the endpoint is not available for public use."
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ForbiddenResponse'
+        '404':
+          description: "Unsuccessful operation: indicates that the requested data was not found."
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFoundResponse'
+        '500':
+          description: "Unsuccessful operation: indicates that an unexpected, internal server error happened which prevented the node from fulfilling the request."
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalErrorResponse'
+    delete:
+      tags:
+        - peers
+      summary: Remove/disconnect a given peer.
+      description: Remove/disconnect a given peer.
+      parameters:
+        - in: path
+          name: peerId
+          schema:
+            type: string
+          example: 12D3KooWMajsSUxSUFb3CRgmJvygYCGd27uMDdppVYNGud7xuKG5
+          required: true
+          description: Identifier of the peer.
+      responses:
+        '204':
+          description: "Successful operation."
+        '400':
+          description: "Unsuccessful operation: indicates that the provided data is invalid."
+        '403':
+          description: "Unsuccessful operation: indicates that the endpoint is not available for public use."
+        '404':
+          description: "Unsuccessful operation: indicates that the requested data was not found."
+        '500':
+          description: "Unsuccessful operation: indicates that an unexpected, internal server error happened which prevented the node from fulfilling the request."
+
+components:
+  examples:
+    get-info-response-example:
+      value:
+        data:
+          name: HORNET
+          version: 0.6.0-alpha
+          isHealthy: true
+          networkId: testnet7
+          bech32HRP: atoi
+          minPoWScore: 4000
+          messagesPerSecond: 17
+          referencedMessagesPerSecond: 16.8
+          referencedRate: 98.82352941176471
+          latestMilestoneTimestamp: 1617802102
+          latestMilestoneIndex: 480
+          confirmedMilestoneIndex: 480
+          pruningIndex: 0
+          features:
+            - PoW
+
+    get-tips-response-example:
+      value:
+        data:
+          tipMessageIds:
+            - f532a53545103276b46876c473846d98648ee418468bce76df4868648dd73e5d
+            - 78d546b46aec4557872139a48f66bc567687e8413578a14323548732358914a2
+    post-messages-response-example:
+      value:
+        data:
+          messageId: a4dd36465af63d495d35a05f592d42a51511c153e1bae8fad00453c8cbb48727
+    get-messages-by-index-response-example:
+      value:
+        data:
+          index: 68656c6c6f20776f726c64
+          maxResults: 1000
+          count: 2
+          messageIds:
+            - f532a53545103276b46876c473846d98648ee418468bce76df4868648dd73e5d
+            - 7ed3d67fc7b619e72e588f51fef2379e43e6e9a856635843b3f29aa3a3f1f006
+    get-message-by-id-response-example-new:
+      value:
+        data:
+          messageId: f532a53545103276b46876c473846d98648ee418468bce76df4868648dd73e5d
+          parentMessageIds:
+            - 7ed3d67fc7b619e72e588f51fef2379e43e6e9a856635843b3f29aa3a3f1f006
+            - d97e89e49ed263b763afeda192515fe154ec826ceb92ef08926cd68ec02c9510
+          isSolid: false
+          shouldPromote: true
+          shouldReattach: false
+    get-message-by-id-response-example-solid:
+      value:
+        data:
+          messageId: f532a53545103276b46876c473846d98648ee418468bce76df4868648dd73e5d
+          parentMessageIds:
+            - 7ed3d67fc7b619e72e588f51fef2379e43e6e9a856635843b3f29aa3a3f1f006
+            - d97e89e49ed263b763afeda192515fe154ec826ceb92ef08926cd68ec02c9510
+          isSolid: true
+          shouldPromote: false
+          shouldReattach: false
+    get-message-by-id-response-example-included:
+      value:
+        data:
+          messageId: f532a53545103276b46876c473846d98648ee418468bce76df4868648dd73e5d
+          parentMessageIds:
+            - 7ed3d67fc7b619e72e588f51fef2379e43e6e9a856635843b3f29aa3a3f1f006
+            - d97e89e49ed263b763afeda192515fe154ec826ceb92ef08926cd68ec02c9510
+          isSolid: true
+          referencedByMilestoneIndex: 15465
+          ledgerInclusionState: included
+    get-message-by-id-response-example-conflicting:
+      value:
+        data:
+          messageId: f532a53545103276b46876c473846d98648ee418468bce76df4868648dd73e5d
+          parentMessageIds:
+            - 7ed3d67fc7b619e72e588f51fef2379e43e6e9a856635843b3f29aa3a3f1f006
+            - d97e89e49ed263b763afeda192515fe154ec826ceb92ef08926cd68ec02c9510
+          isSolid: true
+          referencedByMilestoneIndex: 15465
+          ledgerInclusionState: conflicting
+          conflictReason: 1
+    post-indexation-message-request-example-full:
+      value:
+        networkId: '9466822412763346725'
+        parentMessageIds:
+          - 222e88a63e5aca8ef48d3b8749e2fab51d1bc7c34c5604a2933ca2f180b342c9
+          - a22137ebe61435c6d0f3e16ad148376778d7bfb36e27329f02c221ec109525a6
+          - a6db9d0b3ecb274d90c21e9dde04012b2d13ad8aa0b90e82e7d3b626be67119d
+          - fd31d9c926b5d97ae016535d66baee511dfa3b713b61d8eba2ae5c9929e38ca7
+        payload:
+          type: 2
+          index: 68656c6c6f20776f726c64
+          data: 5370616d6d696e6720646174612e0a436f756e743a203037323935320a54696d657374616d703a20323032312d30322d31315431303a32333a34392b30313a30300a54697073656c656374696f6e3a203934c2b573
+        nonce: '2102864'
+    post-indexation-message-request-example-minimal:
+      value:
+        payload:
+          type: 2
+          index: 68656c6c6f20776f726c64
+          data: 5370616d6d696e6720646174612e0a436f756e743a203037323935320a54696d657374616d703a20323032312d30322d31315431303a32333a34392b30313a30300a54697073656c656374696f6e3a203934c2b573
+
+    post-transaction-message-request-example-minimal:
+      value:
+        payload:
+          type: 0
+          essence:
+            type: 0
+            inputs:
+              - type: 0
+                transactionId: 0c78e998f5177834ecb3bae1596d5056af76e487386eecb19727465b4be86a79
+                transactionOutputIndex: 0
+              - type: 0
+                transactionId: 309b169bfa60c8cf80afd730741862d200405d5df7cabfe9b564361dce1f7036
+                transactionOutputIndex: 0
+              - type: 0
+                transactionId: c138ecdc882010245e9574fbc1f1f43cc7c182fa890e46e018365dd49de0f16e
+                transactionOutputIndex: 0
+            outputs:
+              - type: 0
+                address:
+                  type: 0
+                  address: d49931814e6bfbb8e221f1b2936e206e5a6b6abeb9c070f8603814c525c9abe3
+                amount: 50000000
+            payload:
+          unlockBlocks:
+            - type: 0
+              signature:
+                type: 0
+                publicKey: 40d0c00fd629a5f528e4bcab4333926a90d06613a3f36a325defcdaf4c9e4092
+                signature: ed4a63a3e1b22c85f9813b00a21c8576ed72c1f5bc939d01fcea7dcd678c2d0d8d80a2499965d8ce5574c9e92aa0d42b72b969bab3a2a35fe7dbc64659a0d703
+            - type: 1
+              reference: 0
+            - type: 1
+              reference: 0
+        nonce: '1020884'
+    post-transaction-message-request-example-full:
+      value:
+        networkId: '9466822412763346725'
+        parentMessageIds:
+          - 6c5bc96948813faaf6d5a5f0c6bc453bf2e5343664884aea2873041bdc47c4ca
+          - 97e2c4fce0f6e1023c19ed634e37a44744e21a743a79e8f1fc16d31dc8f47481
+          - c107c5f3d6189954c9b1b8e2fa556db4bcf7ad2da717d328ecf6d9a841a5f37d
+          - ea19397d2670f904c4d8c8616ef7a0724321512f1c09f8eb2aeb0cc4299e2441
+        payload:
+          type: 0
+          essence:
+            type: 0
+            inputs:
+              - type: 0
+                transactionId: 0c78e998f5177834ecb3bae1596d5056af76e487386eecb19727465b4be86a79
+                transactionOutputIndex: 0
+              - type: 0
+                transactionId: 309b169bfa60c8cf80afd730741862d200405d5df7cabfe9b564361dce1f7036
+                transactionOutputIndex: 0
+              - type: 0
+                transactionId: c138ecdc882010245e9574fbc1f1f43cc7c182fa890e46e018365dd49de0f16e
+                transactionOutputIndex: 0
+            outputs:
+              - type: 0
+                address:
+                  type: 0
+                  address: d49931814e6bfbb8e221f1b2936e206e5a6b6abeb9c070f8603814c525c9abe3
+                amount: 50000000
+            payload:
+          unlockBlocks:
+            - type: 0
+              signature:
+                type: 0
+                publicKey: 40d0c00fd629a5f528e4bcab4333926a90d06613a3f36a325defcdaf4c9e4092
+                signature: ed4a63a3e1b22c85f9813b00a21c8576ed72c1f5bc939d01fcea7dcd678c2d0d8d80a2499965d8ce5574c9e92aa0d42b72b969bab3a2a35fe7dbc64659a0d703
+            - type: 1
+              reference: 0
+            - type: 1
+              reference: 0
+        nonce: '1020884'
+    get-message-by-id-empty-response-example:
+      value:
+        data:
+          networkId: '6530425480034647824'
+          parentMessageIds:
+            - c0b728d4c292860b57747c7bfbd989ccc40be8c76229022644c05e1352bf1ea3
+            - e8db39681478cf9826bd2f31d045f16f5e1f478c5abc3030419da7911df9e288
+          payload: null
+          nonce: '1481'
+    get-message-by-id-transaction-response-example:
+      value:
+        data:
+          networkId: '9466822412763346725'
+          parentMessageIds:
+            - 6c5bc96948813faaf6d5a5f0c6bc453bf2e5343664884aea2873041bdc47c4ca
+            - 97e2c4fce0f6e1023c19ed634e37a44744e21a743a79e8f1fc16d31dc8f47481
+            - c107c5f3d6189954c9b1b8e2fa556db4bcf7ad2da717d328ecf6d9a841a5f37d
+            - ea19397d2670f904c4d8c8616ef7a0724321512f1c09f8eb2aeb0cc4299e2441
+          payload:
+            type: 0
+            essence:
+              type: 0
+              inputs:
+                - type: 0
+                  transactionId: 0c78e998f5177834ecb3bae1596d5056af76e487386eecb19727465b4be86a79
+                  transactionOutputIndex: 0
+                - type: 0
+                  transactionId: 309b169bfa60c8cf80afd730741862d200405d5df7cabfe9b564361dce1f7036
+                  transactionOutputIndex: 0
+                - type: 0
+                  transactionId: c138ecdc882010245e9574fbc1f1f43cc7c182fa890e46e018365dd49de0f16e
+                  transactionOutputIndex: 0
+              outputs:
+                - type: 0
+                  address:
+                    type: 0
+                    address: d49931814e6bfbb8e221f1b2936e206e5a6b6abeb9c070f8603814c525c9abe3
+                  amount: 50000000
+              payload:
+            unlockBlocks:
+              - type: 0
+                signature:
+                  type: 0
+                  publicKey: 40d0c00fd629a5f528e4bcab4333926a90d06613a3f36a325defcdaf4c9e4092
+                  signature: ed4a63a3e1b22c85f9813b00a21c8576ed72c1f5bc939d01fcea7dcd678c2d0d8d80a2499965d8ce5574c9e92aa0d42b72b969bab3a2a35fe7dbc64659a0d703
+              - type: 1
+                reference: 0
+              - type: 1
+                reference: 0
+          nonce: '1020884'
+
+    get-message-by-id-milestone-response-example:
+      value:
+        data:
+          networkId: '14379272398717627559'
+          parentMessageIds:
+            - 23d388b13f64c2e24788d61891079c74daf6d036b768d75ad38e473c9d4da83b
+            - 242974b25cab6f8378fe718ea729fa65492f03df4ce74b631899589242fa12b7
+            - 2a331c562b48e261c11f073c7465551ffcc80c35ab6d09f4fd1cc81782e5fdc1
+            - 438a14a651b8872896b4e57c92041e8962ca7d78cc38c774534020feefeff31a
+            - 73c90398fb548a4410b49264e182e58a91baeecaa949cbfc1d01a9066cbd9935
+            - b9adfdc1effd3242b5c1d7b6df43d4b53e58943e820ced89c7dd39b8b52fcef0
+          payload:
+            type: 1
+            index: 16241
+            timestamp: 1617959712
+            parentMessageIds:
+              - 23d388b13f64c2e24788d61891079c74daf6d036b768d75ad38e473c9d4da83b
+              - 242974b25cab6f8378fe718ea729fa65492f03df4ce74b631899589242fa12b7
+              - 2a331c562b48e261c11f073c7465551ffcc80c35ab6d09f4fd1cc81782e5fdc1
+              - 438a14a651b8872896b4e57c92041e8962ca7d78cc38c774534020feefeff31a
+              - 73c90398fb548a4410b49264e182e58a91baeecaa949cbfc1d01a9066cbd9935
+              - b9adfdc1effd3242b5c1d7b6df43d4b53e58943e820ced89c7dd39b8b52fcef0
+            inclusionMerkleProof: 0e5751c026e543b2e8ab2eb06099daa1d1e5df47778f7787faab45cdf12fe3a8
+            nextPoWScore: 0
+            nextPoWScoreMilestoneIndex: 0
+            publicKeys:
+              - 7205c145525cee64f1c9363696811d239919d830ad964b4e29359e6475848f5a
+              - e468e82df33d10dea3bd0eadcd7867946a674d207c39f5af4cc44365d268a7e6
+            receipt:
+            signatures:
+              - a642e96f71094f8523790131481e0fbfdc8265caa8e4b08793628b286065c317a5595d56edb5e918b24d4ee749768a2b5ae6010e751bf31f0d8145a390b82c00
+              - 4bdfa2684bed01ce3a9a630b0688e868c290b8524c679daa79cb9d9f0f2aa5c57cf00a0fc694d1fed3696053ffa9bba6154ccb1564532cd49f807ba77de9a70c
+          nonce: '1229782938247321090'
+
+    get-message-by-id-indexation-response-example:
+      value:
+        data:
+          networkId: '9466822412763346725'
+          parentMessageIds:
+            - 222e88a63e5aca8ef48d3b8749e2fab51d1bc7c34c5604a2933ca2f180b342c9
+            - a22137ebe61435c6d0f3e16ad148376778d7bfb36e27329f02c221ec109525a6
+            - a6db9d0b3ecb274d90c21e9dde04012b2d13ad8aa0b90e82e7d3b626be67119d
+            - fd31d9c926b5d97ae016535d66baee511dfa3b713b61d8eba2ae5c9929e38ca7
+          payload:
+            type: 2
+            index: 68656c6c6f20776f726c64
+            data: 5370616d6d696e6720646174612e0a436f756e743a203037323935320a54696d657374616d703a20323032312d30322d31315431303a32333a34392b30313a30300a54697073656c656374696f6e3a203934c2b573
+          nonce: '2102864'
+    get-messages-by-id-response-example-children:
+      value:
+        data:
+          messageId: ed3c3f1a319ff4e909cf2771d79fece0ac9bd9fd2ee49ea6c0885c9cb3b1248c
+          maxResults: 1000
+          count: 2
+          childrenMessageIds:
+            - 1c6943b0487c92fd057d4d22ad844cc37ee27fe6fbe88e5ff0d20b2233f75b9d
+            - 7ed3d67fc7b619e72e588f51fef2379e43e6e9a856635843b3f29aa3a3f1f006
+    get-messages-by-id-response-example-nochildren:
+      value:
+        data:
+          messageId: 7ed3d67fc7b619e72e588f51fef2379e43e6e9a856635843b3f29aa3a3f1f006
+          maxResults: 1000
+          count: 0
+          childrenMessageIds: []
+    get-outputs-by-id-response-unspent-example:
+      value:
+        data:
+          messageId: 9cd745ef6800c8e8c80b09174ee4b250b3c43dfa62d7c6a4e61f848febf731a0
+          transactionId: 1ee46e19f4219ee65afc10227d0ca22753f76ef32d1e922e5cbe3fbc9b5a5298
+          outputIndex: 1
+          isSpent: false
+          output:
+            type: 0
+            address:
+              type: 0
+              address: 8eaf87ac1f52eb05f2c7c0c15502df990a228838dc37bd18de9503d69afd257d
+            amount: 1000
+          ledgerIndex: 946704
+    get-outputs-by-id-response-spent-example:
+      value:
+        data:
+          messageId: 9cd745ef6800c8e8c80b09174ee4b250b3c43dfa62d7c6a4e61f848febf731a0
+          transactionId: 1ee46e19f4219ee65afc10227d0ca22753f76ef32d1e922e5cbe3fbc9b5a5298
+          outputIndex: 1
+          isSpent: true
+          milestoneIndexSpent: 946700
+          transactionIdSpent: af7579fb57746219561072c2cc0e4d0fbb8d493d075bd21bf25ae81a450c11ef
+          output:
+            type: 0
+            address:
+              type: 0
+              address: 8eaf87ac1f52eb05f2c7c0c15502df990a228838dc37bd18de9503d69afd257d
+            amount: 1000
+          ledgerIndex: 946704
+    get-address-balance-response-example:
+      value:
+        data:
+          addressType: 0
+          address: efdc112efe262b304bcf379b26c31bad029f616ee3ec4aa6345a366e4c9e43a3
+          balance: 1338263
+          dustAllowed: true
+          ledgerIndex: 946704
+    get-address-outputs-response-example:
+      value:
+        data:
+          addressType: 0
+          address: efdc112efe262b304bcf379b26c31bad029f616ee3ec4aa6345a366e4c9e43a3
+          maxResults: 1000
+          count: 4
+          outputIds:
+            - >-
+              1ee46e19f4219ee65afc10227d0ca22753f76ef32d1e922e5cbe3fbc9b5a52980100
+            - >-
+              3d36ec4afb2d634b9313f84606b98b69675a3ef6f44dcdecb18c30945b57221e0100
+            - >-
+              ee3447d088e3e2c53c5b3e56a38fdc859ca2c4b4161cf256c0462ce4d34731820100
+            - >-
+              f8bdbfb0f57ade7fbb95d31b11e2dbda9b2a35e9dc0cd3e11cb324e8a6bedc260100
+          ledgerIndex: 946704
+
+    get-receipts-response-example:
+      value:
+        data:
+          receipts:
+            - migratedAt: 1000
+              final: false
+              funds:
+                - tailTransactionHash: e0ce1933a900d02e0a43e2ba4e922d1a706a36a117ce1eb9ad0a74d39ee722c41b00cd227232efd76f5997e91bf8000000
+                  address:
+                    type: 0
+                    address: 5eec99d6ee4ba21aa536c3364bbf2b587cb98a7f2565b75d948b10083e2143f8
+                  deposit: 1702000000
+              transaction:
+                input:
+                  type: 1
+                  milestoneId: 733ed2810f2333e9d6cd702c7d5c8264cd9f1ae454b61e75cf702c451f68611d
+                output:
+                  type: 2
+                  amount: 1702000000
+
+    get-treasury-response-example:
+      value:
+        data:
+          milestoneId: 733ed2810f2333e9d6cd702c7d5c8264cd9f1ae454b61e75cf702c451f68611d
+          amount: 133713371337
+
+    get-included-message-of-transaction-example:
+      value:
+        data:
+          networkId: '7712883261355838377'
+          parentMessageIds:
+            - 174e3151f6ce2cfb7f00829ac4a96a35caa2078cc20eba99359867cd21aad0d6
+            - 5807bb4ad068e6cdadd103218e4e24ed55b62c985d4f64e97808d9f09180f89c
+            - 7a09324557e9200f39bf493fc8fd6ac43e9ca750c6f6d884cc72386ddcb7d695
+            - de9e9d780ba7ebeebc38da16cb53b2a8991d38eee94bcdc3f3ef99aa8c345652
+          payload:
+            type: 0
+            essence:
+              type: 0
+              inputs:
+                - type: 0
+                  transactionId: af7579fb57746219561072c2cc0e4d0fbb8d493d075bd21bf25ae81a450c11ef
+                  transactionOutputIndex: 0
+              outputs:
+                - type: 0
+                  address:
+                    type: 0
+                    address: a18996d96163405e3c0eb13fa3459a07f68a89e8cf7cc239c89e7192344daa5b
+                  amount: 1000000
+              payload:
+                type: 2
+                index: 454f59
+                data: ''
+            unlockBlocks:
+              - type: 0
+                signature:
+                  type: 0
+                  publicKey: ee26ac07834c603c22130fced361ca58552b0dbfc63e4b73ba24b3b59d9f4050
+                  signature: '0492a353f96883c472e2686a640e77eda30be8fcc417aa9fc1c15eae854661e0253287be6ea68f649f19ca590de0a6c57fb88635ef0e013310e0be2b83609503'
+          nonce: '17293822569102719312'
+
+    get-milestone-by-index-response-example:
+      value:
+        data:
+          index: 15465
+          messageId: 7ed3d67fc7b619e72e588f51fef2379e43e6e9a856635843b3f29aa3a3f1f006
+          timestamp: 1602227215
+
+    get-utxo-changes-response-example:
+      value:
+        data:
+          index: 15465
+          createdOutputs:
+            - >-
+              1ee46e19f4219ee65afc10227d0ca22753f76ef32d1e922e5cbe3fbc9b5a52980100
+            - >-
+              ee3447d088e3e2c53c5b3e56a38fdc859ca2c4b4161cf256c0462ce4d34731820100
+            - >-
+              f8bdbfb0f57ade7fbb95d31b11e2dbda9b2a35e9dc0cd3e11cb324e8a6bedc260100
+          consumedOutputs:
+            - >-
+              3d36ec4afb2d634b9313f84606b98b69675a3ef6f44dcdecb18c30945b57221e0100
+
+    get-peers-response-example:
+      value:
+        data:
+          - id: 12D3KooWMajsSUxSUFb3CRgmJvygYCGd27uMDdppVYNGud7xuKG5
+            multiAddresses:
+              - "/dns/abc.com/tcp/15602"
+            alias: abc
+            relation: known
+            connected: true
+            gossip:
+              heartbeat:
+                solidMilestoneIndex: 61527
+                prunedMilestoneIndex: 61200
+                latestMilestoneIndex: 61527
+                connectedNeighbors: 5
+                syncedNeighbors: 7
+              metrics:
+                newMessages: 3799
+                knownMessages: 554
+                receivedMessages: 4370
+                receivedMessageRequests: 0
+                receivedMilestoneRequests: 1
+                receivedHeartbeats: 1
+                sentMessages: 6
+                sentMessageRequests: 4325
+                sentMilestoneRequests: 31
+                sentHeartbeats: 9
+                droppedPackets: 0
+          - id: 12D3KooWNYDcJqxnWqCLSgeQKqNStwFUqHSJXPdSYTJnfxQESzie
+            multiAddresses:
+              - "/dns/xyz.com/tcp/15600"
+            alias: xyz
+            relation: known
+            connected: true
+            gossip:
+              heartbeat:
+                solidMilestoneIndex: 61527
+                prunedMilestoneIndex: 56508
+                latestMilestoneIndex: 61527
+                connectedNeighbors: 5
+                syncedNeighbors: 6
+              metrics:
+                newMessages: 510
+                knownMessages: 79
+                receivedMessages: 589
+                receivedMessageRequests: 0
+                receivedMilestoneRequests: 1
+                receivedHeartbeats: 1
+                sentMessages: 42
+                sentMessageRequests: 576
+                sentMilestoneRequests: 1
+                sentHeartbeats: 9
+                droppedPackets: 0
+
+    get-peer-response-example:
+      value:
+        data:
+          id: 12D3KooWMajsSUxSUFb3CRgmJvygYCGd27uMDdppVYNGud7xuKG5
+          multiAddresses:
+            - "/dns/abc.com/tcp/15602"
+          alias: abc
+          relation: known
+          connected: true
+          gossip:
+            heartbeat:
+              solidMilestoneIndex: 61527
+              prunedMilestoneIndex: 61200
+              latestMilestoneIndex: 61527
+              connectedNeighbors: 5
+              syncedNeighbors: 7
+            metrics:
+              newMessages: 3799
+              knownMessages: 554
+              receivedMessages: 4370
+              receivedMessageRequests: 0
+              receivedMilestoneRequests: 1
+              receivedHeartbeats: 1
+              sentMessages: 6
+              sentMessageRequests: 4325
+              sentMilestoneRequests: 31
+              sentHeartbeats: 9
+              droppedPackets: 0
+
+    post-peer-request-example:
+      value:
+        multiAddress: >-
+          /dns/abc.com/tcp/15602/p2p/12D3KooWMajsSUxSUFb3CRgmJvygYCGd27uMDdppVYNGud7xuKG5
+        alias: abc.com
+    post-peer-response-example:
+      value:
+        data:
+          id: 12D3KooWMajsSUxSUFb3CRgmJvygYCGd27uMDdppVYNGud7xuKG5
+          multiAddresses:
+            - "/dns/abc.com/tcp/15602"
+          alias: abc
+          relation: known
+          connected: true
+          gossip:
+            heartbeat:
+              solidMilestoneIndex: 61527
+              prunedMilestoneIndex: 61200
+              latestMilestoneIndex: 61527
+              connectedNeighbors: 5
+              syncedNeighbors: 7
+            metrics:
+              newMessages: 3799
+              knownMessages: 554
+              receivedMessages: 4370
+              receivedMessageRequests: 0
+              receivedMilestoneRequests: 1
+              receivedHeartbeats: 1
+              sentMessages: 6
+              sentMessageRequests: 4325
+              sentMilestoneRequests: 31
+              sentHeartbeats: 9
+              droppedPackets: 0
+
+  schemas:
+
+    Message:
+      description: A message is the object nodes gossip around in the network. It always references two other messages that are known as parents. It is stored as a vertex on the tangle data structure that the nodes maintain. A message can have a maximum size of 32Kb.
+      properties:
+        networkId:
+          type: string
+          description: Network identifier. This field signifies for which network the message is meant for. It also tells which protocol rules apply to the message. It is computed out of the first 8 bytes of the `BLAKE2b-256` hash of the concatenation of the network type and protocol version string.
+        parentMessageIds:
+          type: array
+          description: The identifiers of the messages this message references.
+          items:
+            type: string
+        payload:
+          oneOf:
+            - $ref: '#/components/schemas/TransactionPayload'
+            - $ref: '#/components/schemas/MilestonePayload'
+            - $ref: '#/components/schemas/IndexationPayload'
+            - $ref: '#/components/schemas/ReceiptPayload'
+        nonce:
+          type: string
+          description: The nonce which lets this message fulfill the Proof-of-Work requirement.
+      required:
+        - networkId
+        - parentMessageIds
+        - payload
+        - nonce
+
+    TransactionPayload:
+      description: The Transaction Payload to be embedded into a message.
+      properties:
+        type:
+          type: integer
+          description: Set to value 0 to denote a Transaction Payload.
+        essence:
+          type: object
+          oneOf:
+            - $ref: '#/components/schemas/TransactionEssence'
+        unlockBlocks:
+          type: array
+          items:
+            oneOf:
+              - $ref: '#/components/schemas/SignatureUnlockBlock'
+              - $ref: '#/components/schemas/ReferenceUnlockBlock'
+      required:
+        - type
+        - essence
+        - unlockBlocks
+
+    TransactionEssence:
+      description: Describes the essence data making up a transaction by defining its inputs and outputs and an optional payload.
+      properties:
+        type:
+          type: integer
+          description: Set to value 0 to denote a Transaction Essence.
+        inputs:
+          type: array
+          items:
+            oneOf:
+              - $ref: '#/components/schemas/UTXOInput'
+        outputs:
+          type: array
+          items:
+            anyOf:
+              - $ref: '#/components/schemas/SigLockedSingleOutput'
+              - $ref: '#/components/schemas/SigLockedDustAllowanceOutput'
+        payload:
+          oneOf:
+            - $ref: '#/components/schemas/IndexationPayload'
+          nullable: true
+      required:
+        - type
+        - inputs
+        - outputs
+        - payload
+
+    UTXOInput:
+      description: Describes an input which references an unspent transaction output to consume.
+      properties:
+        type:
+          type: integer
+          description: Set to value 0 to denote an UTXO Input.
+        transactionId:
+          type: string
+          description: The BLAKE2b-256 hash of the transaction from which the UTXO comes from.
+        transactionOutputIndex:
+          type: integer
+          description: The index of the output on the referenced transaction to consume.
+      required:
+        - type
+        - transactionId
+        - transactionOutputIndex
+
+    SigLockedSingleOutput:
+      description: Describes a deposit to a single address which is unlocked via a signature.
+      properties:
+        type:
+          type: integer
+          description: Set to value 0 to denote a SigLockedSingleOutput.
+        address:
+          anyOf:
+            - $ref: '#/components/schemas/Ed25519Address'
+        amount:
+          type: integer
+          description: The amount of tokens to deposit with this SigLockedSingleOutput output.
+      required:
+        - type
+        - address
+        - amount
+
+    SigLockedDustAllowanceOutput:
+      description: "Output type for deposits that enables an address to receive dust outputs. It can be consumed as an input like a regular SigLockedSingleOutput"
+      properties:
+        type:
+          type: integer
+          description: Set to value 1 to denote a SigLockedDustAllowanceOutput.
+        address:
+          anyOf:
+            - $ref: '#/components/schemas/Ed25519Address'
+        amount:
+          type: integer
+          description: The amount of tokens to deposit with this SigLockedDustAllowanceOutput output.
+      required:
+        - type
+        - address
+        - amount
+
+    Ed25519Address:
+      description: The Ed25519 address.
+      properties:
+        type:
+          type: integer
+          description: Set to value 0 to denote an Ed25519 Address.
+        address:
+          type: string
+          description: The hex-encoded BLAKE2b-256 hash of the Ed25519 public key.
+      required:
+        - type
+        - address
+
+    SignatureUnlockBlock:
+      description: Defines an unlock block containing signature(s) unlocking input(s).
+      properties:
+        type:
+          type: integer
+          description: Denotes a Signature Unlock Block.
+        signature:
+          type: object
+          oneOf:
+            - $ref: '#/components/schemas/Ed25519Signature'
+      required:
+        - type
+        - signature
+
+    Ed25519Signature:
+      description: The Ed25519 signature.
+      properties:
+        type:
+          type: integer
+          description: Set to value 0 to denote an Ed25519 Signature.
+        publicKey:
+          type: string
+          description: The public key of the Ed25519 keypair which is used to verify the signature.
+        signature:
+          type: string
+          description: The signature signing the serialized Transaction Essence.
+      required:
+        - type
+        - publicKey
+        - signature
+
+    ReferenceUnlockBlock:
+      description: References a previous unlock block in order to substitute the duplication of the same unlock block data for inputs which unlock through the same data.
+      properties:
+        type:
+          type: integer
+          description: Set to value 1 to denote a Reference Unlock Block.
+        reference:
+          type: integer
+          description: Represents the index of a previous unlock block.
+      required:
+        - type
+        - reference
+
+    MilestonePayload:
+      description: The Milestone Payload to be embedded into a message.
+      properties:
+        type:
+          type: integer
+          description: Set to value 1 to denote a Milestone Payload.
+        index:
+          type: integer
+          description: The index of the milestone.
+        timestamp:
+          type: integer
+          description: The Unix timestamp at which the milestone was issued. The unix timestamp is specified in seconds.
+        parents:
+          description: The identifiers of the messages this milestone  references.
+          type: array
+          items:
+            type: string
+        inclusionMerkleProof:
+          type: string
+          description: 256-bit hash based on the message IDs of all the not-ignored state-mutating transactions referenced by the milestone.
+        nextPoWScore:
+          type: number
+        nextPoWScoreMilestoneIndex:
+          type: number
+        publicKeys:
+          type: array
+          items:
+            type: string
+          description: An array of public keys to validate the signatures. The keys must be in lexicographical order.
+        signatures:
+          type: array
+          items:
+            type: string
+          description: An array of signatures signing the serialized Milestone Essence. The signatures must be in the same order as the specified public keys.
+      required:
+        - type
+        - index
+        - timestamp
+        - parents
+        - inclusionMerkleProof
+        - nextPoWScore
+        - nextPoWScoreMilestoneIndex
+        - publicKeys
+        - signatures
+
+    IndexationPayload:
+      description: The Indexation Payload to be embedded into a message.
+      properties:
+        type:
+          type: integer
+          description: Set to value 2 to denote a Indexation Payload.
+        index:
+          type: string
+          description: The indexation key to find/look up this message. It has a size between 1 and 64 bytes and must be encoded as a hex-string.
+        data:
+          type: string
+          description: The optional data to attach. This may have a length of 0.
+      required:
+        - type
+        - index
+        - data
+
+    TreasuryTransactionPayload:
+      properties:
+        type:
+          type: integer
+          description: Set to value 4 to denote a Treasury Payload.
+        input:
+          allOf:
+            - $ref: '#/components/schemas/TreasuryInput'
+        output:
+          allOf:
+            - $ref: '#/components/schemas/TreasuryOutput'
+      required:
+        - type
+        - input
+        - output
+
+    TreasuryInput:
+      properties:
+        type:
+          type: integer
+          description: Set to value 1 to denote a TreasuryInput.
+        milestoneId:
+          type: string
+      required:
+        - type
+        - milestoneId
+
+    TreasuryOutput:
+      properties:
+        type:
+          type: integer
+          description: Set to value 2 to denote a TreasuryOutput.
+        amount:
+          type: integer
+      required:
+        - type
+        - amount
+
+
+    Peer:
+      description: The peer of a node.
+      properties:
+        id:
+          type: string
+          description: The identifier of the peer.
+        multiAddresses:
+          type: array
+          items:
+            type: string
+          description: The addresses of the peer.
+        alias:
+          type: string
+          description: The alias of the peer.
+        relation:
+          type: string
+          enum:
+            - known
+            - unknown
+            - autopeered
+        connected:
+          type: boolean
+          description: Tells whether the peer is connected or not.
+        gossip:
+          allOf:
+            - $ref: '#/components/schemas/Gossip'
+      required:
+        - id
+        - multiAddresses
+        - relation
+        - connected
+        - gossip
+
+    Gossip:
+      description: Information about the gossip stream with the peer.
+      properties:
+        heartbeat:
+          description: Information about the most recent heartbeat of the peer. The heartbeat is `null` if none has been received yet.
+          allOf:
+            - $ref: '#/components/schemas/Heartbeat'
+          nullable: true
+        metrics:
+          description: Metrics about the gossip stream with the peer.
+          allOf:
+            - $ref: '#/components/schemas/Metrics'
+
+    Heartbeat:
+      properties:
+        solidMilestoneIndex:
+          type: integer
+          description: The most recent milestone that has been solidified by the node.
+        prunedMilestoneIndex:
+          type: integer
+          description: Tells from which starting point the node holds data.
+        latestMilestoneIndex:
+          type: integer
+          description: The most recent milestone known to the node.
+        connectedNeighbors:
+          type: integer
+          description: Tells how many connected peers the node has.
+        syncedNeighbors:
+          type: integer
+          description: Tells how many synced peers the node has.
+
+    Metrics:
+      properties:
+        newMessages:
+          type: integer
+          description: The number of received messages that were new for the node.
+        knownMessages:
+          type: integer
+          description: The number of received messages that already were known to the node.
+        receivedMessages:
+          type: integer
+          description: The number of received messages from the peer.
+        receivedMessageRequests:
+          type: integer
+          description: The number of received message requests from the peer.
+        receivedMilestoneRequests:
+          type: integer
+          description: The number of received milestone requests from the peer.
+        receivedHeartbeats:
+          type: integer
+          description: The number of received heartbeats from the peer.
+        sentMessages:
+          type: integer
+          description: The number of sent messages to the peer.
+        sentMessageRequests:
+          type: integer
+          description: The number of sent message requests to the peer.
+        sentMilestoneRequests:
+          type: integer
+          description: The number of sent milestone requests to the peer.
+        sentHeartbeats:
+          type: integer
+          description: The number of sent heartbeats to the peer.
+        droppedPackets:
+          type: integer
+          description: The number of dropped packets.
+      required:
+        - newMessages
+        - knownMessages
+        - receivedMessages
+        - receivedMessageRequests
+        - receivedMilestoneRequests
+        - receivedHeartbeats
+        - sentMessages
+        - sentMessageRequests
+        - sentMilestoneRequests
+        - sentHeartbeats
+        - droppedPackets
+
+    ReceiptTuple:
+      description: Contains a receipt and the index of the milestone which contained the receipt.
+      properties:
+        receipt:
+          $ref: '#/components/schemas/ReceiptPayload'
+        milestoneIndex:
+          type: integer
+      required:
+        - receipt
+        - milestoneIndex
+
+    ReceiptPayload:
+      description: Contains a receipt and the index of the milestone which contained the receipt.
+      properties:
+        migratedAt:
+          type: integer
+        final:
+          type: boolean
+        funds:
+          type: array
+          items:
+            $ref: '#/components/schemas/MigratedFundsEntry'
+        transaction:
+          $ref: '#/components/schemas/TreasuryTransactionPayload'
+      required:
+        - migratedAt
+        - final
+        - funds
+        - transaction
+
+    MigratedFundsEntry:
+      properties:
+        tailTransactionHash:
+          type: string
+        address:
+          oneOf:
+            - $ref: '#/components/schemas/Ed25519Address'
+        deposit:
+          type: integer
+      required:
+        - tailTransactionHash
+        - address
+        - deposit
+
+    ErrorResponse:
+      description: The error format.
+      properties:
+        error:
+          type: object
+          properties:
+            code:
+              type: string
+              description: The application error code.
+            message:
+              type: string
+              description: The error reason.
+          required:
+            - code
+            - message
+      required:
+        - error
+
+    ForbiddenResponse:
+      description: Indicates that this endpoint is not available for public use.
+      allOf:
+        - $ref: '#/components/schemas/ErrorResponse'
+      example:
+        error:
+          code: 403
+          message: not available for public use
+
+    ServiceUnavailableResponse:
+      description: Indicates that the service is unavailable.
+      allOf:
+        - $ref: '#/components/schemas/ErrorResponse'
+      example:
+        error:
+          code: 503
+          message: service unavailable
+
+    BadRequestResponse:
+      description: Indicates that the request was bad.
+      allOf:
+        - $ref: '#/components/schemas/ErrorResponse'
+      example:
+        error:
+          code: 400
+          message: invalid data provided
+
+    NotFoundResponse:
+      description: Indicates that the data was not found.
+      allOf:
+        - $ref: '#/components/schemas/ErrorResponse'
+      example:
+        error:
+          code: 404
+          message: could not find data
+
+    InternalErrorResponse:
+      description: Indicates that the server encountered an unexpected condition, which prevented it from fulfilling the request by the client.
+      allOf:
+        - $ref: '#/components/schemas/ErrorResponse'
+      example:
+        error:
+          code: 500
+          message: internal server error
+
+    InfoResponse:
+      description: Returns general information about the node.
+      properties:
+        data:
+          type: object
+          properties:
+            name:
+              type: string
+              description: The name of the node.
+            version:
+              type: string
+              description: The semantic version of the node.
+            isHealthy:
+              type: boolean
+              description: Tells whether the node is healthy or not.
+            networkId:
+              type: string
+              description: Tells on which network the nodes operates on.
+            bech32HRP:
+              type: string
+              description: Tells whether the node supports mainnet or testnet addresses. Value `iota` indicates that the node supports mainnet addresses. Value `atoi` indicates that the node supports testnet addresses.
+            minPoWScore:
+              description: The Proof-of-Work difficulty for a message to be sent over the network to mitigate spam.
+              type: number
+              format: float
+            messagesPerSecond:
+              description: The current rate of new messages per second.
+              type: number
+              format: float
+            referencedMessagesPerSecond:
+              description: The current rate of referenced messages per second.
+              type: number
+              format: float
+            referencedRate:
+              description: The ratio of referenced messages in relation to new messages of the last confirmed milestone.
+              type: number
+              format: float
+            latestMilestoneTimestamp:
+              type: integer
+              description: The timestamp of the latest seen milestone.
+            latestMilestoneIndex:
+              type: integer
+              description: The most recent milestone known to the node.
+            confirmedMilestoneIndex:
+              type: integer
+              description: The most recent milestone that has been confirmed by the node.
+            pruningIndex:
+              type: integer
+              description: Tells from which starting point the node holds data.
+            features:
+              description: The features that are supported by the node. For example, a node could support the Proof-of-Work (PoW) feature, which would allow the PoW to be performed by the node itself.
+              type: array
+              items:
+                type: string
+          required:
+            - name
+            - version
+            - isHealthy
+            - networkId
+            - bech32HRP
+            - minPoWScore
+            - messagesPerSecond
+            - referencedMessagesPerSecond
+            - referencedRate
+            - latestMilestoneTimestamp
+            - latestMilestoneIndex
+            - confirmedMilestoneIndex
+            - pruningIndex
+            - features
+      required:
+        - data
+
+    TipsResponse:
+      description: Returns tips that are ideal for attaching a message.
+      properties:
+        data:
+          type: object
+          properties:
+            tipMessageIds:
+              type: array
+              items:
+                type: string
+              description: The message identifiers that can be used to a attach a message to.
+          required:
+            - tipMessageIds
+      required:
+        - data
+
+    SubmitMessageRequest:
+      description: Submits a message to the node.
+      properties:
+        networkId:
+          type: string
+          description: Network identifier. This field signifies for which network the message is meant for. It also tells which protocol rules apply to the message. It is computed out of the first 8 bytes of the `BLAKE2b-256` hash of the concatenation of the network type and protocol version string.
+        parentMessageIds:
+          type: array
+          description: The identifiers of the messages this message references.
+          items:
+            type: string
+        payload:
+          oneOf:
+            - $ref: '#/components/schemas/TransactionPayload'
+            - $ref: '#/components/schemas/MilestonePayload'
+            - $ref: '#/components/schemas/IndexationPayload'
+            - $ref: '#/components/schemas/TreasuryTransactionPayload'
+            - $ref: '#/components/schemas/ReceiptPayload'
+        nonce:
+          type: string
+          description: The nonce which lets this message fulfill the Proof-of-Work requirement.
+
+    SubmitMessageResponse:
+      description: Returns the message identifier of the submitted message.
+      properties:
+        data:
+          type: object
+          properties:
+            messageId:
+              type: string
+              description: The message identifier of the submitted message.
+          required:
+            - messageId
+      required:
+        - data
+
+    MessagesFindResponse:
+      description: Searches for messages matching a given indexation key.
+      properties:
+        data:
+          type: object
+          properties:
+            index:
+              type: string
+              description: The provided hex-encoded indexation key that was used to search for.
+            maxResults:
+              type: integer
+              description: The number of results it can return at most.
+            count:
+              type: integer
+              description: The actual number of found results.
+            messageIds:
+              type: array
+              items:
+                type: string
+              description: The identifiers of the found messages that match the given indexation key.
+          required:
+            - index
+            - maxResults
+            - count
+            - messageIds
+      required:
+        - data
+
+    MessageMetadataResponse:
+      description: Returns the metadata of a given message.
+      properties:
+        data:
+          type: object
+          properties:
+            messageId:
+              type: string
+              description: The identifier of the message.
+            parentMessageIds:
+              type: array
+              description: The identifiers of the messages this message references.
+              items:
+                type: string
+            isSolid:
+              type: boolean
+              description: Tells if the message could get solidified by the node or not.
+            referencedByMilestoneIndex:
+              type: integer
+              nullable: true
+              description: Tells which milestone references this message. If `null` the message was not referenced by a milestone yet.
+            milestoneIndex:
+              type: integer
+              description: If set, this message can be considered as a valid milestone message. This field therefore describes the milestone index of the involved milestone. A message can be considered as a valid milestone message if the milestone payload is valid and if the referenced parents in the milestone payload do match the referenced parents in the message itself. Note it's possible to have different milestone messages that all represent the same milestone.
+            ledgerInclusionState:
+              type: string
+              enum:
+                - included
+                - conflicting
+                - noTransaction
+              description: If `included`, the message contains a transaction that has been included in the ledger. If `conflicitng`, the message contains a transaction that has not been included in the ledger because it conflicts with another transaction. If the message does not contain a transaction, `ledgerInclusionState` is set to `noTransaction`.
+            conflictReason:
+              type: integer
+              description: "Defines the reason why a message is marked as conflicting. Value `1` denotes that the referenced UTXO was already spent. Value `2`denotes that the referenced UTXO was already spent while confirming this milestone. Value `3` denotes that the referenced UTXO cannot be found. Value `4` denotes that the sum of the inputs and output values does not match. Value `5` denotes that the unlock block signature is invalid. Value `6` denotes that the input or output type used is unsupported. Value `7` denotes that the used address type is unsupported. Value `8` denotes that the dust allowance for the address is invalid. Value `9` denotes that the semantic validation failed."
+            shouldPromote:
+              type: boolean
+              description: Tells if the message should be promoted to get more likely picked up by the Coordinator.
+            shouldReattach:
+              type: boolean
+              description: Tells if the message should be reattached.
+          required:
+            - messageId
+            - parentMessageIds
+            - isSolid
+      required:
+        - data
+
+    MessageResponse:
+      description: Returns a given message.
+      properties:
+        data:
+          type: object
+          properties:
+            allOf:
+              $ref: '#/components/schemas/Message'
+      required:
+        - data
+
+    MessageChildrenResponse:
+      description: Returns the children of a given message.
+      properties:
+        data:
+          type: object
+          properties:
+            messageId:
+              type: string
+              description: The message identifier of the given message that was used to look up its children.
+            maxResults:
+              type: integer
+              description: The number of results it can return at most.
+            count:
+              type: integer
+              description: The actual number of found results.
+            childrenMessageIds:
+              type: array
+              items:
+                type: string
+              description: The message identifiers of the found children.
+          required:
+            - messageId
+            - maxResults
+            - count
+            - childrenMessageIds
+      required:
+        - data
+
+    OutputResponse:
+      description: Returns an output.
+      properties:
+        data:
+          type: object
+          properties:
+            messageId:
+              type: string
+              description: The message identifier that references the output.
+            transactionId:
+              type: string
+              description: The identifier of the transaction.
+            outputIndex:
+              type: integer
+              description: The index of the output.
+            isSpent:
+              type: boolean
+              description: Tells if the output is spent or not.
+            milestoneIndexSpent:
+              type: integer
+              description: The milestone index at which this output was spent.
+            transactionIdSpent:
+              type: string
+              description: The transaction this output was spent with.
+            output:
+              anyOf:
+                - $ref: '#/components/schemas/SigLockedSingleOutput'
+                - $ref: '#/components/schemas/SigLockedDustAllowanceOutput'
+            ledgerIndex:
+              type: integer
+              description: The current ledger index for which the request was made.
+          required:
+            - messageId
+            - transactionId
+            - outputIndex
+            - isSpent
+            - output
+            - ledgerIndex
+      required:
+        - data
+
+    BalanceAddressResponse:
+      description: Returns the balance of an address.
+      properties:
+        data:
+          type: object
+          properties:
+            addressType:
+              type: integer
+              description: The type of the address. Value `0` denotes a Ed25519 address.
+            address:
+              type: string
+              description: The hex-encoded Ed25519 address.
+            balance:
+              type: integer
+              description: The computed balance for the address.
+            dustAllowed:
+              type: boolean
+              description: Tells whether the address can receive dust or not.
+            ledgerIndex:
+              type: integer
+              description: The current ledger index for which the request was made.
+          required:
+            - addressType
+            - address
+            - balance
+            - dustAllowed
+            - ledgerIndex
+      required:
+        - data
+
+
+    OutputsAddressResponse:
+      properties:
+        data:
+          type: object
+          properties:
+            addressType:
+              type: integer
+              description: The type of the address. Value `0` denotes a Ed25519 address.
+            address:
+              type: string
+              description: The hex-encoded Ed25519 address.
+            maxResults:
+              type: integer
+              description: The number of results it can return at most.
+            count:
+              type: integer
+              description: The actual number of found results.
+            outputIds:
+              type: array
+              items:
+                type: string
+              description: The identifiers of the outputs that use a certain address.
+            ledgerIndex:
+              type: integer
+              description: The current ledger index for which the request was made.
+          required:
+            - addressType
+            - address
+            - maxResults
+            - count
+            - outputIds
+            - ledgerIndex
+      required:
+        - data
+
+    ReceiptsResponse:
+      properties:
+        data:
+          type: object
+          properties:
+            receipts:
+              type: array
+              items:
+                $ref: '#/components/schemas/ReceiptTuple'
+          required:
+            - receipts
+      required:
+        - data
+
+    TreasuryResponse:
+      properties:
+        data:
+          type: object
+          properties:
+            milestoneId:
+              type: string
+            amount:
+              type: integer
+          required:
+            - milestoneId
+            - amount
+      required:
+        - data
+
+    MilestoneResponse:
+      description: Returns information about a milestone.
+      properties:
+        data:
+          type: object
+          properties:
+            index:
+              type: integer
+              description: The index number of the milestone.
+            messageId:
+              type: string
+              description: The identifier of a message which describes this milestone. Note that different messages could describe the same milestone.
+            timestamp:
+              type: integer
+              description: The timestamp of when the  milestone was issued.
+          required:
+            - index
+            - messageId
+            - timestamp
+      required:
+        - data
+
+    UTXOChangesResponse:
+      description: Returns all UTXO changes of the given milestone.
+      properties:
+        data:
+          type: object
+          properties:
+            index:
+              type: integer
+              description: The index number of the milestone.
+            createdOutputs:
+              description: The created outputs of the given milestone.
+              type: array
+              items:
+                type: string
+            consumedOutputs:
+              description: The consumed outputs of the given milestone.
+              type: array
+              items:
+                type: string
+          required:
+            - index
+            - createdOutputs
+            - consumedOutputs
+      required:
+        - data
+
+    PeersResponse:
+      description: Returns all peers of the node.
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Peer'
+      required:
+        - data
+
+    PeerResponse:
+      description: Returns a given peer of the node.
+      properties:
+        data:
+          allOf:
+            - $ref: '#/components/schemas/Peer'
+      required:
+        - data
+
+    AddPeerRequest:
+      description: Adds a given peer to the node.
+      properties:
+        multiAddress:
+          type: string
+        alias:
+          type: string
+      required:
+        - multiAddress
+
+    AddPeerResponse:
+      description: Returns information about an added peer.
+      properties:
+        data:
+          allOf:
+            - $ref: '#/components/schemas/Peer'
+      required:
+        - data

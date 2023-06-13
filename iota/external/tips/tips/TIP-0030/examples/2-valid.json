@@ -1,0 +1,9 @@
+{
+  "standard": "IRC30",
+  "name": "FooCoin",
+  "description": "FooCoin is the utility and governance token of FooLand, a revolutionary protocol in the play-to-earn crypto gaming field.",
+  "symbol": "FOO",
+  "decimals": 3,
+  "url": "https://foocoin.io",
+  "logoUrl": "https://ipfs.io/ipfs/QmR36VFfo1hH2RAwVs4zVJ5btkopGip5cW7ydY4jUQBrkR"
+}

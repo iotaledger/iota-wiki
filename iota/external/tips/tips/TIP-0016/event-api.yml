@@ -1,0 +1,166 @@
+asyncapi: 2.0.0
+info:
+  title: Node Event API
+  contact:
+    email: contact@iota.org
+  version: 1.0.0
+  description: The node event API is in charge of publishing information about events within the node software.
+externalDocs:
+  description: Find out more about IOTA
+  url: 'https://iota.org'
+channels:
+  milestones/latest:
+    subscribe:
+      operationId: milestoneLatest
+      description: Publishes the newest latest known milestone.
+      message:
+        $ref: '#/components/messages/MilestonePayload'
+  milestones/confirmed:
+    subscribe:
+      operationId: milestoneConfirmed
+      description: Publishes the newly confirmed milestone.
+      message:
+        $ref: '#/components/messages/MilestonePayload'
+  messages:
+    subscribe:
+      operationId: messages
+      description: Publishes newly received messages in their serialized binary form.
+      message:
+        $ref: '#/components/messages/Message'
+  messages/referenced:
+    subscribe:
+      operationId: messagesReferenced
+      description: Publishes metadata of messages newly referenced by a milestone.
+      message:
+        $ref: '#/components/messages/MessageMetadata'
+  messages/indexation/[index]:
+    subscribe:
+      operationId: messagesWithIndex
+      description: Publishes newly received messages which contain indexation payloads with the specified index parameter (encoded in hex) in their serialized binary form.
+      message:
+        $ref: '#/components/messages/Message'
+  messages/[messageId]/metadata:
+    subscribe:
+      operationId: messagesSpecificMetadata
+      description: Publishes metadata of a particular message whenever its metadata changes.
+      message:
+        $ref: '#/components/messages/MessageMetadata'
+  outputs/[outputId]:
+    subscribe:
+      operationId: output
+      description: Publishes the given wanted output on subscription and when its state changes (created, spent).
+      message:
+        $ref: '#/components/messages/OutputPayload'
+  transactions/[transactionId]/included-message:
+    subscribe:
+      operationId: transactions
+      description: Publishes the confirmed message which carried the transaction with the specified transaction id.
+      message:
+        $ref: '#/components/messages/Message'
+  addresses/[address]/outputs:
+    subscribe:
+      operationId: bech32AddressOutputs
+      description: Publishes newly created or spent outputs on the specified Bech32 address.
+      message:
+        $ref: '#/components/messages/OutputPayload'
+  addresses/ed25519/[address]/outputs:
+    subscribe:
+      operationId: hexEd25519AddressOutputs
+      description: Publishes newly created or spent outputs on the specified hex-encoded Ed25519 address.
+      message:
+        $ref: '#/components/messages/OutputPayload'
+components:
+  messages:
+    MilestonePayload:
+      contentType: application/json
+      payload:
+        type: object
+        required:
+          - "index"
+          - "timestamp"
+        properties:
+          index:
+            type: number
+            description: The index of the milestone.
+            example: 242412
+          timestamp:
+            type: number
+            description: The UNIX timestamp in seconds of the milestone.
+            example: 1609950538
+    Message:
+      contentType: application/octet-stream
+      description: The message in its serialized binary form.
+      payload:
+        type: string
+        format: binary
+        example: >-
+          0100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000eb000000000000000000000001000000000000000000000000000000000000000000000000000000000000000000000000020000016920b176f613ec7be59e68fc68f597eb3393af80f74c7c3db78198147d5f1f92640000000000000000018afe1f314622cc1ef52f16d619d1baccff81816b7e4e35fe268dc247b730acd65d5d2dd3f7df09000000000001000001f7868ab6bb55800b77b8b74191ad8285a9bf428ace579d541fda47661803ff44e0af5c34ad4edf475a01fb46e089a7afcab158b4a0133f32e889083e1c77eef65548933e0c6d2c3b0ac006cd77e77d778bf37b8d38d219fb62a9a2f718d4c9095100000000000000
+    OutputPayload:
+      contentType: application/json
+      payload:
+        type: object
+        required:
+          - "messageId"
+          - "transactionId"
+          - "outputIndex"
+          - "isSpent"
+          - "output"
+        properties:
+          messageId:
+            type: string
+            description: The ID of the message.
+            example: cf5f77d62285b9ed8d617729e9232ae346a328c1897f0939837198e93ec13e85
+          transactionId:
+            type: string
+            description: The ID of the transaction which created this output.
+            example: d026f8b1c856d4e844cc734bbe095429fb880ec4d93f3ccffe3b292a7de17be7
+          outputIndex:
+            type: number
+            description: The index of the this output within its transaction.
+            example: 0
+          isSpent:
+            type: boolean
+            description: Whether the output is spent or not.
+            example: true
+          output:
+            type: object
+            description: The output object itself.
+    MessageMetadata:
+      contentType: application/json
+      payload:
+        type: object
+        required:
+          - "messageId"
+          - "parentMessageIds"
+          - "isSolid"
+        properties:
+          messageId:
+            type: string
+            description: The ID of the message.
+            example: cf5f77d62285b9ed8d617729e9232ae346a328c1897f0939837198e93ec13e85
+          parentMessageIds:
+            type: array
+            description: The IDs of the referenced parent messages.
+            example:
+              - d026f8b1c856d4e844cc734bbe095429fb880ec4d93f3ccffe3b292a7de17be7
+              - cf5f77d62285b9ed8d617729e9232ae346a328c1897f0939837198e93ec13e85
+          isSolid:
+            type: boolean
+            description: Whether the message is solid or not.
+            example: true
+          referencedByMilestoneIndex:
+            type: number
+            description: The index of the milestone which referenced this message.
+            example: 242544
+          ledgerInclusionState:
+            type: string
+            description: The inclusion state of the message.
+            enum: [ noTransaction, conflicting, included ]
+          shouldPromote:
+            type: boolean
+            description: Whether the message should be promoted. This is determined automatically by the node by using the OCRI/YCRI of the message.
+            example: true
+          shouldReattach:
+            type: boolean
+            description: Whether the message should be re-attached. This is determined automatically by the node by using the OCRI/YCRI of the message.
+            example: false

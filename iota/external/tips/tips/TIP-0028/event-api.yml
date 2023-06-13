@@ -1,0 +1,1237 @@
+asyncapi: 2.4.0
+info:
+  title: Node Event API
+  contact:
+    email: contact@iota.org
+  version: 2.0.0
+  description: >-
+    The node event API is in charge of publishing information about events
+    within the node software.
+externalDocs:
+  description: Find out more about IOTA
+  url: 'https://iota.org'
+tags:
+  - name: milestones
+    description: Everything about milestones.
+  - name: blocks
+    description: Everything about blocks.
+  - name: outputs
+    description: Everything about outputs.
+  - name: transactions
+    description: Everything about transactions.
+  - name: receipts
+    description: Everything about migration receipts.
+channels:
+  milestone-info/latest:
+    subscribe:
+      operationId: milestoneInfoLatest
+      tags:
+        - name: milestones
+      description: Publishes the latest known milestone index and its timestamp.
+      message:
+        $ref: '#/components/messages/MilestoneInfoResponse'
+  milestone-info/confirmed:
+    subscribe:
+      tags:
+        - name: milestones
+      operationId: milestoneInfoConfirmed
+      description: Publishes the newly confirmed milestone index and its timestamp.
+      message:
+        $ref: '#/components/messages/MilestoneInfoResponse'
+  milestones:
+    subscribe:
+      tags:
+        - name: milestones
+      operationId: milestones
+      description: Publishes newly created milestone payloads.
+      message:
+        $ref: '#/components/messages/MilestonePayloadSerialized'
+  blocks:
+    subscribe:
+      tags:
+        - name: blocks
+      operationId: blocks
+      description: Publishes newly received blocks in their serialized binary form.
+      message:
+        $ref: '#/components/messages/Block'
+  blocks/transaction:
+    subscribe:
+      tags:
+        - name: blocks
+        - name: transactions
+      operationId: blocksTransaction
+      description: >-
+        Publishes newly received blocks containing a transaction payload in
+        their serialized binary form.
+      message:
+        $ref: '#/components/messages/Block'
+  blocks/transaction/tagged-data:
+    subscribe:
+      tags:
+        - name: blocks
+        - name: transactions
+      operationId: blocksTransactionsWithTaggedData
+      description: >-
+        Publishes newly received blocks containing a Tagged Data payload inside
+        transactions.
+      message:
+        $ref: '#/components/messages/Block'
+  'blocks/transaction/tagged-data/{tag}':
+    parameters:
+      tag:
+        description: >-
+          Hex encoded tag of the Tagged Data Payload inside the Transaction
+          Payload.
+        schema:
+          type: string
+          examples:
+            - '0xe45'
+    subscribe:
+      tags:
+        - name: blocks
+        - name: transactions
+      operationId: blocksTransactionsWithTag
+      description: >-
+        Publishes newly received blocks containing a Tagged Data payload inside
+        transactions with a specific tag.
+      message:
+        $ref: '#/components/messages/Block'
+  blocks/tagged-data:
+    subscribe:
+      tags:
+        - name: blocks
+      operationId: blocksWithTaggedData
+      description: >-
+        Publishes newly received blocks which contain tagged data payloads
+        (encoded in hex) in their serialized binary form.
+      message:
+        $ref: '#/components/messages/Block'
+  'blocks/tagged-data/{tag}':
+    parameters:
+      tag:
+        description: Hex encoded tag of the Tagged Data Payload.
+        schema:
+          type: string
+          examples:
+            - '0xe45'
+    subscribe:
+      tags:
+        - name: blocks
+      operationId: blocksWithSpecificTag
+      description: >-
+        Publishes newly received blocks which contain tagged data payloads with
+        the specified tag parameter (encoded in hex) in their serialized binary
+        form. Untagged data blocks do not get published.
+      message:
+        $ref: '#/components/messages/Block'
+  'block-metadata/{blockId}':
+    parameters:
+      blockId:
+        description: Hex encoded identifier of the block.
+        schema:
+          type: string
+          examples:
+            - '0xcf5f77d62285b9ed8d617729e9232ae346a328c1897f0939837198e93ec13e85'
+    subscribe:
+      tags:
+        - name: blocks
+      operationId: blockSpecificMetadata
+      description: Publishes metadata of a particular block whenever its metadata changes.
+      message:
+        $ref: '#/components/messages/BlockMetadata'
+  block-metadata/referenced:
+    subscribe:
+      tags:
+        - name: blocks
+      operationId: blockMetadataReferenced
+      description: Publishes metadata of a block whenever it gets referenced.
+      message:
+        $ref: '#/components/messages/BlockMetadata'
+  'transactions/{transactionId}/included-block':
+    parameters:
+      transactionId:
+        description: Hex encoded identifier of the transaction.
+        schema:
+          type: string
+          examples:
+            - '0xd026f8b1c856d4e844cc734bbe095429fb880ec4d93f3ccffe3b292a7de17be7'
+    subscribe:
+      tags:
+        - name: transactions
+        - name: blocks
+      operationId: transactionIncludedBlock
+      description: >-
+        Publishes the confirmed block which carried the transaction with the
+        specified transaction id.
+      message:
+        $ref: '#/components/messages/Block'
+  'outputs/{outputId}':
+    parameters:
+      outputId:
+        description: Hex encoded identifier of the output.
+        schema:
+          type: string
+          examples:
+            - '0xd026f8b1c856d4e844cc734bbe095429fb880ec4d93f3ccffe3b292a7de17be70000'
+    subscribe:
+      tags:
+        - name: outputs
+      operationId: output
+      description: >-
+        Publishes the given wanted output on subscription and when its state
+        changes (created, spent).
+      message:
+        $ref: '#/components/messages/OutputPayload'
+  'outputs/alias/{aliasId}':
+    parameters:
+      aliasId:
+        description: The unique identifier of the alias chain. Hex encoded with 0x prefix.
+        schema:
+          type: string
+          examples:
+            - '0x1505ec099896ab05d9e08fbc7101ae4dff0093b3943b28f789ed2ca728bcc8d6'
+    subscribe:
+      tags:
+        - name: outputs
+      operationId: aliasOutputByAliasId
+      description: Publishes the newly created alias output of an alias chain.
+      message:
+        $ref: '#/components/messages/OutputPayload'
+  'outputs/nft/{nftId}':
+    parameters:
+      nftId:
+        description: The unique identifier of the nft chain. Hex encoded with 0x prefix.
+        schema:
+          type: string
+          examples:
+            - '0x19c82b32761fd8729a1a6c77f7c17597e4b9b01759794e52381f6a0050b0c11f'
+    subscribe:
+      tags:
+        - name: outputs
+      operationId: nftOutputByNftId
+      description: Publishes the newly created nft output of an nft chain.
+      message:
+        $ref: '#/components/messages/OutputPayload'
+  'outputs/foundry/{foundryId}':
+    parameters:
+      foundryId:
+        description: >-
+          The unique identifier of the foundry chain. Hex encoded with 0x
+          prefix.
+        schema:
+          type: string
+          examples:
+            - '0x081505ec099896ab05d9e08fbc7101ae4dff0093b3943b28f789ed2ca728bcc8d60100000000'
+    subscribe:
+      tags:
+        - name: outputs
+      operationId: foundryOutputByFoundryId
+      description: Publishes the newly created foundry output of a foundry chain.
+      message:
+        $ref: '#/components/messages/OutputPayload'
+  'outputs/unlock/{condition}/{address}':
+    parameters:
+      condition:
+        description: Type of unlock condition of the output to look for.
+        schema:
+          type: string
+          enum:
+            - address
+            - storage-return
+            - expiration
+            - state-controller
+            - governor
+            - immutable-alias
+            - +
+      address:
+        description: Bech32 encoded address.
+        schema:
+          type: string
+          examples:
+            - 'iota1qrwfnskm4f7utdrxqnkfntfqxehtpj8s0kf68zkcwm0yrhuemzjp5sjfw5v'
+    subscribe:
+      tags:
+        - name: outputs
+      operationId: outputByUnlockAndAddress
+      description: >-
+        Publishes newly created outputs that have a specific address in a
+        specific unlock condition.
+      message:
+        $ref: '#/components/messages/OutputPayload'
+  'outputs/unlock/{condition}/{address}/spent':
+    parameters:
+      condition:
+        description: Type of unlock condition of the output to look for.
+        schema:
+          type: string
+          enum:
+            - address
+            - storage-return
+            - expiration
+            - state-controller
+            - governor
+            - immutable-alias
+            - +
+      address:
+        description: Bech32 encoded address.
+        schema:
+          type: string
+          examples:
+            - 'iota1qrwfnskm4f7utdrxqnkfntfqxehtpj8s0kf68zkcwm0yrhuemzjp5sjfw5v'
+    subscribe:
+      tags:
+        - name: outputs
+      operationId: outputByUnlockAndAddressSpent
+      description: >-
+        Publishes newly spent outputs that have a specific address in a specific
+        unlock condition.
+      message:
+        $ref: '#/components/messages/OutputPayload'
+  receipts:
+    subscribe:
+      tags:
+        - name: receipts
+      operationId: receipts
+      description: Publishes newly created migration receipts in raw binary format.
+      message:
+        $ref: '#/components/messages/Receipt'
+components:
+  messages:
+    MilestonePayload:
+      contentType: application/json
+      payload:
+        type: object
+        required:
+          - type
+          - index
+          - timestamp
+          - previousMilestoneId
+          - parents
+          - pastConeMerkleProof
+          - inclusionMerkleProof
+          - signatures
+        properties:
+          type:
+            type: number
+            description: Payload type of the milestone.
+            example: 7
+          index:
+            type: number
+            description: The index of the milestone.
+            example: 242412
+          timestamp:
+            type: number
+            description: The UNIX timestamp in seconds of the milestone.
+            example: 1609950538
+          protocolVersion:
+            type: integer
+            description: >-
+              Protocol version of the Milestone Payload and its encapsulating
+              block.
+            example: 2
+          previousMilestoneId:
+            type: string
+            description: >-
+              Milestone ID of the previous milestone (index - 1). Hex-encoded
+              with 0x prefix.
+            example: '0x4bd78256357630f186a4b302b3b8df7c01061260baa8d014f34187862343cf4e'
+          parents:
+            type: array
+            description: The parents where this milestone attaches to
+            example:
+              - >-
+                0xd026f8b1c856d4e844cc734bbe095429fb880ec4d93f3ccffe3b292a7de17be7
+              - >-
+                0xcf5f77d62285b9ed8d617729e9232ae346a328c1897f0939837198e93ec13e85
+          inclusionMerkleRoot:
+            type: string
+            description: >-
+              The merkle root of all directly/indirectly referenced blocks
+              (their IDs) which were newly confirmed by this milestone.
+            example: '0x014e3a82d54c1bf4e411eee30ce25ee739b0f790fca248c0036d538952d6072b'
+          appliedMerkleRoot:
+            type: string
+            description: >-
+              The merkle root of all blocks (their IDs) carrying ledger state
+              mutating transactions.
+            example: '0x07fbcf40a98cf1e1e1e0aeb7527ecf464cc8d461f617e48931c6a2096cb18d1a'
+          metadata:
+            type: string
+            descripiton: The metadata associated with this milestone.
+            example: '0x01'
+          options:
+            type: array
+            items:
+              anyOf:
+                - $ref: '#/components/schemas/ReceiptMilestoneOpt'
+                - $ref: '#/components/schemas/ProtocolParamsMilestoneOptions'
+          signatures:
+            type: array
+            items:
+              anyOf:
+                - $ref: '#/components/schemas/Ed25519Signature'
+    MilestonePayloadSerialized:
+      contentType: application/vnd.iota.serializer-v1
+      description: The milestone payload in its serialized form.
+      payload:
+        type: string
+        format: binary
+        example: >-
+          070000000a1a0000977c626276b19ef8b3c445709f2f0f2ccc4abb98d97617f421f240c0d1ee066d4306e67a0321889ef8ec89b7eff1378049e058f0fa87a78c2452ae72631a5a99d913d1cbb3525b8faa1800e28dfcb28154bcba10154c39ef87ceda793cb44f58ae1549c88ea13fe4a9695bb6f0aba6cb756522209e5066a96039ae12b398b975693bdc21e222997c86ff9bfc5844f0372d58ff6fa510688e53c181bbdf4db41f9b627540a70e5751c026e543b2e8ab2eb06099daa1d1e5df47778f7787faab45cdf12fe3a80000000300d85e5b1590d898d1e0cdebb2e3b5337c8b76270142663d78811683ba47c17c989ad7a8f0ff2c6438bf435786d4a5b0125a5caf7367061b49a739389d5ebea234c0466c86f88a3f8add03bff04c2e34b214683f2f6983641e1d1185da7e2c3e0200d9922819a39e94ddf3907f4b9c8df93f39f026244fcb609205b9a879022599f218be2536d8b7b8547faa3dbdfe98339ebe9e2b2417a8a03eee02b2a8312b9e026dd0a33261a58a240cd0a1b06cdf1775d98d316f162d3eec402f4bf08bea2a0700f9d9656a60049083eef61487632187b351294c1fa23d118060d813db6d03e8b6ca8180d435708e826bc2042ccd667babb59c5cc461ff29dba966359fcd6fc511cdfdf10d6576f36ac2a6e5cb691e13968c13947ffbd9239939d3802b2fbe0f06
+    MilestoneInfoResponse:
+      contentType: application/json
+      payload:
+        type: object
+        required:
+          - milestoneIndex
+        properties:
+          milestoneIndex:
+            type: number
+            description: The index of the milestone.
+            example: 242412
+          milestoneTimestamp:
+            type: number
+            description: The UNIX timestamp in seconds of the milestone.
+            example: 1609950538
+          milestoneId:
+            type: string
+            description: Hex encoded identifier of the milestone payload.
+            example: '0x7a09324557e9200f39bf493fc8fd6ac43e9ca750c6f6d884cc72386ddcb7d695'
+    Block:
+      contentType: application/vnd.iota.serializer-v1
+      description: The block in its serialized binary form.
+      payload:
+        type: string
+        format: binary
+        example: >-
+          0100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000eb000000000000000000000001000000000000000000000000000000000000000000000000000000000000000000000000020000016920b176f613ec7be59e68fc68f597eb3393af80f74c7c3db78198147d5f1f92640000000000000000018afe1f314622cc1ef52f16d619d1baccff81816b7e4e35fe268dc247b730acd65d5d2dd3f7df09000000000001000001f7868ab6bb55800b77b8b74191ad8285a9bf428ace579d541fda47661803ff44e0af5c34ad4edf475a01fb46e089a7afcab158b4a0133f32e889083e1c77eef65548933e0c6d2c3b0ac006cd77e77d778bf37b8d38d219fb62a9a2f718d4c9095100000000000000
+    Receipt:
+      contentType: application/vnd.iota.serializer-v1
+      description: The migration receipts in its serialized binary form.
+      payload:
+        type: string
+        format: binary
+        example: >-
+          010000000000000000000000000000000000000000000000000000000000000000000000000000000
+    OutputPayload:
+      contentType: application/json
+      payload:
+        type: object
+        required:
+          - metadata
+          - output
+        properties:
+          metadata:
+            type: object
+            description: Metadata about the output.
+            oneOf:
+              - $ref: '#/components/schemas/OutputMetadata'
+          output:
+            type: object
+            description: The output object itself.
+            anyOf:
+              - $ref: '#/components/schemas/BasicOutput'
+              - $ref: '#/components/schemas/AliasOutput'
+              - $ref: '#/components/schemas/FoundryOutput'
+              - $ref: '#/components/schemas/NFTOutput'
+    BlockMetadata:
+      contentType: application/json
+      payload:
+        type: object
+        required:
+          - blockId
+          - parents
+          - isSolid
+        properties:
+          blockId:
+            type: string
+            description: The ID of the block.
+            example: '0xcf5f77d62285b9ed8d617729e9232ae346a328c1897f0939837198e93ec13e85'
+          parents:
+            type: array
+            description: The IDs of the referenced parent blocks.
+            example:
+              - >-
+                0xd026f8b1c856d4e844cc734bbe095429fb880ec4d93f3ccffe3b292a7de17be7
+              - >-
+                0xcf5f77d62285b9ed8d617729e9232ae346a328c1897f0939837198e93ec13e85
+          isSolid:
+            type: boolean
+            description: Whether the block is solid or not.
+            example: true
+          referencedByMilestoneIndex:
+            type: number
+            description: The index of the milestone which referenced this block.
+            example: 242544
+          ledgerInclusionState:
+            type: string
+            description: The inclusion state of the block.
+            enum:
+              - noTransaction
+              - conflicting
+              - included
+            example: conflicting
+          conflictReason:
+            type: integer
+            enum:
+              - 1
+              - 2
+              - 3
+              - 4
+              - 5
+              - 6
+              - 7
+              - 8
+              - 9
+              - 10
+              - 11
+              - 12
+              - 255
+            description: |
+              Values:
+                * `1` - denotes that the referenced UTXO was already spent.
+                * `2` - denotes that the referenced UTXO was already spent while confirming this milestone.
+                * `3` - denotes that the referenced UTXO cannot be found.
+                * `4` - denotes that the sum of the inputs and output values does not match.
+                * `5` - denotes that the unlock block signature is invalid.
+                * `6` - denotes that the configured timelock is not yet expired.
+                * `7` - denotes that the given native tokens are invalid.
+                * `8` - denotes that the return amount in a transaction is not fulfilled by the output side.
+                * `9` - denotes that the input unlock is invalid.
+                * `10` - denotes that the inputs commitment is invalid.
+                * `11` - denotes that an output contains a Sender with an ident (address) which is not unlocked.
+                * `12` - denotes that the chain state transition is invalid.
+                * `255` - denotes that the semantic validation failed.
+            example: 1
+          whiteFlagIndex:
+            type: integer
+            description: >-
+              If set, defines the order of the block in the white flag traversal
+              during milestone solidification. Only referenced blocks have this
+              information.
+            example: 13
+          shouldPromote:
+            type: boolean
+            description: >-
+              Whether the block should be promoted. This is determined
+              automatically by the node by using the OCRI/YCRI of the block.
+            example: true
+          shouldReattach:
+            type: boolean
+            description: >-
+              Whether the block should be re-attached. This is determined
+              automatically by the node by using the OCRI/YCRI of the block.
+            example: false
+  schemas:
+    NativeToken:
+      description: A native token and its balance in the output.
+      properties:
+        tokenId:
+          type: string
+          description: >-
+            Hex-encoded identifier of the native token that equals the foundryId
+            of the controlling foundry.
+          example: >-
+            0x08de3fa7acc30ec899bb797b1d80680690b54a1cdb78b2f7f50b1ad073e74c8cbd0100000000
+        amount:
+          type: string
+          description: Amount of native tokens (up to uint256). Hex encoded number.
+          example: '0xc8'
+      required:
+        - tokenId
+        - amount
+    Ed25519Address:
+      description: The Ed25519 address.
+      properties:
+        type:
+          type: integer
+          description: Set to value 0 to denote an Ed25519 Address.
+          example: 0
+        pubKeyHash:
+          type: string
+          description: The hex-encoded BLAKE2b-256 hash of the Ed25519 public key.
+          example: '0x713c3e879b53398431f67312254101ffdd23067febc77f4949de57ee279c8bee'
+      required:
+        - type
+        - pubKeyHash
+    AliasAddress:
+      description: Address of an alias account.
+      properties:
+        type:
+          type: integer
+          description: Set to value 8 to denote an Alias Address.
+          example: 1
+        aliasId:
+          type: string
+          description: >-
+            The hex-encoded BLAKE2b-256 hash of the outputId that created the
+            alias.
+          example: '0x1505ec099896ab05d9e08fbc7101ae4dff0093b3943b28f789ed2ca728bcc8d6'
+      required:
+        - type
+        - aliasId
+    NFTAddress:
+      description: Address of an NFT account.
+      properties:
+        type:
+          type: integer
+          description: Set to value 16 to denote an NFT Address.
+          example: 1
+        nftId:
+          type: string
+          description: >-
+            The hex-encoded BLAKE2b-256 hash of the outputId that created the
+            NFT.
+          example: '0x19c82b32761fd8729a1a6c77f7c17597e4b9b01759794e52381f6a0050b0c11f'
+      required:
+        - type
+        - nftId
+    AddressUnlockCondition:
+      description: Can be unlocked by unlocking the address.
+      properties:
+        type:
+          type: integer
+          description: Set to value 0 to denote an Address Unlock Condition.
+          example: 0
+        address:
+          oneOf:
+            - $ref: '#/components/schemas/Ed25519Address'
+            - $ref: '#/components/schemas/AliasAddress'
+            - $ref: '#/components/schemas/NFTAddress'
+      required:
+        - type
+        - address
+    ImmutableAliasAddressUnlockCondition:
+      description: >-
+        Can be unlocked by unlocking the permanent alias address. The unlock
+        condition has to be kept in future state transitions of the UTXO state
+        machine.
+      properties:
+        type:
+          type: integer
+          description: >-
+            Set to value 6 to denote an Immutable Alias Address Unlock
+            Condition.
+          example: 6
+        address:
+          oneOf:
+            - $ref: '#/components/schemas/AliasAddress'
+      required:
+        - type
+        - address
+    StorageDepositReturnUnlockCondition:
+      description: >-
+        Can be unlocked by depositing return amount to return address via an
+        output that only has Address Unlock Condition.
+      properties:
+        type:
+          type: integer
+          description: Set to value 1 to denote a Storage Deposit Return Unlock Condition.
+          example: 1
+        returnAddress:
+          oneOf:
+            - $ref: '#/components/schemas/Ed25519Address'
+            - $ref: '#/components/schemas/AliasAddress'
+            - $ref: '#/components/schemas/NFTAddress'
+        returnAmount:
+          type: integer
+          description: >-
+            Amount of IOTA tokens the consuming transaction should deposit to
+            the address defined in Return Address.
+          example: 50
+      required:
+        - type
+        - returnAddress
+        - returnAmount
+    TimelockUnlockCondition:
+      description: Can be unlocked if the confirming milestone has a >= Unix Timestamp.
+      properties:
+        type:
+          type: integer
+          description: Set to value 2 to denote a Timelock Unlock Condition.
+          example: 2
+        unixTime:
+          type: integer
+          description: >-
+            Unix time (seconds since Unix epoch) starting from which the output
+            can be consumed.
+          example: 1609950538
+          exclusiveMinimum: 0
+      required:
+        - type
+        - unixTime
+    ExpirationUnlockCondition:
+      description: >-
+        Defines a unix time until which only Address, defined in Address Unlock
+        Condition, is allowed to unlock the output. After the unix time, only
+        Return Address can unlock it.
+      properties:
+        type:
+          type: integer
+          description: Set to value 3 to denote an Expiration Unlock Condition.
+          example: 3
+        returnAddress:
+          oneOf:
+            - $ref: '#/components/schemas/Ed25519Address'
+            - $ref: '#/components/schemas/AliasAddress'
+            - $ref: '#/components/schemas/NFTAddress'
+        unixTime:
+          type: integer
+          description: >-
+            Before this unix time, Address Unlock Condition is allowed to unlock
+            the output, after that only the address defined in Return Address.
+          example: 1609950538
+          exclusiveMinimum: 0
+      required:
+        - type
+        - returnAddress
+        - unixTime
+    StateControllerAddressUnlockCondition:
+      description: Can be unlocked by unlocking the address.
+      properties:
+        type:
+          type: integer
+          description: Set to value 4 to denote a Sate Controller Address Unlock Condition.
+          example: 4
+        address:
+          oneOf:
+            - $ref: '#/components/schemas/Ed25519Address'
+            - $ref: '#/components/schemas/AliasAddress'
+            - $ref: '#/components/schemas/NFTAddress'
+      required:
+        - type
+        - address
+    GovernorAddressUnlockCondition:
+      description: Can be unlocked by unlocking the address.
+      properties:
+        type:
+          type: integer
+          description: Set to value 5 to denote a Governor Address Unlock Condition.
+          example: 5
+        address:
+          oneOf:
+            - $ref: '#/components/schemas/Ed25519Address'
+            - $ref: '#/components/schemas/AliasAddress'
+            - $ref: '#/components/schemas/NFTAddress'
+      required:
+        - type
+        - address
+    SenderFeature:
+      description: Identifies the validated sender of the output.
+      properties:
+        type:
+          type: integer
+          description: Set to value 0 to denote a Sender Feature.
+          example: 0
+        sender:
+          oneOf:
+            - $ref: '#/components/schemas/Ed25519Address'
+            - $ref: '#/components/schemas/AliasAddress'
+            - $ref: '#/components/schemas/NFTAddress'
+      required:
+        - type
+        - sender
+    IssuerFeature:
+      description: Identifies the validated issuer of the UTXO state machine (alias/NFT).
+      properties:
+        type:
+          type: integer
+          description: Set to value 1 to denote an Issuer Feature.
+          example: 1
+        issuer:
+          oneOf:
+            - $ref: '#/components/schemas/Ed25519Address'
+            - $ref: '#/components/schemas/AliasAddress'
+            - $ref: '#/components/schemas/NFTAddress'
+      required:
+        - type
+        - issuer
+    MetadataFeature:
+      description: >-
+        Defines metadata (arbitrary binary data) that will be stored in the
+        output.
+      properties:
+        type:
+          type: integer
+          description: Set to value 2 to denote a Metadata Feature.
+          example: 2
+        data:
+          type: string
+          description: Hex-encoded binary data.
+          example: '0xfa0de75d225cca2799395e5fc340702fc7eac8'
+      required:
+        - type
+        - data
+    TagFeature:
+      description: >-
+        Defines an indexation tag to which the output can be indexed by
+        additional node plugins.
+      properties:
+        type:
+          type: integer
+          description: Set to value 3 to denote a Tag Feature.
+          example: 3
+        tag:
+          type: string
+          description: Hex-encoded binary indexation tag.
+          example: '0xfa0de75'
+      required:
+        - type
+        - tag
+    SimpleTokenScheme:
+      description: >-
+        Defines the simple supply control scheme of native tokens. Tokens can be
+        minted by the foundry without additional restrictions as long as maximum
+        supply is requested and circulating supply is not negative.
+      properties:
+        type:
+          type: integer
+          description: Set to value 0 to denote an Simple Token Scheme.
+          example: 0
+        mintedTokens:
+          type: string
+          description: Minted tokens controlled by this foundry. Hex encoded number.
+          example: '0x2710'
+        meltedTokens:
+          type: string
+          description: Melted tokens controlled by this foundry. Hex encoded number.
+          example: '0x1388'
+        maxSupply:
+          type: string
+          description: >-
+            Maximum supply of tokens controlled by this foundry. Hex encoded
+            number.
+          example: '0x186a0'
+      required:
+        - type
+        - mintedTokens
+        - meltedTokens
+        - maxSupply
+    BasicOutput:
+      description: Describes a basic output with optional features.
+      properties:
+        type:
+          type: integer
+          description: Set to value 3 to denote a Basic Output.
+          example: 3
+        amount:
+          type: string
+          description: >-
+            The amount of IOTA tokens to deposit with this BasicOutput output.
+            Encoded as plain string.
+          example: '100'
+        nativeTokens:
+          type: array
+          description: Native tokens held by the otuput.
+          items:
+            anyOf:
+              - $ref: '#/components/schemas/NativeToken'
+        unlockConditions:
+          type: array
+          description: >-
+            Unlock condtions that define how the output can be unlocked in a
+            transaction.
+          items:
+            anyOf:
+              - $ref: '#/components/schemas/AddressUnlockCondition'
+              - $ref: '#/components/schemas/StorageDepositReturnUnlockCondition'
+              - $ref: '#/components/schemas/TimelockUnlockCondition'
+              - $ref: '#/components/schemas/ExpirationUnlockCondition'
+        features:
+          type: array
+          description: >-
+            Features that add utility to the output but do not impose unlocking
+            conditions.
+          items:
+            anyOf:
+              - $ref: '#/components/schemas/SenderFeature'
+              - $ref: '#/components/schemas/MetadataFeature'
+              - $ref: '#/components/schemas/TagFeature'
+      required:
+        - type
+        - amount
+        - unlockConditions
+    AliasOutput:
+      description: >-
+        Describes an alias account in the ledger that can be controlled by the
+        state and governance controllers.
+      properties:
+        type:
+          type: integer
+          description: Set to value 4 to denote an Alias Output.
+          example: 4
+        amount:
+          type: string
+          description: >-
+            The amount of IOTA tokens to deposit with this output. Encoded as
+            plain string.
+          example: '100'
+        nativeTokens:
+          type: array
+          description: Native tokens held by the otuput.
+          items:
+            anyOf:
+              - $ref: '#/components/schemas/NativeToken'
+        aliasId:
+          type: string
+          description: >-
+            Unique identifier of the alias, which is the BLAKE2b-256 hash of the
+            Output ID that created it. Alias Address = Alias Address Type ||
+            Alias ID
+          example: '0x1505ec099896ab05d9e08fbc7101ae4dff0093b3943b28f789ed2ca728bcc8d6'
+        stateIndex:
+          type: integer
+          description: >-
+            A counter that must increase by 1 every time the alias is state
+            transitioned.
+          example: 1337
+        stateMetadata:
+          type: string
+          description: >-
+            Hex-encoded metadata that can only be changed by the state
+            controller.
+          example: '0x7665727920696d706f7274616e74207374617465206d65746164617461'
+        foundryCounter:
+          type: integer
+          description: >-
+            A counter that denotes the number of foundries created by this alias
+            account.
+          example: 3
+        unlockConditions:
+          type: array
+          description: >-
+            Unlock condtions that define how the output can be unlocked in a
+            transaction.
+          items:
+            anyOf:
+              - $ref: '#/components/schemas/StateControllerAddressUnlockCondition'
+              - $ref: '#/components/schemas/GovernorAddressUnlockCondition'
+        features:
+          type: array
+          description: >-
+            Features that add utility to the output but do not impose unlocking
+            conditions.
+          items:
+            anyOf:
+              - $ref: '#/components/schemas/SenderFeature'
+              - $ref: '#/components/schemas/MetadataFeature'
+        immutableFeatures:
+          type: array
+          description: >-
+            Immutable features that add utility to the output but do not impose
+            unlocking conditions. These blocks need to be kept in future
+            transitions of the UTXO state machine.
+          items:
+            anyOf:
+              - $ref: '#/components/schemas/IssuerFeature'
+              - $ref: '#/components/schemas/MetadataFeature'
+      required:
+        - type
+        - amount
+        - aliasId
+        - stateIndex
+        - foundryCounter
+        - unlockConditions
+    FoundryOutput:
+      description: Describes a foundry output that is controlled by an alias.
+      properties:
+        type:
+          type: integer
+          description: Set to value 5 to denote a Foundry Output.
+          example: 5
+        amount:
+          type: string
+          description: >-
+            The amount of IOTA tokens to deposit with this output. Encoded as
+            plain string.
+          example: '100'
+        nativeTokens:
+          type: array
+          description: Native tokens held by the otuput.
+          items:
+            anyOf:
+              - $ref: '#/components/schemas/NativeToken'
+        serialNumber:
+          type: integer
+          description: >-
+            The serial number of the foundry with respect to the controlling
+            alias.
+          example: 2
+        tokenScheme:
+          type: array
+          description: >-
+            Defines the supply control scheme of the tokens controlled by the
+            foundry.
+          items:
+            oneOf:
+              - $ref: '#/components/schemas/SimpleTokenScheme'
+        unlockConditions:
+          type: array
+          description: >-
+            Unlock condtions that define how the output can be unlocked in a
+            transaction.
+          items:
+            anyOf:
+              - $ref: '#/components/schemas/ImmutableAliasAddressUnlockCondition'
+        features:
+          type: array
+          description: >-
+            Features that add utility to the output but do not impose unlocking
+            conditions.
+          items:
+            anyOf:
+              - $ref: '#/components/schemas/MetadataFeature'
+        immutableFeatures:
+          type: array
+          description: >-
+            Immutable features that add utility to the output but do not impose
+            unlocking conditions. These blocks need to be kept in future
+            transitions of the UTXO state machine.
+          items:
+            anyOf:
+              - $ref: '#/components/schemas/MetadataFeature'
+      required:
+        - type
+        - amount
+        - serialNumber
+        - tokenScheme
+        - unlockConditions
+    NFTOutput:
+      description: 'Describes an NFT output, a globally unique token with metadata attached.'
+      properties:
+        type:
+          type: integer
+          description: Set to value 6 to denote a NFT Output.
+        amount:
+          type: string
+          description: >-
+            The amount of IOTA tokens to deposit with this output. Encoded as
+            plain string.
+          example: '100'
+        nativeTokens:
+          type: array
+          description: Native tokens held by the otuput.
+          items:
+            anyOf:
+              - $ref: '#/components/schemas/NativeToken'
+        nftId:
+          type: string
+          description: >-
+            Unique identifier of the NFT, which is the BLAKE2b-256 hash of the
+            Output ID that created it. NFT Address = NFT Address Type || NFT ID
+          example: '0x19c82b32761fd8729a1a6c77f7c17597e4b9b01759794e52381f6a0050b0c11f'
+        unlockConditions:
+          type: array
+          description: >-
+            Unlock condtions that define how the output can be unlocked in a
+            transaction.
+          items:
+            anyOf:
+              - $ref: '#/components/schemas/AddressUnlockCondition'
+              - $ref: '#/components/schemas/StorageDepositReturnUnlockCondition'
+              - $ref: '#/components/schemas/TimelockUnlockCondition'
+              - $ref: '#/components/schemas/ExpirationUnlockCondition'
+        features:
+          type: array
+          description: >-
+            Features that add utility to the output but do not impose unlocking
+            conditions.
+          items:
+            anyOf:
+              - $ref: '#/components/schemas/SenderFeature'
+              - $ref: '#/components/schemas/IssuerFeature'
+              - $ref: '#/components/schemas/MetadataFeature'
+              - $ref: '#/components/schemas/TagFeature'
+        immutableFeatures:
+          type: array
+          description: >-
+            Immutable features that add utility to the output but do not impose
+            unlocking conditions.
+
+            These blocks need to be kept in future transitions of the UTXO state
+            machine.
+          items:
+            anyOf:
+              - $ref: '#/components/schemas/IssuerFeature'
+              - $ref: '#/components/schemas/MetadataFeature'
+      required:
+        - type
+        - amount
+        - unlockConditions
+    TreasuryInput:
+      properties:
+        type:
+          type: integer
+          description: Set to value 1 to denote a TreasuryInput.
+        milestoneId:
+          type: string
+          description: Hex-encoded with 0x prefix.
+      required:
+        - type
+        - milestoneId
+    TreasuryOutput:
+      properties:
+        type:
+          type: integer
+          description: Set to value 2 to denote a TreasuryOutput.
+        amount:
+          type: string
+          description: Amount of IOTA tokens in the treasury. Plain string encoded number.
+      required:
+        - type
+        - amount
+    TreasuryTransactionPayload:
+      properties:
+        type:
+          type: integer
+          description: Set to value 4 to denote a Treasury Payload.
+        input:
+          allOf:
+            - $ref: '#/components/schemas/TreasuryInput'
+        output:
+          allOf:
+            - $ref: '#/components/schemas/TreasuryOutput'
+      required:
+        - type
+        - input
+        - output
+    MigratedFundsEntry:
+      properties:
+        tailTransactionHash:
+          type: string
+        address:
+          oneOf:
+            - $ref: '#/components/schemas/Ed25519Address'
+        deposit:
+          type: integer
+      required:
+        - tailTransactionHash
+        - address
+        - deposit
+    ReceiptMilestoneOpt:
+      description: >-
+        Contains a receipt and the index of the milestone which contained the
+        receipt.
+      properties:
+        type:
+          type: integer
+          description: Type identifier of a receipt milestone option (0).
+        migratedAt:
+          type: integer
+        final:
+          type: boolean
+        funds:
+          type: array
+          items:
+            $ref: '#/components/schemas/MigratedFundsEntry'
+        transaction:
+          $ref: '#/components/schemas/TreasuryTransactionPayload'
+      required:
+        - migratedAt
+        - final
+        - funds
+        - transaction
+        - type
+    ProtocolParamsMilestoneOptions:
+      description: Defines changing protocol parameters.
+      properties:
+        type:
+          type: number
+          description: The type of the ProtocolParamsMilestoneOptions (1).
+          example: 1
+        targetMilestoneIndex:
+          type: integer
+          description: >-
+            The milestone index at which these protocol parameters become
+            active.
+          example: 123456
+        protocolVersion:
+          type: integer
+          description: The to be applied protocol version.
+          example: 3
+        params:
+          type: string
+          description: The protocol parameters in binary form. Hex-encoded with 0x prefix.
+          example: >-
+            0x174612e0a436f756e743a203037323935320a54696d657374616d703a203132372e3030302e3030302e303030
+      required:
+        - type
+        - targetMilestoneIndex
+        - protocolVersion
+        - params
+    Ed25519Signature:
+      description: Ed25519Signature defines an Ed25519 signature.
+      properties:
+        type:
+          type: number
+          description: Defines the type for an Ed255199Signature (0).
+          example: 0
+        publicKey:
+          type: string
+          description: The public key used to verify the given signature.
+          example: '0x5368c0c1ee386222966ceca9a0029be32527959b9fd2a8a6d61388bcee6d66c1'
+        signature:
+          type: string
+          description: The signature.
+          example: '0x8e78a5e701e530365594aefb43a3219b6aa8bea214425847c654797a46ce1967528d2e6714f469ca308ee96a08319a4135fdc84923c04f784de414a840e4020e'
+      required:
+        - type
+        - publicKey
+        - signature
+    OutputMetadata:
+      description: Metadata of an output.
+      properties:
+        blockId:
+          type: string
+          description: The ID of the block.
+          example: '0xcf5f77d62285b9ed8d617729e9232ae346a328c1897f0939837198e93ec13e85'
+        transactionId:
+          type: string
+          description: The ID of the transaction which created this output.
+          example: '0xd026f8b1c856d4e844cc734bbe095429fb880ec4d93f3ccffe3b292a7de17be7'
+        outputIndex:
+          type: number
+          description: The index of the output within its transaction.
+          example: 0
+        isSpent:
+          type: boolean
+          description: Whether the output is spent or not.
+          example: true
+        milestoneIndexSpent:
+          type: number
+          description: The index of the milestone at which the output was spent.
+          example: 242412
+        milestoneTimestampSpent:
+          type: number
+          description: >-
+            The UNIX timestamp in seconds of the milestone at which the output
+            was spent.
+          example: 1609950538
+        transactionIdSpent:
+          type: string
+          description: The transaction this output was spent with.
+          example: '0xe526f8b1c856d4e844cc734bbe095429fb880ec4d93f3ccffe3b292a7de17be7'
+        milestoneIndexBooked:
+          type: number
+          description: >-
+            The index of the milestone at which the output was booked in the
+            ledger.
+          example: 242412
+        milestoneTimestampBooked:
+          type: number
+          description: >-
+            The UNIX timestamp in seconds of the milestone at which the output
+            was booked in the ledger.
+          example: 1609950538
+        ledgerIndex:
+          type: number
+          description: The ledger index at which this output was available at.
+          example: 100000
+      required:
+        - blockId
+        - transactionId
+        - outputIndex
+        - isSpent
+        - milestoneIndexBooked
+        - milestoneTimestampBooked
+        - ledgerIndex
