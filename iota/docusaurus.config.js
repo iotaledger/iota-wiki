@@ -1,3 +1,6 @@
+const math = require('remark-math');
+const katex = require('rehype-katex');
+
 const path = require('path');
 
 module.exports = async () => {
@@ -287,6 +290,197 @@ module.exports = async () => {
           },
         },
       ],
+      [
+        '@docusaurus/plugin-content-docs',
+        {
+          id: 'blueprints',
+          path: path.resolve(__dirname, 'external/blueprints/'),
+          routeBasePath: 'blueprints',
+          sidebarPath: path.resolve(
+            __dirname,
+            'external/blueprints/sidebars.js',
+          ),
+          editUrl: 'https://github.com/iotaledger/blueprints/edit/main',
+          include: ['**.md'],
+          exclude: ['README.md', 'node_modules'],
+        },
+      ],
+
+      [
+        '@docusaurus/plugin-content-docs',
+        {
+          id: 'chronicle-rs',
+          path: path.resolve(__dirname, 'external/chronicle/docs'),
+          routeBasePath: 'chronicle',
+          sidebarPath: path.resolve(
+            __dirname,
+            'external/chronicle/sidebars.js',
+          ),
+          editUrl:
+            'https://github.com/iotaledger/chronicle.rs/edit/main/documentation',
+          remarkPlugins: [
+            require('remark-code-import'),
+            require('remark-import-partial'),
+          ],
+          versions: {
+            current: {
+              label: 'IOTA',
+              badge: true,
+            },
+          },
+        },
+      ],
+      [
+        '@docusaurus/plugin-content-docs',
+        {
+          id: 'goshimmer',
+          path: path.resolve(__dirname, 'external/goshimmer/docs'),
+          routeBasePath: 'goshimmer',
+          sidebarPath: path.resolve(
+            __dirname,
+            'external/goshimmer/sidebars.js',
+          ),
+          editUrl:
+            'https://github.com/iotaledger/goshimmer/edit/develop/documentation',
+        },
+      ],
+      [
+        '@docusaurus/plugin-content-docs',
+        {
+          id: 'hornet',
+          path: path.resolve(__dirname, 'external/hornet/docs'),
+          routeBasePath: 'hornet',
+          sidebarPath: path.resolve(__dirname, 'external/hornet/sidebars.js'),
+          editUrl:
+            'https://github.com/iotaledger/hornet/edit/production/documentation',
+          versions: {
+            current: {
+              label: 'IOTA',
+              badge: true,
+            },
+          },
+        },
+      ],
+      [
+        '@docusaurus/plugin-content-docs',
+        {
+          id: 'integration-services',
+          path: path.resolve(__dirname, 'external/integration-services/docs'),
+          routeBasePath: 'integration-services',
+          sidebarPath: path.resolve(
+            __dirname,
+            'external/integration-services/sidebars.js',
+          ),
+          editUrl:
+            'https://github.com/iotaledger/integration-services/edit/develop/documentation',
+        },
+      ],
+      [
+        '@docusaurus/plugin-content-docs',
+        {
+          id: 'introduction-docs',
+          path: path.resolve(__dirname, 'external/introduction-docs/docs'),
+          routeBasePath: 'introduction',
+          sidebarPath: path.resolve(
+            __dirname,
+            'external/introduction-docs/sidebars.js',
+          ),
+          editUrl:
+            'https://github.com/iotaledger/introduction-docs/edit/main/docs',
+          remarkPlugins: [
+            require('remark-code-import'),
+            require('remark-import-partial'),
+            require('remark-remove-comments'),
+          ],
+          versions: {
+            current: {
+              label: 'IOTA',
+              badge: true,
+            },
+          },
+        },
+      ],
+      [
+        '@docusaurus/plugin-content-docs',
+        {
+          id: 'IOTA-Research-Specifications',
+          path: path.resolve(
+            __dirname,
+            'external/iota-2.0-research-specifications/',
+          ),
+          routeBasePath: 'IOTA-2.0-Research-Specifications',
+          sidebarPath: path.resolve(
+            __dirname,
+            'external/iota-2.0-research-specifications/sidebars.js',
+          ),
+          editUrl:
+            'https://github.com/iotaledger/IOTA-2.0-Research-Specifications/edit/main/docusaurus',
+          remarkPlugins: [math],
+          rehypePlugins: [katex],
+          include: ['*.md'],
+        },
+      ],
+      [
+        '@docusaurus/plugin-content-docs',
+        {
+          id: 'streams',
+          path: path.resolve(__dirname, 'external/streams/docs'),
+          routeBasePath: 'streams',
+          sidebarPath: path.resolve(__dirname, 'external/streams/sidebars.js'),
+          editUrl:
+            'https://github.com/iotaledger/streams/edit/main/documentation',
+        },
+      ],
+      [
+        '@docusaurus/plugin-content-docs',
+        {
+          id: 'iota-tips',
+          path: path.resolve(__dirname, 'external/tips'),
+          routeBasePath: 'tips',
+          editUrl: 'https://github.com/iotaledger/tips/edit/main/',
+          remarkPlugins: [require('remark-import-partial')],
+          include: ['tips/**/*.md', 'README.md'],
+          sidebarPath: path.resolve(__dirname, 'external/tips/sidebars.js'),
+        },
+      ],
+      [
+        '@docusaurus/plugin-content-docs',
+        {
+          id: 'zebra-tutorials',
+          path: path.resolve(
+            __dirname,
+            'external/zebra-iota-edge-sdk/tutorials',
+          ),
+          routeBasePath: 'zebra-tutorials',
+          sidebarPath: path.resolve(
+            __dirname,
+            'external/zebra-iota-edge-sdk/sidebars.js',
+          ),
+          editUrl:
+            'https://github.com/zebradevs/zebra-iota-edge-sdk/edit/main/documentation',
+        },
+      ],
+    ],
+
+    staticDirectories: [
+      path.resolve(__dirname, './external/blueprints/static'),
+      path.resolve(__dirname, './external/chronicle/static'),
+      path.resolve(__dirname, './external/goshimmer/static'),
+      path.resolve(__dirname, './external/hornet/static'),
+      path.resolve(__dirname, './external/identity.rs/static'),
+      path.resolve(__dirname, './external/integration-services/static'),
+      path.resolve(__dirname, './external/introduction-docs/static'),
+      path.resolve(
+        __dirname,
+        './external/iota-2.0-research-specifications/static',
+      ),
+      path.resolve(__dirname, './external/iota.rs/static'),
+      path.resolve(__dirname, './external/streams/static'),
+      path.resolve(__dirname, './external/stronghold.rs/static'),
+      path.resolve(__dirname, './external/tips/static'),
+      path.resolve(__dirname, './external/wallet.rs/static'),
+      path.resolve(__dirname, './external/zebra-iota-edge-sdk/static'),
+      path.resolve(__dirname, '/static'),
     ],
   };
 };
