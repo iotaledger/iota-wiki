@@ -13,7 +13,7 @@ module.exports = async () => {
     baseUrl: '/',
     themeConfig: {
       announcementBar: {
-        id: 'govern',
+        id: 'iota-govern',
         content:
           'If you would like to get more involved in the future governance of Shimmer, IOTA, and the Assembly network, join the discussions with the community in our <a target="_blank" href="https://govern.iota.org">governance forum</a> 🏛️',
         backgroundColor: '#5991c7',
@@ -216,7 +216,7 @@ module.exports = async () => {
       [
         '@docusaurus/plugin-content-docs',
         {
-          id: 'use',
+          id: 'iota-use',
           path: path.resolve(__dirname, 'use'),
           routeBasePath: 'use',
           sidebarPath: require.resolve('./use/sidebars.ts'),
@@ -241,7 +241,7 @@ module.exports = async () => {
       [
         '@docusaurus/plugin-content-docs',
         {
-          id: 'learn',
+          id: 'iota-learn',
           path: path.resolve(__dirname, 'learn'),
           routeBasePath: 'learn',
           sidebarPath: require.resolve('./learn/sidebars.ts'),
@@ -258,7 +258,7 @@ module.exports = async () => {
       [
         '@docusaurus/plugin-content-docs',
         {
-          id: 'develop',
+          id: 'iota-develop',
           path: path.resolve(__dirname, 'develop'),
           routeBasePath: 'develop',
           sidebarPath: require.resolve('./develop/sidebars.ts'),
@@ -276,7 +276,7 @@ module.exports = async () => {
       [
         'docusaurus-plugin-openapi-docs',
         {
-          id: 'openapi',
+          id: 'iota-openapi',
           docsPluginId: 'develop', // e.g. "classic" or the plugin-content-docs id
           config: {
             rest_api: {
@@ -295,7 +295,7 @@ module.exports = async () => {
       [
         '@docusaurus/plugin-content-docs',
         {
-          id: 'chronicle-rs',
+          id: 'iota-chronicle-rs',
           path: path.resolve(__dirname, 'external/chronicle/docs'),
           routeBasePath: 'chronicle',
           sidebarPath: path.resolve(
@@ -319,7 +319,7 @@ module.exports = async () => {
       [
         '@docusaurus/plugin-content-docs',
         {
-          id: 'goshimmer',
+          id: 'iota-goshimmer',
           path: path.resolve(__dirname, 'external/goshimmer/docs'),
           routeBasePath: 'goshimmer',
           sidebarPath: path.resolve(
@@ -333,7 +333,7 @@ module.exports = async () => {
       [
         '@docusaurus/plugin-content-docs',
         {
-          id: 'hornet',
+          id: 'iota-hornet',
           path: path.resolve(__dirname, 'external/hornet/docs'),
           routeBasePath: 'hornet',
           sidebarPath: path.resolve(__dirname, 'external/hornet/sidebars.js'),
@@ -350,7 +350,7 @@ module.exports = async () => {
       [
         '@docusaurus/plugin-content-docs',
         {
-          id: 'integration-services',
+          id: 'iota-integration-services',
           path: path.resolve(__dirname, 'external/integration-services/docs'),
           routeBasePath: 'integration-services',
           sidebarPath: path.resolve(
@@ -364,7 +364,7 @@ module.exports = async () => {
       [
         '@docusaurus/plugin-content-docs',
         {
-          id: 'introduction-docs',
+          id: 'iota-introduction-docs',
           path: path.resolve(__dirname, 'external/introduction-docs/docs'),
           routeBasePath: 'introduction',
           sidebarPath: path.resolve(
@@ -389,7 +389,7 @@ module.exports = async () => {
       [
         '@docusaurus/plugin-content-docs',
         {
-          id: 'IOTA-Research-Specifications',
+          id: 'iota-IOTA-Research-Specifications',
           path: path.resolve(
             __dirname,
             'external/iota-2.0-research-specifications/',
@@ -409,7 +409,7 @@ module.exports = async () => {
       [
         '@docusaurus/plugin-content-docs',
         {
-          id: 'streams',
+          id: 'iota-streams',
           path: path.resolve(__dirname, 'external/streams/docs'),
           routeBasePath: 'streams',
           sidebarPath: path.resolve(__dirname, 'external/streams/sidebars.js'),
@@ -420,7 +420,7 @@ module.exports = async () => {
       [
         '@docusaurus/plugin-content-docs',
         {
-          id: 'iota-tips-iota',
+          id: 'iota-iota-tips',
           path: path.resolve(__dirname, 'external/tips'),
           routeBasePath: 'tips',
           editUrl: 'https://github.com/iotaledger/tips/edit/main/',
@@ -432,7 +432,7 @@ module.exports = async () => {
       [
         '@docusaurus/plugin-content-docs',
         {
-          id: 'zebra-tutorials',
+          id: 'iota-zebra-tutorials',
           path: path.resolve(
             __dirname,
             'external/zebra-iota-edge-sdk/tutorials',
