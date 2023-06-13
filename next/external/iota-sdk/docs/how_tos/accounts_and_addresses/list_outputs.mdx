@@ -1,0 +1,65 @@
+---
+title: List Outputs
+description: 'How to list outputs'
+image: /img/logo/iota_mark_light.png
+keywords:
+- how to
+- list outputs
+- nodejs
+- python
+- rust
+---
+
+import CodeBlock from '@theme/CodeBlock';
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+This How-To will show you how to list all outputs of an account.
+
+## Code Example
+
+<Tabs groupId="language">
+<TabItem value="rust" label="Rust">
+
+```rust reference
+https://github.com/iotaledger/iota-sdk/tree/develop/sdk/examples/how_tos/accounts_and_addresses/list_outputs.rs
+```
+
+</TabItem>
+<TabItem value="nodejs" label="Nodejs">
+
+```typescript reference
+https://github.com/iotaledger/iota-sdk/tree/develop/bindings/nodejs/examples/how_tos/accounts_and_addresses/list-outputs.ts
+```
+
+</TabItem>
+<TabItem value="python" label="Python">
+
+```python reference
+https://github.com/iotaledger/iota-sdk/tree/develop/bindings/python/examples/how_tos/accounts_and_addresses/list_outputs.py
+```
+
+</TabItem>
+</Tabs>
+
+## Expected Output
+
+```plaintext
+Output ids:
+0x22efc1c85c925d3cea275b355ef37c8c0795713ac5c0a1ec3d6634d6e9d134160000
+0x3082022d3b3d3fc7b93de55d908b19fec88751f6b260704dace4b9a8d3752ef80200
+0x738d5c74d03aa5e954e4028a963d42d5f2283d24d69abc994dcb89f55dd3f67c0300
+0x0064264678bcb9df0d33c994dbf5929acbba9524e0af8eb6cc43308f38f1a36c0100
+0x033f3766d7f202d82af52a17242da3747d9e51ca79704854307fe30a67526a540100
+0xde54940601a3153f4cae4986ee83853ee17c7eae389a0d1d7b7c678c6dec5f200500
+0x3461e923da5e8222fac50397493d2237030d3ad743ecce141300de94774417560000
+0x64aa46c5008b9d361318b50d5d1928dbe14cef3ba94e3876133c8eb33445910e0200
+Unspent output ids:
+0xde54940601a3153f4cae4986ee83853ee17c7eae389a0d1d7b7c678c6dec5f200500
+0x3461e923da5e8222fac50397493d2237030d3ad743ecce141300de94774417560000
+0x738d5c74d03aa5e954e4028a963d42d5f2283d24d69abc994dcb89f55dd3f67c0300
+0x3082022d3b3d3fc7b93de55d908b19fec88751f6b260704dace4b9a8d3752ef80200
+0x0064264678bcb9df0d33c994dbf5929acbba9524e0af8eb6cc43308f38f1a36c0100
+0x64aa46c5008b9d361318b50d5d1928dbe14cef3ba94e3876133c8eb33445910e0200
+0x22efc1c85c925d3cea275b355ef37c8c0795713ac5c0a1ec3d6634d6e9d134160000
+```
