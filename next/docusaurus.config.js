@@ -298,9 +298,21 @@ module.exports = {
         editUrl: 'https://github.com/iota-wiki/iota-wiki/edit/main/',
       },
     ],
+
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'hornet',
+        path: path.resolve(__dirname, 'external/hornet/docs'),
+        routeBasePath: 'hornet',
+        sidebarPath: path.resolve(__dirname, 'external/hornet/sidebars.js'),
+        editUrl: 'https://github.com/iotaledger/hornet/edit/develop/documentation',
+      }
+    ],
   ],
   staticDirectories: [
     path.resolve(__dirname, 'external/iota-sdk/static'),
     path.resolve(__dirname, 'external/cli-wallet/static'),
+    path.resolve(__dirname, 'external/hornet/static'),
   ],
 };

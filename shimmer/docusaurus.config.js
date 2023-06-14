@@ -284,9 +284,21 @@ module.exports = {
         remarkPlugins: [require('remark-code-import'), require('remark-import-partial')],
       }
     ],
+
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'hornet',
+        path: path.resolve(__dirname, 'external/hornet/docs'),
+        routeBasePath: 'hornet',
+        sidebarPath: path.resolve(__dirname, 'external/hornet/sidebars.js'),
+        editUrl: 'https://github.com/iotaledger/hornet/edit/develop/documentation',
+      }
+    ],
   ],
   staticDirectories: [
     path.resolve(__dirname, './external/iota.rs/static'),
     path.resolve(__dirname, './external/wallet.rs/static'),
+    path.resolve(__dirname, './external/hornet/static'),
   ],
 };
