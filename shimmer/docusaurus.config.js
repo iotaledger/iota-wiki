@@ -260,5 +260,20 @@ module.exports = {
         },
       },
     ],
+
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'iota-rs',
+        path: path.resolve(__dirname, 'external/iota.rs/docs'),
+        routeBasePath: 'iota.rs',
+        sidebarPath: path.resolve(__dirname, 'external/iota.rs/sidebars.js'),
+        editUrl: 'https://github.com/iotaledger/iota.rs/edit/develop/documentation',
+        remarkPlugins: [require('remark-code-import'), require('remark-import-partial')],
+      }
+    ],
+  ],
+  staticDirectories: [
+    path.resolve(__dirname, './external/iota.rs/static'),
   ],
 };
