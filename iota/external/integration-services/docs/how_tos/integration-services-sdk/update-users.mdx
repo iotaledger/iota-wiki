@@ -1,0 +1,68 @@
+---
+image: /img/integration-services/logo/integration_services.png
+description: The example-2 script authenticates an Integration Service client to manage Identities using the Admin identity created in example-0 and then searches for a user and then updates said user's username.
+keywords:
+- how to
+- search for users
+- update user
+- example
+- manage identity
+---
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+# Update Users
+
+The **example-2**
+script authenticates an Integration Service client to manage Identities using the Admin identity created in [example-0](./run-how-tos.mdx) and then performs the following tasks:
+
+1. Searches for a user.
+2. Updates said user's username.
+
+You can run the example with the following command:
+
+<Tabs groupId={"programmingLanguage"}>
+<TabItem value="Java" label={'Java'}>
+
+```bash
+mvn exec:_java -Dexec.mainClass=net.gradbase.how_tos.UpdateUser
+```
+
+**Example source code**: [Example-7](hhttps://github.com/albydeca/iota-is-sdk/blob/main/examples/src/main/java/net/gradbase/examples/UpdateUser.java)
+
+</TabItem>
+<TabItem value="Nodejs" label={'Node.js'}>
+
+```bash
+npm run example-2
+````
+
+**Example source code**: [Example-7](https://github.com/iotaledger/integration-services/blob/master/clients/client-sdk/examples/2-UpdateUser.ts)
+
+</TabItem>
+</Tabs>
+
+## Search for a User
+
+You can search for a user by the `username` field with the following script:
+
+<Tabs groupId="language">
+<TabItem value="java" label="Java">
+
+```java
+// Search for identities with username 'User' in it
+List<IdentityInternal> identities = client.search(null, "User", null, null, null);
+```
+
+</TabItem>
+<TabItem value="nodejs" label="Nodejs">
+
+```js
+// Search for identities with username 'User' in it
+const search: searchCriteria = { username: 'User' };
+
+const identities = await identity.search(search);
+```
+
+</TabItem>
+</Tabs>
