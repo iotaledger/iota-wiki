@@ -446,6 +446,21 @@ module.exports = async () => {
         },
       ],
 
+
+      [
+        '@docusaurus/plugin-content-docs',
+        {
+          id: 'stronghold-rs',
+          path: path.resolve(__dirname, 'external/stronghold.rs/docs'),
+          routeBasePath: 'stronghold.rs',
+          sidebarPath: path.resolve(__dirname, 'external/stronghold.rs/sidebars.js'),
+          editUrl: 'https://github.com/iotaledger/stronghold/edit/dev/documentation',
+          remarkPlugins: [require('remark-code-import'), require('remark-import-partial'), require('remark-remove-comments'), math],
+          rehypePlugins: [katex],
+        }
+      ],
+
+
       [
         '@docusaurus/plugin-content-docs',
         {
