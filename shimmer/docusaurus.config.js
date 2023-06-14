@@ -295,10 +295,25 @@ module.exports = {
         editUrl: 'https://github.com/iotaledger/hornet/edit/develop/documentation',
       }
     ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'iota-goshimmer',
+        path: path.resolve(__dirname, 'external/goshimmer/docs'),
+        routeBasePath: 'goshimmer',
+        sidebarPath: path.resolve(
+            __dirname,
+            'external/goshimmer/sidebars.js',
+        ),
+        editUrl:
+            'https://github.com/iotaledger/goshimmer/edit/develop/documentation',
+      },
+    ],
   ],
   staticDirectories: [
     path.resolve(__dirname, './external/iota.rs/static'),
     path.resolve(__dirname, './external/wallet.rs/static'),
     path.resolve(__dirname, './external/hornet/static'),
+    path.resolve(__dirname, './external/goshimmer/static'),
   ],
 };
