@@ -273,7 +273,10 @@ module.exports = {
         routeBasePath: 'iota-sdk',
         sidebarPath: require.resolve('./external/iota-sdk/sidebars.js'),
         editUrl: 'https://github.com/iota-wiki/iota-wiki/edit/main/',
-        remarkPlugins: [require('remark-code-import'), require('remark-import-partial')],
+        remarkPlugins: [
+          require('remark-code-import'),
+          require('remark-import-partial'),
+        ],
         //overriding default exclude array to include the python api's classes with _ at the beginning
         //but still exclude any _admonitions
         exclude: [
@@ -283,17 +286,17 @@ module.exports = {
           '**/__tests__/**',
           '**/_admonitions/_**',
         ],
-      }
+      },
     ],
     [
       '@docusaurus/plugin-content-docs',
       {
-          id: 'cli-wallet',
-          path: path.resolve(__dirname, 'external/cli-wallet/docs'),
-          routeBasePath: 'cli-wallet',
-          sidebarPath: require.resolve('./external/cli-wallet/sidebars.js'),
-          editUrl: 'https://github.com/iota-wiki/iota-wiki/edit/main/',
-      }
+        id: 'cli-wallet',
+        path: path.resolve(__dirname, 'external/cli-wallet/docs'),
+        routeBasePath: 'cli-wallet',
+        sidebarPath: require.resolve('./external/cli-wallet/sidebars.js'),
+        editUrl: 'https://github.com/iota-wiki/iota-wiki/edit/main/',
+      },
     ],
   ],
   staticDirectories: [

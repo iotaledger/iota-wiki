@@ -65,6 +65,9 @@ module.exports = {
       },
     ],
   ],
-  themes: ['docusaurus-theme-openapi-docs', '@saucelabs/theme-github-codeblock'],
+  themes: [
+    'docusaurus-theme-openapi-docs',
+    '@saucelabs/theme-github-codeblock',
+  ],
   staticDirectories: [path.resolve(__dirname, '../static')],
 };
