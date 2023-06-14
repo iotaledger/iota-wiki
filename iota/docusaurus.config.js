@@ -485,6 +485,59 @@ module.exports = async () => {
           },
         },
       ],
+      [
+        '@docusaurus/plugin-content-docs',
+        {
+          id: 'iota-rs',
+          path: path.resolve(__dirname, 'external/iota.rs/docs'),
+          routeBasePath: 'iota.rs',
+          sidebarPath: path.resolve(__dirname, 'external/iota.rs/sidebars.js'),
+          editUrl: 'https://github.com/iotaledger/iota.rs/edit/production/documentation',
+          remarkPlugins: [require('remark-code-import'), require('remark-import-partial')],
+          versions: {
+            current: {
+              label: 'IOTA',
+              badge: true
+            },
+          },
+        }
+      ],
+
+      [
+        '@docusaurus/plugin-content-docs',
+        {
+          id: 'identity-rs-0-5',
+          path: path.resolve(__dirname, 'external/identity.rs/v0.5.0/docs'),
+          routeBasePath: 'identity.rs',
+          sidebarPath: path.resolve(__dirname, 'external/identity.rs/v0.5.0/sidebars.js'),
+          editUrl: 'https://github.com/iotaledger/identity.rs/edit/support/v0.5/documentation',
+          remarkPlugins: [require('remark-code-import'), require('remark-import-partial'), require('remark-remove-comments')],
+          versions: {
+            current: {
+              label: '0.5',
+              path: '0.5',
+              badge: true
+            },
+          },
+        }
+      ],
+      [
+        '@docusaurus/plugin-content-docs',
+        {
+          id: 'identity-rs-0-6',
+          path: path.resolve(__dirname, 'external/identity.rs/v0.6.0/docs'),
+          routeBasePath: 'identity.rs',
+          sidebarPath: path.resolve(__dirname, 'external/identity.rs/v0.6.0/sidebars.js'),
+          editUrl: 'https://github.com/iotaledger/identity.rs/edit/support/v0.6/documentation',
+          remarkPlugins: [require('remark-code-import'), require('remark-import-partial'), require('remark-remove-comments')],
+          versions: {
+            current: {
+              label: '0.6',
+              badge: true
+            },
+          },
+        }
+      ],
     ],
 
     stylesheets: [
@@ -508,6 +561,8 @@ module.exports = async () => {
         './external/iota-2.0-research-specifications/static',
       ),
       path.resolve(__dirname, './external/iota.rs/static'),
+      path.resolve(__dirname, './external/identity.rs/v0.5.0/static'),
+      path.resolve(__dirname, './external/identity.rs/v0.6.0/static'),
       path.resolve(__dirname, './external/streams/static'),
       path.resolve(__dirname, './external/stronghold.rs/static'),
       path.resolve(__dirname, './external/tips/static'),
