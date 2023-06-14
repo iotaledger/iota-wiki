@@ -272,8 +272,21 @@ module.exports = {
         remarkPlugins: [require('remark-code-import'), require('remark-import-partial')],
       }
     ],
+
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'wallet-rs',
+        path: path.resolve(__dirname, 'external/wallet.rs/docs'),
+        routeBasePath: 'wallet.rs',
+        sidebarPath: path.resolve(__dirname, 'external/wallet.rs/sidebars.js'),
+        editUrl: 'https://github.com/iotaledger/wallet.rs/edit/develop/documentation',
+        remarkPlugins: [require('remark-code-import'), require('remark-import-partial')],
+      }
+    ],
   ],
   staticDirectories: [
     path.resolve(__dirname, './external/iota.rs/static'),
+    path.resolve(__dirname, './external/wallet.rs/static'),
   ],
 };
