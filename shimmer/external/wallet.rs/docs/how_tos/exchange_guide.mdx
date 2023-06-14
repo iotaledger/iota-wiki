@@ -13,12 +13,6 @@ keywords:
 ---
 import WarningUnlockConditions from '../_admonitions/_warning_unlock_conditions.md'
 import CodeBlock from '@theme/CodeBlock';
-import generate_mnemonic from '!!raw-loader!./../../../wallet/bindings/nodejs/examples/exchange/0-generate-mnemonic.js';
-import create_account from '!!raw-loader!./../../../wallet/bindings/nodejs/examples/exchange/1-create-account.js';
-import generate_address from '!!raw-loader!./../../../wallet/bindings/nodejs/examples/exchange/2-generate-address.js';
-import check_balance from '!!raw-loader!./../../../wallet/bindings/nodejs/examples/exchange/3-check-balance.js';
-import listen_events from '!!raw-loader!./../../../wallet/bindings/nodejs/examples/exchange/4-listen-events.js';
-import send_amount from '!!raw-loader!./../../../wallet/bindings/nodejs/examples/exchange/5-send-amount.js';
 
 # Stardust Exchange Integration Guide
 
@@ -86,9 +80,9 @@ npm install @iota/wallet dotenv
 
 #### 1 Generate a mnemonic
 
-<CodeBlock className="language-javascript">
-  {generate_mnemonic}
-</CodeBlock>
+```js reference
+https://github.com/iotaledger/wallet.rs/tree/develop/wallet/bindings/nodejs/examples/exchange/0-generate-mnemonic.js
+```
 
 You can then create a `.env` by running the following command:
 
@@ -125,9 +119,9 @@ Keep the `stronghold` password and the `stronghold` database on separate devices
 
 You can import the Wallet Library and create an account manager using the following example:
 
-<CodeBlock className="language-javascript">
-  {create_account}
-</CodeBlock>
+```js reference
+https://github.com/iotaledger/wallet.rs/tree/develop/wallet/bindings/nodejs/examples/exchange/1-create-account.js
+```
 
 The `Alias` must be unique and can be whatever fits your use case. The `Alias` is typically used to identify an account later on. Each account is also represented by an `index` which is incremented by one every time a new account is created. You can refer to any account via its `index`, or `alias`.
 
@@ -143,9 +137,10 @@ Common methods of `account` instance include:
 ### 3. Generate a User Address to Deposit Funds
 
 `Wallet.rs` is a stateful library. This means it caches all relevant information in storage to provide performance benefits while dealing with, potentially, many accounts and addresses.
-<CodeBlock className="language-javascript">
-  {generate_address}
-</CodeBlock>
+
+```js reference
+https://github.com/iotaledger/wallet.rs/tree/develop/wallet/bindings/nodejs/examples/exchange/2-generate-address.js
+```
 
 Every account can have multiple addresses. Addresses are represented by an `index` which is incremented by one every time a new address is created. You can access the addresses using the `account.address()` method: 
 
@@ -169,9 +164,9 @@ There are two types of addresses, `internal` and `public` (external). This appro
 
 You can get the available account balance across all addresses of the given account using the following example:
 
-<CodeBlock className="language-javascript">
-  {check_balance}
-</CodeBlock>
+```js reference
+https://github.com/iotaledger/wallet.rs/tree/develop/wallet/bindings/nodejs/examples/exchange/3-check-balance.js
+```
 
 ### 5. Listen to Events
 
@@ -181,9 +176,9 @@ The `Wallet.rs` library supports several events for listening. A provided callba
 
 You can use the following example to listen to new output events:
 
-<CodeBlock className="language-javascript">
-  {listen_events}
-</CodeBlock>
+```js reference
+https://github.com/iotaledger/wallet.rs/tree/develop/wallet/bindings/nodejs/examples/exchange/4-listen-events.js
+```
 
 **Example output:**
 
