@@ -291,7 +291,6 @@ module.exports = async () => {
         },
       ],
 
-
       [
         '@docusaurus/plugin-content-docs',
         {
