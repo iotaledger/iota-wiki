@@ -461,6 +461,119 @@ module.exports = {
         tags: ['text', 'getting-started', 'client', 'shimmer', 'js'],
       },
     ],
+
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'inx-api-core-v0',
+        path: path.resolve(__dirname, 'external/inx-api-core-v0/docs'),
+        routeBasePath: 'inx-api-core-v0',
+        sidebarPath: path.resolve(__dirname, 'external/inx-api-core-v0/sidebars.js'),
+        editUrl: 'https://github.com/iotaledger/inx-api-core-v0/edit/develop/documentation',
+      }
+    ],
+
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'inx-api-core-v1',
+        path: path.resolve(__dirname, 'external/inx-api-core-v1/docs'),
+        routeBasePath: 'inx-api-core-v1',
+        sidebarPath: path.resolve(__dirname, 'external/inx-api-core-v1/sidebars.js'),
+        editUrl: 'https://github.com/iotaledger/inx-api-core-v0/edit/develop/documentation',
+      }
+    ],
+
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'inx-coordinator',
+        path: path.resolve(__dirname, 'external/inx-coordinator/docs'),
+        routeBasePath: 'inx-coordinator',
+        sidebarPath: path.resolve(__dirname, 'external/inx-coordinator/sidebars.js'),
+        editUrl: 'https://github.com/iotaledger/inx-api-core-v0/edit/develop/documentation',
+      }
+    ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'inx-dashboard',
+        path: path.resolve(__dirname, 'external/inx-dashboard/docs'),
+        routeBasePath: 'inx-dashboard',
+        sidebarPath: path.resolve(__dirname, 'external/inx-dashboard/sidebars.js'),
+        editUrl: 'https://github.com/iotaledger/inx-dashboard/edit/develop/documentation/docs',
+      }
+    ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'inx-faucet',
+        path: path.resolve(__dirname, 'external/inx-faucet/docs'),
+        routeBasePath: 'inx-faucet',
+        sidebarPath: path.resolve(__dirname, 'external/inx-faucet/sidebars.js'),
+        editUrl: 'https://github.com/iotaledger/inx-faucet/edit/develop/documentation',
+      }
+    ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'inx-indexer',
+        path: path.resolve(__dirname, 'external/inx-indexer/docs'),
+        routeBasePath: 'inx-indexer',
+        sidebarPath: path.resolve(__dirname, 'external/inx-indexer/sidebars.js'),
+        editUrl: 'https://github.com/iotaledger/inx-indexer/edit/develop/documentation',
+      }
+    ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'inx-irc-metadata',
+        path: path.resolve(__dirname, 'external/inx-irc-metadata/docs'),
+        routeBasePath: 'inx-irc-metadata',
+        sidebarPath: path.resolve(__dirname, 'external/inx-irc-metadata/sidebars.js'),
+        editUrl: 'https://github.com/iotaledger/inx-irc-metadata/edit/develop/documentation',
+      }
+    ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'inx-mqtt',
+        path: path.resolve(__dirname, 'external/inx-mqtt/docs'),
+        routeBasePath: 'inx-mqtt',
+        sidebarPath: path.resolve(__dirname, 'external/inx-mqtt/sidebars.js'),
+        editUrl: 'https://github.com/gohornet/inx-mqtt/edit/develop/documentation/docs',
+      }
+    ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'inx-participation',
+        path: path.resolve(__dirname, 'external/inx-participation/docs'),
+        routeBasePath: 'inx-participation',
+        sidebarPath: path.resolve(__dirname, 'external/inx-participation/sidebars.js'),
+        editUrl: 'https://github.com/iotaledger/inx-participation/edit/develop/documentation',
+      }
+    ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'inx-poi',
+        path: path.resolve(__dirname, 'external/inx-poi/docs'),
+        routeBasePath: 'inx-poi',
+        sidebarPath: path.resolve(__dirname, 'external/inx-poi/sidebars.js'),
+        editUrl: 'https://github.com/gohornet/inx-poi/edit/develop/documentation',
+      }
+    ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'inx-spammer',
+        path: path.resolve(__dirname, 'external/inx-spammer/docs'),
+        routeBasePath: 'inx-spammer',
+        sidebarPath: path.resolve(__dirname, 'external/inx-spammer/sidebars.js'),
+        editUrl: 'https://github.com/iotaledger/inx-spammer/edit/develop/documentation',
+      }
+    ],
   ],
   staticDirectories: [
     path.resolve(__dirname, './external/iota.rs/static'),
@@ -477,5 +590,6 @@ module.exports = {
     path.resolve(__dirname, './external/wasp/static'),
     path.resolve(__dirname, './external/chronicle/static'),
     path.resolve(__dirname, './external/identity.rs/0.7-alpha/static'),
+
   ],
 };
