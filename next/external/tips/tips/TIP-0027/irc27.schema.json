@@ -1,0 +1,53 @@
+
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/iotaledger/tips/main/tips/TIP-0027/irc27.schema.json",
+  "title": "IRC27 IOTA NFT Metadata Schema",
+  "description": "A JSON schema for validating IRC27 compliant NFT metadata",
+  "type": "object",
+  "properties": {
+    "standard": {
+      "type": "string",
+      "description": "identifier for the metadata standard used",
+      "pattern": "^IRC27$"
+    },
+    "version": {
+      "type": "string",
+      "description": "version of the metadata standard used",
+      "pattern": "^v\\d+.\\d+$"
+    },
+    "name": {
+      "type": "string",
+      "description": "A descriptive name of the token"
+    },
+    "description": {
+      "type": "string",
+      "description": "some information about the NFT project"
+    },
+    "type": {
+      "type": "string",
+      "description": "MIME type of the asset"
+    },
+    "uri": {
+      "type": "string",
+      "description": "URI pointing to the resource where the file with `type` MIME type is hosted"
+    },
+    "collectionName": {
+      "type": "string",
+      "description": "A human readable name for the NFT collection"
+    },
+    "royalties": {
+      "type": "object",
+      "description": "object containing the payout addresses mapped to their percentage share"
+    },
+    "issuerName": {
+      "type": "string",
+      "description": "name of the artist"
+    },
+    "attributes": {
+      "type": "array",
+      "description": "array containing any additional data as objects."
+    }
+  },
+  "required": [ "standard", "type", "version", "uri", "name" ]
+}

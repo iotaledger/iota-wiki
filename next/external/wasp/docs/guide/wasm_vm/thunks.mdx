@@ -1,0 +1,401 @@
+---
+keywords:
+- functions
+- thunk
+- insert operations
+
+description: Thunk functions encapsulate access and parameter checking and set up the type-safe function-specific contexts. Thunks are used to insert operations at the beginning or end of the wrapped function to adapt it to changing requirements
+
+image: /img/logo/WASP_logo_dark.png
+---
+
+
+
+import Tabs from "@theme/Tabs"
+import TabItem from "@theme/TabItem"
+
+# Thunk Functions
+
+In computer programming, a thunk is a wrapper function that is used to inject code around
+another function. Thunks are used to insert operations before and/or after the wrapped
+function is being called to adapt it to changing requirements. The
+[Schema Tool](usage.mdx) will generate such thunk functions to be able to properly set up
+calls to the smart contract functions. It also creates a mapping between the name/id of
+the function and the actual function, and generates code to properly communicate this
+mapping to the ISC host.
+
+In our case we use thunks not only to inject code around the smart contract function, but
+also to make the smart contract function type-safe. The thunks all have an identical
+function signature, and each will set up a function-specific data structure so that the
+actual smart contract function will deal with them in a type-safe way. Having a common
+function signature for the thunks means that it is easy to generate a table of all
+functions and their names that can be used to generically call these functions.
+
+All code for this table and the thunks is generated as part of `lib.xx` and it looks as
+follows for the `dividend` example smart contract (for simplicity the thunk function
+contents has been omitted for now):
+
+<Tabs defaultValue="go"
+      groupId="language"
+      values={[
+          {label: 'Go', value: 'go'},
+          {label: 'Rust', value: 'rust'},
+          {label: 'TypeScript', value: 'ts'},
+      ]}>
+
+<TabItem value="go">
+
+```go
+var exportMap = wasmlib.ScExportMap{
+	Names: []string{
+		FuncDivide,
+		FuncInit,
+		FuncMember,
+		FuncSetOwner,
+		ViewGetFactor,
+		ViewGetOwner,
+	},
+	Funcs: []wasmlib.ScFuncContextFunction{
+		funcDivideThunk,
+		funcInitThunk,
+		funcMemberThunk,
+		funcSetOwnerThunk,
+	},
+	Views: []wasmlib.ScViewContextFunction{
+		viewGetFactorThunk,
+		viewGetOwnerThunk,
+	},
+}
+
+func OnDispatch(index int32) {
+    exportMap.Dispatch(index)
+}
+
+func funcDivideThunk(ctx wasmlib.ScFuncContext) {}
+func funcInitThunk(ctx wasmlib.ScFuncContext) {}
+func funcMemberThunk(ctx wasmlib.ScFuncContext) {}
+func funcSetOwnerThunk(ctx wasmlib.ScFuncContext) {}
+func viewGetFactorThunk(ctx wasmlib.ScViewContext) {}
+func viewGetOwnerThunk(ctx wasmlib.ScViewContext) {}
+```
+
+</TabItem>
+<TabItem value="rust">
+
+```rust
+const EXPORT_MAP: ScExportMap = ScExportMap {
+    names: &[
+    	FUNC_DIVIDE,
+    	FUNC_INIT,
+    	FUNC_MEMBER,
+    	FUNC_SET_OWNER,
+    	VIEW_GET_FACTOR,
+    	VIEW_GET_OWNER,
+	],
+    funcs: &[
+    	func_divide_thunk,
+    	func_init_thunk,
+    	func_member_thunk,
+    	func_set_owner_thunk,
+	],
+    views: &[
+    	view_get_factor_thunk,
+    	view_get_owner_thunk,
+	],
+};
+
+pub fn on_dispatch(index: i32) {
+    EXPORT_MAP.dispatch(index);
+}
+
+fn func_divide_thunk(ctx: &ScFuncContext) {}
+fn func_init_thunk(ctx: &ScFuncContext) {}
+fn func_member_thunk(ctx: &ScFuncContext) {}
+fn func_set_owner_thunk(ctx: &ScFuncContext) {}
+fn view_get_factor_thunk(ctx: &ScViewContext) {}
+fn view_get_owner_thunk(ctx: &ScViewContext) {}
+```
+
+</TabItem>
+<TabItem value="ts">
+
+```ts
+const exportMap: wasmlib.ScExportMap = {
+	names: [
+		sc.FuncDivide,
+		sc.FuncInit,
+		sc.FuncMember,
+		sc.FuncSetOwner,
+		sc.ViewGetFactor,
+		sc.ViewGetOwner,
+	],
+	funcs: [
+		funcDivideThunk,
+		funcInitThunk,
+		funcMemberThunk,
+		funcSetOwnerThunk,
+	],
+	views: [
+		viewGetFactorThunk,
+		viewGetOwnerThunk,
+	],
+};
+
+export function on_dispatch(index: i32): void {
+    exportMap.dispatch(index);
+}
+
+function funcDivideThunk(ctx: ScFuncContext) {}
+function funcInitThunk(ctx: ScFuncContext) {}
+function funcMemberThunk(ctx: ScFuncContext) {}
+function funcSetOwnerThunk(ctx: ScFuncContext) {}
+function viewGetFactorThunk(ctx: ScViewContext) {}
+function viewGetOwnerThunk(ctx: ScViewContext) {}
+```
+
+</TabItem>
+</Tabs>
+
+The key function here is the `OnDispatch()` function, which will be called by the main
+Wasm file. This main Wasm file is separate because the Wasm runtime format is
+essentially a dynamic link library. That means it not only defined exported functions,
+but also defines functions it needs to link to at a later stage, and which will be
+provided by the Wasm VM host.
+
+We want to keep the SC code separate as a self-contained library that is independent of
+the Wasm format requirements, because we will be reusing the same SC code in client-side
+code that can directly execute SC requests through this same interface.
+
+The Wasm host requires us to implement the `on_load()`and `on_call()` Wasm callback
+functions. These will directly dispatch these calls through the corresponding
+`OnDispatch()` function in the generated `lib.xx`.
+
+The `on_load()` Wasm function will be called by the Wasm VM host upon loading of the Wasm
+code. It will inform the host of all the function ids and types (Func or View) that this
+smart contract provides.
+
+When the host needs to call a function of the smart contract it will call the `on_call()`
+callback function with the corresponding function id, and then the `on_call()` function
+will dispatch the call via the `ScExportMap` mapping table that was generated by the
+[Schema Tool](usage.mdx) to the proper associated thunk function.
+
+This Wasm-specific code has been separated out in `main.xx`, as a separate package next
+to the SC library. For Rust it is a little more complex, so it has been separated out to
+a folder with the same name, followed by `wasm`. The `src/lib.rs` file serves the same
+function as the `main.xx` file in the other languages.
+
+The Wasm-specific code will also make sure that the WasmVMHost code will be pulled into
+the Wasm code because that defines the missing import functions that will be provided
+by the Wasm VM host. In this way we manage to make WasmLib independent of the Wasm code
+format as well. WasmLib defines an `ScHost` interface that will define what host
+environment is used, which in this case is `WasmVMHost`. For the client-side code we
+implement a different `ScHost` that hides the differences.
+
+Here is the generated `main.xx` that forms the main entry point for the Wasm code:
+
+<Tabs defaultValue="go"
+      groupId="language"
+      values={[
+          {label: 'Go', value: 'go'},
+          {label: 'Rust', value: 'rust'},
+          {label: 'TypeScript', value: 'ts'},
+      ]}>
+
+<TabItem value="go">
+
+```go
+//go:build wasm
+// +build wasm
+
+package main
+
+import "github.com/iotaledger/wasp/packages/wasmvm/wasmvmhost/go/wasmvmhost"
+
+import "github.com/iotaledger/wasp/contracts/wasm/dividend/go/dividend"
+
+func main() {
+}
+
+func init() {
+    wasmvmhost.ConnectWasmHost()
+}
+
+//export on_call
+func onCall(index int32) {
+    dividend.OnDispatch(index)
+}
+
+//export on_load
+func onLoad() {
+    dividend.OnDispatch(-1)
+}
+```
+
+</TabItem>
+<TabItem value="rust">
+
+```rust
+use dividend::*;
+use wasmvmhost::*;
+
+#[no_mangle]
+fn on_call(index: i32) {
+    WasmVmHost::connect();
+    on_dispatch(index);
+}
+
+#[no_mangle]
+fn on_load() {
+    WasmVmHost::connect();
+    on_dispatch(-1);
+}
+```
+
+</TabItem>
+<TabItem value="ts">
+
+```ts
+import * as wasmvmhost from "wasmvmhost";
+import * as sc from "./dividend";
+
+export function on_call(index: i32): void {
+    wasmvmhost.WasmVMHost.connect();
+    sc.onDispatch(index);
+}
+
+export function on_load(): void {
+    wasmvmhost.WasmVMHost.connect();
+    sc.onDispatch(-1);
+}
+```
+
+</TabItem>
+</Tabs>
+
+Finally, here is an example implementation of a thunk function for the `setOwner()`
+contract function. You can examine the other thunk functions that all follow the same
+pattern in the generated `lib.xx`:
+
+<Tabs defaultValue="go"
+      groupId="language"
+      values={[
+          {label: 'Go', value: 'go'},
+          {label: 'Rust', value: 'rust'},
+          {label: 'TypeScript', value: 'ts'},
+      ]}>
+
+<TabItem value="go">
+
+```go
+type SetOwnerContext struct {
+	Params  ImmutableSetOwnerParams
+	State   MutableDividendState
+}
+
+func funcSetOwnerThunk(ctx wasmlib.ScFuncContext) {
+	ctx.Log("dividend.funcSetOwner")
+	f := &SetOwnerContext{
+		Params: ImmutableSetOwnerParams{
+			proxy: wasmlib.NewParamsProxy(),
+		},
+		State: MutableDividendState{
+			proxy: wasmlib.NewStateProxy(),
+		},
+	}
+
+	// only defined owner of contract can change owner
+	access := f.State.Owner()
+	ctx.Require(access.Exists(), "access not set: owner")
+	ctx.Require(ctx.Caller() == access.Value(), "no permission")
+
+	ctx.Require(f.Params.Owner().Exists(), "missing mandatory owner")
+	funcSetOwner(ctx, f)
+	ctx.Log("dividend.funcSetOwner ok")
+}
+```
+
+</TabItem>
+<TabItem value="rust">
+
+```rust
+pub struct SetOwnerContext {
+	params: ImmutableSetOwnerParams,
+	state: MutableDividendState,
+}
+
+fn func_set_owner_thunk(ctx: &ScFuncContext) {
+	ctx.log("dividend.funcSetOwner");
+	let f = SetOwnerContext {
+		params: ImmutableSetOwnerParams { proxy: params_proxy() },
+		state: MutableDividendState { proxy: state_proxy() },
+	};
+
+	// only defined owner of contract can change owner
+	let access = f.state.owner();
+	ctx.require(access.exists(), "access not set: owner");
+	ctx.require(ctx.caller() == access.value(), "no permission");
+
+	ctx.require(f.params.owner().exists(), "missing mandatory owner");
+	func_set_owner(ctx, &f);
+	ctx.log("dividend.funcSetOwner ok");
+}
+```
+
+</TabItem>
+<TabItem value="ts">
+
+```ts
+// this class is actually defined in contract.ts
+export class SetOwnerContext {
+	params: sc.ImmutableSetOwnerParams = new sc.ImmutableSetOwnerParams(wasmlib.paramsProxy());
+	state: sc.MutableDividendState = new sc.MutableDividendState(wasmlib.ScState.proxy());
+}
+
+function funcSetOwnerThunk(ctx: wasmlib.ScFuncContext): void {
+	ctx.log("dividend.funcSetOwner");
+	let f = new sc.SetOwnerContext();
+
+	// only defined owner of contract can change owner
+	const access = f.state.owner();
+	ctx.require(access.exists(), "access not set: owner");
+	ctx.require(ctx.caller().equals(access.value()), "no permission");
+
+	ctx.require(f.params.owner().exists(), "missing mandatory owner");
+	sc.funcSetOwner(ctx, f);
+	ctx.log("dividend.funcSetOwner ok");
+}
+```
+
+</TabItem>
+</Tabs>
+
+First, the thunk logs the contract and function name to show that the call has started.
+Then it sets up a strongly typed function-specific context structure. First, we add the
+function-specific immutable [Params](params.mdx) interface structure, which is only
+present when the function actually can have parameters. Then we add the contract-specific
+[State](state.mdx) interface structure. In this case it is mutable because setOwner is a
+[Func](funcs.mdx). For [Views](views.mdx) this would be an immutable state interface.
+Finally, we would add the function-specific mutable [Results](results.mdx) interface
+structure, which is only present when the function actually returns results. Obviously,
+this is not the case for this `setOwner()` function.
+
+Next it sets up access control for the function according to the schema definition file.
+In this case it retrieves the `owner` state variable through the function context,
+requires that the variable exists, and then requires that the `caller()` of the function
+equals that value. Any failing requirement will panic out of the thunk function with an
+error message. So this code makes sure that only the owner of the contract can call this
+function.
+
+Now we get to the point where we can use the function-specific [Params](params.mdx)
+interface to check for mandatory parameters. Each mandatory parameter is required to
+exist, or else we will panic out of the thunk function with an error message.
+
+With the setup and automated checks completed, we now call the actual smart contract
+function implementation that is maintained by the user. After this function has completed,
+we would process the returned results for those functions that have any (in this case we
+obviously don't have results), and finally we log that the contract function has completed
+successfully. Remember that any error within the user function will cause a panic, so this
+logging will never occur in case that happens.
+
+
+In the next section we will look at the specifics of [view functions](views.mdx).

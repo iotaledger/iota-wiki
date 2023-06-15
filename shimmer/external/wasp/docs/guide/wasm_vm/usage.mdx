@@ -1,0 +1,311 @@
+---
+keywords:
+- functions
+- schema tool
+- definition file
+- Rust
+- Go
+- init
+- json
+- yml
+
+description: The `schema` tool will assist in creating a smart contract as unobtrusively as possible.
+
+image: /img/logo/WASP_logo_dark.png
+---
+import Tabs from "@theme/Tabs"
+import TabItem from "@theme/TabItem"
+
+# Using the Schema Tool
+
+We tried to make the creation of smart contracts as simple as possible. The *Schema Tool*
+will assist you along the way as unobtrusively as possible. This section will walk you
+through the steps to create a new smart contract from scratch.
+
+First, you need to decide on a central folder where you want to keep all your smart
+contracts. Each smart contract you create will be maintained in a separate subfolder of
+this folder. We will use certain naming conventions that the schema tool expects
+throughout this section. First we will select a _capitalized camel case_ name for our
+smart contract. For our example, `MySmartContract`.
+
+Once you know what your smart contract will be named, it is time to set up your subfolder.
+Simply navigate to the central smart contract folder, and run the schema tool's
+initialization function:
+
+```shell
+schema -init MySmartContract
+```
+
+This command will create a subfolder named `mysmartcontract` and generate an initial YAML
+schema definition file inside this subfolder. Note that the generated subfolder name is
+all lower case. This is to conform to best practices for package names in most languages.
+The generated schema definition file looks like this:
+
+<Tabs defaultValue="yaml"
+      values={[
+          {label: 'schema.yaml', value: 'yaml'},
+      ]}>
+<TabItem value="yaml">
+
+```yaml
+name: MySmartContract
+description: MySmartContract description
+events: {}
+structs: {}
+typedefs: {}
+state:
+  owner: AgentID // current owner of this smart contract
+funcs:
+  init:
+    params:
+      owner: AgentID? // optional owner of this smart contract
+  setOwner:
+    access: owner // current owner of this smart contract
+    params:
+      owner: AgentID // new owner of this smart contract
+views:
+  getOwner:
+    results:
+      owner: AgentID // current owner of this smart contract
+```
+
+</TabItem>
+</Tabs>
+
+The schema definition file has been pre-populated with all sections that you could need,
+and some functions that allow you to maintain the ownership of the smart contract. Now
+that the schema definition file exists, it is up to you to modify it further to reflect
+the requirements of your smart contract.
+
+You should use _camel case_ naming convention throughout the schema definition file when
+naming items. Function and variable names always start with a lower case character, and
+type names always start with an upper case character.
+
+The first thing you may want to do is to modify the `description` field to something more
+sensible. And if you already know how to use the schema tool, then now is the moment to
+fill out some sections with the definitions you know you will need.
+
+The next step is to navigateo into the new `mysmartcontract` subfolder and run the schema
+tool there to generate the initial code for the desired language:
+
+<Tabs defaultValue="go"
+      groupId="language"
+      values={[
+          {label: 'Go', value: 'go'},
+          {label: 'Rust', value: 'rust'},
+          {label: 'TypeScript', value: 'ts'},
+      ]}>
+
+<TabItem value="go">
+
+If you want to generate Go code, you should run the schema tool with the `-go` option like
+this:
+
+```shell
+schema -go
+```
+
+</TabItem>
+<TabItem value="rust">
+
+If you want to generate Rust code, you should run the schema tool with the `-rs` option
+like this:
+
+```shell
+schema -rs
+```
+
+</TabItem>
+<TabItem value="ts">
+
+If you want to generate TypeScript code, you should run the schema tool with the `-ts`
+option like this:
+
+```shell
+schema -ts
+```
+
+</TabItem>
+</Tabs>
+
+If you want to generate more than one language your can simply specify multiple options.
+For example, to generate both Rust and Go code you would specify both options like this:
+
+```shell
+schema -rs -go
+```
+
+The schema tool will generate a complete set of source files for the desired language(s),
+that will compile successfully into a Wasm code file. You compile these as follows:
+
+<Tabs defaultValue="go"
+      groupId="language"
+      values={[
+          {label: 'Go', value: 'go'},
+          {label: 'Rust', value: 'rust'},
+          {label: 'TypeScript', value: 'ts'},
+      ]}>
+
+<TabItem value="go">
+
+```shell
+tinygo build -target wasm go/main.go
+```
+
+This will use the Go source files in the go/mysmartcontract subfolder. The only file in
+this folder that you should edit manually is `mysmartcontract.go`. All other source files
+will be regenerated and overwritten whenever the schema tool is run again.
+
+See the [TinyGo](https://tinygo.org/) documentation for more build options.
+
+</TabItem>
+<TabItem value="rust">
+
+After generating the Rust code, you should first modify the Cargo.toml file to your
+liking, and potentially add the new project to a Rust workspace. Cargo.toml will not be
+regenerated once it already exists. Then build the code as follows:
+
+```shell
+wasm-pack build
+```
+
+This will use Rust source files in the `src` subfolder. The only file in this folder that
+you should edit manually is `mysmartcontract.rs`. All other source files will be
+regenerated and overwritten whenever the schema tool is run again.
+
+See the [wasm-pack](https://rustwasm.github.io/wasm-pack/) documentation for more build
+options.
+
+</TabItem>
+<TabItem value="ts">
+
+```shell
+npx asc ts/mysmartcontract/lib.ts --outFile mysmartcontract_ts.wasm --lib path/to/node_modules
+```
+
+This will use the TypeScript source files in the ts/mysmartcontract subfolder. The only
+file in this folder that you should edit manually is `mysmartcontract.ts`. All other
+source files will be regenerated and overwritten whenever the schema tool is run again.
+
+See the [AssemblyScript](https://www.assemblyscript.org/) documentation for more build
+options.
+
+</TabItem>
+</Tabs>
+
+The generated code is essentially identical for each language, barring some language
+idiosyncrasy differences. Just view different language files with the same name next to,
+each other, and you will see what we mean.
+
+Here is an example of the initially generated code, `mysmartcontract.xx` looks like this
+before you even start modifying it:
+
+<Tabs defaultValue="go"
+      groupId="language"
+      values={[
+          {label: 'Go', value: 'go'},
+          {label: 'Rust', value: 'rust'},
+          {label: 'TypeScript', value: 'ts'},
+      ]}>
+
+<TabItem value="go">
+
+```go
+package mysmartcontract
+
+import "github.com/iotaledger/wasp/packages/wasmvm/wasmlib/go/wasmlib"
+
+
+func funcInit(ctx wasmlib.ScFuncContext, f *InitContext) {
+    if f.Params.Owner().Exists() {
+        f.State.Owner().SetValue(f.Params.Owner().Value())
+        return
+    }
+    f.State.Owner().SetValue(ctx.RequestSender())
+}
+
+func funcSetOwner(ctx wasmlib.ScFuncContext, f *SetOwnerContext) {
+    f.State.Owner().SetValue(f.Params.Owner().Value())
+}
+
+func viewGetOwner(ctx wasmlib.ScViewContext, f *GetOwnerContext) {
+    f.Results.Owner().SetValue(f.State.Owner().Value())
+}
+```
+
+</TabItem>
+<TabItem value="rust">
+
+```rust
+use wasmlib::*;
+
+use crate::*;
+
+pub fn func_init(ctx: &ScFuncContext, f: &InitContext) {
+    if f.params.owner().exists() {
+        f.state.owner().set_value(&f.params.owner().value());
+        return;
+    }
+    f.state.owner().set_value(&ctx.request_sender());
+}
+
+pub fn func_set_owner(_ctx: &ScFuncContext, f: &SetOwnerContext) {
+    f.state.owner().set_value(&f.params.owner().value());
+}
+
+pub fn view_get_owner(_ctx: &ScViewContext, f: &GetOwnerContext) {
+    f.results.owner().set_value(&f.state.owner().value());
+}
+```
+
+</TabItem>
+<TabItem value="ts">
+
+```ts
+import * as wasmlib from "wasmlib";
+import * as wasmtypes from "wasmlib/wasmtypes";
+import * as sc from "./index";
+
+export function funcInit(ctx: wasmlib.ScFuncContext, f: sc.InitContext): void {
+    if (f.params.owner().exists()) {
+        f.state.owner().setValue(f.params.owner().value());
+        return;
+    }
+    f.state.owner().setValue(ctx.requestSender());
+}
+
+export function funcSetOwner(ctx: wasmlib.ScFuncContext, f: sc.SetOwnerContext): void {
+    f.state.owner().setValue(f.params.owner().value());
+}
+
+export function viewGetOwner(ctx: wasmlib.ScViewContext, f: sc.GetOwnerContext): void {
+    f.results.owner().setValue(f.state.owner().value());
+}
+```
+
+</TabItem>
+</Tabs>
+
+As you can see the schema tool even generated an initial working version of the functions
+that are used to maintain the smart contract owner that will suffice for most cases.
+
+For a smooth building experience it is a good idea to set up a build rule in your build
+environment that runs the schema tool with the required parameters whenever the schema
+definition file changes. That way regeneration of files is automatic, and you no longer
+have to start the schema tool manually each time after changing the schema definition
+file. The schema tool will only regenerate the code when it finds that the schema
+definition file has been modified since the last time it generated the code. You can force
+the schema tool to regenerate all code by adding the `-force` flag to its command line
+parameter.
+
+
+In the next section we will look at how a smart contract can access its associated
+storage by using [Data Access Proxies](proxies.mdx).
+
+## Video Tutorial
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/aTwXHuzwqZ0" title="Deploying with Schema Tool" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+### Creating Smart Contracts using AssemblyScript
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/P5HMgmY3DMM" title="Creating Smart Contracts using AssemblyScript" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>

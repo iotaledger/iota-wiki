@@ -1,0 +1,105 @@
+---
+keywords:
+- concepts
+- smart contracts
+- allowance
+
+description: First let's talk about some important concepts about smart contracts in general and then about ISC smart contract concepts in particular.
+
+image: /img/logo/WASP_logo_dark.png
+---
+
+# Smart Contract Concepts
+
+First let's talk about some important concepts about smart contracts in general and then
+about ISC smart contract concepts in particular.
+
+## General Concepts
+
+Smart contracts consist of a number of functions that operate on their state storage.
+These functions are guaranteed to run deterministically. That means that given certain
+input data and input storage state they will always produce the same output data and
+output storage state. Determinism is key because it is the only way to be able to
+validate their execution results independently.
+
+The consequence of this is that it is impossible for a smart contract to go out and fetch
+data from external sources, because these sources cannot be guaranteed to be the same at
+every invocation. Smart contract function calls are therefore always following the data
+push model. They need to receive a complete, atomic set of input data. This is important
+to remember, because in most other programming applications it is very common to pull
+external data into running code whenever required. This changes the mental model necessary
+for building smart contract solutions considerably.
+
+Smart contract functions have no access to a file system, nor can they use timing or
+randomness sources. Any time or randomness data must be provided as part of the input
+data. Changes to global static data in the smart contract code itself will not persist
+between separate smart contract function calls. Multi-threading is also highly
+non-deterministic and its usage is therefore not allowed.
+
+To make sure that timing differences between processors do not influence the consensus
+outcome of long-running processes, and to prevent endless loops, smart contracts use a
+system where the maximum running time of a function is bounded by an amount of **gas**
+that is provided at the moment of invocation. Each Wasm instruction and each ISC API call
+burns a certain amount of gas, and therefore any function that runs out of gas will do so
+at the exact same point, no matter who runs it. This is the only way to be able to have
+Turing-complete computing that is bounded in a deterministic way. Gas is not just used to
+limit the amount of (finite) processing resources that can be used, but it can also be
+used to assign a monetary cost to the actual amount of processing resources used when
+running a smart contract function by associating a fee per unit of gas used.
+
+## ISC-specific Concepts
+
+A unique feature of ISC is its ability to run multiple blockchains in parallel securely.
+Requests can arrive asynchronously, but each separate blockchain is guaranteed to handle
+its requests synchronously, ordered by consensus between the chain's nodes. Each chain
+runs its own set of smart contracts. Some are built-in (core) contracts, others are
+user-defined, dynamically loaded contracts.
+
+Within a blockchain contracts can call each other's functionality either synchronously or
+asynchronously. Synchronous calls are akin to a subroutine call. Asynchronous calls are
+wrapped in a request transaction and posted on the Tangle, to be executed sometime after
+the current set of requests has been processed.
+
+This same asynchronous request mechanism can be used to post calls to smart contracts in
+other blockchains. Delivery of such request transactions is guaranteed, but processing of
+these requests is only guaranteed as long as the target blockchain is active.
+
+Although smart contracts will always post asynchronous requests on the Tangle, and it is
+possible to do this from a user application as well, there is a price to be paid in the
+form of having to wait for confirmation on the Tangle before a request can be processed.
+Therefore, ISC also allows user applications to send requests directly to a blockchain
+through a node API. We call such requests _off-ledger_ requests, as opposed to the
+_on-ledger_ requests that are posted directly on the Tangle ledger. Off-ledger requests
+can be sent at a much higher frequency than off-ledger requests, but on-ledger requests
+offer a few additional features that are not available to off-ledger requests.
+
+In both cases requests are initiated by a so-called _sender_. The sender signs the request
+with its private key and can therefore be uniquely and securely identified. We also
+identify a _caller_ to a smart contract function. While a request is being processed the
+sender will stay the same, but the caller will change with every synchronous call that is
+being made. This will allow the transfer of assets between calls to different contracts
+within the chain, and allows the called function to easily identify the origin of these
+assets. Note that a function can only access assets that were provided by the caller of
+the function. So even though the original sender of the request is known at any call
+depth, only the top level function can access the assets that the sender provided to the
+request.
+
+The way assets are provided to a smart contract function is by specifying a so-called
+_allowance_. The function is allowed (but not required) to transfer ownership of the
+assets indicated in the allowance to itself, depending on the requirements of the
+function. The allowance is taken out of the on-chain account of the caller. This means
+that the caller needs to make sure that these assets are available in the account when
+the call is executed. For off-ledger requests this means that prior to sending the request
+sufficient assets need to be deposited in the sender's on-chain account. For on-ledger
+requests the assets may also have been deposited prior to sending the request, or they may
+be sent along as part of the request.
+
+Any assets that are sent to a chain as part of an on-ledger request will end up in the
+sender's on-chain account. The allowance mechanism makes it impossible for assets to
+inadvertently be sent to a wrong or non-existing contract and become lost forever. Any
+assets that are not handled by any contract will safely stay in the sender's on-chain
+account and can be withdrawn by the sender at any time.
+
+
+In the next section we will explore how smart contracts use the WasmLib
+[Call Context](context.mdx).

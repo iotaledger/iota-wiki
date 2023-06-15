@@ -1,0 +1,88 @@
+---
+keywords:
+- functions
+- views
+- state
+- access
+- params
+- results
+
+image: /img/logo/WASP_logo_dark.png
+
+description:  The code generated for Funcs will be able to inspect and modify the smart contract state, whereas the code generated for Views will only be able to inspect the state.
+---
+import Tabs from "@theme/Tabs"
+import TabItem from "@theme/TabItem"
+
+# Function Definitions
+
+Here is the full schema definition file for the `dividend` example. We will now focus on
+its `funcs` and `views` sections. Since they are structured identically we will only need
+to explain the layout of these sections once.
+
+<Tabs defaultValue="yaml"
+    values={[
+        {label: 'schema.yaml', value: 'yaml'},
+    ]}>
+<TabItem value="yaml">
+
+```yaml
+name: Dividend
+description: Simple dividend smart contract
+structs: {}
+typedefs: {}
+state:
+  memberList: Address[] # array with all the recipients of this dividend
+
+  # factors per member
+
+  members: map[Address]Uint64 # map with all the recipient factors of this dividend
+  owner: AgentID # owner of contract, the only one who can call 'member' func
+  totalFactor: Uint64 # sum of all recipient factors
+funcs:
+  # divide tokens over members
+  divide: {}
+  init:
+    params:
+      owner: AgentID? # optional owner of contract, defaults to contract creator
+  member:
+    access: owner # only defined owner of contract can add members
+    params:
+      address: Address # address of dividend recipient
+      factor: Uint64 # relative division factor
+  setOwner:
+    access: owner # only defined owner of contract can change owner
+    params:
+      owner: AgentID # new owner of smart contract
+views:
+  getFactor:
+    params:
+      address: Address # address of dividend recipient
+    results:
+      factor: Uint64 # relative division factor
+  getOwner:
+    results:
+      owner: AgentID # current owner of this smart contract
+```
+
+</TabItem>
+
+</Tabs>
+
+As you can see each of the `funcs` and `views` sections defines their functions in the
+same way. The only resulting difference is in the way the [Schema Tool](usage.mdx)
+generates code for them. The code generated for Funcs will be able to inspect and modify
+the smart contract state, whereas the code generated for Views will only be able to
+inspect the state.
+
+Functions are defined as named subsections in the schema definition file. The name of the
+subsection will become the name of the function. In turn, there can be 3 optional
+subsections under each function subsection.
+
+* `access` indicates who is allowed to access the function.
+* `params` holds the field definitions that describe the function parameters.
+* `results` holds the field definitions that describe the function results.
+
+
+We will now examine each subsection in more detail. In the next section we will first look
+at the [`access`](access.mdx) subsection.

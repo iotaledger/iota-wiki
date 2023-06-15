@@ -1,4 +1,6 @@
 const path = require('path');
+const math = require("remark-math");
+const katex = require("rehype-katex");
 
 module.exports = {
   title: 'Danger Zone',
@@ -323,11 +325,77 @@ module.exports = {
             'https://github.com/iotaledger/goshimmer/edit/develop/documentation',
       },
     ],
+
+
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'introduction-docs',
+        path: path.resolve(__dirname, 'external/introduction-docs/docs'),
+        routeBasePath: 'introduction',
+        sidebarPath: path.resolve(__dirname, 'external/introduction-docs/sidebars.js'),
+        editUrl: 'https://github.com/iotaledger/chrysalis-docs/edit/develop/docs',
+        remarkPlugins: [require('remark-code-import'), require('remark-import-partial'), require('remark-remove-comments')],
+      }
+    ],
+
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'iota-IOTA-Research-Specifications',
+        path: path.resolve(
+            __dirname,
+            'external/iota-2.0-research-specifications/',
+        ),
+        routeBasePath: 'IOTA-2.0-Research-Specifications',
+        sidebarPath: path.resolve(
+            __dirname,
+            'external/iota-2.0-research-specifications/sidebars.js',
+        ),
+        editUrl:
+            'https://github.com/iotaledger/IOTA-2.0-Research-Specifications/edit/main/docusaurus',
+        remarkPlugins: [math],
+        rehypePlugins: [katex],
+        include: ['*.md'],
+      },
+    ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'iota-iota-tips',
+        path: path.resolve(__dirname, 'external/tips'),
+        routeBasePath: 'tips',
+        editUrl: 'https://github.com/iotaledger/tips/edit/main/',
+        remarkPlugins: [require('remark-import-partial')],
+        include: ['tips/**/*.md', 'README.md'],
+        sidebarPath: path.resolve(__dirname, 'external/tips/sidebars.js'),
+      },
+    ],
+
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'wasp',
+        path: path.resolve(__dirname, 'external/wasp/docs'),
+        routeBasePath: 'smart-contracts',
+        sidebarPath: path.resolve(__dirname, 'external/wasp/sidebars.js'),
+        editUrl: 'https://github.com/iotaledger/wasp/edit/develop/documentation',
+        remarkPlugins: [require('remark-code-import'), require('remark-import-partial'), require('remark-remove-comments')],
+      }
+    ],
   ],
   staticDirectories: [
     path.resolve(__dirname, 'external/iota-sdk/static'),
     path.resolve(__dirname, 'external/cli-wallet/static'),
     path.resolve(__dirname, 'external/hornet/static'),
     path.resolve(__dirname, './external/goshimmer/static'),
+    path.resolve(__dirname, './external/introduction-docs/static'),
+    path.resolve(
+        __dirname,
+        './external/iota-2.0-research-specifications/static',
+    ),
+    path.resolve(__dirname, './external/tips/static'),
+    path.resolve(__dirname, './external/wasp/static'),
+
   ],
 };

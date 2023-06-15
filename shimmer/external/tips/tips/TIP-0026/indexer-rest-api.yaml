@@ -1,0 +1,812 @@
+openapi: 3.0.3
+info:
+  title: IOTA UTXO Indexer REST API
+  description: This document specifies the REST API for IOTA UTXO indexers.
+  contact:
+    email: contact@iota.org
+  license:
+    name: Apache 2.0
+    url: 'http://www.apache.org/licenses/LICENSE-2.0.html'
+  version: 1.0.0
+externalDocs:
+  description: Find out more about IOTA
+  url: 'https://iota.org'
+servers:
+  - url: 'http://127.0.0.1:14265'
+tags:
+  - name: basic outputs
+    description: Query Basic Outputs.
+  - name: alias outputs
+    description: Query Alias Outputs.
+  - name: foundry outputs
+    description: Query Foundry Outputs.
+  - name: nft outputs
+    description: Query NFT Outputs.
+paths:
+  /api/indexer/v1/outputs/basic:
+    get:
+      tags:
+        - basic outputs
+      summary: Returns basic outputs filtered based on parameters.
+      description: Returns basic outputs filtered based on parameters.
+      parameters:
+        - in: query
+          name: address
+          schema:
+            type: string
+          example: iota1qrhacyfwlcnzkvzteumekfkrrwks98mpdm37cj4xx3drvmjvnep6xqgyzyx
+          description: The Bech32-encoded address that should be searched for in the Address Unlock Condition of outputs.
+        - in: query
+          name: hasNativeTokens
+          schema:
+            type: boolean
+          example: true
+          description: Filters outputs based on the presence of native tokens.
+        - in: query
+          name: minNativeTokenCount
+          schema:
+            type: integer
+          example: 2
+          description: Filters outputs that have at least a certain number of distinct native tokens.
+        - in: query
+          name: maxNativeTokenCount
+          schema:
+            type: integer
+          example: 5
+          description: Filters outputs that have at most a certain number of distinct native tokens.
+        - in: query
+          name: hasStorageDepositReturn
+          schema:
+            type: boolean
+          example: true
+          description: Filters outputs based on the presence of storage deposit return unlock condition.
+        - in: query
+          name: storageDepositReturnAddress
+          schema:
+            type: string
+          example: iota1qrhacyfwlcnzkvzteumekfkrrwks98mpdm37cj4xx3drvmjvnep6xqgyzyx
+          description: Filter outputs based on the presence of a specific return address in the storage deposit return
+            unlock condition.
+        - in: query
+          name: hasTimelock
+          schema:
+            type: boolean
+          example: true
+          description: Filters outputs based on the presence of timelock unlock condition.
+        - in: query
+          name: timelockedBefore
+          schema:
+            type: integer
+          example: 1643383242
+          description: Return outputs that are timelocked before a certain Unix timestamp.
+        - in: query
+          name: timelockedAfter
+          schema:
+            type: integer
+          example: 1643383242
+          description: Return outputs that are timelocked after a certain Unix timestamp.
+        - in: query
+          name: hasExpiration
+          schema:
+            type: boolean
+          example: true
+          description: Filters outputs based on the presence of expiration unlock condition.
+        - in: query
+          name: expiresBefore
+          schema:
+            type: integer
+          example: 1643383242
+          description: Return outputs that expire before a certain Unix timestamp.
+        - in: query
+          name: expiresAfter
+          schema:
+            type: integer
+          example: 1643383242
+          description: Return outputs that expire after a certain Unix timestamp.
+        - in: query
+          name: expirationReturnAddress
+          schema:
+            type: string
+          example: iota1qrhacyfwlcnzkvzteumekfkrrwks98mpdm37cj4xx3drvmjvnep6xqgyzyx
+          description: Filter outputs based on the presence of a specific return address in the expiration unlock
+            condition.
+        - in: query
+          name: sender
+          schema:
+            type: string
+          example: iota1qrhacyfwlcnzkvzteumekfkrrwks98mpdm37cj4xx3drvmjvnep6xqgyzyx
+          description: Filters outputs based on the presence of validated Sender (bech32 encoded).
+        - in: query
+          name: tag
+          schema:
+            type: string
+          example: "0x4ec7f23"
+          description: Filters outputs based on matching Tag Feature.
+        - in: query
+          name: createdBefore
+          schema:
+            type: integer
+          example: 1643383242
+          description: Return outputs that were created before a certain Unix timestamp.
+        - in: query
+          name: createdAfter
+          schema:
+            type: integer
+          example: 1643383242
+          description: Return outputs that were created after a certain Unix timestamp.
+        - in: query
+          name: pageSize
+          schema:
+            type: integer
+          example: 10
+          description: The maximum amount of items returned in one call. If there are more items, a cursor to the next page is returned too.
+            The parameter is ignored when pageSize is defined via the cursor parameter.
+        - in: query
+          name: cursor
+          schema:
+            type: string
+          example: 0c78e998f5177834ecb3bae1596d5056af76e487386eecb19727465b4be86a790200.10
+          description: Starts the search from the cursor (confirmationMS+outputId.pageSize).
+      responses:
+        '200':
+          description: "Successful operation."
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OutputsResponse'
+              examples:
+                Query results in 3 outputs:
+                  $ref: >-
+                    #/components/examples/get-outputs-response-three-example
+                No matching outputIds found:
+                  $ref: >-
+                    #/components/examples/get-outputs-empty-response-example
+                Paging - more items found than it can fit on single page:
+                  $ref: >-
+                    #/components/examples/get-outputs-pagesize2-response-example
+        '400':
+          description: "Unsuccessful operation: indicates that the provided data is invalid."
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequestResponse'
+        '403':
+          description: "Unsuccessful operation: indicates that the endpoint is not available for public use."
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ForbiddenResponse'
+        '500':
+          description: "Unsuccessful operation: indicates that an unexpected, internal server error happened which prevented the node from fulfilling the request."
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalErrorResponse'
+
+  /api/indexer/v1/outputs/alias:
+    get:
+      tags:
+        - alias outputs
+      summary: Returns alias outputs filtered based on parameters.
+      description: Returns alias outputs filtered based on parameters.
+      parameters:
+        - in: query
+          name: stateController
+          schema:
+            type: string
+          example: iota1qrhacyfwlcnzkvzteumekfkrrwks98mpdm37cj4xx3drvmjvnep6xqgyzyx
+          description: Filter outputs based on bech32-encoded state controller address.
+        - in: query
+          name: governor
+          schema:
+            type: string
+          example: iota1qrhacyfwlcnzkvzteumekfkrrwks98mpdm37cj4xx3drvmjvnep6xqgyzyx
+          description: Filter outputs based on bech32-encoded governor (governance controller) address.
+        - in: query
+          name: issuer
+          schema:
+            type: string
+          example: iota1qrhacyfwlcnzkvzteumekfkrrwks98mpdm37cj4xx3drvmjvnep6xqgyzyx
+          description: Filters outputs based on bech32-encoded issuer address.
+        - in: query
+          name: sender
+          schema:
+            type: string
+          example: iota1qrhacyfwlcnzkvzteumekfkrrwks98mpdm37cj4xx3drvmjvnep6xqgyzyx
+          description: Filters outputs based on bech32-encoded sender address.
+        - in: query
+          name: hasNativeTokens
+          schema:
+            type: boolean
+          example: true
+          description: Filters outputs based on the presence of native tokens.
+        - in: query
+          name: minNativeTokenCount
+          schema:
+            type: integer
+          example: 2
+          description: Filters outputs that have at least a certain number of distinct native tokens.
+        - in: query
+          name: maxNativeTokenCount
+          schema:
+            type: integer
+          example: 5
+          description: Filters outputs that have at most a certain number of distinct native tokens.
+        - in: query
+          name: createdBefore
+          schema:
+            type: integer
+          example: 1643383242
+          description: Return outputs that were created before a certain Unix timestamp.
+        - in: query
+          name: createdAfter
+          schema:
+            type: integer
+          example: 1643383242
+          description: Return outputs that were created after a certain Unix timestamp.
+        - in: query
+          name: pageSize
+          schema:
+            type: integer
+          example: 10
+          description: The maximum amount of items returned in one call. If there are more items, a cursor to the next page is returned too.
+            The parameter is ignored when pageSize is defined via the cursor parameter.
+        - in: query
+          name: cursor
+          schema:
+            type: string
+          example: 0c78e998f5177834ecb3bae1596d5056af76e487386eecb19727465b4be86a790200.10
+          description: Starts the search from the cursor (confirmationMS+outputId.pageSize).
+      responses:
+        '200':
+          description: "Successful operation."
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OutputsResponse'
+              examples:
+                Query results in 3 outputs:
+                  $ref: >-
+                    #/components/examples/get-outputs-response-three-example
+                No matching outputIds found:
+                  $ref: >-
+                    #/components/examples/get-outputs-empty-response-example
+                Paging - more items found than it can fit on single page:
+                  $ref: >-
+                    #/components/examples/get-outputs-pagesize2-response-example
+        '400':
+          description: "Unsuccessful operation: indicates that the provided data is invalid."
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequestResponse'
+        '403':
+          description: "Unsuccessful operation: indicates that the endpoint is not available for public use."
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ForbiddenResponse'
+        '500':
+          description: "Unsuccessful operation: indicates that an unexpected, internal server error happened which prevented the node from fulfilling the request."
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalErrorResponse'
+
+  /api/indexer/v1/outputs/alias/{aliasId}:
+    get:
+      tags:
+        - alias outputs
+      summary: Returns the outputId of the current unspent alias output for aliasId.
+      description: Returns the outputId of the current unspent alias output for aliasId.
+      parameters:
+        - in: path
+          name: aliasId
+          schema:
+            type: string
+          example: "0x1505ec099896ab05d9e08fbc7101ae4dff0093b3943b28f789ed2ca728bcc8d6"
+          description: Unique identifier of the alias.
+          required: true
+      responses:
+        '200':
+          description: "Successful operation."
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OutputsResponse'
+              examples:
+                Query results in single output:
+                  $ref: >-
+                    #/components/examples/get-outputs-response-single-example
+        '400':
+          description: "Unsuccessful operation: indicates that the provided data is invalid."
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequestResponse'
+        '403':
+          description: "Unsuccessful operation: indicates that the endpoint is not available for public use."
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ForbiddenResponse'
+        '404':
+          description: "Unsuccessful operation: indicates that the requested data was not found."
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFoundResponse'
+        '500':
+          description: "Unsuccessful operation: indicates that an unexpected, internal server error happened which prevented the node from fulfilling the request."
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalErrorResponse'
+
+  /api/indexer/v1/outputs/foundry:
+    get:
+      tags:
+        - foundry outputs
+      summary: Returns foundry outputs filtered based on parameters.
+      description: Returns foundry outputs filtered based on parameters.
+      parameters:
+        - in: query
+          name: aliasAddress
+          schema:
+            type: string
+          example: iota1prlgpsht03ekmghhex8v7y67a835uns8dtlxu807hj0v279c74kj76j6rev
+          description: Filter foundry outputs based on bech32-encoded address of the controlling alias.
+        - in: query
+          name: hasNativeTokens
+          schema:
+            type: boolean
+          example: true
+          description: Filters outputs based on the presence of native tokens.
+        - in: query
+          name: minNativeTokenCount
+          schema:
+            type: integer
+          example: 2
+          description: Filters outputs that have at least a certain number of distinct native tokens.
+        - in: query
+          name: maxNativeTokenCount
+          schema:
+            type: integer
+          example: 5
+          description: Filters outputs that have at most a certain number of distinct native tokens.
+        - in: query
+          name: createdBefore
+          schema:
+            type: integer
+          example: 1643383242
+          description: Return outputs that were created before a certain Unix timestamp.
+        - in: query
+          name: createdAfter
+          schema:
+            type: integer
+          example: 1643383242
+          description: Return outputs that were created after a certain Unix timestamp.
+        - in: query
+          name: pageSize
+          schema:
+            type: integer
+          example: 10
+          description: The maximum amount of items returned in one call. If there are more items, a cursor to the next page is returned too.
+            The parameter is ignored when pageSize is defined via the cursor parameter.
+        - in: query
+          name: cursor
+          schema:
+            type: string
+          example: 0c78e998f5177834ecb3bae1596d5056af76e487386eecb19727465b4be86a790200.10
+          description: Starts the search from the cursor (confirmationMS+outputId.pageSize).
+      responses:
+        '200':
+          description: "Successful operation."
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OutputsResponse'
+              examples:
+                Query results in 3 outputs:
+                  $ref: >-
+                    #/components/examples/get-outputs-response-three-example
+                No matching outputIds found:
+                  $ref: >-
+                    #/components/examples/get-outputs-empty-response-example
+                Paging - more items found than it can fit on single page:
+                  $ref: >-
+                    #/components/examples/get-outputs-pagesize2-response-example
+        '400':
+          description: "Unsuccessful operation: indicates that the provided data is invalid."
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequestResponse'
+        '403':
+          description: "Unsuccessful operation: indicates that the endpoint is not available for public use."
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ForbiddenResponse'
+        '500':
+          description: "Unsuccessful operation: indicates that an unexpected, internal server error happened which prevented the node from fulfilling the request."
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalErrorResponse'
+
+  /api/indexer/v1/outputs/foundry/{foundryId}:
+    get:
+      tags:
+        - foundry outputs
+      summary: Returns the outputId of the current unspent foundry output for foundryId.
+      description: Returns the outputId of the current unspent foundry output for foundryId.
+      parameters:
+        - in: path
+          name: foundryId
+          schema:
+            type: string
+          example: "0x081505ec099896ab05d9e08fbc7101ae4dff0093b3943b28f789ed2ca728bcc8d60100000000"
+          description: Unique identifier of the foundry.
+          required: true
+      responses:
+        '200':
+          description: "Successful operation."
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OutputsResponse'
+              examples:
+                Query results in single outout:
+                  $ref: >-
+                    #/components/examples/get-outputs-response-single-example
+        '400':
+          description: "Unsuccessful operation: indicates that the provided data is invalid."
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequestResponse'
+        '403':
+          description: "Unsuccessful operation: indicates that the endpoint is not available for public use."
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ForbiddenResponse'
+        '404':
+          description: "Unsuccessful operation: indicates that the requested data was not found."
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFoundResponse'
+        '500':
+          description: "Unsuccessful operation: indicates that an unexpected, internal server error happened which prevented the node from fulfilling the request."
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalErrorResponse'
+
+  /api/indexer/v1/outputs/nft:
+    get:
+      tags:
+        - nft outputs
+      summary: Returns nft outputs filtered based on parameters.
+      description: Returns nft outputs filtered based on parameters.
+      parameters:
+        - in: query
+          name: address
+          schema:
+            type: string
+          example: iota1qrhacyfwlcnzkvzteumekfkrrwks98mpdm37cj4xx3drvmjvnep6xqgyzyx
+          description: The Bech32-encoded address that should be searched for in the Address Unlock Condition of outputs.
+        - in: query
+          name: issuer
+          schema:
+            type: string
+          example: iota1qrhacyfwlcnzkvzteumekfkrrwks98mpdm37cj4xx3drvmjvnep6xqgyzyx
+          description: Filters outputs based on bech32-encoded issuer address.
+        - in: query
+          name: sender
+          schema:
+            type: string
+          example: iota1qrhacyfwlcnzkvzteumekfkrrwks98mpdm37cj4xx3drvmjvnep6xqgyzyx
+          description: Filters outputs based on the presence of validated Sender (bech32 encoded).
+        - in: query
+          name: hasNativeTokens
+          schema:
+            type: boolean
+          example: true
+          description: Filters outputs based on the presence of native tokens.
+        - in: query
+          name: minNativeTokenCount
+          schema:
+            type: integer
+          example: 2
+          description: Filters outputs that have at least a certain number of distinct native tokens.
+        - in: query
+          name: maxNativeTokenCount
+          schema:
+            type: integer
+          example: 5
+          description: Filters outputs that have at most a certain number of distinct native tokens.
+        - in: query
+          name: hasStorageDepositReturn
+          schema:
+            type: boolean
+          example: true
+          description: Filters outputs based on the presence of storage deposit return unlock condition.
+        - in: query
+          name: storageDepositReturnAddress
+          schema:
+            type: string
+          example: iota1qrhacyfwlcnzkvzteumekfkrrwks98mpdm37cj4xx3drvmjvnep6xqgyzyx
+          description: Filter outputs based on the presence of a specific return address in the storage deposit return
+            unlock condition.
+        - in: query
+          name: hasTimelock
+          schema:
+            type: boolean
+          example: true
+          description: Filters outputs based on the presence of timelock unlock condition.
+        - in: query
+          name: timelockedBefore
+          schema:
+            type: integer
+          example: 1643383242
+          description: Return outputs that are timelocked before a certain Unix timestamp.
+        - in: query
+          name: timelockedAfter
+          schema:
+            type: integer
+          example: 1643383242
+          description: Return outputs that are timelocked after a certain Unix timestamp.
+        - in: query
+          name: hasExpiration
+          schema:
+            type: boolean
+          example: true
+          description: Filters outputs based on the presence of expiration unlock condition.
+        - in: query
+          name: expiresBefore
+          schema:
+            type: integer
+          example: 1643383242
+          description: Return outputs that expire before a certain Unix timestamp.
+        - in: query
+          name: expiresAfter
+          schema:
+            type: integer
+          example: 1643383242
+          description: Return outputs that expire after a certain Unix timestamp.
+        - in: query
+          name: expirationReturnAddress
+          schema:
+            type: string
+          example: iota1qrhacyfwlcnzkvzteumekfkrrwks98mpdm37cj4xx3drvmjvnep6xqgyzyx
+          description: Filter outputs based on the presence of a specific return address in the expiration unlock
+            condition.
+        - in: query
+          name: tag
+          schema:
+            type: string
+          example: "0x4ec7f23"
+          description: Filters outputs based on matching Tag Feature.
+        - in: query
+          name: createdBefore
+          schema:
+            type: integer
+          example: 1643383242
+          description: Return outputs that were created before a certain Unix timestamp.
+        - in: query
+          name: createdAfter
+          schema:
+            type: integer
+          example: 1643383242
+          description: Return outputs that were created after a certain Unix timestamp.
+        - in: query
+          name: pageSize
+          schema:
+            type: integer
+          example: 10
+          description: The maximum amount of items returned in one call. If there are more items, a cursor to the next page is returned too.
+            The parameter is ignored when pageSize is defined via the cursor parameter.
+        - in: query
+          name: cursor
+          schema:
+            type: string
+          example: 0c78e998f5177834ecb3bae1596d5056af76e487386eecb19727465b4be86a790200.10
+          description: Starts the search from the cursor (confirmationMS+outputId.pageSize).
+      responses:
+        '200':
+          description: "Successful operation."
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OutputsResponse'
+              examples:
+                Query results in 3 outputs:
+                  $ref: >-
+                    #/components/examples/get-outputs-response-three-example
+                No matching outputIds found:
+                  $ref: >-
+                    #/components/examples/get-outputs-empty-response-example
+                Paging - more items found than it can fit on single page:
+                  $ref: >-
+                    #/components/examples/get-outputs-pagesize2-response-example
+        '400':
+          description: "Unsuccessful operation: indicates that the provided data is invalid."
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequestResponse'
+        '403':
+          description: "Unsuccessful operation: indicates that the endpoint is not available for public use."
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ForbiddenResponse'
+        '500':
+          description: "Unsuccessful operation: indicates that an unexpected, internal server error happened which prevented the node from fulfilling the request."
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalErrorResponse'
+
+  /api/indexer/v1/outputs/nft/{nftId}:
+    get:
+      tags:
+        - nft outputs
+      summary: Returns the outputId of the current unspent nft output for nftId.
+      description: Returns the outputId of the current nft output for nftId.
+      parameters:
+        - in: path
+          name: nftId
+          schema:
+            type: string
+          example: "0x19c82b32761fd8729a1a6c77f7c17597e4b9b01759794e52381f6a0050b0c11f"
+          description: Unique identifier of the nft.
+          required: true
+      responses:
+        '200':
+          description: "Successful operation."
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OutputsResponse'
+              examples:
+                Query results in single outout:
+                  $ref: >-
+                    #/components/examples/get-outputs-response-single-example
+        '400':
+          description: "Unsuccessful operation: indicates that the provided data is invalid."
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequestResponse'
+        '403':
+          description: "Unsuccessful operation: indicates that the endpoint is not available for public use."
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ForbiddenResponse'
+        '404':
+          description: "Unsuccessful operation: indicates that the requested data was not found."
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFoundResponse'
+        '500':
+          description: "Unsuccessful operation: indicates that an unexpected, internal server error happened which prevented the node from fulfilling the request."
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalErrorResponse'
+components:
+  examples:
+    get-outputs-response-three-example:
+      value:
+        ledgerIndex: 101
+        items:
+          - "0x0c78e998f5177834ecb3bae1596d5056af76e487386eecb19727465b4be86a790000"
+          - "0x0c78e998f5177834ecb3bae1596d5056af76e487386eecb19727465b4be86a790100"
+          - "0x0c78e998f5177834ecb3bae1596d5056af76e487386eecb19727465b4be86a790200"
+    get-outputs-response-single-example:
+      value:
+        ledgerIndex: 101
+        items:
+          - "0x0c78e998f5177834ecb3bae1596d5056af76e487386eecb19727465b4be86a790000"
+    get-outputs-empty-response-example:
+      value:
+        ledgerIndex: 101
+        items:
+          -
+    get-outputs-pagesize2-response-example:
+      value:
+        ledgerIndex: 101
+        cursor: 61fa44a14d35ce14b9d0e7ee6ac9af70c0af156be269f69348be6d6f83c80a3a8a44ce440000.2
+        items:
+          - "0x0c78e998f5177834ecb3bae1596d5056af76e487386eecb19727465b4be86a790000"
+          - "0x0c78e998f5177834ecb3bae1596d5056af76e487386eecb19727465b4be86a790100"
+
+
+  schemas:
+    ErrorResponse:
+      description: The error format.
+      properties:
+        error:
+          type: object
+          properties:
+            code:
+              type: string
+              description: The application error code.
+            message:
+              type: string
+              description: The error reason.
+          required:
+            - code
+            - message
+      required:
+        - error
+
+    ForbiddenResponse:
+      description: Indicates that this endpoint is not available for public use.
+      allOf:
+        - $ref: '#/components/schemas/ErrorResponse'
+      example:
+        error:
+          code: 403
+          message: not available for public use
+
+    ServiceUnavailableResponse:
+      description: Indicates that the service is unavailable.
+      allOf:
+        - $ref: '#/components/schemas/ErrorResponse'
+      example:
+        error:
+          code: 503
+          message: service unavailable
+
+    BadRequestResponse:
+      description: Indicates that the request was bad.
+      allOf:
+        - $ref: '#/components/schemas/ErrorResponse'
+      example:
+        error:
+          code: 400
+          message: invalid data provided
+
+    NotFoundResponse:
+      description: Indicates that the data was not found.
+      allOf:
+        - $ref: '#/components/schemas/ErrorResponse'
+      example:
+        error:
+          code: 404
+          message: could not find data
+
+    InternalErrorResponse:
+      description: Indicates that the server encountered an unexpected condition, which prevented it from fulfilling the request by the client.
+      allOf:
+        - $ref: '#/components/schemas/ErrorResponse'
+      example:
+        error:
+          code: 500
+          message: internal server error
+
+    OutputsResponse:
+      description: Returns a list of OutputIds.
+      properties:
+        ledgerIndex:
+          type: integer
+          description: The current ledger index for which the request was made.
+        cursor:
+          type: string
+          description: The cursor to use for getting the next page of results.
+          nullable: true
+        items:
+          type: array
+          description: The output IDs (transaction hash + output index) of the outputs satisfying the query. Hex-encoded with 0x prefix.
+          items:
+            type: string
+      required:
+          - ledgerIndex
+          - items

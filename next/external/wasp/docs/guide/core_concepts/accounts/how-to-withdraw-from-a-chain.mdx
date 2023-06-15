@@ -1,0 +1,69 @@
+---
+description: The `withdraw` endpoint sends L2 funds owned by the caller to their L1 address.
+image: /img/logo/WASP_logo_dark.png
+keywords:
+- smart contracts
+- withdraw
+- transfer
+- chain
+- Rust
+- Solo
+- how to
+---
+
+import Tabs from "@theme/Tabs"
+import TabItem from "@theme/TabItem"
+
+# How to Withdraw From a Chain
+
+The `withdraw` endpoint sends L2 funds owned by the caller to their L1 address.
+
+<Tabs
+    defaultValue="solo"
+    values={[
+        {label: 'Solo', value: 'solo'},
+        {label: 'Solo (Schema)', value: 'soloctx'},
+        {label: 'Rust (Schema)', value: 'rust'},
+        {label: 'Go (Schema)', value: 'go'},
+    ]}>
+<TabItem value="solo">
+
+```go
+// withdraw from chain to wallet
+req := solo.NewCallParams(accounts.Contract.Name, accounts.FuncWithdraw.Name)
+_, err := chain.PostRequestSync(req.WithMaxAffordableGasBudget(), wallet)
+require.NoError(t, err)
+```
+
+</TabItem>
+<TabItem value="soloctx">
+
+```go
+// withdraw from chain *chainID* to wallet
+w := coreaccounts.ScFuncs.Withdraw(ctx.Sign(wallet))
+w.Func.TransferBaseTokens(1).PostToChain(chainID)
+require.NoError(t, ctx.Err)
+```
+
+</TabItem>
+<TabItem value="rust">
+
+```rust
+// withdraw from chain *chainID* to current common account
+// (there is no way to specify hname for withdrawals)
+let w = coreaccounts::ScFuncs::withdraw(ctx);
+w.func.transfer_base_tokens(1).post_to_chain(chainID);
+```
+
+</TabItem>
+<TabItem value="go">
+
+```go
+// withdraw from chain *chainID* to current common account
+// (there is no way to specify hname for withdrawals)
+w := coreaccounts.ScFuncs.Withdraw(ctx)
+w.Func.TransferBaseTokens(1).PostToChain(chainID)
+```
+
+</TabItem>
+</Tabs>

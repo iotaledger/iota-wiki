@@ -1,0 +1,96 @@
+---
+keywords:
+- results
+- function
+- user function
+- error message
+- implementations
+- mandatory parameter
+- immutable state
+- definition
+
+description: The optional `results` subsection contains field definitions for each of the results a function produces. The layout of the field definitions is identical to that of the state field definitions
+
+image: /img/logo/WASP_logo_dark.png
+---
+import Tabs from "@theme/Tabs"
+import TabItem from "@theme/TabItem"
+
+# Function Results
+
+The optional `results` subsection contains field definitions for each of the results a
+function produces. The layout of the field definitions is identical to that of the
+[Params](params.mdx) field definitions.
+
+The [Schema Tool](usage.mdx) will automatically generate a mutable structure with member
+variables for proxies to each result variable in the [Results](results.mdx) map. The user
+will be able to set the result variables through this structure, which is passed to the
+function.
+
+When this subsection is empty, or completely omitted, no structure will be generated or
+passed to the function.
+
+For example, here is the structure generated for the mutable results for the `getFactor`
+function:
+
+<Tabs defaultValue="go"
+      groupId="language"
+      values={[
+          {label: 'Go', value: 'go'},
+          {label: 'Rust', value: 'rust'},
+          {label: 'TypeScript', value: 'ts'},
+      ]}>
+
+<TabItem value="go">
+
+```go
+type MutableGetFactorResults struct {
+	proxy wasmtypes.Proxy
+}
+
+// relative division factor
+func (s MutableGetFactorResults) Factor() wasmtypes.ScMutableUint64 {
+	return wasmtypes.NewScMutableUint64(s.proxy.Root(ResultFactor))
+}
+```
+
+</TabItem>
+<TabItem value="rust">
+
+```rust
+#[derive(Clone)]
+pub struct MutableGetFactorResults {
+	pub(crate) proxy: Proxy,
+}
+
+impl MutableGetFactorResults {
+    // relative division factor
+    pub fn factor(&self) -> ScMutableUint64 {
+		ScMutableUint64::new(self.proxy.root(RESULT_FACTOR))
+	}
+}
+```
+
+</TabItem>
+<TabItem value="ts">
+
+```ts
+export class MutableGetFactorResults extends wasmtypes.ScProxy {
+	// relative division factor
+	factor(): wasmtypes.ScMutableUint64 {
+		return new wasmtypes.ScMutableUint64(this.proxy.root(sc.ResultFactor));
+	}
+}
+```
+
+</TabItem>
+</Tabs>
+
+Note that the [Schema Tool](usage.mdx) will also generate an immutable version of the
+structure, suitable for accessing the results after by the caller of this smart contract
+function.
+
+
+In the next section we will look at how so-called [thunk functions](thunks.mdx)
+encapsulate access and parameter checking and set up the type-safe function-specific
+contexts.

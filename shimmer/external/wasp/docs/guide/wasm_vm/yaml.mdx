@@ -1,0 +1,72 @@
+---
+keywords:
+- definition
+- yaml
+- smart contract creator
+- one-time
+- contract generation
+- datatypes
+description: the syntax of a schema definition file will be described here.
+image: /img/logo/WASP_logo_dark.png
+---
+
+# YAML
+
+A schema definition file can have following level 1 attributes
+
+* name
+* description
+* events
+* structs
+* typedefs
+* state
+* funcs
+* views
+
+We are going to introduce each level 1 attributes in the following sections.
+
+## name
+
+Single string. The name of the smart contract. This name will be used as the package name  of the smart contract.
+
+## description
+
+Single string. A description for what this smart contract works for. We currently not process it for the final smart contract.
+
+## events
+
+Map of strings. You can define your structured events here. Check [events](./events.mdx) for more information.
+The fields in an event must be primitive types, so array, map or typedef can't be the datatype of the fields.
+
+## structs
+
+Map of string maps. Declare the structs that can be used in the following development. A declared struct can be called in the schema definition, too.
+The fields in a struct can't be array, map or typedef alias. In other words, only the primitive types are accepted. 
+
+## typedefs
+
+Map of strings. Declare alias of a primitive value. Now only a primitive value, a map of primitive values or an array of primitive values are accepted.
+And a nested typedef is not accepted now.
+
+## state
+
+Map of strings. `state` is a collection of arbitrary key/value pairs represent usecase-specific data. See [states](../core_concepts/states.md) for more information.
+If you want to use nested types, you can use typedef to declare an alias of array or map, then use the alias as the value in the state.
+However, the key of a map can't be an alias. The key of a map must be a primitive type.
+
+## funcs
+
+All the values of `funcs` and `views` in `params` and `results` which share the same name should be in the same datatype.
+For function names, `init` is a preserved keyword. A function  named as `init` is a special function, see [init](./init.mdx) for more information.
+
+`access`: Who can access this function. This field must be state variable. You can visit [Limiting Access](./access.mdx#limiting-access) for more information.
+`params`: The input parameters of the function. The values in `params` can be an array, a map or typedef alias.
+`results`: The return values of the function. The values in `results` can be an array, a map or typedef alias.
+
+## views
+
+All the values of `funcs` and `views` in `params` and `results` which share the same name should be in the same datatype.
+
+`access`: Who can access this function. This field must be state variable. You can visit [Limiting Access](./access.mdx#limiting-access) for more information.
+`params`: The input parameters of the function. The values in `params` can be an array, a map or typedef alias.
+`results`: The return values of the function. The values in `results` can be an array, a map or typedef alias.

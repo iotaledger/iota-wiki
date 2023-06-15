@@ -1,0 +1,457 @@
+---
+keywords:
+- spec
+- meta-programming
+- compile
+description: The spec of schema tool and how to develop schema tool.
+image: /img/logo/WASP_logo_dark.png
+---
+
+# Spec
+
+## Workflow
+
+1. YAML file would be converted to a tree of `wasp_yaml.Node`
+2. Convert the tree to a `model.SchemaDef` object
+3. Compile the `model.SchemaDef` object to `model.Schema` object by calling `Compile()`
+4. Convert `model.Schema` object to the Smart Contract of targeting languages
+
+## Types
+
+### model.SchemaDef
+
+`model.SchemaDef` is a intermediate object during the Smart Contract generation. An YAML file will be converted to `model.SchemaDef` object.
+During the conversion, each YAML attribute except the top-level ones (`name`, `description`, `events`, `structs`, `typedefs`, `state`, `funcs`, `views`) will be converted into `DefElt`.
+
+Therefore, for YAML tags `name`, `description`, the values of them will be converted into 2 independent `DefElt`.
+
+```
+name: TestName
+description: This is test description
+```
+
+For keywords that can have multiple values can be seen as either a one layer map (i.e., `typedefs` and `state`) 
+or two layer map (i.e., `typedefs` and `state`). A one layer map will be converted into  `DefMap` which 
+is a map whose key and value are both `DefElt`. And a two layer map will be converted into  `DefMapMap` which 
+is a map whose key is `DefElt` and value is `DefMap`.
+
+The definition of `DefElt` is shown as following,
+
+```go
+type DefElt struct {
+	Val     string
+	Comment string
+	Line    int
+}
+```
+
+It contains the raw value of the YAML attributes (without extracting the information), the comment belongs to the 
+YAML attribute, and the line number of the YAML attribute.
+
+Here is an example of one layer map
+
+```yaml
+typedefs:
+  TestTypedef1: String
+  TestTypedef2: String
+state:
+  TestState1: Int64[]
+  TestState2: Int64[]
+```
+
+And an example of two layer map
+
+```yaml
+structs:
+  point:
+    x: Int32
+    y: Int32
+funcs:
+  testFunc:
+    params:
+      testFuncParam: Uint64
+    results:
+      testFuncResult: Uint64
+views:
+  testView:
+    params:
+      testViewParam: Uint64
+    results:
+      testViewResult: Uint64
+```
+
+Next, schema tool will set each fields in `SchemaDef` variable.
+
+```go
+type SchemaDef struct {
+	Copyright   string
+	Name        DefElt
+	Description DefElt
+	Events      DefMapMap
+	Structs     DefMapMap
+	Typedefs    DefMap
+	State       DefMap
+	Funcs       FuncDefMap
+	Views       FuncDefMap
+}
+```
+
+### model.Schema
+
+By calling `Schema.Compile()`, `model.SchemaDef` object will be compiled into `model.Schema`. 
+During the compilation, schema tool will extract the rules from the YAML attributes.
+
+Here is the definition of a `Schema` object.
+
+```go
+type Schema struct {
+	ContractName  string
+	Copyright     string
+	PackageName   string
+	Description   string
+	CoreContracts bool
+	SchemaTime    time.Time
+	Events        []*Struct
+	Funcs         []*Func
+	Params        []*Field
+	Results       []*Field
+	StateVars     []*Field
+	Structs       []*Struct
+	Typedefs      []*Field
+}
+```
+
+And let's take a close look at `Field` object.
+
+```go
+type Field struct {
+	Name       string // external name for this field
+	Alias      string // internal name alias, can be different from Name
+	Array      bool
+	FldComment string
+	MapKey     string
+	Optional   bool
+	Type       string
+	BaseType   bool
+	Comment    string
+	Line       int // the line number originally in yaml/json file
+}
+```
+
+As you can see `typedefs` was a simple `DefMap`, which consists a map whose key and value are both `DefElt`, 
+and `DefElt` a simple object contains only raw string of the YAML attribute, comment and line number.
+However, after the compilation, information is extracted from the raw string, so do some checks are conducted in this step.
+
+### Compile
+
+An emitter is used for filling corresponding values into templates under `tools/schema/generator`.
+For how to do meta-programming with emitter, see section [Emitter](#Emitter)
+
+```go
+type (
+	FieldMap       map[string]*Field
+	FieldMapMap    map[string]FieldMap
+	StringMap      map[string]string
+	StringMapMap   map[string]StringMap
+)
+```
+
+## Comments
+
+### Header Comment and Line Comment
+
+Header comment has higher priority than the line comment. If there are both header comment and line comment presented at
+same YAML attribute, then schema tool will keep only the header comment.
+
+### Comment Block
+
+A comment block is a chunk of comment that doesn't have a line break to separate it. Schema tool would take the 
+header comment that immediately followed by the YAML attribute or the line comment block if header comment block is not
+presented.
+
+Therefore, for the following case
+
+```yaml
+typedefs:
+  # header comment 1
+  # header comment 2
+
+  # header comment 3
+  # header comment 4
+  TestTypedef: String # line comment 1
+                      # line comment 2
+```
+
+only these 2 lines 
+
+```yaml
+# header comment 3
+# header comment 4
+```
+
+will be kept and presented in the final Smart Contract.
+
+And the next case 
+
+```yaml
+typedefs:
+  TestTypedef: String # line comment 1
+                      # line comment 2
+
+                      # line comment 3
+                      # line comment 4
+```
+
+only these 2 lines 
+
+```yaml
+# line comment 1
+# line comment 2
+```
+
+will be kept and presented in the final Smart Contract.
+
+## Emitter
+
+### Access Keys
+
+With `$` prepending a key (keys are set in `GenBase.setCommonKeys()`, `GenBase.setFieldKeys()`, `GenBase.setFuncKeys()`),  schema tool can access the value of the key in `GenBase.keys` according to the current context. For example, if you want to access lower case package name, you can access it with `$package`.
+To dynamically add a new key in templates (under gotemplates, rstemplates, and tstemplates), you can call `$#set` instruction, see section [set](#set) for more information.
+
+### Key And Plain String Concatenation
+
+To concatenate a value from accessing key and a plain string, you should use `$+` operator. 
+For example, here `FuncName` is a key that preserves the name of the function under current context, and we want to concatenate the function name with "Mutable" and "Results".
+In other words, we want to do the same task as the following python code and get the result in `result` variable.
+
+```python
+func_name = "..." # function name under current context
+result = "Mutable" + func_name + "Results" # concatenate the strings into the result
+```
+
+In the schema template language, we should call `Mutable$FuncName$+Results`.
+
+### Instructions
+
+Keywords follows `$#` are the instructions defined in our schema template language. One thing you should aware, now, all the instruction should be presented at the beginning of each line. In other words, no spaces and characters are allowed to exist ahead of an instruction.
+Here is the list of all the instruction keywords.
+
+* emit
+* each
+* func
+* if
+* set
+
+We are going to introduce how to use each instruction as follows. Or you can check the implementation of `GenBase.emit()` to know how are they implemented in detailed.
+
+#### emit
+
+`emit` is using for expanding templates. The syntax of `emit` instruction is 
+
+```
+$#emit template
+```
+
+Here, `template` is any template which defined under gotemplates,rstemplates).
+Templates are defined in `model.StringMap`. In the instruction call of `emit` just simply use the name of the template (the key in `model.StringMap`).
+If you want to insert the `copyright` template to a assigned location, then you should call 
+
+```
+$#emit copyright
+```
+
+#### each
+
+`each` processes the template for each item in the array. The syntax of `each` instruction is
+
+```
+$#each array template
+```
+
+Here `array` is either a predefined keyword (we are going to introduce each of them as follow) or a multi-lines string.
+If a multi-lines string is presented, then the multi-lines string will be expanded and append newline escape character of targeting languages in the end of each line.
+
+##### event
+
+Iterate the fields in a event.
+
+##### events
+
+Iterate all the `events` in the contract.
+
+##### func
+
+Iterate all the `funcs` in the contract.
+
+##### mandatory
+
+Iterate all the mandatory fields in the current processed function. The mandatory field must be basetype and not an array or a map.
+
+##### param
+
+Iterate all the `params` fields in the current processed function.
+
+##### params
+
+Iterate all the `params` fields in the current contract.
+
+##### result
+
+Iterate all the `results` fields in the current processed function.
+
+##### results
+
+Iterate all the `results` fields in the current contract.
+
+##### state
+
+Iterate all the `state` in the contract.
+
+##### struct
+
+Iterate the fields in a struct.
+
+##### structs
+
+Iterate all the `structs` in the contract.
+
+##### typedef
+
+Iterate all the typedefs in the contract.
+
+#### func
+
+Currently not used.
+
+#### if
+
+The syntax of `if` is 
+
+```
+$#if condition template [elseTemplate]
+```
+
+`if` processes template when the named condition is true, and it processes the optional `elseTemplate` when the named condition is false
+
+`condition` is either the predefined conditions (explained as following) or a key that may exist in `keys`.
+If a key is presented, then `if` instruction would be used for check whether this key exists in `keys` or not. If the key exists, then `if` will return true, otherwise it will return false.
+
+And here are the predefined conditions.
+
+##### array
+
+Is the current processed field an array?
+
+##### basetype
+
+Is the current processed field in basetype? `basetype`s are defined in the map `FieldTypes` in `tools/schema/model/field.go`.
+
+##### core
+
+Is the current processed contract a core contract?
+
+##### event
+
+Does the current processed event have any field?
+
+##### events
+
+Is there any event in the current processed contract?
+
+##### exist
+
+Does the value of key `proxy` exist?
+
+##### func
+
+Is the current processed function a `func` or a `view`? Return true if it is a `func`.
+
+##### funcs
+
+Is there any function in the current processed contract?
+
+##### init
+
+Is the current function an init function? An init function will automatically be called immediately after the first time the contract has been deployed to the VM.
+
+##### mandatory
+
+Is current field a mandatory field?
+
+##### map
+
+Is current processed field a map (check if the `currentField.MapKey` is empty)?
+
+##### mut
+
+Is the value in key `mut` Mutable?
+
+##### param
+
+Does the current processed function have any parameter?
+
+##### params
+
+Does the current contract have any `params` field?
+
+##### ptrs
+
+Does the current processed function have either `params` or `results`. This is used for implementing function object in Rust and TypeScript.
+
+##### result
+
+Does the current processed function have any return value?
+
+##### results
+
+Does the current contract have any `results` field?
+
+##### state
+
+Does the current contract have any `state` field?
+
+##### structs
+
+Does the current contract have any `structs` field?
+
+##### this
+
+Is the alias name of the current processed field `this`?
+
+##### typedef
+
+Is the current processed field a `typedef`?
+
+##### typedefs
+
+Does the current contract have any `typedefs` field?
+
+##### view
+
+Is the current processed function a `view` or a `func`? Return true if it is a `view`.
+
+##### else
+
+If you want to process a template under negate condition, then you can call
+
+```
+$#if condition else elseTemplate
+```
+
+Here `else` is a predefined empty template, which is defined at[`tools/schema/generator/templates.go`.
+
+#### set
+
+`set` is used for To dynamically specify a value to a certain key. The syntax is
+
+```
+$#set key value
+```
+
+For example, if you want to dynamically add a new key `initFunc` with the value in key `nil` you can call 
+
+```
+$#set initFunc $nil
+```
+
+A special key `exist` is used to add a newly generated type.

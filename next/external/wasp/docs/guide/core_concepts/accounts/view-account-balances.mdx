@@ -1,0 +1,191 @@
+---
+description: The Accounts contract provides the balance, totalAssets and accounts views.
+image: /img/logo/WASP_logo_dark.png
+keywords:
+- smart contracts
+- view
+- account
+- balances
+- Rust
+- Solo
+- how to
+---
+
+import Tabs from "@theme/Tabs"
+import TabItem from "@theme/TabItem"
+
+# View Account Balances
+
+The Accounts contract provides the following views:
+
+## `balance`
+
+Get the account balance of a specific account.
+
+### Parameters
+
+- `ParamAgentID`: account's AgentID.
+
+### Returns
+
+A map of `token ID -> amount` (the base token is identified by an empty token ID).
+
+### Examples
+
+<Tabs
+    defaultValue="solo"
+    values={[
+        {label: 'Solo', value: 'solo'},
+        {label: 'Solo (Schema)', value: 'soloctx'},
+        {label: 'Rust (Schema)', value: 'rust'},
+        {label: 'Go (Schema)', value: 'go'},
+    ]}>
+<TabItem value="solo">
+
+```go
+balances := chain.L2Assets(agentID)
+```
+
+</TabItem>
+<TabItem value="soloctx">
+
+```go
+b := coreaccounts.ScFuncs.Balance(ctx)
+b.Params.AgentID().SetValue(agentID)
+b.Func.Call()
+require.NoError(t, ctx.Err)
+balances := b.Results.Balances()
+```
+
+</TabItem>
+<TabItem value="rust">
+
+```rust
+let b = coreaccounts::ScFuncs::balance(ctx);
+b.params.agent_id().set_value(&agentID);
+b.func.call();
+let balances = b.results.balances();
+```
+
+</TabItem>
+<TabItem value="go">
+
+```go
+b := coreaccounts.ScFuncs.Balance(ctx)
+b.Params.AgentID().SetValue(agentID)
+b.Func.Call()
+balances := b.Results.Balances()
+```
+
+</TabItem>
+</Tabs>
+
+---
+
+## `totalAssets`
+
+Get the total funds controlled by the chain.
+
+### Returns
+
+- A map of [token_color] -> [amount] .
+
+<Tabs
+    defaultValue="solo"
+    values={[
+        {label: 'Solo', value: 'solo'},
+        {label: 'Solo (Schema)', value: 'soloctx'},
+        {label: 'Rust (Schema)', value: 'rust'},
+        {label: 'Go (Schema)', value: 'go'},
+    ]}>
+<TabItem value="solo">
+
+```go
+balances := chain.L2TotalAssets()
+```
+
+</TabItem>
+<TabItem value="soloctx">
+
+```go
+b := coreaccounts.ScFuncs.TotalAssets(ctx)
+b.Func.Call()
+require.NoError(t, ctx.Err)
+balances := b.Results.Balances()
+```
+
+</TabItem>
+<TabItem value="rust">
+
+```rust
+let b = coreaccounts::ScFuncs::total_assets(ctx);
+b.func.call();
+let balances = b.results.balances();
+```
+
+</TabItem>
+<TabItem value="go">
+
+```go
+b := coreaccounts.ScFuncs.TotalAssets(ctx)
+b.Func.Call()
+balances := b.Results.Balances()
+```
+
+</TabItem>
+</Tabs>
+
+---
+
+## `accounts`
+
+Get a list of all accounts that exist on the chain.
+
+### Returns
+
+A list of accounts (Agent IDs).
+
+<Tabs
+    defaultValue="solo"
+    values={[
+        {label: 'Solo', value: 'solo'},
+        {label: 'Solo (Schema)', value: 'soloctx'},
+        {label: 'Rust (Schema)', value: 'rust'},
+        {label: 'Go (Schema)', value: 'go'},
+    ]}>
+<TabItem value="solo">
+
+```go
+accounts := chain.L2Accounts()
+```
+
+</TabItem>
+<TabItem value="soloctx">
+
+```go
+a := coreaccounts.ScFuncs.Accounts(ctx)
+a.Func.Call()
+require.NoError(t, ctx.Err)
+accounts := a.Results.Agents()
+```
+
+</TabItem>
+<TabItem value="rust">
+
+```rust
+let a = coreaccounts::ScFuncs::accounts(ctx);
+a.func.call();
+let accounts = a.results.agents();
+```
+
+</TabItem>
+<TabItem value="go">
+
+```go
+a := coreaccounts.ScFuncs.Accounts(ctx)
+a.Func.Call()
+accounts := a.Results.Agents()
+```
+
+</TabItem>
+</Tabs>

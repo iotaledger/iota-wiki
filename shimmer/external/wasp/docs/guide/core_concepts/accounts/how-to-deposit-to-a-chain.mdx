@@ -1,0 +1,88 @@
+---
+description: The `deposit` entry point credits the transferred tokens into your on-chain account.
+image: /img/logo/WASP_logo_dark.png
+keywords:
+- smart contracts
+- deposit
+- transfer
+- chain
+- Rust
+- Solo
+- how to
+---
+
+import Tabs from "@theme/Tabs"
+import TabItem from "@theme/TabItem"
+
+
+# How to Deposit to a Chain
+
+Any assets attached to an on-ledger request are automatically deposited to the sender's L2 account before executing the
+request.
+So, to deposit tokens, you only need to send _any_ on-ledger request with the tokens attached.
+
+A commonly needed operation is to only deposit some funds and do nothing else.
+The `deposit` entry point of the [`accounts` core contract](../core_contracts/accounts) is a no-op function that serves
+this purpose.
+
+:::note Gas Fees
+
+All requests are charged a gas fee, so the L2 account may receive fewer tokens than the amount sent.
+
+:::
+
+:::info Storage Deposits
+
+The IOTA L1 transaction needs a minimum amount of tokens attached for
+storage deposit. It will fail if the amount transferred is less than this minimum amount.
+
+:::
+
+<Tabs
+defaultValue="solo"
+values={[
+{label: 'Solo', value: 'solo'},
+{label: 'Solo (Schema)', value: 'soloctx'},
+{label: 'Rust (Schema)', value: 'rust'},
+{label: 'Go (Schema)', value: 'go'},
+]}>
+<TabItem value="solo">
+
+```go
+err := chain.DepositBaseTokensToL2(N, wallet)
+require.NoError(t, err)
+```
+
+</TabItem>
+<TabItem value="soloctx">
+
+```go
+// deposits N base tokens from wallet into chain *chainID*
+d := coreaccounts.ScFuncs.Deposit(ctx.Sign(wallet))
+d.Func.TransferBaseTokes(N).PostToChain(chainID)
+require.NoError(t, ctx.Err)
+```
+
+</TabItem>
+<TabItem value="rust">
+
+```rust
+// deposits N iotas from current SC into chain *chainID*
+let d = coreaccounts::ScFuncs::deposit(ctx);
+d.func.transfer_base_tokens(N).post_to_chain(chainID);
+```
+
+</TabItem>
+<TabItem value="go">
+
+```go
+// deposits N iotas from current SC into chain *chainID*
+d := coreaccounts.ScFuncs.Deposit(ctx)
+d.Func.TransferBaseTokens(N).PostToChain(chainID)
+```
+
+</TabItem>
+</Tabs>
+
+
+

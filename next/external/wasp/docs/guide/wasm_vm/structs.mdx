@@ -1,0 +1,536 @@
+---
+keywords:
+- functions
+- state
+- structures
+- storage
+- named fields
+
+description: You can use structs directly as a type in state storage definitions and the schema tool will automatically generate the proxy code to access it properly.
+
+image: /img/logo/WASP_logo_dark.png
+---
+import Tabs from "@theme/Tabs"
+import TabItem from "@theme/TabItem"
+
+# Structured Data Types
+
+The [Schema Tool](usage.mdx) allows you to define your own structured data types that are
+composed of the predefined WasmLib value data types. The tool will generate a struct with
+named fields according to the definition in the schema definition file, and also will
+generate code to serialize and deserialize the structure to a byte array, so that it can
+be saved as a single unit of data bytes, for example in state storage.
+
+You can use structs directly as a type in state storage definitions and the
+[Schema Tool](usage.mdx) will automatically generate the proxy code to access and
+(de)serialize it properly.
+
+For example, let's say you are creating a `betting` smart contract. Then you would want to
+store information for each bet. The Bet structure could consist of the bet amount and
+time, the number of the item that was bet on, and the agent ID of the one who placed the
+bet. And you would keep track of all bets in state storage in an array of Bet structs. To
+do so, you would insert the following into the schema definition file:
+
+<Tabs defaultValue="yaml"
+      values={[
+          {label: 'schema.yaml', value: 'yaml'},
+      ]}>
+<TabItem value="yaml">
+
+```yaml
+structs:
+  Bet:
+    amount: Int64 # bet amount
+    better: AgentID # who placed this bet
+    number: Int32 # number of item we bet on
+    time: Int64 # timestamp of this bet
+state:
+  bets: Bet[] # all bets that were made in this round
+```
+
+</TabItem>
+</Tabs>
+
+The [Schema Tool](usage.mdx) will generate the following code in `structs.xx` for the Bet
+struct:
+
+<Tabs defaultValue="go"
+      groupId="language"
+      values={[
+          {label: 'Go', value: 'go'},
+          {label: 'Rust', value: 'rust'},
+          {label: 'TypeScript', value: 'ts'},
+      ]}>
+
+<TabItem value="go">
+
+```go
+package betting
+
+import "github.com/iotaledger/wasp/packages/wasmvm/wasmlib/go/wasmlib/wasmtypes"
+
+type Bet struct {
+    // bet amount
+    Amount int64
+    // who placed this bet
+    Better wasmtypes.ScAgentID
+    // number of item we bet on
+    Number int32
+    // timestamp of this bet
+    Time   int64
+}
+
+func NewBetFromBytes(buf []byte) *Bet {
+    dec := wasmtypes.NewWasmDecoder(buf)
+    data := &Bet{}
+    data.Amount = wasmtypes.Int64Decode(dec)
+    data.Better = wasmtypes.AgentIDDecode(dec)
+    data.Number = wasmtypes.Int32Decode(dec)
+    data.Time   = wasmtypes.Int64Decode(dec)
+    dec.Close()
+    return data
+}
+
+func (o *Bet) Bytes() []byte {
+    enc := wasmtypes.NewWasmEncoder()
+    wasmtypes.Int64Encode(enc, o.Amount)
+    wasmtypes.AgentIDEncode(enc, o.Better)
+    wasmtypes.Int32Encode(enc, o.Number)
+    wasmtypes.Int64Encode(enc, o.Time)
+    return enc.Buf()
+}
+
+type ImmutableBet struct {
+    proxy wasmtypes.Proxy
+}
+
+func (o ImmutableBet) Exists() bool {
+    return o.proxy.Exists()
+}
+
+func (o ImmutableBet) Value() *Bet {
+    return NewBetFromBytes(o.proxy.Get())
+}
+
+type MutableBet struct {
+    proxy wasmtypes.Proxy
+}
+
+func (o MutableBet) Delete() {
+    o.proxy.Delete()
+}
+
+func (o MutableBet) Exists() bool {
+    return o.proxy.Exists()
+}
+
+func (o MutableBet) SetValue(value *Bet) {
+    o.proxy.Set(value.Bytes())
+}
+
+func (o MutableBet) Value() *Bet {
+    return NewBetFromBytes(o.proxy.Get())
+}
+```
+
+</TabItem>
+<TabItem value="rust">
+
+```rust
+use wasmlib::*;
+
+#[derive(Clone)]
+pub struct Bet {
+    // bet amount
+    pub amount : i64,
+    // who placed this bet
+    pub better : ScAgentID,
+    // number of item we bet on
+    pub number : i32,
+    // timestamp of this bet
+    pub time   : i64,
+}
+
+impl Bet {
+    pub fn from_bytes(bytes: &[u8]) -> Bet {
+        let mut dec = WasmDecoder::new(bytes);
+        Bet {
+            amount : int64_decode(&mut dec),
+            better : agent_id_decode(&mut dec),
+            number : int32_decode(&mut dec),
+            time   : int64_decode(&mut dec),
+        }
+    }
+
+    pub fn to_bytes(&self) -> Vec<u8> {
+        let mut enc = WasmEncoder::new();
+        int64_encode(&mut enc, self.amount);
+        agent_id_encode(&mut enc, &self.better);
+        int32_encode(&mut enc, self.number);
+        int64_encode(&mut enc, self.time);
+        enc.buf()
+    }
+}
+
+#[derive(Clone)]
+pub struct ImmutableBet {
+    pub(crate) proxy: Proxy,
+}
+
+impl ImmutableBet {
+    pub fn exists(&self) -> bool {
+        self.proxy.exists()
+    }
+
+    pub fn value(&self) -> Bet {
+        Bet::from_bytes(&self.proxy.get())
+    }
+}
+
+#[derive(Clone)]
+pub struct MutableBet {
+    pub(crate) proxy: Proxy,
+}
+
+impl MutableBet {
+    pub fn delete(&self) {
+        self.proxy.delete();
+    }
+
+    pub fn exists(&self) -> bool {
+        self.proxy.exists()
+    }
+
+    pub fn set_value(&self, value: &Bet) {
+        self.proxy.set(&value.to_bytes());
+    }
+
+    pub fn value(&self) -> Bet {
+        Bet::from_bytes(&self.proxy.get())
+    }
+}
+```
+
+</TabItem>
+<TabItem value="ts">
+
+```ts
+import * as wasmtypes from "wasmlib/wasmtypes";
+
+export class Bet {
+    // bet amount
+    amount : i64 = 0;
+    // who placed this bet
+    better : wasmtypes.ScAgentID = wasmtypes.agentIDFromBytes([]);
+    // number of item we bet on
+    number : i32 = 0;
+    // timestamp of this bet
+    time   : i64 = 0;
+
+    static fromBytes(buf: u8[]): Bet {
+        const dec = new wasmtypes.WasmDecoder(buf);
+        const data = new Bet();
+        data.amount = wasmtypes.int64Decode(dec);
+        data.better = wasmtypes.agentIDDecode(dec);
+        data.number = wasmtypes.int32Decode(dec);
+        data.time   = wasmtypes.int64Decode(dec);
+        dec.close();
+        return data;
+    }
+
+    bytes(): u8[] {
+        const enc = new wasmtypes.WasmEncoder();
+        wasmtypes.int64Encode(enc, this.amount);
+        wasmtypes.agentIDEncode(enc, this.better);
+        wasmtypes.int32Encode(enc, this.number);
+        wasmtypes.int64Encode(enc, this.time);
+        return enc.buf();
+    }
+}
+
+export class ImmutableBet extends wasmtypes.ScProxy {
+
+    exists(): bool {
+        return this.proxy.exists();
+    }
+
+    value(): Bet {
+        return Bet.fromBytes(this.proxy.get());
+    }
+}
+
+export class MutableBet extends wasmtypes.ScProxy {
+
+    delete(): void {
+        this.proxy.delete();
+    }
+
+    exists(): bool {
+        return this.proxy.exists();
+    }
+
+    setValue(value: Bet): void {
+        this.proxy.set(value.bytes());
+    }
+
+    value(): Bet {
+        return Bet.fromBytes(this.proxy.get());
+    }
+}
+```
+
+</TabItem>
+</Tabs>
+
+Notice how the generated ImmutableBet and MutableBet proxies use the fromBytes() and
+toBytes() (de)serialization code to automatically transform byte arrays into Bet structs.
+
+The generated code in `state.xx` that implements the state interface is shown here:
+
+<Tabs defaultValue="go"
+      groupId="language"
+      values={[
+          {label: 'Go', value: 'go'},
+          {label: 'Rust', value: 'rust'},
+          {label: 'TypeScript', value: 'ts'},
+      ]}>
+
+<TabItem value="go">
+
+```go
+package betting
+
+import "github.com/iotaledger/wasp/packages/wasmvm/wasmlib/go/wasmlib/wasmtypes"
+
+type ArrayOfImmutableBet struct {
+    proxy wasmtypes.Proxy
+}
+
+func (a ArrayOfImmutableBet) Length() uint32 {
+    return a.proxy.Length()
+}
+
+func (a ArrayOfImmutableBet) GetBet(index uint32) ImmutableBet {
+    return ImmutableBet{proxy: a.proxy.Index(index)}
+}
+
+type ImmutableBettingState struct {
+    proxy wasmtypes.Proxy
+}
+
+// all bets that were made in this round
+func (s ImmutableBettingState) Bets() ArrayOfImmutableBet {
+    return ArrayOfImmutableBet{proxy: s.proxy.Root(StateBets)}
+}
+
+// current owner of this smart contract
+func (s ImmutableBettingState) Owner() wasmtypes.ScImmutableAgentID {
+    return wasmtypes.NewScImmutableAgentID(s.proxy.Root(StateOwner))
+}
+
+type ArrayOfMutableBet struct {
+    proxy wasmtypes.Proxy
+}
+
+func (a ArrayOfMutableBet) AppendBet() MutableBet {
+    return MutableBet{proxy: a.proxy.Append()}
+}
+
+func (a ArrayOfMutableBet) Clear() {
+    a.proxy.ClearArray()
+}
+
+func (a ArrayOfMutableBet) Length() uint32 {
+    return a.proxy.Length()
+}
+
+func (a ArrayOfMutableBet) GetBet(index uint32) MutableBet {
+    return MutableBet{proxy: a.proxy.Index(index)}
+}
+
+type MutableBettingState struct {
+    proxy wasmtypes.Proxy
+}
+
+func (s MutableBettingState) AsImmutable() ImmutableBettingState {
+    return ImmutableBettingState(s)
+}
+
+// all bets that were made in this round
+func (s MutableBettingState) Bets() ArrayOfMutableBet {
+    return ArrayOfMutableBet{proxy: s.proxy.Root(StateBets)}
+}
+
+// current owner of this smart contract
+func (s MutableBettingState) Owner() wasmtypes.ScMutableAgentID {
+    return wasmtypes.NewScMutableAgentID(s.proxy.Root(StateOwner))
+}
+```
+
+</TabItem>
+<TabItem value="rust">
+
+```rust
+use wasmlib::*;
+
+use crate::*;
+
+#[derive(Clone)]
+pub struct ArrayOfImmutableBet {
+	pub(crate) proxy: Proxy,
+}
+
+impl ArrayOfImmutableBet {
+    pub fn length(&self) -> u32 {
+        self.proxy.length()
+    }
+
+
+	pub fn get_bet(&self, index: u32) -> ImmutableBet {
+		ImmutableBet { proxy: self.proxy.index(index) }
+	}
+}
+
+#[derive(Clone)]
+pub struct ImmutableBettingState {
+	pub(crate) proxy: Proxy,
+}
+
+impl ImmutableBettingState {
+    // all bets that were made in this round
+    pub fn bets(&self) -> ArrayOfImmutableBet {
+		ArrayOfImmutableBet { proxy: self.proxy.root(STATE_BETS) }
+	}
+
+    // current owner of this smart contract
+    pub fn owner(&self) -> ScImmutableAgentID {
+		ScImmutableAgentID::new(self.proxy.root(STATE_OWNER))
+	}
+}
+
+#[derive(Clone)]
+pub struct ArrayOfMutableBet {
+	pub(crate) proxy: Proxy,
+}
+
+impl ArrayOfMutableBet {
+
+	pub fn append_bet(&self) -> MutableBet {
+		MutableBet { proxy: self.proxy.append() }
+	}
+	pub fn clear(&self) {
+        self.proxy.clear_array();
+    }
+
+    pub fn length(&self) -> u32 {
+        self.proxy.length()
+    }
+
+
+	pub fn get_bet(&self, index: u32) -> MutableBet {
+		MutableBet { proxy: self.proxy.index(index) }
+	}
+}
+
+#[derive(Clone)]
+pub struct MutableBettingState {
+	pub(crate) proxy: Proxy,
+}
+
+impl MutableBettingState {
+    pub fn as_immutable(&self) -> ImmutableBettingState {
+		ImmutableBettingState { proxy: self.proxy.root("") }
+	}
+
+    // all bets that were made in this round
+    pub fn bets(&self) -> ArrayOfMutableBet {
+		ArrayOfMutableBet { proxy: self.proxy.root(STATE_BETS) }
+	}
+
+    // current owner of this smart contract
+    pub fn owner(&self) -> ScMutableAgentID {
+		ScMutableAgentID::new(self.proxy.root(STATE_OWNER))
+	}
+}
+```
+
+</TabItem>
+<TabItem value="ts">
+
+```ts
+import * as wasmtypes from "wasmlib/wasmtypes";
+import * as sc from "./index";
+
+export class ArrayOfImmutableBet extends wasmtypes.ScProxy {
+
+	length(): u32 {
+		return this.proxy.length();
+	}
+
+	getBet(index: u32): sc.ImmutableBet {
+		return new sc.ImmutableBet(this.proxy.index(index));
+	}
+}
+
+export class ImmutableBettingState extends wasmtypes.ScProxy {
+	// all bets that were made in this round
+	bets(): sc.ArrayOfImmutableBet {
+		return new sc.ArrayOfImmutableBet(this.proxy.root(sc.StateBets));
+	}
+
+	// current owner of this smart contract
+	owner(): wasmtypes.ScImmutableAgentID {
+		return new wasmtypes.ScImmutableAgentID(this.proxy.root(sc.StateOwner));
+	}
+}
+
+export class ArrayOfMutableBet extends wasmtypes.ScProxy {
+
+	appendBet(): sc.MutableBet {
+		return new sc.MutableBet(this.proxy.append());
+	}
+
+	clear(): void {
+		this.proxy.clearArray();
+	}
+
+	length(): u32 {
+		return this.proxy.length();
+	}
+
+	getBet(index: u32): sc.MutableBet {
+		return new sc.MutableBet(this.proxy.index(index));
+	}
+}
+
+export class MutableBettingState extends wasmtypes.ScProxy {
+	asImmutable(): sc.ImmutableBettingState {
+		return new sc.ImmutableBettingState(this.proxy);
+	}
+
+	// all bets that were made in this round
+	bets(): sc.ArrayOfMutableBet {
+		return new sc.ArrayOfMutableBet(this.proxy.root(sc.StateBets));
+	}
+
+	// current owner of this smart contract
+	owner(): wasmtypes.ScMutableAgentID {
+		return new wasmtypes.ScMutableAgentID(this.proxy.root(sc.StateOwner));
+	}
+}
+```
+
+</TabItem>
+</Tabs>
+
+The end results are ImmutableBettingState and MutableBettingState structures that can
+directly interface to the state of the betting contract.
+
+Note how the comments from the schema definition file have been copied to the structure
+definition in the code and also to the access functions for the fields. This will allow
+your development environment to pop up context-sensitive help for those fields and access
+functions.
+
+
+In the next section we will look at how to use [type definitions](typedefs.mdx) to
+properly define container nesting relationships.

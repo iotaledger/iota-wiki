@@ -1,0 +1,351 @@
+---
+keywords:
+- descriptor
+- view
+- access
+- contract functions
+- schema tool
+
+description: The schema tool provides us with an easy way to get access to smart contract functions through function descriptors, which allow you to initiate the function by calling it synchronously, or posting a request to run it asynchronously.
+
+image: /img/logo/WASP_logo_dark.png
+---
+import Tabs from "@theme/Tabs"
+import TabItem from "@theme/TabItem"
+
+# Function Descriptors
+
+The [Schema Tool](usage.mdx) provides us with an easy way to get access to smart contract
+functions through _function descriptors_. These are structures that provide access to the
+optional [Params](params.mdx) and [Results](results.mdx) maps through strict compile-time
+checked interfaces. They will also allow you to initiate the function by calling it
+[synchronously](call.mdx), or posting a request to run it [asynchronously](post.mdx).
+
+The [Schema Tool](usage.mdx) will generate a specific function descriptor for each func
+and view. It will also generate an interface called ScFuncs, that can be used to create
+and initialize each function descriptor. Here is the code generated for the `dividend`
+example in `contract.xx`:
+
+<Tabs defaultValue="go"
+      groupId="language"
+      values={[
+          {label: 'Go', value: 'go'},
+          {label: 'Rust', value: 'rust'},
+          {label: 'TypeScript', value: 'ts'},
+      ]}>
+
+<TabItem value="go">
+
+```go
+package dividend
+
+import "github.com/iotaledger/wasp/packages/wasmvm/wasmlib/go/wasmlib"
+
+type DivideCall struct {
+	Func    *wasmlib.ScFunc
+}
+
+type InitCall struct {
+	Func    *wasmlib.ScInitFunc
+	Params  MutableInitParams
+}
+
+type MemberCall struct {
+	Func    *wasmlib.ScFunc
+	Params  MutableMemberParams
+}
+
+type SetOwnerCall struct {
+	Func    *wasmlib.ScFunc
+	Params  MutableSetOwnerParams
+}
+
+type GetFactorCall struct {
+	Func    *wasmlib.ScView
+	Params  MutableGetFactorParams
+	Results ImmutableGetFactorResults
+}
+
+type GetOwnerCall struct {
+	Func    *wasmlib.ScView
+	Results ImmutableGetOwnerResults
+}
+
+type Funcs struct{}
+
+var ScFuncs Funcs
+
+// divide tokens over members
+func (sc Funcs) Divide(ctx wasmlib.ScFuncCallContext) *DivideCall {
+	return &DivideCall{Func: wasmlib.NewScFunc(ctx, HScName, HFuncDivide)}
+}
+
+func (sc Funcs) Init(ctx wasmlib.ScFuncCallContext) *InitCall {
+	f := &InitCall{Func: wasmlib.NewScInitFunc(ctx, HScName, HFuncInit)}
+	f.Params.proxy = wasmlib.NewCallParamsProxy(&f.Func.ScView)
+	return f
+}
+
+func (sc Funcs) Member(ctx wasmlib.ScFuncCallContext) *MemberCall {
+	f := &MemberCall{Func: wasmlib.NewScFunc(ctx, HScName, HFuncMember)}
+	f.Params.proxy = wasmlib.NewCallParamsProxy(&f.Func.ScView)
+	return f
+}
+
+func (sc Funcs) SetOwner(ctx wasmlib.ScFuncCallContext) *SetOwnerCall {
+	f := &SetOwnerCall{Func: wasmlib.NewScFunc(ctx, HScName, HFuncSetOwner)}
+	f.Params.proxy = wasmlib.NewCallParamsProxy(&f.Func.ScView)
+	return f
+}
+
+func (sc Funcs) GetFactor(ctx wasmlib.ScViewCallContext) *GetFactorCall {
+	f := &GetFactorCall{Func: wasmlib.NewScView(ctx, HScName, HViewGetFactor)}
+	f.Params.proxy = wasmlib.NewCallParamsProxy(f.Func)
+	wasmlib.NewCallResultsProxy(f.Func, &f.Results.proxy)
+	return f
+}
+
+func (sc Funcs) GetOwner(ctx wasmlib.ScViewCallContext) *GetOwnerCall {
+	f := &GetOwnerCall{Func: wasmlib.NewScView(ctx, HScName, HViewGetOwner)}
+	wasmlib.NewCallResultsProxy(f.Func, &f.Results.proxy)
+	return f
+}
+```
+
+</TabItem>
+
+<TabItem value="rust">
+
+```rust
+use wasmlib::*;
+use crate::*;
+
+pub struct DivideCall {
+	pub func: ScFunc,
+}
+
+pub struct InitCall {
+	pub func: ScInitFunc,
+	pub params: MutableInitParams,
+}
+
+pub struct MemberCall {
+	pub func: ScFunc,
+	pub params: MutableMemberParams,
+}
+
+pub struct SetOwnerCall {
+	pub func: ScFunc,
+	pub params: MutableSetOwnerParams,
+}
+
+pub struct GetFactorCall {
+	pub func: ScView,
+	pub params: MutableGetFactorParams,
+	pub results: ImmutableGetFactorResults,
+}
+
+pub struct GetOwnerCall {
+	pub func: ScView,
+	pub results: ImmutableGetOwnerResults,
+}
+
+pub struct ScFuncs {
+}
+
+impl ScFuncs {
+    // divide tokens over members
+    pub fn divide(_ctx: &dyn ScFuncCallContext) -> DivideCall {
+        DivideCall {
+            func: ScFunc::new(HSC_NAME, HFUNC_DIVIDE),
+        }
+    }
+
+    pub fn init(_ctx: &dyn ScFuncCallContext) -> InitCall {
+        let mut f = InitCall {
+            func: ScInitFunc::new(HSC_NAME, HFUNC_INIT),
+            params: MutableInitParams { proxy: Proxy::nil() },
+        };
+        ScInitFunc::link_params(&mut f.params.proxy, &f.func);
+        f
+    }
+
+    pub fn member(_ctx: &dyn ScFuncCallContext) -> MemberCall {
+        let mut f = MemberCall {
+            func: ScFunc::new(HSC_NAME, HFUNC_MEMBER),
+            params: MutableMemberParams { proxy: Proxy::nil() },
+        };
+        ScFunc::link_params(&mut f.params.proxy, &f.func);
+        f
+    }
+
+    pub fn set_owner(_ctx: &dyn ScFuncCallContext) -> SetOwnerCall {
+        let mut f = SetOwnerCall {
+            func: ScFunc::new(HSC_NAME, HFUNC_SET_OWNER),
+            params: MutableSetOwnerParams { proxy: Proxy::nil() },
+        };
+        ScFunc::link_params(&mut f.params.proxy, &f.func);
+        f
+    }
+
+    pub fn get_factor(_ctx: &dyn ScViewCallContext) -> GetFactorCall {
+        let mut f = GetFactorCall {
+            func: ScView::new(HSC_NAME, HVIEW_GET_FACTOR),
+            params: MutableGetFactorParams { proxy: Proxy::nil() },
+            results: ImmutableGetFactorResults { proxy: Proxy::nil() },
+        };
+        ScView::link_params(&mut f.params.proxy, &f.func);
+        ScView::link_results(&mut f.results.proxy, &f.func);
+        f
+    }
+
+    pub fn get_owner(_ctx: &dyn ScViewCallContext) -> GetOwnerCall {
+        let mut f = GetOwnerCall {
+            func: ScView::new(HSC_NAME, HVIEW_GET_OWNER),
+            results: ImmutableGetOwnerResults { proxy: Proxy::nil() },
+        };
+        ScView::link_results(&mut f.results.proxy, &f.func);
+        f
+    }
+}
+```
+
+</TabItem>
+<TabItem value="ts">
+
+```ts
+import * as wasmlib from "wasmlib";
+import * as sc from "./index";
+
+export class DivideCall {
+	func: wasmlib.ScFunc;
+	public constructor(ctx: wasmlib.ScFuncCallContext) {
+		this.func = new wasmlib.ScFunc(ctx, sc.HScName, sc.HFuncDivide);
+	}
+}
+
+export class DivideContext {
+	state: sc.MutableDividendState = new sc.MutableDividendState(wasmlib.ScState.proxy());
+}
+
+export class InitCall {
+	func: wasmlib.ScInitFunc;
+	params: sc.MutableInitParams = new sc.MutableInitParams(wasmlib.ScView.nilProxy);
+	public constructor(ctx: wasmlib.ScFuncCallContext) {
+		this.func = new wasmlib.ScInitFunc(ctx, sc.HScName, sc.HFuncInit);
+	}
+}
+
+export class InitContext {
+	params: sc.ImmutableInitParams = new sc.ImmutableInitParams(wasmlib.paramsProxy());
+	state: sc.MutableDividendState = new sc.MutableDividendState(wasmlib.ScState.proxy());
+}
+
+export class MemberCall {
+	func: wasmlib.ScFunc;
+	params: sc.MutableMemberParams = new sc.MutableMemberParams(wasmlib.ScView.nilProxy);
+	public constructor(ctx: wasmlib.ScFuncCallContext) {
+		this.func = new wasmlib.ScFunc(ctx, sc.HScName, sc.HFuncMember);
+	}
+}
+
+export class MemberContext {
+	params: sc.ImmutableMemberParams = new sc.ImmutableMemberParams(wasmlib.paramsProxy());
+	state: sc.MutableDividendState = new sc.MutableDividendState(wasmlib.ScState.proxy());
+}
+
+export class SetOwnerCall {
+	func: wasmlib.ScFunc;
+	params: sc.MutableSetOwnerParams = new sc.MutableSetOwnerParams(wasmlib.ScView.nilProxy);
+	public constructor(ctx: wasmlib.ScFuncCallContext) {
+		this.func = new wasmlib.ScFunc(ctx, sc.HScName, sc.HFuncSetOwner);
+	}
+}
+
+export class SetOwnerContext {
+	params: sc.ImmutableSetOwnerParams = new sc.ImmutableSetOwnerParams(wasmlib.paramsProxy());
+	state: sc.MutableDividendState = new sc.MutableDividendState(wasmlib.ScState.proxy());
+}
+
+export class GetFactorCall {
+	func: wasmlib.ScView;
+	params: sc.MutableGetFactorParams = new sc.MutableGetFactorParams(wasmlib.ScView.nilProxy);
+	results: sc.ImmutableGetFactorResults = new sc.ImmutableGetFactorResults(wasmlib.ScView.nilProxy);
+	public constructor(ctx: wasmlib.ScViewCallContext) {
+		this.func = new wasmlib.ScView(ctx, sc.HScName, sc.HViewGetFactor);
+	}
+}
+
+export class GetFactorContext {
+	params: sc.ImmutableGetFactorParams = new sc.ImmutableGetFactorParams(wasmlib.paramsProxy());
+	results: sc.MutableGetFactorResults = new sc.MutableGetFactorResults(wasmlib.ScView.nilProxy);
+	state: sc.ImmutableDividendState = new sc.ImmutableDividendState(wasmlib.ScState.proxy());
+}
+
+export class GetOwnerCall {
+	func: wasmlib.ScView;
+	results: sc.ImmutableGetOwnerResults = new sc.ImmutableGetOwnerResults(wasmlib.ScView.nilProxy);
+	public constructor(ctx: wasmlib.ScViewCallContext) {
+		this.func = new wasmlib.ScView(ctx, sc.HScName, sc.HViewGetOwner);
+	}
+}
+
+export class GetOwnerContext {
+	results: sc.MutableGetOwnerResults = new sc.MutableGetOwnerResults(wasmlib.ScView.nilProxy);
+	state: sc.ImmutableDividendState = new sc.ImmutableDividendState(wasmlib.ScState.proxy());
+}
+
+export class ScFuncs {
+	// divide tokens over members
+	static divide(ctx: wasmlib.ScFuncCallContext): DivideCall {
+		return new DivideCall(ctx);
+	}
+
+	static init(ctx: wasmlib.ScFuncCallContext): InitCall {
+		const f = new InitCall(ctx);
+		f.params = new sc.MutableInitParams(wasmlib.newCallParamsProxy(f.func));
+		return f;
+	}
+
+	static member(ctx: wasmlib.ScFuncCallContext): MemberCall {
+		const f = new MemberCall(ctx);
+		f.params = new sc.MutableMemberParams(wasmlib.newCallParamsProxy(f.func));
+		return f;
+	}
+
+	static setOwner(ctx: wasmlib.ScFuncCallContext): SetOwnerCall {
+		const f = new SetOwnerCall(ctx);
+		f.params = new sc.MutableSetOwnerParams(wasmlib.newCallParamsProxy(f.func));
+		return f;
+	}
+
+	static getFactor(ctx: wasmlib.ScViewCallContext): GetFactorCall {
+		const f = new GetFactorCall(ctx);
+		f.params = new sc.MutableGetFactorParams(wasmlib.newCallParamsProxy(f.func));
+		f.results = new sc.ImmutableGetFactorResults(wasmlib.newCallResultsProxy(f.func));
+		return f;
+	}
+
+	static getOwner(ctx: wasmlib.ScViewCallContext): GetOwnerCall {
+		const f = new GetOwnerCall(ctx);
+		f.results = new sc.ImmutableGetOwnerResults(wasmlib.newCallResultsProxy(f.func));
+		return f;
+	}
+}
+```
+
+</TabItem>
+</Tabs>
+
+As you can see a struct has been generated for each of the Funcs and Views. The structs
+only provide access to the [Params](params.mdx) or [Results](results.mdx) maps when these
+are specified for the function. Each struct has a `func` member that can be used to
+initiate the function call in certain ways. The `func` member will be of type `ScFunc` or
+`ScView`, depending on whether the function is a func or a view.
+
+The ScFuncs struct provides a member function for each func or view that will create their
+respective function descriptor, initialize it properly, and returns it.
+
+
+In the next section we will look at how to use function descriptors to
+[synchronously call](call.mdx) smart contract functions on the same chain.

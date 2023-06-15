@@ -1,0 +1,85 @@
+---
+keywords:
+- code generation
+- schema tool
+- automatic
+- repetitive code fragments
+- robust
+- schema definition file
+
+description: To facilitate code generation, we decided to use a _schema definition file_ for smart contracts. All aspects of a smart contract that should be known by someone who wants to use the contract are clearly defined in a schema definition file.
+
+image: /img/logo/WASP_logo_dark.png
+---
+
+# Smart Contract Schema Tool
+
+Smart contracts need to be very robust. The generic nature of WasmLib allows for a lot of
+flexibility, but it also provides a lot of opportunities to make mistakes. In addition,
+there is a lot of repetitive coding involved in creating smart contracts. The setup code
+that is needed for every smart contract must follow strict rules. You also want to assure
+that certain functions can only be called by specific entities. You need to verify that
+mandatory function parameter values are present. And function parameter values and return
+values need to be converted between their binary representation and their actual data
+type in a consistent way.
+
+The best way to increase robustness is by using a code generator that will take care of
+most repetitive coding tasks. A code generator only needs to be debugged once, after which
+the generated code is 100% accurate and trustworthy. Another advantage of code generation
+is that you can regenerate code to correctly reflect any changes to the smart contract
+interface. A code generator can also help you by generating wrapper code that limits what
+you can do to mirror the intent behind it. This enables compile-time enforcing of some
+aspects of the defined smart contract behavior. A code generator can also support multiple
+different programming languages.
+
+During the initial experiences with creating demo smart contracts for WasmLib, we quickly
+identified a number of areas where there was a lot of repetitive coding going on. Some
+examples of repetition were:
+
+* Setting up the `on_load` function and keeping it up to date
+* Checking function access rights
+* Verifying function parameter types
+* Verifying the presence of mandatory function parameters
+* Setting up access to [State](state.mdx), [Params](params.mdx), and [Results](results.mdx) maps
+* Defining common strings as constants
+
+To facilitate the code generation, it was decided to use a _schema definition file_ for
+smart contracts. The aspects of a smart contract that should be known by someone who wants
+to use the contract are all clearly defined in a schema definition file. This schema
+definition file then becomes the single source of truth for the interface to the smart
+contract. This schema definition file is then used by our [Schema Tool](usage.mdx) to
+automatically generate a complete smart contract skeleton that reflects the schema
+definition and only needs to be augmented by providing the actual function
+implementations.
+
+The schema definition file defines things like the [state storage](state.mdx) variables
+that the smart contract uses, the [Funcs](funcs.mdx) and [Views](views.mdx) that the
+contract implements, the [access rights](access.mdx) for each function, the
+[input parameters](params.mdx) and [output results](results.mdx) for each function, and
+additional data structures that the contract uses.
+
+With detailed schema information readily available in a single location, it becomes
+possible to do a lot more than just generating repetitive code fragments. You can use the
+schema information to generate the interfaces to functions, and have parameters, results,
+and state variables that use strict compile-time type-checking. That removes a common
+source of accidental errors. The generated interface can also be used by client side code
+so that there is a single, consistent way of calling smart contract functions.
+
+Another advantage of knowing everything about important smart contract aspects is that it
+is possible to generate constants to prevent repeating of typo-prone key strings, and
+precalculate necessary values like Hnames and encode them as constants instead of having
+the code recalculate them every time they are needed.
+
+Similarly, since you know all static keys that are going to be used by the smart contract
+in advance, you can now generate code that will inform the host correctly about all Funcs
+and Views that are available in the smart contract.
+
+Because of all this the code becomes both simpler and more efficient. Note that all the
+improvements described above are independent of the actual programming language that is
+being generated.
+
+The schema definition file can also provide a starting point for other tooling, for
+example a tool that automatically audits a smart contract.
+
+
+In the next section we will look at how the [Schema Tool](usage.mdx) works.
