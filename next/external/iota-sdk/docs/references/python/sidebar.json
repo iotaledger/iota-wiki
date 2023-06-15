@@ -1,0 +1,55 @@
+{
+  "items": [
+    {
+      "items": [
+        {
+          "items": [
+            "references/python/iota_sdk/client/_high_level_api",
+            "references/python/iota_sdk/client/_node_core_api",
+            "references/python/iota_sdk/client/_node_indexer_api",
+            "references/python/iota_sdk/client/_utils",
+            "references/python/iota_sdk/client/client"
+          ],
+          "label": "iota_sdk.client",
+          "type": "category"
+        },
+        {
+          "items": [
+            "references/python/iota_sdk/secret_manager/secret_manager"
+          ],
+          "label": "iota_sdk.secret_manager",
+          "type": "category"
+        },
+        {
+          "items": [
+            "references/python/iota_sdk/types/address",
+            "references/python/iota_sdk/types/burn",
+            "references/python/iota_sdk/types/common",
+            "references/python/iota_sdk/types/feature",
+            "references/python/iota_sdk/types/native_token",
+            "references/python/iota_sdk/types/output_id",
+            "references/python/iota_sdk/types/token_scheme",
+            "references/python/iota_sdk/types/unlock_condition"
+          ],
+          "label": "iota_sdk.types",
+          "type": "category"
+        },
+        {
+          "items": [
+            "references/python/iota_sdk/wallet/account",
+            "references/python/iota_sdk/wallet/common",
+            "references/python/iota_sdk/wallet/prepared_transaction_data",
+            "references/python/iota_sdk/wallet/wallet"
+          ],
+          "label": "iota_sdk.wallet",
+          "type": "category"
+        },
+        "references/python/iota_sdk/utils"
+      ],
+      "label": "iota_sdk",
+      "type": "category"
+    }
+  ],
+  "label": "Reference",
+  "type": "category"
+}

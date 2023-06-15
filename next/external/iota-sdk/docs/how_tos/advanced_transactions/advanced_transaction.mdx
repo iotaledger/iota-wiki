@@ -1,0 +1,56 @@
+---
+title: Advanced Transaction
+description: 'How to send an advanced transaction'
+image: /img/logo/iota_mark_light.png
+keywords:
+- how to
+- advanced transaction
+- ouputs
+- nodejs
+- python
+- rust
+---
+
+import CodeBlock from '@theme/CodeBlock';
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import TipFaucet from "../../_admonitions/_tip_faucet.md";
+
+If you need more advanced features or unlock conditions in your transaction this how to will show you how to send custom outputs.
+You can learn more about how to create custom outputs with specific [unlock conditions](../outputs/unlock_conditions.mdx) and [features](../outputs/features.mdx) in the related How-Tos.
+
+<TipFaucet/>
+
+## Code Example
+
+<Tabs groupId="language">
+<TabItem value="rust" label="Rust">
+
+```rust reference
+https://github.com/iotaledger/iota-sdk/tree/develop/sdk/examples/how_tos/advanced_transactions/advanced_transaction.rs
+```
+
+</TabItem>
+<TabItem value="nodejs" label="Nodejs">
+
+```typescript reference
+https://github.com/iotaledger/iota-sdk/tree/develop/bindings/nodejs/examples/how_tos/advanced_transactions/advanced_transaction.ts
+```
+
+</TabItem>
+<TabItem value="python" label="Python">
+
+```python reference
+https://github.com/iotaledger/iota-sdk/tree/develop/bindings/python/examples/how_tos/advanced_transactions/advanced_transaction.py
+```
+
+</TabItem>
+</Tabs>
+
+## Expected Output
+
+```plaintext
+Transaction sent: 0x1f9bf3dd9e6c8cae9b23e3f2d4af4039518894b1dc4b605e41aea94fe93c995d
+Block sent: https://explorer.shimmer.network/testnet/block/0x14fdeb191112e222e60cd18eecf803797013587b1e7c2f38f5075ba87b3a69b3
+```
+

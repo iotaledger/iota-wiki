@@ -368,6 +368,48 @@ module.exports = {
         remarkPlugins: [require('remark-code-import'), require('remark-import-partial'), require('remark-remove-comments')],
       }
     ],
+
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'iota-chronicle-rs',
+        path: path.resolve(__dirname, 'external/chronicle/docs'),
+        routeBasePath: 'chronicle',
+        sidebarPath: path.resolve(
+            __dirname,
+            'external/chronicle/sidebars.js',
+        ),
+        editUrl:
+            'https://github.com/iotaledger/chronicle.rs/edit/main/documentation',
+        remarkPlugins: [
+          require('remark-code-import'),
+          require('remark-import-partial'),
+        ],
+        versions: {
+          current: {
+            label: 'IOTA',
+            badge: true,
+          },
+        },
+      },
+    ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'identity-rs',
+        path: path.resolve(__dirname, 'external/identity.rs/0.7-alpha/docs'),
+        routeBasePath: 'identity.rs',
+        sidebarPath: path.resolve(__dirname, 'external/identity.rs/0.7-alpha/sidebars.js'),
+        editUrl: 'https://github.com/iotaledger/identity.rs/edit/support/v0.7/documentation',
+        remarkPlugins: [require('remark-code-import'), require('remark-import-partial'), require('remark-remove-comments')],
+        versions: {
+          current: {
+            label: '0.7',
+            badge: true
+          },
+        },
+      }
+    ],
   ],
   staticDirectories: [
     path.resolve(__dirname, './external/iota.rs/static'),
@@ -381,5 +423,7 @@ module.exports = {
     ),
     path.resolve(__dirname, './external/tips/static'),
     path.resolve(__dirname, './external/wasp/static'),
+    path.resolve(__dirname, './external/chronicle/static'),
+    path.resolve(__dirname, './external/identity.rs/0.7-alpha/static'),
   ],
 };
