@@ -41,7 +41,7 @@ module.exports = {
             '^(/[^/]+)?/develop/docs|' +
             '^(/[^/]+)?/smart-contracts/.*|' +
             '^(/[^/]+)?/iota.rs/.*|' +
-            '^(/[^/]+)?/iotajs/.*|' +
+            '^(/[^/]+)?/iota.js/.*|' +
             '^(/[^/]+)?/wallet.rs/.*|' +
             '^(/[^/]+)?/stronghold.rs/.*|' +
             '^(/[^/]+)?/hornet/.*|' +
@@ -410,9 +410,61 @@ module.exports = {
         },
       }
     ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'iotajs',
+        path: path.resolve(__dirname, 'external/iota.js/docs'),
+        routeBasePath: 'iota.js',
+        sidebarPath: path.resolve(__dirname, 'external/iota.js/sidebars.js'),
+        editUrl: 'https://github.com/iotaledger/iota.js/tree/dev/packages/iota/documentation',// Example: https://github.com/iotacommunity/iota.js/edit/production/documentation
+        remarkPlugins: [require('remark-code-import'), require('remark-import-partial')],// You can add any remark or rehype extensions you may need here
+      },
+    ],
+    [
+      '@iota-wiki/plugin-tutorial',
+      {
+        title: 'Stardust for iota.js: Value Transactions',
+        description:'Get acquainted with the structure and functionality of transactions in IOTA\'s Stardust protocol in the Shimmer network using iota.js primitives to issue value transactions.',
+        preview: '/img/tutorials/bg-value-transactions.png',
+        route: '/shimmer/iota.js/tutorials/value-transactions/introduction',
+        tags: ['text', 'getting-started', 'client', 'shimmer', 'js'],
+      },
+    ],
+    [
+      '@iota-wiki/plugin-tutorial',
+      {
+        title: 'Stardust for iota.js: Alias Transactions',
+        description:'Learn how to create a new Alias Transaction and update the Alias\'s state with iota.js.',
+        preview: '/img/tutorials/bg-alias-transactions.png',
+        route: '/shimmer/iota.js/tutorials/alias-transactions/introduction',
+        tags: ['text', 'getting-started', 'client', 'shimmer', 'js'],
+      },
+    ],
+    [
+      '@iota-wiki/plugin-tutorial',
+      {
+        title: 'Stardust for iota.js: Native Tokens',
+        description:'Learn how to mint, send and melt Native tokens with iota.js.',
+        preview: '/img/tutorials/bg-native-tokens.png',
+        route: '/shimmer/iota.js/tutorials/native-token-transactions/introduction',
+        tags: ['text', 'getting-started', 'client', 'shimmer', 'js'],
+      },
+    ],
+    [
+      '@iota-wiki/plugin-tutorial',
+      {
+        title: 'Stardust for iota.js: NFTs and Unlock Conditions',
+        description:'Learn how to mint, send and claim NFTs using custom unlock conditions with iota.js.',
+        preview: '/img/tutorials/bg-nfts.png',
+        route: '/shimmer/iota.js/tutorials/nfts/introduction',
+        tags: ['text', 'getting-started', 'client', 'shimmer', 'js'],
+      },
+    ],
   ],
   staticDirectories: [
     path.resolve(__dirname, './external/iota.rs/static'),
+    path.resolve(__dirname, './external/iota.js/static'),
     path.resolve(__dirname, './external/wallet.rs/static'),
     path.resolve(__dirname, './external/hornet/static'),
     path.resolve(__dirname, './external/goshimmer/static'),

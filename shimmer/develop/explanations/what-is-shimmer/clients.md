@@ -96,7 +96,7 @@ and [Python](https://wiki.iota.org/shimmer/iota.rs/getting_started/python/).
 
 ### iota.js
 
-The [iota.js library](https://wiki.iota.org/shimmer/iotajs/welcome/) is based on [iota.rs](#iotars). Since the iota.js
+The [iota.js library](https://wiki.iota.org/shimmer/iota.js/welcome/) is based on [iota.rs](#iotars). Since the iota.js
 library is written in Typescript, it can strongly type objects it sends to and receives from
 a [Hornet Node](nodes/hornet.md) through API calls, and you can use it both browser or Node.js
 environments.
