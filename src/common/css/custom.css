@@ -52,3 +52,15 @@
   content: 'head';
   background-color: var(--ifm-color-secondary-darkest);
 }
+
+.switcher .menu__list {
+  background-color: var(--ifm-color-emphasis-200);
+}
+
+.switcher .menu__link--active {
+  background-color: transparent;
+}
+
+.switcher .menu__link:hover {
+  background-color: var(--ifm-color-emphasis-300);
+}
