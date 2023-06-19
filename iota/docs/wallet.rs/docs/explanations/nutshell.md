@@ -23,4 +23,4 @@ The library is based on a [derivation for multiple accounts from a single seed](
 
 Below you will see the relationships between seeds, accounts, and addresses. A single seed can contain multiple accounts. Each account can also have multiple addresses which can be linked to users in your database.
 
-![Seed, accounts and Addresses](/img/libraries/accounts_addresses.svg)
+![Seed, accounts and Addresses](/img/libraries/address_generation.svg)

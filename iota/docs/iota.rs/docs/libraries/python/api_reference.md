@@ -2,13 +2,13 @@
 description: Official IOTA Client Library Python API reference.
 image: /img/logo/libraries.png
 keywords:
-- api
-- python
-- param
-- type
-- run
+  - api
+  - python
+  - param
+  - type
+  - run
 ---
-# IOTA Client Python Library API Reference 
+# IOTA Client Python Library API Reference
 
 Note that in the following APIs, the corresponding exception will be returned if an error occurs.
 Also for all the optional values, the default values are the same as the ones in the Rust version.
