@@ -213,6 +213,7 @@ module.exports = async () => {
       ],
     ],
     plugins: [
+      //docs
       [
         '@docusaurus/plugin-content-docs',
         {
@@ -273,24 +274,6 @@ module.exports = async () => {
           showLastUpdateTime: true,
         },
       ],
-      [
-        'docusaurus-plugin-openapi-docs',
-        {
-          id: 'openapi',
-          docsPluginId: 'develop', // e.g. "classic" or the plugin-content-docs id
-          config: {
-            rest_api: {
-              specPath:
-                'https://raw.githubusercontent.com/iotaledger/tips/main/tips/TIP-0013/rest-api.yaml',
-              outputDir: path.resolve(__dirname, 'develop/nodes/rest-api'),
-              sidebarOptions: {
-                groupPathsBy: 'tag',
-              },
-            },
-          },
-        },
-      ],
-
       [
         '@docusaurus/plugin-content-docs',
         {
@@ -445,22 +428,27 @@ module.exports = async () => {
             'https://github.com/zebradevs/zebra-iota-edge-sdk/edit/main/documentation',
         },
       ],
-
-
       [
         '@docusaurus/plugin-content-docs',
         {
           id: 'stronghold-rs',
           path: path.resolve(__dirname, 'external/stronghold.rs/docs'),
           routeBasePath: 'stronghold.rs',
-          sidebarPath: path.resolve(__dirname, 'external/stronghold.rs/sidebars.js'),
-          editUrl: 'https://github.com/iotaledger/stronghold/edit/dev/documentation',
-          remarkPlugins: [require('remark-code-import'), require('remark-import-partial'), require('remark-remove-comments'), math],
+          sidebarPath: path.resolve(
+            __dirname,
+            'external/stronghold.rs/sidebars.js',
+          ),
+          editUrl:
+            'https://github.com/iotaledger/stronghold/edit/dev/documentation',
+          remarkPlugins: [
+            require('remark-code-import'),
+            require('remark-import-partial'),
+            require('remark-remove-comments'),
+            math,
+          ],
           rehypePlugins: [katex],
-        }
+        },
       ],
-
-
       [
         '@docusaurus/plugin-content-docs',
         {
@@ -492,34 +480,45 @@ module.exports = async () => {
           path: path.resolve(__dirname, 'external/iota.rs/docs'),
           routeBasePath: 'iota.rs',
           sidebarPath: path.resolve(__dirname, 'external/iota.rs/sidebars.js'),
-          editUrl: 'https://github.com/iotaledger/iota.rs/edit/production/documentation',
-          remarkPlugins: [require('remark-code-import'), require('remark-import-partial')],
+          editUrl:
+            'https://github.com/iotaledger/iota.rs/edit/production/documentation',
+          remarkPlugins: [
+            require('remark-code-import'),
+            require('remark-import-partial'),
+          ],
           versions: {
             current: {
               label: 'IOTA',
-              badge: true
+              badge: true,
             },
           },
-        }
+        },
       ],
-
       [
         '@docusaurus/plugin-content-docs',
         {
           id: 'identity-rs-0-5',
           path: path.resolve(__dirname, 'external/identity.rs/v0.5.0/docs'),
           routeBasePath: 'identity.rs',
-          sidebarPath: path.resolve(__dirname, 'external/identity.rs/v0.5.0/sidebars.js'),
-          editUrl: 'https://github.com/iotaledger/identity.rs/edit/support/v0.5/documentation',
-          remarkPlugins: [require('remark-code-import'), require('remark-import-partial'), require('remark-remove-comments')],
+          sidebarPath: path.resolve(
+            __dirname,
+            'external/identity.rs/v0.5.0/sidebars.js',
+          ),
+          editUrl:
+            'https://github.com/iotaledger/identity.rs/edit/support/v0.5/documentation',
+          remarkPlugins: [
+            require('remark-code-import'),
+            require('remark-import-partial'),
+            require('remark-remove-comments'),
+          ],
           versions: {
             current: {
               label: '0.5',
               path: '0.5',
-              badge: true
+              badge: true,
             },
           },
-        }
+        },
       ],
       [
         '@docusaurus/plugin-content-docs',
@@ -527,16 +526,42 @@ module.exports = async () => {
           id: 'identity-rs-0-6',
           path: path.resolve(__dirname, 'external/identity.rs/v0.6.0/docs'),
           routeBasePath: 'identity.rs',
-          sidebarPath: path.resolve(__dirname, 'external/identity.rs/v0.6.0/sidebars.js'),
-          editUrl: 'https://github.com/iotaledger/identity.rs/edit/support/v0.6/documentation',
-          remarkPlugins: [require('remark-code-import'), require('remark-import-partial'), require('remark-remove-comments')],
+          sidebarPath: path.resolve(
+            __dirname,
+            'external/identity.rs/v0.6.0/sidebars.js',
+          ),
+          editUrl:
+            'https://github.com/iotaledger/identity.rs/edit/support/v0.6/documentation',
+          remarkPlugins: [
+            require('remark-code-import'),
+            require('remark-import-partial'),
+            require('remark-remove-comments'),
+          ],
           versions: {
             current: {
               label: '0.6',
-              badge: true
+              badge: true,
             },
           },
-        }
+        },
+      ],
+      //plugins
+      [
+        'docusaurus-plugin-openapi-docs',
+        {
+          id: 'openapi',
+          docsPluginId: 'develop', // e.g. "classic" or the plugin-content-docs id
+          config: {
+            rest_api: {
+              specPath:
+                'https://raw.githubusercontent.com/iotaledger/tips/main/tips/TIP-0013/rest-api.yaml',
+              outputDir: path.resolve(__dirname, 'develop/nodes/rest-api'),
+              sidebarOptions: {
+                groupPathsBy: 'tag',
+              },
+            },
+          },
+        },
       ],
     ],
 

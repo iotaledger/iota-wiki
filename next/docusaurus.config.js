@@ -1,6 +1,6 @@
 const path = require('path');
-const math = require("remark-math");
-const katex = require("rehype-katex");
+const math = require('remark-math');
+const katex = require('rehype-katex');
 
 module.exports = {
   title: 'Danger Zone',
@@ -198,6 +198,7 @@ module.exports = {
     ],
   ],
   plugins: [
+    //docs
     [
       '@docusaurus/plugin-content-docs',
       {
@@ -251,23 +252,6 @@ module.exports = {
       },
     ],
     [
-      'docusaurus-plugin-openapi-docs',
-      {
-        id: 'openapi',
-        docsPluginId: 'develop', // e.g. "classic" or the plugin-content-docs id
-        config: {
-          core_rest_api: {
-            specPath:
-              'https://raw.githubusercontent.com/iotaledger/tips/main/tips/TIP-0025/core-rest-api.yaml',
-            outputDir: path.resolve(__dirname, 'develop/nodes/core-rest-api'),
-            sidebarOptions: {
-              groupPathsBy: 'tag',
-            },
-          },
-        },
-      },
-    ],
-    [
       '@docusaurus/plugin-content-docs',
       {
         id: 'iota-sdk',
@@ -308,8 +292,9 @@ module.exports = {
         path: path.resolve(__dirname, 'external/hornet/docs'),
         routeBasePath: 'hornet',
         sidebarPath: path.resolve(__dirname, 'external/hornet/sidebars.js'),
-        editUrl: 'https://github.com/iotaledger/hornet/edit/develop/documentation',
-      }
+        editUrl:
+          'https://github.com/iotaledger/hornet/edit/develop/documentation',
+      },
     ],
     [
       '@docusaurus/plugin-content-docs',
@@ -317,43 +302,45 @@ module.exports = {
         id: 'iota-goshimmer',
         path: path.resolve(__dirname, 'external/goshimmer/docs'),
         routeBasePath: 'goshimmer',
-        sidebarPath: path.resolve(
-            __dirname,
-            'external/goshimmer/sidebars.js',
-        ),
+        sidebarPath: path.resolve(__dirname, 'external/goshimmer/sidebars.js'),
         editUrl:
-            'https://github.com/iotaledger/goshimmer/edit/develop/documentation',
+          'https://github.com/iotaledger/goshimmer/edit/develop/documentation',
       },
     ],
-
-
     [
       '@docusaurus/plugin-content-docs',
       {
         id: 'introduction-docs',
         path: path.resolve(__dirname, 'external/introduction-docs/docs'),
         routeBasePath: 'introduction',
-        sidebarPath: path.resolve(__dirname, 'external/introduction-docs/sidebars.js'),
-        editUrl: 'https://github.com/iotaledger/chrysalis-docs/edit/develop/docs',
-        remarkPlugins: [require('remark-code-import'), require('remark-import-partial'), require('remark-remove-comments')],
-      }
+        sidebarPath: path.resolve(
+          __dirname,
+          'external/introduction-docs/sidebars.js',
+        ),
+        editUrl:
+          'https://github.com/iotaledger/chrysalis-docs/edit/develop/docs',
+        remarkPlugins: [
+          require('remark-code-import'),
+          require('remark-import-partial'),
+          require('remark-remove-comments'),
+        ],
+      },
     ],
-
     [
       '@docusaurus/plugin-content-docs',
       {
         id: 'iota-IOTA-Research-Specifications',
         path: path.resolve(
-            __dirname,
-            'external/iota-2.0-research-specifications/',
+          __dirname,
+          'external/iota-2.0-research-specifications/',
         ),
         routeBasePath: 'IOTA-2.0-Research-Specifications',
         sidebarPath: path.resolve(
-            __dirname,
-            'external/iota-2.0-research-specifications/sidebars.js',
+          __dirname,
+          'external/iota-2.0-research-specifications/sidebars.js',
         ),
         editUrl:
-            'https://github.com/iotaledger/IOTA-2.0-Research-Specifications/edit/main/docusaurus',
+          'https://github.com/iotaledger/IOTA-2.0-Research-Specifications/edit/main/docusaurus',
         remarkPlugins: [math],
         rehypePlugins: [katex],
         include: ['*.md'],
@@ -371,7 +358,6 @@ module.exports = {
         sidebarPath: path.resolve(__dirname, 'external/tips/sidebars.js'),
       },
     ],
-
     [
       '@docusaurus/plugin-content-docs',
       {
@@ -379,23 +365,24 @@ module.exports = {
         path: path.resolve(__dirname, 'external/wasp/docs'),
         routeBasePath: 'smart-contracts',
         sidebarPath: path.resolve(__dirname, 'external/wasp/sidebars.js'),
-        editUrl: 'https://github.com/iotaledger/wasp/edit/develop/documentation',
-        remarkPlugins: [require('remark-code-import'), require('remark-import-partial'), require('remark-remove-comments')],
-      }
+        editUrl:
+          'https://github.com/iotaledger/wasp/edit/develop/documentation',
+        remarkPlugins: [
+          require('remark-code-import'),
+          require('remark-import-partial'),
+          require('remark-remove-comments'),
+        ],
+      },
     ],
-
     [
       '@docusaurus/plugin-content-docs',
       {
         id: 'iota-chronicle-rs',
         path: path.resolve(__dirname, 'external/chronicle/docs'),
         routeBasePath: 'chronicle',
-        sidebarPath: path.resolve(
-            __dirname,
-            'external/chronicle/sidebars.js',
-        ),
+        sidebarPath: path.resolve(__dirname, 'external/chronicle/sidebars.js'),
         editUrl:
-            'https://github.com/iotaledger/chronicle.rs/edit/main/documentation',
+          'https://github.com/iotaledger/chronicle.rs/edit/main/documentation',
         remarkPlugins: [
           require('remark-code-import'),
           require('remark-import-partial'),
@@ -414,27 +401,38 @@ module.exports = {
         id: 'identity-rs',
         path: path.resolve(__dirname, 'external/identity.rs/0.7-alpha/docs'),
         routeBasePath: 'identity.rs',
-        sidebarPath: path.resolve(__dirname, 'external/identity.rs/0.7-alpha/sidebars.js'),
-        editUrl: 'https://github.com/iotaledger/identity.rs/edit/support/v0.7/documentation',
-        remarkPlugins: [require('remark-code-import'), require('remark-import-partial'), require('remark-remove-comments')],
+        sidebarPath: path.resolve(
+          __dirname,
+          'external/identity.rs/0.7-alpha/sidebars.js',
+        ),
+        editUrl:
+          'https://github.com/iotaledger/identity.rs/edit/support/v0.7/documentation',
+        remarkPlugins: [
+          require('remark-code-import'),
+          require('remark-import-partial'),
+          require('remark-remove-comments'),
+        ],
         versions: {
           current: {
             label: '0.7',
-            badge: true
+            badge: true,
           },
         },
-      }
+      },
     ],
-
     [
       '@docusaurus/plugin-content-docs',
       {
         id: 'inx-api-core-v0',
         path: path.resolve(__dirname, 'external/inx-api-core-v0/docs'),
         routeBasePath: 'inx-api-core-v0',
-        sidebarPath: path.resolve(__dirname, 'external/inx-api-core-v0/sidebars.js'),
-        editUrl: 'https://github.com/iotaledger/inx-api-core-v0/edit/develop/documentation',
-      }
+        sidebarPath: path.resolve(
+          __dirname,
+          'external/inx-api-core-v0/sidebars.js',
+        ),
+        editUrl:
+          'https://github.com/iotaledger/inx-api-core-v0/edit/develop/documentation',
+      },
     ],
 
     [
@@ -443,20 +441,27 @@ module.exports = {
         id: 'inx-api-core-v1',
         path: path.resolve(__dirname, 'external/inx-api-core-v1/docs'),
         routeBasePath: 'inx-api-core-v1',
-        sidebarPath: path.resolve(__dirname, 'external/inx-api-core-v1/sidebars.js'),
-        editUrl: 'https://github.com/iotaledger/inx-api-core-v0/edit/develop/documentation',
-      }
+        sidebarPath: path.resolve(
+          __dirname,
+          'external/inx-api-core-v1/sidebars.js',
+        ),
+        editUrl:
+          'https://github.com/iotaledger/inx-api-core-v0/edit/develop/documentation',
+      },
     ],
-
     [
       '@docusaurus/plugin-content-docs',
       {
         id: 'inx-coordinator',
         path: path.resolve(__dirname, 'external/inx-coordinator/docs'),
         routeBasePath: 'inx-coordinator',
-        sidebarPath: path.resolve(__dirname, 'external/inx-coordinator/sidebars.js'),
-        editUrl: 'https://github.com/iotaledger/inx-api-core-v0/edit/develop/documentation',
-      }
+        sidebarPath: path.resolve(
+          __dirname,
+          'external/inx-coordinator/sidebars.js',
+        ),
+        editUrl:
+          'https://github.com/iotaledger/inx-api-core-v0/edit/develop/documentation',
+      },
     ],
     [
       '@docusaurus/plugin-content-docs',
@@ -464,9 +469,13 @@ module.exports = {
         id: 'inx-dashboard',
         path: path.resolve(__dirname, 'external/inx-dashboard/docs'),
         routeBasePath: 'inx-dashboard',
-        sidebarPath: path.resolve(__dirname, 'external/inx-dashboard/sidebars.js'),
-        editUrl: 'https://github.com/iotaledger/inx-dashboard/edit/develop/documentation/docs',
-      }
+        sidebarPath: path.resolve(
+          __dirname,
+          'external/inx-dashboard/sidebars.js',
+        ),
+        editUrl:
+          'https://github.com/iotaledger/inx-dashboard/edit/develop/documentation/docs',
+      },
     ],
     [
       '@docusaurus/plugin-content-docs',
@@ -475,8 +484,9 @@ module.exports = {
         path: path.resolve(__dirname, 'external/inx-faucet/docs'),
         routeBasePath: 'inx-faucet',
         sidebarPath: path.resolve(__dirname, 'external/inx-faucet/sidebars.js'),
-        editUrl: 'https://github.com/iotaledger/inx-faucet/edit/develop/documentation',
-      }
+        editUrl:
+          'https://github.com/iotaledger/inx-faucet/edit/develop/documentation',
+      },
     ],
     [
       '@docusaurus/plugin-content-docs',
@@ -484,9 +494,13 @@ module.exports = {
         id: 'inx-indexer',
         path: path.resolve(__dirname, 'external/inx-indexer/docs'),
         routeBasePath: 'inx-indexer',
-        sidebarPath: path.resolve(__dirname, 'external/inx-indexer/sidebars.js'),
-        editUrl: 'https://github.com/iotaledger/inx-indexer/edit/develop/documentation',
-      }
+        sidebarPath: path.resolve(
+          __dirname,
+          'external/inx-indexer/sidebars.js',
+        ),
+        editUrl:
+          'https://github.com/iotaledger/inx-indexer/edit/develop/documentation',
+      },
     ],
     [
       '@docusaurus/plugin-content-docs',
@@ -494,9 +508,13 @@ module.exports = {
         id: 'inx-irc-metadata',
         path: path.resolve(__dirname, 'external/inx-irc-metadata/docs'),
         routeBasePath: 'inx-irc-metadata',
-        sidebarPath: path.resolve(__dirname, 'external/inx-irc-metadata/sidebars.js'),
-        editUrl: 'https://github.com/iotaledger/inx-irc-metadata/edit/develop/documentation',
-      }
+        sidebarPath: path.resolve(
+          __dirname,
+          'external/inx-irc-metadata/sidebars.js',
+        ),
+        editUrl:
+          'https://github.com/iotaledger/inx-irc-metadata/edit/develop/documentation',
+      },
     ],
     [
       '@docusaurus/plugin-content-docs',
@@ -505,8 +523,9 @@ module.exports = {
         path: path.resolve(__dirname, 'external/inx-mqtt/docs'),
         routeBasePath: 'inx-mqtt',
         sidebarPath: path.resolve(__dirname, 'external/inx-mqtt/sidebars.js'),
-        editUrl: 'https://github.com/gohornet/inx-mqtt/edit/develop/documentation/docs',
-      }
+        editUrl:
+          'https://github.com/gohornet/inx-mqtt/edit/develop/documentation/docs',
+      },
     ],
     [
       '@docusaurus/plugin-content-docs',
@@ -514,9 +533,13 @@ module.exports = {
         id: 'inx-participation',
         path: path.resolve(__dirname, 'external/inx-participation/docs'),
         routeBasePath: 'inx-participation',
-        sidebarPath: path.resolve(__dirname, 'external/inx-participation/sidebars.js'),
-        editUrl: 'https://github.com/iotaledger/inx-participation/edit/develop/documentation',
-      }
+        sidebarPath: path.resolve(
+          __dirname,
+          'external/inx-participation/sidebars.js',
+        ),
+        editUrl:
+          'https://github.com/iotaledger/inx-participation/edit/develop/documentation',
+      },
     ],
     [
       '@docusaurus/plugin-content-docs',
@@ -525,8 +548,9 @@ module.exports = {
         path: path.resolve(__dirname, 'external/inx-poi/docs'),
         routeBasePath: 'inx-poi',
         sidebarPath: path.resolve(__dirname, 'external/inx-poi/sidebars.js'),
-        editUrl: 'https://github.com/gohornet/inx-poi/edit/develop/documentation',
-      }
+        editUrl:
+          'https://github.com/gohornet/inx-poi/edit/develop/documentation',
+      },
     ],
     [
       '@docusaurus/plugin-content-docs',
@@ -534,9 +558,13 @@ module.exports = {
         id: 'inx-spammer',
         path: path.resolve(__dirname, 'external/inx-spammer/docs'),
         routeBasePath: 'inx-spammer',
-        sidebarPath: path.resolve(__dirname, 'external/inx-spammer/sidebars.js'),
-        editUrl: 'https://github.com/iotaledger/inx-spammer/edit/develop/documentation',
-      }
+        sidebarPath: path.resolve(
+          __dirname,
+          'external/inx-spammer/sidebars.js',
+        ),
+        editUrl:
+          'https://github.com/iotaledger/inx-spammer/edit/develop/documentation',
+      },
     ],
     [
       '@docusaurus/plugin-content-docs',
@@ -544,11 +572,38 @@ module.exports = {
         id: 'stronghold-rs',
         path: path.resolve(__dirname, 'external/stronghold.rs/docs'),
         routeBasePath: 'stronghold.rs',
-        sidebarPath: path.resolve(__dirname, 'external/stronghold.rs/sidebars.js'),
-        editUrl: 'https://github.com/iotaledger/stronghold/edit/dev/documentation',
-        remarkPlugins: [require('remark-code-import'), require('remark-import-partial'), require('remark-remove-comments'), math],
+        sidebarPath: path.resolve(
+          __dirname,
+          'external/stronghold.rs/sidebars.js',
+        ),
+        editUrl:
+          'https://github.com/iotaledger/stronghold/edit/dev/documentation',
+        remarkPlugins: [
+          require('remark-code-import'),
+          require('remark-import-partial'),
+          require('remark-remove-comments'),
+          math,
+        ],
         rehypePlugins: [katex],
-      }
+      },
+    ],
+    //plugins
+    [
+      'docusaurus-plugin-openapi-docs',
+      {
+        id: 'openapi',
+        docsPluginId: 'develop', // e.g. "classic" or the plugin-content-docs id
+        config: {
+          core_rest_api: {
+            specPath:
+              'https://raw.githubusercontent.com/iotaledger/tips/main/tips/TIP-0025/core-rest-api.yaml',
+            outputDir: path.resolve(__dirname, 'develop/nodes/core-rest-api'),
+            sidebarOptions: {
+              groupPathsBy: 'tag',
+            },
+          },
+        },
+      },
     ],
   ],
   staticDirectories: [
@@ -558,14 +613,13 @@ module.exports = {
     path.resolve(__dirname, './external/goshimmer/static'),
     path.resolve(__dirname, './external/introduction-docs/static'),
     path.resolve(
-        __dirname,
-        './external/iota-2.0-research-specifications/static',
+      __dirname,
+      './external/iota-2.0-research-specifications/static',
     ),
     path.resolve(__dirname, './external/tips/static'),
     path.resolve(__dirname, './external/wasp/static'),
     path.resolve(__dirname, './external/chronicle/static'),
     path.resolve(__dirname, './external/identity.rs/0.7-alpha/static'),
     path.resolve(__dirname, './external/stronghold.rs/static'),
-
   ],
 };
