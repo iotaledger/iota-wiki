@@ -293,7 +293,7 @@ module.exports = {
         routeBasePath: 'hornet',
         sidebarPath: path.resolve(__dirname, 'external/hornet/sidebars.js'),
         editUrl:
-          'https://github.com/iotaledger/hornet/edit/develop/documentation',
+          'https://github.com/iotaledger/iota-wiki/tree/the-merge-moveRemainingDocsToWiki/next/external/hornet',
       },
     ],
     [
@@ -304,7 +304,7 @@ module.exports = {
         routeBasePath: 'goshimmer',
         sidebarPath: path.resolve(__dirname, 'external/goshimmer/sidebars.js'),
         editUrl:
-          'https://github.com/iotaledger/goshimmer/edit/develop/documentation',
+          'https://github.com/iotaledger/iota-wiki/tree/the-merge-moveRemainingDocsToWiki/next/external/goshimmer',
       },
     ],
     [
@@ -366,7 +366,7 @@ module.exports = {
         routeBasePath: 'smart-contracts',
         sidebarPath: path.resolve(__dirname, 'external/wasp/sidebars.js'),
         editUrl:
-          'https://github.com/iotaledger/wasp/edit/develop/documentation',
+          'https://github.com/iotaledger/iota-wiki/tree/the-merge-moveRemainingDocsToWiki/next/external/wasp',
         remarkPlugins: [
           require('remark-code-import'),
           require('remark-import-partial'),
@@ -382,7 +382,7 @@ module.exports = {
         routeBasePath: 'chronicle',
         sidebarPath: path.resolve(__dirname, 'external/chronicle/sidebars.js'),
         editUrl:
-          'https://github.com/iotaledger/chronicle.rs/edit/main/documentation',
+          'https://github.com/iotaledger/iota-wiki/tree/the-merge-moveRemainingDocsToWiki/next/external/chronicle.rs',
         remarkPlugins: [
           require('remark-code-import'),
           require('remark-import-partial'),
@@ -406,7 +406,7 @@ module.exports = {
           'external/identity.rs/0.7-alpha/sidebars.js',
         ),
         editUrl:
-          'https://github.com/iotaledger/identity.rs/edit/support/v0.7/documentation',
+          'https://github.com/iotaledger/iota-wiki/tree/the-merge-moveRemainingDocsToWiki/next/external/identity.rs',
         remarkPlugins: [
           require('remark-code-import'),
           require('remark-import-partial'),
@@ -431,7 +431,7 @@ module.exports = {
           'external/inx-api-core-v0/sidebars.js',
         ),
         editUrl:
-          'https://github.com/iotaledger/inx-api-core-v0/edit/develop/documentation',
+          'https://github.com/iotaledger/iota-wiki/tree/the-merge-moveRemainingDocsToWiki/next/external/inx-api-core-v0',
       },
     ],
 
@@ -446,7 +446,7 @@ module.exports = {
           'external/inx-api-core-v1/sidebars.js',
         ),
         editUrl:
-          'https://github.com/iotaledger/inx-api-core-v0/edit/develop/documentation',
+          'https://github.com/iotaledger/iota-wiki/tree/the-merge-moveRemainingDocsToWiki/next/external/inx-api-core-v0',
       },
     ],
     [
@@ -460,7 +460,7 @@ module.exports = {
           'external/inx-coordinator/sidebars.js',
         ),
         editUrl:
-          'https://github.com/iotaledger/inx-api-core-v0/edit/develop/documentation',
+          'https://github.com/iotaledger/iota-wiki/tree/the-merge-moveRemainingDocsToWiki/next/external/inx-api-core-v0',
       },
     ],
     [
@@ -474,7 +474,7 @@ module.exports = {
           'external/inx-dashboard/sidebars.js',
         ),
         editUrl:
-          'https://github.com/iotaledger/inx-dashboard/edit/develop/documentation/docs',
+          'https://github.com/iotaledger/iota-wiki/tree/the-merge-moveRemainingDocsToWiki/next/external/inx-dashboard/',
       },
     ],
     [
@@ -485,7 +485,7 @@ module.exports = {
         routeBasePath: 'inx-faucet',
         sidebarPath: path.resolve(__dirname, 'external/inx-faucet/sidebars.js'),
         editUrl:
-          'https://github.com/iotaledger/inx-faucet/edit/develop/documentation',
+          'https://github.com/iotaledger/iota-wiki/tree/the-merge-moveRemainingDocsToWiki/next/external/inx-faucet',
       },
     ],
     [
@@ -499,7 +499,7 @@ module.exports = {
           'external/inx-indexer/sidebars.js',
         ),
         editUrl:
-          'https://github.com/iotaledger/inx-indexer/edit/develop/documentation',
+          'https://github.com/iotaledger/iota-wiki/tree/the-merge-moveRemainingDocsToWiki/next/external/inx-indexer',
       },
     ],
     [
@@ -513,7 +513,7 @@ module.exports = {
           'external/inx-irc-metadata/sidebars.js',
         ),
         editUrl:
-          'https://github.com/iotaledger/inx-irc-metadata/edit/develop/documentation',
+          'https://github.com/iotaledger/iota-wiki/tree/the-merge-moveRemainingDocsToWiki/next/external/inx-irc-metadata',
       },
     ],
     [
@@ -524,21 +524,21 @@ module.exports = {
         routeBasePath: 'inx-mqtt',
         sidebarPath: path.resolve(__dirname, 'external/inx-mqtt/sidebars.js'),
         editUrl:
-          'https://github.com/gohornet/inx-mqtt/edit/develop/documentation/docs',
+          'https://github.com/gohornet/inx-mqtt/edit/develop/documentation/',
       },
     ],
     [
       '@docusaurus/plugin-content-docs',
       {
         id: 'inx-participation',
-        path: path.resolve(__dirname, 'external/inx-participation/docs'),
+        path: path.resolve(__dirname, 'external/inx-participation/'),
         routeBasePath: 'inx-participation',
         sidebarPath: path.resolve(
           __dirname,
           'external/inx-participation/sidebars.js',
         ),
         editUrl:
-          'https://github.com/iotaledger/inx-participation/edit/develop/documentation',
+          'https://github.com/iotaledger/iota-wiki/tree/the-merge-moveRemainingDocsToWiki/next/external/inx-participation',
       },
     ],
     [
@@ -563,7 +563,7 @@ module.exports = {
           'external/inx-spammer/sidebars.js',
         ),
         editUrl:
-          'https://github.com/iotaledger/inx-spammer/edit/develop/documentation',
+          'https://github.com/iotaledger/iota-wiki/tree/the-merge-moveRemainingDocsToWiki/next/external/inx-spammer',
       },
     ],
     [
@@ -577,7 +577,7 @@ module.exports = {
           'external/stronghold.rs/sidebars.js',
         ),
         editUrl:
-          'https://github.com/iotaledger/stronghold/edit/dev/documentation',
+          'https://github.com/iotaledger/iota-wiki/tree/the-merge-moveRemainingDocsToWiki/next/external/stronghold',
         remarkPlugins: [
           require('remark-code-import'),
           require('remark-import-partial'),

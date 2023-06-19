@@ -285,7 +285,7 @@ module.exports = async () => {
             'external/chronicle/sidebars.js',
           ),
           editUrl:
-            'https://github.com/iotaledger/chronicle.rs/edit/main/documentation',
+            'https://github.com/iotaledger/iota-wiki/tree/the-merge-moveRemainingDocsToWiki/iota/external/chronicle.rs',
           remarkPlugins: [
             require('remark-code-import'),
             require('remark-import-partial'),
@@ -309,7 +309,7 @@ module.exports = async () => {
             'external/goshimmer/sidebars.js',
           ),
           editUrl:
-            'https://github.com/iotaledger/goshimmer/edit/develop/documentation',
+            'https://github.com/iotaledger/iota-wiki/tree/the-merge-moveRemainingDocsToWiki/iota/external/goshimmer',
         },
       ],
       [
@@ -320,7 +320,7 @@ module.exports = async () => {
           routeBasePath: 'hornet',
           sidebarPath: path.resolve(__dirname, 'external/hornet/sidebars.js'),
           editUrl:
-            'https://github.com/iotaledger/hornet/edit/production/documentation',
+            'https://github.com/iotaledger/iota-wiki/tree/the-merge-moveRemainingDocsToWiki/iota/external/hornet',
           versions: {
             current: {
               label: 'IOTA',
@@ -340,7 +340,7 @@ module.exports = async () => {
             'external/integration-services/sidebars.js',
           ),
           editUrl:
-            'https://github.com/iotaledger/integration-services/edit/develop/documentation',
+            'https://github.com/iotaledger/iota-wiki/tree/the-merge-moveRemainingDocsToWiki/iota/external/integration-services',
         },
       ],
       [
@@ -396,7 +396,7 @@ module.exports = async () => {
           routeBasePath: 'streams',
           sidebarPath: path.resolve(__dirname, 'external/streams/sidebars.js'),
           editUrl:
-            'https://github.com/iotaledger/streams/edit/main/documentation',
+            'https://github.com/iotaledger/iota-wiki/tree/the-merge-moveRemainingDocsToWiki/iota/external/streams',
         },
       ],
       [
@@ -439,7 +439,7 @@ module.exports = async () => {
             'external/stronghold.rs/sidebars.js',
           ),
           editUrl:
-            'https://github.com/iotaledger/stronghold/edit/dev/documentation',
+            'https://github.com/iotaledger/iota-wiki/tree/the-merge-moveRemainingDocsToWiki/iota/external/stronghold',
           remarkPlugins: [
             require('remark-code-import'),
             require('remark-import-partial'),
@@ -460,7 +460,7 @@ module.exports = async () => {
             'external/wallet.rs/sidebars.js',
           ),
           editUrl:
-            'https://github.com/iotaledger/wallet.rs/edit/production/documentation',
+            'https://github.com/iotaledger/iota-wiki/tree/the-merge-moveRemainingDocsToWiki/iota/external/wallet.rs',
           remarkPlugins: [
             require('remark-code-import'),
             require('remark-import-partial'),
@@ -481,7 +481,7 @@ module.exports = async () => {
           routeBasePath: 'iota.rs',
           sidebarPath: path.resolve(__dirname, 'external/iota.rs/sidebars.js'),
           editUrl:
-            'https://github.com/iotaledger/iota.rs/edit/production/documentation',
+            'https://github.com/iotaledger/iota-wiki/tree/the-merge-moveRemainingDocsToWiki/iota/external/iota.rs',
           remarkPlugins: [
             require('remark-code-import'),
             require('remark-import-partial'),
@@ -505,7 +505,7 @@ module.exports = async () => {
             'external/identity.rs/v0.5.0/sidebars.js',
           ),
           editUrl:
-            'https://github.com/iotaledger/identity.rs/edit/support/v0.5/documentation',
+            'https://github.com/iotaledger/iota-wiki/tree/the-merge-moveRemainingDocsToWiki/iota/external/identity.rs',
           remarkPlugins: [
             require('remark-code-import'),
             require('remark-import-partial'),
@@ -531,7 +531,7 @@ module.exports = async () => {
             'external/identity.rs/v0.6.0/sidebars.js',
           ),
           editUrl:
-            'https://github.com/iotaledger/identity.rs/edit/support/v0.6/documentation',
+            'https://github.com/iotaledger/iota-wiki/tree/the-merge-moveRemainingDocsToWiki/iota/external/identity.rs',
           remarkPlugins: [
             require('remark-code-import'),
             require('remark-import-partial'),

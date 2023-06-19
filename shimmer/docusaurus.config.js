@@ -479,7 +479,7 @@ module.exports = {
           'external/inx-dashboard/sidebars.js',
         ),
         editUrl:
-          'https://github.com/iotaledger/inx-dashboard/edit/develop/documentation/docs',
+          'https://github.com/iotaledger/inx-dashboard/edit/develop/documentation',
       },
     ],
     [
@@ -529,14 +529,14 @@ module.exports = {
         routeBasePath: 'inx-mqtt',
         sidebarPath: path.resolve(__dirname, 'external/inx-mqtt/sidebars.js'),
         editUrl:
-          'https://github.com/gohornet/inx-mqtt/edit/develop/documentation/docs',
+          'https://github.com/gohornet/inx-mqtt/edit/develop/documentation',
       },
     ],
     [
       '@docusaurus/plugin-content-docs',
       {
         id: 'inx-participation',
-        path: path.resolve(__dirname, 'external/inx-participation/docs'),
+        path: path.resolve(__dirname, 'external/inx-participation'),
         routeBasePath: 'inx-participation',
         sidebarPath: path.resolve(
           __dirname,
