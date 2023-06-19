@@ -1,0 +1,277 @@
+---
+keywords:
+- init
+- initialization
+- owner
+- initial state
+- smart contract creator
+- one-time
+- contract deployment
+
+description: The init function will automatically be called immediately after the first time the contract has been deployed to the VM. This is a one-time initialization call, meant to be performed by the contract deployment mechanism.
+
+image: /img/logo/WASP_logo_dark.png
+---
+import Tabs from "@theme/Tabs"
+import TabItem from "@theme/TabItem"
+
+# Smart Contract Initialization
+
+Smart contracts start out with a completely blank state. Sometimes you may want to be able
+to define initial state, for example if your contract is configurable. You may want to be
+able to pass this configuration to the contract upon deployment, so that its state
+reflects that configuration once the first request comes in. Such initialization can be
+provided through an optional function named `init()`.
+
+When provided, the `init()` function will automatically be called immediately after the
+first time the contract has been deployed to the VM. Note that this is a one-time
+initialization call, meant to be performed by the contract deployment mechanism. ISC will
+prevent anyone else from calling this function ever again. So if you need to be able to
+reconfigure the contract later on, you will need to provide a separate configuration
+function, and guard it from being accessed by anyone else than properly authorized
+entities.
+
+To show how creating a smart contract with WasmLib works, we will slowly start fleshing
+out the smart contract functions of the `dividend` example in this tutorial. Here is the
+first part of the Rust code that implements it, which contains the `init()` function:
+
+<Tabs defaultValue="go"
+      groupId="language"
+      values={[
+          {label: 'Go', value: 'go'},
+          {label: 'Rust', value: 'rust'},
+          {label: 'TypeScript', value: 'ts'},
+      ]}>
+
+<TabItem value="go">
+
+```go
+// This example implements 'dividend', a simple smart contract that will
+// automatically disperse iota tokens which are sent to the contract to a group
+// of member accounts according to predefined division factors. The intent is
+// to showcase basic functionality of WasmLib through a minimal implementation
+// and not to come up with a complete robust real-world solution.
+// Note that we have drawn sometimes out constructs that could have been done
+// in a single line over multiple statements to be able to properly document
+// step by step what is happening in the code. We also unnecessarily annotate
+// all 'var' statements with their assignment type to improve understanding.
+
+//nolint:revive,goimports
+package dividend
+
+import (
+	"github.com/iotaledger/wasp/packages/wasmvm/wasmlib/go/wasmlib"
+	"github.com/iotaledger/wasp/packages/wasmvm/wasmlib/go/wasmlib/wasmtypes"
+)
+
+// 'init' is used as a way to initialize a smart contract. It is an optional
+// function that will automatically be called upon contract deployment. In this
+// case we use it to initialize the 'owner' state variable so that we can later
+// use this information to prevent non-owners from calling certain functions.
+// The 'init' function takes a single optional parameter:
+// - 'owner', which is the agent id of the entity owning the contract.
+// When this parameter is omitted the owner will default to the contract creator.
+func funcInit(ctx wasmlib.ScFuncContext, f *InitContext) {
+	// The schema tool has already created a proper InitContext for this function that
+	// allows us to access call parameters and state storage in a type-safe manner.
+
+	// First we set up a default value for the owner in case the optional 'owner'
+	// parameter was omitted. We use the agent that sent the deploy request.
+	var owner wasmtypes.ScAgentID = ctx.RequestSender()
+
+	// Now we check if the optional 'owner' parameter is present in the params map.
+	if f.Params.Owner().Exists() {
+		// Yes, it was present, so now we overwrite the default owner with
+		// the one specified by the 'owner' parameter.
+		owner = f.Params.Owner().Value()
+	}
+
+	// Now that we have sorted out which agent will be the owner of this contract
+	// we will save this value in the 'owner' variable in state storage on the host.
+	// Read the documentation on schema.yaml to understand why this state variable is
+	// supported at compile-time by code generated from schema.yaml by the schema tool.
+	f.State.Owner().SetValue(owner)
+}
+```
+
+</TabItem>
+<TabItem value="rust">
+
+```rust
+// This example implements 'dividend', a simple smart contract that will
+// automatically disperse iota tokens which are sent to the contract to a group
+// of member accounts according to predefined division factors. The intent is
+// to showcase basic functionality of WasmLib through a minimal implementation
+// and not to come up with a complete robust real-world solution.
+// Note that we have drawn sometimes out constructs that could have been done
+// in a single line over multiple statements to be able to properly document
+// step by step what is happening in the code. We also unnecessarily annotate
+// all 'let' statements with their assignment type to improve understanding.
+
+use wasmlib::*;
+
+use crate::*;
+
+// 'init' is used as a way to initialize a smart contract. It is an optional
+// function that will automatically be called upon contract deployment. In this
+// case we use it to initialize the 'owner' state variable so that we can later
+// use this information to prevent non-owners from calling certain functions.
+// The 'init' function takes a single optional parameter:
+// - 'owner', which is the agent id of the entity owning the contract.
+// When this parameter is omitted the owner will default to the contract creator.
+pub fn func_init(ctx: &ScFuncContext, f: &InitContext) {
+    // The schema tool has already created a proper InitContext for this function that
+    // allows us to access call parameters and state storage in a type-safe manner.
+
+    // First we set up a default value for the owner in case the optional 'owner'
+    // parameter was omitted. We use the agent that sent the deploy request.
+    let mut owner: ScAgentID = ctx.request_sender();
+
+    // Now we check if the optional 'owner' parameter is present in the params map.
+    if f.params.owner().exists() {
+        // Yes, it was present, so now we overwrite the default owner with
+        // the one specified by the 'owner' parameter.
+        owner = f.params.owner().value();
+    }
+
+    // Now that we have sorted out which agent will be the owner of this contract
+    // we will save this value in the 'owner' variable in state storage on the host.
+    // Read the documentation on schema.yaml to understand why this state variable is
+    // supported at compile-time by code generated from schema.yaml by the schema tool.
+    f.state.owner().set_value(&owner);
+}
+```
+
+</TabItem>
+<TabItem value="ts">
+
+```ts
+// This example implements 'dividend', a simple smart contract that will
+// automatically disperse iota tokens which are sent to the contract to a group
+// of member accounts according to predefined division factors. The intent is
+// to showcase basic functionality of WasmLib through a minimal implementation
+// and not to come up with a complete robust real-world solution.
+// Note that we have drawn sometimes out constructs that could have been done
+// in a single line over multiple statements to be able to properly document
+// step by step what is happening in the code. We also unnecessarily annotate
+// all 'let' statements with their assignment type to improve understanding.
+
+import * as wasmlib from "wasmlib"
+import * as sc from "./index";
+
+// 'init' is used as a way to initialize a smart contract. It is an optional
+// function that will automatically be called upon contract deployment. In this
+// case we use it to initialize the 'owner' state variable so that we can later
+// use this information to prevent non-owners from calling certain functions.
+// The 'init' function takes a single optional parameter:
+// - 'owner', which is the agent id of the entity owning the contract.
+// When this parameter is omitted the owner will default to the contract creator.
+export function funcInit(ctx: wasmlib.ScFuncContext, f: sc.InitContext): void {
+    // The schema tool has already created a proper InitContext for this function that
+    // allows us to access call parameters and state storage in a type-safe manner.
+
+    // First we set up a default value for the owner in case the optional 'owner'
+    // parameter was omitted. We use the agent that sent the deploy request.
+    let owner: wasmlib.ScAgentID = ctx.requestSender();
+
+    // Now we check if the optional 'owner' parameter is present in the params map.
+    if (f.params.owner().exists()) {
+        // Yes, it was present, so now we overwrite the default owner with
+        // the one specified by the 'owner' parameter.
+        owner = f.params.owner().value();
+    }
+
+    // Now that we have sorted out which agent will be the owner of this contract
+    // we will save this value in the 'owner' variable in state storage on the host.
+    // Read the documentation on schema.yaml to understand why this state variable is
+    // supported at compile-time by code generated from schema.yaml by the schema tool.
+    f.state.owner().setValue(owner);
+}
+```
+
+</TabItem>
+</Tabs>
+
+We define an owner variable and allow it to be something other than the default value of
+contract creator. It is always a good idea to be flexible enough to be able to transfer
+ownership to another entity if necessary. Remember that once a smart contract has been
+deployed it is no longer possible to change it. Therefore, it is good practice thinking
+through situations that could require change in advance, and allow the contract itself to
+handle such changes through its state by providing a proper function interface:
+
+<Tabs defaultValue="go"
+      groupId="language"
+      values={[
+          {label: 'Go', value: 'go'},
+          {label: 'Rust', value: 'rust'},
+          {label: 'TypeScript', value: 'ts'},
+      ]}>
+
+<TabItem value="go">
+
+```go
+// 'setOwner' is used to change the owner of the smart contract.
+// It updates the 'owner' state variable with the provided agent id.
+// The 'setOwner' function takes a single mandatory parameter:
+// - 'owner', which is the agent id of the entity that will own the contract.
+// Only the current owner can change the owner.
+func funcSetOwner(_ wasmlib.ScFuncContext, f *SetOwnerContext) {
+	// Note that the schema tool has already dealt with making sure that this function
+	// can only be called by the owner and that the required parameter is present.
+	// So once we get to this point in the code we can take that as a given.
+
+	// Save the new owner parameter value in the 'owner' variable in state storage.
+	f.State.Owner().SetValue(f.Params.Owner().Value())
+}
+```
+
+</TabItem>
+<TabItem value="rust">
+
+```rust
+// 'setOwner' is used to change the owner of the smart contract.
+// It updates the 'owner' state variable with the provided agent id.
+// The 'setOwner' function takes a single mandatory parameter:
+// - 'owner', which is the agent id of the entity that will own the contract.
+// Only the current owner can change the owner.
+pub fn func_set_owner(_ctx: &ScFuncContext, f: &SetOwnerContext) {
+    // Note that the schema tool has already dealt with making sure that this function
+    // can only be called by the owner and that the required parameter is present.
+    // So once we get to this point in the code we can take that as a given.
+
+    // Save the new owner parameter value in the 'owner' variable in state storage.
+    f.state.owner().set_value(&f.params.owner().value());
+}
+```
+
+</TabItem>
+<TabItem value="ts">
+
+```ts
+// 'setOwner' is used to change the owner of the smart contract.
+// It updates the 'owner' state variable with the provided agent id.
+// The 'setOwner' function takes a single mandatory parameter:
+// - 'owner', which is the agent id of the entity that will own the contract.
+// Only the current owner can change the owner.
+export function funcSetOwner(ctx: wasmlib.ScFuncContext, f: sc.SetOwnerContext): void {
+    // Note that the schema tool has already dealt with making sure that this function
+    // can only be called by the owner and that the required parameter is present.
+    // So once we get to this point in the code we can take that as a given.
+
+    // Save the new owner parameter value in the 'owner' variable in state storage.
+    f.state.owner().setValue(f.params.owner().value());
+}
+```
+
+</TabItem>
+</Tabs>
+
+Note that we only define a single owner here. Proper fall-back could require multiple
+owners in case the owner entity could disappear, which would allow others to take over
+instead of the contract becoming immutable with regard to owner functionality. Again, we
+cannot stress enough how important it is to **think through every aspect of a smart
+contract before deployment**.
+
+
+In the next section we will look at how a smart contract can
+[transfer tokens](transfers.mdx).

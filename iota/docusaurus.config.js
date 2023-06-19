@@ -1,3 +1,6 @@
+const math = require('remark-math');
+const katex = require('rehype-katex');
+
 const path = require('path');
 
 module.exports = async () => {
@@ -210,6 +213,7 @@ module.exports = async () => {
       ],
     ],
     plugins: [
+      //docs
       [
         '@docusaurus/plugin-content-docs',
         {
@@ -271,6 +275,253 @@ module.exports = async () => {
         },
       ],
       [
+        '@docusaurus/plugin-content-docs',
+        {
+          id: 'iota-chronicle-rs',
+          path: path.resolve(__dirname, 'docs/chronicle/docs'),
+          routeBasePath: 'chronicle',
+          sidebarPath: path.resolve(
+            __dirname,
+            'docs/chronicle/sidebars.js',
+          ),
+          editUrl: 'https://github.com/iotaledger/iota-wiki/edit/the-merge-moveRemainingDocsToWiki/',
+          remarkPlugins: [
+            require('remark-code-import'),
+            require('remark-import-partial'),
+          ],
+          versions: {
+            current: {
+              label: 'IOTA',
+              badge: true,
+            },
+          },
+        },
+      ],
+      [
+        '@docusaurus/plugin-content-docs',
+        {
+          id: 'iota-goshimmer',
+          path: path.resolve(__dirname, 'docs/goshimmer/docs'),
+          routeBasePath: 'goshimmer',
+          sidebarPath: path.resolve(
+            __dirname,
+            'docs/goshimmer/sidebars.js',
+          ),
+          editUrl: 'https://github.com/iotaledger/iota-wiki/edit/the-merge-moveRemainingDocsToWiki/',
+        },
+      ],
+      [
+        '@docusaurus/plugin-content-docs',
+        {
+          id: 'iota-hornet',
+          path: path.resolve(__dirname, 'docs/hornet/docs'),
+          routeBasePath: 'hornet',
+          sidebarPath: path.resolve(__dirname, 'docs/hornet/sidebars.js'),
+          editUrl: 'https://github.com/iotaledger/iota-wiki/edit/the-merge-moveRemainingDocsToWiki/',
+          versions: {
+            current: {
+              label: 'IOTA',
+              badge: true,
+            },
+          },
+        },
+      ],
+      [
+        '@docusaurus/plugin-content-docs',
+        {
+          id: 'iota-integration-services',
+          path: path.resolve(__dirname, 'docs/integration-services/docs'),
+          routeBasePath: 'integration-services',
+          sidebarPath: path.resolve(
+            __dirname,
+            'docs/integration-services/sidebars.js',
+          ),
+          editUrl: 'https://github.com/iotaledger/iota-wiki/edit/the-merge-moveRemainingDocsToWiki/',
+        },
+      ],
+      [
+        '@docusaurus/plugin-content-docs',
+        {
+          id: 'iota-introduction-docs',
+          path: path.resolve(__dirname, 'docs/introduction-docs/docs'),
+          routeBasePath: 'introduction',
+          sidebarPath: path.resolve(
+            __dirname,
+            'docs/introduction-docs/sidebars.js',
+          ),
+          editUrl: 'https://github.com/iotaledger/iota-wiki/edit/the-merge-moveRemainingDocsToWiki/',
+          remarkPlugins: [
+            require('remark-code-import'),
+            require('remark-import-partial'),
+            require('remark-remove-comments'),
+          ],
+          versions: {
+            current: {
+              label: 'IOTA',
+              badge: true,
+            },
+          },
+        },
+      ],
+      [
+        '@docusaurus/plugin-content-docs',
+        {
+          id: 'iota-IOTA-Research-Specifications',
+          path: path.resolve(
+            __dirname,
+            'docs/iota-2.0-research-specifications/',
+          ),
+          routeBasePath: 'IOTA-2.0-Research-Specifications',
+          sidebarPath: path.resolve(
+            __dirname,
+            'docs/iota-2.0-research-specifications/sidebars.js',
+          ),
+          editUrl: 'https://github.com/iotaledger/iota-wiki/edit/the-merge-moveRemainingDocsToWiki/',
+          remarkPlugins: [math],
+          rehypePlugins: [katex],
+          include: ['*.md'],
+        },
+      ],
+      [
+        '@docusaurus/plugin-content-docs',
+        {
+          id: 'iota-streams',
+          path: path.resolve(__dirname, 'docs/streams/docs'),
+          routeBasePath: 'streams',
+          sidebarPath: path.resolve(__dirname, 'docs/streams/sidebars.js'),
+          editUrl: 'https://github.com/iotaledger/iota-wiki/edit/the-merge-moveRemainingDocsToWiki/',
+        },
+      ],
+      [
+        '@docusaurus/plugin-content-docs',
+        {
+          id: 'iota-zebra-tutorials',
+          path: path.resolve(
+            __dirname,
+            'docs/zebra-iota-edge-sdk/tutorials',
+          ),
+          routeBasePath: 'zebra-tutorials',
+          sidebarPath: path.resolve(
+            __dirname,
+            'docs/zebra-iota-edge-sdk/sidebars.js',
+          ),
+          editUrl: 'https://github.com/iotaledger/iota-wiki/edit/the-merge-moveRemainingDocsToWiki/',
+        },
+      ],
+      [
+        '@docusaurus/plugin-content-docs',
+        {
+          id: 'stronghold-rs',
+          path: path.resolve(__dirname, 'docs/stronghold.rs/docs'),
+          routeBasePath: 'stronghold.rs',
+          sidebarPath: path.resolve(
+            __dirname,
+            'docs/stronghold.rs/sidebars.js',
+          ),
+          editUrl: 'https://github.com/iotaledger/iota-wiki/edit/the-merge-moveRemainingDocsToWiki/',
+          remarkPlugins: [
+            require('remark-code-import'),
+            require('remark-import-partial'),
+            require('remark-remove-comments'),
+            math,
+          ],
+          rehypePlugins: [katex],
+        },
+      ],
+      [
+        '@docusaurus/plugin-content-docs',
+        {
+          id: 'wallet-rs',
+          path: path.resolve(__dirname, 'docs/wallet.rs/docs'),
+          routeBasePath: 'wallet.rs',
+          sidebarPath: path.resolve(
+            __dirname,
+            'docs/wallet.rs/sidebars.js',
+          ),
+          editUrl: 'https://github.com/iotaledger/iota-wiki/edit/the-merge-moveRemainingDocsToWiki/',
+          remarkPlugins: [
+            require('remark-code-import'),
+            require('remark-import-partial'),
+          ],
+          versions: {
+            current: {
+              label: 'IOTA',
+              badge: true,
+            },
+          },
+        },
+      ],
+      [
+        '@docusaurus/plugin-content-docs',
+        {
+          id: 'iota-rs',
+          path: path.resolve(__dirname, 'docs/iota.rs/docs'),
+          routeBasePath: 'iota.rs',
+          sidebarPath: path.resolve(__dirname, 'docs/iota.rs/sidebars.js'),
+          editUrl: 'https://github.com/iotaledger/iota-wiki/edit/the-merge-moveRemainingDocsToWiki/',
+          remarkPlugins: [
+            require('remark-code-import'),
+            require('remark-import-partial'),
+          ],
+          versions: {
+            current: {
+              label: 'IOTA',
+              badge: true,
+            },
+          },
+        },
+      ],
+      [
+        '@docusaurus/plugin-content-docs',
+        {
+          id: 'identity-rs-0-5',
+          path: path.resolve(__dirname, 'docs/identity.rs/v0.5.0/docs'),
+          routeBasePath: 'identity.rs',
+          sidebarPath: path.resolve(
+            __dirname,
+            'docs/identity.rs/v0.5.0/sidebars.js',
+          ),
+          editUrl: 'https://github.com/iotaledger/iota-wiki/edit/the-merge-moveRemainingDocsToWiki/',
+          remarkPlugins: [
+            require('remark-code-import'),
+            require('remark-import-partial'),
+            require('remark-remove-comments'),
+          ],
+          versions: {
+            current: {
+              label: '0.5',
+              path: '0.5',
+              badge: true,
+            },
+          },
+        },
+      ],
+      [
+        '@docusaurus/plugin-content-docs',
+        {
+          id: 'identity-rs-0-6',
+          path: path.resolve(__dirname, 'docs/identity.rs/v0.6.0/docs'),
+          routeBasePath: 'identity.rs',
+          sidebarPath: path.resolve(
+            __dirname,
+            'docs/identity.rs/v0.6.0/sidebars.js',
+          ),
+          editUrl: 'https://github.com/iotaledger/iota-wiki/edit/the-merge-moveRemainingDocsToWiki/',
+          remarkPlugins: [
+            require('remark-code-import'),
+            require('remark-import-partial'),
+            require('remark-remove-comments'),
+          ],
+          versions: {
+            current: {
+              label: '0.6',
+              badge: true,
+            },
+          },
+        },
+      ],
+      //plugins
+      [
         'docusaurus-plugin-openapi-docs',
         {
           id: 'openapi',
@@ -287,19 +538,36 @@ module.exports = async () => {
           },
         },
       ],
-      [
-        '@docusaurus/plugin-content-docs',
-        {
-            id: 'blueprints',
-            path: path.resolve(__dirname, 'external/blueprints'),
-            routeBasePath: 'blueprints',
-            sidebarPath: require.resolve('./external/blueprints/sidebars.js'),
-            editUrl: 'https://github.com/iota-wiki/iota-wiki/edit/main/',
-        }
-      ]
+    ],
+
+    stylesheets: [
+      {
+        href: 'https://cdn.jsdelivr.net/npm/katex@0.13.24/dist/katex.min.css',
+        type: 'text/css',
+        integrity:
+          'sha384-odtC+0UGzzFL/6PNoE8rX/SPcQDXBJ+uRepguP4QkPCm2LBxH3FA3y+fKSiJ+AmM',
+        crossorigin: 'anonymous',
+      },
     ],
     staticDirectories: [
-      path.resolve(__dirname, 'external/blueprints/static'),
+      path.resolve(__dirname, './docs/blueprints/static'),
+      path.resolve(__dirname, './docs/chronicle/static'),
+      path.resolve(__dirname, './docs/goshimmer/static'),
+      path.resolve(__dirname, './docs/hornet/static'),
+      path.resolve(__dirname, './docs/integration-services/static'),
+      path.resolve(__dirname, './docs/introduction-docs/static'),
+      path.resolve(
+        __dirname,
+        './docs/iota-2.0-research-specifications/static',
+      ),
+      path.resolve(__dirname, './docs/iota.rs/static'),
+      path.resolve(__dirname, './docs/identity.rs/v0.5.0/static'),
+      path.resolve(__dirname, './docs/identity.rs/v0.6.0/static'),
+      path.resolve(__dirname, './docs/streams/static'),
+      path.resolve(__dirname, './docs/stronghold.rs/static'),
+      path.resolve(__dirname, './docs/wallet.rs/static'),
+      path.resolve(__dirname, './docs/zebra-iota-edge-sdk/static'),
+      path.resolve(__dirname, '/static'),
     ],
   };
 };

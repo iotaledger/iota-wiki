@@ -1,0 +1,130 @@
+---
+keywords:
+- testing
+- solo testing environment
+- call context
+- smart contract functionalities
+- data types
+- type conversions
+- Go
+
+description: Testing of smart contracts happens in the Solo testing environment. This enables synchronous, deterministic testing of smart contract functionality without the overhead of having to start nodes, set up a committee, and send transactions over the Tangle.
+
+image: /img/logo/WASP_logo_dark.png
+---
+import Tabs from "@theme/Tabs"
+import TabItem from "@theme/TabItem"
+
+# Testing Smart Contracts
+
+Testing of smart contracts happens in the [Solo](../solo/what-is-solo.md) testing
+environment. This enables synchronous, deterministic testing of smart contract
+functionalities without the overhead of having to start nodes, set up a committee, and
+send transactions over the Tangle. Instead, you can use Go's built-in test environment in
+combination with Solo to deploy chains and smart contracts and simulate transactions.
+
+Solo directly interacts with the ISC code, and therfore uses all the ISC-specific data
+types directly. Our Wasm smart contracts cannot access these types directly, because they
+run in a separate, sandboxed environment. Therefore, WasmLib implements its
+[own versions](types.mdx) of these data types, and the VM layer acts as a data type
+translator between both systems.
+
+The impact of this type transformation used to be that to be able to write tests in the
+solo environment the user also needed to know about the ISC-specific data types and type
+conversion functions, and exactly how to properly pass such data in and out of smart
+contract function calls. This burdened the user with an unnecessary increased learning
+curve and countless unnecessary type conversions.
+
+With the introduction of the [Schema Tool](usage.mdx), we were able to remove this
+impedance mismatch and allow the users to test smart contract functionality in terms of
+the WasmLib data types and functions that they are already familiar with. To that end, we
+introduced `SoloContext`, a new [Call Context](context.mdx) that specifically works with
+the Solo testing environment. We aimed to simplify the testing of smart contracts as much
+as possible, keeping the full Solo interface hidden as much as possible, but still
+available when necessary.
+
+The only concession we still have to make is to the language used. Because Solo only works
+in the Go language environment, we have to use the Go language version of the interface
+code that the [Schema Tool](usage.mdx) generates when testing our smart contracts. Because
+WasmLib programming for Go, Rust, and TypeScript are practically identical, we feel that
+this is not unsurmountable. The WasmLib interfaces only differ slightly if language
+idiosyncrasies force differences in syntax or naming conventions. This hurdle used to be a
+lot bigger, when direct programming of Solo had to be used, and most type conversions had
+to be done manually. Now we get to use the generated compile-time type-checked interface
+to our smart contract functions that we are already familiar with.
+
+Let's look at the simplest way of initializing a smart contract by using the new
+`SoloContext` in a test function:
+
+<Tabs defaultValue="go"
+      values={[
+          {label: 'Go', value: 'go'},
+      ]}>
+
+<TabItem value="go">
+
+```go
+func TestDeploy(t *testing.T) {
+    ctx := wasmsolo.NewSoloContext(t, dividend.ScName, dividend.OnDispatch)
+    require.NoError(t, ctx.ContractExists(dividend.ScName))
+}
+```
+
+</TabItem>
+</Tabs>
+
+The first line will automatically create a new chain, and upload and deploy the provided
+example `dividend` contract to this chain. It returns a `SoloContext` for further use. The
+second line verifies the existence of the deployed contract on the chain associated with
+that [Call Context](context.mdx).
+
+Here is another part of the `dividend` test code, where you can see how we wrap repetitive
+calls to smart contract functions that are used in multiple tests:
+
+<Tabs defaultValue="go"
+      values={[
+          {label: 'Go', value: 'go'},
+      ]}>
+
+<TabItem value="go">
+
+```go
+func dividendMember(ctx *wasmsolo.SoloContext, agent *wasmsolo.SoloAgent, factor uint64) {
+    member := dividend.ScFuncs.Member(ctx)
+    member.Params.Address().SetValue(agent.ScAgentID().Address())
+    member.Params.Factor().SetValue(factor)
+    member.Func.Post()
+}
+
+func dividendDivide(ctx *wasmsolo.SoloContext, amount uint64) {
+    divide := dividend.ScFuncs.Divide(ctx)
+    divide.Func.TransferBaseTokens(amount).Post()
+}
+
+func dividendGetFactor(ctx *wasmsolo.SoloContext, member *wasmsolo.SoloAgent) uint64 {
+    getFactor := dividend.ScFuncs.GetFactor(ctx)
+    getFactor.Params.Address().SetValue(member.ScAgentID().Address())
+    getFactor.Func.Call()
+    value := getFactor.Results.Factor().Value()
+    return value
+}
+```
+
+</TabItem>
+</Tabs>
+
+As you can see, we pass the `SoloContext` and the parameters to the wrapper functions,
+then use the `SoloContext` to create a [Function Descriptor](funcdesc.mdx) for the wrapped
+function, pass any parameters through the its [Params](params.mdx) proxy, and then either
+[`post()`](post.mdx) the function request or [`call()`](call.mdx) the function. Any
+results returned are extracted through the descriptor's [Results](results.mdx) proxy, and
+returned by the wrapper function.
+
+There is hardly any difference in the way the function interface is used within Wasm code
+or within Solo test code. The [Call Context](context.mdx) knows how to properly
+[`call()`](call.mdx) or [`post()`](post.mdx) the function call through the function
+descriptor. This makes for seamless testing of smart contracts.
+
+
+In the [next section](examples.mdx) we will go deeper into how the helper member functions
+of the SoloContext are used to simplify tests.

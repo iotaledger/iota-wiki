@@ -1,0 +1,99 @@
+---
+keywords:
+- function descriptor
+- return values
+- request
+- post
+- smart contract chain
+- Asynchronous function
+description: Asynchronous function calls between smart contracts are posted as requests on the Tangle. They allow you to invoke any smart contract function that is not a View on any smart contract chain.
+
+image: /img/logo/WASP_logo_dark.png
+---
+import Tabs from "@theme/Tabs"
+import TabItem from "@theme/TabItem"
+
+# Posting Asynchronous Requests
+
+Asynchronous function calls between smart contracts are posted as requests on the Tangle.
+They allow you to invoke any smart contract function that is not a View on any smart
+contract chain. You will notice that the behavior is very similar to a synchronous
+function call, but instead of using the [`call()`](call.mdx) method of the `func` member
+in the function descriptor, you will now use the `post()` or `postToChain()` methods. The
+`post()` method posts the request to the current chain, while `postToChain()` takes the
+chain ID of the desired chain as parameter.
+
+In addition to the previously discussed [`transferBaseTokens()`](call.mdx) and
+[`ofContract()`](call.mdx) methods, you can modify the behavior further by providing a
+`delay()` in seconds, which enables delayed execution of the request. This is of
+particular interest to smart contracts that need a delayed action like betting contracts
+with a timed betting round, or to create time-lock functionality in a smart contract.
+Here's how that works:
+
+<Tabs defaultValue="go"
+      groupId="language"
+      values={[
+          {label: 'Go', value: 'go'},
+          {label: 'Rust', value: 'rust'},
+          {label: 'TypeScript', value: 'ts'},
+      ]}>
+
+<TabItem value="go">
+
+```go
+eor := ScFuncs.EndOfRound(ctx)
+eor.Func.Delay(3600).Post()
+```
+
+</TabItem>
+<TabItem value="rust">
+
+```rust
+let eor = ScFuncs::end_of_round(ctx);
+eor.func.delay(3600).post();
+```
+
+</TabItem>
+<TabItem value="ts">
+
+```ts
+let eor = sc.ScFuncs.endOfRound(ctx);
+eor.func.delay(3600).post();
+```
+
+</TabItem>
+</Tabs>
+
+Because it is posted as a request on the Tangle, and it is not possible to have a request
+without a transfer, _an asynchronous request always needs to send at least some tokens_.
+In fact, there is a minimum amount of tokens to send, because you need to cover the gas
+that is necessary to run the function call. You can specify the tokens explicitly, in the
+same way we did previously with [synchronous calls](call.mdx), or you can have WasmLib
+specify a minimum amount of tokens automatically. Any tokens that are not used will end up
+in the caller's account on the chain.
+
+So, if you post to a function that expects tokens you just specify the amount of tokens
+required, but if you post to a function that does not expect any tokens then you can have
+WasmLib send the minimum amount for you.
+
+**Providing a `delay()` before a [`call()`](call.mdx) will result in a panic**. We do not
+know the intention of the user until the actual [`call()`](call.mdx) or
+[`post()`](post.mdx) is encountered, so we cannot check for this at compile-time unless we
+are willing to accept a lot of extra overhead. It should not really be a problem because
+using `delay()` is rare and using it with [`call()`](call.mdx) cannot have been the
+intention.
+
+The function that posts the request through the function descriptor will immediately
+continue execution and does not wait for its completion. Therefore, it is not possible to
+directly retrieve the return values from such a call.
+
+If you need some return values, you will have to create a mechanism that can do so, for
+example by providing a callback chain/contract/function combination as part of the input
+parameters of the requested function, so that upon completion that function can
+asynchronously post the results to the indicated function. It will require a certain
+degree of cooperation between both smart contracts. In the future we will probably be
+looking at providing a generic mechanism for this.
+
+
+In the next section we will look at how we can use the function descriptors when
+[testing smart contracts with Solo](test.mdx).

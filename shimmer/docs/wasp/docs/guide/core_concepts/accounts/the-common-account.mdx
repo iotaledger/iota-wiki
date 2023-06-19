@@ -1,0 +1,75 @@
+---
+description: The common account is controlled by the chain owner, and is used to store funds collected by fees, invalid contracts or sent to the L1 chain address.
+image: /img/logo/WASP_logo_dark.png
+keywords:
+- smart contracts
+- deposit
+- transfer
+- chain
+- Rust
+- Solo
+- how to
+---
+
+import Tabs from "@theme/Tabs"
+import TabItem from "@theme/TabItem"
+
+# The Common Account
+
+The common account is controlled by the chain owner defined in the chain [root contract](../core_contracts/root.md).
+
+This account is used to store funds collected by fees, or sent to the chain's L1 address, or to invalid contracts (this
+way the funds are not permanently lost).
+
+## `harvest`
+
+The `harvest` entry point allows the chain owner to move all funds available in the common account to their own L2
+account.
+
+### Parameters
+
+- `ParamForceMinimumBaseTokens`: The amount of base tokens to leave in the common account (default: 3000).
+
+<Tabs
+    defaultValue="solo"
+    values={[
+        {label: 'Solo', value: 'solo'},
+        {label: 'Solo (Schema)', value: 'soloctx'},
+        {label: 'Rust (Schema)', value: 'rust'},
+        {label: 'Go (Schema)', value: 'go'},
+    ]}>
+<TabItem value="solo">
+
+```go
+req := solo.NewCallParams(accounts.Contract.Name, accounts.FuncHarvest.Name)
+_, err := chain.PostRequestSync(req.WithMaxAffordableGasBudget(), wallet)
+require.NoError(t, err)
+```
+
+</TabItem>
+<TabItem value="soloctx">
+
+```go
+w := coreaccounts.ScFuncs.Harvest(ctx.Sign(wallet))
+w.Func.TransferBaseTokens(1).PostToChain(chainID)
+require.NoError(t, ctx.Err)
+```
+
+</TabItem>
+<TabItem value="rust">
+
+```rust
+let h = coreaccounts::ScFuncs::harvest(ctx);
+h.func.transfer_base_tokens(1).post_to_chain(chainID);
+```
+
+</TabItem>
+<TabItem value="go">
+
+```go
+w := coreaccounts.ScFuncs.Harvest(ctx)
+w.Func.TransferBaseTokens(1).PostToChain(chainID)
+```
+
+</TabItem>
+</Tabs>

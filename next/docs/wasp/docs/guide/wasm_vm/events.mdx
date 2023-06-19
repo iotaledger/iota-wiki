@@ -1,0 +1,337 @@
+---
+keywords:
+- functions
+- state
+- structures
+- storage
+- named fields
+
+description: The smart contracts can trigger events that the user can subscribe to and that convey changes to its state.
+
+image: /img/logo/WASP_logo_dark.png
+---
+
+import Tabs from "@theme/Tabs"
+import TabItem from "@theme/TabItem"
+
+# Triggering Events
+
+Smart contracts do not live in a vacuum. Even though they run in a very limited sandbox,
+from a larger perspective there will have to be a way for users to interact with them.
+Since smart contracts are essentially event-driven, and requests run asynchronously from
+the user's perspective, there is a need for triggering events by the smart contracts
+themselves. Of course, it would be possible for users to periodically call a view function
+to retrieve the latest state of the smart contract, but this burdens the nodes
+unnecessarily. A better way is to have the smart contracts trigger events that the user
+can subscribe to and that convey changes to its state.
+
+To support events the ISC sandbox provides only a very rudimentary interface. The
+`ScFuncContext` [Call Context](context.mdx) exposes this interface through its `event()`
+function, which takes a completely arbitrary text string as parameter. It is up to the
+smart contract creator to format this text string in a meaningful way, and it's up to the
+user to interpret this text string correctly. This is error-prone, inconsistent, and means
+that a lot of code needs to be written both on the smart contract side that generates
+these events, and on the client side that handles these events. And with any change to the
+formatting of these events both ends need to be modified to stay in sync.
+
+This is why the [Schema Tool](usage.mdx) allows you to define your own structured events.
+The [Schema Tool](usage.mdx) will generate a structure that will become part of all Func
+function contexts. Events can only be triggered from within a Func. They will become part
+of the state of the smart contract because every event is logged in the core `blocklog`
+contract. Therefore, events cannot be triggered from within a View.
+
+For each event defined in the `events` section of the schema definition file, this events
+structure will contain a member function that takes the defined types of parameters and
+will automatically encode the event as a consistently formatted string and pass it to the
+`event()` function. The string consists of the name of the event, a timestamp, and string
+representations of each field, all separated by vertical bars.
+
+Here is the `events` section that can be found in the demo `fairroulette` smart contract:
+
+<Tabs defaultValue="yaml"
+      values={[
+          {label: 'schema.yaml', value: 'yaml'},
+          {label: 'schema.json', value: 'json'},
+      ]}>
+<TabItem value="yaml">
+
+```yaml
+events:
+  bet:
+    address: Address # address of better
+    amount: Uint64 # amount of tokens to bet
+    number: Uint16 # number to bet on
+  payout:
+    address: Address # address of winner
+    amount: Uint64 # amount of tokens won
+  round:
+    number: Uint32 # current betting round number
+  start:
+  stop:
+  winner:
+    number: Uint16 # the winning number
+```
+
+</TabItem>
+</Tabs>
+
+The [Schema Tool](usage.mdx) will generate `events.xx` which contains the following code
+for the `FairRouletteEvents` struct:
+
+<Tabs defaultValue="go"
+      groupId="language"
+      values={[
+          {label: 'Go', value: 'go'},
+          {label: 'Rust', value: 'rust'},
+          {label: 'TypeScript', value: 'ts'},
+      ]}>
+
+<TabItem value="go">
+
+```go
+package fairroulette
+
+import "github.com/iotaledger/wasp/packages/wasmvm/wasmlib/go/wasmlib"
+import "github.com/iotaledger/wasp/packages/wasmvm/wasmlib/go/wasmlib/wasmtypes"
+
+type FairRouletteEvents struct {
+}
+
+func (e FairRouletteEvents) Bet(
+	// address of better
+	address wasmtypes.ScAddress,
+	// amount of tokens to bet
+	amount uint64,
+	// number to bet on
+	number uint16,
+) {
+	evt := wasmlib.NewEventEncoder("fairroulette.bet")
+	evt.Encode(wasmtypes.AddressToString(address))
+	evt.Encode(wasmtypes.Uint64ToString(amount))
+	evt.Encode(wasmtypes.Uint16ToString(number))
+	evt.Emit()
+}
+
+func (e FairRouletteEvents) Payout(
+	// address of winner
+	address wasmtypes.ScAddress,
+	// amount of tokens won
+	amount uint64,
+) {
+	evt := wasmlib.NewEventEncoder("fairroulette.payout")
+	evt.Encode(wasmtypes.AddressToString(address))
+	evt.Encode(wasmtypes.Uint64ToString(amount))
+	evt.Emit()
+}
+
+func (e FairRouletteEvents) Round(
+	// current betting round number
+	number uint32,
+) {
+	evt := wasmlib.NewEventEncoder("fairroulette.round")
+	evt.Encode(wasmtypes.Uint32ToString(number))
+	evt.Emit()
+}
+
+func (e FairRouletteEvents) Start() {
+	evt := wasmlib.NewEventEncoder("fairroulette.start")
+	evt.Emit()
+}
+
+func (e FairRouletteEvents) Stop() {
+	evt := wasmlib.NewEventEncoder("fairroulette.stop")
+	evt.Emit()
+}
+
+func (e FairRouletteEvents) Winner(
+	// the winning number
+	number uint16,
+) {
+	evt := wasmlib.NewEventEncoder("fairroulette.winner")
+	evt.Encode(wasmtypes.Uint16ToString(number))
+	evt.Emit()
+}
+```
+
+</TabItem>
+<TabItem value="rust">
+
+```rust
+use wasmlib::*;
+
+pub struct FairRouletteEvents {
+}
+
+impl FairRouletteEvents {
+
+	pub fn bet(&self,
+        // address of better
+        address: &ScAddress,
+        // amount of tokens to bet
+        amount: u64,
+        // number to bet on
+        number: u16,
+    ) {
+		let mut evt = EventEncoder::new("fairroulette.bet");
+		evt.encode(&address_to_string(&address));
+		evt.encode(&uint64_to_string(amount));
+		evt.encode(&uint16_to_string(number));
+		evt.emit();
+	}
+
+	pub fn payout(&self,
+        // address of winner
+        address: &ScAddress,
+        // amount of tokens won
+        amount: u64,
+    ) {
+		let mut evt = EventEncoder::new("fairroulette.payout");
+		evt.encode(&address_to_string(&address));
+		evt.encode(&uint64_to_string(amount));
+		evt.emit();
+	}
+
+	pub fn round(&self,
+        // current betting round number
+        number: u32,
+    ) {
+		let mut evt = EventEncoder::new("fairroulette.round");
+		evt.encode(&uint32_to_string(number));
+		evt.emit();
+	}
+
+	pub fn start(&self) {
+		let mut evt = EventEncoder::new("fairroulette.start");
+		evt.emit();
+	}
+
+	pub fn stop(&self) {
+		let mut evt = EventEncoder::new("fairroulette.stop");
+		evt.emit();
+	}
+
+	pub fn winner(&self,
+        // the winning number
+        number: u16,
+    ) {
+		let mut evt = EventEncoder::new("fairroulette.winner");
+		evt.encode(&uint16_to_string(number));
+		evt.emit();
+	}
+}
+```
+
+</TabItem>
+<TabItem value="ts">
+
+```ts
+import * as wasmlib from "wasmlib";
+import * as wasmtypes from "wasmlib/wasmtypes";
+
+export class FairRouletteEvents {
+
+	bet(
+		// address of better
+		address: wasmtypes.ScAddress,
+		// amount of tokens to bet
+		amount: u64,
+		// number to bet on
+		number: u16,
+	): void {
+		const evt = new wasmlib.EventEncoder("fairroulette.bet");
+		evt.encode(wasmtypes.addressToString(address));
+		evt.encode(wasmtypes.uint64ToString(amount));
+		evt.encode(wasmtypes.uint16ToString(number));
+		evt.emit();
+	}
+
+	payout(
+		// address of winner
+		address: wasmtypes.ScAddress,
+		// amount of tokens won
+		amount: u64,
+	): void {
+		const evt = new wasmlib.EventEncoder("fairroulette.payout");
+		evt.encode(wasmtypes.addressToString(address));
+		evt.encode(wasmtypes.uint64ToString(amount));
+		evt.emit();
+	}
+
+	round(
+		// current betting round number
+		number: u32,
+	): void {
+		const evt = new wasmlib.EventEncoder("fairroulette.round");
+		evt.encode(wasmtypes.uint32ToString(number));
+		evt.emit();
+	}
+
+	start(): void {
+		const evt = new wasmlib.EventEncoder("fairroulette.start");
+		evt.emit();
+	}
+
+	stop(): void {
+		const evt = new wasmlib.EventEncoder("fairroulette.stop");
+		evt.emit();
+	}
+
+	winner(
+		// the winning number
+		number: u16,
+	): void {
+		const evt = new wasmlib.EventEncoder("fairroulette.winner");
+		evt.encode(wasmtypes.uint16ToString(number));
+		evt.emit();
+	}
+}
+```
+
+</TabItem>
+</Tabs>
+
+Notice how the generated functions use the WasmLib EventEncoder to encode the parameters
+into a single string before emitting it. Here is the way in which `fairroulette` emits the
+`bet` event in its smart contract code:
+
+
+<Tabs defaultValue="go"
+      groupId="language"
+      values={[
+          {label: 'Go', value: 'go'},
+          {label: 'Rust', value: 'rust'},
+          {label: 'TypeScript', value: 'ts'},
+      ]}>
+
+<TabItem value="go">
+
+```go
+    f.Events.Bet(bet.Better.Address(), bet.Amount, bet.Number)
+```
+
+</TabItem>
+<TabItem value="rust">
+
+```rust
+    f.events.bet(&bet.better.address(), bet.amount, bet.number);
+```
+
+</TabItem>
+<TabItem value="ts">
+
+```ts
+    f.events.bet(bet.better.address(), bet.amount, bet.number);
+```
+
+</TabItem>
+</Tabs>
+
+The smart contract client code can define handler functions to listen in to the event
+stream and respond to any events it deems noteworthy. The [Schema Tool](usage.mdx) will
+automatically generate the necessary client side code that properly listens for the
+events, parses the event strings into a type-safe structure, and passes this structure to
+the corresponding handler function.
+
+
+In the next section we will explore how the [Schema Tool](usage.mdx) helps to simplify
+smart contract [function definitions](funcs.mdx).

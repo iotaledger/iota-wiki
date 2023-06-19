@@ -1,0 +1,112 @@
+---
+keywords:
+- params
+- parameters
+- field definition
+- field type
+- optional
+- schema tool
+- structure
+- immutable
+
+description: The optional params subsection contains field definitions for each of the parameters that a function takes.
+
+image: /img/logo/WASP_logo_dark.png
+---
+import Tabs from "@theme/Tabs"
+import TabItem from "@theme/TabItem"
+
+# Function Parameters
+
+The optional [`params`](params.mdx) subsection contains field definitions for each of the
+parameters that a function takes. The layout of the field definitions is identical to the
+[`state`](state.mdx) subsection field definitions with one addition, the field type can be
+followed by a question mark to indicate that the parameter is optional.
+
+The [Schema Tool](usage.mdx) will automatically generate an immutable structure with
+member variables for proxies to each parameter variable in the [Params](params.mdx) map.
+It will also generate code to check the presence of each non-optional parameter, and it
+will also verify the parameter's data type. This checking is done before the function is
+called. The user will be able to immediately start using the parameter proxy through the
+structure that is passed to the function.
+
+When this subsection is empty or completely omitted, no structure will be generated or
+passed to the function.
+
+For example, here is the structure generated for the immutable [Params](params.mdx) for
+the `member` function:
+
+<Tabs defaultValue="go"
+      groupId="language"
+      values={[
+          {label: 'Go', value: 'go'},
+          {label: 'Rust', value: 'rust'},
+          {label: 'TypeScript', value: 'ts'},
+      ]}>
+
+<TabItem value="go">
+
+```go
+type ImmutableMemberParams struct {
+	proxy wasmtypes.Proxy
+}
+
+// address of dividend recipient
+func (s ImmutableMemberParams) Address() wasmtypes.ScImmutableAddress {
+	return wasmtypes.NewScImmutableAddress(s.proxy.Root(ParamAddress))
+}
+
+// relative division factor
+func (s ImmutableMemberParams) Factor() wasmtypes.ScImmutableUint64 {
+	return wasmtypes.NewScImmutableUint64(s.proxy.Root(ParamFactor))
+}
+```
+
+</TabItem>
+<TabItem value="rust">
+
+```rust
+#[derive(Clone)]
+pub struct ImmutableMemberParams {
+	pub(crate) proxy: Proxy,
+}
+
+impl ImmutableMemberParams {
+    // address of dividend recipient
+    pub fn address(&self) -> ScImmutableAddress {
+		ScImmutableAddress::new(self.proxy.root(PARAM_ADDRESS))
+	}
+
+    // relative division factor
+    pub fn factor(&self) -> ScImmutableUint64 {
+		ScImmutableUint64::new(self.proxy.root(PARAM_FACTOR))
+	}
+}
+```
+
+</TabItem>
+<TabItem value="ts">
+
+```ts
+export class ImmutableMemberParams extends wasmtypes.ScProxy {
+	// address of dividend recipient
+	address(): wasmtypes.ScImmutableAddress {
+		return new wasmtypes.ScImmutableAddress(this.proxy.root(sc.ParamAddress));
+	}
+
+	// relative division factor
+	factor(): wasmtypes.ScImmutableUint64 {
+		return new wasmtypes.ScImmutableUint64(this.proxy.root(sc.ParamFactor));
+	}
+}
+```
+
+</TabItem>
+</Tabs>
+
+Note that the [Schema Tool](usage.mdx) will also generate a mutable version of the
+structure, suitable for providing the parameters when calling this smart contract function
+from any [Call Context](context.mdx).
+
+
+In the next section, we will look at the [`results`](results.mdx) subsection.

@@ -1,0 +1,138 @@
+---
+keywords:
+  - testing
+  - colored tokens
+  - time locks
+  - solo
+  - plain iotas
+  - balance
+  - mint
+  - delay
+
+description: You can post a time-locked request by using the Delay() method. You can mint NFTs by using the MintNFT() method.
+
+image: /img/logo/WASP_logo_dark.png
+---
+
+import Tabs from "@theme/Tabs"
+import TabItem from "@theme/TabItem"
+
+# Minting NFTs and Time Locks
+
+Let's examine some less commonly used member functions of the SoloContext. We will switch
+to the `fairauction` example to show their usage. Here is the `startAuction()` function of
+the `fairauction` test suite:
+
+<Tabs defaultValue="go"
+      values={[
+          {label: 'Go', value: 'go'},
+      ]}>
+
+<TabItem value="go">
+
+```go
+const (
+    description = "Cool NFTs for sale!"
+    deposit     = uint64(1000)
+    minBid      = uint64(500)
+)
+
+func startAuction(t *testing.T) (*wasmsolo.SoloContext, *wasmsolo.SoloAgent, wasmtypes.ScNftID) {
+    ctx := wasmsolo.NewSoloContext(t, fairauction.ScName, fairauction.OnDispatch)
+    auctioneer := ctx.NewSoloAgent()
+    nftID := ctx.MintNFT(auctioneer, []byte("NFT metadata"))
+    require.NoError(t, ctx.Err)
+
+    // start the auction
+    sa := fairauction.ScFuncs.StartAuction(ctx.Sign(auctioneer))
+    sa.Params.MinimumBid().SetValue(minBid)
+    sa.Params.Description().SetValue(description)
+    transfer := wasmlib.NewScTransferBaseTokens(deposit) // deposit, must be >=minimum*margin
+    transfer.AddNFT(&nftID)
+    sa.Func.Transfer(transfer).Post()
+    require.NoError(t, ctx.Err)
+
+    return ctx, auctioneer, nftID
+}
+```
+
+</TabItem>
+</Tabs>
+
+The function first sets up the SoloContext as usual, and then it performs quite a bit of
+extra work. This is because we want the startAuction() function to start an auction, so
+that the tests that subsequently use startAuction() can then focus on testing all kinds of
+bidding and auction results.
+
+First, we are going to need an agent that functions as the `auctioneer`. This auctioneer
+will auction off an NFT. To provide the auctioneer with this NFT we use the `MintNFT()`
+method to mint a fresh NFT into his account. The minting process will assign a unique NFT
+ID. Of course, we check that no error occurred during the minting process.
+
+Now we are going to start the auction by calling the `startAuction` function of the
+`fairauction` contract. We get the function descriptor in the usual way, but we also call
+the `Sign()` method of the SoloContext to make sure that the transaction we are about to
+post takes its assets from the auctioneer address, and the transaction will be signed with
+the corresponding private key. Very often you won't care who posts a request, and we have
+set it up in such a way that by default tokens come from the chain originator address,
+which has been seeded with tokens just for this occasion. But whenever it is important
+where the tokens come from, or who invokes the request, you need to specify the agent
+involved by using the Sign() method.
+
+Next we set up the function parameters as usual. After the parameters have been set up, we
+see something new happening. We create an `ScTransfer` proxy and initialize it with the
+base tokens that we need to deposit, plus the freshly minted NFT that we are auctioning.
+Next we use the `Transfer()` method to pass this proxy before posting the request. This is
+exactly how we would do it from within the smart contract code. Note that the function
+`NewScTransferBaseTokens()` is used as a shorthand to immediately initialize the new
+`ScTransfer` proxy with the desired amount of base tokens.
+
+Finally, we make sure there was no error after posting the request and return the
+SoloContext, `auctioneer` and `nftID`. That concludes the startAuction() function.
+
+Here is the first test function that uses our startAuction() function:
+
+<Tabs defaultValue="go"
+      values={[
+          {label: 'Go', value: 'go'},
+      ]}>
+
+<TabItem value="go">
+
+```go
+func TestStartAuction(t *testing.T) {
+    ctx, auctioneer, nftID := startAuction(t)
+
+    nfts := ctx.Chain.L2NFTs(auctioneer.AgentID())
+    require.Len(t, nfts, 0)
+    nfts = ctx.Chain.L2NFTs(ctx.Account().AgentID())
+    require.Len(t, nfts, 1)
+    require.Equal(t, nftID, ctx.Cvt.ScNftID(&nfts[0]))
+
+    // remove pending finalize_auction from backlog
+    ctx.AdvanceClockBy(61 * time.Minute)
+    require.True(t, ctx.WaitForPendingRequests(1))
+}
+```
+
+</TabItem>
+</Tabs>
+
+This test function checks that the NFT was moved by `startAuction` from the auctioneer's
+on-chain account to the chain's on-chain account.
+
+The `startAuction` function of the smart contract will also have posted a time-locked
+request to the `finalizeAuction` function by using the `Delay()` method. Therefore, we
+need to remove the pending `finalizeAuction` request from the backlog.
+
+First we move the logical clock forward to a point in time when that request is supposed
+to have been triggered. Then we wait for this request to actually be processed. Note that
+this will happen in a separate goroutine in the background, so we explicitly wait for the
+request counters to catch up with the one request that is pending.
+
+The `WaitForPendingRequests()` method can also be used whenever a smart contract function
+is known to [`post()`](post.mdx) a request to itself. Such requests are not immediately
+executed, but added to the backlog, so you need to wait for these pending requests to
+actually be processed. The advantage of having to explicitly wait for those requests is
+that you can inspect the in-between state, which means that you can test even a function
+that posts a request in isolation.

@@ -1,0 +1,192 @@
+---
+keywords:
+- state
+- access
+- storage
+- key
+- data
+- value
+
+description: The smart contract state storage on the host consists of a single key/value map, as long as you access the data in the same way that you used to store it, you will always get valid data back.
+
+image: /img/logo/WASP_logo_dark.png
+---
+import Tabs from "@theme/Tabs"
+import TabItem from "@theme/TabItem"
+
+# Smart Contract State
+
+The smart contract state storage on the host consists of a single key/value map. Both key
+and value are raw data bytes. As long as you access the data in the same way that you used
+to store it, you will always get valid data back. The [Schema Tool](usage.mdx) will create
+a type-safe access layer to make sure that data storage and retrieval always uses the
+expected data type.
+
+The `state` section in the schema definition file contains a number of field definitions
+that together define the variables that are stored in the state storage. Each field
+definition uses a YAML key/value pair to define the name and data type of the field. The
+YAML key defines the field name. The YAML value (a string) defines the field's data type,
+and can be followed by an optional comment that describes the field.
+
+The [Schema Tool](usage.mdx) will use this information to generate the specific code that
+accesses the state variables in a type-safe way. Let's examine the `state` section of the
+`dividend` example in more detail:
+
+<Tabs defaultValue="yaml"
+    values={[
+        {label: 'schema.yaml', value: 'yaml'},
+     ]}>
+<TabItem value="yaml">
+
+```yaml
+state:
+  memberList: Address[] # array with all the recipients of this dividend
+
+  # factors per member
+
+  members: map[Address]Uint64 # map with all the recipient factors of this dividend
+  owner: AgentID # owner of contract, the only one who can call 'member' func
+  totalFactor: Uint64 # sum of all recipient factors
+```
+
+</TabItem>
+</Tabs>
+
+Let's start with the simplest state variables. `totalFactor` is an Uint64, and `owner` is
+an AgentID. Both are predefined [WasmLib value types](../wasm_vm/types.mdx).
+
+Then you have the `memberList` variable. The empty brackets `[]` indicate that this is an
+array. The brackets immediately follow the homogenous type of the elements in the array,
+which in this case is the predefined Address value type.
+
+Finally, you have the `members` variable. The `map[]` indicates that this is a map.
+Between the brackets is the homogenous type of the keys, which in this case are of the
+predefined Address type. The brackets are immediately followed by the homogenous type of
+the values in the map, which in this case are of the predefined Uint64 type.
+
+Here is part of the corresponding code in `state.xx` that the [Schema Tool](usage.mdx)
+generates. The `MutableDividendState` struct defines a type-safe interface to access each
+of the state variables through mutable proxies:
+
+<Tabs defaultValue="go"
+      groupId="language"
+      values={[
+          {label: 'Go', value: 'go'},
+          {label: 'Rust', value: 'rust'},
+          {label: 'TypeScript', value: 'ts'},
+      ]}>
+
+<TabItem value="go">
+
+```go
+type MutableDividendState struct {
+	proxy wasmtypes.Proxy
+}
+
+func (s MutableDividendState) AsImmutable() ImmutableDividendState {
+	return ImmutableDividendState(s)
+}
+
+// array with all the recipients of this dividend
+func (s MutableDividendState) MemberList() ArrayOfMutableAddress {
+	return ArrayOfMutableAddress{proxy: s.proxy.Root(StateMemberList)}
+}
+
+// map with all the recipient factors of this dividend
+func (s MutableDividendState) Members() MapAddressToMutableUint64 {
+	return MapAddressToMutableUint64{proxy: s.proxy.Root(StateMembers)}
+}
+
+// owner of contract, the only one who can call 'member' func
+func (s MutableDividendState) Owner() wasmtypes.ScMutableAgentID {
+	return wasmtypes.NewScMutableAgentID(s.proxy.Root(StateOwner))
+}
+
+// sum of all recipient factors
+func (s MutableDividendState) TotalFactor() wasmtypes.ScMutableUint64 {
+	return wasmtypes.NewScMutableUint64(s.proxy.Root(StateTotalFactor))
+}
+```
+
+</TabItem>
+<TabItem value="rust">
+
+```rust
+#[derive(Clone)]
+pub struct MutableDividendState {
+	pub(crate) proxy: Proxy,
+}
+
+impl MutableDividendState {
+    pub fn as_immutable(&self) -> ImmutableDividendState {
+		ImmutableDividendState { proxy: self.proxy.root("") }
+	}
+
+    // array with all the recipients of this dividend
+    pub fn member_list(&self) -> ArrayOfMutableAddress {
+		ArrayOfMutableAddress { proxy: self.proxy.root(STATE_MEMBER_LIST) }
+	}
+
+    // map with all the recipient factors of this dividend
+    pub fn members(&self) -> MapAddressToMutableUint64 {
+		MapAddressToMutableUint64 { proxy: self.proxy.root(STATE_MEMBERS) }
+	}
+
+    // owner of contract, the only one who can call 'member' func
+    pub fn owner(&self) -> ScMutableAgentID {
+		ScMutableAgentID::new(self.proxy.root(STATE_OWNER))
+	}
+
+    // sum of all recipient factors
+    pub fn total_factor(&self) -> ScMutableUint64 {
+		ScMutableUint64::new(self.proxy.root(STATE_TOTAL_FACTOR))
+	}
+}
+```
+
+</TabItem>
+<TabItem value="ts">
+
+```ts
+export class MutableDividendState extends wasmtypes.ScProxy {
+	asImmutable(): sc.ImmutableDividendState {
+		return new sc.ImmutableDividendState(this.proxy);
+	}
+
+	// array with all the recipients of this dividend
+	memberList(): sc.ArrayOfMutableAddress {
+		return new sc.ArrayOfMutableAddress(this.proxy.root(sc.StateMemberList));
+	}
+
+	// map with all the recipient factors of this dividend
+	members(): sc.MapAddressToMutableUint64 {
+		return new sc.MapAddressToMutableUint64(this.proxy.root(sc.StateMembers));
+	}
+
+	// owner of contract, the only one who can call 'member' func
+	owner(): wasmtypes.ScMutableAgentID {
+		return new wasmtypes.ScMutableAgentID(this.proxy.root(sc.StateOwner));
+	}
+
+	// sum of all recipient factors
+	totalFactor(): wasmtypes.ScMutableUint64 {
+		return new wasmtypes.ScMutableUint64(this.proxy.root(sc.StateTotalFactor));
+	}
+}
+```
+
+</TabItem>
+</Tabs>
+
+As you can see, the schema tool has generated a proxy interface for the mutable `dividend`
+state, called `MutableDividendState`. It has a 1-to-1 correspondence to the `state`
+section in the schema definition file. Each member function accesses a type-safe proxy
+object for the corresponding variable. In addition, the [Schema Tool](usage.mdx) generates
+any necessary intermediate map and array proxy types that force the usage of their
+respective homogenous types. In the above example both `ArrayOfMutableAddress` and
+`MapAddressToMutableUint64` are examples of such automatically generated proxy types.
+See the full `state.xx` for more details.
+
+
+In the next section we will explore how the [Schema Tool](usage.mdx) helps to simplify
+[triggering events](events.mdx).
