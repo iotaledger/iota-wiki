@@ -10,6 +10,8 @@ keywords:
 - Create
 - Publish
 ---
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 import Announcement from '../../src/partials/_announcement.mdx';
 
 <Announcement/>
@@ -30,9 +32,30 @@ Select your programming language of choice and press the green play button to ex
 
 :::
 
-```rust reference
-https://github.com/iotaledger/identity.rs/tree/support/v0.6/examples/account/create_did.rs
+<Tabs
+    groupId="programming-languages"
+    defaultValue="nodejs"
+    values={[
+        { label: "Node.js", value: "nodejs" },
+        { label: "Rust", value: "rust" }
+    ]}
+>
+<TabItem value="nodejs">
+
+```ts reference
+https://github.com/iotaledger/identity.rs/blob/support/v0.6/bindings/wasm/examples-account/src/create_did.ts
 ```
+
+</TabItem>
+<TabItem value="rust">
+
+```rust reference
+https://github.com/iotaledger/identity.rs/blob/support/v0.6/examples/account/create_did.rs
+```
+
+</TabItem>
+</Tabs>
+
 
 The first step in this example is the creation of an account. The account is a stateful object that manages one or more identities. The account provides an interface to execute high-level operations on identities, such as [creating](../concepts/decentralized_identifiers/create.mdx) and [updating](../concepts/decentralized_identifiers/update.mdx)) them.
 
