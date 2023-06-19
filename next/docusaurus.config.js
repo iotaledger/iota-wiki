@@ -538,6 +538,18 @@ module.exports = {
         editUrl: 'https://github.com/iotaledger/inx-spammer/edit/develop/documentation',
       }
     ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'stronghold-rs',
+        path: path.resolve(__dirname, 'external/stronghold.rs/docs'),
+        routeBasePath: 'stronghold.rs',
+        sidebarPath: path.resolve(__dirname, 'external/stronghold.rs/sidebars.js'),
+        editUrl: 'https://github.com/iotaledger/stronghold/edit/dev/documentation',
+        remarkPlugins: [require('remark-code-import'), require('remark-import-partial'), require('remark-remove-comments'), math],
+        rehypePlugins: [katex],
+      }
+    ],
   ],
   staticDirectories: [
     path.resolve(__dirname, 'external/iota-sdk/static'),
@@ -553,6 +565,7 @@ module.exports = {
     path.resolve(__dirname, './external/wasp/static'),
     path.resolve(__dirname, './external/chronicle/static'),
     path.resolve(__dirname, './external/identity.rs/0.7-alpha/static'),
+    path.resolve(__dirname, './external/stronghold.rs/static'),
 
   ],
 };
