@@ -285,7 +285,7 @@ module.exports = async () => {
             'external/chronicle/sidebars.js',
           ),
           editUrl:
-            'https://github.com/iotaledger/iota-wiki/tree/the-merge-moveRemainingDocsToWiki/iota/external/chronicle.rs',
+            'https://github.com/iotaledger/iota-wiki/edit/the-merge-moveRemainingDocsToWiki/iota/external/chronicle.rs/docs',
           remarkPlugins: [
             require('remark-code-import'),
             require('remark-import-partial'),
@@ -309,7 +309,7 @@ module.exports = async () => {
             'external/goshimmer/sidebars.js',
           ),
           editUrl:
-            'https://github.com/iotaledger/iota-wiki/tree/the-merge-moveRemainingDocsToWiki/iota/external/goshimmer',
+            'https://github.com/iotaledger/iota-wiki/edit/the-merge-moveRemainingDocsToWiki/iota/external/goshimmer/docs',
         },
       ],
       [
@@ -320,7 +320,7 @@ module.exports = async () => {
           routeBasePath: 'hornet',
           sidebarPath: path.resolve(__dirname, 'external/hornet/sidebars.js'),
           editUrl:
-            'https://github.com/iotaledger/iota-wiki/tree/the-merge-moveRemainingDocsToWiki/iota/external/hornet',
+            'https://github.com/iotaledger/iota-wiki/edit/the-merge-moveRemainingDocsToWiki/iota/external/hornet/docs',
           versions: {
             current: {
               label: 'IOTA',
@@ -340,7 +340,7 @@ module.exports = async () => {
             'external/integration-services/sidebars.js',
           ),
           editUrl:
-            'https://github.com/iotaledger/iota-wiki/tree/the-merge-moveRemainingDocsToWiki/iota/external/integration-services',
+            'https://github.com/iotaledger/iota-wiki/edit/the-merge-moveRemainingDocsToWiki/iota/external/integration-services/docs',
         },
       ],
       [
@@ -354,7 +354,7 @@ module.exports = async () => {
             'external/introduction-docs/sidebars.js',
           ),
           editUrl:
-            'https://github.com/iotaledger/introduction-docs/edit/main/docs',
+            'https://github.com/iotaledger/iota-wiki/edit/the-merge-moveRemainingDocsToWiki/iota/external/introduction-docs/docs',
           remarkPlugins: [
             require('remark-code-import'),
             require('remark-import-partial'),
@@ -382,7 +382,7 @@ module.exports = async () => {
             'external/iota-2.0-research-specifications/sidebars.js',
           ),
           editUrl:
-            'https://github.com/iotaledger/IOTA-2.0-Research-Specifications/edit/main/docusaurus',
+            'https://github.com/iotaledger/iota-wiki/edit/the-merge-moveRemainingDocsToWiki/iota-2.0-Research-Specifications/docs',
           remarkPlugins: [math],
           rehypePlugins: [katex],
           include: ['*.md'],
@@ -396,7 +396,7 @@ module.exports = async () => {
           routeBasePath: 'streams',
           sidebarPath: path.resolve(__dirname, 'external/streams/sidebars.js'),
           editUrl:
-            'https://github.com/iotaledger/iota-wiki/tree/the-merge-moveRemainingDocsToWiki/iota/external/streams',
+            'https://github.com/iotaledger/iota-wiki/edit/the-merge-moveRemainingDocsToWiki/iota/external/streams/docs',
         },
       ],
       [
@@ -413,7 +413,7 @@ module.exports = async () => {
             'external/zebra-iota-edge-sdk/sidebars.js',
           ),
           editUrl:
-            'https://github.com/zebradevs/zebra-iota-edge-sdk/edit/main/documentation',
+              'https://github.com/iotaledger/iota-wiki/edit/the-merge-moveRemainingDocsToWiki/iota/external/zebra-iota-edge-sdk/docs',
         },
       ],
       [
@@ -427,7 +427,7 @@ module.exports = async () => {
             'external/stronghold.rs/sidebars.js',
           ),
           editUrl:
-            'https://github.com/iotaledger/iota-wiki/tree/the-merge-moveRemainingDocsToWiki/iota/external/stronghold',
+            'https://github.com/iotaledger/iota-wiki/edit/the-merge-moveRemainingDocsToWiki/iota/external/stronghold/docs',
           remarkPlugins: [
             require('remark-code-import'),
             require('remark-import-partial'),
@@ -448,7 +448,7 @@ module.exports = async () => {
             'external/wallet.rs/sidebars.js',
           ),
           editUrl:
-            'https://github.com/iotaledger/iota-wiki/tree/the-merge-moveRemainingDocsToWiki/iota/external/wallet.rs',
+            'https://github.com/iotaledger/iota-wiki/edit/the-merge-moveRemainingDocsToWiki/iota/external/wallet.rs/docs',
           remarkPlugins: [
             require('remark-code-import'),
             require('remark-import-partial'),
@@ -469,7 +469,7 @@ module.exports = async () => {
           routeBasePath: 'iota.rs',
           sidebarPath: path.resolve(__dirname, 'external/iota.rs/sidebars.js'),
           editUrl:
-            'https://github.com/iotaledger/iota-wiki/tree/the-merge-moveRemainingDocsToWiki/iota/external/iota.rs',
+            'https://github.com/iotaledger/iota-wiki/edit/the-merge-moveRemainingDocsToWiki/iota/external/iota.rs/docs/',
           remarkPlugins: [
             require('remark-code-import'),
             require('remark-import-partial'),
@@ -493,7 +493,7 @@ module.exports = async () => {
             'external/identity.rs/v0.5.0/sidebars.js',
           ),
           editUrl:
-            'https://github.com/iotaledger/iota-wiki/tree/the-merge-moveRemainingDocsToWiki/iota/external/identity.rs',
+            'https://github.com/iotaledger/iota-wiki/edit/the-merge-moveRemainingDocsToWiki/iota/external/identity.rs/docs',
           remarkPlugins: [
             require('remark-code-import'),
             require('remark-import-partial'),
@@ -519,7 +519,7 @@ module.exports = async () => {
             'external/identity.rs/v0.6.0/sidebars.js',
           ),
           editUrl:
-            'https://github.com/iotaledger/iota-wiki/tree/the-merge-moveRemainingDocsToWiki/iota/external/identity.rs',
+            'https://github.com/iotaledger/iota-wiki/edit/the-merge-moveRemainingDocsToWiki/iota/external/identity.rs/docs',
           remarkPlugins: [
             require('remark-code-import'),
             require('remark-import-partial'),

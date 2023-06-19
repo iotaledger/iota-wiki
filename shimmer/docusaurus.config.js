@@ -254,7 +254,7 @@ module.exports = {
         routeBasePath: 'iota.rs',
         sidebarPath: path.resolve(__dirname, 'external/iota.rs/sidebars.js'),
         editUrl:
-          'https://github.com/iotaledger/iota.rs/edit/develop/documentation',
+          'https://github.com/iotaledger/iota-wiki/edit/the-merge-moveRemainingDocsToWiki/shimmer/external/iota.rs/docs',
         remarkPlugins: [
           require('remark-code-import'),
           require('remark-import-partial'),
@@ -269,7 +269,7 @@ module.exports = {
         routeBasePath: 'wallet.rs',
         sidebarPath: path.resolve(__dirname, 'external/wallet.rs/sidebars.js'),
         editUrl:
-          'https://github.com/iotaledger/wallet.rs/edit/develop/documentation',
+          'https://github.com/iotaledger/iota-wiki/edit/the-merge-moveRemainingDocsToWiki/shimmer/external/wallet.rs/docs',
         remarkPlugins: [
           require('remark-code-import'),
           require('remark-import-partial'),
@@ -284,7 +284,7 @@ module.exports = {
         routeBasePath: 'hornet',
         sidebarPath: path.resolve(__dirname, 'external/hornet/sidebars.js'),
         editUrl:
-          'https://github.com/iotaledger/hornet/edit/develop/documentation',
+          'https://github.com/iotaledger/iota-wiki/edit/the-merge-moveRemainingDocsToWiki/shimmer/external/hornet/docs',
       },
     ],
     [
@@ -295,7 +295,7 @@ module.exports = {
         routeBasePath: 'goshimmer',
         sidebarPath: path.resolve(__dirname, 'external/goshimmer/sidebars.js'),
         editUrl:
-          'https://github.com/iotaledger/goshimmer/edit/develop/documentation',
+          'https://github.com/iotaledger/iota-wiki/edit/the-merge-moveRemainingDocsToWiki/shimmer/external/goshimmer/docs',
       },
     ],
     [
@@ -309,7 +309,7 @@ module.exports = {
           'external/introduction-docs/sidebars.js',
         ),
         editUrl:
-          'https://github.com/iotaledger/chrysalis-docs/edit/develop/docs',
+          'https://github.com/iotaledger/iota-wiki/edit/the-merge-moveRemainingDocsToWiki/shimmer/external/introduction-docs/docs',
         remarkPlugins: [
           require('remark-code-import'),
           require('remark-import-partial'),
@@ -331,7 +331,7 @@ module.exports = {
           'external/iota-2.0-research-specifications/sidebars.js',
         ),
         editUrl:
-          'https://github.com/iotaledger/IOTA-2.0-Research-Specifications/edit/main/docusaurus',
+            'https://github.com/iotaledger/iota-wiki/edit/the-merge-moveRemainingDocsToWiki/shimmer/external/iota-2.0-research-specifications/docs',
         remarkPlugins: [math],
         rehypePlugins: [katex],
         include: ['*.md'],
@@ -345,7 +345,7 @@ module.exports = {
         routeBasePath: 'smart-contracts',
         sidebarPath: path.resolve(__dirname, 'external/wasp/sidebars.js'),
         editUrl:
-          'https://github.com/iotaledger/wasp/edit/develop/documentation',
+          'https://github.com/iotaledger/iota-wiki/edit/the-merge-moveRemainingDocsToWiki/shimmer/external/wasp/docs',
         remarkPlugins: [
           require('remark-code-import'),
           require('remark-import-partial'),
@@ -361,7 +361,7 @@ module.exports = {
         routeBasePath: 'chronicle',
         sidebarPath: path.resolve(__dirname, 'external/chronicle/sidebars.js'),
         editUrl:
-          'https://github.com/iotaledger/chronicle.rs/edit/main/documentation',
+          'https://github.com/iotaledger/iota-wiki/edit/the-merge-moveRemainingDocsToWiki/shimmer/external/chronicle.rs/docs',
         remarkPlugins: [
           require('remark-code-import'),
           require('remark-import-partial'),
@@ -385,7 +385,7 @@ module.exports = {
           'external/identity.rs/0.7-alpha/sidebars.js',
         ),
         editUrl:
-          'https://github.com/iotaledger/identity.rs/edit/support/v0.7/documentation',
+          'https://github.com/iotaledger/iota-wiki/edit/the-merge-moveRemainingDocsToWiki/shimmer/external/identity.rs/0.7-alpha/docs',
         remarkPlugins: [
           require('remark-code-import'),
           require('remark-import-partial'),
@@ -407,7 +407,7 @@ module.exports = {
         routeBasePath: 'iota.js',
         sidebarPath: path.resolve(__dirname, 'external/iota.js/sidebars.js'),
         editUrl:
-          'https://github.com/iotaledger/iota.js/tree/dev/packages/iota/documentation', // Example: https://github.com/iotacommunity/iota.js/edit/production/documentation
+          'https://github.com/iotaledger/iota-wiki/edit/the-merge-moveRemainingDocsToWiki/shimmer/external/iota.js/docs',
         remarkPlugins: [
           require('remark-code-import'),
           require('remark-import-partial'),
@@ -425,7 +425,7 @@ module.exports = {
           'external/inx-api-core-v0/sidebars.js',
         ),
         editUrl:
-          'https://github.com/iotaledger/inx-api-core-v0/edit/develop/documentation',
+          'https://github.com/iotaledger/iota-wiki/edit/the-merge-moveRemainingDocsToWiki/shimmer/external/inx-api-core-v0/docs',
       },
     ],
     [
@@ -439,7 +439,7 @@ module.exports = {
           'external/inx-api-core-v1/sidebars.js',
         ),
         editUrl:
-          'https://github.com/iotaledger/inx-api-core-v0/edit/develop/documentation',
+          'https://github.com/iotaledger/iota-wiki/edit/the-merge-moveRemainingDocsToWiki/shimmer/external/inx-api-core-v0/docs',
       },
     ],
     [
@@ -453,7 +453,7 @@ module.exports = {
           'external/inx-coordinator/sidebars.js',
         ),
         editUrl:
-          'https://github.com/iotaledger/inx-api-core-v0/edit/develop/documentation',
+          'https://github.com/iotaledger/iota-wiki/edit/the-merge-moveRemainingDocsToWiki/shimmer/external/inx-api-core-v0/docs',
       },
     ],
     [
@@ -467,7 +467,7 @@ module.exports = {
           'external/inx-dashboard/sidebars.js',
         ),
         editUrl:
-          'https://github.com/iotaledger/inx-dashboard/edit/develop/documentation',
+          'https://github.com/iotaledger/iota-wiki/edit/the-merge-moveRemainingDocsToWiki/shimmer/external/inx-dashboard/docs',
       },
     ],
     [
@@ -478,7 +478,7 @@ module.exports = {
         routeBasePath: 'inx-faucet',
         sidebarPath: path.resolve(__dirname, 'external/inx-faucet/sidebars.js'),
         editUrl:
-          'https://github.com/iotaledger/inx-faucet/edit/develop/documentation',
+          'https://github.com/iotaledger/iota-wiki/edit/the-merge-moveRemainingDocsToWiki/shimmer/external/inx-faucet/docs',
       },
     ],
     [
@@ -492,7 +492,7 @@ module.exports = {
           'external/inx-indexer/sidebars.js',
         ),
         editUrl:
-          'https://github.com/iotaledger/inx-indexer/edit/develop/documentation',
+          'https://github.com/iotaledger/iota-wiki/edit/the-merge-moveRemainingDocsToWiki/shimmer/external/inx-indexer/docs',
       },
     ],
     [
@@ -506,7 +506,7 @@ module.exports = {
           'external/inx-irc-metadata/sidebars.js',
         ),
         editUrl:
-          'https://github.com/iotaledger/inx-irc-metadata/edit/develop/documentation',
+          'https://github.com/iotaledger/iota-wiki/edit/the-merge-moveRemainingDocsToWiki/shimmer/external/inx-irc-metadata/docs',
       },
     ],
     [
@@ -517,21 +517,21 @@ module.exports = {
         routeBasePath: 'inx-mqtt',
         sidebarPath: path.resolve(__dirname, 'external/inx-mqtt/sidebars.js'),
         editUrl:
-          'https://github.com/gohornet/inx-mqtt/edit/develop/documentation',
+            'https://github.com/iotaledger/iota-wiki/edit/the-merge-moveRemainingDocsToWiki/shimmer/external/inx-mqtt/docs',
       },
     ],
     [
       '@docusaurus/plugin-content-docs',
       {
         id: 'inx-participation',
-        path: path.resolve(__dirname, 'external/inx-participation'),
+        path: path.resolve(__dirname, 'external/inx-participation/docs'),
         routeBasePath: 'inx-participation',
         sidebarPath: path.resolve(
           __dirname,
           'external/inx-participation/sidebars.js',
         ),
         editUrl:
-          'https://github.com/iotaledger/inx-participation/edit/develop/documentation',
+          'https://github.com/iotaledger/iota-wiki/edit/the-merge-moveRemainingDocsToWiki/shimmer/external/inx-participation/docs',
       },
     ],
     [
@@ -542,7 +542,7 @@ module.exports = {
         routeBasePath: 'inx-poi',
         sidebarPath: path.resolve(__dirname, 'external/inx-poi/sidebars.js'),
         editUrl:
-          'https://github.com/gohornet/inx-poi/edit/develop/documentation',
+            'https://github.com/iotaledger/iota-wiki/edit/the-merge-moveRemainingDocsToWiki/shimmer/external/inx-poi/docs',
       },
     ],
     [
@@ -556,7 +556,7 @@ module.exports = {
           'external/inx-spammer/sidebars.js',
         ),
         editUrl:
-          'https://github.com/iotaledger/inx-spammer/edit/develop/documentation',
+          'https://github.com/iotaledger/iota-wiki/edit/the-merge-moveRemainingDocsToWiki/shimmer/external/inx-spammer/docs',
       },
     ],
     [
@@ -570,7 +570,7 @@ module.exports = {
           'external/stronghold.rs/sidebars.js',
         ),
         editUrl:
-          'https://github.com/iotaledger/stronghold/edit/dev/documentation',
+          'https://github.com/iotaledger/iota-wiki/edit/the-merge-moveRemainingDocsToWiki/shimmer/external/stronghold/docs',
         remarkPlugins: [
           require('remark-code-import'),
           require('remark-import-partial'),
@@ -596,52 +596,6 @@ module.exports = {
             },
           },
         },
-      },
-    ],
-    // tutorials
-    [
-      '@iota-wiki/plugin-tutorial',
-      {
-        title: 'Stardust for iota.js: Value Transactions',
-        description:
-          "Get acquainted with the structure and functionality of transactions in IOTA's Stardust protocol in the Shimmer network using iota.js primitives to issue value transactions.",
-        preview: '/img/tutorials/bg-value-transactions.png',
-        route: '/shimmer/iota.js/tutorials/value-transactions/introduction',
-        tags: ['text', 'getting-started', 'client', 'shimmer', 'js'],
-      },
-    ],
-    [
-      '@iota-wiki/plugin-tutorial',
-      {
-        title: 'Stardust for iota.js: Alias Transactions',
-        description:
-          "Learn how to create a new Alias Transaction and update the Alias's state with iota.js.",
-        preview: '/img/tutorials/bg-alias-transactions.png',
-        route: '/shimmer/iota.js/tutorials/alias-transactions/introduction',
-        tags: ['text', 'getting-started', 'client', 'shimmer', 'js'],
-      },
-    ],
-    [
-      '@iota-wiki/plugin-tutorial',
-      {
-        title: 'Stardust for iota.js: Native Tokens',
-        description:
-          'Learn how to mint, send and melt Native tokens with iota.js.',
-        preview: '/img/tutorials/bg-native-tokens.png',
-        route:
-          '/shimmer/iota.js/tutorials/native-token-transactions/introduction',
-        tags: ['text', 'getting-started', 'client', 'shimmer', 'js'],
-      },
-    ],
-    [
-      '@iota-wiki/plugin-tutorial',
-      {
-        title: 'Stardust for iota.js: NFTs and Unlock Conditions',
-        description:
-          'Learn how to mint, send and claim NFTs using custom unlock conditions with iota.js.',
-        preview: '/img/tutorials/bg-nfts.png',
-        route: '/shimmer/iota.js/tutorials/nfts/introduction',
-        tags: ['text', 'getting-started', 'client', 'shimmer', 'js'],
       },
     ],
   ],
