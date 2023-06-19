@@ -1,0 +1,389 @@
+openapi: 3.0.3
+info:
+  title: Chronicle Proof-of-Inclusion (PoI) REST API
+  description: This document specifies the REST API for Proof-of-Inclusion (PoI) in Chronicle.
+  contact:
+    email: contact@iota.org
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  version: 2.0.0
+externalDocs:
+  description: Find out more about IOTA
+  url: https://iota.org
+servers:
+  - url: http://localhost:8042
+tags:
+  - name: create
+    description: Proof-of-Inclusion creation.
+  - name: validate
+    description: Proof-of-Inclusion validation.
+paths:
+  /api/poi/v1/referenced-block/create/{blockId}:
+    get:
+      tags:
+        - create
+      summary: Returns proof data as JSON.
+      description: >-
+        Generate the proof for a block by its identifier. This endpoint returns
+        the given proof as JSON.
+      parameters:
+        - in: path
+          name: blockId
+          schema:
+            type: string
+          example: '0xb00ff4ee4cc5aeb94d7e901d2afe9b27ab568442e683aa2e8e9be0f8e894eb1f'
+          required: true
+          description: Identifier of the block.
+      responses:
+        '200':
+          description: Successful operation.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Proof'
+              examples:
+                default:
+                  $ref: '#/components/examples/get-proof-block-by-id-response-example'
+        '400':
+          description: 'Unsuccessful operation: indicates that the provided data is invalid.'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequestResponse'
+        '403':
+          description: >-
+            Unsuccessful operation: indicates that the endpoint is not available
+            for public use.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ForbiddenResponse'
+        '404':
+          description: >-
+            Unsuccessful operation: indicates that the requested data was not
+            found.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFoundResponse'
+        '500':
+          description: >-
+            Unsuccessful operation: indicates that an unexpected, internal
+            server error happened which prevented the node from fulfilling the
+            request.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalErrorResponse'
+  /api/poi/v1/referenced-block/validate:
+    post:
+      tags:
+        - validate
+      summary: Validate a proof.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Proof'
+            examples:
+              Proof:
+                $ref: '#/components/examples/get-proof-block-by-id-response-example'
+        required: true
+      responses:
+        '200':
+          description: Successful operation.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidateResponse'
+              examples:
+                default:
+                  $ref: '#/components/examples/post-validate-response'
+        '400':
+          description: 'Unsuccessful operation: indicates that the provided data is invalid.'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequestResponse'
+        '403':
+          description: >-
+            Unsuccessful operation: indicates that the endpoint is not available
+            for public use.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ForbiddenResponse'
+        '500':
+          description: >-
+            Unsuccessful operation: indicates that an unexpected, internal
+            server error happened which prevented the node from fulfilling the
+            request.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalErrorResponse'
+  /api/poi/v1/applied-block/create/{blockId}:
+    get:
+      tags:
+        - create
+      summary: Returns proof data as JSON.
+      description: >-
+        Generate the proof for a block by its identifier. This endpoint returns
+        the given proof as JSON.
+      parameters:
+        - in: path
+          name: blockId
+          schema:
+            type: string
+          example: '0xb00ff4ee4cc5aeb94d7e901d2afe9b27ab568442e683aa2e8e9be0f8e894eb1f'
+          required: true
+          description: Identifier of the block.
+      responses:
+        '200':
+          description: Successful operation.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Proof'
+              examples:
+                default:
+                  $ref: '#/components/examples/get-proof-block-by-id-response-example'
+        '400':
+          description: 'Unsuccessful operation: indicates that the provided data is invalid.'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequestResponse'
+        '403':
+          description: >-
+            Unsuccessful operation: indicates that the endpoint is not available
+            for public use.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ForbiddenResponse'
+        '404':
+          description: >-
+            Unsuccessful operation: indicates that the requested data was not
+            found.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFoundResponse'
+        '500':
+          description: >-
+            Unsuccessful operation: indicates that an unexpected, internal
+            server error happened which prevented the node from fulfilling the
+            request.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalErrorResponse'
+  /api/poi/v1/applied-block/validate:
+    post:
+      tags:
+        - validate
+      summary: Validate a proof.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Proof'
+            examples:
+              Proof:
+                $ref: '#/components/examples/get-proof-block-by-id-response-example'
+        required: true
+      responses:
+        '200':
+          description: Successful operation.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidateResponse'
+              examples:
+                default:
+                  $ref: '#/components/examples/post-validate-response'
+        '400':
+          description: 'Unsuccessful operation: indicates that the provided data is invalid.'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequestResponse'
+        '403':
+          description: >-
+            Unsuccessful operation: indicates that the endpoint is not available
+            for public use.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ForbiddenResponse'
+        '500':
+          description: >-
+            Unsuccessful operation: indicates that an unexpected, internal
+            server error happened which prevented the node from fulfilling the
+            request.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalErrorResponse'
+components:
+  schemas:
+    ErrorResponse:
+      description: The error format.
+      properties:
+        error:
+          type: object
+          properties:
+            code:
+              type: string
+              description: The application error code.
+            message:
+              type: string
+              description: The error reason.
+          required:
+            - code
+            - message
+      required:
+        - error
+    ForbiddenResponse:
+      description: Indicates that this endpoint is not available for public use.
+      allOf:
+        - $ref: '#/components/schemas/ErrorResponse'
+      example:
+        error:
+          code: 403
+          message: not available for public use
+    BadRequestResponse:
+      description: Indicates that the request was bad.
+      allOf:
+        - $ref: '#/components/schemas/ErrorResponse'
+      example:
+        error:
+          code: 400
+          message: invalid data provided
+    NotFoundResponse:
+      description: Indicates that the data was not found.
+      allOf:
+        - $ref: '#/components/schemas/ErrorResponse'
+      example:
+        error:
+          code: 404
+          message: could not find data
+    InternalErrorResponse:
+      description: >-
+        Indicates that the server encountered an unexpected condition, which
+        prevented it from fulfilling the request by the client.
+      allOf:
+        - $ref: '#/components/schemas/ErrorResponse'
+      example:
+        error:
+          code: 500
+          message: internal server error
+    
+    ProofHashLeaf:
+      description: A leaf including a hash.
+      properties:
+        h:
+          type: string
+    ProofValueLeaf:
+      description: A leaf including a blockId.
+      properties:
+        value:
+          type: string
+    ProofNode:
+      description: A node in the merkle tree.
+      properties:
+        l:
+          oneOf:
+            - $ref: '#/components/schemas/ProofNode'
+            - $ref: '#/components/schemas/ProofHashLeaf'
+            - $ref: '#/components/schemas/ProofValueLeaf'
+        r:
+          oneOf:
+            - $ref: '#/components/schemas/ProofNode'
+            - $ref: '#/components/schemas/ProofHashLeaf'
+            - $ref: '#/components/schemas/ProofValueLeaf'
+    Proof:
+      description: The proof of inclusion of a block.
+      properties:
+        milestone:
+          allOf:
+            - $ref: "https://raw.githubusercontent.com/iotaledger/tips/main/tips/TIP-0025/core-rest-api.yaml#/components/schemas/MilestonePayload"
+        block:
+          allOf:
+            - $ref: "https://raw.githubusercontent.com/iotaledger/tips/main/tips/TIP-0025/core-rest-api.yaml#/components/schemas/Block"
+        proof:
+          allOf:
+            - $ref: '#/components/schemas/ProofNode'
+    ValidateResponse:
+      properties:
+        valid:
+          type: boolean
+  examples:
+    get-proof-block-by-id-response-example:
+      value:
+        milestone:
+          type: 7
+          index: 13
+          timestamp: 1653768570
+          protocolVersion: 2
+          previousMilestoneId: '0x17c0a6a711857ea46158ca46ed20daa09cf7b3fa9e7dbab67b4ba3b90ebba77a'
+          parents:
+            - '0x417aab094d8e73b439f8cc68f8e7d83be2239bb34d20332f52e9cd7d6534ae6c'
+            - '0x4a0dc52628bd688cfd83028d13ad4ab3b8ef9f28a44a3064fa22309660e7dc43'
+            - '0x5b7b045b8b09980bcc8229eb3eb304a960b035c4737e33ea1a24d65b065df83c'
+            - '0x9b7d35e3e17f00e8bf221890a55ae14bbd0a52a4624defa6a88d5235e00c7d80'
+            - '0xc8e8ca9c3c9a5111520b41c37086f7e0249ed1a8d619976f011be8abeb8771a8'
+            - '0xf5d25ae03293dc54115b78b100c41ac540df00925c9d0ae95431f09e3f7be1d1'
+          inclusionMerkleRoot: '0xee3c9836ae52b79163cd9f645099edf7e9305d669123a396d73e30e2c3bafdd1'
+          appliedMerkleRoot: '0x0e5751c026e543b2e8ab2eb06099daa1d1e5df47778f7787faab45cdf12fe3a8'
+          signatures:
+            - type: 0
+              publicKey: >-
+                0xed3c3f1a319ff4e909cf2771d79fece0ac9bd9fd2ee49ea6c0885c9cb3b1248c
+              signature: >-
+                0x84373ad012aefc4966cd53331d40e94183ecfc81aeaf20c71ed1b98ce8a07b1cf4370ea00d97e165b7ee9e8656f351f6010dfa584ebdb66d8233c6c51e840600
+            - type: 0
+              publicKey: >-
+                0xf6752f5f46a53364e2ee9c4d662d762a81efd51010282a75cd6bd03f28ef349c
+              signature: >-
+                0xf444bc745a7d651012dc6b43d4fecc1ea2b17402beed7981395db0c56cc69e4ff1f585e7e52fe6317de9890a1bad2ba89c8e9c5258dba2316c01dccc8472b00b
+        block:
+          protocolVersion: 2
+          parents:
+            - '0x14eef4f3923ba0301621775e7e6f4d550006637bec639e9f9afdf2ab9d715cdb'
+            - '0x428079a3dbb95f8411f8831dc1bf1d3ba723327fd3ae1741eaafd22bff9eb468'
+            - '0x5b7b045b8b09980bcc8229eb3eb304a960b035c4737e33ea1a24d65b065df83c'
+            - '0x9003301a44cd04bf1911f82de72ad5a050359a880b6e02507f5d2b793b3b7ce3'
+          payload:
+            type: 5
+            tag: '0x484f524e4554205370616d6d6572'
+            data: >-
+              0x57652061726520616c6c206d616465206f662073746172647573742e0a436f756e743a203030303138380a54696d657374616d703a20323032322d30352d32385432303a30393a32375a0a54697073656c656374696f6e3a20323732c2b573
+          nonce: '299'
+        proof:
+          l:
+            l:
+              h: >-
+                0x6e463cb72c8639dbfc820e7a0349907e2353ac2afea3c7cf1492771d18a8e789
+            r:
+              l:
+                l:
+                  h: >-
+                    0xf5e591867dea12da2e9777f393af0d7eb7055c9ddbe08a9e235781cfb1b5bab2
+                r:
+                  l:
+                    value: >-
+                      0xb00ff4ee4cc5aeb94d7e901d2afe9b27ab568442e683aa2e8e9be0f8e894eb1f
+                  r:
+                    h: >-
+                      0xac7edca5fef53bce504e52448d06b5b1d7da9232cb6e6407a126a1262f393768
+              r:
+                h: >-
+                  0x3757577f93f26bbe0db47b1465752ad49d220ee7ee57aa8902029f361dab6afb
+          r:
+            h: '0x9f9be742aab1eeeb033d39f2f55c421ad08bc0c7508e26c3fd116d78c1500abc'
+    post-validate-response:
+      value:
+        valid: true

@@ -1,5 +1,5 @@
 /**
- * Creating a sidebar enables you to:
+ * * Creating a sidebar enables you to:
  - create an ordered group of docs
  - render a sidebar for each doc of that group
  - provide next/previous navigation
@@ -9,26 +9,66 @@
  Create as many sidebars as you want.
  */
 
- module.exports = {
-  docs: [{
-      type: 'doc',
-      id: 'welcome',
-      label: 'Welcome',
+module.exports = {
+  docs: [
+    {
+      type: "doc",
+      id: "welcome",
+      label: "Welcome",
     },
     {
-      type: 'doc',
-      id: 'getting_started',
-      label: 'Getting Started',
+      type: "doc",
+      id: "changelog",
+      label: "Changelog",
     },
     {
-      type: 'doc',
-      id: 'config_reference',
-      label: 'Config Reference',
+      type: "category",
+      label: "Getting Started",
+      collapsed: false,
+      items: [
+        {
+          type: "doc",
+          id: "getting_started/docker",
+          label: "Docker",
+        },
+      ],
     },
     {
-      type: 'doc',
-      id: 'contribute',
-      label: 'Contribute',
+      type: "category",
+      label: "References",
+      collapsed: false,
+      items: [
+        {
+          type: "doc",
+          id: "reference/sync_and_analytics",
+          label: "Sync and Analytics",
+        },
+        {
+          type: "doc",
+          id: "reference/authentication",
+          label: "Authentication",
+        },
+        {
+          type: "doc",
+          id: "reference/api",
+          label: "API",
+        },
+        {
+          type: "doc",
+          id: "reference/environment",
+          label: "Environment Variables",
+        },
+      ],
     },
-  ]
-}; 
+    {
+      type: "doc",
+      id: "troubleshooting",
+      label: "Troubleshooting",
+    },
+    {
+      type: "doc",
+      id: "contribute",
+      label: "Contribute",
+    },
+  ],
+};

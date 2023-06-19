@@ -1,0 +1,662 @@
+openapi: 3.0.3
+info:
+  title: Explorer REST API
+  description: This document specifies the REST API for Chronicle software.
+  contact:
+    email: contact@iota.org
+  license:
+    name: Apache 2.0
+    url: "http://www.apache.org/licenses/LICENSE-2.0.html"
+  version: 1.0.0
+externalDocs:
+  description: Find out more about IOTA
+  url: "https://iota.org"
+servers:
+  - url: "http://127.0.0.1:8000"
+tags:
+  - name: balance
+    description: Everything about balances.
+  - name: blocks
+    description: Everything about blocks.
+  - name: ledger
+    description: Everything about the ledger.
+  - name: milestones
+    description: Everything about milestones.
+paths:
+  /api/explorer/v2/balance/{address}:
+    get:
+      tags:
+        - balance
+      summary: Returns an address's balance.
+      description: >-
+        Returns the balance of IOTA tokens owned by a given bech32 address.
+      parameters:
+        - $ref: "#/components/parameters/address"
+      responses:
+        "200":
+          description: Successful operation.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/BalanceResponse"
+              examples:
+                default:
+                  $ref: "#/components/examples/balance-example"
+        "400":
+          $ref: "#/components/responses/BadRequest"
+        "404":
+          $ref: "#/components/responses/NoResults"
+        "500":
+          $ref: "#/components/responses/InternalError"
+  /api/explorer/v2/blocks/{blockId}/children:
+    get:
+      tags:
+        - blocks
+      summary: Returns the children of a block.
+      description: >-
+        Returns the children of a given block in the Tangle.
+      parameters:
+        - in: path
+          name: blockId
+          schema:
+            type: string
+          example: "0xf532a53545103276b46876c473846d98648ee418468bce76df4868648dd73e5d"
+          required: true
+          description: Identifier of the block.
+      responses:
+        "200":
+          description: Successful operation.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/BlockChildrenResponse"
+        "400":
+          $ref: "#/components/responses/BadRequest"
+        "404":
+          $ref: "#/components/responses/NoResults"
+        "500":
+          $ref: "#/components/responses/InternalError"
+  /api/explorer/v2/milestones:
+    get:
+      tags:
+        - milestones
+      summary: Returns milestones based on given query parameters.
+      description: >-
+        Returns a list of milestones matching provided query parameters.
+      parameters:
+        - $ref: "#/components/parameters/startTimestamp"
+        - $ref: "#/components/parameters/endTimestamp"
+        - $ref: "#/components/parameters/sort"
+        - $ref: "#/components/parameters/pageSize"
+        - $ref: "#/components/parameters/cursor"
+      responses:
+        "200":
+          description: Successful operation.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/MilestonesResponse"
+              examples:
+                default:
+                  $ref: "#/components/examples/milestones-example"
+        "400":
+          $ref: "#/components/responses/BadRequest"
+        "404":
+          $ref: "#/components/responses/NoResults"
+        "500":
+          $ref: "#/components/responses/InternalError"
+  /api/explorer/v2/milestones/{milestoneId}/blocks:
+    get:
+      tags:
+        - blocks
+      summary: Returns blocks in a given milestone by ID.
+      description: >-
+        Returns block IDs in a given milestone by ID sorted by white flag index.
+      parameters:
+        - $ref: "#/components/parameters/milestoneId"
+        - $ref: "#/components/parameters/sort"
+        - $ref: "#/components/parameters/pageSize"
+        - $ref: "#/components/parameters/cursor"
+      responses:
+        "200":
+          description: Successful operation.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/BlocksByMilestoneResponse"
+              examples:
+                default:
+                  $ref: "#/components/examples/blocks-by-milestone-example"
+        "400":
+          $ref: "#/components/responses/BadRequest"
+        "404":
+          $ref: "#/components/responses/NoResults"
+        "500":
+          $ref: "#/components/responses/InternalError"
+  /api/explorer/v2/milestones/by-index/{milestoneIndex}/blocks:
+    get:
+      tags:
+        - blocks
+      summary: Returns blocks in a given milestone by index.
+      description: >-
+        Returns block IDs in a given milestone by index sorted by white flag index.
+      parameters:
+        - $ref: "#/components/parameters/milestoneIndex"
+        - $ref: "#/components/parameters/sort"
+        - $ref: "#/components/parameters/pageSize"
+        - $ref: "#/components/parameters/cursor"
+      responses:
+        "200":
+          description: Successful operation.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/BlocksByMilestoneResponse"
+              examples:
+                default:
+                  $ref: "#/components/examples/blocks-by-milestone-example"
+        "400":
+          $ref: "#/components/responses/BadRequest"
+        "404":
+          $ref: "#/components/responses/NoResults"
+        "500":
+          $ref: "#/components/responses/InternalError"
+  /api/explorer/v2/ledger/updates/by-address/{address}:
+    get:
+      tags:
+        - ledger
+      summary: Returns all ledger updates involving a given bech32 address.
+      description: >-
+        Returns all ledger updates involving a given bech32 address, sorted by milestone index.
+      parameters:
+        - $ref: "#/components/parameters/address"
+        - $ref: "#/components/parameters/pageSize"
+        - $ref: "#/components/parameters/sort"
+        - $ref: "#/components/parameters/startMilestoneIndex"
+        - $ref: "#/components/parameters/cursor"
+      responses:
+        "200":
+          description: Successful operation.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/LedgerUpdatesByAddressResponse"
+              examples:
+                default:
+                  $ref: "#/components/examples/ledger-updates-address-example"
+        "400":
+          $ref: "#/components/responses/BadRequest"
+        "404":
+          $ref: "#/components/responses/NoResults"
+        "500":
+          $ref: "#/components/responses/InternalError"
+  /api/explorer/v2/ledger/updates/by-milestone/{milestoneId}:
+    get:
+      tags:
+        - ledger
+      summary: Returns all ledger updates for a given milestone index.
+      description: Returns all ledger updates that occurred in the milestone with the provided index.
+      parameters:
+        - $ref: "#/components/parameters/milestoneId"
+        - $ref: "#/components/parameters/pageSize"
+        - $ref: "#/components/parameters/cursor"
+      responses:
+        "200":
+          description: Successful operation.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/LedgerUpdatesByMilestoneResponse"
+              examples:
+                default:
+                  $ref: "#/components/examples/ledger-updates-milestone-example"
+        "400":
+          $ref: "#/components/responses/BadRequest"
+        "404":
+          $ref: "#/components/responses/NoResults"
+        "500":
+          $ref: "#/components/responses/InternalError"
+  /api/explorer/v2/ledger/richest-addresses:
+    get:
+      tags:
+        - ledger
+      summary: Returns the top richest addresses.
+      description: >-
+        Returns the top richest addresses at the ledger state specified by the provided index.
+      parameters:
+        - $ref: "#/components/parameters/ledgerIndex"
+        - $ref: "#/components/parameters/top"
+      responses:
+        "200":
+          description: Successful operation.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/RichestAddressesResponse"
+              examples:
+                default:
+                  $ref: "#/components/examples/richest-addresses-example"
+        "400":
+          $ref: "#/components/responses/BadRequest"
+        "404":
+          $ref: "#/components/responses/NoResults"
+        "500":
+          $ref: "#/components/responses/InternalError"
+  /api/explorer/v2/ledger/token-distribution:
+    get:
+      tags:
+        - ledger
+      summary: Returns the current token distribution.
+      description: >-
+        Returns the distribution of IOTA tokens at the ledger state specified by the provided index.
+      parameters:
+        - $ref: "#/components/parameters/ledgerIndex"
+      responses:
+        "200":
+          description: Successful operation.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/TokenDistributionResponse"
+              examples:
+                default:
+                  $ref: "#/components/examples/token-distribution-example"
+        "400":
+          $ref: "#/components/responses/BadRequest"
+        "404":
+          $ref: "#/components/responses/NoResults"
+        "500":
+          $ref: "#/components/responses/InternalError"
+components:
+  schemas:
+    BalanceResponse:
+      description: The balance of IOTA tokens owned by an address.
+      properties:
+        totalBalance:
+          type: string
+          description: >-
+            The total value held in unspent outputs owned by the given address 
+            (includes funds held in storage deposit).
+        sigLockedBalance:
+          type: string
+          description: >-
+            The sum of value held in unspent outputs owned by the given address 
+            that are signature locked ("trivially unlockable").
+        ledgerIndex:
+          type: integer
+          description: The ledger index for which the balance calculation was performed.
+    BlockChildrenResponse:
+      description: Returns the children of a given block.
+      properties:
+        blockId:
+          type: string
+          description: The block id of the parent.
+        maxResults:
+          type: integer
+          description: The maximum number of results.
+        count:
+          type: integer
+          description: The total number of children.
+        children:
+          type: array
+          description: A list of block ids.
+          items:
+            type: string
+    LedgerUpdatesByMilestoneResponse:
+      description: A list of ledger updates associated with a milestone.
+      properties:
+        milestoneIndex:
+          type: integer
+          description: The index of the milestone.
+        items:
+          type: array
+          description: A list of ledger updates.
+          items:
+            properties:
+              address:
+                type: string
+                description: bech32 address that is referenced by the outputs.
+              outputId:
+                type: string
+                description: >-
+                  The output ID (transaction hash + output index) of the update. 
+                  Hex-encoded with 0x prefix.
+              isSpent:
+                type: boolean
+                description: Indicates if the output is spent or not.
+            required:
+              - address
+              - outputId
+              - isSpent
+        cursor:
+          type: string
+          description: The cursor which can be used to retrieve the next logical page of results.
+      required:
+        - milestoneIndex
+        - items
+    LedgerUpdatesByAddressResponse:
+      description: A list of ledger updates associated with an address.
+      properties:
+        address:
+          type: string
+          description: bech32 address that is referenced by the outputs.
+        items:
+          type: array
+          description: A list of ledger updates.
+          items:
+            properties:
+              milestoneIndex:
+                type: integer
+                description: The index of the milestone.
+              milestoneTimestamp:
+                type: integer
+                description: The timestamp at which the milestone was issued.
+              outputId:
+                type: string
+                description: >-
+                  The output ID (transaction hash + output index) of the update. 
+                  Hex-encoded with 0x prefix.
+              isSpent:
+                type: boolean
+                description: Indicates if the output is spent or not.
+            required:
+              - milestoneIndex
+              - milestoneTimestamp
+              - outputId
+              - isSpent
+        cursor:
+          type: string
+          description: The cursor which can be used to retrieve the next logical page of results.
+      required:
+        - address
+        - items
+    MilestonesResponse:
+      description: Paged milestones.
+      properties:
+        items:
+          type: array
+          description: A list of milestones.
+          items:
+            properties:
+              milestoneId:
+                type: string
+                description: The milestone ID.
+              index:
+                type: integer
+                description: The index of the milestone.
+            required:
+              - milestoneId
+              - index
+        cursor:
+          type: string
+          description: The cursor which can be used to retrieve the next logical page of results.
+      required:
+        - items
+    BlocksByMilestoneResponse:
+      description: Paged block IDs by milestone.
+      properties:
+        blocks:
+          type: array
+          description: A list of block ids and corresponding payload types.
+          items:
+            type: object
+            properties:
+              blockId:
+                type: string
+                description: The block ID.
+              payloadType:
+                type: integer
+                description: The corresponding payload type of the block if it exists.
+            required:
+            - blockId
+        cursor:
+          type: string
+          description: The cursor which can be used to retrieve the next logical page of results.
+      required:
+        - blocks
+    RichestAddressesResponse:
+      description: Richest addresses statistics.
+      properties:
+        top:
+          type: array
+          description: The top wealthiest addresses.
+          items:
+            type: object
+            properties:
+              address:
+                oneOf:
+                  - $ref: "https://raw.githubusercontent.com/iotaledger/tips/main/tips/TIP-0025/core-rest-api.yaml#/components/schemas/Ed25519Address"
+                  - $ref: "https://raw.githubusercontent.com/iotaledger/tips/main/tips/TIP-0025/core-rest-api.yaml#/components/schemas/AliasAddress"
+                  - $ref: "https://raw.githubusercontent.com/iotaledger/tips/main/tips/TIP-0025/core-rest-api.yaml#/components/schemas/NFTAddress"
+              balance:
+                type: string
+                description: The total balance within this range.
+            required:
+              - address
+              - balance
+      required:
+        - top
+    TokenDistributionResponse:
+      description: Wealth distribution statistics.
+      properties:
+        distribution:
+          type: array
+          description: The distribution of IOTA tokens.
+          items:
+            type: object
+            properties:
+              range:
+                type: object
+                description: The range of balances.
+                properties:
+                  start:
+                    type: number
+                  end:
+                    type: number
+                required:
+                  - start
+                  - end
+              addressCount:
+                type: string
+                description: The number of addresses in this range.
+              totalBalance:
+                type: string
+                description: The total balance within this range.
+            required:
+              - range
+              - addressCount
+              - totalBalance
+      required:
+        - distribution
+  responses:
+    NoResults:
+      description: >-
+        Unsuccessful operation: indicates that the requested data was not found.
+      content:
+        application/json:
+          schema:
+            $ref: "https://raw.githubusercontent.com/iotaledger/tips/main/tips/TIP-0025/core-rest-api.yaml#/components/schemas/NotFoundResponse"
+    BadRequest:
+      description: "Unsuccessful operation: indicates that the provided parameters are invalid."
+      content:
+        application/json:
+          schema:
+            $ref: "https://raw.githubusercontent.com/iotaledger/tips/main/tips/TIP-0025/core-rest-api.yaml#/components/schemas/BadRequestResponse"
+    InternalError:
+      description: >-
+        Unsuccessful operation: indicates that an unexpected, internal
+        server error happened which prevented the node from fulfilling the
+        request.
+      content:
+        application/json:
+          schema:
+            $ref: "https://raw.githubusercontent.com/iotaledger/tips/main/tips/TIP-0025/core-rest-api.yaml#/components/schemas/InternalErrorResponse"
+  parameters:
+    address:
+      in: path
+      name: address
+      schema:
+        type: string
+      example: iota1qpf0mlq8yxpx2nck8a0slxnzr4ef2ek8f5gqxlzd0wasgp73utryj430ldu
+      required: true
+      description: bech32 address that is referenced by the outputs.
+    milestoneId:
+      in: path
+      name: milestoneId
+      schema:
+        type: string
+      example: "0x7a09324557e9200f39bf493fc8fd6ac43e9ca750c6f6d884cc72386ddcb7d695"
+      required: true
+      description: Milestone id for which to receive ledger updates.
+    pageSize:
+      in: query
+      name: pageSize
+      schema:
+        type: number
+      example: 100
+      description: Requested page size. Overridden by the cursor if provided.
+    sort:
+      in: query
+      name: sort
+      schema:
+        type: string
+      example: newest
+      description: >-
+        Describes the sort order, either by oldest or newest. This value is NOT
+        overridden by the cursor, and thus can be used to back-page.
+    startMilestoneIndex:
+      in: query
+      name: startMilestoneIndex
+      schema:
+        type: number
+      example: 500000
+      description: >-
+        The milestone index at which to start retrieving results. This will be overridden 
+        by the cursor if provided.
+    startTimestamp:
+      in: query
+      name: startTimestamp
+      schema:
+        type: integer
+      example: 1662139730
+      description: Start timestamp for filtering.
+    endTimestamp:
+      in: query
+      name: endTimestamp
+      schema:
+        type: integer
+      example: 1662139830
+      description: End timestamp for filtering.
+    cursor:
+      in: query
+      name: cursor
+      schema:
+        type: string
+      example: 1643383242.fa0de75d225cca2799395e5fc340702fc7eac821d2bdd79911126f131ae097a20100.100
+      description: The cursor which can be used to retrieve the next logical page of results.
+    ledgerIndex:
+      in: query
+      name: ledgerIndex
+      schema:
+        type: integer
+      example: 200000
+      required: false
+      description: >-
+        The milestone index to be used to determine the ledger state. Defaults to the 
+        application's current ledger index.
+    milestoneIndex:
+      in: path
+      name: milestoneIndex
+      schema:
+        type: integer
+      example: 200000
+      required: true
+      description: >-
+        The milestone index to be used.
+    top:
+      in: query
+      name: top
+      schema:
+        type: number
+      example: 100
+      required: false
+      description: The number of richest addresses to return.
+  examples:
+    balance-example:
+      value:
+        totalBalance: 100000
+        sigLockedBalance: 99900
+        ledgerIndex: 500000
+    ledger-updates-address-example:
+      value:
+        address: iota1qpf0mlq8yxpx2nck8a0slxnzr4ef2ek8f5gqxlzd0wasgp73utryj430ldu
+        items:
+          - milestoneIndex: 500000
+            milestoneTimestamp: 1660065130
+            outputId: fa0de75d225cca2799395e5fc340702fc7eac821d2bdd79911126f131ae097a20100
+            isSpent: false
+          - milestoneIndex: 500000
+            milestoneTimestamp: 1660065129
+            outputId: fa0de75d225cca2799395e5fc340702fc7eac821d2bdd79911126f131ae097a20000
+            isSpent: true
+        cursor: 1643383242.fa0de75d225cca2799395e5fc340702fc7eac821d2bdd79911126f131ae097a20100.true.100
+    ledger-updates-milestone-example:
+      value:
+        milestoneIndex: 500000
+        items:
+          - address: iota1qpf0mlq8yxpx2nck8a0slxnzr4ef2ek8f5gqxlzd0wasgp73utryj430ldu
+            outputId: fa0de75d225cca2799395e5fc340702fc7eac821d2bdd79911126f131ae097a20100
+            isSpent: false
+          - address: iota1qpf0mlq8yxpx2nck8a0slxnzr4ef2ek8f5gqxlzd0wasgp73utryj430ldb
+            outputId: fa0de75d225cca2799395e5fc340702fc7eac821d2bdd79911126f131ae097a20000
+            isSpent: true
+        cursor: fa0de75d225cca2799395e5fc340702fc7eac821d2bdd79911126f131ae097a20100.true.100
+    milestones-example:
+      value:
+        items:
+          - milestoneId: "0x7a09324557e9200f39bf493fc8fd6ac43e9ca750c6f6d884cc72386ddcb7d695"
+            index: 100
+          - milestoneId: "0xfa0de75d225cca2799395e5fc340702fc7eac821d2bdd79911126f131ae097a2"
+            index: 101
+        cursor: "102.2"
+    richest-addresses-example:
+      value:
+        top:
+          - address:
+              - type: 0
+                pubKeyHash: "0x3845105b59429361a75b3203a6e24e16d19540aad6bd1936449b62f1c4bbe5da"
+            balance: "2779164783277761"
+          - address:
+              - type: 0
+                pubKeyHash: "0xd0d361341fa3bb2f6855039a82ee9ea470c3336eaf34d22767fdfa901ba63e31"
+            balance: "7398600000"
+        ledgerIndex: 1005429
+    token-distribution-example:
+      value:
+        distribution:
+          - range:
+              - start: 100000
+                end: 1000000
+            addressCount: "39"
+            totalBalance: "14612000"
+          - range:
+              - start: 1000000
+                end: 10000000
+            addressCount: "22"
+            totalBalance: "41274500"
+          - range:
+              - start: 100000000
+                end: 1000000000
+            addressCount: "27"
+            totalBalance: "25486528000"
+        ledgerIndex: 1005429
+    blocks-by-milestone-example:
+      value:
+        blocks:
+          - blockId: "0xd0d361341fa3bb2f6855039a82ee9ea470c3336eaf34d22767fdfa901ba63e31"
+            payloadType: 0
+          - blockId: "0x7a09324557e9200f39bf493fc8fd6ac43e9ca750c6f6d884cc72386ddcb7d695"
+            payloadType: 0
+          - blockId: "0xfa0de75d225cca2799395e5fc340702fc7eac821d2bdd79911126f131ae097a2"
+            payloadType: 0
+        cursor: "4.100"
