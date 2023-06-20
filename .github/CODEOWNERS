@@ -1,0 +1,41 @@
+# clients
+**/iota.rs @iotaledger/iota-sdk
+**/wallet.rs @iotaledger/iota-sdk
+**/wallet.rs @iotaledger/iota-sdk
+**/iota.js @iotaledger/iota-sdk
+
+# chronicle
+**/chronicle @iotaledger/chronicle
+
+# goshimmer
+**/goshimmer @iotaledger/goshimmer
+
+# hornet and inx plugins
+**/hornet @iotaledger/hornet
+**/inx-api-core-v0 @iotaledger/hornet
+**/inx-api-core-v1 @iotaledger/hornet
+**/inx-coordinator @iotaledger/hornet
+**/inx-dashboard @iotaledger/hornet
+**/inx-faucet @iotaledger/hornet
+**/inx-indexer @iotaledger/hornet
+**/inx-irc-metadata @iotaledger/hornet
+**/inx-mqtt @iotaledger/hornet
+**/inx-participation @iotaledger/hornet
+**/inx-poi @iotaledger/hornet
+**/inx-spammer @iotaledger/hornet
+
+# identity
+**/identity @iotaledger/identity
+
+# protocol - introduction-docs
+**/introduction-docs @iotaledger/shimmer-team
+
+# research
+**/iota-2.0-research-specifications @iotaledger/research
+
+# streams
+**/streams @iotaledger/streams
+
+# WASP - ISC
+**/wasp @iotaledger/smart-contracts
+
