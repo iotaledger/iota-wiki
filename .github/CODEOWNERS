@@ -33,9 +33,6 @@
 # research
 **/iota-2.0-research-specifications @iotaledger/research
 
-# streams
-**/streams @iotaledger/streams
-
 # WASP - ISC
 **/wasp @iotaledger/smart-contracts
 
