@@ -259,7 +259,7 @@ module.exports = {
         routeBasePath: 'iota-sdk',
         sidebarPath: require.resolve('./docs/iota-sdk/sidebars.js'),
         editUrl:
-          'https://github.com/iotaledger/iota-wiki/edit/the-merge-moveRemainingDocsToWiki/',
+          'https://github.com/iotaledger/iota-wiki/edit/main/',
         remarkPlugins: [
           require('remark-code-import'),
           require('remark-import-partial'),
@@ -283,7 +283,7 @@ module.exports = {
         routeBasePath: 'cli-wallet',
         sidebarPath: require.resolve('./docs/cli-wallet/sidebars.js'),
         editUrl:
-          'https://github.com/iotaledger/iota-wiki/edit/the-merge-moveRemainingDocsToWiki/',
+          'https://github.com/iotaledger/iota-wiki/edit/main/',
       },
     ],
 
@@ -295,7 +295,7 @@ module.exports = {
         routeBasePath: 'hornet',
         sidebarPath: path.resolve(__dirname, 'docs/hornet/sidebars.js'),
         editUrl:
-          'https://github.com/iotaledger/iota-wiki/edit/the-merge-moveRemainingDocsToWiki/',
+          'https://github.com/iotaledger/iota-wiki/edit/main/',
       },
     ],
     [
@@ -306,7 +306,7 @@ module.exports = {
         routeBasePath: 'goshimmer',
         sidebarPath: path.resolve(__dirname, 'docs/goshimmer/sidebars.js'),
         editUrl:
-          'https://github.com/iotaledger/iota-wiki/edit/the-merge-moveRemainingDocsToWiki/',
+          'https://github.com/iotaledger/iota-wiki/edit/main/',
       },
     ],
     [
@@ -320,7 +320,7 @@ module.exports = {
           'docs/introduction-docs/sidebars.js',
         ),
         editUrl:
-          'https://github.com/iotaledger/iota-wiki/edit/the-merge-moveRemainingDocsToWiki/',
+          'https://github.com/iotaledger/iota-wiki/edit/main/',
         remarkPlugins: [
           require('remark-code-import'),
           require('remark-import-partial'),
@@ -339,7 +339,7 @@ module.exports = {
           'docs/iota-2.0-research-specifications/sidebars.js',
         ),
         editUrl:
-          'https://github.com/iotaledger/iota-wiki/edit/the-merge-moveRemainingDocsToWiki/',
+          'https://github.com/iotaledger/iota-wiki/edit/main/',
         remarkPlugins: [math],
         rehypePlugins: [katex],
         include: ['*.md'],
@@ -353,7 +353,7 @@ module.exports = {
         routeBasePath: 'smart-contracts',
         sidebarPath: path.resolve(__dirname, 'docs/wasp/sidebars.js'),
         editUrl:
-          'https://github.com/iotaledger/iota-wiki/edit/the-merge-moveRemainingDocsToWiki/',
+          'https://github.com/iotaledger/iota-wiki/edit/main/',
         remarkPlugins: [
           require('remark-code-import'),
           require('remark-import-partial'),
@@ -369,7 +369,7 @@ module.exports = {
         routeBasePath: 'chronicle',
         sidebarPath: path.resolve(__dirname, 'docs/chronicle/sidebars.js'),
         editUrl:
-          'https://github.com/iotaledger/iota-wiki/edit/the-merge-moveRemainingDocsToWiki/',
+          'https://github.com/iotaledger/iota-wiki/edit/main/',
         remarkPlugins: [
           require('remark-code-import'),
           require('remark-import-partial'),
@@ -393,7 +393,7 @@ module.exports = {
           'docs/identity.rs/0.7-alpha/sidebars.js',
         ),
         editUrl:
-          'https://github.com/iotaledger/iota-wiki/edit/the-merge-moveRemainingDocsToWiki/',
+          'https://github.com/iotaledger/iota-wiki/edit/main/',
         remarkPlugins: [
           require('remark-code-import'),
           require('remark-import-partial'),
@@ -418,7 +418,7 @@ module.exports = {
           'docs/inx-api-core-v0/sidebars.js',
         ),
         editUrl:
-          'https://github.com/iotaledger/iota-wiki/edit/the-merge-moveRemainingDocsToWiki/',
+          'https://github.com/iotaledger/iota-wiki/edit/main/',
       },
     ],
 
@@ -433,7 +433,7 @@ module.exports = {
           'docs/inx-api-core-v1/sidebars.js',
         ),
         editUrl:
-          'https://github.com/iotaledger/iota-wiki/edit/the-merge-moveRemainingDocsToWiki/',
+          'https://github.com/iotaledger/iota-wiki/edit/main/',
       },
     ],
     [
@@ -447,7 +447,7 @@ module.exports = {
           'docs/inx-coordinator/sidebars.js',
         ),
         editUrl:
-          'https://github.com/iotaledger/iota-wiki/edit/the-merge-moveRemainingDocsToWiki/',
+          'https://github.com/iotaledger/iota-wiki/edit/main/',
       },
     ],
     [
@@ -458,7 +458,7 @@ module.exports = {
         routeBasePath: 'inx-dashboard',
         sidebarPath: path.resolve(__dirname, 'docs/inx-dashboard/sidebars.js'),
         editUrl:
-          'https://github.com/iotaledger/iota-wiki/edit/the-merge-moveRemainingDocsToWiki/',
+          'https://github.com/iotaledger/iota-wiki/edit/main/',
       },
     ],
     [
@@ -469,7 +469,7 @@ module.exports = {
         routeBasePath: 'inx-faucet',
         sidebarPath: path.resolve(__dirname, 'docs/inx-faucet/sidebars.js'),
         editUrl:
-          'https://github.com/iotaledger/iota-wiki/edit/the-merge-moveRemainingDocsToWiki/',
+          'https://github.com/iotaledger/iota-wiki/edit/main/',
       },
     ],
     [
@@ -480,7 +480,7 @@ module.exports = {
         routeBasePath: 'inx-indexer',
         sidebarPath: path.resolve(__dirname, 'docs/inx-indexer/sidebars.js'),
         editUrl:
-          'https://github.com/iotaledger/iota-wiki/edit/the-merge-moveRemainingDocsToWiki/',
+          'https://github.com/iotaledger/iota-wiki/edit/main/',
       },
     ],
     [
@@ -494,7 +494,7 @@ module.exports = {
           'docs/inx-irc-metadata/sidebars.js',
         ),
         editUrl:
-          'https://github.com/iotaledger/iota-wiki/edit/the-merge-moveRemainingDocsToWiki/',
+          'https://github.com/iotaledger/iota-wiki/edit/main/',
       },
     ],
     [
@@ -505,7 +505,7 @@ module.exports = {
         routeBasePath: 'inx-mqtt',
         sidebarPath: path.resolve(__dirname, 'docs/inx-mqtt/sidebars.js'),
         editUrl:
-          'https://github.com/iotaledger/iota-wiki/edit/the-merge-moveRemainingDocsToWiki/',
+          'https://github.com/iotaledger/iota-wiki/edit/main/',
       },
     ],
     [
@@ -519,7 +519,7 @@ module.exports = {
           'docs/inx-participation/sidebars.js',
         ),
         editUrl:
-          'https://github.com/iotaledger/iota-wiki/edit/the-merge-moveRemainingDocsToWiki/',
+          'https://github.com/iotaledger/iota-wiki/edit/main/',
       },
     ],
     [
@@ -530,7 +530,7 @@ module.exports = {
         routeBasePath: 'inx-poi',
         sidebarPath: path.resolve(__dirname, 'docs/inx-poi/sidebars.js'),
         editUrl:
-          'https://github.com/iotaledger/iota-wiki/edit/the-merge-moveRemainingDocsToWiki/',
+          'https://github.com/iotaledger/iota-wiki/edit/main/',
       },
     ],
     [
@@ -541,7 +541,7 @@ module.exports = {
         routeBasePath: 'inx-spammer',
         sidebarPath: path.resolve(__dirname, 'docs/inx-spammer/sidebars.js'),
         editUrl:
-          'https://github.com/iotaledger/iota-wiki/edit/the-merge-moveRemainingDocsToWiki/',
+          'https://github.com/iotaledger/iota-wiki/edit/main/',
       },
     ],
     [
@@ -552,7 +552,7 @@ module.exports = {
         routeBasePath: 'stronghold.rs',
         sidebarPath: path.resolve(__dirname, 'docs/stronghold.rs/sidebars.js'),
         editUrl:
-          'https://github.com/iotaledger/iota-wiki/edit/the-merge-moveRemainingDocsToWiki/',
+          'https://github.com/iotaledger/iota-wiki/edit/main/',
         remarkPlugins: [
           require('remark-code-import'),
           require('remark-import-partial'),
