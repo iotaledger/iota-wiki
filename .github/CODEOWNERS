@@ -1,7 +1,7 @@
 # clients
 **/iota.rs @iotaledger/iota-sdk
 **/wallet.rs @iotaledger/iota-sdk
-**/wallet.rs @iotaledger/iota-sdk
+**/iota-sdk @iotaledger/iota-sdk
 **/iota.js @iotaledger/iota-sdk
 
 # chronicle
