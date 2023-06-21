@@ -1,20 +1,21 @@
 ---
-description: Troubleshooting the IOTA Wallet Library.  
+description: Troubleshooting the IOTA Wallet Library.
 image: /img/logo/logo.svg
 keywords:
-- discussion
-- channel
-- problem
-- solution
-- discord
-- stackexchange
-- reference
+  - discussion
+  - channel
+  - problem
+  - solution
+  - discord
+  - stackexchange
+  - reference
 ---
+
 # Troubleshooting
 
 ## StackExchange
 
-If you have a problem you cannot solve, check out the [IOTA StackExchange](https://iota.stackexchange.com/) to see if you can find a solution. 
+If you have a problem you cannot solve, check out the [IOTA StackExchange](https://iota.stackexchange.com/) to see if you can find a solution.
 
 ## Joining the Discussion
 

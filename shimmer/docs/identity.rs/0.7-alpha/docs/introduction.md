@@ -2,11 +2,11 @@
 description: The most important concepts that developers will need to know to utilize IOTA Identity to its full potential.
 image: /img/Identity_icon.png
 keywords:
-- Identity
-- guide
-- TOC
-- overview
-- reference
+  - Identity
+  - guide
+  - TOC
+  - overview
+  - reference
 ---
 
 # IOTA Identity Framework Guide
@@ -30,6 +30,7 @@ Gives a quick overview of how to install the library and creating your first DID
 ### Chapter 3: Concepts
 
 Describes relevant concepts of SSI and how to utilize them in the library.
+
 ### [Chapter 3.1: Decentralized Identifiers (DID)](./concepts/decentralized_identifiers/overview)
 
 Explains the DID standard from W3C and how to manipulate DID Documents.
@@ -40,27 +41,28 @@ Explains the VC standard from W3C, how to create and revoke VCs, and how to use 
 
 ### [Chapter 4: Programming Languages](./libraries/overview)
 
-
-While the framework itself is developed in the Rust programming language, we also provide bindings, or "Foreign Function Interfaces" (FFI), to other languages. These will have separate getting started sections, making the rest of the guide language agnostic, focusing on the conceptual level. 
+While the framework itself is developed in the Rust programming language, we also provide bindings, or "Foreign Function Interfaces" (FFI), to other languages. These will have separate getting started sections, making the rest of the guide language agnostic, focusing on the conceptual level.
 
 ### [Chapter 5: Tutorials](./tutorials/overview)
+
 Contains end-to-end examples using the library to achieve common use-cases.
 
 ### [Chapter 6: Specification](./specs/overview)
 
-While IOTA Identity implements many existing standards, it also adds some additional features we would like to standardize ourselves. This chapter covers these features and how they work in great detail. These are not light reads and can be skipped. 
-
+While IOTA Identity implements many existing standards, it also adds some additional features we would like to standardize ourselves. This chapter covers these features and how they work in great detail. These are not light reads and can be skipped.
 
 ### [Chapter 7: Glossary](./glossary)
 
-A list of all terminology used in this guide, the framework, and all materials surrounding it. 
+A list of all terminology used in this guide, the framework, and all materials surrounding it.
 
 ### [Chapter 8: Contribute](./contribute)
 
 A simple guide on how to contribute to the framework.
 
 ### [Chapter 9: Workflow](./workflow)
+
 An overview of the workflow to design, develop and release the framework.
+
 ### [Chapter 10: Contact](./contact)
 
 How to contact the maintainers.

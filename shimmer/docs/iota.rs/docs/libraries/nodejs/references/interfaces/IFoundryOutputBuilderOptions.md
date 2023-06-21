@@ -30,7 +30,7 @@ If not provided, minimum storage deposit will be used
 
 [IBasicOutputBuilderOptions](IBasicOutputBuilderOptions.md).[amount](IBasicOutputBuilderOptions.md#amount)
 
-___
+---
 
 ### nativeTokens
 
@@ -42,7 +42,7 @@ The native tokens to be held by the output.
 
 [IBasicOutputBuilderOptions](IBasicOutputBuilderOptions.md).[nativeTokens](IBasicOutputBuilderOptions.md#nativetokens)
 
-___
+---
 
 ### unlockConditions
 
@@ -54,7 +54,7 @@ The unlock conditions for the output.
 
 [IBasicOutputBuilderOptions](IBasicOutputBuilderOptions.md).[unlockConditions](IBasicOutputBuilderOptions.md#unlockconditions)
 
-___
+---
 
 ### features
 
@@ -66,7 +66,7 @@ Features to be contained by the output.
 
 [IBasicOutputBuilderOptions](IBasicOutputBuilderOptions.md).[features](IBasicOutputBuilderOptions.md#features)
 
-___
+---
 
 ### serialNumber
 

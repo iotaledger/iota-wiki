@@ -1,18 +1,19 @@
 ---
 description: iota.js API reference
 keywords:
-- references
-- api references
-- typescript
+  - references
+  - api references
+  - typescript
 image: /img/client_banner.png
 ---
+
 # Interface: ITransactionEssence
 
 Transaction payload.
 
 ## Hierarchy
 
-- [`ITypeBase`](ITypeBase.md)<``1``\>
+- [`ITypeBase`](ITypeBase.md)<`1`\>
 
   ↳ **`ITransactionEssence`**
 
@@ -35,7 +36,7 @@ Transaction payload.
 
 The network id of the block.
 
-___
+---
 
 ### inputs
 
@@ -43,7 +44,7 @@ ___
 
 The inputs of the transaction.
 
-___
+---
 
 ### inputsCommitment
 
@@ -51,7 +52,7 @@ ___
 
 The commitment to the referenced inputs.
 
-___
+---
 
 ### outputs
 
@@ -59,7 +60,7 @@ ___
 
 The outputs of the transaction.
 
-___
+---
 
 ### payload
 
@@ -67,11 +68,11 @@ ___
 
 Tagged data payload.
 
-___
+---
 
 ### type
 
-• **type**: ``1``
+• **type**: `1`
 
 The type of the object.
 

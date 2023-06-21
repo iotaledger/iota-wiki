@@ -2,12 +2,12 @@
 description: Official IOTA Wallet Library Software Rust examples.
 image: /img/logo/logo.svg
 keywords:
-- account
-- event
-- Rust
-- transfer
-- backup
-- how to
+  - account
+  - event
+  - Rust
+  - transfer
+  - backup
+  - how to
 ---
 
 # Examples in Rust
@@ -60,6 +60,7 @@ let id = account_handle.id().await;
 ```
 
 3. You can secure your account in a backup file:
+
 ```rust
 // backup the stored accounts to ./backup/${backup_name}
 let backup_path = manager.backup("./backup").await?;
@@ -81,10 +82,9 @@ That's it! You can now backup and restore your account!
 
 You can see the full code for the example in the [`wallet.rs` repository](https://github.com/iotaledger/wallet.rs/blob/production/examples/backup_and_restore.rs)
 
-
 ## Transfer
 
-You use the following example to generate an account and transfer funds. 
+You use the following example to generate an account and transfer funds.
 
 ```rust reference
 https://github.com/iotaledger/wallet.rs/tree/production//examples/transfer.rs

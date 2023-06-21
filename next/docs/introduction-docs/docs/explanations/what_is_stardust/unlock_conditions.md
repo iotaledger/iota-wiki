@@ -1,13 +1,13 @@
 ---
 keywords:
-- Stardust
-- Shimmer
-- Upgrades
-- Unlock Condition
-- Output
-- Extended UTXO
-- Protocol Improvements
-- explanation
+  - Stardust
+  - Shimmer
+  - Upgrades
+  - Unlock Condition
+  - Output
+  - Extended UTXO
+  - Protocol Improvements
+  - explanation
 description: The new output unlock conditions make outputs configurable for conditional transfers.
 image: /img/logo/preview.png
 ---

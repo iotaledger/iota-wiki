@@ -1,14 +1,15 @@
 ---
-description: The IOTA foundation provides load-balanced public mainnet endpoints where MQTT and the HTTP REST API are enabled. 
+description: The IOTA foundation provides load-balanced public mainnet endpoints where MQTT and the HTTP REST API are enabled.
 image: /img/logo/Chrysalis_logo_dark.png
 keywords:
-- mainnet
-- MQTT
-- REST API
-- HTTP
-- Explorer
-- reference
+  - mainnet
+  - MQTT
+  - REST API
+  - HTTP
+  - Explorer
+  - reference
 ---
+
 # Mainnet
 
 ## Public Infrastructure
@@ -24,4 +25,3 @@ over TLS.
 ## Developer Tools
 
 - [Explorer](https://explorer.iota.org/mainnet).
-

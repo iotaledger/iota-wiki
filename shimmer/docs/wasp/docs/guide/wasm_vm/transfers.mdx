@@ -1,20 +1,21 @@
 ---
 keywords:
-- balances
-- color
-- smart contract function
-- address
-- members
-- incoming
-- tokens
-- incoming
+  - balances
+  - color
+  - smart contract function
+  - address
+  - members
+  - incoming
+  - tokens
+  - incoming
 
 description: There are two methods in the call context that deal with token balances. The balances() method can be used to determine the current asset balances. The allowance() method can be used to determine the caller assets that the function is allowed to use.
 
 image: /img/logo/WASP_logo_dark.png
 ---
-import Tabs from "@theme/Tabs"
-import TabItem from "@theme/TabItem"
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 # Token Transfers
 
@@ -187,56 +188,57 @@ pub fn func_divide(ctx: &ScFuncContext, f: &DivideContext) {
 // integer and keeps any remaining tokens in its own account. They will be added
 // to any next round of tokens received prior to calculation of the new
 // dividend amounts.
-export function funcDivide(ctx: wasmlib.ScFuncContext, f: sc.DivideContext): void {
+export function funcDivide(
+  ctx: wasmlib.ScFuncContext,
+  f: sc.DivideContext,
+): void {
+  // Create an ScBalances proxy to the allowance balances for this
+  // smart contract.
+  let allowance: wasmlib.ScBalances = ctx.allowance();
 
-    // Create an ScBalances proxy to the allowance balances for this
-    // smart contract.
-    let allowance: wasmlib.ScBalances = ctx.allowance();
+  // Retrieve the allowed amount of plain iota tokens from the account balance.
+  let amount: u64 = allowance.baseTokens();
 
-    // Retrieve the allowed amount of plain iota tokens from the account balance.
-    let amount: u64 = allowance.baseTokens();
+  // Retrieve the pre-calculated totalFactor value from the state storage.
+  let totalFactor: u64 = f.state.totalFactor().value();
 
-    // Retrieve the pre-calculated totalFactor value from the state storage.
-    let totalFactor: u64 = f.state.totalFactor().value();
+  // Get the proxy to the 'members' map in the state storage.
+  let members: sc.MapAddressToMutableUint64 = f.state.members();
 
-    // Get the proxy to the 'members' map in the state storage.
-    let members: sc.MapAddressToMutableUint64 = f.state.members();
+  // Get the proxy to the 'memberList' array in the state storage.
+  let memberList: sc.ArrayOfMutableAddress = f.state.memberList();
 
-    // Get the proxy to the 'memberList' array in the state storage.
-    let memberList: sc.ArrayOfMutableAddress = f.state.memberList();
+  // Determine the current length of the memberList array.
+  let size: u32 = memberList.length();
 
-    // Determine the current length of the memberList array.
-    let size: u32 = memberList.length();
+  // Loop through all indexes of the memberList array.
+  for (let i: u32 = 0; i < size; i++) {
+    // Retrieve the next indexed address from the memberList array.
+    let address: wasmlib.ScAddress = memberList.getAddress(i).value();
 
-    // Loop through all indexes of the memberList array.
-    for (let i: u32 = 0; i < size; i++) {
-        // Retrieve the next indexed address from the memberList array.
-        let address: wasmlib.ScAddress = memberList.getAddress(i).value();
+    // Retrieve the factor associated with the address from the members map.
+    let factor: u64 = members.getUint64(address).value();
 
-        // Retrieve the factor associated with the address from the members map.
-        let factor: u64 = members.getUint64(address).value();
+    // Calculate the fair share of tokens to disperse to this member based on the
+    // factor we just retrieved. Note that the result will be truncated.
+    let share: u64 = (amount * factor) / totalFactor;
 
-        // Calculate the fair share of tokens to disperse to this member based on the
-        // factor we just retrieved. Note that the result will be truncated.
-        let share: u64 = amount * factor / totalFactor;
+    // Is there anything to disperse to this member?
+    if (share > 0) {
+      // Yes, so let's set up an ScTransfer proxy that transfers the
+      // calculated amount of tokens.
+      let transfers: wasmlib.ScTransfer = wasmlib.ScTransfer.baseTokens(share);
 
-        // Is there anything to disperse to this member?
-        if (share > 0) {
-            // Yes, so let's set up an ScTransfer proxy that transfers the
-            // calculated amount of tokens.
-            let transfers: wasmlib.ScTransfer = wasmlib.ScTransfer.baseTokens(share);
-
-            // Perform the actual transfer of tokens from the caller allowance
-            // to the member account.
-            ctx.transferAllowed(address.asAgentID(), transfers, true);
-        }
+      // Perform the actual transfer of tokens from the caller allowance
+      // to the member account.
+      ctx.transferAllowed(address.asAgentID(), transfers, true);
     }
+  }
 }
 ```
 
 </TabItem>
 </Tabs>
-
 
 In the next section we will introduce [Function Descriptors](funcdesc.mdx) that can be
 used to initiate smart contract functions.

@@ -2,13 +2,13 @@
 description: Links to the MQTT Event API reference.
 image: /img/logo/HornetLogo.png
 keywords:
-- IOTA Node
-- Hornet Node
-- INX 
-- MQTT
-- REST API
-- API
-- Reference
+  - IOTA Node
+  - Hornet Node
+  - INX
+  - MQTT
+  - REST API
+  - API
+  - Reference
 ---
 
 # API Reference

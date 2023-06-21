@@ -10,7 +10,7 @@ This function queries the `GET /api/core/v2/blocks/{BlockId}` endpoint.
 
 ### `Client.getBlockMetadata(blockId)`
 
-You can retrieve a block's metadata using its block ID using 
+You can retrieve a block's metadata using its block ID using
 the [`Client.getBlockMetadata(blockId)`](./../libraries/nodejs/references/classes/Client#getblockmetadata)
 function.
 

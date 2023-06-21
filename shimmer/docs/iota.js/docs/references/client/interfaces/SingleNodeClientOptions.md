@@ -1,11 +1,12 @@
 ---
 description: iota.js API reference
 keywords:
-- references
-- api references
-- typescript
+  - references
+  - api references
+  - typescript
 image: /img/client_banner.png
 ---
+
 # Interface: SingleNodeClientOptions
 
 Options used when constructing SingleNodeClient.
@@ -30,7 +31,7 @@ Options used when constructing SingleNodeClient.
 
 Base path for API location, defaults to /api/.
 
-___
+---
 
 ### powProvider
 
@@ -38,7 +39,7 @@ ___
 
 Use a custom pow provider instead of the one on the node.
 
-___
+---
 
 ### protocolVersion
 
@@ -46,7 +47,7 @@ ___
 
 The protocol version for blocks.
 
-___
+---
 
 ### timeout
 
@@ -54,7 +55,7 @@ ___
 
 Timeout for API requests.
 
-___
+---
 
 ### userName
 
@@ -62,7 +63,7 @@ ___
 
 Username for the endpoint.
 
-___
+---
 
 ### password
 
@@ -70,7 +71,7 @@ ___
 
 Password for the endpoint.
 
-___
+---
 
 ### headers
 

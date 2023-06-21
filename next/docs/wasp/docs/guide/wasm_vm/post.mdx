@@ -1,17 +1,18 @@
 ---
 keywords:
-- function descriptor
-- return values
-- request
-- post
-- smart contract chain
-- Asynchronous function
+  - function descriptor
+  - return values
+  - request
+  - post
+  - smart contract chain
+  - Asynchronous function
 description: Asynchronous function calls between smart contracts are posted as requests on the Tangle. They allow you to invoke any smart contract function that is not a View on any smart contract chain.
 
 image: /img/logo/WASP_logo_dark.png
 ---
-import Tabs from "@theme/Tabs"
-import TabItem from "@theme/TabItem"
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 # Posting Asynchronous Requests
 
@@ -93,7 +94,6 @@ parameters of the requested function, so that upon completion that function can
 asynchronously post the results to the indicated function. It will require a certain
 degree of cooperation between both smart contracts. In the future we will probably be
 looking at providing a generic mechanism for this.
-
 
 In the next section we will look at how we can use the function descriptors when
 [testing smart contracts with Solo](test.mdx).

@@ -34,7 +34,7 @@ The type of output.
 
 [CommonOutput](CommonOutput.md).[getType](CommonOutput.md#gettype)
 
-___
+---
 
 ### getAmount
 
@@ -50,7 +50,7 @@ The amount of the output.
 
 [CommonOutput](CommonOutput.md).[getAmount](CommonOutput.md#getamount)
 
-___
+---
 
 ### getUnlockConditions
 
@@ -66,7 +66,7 @@ The unlock conditions for the output.
 
 [CommonOutput](CommonOutput.md).[getUnlockConditions](CommonOutput.md#getunlockconditions)
 
-___
+---
 
 ### getNativeTokens
 
@@ -82,7 +82,7 @@ The native tokens held by the output.
 
 [CommonOutput](CommonOutput.md).[getNativeTokens](CommonOutput.md#getnativetokens)
 
-___
+---
 
 ### getFeatures
 

@@ -64,8 +64,8 @@ Build an `AliasOutput`.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name   | Type                                                            | Description                            |
+| :----- | :-------------------------------------------------------------- | :------------------------------------- |
 | `data` | [`BuildAliasOutputData`](../interfaces/BuildAliasOutputData.md) | Options for building an `AliasOutput`. |
 
 #### Returns
@@ -74,7 +74,7 @@ Build an `AliasOutput`.
 
 The built `AliasOutput`.
 
-___
+---
 
 ### buildBasicOutput
 
@@ -84,8 +84,8 @@ Build a `BasicOutput`.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name   | Type                                                            | Description                           |
+| :----- | :-------------------------------------------------------------- | :------------------------------------ |
 | `data` | [`BuildBasicOutputData`](../interfaces/BuildBasicOutputData.md) | Options for building a `BasicOutput`. |
 
 #### Returns
@@ -94,7 +94,7 @@ Build a `BasicOutput`.
 
 The built `BasicOutput`.
 
-___
+---
 
 ### buildFoundryOutput
 
@@ -104,8 +104,8 @@ Build a `FoundryOutput`.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name   | Type                                                                | Description                             |
+| :----- | :------------------------------------------------------------------ | :-------------------------------------- |
 | `data` | [`BuildFoundryOutputData`](../interfaces/BuildFoundryOutputData.md) | Options for building a `FoundryOutput`. |
 
 #### Returns
@@ -114,7 +114,7 @@ Build a `FoundryOutput`.
 
 The built `FoundryOutput`.
 
-___
+---
 
 ### buildNftOutput
 
@@ -124,8 +124,8 @@ Build an `NftOutput`.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name   | Type                                                        | Description                          |
+| :----- | :---------------------------------------------------------- | :----------------------------------- |
 | `data` | [`BuildNftOutputData`](../interfaces/BuildNftOutputData.md) | Options for building an `NftOutput`. |
 
 #### Returns
@@ -134,7 +134,7 @@ Build an `NftOutput`.
 
 The built `NftOutput`.
 
-___
+---
 
 ### burnNativeToken
 
@@ -146,10 +146,10 @@ recommended to use melting, if the foundry output is available.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `tokenId` | `string` | The native token id. |
-| `burnAmount` | `string` | The to be burned amount. |
+| Name                  | Type                                                        | Description                                                        |
+| :-------------------- | :---------------------------------------------------------- | :----------------------------------------------------------------- |
+| `tokenId`             | `string`                                                    | The native token id.                                               |
+| `burnAmount`          | `string`                                                    | The to be burned amount.                                           |
 | `transactionOptions?` | [`TransactionOptions`](../interfaces/TransactionOptions.md) | The options to define a `RemainderValueStrategy` or custom inputs. |
 
 #### Returns
@@ -158,7 +158,7 @@ recommended to use melting, if the foundry output is available.
 
 The transaction.
 
-___
+---
 
 ### burnNft
 
@@ -170,9 +170,9 @@ burning, the foundry can never be destroyed anymore.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `nftId` | `string` | The NftId. |
+| Name                  | Type                                                        | Description                                                        |
+| :-------------------- | :---------------------------------------------------------- | :----------------------------------------------------------------- |
+| `nftId`               | `string`                                                    | The NftId.                                                         |
 | `transactionOptions?` | [`TransactionOptions`](../interfaces/TransactionOptions.md) | The options to define a `RemainderValueStrategy` or custom inputs. |
 
 #### Returns
@@ -181,7 +181,7 @@ burning, the foundry can never be destroyed anymore.
 
 The transaction.
 
-___
+---
 
 ### claimOutputs
 
@@ -192,8 +192,8 @@ to their `AddressUnlockCondition` from the account.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name        | Type       | Description           |
+| :---------- | :--------- | :-------------------- |
 | `outputIds` | `string`[] | The outputs to claim. |
 
 #### Returns
@@ -202,7 +202,7 @@ to their `AddressUnlockCondition` from the account.
 
 The resulting transaction.
 
-___
+---
 
 ### consolidateOutputs
 
@@ -214,10 +214,10 @@ equal to the output consolidation threshold.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `force` | `boolean` | Force consolidation on addresses where the threshold isn't met. |
-| `outputConsolidationThreshold?` | `number` | A default threshold is used if this is omitted. |
+| Name                            | Type      | Description                                                     |
+| :------------------------------ | :-------- | :-------------------------------------------------------------- |
+| `force`                         | `boolean` | Force consolidation on addresses where the threshold isn't met. |
+| `outputConsolidationThreshold?` | `number`  | A default threshold is used if this is omitted.                 |
 
 #### Returns
 
@@ -225,7 +225,7 @@ equal to the output consolidation threshold.
 
 The consolidation transaction.
 
-___
+---
 
 ### createAliasOutput
 
@@ -235,9 +235,9 @@ ___
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `aliasOutputOptions?` | [`AliasOutputOptions`](../interfaces/AliasOutputOptions.md) | The alias output options. |
+| Name                  | Type                                                        | Description                                                        |
+| :-------------------- | :---------------------------------------------------------- | :----------------------------------------------------------------- |
+| `aliasOutputOptions?` | [`AliasOutputOptions`](../interfaces/AliasOutputOptions.md) | The alias output options.                                          |
 | `transactionOptions?` | [`TransactionOptions`](../interfaces/TransactionOptions.md) | The options to define a `RemainderValueStrategy` or custom inputs. |
 
 #### Returns
@@ -246,7 +246,7 @@ ___
 
 A transaction object.
 
-___
+---
 
 ### decreaseNativeTokenSupply
 
@@ -257,10 +257,10 @@ Melt native tokens. This happens with the foundry output which minted them, by i
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `tokenId` | `string` | The native token id. |
-| `meltAmount` | `string` | To be melted amount. |
+| Name                  | Type                                                        | Description                                                        |
+| :-------------------- | :---------------------------------------------------------- | :----------------------------------------------------------------- |
+| `tokenId`             | `string`                                                    | The native token id.                                               |
+| `meltAmount`          | `string`                                                    | To be melted amount.                                               |
 | `transactionOptions?` | [`TransactionOptions`](../interfaces/TransactionOptions.md) | The options to define a `RemainderValueStrategy` or custom inputs. |
 
 #### Returns
@@ -269,7 +269,7 @@ Melt native tokens. This happens with the foundry output which minted them, by i
 
 The transaction.
 
-___
+---
 
 ### destroyAlias
 
@@ -281,9 +281,9 @@ sent to the governor address.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `aliasId` | `string` | The AliasId. |
+| Name                  | Type                                                        | Description                                                        |
+| :-------------------- | :---------------------------------------------------------- | :----------------------------------------------------------------- |
+| `aliasId`             | `string`                                                    | The AliasId.                                                       |
 | `transactionOptions?` | [`TransactionOptions`](../interfaces/TransactionOptions.md) | The options to define a `RemainderValueStrategy` or custom inputs. |
 
 #### Returns
@@ -292,7 +292,7 @@ sent to the governor address.
 
 The transaction.
 
-___
+---
 
 ### destroyFoundry
 
@@ -303,9 +303,9 @@ Native tokens in the foundry (minted by other foundries) will be transactioned t
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `foundryId` | `string` | The FoundryId. |
+| Name                  | Type                                                        | Description                                                        |
+| :-------------------- | :---------------------------------------------------------- | :----------------------------------------------------------------- |
+| `foundryId`           | `string`                                                    | The FoundryId.                                                     |
 | `transactionOptions?` | [`TransactionOptions`](../interfaces/TransactionOptions.md) | The options to define a `RemainderValueStrategy` or custom inputs. |
 
 #### Returns
@@ -314,7 +314,7 @@ Native tokens in the foundry (minted by other foundries) will be transactioned t
 
 The transaction.
 
-___
+---
 
 ### generateAddress
 
@@ -324,8 +324,8 @@ Generate a new unused address.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name       | Type                                                                    | Description                     |
+| :--------- | :---------------------------------------------------------------------- | :------------------------------ |
 | `options?` | [`AddressGenerationOptions`](../interfaces/AddressGenerationOptions.md) | Options for address generation. |
 
 #### Returns
@@ -334,7 +334,7 @@ Generate a new unused address.
 
 The address.
 
-___
+---
 
 ### generateAddresses
 
@@ -344,10 +344,10 @@ Generate new unused addresses.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `amount` | `number` | The amount of addresses to generate. |
-| `options?` | [`AddressGenerationOptions`](../interfaces/AddressGenerationOptions.md) | Options for address generation. |
+| Name       | Type                                                                    | Description                          |
+| :--------- | :---------------------------------------------------------------------- | :----------------------------------- |
+| `amount`   | `number`                                                                | The amount of addresses to generate. |
+| `options?` | [`AddressGenerationOptions`](../interfaces/AddressGenerationOptions.md) | Options for address generation.      |
 
 #### Returns
 
@@ -355,7 +355,7 @@ Generate new unused addresses.
 
 The addresses.
 
-___
+---
 
 ### getBalance
 
@@ -369,7 +369,7 @@ Get the account balance.
 
 The account balance.
 
-___
+---
 
 ### getOutput
 
@@ -379,8 +379,8 @@ Get the data for an output.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name       | Type     | Description        |
+| :--------- | :------- | :----------------- |
 | `outputId` | `string` | The output to get. |
 
 #### Returns
@@ -389,7 +389,7 @@ Get the data for an output.
 
 The `OutputData`.
 
-___
+---
 
 ### getFoundryOutput
 
@@ -400,8 +400,8 @@ the account, if it isn't in the account it will try to get it from the node.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name      | Type     | Description                                 |
+| :-------- | :------- | :------------------------------------------ |
 | `tokenId` | `string` | The native token ID to get the foundry for. |
 
 #### Returns
@@ -410,7 +410,7 @@ the account, if it isn't in the account it will try to get it from the node.
 
 The `FoundryOutput` that minted the token.
 
-___
+---
 
 ### getOutputsWithAdditionalUnlockConditions
 
@@ -420,8 +420,8 @@ Get outputs with additional unlock conditions.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name      | Type                                           | Description                   |
+| :-------- | :--------------------------------------------- | :---------------------------- |
 | `outputs` | [`OutputsToClaim`](../enums/OutputsToClaim.md) | The type of outputs to claim. |
 
 #### Returns
@@ -430,7 +430,7 @@ Get outputs with additional unlock conditions.
 
 The output IDs of the unlockable outputs.
 
-___
+---
 
 ### getTransaction
 
@@ -440,8 +440,8 @@ Get a transaction stored in the account.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name            | Type     | Description                       |
+| :-------------- | :------- | :-------------------------------- |
 | `transactionId` | `string` | The ID of the transaction to get. |
 
 #### Returns
@@ -450,7 +450,7 @@ Get a transaction stored in the account.
 
 The transaction.
 
-___
+---
 
 ### getIncomingTransactionData
 
@@ -461,8 +461,8 @@ List might not be complete, if the node pruned the data already
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name            | Type     | Description                       |
+| :-------------- | :------- | :-------------------------------- |
 | `transactionId` | `string` | The ID of the transaction to get. |
 
 #### Returns
@@ -471,7 +471,7 @@ List might not be complete, if the node pruned the data already
 
 The transaction.
 
-___
+---
 
 ### addresses
 
@@ -485,7 +485,7 @@ List all the addresses of the account.
 
 The addresses.
 
-___
+---
 
 ### addressesWithUnspentOutputs
 
@@ -499,7 +499,7 @@ List the addresses of the account with unspent outputs.
 
 The addresses.
 
-___
+---
 
 ### outputs
 
@@ -509,8 +509,8 @@ List all outputs of the account.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name             | Type                                              | Description                                   |
+| :--------------- | :------------------------------------------------ | :-------------------------------------------- |
 | `filterOptions?` | [`FilterOptions`](../interfaces/FilterOptions.md) | Options to filter the to be returned outputs. |
 
 #### Returns
@@ -519,7 +519,7 @@ List all outputs of the account.
 
 The outputs with metadata.
 
-___
+---
 
 ### pendingTransactions
 
@@ -533,7 +533,7 @@ List all the pending transactions of the account.
 
 The transactions.
 
-___
+---
 
 ### incomingTransactions
 
@@ -547,7 +547,7 @@ List all incoming transactions of the account.
 
 The incoming transactions with their inputs.
 
-___
+---
 
 ### transactions
 
@@ -561,7 +561,7 @@ List all the transactions of the account.
 
 The transactions.
 
-___
+---
 
 ### unspentOutputs
 
@@ -571,8 +571,8 @@ List all the unspent outputs of the account.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name             | Type                                              | Description                                   |
+| :--------------- | :------------------------------------------------ | :-------------------------------------------- |
 | `filterOptions?` | [`FilterOptions`](../interfaces/FilterOptions.md) | Options to filter the to be returned outputs. |
 
 #### Returns
@@ -581,7 +581,7 @@ List all the unspent outputs of the account.
 
 The outputs with metadata.
 
-___
+---
 
 ### getMetadata
 
@@ -595,7 +595,7 @@ Get the accounts metadata.
 
 The accounts metadata.
 
-___
+---
 
 ### minimumRequiredStorageDeposit
 
@@ -605,8 +605,8 @@ Calculate the minimum required storage deposit for an output.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name     | Type          | Description                                 |
+| :------- | :------------ | :------------------------------------------ |
 | `output` | `OutputTypes` | output to calculate the deposit amount for. |
 
 #### Returns
@@ -615,7 +615,7 @@ Calculate the minimum required storage deposit for an output.
 
 The amount.
 
-___
+---
 
 ### increaseNativeTokenSupply
 
@@ -625,12 +625,12 @@ Mint more native tokens.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `tokenId` | `string` | The native token id. |
-| `mintAmount` | `string` | To be minted amount. |
-| `increaseNativeTokenSupplyOptions?` | [`IncreaseNativeTokenSupplyOptions`](../interfaces/IncreaseNativeTokenSupplyOptions.md) | Options for minting more tokens. |
-| `transactionOptions?` | [`TransactionOptions`](../interfaces/TransactionOptions.md) | The options to define a `RemainderValueStrategy` or custom inputs. |
+| Name                                | Type                                                                                    | Description                                                        |
+| :---------------------------------- | :-------------------------------------------------------------------------------------- | :----------------------------------------------------------------- |
+| `tokenId`                           | `string`                                                                                | The native token id.                                               |
+| `mintAmount`                        | `string`                                                                                | To be minted amount.                                               |
+| `increaseNativeTokenSupplyOptions?` | [`IncreaseNativeTokenSupplyOptions`](../interfaces/IncreaseNativeTokenSupplyOptions.md) | Options for minting more tokens.                                   |
+| `transactionOptions?`               | [`TransactionOptions`](../interfaces/TransactionOptions.md)                             | The options to define a `RemainderValueStrategy` or custom inputs. |
 
 #### Returns
 
@@ -638,7 +638,7 @@ Mint more native tokens.
 
 The minting transaction and the token ID.
 
-___
+---
 
 ### mintNativeToken
 
@@ -648,9 +648,9 @@ Mint native tokens.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `nativeTokenOptions` | [`NativeTokenOptions`](../interfaces/NativeTokenOptions.md) | The options for minting tokens. |
+| Name                  | Type                                                        | Description                                                        |
+| :-------------------- | :---------------------------------------------------------- | :----------------------------------------------------------------- |
+| `nativeTokenOptions`  | [`NativeTokenOptions`](../interfaces/NativeTokenOptions.md) | The options for minting tokens.                                    |
 | `transactionOptions?` | [`TransactionOptions`](../interfaces/TransactionOptions.md) | The options to define a `RemainderValueStrategy` or custom inputs. |
 
 #### Returns
@@ -659,7 +659,7 @@ Mint native tokens.
 
 The minting transaction and the token ID.
 
-___
+---
 
 ### mintNfts
 
@@ -669,9 +669,9 @@ Mint nfts.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `nftsOptions` | [`NftOptions`](../interfaces/NftOptions.md)[] | The options for minting nfts. |
+| Name                  | Type                                                        | Description                                                        |
+| :-------------------- | :---------------------------------------------------------- | :----------------------------------------------------------------- |
+| `nftsOptions`         | [`NftOptions`](../interfaces/NftOptions.md)[]               | The options for minting nfts.                                      |
 | `transactionOptions?` | [`TransactionOptions`](../interfaces/TransactionOptions.md) | The options to define a `RemainderValueStrategy` or custom inputs. |
 
 #### Returns
@@ -680,7 +680,7 @@ Mint nfts.
 
 The minting transaction.
 
-___
+---
 
 ### prepareOutput
 
@@ -690,10 +690,10 @@ Prepare an output for sending, useful for offline signing.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `options` | [`OutputOptions`](../interfaces/OutputOptions.md) | The options for preparing an output. If the amount is below the minimum required storage deposit, by default the remaining amount will automatically be added with a `StorageDepositReturn` `UnlockCondition`, when setting the `ReturnStrategy` to `gift`, the full minimum required storage deposit will be sent to the recipient. When the assets contain an nft id, the data from the existing `NftOutput` will be used, just with the address unlock conditions replaced. |
-| `transactionOptions?` | [`TransactionOptions`](../interfaces/TransactionOptions.md) | The options to define a `RemainderValueStrategy` or custom inputs. |
+| Name                  | Type                                                        | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
+| :-------------------- | :---------------------------------------------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `options`             | [`OutputOptions`](../interfaces/OutputOptions.md)           | The options for preparing an output. If the amount is below the minimum required storage deposit, by default the remaining amount will automatically be added with a `StorageDepositReturn` `UnlockCondition`, when setting the `ReturnStrategy` to `gift`, the full minimum required storage deposit will be sent to the recipient. When the assets contain an nft id, the data from the existing `NftOutput` will be used, just with the address unlock conditions replaced. |
+| `transactionOptions?` | [`TransactionOptions`](../interfaces/TransactionOptions.md) | The options to define a `RemainderValueStrategy` or custom inputs.                                                                                                                                                                                                                                                                                                                                                                                                             |
 
 #### Returns
 
@@ -701,7 +701,7 @@ Prepare an output for sending, useful for offline signing.
 
 The prepared output.
 
-___
+---
 
 ### prepareSendAmount
 
@@ -711,10 +711,10 @@ Prepare a send amount transaction, useful for offline signing.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `addressesWithAmount` | [`AddressWithAmount`](../interfaces/AddressWithAmount.md)[] | Address with amounts to send. |
-| `options?` | [`TransactionOptions`](../interfaces/TransactionOptions.md) | The options to define a `RemainderValueStrategy` or custom inputs. |
+| Name                  | Type                                                        | Description                                                        |
+| :-------------------- | :---------------------------------------------------------- | :----------------------------------------------------------------- |
+| `addressesWithAmount` | [`AddressWithAmount`](../interfaces/AddressWithAmount.md)[] | Address with amounts to send.                                      |
+| `options?`            | [`TransactionOptions`](../interfaces/TransactionOptions.md) | The options to define a `RemainderValueStrategy` or custom inputs. |
 
 #### Returns
 
@@ -722,7 +722,7 @@ Prepare a send amount transaction, useful for offline signing.
 
 The prepared transaction data.
 
-___
+---
 
 ### prepareTransaction
 
@@ -732,9 +732,9 @@ Prepare a transaction, useful for offline signing.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `outputs` | `OutputTypes`[] | Outputs to use in the transaction. |
+| Name       | Type                                                        | Description                                                        |
+| :--------- | :---------------------------------------------------------- | :----------------------------------------------------------------- |
+| `outputs`  | `OutputTypes`[]                                             | Outputs to use in the transaction.                                 |
 | `options?` | [`TransactionOptions`](../interfaces/TransactionOptions.md) | The options to define a `RemainderValueStrategy` or custom inputs. |
 
 #### Returns
@@ -743,7 +743,7 @@ Prepare a transaction, useful for offline signing.
 
 The prepared transaction data.
 
-___
+---
 
 ### requestFundsFromFaucet
 
@@ -753,16 +753,16 @@ Request funds from a faucet.
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `url` | `string` |
+| Name      | Type     |
+| :-------- | :------- |
+| `url`     | `string` |
 | `address` | `string` |
 
 #### Returns
 
 `Promise`<`string`\>
 
-___
+---
 
 ### retryTransactionUntilIncluded
 
@@ -773,17 +773,17 @@ included (referenced by a milestone). Returns the included block id.
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
+| Name            | Type     |
+| :-------------- | :------- |
 | `transactionId` | `string` |
-| `interval?` | `number` |
-| `maxAttempts?` | `number` |
+| `interval?`     | `number` |
+| `maxAttempts?`  | `number` |
 
 #### Returns
 
 `Promise`<[`PreparedTransactionData`](../interfaces/PreparedTransactionData.md)\>
 
-___
+---
 
 ### sendAmount
 
@@ -793,9 +793,9 @@ Send a transaction with amounts from input addresses.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `addressesWithAmount` | [`AddressWithAmount`](../interfaces/AddressWithAmount.md)[] | Addresses with amounts. |
+| Name                  | Type                                                        | Description                                                        |
+| :-------------------- | :---------------------------------------------------------- | :----------------------------------------------------------------- |
+| `addressesWithAmount` | [`AddressWithAmount`](../interfaces/AddressWithAmount.md)[] | Addresses with amounts.                                            |
 | `transactionOptions?` | [`TransactionOptions`](../interfaces/TransactionOptions.md) | The options to define a `RemainderValueStrategy` or custom inputs. |
 
 #### Returns
@@ -804,7 +804,7 @@ Send a transaction with amounts from input addresses.
 
 The sent transaction.
 
-___
+---
 
 ### sendMicroTransaction
 
@@ -814,10 +814,10 @@ Send a micro transaction with amount below minimum storage deposit.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `addressesWithMicroAmount` | [`AddressWithMicroAmount`](../interfaces/AddressWithMicroAmount.md)[] | Addresses with micro amounts. |
-| `transactionOptions?` | [`TransactionOptions`](../interfaces/TransactionOptions.md) | The options to define a `RemainderValueStrategy` or custom inputs. |
+| Name                       | Type                                                                  | Description                                                        |
+| :------------------------- | :-------------------------------------------------------------------- | :----------------------------------------------------------------- |
+| `addressesWithMicroAmount` | [`AddressWithMicroAmount`](../interfaces/AddressWithMicroAmount.md)[] | Addresses with micro amounts.                                      |
+| `transactionOptions?`      | [`TransactionOptions`](../interfaces/TransactionOptions.md)           | The options to define a `RemainderValueStrategy` or custom inputs. |
 
 #### Returns
 
@@ -825,7 +825,7 @@ Send a micro transaction with amount below minimum storage deposit.
 
 The sent transaction.
 
-___
+---
 
 ### sendNativeTokens
 
@@ -835,10 +835,10 @@ Send native tokens.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `addressesNativeTokens` | [`AddressNativeTokens`](../interfaces/AddressNativeTokens.md)[] | Addresses amounts and native tokens. |
-| `transactionOptions?` | [`TransactionOptions`](../interfaces/TransactionOptions.md) | The options to define a `RemainderValueStrategy` or custom inputs. |
+| Name                    | Type                                                            | Description                                                        |
+| :---------------------- | :-------------------------------------------------------------- | :----------------------------------------------------------------- |
+| `addressesNativeTokens` | [`AddressNativeTokens`](../interfaces/AddressNativeTokens.md)[] | Addresses amounts and native tokens.                               |
+| `transactionOptions?`   | [`TransactionOptions`](../interfaces/TransactionOptions.md)     | The options to define a `RemainderValueStrategy` or custom inputs. |
 
 #### Returns
 
@@ -846,7 +846,7 @@ Send native tokens.
 
 The sent transaction.
 
-___
+---
 
 ### sendNft
 
@@ -856,9 +856,9 @@ Send nft.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `addressesAndNftIds` | [`AddressNftId`](../interfaces/AddressNftId.md)[] | Addresses and nft ids. |
+| Name                  | Type                                                        | Description                                                        |
+| :-------------------- | :---------------------------------------------------------- | :----------------------------------------------------------------- |
+| `addressesAndNftIds`  | [`AddressNftId`](../interfaces/AddressNftId.md)[]           | Addresses and nft ids.                                             |
 | `transactionOptions?` | [`TransactionOptions`](../interfaces/TransactionOptions.md) | The options to define a `RemainderValueStrategy` or custom inputs. |
 
 #### Returns
@@ -867,7 +867,7 @@ Send nft.
 
 The sent transaction.
 
-___
+---
 
 ### sendOutputs
 
@@ -877,9 +877,9 @@ Send outputs in a transaction.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `outputs` | `OutputTypes`[] | The outputs to send. |
+| Name                  | Type                                                        | Description                                                        |
+| :-------------------- | :---------------------------------------------------------- | :----------------------------------------------------------------- |
+| `outputs`             | `OutputTypes`[]                                             | The outputs to send.                                               |
 | `transactionOptions?` | [`TransactionOptions`](../interfaces/TransactionOptions.md) | The options to define a `RemainderValueStrategy` or custom inputs. |
 
 #### Returns
@@ -888,7 +888,7 @@ Send outputs in a transaction.
 
 The sent transaction.
 
-___
+---
 
 ### setAlias
 
@@ -898,15 +898,15 @@ Set the alias for the account
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name    | Type     | Description               |
+| :------ | :------- | :------------------------ |
 | `alias` | `string` | The account alias to set. |
 
 #### Returns
 
 `Promise`<`void`\>
 
-___
+---
 
 ### signTransactionEssence
 
@@ -916,8 +916,8 @@ Sign a prepared transaction, useful for offline signing.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name                      | Type                                                                  | Description                            |
+| :------------------------ | :-------------------------------------------------------------------- | :------------------------------------- |
 | `preparedTransactionData` | [`PreparedTransactionData`](../interfaces/PreparedTransactionData.md) | The prepared transaction data to sign. |
 
 #### Returns
@@ -926,7 +926,7 @@ Sign a prepared transaction, useful for offline signing.
 
 The signed transaction essence.
 
-___
+---
 
 ### submitAndStoreTransaction
 
@@ -936,8 +936,8 @@ Validate the transaction, submit it to a node and store it in the account.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name                    | Type                                                                    | Description                               |
+| :---------------------- | :---------------------------------------------------------------------- | :---------------------------------------- |
 | `signedTransactionData` | [`SignedTransactionEssence`](../interfaces/SignedTransactionEssence.md) | A signed transaction to submit and store. |
 
 #### Returns
@@ -946,7 +946,7 @@ Validate the transaction, submit it to a node and store it in the account.
 
 The sent transaction.
 
-___
+---
 
 ### sync
 
@@ -957,8 +957,8 @@ Will also retry pending transactions if necessary.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name       | Type                                          | Description                       |
+| :--------- | :-------------------------------------------- | :-------------------------------- |
 | `options?` | [`SyncOptions`](../interfaces/SyncOptions.md) | Optional synchronization options. |
 
 #### Returns
@@ -967,7 +967,7 @@ Will also retry pending transactions if necessary.
 
 The account balance.
 
-___
+---
 
 ### getParticipationOverview
 
@@ -977,8 +977,8 @@ Calculates the voting overview of an account.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name        | Type       | Description                                                |
+| :---------- | :--------- | :--------------------------------------------------------- |
 | `eventIds?` | `string`[] | Optional, filters participations only for provided events. |
 
 #### Returns

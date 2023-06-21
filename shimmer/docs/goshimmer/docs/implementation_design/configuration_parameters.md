@@ -2,10 +2,10 @@
 description: You can pass configuration parameters in two ways when running GoShimmer, through a JSON configuration file or through command line arguments. Parameters are grouped into embedded objects containing parameters for a single plugin or functionality. There is no limit on how deep the configuration object may be embedded.
 image: /img/logo/goshimmer_light.png
 keywords:
-- json 
-- command line
-- embedded object
-- parameters
+  - json
+  - command line
+  - embedded object
+  - parameters
 ---
 
 # Configuration Parameters
@@ -28,14 +28,14 @@ For example, the config below contains example parameters for the PoW plugin.
 ```
 
 The same arguments can be passed through command line arguments in the following way. Embedded objects' values are described using JSON dot-notation.
-Additionally,the user can pass the path of the JSON config file through a command-line argument as well, as shown in an example below. 
+Additionally,the user can pass the path of the JSON config file through a command-line argument as well, as shown in an example below.
 
 ```shell
 goshimmer \
 --config=/tmp/config.json \
 --pow.difficulty=2 \
 --pow.numThreads=1 \
---pow.timeout=10s 
+--pow.timeout=10s
 ```
 
 ## Custom Parameter Fields
@@ -45,7 +45,7 @@ Currently, in the code there are two ways in which parameters are registered wit
 ### New Way
 
 Defining configuration parameters using the new way is really similar, however the parameters are not registered directly with the package reading the configuration,
-but rather with our custom package that contains all the logic required to make it work seamlessly. 
+but rather with our custom package that contains all the logic required to make it work seamlessly.
 
 In this approach, instead of defining a parameter name, a new type is defined with all necessary parameters, their default values and usage descriptions using Go's struct field tags.
 A variable is then initialized with the defined type.
@@ -78,10 +78,10 @@ func init() {
 }
 ```
 
-In order to access the parameter value, a user can simply access the structure's field: `Parameters.ParamName` or `Parameters.ParamGroup.DetailedParam1` 
-and it will be populated either with the default value or values passed through a JSON config or command-line argument. 
+In order to access the parameter value, a user can simply access the structure's field: `Parameters.ParamName` or `Parameters.ParamGroup.DetailedParam1`
+and it will be populated either with the default value or values passed through a JSON config or command-line argument.
 
-This approach makes it more simple to define new parameters as well as makes accessing configuration values more clear. 
+This approach makes it more simple to define new parameters as well as makes accessing configuration values more clear.
 
 ### Old, Deprecated Way
 

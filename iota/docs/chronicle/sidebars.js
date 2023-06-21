@@ -9,8 +9,9 @@
  Create as many sidebars as you want.
  */
 
- module.exports = {
-  docs: [{
+module.exports = {
+  docs: [
+    {
       type: 'doc',
       id: 'welcome',
       label: 'Welcome',
@@ -30,5 +31,5 @@
       id: 'contribute',
       label: 'Contribute',
     },
-  ]
-}; 
+  ],
+};

@@ -29,4 +29,4 @@ Indicates if the outputs should have storage deposit return unlock condition or 
 ### `Client.get_outputs(output_ids)`
 
 The [`Client.get_outputs(output_ids)`](./../libraries/python/api_reference#get_outputs) will query the node for a list
-of `output_ids` in parallel. 
+of `output_ids` in parallel.

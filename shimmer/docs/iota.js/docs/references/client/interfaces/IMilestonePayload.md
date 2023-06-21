@@ -1,18 +1,19 @@
 ---
 description: iota.js API reference
 keywords:
-- references
-- api references
-- typescript
+  - references
+  - api references
+  - typescript
 image: /img/client_banner.png
 ---
+
 # Interface: IMilestonePayload
 
 Milestone payload.
 
 ## Hierarchy
 
-- [`ITypeBase`](ITypeBase.md)<``7``\>
+- [`ITypeBase`](ITypeBase.md)<`7`\>
 
   ↳ **`IMilestonePayload`**
 
@@ -36,7 +37,7 @@ Milestone payload.
 
 ### type
 
-• **type**: ``7``
+• **type**: `7`
 
 The type of the object.
 
@@ -44,7 +45,7 @@ The type of the object.
 
 [ITypeBase](ITypeBase.md).[type](ITypeBase.md#type)
 
-___
+---
 
 ### index
 
@@ -52,7 +53,7 @@ ___
 
 The index name.
 
-___
+---
 
 ### timestamp
 
@@ -60,7 +61,7 @@ ___
 
 The timestamp of the milestone.
 
-___
+---
 
 ### protocolVersion
 
@@ -68,7 +69,7 @@ ___
 
 The protocol version.
 
-___
+---
 
 ### previousMilestoneId
 
@@ -76,7 +77,7 @@ ___
 
 The id of the previous milestone.
 
-___
+---
 
 ### parents
 
@@ -84,7 +85,7 @@ ___
 
 The parents where this milestone attaches to.
 
-___
+---
 
 ### inclusionMerkleRoot
 
@@ -92,7 +93,7 @@ ___
 
 The Merkle tree hash of all blocks confirmed by this milestone.
 
-___
+---
 
 ### appliedMerkleRoot
 
@@ -100,7 +101,7 @@ ___
 
 The Merkle tree hash of all blocks applied by this milestone.
 
-___
+---
 
 ### metadata
 
@@ -108,7 +109,7 @@ ___
 
 The metadata.
 
-___
+---
 
 ### options
 
@@ -116,7 +117,7 @@ ___
 
 The milestone options.
 
-___
+---
 
 ### signatures
 

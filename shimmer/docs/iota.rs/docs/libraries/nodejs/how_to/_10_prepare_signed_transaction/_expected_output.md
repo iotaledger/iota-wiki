@@ -12,7 +12,7 @@ Block:  [
     payload: { type: 6, essence: [Object], unlocks: [Array] },
     nonce: '4611686018427398146'
   }
-] 
+]
 
 Transaction sent: https://explorer.shimmer.network/testnet/block/0x8c48950b2796c5d60e5aafd481c34ef6395d078f28b69c3001372b89142a729a
 

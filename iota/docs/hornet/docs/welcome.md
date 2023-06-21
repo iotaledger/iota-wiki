@@ -2,13 +2,13 @@
 description: Hornet is a powerful, easy to install IOTA node software written in Go. It provides the full node capabilities including full support of the Chrysalis network update.
 image: /img/Banner/banner_hornet.png
 keywords:
-- IOTA Node
-- Hornet Node
-- Hornet
-- IOTA
-- Node Software
-- Welcome
-- explanation
+  - IOTA Node
+  - Hornet Node
+  - Hornet
+  - IOTA
+  - Node Software
+  - Welcome
+  - explanation
 ---
 
 # Welcome to Hornet

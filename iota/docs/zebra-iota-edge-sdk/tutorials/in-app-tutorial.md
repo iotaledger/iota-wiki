@@ -21,19 +21,19 @@ To complete the tutorial, you will need the following imports:
 
 ```js
 import {
-    init,
-    Client,
-    Config,
-    Digest,
-    Document,
-    KeyCollection,
-    KeyPair,
-    KeyType,
-    Network,
-    VerifiableCredential,
-    VerifiablePresentation,
-    VerificationMethod
-} from "@iota/identity-wasm/web"; // NOTE: Web context.
+  init,
+  Client,
+  Config,
+  Digest,
+  Document,
+  KeyCollection,
+  KeyPair,
+  KeyType,
+  Network,
+  VerifiableCredential,
+  VerifiablePresentation,
+  VerificationMethod,
+} from '@iota/identity-wasm/web'; // NOTE: Web context.
 ```
 
 ## Initialize an IOTA Identity Client
@@ -42,13 +42,13 @@ We will create a client that connects to the IOTA mainnet through one of the IOT
 
 ```js
 async function createClient() {
-    // Configure IOTA Identity client to connect to the IOTA mainnet.
-    const cfg = Config.fromNetwork(Network.try_from_name("main"));
-    cfg.setNode("https://chrysalis-nodes.iota.org");
-    cfg.setPermanode("https://chrysalis-chronicle.iota.org/api/mainnet/");
-    
-    // Return the client.
-    return Client.fromConfig(cfg);
+  // Configure IOTA Identity client to connect to the IOTA mainnet.
+  const cfg = Config.fromNetwork(Network.try_from_name('main'));
+  cfg.setNode('https://chrysalis-nodes.iota.org');
+  cfg.setPermanode('https://chrysalis-chronicle.iota.org/api/mainnet/');
+
+  // Return the client.
+  return Client.fromConfig(cfg);
 }
 ```
 
@@ -58,25 +58,30 @@ Creating an identity involves generating a public-private key pair (`authKeyPair
 
 ```js
 async function createIdentity(client) {
-    // Generate a new key pair and DID document for the new identity.
-    const authKeyPair = new KeyPair(KeyType.Ed25519);
-    const doc = new Document(authKeyPair, client.network().toString());
+  // Generate a new key pair and DID document for the new identity.
+  const authKeyPair = new KeyPair(KeyType.Ed25519);
+  const doc = new Document(authKeyPair, client.network().toString());
 
-    // Add a Merkle Key Collection method for the identity, so compromised keys can be revoked.
-    const keys = new KeyCollection(KeyType.Ed25519, 8);
-    const method = VerificationMethod.createMerkleKey(Digest.Sha256, doc.id, keys, "key-collection");
+  // Add a Merkle Key Collection method for the identity, so compromised keys can be revoked.
+  const keys = new KeyCollection(KeyType.Ed25519, 8);
+  const method = VerificationMethod.createMerkleKey(
+    Digest.Sha256,
+    doc.id,
+    keys,
+    'key-collection',
+  );
 
-    // Add to the DID Document as a general-purpose verification method.
-    doc.insertMethod(method, "VerificationMethod");
+  // Add to the DID Document as a general-purpose verification method.
+  doc.insertMethod(method, 'VerificationMethod');
 
-    // Sign the DID document with the auth key. Ensure only the private key holder can manipulate this document.
-    doc.sign(authKeyPair);
+  // Sign the DID document with the auth key. Ensure only the private key holder can manipulate this document.
+  doc.sign(authKeyPair);
 
-    // Publish the document to the Tangle.
-    await client.publishDocument(doc);
+  // Publish the document to the Tangle.
+  await client.publishDocument(doc);
 
-    // Return the new identity data.
-    return { authKeyPair, doc, keys, method };
+  // Return the new identity data.
+  return { authKeyPair, doc, keys, method };
 }
 ```
 
@@ -86,27 +91,27 @@ A Verifiable Credential consists of some "claims" about a "subject" (DID) that h
 
 ```js
 async function createVerifiableCredential(claims, issuer, subject) {
-    // Create an unsigned credential.
-    const unsignedVc = VerifiableCredential.extend({
-        id: `http://example.org/zebra-iota-sdk/1234`,
-        type: "DeviceID",
-        issuer: issuer.doc.id.toString(),
-        credentialSubject: {
-            id: subject.doc.id.toString(),
-            ...claims
-        }
-    });
+  // Create an unsigned credential.
+  const unsignedVc = VerifiableCredential.extend({
+    id: `http://example.org/zebra-iota-sdk/1234`,
+    type: 'DeviceID',
+    issuer: issuer.doc.id.toString(),
+    credentialSubject: {
+      id: subject.doc.id.toString(),
+      ...claims,
+    },
+  });
 
-    // Sign the credential with issuer's Merkle Key Collection method.
-    const signedVc = issuer.doc.signCredential(unsignedVc, {
-        method: issuer.method.id.toString(),
-        public: issuer.keys.public(0),
-        private: issuer.keys.private(0),
-        proof: issuer.keys.merkleProof(Digest.Sha256, 0)
-    });
+  // Sign the credential with issuer's Merkle Key Collection method.
+  const signedVc = issuer.doc.signCredential(unsignedVc, {
+    method: issuer.method.id.toString(),
+    public: issuer.keys.public(0),
+    private: issuer.keys.private(0),
+    proof: issuer.keys.merkleProof(Digest.Sha256, 0),
+  });
 
-    // Return the signed VC.
-    return signedVc;
+  // Return the signed VC.
+  return signedVc;
 }
 ```
 
@@ -116,19 +121,19 @@ A Verifiable Presentation is a container for VCs and may be signed by the holder
 
 ```js
 async function createVerifiablePresentation(vc, holder) {
-    // Create an unsigned presentation from the credential.
-    const unsignedVp = new VerifiablePresentation(holder.doc, vc);
+  // Create an unsigned presentation from the credential.
+  const unsignedVp = new VerifiablePresentation(holder.doc, vc);
 
-    // Sign the presentation with issuer's Merkle Key Collection method.
-    const signedVp = holder.doc.signPresentation(unsignedVp, {
-        method: holder.method.id.toString(),
-        public: holder.keys.public(0),
-        private: holder.keys.private(0),
-        proof: holder.keys.merkleProof(Digest.Sha256, 0)
-    });
+  // Sign the presentation with issuer's Merkle Key Collection method.
+  const signedVp = holder.doc.signPresentation(unsignedVp, {
+    method: holder.method.id.toString(),
+    public: holder.keys.public(0),
+    private: holder.keys.private(0),
+    proof: holder.keys.merkleProof(Digest.Sha256, 0),
+  });
 
-    // Return the signed VP.
-    return signedVp;
+  // Return the signed VP.
+  return signedVp;
 }
 ```
 
@@ -140,11 +145,11 @@ The recipient of a VP will want to authenticate the DIDs of the VP holder, VC su
 
 ```js
 async function verifyVerifiablePresentation(vpString, client) {
-    // Validate the presentation proof and all relevant DID documents.
-    const result = await client.checkPresentation(vpString);
+  // Validate the presentation proof and all relevant DID documents.
+  const result = await client.checkPresentation(vpString);
 
-    // Return the result.
-    return result;
+  // Return the result.
+  return result;
 }
 ```
 
@@ -154,52 +159,50 @@ So far we have only defined functions, time to put them to use. The following fu
 
 ```js
 async function run() {
-    // Ensure the WASM library is initialized. The library is cached after first initialization.
-    // NOTE: Web context.
-    await init("/path/to/identity_wasm_bg.wasm");
+  // Ensure the WASM library is initialized. The library is cached after first initialization.
+  // NOTE: Web context.
+  await init('/path/to/identity_wasm_bg.wasm');
 
-    const client = await createClient();
-    const device = await createIdentity(client);
-    const manufacturer = await createIdentity(client);
+  const client = await createClient();
+  const device = await createIdentity(client);
+  const manufacturer = await createIdentity(client);
 
-    // Make up some information about the device.
-    const claims = {
-        uuid: "d8c9934a-1d6a-4c92-ad6b-5bd2f255dc42",
-        name: "Zebra TC21",
-        platform: "Android",
-        manufacturer: "Zebra Technologies"
-    };
+  // Make up some information about the device.
+  const claims = {
+    uuid: 'd8c9934a-1d6a-4c92-ad6b-5bd2f255dc42',
+    name: 'Zebra TC21',
+    platform: 'Android',
+    manufacturer: 'Zebra Technologies',
+  };
 
-    // Turn this information into a Verifiable Credential.
-    const vc = await createVerifiableCredential(claims, manufacturer, device);
+  // Turn this information into a Verifiable Credential.
+  const vc = await createVerifiableCredential(claims, manufacturer, device);
 
-    // Share the Verifiable Credential through a Verifiable Presentation.
-    const vp = await createVerifiablePresentation(vc, manufacturer);
+  // Share the Verifiable Credential through a Verifiable Presentation.
+  const vp = await createVerifiablePresentation(vc, manufacturer);
 
-    // The VP can be serialized to JSON for sharing (e.g. encoded as a DataMatrix).
-    const vpString = JSON.stringify(vp.toJSON());
+  // The VP can be serialized to JSON for sharing (e.g. encoded as a DataMatrix).
+  const vpString = JSON.stringify(vp.toJSON());
 
-    // The recipient of the VP can verify that the presentation (and contained credentials) are valid.
-    const {
-        verified: vpIsValid,
-        credentials: vcVerificationResults
-    } = await verifyVerifiablePresentation(vpString, client);
+  // The recipient of the VP can verify that the presentation (and contained credentials) are valid.
+  const { verified: vpIsValid, credentials: vcVerificationResults } =
+    await verifyVerifiablePresentation(vpString, client);
 
-    if (!vpIsValid) {
-        throw new Error("The Verifiable Presentation is invalid.");
-    }
-    
-    // The recipient can now trust that the credentials contained in the VP are about the
-    // above device and have been issued by the above manufacturer.
-    for (const vcResult of vcVerificationResults) {
-        console.log(vcResult.credential.credentialSubject);
-    }
+  if (!vpIsValid) {
+    throw new Error('The Verifiable Presentation is invalid.');
+  }
+
+  // The recipient can now trust that the credentials contained in the VP are about the
+  // above device and have been issued by the above manufacturer.
+  for (const vcResult of vcVerificationResults) {
+    console.log(vcResult.credential.credentialSubject);
+  }
 }
 
 // Run the tutorial
 run()
-    .then(() => console.log("Complete!"))
-    .catch(err => console.error(err));
+  .then(() => console.log('Complete!'))
+  .catch((err) => console.error(err));
 ```
 
 ## Further Reading

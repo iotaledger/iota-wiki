@@ -1,11 +1,12 @@
 ---
 description: iota.js API reference
 keywords:
-- references
-- api references
-- typescript
+  - references
+  - api references
+  - typescript
 image: /img/client_banner.png
 ---
+
 # Class: Base58
 
 Class to help with base58 Encoding/Decoding.
@@ -33,8 +34,8 @@ Convert the base 58 string to a byte array.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name     | Type     | Description                   |
+| :------- | :------- | :---------------------------- |
 | `base58` | `string` | The base58 string to convert. |
 
 #### Returns
@@ -43,7 +44,7 @@ Convert the base 58 string to a byte array.
 
 The byte array.
 
-___
+---
 
 ### encode
 
@@ -53,8 +54,8 @@ Convert a byte array to base 58.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name    | Type         | Description               |
+| :------ | :----------- | :------------------------ |
 | `bytes` | `Uint8Array` | The byte array to encode. |
 
 #### Returns

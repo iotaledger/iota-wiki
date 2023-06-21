@@ -5,7 +5,6 @@ parameters in the [Address/Key Space section](../../../explanations/address_key_
 
 The whole process is deterministic. This means the output is the same as long as the seed is the same:
 
-
 ```python reference
 https://github.com/iotaledger/iota.rs/tree/production/bindings/python/examples/03_generate_addresses.py
 ```
@@ -35,17 +34,17 @@ https://github.com/iotaledger/iota.rs/tree/production/bindings/python/examples/0
  ('atoi1qpehxcp24z947dgupjqc9ktkn5ylmdxqqnx83m7xlajnf8005756u4n7z77', True)]
 ```
 
-* Each tuple contains `address` and `bool` value indicating if the address is a `change` address or not. `True`
-means the address is a change address (internal). There are two independent sets of addresses (10 items per each).
-* This behavior is controlled by the `get_all` argument. `get_all=False` (default) generates only public addresses.
+- Each tuple contains `address` and `bool` value indicating if the address is a `change` address or not. `True`
+  means the address is a change address (internal). There are two independent sets of addresses (10 items per each).
+- This behavior is controlled by the `get_all` argument. `get_all=False` (default) generates only public addresses.
 
 IOTA addresses are represented by a checksumed base-32 string (Bech32). You can find a detailed explanation in the
 [Chrysalis documentations](https://wiki.iota.org/chrysalis-docs/guides/developer/#iota-15-address-anatom), but here are
 parts relevant to this example:
 
-* If an address starts with `atoi` then it means it is related to `devnet`. `iota` stands for `mainnet`.
-* Number `1` at the 5<sup>th</sup> position is just a separator.
-* The last 6 characters are reserved for a checksum.
+- If an address starts with `atoi` then it means it is related to `devnet`. `iota` stands for `mainnet`.
+- Number `1` at the 5<sup>th</sup> position is just a separator.
+- The last 6 characters are reserved for a checksum.
 
 Addresses can be also represented in a hex format and `iota.rs` provides some convenient functions to convert addresses:
 [`Client.bech32_to_hex()`](./../api_reference.md#bech32_to_hexbech32) and
@@ -54,4 +53,3 @@ Addresses can be also represented in a hex format and `iota.rs` provides some co
 If you want to quickly validate any IOTA address, you can use the
 [`Client.is_address_valid()`](./../api_reference.md#is_address_validaddress-bool) function that returns a
 `bool` value. You should perform a sanity check on address before using it.
-

@@ -13,10 +13,10 @@ Network types.
 
 ### Mainnet
 
-• **Mainnet** = ``0``
+• **Mainnet** = `0`
 
-___
+---
 
 ### Testnet
 
-• **Testnet** = ``1``
+• **Testnet** = `1`

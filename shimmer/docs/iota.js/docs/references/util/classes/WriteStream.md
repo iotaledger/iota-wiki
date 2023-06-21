@@ -1,11 +1,12 @@
 ---
 description: iota.js API reference
 keywords:
-- references
-- api references
-- typescript
+  - references
+  - api references
+  - typescript
 image: /img/client_banner.png
 ---
+
 # Class: WriteStream
 
 Keep track of the write index within a stream.
@@ -55,7 +56,7 @@ Get the length of the stream.
 
 The stream length.
 
-___
+---
 
 ### unused
 
@@ -69,7 +70,7 @@ How much unused data is there.
 
 The amount of unused data.
 
-___
+---
 
 ### finalBytes
 
@@ -83,7 +84,7 @@ Get the final stream as bytes.
 
 The final stream.
 
-___
+---
 
 ### finalHex
 
@@ -97,7 +98,7 @@ Get the final stream as hex.
 
 The final stream as hex.
 
-___
+---
 
 ### getWriteIndex
 
@@ -111,7 +112,7 @@ Get the current write index.
 
 The current write index.
 
-___
+---
 
 ### setWriteIndex
 
@@ -121,15 +122,15 @@ Set the current write index.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name         | Type     | Description              |
+| :----------- | :------- | :----------------------- |
 | `writeIndex` | `number` | The current write index. |
 
 #### Returns
 
 `void`
 
-___
+---
 
 ### writeFixedHex
 
@@ -139,17 +140,17 @@ Write fixed length stream.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `name` | `string` | The name of the data we are trying to write. |
-| `length` | `number` | The length of the data to write. |
-| `val` | `string` | The data to write. |
+| Name     | Type     | Description                                  |
+| :------- | :------- | :------------------------------------------- |
+| `name`   | `string` | The name of the data we are trying to write. |
+| `length` | `number` | The length of the data to write.             |
+| `val`    | `string` | The data to write.                           |
 
 #### Returns
 
 `void`
 
-___
+---
 
 ### writeBytes
 
@@ -159,17 +160,17 @@ Write fixed length stream.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `name` | `string` | The name of the data we are trying to write. |
-| `length` | `number` | The length of the data to write. |
-| `val` | `Uint8Array` | The data to write. |
+| Name     | Type         | Description                                  |
+| :------- | :----------- | :------------------------------------------- |
+| `name`   | `string`     | The name of the data we are trying to write. |
+| `length` | `number`     | The length of the data to write.             |
+| `val`    | `Uint8Array` | The data to write.                           |
 
 #### Returns
 
 `void`
 
-___
+---
 
 ### writeUInt8
 
@@ -179,16 +180,16 @@ Write a byte to the stream.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name   | Type     | Description                                  |
+| :----- | :------- | :------------------------------------------- |
 | `name` | `string` | The name of the data we are trying to write. |
-| `val` | `number` | The data to write. |
+| `val`  | `number` | The data to write.                           |
 
 #### Returns
 
 `void`
 
-___
+---
 
 ### writeUInt16
 
@@ -198,16 +199,16 @@ Write a UInt16 to the stream.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name   | Type     | Description                                  |
+| :----- | :------- | :------------------------------------------- |
 | `name` | `string` | The name of the data we are trying to write. |
-| `val` | `number` | The data to write. |
+| `val`  | `number` | The data to write.                           |
 
 #### Returns
 
 `void`
 
-___
+---
 
 ### writeUInt32
 
@@ -217,16 +218,16 @@ Write a UInt32 to the stream.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name   | Type     | Description                                  |
+| :----- | :------- | :------------------------------------------- |
 | `name` | `string` | The name of the data we are trying to write. |
-| `val` | `number` | The data to write. |
+| `val`  | `number` | The data to write.                           |
 
 #### Returns
 
 `void`
 
-___
+---
 
 ### writeUInt64
 
@@ -236,16 +237,16 @@ Write a UInt64 to the stream.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `name` | `string` | The name of the data we are trying to write. |
-| `val` | `BigInteger` | The data to write. |
+| Name   | Type         | Description                                  |
+| :----- | :----------- | :------------------------------------------- |
+| `name` | `string`     | The name of the data we are trying to write. |
+| `val`  | `BigInteger` | The data to write.                           |
 
 #### Returns
 
 `void`
 
-___
+---
 
 ### writeUInt256
 
@@ -255,16 +256,16 @@ Write a UInt256 to the stream.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `name` | `string` | The name of the data we are trying to write. |
-| `val` | `BigInteger` | The data to write. |
+| Name   | Type         | Description                                  |
+| :----- | :----------- | :------------------------------------------- |
+| `name` | `string`     | The name of the data we are trying to write. |
+| `val`  | `BigInteger` | The data to write.                           |
 
 #### Returns
 
 `void`
 
-___
+---
 
 ### writeBoolean
 
@@ -274,10 +275,10 @@ Write a boolean to the stream.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `name` | `string` | The name of the data we are trying to write. |
-| `val` | `boolean` | The data to write. |
+| Name   | Type      | Description                                  |
+| :----- | :-------- | :------------------------------------------- |
+| `name` | `string`  | The name of the data we are trying to write. |
+| `val`  | `boolean` | The data to write.                           |
 
 #### Returns
 

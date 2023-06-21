@@ -18,7 +18,7 @@ Data for transaction inputs for signing and ordering of unlock blocks
 
 The output
 
-___
+---
 
 ### outputMetadata
 
@@ -26,7 +26,7 @@ ___
 
 The output metadata
 
-___
+---
 
 ### chain
 

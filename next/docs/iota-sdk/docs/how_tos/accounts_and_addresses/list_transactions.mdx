@@ -3,21 +3,21 @@ title: List Transactions
 description: 'How to list transactions'
 image: /img/logo/iota_mark_light.png
 keywords:
-- how to
-- list transactions
-- nodejs
-- python
-- rust
+  - how to
+  - list transactions
+  - nodejs
+  - python
+  - rust
 ---
 
-import Tabs from "@theme/Tabs";
-import TabItem from "@theme/TabItem";
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 This How-To will show you how to list all transactions of an account.
 
 :::tip Sync Options
 
-If you want to list incoming transactions you need to specify that in your `sync` call. 
+If you want to list incoming transactions you need to specify that in your `sync` call.
 Transactions for outputs that you synced before with other sync options, will not be requested later.
 Also only transactions that weren't pruned on the point of syncing will be listed.
 

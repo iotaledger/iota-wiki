@@ -17,7 +17,7 @@ The balance of the base coin
 
 The total amount of the outputs
 
-___
+---
 
 ### available
 

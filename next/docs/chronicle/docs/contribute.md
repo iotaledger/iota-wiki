@@ -1,14 +1,14 @@
 ---
-description: Contribute to the IOTA wiki docs templates by contributing to the official GitHub repository or sharing your knowledge on Discord.  
+description: Contribute to the IOTA wiki docs templates by contributing to the official GitHub repository or sharing your knowledge on Discord.
 image: /img/logo/iota_logo.svg
 keywords:
-- join
-- documentation
-- project
-- contribute
-- discord
-- GitHub
-- reference
+  - join
+  - documentation
+  - project
+  - contribute
+  - discord
+  - GitHub
+  - reference
 ---
 
 # Contribute to Chronicle

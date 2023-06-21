@@ -28,11 +28,11 @@ You can think of Stronghold as an isolated container for secrets. The secret can
 
 Generally speaking, there are two states where the secret data remains, [Clients](reference/structure/client.md) and the [Snapshot](reference/structure/engine/snapshot.md) facilities.
 
-The runtime operation uses Clients. You can think of Clients as a context-based secure data container that includes all the functionality you need to work with sensitive data. 
+The runtime operation uses Clients. You can think of Clients as a context-based secure data container that includes all the functionality you need to work with sensitive data.
 
 Stronghold uses Snapshot facilities to persist the runtime. The Snapshot is actually twofold. At the lowest level, the Snapshot is a highly encrypted file represented by an in-memory instance of Snapshot itself, which is encrypted and protected via the same means as the Vault.
 
-Additionally to the secure secret database [Vault](reference/structure/engine/vault.md), Stronghold provides an evicting cache to store non-sensitive data called the [Store](reference/structure/engine/store.md). Use the Store to keep session-based configuration data. 
+Additionally to the secure secret database [Vault](reference/structure/engine/vault.md), Stronghold provides an evicting cache to store non-sensitive data called the [Store](reference/structure/engine/store.md). Use the Store to keep session-based configuration data.
 
 [![status](https://img.shields.io/badge/Status-Beta-green.svg)](https://github.com/iotaledger/stronghold.rs)
 ![Audit](https://github.com/iotaledger/stronghold.rs/workflows/Audit/badge.svg?branch=dev)
@@ -62,4 +62,4 @@ If you want to get involved in discussions about this library, or you're looking
 ## Software Bill of Materials
 
 We maintain a [bill of materials](https://github.com/iotaledger/stronghold.rs/raw/dev/S-BOM.pdf) for the upstream
-libraries that Stronghold consumes. 
+libraries that Stronghold consumes.

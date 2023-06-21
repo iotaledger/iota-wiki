@@ -2,20 +2,20 @@
 description: INX-MQTT provides an event-based real-time streaming node API.
 image: /img/Banner/banner_hornet.png
 keywords:
-- IOTA Node
-- Hornet Node
-- INX
-- MQTT
-- IOTA
-- Shimmer
-- Node Software
-- Welcome
-- explanation
+  - IOTA Node
+  - Hornet Node
+  - INX
+  - MQTT
+  - IOTA
+  - Shimmer
+  - Node Software
+  - Welcome
+  - explanation
 ---
 
 # Welcome to INX-MQTT
 
-INX-MQTT provides an event-based real-time streaming node API. 
+INX-MQTT provides an event-based real-time streaming node API.
 The built-in MQTT broker offers a list of topics clients can subscribe to, to receive the latest blocks and outputs attached on the tangle.
 
 ## Setup

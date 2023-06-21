@@ -22,12 +22,13 @@ To run Chronicle, you need the following:
 
 - The `build-essentials` packages
 
-    You can install these packages for Debian based distros, using the following command:
+  You can install these packages for Debian based distros, using the following command:
 
-    ```bash
-    sudo apt-get install build-essential gcc make cmake cmake-gui cmake-curses-gui pkg-config openssl libssl-dev
-    ```
-    For other Linux distros, please refer to your package manager to install the build-essential pkgs
+  ```bash
+  sudo apt-get install build-essential gcc make cmake cmake-gui cmake-curses-gui pkg-config openssl libssl-dev
+  ```
+
+  For other Linux distros, please refer to your package manager to install the build-essential pkgs
 
 - (Optional) An IDE that supports Rust autocompletion. We recommend [Visual Studio Code](https://code.visualstudio.com/Download) with the [rust-analyzer](https://marketplace.visualstudio.com/items?itemName=matklad.rust-analyzer) extension
 
@@ -68,7 +69,6 @@ Chronicle uses a [RON](https://github.com/ron-rs/ron) file to store configuratio
 ### Running Chronicle
 
 See [Building Chronicle](#Building-Chronicle).
-
 
 ```bash
 cd target/release && cp /path/to/your/config.ron ./

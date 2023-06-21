@@ -1,11 +1,12 @@
 ---
 description: iota.js API reference
 keywords:
-- references
-- api references
-- typescript
+  - references
+  - api references
+  - typescript
 image: /img/client_banner.png
 ---
+
 # Class: ClientError
 
 Class to represent errors from Client.
@@ -43,9 +44,9 @@ Create .stack property on a target object
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `targetObject` | `object` |
+| Name              | Type       |
+| :---------------- | :--------- |
+| `targetObject`    | `object`   |
 | `constructorOpt?` | `Function` |
 
 #### Returns
@@ -72,9 +73,9 @@ Optional override for formatting stack traces
 
 ##### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `err` | `Error` |
+| Name          | Type         |
+| :------------ | :----------- |
+| `err`         | `Error`      |
 | `stackTraces` | `CallSite`[] |
 
 ##### Returns
@@ -85,7 +86,7 @@ Optional override for formatting stack traces
 
 Error.prepareStackTrace
 
-___
+---
 
 ### route
 
@@ -93,7 +94,7 @@ ___
 
 The route the request was made to.
 
-___
+---
 
 ### httpStatus
 
@@ -101,7 +102,7 @@ ___
 
 The HTTP status code returned.
 
-___
+---
 
 ### code
 
@@ -119,12 +120,12 @@ Create a new instance of ClientError.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `message` | `string` | The message for the error. |
-| `route` | `string` | The route the request was made to. |
-| `httpStatus` | `number` | The http status code. |
-| `code?` | `string` | The code in the payload. |
+| Name         | Type     | Description                        |
+| :----------- | :------- | :--------------------------------- |
+| `message`    | `string` | The message for the error.         |
+| `route`      | `string` | The route the request was made to. |
+| `httpStatus` | `number` | The http status code.              |
+| `code?`      | `string` | The code in the payload.           |
 
 #### Overrides
 

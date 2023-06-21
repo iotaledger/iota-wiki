@@ -1,18 +1,19 @@
 ---
 description: iota.js API reference
 keywords:
-- references
-- api references
-- typescript
+  - references
+  - api references
+  - typescript
 image: /img/client_banner.png
 ---
+
 # Interface: ITreasuryOutput
 
 Treasury Output.
 
 ## Hierarchy
 
-- [`ITypeBase`](ITypeBase.md)<``2``\>
+- [`ITypeBase`](ITypeBase.md)<`2`\>
 
   ↳ **`ITreasuryOutput`**
 
@@ -27,7 +28,7 @@ Treasury Output.
 
 ### type
 
-• **type**: ``2``
+• **type**: `2`
 
 The type of the object.
 
@@ -35,7 +36,7 @@ The type of the object.
 
 [ITypeBase](ITypeBase.md).[type](ITypeBase.md#type)
 
-___
+---
 
 ### amount
 

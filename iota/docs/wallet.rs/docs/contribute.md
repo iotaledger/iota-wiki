@@ -1,15 +1,16 @@
 ---
-description: Contribute to the IOTA Wallet Library joining the IOTA Libraries Initiative, contributing to the official GitHub repository, or sharing your knowledge on Discord.  
+description: Contribute to the IOTA Wallet Library joining the IOTA Libraries Initiative, contributing to the official GitHub repository, or sharing your knowledge on Discord.
 image: /img/logo/logo.svg
 keywords:
-- join
-- documentation
-- project
-- contribute
-- discord
-- GitHub
-- reference
+  - join
+  - documentation
+  - project
+  - contribute
+  - discord
+  - GitHub
+  - reference
 ---
+
 # Contribute to the Project
 
 Thank you for thinking about contributing to the project! You can contribute using the following ways.

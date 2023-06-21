@@ -1,18 +1,19 @@
 ---
 description: iota.js API reference
 keywords:
-- references
-- api references
-- typescript
+  - references
+  - api references
+  - typescript
 image: /img/client_banner.png
 ---
+
 # Interface: IExpirationUnlockCondition
 
 Expiration Unlock Condition.
 
 ## Hierarchy
 
-- [`ITypeBase`](ITypeBase.md)<``3``\>
+- [`ITypeBase`](ITypeBase.md)<`3`\>
 
   ↳ **`IExpirationUnlockCondition`**
 
@@ -28,7 +29,7 @@ Expiration Unlock Condition.
 
 ### type
 
-• **type**: ``3``
+• **type**: `3`
 
 The type of the object.
 
@@ -36,7 +37,7 @@ The type of the object.
 
 [ITypeBase](ITypeBase.md).[type](ITypeBase.md#type)
 
-___
+---
 
 ### returnAddress
 
@@ -44,7 +45,7 @@ ___
 
 The return address.
 
-___
+---
 
 ### unixTime
 

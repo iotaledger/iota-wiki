@@ -2,12 +2,13 @@
 description: Getting started with the official IOTA Wallet Library Software Python binding.
 image: /img/logo/logo.svg
 keywords:
-- Python
-- install
-- pip
-- unpack
-- getting started
+  - Python
+  - install
+  - pip
+  - unpack
+  - getting started
 ---
+
 # Getting Started with Python
 
 ## Security
@@ -19,8 +20,8 @@ In a production setup, do not store passwords in the host's environment variable
 
 ## Requirements
 
-* [Python 3.x](https://www.python.org).
-* [pip](https://pypi.org/project/pip).
+- [Python 3.x](https://www.python.org).
+- [pip](https://pypi.org/project/pip).
 
 ## Installation
 
@@ -28,9 +29,9 @@ In a production setup, do not store passwords in the host's environment variable
 
 To get the python binding working, you need to leverage pre-built python libraries for linux, MacOs, or Windows. You can install these to your python environment (3.6+) using _pip_ . The binding is automatically generated using [GitHub actions](https://github.com/iotaledger/wallet.rs/actions/workflows/python_binding_publish.yml).
 
-You can download the latest artifacts for a major python version using the [nighly.link service](https://nightly.link/iotaledger/wallet.rs/workflows/python_binding_publish/production).  
+You can download the latest artifacts for a major python version using the [nighly.link service](https://nightly.link/iotaledger/wallet.rs/workflows/python_binding_publish/production).
 
-1. Download zip file for the given os and pyversion. 
+1. Download zip file for the given os and pyversion.
 2. Unpack wheel file ( _.whl_ ).
 3. Install it via _pip_ by running the following command:
 
@@ -42,8 +43,8 @@ pip install <wheel_file>
 
 ### Additional Requirements
 
-* [Rust and Cargo](https://doc.rust-lang.org/cargo/getting-started/installation.html).
-* (for Linux only) `libudev`. You can install it with `apt install libudev-dev`.
+- [Rust and Cargo](https://doc.rust-lang.org/cargo/getting-started/installation.html).
+- (for Linux only) `libudev`. You can install it with `apt install libudev-dev`.
 
 #### Clone the Repository
 
@@ -70,6 +71,7 @@ pip3 install maturin
 maturin develop
 maturin build --manylinux off
 ```
+
 The wheel file is now created in `bindings/python/native/target/wheels`. You can install it with:
 
 ```bash
@@ -94,7 +96,7 @@ Once your python environment has installed the `iota-wallet-python-binding`, you
 
 ## Usage
 
-To use the _iota_wallet_ you will need to add an import statement:  
+To use the _iota_wallet_ you will need to add an import statement:
 
 ```python
 import iota_wallet

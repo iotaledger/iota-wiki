@@ -20,15 +20,15 @@ Logger output configuration.
 
 Name of an output file, or `stdout` for standard output.
 
-___
+---
 
 ### levelFilter
 
-• `Optional` **levelFilter**: ``"error"`` \| ``"off"`` \| ``"warn"`` \| ``"info"`` \| ``"debug"`` \| ``"trace"``
+• `Optional` **levelFilter**: `"error"` \| `"off"` \| `"warn"` \| `"info"` \| `"debug"` \| `"trace"`
 
 Log level filter of an output.
 
-___
+---
 
 ### targetFilter
 
@@ -36,7 +36,7 @@ ___
 
 Log target filters of an output.
 
-___
+---
 
 ### targetExclusions
 
@@ -44,7 +44,7 @@ ___
 
 Log target exclusions of an output.
 
-___
+---
 
 ### colorEnabled
 

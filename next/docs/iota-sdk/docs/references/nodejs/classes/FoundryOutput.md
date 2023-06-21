@@ -37,7 +37,7 @@ The type of output.
 
 ImmutableFeaturesOutput.getType
 
-___
+---
 
 ### getAmount
 
@@ -53,7 +53,7 @@ The amount of the output.
 
 ImmutableFeaturesOutput.getAmount
 
-___
+---
 
 ### getUnlockConditions
 
@@ -69,7 +69,7 @@ The unlock conditions for the output.
 
 ImmutableFeaturesOutput.getUnlockConditions
 
-___
+---
 
 ### getNativeTokens
 
@@ -85,7 +85,7 @@ The native tokens held by the output.
 
 ImmutableFeaturesOutput.getNativeTokens
 
-___
+---
 
 ### getFeatures
 
@@ -101,7 +101,7 @@ Features contained by the output.
 
 ImmutableFeaturesOutput.getFeatures
 
-___
+---
 
 ### getImmutableFeatures
 
@@ -117,7 +117,7 @@ Immutable features contained by the output.
 
 ImmutableFeaturesOutput.getImmutableFeatures
 
-___
+---
 
 ### getSerialNumber
 
@@ -129,7 +129,7 @@ The serial number of the foundry with respect to the controlling alias.
 
 `number`
 
-___
+---
 
 ### getTokenScheme
 

@@ -2,15 +2,13 @@
 description: Get started with the IOTA Wallet Library and choose your programming language.
 image: /img/logo/wallet_light.png
 keywords:
-
-- rust
-- node.js
-- python
-- java
-- javascript
-- wallet
-- accounts
-
+  - rust
+  - node.js
+  - python
+  - java
+  - javascript
+  - wallet
+  - accounts
 ---
 
 # Getting Started
@@ -46,4 +44,4 @@ some testnet tokens through the [Shimmer Faucet](https://faucet.testnet.shimmer.
 
 The wallet.rs library is written in [Rust](./rust.mdx), and also has convenient bindings
 in [Node.js](./nodejs.mdx), [Java](./java.mdx) and [Python](./python.mdx). Each of these languages has specific
-instructions you will need to follow to use wallet.rs in your project. 
+instructions you will need to follow to use wallet.rs in your project.

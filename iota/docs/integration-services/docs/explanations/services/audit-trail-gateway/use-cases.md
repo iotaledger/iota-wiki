@@ -2,14 +2,14 @@
 image: /img/integration-services/diagrams/ecommerce-audit-trail-bridge.jpeg
 description: In the context of e-commerce and the ENSURESEC project, you can use the Audit Trail Gateway to share immutable and auditable data and events and guarantee the Immutability of Large Data Sets.
 keywords:
-- explanation
-- API definition
-- auditable data
-- immutability
-- large data set
-- writer subscriber
-- commerce infrastructure
-- audit trail hash
+  - explanation
+  - API definition
+  - auditable data
+  - immutability
+  - large data set
+  - writer subscriber
+  - commerce infrastructure
+  - audit trail hash
 ---
 
 # Use Cases
@@ -19,7 +19,7 @@ to share immutable and auditable data and events and guarantee the Immutability 
 
 ## Sharing Immutable and Auditable Data and Events
 
-This scenario involves a small amount of data that a channel Author and writer subscribers want to share with 
+This scenario involves a small amount of data that a channel Author and writer subscribers want to share with
 reader subscribers. All the information is stored in the Audit Trail, and channel reader subscribers can verify its
 source (identity of the writer subscribers).
 

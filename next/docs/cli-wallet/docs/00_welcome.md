@@ -6,6 +6,7 @@ The [cli-wallet](https://github.com/iotaledger/iota-sdk/tree/develop/cli) is a s
 [iota-sdk](https://github.com/iotaledger/iota-sdk).
 
 Directly from your terminal, it allows you to:
+
 - Create a wallet;
 - Create, maintain and consult accounts;
 - Send and receive SMR tokens;

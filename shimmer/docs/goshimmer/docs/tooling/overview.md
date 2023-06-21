@@ -2,15 +2,16 @@
 description: GoShimmer comes with a docker private network, integration tests and a CLI wallet to test the stability of the protocol.
 image: /img/logo/goshimmer_light.png
 keywords:
-- tools
-- docker
-- private network
-- integration test
-- cli
-- wallet
-- cli wallet
-- dags visualizer
+  - tools
+  - docker
+  - private network
+  - integration test
+  - cli
+  - wallet
+  - cli wallet
+  - dags visualizer
 ---
+
 # Tooling
 
 GoShimmer comes with some tools to test the stability of the protocol.

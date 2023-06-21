@@ -1,11 +1,12 @@
 ---
 description: iota.js API reference
 keywords:
-- references
-- api references
-- typescript
+  - references
+  - api references
+  - typescript
 image: /img/client_banner.png
 ---
+
 # Interface: INodeInfoStatus
 
 Response from the /info endpoint.
@@ -27,7 +28,7 @@ Response from the /info endpoint.
 
 Is the node healthy.
 
-___
+---
 
 ### latestMilestone
 
@@ -35,7 +36,7 @@ ___
 
 The latest milestone info.
 
-___
+---
 
 ### confirmedMilestone
 
@@ -43,7 +44,7 @@ ___
 
 The confirmed milestone info.
 
-___
+---
 
 ### pruningIndex
 

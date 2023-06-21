@@ -2,14 +2,15 @@
 image: /img/integration-services/integration_services_welcome.png
 description: The IOTA Integration Services implement a high-level API for common interactions with decentralized identities and Data Streams.
 keywords:
-- integration services
-- decentralized identity
-- streams
-- use cases
-- audit trail gateway
-- Self-Sovereign Identity Bridge
-- explanation
+  - integration services
+  - decentralized identity
+  - streams
+  - use cases
+  - audit trail gateway
+  - Self-Sovereign Identity Bridge
+  - explanation
 ---
+
 # Welcome
 
 ![Integration Services](/img/integration-services/integration_services_welcome.png)
@@ -40,11 +41,11 @@ This documentation has eight sections.
 2. **Explanations**: An introduction to the main concepts, use cases and API definitions for the [Audit Trail Gateway](explanations/services/audit-trail-gateway/introduction.md) and [Self-Sovereign Identity(SSI) Bridge](explanations/services/SSI-bridge/introduction.md).
 3. **How-Tos**: How-to guides covering the following topics:
    1. [Integration Services SDK](how_tos/integration-services-sdk/introduction.mdx): How-to guides on creating and managing decentralized identities, verifiable credentials, and channels using the Integration Services SDK.
-   2. [Integration Services CLI](how_tos/is-cli/introduction.md):  How-to guides on creating and managing decentralized identities using the Integration Services Command Line Interface.
-   3. **Authentication**: How-to guide to authenticate your identity using the [Integration Services SDK](how_tos/is-cli/authenticate-your-identity.mdx) or  [Java and Node.js](how_tos/integration-services-sdk/authenticate-your-identity.mdx).
+   2. [Integration Services CLI](how_tos/is-cli/introduction.md): How-to guides on creating and managing decentralized identities using the Integration Services Command Line Interface.
+   3. **Authentication**: How-to guide to authenticate your identity using the [Integration Services SDK](how_tos/is-cli/authenticate-your-identity.mdx) or [Java and Node.js](how_tos/integration-services-sdk/authenticate-your-identity.mdx).
 4. **References**: Detailed specification of all endpoints for:
-    * [Self Sovereign Identity(SSI) Bridge API Reference](references/ssi_bridge_api_reference.md) 
-    * [Audit Trail API Reference](references/audit_trail_gw_api_reference.md).
+   - [Self Sovereign Identity(SSI) Bridge API Reference](references/ssi_bridge_api_reference.md)
+   - [Audit Trail API Reference](references/audit_trail_gw_api_reference.md).
 5. [Troubleshooting](troubleshooting.md): Instructions on how to resolve any issues you may encounter while using the services.
 6. [FAQ](faq.md): Answers to the most common doubts.
 7. [Contribute](contribute.md): Find ways to help the project.

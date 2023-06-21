@@ -2,15 +2,15 @@
 description: How to back up your account, restore an account from a backup, export a user's Stronghold, and rekey Stronghold.
 image: /img/logo/preview.png
 keywords:
-- stronghold
-- checklist
-- backup
-- DMZ
-- account
-- restore
-- export
-- rekey
-- how to
+  - stronghold
+  - checklist
+  - backup
+  - DMZ
+  - account
+  - restore
+  - export
+  - rekey
+  - how to
 ---
 
 # Backup and Security
@@ -30,7 +30,7 @@ keywords:
 
 ## How to Backup Your Account
 
-You can use a copy of the `stronghold.snapshot` file as a backup. You can implement a  [_cronjob_](https://linux.die.net/man/1/crontab), [_rsync_](https://linux.die.net/man/1/rsync) or [_scp_](https://linux.die.net/man/1/scp) with a date-time suffix to periodically back up your account.
+You can use a copy of the `stronghold.snapshot` file as a backup. You can implement a [_cronjob_](https://linux.die.net/man/1/crontab), [_rsync_](https://linux.die.net/man/1/rsync) or [_scp_](https://linux.die.net/man/1/scp) with a date-time suffix to periodically back up your account.
 
 ## How to Restore From a Backup
 
@@ -46,6 +46,6 @@ To change a Stronghold password, you read a snapshot into a vault and then write
 
 :::note
 
-Old snapshot backups will not be "rekeyed", so you have to track your old passwords. 
+Old snapshot backups will not be "rekeyed", so you have to track your old passwords.
 
 :::

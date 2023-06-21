@@ -2,14 +2,15 @@
 description: Official IOTA Client Library which can be used to easily integrate an IOTA Client into your application
 image: /img/Banner/banner_client_lib.png
 keywords:
-- requirements
-- software
-- library
-- rust
-- python
-- nodejs
-- explanation
+  - requirements
+  - software
+  - library
+  - rust
+  - python
+  - nodejs
+  - explanation
 ---
+
 # Welcome
 
 ![IOTA Client Library](/img/Banner/banner_client_lib.png)

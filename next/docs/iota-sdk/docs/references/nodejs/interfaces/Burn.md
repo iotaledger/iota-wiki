@@ -19,7 +19,7 @@ A DTO for [`Burn`]
 
 Aliases to burn
 
-___
+---
 
 ### nfts
 
@@ -27,7 +27,7 @@ ___
 
 NFTs to burn
 
-___
+---
 
 ### foundries
 
@@ -35,7 +35,7 @@ ___
 
 Foundries to burn
 
-___
+---
 
 ### nativeTokens
 

@@ -5,7 +5,7 @@ sidebar_label: Revocation Options
 
 import Announcement from '../../../../src/partials/_announcement.mdx';
 
-<Announcement/>
+<Announcement />
 
 :::info
 
@@ -18,6 +18,7 @@ The IOTA DIDComm Specification is in the RFC phase and may undergo changes. Sugg
 - Last Updated: 2021-10-29
 
 ## Overview
+
 Allows discovery of available [`RevocationInfo`](./revocation.mdx#RevocationInfo) types for use with the [revocation](./revocation.mdx) protocol.
 
 ### Relationships
@@ -25,6 +26,7 @@ Allows discovery of available [`RevocationInfo`](./revocation.mdx#RevocationInfo
 - [revocation](./revocation.mdx): this protocol is used to discover the `revocationInfoType` options available to a [trusted-party](#roles) for use in a [revocation-request](./revocation.mdx#revocation-request).
 
 ### Roles
+
 - Trusted-Party: requests supported methods of revocation.
 - Revoker: offers supported methods of revocation.
 
@@ -34,12 +36,15 @@ Allows discovery of available [`RevocationInfo`](./revocation.mdx#RevocationInfo
 
 <div style={{textAlign: 'center'}}>
 
-<sub>For guidance on diagrams see the <a href="../../overview#diagrams">corresponding section in the overview</a>.</sub>
+<sub>
+  For guidance on diagrams see the{' '}
+  <a href='../../overview#diagrams'>corresponding section in the overview</a>.
+</sub>
 
 </div>
 
-
 ## Messages
+
 ### 1. revocation-options-request {#revocation-options-request}
 
 - Type: `iota/revocation-options/0.1/revocation-options-request`
@@ -48,6 +53,7 @@ Allows discovery of available [`RevocationInfo`](./revocation.mdx#RevocationInfo
 Empty message requesting all available [`RevocationInfo`](./revocation.mdx#RevocationInfo) types.
 
 #### Structure
+
 ```json
 {}
 ```
@@ -60,15 +66,16 @@ Empty message requesting all available [`RevocationInfo`](./revocation.mdx#Revoc
 Response including all available [RevocationInfo](./revocation.mdx#RevocationInfo) types supported by the [revoker](#roles).
 
 #### Structure
+
 ```json
 {
   "revocationInfoTypes": [string], // REQUIRED
 }
 ```
 
-| Field | Description | Required |
-| :--- | :--- | :--- |
-| `revocationInfoTypes` | List of supported [RevocationInfo](./revocation.mdx#RevocationInfo) types.[^1] | ✔ |
+| Field                 | Description                                                                    | Required |
+| :-------------------- | :----------------------------------------------------------------------------- | :------- |
+| `revocationInfoTypes` | List of supported [RevocationInfo](./revocation.mdx#RevocationInfo) types.[^1] | ✔        |
 
 [^1] The actual list of supported types may be vague or exact depending on how much the [revoker](#roles) trusts the requester. The supported types may also differ per requester.
 
@@ -78,7 +85,11 @@ Response including all available [RevocationInfo](./revocation.mdx#RevocationInf
 
 ```json
 {
-  "revocationInfoTypes": ["KeyRevocation2021", "CredentialRevocation2021", "CredentialStatusRevocation2021"]
+  "revocationInfoTypes": [
+    "KeyRevocation2021",
+    "CredentialRevocation2021",
+    "CredentialStatusRevocation2021"
+  ]
 }
 ```
 
@@ -96,8 +107,8 @@ The following problem-report codes may be raised in the course of this protocol 
 
 For guidance on problem-reports and a list of general codes see [problem reports](../resources/problem-reports.mdx).
 
-| Code | Message | Description |
-| :--- | :--- | :--- |
+| Code                                             | Message                                   | Description                                             |
+| :----------------------------------------------- | :---------------------------------------- | :------------------------------------------------------ |
 | `e.p.msg.iota.revocation-options.reject-request` | [revocation-options](#revocation-options) | The [revoker](#roles) rejects a request for any reason. |
 
 ## Considerations

@@ -66,7 +66,3 @@ chain is.
 ```bash
 wasp-cli chain rotate <new controller address>
 ```
-
-
-
-

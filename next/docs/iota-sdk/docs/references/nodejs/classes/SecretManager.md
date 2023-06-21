@@ -24,15 +24,15 @@ Generate ed25519 addresses
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
+| Name                       | Type                                                                      |
+| :------------------------- | :------------------------------------------------------------------------ |
 | `generateAddressesOptions` | [`IGenerateAddressesOptions`](../interfaces/IGenerateAddressesOptions.md) |
 
 #### Returns
 
 `Promise`<`string`[]\>
 
-___
+---
 
 ### generateEvmAddresses
 
@@ -42,15 +42,15 @@ Generate EVM addresses
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
+| Name                       | Type                                                                      |
+| :------------------------- | :------------------------------------------------------------------------ |
 | `generateAddressesOptions` | [`IGenerateAddressesOptions`](../interfaces/IGenerateAddressesOptions.md) |
 
 #### Returns
 
 `Promise`<`string`[]\>
 
-___
+---
 
 ### storeMnemonic
 
@@ -60,15 +60,15 @@ Store a mnemonic in the Stronghold vault
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
+| Name       | Type     |
+| :--------- | :------- |
 | `mnemonic` | `string` |
 
 #### Returns
 
 `Promise`<`void`\>
 
-___
+---
 
 ### signTransaction
 
@@ -78,15 +78,15 @@ Sign a transaction
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
+| Name                      | Type                                                                    |
+| :------------------------ | :---------------------------------------------------------------------- |
 | `preparedTransactionData` | [`IPreparedTransactionData`](../interfaces/IPreparedTransactionData.md) |
 
 #### Returns
 
 `Promise`<`PayloadTypes`\>
 
-___
+---
 
 ### signatureUnlock
 
@@ -96,16 +96,16 @@ Create a signature unlock using the provided `secretManager`.
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `transactionEssenceHash` | `string` |
-| `chain` | [`IBip32Chain`](../api_ref.md#ibip32chain) |
+| Name                     | Type                                       |
+| :----------------------- | :----------------------------------------- |
+| `transactionEssenceHash` | `string`                                   |
+| `chain`                  | [`IBip32Chain`](../api_ref.md#ibip32chain) |
 
 #### Returns
 
 `Promise`<`UnlockTypes`\>
 
-___
+---
 
 ### signEd25519
 
@@ -115,16 +115,16 @@ Signs a message with an Ed25519 private key.
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `message` | `string` |
-| `chain` | [`IBip32Chain`](../api_ref.md#ibip32chain) |
+| Name      | Type                                       |
+| :-------- | :----------------------------------------- |
+| `message` | `string`                                   |
+| `chain`   | [`IBip32Chain`](../api_ref.md#ibip32chain) |
 
 #### Returns
 
 `Promise`<`IEd25519Signature`\>
 
-___
+---
 
 ### getLedgerNanoStatus
 

@@ -2,16 +2,17 @@
 description: Frequently Asked Questions. What is GoShimmer?,  What Kind of Confirmation Time Can I Expect?, Where Can I See the State of the GoShimmer testnet?,How Many Transactions Per Second(TPS) can GoShimmer Sustain?, How is Spamming Prevented?, What Happens if I Issue a Double Spend?, Who's the Target Audience for Operating a GoShimmer Node?
 image: /img/logo/goshimmer_light.png
 keywords:
-- average network delay
-- testnet
-- analysis
-- dashboard
-- vote
-- frequently asked questions
-- node software
-- double spend
-- transactions
+  - average network delay
+  - testnet
+  - analysis
+  - dashboard
+  - vote
+  - frequently asked questions
+  - node software
+  - double spend
+  - transactions
 ---
+
 # FAQ
 
 ## What is GoShimmer?
@@ -28,7 +29,7 @@ You can access the global analysis dashboard in the [Pollen Analyzer](http://ana
 
 ## How Many Transactions per Second (TPS) Can GoShimmer Sustain?
 
-The transactions per second metric is irrelevant for the current development state of GoShimmer. We are evaluating components from Coordicide, and aren't currently interested in squeezing out every little ounce of performance. Since the primary goal is to evaluate Coordicide components, we value simplicity over optimization . Even if we would put out a TPS number, it would not reflect an actual metric in a finished production ready node software. 
+The transactions per second metric is irrelevant for the current development state of GoShimmer. We are evaluating components from Coordicide, and aren't currently interested in squeezing out every little ounce of performance. Since the primary goal is to evaluate Coordicide components, we value simplicity over optimization . Even if we would put out a TPS number, it would not reflect an actual metric in a finished production ready node software.
 
 ## How is Spamming Prevented?
 
@@ -36,9 +37,9 @@ The Coordicide lays out concepts for spam prevention through the means of rate c
 
 ## What Happens if I Issue a Double Spend?
 
-If issue simultaneous transactions spending the same funds, there is high certainty that your transaction will be rejected by the network. This rejection will block your funds indefinitely, though this may change in the future.  
+If issue simultaneous transactions spending the same funds, there is high certainty that your transaction will be rejected by the network. This rejection will block your funds indefinitely, though this may change in the future.
 
-If you issue a transaction, await the average network delay, and then issue the double spend, then the first issued transaction should usually become confirmed, and the 2nd one rejected.  
+If you issue a transaction, await the average network delay, and then issue the double spend, then the first issued transaction should usually become confirmed, and the 2nd one rejected.
 
 ## Who's the Target Audience for Operating a GoShimmer Node?
 

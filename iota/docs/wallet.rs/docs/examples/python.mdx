@@ -2,13 +2,14 @@
 description: Official IOTA Wallet Library Software Python examples.
 image: /img/logo/logo.svg
 keywords:
-- account
-- address
-- python
-- balance
-- Chrysalis
-- reference
+  - account
+  - address
+  - python
+  - balance
+  - Chrysalis
+  - reference
 ---
+
 # Examples in Python
 
 In this section, you can find several examples that use the python binding of the `wallet.rs` library. You can also find examples of the code in the `/bindings/python/examples` folder of the [official GitHub repository](https://github.com/iotaledger/wallet.rs/tree/dev/bindings/python/examples).
@@ -21,7 +22,7 @@ SH_PASSWORD="here is your super secure password"
 
 ## Account Manager and Individual Accounts
 
-You can initialize (open) a secure storage for individual accounts. The storage is backed up by `Stronghold` by default, using an AccountManager instance.  
+You can initialize (open) a secure storage for individual accounts. The storage is backed up by `Stronghold` by default, using an AccountManager instance.
 
 The following example creates a new database and account:
 
@@ -29,10 +30,10 @@ The following example creates a new database and account:
 https://github.com/iotaledger/wallet.rs/tree/production/bindings/python/examples/1a_create_account_manager.py
 ```
 
-* Storage is initialized under the given path (`./alice-database`).
-* The password is set based on your password in `.env` file (`manager.setStrongholdPassword(process.env.SH_PASSWORD)`).
-* When you initialize the new database, a Stronghold mnemonic (seed) is automatically generated and stored by default (`manager.storeMnemonic(SignerType.Stronghold)`).
-* The seed should be set only for the first time. You can open the initialized database by using your password.
+- Storage is initialized under the given path (`./alice-database`).
+- The password is set based on your password in `.env` file (`manager.setStrongholdPassword(process.env.SH_PASSWORD)`).
+- When you initialize the new database, a Stronghold mnemonic (seed) is automatically generated and stored by default (`manager.storeMnemonic(SignerType.Stronghold)`).
+- The seed should be set only for the first time. You can open the initialized database by using your password.
 
 The storage is encrypted at rest, so you need a strong password and location where to place your storage.
 
@@ -46,8 +47,8 @@ Manage your password with utmost care.
 
 The storage is made of:
 
-* A single file called _wallet.stronghold_ , which contains a _seed_ and is secured by `Stronghold` and encrypted at rest. The generated seed (mnemonic) serves as a cryptographic key from which all accounts and related addresses are generated.
-* Other data used by the library that is stored under the _db_ sub-directory. This includes account information, generated addresses, fetched messages, etc. This data is used to speed up some operations, such as account creation, address generation, etc.
+- A single file called _wallet.stronghold_ , which contains a _seed_ and is secured by `Stronghold` and encrypted at rest. The generated seed (mnemonic) serves as a cryptographic key from which all accounts and related addresses are generated.
+- Other data used by the library that is stored under the _db_ sub-directory. This includes account information, generated addresses, fetched messages, etc. This data is used to speed up some operations, such as account creation, address generation, etc.
 
 One of the key principles behind `Stronghold` based storage is that no one can extract a seed from the storage. You deal with all accounts purely via an _AccountManager_ instance. All complexities are hidden under the hood and are dealt with securely.
 
@@ -75,7 +76,6 @@ Once an account has been created, you retrieve an instance of it using the follo
 - `get_account(account_id: str)`
 - `get_accounts()` .
 
-
 You can get an overview of all available accounts by running the following snippet:
 
 ```python
@@ -99,13 +99,13 @@ It is a good practice to sync the given _account_ with the Tangle every time you
 
 The most common methods of _account_ instance are:
 
-* `account.alias()` : returns an alias of the given account.
-* `account.addresses()` : returns list of addresses related to the account.
-* `account.get_unused_address()` : returns a first unused address.
-* `account.is_latest_address_unused()` : queries the Tangle and returns a _bool_ whether latest address was already used.
-* `account.generate_address()` : generates a new address for the address index incremented by 1.
-* `account.balance()` : returns the balance for the given account.
-* `account.sync()` : syncs the account information with the tangle.
+- `account.alias()` : returns an alias of the given account.
+- `account.addresses()` : returns list of addresses related to the account.
+- `account.get_unused_address()` : returns a first unused address.
+- `account.is_latest_address_unused()` : queries the Tangle and returns a _bool_ whether latest address was already used.
+- `account.generate_address()` : generates a new address for the address index incremented by 1.
+- `account.balance()` : returns the balance for the given account.
+- `account.sync()` : syncs the account information with the tangle.
 
 ## Generating Address(es)
 
@@ -113,10 +113,10 @@ Each _account_ can have multiple _addresses_ . _Addresses_ are generated determi
 
 There are two types of addresses, _internal_ and _public_ (external), and each set of addresses are independent of each other and have an independent _index_ id.
 
-* _Public_ addresses are created by `account.generateAddress()` and are indicated as `internal=false` (public)
-* _Internal_ addresses are also called _change_ addresses. _Internal_ addresses are used to store the excess funds and are indicated as `internal=true`.
+- _Public_ addresses are created by `account.generateAddress()` and are indicated as `internal=false` (public)
+- _Internal_ addresses are also called _change_ addresses. _Internal_ addresses are used to store the excess funds and are indicated as `internal=true`.
 
-This approach is also known as a *BIP32 Hierarchical Deterministic wallet (HD Wallet)*.
+This approach is also known as a _BIP32 Hierarchical Deterministic wallet (HD Wallet)_.
 
 :::note
 
@@ -131,27 +131,30 @@ https://github.com/iotaledger/wallet.rs/tree/production/bindings/python/examples
 ```
 
 Example output:
+
 ```js
-[{
-        'address': {
-            'inner': 'atoi1qzy79ew8x4hn4dsr0t3j8ce8hdwdrh8xzx85x2gkse6k0fx2jkyaqdgd2rn'
-        },
-        'balance': 0,
-        'key_index': 0,
-        'internal': False,
-        'outputs': []
+[
+  {
+    address: {
+      inner: 'atoi1qzy79ew8x4hn4dsr0t3j8ce8hdwdrh8xzx85x2gkse6k0fx2jkyaqdgd2rn',
     },
-    {
-        'address': {
-            'inner': 'atoi1qzht4m2jt0q50lhlqa786pcx6vardm4xj8za72fezde6tj39acatq5zh2cg'
-        },
-        'balance': 0,
-        'key_index': 1,
-        'internal': False,
-        'outputs': []
-    }
-]
+    balance: 0,
+    key_index: 0,
+    internal: False,
+    outputs: [],
+  },
+  {
+    address: {
+      inner: 'atoi1qzht4m2jt0q50lhlqa786pcx6vardm4xj8za72fezde6tj39acatq5zh2cg',
+    },
+    balance: 0,
+    key_index: 1,
+    internal: False,
+    outputs: [],
+  },
+];
 ```
+
 There are two human-readable prefixes in IOTA 1.5 network: _iota_ (mainnet) and _atoi_ (devnet). If you take a close look at the addresses in the output, you will notice that both of them start with _atoi_ , and are therefore devnet addresses.
 
 You can find detailed information about generating addresses at the [Developer Guide to Chrysalis](https://chrysalis.docs.iota.org/guides/dev_guide#addresskey-space).
@@ -218,6 +221,7 @@ Balance per individual addresses:
     }
 ]
 ```
+
 In the detailed view per individual addresses, there is also an _outputs_ section. The _outputs_ show all the transactions (also known as _wallet message(s)_ ), which are related to that _address_, and therefore account for the balance.
 
 You can also check the balance using the [Tangle Explorer](https://explorer.iota.org/devnet/addr/atoi1qzht4m2jt0q50lhlqa786pcx6vardm4xj8za72fezde6tj39acatq5zh2cg).
@@ -233,7 +237,8 @@ IOTA is based on _Unspent Transaction Output_ model. You can find a detailed exp
 The process of sending tokens via _wallet.rs_ can be described as follows:
 
 1. Create instance of `iota_wallet.Transfer()` class with the following mandatory arguments: _amount_, _address_ and _remainder_value_strategy_ .
-The _remainder_value_strategy_ argument can be either:
+   The _remainder_value_strategy_ argument can be either:
+
    - `ReuseAddress`
    - `ChangeAddress`
 
@@ -311,6 +316,7 @@ The previous snippet should have a similar output to the following JSON object:
     'remainder_value': 9000000
 }}
 ```
+
 This is a _wallet message_ that fully describes the given transaction.
 
 To understand all aspects of messages, you will need to get familiar with concept of _UTXO_ . You can find detailed information in the [UTXO section in the Developer Guide to Chrysalis](https://chrysalis.docs.iota.org/guides/dev_guide#unspent-transaction-output-utxo).
@@ -352,7 +358,7 @@ Dust protection also means you can not leave less than 1Mi on a spent address (l
 
 ## Backup Database
 
-Due to security practices that are incorporated in the `Stronghold's` DNA, there is no way to retrieve a seed, as seeds are encrypted at rest.  Therefore, if you are using the default options, backing up the seed storage is a very important task.
+Due to security practices that are incorporated in the `Stronghold's` DNA, there is no way to retrieve a seed, as seeds are encrypted at rest. Therefore, if you are using the default options, backing up the seed storage is a very important task.
 
 The following example will guide you in backing up your data in secure files. You can move this file to another app or device, and restore it.
 
@@ -361,9 +367,11 @@ https://github.com/iotaledger/wallet.rs/tree/production/bindings/python/examples
 ```
 
 Output:
+
 ```plaintext
 Backup path: ./backup/2021-03-07T18-24-06-iota-wallet-backup-wallet.stronghold
 ```
+
 Alternatively, you can create a copy of the _wallet.stronghold_ file and use it as seed backup. This can be achieved by a daily [_cronjob_](https://linux.die.net/man/1/crontab), [_rsync_](https://linux.die.net/man/1/rsync) or [_scp_](https://linux.die.net/man/1/scp) with a datetime suffix for example.
 
 ## Restore a Database
@@ -394,24 +402,24 @@ The `wallet.rs` library can listen to several supported events. As soon as the e
 
 You can add any of the following event listeners:
 
-* `on_balance_change(callback): id` .
-* `on_new_transaction(callback): id` .
-* `on_confirmation_state_change(callback): id` .
-* `on_reattachment(callback): id` .
-* `on_broadcast(callback): id` .
-* `on_error(callback): id` .
-* `on_stronghold_status_change(callback): id` .
+- `on_balance_change(callback): id` .
+- `on_new_transaction(callback): id` .
+- `on_confirmation_state_change(callback): id` .
+- `on_reattachment(callback): id` .
+- `on_broadcast(callback): id` .
+- `on_error(callback): id` .
+- `on_stronghold_status_change(callback): id` .
 
 Once you have registered an event listener, the function will return an _id_ for the listener as a list [Bytes].
 You can later use this _id_ to remove a listener by using the corresponding method described below:
 
-* `remove_balance_change_listener(id)` .
-* `remove_new_transaction_listener(id)` .
-* `remove_confirmation_state_change_listener(id)` .
-* `remove_reattachment_listener(id)` .
-* `remove_broadcast_listener(id)` .
-* `remove_error_listener(id)` .
-* `remove_stronghold_status_change_listener(id)` .
+- `remove_balance_change_listener(id)` .
+- `remove_new_transaction_listener(id)` .
+- `remove_confirmation_state_change_listener(id)` .
+- `remove_reattachment_listener(id)` .
+- `remove_broadcast_listener(id)` .
+- `remove_error_listener(id)` .
+- `remove_stronghold_status_change_listener(id)` .
 
 The following example sets up a listener for the _on_balance_change_ event using an event-based pattern:
 
@@ -436,4 +444,3 @@ Alternatively, events can be consumed via queue-base pattern as shown in the fol
 ```python reference
 https://github.com/iotaledger/wallet.rs/tree/production/bindings/python/examples/7_event_queue.py
 ```
-

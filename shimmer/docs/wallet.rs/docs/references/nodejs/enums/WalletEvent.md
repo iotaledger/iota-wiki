@@ -17,34 +17,34 @@ Wallet events
 
 ### ConsolidationRequired
 
-• **ConsolidationRequired** = ``"ConsolidationRequired"``
+• **ConsolidationRequired** = `"ConsolidationRequired"`
 
-___
+---
 
 ### LedgerAddressGeneration
 
-• **LedgerAddressGeneration** = ``"LedgerAddressGeneration"``
+• **LedgerAddressGeneration** = `"LedgerAddressGeneration"`
 
-___
+---
 
 ### NewOutput
 
-• **NewOutput** = ``"NewOutput"``
+• **NewOutput** = `"NewOutput"`
 
-___
+---
 
 ### SpentOutput
 
-• **SpentOutput** = ``"SpentOutput"``
+• **SpentOutput** = `"SpentOutput"`
 
-___
+---
 
 ### TransactionInclusion
 
-• **TransactionInclusion** = ``"TransactionInclusion"``
+• **TransactionInclusion** = `"TransactionInclusion"`
 
-___
+---
 
 ### TransactionProgress
 
-• **TransactionProgress** = ``"TransactionProgress"``
+• **TransactionProgress** = `"TransactionProgress"`

@@ -1,18 +1,19 @@
 ---
 keywords:
-- value
-- Synchronous functions
-- function descriptor
-- smart contract chain
-- views
-- funcs
+  - value
+  - Synchronous functions
+  - function descriptor
+  - smart contract chain
+  - views
+  - funcs
 
-description:  Synchronous calls can only be made between contracts that are running on the same contract chain. When calling a smart contract function you can only access the memory assigned to that specific smart contract, the only way to share data between smart contracts that call each other is through function parameters and return values.
+description: Synchronous calls can only be made between contracts that are running on the same contract chain. When calling a smart contract function you can only access the memory assigned to that specific smart contract, the only way to share data between smart contracts that call each other is through function parameters and return values.
 
 image: /img/logo/WASP_logo_dark.png
 ---
-import Tabs from "@theme/Tabs"
-import TabItem from "@theme/TabItem"
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 # Calling Functions
 
@@ -163,14 +164,13 @@ f.func.of_contract(alt_contract).transfer_base_tokens(1000).call();
 <TabItem value="ts">
 
 ```ts
-let altContract = ScHname.fromString("alternateName");
+let altContract = ScHname.fromString('alternateName');
 let f = dividend.ScFuncs.divide(ctx);
 f.func.ofContract(altContract).transferBaseTokens(1000).call();
 ```
 
 </TabItem>
 </Tabs>
-
 
 In the next section we will look at how to use function descriptors to
 [asynchronously call](post.mdx) smart contract functions on any chain.

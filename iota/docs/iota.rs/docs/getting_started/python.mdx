@@ -2,13 +2,13 @@
 description: Getting started with the official IOTA Client Library Python binding.
 image: /img/logo/iota_mark_light.png
 keywords:
-- Python
-- install
-- pip
-- unpack
+  - Python
+  - install
+  - pip
+  - unpack
 ---
 
-import WarningPasswordStorage from "../_admonitions/_password_storage.md";
+import WarningPasswordStorage from '../_admonitions/_password_storage.md';
 
 # Getting Started with IOTA Client Python Binding
 
@@ -18,8 +18,8 @@ import WarningPasswordStorage from "../_admonitions/_password_storage.md";
 
 ## Requirements
 
- * [Python 3.x](https://www.python.org).
- * [pip](https://pypi.org/project/pip).
+- [Python 3.x](https://www.python.org).
+- [pip](https://pypi.org/project/pip).
 
 ## Installation
 
@@ -37,8 +37,8 @@ pip install <wheel_file>
 
 ### Additional Requirements
 
- * [Rust and Cargo](https://doc.rust-lang.org/cargo/getting-started/installation.html).
- * (for Linux only) `libudev`. You can install it with `apt install libudev-dev`.
+- [Rust and Cargo](https://doc.rust-lang.org/cargo/getting-started/installation.html).
+- (for Linux only) `libudev`. You can install it with `apt install libudev-dev`.
 
 #### Clone the Repository
 
@@ -65,6 +65,7 @@ pip3 install maturin
 maturin develop
 maturin build --manylinux off
 ```
+
 The wheel file is now created in `bindings/python/native/target/wheels`. You can install it with:
 
 ```bash

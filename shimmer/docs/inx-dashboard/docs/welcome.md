@@ -2,15 +2,15 @@
 description: INX-Dashboard is a node configuration dashboard for node owners.
 image: /img/Banner/banner_hornet.png
 keywords:
-- IOTA Node
-- Hornet Node
-- INX
-- Dashboard
-- IOTA
-- Shimmer
-- Node Software
-- Welcome
-- explanation
+  - IOTA Node
+  - Hornet Node
+  - INX
+  - Dashboard
+  - IOTA
+  - Shimmer
+  - Node Software
+  - Welcome
+  - explanation
 ---
 
 # Welcome to INX-Dashboard

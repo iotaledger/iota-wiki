@@ -1,19 +1,20 @@
 ---
 keywords:
-- init
-- initialization
-- owner
-- initial state
-- smart contract creator
-- one-time
-- contract deployment
+  - init
+  - initialization
+  - owner
+  - initial state
+  - smart contract creator
+  - one-time
+  - contract deployment
 
 description: The init function will automatically be called immediately after the first time the contract has been deployed to the VM. This is a one-time initialization call, meant to be performed by the contract deployment mechanism.
 
 image: /img/logo/WASP_logo_dark.png
 ---
-import Tabs from "@theme/Tabs"
-import TabItem from "@theme/TabItem"
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 # Smart Contract Initialization
 
@@ -156,8 +157,8 @@ pub fn func_init(ctx: &ScFuncContext, f: &InitContext) {
 // step by step what is happening in the code. We also unnecessarily annotate
 // all 'let' statements with their assignment type to improve understanding.
 
-import * as wasmlib from "wasmlib"
-import * as sc from "./index";
+import * as wasmlib from 'wasmlib';
+import * as sc from './index';
 
 // 'init' is used as a way to initialize a smart contract. It is an optional
 // function that will automatically be called upon contract deployment. In this
@@ -167,25 +168,25 @@ import * as sc from "./index";
 // - 'owner', which is the agent id of the entity owning the contract.
 // When this parameter is omitted the owner will default to the contract creator.
 export function funcInit(ctx: wasmlib.ScFuncContext, f: sc.InitContext): void {
-    // The schema tool has already created a proper InitContext for this function that
-    // allows us to access call parameters and state storage in a type-safe manner.
+  // The schema tool has already created a proper InitContext for this function that
+  // allows us to access call parameters and state storage in a type-safe manner.
 
-    // First we set up a default value for the owner in case the optional 'owner'
-    // parameter was omitted. We use the agent that sent the deploy request.
-    let owner: wasmlib.ScAgentID = ctx.requestSender();
+  // First we set up a default value for the owner in case the optional 'owner'
+  // parameter was omitted. We use the agent that sent the deploy request.
+  let owner: wasmlib.ScAgentID = ctx.requestSender();
 
-    // Now we check if the optional 'owner' parameter is present in the params map.
-    if (f.params.owner().exists()) {
-        // Yes, it was present, so now we overwrite the default owner with
-        // the one specified by the 'owner' parameter.
-        owner = f.params.owner().value();
-    }
+  // Now we check if the optional 'owner' parameter is present in the params map.
+  if (f.params.owner().exists()) {
+    // Yes, it was present, so now we overwrite the default owner with
+    // the one specified by the 'owner' parameter.
+    owner = f.params.owner().value();
+  }
 
-    // Now that we have sorted out which agent will be the owner of this contract
-    // we will save this value in the 'owner' variable in state storage on the host.
-    // Read the documentation on schema.yaml to understand why this state variable is
-    // supported at compile-time by code generated from schema.yaml by the schema tool.
-    f.state.owner().setValue(owner);
+  // Now that we have sorted out which agent will be the owner of this contract
+  // we will save this value in the 'owner' variable in state storage on the host.
+  // Read the documentation on schema.yaml to understand why this state variable is
+  // supported at compile-time by code generated from schema.yaml by the schema tool.
+  f.state.owner().setValue(owner);
 }
 ```
 
@@ -253,13 +254,16 @@ pub fn func_set_owner(_ctx: &ScFuncContext, f: &SetOwnerContext) {
 // The 'setOwner' function takes a single mandatory parameter:
 // - 'owner', which is the agent id of the entity that will own the contract.
 // Only the current owner can change the owner.
-export function funcSetOwner(ctx: wasmlib.ScFuncContext, f: sc.SetOwnerContext): void {
-    // Note that the schema tool has already dealt with making sure that this function
-    // can only be called by the owner and that the required parameter is present.
-    // So once we get to this point in the code we can take that as a given.
+export function funcSetOwner(
+  ctx: wasmlib.ScFuncContext,
+  f: sc.SetOwnerContext,
+): void {
+  // Note that the schema tool has already dealt with making sure that this function
+  // can only be called by the owner and that the required parameter is present.
+  // So once we get to this point in the code we can take that as a given.
 
-    // Save the new owner parameter value in the 'owner' variable in state storage.
-    f.state.owner().setValue(f.params.owner().value());
+  // Save the new owner parameter value in the 'owner' variable in state storage.
+  f.state.owner().setValue(f.params.owner().value());
 }
 ```
 
@@ -271,7 +275,6 @@ owners in case the owner entity could disappear, which would allow others to tak
 instead of the contract becoming immutable with regard to owner functionality. Again, we
 cannot stress enough how important it is to **think through every aspect of a smart
 contract before deployment**.
-
 
 In the next section we will look at how a smart contract can
 [transfer tokens](transfers.mdx).

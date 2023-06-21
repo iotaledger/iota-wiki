@@ -1,18 +1,19 @@
 ---
 description: iota.js API reference
 keywords:
-- references
-- api references
-- typescript
+  - references
+  - api references
+  - typescript
 image: /img/client_banner.png
 ---
+
 # Interface: IAliasUnlock
 
 An unlock which must reference a previous unlock which unlocks the alias that the input is locked to.
 
 ## Hierarchy
 
-- [`ITypeBase`](ITypeBase.md)<``2``\>
+- [`ITypeBase`](ITypeBase.md)<`2`\>
 
   ↳ **`IAliasUnlock`**
 
@@ -27,7 +28,7 @@ An unlock which must reference a previous unlock which unlocks the alias that th
 
 ### type
 
-• **type**: ``2``
+• **type**: `2`
 
 The type of the object.
 
@@ -35,7 +36,7 @@ The type of the object.
 
 [ITypeBase](ITypeBase.md).[type](ITypeBase.md#type)
 
-___
+---
 
 ### reference
 

@@ -1,18 +1,19 @@
 ---
 description: iota.js API reference
 keywords:
-- references
-- api references
-- typescript
+  - references
+  - api references
+  - typescript
 image: /img/client_banner.png
 ---
+
 # Interface: IGovernorAddressUnlockCondition
 
 Governor Unlock Condition.
 
 ## Hierarchy
 
-- [`ITypeBase`](ITypeBase.md)<``5``\>
+- [`ITypeBase`](ITypeBase.md)<`5`\>
 
   ↳ **`IGovernorAddressUnlockCondition`**
 
@@ -27,7 +28,7 @@ Governor Unlock Condition.
 
 ### type
 
-• **type**: ``5``
+• **type**: `5`
 
 The type of the object.
 
@@ -35,7 +36,7 @@ The type of the object.
 
 [ITypeBase](ITypeBase.md).[type](ITypeBase.md#type)
 
-___
+---
 
 ### address
 

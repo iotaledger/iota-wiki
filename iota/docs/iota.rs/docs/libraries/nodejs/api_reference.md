@@ -2,12 +2,13 @@
 description: Official IOTA Client Library Node.js API reference.
 image: /img/logo/libraries.png
 keywords:
-- api
-- nodejs
-- param
-- type
-- client builder
+  - api
+  - nodejs
+  - param
+  - type
+  - client builder
 ---
+
 # API Reference - IOTA Client Library - Node.js binding
 
 Node.js binding to the IOTA client library.
@@ -37,11 +38,11 @@ If there is no prebuilt binary available for your system you need `Rust` and `Ca
 After you linked the library, you can create a `Client` instance and interface with it.
 
 ```javascript
-const { ClientBuilder } = require('@iota/client')
+const { ClientBuilder } = require('@iota/client');
 const client = new ClientBuilder()
-    .node('https://api.lb-0.h.chrysalis-devnet.iota.cafe')
-    .build()
-client.getInfo().then(console.log).catch(console.error)
+  .node('https://api.lb-0.h.chrysalis-devnet.iota.cafe')
+  .build();
+client.getInfo().then(console.log).catch(console.error);
 ```
 
 Connecting to a MQTT broker using raw ip doesn't work with TCP. This is a limitation of rustls.
@@ -205,10 +206,10 @@ Sets the default HTTP request timeout.
 
 Sets the HTTP request timeout for the specified API.
 
-| Param   | Type                                                                                      | Description                        |
-| ------- | ----------------------------------------------------------------------------------------- | ---------------------------------- |
+| Param   | Type                                                                                    | Description                        |
+| ------- | --------------------------------------------------------------------------------------- | ---------------------------------- |
 | api     | `GetHealth` \| `GetInfo` \| `GetTips` \| `PostMessage` \| `GetOutput` \| `GetMilestone` | The API to set the request timeout |
-| timeout | `number`                                                                                  | The timeout in milliseconds        |
+| timeout | `number`                                                                                | The timeout in milliseconds        |
 
 **Returns** the client builder instance for chained calls.
 
@@ -445,11 +446,11 @@ Gets the UTXO outputs associated with the given output ids and addresses.
 
 Gets the UTXO outputs associated with the given address.
 
-| Param                  | Type                                                        | Description                                           |
-| ---------------------- | ----------------------------------------------------------- | ----------------------------------------------------- |
-| address                | `string`                                                    | The address Bech32 string                             |
-| [options.includeSpent] | `boolean`                                                   | Whether the query should include spent outputs or not |
-| [options.outputType]   | `SignatureLockedSingle` \| `SignatureLockedDustAllowance`  | The output type filter                                |
+| Param                  | Type                                                      | Description                                           |
+| ---------------------- | --------------------------------------------------------- | ----------------------------------------------------- |
+| address                | `string`                                                  | The address Bech32 string                             |
+| [options.includeSpent] | `boolean`                                                 | Whether the query should include spent outputs or not |
+| [options.outputType]   | `SignatureLockedSingle` \| `SignatureLockedDustAllowance` | The output type filter                                |
 
 **Returns** a promise resolving to a list of output ids.
 
@@ -611,8 +612,8 @@ Builder to create and submit messages to the Tangle.
 
 Sets the message indexation. This field is required for indexation payloads.
 
-| Param | Type                               | Description    |
-| ----- | ---------------------------------- | -------------- |
+| Param | Type                                   | Description    |
+| ----- | -------------------------------------- | -------------- |
 | index | `string` \| `number[]` \| `Uint8Array` | The indexation |
 
 **Returns** the message submit instance for chained calls.
@@ -621,8 +622,8 @@ Sets the message indexation. This field is required for indexation payloads.
 
 Sets the indexation data.
 
-| Param | Type                   | Description        |
-| ----- | ---------------------- | ------------------ |
+| Param | Type                     | Description        |
+| ----- | ------------------------ | ------------------ |
 | data  | `string` \| `Uint8Array` | The message's data |
 
 **Returns** the message submit instance for chained calls.
@@ -934,8 +935,8 @@ All fields are optional.
 
 #### Payload
 
-| Field | Type                                                                                                                                                   | Description  |
-| ----- | ------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------ |
+| Field | Type                                                                                                                                                       | Description  |
+| ----- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ |
 | data  | `{ type: 'Transaction', data: TransactionPayload }` \| `{ type: 'Indexation', data: IndexationPayload }` \| `{ type: 'Milestone', data: MilestonePayload}` | Payload data |
 
 ##### TransactionPayload
@@ -947,10 +948,10 @@ All fields are optional.
 
 - TransactionPayloadEssence
 
-| Field   | Type                   | Description          |
-| ------- | ---------------------- | -------------------- |
-| inputs  | `Input[]`              | Inputs               |
-| outputs | `Output[]`             | Outputs              |
+| Field   | Type                     | Description          |
+| ------- | ------------------------ | -------------------- |
+| inputs  | `Input[]`                | Inputs               |
+| outputs | `Output[]`               | Outputs              |
 | payload | `Payload` \| `undefined` | Payload for chaining |
 
 - Input
@@ -964,14 +965,14 @@ All fields are optional.
 
 | Field | Type                                  | Description            |
 | ----- | ------------------------------------- | ---------------------- |
-| type  | `SignatureLockedSingle`             | Output type identifier |
+| type  | `SignatureLockedSingle`               | Output type identifier |
 | data  | `{ address: string, amount: number }` | The output definition  |
 
 - UnlockBlock
 
-| Field | Type                                    | Description                                           |
-| ----- | --------------------------------------- | ----------------------------------------------------- |
-| type  | `'Signature' \| 'Reference'`            | Unlock block type identifier                          |
+| Field | Type                                      | Description                                           |
+| ----- | ----------------------------------------- | ----------------------------------------------------- |
+| type  | `'Signature' \| 'Reference'`              | Unlock block type identifier                          |
 | data  | `Ed25519SignatureUnlockBlock` \| `number` | Unlock block data (signature type or reference index) |
 
 - Ed25519SignatureUnlockBlock
@@ -1011,13 +1012,13 @@ All fields are optional.
 
 | Field   | Type                        | Description                                                             |
 | ------- | --------------------------- | ----------------------------------------------------------------------- |
-| parents | `string[]` \| `undefined`     | Message ids of the messages it references. `getTips` is used by default |
+| parents | `string[]` \| `undefined`   | Message ids of the messages it references. `getTips` is used by default |
 | payload | `[PayloadDto](#payloaddto)` | Message payload                                                         |
 
 #### PayloadDto
 
-| Field | Type                                            | Description  |
-| ----- | ----------------------------------------------- | ------------ |
+| Field | Type                                              | Description  |
+| ----- | ------------------------------------------------- | ------------ |
 | data  | `TransactionPayloadDto` \| `IndexationPayloadDto` | Payload data |
 
 ##### TransactionPayloadDto
@@ -1029,10 +1030,10 @@ All fields are optional.
 
 - TransactionPayloadEssenceDto
 
-| Field   | Type                      | Description          |
-| ------- | ------------------------- | -------------------- |
-| inputs  | `string[]`                | Inputs               |
-| outputs | `Output[]`                | Outputs              |
+| Field   | Type                        | Description          |
+| ------- | --------------------------- | -------------------- |
+| inputs  | `string[]`                  | Inputs               |
+| outputs | `Output[]`                  | Outputs              |
 | payload | `PayloadDto` \| `undefined` | Payload for chaining |
 
 - OutputDto
@@ -1044,8 +1045,8 @@ All fields are optional.
 
 - UnlockBlockDto
 
-| Field | Type                                       | Description                                           |
-| ----- | ------------------------------------------ | ----------------------------------------------------- |
+| Field | Type                                         | Description                                           |
+| ----- | -------------------------------------------- | ----------------------------------------------------- |
 | data  | `Ed25519SignatureUnlockBlockDto` \| `number` | Unlock block data (signature type or reference index) |
 
 - Ed25519SignatureUnlockBlockDto
@@ -1072,11 +1073,11 @@ All fields are optional.
 
 ### MessageMetadata
 
-| Field                      | Type                   | Description                                               |
-| -------------------------- | ---------------------- | --------------------------------------------------------- |
-| messageId                  | `string`               | Message identifier                                        |
-| parents                    | `string[]`             | Message id of the messages it references                  |
-| isSolid                    | `boolean`              | Message solid state                                       |
+| Field                      | Type                     | Description                                               |
+| -------------------------- | ------------------------ | --------------------------------------------------------- |
+| messageId                  | `string`                 | Message identifier                                        |
+| parents                    | `string[]`               | Message id of the messages it references                  |
+| isSolid                    | `boolean`                | Message solid state                                       |
 | shouldPromote              | `boolean` \| `undefined` | Indicates whether the message should be promoted or not   |
 | shouldReattach             | `boolean` \| `undefined` | Indicates whether the message should be reattached or not |
 | referencedByMilestoneIndex | `number` \| `undefined`  | Index of the milestone that references this message       |

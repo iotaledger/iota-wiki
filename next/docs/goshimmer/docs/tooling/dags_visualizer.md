@@ -1,4 +1,5 @@
 # GoShimmer DAGs visualizer
+
 The DAGs visualizer is our all round tool for visualizing DAGs. Be it Tangle, UTXO-DAG or Conflict-DAG or their interactions. The DAGs visualizer is our go-to tool for visualization.
 
 ## How to run
@@ -12,15 +13,18 @@ UTXO-DAG and Conflict-DAG will check if there's any added or removed vertex ever
 
 :::
 
-[![DAGs visualizer Overview](/img/tooling/dags-visualizer.png "DAGs visualizer overview")](/img/tooling/dags-visualizer.png)
+[![DAGs visualizer Overview](/img/tooling/dags-visualizer.png 'DAGs visualizer overview')](/img/tooling/dags-visualizer.png)
 
 ### Global Functions
+
 Global functions are used to apply settings across DAGs or interact with them.
 
 #### Set explorer URL
+
 Each node in a graph can be selected to see its contained information, and they are navigated to the dashboard explorer for more details. You can change the url to the desired dashboard explorer, default is `http://localhost:8081`.
 
 #### Search Vertex Within Time Intervals
+
 You can check how Tangle, UTXO and conflict DAG look like in a given timeframe.
 Press "search" button, it will show you numbers of blocks, transactions and conflicts found within the given timeframe. If you want to render them in graphs, push "render" button.
 
@@ -32,22 +36,23 @@ Drawing a large amount of transactions or conflicts may slow down the browser.
 
 :::
 
-[![DAGs visualizer Searching](/img/tooling/searching.png "DAGs visualizer searching")](/img/tooling/searching.png)
-
+[![DAGs visualizer Searching](/img/tooling/searching.png 'DAGs visualizer searching')](/img/tooling/searching.png)
 
 #### Select and center vertex across DAGs
+
 You can see a selected block/transaction/conflict and its corresponding block/transaction/conflict in other DAGs! Here's an example of sync with the selected transaction, you can see the block and conflict that contains the transaction are highlighted.
 
-[![DAGs visualizer Syncing with TX](/img/tooling/sync-with-tx.png "DAGs visualizer sync with TX")](/img/tooling/sync-with-tx.png)
+[![DAGs visualizer Syncing with TX](/img/tooling/sync-with-tx.png 'DAGs visualizer sync with TX')](/img/tooling/sync-with-tx.png)
 
 Another example of sync with the selected conflict:
-[![DAGs visualizer Syncing with conflict](/img/tooling/sync-with-conflict.png "DAGs visualizer sync with conflict")](/img/tooling/sync-with-conflict.png)
+[![DAGs visualizer Syncing with conflict](/img/tooling/sync-with-conflict.png 'DAGs visualizer sync with conflict')](/img/tooling/sync-with-conflict.png)
 
 ## How to run in dev mode
 
 Dev mode has only been tested on Linux.
 
 ### Docker
+
 Run the yarn development server in a container and add it to the docker-network.
 
 1. Make sure to set `dagsvisualizer.dev` to true, to enable GoShimmer to serve assets.

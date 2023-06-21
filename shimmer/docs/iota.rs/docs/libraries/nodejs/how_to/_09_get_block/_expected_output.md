@@ -11,7 +11,7 @@ Block: [
     ],
     nonce: '1537228672809154665'
   }
-] 
+]
 
 Block metadata:  {
   blockId: '0xb6133638cb4653f3d00585e114dc64db22ed2c9402f03ca5e7894e236673662e',
@@ -24,7 +24,7 @@ Block metadata:  {
   isSolid: true,
   shouldPromote: false,
   shouldReattach: false
-} 
+}
 
 Block data:  {
   protocolVersion: 2,
@@ -35,5 +35,5 @@ Block data:  {
     '0xfcae9899666214e0c831e63caaec4030d83380fd2d7194a2ae23abecfd987dc2'
   ],
   nonce: '1537228672809154665'
-} 
+}
 ```

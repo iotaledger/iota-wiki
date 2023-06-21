@@ -95,15 +95,15 @@
 Account identifier
 Could be the account index (number) or account alias (string)
 
-___
+---
 
 ### EventType
 
-Ƭ **EventType**: ``"*"`` \| ``"ConsolidationRequired"`` \| ``"LedgerAddressGeneration"`` \| ``"NewOutput"`` \| ``"SpentOutput"`` \| ``"TransactionInclusion"`` \| ``"TransactionProgress"``
+Ƭ **EventType**: `"*"` \| `"ConsolidationRequired"` \| `"LedgerAddressGeneration"` \| `"NewOutput"` \| `"SpentOutput"` \| `"TransactionInclusion"` \| `"TransactionProgress"`
 
 Wallet event types
 
-___
+---
 
 ### Auth
 
@@ -113,12 +113,12 @@ Basic Auth or JWT
 
 #### Type declaration
 
-| Name | Type |
-| :------ | :------ |
-| `jwt?` | `string` |
+| Name                | Type                 |
+| :------------------ | :------------------- |
+| `jwt?`              | `string`             |
 | `basicAuthNamePwd?` | [`string`, `string`] |
 
-___
+---
 
 ### Node
 
@@ -128,13 +128,13 @@ A node object for the client
 
 #### Type declaration
 
-| Name | Type |
-| :------ | :------ |
-| `url` | `string` |
-| `auth?` | [`Auth`](api_ref.md#auth) |
-| `disabled?` | `boolean` |
+| Name        | Type                      |
+| :---------- | :------------------------ |
+| `url`       | `string`                  |
+| `auth?`     | [`Auth`](api_ref.md#auth) |
+| `disabled?` | `boolean`                 |
 
-___
+---
 
 ### SecretManager
 
@@ -142,7 +142,7 @@ ___
 
 Supported secret managers
 
-___
+---
 
 ### RemainderValueStrategy
 
@@ -150,7 +150,7 @@ ___
 
 The RemainderValueStrategy
 
-___
+---
 
 ### ChangeAddress
 
@@ -160,12 +160,12 @@ ChangeAddress variant of RemainderValueStrategy
 
 #### Type declaration
 
-| Name | Type |
-| :------ | :------ |
-| `strategy` | ``"ChangeAddress"`` |
-| `value` | ``null`` |
+| Name       | Type              |
+| :--------- | :---------------- |
+| `strategy` | `"ChangeAddress"` |
+| `value`    | `null`            |
 
-___
+---
 
 ### ReuseAddress
 
@@ -175,12 +175,12 @@ ReuseAddress variant of RemainderValueStrategy
 
 #### Type declaration
 
-| Name | Type |
-| :------ | :------ |
-| `strategy` | ``"ReuseAddress"`` |
-| `value` | ``null`` |
+| Name       | Type             |
+| :--------- | :--------------- |
+| `strategy` | `"ReuseAddress"` |
+| `value`    | `null`           |
 
-___
+---
 
 ### CustomAddress
 
@@ -190,7 +190,7 @@ CustomAddress variant of RemainderValueStrategy
 
 #### Type declaration
 
-| Name | Type |
-| :------ | :------ |
-| `strategy` | ``"CustomAddress"`` |
-| `value` | `string` |
+| Name       | Type              |
+| :--------- | :---------------- |
+| `strategy` | `"CustomAddress"` |
+| `value`    | `string`          |

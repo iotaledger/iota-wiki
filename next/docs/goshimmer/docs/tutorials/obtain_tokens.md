@@ -1,14 +1,15 @@
 ---
-description: You can obtain tokens using the Faucet dApp, using the Go Client Library, the HTTP API and the Pollen Wallet 
+description: You can obtain tokens using the Faucet dApp, using the Go Client Library, the HTTP API and the Pollen Wallet
 image: /img/tutorials/request_funds/pollen_wallet.png
 keywords:
-- faucet
-- proof of work
-- client library
-- wallet
-- dApp
-- pollen wallet
+  - faucet
+  - proof of work
+  - client library
+  - wallet
+  - dApp
+  - pollen wallet
 ---
+
 # How to Obtain Tokens From the Faucet
 
 ## The Faucet dApp
@@ -20,15 +21,17 @@ After sending a faucet request block, you can check your balances via [`GetAddre
 ## Obtain Tokens From the Faucet
 
 There are 3 ways to send a faucet request block to obtain IOTA tokens:
+
 1. Via the Go client library
 2. Via the HTTP API directly
 3. Via the wallet
 
 ### Via the Go Client Library
 
-Follow the instructions in [Use the API](../apis/client_lib.md) to set up the API instance. 
+Follow the instructions in [Use the API](../apis/client_lib.md) to set up the API instance.
 
 Example:
+
 ```go
 // provide your Base58 encoded destination address,
 // the proof of work difficulty,
@@ -60,13 +63,12 @@ You can request funds by pressing the `Request Funds` in the wallet.
 
 **Note**: You need to create a wallet first before requesting funds.
 
-![Pollen Wallet](/img/tutorials/request_funds/pollen_wallet.png "Pollen Wallet")
-
+![Pollen Wallet](/img/tutorials/request_funds/pollen_wallet.png 'Pollen Wallet')
 
 This may take a while to receive funds:
 
-![Pollen Wallet requesting funds](/img/tutorials/request_funds/pollen_wallet_requesting_funds.png "Pollen Wallet requesting funds")
+![Pollen Wallet requesting funds](/img/tutorials/request_funds/pollen_wallet_requesting_funds.png 'Pollen Wallet requesting funds')
 
 When the faucet request is successful, you can check the received balances:
 
-![Pollen Wallet transfer success](/img/tutorials/request_funds/pollen_wallet_transfer_success.png "Pollen Wallet requesting transfer success")
+![Pollen Wallet transfer success](/img/tutorials/request_funds/pollen_wallet_transfer_success.png 'Pollen Wallet requesting transfer success')

@@ -2,17 +2,18 @@
 description: Mana is a reputation system for nodes within the IOTA network. Reputation is gained by contributing to the network. As time passes, part of the earned mana of a node decays to encourage keeping up the good behavior.
 image: /img/protocol_specification/mana.png
 keywords:
-- mana
-- node
-- calculation
-- transactions
-- base mana
-- vectors
-- access mana
-- consensus mana
-- effective base mana
-- ledger state
+  - mana
+  - node
+  - calculation
+  - transactions
+  - base mana
+  - vectors
+  - access mana
+  - consensus mana
+  - effective base mana
+  - ledger state
 ---
+
 # Mana Implementation
 
 This document provides a high level overview of how mana is implemented in GoShimmer.
@@ -45,13 +46,13 @@ decay and effective mana.
 From the pledged mana of a transaction, a node can calculate locally the `Base Mana Vector` for both `Access Mana` and
 `Consensus Mana`.
 
-
 A `Base Mana Vector` consists of Base Mana 1 and Base Mana 2 and their respective `Effective Base Mana`.
 Given a value transaction, Base Mana 1 and Base Mana 2 are determined as follows:
- 1. Base Mana 1 is revoked from the node that created the output(s) used as input(s) in the transaction, and is pledged to
+
+1.  Base Mana 1 is revoked from the node that created the output(s) used as input(s) in the transaction, and is pledged to
     the node creating the new output(s). The amount of `Base Mana 1` revoked and pledged is equal to the balance of the
     input.
- 2. Base Mana 2 is freshly created at the issuance time of the transaction, awarded to the node, but decays with time.
+2.  Base Mana 2 is freshly created at the issuance time of the transaction, awarded to the node, but decays with time.
     The amount of `Base Mana 2` pledged is determined with `Pending Mana` concept: funds sitting at an address generate
     `pending mana` that grows over time, but bounded.
     - `Mana_pending = (alpha*S)/gamma*(1-e^(-gamma*t))`, where `alpha` and `gamma` are chosen parameters, `S` is the amount
@@ -59,12 +60,12 @@ Given a value transaction, Base Mana 1 and Base Mana 2 are determined as follows
 
 An example `Base Mana Vector` for `Access Mana` could look like this:
 
- | 		    | Node 1 | Node 2 | ... | Node k |
- |  ------- | --------- | ---------- | ------ | --- |
- | Base Mana 1 			|0	| 1 	|...|  100.54 |
- | Effective Base Mana 1	|0	| 0.5 	|...|  120.7 |
- | Base Mana 2 			|0	| 1.2	|...|  0.01 |
- | Effective Base Mana 2	|0	| 0.6 	|...|  0.015 |
+|                       | Node 1 | Node 2 | ... | Node k |
+| --------------------- | ------ | ------ | --- | ------ |
+| Base Mana 1           | 0      | 1      | ... | 100.54 |
+| Effective Base Mana 1 | 0      | 0.5    | ... | 120.7  |
+| Base Mana 2           | 0      | 1.2    | ... | 0.01   |
+| Effective Base Mana 2 | 0      | 0.6    | ... | 0.015  |
 
 `Base Mana` is pledged or revoked at discrete times, which results in `Base Mana` being discontinuous function over time.
 In order to make mana "smoother" and continuous, an exponential moving average is applied to the `Base Mana` values,
@@ -78,7 +79,7 @@ module (AutoPeering, DRNG, Rate Control, tools, etc.).
 
 Following figure summarizes how `Access Mana` and `Consensus Mana` is derived from a transaction:
 
-[![Mana](/img/protocol_specification/mana.png "Mana")](/img/protocol_specification/mana.png)
+[![Mana](/img/protocol_specification/mana.png 'Mana')](/img/protocol_specification/mana.png)
 
 The reason for having two separate `Base Mana Vectors` is the fact, that `accessMana` and `consensusMana` can be pledged
 to different nodes.
@@ -110,31 +111,35 @@ arbitrary node.
 ## Limitations
 
 The first implementation of mana in GoShimmer will:
-  - not have voted timestamps on value transactions,
-  - lack proper `TransactionConfirmed` mechanism to trigger mana update,
-  - lack integration into rate control/autopeering/etc.
-  
+
+- not have voted timestamps on value transactions,
+- lack proper `TransactionConfirmed` mechanism to trigger mana update,
+- lack integration into rate control/autopeering/etc.
+
 ## Detailed Design
 
 In this section, detailed GoShimmer implementation design considerations will be outlined about the mana module.
 In short, changes can be classified into 3 categories:
- 1. Transaction related changes,
- 2. Mana module functionality,
- 3. and related tools/utilities, such as API, visualization, analytics.
+
+1.  Transaction related changes,
+2.  Mana module functionality,
+3.  and related tools/utilities, such as API, visualization, analytics.
 
 ### Transaction
 
 As described above, 3 new fields will be added to the transaction layout:
- 1. `Timestamp` time.time
- 2. `AccessManaNodeID` []bytes
- 3. `ConsensusManaNodeID` []bytes
+
+1.  `Timestamp` time.time
+2.  `AccessManaNodeID` []bytes
+3.  `ConsensusManaNodeID` []bytes
 
 By adding these fields to the signed transaction, `valuetransfers/packages/transaction` should be modified.
- - The three new fields should be added to the transaction essence.
- - Marshalling and unmarshalling of a transaction should be modified.
- - For calculating `Base Mana 1` values, `mana module` should be able to derive from a transaction the nodes which received
-   pledged `Base Mana 1` as a consequence of the consumed inputs of the transaction. Therefore, a lookup function should
-   be exposed from the value tangle that given an `input`, returns the `pledgedNodeID` of the transaction creating the input.
+
+- The three new fields should be added to the transaction essence.
+- Marshalling and unmarshalling of a transaction should be modified.
+- For calculating `Base Mana 1` values, `mana module` should be able to derive from a transaction the nodes which received
+  pledged `Base Mana 1` as a consequence of the consumed inputs of the transaction. Therefore, a lookup function should
+  be exposed from the value tangle that given an `input`, returns the `pledgedNodeID` of the transaction creating the input.
 
 `Timestamp` is part of the signed transaction, therefore, a client sending a transaction to the node should already
 define it. In this case, this `Timestamp` will not be the same as the timestamp of the block containing the
@@ -148,11 +153,13 @@ Node owners are free to choose to whom they pledge mana to with the transaction,
 lets the client know, what `AccessManaNodeID` and `ConsensusManaNodeID` are allowed. This could be a new API endpoint
 that works like this:
 
- 1. Client asks node what nodeIDs can be included for pledging  a certain type (access, consensus) mana.
- 2. Node answers with either:
-  - Don't care. Any node IDs are valid.
-  - List of nodeIDs that are allowed for each type.
- 3. If a client sends back the transaction with invalid or empty mana fields, the transaction is considered invalid.
+1.  Client asks node what nodeIDs can be included for pledging a certain type (access, consensus) mana.
+2.  Node answers with either:
+
+- Don't care. Any node IDs are valid.
+- List of nodeIDs that are allowed for each type.
+
+3.  If a client sends back the transaction with invalid or empty mana fields, the transaction is considered invalid.
 
 This way node owners can decide who their transactions are pledging mana to. It could be only their node, or they could
 provide mana pledging as a service. They could delegate access mana to others, but hold own to consensus mana, or the
@@ -188,18 +195,20 @@ in the value tangle.
 
 `BaseMana` is a struct that holds the different mana values for a given node.
 Note that except for `Base Mana 1` calculation, we need the time when `BaseMana` values were updated, so we store it in the struct:
- ```go
+
+```go
 type BaseMana struct {
-  BaseMana1 float
-  EffectiveBaseMana1 float
-  BaseMana2 float
-  EffectiveBaseMana2 float
-  LastUpdated time
+ BaseMana1 float
+ EffectiveBaseMana1 float
+ BaseMana2 float
+ EffectiveBaseMana2 float
+ LastUpdated time
 }
 ```
 
 `BaseManaVector` is a data structure that maps `nodeID`s to `BaseMana`. It also has a `Type` that denotes the type
 of mana this vector deals with (Access, Consensus, etc.).
+
 ```go
 type BaseManaVector struct {
 	vector     map[identity.ID]*BaseMana
@@ -210,29 +219,32 @@ type BaseManaVector struct {
 #### Methods
 
 `BaseManaVector` should have the following methods:
- - `BookMana(transaction)`: Book mana of a transaction. Trigger `ManaBooked` event. Note, that this method updates
-   `BaseMana` with respect to time and to new `Base Mana 1` and `Base Mana 2` values.
- - `GetWeightedMana(nodeID, weight) mana`: Return `weight` *` Effective Base Mana 1` + (1-`weight`)+`Effective Base Mana 2`.
-   `weight` is a number in [0,1] interval. Notice, that `weight` = 1  results in only returning `Effective Base Mana 1`,
-   and the other way around. Note, that this method also updates `BaseMana` of the node with respect to time.
- - `GetMana(nodeID) mana`: Return 0.5*`Effective Base Mana 1` + 0.5*`Effective Base Mana 2` of a particular node. Note, that
-   this method also updates `BaseMana` of the node with respect to time.
- - `update(nodeID, time)`: update `Base Mana 2`, `Effective Base Mana 1` and `Effective Base Mana 2` of a node with respect `time`.
- - `updateAll(time)`: update `Base Mana 2`, `Effective Base Mana 1` and `Effective Base Mana 2` of all nodes with respect to `time`.
+
+- `BookMana(transaction)`: Book mana of a transaction. Trigger `ManaBooked` event. Note, that this method updates
+  `BaseMana` with respect to time and to new `Base Mana 1` and `Base Mana 2` values.
+- `GetWeightedMana(nodeID, weight) mana`: Return `weight` \*` Effective Base Mana 1` + (1-`weight`)+`Effective Base Mana 2`.
+  `weight` is a number in [0,1] interval. Notice, that `weight` = 1 results in only returning `Effective Base Mana 1`,
+  and the other way around. Note, that this method also updates `BaseMana` of the node with respect to time.
+- `GetMana(nodeID) mana`: Return 0.5*`Effective Base Mana 1` + 0.5*`Effective Base Mana 2` of a particular node. Note, that
+  this method also updates `BaseMana` of the node with respect to time.
+- `update(nodeID, time)`: update `Base Mana 2`, `Effective Base Mana 1` and `Effective Base Mana 2` of a node with respect `time`.
+- `updateAll(time)`: update `Base Mana 2`, `Effective Base Mana 1` and `Effective Base Mana 2` of all nodes with respect to `time`.
 
 `BaseMana` should have the following methods:
- - `pledgeAndUpdate(transaction)`: update `BaseMana` fields and pledge mana with respect to `transaction`.
- - `revokeBaseMana1(amount, time)`:  update `BaseMana` values with respect to `time` and revoke `amount` `BaseMana1`.
- - `update(time)`: update all `BaseMana` fields with respect to `time`.
- - `updateEBM1(time)`: update `Effective Base Mana 1` wrt to `time`.
- - `updateBM2(time)`: update `Base Mana 2` wrt to `time`.
- - `updateEBM2(time)`: update `Effective Base Mana 2` wrt to `time`.
+
+- `pledgeAndUpdate(transaction)`: update `BaseMana` fields and pledge mana with respect to `transaction`.
+- `revokeBaseMana1(amount, time)`: update `BaseMana` values with respect to `time` and revoke `amount` `BaseMana1`.
+- `update(time)`: update all `BaseMana` fields with respect to `time`.
+- `updateEBM1(time)`: update `Effective Base Mana 1` wrt to `time`.
+- `updateBM2(time)`: update `Base Mana 2` wrt to `time`.
+- `updateEBM2(time)`: update `Effective Base Mana 2` wrt to `time`.
 
 #### Base Mana Calculation
 
 There are two cases when the values within `Base Mana Vector` are updated:
- 1. A confirmed transaction pledges mana.
- 2. Any module accesses the `Base Mana Vector`, and hence its values are updated with respect to `access time`.
+
+1.  A confirmed transaction pledges mana.
+2.  Any module accesses the `Base Mana Vector`, and hence its values are updated with respect to `access time`.
 
 First, let's explore the former.
 
@@ -241,6 +253,7 @@ First, let's explore the former.
 For simplicity, we only describe mana calculation for one of the Base Mana Vectors, namely, the Base Access Mana Vector.
 
 First, a `TransactionConfirmed` event is triggered, therefore `BaseManaVector.BookMana(transaction)` is executed:
+
 ```go
 func (bmv *BaseManaVector) BookMana(tx *transaction) {
     pledgedNodeID := tx.accessMana
@@ -268,6 +281,7 @@ func (bmv *BaseManaVector) BookMana(tx *transaction) {
     Events.ManaUpdated.Trigger(&ManaUpdatedEvent{pledgedNodeID, oldMana, bmv[pledgedNodeID], AccessManaType})
 }
 ```
+
 `Base Mana 1` is being revoked from the nodes that pledged mana for inputs that the current transaction consumes.
 Then, the appropriate node is located in `Base Mana Vector`, and mana is pledged to its `BaseMana`.
 `Events` are essential to study what happens within the module from the outside.
@@ -276,6 +290,7 @@ Note, that `revokeBaseMana1` accesses the mana entry of the nodes within `Base M
 updated with respect to `t`. Notice the two conflicts after the condition. When `Base Mana` values had been updated before
 the transaction's timestamp, a regular update is carried out. However, if `t` is older, than the transaction timestamp,
 an update in the "past" is carried out and values are updated up to `LastUpdated`.
+
 ```go
 func (bm *BaseMana) revokeBaseMana1(amount float64, t time.Time) {
 	if t.After(bm.LastUpdated) {
@@ -299,7 +314,9 @@ func (bm *BaseMana) revokeBaseMana1(amount float64, t time.Time) {
 	}
 }
 ```
+
 The same regular and past update scheme is applied to pledging mana too:
+
 ```go
 func (bm *BaseMana) pledgeAndUpdate(tx *transaction) (bm1Pledged int, bm2Pledged int){
 	t := tx.timestamp
@@ -347,6 +364,7 @@ func (bm *BaseMana) pledgeAndUpdate(tx *transaction) (bm1Pledged int, bm2Pledged
 	return bm1Pledged, bm2Pledged
 }
 ```
+
 Notice, that in case of `EMA_coeff_2 = decay`, a simplified formula can be used to calculate `EffectiveBaseMana2`.
 The same approach is applied in `updateEBM2()`.
 
@@ -356,11 +374,13 @@ func (bm *BaseMana) updateEBM1(n time.Duration) {
                                  (1-math.Pow(math.E, -EMA_coeff_1 * n)) * bm.BaseMana1
 }
 ```
+
 ```go
 func (bm *BaseMana) updateBM2(n time.Duration) {
     bm.BaseMana2 = bm.BaseMana2 * math.Pow(math.E, -decay*n)
 }
 ```
+
 ```go
 func (bm *BaseMana) updateEBM2(n time.Duration) {
 	if EMA_coeff_2 != decay {
@@ -377,6 +397,7 @@ func (bm *BaseMana) updateEBM2(n time.Duration) {
 ##### Any module accesses the Base Mana Vector
 
 In this case, the accessed entries within `Base Mana Vector` are updated via the method:
+
 ```go
 func (bmv *BaseManaVector) update(nodeID ID, t time.Time ) {
     oldMana :=  bmv[nodeID]
@@ -384,7 +405,9 @@ func (bmv *BaseManaVector) update(nodeID ID, t time.Time ) {
     Events.ManaUpdated.Trigger(&ManaUpdatedEvent{nodeID, oldMana, bmv[nodeID], AccessManaType})
 }
 ```
+
 where `t` is the access time.
+
 ```go
 func (bm *BaseMana) update(t time.Time ) {
     n := t - bm.LastUpdated
@@ -400,7 +423,7 @@ func (bm *BaseMana) update(t time.Time ) {
 
 The mana package should have the following events:
 
- - `Pledged` when mana (`BM1` and `BM2`) was pledged for a node due to new transactions being confirmed.
+- `Pledged` when mana (`BM1` and `BM2`) was pledged for a node due to new transactions being confirmed.
 
 ```go
 type PledgedEvent struct {
@@ -423,7 +446,7 @@ type RevokedEvent struct {
 }
 ```
 
- - `Updated` when mana was updated for a node due to it being accessed.
+- `Updated` when mana was updated for a node due to it being accessed.
 
 ```go
 type UpdatedEvent struct {
@@ -435,20 +458,21 @@ type UpdatedEvent struct {
 ```
 
 #### Testing
- 
- - Write unit tests for all methods.
- - Test all events and if they are correctly triggered.
- - Benchmark calculations in tests to see how heavy it is to calculate EMAs and decays.
+
+- Write unit tests for all methods.
+- Test all events and if they are correctly triggered.
+- Benchmark calculations in tests to see how heavy it is to calculate EMAs and decays.
 
 ### Mana Plugin
 
 The `mana plugin` is responsible for:
- - calculating mana from value transactions,
- - keeping a log of the different mana values of all nodes,
- - updating mana values,
- - responding to mana related queries from other modules,
- - saving base mana vectors in database when shutting down the node,
- - trying to load base mana vectors from database when starting the node.
+
+- calculating mana from value transactions,
+- keeping a log of the different mana values of all nodes,
+- updating mana values,
+- responding to mana related queries from other modules,
+- saving base mana vectors in database when shutting down the node,
+- trying to load base mana vectors from database when starting the node.
 
 The proposed mana plugin should keep track of the different mana values of nodes and handle calculation
 updates. Mana values are mapped to `nodeID`s and stored in a `map` data structure. The vector also stores information on
@@ -462,10 +486,12 @@ type BaseManaVector struct {
 ```
 
 `Access Mana` and `Consensus Mana` should have their own respective `BaseManaVector`.
+
 ```go
 accessManaVector := BaseManaVector{vectorType: AccesMana}
 consensusManaVector :=  BaseManaVector{vectorType: ConsensusMana}
 ```
+
 In the future, it should be possible to combine `Effective Base Mana 1` and `Effective Base Mana 2` from a `BaseManaVector`
 in arbitrary proportions to arrive at a final mana value that other modules use. The `mana package` has these methods
 in place. Additionally, a parameter could be passed to the `getMana` type of exposed functions to set the proportions.
@@ -474,20 +500,20 @@ in place. Additionally, a parameter could be passed to the `getMana` type of exp
 
 The mana plugin should expose utility functions to other modules:
 
- - `GetHighestManaNodes(type, n) [n]NodeIdManaTuple`: return the `n` highest `type` mana nodes (`nodeID`,`manaValue`) in
-   ascending order. Should also update their mana value.
- - `GetManaMap(type) map[nodeID]manaValue`: return `type` mana perception of the node.
- - `GetAccessMana(nodeID) mana`: access `Base Mana Vector` of `Access Mana`, update its values with respect to time,
-    and return the amount of `Access Mana` (either `Effective Base Mana 1`, `Effective Base Mana 2`, or some combination
-    of the two). Trigger `ManaUpdated` event.
- - `GetConsensusMana(nodeID) mana`: access `Base Mana Vector` of `Consensus Mana`, update its values with respect to time,
-    and returns the amount of `Consensus Mana` (either `Effective Base Mana 1`, `Effective Base Mana 2`, or some combination
-    of the two). Trigger `ManaUpdated` event.
- - `GetNeighborsMana(type)`: returns the `type` mana of the nodes neighbors
- - `GetAllManaVectors()` Obtaining the full mana maps for comparison with the perception of other nodes.
- - `GetWeightedRandomNodes(n)`: returns a weighted random selection of `n` nodes. `Consensus Mana` is used for the weights.
- - Obtaining a list of currently known peers + their mana, sorted. Useful for knowing which high mana nodes are online.
- - `OverrideMana(nodeID, baseManaVector)`: Sets the nodes mana to a specific value. Can be useful for debugging, setting faucet mana, initialization, etc.. Triggers `ManaUpdated`
+- `GetHighestManaNodes(type, n) [n]NodeIdManaTuple`: return the `n` highest `type` mana nodes (`nodeID`,`manaValue`) in
+  ascending order. Should also update their mana value.
+- `GetManaMap(type) map[nodeID]manaValue`: return `type` mana perception of the node.
+- `GetAccessMana(nodeID) mana`: access `Base Mana Vector` of `Access Mana`, update its values with respect to time,
+  and return the amount of `Access Mana` (either `Effective Base Mana 1`, `Effective Base Mana 2`, or some combination
+  of the two). Trigger `ManaUpdated` event.
+- `GetConsensusMana(nodeID) mana`: access `Base Mana Vector` of `Consensus Mana`, update its values with respect to time,
+  and returns the amount of `Consensus Mana` (either `Effective Base Mana 1`, `Effective Base Mana 2`, or some combination
+  of the two). Trigger `ManaUpdated` event.
+- `GetNeighborsMana(type)`: returns the `type` mana of the nodes neighbors
+- `GetAllManaVectors()` Obtaining the full mana maps for comparison with the perception of other nodes.
+- `GetWeightedRandomNodes(n)`: returns a weighted random selection of `n` nodes. `Consensus Mana` is used for the weights.
+- Obtaining a list of currently known peers + their mana, sorted. Useful for knowing which high mana nodes are online.
+- `OverrideMana(nodeID, baseManaVector)`: Sets the nodes mana to a specific value. Can be useful for debugging, setting faucet mana, initialization, etc.. Triggers `ManaUpdated`
 
 Such utility functions could be used for example to visualize mana distribution in node dashboard, or send neighbor
 mana data to the analysis server for further processing.
@@ -496,10 +522,10 @@ mana data to the analysis server for further processing.
 
 Mana is booked when a transaction is confirmed.
 
- ```go
+```go
 on TransactionConfirmed (tx):
-  bookAccessMana()
-  bookConsensusMana()
+ bookAccessMana()
+ bookConsensusMana()
 ```
 
 #### Synchronization and Mana Calculation
@@ -519,38 +545,39 @@ In this section, all tools and utility functions for mana will be outlined.
 
 #### Mana Related API endpoints
 
- - `/info`: Add own mana in node info response.
- - `value/allowedManaPledge`: Endpoint that clients can query to determine which nodeIDs are allowed as part of
-   `accessMana` and `consensusMana` fields in a transaction.
- - `value/sendTransactionByJson`: Add `accessMana`, `consensusMana` and `timestamp` fields to the JSON request.
+- `/info`: Add own mana in node info response.
+- `value/allowedManaPledge`: Endpoint that clients can query to determine which nodeIDs are allowed as part of
+  `accessMana` and `consensusMana` fields in a transaction.
+- `value/sendTransactionByJson`: Add `accessMana`, `consensusMana` and `timestamp` fields to the JSON request.
 
 Add a new `mana` endpoint route:
- - `/mana`: Return access and consensus mana of the node.
- - `/mana/all`: Return whole mana map (mana perception of the node).
- - `/mana/access/nhighest`: Return `n` highest access mana holder `nodeIDs` and their access mana values.
- - `/mana/consensus/nhighest`: Return `n` highest consensus mana holder `nodeIDs` and their consensus mana values.
- - `/mana/percentile`: Return the top percentile the node belongs to relative to the network. For example, if there are 100 nodes in the
-   network owning mana, and a node is the 13th richest, it means that is part of the top 13% of mana holders, but not the
-   top 12%.
+
+- `/mana`: Return access and consensus mana of the node.
+- `/mana/all`: Return whole mana map (mana perception of the node).
+- `/mana/access/nhighest`: Return `n` highest access mana holder `nodeIDs` and their access mana values.
+- `/mana/consensus/nhighest`: Return `n` highest consensus mana holder `nodeIDs` and their consensus mana values.
+- `/mana/percentile`: Return the top percentile the node belongs to relative to the network. For example, if there are 100 nodes in the
+  network owning mana, and a node is the 13th richest, it means that is part of the top 13% of mana holders, but not the
+  top 12%.
 
 #### Metrics collection
 
 To study the mana module, following metrics could be gathered:
 
- - Amount of consensus and access mana present in the network. (amount varies because of `Base Mana 2`).
- - Amount of mana each node holds.
- - Number of (and amount of mana) a node was pledged with mana in the last `t` interval.
- - Mana development of a particular node over time.
- - Mana percentile development of a node over time.
- - Average pledge amount of a node. (how much mana it receives on average with one pledge)
- - Mean and median mana holdings of nodes in the network. Shows how even mana distribution is.
- - Average mana of neighbors.
+- Amount of consensus and access mana present in the network. (amount varies because of `Base Mana 2`).
+- Amount of mana each node holds.
+- Number of (and amount of mana) a node was pledged with mana in the last `t` interval.
+- Mana development of a particular node over time.
+- Mana percentile development of a node over time.
+- Average pledge amount of a node. (how much mana it receives on average with one pledge)
+- Mean and median mana holdings of nodes in the network. Shows how even mana distribution is.
+- Average mana of neighbors.
 
 #### Visualization
 
 Each node calculates mana locally, not only for themselves, but for all nodes in the network that it knows. As a result,
 mana perception of nodes may not be exactly the same at all times (due to network delay, processing capabilities), but
-should converge to the same state. A big question for visualization is which node's viewpoint to base mana visualization on? 
+should converge to the same state. A big question for visualization is which node's viewpoint to base mana visualization on?
 
 When running a node, operators will be shown the mana perception of their own node, but it also makes sense to
 display the perception of high mana nodes as the global mana perception. First, let's look at how local mana perception
@@ -559,28 +586,32 @@ is visualized for a node:
 ##### Local Perception
 
 There are two ways to visualize mana in GoShimmer:
- 1. Node Local Dashboard
- 2. Grafana Dashboard
+
+1.  Node Local Dashboard
+2.  Grafana Dashboard
 
 While `Local Dashboard` gives flexibility in what and how to visualize, `Grafana Dashboard` is better at storing historic
 data but can only visualize time series. Therefore, both of these ways will be utilized, depending on which suits the best.
 
 `Local Dashboard` visualization:
- - Histogram of mana distribution within the network.
- - List of `n` richest mana nodes, ordered.
- - Mana rank of node.
+
+- Histogram of mana distribution within the network.
+- List of `n` richest mana nodes, ordered.
+- Mana rank of node.
 
 `Grafana Dashboard` visualization:
- - Mana of a particular node with respect to time.
- - Amount of mana in the network.
- - Average pledge amount of a node.
- - Mean and median mana holdings of nodes.
- - Mana rank of the node over time.
- - Average mana of neighbors.
 
- ##### Global Perception
+- Mana of a particular node with respect to time.
+- Amount of mana in the network.
+- Average pledge amount of a node.
+- Mean and median mana holdings of nodes.
+- Mana rank of the node over time.
+- Average mana of neighbors.
+
+##### Global Perception
 
 Additionally, the GoShimmer Analyzer (analysis server) could be updated:
- - Autopeering node graph, where size of a node corresponds to its mana value.
- - Some previously described metrics could be visualized here as well, to give the chance to people without
-   a node to take a look. As an input, a high mana node's perception should be used.
+
+- Autopeering node graph, where size of a node corresponds to its mana value.
+- Some previously described metrics could be visualized here as well, to give the chance to people without
+  a node to take a look. As an input, a high mana node's perception should be used.

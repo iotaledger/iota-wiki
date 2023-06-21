@@ -32,7 +32,7 @@ The type of unlock condition.
 
 UnlockCondition.getType
 
-___
+---
 
 ### getAmount
 
@@ -44,7 +44,7 @@ Amount of tokens the consuming transaction must deposit to the address defined i
 
 `string`
 
-___
+---
 
 ### getReturnAddress
 

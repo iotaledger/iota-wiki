@@ -29,7 +29,7 @@ Options for building a Basic Output
 
 If not provided, minimum storage deposit will be used
 
-___
+---
 
 ### nativeTokens
 
@@ -37,7 +37,7 @@ ___
 
 The native tokens to be held by the output.
 
-___
+---
 
 ### unlockConditions
 
@@ -45,7 +45,7 @@ ___
 
 The unlock conditions for the output.
 
-___
+---
 
 ### features
 

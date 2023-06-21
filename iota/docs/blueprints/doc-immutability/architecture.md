@@ -39,7 +39,7 @@ When a user wants to verify the integrity of a document, the process in the web 
 
 1. The user provides the document and the message-id referencing the Proof of Existence
 2. The web application fetches the Proof of Existence from the message of the Tangle by querying the selected node
-3. The document is hashed 
+3. The document is hashed
 4. The result is compared to the fetched Proof of Existence
 5. The verification result is returned to the user
 

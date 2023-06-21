@@ -2,17 +2,15 @@
 description: The ISC Magic Contract allows EVM contracts to access ISC functionality.
 image: /img/logo/WASP_logo_dark.png
 keywords:
-
-- configure
-- using
-- EVM
-- magic
-- Ethereum
-- Solidity
-- metamask
-- JSON
-- RPC
-
+  - configure
+  - using
+  - EVM
+  - magic
+  - Ethereum
+  - Solidity
+  - metamask
+  - JSON
+  - RPC
 ---
 
 # The ISC Magic Contract
@@ -88,24 +86,24 @@ contract MyEVMContract {
 
 ## API Reference
 
-* [Common type definitions](https://github.com/iotaledger/wasp/blob/develop/packages/vm/core/evm/iscmagic/ISCTypes.sol)
-* [ISC library](https://github.com/iotaledger/wasp/blob/develop/packages/vm/core/evm/iscmagic/ISC.sol)
-* [ISCSandbox](https://github.com/iotaledger/wasp/blob/develop/packages/vm/core/evm/iscmagic/ISCSandbox.sol)
+- [Common type definitions](https://github.com/iotaledger/wasp/blob/develop/packages/vm/core/evm/iscmagic/ISCTypes.sol)
+- [ISC library](https://github.com/iotaledger/wasp/blob/develop/packages/vm/core/evm/iscmagic/ISC.sol)
+- [ISCSandbox](https://github.com/iotaledger/wasp/blob/develop/packages/vm/core/evm/iscmagic/ISCSandbox.sol)
   interface, available at `ISC.sandbox`
-* [ISCAccounts](https://github.com/iotaledger/wasp/blob/develop/packages/vm/core/evm/iscmagic/ISCAccounts.sol)
+- [ISCAccounts](https://github.com/iotaledger/wasp/blob/develop/packages/vm/core/evm/iscmagic/ISCAccounts.sol)
   interface, available at `ISC.accounts`
-* [ISCUtil](https://github.com/iotaledger/wasp/blob/develop/packages/vm/core/evm/iscmagic/ISCUtil.sol)
+- [ISCUtil](https://github.com/iotaledger/wasp/blob/develop/packages/vm/core/evm/iscmagic/ISCUtil.sol)
   interface, available at `ISC.util`
-* [ERC20BaseTokens](https://github.com/iotaledger/wasp/blob/develop/packages/vm/core/evm/iscmagic/ERC20BaseTokens.sol)
+- [ERC20BaseTokens](https://github.com/iotaledger/wasp/blob/develop/packages/vm/core/evm/iscmagic/ERC20BaseTokens.sol)
   contract, available at `ISC.baseTokens`
   (address `0x1074010000000000000000000000000000000000`)
-* [ERC20NativeTokens](https://github.com/iotaledger/wasp/blob/develop/packages/vm/core/evm/iscmagic/ERC20NativeTokens.sol)
+- [ERC20NativeTokens](https://github.com/iotaledger/wasp/blob/develop/packages/vm/core/evm/iscmagic/ERC20NativeTokens.sol)
   contract, available at `ISC.nativeTokens(foundrySN)` after being registered
   by the foundry owner by calling
   [`registerERC20NativeToken`](../core_concepts/core_contracts/evm.md#registerERC20NativeToken)
   (address `0x107402xxxxxxxx00000000000000000000000000` where `xxxxxxxx` is the
   little-endian encoding of the foundry serial number)
-* [ERC721NFTs](https://github.com/iotaledger/wasp/blob/develop/packages/vm/core/evm/iscmagic/ERC721NFTs.sol)
+- [ERC721NFTs](https://github.com/iotaledger/wasp/blob/develop/packages/vm/core/evm/iscmagic/ERC721NFTs.sol)
   contract, available at `ISC.nfts`
   (address `0x1074030000000000000000000000000000000000`)
 

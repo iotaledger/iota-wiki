@@ -2,10 +2,10 @@
 description: Chronicle is the permanode solution for the different IOTA networks.
 image: /img/logo/bee_logo.png
 keywords:
-- Rust
-- Discord
-- Permanode
-- IOTA
+  - Rust
+  - Discord
+  - Permanode
+  - IOTA
 ---
 
 # inx-chronicle
@@ -26,6 +26,7 @@ The documentation for Chronicle can be found in [our wiki](https://wiki.iota.org
 
 This project uses [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/) to automatically generate a [`CHANGELOG.md`](https://github.com/iotaledger/inx-chronicle/blob/main/CHANGELOG.md) which signals breaking changes.
 The changelog can be created using the following command (requires the [`conventional-changelog-cli`](https://www.npmjs.com/package/conventional-changelog-cli) package on NPM):
+
 ```sh
 conventional-changelog -p conventionalcommits -i CHANGELOG.md -s
 ```

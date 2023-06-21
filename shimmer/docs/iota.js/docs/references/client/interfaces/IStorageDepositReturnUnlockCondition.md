@@ -1,18 +1,19 @@
 ---
 description: iota.js API reference
 keywords:
-- references
-- api references
-- typescript
+  - references
+  - api references
+  - typescript
 image: /img/client_banner.png
 ---
+
 # Interface: IStorageDepositReturnUnlockCondition
 
 Storage Desposit Return Unlock Condition.
 
 ## Hierarchy
 
-- [`ITypeBase`](ITypeBase.md)<``1``\>
+- [`ITypeBase`](ITypeBase.md)<`1`\>
 
   ↳ **`IStorageDepositReturnUnlockCondition`**
 
@@ -28,7 +29,7 @@ Storage Desposit Return Unlock Condition.
 
 ### type
 
-• **type**: ``1``
+• **type**: `1`
 
 The type of the object.
 
@@ -36,7 +37,7 @@ The type of the object.
 
 [ITypeBase](ITypeBase.md).[type](ITypeBase.md#type)
 
-___
+---
 
 ### returnAddress
 
@@ -44,7 +45,7 @@ ___
 
 The return address.
 
-___
+---
 
 ### amount
 

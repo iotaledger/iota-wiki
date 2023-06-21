@@ -1,13 +1,13 @@
 ---
-description: "Generate a Seed Phrase and Ed25519 Master Seed with iota.js."
+description: 'Generate a Seed Phrase and Ed25519 Master Seed with iota.js.'
 image: /img/client_banner.png
 keywords:
-- tutorial
-- addresses
-- seed
-- seed phrase
-- ed25519 master seed
-- mnemonic seed phrase
+  - tutorial
+  - addresses
+  - seed
+  - seed phrase
+  - ed25519 master seed
+  - mnemonic seed phrase
 ---
 
 # Generate Seeds
@@ -31,12 +31,12 @@ below:
 // Default entropy length is 256
 const randomMnemonic = Bip39.randomMnemonic();
 
-console.log("Seed phrase:", randomMnemonic);
+console.log('Seed phrase:', randomMnemonic);
 ```
 
 ### Generate an Ed25519 Master Seed
 
-Once you have the seed phrase, also known as BIP39 random mnemonic, the next step is to obtain an *Ed25519 master seed*
+Once you have the seed phrase, also known as BIP39 random mnemonic, the next step is to obtain an _Ed25519 master seed_
 from the seed phrase. You can use the
 [`Ed25519Seed.fromMnemonic(randomMnemonic)`](../../references/client/classes/Ed25519Seed#frommnemonic) function as shown
 in the following snippet:
@@ -53,13 +53,13 @@ through the BIP32 deterministic method.
 By this point in the tutorial, your `generate-addresses.ts`file should look something like this:
 
 ```typescript
-import {Bip39} from "@iota/crypto.js";
-import {Ed25519Seed} from "@iota/iota.js";
+import { Bip39 } from '@iota/crypto.js';
+import { Ed25519Seed } from '@iota/iota.js';
 
 // Default entropy length is 256
 const randomMnemonic = Bip39.randomMnemonic();
 
-console.log("Seed phrase:", randomMnemonic);
+console.log('Seed phrase:', randomMnemonic);
 
 const masterSeed = Ed25519Seed.fromMnemonic(randomMnemonic);
 ```

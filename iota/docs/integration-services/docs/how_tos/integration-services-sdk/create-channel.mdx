@@ -2,18 +2,19 @@
 image: /img/integration-services/logo/integration_services.png
 description: The example-5 script authenticates an Integration Service client to manage Identities using the Admin identity created in example-0 and then creates a channel, writes data on the channel, reads data from the channel.
 keywords:
-- how to
-- create channel
-- read channel
-- write channel
-- example
-- maven
-- java
-- nodejs
-- javascript
+  - how to
+  - create channel
+  - read channel
+  - write channel
+  - example
+  - maven
+  - java
+  - nodejs
+  - javascript
 ---
-import Tabs from "@theme/Tabs";
-import TabItem from "@theme/TabItem";
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 # Create a Channel
 
@@ -40,13 +41,12 @@ mvn exec:_java -Dexec.mainClass=net.gradbase.how_tos.CreateChannel
 
 ```bash
 npm run example-5
-````
+```
 
 **Example source code**: [Example-5](https://github.com/iotaledger/integration-services/blob/master/clients/client-sdk/examples/5-CreateChannel.ts)
 
 </TabItem>
 </Tabs>
-
 
 ## Create Channel
 
@@ -77,9 +77,9 @@ System.out.println(channelAddress);
 ```js
 // The owner creates a channel where he/she want to publish data of type 'example-data'.
 const { channelAddress } = await ownerClient.create({
-    name: `Channel-${Math.ceil(Math.random() * 100000)}`,
-    topics: [{ type: 'example-data', source: 'data-creator' }]
-    });
+  name: `Channel-${Math.ceil(Math.random() * 100000)}`,
+  topics: [{ type: 'example-data', source: 'data-creator' }],
+});
 ```
 
 </TabItem>
@@ -105,11 +105,11 @@ for (int i = 0; i < 3; i++) {
 
 ```js
 await channel.write(channelAddress, {
-    type: 'log',
-    created: new Date().toISOString(),
-    payload: {
-        log: `This is log file ...`
-    }
+  type: 'log',
+  created: new Date().toISOString(),
+  payload: {
+    log: `This is log file ...`,
+  },
 });
 ```
 
@@ -130,9 +130,9 @@ for (ChannelData data : datas) {
     System.out.println(data.toString());
 }
 ```
+
 </TabItem>
 <TabItem value="Nodejs" label={'Node.js'}>
-
 
 ```java
 const channelData = await channel.read(channelAddress);

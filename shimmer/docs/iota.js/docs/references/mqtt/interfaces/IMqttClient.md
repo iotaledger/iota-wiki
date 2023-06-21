@@ -1,11 +1,12 @@
 ---
 description: iota.js API reference
 keywords:
-- references
-- api references
-- typescript
+  - references
+  - api references
+  - typescript
 image: /img/client_banner.png
 ---
+
 # Interface: IMqttClient
 
 Client interface definition for API communication.
@@ -56,8 +57,8 @@ Subscribe to the latest milestone updates.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name       | Type                                                                                         | Description                                         |
+| :--------- | :------------------------------------------------------------------------------------------- | :-------------------------------------------------- |
 | `callback` | (`topic`: `string`, `data`: [`IMqttMilestoneResponse`](IMqttMilestoneResponse.md)) => `void` | The callback which is called when new data arrives. |
 
 #### Returns
@@ -66,7 +67,7 @@ Subscribe to the latest milestone updates.
 
 A subscription Id which can be used to unsubscribe.
 
-___
+---
 
 ### milestonesConfirmed
 
@@ -76,8 +77,8 @@ Subscribe to the latest confirmed milestone updates.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name       | Type                                                                                         | Description                                         |
+| :--------- | :------------------------------------------------------------------------------------------- | :-------------------------------------------------- |
 | `callback` | (`topic`: `string`, `data`: [`IMqttMilestoneResponse`](IMqttMilestoneResponse.md)) => `void` | The callback which is called when new data arrives. |
 
 #### Returns
@@ -86,7 +87,7 @@ Subscribe to the latest confirmed milestone updates.
 
 A subscription Id which can be used to unsubscribe.
 
-___
+---
 
 ### blocksRaw
 
@@ -96,8 +97,8 @@ Subscribe to get all blocks in binary form.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name       | Type                                                | Description                                         |
+| :--------- | :-------------------------------------------------- | :-------------------------------------------------- |
 | `callback` | (`topic`: `string`, `data`: `Uint8Array`) => `void` | The callback which is called when new data arrives. |
 
 #### Returns
@@ -106,7 +107,7 @@ Subscribe to get all blocks in binary form.
 
 A subscription Id which can be used to unsubscribe.
 
-___
+---
 
 ### blocks
 
@@ -116,8 +117,8 @@ Subscribe to get all blocks in object form.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name       | Type                                            | Description                                         |
+| :--------- | :---------------------------------------------- | :-------------------------------------------------- |
 | `callback` | (`topic`: `string`, `data`: `IBlock`) => `void` | The callback which is called when new data arrives. |
 
 #### Returns
@@ -126,7 +127,7 @@ Subscribe to get all blocks in object form.
 
 A subscription Id which can be used to unsubscribe.
 
-___
+---
 
 ### blocksReferenced
 
@@ -136,8 +137,8 @@ Subscribe to get the metadata for all the blocks.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name       | Type                                                    | Description                                         |
+| :--------- | :------------------------------------------------------ | :-------------------------------------------------- |
 | `callback` | (`topic`: `string`, `data`: `IBlockMetadata`) => `void` | The callback which is called when new data arrives. |
 
 #### Returns
@@ -146,7 +147,7 @@ Subscribe to get the metadata for all the blocks.
 
 A subscription Id which can be used to unsubscribe.
 
-___
+---
 
 ### blocksTransactionRaw
 
@@ -156,8 +157,8 @@ Subscribe to all transaction blocks in their raw form.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name       | Type                                                | Description                                         |
+| :--------- | :-------------------------------------------------- | :-------------------------------------------------- |
 | `callback` | (`topic`: `string`, `data`: `Uint8Array`) => `void` | The callback which is called when new data arrives. |
 
 #### Returns
@@ -166,7 +167,7 @@ Subscribe to all transaction blocks in their raw form.
 
 A subscription Id which can be used to unsubscribe.
 
-___
+---
 
 ### blocksTransaction
 
@@ -176,8 +177,8 @@ Subscribe to all transaction blocks.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name       | Type                                            | Description                                         |
+| :--------- | :---------------------------------------------- | :-------------------------------------------------- |
 | `callback` | (`topic`: `string`, `data`: `IBlock`) => `void` | The callback which is called when new data arrives. |
 
 #### Returns
@@ -186,7 +187,7 @@ Subscribe to all transaction blocks.
 
 A subscription Id which can be used to unsubscribe.
 
-___
+---
 
 ### blocksTransactionTaggedDataRaw
 
@@ -196,10 +197,10 @@ Subscribe to transaction blocks with tagged data in their raw form.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `tag` | `undefined` \| `string` \| `Uint8Array` | The tag to look for, or all tagged transactions if undefined. |
-| `callback` | (`topic`: `string`, `data`: `Uint8Array`) => `void` | The callback which is called when new data arrives. |
+| Name       | Type                                                | Description                                                   |
+| :--------- | :-------------------------------------------------- | :------------------------------------------------------------ |
+| `tag`      | `undefined` \| `string` \| `Uint8Array`             | The tag to look for, or all tagged transactions if undefined. |
+| `callback` | (`topic`: `string`, `data`: `Uint8Array`) => `void` | The callback which is called when new data arrives.           |
 
 #### Returns
 
@@ -207,7 +208,7 @@ Subscribe to transaction blocks with tagged data in their raw form.
 
 A subscription Id which can be used to unsubscribe.
 
-___
+---
 
 ### blocksTransactionTaggedData
 
@@ -217,10 +218,10 @@ Subscribe to all transaction blocks with tagged data.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `tag` | `undefined` \| `string` \| `Uint8Array` | The tag to look for, or all tagged transactions if undefined. |
-| `callback` | (`topic`: `string`, `data`: `IBlock`) => `void` | The callback which is called when new data arrives. |
+| Name       | Type                                            | Description                                                   |
+| :--------- | :---------------------------------------------- | :------------------------------------------------------------ |
+| `tag`      | `undefined` \| `string` \| `Uint8Array`         | The tag to look for, or all tagged transactions if undefined. |
+| `callback` | (`topic`: `string`, `data`: `IBlock`) => `void` | The callback which is called when new data arrives.           |
 
 #### Returns
 
@@ -228,7 +229,7 @@ Subscribe to all transaction blocks with tagged data.
 
 A subscription Id which can be used to unsubscribe.
 
-___
+---
 
 ### milestoneRaw
 
@@ -238,8 +239,8 @@ Subscribe to all milestone payloads in their raw form.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name       | Type                                                | Description                                         |
+| :--------- | :-------------------------------------------------- | :-------------------------------------------------- |
 | `callback` | (`topic`: `string`, `data`: `Uint8Array`) => `void` | The callback which is called when new data arrives. |
 
 #### Returns
@@ -248,7 +249,7 @@ Subscribe to all milestone payloads in their raw form.
 
 A subscription Id which can be used to unsubscribe.
 
-___
+---
 
 ### milestone
 
@@ -258,8 +259,8 @@ Subscribe to all milestone payloads.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name       | Type                                                       | Description                                         |
+| :--------- | :--------------------------------------------------------- | :-------------------------------------------------- |
 | `callback` | (`topic`: `string`, `data`: `IMilestonePayload`) => `void` | The callback which is called when new data arrives. |
 
 #### Returns
@@ -268,7 +269,7 @@ Subscribe to all milestone payloads.
 
 A subscription Id which can be used to unsubscribe.
 
-___
+---
 
 ### blocksTaggedRaw
 
@@ -278,10 +279,10 @@ Subscribe to get all blocks for the specified tag in binary form.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `tag` | `undefined` \| `string` \| `Uint8Array` | The tag to monitor as bytes or in hex, undefined for all blocks. |
-| `callback` | (`topic`: `string`, `data`: `Uint8Array`) => `void` | The callback which is called when new data arrives. |
+| Name       | Type                                                | Description                                                      |
+| :--------- | :-------------------------------------------------- | :--------------------------------------------------------------- |
+| `tag`      | `undefined` \| `string` \| `Uint8Array`             | The tag to monitor as bytes or in hex, undefined for all blocks. |
+| `callback` | (`topic`: `string`, `data`: `Uint8Array`) => `void` | The callback which is called when new data arrives.              |
 
 #### Returns
 
@@ -289,7 +290,7 @@ Subscribe to get all blocks for the specified tag in binary form.
 
 A subscription Id which can be used to unsubscribe.
 
-___
+---
 
 ### blocksTagged
 
@@ -299,10 +300,10 @@ Subscribe to get all blocks for the specified tag in object form.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `tag` | `undefined` \| `string` \| `Uint8Array` | The tag to monitor as bytes or in hex, undefined for all blocks. |
-| `callback` | (`topic`: `string`, `data`: `IBlock`) => `void` | The callback which is called when new data arrives. |
+| Name       | Type                                            | Description                                                      |
+| :--------- | :---------------------------------------------- | :--------------------------------------------------------------- |
+| `tag`      | `undefined` \| `string` \| `Uint8Array`         | The tag to monitor as bytes or in hex, undefined for all blocks. |
+| `callback` | (`topic`: `string`, `data`: `IBlock`) => `void` | The callback which is called when new data arrives.              |
 
 #### Returns
 
@@ -310,7 +311,7 @@ Subscribe to get all blocks for the specified tag in object form.
 
 A subscription Id which can be used to unsubscribe.
 
-___
+---
 
 ### blocksMetadata
 
@@ -320,9 +321,9 @@ Subscribe to metadata updates for a specific block.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `blockId` | `string` | The block to monitor. |
+| Name       | Type                                                    | Description                                         |
+| :--------- | :------------------------------------------------------ | :-------------------------------------------------- |
+| `blockId`  | `string`                                                | The block to monitor.                               |
 | `callback` | (`topic`: `string`, `data`: `IBlockMetadata`) => `void` | The callback which is called when new data arrives. |
 
 #### Returns
@@ -331,7 +332,7 @@ Subscribe to metadata updates for a specific block.
 
 A subscription Id which can be used to unsubscribe.
 
-___
+---
 
 ### transactionIncludedBlockRaw
 
@@ -341,10 +342,10 @@ Subscribe to block updates for a specific transactionId.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `transactionId` | `string` | The block to monitor. |
-| `callback` | (`topic`: `string`, `data`: `Uint8Array`) => `void` | The callback which is called when new data arrives. |
+| Name            | Type                                                | Description                                         |
+| :-------------- | :-------------------------------------------------- | :-------------------------------------------------- |
+| `transactionId` | `string`                                            | The block to monitor.                               |
+| `callback`      | (`topic`: `string`, `data`: `Uint8Array`) => `void` | The callback which is called when new data arrives. |
 
 #### Returns
 
@@ -352,7 +353,7 @@ Subscribe to block updates for a specific transactionId.
 
 A subscription Id which can be used to unsubscribe.
 
-___
+---
 
 ### transactionIncludedBlock
 
@@ -362,10 +363,10 @@ Subscribe to block updates for a specific transactionId.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `transactionId` | `string` | The block to monitor. |
-| `callback` | (`topic`: `string`, `data`: `IBlock`) => `void` | The callback which is called when new data arrives. |
+| Name            | Type                                            | Description                                         |
+| :-------------- | :---------------------------------------------- | :-------------------------------------------------- |
+| `transactionId` | `string`                                        | The block to monitor.                               |
+| `callback`      | (`topic`: `string`, `data`: `IBlock`) => `void` | The callback which is called when new data arrives. |
 
 #### Returns
 
@@ -373,7 +374,7 @@ Subscribe to block updates for a specific transactionId.
 
 A subscription Id which can be used to unsubscribe.
 
-___
+---
 
 ### output
 
@@ -383,9 +384,9 @@ Subscribe to updates for a specific output.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `outputId` | `string` | The output to monitor. |
+| Name       | Type                                                     | Description                                         |
+| :--------- | :------------------------------------------------------- | :-------------------------------------------------- |
+| `outputId` | `string`                                                 | The output to monitor.                              |
 | `callback` | (`topic`: `string`, `data`: `IOutputResponse`) => `void` | The callback which is called when new data arrives. |
 
 #### Returns
@@ -394,7 +395,7 @@ Subscribe to updates for a specific output.
 
 A subscription Id which can be used to unsubscribe.
 
-___
+---
 
 ### nft
 
@@ -404,9 +405,9 @@ Subscribe to updates for an nft output.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `nftId` | `string` | The Nft output to monitor. |
+| Name       | Type                                                     | Description                                         |
+| :--------- | :------------------------------------------------------- | :-------------------------------------------------- |
+| `nftId`    | `string`                                                 | The Nft output to monitor.                          |
 | `callback` | (`topic`: `string`, `data`: `IOutputResponse`) => `void` | The callback which is called when new data arrives. |
 
 #### Returns
@@ -415,7 +416,7 @@ Subscribe to updates for an nft output.
 
 A subscription Id which can be used to unsubscribe.
 
-___
+---
 
 ### alias
 
@@ -425,9 +426,9 @@ Subscribe to updates for an alias output.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `aliasId` | `string` | The alias output to monitor. |
+| Name       | Type                                                     | Description                                         |
+| :--------- | :------------------------------------------------------- | :-------------------------------------------------- |
+| `aliasId`  | `string`                                                 | The alias output to monitor.                        |
 | `callback` | (`topic`: `string`, `data`: `IOutputResponse`) => `void` | The callback which is called when new data arrives. |
 
 #### Returns
@@ -436,7 +437,7 @@ Subscribe to updates for an alias output.
 
 A subscription Id which can be used to unsubscribe.
 
-___
+---
 
 ### foundry
 
@@ -446,10 +447,10 @@ Subscribe to updates for a foundry output.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `foundryId` | `string` | The foundry output to monitor. |
-| `callback` | (`topic`: `string`, `data`: `IOutputResponse`) => `void` | The callback which is called when new data arrives. |
+| Name        | Type                                                     | Description                                         |
+| :---------- | :------------------------------------------------------- | :-------------------------------------------------- |
+| `foundryId` | `string`                                                 | The foundry output to monitor.                      |
+| `callback`  | (`topic`: `string`, `data`: `IOutputResponse`) => `void` | The callback which is called when new data arrives. |
 
 #### Returns
 
@@ -457,7 +458,7 @@ Subscribe to updates for a foundry output.
 
 A subscription Id which can be used to unsubscribe.
 
-___
+---
 
 ### outputByConditionAndAddress
 
@@ -467,11 +468,11 @@ Subscribe to the output with specific unlock condition and address.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `condition` | `string` | The condition to monitor. |
-| `addressBech32` | `string` | The address to monitor. |
-| `callback` | (`topic`: `string`, `data`: `IOutputResponse`) => `void` | The callback which is called when new data arrives. |
+| Name            | Type                                                     | Description                                         |
+| :-------------- | :------------------------------------------------------- | :-------------------------------------------------- |
+| `condition`     | `string`                                                 | The condition to monitor.                           |
+| `addressBech32` | `string`                                                 | The address to monitor.                             |
+| `callback`      | (`topic`: `string`, `data`: `IOutputResponse`) => `void` | The callback which is called when new data arrives. |
 
 #### Returns
 
@@ -479,7 +480,7 @@ Subscribe to the output with specific unlock condition and address.
 
 A subscription Id which can be used to unsubscribe.
 
-___
+---
 
 ### outputSpentByConditionAndAddress
 
@@ -489,11 +490,11 @@ Subscribe to the spent outputs with specific unlock condition and address.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `condition` | `string` | The condition to monitor. |
-| `addressBech32` | `string` | The address to monitor. |
-| `callback` | (`topic`: `string`, `data`: `IOutputResponse`) => `void` | The callback which is called when new data arrives. |
+| Name            | Type                                                     | Description                                         |
+| :-------------- | :------------------------------------------------------- | :-------------------------------------------------- |
+| `condition`     | `string`                                                 | The condition to monitor.                           |
+| `addressBech32` | `string`                                                 | The address to monitor.                             |
+| `callback`      | (`topic`: `string`, `data`: `IOutputResponse`) => `void` | The callback which is called when new data arrives. |
 
 #### Returns
 
@@ -501,7 +502,7 @@ Subscribe to the spent outputs with specific unlock condition and address.
 
 A subscription Id which can be used to unsubscribe.
 
-___
+---
 
 ### receipts
 
@@ -511,8 +512,8 @@ Subscribe to the receive all receipts.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name       | Type                                                       | Description                                         |
+| :--------- | :--------------------------------------------------------- | :-------------------------------------------------- |
 | `callback` | (`topic`: `string`, `data`: `IReceiptsResponse`) => `void` | The callback which is called when new data arrives. |
 
 #### Returns
@@ -521,7 +522,7 @@ Subscribe to the receive all receipts.
 
 A subscription Id which can be used to unsubscribe.
 
-___
+---
 
 ### subscribeRaw
 
@@ -531,10 +532,10 @@ Subscribe to another type of block as raw data.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `customTopic` | `string` | The topic to subscribe to. |
-| `callback` | (`topic`: `string`, `data`: `Uint8Array`) => `void` | The callback which is called when new data arrives. |
+| Name          | Type                                                | Description                                         |
+| :------------ | :-------------------------------------------------- | :-------------------------------------------------- |
+| `customTopic` | `string`                                            | The topic to subscribe to.                          |
+| `callback`    | (`topic`: `string`, `data`: `Uint8Array`) => `void` | The callback which is called when new data arrives. |
 
 #### Returns
 
@@ -542,7 +543,7 @@ Subscribe to another type of block as raw data.
 
 A subscription Id which can be used to unsubscribe.
 
-___
+---
 
 ### subscribeJson
 
@@ -553,15 +554,15 @@ Subscribe to another type of block as json.
 #### Type parameters
 
 | Name |
-| :------ |
-| `T` |
+| :--- |
+| `T`  |
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `customTopic` | `string` | The topic to subscribe to. |
-| `callback` | (`topic`: `string`, `data`: `T`) => `void` | The callback which is called when new data arrives. |
+| Name          | Type                                       | Description                                         |
+| :------------ | :----------------------------------------- | :-------------------------------------------------- |
+| `customTopic` | `string`                                   | The topic to subscribe to.                          |
+| `callback`    | (`topic`: `string`, `data`: `T`) => `void` | The callback which is called when new data arrives. |
 
 #### Returns
 
@@ -569,7 +570,7 @@ Subscribe to another type of block as json.
 
 A subscription Id which can be used to unsubscribe.
 
-___
+---
 
 ### unsubscribe
 
@@ -579,15 +580,15 @@ Remove a subscription.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name             | Type     | Description                 |
+| :--------------- | :------- | :-------------------------- |
 | `subscriptionId` | `string` | The subscription to remove. |
 
 #### Returns
 
 `void`
 
-___
+---
 
 ### statusChanged
 
@@ -597,8 +598,8 @@ Subscribe to changes in the client state.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name       | Type                                                  | Description                                 |
+| :--------- | :---------------------------------------------------- | :------------------------------------------ |
 | `callback` | (`status`: [`IMqttStatus`](IMqttStatus.md)) => `void` | Callback called when the state has changed. |
 
 #### Returns

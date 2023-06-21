@@ -1,11 +1,12 @@
 ---
 description: iota.js API reference
 keywords:
-- references
-- api references
-- typescript
+  - references
+  - api references
+  - typescript
 image: /img/client_banner.png
 ---
+
 # Interface: IBip44GeneratorState
 
 Definition of address generator state.
@@ -26,7 +27,7 @@ Definition of address generator state.
 
 The account index.
 
-___
+---
 
 ### isInternal
 
@@ -34,7 +35,7 @@ ___
 
 Is this an internal address.
 
-___
+---
 
 ### addressIndex
 

@@ -2,11 +2,12 @@
 description: Getting started with the official IOTA Client Library Wasm binding.
 image: /img/logo/iota_mark_light.png
 keywords:
-- Rust
-- install
-- npm
-- system environment variables
+  - Rust
+  - install
+  - npm
+  - system environment variables
 ---
+
 # Getting Started with Wasm
 
 ## Install the library
@@ -27,27 +28,29 @@ yarn add @iota/client-wasm
 
 Alternatively, you can build the bindings if you have Rust installed. If not, refer to [rustup.rs](https://rustup.rs) for installation instructions. Then install the necessary dependencies using:
 
-```npm install```
+`npm install`
 
 and then build the bindings for `node.js` with
 
-```npm run build:nodejs```
+`npm run build:nodejs`
 
 or for the `web` with
 
-```npm run build:web```
+`npm run build:web`
 
 ## NodeJS Setup
 
 ```js
-const iota = require('@iota/client-wasm/node')
+const iota = require('@iota/client-wasm/node');
 
 async function main() {
   // Get the nodeinfo
-  let iota_client = await iota.Client.withNode("https://api.lb-0.h.chrysalis-devnet.iota.cafe/");
-  console.log("Nodeinfo: ", await iota_client.getInfo())
+  let iota_client = await iota.Client.withNode(
+    'https://api.lb-0.h.chrysalis-devnet.iota.cafe/',
+  );
+  console.log('Nodeinfo: ', await iota_client.getInfo());
 }
-main()
+main();
 ```
 
 ## Web Setup
@@ -68,16 +71,18 @@ yarn add rollup-plugin-copy --dev
 
 ```js
 // Include the copy plugin
-import copy from 'rollup-plugin-copy'
+import copy from 'rollup-plugin-copy';
 
 // Add the copy plugin to the `plugins` array of your rollup config:
 copy({
-  targets: [{
-    src: 'node_modules/@iota/client-wasm/web/client_wasm_bg.wasm',
-    dest: 'public',
-    rename: 'client_wasm_bg.wasm'
-  }]
-})
+  targets: [
+    {
+      src: 'node_modules/@iota/client-wasm/web/client_wasm_bg.wasm',
+      dest: 'public',
+      rename: 'client_wasm_bg.wasm',
+    },
+  ],
+});
 ```
 
 ### Webpack
@@ -109,28 +114,32 @@ new CopyWebPlugin({
 ### Usage
 
 ```js
-import * as iota from "@iota/client-wasm/web";
+import * as iota from '@iota/client-wasm/web';
 
 iota.init().then(() => {
-async function main() {
-  // Get the nodeinfo
-  let iota_client = await iota.Client.withNode("https://api.lb-0.h.chrysalis-devnet.iota.cafe/");
-  console.log("Nodeinfo: ", await iota_client.getInfo())
-}
-main()
+  async function main() {
+    // Get the nodeinfo
+    let iota_client = await iota.Client.withNode(
+      'https://api.lb-0.h.chrysalis-devnet.iota.cafe/',
+    );
+    console.log('Nodeinfo: ', await iota_client.getInfo());
+  }
+  main();
 });
 
 // or
 
 (async () => {
-  await iota.init()
+  await iota.init();
   // Get the nodeinfo
-  let iota_client = await iota.Client.withNode("https://api.lb-0.h.chrysalis-devnet.iota.cafe/");
-  console.log("Nodeinfo: ", await iota_client.getInfo())
-})()
+  let iota_client = await iota.Client.withNode(
+    'https://api.lb-0.h.chrysalis-devnet.iota.cafe/',
+  );
+  console.log('Nodeinfo: ', await iota_client.getInfo());
+})();
 
 // Default path is "client_wasm_bg.wasm", but you can override it like this
-await iota.init("./static/client_wasm_bg.wasm");
+await iota.init('./static/client_wasm_bg.wasm');
 ```
 
 `iota.init().then(<callback>)` or `await iota.init()` is required to load the wasm file (from the server if not available, because of that it will only be slow for the first time)

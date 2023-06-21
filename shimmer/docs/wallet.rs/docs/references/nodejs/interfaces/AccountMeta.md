@@ -18,7 +18,7 @@ The account object
 
 Output IDs of unspent outputs that are currently used as input for transactions
 
-___
+---
 
 ### pendingTransactions
 
@@ -26,7 +26,7 @@ ___
 
 Transaction IDs of pending transactions
 
-___
+---
 
 ### incomingTransactions
 

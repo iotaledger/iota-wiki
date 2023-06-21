@@ -2,17 +2,17 @@
 description: The official client layer of Stronghold provides an Actix actor model system for easy Interface as well as functional pass-through to Stronghold's internal actor system.
 image: /img/logo/Stronghold_icon.png
 keywords:
-- reference
-- rust
-- interface
-- procedures
-- requests
-- responses
+  - reference
+  - rust
+  - interface
+  - procedures
+  - requests
+  - responses
 ---
+
 # Structure: Client
 
-[![github](https://img.shields.io/badge/github-source-blue.svg)](https://github.com/iotaledger/stronghold.rs/tree/dev/client)  [![github](https://img.shields.io/badge/rust-docs-green.svg)](https://docs.rs/iota_stronghold) [![](https://img.shields.io/crates/v/iota_stronghold.svg)](https://crates.io/crates/iota_stronghold)
-
+[![github](https://img.shields.io/badge/github-source-blue.svg)](https://github.com/iotaledger/stronghold.rs/tree/dev/client) [![github](https://img.shields.io/badge/rust-docs-green.svg)](https://docs.rs/iota_stronghold) [![](https://img.shields.io/crates/v/iota_stronghold.svg)](https://crates.io/crates/iota_stronghold)
 
 The client gives access to all Stronghold features and holds all state like secrets or insecure custom data. The interface is type based and separates between local Stronghold operations and remote Stronghold operations.
 
@@ -32,10 +32,10 @@ The client gives access to all Stronghold features and holds all state like secr
 
 - place a reference to the examples here
 
-
 ## Procedures
 
 ### **Requests**:
+
 - `SLIP10Generate`: Generate a raw SLIP10 seed of the specified size (in bytes, defaults to 64 bytes/512 bits) and store it in the `Location`.
 - `SLIP10Derive`: Derive a Slip10 child key from a seed or parent key. Store the output in a specified `Location` and return the corresponding `ChainCode`.
 - `BIP39Recover`: Use a BIP39 mnemonic sentence (optionally protected by a passphrase) to create or recover a BIP39 seed and store it in the output `Location`.
@@ -45,6 +45,7 @@ The client gives access to all Stronghold features and holds all state like secr
 - `Ed25519Sign`: Use the specified Ed25519 compatible key to sign the given message. Compatible keys are any record that contain the desired key material in the first 32 bytes, in particular SLIP10 keys are compatible.
 
 ### **Responses**:
+
 - `SLIP10Generate`: Returns a `StatusMessage` indicating the result of the request.
 - `SLIP10Derive`: Returns a `ResultMessage` with the `ChainCode` inside of it.
 - `BIP39Recover`: Returns a `StatusMessage` indicating the result of the request. .

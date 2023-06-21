@@ -31,7 +31,7 @@ The type of address.
 
 Address.getType
 
-___
+---
 
 ### getPubKeyHash
 

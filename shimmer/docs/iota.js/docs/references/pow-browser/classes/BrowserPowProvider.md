@@ -27,8 +27,8 @@ Create a new instance of BrowserPowProvider.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name       | Type     | Description                               |
+| :--------- | :------- | :---------------------------------------- |
 | `numCpus?` | `number` | The number of cpus, defaults to max CPUs. |
 
 ## Methods
@@ -41,11 +41,11 @@ Perform pow on the block and return the nonce of at least targetScore.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `block` | `Uint8Array` | The block to process. |
-| `targetScore` | `number` | The target score. |
-| `powInterval?` | `number` | The time in seconds that pow should work before aborting. |
+| Name           | Type         | Description                                               |
+| :------------- | :----------- | :-------------------------------------------------------- |
+| `block`        | `Uint8Array` | The block to process.                                     |
+| `targetScore`  | `number`     | The target score.                                         |
+| `powInterval?` | `number`     | The time in seconds that pow should work before aborting. |
 
 #### Returns
 
@@ -57,7 +57,7 @@ The nonce.
 
 IPowProvider.pow
 
-___
+---
 
 ### createWorker
 

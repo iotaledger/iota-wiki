@@ -17,7 +17,7 @@ Input options for GenerateAddresses
 
 Internal addresses
 
-___
+---
 
 ### bech32Hrp
 

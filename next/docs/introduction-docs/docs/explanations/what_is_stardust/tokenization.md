@@ -1,14 +1,14 @@
 ---
 keywords:
-- Stardust
-- Shimmer
-- Upgrades
-- Token
-- Tokenization
-- Native token
-- NFT
-- Protocol Improvements
-- explanation
+  - Stardust
+  - Shimmer
+  - Upgrades
+  - Token
+  - Tokenization
+  - Native token
+  - NFT
+  - Protocol Improvements
+  - explanation
 description: Stardust introduces layer 1 tokenization such as native tokens and NFTs.
 image: /img/logo/preview.png
 ---

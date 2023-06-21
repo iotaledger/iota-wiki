@@ -14,16 +14,16 @@ The Ledger Device Type
 
 ### LedgerNanoS
 
-• **LedgerNanoS** = ``"ledgerNanoS"``
+• **LedgerNanoS** = `"ledgerNanoS"`
 
-___
+---
 
 ### LedgerNanoX
 
-• **LedgerNanoX** = ``"ledgerNanoX"``
+• **LedgerNanoX** = `"ledgerNanoX"`
 
-___
+---
 
 ### LedgerNanoSPlus
 
-• **LedgerNanoSPlus** = ``"ledgerNanoSPlus"``
+• **LedgerNanoSPlus** = `"ledgerNanoSPlus"`

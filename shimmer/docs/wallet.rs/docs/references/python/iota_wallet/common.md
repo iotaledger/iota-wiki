@@ -3,7 +3,7 @@ sidebar_label: common
 title: iota_wallet.common
 ---
 
-### send\_message\_routine
+### send_message_routine
 
 ```python
 def send_message_routine(func)
@@ -18,4 +18,3 @@ class IotaWalletError(Exception)
 ```
 
 iota-wallet error
-

@@ -2,16 +2,17 @@
 description: Easily integrate with your exchange, custody solution, or product using the wallet.rs library.
 sidebar_label: Integrate wallet.rs With Your Exchange
 keywords:
-- integrate
-- exchange
-- account model
-- addresses
-- wallet.rs
-- setup
-- NodeJS
-- explanation
+  - integrate
+  - exchange
+  - account model
+  - addresses
+  - wallet.rs
+  - setup
+  - NodeJS
+  - explanation
 ---
-import WarningUnlockConditions from '../_admonitions/_warning_unlock_conditions.md'
+
+import WarningUnlockConditions from '../_admonitions/_warning_unlock_conditions.md';
 
 # Stardust Exchange Integration Guide
 
@@ -20,7 +21,6 @@ import WarningUnlockConditions from '../_admonitions/_warning_unlock_conditions.
 You can easily integrate wallet.rs with your exchange, custody solution, or product.
 
 :::
-
 
 :::warning
 
@@ -34,6 +34,7 @@ Transaction outputs may have multiple unlocking conditions which may require ret
 This guide explains how to integrate the Wallet library in your exchange.
 
 Features of the Wallet Library:
+
 - Secure seed management.
 - Account management with multiple accounts and multiple addresses.
 - Confirmation monitoring.
@@ -50,7 +51,7 @@ If you are not familiar with the wallet.rs library, you can find more informatio
 
 :::
 
-You can use the following examples as a guide to implementing *the multi-account approach* using the `NodeJS` binding:
+You can use the following examples as a guide to implementing _the multi-account approach_ using the `NodeJS` binding:
 
 1. [Set up the wallet.rs library](#1-set-up-the-wallet-library).
 2. [Create an account for each user](#2-create-an-account-for-a-user).
@@ -89,7 +90,7 @@ You can then create a `.env` by running the following command:
 touch .env
 ```
 
-You can now add your `SH_PASSWORD` and `MNEMONIC` to the `.env` file. 
+You can now add your `SH_PASSWORD` and `MNEMONIC` to the `.env` file.
 
 ```bash
 SH_PASSWORD="here is your super secure password"
@@ -128,10 +129,10 @@ You get an instance of any created account using `AccountManager.getAccount(acco
 
 Common methods of `account` instance include:
 
-* `account.addresses()` - returns list of addresses related to the account.
-* `account.generateAddress()` - generate a new address for the address index incremented by 1.
-* `account.balance()` - returns the balance for the given account.
-* `account.sync()` - sync the account information with the tangle.
+- `account.addresses()` - returns list of addresses related to the account.
+- `account.generateAddress()` - generate a new address for the address index incremented by 1.
+- `account.balance()` - returns the balance for the given account.
+- `account.sync()` - sync the account information with the tangle.
 
 ### 3. Generate a User Address to Deposit Funds
 
@@ -141,25 +142,25 @@ Common methods of `account` instance include:
 https://github.com/iotaledger/wallet.rs/tree/develop/wallet/bindings/nodejs/examples/exchange/2-generate-address.js
 ```
 
-Every account can have multiple addresses. Addresses are represented by an `index` which is incremented by one every time a new address is created. You can access the addresses using the `account.address()` method: 
+Every account can have multiple addresses. Addresses are represented by an `index` which is incremented by one every time a new address is created. You can access the addresses using the `account.address()` method:
 
 ```javascript
-    const addresses = account.addresses()
+const addresses = account.addresses();
 
-    console.log('Need a refill? Send it to this address:', addresses[0])
+console.log('Need a refill? Send it to this address:', addresses[0]);
 ```
 
 You can use the [Faucet](https://faucet.testnet.shimmer.network/) to add test tokens and test your account.
 
-There are two types of addresses, `internal` and `public` (external). This approach is known as a *BIP32 Hierarchical Deterministic wallet (HD Wallet)*. 
+There are two types of addresses, `internal` and `public` (external). This approach is known as a _BIP32 Hierarchical Deterministic wallet (HD Wallet)_.
 
-* Each set of addresses is independent of each other and has an independent `index` id.
-* Addresses that are created by `account.generateAddress()` are indicated as `internal=false` (public).
-* Internal addresses (`internal=true`) are called `change` addresses and are used to send the excess funds to them.
+- Each set of addresses is independent of each other and has an independent `index` id.
+- Addresses that are created by `account.generateAddress()` are indicated as `internal=false` (public).
+- Internal addresses (`internal=true`) are called `change` addresses and are used to send the excess funds to them.
 
 ### 4. Check the Account Balance
 
-<WarningUnlockConditions/>
+<WarningUnlockConditions />
 
 You can get the available account balance across all addresses of the given account using the following example:
 
@@ -169,7 +170,7 @@ https://github.com/iotaledger/wallet.rs/tree/develop/wallet/bindings/nodejs/exam
 
 ### 5. Listen to Events
 
-<WarningUnlockConditions/>
+<WarningUnlockConditions />
 
 The `Wallet.rs` library supports several events for listening. A provided callback is triggered as soon as an event occurs (which usually happens during syncing).
 
@@ -212,9 +213,9 @@ The full function signature is `account.sendAmount(outputs[, options])`.
 
 Default options are fine and successful; however, you can provide additional options, such as `remainderValueStrategy`, which can have the following values:
 
-* `changeAddress`: Send the remainder value to an internal address.
-* `reuseAddress`: Send the remainder value back to its original address.
-* `customAddress`: Send the remainder value back to a provided account address.
+- `changeAddress`: Send the remainder value to an internal address.
+- `reuseAddress`: Send the remainder value back to its original address.
+- `customAddress`: Send the remainder value back to a provided account address.
 
 ```js
 TransactionOptions {
@@ -229,5 +230,5 @@ The `account.sendAmount()` function returns a `transaction` with it's id. The `b
 :::note Dust Protection
 
 When sending tokens, you should consider a [dust protection](https://github.com/muXxer/tips/blob/master/tips/TIP-0019/tip-0019.md) mechanism.
-  
+
 :::

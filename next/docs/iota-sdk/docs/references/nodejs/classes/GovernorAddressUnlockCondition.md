@@ -31,7 +31,7 @@ The type of unlock condition.
 
 UnlockCondition.getType
 
-___
+---
 
 ### getAddress
 

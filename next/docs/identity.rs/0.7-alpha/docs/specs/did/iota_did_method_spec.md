@@ -4,12 +4,12 @@ sidebar_label: DID Method
 description: How IOTA Identity implements the Decentralized Identifiers Standard on the IOTA Tangle.
 image: /img/Identity_icon.png
 keywords:
-- DID
-- specs
-- specifications
-- Decentralized Identifiers
-- Tangle
-- format
+  - DID
+  - specs
+  - specifications
+  - Decentralized Identifiers
+  - Tangle
+  - format
 ---
 
 # IOTA DID Method Specification
@@ -32,21 +32,20 @@ The unspent transaction output ([UTXO](https://wiki.iota.org/IOTA-2.0-Research-S
 
 All outputs must hold a minimum amount of coins to be stored on the ledger. For output types that can hold arbitrary data, for instance the Alias Output, the amount of coins held by the output must cover the byte cost of the data stored. This helps control the ledger size from growing uncontrollably while guaranteeing that the data is not pruned from the nodes, which is important for resolving DID Documents. This deposit is fully refundable and can be reclaimed when the output is destroyed.
 
-Data saved in an output and covered by the storage deposit will be stored in *all* nodes on the network and can be retrieved from any node. This provides strong guarantees for any data stored in the ledger.
-
+Data saved in an output and covered by the storage deposit will be stored in _all_ nodes on the network and can be retrieved from any node. This provides strong guarantees for any data stored in the ledger.
 
 ### Alias Output
 
 The [Alias Output](https://github.com/lzpap/tips/blob/master/tips/TIP-0018/tip-0018.md#alias-output) is a specific implementation of the [UTXO state machine](https://github.com/lzpap/tips/blob/master/tips/TIP-0018/tip-0018.md#chain-constraint-in-utxo). Some of its relevant properties are:
 
-* **Amount**: the amount of IOTA coins held by the output.
-* **Alias ID**: 32 byte array, a unique identifier of the alias, which is the BLAKE2b-256 hash
+- **Amount**: the amount of IOTA coins held by the output.
+- **Alias ID**: 32 byte array, a unique identifier of the alias, which is the BLAKE2b-256 hash
   of the Output ID that created it.
-* **State Index**: A counter that must increase by 1 every time the alias is state transitioned.
-* **State Metadata**: Dynamically sized array of arbitrary bytes with a length up to `Max Metadata Length`, as defined in [TIP-22](https://github.com/iotaledger/tips/blob/main/tips/TIP-0022/tip-0022.md). Can only be changed by the state controller.
-* **Unlock Conditions**:
-  * State Controller Address Unlock Condition
-  * Governor Address Unlock Condition
+- **State Index**: A counter that must increase by 1 every time the alias is state transitioned.
+- **State Metadata**: Dynamically sized array of arbitrary bytes with a length up to `Max Metadata Length`, as defined in [TIP-22](https://github.com/iotaledger/tips/blob/main/tips/TIP-0022/tip-0022.md). Can only be changed by the state controller.
+- **Unlock Conditions**:
+  - State Controller Address Unlock Condition
+  - Governor Address Unlock Condition
 
 Consuming an Alias Output in a transaction means that the alias is transitioned into the next state. The current state is defined as the consumed Alias Output, while the next state is defined as the **Alias Output with the same explicit `Alias ID` on the output side**. There are two types of transitions: `state transition` and `governance transition`.
 
@@ -57,6 +56,7 @@ The state controller can unlock a state transition. It is identified by an incre
 The governor, on the other hand, can unlock a governance transition indicated by an unchanged `State Index`. A governance transition can change the addresses of the state controller and governor. It also allows destroying the Alias Output.
 
 ### Ledger and DID
+
 Storing DID Documents in the ledger state means they inherently benefit from the guarantees the ledger provides.
 
 1. Conflicts among nodes are sorted out and dealt with by the ledger.
@@ -75,7 +75,7 @@ The DIDs that follow this method have the following ABNF syntax. It uses the syn
 
 ```
 iota-did = "did:iota:" iota-specific-idstring
-iota-specific-idstring = [ iota-network ":" ] iota-tag 
+iota-specific-idstring = [ iota-network ":" ] iota-tag
 iota-network = 0*6lowercase-alpha
 iota-tag = "0x" 64lowercase-hex
 lowercase-alpha = %x61-7A ; corresponds to the character range from "a" to "z".
@@ -93,8 +93,8 @@ The following values are reserved and cannot reference other networks:
 
 1. `iota` references the main network which refers to the ledger known to host the IOTA cryptocurrency.
 2. `atoi` references the development network of IOTA.
-3. `smr`  references the shimmer network.
-4. `rms`  references the development network of Shimmer.
+3. `smr` references the shimmer network.
+4. `rms` references the development network of Shimmer.
 
 When no IOTA network is specified, it is assumed that the DID is located on the `iota` network. This means that the following DIDs will resolve to the same DID Document:
 
@@ -104,6 +104,7 @@ did:iota:0xe4edef97da1257e83cbeb49159cfdd2da6ac971ac447f233f8439cf29376ebfe
 ```
 
 ### IOTA-Tag
+
 An IOTA-tag is a hex-encoded `Alias ID`. The `Alias ID` itself is a unique identifier of the alias, which is the BLAKE2b-256 hash of the Output ID that created it.
 This tag identifies the Alias Output where the DID Document is stored, and it will not be known before the generation of the DID since it will be assigned when the Alias Output is created.
 
@@ -112,7 +113,7 @@ This tag identifies the Alias Output where the DID Document is stored, and it wi
 In the `State Metadata` of the Alias Output must be a byte packed payload with header fields as follows:
 
 | Name          | Type              | Description                                                                                                                                              |
-|---------------|-------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------|
+| ------------- | ----------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Document Type | ByteArray[3]      | Set to value **DID** to denote a DID Document.                                                                                                           |
 | Version       | uint8             | Set value **1** to denote the version number of this method                                                                                              |
 | Encoding      | uint8             | Set to value to **0** to denote JSON encoding without compression.                                                                                       |
@@ -124,9 +125,9 @@ The types are defined in [TIP-21](#data-types--subschema-notation).
 
 The payload must contain the following fields:
 
-* `metadata`: contains metadata about the DID Document. For example, `created` to indicate the time of
+- `metadata`: contains metadata about the DID Document. For example, `created` to indicate the time of
   creation, and `updated` to indicate the time of the last update to the document. It can also include other properties.
-* `document`: which contains the DID Document. In the example below, the document only contains one verification method. The `id` and `controller` is specified by `did:0:0` which references the DID of the document itself, since the DID is unknown at the time of publishing. It also deduplicates the DID of the document to reduce the size of the state metadata, in turn reducing the required storage deposit.
+- `document`: which contains the DID Document. In the example below, the document only contains one verification method. The `id` and `controller` is specified by `did:0:0` which references the DID of the document itself, since the DID is unknown at the time of publishing. It also deduplicates the DID of the document to reduce the size of the state metadata, in turn reducing the required storage deposit.
 
 Example State Metadata Document:
 
@@ -150,7 +151,6 @@ Example State Metadata Document:
 }
 ```
 
-
 ## Controllers
 
 A state controller can directly update the DID Document and the amount of coins held by the Alias Output, but it cannot destroy the output. A governor, on the other hand, can indirectly update the DID Document by updating the state controller. The governor can also destroy the output by performing a governance transition without producing an Alias Output with the same `Alias ID`.
@@ -164,23 +164,27 @@ Create, Read, Update and Delete (CRUD) operations that change the DID Documents 
 **These operations require fund transfer to cover byte cost. Transactions must be carefully done in order to avoid fund loss.** For example, the amount of funds in the inputs should equal these in the outputs. Additionally, private keys of controllers must be stored securely.
 
 ### Create
+
 In order to create a simple self controlled DID two things are required:
+
 1. An Ed25519 Address for which the private key is available, or control over an Alias or NFT Output.
 2. A Basic, Alias or NFT Output with enough coins to cover the byte cost.
 
 Creation steps:
+
 1. Create the content of the DID Document like verification methods, services, etc.
 2. Create the payload and the headers as described in the [Anatomy of the State Metadata](#anatomy-of-the-state-metadata).
 3. Create a new Alias Output with the payload and the headers stored in its `State Metadata`.
 4. Set the state controller and the governor unlock conditions to the addresses that should control state and governance transitions, respectively.
 5. Set enough coins in the output to cover the byte cost.
-6. Publish a new transaction with an existing output that contains at least the storage deposit from step 6 as input, and the newly created Alias Output as output. 
+6. Publish a new transaction with an existing output that contains at least the storage deposit from step 6 as input, and the newly created Alias Output as output.
 
 Once the transaction is confirmed, the DID is published and can be formatted by using the `Alias ID` as the tag in [DID Format](#did-format).
 
 ### Read
 
 The following steps can be used to read the latest DID Document associated with a DID.
+
 1. Obtain the `Alias ID` from the DID by extracting the `iota-tag` from the DID, see [DID Format](#did-format).
 2. Obtain the network of the DID by extracting the `iota-network` from the DID, see [DID Format](#did-format).
 3. Query the Alias Output corresponding to the `Alias ID` using a node running the [inx indexer](https://github.com/iotaledger/inx-indexer). Nodes usually include this indexer by default.
@@ -223,8 +227,8 @@ The `did:iota` method is implemented in the [IOTA Identity framework](https://gi
 
 The IOTA Identity framework currently supports two Verification Method Types:
 
-* `Ed25519VerificationKey2018`: can be used to sign DID Document updates, Verifiable Credentials, Verifiable Presentations, and arbitrary data with a `JcsEd25519Signature2020`.
-* `X25519KeyAgreementKey2019`: can be used to perform [Diffie-Hellman key exchange](https://en.wikipedia.org/wiki/Diffie%E2%80%93Hellman_key_exchange) operations to derive a shared secret between two parties.
+- `Ed25519VerificationKey2018`: can be used to sign DID Document updates, Verifiable Credentials, Verifiable Presentations, and arbitrary data with a `JcsEd25519Signature2020`.
+- `X25519KeyAgreementKey2019`: can be used to perform [Diffie-Hellman key exchange](https://en.wikipedia.org/wiki/Diffie%E2%80%93Hellman_key_exchange) operations to derive a shared secret between two parties.
 
 ### Revocation
 
@@ -236,11 +240,11 @@ The IOTA Identity framework also standardized certain `services` that are embedd
 
 Currently standardized `services`:
 
-* [Revocation Bitmap Service](../revocation_bitmap_2022.md#revocation-bitmap-service)
+- [Revocation Bitmap Service](../revocation_bitmap_2022.md#revocation-bitmap-service)
 
 ## Security Considerations
-The `did:iota` method is implemented on the [IOTA](https://iota.org), a public permissionless and feeless Distributed Ledger Technology (DLT), making it resistant against almost all censorship attack vectors. Up until the `Coordicide` update for the IOTA network, a reliability on the coordinator exists for resolving ordering conflicts. This has a minor censorship possibility, that, in the wrost case, can prevent transactions from getting confirmed.
 
+The `did:iota` method is implemented on the [IOTA](https://iota.org), a public permissionless and feeless Distributed Ledger Technology (DLT), making it resistant against almost all censorship attack vectors. Up until the `Coordicide` update for the IOTA network, a reliability on the coordinator exists for resolving ordering conflicts. This has a minor censorship possibility, that, in the wrost case, can prevent transactions from getting confirmed.
 
 ### Private Key Management
 
@@ -256,4 +260,4 @@ That directly conflicts with certain privacy laws such as GDPR, which have a 'ri
 
 ### Correlation Risks
 
-As with any DID method, identities can be linked if they are used too often and their usage somehow becomes public. See [DID Correlation Risks](https://www.w3.org/TR/did-core/#did-correlation-risks). Additionally, a DID can be correlated with funds if the Alias Output used to store the DID Document or any of its controllers is used for holding, transferring or controlling coins or NFTs. 
+As with any DID method, identities can be linked if they are used too often and their usage somehow becomes public. See [DID Correlation Risks](https://www.w3.org/TR/did-core/#did-correlation-risks). Additionally, a DID can be correlated with funds if the Alias Output used to store the DID Document or any of its controllers is used for holding, transferring or controlling coins or NFTs.

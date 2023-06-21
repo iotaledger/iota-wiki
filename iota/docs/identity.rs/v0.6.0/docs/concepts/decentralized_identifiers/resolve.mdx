@@ -4,14 +4,15 @@ sidebar_label: Resolve
 description: Explain how resolving works including arguments
 image: /img/Identity_icon.png
 keywords:
-- Resolve
+  - Resolve
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 import Announcement from '../../../src/partials/_announcement.mdx';
 
-<Announcement/>
+<Announcement />
 
 DID resolution is the process of fetching a [DID Document](https://www.w3.org/TR/did-core/#dfn-did-documents) corresponding to a given [DID](https://www.w3.org/TR/did-core/#dfn-decentralized-identifiers).
 The [IOTA Identity Framework](https://github.com/iotaledger/identity.rs) supports resolving DID Documents that are stored on an IOTA Tangle (public or private). The main tool supplied
@@ -19,9 +20,10 @@ by the IOTA Identity Framework to handle DID Document resolution in a type safe 
 enforces the signature of the resolution function in a manner that is more centered around Web/API resolution rather than a strongly typed framework. This is the reason why the `Resolver` provided by the IOTA Identity Framework deviates somewhat from
 the W3C specification.
 
-
 ## Resolving a DID from the main network
+
 The following example demonstrates how to resolve the DID: "did:iota:H3C2AVvLMv6gmMNam3uVAjZpfkcJCwDwnZn6z3wXmqPV" from the `main` network.
+
 <Tabs>
 <TabItem value="Rust" label="Rust">
 
@@ -41,26 +43,24 @@ let doc: ResolvedIotaDocument = resolver.resolve(&did).await?;
 <TabItem value="node" label="Node.js">
 
 ```js
-const {
-    DID,
-    Resolver,
-    ResolvedDocument,
-} = require('@iota/identity-wasm/node');
+const { DID, Resolver, ResolvedDocument } = require('@iota/identity-wasm/node');
 
- const resolver = new Resolver();
- const did = DID.parse("did:iota:H3C2AVvLMv6gmMNam3uVAjZpfkcJCwDwnZn6z3wXmqPV");
- const doc = await resolver.resolve(did);
-
+const resolver = new Resolver();
+const did = DID.parse('did:iota:H3C2AVvLMv6gmMNam3uVAjZpfkcJCwDwnZn6z3wXmqPV');
+const doc = await resolver.resolve(did);
 ```
+
 </TabItem>
 </Tabs>
 What happens in this example can be explained on a high level as follows: The Resolver queries the Tangle for the history of the DID Document and utilizes it to recreate and validate the latest state of the DID Document.
 
 ## Resolving from a private tangle
+
 Resolving a DID from a private tangle is similar to resolving a DID from the main net. The only difference is that
 the resolver needs to be configured to have a client capable of operating on said private tangle. Building a `Client` configured for a specified Tangle is explained in [this example in Rust](https://github.com/iotaledger/identity.rs/blob/support/v0.6/examples/low-level-api/private_tangle.rs) and [this example in Javascript](https://github.com/iotaledger/identity.rs/blob/support/v0.6/bindings/wasm/examples/src/private_tangle.js).
 
 The following example demonstrates how one can setup a `Resolver` with a given `client` and then attempt resolving a specified `did` which may be on any Tangle (public or private).
+
 <Tabs>
 <TabItem value="Rust" label="Rust">
 
@@ -84,20 +84,19 @@ async fn build_and_resolve(client: Client, did: IotaDID) -> Result<ResolvedIotaD
 
 ```js
 const {
-    DID,
-    Resolver,
-    ResolvedDocument,
-    Client,
+  DID,
+  Resolver,
+  ResolvedDocument,
+  Client,
 } = require('@iota/identity-wasm/node');
 
-
 async function buildAndResolve(client, did) {
-        const resolver = await Resolver.builder().client(client).build();
-        const resolvedDocument = await resolver.resolve(did);
-        return resolvedDocument;
+  const resolver = await Resolver.builder().client(client).build();
+  const resolvedDocument = await resolver.resolve(did);
+  return resolvedDocument;
 }
-
 ```
+
 </TabItem>
 </Tabs>
 
@@ -108,15 +107,17 @@ multiple networks as long as they have distinct valid names (max six characters)
 Note that in the context of an identity managed by an `Account` the DID document can also be resolved by simply calling the `resolve` method on the `Account` directly.
 
 ## Resolution in the context of Verifiable Presentations
+
 As explained in [Verifiable Presentations](./../verifiable_credentials/verifiable_presentations.mdx) one resolves the DID Documents of the credential issuers and presentation holder
 during verification of a verifiable presentation. Resolving the necessary DID Documents is done automatically when verifying presentations via the `Resolver`, but there are certain
 advanced use cases where more control is desired. To accommodate for such situations the `Resolver` also comes equipped with additional stand alone methods that enable:
+
 - resolving a presentation holder's DID Document
 - resolving all DID Documents of the distinct issuers of the credentials contained in the presentation
 - resolving the issuer's DID Document for a given verifiable credential
 
-
 ## Resolving the history of a DID Document.
+
 The fact that a DID Document [can be updated](./update.mdx) implies that the state of the DID Document can change over time, or in other words the result of resolving a DID
 also depends on when this operation was carried out. The `Resolver` provides a way to view the entire history of a DID Document (up to the time when the method is called).
 
@@ -140,30 +141,24 @@ async fn call_resolve_history(did: IotaDID) -> Result<DocumentHistory> {
 <TabItem value="node" label="Node.js">
 
 ```js
-const {
-    DID,
-    Resolver,
-    DocumentHistory,
-} = require('@iota/identity-wasm/node');
-
+const { DID, Resolver, DocumentHistory } = require('@iota/identity-wasm/node');
 
 async function callResolveHistory(did) {
-        const resolver = new Resolver();
-        const documentHistory = await resolver.resolveHistory(did);
-        return documentHistory;
+  const resolver = new Resolver();
+  const documentHistory = await resolver.resolveHistory(did);
+  return documentHistory;
 }
-
 ```
+
 </TabItem>
 </Tabs>
 
-
 ## Complete examples
+
 This section shows complete examples from the Iota Identity Framework code base. The first example creates a DID Document, publishes it to the Tangle and then resolves it.
 
 <Tabs>
 <TabItem value="Rust" label="Rust">
-
 
 ```rust reference
 https://github.com/iotaledger/identity.rs/blob/support/v0.6/examples/low-level-api/resolve_did.rs
@@ -179,13 +174,10 @@ https://github.com/iotaledger/identity.rs/blob/support/v0.6/bindings/wasm/exampl
 </TabItem>
 </Tabs>
 
-
-
 This second example demonstrates creating, publishing changes and then resolving the history of a DID Document.
 
 <Tabs>
 <TabItem value="Rust" label="Rust">
-
 
 ```rust reference
 https://github.com/iotaledger/identity.rs/tree/support/v0.6/examples/low-level-api/resolve_history.rs
@@ -200,6 +192,5 @@ https://github.com/iotaledger/identity.rs/tree/support/v0.6/bindings/wasm/exampl
 
 </TabItem>
 </Tabs>
-
 
 Note that this example used the `Client` to resolve the history of the DID Document, but one could also use the `Resolver` for this task.

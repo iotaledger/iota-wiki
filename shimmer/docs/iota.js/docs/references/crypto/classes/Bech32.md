@@ -1,11 +1,12 @@
 ---
 description: iota.js API reference
 keywords:
-- references
-- api references
-- typescript
+  - references
+  - api references
+  - typescript
 image: /img/client_banner.png
 ---
+
 # Class: Bech32
 
 Class to help with Bech32 encoding/decoding.
@@ -37,10 +38,10 @@ Encode the buffer.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `humanReadablePart` | `string` | The header. |
-| `data` | `Uint8Array` | The data to encode. |
+| Name                | Type         | Description         |
+| :------------------ | :----------- | :------------------ |
+| `humanReadablePart` | `string`     | The header.         |
+| `data`              | `Uint8Array` | The data to encode. |
 
 #### Returns
 
@@ -48,7 +49,7 @@ Encode the buffer.
 
 The encoded data.
 
-___
+---
 
 ### encode5BitArray
 
@@ -58,10 +59,10 @@ Encode the 5 bit data buffer.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `humanReadablePart` | `string` | The header. |
-| `data5Bit` | `Uint8Array` | The data to encode. |
+| Name                | Type         | Description         |
+| :------------------ | :----------- | :------------------ |
+| `humanReadablePart` | `string`     | The header.         |
+| `data5Bit`          | `Uint8Array` | The data to encode. |
 
 #### Returns
 
@@ -69,7 +70,7 @@ Encode the 5 bit data buffer.
 
 The encoded data.
 
-___
+---
 
 ### decode
 
@@ -79,8 +80,8 @@ Decode a bech32 string.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name   | Type     | Description         |
+| :----- | :------- | :------------------ |
 | `bech` | `string` | The text to decode. |
 
 #### Returns
@@ -89,7 +90,7 @@ Decode a bech32 string.
 
 The decoded data or undefined if it could not be decoded.
 
-___
+---
 
 ### decodeTo5BitArray
 
@@ -99,8 +100,8 @@ Decode a bech32 string to 5 bit array.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name   | Type     | Description         |
+| :----- | :------- | :------------------ |
 | `bech` | `string` | The text to decode. |
 
 #### Returns
@@ -109,7 +110,7 @@ Decode a bech32 string to 5 bit array.
 
 The decoded data or undefined if it could not be decoded.
 
-___
+---
 
 ### to5Bit
 
@@ -119,8 +120,8 @@ Convert the input bytes into 5 bit data.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name    | Type         | Description           |
+| :------ | :----------- | :-------------------- |
 | `bytes` | `Uint8Array` | The bytes to convert. |
 
 #### Returns
@@ -129,7 +130,7 @@ Convert the input bytes into 5 bit data.
 
 The data in 5 bit form.
 
-___
+---
 
 ### from5Bit
 
@@ -139,8 +140,8 @@ Convert the 5 bit data to 8 bit.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name      | Type         | Description                |
+| :-------- | :----------- | :------------------------- |
 | `fiveBit` | `Uint8Array` | The 5 bit data to convert. |
 
 #### Returns
@@ -149,7 +150,7 @@ Convert the 5 bit data to 8 bit.
 
 The 5 bit data converted to 8 bit.
 
-___
+---
 
 ### matches
 
@@ -159,10 +160,10 @@ Does the given string match the bech32 pattern.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name                | Type     | Description              |
+| :------------------ | :------- | :----------------------- |
 | `humanReadablePart` | `string` | The human readable part. |
-| `bech32Text?` | `string` | The text to test. |
+| `bech32Text?`       | `string` | The text to test.        |
 
 #### Returns
 

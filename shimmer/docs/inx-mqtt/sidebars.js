@@ -10,26 +10,26 @@
  */
 
 module.exports = {
-    mySidebar: [
+  mySidebar: [
+    {
+      type: 'doc',
+      id: 'welcome',
+    },
+    {
+      type: 'category',
+      label: 'References',
+      items: [
         {
-            type: 'doc',
-            id: 'welcome',
+          type: 'doc',
+          id: 'configuration',
+          label: 'Configuration',
         },
         {
-            type: 'category',
-            label: 'References',
-            items: [
-                {
-                    type: 'doc',
-                    id: 'configuration',
-                    label: 'Configuration',
-                },
-                {
-                    type: 'doc',
-                    id: 'api_reference',
-                    label: 'API Reference',
-                }
-            ]
-        }
-    ]
+          type: 'doc',
+          id: 'api_reference',
+          label: 'API Reference',
+        },
+      ],
+    },
+  ],
 };

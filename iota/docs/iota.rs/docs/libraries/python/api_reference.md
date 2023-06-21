@@ -8,6 +8,7 @@ keywords:
   - type
   - run
 ---
+
 # IOTA Client Python Library API Reference
 
 Note that in the following APIs, the corresponding exception will be returned if an error occurs.
@@ -169,7 +170,6 @@ Get the included message of a transaction.
 | [index] | `str` | The id of the transaction |
 
 **Returns** the new [Message](#message).
-
 
 ### High-Level APIs
 
@@ -337,7 +337,6 @@ Return the inputs from addresses for a provided amount (useful for offline signi
 | --------- | ----------- | ----------- | ----------------------- |
 | addresses | `list[str]` | `undefined` | The input address list. |
 | amount    | `str`       | `undefined` | The input amount.       |
-
 
 **Returns** The list of [UtxoInput](#utxoinput).
 
@@ -641,7 +640,6 @@ signature_locked_dust_allowance_output_dto = {
 Please refer to [AddressDto](#addressdto) for the details of this type.
 
 #### pub struct TreasuryOutputDto {
-
 
 A dict with the following key/value pairs.
 
@@ -965,3 +963,4 @@ options = {
     'include_spent': bool,
     'output_type': string
 }
+```

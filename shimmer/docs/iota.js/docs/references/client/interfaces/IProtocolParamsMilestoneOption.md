@@ -1,18 +1,19 @@
 ---
 description: iota.js API reference
 keywords:
-- references
-- api references
-- typescript
+  - references
+  - api references
+  - typescript
 image: /img/client_banner.png
 ---
+
 # Interface: IProtocolParamsMilestoneOption
 
 Protocol Parameters Milestone Option.
 
 ## Hierarchy
 
-- [`ITypeBase`](ITypeBase.md)<``1``\>
+- [`ITypeBase`](ITypeBase.md)<`1`\>
 
   ↳ **`IProtocolParamsMilestoneOption`**
 
@@ -31,7 +32,7 @@ Protocol Parameters Milestone Option.
 
 ### type
 
-• **type**: ``1``
+• **type**: `1`
 
 The type of the object.
 
@@ -39,7 +40,7 @@ The type of the object.
 
 [ITypeBase](ITypeBase.md).[type](ITypeBase.md#type)
 
-___
+---
 
 ### targetMilestoneIndex
 
@@ -47,7 +48,7 @@ ___
 
 The milestone index at which these protocol parameters become active.
 
-___
+---
 
 ### protocolVersion
 
@@ -55,7 +56,7 @@ ___
 
 The to be applied protocol version.
 
-___
+---
 
 ### params
 

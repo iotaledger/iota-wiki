@@ -14,7 +14,8 @@ A DTO for [`Burn`]
 
 **Arguments**:
 
-  -----------
+---
+
 - `aliases` - Optional[List[str]]
   The aliases (hex encoded) to burn
 - `nfts` - Optional[List[str]]
@@ -23,4 +24,3 @@ A DTO for [`Burn`]
   The foundries (hex encoded) to burn
 - `nativeTokens` - Optional[List[NativeToken]]
   The native tokens to burn
-

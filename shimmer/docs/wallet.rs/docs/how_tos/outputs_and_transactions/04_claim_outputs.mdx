@@ -3,27 +3,27 @@ title: Claim Outputs
 description: 'How to send and claim funds with a time-lock using wallet.rs.'
 image: /img/logo/iota_mark_light.png
 keywords:
-- how to
-- time-lock
-- unlock conditions
-- claim output
-- send output
-- nodejs
-- python
-- java
-- rust
+  - how to
+  - time-lock
+  - unlock conditions
+  - claim output
+  - send output
+  - nodejs
+  - python
+  - java
+  - rust
 ---
 
-import Tabs from "@theme/Tabs";
-import TabItem from "@theme/TabItem";
-import NodejsCode from "../../libraries/nodejs/how_to/outputs_and_transactions/_21_claim_outputs/_code_sample.mdx";
-import NodejsOutput from "../../libraries/nodejs/how_to/outputs_and_transactions/_21_claim_outputs/_expected_output.md";
-import PythonCode from "../../libraries/python/how_to/outputs_and_transactions/_04_claim_outputs/_code_sample.mdx";
-import PythonOutput from "../../libraries/python/how_to/outputs_and_transactions/_04_claim_outputs/_expected_output.md";
-import JavaCode from "../../libraries/java/how_to/outputs_and_transactions/_04_claim_outputs/_code_sample.mdx";
-import JavaOutput from "../../libraries/java/how_to/outputs_and_transactions/_04_claim_outputs/_expected_output.md";
-import RustCode from "../../_admonitions/_guide_coming_soon.md";
-import RustOutput from "../../_admonitions/_guide_coming_soon.md";
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import NodejsCode from '../../libraries/nodejs/how_to/outputs_and_transactions/_21_claim_outputs/_code_sample.mdx';
+import NodejsOutput from '../../libraries/nodejs/how_to/outputs_and_transactions/_21_claim_outputs/_expected_output.md';
+import PythonCode from '../../libraries/python/how_to/outputs_and_transactions/_04_claim_outputs/_code_sample.mdx';
+import PythonOutput from '../../libraries/python/how_to/outputs_and_transactions/_04_claim_outputs/_expected_output.md';
+import JavaCode from '../../libraries/java/how_to/outputs_and_transactions/_04_claim_outputs/_code_sample.mdx';
+import JavaOutput from '../../libraries/java/how_to/outputs_and_transactions/_04_claim_outputs/_expected_output.md';
+import RustCode from '../../_admonitions/_guide_coming_soon.md';
+import RustOutput from '../../_admonitions/_guide_coming_soon.md';
 
 You can use wallet.rs to send
 [funds with an expiration](https://wiki.iota.org/shimmer/introduction/explanations/ledger/simple_transfers#transfer-of-funds-with-expiration).
@@ -39,35 +39,34 @@ The following example will:
 4. Sync Bob's account to get the output event.
 5. Claim the output by calling the `account.claimOutputs([outputId])` function from Bob's account.
 
-<Tabs groupId="language">
-    <TabItem value="rust" label="Rust">
-        <RustCode/>
-    </TabItem>
-    <TabItem value="nodejs" label="Nodejs">
-        <NodejsCode/>
-    </TabItem>
-    <TabItem value="python" label="Python">
-        <PythonCode/>
-    </TabItem>
-    <TabItem value="java" label="Java">
-        <JavaCode/>
-    </TabItem>
+<Tabs groupId='language'>
+  <TabItem value='rust' label='Rust'>
+    <RustCode />
+  </TabItem>
+  <TabItem value='nodejs' label='Nodejs'>
+    <NodejsCode />
+  </TabItem>
+  <TabItem value='python' label='Python'>
+    <PythonCode />
+  </TabItem>
+  <TabItem value='java' label='Java'>
+    <JavaCode />
+  </TabItem>
 </Tabs>
 
 ## Expected Output
 
-<Tabs groupId="language">
-    <TabItem value="rust" label="Rust">
-        <RustOutput/>
-    </TabItem>
-    <TabItem value="nodejs" label="Nodejs">
-        <NodejsOutput/>
-    </TabItem>
-    <TabItem value="python" label="Python">
-        <PythonOutput/>
-    </TabItem>
-    <TabItem value="java" label="Java">
-        <JavaOutput/>
-    </TabItem>
+<Tabs groupId='language'>
+  <TabItem value='rust' label='Rust'>
+    <RustOutput />
+  </TabItem>
+  <TabItem value='nodejs' label='Nodejs'>
+    <NodejsOutput />
+  </TabItem>
+  <TabItem value='python' label='Python'>
+    <PythonOutput />
+  </TabItem>
+  <TabItem value='java' label='Java'>
+    <JavaOutput />
+  </TabItem>
 </Tabs>
-

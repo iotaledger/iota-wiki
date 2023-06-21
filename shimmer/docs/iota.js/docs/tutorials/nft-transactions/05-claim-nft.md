@@ -1,18 +1,16 @@
 ---
-description: "Claim an NFT under conditional transfer with iota.js."
+description: 'Claim an NFT under conditional transfer with iota.js.'
 image: /img/client_banner.png
 keywords:
-
-- tutorial
-- nft
-- output
-- claim
-- storage
-- deposit
-- conditional
-- transfer
-- refund
-
+  - tutorial
+  - nft
+  - output
+  - claim
+  - storage
+  - deposit
+  - conditional
+  - transfer
+  - refund
 ---
 
 # Claim NFT Under Conditional Transfer
@@ -34,37 +32,39 @@ Generate an Output to refund the issuer.
 
 So, the transaction will include two Inputs:
 
-* **Input #1** The [NFT Input you minted](03-mint-new-nft.md).
-* **Input #2** A Basic Input that holds enough funds to cover the storage deposit of the new NFT Output controlled by the
+- **Input #1** The [NFT Input you minted](03-mint-new-nft.md).
+- **Input #2** A Basic Input that holds enough funds to cover the storage deposit of the new NFT Output controlled by the
   new NFT Owner.
 
 The transaction will also include three Outputs:
 
-* **Output #1** The new NFT Output, controlled by the new NFT Owner.
-* **Output #2** The refund Output, controlled by the NFT Issuer.
-* **Output #3** The Output holding the remaining funds after covering the storage costs of **Output #1** (controlled by the NFT
+- **Output #1** The new NFT Output, controlled by the new NFT Owner.
+- **Output #2** The refund Output, controlled by the NFT Issuer.
+- **Output #3** The Output holding the remaining funds after covering the storage costs of **Output #1** (controlled by the NFT
   Owner).
 
 ## Preparation
 
 To create this transaction, you will need the following:
 
-* A Shimmer Node. You can use the [Shimmer Testnet nodes](https://api.testnet.shimmer.network).
+- A Shimmer Node. You can use the [Shimmer Testnet nodes](https://api.testnet.shimmer.network).
 
-* The NFT ID of your NFT, in hexadecimal format `0x7d08...`.
+- The NFT ID of your NFT, in hexadecimal format `0x7d08...`.
 
-* The keys of the address you [transferred your NFT to](./04-nft-transaction.md).
+- The keys of the address you [transferred your NFT to](./04-nft-transaction.md).
 
-* A UTXO controlled by the new owner of the NFT with enough funds to cover the new NFT Output storage costs.
+- A UTXO controlled by the new owner of the NFT with enough funds to cover the new NFT Output storage costs.
 
 ```typescript
-const client = new SingleNodeClient(API_ENDPOINT, {powProvider: new NeonPowProvider()});
+const client = new SingleNodeClient(API_ENDPOINT, {
+  powProvider: new NeonPowProvider(),
+});
 const nodeInfo = await client.info();
 
-const nftOwnerAddr = "0x57d3...";
-const nftOwnerBech32Addr = "rms1qpta...";
-const nftOwnerPubKey = "0xd38f...";
-const nftOwnerPrivateKey = "0xc2be...";
+const nftOwnerAddr = '0x57d3...';
+const nftOwnerBech32Addr = 'rms1qpta...';
+const nftOwnerPubKey = '0xd38f...';
+const nftOwnerPrivateKey = '0xc2be...';
 ```
 
 ## Query For the NFT Output
@@ -77,14 +77,15 @@ Output details as you need to use them as Input for the transaction.
 const indexerPlugin = new IndexerPluginClient(client);
 const outputList = await indexerPlugin.nft(nftId);
 if (outputList.items.length === 0) {
-    throw new Error("NFT not found");
+  throw new Error('NFT not found');
 }
 
 const consumedOutputId = outputList.items[0];
-console.log("Consumed Output Id", consumedOutputId);
+console.log('Consumed Output Id', consumedOutputId);
 
 const initialNftOutputDetails = await client.output(consumedOutputId);
-const initialNftOutput: INftOutput = initialNftOutputDetails.output as INftOutput;
+const initialNftOutput: INftOutput =
+  initialNftOutputDetails.output as INftOutput;
 ```
 
 At the end of this step you have obtained **Input #1** of your transaction.
@@ -123,22 +124,24 @@ it. **You don't need to use your own funds to refund the Issuer**. You only need
 original NFT Output and transfer it to an Output controlled by the Issuer.
 
 ```typescript
-const refundCondition = initialNftOutput.unlockConditions[1] as IStorageDepositReturnUnlockCondition;
+const refundCondition = initialNftOutput
+  .unlockConditions[1] as IStorageDepositReturnUnlockCondition;
 
 const refundToBePerformed = bigInt(refundCondition.amount);
 
 const refundOutput: IBasicOutput = {
-    type: BASIC_OUTPUT_TYPE,
-    amount: refundToBePerformed.toString(),
-    unlockConditions: [
-        {
-            type: ADDRESS_UNLOCK_CONDITION_TYPE,
-            address: {
-                type: ED25519_ADDRESS_TYPE,
-                pubKeyHash: (refundCondition.returnAddress as IEd25519Address).pubKeyHash
-            }
-        }
-    ]
+  type: BASIC_OUTPUT_TYPE,
+  amount: refundToBePerformed.toString(),
+  unlockConditions: [
+    {
+      type: ADDRESS_UNLOCK_CONDITION_TYPE,
+      address: {
+        type: ED25519_ADDRESS_TYPE,
+        pubKeyHash: (refundCondition.returnAddress as IEd25519Address)
+          .pubKeyHash,
+      },
+    },
+  ],
 };
 ```
 
@@ -151,7 +154,12 @@ way, you will have an estimation of the minimum amount of funds that should be h
 them.
 
 ```typescript
-const depositNft = bigInt(TransactionHelper.getStorageDeposit(nextNftOutput, nodeInfo.protocol.rentStructure));
+const depositNft = bigInt(
+  TransactionHelper.getStorageDeposit(
+    nextNftOutput,
+    nodeInfo.protocol.rentStructure,
+  ),
+);
 nextNftOutput.amount = depositNft.toString();
 ```
 
@@ -169,20 +177,25 @@ The remainder Output is just a Basic Output, as shown below:
 
 ```typescript
 const remainderOutput: IBasicOutput = {
-    type: BASIC_OUTPUT_TYPE,
-    amount: "0",
-    unlockConditions: [
-        {
-            type: ADDRESS_UNLOCK_CONDITION_TYPE,
-            address: {
-                type: ED25519_ADDRESS_TYPE,
-                pubKeyHash: nftOwnerAddr
-            }
-        }
-    ]
+  type: BASIC_OUTPUT_TYPE,
+  amount: '0',
+  unlockConditions: [
+    {
+      type: ADDRESS_UNLOCK_CONDITION_TYPE,
+      address: {
+        type: ED25519_ADDRESS_TYPE,
+        pubKeyHash: nftOwnerAddr,
+      },
+    },
+  ],
 };
 
-const remainderOutputCost = bigInt(TransactionHelper.getStorageDeposit(remainderOutput, nodeInfo.protocol.rentStructure));
+const remainderOutputCost = bigInt(
+  TransactionHelper.getStorageDeposit(
+    remainderOutput,
+    nodeInfo.protocol.rentStructure,
+  ),
+);
 const totalCost = depositNft.plus(remainderOutputCost);
 ```
 
@@ -195,30 +208,32 @@ the [indexation plugin](https://wiki.iota.org/shimmer/inx-indexer/welcome/). You
 been spent yet.
 
 ```typescript
- const basicOutputList = await indexerPlugin.basicOutputs({
-    addressBech32: nftOwnerBech32Addr
+const basicOutputList = await indexerPlugin.basicOutputs({
+  addressBech32: nftOwnerBech32Addr,
 });
 
 let costsOutput: IBasicOutput | undefined;
 let costsOutputId: string | undefined;
 for (const basicOutput of basicOutputList.items) {
-    const theOutput = await client.output(basicOutput)
-    if (theOutput.metadata.isSpent === false) {
-        const output = theOutput.output as IBasicOutput;
-        const amount = bigInt(output.amount);
-        if (amount.greater(totalCost)) {
-            costsOutputId = basicOutput;
-            costsOutput = output;
-            break;
-        }
+  const theOutput = await client.output(basicOutput);
+  if (theOutput.metadata.isSpent === false) {
+    const output = theOutput.output as IBasicOutput;
+    const amount = bigInt(output.amount);
+    if (amount.greater(totalCost)) {
+      costsOutputId = basicOutput;
+      costsOutput = output;
+      break;
     }
+  }
 }
 
 if (!costsOutput) {
-    throw new Error("No Outputs found to refund and cover costs");
+  throw new Error('No Outputs found to refund and cover costs');
 }
 
-remainderOutput.amount = bigInt(costsOutput.amount).minus(depositNft).toString();
+remainderOutput.amount = bigInt(costsOutput.amount)
+  .minus(depositNft)
+  .toString();
 ```
 
 At the end of this step you have defined **Output #3** of your transaction.
@@ -238,27 +253,32 @@ outputs.push(nextNftOutput);
 outputs.push(refundOutput);
 outputs.push(remainderOutput);
 
-const inputsCommitment = TransactionHelper.getInputsCommitment([initialNftOutput, costsOutput]);
+const inputsCommitment = TransactionHelper.getInputsCommitment([
+  initialNftOutput,
+  costsOutput,
+]);
 
 const transactionEssence: ITransactionEssence = {
-    type: TRANSACTION_ESSENCE_TYPE,
-    networkId: TransactionHelper.networkIdFromNetworkName(nodeInfo.protocol.networkName),
-    inputs,
-    inputsCommitment,
-    outputs
+  type: TRANSACTION_ESSENCE_TYPE,
+  networkId: TransactionHelper.networkIdFromNetworkName(
+    nodeInfo.protocol.networkName,
+  ),
+  inputs,
+  inputsCommitment,
+  outputs,
 };
 ```
 
 At the end of this step, you have created the transaction essence. It includes two Inputs :
 
-* **Input #1**: `consumedOutputId`, the last NFT unspent Output of your NFT.
-* **Input #2**: `costsOutputId`, which pays the storage costs.
+- **Input #1**: `consumedOutputId`, the last NFT unspent Output of your NFT.
+- **Input #2**: `costsOutputId`, which pays the storage costs.
 
 And three Outputs:
 
-* **Output #1**: `nextNftOutput`, the next NFT Output of your NFT.
-* **Output #2**: `refundOutput`, the refund made to the Issuer of your NFT.
-* **Output #3**: `remainderOutput`, the remainder of the storage costs.
+- **Output #1**: `nextNftOutput`, the next NFT Output of your NFT.
+- **Output #2**: `refundOutput`, the refund made to the Issuer of your NFT.
+- **Output #3**: `remainderOutput`, the remainder of the storage costs.
 
 ## Unlock the Outputs
 
@@ -266,26 +286,30 @@ The unlock condition you need to provide corresponds to the signature calculated
 the private key of the NFT Owner. The same signature also unlocks the second Input.
 
 ```typescript
-const essenceHash = TransactionHelper.getTransactionEssenceHash(transactionEssence);
+const essenceHash =
+  TransactionHelper.getTransactionEssenceHash(transactionEssence);
 
 const unlockConditionNft: ISignatureUnlock = {
-    type: SIGNATURE_UNLOCK_TYPE,
-    signature: {
-        type: ED25519_SIGNATURE_TYPE,
-        publicKey: nftOwnerPubKey,
-        signature: Converter.bytesToHex(Ed25519.sign(Converter.hexToBytes(nftOwnerPrivateKey), essenceHash), true)
-    }
+  type: SIGNATURE_UNLOCK_TYPE,
+  signature: {
+    type: ED25519_SIGNATURE_TYPE,
+    publicKey: nftOwnerPubKey,
+    signature: Converter.bytesToHex(
+      Ed25519.sign(Converter.hexToBytes(nftOwnerPrivateKey), essenceHash),
+      true,
+    ),
+  },
 };
 
 const unlockConditionCost: IReferenceUnlock = {
-    type: REFERENCE_UNLOCK_TYPE,
-    reference: 0
+  type: REFERENCE_UNLOCK_TYPE,
+  reference: 0,
 };
 
 const transactionPayload: ITransactionPayload = {
-    type: TRANSACTION_PAYLOAD_TYPE,
-    essence: transactionEssence,
-    unlocks: [unlockConditionNft, unlockConditionCost]
+  type: TRANSACTION_PAYLOAD_TYPE,
+  essence: transactionEssence,
+  unlocks: [unlockConditionNft, unlockConditionCost],
 };
 ```
 
@@ -297,18 +321,17 @@ updated state.
 
 ```typescript
 const block: IBlock = {
-    protocolVersion: DEFAULT_PROTOCOL_VERSION,
-    parents: [],
-    payload: transactionPayload,
-    nonce: "0",
+  protocolVersion: DEFAULT_PROTOCOL_VERSION,
+  parents: [],
+  payload: transactionPayload,
+  nonce: '0',
 };
 
 const blockId = await client.blockSubmit(block);
-console.log("Block Id:", blockId);
+console.log('Block Id:', blockId);
 ```
 
 ## Putting It All Together
 
 The complete source code of this part of the tutorial is available in
 the [official iota.js GitHub repository](https://github.com/iotaledger/iota.js/blob/feat/stardust/packages/iota/examples/shimmer-nft-transaction-tutorial/src/claim-nft.ts).
-

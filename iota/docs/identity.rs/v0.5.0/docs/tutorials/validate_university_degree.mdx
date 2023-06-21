@@ -2,14 +2,14 @@
 description: In this tutorial you will utilize the WASM binding of the IOTA Identity framework to digitally prove the existence and validity of a degree.
 image: /img/identity_tutorial_chart.png
 keywords:
-- wasm
-- decentralized identifiers
-- did subject
-- Verifiable credentials
-- Verifiable Presentations
-- validate
-- degree
-- university
+  - wasm
+  - decentralized identifiers
+  - did subject
+  - Verifiable credentials
+  - Verifiable Presentations
+  - validate
+  - degree
+  - university
 ---
 
 TODO: update this tutorial to remove references to `MerkleKeyCollection` and instead use `credentialStatus` with e.g. `RevocationList2020`.
@@ -36,15 +36,15 @@ As described in the [Digital Identities Solution](https://www.iota.org/solutions
 
 ## Terms
 
-|Term   | Definition    |
-|:---   |:---           |
-| [Decentralized Identifier (DID)](https://www.w3.org/TR/did-core/#dfn-decentralized-identifiers) |A globally unique persistent identifier that does not require a centralized registration authority and is often generated and/or registered cryptographically.|
-| [DID Subject](https://www.w3.org/TR/did-core/#dfn-did-subjects)          |The entity identified by a DID and described by a DID document. Anything can be a DID subject: person, group, organization, physical thing, digital thing, logical thing, etc.  |
-| [DID Document](https://www.w3.org/TR/did-core/#dfn-did-documents)          |A set of data describing the DID subject, including mechanisms, such as cryptographic public keys, that the DID subject or a DID delegate can use to authenticate itself and prove its association with the DID  |
-| [Verification Method](https://www.w3.org/TR/did-core/#dfn-verification-method)   |A set of parameters that can be used together with a process to independently verify a proof. For example, a cryptographic public key can be used as a verification method for a digital signature; in such usage, it verifies that the signer possessed the associated cryptographic private key. |
-| [Verifiable Credential](https://www.w3.org/TR/did-core/#dfn-verifiable-credentials) | A standard data model and representation format for cryptographically-verifiable digital credentials. It is signed by the issuer, to prove control over the Verifiable Credential with a nonce or timestamp. |
-| Verifiable Presentation | A Verifiable Presentation is the format in which a (collection of) Verifiable Credential(s) gets shared. It is signed by the subject, to prove control over the Verifiable Credential with a nonce or timestamp. |
-| [DID Resolution](https://www.w3.org/TR/did-core/#dfn-did-resolution)  | The process that takes as its input a DID and a set of resolution options and returns a DID document in a conforming representation plus additional metadata.  |
+| Term                                                                                            | Definition                                                                                                                                                                                                                                                                                         |
+| :---------------------------------------------------------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [Decentralized Identifier (DID)](https://www.w3.org/TR/did-core/#dfn-decentralized-identifiers) | A globally unique persistent identifier that does not require a centralized registration authority and is often generated and/or registered cryptographically.                                                                                                                                     |
+| [DID Subject](https://www.w3.org/TR/did-core/#dfn-did-subjects)                                 | The entity identified by a DID and described by a DID document. Anything can be a DID subject: person, group, organization, physical thing, digital thing, logical thing, etc.                                                                                                                     |
+| [DID Document](https://www.w3.org/TR/did-core/#dfn-did-documents)                               | A set of data describing the DID subject, including mechanisms, such as cryptographic public keys, that the DID subject or a DID delegate can use to authenticate itself and prove its association with the DID                                                                                    |
+| [Verification Method](https://www.w3.org/TR/did-core/#dfn-verification-method)                  | A set of parameters that can be used together with a process to independently verify a proof. For example, a cryptographic public key can be used as a verification method for a digital signature; in such usage, it verifies that the signer possessed the associated cryptographic private key. |
+| [Verifiable Credential](https://www.w3.org/TR/did-core/#dfn-verifiable-credentials)             | A standard data model and representation format for cryptographically-verifiable digital credentials. It is signed by the issuer, to prove control over the Verifiable Credential with a nonce or timestamp.                                                                                       |
+| Verifiable Presentation                                                                         | A Verifiable Presentation is the format in which a (collection of) Verifiable Credential(s) gets shared. It is signed by the subject, to prove control over the Verifiable Credential with a nonce or timestamp.                                                                                   |
+| [DID Resolution](https://www.w3.org/TR/did-core/#dfn-did-resolution)                            | The process that takes as its input a DID and a set of resolution options and returns a DID document in a conforming representation plus additional metadata.                                                                                                                                      |
 
 ## Flow-Chart
 
@@ -66,22 +66,21 @@ For professional IOTA implementations we strongly recommend using our key manage
 
 ```json
 {
-    "subject": "Alice",
-    "did": "did:iota:Bakoe4HD4uwekMuyMkeo7mCsA2frXej68M4QyFvEpo2G",
-    "messageId": "7c25309fe97f2cf2d609cf83f31e8838795dd16d235c7a56566970309a0d6dbd",
-    "explorerUrl": "https://explorer.iota.org/mainnet/message/7c25309fe97f2cf2d609cf83f31e8838795dd16d235c7a56566970309a0d6dbd",
-    "authKey": {
-        "type": "ed25519",
-        "public": "ExwZKmF9y2N4mKnEaeUU7bFyCkZ5oVjjK3ojooJKNxUK",
-        "secret": "G83815cmpPadAzs52GmpwS614xpaAWWQxUexmRVNkg75"
-    },
-    "verifKey": {
-        "type": "ed25519",
-        "public": "F9aM5Q9gGXb6Dswe8eSdsz5eDQX2ErTnpGDjFj5LMVvx",
-        "secret": "12S3U2u8ofyju53tmGsG9PKQfkBM8rhzL9BUBhfGqpdm"
-    }
+  "subject": "Alice",
+  "did": "did:iota:Bakoe4HD4uwekMuyMkeo7mCsA2frXej68M4QyFvEpo2G",
+  "messageId": "7c25309fe97f2cf2d609cf83f31e8838795dd16d235c7a56566970309a0d6dbd",
+  "explorerUrl": "https://explorer.iota.org/mainnet/message/7c25309fe97f2cf2d609cf83f31e8838795dd16d235c7a56566970309a0d6dbd",
+  "authKey": {
+    "type": "ed25519",
+    "public": "ExwZKmF9y2N4mKnEaeUU7bFyCkZ5oVjjK3ojooJKNxUK",
+    "secret": "G83815cmpPadAzs52GmpwS614xpaAWWQxUexmRVNkg75"
+  },
+  "verifKey": {
+    "type": "ed25519",
+    "public": "F9aM5Q9gGXb6Dswe8eSdsz5eDQX2ErTnpGDjFj5LMVvx",
+    "secret": "12S3U2u8ofyju53tmGsG9PKQfkBM8rhzL9BUBhfGqpdm"
+  }
 }
-
 ```
 
 ## Steps
@@ -97,7 +96,7 @@ After this step, you will find Alice's weakhold file in `./weakhold/Alice.json`.
 - [createDid.js](https://github.com/adrian-grassl/iota-identity-tutorial/blob/master/createDid.js)
 
 ```javascript
- createDid('Alice');
+createDid('Alice');
 ```
 
 ### 2. **Issuer**: Create a DID
@@ -109,7 +108,7 @@ After this step, you will find the University of Oslo's weakhold file in `./weak
 - [createDid.js](https://github.com/adrian-grassl/iota-identity-tutorial/blob/master/createDid.js)
 
 ```javascript
- createDid('University of Oslo');
+createDid('University of Oslo');
 ```
 
 ### 3. **Issuer**: Add a Verification Method
@@ -118,22 +117,23 @@ Since the university will need to verify Alice's degree, you should add a "degre
 
 The University will have to sign more than just Alice's degree, so you should generate this verification method with a set of Merkle keys. These signatures can all be proved by a single public key, while retaining the ability to revoke them separately.
 
-Note that the newly added verification method is of the *type* `MerkleKeyCollection`.
+Note that the newly added verification method is of the _type_ `MerkleKeyCollection`.
 
 - [addVerificationMethod.js](https://github.com/adrian-grassl/iota-identity-tutorial/blob/master/addVerificationMethod.js)
 
 ```javascript
- //Add verification method with collection of merkle keys to issuer DID
- //This enables the issuer to sign and revoke multiple documents without having to remove the verification method for each revocation
- let issuer = getWeakholdObject('./weakhold/UniversityofOslo.json')
- let issuerVerificationMethod = "degreeVerifications";
+//Add verification method with collection of merkle keys to issuer DID
+//This enables the issuer to sign and revoke multiple documents without having to remove the verification method for each revocation
+let issuer = getWeakholdObject('./weakhold/UniversityofOslo.json');
+let issuerVerificationMethod = 'degreeVerifications';
 
- addVerificationMethod(
-     subjectName = issuer.subject,
-     did = issuer.did,
-     authKey = KeyPair.fromJSON(issuer.authKey),
-     verificationMethodName = issuerVerificationMethod,
-     merkleKeys = true);
+addVerificationMethod(
+  (subjectName = issuer.subject),
+  (did = issuer.did),
+  (authKey = KeyPair.fromJSON(issuer.authKey)),
+  (verificationMethodName = issuerVerificationMethod),
+  (merkleKeys = true),
+);
 ```
 
 ### 4. **Holder**: Add a Verification Method
@@ -142,21 +142,22 @@ Alice will need a verification method to present her degree to a third party, so
 
 Since Alice only needs one key pair to her credential's verifiable presentation, she will generate this verification method with a simple private/public key pair.
 
-Note that the newly added verification method is of the *type* "Ed25519VerificationKey".
+Note that the newly added verification method is of the _type_ "Ed25519VerificationKey".
 
 - [addVerificationMethod.js](https://github.com/adrian-grassl/iota-identity-tutorial/blob/master/addVerificationMethod.js)
 
 ```javascript
- //Add verification method to holder DID
- let holder = getWeakholdObject('./weakhold/Alice.json')
- let holderVerificationMethod = "aliceDegreePresentation";
+//Add verification method to holder DID
+let holder = getWeakholdObject('./weakhold/Alice.json');
+let holderVerificationMethod = 'aliceDegreePresentation';
 
- addVerificationMethod(
-     subjectName = holder.subject,
-     did = holder.did,
-     authKey = KeyPair.fromJSON(holder.authKey),
-     verificationMethodName = holderVerificationMethod,
-     merkleKeys = false);
+addVerificationMethod(
+  (subjectName = holder.subject),
+  (did = holder.did),
+  (authKey = KeyPair.fromJSON(holder.authKey)),
+  (verificationMethodName = holderVerificationMethod),
+  (merkleKeys = false),
+);
 ```
 
 ###5. **Holder**: Set Up a Document
@@ -166,15 +167,15 @@ You should set up a document representing Alice's degree, containing her DID whi
 - [createVerifiableCredential.js](https://github.com/adrian-grassl/iota-identity-tutorial/blob/master/createVerifiableCredential.js)
 
 ```javascript
- //This part is already hard coded in "createVerifiableCredential.js"
- //Create credential indicating the degree earned by Alice
- const credentialSubject = {
-     "id": holderDid,
-     "name": holderSubject,
-     "degreeName": "Bachelor of Computer Science",
-     "degreeType": "BachelorDegree",
-     "GPA": "4.0"
- }
+//This part is already hard coded in "createVerifiableCredential.js"
+//Create credential indicating the degree earned by Alice
+const credentialSubject = {
+  id: holderDid,
+  name: holderSubject,
+  degreeName: 'Bachelor of Computer Science',
+  degreeType: 'BachelorDegree',
+  GPA: '4.0',
+};
 ```
 
 ### 6. **Issuer**: Sign the Document
@@ -186,18 +187,19 @@ This step will generate a verifiable credential. After this step you will find t
 - [createVerifiableCredential.js](https://github.com/adrian-grassl/iota-identity-tutorial/blob/master/createVerifiableCredential.js)
 
 ```javascript
- //Issue and sign verifiable credential from weakhold object
- let issuer = getWeakholdObject('./weakhold/UniversityofOslo.json')
- let issuerVerificationMethod = "degreeVerifications";
- let holder = getWeakholdObject('./weakhold/Alice.json')
+//Issue and sign verifiable credential from weakhold object
+let issuer = getWeakholdObject('./weakhold/UniversityofOslo.json');
+let issuerVerificationMethod = 'degreeVerifications';
+let holder = getWeakholdObject('./weakhold/Alice.json');
 
- createVerifiableCredential(
-     issuer.subject,
-     issuer.did,
-     KeyCollection.fromJSON(issuer.verifKey),
-     issuerVerificationMethod,
-     holder.did,
-     holder.subject);
+createVerifiableCredential(
+  issuer.subject,
+  issuer.did,
+  KeyCollection.fromJSON(issuer.verifKey),
+  issuerVerificationMethod,
+  holder.did,
+  holder.subject,
+);
 ```
 
 ### 7. **Holder**: Verify the Credentials
@@ -207,8 +209,8 @@ Since Alice wants to be sure that her credentials are properly verified, you sho
 - [checkVerifiableCredential.js](https://github.com/adrian-grassl/iota-identity-tutorial/blob/master/checkVerifiableCredential.js)
 
 ```javascript
- let signedVcPath = './signedCredentials/offlineVerifiableCredential.json';
- checkVerifiableCredential(signedVcPath);
+let signedVcPath = './signedCredentials/offlineVerifiableCredential.json';
+checkVerifiableCredential(signedVcPath);
 ```
 
 ### 8. **Holder**: Sign a Verifiable Credential
@@ -217,31 +219,32 @@ Alice need a verifiable presentation to send to the IOTA Foundation, so you shou
 
 This step will generate a verifiable presentation. After this step you will find the verifiable presentation of Alice's degree in [./signedCredentials/offlineVerifiablePresentation.json](https://github.com/adrian-grassl/iota-identity-tutorial/tree/master/signedCredentials).
 
- - [createVerifiablePresentation.js](https://github.com/adrian-grassl/iota-identity-tutorial/blob/master/createVerifiablePresentation.js)
+- [createVerifiablePresentation.js](https://github.com/adrian-grassl/iota-identity-tutorial/blob/master/createVerifiablePresentation.js)
 
 ```javascript
- //Issue and sign verifiable credential from weakhold object
- let holder = getWeakholdObject('./weakhold/Alice.json')
- let holderVerificationMethod = "aliceDegreePresentation";
- let signedVcPath = './signedCredentials/aliceVerifiableCredential.json';
+//Issue and sign verifiable credential from weakhold object
+let holder = getWeakholdObject('./weakhold/Alice.json');
+let holderVerificationMethod = 'aliceDegreePresentation';
+let signedVcPath = './signedCredentials/aliceVerifiableCredential.json';
 
- createVerifiablePresentation(
-     holder.subject,
-     holder.did,
-     KeyPair.fromJSON(holder.verifKey),
-     holderVerificationMethod,
-     signedVcPath);
+createVerifiablePresentation(
+  holder.subject,
+  holder.did,
+  KeyPair.fromJSON(holder.verifKey),
+  holderVerificationMethod,
+  signedVcPath,
+);
 ```
 
 ### 9. **Verifier**: Verify Alice's and the University's Signatures
 
 The IOTA Foundation need to verify the presentation's signatures, so you should use Alice's and the University's public keys to verify their verifiable presentation.
 
- - [checkVerifiablePresentation.js](https://github.com/adrian-grassl/iota-identity-tutorial/blob/master/checkVerifiablePresentation.js)
+- [checkVerifiablePresentation.js](https://github.com/adrian-grassl/iota-identity-tutorial/blob/master/checkVerifiablePresentation.js)
 
 ```javascript
- let signedVpPath = './signedCredentials/offlineVerifiablePresentation.json';
- checkVerifiablePresentation(signedVpPath);
+let signedVpPath = './signedCredentials/offlineVerifiablePresentation.json';
+checkVerifiablePresentation(signedVpPath);
 ```
 
 ### 10. **Issuer**: Revoke the Verification for Alice's Credential.
@@ -257,13 +260,14 @@ Since they used a Merkle key collection as a verification method, you can do thi
 ```javascript
 //Remove whole verification method and thus also the used key pair for signatures
 let issuer = getWeakholdObject('./weakhold/UniversityofOslo.json');
-let verificationMethodName  = "degreeVerifications";
+let verificationMethodName = 'degreeVerifications';
 
 removeVerificationMethod(
-    issuer.subject,
-    issuer.did,
-    KeyPair.fromJSON(issuer.authKey),
-    verificationMethodName );
+  issuer.subject,
+  issuer.did,
+  KeyPair.fromJSON(issuer.authKey),
+  verificationMethodName,
+);
 ```
 
 #### 2. Only revoke the one Merkle key used for the signature.
@@ -273,14 +277,15 @@ removeVerificationMethod(
 ```javascript
 //Revoke signatures, which used the first key in the Merkle key collection
 let issuer = getWeakholdObject('./weakhold/UniversityofOslo.json');
-let verificationMethodName  = "degreeVerifications";
+let verificationMethodName = 'degreeVerifications';
 
 removeMerkleKey(
-    issuer.subject,
-    issuer.did,
-    KeyPair.fromJSON(issuer.authKey),
-    verificationMethodName,
-    KeyCollection.fromJSON(issuer.verifKey));
+  issuer.subject,
+  issuer.did,
+  KeyPair.fromJSON(issuer.authKey),
+  verificationMethodName,
+  KeyCollection.fromJSON(issuer.verifKey),
+);
 ```
 
 Note that you could also revoke Alice's signature on the verifiable presentation, by removing her verification method.

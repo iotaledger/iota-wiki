@@ -20,7 +20,7 @@ Struct containing network and PoW related information
 
 Protocol parameters
 
-___
+---
 
 ### minPowScore
 
@@ -28,7 +28,7 @@ ___
 
 Minimum proof of work score
 
-___
+---
 
 ### localPow
 
@@ -36,7 +36,7 @@ ___
 
 Local proof of work
 
-___
+---
 
 ### fallbackToLocalPow
 
@@ -44,7 +44,7 @@ ___
 
 Fallback to local proof of work if the node doesn't support remote Pow
 
-___
+---
 
 ### tipsInterval
 

@@ -1,11 +1,12 @@
 ---
 description: iota.js API reference
 keywords:
-- references
-- api references
-- typescript
+  - references
+  - api references
+  - typescript
 image: /img/client_banner.png
 ---
+
 # Interface: IGossipHeartbeat
 
 Gossip heartbeat.
@@ -28,7 +29,7 @@ Gossip heartbeat.
 
 Solid milestone index.
 
-___
+---
 
 ### prunedMilestoneIndex
 
@@ -36,7 +37,7 @@ ___
 
 Pruned milestone index.
 
-___
+---
 
 ### latestMilestoneIndex
 
@@ -44,7 +45,7 @@ ___
 
 Latest milestone index.
 
-___
+---
 
 ### connectedPeers
 
@@ -52,7 +53,7 @@ ___
 
 Connected peers.
 
-___
+---
 
 ### syncedPeers
 

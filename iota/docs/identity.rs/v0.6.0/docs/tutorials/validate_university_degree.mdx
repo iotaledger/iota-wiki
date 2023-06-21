@@ -2,26 +2,25 @@
 description: In this tutorial, you will use the WASM binding of the IOTA Identity framework to digitally prove the existence and validity of a university degree.
 image: /img/sequence_diagram.png
 keywords:
-- wasm
-- decentralized identifiers
-- did subject
-- Verifiable credentials
-- Verifiable Presentations
-- validate
-- degree
-- university
+  - wasm
+  - decentralized identifiers
+  - did subject
+  - Verifiable credentials
+  - Verifiable Presentations
+  - validate
+  - degree
+  - university
 ---
 
 import Announcement from '../../src/partials/_announcement.mdx';
 
 # Digitally Validate a Degree
 
-<Announcement/>
+<Announcement />
 
 In this tutorial, you will use the WASM binding of the IOTA Identity framework to digitally prove the existence and validity of a university degree. To follow along please clone [this repository](https://github.com/iotaledger/iota-identity-tutorial).
 
-
-The `src/` directory contains scripts that can be run separately by providing command line arguments. Make sure that the npm dependencies - which include 
+The `src/` directory contains scripts that can be run separately by providing command line arguments. Make sure that the npm dependencies - which include
 the wasm bindings for the IOTA Identity Framework - are installed by running:
 
 ```bash
@@ -29,8 +28,8 @@ npm install
 ```
 
 ## Degree Validation
-Alice recently graduated from the University of Oslo with a Bachelor of Computer Science. Now, she wants to apply for a remote job at the IOTA Foundation and needs to digitally prove the existence and validity of her degree. What she needs is an immutable and verifiable credential, approved by both the University of Oslo and herself, before presenting it to her potential employer.
 
+Alice recently graduated from the University of Oslo with a Bachelor of Computer Science. Now, she wants to apply for a remote job at the IOTA Foundation and needs to digitally prove the existence and validity of her degree. What she needs is an immutable and verifiable credential, approved by both the University of Oslo and herself, before presenting it to her potential employer.
 
 ## Roles
 
@@ -42,15 +41,15 @@ As described in the [Digital Identities Solution](https://www.iota.org/solutions
 
 ## Terms
 
-|Term   | Definition    |
-|:---   |:---           |
-| [Decentralized Identifier (DID)](https://www.w3.org/TR/did-core/#dfn-decentralized-identifiers) |A globally unique persistent identifier that does not require a centralized registration authority and is often generated and/or registered cryptographically.|
-| [DID Subject](https://www.w3.org/TR/did-core/#dfn-did-subjects)          |The entity identified by a DID and described by a DID document. Anything can be a DID subject: person, group, organization, physical thing, digital thing, logical thing, etc.  |
-| [DID Document](https://www.w3.org/TR/did-core/#dfn-did-documents)          |A set of data describing the DID subject, including mechanisms, such as cryptographic public keys, that the DID subject or a DID delegate can use to authenticate itself and prove its association with the DID  |
-| [Verification Method](https://www.w3.org/TR/did-core/#dfn-verification-method)   |A set of parameters that can be used together with a process to independently verify a proof. For example, a cryptographic public key can be used as a verification method for a digital signature; in such usage, it verifies that the signer possessed the associated cryptographic private key. |
-| [Verifiable Credential](https://www.w3.org/TR/did-core/#dfn-verifiable-credentials) | A standard data model and representation format for cryptographically-verifiable digital credentials. It is signed by the issuer, to prove control over the Verifiable Credential with a nonce or timestamp. |
-| Verifiable Presentation | A Verifiable Presentation is the format in which a (collection of) Verifiable Credential(s) gets shared. It is signed by the subject, to prove control over the Verifiable Credential with a nonce or timestamp. |
-| [DID Resolution](https://www.w3.org/TR/did-core/#dfn-did-resolution)  | The process that takes as its input a DID and a set of resolution options and returns a DID document in a conforming representation plus additional metadata.  |
+| Term                                                                                            | Definition                                                                                                                                                                                                                                                                                         |
+| :---------------------------------------------------------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [Decentralized Identifier (DID)](https://www.w3.org/TR/did-core/#dfn-decentralized-identifiers) | A globally unique persistent identifier that does not require a centralized registration authority and is often generated and/or registered cryptographically.                                                                                                                                     |
+| [DID Subject](https://www.w3.org/TR/did-core/#dfn-did-subjects)                                 | The entity identified by a DID and described by a DID document. Anything can be a DID subject: person, group, organization, physical thing, digital thing, logical thing, etc.                                                                                                                     |
+| [DID Document](https://www.w3.org/TR/did-core/#dfn-did-documents)                               | A set of data describing the DID subject, including mechanisms, such as cryptographic public keys, that the DID subject or a DID delegate can use to authenticate itself and prove its association with the DID                                                                                    |
+| [Verification Method](https://www.w3.org/TR/did-core/#dfn-verification-method)                  | A set of parameters that can be used together with a process to independently verify a proof. For example, a cryptographic public key can be used as a verification method for a digital signature; in such usage, it verifies that the signer possessed the associated cryptographic private key. |
+| [Verifiable Credential](https://www.w3.org/TR/did-core/#dfn-verifiable-credentials)             | A standard data model and representation format for cryptographically-verifiable digital credentials. It is signed by the issuer, to prove control over the Verifiable Credential with a nonce or timestamp.                                                                                       |
+| Verifiable Presentation                                                                         | A Verifiable Presentation is the format in which a (collection of) Verifiable Credential(s) gets shared. It is signed by the subject, to prove control over the Verifiable Credential with a nonce or timestamp.                                                                                   |
+| [DID Resolution](https://www.w3.org/TR/did-core/#dfn-did-resolution)                            | The process that takes as its input a DID and a set of resolution options and returns a DID document in a conforming representation plus additional metadata.                                                                                                                                      |
 
 ## Sequence-Chart
 

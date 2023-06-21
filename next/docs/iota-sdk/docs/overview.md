@@ -35,7 +35,7 @@ interacts with the rest of an IOTA network, which could be
 the [main operational network (mainnet)](https://wiki.iota.org/introduction/reference/networks/mainnet) or
 a [network for testing purposes (devnet)](https://wiki.iota.org/introduction/reference/networks/devnet).
 
-![](/img/iota_layers_overview.svg "An overview of IOTA layers.")
+![](/img/iota_layers_overview.svg 'An overview of IOTA layers.')
 
 ## API Design
 

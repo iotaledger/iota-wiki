@@ -19,7 +19,7 @@ Data for transaction inputs for signing and ordering of unlock blocks
 
 The output
 
-___
+---
 
 ### outputMetaData
 
@@ -27,7 +27,7 @@ ___
 
 The output metadata
 
-___
+---
 
 ### chain
 
@@ -35,7 +35,7 @@ ___
 
 The chain derived from seed, only for ed25519 addresses
 
-___
+---
 
 ### bech32Address
 

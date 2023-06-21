@@ -1,13 +1,14 @@
 ---
 description: 'You can use the rand-address and rand-seed tools to generate random seeds and addresses through a simple command.'
 keywords:
-- address
-- seed
-- public key
-- private key
-- generate
-- generation
+  - address
+  - seed
+  - public key
+  - private key
+  - generate
+  - generation
 ---
+
 # Rand Seed and Rand Address
 
 You can use the [`rand-address`](#rand-address) and [`rand-seed`](#rand-seed) tools to generate addresses and seeds in a single command.
@@ -33,9 +34,9 @@ The script will output a Base58 string representing the newly generated address,
 
 You can use the `rand-address` tool to generate a text file with the following:
 
-* A [seed](../tutorials/send_transaction.md#seed), represented in Base64 and Base58.
-* The seed's relative identity, as a Base58 string. 
-* The relative identity's public, key in Base58.
+- A [seed](../tutorials/send_transaction.md#seed), represented in Base64 and Base58.
+- The seed's relative identity, as a Base58 string.
+- The relative identity's public, key in Base58.
 
 ```shell
 cd tools/rand-seed

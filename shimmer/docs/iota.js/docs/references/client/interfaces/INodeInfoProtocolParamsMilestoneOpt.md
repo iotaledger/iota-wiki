@@ -1,11 +1,12 @@
 ---
 description: iota.js API reference
 keywords:
-- references
-- api references
-- typescript
+  - references
+  - api references
+  - typescript
 image: /img/client_banner.png
 ---
+
 # Interface: INodeInfoProtocolParamsMilestoneOpt
 
 Defines changing protocol parameters in a milestone.
@@ -29,7 +30,7 @@ Defines changing protocol parameters in a milestone.
 
 ### type
 
-• **type**: ``1``
+• **type**: `1`
 
 The type of the object.
 
@@ -37,7 +38,7 @@ The type of the object.
 
 [IProtocolParamsMilestoneOption](IProtocolParamsMilestoneOption.md).[type](IProtocolParamsMilestoneOption.md#type)
 
-___
+---
 
 ### targetMilestoneIndex
 
@@ -49,7 +50,7 @@ The milestone index at which these protocol parameters become active.
 
 [IProtocolParamsMilestoneOption](IProtocolParamsMilestoneOption.md).[targetMilestoneIndex](IProtocolParamsMilestoneOption.md#targetmilestoneindex)
 
-___
+---
 
 ### protocolVersion
 
@@ -61,7 +62,7 @@ The to be applied protocol version.
 
 [IProtocolParamsMilestoneOption](IProtocolParamsMilestoneOption.md).[protocolVersion](IProtocolParamsMilestoneOption.md#protocolversion)
 
-___
+---
 
 ### params
 

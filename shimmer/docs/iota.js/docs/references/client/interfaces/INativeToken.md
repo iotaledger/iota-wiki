@@ -1,11 +1,12 @@
 ---
 description: iota.js API reference
 keywords:
-- references
-- api references
-- typescript
+  - references
+  - api references
+  - typescript
 image: /img/client_banner.png
 ---
+
 # Interface: INativeToken
 
 Native token.
@@ -25,7 +26,7 @@ Native token.
 
 Identifier of the native token.
 
-___
+---
 
 ### amount
 

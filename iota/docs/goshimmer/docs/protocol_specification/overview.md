@@ -2,10 +2,11 @@
 description: High-level overview of the protocol, and its implemented components.
 image: /img/protocol_specification/Protocol_overview_received_block.png
 keywords:
-- overview
-- protocol
-- high-level
+  - overview
+  - protocol
+  - high-level
 ---
+
 # Protocol specification
 
 :::warning DISCLAIMER
@@ -19,4 +20,3 @@ In this chapter we provide an overview of the various protocol components.
 We start with a [high level overview](protocol.md) of the protocol, followed by sections explaining the various implemented components.
 
 Note, this chapter is still work in progress.
-

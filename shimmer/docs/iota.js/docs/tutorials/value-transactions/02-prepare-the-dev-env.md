@@ -1,39 +1,38 @@
 ---
-description: "Prepare a development environment to run the value transactions in iota.js tutorial."
+description: 'Prepare a development environment to run the value transactions in iota.js tutorial.'
 image: /img/client_banner.png
 keywords:
-
-- tutorial
-- Node.js 16
-- auxiliary library
-- proof of work
-- pow
-- shimmer
-- testnet node
-
+  - tutorial
+  - Node.js 16
+  - auxiliary library
+  - proof of work
+  - pow
+  - shimmer
+  - testnet node
 ---
 
 # Prepare Your Development Environment
 
 To run the code in this tutorial, you will need the following:
 
-* [Node.js 16](https://nodejs.org/en/blog/release/v16.16.0/).
-* The [`@iota/iota.js`](https://www.npmjs.com/package/@iota/iota.js) library
-* The `iota.js` auxiliary libraries:
-    * [`@iota/crypto.js`](https://www.npmjs.com/package/@iota/crypto.js)
-    * [`@iota/util.js`](https://www.npmjs.com/package/@iota/util.js).
-    * [`@iota/pow-neon.js`](https://www.npmjs.com/package/@iota/pow-neon.js) to run Proof of Work (PoW). Alternatively,
-      you can spin up your own node to run the PoW remotely.
+- [Node.js 16](https://nodejs.org/en/blog/release/v16.16.0/).
+- The [`@iota/iota.js`](https://www.npmjs.com/package/@iota/iota.js) library
+- The `iota.js` auxiliary libraries:
 
-* Access to a Stardust Node (Hornet 2.0.0). You can use the Shimmer testnet Nodes
+  - [`@iota/crypto.js`](https://www.npmjs.com/package/@iota/crypto.js)
+  - [`@iota/util.js`](https://www.npmjs.com/package/@iota/util.js).
+  - [`@iota/pow-neon.js`](https://www.npmjs.com/package/@iota/pow-neon.js) to run Proof of Work (PoW). Alternatively,
+    you can spin up your own node to run the PoW remotely.
+
+- Access to a Stardust Node (Hornet 2.0.0). You can use the Shimmer testnet Nodes
   at [https://api.testnet.shimmer.network](https://api.testnet.shimmer.network).
-* (Optional) A TypeScript compiler and related packages
+- (Optional) A TypeScript compiler and related packages
 
 ## (optional) Download the Code
 
 You
 can [download the tutorials codebase](https://github.com/iotaledger/iota.js/tree/feat/stardust/packages/iota/examples/shimmer-value-transaction-tutorial)
-to follow while you read the next sections. 
+to follow while you read the next sections.
 
 :::warning Running Code Examples
 
@@ -53,7 +52,7 @@ The tutorial's codebase uses several predefined Shimmer addresses and outputs. I
 
 You can run the `generate-addresses` script by running the following command from the example's directory:
 
-```bash
+````bash
 npm run address
 #### Send a Value Transaction
 
@@ -61,7 +60,7 @@ You can run the `send-value-transaction` script by running the following command
 
 ```bash
 npm run transaction
-```
+````
 
 #### Sweep Outputs
 

@@ -30,4 +30,4 @@ Indicates if the outputs should have storage deposit return unlock condition or 
 ### `Client.getOutputs(outputIds)`
 
 The [`Client.getOutputs(outputIds)`](./../libraries/nodejs/references/classes/Client#getoutputs) will query the node for a list
-of `outputIds` in parallel. 
+of `outputIds` in parallel.

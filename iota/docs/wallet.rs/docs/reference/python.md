@@ -2,12 +2,13 @@
 description: Official IOTA Wallet Library Software Python API reference.
 image: /img/logo/logo.svg
 keywords:
-- api
-- python
-- param
-- type
-- reference
+  - api
+  - python
+  - param
+  - type
+  - reference
 ---
+
 # Python API Reference
 
 :::info
@@ -31,16 +32,16 @@ Please check the `example/logger_example.py` to see how to use it.
 
 Creates a new instance of the AccountManager.
 
-| Param                                  | Type      | Default       | Description                                                                                    |
-| -------------------------------------- | --------- | ------------- | ---------------------------------------------------------------------------------------------- |
-| [storage_path]                         | `str`     | ``./storage`` | The path where the database file will be saved                                                 |
-| [storage_password]                     | `str`     | `undefined`   | The storage password to encrypt/decrypt accounts                                               |
-| [polling_interval]                     | `int`     | `30000`       | The polling interval in seconds                                                                |
-| [automatic_output_consolidation]       | `bool`    | `true`        | Disables the automatic output consolidation process                                            |
-| [output_consolidation_threshold]       | `int`     | `100`         | Sets the number of outputs an address must have to trigger the automatic consolidation process |
-| [sync_spent_outputs]                   | `boolean` | `false`       | Enables fetching spent output history on account sync                                          |
-| [persist_events]                       | `boolean` | `false`       | Enables event persistence                                                                      |
-| [allow_create_multiple_empty_accounts] | `boolean` | `false`       | Enables creating accounts with latest account being empty                                      |
+| Param                                  | Type      | Default     | Description                                                                                    |
+| -------------------------------------- | --------- | ----------- | ---------------------------------------------------------------------------------------------- |
+| [storage_path]                         | `str`     | `./storage` | The path where the database file will be saved                                                 |
+| [storage_password]                     | `str`     | `undefined` | The storage password to encrypt/decrypt accounts                                               |
+| [polling_interval]                     | `int`     | `30000`     | The polling interval in seconds                                                                |
+| [automatic_output_consolidation]       | `bool`    | `true`      | Disables the automatic output consolidation process                                            |
+| [output_consolidation_threshold]       | `int`     | `100`       | Sets the number of outputs an address must have to trigger the automatic consolidation process |
+| [sync_spent_outputs]                   | `boolean` | `false`     | Enables fetching spent output history on account sync                                          |
+| [persist_events]                       | `boolean` | `false`     | Enables event persistence                                                                      |
+| [allow_create_multiple_empty_accounts] | `boolean` | `false`     | Enables creating accounts with latest account being empty                                      |
 
 :::info
 If the _storage_path_ is set, then the _storage_ needs to be set too. An exception will be thrown when errors happened.
@@ -377,11 +378,11 @@ The _Transfer_ object used in [SyncedAccount](#syncedaccount)
 
 ## TransferOutput
 
-| Param                    | Type                        | Default           | Description                                                         |
-| ------------------------ | --------------------------- | ----------------- | ------------------------------------------------------------------- |
-| amount                   | `int`                       | `undefined`       | The amount to transfer                                              |
-| address                  | `str`                       | `undefined`       | The address to send                                                 |
-| output_kind              | `str`                       | `null`            | Should be _SignatureLockedSingle_ or _SignatureLockedDustAllowance_ |
+| Param       | Type  | Default     | Description                                                         |
+| ----------- | ----- | ----------- | ------------------------------------------------------------------- |
+| amount      | `int` | `undefined` | The amount to transfer                                              |
+| address     | `str` | `undefined` | The address to send                                                 |
+| output_kind | `str` | `null`      | Should be _SignatureLockedSingle_ or _SignatureLockedDustAllowance_ |
 
 ## TransferWithOutputs
 
@@ -389,12 +390,12 @@ The _Transfer_ object used in [SyncedAccount](#syncedaccount)
 
 The _Transfer_ object used in [SyncedAccount](#syncedaccount)
 
-| Param                    | Type                        | Default           | Description                                                         |
-| ------------------------ | --------------------------- | ----------------- | ------------------------------------------------------------------- |
-| outputs                   | `list[TransferOutput]`     | `undefined`       | The amount to transfer                                              |
-| indexation               | `[Indexation](#indexation)` | `null`            | The indexation payload                                              |
-| remainder_value_strategy | `str`                       | `_ChangeAddress_` | Should be _ReuseAddress_ or _ChangeAddress_                         |
-| skip_sync                | `bool`                      | `False`           | Whether to skip the sync process                                    |
+| Param                    | Type                        | Default           | Description                                 |
+| ------------------------ | --------------------------- | ----------------- | ------------------------------------------- |
+| outputs                  | `list[TransferOutput]`      | `undefined`       | The amount to transfer                      |
+| indexation               | `[Indexation](#indexation)` | `null`            | The indexation payload                      |
+| remainder_value_strategy | `str`                       | `_ChangeAddress_` | Should be _ReuseAddress_ or _ChangeAddress_ |
+| skip_sync                | `bool`                      | `False`           | Whether to skip the sync process            |
 
 ## SyncedAccount
 
@@ -629,7 +630,6 @@ Time of account creation.
 | ---------- | ----- | ----------- | ------------------------- |
 | created_at | `u64` | `undefined` | The account creation time |
 
-
 ### messages(messages): void
 
 Messages associated with the seed.
@@ -647,7 +647,6 @@ The account can be initialised with locally stored address history.
 | Param     | Type                                    | Default     | Description              |
 | --------- | --------------------------------------- | ----------- | ------------------------ |
 | addresses | `list([WalletAddress](#walletaddress))` | `undefined` | The historical addresses |
-
 
 ### skip_persistence(): void
 
@@ -919,7 +918,7 @@ A dict with the following key:value pairs.
 ```python
 client_options = {
     'nodes': list[[Node](#node)] (optional),
-    'primary_node': [Node](#node)] (optional), 
+    'primary_node': [Node](#node)] (optional),
     'primary_pow_node': [Node](#node)] (optional),
     'node_pool_urls': list[str] (optional),
     'network': str (optional),
@@ -1078,6 +1077,7 @@ transaction_regular_essence = {
     'remainder_value': int,
 }
 ```
+
 Please refer to [Input](#input), [Output](#output), and [Payload](#payload) for the details of these types.
 
 ## Output

@@ -1,17 +1,18 @@
 ---
 keywords:
-- functions
-- state
-- structures
-- storage
-- named fields
+  - functions
+  - state
+  - structures
+  - storage
+  - named fields
 
 description: You can use structs directly as a type in state storage definitions and the schema tool will automatically generate the proxy code to access it properly.
 
 image: /img/logo/WASP_logo_dark.png
 ---
-import Tabs from "@theme/Tabs"
-import TabItem from "@theme/TabItem"
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 # Structured Data Types
 
@@ -215,67 +216,65 @@ impl MutableBet {
 <TabItem value="ts">
 
 ```ts
-import * as wasmtypes from "wasmlib/wasmtypes";
+import * as wasmtypes from 'wasmlib/wasmtypes';
 
 export class Bet {
-    // bet amount
-    amount : i64 = 0;
-    // who placed this bet
-    better : wasmtypes.ScAgentID = wasmtypes.agentIDFromBytes([]);
-    // number of item we bet on
-    number : i32 = 0;
-    // timestamp of this bet
-    time   : i64 = 0;
+  // bet amount
+  amount: i64 = 0;
+  // who placed this bet
+  better: wasmtypes.ScAgentID = wasmtypes.agentIDFromBytes([]);
+  // number of item we bet on
+  number: i32 = 0;
+  // timestamp of this bet
+  time: i64 = 0;
 
-    static fromBytes(buf: u8[]): Bet {
-        const dec = new wasmtypes.WasmDecoder(buf);
-        const data = new Bet();
-        data.amount = wasmtypes.int64Decode(dec);
-        data.better = wasmtypes.agentIDDecode(dec);
-        data.number = wasmtypes.int32Decode(dec);
-        data.time   = wasmtypes.int64Decode(dec);
-        dec.close();
-        return data;
-    }
+  static fromBytes(buf: u8[]): Bet {
+    const dec = new wasmtypes.WasmDecoder(buf);
+    const data = new Bet();
+    data.amount = wasmtypes.int64Decode(dec);
+    data.better = wasmtypes.agentIDDecode(dec);
+    data.number = wasmtypes.int32Decode(dec);
+    data.time = wasmtypes.int64Decode(dec);
+    dec.close();
+    return data;
+  }
 
-    bytes(): u8[] {
-        const enc = new wasmtypes.WasmEncoder();
-        wasmtypes.int64Encode(enc, this.amount);
-        wasmtypes.agentIDEncode(enc, this.better);
-        wasmtypes.int32Encode(enc, this.number);
-        wasmtypes.int64Encode(enc, this.time);
-        return enc.buf();
-    }
+  bytes(): u8[] {
+    const enc = new wasmtypes.WasmEncoder();
+    wasmtypes.int64Encode(enc, this.amount);
+    wasmtypes.agentIDEncode(enc, this.better);
+    wasmtypes.int32Encode(enc, this.number);
+    wasmtypes.int64Encode(enc, this.time);
+    return enc.buf();
+  }
 }
 
 export class ImmutableBet extends wasmtypes.ScProxy {
+  exists(): bool {
+    return this.proxy.exists();
+  }
 
-    exists(): bool {
-        return this.proxy.exists();
-    }
-
-    value(): Bet {
-        return Bet.fromBytes(this.proxy.get());
-    }
+  value(): Bet {
+    return Bet.fromBytes(this.proxy.get());
+  }
 }
 
 export class MutableBet extends wasmtypes.ScProxy {
+  delete(): void {
+    this.proxy.delete();
+  }
 
-    delete(): void {
-        this.proxy.delete();
-    }
+  exists(): bool {
+    return this.proxy.exists();
+  }
 
-    exists(): bool {
-        return this.proxy.exists();
-    }
+  setValue(value: Bet): void {
+    this.proxy.set(value.bytes());
+  }
 
-    setValue(value: Bet): void {
-        this.proxy.set(value.bytes());
-    }
-
-    value(): Bet {
-        return Bet.fromBytes(this.proxy.get());
-    }
+  value(): Bet {
+    return Bet.fromBytes(this.proxy.get());
+  }
 }
 ```
 
@@ -458,65 +457,63 @@ impl MutableBettingState {
 <TabItem value="ts">
 
 ```ts
-import * as wasmtypes from "wasmlib/wasmtypes";
-import * as sc from "./index";
+import * as wasmtypes from 'wasmlib/wasmtypes';
+import * as sc from './index';
 
 export class ArrayOfImmutableBet extends wasmtypes.ScProxy {
+  length(): u32 {
+    return this.proxy.length();
+  }
 
-	length(): u32 {
-		return this.proxy.length();
-	}
-
-	getBet(index: u32): sc.ImmutableBet {
-		return new sc.ImmutableBet(this.proxy.index(index));
-	}
+  getBet(index: u32): sc.ImmutableBet {
+    return new sc.ImmutableBet(this.proxy.index(index));
+  }
 }
 
 export class ImmutableBettingState extends wasmtypes.ScProxy {
-	// all bets that were made in this round
-	bets(): sc.ArrayOfImmutableBet {
-		return new sc.ArrayOfImmutableBet(this.proxy.root(sc.StateBets));
-	}
+  // all bets that were made in this round
+  bets(): sc.ArrayOfImmutableBet {
+    return new sc.ArrayOfImmutableBet(this.proxy.root(sc.StateBets));
+  }
 
-	// current owner of this smart contract
-	owner(): wasmtypes.ScImmutableAgentID {
-		return new wasmtypes.ScImmutableAgentID(this.proxy.root(sc.StateOwner));
-	}
+  // current owner of this smart contract
+  owner(): wasmtypes.ScImmutableAgentID {
+    return new wasmtypes.ScImmutableAgentID(this.proxy.root(sc.StateOwner));
+  }
 }
 
 export class ArrayOfMutableBet extends wasmtypes.ScProxy {
+  appendBet(): sc.MutableBet {
+    return new sc.MutableBet(this.proxy.append());
+  }
 
-	appendBet(): sc.MutableBet {
-		return new sc.MutableBet(this.proxy.append());
-	}
+  clear(): void {
+    this.proxy.clearArray();
+  }
 
-	clear(): void {
-		this.proxy.clearArray();
-	}
+  length(): u32 {
+    return this.proxy.length();
+  }
 
-	length(): u32 {
-		return this.proxy.length();
-	}
-
-	getBet(index: u32): sc.MutableBet {
-		return new sc.MutableBet(this.proxy.index(index));
-	}
+  getBet(index: u32): sc.MutableBet {
+    return new sc.MutableBet(this.proxy.index(index));
+  }
 }
 
 export class MutableBettingState extends wasmtypes.ScProxy {
-	asImmutable(): sc.ImmutableBettingState {
-		return new sc.ImmutableBettingState(this.proxy);
-	}
+  asImmutable(): sc.ImmutableBettingState {
+    return new sc.ImmutableBettingState(this.proxy);
+  }
 
-	// all bets that were made in this round
-	bets(): sc.ArrayOfMutableBet {
-		return new sc.ArrayOfMutableBet(this.proxy.root(sc.StateBets));
-	}
+  // all bets that were made in this round
+  bets(): sc.ArrayOfMutableBet {
+    return new sc.ArrayOfMutableBet(this.proxy.root(sc.StateBets));
+  }
 
-	// current owner of this smart contract
-	owner(): wasmtypes.ScMutableAgentID {
-		return new wasmtypes.ScMutableAgentID(this.proxy.root(sc.StateOwner));
-	}
+  // current owner of this smart contract
+  owner(): wasmtypes.ScMutableAgentID {
+    return new wasmtypes.ScMutableAgentID(this.proxy.root(sc.StateOwner));
+  }
 }
 ```
 
@@ -530,7 +527,6 @@ Note how the comments from the schema definition file have been copied to the st
 definition in the code and also to the access functions for the fields. This will allow
 your development environment to pop up context-sensitive help for those fields and access
 functions.
-
 
 In the next section we will look at how to use [type definitions](typedefs.mdx) to
 properly define container nesting relationships.

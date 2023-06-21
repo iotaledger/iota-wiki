@@ -2,32 +2,33 @@
 description: Info API returns basic info about the node with the /info and /healthz endpoints and the info() function.
 image: /img/logo/goshimmer_light.png
 keywords:
-- info
-- endpoint
-- function
-- health
-- healthz
-- client lib
+  - info
+  - endpoint
+  - function
+  - health
+  - healthz
+  - client lib
 ---
+
 # Info API Methods
 
 Info API returns basic info about the node
 
 The API provides the following functions and endpoints:
 
-* [/info](#info)
-* [/healthz](#healthz)
+- [/info](#info)
+- [/healthz](#healthz)
 
 Client lib APIs:
-* [Info()](#client-lib---info)
 
+- [Info()](#client-lib---info)
 
-##  `/info`
+## `/info`
 
 Returns basic info about the node.
 
-
 ### Parameters
+
 None.
 
 ### Examples
@@ -41,6 +42,7 @@ curl --location 'http://localhost:8080/info'
 #### Client lib - `Info`
 
 Information of a node can be retrieved via `Info() (*jsonmodels.InfoResponse, error)`
+
 ```go
 info, err := goshimAPI.Info()
 if err != nil {
@@ -138,65 +140,61 @@ fmt.Println(string(info))
 
 #### Results
 
-|Return field | Type | Description|
-|:-----|:------|:------|
-| `version`  | `String` | Version of GoShimmer. |
-| `networkVersion`  | `uint32` | Network Version of the autopeering. |
-| `tangleTime`  | `TangleTime` | TangleTime sync status |
-| `identityID`  | `string` | Identity ID of the node encoded in base58. |
-| `identityIDShort`  | `string` | Identity ID of the node encoded in base58 and truncated to its first 8 bytes. |
-| `publicKey`  | `string` | Public key of the node encoded in base58 |
-| `blockRequestQueueSize`  | `int` | The number of blocks a node is trying to request from neighbors. |
-| `solidBlockCount`  | `int` | The number of solid blocks in the node's database. |
-| `totalBlockCount`  | `int` | The number of blocks in the node's database. |
-| `enabledPlugins`  | `[]string` | List of enabled plugins. |
-| `disabledPlugins`  | `[]string` | List if disabled plugins. |
-| `mana`  | `Mana` | Mana values. |
-| `manaDelegationAddress`  | `string` | Mana Delegation Address. |
-| `mana_decay`  | `float64` | The decay coefficient of `bm2`. |
-| `scheduler`  | `Scheduler` |  Scheduler is the scheduler used.|
-| `rateSetter`  | `RateSetter` | RateSetter is the rate setter used. |
-| `error` | `string` | Error block. Omitted if success.     |
+| Return field            | Type         | Description                                                                   |
+| :---------------------- | :----------- | :---------------------------------------------------------------------------- |
+| `version`               | `String`     | Version of GoShimmer.                                                         |
+| `networkVersion`        | `uint32`     | Network Version of the autopeering.                                           |
+| `tangleTime`            | `TangleTime` | TangleTime sync status                                                        |
+| `identityID`            | `string`     | Identity ID of the node encoded in base58.                                    |
+| `identityIDShort`       | `string`     | Identity ID of the node encoded in base58 and truncated to its first 8 bytes. |
+| `publicKey`             | `string`     | Public key of the node encoded in base58                                      |
+| `blockRequestQueueSize` | `int`        | The number of blocks a node is trying to request from neighbors.              |
+| `solidBlockCount`       | `int`        | The number of solid blocks in the node's database.                            |
+| `totalBlockCount`       | `int`        | The number of blocks in the node's database.                                  |
+| `enabledPlugins`        | `[]string`   | List of enabled plugins.                                                      |
+| `disabledPlugins`       | `[]string`   | List if disabled plugins.                                                     |
+| `mana`                  | `Mana`       | Mana values.                                                                  |
+| `manaDelegationAddress` | `string`     | Mana Delegation Address.                                                      |
+| `mana_decay`            | `float64`    | The decay coefficient of `bm2`.                                               |
+| `scheduler`             | `Scheduler`  | Scheduler is the scheduler used.                                              |
+| `rateSetter`            | `RateSetter` | RateSetter is the rate setter used.                                           |
+| `error`                 | `string`     | Error block. Omitted if success.                                              |
 
-* Type `TangleTime`
+- Type `TangleTime`
 
-|field | Type | Description|
-|:-----|:------|:------|
-| `blockID`  | `string` | ID of the last confirmed block.  |
-| `time`   | `int64` | Issue timestamp of the last confirmed block.    |
-| `synced`   | `bool` | Flag indicating whether node is in sync.     |
+| field     | Type     | Description                                  |
+| :-------- | :------- | :------------------------------------------- |
+| `blockID` | `string` | ID of the last confirmed block.              |
+| `time`    | `int64`  | Issue timestamp of the last confirmed block. |
+| `synced`  | `bool`   | Flag indicating whether node is in sync.     |
 
+- Type `Scheduler`
 
-* Type `Scheduler`
+| field            | Type             | Description                                    |
+| :--------------- | :--------------- | :--------------------------------------------- |
+| `running`        | `bool`           | Flag indicating whether Scheduler has started. |
+| `rate`           | `string`         | Rate of the scheduler.                         |
+| `nodeQueueSizes` | `map[string]int` | The size for each node queue.                  |
 
-|field | Type | Description|
-|:-----|:------|:------|
-| `running`  | `bool` | Flag indicating whether Scheduler has started.  |
-| `rate`   | `string` | Rate of the scheduler.    |
-| `nodeQueueSizes`   | `map[string]int` | The size for each node queue.     |
+- Type `RateSetter`
 
-* Type `RateSetter`
+| field  | Type      | Description                    |
+| :----- | :-------- | :----------------------------- |
+| `rate` | `float64` | The rate of the rate setter..  |
+| `size` | `int`     | The size of the issuing queue. |
 
-|field | Type | Description|
-|:-----|:------|:------|
-| `rate`  | `float64` | The rate of the rate setter..  |
-| `size`   | `int` | The size of the issuing queue.    |
+- Type `Mana`
 
-* Type `Mana`
+| field                | Type        | Description                                  |
+| :------------------- | :---------- | :------------------------------------------- |
+| `access`             | `float64`   | Access mana assigned to the node.            |
+| `accessTimestamp`    | `time.Time` | Time when the access mana was calculated.    |
+| `consensus`          | `float64`   | Consensus mana assigned to the node.         |
+| `consensusTimestamp` | `time.Time` | Time when the consensus mana was calculated. |
 
-|field | Type | Description|
-|:-----|:------|:------|
-| `access`  | `float64` | Access mana assigned to the node.  |
-| `accessTimestamp`   | `time.Time` | Time when the access mana was calculated.    |
-| `consensus`   | `float64` | Consensus mana assigned to the node.   |
-| `consensusTimestamp`   | `time.Time` | Time when the consensus mana was calculated.   |
-
-
-
-##  `/healthz`
+## `/healthz`
 
 Returns HTTP code 200 if everything is running correctly.
-
 
 ### Parameters
 

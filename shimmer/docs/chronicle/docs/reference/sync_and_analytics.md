@@ -1,9 +1,9 @@
 ---
 keywords:
-- documentation
-- inx
-- reference
-- sync
+  - documentation
+  - inx
+  - reference
+  - sync
 ---
 
 # INX Syncing

@@ -1,23 +1,22 @@
 ---
 image: /img/integration-services/logo/integration_services.png
-description: The example-7 script creates two identities, and later uses them to demonstrate how you can check if data has been tampered by validating it on the Tangle. 
+description: The example-7 script creates two identities, and later uses them to demonstrate how you can check if data has been tampered by validating it on the Tangle.
 keywords:
-- how to
-- channels
-- authorize channel
-- subscribe channel
-- read channel
-- validate channel data
+  - how to
+  - channels
+  - authorize channel
+  - subscribe channel
+  - read channel
+  - validate channel data
 ---
 
-import Tabs from "@theme/Tabs";
-import TabItem from "@theme/TabItem";
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 # Search Channel and Validate Data
 
 The **example-7** script is similar to previous example ([Authorize Channel](authorize-to-channel.mdx)) that creates a
 channel as `Owner` and authorizes a `User` to write on it but:
-
 
 <Tabs groupId={"programmingLanguage"}>
 <TabItem value="Java" label={'Java'}>
@@ -33,7 +32,7 @@ mvn exec:_java -Dexec.mainClass=net.gradbase.how_tos.SearchChannelAndValidateDat
 
 ```bash
 npm run example-7
-````
+```
 
 **Example source code**: [Example-7](https://github.com/iotaledger/integration-services/blob/master/clients/client-sdk/examples/5-SearchChannelAndValidateData.ts)
 

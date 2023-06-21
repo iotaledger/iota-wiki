@@ -1,11 +1,12 @@
 ---
 description: iota.js API reference
 keywords:
-- references
-- api references
-- typescript
+  - references
+  - api references
+  - typescript
 image: /img/client_banner.png
 ---
+
 # Class: Base32
 
 Class to help with base32 Encoding/Decoding using RFC4648.
@@ -33,8 +34,8 @@ Convert the base 32 string to a byte array.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name     | Type     | Description                   |
+| :------- | :------- | :---------------------------- |
 | `base32` | `string` | The base32 string to convert. |
 
 #### Returns
@@ -43,7 +44,7 @@ Convert the base 32 string to a byte array.
 
 The byte array.
 
-___
+---
 
 ### encode
 
@@ -53,8 +54,8 @@ Convert a byte array to base 32.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name    | Type         | Description                |
+| :------ | :----------- | :------------------------- |
 | `bytes` | `Uint8Array` | The byte array to convert. |
 
 #### Returns

@@ -1,14 +1,14 @@
-# Zebra-IOTA-Edge-SDK : Identity Enabler : 101 Tutorial 
+# Zebra-IOTA-Edge-SDK : Identity Enabler : 101 Tutorial
 
 <h2>Understanding Decentralized Identities</h2>
 
-In this tutorial series you will learn how to use the **Identity Enabler** of the Zebra-IOTA Edge SDK to issue, verify and manage decentralized and interoperable identities for people, organizations or devices. If you are already familiar with the IOTA Tangle and / or the concepts behind Decentralized Identity you can jump directly to the [tutorial introduction](#the-zebra-iota-edge-sdk-overview). 
+In this tutorial series you will learn how to use the **Identity Enabler** of the Zebra-IOTA Edge SDK to issue, verify and manage decentralized and interoperable identities for people, organizations or devices. If you are already familiar with the IOTA Tangle and / or the concepts behind Decentralized Identity you can jump directly to the [tutorial introduction](#the-zebra-iota-edge-sdk-overview).
 
 Other parts in this series are:
 
-* [102 - Managing Credentials](../zebra-iota-edge-sdk/zebra-iota-edge-sdk-102-tutorial.md)
-* [103 - Verifying Credentials](../zebra-iota-edge-sdk/zebra-iota-edge-sdk-103-tutorial.md)
-* [104 - Device onboarding](../zebra-iota-edge-sdk/zebra-iota-edge-sdk-104-tutorial.md)
+- [102 - Managing Credentials](../zebra-iota-edge-sdk/zebra-iota-edge-sdk-102-tutorial.md)
+- [103 - Verifying Credentials](../zebra-iota-edge-sdk/zebra-iota-edge-sdk-103-tutorial.md)
+- [104 - Device onboarding](../zebra-iota-edge-sdk/zebra-iota-edge-sdk-104-tutorial.md)
 
 ## Introduction to Digital Identities
 

@@ -1,11 +1,12 @@
 ---
 description: iota.js API reference
 keywords:
-- references
-- api references
-- typescript
+  - references
+  - api references
+  - typescript
 image: /img/client_banner.png
 ---
+
 # Interface: IBlockMetadata
 
 Response from the metadata endpoint.
@@ -32,7 +33,7 @@ Response from the metadata endpoint.
 
 The block id.
 
-___
+---
 
 ### parents
 
@@ -40,7 +41,7 @@ ___
 
 The parent block ids.
 
-___
+---
 
 ### isSolid
 
@@ -48,7 +49,7 @@ ___
 
 Is the block solid.
 
-___
+---
 
 ### referencedByMilestoneIndex
 
@@ -56,7 +57,7 @@ ___
 
 Is the block referenced by a milestone.
 
-___
+---
 
 ### milestoneIndex
 
@@ -64,7 +65,7 @@ ___
 
 Is this block a valid milestone.
 
-___
+---
 
 ### ledgerInclusionState
 
@@ -72,7 +73,7 @@ ___
 
 The ledger inclusion state.
 
-___
+---
 
 ### conflictReason
 
@@ -80,7 +81,7 @@ ___
 
 The conflict reason.
 
-___
+---
 
 ### shouldPromote
 
@@ -88,7 +89,7 @@ ___
 
 Should the block be promoted.
 
-___
+---
 
 ### shouldReattach
 

@@ -13,10 +13,10 @@ BIP44 Coin Types for IOTA and Shimmer.
 
 ### IOTA
 
-• **IOTA** = ``4218``
+• **IOTA** = `4218`
 
-___
+---
 
 ### Shimmer
 
-• **Shimmer** = ``4219``
+• **Shimmer** = `4219`

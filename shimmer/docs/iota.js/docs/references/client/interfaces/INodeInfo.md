@@ -1,11 +1,12 @@
 ---
 description: iota.js API reference
 keywords:
-- references
-- api references
-- typescript
+  - references
+  - api references
+  - typescript
 image: /img/client_banner.png
 ---
+
 # Interface: INodeInfo
 
 Response from the /info endpoint.
@@ -32,7 +33,7 @@ Response from the /info endpoint.
 
 The name of the node.
 
-___
+---
 
 ### version
 
@@ -40,7 +41,7 @@ ___
 
 The version of node.
 
-___
+---
 
 ### status
 
@@ -48,7 +49,7 @@ ___
 
 The status of the node.
 
-___
+---
 
 ### metrics
 
@@ -56,7 +57,7 @@ ___
 
 The metrics for the node.
 
-___
+---
 
 ### supportedProtocolVersions
 
@@ -64,7 +65,7 @@ ___
 
 The supported protocol versions.
 
-___
+---
 
 ### protocol
 
@@ -72,7 +73,7 @@ ___
 
 The protocol info of the node.
 
-___
+---
 
 ### pendingProtocolParameters
 
@@ -80,7 +81,7 @@ ___
 
 Pending protocol parameters.
 
-___
+---
 
 ### baseToken
 
@@ -88,7 +89,7 @@ ___
 
 The base token info of the node.
 
-___
+---
 
 ### features
 

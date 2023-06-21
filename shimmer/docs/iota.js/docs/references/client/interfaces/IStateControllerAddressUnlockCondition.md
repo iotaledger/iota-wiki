@@ -1,18 +1,19 @@
 ---
 description: iota.js API reference
 keywords:
-- references
-- api references
-- typescript
+  - references
+  - api references
+  - typescript
 image: /img/client_banner.png
 ---
+
 # Interface: IStateControllerAddressUnlockCondition
 
 State Controller Address Unlock Condition.
 
 ## Hierarchy
 
-- [`ITypeBase`](ITypeBase.md)<``4``\>
+- [`ITypeBase`](ITypeBase.md)<`4`\>
 
   ↳ **`IStateControllerAddressUnlockCondition`**
 
@@ -27,7 +28,7 @@ State Controller Address Unlock Condition.
 
 ### type
 
-• **type**: ``4``
+• **type**: `4`
 
 The type of the object.
 
@@ -35,7 +36,7 @@ The type of the object.
 
 [ITypeBase](ITypeBase.md).[type](ITypeBase.md#type)
 
-___
+---
 
 ### address
 

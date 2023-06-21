@@ -2,10 +2,10 @@
 description: Learn how Stronghold was analyzed to prevent deadlocks from happening.
 image: /img/logo/Stronghold_icon.png
 keywords:
-- concurrency
-- deadlock
-- locks
-- explanation
+  - concurrency
+  - deadlock
+  - locks
+  - explanation
 ---
 
 # Deadlock Analysis in Stronghold
@@ -23,12 +23,11 @@ To avoid this situation, Stronghold uses deadlock analysis.
   - [Store](../reference/structure/engine/store.md)
 - Use `Mutex` or `RWLock`
 
-
 ## Deadlocks Analysis
 
 :::note
 
-These are thoughts stemming from experience, but they __do not have a peer-reviewed paper backing them__.
+These are thoughts stemming from experience, but they **do not have a peer-reviewed paper backing them**.
 
 :::
 
@@ -47,7 +46,6 @@ To simplify the problem, we only model mutex so that only a single thread can ac
 
 Note that lock $2$ depends on lock $1$, because in $f_1$ you can't take lock $2$ before taking lock $1$. In the same way, lock $3$ depends on locks $1$ and $2$.
 
-
 #### Example: Deadlock with 2 functions
 
 The following is an example of the most simple possible deadlock.
@@ -63,7 +61,7 @@ The following is an example of the most simple possible deadlock.
 The graph at the right represents the merged dependency graph of functions $f_1$ and $f_2$. It shows all the dependencies of the locks in $f_1$ and $f_2$.
 A circular dependency on the merged graph indicates the possibility of a deadlock when executing $f_1$ and $f_2$ concurrently.
 
-##### Example run resulting in a deadlock 
+##### Example run resulting in a deadlock
 
 1. $f_1$ starts and takes the lock $1$.
 2. $f_2$ starts and takes the lock $2$.
@@ -104,22 +102,21 @@ A lock is deadlock-free when we can prove that it will never be part of a deadlo
 
 #### Prove the absence of deadlock using the merged graph
 
-1. __Lock $3$ is deadlock-free__. No locks depend on lock $3$. When a thread acquires lock $3$ it will manage to terminate its computation and will always release it.
-2. __Recursively lock $2$ is deadlock-free__. Lock $3$ is the only lock that depends on lock $2$. That means:
-    1. If a thread acquires lock $2$, it will eventually get lock $3$ because lock $3$ is deadlock-free (lock $3$ will always be available at some point).
-    2. If a thread acquires lock $2$, it will manage to terminate its computation and eventually be released because lock $3$ is deadlock-free.
-    3. Lock $2$ is deadlock-free by recursivity.
-3. __Recursively, lock $1$ is deadlock-free__. All the locks that depend on lock $1$ are deadlock-free. You can apply the same reasoning for lock $2$ to lock $1$.
+1. **Lock $3$ is deadlock-free**. No locks depend on lock $3$. When a thread acquires lock $3$ it will manage to terminate its computation and will always release it.
+2. **Recursively lock $2$ is deadlock-free**. Lock $3$ is the only lock that depends on lock $2$. That means:
+   1. If a thread acquires lock $2$, it will eventually get lock $3$ because lock $3$ is deadlock-free (lock $3$ will always be available at some point).
+   2. If a thread acquires lock $2$, it will manage to terminate its computation and eventually be released because lock $3$ is deadlock-free.
+   3. Lock $2$ is deadlock-free by recursivity.
+3. **Recursively, lock $1$ is deadlock-free**. All the locks that depend on lock $1$ are deadlock-free. You can apply the same reasoning for lock $2$ to lock $1$.
 
 ## Stronghold Deadlock Analysis
 
 The goal is to list Stronghold's functions that access locks and build a merge graph. Then, we show that the merge graph does not contain circular dependencies.
- 
+
 ### Stronghold Share Memories
 
 This list shows the different shared memory locations that are protected behind locks.
 Each shared memory location/lock is associated with a number that we will use for the dependency graph that follows.
- 
 
 #### Fields of the `Stronghold` type which are shared memories
 
@@ -128,11 +125,10 @@ Each shared memory location/lock is associated with a number that we will use fo
 3. store: `Store`
 4. key_location: `Option<Location>`
 
-
 #### Fields of the `Client` type which are shared memories
 
 5. keystore: `KeyStore`
-6. db: `DbView` 
+6. db: `DbView`
 7. store: `Store`
 
 ### Stronghold Functions
@@ -142,38 +138,38 @@ After the function name, we describe the locks that are acquired or the function
 
 #### Functions of the `Stronghold` type
 
-- reset: 
+- reset:
 - store:
-- load_client_from_snapshot: 1 $\rightarrow$ 2 $\rightarrow$ `client`.restore() 
-- load_client: 1 $\rightarrow$ 2 $\rightarrow$ `client`.restore() 
+- load_client_from_snapshot: 1 $\rightarrow$ 2 $\rightarrow$ `client`.restore()
+- load_client: 1 $\rightarrow$ 2 $\rightarrow$ `client`.restore()
 - get_client: 2
 - unload_client: 2
 - purge_client: 1 $\rightarrow$ 2
-- load_snapshot: 1 
+- load_snapshot: 1
 - store_snapshot_key_at_location: 1 $\rightarrow$ 4
-- create_client: 2 
+- create_client: 2
 - commit_with_keyprovider: 1 $\rightarrow$ 2 $\rightarrow$ 5 $\rightarrow$ 6 $\rightarrow$ 7
 - commit: 1 $\rightarrow$ 2 $\rightarrow$ 5 $\rightarrow$ 6 $\rightarrow$ 7
-- write_client: 1 $\rightarrow$ 2 $\rightarrow$ 5 $\rightarrow$ 6 $\rightarrow$ 7 
-- clear: 1 $\rightarrow$ 2 $\rightarrow$ 3 $\rightarrow$ 4 $\rightarrow$  `client`.clear()
+- write_client: 1 $\rightarrow$ 2 $\rightarrow$ 5 $\rightarrow$ 6 $\rightarrow$ 7
+- clear: 1 $\rightarrow$ 2 $\rightarrow$ 3 $\rightarrow$ 4 $\rightarrow$ `client`.clear()
 
 #### Functions of the `Client` type
 
-- store: 
+- store:
 - vault:
 - vault_exists: 5
 - record_exists: 6
-- sync_vaults: get_hierarchy() $\rightarrow$ get_diff() $\rightarrow$ export_entries() $\rightarrow$  5 $\rightarrow$ 6
-- sync_with: `other_client`.get_hierarchy() $\rightarrow$ get_diff() $\rightarrow$  `other_client`.export_entries() $\rightarrow$ `other_client`.5 $\rightarrow$ 5 $\rightarrow$ 6
-- id: 
+- sync_vaults: get_hierarchy() $\rightarrow$ get_diff() $\rightarrow$ export_entries() $\rightarrow$ 5 $\rightarrow$ 6
+- sync_with: `other_client`.get_hierarchy() $\rightarrow$ get_diff() $\rightarrow$ `other_client`.export_entries() $\rightarrow$ `other_client`.5 $\rightarrow$ 5 $\rightarrow$ 6
+- id:
 - restore: 5 $\rightarrow$ 6 $\rightarrow$ 7
 - clear: 5 $\rightarrow$ 6 $\rightarrow$ 7
 - execute_procedure: execute_procedure_chained()
 - execute_procedure_chained: exec_proc()
 - get_db: 6
 - get_key_provider: 5
-- `Runner` trait 
-  - get_guards: 5 $\rightarrow$ 6 
+- `Runner` trait
+  - get_guards: 5 $\rightarrow$ 6
   - exec_proc: 5 $\rightarrow$ 6
   - write_to_vault: 5 $\rightarrow$ 6
   - revoke_data: 5 $\rightarrow$ 6
@@ -181,11 +177,10 @@ After the function name, we describe the locks that are acquired or the function
   - resolve_locations: 5
   - get_guard: 5 $\rightarrow$ 6
 - `SyncClients` trait
-  - get_hierarchy: get_key_provider() $\rightarrow$  get_db()
-  - get_diff: get_key_provider() $\rightarrow$  get_db()
+  - get_hierarchy: get_key_provider() $\rightarrow$ get_db()
+  - get_diff: get_key_provider() $\rightarrow$ get_db()
   - export_entries: get_db()
 
- 
 ### Stronghold Merged Graph
 
 This was created by merging all the lock dependencies from the [Stronghold functions](#stronghold-functions).

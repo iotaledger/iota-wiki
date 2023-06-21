@@ -1,11 +1,12 @@
 ---
 description: iota.js API reference
 keywords:
-- references
-- api references
-- typescript
+  - references
+  - api references
+  - typescript
 image: /img/client_banner.png
 ---
+
 # Interface: IOutputMetadataResponse
 
 Details of an output.
@@ -33,7 +34,7 @@ Details of an output.
 
 The block id the output was contained in.
 
-___
+---
 
 ### transactionId
 
@@ -41,7 +42,7 @@ ___
 
 The transaction id for the output.
 
-___
+---
 
 ### outputIndex
 
@@ -49,7 +50,7 @@ ___
 
 The index for the output.
 
-___
+---
 
 ### isSpent
 
@@ -57,7 +58,7 @@ ___
 
 Is the output spent.
 
-___
+---
 
 ### milestoneIndexSpent
 
@@ -65,7 +66,7 @@ ___
 
 The milestone index at which this output was spent.
 
-___
+---
 
 ### milestoneTimestampSpent
 
@@ -73,7 +74,7 @@ ___
 
 The milestone timestamp this output was spent.
 
-___
+---
 
 ### transactionIdSpent
 
@@ -81,7 +82,7 @@ ___
 
 The transaction this output was spent with.
 
-___
+---
 
 ### milestoneIndexBooked
 
@@ -89,7 +90,7 @@ ___
 
 The milestone index at which this output was booked into the ledger.
 
-___
+---
 
 ### milestoneTimestampBooked
 
@@ -97,7 +98,7 @@ ___
 
 The milestone timestamp this output was booked in the ledger.
 
-___
+---
 
 ### ledgerIndex
 

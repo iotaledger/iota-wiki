@@ -18,7 +18,7 @@ Native token options for minting
 
 Hex encoded number
 
-___
+---
 
 ### maximumSupply
 
@@ -26,7 +26,7 @@ ___
 
 Hex encoded number
 
-___
+---
 
 ### foundryMetadata
 

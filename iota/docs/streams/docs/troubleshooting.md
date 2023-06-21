@@ -1,16 +1,16 @@
 ---
-description: Troubleshooting the Streams Library.  
+description: Troubleshooting the Streams Library.
 image: /img/logo/iota_mark_light.png
 keywords:
-- discussion
-- channel
-- problem
-- solution
-- discord
-- stackexchange
+  - discussion
+  - channel
+  - problem
+  - solution
+  - discord
+  - stackexchange
 ---
-# Troubleshooting
 
+# Troubleshooting
 
 ## StackExchange
 

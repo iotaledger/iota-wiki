@@ -2,15 +2,14 @@
 description: Runtime extensions
 image: /img/logo/Stronghold_icon.png
 keywords:
-- apit
-- security
-- runtime
-- traits
-- explanation
+  - apit
+  - security
+  - runtime
+  - traits
+  - explanation
 ---
 
-# Runtime Extensions 
-
+# Runtime Extensions
 
 ## Memory Management
 
@@ -31,11 +30,10 @@ Guarded heap allocations work by placing a guard page in front and at the end of
 Libsodium provides three types to guard memory:
 
 | function                    | description                                                                          |
-|:----------------------------|:-------------------------------------------------------------------------------------|
+| :-------------------------- | :----------------------------------------------------------------------------------- |
 | `sodium_mprotect_noaccess`  | Makes the protected memory inaccessible. It can neither be read from nor written to. |
 | `sodium_mprotect_readonly`  | Makes the protected memory read-only. Memory can be read from but not written to.    |
 | `sodium_mprotect_readwrite` | Enables reading from and writing to protected memory.                                |
-
 
 Stronghold exposes locked memory via the `LockedMemory` trait, that exposes two functions that need to be implemented:
 
@@ -50,8 +48,7 @@ fn unlock(&self) -> Result<Buffer<u8>, MemoryError>;
 Currently, three types of memory implement this trait:
 
 | Type                  | Description                                                                                      |
-|:----------------------|:-------------------------------------------------------------------------------------------------|
+| :-------------------- | :----------------------------------------------------------------------------------------------- |
 | `RamMemory`           | Allocated values reside inside the system's ram.                                                 |
 | `FileMemory`          | Allocated values reside on the file system                                                       |
 | `NonContiguousMemory` | Allocated memory is fragmented across the system's ram or file system, or a combination of both. |
-

@@ -1,7 +1,7 @@
 ### Generate the Address
 
 You can generate an address from a [mnemonic](../../../../how_tos/02_generate_mnemonic.mdx) by calling
-the [`Client.generate_addresses(secret_manager, options)`]( ./../libraries/python/api_reference#generate_addresses)
+the [`Client.generate_addresses(secret_manager, options)`](./../libraries/python/api_reference#generate_addresses)
 function. If successful, the function will return a list of addresses from the secret manager.
 
 #### Use a `SecretManager`

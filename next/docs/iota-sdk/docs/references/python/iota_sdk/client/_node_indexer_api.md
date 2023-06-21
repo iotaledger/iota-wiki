@@ -9,7 +9,7 @@ title: iota_sdk.client._node_indexer_api
 class NodeIndexerAPI()
 ```
 
-### basic\_output\_ids
+### basic_output_ids
 
 ```python
 def basic_output_ids(query_parameters: QueryParameters) -> OutputIdsResponse
@@ -17,7 +17,7 @@ def basic_output_ids(query_parameters: QueryParameters) -> OutputIdsResponse
 
 Fetch basic output IDs.
 
-### alias\_output\_ids
+### alias_output_ids
 
 ```python
 def alias_output_ids(query_parameters: QueryParameters) -> OutputIdsResponse
@@ -25,7 +25,7 @@ def alias_output_ids(query_parameters: QueryParameters) -> OutputIdsResponse
 
 Fetch alias output IDs.
 
-### alias\_output\_id
+### alias_output_id
 
 ```python
 def alias_output_id(alias_id: HexStr) -> OutputId
@@ -33,7 +33,7 @@ def alias_output_id(alias_id: HexStr) -> OutputId
 
 Fetch alias output ID.
 
-### nft\_output\_ids
+### nft_output_ids
 
 ```python
 def nft_output_ids(query_parameters: QueryParameters) -> OutputIdsResponse
@@ -41,7 +41,7 @@ def nft_output_ids(query_parameters: QueryParameters) -> OutputIdsResponse
 
 Fetch NFT output IDs.
 
-### nft\_output\_id
+### nft_output_id
 
 ```python
 def nft_output_id(nft_id: HexStr) -> OutputId
@@ -49,7 +49,7 @@ def nft_output_id(nft_id: HexStr) -> OutputId
 
 Fetch NFT output ID.
 
-### foundry\_output\_ids
+### foundry_output_ids
 
 ```python
 def foundry_output_ids(query_parameters: QueryParameters) -> OutputIdsResponse
@@ -57,11 +57,10 @@ def foundry_output_ids(query_parameters: QueryParameters) -> OutputIdsResponse
 
 Fetch foundry Output IDs.
 
-### foundry\_output\_id
+### foundry_output_id
 
 ```python
 def foundry_output_id(foundry_id: HexStr) -> OutputId
 ```
 
 Fetch foundry Output ID.
-

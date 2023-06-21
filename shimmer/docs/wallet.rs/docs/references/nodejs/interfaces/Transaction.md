@@ -23,7 +23,7 @@ A Transaction with metadata
 
 The transaction payload
 
-___
+---
 
 ### blockId
 
@@ -31,7 +31,7 @@ ___
 
 The block id in which the transaction payload was included
 
-___
+---
 
 ### inclusionState
 
@@ -39,7 +39,7 @@ ___
 
 The inclusion state of the transaction
 
-___
+---
 
 ### timestamp
 
@@ -47,7 +47,7 @@ ___
 
 The creation time
 
-___
+---
 
 ### transactionId
 
@@ -55,7 +55,7 @@ ___
 
 The transaction id
 
-___
+---
 
 ### networkId
 
@@ -63,7 +63,7 @@ ___
 
 The network id in which the transaction was sent
 
-___
+---
 
 ### incoming
 
@@ -71,7 +71,7 @@ ___
 
 If the transaction was created by the wallet or someone else
 
-___
+---
 
 ### note
 

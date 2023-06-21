@@ -13,10 +13,10 @@ IOTA and Shimmer coin types
 
 ### IOTA
 
-• **IOTA** = ``4218``
+• **IOTA** = `4218`
 
-___
+---
 
 ### Shimmer
 
-• **Shimmer** = ``4219``
+• **Shimmer** = `4219`

@@ -36,7 +36,7 @@ The type of output.
 
 Output.getType
 
-___
+---
 
 ### getAmount
 
@@ -52,7 +52,7 @@ The amount of the output.
 
 Output.getAmount
 
-___
+---
 
 ### getUnlockConditions
 
@@ -64,7 +64,7 @@ The unlock conditions for the output.
 
 `UnlockCondition`[]
 
-___
+---
 
 ### getNativeTokens
 
@@ -76,7 +76,7 @@ The native tokens held by the output.
 
 `undefined` \| `INativeToken`[]
 
-___
+---
 
 ### getFeatures
 

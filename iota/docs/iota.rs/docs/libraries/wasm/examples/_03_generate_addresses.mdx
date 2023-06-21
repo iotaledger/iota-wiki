@@ -25,9 +25,9 @@ IOTA addresses are represented by a checksumed base-32 string (Bech32). You can 
 [Chrysalis documentations](https://wiki.iota.org/chrysalis-docs/guides/developer/#iota-15-address-anatom), but here are
 parts relevant to this example:
 
-* If an address starts with `atoi` then it means it is related to `devnet`. `iota` stands for `mainnet`.
-* Number `1` at the 5<sup>th</sup> positvion is just a separator.
-* The last 6 characters are reserved for a checksum.
+- If an address starts with `atoi` then it means it is related to `devnet`. `iota` stands for `mainnet`.
+- Number `1` at the 5<sup>th</sup> positvion is just a separator.
+- The last 6 characters are reserved for a checksum.
 
 Addresses can be also represented in a hex format and `iota.rs` provides some convenient functions to convert addresses:
 [`Client.bech32ToHex(address)`](./../api_reference.md#clientbech32tohexaddress--string) and
@@ -36,4 +36,3 @@ Addresses can be also represented in a hex format and `iota.rs` provides some co
 If you want to quickly validate any IOTA address, you can use the
 [`Client.isAddressValid()`](./../api_reference.md#clientisaddressvalidaddress--boolean) function that
 returns a `bool` value. You should perform a sanity check on address before using it.
-

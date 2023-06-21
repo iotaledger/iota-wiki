@@ -1,11 +1,12 @@
 ---
 description: iota.js API reference
 keywords:
-- references
-- api references
-- typescript
+  - references
+  - api references
+  - typescript
 image: /img/client_banner.png
 ---
+
 # Class: HmacSha1
 
 Class to help with HmacSha1 scheme.
@@ -33,8 +34,8 @@ Create a new instance of HmacSha1.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name  | Type         | Description           |
+| :---- | :----------- | :-------------------- |
 | `key` | `Uint8Array` | The key for the hmac. |
 
 ## Methods
@@ -47,9 +48,9 @@ Perform Sum on the data.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `key` | `Uint8Array` | The key for the hmac. |
+| Name   | Type         | Description             |
+| :----- | :----------- | :---------------------- |
+| `key`  | `Uint8Array` | The key for the hmac.   |
 | `data` | `Uint8Array` | The data to operate on. |
 
 #### Returns
@@ -58,7 +59,7 @@ Perform Sum on the data.
 
 The sum of the data.
 
-___
+---
 
 ### update
 
@@ -68,8 +69,8 @@ Update the hash with the data.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name      | Type         | Description                       |
+| :-------- | :----------- | :-------------------------------- |
 | `message` | `Uint8Array` | The data to update the hash with. |
 
 #### Returns
@@ -78,7 +79,7 @@ Update the hash with the data.
 
 The instance for chaining.
 
-___
+---
 
 ### digest
 

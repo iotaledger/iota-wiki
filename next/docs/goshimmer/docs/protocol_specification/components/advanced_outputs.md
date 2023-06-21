@@ -2,15 +2,16 @@
 description: IOTA strives to provide output types beyond the basic functionality of a cryptocurrency application such as Smart Contracts.
 image: /img/protocol_specification/bob_alias.png
 keywords:
-- smart contract chain
-- state metadata
-- state controller
-- governance controller
-- alias
-- smart contract 
-- transactions
-- NFT
+  - smart contract chain
+  - state metadata
+  - state controller
+  - governance controller
+  - alias
+  - smart contract
+  - transactions
+  - NFT
 ---
+
 # UTXO Output Types
 
 ## Motivation
@@ -63,12 +64,13 @@ by public and private key pairs. Addresses are present in the ledger through out
 output by providing a digital signature.
 
 Addresses are not able to provide the necessary functionality needed for smart contract chain accounts, because:
+
 - addresses change with the rotation of the controlling body (committee),
 - and there is no notion of separate control levels for an address account.
 
 We define a new account type in the ledger, called **Alias**, to represent smart contract chain accounts. An alias
-account can hold token balances, but also has state metadata, which stores the state of the smart contract chain. 
-The alias account defines two to controlling entities: a state controller and a governance controller. The state 
+account can hold token balances, but also has state metadata, which stores the state of the smart contract chain.
+The alias account defines two to controlling entities: a state controller and a governance controller. The state
 controller can transition the account into a new state, and can manipulate account balances. The governance controller
 can change the state controller or the governance controller.
 
@@ -77,6 +79,7 @@ An alias is not a cryptographic entity, but it is controlled via either regular 
 ### Representing a Smart Contract Chain Account in Ledger
 
 An alias is translated into the ledger as a distinct output type, called **AliasOutput**. The output contains:
+
 - the unique identifier of the alias, called **AliasID**,
 - the **State Controller** entity,
 - **State Metadata**,
@@ -85,7 +88,7 @@ An alias is translated into the ledger as a distinct output type, called **Alias
 - **Immutable Metadata**,
 - and token **balances**.
 
-The state controller and governance controller entities can either be private key backed addresses (cryptographic 
+The state controller and governance controller entities can either be private key backed addresses (cryptographic
 entities) or `AliasAddress`, that is the unique identifier of another alias. Note, that an alias cannot be controlled by
 its own `aliasID`.
 
@@ -129,6 +132,7 @@ corresponding output. If there is no such output in the transaction, the alias i
 is present, only the state and governance controller fields are allowed to be changed.
 
 A governance controller therefore can:
+
 - destroy the alias all together,
 - assign the state controller of the alias,
 - assign the governance controller of the alias.
@@ -143,8 +147,9 @@ In order to make alias accounts (smart contract chains) able to receive funds, w
 mechanism, called alias locking. An alias locked output can be unlocked by unlocking the given alias output for
 state transition in the very same transaction.
 
-An alias account (smart contract chain) can receive funds now, but there are additional requirements to be satisfied 
+An alias account (smart contract chain) can receive funds now, but there are additional requirements to be satisfied
 for smart contracts:
+
 - Alias locked outputs represent smart contract requests, and hence, need to contain metadata that is interpreted on
   layer 2.
 - A dormant smart contract chain might never consume alias locked outputs, therefore, there needs to be a fallback
@@ -153,6 +158,7 @@ for smart contracts:
   spent before the time locking period expires.
 
 As we can see, there are couple new concepts regarding outputs that we need to support for the smart contract use case:
+
 - **alias locking**
 - **metadata tied to output**
 - **fallback unlocking mechanism**
@@ -166,6 +172,7 @@ An extended output is an output that supports alias locking, output metadata, fa
 locking. The structure of an extended output is as follows:
 
 Extended Output:
+
 - **AliasID**: the alias account that is allowed to unlock this output.
 - **Token Balances**: tokens locked by the output.
 - **Metadata**: optional, bounded size binary data.
@@ -197,18 +204,18 @@ spend the 10 Mi from his alias account to his address account.
 
 1. Bob creates an alias where `aliasID=BobAliasID` with Transaction A.
 
-[![Bob creates an alias](/img/protocol_specification/bob_alias.png "Bob creates an alias")](/img/protocol_specification/bob_alias.png)
+[![Bob creates an alias](/img/protocol_specification/bob_alias.png 'Bob creates an alias')](/img/protocol_specification/bob_alias.png)
 
 2. Bob shares `BobAliasID` with Alice.
 3. Alice sends 10 Mi to Bob by sending Transaction B that creates an `ExtendedLockedOutput`, specifying the balance,
    and `aliasID=BobAliasID`.
 
-[![Alice sends 10 Mi to Bob](/img/protocol_specification/alice_sends_10_mi.png "Alice sends 10 Mi to Bob")](/img/protocol_specification/alice_sends_10_mi.png)
+[![Alice sends 10 Mi to Bob](/img/protocol_specification/alice_sends_10_mi.png 'Alice sends 10 Mi to Bob')](/img/protocol_specification/alice_sends_10_mi.png)
 
 4. Bob can spend the outputs created by Alice by creating Transaction C that moves his `BobAlias` (to the very same
-   address), and including the  `ExtendedLockedOutput` with `aliasID=BobAliasID`.
+   address), and including the `ExtendedLockedOutput` with `aliasID=BobAliasID`.
 
-[![Bob can spend the outputs created by Alice by creating Transaction C](/img/protocol_specification/bob_can_spend_outputs_created_by_alice.png "Bob can spend the outputs created by Alice by creating Transaction C")](/img/protocol_specification/bob_can_spend_outputs_created_by_alice.png )
+[![Bob can spend the outputs created by Alice by creating Transaction C](/img/protocol_specification/bob_can_spend_outputs_created_by_alice.png 'Bob can spend the outputs created by Alice by creating Transaction C')](/img/protocol_specification/bob_can_spend_outputs_created_by_alice.png)
 
 In a simple scenario, a user wishing to send a request to a smart contract creates an extended output. The output
 contains the AliasID of the smart contract chain account, the layer 2 request as metadata, and some tokens to pay
@@ -226,7 +233,7 @@ Extended outputs can also define a fallback account and a fallback deadline. Aft
 fallback account is authorized to unlock the extended output. Fallback deadline cannot be smaller than a protocol
 wide constant to give enough time to the smart contract chain to pick up the request.
 
-Fallback unlocking can either be done via signature unlocking or alias unlocking, depending on the type  of account
+Fallback unlocking can either be done via signature unlocking or alias unlocking, depending on the type of account
 specified.
 
 ### Timelock
@@ -254,13 +261,13 @@ additional constraints also have to be met.
   transaction on the ledger.
 - The governance controller of an alias output can change the state controller, meaning that a committee rotation can
   be carried out without changing the smart contract chain account, aliasID.
-    - A smart contract chain can be self governed, if the state and governance controllers coincide.
-    - A smart contract chain can be governed by an address account, or by another smart contract chain through an 
-      alias account.
+  - A smart contract chain can be self governed, if the state and governance controllers coincide.
+  - A smart contract chain can be governed by an address account, or by another smart contract chain through an
+    alias account.
 - Each Extended Output is a request which is “sent” to the alias account. The ISCP can retrieve the backlog of
   requests by retrieving all outputs for the aliasID. Consuming the Extended Output means it is atomically removed
   from the backlog. It can only be done by the state controller, i.e. the committee of the smart contract chain.
-- Fallback parameters prevent from losing funds if the committee is inactive for some timeout. After timeout the 
+- Fallback parameters prevent from losing funds if the committee is inactive for some timeout. After timeout the
   Extended Output can be unlocked by FallbackAccount, an address or another alias.
 
 ## Additional Use Cases
@@ -288,6 +295,7 @@ without losing control over them.
 6. `ownAccount` can also destroy the alias and "free" the locked funds.
 
 Notes:
+
 - The state controller can redeem funds from the alias output up to the point where only `minimum allowed amount` is
   present in the alias output. Therefore, without additional mechanism, it would only make sense to lock
   `minimum allowed amount` into an alias by the governance controller. This is obviously a drawback, users should not
@@ -297,6 +305,7 @@ Notes:
 
 To solve above problems, the `AliasOutput` currently implemented in GoShimmer supports the delegation use case by
 introducing two new fields in the output:
+
 - `isDelegated` and
 - `delegationTimelock`.
 
@@ -323,5 +332,6 @@ Transferring NFTs is also feeless, just like any other transaction in IOTA.
 
 If you are interested, you can find the GoShimmer implementation of the new output types in
 [output.go](https://github.com/iotaledger/goshimmer/blob/develop/packages/protocol/engine/ledger/vm/devnetvm/output.go):
- - [AliasOutput](https://github.com/iotaledger/goshimmer/blob/develop/packages/protocol/engine/ledger/vm/devnetvm/output.go#L598) and
- - [ExtendedLockedOutput](https://github.com/iotaledger/goshimmer/blob/develop/packages/protocol/engine/ledger/vm/devnetvm/output.go#L1582)
+
+- [AliasOutput](https://github.com/iotaledger/goshimmer/blob/develop/packages/protocol/engine/ledger/vm/devnetvm/output.go#L598) and
+- [ExtendedLockedOutput](https://github.com/iotaledger/goshimmer/blob/develop/packages/protocol/engine/ledger/vm/devnetvm/output.go#L1582)

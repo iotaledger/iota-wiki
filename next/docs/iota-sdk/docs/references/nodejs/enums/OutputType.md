@@ -16,28 +16,28 @@ All of the output types.
 
 ### Treasury
 
-• **Treasury** = ``2``
+• **Treasury** = `2`
 
-___
+---
 
 ### Basic
 
-• **Basic** = ``3``
+• **Basic** = `3`
 
-___
+---
 
 ### Alias
 
-• **Alias** = ``4``
+• **Alias** = `4`
 
-___
+---
 
 ### Foundry
 
-• **Foundry** = ``5``
+• **Foundry** = `5`
 
-___
+---
 
 ### Nft
 
-• **Nft** = ``6``
+• **Nft** = `6`

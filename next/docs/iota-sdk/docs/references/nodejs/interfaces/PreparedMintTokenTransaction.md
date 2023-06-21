@@ -17,7 +17,7 @@ The result of preparing a minting operation
 
 The token id of the minted token
 
-___
+---
 
 ### transaction
 

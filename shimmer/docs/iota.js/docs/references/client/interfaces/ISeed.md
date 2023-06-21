@@ -1,11 +1,12 @@
 ---
 description: iota.js API reference
 keywords:
-- references
-- api references
-- typescript
+  - references
+  - api references
+  - typescript
 image: /img/client_banner.png
 ---
+
 # Interface: ISeed
 
 Interface definitions for seed.
@@ -37,7 +38,7 @@ Get the key pair from the seed.
 
 The key pair.
 
-___
+---
 
 ### generateSeedFromPath
 
@@ -47,8 +48,8 @@ Generate a new seed from the path.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name   | Type        | Description                        |
+| :----- | :---------- | :--------------------------------- |
 | `path` | `Bip32Path` | The path to generate the seed for. |
 
 #### Returns
@@ -57,7 +58,7 @@ Generate a new seed from the path.
 
 The generated seed.
 
-___
+---
 
 ### toBytes
 
@@ -71,7 +72,7 @@ Return the key as bytes.
 
 The key as bytes.
 
-___
+---
 
 ### toString
 

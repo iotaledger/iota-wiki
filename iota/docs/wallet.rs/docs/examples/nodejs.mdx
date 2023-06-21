@@ -2,20 +2,21 @@
 description: Official IOTA Wallet Library Software Node.js examples.
 image: /img/logo/logo.svg
 keywords:
-- account
-- address
-- nodejs
-- dust protection
-- password
-- stronghold
-- Chrysalis
-- reference
+  - account
+  - address
+  - nodejs
+  - dust protection
+  - password
+  - stronghold
+  - Chrysalis
+  - reference
 ---
+
 # Examples in Node.js
 
 In this section, you will go over several examples that use the node.js binding of the `wallet.rs` library. You can also find examples of the code in the `/bindings/nodejs/examples` folder of the [official GitHub repository](https://github.com/iotaledger/wallet.rs/tree/dev/bindings/nodejs/examples).
 
-ll the examples in this section expect you to set your custom password  in the _.env_ file:
+ll the examples in this section expect you to set your custom password in the _.env_ file:
 
 ```bash
 SH_PASSWORD="here is your super secure password"
@@ -23,7 +24,7 @@ SH_PASSWORD="here is your super secure password"
 
 ## Account Manager and Individual Accounts
 
-You can initialize (open) secure storage for individual accounts. This storage is backed up by `Stronghold` by default, using an AccountManager instance.  
+You can initialize (open) secure storage for individual accounts. This storage is backed up by `Stronghold` by default, using an AccountManager instance.
 
 The following example creates a new database and account:
 
@@ -31,16 +32,16 @@ The following example creates a new database and account:
 https://github.com/iotaledger/wallet.rs/tree/production/bindings/nodejs/examples/binding_examples/1-create-account.js
 ```
 
-* Storage is initialized under the given path (`./alice-database`).
-* The password is set based on your password in _.env_ file (`manager.setStrongholdPassword(process.env.SH_PASSWORD)` ).
-* When you initialize the new database, a Stronghold mnemonic (seed) is automatically generated and stored by default (`manager.storeMnemonic(SignerType.Stronghold)` ).
-* You will only need to set the seed when you initialize the database for the first time. You can open an already initialized database using your password.
+- Storage is initialized under the given path (`./alice-database`).
+- The password is set based on your password in _.env_ file (`manager.setStrongholdPassword(process.env.SH_PASSWORD)` ).
+- When you initialize the new database, a Stronghold mnemonic (seed) is automatically generated and stored by default (`manager.storeMnemonic(SignerType.Stronghold)` ).
+- You will only need to set the seed when you initialize the database for the first time. You can open an already initialized database using your password.
 
-The storage is encrypted at rest, so you need a strong password and location to place your storage. 
+The storage is encrypted at rest, so you need a strong password and location to place your storage.
 
 :::note
 
-We recommended that you store your `Stronghold` password encrypted on rest and separated from `Stronghold` snapshots. 
+We recommended that you store your `Stronghold` password encrypted on rest and separated from `Stronghold` snapshots.
 
 Deal with the password with utmost care.
 
@@ -48,8 +49,8 @@ Deal with the password with utmost care.
 
 Storage is made of two things:
 
-* A single file called _wallet.stronghold_ contains the _seed_. `Stronghold` will secure the seed and encrypt it at rest. The generated seed (mnemonic) serves as a cryptographic key, which is used to generate all accounts and related addresses.
-* Other data used by the library that is stored under _db_ sub-directory. The includes account information, generated addresses, fetched messages, etc. This data is used to speed up some operations, such as account creation, address generation, etc.
+- A single file called _wallet.stronghold_ contains the _seed_. `Stronghold` will secure the seed and encrypt it at rest. The generated seed (mnemonic) serves as a cryptographic key, which is used to generate all accounts and related addresses.
+- Other data used by the library that is stored under _db_ sub-directory. The includes account information, generated addresses, fetched messages, etc. This data is used to speed up some operations, such as account creation, address generation, etc.
 
 One of the key principles behind `Stronghold` based storage is that no one can extract a seed from the storage. You manage your accounts via an _AccountManager_ instance and all the complexities are hidden under the hood and are dealt with securely.
 
@@ -64,10 +65,13 @@ The `wallet.rs` library uses a model of individual accounts to separate individu
 Once you have created the backend storage, you can create individual accounts for individual users can be created by running the `manager.createAccount()` method:
 
 ```javascript
-    let account = await manager.createAccount({
-        alias: 'Alice',  // an unique id from your existing user
-        clientOptions: { node: 'https://api.lb-0.h.chrysalis-devnet.iota.cafe', localPow: false }
-    })
+let account = await manager.createAccount({
+  alias: 'Alice', // an unique id from your existing user
+  clientOptions: {
+    node: 'https://api.lb-0.h.chrysalis-devnet.iota.cafe',
+    localPow: false,
+  },
+});
 ```
 
 Each account is related to a specific IOTA network (mainnet and devnet), which is referenced by node properties such as node url. In this example, it is on the `Chrysalis` devnet balancer.
@@ -76,7 +80,7 @@ You can refer to the [Wallet Node.js API Reference](../reference/nodejs.md) for 
 
 #### Alias
 
-An _Alias_ should be unique, and it can be any string that you see fit. The _alias_ is used to identify the account later on. Each account is also represented by an _index_ which is incremented by 1 every time new account is created. 
+An _Alias_ should be unique, and it can be any string that you see fit. The _alias_ is used to identify the account later on. Each account is also represented by an _index_ which is incremented by 1 every time new account is created.
 Any account can be then referred to by its _index_ , _alias_ , or one of its generated _addresses_ .
 
 Several API calls can be performed via an _account_ instance.
@@ -89,7 +93,7 @@ You can do this using `account.sync()`.`account.sync()` is performed automatical
 
 :::
 
-Once an account has been created, you can retrieve an instance using the following methods: 
+Once an account has been created, you can retrieve an instance using the following methods:
 
 - [`AccountManager.getAccount(accountId)` ](../reference/nodejs.md#getaccountaccountid).
 - [`AccountManager.getAccountByAlias(alias)` ](../reference/nodejs.md#getaccountbyaliasalias).
@@ -97,12 +101,12 @@ Once an account has been created, you can retrieve an instance using the followi
 
 The most common methods of _account_ instance are:
 
-*`account.alias()` : Returns an alias of the given account.
-*`account.listAddresses()` : Returns list of addresses related to the account.
-*`account.getUnusedAddress()` : Returns a first unused address.
-*`account.generateAddress()` : Generate a new address for the address index incremented by 1.
-*`account.balance()` : Returns the balance for the given account.
-*`account.sync()` : Sync the account information with the Tangle.
+_`account.alias()` : Returns an alias of the given account.
+_`account.listAddresses()` : Returns list of addresses related to the account.
+_`account.getUnusedAddress()` : Returns a first unused address.
+_`account.generateAddress()` : Generate a new address for the address index incremented by 1.
+_`account.balance()` : Returns the balance for the given account.
+_`account.sync()` : Sync the account information with the Tangle.
 
 ## Generating Address(es)
 
@@ -110,16 +114,16 @@ Each account can have multiple addresses. Addresses are generated deterministica
 
 There are two types of addresses, _internal_ and _public_ (external), and each set of addresses is independent of each other and has an independent _index_ id.
 
-* You can create _Public_ addresses using the `account.generateAddress()` function. Public addresses are flagged as _internal=false_ (public).
-* _Internal_ addresses are also called `change` addresses. _Internal_ addresses are used to store the excess funds and are indicated as _internal=false_.
+- You can create _Public_ addresses using the `account.generateAddress()` function. Public addresses are flagged as _internal=false_ (public).
+- _Internal_ addresses are also called `change` addresses. _Internal_ addresses are used to store the excess funds and are indicated as _internal=false_.
 
-This approach is also known as a *BIP32 Hierarchical Deterministic wallet (HD Wallet)*.
+This approach is also known as a _BIP32 Hierarchical Deterministic wallet (HD Wallet)_.
 
 :::note
 
 The IOTA 1.5 (Chrysalis) network supports reusing addresses multiple times.
 
-::: 
+:::
 
 You can use the following example to generate a new address:
 
@@ -143,7 +147,7 @@ IOTA is based on _Unspent Transaction Output_ model. You can find a detailed exp
 
 ## Sending Tokens
 
-You can use the following example to send tokens using an Account instance to any desired  address:
+You can use the following example to send tokens using an Account instance to any desired address:
 
 ```js reference
 https://github.com/iotaledger/wallet.rs/tree/production/bindings/nodejs/examples/binding_examples/4-send.js
@@ -152,8 +156,8 @@ https://github.com/iotaledger/wallet.rs/tree/production/bindings/nodejs/examples
 The full function signature is `Account.send(address, amount, [options])`.
 You can use the default options. However, you can provide additional options, such as `remainderValueStrategy` , which has the following strategies:
 
-* `changeAddress()`: Send the remainder value to an internal address.
-* `reuseAddress()`: Send the remainder value back to its original address.
+- `changeAddress()`: Send the remainder value to an internal address.
+- `reuseAddress()`: Send the remainder value back to its original address.
 
 The `Account.send()` function returns a _wallet message_ that fully describes the given transaction. You can use the _messageId_ to check confirmation statuses. You can also retrieve individual messages related to any given account using the `Account.listMessages()` function.
 
@@ -163,7 +167,7 @@ The network uses a [dust protection](https://wiki.iota.org/introduction/explanat
 
 :::info
 
-Micro-transactions below 1Mi of IOTA tokens can be sent to another address if there is already at least 1Mi on that address. 
+Micro-transactions below 1Mi of IOTA tokens can be sent to another address if there is already at least 1Mi on that address.
 That is why we sent 1Mi in the last example, to comply with the dust protection.
 
 Dust protection also means you cannot leave less than 1Mi on a spent address (leave a dust behind).
@@ -172,7 +176,7 @@ Dust protection also means you cannot leave less than 1Mi on a spent address (le
 
 ## Backing Up a Database
 
-Due to security practices that are incorporated in the Stronghold's DNA, there is no way to retrieve a seed, as it is encrypted at rest. So, if you are using the default options, you should make sure that you back up your seed regularly. 
+Due to security practices that are incorporated in the Stronghold's DNA, there is no way to retrieve a seed, as it is encrypted at rest. So, if you are using the default options, you should make sure that you back up your seed regularly.
 
 The following example will guide you in backing up your data in secure files. You can move this file to another app or device, and restore it.
 

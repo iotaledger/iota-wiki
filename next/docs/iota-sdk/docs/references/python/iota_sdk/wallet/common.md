@@ -10,4 +10,3 @@ class WalletError(Exception)
 ```
 
 wallet error
-

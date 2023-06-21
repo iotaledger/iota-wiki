@@ -1,11 +1,12 @@
 ---
 description: iota.js API reference
 keywords:
-- references
-- api references
-- typescript
+  - references
+  - api references
+  - typescript
 image: /img/client_banner.png
 ---
+
 # Interface: INodeInfoMilestone
 
 The milestone info.
@@ -26,7 +27,7 @@ The milestone info.
 
 The milestone index.
 
-___
+---
 
 ### timestamp
 
@@ -34,7 +35,7 @@ ___
 
 The milestone timestamp.
 
-___
+---
 
 ### milestoneId
 

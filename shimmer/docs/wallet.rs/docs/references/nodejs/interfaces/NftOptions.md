@@ -22,15 +22,15 @@ Nft options for minting
 Bech32 encoded address to which the Nft will be minted. Default will use the
 first address of the account
 
-___
+---
 
 ### sender
 
 • `Optional` **sender**: `string`
 
-Bech32 encoded sender address *
+Bech32 encoded sender address \*
 
-___
+---
 
 ### metadata
 
@@ -38,7 +38,7 @@ ___
 
 Hex encoded bytes
 
-___
+---
 
 ### tag
 
@@ -46,15 +46,15 @@ ___
 
 Hex encoded bytes
 
-___
+---
 
 ### issuer
 
 • `Optional` **issuer**: `string`
 
-Bech32 encoded issuer address *
+Bech32 encoded issuer address \*
 
-___
+---
 
 ### immutableMetadata
 

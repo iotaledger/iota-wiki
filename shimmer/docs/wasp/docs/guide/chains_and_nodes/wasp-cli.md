@@ -2,12 +2,10 @@
 description: How to configure the wasp-cli. Requirements and configuration parameters.
 image: /img/logo/WASP_logo_dark.png
 keywords:
-
-- Wasp-cli
-- Configuration
-- Hornet
-- command line
-
+  - Wasp-cli
+  - Configuration
+  - Hornet
+  - command line
 ---
 
 # Configuring wasp-cli
@@ -24,8 +22,8 @@ available in your system.
 You can create a basic default configuration by running:
 
 ```shell
-wasp-cli init 
-````
+wasp-cli init
+```
 
 This command will create a configuration file named `wasp-cli.json` in the current directory.
 
@@ -82,4 +80,4 @@ after you save the configuration.
 
 ```shell
 wasp-cli login
-``` 
+```

@@ -2,13 +2,14 @@
 description: Using the read-evaluate-print loop (REPL) to work with Stronghold interactively
 image: /img/logo/Stronghold_icon.png
 keywords:
-- example
-- repl
-- client crate
+  - example
+  - repl
+  - client crate
 ---
 
 # REPL
-Stronghold features a simple read-evaluate print loop (REPL) to showcase basic operations from an interaction command shell-like environment. The REPL maintains a state of a running Stronghold instance to store secrets or configuration data. 
+
+Stronghold features a simple read-evaluate print loop (REPL) to showcase basic operations from an interaction command shell-like environment. The REPL maintains a state of a running Stronghold instance to store secrets or configuration data.
 
 You can start REPL from a terminal inside the root folder of Stronghold by running the following command:
 
@@ -25,9 +26,8 @@ Each command will show a short help message, if the entered command or parameter
 :::
 You can use the following commands:
 
-
 | Command      | Parameters                                                                                | Description                                                                                                                    |
-|:-------------|:------------------------------------------------------------------------------------------|:-------------------------------------------------------------------------------------------------------------------------------|
+| :----------- | :---------------------------------------------------------------------------------------- | :----------------------------------------------------------------------------------------------------------------------------- |
 | help         | -                                                                                         | Display a help message.                                                                                                        |
 | init         | `client_path`                                                                             | Initializes the underlying Stronghold system.                                                                                  |
 | keygen       | `key_type` `vault_path` `record_path`                                                     | Generates a "ed25510" or "x25519" key at a location composed of "vault_path" and "record_path".                                |
@@ -40,5 +40,3 @@ You can use the following commands:
 | quit         | -                                                                                         | Exits the REPL.                                                                                                                |
 | checkrecord  | `vault_path` `record_path`                                                                | Checks a record inside the vault. The command will return `yes` if the record exists or `no` if it doesn't.                    |
 | checkvault   | `vault_path`                                                                              | Checks for the presence of a vault.                                                                                            |
-
-

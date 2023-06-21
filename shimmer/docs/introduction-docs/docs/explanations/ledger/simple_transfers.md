@@ -1,9 +1,9 @@
 ---
 keywords:
-- Ledger
-- UTXO
-- explanation
-description: Simple Transfers in Stardust.  
+  - Ledger
+  - UTXO
+  - explanation
+description: Simple Transfers in Stardust.
 image: /img/logo/preview.png
 ---
 
@@ -12,9 +12,10 @@ image: /img/logo/preview.png
 ## Transfer of Funds
 
 A simple transaction moves funds from one user account to another. On a high level, transactions must define 3 things:
- - **Inputs**: previously created unpsent transaction outputs holding funds that the transaction consumes,
- - **Unlock Blocks**: they hold the signatures authorizing the consumption of inputs,
- - **Outputs**: newly created outputs holding transferred funds.
+
+- **Inputs**: previously created unpsent transaction outputs holding funds that the transaction consumes,
+- **Unlock Blocks**: they hold the signatures authorizing the consumption of inputs,
+- **Outputs**: newly created outputs holding transferred funds.
 
 In Stardust a simple transfer may be realized with an output type called [Basic Output](https://github.com/iotaledger/tips/blob/master/tips/TIP-0018/tip-0018.md#basic-output).
 Just like every other output type, Basic Outputs define the base token funds they hold in the _Amount_ field. They have
@@ -26,10 +27,11 @@ The signature signs the whole content of the transaction, thereby authorizing th
 declaring the intention to create new outputs.
 
 Transaction A simply:
- - consumes as input a _Basic Output_ with _100i_ locked under _ownerAddress_,
- - provides an _Unlock_, namely a _Signature Unlock_ that contains a valid signature of the transaction content corresponding
-   to the private key behind _ownerAddress_,
- - creates a new _Basic Output_ with _100i_ locked under the recipients address, namely _recipientAddress_.
+
+- consumes as input a _Basic Output_ with _100i_ locked under _ownerAddress_,
+- provides an _Unlock_, namely a _Signature Unlock_ that contains a valid signature of the transaction content corresponding
+  to the private key behind _ownerAddress_,
+- creates a new _Basic Output_ with _100i_ locked under the recipients address, namely _recipientAddress_.
 
 ![Transaction A - Changing owner](/img/stardust_explanations/stardust_ledger_anatomy/simple_transaction/tx_A.svg)
 
@@ -42,7 +44,6 @@ _Expiration Unlock Condition_ can unlock it.
 
 Transaction B defines an output that can only be unlocked by the recipient in a transaction that is confirmed by a
 milestone where _Milestone Unix Timestamp_ is less, than the _Unix Time_ defined in the _Expiration Unlock Condition_.
-
 
 ![Transaction B - Sending funds with expiration](/img/stardust_explanations/stardust_ledger_anatomy/simple_transaction/tx_B.svg)
 
@@ -108,7 +109,7 @@ takes full custody of the 101i in the output.
 ## Sender Feature
 
 Next to _Unlock Conditions_, Stardust allows to define optional _Features_ on outputs of a transfer that do not impact
-the actual unlocking of the created output.  The _Sender_ feature is one of such features, which lets the creator of the output
+the actual unlocking of the created output. The _Sender_ feature is one of such features, which lets the creator of the output
 define an explicit _Sender Address_ attribute for an output.
 
 The _Sender_ attribute is validated on protocol level. Validation ensures that the transaction that created the output
@@ -117,8 +118,9 @@ was created by someone who controls the _Sender_ address.
 
 Transaction J shows how one can add a sender attribute to a created output. Note, that Transaction J would be invalid
 if:
- - _Basic Output #15_ wouldn't be locked to _senderAddress_, or
- - _Basic Output #16_ would define _Sender_ as anything else than _senderAddress_ from _Basic Output #15_.
+
+- _Basic Output #15_ wouldn't be locked to _senderAddress_, or
+- _Basic Output #16_ would define _Sender_ as anything else than _senderAddress_ from _Basic Output #15_.
 
 ![Transaction J - Sender Feature](/img/stardust_explanations/stardust_ledger_anatomy/simple_transaction/tx_J.svg)
 

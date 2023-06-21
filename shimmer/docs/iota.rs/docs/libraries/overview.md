@@ -2,17 +2,18 @@
 description: There are Node.js, Python and Java bindings for the iota.rs client Rust library.
 image: /img/logo/iota_mark_light.png
 keywords:
-- Rust
-- Node.js
-- Java
-- Python
-- bindings
+  - Rust
+  - Node.js
+  - Java
+  - Python
+  - bindings
 ---
+
 # IOTA Client libraries
 
 Choose your programming language:
 
-- [Rust](../getting_started/rust.mdx) 
+- [Rust](../getting_started/rust.mdx)
 - [Node.js](../getting_started/nodejs.mdx)
 - [Java](../getting_started/java.mdx)
 - [Python](../getting_started/python.mdx)

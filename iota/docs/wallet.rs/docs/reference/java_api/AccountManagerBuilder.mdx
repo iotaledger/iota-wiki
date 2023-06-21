@@ -8,18 +8,18 @@ Initialises a new instance of the account manager builder with the default stora
 
 Sets the storage config to be used.
 
-| Parameter       | Type |  Description |
-| --------------- | -------- | -------- |
-| storage_path | String |  The path where the database file will be saved |
-| password | String |  The storage password |
+| Parameter    | Type   | Description                                    |
+| ------------ | ------ | ---------------------------------------------- |
+| storage_path | String | The path where the database file will be saved |
+| password     | String | The storage password                           |
 
 ### withPollingInterval(polling_interval): [AccountManagerBuilder](#accountmanagerbuilder)
 
 Sets the polling interval.
 
-| Parameter       | Type |  Description |
-| --------------- | -------- | -------- |
-| polling_interval | float |  the polling interval in seconds |
+| Parameter        | Type  | Description                     |
+| ---------------- | ----- | ------------------------------- |
+| polling_interval | float | the polling interval in seconds |
 
 ### withSkipPolling(): [AccountManagerBuilder](#accountmanagerbuilder)
 
@@ -29,9 +29,9 @@ Skip polling
 
 Sets the number of outputs an address must have to trigger the automatic consolidation process.
 
-| Parameter       | Type |  Description |
-| --------------- | -------- | -------- |
-| threshold | long |  The number of outputs an address must have to trigger the automatic consolidation process |
+| Parameter | Type | Description                                                                               |
+| --------- | ---- | ----------------------------------------------------------------------------------------- |
+| threshold | long | The number of outputs an address must have to trigger the automatic consolidation process |
 
 ### withAutomaticOutputConsolidationDisabled(): [AccountManagerBuilder](#accountmanagerbuilder)
 
@@ -48,7 +48,7 @@ Enables event persistence.
 ### withMultipleEmptyAccounts(): [AccountManagerBuilder](#accountmanagerbuilder)
 
 Enables creating multiple accounts without history.
- The wallet disables it by default to simplify account discovery.
+The wallet disables it by default to simplify account discovery.
 
 ### finish(): [AccountManager](#accountmanager)
 

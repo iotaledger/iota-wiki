@@ -15,30 +15,30 @@ Possible InclusionStates of transactions sent with the wallet
 
 ### Pending
 
-• **Pending** = ``"Pending"``
+• **Pending** = `"Pending"`
 
 The transaction is pending
 
-___
+---
 
 ### Confirmed
 
-• **Confirmed** = ``"Confirmed"``
+• **Confirmed** = `"Confirmed"`
 
 The transaction is confirmed
 
-___
+---
 
 ### Conflicting
 
-• **Conflicting** = ``"Conflicting"``
+• **Conflicting** = `"Conflicting"`
 
 The transaction is conflicting
 
-___
+---
 
 ### UnknownPruned
 
-• **UnknownPruned** = ``"UnknownPruned"``
+• **UnknownPruned** = `"UnknownPruned"`
 
 The transaction and its in- and outputs are pruned, so it's unknown if it got confirmed or was conflicting

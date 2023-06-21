@@ -2,14 +2,15 @@
 image: /img/integration-services/logo/integration_services.png
 description: This section describes all the configuration parameters which you can customize in your Integration Service Kubernetes instance.
 keywords:
-- how to
-- integration services kubernetes
-- services kubernetes instance
-- Kubernetes
-- configuration
-- MongoDB
-- APIs
+  - how to
+  - integration services kubernetes
+  - services kubernetes instance
+  - Kubernetes
+  - configuration
+  - MongoDB
+  - APIs
 ---
+
 # Configuration
 
 This section describes all the configuration parameters which you can customize in your Integration Service Kubernetes
@@ -23,7 +24,7 @@ kubectl apply -f kubernetes/optional -f kubernetes/ -f kubernetes/kong-gw
 ## Database
 
 You can connect the Integration Service APIs to any MongoDB database by changing the following parameters
-in  [kubernetes/is-config.yaml file](https://github.com/iotaledger/integration-services/blob/master/kubernetes/is-config.yaml) :
+in [kubernetes/is-config.yaml file](https://github.com/iotaledger/integration-services/blob/master/kubernetes/is-config.yaml) :
 
 - `DATABASE_URL` with the connection string
 - `DATABASE_NAME` with the database name
@@ -54,7 +55,7 @@ The default values are:
 ## Number of Replicas
 
 You can set up the initial number of replicas in the `.spec.replicas` field
-in [kubernetes/audit-trail-deployment.yaml  file](https://github.com/iotaledger/integration-services/blob/master/kubernetes/audit-trail-deployment.yaml) and [kubernetes/ssi-bridge-deployment.yaml  file](https://github.com/iotaledger/integration-services/blob/master/kubernetes/ssi-bridge-deployment.yaml)
+in [kubernetes/audit-trail-deployment.yaml file](https://github.com/iotaledger/integration-services/blob/master/kubernetes/audit-trail-deployment.yaml) and [kubernetes/ssi-bridge-deployment.yaml file](https://github.com/iotaledger/integration-services/blob/master/kubernetes/ssi-bridge-deployment.yaml)
 .
 
 ## Private Tangle

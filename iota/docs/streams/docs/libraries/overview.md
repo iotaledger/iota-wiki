@@ -2,17 +2,18 @@
 description: The `streams` library is written in Rust. You can also find bindings written for wasm and C.
 image: /img/overview/layered_overview.svg
 keywords:
-- bindings
-- library
-- rust
-- wasm
-- c
+  - bindings
+  - library
+  - rust
+  - wasm
+  - c
 ---
+
 # IOTA Streams libraries
 
 The `streams` library is currently available in the following languages:
 
-- [Rust](./rust/getting_started.md) 
+- [Rust](./rust/getting_started.md)
 
 ## Getting Started
 

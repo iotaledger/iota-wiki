@@ -1,16 +1,17 @@
 ---
-description:  Choose your binding and get started with the IOTA Client Library. 
+description: Choose your binding and get started with the IOTA Client Library.
 image: /img/Banner/banner_client_lib_getting_started.png
 keywords:
-- rust
-- python
-- node.js
-- java
-- javascript
-- IDE
-- WASM
-- reference
+  - rust
+  - python
+  - node.js
+  - java
+  - javascript
+  - IDE
+  - WASM
+  - reference
 ---
+
 # Getting Started
 
 ![IOTA Client Library getting started](/img/Banner/banner_client_lib_getting_started.png)
@@ -20,12 +21,12 @@ keywords:
 This wiki assumes that you already know the basics of your programming language of choice. Companies and communities
 behind each language provide their documentation for beginners you can use as reference:
 
-* [Java](https://www.java.com/).
-* [JavaScript](https://www.w3schools.com/js/).
-* [Node.js](https://nodejs.org/en/docs/guides/).
-* [Python](https://www.python.org/about/gettingstarted/).
-* [Rust](https://www.rust-lang.org/learn/get-started).
-* [Wasm](https://webassembly.org/).
+- [Java](https://www.java.com/).
+- [JavaScript](https://www.w3schools.com/js/).
+- [Node.js](https://nodejs.org/en/docs/guides/).
+- [Python](https://www.python.org/about/gettingstarted/).
+- [Rust](https://www.rust-lang.org/learn/get-started).
+- [Wasm](https://webassembly.org/).
 
 If you have little experience coding, you could start with any of those first or refer to these guides as you read
 through our iota.rs documentation. If you have never programmed in your life, MIT has published an
@@ -38,8 +39,8 @@ To check out our examples and write and test your own code, you will need an IDE
 stable internet connection. You also need to set up your environment by following instructions for one of the
 languages:
 
-* [Java](./java/getting_started.mdx).
-* [Node.js](./nodejs.md).
-* [Python](./python.mdx).
-* [Rust](./rust.md).
-* [Wasm](./wasm.md).
+- [Java](./java/getting_started.mdx).
+- [Node.js](./nodejs.md).
+- [Python](./python.mdx).
+- [Rust](./rust.md).
+- [Wasm](./wasm.md).

@@ -2,15 +2,15 @@
 description: Getting started with the official IOTA Client Library Java binding.
 image: /img/logo/iota_mark_light.png
 keywords:
-- Java
-- Rust
-- jar
-- maven
-- environment variable
+  - Java
+  - Rust
+  - jar
+  - maven
+  - environment variable
 ---
 
-import PasswordStorage from "../../_admonitions/_password_storage.md";
-import CompilingForAndroid from "../../_admonitions/_compiling_for_android.md";
+import PasswordStorage from '../../_admonitions/_password_storage.md';
+import CompilingForAndroid from '../../_admonitions/_compiling_for_android.md';
 
 # Getting Started
 
@@ -110,7 +110,7 @@ private static void nodeInfo() {
     String nodeUrl = "https://chrysalis-nodes.iota.cafe:443";
     Client iota = Client.Builder()
         // Insert your node URL here
-        .withNode(nodeUrl) 
+        .withNode(nodeUrl)
         // Choose pow mode
         .withLocalPow(true)
         //Then create the Client instance

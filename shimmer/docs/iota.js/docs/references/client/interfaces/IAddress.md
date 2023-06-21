@@ -1,11 +1,12 @@
 ---
 description: iota.js API reference
 keywords:
-- references
-- api references
-- typescript
+  - references
+  - api references
+  - typescript
 image: /img/client_banner.png
 ---
+
 # Interface: IAddress
 
 Interface defining address.
@@ -35,7 +36,7 @@ Convert the public key to an address.
 
 The address.
 
-___
+---
 
 ### verify
 
@@ -45,10 +46,10 @@ Use the public key to validate the address.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `publicKey` | `Uint8Array` | - |
-| `address` | `Uint8Array` | The address to verify. |
+| Name        | Type         | Description            |
+| :---------- | :----------- | :--------------------- |
+| `publicKey` | `Uint8Array` | -                      |
+| `address`   | `Uint8Array` | The address to verify. |
 
 #### Returns
 

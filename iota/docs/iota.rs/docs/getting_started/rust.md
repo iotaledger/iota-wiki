@@ -2,12 +2,13 @@
 description: Getting started with the official IOTA Client Library Rust library.
 image: /img/logo/iota_mark_light.png
 keywords:
-- Rust
-- install
-- cargo
-- system environment variables
-- how to
+  - Rust
+  - install
+  - cargo
+  - system environment variables
+  - how to
 ---
+
 # Getting Started With Rust
 
 ## Requirements
@@ -21,7 +22,7 @@ rustup update stable
 
 The nightly version should also be fine, but some changes might not be compatible.
 
-`no_std` is not currently supported.  We are working on it in [Bee](https://github.com/iotaledger/bee), and will provide 
+`no_std` is not currently supported. We are working on it in [Bee](https://github.com/iotaledger/bee), and will provide
 it as feature once the new implementation is ready.
 
 ## Using the Library

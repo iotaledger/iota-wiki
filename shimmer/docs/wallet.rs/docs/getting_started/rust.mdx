@@ -3,14 +3,13 @@ title: Getting Started With Rust
 description: Getting started with the official IOTA Wallet Rust library.
 image: /img/logo/wallet_light.png
 keywords:
-
-- Rust
-- install
-- cargo
-- system environment variables
-
+  - Rust
+  - install
+  - cargo
+  - system environment variables
 ---
-import WarningPasswordStorage from '../_admonitions/_warning_safe_password_storage.md'
+
+import WarningPasswordStorage from '../_admonitions/_warning_safe_password_storage.md';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
@@ -19,7 +18,7 @@ the source code from the [official GitHub repository](https://github.com/iotaled
 
 ## Requirements
 
-* [Rust and Cargo](https://doc.rust-lang.org/cargo/getting-started/installation.html).
+- [Rust and Cargo](https://doc.rust-lang.org/cargo/getting-started/installation.html).
 
 :::info
 
@@ -36,11 +35,14 @@ need install additional build tools on your system to run the build process succ
 
 You can install all needed prerequisites on Windows with [Chocolatey](https://community.chocolatey.org/packages?q=msys). If you have any of the tools already installed just remove them from the command
 
-Install Chocolatey with 
+Install Chocolatey with
+
 ```
 Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
 ```
+
 and install the needed packages with
+
 ```
 choco install visualstudio2022buildtools visualstudio2022-workload-vctools rust-ms msys2 llvm
 ```
@@ -63,7 +65,6 @@ OPENSSL_ROOT_DIR=$(brew --prefix openssl@1.1)
 You can install _cmake_ and _openssl_ with your distro's package manager or download from their websites. On Debian and
 Ubuntu you will also need the [_build-essential_](https://packages.debian.org/sid/build-essential) package.
 
-
 </TabItem>
 </Tabs>
 
@@ -81,8 +82,7 @@ tokio = "1.21.2"
 
 In order to use the library, you need to create an `AccountManager`:
 
-<WarningPasswordStorage/>
-
+<WarningPasswordStorage />
 
 ```rust reference
 https://github.com/iotaledger/wallet.rs/tree/develop/wallet/examples/01_create_wallet.rs

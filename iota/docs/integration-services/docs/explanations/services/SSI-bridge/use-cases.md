@@ -1,16 +1,17 @@
 ---
 image: /img/integration-services/logo/integration_services.png
-description: In the context of e-commerce and the ENSURESEC project, you can use the SSI-Bridge to verify identities for products, customer, sellers, and clients.   
+description: In the context of e-commerce and the ENSURESEC project, you can use the SSI-Bridge to verify identities for products, customer, sellers, and clients.
 keywords:
-- explanation
-- ecommerce
-- scanner device
-- customer
-- credentials
-- decentralized identity
-- shopping app
-- products authenticity credentials
+  - explanation
+  - ecommerce
+  - scanner device
+  - customer
+  - credentials
+  - decentralized identity
+  - shopping app
+  - products authenticity credentials
 ---
+
 # Use Cases
 
 In the context of the [ENSURESEC](https://www.ensuresec.eu/) e-commerce ecosystem, the proposed use cases will use the
@@ -54,7 +55,7 @@ customer and avoid threats and frauds in the distribution chain.
 4. The customer receives the product delivery and presents the credential in a QR code to the courier scanner.
 5. The courier acquires the credential and uses the Ecommerce-SSI Bridge to verify its authenticity. The delivery is safely
    handed over to the right customer.
-6. (optional) The customer acquires the courier’s scanner credential (see [ Delivery Company Identity and Scanners Verification]( #delivery-company-identity-and-scanners-verification))
+6. (optional) The customer acquires the courier’s scanner credential (see [ Delivery Company Identity and Scanners Verification](#delivery-company-identity-and-scanners-verification))
    and uses the Ecommerce-SSI Bridge to verify that it belongs to an authorized delivery company assuring the customer
    knows the delivery is legitimate.
 

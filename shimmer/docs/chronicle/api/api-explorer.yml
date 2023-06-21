@@ -6,13 +6,13 @@ info:
     email: contact@iota.org
   license:
     name: Apache 2.0
-    url: "http://www.apache.org/licenses/LICENSE-2.0.html"
+    url: 'http://www.apache.org/licenses/LICENSE-2.0.html'
   version: 1.0.0
 externalDocs:
   description: Find out more about IOTA
-  url: "https://iota.org"
+  url: 'https://iota.org'
 servers:
-  - url: "http://127.0.0.1:8000"
+  - url: 'http://127.0.0.1:8000'
 tags:
   - name: balance
     description: Everything about balances.
@@ -31,23 +31,23 @@ paths:
       description: >-
         Returns the balance of IOTA tokens owned by a given bech32 address.
       parameters:
-        - $ref: "#/components/parameters/address"
+        - $ref: '#/components/parameters/address'
       responses:
-        "200":
+        '200':
           description: Successful operation.
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/BalanceResponse"
+                $ref: '#/components/schemas/BalanceResponse'
               examples:
                 default:
-                  $ref: "#/components/examples/balance-example"
-        "400":
-          $ref: "#/components/responses/BadRequest"
-        "404":
-          $ref: "#/components/responses/NoResults"
-        "500":
-          $ref: "#/components/responses/InternalError"
+                  $ref: '#/components/examples/balance-example'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '404':
+          $ref: '#/components/responses/NoResults'
+        '500':
+          $ref: '#/components/responses/InternalError'
   /api/explorer/v2/blocks/{blockId}/children:
     get:
       tags:
@@ -60,22 +60,22 @@ paths:
           name: blockId
           schema:
             type: string
-          example: "0xf532a53545103276b46876c473846d98648ee418468bce76df4868648dd73e5d"
+          example: '0xf532a53545103276b46876c473846d98648ee418468bce76df4868648dd73e5d'
           required: true
           description: Identifier of the block.
       responses:
-        "200":
+        '200':
           description: Successful operation.
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/BlockChildrenResponse"
-        "400":
-          $ref: "#/components/responses/BadRequest"
-        "404":
-          $ref: "#/components/responses/NoResults"
-        "500":
-          $ref: "#/components/responses/InternalError"
+                $ref: '#/components/schemas/BlockChildrenResponse'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '404':
+          $ref: '#/components/responses/NoResults'
+        '500':
+          $ref: '#/components/responses/InternalError'
   /api/explorer/v2/milestones:
     get:
       tags:
@@ -84,27 +84,27 @@ paths:
       description: >-
         Returns a list of milestones matching provided query parameters.
       parameters:
-        - $ref: "#/components/parameters/startTimestamp"
-        - $ref: "#/components/parameters/endTimestamp"
-        - $ref: "#/components/parameters/sort"
-        - $ref: "#/components/parameters/pageSize"
-        - $ref: "#/components/parameters/cursor"
+        - $ref: '#/components/parameters/startTimestamp'
+        - $ref: '#/components/parameters/endTimestamp'
+        - $ref: '#/components/parameters/sort'
+        - $ref: '#/components/parameters/pageSize'
+        - $ref: '#/components/parameters/cursor'
       responses:
-        "200":
+        '200':
           description: Successful operation.
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/MilestonesResponse"
+                $ref: '#/components/schemas/MilestonesResponse'
               examples:
                 default:
-                  $ref: "#/components/examples/milestones-example"
-        "400":
-          $ref: "#/components/responses/BadRequest"
-        "404":
-          $ref: "#/components/responses/NoResults"
-        "500":
-          $ref: "#/components/responses/InternalError"
+                  $ref: '#/components/examples/milestones-example'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '404':
+          $ref: '#/components/responses/NoResults'
+        '500':
+          $ref: '#/components/responses/InternalError'
   /api/explorer/v2/milestones/{milestoneId}/blocks:
     get:
       tags:
@@ -113,26 +113,26 @@ paths:
       description: >-
         Returns block IDs in a given milestone by ID sorted by white flag index.
       parameters:
-        - $ref: "#/components/parameters/milestoneId"
-        - $ref: "#/components/parameters/sort"
-        - $ref: "#/components/parameters/pageSize"
-        - $ref: "#/components/parameters/cursor"
+        - $ref: '#/components/parameters/milestoneId'
+        - $ref: '#/components/parameters/sort'
+        - $ref: '#/components/parameters/pageSize'
+        - $ref: '#/components/parameters/cursor'
       responses:
-        "200":
+        '200':
           description: Successful operation.
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/BlocksByMilestoneResponse"
+                $ref: '#/components/schemas/BlocksByMilestoneResponse'
               examples:
                 default:
-                  $ref: "#/components/examples/blocks-by-milestone-example"
-        "400":
-          $ref: "#/components/responses/BadRequest"
-        "404":
-          $ref: "#/components/responses/NoResults"
-        "500":
-          $ref: "#/components/responses/InternalError"
+                  $ref: '#/components/examples/blocks-by-milestone-example'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '404':
+          $ref: '#/components/responses/NoResults'
+        '500':
+          $ref: '#/components/responses/InternalError'
   /api/explorer/v2/milestones/by-index/{milestoneIndex}/blocks:
     get:
       tags:
@@ -141,26 +141,26 @@ paths:
       description: >-
         Returns block IDs in a given milestone by index sorted by white flag index.
       parameters:
-        - $ref: "#/components/parameters/milestoneIndex"
-        - $ref: "#/components/parameters/sort"
-        - $ref: "#/components/parameters/pageSize"
-        - $ref: "#/components/parameters/cursor"
+        - $ref: '#/components/parameters/milestoneIndex'
+        - $ref: '#/components/parameters/sort'
+        - $ref: '#/components/parameters/pageSize'
+        - $ref: '#/components/parameters/cursor'
       responses:
-        "200":
+        '200':
           description: Successful operation.
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/BlocksByMilestoneResponse"
+                $ref: '#/components/schemas/BlocksByMilestoneResponse'
               examples:
                 default:
-                  $ref: "#/components/examples/blocks-by-milestone-example"
-        "400":
-          $ref: "#/components/responses/BadRequest"
-        "404":
-          $ref: "#/components/responses/NoResults"
-        "500":
-          $ref: "#/components/responses/InternalError"
+                  $ref: '#/components/examples/blocks-by-milestone-example'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '404':
+          $ref: '#/components/responses/NoResults'
+        '500':
+          $ref: '#/components/responses/InternalError'
   /api/explorer/v2/ledger/updates/by-address/{address}:
     get:
       tags:
@@ -169,27 +169,27 @@ paths:
       description: >-
         Returns all ledger updates involving a given bech32 address, sorted by milestone index.
       parameters:
-        - $ref: "#/components/parameters/address"
-        - $ref: "#/components/parameters/pageSize"
-        - $ref: "#/components/parameters/sort"
-        - $ref: "#/components/parameters/startMilestoneIndex"
-        - $ref: "#/components/parameters/cursor"
+        - $ref: '#/components/parameters/address'
+        - $ref: '#/components/parameters/pageSize'
+        - $ref: '#/components/parameters/sort'
+        - $ref: '#/components/parameters/startMilestoneIndex'
+        - $ref: '#/components/parameters/cursor'
       responses:
-        "200":
+        '200':
           description: Successful operation.
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/LedgerUpdatesByAddressResponse"
+                $ref: '#/components/schemas/LedgerUpdatesByAddressResponse'
               examples:
                 default:
-                  $ref: "#/components/examples/ledger-updates-address-example"
-        "400":
-          $ref: "#/components/responses/BadRequest"
-        "404":
-          $ref: "#/components/responses/NoResults"
-        "500":
-          $ref: "#/components/responses/InternalError"
+                  $ref: '#/components/examples/ledger-updates-address-example'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '404':
+          $ref: '#/components/responses/NoResults'
+        '500':
+          $ref: '#/components/responses/InternalError'
   /api/explorer/v2/ledger/updates/by-milestone/{milestoneId}:
     get:
       tags:
@@ -197,25 +197,25 @@ paths:
       summary: Returns all ledger updates for a given milestone index.
       description: Returns all ledger updates that occurred in the milestone with the provided index.
       parameters:
-        - $ref: "#/components/parameters/milestoneId"
-        - $ref: "#/components/parameters/pageSize"
-        - $ref: "#/components/parameters/cursor"
+        - $ref: '#/components/parameters/milestoneId'
+        - $ref: '#/components/parameters/pageSize'
+        - $ref: '#/components/parameters/cursor'
       responses:
-        "200":
+        '200':
           description: Successful operation.
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/LedgerUpdatesByMilestoneResponse"
+                $ref: '#/components/schemas/LedgerUpdatesByMilestoneResponse'
               examples:
                 default:
-                  $ref: "#/components/examples/ledger-updates-milestone-example"
-        "400":
-          $ref: "#/components/responses/BadRequest"
-        "404":
-          $ref: "#/components/responses/NoResults"
-        "500":
-          $ref: "#/components/responses/InternalError"
+                  $ref: '#/components/examples/ledger-updates-milestone-example'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '404':
+          $ref: '#/components/responses/NoResults'
+        '500':
+          $ref: '#/components/responses/InternalError'
   /api/explorer/v2/ledger/richest-addresses:
     get:
       tags:
@@ -224,24 +224,24 @@ paths:
       description: >-
         Returns the top richest addresses at the ledger state specified by the provided index.
       parameters:
-        - $ref: "#/components/parameters/ledgerIndex"
-        - $ref: "#/components/parameters/top"
+        - $ref: '#/components/parameters/ledgerIndex'
+        - $ref: '#/components/parameters/top'
       responses:
-        "200":
+        '200':
           description: Successful operation.
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/RichestAddressesResponse"
+                $ref: '#/components/schemas/RichestAddressesResponse'
               examples:
                 default:
-                  $ref: "#/components/examples/richest-addresses-example"
-        "400":
-          $ref: "#/components/responses/BadRequest"
-        "404":
-          $ref: "#/components/responses/NoResults"
-        "500":
-          $ref: "#/components/responses/InternalError"
+                  $ref: '#/components/examples/richest-addresses-example'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '404':
+          $ref: '#/components/responses/NoResults'
+        '500':
+          $ref: '#/components/responses/InternalError'
   /api/explorer/v2/ledger/token-distribution:
     get:
       tags:
@@ -250,23 +250,23 @@ paths:
       description: >-
         Returns the distribution of IOTA tokens at the ledger state specified by the provided index.
       parameters:
-        - $ref: "#/components/parameters/ledgerIndex"
+        - $ref: '#/components/parameters/ledgerIndex'
       responses:
-        "200":
+        '200':
           description: Successful operation.
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/TokenDistributionResponse"
+                $ref: '#/components/schemas/TokenDistributionResponse'
               examples:
                 default:
-                  $ref: "#/components/examples/token-distribution-example"
-        "400":
-          $ref: "#/components/responses/BadRequest"
-        "404":
-          $ref: "#/components/responses/NoResults"
-        "500":
-          $ref: "#/components/responses/InternalError"
+                  $ref: '#/components/examples/token-distribution-example'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '404':
+          $ref: '#/components/responses/NoResults'
+        '500':
+          $ref: '#/components/responses/InternalError'
 components:
   schemas:
     BalanceResponse:
@@ -408,7 +408,7 @@ components:
                 type: integer
                 description: The corresponding payload type of the block if it exists.
             required:
-            - blockId
+              - blockId
         cursor:
           type: string
           description: The cursor which can be used to retrieve the next logical page of results.
@@ -425,9 +425,9 @@ components:
             properties:
               address:
                 oneOf:
-                  - $ref: "https://raw.githubusercontent.com/iotaledger/tips/main/tips/TIP-0025/core-rest-api.yaml#/components/schemas/Ed25519Address"
-                  - $ref: "https://raw.githubusercontent.com/iotaledger/tips/main/tips/TIP-0025/core-rest-api.yaml#/components/schemas/AliasAddress"
-                  - $ref: "https://raw.githubusercontent.com/iotaledger/tips/main/tips/TIP-0025/core-rest-api.yaml#/components/schemas/NFTAddress"
+                  - $ref: 'https://raw.githubusercontent.com/iotaledger/tips/main/tips/TIP-0025/core-rest-api.yaml#/components/schemas/Ed25519Address'
+                  - $ref: 'https://raw.githubusercontent.com/iotaledger/tips/main/tips/TIP-0025/core-rest-api.yaml#/components/schemas/AliasAddress'
+                  - $ref: 'https://raw.githubusercontent.com/iotaledger/tips/main/tips/TIP-0025/core-rest-api.yaml#/components/schemas/NFTAddress'
               balance:
                 type: string
                 description: The total balance within this range.
@@ -475,13 +475,13 @@ components:
       content:
         application/json:
           schema:
-            $ref: "https://raw.githubusercontent.com/iotaledger/tips/main/tips/TIP-0025/core-rest-api.yaml#/components/schemas/NotFoundResponse"
+            $ref: 'https://raw.githubusercontent.com/iotaledger/tips/main/tips/TIP-0025/core-rest-api.yaml#/components/schemas/NotFoundResponse'
     BadRequest:
-      description: "Unsuccessful operation: indicates that the provided parameters are invalid."
+      description: 'Unsuccessful operation: indicates that the provided parameters are invalid.'
       content:
         application/json:
           schema:
-            $ref: "https://raw.githubusercontent.com/iotaledger/tips/main/tips/TIP-0025/core-rest-api.yaml#/components/schemas/BadRequestResponse"
+            $ref: 'https://raw.githubusercontent.com/iotaledger/tips/main/tips/TIP-0025/core-rest-api.yaml#/components/schemas/BadRequestResponse'
     InternalError:
       description: >-
         Unsuccessful operation: indicates that an unexpected, internal
@@ -490,7 +490,7 @@ components:
       content:
         application/json:
           schema:
-            $ref: "https://raw.githubusercontent.com/iotaledger/tips/main/tips/TIP-0025/core-rest-api.yaml#/components/schemas/InternalErrorResponse"
+            $ref: 'https://raw.githubusercontent.com/iotaledger/tips/main/tips/TIP-0025/core-rest-api.yaml#/components/schemas/InternalErrorResponse'
   parameters:
     address:
       in: path
@@ -505,7 +505,7 @@ components:
       name: milestoneId
       schema:
         type: string
-      example: "0x7a09324557e9200f39bf493fc8fd6ac43e9ca750c6f6d884cc72386ddcb7d695"
+      example: '0x7a09324557e9200f39bf493fc8fd6ac43e9ca750c6f6d884cc72386ddcb7d695'
       required: true
       description: Milestone id for which to receive ledger updates.
     pageSize:
@@ -614,22 +614,22 @@ components:
     milestones-example:
       value:
         items:
-          - milestoneId: "0x7a09324557e9200f39bf493fc8fd6ac43e9ca750c6f6d884cc72386ddcb7d695"
+          - milestoneId: '0x7a09324557e9200f39bf493fc8fd6ac43e9ca750c6f6d884cc72386ddcb7d695'
             index: 100
-          - milestoneId: "0xfa0de75d225cca2799395e5fc340702fc7eac821d2bdd79911126f131ae097a2"
+          - milestoneId: '0xfa0de75d225cca2799395e5fc340702fc7eac821d2bdd79911126f131ae097a2'
             index: 101
-        cursor: "102.2"
+        cursor: '102.2'
     richest-addresses-example:
       value:
         top:
           - address:
               - type: 0
-                pubKeyHash: "0x3845105b59429361a75b3203a6e24e16d19540aad6bd1936449b62f1c4bbe5da"
-            balance: "2779164783277761"
+                pubKeyHash: '0x3845105b59429361a75b3203a6e24e16d19540aad6bd1936449b62f1c4bbe5da'
+            balance: '2779164783277761'
           - address:
               - type: 0
-                pubKeyHash: "0xd0d361341fa3bb2f6855039a82ee9ea470c3336eaf34d22767fdfa901ba63e31"
-            balance: "7398600000"
+                pubKeyHash: '0xd0d361341fa3bb2f6855039a82ee9ea470c3336eaf34d22767fdfa901ba63e31'
+            balance: '7398600000'
         ledgerIndex: 1005429
     token-distribution-example:
       value:
@@ -637,26 +637,26 @@ components:
           - range:
               - start: 100000
                 end: 1000000
-            addressCount: "39"
-            totalBalance: "14612000"
+            addressCount: '39'
+            totalBalance: '14612000'
           - range:
               - start: 1000000
                 end: 10000000
-            addressCount: "22"
-            totalBalance: "41274500"
+            addressCount: '22'
+            totalBalance: '41274500'
           - range:
               - start: 100000000
                 end: 1000000000
-            addressCount: "27"
-            totalBalance: "25486528000"
+            addressCount: '27'
+            totalBalance: '25486528000'
         ledgerIndex: 1005429
     blocks-by-milestone-example:
       value:
         blocks:
-          - blockId: "0xd0d361341fa3bb2f6855039a82ee9ea470c3336eaf34d22767fdfa901ba63e31"
+          - blockId: '0xd0d361341fa3bb2f6855039a82ee9ea470c3336eaf34d22767fdfa901ba63e31'
             payloadType: 0
-          - blockId: "0x7a09324557e9200f39bf493fc8fd6ac43e9ca750c6f6d884cc72386ddcb7d695"
+          - blockId: '0x7a09324557e9200f39bf493fc8fd6ac43e9ca750c6f6d884cc72386ddcb7d695'
             payloadType: 0
-          - blockId: "0xfa0de75d225cca2799395e5fc340702fc7eac821d2bdd79911126f131ae097a2"
+          - blockId: '0xfa0de75d225cca2799395e5fc340702fc7eac821d2bdd79911126f131ae097a2'
             payloadType: 0
-        cursor: "4.100"
+        cursor: '4.100'

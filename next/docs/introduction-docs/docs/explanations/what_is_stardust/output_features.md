@@ -1,13 +1,13 @@
 ---
 keywords:
-- Stardust
-- Shimmer
-- Upgrades
-- Features
-- Output
-- Extended UTXO
-- Protocol Improvements
-- explanation
+  - Stardust
+  - Shimmer
+  - Upgrades
+  - Features
+  - Output
+  - Extended UTXO
+  - Protocol Improvements
+  - explanation
 description: The new output features enrich the properties of outputs.
 image: /img/logo/preview.png
 ---
@@ -34,12 +34,14 @@ The combination of the _Sender Feature_ with the _Metadata Feature_ makes it pos
 ledger with verified sources.
 
 ## Issuer
+
 The _Issuer Feature_ follows the same address verification logic as the _Sender Feature_, but it is only available for
 NFTs. Upon NFT minting, one might attach the issuer identity to the token if ownership of the issuer address is
 proved by unlocking it in the same transaction. Artists that disclose their issuer identities off-chain protect
 buyers and traders from fakes.
 
 ## Tag
+
 A _Tag Feature_ is a small piece of data intended to be used as an indexation tag for the output by custom applications
 built around the network. It becomes possible to map data (Metadata Feature) stored in the ledger by a specific party
 (Sender Feature) for a specific purpose (Tag Feature).

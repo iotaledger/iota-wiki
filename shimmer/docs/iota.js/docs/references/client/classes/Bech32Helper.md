@@ -1,11 +1,12 @@
 ---
 description: iota.js API reference
 keywords:
-- references
-- api references
-- typescript
+  - references
+  - api references
+  - typescript
 image: /img/client_banner.png
 ---
+
 # Class: Bech32Helper
 
 Convert address to bech32.
@@ -14,8 +15,8 @@ Convert address to bech32.
 
 ### Properties
 
-- [BECH32\_DEFAULT\_HRP\_MAIN](Bech32Helper.md#bech32_default_hrp_main)
-- [BECH32\_DEFAULT\_HRP\_DEV](Bech32Helper.md#bech32_default_hrp_dev)
+- [BECH32_DEFAULT_HRP_MAIN](Bech32Helper.md#bech32_default_hrp_main)
+- [BECH32_DEFAULT_HRP_DEV](Bech32Helper.md#bech32_default_hrp_dev)
 
 ### Methods
 
@@ -30,17 +31,17 @@ Convert address to bech32.
 
 ## Properties
 
-### BECH32\_DEFAULT\_HRP\_MAIN
+### BECH32_DEFAULT_HRP_MAIN
 
-▪ `Static` **BECH32\_DEFAULT\_HRP\_MAIN**: `string` = `"iota"`
+▪ `Static` **BECH32_DEFAULT_HRP_MAIN**: `string` = `"iota"`
 
 The default human readable part of the bech32 addresses for mainnet, currently 'iota'.
 
-___
+---
 
-### BECH32\_DEFAULT\_HRP\_DEV
+### BECH32_DEFAULT_HRP_DEV
 
-▪ `Static` **BECH32\_DEFAULT\_HRP\_DEV**: `string` = `"atoi"`
+▪ `Static` **BECH32_DEFAULT_HRP_DEV**: `string` = `"atoi"`
 
 The default human readable part of the bech32 addresses for devnet, currently 'atoi'.
 
@@ -54,11 +55,11 @@ Encode an address to bech32.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `addressType` | `number` | The address type to encode. |
-| `addressBytes` | `Uint8Array` | The address bytes to encode. |
-| `humanReadablePart` | `string` | The human readable part to use. |
+| Name                | Type         | Description                     |
+| :------------------ | :----------- | :------------------------------ |
+| `addressType`       | `number`     | The address type to encode.     |
+| `addressBytes`      | `Uint8Array` | The address bytes to encode.    |
+| `humanReadablePart` | `string`     | The human readable part to use. |
 
 #### Returns
 
@@ -66,7 +67,7 @@ Encode an address to bech32.
 
 The array formated as hex.
 
-___
+---
 
 ### fromBech32
 
@@ -76,9 +77,9 @@ Decode an address from bech32.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `bech32Text` | `string` | The bech32 text to decode. |
+| Name                | Type     | Description                     |
+| :------------------ | :------- | :------------------------------ |
+| `bech32Text`        | `string` | The bech32 text to decode.      |
 | `humanReadablePart` | `string` | The human readable part to use. |
 
 #### Returns
@@ -87,7 +88,7 @@ Decode an address from bech32.
 
 The address type and address bytes or undefined if it cannot be decoded.
 
-___
+---
 
 ### addressFromBech32
 
@@ -97,9 +98,9 @@ Decode an address from bech32.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `bech32Address` | `string` | The bech32 address to decode. |
+| Name                | Type     | Description                     |
+| :------------------ | :------- | :------------------------------ |
+| `bech32Address`     | `string` | The bech32 address to decode.   |
 | `humanReadablePart` | `string` | The human readable part to use. |
 
 #### Returns
@@ -108,7 +109,7 @@ Decode an address from bech32.
 
 The address type.
 
-___
+---
 
 ### matches
 
@@ -118,9 +119,9 @@ Does the provided string look like it might be an bech32 address with matching h
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `bech32Text` | `string` | The bech32 text to text. |
+| Name                | Type     | Description                       |
+| :------------------ | :------- | :-------------------------------- |
+| `bech32Text`        | `string` | The bech32 text to text.          |
 | `humanReadablePart` | `string` | The human readable part to match. |
 
 #### Returns

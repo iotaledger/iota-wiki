@@ -2,14 +2,13 @@
 description: Introducing the HORNET nodes configuration files and their settings.
 image: /img/logo/HornetLogo.png
 keywords:
-- IOTA Node 
-- HORNET Node
-- Configuration
-- REST API
-- Dashboard
-- how to
+  - IOTA Node
+  - HORNET Node
+  - Configuration
+  - REST API
+  - Dashboard
+  - how to
 ---
-
 
 # Post-installation
 
@@ -19,15 +18,15 @@ Once you have deployed HORNET, you can set all the parameters using configuratio
 
 The most important configuration files are:
 
-* `config.json` - Includes all configuration flags and their values.
-* `peering.json` - Includes all connection details to your static peers (neighbors).
+- `config.json` - Includes all configuration flags and their values.
+- `peering.json` - Includes all connection details to your static peers (neighbors).
 
 ## Default Configuration
 
 There are default configuration files available that you can use:
 
-* `config_testnet.json` - Includes the default values required to join the Shimmer Testnet.
-* `config_defaults.json` - Includes all default parameters used by HORNET. You can use this file as a reference when customizing your `config.json`
+- `config_testnet.json` - Includes the default values required to join the Shimmer Testnet.
+- `config_defaults.json` - Includes all default parameters used by HORNET. You can use this file as a reference when customizing your `config.json`
 
 You can pick one of these files and use it as your `config.json` to join the configured network.
 
@@ -44,9 +43,9 @@ Since offering the HTTP REST API to the public can consume your node's resources
 
 ### Routes
 
-* `restAPI.publicRoutes` defines which routes can be called without JWT authorization. 
-* `restAPI.protectedRoutes` defines which routes require JWT authorization.
-* All other routes will not be exposed.
+- `restAPI.publicRoutes` defines which routes can be called without JWT authorization.
+- `restAPI.protectedRoutes` defines which routes require JWT authorization.
+- All other routes will not be exposed.
 
 ### JWT Auth
 
@@ -60,7 +59,7 @@ If you are running our [recommended setup](using_docker.md) then see [here](usin
 
 ### Proof-of-Work
 
-If you are concerned with resource consumption, consider turning off `restAPI.pow.enabled`. 
+If you are concerned with resource consumption, consider turning off `restAPI.pow.enabled`.
 This way, the clients must perform proof of work locally before submitting a block for broadcast.
 If you would like to offer proof of work to clients, consider increasing the `restAPI.pow.workerCount` to provide a faster block submission experience.
 
@@ -70,4 +69,5 @@ We recommend that you provide your HTTP REST API behind a reverse proxy, such as
 When using our [recommended setup](using_docker.md) this is done for you automatically.
 
 ### Other
+
 You can find all the HTTP REST API related options in the [`config.json` reference](../references/configuration.md#restapi)

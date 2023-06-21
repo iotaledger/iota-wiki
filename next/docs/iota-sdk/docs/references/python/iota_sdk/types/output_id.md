@@ -16,4 +16,3 @@ def __init__(transaction_id: HexStr, output_index: int)
 ```
 
 Initialize OutputId
-

@@ -1,11 +1,11 @@
 ---
-description: "Perform an Alias Transaction with iota.js."
+description: 'Perform an Alias Transaction with iota.js.'
 image: /img/client_banner.png
 keywords:
-- tutorial
-- alias
-- output
-- transaction
+  - tutorial
+  - alias
+  - output
+  - transaction
 ---
 
 # Create an Alias Transaction
@@ -16,18 +16,20 @@ The State Controller of an Alias can perform transactions that change the Alias 
 
 To create this transaction, you will need the following:
 
-* A Shimmer Node. You can use the [Shimmer Testnet nodes](https://api.testnet.shimmer.network).
+- A Shimmer Node. You can use the [Shimmer Testnet nodes](https://api.testnet.shimmer.network).
 
-* The Alias ID of your Alias, in hexadecimal format `0x6dd4...`.
+- The Alias ID of your Alias, in hexadecimal format `0x6dd4...`.
 
-* The keys of the state controller of your Alias.
+- The keys of the state controller of your Alias.
 
 ```typescript
-const client = new SingleNodeClient(API_ENDPOINT, { powProvider: new NeonPowProvider() });
+const client = new SingleNodeClient(API_ENDPOINT, {
+  powProvider: new NeonPowProvider(),
+});
 const protocolInfo = await client.protocolInfo();
 
-const stateControllerPubKey = "0x55419...";
-const stateControllerPrivateKey = "0xa060ff...";
+const stateControllerPubKey = '0x55419...';
+const stateControllerPrivateKey = '0xa060ff...';
 ```
 
 ## Query Alias Output
@@ -38,10 +40,11 @@ You will first need to find the Alias Output of your Alias. The easiest way to d
 const indexerPlugin = new IndexerPluginClient(client);
 const outputList = await indexerPlugin.alias(aliasId);
 const consumedOutputId = outputList.items[0];
-console.log("Consumed Output Id", consumedOutputId);
+console.log('Consumed Output Id', consumedOutputId);
 
 const initialAliasOutputDetails = await client.output(consumedOutputId);
-const initialAliasOutput: IAliasOutput = initialAliasOutputDetails.output as IAliasOutput;
+const initialAliasOutput: IAliasOutput =
+  initialAliasOutputDetails.output as IAliasOutput;
 ```
 
 ## Assign the New State
@@ -51,10 +54,12 @@ To continue, you can create the new Alias Output by cloning the one received in 
 As the proof size does not change between state changes, your new Alias Output does not need to increase its storage deposit.
 
 ```typescript
-const nextAliasOutput: IAliasOutput = JSON.parse(JSON.stringify(initialAliasOutput));
+const nextAliasOutput: IAliasOutput = JSON.parse(
+  JSON.stringify(initialAliasOutput),
+);
 nextAliasOutput.stateIndex++;
-nextAliasOutput.stateMetadata = "0x98765";
-console.log("New state index: ", nextAliasOutput.stateIndex);
+nextAliasOutput.stateMetadata = '0x98765';
+console.log('New state index: ', nextAliasOutput.stateIndex);
 nextAliasOutput.aliasId = aliasId;
 ```
 
@@ -69,14 +74,18 @@ const outputs: IAliasOutput[] = [];
 inputs.push(TransactionHelper.inputFromOutputId(consumedOutputId));
 outputs.push(nextAliasOutput);
 
-const inputsCommitment = TransactionHelper.getInputsCommitment([initialAliasOutput]);
+const inputsCommitment = TransactionHelper.getInputsCommitment([
+  initialAliasOutput,
+]);
 
 const transactionEssence: ITransactionEssence = {
-    type: TRANSACTION_ESSENCE_TYPE,
-    networkId: TransactionHelper.networkIdFromNetworkName(protocolInfo.networkName),
-    inputs,
-    inputsCommitment,
-    outputs
+  type: TRANSACTION_ESSENCE_TYPE,
+  networkId: TransactionHelper.networkIdFromNetworkName(
+    protocolInfo.networkName,
+  ),
+  inputs,
+  inputsCommitment,
+  outputs,
 };
 ```
 
@@ -92,19 +101,25 @@ const essenceFinal = wsTsxEssence.finalBytes();
 const essenceHash = Blake2b.sum256(essenceFinal);
 
 const unlockCondition: ISignatureUnlock = {
-    type: SIGNATURE_UNLOCK_TYPE,
-    signature: {
-        type: ED25519_SIGNATURE_TYPE,
-        publicKey: stateControllerPubKey,
-        signature: Converter.bytesToHex(Ed25519.sign(Converter.hexToBytes(stateControllerPrivateKey), essenceHash), true)
-    }
+  type: SIGNATURE_UNLOCK_TYPE,
+  signature: {
+    type: ED25519_SIGNATURE_TYPE,
+    publicKey: stateControllerPubKey,
+    signature: Converter.bytesToHex(
+      Ed25519.sign(
+        Converter.hexToBytes(stateControllerPrivateKey),
+        essenceHash,
+      ),
+      true,
+    ),
+  },
 };
 
 const transactionPayload: ITransactionPayload = {
-    type: TRANSACTION_PAYLOAD_TYPE,
-    essence: transactionEssence,
-    unlocks: [unlockCondition]
-};   
+  type: TRANSACTION_PAYLOAD_TYPE,
+  essence: transactionEssence,
+  unlocks: [unlockCondition],
+};
 ```
 
 ## Submit the Block
@@ -113,14 +128,14 @@ Finally, you should submit the block. After the block is confirmed, if you query
 
 ```typescript
 const block: IBlock = {
-    protocolVersion: DEFAULT_PROTOCOL_VERSION,
-    parents: [],
-    payload: transactionPayload,
-    nonce: "0",
+  protocolVersion: DEFAULT_PROTOCOL_VERSION,
+  parents: [],
+  payload: transactionPayload,
+  nonce: '0',
 };
 
 const blockId = await client.blockSubmit(block);
-console.log("Block Id:", blockId);
+console.log('Block Id:', blockId);
 ```
 
 ## Putting It All Together

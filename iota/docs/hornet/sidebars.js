@@ -12,8 +12,8 @@
 module.exports = {
   docs: [
     {
-      type: "category",
-      label: "Hornet",
+      type: 'category',
+      label: 'Hornet',
       collapsed: false,
       items: [
         {
@@ -42,8 +42,8 @@ module.exports = {
               type: 'doc',
               id: 'how_tos/run_as_a_verifier',
               label: 'Run a Node as a Verifier',
-            }
-          ]
+            },
+          ],
         },
         {
           type: 'category',
@@ -58,10 +58,10 @@ module.exports = {
               type: 'doc',
               id: 'references/api_reference',
               label: 'API Reference',
-            }
-          ]
-        }
-      ]
-    }
-  ]
+            },
+          ],
+        },
+      ],
+    },
+  ],
 };

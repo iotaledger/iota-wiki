@@ -2,15 +2,13 @@
 description: 'The `accounts` contract keeps the ledger of on-chain accounts.'
 image: /img/logo/WASP_logo_dark.png
 keywords:
-
-- core contracts
-- accounts
-- deposit
-- withdraw
-- assets
-- balance
-- reference
-
+  - core contracts
+  - accounts
+  - deposit
+  - withdraw
+  - assets
+  - balance
+  - reference
 ---
 
 # The `accounts` Contract
@@ -144,7 +142,7 @@ Returns the amount of base tokens owned by any AgentID `a` on the chain.
 
 ### `balanceNativeToken(a AgentID, N TokenID)`
 
-Returns the amount of native tokens with Token ID `N` owned by any AgentID `a`  on the chain.
+Returns the amount of native tokens with Token ID `N` owned by any AgentID `a` on the chain.
 
 #### Parameters
 
@@ -257,6 +255,3 @@ TokenID = [38]byte
 - The issuer ([`iotago::Address`](https://github.com/iotaledger/iota.go/blob/develop/address.go)).
 - The NFT metadata: the length (`uint16`) followed by the data bytes.
 - The NFT owner (`AgentID`).
-
-
-

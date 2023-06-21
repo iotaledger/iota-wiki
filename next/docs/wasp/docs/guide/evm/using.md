@@ -2,19 +2,17 @@
 description: How to configure and use EVM support in IOTA Smart Contracts.
 image: /img/logo/WASP_logo_dark.png
 keywords:
-
-- configure
-- using
-- EVM
-- Ethereum
-- Solidity
-- deploy
-- hardhat
-- metamask
-- JSON
-- RPC
-- how to
-
+  - configure
+  - using
+  - EVM
+  - Ethereum
+  - Solidity
+  - deploy
+  - hardhat
+  - metamask
+  - JSON
+  - RPC
+  - how to
 ---
 
 # How to use EVM in IOTA Smart Contracts
@@ -25,7 +23,7 @@ When [deploying an IOTA Smart Contracts chain](../chains_and_nodes/setting-up-a-
 added with the default configuration. The `wasp-cli chain deploy` command accepts some EVM-specific options listed
 below:
 
-* `--evm-chainid <n>`: EVM chain ID (default: 1074).
+- `--evm-chainid <n>`: EVM chain ID (default: 1074).
 
   :::caution Register a Unique Chain ID
 
@@ -35,11 +33,11 @@ below:
 
   :::
 
-* `--evm-block-keep-amount <n>`: Amount of blocks to keep in storage. By default, ISC will keep all blocks.
+- `--evm-block-keep-amount <n>`: Amount of blocks to keep in storage. By default, ISC will keep all blocks.
 
-* `--evm-gas-limit <n>`: Block gas limit (15000000 gas units by default).
+- `--evm-gas-limit <n>`: Block gas limit (15000000 gas units by default).
 
-* `--evm-gas-ratio <a>:<b>`: ISC gas : EVM gas ratio (1:1 by default). You can change the gas ratio after deployment by
+- `--evm-gas-ratio <a>:<b>`: ISC gas : EVM gas ratio (1:1 by default). You can change the gas ratio after deployment by
   calling the `setGasRatio` function of
   the [`evm`](../core_concepts/core_contracts/evm.md) [core contract](../core_concepts/core_contracts/overview.md).
 
@@ -68,4 +66,3 @@ wasp-cli chain deposit 0xa1b2c3d4... base:1000000
 You can point any Ethereum tool like MetaMask or Hardhat to the JSON-RPC endpoint displayed on the ISC chain dashboard
 page (**Wasp dashboard** > **Chains** > **[your chain id]**. Once connected, you should be able to use your tool as if
 it was connected to any other EVM based chain.
-

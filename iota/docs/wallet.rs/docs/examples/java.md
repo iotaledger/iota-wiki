@@ -2,13 +2,13 @@
 description: The Official IOTA Wallet Library Java API examples.
 image: /img/logo/iota_mark_light.png
 keywords:
-- api
-- Java
-- examples
-- type
-- node
-- client
-- reference
+  - api
+  - Java
+  - examples
+  - type
+  - node
+  - client
+  - reference
 ---
 
 # Examples in Java
@@ -30,7 +30,6 @@ You can run the example with Gradle or Maven using the following commands:
 Gradle: `./gradlew examples:java-app:test --info`
 
 Maven: `cd examples/java-app && mvn test`
-
 
 ## Backup and Restore
 
@@ -64,7 +63,6 @@ String id = account.id();
 // backup the stored accounts to ./backup/${backup_name}
 Path backupPath = manager.backup("./backup");
 ```
-
 
 4. You can import the backup later, or in another application using the following snippet:
 
@@ -141,6 +139,6 @@ System.out.println("Message sent: " + message.id());
 
 ```
 
-***
+---
 
 You can find more advanced examples in the [examples](https://github.com/iotaledger/wallet.rs/tree/dev/bindings/java/examples/java-app) folder.

@@ -4,14 +4,15 @@ sidebar_label: Verifiable Presentations
 description: Explain how a VC is created and verified
 image: /img/Identity_icon.png
 keywords:
-- verifiable
-- presentations
+  - verifiable
+  - presentations
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import Announcement from '../../../src/partials/_announcement.mdx';
 
-<Announcement/>
+<Announcement />
 
 A verifiable presentation is the recommended data format for sharing one or more [verifiable credentials](./overview.mdx).
 It is constructed and signed by a holder to prove control over their credentials and can be presented to a verifier for [validation](#validation).
@@ -88,7 +89,7 @@ The framework checks:
 
 Note that a verifier may specify which DID Documents to use for the holder and issuers, otherwise they are resolved from the Tangle automatically.
 
-Currently, the following are *not* checked automatically:
+Currently, the following are _not_ checked automatically:
 
 - **Data schemas**: credentials that specify a [schema](https://www.w3.org/TR/vc-data-model/#data-schemas) property should be examined to ensure conformance.
 - **Fitness for purpose**: whether the credentials in a presentation and the data within them are acceptable and valid depends on the context in which they are used. Verifiers should ensure that the credential types, subjects, and schemas sent by a holder match what was requested.
@@ -170,7 +171,6 @@ serialize it to JSON for transmission, deserialize it on the receiving side as a
 
 <Tabs>
 <TabItem value="Rust" label="Rust">
-
 
 ```rust reference
 https://github.com/iotaledger/identity.rs/blob/support/v0.6/examples/account/create_vp.rs

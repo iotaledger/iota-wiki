@@ -17,18 +17,18 @@ def __init__(type, sender=None, issuer=None, data=None, tag=None)
 
 Initialize a feature
 
-Parameters
-----------
+## Parameters
+
 type : FeatureType
-    The type of feature
+The type of feature
 sender : Address
-    Sender address
+Sender address
 issuer : Address
-    Issuer Address
+Issuer Address
 data : string
-    Hex encoded metadata
+Hex encoded metadata
 tag : string
-    Hex encoded tag used to index the output
+Hex encoded tag used to index the output
 
 ## SenderFeature Objects
 
@@ -44,10 +44,10 @@ def __init__(sender)
 
 Initialize a SenderFeature
 
-Parameters
-----------
+## Parameters
+
 sender : Address
-    Sender address
+Sender address
 
 ## IssuerFeature Objects
 
@@ -63,10 +63,10 @@ def __init__(issuer)
 
 Initialize an IssuerFeature
 
-Parameters
-----------
+## Parameters
+
 issuer : Address
-    Issuer address
+Issuer address
 
 ## MetadataFeature Objects
 
@@ -82,10 +82,10 @@ def __init__(data: HexStr)
 
 Initialize a MetadataFeature
 
-Parameters
-----------
+## Parameters
+
 data : HexStr
-    Hex encoded metadata
+Hex encoded metadata
 
 ## TagFeature Objects
 
@@ -101,8 +101,7 @@ def __init__(tag: HexStr)
 
 Initialize a TagFeature
 
-Parameters
-----------
-tag : HexStr
-    Hex encoded tag used to index the output
+## Parameters
 
+tag : HexStr
+Hex encoded tag used to index the output

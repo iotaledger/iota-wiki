@@ -35,7 +35,7 @@ Generates a new mnemonic.
 
 `string`
 
-___
+---
 
 ### mnemonicToHexSeed
 
@@ -45,15 +45,15 @@ Returns a hex encoded seed for a mnemonic.
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
+| Name       | Type     |
+| :--------- | :------- |
 | `mnemonic` | `string` |
 
 #### Returns
 
 `string`
 
-___
+---
 
 ### computeAliasId
 
@@ -63,15 +63,15 @@ Computes the alias id for the given alias output id.
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
+| Name       | Type     |
+| :--------- | :------- |
 | `outputId` | `string` |
 
 #### Returns
 
 `string`
 
-___
+---
 
 ### computeNftId
 
@@ -81,15 +81,15 @@ Computes the NFT id for the given NFT output id.
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
+| Name       | Type     |
+| :--------- | :------- |
 | `outputId` | `string` |
 
 #### Returns
 
 `string`
 
-___
+---
 
 ### computeFoundryId
 
@@ -99,17 +99,17 @@ Computes the foundry id.
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `aliasAddress` | `string` |
-| `serialNumber` | `number` |
+| Name              | Type     |
+| :---------------- | :------- |
+| `aliasAddress`    | `string` |
+| `serialNumber`    | `number` |
 | `tokenSchemeKind` | `number` |
 
 #### Returns
 
 `string`
 
-___
+---
 
 ### parseBech32Address
 
@@ -119,15 +119,15 @@ Returns a valid Address parsed from a String.
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
+| Name      | Type     |
+| :-------- | :------- |
 | `address` | `string` |
 
 #### Returns
 
 `Address`
 
-___
+---
 
 ### blockId
 
@@ -137,15 +137,15 @@ Returns a block ID (Blake2b256 hash of the block bytes)
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
+| Name    | Type     |
+| :------ | :------- |
 | `block` | `IBlock` |
 
 #### Returns
 
 `string`
 
-___
+---
 
 ### bech32ToHex
 
@@ -155,15 +155,15 @@ Transforms bech32 to hex.
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
+| Name     | Type     |
+| :------- | :------- |
 | `bech32` | `string` |
 
 #### Returns
 
 `string`
 
-___
+---
 
 ### hexToBech32
 
@@ -173,16 +173,16 @@ Transforms a hex encoded address to a bech32 encoded address.
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `hex` | `string` |
+| Name        | Type     |
+| :---------- | :------- |
+| `hex`       | `string` |
 | `bech32Hrp` | `string` |
 
 #### Returns
 
 `string`
 
-___
+---
 
 ### aliasIdToBech32
 
@@ -192,16 +192,16 @@ Transforms an alias id to a bech32 encoded address.
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `aliasId` | `string` |
+| Name        | Type     |
+| :---------- | :------- |
+| `aliasId`   | `string` |
 | `bech32Hrp` | `string` |
 
 #### Returns
 
 `string`
 
-___
+---
 
 ### nftIdToBech32
 
@@ -211,16 +211,16 @@ Transforms an nft id to a bech32 encoded address.
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `nftId` | `string` |
+| Name        | Type     |
+| :---------- | :------- |
+| `nftId`     | `string` |
 | `bech32Hrp` | `string` |
 
 #### Returns
 
 `string`
 
-___
+---
 
 ### hexPublicKeyToBech32Address
 
@@ -230,16 +230,16 @@ Transforms a hex encoded public key to a bech32 encoded address.
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `hex` | `string` |
+| Name        | Type     |
+| :---------- | :------- |
+| `hex`       | `string` |
 | `bech32Hrp` | `string` |
 
 #### Returns
 
 `string`
 
-___
+---
 
 ### isAddressValid
 
@@ -249,15 +249,15 @@ Checks if a String is a valid bech32 encoded address.
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
+| Name      | Type     |
+| :-------- | :------- |
 | `address` | `string` |
 
 #### Returns
 
 `boolean`
 
-___
+---
 
 ### hashTransactionEssence
 
@@ -267,15 +267,15 @@ Compute the hash of a transaction essence.
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
+| Name      | Type                  |
+| :-------- | :-------------------- |
 | `essence` | `ITransactionEssence` |
 
 #### Returns
 
 `string`
 
-___
+---
 
 ### verifyEd25519Signature
 
@@ -285,17 +285,17 @@ Verifies the Ed25519Signature for a message against an Ed25519Address.
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `signature` | `IEd25519Signature` |
-| `message` | `string` |
-| `address` | [`Ed25519Address`](Ed25519Address.md) |
+| Name        | Type                                  |
+| :---------- | :------------------------------------ |
+| `signature` | `IEd25519Signature`                   |
+| `message`   | `string`                              |
+| `address`   | [`Ed25519Address`](Ed25519Address.md) |
 
 #### Returns
 
 `boolean`
 
-___
+---
 
 ### verifyMnemonic
 
@@ -305,8 +305,8 @@ Verify if a mnemonic is a valid BIP39 mnemonic.
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
+| Name       | Type     |
+| :--------- | :------- |
 | `mnemonic` | `string` |
 
 #### Returns

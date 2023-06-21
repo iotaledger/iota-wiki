@@ -18,7 +18,7 @@ The account metadata
 
 The account alias
 
-___
+---
 
 ### coinType
 
@@ -26,7 +26,7 @@ ___
 
 The used coin type
 
-___
+---
 
 ### index
 

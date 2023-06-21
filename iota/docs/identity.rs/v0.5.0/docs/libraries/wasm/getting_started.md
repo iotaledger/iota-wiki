@@ -4,14 +4,15 @@ sidebar_label: Getting Started
 description: Getting started with the IOTA Identity WASM Library.
 image: /img/Identity_icon.png
 keywords:
-- WASM
-- install
-- npm
-- yarn
-- build
-- nodejs
-- webpack
+  - WASM
+  - install
+  - npm
+  - yarn
+  - build
+  - nodejs
+  - webpack
 ---
+
 # IOTA Identity WASM
 
 > This is the beta version of the official WASM bindings for [IOTA Identity](https://github.com/iotaledger/identity.rs).
@@ -19,16 +20,19 @@ keywords:
 ## [API Reference](https://wiki.iota.org/identity.rs/libraries/wasm/api_reference)
 
 ## [Account Examples](https://github.com/iotaledger/identity.rs/blob/main/bindings/wasm/examples-account/README.md)
+
 ## [Low-Level Examples](https://github.com/iotaledger/identity.rs/blob/main/bindings/wasm/examples/README.md)
 
 ## Install the library:
 
 Latest Release: this version matches the main branch of this repository, is stable and will have changelogs.
+
 ```bash
 npm install @iota/identity-wasm
 ```
 
 Development Release: this version matches the dev branch of this repository, may see frequent breaking changes and has the latest code changes.
+
 ```bash
 npm install @iota/identity-wasm@dev
 ```
@@ -44,6 +48,7 @@ cargo install --force wasm-bindgen-cli
 ```
 
 Then, install the necessary dependencies using:
+
 ```bash
 npm install
 ```
@@ -65,7 +70,8 @@ npm run build:web
 The minimum supported version for node is: `v16.0.0`
 
 ## NodeJS Usage
-<!-- 
+
+<!--
 Test this example using https://github.com/anko/txm: `txm README.md`
 
 Replace imports with local paths for txm:
@@ -75,30 +81,30 @@ cat \
 | node
 -->
 <!-- !test check Nodejs Example -->
+
 ```javascript
-const identity = require('@iota/identity-wasm/node')
+const identity = require('@iota/identity-wasm/node');
 
 async function main() {
+  // The creation step generates a keypair, builds an identity
+  // and publishes it to the IOTA mainnet.
+  const builder = new identity.AccountBuilder();
+  const account = await builder.createIdentity();
 
-    // The creation step generates a keypair, builds an identity
-    // and publishes it to the IOTA mainnet.
-    const builder = new identity.AccountBuilder();
-    const account = await builder.createIdentity();
+  // Retrieve the DID of the newly created identity.
+  const did = account.did();
 
-    // Retrieve the DID of the newly created identity.
-    const did = account.did();
+  // Print the DID of the created Identity.
+  console.log(did.toString());
 
-    // Print the DID of the created Identity.
-    console.log(did.toString())
+  // Print the local state of the DID Document
+  console.log(account.document());
 
-    // Print the local state of the DID Document
-    console.log(account.document());
-
-    // Print the Explorer URL for the DID.
-    console.log(`Explorer Url:`, identity.ExplorerUrl.mainnet().resolverUrl(did));
+  // Print the Explorer URL for the DID.
+  console.log(`Explorer Url:`, identity.ExplorerUrl.mainnet().resolverUrl(did));
 }
 
-main()
+main();
 ```
 
 ## Web Setup
@@ -117,16 +123,18 @@ $ npm install rollup-plugin-copy --save-dev
 
 ```js
 // Include the copy plugin
-import copy from 'rollup-plugin-copy'
+import copy from 'rollup-plugin-copy';
 
 // Add the copy plugin to the `plugins` array of your rollup config:
 copy({
-  targets: [{
-    src: 'node_modules/@iota/identity-wasm/web/identity_wasm_bg.wasm',
-    dest: 'public',
-    rename: 'identity_wasm_bg.wasm'
-  }]
-})
+  targets: [
+    {
+      src: 'node_modules/@iota/identity-wasm/web/identity_wasm_bg.wasm',
+      dest: 'public',
+      rename: 'identity_wasm_bg.wasm',
+    },
+  ],
+});
 ```
 
 ### Webpack
@@ -179,9 +187,9 @@ identity.init().then(() => {
 // or
 
 (async () => {
-  
+
   await identity.init()
-    
+
   // The creation step generates a keypair, builds an identity
   // and publishes it to the IOTA mainnet.
   let builder = new identity.AccountBuilder();
@@ -195,7 +203,7 @@ identity.init().then(() => {
 
   // Print the local state of the DID Document
   console.log(account.document());
-  
+
 })()
 
 // Default path is "identity_wasm_bg.wasm", but you can override it like this

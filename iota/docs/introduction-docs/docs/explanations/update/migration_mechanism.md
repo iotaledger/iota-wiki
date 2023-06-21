@@ -1,15 +1,15 @@
 ---
-description: This page describes the migration components and mechanism used to migrate from IOTA 1.0 to IOTA 1.5 (Chrysalis). 
+description: This page describes the migration components and mechanism used to migrate from IOTA 1.0 to IOTA 1.5 (Chrysalis).
 image: /img/logo/Chrysalis_logo_dark.png
 keywords:
-- WOTS addresses
-- trustless
-- migration mechanism
-- treasury
-- Firefly
-- wallet
-- legacy nodes
-- explanation
+  - WOTS addresses
+  - trustless
+  - migration mechanism
+  - treasury
+  - Firefly
+  - wallet
+  - legacy nodes
+  - explanation
 ---
 
 # How the IOTA Chrysalis Phase 2 Token Migration Works
@@ -26,26 +26,26 @@ Before proceeding into the developed mechanism, below is our reasoning for why o
   couldn't move their tokens to an exchange (which only supports Chrysalis Phase 2 IOTA).
 - `Supporting WOTS on Chrysalis Phase 2 (and only allowing to send to non-WOTS addresses)`: while this was also a
   viable option, we decided not to include support for WOTS as it brought several legacy problems:
-    - WOTS signatures are very large and make up a disproportional amount of data in a transaction (note that our PoW
-      requirement in Chrysalis' Phase 2 was dependent on the size of the message). Additionally, there were no real bounds
-      on how big such signatures could grow to (even if, per the default, we only supported three security levels in our
-      libraries).
-    - We would have needed to pollute our new Chrysalis Phase 2 models with support for these addresses and signatures,
-      adding unnecessary complexity to what should be a clean protocol.
-    - Chrysalis Phase 2 nodes would have needed to keep a spent address list to inform wallets that they had vulernable
-      addresses.
+  - WOTS signatures are very large and make up a disproportional amount of data in a transaction (note that our PoW
+    requirement in Chrysalis' Phase 2 was dependent on the size of the message). Additionally, there were no real bounds
+    on how big such signatures could grow to (even if, per the default, we only supported three security levels in our
+    libraries).
+  - We would have needed to pollute our new Chrysalis Phase 2 models with support for these addresses and signatures,
+    adding unnecessary complexity to what should be a clean protocol.
+  - Chrysalis Phase 2 nodes would have needed to keep a spent address list to inform wallets that they had vulernable
+    addresses.
 
 ## Components
 
 The developed migration mechanism was built from the following components:
 
 - Chrysalis phase 2 data types (for reference, see [the RFC](https://github.com/luca-moser/protocol-rfcs/blob/rfc/wotsicide/text/0035-wotsicide/0035-wotsicide.md) for details):
-    - `Treasury Output`: an object which specified an amount of tokens held in the treasury.
-    - `Treasury Input`: an object which referenced a previous `Treasury Output`.
-    - `Treasury Transaction`: an object which defined a `Treasury Input` referencing the last `Treasury Output` and a
-      new `Treasury Output` that held the delta of what the `Treasury Transaction` was spending.
-    - `Receipt`: an object which held a pointer to a legacy milestone index, a list of funds to mint, and
-      a `Treasury Transaction`. A `Receipt` can only be an inner payload of a milestone.
+  - `Treasury Output`: an object which specified an amount of tokens held in the treasury.
+  - `Treasury Input`: an object which referenced a previous `Treasury Output`.
+  - `Treasury Transaction`: an object which defined a `Treasury Input` referencing the last `Treasury Output` and a
+    new `Treasury Output` that held the delta of what the `Treasury Transaction` was spending.
+  - `Receipt`: an object which held a pointer to a legacy milestone index, a list of funds to mint, and
+    a `Treasury Transaction`. A `Receipt` can only be an inner payload of a milestone.
 - Chrysalis Phase 2 nodes which validated receipts.
 - Legacy nodes which provided a special API command for the above Chrysalis Phase 2 nodes.
 - `Treasury`: this was the last `Treasury Output` in the ledger. At one point, only one existed.
@@ -64,15 +64,15 @@ transactions. Likewise, a `Treasury Transaction` was only valid as an inner payl
 1. In essence, a `Receipt` carried the information about funds which were migrated or "burned" to a `migration address`
    on the legacy network. A `migration address` looks like any other normal address on the legacy network but it
    encapsulates actual information, such as:
-    - The target Ed25519 address on the Chrysalis Phase 2 network from which the token holder wants their funds to be
-      accessible from.
-    - A checksum of that Ed25519 address.
-    - A tryte prefix `TRANSFER` (these addresses always start with this prefix).
+   - The target Ed25519 address on the Chrysalis Phase 2 network from which the token holder wants their funds to be
+     accessible from.
+   - A checksum of that Ed25519 address.
+   - A tryte prefix `TRANSFER` (these addresses always start with this prefix).
 2. As mentioned above, a `Receipt` could only be contained in a milestone and therefore the Coordinator on the Chrysalis
    Phase 2 network.
-    1. Periodically polled data from a legacy node about what kind of newly confirmed burned/migrated funds there were (while also performing WOTS signature verification on these and the legacy milestone bundle).
-    2. Then a milestone is produced with a `Receipt` that contained those funds, where within the `Receipt`,
-       a `Treasury Transaction` was placed which deducts the sum of tokens migrated from the `Treasury`.
+   1. Periodically polled data from a legacy node about what kind of newly confirmed burned/migrated funds there were (while also performing WOTS signature verification on these and the legacy milestone bundle).
+   2. Then a milestone is produced with a `Receipt` that contained those funds, where within the `Receipt`,
+      a `Treasury Transaction` was placed which deducts the sum of tokens migrated from the `Treasury`.
 3. Chrysalis Phase 2 nodes then saw receipts when applying milestones and automatically generated outputs for the Ed25519
    address as defined in the origin `migration address` in the legacy network. As an optional step (which is not turned
    on by default), every node could have been configured to verify whether the funds in the receipt were really migrated in the

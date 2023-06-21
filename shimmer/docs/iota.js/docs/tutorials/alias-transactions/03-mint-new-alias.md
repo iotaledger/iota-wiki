@@ -1,12 +1,12 @@
 ---
-description: "Mint a new Alias with iota.js."
+description: 'Mint a new Alias with iota.js.'
 image: /img/client_banner.png
 keywords:
-- tutorial
-- alias
-- address
-- output
-- mint
+  - tutorial
+  - alias
+  - address
+  - output
+  - mint
 ---
 
 # Mint a New Alias Address
@@ -19,31 +19,35 @@ Provided the proof size in bytes does not change between state changes, a new Al
 
 To mint a new Alias and generate its genesis, you will need the following:
 
-* An unspent Output that holds enough funds for the minimal storage deposit needed for the genesis Alias Output. In the Testnet, you can [request funds through the Faucet](../value-transactions/06-request-funds-from-the-faucet.md).
+- An unspent Output that holds enough funds for the minimal storage deposit needed for the genesis Alias Output. In the Testnet, you can [request funds through the Faucet](../value-transactions/06-request-funds-from-the-faucet.md).
 
-* The key pair that corresponds to the Shimmer address that owns the output, as you need to unlock a certain amount of funds to cover the storage deposit of the new minted Alias.
+- The key pair that corresponds to the Shimmer address that owns the output, as you need to unlock a certain amount of funds to cover the storage deposit of the new minted Alias.
 
-* A State Controller Address. You will use the State Controller address private key to unlock the Alias Output of your new Alias so that it can transition to a new state when needed. If you haven’t generated any addresses before, you can find detailed instructions in the [Send Value Transactions tutorial](../value-transactions/04-generate-addresses.md).
+- A State Controller Address. You will use the State Controller address private key to unlock the Alias Output of your new Alias so that it can transition to a new state when needed. If you haven’t generated any addresses before, you can find detailed instructions in the [Send Value Transactions tutorial](../value-transactions/04-generate-addresses.md).
 
-* A Governor Address. With the private key of the Governor, you will be able to change the State Controller Address or even destroy the Alias.
+- A Governor Address. With the private key of the Governor, you will be able to change the State Controller Address or even destroy the Alias.
 
-* The data you want to store on the Alias Output (represented as a hexadecimal string). Remember, the longer the data, the higher the storage deposit you will need.
+- The data you want to store on the Alias Output (represented as a hexadecimal string). Remember, the longer the data, the higher the storage deposit you will need.
 
 ```typescript
-const consumedOutputId = "0x45678...";
+const consumedOutputId = '0x45678...';
 
 // Ed25519 Addresses (PubKeyHash)
-const sourceAddress = "0x377a...";
+const sourceAddress = '0x377a...';
 
 // Ed25519 Key pairs
-const sourceAddressPublicKey = "0x1be6ea...";
-const sourceAddressPrivateKey = "0xb2a5c46a...";
+const sourceAddressPublicKey = '0x1be6ea...';
+const sourceAddressPrivateKey = '0xb2a5c46a...';
 
 // Ed25519 Addresses (PubKeyHash)
-const stateControllerAddress = "0x647f7a9fd831c6e6034e7e5496a50aed17ef7d2add200bb4cfde7649ce2b0aaf";
-const governorAddress = "0x22847390aad479d34d52e4fb58a01d752887ae0247708f7e66b488c5b5ba2751";
+const stateControllerAddress =
+  '0x647f7a9fd831c6e6034e7e5496a50aed17ef7d2add200bb4cfde7649ce2b0aaf';
+const governorAddress =
+  '0x22847390aad479d34d52e4fb58a01d752887ae0247708f7e66b488c5b5ba2751';
 
-const client = new SingleNodeClient(API_ENDPOINT, { powProvider: new NeonPowProvider() });
+const client = new SingleNodeClient(API_ENDPOINT, {
+  powProvider: new NeonPowProvider(),
+});
 const protocolInfo = await client.protocolInfo();
 ```
 
@@ -55,28 +59,28 @@ You can define the genesis (initial) Alias Output to mint your Alias with the fo
 const initialAliasId = new Uint8Array(new ArrayBuffer(32));
 
 const aliasOutput: IAliasOutput = {
-    type: ALIAS_OUTPUT_TYPE,
-    amount: amountToSend.toString(),
-    aliasId: Converter.bytesToHex(initialAliasId, true),
-    stateMetadata: "0x12345678",
-    stateIndex: 0,
-    foundryCounter: 0,
-    unlockConditions: [
-        {
-            type: STATE_CONTROLLER_ADDRESS_UNLOCK_CONDITION_TYPE,
-            address: {
-                type: ED25519_ADDRESS_TYPE,
-                pubKeyHash: stateControllerAddress
-            }
-        },
-        {
-            type: GOVERNOR_ADDRESS_UNLOCK_CONDITION_TYPE,
-            address: {
-                type: ED25519_ADDRESS_TYPE,
-                pubKeyHash: governorAddress
-            }
-        }
-    ]
+  type: ALIAS_OUTPUT_TYPE,
+  amount: amountToSend.toString(),
+  aliasId: Converter.bytesToHex(initialAliasId, true),
+  stateMetadata: '0x12345678',
+  stateIndex: 0,
+  foundryCounter: 0,
+  unlockConditions: [
+    {
+      type: STATE_CONTROLLER_ADDRESS_UNLOCK_CONDITION_TYPE,
+      address: {
+        type: ED25519_ADDRESS_TYPE,
+        pubKeyHash: stateControllerAddress,
+      },
+    },
+    {
+      type: GOVERNOR_ADDRESS_UNLOCK_CONDITION_TYPE,
+      address: {
+        type: ED25519_ADDRESS_TYPE,
+        pubKeyHash: governorAddress,
+      },
+    },
+  ],
 };
 ```
 
@@ -93,11 +97,11 @@ In this case, you manually assign an amount to send to the Alias Output (`60000 
 You can calculate the remaining funds by sending a query to the node to obtain the details of the consumed output. You can use the following snippet to do so:
 
 ```typescript
- const inputs: IUTXOInput[] = [];
+const inputs: IUTXOInput[] = [];
 const outputs: (IAliasOutput | IBasicOutput)[] = [];
 
 // The number of funds to be sent to an alias output so that it covers its byte costs
-const amountToSend = bigInt("60000");
+const amountToSend = bigInt('60000');
 
 inputs.push(TransactionHelper.inputFromOutputId(consumedOutputId));
 
@@ -107,34 +111,38 @@ const totalFunds = bigInt(consumedOutputDetails.output.amount);
 
 // The remaining output remains in the origin address
 const remainderBasicOutput: IBasicOutput = {
-    type: BASIC_OUTPUT_TYPE,
-    amount: totalFunds.minus(amountToSend).toString(),
-    nativeTokens: [],
-    unlockConditions: [
-        {
-           type: ADDRESS_UNLOCK_CONDITION_TYPE,
-            address: {
-                type: ED25519_ADDRESS_TYPE,
-                pubKeyHash: sourceAddress
-            }
-        }
-    ],
-    features: []
+  type: BASIC_OUTPUT_TYPE,
+  amount: totalFunds.minus(amountToSend).toString(),
+  nativeTokens: [],
+  unlockConditions: [
+    {
+      type: ADDRESS_UNLOCK_CONDITION_TYPE,
+      address: {
+        type: ED25519_ADDRESS_TYPE,
+        pubKeyHash: sourceAddress,
+      },
+    },
+  ],
+  features: [],
 };
 
 outputs.push(aliasOutput);
 outputs.push(remainderBasicOutput);
 
 // Get inputs commitment
-const inputsCommitment = TransactionHelper.getInputsCommitment([consumedOutputDetails.output]);
+const inputsCommitment = TransactionHelper.getInputsCommitment([
+  consumedOutputDetails.output,
+]);
 
 // Create transaction essence
 const transactionEssence: ITransactionEssence = {
-    type: TRANSACTION_ESSENCE_TYPE,
-    networkId: TransactionHelper.networkIdFromNetworkName(protocolInfo.networkName),
-    inputs,
-    inputsCommitment,
-    outputs
+  type: TRANSACTION_ESSENCE_TYPE,
+  networkId: TransactionHelper.networkIdFromNetworkName(
+    protocolInfo.networkName,
+  ),
+  inputs,
+  inputsCommitment,
+  outputs,
 };
 ```
 
@@ -150,31 +158,34 @@ serializeTransactionEssence(wsTsxEssence, transactionEssence);
 const essenceFinal = wsTsxEssence.finalBytes();
 
 const essenceHash = Blake2b.sum256(essenceFinal);
-   
+
 const unlockCondition: ISignatureUnlock = {
-    type: SIGNATURE_UNLOCK_TYPE,
-    signature: {
-        type: ED25519_SIGNATURE_TYPE,
-        publicKey: sourceAddressPublicKey,
-        signature: Converter.bytesToHex(Ed25519.sign(Converter.hexToBytes(sourceAddressPrivateKey), essenceHash), true)
-    }
+  type: SIGNATURE_UNLOCK_TYPE,
+  signature: {
+    type: ED25519_SIGNATURE_TYPE,
+    publicKey: sourceAddressPublicKey,
+    signature: Converter.bytesToHex(
+      Ed25519.sign(Converter.hexToBytes(sourceAddressPrivateKey), essenceHash),
+      true,
+    ),
+  },
 };
 
 const transactionPayload: ITransactionPayload = {
-    type: TRANSACTION_PAYLOAD_TYPE,
-    essence: transactionEssence,
-    unlocks: [unlockCondition]
+  type: TRANSACTION_PAYLOAD_TYPE,
+  essence: transactionEssence,
+  unlocks: [unlockCondition],
 };
 
 const block: IBlock = {
-    protocolVersion: DEFAULT_PROTOCOL_VERSION,
-    parents: [],
-    payload: transactionPayload,
-    nonce: "0",
+  protocolVersion: DEFAULT_PROTOCOL_VERSION,
+  parents: [],
+  payload: transactionPayload,
+  nonce: '0',
 };
 
 const blockId = await client.blockSubmit(block);
-console.log("Block Id:", blockId);
+console.log('Block Id:', blockId);
 ```
 
 ## Calculate the Alias ID
@@ -185,15 +196,25 @@ It is important to understand that the new Alias ID is derived from the ID of th
 const blockData: IBlock = await client.block(blockId);
 const blockTransactionPayload = blockData.payload as ITransactionPayload;
 
-const transactionId = computeTransactionIdFromTransactionPayload(blockTransactionPayload);
-const outputId = TransactionHelper.outputIdFromTransactionData(transactionId, 0);
-console.log("Output Id:", outputId);
+const transactionId = computeTransactionIdFromTransactionPayload(
+  blockTransactionPayload,
+);
+const outputId = TransactionHelper.outputIdFromTransactionData(
+  transactionId,
+  0,
+);
+console.log('Output Id:', outputId);
 
 const addrHash = Blake2b.sum256(Converter.hexToBytes(outputId));
-console.log("Alias ID:", Converter.bytesToHex(addrHash, true));
-console.log("Alias Address:", Bech32Helper.toBech32(ALIAS_ADDRESS_TYPE, addrHash, protocolInfo.bech32Hrp));
+console.log('Alias ID:', Converter.bytesToHex(addrHash, true));
+console.log(
+  'Alias Address:',
+  Bech32Helper.toBech32(ALIAS_ADDRESS_TYPE, addrHash, protocolInfo.bech32Hrp),
+);
 
-function computeTransactionIdFromTransactionPayload(payload: ITransactionPayload) {
+function computeTransactionIdFromTransactionPayload(
+  payload: ITransactionPayload,
+) {
   const tpWriteStream = new WriteStream();
   serializeTransactionPayload(tpWriteStream, payload);
   return Converter.bytesToHex(Blake2b.sum256(tpWriteStream.finalBytes()), true);

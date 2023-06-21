@@ -3,153 +3,148 @@ module.exports = {
     {
       type: 'doc',
       id: 'welcome',
-      label: 'Welcome'
-    }, 
+      label: 'Welcome',
+    },
     {
       type: 'category',
       label: 'Explanations',
-      items:
-      [
+      items: [
         {
           type: 'category',
           label: 'Chrysalis Update',
-          items:
-          [
+          items: [
             {
               type: 'doc',
               id: 'explanations/update/what_is_chrysalis',
-              label: 'Overview'
+              label: 'Overview',
             },
             {
               type: 'doc',
               id: 'explanations/update/chrysalis_improvements',
-              label: 'Protocol Improvements'
+              label: 'Protocol Improvements',
             },
             {
               type: 'doc',
               id: 'explanations/update/path_to_chrysalis',
-              label: 'Path To Chrysalis'
+              label: 'Path To Chrysalis',
             },
             {
               type: 'doc',
               id: 'explanations/update/migration_mechanism',
-              label: 'Migration Mechanism'
+              label: 'Migration Mechanism',
             },
-          ]
+          ],
         },
         {
           type: 'doc',
           id: 'explanations/node_software',
-          label: 'Node Software'
+          label: 'Node Software',
         },
         {
           type: 'doc',
           id: 'explanations/libraries',
-          label: 'Libraries'
+          label: 'Libraries',
         },
         {
           type: 'doc',
           id: 'explanations/protocol_tip',
-          label: 'TIPs'
+          label: 'TIPs',
         },
         {
           type: 'doc',
           id: 'explanations/faq',
-          label: 'FAQ'
+          label: 'FAQ',
         },
-      ]
+      ],
     },
     {
       type: 'category',
       label: 'How Tos',
-      items:
-      [
+      items: [
         {
           type: 'doc',
           id: 'how_tos/verify_firefly_download',
-          label: 'Verify Firefly Download'
+          label: 'Verify Firefly Download',
         },
         {
           type: 'doc',
           id: 'how_tos/backup_security',
-          label: 'Backup and Security'
+          label: 'Backup and Security',
         },
         {
           type: 'doc',
           id: 'how_tos/exchange',
-          label: 'Integrate Exchange'
+          label: 'Integrate Exchange',
         },
         {
           type: 'doc',
           id: 'how_tos/mainnet_hornet_node_k8s',
-          label: 'Run Hornet On Kubernetes'
+          label: 'Run Hornet On Kubernetes',
         },
         {
           type: 'doc',
           id: 'how_tos/one_click_private_tangle',
-          label: 'Run a Private Tangle'
+          label: 'Run a Private Tangle',
         },
         {
           type: 'category',
           label: 'Migration From IOTA 1.0',
-          items:
-          [
+          items: [
             {
               type: 'doc',
               id: 'how_tos/migration/token_migration',
-              label: 'Token Migration'
+              label: 'Token Migration',
             },
             {
               type: 'doc',
               id: 'how_tos/migration/snapshot_validation_bootstrapping',
-              label: 'Snapshot Validation Bootstrapping'
+              label: 'Snapshot Validation Bootstrapping',
             },
             {
               type: 'doc',
               id: 'how_tos/migration/hub_migration',
-              label: 'Hub Migration'
+              label: 'Hub Migration',
             },
-          ]
+          ],
         },
-      ]
+      ],
     },
     {
       type: 'category',
       label: 'Reference',
-      items:
-      [
+      items: [
         {
           type: 'doc',
           id: 'reference/changelog',
-          label: 'Changelog'
-        },            {
+          label: 'Changelog',
+        },
+        {
           type: 'doc',
           id: 'reference/details',
-          label: 'Detailed Description'
+          label: 'Detailed Description',
         },
         {
           type: 'category',
           label: 'Networks',
-          items:
-          [            
+          items: [
             {
               type: 'doc',
               id: 'reference/networks/mainnet',
-              label: 'Mainnet'
+              label: 'Mainnet',
             },
             {
               type: 'doc',
               id: 'reference/networks/devnet',
-              label: 'Devnet'
+              label: 'Devnet',
             },
-          ]
+          ],
         },
-      ]
+      ],
     },
     {
       type: 'doc',
       id: 'resources',
-      label: 'Resources'
+      label: 'Resources',
     },
-  ]
+  ],
 };

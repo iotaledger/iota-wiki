@@ -3,13 +3,14 @@ title: API Reference
 description: Official IOTA Client Library Java API reference.
 image: /img/logo/libraries.png
 keywords:
-- api
-- Java
-- param
-- type
-- endpoint
-- builder
+  - api
+  - Java
+  - param
+  - type
+  - endpoint
+  - builder
 ---
+
 import Address from './api/Address.mdx'
 import AddressDto from './api/AddressDto.mdx'
 import AddressIndexRecorder from './api/AddressIndexRecorder.mdx'

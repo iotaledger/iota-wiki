@@ -2,15 +2,15 @@
 description: INX-Faucet is a faucet application for test and development networks as well as for private networks.
 image: /img/Banner/banner_hornet.png
 keywords:
-- IOTA Node
-- Hornet Node
-- INX
-- Faucet
-- IOTA
-- Shimmer
-- Node Software
-- Welcome
-- explanation
+  - IOTA Node
+  - Hornet Node
+  - INX
+  - Faucet
+  - IOTA
+  - Shimmer
+  - Node Software
+  - Welcome
+  - explanation
 ---
 
 # Welcome to INX-Faucet
@@ -33,7 +33,6 @@ The faucet includes a generic web UI that will be reachable at `http://localhost
 The faucet is configured by default to connect to your HORNET instance.
 
 You can find all the configuration options in the [configuration section](configuration.md).
-
 
 ## Source Code
 

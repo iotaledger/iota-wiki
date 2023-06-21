@@ -1,11 +1,12 @@
 ---
 description: iota.js API reference
 keywords:
-- references
-- api references
-- typescript
+  - references
+  - api references
+  - typescript
 image: /img/client_banner.png
 ---
+
 # Class: TransactionHelper
 
 Helper methods for Transactions.
@@ -14,9 +15,9 @@ Helper methods for Transactions.
 
 ### Properties
 
-- [CONFIRMED\_MILESTONE\_INDEX\_LENGTH](TransactionHelper.md#confirmed_milestone_index_length)
-- [CONFIRMED\_UINIX\_TIMESTAMP\_LENGTH](TransactionHelper.md#confirmed_uinix_timestamp_length)
-- [OUTPUT\_ID\_LENGTH](TransactionHelper.md#output_id_length)
+- [CONFIRMED_MILESTONE_INDEX_LENGTH](TransactionHelper.md#confirmed_milestone_index_length)
+- [CONFIRMED_UINIX_TIMESTAMP_LENGTH](TransactionHelper.md#confirmed_uinix_timestamp_length)
+- [OUTPUT_ID_LENGTH](TransactionHelper.md#output_id_length)
 
 ### Methods
 
@@ -37,25 +38,25 @@ Helper methods for Transactions.
 
 ## Properties
 
-### CONFIRMED\_MILESTONE\_INDEX\_LENGTH
+### CONFIRMED_MILESTONE_INDEX_LENGTH
 
-▪ `Static` **CONFIRMED\_MILESTONE\_INDEX\_LENGTH**: `number` = `4`
+▪ `Static` **CONFIRMED_MILESTONE_INDEX_LENGTH**: `number` = `4`
 
 The confirmed milestone index length.
 
-___
+---
 
-### CONFIRMED\_UINIX\_TIMESTAMP\_LENGTH
+### CONFIRMED_UINIX_TIMESTAMP_LENGTH
 
-▪ `Static` **CONFIRMED\_UINIX\_TIMESTAMP\_LENGTH**: `number` = `4`
+▪ `Static` **CONFIRMED_UINIX_TIMESTAMP_LENGTH**: `number` = `4`
 
 The confirmed unix timestamp length.
 
-___
+---
 
-### OUTPUT\_ID\_LENGTH
+### OUTPUT_ID_LENGTH
 
-▪ `Static` **OUTPUT\_ID\_LENGTH**: `number` = `34`
+▪ `Static` **OUTPUT_ID_LENGTH**: `number` = `34`
 
 The output Id length.
 
@@ -69,9 +70,9 @@ Calculate blockId from a block.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `block` | [`IBlock`](../interfaces/IBlock.md) | The block. |
+| Name    | Type                                | Description |
+| :------ | :---------------------------------- | :---------- |
+| `block` | [`IBlock`](../interfaces/IBlock.md) | The block.  |
 
 #### Returns
 
@@ -79,7 +80,7 @@ Calculate blockId from a block.
 
 The blockId.
 
-___
+---
 
 ### outputIdFromTransactionData
 
@@ -89,10 +90,10 @@ Returns the outputId from transation id and output index.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name            | Type     | Description                |
+| :-------------- | :------- | :------------------------- |
 | `transactionId` | `string` | The id of the transaction. |
-| `outputIndex` | `number` | The index of the output. |
+| `outputIndex`   | `number` | The index of the output.   |
 
 #### Returns
 
@@ -100,7 +101,7 @@ Returns the outputId from transation id and output index.
 
 The output id.
 
-___
+---
 
 ### getTransactionEssenceHash
 
@@ -110,8 +111,8 @@ Calculate the Transaction Essence hash.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name      | Type                                                          | Description              |
+| :-------- | :------------------------------------------------------------ | :----------------------- |
 | `essence` | [`ITransactionEssence`](../interfaces/ITransactionEssence.md) | The transaction essence. |
 
 #### Returns
@@ -120,7 +121,7 @@ Calculate the Transaction Essence hash.
 
 The transaction essence hash.
 
-___
+---
 
 ### getTransactionPayloadHash
 
@@ -130,8 +131,8 @@ Calculate the Transaction hash.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name                 | Type                                                          | Description                     |
+| :------------------- | :------------------------------------------------------------ | :------------------------------ |
 | `transactionPayload` | [`ITransactionPayload`](../interfaces/ITransactionPayload.md) | The payload of the transaction. |
 
 #### Returns
@@ -140,7 +141,7 @@ Calculate the Transaction hash.
 
 The transaction hash.
 
-___
+---
 
 ### inputFromOutputId
 
@@ -150,8 +151,8 @@ Calculate the UTXO input from an output Id.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name       | Type     | Description           |
+| :--------- | :------- | :-------------------- |
 | `outputId` | `string` | The id of the output. |
 
 #### Returns
@@ -160,7 +161,7 @@ Calculate the UTXO input from an output Id.
 
 The UTXO Input.
 
-___
+---
 
 ### getInputsCommitment
 
@@ -170,8 +171,8 @@ Calculate the inputCommitment from the output objects that are used as inputs to
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name     | Type                                         | Description                                            |
+| :------- | :------------------------------------------- | :----------------------------------------------------- |
 | `inputs` | [`OutputTypes`](../api_ref.md#outputtypes)[] | The output objects used as inputs for the transaction. |
 
 #### Returns
@@ -180,7 +181,7 @@ Calculate the inputCommitment from the output objects that are used as inputs to
 
 The inputs commitment.
 
-___
+---
 
 ### getStorageDeposit
 
@@ -190,10 +191,10 @@ Calculates the required storage deposit of an output.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `output` | [`OutputTypes`](../api_ref.md#outputtypes) | The output. |
-| `rentStructure` | [`IRent`](../interfaces/IRent.md) | Rent cost of objects which take node resources. |
+| Name            | Type                                       | Description                                     |
+| :-------------- | :----------------------------------------- | :---------------------------------------------- |
+| `output`        | [`OutputTypes`](../api_ref.md#outputtypes) | The output.                                     |
+| `rentStructure` | [`IRent`](../interfaces/IRent.md)          | Rent cost of objects which take node resources. |
 
 #### Returns
 
@@ -201,7 +202,7 @@ Calculates the required storage deposit of an output.
 
 The required storage deposit.
 
-___
+---
 
 ### resolveIdFromOutputId
 
@@ -212,8 +213,8 @@ NftId/aliasId is Blake2b-256 hash of the outputId that created it.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name       | Type     | Description           |
+| :--------- | :------- | :-------------------- |
 | `outputId` | `string` | The id of the output. |
 
 #### Returns
@@ -222,7 +223,7 @@ NftId/aliasId is Blake2b-256 hash of the outputId that created it.
 
 The resolved Nft id or Alias id.
 
-___
+---
 
 ### constructTokenId
 
@@ -232,11 +233,11 @@ Constructs a tokenId from the aliasId, serial number and token scheme type.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `aliasId` | `string` | The alias Id of the alias that controls the foundry. |
-| `serialNumber` | `number` | The serial number of the foundry. |
-| `tokenSchemeType` | `number` | The tokenSchemeType of the foundry. |
+| Name              | Type     | Description                                          |
+| :---------------- | :------- | :--------------------------------------------------- |
+| `aliasId`         | `string` | The alias Id of the alias that controls the foundry. |
+| `serialNumber`    | `number` | The serial number of the foundry.                    |
+| `tokenSchemeType` | `number` | The tokenSchemeType of the foundry.                  |
 
 #### Returns
 
@@ -244,7 +245,7 @@ Constructs a tokenId from the aliasId, serial number and token scheme type.
 
 The tokenId.
 
-___
+---
 
 ### networkIdFromNetworkName
 
@@ -254,8 +255,8 @@ Calculates the networkId value from the network name.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name          | Type     | Description              |
+| :------------ | :------- | :----------------------- |
 | `networkName` | `string` | The name of the network. |
 
 #### Returns

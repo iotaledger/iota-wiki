@@ -4,7 +4,7 @@ sidebar_label: Overview
 description: Provide overview of the libraries
 image: /img/Identity_icon.png
 keywords:
-- libraries
+  - libraries
 ---
 
 While the framework itself is developed in the Rust programming language, we also provide bindings, or "Foreign Function Interfaces" (FFI), to other languages.

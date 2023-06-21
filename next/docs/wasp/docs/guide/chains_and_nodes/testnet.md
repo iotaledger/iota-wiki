@@ -2,9 +2,8 @@
 description: A public testnet for developers to try out smart contracts
 image: /img/logo/WASP_logo_dark.png
 keywords:
-- Smart Contracts
-- TestNet
-
+  - Smart Contracts
+  - TestNet
 ---
 
 # Testnet
@@ -26,21 +25,21 @@ overloading the testnet because we are looking for functionality testing more th
 You can access the testnet via the following endpoints:
 
 - https://sc.testnet.shimmer.network **Username**: wasp **Password**: wasp
-    - The Wasp dashboard to explore the node configuration and view peering/chain configurations
-    - https://api.sc.testnet.shimmer.network
-        - The Wasp api to deploy and interact with smart contracts
-        - https://api.sc.testnet.shimmer.network/info
-            - Information about the Wasp access node
-        - https://api.wasp.sc.iota.org/doc
-            - API reference for the Wasp API
-    - https://api.sc.testnet.shimmer.network/evm/jsonrpc
-        - The URL to interact with the Ethereum Virtual Machine on our testnet
+  - The Wasp dashboard to explore the node configuration and view peering/chain configurations
+  - https://api.sc.testnet.shimmer.network
+    - The Wasp api to deploy and interact with smart contracts
+    - https://api.sc.testnet.shimmer.network/info
+      - Information about the Wasp access node
+    - https://api.wasp.sc.iota.org/doc
+      - API reference for the Wasp API
+  - https://api.sc.testnet.shimmer.network/evm/jsonrpc
+    - The URL to interact with the Ethereum Virtual Machine on our testnet
 - https://api.testnet.shimmer.network
-    - The public API exposed by Hornet for the Shimmer Beta network (testnet)
+  - The public API exposed by Hornet for the Shimmer Beta network (testnet)
 - https://faucet.testnet.shimmer.network
-    - The faucet for the Shimmer Beta network
+  - The faucet for the Shimmer Beta network
 - https://sc.testnet.shimmer.network/metrics
-    - System metrics
+  - System metrics
 
 ## Configuring `wasp-cli`
 
@@ -78,11 +77,10 @@ wasp-cli request-funds
 We have deployed an experimental EVM chain that you can interact with. To begin, add a custom network to Metamask with
 the following configuration:
 
-| Key                | Value                                                                                                                     |
-|--------------------|---------------------------------------------------------------------------------------------------------------------------|
-| RPC URL            | https://api.sc.testnet.shimmer.network/evm/jsonrpc  |
-| Chain ID           | 1076                                                                                                                      |
-
+| Key      | Value                                              |
+| -------- | -------------------------------------------------- |
+| RPC URL  | https://api.sc.testnet.shimmer.network/evm/jsonrpc |
+| Chain ID | 1076                                               |
 
 :::note
 
@@ -92,5 +90,3 @@ The other values (network name and currency symbol) can be whatever value you li
 
 We have a faucet for you to use directly with your EVM address which can be found on https://toolkit.sc.testnet.shimmer.network/
 We also have a withdrawal interface to get any native assets deposited to a EVM chain back into your L1 address on the same link.
-
-

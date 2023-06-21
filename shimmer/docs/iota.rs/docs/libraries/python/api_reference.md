@@ -1,10 +1,10 @@
 <a id="iota_client"></a>
 
-# iota\_client
+# iota_client
 
 <a id="iota_client._utils"></a>
 
-# iota\_client.\_utils
+# iota_client.\_utils
 
 <a id="iota_client._utils.Utils"></a>
 
@@ -16,7 +16,7 @@ class Utils(BaseAPI)
 
 <a id="iota_client._utils.Utils.bech32_to_hex"></a>
 
-#### bech32\_to\_hex
+#### bech32_to_hex
 
 ```python
 def bech32_to_hex(bech32)
@@ -26,7 +26,7 @@ Transforms bech32 to hex.
 
 <a id="iota_client._utils.Utils.hex_to_bech32"></a>
 
-#### hex\_to\_bech32
+#### hex_to_bech32
 
 ```python
 def hex_to_bech32(hex, bech32_hrp)
@@ -36,7 +36,7 @@ Transforms a hex encoded address to a bech32 encoded address.
 
 <a id="iota_client._utils.Utils.alias_id_to_bech32"></a>
 
-#### alias\_id\_to\_bech32
+#### alias_id_to_bech32
 
 ```python
 def alias_id_to_bech32(alias_id, bech32_hrp)
@@ -46,7 +46,7 @@ Transforms an alias id to a bech32 encoded address.
 
 <a id="iota_client._utils.Utils.nft_id_to_bech32"></a>
 
-#### nft\_id\_to\_bech32
+#### nft_id_to_bech32
 
 ```python
 def nft_id_to_bech32(nft_id, bech32_hrp)
@@ -56,7 +56,7 @@ Transforms an nft id to a bech32 encoded address.
 
 <a id="iota_client._utils.Utils.hex_public_key_to_bech32_address"></a>
 
-#### hex\_public\_key\_to\_bech32\_address
+#### hex_public_key_to_bech32_address
 
 ```python
 def hex_public_key_to_bech32_address(hex, bech32_hrp=None)
@@ -66,7 +66,7 @@ Transforms a hex encoded public key to a bech32 encoded address.
 
 <a id="iota_client._utils.Utils.parse_bech32_address"></a>
 
-#### parse\_bech32\_address
+#### parse_bech32_address
 
 ```python
 def parse_bech32_address(address)
@@ -76,7 +76,7 @@ Returns a valid Address parsed from a String.
 
 <a id="iota_client._utils.Utils.is_address_valid"></a>
 
-#### is\_address\_valid
+#### is_address_valid
 
 ```python
 def is_address_valid(address)
@@ -86,7 +86,7 @@ Checks if a String is a valid bech32 encoded address.
 
 <a id="iota_client._utils.Utils.generate_mnemonic"></a>
 
-#### generate\_mnemonic
+#### generate_mnemonic
 
 ```python
 def generate_mnemonic()
@@ -96,7 +96,7 @@ Generates a new mnemonic.
 
 <a id="iota_client._utils.Utils.mnemonic_to_hex_seed"></a>
 
-#### mnemonic\_to\_hex\_seed
+#### mnemonic_to_hex_seed
 
 ```python
 def mnemonic_to_hex_seed(mnemonic)
@@ -106,7 +106,7 @@ Returns a hex encoded seed for a mnemonic.
 
 <a id="iota_client._utils.Utils.compute_alias_id"></a>
 
-#### compute\_alias\_id
+#### compute_alias_id
 
 ```python
 def compute_alias_id(output_id)
@@ -116,7 +116,7 @@ Computes the alias id for the given alias output id.
 
 <a id="iota_client._utils.Utils.compute_nft_id"></a>
 
-#### compute\_nft\_id
+#### compute_nft_id
 
 ```python
 def compute_nft_id(output_id)
@@ -126,7 +126,7 @@ Computes the NFT id for the given NFT output id.
 
 <a id="iota_client._utils.Utils.compute_foundry_id"></a>
 
-#### compute\_foundry\_id
+#### compute_foundry_id
 
 ```python
 def compute_foundry_id(alias_address, serial_number, token_scheme_kind)
@@ -136,7 +136,7 @@ Computes the foundry id.
 
 <a id="iota_client._utils.Utils.block_id"></a>
 
-#### block\_id
+#### block_id
 
 ```python
 def block_id(block)
@@ -146,7 +146,7 @@ Returns a block ID (Blake2b256 hash of block bytes) from a block.
 
 <a id="iota_client.secret_manager"></a>
 
-# iota\_client.secret\_manager
+# iota_client.secret_manager
 
 <a id="iota_client.secret_manager.LedgerNanoSecretManager"></a>
 
@@ -210,7 +210,7 @@ Initialize a stronghold secret manager.
 
 <a id="iota_client.client"></a>
 
-# iota\_client.client
+# iota_client.client
 
 <a id="iota_client.client.IotaClient"></a>
 
@@ -232,7 +232,7 @@ Initialize the IOTA Client.
 
 <a id="iota_client.client.IotaClient.build_alias_output"></a>
 
-#### build\_alias\_output
+#### build_alias_output
 
 ```python
 def build_alias_output(alias_id,
@@ -250,7 +250,7 @@ Build an AliasOutput.
 
 <a id="iota_client.client.IotaClient.build_basic_output"></a>
 
-#### build\_basic\_output
+#### build_basic_output
 
 ```python
 def build_basic_output(unlock_conditions,
@@ -263,7 +263,7 @@ Build a BasicOutput.
 
 <a id="iota_client.client.IotaClient.build_foundry_output"></a>
 
-#### build\_foundry\_output
+#### build_foundry_output
 
 ```python
 def build_foundry_output(serial_number,
@@ -279,7 +279,7 @@ Build a FoundryOutput.
 
 <a id="iota_client.client.IotaClient.build_nft_output"></a>
 
-#### build\_nft\_output
+#### build_nft_output
 
 ```python
 def build_nft_output(nft_id,
@@ -294,7 +294,7 @@ Build an NftOutput.
 
 <a id="iota_client.client.IotaClient.generate_addresses"></a>
 
-#### generate\_addresses
+#### generate_addresses
 
 ```python
 def generate_addresses(secret_manager, options)
@@ -304,7 +304,7 @@ Generate addresses.
 
 <a id="iota_client.client.IotaClient.build_and_post_block"></a>
 
-#### build\_and\_post\_block
+#### build_and_post_block
 
 ```python
 def build_and_post_block(secret_manager=None, options=None)
@@ -314,7 +314,7 @@ Build and post a block.
 
 <a id="iota_client.client.IotaClient.get_node"></a>
 
-#### get\_node
+#### get_node
 
 ```python
 def get_node()
@@ -324,7 +324,7 @@ Get a node candidate from the healthy node pool.
 
 <a id="iota_client.client.IotaClient.get_network_info"></a>
 
-#### get\_network\_info
+#### get_network_info
 
 ```python
 def get_network_info()
@@ -334,7 +334,7 @@ Gets the network related information such as network_id and min_pow_score.
 
 <a id="iota_client.client.IotaClient.get_network_id"></a>
 
-#### get\_network\_id
+#### get_network_id
 
 ```python
 def get_network_id()
@@ -344,7 +344,7 @@ Gets the network id of the node we're connecting to.
 
 <a id="iota_client.client.IotaClient.get_bech32_hrp"></a>
 
-#### get\_bech32\_hrp
+#### get_bech32_hrp
 
 ```python
 def get_bech32_hrp()
@@ -354,7 +354,7 @@ Returns the bech32_hrp.
 
 <a id="iota_client.client.IotaClient.get_min_pow_score"></a>
 
-#### get\_min\_pow\_score
+#### get_min_pow_score
 
 ```python
 def get_min_pow_score()
@@ -364,7 +364,7 @@ Returns the min pow score.
 
 <a id="iota_client.client.IotaClient.get_tips_interval"></a>
 
-#### get\_tips\_interval
+#### get_tips_interval
 
 ```python
 def get_tips_interval()
@@ -374,7 +374,7 @@ Returns the tips interval.
 
 <a id="iota_client.client.IotaClient.get_local_pow"></a>
 
-#### get\_local\_pow
+#### get_local_pow
 
 ```python
 def get_local_pow()
@@ -384,7 +384,7 @@ Returns if local pow should be used or not.
 
 <a id="iota_client.client.IotaClient.get_fall_back_to_local_pow"></a>
 
-#### get\_fall\_back\_to\_local\_pow
+#### get_fall_back_to_local_pow
 
 ```python
 def get_fall_back_to_local_pow()
@@ -394,7 +394,7 @@ Get fallback to local proof of work timeout.
 
 <a id="iota_client.client.IotaClient.unhealthy_nodes"></a>
 
-#### unhealthy\_nodes
+#### unhealthy_nodes
 
 ```python
 def unhealthy_nodes()
@@ -404,7 +404,7 @@ Returns the unhealthy nodes.
 
 <a id="iota_client.client.IotaClient.get_ledger_nano_status"></a>
 
-#### get\_ledger\_nano\_status
+#### get_ledger_nano_status
 
 ```python
 def get_ledger_nano_status(is_simulator)
@@ -414,7 +414,7 @@ Returns the Ledger Status.
 
 <a id="iota_client.client.IotaClient.prepare_transaction"></a>
 
-#### prepare\_transaction
+#### prepare_transaction
 
 ```python
 def prepare_transaction(secret_manager=None, options=None)
@@ -424,7 +424,7 @@ Prepare a transaction for signing.
 
 <a id="iota_client.client.IotaClient.sign_transaction"></a>
 
-#### sign\_transaction
+#### sign_transaction
 
 ```python
 def sign_transaction(secret_manager, prepared_transaction_data)
@@ -434,7 +434,7 @@ Sign a transaction.
 
 <a id="iota_client.client.IotaClient.store_mnemonic"></a>
 
-#### store\_mnemonic
+#### store_mnemonic
 
 ```python
 def store_mnemonic(secret_manager, mnemonic)
@@ -444,7 +444,7 @@ Store a mnemonic in the Stronghold vault.
 
 <a id="iota_client.client.IotaClient.submit_payload"></a>
 
-#### submit\_payload
+#### submit_payload
 
 ```python
 def submit_payload(payload_dto)
@@ -454,7 +454,7 @@ Submit a payload in a block.
 
 <a id="iota_client._high_level_api"></a>
 
-# iota\_client.\_high\_level\_api
+# iota_client.\_high_level_api
 
 <a id="iota_client._high_level_api.HighLevelAPI"></a>
 
@@ -466,7 +466,7 @@ class HighLevelAPI(BaseAPI)
 
 <a id="iota_client._high_level_api.HighLevelAPI.get_outputs"></a>
 
-#### get\_outputs
+#### get_outputs
 
 ```python
 def get_outputs(output_ids)
@@ -476,7 +476,7 @@ Fetch OutputResponse from provided OutputIds (requests are sent in parallel).
 
 <a id="iota_client._high_level_api.HighLevelAPI.try_get_outputs"></a>
 
-#### try\_get\_outputs
+#### try_get_outputs
 
 ```python
 def try_get_outputs(output_ids)
@@ -487,7 +487,7 @@ Requests are sent in parallel and errors are ignored, can be useful for spent ou
 
 <a id="iota_client._high_level_api.HighLevelAPI.find_blocks"></a>
 
-#### find\_blocks
+#### find_blocks
 
 ```python
 def find_blocks(block_ids)
@@ -508,7 +508,7 @@ retried only if they are valid and haven't been confirmed for a while.
 
 <a id="iota_client._high_level_api.HighLevelAPI.retry_until_included"></a>
 
-#### retry\_until\_included
+#### retry_until_included
 
 ```python
 def retry_until_included(block_id, interval=None, max_attempts=None)
@@ -520,7 +520,7 @@ position and additional reattached blocks.
 
 <a id="iota_client._high_level_api.HighLevelAPI.consolidate_funds"></a>
 
-#### consolidate\_funds
+#### consolidate_funds
 
 ```python
 def consolidate_funds(secret_manager, generate_addresses_options)
@@ -531,7 +531,7 @@ Returns the address to which the funds got consolidated, if any were available.
 
 <a id="iota_client._high_level_api.HighLevelAPI.find_inputs"></a>
 
-#### find\_inputs
+#### find_inputs
 
 ```python
 def find_inputs(addresses, amount)
@@ -541,7 +541,7 @@ Function to find inputs from addresses for a provided amount (useful for offline
 
 <a id="iota_client._high_level_api.HighLevelAPI.find_outputs"></a>
 
-#### find\_outputs
+#### find_outputs
 
 ```python
 def find_outputs(output_ids, addresses)
@@ -563,7 +563,7 @@ confirmed for a while.
 
 <a id="iota_client._high_level_api.HighLevelAPI.reattach_unchecked"></a>
 
-#### reattach\_unchecked
+#### reattach_unchecked
 
 ```python
 def reattach_unchecked(block_id)
@@ -584,7 +584,7 @@ method should error out and should not allow unnecessary promotions.
 
 <a id="iota_client._high_level_api.HighLevelAPI.promote_unchecked"></a>
 
-#### promote\_unchecked
+#### promote_unchecked
 
 ```python
 def promote_unchecked(block_id)
@@ -594,7 +594,7 @@ Promote a block without checking if it should be promoted.
 
 <a id="iota_client._node_indexer_api"></a>
 
-# iota\_client.\_node\_indexer\_api
+# iota_client.\_node_indexer_api
 
 <a id="iota_client._node_indexer_api.NodeIndexerAPI"></a>
 
@@ -606,7 +606,7 @@ class NodeIndexerAPI(BaseAPI)
 
 <a id="iota_client._node_indexer_api.NodeIndexerAPI.basic_output_ids"></a>
 
-#### basic\_output\_ids
+#### basic_output_ids
 
 ```python
 def basic_output_ids(query_parameters)
@@ -616,7 +616,7 @@ Fetch basic output IDs.
 
 <a id="iota_client._node_indexer_api.NodeIndexerAPI.alias_output_ids"></a>
 
-#### alias\_output\_ids
+#### alias_output_ids
 
 ```python
 def alias_output_ids(query_parameters)
@@ -626,7 +626,7 @@ Fetch alias output IDs.
 
 <a id="iota_client._node_indexer_api.NodeIndexerAPI.alias_output_id"></a>
 
-#### alias\_output\_id
+#### alias_output_id
 
 ```python
 def alias_output_id(alias_id)
@@ -636,7 +636,7 @@ Fetch alias output ID.
 
 <a id="iota_client._node_indexer_api.NodeIndexerAPI.nft_output_ids"></a>
 
-#### nft\_output\_ids
+#### nft_output_ids
 
 ```python
 def nft_output_ids(query_parameters)
@@ -646,7 +646,7 @@ Fetch NFT output IDs.
 
 <a id="iota_client._node_indexer_api.NodeIndexerAPI.nft_output_id"></a>
 
-#### nft\_output\_id
+#### nft_output_id
 
 ```python
 def nft_output_id(nft_id)
@@ -656,7 +656,7 @@ Fetch NFT output ID.
 
 <a id="iota_client._node_indexer_api.NodeIndexerAPI.foundry_output_ids"></a>
 
-#### foundry\_output\_ids
+#### foundry_output_ids
 
 ```python
 def foundry_output_ids(query_parameters)
@@ -666,7 +666,7 @@ Fetch foundry Output IDs.
 
 <a id="iota_client._node_indexer_api.NodeIndexerAPI.foundry_output_id"></a>
 
-#### foundry\_output\_id
+#### foundry_output_id
 
 ```python
 def foundry_output_id(foundry_id)
@@ -676,7 +676,7 @@ Fetch foundry Output ID.
 
 <a id="iota_client._node_core_api"></a>
 
-# iota\_client.\_node\_core\_api
+# iota_client.\_node_core_api
 
 <a id="iota_client._node_core_api.NodeCoreAPI"></a>
 
@@ -688,7 +688,7 @@ class NodeCoreAPI(BaseAPI)
 
 <a id="iota_client._node_core_api.NodeCoreAPI.get_node_health"></a>
 
-#### get\_node\_health
+#### get_node_health
 
 ```python
 def get_node_health(url)
@@ -698,7 +698,7 @@ Get node health.
 
 <a id="iota_client._node_core_api.NodeCoreAPI.get_node_info"></a>
 
-#### get\_node\_info
+#### get_node_info
 
 ```python
 def get_node_info(url, auth=None)
@@ -708,7 +708,7 @@ Get node info.
 
 <a id="iota_client._node_core_api.NodeCoreAPI.get_info"></a>
 
-#### get\_info
+#### get_info
 
 ```python
 def get_info()
@@ -718,7 +718,7 @@ Returns the node information together with the url of the used node.
 
 <a id="iota_client._node_core_api.NodeCoreAPI.get_peers"></a>
 
-#### get\_peers
+#### get_peers
 
 ```python
 def get_peers()
@@ -728,7 +728,7 @@ Get peers.
 
 <a id="iota_client._node_core_api.NodeCoreAPI.get_tips"></a>
 
-#### get\_tips
+#### get_tips
 
 ```python
 def get_tips()
@@ -738,7 +738,7 @@ Get tips.
 
 <a id="iota_client._node_core_api.NodeCoreAPI.post_block"></a>
 
-#### post\_block
+#### post_block
 
 ```python
 def post_block(block)
@@ -748,7 +748,7 @@ Post block.
 
 <a id="iota_client._node_core_api.NodeCoreAPI.get_block_data"></a>
 
-#### get\_block\_data
+#### get_block_data
 
 ```python
 def get_block_data(block_id)
@@ -758,7 +758,7 @@ Post block.
 
 <a id="iota_client._node_core_api.NodeCoreAPI.get_block_metadata"></a>
 
-#### get\_block\_metadata
+#### get_block_metadata
 
 ```python
 def get_block_metadata(block_id)
@@ -768,7 +768,7 @@ Get block metadata with block_id.
 
 <a id="iota_client._node_core_api.NodeCoreAPI.get_block_raw"></a>
 
-#### get\_block\_raw
+#### get_block_raw
 
 ```python
 def get_block_raw(block_id)
@@ -778,7 +778,7 @@ Get block raw.
 
 <a id="iota_client._node_core_api.NodeCoreAPI.get_output"></a>
 
-#### get\_output
+#### get_output
 
 ```python
 def get_output(output_id)
@@ -788,7 +788,7 @@ Get output.
 
 <a id="iota_client._node_core_api.NodeCoreAPI.get_output_metadata"></a>
 
-#### get\_output\_metadata
+#### get_output_metadata
 
 ```python
 def get_output_metadata(output_id)
@@ -798,7 +798,7 @@ Get output metadata.
 
 <a id="iota_client._node_core_api.NodeCoreAPI.get_milestone_by_id"></a>
 
-#### get\_milestone\_by\_id
+#### get_milestone_by_id
 
 ```python
 def get_milestone_by_id(milestone_id)
@@ -808,7 +808,7 @@ Get the milestone by the given milestone id.
 
 <a id="iota_client._node_core_api.NodeCoreAPI.get_milestone_by_id_raw"></a>
 
-#### get\_milestone\_by\_id\_raw
+#### get_milestone_by_id_raw
 
 ```python
 def get_milestone_by_id_raw(milestone_id)
@@ -818,7 +818,7 @@ Get the raw milestone by the given milestone id.
 
 <a id="iota_client._node_core_api.NodeCoreAPI.get_milestone_by_index"></a>
 
-#### get\_milestone\_by\_index
+#### get_milestone_by_index
 
 ```python
 def get_milestone_by_index(index)
@@ -828,7 +828,7 @@ Get the milestone by the given index.
 
 <a id="iota_client._node_core_api.NodeCoreAPI.get_milestone_by_index_raw"></a>
 
-#### get\_milestone\_by\_index\_raw
+#### get_milestone_by_index_raw
 
 ```python
 def get_milestone_by_index_raw(index)
@@ -838,7 +838,7 @@ Get the milestone by the given index.
 
 <a id="iota_client._node_core_api.NodeCoreAPI.get_utxo_changes_by_id"></a>
 
-#### get\_utxo\_changes\_by\_id
+#### get_utxo_changes_by_id
 
 ```python
 def get_utxo_changes_by_id(milestone_id)
@@ -848,7 +848,7 @@ Get the UTXO changes by the given milestone id.
 
 <a id="iota_client._node_core_api.NodeCoreAPI.get_utxo_changes_by_index"></a>
 
-#### get\_utxo\_changes\_by\_index
+#### get_utxo_changes_by_index
 
 ```python
 def get_utxo_changes_by_index(index)
@@ -858,7 +858,7 @@ Get the UTXO changes by the given milestone index.
 
 <a id="iota_client._node_core_api.NodeCoreAPI.get_receipts"></a>
 
-#### get\_receipts
+#### get_receipts
 
 ```python
 def get_receipts()
@@ -868,7 +868,7 @@ Get all receipts.
 
 <a id="iota_client._node_core_api.NodeCoreAPI.get_receipts_migrated_at"></a>
 
-#### get\_receipts\_migrated\_at
+#### get_receipts_migrated_at
 
 ```python
 def get_receipts_migrated_at(milestone_index)
@@ -878,7 +878,7 @@ Get the receipts by the given milestone index.
 
 <a id="iota_client._node_core_api.NodeCoreAPI.get_treasury"></a>
 
-#### get\_treasury
+#### get_treasury
 
 ```python
 def get_treasury()
@@ -888,7 +888,7 @@ Get the treasury output.
 
 <a id="iota_client._node_core_api.NodeCoreAPI.get_included_block"></a>
 
-#### get\_included\_block
+#### get_included_block
 
 ```python
 def get_included_block(transaction_id)
@@ -898,11 +898,11 @@ Returns the included block of the transaction.
 
 <a id="iota_client.common"></a>
 
-# iota\_client.common
+# iota_client.common
 
 <a id="iota_client.common.send_message_routine"></a>
 
-#### send\_message\_routine
+#### send_message_routine
 
 ```python
 def send_message_routine(func)
@@ -922,5 +922,4 @@ iota-client error
 
 <a id="iota_client._base_api"></a>
 
-# iota\_client.\_base\_api
-
+# iota_client.\_base_api

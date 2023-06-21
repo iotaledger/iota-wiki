@@ -18,7 +18,7 @@ Helper struct for offline signing
 
 Transaction essence
 
-___
+---
 
 ### inputsData
 
@@ -26,7 +26,7 @@ ___
 
 Required address information for signing
 
-___
+---
 
 ### remainder
 

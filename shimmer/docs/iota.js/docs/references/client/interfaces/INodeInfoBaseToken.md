@@ -1,11 +1,12 @@
 ---
 description: iota.js API reference
 keywords:
-- references
-- api references
-- typescript
+  - references
+  - api references
+  - typescript
 image: /img/client_banner.png
 ---
+
 # Interface: INodeInfoBaseToken
 
 The base token info of the node.
@@ -29,7 +30,7 @@ The base token info of the node.
 
 The base token name.
 
-___
+---
 
 ### tickerSymbol
 
@@ -37,7 +38,7 @@ ___
 
 The base token ticker symbol.
 
-___
+---
 
 ### unit
 
@@ -45,7 +46,7 @@ ___
 
 The base token unit.
 
-___
+---
 
 ### subunit
 
@@ -53,7 +54,7 @@ ___
 
 The base token sub-unit.
 
-___
+---
 
 ### decimals
 
@@ -61,7 +62,7 @@ ___
 
 The base token decimals.
 
-___
+---
 
 ### useMetricPrefix
 

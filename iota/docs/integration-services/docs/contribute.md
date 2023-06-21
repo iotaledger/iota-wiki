@@ -2,14 +2,15 @@
 image: /img/integration-services/logo/integration_services.png
 description: Contribute to the IOTA Integration Services by reporting a bug, suggesting a feature, contributing to the documentation or sharing your knowledge with others.
 keywords:
-- how to
-- contribute
-- github
-- Report a bug
-- Suggest a new feature
-- Contribute to the documentation
-- discord
+  - how to
+  - contribute
+  - github
+  - Report a bug
+  - Suggest a new feature
+  - Contribute to the documentation
+  - discord
 ---
+
 # Contribute
 
 **Thanks for thinking about contributing to the project! You can contribute using the following channels.**

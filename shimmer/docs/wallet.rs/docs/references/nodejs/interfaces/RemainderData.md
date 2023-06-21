@@ -18,7 +18,7 @@ Data for a remainder output, used for ledger nano
 
 The remainder output
 
-___
+---
 
 ### chain
 
@@ -26,7 +26,7 @@ ___
 
 The chain derived from seed, for the remainder addresses
 
-___
+---
 
 ### address
 

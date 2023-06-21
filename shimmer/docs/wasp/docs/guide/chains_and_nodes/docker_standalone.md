@@ -2,15 +2,13 @@
 description: How to run a Wasp node in using Docker. Build the image, configure it, run it.
 image: /img/Banner/banner_wasp_using_docker.png
 keywords:
-
-- Smart Contracts
-- Running a node
-- docker
-- image
-- build
-- configure
-- arguments
-
+  - Smart Contracts
+  - Running a node
+  - docker
+  - image
+  - build
+  - configure
+  - arguments
 ---
 
 # Docker (Standalone)
@@ -46,7 +44,7 @@ git checkout develop
 
 :::note
 
-We use the Docker Buildkit features to build images, as makes it possible to cache dependencies which improves build times. 
+We use the Docker Buildkit features to build images, as makes it possible to cache dependencies which improves build times.
 
 You can enable this with `DOCKER_BUILDKIT=1`
 
@@ -56,7 +54,7 @@ You can enable this with `DOCKER_BUILDKIT=1`
 
 ```shell
 DOCKER_BUILDKIT=1 docker build -t wasp-node .
-````
+```
 
 ### Default Configuration
 

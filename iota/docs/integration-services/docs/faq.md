@@ -2,7 +2,7 @@
 image: /img/integration-services/logo/integration_services.png
 description: Integration Services Frequently Asked Questions.
 keywords:
-- FAQ
+  - FAQ
 ---
 
 # FAQ

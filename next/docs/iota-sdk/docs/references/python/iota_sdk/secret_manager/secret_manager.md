@@ -79,7 +79,7 @@ secret manager error
 class SecretManager()
 ```
 
-### generate\_ed25519\_addresses
+### generate_ed25519_addresses
 
 ```python
 def generate_ed25519_addresses(account_index: Optional[int] = None,
@@ -93,28 +93,28 @@ def generate_ed25519_addresses(account_index: Optional[int] = None,
 
 Generate ed25519 addresses.
 
-Parameters
-----------
-account_index : int
-    Account index.
-start : int
-    Start index of generated addresses
-end : int
-    End index of generated addresses
-internal : bool
-    Internal addresses
-coin_type : int
-    Coin type. The CoinType enum can be used
-bech32_hrp : string
-    Bech32 human readable part.
-ledger_nano_prompt : bool
-    Display the address on ledger devices.
+## Parameters
 
-Returns
--------
+account_index : int
+Account index.
+start : int
+Start index of generated addresses
+end : int
+End index of generated addresses
+internal : bool
+Internal addresses
+coin_type : int
+Coin type. The CoinType enum can be used
+bech32_hrp : string
+Bech32 human readable part.
+ledger_nano_prompt : bool
+Display the address on ledger devices.
+
+## Returns
+
 Addresses as array of strings.
 
-### generate\_evm\_addresses
+### generate_evm_addresses
 
 ```python
 def generate_evm_addresses(account_index=None,
@@ -127,26 +127,26 @@ def generate_evm_addresses(account_index=None,
 
 Generate EVM addresses.
 
-Parameters
-----------
-account_index : int
-    Account index.
-start : int
-    Start index of generated addresses
-end : int
-    End index of generated addresses
-internal : bool
-    Internal addresses
-coin_type : int
-    Coin type. The CoinType enum can be used
-ledger_nano_prompt : bool
-    Display the address on ledger devices.
+## Parameters
 
-Returns
--------
+account_index : int
+Account index.
+start : int
+Start index of generated addresses
+end : int
+End index of generated addresses
+internal : bool
+Internal addresses
+coin_type : int
+Coin type. The CoinType enum can be used
+ledger_nano_prompt : bool
+Display the address on ledger devices.
+
+## Returns
+
 Addresses as array of strings.
 
-### get\_ledger\_nano\_status
+### get_ledger_nano_status
 
 ```python
 def get_ledger_nano_status()
@@ -154,7 +154,7 @@ def get_ledger_nano_status()
 
 Returns the Ledger Status.
 
-### store\_mnemonic
+### store_mnemonic
 
 ```python
 def store_mnemonic(mnemonic: str)
@@ -162,7 +162,7 @@ def store_mnemonic(mnemonic: str)
 
 Store a mnemonic in the Stronghold vault.
 
-### sign\_ed25519
+### sign_ed25519
 
 ```python
 def sign_ed25519(message: HexStr, chain: List[int])
@@ -170,7 +170,7 @@ def sign_ed25519(message: HexStr, chain: List[int])
 
 Signs a message with an Ed25519 private key.
 
-### sign\_transaction
+### sign_transaction
 
 ```python
 def sign_transaction(prepared_transaction_data)
@@ -178,11 +178,10 @@ def sign_transaction(prepared_transaction_data)
 
 Sign a transaction.
 
-### signature\_unlock
+### signature_unlock
 
 ```python
 def signature_unlock(transaction_essence_hash: HexStr, chain: List[int])
 ```
 
 Sign a transaction essence hash.
-

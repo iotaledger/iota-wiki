@@ -17,34 +17,34 @@ All of the wallet event types.
 
 ### ConsolidationRequired
 
-• **ConsolidationRequired** = ``0``
+• **ConsolidationRequired** = `0`
 
-___
+---
 
 ### LedgerAddressGeneration
 
-• **LedgerAddressGeneration** = ``1``
+• **LedgerAddressGeneration** = `1`
 
-___
+---
 
 ### NewOutput
 
-• **NewOutput** = ``2``
+• **NewOutput** = `2`
 
-___
+---
 
 ### SpentOutput
 
-• **SpentOutput** = ``3``
+• **SpentOutput** = `3`
 
-___
+---
 
 ### TransactionInclusion
 
-• **TransactionInclusion** = ``4``
+• **TransactionInclusion** = `4`
 
-___
+---
 
 ### TransactionProgress
 
-• **TransactionProgress** = ``5``
+• **TransactionProgress** = `5`

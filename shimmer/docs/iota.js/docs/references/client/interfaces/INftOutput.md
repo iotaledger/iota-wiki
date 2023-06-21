@@ -1,18 +1,19 @@
 ---
 description: iota.js API reference
 keywords:
-- references
-- api references
-- typescript
+  - references
+  - api references
+  - typescript
 image: /img/client_banner.png
 ---
+
 # Interface: INftOutput
 
 NFT output.
 
 ## Hierarchy
 
-- [`ITypeBase`](ITypeBase.md)<``6``\>
+- [`ITypeBase`](ITypeBase.md)<`6`\>
 
 - [`ICommonOutput`](ICommonOutput.md)
 
@@ -34,7 +35,7 @@ NFT output.
 
 ### type
 
-• **type**: ``6``
+• **type**: `6`
 
 The type of the object.
 
@@ -42,7 +43,7 @@ The type of the object.
 
 [ITypeBase](ITypeBase.md).[type](ITypeBase.md#type)
 
-___
+---
 
 ### nativeTokens
 
@@ -54,7 +55,7 @@ The native tokens held by the output.
 
 [ICommonOutput](ICommonOutput.md).[nativeTokens](ICommonOutput.md#nativetokens)
 
-___
+---
 
 ### unlockConditions
 
@@ -66,7 +67,7 @@ The unlock conditions for the output.
 
 [ICommonOutput](ICommonOutput.md).[unlockConditions](ICommonOutput.md#unlockconditions)
 
-___
+---
 
 ### features
 
@@ -78,7 +79,7 @@ Features contained by the output.
 
 [ICommonOutput](ICommonOutput.md).[features](ICommonOutput.md#features)
 
-___
+---
 
 ### amount
 
@@ -86,7 +87,7 @@ ___
 
 The amount of IOTA tokens held by the output.
 
-___
+---
 
 ### nftId
 
@@ -94,7 +95,7 @@ ___
 
 Unique identifier of the NFT, which is the BLAKE2b-160 hash of the Output ID that created it.
 
-___
+---
 
 ### immutableFeatures
 

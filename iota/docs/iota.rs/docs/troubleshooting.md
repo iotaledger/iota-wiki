@@ -1,15 +1,16 @@
 ---
-description: Troubleshooting the IOTA Client Library.  
+description: Troubleshooting the IOTA Client Library.
 image: /img/logo/iota_mark_light.png
 keywords:
-- discussion
-- channel
-- problem
-- solution
-- discord
-- stackexchange
-- reference
+  - discussion
+  - channel
+  - problem
+  - solution
+  - discord
+  - stackexchange
+  - reference
 ---
+
 # Troubleshooting
 
 ## StackExchange
@@ -23,4 +24,3 @@ answer! If there is no answer yet, submit your question and share it in the disc
 If you want to get involved in discussions about this library, or you are looking for support, you can visit
 the [#clients-libraries](https://discord.com/channels/397872799483428865/800637917189636136) channel on
 our [Discord](https://discord.iota.org).
-

@@ -1,18 +1,19 @@
 ---
 description: iota.js API reference
 keywords:
-- references
-- api references
-- typescript
+  - references
+  - api references
+  - typescript
 image: /img/client_banner.png
 ---
+
 # Interface: IIssuerFeature
 
 Issuer feature.
 
 ## Hierarchy
 
-- [`ITypeBase`](ITypeBase.md)<``1``\>
+- [`ITypeBase`](ITypeBase.md)<`1`\>
 
   ↳ **`IIssuerFeature`**
 
@@ -27,7 +28,7 @@ Issuer feature.
 
 ### type
 
-• **type**: ``1``
+• **type**: `1`
 
 The type of the object.
 
@@ -35,7 +36,7 @@ The type of the object.
 
 [ITypeBase](ITypeBase.md).[type](ITypeBase.md#type)
 
-___
+---
 
 ### address
 

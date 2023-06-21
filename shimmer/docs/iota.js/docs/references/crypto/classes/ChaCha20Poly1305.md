@@ -1,11 +1,12 @@
 ---
 description: iota.js API reference
 keywords:
-- references
-- api references
-- typescript
+  - references
+  - api references
+  - typescript
 image: /img/client_banner.png
 ---
+
 # Class: ChaCha20Poly1305
 
 Implementation of the ChaCha20Poly1305 cipher.
@@ -32,10 +33,10 @@ Create a ChaCha20Poly1305 encryptor.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `key` | `Uint8Array` | The key. |
-| `nonce` | `Uint8Array` | The nonce. |
+| Name    | Type         | Description |
+| :------ | :----------- | :---------- |
+| `key`   | `Uint8Array` | The key.    |
+| `nonce` | `Uint8Array` | The nonce.  |
 
 #### Returns
 
@@ -43,7 +44,7 @@ Create a ChaCha20Poly1305 encryptor.
 
 Encryptor instance of ChaCha20Poly1305.
 
-___
+---
 
 ### decryptor
 
@@ -53,10 +54,10 @@ Create a ChaCha20Poly1305 decryptor.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `key` | `Uint8Array` | The key. |
-| `nonce` | `Uint8Array` | The nonce. |
+| Name    | Type         | Description |
+| :------ | :----------- | :---------- |
+| `key`   | `Uint8Array` | The key.    |
+| `nonce` | `Uint8Array` | The nonce.  |
 
 #### Returns
 
@@ -64,7 +65,7 @@ Create a ChaCha20Poly1305 decryptor.
 
 Decryptor instance of ChaCha20Poly1305.
 
-___
+---
 
 ### setAAD
 
@@ -74,15 +75,15 @@ Set the AAD.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name  | Type         | Description     |
+| :---- | :----------- | :-------------- |
 | `aad` | `Uint8Array` | The aad to set. |
 
 #### Returns
 
 `void`
 
-___
+---
 
 ### update
 
@@ -92,8 +93,8 @@ Update the cipher with more data.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name    | Type         | Description                |
+| :------ | :----------- | :------------------------- |
 | `input` | `Uint8Array` | The input data to include. |
 
 #### Returns
@@ -102,7 +103,7 @@ Update the cipher with more data.
 
 The updated data.
 
-___
+---
 
 ### final
 
@@ -114,7 +115,7 @@ Finalise the data.
 
 `void`
 
-___
+---
 
 ### getAuthTag
 
@@ -128,7 +129,7 @@ Get the auth tag.
 
 The auth tag.
 
-___
+---
 
 ### setAuthTag
 
@@ -138,8 +139,8 @@ Set the auth tag.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name      | Type         | Description       |
+| :-------- | :----------- | :---------------- |
 | `authTag` | `Uint8Array` | Set the auth tag. |
 
 #### Returns

@@ -1,16 +1,17 @@
 ---
 keywords:
-- results
-- call context
-- view function
-- retrieve state
+  - results
+  - call context
+  - view function
+  - retrieve state
 
 description: Views are smart contract functions that only allow you to retrieve state information about the smart contract. They have a special, limited call context that does not allow them to change the smart contract state.
 
 image: /img/logo/WASP_logo_dark.png
 ---
-import Tabs from "@theme/Tabs"
-import TabItem from "@theme/TabItem"
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 # View-Only Functions
 
@@ -98,23 +99,25 @@ pub fn view_get_factor(_ctx: &ScViewContext, f: &GetFactorContext) {
 ```ts
 // 'getFactor' is a simple View function. It will retrieve the factor
 // associated with the (mandatory) address parameter it was provided with.
-export function viewGetFactor(ctx: wasmlib.ScViewContext, f: sc.GetFactorContext): void {
+export function viewGetFactor(
+  ctx: wasmlib.ScViewContext,
+  f: sc.GetFactorContext,
+): void {
+  // Since we are sure that the 'address' parameter actually exists we can
+  // retrieve its actual value into an ScAddress value type.
+  let address: wasmlib.ScAddress = f.params.address().value();
 
-    // Since we are sure that the 'address' parameter actually exists we can
-    // retrieve its actual value into an ScAddress value type.
-    let address: wasmlib.ScAddress = f.params.address().value();
+  // Create an ScImmutableMap proxy to the 'members' map in the state storage.
+  // Note that for views this is an *immutable* map as opposed to the *mutable*
+  // map we can access from the *mutable* state that gets passed to funcs.
+  let members: sc.MapAddressToImmutableUint64 = f.state.members();
 
-    // Create an ScImmutableMap proxy to the 'members' map in the state storage.
-    // Note that for views this is an *immutable* map as opposed to the *mutable*
-    // map we can access from the *mutable* state that gets passed to funcs.
-    let members: sc.MapAddressToImmutableUint64 = f.state.members();
+  // Retrieve the factor associated with the address parameter.
+  let factor: u64 = members.getUint64(address).value();
 
-    // Retrieve the factor associated with the address parameter.
-    let factor: u64 = members.getUint64(address).value();
-
-    // Set the factor in the results map of the function context.
-    // The contents of this results map is returned to the caller of the function.
-    f.results.factor().setValue(factor);
+  // Set the factor in the results map of the function context.
+  // The contents of this results map is returned to the caller of the function.
+  f.results.factor().setValue(factor);
 }
 ```
 
@@ -126,6 +129,5 @@ associated with the [Call Context](context.mdx). Again, this works the same way 
 Funcs, although Funcs do not necessarily return values to the caller. The
 [Schema Tool](usage.mdx) will generate a function-specific [Results](results.mdx)
 structure with type-safe proxies to the result fields in this map.
-
 
 In the next section we will look at [smart contract initialization](init.mdx).

@@ -10,65 +10,66 @@
  */
 
 module.exports = {
-  docs: [{
-    type: 'doc',
-    id: 'welcome',
-  },
-  {
-    type: 'doc',
-    id: 'overview',
-  },
-  {
-    type: 'doc',
-    id: 'getting_started',
-  },
-  {
-    type: 'category',
-    label: 'Libraries',
-    collapsed: false,
-    items: [
-      {
-        type: 'doc',
-        id: 'libraries/overview',
-        label: 'Overview',
-      },
-      {
-        type: 'category',
-        label: 'Rust',
-        items: [
-          {
-            type: 'doc',
-            id: 'libraries/rust/getting_started',
-            label: 'Getting Started',
-          },
-          {
-            type: 'doc',
-            id: 'libraries/rust/examples',
-            label: 'Examples'
-          },
-          {
-            type: 'doc',
-            id: 'libraries/rust/api_reference',
-            label: 'API Reference'
-          },
-        ]
-      }
-    ]
-  },
-  {
-    type: 'doc',
-    id: 'specs',
-    label: 'Specification',
-  },
-  {
-    type: 'doc',
-    id: 'troubleshooting',
-    label: 'Troubleshooting'
-  },
-  {
-    type: 'doc',
-    id: 'contribute',
-    label: 'Contribute',
-  }
-  ]
+  docs: [
+    {
+      type: 'doc',
+      id: 'welcome',
+    },
+    {
+      type: 'doc',
+      id: 'overview',
+    },
+    {
+      type: 'doc',
+      id: 'getting_started',
+    },
+    {
+      type: 'category',
+      label: 'Libraries',
+      collapsed: false,
+      items: [
+        {
+          type: 'doc',
+          id: 'libraries/overview',
+          label: 'Overview',
+        },
+        {
+          type: 'category',
+          label: 'Rust',
+          items: [
+            {
+              type: 'doc',
+              id: 'libraries/rust/getting_started',
+              label: 'Getting Started',
+            },
+            {
+              type: 'doc',
+              id: 'libraries/rust/examples',
+              label: 'Examples',
+            },
+            {
+              type: 'doc',
+              id: 'libraries/rust/api_reference',
+              label: 'API Reference',
+            },
+          ],
+        },
+      ],
+    },
+    {
+      type: 'doc',
+      id: 'specs',
+      label: 'Specification',
+    },
+    {
+      type: 'doc',
+      id: 'troubleshooting',
+      label: 'Troubleshooting',
+    },
+    {
+      type: 'doc',
+      id: 'contribute',
+      label: 'Contribute',
+    },
+  ],
 };

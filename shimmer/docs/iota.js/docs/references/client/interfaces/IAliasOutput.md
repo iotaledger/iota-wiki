@@ -1,18 +1,19 @@
 ---
 description: iota.js API reference
 keywords:
-- references
-- api references
-- typescript
+  - references
+  - api references
+  - typescript
 image: /img/client_banner.png
 ---
+
 # Interface: IAliasOutput
 
 Alias output.
 
 ## Hierarchy
 
-- [`ITypeBase`](ITypeBase.md)<``4``\>
+- [`ITypeBase`](ITypeBase.md)<`4`\>
 
 - [`ICommonOutput`](ICommonOutput.md)
 
@@ -37,7 +38,7 @@ Alias output.
 
 ### type
 
-• **type**: ``4``
+• **type**: `4`
 
 The type of the object.
 
@@ -45,7 +46,7 @@ The type of the object.
 
 [ITypeBase](ITypeBase.md).[type](ITypeBase.md#type)
 
-___
+---
 
 ### amount
 
@@ -53,7 +54,7 @@ ___
 
 The amount of IOTA tokens held by the output.
 
-___
+---
 
 ### aliasId
 
@@ -61,7 +62,7 @@ ___
 
 Unique identifier of the alias, which is the BLAKE2b-160 hash of the Output ID that created it.
 
-___
+---
 
 ### stateIndex
 
@@ -69,7 +70,7 @@ ___
 
 A counter that must increase by 1 every time the alias is state transitioned.
 
-___
+---
 
 ### stateMetadata
 
@@ -77,7 +78,7 @@ ___
 
 Metadata that can only be changed by the state controller.
 
-___
+---
 
 ### foundryCounter
 
@@ -85,7 +86,7 @@ ___
 
 A counter that denotes the number of foundries created by this alias account.
 
-___
+---
 
 ### immutableFeatures
 
@@ -93,7 +94,7 @@ ___
 
 Immutable features contained by the output.
 
-___
+---
 
 ### nativeTokens
 
@@ -105,7 +106,7 @@ The native tokens held by the output.
 
 [ICommonOutput](ICommonOutput.md).[nativeTokens](ICommonOutput.md#nativetokens)
 
-___
+---
 
 ### unlockConditions
 
@@ -117,7 +118,7 @@ The unlock conditions for the output.
 
 [ICommonOutput](ICommonOutput.md).[unlockConditions](ICommonOutput.md#unlockconditions)
 
-___
+---
 
 ### features
 

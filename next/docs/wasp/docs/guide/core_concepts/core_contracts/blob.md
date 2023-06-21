@@ -2,15 +2,16 @@
 description: The `blobs` contract maintains a registry of _blobs_ (a collection of arbitrary binary data) referenced from smart contracts via their hashes.
 image: /img/logo/WASP_logo_dark.png
 keywords:
-- core contracts
-- bloc
-- binary data
-- store
-- get
-- entry points
-- views
-- reference
---- 
+  - core contracts
+  - bloc
+  - binary data
+  - store
+  - get
+  - entry points
+  - views
+  - reference
+---
+
 # The `blob` Contract
 
 The `blob` contract is one of the [core contracts](overview.md) on each IOTA Smart Contracts chain.
@@ -105,4 +106,3 @@ Returns the chunk associated with the given blob field name.
 ### `listBlobs()`
 
 Returns a list of pairs `blob hash`: `total size of chunks` (`uint32`) for all blobs in the registry.
-

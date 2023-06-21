@@ -1,8 +1,7 @@
 # Class: PreparedTransactionData
 
-PreparedTransactionData` is a class that represents prepared transaction data, which
-is useful for offline signing. It contains the prepared transaction data and an
-`Account` object. It provides methods to retrieve the prepared transaction data, sign
+PreparedTransactionData`is a class that represents prepared transaction data, which
+is useful for offline signing. It contains the prepared transaction data and an`Account` object. It provides methods to retrieve the prepared transaction data, sign
 the transaction and sign+submit/send the transaction.
 
 ## Table of contents
@@ -31,7 +30,7 @@ The method `preparedTransactionData()` is returning an object of type
 
 [`IPreparedTransactionData`](../interfaces/IPreparedTransactionData.md)
 
-___
+---
 
 ### send
 
@@ -49,7 +48,7 @@ has been signed and submitted.
 
 `Promise`<[`Transaction`](../interfaces/Transaction.md)\>
 
-___
+---
 
 ### sign
 
@@ -66,7 +65,7 @@ A `Promise` that resolves to a `SignedTransactionEssence` object.
 
 `Promise`<[`SignedTransactionEssence`](../interfaces/SignedTransactionEssence.md)\>
 
-___
+---
 
 ### signAndSubmitTransaction
 

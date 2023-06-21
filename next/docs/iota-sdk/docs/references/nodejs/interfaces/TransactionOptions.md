@@ -17,7 +17,7 @@ Options for the transaction creation
 
 Custom inputs that should be used for the transaction
 
-___
+---
 
 ### note
 

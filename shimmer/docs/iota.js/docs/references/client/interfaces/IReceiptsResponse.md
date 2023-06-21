@@ -1,11 +1,12 @@
 ---
 description: iota.js API reference
 keywords:
-- references
-- api references
-- typescript
+  - references
+  - api references
+  - typescript
 image: /img/client_banner.png
 ---
+
 # Interface: IReceiptsResponse
 
 Receipts response details.
@@ -20,6 +21,6 @@ Receipts response details.
 
 ### receipts
 
-• **receipts**: { `milestoneIndex`: `number` ; `receipt`: [`IReceiptMilestoneOption`](IReceiptMilestoneOption.md)  }[]
+• **receipts**: { `milestoneIndex`: `number` ; `receipt`: [`IReceiptMilestoneOption`](IReceiptMilestoneOption.md) }[]
 
 The receipts.

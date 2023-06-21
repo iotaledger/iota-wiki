@@ -57,17 +57,20 @@ See this website for a [demonstration of the application](https://data.iota.org/
 
 ## Additional resources
 
----------------
+---
+
 ### [Data Marketplace API documentation](https://data.iota.org/static/docs)
 
 Interact with the Data Marketplace through the REST API.
 
 ---
+
 ### [GitHub Repository](https://github.com/iotaledger/data-marketplace)
 
 Read the code and some quickstart instructions to test this blueprint.
 
 ---
+
 ### [Client Library](https://wiki.iota.org/iota.rs/welcome)
 
 Learn how to use the iota client library to create, send, and receive transactions.
@@ -84,4 +87,4 @@ Masked Authenticated Messaging is a second layer data communication protocol tha
 
 Read the code and some quickstart instructions to test MAM with JavaScript.
 
----------------
+---

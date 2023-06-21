@@ -17,7 +17,7 @@ keywords:
 - fee info
 - reference
 
---- 
+---
 
 # The `governance` Contract
 
@@ -42,10 +42,10 @@ The Fee Policy looks like the following:
 
 ```go
 {
-  TokenID []byte // id of the token used to pay for gas (nil if the base token should be used (iota/shimmer)) 
-  
+  TokenID []byte // id of the token used to pay for gas (nil if the base token should be used (iota/shimmer))
+
   GasPerToken uint64 // how many gas units are paid for each token
-  
+
   ValidatorFeeShare uint8 // percentage of the fees that are credited to the validators (0 - 100)
 }
 ```
@@ -162,9 +162,9 @@ Iterates through the given map of actions and applies them.
 
 - `n` ([`Map`](https://github.com/dessaya/wasp/blob/develop/packages/kv/collections/map.go) of `public key` => `byte`):
   The list of actions to perform. Each byte value can be one of the following:
-    - `0`: Remove the access node from the access nodes list.
-    - `1`: Accept a candidate node and add it to the list of access nodes.
-    - `2`: Drop an access node from the access node and candidate lists.
+  - `0`: Remove the access node from the access nodes list.
+  - `1`: Accept a candidate node and add it to the list of access nodes.
+  - `2`: Drop an access node from the access node and candidate lists.
 
 It can only be invoked by the chain owner.
 
@@ -258,13 +258,11 @@ Returns whether the chain is ongoing maintenance.
 
 ## Schemas
 
-
 ### `EVM gas ratio`
 
 ISC : EVM gas ratio is expressed as an `a : b` ratio, where `<ISC gas> = <EVM gas> * <a> / <b>`.
 
 `GasRatio` is encoded as the concatenation of the two `uint32` values `a` & `b`.
-
 
 ### `FeePolicy`
 
@@ -285,4 +283,3 @@ ISC : EVM gas ratio is expressed as an `a : b` ratio, where `<ISC gas> = <EVM ga
 - The certificate. (`[]byte` prefixed by `uint16` size)
 - Whether the access node is part of the committee of validators. (`bool`)
 - The API base URL. (`string` prefixed by `uint16` size)
-

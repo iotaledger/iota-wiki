@@ -1,4 +1,4 @@
-# Zebra-IOTA-Edge-SDK : Identity Enabler : 104 Tutorial 
+# Zebra-IOTA-Edge-SDK : Identity Enabler : 104 Tutorial
 
 <h2>Device onboarding</h2>
 
@@ -95,7 +95,7 @@ In our blueprint application the process described above is conducted as shown b
 <img alt="Request Credential 1" src="https://raw.githubusercontent.com/ZebraDevs/Zebra-Iota-Edge-SDK/main/documentation/static/img/zebra-iota-edge-sdk/104/image16.png" width="30%" align="center"/>
 </p>
 
-Afterwards, such QR code is scanned by the [*Holder Application*](../zebra-iota-edge-sdk/zebra-iota-edge-sdk-102-tutorial.md) that will verify the claims, the ownership of the DID and will finally issue a new credential.
+Afterwards, such QR code is scanned by the [_Holder Application_](../zebra-iota-edge-sdk/zebra-iota-edge-sdk-102-tutorial.md) that will verify the claims, the ownership of the DID and will finally issue a new credential.
 
 <p align="center">
 <img alt="Device ID Credential" src="https://raw.githubusercontent.com/ZebraDevs/Zebra-Iota-Edge-SDK/main/documentation/static/img/zebra-iota-edge-sdk/104/image8.png" width="30%"/>

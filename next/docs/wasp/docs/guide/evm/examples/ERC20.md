@@ -2,16 +2,14 @@
 description: Solidity smart contract ERC20.
 image: /img/logo/WASP_logo_dark.png
 keywords:
-
-- smart contracts
-- EVM
-- Solidity
-- ERC20
-- eip-20
-- token creation
-- mint tokens
-- how to
-
+  - smart contracts
+  - EVM
+  - Solidity
+  - ERC20
+  - eip-20
+  - token creation
+  - mint tokens
+  - how to
 ---
 
 # ERC20 Example
@@ -103,4 +101,3 @@ Now you should see your token in MetaMask. You can send them to your friends wit
 
 You also can ask in the [Discord Chat Server](https://discord.iota.org) to send them around and discover what the
 community is building on IOTA Smart Contracts.
-

@@ -1,11 +1,12 @@
 ---
 description: iota.js API reference
 keywords:
-- references
-- api references
-- typescript
+  - references
+  - api references
+  - typescript
 image: /img/client_banner.png
 ---
+
 # Enumeration: ConflictReason
 
 Reason for block conflicts.
@@ -31,7 +32,7 @@ Reason for block conflicts.
 
 The block has no conflict.
 
-___
+---
 
 ### inputUTXOAlreadySpent
 
@@ -39,7 +40,7 @@ ___
 
 The referenced UTXO was already spent.
 
-___
+---
 
 ### inputUTXOAlreadySpentInThisMilestone
 
@@ -47,7 +48,7 @@ ___
 
 The referenced UTXO was already spent while confirming this milestone.
 
-___
+---
 
 ### inputUTXONotFound
 
@@ -55,7 +56,7 @@ ___
 
 The referenced UTXO cannot be found.
 
-___
+---
 
 ### inputOutputSumMismatch
 
@@ -63,7 +64,7 @@ ___
 
 The sum of the inputs and output values does not match.
 
-___
+---
 
 ### invalidSignature
 
@@ -71,7 +72,7 @@ ___
 
 The unlock block signature is invalid.
 
-___
+---
 
 ### invalidNetworkId
 
@@ -79,7 +80,7 @@ ___
 
 The networkId in the essence does not match the nodes configuration.
 
-___
+---
 
 ### semanticValidationFailed
 

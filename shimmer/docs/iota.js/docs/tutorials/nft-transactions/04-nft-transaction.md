@@ -1,13 +1,11 @@
 ---
-description: "Update an NFT’s state using a transaction with iota.js."
+description: 'Update an NFT’s state using a transaction with iota.js.'
 image: /img/client_banner.png
 keywords:
-
-- tutorial
-- NFT
-- output
-- transaction
-
+  - tutorial
+  - NFT
+  - output
+  - transaction
 ---
 
 # Create an NFT Transaction
@@ -28,21 +26,23 @@ to the NFT Output.
 
 To create this transaction, you will need the following:
 
-* A Shimmer Node. You can use the [Shimmer Testnet nodes](https://api.testnet.shimmer.network).
+- A Shimmer Node. You can use the [Shimmer Testnet nodes](https://api.testnet.shimmer.network).
 
-* The NFT ID of your NFT, in hexadecimal format `0x7d08...`.
+- The NFT ID of your NFT, in hexadecimal format `0x7d08...`.
 
-* The keys of the address that controls your NFT.
+- The keys of the address that controls your NFT.
 
 ```typescript
-const client = new SingleNodeClient(API_ENDPOINT, {powProvider: new NeonPowProvider()});
+const client = new SingleNodeClient(API_ENDPOINT, {
+  powProvider: new NeonPowProvider(),
+});
 const nodeInfo = await client.info();
 
-const nftOwnerAddr = "0x62c0...";
-const nftOwnerPubKey = "0x91db...";
-const nftOwnerPrivateKey = "0x22f6...";
+const nftOwnerAddr = '0x62c0...';
+const nftOwnerPubKey = '0x91db...';
+const nftOwnerPrivateKey = '0x22f6...';
 
-const nftBuyerAddr = "0x57d3...";
+const nftBuyerAddr = '0x57d3...';
 ```
 
 ## Query For the NFT Output
@@ -55,13 +55,14 @@ Output details as you need to use them as input for the transaction.
 const indexerPlugin = new IndexerPluginClient(client);
 const outputList = await indexerPlugin.nft(nftId);
 if (outputList.items.length === 0) {
-    throw new Error("NFT not found");
+  throw new Error('NFT not found');
 }
 const consumedOutputId = outputList.items[0];
-console.log("Consumed Output Id", consumedOutputId);
+console.log('Consumed Output Id', consumedOutputId);
 
 const initialNftOutputDetails = await client.output(consumedOutputId);
-const initialNftOutput: INftOutput = initialNftOutputDetails.output as INftOutput;
+const initialNftOutput: INftOutput =
+  initialNftOutputDetails.output as INftOutput;
 ```
 
 ## Set the New Unlock Conditions
@@ -71,10 +72,9 @@ it, and then set the two new unlock conditions:
 
 1. The [address](https://wiki.iota.org/shimmer/introduction/explanations/what_is_stardust/unlock_conditions/#address)
    corresponding to the new owner of the NFT (for instance, the buyer of the NFT).
-2.
-A [storage deposit unlock condition](https://wiki.iota.org/shimmer/introduction/explanations/what_is_stardust/unlock_conditions/#storage-deposit-return)
-that will allow you to get a refund of the storage costs of the NFT Output. That way, the `SMR` tokens you used to cover
-the storage costs will be refunded whenever the new owner of the NFT decides to unlock it.
+2. A [storage deposit unlock condition](https://wiki.iota.org/shimmer/introduction/explanations/what_is_stardust/unlock_conditions/#storage-deposit-return)
+   that will allow you to get a refund of the storage costs of the NFT Output. That way, the `SMR` tokens you used to cover
+   the storage costs will be refunded whenever the new owner of the NFT decides to unlock it.
 
 ## Define the Transaction
 
@@ -89,21 +89,21 @@ one.
 ```typescript
 const nextNftOutput: INftOutput = JSON.parse(JSON.stringify(initialNftOutput));
 nextNftOutput.unlockConditions = [
-    {
-        type: ADDRESS_UNLOCK_CONDITION_TYPE,
-        address: {
-            type: ED25519_ADDRESS_TYPE,
-            pubKeyHash: nftBuyerAddr
-        }
+  {
+    type: ADDRESS_UNLOCK_CONDITION_TYPE,
+    address: {
+      type: ED25519_ADDRESS_TYPE,
+      pubKeyHash: nftBuyerAddr,
     },
-    {
-        type: STORAGE_DEPOSIT_RETURN_UNLOCK_CONDITION_TYPE,
-        amount: nextNftOutput.amount,
-        returnAddress: {
-            type: ED25519_ADDRESS_TYPE,
-            pubKeyHash: nftOwnerAddr
-        }
-    }
+  },
+  {
+    type: STORAGE_DEPOSIT_RETURN_UNLOCK_CONDITION_TYPE,
+    amount: nextNftOutput.amount,
+    returnAddress: {
+      type: ED25519_ADDRESS_TYPE,
+      pubKeyHash: nftOwnerAddr,
+    },
+  },
 ];
 
 nextNftOutput.nftId = nftId;
@@ -121,14 +121,18 @@ const outputs: INftOutput[] = [];
 inputs.push(TransactionHelper.inputFromOutputId(consumedOutputId));
 outputs.push(nextNftOutput);
 
-const inputsCommitment = TransactionHelper.getInputsCommitment([initialNftOutput]);
+const inputsCommitment = TransactionHelper.getInputsCommitment([
+  initialNftOutput,
+]);
 
 const transactionEssence: ITransactionEssence = {
-    type: TRANSACTION_ESSENCE_TYPE,
-    networkId: TransactionHelper.networkIdFromNetworkName(nodeInfo.protocol.networkName),
-    inputs,
-    inputsCommitment,
-    outputs
+  type: TRANSACTION_ESSENCE_TYPE,
+  networkId: TransactionHelper.networkIdFromNetworkName(
+    nodeInfo.protocol.networkName,
+  ),
+  inputs,
+  inputsCommitment,
+  outputs,
 };
 ```
 
@@ -138,21 +142,25 @@ The unlock you need to provide correspond to the signature calculated against th
 key of the original owner address.
 
 ```typescript
-const essenceHash = TransactionHelper.getTransactionEssenceHash(transactionEssence);
+const essenceHash =
+  TransactionHelper.getTransactionEssenceHash(transactionEssence);
 
 const unlockCondition: ISignatureUnlock = {
-    type: SIGNATURE_UNLOCK_TYPE,
-    signature: {
-        type: ED25519_SIGNATURE_TYPE,
-        publicKey: nftOwnerPubKey,
-        signature: Converter.bytesToHex(Ed25519.sign(Converter.hexToBytes(nftOwnerPrivateKey), essenceHash), true)
-    }
+  type: SIGNATURE_UNLOCK_TYPE,
+  signature: {
+    type: ED25519_SIGNATURE_TYPE,
+    publicKey: nftOwnerPubKey,
+    signature: Converter.bytesToHex(
+      Ed25519.sign(Converter.hexToBytes(nftOwnerPrivateKey), essenceHash),
+      true,
+    ),
+  },
 };
 
 const transactionPayload: ITransactionPayload = {
-    type: TRANSACTION_PAYLOAD_TYPE,
-    essence: transactionEssence,
-    unlocks: [unlockCondition]
+  type: TRANSACTION_PAYLOAD_TYPE,
+  essence: transactionEssence,
+  unlocks: [unlockCondition],
 };
 ```
 
@@ -164,18 +172,17 @@ updated state.
 
 ```typescript
 const block: IBlock = {
-    protocolVersion: DEFAULT_PROTOCOL_VERSION,
-    parents: [],
-    payload: transactionPayload,
-    nonce: "0",
+  protocolVersion: DEFAULT_PROTOCOL_VERSION,
+  parents: [],
+  payload: transactionPayload,
+  nonce: '0',
 };
 
 const blockId = await client.blockSubmit(block);
-console.log("Block Id:", blockId);
+console.log('Block Id:', blockId);
 ```
 
 ## Putting It All Together
 
 The complete source code of this part of the tutorial is available in
 the [official iota.js GitHub repository](https://github.com/iotaledger/iota.js/blob/feat/stardust/packages/iota/examples/shimmer-nft-transaction-tutorial/src/nft-transaction.ts).
-

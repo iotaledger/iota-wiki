@@ -2,15 +2,14 @@
 description: This section describes the configuration parameters and their types for your Hornet node.
 image: /img/Banner/banner_hornet_configuration.png
 keywords:
-- IOTA Node 
-- Hornet Node
-- Configuration
-- JSON
-- Customize
-- Config
-- reference
+  - IOTA Node
+  - Hornet Node
+  - Configuration
+  - JSON
+  - Customize
+  - Config
+  - reference
 ---
-
 
 # Core Configuration
 
@@ -21,6 +20,7 @@ Hornet uses a JSON standard format as a config file. If you are unsure about JSO
 The default config file is `config.json`. You can change the path or name of the config file by using the `-c` or `--config` argument while executing `hornet` executable.
 
 For example:
+
 ```bash
 hornet -c config_example.json
 ```
@@ -33,22 +33,21 @@ hornet -h --full
 
 ## 1. REST API
 
-| Name                 | Description                                                                                     | Type             |
-| :------------------- | :---------------------------------------------------------------------------------------------- | :--------------- |
-| bindAddress          | The bind address on which the REST API listens on                                               | string           |
-| [jwtAuth](#jwt-auth) | Config for JWT auth                                                                             | object           |
-| publicRoutes         | The HTTP REST routes which can be called without authorization. Wildcards using * are allowed.  | array of strings |
-| protectedRoutes      | The HTTP REST routes which need to be called with authorization. Wildcards using * are allowed. | array of strings |
-| powEnabled           | Whether the node does PoW if messages are received via API                                      | bool             |
-| powWorkerCount       | The amount of workers used for calculating PoW when issuing messages via API                    | integer          |
-| [limits](#limits)    | Configuration for api limits                                                                    | object           |
+| Name                 | Description                                                                                      | Type             |
+| :------------------- | :----------------------------------------------------------------------------------------------- | :--------------- |
+| bindAddress          | The bind address on which the REST API listens on                                                | string           |
+| [jwtAuth](#jwt-auth) | Config for JWT auth                                                                              | object           |
+| publicRoutes         | The HTTP REST routes which can be called without authorization. Wildcards using \* are allowed.  | array of strings |
+| protectedRoutes      | The HTTP REST routes which need to be called with authorization. Wildcards using \* are allowed. | array of strings |
+| powEnabled           | Whether the node does PoW if messages are received via API                                       | bool             |
+| powWorkerCount       | The amount of workers used for calculating PoW when issuing messages via API                     | integer          |
+| [limits](#limits)    | Configuration for api limits                                                                     | object           |
 
 ### JWT Auth
 
 | Name | Description                                                                                                                             | Type   |
 | :--- | :-------------------------------------------------------------------------------------------------------------------------------------- | :----- |
 | salt | Salt used inside the JWT tokens for the REST API. Change this to a different value to invalidate JWT tokens not matching this new value | string |
-
 
 ### Limits
 
@@ -132,6 +131,7 @@ Example:
 | path                      | The path to the database folder                                                     | string |
 | autoRevalidation          | Whether to automatically start revalidation on startup if the database is corrupted | bool   |
 | checkLedgerStateOnStartup | Whether to check if the ledger state matches the total supply on startup            | bool   |
+
 Example:
 
 ```json
@@ -145,15 +145,15 @@ Example:
 
 ## 4. Snapshots
 
-| Name                          | Description                                                                                                                                                            | Type             |
-| :---------------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :--------------- |
-| enabled                       | whether to generate snapshot files                                                                                                                                     | bool             |
-| depth                         | The depth, respectively the starting point, at which a snapshot of the ledger is generated                                                                             | integer          |
-| interval                      | Interval, in milestones, at which snapshot files are created (snapshots are only created if the node is synced)                                                        | integer          |
-| fullPath                      | Path to the full snapshot file                                                                                                                                         | string           |
-| deltaPath                     | Path to the delta snapshot file                                                                                                                                        | string           |
-| deltaSizeThresholdPercentage  | Create a full snapshot if the size of a delta snapshot reaches a certain percentage of the full snapshot  (0.0 = always create delta snapshot to keep ms diff history) | float            |
-| [downloadURLs](#downloadurls) | URLs to load the snapshot files from.                                                                                                                                  | array of objects |
+| Name                          | Description                                                                                                                                                           | Type             |
+| :---------------------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :--------------- |
+| enabled                       | whether to generate snapshot files                                                                                                                                    | bool             |
+| depth                         | The depth, respectively the starting point, at which a snapshot of the ledger is generated                                                                            | integer          |
+| interval                      | Interval, in milestones, at which snapshot files are created (snapshots are only created if the node is synced)                                                       | integer          |
+| fullPath                      | Path to the full snapshot file                                                                                                                                        | string           |
+| deltaPath                     | Path to the delta snapshot file                                                                                                                                       | string           |
+| deltaSizeThresholdPercentage  | Create a full snapshot if the size of a delta snapshot reaches a certain percentage of the full snapshot (0.0 = always create delta snapshot to keep ms diff history) | float            |
+| [downloadURLs](#downloadurls) | URLs to load the snapshot files from.                                                                                                                                 | array of objects |
 
 ### DownloadURLs
 
@@ -201,6 +201,7 @@ Example:
 | maxMilestonesToKeep | Maximum amount of milestone cones to keep in the database                                | integer |
 
 ### Size
+
 | Name                | Description                                                                         | Type   |
 | :------------------ | :---------------------------------------------------------------------------------- | :----- |
 | enabled             | Whether to delete old message data from the database based on maximum database size | bool   |

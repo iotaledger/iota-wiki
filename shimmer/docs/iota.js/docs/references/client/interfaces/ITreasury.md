@@ -1,11 +1,12 @@
 ---
 description: iota.js API reference
 keywords:
-- references
-- api references
-- typescript
+  - references
+  - api references
+  - typescript
 image: /img/client_banner.png
 ---
+
 # Interface: ITreasury
 
 Treasury.
@@ -25,7 +26,7 @@ Treasury.
 
 The milestone hash of the treasury.
 
-___
+---
 
 ### amount
 

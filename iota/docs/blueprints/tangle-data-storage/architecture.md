@@ -16,7 +16,7 @@ The API server exposes two methods to the client:
 
 - `storeFile()`
 - `retrieveFile()`
-  
+
 ## storeFile()
 
 To store a file using the API, the client does the following:
@@ -78,9 +78,9 @@ IPFSStoreRequest {
 On receipt of the JSON object, the file data is uploaded to the IPFS node.
 
 ```javascript
-import ipfsClient from "ipfs-http-client";
+import ipfsClient from 'ipfs-http-client';
 
-const buffer = Buffer.from(request.data, "base64");
+const buffer = Buffer.from(request.data, 'base64');
 const ipfs = ipfsClient(config.ipfs);
 const addResponse = await ipfs.add(buffer);
 ```
@@ -98,31 +98,33 @@ const addresses = client.getAddresses(currentState.seed);
 
 // Get receiving address
 const address = await addresses
-   .accountIndex(0)
-   .range(currentState.addressIndex, currentState.addressIndex + 1)
-   .get();
+  .accountIndex(0)
+  .range(currentState.addressIndex, currentState.addressIndex + 1)
+  .get();
 
-const hashedAddress = Blake2b.sum256(Converter.utf8ToBytes(address[0].toString()));
+const hashedAddress = Blake2b.sum256(
+  Converter.utf8ToBytes(address[0].toString()),
+);
 
 // Define the payload to add to the message
 const tanglePayload = {
-   name: request.name,
-   description: request.description,
-   size: request.size,
-   modified: request.modified,
-   algorithm: request.algorithm,
-   hash: request.hash,
-   ipfs: ipfsHash
+  name: request.name,
+  description: request.description,
+  size: request.size,
+  modified: request.modified,
+  algorithm: request.algorithm,
+  hash: request.hash,
+  ipfs: ipfsHash,
 };
 
 // Send the message to the Tangle
 const message = await client
-   .message()
-   .index(Converter.bytesToHex(hashedAddress))
-   .seed(currentState.seed)
-   .accountIndex(0)
-   .data(new TextEncoder().encode(JSON.stringify(tanglePayload)))
-   .submit();
+  .message()
+  .index(Converter.bytesToHex(hashedAddress))
+  .seed(currentState.seed)
+  .accountIndex(0)
+  .data(new TextEncoder().encode(JSON.stringify(tanglePayload)))
+  .submit();
 ```
 
 The Object returned from `message` contains the message id and the ipfs hash, which is returned to the client to use for reading the data in the Tangle.
@@ -143,7 +145,10 @@ To get the file data from the Tangle, we request the message from the IOTA node,
 
 ```javascript
 // Create a new instance of MessageCacheService
-const messageCacheService = new MessageCacheService(config.dynamoDbConnection, config.node.provider);
+const messageCacheService = new MessageCacheService(
+  config.dynamoDbConnection,
+  config.node.provider,
+);
 
 // Get the message with the given id
 const message = await messageCacheService.get(request.messageId);
@@ -163,19 +168,20 @@ Assuming the file was returned from the IPFS into a buffer, the file is hashed u
 ```javascript
 let hex;
 
-if (request.algorithm === "sha256") {
-    const hashAlgo = crypto.createHash(request.algorithm);
-    hashAlgo.update(buffer);
-    hex = hashAlgo.digest("hex");
-} else if (request.algorithm === "sha3") {
-    const hashAlgo = new SHA3(256);
-    hashAlgo.update(buffer);
-    hex = hashAlgo.digest("hex");
+if (request.algorithm === 'sha256') {
+  const hashAlgo = crypto.createHash(request.algorithm);
+  hashAlgo.update(buffer);
+  hex = hashAlgo.digest('hex');
+} else if (request.algorithm === 'sha3') {
+  const hashAlgo = new SHA3(256);
+  hashAlgo.update(buffer);
+  hex = hashAlgo.digest('hex');
 }
 
 if (hex !== request.hash) {
-   throw new Error(
-       `The hash for the file is incorrect '${request.hash}' was sent but it has been calculated as '${hex}'`);
+  throw new Error(
+    `The hash for the file is incorrect '${request.hash}' was sent but it has been calculated as '${hex}'`,
+  );
 }
 ```
 
@@ -185,7 +191,7 @@ If you want to use this blueprint in your own system, you should consider the fo
 
 ### Data Security
 
-Because the IPFS is a distributed web, anyone who has the IPFS hash can download and read the contents of the file. 
+Because the IPFS is a distributed web, anyone who has the IPFS hash can download and read the contents of the file.
 
 To prevent unauthorized entities from reading the data, you could encrypt it before uploading it to the IPFS node.
 

@@ -18,7 +18,7 @@ Options to filter outputs
 
 Filter all outputs where the booked milestone index is below the specified timestamp
 
-___
+---
 
 ### upperBoundBookedTimestamp
 
@@ -26,7 +26,7 @@ ___
 
 Filter all outputs where the booked milestone index is above the specified timestamp
 
-___
+---
 
 ### outputTypes
 

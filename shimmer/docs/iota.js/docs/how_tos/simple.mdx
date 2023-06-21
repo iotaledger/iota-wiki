@@ -1,36 +1,36 @@
 ---
-description: "Learn how to connect to your node and list its properties using the iota.js client library."
+description: 'Learn how to connect to your node and list its properties using the iota.js client library.'
 image: /img/client_banner.png
 keywords:
-- how to
-- example
-- simple connection
-- get node properties
-- get milestone
-- get outputs
-- get peers
-- get block
-- block metadata
-- get output properties
+  - how to
+  - example
+  - simple connection
+  - get node properties
+  - get milestone
+  - get outputs
+  - get peers
+  - get block
+  - block metadata
+  - get output properties
 ---
+
 # Connect to a Node
 
 ## Instantiate a SimpleNodeClient
 
 You can instantiate a [SimpleNodeClient](../references/client/classes/SingleNodeClient.md) using its
-[constructor](../references/client/classes/SingleNodeClient.md#constructor).  You will need to provide a valid
+[constructor](../references/client/classes/SingleNodeClient.md#constructor). You will need to provide a valid
 `API_ENDPOINT`, and can also use the
 [SingleNodeClientOptions](../references/client/interfaces/SingleNodeClientOptions.md).
-
 
 ### Get the SimpleNodeClient's Properties
 
 Once you have [instantiated the SingleNodeClient](#instantiate-a-simplenodeclient), you can retrieve its properties by
-using the class's [functions](../references/client/classes/SingleNodeClient#methods-1).  The example uses the following:
+using the class's [functions](../references/client/classes/SingleNodeClient#methods-1). The example uses the following:
 
-* [SingleNodeClient.health()](../references/client/classes/SingleNodeClient.md#health)
-* [SingleNodeClient.info()](../references/client/classes/SingleNodeClient.md#info)
-* [SingleNodeClient.tips()](../references/client/classes/SingleNodeClient.md#tips)
+- [SingleNodeClient.health()](../references/client/classes/SingleNodeClient.md#health)
+- [SingleNodeClient.info()](../references/client/classes/SingleNodeClient.md#info)
+- [SingleNodeClient.tips()](../references/client/classes/SingleNodeClient.md#tips)
 
 ## Submit a Block
 
@@ -42,19 +42,19 @@ in the example.
 ## Retrieve a Block
 
 You can use the [SingleNodeClient.block(blockId)](../references/client/classes/SingleNodeClient#block) function to retrieve
-a block using its `blockId`.  If successful, the function will return a
+a block using its `blockId`. If successful, the function will return a
 [block](../references/client/interfaces/IClient.md).
 
 ## Retrieve a Block's Metadata
 
 You can use the [SingleNodeClient.blockMetadata(blockId)](../references/client/classes/SingleNodeClient#blockmetadata) function to retrieve
-a block's metadata using its `blockId`.  If successful, the function will return a
+a block's metadata using its `blockId`. If successful, the function will return a
 [IBlockMetadata](../references/client/interfaces/IBlockMetadata).
 
 ## Retrieve a Raw Block
 
 You can use the [SingleNodeClient.blockRaw(blockId)](../references/client/classes/SingleNodeClient#blockraw) function to retrieve
-a raw block using its `blockId`.  If successful, the function will return the block's raw data which you can convert to
+a raw block using its `blockId`. If successful, the function will return the block's raw data which you can convert to
 Hex using the [Converter.bytesToHex()](../references/util/classes/Converter#bytestohex) function, or decode using the
 [ReadStream(blockRaw)](../references/util/classes/ReadStream) class.
 
@@ -74,7 +74,6 @@ Once you have [retrieved a milestone](#retrieve-a-milestone), you can retrieve a
 You can retrieve an output using the
 [SingleNodeClient.output(outputId)](../references/client/classes/SingleNodeClient#output) function. The
 function will return a [IMilestonePayload](../references/client/interfaces/IOutputResponse) if successful.
-
 
 ### Retrieve an Output's Properties
 

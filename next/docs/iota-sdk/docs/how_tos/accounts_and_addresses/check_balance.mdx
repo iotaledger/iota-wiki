@@ -3,23 +3,23 @@ title: Check Balance
 description: "How to check a wallet account's balance."
 image: /img/logo/iota_mark_light.png
 keywords:
-- how to
-- get balance
-- check balance
-- nodejs
-- python
-- rust
+  - how to
+  - get balance
+  - check balance
+  - nodejs
+  - python
+  - rust
 ---
 
-import Tabs from "@theme/Tabs";
-import TabItem from "@theme/TabItem";
-import TipFaucet from "../../_admonitions/_tip_faucet.md";
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import TipFaucet from '../../_admonitions/_tip_faucet.md';
 
 You can retrieve the balance for any [account you created](./create_account.mdx) by calling the
 `Account.balance()` function. Bear in mind that you should always sync the account with the node to get the latest
 outputs. The sync function also returns the balance. So in some cases just calling that might be enough.
 
-<TipFaucet/>
+<TipFaucet />
 
 ## Code Example
 
@@ -30,7 +30,7 @@ The following example will:
 3. Sync the account with the node to get the latest transactions.
 4. Request the account's balance.
 
-<WarningUnlockConditions/>
+<WarningUnlockConditions />
 
 <Tabs groupId="language">
 <TabItem value="rust" label="Rust">

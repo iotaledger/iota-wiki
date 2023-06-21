@@ -4,14 +4,15 @@ sidebar_label: Getting Started
 description: Getting started with the IOTA Identity WASM Library.
 image: /img/Identity_icon.png
 keywords:
-- WASM
-- install
-- npm
-- yarn
-- build
-- nodejs
-- webpack
+  - WASM
+  - install
+  - npm
+  - yarn
+  - build
+  - nodejs
+  - webpack
 ---
+
 # IOTA Identity WASM
 
 > This is the beta version of the official WASM bindings for [IOTA Identity](https://github.com/iotaledger/identity.rs).
@@ -73,6 +74,7 @@ Replace imports with local paths for txm:
 cat | sed -e "s#require('@iota/identity-wasm/node')#require('./node')#" | node
 -->
 <!-- !test check Nodejs Example -->
+
 ```typescript
 const {
   KeyPair,
@@ -87,7 +89,7 @@ const {
 const { Client } = require('@iota/client-wasm/node');
 
 // The endpoint of the IOTA node to use.
-const API_ENDPOINT = "http://127.0.0.1:14265";
+const API_ENDPOINT = 'http://127.0.0.1:14265';
 
 /** Demonstrate how to create a DID Document. */
 async function main() {
@@ -112,21 +114,21 @@ async function main() {
     document.id(),
     keypair.type(),
     keypair.public(),
-    "#key-1"
+    '#key-1',
   );
   document.insertMethod(method, MethodScope.VerificationMethod());
 
   // Attach a new method relationship to the existing method.
   document.attachMethodRelationship(
-    document.id().join("#key-1"),
-    MethodRelationship.Authentication
+    document.id().join('#key-1'),
+    MethodRelationship.Authentication,
   );
 
   // Add a new Service.
   const service = new Service({
-    id: document.id().join("#linked-domain"),
-    type: "LinkedDomains",
-    serviceEndpoint: "https://iota.org/",
+    id: document.id().join('#linked-domain'),
+    type: 'LinkedDomains',
+    serviceEndpoint: 'https://iota.org/',
   });
   document.insertService(service);
 
@@ -186,20 +188,20 @@ $ npm install rollup-plugin-copy --save-dev
 
 ```js
 // Include the copy plugin
-import copy from "rollup-plugin-copy";
+import copy from 'rollup-plugin-copy';
 
 // Add the copy plugin to the `plugins` array of your rollup config:
 copy({
   targets: [
     {
-      src: "node_modules/@iota/client-wasm/web/wasm/client_wasm_bg.wasm",
-      dest: "public",
-      rename: "client_wasm_bg.wasm",
+      src: 'node_modules/@iota/client-wasm/web/wasm/client_wasm_bg.wasm',
+      dest: 'public',
+      rename: 'client_wasm_bg.wasm',
     },
     {
-      src: "node_modules/@iota/identity-wasm/web/identity_wasm_bg.wasm",
-      dest: "public",
-      rename: "identity_wasm_bg.wasm",
+      src: 'node_modules/@iota/identity-wasm/web/identity_wasm_bg.wasm',
+      dest: 'public',
+      rename: 'identity_wasm_bg.wasm',
     },
   ],
 });
@@ -236,8 +238,8 @@ new CopyWebPlugin({
 ### Web Usage
 
 ```typescript
-import * as client from "@iota/client-wasm/web";
-import * as identity from "@iota/identity-wasm/web";
+import * as client from '@iota/client-wasm/web';
+import * as identity from '@iota/identity-wasm/web';
 
 /** Demonstrate how to create a DID Document. */
 async function createDocument() {
@@ -262,21 +264,21 @@ async function createDocument() {
     document.id(),
     keypair.type(),
     keypair.public(),
-    "#key-1"
+    '#key-1',
   );
   document.insertMethod(method, identity.MethodScope.VerificationMethod());
 
   // Attach a new method relationship to the existing method.
   document.attachMethodRelationship(
-    document.id().join("#key-1"),
-    identity.MethodRelationship.Authentication
+    document.id().join('#key-1'),
+    identity.MethodRelationship.Authentication,
   );
 
   // Add a new Service.
   const service = new identity.Service({
-    id: document.id().join("#linked-domain"),
-    type: "LinkedDomains",
-    serviceEndpoint: "https://iota.org/",
+    id: document.id().join('#linked-domain'),
+    type: 'LinkedDomains',
+    serviceEndpoint: 'https://iota.org/',
   });
   document.insertService(service);
 
@@ -300,7 +302,7 @@ client
 })();
 
 // Default path is "identity_wasm_bg.wasm", but you can override it like this
-await identity.init("./static/identity_wasm_bg.wasm");
+await identity.init('./static/identity_wasm_bg.wasm');
 ```
 
 Calling `identity.init().then(<callback>)` or `await identity.init()` is required to load the Wasm file from the server if not available, because of that it will only be slow for the first time.

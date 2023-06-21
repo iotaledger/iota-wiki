@@ -1,18 +1,19 @@
 ---
 keywords:
-- containers
-- types
-- container types
-- single type
-- array
-- schema definition file
+  - containers
+  - types
+  - container types
+  - single type
+  - array
+  - schema definition file
 
 description: You can add a typedefs section to the schema definition file, where you can define a single type name for a container type. This way you can easily create containers that contain container types.
 
 image: /img/logo/WASP_logo_dark.png
 ---
-import Tabs from "@theme/Tabs"
-import TabItem from "@theme/TabItem"
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 # Type Definitions
 
@@ -156,44 +157,40 @@ pub type MutableBettingRound = ArrayOfMutableBet;
 <TabItem value="ts">
 
 ```ts
-import * as wasmtypes from "wasmlib/wasmtypes";
-import * as sc from "./index";
+import * as wasmtypes from 'wasmlib/wasmtypes';
+import * as sc from './index';
 
 export class ArrayOfImmutableBet extends wasmtypes.ScProxy {
+  length(): u32 {
+    return this.proxy.length();
+  }
 
-	length(): u32 {
-		return this.proxy.length();
-	}
-
-	getBet(index: u32): sc.ImmutableBet {
-		return new sc.ImmutableBet(this.proxy.index(index));
-	}
+  getBet(index: u32): sc.ImmutableBet {
+    return new sc.ImmutableBet(this.proxy.index(index));
+  }
 }
 
-export class ImmutableBettingRound extends ArrayOfImmutableBet {
-}
+export class ImmutableBettingRound extends ArrayOfImmutableBet {}
 
 export class ArrayOfMutableBet extends wasmtypes.ScProxy {
+  appendBet(): sc.MutableBet {
+    return new sc.MutableBet(this.proxy.append());
+  }
 
-	appendBet(): sc.MutableBet {
-		return new sc.MutableBet(this.proxy.append());
-	}
+  clear(): void {
+    this.proxy.clearArray();
+  }
 
-	clear(): void {
-		this.proxy.clearArray();
-	}
+  length(): u32 {
+    return this.proxy.length();
+  }
 
-	length(): u32 {
-		return this.proxy.length();
-	}
-
-	getBet(index: u32): sc.MutableBet {
-		return new sc.MutableBet(this.proxy.index(index));
-	}
+  getBet(index: u32): sc.MutableBet {
+    return new sc.MutableBet(this.proxy.index(index));
+  }
 }
 
-export class MutableBettingRound extends ArrayOfMutableBet {
-}
+export class MutableBettingRound extends ArrayOfMutableBet {}
 ```
 
 </TabItem>
@@ -390,73 +387,71 @@ impl MutableBettingState {
 <TabItem value="ts">
 
 ```ts
-import * as wasmtypes from "wasmlib/wasmtypes";
-import * as sc from "./index";
+import * as wasmtypes from 'wasmlib/wasmtypes';
+import * as sc from './index';
 
 export class ArrayOfImmutableBettingRound extends wasmtypes.ScProxy {
+  length(): u32 {
+    return this.proxy.length();
+  }
 
-	length(): u32 {
-		return this.proxy.length();
-	}
-
-	getBettingRound(index: u32): sc.ImmutableBettingRound {
-		return new sc.ImmutableBettingRound(this.proxy.index(index));
-	}
+  getBettingRound(index: u32): sc.ImmutableBettingRound {
+    return new sc.ImmutableBettingRound(this.proxy.index(index));
+  }
 }
 
 export class ImmutableBettingState extends wasmtypes.ScProxy {
-	// all bets that were made in this round
-	bets(): sc.ArrayOfImmutableBet {
-		return new sc.ArrayOfImmutableBet(this.proxy.root(sc.StateBets));
-	}
+  // all bets that were made in this round
+  bets(): sc.ArrayOfImmutableBet {
+    return new sc.ArrayOfImmutableBet(this.proxy.root(sc.StateBets));
+  }
 
-	// current owner of this smart contract
-	owner(): wasmtypes.ScImmutableAgentID {
-		return new wasmtypes.ScImmutableAgentID(this.proxy.root(sc.StateOwner));
-	}
+  // current owner of this smart contract
+  owner(): wasmtypes.ScImmutableAgentID {
+    return new wasmtypes.ScImmutableAgentID(this.proxy.root(sc.StateOwner));
+  }
 
-	rounds(): sc.ArrayOfImmutableBettingRound {
-		return new sc.ArrayOfImmutableBettingRound(this.proxy.root(sc.StateRounds));
-	}
+  rounds(): sc.ArrayOfImmutableBettingRound {
+    return new sc.ArrayOfImmutableBettingRound(this.proxy.root(sc.StateRounds));
+  }
 }
 
 export class ArrayOfMutableBettingRound extends wasmtypes.ScProxy {
+  appendBettingRound(): sc.MutableBettingRound {
+    return new sc.MutableBettingRound(this.proxy.append());
+  }
 
-	appendBettingRound(): sc.MutableBettingRound {
-		return new sc.MutableBettingRound(this.proxy.append());
-	}
+  clear(): void {
+    this.proxy.clearArray();
+  }
 
-	clear(): void {
-		this.proxy.clearArray();
-	}
+  length(): u32 {
+    return this.proxy.length();
+  }
 
-	length(): u32 {
-		return this.proxy.length();
-	}
-
-	getBettingRound(index: u32): sc.MutableBettingRound {
-		return new sc.MutableBettingRound(this.proxy.index(index));
-	}
+  getBettingRound(index: u32): sc.MutableBettingRound {
+    return new sc.MutableBettingRound(this.proxy.index(index));
+  }
 }
 
 export class MutableBettingState extends wasmtypes.ScProxy {
-	asImmutable(): sc.ImmutableBettingState {
-		return new sc.ImmutableBettingState(this.proxy);
-	}
+  asImmutable(): sc.ImmutableBettingState {
+    return new sc.ImmutableBettingState(this.proxy);
+  }
 
-	// all bets that were made in this round
-	bets(): sc.ArrayOfMutableBet {
-		return new sc.ArrayOfMutableBet(this.proxy.root(sc.StateBets));
-	}
+  // all bets that were made in this round
+  bets(): sc.ArrayOfMutableBet {
+    return new sc.ArrayOfMutableBet(this.proxy.root(sc.StateBets));
+  }
 
-	// current owner of this smart contract
-	owner(): wasmtypes.ScMutableAgentID {
-		return new wasmtypes.ScMutableAgentID(this.proxy.root(sc.StateOwner));
-	}
+  // current owner of this smart contract
+  owner(): wasmtypes.ScMutableAgentID {
+    return new wasmtypes.ScMutableAgentID(this.proxy.root(sc.StateOwner));
+  }
 
-	rounds(): sc.ArrayOfMutableBettingRound {
-		return new sc.ArrayOfMutableBettingRound(this.proxy.root(sc.StateRounds));
-	}
+  rounds(): sc.ArrayOfMutableBettingRound {
+    return new sc.ArrayOfMutableBettingRound(this.proxy.root(sc.StateRounds));
+  }
 }
 ```
 
@@ -467,7 +462,6 @@ Notice how the `rounds()` member function returns a proxy to an array of `Bettin
 Which in turn is an array of `Bet`. So, the desired result has been achieved. And every
 access step along the way only allows you to take the path laid out which is checked at
 compile-time.
-
 
 In the next section we will explore how the [Schema Tool](usage.mdx) generates a proxy
 interface to mutable [State](state.mdx).

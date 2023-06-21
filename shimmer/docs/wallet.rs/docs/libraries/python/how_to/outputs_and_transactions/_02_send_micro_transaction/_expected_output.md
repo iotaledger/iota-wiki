@@ -22,13 +22,13 @@ Synced:{
 		'0x3f0e11e9d9f48a57d0fba43d7d1158ee673cb8055f80a5ce45ad174c962c0d8a'
 	],
 	'aliases':[
-		
+
 	],
 	'foundries':[
-		
+
 	],
 	'potentiallyLockedOutputs':{
-		
+
 	}
 }
 Sent transaction:{

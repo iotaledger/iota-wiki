@@ -1,11 +1,12 @@
 ---
 description: iota.js API reference
 keywords:
-- references
-- api references
-- typescript
+  - references
+  - api references
+  - typescript
 image: /img/client_banner.png
 ---
+
 # Class: ArrayHelper
 
 Array helper methods.
@@ -30,9 +31,9 @@ Are the two array equals.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `array1` | `undefined` \| `ArrayLike`<`unknown`\> | The first array. |
+| Name     | Type                                   | Description       |
+| :------- | :------------------------------------- | :---------------- |
+| `array1` | `undefined` \| `ArrayLike`<`unknown`\> | The first array.  |
 | `array2` | `undefined` \| `ArrayLike`<`unknown`\> | The second array. |
 
 #### Returns

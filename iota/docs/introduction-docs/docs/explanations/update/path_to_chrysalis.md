@@ -2,15 +2,16 @@
 description: Chrysalis was the most promising series of upgrades made to IOTA yet with increased transaction throughput, network stability, and improved usability.
 image: /img/logo/Chrysalis_logo_dark.png
 keywords:
-- EdDSA
-- phases
-- upgrades
-- performance
-- tip selection
-- UTXO
-- efficiency
-- explanation
+  - EdDSA
+  - phases
+  - upgrades
+  - performance
+  - tip selection
+  - UTXO
+  - efficiency
+  - explanation
 ---
+
 # Path to Chrysalis
 
 One of the IOTA Foundation’s primary roles is defining and delivering on a development roadmap that aligns with the Foundation's strategy to reach production-readiness and adoption.
@@ -32,13 +33,13 @@ The intended outcomes for Chrysalis were:
 
 ![The stages to Chrysalis](/img/introduction/path_to_chrysalis/01.png)
 
-The Chrysalis upgrade was a complex undertaking. We coordinated a number of distinct products to ensure a smooth transition for IOTA’s you and the partners. In addition to the core node software, we also needed to update our wallet software, our libraries, and the entire infrastructure.  
+The Chrysalis upgrade was a complex undertaking. We coordinated a number of distinct products to ensure a smooth transition for IOTA’s you and the partners. In addition to the core node software, we also needed to update our wallet software, our libraries, and the entire infrastructure.
 
-Another important requirement was the ease of transition to the future Coordicide network. By carefully planning the breaking changes introduced along the way, and providing support in our developer tools, we ensured that our growing ecosystem of developers, startups, and corporations could reliably develop and launch new innovative products on IOTA.  
+Another important requirement was the ease of transition to the future Coordicide network. By carefully planning the breaking changes introduced along the way, and providing support in our developer tools, we ensured that our growing ecosystem of developers, startups, and corporations could reliably develop and launch new innovative products on IOTA.
 
 The plan for implementing Chrysalis was divided into two phases:
 
-**The first phase** consisted of improved tip selection (URTS), milestone selection, and White flag. These were gradually implemented in the node software. This phase required an upgrade of all nodes, including the coordinator node, and did not require a snapshot.  
+**The first phase** consisted of improved tip selection (URTS), milestone selection, and White flag. These were gradually implemented in the node software. This phase required an upgrade of all nodes, including the coordinator node, and did not require a snapshot.
 
 The first phase of Chrysalis resulted in:
 
@@ -47,7 +48,7 @@ The first phase of Chrysalis resulted in:
 - A substantial TPS increase.
 - Performance and reliability improvements for nodes.
 
-**The second phase** of Chrysalis consisted of adopting and/or implementing UTXO, atomic transactions, reusable addresses (Ed25519), a transition to a binary transaction layout, and a new set of client libraries and developer tools. These represented significant changes to the core protocol and the way transactions were structured. Once everything was tested, validated, and audited, the Foundation deployed a new Chrysalis network. The upgrade consisted of an extended period when the legacy network remained operational which allowed users, exchanges, and partners to migrate to the Chrysalis network at will. 
+**The second phase** of Chrysalis consisted of adopting and/or implementing UTXO, atomic transactions, reusable addresses (Ed25519), a transition to a binary transaction layout, and a new set of client libraries and developer tools. These represented significant changes to the core protocol and the way transactions were structured. Once everything was tested, validated, and audited, the Foundation deployed a new Chrysalis network. The upgrade consisted of an extended period when the legacy network remained operational which allowed users, exchanges, and partners to migrate to the Chrysalis network at will.
 
 The second phase of Chrysalis consisted of:
 
@@ -56,7 +57,7 @@ The second phase of Chrysalis consisted of:
 - Significant improvements to the usability and reliability of IOTA.
 - A switch to a UTXO based model from the previous account model.
 
-The introduction of reusable addresses was an important change for token holders. This vastly improved IOTA’s usability and made integration into new exchanges, wallets, and payment systems much simpler. A new wallet, called Firefly, was released with Chrysalis which allowed token holders to transition from the WOTS address scheme to the new EdDSA scheme.  
+The introduction of reusable addresses was an important change for token holders. This vastly improved IOTA’s usability and made integration into new exchanges, wallets, and payment systems much simpler. A new wallet, called Firefly, was released with Chrysalis which allowed token holders to transition from the WOTS address scheme to the new EdDSA scheme.
 
 ### From Plan to Action
 
@@ -85,7 +86,7 @@ The Chrysalis changes were specified in the form of RFCs. You can find all the R
 
 ### Wallet Support
 
-The Trinity wallet was a popular IOTA wallet. With Chrysalis, we released a new wallet implementation, [Firefly](https://blog.iota.org/firefly-iota-next-generation-wallet-26bdd4d01510/). The team worked on a complete reevaluation of the wallet architecture, with a completely redesigned experience for you. At its core is a [new wallet library](https://wiki.iota.org/wallet.rs/welcome) written in Rust. The wallet library is designed to allow other developers to easily implement IOTA wallets within their applications. Another new Rust library utilized by Firefly is Stronghold; Stronghold enables ultra-secure secret handling and storage.  
+The Trinity wallet was a popular IOTA wallet. With Chrysalis, we released a new wallet implementation, [Firefly](https://blog.iota.org/firefly-iota-next-generation-wallet-26bdd4d01510/). The team worked on a complete reevaluation of the wallet architecture, with a completely redesigned experience for you. At its core is a [new wallet library](https://wiki.iota.org/wallet.rs/welcome) written in Rust. The wallet library is designed to allow other developers to easily implement IOTA wallets within their applications. Another new Rust library utilized by Firefly is Stronghold; Stronghold enables ultra-secure secret handling and storage.
 
 ### Infrastructure
 

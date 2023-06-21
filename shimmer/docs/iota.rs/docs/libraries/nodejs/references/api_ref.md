@@ -65,15 +65,15 @@ Initialize logger, if no arguments are provided a default config will be used.
 
 #### Parameters
 
-| Name | Type | Default value |
-| :------ | :------ | :------ |
+| Name     | Type            | Default value         |
+| :------- | :-------------- | :-------------------- |
 | `config` | `ILoggerConfig` | `defaultLoggerConfig` |
 
 #### Returns
 
 `any`
 
-___
+---
 
 ### utf8ToBytes
 
@@ -83,15 +83,15 @@ Convert UTF8 string to an array of bytes
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
+| Name   | Type     |
+| :----- | :------- |
 | `utf8` | `string` |
 
 #### Returns
 
 `number`[]
 
-___
+---
 
 ### hexToUtf8
 
@@ -101,15 +101,15 @@ Convert hex encoded string to UTF8 string
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
+| Name  | Type     |
+| :---- | :------- |
 | `hex` | `string` |
 
 #### Returns
 
 `string`
 
-___
+---
 
 ### utf8ToHex
 
@@ -119,8 +119,8 @@ Convert UTF8 string to hex encoded string
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
+| Name   | Type     |
+| :----- | :------- |
 | `utf8` | `string` |
 
 #### Returns
@@ -136,7 +136,7 @@ Convert UTF8 string to hex encoded string
 A block identifier, the BLAKE2b-256 hash of the block bytes.
 See <https://www.blake2.net/> for more information.
 
-___
+---
 
 ### QueryParameter
 
@@ -144,7 +144,7 @@ ___
 
 Query parameter for filtering output requests
 
-___
+---
 
 ### AliasQueryParameter
 
@@ -152,7 +152,7 @@ ___
 
 Query parameters for filtering Alias Outputs
 
-___
+---
 
 ### FoundryQueryParameter
 
@@ -160,7 +160,7 @@ ___
 
 Query parameters for filtering Foundry Outputs
 
-___
+---
 
 ### NftQueryParameter
 
@@ -168,7 +168,7 @@ ___
 
 Query parameters for filtering Nft Outputs
 
-___
+---
 
 ### SecretManager
 

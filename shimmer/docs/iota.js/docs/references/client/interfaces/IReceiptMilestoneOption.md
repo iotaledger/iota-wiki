@@ -1,18 +1,19 @@
 ---
 description: iota.js API reference
 keywords:
-- references
-- api references
-- typescript
+  - references
+  - api references
+  - typescript
 image: /img/client_banner.png
 ---
+
 # Interface: IReceiptMilestoneOption
 
 Receipt milestone option.
 
 ## Hierarchy
 
-- [`ITypeBase`](ITypeBase.md)<``0``\>
+- [`ITypeBase`](ITypeBase.md)<`0`\>
 
   ↳ **`IReceiptMilestoneOption`**
 
@@ -30,7 +31,7 @@ Receipt milestone option.
 
 ### type
 
-• **type**: ``0``
+• **type**: `0`
 
 The type of the object.
 
@@ -38,7 +39,7 @@ The type of the object.
 
 [ITypeBase](ITypeBase.md).[type](ITypeBase.md#type)
 
-___
+---
 
 ### migratedAt
 
@@ -46,7 +47,7 @@ ___
 
 The milestone index at which the funds were migrated in the legacy network.
 
-___
+---
 
 ### final
 
@@ -54,7 +55,7 @@ ___
 
 Whether this Receipt is the final one for a given migrated at index.
 
-___
+---
 
 ### funds
 
@@ -62,7 +63,7 @@ ___
 
 The index data.
 
-___
+---
 
 ### transaction
 

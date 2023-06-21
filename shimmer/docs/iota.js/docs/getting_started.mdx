@@ -1,21 +1,22 @@
 ---
-description: "Get started with iota.js.  Prequisites, required prior knowledge and install the library"
+description: 'Get started with iota.js.  Prequisites, required prior knowledge and install the library'
 image: /img/client_banner.png
 keywords:
-- npm
-- node
-- install
-- build
-- example
-- typescript
-- javascript
-- explanation
+  - npm
+  - node
+  - install
+  - build
+  - example
+  - typescript
+  - javascript
+  - explanation
 ---
-import IotaRS from '../admonitions/_iotars.md'
+
+import IotaRS from '../admonitions/_iotars.md';
 
 # Getting Started With iota.js
 
-<IotaRS/>
+<IotaRS />
 
 ## Required Prior Knowledge
 
@@ -31,8 +32,8 @@ which could help you get started.
 
 Before you can start using the library, you will need to install the following software:
 
-* [node](https://nodejs.org/en/): You should use v15, or above.
-* [npm](https://npmjs.com): You should use v7, or above.
+- [node](https://nodejs.org/en/): You should use v15, or above.
+- [npm](https://npmjs.com): You should use v7, or above.
 
 ## Install the Library
 
@@ -49,27 +50,27 @@ Once you have [installed the library](#install-the-library), you can start using
 Chrysalis node and logs some of its properties to the console.
 
 ```js
-const {SingleNodeClient} = require("@iota/iota.js");
+const { SingleNodeClient } = require('@iota/iota.js');
 
 async function run() {
-    const client = new SingleNodeClient("https://chrysalis-nodes.iota.org");
+  const client = new SingleNodeClient('https://chrysalis-nodes.iota.org');
 
-    const info = await client.info();
-    console.log("Node Info");
-    console.log("\tName:", info.name);
-    console.log("\tVersion:", info.version);
-    console.log("\tIs Healthy:", info.isHealthy);
-    console.log("\tNetwork Id:", info.networkId);
-    console.log("\tLatest Milestone Index:", info.latestMilestoneIndex);
-    console.log("\tConfirmed Milestone Index:", info.confirmedMilestoneIndex);
-    console.log("\tPruning Index:", info.pruningIndex);
-    console.log("\tFeatures:", info.features);
-    console.log("\tMin PoW Score:", info.minPowScore);
+  const info = await client.info();
+  console.log('Node Info');
+  console.log('\tName:', info.name);
+  console.log('\tVersion:', info.version);
+  console.log('\tIs Healthy:', info.isHealthy);
+  console.log('\tNetwork Id:', info.networkId);
+  console.log('\tLatest Milestone Index:', info.latestMilestoneIndex);
+  console.log('\tConfirmed Milestone Index:', info.confirmedMilestoneIndex);
+  console.log('\tPruning Index:', info.pruningIndex);
+  console.log('\tFeatures:', info.features);
+  console.log('\tMin PoW Score:', info.minPowScore);
 }
 
 run()
-    .then(() => console.log("Done"))
-    .catch((err) => console.error(err));
+  .then(() => console.log('Done'))
+  .catch((err) => console.error(err));
 ```
 
 ## How-To Guides

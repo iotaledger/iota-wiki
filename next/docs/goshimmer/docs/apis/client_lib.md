@@ -2,11 +2,12 @@
 description: GoShimmer ships with a client Go library which communicates with the HTTP API.
 image: /img/logo/goshimmer_light.png
 keywords:
-- client library
-- api
-- HTTP API
-- golang
+  - client library
+  - api
+  - HTTP API
+  - golang
 ---
+
 # Client Lib: Interaction With Layers
 
 :::info
@@ -20,6 +21,7 @@ GoShimmer ships with a client Go library which communicates with the HTTP API. P
 # Use the API
 
 Simply `go get` the lib via:
+
 ```shell
 go get github.com/iotaledger/goshimmer/client
 ```

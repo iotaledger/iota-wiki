@@ -31,21 +31,21 @@ module.exports = {
           id: 'data-marketplace/overview',
         },
         'data-marketplace/architecture',
-        'data-marketplace/deployment-and-testing'],
-
+        'data-marketplace/deployment-and-testing',
+      ],
     },
     {
       type: 'category',
       label: 'Document Immutability',
       items: [
-
         {
           type: 'doc',
           label: 'Overview',
           id: 'doc-immutability/overview',
         },
         'doc-immutability/architecture',
-        'doc-immutability/deployment-and-testing'],
+        'doc-immutability/deployment-and-testing',
+      ],
     },
     {
       type: 'category',
@@ -57,7 +57,8 @@ module.exports = {
           id: 'tangle-data-storage/overview',
         },
         'tangle-data-storage/architecture',
-        'tangle-data-storage/deployment-and-testing'],
+        'tangle-data-storage/deployment-and-testing',
+      ],
     },
     {
       type: 'category',
@@ -74,7 +75,8 @@ module.exports = {
           type: 'link',
           href: 'https://iotaledger.github.io/gtsc-track-trace/tutorial/track-trace-ledger-api-tutorial-101',
           label: 'Track And Trace/REST API 101 Tutorial',
-        }],
+        },
+      ],
     },
   ],
 };

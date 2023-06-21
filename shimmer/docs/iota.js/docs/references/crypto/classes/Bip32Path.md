@@ -1,11 +1,12 @@
 ---
 description: iota.js API reference
 keywords:
-- references
-- api references
-- typescript
+  - references
+  - api references
+  - typescript
 image: /img/client_banner.png
 ---
+
 # Class: Bip32Path
 
 Class to help with bip32 paths.
@@ -35,8 +36,8 @@ Create a new instance of Bip32Path.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name           | Type     | Description             |
+| :------------- | :------- | :---------------------- |
 | `initialPath?` | `string` | Initial path to create. |
 
 ## Methods
@@ -49,8 +50,8 @@ Construct a new path by cloning an existing one.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name        | Type                        | Description        |
+| :---------- | :-------------------------- | :----------------- |
 | `bip32Path` | [`Bip32Path`](Bip32Path.md) | The path to clone. |
 
 #### Returns
@@ -59,7 +60,7 @@ Construct a new path by cloning an existing one.
 
 A new instance of Bip32Path.
 
-___
+---
 
 ### toString
 
@@ -73,7 +74,7 @@ Converts the path to a string.
 
 The path as a string.
 
-___
+---
 
 ### push
 
@@ -83,15 +84,15 @@ Push a new index on to the path.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name    | Type     | Description                   |
+| :------ | :------- | :---------------------------- |
 | `index` | `number` | The index to add to the path. |
 
 #### Returns
 
 `void`
 
-___
+---
 
 ### pushHardened
 
@@ -101,15 +102,15 @@ Push a new hardened index on to the path.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name    | Type     | Description                   |
+| :------ | :------- | :---------------------------- |
 | `index` | `number` | The index to add to the path. |
 
 #### Returns
 
 `void`
 
-___
+---
 
 ### pop
 
@@ -121,7 +122,7 @@ Pop an index from the path.
 
 `void`
 
-___
+---
 
 ### numberSegments
 

@@ -4,8 +4,8 @@ sidebar_label: Overview
 description: Provide overview of the advanced concepts
 image: /img/Identity_icon.png
 keywords:
-- advanced
-- concepts
+  - advanced
+  - concepts
 ---
 
 TODO: Provide overview of the advanced concepts

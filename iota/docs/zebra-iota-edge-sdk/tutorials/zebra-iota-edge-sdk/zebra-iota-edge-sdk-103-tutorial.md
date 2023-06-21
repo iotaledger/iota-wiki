@@ -1,4 +1,4 @@
-# Zebra-IOTA-Edge-SDK : Identity Enabler : 103 Tutorial 
+# Zebra-IOTA-Edge-SDK : Identity Enabler : 103 Tutorial
 
 <h2>Verifying Credentials</h2>
 
@@ -94,7 +94,9 @@ Verifying a credential (presented as a Verifiable Presentation) is quite straigh
 ```typescript
 //Create from VP
 const verifiablePresentation = VerifiablePresentation.fromJSON(presentation);
-const result = await this.getClient().checkPresentation(JSON.stringify(verifiablePresentation.toJSON()));
+const result = await this.getClient().checkPresentation(
+  JSON.stringify(verifiablePresentation.toJSON()),
+);
 return result?.verified;
 ```
 

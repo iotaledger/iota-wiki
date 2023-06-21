@@ -176,6 +176,3 @@ Try it! Only the address owner can move those funds from the on-chain account.
 
 You can also try removing the `AddAllowanceBaseTokens` call. It will fail because a smart contract cannot deduct funds from the
 sender's L2 balance unless explicitly authorized by the allowance.
-
-
-

@@ -2,30 +2,29 @@
 description: The manual peering APIs allows you to add, get and remove the list of known peers of the node.
 image: /img/logo/goshimmer_light.png
 keywords:
-- client library
-- HTTP API
-- known peer
-- peer
-- public key
-- gossip port
+  - client library
+  - HTTP API
+  - known peer
+  - peer
+  - public key
+  - gossip port
 ---
+
 # Manual Peering API methods
 
 The manual peering APIs allow managing the list of known peers of the node.
 
 HTTP APIs:
 
-* POST [/manualpeering/peers](#post-manualpeeringpeers)
-* GET [/manualpeering/peers](#get-manualpeeringpeers)
-* DELETE [/manualpeering/peers](#delete-manualpeeringpeers)
+- POST [/manualpeering/peers](#post-manualpeeringpeers)
+- GET [/manualpeering/peers](#get-manualpeeringpeers)
+- DELETE [/manualpeering/peers](#delete-manualpeeringpeers)
 
 Client lib APIs:
 
-* [AddManualPeers()](#addmanualpeers)
-* [GetManualPeers()](#getmanualpeers)
-* [RemoveManualPeers()](#removemanualpeers)
-
-
+- [AddManualPeers()](#addmanualpeers)
+- [GetManualPeers()](#getmanualpeers)
+- [RemoveManualPeers()](#removemanualpeers)
 
 ## POST `/manualpeering/peers`
 
@@ -44,9 +43,9 @@ Add peers to the list of known peers of the node.
 
 #### Description
 
-|Field | Description|
-|:-----|:------|
-| `publicKey` | Public key of the peer. |
+| Field       | Description                                        |
+| :---------- | :------------------------------------------------- |
+| `publicKey` | Public key of the peer.                            |
 | `address`   | IP address of the peer's node and its gossip port. |
 
 ### Response
@@ -82,8 +81,6 @@ if err != nil {
 }
 ```
 
-
-
 ## GET `/manualpeering/peers`
 
 Get the list of all known peers of the node.
@@ -98,8 +95,8 @@ Get the list of all known peers of the node.
 
 #### Description
 
-|Field | Description|
-|:-----|:------|
+| Field           | Description                                                                       |
+| :-------------- | :-------------------------------------------------------------------------------- |
 | `onlyConnected` | Optional, if set to true only peers with established connection will be returned. |
 
 ### Response
@@ -119,12 +116,12 @@ HTTP status code: 200 OK
 
 #### Description
 
-|Field | Description|
-|:-----|:------|
-| `publicKey` | The public key of the peer node. |
-| `address` | IP address of the peer's node and its gossip port. |
-| `connectionDirection` | Enum, possible values: "inbound", "outbound". Inbound means that the local node accepts the connection. On the other side, the other peer node dials, and it will have "outbound" connectionDirection.  |
-| `connectionStatus` | Enum, possible values: "disconnected", "connected". Whether the actual TCP connection has been established between peers. |
+| Field                 | Description                                                                                                                                                                                            |
+| :-------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `publicKey`           | The public key of the peer node.                                                                                                                                                                       |
+| `address`             | IP address of the peer's node and its gossip port.                                                                                                                                                     |
+| `connectionDirection` | Enum, possible values: "inbound", "outbound". Inbound means that the local node accepts the connection. On the other side, the other peer node dials, and it will have "outbound" connectionDirection. |
+| `connectionStatus`    | Enum, possible values: "disconnected", "connected". Whether the actual TCP connection has been established between peers.                                                                              |
 
 ### Examples
 
@@ -152,8 +149,6 @@ if err != nil {
 fmt.Println(peers)
 ```
 
-
-
 ## DELETE `/manualpeering/peers`
 
 Remove peers from the list of known peers of the node.
@@ -170,8 +165,8 @@ Remove peers from the list of known peers of the node.
 
 #### Description
 
-|Field | Description|
-|:-----|:------|
+| Field       | Description                                     |
+| :---------- | :---------------------------------------------- |
 | `publicKey` | Public key of the peer to remove from the list. |
 
 ### Response

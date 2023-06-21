@@ -11,7 +11,7 @@ Block: [
     ],
     nonce: '3074457345618276659'
   }
-] 
+]
 
 Empty block sent: https://explorer.shimmer.network/testnet/block/0x7531a0983f941e50b1764165d8cf1e205605c269f43796d18e38264ddfce8d06
 ```

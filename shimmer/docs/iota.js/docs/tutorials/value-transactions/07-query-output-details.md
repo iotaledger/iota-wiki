@@ -1,16 +1,14 @@
 ---
-description: "Query for any output details by ID using the Node API through the iota.js library."
+description: 'Query for any output details by ID using the Node API through the iota.js library.'
 image: /img/client_banner.png
 keywords:
-
-- tutorial
-- query output details
-- output details
-- metadata
-- output type
-- unlock conditions
-- public key hash
-
+  - tutorial
+  - query output details
+  - output details
+  - metadata
+  - output type
+  - unlock conditions
+  - public key hash
 ---
 
 # Query Output Details
@@ -24,8 +22,10 @@ the [`SingleNodeClient()`](../../references/client/classes/SingleNodeClient)
 class.
 
 ```typescript
-const API_ENDPOINT = "https://api.testnet.shimmer.network";
-const client = new SingleNodeClient(API_ENDPOINT, {powProvider: new NeonPowProvider()});
+const API_ENDPOINT = 'https://api.testnet.shimmer.network';
+const client = new SingleNodeClient(API_ENDPOINT, {
+  powProvider: new NeonPowProvider(),
+});
 const protocolInfo = await client.protocolInfo();
 
 console.log(protocolInfo);
@@ -51,7 +51,8 @@ you [generated the public address](05-public-addresses.md):
 Through the interface exposed by the `iota.js` `SingleNodeClient`, you can get the details of your output, for example:
 
 ```typescript
-const outputID = "0xcba9a6616df8e8e323d8203ea5d1a42e2e7c64dc9ead6b59f5d26bdc301efa540000";
+const outputID =
+  '0xcba9a6616df8e8e323d8203ea5d1a42e2e7c64dc9ead6b59f5d26bdc301efa540000';
 const outputDetails = await client.output(outputID);
 console.log(outputDetails);
 ```
@@ -85,9 +86,9 @@ console.log(outputDetails);
 
 The output details contain two different groups of information:
 
-* **metadata** that conveys the status of the output on the Ledger.
+- **metadata** that conveys the status of the output on the Ledger.
 
-* The **output details** include the type of output (`3` for value, i.e., basic outputs), the amount (in Glows), and the
+- The **output details** include the type of output (`3` for value, i.e., basic outputs), the amount (in Glows), and the
   unlock conditions. You can observe that the unlock conditions contain
   the [Ed22519 public key hash](../../references/client/interfaces/IEd25519Address#pubkeyhash) of your initial
   address. That means that only the one who controls the private key corresponding to that public key hash can
@@ -100,25 +101,29 @@ The output details contain two different groups of information:
 By this point in the tutorial, your `send-value-transactions.ts`file should look something like this:
 
 ```typescript
-import {Bip32Path, Bip39} from "@iota/crypto.js";
+import { Bip32Path, Bip39 } from '@iota/crypto.js';
 import {
-    Bech32Helper,
-    ED25519_ADDRESS_TYPE,
-    Ed25519Address,
-    Ed25519Seed,
-    generateBip44Address,
-    IKeyPair, SingleNodeClient
-} from "@iota/iota.js";
-import {Converter} from "@iota/util.js";
-import {NeonPowProvider} from "@iota/pow-neon.js";
+  Bech32Helper,
+  ED25519_ADDRESS_TYPE,
+  Ed25519Address,
+  Ed25519Seed,
+  generateBip44Address,
+  IKeyPair,
+  SingleNodeClient,
+} from '@iota/iota.js';
+import { Converter } from '@iota/util.js';
+import { NeonPowProvider } from '@iota/pow-neon.js';
 
-const API_ENDPOINT = "https://api.testnet.shimmer.network";
-const client = new SingleNodeClient(API_ENDPOINT, {powProvider: new NeonPowProvider()});
+const API_ENDPOINT = 'https://api.testnet.shimmer.network';
+const client = new SingleNodeClient(API_ENDPOINT, {
+  powProvider: new NeonPowProvider(),
+});
 const protocolInfo = await client.protocolInfo();
 
 console.log(protocolInfo);
 
-const outputID = "0xcba9a6616df8e8e323d8203ea5d1a42e2e7c64dc9ead6b59f5d26bdc301efa540000";
+const outputID =
+  '0xcba9a6616df8e8e323d8203ea5d1a42e2e7c64dc9ead6b59f5d26bdc301efa540000';
 const outputDetails = await client.output(outputID);
 console.log(outputDetails);
 ```

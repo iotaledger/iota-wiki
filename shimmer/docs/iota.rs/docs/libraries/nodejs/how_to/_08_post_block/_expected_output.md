@@ -12,7 +12,7 @@ Block: [
     payload: { type: 5, tag: '0x48656c6c6f', data: '0x54616e676c65' },
     nonce: '10760600709663905547'
   }
-] 
+]
 
 Block sent: https://explorer.shimmer.network/testnet/block/0x0f8c244774ced9003ec0f33f9677fbee849bfebf895f97d4378c881a4d9a9d48
 

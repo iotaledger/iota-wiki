@@ -25,7 +25,7 @@ validate real smart contracts and entire inter-chain protocols before deploying 
 
 ### Prerequisites
 
-[Go (version 1.19)](https://tip.golang.org/doc/go1.19). As _Solo_ tests are written in Go, you must 
+[Go (version 1.19)](https://tip.golang.org/doc/go1.19). As _Solo_ tests are written in Go, you must
 [install Go](https://go.dev/doc/install).
 
 ### Access the Solo Framework
@@ -54,7 +54,7 @@ go get github.com/iotaledger/wasp/packages/solo
 
 :::tip Go Docs
 
-You can browse the Solo Go API reference (updated to the `master` branch) in 
+You can browse the Solo Go API reference (updated to the `master` branch) in
 [go-docs](https://pkg.go.dev/github.com/iotaledger/wasp/packages/solo).
 
 :::
@@ -78,6 +78,6 @@ You can run `*_test` files by moving to their directory and running the followin
 go test
 ```
 
-If you run this command from the `/documentation/tutorial-examples` folder, you will run the 
+If you run this command from the `/documentation/tutorial-examples` folder, you will run the
 [Tutorial Test](https://github.com/iotaledger/wasp/tree/develop/documentation/tutorial-examples/tutorial-test.go), which
-contains all the examples explained in the following sections. 
+contains all the examples explained in the following sections.

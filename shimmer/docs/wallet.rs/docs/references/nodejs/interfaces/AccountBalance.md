@@ -22,7 +22,7 @@ The balance of an account
 
 The balance of the base coin
 
-___
+---
 
 ### requiredStorageDeposit
 
@@ -30,7 +30,7 @@ ___
 
 The required storage deposit for the outputs
 
-___
+---
 
 ### nativeTokens
 
@@ -38,7 +38,7 @@ ___
 
 The balance of the native tokens
 
-___
+---
 
 ### nfts
 
@@ -46,7 +46,7 @@ ___
 
 Nft outputs
 
-___
+---
 
 ### aliases
 
@@ -54,7 +54,7 @@ ___
 
 Alias outputs
 
-___
+---
 
 ### foundries
 
@@ -62,7 +62,7 @@ ___
 
 Foundry outputs
 
-___
+---
 
 ### potentiallyLockedOutputs
 

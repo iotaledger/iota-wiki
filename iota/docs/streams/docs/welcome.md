@@ -1,20 +1,21 @@
 ---
-description: Official IOTA Streams which can be used to easily integrate an IOTA Wallet into your application 
+description: Official IOTA Streams which can be used to easily integrate an IOTA Wallet into your application
 image: /img/logo/wallet_light.png
 keywords:
-- requirements
-- streams
-- channels
-- software
-- library
-- rust
-- nodejs
+  - requirements
+  - streams
+  - channels
+  - software
+  - library
+  - rust
+  - nodejs
 ---
+
 # Welcome
 
 This is the documentation for the official IOTA Streams software. You can read more about core principles behind IOTA Streams in the following blog [post](https://blog.iota.org/iota-streams-alpha-7e91ee326ac0/).
 
-Streams is an organizational tool for structuring and navigating secure data through the Tangle. Streams organizes data by ordering it in a uniform and interoperable structure. Needless to say, it is also based on our official *one source code of truth* [IOTA Rust library](https://github.com/iotaledger/iota.rs).
+Streams is an organizational tool for structuring and navigating secure data through the Tangle. Streams organizes data by ordering it in a uniform and interoperable structure. Needless to say, it is also based on our official _one source code of truth_ [IOTA Rust library](https://github.com/iotaledger/iota.rs).
 
 :::caution
 

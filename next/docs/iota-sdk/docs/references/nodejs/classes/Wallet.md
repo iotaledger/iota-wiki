@@ -42,16 +42,16 @@ Backup the data to a Stronghold snapshot.
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
+| Name          | Type     |
+| :------------ | :------- |
 | `destination` | `string` |
-| `password` | `string` |
+| `password`    | `string` |
 
 #### Returns
 
 `Promise`<`void`\>
 
-___
+---
 
 ### changeStrongholdPassword
 
@@ -61,16 +61,16 @@ Change the Stronghold password.
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
+| Name              | Type     |
+| :---------------- | :------- |
 | `currentPassword` | `string` |
-| `newPassword` | `string` |
+| `newPassword`     | `string` |
 
 #### Returns
 
 `Promise`<`void`\>
 
-___
+---
 
 ### clearStrongholdPassword
 
@@ -82,7 +82,7 @@ Clear the Stronghold password from memory.
 
 `Promise`<`void`\>
 
-___
+---
 
 ### createAccount
 
@@ -92,15 +92,15 @@ Create a new account.
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
+| Name   | Type                                                            |
+| :----- | :-------------------------------------------------------------- |
 | `data` | [`CreateAccountPayload`](../interfaces/CreateAccountPayload.md) |
 
 #### Returns
 
 `Promise`<[`Account`](Account.md)\>
 
-___
+---
 
 ### destroy
 
@@ -112,7 +112,7 @@ Destroy the Wallet and drop its database connection.
 
 `Promise`<`void`\>
 
-___
+---
 
 ### emitTestEvent
 
@@ -122,15 +122,15 @@ Emit a provided event for testing of the event system.
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
+| Name    | Type          |
+| :------ | :------------ |
 | `event` | `WalletEvent` |
 
 #### Returns
 
 `Promise`<`void`\>
 
-___
+---
 
 ### getAccount
 
@@ -140,15 +140,15 @@ Get an account by its alias or index.
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
+| Name        | Type                                   |
+| :---------- | :------------------------------------- |
 | `accountId` | [`AccountId`](../api_ref.md#accountid) |
 
 #### Returns
 
 `Promise`<[`Account`](Account.md)\>
 
-___
+---
 
 ### getAccountIndexes
 
@@ -160,7 +160,7 @@ Get all account indexes.
 
 `Promise`<`number`[]\>
 
-___
+---
 
 ### getAccounts
 
@@ -172,7 +172,7 @@ Get all accounts.
 
 `Promise`<[`Account`](Account.md)[]\>
 
-___
+---
 
 ### getClient
 
@@ -184,7 +184,7 @@ Get client.
 
 `Promise`<[`Client`](Client.md)\>
 
-___
+---
 
 ### generateEd25519Address
 
@@ -194,18 +194,18 @@ Generate an address without storing it.
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `accountIndex` | `number` |
-| `addressIndex` | `number` |
-| `options?` | [`GenerateAddressOptions`](../interfaces/GenerateAddressOptions.md) |
-| `bech32Hrp?` | `string` |
+| Name           | Type                                                                |
+| :------------- | :------------------------------------------------------------------ |
+| `accountIndex` | `number`                                                            |
+| `addressIndex` | `number`                                                            |
+| `options?`     | [`GenerateAddressOptions`](../interfaces/GenerateAddressOptions.md) |
+| `bech32Hrp?`   | `string`                                                            |
 
 #### Returns
 
 `Promise`<`string`\>
 
-___
+---
 
 ### getLedgerNanoStatus
 
@@ -217,7 +217,7 @@ Get the status for a Ledger Nano.
 
 `Promise`<[`LedgerNanoStatus`](../interfaces/LedgerNanoStatus.md)\>
 
-___
+---
 
 ### isStrongholdPasswordAvailable
 
@@ -229,7 +229,7 @@ Check if the Stronghold password has been set.
 
 `Promise`<`boolean`\>
 
-___
+---
 
 ### listen
 
@@ -239,16 +239,16 @@ Listen to wallet events with a callback. An empty array will listen to all possi
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
+| Name         | Type                                               |
+| :----------- | :------------------------------------------------- |
 | `eventTypes` | [`WalletEventType`](../enums/WalletEventType.md)[] |
-| `callback` | (`error`: `Error`, `event`: `Event`) => `void` |
+| `callback`   | (`error`: `Error`, `event`: `Event`) => `void`     |
 
 #### Returns
 
 `Promise`<`void`\>
 
-___
+---
 
 ### clearListeners
 
@@ -258,15 +258,15 @@ Clear the callbacks for provided events. An empty array will clear all listeners
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
+| Name         | Type                                               |
+| :----------- | :------------------------------------------------- |
 | `eventTypes` | [`WalletEventType`](../enums/WalletEventType.md)[] |
 
 #### Returns
 
 `Promise`<`void`\>
 
-___
+---
 
 ### recoverAccounts
 
@@ -276,18 +276,18 @@ Find accounts with unspent outputs.
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `accountStartIndex` | `number` |
-| `accountGapLimit` | `number` |
-| `addressGapLimit` | `number` |
-| `syncOptions` | [`SyncOptions`](../interfaces/SyncOptions.md) |
+| Name                | Type                                          |
+| :------------------ | :-------------------------------------------- |
+| `accountStartIndex` | `number`                                      |
+| `accountGapLimit`   | `number`                                      |
+| `addressGapLimit`   | `number`                                      |
+| `syncOptions`       | [`SyncOptions`](../interfaces/SyncOptions.md) |
 
 #### Returns
 
 `Promise`<[`Account`](Account.md)[]\>
 
-___
+---
 
 ### removeLatestAccount
 
@@ -299,7 +299,7 @@ Delete the latest account.
 
 `Promise`<`void`\>
 
-___
+---
 
 ### restoreBackup
 
@@ -316,18 +316,18 @@ will be restored.
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `source` | `string` |
-| `password` | `string` |
+| Name                        | Type      |
+| :-------------------------- | :-------- |
+| `source`                    | `string`  |
+| `password`                  | `string`  |
 | `ignoreIfCoinTypeMismatch?` | `boolean` |
-| `ignoreIfBech32Mismatch?` | `string` |
+| `ignoreIfBech32Mismatch?`   | `string`  |
 
 #### Returns
 
 `Promise`<`void`\>
 
-___
+---
 
 ### setClientOptions
 
@@ -337,15 +337,15 @@ Set ClientOptions.
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
+| Name            | Type                                                |
+| :-------------- | :-------------------------------------------------- |
 | `clientOptions` | [`IClientOptions`](../interfaces/IClientOptions.md) |
 
 #### Returns
 
 `Promise`<`void`\>
 
-___
+---
 
 ### setStrongholdPassword
 
@@ -355,15 +355,15 @@ Set the Stronghold password.
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
+| Name       | Type     |
+| :--------- | :------- |
 | `password` | `string` |
 
 #### Returns
 
 `Promise`<`void`\>
 
-___
+---
 
 ### setStrongholdPasswordClearInterval
 
@@ -373,15 +373,15 @@ Set the interval after which the Stronghold password gets cleared from memory.
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
+| Name                      | Type     |
+| :------------------------ | :------- |
 | `intervalInMilliseconds?` | `number` |
 
 #### Returns
 
 `Promise`<`void`\>
 
-___
+---
 
 ### startBackgroundSync
 
@@ -391,16 +391,16 @@ Start the background syncing process for all accounts.
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `options?` | [`SyncOptions`](../interfaces/SyncOptions.md) |
-| `intervalInMilliseconds?` | `number` |
+| Name                      | Type                                          |
+| :------------------------ | :-------------------------------------------- |
+| `options?`                | [`SyncOptions`](../interfaces/SyncOptions.md) |
+| `intervalInMilliseconds?` | `number`                                      |
 
 #### Returns
 
 `Promise`<`void`\>
 
-___
+---
 
 ### stopBackgroundSync
 
@@ -412,7 +412,7 @@ Stop the background syncing process for all accounts.
 
 `Promise`<`void`\>
 
-___
+---
 
 ### storeMnemonic
 
@@ -422,15 +422,15 @@ Store a mnemonic in the Stronghold snapshot.
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
+| Name       | Type     |
+| :--------- | :------- |
 | `mnemonic` | `string` |
 
 #### Returns
 
 `Promise`<`void`\>
 
-___
+---
 
 ### updateNodeAuth
 
@@ -440,9 +440,9 @@ Update the authentication for the provided node.
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `url` | `string` |
+| Name    | Type                              |
+| :------ | :-------------------------------- |
+| `url`   | `string`                          |
 | `auth?` | [`IAuth`](../interfaces/IAuth.md) |
 
 #### Returns

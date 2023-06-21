@@ -1,13 +1,13 @@
 ---
-description: Learn about Stronghold as a concurrent software, the actor model STM with TL2 and RLU. 
+description: Learn about Stronghold as a concurrent software, the actor model STM with TL2 and RLU.
 image: /img/logo/Stronghold_icon.png
 keywords:
-- actor model
-- rlu
-- STM
-- concurrency
-- lockless
-- explanation
+  - actor model
+  - rlu
+  - STM
+  - concurrency
+  - lockless
+  - explanation
 ---
 
 # Concurrency in Stronghold
@@ -35,7 +35,6 @@ Actix uses the Tokio runtime, which came as an issue for us as the Stronghold li
 Software using Stronghold had to pass ownership of the runtime to our code when making function calls to the Stronghold library.
 This was cumbersome for our users, and we abandoned the idea of using the actor model for concurrent programming and explored other paradigms.
 
-
 ## Software Transactional Memory (STM) with Transactional Locking 2 (TL2)
 
 STMs have been around for quite some time. In STMs, each operation on memory happens in an atomic transaction. Whenever memory is modified, this modification is written into a log. While inside a transaction, reading from memory is also done through a log. The transaction has finished when all changes recorded inside the log have been committed to the actual memory. A transaction fails if another thread tries to modify the targeted piece of memory between operations. A failed transaction can be re-run any number of times.
@@ -44,11 +43,10 @@ This approach guarantees that modifications to memory are always consistent, but
 
 ### TL2
 
-
 The Implementation of TL2 is inspired by these papers:
 
-* [Transactional Locking II (2006)](https://citeseer.ist.psu.edu/viewdoc/summary?doi=10.1.1.90.811&rank=4&q=various%20cross%20version%20operation&osm=&ossid=)
-* [Testing patterns for software transactional memory engines](https://www.researchgate.net/publication/220854689_Testing_patterns_for_software_transactional_memory_engines).
+- [Transactional Locking II (2006)](https://citeseer.ist.psu.edu/viewdoc/summary?doi=10.1.1.90.811&rank=4&q=various%20cross%20version%20operation&osm=&ossid=)
+- [Testing patterns for software transactional memory engines](https://www.researchgate.net/publication/220854689_Testing_patterns_for_software_transactional_memory_engines).
 
 The idea is quite straightforward. A global clock is used and incremented every time a transaction terminates.
 Shared memory/variables are tagged with a local clock value corresponding to the moment they were last modified by a transaction commitment.
@@ -64,12 +62,11 @@ If the check is successful, the copies are committed and replace the original sh
 This approach's advantage is that the idea is relatively simple and implements the STM model. The downside is that the implementation we developed of TL2 is painfully slow, and usually going single thread is faster than using multiple threads.
 We suspect this poor performance is due to multiple interleaving of threads which force the transactions to be reset multiple times. Further investigation is required to confirm this idea.
 
-
 ## Read-Log-Update (RLU)
 
 RLU is an extension of the more famous _Read-Copy-Update_ (RCU) that has been widely adopted in the Linux kernel.
 
-RLU was first presented in 2015 in the paper [Read-Log-Update: A Lightweight Synchronization Mechanism for Concurrent Programming](http://sigops.org/sosp/sosp15/current/2015-Monterey/printable/077-matveev.pdf). 
+RLU was first presented in 2015 in the paper [Read-Log-Update: A Lightweight Synchronization Mechanism for Concurrent Programming](http://sigops.org/sosp/sosp15/current/2015-Monterey/printable/077-matveev.pdf).
 
 Contrary to [TL2](#tl2), RLU is a blocking algorithm.
 Threads do their computations locally and synchronize with each other using their local clock (when the computations started) and a common global clock.
@@ -90,7 +87,7 @@ Locks are used for controlling access to shared memory/variables. Depending on t
 This prevents data race since the different threads cannot access the shared memory/variables chaotically.
 The biggest issue is that those locks are generally difficult to use correctly and hard to debug.
 
-One of the most problematic situations with locks is a __deadlock__.
+One of the most problematic situations with locks is a **deadlock**.
 Deadlocks happen when the whole system cannot advance anymore because different threads require some locks to advance their computation, but these locks are kept and blocked by other threads in a similar situation.
 Models like the [actor system](#the-actor-model) or the [STM](#software-transactional-memory-stm-with-transactional-locking-2-tl2) use locks as little as possible.
 

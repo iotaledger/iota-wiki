@@ -1,25 +1,23 @@
 ---
-description: Handling secrets at runtime with non-contigouos data types. 
+description: Handling secrets at runtime with non-contigouos data types.
 image: /img/logo/Stronghold_icon.png
 keywords:
-- bojum scheme
-- non-contiguous data types
-- security
-- runtime
-- explanation
+  - bojum scheme
+  - non-contiguous data types
+  - security
+  - runtime
+  - explanation
 ---
 
 # Non-Contiguous Data Types and Handling Secrets at Runtime
 
 Running processes store objects in allocated memory contiguously, meaning the stream of bytes is consecutive. This is not always desirable, as an attacker could easily read sensitive information from parts of the memory. This section will describe non-contiguous memory data structures and how they work.
 
-
 ## Non-Contiguous Data Types
 
 Under normal circumstances, the allocated memory is continuous and page-aligned. The operating system provides memory blocks of a minimum predetermined size. Data types that do not have a multiple of some minimum number in bytes are padded with zeroes. Metadata describes the actual fields. Operating systems take this approach to improve performance as loading some larger chunks of 2^n bytes is faster than loading the exact number of bytes.
 
 Non-contiguous (NC) data types store their inner referenced data in multiple locations, either in memory, on the file system, or a mixture of both. NC data types are useful if the memory is partitioned into multiple segments, and storing a continuous stream of bytes might not be possible. The disadvantage is that the operating system must constantly keep track of the referenced memory segments.
-
 
 ### Boojum Scheme
 

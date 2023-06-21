@@ -9,7 +9,7 @@ title: iota_sdk.wallet.account
 class Account()
 ```
 
-### prepare\_burn
+### prepare_burn
 
 ```python
 def prepare_burn(burn: Burn, options=None)
@@ -17,7 +17,7 @@ def prepare_burn(burn: Burn, options=None)
 
 A generic `prepare_burn()` function that can be used to prepare the burn of native tokens, nfts, foundries and aliases.
 
-### prepare\_burn\_native\_token
+### prepare_burn_native_token
 
 ```python
 def prepare_burn_native_token(token_id: HexStr,
@@ -29,7 +29,7 @@ Burn native tokens. This doesn&#x27;t require the foundry output which minted th
 the foundries `melted_tokens` field, which makes it impossible to destroy the foundry output. Therefore it&#x27;s
 recommended to use melting, if the foundry output is available.
 
-### prepare\_burn\_nft
+### prepare_burn_nft
 
 ```python
 def prepare_burn_nft(nft_id: HexStr, options=None)
@@ -37,7 +37,7 @@ def prepare_burn_nft(nft_id: HexStr, options=None)
 
 Burn an nft output.
 
-### prepare\_consolidate\_outputs
+### prepare_consolidate_outputs
 
 ```python
 def prepare_consolidate_outputs(
@@ -46,7 +46,7 @@ def prepare_consolidate_outputs(
 
 Consolidate outputs.
 
-### prepare\_create\_alias\_output
+### prepare_create_alias_output
 
 ```python
 def prepare_create_alias_output(params, options)
@@ -54,7 +54,7 @@ def prepare_create_alias_output(params, options)
 
 Create an alias output.
 
-### prepare\_destroy\_alias
+### prepare_destroy_alias
 
 ```python
 def prepare_destroy_alias(alias_id: HexStr, options=None)
@@ -62,7 +62,7 @@ def prepare_destroy_alias(alias_id: HexStr, options=None)
 
 Destroy an alias output.
 
-### prepare\_destroy\_foundry
+### prepare_destroy_foundry
 
 ```python
 def prepare_destroy_foundry(foundry_id: HexStr, options=None)
@@ -70,7 +70,7 @@ def prepare_destroy_foundry(foundry_id: HexStr, options=None)
 
 Destroy a foundry output with a circulating supply of 0.
 
-### generate\_ed25519\_addresses
+### generate_ed25519_addresses
 
 ```python
 def generate_ed25519_addresses(amount: int, options=None)
@@ -78,7 +78,7 @@ def generate_ed25519_addresses(amount: int, options=None)
 
 Generate new addresses.
 
-### get\_outputs\_with\_additional\_unlock\_conditions
+### get_outputs_with_additional_unlock_conditions
 
 ```python
 def get_outputs_with_additional_unlock_conditions(
@@ -87,7 +87,7 @@ def get_outputs_with_additional_unlock_conditions(
 
 Get outputs with additional unlock conditions.
 
-### get\_output
+### get_output
 
 ```python
 def get_output(output_id: OutputId)
@@ -95,7 +95,7 @@ def get_output(output_id: OutputId)
 
 Get output.
 
-### get\_transaction
+### get_transaction
 
 ```python
 def get_transaction(transaction_id: HexStr)
@@ -111,7 +111,7 @@ def addresses()
 
 List addresses.
 
-### addresses\_with\_unspent\_outputs
+### addresses_with_unspent_outputs
 
 ```python
 def addresses_with_unspent_outputs()
@@ -127,7 +127,7 @@ def outputs(filter_options=None)
 
 Returns all outputs of the account.
 
-### unspent\_outputs
+### unspent_outputs
 
 ```python
 def unspent_outputs(filter_options=None)
@@ -135,7 +135,7 @@ def unspent_outputs(filter_options=None)
 
 Returns all unspent outputs of the account.
 
-### incoming\_transactions
+### incoming_transactions
 
 ```python
 def incoming_transactions()
@@ -151,7 +151,7 @@ def transactions()
 
 Returns all transaction of the account.
 
-### pending\_transactions
+### pending_transactions
 
 ```python
 def pending_transactions()
@@ -159,7 +159,7 @@ def pending_transactions()
 
 Returns all pending transactions of the account.
 
-### prepare\_decrease\_native\_token\_supply
+### prepare_decrease_native_token_supply
 
 ```python
 def prepare_decrease_native_token_supply(token_id: HexStr,
@@ -170,7 +170,7 @@ def prepare_decrease_native_token_supply(token_id: HexStr,
 Melt native tokens. This happens with the foundry output which minted them, by increasing it&#x27;s
 `melted_tokens` field.
 
-### prepare\_increase\_native\_token\_supply
+### prepare_increase_native_token_supply
 
 ```python
 def prepare_increase_native_token_supply(token_id: HexStr,
@@ -180,7 +180,7 @@ def prepare_increase_native_token_supply(token_id: HexStr,
 
 Mint more native token.
 
-### prepare\_mint\_native\_token
+### prepare_mint_native_token
 
 ```python
 def prepare_mint_native_token(params, options=None)
@@ -188,7 +188,7 @@ def prepare_mint_native_token(params, options=None)
 
 Mint native token.
 
-### minimum\_required\_storage\_deposit
+### minimum_required_storage_deposit
 
 ```python
 def minimum_required_storage_deposit(output)
@@ -196,7 +196,7 @@ def minimum_required_storage_deposit(output)
 
 Minimum required storage deposit.
 
-### prepare\_mint\_nfts
+### prepare_mint_nfts
 
 ```python
 def prepare_mint_nfts(params, options=None)
@@ -204,7 +204,7 @@ def prepare_mint_nfts(params, options=None)
 
 Mint nfts.
 
-### get\_balance
+### get_balance
 
 ```python
 def get_balance()
@@ -212,7 +212,7 @@ def get_balance()
 
 Get account balance information.
 
-### prepare\_output
+### prepare_output
 
 ```python
 def prepare_output(output_options, transaction_options=None)
@@ -225,7 +225,7 @@ minimum required storage deposit will be sent to the recipient.
 When the assets contain an nft_id, the data from the existing nft output will be used, just with the address
 unlock conditions replaced
 
-### prepare\_send\_amount
+### prepare_send_amount
 
 ```python
 def prepare_send_amount(params, options=None)
@@ -233,7 +233,7 @@ def prepare_send_amount(params, options=None)
 
 Prepare send amount.
 
-### prepare\_transaction
+### prepare_transaction
 
 ```python
 def prepare_transaction(outputs, options=None)
@@ -241,7 +241,7 @@ def prepare_transaction(outputs, options=None)
 
 Prepare transaction.
 
-### retry\_transaction\_until\_included
+### retry_transaction_until_included
 
 ```python
 def retry_transaction_until_included(transaction_id: HexStr,
@@ -262,7 +262,7 @@ Sync the account by fetching new information from the nodes.
 Will also retry pending transactions and consolidate outputs if necessary.
 A custom default can be set using set_default_sync_options
 
-### send\_amount
+### send_amount
 
 ```python
 def send_amount(params, options=None)
@@ -270,7 +270,7 @@ def send_amount(params, options=None)
 
 Send amount.
 
-### prepare\_send\_native\_tokens
+### prepare_send_native_tokens
 
 ```python
 def prepare_send_native_tokens(params, options=None)
@@ -278,7 +278,7 @@ def prepare_send_native_tokens(params, options=None)
 
 Send native tokens.
 
-### prepare\_send\_nft
+### prepare_send_nft
 
 ```python
 def prepare_send_nft(params, options=None)
@@ -286,7 +286,7 @@ def prepare_send_nft(params, options=None)
 
 Send nft.
 
-### set\_alias
+### set_alias
 
 ```python
 def set_alias(alias: str)
@@ -294,7 +294,7 @@ def set_alias(alias: str)
 
 Set alias.
 
-### set\_default\_sync\_options
+### set_default_sync_options
 
 ```python
 def set_default_sync_options(options)
@@ -303,7 +303,7 @@ def set_default_sync_options(options)
 Set the fallback SyncOptions for account syncing.
 If storage is enabled, will persist during restarts.
 
-### sign\_transaction\_essence
+### sign_transaction_essence
 
 ```python
 def sign_transaction_essence(prepared_transaction_data)
@@ -311,7 +311,7 @@ def sign_transaction_essence(prepared_transaction_data)
 
 Sign a transaction essence.
 
-### sign\_and\_submit\_transaction
+### sign_and_submit_transaction
 
 ```python
 def sign_and_submit_transaction(prepared_transaction_data)
@@ -319,7 +319,7 @@ def sign_and_submit_transaction(prepared_transaction_data)
 
 Validate the transaction, sign it, submit it to a node and store it in the account.
 
-### submit\_and\_store\_transaction
+### submit_and_store_transaction
 
 ```python
 def submit_and_store_transaction(signed_transaction_data)
@@ -327,7 +327,7 @@ def submit_and_store_transaction(signed_transaction_data)
 
 Submit and store transaction.
 
-### claim\_outputs
+### claim_outputs
 
 ```python
 def claim_outputs(output_ids_to_claim: List[OutputId])
@@ -335,11 +335,10 @@ def claim_outputs(output_ids_to_claim: List[OutputId])
 
 Claim outputs.
 
-### send\_outputs
+### send_outputs
 
 ```python
 def send_outputs(outputs, options=None)
 ```
 
 Send outputs in a transaction.
-

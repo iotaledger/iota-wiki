@@ -58,4 +58,3 @@ def __init__(snapshot_path, password)
 ```
 
 Initialize a stronghold secret manager.
-

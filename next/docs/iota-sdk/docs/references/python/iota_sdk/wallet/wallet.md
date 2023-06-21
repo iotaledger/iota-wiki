@@ -22,7 +22,7 @@ def __init__(
 
 Initialize the IOTA Wallet.
 
-### create\_account
+### create_account
 
 ```python
 def create_account(alias: Optional[str] = None,
@@ -31,7 +31,7 @@ def create_account(alias: Optional[str] = None,
 
 Create a new account
 
-### get\_account
+### get_account
 
 ```python
 def get_account(account_id: str | int) -> Account
@@ -39,7 +39,7 @@ def get_account(account_id: str | int) -> Account
 
 Get the account instance
 
-### get\_client
+### get_client
 
 ```python
 def get_client()
@@ -47,7 +47,7 @@ def get_client()
 
 Get the client instance
 
-### get\_account\_data
+### get_account_data
 
 ```python
 def get_account_data(account_id: str | int)
@@ -55,7 +55,7 @@ def get_account_data(account_id: str | int)
 
 Get account data
 
-### get\_accounts
+### get_accounts
 
 ```python
 def get_accounts()
@@ -71,7 +71,7 @@ def backup(destination: str, password: str)
 
 Backup storage.
 
-### change\_stronghold\_password
+### change_stronghold_password
 
 ```python
 def change_stronghold_password(password: str)
@@ -79,7 +79,7 @@ def change_stronghold_password(password: str)
 
 Change stronghold password.
 
-### clear\_stronghold\_password
+### clear_stronghold_password
 
 ```python
 def clear_stronghold_password()
@@ -87,7 +87,7 @@ def clear_stronghold_password()
 
 Clear stronghold password.
 
-### is\_stronghold\_password\_available
+### is_stronghold_password_available
 
 ```python
 def is_stronghold_password_available() -> bool
@@ -95,7 +95,7 @@ def is_stronghold_password_available() -> bool
 
 Is stronghold password available.
 
-### recover\_accounts
+### recover_accounts
 
 ```python
 def recover_accounts(account_start_index: int,
@@ -106,7 +106,7 @@ def recover_accounts(account_start_index: int,
 
 Recover accounts.
 
-### remove\_latest\_account
+### remove_latest_account
 
 ```python
 def remove_latest_account()
@@ -114,7 +114,7 @@ def remove_latest_account()
 
 Remove latest account.
 
-### restore\_backup
+### restore_backup
 
 ```python
 def restore_backup(source: str, password: str)
@@ -125,7 +125,7 @@ Replaces client_options, coin_type, secret_manager and accounts. Returns an erro
 If Stronghold is used as secret_manager, the existing Stronghold file will be overwritten. If a mnemonic was
 stored, it will be gone.
 
-### generate\_mnemonic
+### generate_mnemonic
 
 ```python
 def generate_mnemonic() -> str
@@ -133,7 +133,7 @@ def generate_mnemonic() -> str
 
 Generates a new mnemonic.
 
-### verify\_mnemonic
+### verify_mnemonic
 
 ```python
 def verify_mnemonic(mnemonic: str)
@@ -141,7 +141,7 @@ def verify_mnemonic(mnemonic: str)
 
 Checks if the given mnemonic is valid.
 
-### set\_client\_options
+### set_client_options
 
 ```python
 def set_client_options(client_options)
@@ -149,7 +149,7 @@ def set_client_options(client_options)
 
 Updates the client options for all accounts.
 
-### generate\_ed25519\_address
+### generate_ed25519_address
 
 ```python
 def generate_ed25519_address(account_index: int,
@@ -161,7 +161,7 @@ def generate_ed25519_address(account_index: int,
 
 Generate an address without storing it.
 
-### get\_node\_info
+### get_node_info
 
 ```python
 def get_node_info(url: str, auth)
@@ -169,7 +169,7 @@ def get_node_info(url: str, auth)
 
 Get node info.
 
-### set\_stronghold\_password
+### set_stronghold_password
 
 ```python
 def set_stronghold_password(password: str)
@@ -177,7 +177,7 @@ def set_stronghold_password(password: str)
 
 Set stronghold password.
 
-### set\_stronghold\_password\_clear\_interval
+### set_stronghold_password_clear_interval
 
 ```python
 def set_stronghold_password_clear_interval(interval_in_milliseconds: int)
@@ -185,7 +185,7 @@ def set_stronghold_password_clear_interval(interval_in_milliseconds: int)
 
 Set stronghold password clear interval.
 
-### store\_mnemonic
+### store_mnemonic
 
 ```python
 def store_mnemonic(mnemonic: str)
@@ -193,7 +193,7 @@ def store_mnemonic(mnemonic: str)
 
 Store mnemonic.
 
-### start\_background\_sync
+### start_background_sync
 
 ```python
 def start_background_sync(options, interval_in_milliseconds: int)
@@ -201,7 +201,7 @@ def start_background_sync(options, interval_in_milliseconds: int)
 
 Start background sync.
 
-### stop\_background\_sync
+### stop_background_sync
 
 ```python
 def stop_background_sync()
@@ -218,7 +218,7 @@ def listen(handler, events: Optional[List[str]] = None)
 Listen to wallet events, empty array or None will listen to all events
 The default value for events is None
 
-### clear\_listeners
+### clear_listeners
 
 ```python
 def clear_listeners(events: Optional[List[str]] = None)
@@ -234,4 +234,3 @@ def destroy()
 ```
 
 Destroys the wallet instance.
-

@@ -280,7 +280,7 @@ components:
         error:
           code: 500
           message: internal server error
-    
+
     ProofHashLeaf:
       description: A leaf including a hash.
       properties:
@@ -309,10 +309,10 @@ components:
       properties:
         milestone:
           allOf:
-            - $ref: "https://raw.githubusercontent.com/iotaledger/tips/main/tips/TIP-0025/core-rest-api.yaml#/components/schemas/MilestonePayload"
+            - $ref: 'https://raw.githubusercontent.com/iotaledger/tips/main/tips/TIP-0025/core-rest-api.yaml#/components/schemas/MilestonePayload'
         block:
           allOf:
-            - $ref: "https://raw.githubusercontent.com/iotaledger/tips/main/tips/TIP-0025/core-rest-api.yaml#/components/schemas/Block"
+            - $ref: 'https://raw.githubusercontent.com/iotaledger/tips/main/tips/TIP-0025/core-rest-api.yaml#/components/schemas/Block'
         proof:
           allOf:
             - $ref: '#/components/schemas/ProofNode'

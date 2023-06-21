@@ -30,7 +30,7 @@ If not provided, minimum storage deposit will be used
 
 [BasicOutputBuilderParams](BasicOutputBuilderParams.md).[amount](BasicOutputBuilderParams.md#amount)
 
-___
+---
 
 ### nativeTokens
 
@@ -42,7 +42,7 @@ The native tokens to be held by the output.
 
 [BasicOutputBuilderParams](BasicOutputBuilderParams.md).[nativeTokens](BasicOutputBuilderParams.md#nativetokens)
 
-___
+---
 
 ### unlockConditions
 
@@ -54,7 +54,7 @@ The unlock conditions for the output.
 
 [BasicOutputBuilderParams](BasicOutputBuilderParams.md).[unlockConditions](BasicOutputBuilderParams.md#unlockconditions)
 
-___
+---
 
 ### features
 
@@ -66,7 +66,7 @@ Features to be contained by the output.
 
 [BasicOutputBuilderParams](BasicOutputBuilderParams.md).[features](BasicOutputBuilderParams.md#features)
 
-___
+---
 
 ### serialNumber
 

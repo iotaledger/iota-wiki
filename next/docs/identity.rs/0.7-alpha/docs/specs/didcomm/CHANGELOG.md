@@ -18,8 +18,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 ### Removed
 
 ## [0.1.0] - 2021-10-29
+
 Initial version of IOTA DIDComm specification [(#379)](https://github.com/iotaledger/identity.rs/pull/379).
+
 ### Added
+
 - Authentication protocol
 - Connection protocol
 - Issuance protocol
@@ -31,5 +34,3 @@ Initial version of IOTA DIDComm specification [(#379)](https://github.com/iotale
 - Termination protocol
 - CredentialInfo resource
 - Problem Reports resource
-
-

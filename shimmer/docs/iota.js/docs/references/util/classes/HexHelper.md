@@ -1,11 +1,12 @@
 ---
 description: iota.js API reference
 keywords:
-- references
-- api references
-- typescript
+  - references
+  - api references
+  - typescript
 image: /img/client_banner.png
 ---
+
 # Class: HexHelper
 
 Helper methods for hex conversions.
@@ -14,7 +15,7 @@ Helper methods for hex conversions.
 
 ### Properties
 
-- [BIG\_INT\_MAX\_256\_BIT](HexHelper.md#big_int_max_256_bit)
+- [BIG_INT_MAX_256_BIT](HexHelper.md#big_int_max_256_bit)
 
 ### Methods
 
@@ -30,9 +31,9 @@ Helper methods for hex conversions.
 
 ## Properties
 
-### BIG\_INT\_MAX\_256\_BIT
+### BIG_INT_MAX_256_BIT
 
-▪ `Static` `Readonly` **BIG\_INT\_MAX\_256\_BIT**: `BigInteger`
+▪ `Static` `Readonly` **BIG_INT_MAX_256_BIT**: `BigInteger`
 
 Const defining the maximum value for a 256 bit int.
 
@@ -46,8 +47,8 @@ Convert the big int 256 bit to hex string.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name    | Type         | Description                   |
+| :------ | :----------- | :---------------------------- |
 | `value` | `BigInteger` | The big int value to convert. |
 
 #### Returns
@@ -56,7 +57,7 @@ Convert the big int 256 bit to hex string.
 
 The hex encoded big int.
 
-___
+---
 
 ### toBigInt256
 
@@ -66,8 +67,8 @@ Convert the hex string to a big int.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name  | Type     | Description               |
+| :---- | :------- | :------------------------ |
 | `hex` | `string` | The hex value to convert. |
 
 #### Returns
@@ -76,7 +77,7 @@ Convert the hex string to a big int.
 
 The big int.
 
-___
+---
 
 ### stripPrefix
 
@@ -86,8 +87,8 @@ Strip the 0x prefix if it exists.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name  | Type     | Description             |
+| :---- | :------- | :---------------------- |
 | `hex` | `string` | The hex value to strip. |
 
 #### Returns
@@ -96,7 +97,7 @@ Strip the 0x prefix if it exists.
 
 The stripped hex without the prefix.
 
-___
+---
 
 ### addPrefix
 
@@ -106,8 +107,8 @@ Add the 0x prefix if it does not exist.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name  | Type     | Description                         |
+| :---- | :------- | :---------------------------------- |
 | `hex` | `string` | The hex value to add the prefix to. |
 
 #### Returns
@@ -116,7 +117,7 @@ Add the 0x prefix if it does not exist.
 
 The hex with the prefix.
 
-___
+---
 
 ### hasPrefix
 
@@ -126,8 +127,8 @@ Does the hex string have the prefix.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name  | Type     | Description                            |
+| :---- | :------- | :------------------------------------- |
 | `hex` | `string` | The hex value to check for the prefix. |
 
 #### Returns

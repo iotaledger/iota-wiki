@@ -1,33 +1,32 @@
 ---
-description: "Prepare a development environment to run the NFT transactions with iota.js tutorial."
+description: 'Prepare a development environment to run the NFT transactions with iota.js tutorial.'
 image: /img/client_banner.png
 keywords:
-
-- tutorial
-- Node.js 16
-- auxiliary library
-- proof of work
-- pow
-- shimmer
-- Testnet node
-
+  - tutorial
+  - Node.js 16
+  - auxiliary library
+  - proof of work
+  - pow
+  - shimmer
+  - Testnet node
 ---
 
 # Prepare Your Development Environment
 
 To run the code in this tutorial, you will need the following:
 
-* [Node.js 16](https://nodejs.org/en/blog/release/v16.16.0/).
-* The [`@iota/iota.js`](https://www.npmjs.com/package/@iota/iota.js) library
-* The `iota.js` auxiliary libraries:
-    * [`@iota/crypto.js`](https://www.npmjs.com/package/@iota/crypto.js)
-    * [`@iota/util.js`](https://www.npmjs.com/package/@iota/util.js).
-    * [`@iota/pow-neon.js`](https://www.npmjs.com/package/@iota/pow-neon.js) to run Proof of Work (PoW). Alternatively,
-      you can spin up your own node to run the PoW remotely.
+- [Node.js 16](https://nodejs.org/en/blog/release/v16.16.0/).
+- The [`@iota/iota.js`](https://www.npmjs.com/package/@iota/iota.js) library
+- The `iota.js` auxiliary libraries:
 
-* Access to a Stardust Node (Hornet 2.0.0). You can use the Shimmer Testnet Nodes
+  - [`@iota/crypto.js`](https://www.npmjs.com/package/@iota/crypto.js)
+  - [`@iota/util.js`](https://www.npmjs.com/package/@iota/util.js).
+  - [`@iota/pow-neon.js`](https://www.npmjs.com/package/@iota/pow-neon.js) to run Proof of Work (PoW). Alternatively,
+    you can spin up your own node to run the PoW remotely.
+
+- Access to a Stardust Node (Hornet 2.0.0). You can use the Shimmer Testnet Nodes
   at [https://api.testnet.shimmer.network](https://api.testnet.shimmer.network).
-* (Optional) A TypeScript compiler and related packages
+- (Optional) A TypeScript compiler and related packages
 
 ## (optional) Download the Code
 

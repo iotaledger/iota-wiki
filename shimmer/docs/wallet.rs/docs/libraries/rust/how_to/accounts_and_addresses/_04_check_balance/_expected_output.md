@@ -6,19 +6,19 @@ AccountBalance{
   },
   required_storage_deposit: 213000,
   native_tokens: [
-    
+
   ],
   nfts: [
-    
+
   ],
   aliases: [
-    
+
   ],
   foundries: [
-    
+
   ],
   potentially_locked_outputs: {
-    
+
   }
 }
 ```

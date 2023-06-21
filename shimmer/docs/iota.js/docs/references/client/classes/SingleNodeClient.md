@@ -1,11 +1,12 @@
 ---
 description: iota.js API reference
 keywords:
-- references
-- api references
-- typescript
+  - references
+  - api references
+  - typescript
 image: /img/client_banner.png
 ---
+
 # Class: SingleNodeClient
 
 Client for API communication.
@@ -61,9 +62,9 @@ Create a new instance of client.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `endpoint` | `string` | The endpoint. |
+| Name       | Type                                                                  | Description             |
+| :--------- | :-------------------------------------------------------------------- | :---------------------- |
+| `endpoint` | `string`                                                              | The endpoint.           |
 | `options?` | [`SingleNodeClientOptions`](../interfaces/SingleNodeClientOptions.md) | Options for the client. |
 
 ## Methods
@@ -84,7 +85,7 @@ True if the node is healthy.
 
 [IClient](../interfaces/IClient.md).[health](../interfaces/IClient.md#health)
 
-___
+---
 
 ### routes
 
@@ -102,7 +103,7 @@ The routes.
 
 [IClient](../interfaces/IClient.md).[routes](../interfaces/IClient.md#routes)
 
-___
+---
 
 ### info
 
@@ -120,7 +121,7 @@ The node information.
 
 [IClient](../interfaces/IClient.md).[info](../interfaces/IClient.md#info)
 
-___
+---
 
 ### tips
 
@@ -138,7 +139,7 @@ The tips.
 
 [IClient](../interfaces/IClient.md).[tips](../interfaces/IClient.md#tips)
 
-___
+---
 
 ### block
 
@@ -148,8 +149,8 @@ Get the block data by id.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name      | Type     | Description                    |
+| :-------- | :------- | :----------------------------- |
 | `blockId` | `string` | The block to get the data for. |
 
 #### Returns
@@ -162,7 +163,7 @@ The block data.
 
 [IClient](../interfaces/IClient.md).[block](../interfaces/IClient.md#block)
 
-___
+---
 
 ### blockMetadata
 
@@ -172,8 +173,8 @@ Get the block metadata by id.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name      | Type     | Description                        |
+| :-------- | :------- | :--------------------------------- |
 | `blockId` | `string` | The block to get the metadata for. |
 
 #### Returns
@@ -186,7 +187,7 @@ The block metadata.
 
 [IClient](../interfaces/IClient.md).[blockMetadata](../interfaces/IClient.md#blockmetadata)
 
-___
+---
 
 ### blockRaw
 
@@ -196,8 +197,8 @@ Get the block raw data by id.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name      | Type     | Description                    |
+| :-------- | :------- | :----------------------------- |
 | `blockId` | `string` | The block to get the data for. |
 
 #### Returns
@@ -210,7 +211,7 @@ The block raw data.
 
 [IClient](../interfaces/IClient.md).[blockRaw](../interfaces/IClient.md#blockraw)
 
-___
+---
 
 ### blockSubmit
 
@@ -220,8 +221,8 @@ Submit block.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name           | Type     | Description                                                      |
+| :------------- | :------- | :--------------------------------------------------------------- |
 | `blockPartial` | `Object` | The block to submit (possibly contains only partial block data). |
 
 #### Returns
@@ -234,7 +235,7 @@ The blockId.
 
 [IClient](../interfaces/IClient.md).[blockSubmit](../interfaces/IClient.md#blocksubmit)
 
-___
+---
 
 ### blockSubmitRaw
 
@@ -244,8 +245,8 @@ Submit block in raw format.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name    | Type         | Description          |
+| :------ | :----------- | :------------------- |
 | `block` | `Uint8Array` | The block to submit. |
 
 #### Returns
@@ -258,7 +259,7 @@ The blockId.
 
 [IClient](../interfaces/IClient.md).[blockSubmitRaw](../interfaces/IClient.md#blocksubmitraw)
 
-___
+---
 
 ### transactionIncludedBlock
 
@@ -268,8 +269,8 @@ Get the block that was included in the ledger for a transaction.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name            | Type     | Description                                              |
+| :-------------- | :------- | :------------------------------------------------------- |
 | `transactionId` | `string` | The id of the transaction to get the included block for. |
 
 #### Returns
@@ -282,7 +283,7 @@ The block.
 
 [IClient](../interfaces/IClient.md).[transactionIncludedBlock](../interfaces/IClient.md#transactionincludedblock)
 
-___
+---
 
 ### transactionIncludedBlockRaw
 
@@ -292,8 +293,8 @@ Get raw block that was included in the ledger for a transaction.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name            | Type     | Description                                              |
+| :-------------- | :------- | :------------------------------------------------------- |
 | `transactionId` | `string` | The id of the transaction to get the included block for. |
 
 #### Returns
@@ -306,7 +307,7 @@ The block.
 
 [IClient](../interfaces/IClient.md).[transactionIncludedBlockRaw](../interfaces/IClient.md#transactionincludedblockraw)
 
-___
+---
 
 ### output
 
@@ -316,8 +317,8 @@ Get an output by its identifier.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name       | Type     | Description                  |
+| :--------- | :------- | :--------------------------- |
 | `outputId` | `string` | The id of the output to get. |
 
 #### Returns
@@ -330,7 +331,7 @@ The output details.
 
 [IClient](../interfaces/IClient.md).[output](../interfaces/IClient.md#output)
 
-___
+---
 
 ### outputMetadata
 
@@ -340,8 +341,8 @@ Get an outputs metadata by its identifier.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name       | Type     | Description                                   |
+| :--------- | :------- | :-------------------------------------------- |
 | `outputId` | `string` | The id of the output to get the metadata for. |
 
 #### Returns
@@ -354,7 +355,7 @@ The output metadata.
 
 [IClient](../interfaces/IClient.md).[outputMetadata](../interfaces/IClient.md#outputmetadata)
 
-___
+---
 
 ### outputRaw
 
@@ -364,8 +365,8 @@ Get an outputs raw data.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name       | Type     | Description                                   |
+| :--------- | :------- | :-------------------------------------------- |
 | `outputId` | `string` | The id of the output to get the raw data for. |
 
 #### Returns
@@ -378,7 +379,7 @@ The output raw bytes.
 
 [IClient](../interfaces/IClient.md).[outputRaw](../interfaces/IClient.md#outputraw)
 
-___
+---
 
 ### milestoneByIndex
 
@@ -388,8 +389,8 @@ Get the requested milestone.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name    | Type     | Description                            |
+| :------ | :------- | :------------------------------------- |
 | `index` | `number` | The index of the milestone to look up. |
 
 #### Returns
@@ -402,7 +403,7 @@ The milestone payload.
 
 [IClient](../interfaces/IClient.md).[milestoneByIndex](../interfaces/IClient.md#milestonebyindex)
 
-___
+---
 
 ### milestoneByIndexRaw
 
@@ -412,8 +413,8 @@ Get the requested milestone raw.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name    | Type     | Description                            |
+| :------ | :------- | :------------------------------------- |
 | `index` | `number` | The index of the milestone to look up. |
 
 #### Returns
@@ -426,7 +427,7 @@ The milestone payload raw.
 
 [IClient](../interfaces/IClient.md).[milestoneByIndexRaw](../interfaces/IClient.md#milestonebyindexraw)
 
-___
+---
 
 ### milestoneUtxoChangesByIndex
 
@@ -436,8 +437,8 @@ Get the requested milestone utxo changes.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name    | Type     | Description                                            |
+| :------ | :------- | :----------------------------------------------------- |
 | `index` | `number` | The index of the milestone to request the changes for. |
 
 #### Returns
@@ -450,7 +451,7 @@ The milestone utxo changes details.
 
 [IClient](../interfaces/IClient.md).[milestoneUtxoChangesByIndex](../interfaces/IClient.md#milestoneutxochangesbyindex)
 
-___
+---
 
 ### milestoneById
 
@@ -460,8 +461,8 @@ Get the requested milestone.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name          | Type     | Description                         |
+| :------------ | :------- | :---------------------------------- |
 | `milestoneId` | `string` | The id of the milestone to look up. |
 
 #### Returns
@@ -474,7 +475,7 @@ The milestone payload.
 
 [IClient](../interfaces/IClient.md).[milestoneById](../interfaces/IClient.md#milestonebyid)
 
-___
+---
 
 ### milestoneByIdRaw
 
@@ -484,8 +485,8 @@ Get the requested milestone raw.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name          | Type     | Description                         |
+| :------------ | :------- | :---------------------------------- |
 | `milestoneId` | `string` | The id of the milestone to look up. |
 
 #### Returns
@@ -498,7 +499,7 @@ The milestone payload raw.
 
 [IClient](../interfaces/IClient.md).[milestoneByIdRaw](../interfaces/IClient.md#milestonebyidraw)
 
-___
+---
 
 ### milestoneUtxoChangesById
 
@@ -508,8 +509,8 @@ Get the requested milestone utxo changes.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name          | Type     | Description                                         |
+| :------------ | :------- | :-------------------------------------------------- |
 | `milestoneId` | `string` | The id of the milestone to request the changes for. |
 
 #### Returns
@@ -522,7 +523,7 @@ The milestone utxo changes details.
 
 [IClient](../interfaces/IClient.md).[milestoneUtxoChangesById](../interfaces/IClient.md#milestoneutxochangesbyid)
 
-___
+---
 
 ### treasury
 
@@ -540,7 +541,7 @@ The details for the treasury.
 
 [IClient](../interfaces/IClient.md).[treasury](../interfaces/IClient.md#treasury)
 
-___
+---
 
 ### receipts
 
@@ -550,8 +551,8 @@ Get all the stored receipts or those for a given migrated at index.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name          | Type     | Description                                                                           |
+| :------------ | :------- | :------------------------------------------------------------------------------------ |
 | `migratedAt?` | `number` | The index the receipts were migrated at, if not supplied returns all stored receipts. |
 
 #### Returns
@@ -564,7 +565,7 @@ The stored receipts.
 
 [IClient](../interfaces/IClient.md).[receipts](../interfaces/IClient.md#receipts)
 
-___
+---
 
 ### peers
 
@@ -582,7 +583,7 @@ The list of peers.
 
 [IClient](../interfaces/IClient.md).[peers](../interfaces/IClient.md#peers)
 
-___
+---
 
 ### peerAdd
 
@@ -592,10 +593,10 @@ Add a new peer.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name           | Type     | Description                     |
+| :------------- | :------- | :------------------------------ |
 | `multiAddress` | `string` | The address of the peer to add. |
-| `alias?` | `string` | An optional alias for the peer. |
+| `alias?`       | `string` | An optional alias for the peer. |
 
 #### Returns
 
@@ -607,7 +608,7 @@ The details for the created peer.
 
 [IClient](../interfaces/IClient.md).[peerAdd](../interfaces/IClient.md#peeradd)
 
-___
+---
 
 ### peerDelete
 
@@ -617,8 +618,8 @@ Delete a peer.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name     | Type     | Description         |
+| :------- | :------- | :------------------ |
 | `peerId` | `string` | The peer to delete. |
 
 #### Returns
@@ -631,7 +632,7 @@ Nothing.
 
 [IClient](../interfaces/IClient.md).[peerDelete](../interfaces/IClient.md#peerdelete)
 
-___
+---
 
 ### peer
 
@@ -641,8 +642,8 @@ Get a peer.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name     | Type     | Description         |
+| :------- | :------- | :------------------ |
 | `peerId` | `string` | The peer to delete. |
 
 #### Returns
@@ -655,7 +656,7 @@ The details for the created peer.
 
 [IClient](../interfaces/IClient.md).[peer](../interfaces/IClient.md#peer)
 
-___
+---
 
 ### protocolInfo
 
@@ -673,7 +674,7 @@ The protocol info.
 
 [IClient](../interfaces/IClient.md).[protocolInfo](../interfaces/IClient.md#protocolinfo)
 
-___
+---
 
 ### pluginFetch
 
@@ -684,19 +685,19 @@ Extension method which provides request methods for plugins.
 #### Type parameters
 
 | Name |
-| :------ |
-| `T` |
-| `S` |
+| :--- |
+| `T`  |
+| `S`  |
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `basePluginPath` | `string` | The base path for the plugin eg indexer/v1/ . |
-| `method` | ``"get"`` \| ``"post"`` \| ``"delete"`` | The http method. |
-| `methodPath` | `string` | The path for the plugin request. |
-| `queryParams?` | `string`[] | Additional query params for the request. |
-| `request?` | `T` | The request object. |
+| Name             | Type                              | Description                                   |
+| :--------------- | :-------------------------------- | :-------------------------------------------- |
+| `basePluginPath` | `string`                          | The base path for the plugin eg indexer/v1/ . |
+| `method`         | `"get"` \| `"post"` \| `"delete"` | The http method.                              |
+| `methodPath`     | `string`                          | The path for the plugin request.              |
+| `queryParams?`   | `string`[]                        | Additional query params for the request.      |
+| `request?`       | `T`                               | The request object.                           |
 
 #### Returns
 

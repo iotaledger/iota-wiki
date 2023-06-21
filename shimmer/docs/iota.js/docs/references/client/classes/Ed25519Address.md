@@ -1,11 +1,12 @@
 ---
 description: iota.js API reference
 keywords:
-- references
-- api references
-- typescript
+  - references
+  - api references
+  - typescript
 image: /img/client_banner.png
 ---
+
 # Class: Ed25519Address
 
 Class to help with Ed25519 Signature scheme.
@@ -35,8 +36,8 @@ Create a new instance of Ed25519Address.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name        | Type         | Description                     |
+| :---------- | :----------- | :------------------------------ |
 | `publicKey` | `Uint8Array` | The public key for the address. |
 
 ## Methods
@@ -57,7 +58,7 @@ The address.
 
 [IAddress](../interfaces/IAddress.md).[toAddress](../interfaces/IAddress.md#toaddress)
 
-___
+---
 
 ### verify
 
@@ -67,8 +68,8 @@ Use the public key to validate the address.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name      | Type         | Description            |
+| :-------- | :----------- | :--------------------- |
 | `address` | `Uint8Array` | The address to verify. |
 
 #### Returns

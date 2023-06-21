@@ -1,19 +1,20 @@
 ---
 keywords:
-- testing
-- solo testing environment
-- call context
-- smart contract functionalities
-- data types
-- type conversions
-- Go
+  - testing
+  - solo testing environment
+  - call context
+  - smart contract functionalities
+  - data types
+  - type conversions
+  - Go
 
 description: Testing of smart contracts happens in the Solo testing environment. This enables synchronous, deterministic testing of smart contract functionality without the overhead of having to start nodes, set up a committee, and send transactions over the Tangle.
 
 image: /img/logo/WASP_logo_dark.png
 ---
-import Tabs from "@theme/Tabs"
-import TabItem from "@theme/TabItem"
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 # Testing Smart Contracts
 
@@ -124,7 +125,6 @@ There is hardly any difference in the way the function interface is used within 
 or within Solo test code. The [Call Context](context.mdx) knows how to properly
 [`call()`](call.mdx) or [`post()`](post.mdx) the function call through the function
 descriptor. This makes for seamless testing of smart contracts.
-
 
 In the [next section](examples.mdx) we will go deeper into how the helper member functions
 of the SoloContext are used to simplify tests.

@@ -1,22 +1,24 @@
 ---
-description: Code guidelines on how to contribute to the GoShimmer project.   
+description: Code guidelines on how to contribute to the GoShimmer project.
 image: /img/logo/goshimmer_light.png
 keywords:
-- error
-- function call
-- stack trace
-- assign error
-- explicit constant
-- sentinel error
-- 3rd party libs
+  - error
+  - function call
+  - stack trace
+  - assign error
+  - explicit constant
+  - sentinel error
+  - 3rd party libs
 ---
+
 # Code Guidelines
 
 ## General Guidelines
 
 - Don’t use `log.Fatal()` or `os.Exit()` outside of the main. It immediately terminates the program and all defers are ignored and no graceful shutdown is possible. It can lead to inconsistencies. Propagate the error up to the main and let the main function exit instead. Avoid panics as well, almost always use errors. [Example](https://github.com/iotaledger/goshimmer/blob/f75ce47eeaa3bf930b368754ac24b72f768a5964/plugins/autopeering/autopeering.go#L135).
 - Don’t duplicate code, reuse it. In tests too. Example: [duplicate1](https://github.com/iotaledger/goshimmer/blob/f75ce47eeaa3bf930b368754ac24b72f768a5964/packages/ledgerstate/conflict_dag.go#L969) and [duplicate2](https://github.com/iotaledger/goshimmer/blob/f75ce47eeaa3bf930b368754ac24b72f768a5964/packages/ledgerstate/conflict_dag.go#L1053)
-- Unhandled errors can cause bugs and make it harder to diagnose problems. Try to handle all errors: propagate them to the caller or log them. Even if the function call is used with a defer, and it’s inconvenient to handle the error it returns, still handle it. Wrap the function call in an anonymous function assign error to the upper error  like that:
+- Unhandled errors can cause bugs and make it harder to diagnose problems. Try to handle all errors: propagate them to the caller or log them. Even if the function call is used with a defer, and it’s inconvenient to handle the error it returns, still handle it. Wrap the function call in an anonymous function assign error to the upper error like that:
+
 ```go
     defer func() {
         cerr := f.Close()
@@ -25,6 +27,7 @@ keywords:
         }
     }()
 ```
+
 - Wrap errors with `errors.Wrap()` when returning them to the caller. It adds the stack trace and a custom block to the error. Without that information investigating an issue is very hard.
 - Use `errors.Is()` instead of direct errors comparison. This function unwraps errors recursively. [Example](https://github.com/iotaledger/goshimmer/pull/1113/files#diff-05fdc081489a8d5a61224d812f9bbd7bc77edf9769ed00d95ea024d2a44a699aL62).
 - Propagate `ctx` and use APIs that accept `ctx`, start exposing APIs that accept `ctx`. Context is a native way for timeouts/cancellation in Go. It allows writing more resilient and fault tolerant code. [Example](https://github.com/iotaledger/goshimmer/pull/1113/files#diff-f2820ed0d3d4d9ea05b78b1dd3978dbcf9401c8caaa8cc40cc1c0342a55379fcL35).
@@ -49,7 +52,7 @@ package example
 import (
     "fmt"
     "3rdPartyLibrary"
-    
+
     "github.com/pkg/errors"
 )
 

@@ -1,15 +1,15 @@
 ---
-description: "Learn how to manage addresses with the iota.js client library."
+description: 'Learn how to manage addresses with the iota.js client library.'
 image: /img/client_banner.png
 keywords:
-- how to
-- example
-- address
-- manage
-- bip44
-- create
-- generate seed
-- ed25519
+  - how to
+  - example
+  - address
+  - manage
+  - bip44
+  - create
+  - generate seed
+  - ed25519
 ---
 
 # Create an Address
@@ -18,7 +18,7 @@ keywords:
 
 Before you can create a transaction, you will need to:
 
-* [Connect to a Node](simple.mdx).
+- [Connect to a Node](simple.mdx).
 
 ### Generate A Seed
 
@@ -42,7 +42,7 @@ You can generate a random mnemonic using the [Bip39.randomMnemonic(length?)](../
 
 #### generateBip44Address()
 
-You can generate a new Bip44 address using the [generateBip44Address(generatorState	)](../references/client/api_ref#generatebip44address) function. You will need to provide an [IBip44GeneratorState](../references/client/interfaces/IBip44GeneratorState) as `generatorState`.
+You can generate a new Bip44 address using the [generateBip44Address(generatorState )](../references/client/api_ref#generatebip44address) function. You will need to provide an [IBip44GeneratorState](../references/client/interfaces/IBip44GeneratorState) as `generatorState`.
 
 ### Ed25519 Address
 
@@ -54,11 +54,10 @@ You can create a new [Ed25519Address](../references/client/classes/Ed25519Addres
 You can retrieve an address by using the [Ed25519Address.toAddress()](../references/client/classes/Ed25519Address#toaddress)
 function.
 
-You can then use the [Converter.bytesToHex(array, includePrefix?, startIndex?, length?, reverse?)](../references/util/classes/Converter.md#bytestohex) and  [Bech32Helper.toBech32()](../references/client/classes/Bech32Helper.md#tobech32) functions to convert the address
+You can then use the [Converter.bytesToHex(array, includePrefix?, startIndex?, length?, reverse?)](../references/util/classes/Converter.md#bytestohex) and [Bech32Helper.toBech32()](../references/client/classes/Bech32Helper.md#tobech32) functions to convert the address
 to Ed25519 or Bech32 formats.
 
 ## Example Code
-
 
 ```ts reference
 https://github.com/iotaledger/iota.js/tree/feat/stardust/packages/iota/examples/address/src/index.ts

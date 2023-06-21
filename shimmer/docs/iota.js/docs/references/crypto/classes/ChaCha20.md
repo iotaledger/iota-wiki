@@ -1,11 +1,12 @@
 ---
 description: iota.js API reference
 keywords:
-- references
-- api references
-- typescript
+  - references
+  - api references
+  - typescript
 image: /img/client_banner.png
 ---
+
 # Class: ChaCha20
 
 Implementation of the ChaCha20 cipher.
@@ -32,11 +33,11 @@ Create a new instance of ChaCha20.
 
 #### Parameters
 
-| Name | Type | Default value | Description |
-| :------ | :------ | :------ | :------ |
-| `key` | `Uint8Array` | `undefined` | The key. |
-| `nonce` | `Uint8Array` | `undefined` | The nonce. |
-| `counter` | `number` | `0` | Counter. |
+| Name      | Type         | Default value | Description |
+| :-------- | :----------- | :------------ | :---------- |
+| `key`     | `Uint8Array` | `undefined`   | The key.    |
+| `nonce`   | `Uint8Array` | `undefined`   | The nonce.  |
+| `counter` | `number`     | `0`           | Counter.    |
 
 ## Methods
 
@@ -48,8 +49,8 @@ Encrypt the data.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name   | Type         | Description                 |
+| :----- | :----------- | :-------------------------- |
 | `data` | `Uint8Array` | The source data to encrypt. |
 
 #### Returns
@@ -58,7 +59,7 @@ Encrypt the data.
 
 The encrypted data.
 
-___
+---
 
 ### decrypt
 
@@ -68,8 +69,8 @@ Decrypt the data.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name   | Type         | Description                 |
+| :----- | :----------- | :-------------------------- |
 | `data` | `Uint8Array` | The source data to decrypt. |
 
 #### Returns
@@ -78,7 +79,7 @@ Decrypt the data.
 
 The decrypted data.
 
-___
+---
 
 ### keyStream
 
@@ -88,8 +89,8 @@ Create a keystream of the given length.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name     | Type     | Description                         |
+| :------- | :------- | :---------------------------------- |
 | `length` | `number` | The length to create the keystream. |
 
 #### Returns

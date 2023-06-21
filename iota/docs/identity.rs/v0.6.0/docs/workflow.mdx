@@ -4,17 +4,17 @@ sidebar_label: Workflow
 description: Learn about the software development process of the IOTA Identity repository.
 image: /img/Identity_icon.png
 keywords:
-- Workflow
-- Contribute
-- GitHub
-- explanation
+  - Workflow
+  - Contribute
+  - GitHub
+  - explanation
 ---
 
 import Announcement from '../src/partials/_announcement.mdx';
 
 # Identity Workflow
 
-<Announcement/>
+<Announcement />
 
 In this article you will learn about the software development process for the IOTA Identity repository as well as key terms, functions, and the overall operability of the workflow components.
 
@@ -38,9 +38,9 @@ Once a PR is approved, the preferred method is "squash-and-merge" for non-epic b
 
 IOTA Identity always has two permanent branches: `main` and `dev`. Both branches are protected and disallow direct commits; the only changes allowed are from pull requests approved and merged by maintainers.
 
-#### [Main](https://github.com/iotaledger/identity.rs/tree/main) (main) 
+#### [Main](https://github.com/iotaledger/identity.rs/tree/main) (main)
 
-The `main` branch contains a stable version of the code that is released towards package managers such as `crates.io` and `npm`. This branch only accepts PRs that merge from `release` or `hotfix` branches. 
+The `main` branch contains a stable version of the code that is released towards package managers such as `crates.io` and `npm`. This branch only accepts PRs that merge from `release` or `hotfix` branches.
 
 #### [Dev](https://github.com/iotaledger/identity.rs) (dev)
 
@@ -52,7 +52,7 @@ These are branches that developers work on directly. Their names should be prefi
 
 #### Feature (feat/, doc/, chore/, fix/)
 
-Singular PR contributions should create either a `feat`, `doc`, `chore`, or `fix` branch, depending on the type of changes. These may be branched from either the `dev` branch or an `epic` branch. If the number of lines of code are going to be relatively small and the work completed in a single PR, the branch should be created from `dev` and merged back into `dev` once completed. Otherwise, the branches should be created from their associated `epic` branch and be merged back into the same `epic` branch. 
+Singular PR contributions should create either a `feat`, `doc`, `chore`, or `fix` branch, depending on the type of changes. These may be branched from either the `dev` branch or an `epic` branch. If the number of lines of code are going to be relatively small and the work completed in a single PR, the branch should be created from `dev` and merged back into `dev` once completed. Otherwise, the branches should be created from their associated `epic` branch and be merged back into the same `epic` branch.
 
 - `feat` branches should contain changes to the code that expand or modify functionality. They should also include updates to the documentation and examples related to the feature, though `doc` branches may be used to catch up on documenting a feature.
 - `doc` branches contain changes to code documentation or the wiki. These PRs should be kept relatively small to avoid burdening a reviewer with too many documentation updates at once. For example, during a documentation catch-up, we will have a branch or PR per documentation page.
@@ -67,7 +67,7 @@ Long-lived `epic` branches should be created as soon as a feature is expected to
 
 ### Semantic Versioning
 
-Semantic Versioning (SemVer) describes a methodology for versioning of software to convey meaning and guarantees through the version string. A typical version string looks like `2.3.1`, where `2` is called the major version, `3` the minor version and `1` the patch or bugfix version. 
+Semantic Versioning (SemVer) describes a methodology for versioning of software to convey meaning and guarantees through the version string. A typical version string looks like `2.3.1`, where `2` is called the major version, `3` the minor version and `1` the patch or bugfix version.
 
 The central idea is that every part of the version string conveys meaning. A major change introduces behavior that is incompatible with previous versions of the software, while a minor change adds backwards-compatible functionality and a patch simply fixes a problem. So just by looking at the version string, an implementer will understand the effort needed to integrate a new version.
 
@@ -75,7 +75,7 @@ For more detailed information and an overview of advanced features, see [Semanti
 
 ### Changelog
 
-A changelog is a file describing a software project for humans to grasp the type and content of changes from version to version. Changelogs are closely related to the versioning of software, since individual changes are grouped into versions that are, in our case, referenced by a [SemVer string](#Semantic-Versioning). We generally follow the recommendations from [keepachangelog](https://keepachangelog.com/en/1.0.0/). The changelog in this project is generated from the titles and [labels](#PR-Labels) of [pull requests](#Pull-Requests). 
+A changelog is a file describing a software project for humans to grasp the type and content of changes from version to version. Changelogs are closely related to the versioning of software, since individual changes are grouped into versions that are, in our case, referenced by a [SemVer string](#Semantic-Versioning). We generally follow the recommendations from [keepachangelog](https://keepachangelog.com/en/1.0.0/). The changelog in this project is generated from the titles and [labels](#PR-Labels) of [pull requests](#Pull-Requests).
 
 #### PR labels
 
@@ -83,7 +83,7 @@ Labels are used to categorize changes in [pull requests](#Pull-Requests). Adding
 
 Changelogs are generated for the core Rust library and each binding separately. To attach a PR to a specific changelog, use the following labels:
 
-##### `Rust` 
+##### `Rust`
 
 This includes the PR in the core Rust library changelog.
 
@@ -91,7 +91,7 @@ This includes the PR in the core Rust library changelog.
 
 This includes the PR in the WASM bindings changelog.
 
-It is also necessary to add an appropriate label for the type of change in the PR. The following labels determine in which section a PR title will appear: 
+It is also necessary to add an appropriate label for the type of change in the PR. The following labels determine in which section a PR title will appear:
 
 ##### Changed
 
@@ -115,7 +115,7 @@ labels: `Deprecated`
 
 ##### Removed
 
-Marks features as being removed. Typically the features should have been deprecated in the previous version. This maps to the major version of [Semantic Versioning](#Semantic-Versioning). 
+Marks features as being removed. Typically the features should have been deprecated in the previous version. This maps to the major version of [Semantic Versioning](#Semantic-Versioning).
 labels: `Removed`
 
 ##### Excluded tags
@@ -149,15 +149,15 @@ You should follow these steps to create a release:
 
 1. Ensure all the changes you want to release are on the `dev` branch.
 2. Select the appropriate GitHub Actions workflow, e.g. `Rust Create Release PR`.
-2.1. Decide if you want to create a `dev` or `main` release.
-2.2. Determine the next version string.
-2.3. Run the workflow. The workflow will create a PR from `dev` targeting `dev` with release related changes.
+   2.1. Decide if you want to create a `dev` or `main` release.
+   2.2. Determine the next version string.
+   2.3. Run the workflow. The workflow will create a PR from `dev` targeting `dev` with release related changes.
 3. Review the PR.
-3.1. The PR will update the changelog, check that it has all expected entries in the appropriate sections and the determined version matches the changelog according to [SemVer](#Semantic-Versioning).
-3.2. The PR will update project version strings, ensure these are correct and match the expected version.
-3.3. Refer to [Troubleshooting](#Troubleshooting) if anything is incorrect.
+   3.1. The PR will update the changelog, check that it has all expected entries in the appropriate sections and the determined version matches the changelog according to [SemVer](#Semantic-Versioning).
+   3.2. The PR will update project version strings, ensure these are correct and match the expected version.
+   3.3. Refer to [Troubleshooting](#Troubleshooting) if anything is incorrect.
 4. Merge the PR.
-4.1. On merging to `dev`, an automatic workflow is triggered that builds and publishes artifacts to the appropriate package manager (`crates.io` for Rust, `npm` for the WASM bindings), and creates a GitHub Release (only for `main` version releases of the core Rust library).
+   4.1. On merging to `dev`, an automatic workflow is triggered that builds and publishes artifacts to the appropriate package manager (`crates.io` for Rust, `npm` for the WASM bindings), and creates a GitHub Release (only for `main` version releases of the core Rust library).
 5. For `main` version releases, merge the `dev` branch into the `main` branch.
 
 ### Troubleshooting

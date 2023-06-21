@@ -1,15 +1,14 @@
 ---
-description: "Learn how sweep your outputs into a single output to reduce storage costs."
+description: 'Learn how sweep your outputs into a single output to reduce storage costs.'
 image: /img/client_banner.png
 keywords:
-- tutorial
-- single output
-- unlock conditions
-- transactions payload
-- transactions essence
-- reference unlock conditions
-- main unlock conditions
-
+  - tutorial
+  - single output
+  - unlock conditions
+  - transactions payload
+  - transactions essence
+  - reference unlock conditions
+  - main unlock conditions
 ---
 
 # Sweep Outputs to Reduce Deposits
@@ -26,7 +25,7 @@ you want the two latest outputs; you can select the first two returned elements 
 ```typescript
 const indexerPlugin = new IndexerPluginClient(client);
 const outputList = await indexerPlugin.basicOutputs({
-    addressBech32: destinationAddressBech32
+  addressBech32: destinationAddressBech32,
 });
 
 const consumedOutputId1 = outputList.items[0];
@@ -56,19 +55,19 @@ Please note that you could also have transferred your new output to another addr
 
 ```typescript
 const combinedOutput: IBasicOutput = {
-    type: BASIC_OUTPUT_TYPE,
-    amount: amount1.add(amount2).toString(),
-    nativeTokens: [],
-    unlockConditions: [
-        {
-            type: ADDRESS_UNLOCK_CONDITION_TYPE,
-            address: {
-                type: ED25519_ADDRESS_TYPE,
-                pubKeyHash: destAddress
-            }
-        }
-    ],
-    features: []
+  type: BASIC_OUTPUT_TYPE,
+  amount: amount1.add(amount2).toString(),
+  nativeTokens: [],
+  unlockConditions: [
+    {
+      type: ADDRESS_UNLOCK_CONDITION_TYPE,
+      address: {
+        type: ED25519_ADDRESS_TYPE,
+        pubKeyHash: destAddress,
+      },
+    },
+  ],
+  features: [],
 };
 ```
 
@@ -86,14 +85,17 @@ const inputs: IUTXOInput[] = [];
 inputs.push(TransactionHelper.inputFromOutputId(consumedOutputId1));
 inputs.push(TransactionHelper.inputFromOutputId(consumedOutputId2));
 
-const inputsCommitment = TransactionHelper.getInputsCommitment([output1.output, output2.output]);
+const inputsCommitment = TransactionHelper.getInputsCommitment([
+  output1.output,
+  output2.output,
+]);
 
 const transactionEssence: ITransactionEssence = {
-    type: TRANSACTION_ESSENCE_TYPE,
-    networkId: protocolInfo.networkId,
-    inputs,
-    inputsCommitment,
-    outputs: [combinedOutput]
+  type: TRANSACTION_ESSENCE_TYPE,
+  networkId: protocolInfo.networkId,
+  inputs,
+  inputsCommitment,
+  outputs: [combinedOutput],
 };
 ```
 
@@ -108,85 +110,95 @@ const essenceFinal = wsTsxEssence.finalBytes();
 
 const essenceHash = Blake2b.sum256(essenceFinal);
 
-const destAddressPubKey = "0x....";
-const destAddressPrivateKey = "0x....";
+const destAddressPubKey = '0x....';
+const destAddressPrivateKey = '0x....';
 
-// Main unlock condition 
+// Main unlock condition
 const unlock1: ISignatureUnlock = {
-    type: SIGNATURE_UNLOCK_TYPE,
-    signature: {
-        type: ED25519_SIGNATURE_TYPE,
-        publicKey: destAddressPubKey,
-        signature: Converter.bytesToHex(Ed25519.sign(Converter.hexToBytes(destAddressPrivateKey), essenceHash), true)
-    }
+  type: SIGNATURE_UNLOCK_TYPE,
+  signature: {
+    type: ED25519_SIGNATURE_TYPE,
+    publicKey: destAddressPubKey,
+    signature: Converter.bytesToHex(
+      Ed25519.sign(Converter.hexToBytes(destAddressPrivateKey), essenceHash),
+      true,
+    ),
+  },
 };
 
 const unlock2: IReferenceUnlock = {
-    type: REFERENCE_UNLOCK_TYPE,
-    reference: 0
+  type: REFERENCE_UNLOCK_TYPE,
+  reference: 0,
 };
 
 const transactionPayload: ITransactionPayload = {
-    type: TRANSACTION_PAYLOAD_TYPE,
-    essence: transactionEssence,
-    unlocks: [unlock1, unlock2]
+  type: TRANSACTION_PAYLOAD_TYPE,
+  essence: transactionEssence,
+  unlocks: [unlock1, unlock2],
 };
 ```
 
 You can now [submit your transaction payload as block](08-transfer-funds.md#submit-the-block). Once the transaction is
 confirmed, you can observe that the storage deposit is now reduced to `42600` Glow, but the balance is still `0.1 SMR`.
 
-
 ## Putting It All Together
 
 By this point in the tutorial, your `sweep-deposits.ts`file should look something like this:
 
 ```typescript
-import {Bip32Path, Bip39, Blake2b, Ed25519} from "@iota/crypto.js";
+import { Bip32Path, Bip39, Blake2b, Ed25519 } from '@iota/crypto.js';
 import {
-    ADDRESS_UNLOCK_CONDITION_TYPE,
-    BASIC_OUTPUT_TYPE,
-    Bech32Helper,
-    DEFAULT_PROTOCOL_VERSION,
-    ED25519_ADDRESS_TYPE,
-    ED25519_SIGNATURE_TYPE,
-    Ed25519Address,
-    Ed25519Seed,
-    generateBip44Address,
-    IBasicOutput,
-    IBlock,
-    IKeyPair, IndexerPluginClient, IReferenceUnlock,
-    ISignatureUnlock,
-    ITransactionEssence,
-    ITransactionPayload,
-    IUTXOInput, REFERENCE_UNLOCK_TYPE,
-    serializeTransactionEssence,
-    SIGNATURE_UNLOCK_TYPE,
-    SingleNodeClient,
-    TRANSACTION_ESSENCE_TYPE,
-    TRANSACTION_PAYLOAD_TYPE,
-    TransactionHelper
-} from "@iota/iota.js";
-import {Converter, WriteStream} from "@iota/util.js";
-import {NeonPowProvider} from "@iota/pow-neon.js";
-import bigInt from "big-integer";
+  ADDRESS_UNLOCK_CONDITION_TYPE,
+  BASIC_OUTPUT_TYPE,
+  Bech32Helper,
+  DEFAULT_PROTOCOL_VERSION,
+  ED25519_ADDRESS_TYPE,
+  ED25519_SIGNATURE_TYPE,
+  Ed25519Address,
+  Ed25519Seed,
+  generateBip44Address,
+  IBasicOutput,
+  IBlock,
+  IKeyPair,
+  IndexerPluginClient,
+  IReferenceUnlock,
+  ISignatureUnlock,
+  ITransactionEssence,
+  ITransactionPayload,
+  IUTXOInput,
+  REFERENCE_UNLOCK_TYPE,
+  serializeTransactionEssence,
+  SIGNATURE_UNLOCK_TYPE,
+  SingleNodeClient,
+  TRANSACTION_ESSENCE_TYPE,
+  TRANSACTION_PAYLOAD_TYPE,
+  TransactionHelper,
+} from '@iota/iota.js';
+import { Converter, WriteStream } from '@iota/util.js';
+import { NeonPowProvider } from '@iota/pow-neon.js';
+import bigInt from 'big-integer';
 
-const API_ENDPOINT = "https://api.testnet.shimmer.network";
-const client = new SingleNodeClient(API_ENDPOINT, {powProvider: new NeonPowProvider()});
+const API_ENDPOINT = 'https://api.testnet.shimmer.network';
+const client = new SingleNodeClient(API_ENDPOINT, {
+  powProvider: new NeonPowProvider(),
+});
 const protocolInfo = await client.protocolInfo();
 
 console.log(protocolInfo);
 
-const sourceAddress = "0x696cc8b1e0d2c1e29fbf3a4f491c0c9dc730c6e4c4e0d0ab6011e9f1209af013";
-const sourceAddressBech32 = "rms1qp5kej93urfvrc5lhuay7jgupjwuwvxxunzwp59tvqg7nufqntcpxp26uj8";
-const sourceAddressPublicKey = "NEED KEYS FOR EXAMPLE ADDRESS";
-const sourceAddressPrivateKey = "NEED KEYS FOR EXAMPLE ADDRESS";
+const sourceAddress =
+  '0x696cc8b1e0d2c1e29fbf3a4f491c0c9dc730c6e4c4e0d0ab6011e9f1209af013';
+const sourceAddressBech32 =
+  'rms1qp5kej93urfvrc5lhuay7jgupjwuwvxxunzwp59tvqg7nufqntcpxp26uj8';
+const sourceAddressPublicKey = 'NEED KEYS FOR EXAMPLE ADDRESS';
+const sourceAddressPrivateKey = 'NEED KEYS FOR EXAMPLE ADDRESS';
 
-const destAddress = "0xbc9a935696546212c237e49e881fc6bdbd90bd0ec6140391982172f05a01b095";
+const destAddress =
+  '0xbc9a935696546212c237e49e881fc6bdbd90bd0ec6140391982172f05a01b095';
 
 const indexerPlugin = new IndexerPluginClient(client);
 const outputList = await indexerPlugin.basicOutputs({
-    addressBech32: sourceAddressBech32
+  addressBech32: sourceAddressBech32,
 });
 
 const consumedOutputId1 = outputList.items[0];
@@ -200,19 +212,19 @@ const amount1 = bigInt(output1.output.amount);
 const amount2 = bigInt(output2.output.amount);
 
 const combinedOutput: IBasicOutput = {
-    type: BASIC_OUTPUT_TYPE,
-    amount: amount1.add(amount2).toString(),
-    nativeTokens: [],
-    unlockConditions: [
-        {
-            type: ADDRESS_UNLOCK_CONDITION_TYPE,
-            address: {
-                type: ED25519_ADDRESS_TYPE,
-                pubKeyHash: destAddress
-            }
-        }
-    ],
-    features: []
+  type: BASIC_OUTPUT_TYPE,
+  amount: amount1.add(amount2).toString(),
+  nativeTokens: [],
+  unlockConditions: [
+    {
+      type: ADDRESS_UNLOCK_CONDITION_TYPE,
+      address: {
+        type: ED25519_ADDRESS_TYPE,
+        pubKeyHash: destAddress,
+      },
+    },
+  ],
+  features: [],
 };
 
 const inputs: IUTXOInput[] = [];
@@ -220,14 +232,17 @@ const inputs: IUTXOInput[] = [];
 inputs.push(TransactionHelper.inputFromOutputId(consumedOutputId1));
 inputs.push(TransactionHelper.inputFromOutputId(consumedOutputId2));
 
-const inputsCommitment = TransactionHelper.getInputsCommitment([output1.output, output2.output]);
+const inputsCommitment = TransactionHelper.getInputsCommitment([
+  output1.output,
+  output2.output,
+]);
 
 const transactionEssence: ITransactionEssence = {
-    type: TRANSACTION_ESSENCE_TYPE,
-    networkId: protocolInfo.networkId,
-    inputs,
-    inputsCommitment,
-    outputs: [combinedOutput]
+  type: TRANSACTION_ESSENCE_TYPE,
+  networkId: protocolInfo.networkId,
+  inputs,
+  inputsCommitment,
+  outputs: [combinedOutput],
 };
 
 const wsTsxEssence = new WriteStream();
@@ -236,39 +251,41 @@ const essenceFinal = wsTsxEssence.finalBytes();
 
 const essenceHash = Blake2b.sum256(essenceFinal);
 
-const destAddressPubKey = "0x....";
-const destAddressPrivateKey = "0x....";
+const destAddressPubKey = '0x....';
+const destAddressPrivateKey = '0x....';
 
 // Main unlock condition
 const unlock1: ISignatureUnlock = {
-    type: SIGNATURE_UNLOCK_TYPE,
-    signature: {
-        type: ED25519_SIGNATURE_TYPE,
-        publicKey: destAddressPubKey,
-        signature: Converter.bytesToHex(Ed25519.sign(Converter.hexToBytes(destAddressPrivateKey), essenceHash), true)
-    }
+  type: SIGNATURE_UNLOCK_TYPE,
+  signature: {
+    type: ED25519_SIGNATURE_TYPE,
+    publicKey: destAddressPubKey,
+    signature: Converter.bytesToHex(
+      Ed25519.sign(Converter.hexToBytes(destAddressPrivateKey), essenceHash),
+      true,
+    ),
+  },
 };
 
 const unlock2: IReferenceUnlock = {
-    type: REFERENCE_UNLOCK_TYPE,
-    reference: 0
+  type: REFERENCE_UNLOCK_TYPE,
+  reference: 0,
 };
 
 const transactionPayload: ITransactionPayload = {
-    type: TRANSACTION_PAYLOAD_TYPE,
-    essence: transactionEssence,
-    unlocks: [unlock1, unlock2]
+  type: TRANSACTION_PAYLOAD_TYPE,
+  essence: transactionEssence,
+  unlocks: [unlock1, unlock2],
 };
 
 const block: IBlock = {
-    protocolVersion: DEFAULT_PROTOCOL_VERSION,
-    parents: [],
-    payload: transactionPayload,
-    nonce: "0",
+  protocolVersion: DEFAULT_PROTOCOL_VERSION,
+  parents: [],
+  payload: transactionPayload,
+  nonce: '0',
 };
 
 const blockId = await client.blockSubmit(block);
 
 console.log(blockId);
-
 ```

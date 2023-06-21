@@ -2,21 +2,22 @@
 image: /img/integration-services/logo/integration_services.png
 description: This section will show you an example on how to authenticate using the IOTA IS-SDK npm package.
 keywords:
-- how to
-- authentication
-- jwt
-- nonce
-- not-authenticated
-- 401
-- nodejs
-- is-sdk
-- java
-- node
-- npm
-- how to
+  - how to
+  - authentication
+  - jwt
+  - nonce
+  - not-authenticated
+  - 401
+  - nodejs
+  - is-sdk
+  - java
+  - node
+  - npm
+  - how to
 ---
-import Tabs from "@theme/Tabs";
-import TabItem from "@theme/TabItem";
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 # Authenticate Your Identity
 
@@ -43,15 +44,14 @@ everything may yet run smoothly.
 <Tabs groupId={"programmingLanguage"}>
 <TabItem value="Java" label={'Java'}>
 
-* [JDK 16](https://openjdk.java.net/projects/jdk/16/) (recommended)
-* A reference to an instance of the [Integration Services API](https://github.com/iotaledger/integration-services)
-* [Maven](https://maven.apache.org/)
-
+- [JDK 16](https://openjdk.java.net/projects/jdk/16/) (recommended)
+- A reference to an instance of the [Integration Services API](https://github.com/iotaledger/integration-services)
+- [Maven](https://maven.apache.org/)
 
 </TabItem>
 <TabItem value="Nodejs" label={'Node.js'}>
 
-* A recent version of [Node.js](https://nodejs.org/en/download/) (>v16.17.0).
+- A recent version of [Node.js](https://nodejs.org/en/download/) (>v16.17.0).
 
 </TabItem>
 </Tabs>
@@ -65,11 +65,11 @@ Ideally every dependency listed in the
 project's [POM](https://github.com/albydeca/iota-is-sdk/blob/main/pom.xml) (`mvn clean install`). This example uses in
 particular:
 
-* `org.apache.commons.codec.digest`
-* `org.apache.http.*`
-* `org.bitcoinj.core.Base58`
-* `org.bouncycastle.crypto`
-* `org.json.*`
+- `org.apache.commons.codec.digest`
+- `org.apache.http.*`
+- `org.bitcoinj.core.Base58`
+- `org.bouncycastle.crypto`
+- `org.json.*`
 
 </TabItem>
 <TabItem value="Nodejs" label={'Node.js'}>
@@ -162,10 +162,10 @@ Never save your secret key in plain text in your code. Use local environment var
 import axios from 'axios';
 
 const requestNonce = async () => {
-const identityId = 'did:iota:8BAmUqAg4aUjV3T9WUhPpDnFVbJSk16oLyFq3m3e62MF';
-const url = `http://localhost:3000/api/v0.2/authentication/prove-ownership/${identityId}`
-const request = await axios.get(url);
-console.log(request.data);
+  const identityId = 'did:iota:8BAmUqAg4aUjV3T9WUhPpDnFVbJSk16oLyFq3m3e62MF';
+  const url = `http://localhost:3000/api/v0.2/authentication/prove-ownership/${identityId}`;
+  const request = await axios.get(url);
+  console.log(request.data);
 };
 
 requestNonce();
@@ -178,7 +178,7 @@ The returned response body will look like this .js object.
 
 ```js
 {
-    nonce: '3eaf8814caa842d94fdb96fc26d02f7c339e65ff'
+  nonce: '3eaf8814caa842d94fdb96fc26d02f7c339e65ff';
 }
 ```
 
@@ -212,10 +212,10 @@ After you have retrieved the nonce, you should hash it. You can use the Node API
 import crypto from 'crypto';
 
 const hashNonce = () => {
-const nonce = '3eaf8814caa842d94fdb96fc26d02f7c339e65ff';
+  const nonce = '3eaf8814caa842d94fdb96fc26d02f7c339e65ff';
 
-const hashedNonce = crypto.createHash('sha256').update(nonce).digest('hex');
-console.log(hashedNonce);
+  const hashedNonce = crypto.createHash('sha256').update(nonce).digest('hex');
+  console.log(hashedNonce);
 };
 
 hashNonce();
@@ -265,13 +265,14 @@ import * as ed from '@noble/ed25519';
 import bs58 from 'bs58';
 
 const signNonce = async () => {
-    const hashedNonce = '6d748f209e5af1f5b8825f7822d6659c45c874076cd2b3337c7861fd94cd3ba5';
-    const secretKey = '5N3SxG4UzVDpNe4LyDoZyb6bSgE9tk3pE2XP5znXo5bF';
+  const hashedNonce =
+    '6d748f209e5af1f5b8825f7822d6659c45c874076cd2b3337c7861fd94cd3ba5';
+  const secretKey = '5N3SxG4UzVDpNe4LyDoZyb6bSgE9tk3pE2XP5znXo5bF';
 
-    const encodedSecretKey = bs58.decode(secretKey).toString('hex');
-    const signedNonceArray = await ed.sign(hashedNonce, encodedSecretKey);
-    const signedNonce = ed.Signature.fromHex(signedNonceArray).toHex();
-    console.log(signedNonce);
+  const encodedSecretKey = bs58.decode(secretKey).toString('hex');
+  const signedNonceArray = await ed.sign(hashedNonce, encodedSecretKey);
+  const signedNonce = ed.Signature.fromHex(signedNonceArray).toHex();
+  console.log(signedNonce);
 };
 
 signNonce();
@@ -321,28 +322,28 @@ this.jwt = response.getString("jwt");
 import axios from 'axios';
 
 const requestJWT = async () => {
-const identityId = 'did:iota:8BAmUqAg4aUjV3T9WUhPpDnFVbJSk16oLyFq3m3e62MF';
-const body = {
-signedNonce:
-'270c2e502c5c753e39159683981e452444f81a10d798f56406a9c471d672a5ede1792cb7f97d4f9c9efeec7bf35577dd1f8482afca7e3710291868a65bf91e07'
-};
-const url = `http://localhost:3000/api/v0.2/authentication/prove-ownership/${identityId}`;
+  const identityId = 'did:iota:8BAmUqAg4aUjV3T9WUhPpDnFVbJSk16oLyFq3m3e62MF';
+  const body = {
+    signedNonce:
+      '270c2e502c5c753e39159683981e452444f81a10d798f56406a9c471d672a5ede1792cb7f97d4f9c9efeec7bf35577dd1f8482afca7e3710291868a65bf91e07',
+  };
+  const url = `http://localhost:3000/api/v0.2/authentication/prove-ownership/${identityId}`;
 
-const request = await axios.post(url, body);
-console.log(request.data);
+  const request = await axios.post(url, body);
+  console.log(request.data);
 };
 
 requestJWT();
 ```
+
 </TabItem>
 </Tabs>
-
 
 The returned JS object will contain the following JWT:
 
 ```js
 {
-    jwt: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiZGlkOmlvdGE6OEJBbVVxQWc0YVVqVjNUOVdVaFBwRG5GVmJKU2sxNm9MeUZxM20zZTYyTUYiLCJwdWJsaWNLZXkiOiI3WFRYVlJ5M0cxTVhjbURrejJiUUNiV3B2OEF6b1FSZ3hHdjVtRG0xRkoxdCIsInVzZXJuYW1lIjoiVGltMTIzNDUiLCJyZWdpc3RyYXRpb25EYXRlIjoiMjAyMi0wMi0xOFQwNzo0ODo0NSswMTowMCIsImNsYWltIjp7InR5cGUiOiJQZXJzb24ifSwicm9sZSI6IlVzZXIifSwiaWF0IjoxNjQ1MTc3OTg1LCJleHAiOjE2NDUyNjQzODV9.-O2UpPyfWOvtLV2cUF9fPVhgCGDCVwFU9zXrpn_uKU0'
+  jwt: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiZGlkOmlvdGE6OEJBbVVxQWc0YVVqVjNUOVdVaFBwRG5GVmJKU2sxNm9MeUZxM20zZTYyTUYiLCJwdWJsaWNLZXkiOiI3WFRYVlJ5M0cxTVhjbURrejJiUUNiV3B2OEF6b1FSZ3hHdjVtRG0xRkoxdCIsInVzZXJuYW1lIjoiVGltMTIzNDUiLCJyZWdpc3RyYXRpb25EYXRlIjoiMjAyMi0wMi0xOFQwNzo0ODo0NSswMTowMCIsImNsYWltIjp7InR5cGUiOiJQZXJzb24ifSwicm9sZSI6IlVzZXIifSwiaWF0IjoxNjQ1MTc3OTg1LCJleHAiOjE2NDUyNjQzODV9.-O2UpPyfWOvtLV2cUF9fPVhgCGDCVwFU9zXrpn_uKU0';
 }
 ```
 
@@ -397,10 +398,10 @@ This is an example of a GET request to the API with the JWT from the last step i
 import axios from 'axios';
 
 const setAxiosHeader = () => {
-    const jwt =
+  const jwt =
     'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiZGlkOmlvdGE6OEJBbVVxQWc0YVVqVjNUOVdVaFBwRG5GVmJKU2sxNm9MeUZxM20zZTYyTUYiLCJwdWJsaWNLZXkiOiI3WFRYVlJ5M0cxTVhjbURrejJiUUNiV3B2OEF6b1FSZ3hHdjVtRG0xRkoxdCIsInVzZXJuYW1lIjoiVGltMTIzNDUiLCJyZWdpc3RyYXRpb25EYXRlIjoiMjAyMi0wMi0xOFQwNzo0ODo0NSswMTowMCIsImNsYWltIjp7InR5cGUiOiJQZXJzb24ifSwicm9sZSI6IlVzZXIifSwiaWF0IjoxNjQ1MTc3OTg1LCJleHAiOjE2NDUyNjQzODV9.-O2UpPyfWOvtLV2cUF9fPVhgCGDCVwFU9zXrpn_uKU0';
 
-    axios.defaults.headers.common['Authorization'] = `Bearer ${jwt}`;
+  axios.defaults.headers.common['Authorization'] = `Bearer ${jwt}`;
 };
 
 setAxiosHeader();
@@ -414,7 +415,6 @@ setAxiosHeader();
 You can find the complete code
 example [here](https://github.com/albydeca/iota-is-sdk/blob/main/src/main/java/net/gradbase/clients/BaseClient.java).
 All snippets above are taken from there.
-
 
 <Tabs groupId={"programmingLanguage"}>
 <TabItem value="Java" label={'Java'}>
@@ -435,45 +435,44 @@ import bs58 from 'bs58';
 import crypto from 'crypto';
 
 const requestNonce = async (identityId) => {
-    const url = `http://localhost:3000/api/v0.2/authentication/prove-ownership/${identityId}`;
-    const request = await axios.get(url);
-    return request.data.nonce;
+  const url = `http://localhost:3000/api/v0.2/authentication/prove-ownership/${identityId}`;
+  const request = await axios.get(url);
+  return request.data.nonce;
 };
 
 const hashNonce = (nonce) => {
-    const hashedNonce = crypto.createHash('sha256').update(nonce).digest('hex');
-    return hashedNonce;
+  const hashedNonce = crypto.createHash('sha256').update(nonce).digest('hex');
+  return hashedNonce;
 };
 
 const signNonce = async (hashedNonce, secretKey) => {
-    const encodedSecretKey = bs58.decode(secretKey).toString('hex');
-    const signedNonceArray = await ed.sign(hashedNonce, encodedSecretKey);
-    const signedNonce = ed.Signature.fromHex(signedNonceArray).toHex();
-    return signedNonce;
+  const encodedSecretKey = bs58.decode(secretKey).toString('hex');
+  const signedNonceArray = await ed.sign(hashedNonce, encodedSecretKey);
+  const signedNonce = ed.Signature.fromHex(signedNonceArray).toHex();
+  return signedNonce;
 };
 
 const requestJwt = async (identityId, signedNonce) => {
-    const url = `http://localhost:3000/api/v0.2/authentication/prove-ownership/${identityId}`;
-    const request = await axios.post(url, { signedNonce });
-    return request.data.jwt;
+  const url = `http://localhost:3000/api/v0.2/authentication/prove-ownership/${identityId}`;
+  const request = await axios.post(url, { signedNonce });
+  return request.data.jwt;
 };
 
 const setAxiosHeader = (jwt) => {
-    axios.defaults.headers.common['Authorization'] = `Bearer ${jwt}`;
+  axios.defaults.headers.common['Authorization'] = `Bearer ${jwt}`;
 };
 
 const authenticate = async (identityId, secretKey) => {
-    const nonce = await requestNonce(identityId);
-    const hashedNonce = hashNonce(nonce);
-    const signedNonce = await signNonce(hashedNonce, secretKey);
-    const jwt = await requestJwt(identityId, signedNonce);
-    setAxiosHeader(jwt);
+  const nonce = await requestNonce(identityId);
+  const hashedNonce = hashNonce(nonce);
+  const signedNonce = await signNonce(hashedNonce, secretKey);
+  const jwt = await requestJwt(identityId, signedNonce);
+  setAxiosHeader(jwt);
 };
 
 const identityId = 'did:iota:8BAmUqAg4aUjV3T9WUhPpDnFVbJSk16oLyFq3m3e62MF';
 const secretKey = '5N3SxG4UzVDpNe4LyDoZyb6bSgE9tk3pE2XP5znXo5bF';
 authenticate(identityId, secretKey);
-
 ```
 
 </TabItem>

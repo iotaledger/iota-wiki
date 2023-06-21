@@ -2,20 +2,20 @@
 description: INX-Indexer is a ledger indexing tool to provide structured and queryable data to wallets and other applications.
 image: /img/Banner/banner_hornet.png
 keywords:
-- IOTA Node
-- Hornet Node
-- INX
-- Indexer
-- IOTA
-- Shimmer
-- Node Software
-- Welcome
-- explanation
+  - IOTA Node
+  - Hornet Node
+  - INX
+  - Indexer
+  - IOTA
+  - Shimmer
+  - Node Software
+  - Welcome
+  - explanation
 ---
 
 # Welcome to INX-Indexer
 
-INX-Indexer is a ledger indexing tool to provide structured and queryable data to wallets and other applications. 
+INX-Indexer is a ledger indexing tool to provide structured and queryable data to wallets and other applications.
 The indexer maintains its own database separate from that of the node.
 
 ## Setup

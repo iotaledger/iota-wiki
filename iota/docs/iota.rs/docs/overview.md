@@ -2,13 +2,14 @@
 description: The wallet library is a stateful package with a standardized interface for developers to build applications involving IOTA value transactions.
 image: /img/Banner/banner_client_lib_overview.png
 keywords:
-- layered overview
-- high level
-- low level
-- stronghold
-- value transactions
-- explanation
+  - layered overview
+  - high level
+  - low level
+  - stronghold
+  - value transactions
+  - explanation
 ---
+
 # Overview
 
 ![IOTA Client Library Overview](/img/Banner/banner_client_lib_overview.png)
@@ -50,7 +51,7 @@ Different nodes can run on different software, but they always expose the same i
 node could be a [Hornet](https://wiki.iota.org/hornet/welcome) node, and the other could be
 a [Bee](https://wiki.iota.org/bee/welcome) node, and they both would appear the same for any client.
 
-![A diagram that illustrates the text above. It has three layers: the application layer that includes iota.rs and its bindings, communication layer (the Internet network), and IOTA network layer with nodes that operate on one of the IOTA networks.](/img/overview/layered_overview.svg "An overview of IOTA layers.")
+![A diagram that illustrates the text above. It has three layers: the application layer that includes iota.rs and its bindings, communication layer (the Internet network), and IOTA network layer with nodes that operate on one of the IOTA networks.](/img/overview/layered_overview.svg 'An overview of IOTA layers.')
 
 ## API Design
 

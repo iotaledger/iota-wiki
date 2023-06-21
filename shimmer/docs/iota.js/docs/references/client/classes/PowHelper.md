@@ -1,11 +1,12 @@
 ---
 description: iota.js API reference
 keywords:
-- references
-- api references
-- typescript
+  - references
+  - api references
+  - typescript
 image: /img/client_banner.png
 ---
+
 # Class: PowHelper
 
 Helper methods for POW.
@@ -43,8 +44,8 @@ Perform the score calculation.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name    | Type         | Description                       |
+| :------ | :----------- | :-------------------------------- |
 | `block` | `Uint8Array` | The data to perform the score on. |
 
 #### Returns
@@ -53,7 +54,7 @@ Perform the score calculation.
 
 The score for the data.
 
-___
+---
 
 ### calculateTargetZeros
 
@@ -63,10 +64,10 @@ Calculate the number of zeros required to get target score.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `block` | `Uint8Array` | The block to process. |
-| `targetScore` | `number` | The target score. |
+| Name          | Type         | Description           |
+| :------------ | :----------- | :-------------------- |
+| `block`       | `Uint8Array` | The block to process. |
+| `targetScore` | `number`     | The target score.     |
 
 #### Returns
 
@@ -74,7 +75,7 @@ Calculate the number of zeros required to get target score.
 
 The number of zeros to find.
 
-___
+---
 
 ### trailingZeros
 
@@ -84,10 +85,10 @@ Calculate the trailing zeros.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name        | Type         | Description     |
+| :---------- | :----------- | :-------------- |
 | `powDigest` | `Uint8Array` | The pow digest. |
-| `nonce` | `BigInteger` | The nonce. |
+| `nonce`     | `BigInteger` | The nonce.      |
 
 #### Returns
 
@@ -95,7 +96,7 @@ Calculate the trailing zeros.
 
 The trailing zeros.
 
-___
+---
 
 ### trinaryTrailingZeros
 
@@ -105,10 +106,10 @@ Find the number of trailing zeros.
 
 #### Parameters
 
-| Name | Type | Default value | Description |
-| :------ | :------ | :------ | :------ |
-| `trits` | `Int8Array` | `undefined` | The trits to look for zeros. |
-| `endPos` | `number` | `trits.length` | The end position to start looking for zeros. |
+| Name     | Type        | Default value  | Description                                  |
+| :------- | :---------- | :------------- | :------------------------------------------- |
+| `trits`  | `Int8Array` | `undefined`    | The trits to look for zeros.                 |
+| `endPos` | `number`    | `trits.length` | The end position to start looking for zeros. |
 
 #### Returns
 
@@ -116,7 +117,7 @@ Find the number of trailing zeros.
 
 The number of trailing zeros.
 
-___
+---
 
 ### performPow
 
@@ -126,11 +127,11 @@ Perform the hash on the data until we reach target number of zeros.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `powDigest` | `Uint8Array` | The pow digest. |
-| `targetZeros` | `number` | The target number of zeros. |
-| `startIndex` | `string` | The index to start looking from. |
+| Name          | Type         | Description                      |
+| :------------ | :----------- | :------------------------------- |
+| `powDigest`   | `Uint8Array` | The pow digest.                  |
+| `targetZeros` | `number`     | The target number of zeros.      |
+| `startIndex`  | `string`     | The index to start looking from. |
 
 #### Returns
 

@@ -2,16 +2,17 @@
 description: The wallet library is a stateful library for developers who want to use IOTA for token transfers. This library has a stateful design and supports the handling and monitoring of multiple accounts and addresses.
 image: /img/logo/preview.png
 keywords:
-- stateful
-- value transactions
-- Rust
-- python
-- nodejs
-- C
-- wallet
-- stronghold.rs
-- reference
+  - stateful
+  - value transactions
+  - Rust
+  - python
+  - nodejs
+  - C
+  - wallet
+  - stronghold.rs
+  - reference
 ---
+
 # IOTA Client Library
 
 The official client library for interacting with the IOTA Tangle allows you to:
@@ -36,7 +37,6 @@ However, if you want to process value transfers, you should use our stateful [wa
 - [Examples](https://wiki.iota.org/iota.rs/develop/libraries/nodejs/examples) - Find starting points or inspiration in the examples.
 - [Repository](https://github.com/iotaledger/iota.rs/tree/develop) - Browse through the code and learn what's happening behind the scenes. Pull requests are very welcome!
 - [API Documentation](https://wiki.iota.org/iota.rs/develop/libraries/nodejs/api_reference) - The IOTA Client Library Node.js API Documentation.
-
 
 ## Python
 

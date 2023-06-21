@@ -1,18 +1,19 @@
 ---
 description: iota.js API reference
 keywords:
-- references
-- api references
-- typescript
+  - references
+  - api references
+  - typescript
 image: /img/client_banner.png
 ---
+
 # Interface: ITreasuryTransactionPayload
 
 Receipt payload.
 
 ## Hierarchy
 
-- [`ITypeBase`](ITypeBase.md)<``4``\>
+- [`ITypeBase`](ITypeBase.md)<`4`\>
 
   ↳ **`ITreasuryTransactionPayload`**
 
@@ -28,7 +29,7 @@ Receipt payload.
 
 ### type
 
-• **type**: ``4``
+• **type**: `4`
 
 The type of the object.
 
@@ -36,7 +37,7 @@ The type of the object.
 
 [ITypeBase](ITypeBase.md).[type](ITypeBase.md#type)
 
-___
+---
 
 ### input
 
@@ -44,7 +45,7 @@ ___
 
 The input of this transaction.
 
-___
+---
 
 ### output
 

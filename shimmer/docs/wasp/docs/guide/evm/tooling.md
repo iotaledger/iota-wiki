@@ -137,5 +137,4 @@ network configured in MetaMask. For more information on this, read their documen
 
 ## Other Tooling
 
-Most tools available will be compatible if you enter the correct `Chain ID` and `RPC Url`. 
-
+Most tools available will be compatible if you enter the correct `Chain ID` and `RPC Url`.

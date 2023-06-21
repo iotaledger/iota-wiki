@@ -2,18 +2,19 @@
 description: Running the integration tests spins up a `tester` container within which every test can specify its own GoShimmer network with Docker.
 image: /img/tooling/integration-testing.png
 keywords:
-- integration test
-- tester
-- network
-- docker
-- peer
-- docker compose
-- linux
-- macOS
+  - integration test
+  - tester
+  - network
+  - docker
+  - peer
+  - docker compose
+  - linux
+  - macOS
 ---
+
 # Integration Tests with Docker
 
-[![Integration testing](/img/tooling/integration-testing.png "Integration testing")](/img/tooling/integration-testing.png)
+[![Integration testing](/img/tooling/integration-testing.png 'Integration testing')](/img/tooling/integration-testing.png)
 
 Running the integration tests spins up a `tester` container within which every test can specify its own GoShimmer
 network with Docker as schematically shown in the figure above.
@@ -54,11 +55,12 @@ framework.
 
 Each test has to specify its network where the tests are run. This can be done via the framework at the beginning of a
 test.
+
 ```go
 // create a network with name 'testnetwork' with 6 peers and wait until every peer has at least 3 neighbors
 n := f.CreateNetwork("testnetwork", 6, 3)
 // must be called to create log files and properly clean up
-defer n.Shutdown() 
+defer n.Shutdown()
 ```
 
 ### Using Custom Snapshots
@@ -83,7 +85,7 @@ var ConsensusSnapshotDetails = framework.SnapshotInfo{
 
 The last parameter to the `CreateNetwork` function can be used to alter peers' configuration to use a generated snapshot file (e.g. `conf.BlockLayer.Snapshot.File = snaphotInfo.FilePath`).
 
-The `CommonSnapshotConfigFunc` function can be used for the average scenario: it will use the same `SnapshotInfo` for all peers. 
+The `CommonSnapshotConfigFunc` function can be used for the average scenario: it will use the same `SnapshotInfo` for all peers.
 
 ## Nodes' Debug Tools
 
@@ -91,17 +93,17 @@ Every node in the test's network has their ports exposed on the host as follows:
 
 Service ports:
 
-* API `8080`
-* Dashboard `8081`
-* DAGs Visualizer `8061`
-* Delve Debugger `40000`
+- API `8080`
+- Dashboard `8081`
+- DAGs Visualizer `8061`
+- Delve Debugger `40000`
 
 For example for `peer_replica_2` the following ports are exposed:
 
-* API [http://localhost:8280](http://localhost:8280)
-* Dashboard  [http://localhost:8261](http://localhost:8261)
-* DAGs Visualizer  [http://localhost:8281](http://localhost:8281)
-* Delve Debugger  [http://localhost:40200](http://localhost:40200)
+- API [http://localhost:8280](http://localhost:8280)
+- Dashboard [http://localhost:8261](http://localhost:8261)
+- DAGs Visualizer [http://localhost:8281](http://localhost:8281)
+- Delve Debugger [http://localhost:40200](http://localhost:40200)
 
 ## Debugging tests
 
@@ -134,6 +136,7 @@ When the test completes for either a PASS or a FAIL, the underlying test network
 ## Other Tips
 
 Useful for development is to only execute the test you're currently building. For that matter, simply modify the `docker-compose.yml` file as follows:
+
 ```yaml
 entrypoint: go test ./tests -run <YOUR_TEST_NAME> -v -mod=readonly
 ```

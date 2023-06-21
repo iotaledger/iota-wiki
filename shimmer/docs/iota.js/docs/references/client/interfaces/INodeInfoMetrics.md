@@ -1,11 +1,12 @@
 ---
 description: iota.js API reference
 keywords:
-- references
-- api references
-- typescript
+  - references
+  - api references
+  - typescript
 image: /img/client_banner.png
 ---
+
 # Interface: INodeInfoMetrics
 
 Response from the /info endpoint.
@@ -26,7 +27,7 @@ Response from the /info endpoint.
 
 Blocks per second.
 
-___
+---
 
 ### referencedBlocksPerSecond
 
@@ -34,7 +35,7 @@ ___
 
 Referenced blocks per second.
 
-___
+---
 
 ### referencedRate
 

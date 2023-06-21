@@ -2,12 +2,13 @@
 description: Official IOTA Client Library Rust API reference.
 image: /img/logo/libraries.png
 keywords:
-- api
-- rust
-- cargo
-- crate
-- reference
+  - api
+  - rust
+  - cargo
+  - crate
+  - reference
 ---
+
 # API Reference
 
 API reference

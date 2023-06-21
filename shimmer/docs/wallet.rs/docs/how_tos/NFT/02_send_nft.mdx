@@ -4,26 +4,26 @@ sidebar_label: Send
 description: 'How to send NFTs using wallet.rs'
 image: /img/logo/iota_mark_light.png
 keywords:
-- how to
-- send
-- NFT
-- send NFT
-- nodejs
-- python
-- java
-- rust
+  - how to
+  - send
+  - NFT
+  - send NFT
+  - nodejs
+  - python
+  - java
+  - rust
 ---
 
-import Tabs from "@theme/Tabs";
-import TabItem from "@theme/TabItem";
-import NodejsCode from "../../libraries/nodejs/how_to/NFT/_02_send_nft/_code_sample.mdx";
-import NodejsOutput from "../../libraries/nodejs/how_to/NFT/_02_send_nft/_expected_output.md";
-import PythonCode from "../../libraries/python/how_to/NFT/_02_send_nft/_code_sample.mdx";
-import PythonOutput from "../../libraries/python/how_to/NFT/_02_send_nft/_expected_output.md";
-import JavaCode from "../../libraries/java/how_to/NFT/_02_send_nft/_code_sample.mdx";
-import JavaOutput from "../../libraries/java/how_to/NFT/_02_send_nft/_expected_output.md";
-import RustCode from "../../libraries/rust/how_to/NFT/_02_send_nft/_code_sample.mdx";
-import RustOutput from "../../libraries/rust/how_to/NFT/_02_send_nft/_expected_output.md";
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import NodejsCode from '../../libraries/nodejs/how_to/NFT/_02_send_nft/_code_sample.mdx';
+import NodejsOutput from '../../libraries/nodejs/how_to/NFT/_02_send_nft/_expected_output.md';
+import PythonCode from '../../libraries/python/how_to/NFT/_02_send_nft/_code_sample.mdx';
+import PythonOutput from '../../libraries/python/how_to/NFT/_02_send_nft/_expected_output.md';
+import JavaCode from '../../libraries/java/how_to/NFT/_02_send_nft/_code_sample.mdx';
+import JavaOutput from '../../libraries/java/how_to/NFT/_02_send_nft/_expected_output.md';
+import RustCode from '../../libraries/rust/how_to/NFT/_02_send_nft/_code_sample.mdx';
+import RustOutput from '../../libraries/rust/how_to/NFT/_02_send_nft/_expected_output.md';
 import ReplaceNFTId from '../../_admonitions/_note_replace_native_token_id.md';
 
 After you have [minted](01_mint_nft.mdx) an
@@ -38,7 +38,7 @@ Keep in mind that if you set unlock conditions, whoever you send the native toke
 
 ## Code Example
 
-<ReplaceNFTId/>
+<ReplaceNFTId />
 
 The following example will:
 
@@ -47,35 +47,34 @@ The following example will:
 3. Define the type of native token and amount to send.
 4. Send the native tokens calling the `Account.send_nft(addresses_nft_ids, options)` function.
 
-<Tabs groupId="language">
-    <TabItem value="rust" label="Rust">
-        <RustCode/>
-    </TabItem>
-    <TabItem value="nodejs" label="Nodejs">
-        <NodejsCode/>
-    </TabItem>
-    <TabItem value="python" label="Python">
-        <PythonCode/>
-    </TabItem>
-    <TabItem value="java" label="Java">
-        <JavaCode/>
-    </TabItem>
+<Tabs groupId='language'>
+  <TabItem value='rust' label='Rust'>
+    <RustCode />
+  </TabItem>
+  <TabItem value='nodejs' label='Nodejs'>
+    <NodejsCode />
+  </TabItem>
+  <TabItem value='python' label='Python'>
+    <PythonCode />
+  </TabItem>
+  <TabItem value='java' label='Java'>
+    <JavaCode />
+  </TabItem>
 </Tabs>
 
 ## Expected Output
 
-<Tabs groupId="language">
-    <TabItem value="rust" label="Rust">
-        <RustOutput/>
-    </TabItem>
-    <TabItem value="nodejs" label="Nodejs">
-        <NodejsOutput/>
-    </TabItem>
-    <TabItem value="python" label="Python">
-        <PythonOutput/>
-    </TabItem>
-    <TabItem value="java" label="Java">
-        <JavaOutput/>
-    </TabItem>
+<Tabs groupId='language'>
+  <TabItem value='rust' label='Rust'>
+    <RustOutput />
+  </TabItem>
+  <TabItem value='nodejs' label='Nodejs'>
+    <NodejsOutput />
+  </TabItem>
+  <TabItem value='python' label='Python'>
+    <PythonOutput />
+  </TabItem>
+  <TabItem value='java' label='Java'>
+    <JavaOutput />
+  </TabItem>
 </Tabs>
-

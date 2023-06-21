@@ -37,7 +37,7 @@ The type of output.
 
 StateMetadataOutput.getType
 
-___
+---
 
 ### getAmount
 
@@ -53,7 +53,7 @@ The amount of the output.
 
 StateMetadataOutput.getAmount
 
-___
+---
 
 ### getUnlockConditions
 
@@ -69,7 +69,7 @@ The unlock conditions for the output.
 
 StateMetadataOutput.getUnlockConditions
 
-___
+---
 
 ### getNativeTokens
 
@@ -85,7 +85,7 @@ The native tokens held by the output.
 
 StateMetadataOutput.getNativeTokens
 
-___
+---
 
 ### getFeatures
 
@@ -101,7 +101,7 @@ Features contained by the output.
 
 StateMetadataOutput.getFeatures
 
-___
+---
 
 ### getImmutableFeatures
 
@@ -117,7 +117,7 @@ Immutable features contained by the output.
 
 StateMetadataOutput.getImmutableFeatures
 
-___
+---
 
 ### getStateMetadata
 
@@ -133,7 +133,7 @@ Metadata that can only be changed by the state controller.
 
 StateMetadataOutput.getStateMetadata
 
-___
+---
 
 ### getNnftId
 

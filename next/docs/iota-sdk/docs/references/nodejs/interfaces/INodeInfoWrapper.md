@@ -17,7 +17,7 @@ NodeInfo wrapper which contains the node info and the url from the node (useful 
 
 The node info
 
-___
+---
 
 ### url
 

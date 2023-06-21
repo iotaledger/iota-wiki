@@ -13,10 +13,10 @@ Return strategy for the storage deposit
 
 ### Return
 
-• **Return** = ``"Return"``
+• **Return** = `"Return"`
 
-___
+---
 
 ### Gift
 
-• **Gift** = ``"Gift"``
+• **Gift** = `"Gift"`

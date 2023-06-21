@@ -2,13 +2,13 @@
 description: INX-api-core-v0 provides historical tangle data from a hornet legacy database via IOTA legacy API.
 image: /img/Banner/banner_hornet.png
 keywords:
-- IOTA Node
-- Hornet Node
-- INX
-- IOTA
-- Node Software
-- Welcome
-- explanation
+  - IOTA Node
+  - Hornet Node
+  - INX
+  - IOTA
+  - Node Software
+  - Welcome
+  - explanation
 ---
 
 # Welcome to INX-api-core-v0

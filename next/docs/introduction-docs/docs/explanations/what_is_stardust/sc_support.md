@@ -1,12 +1,12 @@
 ---
 keywords:
-- Stardust
-- Shimmer
-- Upgrades
-- Smart Contract
-- Anchoring
-- Protocol Improvements
-- explanation
+  - Stardust
+  - Shimmer
+  - Upgrades
+  - Smart Contract
+  - Anchoring
+  - Protocol Improvements
+  - explanation
 description: Smart contract chain support in Stardust.
 image: /img/logo/preview.png
 ---

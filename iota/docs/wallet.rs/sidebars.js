@@ -22,113 +22,113 @@ module.exports = {
       id: 'overview',
     },
     {
-      type:'category',
+      type: 'category',
       label: 'Getting Started',
-      items:[
+      items: [
         {
-          type:'doc',
+          type: 'doc',
           label: 'Rust',
-          id:'getting_started/rust'
+          id: 'getting_started/rust',
         },
         {
-          type:'doc',
+          type: 'doc',
           label: 'Node.js',
-          id:'getting_started/nodejs'
+          id: 'getting_started/nodejs',
         },
         {
-          type:'doc',
+          type: 'doc',
           label: 'Python',
-          id:'getting_started/python'
+          id: 'getting_started/python',
         },
         {
-          type:'doc',
+          type: 'doc',
           label: 'Java',
-          id:'getting_started/java'
+          id: 'getting_started/java',
         },
         {
-          type:'doc',
+          type: 'doc',
           label: 'Java for Android',
-          id:'getting_started/java_for_android'
+          id: 'getting_started/java_for_android',
         },
-      ]
+      ],
     },
     {
       type: 'category',
       label: 'Explanations',
-      items:[
+      items: [
         {
           type: 'doc',
           label: 'The Library in a Nutshell',
           id: 'explanations/nutshell',
-        }
-      ]
+        },
+      ],
     },
     {
       type: 'category',
       label: 'Examples',
-      items:[
+      items: [
         {
-          type:'doc',
+          type: 'doc',
           label: 'Rust',
-          id:'examples/rust'
+          id: 'examples/rust',
         },
         {
-          type:'doc',
+          type: 'doc',
           label: 'Node.js',
-          id:'examples/nodejs'
+          id: 'examples/nodejs',
         },
         {
-          type:'doc',
+          type: 'doc',
           label: 'Python',
-          id:'examples/python'
+          id: 'examples/python',
         },
         {
-          type:'doc',
+          type: 'doc',
           label: 'Java',
-          id:'examples/java'
+          id: 'examples/java',
         },
-      ]
+      ],
     },
     {
-      type:'category',
+      type: 'category',
       label: 'Reference',
-      items:[
+      items: [
         {
-          type:'doc',
+          type: 'doc',
           label: 'Library Specifications',
-          id:'reference/specifications'
+          id: 'reference/specifications',
         },
         {
-          type:'doc',
+          type: 'doc',
           label: 'Rust API',
-          id:'reference/rust'
+          id: 'reference/rust',
         },
         {
-          type:'doc',
+          type: 'doc',
           label: 'Node.js API',
-          id:'reference/nodejs'
+          id: 'reference/nodejs',
         },
         {
-          type:'doc',
+          type: 'doc',
           label: 'Python API',
-          id:'reference/python'
+          id: 'reference/python',
         },
         {
-          type:'doc',
+          type: 'doc',
           label: 'Java API',
-          id:'reference/java'
+          id: 'reference/java',
         },
-      ]
+      ],
     },
     {
       type: 'doc',
       id: 'troubleshooting',
-      label: 'Troubleshooting'
+      label: 'Troubleshooting',
     },
     {
       type: 'doc',
       id: 'contribute',
       label: 'Contribute',
-    }
-  ]
+    },
+  ],
 };

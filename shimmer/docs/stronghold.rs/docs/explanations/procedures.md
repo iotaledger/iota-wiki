@@ -2,10 +2,10 @@
 description: Cryptographic procedures
 image: /img/logo/Stronghold_icon.png
 keywords:
-- security
-- procedures
-- vault
-- explanation
+  - security
+  - procedures
+  - vault
+  - explanation
 ---
 
 # Cryptographic Procedures
@@ -16,9 +16,9 @@ Stronghold ensures that sensitive data cannot easily escape from memory. This re
 
 Stronghold features a framework to build pipelines of cryptographic operations. The pipeline pattern is an abstraction over chained function calls. Each stage of a pipeline can either:
 
-* Produce a value. For example, generate a secret (BIP39 and Mnemonic, Ed25519)
-* Process an existing value. For example, deriving a secret key from an existing key (SLIP10)
-* Export a value from an existing secret. For example, export the public key of a key pair.
+- Produce a value. For example, generate a secret (BIP39 and Mnemonic, Ed25519)
+- Process an existing value. For example, deriving a secret key from an existing key (SLIP10)
+- Export a value from an existing secret. For example, export the public key of a key pair.
 
 The framework is abstracted in a way that allows you to combine simple and complex cryptographic procedures. However, custom procedures are not possible within Stronghold. This is because a procedure can access secrets. Providing a custom procedure that exposes a secret and returns it would violate the Stronghold core principle.
 
@@ -55,5 +55,3 @@ let public_key_procedure = stronghold::procedures::PublicKey {
        private_key: output_location,
 };
 ```
-
-

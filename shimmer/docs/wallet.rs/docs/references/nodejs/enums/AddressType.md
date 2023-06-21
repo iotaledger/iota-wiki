@@ -14,16 +14,16 @@ Address Types
 
 ### Ed25519
 
-• **Ed25519** = ``"Ed25519"``
+• **Ed25519** = `"Ed25519"`
 
-___
+---
 
 ### Alias
 
-• **Alias** = ``"Alias"``
+• **Alias** = `"Alias"`
 
-___
+---
 
 ### Nft
 
-• **Nft** = ``"Nft"``
+• **Nft** = `"Nft"`

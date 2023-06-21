@@ -2,16 +2,17 @@
 description: The main features in the wallet are requesting tokens from the faucet, sending tokens or assets to addresses, creating digital assets, creating-, transferring- or destroying NFTs, managing NFT owned tokens or assets and delegating tokens or digital assets
 image: /img/tutorials/wallet_library/created_nft.png
 keywords:
-- wallet
-- bash
-- devnet
-- tokens
-- digital assets
-- creating
-- NFT
-- managing
-- requesting 
+  - wallet
+  - bash
+  - devnet
+  - tokens
+  - digital assets
+  - creating
+  - NFT
+  - managing
+  - requesting
 ---
+
 # Command Line Wallet
 
 This section describes how to use the command line wallet (cli-wallet).
@@ -26,17 +27,17 @@ The main features in the wallet are:
 - [Sending tokens or assets to addresses](#sending-tokens-and-assets)
 - [Creating digital assets](#creating-digital-assets)
 - [Creating](#creating-nfts), [transferring](#transferring-nfts) or [destroying](#destroying-nfts) Non-Fungible Tokens (NFTs)
-- [Managing NFT owned tokens or assets](#managing-nft-owned-assets)  
+- [Managing NFT owned tokens or assets](#managing-nft-owned-assets)
 - [Delegating tokens or digital assets](#delegating-assets)
 
 :::info
-The command line wallet and this tutorial are aimed at a developer audience, you should least be familiar with using a terminal to use it. 
+The command line wallet and this tutorial are aimed at a developer audience, you should least be familiar with using a terminal to use it.
 :::
 
 ## Initializing the Wallet
 
 1. Download the latest cli-wallet for the system of your choice from the [GoShimmer GitHub Releases](https://github.com/iotaledger/goshimmer/releases) page.
-2. If needed, make the downloaded binary executable.  If you are using linux you can run:
+2. If needed, make the downloaded binary executable. If you are using linux you can run:
    ```shell
    chmod +x <downloaded-binary>
    ```
@@ -51,24 +52,24 @@ You can configure the wallet by creating a `config.json` file in the directory o
 
 ```json
 {
-	"WebAPI": "http://127.0.0.1:8080",
-	"basicAuth": {
-	  "enabled": false,
-	  "username": "goshimmer",
-	  "password": "goshimmer"
-	},
-	"reuse_addresses": false,
-	"faucetPowDifficulty": 25,
-	"assetRegistryNetwork": "nectar"
+  "WebAPI": "http://127.0.0.1:8080",
+  "basicAuth": {
+    "enabled": false,
+    "username": "goshimmer",
+    "password": "goshimmer"
+  },
+  "reuse_addresses": false,
+  "faucetPowDifficulty": 25,
+  "assetRegistryNetwork": "nectar"
 }
 ```
 
- - The `WebAPI` tells the wallet which node API to communicate with. Set it to the url of a node API.
- - If the node has basic authentication enabled, you may configure your wallet with a username and password.
- - The `resuse_addresses` option specifies if the wallet should treat addresses as reusable, or whether it should try to spend from any wallet address only once.
- - The `faucetPowDifficulty` option defines the difficulty of the faucet request POW the wallet should do.
- - The `assetRegistryNetwork` option defines which asset registry network to use for pushing/fetching asset metadata to/from the registry. By default, the wallet chooses the `nectar` network.
-   
+- The `WebAPI` tells the wallet which node API to communicate with. Set it to the url of a node API.
+- If the node has basic authentication enabled, you may configure your wallet with a username and password.
+- The `resuse_addresses` option specifies if the wallet should treat addresses as reusable, or whether it should try to spend from any wallet address only once.
+- The `faucetPowDifficulty` option defines the difficulty of the faucet request POW the wallet should do.
+- The `assetRegistryNetwork` option defines which asset registry network to use for pushing/fetching asset metadata to/from the registry. By default, the wallet chooses the `nectar` network.
+
 You can initialize your wallet by running the `init` command:
 
 ```shell
@@ -109,7 +110,7 @@ Requesting funds from faucet ... [PERFORMING POW]          (this can take a whil
 Requesting funds from faucet ... [DONE]
 ```
 
-Once you have executed the `request-funds` command,  you can check the balance of your wallet by running the `balance` command:
+Once you have executed the `request-funds` command, you can check the balance of your wallet by running the `balance` command:
 
 ```shell
 ./cli-wallet balance
@@ -133,7 +134,7 @@ Until the network has confirmed the transaction, the status of your token balanc
 
 Digital assets are tokens with a special attribute, namely a color. A color is a sequence of 32 bytes represented as a base58 encoded string. The color of a token is derived from the unique transaction that created the asset. Therefore, it is not possible to create assets with the same color in a subsequent transaction.
 
-The transaction "minting" the assets can specify the amount of tokens to be created with the unique color. 
+The transaction "minting" the assets can specify the amount of tokens to be created with the unique color.
 
 You can create assets with the cli-wallet executing the `create-asset` command:
 
@@ -173,7 +174,7 @@ To create `myUniqueToken`, the wallet has tagged 1000 IOTA tokens with the color
 
 In the [previous example](#creating-digital-assets), we have created a digital asset called `MyUniqueToken`. The wallet knows it's name, symbol and initial supply as we provided this input while creating it. The network however does not store this information, it only knows its unique identifier, the assetID (or color).
 
-To help others discover an asset's  attributes, when you create an asset the `cli-wallet` will automatically send this information to a metadata registry service.
+To help others discover an asset's attributes, when you create an asset the `cli-wallet` will automatically send this information to a metadata registry service.
 
 When you receive a locally unknown asset to your wallet, it queries this registry service for the metadata. You can also query this metadata yourself by running the `asset-info` command in the wallet:
 
@@ -200,7 +201,7 @@ Network                         test
 
 ## Sending Tokens and Assets
 
-Funds in IOTA are tied to addresses. Only the owner of the private key behind the address is able to spend (move) the funds, let them be IOTA tokens or digital assets.  In previous sections, you have [requested funds](#requesting-tokens) from the faucet, which actually sent
+Funds in IOTA are tied to addresses. Only the owner of the private key behind the address is able to spend (move) the funds, let them be IOTA tokens or digital assets. In previous sections, you have [requested funds](#requesting-tokens) from the faucet, which actually sent
 these tokens to an address provided by your wallet. When you created `MyUniqueToken`, the wallet internally generated a new address
 to hold the assets. You may examine the addresses used by the wallet by executing the `address -list` command:
 
@@ -219,7 +220,7 @@ INDEX   ADDRESS                                         SPENT
 1       1BbywJFGFtDFXpZidmjN39d8cVWUskT2MhbFqSrmVs3qi   false
 ```
 
-Consequently, when you wish to send tokens, you need to provide an address where to send the tokens to. 
+Consequently, when you wish to send tokens, you need to provide an address where to send the tokens to.
 
 ### Simple Send
 
@@ -260,12 +261,12 @@ OPTIONS:
 
 You can ignore the mana pledge options, as your wallet can derive pledge IDs automatically. The most important options are:
 
- - `amount` is the amount of token you want to send.
- - `color` is an optional flag to send digital assets with a certain color. When not specified, it defaults to the color of the IOTA token.
- - `dest-addr` is the destination address for the transfer. You will have to set this to the address you wish to transfer tokens to.
- - `fallb-addr` and `fallb-deadline` are optional flags to initiate a conditional transfer. A conditional transfer has a fallback deadline set, after which, only the `fallback-address` can unlock the funds. Before the fallback deadline, it is only the receiver of the funds who can spend the funds. Therefore, conditional transfers have to be claimed by the receiving party before the deadline expires.    
+- `amount` is the amount of token you want to send.
+- `color` is an optional flag to send digital assets with a certain color. When not specified, it defaults to the color of the IOTA token.
+- `dest-addr` is the destination address for the transfer. You will have to set this to the address you wish to transfer tokens to.
+- `fallb-addr` and `fallb-deadline` are optional flags to initiate a conditional transfer. A conditional transfer has a fallback deadline set, after which, only the `fallback-address` can unlock the funds. Before the fallback deadline, it is only the receiver of the funds who can spend the funds. Therefore, conditional transfers have to be claimed by the receiving party before the deadline expires.
 - `lock-until` is an optional flag for a simple time locking mechanism. Before the time lock expires, the funds are locked and can not be spent by the owner.
-  
+
 To send 500 `MyUniqueTokens` to the address `1E5Q82XTF5QGyC598br9oCj71cREyjD1CGUk2gmaJaFQt`, you have to tell the wallet that `MyUniqueTokens` are of color `HJdkZkn6MKda9fNuXFQZ8Dzdzu1wvuSUQp8QX1AMH4wn`, as shown in the following command:
 
 ```shell
@@ -471,7 +472,7 @@ STATUS  NFT ID (ALIAS ID)                               BALANCE                 
 
 ## Transferring NFTs
 
-You can use the `transfer-nft` command to send NFT.  You can run the `transfer-nft` command with the `-help` flagTo view the available options.
+You can use the `transfer-nft` command to send NFT. You can run the `transfer-nft` command with the `-help` flagTo view the available options.
 
 ```shell
 ./cli-wallet transfer-nft -help
@@ -499,7 +500,7 @@ OPTIONS:
 
 There are 2 mandatory flags that you will need to provide for a valid transfer: `-id` and `-dest-addr`. `-id` is unique identifier of the NFT that you wish to transfer, `-dest-addr` is the destination address.
 
-The following command will send some of the `MyUniqueTokens` created in the previous example to `1E5Q82XTF5QGyC598br9oCj71cREyjD1CGUk2gmaJaFQt`: 
+The following command will send some of the `MyUniqueTokens` created in the previous example to `1E5Q82XTF5QGyC598br9oCj71cREyjD1CGUk2gmaJaFQt`:
 
 ```shell
 ./cli-wallet transfer-nft -id gSfeBrWp1HwDLwSL7rt1qEMM59YBFZ4iBgAqHuqaQHo5 -dest-addr 1E5Q82XTF5QGyC598br9oCj71cREyjD1CGUk2gmaJaFQt
@@ -517,8 +518,7 @@ Transferring NFT... [DONE]
 
 The owner of an NFT has the ability to destroy it. When an NFT is destroyed, all of its balance will be transferred to the NFT's current owner, and the alias output representing the NFT will be spent without creating a corresponding next alias output.
 
-
-You can use the `destroy-nft` command to destroy a NFT.  You can run the `destroy-nft` command with the `-help` flag to view the available options.
+You can use the `destroy-nft` command to destroy a NFT. You can run the `destroy-nft` command with the `-help` flag to view the available options.
 
 ```shell
 ./cli-wallet destroy-nft -help
@@ -542,51 +542,56 @@ OPTIONS:
 The following example shows how to create a NFT, and destroy it right after.
 
 1. Create the NFT
+
    ```shell
    ./cli-wallet create-nft
    ```
+
    Expected output:
+
    ```
    IOTA 2.0 DevNet CLI-Wallet 0.2
-   
+
    Created NFT with ID:  bdrvyKvaE6CZUEbdRDK57oBCRb2SLUyE8padFGxrV3zg
    Creating NFT ... [DONE]
    ```
+
 2. Check the balance page shows that the NFT status is `OK`:
+
    ```shell
    ./cli-wallet balance
    ```
-   
+
    Expected output:
 
    ```shell
    IOTA 2.0 DevNet CLI-Wallet 0.2
-   
+
    Available Token Balances
-   
+
    STATUS  BALANCE                 COLOR                                           TOKEN NAME
    ------  ---------------         --------------------------------------------    -------------------------
    [ OK ]  500 MUT                 HJdkZkn6MKda9fNuXFQZ8Dzdzu1wvuSUQp8QX1AMH4wn    MyUniqueToken
    [ OK ]  996100 I                IOTA                                            IOTA
-   
+
    Owned NFTs (Governance Controlled Aliases)
-   
+
    STATUS  NFT ID (ALIAS ID)                               BALANCE                 COLOR                                           TOKEN NAME
    ------  --------------------------------------------    ---------------         --------------------------------------------    -------------------------
    [ OK ]  bdrvyKvaE6CZUEbdRDK57oBCRb2SLUyE8padFGxrV3zg    100                     IOTA                                            IOTA
    ```
-   
+
 3. Destroy the nft:
 
    ```shell
    ./cli-wallet destroy-nft -id bdrvyKvaE6CZUEbdRDK57oBCRb2SLUyE8padFGxrV3zg
    ```
-   
+
    Expected output:
-   
+
    ```
    IOTA 2.0 DevNet CLI-Wallet 0.2
-   
+
    Destroying NFT... [DONE]
    ```
 
@@ -594,9 +599,9 @@ The following example shows how to create a NFT, and destroy it right after.
 
 An NFT is not only a valid IOTA address via its NFT ID, but it is also stored as an output in the ledger. Therefore, the NFT is not only capable of receiving funds to its address, but the owner can directly manage the funds held in the NFT output.
 
- - The owner may deposit assets into an NFT, or withdraw assets from there,  essentially using it as a standalone wallet.
- - Other users in the network can send any asset to the NFT address, that will be owned by the NFT. The owner might choose to deposit those funds into the NFT, or sweep them into their own wallet.
-   
+- The owner may deposit assets into an NFT, or withdraw assets from there, essentially using it as a standalone wallet.
+- Other users in the network can send any asset to the NFT address, that will be owned by the NFT. The owner might choose to deposit those funds into the NFT, or sweep them into their own wallet.
+
 ### Deposit Assets Into Owned NFT
 
 You can use the `deposit-to-nft` command to transfer tokens to a NFT. You can run the `deposit-to-nft` command with the `-help` flag to view the available options.
@@ -625,9 +630,9 @@ OPTIONS:
 
 To deposit some previously created `MyUniqueTokens` into the NFT, we need to specify the following flags:
 
- - `-id` the NFT ID to deposit to.
- - `-amount` amount of assets to deposit.
- - `-color` asset color to deposit.
+- `-id` the NFT ID to deposit to.
+- `-amount` amount of assets to deposit.
+- `-color` asset color to deposit.
 
 You can check your balance before the transfer by running:
 
@@ -694,7 +699,7 @@ STATUS  NFT ID (ALIAS ID)                               BALANCE                 
 
 ### Withdrawing Assets From NFT
 
-You can use the `withdraw-from-nft` command to withdraw tokens from a NFT.  If the withdrawal leaves less than the minimum required funds in the NFT, the transaction will fail. You can run the `withdraw-from-nft` command with the `-help` flag to view the available options.
+You can use the `withdraw-from-nft` command to withdraw tokens from a NFT. If the withdrawal leaves less than the minimum required funds in the NFT, the transaction will fail. You can run the `withdraw-from-nft` command with the `-help` flag to view the available options.
 
 ```shell
 ./cli-wallet withdraw-from-nft -help
@@ -796,6 +801,7 @@ You can execute the `sweep-nft-owned-funds` command to transfer these funds into
 ```shell
 ./cli-wallet sweep-nft-owned-funds -id f1BW8jcdDn3staviCVbVz54NqVwsshb5gpNLqY6Rrgrg
 ```
+
 Expected output:
 
 ```
@@ -804,7 +810,7 @@ IOTA 2.0 DevNet CLI-Wallet 0.2
 Sweeping NFT owned funds... [DONE]
 ```
 
-If you check the balance, it should be updated.  So the wallet contains 1 MI more:
+If you check the balance, it should be updated. So the wallet contains 1 MI more:
 
 ```shell
 ./cli-wallet balance
@@ -846,9 +852,11 @@ IOTA 2.0 DevNet CLI-Wallet 0.2
 Created NFT with ID:  faf9tkdBfcTv2AgPm3Zt8duX4iUGKjqbEyrdBYsUb2hi
 Creating NFT ... [DONE]
 ```
+
 ```
 ./your-friends-wallet transfer-nft -id faf9tkdBfcTv2AgPm3Zt8duX4iUGKjqbEyrdBYsUb2hi -dest-addr f1BW8jcdDn3staviCVbVz54NqVwsshb5gpNLqY6Rrgrg
 ```
+
 ```
 IOTA 2.0 DevNet CLI-Wallet 0.2
 
@@ -890,6 +898,7 @@ IOTA 2.0 DevNet CLI-Wallet 0.2
 Swept NFT faf9tkdBfcTv2AgPm3Zt8duX4iUGKjqbEyrdBYsUb2hi into the wallet
 Sweeping NFT owned NFTs... [DONE]
 ```
+
 That's it, your wallet owns `faf9tkdBfcTv2AgPm3Zt8duX4iUGKjqbEyrdBYsUb2hi` now. If this NFT owned other funds or NFTs,
 you would be able to sweep them into your wallet just like you did for `f1BW8jcdDn3staviCVbVz54NqVwsshb5gpNLqY6Rrgrg`.
 
@@ -954,13 +963,13 @@ OPTIONS:
         unix timestamp until which the delegated funds are timelocked
 ```
 
- - Mandatory parameter is only the `-amount`.
- - Use the `-del-addr` flag to delegate to arbitrary address.
- - You may specify a delegation deadline via the `-until` flag. If this is set, the delegated party can not unlock
-   the funds for refreshing mana after the deadline expired, but the neither can the owner reclaim the funds before
-   that. If the `-until` flag is omitted, the delegation is open-ended, the owner can reclaim the delegated funds at
-   any time.
- - You can specify a certain asset to be delegated (`-color`), default is IOTA.
+- Mandatory parameter is only the `-amount`.
+- Use the `-del-addr` flag to delegate to arbitrary address.
+- You may specify a delegation deadline via the `-until` flag. If this is set, the delegated party can not unlock
+  the funds for refreshing mana after the deadline expired, but the neither can the owner reclaim the funds before
+  that. If the `-until` flag is omitted, the delegation is open-ended, the owner can reclaim the delegated funds at
+  any time.
+- You can specify a certain asset to be delegated (`-color`), default is IOTA.
 
 Let's delegate some funds to an address provided by a node in the network, `1EqJf5K1LJ6bVMCrxxxdZ6VNYoBTvEoXgxnbLJe7aqajc`:
 
@@ -1055,6 +1064,7 @@ IOTA 2.0 DevNet CLI-Wallet 0.2
 Reclaimed delegation ID is:  tGoTKjt2y277ssKax9stsZXfLGdf8bPj3TZFaUDcAEwK
 Reclaiming delegated fund... [DONE]
 ```
+
 The balance should appear in the `Available Balances` section of the balance page:
 
 ```shell
@@ -1075,9 +1085,10 @@ STATUS  BALANCE                 COLOR                                           
 ## Common Flags
 
 As you may have noticed, there are some universal flags in many commands, namely:
- - `-help` that brings up the command usage and help information,
- - `access-mana-id` that is the nodeID to which the transaction should pledge access mana to, and
- - `consensus-mana-id` that is the nodeID to which the transaction should pledge consensus mana to.
+
+- `-help` that brings up the command usage and help information,
+- `access-mana-id` that is the nodeID to which the transaction should pledge access mana to, and
+- `consensus-mana-id` that is the nodeID to which the transaction should pledge consensus mana to.
 
 The latter teo are determined by default by your wallet depending on which node you connect it to. However, if that node
 doesn't filter user submitted transactions based on the mana pledge IDs, you are free to define which node to pledge
@@ -1086,44 +1097,85 @@ mana to.
 ## Command Reference
 
 ### balance
+
 Show the balances held by this wallet.
+
 ### send-funds
+
 Initiate a transfer of tokens or assets (funds).
+
 ### consolidate-funds
+
 Consolidate all available funds to one wallet address.
+
 ### claim-conditional
+
 Claim (move) conditionally owned funds into the wallet.
+
 ### request-funds
+
 Request funds from the testnet-faucet.
+
 ### create-asset
+
 Create an asset in the form of colored coins.
+
 ### delegate-funds
+
 Delegate funds to an address.
+
 ### reclaim-delegated
+
 Reclaim previously delegated funds.
+
 ### create-nft
+
 Create an NFT as an unforkable alias output.
+
 ### transfer-nft
+
 Transfer the ownership of an NFT.
+
 ### destroy-nft
+
 Destroy an NFT.
+
 ### deposit-to-nft
+
 Deposit funds into an NFT.
+
 ### withdraw-from-nft
+
 Withdraw funds from an NFT.
+
 ### sweep-nft-owned-funds
+
 Sweep all available funds owned by NFT into the wallet.
+
 ### sweep-nft-owned-nfts
+
 weep all available NFTs owned by NFT into the wallet.
+
 ### address
+
 Start the address manager of this wallet.
+
 ### init
+
 Generate a new wallet using a random seed.
+
 ### server-status
+
 Display the server status.
+
 ### pending-mana
+
 Display current pending mana of all outputs in the wallet grouped by address.
+
 ### pledge-id
+
 Query nodeIDs accepted as pledge IDs in transaction by the node (server).
+
 ### help
+
 Display this help screen.

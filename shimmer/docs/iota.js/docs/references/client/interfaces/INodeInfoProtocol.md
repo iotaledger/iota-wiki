@@ -1,11 +1,12 @@
 ---
 description: iota.js API reference
 keywords:
-- references
-- api references
-- typescript
+  - references
+  - api references
+  - typescript
 image: /img/client_banner.png
 ---
+
 # Interface: INodeInfoProtocol
 
 The Protocol Info.
@@ -29,7 +30,7 @@ The Protocol Info.
 
 The human friendly name of the network on which the node operates on.
 
-___
+---
 
 ### bech32Hrp
 
@@ -37,7 +38,7 @@ ___
 
 The human readable part of bech32 addresses.
 
-___
+---
 
 ### tokenSupply
 
@@ -45,7 +46,7 @@ ___
 
 The token supply.
 
-___
+---
 
 ### protocolVersion
 
@@ -53,7 +54,7 @@ ___
 
 The protocol version.
 
-___
+---
 
 ### minPowScore
 
@@ -61,7 +62,7 @@ ___
 
 The minimum score required for PoW.
 
-___
+---
 
 ### rentStructure
 

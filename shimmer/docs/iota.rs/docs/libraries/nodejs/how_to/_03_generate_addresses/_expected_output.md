@@ -1,7 +1,7 @@
 ```plaintext
-First public address: [ 'rms1qpllaj0pyveqfkwxmnngz2c488hfdtmfrj3wfkgxtk4gtyrax0jaxzt70zy' ] 
+First public address: [ 'rms1qpllaj0pyveqfkwxmnngz2c488hfdtmfrj3wfkgxtk4gtyrax0jaxzt70zy' ]
 
-First internal address: [ 'rms1qp6w3v03qwtwkh52avtdvejpdqp8yfpk4z94m5dg3evuzu9hynyucvmxd59' ] 
+First internal address: [ 'rms1qp6w3v03qwtwkh52avtdvejpdqp8yfpk4z94m5dg3evuzu9hynyucvmxd59' ]
 
 List of offline generated public addresses: [
   'rms1qpllaj0pyveqfkwxmnngz2c488hfdtmfrj3wfkgxtk4gtyrax0jaxzt70zy',

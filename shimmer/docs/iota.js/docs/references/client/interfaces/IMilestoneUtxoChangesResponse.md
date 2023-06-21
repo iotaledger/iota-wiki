@@ -1,11 +1,12 @@
 ---
 description: iota.js API reference
 keywords:
-- references
-- api references
-- typescript
+  - references
+  - api references
+  - typescript
 image: /img/client_banner.png
 ---
+
 # Interface: IMilestoneUtxoChangesResponse
 
 Milestone.
@@ -26,7 +27,7 @@ Milestone.
 
 The milestone index.
 
-___
+---
 
 ### createdOutputs
 
@@ -34,7 +35,7 @@ ___
 
 The output IDs (transaction hash + output index) of the newly created outputs.
 
-___
+---
 
 ### consumedOutputs
 

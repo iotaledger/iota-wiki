@@ -16,9 +16,7 @@
     },
     "pruningIndex": 0
   },
-  "supportedProtocolVersions": [
-    2
-  ],
+  "supportedProtocolVersions": [2],
   "protocol": {
     "version": 2,
     "networkName": "testnet",
@@ -31,9 +29,7 @@
     },
     "tokenSupply": "1450896407249092"
   },
-  "pendingProtocolParameters": [
-
-  ],
+  "pendingProtocolParameters": [],
   "baseToken": {
     "name": "Shimmer",
     "tickerSymbol": "SMR",
@@ -47,8 +43,6 @@
     "referencedBlocksPerSecond": 8.6,
     "referencedRate": 95.55555555555556
   },
-  "features": [
-
-  ]
+  "features": []
 }
 ```

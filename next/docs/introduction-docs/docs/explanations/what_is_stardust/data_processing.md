@@ -1,12 +1,12 @@
 ---
 keywords:
-- Stardust
-- Shimmer
-- Upgrades
-- Data transactions
-- Data processing
-- Protocol Improvements
-- explanation
+  - Stardust
+  - Shimmer
+  - Upgrades
+  - Data transactions
+  - Data processing
+  - Protocol Improvements
+  - explanation
 description: Data transactions are supported in Stardust, but application specific data processing is off-loaded to external applications.
 image: /img/logo/preview.png
 ---
@@ -15,6 +15,7 @@ image: /img/logo/preview.png
 
 IOTA is unique in that it provides data-only transactions in the Tangle. However, use-cases that build on this feature
 face two major problems:
+
 - The Tangle is permissionless, therefore anyone can send data blocks with any content and the blocks are not
   authenticated with signatures like value transactions. The source of the data published through the Tangle is not
   identifiable by the core protocol.

@@ -18,22 +18,22 @@ For example, in the glass manufacturing industry, a glass rack is a returnable a
 
 When many parties use the same returnable asset, it's easy for the owner to lose track of it.
 
-Misplacement of such assets represents an economic loss for asset owners. When assets are missing, it affects the owners ability to fulfill deliveries and wastes their time and resources on recovering them. 
+Misplacement of such assets represents an economic loss for asset owners. When assets are missing, it affects the owners ability to fulfill deliveries and wastes their time and resources on recovering them.
 
 The table below summarizes the different stakeholders and roles considered in this example business case. The table also shows how complex it is to keep track of all the relations involved in the handling of returnable assets.
 
-| **Stakeholder**       | **Role** |
-|:---------------|:--------|
-| **Glass producers** | Deliver glasses either to distributors (directly) or to Window Manufacturers (through Logistic Provider). Own the returnable assets. |
-| **Window manufacturers** | Deliver windows to windows resellers either directly or through logistic providers. Might own their own returnable assets and use for the delivery. Or they might also re-use returnable assets received from glass producers.  |
-| **Distributors**   | Receive glasses or windows delivered directly or through logistic providers together with returnable assets used for the delivery. Re-use the returnable assets to deliver glasses or windows further down to the distribution chain.  | 
-| **Window resellers**   | Receive windows from distributors and use received returnable assets to arrange their delivery to end-customers. | 
-| **Customers**    | Receive windows directly from windows resellers or through logistic providers which use glass producers and windows manufacturers returnable assets. Often dispose returnable assets or do not know to whom and how to return.  | 
-| **Logistic providers**   | Move assets and returnable assets along the distribution chain.  | 
+| **Stakeholder**          | **Role**                                                                                                                                                                                                                              |
+| :----------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **Glass producers**      | Deliver glasses either to distributors (directly) or to Window Manufacturers (through Logistic Provider). Own the returnable assets.                                                                                                  |
+| **Window manufacturers** | Deliver windows to windows resellers either directly or through logistic providers. Might own their own returnable assets and use for the delivery. Or they might also re-use returnable assets received from glass producers.        |
+| **Distributors**         | Receive glasses or windows delivered directly or through logistic providers together with returnable assets used for the delivery. Re-use the returnable assets to deliver glasses or windows further down to the distribution chain. |
+| **Window resellers**     | Receive windows from distributors and use received returnable assets to arrange their delivery to end-customers.                                                                                                                      |
+| **Customers**            | Receive windows directly from windows resellers or through logistic providers which use glass producers and windows manufacturers returnable assets. Often dispose returnable assets or do not know to whom and how to return.        |
+| **Logistic providers**   | Move assets and returnable assets along the distribution chain.                                                                                                                                                                       |
 
 ### Challenges
 
-So far, tracking and tracing returnable assets has been unsuccessful for the following reasons: 
+So far, tracking and tracing returnable assets has been unsuccessful for the following reasons:
 
 - Custodians don't see economic value in a returnable asset. Instead, returnable assets are more likely to be seen as disposable
 - Custodians are neither incentivized to help track returnable assets nor held accountable for not doing so
@@ -45,11 +45,11 @@ It's not possible to report the custody of assets using a centralized database b
 
 IOTA provides a solution to seamlessly collect and share information about returnable assets without the need to integrate any proprietary system. While doing that, IOTA can still guarantee access control of the collected information through the use of the second layer MAM protocol.
 
-Thanks to the permissionless nature of IOTA, no trust is required among those who run the infrastructure because the data is spread across the whole IOTA network. 
+Thanks to the permissionless nature of IOTA, no trust is required among those who run the infrastructure because the data is spread across the whole IOTA network.
 
 In addition, the system does not need knowledge of all parties who write information to the ledger. This simplifies the system so that it can be used by all stakeholders and industry sectors as needed and with minimum integration and onboarding time.
 
-This solution leads to the following benefits: 
+This solution leads to the following benefits:
 
 - Asset owners can track and request the return of their returnable assets
 
@@ -69,32 +69,35 @@ This image presents a simplified stakeholders map and the different actions each
 
 ![Returnable assets stakeholder map](/img/blueprints/track-and-trace-returnable-assets-stakeholders.png)
 
-|**Key**|**Description**|
-|:---|:---|
-|Dotted arrows| Path of a returnable asset|
-|Green circles| Stakeholders such as custodians|
-|Purple circles| Owner of the returnable asset| 
+| **Key**        | **Description**                 |
+| :------------- | :------------------------------ |
+| Dotted arrows  | Path of a returnable asset      |
+| Green circles  | Stakeholders such as custodians |
+| Purple circles | Owner of the returnable asset   |
 
 ## Demo
 
 See this website for a [demonstration of the application](http://tradedemo.iota.org).
-Also, have a look at this website for a [smart agriculture PoC](https://future-farm.iota.org/) with a very similar codebase. Read more about it in our [blogpost](https://blog.iota.org/using-the-tangle-for-smart-agriculture-the-iota-foundation-teams-up-with-future-farm-consortium-a9d1757e33c/). 
- 	 	 
+Also, have a look at this website for a [smart agriculture PoC](https://future-farm.iota.org/) with a very similar codebase. Read more about it in our [blogpost](https://blog.iota.org/using-the-tangle-for-smart-agriculture-the-iota-foundation-teams-up-with-future-farm-consortium-a9d1757e33c/).
+
 ## Additional Resources
 
----------------
+---
+
 ### [Client Library](https://wiki.iota.org/iota.rs/welcome)
 
 Learn how to use the JavaScript client library to create, send, and receive transactions.
 
 ---
+
 ### [MAM Eloquently Explained](https://blog.iota.org/introducing-masked-authenticated-messaging-e55c1822d50e)
 
 Masked Authenticated Messaging is a second layer data communication protocol that adds functionality to publish and control access to an encrypted data stream, over the Tangle. Learn more about how MAM works.
 
 ---
+
 ### [MAM GitHub Repository](https://github.com/iotaledger/mam.js)
 
 Read the code and some quickstart instructions to test MAM with JavaScript.
 
----------------
+---

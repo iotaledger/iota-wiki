@@ -16,28 +16,28 @@ Output to claim
 
 ### MicroTransactions
 
-• **MicroTransactions** = ``"MicroTransactions"``
+• **MicroTransactions** = `"MicroTransactions"`
 
-___
+---
 
 ### NativeTokens
 
-• **NativeTokens** = ``"NativeTokens"``
+• **NativeTokens** = `"NativeTokens"`
 
-___
+---
 
 ### Nfts
 
-• **Nfts** = ``"Nfts"``
+• **Nfts** = `"Nfts"`
 
-___
+---
 
 ### Amount
 
-• **Amount** = ``"Amount"``
+• **Amount** = `"Amount"`
 
-___
+---
 
 ### All
 
-• **All** = ``"All"``
+• **All** = `"All"`

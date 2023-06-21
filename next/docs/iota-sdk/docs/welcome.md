@@ -1,16 +1,17 @@
 ---
 description: Official IOTA SDK which can be used to easily interact with the Tangle
 keywords:
-- requirements
-- wallet
-- software
-- library
-- rust
-- python
-- nodejs
-- java
-- client
+  - requirements
+  - wallet
+  - software
+  - library
+  - rust
+  - python
+  - nodejs
+  - java
+  - client
 ---
+
 # Welcome
 
 This is the documentation for the official IOTA SDK. The documentation can be used to easily interact with the Tangle. You can read more about core principles behind the IOTA SDK in the following [blog post](https://blog.iota.org/the-new-iota-client-libraries-harder-better-faster-stronger/).

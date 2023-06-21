@@ -1,18 +1,19 @@
 ---
 description: iota.js API reference
 keywords:
-- references
-- api references
-- typescript
+  - references
+  - api references
+  - typescript
 image: /img/client_banner.png
 ---
+
 # Interface: IAliasAddress
 
 Alias address.
 
 ## Hierarchy
 
-- [`ITypeBase`](ITypeBase.md)<``8``\>
+- [`ITypeBase`](ITypeBase.md)<`8`\>
 
   ↳ **`IAliasAddress`**
 
@@ -27,7 +28,7 @@ Alias address.
 
 ### type
 
-• **type**: ``8``
+• **type**: `8`
 
 The type of the object.
 
@@ -35,7 +36,7 @@ The type of the object.
 
 [ITypeBase](ITypeBase.md).[type](ITypeBase.md#type)
 
-___
+---
 
 ### aliasId
 

@@ -2,17 +2,18 @@
 image: /img/integration-services/logo/integration_services.png
 description: This section will show you an example on how to authenticate using the IOTA IS-SDK npm package.
 keywords:
-- how to
-- authentication
-- jwt
-- nonce
-- not-authenticated
-- 401
-- nodejs
-- is-sdk
-- npm
-- how to
+  - how to
+  - authentication
+  - jwt
+  - nonce
+  - not-authenticated
+  - 401
+  - nodejs
+  - is-sdk
+  - npm
+  - how to
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
@@ -23,7 +24,6 @@ In this example, you will learn how to authenticate your identity using the
 hashing, and signing, this is the simplest way to authenticate your identity. Make sure to read the
 [general authentication concept](https://wiki.iota.org/integration-services/authentication), so you can fully understand
 the [Authentication Workflow](../../explanations/authentication.md#authentication-workflow).
-
 
 This example uses the following identity:
 
@@ -36,7 +36,7 @@ This example uses the following identity:
 
 ## Prerequisites
 
-* A recent version of [Node.js](https://nodejs.org/en/download/) (>v16.17.0).
+- A recent version of [Node.js](https://nodejs.org/en/download/) (>v16.17.0).
 
 ## Installation
 
@@ -78,7 +78,7 @@ const authenticate = async (identityId, secretKey) => {
     ssiBridgeUrl: 'http://localhost:3001',
     auditTrailUrl: 'http://localhost:3002',
     useGatewayUrl: false,
-    apiVersion: ApiVersion.v01
+    apiVersion: ApiVersion.v01,
   };
 
   // Authenticate identity client

@@ -9,7 +9,7 @@ title: iota_sdk.client._node_core_api
 class NodeCoreAPI()
 ```
 
-### get\_node\_health
+### get_node_health
 
 ```python
 def get_node_health(url: str)
@@ -17,7 +17,7 @@ def get_node_health(url: str)
 
 Get node health.
 
-### get\_node\_info
+### get_node_info
 
 ```python
 def get_node_info(url: str, auth=None)
@@ -25,7 +25,7 @@ def get_node_info(url: str, auth=None)
 
 Get node info.
 
-### get\_info
+### get_info
 
 ```python
 def get_info()
@@ -33,7 +33,7 @@ def get_info()
 
 Returns the node information together with the url of the used node.
 
-### get\_peers
+### get_peers
 
 ```python
 def get_peers()
@@ -41,7 +41,7 @@ def get_peers()
 
 Get peers.
 
-### get\_tips
+### get_tips
 
 ```python
 def get_tips() -> List[HexStr]
@@ -49,7 +49,7 @@ def get_tips() -> List[HexStr]
 
 Get tips.
 
-### post\_block
+### post_block
 
 ```python
 def post_block(block)
@@ -57,7 +57,7 @@ def post_block(block)
 
 Post block.
 
-### get\_block\_data
+### get_block_data
 
 ```python
 def get_block_data(block_id: HexStr)
@@ -65,7 +65,7 @@ def get_block_data(block_id: HexStr)
 
 Post block.
 
-### get\_block\_metadata
+### get_block_metadata
 
 ```python
 def get_block_metadata(block_id: HexStr)
@@ -73,7 +73,7 @@ def get_block_metadata(block_id: HexStr)
 
 Get block metadata with block_id.
 
-### get\_block\_raw
+### get_block_raw
 
 ```python
 def get_block_raw(block_id: HexStr)
@@ -81,7 +81,7 @@ def get_block_raw(block_id: HexStr)
 
 Get block raw.
 
-### post\_block\_raw
+### post_block_raw
 
 ```python
 def post_block_raw(block_bytes)
@@ -89,7 +89,7 @@ def post_block_raw(block_bytes)
 
 Post block raw.
 
-### get\_output
+### get_output
 
 ```python
 def get_output(output_id: OutputId)
@@ -97,7 +97,7 @@ def get_output(output_id: OutputId)
 
 Get output.
 
-### get\_output\_metadata
+### get_output_metadata
 
 ```python
 def get_output_metadata(output_id: OutputId)
@@ -105,7 +105,7 @@ def get_output_metadata(output_id: OutputId)
 
 Get output metadata.
 
-### get\_milestone\_by\_id
+### get_milestone_by_id
 
 ```python
 def get_milestone_by_id(milestone_id: HexStr)
@@ -113,7 +113,7 @@ def get_milestone_by_id(milestone_id: HexStr)
 
 Get the milestone by the given milestone id.
 
-### get\_milestone\_by\_id\_raw
+### get_milestone_by_id_raw
 
 ```python
 def get_milestone_by_id_raw(milestone_id: HexStr)
@@ -121,7 +121,7 @@ def get_milestone_by_id_raw(milestone_id: HexStr)
 
 Get the raw milestone by the given milestone id.
 
-### get\_milestone\_by\_index
+### get_milestone_by_index
 
 ```python
 def get_milestone_by_index(index: int)
@@ -129,7 +129,7 @@ def get_milestone_by_index(index: int)
 
 Get the milestone by the given index.
 
-### get\_milestone\_by\_index\_raw
+### get_milestone_by_index_raw
 
 ```python
 def get_milestone_by_index_raw(index: int)
@@ -137,7 +137,7 @@ def get_milestone_by_index_raw(index: int)
 
 Get the milestone by the given index.
 
-### get\_utxo\_changes\_by\_id
+### get_utxo_changes_by_id
 
 ```python
 def get_utxo_changes_by_id(milestone_id: HexStr)
@@ -145,7 +145,7 @@ def get_utxo_changes_by_id(milestone_id: HexStr)
 
 Get the UTXO changes by the given milestone id.
 
-### get\_utxo\_changes\_by\_index
+### get_utxo_changes_by_index
 
 ```python
 def get_utxo_changes_by_index(index: int)
@@ -153,7 +153,7 @@ def get_utxo_changes_by_index(index: int)
 
 Get the UTXO changes by the given milestone index.
 
-### get\_receipts
+### get_receipts
 
 ```python
 def get_receipts()
@@ -161,7 +161,7 @@ def get_receipts()
 
 Get all receipts.
 
-### get\_receipts\_migrated\_at
+### get_receipts_migrated_at
 
 ```python
 def get_receipts_migrated_at(milestone_index: int)
@@ -169,7 +169,7 @@ def get_receipts_migrated_at(milestone_index: int)
 
 Get the receipts by the given milestone index.
 
-### get\_treasury
+### get_treasury
 
 ```python
 def get_treasury()
@@ -177,7 +177,7 @@ def get_treasury()
 
 Get the treasury output.
 
-### get\_included\_block
+### get_included_block
 
 ```python
 def get_included_block(transaction_id: HexStr)
@@ -185,11 +185,10 @@ def get_included_block(transaction_id: HexStr)
 
 Returns the included block of the transaction.
 
-### get\_included\_block\_metadata
+### get_included_block_metadata
 
 ```python
 def get_included_block_metadata(transaction_id: HexStr)
 ```
 
 Returns the metadata of the included block of the transaction.
-

@@ -1,12 +1,12 @@
 ---
 image: /img/integration-services/logo/integration_services.png
-description: Access your Integration Services API using ingress, port forwarding, a load balancer service or an Ingress Controller.  
+description: Access your Integration Services API using ingress, port forwarding, a load balancer service or an Ingress Controller.
 keywords:
-- minikube nginx ingres
-- ingres controller
-- kubectl port
-- cluster
-- nginx
+  - minikube nginx ingres
+  - ingres controller
+  - kubectl port
+  - cluster
+  - nginx
 ---
 
 # Expose APIs
@@ -20,7 +20,7 @@ In minikube, you can install Nginx Ingress Controller by running the following c
 
 ```bash
 minikube addons enable ingress
-````
+```
 
 You can run the following command to install Ingress resource:
 
@@ -97,4 +97,3 @@ However, the Kubernetes ecosystem has different Ingress Controllers.
 
 You can find a list of popular Kubernetes ingress controllers in
 the [official Kubernetes website](https://kubernetes.io/docs/concepts/services-networking/ingress-controllers/).
-

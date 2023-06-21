@@ -1,11 +1,12 @@
 ---
 description: iota.js API reference
 keywords:
-- references
-- api references
-- typescript
+  - references
+  - api references
+  - typescript
 image: /img/client_banner.png
 ---
+
 # Interface: IOutputResponse
 
 Details of an output.
@@ -25,7 +26,7 @@ Details of an output.
 
 The metadata about the output.
 
-___
+---
 
 ### output
 

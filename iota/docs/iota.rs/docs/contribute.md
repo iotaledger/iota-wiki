@@ -1,15 +1,16 @@
 ---
-description: Contribute to the IOTA Client Library joining the IOTA Libraries Initiative, contributing to the official GitHub repository or sharing your knowledge on Discord.  
+description: Contribute to the IOTA Client Library joining the IOTA Libraries Initiative, contributing to the official GitHub repository or sharing your knowledge on Discord.
 image: /img/logo/iota_mark_light.png
 keywords:
-- join
-- documentation
-- project
-- contribute
-- discord
-- GitHub
-- reference
+  - join
+  - documentation
+  - project
+  - contribute
+  - discord
+  - GitHub
+  - reference
 ---
+
 # Contribute to the Project
 
 **Thank you for considering a contribution to this project. You can help it in the following ways:**
@@ -52,4 +53,3 @@ learn and contribute.
 Take a look at what discussions are going on in
 the [#clients-libraries](https://discord.com/channels/397872799483428865/800637917189636136) channel
 on [Discord](https://discord.iota.org).
-

@@ -2,22 +2,22 @@
 description: The Derive crate contains procedural macros for Stronghold.
 image: /img/logo/Stronghold_icon.png
 keywords:
-- reference
-- rust
-- crate
-- GuardDebug
-- VariantPermission
+  - reference
+  - rust
+  - crate
+  - GuardDebug
+  - VariantPermission
 ---
+
 # Structure: Derive
 
-[![github](https://img.shields.io/badge/github-source-blue.svg)](https://github.com/iotaledger/stronghold.rs/tree/dev/derive)  [![](https://img.shields.io/crates/v/stronghold-derive.svg)](https://crates.io/crates/stronghold-derive)
-
+[![github](https://img.shields.io/badge/github-source-blue.svg)](https://github.com/iotaledger/stronghold.rs/tree/dev/derive) [![](https://img.shields.io/crates/v/stronghold-derive.svg)](https://crates.io/crates/stronghold-derive)
 
 This crate contains procedural macros for Stronghold.
 
 #### GuardDebug
 
-The GuardDebug macro is used to block inspection of a data structure.  It implements the Debug trait and explicitly blocks the reading of the internal data on the structure its derived on. Instead, the data will be returned out as a `(guarded)` string.
+The GuardDebug macro is used to block inspection of a data structure. It implements the Debug trait and explicitly blocks the reading of the internal data on the structure its derived on. Instead, the data will be returned out as a `(guarded)` string.
 
 ##### Example:
 

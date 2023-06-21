@@ -1,11 +1,12 @@
 ---
 description: iota.js API reference
 keywords:
-- references
-- api references
-- typescript
+  - references
+  - api references
+  - typescript
 image: /img/client_banner.png
 ---
+
 # Interface: IMqttStatus
 
 Status message for MQTT Clients.
@@ -23,11 +24,11 @@ Status message for MQTT Clients.
 
 ### type
 
-• **type**: ``"connect"`` \| ``"disconnect"`` \| ``"error"`` \| ``"subscription-add"`` \| ``"subscription-remove"``
+• **type**: `"connect"` \| `"disconnect"` \| `"error"` \| `"subscription-add"` \| `"subscription-remove"`
 
 The type of message.
 
-___
+---
 
 ### message
 
@@ -35,15 +36,15 @@ ___
 
 Additional information about the status.
 
-___
+---
 
 ### state
 
-• **state**: ``"disconnected"`` \| ``"connected"`` \| ``"disconnecting"`` \| ``"connecting"``
+• **state**: `"disconnected"` \| `"connected"` \| `"disconnecting"` \| `"connecting"`
 
 The connection status.
 
-___
+---
 
 ### error
 

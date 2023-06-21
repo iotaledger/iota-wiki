@@ -1,8 +1,8 @@
 ---
 keywords:
-- documentation
-- docker
-- guide
+  - documentation
+  - docker
+  - guide
 ---
 
 # Run `INX Chronicle` using Docker
@@ -24,7 +24,7 @@ Create the necessary directories for all `Hornet` and `Chronicle` databases:
 
 ## Configuration
 
-Configure the docker images via command-line arguments by editing the `docker-compose.yml` file. 
+Configure the docker images via command-line arguments by editing the `docker-compose.yml` file.
 
 Refer to the Chronicle CLI (run `inx-chronicle --help`) for details about configuring Chronicle via command-line arguments.
 
@@ -62,7 +62,6 @@ docker compose -f docker/docker-compose.yml -f docker/docker-compose.prod.yml up
 ```
 
 ### Debug
-
 
 ```sh
 docker compose -f docker/docker-compose.yml up

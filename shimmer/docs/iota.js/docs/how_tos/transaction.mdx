@@ -1,33 +1,33 @@
 ---
-description: "Learn how to request funds and send transactions using the iota.js client library."
+description: 'Learn how to request funds and send transactions using the iota.js client library.'
 image: /img/client_banner.png
 keywords:
-- how to
-- example
-- tokens
-- value transactions
-- request funds
-- faucet
-- send transaction
-- retrieve transaction
+  - how to
+  - example
+  - tokens
+  - value transactions
+  - request funds
+  - faucet
+  - send transaction
+  - retrieve transaction
 ---
-import WalletTransactionRecomendation from '../../admonitions/_wallet_transaction_recommendation.md';
 
+import WalletTransactionRecomendation from '../../admonitions/_wallet_transaction_recommendation.md';
 
 # Send a Transaction
 
-<WalletTransactionRecomendation/>
+<WalletTransactionRecomendation />
 
 ## Pre-requirements
 
 Before you can create a transaction, you will need to:
 
-* [Connect to a Node](simple.mdx).
-* [Generate a seed](address.mdx#generate-a-seed).
-* [Create an address](address.mdx#create-an-address).
-* [Create a wallet](#create-a-walllet).
-* [Request funds](#request-funds).
-* [Fetch basic outputs](#fetch-basic-outputs).
+- [Connect to a Node](simple.mdx).
+- [Generate a seed](address.mdx#generate-a-seed).
+- [Create an address](address.mdx#create-an-address).
+- [Create a wallet](#create-a-walllet).
+- [Request funds](#request-funds).
+- [Fetch basic outputs](#fetch-basic-outputs).
 
 ### Create a Wallet
 
@@ -44,7 +44,7 @@ Once you have [generated a seed](#generate-a-seed), you can create a wallet usin
 
 ### Request Funds
 
-Before you can send the transaction, you will need to request funds.  If you are on the alphanet, you can request test
+Before you can send the transaction, you will need to request funds. If you are on the alphanet, you can request test
 funds from the [faucet](https://faucet.alphanet.iotaledger.net/api/enqueue). If you are running a [private tangle](https://wiki.iota.org/hornet/how_tos/private_tangle),
 you can use the '/enqueue' endpoint.
 
@@ -52,7 +52,7 @@ you can use the '/enqueue' endpoint.
 
 Once you have fulfilled the [pre-requirements](#pre-requirements), you can send the transaction using either the [sendAdvanced(client, inputsAndSignatureKeyPairs, outputs, taggedData?)](../references/client/api_ref#sendadvanced) function, which will return the created block's id, or the [send(client, seed, accountIndex, addressBech32, amount, taggedData?, addressOptions?)](../references/client/api_ref.md#send) function, which will return the created block's id, as well as the constructed blocks.
 
-As this example uses a genesis address, it must use the `(client, inputsAndSignatureKeyPairs, outputs, taggedData?)` function.  However, if you are doing a wallet to wallet transfer, you can use the `send(client, seed, accountIndex, addressBech32, amount, taggedData?, addressOptions?)` method.
+As this example uses a genesis address, it must use the `(client, inputsAndSignatureKeyPairs, outputs, taggedData?)` function. However, if you are doing a wallet to wallet transfer, you can use the `send(client, seed, accountIndex, addressBech32, amount, taggedData?, addressOptions?)` method.
 
 ## Example Code
 

@@ -88,7 +88,7 @@ Returns the node information together with the url of the used node
 
 .
 
-___
+---
 
 ### getNetworkInfo
 
@@ -100,7 +100,7 @@ Gets the network related information such as network_id and min_pow_score
 
 `Promise`<[`INetworkInfo`](../interfaces/INetworkInfo.md)\>
 
-___
+---
 
 ### basicOutputIds
 
@@ -110,15 +110,15 @@ Fetch basic output IDs based on query parameters
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
+| Name              | Type                                               |
+| :---------------- | :------------------------------------------------- |
 | `queryParameters` | [`QueryParameter`](../api_ref.md#queryparameter)[] |
 
 #### Returns
 
 `Promise`<[`OutputIdsResponse`](../interfaces/OutputIdsResponse.md)\>
 
-___
+---
 
 ### getOutput
 
@@ -128,15 +128,15 @@ Get output from a known outputID
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
+| Name       | Type     |
+| :--------- | :------- |
 | `outputId` | `string` |
 
 #### Returns
 
 `Promise`<`IOutputResponse`\>
 
-___
+---
 
 ### getOutputs
 
@@ -146,15 +146,15 @@ Fetch OutputResponse from provided OutputIds (requests are sent in parallel)
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
+| Name        | Type       |
+| :---------- | :--------- |
 | `outputIds` | `string`[] |
 
 #### Returns
 
 `Promise`<`IOutputResponse`[]\>
 
-___
+---
 
 ### generateEd25519Addresses
 
@@ -164,16 +164,16 @@ Generate addresses
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `secretManager` | [`SecretManagerType`](../api_ref.md#secretmanagertype) |
+| Name                       | Type                                                                      |
+| :------------------------- | :------------------------------------------------------------------------ |
+| `secretManager`            | [`SecretManagerType`](../api_ref.md#secretmanagertype)                    |
 | `generateAddressesOptions` | [`IGenerateAddressesOptions`](../interfaces/IGenerateAddressesOptions.md) |
 
 #### Returns
 
 `Promise`<`string`[]\>
 
-___
+---
 
 ### buildAndPostBlock
 
@@ -183,16 +183,16 @@ Build and post a block
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `secretManager?` | [`SecretManagerType`](../api_ref.md#secretmanagertype) |
-| `options?` | [`IBuildBlockOptions`](../interfaces/IBuildBlockOptions.md) |
+| Name             | Type                                                        |
+| :--------------- | :---------------------------------------------------------- |
+| `secretManager?` | [`SecretManagerType`](../api_ref.md#secretmanagertype)      |
+| `options?`       | [`IBuildBlockOptions`](../interfaces/IBuildBlockOptions.md) |
 
 #### Returns
 
 `Promise`<[`string`, `IBlock`]\>
 
-___
+---
 
 ### getTips
 
@@ -205,7 +205,7 @@ The tips can be considered as non-lazy and are therefore ideal for attaching a b
 
 `Promise`<`string`[]\>
 
-___
+---
 
 ### postBlock
 
@@ -215,15 +215,15 @@ Post block in JSON format, returns the block ID.
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
+| Name    | Type     |
+| :------ | :------- |
 | `block` | `IBlock` |
 
 #### Returns
 
 `Promise`<`string`\>
 
-___
+---
 
 ### getBlock
 
@@ -233,15 +233,15 @@ Get block as JSON.
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
+| Name      | Type     |
+| :-------- | :------- |
 | `blockId` | `string` |
 
 #### Returns
 
 `Promise`<`IBlock`\>
 
-___
+---
 
 ### getBlockMetadata
 
@@ -251,15 +251,15 @@ Get block metadata.
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
+| Name      | Type     |
+| :-------- | :------- |
 | `blockId` | `string` |
 
 #### Returns
 
 `Promise`<`IBlockMetadata`\>
 
-___
+---
 
 ### findInputs
 
@@ -269,16 +269,16 @@ Find inputs from addresses for a provided amount (useful for offline signing)
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
+| Name        | Type       |
+| :---------- | :--------- |
 | `addresses` | `string`[] |
-| `amount` | `number` |
+| `amount`    | `number`   |
 
 #### Returns
 
 `Promise`<`IUTXOInput`[]\>
 
-___
+---
 
 ### findOutputs
 
@@ -289,8 +289,8 @@ the request amount exceeds individual node limit.
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
+| Name        | Type       |
+| :---------- | :--------- |
 | `outputIds` | `string`[] |
 | `addresses` | `string`[] |
 
@@ -298,7 +298,7 @@ the request amount exceeds individual node limit.
 
 `Promise`<`IOutputResponse`[]\>
 
-___
+---
 
 ### prepareTransaction
 
@@ -308,16 +308,16 @@ Prepare a transaction for signing
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `secretManager?` | [`SecretManagerType`](../api_ref.md#secretmanagertype) |
-| `options?` | [`IBuildBlockOptions`](../interfaces/IBuildBlockOptions.md) |
+| Name             | Type                                                        |
+| :--------------- | :---------------------------------------------------------- |
+| `secretManager?` | [`SecretManagerType`](../api_ref.md#secretmanagertype)      |
+| `options?`       | [`IBuildBlockOptions`](../interfaces/IBuildBlockOptions.md) |
 
 #### Returns
 
 `Promise`<[`IPreparedTransactionData`](../interfaces/IPreparedTransactionData.md)\>
 
-___
+---
 
 ### signTransaction
 
@@ -327,16 +327,16 @@ Sign a transaction
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `secretManager` | [`SecretManagerType`](../api_ref.md#secretmanagertype) |
+| Name                      | Type                                                                    |
+| :------------------------ | :---------------------------------------------------------------------- |
+| `secretManager`           | [`SecretManagerType`](../api_ref.md#secretmanagertype)                  |
 | `preparedTransactionData` | [`IPreparedTransactionData`](../interfaces/IPreparedTransactionData.md) |
 
 #### Returns
 
 `Promise`<`PayloadTypes`\>
 
-___
+---
 
 ### signatureUnlock
 
@@ -346,17 +346,17 @@ Create a signature unlock using the provided `secretManager`.
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `secretManager` | [`SecretManagerType`](../api_ref.md#secretmanagertype) |
-| `transactionEssenceHash` | `string` |
-| `chain` | [`IBip32Chain`](../api_ref.md#ibip32chain) |
+| Name                     | Type                                                   |
+| :----------------------- | :----------------------------------------------------- |
+| `secretManager`          | [`SecretManagerType`](../api_ref.md#secretmanagertype) |
+| `transactionEssenceHash` | `string`                                               |
+| `chain`                  | [`IBip32Chain`](../api_ref.md#ibip32chain)             |
 
 #### Returns
 
 `Promise`<`UnlockTypes`\>
 
-___
+---
 
 ### postBlockPayload
 
@@ -366,15 +366,15 @@ Submit a payload in a block
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
+| Name      | Type           |
+| :-------- | :------------- |
 | `payload` | `PayloadTypes` |
 
 #### Returns
 
 `Promise`<[`string`, `IBlock`]\>
 
-___
+---
 
 ### getNode
 
@@ -386,7 +386,7 @@ Get a node candidate from the healthy node pool.
 
 `Promise`<[`INode`](../interfaces/INode.md)\>
 
-___
+---
 
 ### getNetworkId
 
@@ -398,7 +398,7 @@ Get the network id of the node we're connecting to.
 
 `Promise`<`number`\>
 
-___
+---
 
 ### getBech32Hrp
 
@@ -410,7 +410,7 @@ Returns the bech32_hrp.
 
 `Promise`<`string`\>
 
-___
+---
 
 ### getMinPowScore
 
@@ -422,7 +422,7 @@ Returns the min PoW score.
 
 `Promise`<`number`\>
 
-___
+---
 
 ### getTipsInterval
 
@@ -434,7 +434,7 @@ Returns the tips interval.
 
 `Promise`<`number`\>
 
-___
+---
 
 ### getTokenSupply
 
@@ -446,7 +446,7 @@ Returns the token supply.
 
 `Promise`<`string`\>
 
-___
+---
 
 ### getProtocolParameters
 
@@ -458,7 +458,7 @@ Returns the protocol parameters.
 
 `Promise`<`INodeInfoProtocol`\>
 
-___
+---
 
 ### getLocalPow
 
@@ -470,7 +470,7 @@ Returns if local pow should be used or not.
 
 `Promise`<`boolean`\>
 
-___
+---
 
 ### getFallbackToLocalPow
 
@@ -482,7 +482,7 @@ Get fallback to local proof of work timeout.
 
 `Promise`<`boolean`\>
 
-___
+---
 
 ### getHealth
 
@@ -492,15 +492,15 @@ Get health of node by input url.
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
+| Name  | Type     |
+| :---- | :------- |
 | `url` | `string` |
 
 #### Returns
 
 `Promise`<`boolean`\>
 
-___
+---
 
 ### getNodeInfo
 
@@ -510,16 +510,16 @@ Get info of node with input url.
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `url` | `string` |
+| Name    | Type                              |
+| :------ | :-------------------------------- |
+| `url`   | `string`                          |
 | `auth?` | [`IAuth`](../interfaces/IAuth.md) |
 
 #### Returns
 
 `Promise`<`INodeInfo`\>
 
-___
+---
 
 ### getPeers
 
@@ -531,7 +531,7 @@ Get peers.
 
 `Promise`<`IPeer`[]\>
 
-___
+---
 
 ### postBlockRaw
 
@@ -541,15 +541,15 @@ Post block as raw bytes, returns the block ID.
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
+| Name    | Type     |
+| :------ | :------- |
 | `block` | `IBlock` |
 
 #### Returns
 
 `Promise`<`string`\>
 
-___
+---
 
 ### getBlockRaw
 
@@ -559,15 +559,15 @@ Get block as raw bytes.
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
+| Name      | Type     |
+| :-------- | :------- |
 | `blockId` | `string` |
 
 #### Returns
 
 `Promise`<`Uint8Array`\>
 
-___
+---
 
 ### getMilestoneById
 
@@ -577,15 +577,15 @@ Look up a milestone by a given milestone index.
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
+| Name          | Type     |
+| :------------ | :------- |
 | `milestoneId` | `string` |
 
 #### Returns
 
 `Promise`<`IMilestonePayload`\>
 
-___
+---
 
 ### getUtxoChangesById
 
@@ -595,15 +595,15 @@ Returns all UTXO changes that happened at a specific milestone.
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
+| Name          | Type     |
+| :------------ | :------- |
 | `milestoneId` | `string` |
 
 #### Returns
 
 `Promise`<`IMilestoneUtxoChangesResponse`\>
 
-___
+---
 
 ### getMilestoneByIndex
 
@@ -613,15 +613,15 @@ Look up a milestone by a given milestone index.
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
+| Name    | Type     |
+| :------ | :------- |
 | `index` | `number` |
 
 #### Returns
 
 `Promise`<`IMilestonePayload`\>
 
-___
+---
 
 ### getUtxoChangesByIndex
 
@@ -631,15 +631,15 @@ Returns all UTXO changes that happened at a specific milestone.
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
+| Name    | Type     |
+| :------ | :------- |
 | `index` | `number` |
 
 #### Returns
 
 `Promise`<`IMilestoneUtxoChangesResponse`\>
 
-___
+---
 
 ### getReceipts
 
@@ -651,7 +651,7 @@ Get receipts.
 
 `Promise`<`IReceiptsResponse`\>
 
-___
+---
 
 ### getReceiptsMigratedAt
 
@@ -661,15 +661,15 @@ Get the receipts by the given milestone index.
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
+| Name             | Type     |
+| :--------------- | :------- |
 | `milestoneIndex` | `number` |
 
 #### Returns
 
 `Promise`<`IReceiptsResponse`[]\>
 
-___
+---
 
 ### getTreasury
 
@@ -681,7 +681,7 @@ Get the treasury output.
 
 `Promise`<`ITreasury`\>
 
-___
+---
 
 ### getIncludedBlock
 
@@ -691,15 +691,15 @@ Returns the included block of the transaction.
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
+| Name            | Type     |
+| :-------------- | :------- |
 | `transactionId` | `string` |
 
 #### Returns
 
 `Promise`<`IBlock`\>
 
-___
+---
 
 ### getIncludedBlockMetadata
 
@@ -709,15 +709,15 @@ Returns the metadata of the included block of the transaction.
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
+| Name            | Type     |
+| :-------------- | :------- |
 | `transactionId` | `string` |
 
 #### Returns
 
 `Promise`<`IBlock`\>
 
-___
+---
 
 ### hexToBech32
 
@@ -727,16 +727,16 @@ Transforms a hex encoded address to a bech32 encoded address.
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `hex` | `string` |
+| Name         | Type     |
+| :----------- | :------- |
+| `hex`        | `string` |
 | `bech32Hrp?` | `string` |
 
 #### Returns
 
 `Promise`<`string`\>
 
-___
+---
 
 ### aliasIdToBech32
 
@@ -746,16 +746,16 @@ Transforms an alias id to a bech32 encoded address.
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `aliasId` | `string` |
+| Name         | Type     |
+| :----------- | :------- |
+| `aliasId`    | `string` |
 | `bech32Hrp?` | `string` |
 
 #### Returns
 
 `Promise`<`string`\>
 
-___
+---
 
 ### nftIdToBech32
 
@@ -765,16 +765,16 @@ Transforms an nft id to a bech32 encoded address.
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `nftId` | `string` |
+| Name         | Type     |
+| :----------- | :------- |
+| `nftId`      | `string` |
 | `bech32Hrp?` | `string` |
 
 #### Returns
 
 `Promise`<`string`\>
 
-___
+---
 
 ### hexPublicKeyToBech32Address
 
@@ -784,16 +784,16 @@ Transforms a hex encoded public key to a bech32 encoded address.
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `hex` | `string` |
+| Name         | Type     |
+| :----------- | :------- |
+| `hex`        | `string` |
 | `bech32Hrp?` | `string` |
 
 #### Returns
 
 `Promise`<`string`\>
 
-___
+---
 
 ### aliasOutputIds
 
@@ -803,15 +803,15 @@ Fetch alias output IDs
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
+| Name              | Type                                                         |
+| :---------------- | :----------------------------------------------------------- |
 | `queryParameters` | [`AliasQueryParameter`](../api_ref.md#aliasqueryparameter)[] |
 
 #### Returns
 
 `Promise`<[`OutputIdsResponse`](../interfaces/OutputIdsResponse.md)\>
 
-___
+---
 
 ### aliasOutputId
 
@@ -821,15 +821,15 @@ Fetch alias output ID
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
+| Name      | Type     |
+| :-------- | :------- |
 | `aliasId` | `string` |
 
 #### Returns
 
 `Promise`<`string`\>
 
-___
+---
 
 ### nftOutputIds
 
@@ -839,15 +839,15 @@ Fetch NFT output IDs
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
+| Name              | Type                                                     |
+| :---------------- | :------------------------------------------------------- |
 | `queryParameters` | [`NftQueryParameter`](../api_ref.md#nftqueryparameter)[] |
 
 #### Returns
 
 `Promise`<[`OutputIdsResponse`](../interfaces/OutputIdsResponse.md)\>
 
-___
+---
 
 ### nftOutputId
 
@@ -857,15 +857,15 @@ Fetch NFT output ID
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
+| Name    | Type     |
+| :------ | :------- |
 | `nftId` | `string` |
 
 #### Returns
 
 `Promise`<`string`\>
 
-___
+---
 
 ### foundryOutputIds
 
@@ -875,15 +875,15 @@ Fetch Foundry Output IDs
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
+| Name              | Type                                                             |
+| :---------------- | :--------------------------------------------------------------- |
 | `queryParameters` | [`FoundryQueryParameter`](../api_ref.md#foundryqueryparameter)[] |
 
 #### Returns
 
 `Promise`<[`OutputIdsResponse`](../interfaces/OutputIdsResponse.md)\>
 
-___
+---
 
 ### foundryOutputId
 
@@ -893,15 +893,15 @@ Fetch Foundry Output ID
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
+| Name        | Type     |
+| :---------- | :------- |
 | `foundryId` | `string` |
 
 #### Returns
 
 `Promise`<`string`\>
 
-___
+---
 
 ### getOutputsIgnoreErrors
 
@@ -912,15 +912,15 @@ in parallel and errors are ignored, can be useful for spent outputs)
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
+| Name        | Type       |
+| :---------- | :--------- |
 | `outputIds` | `string`[] |
 
 #### Returns
 
 `Promise`<`IOutputResponse`[]\>
 
-___
+---
 
 ### findBlocks
 
@@ -930,15 +930,15 @@ Find all blocks by provided block IDs.
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
+| Name       | Type       |
+| :--------- | :--------- |
 | `blockIds` | `string`[] |
 
 #### Returns
 
 `Promise`<`IBlock`[]\>
 
-___
+---
 
 ### retry
 
@@ -949,15 +949,15 @@ retried only if they are valid and haven't been confirmed for a while.
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
+| Name      | Type     |
+| :-------- | :------- |
 | `blockId` | `string` |
 
 #### Returns
 
 `Promise`<[`string`, `IBlock`]\>
 
-___
+---
 
 ### retryUntilIncluded
 
@@ -969,17 +969,17 @@ position and additional reattached blocks
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `blockId` | `string` |
-| `interval?` | `number` |
+| Name           | Type     |
+| :------------- | :------- |
+| `blockId`      | `string` |
+| `interval?`    | `number` |
 | `maxAttempts?` | `number` |
 
 #### Returns
 
 `Promise`<[`string`, `IBlock`][]\>
 
-___
+---
 
 ### consolidateFunds
 
@@ -990,16 +990,16 @@ Returns the address to which the funds got consolidated, if any were available
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `secretManager` | [`SecretManagerType`](../api_ref.md#secretmanagertype) |
+| Name                       | Type                                                                      |
+| :------------------------- | :------------------------------------------------------------------------ |
+| `secretManager`            | [`SecretManagerType`](../api_ref.md#secretmanagertype)                    |
 | `generateAddressesOptions` | [`IGenerateAddressesOptions`](../interfaces/IGenerateAddressesOptions.md) |
 
 #### Returns
 
 `Promise`<`string`\>
 
-___
+---
 
 ### reattach
 
@@ -1010,15 +1010,15 @@ confirmed for a while.
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
+| Name      | Type     |
+| :-------- | :------- |
 | `blockId` | `string` |
 
 #### Returns
 
 `Promise`<[`string`, `IBlock`]\>
 
-___
+---
 
 ### reattachUnchecked
 
@@ -1028,15 +1028,15 @@ Reattach a block without checking if it should be reattached
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
+| Name      | Type     |
+| :-------- | :------- |
 | `blockId` | `string` |
 
 #### Returns
 
 `Promise`<[`string`, `IBlock`]\>
 
-___
+---
 
 ### promote
 
@@ -1047,15 +1047,15 @@ method should error out and should not allow unnecessary promotions.
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
+| Name      | Type     |
+| :-------- | :------- |
 | `blockId` | `string` |
 
 #### Returns
 
 `Promise`<[`string`, `IBlock`]\>
 
-___
+---
 
 ### promoteUnchecked
 
@@ -1065,15 +1065,15 @@ Promote a block without checking if it should be promoted
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
+| Name      | Type     |
+| :-------- | :------- |
 | `blockId` | `string` |
 
 #### Returns
 
 `Promise`<[`string`, `IBlock`]\>
 
-___
+---
 
 ### unhealthyNodes
 
@@ -1085,7 +1085,7 @@ Returns the unhealthy nodes.
 
 `Promise`<`Set`<[`INode`](../interfaces/INode.md)\>\>
 
-___
+---
 
 ### buildBasicOutput
 
@@ -1095,15 +1095,15 @@ Build a Basic Output.
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
+| Name     | Type                                                                    |
+| :------- | :---------------------------------------------------------------------- |
 | `params` | [`BasicOutputBuilderParams`](../interfaces/BasicOutputBuilderParams.md) |
 
 #### Returns
 
 `Promise`<[`BasicOutput`](BasicOutput.md)\>
 
-___
+---
 
 ### buildAliasOutput
 
@@ -1113,15 +1113,15 @@ Build an Alias Output.
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
+| Name     | Type                                                                    |
+| :------- | :---------------------------------------------------------------------- |
 | `params` | [`AliasOutputBuilderParams`](../interfaces/AliasOutputBuilderParams.md) |
 
 #### Returns
 
 `Promise`<`AliasOutput`\>
 
-___
+---
 
 ### buildFoundryOutput
 
@@ -1131,15 +1131,15 @@ Build a Foundry Output.
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
+| Name     | Type                                                                        |
+| :------- | :-------------------------------------------------------------------------- |
 | `params` | [`FoundryOutputBuilderParams`](../interfaces/FoundryOutputBuilderParams.md) |
 
 #### Returns
 
 `Promise`<[`FoundryOutput`](FoundryOutput.md)\>
 
-___
+---
 
 ### buildNftOutput
 
@@ -1149,15 +1149,15 @@ Build an Nft Output.
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
+| Name     | Type                                                                |
+| :------- | :------------------------------------------------------------------ |
 | `params` | [`NftOutputBuilderParams`](../interfaces/NftOutputBuilderParams.md) |
 
 #### Returns
 
 `Promise`<[`NftOutput`](NftOutput.md)\>
 
-___
+---
 
 ### listen
 
@@ -1167,16 +1167,16 @@ Listen to MQTT topics.
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `topics` | `string`[] |
+| Name       | Type                                             |
+| :--------- | :----------------------------------------------- |
+| `topics`   | `string`[]                                       |
 | `callback` | (`error`: `Error`, `result`: `string`) => `void` |
 
 #### Returns
 
 `Promise`<`void`\>
 
-___
+---
 
 ### clearListeners
 
@@ -1186,15 +1186,15 @@ Stop listening for provided MQTT topics.
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
+| Name     | Type       |
+| :------- | :--------- |
 | `topics` | `string`[] |
 
 #### Returns
 
 `Promise`<`void`\>
 
-___
+---
 
 ### requestFundsFromFaucet
 
@@ -1204,9 +1204,9 @@ Request funds from a faucet, for example `https://faucet.testnet.shimmer.network
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `url` | `string` |
+| Name      | Type     |
+| :-------- | :------- |
+| `url`     | `string` |
 | `address` | `string` |
 
 #### Returns

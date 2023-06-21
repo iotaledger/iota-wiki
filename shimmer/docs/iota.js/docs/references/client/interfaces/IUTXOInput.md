@@ -1,18 +1,19 @@
 ---
 description: iota.js API reference
 keywords:
-- references
-- api references
-- typescript
+  - references
+  - api references
+  - typescript
 image: /img/client_banner.png
 ---
+
 # Interface: IUTXOInput
 
 UTXO Transaction Input.
 
 ## Hierarchy
 
-- [`ITypeBase`](ITypeBase.md)<``0``\>
+- [`ITypeBase`](ITypeBase.md)<`0`\>
 
   ↳ **`IUTXOInput`**
 
@@ -28,7 +29,7 @@ UTXO Transaction Input.
 
 ### type
 
-• **type**: ``0``
+• **type**: `0`
 
 The type of the object.
 
@@ -36,7 +37,7 @@ The type of the object.
 
 [ITypeBase](ITypeBase.md).[type](ITypeBase.md#type)
 
-___
+---
 
 ### transactionId
 
@@ -44,7 +45,7 @@ ___
 
 The transaction Id.
 
-___
+---
 
 ### transactionOutputIndex
 

@@ -2,11 +2,11 @@
 image: /img/integration-services/logo/integration_services.png
 description: This section will guide in setting up the Integration Service API using Node.js.
 keywords:
-- how to
-- nodejs
-- setup API
-- configure
-- .env
+  - how to
+  - nodejs
+  - setup API
+  - configure
+  - .env
 ---
 
 # Local Setup
@@ -17,10 +17,10 @@ This section will guide you in setting up the Integration Services API using nod
 
 Please make sure to have the following dependencies installed before moving forward:
 
-* [node.js](https://nodejs.org/) min. v16.17.0
-* [docker](https://docs.docker.com/get-docker/)
-* [docker-compose](https://docs.docker.com/compose/install/)
-* [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
+- [node.js](https://nodejs.org/) min. v16.17.0
+- [docker](https://docs.docker.com/get-docker/)
+- [docker-compose](https://docs.docker.com/compose/install/)
+- [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
 
 ## Download the Project
 
@@ -34,12 +34,13 @@ git clone https://github.com/iotaledger/integration-services.git
 
 Use the Integration Services CLI to configure the API. The CLI configures your `.env` and `mongo-init.json` files.
 
-1. Navigate to the root directory: 
+1. Navigate to the root directory:
 
 ```bash
 cd integration-services
 ```
-2. Configure the API: 
+
+2. Configure the API:
 
 ```bash
 npx @iota/is-cli@latest setup-node
@@ -86,7 +87,7 @@ curl http://localhost:3001/info
 ### Set up the Audit-Trail Gateway
 
 1. Move into the folder `api/audit-trail-gw`.
-2.  Run the following commands to install dependencies, build the project, set up the API, and finally start the Audit-Trail Gateway:
+2. Run the following commands to install dependencies, build the project, set up the API, and finally start the Audit-Trail Gateway:
 
 ```bash
 npm install
@@ -108,7 +109,7 @@ curl http://localhost:3002/info
 
 ## FAQ
 
-***I accidentally stopped the mongo db container (the database cannot be reached) can I start it again?***
+**_I accidentally stopped the mongo db container (the database cannot be reached) can I start it again?_**
 
 Yes, the container can be started again by running `docker start <container-id>` <br/>
 -> The container id can be found by running `docker ps -a`

@@ -31,7 +31,7 @@ The type of output.
 
 Output.getType
 
-___
+---
 
 ### getAmount
 

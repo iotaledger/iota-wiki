@@ -21,7 +21,6 @@ For instance, to run
 [`00_get_info.py` ](https://github.com/iotaledger/wallet.rs/blob/develop/bindings/python/examples/00_get_info.py),
 you should run:
 
-
 ```bash
 python3 examples/00_get_info.py
 ```

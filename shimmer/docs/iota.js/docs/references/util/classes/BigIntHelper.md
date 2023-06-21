@@ -1,11 +1,12 @@
 ---
 description: iota.js API reference
 keywords:
-- references
-- api references
-- typescript
+  - references
+  - api references
+  - typescript
 image: /img/client_banner.png
 ---
+
 # Class: BigIntHelper
 
 Helper methods for bigints.
@@ -36,10 +37,10 @@ Load 3 bytes from array as bigint.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `data` | `Uint8Array` | The input array. |
-| `byteOffset` | `number` | The start index to read from. |
+| Name         | Type         | Description                   |
+| :----------- | :----------- | :---------------------------- |
+| `data`       | `Uint8Array` | The input array.              |
+| `byteOffset` | `number`     | The start index to read from. |
 
 #### Returns
 
@@ -47,7 +48,7 @@ Load 3 bytes from array as bigint.
 
 The bigint.
 
-___
+---
 
 ### read4
 
@@ -57,10 +58,10 @@ Load 4 bytes from array as bigint.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `data` | `Uint8Array` | The input array. |
-| `byteOffset` | `number` | The start index to read from. |
+| Name         | Type         | Description                   |
+| :----------- | :----------- | :---------------------------- |
+| `data`       | `Uint8Array` | The input array.              |
+| `byteOffset` | `number`     | The start index to read from. |
 
 #### Returns
 
@@ -68,7 +69,7 @@ Load 4 bytes from array as bigint.
 
 The bigint.
 
-___
+---
 
 ### read8
 
@@ -78,10 +79,10 @@ Load 8 bytes from array as bigint.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `data` | `Uint8Array` | The data to read from. |
-| `byteOffset` | `number` | The start index to read from. |
+| Name         | Type         | Description                   |
+| :----------- | :----------- | :---------------------------- |
+| `data`       | `Uint8Array` | The data to read from.        |
+| `byteOffset` | `number`     | The start index to read from. |
 
 #### Returns
 
@@ -89,7 +90,7 @@ Load 8 bytes from array as bigint.
 
 The bigint.
 
-___
+---
 
 ### read32
 
@@ -99,10 +100,10 @@ Load 32 bytes (256 bits) from array as bigint.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `data` | `Uint8Array` | The data to read from. |
-| `byteOffset` | `number` | The start index to read from. |
+| Name         | Type         | Description                   |
+| :----------- | :----------- | :---------------------------- |
+| `data`       | `Uint8Array` | The data to read from.        |
+| `byteOffset` | `number`     | The start index to read from. |
 
 #### Returns
 
@@ -110,7 +111,7 @@ Load 32 bytes (256 bits) from array as bigint.
 
 The bigint.
 
-___
+---
 
 ### write8
 
@@ -120,17 +121,17 @@ Convert a big int to bytes.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `value` | `BigInteger` | The bigint. |
-| `data` | `Uint8Array` | The buffer to write into. |
-| `byteOffset` | `number` | The start index to write from. |
+| Name         | Type         | Description                    |
+| :----------- | :----------- | :----------------------------- |
+| `value`      | `BigInteger` | The bigint.                    |
+| `data`       | `Uint8Array` | The buffer to write into.      |
+| `byteOffset` | `number`     | The start index to write from. |
 
 #### Returns
 
 `void`
 
-___
+---
 
 ### write32
 
@@ -140,17 +141,17 @@ Convert a big int 32 bytes (256 bits) to bytes.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `value` | `BigInteger` | The bigint. |
-| `data` | `Uint8Array` | The buffer to write into. |
-| `byteOffset` | `number` | The start index to write from. |
+| Name         | Type         | Description                    |
+| :----------- | :----------- | :----------------------------- |
+| `value`      | `BigInteger` | The bigint.                    |
+| `data`       | `Uint8Array` | The buffer to write into.      |
+| `byteOffset` | `number`     | The start index to write from. |
 
 #### Returns
 
 `void`
 
-___
+---
 
 ### random
 
@@ -160,9 +161,9 @@ Generate a random bigint.
 
 #### Parameters
 
-| Name | Type | Default value | Description |
-| :------ | :------ | :------ | :------ |
-| `length` | `number` | `8` | The length of the bigint to generate. |
+| Name     | Type     | Default value | Description                           |
+| :------- | :------- | :------------ | :------------------------------------ |
+| `length` | `number` | `8`           | The length of the bigint to generate. |
 
 #### Returns
 

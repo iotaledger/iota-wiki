@@ -1,11 +1,12 @@
 ---
 description: iota.js API reference
 keywords:
-- references
-- api references
-- typescript
+  - references
+  - api references
+  - typescript
 image: /img/client_banner.png
 ---
+
 # Interface: IPeer
 
 Peer details.
@@ -29,7 +30,7 @@ Peer details.
 
 The id of the peer.
 
-___
+---
 
 ### multiAddresses
 
@@ -37,7 +38,7 @@ ___
 
 The addresses of the peer.
 
-___
+---
 
 ### alias
 
@@ -45,7 +46,7 @@ ___
 
 The alias of the peer.
 
-___
+---
 
 ### relation
 
@@ -53,7 +54,7 @@ ___
 
 The relation of the peer.
 
-___
+---
 
 ### connected
 
@@ -61,7 +62,7 @@ ___
 
 Is it connected.
 
-___
+---
 
 ### gossip
 
@@ -71,7 +72,7 @@ Gossip metrics for the peer.
 
 #### Type declaration
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name        | Type                                      | Description         |
+| :---------- | :---------------------------------------- | :------------------ |
 | `heartbeat` | [`IGossipHeartbeat`](IGossipHeartbeat.md) | The peer heartbeat. |
-| `metrics` | [`IGossipMetrics`](IGossipMetrics.md) | The peer metrics. |
+| `metrics`   | [`IGossipMetrics`](IGossipMetrics.md)     | The peer metrics.   |

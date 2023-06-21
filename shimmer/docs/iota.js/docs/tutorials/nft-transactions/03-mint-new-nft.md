@@ -1,18 +1,16 @@
 ---
-description: "Mint a new NFT with iota.js."
+description: 'Mint a new NFT with iota.js.'
 image: /img/client_banner.png
 keywords:
-
-- tutorial
-- NFT
-- token
-- asset
-- digital
-- non
-- fungible
-- output
-- mint
-
+  - tutorial
+  - NFT
+  - token
+  - asset
+  - digital
+  - non
+  - fungible
+  - output
+  - mint
 ---
 
 # Mint a New NFT
@@ -32,27 +30,29 @@ protocol-defined tokens (`SMR`).
 
 To mint an NFT, you will need the following:
 
-* A unspent [Basic Output](https://wiki.iota.org/shimmer/tips/tips/TIP-0018/#basic-output) that holds enough funds for
+- A unspent [Basic Output](https://wiki.iota.org/shimmer/tips/tips/TIP-0018/#basic-output) that holds enough funds for
   the minimal storage deposit needed for the NFT Output. In
   the [Testnet](https://wiki.iota.org/shimmer/introduction/reference/networks/betanet/), you
   can [request funds from the Faucet](https://wiki.iota.org/shimmer/iota.js/tutorials/value-transactions/request-funds-from-the-faucet/).
 
-* The key pair that corresponds to the Shimmer address that owns the former Output, as you need to unlock a certain
+- The key pair that corresponds to the Shimmer address that owns the former Output, as you need to unlock a certain
   amount of funds to cover the storage deposit of the Output corresponding to the newly minted NFT.
 
-* The immutable metadata that will allow you to associate the NFT with a digital asset. For instance, you could store a
+- The immutable metadata that will allow you to associate the NFT with a digital asset. For instance, you could store a
   digital asset in a permissioned server. Upon proving ownership of the NFT, the server would grant access to the
   associated digital asset. Remember the longer the metadata, the higher the storage deposit.
 
 ```typescript
-const consumedOutputId = "0xcb16...";
+const consumedOutputId = '0xcb16...';
 
-const sourceAddress = "0x62c0...";
+const sourceAddress = '0x62c0...';
 
-const sourceAddressPublicKey = "0x91db...";
-const sourceAddressPrivateKey = "0x22f...";
+const sourceAddressPublicKey = '0x91db...';
+const sourceAddressPrivateKey = '0x22f...';
 
-const client = new SingleNodeClient(API_ENDPOINT, {powProvider: new NeonPowProvider()});
+const client = new SingleNodeClient(API_ENDPOINT, {
+  powProvider: new NeonPowProvider(),
+});
 const info = await client.info();
 ```
 
@@ -64,41 +64,44 @@ The initial NFT Output needed to mint your NFT can be defined as follows:
 const initialNftId = new Uint8Array(new ArrayBuffer(32));
 
 const immutableData = {
-    standard: "IRC27",
-    version: "v1.0",
-    type: "image/jpeg",
-    uri: "https://nft-oceean.example.org/my-nft.jpeg"
+  standard: 'IRC27',
+  version: 'v1.0',
+  type: 'image/jpeg',
+  uri: 'https://nft-oceean.example.org/my-nft.jpeg',
 };
 
 const nftOutput: INftOutput = {
-    type: NFT_OUTPUT_TYPE,
-    amount: "0",
-    nftId: Converter.bytesToHex(initialNftId, true),
-    immutableFeatures: [
-        {
-            type: ISSUER_FEATURE_TYPE,
-            address: {
-                type: ED25519_ADDRESS_TYPE,
-                pubKeyHash: sourceAddress
-            }
-        },
-        {
-            type: METADATA_FEATURE_TYPE,
-            data: Converter.utf8ToHex(JSON.stringify(immutableData), true)
-        },
-    ],
-    unlockConditions: [
-        {
-            type: ADDRESS_UNLOCK_CONDITION_TYPE,
-            address: {
-                type: ED25519_ADDRESS_TYPE,
-                pubKeyHash: sourceAddress
-            }
-        }
-    ]
+  type: NFT_OUTPUT_TYPE,
+  amount: '0',
+  nftId: Converter.bytesToHex(initialNftId, true),
+  immutableFeatures: [
+    {
+      type: ISSUER_FEATURE_TYPE,
+      address: {
+        type: ED25519_ADDRESS_TYPE,
+        pubKeyHash: sourceAddress,
+      },
+    },
+    {
+      type: METADATA_FEATURE_TYPE,
+      data: Converter.utf8ToHex(JSON.stringify(immutableData), true),
+    },
+  ],
+  unlockConditions: [
+    {
+      type: ADDRESS_UNLOCK_CONDITION_TYPE,
+      address: {
+        type: ED25519_ADDRESS_TYPE,
+        pubKeyHash: sourceAddress,
+      },
+    },
+  ],
 };
 
-const nftStorageCost = TransactionHelper.getStorageDeposit(nftOutput, nodeInfo.protocol.rentStructure);
+const nftStorageCost = TransactionHelper.getStorageDeposit(
+  nftOutput,
+  nodeInfo.protocol.rentStructure,
+);
 const amountNeeded = bigInt(nftStorageCost).multiply(bigInt(2));
 nftOutput.amount = amountNeeded.toString();
 ```
@@ -135,22 +138,30 @@ inputs.push(TransactionHelper.inputFromOutputId(consumedOutputId));
 const consumedOutputDetails = await client.output(consumedOutputId);
 const totalFunds = bigInt(consumedOutputDetails.output.amount);
 
-const remainderBasicOutput: IBasicOutput = JSON.parse(JSON.stringify(consumedOutput));
+const remainderBasicOutput: IBasicOutput = JSON.parse(
+  JSON.stringify(consumedOutput),
+);
 
-const remainingFunds = bigInt(consumedOutput.amount).minus(bigInt(nftOutput.amount));
+const remainingFunds = bigInt(consumedOutput.amount).minus(
+  bigInt(nftOutput.amount),
+);
 remainderBasicOutput.amount = remainingFunds.toString();
 
 outputs.push(nftOutput);
 outputs.push(remainderBasicOutput);
 
-const inputsCommitment = TransactionHelper.getInputsCommitment([consumedOutput]);
+const inputsCommitment = TransactionHelper.getInputsCommitment([
+  consumedOutput,
+]);
 
 const transactionEssence: ITransactionEssence = {
-    type: TRANSACTION_ESSENCE_TYPE,
-    networkId: TransactionHelper.networkIdFromNetworkName(nodeInfo.protocol.networkName),
-    inputs,
-    inputsCommitment,
-    outputs
+  type: TRANSACTION_ESSENCE_TYPE,
+  networkId: TransactionHelper.networkIdFromNetworkName(
+    nodeInfo.protocol.networkName,
+  ),
+  inputs,
+  inputsCommitment,
+  outputs,
 };
 ```
 
@@ -165,33 +176,37 @@ After submitting the corresponding block with the Block ID, you can check the re
 the [Tangle Explorer](https://explorer.shimmer.network/testnet).
 
 ```typescript
-const essenceHash = TransactionHelper.getTransactionEssenceHash(transactionEssence);
+const essenceHash =
+  TransactionHelper.getTransactionEssenceHash(transactionEssence);
 
 const unlockCondition: ISignatureUnlock = {
-    type: SIGNATURE_UNLOCK_TYPE,
-    signature: {
-        type: ED25519_SIGNATURE_TYPE,
-        publicKey: sourceAddressPublicKey,
-        signature: Converter.bytesToHex(Ed25519.sign(Converter.hexToBytes(sourceAddressPrivateKey), essenceHash), true)
-    }
+  type: SIGNATURE_UNLOCK_TYPE,
+  signature: {
+    type: ED25519_SIGNATURE_TYPE,
+    publicKey: sourceAddressPublicKey,
+    signature: Converter.bytesToHex(
+      Ed25519.sign(Converter.hexToBytes(sourceAddressPrivateKey), essenceHash),
+      true,
+    ),
+  },
 };
 
 const transactionPayload: ITransactionPayload = {
-    type: TRANSACTION_PAYLOAD_TYPE,
-    essence: transactionEssence,
-    unlocks: [unlockCondition]
+  type: TRANSACTION_PAYLOAD_TYPE,
+  essence: transactionEssence,
+  unlocks: [unlockCondition],
 };
 
 const block: IBlock = {
-    protocolVersion: DEFAULT_PROTOCOL_VERSION,
-    parents: [],
-    payload: transactionPayload,
-    nonce: "0",
+  protocolVersion: DEFAULT_PROTOCOL_VERSION,
+  parents: [],
+  payload: transactionPayload,
+  nonce: '0',
 };
 
-console.log("Calculating PoW, submitting block...");
+console.log('Calculating PoW, submitting block...');
 const blockId = await client.blockSubmit(block);
-console.log("Block Id:", blockId);
+console.log('Block Id:', blockId);
 ```
 
 ## Calculate the NFT ID
@@ -208,29 +223,40 @@ function that the Ledger included your block.
 
 ```typescript
 setTimeout(async () => {
-    const blockMetadata = await client.blockMetadata(blockId);
-    if (!blockMetadata.ledgerInclusionState) {
-        throw new Error("Block still pending confirmation");
-    }
+  const blockMetadata = await client.blockMetadata(blockId);
+  if (!blockMetadata.ledgerInclusionState) {
+    throw new Error('Block still pending confirmation');
+  }
 
-    if (blockMetadata.ledgerInclusionState === "included") {
-        const transactionId = calculateTransactionId(transactionPayload);
-        const outputId = TransactionHelper.outputIdFromTransactionData(transactionId, 0);
-        console.log("Output Id:", outputId);
-        const nftIdBytes = Blake2b.sum256(Converter.hexToBytes(outputID));
-        const nftId = Converter.bytesToHex(nftIdBytes, true)
-        console.log("NFT ID:", nftId);
-        console.log("NFT Address:",
-            Bech32Helper.toBech32(NFT_ADDRESS_TYPE, nftIdBytes, nodeInfo.protocol.bech32Hrp));
-    } else if (blockMetadata.ledgerInclusionState === "conflicting") {
-        throw new Error("Conflicting Block");
-    }
+  if (blockMetadata.ledgerInclusionState === 'included') {
+    const transactionId = calculateTransactionId(transactionPayload);
+    const outputId = TransactionHelper.outputIdFromTransactionData(
+      transactionId,
+      0,
+    );
+    console.log('Output Id:', outputId);
+    const nftIdBytes = Blake2b.sum256(Converter.hexToBytes(outputID));
+    const nftId = Converter.bytesToHex(nftIdBytes, true);
+    console.log('NFT ID:', nftId);
+    console.log(
+      'NFT Address:',
+      Bech32Helper.toBech32(
+        NFT_ADDRESS_TYPE,
+        nftIdBytes,
+        nodeInfo.protocol.bech32Hrp,
+      ),
+    );
+  } else if (blockMetadata.ledgerInclusionState === 'conflicting') {
+    throw new Error('Conflicting Block');
+  }
 }, 6000);
 
-function computeTransactionIdFromTransactionPayload(payload: ITransactionPayload) {
-    const tpWriteStream = new WriteStream();
-    serializeTransactionPayload(tpWriteStream, payload);
-    return Converter.bytesToHex(Blake2b.sum256(tpWriteStream.finalBytes()), true);
+function computeTransactionIdFromTransactionPayload(
+  payload: ITransactionPayload,
+) {
+  const tpWriteStream = new WriteStream();
+  serializeTransactionPayload(tpWriteStream, payload);
+  return Converter.bytesToHex(Blake2b.sum256(tpWriteStream.finalBytes()), true);
 }
 ```
 

@@ -175,6 +175,7 @@ Finds an output by its identifier.
 ## Example
 
 ```rust
+
 ```
 
 Run `cargo run --example node_api_core_ --release -- [NODE URL]`.
@@ -194,6 +195,7 @@ Returns metadata about an output by its identifier.
 ## Example
 
 ```rust
+
 ```
 
 Run `cargo run --example node_api_core_ --release -- [NODE URL]`.
@@ -271,6 +273,7 @@ Returns the included block of a transaction.
 ## Example
 
 ```rust
+
 ```
 
 Run `cargo run --example node_api_core_ --release -- [NODE URL]`.
@@ -410,6 +413,7 @@ Computes applied and confirmed merkle route hashes for a proposed milestone.
 ## Example
 
 ```rust
+
 ```
 
 Run `cargo run --example node_api_core_ --release -- [NODE URL]`.
@@ -429,6 +433,7 @@ Gets information about the peers of the node.
 ## Example
 
 ```rust
+
 ```
 
 Run `cargo run --example node_api_core_ --release -- [NODE URL]`.
@@ -448,6 +453,7 @@ Adds a given peer to the node.
 ## Example
 
 ```rust
+
 ```
 
 Run `cargo run --example node_api_core_ --release -- [NODE URL]`.
@@ -483,6 +489,7 @@ Removes/disconnects a given peer.
 ## Example
 
 ```rust
+
 ```
 
 Run `cargo run --example node_api_core_ --release -- [NODE URL]`.
@@ -502,6 +509,7 @@ Prunes the node database.
 ## Example
 
 ```rust
+
 ```
 
 Run `cargo run --example node_api_core_ --release -- [NODE URL]`.

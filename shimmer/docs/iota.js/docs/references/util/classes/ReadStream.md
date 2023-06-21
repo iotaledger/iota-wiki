@@ -1,11 +1,12 @@
 ---
 description: iota.js API reference
 keywords:
-- references
-- api references
-- typescript
+  - references
+  - api references
+  - typescript
 image: /img/client_banner.png
 ---
+
 # Class: ReadStream
 
 Keep track of the read index within a stream.
@@ -42,10 +43,10 @@ Create a new instance of ReadStream.
 
 #### Parameters
 
-| Name | Type | Default value | Description |
-| :------ | :------ | :------ | :------ |
-| `storage` | `Uint8Array` | `undefined` | The data to access. |
-| `readStartIndex` | `number` | `0` | The index to start the reading from. |
+| Name             | Type         | Default value | Description                          |
+| :--------------- | :----------- | :------------ | :----------------------------------- |
+| `storage`        | `Uint8Array` | `undefined`   | The data to access.                  |
+| `readStartIndex` | `number`     | `0`           | The index to start the reading from. |
 
 ## Methods
 
@@ -61,7 +62,7 @@ Get the length of the storage.
 
 The storage length.
 
-___
+---
 
 ### hasRemaining
 
@@ -71,8 +72,8 @@ Does the storage have enough data remaining.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name        | Type     | Description                 |
+| :---------- | :------- | :-------------------------- |
 | `remaining` | `number` | The amount of space needed. |
 
 #### Returns
@@ -81,7 +82,7 @@ Does the storage have enough data remaining.
 
 True if it has enough data.
 
-___
+---
 
 ### unused
 
@@ -95,7 +96,7 @@ How much unused data is there.
 
 The amount of unused data.
 
-___
+---
 
 ### getReadIndex
 
@@ -109,7 +110,7 @@ Get the current read index.
 
 The current read index.
 
-___
+---
 
 ### setReadIndex
 
@@ -119,15 +120,15 @@ Set the current read index.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name        | Type     | Description             |
+| :---------- | :------- | :---------------------- |
 | `readIndex` | `number` | The current read index. |
 
 #### Returns
 
 `void`
 
-___
+---
 
 ### readFixedHex
 
@@ -137,11 +138,11 @@ Read fixed length as hex.
 
 #### Parameters
 
-| Name | Type | Default value | Description |
-| :------ | :------ | :------ | :------ |
-| `name` | `string` | `undefined` | The name of the data we are trying to read. |
-| `length` | `number` | `undefined` | The length of the data to read. |
-| `moveIndex` | `boolean` | `true` | Move the index pointer on. |
+| Name        | Type      | Default value | Description                                 |
+| :---------- | :-------- | :------------ | :------------------------------------------ |
+| `name`      | `string`  | `undefined`   | The name of the data we are trying to read. |
+| `length`    | `number`  | `undefined`   | The length of the data to read.             |
+| `moveIndex` | `boolean` | `true`        | Move the index pointer on.                  |
 
 #### Returns
 
@@ -149,7 +150,7 @@ Read fixed length as hex.
 
 The hex formatted data.
 
-___
+---
 
 ### readBytes
 
@@ -159,11 +160,11 @@ Read an array of byte from the stream.
 
 #### Parameters
 
-| Name | Type | Default value | Description |
-| :------ | :------ | :------ | :------ |
-| `name` | `string` | `undefined` | The name of the data we are trying to read. |
-| `length` | `number` | `undefined` | The length of the array to read. |
-| `moveIndex` | `boolean` | `true` | Move the index pointer on. |
+| Name        | Type      | Default value | Description                                 |
+| :---------- | :-------- | :------------ | :------------------------------------------ |
+| `name`      | `string`  | `undefined`   | The name of the data we are trying to read. |
+| `length`    | `number`  | `undefined`   | The length of the array to read.            |
+| `moveIndex` | `boolean` | `true`        | Move the index pointer on.                  |
 
 #### Returns
 
@@ -171,7 +172,7 @@ Read an array of byte from the stream.
 
 The value.
 
-___
+---
 
 ### readUInt8
 
@@ -181,10 +182,10 @@ Read a byte from the stream.
 
 #### Parameters
 
-| Name | Type | Default value | Description |
-| :------ | :------ | :------ | :------ |
-| `name` | `string` | `undefined` | The name of the data we are trying to read. |
-| `moveIndex` | `boolean` | `true` | Move the index pointer on. |
+| Name        | Type      | Default value | Description                                 |
+| :---------- | :-------- | :------------ | :------------------------------------------ |
+| `name`      | `string`  | `undefined`   | The name of the data we are trying to read. |
+| `moveIndex` | `boolean` | `true`        | Move the index pointer on.                  |
 
 #### Returns
 
@@ -192,7 +193,7 @@ Read a byte from the stream.
 
 The value.
 
-___
+---
 
 ### readUInt16
 
@@ -202,10 +203,10 @@ Read a UInt16 from the stream.
 
 #### Parameters
 
-| Name | Type | Default value | Description |
-| :------ | :------ | :------ | :------ |
-| `name` | `string` | `undefined` | The name of the data we are trying to read. |
-| `moveIndex` | `boolean` | `true` | Move the index pointer on. |
+| Name        | Type      | Default value | Description                                 |
+| :---------- | :-------- | :------------ | :------------------------------------------ |
+| `name`      | `string`  | `undefined`   | The name of the data we are trying to read. |
+| `moveIndex` | `boolean` | `true`        | Move the index pointer on.                  |
 
 #### Returns
 
@@ -213,7 +214,7 @@ Read a UInt16 from the stream.
 
 The value.
 
-___
+---
 
 ### readUInt32
 
@@ -223,10 +224,10 @@ Read a UInt32 from the stream.
 
 #### Parameters
 
-| Name | Type | Default value | Description |
-| :------ | :------ | :------ | :------ |
-| `name` | `string` | `undefined` | The name of the data we are trying to read. |
-| `moveIndex` | `boolean` | `true` | Move the index pointer on. |
+| Name        | Type      | Default value | Description                                 |
+| :---------- | :-------- | :------------ | :------------------------------------------ |
+| `name`      | `string`  | `undefined`   | The name of the data we are trying to read. |
+| `moveIndex` | `boolean` | `true`        | Move the index pointer on.                  |
 
 #### Returns
 
@@ -234,7 +235,7 @@ Read a UInt32 from the stream.
 
 The value.
 
-___
+---
 
 ### readUInt64
 
@@ -244,10 +245,10 @@ Read a UInt64 from the stream.
 
 #### Parameters
 
-| Name | Type | Default value | Description |
-| :------ | :------ | :------ | :------ |
-| `name` | `string` | `undefined` | The name of the data we are trying to read. |
-| `moveIndex` | `boolean` | `true` | Move the index pointer on. |
+| Name        | Type      | Default value | Description                                 |
+| :---------- | :-------- | :------------ | :------------------------------------------ |
+| `name`      | `string`  | `undefined`   | The name of the data we are trying to read. |
+| `moveIndex` | `boolean` | `true`        | Move the index pointer on.                  |
 
 #### Returns
 
@@ -255,7 +256,7 @@ Read a UInt64 from the stream.
 
 The value.
 
-___
+---
 
 ### readUInt256
 
@@ -265,10 +266,10 @@ Read a UInt256 from the stream.
 
 #### Parameters
 
-| Name | Type | Default value | Description |
-| :------ | :------ | :------ | :------ |
-| `name` | `string` | `undefined` | The name of the data we are trying to read. |
-| `moveIndex` | `boolean` | `true` | Move the index pointer on. |
+| Name        | Type      | Default value | Description                                 |
+| :---------- | :-------- | :------------ | :------------------------------------------ |
+| `name`      | `string`  | `undefined`   | The name of the data we are trying to read. |
+| `moveIndex` | `boolean` | `true`        | Move the index pointer on.                  |
 
 #### Returns
 
@@ -276,7 +277,7 @@ Read a UInt256 from the stream.
 
 The value.
 
-___
+---
 
 ### readBoolean
 
@@ -286,10 +287,10 @@ Read a boolean from the stream.
 
 #### Parameters
 
-| Name | Type | Default value | Description |
-| :------ | :------ | :------ | :------ |
-| `name` | `string` | `undefined` | The name of the data we are trying to read. |
-| `moveIndex` | `boolean` | `true` | Move the index pointer on. |
+| Name        | Type      | Default value | Description                                 |
+| :---------- | :-------- | :------------ | :------------------------------------------ |
+| `name`      | `string`  | `undefined`   | The name of the data we are trying to read. |
+| `moveIndex` | `boolean` | `true`        | Move the index pointer on.                  |
 
 #### Returns
 

@@ -10,37 +10,37 @@
  */
 
 module.exports = {
-    mySidebar: [
+  mySidebar: [
+    {
+      type: 'doc',
+      id: 'welcome',
+    },
+    {
+      type: 'category',
+      label: 'How to',
+      items: [
         {
-            type: 'doc',
-            id: 'welcome',
+          type: 'doc',
+          id: 'how_to/query_outputs',
+          label: 'Query the Indexer for Outputs',
+        },
+      ],
+    },
+    {
+      type: 'category',
+      label: 'References',
+      items: [
+        {
+          type: 'doc',
+          id: 'configuration',
+          label: 'Configuration',
         },
         {
-            type: 'category',
-            label: 'How to',
-            items: [
-                {
-                    type: 'doc',
-                    id: 'how_to/query_outputs',
-                    label: 'Query the Indexer for Outputs',
-                },
-            ]
+          type: 'doc',
+          id: 'api_reference',
+          label: 'API Reference',
         },
-        {
-            type: 'category',
-            label: 'References',
-            items: [
-                {
-                    type: 'doc',
-                    id: 'configuration',
-                    label: 'Configuration',
-                },
-                {
-                    type: 'doc',
-                    id: 'api_reference',
-                    label: 'API Reference',
-                }
-            ]
-        }
-    ]
+      ],
+    },
+  ],
 };

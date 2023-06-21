@@ -1,33 +1,32 @@
 ---
-description: "Prepare a development environment to run the alias transactions in iota.js tutorial."
+description: 'Prepare a development environment to run the alias transactions in iota.js tutorial.'
 image: /img/client_banner.png
 keywords:
-
-- tutorial
-- Node.js 16
-- auxiliary library
-- proof of work
-- pow
-- shimmer
-- testnet node
-
+  - tutorial
+  - Node.js 16
+  - auxiliary library
+  - proof of work
+  - pow
+  - shimmer
+  - testnet node
 ---
 
 # Prepare Your Development Environment
 
 To run the code in this tutorial, you will need the following:
 
-* [Node.js 16](https://nodejs.org/en/blog/release/v16.16.0/).
-* The [`@iota/iota.js`](https://www.npmjs.com/package/@iota/iota.js) library
-* The `iota.js` auxiliary libraries:
-    * [`@iota/crypto.js`](https://www.npmjs.com/package/@iota/crypto.js)
-    * [`@iota/util.js`](https://www.npmjs.com/package/@iota/util.js).
-    * [`@iota/pow-neon.js`](https://www.npmjs.com/package/@iota/pow-neon.js) to run Proof of Work (PoW). Alternatively,
-      you can spin up your own node to run the PoW remotely.
+- [Node.js 16](https://nodejs.org/en/blog/release/v16.16.0/).
+- The [`@iota/iota.js`](https://www.npmjs.com/package/@iota/iota.js) library
+- The `iota.js` auxiliary libraries:
 
-* Access to a Stardust Node (Hornet 2.0.0). You can use the Shimmer testnet Nodes
+  - [`@iota/crypto.js`](https://www.npmjs.com/package/@iota/crypto.js)
+  - [`@iota/util.js`](https://www.npmjs.com/package/@iota/util.js).
+  - [`@iota/pow-neon.js`](https://www.npmjs.com/package/@iota/pow-neon.js) to run Proof of Work (PoW). Alternatively,
+    you can spin up your own node to run the PoW remotely.
+
+- Access to a Stardust Node (Hornet 2.0.0). You can use the Shimmer testnet Nodes
   at [https://api.testnet.shimmer.network](https://api.testnet.shimmer.network).
-* (Optional) A TypeScript compiler and related packages
+- (Optional) A TypeScript compiler and related packages
 
 ## (optional) Download the Code
 
@@ -57,7 +56,7 @@ You can run the `mint-new-alias` script by running the following command from th
 npm run mint <outputID>
 ```
 
-**Where** `outputID` is the ID of an Output that has enough funds to cover the storage deposit of your newly minted Alias. 
+**Where** `outputID` is the ID of an Output that has enough funds to cover the storage deposit of your newly minted Alias.
 
 #### Transition Alias Output
 
@@ -67,7 +66,7 @@ You can run the `alias-transaction` script by running the following command from
 npm run alias-transaction <AliasID>
 ```
 
-**Where** `AliasID` is the Alias ID you want to transact with so that it transitions to a new state. 
+**Where** `AliasID` is the Alias ID you want to transact with so that it transitions to a new state.
 
 ## Create Your package.json File
 

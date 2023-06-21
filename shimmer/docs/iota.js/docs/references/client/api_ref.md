@@ -1,11 +1,12 @@
 ---
 description: iota.js API reference
 keywords:
-- references
-- api references
-- typescript
+  - references
+  - api references
+  - typescript
 image: /img/client_banner.png
 ---
+
 # @iota/iota.js
 
 ## Table of contents
@@ -26,115 +27,115 @@ image: /img/client_banner.png
 
 ### Variables
 
-- [MIN\_ADDRESS\_LENGTH](api_ref.md#min_address_length)
-- [ALIAS\_ID\_LENGTH](api_ref.md#alias_id_length)
-- [MIN\_ALIAS\_ADDRESS\_LENGTH](api_ref.md#min_alias_address_length)
-- [MIN\_ED25519\_ADDRESS\_LENGTH](api_ref.md#min_ed25519_address_length)
-- [NFT\_ID\_LENGTH](api_ref.md#nft_id_length)
-- [MIN\_NFT\_ADDRESS\_LENGTH](api_ref.md#min_nft_address_length)
-- [MAX\_BLOCK\_LENGTH](api_ref.md#max_block_length)
-- [MAX\_NUMBER\_PARENTS](api_ref.md#max_number_parents)
-- [MIN\_NUMBER\_PARENTS](api_ref.md#min_number_parents)
-- [UINT8\_SIZE](api_ref.md#uint8_size)
-- [UINT16\_SIZE](api_ref.md#uint16_size)
-- [UINT32\_SIZE](api_ref.md#uint32_size)
-- [UINT64\_SIZE](api_ref.md#uint64_size)
-- [UINT256\_SIZE](api_ref.md#uint256_size)
-- [BLOCK\_ID\_LENGTH](api_ref.md#block_id_length)
-- [TRANSACTION\_ID\_LENGTH](api_ref.md#transaction_id_length)
-- [MERKLE\_PROOF\_LENGTH](api_ref.md#merkle_proof_length)
-- [TYPE\_LENGTH](api_ref.md#type_length)
-- [SMALL\_TYPE\_LENGTH](api_ref.md#small_type_length)
-- [STRING\_LENGTH](api_ref.md#string_length)
-- [ARRAY\_LENGTH](api_ref.md#array_length)
-- [MIN\_FEATURES\_LENGTH](api_ref.md#min_features_length)
-- [MIN\_FEATURE\_LENGTH](api_ref.md#min_feature_length)
-- [MIN\_ISSUER\_FEATURE\_LENGTH](api_ref.md#min_issuer_feature_length)
-- [MIN\_METADATA\_FEATURE\_LENGTH](api_ref.md#min_metadata_feature_length)
-- [MIN\_SENDER\_FEATURE\_LENGTH](api_ref.md#min_sender_feature_length)
-- [MIN\_TAG\_FEATURE\_LENGTH](api_ref.md#min_tag_feature_length)
-- [TAIL\_HASH\_LENGTH](api_ref.md#tail_hash_length)
-- [MIN\_MIGRATED\_FUNDS\_LENGTH](api_ref.md#min_migrated_funds_length)
-- [MAX\_FUNDS\_COUNT](api_ref.md#max_funds_count)
-- [MIN\_INPUT\_LENGTH](api_ref.md#min_input_length)
-- [MIN\_INPUT\_COUNT](api_ref.md#min_input_count)
-- [MAX\_INPUT\_COUNT](api_ref.md#max_input_count)
-- [MIN\_TREASURY\_INPUT\_LENGTH](api_ref.md#min_treasury_input_length)
-- [MIN\_UTXO\_INPUT\_LENGTH](api_ref.md#min_utxo_input_length)
-- [MIN\_MILESTONE\_OPTION\_LENGTH](api_ref.md#min_milestone_option_length)
-- [MIN\_PROTOCOL\_PARAMS\_MILESTONE\_OPTION\_LENGTH](api_ref.md#min_protocol_params_milestone_option_length)
-- [MIN\_RECEIPT\_MILESTONE\_OPTION\_LENGTH](api_ref.md#min_receipt_milestone_option_length)
-- [MIN\_ALIAS\_OUTPUT\_LENGTH](api_ref.md#min_alias_output_length)
-- [MIN\_BASIC\_OUTPUT\_LENGTH](api_ref.md#min_basic_output_length)
-- [MIN\_FOUNDRY\_OUTPUT\_LENGTH](api_ref.md#min_foundry_output_length)
-- [MIN\_NFT\_OUTPUT\_LENGTH](api_ref.md#min_nft_output_length)
-- [MIN\_OUTPUT\_LENGTH](api_ref.md#min_output_length)
-- [MIN\_OUTPUT\_COUNT](api_ref.md#min_output_count)
-- [MAX\_OUTPUT\_COUNT](api_ref.md#max_output_count)
-- [MIN\_TREASURY\_OUTPUT\_LENGTH](api_ref.md#min_treasury_output_length)
-- [MIN\_MILESTONE\_PAYLOAD\_LENGTH](api_ref.md#min_milestone_payload_length)
-- [MIN\_PAYLOAD\_LENGTH](api_ref.md#min_payload_length)
-- [MIN\_TAGGED\_DATA\_PAYLOAD\_LENGTH](api_ref.md#min_tagged_data_payload_length)
-- [MAX\_TAG\_LENGTH](api_ref.md#max_tag_length)
-- [MIN\_TRANSACTION\_PAYLOAD\_LENGTH](api_ref.md#min_transaction_payload_length)
-- [MIN\_TREASURY\_TRANSACTION\_PAYLOAD\_LENGTH](api_ref.md#min_treasury_transaction_payload_length)
-- [MIN\_ED25519\_SIGNATURE\_LENGTH](api_ref.md#min_ed25519_signature_length)
-- [MIN\_SIGNATURE\_LENGTH](api_ref.md#min_signature_length)
-- [MIN\_SIMPLE\_TOKEN\_SCHEME\_LENGTH](api_ref.md#min_simple_token_scheme_length)
-- [MIN\_TOKEN\_SCHEME\_LENGTH](api_ref.md#min_token_scheme_length)
-- [MIN\_TRANSACTION\_ESSENCE\_LENGTH](api_ref.md#min_transaction_essence_length)
-- [MIN\_ADDRESS\_UNLOCK\_CONDITION\_LENGTH](api_ref.md#min_address_unlock_condition_length)
-- [MIN\_EXPIRATION\_UNLOCK\_CONDITION\_LENGTH](api_ref.md#min_expiration_unlock_condition_length)
-- [MIN\_GOVERNOR\_ADDRESS\_UNLOCK\_CONDITION\_LENGTH](api_ref.md#min_governor_address_unlock_condition_length)
-- [MIN\_IMMUTABLE\_ALIAS\_UNLOCK\_CONDITION\_LENGTH](api_ref.md#min_immutable_alias_unlock_condition_length)
-- [MIN\_STATE\_CONTROLLER\_ADDRESS\_UNLOCK\_CONDITION\_LENGTH](api_ref.md#min_state_controller_address_unlock_condition_length)
-- [MIN\_STORAGE\_DEPOSIT\_RETURN\_UNLOCK\_CONDITION\_LENGTH](api_ref.md#min_storage_deposit_return_unlock_condition_length)
-- [MIN\_TIMELOCK\_UNLOCK\_CONDITION\_LENGTH](api_ref.md#min_timelock_unlock_condition_length)
-- [MIN\_UNLOCK\_CONDITIONS\_LENGTH](api_ref.md#min_unlock_conditions_length)
-- [MIN\_UNLOCK\_CONDITION\_LENGTH](api_ref.md#min_unlock_condition_length)
-- [MIN\_ALIAS\_UNLOCK\_LENGTH](api_ref.md#min_alias_unlock_length)
-- [MIN\_NFT\_UNLOCK\_LENGTH](api_ref.md#min_nft_unlock_length)
-- [MIN\_REFERENCE\_UNLOCK\_LENGTH](api_ref.md#min_reference_unlock_length)
-- [MIN\_SIGNATURE\_UNLOCK\_LENGTH](api_ref.md#min_signature_unlock_length)
-- [MIN\_UNLOCK\_LENGTH](api_ref.md#min_unlock_length)
-- [DEFAULT\_PROTOCOL\_VERSION](api_ref.md#default_protocol_version)
-- [TRANSACTION\_ESSENCE\_TYPE](api_ref.md#transaction_essence_type)
-- [INPUTS\_COMMITMENT\_SIZE](api_ref.md#inputs_commitment_size)
-- [ALIAS\_ADDRESS\_TYPE](api_ref.md#alias_address_type)
-- [ED25519\_ADDRESS\_TYPE](api_ref.md#ed25519_address_type)
-- [NFT\_ADDRESS\_TYPE](api_ref.md#nft_address_type)
-- [ISSUER\_FEATURE\_TYPE](api_ref.md#issuer_feature_type)
-- [METADATA\_FEATURE\_TYPE](api_ref.md#metadata_feature_type)
-- [SENDER\_FEATURE\_TYPE](api_ref.md#sender_feature_type)
-- [TAG\_FEATURE\_TYPE](api_ref.md#tag_feature_type)
-- [TREASURY\_INPUT\_TYPE](api_ref.md#treasury_input_type)
-- [UTXO\_INPUT\_TYPE](api_ref.md#utxo_input_type)
-- [PROTOCOL\_PARAMETERS\_MILESTONE\_OPTION\_TYPE](api_ref.md#protocol_parameters_milestone_option_type)
-- [RECEIPT\_MILESTONE\_OPTION\_TYPE](api_ref.md#receipt_milestone_option_type)
-- [ALIAS\_OUTPUT\_TYPE](api_ref.md#alias_output_type)
-- [BASIC\_OUTPUT\_TYPE](api_ref.md#basic_output_type)
-- [FOUNDRY\_OUTPUT\_TYPE](api_ref.md#foundry_output_type)
-- [NFT\_OUTPUT\_TYPE](api_ref.md#nft_output_type)
-- [TREASURY\_OUTPUT\_TYPE](api_ref.md#treasury_output_type)
-- [MILESTONE\_PAYLOAD\_TYPE](api_ref.md#milestone_payload_type)
-- [TAGGED\_DATA\_PAYLOAD\_TYPE](api_ref.md#tagged_data_payload_type)
-- [TRANSACTION\_PAYLOAD\_TYPE](api_ref.md#transaction_payload_type)
-- [TREASURY\_TRANSACTION\_PAYLOAD\_TYPE](api_ref.md#treasury_transaction_payload_type)
-- [ED25519\_SIGNATURE\_TYPE](api_ref.md#ed25519_signature_type)
-- [SIMPLE\_TOKEN\_SCHEME\_TYPE](api_ref.md#simple_token_scheme_type)
-- [ADDRESS\_UNLOCK\_CONDITION\_TYPE](api_ref.md#address_unlock_condition_type)
-- [EXPIRATION\_UNLOCK\_CONDITION\_TYPE](api_ref.md#expiration_unlock_condition_type)
-- [GOVERNOR\_ADDRESS\_UNLOCK\_CONDITION\_TYPE](api_ref.md#governor_address_unlock_condition_type)
-- [IMMUTABLE\_ALIAS\_UNLOCK\_CONDITION\_TYPE](api_ref.md#immutable_alias_unlock_condition_type)
-- [STATE\_CONTROLLER\_ADDRESS\_UNLOCK\_CONDITION\_TYPE](api_ref.md#state_controller_address_unlock_condition_type)
-- [STORAGE\_DEPOSIT\_RETURN\_UNLOCK\_CONDITION\_TYPE](api_ref.md#storage_deposit_return_unlock_condition_type)
-- [TIMELOCK\_UNLOCK\_CONDITION\_TYPE](api_ref.md#timelock_unlock_condition_type)
-- [ALIAS\_UNLOCK\_TYPE](api_ref.md#alias_unlock_type)
-- [NFT\_UNLOCK\_TYPE](api_ref.md#nft_unlock_type)
-- [REFERENCE\_UNLOCK\_TYPE](api_ref.md#reference_unlock_type)
-- [SIGNATURE\_UNLOCK\_TYPE](api_ref.md#signature_unlock_type)
-- [CONFLICT\_REASON\_STRINGS](api_ref.md#conflict_reason_strings)
-- [ED25519\_SEED\_TYPE](api_ref.md#ed25519_seed_type)
+- [MIN_ADDRESS_LENGTH](api_ref.md#min_address_length)
+- [ALIAS_ID_LENGTH](api_ref.md#alias_id_length)
+- [MIN_ALIAS_ADDRESS_LENGTH](api_ref.md#min_alias_address_length)
+- [MIN_ED25519_ADDRESS_LENGTH](api_ref.md#min_ed25519_address_length)
+- [NFT_ID_LENGTH](api_ref.md#nft_id_length)
+- [MIN_NFT_ADDRESS_LENGTH](api_ref.md#min_nft_address_length)
+- [MAX_BLOCK_LENGTH](api_ref.md#max_block_length)
+- [MAX_NUMBER_PARENTS](api_ref.md#max_number_parents)
+- [MIN_NUMBER_PARENTS](api_ref.md#min_number_parents)
+- [UINT8_SIZE](api_ref.md#uint8_size)
+- [UINT16_SIZE](api_ref.md#uint16_size)
+- [UINT32_SIZE](api_ref.md#uint32_size)
+- [UINT64_SIZE](api_ref.md#uint64_size)
+- [UINT256_SIZE](api_ref.md#uint256_size)
+- [BLOCK_ID_LENGTH](api_ref.md#block_id_length)
+- [TRANSACTION_ID_LENGTH](api_ref.md#transaction_id_length)
+- [MERKLE_PROOF_LENGTH](api_ref.md#merkle_proof_length)
+- [TYPE_LENGTH](api_ref.md#type_length)
+- [SMALL_TYPE_LENGTH](api_ref.md#small_type_length)
+- [STRING_LENGTH](api_ref.md#string_length)
+- [ARRAY_LENGTH](api_ref.md#array_length)
+- [MIN_FEATURES_LENGTH](api_ref.md#min_features_length)
+- [MIN_FEATURE_LENGTH](api_ref.md#min_feature_length)
+- [MIN_ISSUER_FEATURE_LENGTH](api_ref.md#min_issuer_feature_length)
+- [MIN_METADATA_FEATURE_LENGTH](api_ref.md#min_metadata_feature_length)
+- [MIN_SENDER_FEATURE_LENGTH](api_ref.md#min_sender_feature_length)
+- [MIN_TAG_FEATURE_LENGTH](api_ref.md#min_tag_feature_length)
+- [TAIL_HASH_LENGTH](api_ref.md#tail_hash_length)
+- [MIN_MIGRATED_FUNDS_LENGTH](api_ref.md#min_migrated_funds_length)
+- [MAX_FUNDS_COUNT](api_ref.md#max_funds_count)
+- [MIN_INPUT_LENGTH](api_ref.md#min_input_length)
+- [MIN_INPUT_COUNT](api_ref.md#min_input_count)
+- [MAX_INPUT_COUNT](api_ref.md#max_input_count)
+- [MIN_TREASURY_INPUT_LENGTH](api_ref.md#min_treasury_input_length)
+- [MIN_UTXO_INPUT_LENGTH](api_ref.md#min_utxo_input_length)
+- [MIN_MILESTONE_OPTION_LENGTH](api_ref.md#min_milestone_option_length)
+- [MIN_PROTOCOL_PARAMS_MILESTONE_OPTION_LENGTH](api_ref.md#min_protocol_params_milestone_option_length)
+- [MIN_RECEIPT_MILESTONE_OPTION_LENGTH](api_ref.md#min_receipt_milestone_option_length)
+- [MIN_ALIAS_OUTPUT_LENGTH](api_ref.md#min_alias_output_length)
+- [MIN_BASIC_OUTPUT_LENGTH](api_ref.md#min_basic_output_length)
+- [MIN_FOUNDRY_OUTPUT_LENGTH](api_ref.md#min_foundry_output_length)
+- [MIN_NFT_OUTPUT_LENGTH](api_ref.md#min_nft_output_length)
+- [MIN_OUTPUT_LENGTH](api_ref.md#min_output_length)
+- [MIN_OUTPUT_COUNT](api_ref.md#min_output_count)
+- [MAX_OUTPUT_COUNT](api_ref.md#max_output_count)
+- [MIN_TREASURY_OUTPUT_LENGTH](api_ref.md#min_treasury_output_length)
+- [MIN_MILESTONE_PAYLOAD_LENGTH](api_ref.md#min_milestone_payload_length)
+- [MIN_PAYLOAD_LENGTH](api_ref.md#min_payload_length)
+- [MIN_TAGGED_DATA_PAYLOAD_LENGTH](api_ref.md#min_tagged_data_payload_length)
+- [MAX_TAG_LENGTH](api_ref.md#max_tag_length)
+- [MIN_TRANSACTION_PAYLOAD_LENGTH](api_ref.md#min_transaction_payload_length)
+- [MIN_TREASURY_TRANSACTION_PAYLOAD_LENGTH](api_ref.md#min_treasury_transaction_payload_length)
+- [MIN_ED25519_SIGNATURE_LENGTH](api_ref.md#min_ed25519_signature_length)
+- [MIN_SIGNATURE_LENGTH](api_ref.md#min_signature_length)
+- [MIN_SIMPLE_TOKEN_SCHEME_LENGTH](api_ref.md#min_simple_token_scheme_length)
+- [MIN_TOKEN_SCHEME_LENGTH](api_ref.md#min_token_scheme_length)
+- [MIN_TRANSACTION_ESSENCE_LENGTH](api_ref.md#min_transaction_essence_length)
+- [MIN_ADDRESS_UNLOCK_CONDITION_LENGTH](api_ref.md#min_address_unlock_condition_length)
+- [MIN_EXPIRATION_UNLOCK_CONDITION_LENGTH](api_ref.md#min_expiration_unlock_condition_length)
+- [MIN_GOVERNOR_ADDRESS_UNLOCK_CONDITION_LENGTH](api_ref.md#min_governor_address_unlock_condition_length)
+- [MIN_IMMUTABLE_ALIAS_UNLOCK_CONDITION_LENGTH](api_ref.md#min_immutable_alias_unlock_condition_length)
+- [MIN_STATE_CONTROLLER_ADDRESS_UNLOCK_CONDITION_LENGTH](api_ref.md#min_state_controller_address_unlock_condition_length)
+- [MIN_STORAGE_DEPOSIT_RETURN_UNLOCK_CONDITION_LENGTH](api_ref.md#min_storage_deposit_return_unlock_condition_length)
+- [MIN_TIMELOCK_UNLOCK_CONDITION_LENGTH](api_ref.md#min_timelock_unlock_condition_length)
+- [MIN_UNLOCK_CONDITIONS_LENGTH](api_ref.md#min_unlock_conditions_length)
+- [MIN_UNLOCK_CONDITION_LENGTH](api_ref.md#min_unlock_condition_length)
+- [MIN_ALIAS_UNLOCK_LENGTH](api_ref.md#min_alias_unlock_length)
+- [MIN_NFT_UNLOCK_LENGTH](api_ref.md#min_nft_unlock_length)
+- [MIN_REFERENCE_UNLOCK_LENGTH](api_ref.md#min_reference_unlock_length)
+- [MIN_SIGNATURE_UNLOCK_LENGTH](api_ref.md#min_signature_unlock_length)
+- [MIN_UNLOCK_LENGTH](api_ref.md#min_unlock_length)
+- [DEFAULT_PROTOCOL_VERSION](api_ref.md#default_protocol_version)
+- [TRANSACTION_ESSENCE_TYPE](api_ref.md#transaction_essence_type)
+- [INPUTS_COMMITMENT_SIZE](api_ref.md#inputs_commitment_size)
+- [ALIAS_ADDRESS_TYPE](api_ref.md#alias_address_type)
+- [ED25519_ADDRESS_TYPE](api_ref.md#ed25519_address_type)
+- [NFT_ADDRESS_TYPE](api_ref.md#nft_address_type)
+- [ISSUER_FEATURE_TYPE](api_ref.md#issuer_feature_type)
+- [METADATA_FEATURE_TYPE](api_ref.md#metadata_feature_type)
+- [SENDER_FEATURE_TYPE](api_ref.md#sender_feature_type)
+- [TAG_FEATURE_TYPE](api_ref.md#tag_feature_type)
+- [TREASURY_INPUT_TYPE](api_ref.md#treasury_input_type)
+- [UTXO_INPUT_TYPE](api_ref.md#utxo_input_type)
+- [PROTOCOL_PARAMETERS_MILESTONE_OPTION_TYPE](api_ref.md#protocol_parameters_milestone_option_type)
+- [RECEIPT_MILESTONE_OPTION_TYPE](api_ref.md#receipt_milestone_option_type)
+- [ALIAS_OUTPUT_TYPE](api_ref.md#alias_output_type)
+- [BASIC_OUTPUT_TYPE](api_ref.md#basic_output_type)
+- [FOUNDRY_OUTPUT_TYPE](api_ref.md#foundry_output_type)
+- [NFT_OUTPUT_TYPE](api_ref.md#nft_output_type)
+- [TREASURY_OUTPUT_TYPE](api_ref.md#treasury_output_type)
+- [MILESTONE_PAYLOAD_TYPE](api_ref.md#milestone_payload_type)
+- [TAGGED_DATA_PAYLOAD_TYPE](api_ref.md#tagged_data_payload_type)
+- [TRANSACTION_PAYLOAD_TYPE](api_ref.md#transaction_payload_type)
+- [TREASURY_TRANSACTION_PAYLOAD_TYPE](api_ref.md#treasury_transaction_payload_type)
+- [ED25519_SIGNATURE_TYPE](api_ref.md#ed25519_signature_type)
+- [SIMPLE_TOKEN_SCHEME_TYPE](api_ref.md#simple_token_scheme_type)
+- [ADDRESS_UNLOCK_CONDITION_TYPE](api_ref.md#address_unlock_condition_type)
+- [EXPIRATION_UNLOCK_CONDITION_TYPE](api_ref.md#expiration_unlock_condition_type)
+- [GOVERNOR_ADDRESS_UNLOCK_CONDITION_TYPE](api_ref.md#governor_address_unlock_condition_type)
+- [IMMUTABLE_ALIAS_UNLOCK_CONDITION_TYPE](api_ref.md#immutable_alias_unlock_condition_type)
+- [STATE_CONTROLLER_ADDRESS_UNLOCK_CONDITION_TYPE](api_ref.md#state_controller_address_unlock_condition_type)
+- [STORAGE_DEPOSIT_RETURN_UNLOCK_CONDITION_TYPE](api_ref.md#storage_deposit_return_unlock_condition_type)
+- [TIMELOCK_UNLOCK_CONDITION_TYPE](api_ref.md#timelock_unlock_condition_type)
+- [ALIAS_UNLOCK_TYPE](api_ref.md#alias_unlock_type)
+- [NFT_UNLOCK_TYPE](api_ref.md#nft_unlock_type)
+- [REFERENCE_UNLOCK_TYPE](api_ref.md#reference_unlock_type)
+- [SIGNATURE_UNLOCK_TYPE](api_ref.md#signature_unlock_type)
+- [CONFLICT_REASON_STRINGS](api_ref.md#conflict_reason_strings)
+- [ED25519_SEED_TYPE](api_ref.md#ed25519_seed_type)
 
 ### Functions
 
@@ -388,873 +389,873 @@ image: /img/client_banner.png
 
 ## Variables
 
-### MIN\_ADDRESS\_LENGTH
+### MIN_ADDRESS_LENGTH
 
-• `Const` **MIN\_ADDRESS\_LENGTH**: `number`
+• `Const` **MIN_ADDRESS_LENGTH**: `number`
 
 The minimum length of an address binary representation.
 
-___
+---
 
-### ALIAS\_ID\_LENGTH
+### ALIAS_ID_LENGTH
 
-• `Const` **ALIAS\_ID\_LENGTH**: `number` = `32`
+• `Const` **ALIAS_ID_LENGTH**: `number` = `32`
 
 The length of an alias id.
 
-___
+---
 
-### MIN\_ALIAS\_ADDRESS\_LENGTH
+### MIN_ALIAS_ADDRESS_LENGTH
 
-• `Const` **MIN\_ALIAS\_ADDRESS\_LENGTH**: `number`
+• `Const` **MIN_ALIAS_ADDRESS_LENGTH**: `number`
 
 The minimum length of an alias address binary representation.
 
-___
+---
 
-### MIN\_ED25519\_ADDRESS\_LENGTH
+### MIN_ED25519_ADDRESS_LENGTH
 
-• `Const` **MIN\_ED25519\_ADDRESS\_LENGTH**: `number`
+• `Const` **MIN_ED25519_ADDRESS_LENGTH**: `number`
 
 The minimum length of an ed25519 address binary representation.
 
-___
+---
 
-### NFT\_ID\_LENGTH
+### NFT_ID_LENGTH
 
-• `Const` **NFT\_ID\_LENGTH**: `number` = `32`
+• `Const` **NFT_ID_LENGTH**: `number` = `32`
 
 The length of an NFT Id.
 
-___
+---
 
-### MIN\_NFT\_ADDRESS\_LENGTH
+### MIN_NFT_ADDRESS_LENGTH
 
-• `Const` **MIN\_NFT\_ADDRESS\_LENGTH**: `number`
+• `Const` **MIN_NFT_ADDRESS_LENGTH**: `number`
 
 The minimum length of an nft address binary representation.
 
-___
+---
 
-### MAX\_BLOCK\_LENGTH
+### MAX_BLOCK_LENGTH
 
-• `Const` **MAX\_BLOCK\_LENGTH**: `number` = `32768`
+• `Const` **MAX_BLOCK_LENGTH**: `number` = `32768`
 
 The maximum length of a block.
 
-___
+---
 
-### MAX\_NUMBER\_PARENTS
+### MAX_NUMBER_PARENTS
 
-• `Const` **MAX\_NUMBER\_PARENTS**: `number` = `8`
+• `Const` **MAX_NUMBER_PARENTS**: `number` = `8`
 
 The maximum number of parents.
 
-___
+---
 
-### MIN\_NUMBER\_PARENTS
+### MIN_NUMBER_PARENTS
 
-• `Const` **MIN\_NUMBER\_PARENTS**: `number` = `1`
+• `Const` **MIN_NUMBER_PARENTS**: `number` = `1`
 
 The minimum number of parents.
 
-___
+---
 
-### UINT8\_SIZE
+### UINT8_SIZE
 
-• `Const` **UINT8\_SIZE**: `number` = `1`
+• `Const` **UINT8_SIZE**: `number` = `1`
 
 Byte length for a uint8 field.
 
-___
+---
 
-### UINT16\_SIZE
+### UINT16_SIZE
 
-• `Const` **UINT16\_SIZE**: `number` = `2`
+• `Const` **UINT16_SIZE**: `number` = `2`
 
 Byte length for a uint16 field.
 
-___
+---
 
-### UINT32\_SIZE
+### UINT32_SIZE
 
-• `Const` **UINT32\_SIZE**: `number` = `4`
+• `Const` **UINT32_SIZE**: `number` = `4`
 
 Byte length for a uint32 field.
 
-___
+---
 
-### UINT64\_SIZE
+### UINT64_SIZE
 
-• `Const` **UINT64\_SIZE**: `number` = `8`
+• `Const` **UINT64_SIZE**: `number` = `8`
 
 Byte length for a uint64 field.
 
-___
+---
 
-### UINT256\_SIZE
+### UINT256_SIZE
 
-• `Const` **UINT256\_SIZE**: `number` = `32`
+• `Const` **UINT256_SIZE**: `number` = `32`
 
 Byte length for a uint256 field.
 
-___
+---
 
-### BLOCK\_ID\_LENGTH
+### BLOCK_ID_LENGTH
 
-• `Const` **BLOCK\_ID\_LENGTH**: `number` = `Blake2b.SIZE_256`
+• `Const` **BLOCK_ID_LENGTH**: `number` = `Blake2b.SIZE_256`
 
 Byte length for a block id.
 
-___
+---
 
-### TRANSACTION\_ID\_LENGTH
+### TRANSACTION_ID_LENGTH
 
-• `Const` **TRANSACTION\_ID\_LENGTH**: `number` = `Blake2b.SIZE_256`
+• `Const` **TRANSACTION_ID_LENGTH**: `number` = `Blake2b.SIZE_256`
 
 Byte length for a transaction id.
 
-___
+---
 
-### MERKLE\_PROOF\_LENGTH
+### MERKLE_PROOF_LENGTH
 
-• `Const` **MERKLE\_PROOF\_LENGTH**: `number` = `Blake2b.SIZE_256`
+• `Const` **MERKLE_PROOF_LENGTH**: `number` = `Blake2b.SIZE_256`
 
 Byte length for a merkle prrof.
 
-___
+---
 
-### TYPE\_LENGTH
+### TYPE_LENGTH
 
-• `Const` **TYPE\_LENGTH**: `number` = `UINT32_SIZE`
+• `Const` **TYPE_LENGTH**: `number` = `UINT32_SIZE`
 
 Byte length for a type length.
 
-___
+---
 
-### SMALL\_TYPE\_LENGTH
+### SMALL_TYPE_LENGTH
 
-• `Const` **SMALL\_TYPE\_LENGTH**: `number` = `UINT8_SIZE`
+• `Const` **SMALL_TYPE_LENGTH**: `number` = `UINT8_SIZE`
 
 Byte length for a small type length.
 
-___
+---
 
-### STRING\_LENGTH
+### STRING_LENGTH
 
-• `Const` **STRING\_LENGTH**: `number` = `UINT16_SIZE`
+• `Const` **STRING_LENGTH**: `number` = `UINT16_SIZE`
 
 Byte length for a string length.
 
-___
+---
 
-### ARRAY\_LENGTH
+### ARRAY_LENGTH
 
-• `Const` **ARRAY\_LENGTH**: `number` = `UINT16_SIZE`
+• `Const` **ARRAY_LENGTH**: `number` = `UINT16_SIZE`
 
 Byte length for an array length.
 
-___
+---
 
-### MIN\_FEATURES\_LENGTH
+### MIN_FEATURES_LENGTH
 
-• `Const` **MIN\_FEATURES\_LENGTH**: `number` = `UINT8_SIZE`
+• `Const` **MIN_FEATURES_LENGTH**: `number` = `UINT8_SIZE`
 
 The minimum length of a featurs tokens list.
 
-___
+---
 
-### MIN\_FEATURE\_LENGTH
+### MIN_FEATURE_LENGTH
 
-• `Const` **MIN\_FEATURE\_LENGTH**: `number`
+• `Const` **MIN_FEATURE_LENGTH**: `number`
 
 The minimum length of a feature binary representation.
 
-___
+---
 
-### MIN\_ISSUER\_FEATURE\_LENGTH
+### MIN_ISSUER_FEATURE_LENGTH
 
-• `Const` **MIN\_ISSUER\_FEATURE\_LENGTH**: `number`
+• `Const` **MIN_ISSUER_FEATURE_LENGTH**: `number`
 
 The minimum length of a issuer feature binary representation.
 
-___
+---
 
-### MIN\_METADATA\_FEATURE\_LENGTH
+### MIN_METADATA_FEATURE_LENGTH
 
-• `Const` **MIN\_METADATA\_FEATURE\_LENGTH**: `number`
+• `Const` **MIN_METADATA_FEATURE_LENGTH**: `number`
 
 The minimum length of a metadata feature block binary representation.
 
-___
+---
 
-### MIN\_SENDER\_FEATURE\_LENGTH
+### MIN_SENDER_FEATURE_LENGTH
 
-• `Const` **MIN\_SENDER\_FEATURE\_LENGTH**: `number`
+• `Const` **MIN_SENDER_FEATURE_LENGTH**: `number`
 
 The minimum length of a sender feature binary representation.
 
-___
+---
 
-### MIN\_TAG\_FEATURE\_LENGTH
+### MIN_TAG_FEATURE_LENGTH
 
-• `Const` **MIN\_TAG\_FEATURE\_LENGTH**: `number`
+• `Const` **MIN_TAG_FEATURE_LENGTH**: `number`
 
 The minimum length of a tag feature binary representation.
 
-___
+---
 
-### TAIL\_HASH\_LENGTH
+### TAIL_HASH_LENGTH
 
-• `Const` **TAIL\_HASH\_LENGTH**: `number` = `49`
+• `Const` **TAIL_HASH_LENGTH**: `number` = `49`
 
 The length of the tail hash length in bytes.
 
-___
+---
 
-### MIN\_MIGRATED\_FUNDS\_LENGTH
+### MIN_MIGRATED_FUNDS_LENGTH
 
-• `Const` **MIN\_MIGRATED\_FUNDS\_LENGTH**: `number`
+• `Const` **MIN_MIGRATED_FUNDS_LENGTH**: `number`
 
 The minimum length of a migrated fund binary representation.
 
-___
+---
 
-### MAX\_FUNDS\_COUNT
+### MAX_FUNDS_COUNT
 
-• `Const` **MAX\_FUNDS\_COUNT**: `number` = `127`
+• `Const` **MAX_FUNDS_COUNT**: `number` = `127`
 
 The maximum number of funds.
 
-___
+---
 
-### MIN\_INPUT\_LENGTH
+### MIN_INPUT_LENGTH
 
-• `Const` **MIN\_INPUT\_LENGTH**: `number`
+• `Const` **MIN_INPUT_LENGTH**: `number`
 
 The minimum length of an input binary representation.
 
-___
+---
 
-### MIN\_INPUT\_COUNT
+### MIN_INPUT_COUNT
 
-• `Const` **MIN\_INPUT\_COUNT**: `number` = `1`
+• `Const` **MIN_INPUT_COUNT**: `number` = `1`
 
 The minimum number of inputs.
 
-___
+---
 
-### MAX\_INPUT\_COUNT
+### MAX_INPUT_COUNT
 
-• `Const` **MAX\_INPUT\_COUNT**: `number` = `128`
+• `Const` **MAX_INPUT_COUNT**: `number` = `128`
 
 The maximum number of inputs.
 
-___
+---
 
-### MIN\_TREASURY\_INPUT\_LENGTH
+### MIN_TREASURY_INPUT_LENGTH
 
-• `Const` **MIN\_TREASURY\_INPUT\_LENGTH**: `number`
+• `Const` **MIN_TREASURY_INPUT_LENGTH**: `number`
 
 The minimum length of a treasury input binary representation.
 
-___
+---
 
-### MIN\_UTXO\_INPUT\_LENGTH
+### MIN_UTXO_INPUT_LENGTH
 
-• `Const` **MIN\_UTXO\_INPUT\_LENGTH**: `number`
+• `Const` **MIN_UTXO_INPUT_LENGTH**: `number`
 
 The minimum length of a utxo input binary representation.
 
-___
+---
 
-### MIN\_MILESTONE\_OPTION\_LENGTH
+### MIN_MILESTONE_OPTION_LENGTH
 
-• `Const` **MIN\_MILESTONE\_OPTION\_LENGTH**: `number`
+• `Const` **MIN_MILESTONE_OPTION_LENGTH**: `number`
 
 The minimum length of a milestone option binary representation.
 
-___
+---
 
-### MIN\_PROTOCOL\_PARAMS\_MILESTONE\_OPTION\_LENGTH
+### MIN_PROTOCOL_PARAMS_MILESTONE_OPTION_LENGTH
 
-• `Const` **MIN\_PROTOCOL\_PARAMS\_MILESTONE\_OPTION\_LENGTH**: `number`
+• `Const` **MIN_PROTOCOL_PARAMS_MILESTONE_OPTION_LENGTH**: `number`
 
 The minimum length of a protocol params milestone option binary representation.
 
-___
+---
 
-### MIN\_RECEIPT\_MILESTONE\_OPTION\_LENGTH
+### MIN_RECEIPT_MILESTONE_OPTION_LENGTH
 
-• `Const` **MIN\_RECEIPT\_MILESTONE\_OPTION\_LENGTH**: `number`
+• `Const` **MIN_RECEIPT_MILESTONE_OPTION_LENGTH**: `number`
 
 The minimum length of a receipt milestone option binary representation.
 
-___
+---
 
-### MIN\_ALIAS\_OUTPUT\_LENGTH
+### MIN_ALIAS_OUTPUT_LENGTH
 
-• `Const` **MIN\_ALIAS\_OUTPUT\_LENGTH**: `number`
+• `Const` **MIN_ALIAS_OUTPUT_LENGTH**: `number`
 
 The minimum length of a alias output binary representation.
 
-___
+---
 
-### MIN\_BASIC\_OUTPUT\_LENGTH
+### MIN_BASIC_OUTPUT_LENGTH
 
-• `Const` **MIN\_BASIC\_OUTPUT\_LENGTH**: `number`
+• `Const` **MIN_BASIC_OUTPUT_LENGTH**: `number`
 
 The minimum length of a basic output binary representation.
 
-___
+---
 
-### MIN\_FOUNDRY\_OUTPUT\_LENGTH
+### MIN_FOUNDRY_OUTPUT_LENGTH
 
-• `Const` **MIN\_FOUNDRY\_OUTPUT\_LENGTH**: `number`
+• `Const` **MIN_FOUNDRY_OUTPUT_LENGTH**: `number`
 
 The minimum length of a foundry output binary representation.
 
-___
+---
 
-### MIN\_NFT\_OUTPUT\_LENGTH
+### MIN_NFT_OUTPUT_LENGTH
 
-• `Const` **MIN\_NFT\_OUTPUT\_LENGTH**: `number`
+• `Const` **MIN_NFT_OUTPUT_LENGTH**: `number`
 
 The minimum length of a nft output binary representation.
 
-___
+---
 
-### MIN\_OUTPUT\_LENGTH
+### MIN_OUTPUT_LENGTH
 
-• `Const` **MIN\_OUTPUT\_LENGTH**: `number`
+• `Const` **MIN_OUTPUT_LENGTH**: `number`
 
 The minimum length of an output binary representation.
 
-___
+---
 
-### MIN\_OUTPUT\_COUNT
+### MIN_OUTPUT_COUNT
 
-• `Const` **MIN\_OUTPUT\_COUNT**: `number` = `1`
+• `Const` **MIN_OUTPUT_COUNT**: `number` = `1`
 
 The minimum number of outputs.
 
-___
+---
 
-### MAX\_OUTPUT\_COUNT
+### MAX_OUTPUT_COUNT
 
-• `Const` **MAX\_OUTPUT\_COUNT**: `number` = `128`
+• `Const` **MAX_OUTPUT_COUNT**: `number` = `128`
 
 The maximum number of outputs.
 
-___
+---
 
-### MIN\_TREASURY\_OUTPUT\_LENGTH
+### MIN_TREASURY_OUTPUT_LENGTH
 
-• `Const` **MIN\_TREASURY\_OUTPUT\_LENGTH**: `number`
+• `Const` **MIN_TREASURY_OUTPUT_LENGTH**: `number`
 
 The minimum length of a treasury output binary representation.
 
-___
+---
 
-### MIN\_MILESTONE\_PAYLOAD\_LENGTH
+### MIN_MILESTONE_PAYLOAD_LENGTH
 
-• `Const` **MIN\_MILESTONE\_PAYLOAD\_LENGTH**: `number`
+• `Const` **MIN_MILESTONE_PAYLOAD_LENGTH**: `number`
 
 The minimum length of a milestone payload binary representation.
 
-___
+---
 
-### MIN\_PAYLOAD\_LENGTH
+### MIN_PAYLOAD_LENGTH
 
-• `Const` **MIN\_PAYLOAD\_LENGTH**: `number`
+• `Const` **MIN_PAYLOAD_LENGTH**: `number`
 
 The minimum length of a payload binary representation.
 
-___
+---
 
-### MIN\_TAGGED\_DATA\_PAYLOAD\_LENGTH
+### MIN_TAGGED_DATA_PAYLOAD_LENGTH
 
-• `Const` **MIN\_TAGGED\_DATA\_PAYLOAD\_LENGTH**: `number`
+• `Const` **MIN_TAGGED_DATA_PAYLOAD_LENGTH**: `number`
 
 The minimum length of a tagged data payload binary representation.
 
-___
+---
 
-### MAX\_TAG\_LENGTH
+### MAX_TAG_LENGTH
 
-• `Const` **MAX\_TAG\_LENGTH**: `number` = `64`
+• `Const` **MAX_TAG_LENGTH**: `number` = `64`
 
 The maximum length of a tag.
 
-___
+---
 
-### MIN\_TRANSACTION\_PAYLOAD\_LENGTH
+### MIN_TRANSACTION_PAYLOAD_LENGTH
 
-• `Const` **MIN\_TRANSACTION\_PAYLOAD\_LENGTH**: `number`
+• `Const` **MIN_TRANSACTION_PAYLOAD_LENGTH**: `number`
 
 The minimum length of a transaction payload binary representation.
 
-___
+---
 
-### MIN\_TREASURY\_TRANSACTION\_PAYLOAD\_LENGTH
+### MIN_TREASURY_TRANSACTION_PAYLOAD_LENGTH
 
-• `Const` **MIN\_TREASURY\_TRANSACTION\_PAYLOAD\_LENGTH**: `number`
+• `Const` **MIN_TREASURY_TRANSACTION_PAYLOAD_LENGTH**: `number`
 
 The minimum length of a treasury transaction payload binary representation.
 
-___
+---
 
-### MIN\_ED25519\_SIGNATURE\_LENGTH
+### MIN_ED25519_SIGNATURE_LENGTH
 
-• `Const` **MIN\_ED25519\_SIGNATURE\_LENGTH**: `number`
+• `Const` **MIN_ED25519_SIGNATURE_LENGTH**: `number`
 
 The minimum length of an ed25519 signature binary representation.
 
-___
+---
 
-### MIN\_SIGNATURE\_LENGTH
+### MIN_SIGNATURE_LENGTH
 
-• `Const` **MIN\_SIGNATURE\_LENGTH**: `number` = `MIN_ED25519_SIGNATURE_LENGTH`
+• `Const` **MIN_SIGNATURE_LENGTH**: `number` = `MIN_ED25519_SIGNATURE_LENGTH`
 
 The minimum length of a signature binary representation.
 
-___
+---
 
-### MIN\_SIMPLE\_TOKEN\_SCHEME\_LENGTH
+### MIN_SIMPLE_TOKEN_SCHEME_LENGTH
 
-• `Const` **MIN\_SIMPLE\_TOKEN\_SCHEME\_LENGTH**: `number`
+• `Const` **MIN_SIMPLE_TOKEN_SCHEME_LENGTH**: `number`
 
 The minimum length of an simple token scheme binary representation.
 
-___
+---
 
-### MIN\_TOKEN\_SCHEME\_LENGTH
+### MIN_TOKEN_SCHEME_LENGTH
 
-• `Const` **MIN\_TOKEN\_SCHEME\_LENGTH**: `number` = `MIN_SIMPLE_TOKEN_SCHEME_LENGTH`
+• `Const` **MIN_TOKEN_SCHEME_LENGTH**: `number` = `MIN_SIMPLE_TOKEN_SCHEME_LENGTH`
 
 The minimum length of a simple token scheme binary representation.
 
-___
+---
 
-### MIN\_TRANSACTION\_ESSENCE\_LENGTH
+### MIN_TRANSACTION_ESSENCE_LENGTH
 
-• `Const` **MIN\_TRANSACTION\_ESSENCE\_LENGTH**: `number`
+• `Const` **MIN_TRANSACTION_ESSENCE_LENGTH**: `number`
 
 The minimum length of a transaction essence binary representation.
 
-___
+---
 
-### MIN\_ADDRESS\_UNLOCK\_CONDITION\_LENGTH
+### MIN_ADDRESS_UNLOCK_CONDITION_LENGTH
 
-• `Const` **MIN\_ADDRESS\_UNLOCK\_CONDITION\_LENGTH**: `number`
+• `Const` **MIN_ADDRESS_UNLOCK_CONDITION_LENGTH**: `number`
 
 The minimum length of an address unlock condition binary representation.
 
-___
+---
 
-### MIN\_EXPIRATION\_UNLOCK\_CONDITION\_LENGTH
+### MIN_EXPIRATION_UNLOCK_CONDITION_LENGTH
 
-• `Const` **MIN\_EXPIRATION\_UNLOCK\_CONDITION\_LENGTH**: `number`
+• `Const` **MIN_EXPIRATION_UNLOCK_CONDITION_LENGTH**: `number`
 
 The minimum length of an expiration unlock condition binary representation.
 
-___
+---
 
-### MIN\_GOVERNOR\_ADDRESS\_UNLOCK\_CONDITION\_LENGTH
+### MIN_GOVERNOR_ADDRESS_UNLOCK_CONDITION_LENGTH
 
-• `Const` **MIN\_GOVERNOR\_ADDRESS\_UNLOCK\_CONDITION\_LENGTH**: `number`
+• `Const` **MIN_GOVERNOR_ADDRESS_UNLOCK_CONDITION_LENGTH**: `number`
 
 The minimum length of an governor unlock condition binary representation.
 
-___
+---
 
-### MIN\_IMMUTABLE\_ALIAS\_UNLOCK\_CONDITION\_LENGTH
+### MIN_IMMUTABLE_ALIAS_UNLOCK_CONDITION_LENGTH
 
-• `Const` **MIN\_IMMUTABLE\_ALIAS\_UNLOCK\_CONDITION\_LENGTH**: `number`
+• `Const` **MIN_IMMUTABLE_ALIAS_UNLOCK_CONDITION_LENGTH**: `number`
 
 The minimum length of an immutable alias unlock condition binary representation.
 
-___
+---
 
-### MIN\_STATE\_CONTROLLER\_ADDRESS\_UNLOCK\_CONDITION\_LENGTH
+### MIN_STATE_CONTROLLER_ADDRESS_UNLOCK_CONDITION_LENGTH
 
-• `Const` **MIN\_STATE\_CONTROLLER\_ADDRESS\_UNLOCK\_CONDITION\_LENGTH**: `number`
+• `Const` **MIN_STATE_CONTROLLER_ADDRESS_UNLOCK_CONDITION_LENGTH**: `number`
 
 The minimum length of an state controller address unlock condition binary representation.
 
-___
+---
 
-### MIN\_STORAGE\_DEPOSIT\_RETURN\_UNLOCK\_CONDITION\_LENGTH
+### MIN_STORAGE_DEPOSIT_RETURN_UNLOCK_CONDITION_LENGTH
 
-• `Const` **MIN\_STORAGE\_DEPOSIT\_RETURN\_UNLOCK\_CONDITION\_LENGTH**: `number`
+• `Const` **MIN_STORAGE_DEPOSIT_RETURN_UNLOCK_CONDITION_LENGTH**: `number`
 
 The minimum length of an storage deposit return unlock condition binary representation.
 
-___
+---
 
-### MIN\_TIMELOCK\_UNLOCK\_CONDITION\_LENGTH
+### MIN_TIMELOCK_UNLOCK_CONDITION_LENGTH
 
-• `Const` **MIN\_TIMELOCK\_UNLOCK\_CONDITION\_LENGTH**: `number`
+• `Const` **MIN_TIMELOCK_UNLOCK_CONDITION_LENGTH**: `number`
 
 The minimum length of an timelock unlock condition binary representation.
 
-___
+---
 
-### MIN\_UNLOCK\_CONDITIONS\_LENGTH
+### MIN_UNLOCK_CONDITIONS_LENGTH
 
-• `Const` **MIN\_UNLOCK\_CONDITIONS\_LENGTH**: `number` = `UINT8_SIZE`
+• `Const` **MIN_UNLOCK_CONDITIONS_LENGTH**: `number` = `UINT8_SIZE`
 
 The minimum length of a unlock conditions list.
 
-___
+---
 
-### MIN\_UNLOCK\_CONDITION\_LENGTH
+### MIN_UNLOCK_CONDITION_LENGTH
 
-• `Const` **MIN\_UNLOCK\_CONDITION\_LENGTH**: `number`
+• `Const` **MIN_UNLOCK_CONDITION_LENGTH**: `number`
 
 The minimum length of a unlock conditions binary representation.
 
-___
+---
 
-### MIN\_ALIAS\_UNLOCK\_LENGTH
+### MIN_ALIAS_UNLOCK_LENGTH
 
-• `Const` **MIN\_ALIAS\_UNLOCK\_LENGTH**: `number`
+• `Const` **MIN_ALIAS_UNLOCK_LENGTH**: `number`
 
 The minimum length of a alias unlock binary representation.
 
-___
+---
 
-### MIN\_NFT\_UNLOCK\_LENGTH
+### MIN_NFT_UNLOCK_LENGTH
 
-• `Const` **MIN\_NFT\_UNLOCK\_LENGTH**: `number`
+• `Const` **MIN_NFT_UNLOCK_LENGTH**: `number`
 
 The minimum length of a nft unlock binary representation.
 
-___
+---
 
-### MIN\_REFERENCE\_UNLOCK\_LENGTH
+### MIN_REFERENCE_UNLOCK_LENGTH
 
-• `Const` **MIN\_REFERENCE\_UNLOCK\_LENGTH**: `number`
+• `Const` **MIN_REFERENCE_UNLOCK_LENGTH**: `number`
 
 The minimum length of a reference unlock binary representation.
 
-___
+---
 
-### MIN\_SIGNATURE\_UNLOCK\_LENGTH
+### MIN_SIGNATURE_UNLOCK_LENGTH
 
-• `Const` **MIN\_SIGNATURE\_UNLOCK\_LENGTH**: `number`
+• `Const` **MIN_SIGNATURE_UNLOCK_LENGTH**: `number`
 
 The minimum length of a signature unlock binary representation.
 
-___
+---
 
-### MIN\_UNLOCK\_LENGTH
+### MIN_UNLOCK_LENGTH
 
-• `Const` **MIN\_UNLOCK\_LENGTH**: `number`
+• `Const` **MIN_UNLOCK_LENGTH**: `number`
 
 The minimum length of an unlock binary representation.
 
-___
+---
 
-### DEFAULT\_PROTOCOL\_VERSION
+### DEFAULT_PROTOCOL_VERSION
 
-• `Const` **DEFAULT\_PROTOCOL\_VERSION**: `number` = `2`
+• `Const` **DEFAULT_PROTOCOL_VERSION**: `number` = `2`
 
 The default protocol version.
 
-___
+---
 
-### TRANSACTION\_ESSENCE\_TYPE
+### TRANSACTION_ESSENCE_TYPE
 
-• `Const` **TRANSACTION\_ESSENCE\_TYPE**: ``1``
+• `Const` **TRANSACTION_ESSENCE_TYPE**: `1`
 
 The global type for the transaction essence.
 
-___
+---
 
-### INPUTS\_COMMITMENT\_SIZE
+### INPUTS_COMMITMENT_SIZE
 
-• `Const` **INPUTS\_COMMITMENT\_SIZE**: `number` = `Blake2b.SIZE_256`
+• `Const` **INPUTS_COMMITMENT_SIZE**: `number` = `Blake2b.SIZE_256`
 
 Inputs commitment size.
 
-___
+---
 
-### ALIAS\_ADDRESS\_TYPE
+### ALIAS_ADDRESS_TYPE
 
-• `Const` **ALIAS\_ADDRESS\_TYPE**: ``8``
+• `Const` **ALIAS_ADDRESS_TYPE**: `8`
 
 The global type for the alias address type.
 
-___
+---
 
-### ED25519\_ADDRESS\_TYPE
+### ED25519_ADDRESS_TYPE
 
-• `Const` **ED25519\_ADDRESS\_TYPE**: ``0``
+• `Const` **ED25519_ADDRESS_TYPE**: `0`
 
 The global type for the ed25519 address type.
 
-___
+---
 
-### NFT\_ADDRESS\_TYPE
+### NFT_ADDRESS_TYPE
 
-• `Const` **NFT\_ADDRESS\_TYPE**: ``16``
+• `Const` **NFT_ADDRESS_TYPE**: `16`
 
 The global type for the NFT address type.
 
-___
+---
 
-### ISSUER\_FEATURE\_TYPE
+### ISSUER_FEATURE_TYPE
 
-• `Const` **ISSUER\_FEATURE\_TYPE**: ``1``
+• `Const` **ISSUER_FEATURE_TYPE**: `1`
 
 The global type for the issuer feature.
 
-___
+---
 
-### METADATA\_FEATURE\_TYPE
+### METADATA_FEATURE_TYPE
 
-• `Const` **METADATA\_FEATURE\_TYPE**: ``2``
+• `Const` **METADATA_FEATURE_TYPE**: `2`
 
 The global type for the metadata feature.
 
-___
+---
 
-### SENDER\_FEATURE\_TYPE
+### SENDER_FEATURE_TYPE
 
-• `Const` **SENDER\_FEATURE\_TYPE**: ``0``
+• `Const` **SENDER_FEATURE_TYPE**: `0`
 
 The global type for the sender feature.
 
-___
+---
 
-### TAG\_FEATURE\_TYPE
+### TAG_FEATURE_TYPE
 
-• `Const` **TAG\_FEATURE\_TYPE**: ``3``
+• `Const` **TAG_FEATURE_TYPE**: `3`
 
 The global type for the tag feature.
 
-___
+---
 
-### TREASURY\_INPUT\_TYPE
+### TREASURY_INPUT_TYPE
 
-• `Const` **TREASURY\_INPUT\_TYPE**: ``1``
+• `Const` **TREASURY_INPUT_TYPE**: `1`
 
 The global type for the treasury input.
 
-___
+---
 
-### UTXO\_INPUT\_TYPE
+### UTXO_INPUT_TYPE
 
-• `Const` **UTXO\_INPUT\_TYPE**: ``0``
+• `Const` **UTXO_INPUT_TYPE**: `0`
 
 The global type for the input.
 
-___
+---
 
-### PROTOCOL\_PARAMETERS\_MILESTONE\_OPTION\_TYPE
+### PROTOCOL_PARAMETERS_MILESTONE_OPTION_TYPE
 
-• `Const` **PROTOCOL\_PARAMETERS\_MILESTONE\_OPTION\_TYPE**: ``1``
-
-The global type for the option.
-
-___
-
-### RECEIPT\_MILESTONE\_OPTION\_TYPE
-
-• `Const` **RECEIPT\_MILESTONE\_OPTION\_TYPE**: ``0``
+• `Const` **PROTOCOL_PARAMETERS_MILESTONE_OPTION_TYPE**: `1`
 
 The global type for the option.
 
-___
+---
 
-### ALIAS\_OUTPUT\_TYPE
+### RECEIPT_MILESTONE_OPTION_TYPE
 
-• `Const` **ALIAS\_OUTPUT\_TYPE**: ``4``
+• `Const` **RECEIPT_MILESTONE_OPTION_TYPE**: `0`
+
+The global type for the option.
+
+---
+
+### ALIAS_OUTPUT_TYPE
+
+• `Const` **ALIAS_OUTPUT_TYPE**: `4`
 
 The global type for the alias output.
 
-___
+---
 
-### BASIC\_OUTPUT\_TYPE
+### BASIC_OUTPUT_TYPE
 
-• `Const` **BASIC\_OUTPUT\_TYPE**: ``3``
+• `Const` **BASIC_OUTPUT_TYPE**: `3`
 
 The global type for the basic output.
 
-___
+---
 
-### FOUNDRY\_OUTPUT\_TYPE
+### FOUNDRY_OUTPUT_TYPE
 
-• `Const` **FOUNDRY\_OUTPUT\_TYPE**: ``5``
+• `Const` **FOUNDRY_OUTPUT_TYPE**: `5`
 
 The global type for the foundry output.
 
-___
+---
 
-### NFT\_OUTPUT\_TYPE
+### NFT_OUTPUT_TYPE
 
-• `Const` **NFT\_OUTPUT\_TYPE**: ``6``
+• `Const` **NFT_OUTPUT_TYPE**: `6`
 
 The global type for the NFT output.
 
-___
+---
 
-### TREASURY\_OUTPUT\_TYPE
+### TREASURY_OUTPUT_TYPE
 
-• `Const` **TREASURY\_OUTPUT\_TYPE**: ``2``
+• `Const` **TREASURY_OUTPUT_TYPE**: `2`
 
 The global type for the treasury output.
 
-___
+---
 
-### MILESTONE\_PAYLOAD\_TYPE
+### MILESTONE_PAYLOAD_TYPE
 
-• `Const` **MILESTONE\_PAYLOAD\_TYPE**: ``7``
-
-The global type for the payload.
-
-___
-
-### TAGGED\_DATA\_PAYLOAD\_TYPE
-
-• `Const` **TAGGED\_DATA\_PAYLOAD\_TYPE**: ``5``
+• `Const` **MILESTONE_PAYLOAD_TYPE**: `7`
 
 The global type for the payload.
 
-___
+---
 
-### TRANSACTION\_PAYLOAD\_TYPE
+### TAGGED_DATA_PAYLOAD_TYPE
 
-• `Const` **TRANSACTION\_PAYLOAD\_TYPE**: ``6``
-
-The global type for the payload.
-
-___
-
-### TREASURY\_TRANSACTION\_PAYLOAD\_TYPE
-
-• `Const` **TREASURY\_TRANSACTION\_PAYLOAD\_TYPE**: ``4``
+• `Const` **TAGGED_DATA_PAYLOAD_TYPE**: `5`
 
 The global type for the payload.
 
-___
+---
 
-### ED25519\_SIGNATURE\_TYPE
+### TRANSACTION_PAYLOAD_TYPE
 
-• `Const` **ED25519\_SIGNATURE\_TYPE**: ``0``
+• `Const` **TRANSACTION_PAYLOAD_TYPE**: `6`
+
+The global type for the payload.
+
+---
+
+### TREASURY_TRANSACTION_PAYLOAD_TYPE
+
+• `Const` **TREASURY_TRANSACTION_PAYLOAD_TYPE**: `4`
+
+The global type for the payload.
+
+---
+
+### ED25519_SIGNATURE_TYPE
+
+• `Const` **ED25519_SIGNATURE_TYPE**: `0`
 
 The global type for the signature type.
 
-___
+---
 
-### SIMPLE\_TOKEN\_SCHEME\_TYPE
+### SIMPLE_TOKEN_SCHEME_TYPE
 
-• `Const` **SIMPLE\_TOKEN\_SCHEME\_TYPE**: ``0``
+• `Const` **SIMPLE_TOKEN_SCHEME_TYPE**: `0`
 
 The global type for the simple token scheme.
 
-___
+---
 
-### ADDRESS\_UNLOCK\_CONDITION\_TYPE
+### ADDRESS_UNLOCK_CONDITION_TYPE
 
-• `Const` **ADDRESS\_UNLOCK\_CONDITION\_TYPE**: ``0``
+• `Const` **ADDRESS_UNLOCK_CONDITION_TYPE**: `0`
 
 The global type for the address unlock condition.
 
-___
+---
 
-### EXPIRATION\_UNLOCK\_CONDITION\_TYPE
+### EXPIRATION_UNLOCK_CONDITION_TYPE
 
-• `Const` **EXPIRATION\_UNLOCK\_CONDITION\_TYPE**: ``3``
+• `Const` **EXPIRATION_UNLOCK_CONDITION_TYPE**: `3`
 
 The global type for the expiration unlock condition.
 
-___
+---
 
-### GOVERNOR\_ADDRESS\_UNLOCK\_CONDITION\_TYPE
+### GOVERNOR_ADDRESS_UNLOCK_CONDITION_TYPE
 
-• `Const` **GOVERNOR\_ADDRESS\_UNLOCK\_CONDITION\_TYPE**: ``5``
+• `Const` **GOVERNOR_ADDRESS_UNLOCK_CONDITION_TYPE**: `5`
 
 The global type for the governor address unlock condition.
 
-___
+---
 
-### IMMUTABLE\_ALIAS\_UNLOCK\_CONDITION\_TYPE
+### IMMUTABLE_ALIAS_UNLOCK_CONDITION_TYPE
 
-• `Const` **IMMUTABLE\_ALIAS\_UNLOCK\_CONDITION\_TYPE**: ``6``
+• `Const` **IMMUTABLE_ALIAS_UNLOCK_CONDITION_TYPE**: `6`
 
 The global type for the immutable alias unlock condition.
 
-___
+---
 
-### STATE\_CONTROLLER\_ADDRESS\_UNLOCK\_CONDITION\_TYPE
+### STATE_CONTROLLER_ADDRESS_UNLOCK_CONDITION_TYPE
 
-• `Const` **STATE\_CONTROLLER\_ADDRESS\_UNLOCK\_CONDITION\_TYPE**: ``4``
+• `Const` **STATE_CONTROLLER_ADDRESS_UNLOCK_CONDITION_TYPE**: `4`
 
 The global type for the state controller unlock condition.
 
-___
+---
 
-### STORAGE\_DEPOSIT\_RETURN\_UNLOCK\_CONDITION\_TYPE
+### STORAGE_DEPOSIT_RETURN_UNLOCK_CONDITION_TYPE
 
-• `Const` **STORAGE\_DEPOSIT\_RETURN\_UNLOCK\_CONDITION\_TYPE**: ``1``
+• `Const` **STORAGE_DEPOSIT_RETURN_UNLOCK_CONDITION_TYPE**: `1`
 
 The global type for the storage deposit return unlock condition.
 
-___
+---
 
-### TIMELOCK\_UNLOCK\_CONDITION\_TYPE
+### TIMELOCK_UNLOCK_CONDITION_TYPE
 
-• `Const` **TIMELOCK\_UNLOCK\_CONDITION\_TYPE**: ``2``
+• `Const` **TIMELOCK_UNLOCK_CONDITION_TYPE**: `2`
 
 The global type for the timelock unlock condition.
 
-___
+---
 
-### ALIAS\_UNLOCK\_TYPE
+### ALIAS_UNLOCK_TYPE
 
-• `Const` **ALIAS\_UNLOCK\_TYPE**: ``2``
+• `Const` **ALIAS_UNLOCK_TYPE**: `2`
 
 The global type for the alias unlock.
 
-___
+---
 
-### NFT\_UNLOCK\_TYPE
+### NFT_UNLOCK_TYPE
 
-• `Const` **NFT\_UNLOCK\_TYPE**: ``3``
+• `Const` **NFT_UNLOCK_TYPE**: `3`
 
 The global type for the NFT unlock.
 
-___
+---
 
-### REFERENCE\_UNLOCK\_TYPE
+### REFERENCE_UNLOCK_TYPE
 
-• `Const` **REFERENCE\_UNLOCK\_TYPE**: ``1``
+• `Const` **REFERENCE_UNLOCK_TYPE**: `1`
 
 The global type for the reference unlock.
 
-___
+---
 
-### SIGNATURE\_UNLOCK\_TYPE
+### SIGNATURE_UNLOCK_TYPE
 
-• `Const` **SIGNATURE\_UNLOCK\_TYPE**: ``0``
+• `Const` **SIGNATURE_UNLOCK_TYPE**: `0`
 
 The global type for the unlock.
 
-___
+---
 
-### CONFLICT\_REASON\_STRINGS
+### CONFLICT_REASON_STRINGS
 
-• `Const` **CONFLICT\_REASON\_STRINGS**: { [key in ConflictReason]: string }
+• `Const` **CONFLICT_REASON_STRINGS**: { [key in ConflictReason]: string }
 
 Conflict reason strings.
 
-___
+---
 
-### ED25519\_SEED\_TYPE
+### ED25519_SEED_TYPE
 
-• `Const` **ED25519\_SEED\_TYPE**: `number` = `1`
+• `Const` **ED25519_SEED_TYPE**: `number` = `1`
 
 The global type for the seed.
 
@@ -1268,8 +1269,8 @@ Deserialize the address from binary.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name         | Type         | Description                       |
+| :----------- | :----------- | :-------------------------------- |
 | `readStream` | `ReadStream` | The stream to read the data from. |
 
 #### Returns
@@ -1278,7 +1279,7 @@ Deserialize the address from binary.
 
 The deserialized object.
 
-___
+---
 
 ### serializeAddress
 
@@ -1288,16 +1289,16 @@ Serialize the address to binary.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `writeStream` | `WriteStream` | The stream to write the data to. |
-| `object` | [`ITypeBase`](interfaces/ITypeBase.md)<`number`\> | The object to serialize. |
+| Name          | Type                                              | Description                      |
+| :------------ | :------------------------------------------------ | :------------------------------- |
+| `writeStream` | `WriteStream`                                     | The stream to write the data to. |
+| `object`      | [`ITypeBase`](interfaces/ITypeBase.md)<`number`\> | The object to serialize.         |
 
 #### Returns
 
 `void`
 
-___
+---
 
 ### deserializeAliasAddress
 
@@ -1307,8 +1308,8 @@ Deserialize the alias address from binary.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name         | Type         | Description                       |
+| :----------- | :----------- | :-------------------------------- |
 | `readStream` | `ReadStream` | The stream to read the data from. |
 
 #### Returns
@@ -1317,7 +1318,7 @@ Deserialize the alias address from binary.
 
 The deserialized object.
 
-___
+---
 
 ### serializeAliasAddress
 
@@ -1327,16 +1328,16 @@ Serialize the alias address to binary.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `writeStream` | `WriteStream` | The stream to write the data to. |
-| `object` | [`IAliasAddress`](interfaces/IAliasAddress.md) | The object to serialize. |
+| Name          | Type                                           | Description                      |
+| :------------ | :--------------------------------------------- | :------------------------------- |
+| `writeStream` | `WriteStream`                                  | The stream to write the data to. |
+| `object`      | [`IAliasAddress`](interfaces/IAliasAddress.md) | The object to serialize.         |
 
 #### Returns
 
 `void`
 
-___
+---
 
 ### deserializeEd25519Address
 
@@ -1346,8 +1347,8 @@ Deserialize the Ed25519 address from binary.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name         | Type         | Description                       |
+| :----------- | :----------- | :-------------------------------- |
 | `readStream` | `ReadStream` | The stream to read the data from. |
 
 #### Returns
@@ -1356,7 +1357,7 @@ Deserialize the Ed25519 address from binary.
 
 The deserialized object.
 
-___
+---
 
 ### serializeEd25519Address
 
@@ -1366,16 +1367,16 @@ Serialize the ed25519 address to binary.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `writeStream` | `WriteStream` | The stream to write the data to. |
-| `object` | [`IEd25519Address`](interfaces/IEd25519Address.md) | The object to serialize. |
+| Name          | Type                                               | Description                      |
+| :------------ | :------------------------------------------------- | :------------------------------- |
+| `writeStream` | `WriteStream`                                      | The stream to write the data to. |
+| `object`      | [`IEd25519Address`](interfaces/IEd25519Address.md) | The object to serialize.         |
 
 #### Returns
 
 `void`
 
-___
+---
 
 ### deserializeNftAddress
 
@@ -1385,8 +1386,8 @@ Deserialize the nft address from binary.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name         | Type         | Description                       |
+| :----------- | :----------- | :-------------------------------- |
 | `readStream` | `ReadStream` | The stream to read the data from. |
 
 #### Returns
@@ -1395,7 +1396,7 @@ Deserialize the nft address from binary.
 
 The deserialized object.
 
-___
+---
 
 ### serializeNftAddress
 
@@ -1405,16 +1406,16 @@ Serialize the nft address to binary.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `writeStream` | `WriteStream` | The stream to write the data to. |
-| `object` | [`INftAddress`](interfaces/INftAddress.md) | The object to serialize. |
+| Name          | Type                                       | Description                      |
+| :------------ | :----------------------------------------- | :------------------------------- |
+| `writeStream` | `WriteStream`                              | The stream to write the data to. |
+| `object`      | [`INftAddress`](interfaces/INftAddress.md) | The object to serialize.         |
 
 #### Returns
 
 `void`
 
-___
+---
 
 ### deserializeBlock
 
@@ -1424,8 +1425,8 @@ Deserialize the block from binary.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name         | Type         | Description               |
+| :----------- | :----------- | :------------------------ |
 | `readStream` | `ReadStream` | The block to deserialize. |
 
 #### Returns
@@ -1434,7 +1435,7 @@ Deserialize the block from binary.
 
 The deserialized block.
 
-___
+---
 
 ### serializeBlock
 
@@ -1444,16 +1445,16 @@ Serialize the block essence to binary.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `writeStream` | `WriteStream` | The stream to write the data to. |
-| `object` | [`IBlock`](interfaces/IBlock.md) | The object to serialize. |
+| Name          | Type                             | Description                      |
+| :------------ | :------------------------------- | :------------------------------- |
+| `writeStream` | `WriteStream`                    | The stream to write the data to. |
+| `object`      | [`IBlock`](interfaces/IBlock.md) | The object to serialize.         |
 
 #### Returns
 
 `void`
 
-___
+---
 
 ### deserializeFeatures
 
@@ -1463,8 +1464,8 @@ Deserialize the feature from binary.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name         | Type         | Description                       |
+| :----------- | :----------- | :-------------------------------- |
 | `readStream` | `ReadStream` | The stream to read the data from. |
 
 #### Returns
@@ -1473,7 +1474,7 @@ Deserialize the feature from binary.
 
 The deserialized object.
 
-___
+---
 
 ### serializeFeatures
 
@@ -1483,16 +1484,16 @@ Serialize the feature to binary.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `writeStream` | `WriteStream` | The stream to write the data to. |
-| `objects` | `undefined` \| [`FeatureTypes`](api_ref.md#featuretypes)[] | The objects to serialize. |
+| Name          | Type                                                       | Description                      |
+| :------------ | :--------------------------------------------------------- | :------------------------------- |
+| `writeStream` | `WriteStream`                                              | The stream to write the data to. |
+| `objects`     | `undefined` \| [`FeatureTypes`](api_ref.md#featuretypes)[] | The objects to serialize.        |
 
 #### Returns
 
 `void`
 
-___
+---
 
 ### deserializeFeature
 
@@ -1502,8 +1503,8 @@ Deserialize the feature from binary.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name         | Type         | Description                       |
+| :----------- | :----------- | :-------------------------------- |
 | `readStream` | `ReadStream` | The stream to read the data from. |
 
 #### Returns
@@ -1512,7 +1513,7 @@ Deserialize the feature from binary.
 
 The deserialized object.
 
-___
+---
 
 ### serializeFeature
 
@@ -1522,16 +1523,16 @@ Serialize the feature to binary.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `writeStream` | `WriteStream` | The stream to write the data to. |
-| `object` | [`ITypeBase`](interfaces/ITypeBase.md)<`number`\> | The object to serialize. |
+| Name          | Type                                              | Description                      |
+| :------------ | :------------------------------------------------ | :------------------------------- |
+| `writeStream` | `WriteStream`                                     | The stream to write the data to. |
+| `object`      | [`ITypeBase`](interfaces/ITypeBase.md)<`number`\> | The object to serialize.         |
 
 #### Returns
 
 `void`
 
-___
+---
 
 ### deserializeIssuerFeature
 
@@ -1541,8 +1542,8 @@ Deserialize the issuer feature from binary.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name         | Type         | Description                       |
+| :----------- | :----------- | :-------------------------------- |
 | `readStream` | `ReadStream` | The stream to read the data from. |
 
 #### Returns
@@ -1551,7 +1552,7 @@ Deserialize the issuer feature from binary.
 
 The deserialized object.
 
-___
+---
 
 ### serializeIssuerFeature
 
@@ -1561,16 +1562,16 @@ Serialize the issuer feature to binary.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `writeStream` | `WriteStream` | The stream to write the data to. |
-| `object` | [`IIssuerFeature`](interfaces/IIssuerFeature.md) | The object to serialize. |
+| Name          | Type                                             | Description                      |
+| :------------ | :----------------------------------------------- | :------------------------------- |
+| `writeStream` | `WriteStream`                                    | The stream to write the data to. |
+| `object`      | [`IIssuerFeature`](interfaces/IIssuerFeature.md) | The object to serialize.         |
 
 #### Returns
 
 `void`
 
-___
+---
 
 ### deserializeMetadataFeature
 
@@ -1580,8 +1581,8 @@ Deserialize the metadata feature block from binary.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name         | Type         | Description                       |
+| :----------- | :----------- | :-------------------------------- |
 | `readStream` | `ReadStream` | The stream to read the data from. |
 
 #### Returns
@@ -1590,7 +1591,7 @@ Deserialize the metadata feature block from binary.
 
 The deserialized object.
 
-___
+---
 
 ### serializeMetadataFeature
 
@@ -1600,16 +1601,16 @@ Serialize the metadata feature to binary.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `writeStream` | `WriteStream` | The stream to write the data to. |
-| `object` | [`IMetadataFeature`](interfaces/IMetadataFeature.md) | The object to serialize. |
+| Name          | Type                                                 | Description                      |
+| :------------ | :--------------------------------------------------- | :------------------------------- |
+| `writeStream` | `WriteStream`                                        | The stream to write the data to. |
+| `object`      | [`IMetadataFeature`](interfaces/IMetadataFeature.md) | The object to serialize.         |
 
 #### Returns
 
 `void`
 
-___
+---
 
 ### deserializeSenderFeature
 
@@ -1619,8 +1620,8 @@ Deserialize the sender feature from binary.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name         | Type         | Description                       |
+| :----------- | :----------- | :-------------------------------- |
 | `readStream` | `ReadStream` | The stream to read the data from. |
 
 #### Returns
@@ -1629,7 +1630,7 @@ Deserialize the sender feature from binary.
 
 The deserialized object.
 
-___
+---
 
 ### serializeSenderFeature
 
@@ -1639,16 +1640,16 @@ Serialize the sender feature to binary.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `writeStream` | `WriteStream` | The stream to write the data to. |
-| `object` | [`ISenderFeature`](interfaces/ISenderFeature.md) | The object to serialize. |
+| Name          | Type                                             | Description                      |
+| :------------ | :----------------------------------------------- | :------------------------------- |
+| `writeStream` | `WriteStream`                                    | The stream to write the data to. |
+| `object`      | [`ISenderFeature`](interfaces/ISenderFeature.md) | The object to serialize.         |
 
 #### Returns
 
 `void`
 
-___
+---
 
 ### deserializeTagFeature
 
@@ -1658,8 +1659,8 @@ Deserialize the tag feature from binary.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name         | Type         | Description                       |
+| :----------- | :----------- | :-------------------------------- |
 | `readStream` | `ReadStream` | The stream to read the data from. |
 
 #### Returns
@@ -1668,7 +1669,7 @@ Deserialize the tag feature from binary.
 
 The deserialized object.
 
-___
+---
 
 ### serializeTagFeature
 
@@ -1678,16 +1679,16 @@ Serialize the tag feature to binary.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `writeStream` | `WriteStream` | The stream to write the data to. |
-| `object` | [`ITagFeature`](interfaces/ITagFeature.md) | The object to serialize. |
+| Name          | Type                                       | Description                      |
+| :------------ | :----------------------------------------- | :------------------------------- |
+| `writeStream` | `WriteStream`                              | The stream to write the data to. |
+| `object`      | [`ITagFeature`](interfaces/ITagFeature.md) | The object to serialize.         |
 
 #### Returns
 
 `void`
 
-___
+---
 
 ### deserializeFunds
 
@@ -1697,8 +1698,8 @@ Deserialize the receipt payload funds from binary.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name         | Type         | Description                       |
+| :----------- | :----------- | :-------------------------------- |
 | `readStream` | `ReadStream` | The stream to read the data from. |
 
 #### Returns
@@ -1707,7 +1708,7 @@ Deserialize the receipt payload funds from binary.
 
 The deserialized object.
 
-___
+---
 
 ### serializeFunds
 
@@ -1717,16 +1718,16 @@ Serialize the receipt payload funds to binary.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `writeStream` | `WriteStream` | The stream to write the data to. |
-| `objects` | [`IMigratedFunds`](interfaces/IMigratedFunds.md)[] | The objects to serialize. |
+| Name          | Type                                               | Description                      |
+| :------------ | :------------------------------------------------- | :------------------------------- |
+| `writeStream` | `WriteStream`                                      | The stream to write the data to. |
+| `objects`     | [`IMigratedFunds`](interfaces/IMigratedFunds.md)[] | The objects to serialize.        |
 
 #### Returns
 
 `void`
 
-___
+---
 
 ### deserializeMigratedFunds
 
@@ -1736,8 +1737,8 @@ Deserialize the migrated fund from binary.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name         | Type         | Description                       |
+| :----------- | :----------- | :-------------------------------- |
 | `readStream` | `ReadStream` | The stream to read the data from. |
 
 #### Returns
@@ -1746,7 +1747,7 @@ Deserialize the migrated fund from binary.
 
 The deserialized object.
 
-___
+---
 
 ### serializeMigratedFunds
 
@@ -1756,16 +1757,16 @@ Serialize the migrated funds to binary.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `writeStream` | `WriteStream` | The stream to write the data to. |
-| `object` | [`IMigratedFunds`](interfaces/IMigratedFunds.md) | The object to serialize. |
+| Name          | Type                                             | Description                      |
+| :------------ | :----------------------------------------------- | :------------------------------- |
+| `writeStream` | `WriteStream`                                    | The stream to write the data to. |
+| `object`      | [`IMigratedFunds`](interfaces/IMigratedFunds.md) | The object to serialize.         |
 
 #### Returns
 
 `void`
 
-___
+---
 
 ### deserializeInputs
 
@@ -1775,8 +1776,8 @@ Deserialize the inputs from binary.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name         | Type         | Description                       |
+| :----------- | :----------- | :-------------------------------- |
 | `readStream` | `ReadStream` | The stream to read the data from. |
 
 #### Returns
@@ -1785,7 +1786,7 @@ Deserialize the inputs from binary.
 
 The deserialized object.
 
-___
+---
 
 ### serializeInputs
 
@@ -1795,16 +1796,16 @@ Serialize the inputs to binary.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `writeStream` | `WriteStream` | The stream to write the data to. |
-| `objects` | [`InputTypes`](api_ref.md#inputtypes)[] | The objects to serialize. |
+| Name          | Type                                    | Description                      |
+| :------------ | :-------------------------------------- | :------------------------------- |
+| `writeStream` | `WriteStream`                           | The stream to write the data to. |
+| `objects`     | [`InputTypes`](api_ref.md#inputtypes)[] | The objects to serialize.        |
 
 #### Returns
 
 `void`
 
-___
+---
 
 ### deserializeInput
 
@@ -1814,8 +1815,8 @@ Deserialize the input from binary.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name         | Type         | Description                       |
+| :----------- | :----------- | :-------------------------------- |
 | `readStream` | `ReadStream` | The stream to read the data from. |
 
 #### Returns
@@ -1824,7 +1825,7 @@ Deserialize the input from binary.
 
 The deserialized object.
 
-___
+---
 
 ### serializeInput
 
@@ -1834,16 +1835,16 @@ Serialize the input to binary.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `writeStream` | `WriteStream` | The stream to write the data to. |
-| `object` | [`InputTypes`](api_ref.md#inputtypes) | The object to serialize. |
+| Name          | Type                                  | Description                      |
+| :------------ | :------------------------------------ | :------------------------------- |
+| `writeStream` | `WriteStream`                         | The stream to write the data to. |
+| `object`      | [`InputTypes`](api_ref.md#inputtypes) | The object to serialize.         |
 
 #### Returns
 
 `void`
 
-___
+---
 
 ### deserializeTreasuryInput
 
@@ -1853,8 +1854,8 @@ Deserialize the treasury input from binary.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name         | Type         | Description                       |
+| :----------- | :----------- | :-------------------------------- |
 | `readStream` | `ReadStream` | The stream to read the data from. |
 
 #### Returns
@@ -1863,7 +1864,7 @@ Deserialize the treasury input from binary.
 
 The deserialized object.
 
-___
+---
 
 ### serializeTreasuryInput
 
@@ -1873,16 +1874,16 @@ Serialize the treasury input to binary.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `writeStream` | `WriteStream` | The stream to write the data to. |
-| `object` | [`ITreasuryInput`](interfaces/ITreasuryInput.md) | The object to serialize. |
+| Name          | Type                                             | Description                      |
+| :------------ | :----------------------------------------------- | :------------------------------- |
+| `writeStream` | `WriteStream`                                    | The stream to write the data to. |
+| `object`      | [`ITreasuryInput`](interfaces/ITreasuryInput.md) | The object to serialize.         |
 
 #### Returns
 
 `void`
 
-___
+---
 
 ### deserializeUTXOInput
 
@@ -1892,8 +1893,8 @@ Deserialize the utxo input from binary.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name         | Type         | Description                       |
+| :----------- | :----------- | :-------------------------------- |
 | `readStream` | `ReadStream` | The stream to read the data from. |
 
 #### Returns
@@ -1902,7 +1903,7 @@ Deserialize the utxo input from binary.
 
 The deserialized object.
 
-___
+---
 
 ### serializeUTXOInput
 
@@ -1912,16 +1913,16 @@ Serialize the utxo input to binary.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `writeStream` | `WriteStream` | The stream to write the data to. |
-| `object` | [`IUTXOInput`](interfaces/IUTXOInput.md) | The object to serialize. |
+| Name          | Type                                     | Description                      |
+| :------------ | :--------------------------------------- | :------------------------------- |
+| `writeStream` | `WriteStream`                            | The stream to write the data to. |
+| `object`      | [`IUTXOInput`](interfaces/IUTXOInput.md) | The object to serialize.         |
 
 #### Returns
 
 `void`
 
-___
+---
 
 ### deserializeMilestoneOptions
 
@@ -1931,8 +1932,8 @@ Deserialize the milestone options from binary.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name         | Type         | Description                       |
+| :----------- | :----------- | :-------------------------------- |
 | `readStream` | `ReadStream` | The stream to read the data from. |
 
 #### Returns
@@ -1941,7 +1942,7 @@ Deserialize the milestone options from binary.
 
 The deserialized object.
 
-___
+---
 
 ### serializeMilestoneOptions
 
@@ -1951,16 +1952,16 @@ Serialize the milestone options to binary.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `writeStream` | `WriteStream` | The stream to write the data to. |
-| `objects` | [`MilestoneOptionTypes`](api_ref.md#milestoneoptiontypes)[] | The objects to serialize. |
+| Name          | Type                                                        | Description                      |
+| :------------ | :---------------------------------------------------------- | :------------------------------- |
+| `writeStream` | `WriteStream`                                               | The stream to write the data to. |
+| `objects`     | [`MilestoneOptionTypes`](api_ref.md#milestoneoptiontypes)[] | The objects to serialize.        |
 
 #### Returns
 
 `void`
 
-___
+---
 
 ### deserializeMilestoneOption
 
@@ -1970,8 +1971,8 @@ Deserialize the milestone options from binary.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name         | Type         | Description                       |
+| :----------- | :----------- | :-------------------------------- |
 | `readStream` | `ReadStream` | The stream to read the data from. |
 
 #### Returns
@@ -1980,7 +1981,7 @@ Deserialize the milestone options from binary.
 
 The deserialized object.
 
-___
+---
 
 ### serializeMilestoneOption
 
@@ -1990,16 +1991,16 @@ Serialize the milestone option to binary.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `writeStream` | `WriteStream` | The stream to write the data to. |
-| `object` | [`ITypeBase`](interfaces/ITypeBase.md)<`number`\> | The object to serialize. |
+| Name          | Type                                              | Description                      |
+| :------------ | :------------------------------------------------ | :------------------------------- |
+| `writeStream` | `WriteStream`                                     | The stream to write the data to. |
+| `object`      | [`ITypeBase`](interfaces/ITypeBase.md)<`number`\> | The object to serialize.         |
 
 #### Returns
 
 `void`
 
-___
+---
 
 ### deserializeProtocolParamsMilestoneOption
 
@@ -2009,8 +2010,8 @@ Deserialize the protocol params milestone option from binary.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name         | Type         | Description                       |
+| :----------- | :----------- | :-------------------------------- |
 | `readStream` | `ReadStream` | The stream to read the data from. |
 
 #### Returns
@@ -2019,7 +2020,7 @@ Deserialize the protocol params milestone option from binary.
 
 The deserialized object.
 
-___
+---
 
 ### serializeProtocolParamsMilestoneOption
 
@@ -2029,16 +2030,16 @@ Serialize the protocol params milestone option to binary.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `writeStream` | `WriteStream` | The stream to write the data to. |
-| `object` | [`IProtocolParamsMilestoneOption`](interfaces/IProtocolParamsMilestoneOption.md) | The object to serialize. |
+| Name          | Type                                                                             | Description                      |
+| :------------ | :------------------------------------------------------------------------------- | :------------------------------- |
+| `writeStream` | `WriteStream`                                                                    | The stream to write the data to. |
+| `object`      | [`IProtocolParamsMilestoneOption`](interfaces/IProtocolParamsMilestoneOption.md) | The object to serialize.         |
 
 #### Returns
 
 `void`
 
-___
+---
 
 ### deserializeReceiptMilestoneOption
 
@@ -2048,8 +2049,8 @@ Deserialize the receipt milestone option from binary.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name         | Type         | Description                       |
+| :----------- | :----------- | :-------------------------------- |
 | `readStream` | `ReadStream` | The stream to read the data from. |
 
 #### Returns
@@ -2058,7 +2059,7 @@ Deserialize the receipt milestone option from binary.
 
 The deserialized object.
 
-___
+---
 
 ### serializeReceiptMilestoneOption
 
@@ -2068,16 +2069,16 @@ Serialize the receipt milestone option to binary.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `writeStream` | `WriteStream` | The stream to write the data to. |
-| `object` | [`IReceiptMilestoneOption`](interfaces/IReceiptMilestoneOption.md) | The object to serialize. |
+| Name          | Type                                                               | Description                      |
+| :------------ | :----------------------------------------------------------------- | :------------------------------- |
+| `writeStream` | `WriteStream`                                                      | The stream to write the data to. |
+| `object`      | [`IReceiptMilestoneOption`](interfaces/IReceiptMilestoneOption.md) | The object to serialize.         |
 
 #### Returns
 
 `void`
 
-___
+---
 
 ### deserializeAliasOutput
 
@@ -2087,8 +2088,8 @@ Deserialize the alias output from binary.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name         | Type         | Description                       |
+| :----------- | :----------- | :-------------------------------- |
 | `readStream` | `ReadStream` | The stream to read the data from. |
 
 #### Returns
@@ -2097,7 +2098,7 @@ Deserialize the alias output from binary.
 
 The deserialized object.
 
-___
+---
 
 ### serializeAliasOutput
 
@@ -2107,16 +2108,16 @@ Serialize the alias output to binary.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `writeStream` | `WriteStream` | The stream to write the data to. |
-| `object` | [`IAliasOutput`](interfaces/IAliasOutput.md) | The object to serialize. |
+| Name          | Type                                         | Description                      |
+| :------------ | :------------------------------------------- | :------------------------------- |
+| `writeStream` | `WriteStream`                                | The stream to write the data to. |
+| `object`      | [`IAliasOutput`](interfaces/IAliasOutput.md) | The object to serialize.         |
 
 #### Returns
 
 `void`
 
-___
+---
 
 ### deserializeBasicOutput
 
@@ -2126,8 +2127,8 @@ Deserialize the basic output from binary.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name         | Type         | Description                       |
+| :----------- | :----------- | :-------------------------------- |
 | `readStream` | `ReadStream` | The stream to read the data from. |
 
 #### Returns
@@ -2136,7 +2137,7 @@ Deserialize the basic output from binary.
 
 The deserialized object.
 
-___
+---
 
 ### serializeBasicOutput
 
@@ -2146,16 +2147,16 @@ Serialize the basic output to binary.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `writeStream` | `WriteStream` | The stream to write the data to. |
-| `object` | [`IBasicOutput`](interfaces/IBasicOutput.md) | The object to serialize. |
+| Name          | Type                                         | Description                      |
+| :------------ | :------------------------------------------- | :------------------------------- |
+| `writeStream` | `WriteStream`                                | The stream to write the data to. |
+| `object`      | [`IBasicOutput`](interfaces/IBasicOutput.md) | The object to serialize.         |
 
 #### Returns
 
 `void`
 
-___
+---
 
 ### deserializeFoundryOutput
 
@@ -2165,8 +2166,8 @@ Deserialize the foundry output from binary.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name         | Type         | Description                       |
+| :----------- | :----------- | :-------------------------------- |
 | `readStream` | `ReadStream` | The stream to read the data from. |
 
 #### Returns
@@ -2175,7 +2176,7 @@ Deserialize the foundry output from binary.
 
 The deserialized object.
 
-___
+---
 
 ### serializeFoundryOutput
 
@@ -2185,16 +2186,16 @@ Serialize the foundry output to binary.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `writeStream` | `WriteStream` | The stream to write the data to. |
-| `object` | [`IFoundryOutput`](interfaces/IFoundryOutput.md) | The object to serialize. |
+| Name          | Type                                             | Description                      |
+| :------------ | :----------------------------------------------- | :------------------------------- |
+| `writeStream` | `WriteStream`                                    | The stream to write the data to. |
+| `object`      | [`IFoundryOutput`](interfaces/IFoundryOutput.md) | The object to serialize.         |
 
 #### Returns
 
 `void`
 
-___
+---
 
 ### deserializeNftOutput
 
@@ -2204,8 +2205,8 @@ Deserialize the nft output from binary.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name         | Type         | Description                       |
+| :----------- | :----------- | :-------------------------------- |
 | `readStream` | `ReadStream` | The stream to read the data from. |
 
 #### Returns
@@ -2214,7 +2215,7 @@ Deserialize the nft output from binary.
 
 The deserialized object.
 
-___
+---
 
 ### serializeNftOutput
 
@@ -2224,16 +2225,16 @@ Serialize the nft output to binary.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `writeStream` | `WriteStream` | The stream to write the data to. |
-| `object` | [`INftOutput`](interfaces/INftOutput.md) | The object to serialize. |
+| Name          | Type                                     | Description                      |
+| :------------ | :--------------------------------------- | :------------------------------- |
+| `writeStream` | `WriteStream`                            | The stream to write the data to. |
+| `object`      | [`INftOutput`](interfaces/INftOutput.md) | The object to serialize.         |
 
 #### Returns
 
 `void`
 
-___
+---
 
 ### deserializeOutputs
 
@@ -2243,8 +2244,8 @@ Deserialize the outputs from binary.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name         | Type         | Description                       |
+| :----------- | :----------- | :-------------------------------- |
 | `readStream` | `ReadStream` | The stream to read the data from. |
 
 #### Returns
@@ -2253,7 +2254,7 @@ Deserialize the outputs from binary.
 
 The deserialized object.
 
-___
+---
 
 ### serializeOutputs
 
@@ -2263,16 +2264,16 @@ Serialize the outputs to binary.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `writeStream` | `WriteStream` | The stream to write the data to. |
-| `objects` | [`OutputTypes`](api_ref.md#outputtypes)[] | The objects to serialize. |
+| Name          | Type                                      | Description                      |
+| :------------ | :---------------------------------------- | :------------------------------- |
+| `writeStream` | `WriteStream`                             | The stream to write the data to. |
+| `objects`     | [`OutputTypes`](api_ref.md#outputtypes)[] | The objects to serialize.        |
 
 #### Returns
 
 `void`
 
-___
+---
 
 ### deserializeOutput
 
@@ -2282,8 +2283,8 @@ Deserialize the output from binary.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name         | Type         | Description                       |
+| :----------- | :----------- | :-------------------------------- |
 | `readStream` | `ReadStream` | The stream to read the data from. |
 
 #### Returns
@@ -2292,7 +2293,7 @@ Deserialize the output from binary.
 
 The deserialized object.
 
-___
+---
 
 ### serializeOutput
 
@@ -2302,16 +2303,16 @@ Serialize the output to binary.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `writeStream` | `WriteStream` | The stream to write the data to. |
-| `object` | [`ITypeBase`](interfaces/ITypeBase.md)<`number`\> | The object to serialize. |
+| Name          | Type                                              | Description                      |
+| :------------ | :------------------------------------------------ | :------------------------------- |
+| `writeStream` | `WriteStream`                                     | The stream to write the data to. |
+| `object`      | [`ITypeBase`](interfaces/ITypeBase.md)<`number`\> | The object to serialize.         |
 
 #### Returns
 
 `void`
 
-___
+---
 
 ### deserializeTreasuryOutput
 
@@ -2321,8 +2322,8 @@ Deserialize the treasury output from binary.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name         | Type         | Description                       |
+| :----------- | :----------- | :-------------------------------- |
 | `readStream` | `ReadStream` | The stream to read the data from. |
 
 #### Returns
@@ -2331,7 +2332,7 @@ Deserialize the treasury output from binary.
 
 The deserialized object.
 
-___
+---
 
 ### serializeTreasuryOutput
 
@@ -2341,16 +2342,16 @@ Serialize the treasury output to binary.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `writeStream` | `WriteStream` | The stream to write the data to. |
-| `object` | [`ITreasuryOutput`](interfaces/ITreasuryOutput.md) | The object to serialize. |
+| Name          | Type                                               | Description                      |
+| :------------ | :------------------------------------------------- | :------------------------------- |
+| `writeStream` | `WriteStream`                                      | The stream to write the data to. |
+| `object`      | [`ITreasuryOutput`](interfaces/ITreasuryOutput.md) | The object to serialize.         |
 
 #### Returns
 
 `void`
 
-___
+---
 
 ### deserializeMilestonePayload
 
@@ -2360,8 +2361,8 @@ Deserialize the milestone payload from binary.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name         | Type         | Description                       |
+| :----------- | :----------- | :-------------------------------- |
 | `readStream` | `ReadStream` | The stream to read the data from. |
 
 #### Returns
@@ -2370,7 +2371,7 @@ Deserialize the milestone payload from binary.
 
 The deserialized object.
 
-___
+---
 
 ### serializeMilestonePayload
 
@@ -2380,16 +2381,16 @@ Serialize the milestone payload to binary.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `writeStream` | `WriteStream` | The stream to write the data to. |
-| `object` | [`IMilestonePayload`](interfaces/IMilestonePayload.md) | The object to serialize. |
+| Name          | Type                                                   | Description                      |
+| :------------ | :----------------------------------------------------- | :------------------------------- |
+| `writeStream` | `WriteStream`                                          | The stream to write the data to. |
+| `object`      | [`IMilestonePayload`](interfaces/IMilestonePayload.md) | The object to serialize.         |
 
 #### Returns
 
 `void`
 
-___
+---
 
 ### serializeMilestoneEssence
 
@@ -2399,16 +2400,16 @@ Serialize the milestone payload to binary.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `writeStream` | `WriteStream` | The stream to write the data to. |
-| `object` | [`IMilestonePayload`](interfaces/IMilestonePayload.md) | The object to serialize. |
+| Name          | Type                                                   | Description                      |
+| :------------ | :----------------------------------------------------- | :------------------------------- |
+| `writeStream` | `WriteStream`                                          | The stream to write the data to. |
+| `object`      | [`IMilestonePayload`](interfaces/IMilestonePayload.md) | The object to serialize.         |
 
 #### Returns
 
 `void`
 
-___
+---
 
 ### deserializePayload
 
@@ -2418,8 +2419,8 @@ Deserialize the payload from binary.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name         | Type         | Description                       |
+| :----------- | :----------- | :-------------------------------- |
 | `readStream` | `ReadStream` | The stream to read the data from. |
 
 #### Returns
@@ -2428,7 +2429,7 @@ Deserialize the payload from binary.
 
 The deserialized object.
 
-___
+---
 
 ### serializePayload
 
@@ -2438,16 +2439,16 @@ Serialize the payload essence to binary.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `writeStream` | `WriteStream` | The stream to write the data to. |
-| `object` | `undefined` \| [`PayloadTypes`](api_ref.md#payloadtypes) | The object to serialize. |
+| Name          | Type                                                     | Description                      |
+| :------------ | :------------------------------------------------------- | :------------------------------- |
+| `writeStream` | `WriteStream`                                            | The stream to write the data to. |
+| `object`      | `undefined` \| [`PayloadTypes`](api_ref.md#payloadtypes) | The object to serialize.         |
 
 #### Returns
 
 `void`
 
-___
+---
 
 ### deserializeTaggedDataPayload
 
@@ -2457,8 +2458,8 @@ Deserialize the tagged data payload from binary.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name         | Type         | Description                       |
+| :----------- | :----------- | :-------------------------------- |
 | `readStream` | `ReadStream` | The stream to read the data from. |
 
 #### Returns
@@ -2467,7 +2468,7 @@ Deserialize the tagged data payload from binary.
 
 The deserialized object.
 
-___
+---
 
 ### serializeTaggedDataPayload
 
@@ -2477,16 +2478,16 @@ Serialize the tagged data payload to binary.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `writeStream` | `WriteStream` | The stream to write the data to. |
-| `object` | [`ITaggedDataPayload`](interfaces/ITaggedDataPayload.md) | The object to serialize. |
+| Name          | Type                                                     | Description                      |
+| :------------ | :------------------------------------------------------- | :------------------------------- |
+| `writeStream` | `WriteStream`                                            | The stream to write the data to. |
+| `object`      | [`ITaggedDataPayload`](interfaces/ITaggedDataPayload.md) | The object to serialize.         |
 
 #### Returns
 
 `void`
 
-___
+---
 
 ### deserializeTransactionPayload
 
@@ -2496,8 +2497,8 @@ Deserialize the transaction payload from binary.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name         | Type         | Description                       |
+| :----------- | :----------- | :-------------------------------- |
 | `readStream` | `ReadStream` | The stream to read the data from. |
 
 #### Returns
@@ -2506,7 +2507,7 @@ Deserialize the transaction payload from binary.
 
 The deserialized object.
 
-___
+---
 
 ### serializeTransactionPayload
 
@@ -2516,16 +2517,16 @@ Serialize the transaction payload to binary.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `writeStream` | `WriteStream` | The stream to write the data to. |
-| `object` | [`ITransactionPayload`](interfaces/ITransactionPayload.md) | The object to serialize. |
+| Name          | Type                                                       | Description                      |
+| :------------ | :--------------------------------------------------------- | :------------------------------- |
+| `writeStream` | `WriteStream`                                              | The stream to write the data to. |
+| `object`      | [`ITransactionPayload`](interfaces/ITransactionPayload.md) | The object to serialize.         |
 
 #### Returns
 
 `void`
 
-___
+---
 
 ### deserializeTreasuryTransactionPayload
 
@@ -2535,8 +2536,8 @@ Deserialize the treasury transaction payload from binary.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name         | Type         | Description                       |
+| :----------- | :----------- | :-------------------------------- |
 | `readStream` | `ReadStream` | The stream to read the data from. |
 
 #### Returns
@@ -2545,7 +2546,7 @@ Deserialize the treasury transaction payload from binary.
 
 The deserialized object.
 
-___
+---
 
 ### serializeTreasuryTransactionPayload
 
@@ -2555,16 +2556,16 @@ Serialize the treasury transaction payload to binary.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `writeStream` | `WriteStream` | The stream to write the data to. |
-| `object` | [`ITreasuryTransactionPayload`](interfaces/ITreasuryTransactionPayload.md) | The object to serialize. |
+| Name          | Type                                                                       | Description                      |
+| :------------ | :------------------------------------------------------------------------- | :------------------------------- |
+| `writeStream` | `WriteStream`                                                              | The stream to write the data to. |
+| `object`      | [`ITreasuryTransactionPayload`](interfaces/ITreasuryTransactionPayload.md) | The object to serialize.         |
 
 #### Returns
 
 `void`
 
-___
+---
 
 ### deserializeEd25519Signature
 
@@ -2574,8 +2575,8 @@ Deserialize the Ed25519 signature from binary.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name         | Type         | Description                       |
+| :----------- | :----------- | :-------------------------------- |
 | `readStream` | `ReadStream` | The stream to read the data from. |
 
 #### Returns
@@ -2584,7 +2585,7 @@ Deserialize the Ed25519 signature from binary.
 
 The deserialized object.
 
-___
+---
 
 ### serializeEd25519Signature
 
@@ -2594,16 +2595,16 @@ Serialize the Ed25519 signature to binary.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `writeStream` | `WriteStream` | The stream to write the data to. |
-| `object` | [`IEd25519Signature`](interfaces/IEd25519Signature.md) | The object to serialize. |
+| Name          | Type                                                   | Description                      |
+| :------------ | :----------------------------------------------------- | :------------------------------- |
+| `writeStream` | `WriteStream`                                          | The stream to write the data to. |
+| `object`      | [`IEd25519Signature`](interfaces/IEd25519Signature.md) | The object to serialize.         |
 
 #### Returns
 
 `void`
 
-___
+---
 
 ### deserializeSignature
 
@@ -2613,8 +2614,8 @@ Deserialize the signature from binary.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name         | Type         | Description                       |
+| :----------- | :----------- | :-------------------------------- |
 | `readStream` | `ReadStream` | The stream to read the data from. |
 
 #### Returns
@@ -2623,7 +2624,7 @@ Deserialize the signature from binary.
 
 The deserialized object.
 
-___
+---
 
 ### serializeSignature
 
@@ -2633,16 +2634,16 @@ Serialize the signature to binary.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `writeStream` | `WriteStream` | The stream to write the data to. |
-| `object` | [`IEd25519Signature`](interfaces/IEd25519Signature.md) | The object to serialize. |
+| Name          | Type                                                   | Description                      |
+| :------------ | :----------------------------------------------------- | :------------------------------- |
+| `writeStream` | `WriteStream`                                          | The stream to write the data to. |
+| `object`      | [`IEd25519Signature`](interfaces/IEd25519Signature.md) | The object to serialize.         |
 
 #### Returns
 
 `void`
 
-___
+---
 
 ### deserializeSimpleTokenScheme
 
@@ -2652,8 +2653,8 @@ Deserialize the simple token scheme from binary.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name         | Type         | Description                       |
+| :----------- | :----------- | :-------------------------------- |
 | `readStream` | `ReadStream` | The stream to read the data from. |
 
 #### Returns
@@ -2662,7 +2663,7 @@ Deserialize the simple token scheme from binary.
 
 The deserialized object.
 
-___
+---
 
 ### serializeSimpleTokenScheme
 
@@ -2672,16 +2673,16 @@ Serialize the simple token scheme to binary.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `writeStream` | `WriteStream` | The stream to write the data to. |
-| `object` | [`ISimpleTokenScheme`](interfaces/ISimpleTokenScheme.md) | The object to serialize. |
+| Name          | Type                                                     | Description                      |
+| :------------ | :------------------------------------------------------- | :------------------------------- |
+| `writeStream` | `WriteStream`                                            | The stream to write the data to. |
+| `object`      | [`ISimpleTokenScheme`](interfaces/ISimpleTokenScheme.md) | The object to serialize.         |
 
 #### Returns
 
 `void`
 
-___
+---
 
 ### deserializeTokenScheme
 
@@ -2691,8 +2692,8 @@ Deserialize the token scheme from binary.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name         | Type         | Description                       |
+| :----------- | :----------- | :-------------------------------- |
 | `readStream` | `ReadStream` | The stream to read the data from. |
 
 #### Returns
@@ -2701,7 +2702,7 @@ Deserialize the token scheme from binary.
 
 The deserialized object.
 
-___
+---
 
 ### serializeTokenScheme
 
@@ -2711,16 +2712,16 @@ Serialize the token scheme to binary.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `writeStream` | `WriteStream` | The stream to write the data to. |
-| `object` | [`ISimpleTokenScheme`](interfaces/ISimpleTokenScheme.md) | The object to serialize. |
+| Name          | Type                                                     | Description                      |
+| :------------ | :------------------------------------------------------- | :------------------------------- |
+| `writeStream` | `WriteStream`                                            | The stream to write the data to. |
+| `object`      | [`ISimpleTokenScheme`](interfaces/ISimpleTokenScheme.md) | The object to serialize.         |
 
 #### Returns
 
 `void`
 
-___
+---
 
 ### deserializeTransactionEssence
 
@@ -2730,8 +2731,8 @@ Deserialize the transaction essence from binary.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name         | Type         | Description                       |
+| :----------- | :----------- | :-------------------------------- |
 | `readStream` | `ReadStream` | The stream to read the data from. |
 
 #### Returns
@@ -2740,7 +2741,7 @@ Deserialize the transaction essence from binary.
 
 The deserialized object.
 
-___
+---
 
 ### serializeTransactionEssence
 
@@ -2750,16 +2751,16 @@ Serialize the transaction essence to binary.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `writeStream` | `WriteStream` | The stream to write the data to. |
-| `object` | [`ITransactionEssence`](interfaces/ITransactionEssence.md) | The object to serialize. |
+| Name          | Type                                                       | Description                      |
+| :------------ | :--------------------------------------------------------- | :------------------------------- |
+| `writeStream` | `WriteStream`                                              | The stream to write the data to. |
+| `object`      | [`ITransactionEssence`](interfaces/ITransactionEssence.md) | The object to serialize.         |
 
 #### Returns
 
 `void`
 
-___
+---
 
 ### deserializeAddressUnlockCondition
 
@@ -2769,8 +2770,8 @@ Deserialize the address unlock condition from binary.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name         | Type         | Description                       |
+| :----------- | :----------- | :-------------------------------- |
 | `readStream` | `ReadStream` | The stream to read the data from. |
 
 #### Returns
@@ -2779,7 +2780,7 @@ Deserialize the address unlock condition from binary.
 
 The deserialized object.
 
-___
+---
 
 ### serializeAddressUnlockCondition
 
@@ -2789,16 +2790,16 @@ Serialize the address unlock condition to binary.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `writeStream` | `WriteStream` | The stream to write the data to. |
-| `object` | [`IAddressUnlockCondition`](interfaces/IAddressUnlockCondition.md) | The object to serialize. |
+| Name          | Type                                                               | Description                      |
+| :------------ | :----------------------------------------------------------------- | :------------------------------- |
+| `writeStream` | `WriteStream`                                                      | The stream to write the data to. |
+| `object`      | [`IAddressUnlockCondition`](interfaces/IAddressUnlockCondition.md) | The object to serialize.         |
 
 #### Returns
 
 `void`
 
-___
+---
 
 ### deserializeExpirationUnlockCondition
 
@@ -2808,8 +2809,8 @@ Deserialize the expiration unlock condition from binary.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name         | Type         | Description                       |
+| :----------- | :----------- | :-------------------------------- |
 | `readStream` | `ReadStream` | The stream to read the data from. |
 
 #### Returns
@@ -2818,7 +2819,7 @@ Deserialize the expiration unlock condition from binary.
 
 The deserialized object.
 
-___
+---
 
 ### serializeExpirationUnlockCondition
 
@@ -2828,16 +2829,16 @@ Serialize the expiration unlock condition to binary.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `writeStream` | `WriteStream` | The stream to write the data to. |
-| `object` | [`IExpirationUnlockCondition`](interfaces/IExpirationUnlockCondition.md) | The object to serialize. |
+| Name          | Type                                                                     | Description                      |
+| :------------ | :----------------------------------------------------------------------- | :------------------------------- |
+| `writeStream` | `WriteStream`                                                            | The stream to write the data to. |
+| `object`      | [`IExpirationUnlockCondition`](interfaces/IExpirationUnlockCondition.md) | The object to serialize.         |
 
 #### Returns
 
 `void`
 
-___
+---
 
 ### deserializeGovernorAddressUnlockCondition
 
@@ -2847,8 +2848,8 @@ Deserialize the governor address unlock condition from binary.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name         | Type         | Description                       |
+| :----------- | :----------- | :-------------------------------- |
 | `readStream` | `ReadStream` | The stream to read the data from. |
 
 #### Returns
@@ -2857,7 +2858,7 @@ Deserialize the governor address unlock condition from binary.
 
 The deserialized object.
 
-___
+---
 
 ### serializeGovernorAddressUnlockCondition
 
@@ -2867,16 +2868,16 @@ Serialize the governor address unlock condition to binary.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `writeStream` | `WriteStream` | The stream to write the data to. |
-| `object` | [`IGovernorAddressUnlockCondition`](interfaces/IGovernorAddressUnlockCondition.md) | The object to serialize. |
+| Name          | Type                                                                               | Description                      |
+| :------------ | :--------------------------------------------------------------------------------- | :------------------------------- |
+| `writeStream` | `WriteStream`                                                                      | The stream to write the data to. |
+| `object`      | [`IGovernorAddressUnlockCondition`](interfaces/IGovernorAddressUnlockCondition.md) | The object to serialize.         |
 
 #### Returns
 
 `void`
 
-___
+---
 
 ### deserializeImmutableAliasUnlockCondition
 
@@ -2886,8 +2887,8 @@ Deserialize the immutable alias unlock condition from binary.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name         | Type         | Description                       |
+| :----------- | :----------- | :-------------------------------- |
 | `readStream` | `ReadStream` | The stream to read the data from. |
 
 #### Returns
@@ -2896,7 +2897,7 @@ Deserialize the immutable alias unlock condition from binary.
 
 The deserialized object.
 
-___
+---
 
 ### serializeImmutableAliasUnlockCondition
 
@@ -2906,16 +2907,16 @@ Serialize the immutable alias unlock condition to binary.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `writeStream` | `WriteStream` | The stream to write the data to. |
-| `object` | [`IImmutableAliasUnlockCondition`](interfaces/IImmutableAliasUnlockCondition.md) | The object to serialize. |
+| Name          | Type                                                                             | Description                      |
+| :------------ | :------------------------------------------------------------------------------- | :------------------------------- |
+| `writeStream` | `WriteStream`                                                                    | The stream to write the data to. |
+| `object`      | [`IImmutableAliasUnlockCondition`](interfaces/IImmutableAliasUnlockCondition.md) | The object to serialize.         |
 
 #### Returns
 
 `void`
 
-___
+---
 
 ### deserializeStateControllerAddressUnlockCondition
 
@@ -2925,8 +2926,8 @@ Deserialize the state controller address unlock condition from binary.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name         | Type         | Description                       |
+| :----------- | :----------- | :-------------------------------- |
 | `readStream` | `ReadStream` | The stream to read the data from. |
 
 #### Returns
@@ -2935,7 +2936,7 @@ Deserialize the state controller address unlock condition from binary.
 
 The deserialized object.
 
-___
+---
 
 ### serializeStateControllerAddressUnlockCondition
 
@@ -2945,16 +2946,16 @@ Serialize the state controller address unlock condition to binary.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `writeStream` | `WriteStream` | The stream to write the data to. |
-| `object` | [`IStateControllerAddressUnlockCondition`](interfaces/IStateControllerAddressUnlockCondition.md) | The object to serialize. |
+| Name          | Type                                                                                             | Description                      |
+| :------------ | :----------------------------------------------------------------------------------------------- | :------------------------------- |
+| `writeStream` | `WriteStream`                                                                                    | The stream to write the data to. |
+| `object`      | [`IStateControllerAddressUnlockCondition`](interfaces/IStateControllerAddressUnlockCondition.md) | The object to serialize.         |
 
 #### Returns
 
 `void`
 
-___
+---
 
 ### deserializeStorageDepositReturnUnlockCondition
 
@@ -2964,8 +2965,8 @@ Deserialize the storage deposit return unlock condition from binary.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name         | Type         | Description                       |
+| :----------- | :----------- | :-------------------------------- |
 | `readStream` | `ReadStream` | The stream to read the data from. |
 
 #### Returns
@@ -2974,7 +2975,7 @@ Deserialize the storage deposit return unlock condition from binary.
 
 The deserialized object.
 
-___
+---
 
 ### serializeStorageDepositReturnUnlockCondition
 
@@ -2984,16 +2985,16 @@ Serialize the storage deposit return unlock condition to binary.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `writeStream` | `WriteStream` | The stream to write the data to. |
-| `object` | [`IStorageDepositReturnUnlockCondition`](interfaces/IStorageDepositReturnUnlockCondition.md) | The object to serialize. |
+| Name          | Type                                                                                         | Description                      |
+| :------------ | :------------------------------------------------------------------------------------------- | :------------------------------- |
+| `writeStream` | `WriteStream`                                                                                | The stream to write the data to. |
+| `object`      | [`IStorageDepositReturnUnlockCondition`](interfaces/IStorageDepositReturnUnlockCondition.md) | The object to serialize.         |
 
 #### Returns
 
 `void`
 
-___
+---
 
 ### deserializeTimelockUnlockCondition
 
@@ -3003,8 +3004,8 @@ Deserialize the timelock unlock condition from binary.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name         | Type         | Description                       |
+| :----------- | :----------- | :-------------------------------- |
 | `readStream` | `ReadStream` | The stream to read the data from. |
 
 #### Returns
@@ -3013,7 +3014,7 @@ Deserialize the timelock unlock condition from binary.
 
 The deserialized object.
 
-___
+---
 
 ### serializeTimelockUnlockCondition
 
@@ -3023,16 +3024,16 @@ Serialize the timelock unlock condition to binary.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `writeStream` | `WriteStream` | The stream to write the data to. |
-| `object` | [`ITimelockUnlockCondition`](interfaces/ITimelockUnlockCondition.md) | The object to serialize. |
+| Name          | Type                                                                 | Description                      |
+| :------------ | :------------------------------------------------------------------- | :------------------------------- |
+| `writeStream` | `WriteStream`                                                        | The stream to write the data to. |
+| `object`      | [`ITimelockUnlockCondition`](interfaces/ITimelockUnlockCondition.md) | The object to serialize.         |
 
 #### Returns
 
 `void`
 
-___
+---
 
 ### deserializeUnlockConditions
 
@@ -3042,8 +3043,8 @@ Deserialize the unlock conditions from binary.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name         | Type         | Description                       |
+| :----------- | :----------- | :-------------------------------- |
 | `readStream` | `ReadStream` | The stream to read the data from. |
 
 #### Returns
@@ -3052,7 +3053,7 @@ Deserialize the unlock conditions from binary.
 
 The deserialized object.
 
-___
+---
 
 ### serializeUnlockConditions
 
@@ -3062,16 +3063,16 @@ Serialize the unlock conditions to binary.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `writeStream` | `WriteStream` | The stream to write the data to. |
-| `objects` | [`UnlockConditionTypes`](api_ref.md#unlockconditiontypes)[] | The objects to serialize. |
+| Name          | Type                                                        | Description                      |
+| :------------ | :---------------------------------------------------------- | :------------------------------- |
+| `writeStream` | `WriteStream`                                               | The stream to write the data to. |
+| `objects`     | [`UnlockConditionTypes`](api_ref.md#unlockconditiontypes)[] | The objects to serialize.        |
 
 #### Returns
 
 `void`
 
-___
+---
 
 ### deserializeUnlockCondition
 
@@ -3081,8 +3082,8 @@ Deserialize the unlock condition from binary.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name         | Type         | Description                       |
+| :----------- | :----------- | :-------------------------------- |
 | `readStream` | `ReadStream` | The stream to read the data from. |
 
 #### Returns
@@ -3091,7 +3092,7 @@ Deserialize the unlock condition from binary.
 
 The deserialized object.
 
-___
+---
 
 ### serializeUnlockCondition
 
@@ -3101,16 +3102,16 @@ Serialize the unlock condition to binary.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `writeStream` | `WriteStream` | The stream to write the data to. |
-| `object` | [`ITypeBase`](interfaces/ITypeBase.md)<`number`\> | The object to serialize. |
+| Name          | Type                                              | Description                      |
+| :------------ | :------------------------------------------------ | :------------------------------- |
+| `writeStream` | `WriteStream`                                     | The stream to write the data to. |
+| `object`      | [`ITypeBase`](interfaces/ITypeBase.md)<`number`\> | The object to serialize.         |
 
 #### Returns
 
 `void`
 
-___
+---
 
 ### deserializeAliasUnlock
 
@@ -3120,8 +3121,8 @@ Deserialize the alias unlock from binary.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name         | Type         | Description                       |
+| :----------- | :----------- | :-------------------------------- |
 | `readStream` | `ReadStream` | The stream to read the data from. |
 
 #### Returns
@@ -3130,7 +3131,7 @@ Deserialize the alias unlock from binary.
 
 The deserialized object.
 
-___
+---
 
 ### serializeAliasUnlock
 
@@ -3140,16 +3141,16 @@ Serialize the alias unlock to binary.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `writeStream` | `WriteStream` | The stream to write the data to. |
-| `object` | [`IAliasUnlock`](interfaces/IAliasUnlock.md) | The object to serialize. |
+| Name          | Type                                         | Description                      |
+| :------------ | :------------------------------------------- | :------------------------------- |
+| `writeStream` | `WriteStream`                                | The stream to write the data to. |
+| `object`      | [`IAliasUnlock`](interfaces/IAliasUnlock.md) | The object to serialize.         |
 
 #### Returns
 
 `void`
 
-___
+---
 
 ### deserializeNftUnlock
 
@@ -3159,8 +3160,8 @@ Deserialize the nft unlock from binary.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name         | Type         | Description                       |
+| :----------- | :----------- | :-------------------------------- |
 | `readStream` | `ReadStream` | The stream to read the data from. |
 
 #### Returns
@@ -3169,7 +3170,7 @@ Deserialize the nft unlock from binary.
 
 The deserialized object.
 
-___
+---
 
 ### serializeNftUnlock
 
@@ -3179,16 +3180,16 @@ Serialize the nft unlock to binary.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `writeStream` | `WriteStream` | The stream to write the data to. |
-| `object` | [`INftUnlock`](interfaces/INftUnlock.md) | The object to serialize. |
+| Name          | Type                                     | Description                      |
+| :------------ | :--------------------------------------- | :------------------------------- |
+| `writeStream` | `WriteStream`                            | The stream to write the data to. |
+| `object`      | [`INftUnlock`](interfaces/INftUnlock.md) | The object to serialize.         |
 
 #### Returns
 
 `void`
 
-___
+---
 
 ### deserializeReferenceUnlock
 
@@ -3198,8 +3199,8 @@ Deserialize the reference unlock from binary.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name         | Type         | Description                       |
+| :----------- | :----------- | :-------------------------------- |
 | `readStream` | `ReadStream` | The stream to read the data from. |
 
 #### Returns
@@ -3208,7 +3209,7 @@ Deserialize the reference unlock from binary.
 
 The deserialized object.
 
-___
+---
 
 ### serializeReferenceUnlock
 
@@ -3218,16 +3219,16 @@ Serialize the reference unlock to binary.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `writeStream` | `WriteStream` | The stream to write the data to. |
-| `object` | [`IReferenceUnlock`](interfaces/IReferenceUnlock.md) | The object to serialize. |
+| Name          | Type                                                 | Description                      |
+| :------------ | :--------------------------------------------------- | :------------------------------- |
+| `writeStream` | `WriteStream`                                        | The stream to write the data to. |
+| `object`      | [`IReferenceUnlock`](interfaces/IReferenceUnlock.md) | The object to serialize.         |
 
 #### Returns
 
 `void`
 
-___
+---
 
 ### deserializeSignatureUnlock
 
@@ -3237,8 +3238,8 @@ Deserialize the signature unlock from binary.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name         | Type         | Description                       |
+| :----------- | :----------- | :-------------------------------- |
 | `readStream` | `ReadStream` | The stream to read the data from. |
 
 #### Returns
@@ -3247,7 +3248,7 @@ Deserialize the signature unlock from binary.
 
 The deserialized object.
 
-___
+---
 
 ### serializeSignatureUnlock
 
@@ -3257,16 +3258,16 @@ Serialize the signature unlock to binary.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `writeStream` | `WriteStream` | The stream to write the data to. |
-| `object` | [`ISignatureUnlock`](interfaces/ISignatureUnlock.md) | The object to serialize. |
+| Name          | Type                                                 | Description                      |
+| :------------ | :--------------------------------------------------- | :------------------------------- |
+| `writeStream` | `WriteStream`                                        | The stream to write the data to. |
+| `object`      | [`ISignatureUnlock`](interfaces/ISignatureUnlock.md) | The object to serialize.         |
 
 #### Returns
 
 `void`
 
-___
+---
 
 ### deserializeUnlocks
 
@@ -3276,8 +3277,8 @@ Deserialize the unlocks from binary.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name         | Type         | Description                       |
+| :----------- | :----------- | :-------------------------------- |
 | `readStream` | `ReadStream` | The stream to read the data from. |
 
 #### Returns
@@ -3286,7 +3287,7 @@ Deserialize the unlocks from binary.
 
 The deserialized object.
 
-___
+---
 
 ### serializeUnlocks
 
@@ -3296,16 +3297,16 @@ Serialize the unlocks to binary.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `writeStream` | `WriteStream` | The stream to write the data to. |
-| `objects` | [`UnlockTypes`](api_ref.md#unlocktypes)[] | The objects to serialize. |
+| Name          | Type                                      | Description                      |
+| :------------ | :---------------------------------------- | :------------------------------- |
+| `writeStream` | `WriteStream`                             | The stream to write the data to. |
+| `objects`     | [`UnlockTypes`](api_ref.md#unlocktypes)[] | The objects to serialize.        |
 
 #### Returns
 
 `void`
 
-___
+---
 
 ### deserializeUnlock
 
@@ -3315,8 +3316,8 @@ Deserialize the unlock from binary.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name         | Type         | Description                       |
+| :----------- | :----------- | :-------------------------------- |
 | `readStream` | `ReadStream` | The stream to read the data from. |
 
 #### Returns
@@ -3325,7 +3326,7 @@ Deserialize the unlock from binary.
 
 The deserialized object.
 
-___
+---
 
 ### serializeUnlock
 
@@ -3335,16 +3336,16 @@ Serialize the unlock to binary.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `writeStream` | `WriteStream` | The stream to write the data to. |
-| `object` | [`UnlockTypes`](api_ref.md#unlocktypes) | The object to serialize. |
+| Name          | Type                                    | Description                      |
+| :------------ | :-------------------------------------- | :------------------------------- |
+| `writeStream` | `WriteStream`                           | The stream to write the data to. |
+| `object`      | [`UnlockTypes`](api_ref.md#unlocktypes) | The object to serialize.         |
 
 #### Returns
 
 `void`
 
-___
+---
 
 ### addressBalance
 
@@ -3354,10 +3355,10 @@ Get the balance for an address.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `client` | `string` \| [`IClient`](interfaces/IClient.md) | The client or node endpoint to get the information from. |
-| `addressBech32` | `string` | The address to get the balances for. |
+| Name            | Type                                           | Description                                              |
+| :-------------- | :--------------------------------------------- | :------------------------------------------------------- |
+| `client`        | `string` \| [`IClient`](interfaces/IClient.md) | The client or node endpoint to get the information from. |
+| `addressBech32` | `string`                                       | The address to get the balances for.                     |
 
 #### Returns
 
@@ -3365,7 +3366,7 @@ Get the balance for an address.
 
 The balance.
 
-___
+---
 
 ### generateBip44Path
 
@@ -3375,11 +3376,11 @@ Generate a bip44 path based on all its parts.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `accountIndex` | `number` | The account index. |
-| `addressIndex` | `number` | The address index. |
-| `isInternal` | `boolean` | Is this an internal address. |
+| Name           | Type      | Description                  |
+| :------------- | :-------- | :--------------------------- |
+| `accountIndex` | `number`  | The account index.           |
+| `addressIndex` | `number`  | The address index.           |
+| `isInternal`   | `boolean` | Is this an internal address. |
 
 #### Returns
 
@@ -3387,7 +3388,7 @@ Generate a bip44 path based on all its parts.
 
 The generated address.
 
-___
+---
 
 ### generateBip44Address
 
@@ -3397,8 +3398,8 @@ Generate addresses based on the account indexing style.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name             | Type                                                         | Description        |
+| :--------------- | :----------------------------------------------------------- | :----------------- |
 | `generatorState` | [`IBip44GeneratorState`](interfaces/IBip44GeneratorState.md) | The address state. |
 
 #### Returns
@@ -3407,7 +3408,7 @@ Generate addresses based on the account indexing style.
 
 The key pair for the address.
 
-___
+---
 
 ### getBalance
 
@@ -3417,12 +3418,12 @@ Get the balance for a list of addresses.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `client` | `string` \| [`IClient`](interfaces/IClient.md) | The client or node endpoint to send the transfer with. |
-| `seed` | [`ISeed`](interfaces/ISeed.md) | The seed. |
-| `accountIndex` | `number` | The account index in the wallet. |
-| `addressOptions?` | `Object` | Optional address configuration for balance address lookups. |
+| Name              | Type                                           | Description                                                 |
+| :---------------- | :--------------------------------------------- | :---------------------------------------------------------- |
+| `client`          | `string` \| [`IClient`](interfaces/IClient.md) | The client or node endpoint to send the transfer with.      |
+| `seed`            | [`ISeed`](interfaces/ISeed.md)                 | The seed.                                                   |
+| `accountIndex`    | `number`                                       | The account index in the wallet.                            |
+| `addressOptions?` | `Object`                                       | Optional address configuration for balance address lookups. |
 
 #### Returns
 
@@ -3430,7 +3431,7 @@ Get the balance for a list of addresses.
 
 The balance.
 
-___
+---
 
 ### getUnspentAddress
 
@@ -3440,12 +3441,12 @@ Get the first unspent address.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `client` | `string` \| [`IClient`](interfaces/IClient.md) | The client or node endpoint to send the transfer with. |
-| `seed` | [`ISeed`](interfaces/ISeed.md) | The seed to use for address generation. |
-| `accountIndex` | `number` | The account index in the wallet. |
-| `addressOptions?` | `Object` | Optional address configuration for balance address lookups. |
+| Name              | Type                                           | Description                                                 |
+| :---------------- | :--------------------------------------------- | :---------------------------------------------------------- |
+| `client`          | `string` \| [`IClient`](interfaces/IClient.md) | The client or node endpoint to send the transfer with.      |
+| `seed`            | [`ISeed`](interfaces/ISeed.md)                 | The seed to use for address generation.                     |
+| `accountIndex`    | `number`                                       | The account index in the wallet.                            |
+| `addressOptions?` | `Object`                                       | Optional address configuration for balance address lookups. |
 
 #### Returns
 
@@ -3453,7 +3454,7 @@ Get the first unspent address.
 
 The first unspent address.
 
-___
+---
 
 ### getUnspentAddresses
 
@@ -3463,12 +3464,12 @@ Get all the unspent addresses.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `client` | `string` \| [`IClient`](interfaces/IClient.md) | The client or node endpoint to send the transfer with. |
-| `seed` | [`ISeed`](interfaces/ISeed.md) | The seed to use for address generation. |
-| `accountIndex` | `number` | The account index in the wallet. |
-| `addressOptions?` | `Object` | Optional address configuration for balance address lookups. |
+| Name              | Type                                           | Description                                                 |
+| :---------------- | :--------------------------------------------- | :---------------------------------------------------------- |
+| `client`          | `string` \| [`IClient`](interfaces/IClient.md) | The client or node endpoint to send the transfer with.      |
+| `seed`            | [`ISeed`](interfaces/ISeed.md)                 | The seed to use for address generation.                     |
+| `accountIndex`    | `number`                                       | The account index in the wallet.                            |
+| `addressOptions?` | `Object`                                       | Optional address configuration for balance address lookups. |
 
 #### Returns
 
@@ -3476,7 +3477,7 @@ Get all the unspent addresses.
 
 All the unspent addresses.
 
-___
+---
 
 ### getUnspentAddressesWithAddressGenerator
 
@@ -3487,18 +3488,18 @@ Get all the unspent addresses using an address generator.
 #### Type parameters
 
 | Name |
-| :------ |
-| `T` |
+| :--- |
+| `T`  |
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `client` | `string` \| [`IClient`](interfaces/IClient.md) | The client or node endpoint to get the addresses from. |
-| `seed` | [`ISeed`](interfaces/ISeed.md) | The seed to use for address generation. |
-| `initialAddressState` | `T` | The initial address state for calculating the addresses. |
-| `nextAddressPath` | (`addressState`: `T`) => `string` | Calculate the next address for inputs. |
-| `addressOptions?` | `Object` | Optional address configuration for balance address lookups. |
+| Name                  | Type                                           | Description                                                 |
+| :-------------------- | :--------------------------------------------- | :---------------------------------------------------------- |
+| `client`              | `string` \| [`IClient`](interfaces/IClient.md) | The client or node endpoint to get the addresses from.      |
+| `seed`                | [`ISeed`](interfaces/ISeed.md)                 | The seed to use for address generation.                     |
+| `initialAddressState` | `T`                                            | The initial address state for calculating the addresses.    |
+| `nextAddressPath`     | (`addressState`: `T`) => `string`              | Calculate the next address for inputs.                      |
+| `addressOptions?`     | `Object`                                       | Optional address configuration for balance address lookups. |
 
 #### Returns
 
@@ -3506,7 +3507,7 @@ Get all the unspent addresses using an address generator.
 
 All the unspent addresses.
 
-___
+---
 
 ### promote
 
@@ -3516,10 +3517,10 @@ Promote an existing block.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `client` | `string` \| [`IClient`](interfaces/IClient.md) | The clientor node endpoint to perform the promote with. |
-| `blockId` | `string` | The block to promote. |
+| Name      | Type                                           | Description                                             |
+| :-------- | :--------------------------------------------- | :------------------------------------------------------ |
+| `client`  | `string` \| [`IClient`](interfaces/IClient.md) | The clientor node endpoint to perform the promote with. |
+| `blockId` | `string`                                       | The block to promote.                                   |
 
 #### Returns
 
@@ -3527,7 +3528,7 @@ Promote an existing block.
 
 The id and block that were promoted.
 
-___
+---
 
 ### reattach
 
@@ -3537,10 +3538,10 @@ Reattach an existing block.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `client` | `string` \| [`IClient`](interfaces/IClient.md) | The client or node endpoint to perform the reattach with. |
-| `blockId` | `string` | The block to reattach. |
+| Name      | Type                                           | Description                                               |
+| :-------- | :--------------------------------------------- | :-------------------------------------------------------- |
+| `client`  | `string` \| [`IClient`](interfaces/IClient.md) | The client or node endpoint to perform the reattach with. |
+| `blockId` | `string`                                       | The block to reattach.                                    |
 
 #### Returns
 
@@ -3548,7 +3549,7 @@ Reattach an existing block.
 
 The id and block that were reattached.
 
-___
+---
 
 ### retrieveData
 
@@ -3558,10 +3559,10 @@ Retrieve a data block.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `client` | `string` \| [`IClient`](interfaces/IClient.md) | The client or node endpoint to retrieve the data with. |
-| `blockId` | `string` | The block id of the data to get. |
+| Name      | Type                                           | Description                                            |
+| :-------- | :--------------------------------------------- | :----------------------------------------------------- |
+| `client`  | `string` \| [`IClient`](interfaces/IClient.md) | The client or node endpoint to retrieve the data with. |
+| `blockId` | `string`                                       | The block id of the data to get.                       |
 
 #### Returns
 
@@ -3569,7 +3570,7 @@ Retrieve a data block.
 
 The block tag and data.
 
-___
+---
 
 ### retry
 
@@ -3579,10 +3580,10 @@ Retry an existing block either by promoting or reattaching.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `client` | `string` \| [`IClient`](interfaces/IClient.md) | The client or node endpoint to perform the retry with. |
-| `blockId` | `string` | The block to retry. |
+| Name      | Type                                           | Description                                            |
+| :-------- | :--------------------------------------------- | :----------------------------------------------------- |
+| `client`  | `string` \| [`IClient`](interfaces/IClient.md) | The client or node endpoint to perform the retry with. |
+| `blockId` | `string`                                       | The block to retry.                                    |
 
 #### Returns
 
@@ -3590,7 +3591,7 @@ Retry an existing block either by promoting or reattaching.
 
 The id and block that were retried.
 
-___
+---
 
 ### send
 
@@ -3600,15 +3601,15 @@ Send a transfer from the balance on the seed to a single output.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `client` | `string` \| [`IClient`](interfaces/IClient.md) | The client or node endpoint to send the transfer with. |
-| `seed` | [`ISeed`](interfaces/ISeed.md) | The seed to use for address generation. |
-| `accountIndex` | `number` | The account index in the wallet. |
-| `addressBech32` | `string` | The address to send the funds to in bech32 format. |
-| `amount` | `BigInteger` | The amount to send. |
-| `taggedData?` | `Object` | Optional tagged data to associate with the transaction. |
-| `addressOptions?` | `Object` | Optional address configuration for balance address lookups. |
+| Name              | Type                                           | Description                                                 |
+| :---------------- | :--------------------------------------------- | :---------------------------------------------------------- |
+| `client`          | `string` \| [`IClient`](interfaces/IClient.md) | The client or node endpoint to send the transfer with.      |
+| `seed`            | [`ISeed`](interfaces/ISeed.md)                 | The seed to use for address generation.                     |
+| `accountIndex`    | `number`                                       | The account index in the wallet.                            |
+| `addressBech32`   | `string`                                       | The address to send the funds to in bech32 format.          |
+| `amount`          | `BigInteger`                                   | The amount to send.                                         |
+| `taggedData?`     | `Object`                                       | Optional tagged data to associate with the transaction.     |
+| `addressOptions?` | `Object`                                       | Optional address configuration for balance address lookups. |
 
 #### Returns
 
@@ -3616,7 +3617,7 @@ Send a transfer from the balance on the seed to a single output.
 
 The id of the block created and the contructed block.
 
-___
+---
 
 ### sendEd25519
 
@@ -3626,15 +3627,15 @@ Send a transfer from the balance on the seed to a single output.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `client` | `string` \| [`IClient`](interfaces/IClient.md) | The client or node endpoint to send the transfer with. |
-| `seed` | [`ISeed`](interfaces/ISeed.md) | The seed to use for address generation. |
-| `accountIndex` | `number` | The account index in the wallet. |
-| `addressEd25519` | `string` | The address to send the funds to in ed25519 format. |
-| `amount` | `BigInteger` | The amount to send. |
-| `taggedData?` | `Object` | Optional tagged data to associate with the transaction. |
-| `addressOptions?` | `Object` | Optional address configuration for balance address lookups. |
+| Name              | Type                                           | Description                                                 |
+| :---------------- | :--------------------------------------------- | :---------------------------------------------------------- |
+| `client`          | `string` \| [`IClient`](interfaces/IClient.md) | The client or node endpoint to send the transfer with.      |
+| `seed`            | [`ISeed`](interfaces/ISeed.md)                 | The seed to use for address generation.                     |
+| `accountIndex`    | `number`                                       | The account index in the wallet.                            |
+| `addressEd25519`  | `string`                                       | The address to send the funds to in ed25519 format.         |
+| `amount`          | `BigInteger`                                   | The amount to send.                                         |
+| `taggedData?`     | `Object`                                       | Optional tagged data to associate with the transaction.     |
+| `addressOptions?` | `Object`                                       | Optional address configuration for balance address lookups. |
 
 #### Returns
 
@@ -3642,7 +3643,7 @@ Send a transfer from the balance on the seed to a single output.
 
 The id of the block created and the contructed block.
 
-___
+---
 
 ### sendMultiple
 
@@ -3652,14 +3653,14 @@ Send a transfer from the balance on the seed to multiple outputs.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `client` | `string` \| [`IClient`](interfaces/IClient.md) | The client or node endpoint to send the transfer with. |
-| `seed` | [`ISeed`](interfaces/ISeed.md) | The seed to use for address generation. |
-| `accountIndex` | `number` | The account index in the wallet. |
-| `outputs` | {}[] | The address to send the funds to in bech32 format and amounts. |
-| `taggedData?` | `Object` | Optional tagged data to associate with the transaction. |
-| `addressOptions?` | `Object` | Optional address configuration for balance address lookups. |
+| Name              | Type                                           | Description                                                    |
+| :---------------- | :--------------------------------------------- | :------------------------------------------------------------- |
+| `client`          | `string` \| [`IClient`](interfaces/IClient.md) | The client or node endpoint to send the transfer with.         |
+| `seed`            | [`ISeed`](interfaces/ISeed.md)                 | The seed to use for address generation.                        |
+| `accountIndex`    | `number`                                       | The account index in the wallet.                               |
+| `outputs`         | {}[]                                           | The address to send the funds to in bech32 format and amounts. |
+| `taggedData?`     | `Object`                                       | Optional tagged data to associate with the transaction.        |
+| `addressOptions?` | `Object`                                       | Optional address configuration for balance address lookups.    |
 
 #### Returns
 
@@ -3667,7 +3668,7 @@ Send a transfer from the balance on the seed to multiple outputs.
 
 The id of the block created and the contructed block.
 
-___
+---
 
 ### sendMultipleEd25519
 
@@ -3677,14 +3678,14 @@ Send a transfer from the balance on the seed.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `client` | `string` \| [`IClient`](interfaces/IClient.md) | The client or node endpoint to send the transfer with. |
-| `seed` | [`ISeed`](interfaces/ISeed.md) | The seed to use for address generation. |
-| `accountIndex` | `number` | The account index in the wallet. |
-| `outputs` | {}[] | The outputs including address to send the funds to in ed25519 format and amount. |
-| `taggedData?` | `Object` | Optional tagged data to associate with the transaction. |
-| `addressOptions?` | `Object` | Optional address configuration for balance address lookups. |
+| Name              | Type                                           | Description                                                                      |
+| :---------------- | :--------------------------------------------- | :------------------------------------------------------------------------------- |
+| `client`          | `string` \| [`IClient`](interfaces/IClient.md) | The client or node endpoint to send the transfer with.                           |
+| `seed`            | [`ISeed`](interfaces/ISeed.md)                 | The seed to use for address generation.                                          |
+| `accountIndex`    | `number`                                       | The account index in the wallet.                                                 |
+| `outputs`         | {}[]                                           | The outputs including address to send the funds to in ed25519 format and amount. |
+| `taggedData?`     | `Object`                                       | Optional tagged data to associate with the transaction.                          |
+| `addressOptions?` | `Object`                                       | Optional address configuration for balance address lookups.                      |
 
 #### Returns
 
@@ -3692,7 +3693,7 @@ Send a transfer from the balance on the seed.
 
 The id of the block created and the contructed block.
 
-___
+---
 
 ### sendWithAddressGenerator
 
@@ -3703,20 +3704,20 @@ Send a transfer using account based indexing for the inputs.
 #### Type parameters
 
 | Name |
-| :------ |
-| `T` |
+| :--- |
+| `T`  |
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `client` | `string` \| [`IClient`](interfaces/IClient.md) | The client or node endpoint to send the transfer with. |
-| `seed` | [`ISeed`](interfaces/ISeed.md) | The seed to use for address generation. |
-| `initialAddressState` | `T` | The initial address state for calculating the addresses. |
-| `nextAddressPath` | (`addressState`: `T`) => `string` | Calculate the next address for inputs. |
-| `outputs` | {}[] | The address to send the funds to in bech32 format and amounts. |
-| `taggedData?` | `Object` | Optional tagged data to associate with the transaction. |
-| `zeroCount?` | `number` | The number of addresses with 0 balance during lookup before aborting. |
+| Name                  | Type                                           | Description                                                           |
+| :-------------------- | :--------------------------------------------- | :-------------------------------------------------------------------- |
+| `client`              | `string` \| [`IClient`](interfaces/IClient.md) | The client or node endpoint to send the transfer with.                |
+| `seed`                | [`ISeed`](interfaces/ISeed.md)                 | The seed to use for address generation.                               |
+| `initialAddressState` | `T`                                            | The initial address state for calculating the addresses.              |
+| `nextAddressPath`     | (`addressState`: `T`) => `string`              | Calculate the next address for inputs.                                |
+| `outputs`             | {}[]                                           | The address to send the funds to in bech32 format and amounts.        |
+| `taggedData?`         | `Object`                                       | Optional tagged data to associate with the transaction.               |
+| `zeroCount?`          | `number`                                       | The number of addresses with 0 balance during lookup before aborting. |
 
 #### Returns
 
@@ -3724,7 +3725,7 @@ Send a transfer using account based indexing for the inputs.
 
 The id of the block created and the contructed block.
 
-___
+---
 
 ### calculateInputs
 
@@ -3735,19 +3736,19 @@ Calculate the inputs from the seed and basePath.
 #### Type parameters
 
 | Name |
-| :------ |
-| `T` |
+| :--- |
+| `T`  |
 
 #### Parameters
 
-| Name | Type | Default value | Description |
-| :------ | :------ | :------ | :------ |
-| `client` | `string` \| [`IClient`](interfaces/IClient.md) | `undefined` | The client or node endpoint to calculate the inputs with. |
-| `seed` | [`ISeed`](interfaces/ISeed.md) | `undefined` | The seed to use for address generation. |
-| `initialAddressState` | `T` | `undefined` | The initial address state for calculating the addresses. |
-| `nextAddressPath` | (`addressState`: `T`) => `string` | `undefined` | Calculate the next address for inputs. |
-| `outputs` | {}[] | `undefined` | The outputs to send. |
-| `zeroCount` | `number` | `5` | Abort when the number of zero balances is exceeded. |
+| Name                  | Type                                           | Default value | Description                                               |
+| :-------------------- | :--------------------------------------------- | :------------ | :-------------------------------------------------------- |
+| `client`              | `string` \| [`IClient`](interfaces/IClient.md) | `undefined`   | The client or node endpoint to calculate the inputs with. |
+| `seed`                | [`ISeed`](interfaces/ISeed.md)                 | `undefined`   | The seed to use for address generation.                   |
+| `initialAddressState` | `T`                                            | `undefined`   | The initial address state for calculating the addresses.  |
+| `nextAddressPath`     | (`addressState`: `T`) => `string`              | `undefined`   | Calculate the next address for inputs.                    |
+| `outputs`             | {}[]                                           | `undefined`   | The outputs to send.                                      |
+| `zeroCount`           | `number`                                       | `5`           | Abort when the number of zero balances is exceeded.       |
 
 #### Returns
 
@@ -3755,7 +3756,7 @@ Calculate the inputs from the seed and basePath.
 
 The id of the block created and the contructed block.
 
-___
+---
 
 ### sendAdvanced
 
@@ -3765,12 +3766,12 @@ Send a transfer from the balance on the seed.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `client` | `string` \| [`IClient`](interfaces/IClient.md) | The client or node endpoint to send the transfer with. |
-| `inputsAndSignatureKeyPairs` | {}[] | The inputs with the signature key pairs needed to sign transfers. |
-| `outputs` | {}[] | The outputs to send. |
-| `taggedData?` | `Object` | Optional tagged data to associate with the transaction. |
+| Name                         | Type                                           | Description                                                       |
+| :--------------------------- | :--------------------------------------------- | :---------------------------------------------------------------- |
+| `client`                     | `string` \| [`IClient`](interfaces/IClient.md) | The client or node endpoint to send the transfer with.            |
+| `inputsAndSignatureKeyPairs` | {}[]                                           | The inputs with the signature key pairs needed to sign transfers. |
+| `outputs`                    | {}[]                                           | The outputs to send.                                              |
+| `taggedData?`                | `Object`                                       | Optional tagged data to associate with the transaction.           |
 
 #### Returns
 
@@ -3778,7 +3779,7 @@ Send a transfer from the balance on the seed.
 
 The id of the block created and the remainder address if one was needed.
 
-___
+---
 
 ### buildTransactionPayload
 
@@ -3788,12 +3789,12 @@ Build a transaction payload.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `networkId` | `string` | The network id we are sending the payload on. |
-| `inputsAndSignatureKeyPairs` | {}[] | The inputs with the signature key pairs needed to sign transfers. |
-| `outputs` | {}[] | The outputs to send. |
-| `taggedData?` | `Object` | Optional tagged data to associate with the transaction. |
+| Name                         | Type     | Description                                                       |
+| :--------------------------- | :------- | :---------------------------------------------------------------- |
+| `networkId`                  | `string` | The network id we are sending the payload on.                     |
+| `inputsAndSignatureKeyPairs` | {}[]     | The inputs with the signature key pairs needed to sign transfers. |
+| `outputs`                    | {}[]     | The outputs to send.                                              |
+| `taggedData?`                | `Object` | Optional tagged data to associate with the transaction.           |
 
 #### Returns
 
@@ -3801,7 +3802,7 @@ Build a transaction payload.
 
 The transaction payload.
 
-___
+---
 
 ### sendData
 
@@ -3811,11 +3812,11 @@ Send a data block.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name     | Type                                           | Description                                        |
+| :------- | :--------------------------------------------- | :------------------------------------------------- |
 | `client` | `string` \| [`IClient`](interfaces/IClient.md) | The client or node endpoint to send the data with. |
-| `tag?` | `string` \| `Uint8Array` | The tag for the data. |
-| `data?` | `string` \| `Uint8Array` | The data as either UTF8 text or Uint8Array bytes. |
+| `tag?`   | `string` \| `Uint8Array`                       | The tag for the data.                              |
+| `data?`  | `string` \| `Uint8Array`                       | The data as either UTF8 text or Uint8Array bytes.  |
 
 #### Returns
 
@@ -3823,7 +3824,7 @@ Send a data block.
 
 The id of the block created and the block.
 
-___
+---
 
 ### setLogger
 
@@ -3833,15 +3834,15 @@ Set the logger for output.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name  | Type                                                | Description |
+| :---- | :-------------------------------------------------- | :---------- |
 | `log` | (`message`: `string`, `data?`: `unknown`) => `void` | The logger. |
 
 #### Returns
 
 `void`
 
-___
+---
 
 ### logRoutes
 
@@ -3851,16 +3852,16 @@ Log the routes of the node.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `prefix` | `string` | The prefix for the output. |
-| `routes` | [`IRoutesResponse`](interfaces/IRoutesResponse.md) | The available routes. |
+| Name     | Type                                               | Description                |
+| :------- | :------------------------------------------------- | :------------------------- |
+| `prefix` | `string`                                           | The prefix for the output. |
+| `routes` | [`IRoutesResponse`](interfaces/IRoutesResponse.md) | The available routes.      |
 
 #### Returns
 
 `void`
 
-___
+---
 
 ### logInfo
 
@@ -3870,16 +3871,16 @@ Log the node information.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `prefix` | `string` | The prefix for the output. |
-| `info` | [`INodeInfo`](interfaces/INodeInfo.md) | The info to log. |
+| Name     | Type                                   | Description                |
+| :------- | :------------------------------------- | :------------------------- |
+| `prefix` | `string`                               | The prefix for the output. |
+| `info`   | [`INodeInfo`](interfaces/INodeInfo.md) | The info to log.           |
 
 #### Returns
 
 `void`
 
-___
+---
 
 ### logTips
 
@@ -3889,16 +3890,16 @@ Log the tips information.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `prefix` | `string` | The prefix for the output. |
-| `tipsResponse` | [`ITipsResponse`](interfaces/ITipsResponse.md) | The tips to log. |
+| Name           | Type                                           | Description                |
+| :------------- | :--------------------------------------------- | :------------------------- |
+| `prefix`       | `string`                                       | The prefix for the output. |
+| `tipsResponse` | [`ITipsResponse`](interfaces/ITipsResponse.md) | The tips to log.           |
 
 #### Returns
 
 `void`
 
-___
+---
 
 ### logBlock
 
@@ -3908,16 +3909,16 @@ Log a block to the console.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `prefix` | `string` | The prefix for the output. |
-| `block` | [`IBlock`](interfaces/IBlock.md) | The block to log. |
+| Name     | Type                             | Description                |
+| :------- | :------------------------------- | :------------------------- |
+| `prefix` | `string`                         | The prefix for the output. |
+| `block`  | [`IBlock`](interfaces/IBlock.md) | The block to log.          |
 
 #### Returns
 
 `void`
 
-___
+---
 
 ### logBlockMetadata
 
@@ -3927,16 +3928,16 @@ Log the block metadata to the console.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `prefix` | `string` | The prefix for the output. |
-| `blockMetadata` | [`IBlockMetadata`](interfaces/IBlockMetadata.md) | The blockMetadata to log. |
+| Name            | Type                                             | Description                |
+| :-------------- | :----------------------------------------------- | :------------------------- |
+| `prefix`        | `string`                                         | The prefix for the output. |
+| `blockMetadata` | [`IBlockMetadata`](interfaces/IBlockMetadata.md) | The blockMetadata to log.  |
 
 #### Returns
 
 `void`
 
-___
+---
 
 ### logPayload
 
@@ -3946,16 +3947,16 @@ Log a block to the console.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `prefix` | `string` | The prefix for the output. |
-| `payload?` | [`PayloadTypes`](api_ref.md#payloadtypes) | The payload. |
+| Name       | Type                                      | Description                |
+| :--------- | :---------------------------------------- | :------------------------- |
+| `prefix`   | `string`                                  | The prefix for the output. |
+| `payload?` | [`PayloadTypes`](api_ref.md#payloadtypes) | The payload.               |
 
 #### Returns
 
 `void`
 
-___
+---
 
 ### logTransactionPayload
 
@@ -3965,16 +3966,16 @@ Log a transaction payload to the console.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `prefix` | `string` | The prefix for the output. |
-| `payload?` | [`ITransactionPayload`](interfaces/ITransactionPayload.md) | The payload. |
+| Name       | Type                                                       | Description                |
+| :--------- | :--------------------------------------------------------- | :------------------------- |
+| `prefix`   | `string`                                                   | The prefix for the output. |
+| `payload?` | [`ITransactionPayload`](interfaces/ITransactionPayload.md) | The payload.               |
 
 #### Returns
 
 `void`
 
-___
+---
 
 ### logTaggedDataPayload
 
@@ -3984,16 +3985,16 @@ Log a tagged data payload to the console.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `prefix` | `string` | The prefix for the output. |
-| `payload?` | [`ITaggedDataPayload`](interfaces/ITaggedDataPayload.md) | The payload. |
+| Name       | Type                                                     | Description                |
+| :--------- | :------------------------------------------------------- | :------------------------- |
+| `prefix`   | `string`                                                 | The prefix for the output. |
+| `payload?` | [`ITaggedDataPayload`](interfaces/ITaggedDataPayload.md) | The payload.               |
 
 #### Returns
 
 `void`
 
-___
+---
 
 ### logMilestonePayload
 
@@ -4003,16 +4004,16 @@ Log a milestone payload to the console.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `prefix` | `string` | The prefix for the output. |
-| `payload?` | [`IMilestonePayload`](interfaces/IMilestonePayload.md) | The payload. |
+| Name       | Type                                                   | Description                |
+| :--------- | :----------------------------------------------------- | :------------------------- |
+| `prefix`   | `string`                                               | The prefix for the output. |
+| `payload?` | [`IMilestonePayload`](interfaces/IMilestonePayload.md) | The payload.               |
 
 #### Returns
 
 `void`
 
-___
+---
 
 ### logMilestoneOptions
 
@@ -4022,16 +4023,16 @@ Log milestone options to the console.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `prefix` | `string` | The prefix for the output. |
-| `milestoneOptions?` | [`MilestoneOptionTypes`](api_ref.md#milestoneoptiontypes)[] | The milestone options. |
+| Name                | Type                                                        | Description                |
+| :------------------ | :---------------------------------------------------------- | :------------------------- |
+| `prefix`            | `string`                                                    | The prefix for the output. |
+| `milestoneOptions?` | [`MilestoneOptionTypes`](api_ref.md#milestoneoptiontypes)[] | The milestone options.     |
 
 #### Returns
 
 `void`
 
-___
+---
 
 ### logMilestoneOption
 
@@ -4041,16 +4042,16 @@ Log milestone option to the console.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `prefix` | `string` | The prefix for the output. |
-| `milestoneOption` | [`MilestoneOptionTypes`](api_ref.md#milestoneoptiontypes) | The milestone option. |
+| Name              | Type                                                      | Description                |
+| :---------------- | :-------------------------------------------------------- | :------------------------- |
+| `prefix`          | `string`                                                  | The prefix for the output. |
+| `milestoneOption` | [`MilestoneOptionTypes`](api_ref.md#milestoneoptiontypes) | The milestone option.      |
 
 #### Returns
 
 `void`
 
-___
+---
 
 ### logReceiptMilestoneOption
 
@@ -4060,16 +4061,16 @@ Log a receipt milestone option to the console.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `prefix` | `string` | The prefix for the output. |
-| `option?` | [`IReceiptMilestoneOption`](interfaces/IReceiptMilestoneOption.md) | The option. |
+| Name      | Type                                                               | Description                |
+| :-------- | :----------------------------------------------------------------- | :------------------------- |
+| `prefix`  | `string`                                                           | The prefix for the output. |
+| `option?` | [`IReceiptMilestoneOption`](interfaces/IReceiptMilestoneOption.md) | The option.                |
 
 #### Returns
 
 `void`
 
-___
+---
 
 ### logProtocolParamsMilestoneOption
 
@@ -4079,16 +4080,16 @@ Log a protocol params milestone option to the console.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `prefix` | `string` | The prefix for the output. |
-| `option?` | [`IProtocolParamsMilestoneOption`](interfaces/IProtocolParamsMilestoneOption.md) | The option. |
+| Name      | Type                                                                             | Description                |
+| :-------- | :------------------------------------------------------------------------------- | :------------------------- |
+| `prefix`  | `string`                                                                         | The prefix for the output. |
+| `option?` | [`IProtocolParamsMilestoneOption`](interfaces/IProtocolParamsMilestoneOption.md) | The option.                |
 
 #### Returns
 
 `void`
 
-___
+---
 
 ### logTreasuryTransactionPayload
 
@@ -4098,16 +4099,16 @@ Log a treasury transaction payload to the console.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `prefix` | `string` | The prefix for the output. |
-| `payload?` | [`ITreasuryTransactionPayload`](interfaces/ITreasuryTransactionPayload.md) | The payload. |
+| Name       | Type                                                                       | Description                |
+| :--------- | :------------------------------------------------------------------------- | :------------------------- |
+| `prefix`   | `string`                                                                   | The prefix for the output. |
+| `payload?` | [`ITreasuryTransactionPayload`](interfaces/ITreasuryTransactionPayload.md) | The payload.               |
 
 #### Returns
 
 `void`
 
-___
+---
 
 ### logAddress
 
@@ -4117,16 +4118,16 @@ Log an address to the console.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `prefix` | `string` | The prefix for the output. |
-| `address?` | [`AddressTypes`](api_ref.md#addresstypes) | The address to log. |
+| Name       | Type                                      | Description                |
+| :--------- | :---------------------------------------- | :------------------------- |
+| `prefix`   | `string`                                  | The prefix for the output. |
+| `address?` | [`AddressTypes`](api_ref.md#addresstypes) | The address to log.        |
 
 #### Returns
 
 `void`
 
-___
+---
 
 ### logSignature
 
@@ -4136,16 +4137,16 @@ Log signature to the console.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `prefix` | `string` | The prefix for the output. |
-| `signature?` | [`IEd25519Signature`](interfaces/IEd25519Signature.md) | The signature to log. |
+| Name         | Type                                                   | Description                |
+| :----------- | :----------------------------------------------------- | :------------------------- |
+| `prefix`     | `string`                                               | The prefix for the output. |
+| `signature?` | [`IEd25519Signature`](interfaces/IEd25519Signature.md) | The signature to log.      |
 
 #### Returns
 
 `void`
 
-___
+---
 
 ### logInput
 
@@ -4155,16 +4156,16 @@ Log input to the console.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `prefix` | `string` | The prefix for the output. |
-| `input?` | [`InputTypes`](api_ref.md#inputtypes) | The input to log. |
+| Name     | Type                                  | Description                |
+| :------- | :------------------------------------ | :------------------------- |
+| `prefix` | `string`                              | The prefix for the output. |
+| `input?` | [`InputTypes`](api_ref.md#inputtypes) | The input to log.          |
 
 #### Returns
 
 `void`
 
-___
+---
 
 ### logOutput
 
@@ -4174,16 +4175,16 @@ Log output to the console.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `prefix` | `string` | The prefix for the output. |
-| `output?` | [`OutputTypes`](api_ref.md#outputtypes) | The output to log. |
+| Name      | Type                                    | Description                |
+| :-------- | :-------------------------------------- | :------------------------- |
+| `prefix`  | `string`                                | The prefix for the output. |
+| `output?` | [`OutputTypes`](api_ref.md#outputtypes) | The output to log.         |
 
 #### Returns
 
 `void`
 
-___
+---
 
 ### logUnlock
 
@@ -4193,16 +4194,16 @@ Log unlock to the console.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `prefix` | `string` | The prefix for the output. |
-| `unlock?` | [`UnlockTypes`](api_ref.md#unlocktypes) | The unlock to log. |
+| Name      | Type                                    | Description                |
+| :-------- | :-------------------------------------- | :------------------------- |
+| `prefix`  | `string`                                | The prefix for the output. |
+| `unlock?` | [`UnlockTypes`](api_ref.md#unlocktypes) | The unlock to log.         |
 
 #### Returns
 
 `void`
 
-___
+---
 
 ### logFunds
 
@@ -4212,16 +4213,16 @@ Log fund to the console.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `prefix` | `string` | The prefix for the output. |
-| `fund?` | [`IMigratedFunds`](interfaces/IMigratedFunds.md) | The fund to log. |
+| Name     | Type                                             | Description                |
+| :------- | :----------------------------------------------- | :------------------------- |
+| `prefix` | `string`                                         | The prefix for the output. |
+| `fund?`  | [`IMigratedFunds`](interfaces/IMigratedFunds.md) | The fund to log.           |
 
 #### Returns
 
 `void`
 
-___
+---
 
 ### logNativeTokens
 
@@ -4231,16 +4232,16 @@ Log native tokens to the console.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `prefix` | `string` | The prefix for the output. |
-| `nativeTokens` | `undefined` \| [`INativeToken`](interfaces/INativeToken.md)[] | The native tokens. |
+| Name           | Type                                                          | Description                |
+| :------------- | :------------------------------------------------------------ | :------------------------- |
+| `prefix`       | `string`                                                      | The prefix for the output. |
+| `nativeTokens` | `undefined` \| [`INativeToken`](interfaces/INativeToken.md)[] | The native tokens.         |
 
 #### Returns
 
 `void`
 
-___
+---
 
 ### logTokenScheme
 
@@ -4250,16 +4251,16 @@ Log token scheme to the console.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `prefix` | `string` | The prefix for the output. |
-| `tokenScheme` | [`ISimpleTokenScheme`](interfaces/ISimpleTokenScheme.md) | The token scheme. |
+| Name          | Type                                                     | Description                |
+| :------------ | :------------------------------------------------------- | :------------------------- |
+| `prefix`      | `string`                                                 | The prefix for the output. |
+| `tokenScheme` | [`ISimpleTokenScheme`](interfaces/ISimpleTokenScheme.md) | The token scheme.          |
 
 #### Returns
 
 `void`
 
-___
+---
 
 ### logFeatures
 
@@ -4269,16 +4270,16 @@ Log featurew to the console.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `prefix` | `string` | The prefix for the output. |
-| `features` | `undefined` \| [`FeatureTypes`](api_ref.md#featuretypes)[] | The features. |
+| Name       | Type                                                       | Description                |
+| :--------- | :--------------------------------------------------------- | :------------------------- |
+| `prefix`   | `string`                                                   | The prefix for the output. |
+| `features` | `undefined` \| [`FeatureTypes`](api_ref.md#featuretypes)[] | The features.              |
 
 #### Returns
 
 `void`
 
-___
+---
 
 ### logImmutableFeatures
 
@@ -4288,16 +4289,16 @@ Log immutable featuress to the console.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `prefix` | `string` | The prefix for the output. |
-| `immutableFeatures` | `undefined` \| [`FeatureTypes`](api_ref.md#featuretypes)[] | The features. |
+| Name                | Type                                                       | Description                |
+| :------------------ | :--------------------------------------------------------- | :------------------------- |
+| `prefix`            | `string`                                                   | The prefix for the output. |
+| `immutableFeatures` | `undefined` \| [`FeatureTypes`](api_ref.md#featuretypes)[] | The features.              |
 
 #### Returns
 
 `void`
 
-___
+---
 
 ### logFeature
 
@@ -4307,16 +4308,16 @@ Log feature to the console.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `prefix` | `string` | The prefix for the output. |
-| `feature` | [`FeatureTypes`](api_ref.md#featuretypes) | The feature. |
+| Name      | Type                                      | Description                |
+| :-------- | :---------------------------------------- | :------------------------- |
+| `prefix`  | `string`                                  | The prefix for the output. |
+| `feature` | [`FeatureTypes`](api_ref.md#featuretypes) | The feature.               |
 
 #### Returns
 
 `void`
 
-___
+---
 
 ### logUnlockConditions
 
@@ -4326,16 +4327,16 @@ Log unlock conditions to the console.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `prefix` | `string` | The prefix for the output. |
-| `unlockConditions` | [`UnlockConditionTypes`](api_ref.md#unlockconditiontypes)[] | The unlock conditions. |
+| Name               | Type                                                        | Description                |
+| :----------------- | :---------------------------------------------------------- | :------------------------- |
+| `prefix`           | `string`                                                    | The prefix for the output. |
+| `unlockConditions` | [`UnlockConditionTypes`](api_ref.md#unlockconditiontypes)[] | The unlock conditions.     |
 
 #### Returns
 
 `void`
 
-___
+---
 
 ### logUnlockCondition
 
@@ -4345,16 +4346,16 @@ Log feature block to the console.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `prefix` | `string` | The prefix for the output. |
-| `unlockCondition` | [`UnlockConditionTypes`](api_ref.md#unlockconditiontypes) | The unlock condition. |
+| Name              | Type                                                      | Description                |
+| :---------------- | :-------------------------------------------------------- | :------------------------- |
+| `prefix`          | `string`                                                  | The prefix for the output. |
+| `unlockCondition` | [`UnlockConditionTypes`](api_ref.md#unlockconditiontypes) | The unlock condition.      |
 
 #### Returns
 
 `void`
 
-___
+---
 
 ### milestoneIdFromMilestonePayload
 
@@ -4364,8 +4365,8 @@ Compute a milestoneId from a milestone payload.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name      | Type                                                   | Description            |
+| :-------- | :----------------------------------------------------- | :--------------------- |
 | `payload` | [`IMilestonePayload`](interfaces/IMilestonePayload.md) | The milestone payload. |
 
 #### Returns
@@ -4374,7 +4375,7 @@ Compute a milestoneId from a milestone payload.
 
 The milestone id hex prefixed string.
 
-___
+---
 
 ### blockIdFromMilestonePayload
 
@@ -4384,10 +4385,10 @@ Compute a blockId from a milestone payload.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `protocolVersion` | `number` | The protocol version to use. |
-| `payload` | [`IMilestonePayload`](interfaces/IMilestonePayload.md) | The milestone payload. |
+| Name              | Type                                                   | Description                  |
+| :---------------- | :----------------------------------------------------- | :--------------------------- |
+| `protocolVersion` | `number`                                               | The protocol version to use. |
+| `payload`         | [`IMilestonePayload`](interfaces/IMilestonePayload.md) | The milestone payload.       |
 
 #### Returns
 
@@ -4403,7 +4404,7 @@ The blockId of the block with the milestone payload.
 
 All of the address types.
 
-___
+---
 
 ### FeatureTypes
 
@@ -4411,7 +4412,7 @@ ___
 
 All of the feature block types.
 
-___
+---
 
 ### InputTypes
 
@@ -4419,23 +4420,23 @@ ___
 
 All of the input types.
 
-___
+---
 
 ### LedgerInclusionState
 
-Ƭ **LedgerInclusionState**: ``"noTransaction"`` \| ``"included"`` \| ``"conflicting"``
+Ƭ **LedgerInclusionState**: `"noTransaction"` \| `"included"` \| `"conflicting"`
 
 The different states of ledger inclusion.
 
-___
+---
 
 ### Magnitudes
 
-Ƭ **Magnitudes**: ``"P"`` \| ``"T"`` \| ``"G"`` \| ``"M"`` \| ``"K"`` \| ``""``
+Ƭ **Magnitudes**: `"P"` \| `"T"` \| `"G"` \| `"M"` \| `"K"` \| `""`
 
 Magnitudes for the numbers.
 
-___
+---
 
 ### MilestoneOptionTypes
 
@@ -4443,7 +4444,7 @@ ___
 
 All of the milestone option types.
 
-___
+---
 
 ### OutputTypes
 
@@ -4451,7 +4452,7 @@ ___
 
 All of the output types.
 
-___
+---
 
 ### PayloadTypes
 
@@ -4459,7 +4460,7 @@ ___
 
 All of the payload types.
 
-___
+---
 
 ### SignatureTypes
 
@@ -4467,7 +4468,7 @@ ___
 
 All of the signature types.
 
-___
+---
 
 ### TokenSchemeTypes
 
@@ -4475,7 +4476,7 @@ ___
 
 All of the token scheme types.
 
-___
+---
 
 ### UnlockConditionTypes
 
@@ -4483,7 +4484,7 @@ ___
 
 All of the unlock condition types.
 
-___
+---
 
 ### UnlockTypes
 

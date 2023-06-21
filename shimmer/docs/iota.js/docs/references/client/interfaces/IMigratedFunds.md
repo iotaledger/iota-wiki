@@ -1,11 +1,12 @@
 ---
 description: iota.js API reference
 keywords:
-- references
-- api references
-- typescript
+  - references
+  - api references
+  - typescript
 image: /img/client_banner.png
 ---
+
 # Interface: IMigratedFunds
 
 The migrated funds for receipts.
@@ -26,7 +27,7 @@ The migrated funds for receipts.
 
 The tail transaction hash of the migration bundle.
 
-___
+---
 
 ### address
 
@@ -34,7 +35,7 @@ ___
 
 The target address of the migrated funds.
 
-___
+---
 
 ### deposit
 

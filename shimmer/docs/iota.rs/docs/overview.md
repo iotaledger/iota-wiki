@@ -51,7 +51,7 @@ Different nodes can run on different software, but they always expose the same i
 node could be a [Hornet](https://wiki.iota.org/shimmer/hornet/welcome) node, and the other could be
 a [Bee](https://wiki.iota.org/bee/welcome) node, and they both would appear the same for any client.
 
-![A diagram that illustrates the text above. It has three layers: the application layer that includes iota.rs and its bindings, communication layer (the Internet network), and IOTA network layer with nodes that operate on one of the IOTA networks.](/img/overview/layered_overview.svg "An overview of IOTA layers.")
+![A diagram that illustrates the text above. It has three layers: the application layer that includes iota.rs and its bindings, communication layer (the Internet network), and IOTA network layer with nodes that operate on one of the IOTA networks.](/img/overview/layered_overview.svg 'An overview of IOTA layers.')
 
 ## API Design
 
@@ -63,4 +63,4 @@ for a complete list of available endpoints.
 
 Operations from the first group tend to be too atomic and basic to use conveniently. The second group provides you with
 higher-level helper functions. These functions represent an actual task and combine multiple basic operations
-internally. 
+internally.

@@ -4,8 +4,9 @@ A non-fungible token (NFT) is a globally unique token representing ownership of 
 Non-fungible tokens are implemented in Stardust as a standalone output type called [_NFT Output_](https://github.com/lzpap/tips/blob/master/tips/TIP-0018/tip-0018.md#nft-output).
 Once minted, the _NFT Output_ gets assigned a unique _NFT ID_ by the protocol based on the minting transaction. Issuers may
 choose to define immutable properties on the output upon minting, such as:
- - the [issuer](https://github.com/lzpap/tips/blob/master/tips/TIP-0018/tip-0018.md#issuer-feature) identity, namely the address of the issuer,
- - [metadata](https://github.com/lzpap/tips/blob/master/tips/TIP-0018/tip-0018.md#metadata-feature) treated as binary data by the protocol.
+
+- the [issuer](https://github.com/lzpap/tips/blob/master/tips/TIP-0018/tip-0018.md#issuer-feature) identity, namely the address of the issuer,
+- [metadata](https://github.com/lzpap/tips/blob/master/tips/TIP-0018/tip-0018.md#metadata-feature) treated as binary data by the protocol.
 
 A distinct feature of L1 NFTs is the ability to function as standalone wallets. Each NFT owns an address derived from its
 unique _NFT ID_, called _NFT Address_. NFT addresses look pretty much like regular Ed25519 addresses when encoded in bech32,
@@ -33,11 +34,12 @@ smart contract chain interactions.
 
 The alert reader might be wondering: can't we just set the maximum supply of a [native token](./foundry.md) to one to have a unique native token, therefore an NFT?
 The answer is yes, we could do that, but this approach has its limitations compared to the output based approach:
- - NFTs link the actual owned asset via metadata to the token. Metadata of a native token sits in the foundry output,
-   while the native token itself may reside in any other output. Therefore, the NFT and its metadata are detached from each other.
- - The owner of the NFT as a native token has no control of the foundry, therefore it is impossible to melt the native token
-   without the involvement of the issuer. The owner may still burn it, but then the storage deposit of the foundry can never be refunded.
- - Native tokens can not own other asset in the ledger.
+
+- NFTs link the actual owned asset via metadata to the token. Metadata of a native token sits in the foundry output,
+  while the native token itself may reside in any other output. Therefore, the NFT and its metadata are detached from each other.
+- The owner of the NFT as a native token has no control of the foundry, therefore it is impossible to melt the native token
+  without the involvement of the issuer. The owner may still burn it, but then the storage deposit of the foundry can never be refunded.
+- Native tokens can not own other asset in the ledger.
 
 ## Minting an NFT
 
@@ -45,9 +47,10 @@ Transaction A displays the minting of an NFT on protocol level. For the sake of 
 issuer and metadata upon minting, but it would be possible to add any unlock conditions or mutable feature as well.
 
 Minting must respect the following constraints:
- - _NFT ID_ must be zeroed out. The protocol will replace it with the blake2b-256 hash of the _Output ID_ upon booking.
- - _Issuer_ address must be unlocked on the input side,
- - _Immutable Metadata_ length must not exceed _Maximum Metadata Length_ defined in [TIP-22 (IOTA)](https://github.com/Wollac/protocol-rfcs/blob/protocol-parameters/tips/TIP-0022/tip-0022.md) or [TIP-32 (Shimmer)](https://github.com/iotaledger/tips/blob/shimmer-params/tips/TIP-0032/tip-0032.md).
+
+- _NFT ID_ must be zeroed out. The protocol will replace it with the blake2b-256 hash of the _Output ID_ upon booking.
+- _Issuer_ address must be unlocked on the input side,
+- _Immutable Metadata_ length must not exceed _Maximum Metadata Length_ defined in [TIP-22 (IOTA)](https://github.com/Wollac/protocol-rfcs/blob/protocol-parameters/tips/TIP-0022/tip-0022.md) or [TIP-32 (Shimmer)](https://github.com/iotaledger/tips/blob/shimmer-params/tips/TIP-0032/tip-0032.md).
 
 It is recommended to use one of the _IRC_ standards to define NFT metadata. See [IRC-27](https://github.com/Kami-Labs/tips/blob/main/tips/TIP-0027/tip-0027.md)
 for instance on how to define basic metadata linked to the NFT.
@@ -57,16 +60,17 @@ for instance on how to define basic metadata linked to the NFT.
 ## Transferring NFT
 
 Transaction B sends the newly issued _NFT Output #1_ to the _recipient_.
- - _NFT ID_ is all zeros in _NFT Output #1_, since it has just been minted in Transaction A. While the value of the field ([explicit NFT ID](https://github.com/lzpap/tips/blob/master/tips/TIP-0018/tip-0018.md#additional-transaction-semantic-validation-rules-3)) is
-   all zeroes, based on the protocol rules we know that the [implicit NFT ID](https://github.com/lzpap/tips/blob/master/tips/TIP-0018/tip-0018.md#additional-transaction-semantic-validation-rules-3)
-   can be calculated from the _Output ID_ of _NFT Output #1_.
- - When the minted NFT is transferred for the first time, _NFT ID_ must be set as the implicit NFT ID of the mint output. Therefore, _NFT Output #2_
-   sets the value of the _NFT ID_ field as the blake2b-256 hash of _NFT Output #1 ID_. If you miss this step and leave it as all zeroes,
-   the protocol interprets the transaction as the burning of the minted NFT and the creation of a new NFT.
- - Notice, that the immutable features are not allowed to change. Their values are carried together with the NFT until it is burned.
- - To change ownership of the NFT, unlock the address of the _Address Unlock Condition_ (_owner_) in the transaction and set a new one (_recipient_) on the output side.
- - Without further unlock conditions, _owner_ loses the 100i storage deposit which is now controlled by _recipient_. When an NFT is sold via a marketplace, it is the
-   platform that decides how to handle the storage deposit, whether the buying price accounts for it or the owner should be refunded by the recipient via a _Storage Deposit Return Unlock Condition_.
+
+- _NFT ID_ is all zeros in _NFT Output #1_, since it has just been minted in Transaction A. While the value of the field ([explicit NFT ID](https://github.com/lzpap/tips/blob/master/tips/TIP-0018/tip-0018.md#additional-transaction-semantic-validation-rules-3)) is
+  all zeroes, based on the protocol rules we know that the [implicit NFT ID](https://github.com/lzpap/tips/blob/master/tips/TIP-0018/tip-0018.md#additional-transaction-semantic-validation-rules-3)
+  can be calculated from the _Output ID_ of _NFT Output #1_.
+- When the minted NFT is transferred for the first time, _NFT ID_ must be set as the implicit NFT ID of the mint output. Therefore, _NFT Output #2_
+  sets the value of the _NFT ID_ field as the blake2b-256 hash of _NFT Output #1 ID_. If you miss this step and leave it as all zeroes,
+  the protocol interprets the transaction as the burning of the minted NFT and the creation of a new NFT.
+- Notice, that the immutable features are not allowed to change. Their values are carried together with the NFT until it is burned.
+- To change ownership of the NFT, unlock the address of the _Address Unlock Condition_ (_owner_) in the transaction and set a new one (_recipient_) on the output side.
+- Without further unlock conditions, _owner_ loses the 100i storage deposit which is now controlled by _recipient_. When an NFT is sold via a marketplace, it is the
+  platform that decides how to handle the storage deposit, whether the buying price accounts for it or the owner should be refunded by the recipient via a _Storage Deposit Return Unlock Condition_.
 
 ![Transaction B - Transferring NFT](/img/stardust_explanations/stardust_ledger_anatomy/nft_transaction/tx_B.svg)
 
@@ -86,31 +90,34 @@ and the _NFT ID_ itself.
 
 Transaction C shows a conditional transfer of an NFT. By defining a _Storage Deposit Return Unlock Condition_ and an
 _Expiration Unlock Condition_, the recipient has to claim the NFT transfer in a transaction that:
- - Refunds the storage deposit to the _owner_ address,
- - within the timeframe specified in the expiration condition.
+
+- Refunds the storage deposit to the _owner_ address,
+- within the timeframe specified in the expiration condition.
 
 Should the recipient fail to claim the transfer in time, the ownership of _NFT Output #3_ falls back to the _owner_
 address defined in the _Expiration Unlock Condition_. An expired output can be unlocked by this address without having
 to fulfill the _Storage Deposit Return Unlock Condition_.
 
 Transaction C defines that _recipient_ has to claim the output in a transaction such that:
- - _owner_ is refunded with 100i via a _Basic Output_,
- - the claiming transaction may only be carried out until _May 24 2022 18:00:00_.
+
+- _owner_ is refunded with 100i via a _Basic Output_,
+- the claiming transaction may only be carried out until _May 24 2022 18:00:00_.
 
 ![Transaction C - Transferring NFT with storage deposit return](/img/stardust_explanations/stardust_ledger_anatomy/nft_transaction/tx_C.svg)
 
 ## Claiming a conditional NFT transfer
 
 Transaction D shows how _recipient_ can claim the conditional transfer initiated in Transaction C:
- - _recipient_ has to fund the transaction with the to-be refunded storage deposit, therefore _Basic Output #2_ is unlocked
-   on the input side.
- - _NFT Output #4_ removes the additional unlocks from the NFT and places it solely into the ownership of _recipient_.
- - _Basic Output #3_ refunds _owner_ with the storage deposit defined in the _Storage Deposit Return Unlock Condition_ of
-   _NFT Output #3_.
- - Transaction D is only valid if the confirming milestone has a timestamp earlier than the one defined in the
-   _Expiration Unlock Condition_ of _NFT Output #3_.
- - Since both _NFT Output #3_ and _Basic Output #2_ are unlocked by _recipient_ address, it is enough to sign the transaction
-   once in _Signature Unlock #1_ and reference this unlock in _Reference Unlock #2_.
+
+- _recipient_ has to fund the transaction with the to-be refunded storage deposit, therefore _Basic Output #2_ is unlocked
+  on the input side.
+- _NFT Output #4_ removes the additional unlocks from the NFT and places it solely into the ownership of _recipient_.
+- _Basic Output #3_ refunds _owner_ with the storage deposit defined in the _Storage Deposit Return Unlock Condition_ of
+  _NFT Output #3_.
+- Transaction D is only valid if the confirming milestone has a timestamp earlier than the one defined in the
+  _Expiration Unlock Condition_ of _NFT Output #3_.
+- Since both _NFT Output #3_ and _Basic Output #2_ are unlocked by _recipient_ address, it is enough to sign the transaction
+  once in _Signature Unlock #1_ and reference this unlock in _Reference Unlock #2_.
 
 ![Transaction D - Claiming a conditional NFT transfer](/img/stardust_explanations/stardust_ledger_anatomy/nft_transaction/tx_D.svg)
 
@@ -190,14 +197,16 @@ A Collection NFT is a just a normal _NFT Output_ but with special purpose: it is
 The Collection NFT becomes the _Issuer_ of the _NFT Outputs_ representing NFTs within the collection.
 
 It is possible to:
- - Permanently lock the Collection NFT to prevent any future minting. No diluting is ever possible by issuers.
- - Lock the Collection NFT for some time to prevent minting,
- - Deposit the Collection NFT into a L2 chain where minting activity can be governed via smart contracts or DAOs.
+
+- Permanently lock the Collection NFT to prevent any future minting. No diluting is ever possible by issuers.
+- Lock the Collection NFT for some time to prevent minting,
+- Deposit the Collection NFT into a L2 chain where minting activity can be governed via smart contracts or DAOs.
 
 Transaction H mints a Collection NFT the same way as Transaction A mints a regular one. The metadata makes it clear
 that the intended use of this NFT is to serve as a Collection NFT.
- - _name_ defines the name of the collection,
- - _uri_ points to a website with more information about the project. Note, that _type_ defines the resource type for _uri_.
+
+- _name_ defines the name of the collection,
+- _uri_ points to a website with more information about the project. Note, that _type_ defines the resource type for _uri_.
 
 ![Transaction H - Creation of a Collection NFT](/img/stardust_explanations/stardust_ledger_anatomy/nft_transaction/tx_H.svg)
 
@@ -209,11 +218,12 @@ of all minted NFTs to hold the _NFT Address_ of the Collection NFT.
 
 We also place unique metadata in each NFT within the collection. The metadata is formatted according to IRC27 and contains
 information about:
- - where the asset represented by the NFT resides,
- - the issuer or artist,
- - the collection the NFT belongs to,
- - optional royalty addresses,
- - and custom attributes.
+
+- where the asset represented by the NFT resides,
+- the issuer or artist,
+- the collection the NFT belongs to,
+- optional royalty addresses,
+- and custom attributes.
 
 Transaction J mints a very limited collection, there are only 3 items _NFT Output #12, #13 and #14_. The issuer must
 also provide the storage deposit for the newly minted NFTs, therefore _Basic Output #7_ is consumed in the transaction.
@@ -230,7 +240,6 @@ that have been issued by the Collection NFT:
 ```
 GET <indexer-base-url>/api/indexer/v1/outputs/nft?issuer=<collection-nft-address>
 ```
-
 
 ### Locking Collection NFT
 

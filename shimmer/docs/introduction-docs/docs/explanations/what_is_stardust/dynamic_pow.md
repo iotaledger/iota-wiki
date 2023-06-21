@@ -1,20 +1,20 @@
 ---
 keywords:
-- Stardust
-- Shimmer
-- Upgrades
-- Dynamic POW
-- Proof-of-work
-- Congestion control
-- Protocol Improvements
-- explanation
+  - Stardust
+  - Shimmer
+  - Upgrades
+  - Dynamic POW
+  - Proof-of-work
+  - Congestion control
+  - Protocol Improvements
+  - explanation
 description: Stardust prepares the protocol for the support of dynamic proof-of-work.
 image: /img/logo/preview.png
 ---
 
 # Dynamic Proof of Work
 
-Proof of Work (PoW) is currently employed in IOTA  for congestion control. Every block must include a small amount of
+Proof of Work (PoW) is currently employed in IOTA for congestion control. Every block must include a small amount of
 computational work if it is to be considered valid. Note that, while in blockchain networks miners compete to solve the
 cryptographic puzzle of PoW first and hence wasting a huge amount of energy in the process, IOTA users who submit
 blocks to the network take part in a cooperative effort.

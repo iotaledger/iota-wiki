@@ -1,18 +1,19 @@
 ---
 description: iota.js API reference
 keywords:
-- references
-- api references
-- typescript
+  - references
+  - api references
+  - typescript
 image: /img/client_banner.png
 ---
+
 # Interface: IFoundryOutput
 
 Foundry output.
 
 ## Hierarchy
 
-- [`ITypeBase`](ITypeBase.md)<``5``\>
+- [`ITypeBase`](ITypeBase.md)<`5`\>
 
 - [`ICommonOutput`](ICommonOutput.md)
 
@@ -35,7 +36,7 @@ Foundry output.
 
 ### type
 
-• **type**: ``5``
+• **type**: `5`
 
 The type of the object.
 
@@ -43,7 +44,7 @@ The type of the object.
 
 [ITypeBase](ITypeBase.md).[type](ITypeBase.md#type)
 
-___
+---
 
 ### nativeTokens
 
@@ -55,7 +56,7 @@ The native tokens held by the output.
 
 [ICommonOutput](ICommonOutput.md).[nativeTokens](ICommonOutput.md#nativetokens)
 
-___
+---
 
 ### unlockConditions
 
@@ -67,7 +68,7 @@ The unlock conditions for the output.
 
 [ICommonOutput](ICommonOutput.md).[unlockConditions](ICommonOutput.md#unlockconditions)
 
-___
+---
 
 ### features
 
@@ -79,7 +80,7 @@ Features contained by the output.
 
 [ICommonOutput](ICommonOutput.md).[features](ICommonOutput.md#features)
 
-___
+---
 
 ### amount
 
@@ -87,7 +88,7 @@ ___
 
 The amount of IOTA tokens held by the output.
 
-___
+---
 
 ### serialNumber
 
@@ -95,7 +96,7 @@ ___
 
 The serial number of the foundry with respect to the controlling alias.
 
-___
+---
 
 ### tokenScheme
 
@@ -103,7 +104,7 @@ ___
 
 The token scheme for the foundry.
 
-___
+---
 
 ### immutableFeatures
 

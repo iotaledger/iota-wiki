@@ -27,7 +27,7 @@ Synced:{
 		'0x97eb7a447cd62e1c373ff8188ba422f5c1b0687707d38e10e8366a1c20d33fea'
 	],
 	'foundries':[
-		
+
 	],
 	'potentiallyLockedOutputs':{
 		'0x850c1e43dff1a28a42d71edc6d4ad0b9f251c03993f9b0684a34f645514ffe270000':False

@@ -2,17 +2,15 @@
 description: Learn how to configure a Wasp node.
 image: /img/logo/WASP_logo_dark.png
 keywords:
-
-- Smart Contracts
-- Configuring a node
-- Go-lang
-- Hornet
-- Requirements
-- Configuration
-- Dashboard
-- Grafana
-- Prometheus
-
+  - Smart Contracts
+  - Configuring a node
+  - Go-lang
+  - Hornet
+  - Requirements
+  - Configuration
+  - Dashboard
+  - Grafana
+  - Prometheus
 ---
 
 # Node Configuration
@@ -107,7 +105,7 @@ type. Below is a list of all message types published by Wasp (you can search for
 the exact places where each message is published).
 
 | Message                                                                       | Format                                                                                                              |
-|:------------------------------------------------------------------------------|:--------------------------------------------------------------------------------------------------------------------|
+| :---------------------------------------------------------------------------- | :------------------------------------------------------------------------------------------------------------------ |
 | Chain record has been saved in the registry                                   | `chainrec <chain ID> <color>`                                                                                       |
 | Chain committee has been activated                                            | `active_committee <chain ID>`                                                                                       |
 | Chain committee dismissed                                                     | `dismissed_committee <chain ID>`                                                                                    |

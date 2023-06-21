@@ -1,11 +1,12 @@
 ---
 description: iota.js API reference
 keywords:
-- references
-- api references
-- typescript
+  - references
+  - api references
+  - typescript
 image: /img/client_banner.png
 ---
+
 # Class: UnitsHelper
 
 Class to help with units formatting.
@@ -14,7 +15,7 @@ Class to help with units formatting.
 
 ### Properties
 
-- [MAGNITUDE\_MAP](UnitsHelper.md#magnitude_map)
+- [MAGNITUDE_MAP](UnitsHelper.md#magnitude_map)
 
 ### Methods
 
@@ -29,9 +30,9 @@ Class to help with units formatting.
 
 ## Properties
 
-### MAGNITUDE\_MAP
+### MAGNITUDE_MAP
 
-▪ `Static` `Readonly` **MAGNITUDE\_MAP**: `Object`
+▪ `Static` `Readonly` **MAGNITUDE_MAP**: `Object`
 
 Map units.
 
@@ -45,10 +46,10 @@ Format the value in the best units.
 
 #### Parameters
 
-| Name | Type | Default value | Description |
-| :------ | :------ | :------ | :------ |
-| `value` | `number` | `undefined` | The value to format. |
-| `decimalPlaces` | `number` | `2` | The number of decimal places to display. |
+| Name            | Type     | Default value | Description                              |
+| :-------------- | :------- | :------------ | :--------------------------------------- |
+| `value`         | `number` | `undefined`   | The value to format.                     |
+| `decimalPlaces` | `number` | `2`           | The number of decimal places to display. |
 
 #### Returns
 
@@ -56,7 +57,7 @@ Format the value in the best units.
 
 The formated value.
 
-___
+---
 
 ### formatUnits
 
@@ -66,11 +67,11 @@ Format the value in the best units.
 
 #### Parameters
 
-| Name | Type | Default value | Description |
-| :------ | :------ | :------ | :------ |
-| `value` | `number` | `undefined` | The value to format. |
-| `magnitude` | [`Magnitudes`](../api_ref.md#magnitudes) | `undefined` | The magnitude to format with. |
-| `decimalPlaces` | `number` | `2` | The number of decimal places to display. |
+| Name            | Type                                     | Default value | Description                              |
+| :-------------- | :--------------------------------------- | :------------ | :--------------------------------------- |
+| `value`         | `number`                                 | `undefined`   | The value to format.                     |
+| `magnitude`     | [`Magnitudes`](../api_ref.md#magnitudes) | `undefined`   | The magnitude to format with.            |
+| `decimalPlaces` | `number`                                 | `2`           | The number of decimal places to display. |
 
 #### Returns
 
@@ -78,7 +79,7 @@ Format the value in the best units.
 
 The formated value.
 
-___
+---
 
 ### calculateBest
 
@@ -88,8 +89,8 @@ Format the value in the best units.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name    | Type     | Description          |
+| :------ | :------- | :------------------- |
 | `value` | `number` | The value to format. |
 
 #### Returns
@@ -98,7 +99,7 @@ Format the value in the best units.
 
 The best units for the value.
 
-___
+---
 
 ### convertUnits
 
@@ -108,11 +109,11 @@ Convert the value to different units.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `value` | `number` | The value to convert. |
-| `from` | [`Magnitudes`](../api_ref.md#magnitudes) | The from magnitude. |
-| `to` | [`Magnitudes`](../api_ref.md#magnitudes) | The to magnitude. |
+| Name    | Type                                     | Description           |
+| :------ | :--------------------------------------- | :-------------------- |
+| `value` | `number`                                 | The value to convert. |
+| `from`  | [`Magnitudes`](../api_ref.md#magnitudes) | The from magnitude.   |
+| `to`    | [`Magnitudes`](../api_ref.md#magnitudes) | The to magnitude.     |
 
 #### Returns
 

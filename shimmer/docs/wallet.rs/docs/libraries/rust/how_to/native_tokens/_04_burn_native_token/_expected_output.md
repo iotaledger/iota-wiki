@@ -1,5 +1,5 @@
 ```plaintext {10-14,45-49}
-Balancebeforeburning: 
+Balancebeforeburning:
 
 AccountBalance{
   base_coin: BaseCoinBalance{
@@ -15,7 +15,7 @@ AccountBalance{
     }
   ],
   nfts: [
-    
+
   ],
   aliases: [
     AliasId(0xadbd5f0844fdc9bf4eafe2df929ac42cc90336e68da284cce96f22523bd87cde)
@@ -34,7 +34,7 @@ AccountBalance{
   }
 }
 
-Balanceafterburning: 
+Balanceafterburning:
 
 AccountBalance{
   base_coin: BaseCoinBalance{
@@ -50,7 +50,7 @@ AccountBalance{
     }
   ],
   nfts: [
-    
+
   ],
   aliases: [
     AliasId(0xadbd5f0844fdc9bf4eafe2df929ac42cc90336e68da284cce96f22523bd87cde)

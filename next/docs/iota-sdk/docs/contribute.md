@@ -1,13 +1,14 @@
 ---
 description: Contribute to the IOTA SDK joining the IOTA Libraries Initiative, contributing to the official GitHub repository or sharing your knowledge on Discord.
 keywords:
-- join
-- documentation
-- project
-- contribute
-- discord
-- GitHub
+  - join
+  - documentation
+  - project
+  - contribute
+  - discord
+  - GitHub
 ---
+
 # Contribute to the Project
 
 Thank you for thinking about contributing to the project! We have the following ways that you can contribute.

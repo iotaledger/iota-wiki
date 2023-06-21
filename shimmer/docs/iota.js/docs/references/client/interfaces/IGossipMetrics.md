@@ -1,11 +1,12 @@
 ---
 description: iota.js API reference
 keywords:
-- references
-- api references
-- typescript
+  - references
+  - api references
+  - typescript
 image: /img/client_banner.png
 ---
+
 # Interface: IGossipMetrics
 
 Gossip metrics.
@@ -34,7 +35,7 @@ Gossip metrics.
 
 The number of new blocks.
 
-___
+---
 
 ### knownBlocks
 
@@ -42,7 +43,7 @@ ___
 
 The number of known blocks.
 
-___
+---
 
 ### receivedBlocks
 
@@ -50,7 +51,7 @@ ___
 
 The number of received blocks.
 
-___
+---
 
 ### receivedBlockRequests
 
@@ -58,7 +59,7 @@ ___
 
 The number of received block requests.
 
-___
+---
 
 ### receivedMilestoneRequests
 
@@ -66,7 +67,7 @@ ___
 
 The number of received milestone requests.
 
-___
+---
 
 ### receivedHeartbeats
 
@@ -74,7 +75,7 @@ ___
 
 The number of received heartbeats.
 
-___
+---
 
 ### sentBlocks
 
@@ -82,7 +83,7 @@ ___
 
 The number of sent blocks.
 
-___
+---
 
 ### sentBlockRequests
 
@@ -90,7 +91,7 @@ ___
 
 The number of sent block requests.
 
-___
+---
 
 ### sentMilestoneRequests
 
@@ -98,7 +99,7 @@ ___
 
 The number of sent miletsone requests.
 
-___
+---
 
 ### sentHeartbeats
 
@@ -106,7 +107,7 @@ ___
 
 The number of sent heartbeats.
 
-___
+---
 
 ### droppedPackets
 

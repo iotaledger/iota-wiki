@@ -9,7 +9,7 @@ title: iota_wallet.account
 class Account()
 ```
 
-### build\_alias\_output
+### build_alias_output
 
 ```python
 def build_alias_output(amount, native_tokens, alias_id, state_index,
@@ -19,7 +19,7 @@ def build_alias_output(amount, native_tokens, alias_id, state_index,
 
 Build alias output.
 
-### build\_basic\_output
+### build_basic_output
 
 ```python
 def build_basic_output(amount, native_tokens, unlock_conditions, features)
@@ -27,7 +27,7 @@ def build_basic_output(amount, native_tokens, unlock_conditions, features)
 
 Build basic output.
 
-### build\_foundry\_output
+### build_foundry_output
 
 ```python
 def build_foundry_output(amount, native_tokens, serial_number, token_scheme,
@@ -36,7 +36,7 @@ def build_foundry_output(amount, native_tokens, serial_number, token_scheme,
 
 Build foundry output.
 
-### build\_nft\_output
+### build_nft_output
 
 ```python
 def build_nft_output(amount, native_tokens, nft_id, unlock_conditions,
@@ -45,7 +45,7 @@ def build_nft_output(amount, native_tokens, nft_id, unlock_conditions,
 
 BuildNftOutput.
 
-### burn\_native\_token
+### burn_native_token
 
 ```python
 def burn_native_token(token_id, burn_amount, options=None)
@@ -55,7 +55,7 @@ Burn native tokens. This doesn&#x27;t require the foundry output which minted th
 the foundries `melted_tokens` field, which makes it impossible to destroy the foundry output. Therefore it&#x27;s
 recommended to use melting, if the foundry output is available.
 
-### burn\_nft
+### burn_nft
 
 ```python
 def burn_nft(nft_id, options=None)
@@ -65,7 +65,7 @@ Burn an nft output. Outputs controlled by it will be swept before if they don&#x
 deposit return, timelock or expiration unlock condition. This should be preferred over burning, because after
 burning, the foundry can never be destroyed anymore.
 
-### consolidate\_outputs
+### consolidate_outputs
 
 ```python
 def consolidate_outputs(force, output_consolidation_threshold)
@@ -73,7 +73,7 @@ def consolidate_outputs(force, output_consolidation_threshold)
 
 Consolidate outputs.
 
-### create\_alias\_output
+### create_alias_output
 
 ```python
 def create_alias_output(alias_output_options, options)
@@ -81,7 +81,7 @@ def create_alias_output(alias_output_options, options)
 
 Create an alias output.
 
-### destroy\_alias
+### destroy_alias
 
 ```python
 def destroy_alias(alias_id, options=None)
@@ -91,7 +91,7 @@ Destroy an alias output. Outputs controlled by it will be swept before if they d
 storage deposit return, timelock or expiration unlock condition. The amount and possible native tokens will be
 sent to the governor address.
 
-### destroy\_foundry
+### destroy_foundry
 
 ```python
 def destroy_foundry(foundry_id, options=None)
@@ -100,7 +100,7 @@ def destroy_foundry(foundry_id, options=None)
 Destroy a foundry output with a circulating supply of 0.
 Native tokens in the foundry (minted by other foundries) will be transacted to the controlling alias
 
-### generate\_addresses
+### generate_addresses
 
 ```python
 def generate_addresses(amount, options=None)
@@ -108,7 +108,7 @@ def generate_addresses(amount, options=None)
 
 Generate new addresses.
 
-### get\_outputs\_with\_additional\_unlock\_conditions
+### get_outputs_with_additional_unlock_conditions
 
 ```python
 def get_outputs_with_additional_unlock_conditions(outputs_to_claim)
@@ -116,7 +116,7 @@ def get_outputs_with_additional_unlock_conditions(outputs_to_claim)
 
 Get outputs with additional unlock conditions.
 
-### get\_output
+### get_output
 
 ```python
 def get_output(output_id)
@@ -124,7 +124,7 @@ def get_output(output_id)
 
 Get output.
 
-### get\_transaction
+### get_transaction
 
 ```python
 def get_transaction(transaction_id)
@@ -140,7 +140,7 @@ def addresses()
 
 List addresses.
 
-### addresses\_with\_unspent\_outputs
+### addresses_with_unspent_outputs
 
 ```python
 def addresses_with_unspent_outputs()
@@ -156,7 +156,7 @@ def outputs(filter_options=None)
 
 Returns all outputs of the account.
 
-### unspent\_outputs
+### unspent_outputs
 
 ```python
 def unspent_outputs(filter_options=None)
@@ -164,7 +164,7 @@ def unspent_outputs(filter_options=None)
 
 Returns all unspent outputs of the account.
 
-### incoming\_transactions
+### incoming_transactions
 
 ```python
 def incoming_transactions()
@@ -180,7 +180,7 @@ def transactions()
 
 Returns all transaction of the account.
 
-### pending\_transactions
+### pending_transactions
 
 ```python
 def pending_transactions()
@@ -188,7 +188,7 @@ def pending_transactions()
 
 Returns all pending transactions of the account.
 
-### decrease\_native\_token\_supply
+### decrease_native_token_supply
 
 ```python
 def decrease_native_token_supply(token_id, melt_amount, options=None)
@@ -197,7 +197,7 @@ def decrease_native_token_supply(token_id, melt_amount, options=None)
 Melt native tokens. This happens with the foundry output which minted them, by increasing it&#x27;s
 `melted_tokens` field.
 
-### increase\_native\_token\_supply
+### increase_native_token_supply
 
 ```python
 def increase_native_token_supply(token_id,
@@ -208,7 +208,7 @@ def increase_native_token_supply(token_id,
 
 Mint more native token.
 
-### mint\_native\_token
+### mint_native_token
 
 ```python
 def mint_native_token(native_token_options, options=None)
@@ -216,7 +216,7 @@ def mint_native_token(native_token_options, options=None)
 
 Mint native token.
 
-### minimum\_required\_storage\_deposit
+### minimum_required_storage_deposit
 
 ```python
 def minimum_required_storage_deposit(output)
@@ -224,7 +224,7 @@ def minimum_required_storage_deposit(output)
 
 Minimum required storage deposit.
 
-### mint\_nfts
+### mint_nfts
 
 ```python
 def mint_nfts(nfts_options, options=None)
@@ -232,7 +232,7 @@ def mint_nfts(nfts_options, options=None)
 
 Mint nfts.
 
-### get\_balance
+### get_balance
 
 ```python
 def get_balance()
@@ -240,7 +240,7 @@ def get_balance()
 
 Get account balance information.
 
-### prepare\_send\_amount
+### prepare_send_amount
 
 ```python
 def prepare_send_amount(addresses_with_amount, options=None)
@@ -248,7 +248,7 @@ def prepare_send_amount(addresses_with_amount, options=None)
 
 Prepare send amount.
 
-### prepare\_transaction
+### prepare_transaction
 
 ```python
 def prepare_transaction(outputs, options=None)
@@ -256,7 +256,7 @@ def prepare_transaction(outputs, options=None)
 
 Prepare transaction.
 
-### retry\_transaction\_until\_included
+### retry_transaction_until_included
 
 ```python
 def retry_transaction_until_included(transaction_id,
@@ -276,7 +276,7 @@ def sync(options=None)
 Sync the account by fetching new information from the nodes.
 Will also retry pending transactions and consolidate outputs if necessary.
 
-### send\_amount
+### send_amount
 
 ```python
 def send_amount(addresses_with_amount, options=None)
@@ -284,7 +284,7 @@ def send_amount(addresses_with_amount, options=None)
 
 Send amount.
 
-### send\_micro\_transaction
+### send_micro_transaction
 
 ```python
 def send_micro_transaction(addresses_with_micro_amount, options=None)
@@ -292,7 +292,7 @@ def send_micro_transaction(addresses_with_micro_amount, options=None)
 
 Send micro transaction.
 
-### send\_native\_tokens
+### send_native_tokens
 
 ```python
 def send_native_tokens(addresses_native_tokens, options=None)
@@ -300,7 +300,7 @@ def send_native_tokens(addresses_native_tokens, options=None)
 
 Send native tokens.
 
-### send\_nft
+### send_nft
 
 ```python
 def send_nft(addresses_nft_ids, options=None)
@@ -308,7 +308,7 @@ def send_nft(addresses_nft_ids, options=None)
 
 Send nft.
 
-### set\_alias
+### set_alias
 
 ```python
 def set_alias(alias)
@@ -316,7 +316,7 @@ def set_alias(alias)
 
 Set alias.
 
-### sign\_transaction\_essence
+### sign_transaction_essence
 
 ```python
 def sign_transaction_essence(prepared_transaction_data)
@@ -324,7 +324,7 @@ def sign_transaction_essence(prepared_transaction_data)
 
 Sign a transaction essence.
 
-### submit\_and\_store\_transaction
+### submit_and_store_transaction
 
 ```python
 def submit_and_store_transaction(signed_transaction_data)
@@ -332,7 +332,7 @@ def submit_and_store_transaction(signed_transaction_data)
 
 Submit and store transaction.
 
-### claim\_outputs
+### claim_outputs
 
 ```python
 def claim_outputs(output_ids_to_claim)
@@ -340,7 +340,7 @@ def claim_outputs(output_ids_to_claim)
 
 Claim outputs.
 
-### send\_outputs
+### send_outputs
 
 ```python
 @send_message_routine
@@ -349,11 +349,10 @@ def send_outputs(outputs, options=None)
 
 Send outputs in a transaction.
 
-### request\_funds\_from\_faucet
+### request_funds_from_faucet
 
 ```python
 def request_funds_from_faucet(url=None, address=None)
 ```
 
 Requests funds from the faucet
-

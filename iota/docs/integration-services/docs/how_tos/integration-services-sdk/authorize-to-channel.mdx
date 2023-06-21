@@ -2,16 +2,17 @@
 image: /img/integration-services/logo/integration_services.png
 description: The example-6 script creates 2 identities, and later uses them to demonstrate how to authorize channel subscriptions, subscribe to a channel and read from channels.
 keywords:
-- how to
-- channels
-- authorize channel
-- subscribe channel
-- read channel
-- maven
-- java
-- nodejs
-- javascript
+  - how to
+  - channels
+  - authorize channel
+  - subscribe channel
+  - read channel
+  - maven
+  - java
+  - nodejs
+  - javascript
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
@@ -27,7 +28,6 @@ The example-6 script performs the following tasks:
 6. `Owner` finds an unapproved subscription, and [authorizes it](#authorize-subscription).
 7. `User` [sends data to the channel](#write-to-a-channel).
 8. `Owner` is able to [read the second message sent by `User` from that channel](#read-from-a-channel).
-
 
 You can run the example with the following command:
 
@@ -45,7 +45,7 @@ mvn exec:_java -Dexec.mainClass=net.gradbase.how_tos.AuthorizeToChannel
 
 ```bash
 npm run example-6
-````
+```
 
 **Example source code**: [Example-6](https://github.com/iotaledger/integration-services/blob/master/clients/client-sdk/examples/6-AuthorizeToChannel.ts)
 
@@ -71,9 +71,12 @@ System.out.println("subscription link " + subscriptionLink);
 
 ```js
 // Request subscription to the channel as the user. The returned subscriptionLink can be used to authorize the user to the channel.
-const { subscriptionLink } = await userClient.requestSubscription(channelAddress, {
-accessRights: AccessRights.ReadAndWrite
-});
+const { subscriptionLink } = await userClient.requestSubscription(
+  channelAddress,
+  {
+    accessRights: AccessRights.ReadAndWrite,
+  },
+);
 ```
 
 </TabItem>
@@ -82,7 +85,6 @@ accessRights: AccessRights.ReadAndWrite
 ## Authorize a Subscription
 
 In order to allow `userClient` to read and write on that channel, its subscription needs to be authorized as shown in the following script:
-
 
 <Tabs groupId={"programmingLanguage"}>
 <TabItem value="Java" label={'Java'}>
@@ -106,17 +108,22 @@ for (SubscriptionInternal sub : allSubs) {
 
 ```js
 // Find subscriptions to the channel that are not already authorized.
-const subscriptions = await ownerClient.findAllSubscriptions(channelAddress, false);
+const subscriptions = await ownerClient.findAllSubscriptions(
+  channelAddress,
+  false,
+);
 
-const unauthorizedSubscriptions = subscriptions.filter(subscription => !subscription.isAuthorized)
+const unauthorizedSubscriptions = subscriptions.filter(
+  (subscription) => !subscription.isAuthorized,
+);
 
 for (const subscription of unauthorizedSubscriptions) {
-    // Authorize the user to the channel.
-    // Authorization can happen via the id of the user or the generated subscription link.
-    const keyloadLink = await ownerClient.authorizeSubscription(channelAddress, {
-    id: channelUser.doc.id
-    });
-    console.log("Subscription Keyload Link:", keyloadLink)
+  // Authorize the user to the channel.
+  // Authorization can happen via the id of the user or the generated subscription link.
+  const keyloadLink = await ownerClient.authorizeSubscription(channelAddress, {
+    id: channelUser.doc.id,
+  });
+  console.log('Subscription Keyload Link:', keyloadLink);
 }
 ```
 
@@ -140,7 +147,7 @@ ownerClient.write(channelAddress, "log", null, new JSONObject().put("log", "This
 ```js
 // Writing data to the channel as the channel owner.
 await ownerClient.write(channelAddress, {
-    payload: { log: `This is log file 1` }
+  payload: { log: `This is log file 1` },
 });
 ```
 
@@ -165,12 +172,11 @@ await ownerClient.write(channelAddress, {
     <TabItem value="Nodejs" label={'Node.js'}>
 
 ```js
-    // Writing data to the channel as the channel owner.
-    await ownerClient.write(channelAddress, {
-    payload: { log: `This is log file 1` }
-    });
+// Writing data to the channel as the channel owner.
+await ownerClient.write(channelAddress, {
+  payload: { log: `This is log file 1` },
+});
 ```
 
 </TabItem>
 </Tabs>
-

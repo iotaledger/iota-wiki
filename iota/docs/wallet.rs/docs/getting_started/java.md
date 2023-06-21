@@ -2,13 +2,14 @@
 description: Getting started with the official IOTA Wallet Library Java binding.
 image: /img/logo/iota_mark_light.png
 keywords:
-- Java
-- Rust
-- jar
-- maven
-- environment variable
-- getting started
+  - Java
+  - Rust
+  - jar
+  - maven
+  - environment variable
+  - getting started
 ---
+
 # Getting Started with Java
 
 ## Prerequisites
@@ -22,7 +23,6 @@ Ensure you have installed the [required dependencies for the library](https://gi
 - Cargo ndk (`cargo install cargo-ndk`).
 - Cargo fmt (`rustup component add rustfmt`).
 
-
 Download or clone the `wallet.rs` repository:
 
 ```bash
@@ -32,7 +32,6 @@ git clone -b production https://github.com/iotaledger/wallet.rs.git
 ## Security
 
 In a production setup, do not store passwords in the host's environment variables or in the source code. See our [backup and security recommendations](https://chrysalis.docs.iota.org/guides/backup_security) for production setups.
-
 
 ## Installation
 
@@ -95,7 +94,7 @@ You can find more information on using the `wallet.rs` library's java binding in
 
 ### Gradle
 
-```
+````
 ./gradlew examples:java-app:test --info
 ```bash
 
@@ -106,7 +105,7 @@ You can run the examples using Maven by running the following command:
 
 ```bash
 mvn exec:exec
-```
+````
 
 ## API Reference
 

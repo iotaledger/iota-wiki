@@ -92,16 +92,25 @@ Under the first time experience wizard, once you enter a name associated with yo
 Below you can find the code that calls the IOTA Identity Framework and generates a new decentralized identity. As mentioned before, this code can be found under the [IdentityService](https://github.com/ZebraDevs/Zebra-Iota-Edge-SDK/blob/main/identity-enabler/holder-mobile-app/src/services/identityService.ts) class.
 
 ```typescript
-import * as IotaIdentity from "@iota/identity-wasm/web";
-const { Config, Network, Client, KeyPair, KeyType, Document, KeyCollection, VerificationMethod } = IotaIdentity;
+import * as IotaIdentity from '@iota/identity-wasm/web';
+const {
+  Config,
+  Network,
+  Client,
+  KeyPair,
+  KeyType,
+  Document,
+  KeyCollection,
+  VerificationMethod,
+} = IotaIdentity;
 
 // Initialize the library - Is cached after first initialization
 await IotaIdentity.init();
 
 // Create a client
-const cfg = Config.fromNetwork(Network.try_from_name("main"));
-cfg.setNode("https://chrysalis-nodes.iota.org");
-cfg.setPermanode("https://chrysalis-chronicle.iota.org/api/mainnet");
+const cfg = Config.fromNetwork(Network.try_from_name('main'));
+cfg.setNode('https://chrysalis-nodes.iota.org');
+cfg.setPermanode('https://chrysalis-chronicle.iota.org/api/mainnet');
 const client = Client.fromConfig(cfg);
 
 // Generate a new keypair and DID document
@@ -110,33 +119,38 @@ const doc = new Document(key, client.network().toString());
 
 // Add a Merkle Key Collection method, so compromised keys can be revoked.
 const keys = new KeyCollection(KeyType.Ed25519, 8);
-const method = VerificationMethod.createMerkleKey(Digest.Sha256, doc.id, keys, "key-collection");
+const method = VerificationMethod.createMerkleKey(
+  Digest.Sha256,
+  doc.id,
+  keys,
+  'key-collection',
+);
 ```
 
 Afterwards a new DID Document will have been anchored to the IOTA Tangle mainnet similar to (Note: you will have a different one when you execute this tutorial)
 
 ```json
 {
-    "id": "did:iota:7mog3xHBBm6H5fHxRdMiaRMjDHaFZn1kQshd8CoVPJdZ",
-    "verificationMethod": [
-        {
-            "id": "did:iota:7mog3xHBBm6H5fHxRdMiaRMjDHaFZn1kQshd8CoVPJdZ#authentication",
-            "controller": "did:iota:7mog3xHBBm6H5fHxRdMiaRMjDHaFZn1kQshd8CoVPJdZ",
-            "type": "Ed25519VerificationKey2018",
-            "publicKeyMultibase": "z9wnY61277zU1xLg4TUXXz4ZBQRFudu1Ln52QFXSYEnXF"
-        },
-        {
-            "id": "did:iota:7mog3xHBBm6H5fHxRdMiaRMjDHaFZn1kQshd8CoVPJdZ#key-collection",
-            "controller": "did:iota:7mog3xHBBm6H5fHxRdMiaRMjDHaFZn1kQshd8CoVPJdZ",
-            "type": "MerkleKeyCollection2021",
-            "publicKeyMultibase": "z11m9xNVcEfLJcakvkQF8UkeyaFdfcyLPMvrU9qzBMEKqa"
-        }
-    ],
-    "authentication": [
-        "did:iota:7mog3xHBBm6H5fHxRdMiaRMjDHaFZn1kQshd8CoVPJdZ#authentication"
-    ],
-    "created": "2021-12-21T11:27:10Z",
-    "updated": "2021-12-21T11:27:10Z"
+  "id": "did:iota:7mog3xHBBm6H5fHxRdMiaRMjDHaFZn1kQshd8CoVPJdZ",
+  "verificationMethod": [
+    {
+      "id": "did:iota:7mog3xHBBm6H5fHxRdMiaRMjDHaFZn1kQshd8CoVPJdZ#authentication",
+      "controller": "did:iota:7mog3xHBBm6H5fHxRdMiaRMjDHaFZn1kQshd8CoVPJdZ",
+      "type": "Ed25519VerificationKey2018",
+      "publicKeyMultibase": "z9wnY61277zU1xLg4TUXXz4ZBQRFudu1Ln52QFXSYEnXF"
+    },
+    {
+      "id": "did:iota:7mog3xHBBm6H5fHxRdMiaRMjDHaFZn1kQshd8CoVPJdZ#key-collection",
+      "controller": "did:iota:7mog3xHBBm6H5fHxRdMiaRMjDHaFZn1kQshd8CoVPJdZ",
+      "type": "MerkleKeyCollection2021",
+      "publicKeyMultibase": "z11m9xNVcEfLJcakvkQF8UkeyaFdfcyLPMvrU9qzBMEKqa"
+    }
+  ],
+  "authentication": [
+    "did:iota:7mog3xHBBm6H5fHxRdMiaRMjDHaFZn1kQshd8CoVPJdZ#authentication"
+  ],
+  "created": "2021-12-21T11:27:10Z",
+  "updated": "2021-12-21T11:27:10Z"
 }
 ```
 
@@ -173,32 +187,32 @@ The issuance of a new credential is performed using the IOTA Identity implementa
 The code below shows how this process can be implemented. The verification method used to generate our new credential is the one corresponding to the aforementioned Merkle keyset, concretely using the key at the index 0 of such keyset.
 
 ```typescript
-    const IssuerDidDoc = Document.fromJSON(JSON.parse(issuer.didDoc));
-    const IssuerKeys = KeyCollection.fromJSON(issuer.keys);
-    const IssuerDoc = Document.fromJSON(issuer.doc);
-    const IssuerMethod = VerificationMethod.fromJSON(issuer.method);
+const IssuerDidDoc = Document.fromJSON(JSON.parse(issuer.didDoc));
+const IssuerKeys = KeyCollection.fromJSON(issuer.keys);
+const IssuerDoc = Document.fromJSON(issuer.doc);
+const IssuerMethod = VerificationMethod.fromJSON(issuer.method);
 
-    // Prepare a credential subject
-    const credentialSubject = {
-        id: IssuerDidDoc.id.toString(),
-        ...data
-    };
+// Prepare a credential subject
+const credentialSubject = {
+  id: IssuerDidDoc.id.toString(),
+  ...data,
+};
 
-    // Issue an unsigned credential
-    const unsignedVc = VerifiableCredential.extend({
-        id: "http://example.com/credentials/3732",
-        type: schemaName,
-        issuer: IssuerDidDoc.id.toString(),
-        credentialSubject
-    });
+// Issue an unsigned credential
+const unsignedVc = VerifiableCredential.extend({
+  id: 'http://example.com/credentials/3732',
+  type: schemaName,
+  issuer: IssuerDidDoc.id.toString(),
+  credentialSubject,
+});
 
-    // Sign the credential with User's Merkle Key Collection method
-    const signedVc = IssuerDoc.signCredential(unsignedVc, {
-        method: IssuerMethod.id.toString(),
-        public: IssuerKeys.public(0),
-        private: IssuerKeys.private(0),
-        proof: IssuerKeys.merkleProof(Digest.Sha256, 0)
-    });
+// Sign the credential with User's Merkle Key Collection method
+const signedVc = IssuerDoc.signCredential(unsignedVc, {
+  method: IssuerMethod.id.toString(),
+  public: IssuerKeys.public(0),
+  private: IssuerKeys.private(0),
+  proof: IssuerKeys.merkleProof(Digest.Sha256, 0),
+});
 ```
 
 As a result, a new Verifiable Credential will be generated and stored on the device. An example that shows the structure of a Verifiable Credential can be found [here](https://www.w3.org/TR/vc-data-model/#example-a-simple-example-of-a-verifiable-credential). It is a standard JSON-LD document using the vocabulary and data model defined by the W3C standard, which includes fields devoted to the signature (proof) and related metadata.
@@ -221,20 +235,20 @@ Once a verifiable presentation has been generated it is encoded using a data mat
 Generating and signing a Verifiable Presentation is done using the following code snippet
 
 ```typescript
-    // Prepare presentation Data
-    const IssuerKeys = KeyCollection.fromJSON(issuer.keys);
-    const IssuerDoc = Document.fromJSON(issuer.doc);
-    const IssuerMethod = VerificationMethod.fromJSON(issuer.method);
+// Prepare presentation Data
+const IssuerKeys = KeyCollection.fromJSON(issuer.keys);
+const IssuerDoc = Document.fromJSON(issuer.doc);
+const IssuerMethod = VerificationMethod.fromJSON(issuer.method);
 
-    // Create a Verifiable Presentation from the Credential - signed by user's key
-    const unsignedVp = new VerifiablePresentation(IssuerDoc, signedVc);
+// Create a Verifiable Presentation from the Credential - signed by user's key
+const unsignedVp = new VerifiablePresentation(IssuerDoc, signedVc);
 
-    const signedVp = IssuerDoc.signPresentation(unsignedVp, {
-        method: IssuerMethod.id.toString(),
-        public: IssuerKeys.public(0),
-        private: IssuerKeys.private(0),
-        proof: IssuerKeys.merkleProof(Digest.Sha256, 0)
-    });
+const signedVp = IssuerDoc.signPresentation(unsignedVp, {
+  method: IssuerMethod.id.toString(),
+  public: IssuerKeys.public(0),
+  private: IssuerKeys.private(0),
+  proof: IssuerKeys.merkleProof(Digest.Sha256, 0),
+});
 ```
 
 Then, the generation of a data matrix code is done using the [bwip-js library](https://github.com/metafloor/bwip-js) library.

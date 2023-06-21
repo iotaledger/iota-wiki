@@ -2,17 +2,15 @@
 description: The `blocklog` contract keeps track of the blocks of requests processed by the chain.
 image: /img/logo/WASP_logo_dark.png
 keywords:
-
-- core contracts
-- blocklog
-- views
-- information
-- request status
-- receipts
-- events
-- reference
-
---- 
+  - core contracts
+  - blocklog
+  - views
+  - information
+  - request status
+  - receipts
+  - events
+  - reference
+---
 
 # The `blocklog` Contract
 
@@ -37,7 +35,7 @@ Returns information about the block with index `n`.
 
 #### Parameters
 
-- `n`:  (optional `uint32`) The block index. Default: the latest block.
+- `n`: (optional `uint32`) The block index. Default: the latest block.
 
 #### Returns
 
@@ -81,7 +79,7 @@ Returns all the receipts in the block with index `n`.
 
 #### Returns
 
-- `d`:  ([`Array16`](https://github.com/dessaya/wasp/blob/develop/packages/kv/collections/array16.go)
+- `d`: ([`Array16`](https://github.com/dessaya/wasp/blob/develop/packages/kv/collections/array16.go)
   of [`RequestReceipt`](#requestreceipt))
 
 ### `isRequestProcessed(u RequestID)`
@@ -167,8 +165,8 @@ A `RequestID` is encoded as the concatenation of:
 - Anchor transaction ID ([`iotago::TransactionID`](https://github.com/iotaledger/iota.go/blob/develop/transaction.go)).
 - Anchor transaction sub-essence hash (`[32]byte`).
 - Previous L1 commitment (except for block index 0).
-    - Trie root (`[20]byte`).
-    - Block hash (`[20]byte`).
+  - Trie root (`[20]byte`).
+  - Block hash (`[20]byte`).
 - Total base tokens in L2 accounts (`uint64`).
 - Total storage deposit (`uint64`).
 - Gas burned (`uint64`).

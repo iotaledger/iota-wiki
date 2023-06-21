@@ -4,10 +4,11 @@ sidebar_label: Revocation
 description: Explain how a VC is revoked
 image: /img/Identity_icon.png
 keywords:
-- verifiable
-- credentials
-- revoke
+  - verifiable
+  - credentials
+  - revoke
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
@@ -15,12 +16,12 @@ The [example](#example) below demonstrates how an issuer can revoke a verifiable
 
 ### Revocation List 2020 {#revocation-list-2020}
 
-One of the ways for an issuer to control the status of its credentials is by using a revocation list. At the most basic level, revocation information for all verifiable credentials issued by an issuer are expressed as simple binary values. The issuer keeps a bitstring list of all verifiable credentials it has issued. Each verifiable credential is associated with a position in the list. If the binary value of the position in the list is 1 (one), the verifiable credential is revoked, if it is 0 (zero) it is not revoked. 
+One of the ways for an issuer to control the status of its credentials is by using a revocation list. At the most basic level, revocation information for all verifiable credentials issued by an issuer are expressed as simple binary values. The issuer keeps a bitstring list of all verifiable credentials it has issued. Each verifiable credential is associated with a position in the list. If the binary value of the position in the list is 1 (one), the verifiable credential is revoked, if it is 0 (zero) it is not revoked.
 When using [revocation list 2020](https://w3c-ccg.github.io/vc-status-rl-2020/#core-concept) the [credential status](https://w3c-ccg.github.io/vc-status-rl-2020/#revocationlist2020status) of the credential must be defined as follows:
 
 - **ID**: a URL that identifies the status information associated with the verifiable credential.
-- **Types**: The type property must be RevocationList2020Status. 
-- **Revocation List Index**: an arbitrary size integer greater than or equal to 0, expressed as a string. The value identifies the bit position of the revocation status of the verifiable credential. 
+- **Types**: The type property must be RevocationList2020Status.
+- **Revocation List Index**: an arbitrary size integer greater than or equal to 0, expressed as a string. The value identifies the bit position of the revocation status of the verifiable credential.
 - **Revocation List Credential**: a URL to a verifiable credential. When the URL is dereferenced, the resulting verifiable credential must have type property that includes the RevocationList2020Credential value.
 
 When a revocation list is published, the result is a verifiable credential that encapsulates the revocation list. This [revocation list credential](https://w3c-ccg.github.io/vc-status-rl-2020/#revocationlist2020credential) must have the following properties:

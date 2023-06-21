@@ -1,11 +1,12 @@
 ---
 description: iota.js API reference
 keywords:
-- references
-- api references
-- typescript
+  - references
+  - api references
+  - typescript
 image: /img/client_banner.png
 ---
+
 # Interface: IOutputsResponse
 
 Details of an outputs response from the indexer plugin.
@@ -27,7 +28,7 @@ Details of an outputs response from the indexer plugin.
 
 The ledger index at which these outputs where available at.
 
-___
+---
 
 ### pageSize
 
@@ -35,7 +36,7 @@ ___
 
 The maximum count of results that are returned by the node.
 
-___
+---
 
 ### cursor
 
@@ -43,7 +44,7 @@ ___
 
 The cursor to use for getting the next results.
 
-___
+---
 
 ### items
 

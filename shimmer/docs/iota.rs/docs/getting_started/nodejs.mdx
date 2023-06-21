@@ -3,13 +3,12 @@ title: Getting Started With Node.js
 description: Getting started with the official IOTA Client Node.js library.
 image: /img/logo/iota_mark_light.png
 keywords:
-
-- Node.js
-- dotenv
-- install
-- npm
-- yarn
-- security
+  - Node.js
+  - dotenv
+  - install
+  - npm
+  - yarn
+  - security
 ---
 
 import WarningPasswordStorage from '../_admonitions/_password_storage.md';
@@ -18,12 +17,13 @@ import WarningPasswordStorage from '../_admonitions/_password_storage.md';
 
 ## Requirements
 
-* One of the following [Node.js](https://nodejs.org/en/) versions:
-    * '14.x'
-    * '16.x' (LTS) .
-    * '18.x' (Current).
+- One of the following [Node.js](https://nodejs.org/en/) versions:
 
-* [Rust and Cargo](https://doc.rust-lang.org/cargo/getting-started/installation.html) to compile the binding.
+  - '14.x'
+  - '16.x' (LTS) .
+  - '18.x' (Current).
+
+- [Rust and Cargo](https://doc.rust-lang.org/cargo/getting-started/installation.html) to compile the binding.
 
 ## Install the Library
 
@@ -51,10 +51,10 @@ instance and interface with it.
 import { Client } from '@iota/client';
 
 const client = new Client({
-    nodes: ['https://api.testnet.shimmer.network'],
+  nodes: ['https://api.testnet.shimmer.network'],
 });
 
-client.getInfo().then(console.log).catch(console.error)
+client.getInfo().then(console.log).catch(console.error);
 ```
 
 ## Connecting to MQTT

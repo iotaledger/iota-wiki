@@ -1,11 +1,12 @@
 ---
 description: iota.js API reference
 keywords:
-- references
-- api references
-- typescript
+  - references
+  - api references
+  - typescript
 image: /img/client_banner.png
 ---
+
 # Class: MqttClient
 
 MQTT Client implementation for pub/sub communication.
@@ -60,10 +61,10 @@ Create a new instace of MqttClient.
 
 #### Parameters
 
-| Name | Type | Default value | Description |
-| :------ | :------ | :------ | :------ |
-| `endpoints` | `string` \| `string`[] | `undefined` | The endpoint or endpoints list to connect to. |
-| `keepAliveTimeoutSeconds` | `number` | `30` | Timeout to reconnect if no messages received. |
+| Name                      | Type                   | Default value | Description                                   |
+| :------------------------ | :--------------------- | :------------ | :-------------------------------------------- |
+| `endpoints`               | `string` \| `string`[] | `undefined`   | The endpoint or endpoints list to connect to. |
+| `keepAliveTimeoutSeconds` | `number`               | `30`          | Timeout to reconnect if no messages received. |
 
 ## Methods
 
@@ -75,8 +76,8 @@ Subscribe to the latest milestone updates.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name       | Type                                                                                                       | Description                                         |
+| :--------- | :--------------------------------------------------------------------------------------------------------- | :-------------------------------------------------- |
 | `callback` | (`topic`: `string`, `data`: [`IMqttMilestoneResponse`](../interfaces/IMqttMilestoneResponse.md)) => `void` | The callback which is called when new data arrives. |
 
 #### Returns
@@ -89,7 +90,7 @@ A subscription Id which can be used to unsubscribe.
 
 [IMqttClient](../interfaces/IMqttClient.md).[milestonesLatest](../interfaces/IMqttClient.md#milestoneslatest)
 
-___
+---
 
 ### milestonesConfirmed
 
@@ -99,8 +100,8 @@ Subscribe to the latest confirmed milestone updates.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name       | Type                                                                                                       | Description                                         |
+| :--------- | :--------------------------------------------------------------------------------------------------------- | :-------------------------------------------------- |
 | `callback` | (`topic`: `string`, `data`: [`IMqttMilestoneResponse`](../interfaces/IMqttMilestoneResponse.md)) => `void` | The callback which is called when new data arrives. |
 
 #### Returns
@@ -113,7 +114,7 @@ A subscription Id which can be used to unsubscribe.
 
 [IMqttClient](../interfaces/IMqttClient.md).[milestonesConfirmed](../interfaces/IMqttClient.md#milestonesconfirmed)
 
-___
+---
 
 ### blocksRaw
 
@@ -123,8 +124,8 @@ Subscribe to get all blocks in binary form.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name       | Type                                                | Description                                         |
+| :--------- | :-------------------------------------------------- | :-------------------------------------------------- |
 | `callback` | (`topic`: `string`, `data`: `Uint8Array`) => `void` | The callback which is called when new data arrives. |
 
 #### Returns
@@ -137,7 +138,7 @@ A subscription Id which can be used to unsubscribe.
 
 [IMqttClient](../interfaces/IMqttClient.md).[blocksRaw](../interfaces/IMqttClient.md#blocksraw)
 
-___
+---
 
 ### blocks
 
@@ -147,8 +148,8 @@ Subscribe to get all blocks in object form.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name       | Type                                            | Description                                         |
+| :--------- | :---------------------------------------------- | :-------------------------------------------------- |
 | `callback` | (`topic`: `string`, `data`: `IBlock`) => `void` | The callback which is called when new data arrives. |
 
 #### Returns
@@ -161,7 +162,7 @@ A subscription Id which can be used to unsubscribe.
 
 [IMqttClient](../interfaces/IMqttClient.md).[blocks](../interfaces/IMqttClient.md#blocks)
 
-___
+---
 
 ### blocksReferenced
 
@@ -171,8 +172,8 @@ Subscribe to get the metadata for all the blocks.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name       | Type                                                    | Description                                         |
+| :--------- | :------------------------------------------------------ | :-------------------------------------------------- |
 | `callback` | (`topic`: `string`, `data`: `IBlockMetadata`) => `void` | The callback which is called when new data arrives. |
 
 #### Returns
@@ -185,7 +186,7 @@ A subscription Id which can be used to unsubscribe.
 
 [IMqttClient](../interfaces/IMqttClient.md).[blocksReferenced](../interfaces/IMqttClient.md#blocksreferenced)
 
-___
+---
 
 ### blocksTransactionRaw
 
@@ -195,8 +196,8 @@ Subscribe to all transaction blocks in their raw form.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name       | Type                                                | Description                                         |
+| :--------- | :-------------------------------------------------- | :-------------------------------------------------- |
 | `callback` | (`topic`: `string`, `data`: `Uint8Array`) => `void` | The callback which is called when new data arrives. |
 
 #### Returns
@@ -209,7 +210,7 @@ A subscription Id which can be used to unsubscribe.
 
 [IMqttClient](../interfaces/IMqttClient.md).[blocksTransactionRaw](../interfaces/IMqttClient.md#blockstransactionraw)
 
-___
+---
 
 ### blocksTransaction
 
@@ -219,8 +220,8 @@ Subscribe to all transaction blocks.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name       | Type                                            | Description                                         |
+| :--------- | :---------------------------------------------- | :-------------------------------------------------- |
 | `callback` | (`topic`: `string`, `data`: `IBlock`) => `void` | The callback which is called when new data arrives. |
 
 #### Returns
@@ -233,7 +234,7 @@ A subscription Id which can be used to unsubscribe.
 
 [IMqttClient](../interfaces/IMqttClient.md).[blocksTransaction](../interfaces/IMqttClient.md#blockstransaction)
 
-___
+---
 
 ### blocksTransactionTaggedDataRaw
 
@@ -243,10 +244,10 @@ Subscribe to transaction blocks with tagged data in their raw form.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `tag` | `undefined` \| `string` \| `Uint8Array` | The tag to monitor as bytes or in hex, undefined for all blocks. |
-| `callback` | (`topic`: `string`, `data`: `Uint8Array`) => `void` | The callback which is called when new data arrives. |
+| Name       | Type                                                | Description                                                      |
+| :--------- | :-------------------------------------------------- | :--------------------------------------------------------------- |
+| `tag`      | `undefined` \| `string` \| `Uint8Array`             | The tag to monitor as bytes or in hex, undefined for all blocks. |
+| `callback` | (`topic`: `string`, `data`: `Uint8Array`) => `void` | The callback which is called when new data arrives.              |
 
 #### Returns
 
@@ -258,7 +259,7 @@ A subscription Id which can be used to unsubscribe.
 
 [IMqttClient](../interfaces/IMqttClient.md).[blocksTransactionTaggedDataRaw](../interfaces/IMqttClient.md#blockstransactiontaggeddataraw)
 
-___
+---
 
 ### blocksTransactionTaggedData
 
@@ -268,10 +269,10 @@ Subscribe to all transaction blocks with tagged data.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `tag` | `undefined` \| `string` \| `Uint8Array` | The tag to monitor as bytes or in hex, undefined for all blocks. |
-| `callback` | (`topic`: `string`, `data`: `IBlock`) => `void` | The callback which is called when new data arrives. |
+| Name       | Type                                            | Description                                                      |
+| :--------- | :---------------------------------------------- | :--------------------------------------------------------------- |
+| `tag`      | `undefined` \| `string` \| `Uint8Array`         | The tag to monitor as bytes or in hex, undefined for all blocks. |
+| `callback` | (`topic`: `string`, `data`: `IBlock`) => `void` | The callback which is called when new data arrives.              |
 
 #### Returns
 
@@ -283,7 +284,7 @@ A subscription Id which can be used to unsubscribe.
 
 [IMqttClient](../interfaces/IMqttClient.md).[blocksTransactionTaggedData](../interfaces/IMqttClient.md#blockstransactiontaggeddata)
 
-___
+---
 
 ### milestoneRaw
 
@@ -293,8 +294,8 @@ Subscribe to all milestone payloads in their raw form.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name       | Type                                                | Description                                         |
+| :--------- | :-------------------------------------------------- | :-------------------------------------------------- |
 | `callback` | (`topic`: `string`, `data`: `Uint8Array`) => `void` | The callback which is called when new data arrives. |
 
 #### Returns
@@ -307,7 +308,7 @@ A subscription Id which can be used to unsubscribe.
 
 [IMqttClient](../interfaces/IMqttClient.md).[milestoneRaw](../interfaces/IMqttClient.md#milestoneraw)
 
-___
+---
 
 ### milestone
 
@@ -317,8 +318,8 @@ Subscribe to all milestone payloads.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name       | Type                                                       | Description                                         |
+| :--------- | :--------------------------------------------------------- | :-------------------------------------------------- |
 | `callback` | (`topic`: `string`, `data`: `IMilestonePayload`) => `void` | The callback which is called when new data arrives. |
 
 #### Returns
@@ -331,7 +332,7 @@ A subscription Id which can be used to unsubscribe.
 
 [IMqttClient](../interfaces/IMqttClient.md).[milestone](../interfaces/IMqttClient.md#milestone)
 
-___
+---
 
 ### blocksTaggedRaw
 
@@ -341,10 +342,10 @@ Subscribe to get all blocks for the specified tag in binary form.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `tag` | `undefined` \| `string` \| `Uint8Array` | The tag to monitor as bytes or in hex, undefined for all blocks. |
-| `callback` | (`topic`: `string`, `data`: `Uint8Array`) => `void` | The callback which is called when new data arrives. |
+| Name       | Type                                                | Description                                                      |
+| :--------- | :-------------------------------------------------- | :--------------------------------------------------------------- |
+| `tag`      | `undefined` \| `string` \| `Uint8Array`             | The tag to monitor as bytes or in hex, undefined for all blocks. |
+| `callback` | (`topic`: `string`, `data`: `Uint8Array`) => `void` | The callback which is called when new data arrives.              |
 
 #### Returns
 
@@ -356,7 +357,7 @@ A subscription Id which can be used to unsubscribe.
 
 [IMqttClient](../interfaces/IMqttClient.md).[blocksTaggedRaw](../interfaces/IMqttClient.md#blockstaggedraw)
 
-___
+---
 
 ### blocksTagged
 
@@ -366,10 +367,10 @@ Subscribe to get all blocks for the specified tag in object form.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `tag` | `undefined` \| `string` \| `Uint8Array` | The tag to monitor as bytes or in hex, undefined for all blocks. |
-| `callback` | (`topic`: `string`, `data`: `IBlock`) => `void` | The callback which is called when new data arrives. |
+| Name       | Type                                            | Description                                                      |
+| :--------- | :---------------------------------------------- | :--------------------------------------------------------------- |
+| `tag`      | `undefined` \| `string` \| `Uint8Array`         | The tag to monitor as bytes or in hex, undefined for all blocks. |
+| `callback` | (`topic`: `string`, `data`: `IBlock`) => `void` | The callback which is called when new data arrives.              |
 
 #### Returns
 
@@ -381,7 +382,7 @@ A subscription Id which can be used to unsubscribe.
 
 [IMqttClient](../interfaces/IMqttClient.md).[blocksTagged](../interfaces/IMqttClient.md#blockstagged)
 
-___
+---
 
 ### blocksMetadata
 
@@ -391,9 +392,9 @@ Subscribe to metadata updates for a specific block.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `blockId` | `string` | The block to monitor. |
+| Name       | Type                                                    | Description                                         |
+| :--------- | :------------------------------------------------------ | :-------------------------------------------------- |
+| `blockId`  | `string`                                                | The block to monitor.                               |
 | `callback` | (`topic`: `string`, `data`: `IBlockMetadata`) => `void` | The callback which is called when new data arrives. |
 
 #### Returns
@@ -406,7 +407,7 @@ A subscription Id which can be used to unsubscribe.
 
 [IMqttClient](../interfaces/IMqttClient.md).[blocksMetadata](../interfaces/IMqttClient.md#blocksmetadata)
 
-___
+---
 
 ### transactionIncludedBlockRaw
 
@@ -416,10 +417,10 @@ Subscribe to block updates for a specific transactionId.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `transactionId` | `string` | The block to monitor. |
-| `callback` | (`topic`: `string`, `data`: `Uint8Array`) => `void` | The callback which is called when new data arrives. |
+| Name            | Type                                                | Description                                         |
+| :-------------- | :-------------------------------------------------- | :-------------------------------------------------- |
+| `transactionId` | `string`                                            | The block to monitor.                               |
+| `callback`      | (`topic`: `string`, `data`: `Uint8Array`) => `void` | The callback which is called when new data arrives. |
 
 #### Returns
 
@@ -431,7 +432,7 @@ A subscription Id which can be used to unsubscribe.
 
 [IMqttClient](../interfaces/IMqttClient.md).[transactionIncludedBlockRaw](../interfaces/IMqttClient.md#transactionincludedblockraw)
 
-___
+---
 
 ### transactionIncludedBlock
 
@@ -441,10 +442,10 @@ Subscribe to block updates for a specific transactionId.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `transactionId` | `string` | The block to monitor. |
-| `callback` | (`topic`: `string`, `data`: `IBlock`) => `void` | The callback which is called when new data arrives. |
+| Name            | Type                                            | Description                                         |
+| :-------------- | :---------------------------------------------- | :-------------------------------------------------- |
+| `transactionId` | `string`                                        | The block to monitor.                               |
+| `callback`      | (`topic`: `string`, `data`: `IBlock`) => `void` | The callback which is called when new data arrives. |
 
 #### Returns
 
@@ -456,7 +457,7 @@ A subscription Id which can be used to unsubscribe.
 
 [IMqttClient](../interfaces/IMqttClient.md).[transactionIncludedBlock](../interfaces/IMqttClient.md#transactionincludedblock)
 
-___
+---
 
 ### output
 
@@ -466,9 +467,9 @@ Subscribe to updates for a specific output.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `outputId` | `string` | The output to monitor. |
+| Name       | Type                                                     | Description                                         |
+| :--------- | :------------------------------------------------------- | :-------------------------------------------------- |
+| `outputId` | `string`                                                 | The output to monitor.                              |
 | `callback` | (`topic`: `string`, `data`: `IOutputResponse`) => `void` | The callback which is called when new data arrives. |
 
 #### Returns
@@ -481,7 +482,7 @@ A subscription Id which can be used to unsubscribe.
 
 [IMqttClient](../interfaces/IMqttClient.md).[output](../interfaces/IMqttClient.md#output)
 
-___
+---
 
 ### nft
 
@@ -491,9 +492,9 @@ Subscribe to updates for an nft output.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `nftId` | `string` | The Nft output to monitor. |
+| Name       | Type                                                     | Description                                         |
+| :--------- | :------------------------------------------------------- | :-------------------------------------------------- |
+| `nftId`    | `string`                                                 | The Nft output to monitor.                          |
 | `callback` | (`topic`: `string`, `data`: `IOutputResponse`) => `void` | The callback which is called when new data arrives. |
 
 #### Returns
@@ -506,7 +507,7 @@ A subscription Id which can be used to unsubscribe.
 
 [IMqttClient](../interfaces/IMqttClient.md).[nft](../interfaces/IMqttClient.md#nft)
 
-___
+---
 
 ### alias
 
@@ -516,9 +517,9 @@ Subscribe to updates for an alias output.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `aliasId` | `string` | The alias output to monitor. |
+| Name       | Type                                                     | Description                                         |
+| :--------- | :------------------------------------------------------- | :-------------------------------------------------- |
+| `aliasId`  | `string`                                                 | The alias output to monitor.                        |
 | `callback` | (`topic`: `string`, `data`: `IOutputResponse`) => `void` | The callback which is called when new data arrives. |
 
 #### Returns
@@ -531,7 +532,7 @@ A subscription Id which can be used to unsubscribe.
 
 [IMqttClient](../interfaces/IMqttClient.md).[alias](../interfaces/IMqttClient.md#alias)
 
-___
+---
 
 ### foundry
 
@@ -541,10 +542,10 @@ Subscribe to updates for a foundry output.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `foundryId` | `string` | The foundry output to monitor. |
-| `callback` | (`topic`: `string`, `data`: `IOutputResponse`) => `void` | The callback which is called when new data arrives. |
+| Name        | Type                                                     | Description                                         |
+| :---------- | :------------------------------------------------------- | :-------------------------------------------------- |
+| `foundryId` | `string`                                                 | The foundry output to monitor.                      |
+| `callback`  | (`topic`: `string`, `data`: `IOutputResponse`) => `void` | The callback which is called when new data arrives. |
 
 #### Returns
 
@@ -556,7 +557,7 @@ A subscription Id which can be used to unsubscribe.
 
 [IMqttClient](../interfaces/IMqttClient.md).[foundry](../interfaces/IMqttClient.md#foundry)
 
-___
+---
 
 ### outputByConditionAndAddress
 
@@ -566,11 +567,11 @@ Subscribe to the output with specific unlock condition and address.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `condition` | `string` | The condition to monitor. |
-| `addressBech32` | `string` | The address to monitor. |
-| `callback` | (`topic`: `string`, `data`: `IOutputResponse`) => `void` | The callback which is called when new data arrives. |
+| Name            | Type                                                     | Description                                         |
+| :-------------- | :------------------------------------------------------- | :-------------------------------------------------- |
+| `condition`     | `string`                                                 | The condition to monitor.                           |
+| `addressBech32` | `string`                                                 | The address to monitor.                             |
+| `callback`      | (`topic`: `string`, `data`: `IOutputResponse`) => `void` | The callback which is called when new data arrives. |
 
 #### Returns
 
@@ -582,7 +583,7 @@ A subscription Id which can be used to unsubscribe.
 
 [IMqttClient](../interfaces/IMqttClient.md).[outputByConditionAndAddress](../interfaces/IMqttClient.md#outputbyconditionandaddress)
 
-___
+---
 
 ### outputSpentByConditionAndAddress
 
@@ -592,11 +593,11 @@ Subscribe to the spent outputs with specific unlock condition and address.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `condition` | `string` | The condition to monitor. |
-| `addressBech32` | `string` | The address to monitor. |
-| `callback` | (`topic`: `string`, `data`: `IOutputResponse`) => `void` | The callback which is called when new data arrives. |
+| Name            | Type                                                     | Description                                         |
+| :-------------- | :------------------------------------------------------- | :-------------------------------------------------- |
+| `condition`     | `string`                                                 | The condition to monitor.                           |
+| `addressBech32` | `string`                                                 | The address to monitor.                             |
+| `callback`      | (`topic`: `string`, `data`: `IOutputResponse`) => `void` | The callback which is called when new data arrives. |
 
 #### Returns
 
@@ -608,7 +609,7 @@ A subscription Id which can be used to unsubscribe.
 
 [IMqttClient](../interfaces/IMqttClient.md).[outputSpentByConditionAndAddress](../interfaces/IMqttClient.md#outputspentbyconditionandaddress)
 
-___
+---
 
 ### receipts
 
@@ -618,8 +619,8 @@ Subscribe to the receive all receipts.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name       | Type                                                       | Description                                         |
+| :--------- | :--------------------------------------------------------- | :-------------------------------------------------- |
 | `callback` | (`topic`: `string`, `data`: `IReceiptsResponse`) => `void` | The callback which is called when new data arrives. |
 
 #### Returns
@@ -632,7 +633,7 @@ A subscription Id which can be used to unsubscribe.
 
 [IMqttClient](../interfaces/IMqttClient.md).[receipts](../interfaces/IMqttClient.md#receipts)
 
-___
+---
 
 ### subscribeRaw
 
@@ -642,10 +643,10 @@ Subscribe to another type of message as raw data.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `customTopic` | `string` | The topic to subscribe to. |
-| `callback` | (`topic`: `string`, `data`: `Uint8Array`) => `void` | The callback which is called when new data arrives. |
+| Name          | Type                                                | Description                                         |
+| :------------ | :-------------------------------------------------- | :-------------------------------------------------- |
+| `customTopic` | `string`                                            | The topic to subscribe to.                          |
+| `callback`    | (`topic`: `string`, `data`: `Uint8Array`) => `void` | The callback which is called when new data arrives. |
 
 #### Returns
 
@@ -657,7 +658,7 @@ A subscription Id which can be used to unsubscribe.
 
 [IMqttClient](../interfaces/IMqttClient.md).[subscribeRaw](../interfaces/IMqttClient.md#subscriberaw)
 
-___
+---
 
 ### subscribeJson
 
@@ -668,15 +669,15 @@ Subscribe to another type of message as json.
 #### Type parameters
 
 | Name |
-| :------ |
-| `T` |
+| :--- |
+| `T`  |
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `customTopic` | `string` | The topic to subscribe to. |
-| `callback` | (`topic`: `string`, `data`: `T`) => `void` | The callback which is called when new data arrives. |
+| Name          | Type                                       | Description                                         |
+| :------------ | :----------------------------------------- | :-------------------------------------------------- |
+| `customTopic` | `string`                                   | The topic to subscribe to.                          |
+| `callback`    | (`topic`: `string`, `data`: `T`) => `void` | The callback which is called when new data arrives. |
 
 #### Returns
 
@@ -688,7 +689,7 @@ A subscription Id which can be used to unsubscribe.
 
 [IMqttClient](../interfaces/IMqttClient.md).[subscribeJson](../interfaces/IMqttClient.md#subscribejson)
 
-___
+---
 
 ### unsubscribe
 
@@ -698,8 +699,8 @@ Remove a subscription.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name             | Type     | Description                 |
+| :--------------- | :------- | :-------------------------- |
 | `subscriptionId` | `string` | The subscription to remove. |
 
 #### Returns
@@ -710,7 +711,7 @@ Remove a subscription.
 
 [IMqttClient](../interfaces/IMqttClient.md).[unsubscribe](../interfaces/IMqttClient.md#unsubscribe)
 
-___
+---
 
 ### statusChanged
 
@@ -720,8 +721,8 @@ Subscribe to changes in the client state.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name       | Type                                                              | Description                                 |
+| :--------- | :---------------------------------------------------------------- | :------------------------------------------ |
 | `callback` | (`data`: [`IMqttStatus`](../interfaces/IMqttStatus.md)) => `void` | Callback called when the state has changed. |
 
 #### Returns

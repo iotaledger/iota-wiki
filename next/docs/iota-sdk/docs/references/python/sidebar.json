@@ -14,9 +14,7 @@
           "type": "category"
         },
         {
-          "items": [
-            "references/python/iota_sdk/secret_manager/secret_manager"
-          ],
+          "items": ["references/python/iota_sdk/secret_manager/secret_manager"],
           "label": "iota_sdk.secret_manager",
           "type": "category"
         },

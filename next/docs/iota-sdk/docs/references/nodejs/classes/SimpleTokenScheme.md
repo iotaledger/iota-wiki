@@ -33,7 +33,7 @@ The type of token scheme.
 
 TokenScheme.getType
 
-___
+---
 
 ### getMintedTokens
 
@@ -45,7 +45,7 @@ Amount of tokens minted.
 
 `string`
 
-___
+---
 
 ### getMeltedTokens
 
@@ -57,7 +57,7 @@ Amount of tokens melted.
 
 `string`
 
-___
+---
 
 ### getMaximumSupply
 

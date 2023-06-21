@@ -2,12 +2,12 @@
 image: /img/integration-services/logo/integration_services.png
 description: This section will guide you in setting up the Integration Service API using Docker Compose.
 keywords:
-    - how to
-    - docker compose
-    - setup API
-    - configure
-    - mongo-init.js
-    - .env
+  - how to
+  - docker compose
+  - setup API
+  - configure
+  - mongo-init.js
+  - .env
 ---
 
 # Local Setup
@@ -18,10 +18,10 @@ This section will guide you in setting up the Integration Services API using Doc
 
 Please make sure to have the following dependencies installed before continuing:
 
--   [docker](https://docs.docker.com/get-docker/)
--   [docker-compose](https://docs.docker.com/compose/install/)
--   [node.js](https://nodejs.org/) min. v16.17.0
--   [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
+- [docker](https://docs.docker.com/get-docker/)
+- [docker-compose](https://docs.docker.com/compose/install/)
+- [node.js](https://nodejs.org/) min. v16.17.0
+- [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
 
 ## Download the Project
 
@@ -54,6 +54,7 @@ You can start the Integration Services API by running the following commands in 
 ```bash
 docker-compose --env-file .env up --build
 ```
+
 It is totally normal to see `error : No root identity found!` while the containers are starting up. After startup there should be no remaining errors.
 Now you are done with the docker-compose setup. To make sure that everything works as expected read the next section.
 
@@ -74,14 +75,14 @@ docker-compose ps
 You should be able to see all container except `api_initialize-audit-trail_1` and `api_initialize-ssi-bridge_1` in a `Up` state.
 
 ```
-                       Name                                     Command               State                       Ports                    
+                       Name                                     Command               State                       Ports
 -------------------------------------------------------------------------------------------------------------------------------------------
-integration-services_audit-trail-gw_1                       docker-entrypoint.sh node  ...   Up       3000/tcp                                    
-integration-services_initialize-audit-trail_1               docker-entrypoint.sh node  ...   Exit 0                                               
-integration-services_initialize-ssi-bridge_1                docker-entrypoint.sh node  ...   Exit 0                                               
-integration-services_ssi-bridge_1                           docker-entrypoint.sh node  ...   Up       3000/tcp                                    
-is-dashboard                                                docker-entrypoint.sh npm r ...   Up       0.0.0.0:3055->3000/tcp                      
-mongo                                                       docker-entrypoint.sh mongod      Up       0.0.0.0:27017->27017/tcp                    
+integration-services_audit-trail-gw_1                       docker-entrypoint.sh node  ...   Up       3000/tcp
+integration-services_initialize-audit-trail_1               docker-entrypoint.sh node  ...   Exit 0
+integration-services_initialize-ssi-bridge_1                docker-entrypoint.sh node  ...   Exit 0
+integration-services_ssi-bridge_1                           docker-entrypoint.sh node  ...   Up       3000/tcp
+is-dashboard                                                docker-entrypoint.sh npm r ...   Up       0.0.0.0:3055->3000/tcp
+mongo                                                       docker-entrypoint.sh mongod      Up       0.0.0.0:27017->27017/tcp
 traefik                                                     /entrypoint.sh --api.insec ...   Up       0.0.0.0:3000->80/tcp, 0.0.0.0:8080->8080/tcp
 ```
 
@@ -107,7 +108,7 @@ http://localhost:3000
 
 ## FAQ
 
-***Im getting errors like `error : could not connect to mongodb` and  `error : MongoError: Authentication failed.` when setting up the container.***
+**_Im getting errors like `error : could not connect to mongodb` and `error : MongoError: Authentication failed.` when setting up the container._**
 
 Please make sure to delete all old MongoDB containers in your Integration Services installation you created earlier.
 -> All data in your local database will be lost <br/>

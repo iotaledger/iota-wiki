@@ -280,11 +280,9 @@ module.exports = async () => {
           id: 'iota-chronicle-rs',
           path: path.resolve(__dirname, 'docs/chronicle/docs'),
           routeBasePath: 'chronicle',
-          sidebarPath: path.resolve(
-            __dirname,
-            'docs/chronicle/sidebars.js',
-          ),
-          editUrl: 'https://github.com/iotaledger/iota-wiki/edit/the-merge-moveRemainingDocsToWiki/',
+          sidebarPath: path.resolve(__dirname, 'docs/chronicle/sidebars.js'),
+          editUrl:
+            'https://github.com/iotaledger/iota-wiki/edit/the-merge-moveRemainingDocsToWiki/',
           remarkPlugins: [
             require('remark-code-import'),
             require('remark-import-partial'),
@@ -303,11 +301,9 @@ module.exports = async () => {
           id: 'iota-goshimmer',
           path: path.resolve(__dirname, 'docs/goshimmer/docs'),
           routeBasePath: 'goshimmer',
-          sidebarPath: path.resolve(
-            __dirname,
-            'docs/goshimmer/sidebars.js',
-          ),
-          editUrl: 'https://github.com/iotaledger/iota-wiki/edit/the-merge-moveRemainingDocsToWiki/',
+          sidebarPath: path.resolve(__dirname, 'docs/goshimmer/sidebars.js'),
+          editUrl:
+            'https://github.com/iotaledger/iota-wiki/edit/the-merge-moveRemainingDocsToWiki/',
         },
       ],
       [
@@ -317,7 +313,8 @@ module.exports = async () => {
           path: path.resolve(__dirname, 'docs/hornet/docs'),
           routeBasePath: 'hornet',
           sidebarPath: path.resolve(__dirname, 'docs/hornet/sidebars.js'),
-          editUrl: 'https://github.com/iotaledger/iota-wiki/edit/the-merge-moveRemainingDocsToWiki/',
+          editUrl:
+            'https://github.com/iotaledger/iota-wiki/edit/the-merge-moveRemainingDocsToWiki/',
           versions: {
             current: {
               label: 'IOTA',
@@ -336,7 +333,8 @@ module.exports = async () => {
             __dirname,
             'docs/integration-services/sidebars.js',
           ),
-          editUrl: 'https://github.com/iotaledger/iota-wiki/edit/the-merge-moveRemainingDocsToWiki/',
+          editUrl:
+            'https://github.com/iotaledger/iota-wiki/edit/the-merge-moveRemainingDocsToWiki/',
         },
       ],
       [
@@ -349,7 +347,8 @@ module.exports = async () => {
             __dirname,
             'docs/introduction-docs/sidebars.js',
           ),
-          editUrl: 'https://github.com/iotaledger/iota-wiki/edit/the-merge-moveRemainingDocsToWiki/',
+          editUrl:
+            'https://github.com/iotaledger/iota-wiki/edit/the-merge-moveRemainingDocsToWiki/',
           remarkPlugins: [
             require('remark-code-import'),
             require('remark-import-partial'),
@@ -376,7 +375,8 @@ module.exports = async () => {
             __dirname,
             'docs/iota-2.0-research-specifications/sidebars.js',
           ),
-          editUrl: 'https://github.com/iotaledger/iota-wiki/edit/the-merge-moveRemainingDocsToWiki/',
+          editUrl:
+            'https://github.com/iotaledger/iota-wiki/edit/the-merge-moveRemainingDocsToWiki/',
           remarkPlugins: [math],
           rehypePlugins: [katex],
           include: ['*.md'],
@@ -389,23 +389,22 @@ module.exports = async () => {
           path: path.resolve(__dirname, 'docs/streams/docs'),
           routeBasePath: 'streams',
           sidebarPath: path.resolve(__dirname, 'docs/streams/sidebars.js'),
-          editUrl: 'https://github.com/iotaledger/iota-wiki/edit/the-merge-moveRemainingDocsToWiki/',
+          editUrl:
+            'https://github.com/iotaledger/iota-wiki/edit/the-merge-moveRemainingDocsToWiki/',
         },
       ],
       [
         '@docusaurus/plugin-content-docs',
         {
           id: 'iota-zebra-tutorials',
-          path: path.resolve(
-            __dirname,
-            'docs/zebra-iota-edge-sdk/tutorials',
-          ),
+          path: path.resolve(__dirname, 'docs/zebra-iota-edge-sdk/tutorials'),
           routeBasePath: 'zebra-tutorials',
           sidebarPath: path.resolve(
             __dirname,
             'docs/zebra-iota-edge-sdk/sidebars.js',
           ),
-          editUrl: 'https://github.com/iotaledger/iota-wiki/edit/the-merge-moveRemainingDocsToWiki/',
+          editUrl:
+            'https://github.com/iotaledger/iota-wiki/edit/the-merge-moveRemainingDocsToWiki/',
         },
       ],
       [
@@ -418,7 +417,8 @@ module.exports = async () => {
             __dirname,
             'docs/stronghold.rs/sidebars.js',
           ),
-          editUrl: 'https://github.com/iotaledger/iota-wiki/edit/the-merge-moveRemainingDocsToWiki/',
+          editUrl:
+            'https://github.com/iotaledger/iota-wiki/edit/the-merge-moveRemainingDocsToWiki/',
           remarkPlugins: [
             require('remark-code-import'),
             require('remark-import-partial'),
@@ -434,11 +434,9 @@ module.exports = async () => {
           id: 'wallet-rs',
           path: path.resolve(__dirname, 'docs/wallet.rs/docs'),
           routeBasePath: 'wallet.rs',
-          sidebarPath: path.resolve(
-            __dirname,
-            'docs/wallet.rs/sidebars.js',
-          ),
-          editUrl: 'https://github.com/iotaledger/iota-wiki/edit/the-merge-moveRemainingDocsToWiki/',
+          sidebarPath: path.resolve(__dirname, 'docs/wallet.rs/sidebars.js'),
+          editUrl:
+            'https://github.com/iotaledger/iota-wiki/edit/the-merge-moveRemainingDocsToWiki/',
           remarkPlugins: [
             require('remark-code-import'),
             require('remark-import-partial'),
@@ -458,7 +456,8 @@ module.exports = async () => {
           path: path.resolve(__dirname, 'docs/iota.rs/docs'),
           routeBasePath: 'iota.rs',
           sidebarPath: path.resolve(__dirname, 'docs/iota.rs/sidebars.js'),
-          editUrl: 'https://github.com/iotaledger/iota-wiki/edit/the-merge-moveRemainingDocsToWiki/',
+          editUrl:
+            'https://github.com/iotaledger/iota-wiki/edit/the-merge-moveRemainingDocsToWiki/',
           remarkPlugins: [
             require('remark-code-import'),
             require('remark-import-partial'),
@@ -481,7 +480,8 @@ module.exports = async () => {
             __dirname,
             'docs/identity.rs/v0.5.0/sidebars.js',
           ),
-          editUrl: 'https://github.com/iotaledger/iota-wiki/edit/the-merge-moveRemainingDocsToWiki/',
+          editUrl:
+            'https://github.com/iotaledger/iota-wiki/edit/the-merge-moveRemainingDocsToWiki/',
           remarkPlugins: [
             require('remark-code-import'),
             require('remark-import-partial'),
@@ -506,7 +506,8 @@ module.exports = async () => {
             __dirname,
             'docs/identity.rs/v0.6.0/sidebars.js',
           ),
-          editUrl: 'https://github.com/iotaledger/iota-wiki/edit/the-merge-moveRemainingDocsToWiki/',
+          editUrl:
+            'https://github.com/iotaledger/iota-wiki/edit/the-merge-moveRemainingDocsToWiki/',
           remarkPlugins: [
             require('remark-code-import'),
             require('remark-import-partial'),
@@ -556,10 +557,7 @@ module.exports = async () => {
       path.resolve(__dirname, './docs/hornet/static'),
       path.resolve(__dirname, './docs/integration-services/static'),
       path.resolve(__dirname, './docs/introduction-docs/static'),
-      path.resolve(
-        __dirname,
-        './docs/iota-2.0-research-specifications/static',
-      ),
+      path.resolve(__dirname, './docs/iota-2.0-research-specifications/static'),
       path.resolve(__dirname, './docs/iota.rs/static'),
       path.resolve(__dirname, './docs/identity.rs/v0.5.0/static'),
       path.resolve(__dirname, './docs/identity.rs/v0.6.0/static'),

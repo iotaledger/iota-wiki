@@ -2,15 +2,15 @@
 image: /img/integration-services/logo/integration_services.png
 description: This section will guide you in installing and deploying the Integration Service API on a Kubernetes cluster.
 keywords:
-- how to
-- install integration services
-- deploy integration services
-- Kubernetes
-- requirements
-- configuration
-- MongoDB
-- API
-- minikube
+  - how to
+  - install integration services
+  - deploy integration services
+  - Kubernetes
+  - requirements
+  - configuration
+  - MongoDB
+  - API
+  - minikube
 ---
 
 # Local Setup
@@ -23,10 +23,10 @@ This installation was tested on [Kubernetes 1.21](https://kubernetes.io/releases
 
 Please make sure to have the following installed before moving forward:
 
-* [minikube](https://minikube.sigs.k8s.io/docs/start/)
-* [kubectl](https://kubernetes.io/docs/tasks/tools/#kubectl)
-* [helm](https://helm.sh/)
-* [Homebrew](https://brew.sh/)
+- [minikube](https://minikube.sigs.k8s.io/docs/start/)
+- [kubectl](https://kubernetes.io/docs/tasks/tools/#kubectl)
+- [helm](https://helm.sh/)
+- [Homebrew](https://brew.sh/)
 
 ## Clone Integration Services Repository
 
@@ -34,15 +34,16 @@ Please follow these steps to clone the Integration Services:
 
 1. Clone the project:
 
-    ```bash
-    git clone https://github.com/iotaledger/integration-services.git
-    ```
+   ```bash
+   git clone https://github.com/iotaledger/integration-services.git
+   ```
 
 2. Change directory to your freshly cloned project:
 
-    ```bash
-    cd integration-services
-    ```
+   ```bash
+   cd integration-services
+   ```
+
 ## Start Minikube
 
 Setup and start the empty cluster by running the following command:
@@ -50,13 +51,14 @@ Setup and start the empty cluster by running the following command:
 ```bash
 minikube start
 ```
+
 ## Set Up Kong
 
 1. Install helm by running the following command:
 
 ```bash
 brew install helm
-```  
+```
 
 2. Add helm repo by running the following command:
 
@@ -65,6 +67,7 @@ helm repo add kong https://charts.konghq.com
 ```
 
 3. Install kong using helm by running the following command:
+
 ```bash
 helm install kong kong/kong
 ```
@@ -81,14 +84,13 @@ sudo minikube tunnel
 export PROXY_IP=$(kubectl get -o jsonpath="{.status.loadBalancer.ingress[0].ip}" service kong-kong-proxy)
 ```
 
-You can check that you have exported the variable correctly by running the following command: 
+You can check that you have exported the variable correctly by running the following command:
 
 ```bash
 echo $PROXY_IP
 ```
+
 It should output the IP you have exported. In most of the cases this will be `http://127.0.0.1`.
-
-
 
 ## Create the Kong Cluster
 
@@ -116,11 +118,13 @@ ssi-bridge        ClusterIP      10.110.29.161    <none>        3000/TCP        
 ```
 
 You can check if the pods are running with the following command. It will take a few minutes before all pods are running.
+
 ```bash
 kubectl get pods
 ```
 
 **Expected output**:
+
 ```plaintext
 
 NAME                                  READY   STATUS      RESTARTS        AGE
@@ -158,10 +162,9 @@ You finished the setup of the Integration Services using Kubernetes!
 You can find information on how to configure Integration Service with a production-ready database in
 the [configuration section](configuration.md).
 
-
 ## FAQ
 
-***How can I stop the cluster?***
+**_How can I stop the cluster?_**
 
 Just run the following command to stop the cluster.
 
@@ -169,8 +172,7 @@ Just run the following command to stop the cluster.
 kubectl delete -f kubernetes/optional -f kubernetes/ -f kubernetes/kong-gw
 ```
 
-
-***How can I delete my whole Kubernetes cluster?***
+**_How can I delete my whole Kubernetes cluster?_**
 
 1. First, shut down the cluster by running:
 
@@ -181,7 +183,7 @@ kubectl delete -f kubernetes/optional -f kubernetes/ -f kubernetes/kong-gw
 2. Close all open terminal windows.
 
 3. Delete the kong load balancer by running the following command:
-   
+
 ```bash
 helm delete kong
 ```

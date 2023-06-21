@@ -1,17 +1,18 @@
 ---
-description: This page described to take part in the global snapshot.  
+description: This page described to take part in the global snapshot.
 image: /img/logo/Chrysalis_logo_dark.png
 keywords:
-- golang
-- github
-- bootstrapping
-- snapshot
-- verify
-- validate
-- hornet 
-- tools
-- how to
+  - golang
+  - github
+  - bootstrapping
+  - snapshot
+  - verify
+  - validate
+  - hornet
+  - tools
+  - how to
 ---
+
 # Chrysalis Snapshot Validation/Boostrapping
 
 This guide outlined how to take part in the global snapshot, respectively genesis snapshot creation for the
@@ -23,9 +24,9 @@ which contained the already burned/migrated funds from the 7-day-migration windo
 
 - A GitHub account and git.
 - A synchronized legacy Hornet node (running version < 0.x.x).
-    - The `getLedgerState` API command must be permitted. Add an entry to `httpAPI.permitRemoteAccess` in case this API
-      command is not added yet (restart your node afterwards).
-    - The API port must be accessible.
+  - The `getLedgerState` API command must be permitted. Add an entry to `httpAPI.permitRemoteAccess` in case this API
+    command is not added yet (restart your node afterwards).
+  - The API port must be accessible.
 - Golang version 1.16.x (https://golang.org/).
 
 ## Steps
@@ -62,7 +63,7 @@ Make sure you have Go installed by issuing `go version` on your command line.
    files: `sha256sum genesis_snapshot.bin genesis_snapshot_alt.bin global_snapshot.csv `; Example output:
 
 ```
-$ sha256sum genesis_snapshot.bin genesis_snapshot_alt.bin global_snapshot.csv 
+$ sha256sum genesis_snapshot.bin genesis_snapshot_alt.bin global_snapshot.csv
 65be1a80a6895d17a492db3dd55babf1d57557dbaa40da6e1d0ed5937ceb6662  genesis_snapshot.bin
 39bd5308a1e9fb57503f6d15b90206ae434f581807ef0e29cf2e66de64165c5b  genesis_snapshot_alt.bin
 8f48388423cc706bf5f7707735fd99a5d89efbb966a8e2a0b82ff3529cf33f7f  global_snapshot.csv

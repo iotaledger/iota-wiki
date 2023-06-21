@@ -1,11 +1,12 @@
 ---
 description: iota.js API reference
 keywords:
-- references
-- api references
-- typescript
+  - references
+  - api references
+  - typescript
 image: /img/client_banner.png
 ---
+
 # Interface: ICommonOutput
 
 Common output properties.
@@ -38,7 +39,7 @@ Common output properties.
 
 The native tokens held by the output.
 
-___
+---
 
 ### unlockConditions
 
@@ -46,7 +47,7 @@ ___
 
 The unlock conditions for the output.
 
-___
+---
 
 ### features
 

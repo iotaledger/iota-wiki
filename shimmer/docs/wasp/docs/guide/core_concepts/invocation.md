@@ -43,7 +43,7 @@ If a smart contract calls another smart contract, the resulting set of instructi
 synchronous. This means that for a request, it makes no difference if a smart contract's entry point contains the whole
 set of instructions or if it is composed by multiple calls to different smart contracts of the chain.
 
-Being able to combine smart contracts in this way is called *synchronous composability*.
+Being able to combine smart contracts in this way is called _synchronous composability_.
 
 ---
 
@@ -61,7 +61,7 @@ Requests are not sent by humans exclusively. Smart contracts can also create req
 For example, a user can send a request to a smart contract that, in turn, sends a request to a decentralized third-party
 exchange which would will the user's funds from one currency to another and send them back through another request.
 
-This is called *asynchronous composability*.
+This is called _asynchronous composability_.
 
 ### On-Ledger Requests
 
@@ -97,7 +97,7 @@ The funds to cover the gas used will be charged directly from the user's on-chai
 
 Any funds sent to the chain via on-ledger requests are credited to the sender's account.
 
-For contracts to use funds owned by the *caller*, the *caller* must specify an `Allowance` in the request. Contracts can
+For contracts to use funds owned by the _caller_, the _caller_ must specify an `Allowance` in the request. Contracts can
 then claim any of the allowed funds using the sandbox `TransferAllowedFunds` function.
 
 The Allowance properly looks like the following:

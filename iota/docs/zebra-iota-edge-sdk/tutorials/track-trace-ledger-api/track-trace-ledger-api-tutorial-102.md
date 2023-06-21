@@ -8,9 +8,9 @@ As a continuation to [Tutorial 101](track-trace-ledger-api-tutorial-101.md), we 
 
 1. Retrieving a given number of transactions (`lastN`).
 2. Pagination (`limit`). Retrieving a subset of transactions.
-3. Retrieving Streams channel information. This feature makes it easy for the consuming clients to implement their own functions by the use of the IOTA Streams libraries to retrieve transactions from the IOTA Tangle. E.g. By using the ['anchors'](https://github.com/iotaledger/tangle.js/tree/main/libs/anchors) utility library Powered by [IOTA Streams](https://github.com/iotaledger/streams). 
+3. Retrieving Streams channel information. This feature makes it easy for the consuming clients to implement their own functions by the use of the IOTA Streams libraries to retrieve transactions from the IOTA Tangle. E.g. By using the ['anchors'](https://github.com/iotaledger/tangle.js/tree/main/libs/anchors) utility library Powered by [IOTA Streams](https://github.com/iotaledger/streams).
 
-We will use the following identifiers in this example: 
+We will use the following identifiers in this example:
 
 1. Barcode Scanner device id - `Zebra-MC-9200-PA12` and `iphone-A-456789`
 2. Barcode Printer device id - `ZQ620-200dpi,V85.20.16,8,8192KB.XXZKJ192800224`
@@ -36,18 +36,18 @@ Response:
 
 ```json
 [
-    {
-        "created": "2021-03-24T16:16:20.842Z",
-        "updated": "2021-03-24T16:22:31.549Z",
-        "totalEventNumber": 3,
-        "value": "3700123300014"
-    },
-    {
-        "created": "2021-03-24T12:19:15.883Z",
-        "updated": "2021-03-24T12:19:28.813Z",
-        "totalEventNumber": 1,
-        "value": "991616586826831"
-    }
+  {
+    "created": "2021-03-24T16:16:20.842Z",
+    "updated": "2021-03-24T16:22:31.549Z",
+    "totalEventNumber": 3,
+    "value": "3700123300014"
+  },
+  {
+    "created": "2021-03-24T12:19:15.883Z",
+    "updated": "2021-03-24T12:19:28.813Z",
+    "totalEventNumber": 1,
+    "value": "991616586826831"
+  }
 ]
 ```
 
@@ -68,18 +68,18 @@ Response:
 
 ```json
 [
-    {
-        "deviceId": "Zebra-MC-9200-PA12",
-        "created": "2021-03-24T16:22:10.500Z",
-        "updated": "2021-03-24T16:22:31.549Z",
-        "totalEventNumber": 1
-    },
-    {
-        "deviceId": "iphone-A-456789",
-        "created": "2021-03-24T16:16:21.346Z",
-        "updated": "2021-03-24T16:21:54.731Z",
-        "totalEventNumber": 2
-    }
+  {
+    "deviceId": "Zebra-MC-9200-PA12",
+    "created": "2021-03-24T16:22:10.500Z",
+    "updated": "2021-03-24T16:22:31.549Z",
+    "totalEventNumber": 1
+  },
+  {
+    "deviceId": "iphone-A-456789",
+    "created": "2021-03-24T16:16:21.346Z",
+    "updated": "2021-03-24T16:21:54.731Z",
+    "totalEventNumber": 2
+  }
 ]
 ```
 
@@ -87,7 +87,7 @@ As seen above, you get a list of all the scanners and the total number of transa
 
 ### Retrieve the last transaction involving a Barcode Value.
 
-This API endpoint allows you to retrieve the last transaction involving a value. By including the URL query parameter `lastN`, the API allows you to retrieve the most recent `N` transactions. In this case we want to retrieve the most recent transaction, so we set the `lastN` parameter equal to `1`. 
+This API endpoint allows you to retrieve the last transaction involving a value. By including the URL query parameter `lastN`, the API allows you to retrieve the most recent `N` transactions. In this case we want to retrieve the most recent transaction, so we set the `lastN` parameter equal to `1`.
 
 Request:
 
@@ -100,18 +100,18 @@ Response:
 
 ```json
 [
-    {
-        "symbology": "LABEL-TYPE-UPCA",
-        "value": "3700123300014",
-        "timestamp": "2021-04-11T13:23:28.714Z",
-        "deviceId": "Zebra-MC-9200-PA12",
-        "type": "scanTransaction",
-        "jsonData": {
-            "custom": true,
-            "timestamp": 1618147420297
-        },
-        "id": "1a32f9..."
-    }
+  {
+    "symbology": "LABEL-TYPE-UPCA",
+    "value": "3700123300014",
+    "timestamp": "2021-04-11T13:23:28.714Z",
+    "deviceId": "Zebra-MC-9200-PA12",
+    "type": "scanTransaction",
+    "jsonData": {
+      "custom": true,
+      "timestamp": 1618147420297
+    },
+    "id": "1a32f9..."
+  }
 ]
 ```
 
@@ -132,13 +132,13 @@ Response
 
 ```json
 [
-    {
-        "transactionId": "1a32f9...",
-        "value": "3700123300014",
-        "deviceId": "Zebra-MC-9200-PA12",
-        "type": "scanTransaction",
-        "id": "ae80baf..."
-    }
+  {
+    "transactionId": "1a32f9...",
+    "value": "3700123300014",
+    "deviceId": "Zebra-MC-9200-PA12",
+    "type": "scanTransaction",
+    "id": "ae80baf..."
+  }
 ]
 ```
 
@@ -165,12 +165,11 @@ Response
 
 ```json
 {
-    "locator": "urn:iota-streams:devnet:1c696e5533bdc7...:2201556d9ea2a31145475b5b:5d3eae80b9be9fbcaf4d788e"
+  "locator": "urn:iota-streams:devnet:1c696e5533bdc7...:2201556d9ea2a31145475b5b:5d3eae80b9be9fbcaf4d788e"
 }
 ```
 
 With the above information, one can use the IOTA Streams libraries, for instance the [anchors library](https://github.com/iotaledger/tangle.js/tree/main/libs/anchors), to retrieve the transactions from their own application. In this case the network is `devnet` and it is followed by the channel ID. You need to take into account that the Streams Channel used is an encrypted one, thus the channel ID has three colon-separated components: the channel address, the announce message ID and the keyload message ID. The usage of the Javascript libraries might facilitate the consumption of Track and Trace Ledger data in different application contexts, for instance, to enable a more efficient refresh of a Web UI.
-
 
 ## Tutorial Part II : RFID Read Transactions.
 
@@ -189,18 +188,18 @@ Response:
 
 ```json
 [
-    {
-        "created": "2021-03-24T15:24:17.356Z",
-        "updated": "2021-03-24T16:45:49.284Z",
-        "totalEventNumber": 3,
-        "epc": "urn:epc:id:sgtin:9524444.100000.10"
-    },
-    {
-        "created": "2021-03-24T12:42:35.565Z",
-        "updated": "2021-03-24T12:42:46.868Z",
-        "totalEventNumber": 1,
-        "epc": "4ae80b6a6c81616588146032"
-    }
+  {
+    "created": "2021-03-24T15:24:17.356Z",
+    "updated": "2021-03-24T16:45:49.284Z",
+    "totalEventNumber": 3,
+    "epc": "urn:epc:id:sgtin:9524444.100000.10"
+  },
+  {
+    "created": "2021-03-24T12:42:35.565Z",
+    "updated": "2021-03-24T12:42:46.868Z",
+    "totalEventNumber": 1,
+    "epc": "4ae80b6a6c81616588146032"
+  }
 ]
 ```
 
@@ -221,18 +220,18 @@ Response:
 
 ```json
 [
-    {
-        "deviceId": "FX9600-Bur-1",
-        "created": "2021-03-24T16:45:38.920Z",
-        "updated": "2021-03-24T16:45:49.284Z",
-        "totalEventNumber": 1
-    },
-    {
-        "deviceId": "MC333R-GI4HG4EU-Vall-1",
-        "created": "2021-03-24T15:24:17.900Z",
-        "updated": "2021-03-24T16:44:28.225Z",
-        "totalEventNumber": 2
-    }
+  {
+    "deviceId": "FX9600-Bur-1",
+    "created": "2021-03-24T16:45:38.920Z",
+    "updated": "2021-03-24T16:45:49.284Z",
+    "totalEventNumber": 1
+  },
+  {
+    "deviceId": "MC333R-GI4HG4EU-Vall-1",
+    "created": "2021-03-24T15:24:17.900Z",
+    "updated": "2021-03-24T16:44:28.225Z",
+    "totalEventNumber": 2
+  }
 ]
 ```
 
@@ -240,7 +239,7 @@ As seen above, the list of RFID readers and the total number of transaction even
 
 ### Retrieve the last transaction involving an RFID EPC.
 
-This API endpoint allows you to retrieve the last transaction involving an RFID EPC. By including the URL parameter `lastN`, the API allows you to retrieve the most recent `N` transactions. In this case we want to retrieve the most recent transaction, so we set the `lastN` parameter equal to `1`. 
+This API endpoint allows you to retrieve the last transaction involving an RFID EPC. By including the URL parameter `lastN`, the API allows you to retrieve the most recent `N` transactions. In this case we want to retrieve the most recent transaction, so we set the `lastN` parameter equal to `1`.
 
 Request:
 
@@ -253,22 +252,22 @@ Response:
 
 ```json
 [
-    {
-        "deviceId": "MC333R-GI4HG4EU-Vall-1",
-        "antennaId": "1",
-        "peakRssi": -42,
-        "epc": "urn:epc:id:sgtin:9524444.100000.10",
-        "timestamp": "2021-04-11T13:21:57.152Z",
-        "location": {
-            "latitude": 44,
-            "longitude": -8
-        },
-        "type": "readTransaction",
-        "jsonData": {
-            "timestamp": 1618147330641
-        },
-        "id": "1c696e55..."
-    }
+  {
+    "deviceId": "MC333R-GI4HG4EU-Vall-1",
+    "antennaId": "1",
+    "peakRssi": -42,
+    "epc": "urn:epc:id:sgtin:9524444.100000.10",
+    "timestamp": "2021-04-11T13:21:57.152Z",
+    "location": {
+      "latitude": 44,
+      "longitude": -8
+    },
+    "type": "readTransaction",
+    "jsonData": {
+      "timestamp": 1618147330641
+    },
+    "id": "1c696e55..."
+  }
 ]
 ```
 
@@ -289,13 +288,13 @@ Response body:
 
 ```json
 [
-    {
-        "transactionId": "1c696e55...",
-        "deviceId": "MC333R-GI4HG4EU-Vall-1",
-        "epc": "urn:epc:id:sgtin:9524444.100000.10",
-        "type": "readTransaction",
-        "id": "2201556d..."
-    }
+  {
+    "transactionId": "1c696e55...",
+    "deviceId": "MC333R-GI4HG4EU-Vall-1",
+    "epc": "urn:epc:id:sgtin:9524444.100000.10",
+    "type": "readTransaction",
+    "id": "2201556d..."
+  }
 ]
 ```
 
@@ -322,12 +321,11 @@ Response
 
 ```json
 {
-    "locator": "urn:iota-streams:devnet:d0d508c7ce84b...:4d14480f2fe8f7fbad65e12f:137bf7689bde186fc9ffef8c"
+  "locator": "urn:iota-streams:devnet:d0d508c7ce84b...:4d14480f2fe8f7fbad65e12f:137bf7689bde186fc9ffef8c"
 }
 ```
 
 With the above information, one can use the IOTA Streams utility libraries, such as the [anchors library](https://github.com/iotaledger/tangle.js/tree/main/libs/anchors) to retrieve the transactions from their own application. The usage of the Javascript libraries might facilitate the consumption of Track and Trace Ledger data in different application contexts, for instance, to enable a more efficient refresh of a Web UI.
-
 
 ### Advanced use of EPC Identifiers
 
@@ -395,7 +393,7 @@ curl -i --location --request POST 'https://sandbox-api.zebra.com/v2/ledger/tangl
 
 ```
 202 Accepted
-````
+```
 
 Response header:
 
@@ -440,7 +438,6 @@ The `location` header contains a reference to the operation log entry that allow
 ```
 Location: /operation-log/2a3114...
 ```
-
 
 As seen above, the example VDA was validated and successfully recorded in the Tangle.
 
@@ -492,22 +489,22 @@ Response:
 
 ```json
 [
-    {
-        "created": "2021-03-24T12:14:52.401Z",
-        "updated": "2021-03-24T12:15:06.576Z",
-        "totalEventNumber": 1,
-        "epcOrValue": "1ae00b6a6c81617588083570"
-    },
-    {
-        "created": "2021-03-24T12:14:43.959Z",
-        "updated": "2021-03-24T12:14:52.214Z",
-        "totalEventNumber": 1,
-        "epcOrValue": "881616588083570"
-    }
+  {
+    "created": "2021-03-24T12:14:52.401Z",
+    "updated": "2021-03-24T12:15:06.576Z",
+    "totalEventNumber": 1,
+    "epcOrValue": "1ae00b6a6c81617588083570"
+  },
+  {
+    "created": "2021-03-24T12:14:43.959Z",
+    "updated": "2021-03-24T12:14:52.214Z",
+    "totalEventNumber": 1,
+    "epcOrValue": "881616588083570"
+  }
 ]
 ```
 
-You can see from the response that either the barcode value or the RFID tags EPC is provided and the total number of print transaction events associated. Hence you can use the returned EPC or value to get a list of all transactions associated to it. 
+You can see from the response that either the barcode value or the RFID tags EPC is provided and the total number of print transaction events associated. Hence you can use the returned EPC or value to get a list of all transactions associated to it.
 
 ### List all Printers Used.
 
@@ -520,22 +517,22 @@ curl -i --location --request GET 'https://sandbox-api.zebra.com/v2/ledger/tangle
 --header 'apikey: <your API Key>'
 ```
 
-Response: 
+Response:
 
 ```json
 [
-    {
-        "deviceId": "ZQ630-1616588083570",
-        "created": "2021-03-24T12:14:44.364Z",
-        "updated": "2021-03-24T14:01:34.291Z",
-        "totalEventNumber": 3
-    },
-    {
-        "deviceId": "ZQ620-200dpi,V85.20.16,8,8192KB.XXZKJ192800224",
-        "created": "2021-03-24T12:10:11.174Z",
-        "updated": "2021-03-24T14:05:22.187Z",
-        "totalEventNumber": 2
-    }
+  {
+    "deviceId": "ZQ630-1616588083570",
+    "created": "2021-03-24T12:14:44.364Z",
+    "updated": "2021-03-24T14:01:34.291Z",
+    "totalEventNumber": 3
+  },
+  {
+    "deviceId": "ZQ620-200dpi,V85.20.16,8,8192KB.XXZKJ192800224",
+    "created": "2021-03-24T12:10:11.174Z",
+    "updated": "2021-03-24T14:05:22.187Z",
+    "totalEventNumber": 2
+  }
 ]
 ```
 
@@ -556,13 +553,13 @@ Response body:
 
 ```json
 [
-    {
-        "transactionId": "1c696e55...",
-        "type": "printTransaction",
-        "value": "881618147363842",
-        "deviceId": "ZQ630-1616588083570",
-        "id": "2201556..."
-    }
+  {
+    "transactionId": "1c696e55...",
+    "type": "printTransaction",
+    "value": "881618147363842",
+    "deviceId": "ZQ630-1616588083570",
+    "id": "2201556..."
+  }
 ]
 ```
 

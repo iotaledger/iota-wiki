@@ -2,8 +2,6 @@
 
 **Data boosts innovation for public and private sector organisations, and can be used to create new revenue streams. However, without a vendor-neutral way of verifying data, it can't be trusted. This blueprint uses the IOTA Tangle as an immutable data structure to verify the contents of a file in a third-party storage solution.**
 
-
-
 ## Business Case
 
 Storing, sharing and trading data is a cornerstone of business in the connected world and boosts innovation for public and private sector organisations. However, if you can't trust that the data has not been altered, then the data becomes nearly useless. By using the IOTA Tangle, businesses and connected machines can trust in the security and privacy of the data they share.
@@ -32,7 +30,6 @@ When you use the Tangle with a third-party data storage solution as described in
 See this website for a [demonstration of the application](https://ipfs.iota.org/).
 
 ## Additional Resources
-
 
 ### [GitHub repository](https://github.com/iotaledger/poc-ipfs)
 

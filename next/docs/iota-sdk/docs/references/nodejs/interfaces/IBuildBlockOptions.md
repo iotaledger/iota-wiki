@@ -19,7 +19,7 @@ Options to build a new block, possibly with payloads
 
 Bech32 encoded output address and amount
 
-___
+---
 
 ### outputHex
 
@@ -27,7 +27,7 @@ ___
 
 Hex encoded output address and amount
 
-___
+---
 
 ### parents
 
@@ -35,7 +35,7 @@ ___
 
 Parent block IDs
 
-___
+---
 
 ### burn
 

@@ -2,16 +2,15 @@
 description: Getting started with the recommended requirements and installation links.
 image: /img/Banner/banner_hornet_getting_started.png
 keywords:
-- IOTA Node
-- Hornet Node
-- Linux
-- macOS
-- Windows
-- Docker
-- reference
-- Requirements
+  - IOTA Node
+  - Hornet Node
+  - Linux
+  - macOS
+  - Windows
+  - Docker
+  - reference
+  - Requirements
 ---
-
 
 # Getting Started
 

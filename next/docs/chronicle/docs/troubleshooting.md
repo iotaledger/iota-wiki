@@ -2,13 +2,13 @@
 description: Troubleshooting the docs-template.
 image: /img/logo/iota_logo.svg
 keywords:
-- discussion
-- channel
-- problem
-- solution
-- discord
-- stack exchange
-- reference
+  - discussion
+  - channel
+  - problem
+  - solution
+  - discord
+  - stack exchange
+  - reference
 ---
 
 # Troubleshooting

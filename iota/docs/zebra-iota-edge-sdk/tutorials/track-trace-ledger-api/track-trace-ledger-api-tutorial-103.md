@@ -1,6 +1,6 @@
 # IOTA GTSC Track and Trace Ledger APIs 103 Tutorial : Digital Identity
 
-In this tutorial, you will learn how to use Decentralized Digital Identities (DIDs). You will be able to create a DID identity (recorded on the Tangle), and a self signed Verifiable Credential as a proof of DID control. This DID and its accompanying Verifiable Credential can be verified from the Tangle, and if *Verified*, the DID will be associated to your API Key. In addition, you will also learn how to present a Verifiable Credential with claims signed by another (possibly trusted) party and which will be automatically associated to your DID.
+In this tutorial, you will learn how to use Decentralized Digital Identities (DIDs). You will be able to create a DID identity (recorded on the Tangle), and a self signed Verifiable Credential as a proof of DID control. This DID and its accompanying Verifiable Credential can be verified from the Tangle, and if _Verified_, the DID will be associated to your API Key. In addition, you will also learn how to present a Verifiable Credential with claims signed by another (possibly trusted) party and which will be automatically associated to your DID.
 
 ## Introduction
 
@@ -37,14 +37,14 @@ tcli did create --mainnet
 This will create a DID on the IOTA Chrysalis Main Net as seen below.
 
 ```json
-  {
-    "did": "did:iota:9vy5GXq4eDu4TrotrBTfmQfZzLq7iAYtTRVh2vQrdyM9",
-    "keys": {
-      "public": "ChtA5TW3ddToh55CMpSSz2VC8xUhY5nhFXjUqpeHqC5v",
-      "private": "AEp8NDrN2BYMpUU6DkKRzVDhAN6VrMNNQP96R2FkVwgh"
-    },
-    "transactionUrl": "https://explorer.iota.org/mainnet/message/3465ef0fb7c623dd733ba995913ccde9a7eeb8ffa43a0201decb943961216564"
-  }
+{
+  "did": "did:iota:9vy5GXq4eDu4TrotrBTfmQfZzLq7iAYtTRVh2vQrdyM9",
+  "keys": {
+    "public": "ChtA5TW3ddToh55CMpSSz2VC8xUhY5nhFXjUqpeHqC5v",
+    "private": "AEp8NDrN2BYMpUU6DkKRzVDhAN6VrMNNQP96R2FkVwgh"
+  },
+  "transactionUrl": "https://explorer.iota.org/mainnet/message/3465ef0fb7c623dd733ba995913ccde9a7eeb8ffa43a0201decb943961216564"
+}
 ```
 
 In addition to the DID URI `did:iota:9vy5GXq4eDu4TrotrBTfmQfZzLq7iAYtTRVh2vQrdyM9`, an Ed25519 public and private key will be generated and the URL to the [transaction](https://explorer.iota.org/mainnet/message/3465ef0fb7c623dd733ba995913ccde9a7eeb8ffa43a0201decb943961216564)
@@ -82,15 +82,15 @@ Create a JSON file claims.json as seen below:
 
 ```json
 {
-   "gs1CompanyPrefix": {
-      "type": "identifier",
-      "value": "9526677"
-    },
-    "name": {
-      "type": "PropertyValue",
-      "value": "Good Wine Company"
-    },
-    "type": "Organization"
+  "gs1CompanyPrefix": {
+    "type": "identifier",
+    "value": "9526677"
+  },
+  "name": {
+    "type": "PropertyValue",
+    "value": "Good Wine Company"
+  },
+  "type": "Organization"
 }
 ```
 
@@ -116,10 +116,7 @@ This will create a VC as seen below:
 ```json
 {
   "@context": "https://www.w3.org/2018/credentials/v1",
-  "type": [
-    "VerifiableCredential",
-    "GlobalIdentifierCredential"
-  ],
+  "type": ["VerifiableCredential", "GlobalIdentifierCredential"],
   "credentialSubject": {
     "id": "did:iota:9vy5GXq4eDu4TrotrBTfmQfZzLq7iAYtTRVh2vQrdyM9",
     "gs1CompanyPrefix": {
@@ -226,7 +223,7 @@ Response:
 ]
 ```
 
-As seen above, the API was able to extract the API Key supplied in the headers and return the DID. Since it is a Self Issued DID, its marked as *not trusted* and not a *trusted issuer*. A *trusted issuer* is a DID that is entitled to issue credentials to other stakeholders so that the system will consider those credentials' claims as trusted.
+As seen above, the API was able to extract the API Key supplied in the headers and return the DID. Since it is a Self Issued DID, its marked as _not trusted_ and not a _trusted issuer_. A _trusted issuer_ is a DID that is entitled to issue credentials to other stakeholders so that the system will consider those credentials' claims as trusted.
 
 ## Associate a DID to a transaction
 
@@ -276,14 +273,14 @@ Response:
   "value": "3700123300014",
   "timestamp": "2020-10-14T16:10:07.652Z",
   "location": {
-      "latitude": 44.1,
-      "longitude": -8
+    "latitude": 44.1,
+    "longitude": -8
   },
   "deviceId": "iphone-A-456789",
   "type": "scanTransaction",
   "jsonData": {
-      "originDid": "did:iota:9vy5GXq4eDu4TrotrBTfmQfZzLq7iAYtTRVh2vQrdyM9",
-      "timestamp": 1622224030522
+    "originDid": "did:iota:9vy5GXq4eDu4TrotrBTfmQfZzLq7iAYtTRVh2vQrdyM9",
+    "timestamp": 1622224030522
   },
   "id": "8f66478e4c..."
 }
@@ -417,10 +414,7 @@ The following Credential is issued:
 ```json
 {
   "@context": "https://www.w3.org/2018/credentials/v1",
-  "type": [
-    "VerifiableCredential",
-    "GlobalIdentifierCredential"
-  ],
+  "type": ["VerifiableCredential", "GlobalIdentifierCredential"],
   "credentialSubject": {
     "id": "did:iota:3xnxAzeV88oEMZC1iaqMppTj38cLXwxt8nv1U4XKPwRL",
     "gs1CompanyPrefix": {
@@ -461,10 +455,7 @@ This will generate a Verifiable Presentation as seen below:
   "type": "VerifiablePresentation",
   "verifiableCredential": {
     "@context": "https://www.w3.org/2018/credentials/v1",
-    "type": [
-      "VerifiableCredential",
-      "GlobalIdentifierCredential"
-    ],
+    "type": ["VerifiableCredential", "GlobalIdentifierCredential"],
     "credentialSubject": {
       "id": "did:iota:3xnxAzeV88oEMZC1iaqMppTj38cLXwxt8nv1U4XKPwRL",
       "gs1CompanyPrefix": {
@@ -555,7 +546,7 @@ Response:
 201 Created
 ```
 
-Once the presentation is verified from the IOTA Tangle mainnet, the API will check the DID of the issuer, and if it is a trusted issuer such as `GTSC`, the claims will be marked as trusted, otherwise the claims will be marked as untrusted. That is, *claims issued by non-trusted (issuers') DID will always be marked as untrusted*.
+Once the presentation is verified from the IOTA Tangle mainnet, the API will check the DID of the issuer, and if it is a trusted issuer such as `GTSC`, the claims will be marked as trusted, otherwise the claims will be marked as untrusted. That is, _claims issued by non-trusted (issuers') DID will always be marked as untrusted_.
 
 Below we will confirm this based on the credentials we generated previously:
 

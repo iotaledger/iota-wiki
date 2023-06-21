@@ -3,24 +3,24 @@ title: Simple Transaction
 description: 'How to send a value transaction'
 image: /img/logo/iota_mark_light.png
 keywords:
-- how to
-- faucet
-- testnet
-- test funds
-- nodejs
-- python
-- rust
+  - how to
+  - faucet
+  - testnet
+  - test funds
+  - nodejs
+  - python
+  - rust
 ---
 
-import Tabs from "@theme/Tabs";
-import TabItem from "@theme/TabItem";
-import TipFaucet from "../../_admonitions/_tip_faucet.md";
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import TipFaucet from '../../_admonitions/_tip_faucet.md';
 
 Once you have [created your account](../accounts_and_addresses/create_account.mdx) and
 [requested funds from the faucet](./request_funds.mdx) you are ready to send your first
 transaction.
 
-<TipFaucet/>
+<TipFaucet />
 
 ## Code Example
 
@@ -29,7 +29,6 @@ The following example will:
 1. Create a wallet.
 2. Get Alice's account which was [created in the first guide](../accounts_and_addresses/create_account.mdx).
 3. Send 1 SMR to an address using the `Account.send_amount(addresses_with_amount, options)` function. Make sure to update the code sample to send to the address of your choice.
-
 
 <Tabs groupId="language">
 <TabItem value="rust" label="Rust">

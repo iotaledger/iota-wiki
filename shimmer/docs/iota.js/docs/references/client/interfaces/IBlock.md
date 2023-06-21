@@ -1,11 +1,12 @@
 ---
 description: iota.js API reference
 keywords:
-- references
-- api references
-- typescript
+  - references
+  - api references
+  - typescript
 image: /img/client_banner.png
 ---
+
 # Interface: IBlock
 
 Block layout.
@@ -27,7 +28,7 @@ Block layout.
 
 The protocol version under which this block operates.
 
-___
+---
 
 ### parents
 
@@ -35,7 +36,7 @@ ___
 
 The parent block ids.
 
-___
+---
 
 ### payload
 
@@ -43,7 +44,7 @@ ___
 
 The payload contents.
 
-___
+---
 
 ### nonce
 

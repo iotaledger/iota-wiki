@@ -1,11 +1,12 @@
 ---
 description: iota.js API reference
 keywords:
-- references
-- api references
-- typescript
+  - references
+  - api references
+  - typescript
 image: /img/client_banner.png
 ---
+
 # Class: Ed25519Seed
 
 Class to help with seeds.
@@ -37,9 +38,9 @@ Create a new instance of Ed25519Seed.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `secretKeyBytes?` | `Uint8Array` | The bytes. |
+| Name              | Type         | Description |
+| :---------------- | :----------- | :---------- |
+| `secretKeyBytes?` | `Uint8Array` | The bytes.  |
 
 ## Methods
 
@@ -51,8 +52,8 @@ Create the seed from a Bip39 mnemonic.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name       | Type     | Description                           |
+| :--------- | :------- | :------------------------------------ |
 | `mnemonic` | `string` | The mnemonic to create the seed from. |
 
 #### Returns
@@ -61,7 +62,7 @@ Create the seed from a Bip39 mnemonic.
 
 A new instance of Ed25519Seed.
 
-___
+---
 
 ### keyPair
 
@@ -79,7 +80,7 @@ The key pair.
 
 [ISeed](../interfaces/ISeed.md).[keyPair](../interfaces/ISeed.md#keypair)
 
-___
+---
 
 ### generateSeedFromPath
 
@@ -89,8 +90,8 @@ Generate a new seed from the path.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name   | Type        | Description                        |
+| :----- | :---------- | :--------------------------------- |
 | `path` | `Bip32Path` | The path to generate the seed for. |
 
 #### Returns
@@ -103,7 +104,7 @@ The generated seed.
 
 [ISeed](../interfaces/ISeed.md).[generateSeedFromPath](../interfaces/ISeed.md#generateseedfrompath)
 
-___
+---
 
 ### toBytes
 

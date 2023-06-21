@@ -44,12 +44,12 @@ Now run:
 docker-compose up
 ```
 
-It initializes Hornet and creates a fresh image of the checked out Wasp code. 
+It initializes Hornet and creates a fresh image of the checked out Wasp code.
 
 If you do modifications inside the branch, docker-compose will include them into the Wasp image too.
 
 :::note
-All Wasp ports will bind to 127.0.0.1 by default. 
+All Wasp ports will bind to 127.0.0.1 by default.
 If you want to expose the ports to the outside world, run `HOST=0.0.0.0 docker-compose up`.
 :::
 

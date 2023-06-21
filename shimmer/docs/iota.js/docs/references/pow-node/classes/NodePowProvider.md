@@ -1,11 +1,12 @@
 ---
 description: iota.js API reference
 keywords:
-- references
-- api references
-- typescript
+  - references
+  - api references
+  - typescript
 image: /img/client_banner.png
 ---
+
 # Class: NodePowProvider
 
 Node POW Provider.
@@ -34,8 +35,8 @@ Create a new instance of NodePowProvider.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name       | Type     | Description                               |
+| :--------- | :------- | :---------------------------------------- |
 | `numCpus?` | `number` | The number of cpus, defaults to max CPUs. |
 
 ## Methods
@@ -48,10 +49,10 @@ Perform pow on the message and return the nonce of at least targetScore.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `message` | `Uint8Array` | The message to process. |
-| `targetScore` | `number` | The target score. |
+| Name          | Type         | Description             |
+| :------------ | :----------- | :---------------------- |
+| `message`     | `Uint8Array` | The message to process. |
+| `targetScore` | `number`     | The target score.       |
 
 #### Returns
 

@@ -33,7 +33,7 @@
       'tokenSupply': '1450896407249092'
     },
     'pendingProtocolParameters': [
-      
+
     ],
     'baseToken': {
       'name': 'Shimmer',
@@ -49,7 +49,7 @@
       'referencedRate': 85.71428571428571
     },
     'features': [
-      
+
     ]
   },
   'url': 'https://api.testnet.shimmer.network'

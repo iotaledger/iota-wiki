@@ -2,12 +2,12 @@
 description: Official IOTA Wallet Library Java API reference.
 image: /img/logo/iota_mark_light.png
 keywords:
-- api
-- Java
-- android
-- cross
-- compile
-- getting started
+  - api
+  - Java
+  - android
+  - cross
+  - compile
+  - getting started
 ---
 
 # Getting Started with Java for Android
@@ -30,7 +30,8 @@ These variables are used to generate correct binaries during cross compilation a
 
 #### List of Target Devices
 
-`$ARCH` and -> `$TARGET` related to each other in the following manner: 
+`$ARCH` and -> `$TARGET` related to each other in the following manner:
+
 - `armeabi-v7a` -> `armv7-linux-androideabi`
 - `arm64-v8a` -> `aarch64-linux-android`
 - `x86` -> `i686-linux-android`
@@ -47,7 +48,8 @@ We will use `archTriplets` for the enabled list of device targets during this tu
 - Dependencies indicated in the [Prerequisites](./java.md#prerequisites) section of Getting Started with Android.
 - Android NDK or Android Studio with NDK installed (If you extract make sure to make it executable `chmod -R +x android-ndk-VERSION` )
 
-In order to cross compile the binaries for Android; we need the following target toolchains: (Or all of the enabled `archTriplets`) 
+In order to cross compile the binaries for Android; we need the following target toolchains: (Or all of the enabled `archTriplets`)
+
 ```
 rustup target add \
     armv7-linux-androideabi \
@@ -57,6 +59,7 @@ rustup target add \
 ```
 
 For this setup we use `$ANDROID_NDK_HOME` for the location of your NDK, wether you use Android studio or manual compilation
+
 1. set `ANDROID_NDK_HOME` environment variable
 
 Example: `export ANDROID_NDK_HOME=$ANDROID_HOME/ndk/{A_VERSION_NUMBER}`
@@ -68,7 +71,7 @@ Attempt to run `android` on your terminal. If this command does not open the And
 
 ### 1.1 Compiling Binaries
 
-In order to generate the Java source files; we need to run cargo manually once. 
+In order to generate the Java source files; we need to run cargo manually once.
 
 This step will require you to run `cargo build --release` in `wallet.rs/bindings/java`.
 
@@ -77,19 +80,20 @@ This step is simplifying the process by running an unnecesary build (We compile 
 :::
 
 ### 1.2 Creating the `jar` File
+
 Afterwards, you need to run `./gradlew jar` in `wallet.rs/bindings/java` in order to generate the jar file.
 
 The jar will be found at `wallet.rs/bindings/java/native/build/libs/native.jar`
 
 ## 2. Building the App
 
-Building the actual app can be done through two different ways. Using Android Studio and by manual linking. 
+Building the actual app can be done through two different ways. Using Android Studio and by manual linking.
 
-The following 2 Sections describe both methods. 
+The following 2 Sections describe both methods.
 
 #### Cross-compiling
 
-In order to build on windows, we need to add android triplets to our VCPKG and use that during compilation. 
+In order to build on windows, we need to add android triplets to our VCPKG and use that during compilation.
 [TODO]
 
 Currently cross compiling has only worked on WSL/Linux.
@@ -102,6 +106,7 @@ Afterwards you need to comment out all `archTriplets` in `build.gradle` in order
 Load the project under the `wallet.rs/bindings/java` folder in Android studio.
 
 Make sure you have an NDK and SDK: `file->Project Structure->SDK Location`. If the NDK location is marked grey, edit the `local.properties` like so: (This must be the location of `$ANDROID_NDK_HOME`, which still needs to be on your path)
+
 ```
 ndk.dir=I\:\\Path\\To\\AndroidSDK\\ndk\\VERSION
 ```
@@ -126,6 +131,7 @@ In order to compile the binaries for the various Android targets, we need to spe
 
 Create or update the following file: `~/.cargo/config`.
 Replace each instance of `$ANDROID_NDK_HOME` with the actual location (variables do not work) and add the text below to the config file.
+
 ```
 [target.armv7-linux-androideabi]
 linker = "$ANDROID_NDK_HOME/toolchains/llvm/prebuilt/linux-x86_64/bin/armv7a-linux-androideabi21-clang"
@@ -148,17 +154,17 @@ ar = "$ANDROID_NDK_HOME/toolchains/llvm/prebuilt/linux-x86_64/bin/x86_64-linux-a
 
 Now we need to generate binaries for all the enabled targets inside your `build.gradle` `archTriplets`.
 The easiest way is to use the gradle build system. Using the `build.gradle` inside `examples/android-app`, we automatically build all enabled targets after running the following:
+
 ```
 cd wallet.rs/bindings/java
 ./gradlew build
 ```
 
-Alternatively, you can also manually run the commands; 
+Alternatively, you can also manually run the commands;
 
-1. Compile the binaries for the target 
+1. Compile the binaries for the target
 
 Example: `cargo build --target aarch64-linux-android --release`
-
 
 2. Adding shared library
 
@@ -169,6 +175,7 @@ Example: `cp $ANDROID_NDK_HOME/sources/cxx-stl/llvm-libc++/libs/arm64-v8a/libc++
 #### Building Your App
 
 Assemble your android app with gradle using:
+
 ```
 cd wallet.rs/bindings/java
 ./gradlew aR
@@ -177,24 +184,26 @@ cd wallet.rs/bindings/java
 #### Signing Your App
 
 1. prepare a signing keystore; we will call it `signed_ks.jks`
-> How to make: https://developer.android.com/studio/publish/app-signing#generate-key
+
+   > How to make: https://developer.android.com/studio/publish/app-signing#generate-key
 
 2. Sign the apk
 
 > `$ANDROID_HOME/build-tools/{VERSION}/apksigner sign --ks examples/android-app/signed_ks.jks --out examples/android-app/android-app-release-signed.apk -v examples/android-app/build/outputs/apk/release/android-app-release-unsigned.apk`
 
-3. Connect device 
-> https://developer.android.com/studio/command-line/adb#connect-to-a-device-over-wi-fi-android-11+
+3. Connect device
+   > https://developer.android.com/studio/command-line/adb#connect-to-a-device-over-wi-fi-android-11+
 
 For example:
-- `adb pair 192.168.0.x:x` 
+
+- `adb pair 192.168.0.x:x`
 - `adb connect 192.168.0.x:x`
 - `adb install -r --fastdeploy examples/android-app/android-app-release-signed.apk`
 - `adb shell am monitor`
 
 ## Using Pre-Generated Binaries
 
-It is very likely you dont want or need to compile by yourself. That is why we provide precompiled binaries found on our release page [here](https://github.com/iotaledger/wallet.rs/releases). The Java releases are tagged with `android-binding-vX.Y.Z`. 
+It is very likely you dont want or need to compile by yourself. That is why we provide precompiled binaries found on our release page [here](https://github.com/iotaledger/wallet.rs/releases). The Java releases are tagged with `android-binding-vX.Y.Z`.
 
 Install the files attached to the release so that you achieve the following directory structure: (extract the `jniLibs.zip` into `root_app/src/main/`)
 
@@ -217,7 +226,7 @@ root_app/src/main/
       libiota_wallet_java.so
 ```
 
-### Android Studio 
+### Android Studio
 
 Then using Android Studio, add the native.jar to your project by right clicking -> Add As Library... -> Select your Android app Module and press OK.
 

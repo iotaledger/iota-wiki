@@ -20,7 +20,7 @@ Options for the alias output creation
 Bech32 encoded address to which the Nft will be minted. Default will use the
 first address of the account
 
-___
+---
 
 ### immutableMetadata
 
@@ -28,7 +28,7 @@ ___
 
 Hex encoded bytes
 
-___
+---
 
 ### metadata
 
@@ -36,7 +36,7 @@ ___
 
 Hex encoded bytes
 
-___
+---
 
 ### stateMetadata
 

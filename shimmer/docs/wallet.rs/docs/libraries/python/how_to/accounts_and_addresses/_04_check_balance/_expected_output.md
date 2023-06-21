@@ -22,10 +22,10 @@ Synced: {
     '0xdc8be91d779aac048aa9001ab99ecf12cf62a4701185a95f6206a1a201bfbe7c'
   ],
   'aliases': [
-    
+
   ],
   'foundries': [
-    
+
   ],
   'potentiallyLockedOutputs': {
     '0x8dd4f722a18f3b5822216e856a98ea480fbfaa205f10c08d36dc5ab21efcc8355600': False
@@ -57,10 +57,10 @@ Balance: {
     '0xdc8be91d779aac048aa9001ab99ecf12cf62a4701185a95f6206a1a201bfbe7c'
   ],
   'aliases': [
-    
+
   ],
   'foundries': [
-    
+
   ],
   'potentiallyLockedOutputs': {
     '0xa10af6cc21fa0b1b67962af7082eb25d8b4aafe50fedda469179f469ab5e33be5300': False,

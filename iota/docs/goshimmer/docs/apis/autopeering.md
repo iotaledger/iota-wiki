@@ -2,12 +2,12 @@
 description: The peering API allows retrieving basic information about autopeering using the /autopeering/neighbors endpoint or the GetAutopeeringNeighbors() function in the client lib.
 image: /img/logo/goshimmer_light.png
 keywords:
-- client library
-- HTTP API
-- peering api methods
-- neighbors
-- accepted neighbors
-- known peer
+  - client library
+  - HTTP API
+  - peering api methods
+  - neighbors
+  - accepted neighbors
+  - known peer
 ---
 
 # Peering API Methods
@@ -16,27 +16,23 @@ The peering API allows retrieving basic information about autopeering.
 
 The API provides the following functions and endpoints:
 
-* [/autopeering/neighbors](#autopeeringneighbors)
-
+- [/autopeering/neighbors](#autopeeringneighbors)
 
 Client lib APIs:
-* [GetAutopeeringNeighbors()](#client-lib---getautopeeringneighbors)
 
+- [GetAutopeeringNeighbors()](#client-lib---getautopeeringneighbors)
 
-
-##  `/autopeering/neighbors`
+## `/autopeering/neighbors`
 
 Returns the chosen and accepted neighbors of the node.
 
-
 ### Parameters
 
-| **Parameter**            | `known`      |
-|--------------------------|----------------|
-| **Required or Optional** | optional       |
-| **Description**          | Return all known peers, set to `1` (default: `0`)   |
-| **Type**                 | int         |
-
+| **Parameter**            | `known`                                           |
+| ------------------------ | ------------------------------------------------- |
+| **Required or Optional** | optional                                          |
+| **Description**          | Return all known peers, set to `1` (default: `0`) |
+| **Type**                 | int                                               |
 
 ### Examples
 
@@ -49,6 +45,7 @@ curl --location 'http://localhost:8080/autopeering/neighbors?known=1'
 #### Client lib - `GetAutopeeringNeighbors`
 
 Blocks can be retrieved via `GetAutopeeringNeighbors(knownPeers bool) (*jsonmodels.GetNeighborsResponse, error)`
+
 ```go
 neighbors, err := goshimAPI.GetAutopeeringNeighbors(false)
 if err != nil {
@@ -60,6 +57,7 @@ fmt.Println(string(neighbors))
 ```
 
 #### Response examples
+
 ```json
 {
   "chosen": [
@@ -99,26 +97,26 @@ fmt.Println(string(neighbors))
 
 #### Results
 
-* Returned type
+- Returned type
 
-|Return field | Type | Description|
-|:-----|:------|:------|
-| `known`  | `[]Neighbor` | List of known peers. Only returned when parameter is set. |
-| `chosen`  | `[]Neighbor` | List of chosen peers. |
-| `accepted`  | `[]Neighbor` | List of accepted peers. |
-| `error` | `string` | Error block. Omitted if success.     |
+| Return field | Type         | Description                                               |
+| :----------- | :----------- | :-------------------------------------------------------- |
+| `known`      | `[]Neighbor` | List of known peers. Only returned when parameter is set. |
+| `chosen`     | `[]Neighbor` | List of chosen peers.                                     |
+| `accepted`   | `[]Neighbor` | List of accepted peers.                                   |
+| `error`      | `string`     | Error block. Omitted if success.                          |
 
-* Type `Neighbor`
+- Type `Neighbor`
 
-|field | Type | Description|
-|:-----|:------|:------|
-| `id`  | `string` | Comparable node identifier.  |
-| `publicKey`   | `string` | Public key used to verify signatures.   |
-| `services`   | `[]PeerService` | List of exposed services.     |
+| field       | Type            | Description                           |
+| :---------- | :-------------- | :------------------------------------ |
+| `id`        | `string`        | Comparable node identifier.           |
+| `publicKey` | `string`        | Public key used to verify signatures. |
+| `services`  | `[]PeerService` | List of exposed services.             |
 
-* Type `PeerService`
+- Type `PeerService`
 
-|field | Type | Description|
-|:-----|:------|:------|
-| `id`  | `string` | Type of service.  |
-| `address`   | `string` |  Network address of the service.   |
+| field     | Type     | Description                     |
+| :-------- | :------- | :------------------------------ |
+| `id`      | `string` | Type of service.                |
+| `address` | `string` | Network address of the service. |

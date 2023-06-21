@@ -1,11 +1,12 @@
 ---
 description: iota.js API reference
 keywords:
-- references
-- api references
-- typescript
+  - references
+  - api references
+  - typescript
 image: /img/client_banner.png
 ---
+
 # Class: Sha1
 
 Class to help with Sha1 scheme.
@@ -43,8 +44,8 @@ Perform Sum on the data.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name   | Type         | Description             |
+| :----- | :----------- | :---------------------- |
 | `data` | `Uint8Array` | The data to operate on. |
 
 #### Returns
@@ -53,7 +54,7 @@ Perform Sum on the data.
 
 The sum of the data.
 
-___
+---
 
 ### update
 
@@ -65,8 +66,8 @@ Update the hash with the data.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name      | Type         | Description                       |
+| :-------- | :----------- | :-------------------------------- |
 | `message` | `Uint8Array` | The data to update the hash with. |
 
 #### Returns
@@ -75,7 +76,7 @@ Update the hash with the data.
 
 The instance for chaining.
 
-___
+---
 
 ### digest
 

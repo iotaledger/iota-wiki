@@ -1,11 +1,11 @@
 ---
 keywords:
-- Coordicide
-- Upgrades
-- Mainnet
-- Protocol Improvements
-- explanation
-description: Specific Chrysalis Upgrades from IOTA 1.0.  
+  - Coordicide
+  - Upgrades
+  - Mainnet
+  - Protocol Improvements
+  - explanation
+description: Specific Chrysalis Upgrades from IOTA 1.0.
 image: /img/logo/Chrysalis_logo_dark.png
 ---
 

@@ -2,13 +2,14 @@
 image: /img/integration-services/diagrams/ecommerce-audit-trail-bridge.jpeg
 description: The Audit Trail GW implementation provides a Channel Service, a Channel Info Service, and a Subscription Service.
 keywords:
-- explanation
-- API definition
-- Architecture overview
-- Channel Service
-- Channel Info Service
-- Subscription Service
+  - explanation
+  - API definition
+  - Architecture overview
+  - Channel Service
+  - Channel Info Service
+  - Subscription Service
 ---
+
 # Software Architecture and APIs Definition
 
 ![ecommerce-audit-trail-bridge](/img/integration-services/diagrams/ecommerce-audit-trail-bridge.png)
@@ -22,22 +23,21 @@ You can use this service to create new channels in the Tangle. The identity crea
 author. The author can read all messages and write data into the channel. Authorized subscribers can also use this
 service to read and write from/to the channel (see [Subscription Service](#subscription-service)).
 
-__Prefix:__ `/api/{{version}}/channels`
+**Prefix:** `/api/{{version}}/channels`
 
 ## Channel Info Service
 
 You can use this service to search for one or more channels stored by the API. It can query for all the channels created
 by a specific identity or topic. It also allows you to keep or remove any channel from the database.
 
-__Prefix:__ `/api/{{version}}/channel-info`
+**Prefix:** `/api/{{version}}/channel-info`
 
-:::info 
+:::info
 
 When you remove a channel from your database, it **will not be removed from the ledger** since data on the
 Tangle is immutable. The service will only remove the index from your database.
 
 :::
-
 
 ## Subscription Service
 
@@ -46,5 +46,4 @@ identified by a unique channel address. The channel's author can then decide whe
 or write to it. The channel’s author can still revoke access to the channel at any time. This service can
 also list all authorized subscriptions to a channel.
 
-__Prefix:__ `/api/{{version}}/subscription`
-
+**Prefix:** `/api/{{version}}/subscription`

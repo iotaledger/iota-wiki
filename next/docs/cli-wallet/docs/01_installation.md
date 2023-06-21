@@ -13,6 +13,7 @@ Go to https://github.com/iotaledger/iota-sdk/releases and download the latest CL
 Compare the checksum from the release with a checksum locally produced.
 
 You can use the following command to produce the checksum.
+
 ```sh
 shasum -a 256 [PATH TO BINARY]
 ```

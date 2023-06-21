@@ -1,18 +1,19 @@
 ---
 description: iota.js API reference
 keywords:
-- references
-- api references
-- typescript
+  - references
+  - api references
+  - typescript
 image: /img/client_banner.png
 ---
+
 # Interface: ISimpleTokenScheme
 
 Simple token scheme.
 
 ## Hierarchy
 
-- [`ITypeBase`](ITypeBase.md)<``0``\>
+- [`ITypeBase`](ITypeBase.md)<`0`\>
 
   ↳ **`ISimpleTokenScheme`**
 
@@ -29,7 +30,7 @@ Simple token scheme.
 
 ### type
 
-• **type**: ``0``
+• **type**: `0`
 
 The type of the object.
 
@@ -37,7 +38,7 @@ The type of the object.
 
 [ITypeBase](ITypeBase.md).[type](ITypeBase.md#type)
 
-___
+---
 
 ### mintedTokens
 
@@ -45,7 +46,7 @@ ___
 
 Amount of tokens minted by this foundry.
 
-___
+---
 
 ### meltedTokens
 
@@ -53,7 +54,7 @@ ___
 
 Amount of tokens melted by this foundry.
 
-___
+---
 
 ### maximumSupply
 

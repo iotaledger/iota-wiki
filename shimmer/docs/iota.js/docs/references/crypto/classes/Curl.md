@@ -1,11 +1,12 @@
 ---
 description: iota.js API reference
 keywords:
-- references
-- api references
-- typescript
+  - references
+  - api references
+  - typescript
 image: /img/client_banner.png
 ---
+
 # Class: Curl
 
 Class to implement Curl sponge.
@@ -14,8 +15,8 @@ Class to implement Curl sponge.
 
 ### Properties
 
-- [HASH\_LENGTH](Curl.md#hash_length)
-- [STATE\_LENGTH](Curl.md#state_length)
+- [HASH_LENGTH](Curl.md#hash_length)
+- [STATE_LENGTH](Curl.md#state_length)
 
 ### Constructors
 
@@ -31,17 +32,17 @@ Class to implement Curl sponge.
 
 ## Properties
 
-### HASH\_LENGTH
+### HASH_LENGTH
 
-▪ `Static` `Readonly` **HASH\_LENGTH**: `number` = `243`
+▪ `Static` `Readonly` **HASH_LENGTH**: `number` = `243`
 
 The Hash Length.
 
-___
+---
 
-### STATE\_LENGTH
+### STATE_LENGTH
 
-▪ `Static` `Readonly` **STATE\_LENGTH**: `number`
+▪ `Static` `Readonly` **STATE_LENGTH**: `number`
 
 The State Length.
 
@@ -55,8 +56,8 @@ Create a new instance of Curl.
 
 #### Parameters
 
-| Name | Type | Default value | Description |
-| :------ | :------ | :------ | :------ |
+| Name     | Type     | Default value           | Description                      |
+| :------- | :------- | :---------------------- | :------------------------------- |
 | `rounds` | `number` | `Curl.NUMBER_OF_ROUNDS` | The number of rounds to perform. |
 
 ## Methods
@@ -69,16 +70,16 @@ Sponge transform function.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name        | Type        | Description                  |
+| :---------- | :---------- | :--------------------------- |
 | `curlState` | `Int8Array` | The curl state to transform. |
-| `rounds` | `number` | The number of rounds to use. |
+| `rounds`    | `number`    | The number of rounds to use. |
 
 #### Returns
 
 `void`
 
-___
+---
 
 ### reset
 
@@ -90,7 +91,7 @@ Resets the state.
 
 `void`
 
-___
+---
 
 ### rate
 
@@ -100,8 +101,8 @@ Get the state of the sponge.
 
 #### Parameters
 
-| Name | Type | Default value | Description |
-| :------ | :------ | :------ | :------ |
+| Name  | Type     | Default value      | Description                     |
+| :---- | :------- | :----------------- | :------------------------------ |
 | `len` | `number` | `Curl.HASH_LENGTH` | The length of the state to get. |
 
 #### Returns
@@ -110,7 +111,7 @@ Get the state of the sponge.
 
 The state.
 
-___
+---
 
 ### absorb
 
@@ -120,17 +121,17 @@ Absorbs trits given an offset and length.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `trits` | `Int8Array` | The trits to absorb. |
-| `offset` | `number` | The offset to start abororbing from the array. |
-| `length` | `number` | The length of trits to absorb. |
+| Name     | Type        | Description                                    |
+| :------- | :---------- | :--------------------------------------------- |
+| `trits`  | `Int8Array` | The trits to absorb.                           |
+| `offset` | `number`    | The offset to start abororbing from the array. |
+| `length` | `number`    | The length of trits to absorb.                 |
 
 #### Returns
 
 `void`
 
-___
+---
 
 ### squeeze
 
@@ -140,11 +141,11 @@ Squeezes trits given an offset and length.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `trits` | `Int8Array` | The trits to squeeze. |
-| `offset` | `number` | The offset to start squeezing from the array. |
-| `length` | `number` | The length of trits to squeeze. |
+| Name     | Type        | Description                                   |
+| :------- | :---------- | :-------------------------------------------- |
+| `trits`  | `Int8Array` | The trits to squeeze.                         |
+| `offset` | `number`    | The offset to start squeezing from the array. |
+| `length` | `number`    | The length of trits to squeeze.               |
 
 #### Returns
 

@@ -2,12 +2,13 @@
 description: Official IOTA Wallet Library Software Node.js API reference.
 image: /img/logo/logo.svg
 keywords:
-- api
-- nodejs
-- param
-- type
-- reference
+  - api
+  - nodejs
+  - param
+  - type
+  - reference
 ---
+
 # Node.js API Reference
 
 ## initLogger(config: LogOptions)
@@ -34,6 +35,7 @@ Initializes the logging system.
 Adds a new event listener with a callback in the form of `(err, data) => {}`.
 
 Supported event names:
+
 - ErrorThrown
 - BalanceChange
 - NewTransaction
@@ -53,8 +55,9 @@ Creates a new instance of the AccountManager.
 | --------------------------------- | -------- | ----------- | -------------------------------------------- |
 | [ManagerOptions](#manageroptions) | `object` | `undefined` | The options to configure the account manager |
 
-#### ManagerOptions 
-You can use any of the following parameters when constructing the ManagerOptions. All the parameters are optional.   
+#### ManagerOptions
+
+You can use any of the following parameters when constructing the ManagerOptions. All the parameters are optional.
 
 | Param                            | Type      | Default     | Description                                                                               |
 | -------------------------------- | --------- | ----------- | ----------------------------------------------------------------------------------------- |
@@ -131,7 +134,6 @@ Removes the account with the given identifier or index.
 | Param     | Type               | Default | Description                             |
 | --------- | ------------------ | ------- | --------------------------------------- |
 | accountId | `string \| number` | `null`  | The account identifier or account index |
-
 
 ### startBackgroundSync(pollingInterval, automaticOutputConsolidation): Promise<void/>
 
@@ -357,6 +359,7 @@ Returns the account's messages.
 Message object: { confirmed: boolean, broadcasted: boolean, incoming: boolean, value: number }
 
 ### listAddresses([unspent])
+
 Returns the account's addresses.
 
 | Param     | Type      | Default | Description               |
@@ -399,12 +402,15 @@ Send funds to the given address.
 #### RemainderValueStrategy
 
 ##### changeAddress()
+
 Send the remainder value to an internal address.
 
 ###### reuseAddress()
+
 Send the remainder value to its original address.
 
 ###### accountAddress(address: string)
+
 Send the remainder value to a specific address that must belong to the account.
 
 ### getNodeInfo([url, auth]): NodeInfoWrapper
@@ -429,22 +435,22 @@ Returns the [NodeInfoWrapper](#nodeinfowrapper)
 
 All the values are for the NodeInfo are set by the nodes.
 
-| Param                         | Type       | Default| Description                                  |
-| ----------------------------- | ---------- | ------ | -------------------------------------------- |
-| [name]                        | `string`   | `null` | The node name                                |
-| [version]                     | `string`   | `null` | The node version                             |
-| [isHealthy]                   | `boolean`  | `null` | Indicates if the node is healthy             |
-| [networkId]                   | `number`   | `null` | The network ID                               |
-| [bech32HRP]                   | `string`   | `null` | The human-readable part of the bech32 string |
-| [minPoWScore]                 | `number`   | `null` | The node minimum proof of work score         |
-| [messagesPerSecond]           | `number`   | `null` | The node messages per second                 |
-| [referencedMessagesPerSecond] | `number`   | `null` | The node references per second               |
-| [referencedRate]              | `number`   | `null` | The node reference rate                      |
-| [latestMilestoneTimestamp]    | `number`   | `null` | The node's latest milestone timestamp        |
-| [latestMilestoneIndex]        | `number`   | `null` | The node's latest milestone index            |
-| [confirmedMilestoneIndex]     | `number`   | `null` | The node's confirmed milestone index         |
-| [pruningIndex]                | `number`   | `null` | The node's pruning index                     |
-| [features]                    | `string[]` | `null` | The node's features.                         |
+| Param                         | Type       | Default | Description                                  |
+| ----------------------------- | ---------- | ------- | -------------------------------------------- |
+| [name]                        | `string`   | `null`  | The node name                                |
+| [version]                     | `string`   | `null`  | The node version                             |
+| [isHealthy]                   | `boolean`  | `null`  | Indicates if the node is healthy             |
+| [networkId]                   | `number`   | `null`  | The network ID                               |
+| [bech32HRP]                   | `string`   | `null`  | The human-readable part of the bech32 string |
+| [minPoWScore]                 | `number`   | `null`  | The node minimum proof of work score         |
+| [messagesPerSecond]           | `number`   | `null`  | The node messages per second                 |
+| [referencedMessagesPerSecond] | `number`   | `null`  | The node references per second               |
+| [referencedRate]              | `number`   | `null`  | The node reference rate                      |
+| [latestMilestoneTimestamp]    | `number`   | `null`  | The node's latest milestone timestamp        |
+| [latestMilestoneIndex]        | `number`   | `null`  | The node's latest milestone index            |
+| [confirmedMilestoneIndex]     | `number`   | `null`  | The node's confirmed milestone index         |
+| [pruningIndex]                | `number`   | `null`  | The node's pruning index                     |
+| [features]                    | `string[]` | `null`  | The node's features.                         |
 
 ### retry(messageId)
 
@@ -535,17 +541,17 @@ which is an address without balance.
 
 ## ClientOptions
 
-| Field               | Type                        | Default     | Description                                                                                              |
-| ------------------- | --------------------------- | ----------- | -------------------------------------------------------------------------------------------------------- |
-| [network]           | `number`                    | `undefined` | The tangle network to connect to (Mainnet = 1, Devnet = 1, Comnet = 3)                                   |
-| [primaryNode]       | `NodeUrl | [Node](#node)`   | `undefined` | A node URL to alway connect to first                                                                     |
-| [primaryPoWNode]    | `NodeUrl | [Node](#node)`   | `undefined` | A node URL to alway connect to first when using remote PoW, will be used before primaryNode              |
-| [node]              | `NodeUrl | [Node](#node)`   | `undefined` | A node URL to connect to                                                                                 |
-| [nodes]             | `NodeUrl | [Node](#node)[]` | `undefined` | A list node URL to connect to                                                                            |
-| [quorumSize]        | `number`                    | `undefined` | If multiple nodes are provided, quorum size determines the number of nodes to query to check for quorum. |
-| [quorumThreshold]   | `number`                    | `undefined` | Minimum number of nodes from the quorum pool that need to agree to consider a result true.               |
-| [localPow]          | `boolean`                   | `true`      | Whether to use local or remote PoW.                                                                      |
-| [MqttBrokerOptions] | `MqttBrokerOptions`         | `undefined` | Options for the MQTT broker                                                                              |
+| Field               | Type                | Default          | Description                                                                                              |
+| ------------------- | ------------------- | ---------------- | -------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
+| [network]           | `number`            | `undefined`      | The tangle network to connect to (Mainnet = 1, Devnet = 1, Comnet = 3)                                   |
+| [primaryNode]       | `NodeUrl            | [Node](#node)`   | `undefined`                                                                                              | A node URL to alway connect to first                                                        |
+| [primaryPoWNode]    | `NodeUrl            | [Node](#node)`   | `undefined`                                                                                              | A node URL to alway connect to first when using remote PoW, will be used before primaryNode |
+| [node]              | `NodeUrl            | [Node](#node)`   | `undefined`                                                                                              | A node URL to connect to                                                                    |
+| [nodes]             | `NodeUrl            | [Node](#node)[]` | `undefined`                                                                                              | A list node URL to connect to                                                               |
+| [quorumSize]        | `number`            | `undefined`      | If multiple nodes are provided, quorum size determines the number of nodes to query to check for quorum. |
+| [quorumThreshold]   | `number`            | `undefined`      | Minimum number of nodes from the quorum pool that need to agree to consider a result true.               |
+| [localPow]          | `boolean`           | `true`           | Whether to use local or remote PoW.                                                                      |
+| [MqttBrokerOptions] | `MqttBrokerOptions` | `undefined`      | Options for the MQTT broker                                                                              |
 
 ## MqttBrokerOptions
 
@@ -560,6 +566,7 @@ All fields are optional.
 | port                    | `number`  | Defines the port to be used for the MQTT connection                                                   |
 
 ### Auth
+
 | Field      | Type     | Default     | Description                                |
 | ---------- | -------- | ----------- | ------------------------------------------ |
 | [jwt]      | `string` | `undefined` | Optional JSON Web Token.                   |
@@ -580,7 +587,7 @@ NodeUrl = string
 
 Possible output kinds.
 
-| Field                          | Type       | Default | Description                                        |
-| ------------------------------ | ---------- | ------- | -------------------------------------------------- |
-| [signatureLockedSingle]        | `string`   | `null`  | Default output type                                |
-| [signatureLockedDustAllowance] | `string`   | `null`  | Output type to enable receiving dust on an address |
+| Field                          | Type     | Default | Description                                        |
+| ------------------------------ | -------- | ------- | -------------------------------------------------- |
+| [signatureLockedSingle]        | `string` | `null`  | Default output type                                |
+| [signatureLockedDustAllowance] | `string` | `null`  | Output type to enable receiving dust on an address |

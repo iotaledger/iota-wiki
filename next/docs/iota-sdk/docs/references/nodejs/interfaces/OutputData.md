@@ -23,7 +23,7 @@ An output with metadata
 
 The identifier of an Output
 
-___
+---
 
 ### metadata
 
@@ -31,7 +31,7 @@ ___
 
 The metadata of the output
 
-___
+---
 
 ### output
 
@@ -39,7 +39,7 @@ ___
 
 The actual Output
 
-___
+---
 
 ### isSpent
 
@@ -47,7 +47,7 @@ ___
 
 If an output is spent
 
-___
+---
 
 ### address
 
@@ -55,7 +55,7 @@ ___
 
 Associated account address
 
-___
+---
 
 ### networkId
 
@@ -63,7 +63,7 @@ ___
 
 Network ID
 
-___
+---
 
 ### remainder
 
@@ -71,7 +71,7 @@ ___
 
 Remainder
 
-___
+---
 
 ### chain
 

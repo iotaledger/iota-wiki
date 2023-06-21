@@ -1,9 +1,9 @@
 ---
 keywords:
-- Ledger
-- UTXO
-- explanation
-description: Alias Transfers in Stardust.  
+  - Ledger
+  - UTXO
+  - explanation
+description: Alias Transfers in Stardust.
 image: /img/logo/preview.png
 ---
 
@@ -40,27 +40,31 @@ alias output in a transaction, you can access the funds locked under its address
 ## Creating an Alias
 
 Just like a regular _Basic Output_, an _Alias Output_ also has:
- - _Amount_ to hold base token
- - _Unlock Conditions_ that define how the output can be unlocked
- - _Features_ that don't modify the unlocking.
+
+- _Amount_ to hold base token
+- _Unlock Conditions_ that define how the output can be unlocked
+- _Features_ that don't modify the unlocking.
 
 On top of these, it also defines:
- - _State Index_ that has to be incremented in every transaction initiated by the _State Controller_.
- - _State Metadata_ that may hold binary data,
- - _Foundry Counter_ that defines how many foundries the alias has already created,
- - _Immutable Features_ that are regular _Features_ defined upon creation which can never be modified afterwards.
+
+- _State Index_ that has to be incremented in every transaction initiated by the _State Controller_.
+- _State Metadata_ that may hold binary data,
+- _Foundry Counter_ that defines how many foundries the alias has already created,
+- _Immutable Features_ that are regular _Features_ defined upon creation which can never be modified afterwards.
 
 Alias outputs only support two type of unlock conditions:
- - _State Controller Address Unlock Condition_ that defines the state controller,  and
- - _Governor Address Unlock Condition_ that defines the governor of the alias.
+
+- _State Controller Address Unlock Condition_ that defines the state controller, and
+- _Governor Address Unlock Condition_ that defines the governor of the alias.
 
 Transaction A shows the process of creating a new alias output and hence an alias account. Notice the creation
 constraints enforced by the protocol:
- - _Alias ID_ must be zeroed out. This signals to the protocol that the alias account is new and when the transaction confirms,
-   a unique _Alias ID_ must be generated.
- - _State Index_ must be zero as this is the first possible state the alias represents.
- - _Foundry Counter_ must be zero as the alias doesn't control any foundries yet.
- - _Issuer_ and _Sender_ addresses must be unlocked in the transaction if present.
+
+- _Alias ID_ must be zeroed out. This signals to the protocol that the alias account is new and when the transaction confirms,
+  a unique _Alias ID_ must be generated.
+- _State Index_ must be zero as this is the first possible state the alias represents.
+- _Foundry Counter_ must be zero as the alias doesn't control any foundries yet.
+- _Issuer_ and _Sender_ addresses must be unlocked in the transaction if present.
 
 ![Transaction A - Creating an Alias](/img/stardust_explanations/stardust_ledger_anatomy/alias_transaction/tx_A.svg)
 
@@ -73,14 +77,15 @@ _Output ID_ of _Alias Output #1_.
 Transaction B represents a state transition of the alias. As the name suggests, a state transition must be initiated
 by the _State Controller_, therefore it is the _stateControllerAddress_ that needs to sign the transaction. During a
 state transition, the following constraints need to be met:
- - the alias can't be destroyed,
- - token balances of the output may be changed, the _State Controller_ can transfer funds in- and out of the alias account,
- - _State Index_ must be incremented,
- - _State Metadata_ may be updated,
- - _Foundry Counter_ must be incremented by the number of foundries created in the transaction,
- - _Unlock Conditions_ must not be changed, therefore the state controller can't update ownership of the alias account,
- - _Sender Feature_ may be updated,
- - _Metadata Feature_ must not be updated.
+
+- the alias can't be destroyed,
+- token balances of the output may be changed, the _State Controller_ can transfer funds in- and out of the alias account,
+- _State Index_ must be incremented,
+- _State Metadata_ may be updated,
+- _Foundry Counter_ must be incremented by the number of foundries created in the transaction,
+- _Unlock Conditions_ must not be changed, therefore the state controller can't update ownership of the alias account,
+- _Sender Feature_ may be updated,
+- _Metadata Feature_ must not be updated.
 
 ![Transaction B - State transition of an alias](/img/stardust_explanations/stardust_ledger_anatomy/alias_transaction/tx_B.svg)
 
@@ -90,10 +95,11 @@ Notice how the _Alias ID_ field has to be set in _Alias Output #2_ to the protoc
 
 Transaction C depicts a governance transition of the alias. Such a transaction must be signed by the address in
 _Governor Address Unlock Condition_. The constraints for a valid governance transition are:
- - the alias output might be destroyed by the governor (Transaction D),
- - _State Controller Address Unlock Condition_ may be changed,
- - _Governor Address Unlock Condition_ may be changed,
- - _Metadata Feature_ may be changed.
+
+- the alias output might be destroyed by the governor (Transaction D),
+- _State Controller Address Unlock Condition_ may be changed,
+- _Governor Address Unlock Condition_ may be changed,
+- _Metadata Feature_ may be changed.
 
 No other fields are allowed to change in the next alias state, therefore a governance transition can't modify token
 balances or create foundries.
@@ -111,19 +117,21 @@ address of the alias (derived from _Alias ID_) are essentially lost, as it is no
 ## Unlocking funds owned by an Alias
 
 An alias account may own funds in the ledger two ways:
- - locked directly in its alias output,
- - locked in other outputs to the address of the alias.
+
+- locked directly in its alias output,
+- locked in other outputs to the address of the alias.
 
 The global alias address is derived from the unique _Alias ID_. Technically, the alias address is the concatenation of
 the _Alias Address Type_ and the _Alias ID_. A practical example from [TIP-31](https://github.com/iotaledger/tips/blob/add-smr-hrps/tips/TIP-0031/tip-0031.md):
- - _Output ID_ (34-byte) that created the alias: `52fdfc072182654f163f5f0f9a621d729566c74d10037c4d7bbb0407d1e2c6490000`
- - _Alias ID_, BLAKE2b-256 hash (32-byte): `fe80c2eb7c736da2f7c98ecf135ee9e34e4e076afe6e1dfebc9ec578b8f56d2f`
- - Serialized alias address (33-byte): `08fe80c2eb7c736da2f7c98ecf135ee9e34e4e076afe6e1dfebc9ec578b8f56d2f`
- - Bech32 string:
-    - IOTA (64-char): `iota1prlgpsht03ekmghhex8v7y67a835uns8dtlxu807hj0v279c74kj76j6rev`
-    - IOTA Testnet (64-char): `atoi1prlgpsht03ekmghhex8v7y67a835uns8dtlxu807hj0v279c74kj7autzrp`
-    - Shimmer (63-char): `smr1prlgpsht03ekmghhex8v7y67a835uns8dtlxu807hj0v279c74kj7dzrr0a`
-    - Shimmer Testnet (63-char): `rms1prlgpsht03ekmghhex8v7y67a835uns8dtlxu807hj0v279c74kj7e9ge5y`
+
+- _Output ID_ (34-byte) that created the alias: `52fdfc072182654f163f5f0f9a621d729566c74d10037c4d7bbb0407d1e2c6490000`
+- _Alias ID_, BLAKE2b-256 hash (32-byte): `fe80c2eb7c736da2f7c98ecf135ee9e34e4e076afe6e1dfebc9ec578b8f56d2f`
+- Serialized alias address (33-byte): `08fe80c2eb7c736da2f7c98ecf135ee9e34e4e076afe6e1dfebc9ec578b8f56d2f`
+- Bech32 string:
+  - IOTA (64-char): `iota1prlgpsht03ekmghhex8v7y67a835uns8dtlxu807hj0v279c74kj76j6rev`
+  - IOTA Testnet (64-char): `atoi1prlgpsht03ekmghhex8v7y67a835uns8dtlxu807hj0v279c74kj7autzrp`
+  - Shimmer (63-char): `smr1prlgpsht03ekmghhex8v7y67a835uns8dtlxu807hj0v279c74kj7dzrr0a`
+  - Shimmer Testnet (63-char): `rms1prlgpsht03ekmghhex8v7y67a835uns8dtlxu807hj0v279c74kj7e9ge5y`
 
 Anyone can send funds in the ledger to the address of the alias, while only the current state controller is able to
 unlock such funds by including the alias itself in the very same transaction. An alias address doesn't have

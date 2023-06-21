@@ -2,11 +2,11 @@
 image: /img/integration-services/logo/integration_services.png
 description: This section will guide in setting up the Integration Service API using Java.
 keywords:
-- how to
-- Java
-- setup API
-- configure
-- .env
+  - how to
+  - Java
+  - setup API
+  - configure
+  - .env
 ---
 
 # Local Setup
@@ -21,14 +21,13 @@ This section will guide in setting up the Integration Services API using Java.
 
 See project's [POM](https://github.com/albydeca/iota-is-sdk/blob/main/pom.xml). Moreover, the following will be required:
 
-* JDK 16 (recommended)
-* A reference to an instance of the [Integration Services API](https://github.com/iotaledger/integration-services)
-* Maven
+- JDK 16 (recommended)
+- A reference to an instance of the [Integration Services API](https://github.com/iotaledger/integration-services)
+- Maven
 
 ## Download and Build the Project
 
 Build from source:
-
 
 ```bash
 git clone git@github.com:albydeca/iota-is-sdk.git
@@ -68,8 +67,7 @@ Please set up the following files in order to run the code locally:
   ```
 - `adminIdentity.json` - will contain the admin identity object (json file with elements `doc` and `key`)
 
-
-You are now ready to use the JAR and access the classes. Please remember to keep the `env.properties` *in the same folder as the JAR*.
+You are now ready to use the JAR and access the classes. Please remember to keep the `env.properties` _in the same folder as the JAR_.
 The JAR can be used as a dependency to run the examples, which, contrary to the node implementation, exist as part of their own package
 which depends on this project's JAR (see `examples/pom.xml` in the repo)
 
@@ -86,7 +84,6 @@ public BaseClient() throws FileNotFoundException, IOException {
 }
 ```
 
-
 Anyone who wishes to implement such access in a more convenient way for their needs is welcome to make the changes and submit a pull request.
 
 ### Run Integration Services API
@@ -97,7 +94,6 @@ An `adminIdentity.json` is also strongly recommended to make the best use of the
 
 The codebase is divided into three parts:
 
-* `IdentityClient` allows the developer to create, update, delete users and add, revoke, and check their credentials, and manage trusted authorities. Self-Sovereign Identity (SSI) developers should make use of this part.
-* `ChannelClient` allows the developer to create, delete data channels (IOTA Streams), manage all subscription-related actions for those channels, push and pull data. IoT developers might want to use this to implement M2M communications.
-* `examples` provides a set of sample activities that show the potential of what can be done with the codebase, and also acts as a rudimentary test suite. More about these can be found in the [dedicated section](../../../how_tos/integration-services-sdk/introduction.mdx).
-
+- `IdentityClient` allows the developer to create, update, delete users and add, revoke, and check their credentials, and manage trusted authorities. Self-Sovereign Identity (SSI) developers should make use of this part.
+- `ChannelClient` allows the developer to create, delete data channels (IOTA Streams), manage all subscription-related actions for those channels, push and pull data. IoT developers might want to use this to implement M2M communications.
+- `examples` provides a set of sample activities that show the potential of what can be done with the codebase, and also acts as a rudimentary test suite. More about these can be found in the [dedicated section](../../../how_tos/integration-services-sdk/introduction.mdx).

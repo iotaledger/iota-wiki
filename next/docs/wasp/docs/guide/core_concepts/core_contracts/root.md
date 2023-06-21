@@ -117,6 +117,3 @@ A `ContractRecord` is encoded as the concatenation of:
 - Program hash (`[32]byte`).
 - Contract description (`string`).
 - Contract name (`string`).
-
-
-

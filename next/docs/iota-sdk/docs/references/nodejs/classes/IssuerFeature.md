@@ -31,7 +31,7 @@ The type of feature.
 
 Feature.getType
 
-___
+---
 
 ### getIssuer
 

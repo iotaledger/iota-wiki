@@ -23,14 +23,14 @@ Topic: blocksBlock{
         Nft(NftOutput{
           amount: BoundedU64(51000),
           native_tokens: NativeTokens(BoxedSlicePrefix([
-            
+
           ])),
           nft_id: NftId(0x0000000000000000000000000000000000000000000000000000000000000000),
           unlock_conditions: UnlockConditions(BoxedSlicePrefix([
             Address(AddressUnlockCondition(Ed25519(Ed25519Address(0x56b1638c1bb2566e2150d4667f78a59ee0d9b9a6c1e6af4499c3d55c8fd77e01))))
           ])),
           features: Features(BoxedSlicePrefix([
-            
+
           ])),
           immutable_features: Features(BoxedSlicePrefix([
             Issuer(IssuerFeature(Ed25519(Ed25519Address(0x56b1638c1bb2566e2150d4667f78a59ee0d9b9a6c1e6af4499c3d55c8fd77e01)))),
@@ -40,13 +40,13 @@ Topic: blocksBlock{
         Basic(BasicOutput{
           amount: BoundedU64(1009003400),
           native_tokens: NativeTokens(BoxedSlicePrefix([
-            
+
           ])),
           unlock_conditions: UnlockConditions(BoxedSlicePrefix([
             Address(AddressUnlockCondition(Ed25519(Ed25519Address(0x56b1638c1bb2566e2150d4667f78a59ee0d9b9a6c1e6af4499c3d55c8fd77e01))))
           ])),
           features: Features(BoxedSlicePrefix([
-            
+
           ]))
         })
       ]),

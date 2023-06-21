@@ -18,7 +18,7 @@ The balance of the base coin
 
 The total amount of the outputs
 
-___
+---
 
 ### available
 
@@ -26,7 +26,7 @@ ___
 
 The amount of the outputs that aren't used in a transaction
 
-___
+---
 
 ### votingPower
 

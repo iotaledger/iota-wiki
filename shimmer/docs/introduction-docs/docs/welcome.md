@@ -1,8 +1,8 @@
 ---
 keywords:
-- Welcome
-- Stardust
-- Documentation
+  - Welcome
+  - Stardust
+  - Documentation
 description: Welcome to the official Stardust documentation
 image: /img/logo/preview.png
 ---
@@ -14,5 +14,4 @@ and differences compared to Chrysalis, furthermore gives an overview of differen
 
 Stardust debuts on [Shimmer](https://shimmer.network/), the new staging network for IOTA, before being fully supported on the IOTA Mainnet.
 
-This is the technical documentation for developers. For updates and network status, please visit [https://status.iota.org/](https://status.iota.org/). 
-
+This is the technical documentation for developers. For updates and network status, please visit [https://status.iota.org/](https://status.iota.org/).

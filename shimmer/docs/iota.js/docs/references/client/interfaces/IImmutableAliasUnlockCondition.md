@@ -1,18 +1,19 @@
 ---
 description: iota.js API reference
 keywords:
-- references
-- api references
-- typescript
+  - references
+  - api references
+  - typescript
 image: /img/client_banner.png
 ---
+
 # Interface: IImmutableAliasUnlockCondition
 
 Immutable Alias Unlock Condition.
 
 ## Hierarchy
 
-- [`ITypeBase`](ITypeBase.md)<``6``\>
+- [`ITypeBase`](ITypeBase.md)<`6`\>
 
   ↳ **`IImmutableAliasUnlockCondition`**
 
@@ -27,7 +28,7 @@ Immutable Alias Unlock Condition.
 
 ### type
 
-• **type**: ``6``
+• **type**: `6`
 
 The type of the object.
 
@@ -35,7 +36,7 @@ The type of the object.
 
 [ITypeBase](ITypeBase.md).[type](ITypeBase.md#type)
 
-___
+---
 
 ### address
 
