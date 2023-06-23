@@ -608,6 +608,6 @@ module.exports = {
     path.resolve(__dirname, './docs/chronicle/static'),
     path.resolve(__dirname, './docs/identity.rs/0.7-alpha/static'),
     path.resolve(__dirname, './docs/stronghold.rs/static'),
-    path.resolve(__dirname, 'docs/cli-wallet/static'),
+    path.resolve(__dirname, './docs/cli-wallet/static'),
   ],
 };
