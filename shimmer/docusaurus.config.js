@@ -565,6 +565,17 @@ module.exports = {
         rehypePlugins: [katex],
       },
     ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'cli-wallet',
+        path: path.resolve(__dirname, 'docs/cli-wallet/docs'),
+        routeBasePath: 'cli-wallet',
+        sidebarPath: require.resolve('./docs/cli-wallet/sidebars.js'),
+        editUrl:
+          'https://github.com/iotaledger/iota-wiki/edit/the-merge-moveRemainingDocsToWiki/',
+      },
+    ],
     // plugins
     [
       'docusaurus-plugin-openapi-docs',
@@ -597,5 +608,6 @@ module.exports = {
     path.resolve(__dirname, './docs/chronicle/static'),
     path.resolve(__dirname, './docs/identity.rs/0.7-alpha/static'),
     path.resolve(__dirname, './docs/stronghold.rs/static'),
+    path.resolve(__dirname, 'docs/cli-wallet/static'),
   ],
 };
