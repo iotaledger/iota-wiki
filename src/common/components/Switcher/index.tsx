@@ -74,7 +74,7 @@ export default function Switcher() {
               <h3>{subsection.label}</h3>
               {subsection.description && <p>{subsection.description}</p>}
               <div className='button-group button-group--block'>
-                {current.docs && (
+                {current.docs && current.docs.length > 1 && (
                   <button
                     className='button button--secondary'
                     onClick={() => toggleMenu('docs')}
@@ -82,7 +82,7 @@ export default function Switcher() {
                     {current.doc.label}
                   </button>
                 )}
-                {current.versions && (
+                {current.versions && current.versions.length > 1 && (
                   <button
                     className='button button--secondary'
                     onClick={() => toggleMenu('versions')}
