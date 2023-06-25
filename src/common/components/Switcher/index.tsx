@@ -3,6 +3,7 @@ import type { ComponentType, SVGProps } from 'react';
 
 import useSwitcher from '@site/src/utils/useSwitcher';
 import Link from '@docusaurus/Link';
+import clsx from 'clsx';
 
 export type Item = {
   id: string;
@@ -35,7 +36,7 @@ type MenuProps = { item: Item; items: MenuItem[] };
 
 function Menu(props: MenuProps) {
   return (
-    <ul className='menu__list'>
+    <ul className='menu__list switcher__menu'>
       {props.items.map(({ id, label, to }) => (
         <li key={id}>
           {id === props.item.id ? (
@@ -65,32 +66,44 @@ export default function Switcher() {
     setMenu((menu) => (menu === toggleMenu ? undefined : toggleMenu));
   };
 
+  const draw = (items?: MenuItem[]) => items && items.length > 1;
+
   return (
-    <div className='switcher container'>
+    <div className='switcher'>
       {current.subsections.map((subsection) =>
         subsection.id === current.subsection.id ? (
-          <div key={subsection.id} className='card margin-vert--md'>
+          <div
+            key={subsection.id}
+            className={clsx(
+              'card',
+              'margin-bottom--md',
+              'switcher__section',
+              'switcher__section--active',
+            )}
+          >
             <div className='card__body'>
               <h3>{subsection.label}</h3>
               {subsection.description && <p>{subsection.description}</p>}
-              <div className='button-group button-group--block'>
-                {current.docs && current.docs.length > 1 && (
-                  <button
-                    className='button button--secondary'
-                    onClick={() => toggleMenu('docs')}
-                  >
-                    {current.doc.label}
-                  </button>
-                )}
-                {current.versions && current.versions.length > 1 && (
-                  <button
-                    className='button button--secondary'
-                    onClick={() => toggleMenu('versions')}
-                  >
-                    {current.version.label}
-                  </button>
-                )}
-              </div>
+              {(draw(current.docs) || draw(current.versions)) && (
+                <div className='button-group button-group--block'>
+                  {draw(current.docs) && (
+                    <button
+                      className='button button--primary switcher__button'
+                      onClick={() => toggleMenu('docs')}
+                    >
+                      {current.doc.label}
+                    </button>
+                  )}
+                  {draw(current.versions) && (
+                    <button
+                      className='button button--primary switcher__button'
+                      onClick={() => toggleMenu('versions')}
+                    >
+                      {current.version.label}
+                    </button>
+                  )}
+                </div>
+              )}
             </div>
             {menu && (
               <div className='card__footer padding-horiz--none'>
@@ -105,7 +118,7 @@ export default function Switcher() {
         ) : (
           <Link
             key={subsection.id}
-            className='card margin-vert--md'
+            className={clsx('card', 'margin-bottom--md', 'switcher__section')}
             to={subsection.to}
           >
             <div className='card__body'>
