@@ -259,6 +259,7 @@ module.exports = {
           require('remark-code-import'),
           require('remark-import-partial'),
         ],
+        showLastUpdateTime: true,
       },
     ],
     [
@@ -274,6 +275,7 @@ module.exports = {
           require('remark-code-import'),
           require('remark-import-partial'),
         ],
+        showLastUpdateTime: true,
       },
     ],
     [
@@ -285,6 +287,7 @@ module.exports = {
         sidebarPath: path.resolve(__dirname, 'docs/hornet/sidebars.js'),
         editUrl:
           'https://github.com/iotaledger/iota-wiki/edit/the-merge-moveRemainingDocsToWiki/',
+        showLastUpdateTime: true,
       },
     ],
     [
@@ -296,6 +299,7 @@ module.exports = {
         sidebarPath: path.resolve(__dirname, 'docs/goshimmer/sidebars.js'),
         editUrl:
           'https://github.com/iotaledger/iota-wiki/edit/the-merge-moveRemainingDocsToWiki/',
+        showLastUpdateTime: true,
       },
     ],
     [
@@ -315,6 +319,7 @@ module.exports = {
           require('remark-import-partial'),
           require('remark-remove-comments'),
         ],
+        showLastUpdateTime: true,
       },
     ],
     [
@@ -331,6 +336,7 @@ module.exports = {
           'https://github.com/iotaledger/iota-wiki/edit/the-merge-moveRemainingDocsToWiki/',
         remarkPlugins: [math],
         rehypePlugins: [katex],
+        showLastUpdateTime: true,
         include: ['*.md'],
       },
     ],
@@ -348,6 +354,7 @@ module.exports = {
           require('remark-import-partial'),
           require('remark-remove-comments'),
         ],
+        showLastUpdateTime: true,
       },
     ],
     [
@@ -363,6 +370,7 @@ module.exports = {
           require('remark-code-import'),
           require('remark-import-partial'),
         ],
+        showLastUpdateTime: true,
         versions: {
           current: {
             label: 'IOTA',
@@ -388,6 +396,7 @@ module.exports = {
           require('remark-import-partial'),
           require('remark-remove-comments'),
         ],
+        showLastUpdateTime: true,
         versions: {
           current: {
             label: '0.7',
@@ -409,6 +418,7 @@ module.exports = {
           require('remark-code-import'),
           require('remark-import-partial'),
         ], // You can add any remark or rehype extensions you may need here
+        showLastUpdateTime: true,
       },
     ],
     [
@@ -423,6 +433,7 @@ module.exports = {
         ),
         editUrl:
           'https://github.com/iotaledger/iota-wiki/edit/the-merge-moveRemainingDocsToWiki/',
+        showLastUpdateTime: true,
       },
     ],
     [
@@ -437,6 +448,7 @@ module.exports = {
         ),
         editUrl:
           'https://github.com/iotaledger/iota-wiki/edit/the-merge-moveRemainingDocsToWiki/',
+        showLastUpdateTime: true,
       },
     ],
     [
@@ -451,6 +463,7 @@ module.exports = {
         ),
         editUrl:
           'https://github.com/iotaledger/iota-wiki/edit/the-merge-moveRemainingDocsToWiki/',
+        showLastUpdateTime: true,
       },
     ],
     [
@@ -462,6 +475,7 @@ module.exports = {
         sidebarPath: path.resolve(__dirname, 'docs/inx-dashboard/sidebars.js'),
         editUrl:
           'https://github.com/iotaledger/iota-wiki/edit/the-merge-moveRemainingDocsToWiki/',
+        showLastUpdateTime: true,
       },
     ],
     [
@@ -473,6 +487,7 @@ module.exports = {
         sidebarPath: path.resolve(__dirname, 'docs/inx-faucet/sidebars.js'),
         editUrl:
           'https://github.com/iotaledger/iota-wiki/edit/the-merge-moveRemainingDocsToWiki/',
+        showLastUpdateTime: true,
       },
     ],
     [
@@ -484,6 +499,7 @@ module.exports = {
         sidebarPath: path.resolve(__dirname, 'docs/inx-indexer/sidebars.js'),
         editUrl:
           'https://github.com/iotaledger/iota-wiki/edit/the-merge-moveRemainingDocsToWiki/',
+        showLastUpdateTime: true,
       },
     ],
     [
@@ -498,6 +514,7 @@ module.exports = {
         ),
         editUrl:
           'https://github.com/iotaledger/iota-wiki/edit/the-merge-moveRemainingDocsToWiki/',
+        showLastUpdateTime: true,
       },
     ],
     [
@@ -509,6 +526,7 @@ module.exports = {
         sidebarPath: path.resolve(__dirname, 'docs/inx-mqtt/sidebars.js'),
         editUrl:
           'https://github.com/iotaledger/iota-wiki/edit/the-merge-moveRemainingDocsToWiki/',
+        showLastUpdateTime: true,
       },
     ],
     [
@@ -523,6 +541,7 @@ module.exports = {
         ),
         editUrl:
           'https://github.com/iotaledger/iota-wiki/edit/the-merge-moveRemainingDocsToWiki/',
+        showLastUpdateTime: true,
       },
     ],
     [
@@ -534,6 +553,7 @@ module.exports = {
         sidebarPath: path.resolve(__dirname, 'docs/inx-poi/sidebars.js'),
         editUrl:
           'https://github.com/iotaledger/iota-wiki/edit/the-merge-moveRemainingDocsToWiki/',
+        showLastUpdateTime: true,
       },
     ],
     [
@@ -545,6 +565,7 @@ module.exports = {
         sidebarPath: path.resolve(__dirname, 'docs/inx-spammer/sidebars.js'),
         editUrl:
           'https://github.com/iotaledger/iota-wiki/edit/the-merge-moveRemainingDocsToWiki/',
+        showLastUpdateTime: true,
       },
     ],
     [
@@ -562,6 +583,7 @@ module.exports = {
           require('remark-remove-comments'),
           math,
         ],
+        showLastUpdateTime: true,
         rehypePlugins: [katex],
       },
     ],
@@ -574,6 +596,7 @@ module.exports = {
         sidebarPath: require.resolve('./docs/cli-wallet/sidebars.js'),
         editUrl:
           'https://github.com/iotaledger/iota-wiki/edit/the-merge-moveRemainingDocsToWiki/',
+        showLastUpdateTime: true,
       },
     ],
     // plugins

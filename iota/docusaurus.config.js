@@ -287,6 +287,7 @@ module.exports = async () => {
             require('remark-code-import'),
             require('remark-import-partial'),
           ],
+          showLastUpdateTime: true,
           versions: {
             current: {
               label: 'IOTA',
@@ -304,6 +305,7 @@ module.exports = async () => {
           sidebarPath: path.resolve(__dirname, 'docs/goshimmer/sidebars.js'),
           editUrl:
             'https://github.com/iotaledger/iota-wiki/edit/the-merge-moveRemainingDocsToWiki/',
+          showLastUpdateTime: true,
         },
       ],
       [
@@ -315,6 +317,7 @@ module.exports = async () => {
           sidebarPath: path.resolve(__dirname, 'docs/hornet/sidebars.js'),
           editUrl:
             'https://github.com/iotaledger/iota-wiki/edit/the-merge-moveRemainingDocsToWiki/',
+          showLastUpdateTime: true,
           versions: {
             current: {
               label: 'IOTA',
@@ -335,6 +338,7 @@ module.exports = async () => {
           ),
           editUrl:
             'https://github.com/iotaledger/iota-wiki/edit/the-merge-moveRemainingDocsToWiki/',
+          showLastUpdateTime: true,
         },
       ],
       [
@@ -354,6 +358,7 @@ module.exports = async () => {
             require('remark-import-partial'),
             require('remark-remove-comments'),
           ],
+          showLastUpdateTime: true,
           versions: {
             current: {
               label: 'IOTA',
@@ -379,6 +384,7 @@ module.exports = async () => {
             'https://github.com/iotaledger/iota-wiki/edit/the-merge-moveRemainingDocsToWiki/',
           remarkPlugins: [math],
           rehypePlugins: [katex],
+          showLastUpdateTime: true,
           include: ['*.md'],
         },
       ],
@@ -391,6 +397,7 @@ module.exports = async () => {
           sidebarPath: path.resolve(__dirname, 'docs/streams/sidebars.js'),
           editUrl:
             'https://github.com/iotaledger/iota-wiki/edit/the-merge-moveRemainingDocsToWiki/',
+          showLastUpdateTime: true,
         },
       ],
       [
@@ -405,6 +412,7 @@ module.exports = async () => {
           ),
           editUrl:
             'https://github.com/iotaledger/iota-wiki/edit/the-merge-moveRemainingDocsToWiki/',
+          showLastUpdateTime: true,
         },
       ],
       [
@@ -426,6 +434,7 @@ module.exports = async () => {
             math,
           ],
           rehypePlugins: [katex],
+          showLastUpdateTime: true,
         },
       ],
       [
@@ -441,6 +450,7 @@ module.exports = async () => {
             require('remark-code-import'),
             require('remark-import-partial'),
           ],
+          showLastUpdateTime: true,
           versions: {
             current: {
               label: 'IOTA',
@@ -462,6 +472,7 @@ module.exports = async () => {
             require('remark-code-import'),
             require('remark-import-partial'),
           ],
+          showLastUpdateTime: true,
           versions: {
             current: {
               label: 'IOTA',
@@ -487,6 +498,7 @@ module.exports = async () => {
             require('remark-import-partial'),
             require('remark-remove-comments'),
           ],
+          showLastUpdateTime: true,
           versions: {
             current: {
               label: '0.5',
@@ -513,6 +525,7 @@ module.exports = async () => {
             require('remark-import-partial'),
             require('remark-remove-comments'),
           ],
+          showLastUpdateTime: true,
           versions: {
             current: {
               label: '0.6',
