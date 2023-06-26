@@ -17,8 +17,8 @@ def __init__(minted_tokens=None, melted_tokens=None, maximum_supply=None)
 
 Initialize TokenScheme
 
-## Parameters
+#### Parameters
 
-minted_tokens : int
-melted_tokens : int
-maximum_supply : int
+- **minted_tokens**_: int_
+- **melted_tokens**_: int_
+- **maximum_supply**_: int_

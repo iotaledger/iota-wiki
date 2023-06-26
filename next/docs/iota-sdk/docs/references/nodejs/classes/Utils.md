@@ -279,17 +279,36 @@ Compute the hash of a transaction essence.
 
 ### verifyEd25519Signature
 
-▸ `Static` **verifyEd25519Signature**(`signature`, `message`, `address`): `boolean`
+▸ `Static` **verifyEd25519Signature**(`signature`, `message`): `boolean`
 
-Verifies the Ed25519Signature for a message against an Ed25519Address.
+Verifies the Ed25519Signature against a message.
 
 #### Parameters
 
-| Name        | Type                                  |
-| :---------- | :------------------------------------ |
-| `signature` | `IEd25519Signature`                   |
-| `message`   | `string`                              |
-| `address`   | [`Ed25519Address`](Ed25519Address.md) |
+| Name        | Type               |
+| :---------- | :----------------- |
+| `signature` | `Ed25519Signature` |
+| `message`   | `string`           |
+
+#### Returns
+
+`boolean`
+
+---
+
+### verifySecp256k1EcdsaSignature
+
+▸ `Static` **verifySecp256k1EcdsaSignature**(`publicKey`, `signature`, `message`): `boolean`
+
+Verifies the Secp256k1Ecdsa Signature against a message.
+
+#### Parameters
+
+| Name        | Type     |
+| :---------- | :------- |
+| `publicKey` | `string` |
+| `signature` | `string` |
+| `message`   | `string` |
 
 #### Returns
 

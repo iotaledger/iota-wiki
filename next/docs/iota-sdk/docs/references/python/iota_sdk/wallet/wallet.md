@@ -47,6 +47,14 @@ def get_client()
 
 Get the client instance
 
+### get_secret_manager
+
+```python
+def get_secret_manager()
+```
+
+Get the secret manager instance
+
 ### get_account_data
 
 ```python
@@ -160,14 +168,6 @@ def generate_ed25519_address(account_index: int,
 ```
 
 Generate an address without storing it.
-
-### get_node_info
-
-```python
-def get_node_info(url: str, auth)
-```
-
-Get node info.
 
 ### set_stronghold_password
 

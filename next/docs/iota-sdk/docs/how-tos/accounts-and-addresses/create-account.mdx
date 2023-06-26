@@ -1,0 +1,61 @@
+---
+title: Create an Account
+description: 'How to create an account to start sending value transactions to the Tangle.'
+image: /img/logo/iota_mark_light.png
+keywords:
+  - how to
+  - create account
+  - create wallet
+  - account manager
+  - multi account approach
+  - single account approach
+  - nodejs
+  - python
+  - rust
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import TipAccountApproaches from '../../_admonitions/_tip-account-approaches.md';
+
+This How-To will show you how to create an account.
+
+<TipAccountApproaches />
+
+## Code Example
+
+The following example will:
+
+1. Create a wallet.
+2. Use it to store the [Stronghold](https://wiki.iota.org/stronghold.rs/welcome) mnemonic.
+3. Create an account with the alias "Alice".
+
+<Tabs groupId="language">
+<TabItem value="rust" label="Rust">
+
+```rust reference
+https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/accounts_and_addresses/create_account.rs
+```
+
+</TabItem>
+<TabItem value="nodejs" label="Nodejs">
+
+```typescript reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/accounts_and_addresses/create-account.ts
+```
+
+</TabItem>
+<TabItem value="python" label="Python">
+
+```python reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how_tos/accounts_and_addresses/create_account.py
+```
+
+</TabItem>
+</Tabs>
+
+## Expected Output
+
+```plaintext
+Account created: Alice
+```

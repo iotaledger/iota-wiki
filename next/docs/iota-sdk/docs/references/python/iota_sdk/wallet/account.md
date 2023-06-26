@@ -78,11 +78,10 @@ def generate_ed25519_addresses(amount: int, options=None)
 
 Generate new addresses.
 
-### get_outputs_with_additional_unlock_conditions
+### claimable_outputs
 
 ```python
-def get_outputs_with_additional_unlock_conditions(
-        outputs_to_claim: List[OutputId])
+def claimable_outputs(outputs_to_claim: List[OutputId])
 ```
 
 Get outputs with additional unlock conditions.

@@ -93,24 +93,24 @@ def generate_ed25519_addresses(account_index: Optional[int] = None,
 
 Generate ed25519 addresses.
 
-## Parameters
+#### Parameters
 
-account_index : int
-Account index.
-start : int
-Start index of generated addresses
-end : int
-End index of generated addresses
-internal : bool
-Internal addresses
-coin_type : int
-Coin type. The CoinType enum can be used
-bech32_hrp : string
-Bech32 human readable part.
-ledger_nano_prompt : bool
-Display the address on ledger devices.
+- **account_index**_: int_  
+   Account index.
+- **start**_: int_  
+   Start index of generated addresses
+- **end**_: int_  
+   End index of generated addresses
+- **internal**_: bool_  
+   Internal addresses
+- **coin_type**_: int_  
+   Coin type. The CoinType enum can be used
+- **bech32_hrp**_: string_  
+   Bech32 human readable part.
+- **ledger_nano_prompt**_: bool_  
+   Display the address on ledger devices.
 
-## Returns
+#### Returns
 
 Addresses as array of strings.
 
@@ -127,22 +127,22 @@ def generate_evm_addresses(account_index=None,
 
 Generate EVM addresses.
 
-## Parameters
+#### Parameters
 
-account_index : int
-Account index.
-start : int
-Start index of generated addresses
-end : int
-End index of generated addresses
-internal : bool
-Internal addresses
-coin_type : int
-Coin type. The CoinType enum can be used
-ledger_nano_prompt : bool
-Display the address on ledger devices.
+- **account_index**_: int_  
+   Account index.
+- **start**_: int_  
+   Start index of generated addresses
+- **end**_: int_  
+   End index of generated addresses
+- **internal**_: bool_  
+   Internal addresses
+- **coin_type**_: int_  
+   Coin type. The CoinType enum can be used
+- **ledger_nano_prompt**_: bool_  
+   Display the address on ledger devices.
 
-## Returns
+#### Returns
 
 Addresses as array of strings.
 
@@ -169,6 +169,14 @@ def sign_ed25519(message: HexStr, chain: List[int])
 ```
 
 Signs a message with an Ed25519 private key.
+
+### sign_secp256k1_ecdsa
+
+```python
+def sign_secp256k1_ecdsa(message: HexStr, chain: List[int])
+```
+
+Signs a message with an Secp256k1Ecdsa private key.
 
 ### sign_transaction
 

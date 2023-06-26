@@ -26,6 +26,7 @@
             "references/python/iota_sdk/types/feature",
             "references/python/iota_sdk/types/native_token",
             "references/python/iota_sdk/types/output_id",
+            "references/python/iota_sdk/types/signature",
             "references/python/iota_sdk/types/token_scheme",
             "references/python/iota_sdk/types/unlock_condition"
           ],

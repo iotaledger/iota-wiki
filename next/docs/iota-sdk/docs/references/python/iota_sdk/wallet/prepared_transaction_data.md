@@ -17,12 +17,12 @@ def __init__(account, prepared_transaction_data)
 
 Helper struct for offline signing
 
-## Parameters
+#### Parameters
 
-account : account object
-An account object used to continue building this transaction.
-prepared_transaction_data : dict of prepared data
-The data of a prepared transaction object
+- **account**_: account object_  
+   An account object used to continue building this transaction.
+- **prepared_transaction_data**_: dict of prepared data_  
+   The data of a prepared transaction object
 
 ## PreparedMintTokenTransaction Objects
 

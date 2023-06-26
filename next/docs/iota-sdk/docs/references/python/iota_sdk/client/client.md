@@ -41,41 +41,41 @@ def __init__(nodes: Optional[str | List[str]] = None,
 
 Initialize the IOTA Client.
 
-## Parameters
+#### Parameters
 
-nodes : string or array of string
-A single Node URL or an array of URLs.
-primary_node : string
-Node which will be tried first for all requests.
-primary_pow_node : string
-Node which will be tried first when using remote PoW, even before the primary_node.
-permanode : string
-Permanode URL.
-ignore_node_health : bool
-If the node health should be ignored.
-api_timeout : datetime.timedelta
-Timeout for API requests.
-node_sync_interval : datetime.timedelta
-Interval in which nodes will be checked for their sync status and the [NetworkInfo](crate::NetworkInfo) gets updated.
-remote_pow_timeout : datetime.timedelta
-Timeout when sending a block that requires remote proof of work.
-tips_interval : int
-Tips request interval during PoW in seconds.
-quorum : bool
-If node quorum is enabled. Will compare the responses from multiple nodes
-and only returns the response if `quorum_threshold`% of the nodes return the same one.
-min_quorum_size : int
-Minimum amount of nodes required for request when quorum is enabled.
-quorum_threshold : int
-% of nodes that have to return the same response so it gets accepted.
-user_agent : string
-The User-Agent header for requests.
-local_pow : bool
-Local proof of work.
-fallback_to_local_pow : bool
-Fallback to local proof of work if the node doesn&#x27;t support remote PoW.
-pow_worker_count : int
-The amount of threads to be used for proof of work.
+- **nodes**_: string or array of string_  
+   A single Node URL or an array of URLs.
+- **primary_node**_: string_  
+   Node which will be tried first for all requests.
+- **primary_pow_node**_: string_  
+   Node which will be tried first when using remote PoW, even before the primary_node.
+- **permanode**_: string_  
+   Permanode URL.
+- **ignore_node_health**_: bool_  
+   If the node health should be ignored.
+- **api_timeout**_: datetime.timedelta_  
+   Timeout for API requests.
+- **node_sync_interval**_: datetime.timedelta_  
+   Interval in which nodes will be checked for their sync status and the [NetworkInfo](crate::NetworkInfo) gets updated.
+- **remote_pow_timeout**_: datetime.timedelta_  
+   Timeout when sending a block that requires remote proof of work.
+- **tips_interval**_: int_  
+   Tips request interval during PoW in seconds.
+- **quorum**_: bool_  
+   If node quorum is enabled. Will compare the responses from multiple nodes
+  and only returns the response if `quorum_threshold`% of the nodes return the same one.
+- **min_quorum_size**_: int_  
+   Minimum amount of nodes required for request when quorum is enabled.
+- **quorum_threshold**_: int_  
+   % of nodes that have to return the same response so it gets accepted.
+- **user_agent**_: string_  
+   The User-Agent header for requests.
+- **local_pow**_: bool_  
+   Local proof of work.
+- **fallback_to_local_pow**_: bool_  
+   Fallback to local proof of work if the node doesn&#x27;t support remote PoW.
+- **pow_worker_count**_: int_  
+   The amount of threads to be used for proof of work.
 
 ### build_alias_output
 
@@ -93,28 +93,28 @@ def build_alias_output(alias_id: HexStr,
 
 Build an AliasOutput.
 
-## Parameters
+#### Parameters
 
-alias_id : string
-Hex encoded alias id
-unlock_conditions : array of UnlockCondition
-The unlock conditions for this output
-amount : int
-Amount of base token
-native_tokens : array of NativeToken
-The native token to add to the output
-state_index : int
-Index of the state
-state_metadata : string
-Hex encoded state metadata
-foundry_counter : int
-Counter of foundry outputs created
-features : array of Feature
-Features for this outputs
-immutable_features : array of Feature
-Immutable features
+- **alias_id**_: string_  
+   Hex encoded alias id
+- **unlock_conditions**_: array of UnlockCondition_  
+   The unlock conditions for this output
+- **amount**_: int_  
+   Amount of base token
+- **native_tokens**_: array of NativeToken_  
+   The native token to add to the output
+- **state_index**_: int_  
+   Index of the state
+- **state_metadata**_: string_  
+   Hex encoded state metadata
+- **foundry_counter**_: int_  
+   Counter of foundry outputs created
+- **features**_: array of Feature_  
+   Features for this outputs
+- **immutable_features**_: array of Feature_  
+   Immutable features
 
-## Returns
+#### Returns
 
 Output as dict
 
@@ -129,18 +129,18 @@ def build_basic_output(unlock_conditions: List[UnlockCondition],
 
 Build a BasicOutput.
 
-## Parameters
+#### Parameters
 
-unlock_conditions : array of UnlockCondition
-The unlock conditions for this output
-amount : int
-Amount of base token
-native_tokens : array of NativeToken
-The native token to add to the output
-features : array of Feature
-Features for this outputs
+- **unlock_conditions**_: array of UnlockCondition_  
+   The unlock conditions for this output
+- **amount**_: int_  
+   Amount of base token
+- **native_tokens**_: array of NativeToken_  
+   The native token to add to the output
+- **features**_: array of Feature_  
+   Features for this outputs
 
-## Returns
+#### Returns
 
 Output as dict
 
@@ -158,24 +158,24 @@ def build_foundry_output(serial_number: int,
 
 Build a FoundryOutput.
 
-## Parameters
+#### Parameters
 
-serial_number : int
-The serial number of the foundry
-token_scheme : TokenScheme
-The Token scheme. Currently only a simple scheme is supported
-unlock_conditions : array of UnlockCondition
-The unlock conditions for this output
-amount : int
-Amount of base token
-native_tokens : array of NativeToken
-The native token to add to the output
-features : array of Feature
-Features for this outputs
-immutable_features : array of Feature
-Immutable features
+- **serial_number**_: int_  
+   The serial number of the foundry
+- **token_scheme**_: TokenScheme_  
+   The Token scheme. Currently only a simple scheme is supported
+- **unlock_conditions**_: array of UnlockCondition_  
+   The unlock conditions for this output
+- **amount**_: int_  
+   Amount of base token
+- **native_tokens**_: array of NativeToken_  
+   The native token to add to the output
+- **features**_: array of Feature_  
+   Features for this outputs
+- **immutable_features**_: array of Feature_  
+   Immutable features
 
-## Returns
+#### Returns
 
 Output as dict
 
@@ -192,63 +192,24 @@ def build_nft_output(nft_id: HexStr,
 
 Build an NftOutput.
 
-## Parameters
+#### Parameters
 
-nft_id : string
-Hex encoded nft id
-unlock_conditions : array of UnlockCondition
-The unlock conditions for this output
-amount : int
-Amount of base token
-native_tokens : array of NativeToken
-The native tokens to add to the output
-features : array of Feature
-Features for this outputs
-immutable_features : array of Feature
-Immutable features
+- **nft_id**_: string_  
+   Hex encoded nft id
+- **unlock_conditions**_: array of UnlockCondition_  
+   The unlock conditions for this output
+- **amount**_: int_  
+   Amount of base token
+- **native_tokens**_: array of NativeToken_  
+   The native tokens to add to the output
+- **features**_: array of Feature_  
+   Features for this outputs
+- **immutable_features**_: array of Feature_  
+   Immutable features
 
-## Returns
+#### Returns
 
 Output as dict
-
-### generate_ed25519_addresses
-
-```python
-def generate_ed25519_addresses(
-        secret_manager,
-        account_index: Optional[int] = None,
-        start: Optional[int] = None,
-        end: Optional[int] = None,
-        internal: Optional[bool] = None,
-        coin_type: Optional[int] = None,
-        bech32_hrp: Optional[str] = None,
-        ledger_nano_prompt: Optional[bool] = None) -> List[str]
-```
-
-Generate addresses.
-
-## Parameters
-
-secret_manager : Any type of SecretManager.
-The secret manager to use. Can be (MnemonicSecretManager, SeedSecretManager, StrongholdSecretManager or LedgerNanoSecretManager.
-account_index : int
-Account index.
-start : int
-Start index of generated addresses
-end : int
-End index of generated addresses
-internal : bool
-Internal addresses
-coin_type : int
-Coin type. The CoinType enum can be used
-bech32_hrp : string
-Bech32 human readable part.
-ledger_nano_prompt : bool
-Display the address on ledger devices.
-
-## Returns
-
-Addresses as array of strings.
 
 ### build_and_post_block
 
@@ -269,32 +230,32 @@ def build_and_post_block(secret_manager=None,
 
 Build and post a block.
 
-## Parameters
+#### Parameters
 
-account_index : int
-Account Index
-coin_type : int
-Coin type. The CoinType enum can be used
-custom_remainder_address : string
-Address to send the remainder funds to
-data : str
-Hex encoded data
-initial_address_index : int
-Initial address index
-input_range_start : int
-Start of the input range
-input_range_end : int
-End of the input range
-inputs : Array of Inputs
-Inputs to use
-output : SendAmountParams
-Address and amount to send to
-outputs : Array of Outputs
-Outputs to use
-tag : string
-Hex encoded tag
+- **account_index**_: int_  
+   Account Index
+- **coin_type**_: int_  
+   Coin type. The CoinType enum can be used
+- **custom_remainder_address**_: string_  
+   Address to send the remainder funds to
+- **data**_: str_  
+   Hex encoded data
+- **initial_address_index**_: int_  
+   Initial address index
+- **input_range_start**_: int_  
+   Start of the input range
+- **input_range_end**_: int_  
+   End of the input range
+- **inputs**_: Array of Inputs_  
+   Inputs to use
+- **output**_: SendAmountParams_  
+   Address and amount to send to
+- **outputs**_: Array of Outputs_  
+   Outputs to use
+- **tag**_: string_  
+   Hex encoded tag
 
-## Returns
+#### Returns
 
 Block as dict
 

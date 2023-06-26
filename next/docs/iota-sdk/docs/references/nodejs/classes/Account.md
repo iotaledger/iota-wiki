@@ -23,7 +23,7 @@ The Account class.
 - [getBalance](Account.md#getbalance)
 - [getOutput](Account.md#getoutput)
 - [getFoundryOutput](Account.md#getfoundryoutput)
-- [getOutputsWithAdditionalUnlockConditions](Account.md#getoutputswithadditionalunlockconditions)
+- [claimableOutputs](Account.md#claimableoutputs)
 - [getTransaction](Account.md#gettransaction)
 - [getIncomingTransaction](Account.md#getincomingtransaction)
 - [addresses](Account.md#addresses)
@@ -409,9 +409,9 @@ The `FoundryOutput` that minted the token.
 
 ---
 
-### getOutputsWithAdditionalUnlockConditions
+### claimableOutputs
 
-▸ **getOutputsWithAdditionalUnlockConditions**(`outputs`): `Promise`<`string`[]\>
+▸ **claimableOutputs**(`outputs`): `Promise`<`string`[]\>
 
 Get outputs with additional unlock conditions.
 

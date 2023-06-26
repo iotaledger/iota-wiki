@@ -140,11 +140,21 @@ Compute the hash of a transaction essence.
 
 ```python
 @staticmethod
-def verify_ed25519_signature(signature: HexStr, message: HexStr,
-                             address: Ed25519Address) -> bool
+def verify_ed25519_signature(signature: Ed25519Signature,
+                             message: HexStr) -> bool
 ```
 
-Verifies the Ed25519Signature for a message against an Ed25519Address.
+Verifies an ed25519 signature against a message.
+
+### verify_secp256k1_ecdsa_signature
+
+```python
+@staticmethod
+def verify_secp256k1_ecdsa_signature(public_key: HexStr, signature: HexStr,
+                                     message: HexStr) -> bool
+```
+
+Verifies a Secp256k1Ecdsa signature against a message.
 
 ## UtilsError Objects
 
