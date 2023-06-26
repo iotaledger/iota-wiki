@@ -118,28 +118,28 @@ const LibrariesSection: FC = () => (
           </div>
           <Languages
             languages={{
-              TypeScript: '/iotajs/welcome',
+              TypeScript: '/iota.js/welcome',
             }}
           />
         </div>
         <h3 className='libraries__header'>TypeScript Client</h3>
         <ul className='libraries__features'>
           <li className='libraries__feature'>
-            <Link to='/iotajs/how_tos/simple'>
+            <Link to='/iota.js/how_tos/simple'>
               Interact with the IOTA network
             </Link>
           </li>
           <li className='libraries__feature'>
-            <Link to='/iotajs/how_tos/data'>Send a data message</Link>
+            <Link to='/iota.js/how_tos/data'>Send a data message</Link>
           </li>
           <li className='libraries__feature'>
-            <Link to='/iotajs/how_tos/transaction'>
+            <Link to='/iota.js/how_tos/transaction'>
               Learn about transactions
             </Link>
           </li>
         </ul>
         <Link
-          to='/iotajs/welcome'
+          to='/iota.js/welcome'
           className='libraries__button button button--outline button--primary'
         >
           Get started

@@ -1,0 +1,54 @@
+---
+title: Mint NFT
+description: 'How to mint NFT'
+image: /img/logo/iota_mark_light.png
+keywords:
+  - how to
+  - mint
+  - nft
+  - nodejs
+  - python
+  - rust
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+This How-To will show you how to mint nft.
+
+## Code Example
+
+<Tabs groupId="language">
+<TabItem value="rust" label="Rust">
+
+```rust reference
+https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/nfts/mint_nft.rs
+```
+
+</TabItem>
+<TabItem value="nodejs" label="Nodejs">
+
+```typescript reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/nfts/mint_nft.ts
+```
+
+</TabItem>
+<TabItem value="python" label="Python">
+
+```python reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how_tos/nfts/mint_nft.py
+```
+
+</TabItem>
+</Tabs>
+
+## Expected Output
+
+```bash
+Transaction sent: 0x4890a22c8c06a55d0e28b00d7a684c2a25479ae02b644824a5930ff059418280
+Block included: https://explorer.shimmer.network/testnet/block/0xa7e1459879b7a4114b505ad2c5c67bf62b98b13a5ba530018c928530af873c3b
+Minted NFT 1
+Transaction sent: 0x308078cfd811fb99621e51791a431c6a306a077aceb99df6409188c61a27f372
+Block included: https://explorer.shimmer.network/testnet/block/0xa020b148abdeeb94256e4f78dd4e3d623420fd233e0bbf7c20f64fd53d4f4b8d
+Minted NFT 2
+```

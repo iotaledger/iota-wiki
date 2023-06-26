@@ -277,7 +277,7 @@ module.exports = {
             {
               label: 'Client Typescript',
               type: 'link',
-              href: '/iotajs/welcome',
+              href: '/iota.js/welcome',
             },
             {
               label: 'Identity',

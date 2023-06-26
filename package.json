@@ -50,6 +50,7 @@
     "@iota-wiki/plugin-tutorial": "workspace:^",
     "@mdx-js/react": "^1.6.21",
     "@popperjs/core": "^2.11.5",
+    "@saucelabs/theme-github-codeblock": "^0.2.3",
     "@svgr/webpack": "^5.5.0",
     "clsx": "^1.2.1",
     "docusaurus-plugin-openapi-docs": "^1.4.7",

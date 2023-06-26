@@ -1,0 +1,65 @@
+---
+title: Burn Native Tokens
+sidebar_label: Burn
+description: 'How to burn native tokens'
+image: /img/logo/iota_mark_light.png
+keywords:
+  - how to
+  - burn
+  - burn native token
+  - foundry
+  - nodejs
+  - python
+  - rust
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import DestroyFoundry from '../../_admonitions/_destroy_foundry.md';
+
+You may want to burn some native tokens. To do so, you will need to call the
+`Account.burn(burn, options)` function.
+
+<DestroyFoundry />
+
+## Code Example
+
+The following example will:
+
+1. Create a wallet.
+2. Get Alice's account which was [created in the first guide](../accounts-and-addresses/create-account.mdx).
+3. [Get the account's balance](../accounts-and-addresses/check-balance.mdx).
+4. Burn 1 native token of the first ID with enough funds.
+
+<Tabs groupId="language">
+<TabItem value="rust" label="Rust">
+
+```rust reference
+https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/native_tokens/burn.rs
+```
+
+</TabItem>
+<TabItem value="nodejs" label="Nodejs">
+
+```typescript reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/native_tokens/burn.ts
+```
+
+</TabItem>
+<TabItem value="python" label="Python">
+
+```python reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how_tos/native_tokens/burn.py
+```
+
+</TabItem>
+</Tabs>
+
+## Expected Output
+
+```plaintext
+Balance before burning: 30
+Transaction sent: 0x8c93b86b003b0476266f1d4d0c486dfcbbb72d4991eb5d63d5466a6cad93e9f2
+Block included: https://explorer.shimmer.network/testnet/block/0x49e2ec7ac5a88b1b0ffcde20bff437b53ef74f38368c28af402435f45dd5b138
+Balance after burning: 29
+```
