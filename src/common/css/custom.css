@@ -53,14 +53,30 @@
   background-color: var(--ifm-color-secondary-darkest);
 }
 
-.switcher .menu__list {
-  background-color: var(--ifm-color-emphasis-200);
+.switcher {
+  --ifm-link-color: var(--ifm-font-color-base);
+  --ifm-link-hover-color: var(--ifm-font-color-base);
+  --ifm-link-hover-decoration: none;
 }
 
-.switcher .menu__link--active {
+.switcher__section--active {
+  --ifm-heading-color: var(--ifm-color-gray-0);
+  --ifm-menu-color: var(--ifm-color-gray-300);
+  --ifm-menu-color-active: var(--ifm-color-gray-0);
+  color: var(--ifm-color-gray-100);
+  background-color: var(--ifm-color-primary-darker);
+}
+
+.switcher__menu {
+  --ifm-menu-color-background-hover: var(--ifm-color-primary-dark);
+  background-color: var(--ifm-color-primary-darkest);
+}
+
+.switcher__menu .menu__link--active {
+  color: var(--ifm-color-gray-0);
   background-color: transparent;
 }
 
-.switcher .menu__link:hover {
-  background-color: var(--ifm-color-emphasis-300);
+.switcher__menu .menu__link--active:hover {
+  background-color: var(--ifm-color-primary-dark);
 }
