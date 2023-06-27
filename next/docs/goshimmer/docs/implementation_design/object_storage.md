@@ -165,7 +165,6 @@ we can start using it for its sole purpose, to actually store and read the parti
 - To convert an object retrieved in the form of a cache to its own corresponding type, we can use `Unwrap`.
   In the code below it will return the block wrapped by the cached object.
 - `Exists` - checks weather the object has been deleted. If so it is released from memory with the `Release` method.
-
   ```Go
   func (s *Storage) Block(blockID BlockID) *CachedBlock {
       return &CachedBlock{CachedObject: s.blockStorage.Load(blockID[:])}
@@ -177,7 +176,6 @@ we can start using it for its sole purpose, to actually store and read the parti
       }
   block := cachedBlock.Unwrap()
   ```
-
 - `Consume` will be useful when we want to apply a function on the cached object. `Consume` unwraps the `CachedObject` and passes a type-casted version to the consumer function.
   Right after the object is consumed and when the callback is finished, the object is released.
 

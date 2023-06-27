@@ -32,7 +32,7 @@ It includes everything required to setup a public node accessible by wallets and
 - [wasp](https://github.com/iotaledger/wasp) - L2 Node for IOTA Smart Contracts.
 
 We only recommend running a node on hosted servers and not on personal computers.
-Please take into consideration the points explained in the [Security 101](https://wiki.iota.org/nodes/explanations/security_101#securing-your-device).
+Please take into consideration the points explained in the [Security 101](https://wiki.iota.org/shimmer/develop/nodes/explanations/security_101#securing-your-device).
 
 HORNET Docker images (amd64/x86_64 and arm64 architecture) are available at the [iotaledger/hornet](https://hub.docker.com/r/iotaledger/hornet) Docker hub.
 
@@ -47,25 +47,35 @@ HORNET Docker images (amd64/x86_64 and arm64 architecture) are available at the 
 - `14626 UDP` - Used for HORNET autopeering.
 - `80 TCP` - Used for HTTP. _(can be changed, see below)_
 - `443 TCP` - Used for HTTPS. _(optional if not using HTTPS)_
-- `4000 UDP` - Used for Wasp gossip. _(optional if not using Wasp)_
+- `4000 TCP/UDP` - Used for Wasp gossip. _(optional if not using Wasp)_
 - `5550 TCP` - Used for Wasp nanomsg events. _(optional if not using Wasp)_
 
 5. [curl](https://curl.se/).
 
 ## Download the latest release
 
-> **NOTE**: The commands assume you are using Linux.
+:::note
+
+The commands assume you are using Linux.
+
+:::
 
 Once you have completed all the installation [requirements](#requirements), you can download the latest release by running:
 
 ```sh
 mkdir hornet
 cd hornet
-curl -L -O "https://github.com/iotaledger/node-docker-setup/releases/download/v1.0.0-rc.1/node-docker-setup-v1.0.0-rc.1.tar.gz"
-tar -zxf node-docker-setup-v1.0.0-rc.1.tar.gz
+curl -L -O "https://github.com/iotaledger/node-docker-setup/releases/download/v1.0.0-rc.2/node-docker-setup-v1.0.0-rc.2.tar.gz"
+tar -zxf node-docker-setup-v1.0.0-rc.2.tar.gz
 ```
 
 ## Prepare
+
+:::note
+
+The commands assume you are using Linux.
+
+:::
 
 ### 1. Setup Environment
 
@@ -100,8 +110,10 @@ HTTP_PORT=9000
 Add your HORNET neighbor addresses to the `peering.json` file.
 
 :::note
+
 This step is recommended, but optional if you are using autopeering.
 See [peering](../references/peering.md) for more information.
+
 :::
 
 ### 3. Create the `data` folder
@@ -114,7 +126,17 @@ To create this directory with correct permissions run the contained script:
 ./prepare_docker.sh
 ```
 
-### 4. Set dashboard credentials
+### 4. Select the target network
+
+By default, the `node-docker-setup` joins the `Shimmer` network.
+
+If you want to switch to the `testnet`, create a file named `.env` if you did not create it already and add the following line:
+
+```
+HORNET_CONFIG_FILE=config_testnet.json
+```
+
+### 5. Set dashboard credentials
 
 To access your HORNET dashboard, a set of credentials need to be configured.
 Run the following command to generate a password hash and salt for the dashboard:
@@ -138,7 +160,7 @@ If you want to change the default `admin` username, you can add this line to you
 DASHBOARD_USERNAME=someotherusername
 ```
 
-### 5. Enable additional monitoring
+### 6. Enable additional monitoring
 
 To enable additional monitoring (cAdvisor, Prometheus, Grafana), the docker compose profile needs to be configured.
 Create a file named `.env` if you did not create it already and add the following line:
@@ -147,7 +169,7 @@ Create a file named `.env` if you did not create it already and add the followin
 COMPOSE_PROFILES=monitoring
 ```
 
-### 6. Enable Wasp node
+### 7. Enable Wasp node
 
 To also run a Wasp node, the docker compose profile needs to be configured.
 Create a file named `.env` if you did not create it already and add the following line:
@@ -185,9 +207,11 @@ After starting the node you will be able to access your services at the followin
 - Wasp Dashboard: `https://node.your-domain.com/wasp/dashboard` _(optional if using "wasp" profile)_
 
 :::warning
-After starting your node for the first time, please change the default grafana credentials<br />
-User: `admin`<br />
+
+After starting your node for the first time, please change the default grafana credentials
+User: `admin`
 Password: `admin`
+
 :::
 
 You can configure your wallet software to use `https://node.your-domain.com`
@@ -203,7 +227,9 @@ After starting the node you will be able to access your services at the followin
 - Wasp Dashboard: `http://localhost/wasp/dashboard` _(optional if using "wasp" profile)_
 
 :::note
+
 If you changed the default `HTTP_PORT` value, you will need to add the port to the urls.
+
 :::
 
 You can configure your wallet software to use `http://localhost`
