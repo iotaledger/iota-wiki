@@ -14,29 +14,21 @@ keywords:
 
 :::note
 
-It is possible to run a "committee" composed of a single Wasp node, and this may be fine for testing purposes. However,
-in normal operation the idea is to have multiple Wasp nodes in order to run the smart contracts in a distributed
-fashion. If you want to run a committee of several nodes on the same machine, ensure that each Wasp instance runs in
-separate directory with its own `config.json` and database. Ports and other settings must be adjusted accordingly.
-:::
+It is possible to run a "committee" of a single Wasp node, and this is okay for testing purposes.
 
-:::note
-
-For testing purposes, all Wasp nodes can be connected to the same GoShimmer instance. In normal operation, it is
-recommended that each Wasp node connects to a different GoShimmer instance.
-
+However, in normal operation, multiple Wasp nodes should be used.
 :::
 
 ## Requirements
 
-- [`wasp-cli` configured](wasp-cli.md) to interact with the wasp nodes.
+- [`wasp-cli` configured](wasp-cli.md) to interact with your wasp node.
 
 ## Trust Setup
 
 After starting all the `wasp` nodes, you should make them trust each other. Node operators should do this manually. It's
 their responsibility to accept trusted nodes only.
 
-The operator can read its node's public key and NetID by running `wasp-cli peering info`:
+The operator can read their node's public key and PeeringURL by running `wasp-cli peering info`:
 
 ```shell
 wasp-cli peering info
@@ -46,46 +38,31 @@ Example response:
 
 ```log
 PubKey: 8oQ9xHWvfnShRxB22avvjbMyAumZ7EXKujuthqrzapNM
-NetID:  127.0.0.1:4000
+PeeringURL:  127.0.0.1:4000
 ```
 
-PubKey and NetID should be provided to other node operators.
+PubKey and PeeringURL should be provided to other node operators.
 They can use this info to trust your node and accept communications with it.
-That's done by invoking `wasp-cli peering trust <PubKey> <NetID>`, e.g.:
+That's done by invoking `wasp-cli peering trust <Name for the peer> <PubKey> <PeeringURL>`, e.g.:
+
+```shell
+wasp-cli peering trust another-node 8oQ9xHWvfnShRxB22avvjbMyAumZ7EXKujuthqrzapNM 127.0.0.1:4000
+```
+
+The list of trusted peers of your wasp node can be viewed with:
 
 ```shell
 wasp-cli peering list-trusted
-wasp-cli peering trust 8oQ9xHWvfnShRxB22avvjbMyAumZ7EXKujuthqrzapNM 127.0.0.1:4000
-wasp-cli peering list-trusted
-```
-
-Example response:
-
-```log
-------                                        -----
-PubKey                                        NetID
-------                                        -----
-8oQ9xHWvfnShRxB22avvjbMyAumZ7EXKujuthqrzapNM  127.0.0.1:4000
 ```
 
 All the nodes in a committee must trust each other to run the chain.
 
 ## Starting The Chain
 
-### Requesting Test Funds
-
-:::note
-If you are using a seed that already holds fund, you can skip this step.
-:::
+### Requesting Test Funds (only for testnet)
 
 ```shell
 wasp-cli request-funds
-```
-
-After you have requested the funds, you can deposit funds to a chain by running:
-
-```shell
-wasp-cli chain deposit IOTA:10000
 ```
 
 ### Deploy the IOTA Smart Contracts Chain
@@ -93,10 +70,10 @@ wasp-cli chain deposit IOTA:10000
 You can deploy your IOTA Smart Contracts chain by running:
 
 ```shell
-wasp-cli chain deploy --committee=0,1,2,3 --quorum=3 --chain=mychain --description="My chain"
+wasp-cli chain deploy --peers=foo,bar,baz --chain=mychain --description="My chain" --block-keep-amount=10000
 ```
 
-The indices in `--committee=0,1,2,3` will correspond to `wasp.0`, `wasp.1`, etc. in `wasp-cli.json`.
+The names in `--peers=foo,bar,baz` correspond to the names of the trusted peers of the node.
 
 The `--chain=mychain` flag sets up an alias for the chain. From now on all chain commands will be targeted to this
 chain.
@@ -104,17 +81,32 @@ chain.
 The `--quorum` flag indicates the minimum amount of nodes required to form a consensus. The recommended formula to
 obtain this number `floor(N*2/3)+1` where `N` is the number of nodes in your committee.
 
+The `--block-keep-amount` parameter determines how many blocks are stored in the [`blocklog`](../core_concepts/core_contracts/blocklog.md) core contract.
+
+After deployment, the chain must be activated by the node operators of all peers.
+
+```shell
+wasp-cli chain add <name> <chainID> # adds the chain to the wasp-cli config, can be skipped on the wasp-cli that initiated the deployment
+wasp-cli chain activate --chain=<name>
+
+```
+
 ## Testing If It Works
 
-You can check that the chain was properly deployed in the Wasp node dashboard
-(e.g. `127.0.0.1:7000`). Note that the chain was deployed with
-some [core contracts](../core_concepts/core_contracts/overview.md).
+You can check that the chain was properly deployed in the Wasp node dashboard (`<URL>/wasp/dashboard` when using `node-docker-setup`).
+Note that the chain was deployed with some [core contracts](../core_concepts/core_contracts/overview.md).
 
-## Video Tutorial
+You should also have an EVM-JSONRPC server opened on:
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/3mLpV_neB6I" title="Setting up Wasp Chain" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+```info
+<wasp API URL>/chain/<CHAINID>/evm
+```
 
 ### Deploying a Wasm Contract
+
+:::warning
+The WASM VM is experimental. However, similar commands can be used to interact with the core contracts
+:::
 
 Now you can deploy a Wasm contract to the chain:
 
@@ -171,10 +163,6 @@ Example response:
 ```log
 counter: 1
 ```
-
-## Video Tutorial
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/Yaev4Cu1GW0" title="Deploy a Wasm Contract" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ### Troubleshooting
 

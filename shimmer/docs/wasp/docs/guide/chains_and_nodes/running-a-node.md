@@ -22,5 +22,5 @@ Due to wasp being desgined as an INX plugin, its necessary to run the wasp node 
 Clone and follow the instructions on the [node-docker-setup repo](https://github.com/iotaledger/node-docker-setup).
 
 :::note
-This is aimed for prodution-ready setups, if you're looking to spawn a local node for testing/development, please see: [dev setup](../development_tools/docker_preconfigured.md)
+This is aimed for prodution-ready deployment, if you're looking to spawn a local node for testing/development, please see: [local-setup](https://github.com/iotaledger/wasp/tree/develop/tools/local-setup)
 :::

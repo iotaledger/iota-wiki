@@ -103,6 +103,7 @@ Example:
 | --------------------- | -------------------------------------------------------------------------------------------------- | ------ | ---------------- |
 | address               | The INX address to which to connect to                                                             | string | "localhost:9029" |
 | maxConnectionAttempts | The amount of times the connection to INX will be attempted before it fails (1 attempt per second) | uint   | 30               |
+| targetNetworkName     | The network name on which the node should operate on (optional)                                    | string | ""               |
 
 Example:
 
@@ -110,7 +111,8 @@ Example:
 {
   "inx": {
     "address": "localhost:9029",
-    "maxConnectionAttempts": 30
+    "maxConnectionAttempts": 30,
+    "targetNetworkName": ""
   }
 }
 ```

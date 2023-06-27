@@ -195,23 +195,8 @@ module.exports = {
       items: [
         {
           type: 'doc',
-          label: 'Installing Wasp',
-          id: 'guide/chains_and_nodes/installing-wasp',
-        },
-        {
-          type: 'doc',
           label: 'Running a Node',
           id: 'guide/chains_and_nodes/running-a-node',
-        },
-        {
-          type: 'doc',
-          label: 'Node Configuration',
-          id: 'guide/chains_and_nodes/node-config',
-        },
-        {
-          type: 'doc',
-          label: 'Using Docker (Standalone)',
-          id: 'guide/chains_and_nodes/docker_standalone',
         },
         {
           type: 'doc',
@@ -230,11 +215,6 @@ module.exports = {
         },
         {
           type: 'doc',
-          label: 'Chain Rotation',
-          id: 'guide/chains_and_nodes/chain-rotation',
-        },
-        {
-          type: 'doc',
           label: 'Testnet',
           id: 'guide/chains_and_nodes/testnet',
         },
@@ -242,7 +222,7 @@ module.exports = {
     },
     {
       type: 'category',
-      label: 'Wasm VM',
+      label: 'Wasm VM (Experimental)',
       items: [
         {
           type: 'doc',
@@ -382,6 +362,11 @@ module.exports = {
         },
         {
           type: 'doc',
+          label: 'Quickstart',
+          id: 'guide/evm/quickstart',
+        },
+        {
+          type: 'doc',
           label: 'Compatibility',
           id: 'guide/evm/compatibility',
         },
@@ -435,15 +420,9 @@ module.exports = {
       ],
     },
     {
-      type: 'category',
-      label: 'Development tools',
-      items: [
-        {
-          type: 'doc',
-          label: 'Preconfigured Development Docker setup',
-          id: 'guide/development_tools/docker_preconfigured',
-        },
-      ],
+      type: 'doc',
+      label: 'Configuration',
+      id: 'configuration',
     },
     {
       type: 'doc',

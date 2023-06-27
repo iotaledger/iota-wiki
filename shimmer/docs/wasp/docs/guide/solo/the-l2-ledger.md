@@ -60,8 +60,7 @@ func TestTutorialAccounts(t *testing.T) {
 	// estimate the gas fee and storage deposit
 	gas1, gasFee1, err := chain.EstimateGasOnLedger(req, userWallet, true)
 	require.NoError(t, err)
-	storageDeposit1, err := chain.EstimateNeededStorageDeposit(req, userWallet)
-	require.NoError(t, err)
+	storageDeposit1 := chain.EstimateNeededStorageDeposit(req, userWallet)
 	require.Zero(t, storageDeposit1) // since 1 Mi is enough
 
 	// send the deposit request
@@ -78,13 +77,12 @@ func TestTutorialAccounts(t *testing.T) {
 
 	// withdraw all base tokens back to L1
 	req = solo.NewCallParams(accounts.Contract.Name, accounts.FuncWithdraw.Name).
-		WithAllowance(isc.NewAllowanceBaseTokens(1 * isc.Million))
+		WithAllowance(isc.NewAssetsBaseTokens(1 * isc.Million))
 
 	// estimate the gas fee and storage deposit
 	gas2, gasFee2, err := chain.EstimateGasOnLedger(req, userWallet, true)
 	require.NoError(t, err)
-	storageDeposit2, err := chain.EstimateNeededStorageDeposit(req, userWallet)
-	require.NoError(t, err)
+	storageDeposit2 := chain.EstimateNeededStorageDeposit(req, userWallet)
 
 	// send the withdraw request
 	req.WithGasBudget(gas2).

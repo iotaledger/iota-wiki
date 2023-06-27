@@ -18,7 +18,7 @@ keywords:
 # Invoking Smart Contracts
 
 After deploying
-the [`solotutorial`](https://github.com/iotaledger/wasp/tree/develop/documentation/tutorial-examples/src/solotutorial.rs)
+the [`solotutorial`](https://github.com/iotaledger/wasp/tree/develop/documentation/tutorial-examples)
 smart contract, you can invoke the `storeString` function:
 
 ```go

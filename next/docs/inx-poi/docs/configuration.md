@@ -74,15 +74,22 @@ Example:
 
 ## <a id="logger"></a> 2. Logger
 
-| Name              | Description                                                                 | Type    | Default value |
-| ----------------- | --------------------------------------------------------------------------- | ------- | ------------- |
-| level             | The minimum enabled logging level                                           | string  | "info"        |
-| disableCaller     | Stops annotating logs with the calling function's file name and line number | boolean | true          |
-| disableStacktrace | Disables automatic stacktrace capturing                                     | boolean | false         |
-| stacktraceLevel   | The level stacktraces are captured and above                                | string  | "panic"       |
-| encoding          | The logger's encoding (options: "json", "console")                          | string  | "console"     |
-| outputPaths       | A list of URLs, file paths or stdout/stderr to write logging output to      | array   | stdout        |
-| disableEvents     | Prevents log messages from being raced as events                            | boolean | true          |
+| Name                                     | Description                                                                 | Type    | Default value |
+| ---------------------------------------- | --------------------------------------------------------------------------- | ------- | ------------- |
+| level                                    | The minimum enabled logging level                                           | string  | "info"        |
+| disableCaller                            | Stops annotating logs with the calling function's file name and line number | boolean | true          |
+| disableStacktrace                        | Disables automatic stacktrace capturing                                     | boolean | false         |
+| stacktraceLevel                          | The level stacktraces are captured and above                                | string  | "panic"       |
+| encoding                                 | The logger's encoding (options: "json", "console")                          | string  | "console"     |
+| [encodingConfig](#logger_encodingconfig) | Configuration for encodingConfig                                            | object  |               |
+| outputPaths                              | A list of URLs, file paths or stdout/stderr to write logging output to      | array   | stdout        |
+| disableEvents                            | Prevents log messages from being raced as events                            | boolean | true          |
+
+### <a id="logger_encodingconfig"></a> EncodingConfig
+
+| Name        | Description                                                                                                | Type   | Default value |
+| ----------- | ---------------------------------------------------------------------------------------------------------- | ------ | ------------- |
+| timeEncoder | Sets the logger's timestamp encoding. (options: "nanos", "millis", "iso8601", "rfc3339" and "rfc3339nano") | string | "rfc3339"     |
 
 Example:
 
@@ -94,6 +101,9 @@ Example:
     "disableStacktrace": false,
     "stacktraceLevel": "panic",
     "encoding": "console",
+    "encodingConfig": {
+      "timeEncoder": "rfc3339"
+    },
     "outputPaths": ["stdout"],
     "disableEvents": true
   }
@@ -106,6 +116,7 @@ Example:
 | --------------------- | -------------------------------------------------------------------------------------------------- | ------ | ---------------- |
 | address               | The INX address to which to connect to                                                             | string | "localhost:9029" |
 | maxConnectionAttempts | The amount of times the connection to INX will be attempted before it fails (1 attempt per second) | uint   | 30               |
+| targetNetworkName     | The network name on which the node should operate on (optional)                                    | string | ""               |
 
 Example:
 
@@ -113,7 +124,8 @@ Example:
 {
   "inx": {
     "address": "localhost:9029",
-    "maxConnectionAttempts": 30
+    "maxConnectionAttempts": 30,
+    "targetNetworkName": ""
   }
 }
 ```
@@ -142,7 +154,7 @@ Example:
 
 | Name        | Description                                       | Type    | Default value    |
 | ----------- | ------------------------------------------------- | ------- | ---------------- |
-| enabled     | Whether the profiling plugin is enabled           | boolean | false            |
+| enabled     | Whether the profiling component is enabled        | boolean | false            |
 | bindAddress | The bind address on which the profiler listens on | string  | "localhost:6060" |
 
 Example:

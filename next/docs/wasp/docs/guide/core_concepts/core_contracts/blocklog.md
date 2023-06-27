@@ -19,11 +19,25 @@ The `blocklog` contract is one of the [core contracts](overview.md) on each IOTA
 The `blocklog` contract keeps track of the blocks of requests processed by the chain, providing views to get request
 status, receipts, block, and event details.
 
+To avoid having a monotonically increasing state size, only the latest `N`
+blocks (and their events and receipts) are stored. This parameter can be configured
+when [deploying the chain](../../chains_and_nodes/setting-up-a-chain.md).
+
+---
+
 ## Entry Points
 
-The `blocklog` core contract does not contain any entry points which modify its state.
+### `retryUnprocessable(u requestID)`
 
-The only way to modify the `blocklog` state is by submitting requests for processing to the chain.
+Tries to retry a given request that was marked as "unprocessable".
+
+:::note
+"Unprocessable" requests are on-ledger requests that do not include enough base tokens to cover the deposit fees (example if an user tries to deposit many native tokens in a single output but only includes the minimum possible amount of base tokens). Such requests will be collected into an "unprocessable list" and users are able to deposit more funds onto their on-chain account and retry them afterwards.
+:::
+
+#### Parameters
+
+- `u` ([`isc::RequestID`](https://github.com/iotaledger/wasp/blob/develop/packages/isc/request.go)): The requestID to be retried. (sender of the retry request must match the sender of the "unprocessable" request)
 
 ---
 
@@ -44,7 +58,7 @@ Returns information about the block with index `n`.
 
 ### `getRequestIDsForBlock(n uint32)`
 
-Returns a list with the IDs of all requests in the block with block index `n`.
+Returns a list with all request IDs in the block with block index `n`.
 
 #### Parameters
 
@@ -52,7 +66,8 @@ Returns a list with the IDs of all requests in the block with block index `n`.
 
 #### Returns
 
-- `u`: ([`Array16`](https://github.com/dessaya/wasp/blob/develop/packages/kv/collections/array16.go)
+- `n` (`uint32`):The block index.
+- `u`: ([`Array`](https://github.com/iotaledger/wasp/blob/develop/packages/kv/collections/array.go)
   of [`RequestID`](#requestid))
 
 ### `getRequestReceipt(u RequestID)`
@@ -65,9 +80,9 @@ Returns the receipt for the request with the given ID.
 
 #### Returns
 
-- `d` ([`RequestReceipt`](#requestreceipt)):The request receipt.
 - `n` (`uint32`):The block index.
-- `r` (`uint16`):The request index.
+- `r` (`uint16`):The request index within the block.
+- `d` ([`RequestReceipt`](#requestreceipt)):The request receipt.
 
 ### `getRequestReceiptsForBlock(n uint32)`
 
@@ -79,7 +94,8 @@ Returns all the receipts in the block with index `n`.
 
 #### Returns
 
-- `d`: ([`Array16`](https://github.com/dessaya/wasp/blob/develop/packages/kv/collections/array16.go)
+- `n` (`uint32`):The block index.
+- `d`: ([`Array`](https://github.com/iotaledger/wasp/blob/develop/packages/kv/collections/array.go)
   of [`RequestReceipt`](#requestreceipt))
 
 ### `isRequestProcessed(u RequestID)`
@@ -104,7 +120,7 @@ Returns the list of events triggered during the execution of the request with ID
 
 #### Returns
 
-- `e`: ([`Array16`](https://github.com/dessaya/wasp/blob/develop/packages/kv/collections/array16.go) of `[]byte`).
+- `e`: ([`Array`](https://github.com/iotaledger/wasp/blob/develop/packages/kv/collections/array.go) of `[]byte`).
 
 ### `getEventsForBlock(n blockIndex)`
 
@@ -116,7 +132,7 @@ Returns the list of events triggered during the execution of all requests in the
 
 #### Returns
 
-- `e`: ([`Array16`](https://github.com/dessaya/wasp/blob/develop/packages/kv/collections/array16.go) of `[]byte`).
+- `e`: ([`Array`](https://github.com/iotaledger/wasp/blob/develop/packages/kv/collections/array.go) of `[]byte`).
 
 ### `getEventsForContract(h Hname)`
 
@@ -130,7 +146,7 @@ Returns a list of events triggered by the smart contract with hname `h`.
 
 #### Returns
 
-- `e`: ([`Array16`](https://github.com/dessaya/wasp/blob/develop/packages/kv/collections/array16.go) of `[]byte`)
+- `e`: ([`Array`](https://github.com/iotaledger/wasp/blob/develop/packages/kv/collections/array.go) of `[]byte`)
 
 ### `controlAddresses()`
 
@@ -142,6 +158,18 @@ Returns the current state controller and governing addresses and at what block i
   address.
 - `g`: ([`iotago::Address`](https://github.com/iotaledger/iota.go/blob/develop/address.go)) The governing address.
 - `n` (`uint32`):The block index where the specified addresses were set.
+
+### `hasUnprocessable(u requestID)`
+
+Asserts whether or not a given requestID (`u`) is present in the "unprocessable list"
+
+#### Parameters
+
+- `u` ([`isc::RequestID`](https://github.com/iotaledger/wasp/blob/develop/packages/isc/request.go)): The requestID to be checked
+
+#### Returns
+
+- `x` ([`bool`]) Whether or not the request exists in the "unprocessable list"
 
 ---
 

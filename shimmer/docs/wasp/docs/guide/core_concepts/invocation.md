@@ -104,10 +104,8 @@ The Allowance properly looks like the following:
 
 ```go
 {
-  FungibleTokens: {
-    BaseToken: uint64
-    NativeTokens: [{TokenID, uint256}, ...]
-  }
-  NFTs: [NFTID,...]
+  BaseTokens: uint64
+  NativeTokens: [{TokenID, uint256}, ...]
+  NFTs: [NFTID, ...]
 }
 ```

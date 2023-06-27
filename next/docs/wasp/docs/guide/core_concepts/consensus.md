@@ -38,7 +38,7 @@ The next step is to convert the raw list of batch proposals into an actual batch
 counted and filtered to produce the same list of requests in the same order.
 The partial signatures of all nodes are combined into a full signature that is then fed to a pseudo-random function that
 sorts the smart contract requests.
-Validator nodes can neither affect nor predict the final order of requests in the batch. This protects ISC
+Validator nodes can neither affect nor predict the final order of requests in the batch. (This protects ISC
 from [MEV attacks](https://ethereum.org/en/developers/docs/mev/)).
 
 ## State Anchor

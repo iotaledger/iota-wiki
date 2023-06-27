@@ -24,63 +24,22 @@ overloading the testnet because we are looking for functionality testing more th
 
 You can access the testnet via the following endpoints:
 
-- https://sc.testnet.shimmer.network **Username**: wasp **Password**: wasp
-  - The Wasp dashboard to explore the node configuration and view peering/chain configurations
-  - https://api.sc.testnet.shimmer.network
-    - The Wasp api to deploy and interact with smart contracts
-    - https://api.sc.testnet.shimmer.network/info
-      - Information about the Wasp access node
-    - https://api.wasp.sc.iota.org/doc
-      - API reference for the Wasp API
-  - https://api.sc.testnet.shimmer.network/evm/jsonrpc
-    - The URL to interact with the Ethereum Virtual Machine on our testnet
-- https://api.testnet.shimmer.network
-  - The public API exposed by Hornet for the Shimmer Beta network (testnet)
-- https://faucet.testnet.shimmer.network
+- https://json-rpc.evm.testnet.shimmer.network/
+  - The URL to interact with the Ethereum Virtual Machine on our testnet
+- https://evm-faucet.testnet.shimmer.network/
   - The faucet for the Shimmer Beta network
-- https://sc.testnet.shimmer.network/metrics
-  - System metrics
-
-## Configuring `wasp-cli`
-
-### Initialize `wasp-cli`
-
-You will need to initialize `wasp-cli` to create a seed that will be used to generate addresses.
-
-```shell
-wasp-cli init
-```
-
-### Configure for the test chain
-
-Next, you should tell `wasp-cli` how to reach our test chain:
-
-```shell
-wasp-cli set l1.apiaddress https://api.testnet.shimmer.network
-wasp-cli set l1.faucetaddress https://faucet.testnet.shimmer.network
-wasp-cli set chains.testchain rms1prr4r7az8e46qhagz5atugjm6x0xrg27d84677e3lurg0s6s76jr59dw4ls
-wasp-cli set chain testchain
-
-```
-
-### Request Funds
-
-To deploy a smart contract, you will need some funds. The `wasp-cli` tool makes this easy on our testnet. Run the
-following command to request some funds.
-
-```shell
-wasp-cli request-funds
-```
+- https://explorer.evm.testnet.shimmer.network/
+  - EVM explorer to view transactions and contracts
 
 ## Interact with EVM
 
 We have deployed an experimental EVM chain that you can interact with. To begin, add a custom network to Metamask with
 the following configuration:
 
-| Key      | Value                                              |
-| -------- | -------------------------------------------------- |
-| RPC URL  | https://api.sc.testnet.shimmer.network/evm/jsonrpc |
-| Chain ID | 1076                                               |
+| Key      | Value                                        |
+| -------- | -------------------------------------------- |
+| RPC URL  | https://json-rpc.evm.testnet.shimmer.network |
+| Chain ID | 1071                                         |
 
 :::note
 

@@ -15,4 +15,4 @@ keywords:
 
 You can find specifications of the API exposed by INX-MQTT in the links below:
 
-- [Node Event API](https://github.com/iotaledger/tips/blob/stardust-event-api/tips/TIP-0028/tip-0028.md)
+- [Node Event API](https://github.com/iotaledger/tips/blob/main/tips/TIP-0028/tip-0028.md)

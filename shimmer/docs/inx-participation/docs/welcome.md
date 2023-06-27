@@ -23,7 +23,7 @@ You can find more information on how participation events work in the [HORNET Pa
 ## Setup
 
 The recommended setup is to use the provided [Docker images](https://hub.docker.com/r/iotaledger/inx-participation).
-These images are also used in our [HORNET recommended setup using Docker](http://wiki.iota.org/hornet/develop/how_tos/using_docker).
+These images are also used in our [HORNET recommended setup using Docker](https://wiki.iota.org/shimmer/hornet/how_tos/using_docker/).
 
 ## Configuration
 
