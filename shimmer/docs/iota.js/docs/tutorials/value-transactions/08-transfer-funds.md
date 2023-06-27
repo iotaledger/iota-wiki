@@ -55,9 +55,9 @@ funds [requested from the testnet Faucet](06-request-funds-from-the-faucet.md). 
 the unit of measurement is the Glow, you should use a `BigInt` data type to perform arithmetic operations. In this
 case, the transferred value is `50000` Glow.
 
-An input is represented by the type [`IUTXOInput`](../../references/client/interfaces/IUTXOInput), and can be easily
+An input is represented by the type [`IUTXOInput`](../../references/client/interfaces/IUTXOInput.md), and can be easily
 obtained from an output ID using
-the [`TransactionHelper.inputFromOutputId()`](../../references/client/classes/TransactionHelper#inputfromoutputid)
+the [`TransactionHelper.inputFromOutputId()`](../../references/client/classes/TransactionHelper.md#inputfromoutputid)
 function, as shown below:
 
 ```typescript
@@ -102,13 +102,13 @@ const basicOutput: IBasicOutput = {
 
 ### Define the Output Type
 
-You can define a basic output by assigning the [`BASIC_OUTPUT_TYPE`](../../references/client/api_ref#basic_output_type)
+You can define a basic output by assigning the [`BASIC_OUTPUT_TYPE`](../../references/client/api_ref.md#basic_output_type)
 the `type` field.
 
 ### Provide the Unlock Conditions
 
 This example above uses
-the [`ADDRESS_UNLOCK_CONDITION_TYPE`](../../references/client/api_ref#address_unlock_condition_type).
+the [`ADDRESS_UNLOCK_CONDITION_TYPE`](../../references/client/api_ref.md#address_unlock_condition_type).
 This means that whoever controls the specified address can unlock the funds (i.e. the owner of the corresponding
 private key).
 
@@ -151,7 +151,7 @@ be used to calculate a hash for the corresponding signature.
 
 The transaction essence must include the commitments to the inputs so that it is ensured that those outputs already
 exist at the time of submitting the transaction. You can retrieve them using
-the [`TransactionHelper.getInputsCommitment()`](../../references/client/classes/TransactionHelper#getinputscommitment)
+the [`TransactionHelper.getInputsCommitment()`](../../references/client/classes/TransactionHelper.md#getinputscommitment)
 function as shown below:
 
 ```typescript
@@ -161,7 +161,9 @@ const inputsCommitment = TransactionHelper.getInputsCommitment([
 
 const transactionEssence: ITransactionEssence = {
   type: TRANSACTION_ESSENCE_TYPE,
-  networkId: protocolInfo.networkId,
+  networkId: TransactionHelper.networkIdFromNetworkName(
+    protocolInfo.networkName,
+  ),
   inputs,
   inputsCommitment,
   outputs,
@@ -174,10 +176,10 @@ const essenceFinal = wsTsxEssence.finalBytes();
 const essenceHash = Blake2b.sum256(essenceFinal);
 ```
 
-#### Sign the transaction essence
+#### Sign the Transaction Essence
 
 Once you have calculated the hash of the transaction essence, you can create the final transaction payload by adding the
-corresponding signature unlock:
+corresponding signature that unlocks your Input:
 
 ```typescript
 const privateKey = Converter.hexToBytes(sourceAddressPrivateKey);
@@ -207,15 +209,15 @@ verify the attached signature.
 You must note that _for each input_ there should be one unlock in the transaction payload. If you need to
 unlock other
 inputs with the same signature, then you should
-use [`IReferenceUnlock`](../../references/client/interfaces/IReferenceUnlock) (
+use [`IReferenceUnlock`](../../references/client/interfaces/IReferenceUnlock.md) (
 see [Sweep Outputs To Reduce Deposits](10-sweep-outputs-to-reduce-deposits.md)).
 
 ## Submit the Block
 
 In order the transaction to be attached to the Tangle, you will need to add it to a block.
 You can retrieve the parents for the block using
-the [`SingleNodeClient.tips()`](../../references/client/classes/SingleNodeClient#tips) function or you can leave it
-empty if you are using the [`NeonPowProvider`](../../references/pow-neon/classes/NeonPowProvider).
+the [`SingleNodeClient.tips()`](../../references/client/classes/SingleNodeClient.md#tips) function or you can leave it
+empty if you are using the [`NeonPowProvider`](../../references/pow-neon/classes/NeonPowProvider.md).
 
 ```typescript
 const block: IBlock = {
@@ -355,7 +357,9 @@ const inputsCommitment = TransactionHelper.getInputsCommitment([
 
 const transactionEssence: ITransactionEssence = {
   type: TRANSACTION_ESSENCE_TYPE,
-  networkId: protocolInfo.networkId,
+  networkId: TransactionHelper.networkIdFromNetworkName(
+    protocolInfo.networkName,
+  ),
   inputs,
   inputsCommitment,
   outputs,
