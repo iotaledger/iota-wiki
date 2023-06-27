@@ -38,6 +38,43 @@ The following example demonstrates deactivating and reactivating an IOTA DID Doc
 <TabItem value="rust" label="Rust">
 
 ```rust reference
+https://github.com/iotaledger/identity.rs/blob/main/examples/0_basic/3_deactivate_did.rs
+```
+
+</TabItem>
+<TabItem value="node" label="Node.js">
+
+```ts reference
+https://github.com/iotaledger/identity.rs/blob/main/bindings/wasm/examples/src/0_basic/3_deactivate_did.ts
+```
+
+</TabItem>
+</Tabs>
+
+## Destroy
+
+Alternatively, an IOTA Identity can be permanently [destroyed](../../specs/did/iota_did_method_spec.mdx#destroy).
+
+This is achieved by the governor of a DID publishing a transaction consuming the [Alias Output](../../specs/did/iota_did_method_spec.mdx#alias-output) containing the IOTA DID Document, without a corresponding Alias Output on the output side.
+
+Any coins and tokens in the Alias Output are reclaimed and can be sent to another address.
+
+:::warning
+
+Destroying an IOTA Identity is permanent and irreversible.
+
+:::
+
+Note that historical versions may still be stored off-ledger or on a permanode, so sensitive or Personal Identifiable Information (PII) should NEVER be stored in a DID Document. Even with a previous version available, a destroyed DID can never be restored.
+
+### Example
+
+The following example demonstrates a governor destroying an IOTA Identity and sending the storage deposit back to itself.
+
+<Tabs groupId="programming-language">
+<TabItem value="rust" label="Rust">
+
+```rust reference
 https://github.com/iotaledger/identity.rs/blob/main/examples/0_basic/4_delete_did.rs
 ```
 
