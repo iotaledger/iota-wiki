@@ -33,6 +33,7 @@
 
 - [IBuildBlockOptions](interfaces/IBuildBlockOptions.md)
 - [IClientBlockBuilderOutputAddress](interfaces/IClientBlockBuilderOutputAddress.md)
+- [Burn](interfaces/Burn.md)
 - [IClientOptions](interfaces/IClientOptions.md)
 - [IDuration](interfaces/IDuration.md)
 - [IGenerateAddressesOptions](interfaces/IGenerateAddressesOptions.md)
@@ -48,6 +49,7 @@
 - [IBasicOutputBuilderOptions](interfaces/IBasicOutputBuilderOptions.md)
 - [IFoundryOutputBuilderOptions](interfaces/IFoundryOutputBuilderOptions.md)
 - [INftOutputBuilderOptions](interfaces/INftOutputBuilderOptions.md)
+- [OutputIdsResponse](interfaces/OutputIdsResponse.md)
 - [IPreparedTransactionData](interfaces/IPreparedTransactionData.md)
 - [IInputSigningData](interfaces/IInputSigningData.md)
 - [IRange](interfaces/IRange.md)

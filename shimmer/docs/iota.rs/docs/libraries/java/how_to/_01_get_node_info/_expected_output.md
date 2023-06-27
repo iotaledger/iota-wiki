@@ -19,7 +19,7 @@
   "supportedProtocolVersions": [2],
   "protocol": {
     "version": 2,
-    "networkName": "testnet",
+    "networkName": "testnet-1",
     "bech32Hrp": "rms",
     "minPowScore": 1500.0,
     "rentStructure": {
