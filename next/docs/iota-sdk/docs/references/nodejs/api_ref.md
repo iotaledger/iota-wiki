@@ -99,12 +99,12 @@
 - [Features](interfaces/Features.md)
 - [Unlocks](interfaces/Unlocks.md)
 - [StorageDeposit](interfaces/StorageDeposit.md)
-- [PreparedMintTokenTransaction](interfaces/PreparedMintTokenTransaction.md)
+- [PreparedCreateNativeTokenTransaction](interfaces/PreparedCreateNativeTokenTransaction.md)
 - [MintTokenTransaction](interfaces/MintTokenTransaction.md)
 - [SignedTransactionEssence](interfaces/SignedTransactionEssence.md)
 - [Transaction](interfaces/Transaction.md)
 - [TransactionOptions](interfaces/TransactionOptions.md)
-- [MintNativeTokenParams](interfaces/MintNativeTokenParams.md)
+- [CreateNativeTokenParams](interfaces/CreateNativeTokenParams.md)
 - [MintNftParams](interfaces/MintNftParams.md)
 - [AliasOutputParams](interfaces/AliasOutputParams.md)
 - [WalletOptions](interfaces/WalletOptions.md)
@@ -141,7 +141,7 @@
 A block identifier, the BLAKE2b-256 hash of the block bytes.
 See <https://www.blake2.net/> for more information.
 
----
+___
 
 ### IBip32Chain
 
@@ -149,7 +149,7 @@ See <https://www.blake2.net/> for more information.
 
 BIP 32 chain.
 
----
+___
 
 ### QueryParameter
 
@@ -157,7 +157,7 @@ BIP 32 chain.
 
 Query parameter for filtering output requests
 
----
+___
 
 ### AliasQueryParameter
 
@@ -165,7 +165,7 @@ Query parameter for filtering output requests
 
 Query parameters for filtering Alias Outputs
 
----
+___
 
 ### FoundryQueryParameter
 
@@ -173,7 +173,7 @@ Query parameters for filtering Alias Outputs
 
 Query parameters for filtering Foundry Outputs
 
----
+___
 
 ### NftQueryParameter
 
@@ -181,15 +181,15 @@ Query parameters for filtering Foundry Outputs
 
 Query parameters for filtering Nft Outputs
 
----
+___
 
 ### PlaceholderSecretManager
 
-Ƭ **PlaceholderSecretManager**: `"placeholder"`
+Ƭ **PlaceholderSecretManager**: ``"placeholder"``
 
 Placeholder secret manager that can't do anything.
 
----
+___
 
 ### SecretManagerType
 
@@ -197,7 +197,7 @@ Placeholder secret manager that can't do anything.
 
 Supported secret managers
 
----
+___
 
 ### AccountId
 
@@ -206,7 +206,7 @@ Supported secret managers
 Account identifier
 Could be the account index (number) or account alias (string)
 
----
+___
 
 ### RemainderValueStrategy
 
@@ -214,7 +214,7 @@ Could be the account index (number) or account alias (string)
 
 The RemainderValueStrategy
 
----
+___
 
 ### ChangeAddress
 
@@ -224,12 +224,12 @@ ChangeAddress variant of RemainderValueStrategy
 
 #### Type declaration
 
-| Name       | Type              |
-| :--------- | :---------------- |
-| `strategy` | `"ChangeAddress"` |
-| `value`    | `null`            |
+| Name | Type |
+| :------ | :------ |
+| `strategy` | ``"ChangeAddress"`` |
+| `value` | ``null`` |
 
----
+___
 
 ### ReuseAddress
 
@@ -239,12 +239,12 @@ ReuseAddress variant of RemainderValueStrategy
 
 #### Type declaration
 
-| Name       | Type             |
-| :--------- | :--------------- |
-| `strategy` | `"ReuseAddress"` |
-| `value`    | `null`           |
+| Name | Type |
+| :------ | :------ |
+| `strategy` | ``"ReuseAddress"`` |
+| `value` | ``null`` |
 
----
+___
 
 ### CustomAddress
 
@@ -254,10 +254,10 @@ CustomAddress variant of RemainderValueStrategy
 
 #### Type declaration
 
-| Name       | Type              |
-| :--------- | :---------------- |
-| `strategy` | `"CustomAddress"` |
-| `value`    | `string`          |
+| Name | Type |
+| :------ | :------ |
+| `strategy` | ``"CustomAddress"`` |
+| `value` | `string` |
 
 ## Functions
 
@@ -269,15 +269,15 @@ Initialize logger, if no arguments are provided a default config will be used.
 
 #### Parameters
 
-| Name     | Type            | Default value         |
-| :------- | :-------------- | :-------------------- |
+| Name | Type | Default value |
+| :------ | :------ | :------ |
 | `config` | `ILoggerConfig` | `defaultLoggerConfig` |
 
 #### Returns
 
 `any`
 
----
+___
 
 ### utf8ToBytes
 
@@ -287,15 +287,15 @@ Convert UTF8 string to an array of bytes
 
 #### Parameters
 
-| Name   | Type     |
-| :----- | :------- |
+| Name | Type |
+| :------ | :------ |
 | `utf8` | `string` |
 
 #### Returns
 
 `number`[]
 
----
+___
 
 ### hexToUtf8
 
@@ -305,15 +305,15 @@ Convert hex encoded string to UTF8 string
 
 #### Parameters
 
-| Name  | Type     |
-| :---- | :------- |
+| Name | Type |
+| :------ | :------ |
 | `hex` | `string` |
 
 #### Returns
 
 `string`
 
----
+___
 
 ### utf8ToHex
 
@@ -323,8 +323,8 @@ Convert UTF8 string to hex encoded string
 
 #### Parameters
 
-| Name   | Type     |
-| :----- | :------- |
+| Name | Type |
+| :------ | :------ |
 | `utf8` | `string` |
 
 #### Returns

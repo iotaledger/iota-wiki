@@ -4,19 +4,23 @@ sidebar_label: Send
 description: 'How to send native tokens'
 image: /img/logo/iota_mark_light.png
 keywords:
-  - how to
-  - send native token
-  - send
-  - native token
-  - nodejs
-  - python
-  - rust
+- how to
+- send native token
+- send
+- native token
+- nodejs
+- python
+- rust
 ---
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
+import CodeBlock from '@theme/CodeBlock';
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import NodejsCode from '!!raw-loader!../../../../../bindings/nodejs/examples/how_tos/native_tokens/send.ts';
+import PythonCode from '!!raw-loader!../../../../../bindings/python/examples/how_tos/native_tokens/send.py';
+import RustCode from '!!raw-loader!../../../../../sdk/examples/how_tos/native_tokens/send.rs';
 
-After you have [minted](mint.mdx) a
+After you have [created](create.mdx) a 
 [native token](https://wiki.iota.org/shimmer/introduction/explanations/what_is_stardust/tokenization#native-tokens),
 you can easily send it by calling the `Account.send_native_tokens(params, options)` function.
 
@@ -34,27 +38,21 @@ The following example will:
 4. Send the native tokens calling the `Account.send_native_tokens(params, options)` function.
 
 <Tabs groupId="language">
-<TabItem value="rust" label="Rust">
-
-```rust reference
-https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/native_tokens/send.rs
-```
-
-</TabItem>
-<TabItem value="nodejs" label="Nodejs">
-
-```typescript reference
-https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/native_tokens/send.ts
-```
-
-</TabItem>
-<TabItem value="python" label="Python">
-
-```python reference
-https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how_tos/native_tokens/send.py
-```
-
-</TabItem>
+    <TabItem value="rust" label="Rust">
+        <CodeBlock className="language-rust">
+            {RustCode}
+        </CodeBlock>
+    </TabItem>
+    <TabItem value="nodejs" label="Nodejs">
+        <CodeBlock className="language-typescript">
+            {NodejsCode}
+        </CodeBlock>
+    </TabItem>
+    <TabItem value="python" label="Python">
+        <CodeBlock className="language-python">
+            {PythonCode}
+        </CodeBlock>
+    </TabItem>
 </Tabs>
 
 ## Expected Output

@@ -1,70 +1,60 @@
 ---
 title: Mint Native Tokens
-sidebar_label: Mint
-description: 'How to mint native tokens using wallet.rs.'
+sidebar_label: Increase Circulating Supply
+description: 'How to mint native tokens'
 image: /img/logo/iota_mark_light.png
 keywords:
-  - how to
-  - mint native tokens
-  - mint
-  - nodejs
-  - python
-  - java
-  - rust
+- how to
+- increase native token circulating supply
+- mint
+- foundry
+- nodejs
+- python
+- rust
 ---
 
+import CodeBlock from '@theme/CodeBlock';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
-import TipFaucet from '../../_admonitions/_tip-faucet.md';
+import NodejsCode from '!!raw-loader!../../../../../bindings/nodejs/examples/how_tos/native_tokens/mint.ts';
+import PythonCode from '!!raw-loader!../../../../../bindings/python/examples/how_tos/native_tokens/mint.py';
+import RustCode from '!!raw-loader!../../../../../sdk/examples/how_tos/native_tokens/mint.rs';
 
-The stardust update allows you to create your own [native tokens](https://wiki.iota.org/shimmer/introduction/explanations/what_is_stardust/tokenization#native-tokens)
-Native tokens are minted by a so-called Foundry. The Foundry allows you to specify a max supply once and change the circulating supply. You can also specify some custom metadata in the foundry output or follow a standard like [IRC30](https://wiki.iota.org/tips/tips/TIP-0030/).  
-To create a Foundry you need an Alias Output which owns it. This Alias Output only needs to be generated once and can own multiple foundries.
-
-<TipFaucet />
+You may want to increase the circulating native token supply. To do so, you will need to call the
+`Account.mint_native_token(token_id, mint_amount, options)` function.
 
 ## Code Example
 
 The following example will:
 
 1. Create a wallet.
-2. Get Alice's which was [created in the first guide](../accounts-and-addresses/create-account.mdx).
-3. Create the `MintNativeTokenParams`.
-4. Mint the native token by calling the `Account.mint_native_token(params, options)` function.
+2. Get Alice's account which was [created in the first guide](../accounts-and-addresses/create-account.mdx).
+3. Get the account's balance.
+4. Mint 10 native tokens of the first ID.
 
 <Tabs groupId="language">
-<TabItem value="rust" label="Rust">
-
-```rust reference
-https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/native_tokens/mint.rs
-```
-
-</TabItem>
-<TabItem value="nodejs" label="Nodejs">
-
-```typescript reference
-https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/native_tokens/mint.ts
-```
-
-</TabItem>
-<TabItem value="python" label="Python">
-
-```python reference
-https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how_tos/native_tokens/mint.py
-```
-
-</TabItem>
+    <TabItem value="rust" label="Rust">
+        <CodeBlock className="language-rust">
+            {RustCode}
+        </CodeBlock>
+    </TabItem>
+    <TabItem value="nodejs" label="Nodejs">
+        <CodeBlock className="language-typescript">
+            {NodejsCode}
+        </CodeBlock>
+    </TabItem>
+    <TabItem value="python" label="Python">
+        <CodeBlock className="language-python">
+            {PythonCode}
+        </CodeBlock>
+    </TabItem>
 </Tabs>
 
 ## Expected Output
 
-```plaintext
-Transaction sent: 0x3e7fe86a2b01a7006fe037249be51852d298d32df69507140d3b41c1a6d7fb90
-Block included: https://explorer.shimmer.network/testnet/block/0xca4f8150014bc548214be6b02bed3b7d43041adef8838965815a367f73c7272d
-Account synced
-Preparing minting transaction...
-Transaction sent: 0xcfc5ffae0c7be8cfb7c334d6f6bb39a2ddff612c9a9048c88e3d9158f7cc4832
-Block included: https://explorer.shimmer.network/testnet/block/0x558c0dcede60609bbb641e9f1d9a7802b48a3c3d5827328a054385140d447436
-Minted token: 0x089dc1b964591b15819ef1912fab48c001fed4558b37766dfa5daa512495d5b25a0100000000
-Account synced
+```
+Balance before minting: 90
+Transaction sent: 0x6dbec7c73ef511c3945eda6265d3de29a4f572a3bd95e39221cff18135e18ca6
+Block included: https://explorer.shimmer.network/testnet/block/0x7b677c0562d8b2a7fdc1fd6182bb6364af517d41ec38a9dab9b29a1c7422f574
+Balance after minting: 100
 ```
