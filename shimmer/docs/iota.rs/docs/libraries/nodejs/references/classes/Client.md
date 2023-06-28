@@ -28,6 +28,7 @@ The Client to interact with nodes.
 - [prepareTransaction](Client.md#preparetransaction)
 - [storeMnemonic](Client.md#storemnemonic)
 - [signTransaction](Client.md#signtransaction)
+- [signatureUnlock](Client.md#signatureunlock)
 - [postBlockPayload](Client.md#postblockpayload)
 - [parseBech32Address](Client.md#parsebech32address)
 - [blockId](Client.md#blockid)
@@ -53,6 +54,7 @@ The Client to interact with nodes.
 - [getReceiptsMigratedAt](Client.md#getreceiptsmigratedat)
 - [getTreasury](Client.md#gettreasury)
 - [getIncludedBlock](Client.md#getincludedblock)
+- [getIncludedBlockMetadata](Client.md#getincludedblockmetadata)
 - [bech32ToHex](Client.md#bech32tohex)
 - [hexToBech32](Client.md#hextobech32)
 - [aliasIdToBech32](Client.md#aliasidtobech32)
@@ -79,6 +81,9 @@ The Client to interact with nodes.
 - [buildAliasOutput](Client.md#buildaliasoutput)
 - [buildFoundryOutput](Client.md#buildfoundryoutput)
 - [buildNftOutput](Client.md#buildnftoutput)
+- [hashTransactionEssence](Client.md#hashtransactionessence)
+- [listen](Client.md#listen)
+- [clearListeners](Client.md#clearlisteners)
 
 ## Methods
 
@@ -110,7 +115,7 @@ Gets the network related information such as network_id and min_pow_score
 
 ### basicOutputIds
 
-▸ **basicOutputIds**(`queryParameters`): `Promise`<`string`[]\>
+▸ **basicOutputIds**(`queryParameters`): `Promise`<[`OutputIdsResponse`](../interfaces/OutputIdsResponse.md)\>
 
 Fetch basic output IDs based on query parameters
 
@@ -122,7 +127,7 @@ Fetch basic output IDs based on query parameters
 
 #### Returns
 
-`Promise`<`string`[]\>
+`Promise`<[`OutputIdsResponse`](../interfaces/OutputIdsResponse.md)\>
 
 ---
 
@@ -464,6 +469,26 @@ Sign a transaction
 #### Returns
 
 `Promise`<`PayloadTypes`\>
+
+---
+
+### signatureUnlock
+
+▸ **signatureUnlock**(`secretManager`, `inputSigningData`, `transactionEssenceHash`): `Promise`<`UnlockTypes`\>
+
+Create a signature unlock using the provided `secretManager`.
+
+#### Parameters
+
+| Name                     | Type                                                      |
+| :----------------------- | :-------------------------------------------------------- |
+| `secretManager`          | [`SecretManager`](../api_ref.md#secretmanager)            |
+| `inputSigningData`       | [`IInputSigningData`](../interfaces/IInputSigningData.md) |
+| `transactionEssenceHash` | `number`[]                                                |
+
+#### Returns
+
+`Promise`<`UnlockTypes`\>
 
 ---
 
@@ -846,6 +871,24 @@ Returns the included block of the transaction.
 
 ---
 
+### getIncludedBlockMetadata
+
+▸ **getIncludedBlockMetadata**(`transactionId`): `Promise`<`IBlock`\>
+
+Returns the metadata of the included block of the transaction.
+
+#### Parameters
+
+| Name            | Type     |
+| :-------------- | :------- |
+| `transactionId` | `string` |
+
+#### Returns
+
+`Promise`<`IBlock`\>
+
+---
+
 ### bech32ToHex
 
 ▸ **bech32ToHex**(`bech32`): `Promise`<`string`\>
@@ -960,7 +1003,7 @@ Checks if a String is a valid bech32 encoded address.
 
 ### aliasOutputIds
 
-▸ **aliasOutputIds**(`queryParameters`): `Promise`<`string`[]\>
+▸ **aliasOutputIds**(`queryParameters`): `Promise`<[`OutputIdsResponse`](../interfaces/OutputIdsResponse.md)\>
 
 Fetch alias output IDs
 
@@ -972,7 +1015,7 @@ Fetch alias output IDs
 
 #### Returns
 
-`Promise`<`string`[]\>
+`Promise`<[`OutputIdsResponse`](../interfaces/OutputIdsResponse.md)\>
 
 ---
 
@@ -996,7 +1039,7 @@ Fetch alias output ID
 
 ### nftOutputIds
 
-▸ **nftOutputIds**(`queryParameters`): `Promise`<`string`[]\>
+▸ **nftOutputIds**(`queryParameters`): `Promise`<[`OutputIdsResponse`](../interfaces/OutputIdsResponse.md)\>
 
 Fetch NFT output IDs
 
@@ -1008,7 +1051,7 @@ Fetch NFT output IDs
 
 #### Returns
 
-`Promise`<`string`[]\>
+`Promise`<[`OutputIdsResponse`](../interfaces/OutputIdsResponse.md)\>
 
 ---
 
@@ -1032,7 +1075,7 @@ Fetch NFT output ID
 
 ### foundryOutputIds
 
-▸ **foundryOutputIds**(`queryParameters`): `Promise`<`string`[]\>
+▸ **foundryOutputIds**(`queryParameters`): `Promise`<[`OutputIdsResponse`](../interfaces/OutputIdsResponse.md)\>
 
 Fetch Foundry Output IDs
 
@@ -1044,7 +1087,7 @@ Fetch Foundry Output IDs
 
 #### Returns
 
-`Promise`<`string`[]\>
+`Promise`<[`OutputIdsResponse`](../interfaces/OutputIdsResponse.md)\>
 
 ---
 
@@ -1319,3 +1362,58 @@ Build an Nft Output.
 #### Returns
 
 `Promise`<`INftOutput`\>
+
+---
+
+### hashTransactionEssence
+
+▸ **hashTransactionEssence**(`essence`): `Promise`<`string`\>
+
+Compute the hash of a transaction essence.
+
+#### Parameters
+
+| Name      | Type                  |
+| :-------- | :-------------------- |
+| `essence` | `ITransactionEssence` |
+
+#### Returns
+
+`Promise`<`string`\>
+
+---
+
+### listen
+
+▸ **listen**(`topics`, `callback`): `Promise`<`void`\>
+
+Listen to MQTT topics.
+
+#### Parameters
+
+| Name       | Type                                             |
+| :--------- | :----------------------------------------------- |
+| `topics`   | `string`[]                                       |
+| `callback` | (`error`: `Error`, `result`: `string`) => `void` |
+
+#### Returns
+
+`Promise`<`void`\>
+
+---
+
+### clearListeners
+
+▸ **clearListeners**(`topics`): `Promise`<`void`\>
+
+Stop listening for provided MQTT topics.
+
+#### Parameters
+
+| Name     | Type       |
+| :------- | :--------- |
+| `topics` | `string`[] |
+
+#### Returns
+
+`Promise`<`void`\>

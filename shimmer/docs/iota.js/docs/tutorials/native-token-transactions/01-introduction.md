@@ -44,4 +44,4 @@ If you want to mint Non-Fungible Tokens (NFTs), you can check out this [how-to g
 
 ## Storage Costs and Deposits
 
-You need to take into account that both Alias and Foundry outputs need to be stored by [Hornet Nodes](https://wiki.iota.org/shimmer/hornet/welcome), so there is a [storage cost](https://wiki.iota.org/shimmer/iota.js/tutorials/value-transactions/introduction/#storage-costs-and-deposits) as with any UTXO.
+You need to take into account that both Alias and Foundry outputs need to be stored by [Hornet Nodes](https://wiki.iota.org/shimmer/hornet/welcome), so there is a [storage cost](https://wiki.iota.org/shimmer/iotajs/tutorials/value-transactions/introduction/#storage-costs-and-deposits) as with any UTXO.

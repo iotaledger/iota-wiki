@@ -7,9 +7,8 @@ Data for transaction inputs for signing and ordering of unlock blocks
 ### Properties
 
 - [output](IInputSigningData.md#output)
-- [outputMetaData](IInputSigningData.md#outputmetadata)
+- [outputMetadata](IInputSigningData.md#outputmetadata)
 - [chain](IInputSigningData.md#chain)
-- [bech32Address](IInputSigningData.md#bech32address)
 
 ## Properties
 
@@ -21,9 +20,9 @@ The output
 
 ---
 
-### outputMetaData
+### outputMetadata
 
-• **outputMetaData**: `IOutputMetadataResponse`
+• **outputMetadata**: `IOutputMetadataResponse`
 
 The output metadata
 
@@ -34,12 +33,3 @@ The output metadata
 • `Optional` **chain**: `ISegment`[]
 
 The chain derived from seed, only for ed25519 addresses
-
----
-
-### bech32Address
-
-• **bech32Address**: `string`
-
-The bech32 encoded address, required because of alias outputs where we have multiple possible unlock
-conditions, because we otherwise don't know which one we need

@@ -44,17 +44,20 @@ When executed, this function:
 - Sets the caller as the _chain owner_.
 - Deploys all the core contracts.
 
-### `deployContract(ph ProgramHash, ds Description, nm Name)`
+### `deployContract(ph ProgramHash, nm Name, ds Description)`
 
-Deploys a non-EVM smart contract on the chain if the caller has deploy permission.
+Deploys a non-EVM smart contract on the chain if the caller has deployment permission.
 
 #### Parameters
 
 - `ph` (`[32]byte`): The hash of the binary _blob_ (that has been previously stored in the [`blob` contract](blob.md)).
-- `ds` (`string`): Description of the contract to be deployed.
 - `nm` (`string`): The name of the contract to be deployed, used to calculate the
-  contract's _hname_. The name must be unique among all contract names in the
-  chain.
+  contract's _hname_. The hname must be unique among all contract hnames in the chain.
+- `ds` (`string`): Description of the contract to be deployed.
+
+Any other parameters that are passed to the deployContract function will be passed on to
+the `init` function of the smart contract being deployed. Note that this means that the
+init parameter names cannot be the above ones, as they will have been filtered out.
 
 ### `grantDeployPermission(dp AgentID)`
 

@@ -33,7 +33,7 @@ const consumedOutputId2 = outputList.items[1];
 ```
 
 You already know that each output will hold `0.05 SMR`. Still, you can query each output and obtain its amount by calling
-the [`SingleNodeClient.output()`](../../references/client/classes/SingleNodeClient#output) function as shown below:
+the [`SingleNodeClient.output()`](../../references/client/classes/SingleNodeClient.md#output) function as shown below:
 
 ```typescript
 const output1 = await client.output(consumedOutputId1);
@@ -92,16 +92,18 @@ const inputsCommitment = TransactionHelper.getInputsCommitment([
 
 const transactionEssence: ITransactionEssence = {
   type: TRANSACTION_ESSENCE_TYPE,
-  networkId: protocolInfo.networkId,
+  networkId: TransactionHelper.networkIdFromNetworkName(
+    protocolInfo.networkName,
+  ),
   inputs,
   inputsCommitment,
   outputs: [combinedOutput],
 };
 ```
 
-Now, you need to calculate the hash of the transaction essence and provide the unlock conditions for each input. To provide the unlock conditions you will need the public and private keys of your address so that you can generate a proper digital signature.
+Now, you need to unlock each Input by calculating a signature. To perform this calculation you will need the public and private keys of your address and the hash of the transaction essence.
 
-In this particular case, the unlock conditions will be the same for each input, so the examples use a "Reference unlock condition", [`REFERENCE_UNLOCK_TYPE`](../../references/client/api_ref#reference_unlock_type).
+In this particular case, the unlock signature will be the same for each Input, so the examples use a "Reference unlock type", [`REFERENCE_UNLOCK_TYPE`](../../references/client/api_ref.md#reference_unlock_type).
 
 ```typescript
 const wsTsxEssence = new WriteStream();
@@ -239,7 +241,9 @@ const inputsCommitment = TransactionHelper.getInputsCommitment([
 
 const transactionEssence: ITransactionEssence = {
   type: TRANSACTION_ESSENCE_TYPE,
-  networkId: protocolInfo.networkId,
+  networkId: TransactionHelper.networkIdFromNetworkName(
+    protocolInfo.networkName,
+  ),
   inputs,
   inputsCommitment,
   outputs: [combinedOutput],

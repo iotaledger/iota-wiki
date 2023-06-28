@@ -30,7 +30,7 @@ their internal state as a list of key/value pairs.
 
 Besides reading and writing to the contract state, the Sandbox interface allows smart contracts to access:
 
-- The [ID](./accounts/how-accounts-work#agent-id) of the contract.
+- The [ID](./accounts/how-accounts-work.md#agent-id) of the contract.
 - The details of the current request or view call.
 - The current request allowance and a way to claim the allowance.
 - The balances owned by the contract.

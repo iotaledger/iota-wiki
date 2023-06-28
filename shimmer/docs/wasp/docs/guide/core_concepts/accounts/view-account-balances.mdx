@@ -166,7 +166,7 @@ accounts := chain.L2Accounts()
 a := coreaccounts.ScFuncs.Accounts(ctx)
 a.Func.Call()
 require.NoError(t, ctx.Err)
-accounts := a.Results.Agents()
+accounts := a.Results.AllAccounts()
 ```
 
 </TabItem>
@@ -175,7 +175,7 @@ accounts := a.Results.Agents()
 ```rust
 let a = coreaccounts::ScFuncs::accounts(ctx);
 a.func.call();
-let accounts = a.results.agents();
+let accounts = a.results.all_accounts();
 ```
 
 </TabItem>
@@ -184,7 +184,7 @@ let accounts = a.results.agents();
 ```go
 a := coreaccounts.ScFuncs.Accounts(ctx)
 a.Func.Call()
-accounts := a.Results.Agents()
+accounts := a.Results.AllAccounts()
 ```
 
 </TabItem>

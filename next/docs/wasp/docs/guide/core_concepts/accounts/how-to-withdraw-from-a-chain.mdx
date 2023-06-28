@@ -39,9 +39,9 @@ require.NoError(t, err)
 <TabItem value="soloctx">
 
 ```go
-// withdraw from chain *chainID* to wallet
+// withdraw from chain to wallet
 w := coreaccounts.ScFuncs.Withdraw(ctx.Sign(wallet))
-w.Func.TransferBaseTokens(1).PostToChain(chainID)
+w.Func.Post()
 require.NoError(t, ctx.Err)
 ```
 
@@ -49,20 +49,18 @@ require.NoError(t, ctx.Err)
 <TabItem value="rust">
 
 ```rust
-// withdraw from chain *chainID* to current common account
-// (there is no way to specify hname for withdrawals)
-let w = coreaccounts::ScFuncs::withdraw(ctx);
-w.func.transfer_base_tokens(1).post_to_chain(chainID);
+// withdraw from chain to wallet
+let w = coreaccounts::ScFuncs::withdraw(ctx.sign(wallet));
+w.func.post();
 ```
 
 </TabItem>
 <TabItem value="go">
 
 ```go
-// withdraw from chain *chainID* to current common account
-// (there is no way to specify hname for withdrawals)
-w := coreaccounts.ScFuncs.Withdraw(ctx)
-w.Func.TransferBaseTokens(1).PostToChain(chainID)
+// withdraw from chain to wallet
+w := coreaccounts.ScFuncs.Withdraw(ctx.sign(wallet))
+w.Func.Post()
 ```
 
 </TabItem>

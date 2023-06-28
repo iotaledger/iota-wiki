@@ -1,18 +1,16 @@
 ---
-description: Hornet is an EDF-supported community node written in Go. Bee is an IOTA Node implemented by the Foundation and written in Rust. We recommend using Hornet since it has several optional features that are not implemented in Bee.
+description: Node software is the backbone of the IOTA and Shimmer networks.
 image: /img/logo/preview.png
 keywords:
   - Node
   - Hornet
-  - Bee
   - Golang
-  - Rust
   - explanation
 ---
 
 # Node Software
 
-The node software is the backbone of the IOTA and Shimmer networks. Individual nodes run the software to help maintain the state of the ledger through peer-to-peer communication. Nodes are also entry points to the network for users. The node software implements the core protocol that defines the network rules.
+Node software is the backbone of the IOTA and Shimmer networks. Individual nodes run the software to help maintain the state of the ledger through peer-to-peer communication. Nodes are also entry points to the network for users. The node software implements the core protocol that defines the network rules.
 
 ## Hornet
 
@@ -23,19 +21,6 @@ for Stardust eases the development of application specific node extensions.
 
 - [Official GitHub Repository](https://github.com/iotaledger/hornet)
 - [Documentation](https://wiki.iota.org/hornet/develop/welcome)
-
-## Bee
-
-Bee is an IOTA Node implemented by the Foundation and written in Rust.
-
-- [Official GitHub Repository](https://github.com/iotaledger/bee/tree/shimmer-develop)
-- [Documentation](https://wiki.iota.org/bee/develop/welcome)
-
-:::info
-
-At this stage, we recommend using Hornet since it has several optional features that are not implemented in Bee so far.
-
-:::
 
 ## Node API Specification
 

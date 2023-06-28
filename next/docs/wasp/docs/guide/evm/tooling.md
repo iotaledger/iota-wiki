@@ -25,8 +25,7 @@ directly with an IOTA Smart Contracts chain running EVM as long as you take a co
 ## Tooling Considerations
 
 1. Please make sure you use the correct JSON-RPC endpoint URL in your tooling for your chain. You can find the JSON-RPC
-   endpoint URL in the Wasp dashboard, which you can find on [http://localhost:7000](http://localhost:7000) if you run
-   your Wasp node locally. The default login is **wasp**/**wasp**.
+   endpoint URL in the Wasp dashboard (`<URL>/wasp/dashboard` when using `node-docker-setup`).
 2. Please ensure you use the correct `Chain ID` configured while starting the JSON-RPC service. If you did not
    explicitly define this while starting the service, the default Chain ID will be `1074`.
 3. Fees are being handled on the IOTA Smart Contracts chain level, not the EVM level. Because of this, you can simply
@@ -63,10 +62,9 @@ Metamask.
 let your wallet interact with web applications utilizing an EVM chain (dApps).
 
 To use your EVM chain with MetaMask, simply open up MetaMask and click on the network drop-down list at the very top. At
-the bottom of this list, you will see the option `Custom RPC`. Click on this. For a local setup, use the values as shown
-in the image below:
+the bottom of this list, you will see the option `Custom RPC`. For example this would be the config to add the ShimmerEVM testnet:
 
-[![MetaMask Network](/img/metamask_beta.png)](/img/metamask_beta.png)
+![ShimmerEVM testnet config](/img/metamask_beta.png 'How to configure ShimmerEVM testnet in metamask')
 
 Ensure that your `RPC Url` and `Chain ID` are set correctly and match the dashboard values. The `Network Name` can be
 whatever you see fit.
@@ -92,7 +90,7 @@ the `Custom (1074) network`.
 
 ## Video Tutorial
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/yOyl30LQfac" title="Deploy Solidity Contract via Remix + Metamask" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/0_rmmprEKrM" title="ShimmerEVM Tutorial: Connect to ShimmerEVM Testnet & Deploy a Solidity Smart Contract" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## Hardhat
 
@@ -102,18 +100,11 @@ make sure you add the correct network parameters to your `hardhat.config.js`, fo
 
 ```javascript
 networks: {
-    local: {
-        url: 'http://localhost:9090/chain/rms1.../evm/jsonrpc',
-            chainId
-    :
-        1074,
-            accounts
-    :
-        [privkey],
-            timeout
-    :
-        60000
-    }
+    'shimmerevm-testnet': {
+      url: 'https://json-rpc.evm.testnet.shimmer.network',
+      chainId: 1071,
+      accounts: [priv_key],
+    },
 }
 ```
 
@@ -126,7 +117,7 @@ often offered through block explorer APIs.
 
 ## Video Tutorial
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/zfc4ENTQkDE" title="Deploy Solidity Contracts with Hardhat" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/rRscvKirroo" title="ShimmerEVM Tutorial: Deploying a Smart Contract with Hardhat" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## Ethers.js/Web3.js
 

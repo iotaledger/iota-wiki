@@ -20,8 +20,7 @@ keywords:
 ## 1. Deploy an IOTA Smart Contracts Chain
 
 When [deploying an IOTA Smart Contracts chain](../chains_and_nodes/setting-up-a-chain.md), EVM support is automatically
-added with the default configuration. The `wasp-cli chain deploy` command accepts some EVM-specific options listed
-below:
+added with the default configuration. The `wasp-cli chain deploy` command accepts the following EVM-specific option:
 
 - `--evm-chainid <n>`: EVM chain ID (default: 1074).
 
@@ -33,16 +32,8 @@ below:
 
   :::
 
-- `--evm-block-keep-amount <n>`: Amount of blocks to keep in storage. By default, ISC will keep all blocks.
-
-- `--evm-gas-limit <n>`: Block gas limit (15000000 gas units by default).
-
-- `--evm-gas-ratio <a>:<b>`: ISC gas : EVM gas ratio (1:1 by default). You can change the gas ratio after deployment by
-  calling the `setGasRatio` function of
-  the [`evm`](../core_concepts/core_contracts/evm.md) [core contract](../core_concepts/core_contracts/overview.md).
-
 You can verify that the EVM support is enabled by visiting
-the [Wasp dashboard](../chains_and_nodes/node-config#dashboard) and checking the "EVM" section on your ISC chain page.
+the Wasp dashboard and checking the "EVM" section on your ISC chain page.
 You should see the EVM chain ID and the JSON-RPC endpoint.
 
 ## 2. Fund an Ethereum Account on Your IOTA Smart Contracts Chain

@@ -17,7 +17,7 @@ The `accounts` contract is one of the [core contracts](overview.md) on each IOTA
 chain.
 
 This contract keeps a consistent ledger of on-chain accounts in its state,
-i.e. [the L2 ledger](../accounts/how-accounts-work).
+i.e. [the L2 ledger](../accounts/how-accounts-work.md).
 
 ---
 
@@ -38,39 +38,53 @@ As with every call, the gas fee is debited from the L2 account right after execu
 
 ### `withdraw()`
 
-Moves tokens from the caller's on-chain account to the caller's L1 address. The number of tokens to be withdrawn must be
-specified via the allowance of the request.
+Moves tokens from the caller's on-chain account to the caller's L1 address. The number of
+tokens to be withdrawn must be specified via the allowance of the request.
 
-:::note Storage Deposit
+:::note Contract Account
 
-A call to withdraw means that a L1 output will be created. Because of this, the withdrawn amount must be able to cover
-the L1 storage deposit. Otherwise, it will fail.
+Because contracts does not have a corresponding L1 address it does not make sense to
+have them call this function. It will fail with an error.
 
 :::
 
-### `transferAllowanceTo(a AgentID, c ForceOpenAccount)`
+:::note Storage Deposit
 
-Moves the specified allowance from the sender's L2 account to the given L2 account on the chain.
+A call to withdraw means that a L1 output will be created. Because of this, the withdrawn
+amount must be able to cover the L1 storage deposit. Otherwise, it will fail.
+
+:::
+
+### `transferAllowanceTo(a AgentID)`
+
+Transfers the specified allowance from the sender's L2 account to the given L2 account on
+the chain.
 
 #### Parameters
 
 - `a` (`AgentID`): The target L2 account.
-- `c` (optional `bool` - default: `false`): If the target Agent ID doesn't have funds on the chain, `c = true` specifies
-  that the account should be created. Otherwise, the call fails.
 
-### `harvest(f ForceMinimumBaseTokens)`
+### `transferAccountToChain(g GasReserve)`
 
-Moves all tokens from the chain [common account](../accounts/the-common-account) to the sender's L2 account. The chain
-owner is the only one who can call this entry point.
+Transfers the specified allowance from the sender SC's L2 account on
+the target chain to the sender SC's L2 account on the origin chain.
 
 #### Parameters
 
-- `f` (optional `uint64` - default: `MinimumBaseTokensOnCommonAccount`): Specifies the amount of base tokens to leave in
-  the common account.
+- `g` (`uint64`): Optional gas amount to reserve in the allowance for
+  the internal call to transferAllowanceTo(). Default 100 (MinGasFee).
+
+:::note Important Detailed Information
+
+[Read carefully before using this function.](xfer.md)
+
+:::
 
 ### `foundryCreateNew(t TokenScheme) s SerialNumber`
 
 Creates a new foundry with the specified token scheme, and assigns the foundry to the sender.
+
+You can call this end point from the CLI using `wasp-cli chain create-foundry -h`
 
 #### Parameters
 
@@ -167,7 +181,7 @@ Returns a list of all agent IDs that own assets on the chain.
 
 #### Returns
 
-A map of `AgentiD` => `0xff`.
+A map of `AgentiD` => `0x01`.
 
 ### `getNativeTokenIDRegistry()`
 
@@ -175,7 +189,7 @@ Returns a list of all native tokenIDs that are owned by the chain.
 
 #### Returns
 
-A map of [`TokenID`](#tokenid) => `0xff`
+A map of [`TokenID`](#tokenid) => `0x01`
 
 ### `foundryOutput(s FoundrySerialNumber)`
 
@@ -197,9 +211,49 @@ Returns the NFT IDs for all NFTs owned by the given account.
 
 #### Returns
 
-- `i` ([`Array16`](https://github.com/dessaya/wasp/blob/develop/packages/kv/collections/array16.go)
-  of [`iotago::NFTID`](https://github.com/iotaledger/iota.go/blob/develop/output_nft.go)): The NFT IDs owned by the
-  account
+- `i` ([`Array`](https://github.com/iotaledger/wasp/blob/develop/packages/kv/collections/array.go)
+  of [`iotago::NFTID`](https://github.com/iotaledger/iota.go/blob/develop/output_nft.go)):
+  The NFT IDs owned by the account
+
+### `accountNFTAmount(a AgentID)`
+
+Returns the number of NFTs owned by the given account.
+
+#### Parameters
+
+- `a` (`AgentID`): The account Agent ID
+
+#### Returns
+
+- `A` (`uint32`) Amount of NFTs owned by the account
+
+### `accountNFTsInCollection(a AgentID)`
+
+Returns the NFT IDs for all NFTs in the given collection that are owned by the given account.
+
+#### Parameters
+
+- `a` (`AgentID`): The account Agent ID
+- `C` (`NFTID`): The NFT ID of the collection
+
+#### Returns
+
+- `i` ([`Array`](https://github.com/iotaledger/wasp/blob/develop/packages/kv/collections/array.go)
+  of [`iotago::NFTID`](https://github.com/iotaledger/iota.go/blob/develop/output_nft.go)):
+  The NFT IDs in the collection owned by the account
+
+### `accountNFTAmountInCollection(a AgentID)`
+
+Returns the number of NFTs in the given collection that are owned by the given account.
+
+#### Parameters
+
+- `a` (`AgentID`): The account Agent ID
+- `C` (`NFTID`): The NFT ID of the collection
+
+#### Returns
+
+- `A` (`uint32`) Amount of NFTs in the collection owned by the account
 
 ### `accountFoundries(a AgentID)`
 
@@ -211,7 +265,7 @@ Returns all foundries owned by the given account.
 
 #### Returns
 
-A map of [`FoundrySerialNumber`](#foundryserialnumber) => `0xff`
+A map of [`FoundrySerialNumber`](#foundryserialnumber) => `0x01`
 
 ### `nftData(z NFTID)`
 

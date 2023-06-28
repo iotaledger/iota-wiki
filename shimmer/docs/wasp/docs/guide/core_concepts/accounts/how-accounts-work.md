@@ -20,7 +20,7 @@ ledger.
 Tokens controlled by an address can be moved to another address by providing a valid signature using the private key
 that controls the source address.
 
-In IOTA Smart Contracts, [each chain has a L1 address](../states#digital-assets-on-the-chain) (also known as the _Chain
+In IOTA Smart Contracts, [each chain has a L1 address](../states.md#digital-assets-on-the-chain) (also known as the _Chain
 ID_) which enables it to control L1 assets (base tokens, native tokens and NFTs).
 The chain acts as a custodian of the L1 assets on behalf of different entities, thus providing a _L2 Ledger_.
 
@@ -42,11 +42,11 @@ Tokens in an address account can only be moved through a request signed by the p
 ### Smart Contract
 
 Any smart contract can be the owner of a L2 account. Recall that a smart
-contract is uniquely identified in a chain by a [_hname_](../smart-contract-anatomy#identifying-a-smart-contract).
+contract is uniquely identified in a chain by a [_hname_](../smart-contract-anatomy.md#identifying-a-smart-contract).
 However, the hname is not enough to identify the account since a smart contract on another chain could own it.
 
 Thus, the Agent ID of a smart contract is composed as the contract hname plus the [_chain
-ID_](../states#digital-assets-on-the-chain), with syntax `<hname>@<chain-id>`. For
+ID_](../states.md#digital-assets-on-the-chain), with syntax `<hname>@<chain-id>`. For
 example: `cebf5908@tgl1pzehtgythywhnhnz26s2vtpe2wy4y64pfcwkp9qvzhpwghzxhwkps2tk0nd`.
 
 Note that this allows trustless transfers of assets between smart contracts on the same or different chains.
@@ -59,12 +59,11 @@ The chain owns a unique L2 account, called the _common account_.
 The common account is controlled by the chain owner (defined in the chain root contract) and is used to store funds
 collected by fees or sent to the chain L1 address.
 
-The Agent ID of the common account is `<hname=0>@<chain-id>`. For
-example: `00000000@tgl1pzehtgythywhnhnz26s2vtpe2wy4y64pfcwkp9qvzhpwghzxhwkps2tk0nd`.
+The Agent ID of the common account is `<hname=0>@<address zero (0x00000...)>`.
 
 ### Ethereum Address
 
-An L2 account can also be owned by an Ethereum address. See [EVM](../../evm/introduction) for more information.
+An L2 account can also be owned by an Ethereum address. See [EVM](../../evm/introduction.md) for more information.
 The Agent ID of an Ethereum address is just the address prefixed with `0x`,
 e.g. `0xd36722adec3edcb29c8e7b5a47f352d701393462`.
 
@@ -72,14 +71,12 @@ Tokens in an Ethereum account can only be moved by sending an Ethereum transacti
 
 ## The Accounts Contract
 
-The [`accounts` core contract](../core_contracts/accounts) is responsible for managing the L2 ledger.
+The [`accounts` core contract](../core_contracts/accounts.md) is responsible for managing the L2 ledger.
 By calling this contract, it is possible to:
 
 - [View current account balances](./view-account-balances.mdx)
 - [Deposit funds to the chain](./how-to-deposit-to-a-chain.mdx)
 - [Withdraw funds from the chain](./how-to-withdraw-from-a-chain.mdx)
-- [Harvest](./the-common-account.mdx) - can only be called by the chain owner, to move funds from the chain common
-  account to their account.
 
 ## Example
 

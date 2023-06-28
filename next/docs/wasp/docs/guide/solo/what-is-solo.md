@@ -25,7 +25,7 @@ validate real smart contracts and entire inter-chain protocols before deploying 
 
 ### Prerequisites
 
-[Go (version 1.19)](https://tip.golang.org/doc/go1.19). As _Solo_ tests are written in Go, you must
+[Go (version 1.20)](https://tip.golang.org/doc/go1.20). As _Solo_ tests are written in Go, you must
 [install Go](https://go.dev/doc/install).
 
 ### Access the Solo Framework
@@ -62,7 +62,7 @@ You can browse the Solo Go API reference (updated to the `master` branch) in
 ### Example Contracts
 
 You will need a smart contract to test along with Solo.
-You can find example implementations of Rust/Wasm smart contracts, including source code and tests, in the Wasp
+You can find example implementations of Wasm smart contracts, including source code and tests, in the Wasp
 repository’s [contracts/wasm folder](https://github.com/iotaledger/wasp/tree/develop/contracts/wasm).
 
 For information on creating Wasm smart contracts, refer to the [Wasm VM chapter](../wasm_vm/intro.mdx).
@@ -74,10 +74,10 @@ the [Wasp repository](https://github.com/iotaledger/wasp/tree/develop/documentat
 
 You can run `*_test` files by moving to their directory and running the following command:
 
-```bash
+```shell
 go test
 ```
 
 If you run this command from the `/documentation/tutorial-examples` folder, you will run the
-[Tutorial Test](https://github.com/iotaledger/wasp/tree/develop/documentation/tutorial-examples/tutorial-test.go), which
-contains all the examples explained in the following sections.
+[Tutorial Test](https://github.com/iotaledger/wasp/blob/develop/documentation/tutorial-examples/test/tutorial_test.go),
+which contains all the examples explained in the following sections.

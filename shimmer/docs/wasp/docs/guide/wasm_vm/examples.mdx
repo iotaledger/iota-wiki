@@ -38,7 +38,7 @@ new member/factor combination to the member group.
 func TestAddMemberOk(t *testing.T) {
     ctx := wasmsolo.NewSoloContext(t, dividend.ScName, dividend.OnDispatch)
 
-    member1 := ctx.NewSoloAgent()
+    member1 := ctx.NewSoloAgent("member1")
     dividendMember(ctx, member1, 100)
     require.NoError(t, ctx.Err)
 }
@@ -89,7 +89,7 @@ func TestAddMemberFailMissingAddress(t *testing.T) {
 func TestAddMemberFailMissingFactor(t *testing.T) {
     ctx := wasmsolo.NewSoloContext(t, dividend.ScName, dividend.OnDispatch)
 
-    member1 := ctx.NewSoloAgent()
+    member1 := ctx.NewSoloAgent("member1")
     member := dividend.ScFuncs.Member(ctx)
     member.Params.Address().SetValue(member1.ScAgentID().Address())
     member.Func.Post()
@@ -121,7 +121,7 @@ Now let's see a more complex example:
 func TestDivide1Member(t *testing.T) {
     ctx := wasmsolo.NewSoloContext(t, dividend.ScName, dividend.OnDispatch)
 
-    member1 := ctx.NewSoloAgent()
+    member1 := ctx.NewSoloAgent("member1")
     bal := ctx.Balances(member1)
 
     dividendMember(ctx, member1, 100)
@@ -172,7 +172,7 @@ Now let's skip to the most complex test of all:
     func TestDivide3Members(t *testing.T) {
     ctx := wasmsolo.NewSoloContext(t, dividend.ScName, dividend.OnDispatch)
 
-    member1 := ctx.NewSoloAgent()
+    member1 := ctx.NewSoloAgent("member1")
     bal := ctx.Balances(member1)
 
     dividendMember(ctx, member1, 25)
@@ -182,7 +182,7 @@ Now let's skip to the most complex test of all:
     bal.Originator += ctx.StorageDeposit - ctx.GasFee
     bal.VerifyBalances(t)
 
-    member2 := ctx.NewSoloAgent()
+    member2 := ctx.NewSoloAgent("member2")
     bal = ctx.Balances(member1, member2)
 
     dividendMember(ctx, member2, 50)
@@ -261,11 +261,11 @@ possible to have a Func return a result and test for certain result values.
 func TestGetFactor(t *testing.T) {
     ctx := wasmsolo.NewSoloContext(t, dividend.ScName, dividend.OnDispatch)
 
-    member1 := ctx.NewSoloAgent()
+    member1 := ctx.NewSoloAgent("member1")
     dividendMember(ctx, member1, 25)
     require.NoError(t, ctx.Err)
 
-    member2 := ctx.NewSoloAgent()
+    member2 := ctx.NewSoloAgent("member2")
     dividendMember(ctx, member2, 50)
     require.NoError(t, ctx.Err)
 

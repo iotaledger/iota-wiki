@@ -30,8 +30,8 @@ Once you have completed all the installation [requirements](#requirements), you 
 ```sh
 mkdir private_tangle
 cd private_tangle
-curl -L -O "https://github.com/iotaledger/hornet/releases/download/v2.0.0-rc.1/HORNET-2.0.0-rc.1-private_tangle.tar.gz"
-tar -zxf HORNET-2.0.0-rc.1-private_tangle.tar.gz
+curl -L -O "https://github.com/iotaledger/hornet/releases/download/v2.0.0-rc.6/HORNET-2.0.0-rc.6-private_tangle.tar.gz"
+tar -zxf HORNET-2.0.0-rc.6-private_tangle.tar.gz
 ```
 
 ## Bootstrap your network
