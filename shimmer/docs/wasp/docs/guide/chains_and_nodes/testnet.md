@@ -33,18 +33,19 @@ You can access the testnet via the following endpoints:
 
 ## Interact with EVM
 
-We have deployed an experimental EVM chain that you can interact with. To begin, add a custom network to Metamask with
+We have deployed a ShimmerEVM testnet chain that you can interact with. To begin, add a custom network to Metamask with
 the following configuration:
 
-| Key      | Value                                        |
-| -------- | -------------------------------------------- |
-| RPC URL  | https://json-rpc.evm.testnet.shimmer.network |
-| Chain ID | 1071                                         |
+| Key          | Value                                        |
+| ------------ | -------------------------------------------- |
+| Name         | ShimmerEVM Testnet                           |
+| Symbol       | testSMR                                      |
+| RPC URL      | https://json-rpc.evm.testnet.shimmer.network |
+| Chain ID     | 1072                                         |
+| Explorer URL | https://explorer.evm.testnet.shimmer.network |
 
 :::note
-
-The other values (network name and currency symbol) can be whatever value you like.
-
+There also is a wrapped Shimmer testtoken available, deployed on `0xdDAA129fac74994b52C691E67981DD08c2b9cC52`
 :::
 
 We have a faucet for you to use directly with your EVM address which can be found on https://toolkit.sc.testnet.shimmer.network/
