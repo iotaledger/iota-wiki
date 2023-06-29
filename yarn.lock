@@ -2748,6 +2748,7 @@ __metadata:
     react-player: ^2.11.2
     react-popper: ^2.3.0
     react-select: ^5.2.2
+    rehype-jargon: ^2.22.2
     rehype-katex: 4
     rehype-lodash-template: ^0.2.1
     remark-code-import: ^0.4.0
@@ -9829,6 +9830,19 @@ __metadata:
   languageName: node
   linkType: hard
 
+"hast-util-from-html@npm:^1.0.0":
+  version: 1.0.2
+  resolution: "hast-util-from-html@npm:1.0.2"
+  dependencies:
+    "@types/hast": ^2.0.0
+    hast-util-from-parse5: ^7.0.0
+    parse5: ^7.0.0
+    vfile: ^5.0.0
+    vfile-message: ^3.0.0
+  checksum: 81cbda7dfa4c02fcb4e4359a48e25ebee7bef133dc607c2c036c53df27efacdfa22313a86398391ef22b31decda98c7110f1b441c5a48f419514be6b5d4b5603
+  languageName: node
+  linkType: hard
+
 "hast-util-from-parse5@npm:^6.0.0":
   version: 6.0.1
   resolution: "hast-util-from-parse5@npm:6.0.1"
@@ -15173,6 +15187,16 @@ plugin-image-zoom@flexanalytics/plugin-image-zoom:
   languageName: node
   linkType: hard
 
+"rehype-jargon@npm:^2.22.2":
+  version: 2.22.2
+  resolution: "rehype-jargon@npm:2.22.2"
+  dependencies:
+    hast-util-from-html: ^1.0.0
+    unist-util-visit: ^4.1.0
+  checksum: e241df1b404e6f85521a54db5afa172b0e219aff8ba8a210dc94cbde01b1dc63d59b3be42d6a07d6cb8ee2b84b380820cdb8bc45920b660973f5361f931c853c
+  languageName: node
+  linkType: hard
+
 "rehype-katex@npm:4":
   version: 4.0.0
   resolution: "rehype-katex@npm:4.0.0"
@@ -17565,7 +17589,7 @@ plugin-image-zoom@flexanalytics/plugin-image-zoom:
   languageName: node
   linkType: hard
 
-"unist-util-visit@npm:^4.0.0":
+"unist-util-visit@npm:^4.0.0, unist-util-visit@npm:^4.1.0":
   version: 4.1.2
   resolution: "unist-util-visit@npm:4.1.2"
   dependencies:
