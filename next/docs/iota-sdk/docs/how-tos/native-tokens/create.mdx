@@ -4,12 +4,12 @@ sidebar_label: Create
 description: 'How to create native tokens'
 image: /img/logo/iota_mark_light.png
 keywords:
-- how to
-- create a native token
-- nodejs
-- python
-- java
-- rust
+  - how to
+  - create a native token
+  - nodejs
+  - python
+  - java
+  - rust
 ---
 
 import CodeBlock from '@theme/CodeBlock';
@@ -21,10 +21,10 @@ import RustCode from '!!raw-loader!../../../../../sdk/examples/how_tos/native_to
 import TipFaucet from '../../_admonitions/_tip-faucet.md';
 
 The stardust update allows you to create your own [native tokens](https://wiki.iota.org/shimmer/introduction/explanations/what_is_stardust/tokenization#native-tokens)
-Native tokens are minted by a so-called Foundry. The Foundry allows you to specify a max supply once and change the circulating supply. You can also specify some custom metadata in the foundry output or follow a standard like [IRC30](https://wiki.iota.org/tips/tips/TIP-0030/).   
+Native tokens are minted by a so-called Foundry. The Foundry allows you to specify a max supply once and change the circulating supply. You can also specify some custom metadata in the foundry output or follow a standard like [IRC30](https://wiki.iota.org/tips/tips/TIP-0030/).  
 To create a Foundry you need an Alias Output which owns it. This Alias Output only needs to be generated once and can own multiple foundries.
 
-<TipFaucet/>
+<TipFaucet />
 
 ## Code Example
 
@@ -35,22 +35,16 @@ The following example will:
 3. Create the `CreateNativeTokenParams`.
 4. Create the native token by calling the `Account.create_native_token(params, options)` function.
 
-<Tabs groupId="language">
-    <TabItem value="rust" label="Rust">
-        <CodeBlock className="language-rust">
-            {RustCode}
-        </CodeBlock>
-    </TabItem>
-    <TabItem value="nodejs" label="Nodejs">
-        <CodeBlock className="language-typescript">
-            {NodejsCode}
-        </CodeBlock>
-    </TabItem>
-    <TabItem value="python" label="Python">
-        <CodeBlock className="language-python">
-            {PythonCode}
-        </CodeBlock>
-    </TabItem>
+<Tabs groupId='language'>
+  <TabItem value='rust' label='Rust'>
+    <CodeBlock className='language-rust'>{RustCode}</CodeBlock>
+  </TabItem>
+  <TabItem value='nodejs' label='Nodejs'>
+    <CodeBlock className='language-typescript'>{NodejsCode}</CodeBlock>
+  </TabItem>
+  <TabItem value='python' label='Python'>
+    <CodeBlock className='language-python'>{PythonCode}</CodeBlock>
+  </TabItem>
 </Tabs>
 
 ## Expected Output

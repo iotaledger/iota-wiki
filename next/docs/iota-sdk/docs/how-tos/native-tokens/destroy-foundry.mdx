@@ -4,18 +4,18 @@ sidebar_label: Destroy a Foundry
 description: 'How to destroy a foundry using iota-sdk'
 image: /img/logo/iota_mark_light.png
 keywords:
-- how to
-- destroy
-- destroy foundry
-- foundry
-- nodejs
-- python
-- rust
+  - how to
+  - destroy
+  - destroy foundry
+  - foundry
+  - nodejs
+  - python
+  - rust
 ---
 
 import CodeBlock from '@theme/CodeBlock';
-import Tabs from "@theme/Tabs";
-import TabItem from "@theme/TabItem";
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 import NodejsCode from '!!raw-loader!../../../../../bindings/nodejs/examples/how_tos/native_tokens/destroy-foundry.ts';
 import PythonCode from '!!raw-loader!../../../../../bindings/python/examples/how_tos/native_tokens/destroy_foundry.py';
 import RustCode from '!!raw-loader!../../../../../sdk/examples/how_tos/native_tokens/destroy_foundry.rs';
@@ -23,9 +23,9 @@ import DestroyFoundry from '../../_admonitions/_destroy_foundry.md';
 
 You can destroy a foundry by calling the `Account.burn(burn, options)` function. The function will
 destroy a foundry output as long as its circulating
-[native token](https://wiki.iota.org/shimmer/introduction/explanations/ledger/foundry) supply is zero. 
+[native token](https://wiki.iota.org/shimmer/introduction/explanations/ledger/foundry) supply is zero.
 
-<DestroyFoundry/>
+<DestroyFoundry />
 
 ## Code Example
 
@@ -41,22 +41,16 @@ The following example will:
 4. Try to destroy the first [foundry](https://wiki.iota.org/shimmer/introduction/explanations/ledger/foundry) output.
 5. Get the account's foundry count again to show the difference after step 4.
 
-<Tabs groupId="language">
-    <TabItem value="rust" label="Rust">
-        <CodeBlock className="language-rust">
-            {RustCode}
-        </CodeBlock>
-    </TabItem>
-    <TabItem value="nodejs" label="Nodejs">
-        <CodeBlock className="language-typescript">
-            {NodejsCode}
-        </CodeBlock>
-    </TabItem>
-    <TabItem value="python" label="Python">
-        <CodeBlock className="language-python">
-            {PythonCode}
-        </CodeBlock>
-    </TabItem>
+<Tabs groupId='language'>
+  <TabItem value='rust' label='Rust'>
+    <CodeBlock className='language-rust'>{RustCode}</CodeBlock>
+  </TabItem>
+  <TabItem value='nodejs' label='Nodejs'>
+    <CodeBlock className='language-typescript'>{NodejsCode}</CodeBlock>
+  </TabItem>
+  <TabItem value='python' label='Python'>
+    <CodeBlock className='language-python'>{PythonCode}</CodeBlock>
+  </TabItem>
 </Tabs>
 
 ## Expected Output

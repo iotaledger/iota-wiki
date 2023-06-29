@@ -150,12 +150,12 @@ Creates a native token.
 
 #### Parameters
 
-| Name                      | Optional  | Default | Example       |
-| ------------------------- | --------- | ------- | ------------- |
-| `circulating_supply`      | ✘         | N/A     | 1000          |
-| `maximum_supply`          | ✘         | N/A     | 1000          |
-| `foundry_metadata_hex`    | ✓         | None    | 0xabcdef      |
-| `foundry_metadata_file`   | ✓         | None    | metadata.json |
+| Name                    | Optional | Default | Example       |
+| ----------------------- | -------- | ------- | ------------- |
+| `circulating_supply`    | ✘        | N/A     | 1000          |
+| `maximum_supply`        | ✘        | N/A     | 1000          |
+| `foundry_metadata_hex`  | ✓        | None    | 0xabcdef      |
+| `foundry_metadata_file` | ✓        | None    | metadata.json |
 
 #### Examples
 
@@ -302,10 +302,10 @@ Melts a native token.
 
 #### Parameters
 
-| Name       | Optional  | Default | Example                                                                        |
-| ---------- | --------- | ------- | ------------------------------------------------------------------------------ |
-| `token_id` | ✘         | N/A     | 0x08860e1f3593ba86c597cf86f61d8b04d8a714c02c7c5da7132d45be9c2ce6445c0300000000 |
-| `amount`   | ✘         | N/A     | 100                                                                            |
+| Name       | Optional | Default | Example                                                                        |
+| ---------- | -------- | ------- | ------------------------------------------------------------------------------ |
+| `token_id` | ✘        | N/A     | 0x08860e1f3593ba86c597cf86f61d8b04d8a714c02c7c5da7132d45be9c2ce6445c0300000000 |
+| `amount`   | ✘        | N/A     | 100                                                                            |
 
 #### Example
 
@@ -321,10 +321,10 @@ Mints more of a native token.
 
 #### Parameters
 
-| Name       | Optional  | Default | Example                                                                        |
-| ---------- | --------- | ------- | ------------------------------------------------------------------------------ |
-| `token_id` | ✘         | N/A     | 0x08860e1f3593ba86c597cf86f61d8b04d8a714c02c7c5da7132d45be9c2ce6445c0300000000 |
-| `amount`   | ✘         | N/A     | 10                                                                             |
+| Name       | Optional | Default | Example                                                                        |
+| ---------- | -------- | ------- | ------------------------------------------------------------------------------ |
+| `token_id` | ✘        | N/A     | 0x08860e1f3593ba86c597cf86f61d8b04d8a714c02c7c5da7132d45be9c2ce6445c0300000000 |
+| `amount`   | ✘        | N/A     | 10                                                                             |
 
 #### Example
 

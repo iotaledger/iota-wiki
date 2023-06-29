@@ -17,7 +17,7 @@ The result of preparing a create operation
 
 The token id of the created token
 
-___
+---
 
 ### transaction
 
