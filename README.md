@@ -65,22 +65,14 @@ The IOTA Wiki is built using [TypeScript](https://www.typescriptlang.org/), [Rea
 
 Because the Wiki is a large project composed of several Docusaurus builds and external documentation, a full build takes a while. To speed up development, we provide environment variables to select different configurations, and some convenience scripts with environment variables pre-configured.
 
-To preview the entire Wiki locally, use the following steps. For more selective preview and build configurations, see [Environment variables](#environment-variables) and [Pre-configured scripts](#pre-configured-scripts) for reference.
+To preview the Wiki locally, use the following steps. For more preview and build configurations, see [Pre-configured scripts](#pre-configured-scripts) and [Environment variables](#environment-variables) for reference.
 
 1. Clone the repository by running `git clone https://github.com/iota-wiki/iota-wiki.git` and go to the directory with `cd iota-wiki`.
 2. Install dependencies with `yarn`.
-3. Check out the latest version of external documentation with `yarn checkout:remote`.
-4. Build all environments including external documentation and serve the result with `EXTERNAL="*,*/*,*/*/*" yarn start:all`.
+3. Preview a specific environment with `yarn start:<environment>` where environment can be `iota`, `shimmer` or `next`.
 
-#### Environment variables
-
-| Variable    | Accepts                                 | Default       | Explanation                                                                                                                  |
-| ----------- | --------------------------------------- | ------------- | ---------------------------------------------------------------------------------------------------------------------------- |
-| ENVIRONMENT | One of `iota`, `shimmer`, or `next`     | `iota`        | The environment to build.                                                                                                    |
-| EXTERNAL    | A comma separated list of glob patterns |               | What external documentation to include in the build. Glob patterns are relative to the `<environment>/external` directories. |
-| MODE        | One of `development`, or `production`   | `development` | Depending on the mode chosen, some functionalities are included or excluded (analytics for example).                         |
-
-> For example `ENVIRONMENT=iota EXTERNAL=identity.rs/**,wallet.rs/** yarn start` starts a development server for the `iota` environment with all `identity.rs` and `wallet.rs` versions included.
+You should always prefer previewing only a specific environment of the Wiki, but if you need a complete Wiki build you can replace step 3 with `yarn start:all`.
+Keep in mind this will take a while and has no hot reloading capability.
 
 #### Pre-configured scripts
 
@@ -90,19 +82,25 @@ To preview the entire Wiki locally, use the following steps. For more selective 
 | `start:all`                     | Build all environments and serve the result, without hot reloading on changes.                                                                                      |
 | `build:<environment>`           | Build the `iota`, `shimmer`, or `next` environment.                                                                                                                 |
 | `build:all`                     | Build all environments.                                                                                                                                             |
-| `checkout`                      | Check out external documentation.                                                                                                                                   |
-| `checkout:<environment>`        | Check out external documentation for the `iota`, `shimmer`, or `next` environment.                                                                                  |
-| `checkout:remote:<environment>` | Check out the latest version of external documentation.                                                                                                             |
-| `checkout:remote`               | Check out the latest version of external documentation for the `iota`, `shimmer`, or `next` environment.                                                            |
+| `checkout:remote:<environment>` | Check out the latest version of external documentation for the `iota`, `shimmer`, or `next` environment.                                                            |
+| `checkout:remote`               | Check out the latest version of external documentation.                                                                                                             |
 | `generate:api`                  | Generate available API documentation configured through the [Docusaurus OpenAPI plugin](https://www.npmjs.com/package/@paloaltonetworks/docusaurus-plugin-openapi). |
 
-> For example `EXTERNAL=identity.rs/**,wallet.rs/** yarn start:iota` starts a development server for the `iota` environment with all `identity.rs` and `wallet.rs` versions included.
+#### Environment variables
+
+| Variable    | Accepts                                 | Default       | Explanation                                                                                                                  |
+| ----------- | --------------------------------------- | ------------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| ENVIRONMENT | One of `iota`, `shimmer`, or `next`     | `iota`        | The environment to build.                                                                                                    |
+| MODE        | One of `development`, or `production`   | `development` | Depending on the mode chosen, some functionalities are included or excluded (analytics for example).                         |
+| EXTERNAL    | A comma separated list of glob patterns |               | What external documentation to include in the build. Glob patterns are relative to the `<environment>/external` directories. |
+
+> For example `ENVIRONMENT=iota EXTERNAL=tips/** yarn start` starts a development server for the `iota` environment with the TIPs included
 
 <!-- CONTRIBUTING -->
 
 ## Contributing
 
-The IOTA Wiki is maintained by the community. We will review all issues and pull requests posted to this repository. If you notice any mistakes, or feel something is missing, feel free to create an issue to discuss with the team or directly create a pull request with suggestions. Here is a basic workflow to open a pull request:
+The IOTA Wiki is maintained by the IF and community contributions are always welcome. The DX team and related Teams from the IF will review all issues and pull requests posted to this repository. If you notice any mistakes, or feel something is missing, feel free to create an issue to discuss with the team or directly create a pull request with suggestions. Here is a basic workflow to open a pull request:
 
 1. Fork this repository to your own account and clone it (`git clone https://github.com/<YOUR_USERNAME>/iota-wiki.git`)
 2. Create a feature branch for your changes (`git checkout -b feat/amazing-feature`).
@@ -129,13 +127,6 @@ Jeroen van den Hout - [jlvandenhout](https://github.com/jlvandenhout) - jvdhout#
 Dr.Electron - [Dr-Electron](https://github.com/Dr-Electron) - Dr.Electron#9370  
 Critical - [Critical94](https://github.com/Critical94) - Critical#7111  
 JSto - [JSto91](https://github.com/JSto91) - JSto#3746
-
-## Donate
-
-The IOTA Wiki is a completely voluntary project put together, maintained, and contributed to by a group of enthusiastic community members.
-Feel free to support our work:
-
-`iota1qzrmyrnfhfauhv6gax50ncx844uppq4c5dddp3gk99ha0lx5jeqkwk6dapx`
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
