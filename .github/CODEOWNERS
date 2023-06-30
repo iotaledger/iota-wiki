@@ -1,38 +1,37 @@
 # clients
-**/iota.rs @iotaledger/iota-sdk
-**/wallet.rs @iotaledger/iota-sdk
-**/iota-sdk @iotaledger/iota-sdk
-**/iota.js @iotaledger/iota-sdk
+**/iota.rs @thibault-martinez
+**/wallet.rs @thibault-martinez
+**/iota-sdk @thibault-martinez
+**/iota.js @thibault-martinez
 
 # chronicle
-**/chronicle @iotaledger/chronicle
+**/chronicle @Alexandcoats
 
 # goshimmer
 **/goshimmer @iotaledger/goshimmer
 
 # hornet and inx plugins
-**/hornet @iotaledger/hornet
-**/inx-api-core-v0 @iotaledger/hornet
-**/inx-api-core-v1 @iotaledger/hornet
-**/inx-coordinator @iotaledger/hornet
-**/inx-dashboard @iotaledger/hornet
-**/inx-faucet @iotaledger/hornet
-**/inx-indexer @iotaledger/hornet
-**/inx-irc-metadata @iotaledger/hornet
-**/inx-mqtt @iotaledger/hornet
-**/inx-participation @iotaledger/hornet
-**/inx-poi @iotaledger/hornet
-**/inx-spammer @iotaledger/hornet
+**/hornet @muXxer
+**/inx-api-core-v0 @alexsporn
+**/inx-api-core-v1 @alexsporn
+**/inx-coordinator @alexsporn
+**/inx-dashboard @alexsporn
+**/inx-faucet @alexsporn
+**/inx-indexer @alexsporn
+**/inx-irc-metadata @alexsporn
+**/inx-mqtt @alexsporn
+**/inx-participation @alexsporn
+**/inx-poi @alexsporn
+**/inx-spammer @alexsporn
 
 # identity
-**/identity @iotaledger/identity
+**/identity @eike-hass
 
 # protocol - introduction-docs
-**/introduction-docs @iotaledger/shimmer-team
+**/introduction-docs @luca-moser
 
 # research
-**/iota-2.0-research-specifications @iotaledger/research
+**/iota-2.0-research-specifications @darcy-camargo
 
 # WASP - ISC
-**/wasp @iotaledger/smart-contracts
-
+**/wasp @fijter
