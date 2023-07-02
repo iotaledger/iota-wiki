@@ -92,6 +92,19 @@ async function glob(patterns, directoryPath = '.') {
   );
 }
 
+/**
+ * Finds static directories using a glob path pattern relative to the cwd.
+ * @param {string} pattern
+ * @returns
+ */
+async function globStatic(pattern, cwd = __dirname) {
+  if (!pattern) return [];
+
+  const { globby } = await import('globby');
+  const staticDir = await globby(cwd + pattern, { onlyDirectories: true });
+  return staticDir;
+}
+
 // Inspired by https://github.com/dyte-in/docs/
 /**
  * Create a section
@@ -131,4 +144,5 @@ module.exports = {
   glob,
   merge,
   create_doc_plugin,
+  globStatic,
 };

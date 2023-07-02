@@ -1,11 +1,13 @@
 const path = require('path');
 const contentConfigs = require('./contentPlugins');
-const { create_doc_plugin } = require('../src/utils/config');
+const { create_doc_plugin, globStatic } = require('../src/utils/config');
 
 module.exports = async () => {
   const contentPlugins = (await contentConfigs()).map((contentConfig) =>
     create_doc_plugin(contentConfig),
   );
+
+  const staticDirs = await globStatic('/docs/**/static/', __dirname);
 
   return {
     title: 'IOTA Wiki',
@@ -232,7 +234,6 @@ module.exports = async () => {
         },
       ],
     ],
-
     stylesheets: [
       {
         href: 'https://cdn.jsdelivr.net/npm/katex@0.13.24/dist/katex.min.css',
@@ -242,22 +243,6 @@ module.exports = async () => {
         crossorigin: 'anonymous',
       },
     ],
-    staticDirectories: [
-      path.resolve(__dirname, './docs/blueprints/static'),
-      path.resolve(__dirname, './docs/chronicle/static'),
-      path.resolve(__dirname, './docs/goshimmer/static'),
-      path.resolve(__dirname, './docs/hornet/static'),
-      path.resolve(__dirname, './docs/integration-services/static'),
-      path.resolve(__dirname, './docs/introduction-docs/static'),
-      path.resolve(__dirname, './docs/iota-2.0-research-specifications/static'),
-      path.resolve(__dirname, './docs/iota.rs/static'),
-      path.resolve(__dirname, './docs/identity.rs/v0.5.0/static'),
-      path.resolve(__dirname, './docs/identity.rs/v0.6.0/static'),
-      path.resolve(__dirname, './docs/streams/static'),
-      path.resolve(__dirname, './docs/stronghold.rs/static'),
-      path.resolve(__dirname, './docs/wallet.rs/static'),
-      path.resolve(__dirname, './docs/zebra-iota-edge-sdk/static'),
-      path.resolve(__dirname, '/static'),
-    ],
+    staticDirectories: [...staticDirs],
   };
 };
