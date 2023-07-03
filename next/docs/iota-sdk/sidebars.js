@@ -31,7 +31,7 @@ if (directoryExists(__dirname + '/docs/references/python')) {
         dirName: 'references/python/iota_sdk',
       },
     ],
-  }
+  };
 }
 
 var nodejs_references = {};
@@ -75,7 +75,7 @@ if (directoryExists(__dirname + '/docs/references/nodejs')) {
         ],
       },
     ],
-  }
+  };
 }
 
 module.exports = {
