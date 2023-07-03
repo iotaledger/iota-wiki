@@ -24,14 +24,14 @@ Helper struct for offline signing
 - **prepared_transaction_data**_: dict of prepared data_  
    The data of a prepared transaction object
 
-## PreparedMintTokenTransaction Objects
+## PreparedCreateTokenTransaction Objects
 
 ```python
-class PreparedMintTokenTransaction(PreparedTransactionData)
+class PreparedCreateTokenTransaction(PreparedTransactionData)
 ```
 
 The function returns the token_id as a string.
 
 **Returns**:
 
-The token id of the PreparedMintTokenTransaction.
+The token id of the PreparedCreateTokenTransaction.

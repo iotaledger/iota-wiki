@@ -5,18 +5,23 @@ description: 'How to melt native tokens'
 image: /img/logo/iota_mark_light.png
 keywords:
   - how to
-  - melt native token
+  - decrease native token circulating supply
+  - melt
   - foundry
   - nodejs
   - python
   - rust
 ---
 
+import CodeBlock from '@theme/CodeBlock';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import NodejsCode from '!!raw-loader!../../../../../bindings/nodejs/examples/how_tos/native_tokens/melt.ts';
+import PythonCode from '!!raw-loader!../../../../../bindings/python/examples/how_tos/native_tokens/melt.py';
+import RustCode from '!!raw-loader!../../../../../sdk/examples/how_tos/native_tokens/melt.rs';
 
 You may want to melt some of your circulating native tokens. To do so, you will need to call the
-`Account.decrease_native_token_supply(token_id, melt_amount, options)` function.
+`Account.melt_native_token(token_id, melt_amount, options)` function.
 
 If you melt your native tokens, you can still destroy the foundry that created them.
 
@@ -29,28 +34,16 @@ The following example will:
 3. Get the account's balance.
 4. Melt 10 native tokens of the first ID.
 
-<Tabs groupId="language">
-<TabItem value="rust" label="Rust">
-
-```rust reference
-https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/native_tokens/decrease_supply.rs
-```
-
-</TabItem>
-<TabItem value="nodejs" label="Nodejs">
-
-```typescript reference
-https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/native_tokens/decrease-supply.ts
-```
-
-</TabItem>
-<TabItem value="python" label="Python">
-
-```python reference
-https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how_tos/native_tokens/decrease_supply.py
-```
-
-</TabItem>
+<Tabs groupId='language'>
+  <TabItem value='rust' label='Rust'>
+    <CodeBlock className='language-rust'>{RustCode}</CodeBlock>
+  </TabItem>
+  <TabItem value='nodejs' label='Nodejs'>
+    <CodeBlock className='language-typescript'>{NodejsCode}</CodeBlock>
+  </TabItem>
+  <TabItem value='python' label='Python'>
+    <CodeBlock className='language-python'>{PythonCode}</CodeBlock>
+  </TabItem>
 </Tabs>
 
 ## Expected Output

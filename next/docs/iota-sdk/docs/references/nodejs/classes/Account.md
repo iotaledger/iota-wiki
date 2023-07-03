@@ -16,7 +16,7 @@ The Account class.
 - [claimOutputs](Account.md#claimoutputs)
 - [prepareConsolidateOutputs](Account.md#prepareconsolidateoutputs)
 - [prepareCreateAliasOutput](Account.md#preparecreatealiasoutput)
-- [prepareDecreaseNativeTokenSupply](Account.md#preparedecreasenativetokensupply)
+- [prepareMeltNativeToken](Account.md#preparemeltnativetoken)
 - [prepareDestroyAlias](Account.md#preparedestroyalias)
 - [prepareDestroyFoundry](Account.md#preparedestroyfoundry)
 - [generateEd25519Addresses](Account.md#generateed25519addresses)
@@ -35,8 +35,8 @@ The Account class.
 - [unspentOutputs](Account.md#unspentoutputs)
 - [getMetadata](Account.md#getmetadata)
 - [minimumRequiredStorageDeposit](Account.md#minimumrequiredstoragedeposit)
-- [prepareIncreaseNativeTokenSupply](Account.md#prepareincreasenativetokensupply)
 - [prepareMintNativeToken](Account.md#preparemintnativetoken)
+- [prepareCreateNativeToken](Account.md#preparecreatenativetoken)
 - [prepareMintNfts](Account.md#preparemintnfts)
 - [prepareOutput](Account.md#prepareoutput)
 - [prepareSendAmount](Account.md#preparesendamount)
@@ -264,29 +264,6 @@ The consolidation transaction.
 `Promise`<[`PreparedTransactionData`](PreparedTransactionData.md)\>
 
 A transaction object.
-
----
-
-### prepareDecreaseNativeTokenSupply
-
-▸ **prepareDecreaseNativeTokenSupply**(`tokenId`, `meltAmount`, `transactionOptions?`): `Promise`<[`PreparedTransactionData`](PreparedTransactionData.md)\>
-
-Melt native tokens. This happens with the foundry output which minted them, by increasing its
-`melted_tokens` field.
-
-#### Parameters
-
-| Name                  | Type                                                        | Description                                                        |
-| :-------------------- | :---------------------------------------------------------- | :----------------------------------------------------------------- |
-| `tokenId`             | `string`                                                    | The native token id.                                               |
-| `meltAmount`          | `string`                                                    | To be melted amount.                                               |
-| `transactionOptions?` | [`TransactionOptions`](../interfaces/TransactionOptions.md) | The options to define a `RemainderValueStrategy` or custom inputs. |
-
-#### Returns
-
-`Promise`<[`PreparedTransactionData`](PreparedTransactionData.md)\>
-
-The transaction.
 
 ---
 
@@ -614,11 +591,32 @@ The amount.
 
 ---
 
-### prepareIncreaseNativeTokenSupply
+### prepareCreateNativeToken
 
-▸ **prepareIncreaseNativeTokenSupply**(`tokenId`, `mintAmount`, `transactionOptions?`): `Promise`<`PreparedMintTokenTransactionData`\>
+▸ **prepareCreateNativeToken**(`params`, `transactionOptions?`): `Promise`<`PreparedCreateNativeTokenTransactionData`\>
 
-Mint more native tokens.
+Create a native token.
+
+#### Parameters
+
+| Name                  | Type                                                                  | Description                                                        |
+| :-------------------- | :-------------------------------------------------------------------- | :----------------------------------------------------------------- |
+| `params`              | [`CreateNativeTokenParams`](../interfaces/CreateNativeTokenParams.md) | The options for creating tokens.                                   |
+| `transactionOptions?` | [`TransactionOptions`](../interfaces/TransactionOptions.md)           | The options to define a `RemainderValueStrategy` or custom inputs. |
+
+#### Returns
+
+`Promise`<`PreparedCreateNativeTokenTransactionData`\>
+
+The creating transaction and the token ID.
+
+---
+
+### prepareMintNativeToken
+
+▸ **prepareMintNativeToken**(`tokenId`, `mintAmount`, `transactionOptions?`): `Promise`<[`PreparedTransactionData`](PreparedTransactionData.md)\>
+
+Mint additional native tokens.
 
 #### Parameters
 
@@ -630,30 +628,32 @@ Mint more native tokens.
 
 #### Returns
 
-`Promise`<`PreparedMintTokenTransactionData`\>
+`Promise`<[`PreparedTransactionData`](PreparedTransactionData.md)\>
 
-The minting transaction and the token ID.
+The minting transaction.
 
 ---
 
-### prepareMintNativeToken
+### prepareMeltNativeToken
 
-▸ **prepareMintNativeToken**(`params`, `transactionOptions?`): `Promise`<`PreparedMintTokenTransactionData`\>
+▸ **prepareMeltNativeToken**(`tokenId`, `meltAmount`, `transactionOptions?`): `Promise`<[`PreparedTransactionData`](PreparedTransactionData.md)\>
 
-Mint native tokens.
+Melt native tokens. This happens with the foundry output which minted them, by increasing its
+`melted_tokens` field.
 
 #### Parameters
 
-| Name                  | Type                                                              | Description                                                        |
-| :-------------------- | :---------------------------------------------------------------- | :----------------------------------------------------------------- |
-| `params`              | [`MintNativeTokenParams`](../interfaces/MintNativeTokenParams.md) | The options for minting tokens.                                    |
-| `transactionOptions?` | [`TransactionOptions`](../interfaces/TransactionOptions.md)       | The options to define a `RemainderValueStrategy` or custom inputs. |
+| Name                  | Type                                                        | Description                                                        |
+| :-------------------- | :---------------------------------------------------------- | :----------------------------------------------------------------- |
+| `tokenId`             | `string`                                                    | The native token id.                                               |
+| `meltAmount`          | `string`                                                    | To be melted amount.                                               |
+| `transactionOptions?` | [`TransactionOptions`](../interfaces/TransactionOptions.md) | The options to define a `RemainderValueStrategy` or custom inputs. |
 
 #### Returns
 
-`Promise`<`PreparedMintTokenTransactionData`\>
+`Promise`<[`PreparedTransactionData`](PreparedTransactionData.md)\>
 
-The minting transaction and the token ID.
+The melting transaction.
 
 ---
 

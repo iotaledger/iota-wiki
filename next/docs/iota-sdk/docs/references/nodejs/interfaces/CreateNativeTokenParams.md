@@ -1,14 +1,14 @@
-# Interface: MintNativeTokenParams
+# Interface: CreateNativeTokenParams
 
-Native token options for minting
+Native token options for creating
 
 ## Table of contents
 
 ### Properties
 
-- [circulatingSupply](MintNativeTokenParams.md#circulatingsupply)
-- [maximumSupply](MintNativeTokenParams.md#maximumsupply)
-- [foundryMetadata](MintNativeTokenParams.md#foundrymetadata)
+- [circulatingSupply](CreateNativeTokenParams.md#circulatingsupply)
+- [maximumSupply](CreateNativeTokenParams.md#maximumsupply)
+- [foundryMetadata](CreateNativeTokenParams.md#foundrymetadata)
 
 ## Properties
 
