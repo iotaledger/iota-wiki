@@ -18,7 +18,7 @@ cd bindings/nodejs
 # The SDK still uses yarn classic: https://github.com/iotaledger/iota-sdk/issues/433
 yarn set version classic
 yarn
-npx typedoc --githubPages false --disableSources --excludePrivate --excludeInternal --excludeNotDocumented --plugin typedoc-plugin-markdown --theme markdown --hideBreadcrumbs --entryDocument api_ref.md --readme none --hideGenerator --sort source-order --exclude ./**/src/index.ts --out ../../../../next/docs/iota-sdk/docs/references/nodejs ./lib/index.ts
+npx typedoc --githubPages false --disableSources --excludePrivate --excludeInternal --plugin typedoc-plugin-markdown --theme markdown --hideBreadcrumbs --entryDocument api_ref.md --readme none --hideGenerator --sort source-order --exclude ./**/src/index.ts --out ../../../../next/docs/iota-sdk/docs/references/nodejs ./lib/index.ts
 cd -
 
 # Return to root and cleanup
