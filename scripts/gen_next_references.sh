@@ -9,7 +9,7 @@ python -m venv .venv
 source .venv/bin/activate
 pip install -r requirements-dev.txt
 PYTHONPATH=. pydoc-markdown
-cp -r docs/references/ ../../../../next/docs/iota-sdk/docs/references/
+cp -Rv docs/references/python ../../../../next/docs/iota-sdk/docs/references/
 deactivate
 cd -
 
