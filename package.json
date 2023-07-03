@@ -44,9 +44,9 @@
   },
   "dependencies": {
     "@algolia/client-search": "^4.14.1",
-    "@docusaurus/core": "2.4.0",
-    "@docusaurus/plugin-client-redirects": "2.4.0",
-    "@docusaurus/preset-classic": "2.4.0",
+    "@docusaurus/core": "2.4.1",
+    "@docusaurus/plugin-client-redirects": "2.4.1",
+    "@docusaurus/preset-classic": "2.4.1",
     "@iota-wiki/plugin-tutorial": "workspace:^",
     "@mdx-js/react": "^1.6.21",
     "@popperjs/core": "^2.11.5",
@@ -96,8 +96,8 @@
     ]
   },
   "devDependencies": {
-    "@docusaurus/module-type-aliases": "2.4.0",
-    "@docusaurus/plugin-google-gtag": "2.4.0",
+    "@docusaurus/module-type-aliases": "2.4.1",
+    "@docusaurus/plugin-google-gtag": "2.4.1",
     "@iota-wiki/cli": "workspace:^",
     "@tsconfig/docusaurus": "^1.0.6",
     "@types/react": "17.0.2",
