@@ -4,14 +4,17 @@ sidebar_label: Verifiable Presentations
 description: Explain how a VC is created and verified
 image: /img/Identity_icon.png
 keywords:
-  - verifiable
-  - presentations
+- verifiable
+- presentations
 ---
+import create_vp_rs from  '!!raw-loader!../../../../examples/account/create_vp.rs';
+import CodeSnippet from '../../../src/components/CodeSnippetComponent'
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
+import Announcement from '../../../src/partials/_announcement.mdx';
 
-A verifiable presentation is the recommended data format for sharing one or more [verifiable credentials](./overview.md).
+<Announcement/>
+
+A verifiable presentation is the recommended data format for sharing one or more [verifiable credentials](./overview.mdx).
 It is constructed and signed by a holder to prove control over their credentials and can be presented to a verifier for [validation](#validation).
 
 For instance: after an issuer [creates and issues a verifiable credential](./create.mdx) to a holder, such as a university issuing a degree to a graduate,
@@ -86,7 +89,7 @@ The framework checks:
 
 Note that a verifier may specify which DID Documents to use for the holder and issuers, otherwise they are resolved from the Tangle automatically.
 
-Currently, the following are _not_ checked automatically:
+Currently, the following are *not* checked automatically:
 
 - **Data schemas**: credentials that specify a [schema](https://www.w3.org/TR/vc-data-model/#data-schemas) property should be examined to ensure conformance.
 - **Fitness for purpose**: whether the credentials in a presentation and the data within them are acceptable and valid depends on the context in which they are used. Verifiers should ensure that the credential types, subjects, and schemas sent by a holder match what was requested.
@@ -166,26 +169,9 @@ so setting a signature expiration alone should not be relied upon.
 The following code demonstrates how to use the IOTA Identity Framework end-to-end to create and sign a verifiable presentation as a holder,
 serialize it to JSON for transmission, deserialize it on the receiving side as a verifier, and finally validate it with various options.
 
-<Tabs
-  groupId="programming-languages"
-  defaultValue="nodejs"
-  values={[
-    { label: "Node.js", value: "nodejs" },
-    { label: "Rust", value: "rust" }
-  ]}
->
-<TabItem value="nodejs">
-
-```ts reference
-https://github.com/iotaledger/identity.rs/blob/support/v0.5/bindings/wasm/examples-account/src/create_vp.ts
-```
-
-</TabItem>
-<TabItem value="rust">
-
-```rust reference
-https://github.com/iotaledger/identity.rs/blob/support/v0.5/examples/account/create_vp.rs
-```
-
-</TabItem>
-</Tabs>
+<CodeSnippet
+    nodeReplitLink="https://repl.it/@IOTAFoundation/create-vp?lite=true"
+    rustContent={create_vp_rs}
+    nodeGithubLink = "https://github.com/iotaledger/identity.rs/blob/support/v0.5/bindings/wasm/examples-account/src/create_vp.ts"
+    rustGithubLink = "https://github.com/iotaledger/identity.rs/blob/support/v0.5/examples/account/create_vp.rs"
+/>
