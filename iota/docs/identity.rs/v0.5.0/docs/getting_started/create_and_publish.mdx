@@ -4,24 +4,22 @@ sidebar_label: Create a DID Document
 description: Create DID Documents and publish them to the Tangle
 image: /img/Identity_icon.png
 keywords:
-- Documents
-- DID
-- Tangle
-- Create
-- Publish
+  - Documents
+  - DID
+  - Tangle
+  - Create
+  - Publish
 ---
-import CodeSnippet from '../../src/components/CodeSnippetComponent'
-import createDidRustExample from  '!!raw-loader!../../../examples/account/create_did.rs';
 
 import Announcement from '../../src/partials/_announcement.mdx';
 
-<Announcement/>
+<Announcement />
 
 If you want to benefit from Self-Sovereign Identity, you need to create a [Decentralized Identity](../concepts/decentralized_identifiers/overview.mdx). This identity consists of many parts that have different functions. This page will cover the basics about identity creation and publishing to the Tangle.
 
 ## Identity Generation Process
 
-The generation of an identity starts with a randomly generated [asymmetric key pair](https://en.wikipedia.org/wiki/Public-key_cryptography). You can generate it with the IOTA Identity framework, or you can provide it as a parameter during the creation process. The public key is hashed using the [`Blake2b-256` algorithm](https://en.wikipedia.org/wiki/BLAKE_(hash_function)). This hash becomes the DID, creating a permanent and provable link between the initial keypair and the DID. The public key is then embedded into the initial DID Document and is used for verifying signatures created with the corresponding private key.
+The generation of an identity starts with a randomly generated [asymmetric key pair](https://en.wikipedia.org/wiki/Public-key_cryptography). You can generate it with the IOTA Identity framework, or you can provide it as a parameter during the creation process. The public key is hashed using the [`Blake2b-256` algorithm](<https://en.wikipedia.org/wiki/BLAKE_(hash_function)>). This hash becomes the DID, creating a permanent and provable link between the initial keypair and the DID. The public key is then embedded into the initial DID Document and is used for verifying signatures created with the corresponding private key.
 
 ## Using the Account Module
 
@@ -33,12 +31,29 @@ Select your programming language of choice and press the green play button to ex
 
 :::
 
-<CodeSnippet 
-    nodeReplitLink="https://repl.it/@IOTAFoundation/create-did?lite=true"
-    rustContent={createDidRustExample}
-    nodeGithubLink = "https://github.com/iotaledger/identity.rs/blob/support/v0.5/bindings/wasm/examples-account/src/create_did.ts"
-    rustGithubLink = "https://github.com/iotaledger/identity.rs/blob/support/v0.5/examples/account/create_did.rs"
-/>
+<Tabs
+  groupId="programming-languages"
+  defaultValue="nodejs"
+  values={[
+    { label: "Node.js", value: "nodejs" },
+    { label: "Rust", value: "rust" }
+  ]}
+>
+<TabItem value="nodejs">
+
+```ts reference
+https://github.com/iotaledger/identity.rs/blob/support/v0.5/bindings/wasm/examples-account/src/create_did.ts
+```
+
+</TabItem>
+<TabItem value="rust">
+
+```rust reference
+https://github.com/iotaledger/identity.rs/blob/support/v0.5/examples/account/create_did.rs
+```
+
+</TabItem>
+</Tabs>
 
 The first step in this example is the creation of an account. The account is a stateful object that manages one or more identities. The account provides an interface to execute high-level operations on identities, such as [creating](../concepts/decentralized_identifiers/create.mdx) and [updating](../concepts/decentralized_identifiers/update.mdx)) them.
 

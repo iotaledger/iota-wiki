@@ -12,15 +12,12 @@ keywords:
   - encryption
 ---
 
-import memstore_ts from "!!raw-loader!../../../../bindings/wasm/examples-account/src/memory_storage.ts";
-import memstore_rs from "!!raw-loader!../../../../identity-account-storage/src/storage/memstore.rs";
-import Tabs from "@theme/Tabs";
-import TabItem from "@theme/TabItem";
-import CodeBlock from "@theme/CodeBlock";
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 import Announcement from '../../../src/partials/_announcement.mdx';
 
-<Announcement/>
+<Announcement />
 
 ## Introduction
 
@@ -126,17 +123,25 @@ This test suite is available in newer versions of the framework, but not yet in 
 This section shows the Rust and TypeScript `MemStore` implementations, which are thoroughly commented.
 
 <Tabs
-  groupId="programming-languages"
-  defaultValue="nodejs"
-  values={[
-    { label: "Node.js", value: "nodejs" },
-    { label: "Rust", value: "rust" }
-  ]}
+    groupId="programming-languages"
+    defaultValue="nodejs"
+    values={[
+        { label: "Node.js", value: "nodejs" },
+        { label: "Rust", value: "rust" }
+    ]}
 >
-  <TabItem value="nodejs">
-    <CodeBlock className="language-javascript">{memstore_ts}</CodeBlock>
-  </TabItem>
-  <TabItem value="rust">
-    <CodeBlock className="language-rust">{memstore_rs}</CodeBlock>
-  </TabItem>
+<TabItem value="nodejs">
+
+```ts reference
+https://github.com/iotaledger/identity.rs/tree/support/v0.5/bindings/wasm/examples-account/src/memory_storage.ts
+```
+
+</TabItem>
+<TabItem value="rust">
+
+```rust reference
+https://github.com/iotaledger/identity.rs/tree/support/v0.5/identity-account-storage/src/storage/memstore.rs
+```
+
+</TabItem>
 </Tabs>

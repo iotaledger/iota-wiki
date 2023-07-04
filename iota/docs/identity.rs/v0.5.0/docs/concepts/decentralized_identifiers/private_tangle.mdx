@@ -1,22 +1,19 @@
 ---
 title: Create a DID on a Private Tangle
-sidebar_label:  Create a DID on a Private Tangle
-description:  Create a DID on a Private Tangle using the IOTA Identity Rust Library or its WASM binding
+sidebar_label: Create a DID on a Private Tangle
+description: Create a DID on a Private Tangle using the IOTA Identity Rust Library or its WASM binding
 image: /img/Identity_icon.png
 keywords:
-- Rust
-- WASM
+  - Rust
+  - WASM
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
-import CodeBlock from '@theme/CodeBlock';
-import private_tangle_js from  '!!raw-loader!../../../../bindings/wasm/examples/src/private_tangle.js';
-import private_tangle_rs from  '!!raw-loader!../../../../examples/low-level-api/private_tangle.rs';
-import account_private_tangle_rs from  '!!raw-loader!../../../../examples/account/config.rs';
 
 import Announcement from '../../../src/partials/_announcement.mdx';
 
-<Announcement/>
+<Announcement />
 
 ## Example
 
@@ -24,27 +21,32 @@ This example shows how you can create a DID on a private tangle. You can run it 
 
 ### Account Module (Recommended)
 
-<CodeBlock className="language-rust">
-    {account_private_tangle_rs}
-</CodeBlock>
+```rust reference
+https://github.com/iotaledger/identity.rs/tree/support/v0.5/examples/account/config.rs
+```
 
 ### Low-level API
 
 <Tabs
     groupId="programming-languages"
-    defaultValue="rust"
+    defaultValue="nodejs"
     values={[
-        {label: 'Rust', value: 'rust'},
-        {label: 'Node.js', value: 'nodejs'},
-    ]
-    }>
-    <TabItem value="rust">
-        <CodeBlock className="language-rust">
-            {private_tangle_rs}
-        </CodeBlock>
-    </TabItem>
-    <TabItem value='nodejs'>
-        <CodeBlock className="language-javascript">
-            {private_tangle_js}
-        </CodeBlock></TabItem>
+        { label: "Node.js", value: "nodejs" },
+        { label: "Rust", value: "rust" }
+    ]}
+>
+<TabItem value="nodejs">
+
+```ts reference
+https://github.com/iotaledger/identity.rs/tree/support/v0.5/bindings/wasm/examples/src/private_tangle.js
+```
+
+</TabItem>
+<TabItem value="rust">
+
+```rust reference
+https://github.com/iotaledger/identity.rs/tree/support/v0.5/examples/low-level-api/private_tangle.rs
+```
+
+</TabItem>
 </Tabs>

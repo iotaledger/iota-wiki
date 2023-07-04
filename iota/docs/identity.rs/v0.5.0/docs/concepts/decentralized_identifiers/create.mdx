@@ -4,18 +4,19 @@ sidebar_label: Create and Publish
 description: Create DID Documents and publish them to the Tangle
 image: /img/Identity_icon.png
 keywords:
-- Documents
-- DID
-- Tangle
-- Create
-- Publish
+  - Documents
+  - DID
+  - Tangle
+  - Create
+  - Publish
 ---
-import CodeSnippet from '../../../src/components/CodeSnippetComponent'
-import createDidRustExample from  '!!raw-loader!../../../../examples/account/create_did.rs';
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 import Announcement from '../../../src/partials/_announcement.mdx';
 
-<Announcement/>
+<Announcement />
 
 When someone or something wants to benefit from Self-Sovereign Identity, they must first create a Decentralized Identity. This identity consists of many parts that have different functions. This page will cover both the basics and the details about identity creation, storage, and publishing to the Tangle.
 
@@ -29,12 +30,29 @@ Select your programming language of choice and press the green play button to ex
 
 :::
 
-<CodeSnippet 
-    nodeReplitLink="https://repl.it/@IOTAFoundation/create-did?lite=true"
-    rustContent={createDidRustExample}
-    nodeGithubLink = "https://github.com/iotaledger/identity.rs/blob/support/v0.5/bindings/wasm/examples-account/src/create_did.ts"
-    rustGithubLink = "https://github.com/iotaledger/identity.rs/blob/support/v0.5/examples/account/create_did.rs"
-/>
+<Tabs
+  groupId="programming-languages"
+  defaultValue="nodejs"
+  values={[
+    { label: "Node.js", value: "nodejs" },
+    { label: "Rust", value: "rust" }
+  ]}
+>
+<TabItem value="nodejs">
+
+```ts reference
+https://github.com/iotaledger/identity.rs/blob/support/v0.5/bindings/wasm/examples-account/src/create_did.ts
+```
+
+</TabItem>
+<TabItem value="rust">
+
+```rust reference
+https://github.com/iotaledger/identity.rs/blob/support/v0.5/examples/account/create_did.rs
+```
+
+</TabItem>
+</Tabs>
 
 The first step in this example is the creation of an account. This acts as a stateful object that manages one or more identities. The account provides an interface to execute high-level operations on identities, such as creating, updating, and storing them.
 
