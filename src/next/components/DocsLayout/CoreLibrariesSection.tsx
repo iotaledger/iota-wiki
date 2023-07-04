@@ -36,28 +36,28 @@ const LibrariesSection: FC = () => (
         <div className='nodes__head'>
           <Languages
             languages={{
-              Rust: '/iota-sdk/getting_started/rust',
-              NodeJS: '/iota-sdk/getting_started/nodejs',
-              Python: '/iota-sdk/getting_started/python',
-              Wasm: '/iota-sdk/getting_started/wasm',
+              Rust: '/iota-sdk/getting-started/rust',
+              NodeJS: '/iota-sdk/getting-started/nodejs',
+              Python: '/iota-sdk/getting-started/python',
+              Wasm: '/iota-sdk/getting-started/wasm',
             }}
           />
         </div>
         <h3 className='nodes__header'>IOTA SDK</h3>
         <ul className='nodes__features'>
           <li className='nodes__feature'>
-            <Link to='/iota-sdk/how_tos/accounts_and_addresses/create_address'>
+            <Link to='/iota-sdk/how-tos/accounts-and-addresses/create-address'>
               Create an address
             </Link>
           </li>
           <li className='nodes__feature'>
-            <Link to='/iota-sdk/how_tos/simple_transaction'>
+            <Link to='/iota-sdk/how-tos/simple-transaction'>
               Send a transaction
             </Link>
           </li>
 
           <li className='nodes__feature'>
-            <Link to='/iota-sdk/how_tos/outputs/features'>
+            <Link to='/iota-sdk/how-tos/outputs/features'>
               Test the latest output features
             </Link>
           </li>

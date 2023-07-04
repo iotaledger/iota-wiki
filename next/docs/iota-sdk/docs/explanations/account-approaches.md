@@ -14,7 +14,7 @@ keywords:
 
 # Account Approaches
 
-In [the IOTA SDK](../about-the-iota-sdk.md), you can use an account model
+In [the IOTA SDK](../welcome.md), you can use an account model
 to [create an account for each user](#multi-account-approach)
 or [use one account and generate multiple addresses](#single-account-approach), which you can then link to the users in
 your database. The SDK is as flexible as possible and can back up any of your use cases.
