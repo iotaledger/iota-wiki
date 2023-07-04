@@ -11,11 +11,8 @@ keywords:
   - Publish
 ---
 
-import account_manipulate_did_rs from '!!raw-loader!../../../../examples/account/manipulate_did.rs';
-import CodeSnippet from '../../../src/components/CodeSnippetComponent';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
-import CodeBlock from '@theme/CodeBlock';
 
 import Announcement from '../../../src/partials/_announcement.mdx';
 
@@ -75,12 +72,29 @@ The following properties can be specified for a service:
 
 The following example demonstrates adding verification methods and services to a DID Document.
 
-<CodeSnippet
-  nodeReplitLink='https://repl.it/@IOTAFoundation/manipulate-did?lite=true'
-  rustContent={account_manipulate_did_rs}
-  nodeGithubLink='https://github.com/iotaledger/identity.rs/blob/support/v0.5/bindings/wasm/examples-account/src/manipulate_did.ts'
-  rustGithubLink='https://github.com/iotaledger/identity.rs/blob/support/v0.5/examples/account/manipulate_did.rs'
-/>
+<Tabs
+  groupId="programming-languages"
+  defaultValue="nodejs"
+  values={[
+    { label: "Node.js", value: "nodejs" },
+    { label: "Rust", value: "rust" }
+  ]}
+>
+<TabItem value="nodejs">
+
+```ts reference
+https://github.com/iotaledger/identity.rs/blob/support/v0.5/bindings/wasm/examples-account/src/manipulate_did.ts
+```
+
+</TabItem>
+<TabItem value="rust">
+
+```rust reference
+https://github.com/iotaledger/identity.rs/blob/support/v0.5/examples/account/manipulate_did.rs
+```
+
+</TabItem>
+</Tabs>
 
 ### Creating Identity
 
