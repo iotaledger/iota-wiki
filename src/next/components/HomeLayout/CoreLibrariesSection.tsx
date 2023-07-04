@@ -1,6 +1,9 @@
 import React, { FC } from 'react';
 import Link from '@docusaurus/Link';
 import { Shimmer, Wallet } from '@site/src/common/icons';
+import CoreLibImg from '@site/static/img/homepage/section_core_libraries.png';
+import CoreLibImgDark from '@site/static/img/homepage/section_core_libraries_dark.png';
+import ThemedImage from '@theme/ThemedImage';
 
 interface LanguagesProps {
   languages?: { [key: string]: string };
@@ -28,7 +31,8 @@ const Languages: FC<LanguagesProps> = (props) => {
 
 const LibrariesSection: FC = () => (
   <div className='libraries__cards'>
-    <div className='libraries__card'>
+    <div className='libraries__card libraries__card--wide'>
+      <img className='libraries__logo' src='/img/homepage/resources_bot.svg' />
       <div className='libraries__section'>
         <div className='libraries__head'>
           <div className='libraries__icon'>
@@ -36,115 +40,47 @@ const LibrariesSection: FC = () => (
           </div>
           <Languages
             languages={{
-              Rust: '/iota.rs/getting_started/rust',
-              NodeJS: '/iota.rs/getting_started/nodejs',
-              Python: '/iota.rs/getting_started/python',
-              Java: '/iota.rs/getting_started/java',
+              Rust: '/iota-sdk/getting-started/rust',
+              NodeJS: '/iota-sdk/getting-started/nodejs',
+              Python: '/iota-sdk/getting-started/python',
+              Java: '/iota-sdk/getting-started/java',
             }}
           />
         </div>
-        <h3 className='libraries__header'>Client</h3>
-        <ul className='libraries__features'>
+        <h3 className='libraries__feature'>IOTA SDK</h3>
+        <ul className='libraries__feature'>
           <li className='libraries__feature'>
-            <Link to='/iota.rs/how_tos/get_node_info'>
-              Interact with the Shimmer network
+            <Link to='/iota-sdk/how-tos/accounts-and-addresses/create-address'>
+              Create an address
             </Link>
           </li>
           <li className='libraries__feature'>
-            <Link to='/iota.rs/how_tos/prepare_sign_transaction'>
-              Send blocks and transactions
+            <Link to='/iota-sdk/how-tos/simple-transaction'>
+              Send a transaction
             </Link>
           </li>
           <li className='libraries__feature'>
-            <Link to='/iota.rs/how_tos/get_address_balances'>
-              Query balances
+            <Link to='/iota-sdk/how-tos/outputs/features'>
+              Test the latest output features
             </Link>
           </li>
         </ul>
         <Link
-          to='/iota.rs/welcome'
-          className='libraries__button button button--outline button--primary'
+          to='/iota-sdk/welcome'
+          className='nodes__button button button--outline button--primary'
         >
           Get started
         </Link>
       </div>
     </div>
-    <div className='libraries__card'>
-      <div className='libraries__section'>
-        <div className='libraries__head'>
-          <div className='libraries__icon'>
-            <Wallet />
-          </div>
-          <Languages
-            languages={{
-              Rust: '/wallet.rs/getting_started/rust',
-              NodeJS: '/wallet.rs/getting_started/nodejs',
-              Python: '/wallet.rs/getting_started/python',
-              Java: '/wallet.rs/getting_started/java',
-            }}
-          />
-        </div>
-        <h3 className='libraries__header'>Wallet</h3>
-        <ul className='libraries__features'>
-          <li className='libraries__feature'>
-            <Link to='/wallet.rs/how_tos/accounts_and_addresses/create_a_wallet_account'>
-              Create and manage a wallet
-            </Link>
-          </li>
-          <li className='libraries__feature'>
-            <Link to='/wallet.rs/how_tos/outputs_and_transactions/send_transaction'>
-              Send and receive tokens
-            </Link>
-          </li>
-          <li className='libraries__feature'>
-            <Link to='/wallet.rs/how_tos/native_tokens/mint_native_token'>
-              Mint your Native Tokens and NFTs
-            </Link>
-          </li>
-        </ul>
-        <Link
-          to='/wallet.rs/welcome'
-          className='libraries__button button button--outline button--primary'
-        >
-          Integrate a wallet
-        </Link>
-      </div>
-    </div>
-    <div className='libraries__card'>
-      <div className='libraries__section'>
-        <div className='libraries__head'>
-          <div className='libraries__icon'>
-            <Shimmer />
-          </div>
-          <Languages
-            languages={{
-              TypeScript: '/iota.js/welcome',
-            }}
-          />
-        </div>
-        <h3 className='libraries__header'>TypeScript Client</h3>
-        <ul className='libraries__features'>
-          <li className='libraries__feature'>
-            <Link to='/iota.js/how_tos/simple'>
-              Interact with the IOTA network
-            </Link>
-          </li>
-          <li className='libraries__feature'>
-            <Link to='/iota.js/how_tos/data'>Send a data message</Link>
-          </li>
-          <li className='libraries__feature'>
-            <Link to='/iota.js/how_tos/transaction'>
-              Learn about transactions
-            </Link>
-          </li>
-        </ul>
-        <Link
-          to='/iota.js/welcome'
-          className='libraries__button button button--outline button--primary'
-        >
-          Get started
-        </Link>
-      </div>
+    <div className='spaceholder__card__img'>
+      <ThemedImage
+        alt='Core Libraries'
+        sources={{
+          light: CoreLibImg,
+          dark: CoreLibImgDark,
+        }}
+      />
     </div>
   </div>
 );
