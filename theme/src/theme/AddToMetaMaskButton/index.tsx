@@ -15,7 +15,7 @@ export default function AddToMetaMaskButton() {
           method: 'wallet_addEthereumChain',
           params: [
             {
-              chainId: '0x42F', // Replace with the chain ID of the network you want to add
+              chainId: '0x430', // Replace with the chain ID of the network you want to add
               chainName: 'ShimmerEVM Testnet', // Replace with the name of the network
               nativeCurrency: {
                 name: 'Shimmer', // Replace with the name of the native currency
@@ -42,7 +42,7 @@ export default function AddToMetaMaskButton() {
 
   return (
     <button
-      className={`button button--primary margin`}
+      className={`button button--primary button--lg margin-bottom--md`}
       onClick={() => addNetwork()}
     >
       Add ShimmerEVM Testnet to MetaMask
