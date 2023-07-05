@@ -13,7 +13,7 @@ module.exports = {
   docs: [
     {
       type: 'doc',
-      id: 'about-the-iota-sdk',
+      id: 'welcome',
     },
     {
       type: 'category',
@@ -109,9 +109,9 @@ module.exports = {
           type: 'category',
           label: 'Native Tokens',
           items: [
+            'how-tos/native-tokens/create',
+            'how-tos/native-tokens/melt',
             'how-tos/native-tokens/mint',
-            'how-tos/native-tokens/decrease-supply',
-            'how-tos/native-tokens/increase-supply',
             'how-tos/native-tokens/send',
             'how-tos/native-tokens/burn',
             'how-tos/native-tokens/destroy-foundry',
