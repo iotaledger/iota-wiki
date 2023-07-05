@@ -78,23 +78,32 @@ You can read more about [backup and security in this guide](https://wiki.iota.or
 npm install @iota/sdk dotenv
 ```
 
-#### 1 Generate a mnemonic
+:::warning
 
-```js reference
-https://github.com/iotaledger/iota-sdk/tree/develop/bindings/nodejs/examples/exchange/0-generate-mnemonic.ts
-```
+We use `dotenv` to share user-defined constants across many examples. This is for convenience only and shouldn't be done in production.
 
-You can then create a `.env` by running the following command:
+:::
+
+You can create a `.env` by running the following command:
 
 ```bash
 touch .env
 ```
 
-You can now add your `SH_PASSWORD` and `MNEMONIC` to the `.env` file.
+The following examples will need these variables to exist, here are some default values you can use but also change:
 
 ```bash
-SH_PASSWORD="here is your super secure password"
-MNEMONIC="here is your super secure 24 word mnemonic, it's only needed here the first time"
+WALLET_DB_PATH="./wallet-database"
+NODE_URL="https://api.testnet.shimmer.network"
+STRONGHOLD_SNAPSHOT_PATH="./wallet.stronghold"
+STRONGHOLD_PASSWORD="*K6%79#yeFn7AMQhMQ"
+EXPLORER_URL="https://explorer.shimmer.network/testnet"
+```
+
+#### 1 Generate a mnemonic
+
+```js reference
+https://github.com/iotaledger/iota-sdk/tree/develop/bindings/nodejs/examples/exchange/0-generate-mnemonic.ts
 ```
 
 After you have updated the `.env` file, you can initialize the `Wallet` instance with a secret manager([`Stronghold`](https://wiki.iota.org/stronghold.rs/welcome) by default) and client options.
