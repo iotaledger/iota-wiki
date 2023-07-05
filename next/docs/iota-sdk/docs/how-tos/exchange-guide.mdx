@@ -139,7 +139,7 @@ You get an instance of any created account using `Wallet.getAccount(accountId|al
 Common methods of `account` instance include:
 
 - `account.addresses()` - returns list of addresses related to the account.
-- `account.generateAddresses()` - generate a new address for the address index incremented by 1.
+- `account.generateEd25519Addresses()` - generate one or more new address(es) for the address index incremented by 1.
 - `account.balance()` - returns the balance for the given account.
 - `account.sync()` - sync the account information with the tangle.
 
