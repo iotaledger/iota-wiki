@@ -28,14 +28,14 @@ i.e. it is not a pure-Solidity contract.
 The Magic contract has several methods, which are categorized into specialized
 interfaces: `ISCSandbox`, `ISCAccounts`, `ISCUtil` and so on.
 You can access these interfaces from any Solidity contract by importing
-the [`@iota/iscmagic` library](https://www.npmjs.com/package/iscmagic).
+the [`@iota/iscmagic` library](https://www.npmjs.com/package/@iota/iscmagic).
 
 The Magic contract also provides proxy ERC20 contracts to manipulate ISC base
 tokens and native tokens on L2.
 
 ## Installing
 
-See the [`@iota/iscmagic` npm package](https://www.npmjs.com/package/iscmagic) for instructions.
+See the [`@iota/iscmagic` npm package](https://www.npmjs.com/package/@iota/iscmagic) for instructions.
 
 ## Examples
 
