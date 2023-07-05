@@ -1,6 +1,6 @@
 # Create temporaty directory to work in and clone SDK
 mkdir tmp && cd tmp
-git clone --depth 1 --branch develop https://github.com/iotaledger/iota-sdk
+git clone --depth 1 --branch api-gen https://github.com/dr-electron/iota-sdk
 cd iota-sdk
 
 # Generate and copy Python references
@@ -18,7 +18,7 @@ cd bindings/nodejs
 # The SDK still uses yarn classic: https://github.com/iotaledger/iota-sdk/issues/433
 yarn set version classic
 yarn
-npx typedoc --githubPages false --disableSources --excludePrivate --excludeInternal --plugin typedoc-plugin-markdown --theme markdown --hideBreadcrumbs --entryDocument api_ref.md --readme none --hideGenerator --sort source-order --exclude ./**/src/index.ts --out ../../../../next/docs/iota-sdk/docs/references/nodejs ./lib/index.ts
+yarn create-api-docs --out ../../../../next/docs/iota-sdk/docs/references/nodejs
 cd -
 
 # Return to root and cleanup
