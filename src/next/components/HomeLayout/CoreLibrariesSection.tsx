@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import Link from '@docusaurus/Link';
-import { Shimmer, Wallet } from '@site/src/common/icons';
+import { Shimmer } from '@site/src/common/icons';
 import CoreLibImg from '@site/static/img/homepage/section_core_libraries.png';
 import CoreLibImgDark from '@site/static/img/homepage/section_core_libraries_dark.png';
 import ThemedImage from '@theme/ThemedImage';
