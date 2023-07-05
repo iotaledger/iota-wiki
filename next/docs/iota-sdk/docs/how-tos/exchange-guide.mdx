@@ -97,7 +97,7 @@ SH_PASSWORD="here is your super secure password"
 MNEMONIC="here is your super secure 24 word mnemonic, it's only needed here the first time"
 ```
 
-After you have updated the `.env` file, you can initialize the `AccountManager` instance with a secret manager([`Stronghold`](https://wiki.iota.org/stronghold.rs/welcome) by default) and client options.
+After you have updated the `.env` file, you can initialize the `Wallet` instance with a secret manager([`Stronghold`](https://wiki.iota.org/stronghold.rs/welcome) by default) and client options.
 
 :::note
 
@@ -107,7 +107,7 @@ Manage your password with the utmost care.
 
 By default, the Stronghold file will be called `wallet.stronghold`. It will store the seed (derived from the mnemonic) that serves as a cryptographic key from which all accounts and related addresses are generated.
 
-One of the key principles behind the `stronghold` is that no one can get a seed out of it, so you should also back up your 24-word mnemonic in a secure place because there is no way to recover it from the `.stronghold` file. You deal with accounts using the `AccountManager` instance exclusively, where all complexities are hidden under the hood and are dealt with securely.
+One of the key principles behind the `stronghold` is that no one can get a seed out of it, so you should also back up your 24-word mnemonic in a secure place because there is no way to recover it from the `.stronghold` file. You deal with accounts using the `Wallet` instance exclusively, where all complexities are hidden under the hood and are dealt with securely.
 
 :::note
 
@@ -117,7 +117,7 @@ Keep the `stronghold` password and the `stronghold` database on separate devices
 
 #### 2 Create an Account for Each User
 
-You can import the IOTA SDK and create an account manager using the following example:
+You can import the IOTA SDK and create a wallet using the following example:
 
 ```js reference
 https://github.com/iotaledger/iota-sdk/tree/develop/bindings/nodejs/examples/exchange/1-create-account.ts
@@ -125,7 +125,7 @@ https://github.com/iotaledger/iota-sdk/tree/develop/bindings/nodejs/examples/exc
 
 The `Alias` must be unique and can be whatever fits your use case. The `Alias` is typically used to identify an account later on. Each account is also represented by an `index` which is incremented by one every time a new account is created. You can refer to any account via its `index`, or `alias`.
 
-You get an instance of any created account using `AccountManager.getAccount(accountId|alias)` or get all accounts with `AccountManager.getAccounts()`.
+You get an instance of any created account using `Wallet.getAccount(accountId|alias)` or get all accounts with `Wallet.getAccounts()`.
 
 Common methods of `account` instance include:
 
