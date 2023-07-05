@@ -164,7 +164,7 @@ You can use the [Faucet](https://faucet.testnet.shimmer.network/) to add test to
 There are two types of addresses, `internal` and `public` (external). This approach is known as a _BIP32 Hierarchical Deterministic wallet (HD Wallet)_.
 
 - Each set of addresses is independent of each other and has an independent `index` id.
-- Addresses that are created by `account.generateAddresses()` are indicated as `internal=false` (public).
+- Addresses that are created by `account.generateEd25519Addresses()` are indicated as `internal=false` (public).
 - Internal addresses (`internal=true`) are called `change` addresses and are used to send the excess funds to them.
 
 ### 4. Check the Account Balance
