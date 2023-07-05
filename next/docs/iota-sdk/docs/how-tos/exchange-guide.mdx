@@ -130,7 +130,7 @@ You get an instance of any created account using `Wallet.getAccount(accountId|al
 Common methods of `account` instance include:
 
 - `account.addresses()` - returns list of addresses related to the account.
-- `account.generateAddress()` - generate a new address for the address index incremented by 1.
+- `account.generateAddresses()` - generate a new address for the address index incremented by 1.
 - `account.balance()` - returns the balance for the given account.
 - `account.sync()` - sync the account information with the tangle.
 
@@ -155,7 +155,7 @@ You can use the [Faucet](https://faucet.testnet.shimmer.network/) to add test to
 There are two types of addresses, `internal` and `public` (external). This approach is known as a _BIP32 Hierarchical Deterministic wallet (HD Wallet)_.
 
 - Each set of addresses is independent of each other and has an independent `index` id.
-- Addresses that are created by `account.generateAddress()` are indicated as `internal=false` (public).
+- Addresses that are created by `account.generateAddresses()` are indicated as `internal=false` (public).
 - Internal addresses (`internal=true`) are called `change` addresses and are used to send the excess funds to them.
 
 ### 4. Check the Account Balance
@@ -209,7 +209,7 @@ You can use the following example to send tokens to an address.
 https://github.com/iotaledger/iota-sdk/tree/develop/bindings/nodejs/examples/exchange/5-send-amount.ts
 ```
 
-The full function signature is `account.sendAmount(outputs[, options])`.
+The full function signature is `account.send(outputs[, options])`.
 
 Default options are fine and successful; however, you can provide additional options, such as `remainderValueStrategy`, which can have the following values:
 
@@ -225,7 +225,7 @@ TransactionOptions {
 }
 ```
 
-The `account.sendAmount()` function returns a `transaction` with it's id. The `blockId` can be used later for checking a confirmation status. You can obtain individual transactions related to the given account using the `account.transactions()` function.
+The `account.send()` function returns a `transaction` with it's id. The `blockId` can be used later for checking a confirmation status. You can obtain individual transactions related to the given account using the `account.transactions()` function.
 
 :::note Dust Protection
 
