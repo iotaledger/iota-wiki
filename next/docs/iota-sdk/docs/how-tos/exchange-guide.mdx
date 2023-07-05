@@ -1,12 +1,12 @@
 ---
-description: Easily integrate with your exchange, custody solution, or product using the wallet.rs library.
-sidebar_label: Integrate wallet.rs With Your Exchange
+description: Easily integrate with your exchange, custody solution, or product using the IOTA SDK.
+sidebar_label: Integrate IOTA SDK With Your Exchange
 keywords:
   - integrate
   - exchange
   - account model
   - addresses
-  - wallet.rs
+  - IOTA SDK
   - setup
   - NodeJS
   - explanation
@@ -18,7 +18,7 @@ import WarningUnlockConditions from '../_admonitions/_warning-unlock-conditions.
 
 :::note
 
-You can easily integrate wallet.rs with your exchange, custody solution, or product.
+You can easily integrate IOTA SDK with your exchange, custody solution, or product.
 
 :::
 
@@ -31,9 +31,9 @@ Transaction outputs may have multiple unlocking conditions which may require ret
 
 ## Integration Guide
 
-This guide explains how to integrate the Wallet library in your exchange.
+This guide explains how to integrate the IOTA SDK in your exchange.
 
-Features of the Wallet Library:
+Features of the IOTA SDK:
 
 - Secure seed management.
 - Account management with multiple accounts and multiple addresses.
@@ -43,17 +43,17 @@ Features of the Wallet Library:
 
 ### How Does it Work?
 
-The Wallet Library is a stateful package with a standardized interface for developers to build applications involving value transactions. It offers abstractions to handle payments and can optionally interact with [Stronghold](https://wiki.iota.org/stronghold.rs/getting_started) for seed handling, seed storage, and state backup.
+The IOTA SDK is a stateful package with a standardized interface for developers to build applications involving value transactions. It offers abstractions to handle payments and can optionally interact with [Stronghold](https://wiki.iota.org/stronghold.rs/getting_started) for seed handling, seed storage, and state backup.
 
 :::note
 
-If you are not familiar with the wallet.rs library, you can find more information in the [documentation](../welcome.md).
+If you are not familiar with the IOTA SDK, you can find more information in the [documentation](../welcome.md).
 
 :::
 
 You can use the following examples as a guide to implementing _the multi-account approach_ using the `NodeJS` binding:
 
-1. [Set up the wallet.rs library](#1-set-up-the-wallet-library).
+1. [Set up the the IOTA SDK](#1-set-up-the-iota-sdk).
 2. [Create an account for each user](#2-create-an-account-for-a-user).
 3. [Generate a user address to deposit funds](#3-generate-a-user-address-to-deposit-funds).
 4. [Check the user balance](#4-check-the-account-balance).
@@ -62,26 +62,26 @@ You can use the following examples as a guide to implementing _the multi-account
 
 :::note
 
-If you are looking for other languages, please read the [wallet.rs library overview](./../explanations/library_overview.md).
+If you are looking for other languages, please read the [IOTA SDK overview](../welcome/#your-application-in-the-iota-network).
 
 :::
 
-Since all `wallet.rs` bindings are based on core principles provided by the `wallet.rs` library, the outlined approach is very similar regardless of the programming language you choose.
+Since all IOTA SDK bindings are based on core principles provided by the IOTA SDK, the outlined approach is very similar regardless of the programming language you choose.
 
-### 1. Set Up the Wallet.rs Library
+### 1. Set Up the IOTA SDK
 
-First, you should install the components that are needed to use `wallet.rs` and the binding of your choice; it may vary a bit from language to language. In the case of the [NodeJs binding](./../getting_started/nodejs.mdx), it is straightforward since it is distributed via the `npm` package manager.
+First, you should install the components that are needed to use the IOTA SDK and the binding of your choice; it may vary a bit from language to language. In the case of the [NodeJs binding](../getting-started/nodejs.mdx), it is straightforward since it is distributed via the `npm` package manager.
 
 You can read more about [backup and security in this guide](https://wiki.iota.org/shimmer/introduction/how_tos/backup_security).
 
 ```bash
-npm install @iota/wallet dotenv
+npm install @iota/iota-sdk dotenv
 ```
 
 #### 1 Generate a mnemonic
 
 ```js reference
-https://github.com/iotaledger/wallet.rs/tree/develop/wallet/bindings/nodejs/examples/exchange/0-generate-mnemonic.js
+https://github.com/iotaledger/iota-sdk/tree/develop/bindings/nodejs/examples/exchange/0-generate-mnemonic.ts
 ```
 
 You can then create a `.env` by running the following command:
@@ -117,10 +117,10 @@ Keep the `stronghold` password and the `stronghold` database on separate devices
 
 #### 2 Create an account
 
-You can import the Wallet Library and create an account manager using the following example:
+You can import the IOTA SDK and create an account manager using the following example:
 
 ```js reference
-https://github.com/iotaledger/wallet.rs/tree/develop/wallet/bindings/nodejs/examples/exchange/1-create-account.js
+https://github.com/iotaledger/iota-sdk/tree/develop/bindings/nodejs/examples/exchange/1-create-account.ts
 ```
 
 The `Alias` must be unique and can be whatever fits your use case. The `Alias` is typically used to identify an account later on. Each account is also represented by an `index` which is incremented by one every time a new account is created. You can refer to any account via its `index`, or `alias`.
@@ -136,10 +136,10 @@ Common methods of `account` instance include:
 
 ### 3. Generate a User Address to Deposit Funds
 
-`Wallet.rs` is a stateful library. This means it caches all relevant information in storage to provide performance benefits while dealing with, potentially, many accounts and addresses.
+The `wallet` module of the IOTA SDK is a stateful library. This means it caches all relevant information in storage to provide performance benefits while dealing with, potentially, many accounts and addresses.
 
 ```js reference
-https://github.com/iotaledger/wallet.rs/tree/develop/wallet/bindings/nodejs/examples/exchange/2-generate-address.js
+https://github.com/iotaledger/iota-sdk/tree/develop/bindings/nodejs/examples/exchange/2-generate-address.ts
 ```
 
 Every account can have multiple addresses. Addresses are represented by an `index` which is incremented by one every time a new address is created. You can access the addresses using the `account.address()` method:
@@ -165,19 +165,19 @@ There are two types of addresses, `internal` and `public` (external). This appro
 You can get the available account balance across all addresses of the given account using the following example:
 
 ```js reference
-https://github.com/iotaledger/wallet.rs/tree/develop/wallet/bindings/nodejs/examples/exchange/3-check-balance.js
+https://github.com/iotaledger/iota-sdk/tree/develop/bindings/nodejs/examples/exchange/3-check-balance.ts
 ```
 
 ### 5. Listen to Events
 
 <WarningUnlockConditions />
 
-The `Wallet.rs` library supports several events for listening. A provided callback is triggered as soon as an event occurs (which usually happens during syncing).
+The IOTA SDK supports several events for listening. A provided callback is triggered as soon as an event occurs (which usually happens during syncing).
 
 You can use the following example to listen to new output events:
 
 ```js reference
-https://github.com/iotaledger/wallet.rs/tree/develop/wallet/bindings/nodejs/examples/exchange/4-listen-events.js
+https://github.com/iotaledger/iota-sdk/tree/develop/bindings/nodejs/examples/exchange/4-listen-events.ts
 ```
 
 **Example output:**
@@ -206,7 +206,7 @@ Alternatively you can use `account.outputs()` to get all outputs that are stored
 You can use the following example to send tokens to an address.
 
 ```js reference
-https://github.com/iotaledger/wallet.rs/tree/develop/wallet/bindings/nodejs/examples/exchange/5-send-amount.js
+https://github.com/iotaledger/iota-sdk/tree/develop/bindings/nodejs/examples/exchange/5-send-amount.ts
 ```
 
 The full function signature is `account.sendAmount(outputs[, options])`.
@@ -229,6 +229,6 @@ The `account.sendAmount()` function returns a `transaction` with it's id. The `b
 
 :::note Dust Protection
 
-When sending tokens, you should consider a [dust protection](https://github.com/muXxer/tips/blob/master/tips/TIP-0019/tip-0019.md) mechanism.
+When sending tokens, you should consider a [dust protection](https://wiki.iota.org/shimmer/tips/tips/TIP-0019) mechanism.
 
 :::
