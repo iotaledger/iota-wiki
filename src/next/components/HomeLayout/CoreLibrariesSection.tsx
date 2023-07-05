@@ -43,7 +43,7 @@ const LibrariesSection: FC = () => (
               Rust: '/iota-sdk/getting-started/rust',
               NodeJS: '/iota-sdk/getting-started/nodejs',
               Python: '/iota-sdk/getting-started/python',
-              Java: '/iota-sdk/getting-started/java',
+              WASM: '/iota-sdk/getting-started/wasm',
             }}
           />
         </div>
