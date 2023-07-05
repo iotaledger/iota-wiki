@@ -45,7 +45,7 @@ export default function AddToMetaMaskButton() {
       className={`button button--primary button--lg margin-bottom--md`}
       onClick={() => addNetwork()}
     >
-      Add ShimmerEVM Testnet to MetaMask
+      Add to MetaMask
     </button>
   );
 }
