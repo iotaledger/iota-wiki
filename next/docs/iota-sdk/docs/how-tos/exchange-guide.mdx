@@ -71,11 +71,17 @@ Since all IOTA SDK bindings are based on core principles provided by the IOTA SD
 <details>
 <summary> If you were already supporting Shimmer with wallet.rs </summary>
 
-The [IOTA SDK](https://github.com/iotaledger/iota-sdk) is a brand new project which is a combination and improvement of both [iota.rs](https://github.com/iotaledger/iota.rs) and [wallet.rs]https://github.com/iotaledger/wallet.rs.
+The [IOTA SDK](https://github.com/iotaledger/iota-sdk) is a brand new project which is a combination and improvement of both [iota.rs](https://github.com/iotaledger/iota.rs) and [wallet.rs](https://github.com/iotaledger/wallet.rs).
 If you were already supporting Shimmer with wallet.rs, we encourage you to switch to the SDK as wallet.rs will be deprecated and not receive any update anymore.
-Most of the APIs are the same and the changed fairly minimal.
 
-TODO: short summary of the biggest changes.
+Most of the APIs are the same and the changes fairly minimal, here are some of the major changes:
+
+- The npm package changes from `@iota/wallet` to `@iota/sdk`
+- `AccountManager` becomes `Wallet`
+- `manager.generateMnemonic()` becomes `Utils.generateMnemonic()`
+- `generateEd25519Address` becomes `generateEd25519Addresses`
+- `sendAmount` becomes `send`
+- The callbacks to `listen` now provide a properly typed `Event`
 
 </details>
 
