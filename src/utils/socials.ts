@@ -25,7 +25,7 @@ const map: Array<{
 ];
 
 // Returns an object with icon and name for given url
-export default function get_socials_data(url: string): (typeof map)[number] {
+export default function get_socials_data(url: string): typeof map[number] {
   for (let i = 0; i < map.length; i++) {
     if (url.toLowerCase().includes(map[i].name.toLowerCase())) {
       return map[i];
