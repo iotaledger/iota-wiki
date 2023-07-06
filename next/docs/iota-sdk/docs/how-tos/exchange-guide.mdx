@@ -24,14 +24,14 @@ You can easily integrate the IOTA SDK in your exchange, custody solution, or pro
 
 :::warning
 
-The stardust update allows for complex tokenization schemes that can lead to monetary losses if used incorrectly.
+The stardust update allows for complex tokenization schemes that can lead to monetary losses if misused.
 Transaction outputs may have multiple unlocking conditions which may require returning some or all of the amount, which could expire if not claimed in time, or which may not be unlockable for a very long time. You can lose money if you do not check the unlock conditions before accepting a deposit!
 
 :::
 
 ## Integration Guide
 
-This guide explains how to integrate the IOTA SDK in your exchange.
+This guide explains how to integrate the IOTA SDK into your exchange.
 
 Features of the IOTA SDK:
 
@@ -43,17 +43,17 @@ Features of the IOTA SDK:
 
 ### How Does it Work?
 
-The IOTA SDK is a stateful package with a standardized interface for developers to build applications involving value transactions. It offers abstractions to handle payments and can optionally interact with [Stronghold](https://wiki.iota.org/stronghold.rs/getting_started) for seed handling, seed storage, and state backup.
+The IOTA SDK is a stateful package with a standardized interface for developers to build value transaction applications. It offers abstractions to handle payments and can optionally interact with [Stronghold](https://wiki.iota.org/stronghold.rs/getting_started) for seed handling, seed storage, and state backup.
 
 :::note
 
-If you are not familiar with the IOTA SDK, you can find more information in the [documentation](../welcome.md).
+If you are unfamiliar with the IOTA SDK, you can find more information in the [documentation](../welcome.md).
 
 :::
 
 You can use the following examples as a guide to implementing _the multi-account approach_ using the `NodeJs` bindings:
 
-1. [Set up the the IOTA SDK](#1-set-up-the-iota-sdk).
+1. [Set up the IOTA SDK](#1-set-up-the-iota-sdk).
 2. [Create an account for each user](#2-create-an-account-for-each-user).
 3. [Generate a user address to deposit funds](#3-generate-a-user-address-to-deposit-funds).
 4. [Check the user balance](#4-check-the-account-balance).
@@ -66,15 +66,15 @@ If you are looking for other languages, please read the [IOTA SDK overview](../w
 
 :::
 
-Since all IOTA SDK bindings are based on core principles provided by the IOTA SDK, the outlined approach is very similar regardless of the programming language you choose.
+Since all IOTA SDK bindings are based on core principles provided by the IOTA SDK, the outlined approach is very similar regardless of your chosen programming language.
 
 <details>
 <summary> If you were already supporting Shimmer with wallet.rs </summary>
 
 The [IOTA SDK](https://github.com/iotaledger/iota-sdk) is a brand new project which is a combination and improvement of both [iota.rs](https://github.com/iotaledger/iota.rs) and [wallet.rs](https://github.com/iotaledger/wallet.rs).
-If you were already supporting Shimmer with wallet.rs, we encourage you to switch to the SDK as wallet.rs will be deprecated and not receive any update anymore.
+If you were already supporting Shimmer with wallet.rs, we encourage you to switch to the SDK as wallet.rs will be deprecated and not receive any updates anymore.
 
-Most of the APIs are the same and the changes fairly minimal, here are some of the major changes:
+Most of the APIs are the same and the changes are fairly minimal, here are some of the major changes:
 
 - The npm package changes from `@iota/wallet` to `@iota/sdk`
 - `AccountManager` becomes `Wallet`
@@ -87,7 +87,7 @@ Most of the APIs are the same and the changes fairly minimal, here are some of t
 
 ### 1. Set Up the IOTA SDK
 
-First, you should install the components that are needed to use the IOTA SDK and the binding of your choice; it may vary a bit from language to language. In the case of the [NodeJs binding](../getting-started/nodejs.mdx), it is straightforward since it is distributed via the `npm` package manager.
+First, you should install the components needed to use the IOTA SDK and the binding of your choice; it may vary a bit from language to language. In the case of the [NodeJs binding](../getting-started/nodejs.mdx), it is straightforward since it is distributed via the `npm` package manager.
 
 You can read more about [backup and security in this guide](https://wiki.iota.org/shimmer/introduction/how_tos/backup_security).
 
