@@ -155,12 +155,12 @@ The `Alias` must be unique and can be whatever fits your use case. The `Alias` i
 
 You get an instance of any created account using `Wallet.getAccount(accountId|alias)` or get all accounts with `Wallet.getAccounts()`.
 
-Common methods of `account` instance include:
+Common methods of an `Account` instance include:
 
-- `account.addresses()` - returns list of addresses related to the account.
-- `account.generateEd25519Addresses()` - generate one or more new address(es) for the address index incremented by 1.
+- `account.addresses()` - returns a list of addresses related to the account.
+- `account.generateEd25519Addresses()` - generates one or more new address(es) for the address index incremented by 1.
 - `account.balance()` - returns the balance for the given account.
-- `account.sync()` - sync the account information with the tangle.
+- `account.sync()` - sync the account information with the Tangle.
 
 ### 3. Generate a User Address to Deposit Funds
 
@@ -170,7 +170,7 @@ The `wallet` module of the IOTA SDK is a stateful library. This means it caches 
 https://github.com/iotaledger/iota-sdk/tree/develop/bindings/nodejs/examples/exchange/2-generate-address.ts
 ```
 
-Every account can have multiple addresses. Addresses are represented by an `index` which is incremented by one every time a new address is created. You can access the addresses using the `account.address()` method:
+Every account can have multiple addresses. Addresses are represented by an `index` which is incremented by one every time a new address is created. You can access the addresses using the `account.addresses()` method:
 
 ```javascript
 const addresses = account.addresses();
@@ -178,7 +178,7 @@ const addresses = account.addresses();
 console.log('Need a refill? Send it to this address:', addresses[0]);
 ```
 
-You can use the [Faucet](https://faucet.testnet.shimmer.network/) to add test tokens and test your account.
+You can use the [Faucet](https://faucet.testnet.shimmer.network/) to request test tokens and test your account.
 
 There are two types of addresses, `internal` and `public` (external). This approach is known as a _BIP32 Hierarchical Deterministic wallet (HD Wallet)_.
 
