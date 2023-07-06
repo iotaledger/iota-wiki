@@ -135,7 +135,7 @@ Manage your password with the utmost care.
 
 By default, the Stronghold file will be called `wallet.stronghold`. It will store the seed (derived from the mnemonic) that serves as a cryptographic key from which all accounts and related addresses are generated.
 
-One of the key principles behind the `stronghold` is that no one can get a seed out of it, so you should also back up your 24-word mnemonic in a secure place because there is no way to recover it from the `.stronghold` file. You deal with accounts using the `Wallet` instance exclusively, where all complexities are hidden under the hood and are dealt with securely.
+One of the key principles behind `Stronghold` is that is impossible to extract a mnemonic from it ever again, that is, recover it from the `.stronghold` file. That's why you should always back up your 24-word mnemonic and have it stored in safe place. You deal with accounts using the `Wallet` instance exclusively, which abstracts away all internal complexities and makes transacting in a network very easy and convenient.
 
 :::note
 
