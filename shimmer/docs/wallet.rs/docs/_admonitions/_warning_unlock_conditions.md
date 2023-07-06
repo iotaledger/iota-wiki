@@ -6,6 +6,6 @@ To get outputs with only the [`AddressUnlockCondition`](https://wiki.iota.org/sh
 
 If you are synchronizing outputs with other unlock conditions, you should check the unlock conditions carefully before crediting users any balance.
 
-You can find an example illustrating how to check whether an output has only the address unlock condition and whether this address belongs to the account in the [Check Unlock Conditions how-to guide](https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/wallet/17-check-unlock-conditions.ts).
+You can find an example illustrating how to check whether an output has only the address unlock condition and whether this address belongs to the account in the [Check Unlock Conditions how-to guide](../how_tos/outputs_and_transactions/06_check_unlock_conditions.mdx).
 
 :::
