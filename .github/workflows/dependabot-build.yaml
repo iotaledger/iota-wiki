@@ -1,0 +1,16 @@
+name: dependabot-build
+on:
+  workflow_dispatch:
+  pull_request:
+    types: [synchronize]
+    branches: [main]
+
+jobs:
+  build:
+    if: github.actor == 'dependabot[bot]'
+    strategy:
+      matrix:
+        environment: [iota, shimmer, next]
+    uses: ./.github/workflows/build.reusable.yaml
+    with:
+      environment: ${{ matrix.environment }}
