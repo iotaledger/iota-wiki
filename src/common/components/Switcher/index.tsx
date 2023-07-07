@@ -5,6 +5,8 @@ import useSwitcher from '@site/src/utils/useSwitcher';
 import Link from '@docusaurus/Link';
 import clsx from 'clsx';
 
+import './styles.css';
+
 export type Item = {
   id: string;
   label: string;
@@ -37,6 +39,45 @@ enum SwitcherMenuState {
   None,
   Docs,
   Versions,
+}
+
+type SwitcherMenuDropdownProps = { items: MenuItem[]; active: boolean };
+
+function SwitcherMenuDropdown(props: SwitcherMenuDropdownProps) {
+  return (
+    <div
+      className={clsx(
+        'switcher-menu__dropdown',
+        props.active && 'switcher-menu__dropdown--active',
+      )}
+    >
+      <ul className='switcher-menu__items'>
+        {props.items.map(
+          ({ id, label, to, active, icon: Icon, description }) => (
+            <li
+              className={clsx(
+                'switcher-menu__item',
+                active && 'switcher-menu__item--active',
+              )}
+              key={id}
+            >
+              <Link className='switcher-menu__link' to={to}>
+                {Icon && <Icon className='switcher-menu__icon' />}
+                <div className='switcher-menu__content'>
+                  <div className='switcher-menu__label'>{label}</div>
+                  {description && (
+                    <div className='switcher-menu__description'>
+                      {description}
+                    </div>
+                  )}
+                </div>
+              </Link>
+            </li>
+          ),
+        )}
+      </ul>
+    </div>
+  );
 }
 
 type SwitcherMenuProps = { docs: MenuItem[]; versions: MenuItem[] };
@@ -79,47 +120,14 @@ function SwitcherMenu(props: SwitcherMenuProps) {
           {currentVersion.label}
         </div>
       </div>
-      <ul
-        className={clsx(
-          'switcher-menu__items',
-          state === SwitcherMenuState.Docs && 'switcher-menu__items--active',
-        )}
-      >
-        {docs.map(({ id, label, to, active }) => (
-          <li key={id}>
-            <Link
-              className={clsx(
-                'switcher-menu__item',
-                active && 'switcher-menu__item--active',
-              )}
-              to={to}
-            >
-              {label}
-            </Link>
-          </li>
-        ))}
-      </ul>
-      <ul
-        className={clsx(
-          'switcher-menu__items',
-          state === SwitcherMenuState.Versions &&
-            'switcher-menu__items--active',
-        )}
-      >
-        {versions.map(({ id, label, to, active }) => (
-          <li key={id}>
-            <Link
-              className={clsx(
-                'switcher-menu__item',
-                active && 'switcher-menu__item--active',
-              )}
-              to={to}
-            >
-              {label}
-            </Link>
-          </li>
-        ))}
-      </ul>
+      <SwitcherMenuDropdown
+        items={docs}
+        active={state === SwitcherMenuState.Docs}
+      />
+      <SwitcherMenuDropdown
+        items={versions}
+        active={state === SwitcherMenuState.Versions}
+      />
     </div>
   );
 }
@@ -141,11 +149,14 @@ export default function Switcher() {
               'switcher-subsection--active',
             )}
           >
-            <h3>{subsection.label}</h3>
-            {docs.length > 1 || versions.length > 1 ? (
+            <div className='switcher-subsection__content'>
+              <h3>{subsection.label}</h3>
+              {docs.length <= 1 &&
+                versions.length <= 1 &&
+                subsection.description && <p>{subsection.description}</p>}
+            </div>
+            {(docs.length > 1 || versions.length > 1) && (
               <SwitcherMenu docs={docs} versions={versions} />
-            ) : (
-              subsection.description && <p>{subsection.description}</p>
             )}
           </div>
         ) : (
@@ -154,8 +165,10 @@ export default function Switcher() {
             className={clsx('switcher-subsection')}
             to={subsection.to}
           >
-            <h3>{subsection.label}</h3>
-            {subsection.description && <p>{subsection.description}</p>}
+            <div className='switcher-subsection__content'>
+              <h3>{subsection.label}</h3>
+              {subsection.description && <p>{subsection.description}</p>}
+            </div>
           </Link>
         ),
       )}

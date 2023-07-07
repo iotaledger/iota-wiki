@@ -1,5 +1,5 @@
 import type { Config } from './common/components/Switcher';
-import { Identity, IotaCore } from './common/icons';
+import { Identity, IotaCore, Hornet } from './common/icons';
 
 const config: Config = {
   docs: [
@@ -33,7 +33,7 @@ const config: Config = {
       label: 'INX Core API',
       id: 'inx-core-api',
       description: 'Extend the functionality of nodes.',
-      icon: Identity,
+      icon: Hornet,
       subsection: 'layer-2',
       versions: [
         {

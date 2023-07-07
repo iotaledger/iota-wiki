@@ -1,0 +1,116 @@
+.switcher {
+  --ifm-heading-color: var(--ifm-font-color-base);
+  --ifm-link-color: var(--ifm-font-color-base);
+  --ifm-link-hover-color: var(--ifm-font-color-base);
+  --ifm-link-hover-decoration: none;
+  color: var(--ifm-font-color-base);
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--ifm-global-radius);
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+
+.switcher-subsection {
+  display: block;
+  background-color: var(--ifm-color-emphasis-200);
+}
+
+.switcher-subsection--active {
+  --ifm-font-color-base: var(--ifm-color-gray-0);
+  --ifm-heading-color: var(--ifm-font-color-base);
+  --ifm-link-color: var(--ifm-font-color-base);
+  --ifm-link-hover-color: var(--ifm-font-color-base);
+  color: var(--ifm-font-color-base);
+  background-color: var(--ifm-color-primary-darkest);
+}
+.switcher-subsection__content {
+  padding: 1rem 1rem 0 1rem;
+}
+
+.switcher-menu {
+  margin-bottom: 1rem;
+}
+
+.switcher-menu__buttons {
+  display: grid;
+  grid-template-columns: auto 40%;
+  gap: 0.1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.switcher-menu__button {
+  cursor: pointer;
+  padding: 0.5rem 0;
+  background-color: var(--ifm-color-primary);
+  text-align: center;
+}
+
+.switcher-menu__button:first-child {
+  border-top-left-radius: var(--ifm-global-radius);
+  border-bottom-left-radius: var(--ifm-global-radius);
+}
+
+.switcher-menu__button:last-child {
+  border-top-right-radius: var(--ifm-global-radius);
+  border-bottom-right-radius: var(--ifm-global-radius);
+}
+
+.switcher-menu__button--active {
+  background-color: var(--ifm-color-primary-dark);
+}
+
+.switcher-menu__button:first-child.switcher-menu__button--active {
+  border-bottom-left-radius: 0;
+}
+
+.switcher-menu__button:last-child.switcher-menu__button--active {
+  border-bottom-right-radius: 0;
+}
+
+.switcher-menu__dropdown {
+  overflow: hidden;
+  height: 0;
+  background-color: var(--ifm-color-primary-dark);
+  display: flex;
+  justify-content: center;
+}
+
+.switcher-menu__dropdown--active {
+  height: unset;
+  padding: 1rem 0;
+}
+
+.switcher-menu__items {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.switcher-menu__item {
+  padding: 0;
+}
+
+.switcher-menu__item:not(:first-child) {
+  margin-top: 0.5rem;
+}
+
+.switcher-menu__link {
+  display: flex;
+  flex-direction: row;
+}
+
+.switcher-menu__icon {
+  fill: var(--ifm-font-color-base);
+  width: 3rem;
+}
+
+.switcher-menu__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.switcher-menu__description {
+  font-size: 0.6rem;
+}
