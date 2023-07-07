@@ -1,103 +1,96 @@
 module.exports = {
-  getStarted: [
-    {
-      type: 'category',
-      label: 'Introduction',
-      collapsed: true,
-      items: [
-          'funding/edf-funding',
-        'funding/community-treasury'],
-    },
-    {
-      type: 'category',
-      label: 'The Community',
-      collapsed: true,
-      items: [
-        'the-community/how-to-support',
-        'the-community/discord',
-        'the-community/x-teams',
-        'the-community/git-hub',
-        'the-community/social-media',
-      ],
-    },
-    {
-      type: 'category',
-      label: 'Contribute To Wiki',
-      collapsed: true,
-      items: [
+    getStarted: [
         {
-          type: 'doc',
-          label: 'Welcome',
-          id: 'contribute-to-wiki/welcome',
-        },
-        {
-          type: 'category',
-          label: 'Getting Started',
-          items: [
-            'contribute-to-wiki/getting_started/edit_an_article',
-            'contribute-to-wiki/getting_started/developer',
-            'contribute-to-wiki/getting_started/quick_advice',
-          ],
-        },
-        {
-          type: 'category',
-          label: 'How Tos',
-          items: [
-            'contribute-to-wiki/how_tos/create_an_issue',
-            'contribute-to-wiki/how_tos/write_a_good_tutorial',
-            'contribute-to-wiki/how_tos/documentation_setup',
-            'contribute-to-wiki/how_tos/how_to_write_how_tos',
-            'contribute-to-wiki/how_tos/request_tw',
-            'contribute-to-wiki/how_tos/add_a_quiz',
-          ],
-        },
-        {
-          type: 'category',
-          label: 'Explanations',
-          items: [
-            'contribute-to-wiki/explanations/third-party_works',
-            {
-              type: 'category',
-              label: 'Writing Tools',
-              items: [
-                'contribute-to-wiki/explanations/tools/writing_tools',
-                'contribute-to-wiki/explanations/tools/questions',
-                'contribute-to-wiki/explanations/tools/mind_map',
-              ],
-            },
-          ],
-        },
-        {
-          type: 'category',
-          label: 'Reference',
-          items: [
-            {
-              type: 'category',
-              label: 'Style Guidelines',
-              items: [
-                'contribute-to-wiki/reference/style/manifesto',
-                'contribute-to-wiki/reference/style/structure',
-                'contribute-to-wiki/reference/style/matter',
-                'contribute-to-wiki/reference/style/form',
-                'contribute-to-wiki/reference/style/mechanics',
-                'contribute-to-wiki/reference/style/formatting',
-              ],
-            },
-            {
-              type: 'category',
-              label: 'Documentation Structure',
-              items: [
-                'contribute-to-wiki/reference/structure/overview',
-                'contribute-to-wiki/reference/structure/getting_started',
-                'contribute-to-wiki/reference/structure/how_tos',
-                'contribute-to-wiki/reference/structure/tutorials',
-                'contribute-to-wiki/reference/structure/explanations',
-                'contribute-to-wiki/reference/structure/reference',
-              ],
-            },
-          ],
-        },
-      ],
-    },
-  ],
+            type: 'category',
+            label: 'Introduction',
+            collapsed: true,
+            items: [
+                {
+                    type: 'category',
+                    label: 'IOTA',
+                    items:
+                        [
+                            'introduction/iota/introduction',
+                            'introduction/iota/mainnet',
+                            {
+                                type: 'category',
+                                label: 'IOTA Token',
+                                items: [
+                                    'introduction/iota/iota-token/distribution',
+                                    'introduction/iota/iota-token/buying']
+                            },
+                            'introduction/iota/staking',
+                        ]
+                },
+                {
+                    type: 'category',
+                    label: 'Shimmer',
+                    items:
+                        [
+                            {
+                                type: 'category',
+                                label: 'Shimmer Token',
+                                items: [
+                                    'introduction/shimmer/shimmer-token/distribution',
+                                    'introduction/shimmer/shimmer-token/buying']
+                            },
+                            'introduction/shimmer/staging-canary',
+                        ]
+                },
+                {
+                    type: 'category',
+                    label: 'Community',
+                    items:
+                        [
+                            'community/community-links',
+                            'community/governance',
+                        ]
+                },
+                {
+                    type: 'category',
+                    label: 'Programmes',
+                    items:
+                        [
+                            'programmes/bug-bounties',
+                            'programmes/EDF-grant-programme',
+                            'programmes/touchpoint',
+                        ]
+                },
+                {
+                    type: 'category',
+                    label: 'Wallets',
+                    items:
+                        [
+                            'wallets/firefly',
+                            {
+                                type: 'link',
+                                label: 'TanglePay',
+                                href: 'https://tanglepay.com/',
+                            }
+
+                        ]
+                },
+                {
+                    type: 'category',
+                    label: 'Tools',
+                    items:
+                        [
+                            {
+                                type: 'link',
+                                label: 'IOTA Explorer',
+                                href: 'https://explorer.iota.org/mainnet',
+                            },
+                            {
+                                type: 'link',
+                                label: 'Shimmer Explorer',
+                                href: 'https://explorer.chrysalis.network/',
+                            }
+
+                        ]
+                },
+                'research-papers',
+                'glossary',
+                'faq',
+            ]
+        }]
 };

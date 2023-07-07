@@ -30,6 +30,11 @@ module.exports = async () => {
         },
         items: [
           {
+            label: 'Get Started',
+            to: '/get-started/introduction/iota/introduction/',
+            activeBaseRegex: '^(/[^/]+)?/use/.*',
+          },
+          {
             label: 'Use IOTA',
             to: '/use/wallets/what-is-a-wallet',
             activeBaseRegex: '^(/[^/]+)?/use/.*',
