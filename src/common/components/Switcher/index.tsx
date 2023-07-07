@@ -30,101 +30,132 @@ export type Config = {
 
 export type MenuItem = Item & {
   to: string;
+  active: boolean;
 };
 
-type MenuProps = { item: Item; items: MenuItem[] };
+enum SwitcherMenuState {
+  None,
+  Docs,
+  Versions,
+}
 
-function Menu(props: MenuProps) {
+type SwitcherMenuProps = { docs: MenuItem[]; versions: MenuItem[] };
+
+function SwitcherMenu(props: SwitcherMenuProps) {
+  const [state, setState] = useState<SwitcherMenuState>(SwitcherMenuState.None);
+  const { docs, versions } = props;
+
+  const toggle = (nextState: SwitcherMenuState) => {
+    setState((previousState) =>
+      previousState !== nextState ? nextState : SwitcherMenuState.None,
+    );
+  };
+
+  const currentDoc = docs.find((doc) => doc.active);
+  const currentVersion = versions.find((version) => version.active);
+  if (!currentDoc || !currentVersion)
+    throw 'Could not find active doc or version.';
+
   return (
-    <ul className='menu__list switcher__menu'>
-      {props.items.map(({ id, label, to }) => (
-        <li key={id}>
-          {id === props.item.id ? (
-            <div className='menu__link menu__link--active'>
-              <span className='menu__icon'></span>
-              {label}
-            </div>
-          ) : (
-            <Link className='menu__link' to={to}>
-              <span className='menu__icon'></span>
+    <div className='switcher-menu'>
+      <div className='switcher-menu__buttons'>
+        <div
+          className={clsx(
+            'switcher-menu__button',
+            state === SwitcherMenuState.Docs && 'switcher-menu__button--active',
+          )}
+          onClick={() => toggle(SwitcherMenuState.Docs)}
+        >
+          {currentDoc.label}
+        </div>
+        <div
+          className={clsx(
+            'switcher-menu__button',
+            state === SwitcherMenuState.Versions &&
+              'switcher-menu__button--active',
+          )}
+          onClick={() => toggle(SwitcherMenuState.Versions)}
+        >
+          {currentVersion.label}
+        </div>
+      </div>
+      <ul
+        className={clsx(
+          'switcher-menu__items',
+          state === SwitcherMenuState.Docs && 'switcher-menu__items--active',
+        )}
+      >
+        {docs.map(({ id, label, to, active }) => (
+          <li key={id}>
+            <Link
+              className={clsx(
+                'switcher-menu__item',
+                active && 'switcher-menu__item--active',
+              )}
+              to={to}
+            >
               {label}
             </Link>
-          )}
-        </li>
-      ))}
-    </ul>
+          </li>
+        ))}
+      </ul>
+      <ul
+        className={clsx(
+          'switcher-menu__items',
+          state === SwitcherMenuState.Versions &&
+            'switcher-menu__items--active',
+        )}
+      >
+        {versions.map(({ id, label, to, active }) => (
+          <li key={id}>
+            <Link
+              className={clsx(
+                'switcher-menu__item',
+                active && 'switcher-menu__item--active',
+              )}
+              to={to}
+            >
+              {label}
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 }
 
 export default function Switcher() {
-  const [menu, setMenu] = useState();
+  const currentSwitcher = useSwitcher();
+  if (!currentSwitcher) return null;
 
-  const current = useSwitcher();
-  if (!current) return null;
-
-  const toggleMenu = (toggleMenu) => {
-    setMenu((menu) => (menu === toggleMenu ? undefined : toggleMenu));
-  };
-
-  const draw = (items?: MenuItem[]) => items && items.length > 1;
+  const { subsections, docs, versions } = currentSwitcher;
 
   return (
     <div className='switcher'>
-      {current.subsections.map((subsection) =>
-        subsection.id === current.subsection.id ? (
+      {subsections.map((subsection) =>
+        subsection.active ? (
           <div
             key={subsection.id}
             className={clsx(
-              'card',
-              'margin-bottom--md',
-              'switcher__section',
-              'switcher__section--active',
+              'switcher-subsection',
+              'switcher-subsection--active',
             )}
           >
-            <div className='card__body'>
-              <h3>{subsection.label}</h3>
-              {subsection.description && <p>{subsection.description}</p>}
-              {(draw(current.docs) || draw(current.versions)) && (
-                <div className='button-group button-group--block'>
-                  {draw(current.docs) && (
-                    <button
-                      className='button button--primary switcher__button'
-                      onClick={() => toggleMenu('docs')}
-                    >
-                      {current.doc.label}
-                    </button>
-                  )}
-                  {draw(current.versions) && (
-                    <button
-                      className='button button--primary switcher__button'
-                      onClick={() => toggleMenu('versions')}
-                    >
-                      {current.version.label}
-                    </button>
-                  )}
-                </div>
-              )}
-            </div>
-            {menu && (
-              <div className='card__footer padding-horiz--none'>
-                {menu === 'docs' ? (
-                  <Menu item={current.doc} items={current.docs} />
-                ) : menu === 'versions' ? (
-                  <Menu item={current.version} items={current.versions} />
-                ) : null}
-              </div>
+            <h3>{subsection.label}</h3>
+            {docs.length > 1 || versions.length > 1 ? (
+              <SwitcherMenu docs={docs} versions={versions} />
+            ) : (
+              subsection.description && <p>{subsection.description}</p>
             )}
           </div>
         ) : (
           <Link
             key={subsection.id}
-            className={clsx('card', 'margin-bottom--md', 'switcher__section')}
+            className={clsx('switcher-subsection')}
             to={subsection.to}
           >
-            <div className='card__body'>
-              <h3>{subsection.label}</h3>
-              {subsection.description && <p>{subsection.description}</p>}
-            </div>
+            <h3>{subsection.label}</h3>
+            {subsection.description && <p>{subsection.description}</p>}
           </Link>
         ),
       )}
