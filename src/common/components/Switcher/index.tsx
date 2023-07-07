@@ -11,6 +11,7 @@ export type Item = {
   id: string;
   label: string;
   description?: string;
+  badges?: string[];
   icon?: ComponentType<SVGProps<SVGSVGElement>>;
 };
 
@@ -53,7 +54,7 @@ function SwitcherMenuDropdown(props: SwitcherMenuDropdownProps) {
     >
       <ul className='switcher-menu__items'>
         {props.items.map(
-          ({ id, label, to, active, icon: Icon, description }) => (
+          ({ id, label, to, active, icon: Icon, description, badges = [] }) => (
             <li
               className={clsx(
                 'switcher-menu__item',
@@ -64,7 +65,16 @@ function SwitcherMenuDropdown(props: SwitcherMenuDropdownProps) {
               <Link className='switcher-menu__link' to={to}>
                 {Icon && <Icon className='switcher-menu__icon' />}
                 <div className='switcher-menu__content'>
-                  <div className='switcher-menu__label'>{label}</div>
+                  <div className='switcher-menu__label'>
+                    {label}
+                    <div className='switcher-menu__badges'>
+                      {badges.map((badge) => (
+                        <span className='badge switcher-menu__badge'>
+                          {badge}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
                   {description && (
                     <div className='switcher-menu__description'>
                       {description}

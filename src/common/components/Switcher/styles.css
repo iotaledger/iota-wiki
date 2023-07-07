@@ -114,3 +114,14 @@
 .switcher-menu__description {
   font-size: 0.6rem;
 }
+
+.switcher-menu__label {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.switcher-menu__badge {
+  background-color: var(--ifm-color-gray-900);
+  margin-left: 1rem;
+}

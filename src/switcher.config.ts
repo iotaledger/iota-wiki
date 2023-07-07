@@ -21,11 +21,13 @@ const config: Config = {
       id: 'identity',
       description: 'Trustless digital identity management.',
       icon: Identity,
+      badges: ['IOTA'],
       subsection: 'layer-2',
       versions: [
         {
           id: 'identity-rs',
           label: '0.7-alpha',
+          badges: ['Shimmer'],
         },
       ],
     },
@@ -34,15 +36,18 @@ const config: Config = {
       id: 'inx-core-api',
       description: 'Extend the functionality of nodes.',
       icon: Hornet,
+      badges: ['Shimmer'],
       subsection: 'layer-2',
       versions: [
         {
           id: 'inx-api-core-v0',
           label: '0.0',
+          badges: ['IOTA'],
         },
         {
           id: 'inx-api-core-v1',
           label: '1.0',
+          badges: ['Shimmer'],
         },
       ],
     },
