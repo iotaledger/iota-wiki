@@ -102,7 +102,7 @@ make sure you add the correct network parameters to your `hardhat.config.js`, fo
 networks: {
     'shimmerevm-testnet': {
       url: 'https://json-rpc.evm.testnet.shimmer.network',
-      chainId: 1072,
+      chainId: 1071,
       accounts: [priv_key],
     },
 }
