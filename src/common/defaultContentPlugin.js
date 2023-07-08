@@ -1,7 +1,7 @@
 /** @type {import('@docusaurus/plugin-content-docs').Options} */
 module.exports = async () => {
   const jargonPlugin = (await import('rehype-jargon')).default;
-  const jargonConfig = (await import('./../../shimmer/jargon.js')).default;
+  const jargonConfig = (await import('./../../common/jargon.js')).default;
 
   return {
     editUrl: 'https://github.com/iotaledger/iota-wiki/edit/main/',

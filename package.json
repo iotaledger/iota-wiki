@@ -7,6 +7,7 @@
     "start:next": "(ENVIRONMENT=next; yarn generate:api && yarn start)",
     "start:all": "yarn build:all && yarn serve",
     "build:plugins": "yarn ./plugins/tutorial build",
+    "build:theme": "yarn ./theme build",
     "build:iota": "(ENVIRONMENT=iota; yarn generate:api && yarn build --out-dir build)",
     "build:shimmer": "(ENVIRONMENT=shimmer; yarn generate:api && yarn build  --out-dir build/shimmer)",
     "build:next": "(ENVIRONMENT=next; yarn generate:api && yarn build --out-dir build/next)",

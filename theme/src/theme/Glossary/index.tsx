@@ -1,0 +1,55 @@
+import React from 'react';
+import Heading from '@theme/Heading';
+import { toTitleCase } from '@artsy/to-title-case';
+import { clsx } from 'clsx';
+
+export default function Glossary() {
+  const glossary = require('@site/common/jargon.js');
+  const parse = require('html-react-parser');
+
+  const sortedGlossary = Object.keys(glossary)
+    .sort()
+    .reduce((acc, key) => {
+      acc[key] = glossary[key];
+      return acc;
+    }, {});
+
+  var char = '';
+  return (
+    <>
+      {Object.entries(sortedGlossary).map(([key, value]) => {
+        var heading = null;
+        if (key.charAt(0) !== char) {
+          char = key.charAt(0);
+          heading = char;
+        }
+
+        return (
+          <>
+            {heading && (
+              <Heading
+                as='h2'
+                title={char}
+                className={clsx(
+                  'anchor anchorWithHideOnScrollNavbar_node_modules-@docusaurus-theme-classic-lib-theme-Heading-styles-module',
+                )}
+              >
+                {char.toUpperCase()}
+              </Heading>
+            )}
+            <Heading
+              as='h3'
+              title={key}
+              className={clsx(
+                'anchor anchorWithHideOnScrollNavbar_node_modules-@docusaurus-theme-classic-lib-theme-Heading-styles-module',
+              )}
+            >
+              {toTitleCase(key)}
+            </Heading>
+            <p>{parse(value)}</p>
+          </>
+        );
+      })}
+    </>
+  );
+}
