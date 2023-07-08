@@ -10,7 +10,7 @@ keywords:
 
 ## Parameters that are open for Community Governance in Shimmer
 
-(Defined by the IOTA Foundation)
+(Defined by the _IOTA_ Foundation)
 
 This list will be extended with the maturity of the Shimmer protocol by the IF engineering Team with the goal to open more programmable parameters to governance.
 

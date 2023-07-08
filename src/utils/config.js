@@ -116,18 +116,14 @@ async function create_doc_plugin({ ...options }) {
   // Check if options has a rehypePlugin array
   if (options.rehypePlugins) {
     // If it does, add it to the clone and delete it from options
-    setting.rehypePlugins.push(
-      ...options.rehypePlugins
-    );
+    setting.rehypePlugins.push(...options.rehypePlugins);
     delete options.rehypePlugins;
   }
 
   // Check if options has a remarkPlugins array
   if (options.remarkPlugins) {
     // If it does, add it to the clone and delete it from options
-    setting.remarkPlugins.push(
-      ...options.remarkPlugins
-    );
+    setting.remarkPlugins.push(...options.remarkPlugins);
     delete options.remarkPlugins;
   }
 

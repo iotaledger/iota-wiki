@@ -1,6 +1,7 @@
 /** @type {import('@docusaurus/plugin-content-docs').Options} */
-module.exports = async() => {
+module.exports = async () => {
   const jargonPlugin = (await import('rehype-jargon')).default;
+  const jargonConfig = (await import('./../../shimmer/jargon.js')).default;
 
   return {
     editUrl: 'https://github.com/iotaledger/iota-wiki/edit/main/',
@@ -13,7 +14,7 @@ module.exports = async() => {
     ],
     rehypePlugins: [
       require('rehype-katex'),
-      jargonPlugin,
+      [jargonPlugin, { jargon: jargonConfig }],
     ],
-  }
+  };
 };

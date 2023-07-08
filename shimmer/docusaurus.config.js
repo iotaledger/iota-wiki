@@ -3,9 +3,11 @@ const contentConfigs = require('./contentPlugins');
 const { create_doc_plugin, globStatic } = require('../src/utils/config');
 
 module.exports = async () => {
-  const contentPlugins = await Promise.all(contentConfigs.map(async (contentConfig) =>
-    await create_doc_plugin(contentConfig),
-  ));
+  const contentPlugins = await Promise.all(
+    contentConfigs.map(
+      async (contentConfig) => await create_doc_plugin(contentConfig),
+    ),
+  );
   //console.log(contentPlugins);
   const staticDirs = await globStatic('/docs/**/static/', __dirname);
 
@@ -222,4 +224,3 @@ module.exports = async () => {
     staticDirectories: [...staticDirs],
   };
 };
-
