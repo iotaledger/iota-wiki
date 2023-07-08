@@ -1,6 +1,6 @@
 # Create temporaty directory to work in and clone SDK
 mkdir tmp && cd tmp
-git clone --depth 1 --branch api-gen https://github.com/dr-electron/iota-sdk
+git clone --depth 1 --branch develop https://github.com/iotaledger/iota-sdk
 cd iota-sdk
 
 # Generate and copy Python references
