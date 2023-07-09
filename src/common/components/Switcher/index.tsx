@@ -113,6 +113,7 @@ function SwitcherMenu(props: SwitcherMenuProps) {
         <div
           className={clsx(
             'switcher-menu__button',
+            'switcher-menu__button--caret',
             state === SwitcherMenuState.Docs && 'switcher-menu__button--active',
           )}
           onClick={() => toggle(SwitcherMenuState.Docs)}
@@ -122,6 +123,7 @@ function SwitcherMenu(props: SwitcherMenuProps) {
         <div
           className={clsx(
             'switcher-menu__button',
+            'switcher-menu__button--caret',
             state === SwitcherMenuState.Versions &&
               'switcher-menu__button--active',
           )}

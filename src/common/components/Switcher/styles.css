@@ -42,10 +42,28 @@
 }
 
 .switcher-menu__button {
+  position: relative;
   cursor: pointer;
-  padding: 0.5rem 0;
+  padding: 0.5rem;
   background-color: var(--ifm-color-primary);
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.switcher-menu__button--caret {
+  padding-right: 1.2rem;
+}
+
+.switcher-menu__button--caret:after {
+  display: inline-block;
+  content: '';
+  background: var(--ifm-menu-link-sublist-icon) 50% / 1.5rem 1.5rem;
+  height: 0.9rem;
+  width: 0.9rem;
+  rotate: 180deg;
+  position: absolute;
+  right: 0.3rem;
 }
 
 .switcher-menu__button:first-child {
