@@ -38,6 +38,7 @@ const config: Config = {
       icon: Hornet,
       badges: ['Shimmer'],
       subsection: 'layer-2',
+      defaultVersion: 'inx-api-core-v1',
       versions: [
         {
           id: 'inx-api-core-v0',
@@ -63,6 +64,7 @@ const config: Config = {
         label: 'Layer 2',
         description: 'Build solutions.',
         id: 'layer-2',
+        defaultDoc: 'inx-core-api',
       },
     ],
   ],

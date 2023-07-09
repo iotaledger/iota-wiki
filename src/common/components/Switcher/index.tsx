@@ -20,10 +20,13 @@ export type Version = Item;
 export type Doc = Item & {
   subsection: string;
   versions: Version[];
+  defaultVersion?: string;
 };
 
 // TODO: Add default doc.
-export type Subsection = Item;
+export type Subsection = Item & {
+  defaultDoc?: string;
+};
 export type Section = Subsection[];
 
 export type Config = {

@@ -41,18 +41,31 @@ export default function useSwitcher(): Switcher | undefined {
       to: getPath(version.id),
       active: version.id === pluginId,
     })),
-    docs: currentDocs.map((doc) => ({
-      ...doc,
-      to: getPath(doc.versions[0].id),
-      active: doc.id === currentDoc.id,
-    })),
-    subsections: currentSubsections.map((subsection) => ({
-      ...subsection,
-      to: getPath(
-        config.docs.filter((doc) => doc.subsection === subsection.id)[0]
-          .versions[0].id,
-      ),
-      active: subsection.id === currentDoc.subsection,
-    })),
+    docs: currentDocs.map((doc) => {
+      const id = doc.defaultVersion ?? doc.versions[0].id;
+
+      return {
+        ...doc,
+        to: getPath(id),
+        active: doc.id === currentDoc.id,
+      };
+    }),
+    subsections: currentSubsections.map((subsection) => {
+      let id;
+
+      if (subsection.defaultDoc) {
+        const doc = config.docs.find((doc) => doc.id === subsection.defaultDoc);
+        id = doc.defaultVersion ?? doc.versions[0].id;
+      } else {
+        id = config.docs.filter((doc) => doc.subsection === subsection.id)[0]
+          .versions[0].id;
+      }
+
+      return {
+        ...subsection,
+        to: getPath(id),
+        active: subsection.id === currentDoc.subsection,
+      };
+    }),
   };
 }
