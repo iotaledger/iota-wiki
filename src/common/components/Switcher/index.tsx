@@ -55,14 +55,14 @@ function SwitcherMenuDropdown(props: SwitcherMenuDropdownProps) {
       <ul className='switcher-menu__items'>
         {props.items.map(
           ({ id, label, to, active, icon: Icon, description, badges = [] }) => (
-            <li
-              className={clsx(
-                'switcher-menu__item',
-                active && 'switcher-menu__item--active',
-              )}
-              key={id}
-            >
-              <Link className='switcher-menu__link' to={to}>
+            <li className='switcher-menu__item' key={id}>
+              <Link
+                className={clsx(
+                  'switcher-menu__link',
+                  active && 'switcher-menu__link--active',
+                )}
+                to={to}
+              >
                 {Icon && <Icon className='switcher-menu__icon' />}
                 <div className='switcher-menu__content'>
                   <div className='switcher-menu__label'>
