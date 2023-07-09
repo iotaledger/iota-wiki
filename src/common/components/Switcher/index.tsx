@@ -110,27 +110,50 @@ function SwitcherMenu(props: SwitcherMenuProps) {
   return (
     <div className='switcher-menu'>
       <div className='switcher-menu__buttons'>
-        <div
-          className={clsx(
-            'switcher-menu__button',
-            'switcher-menu__button--caret',
-            state === SwitcherMenuState.Docs && 'switcher-menu__button--active',
-          )}
-          onClick={() => toggle(SwitcherMenuState.Docs)}
-        >
-          {currentDoc.label}
-        </div>
-        <div
-          className={clsx(
-            'switcher-menu__button',
-            'switcher-menu__button--caret',
-            state === SwitcherMenuState.Versions &&
-              'switcher-menu__button--active',
-          )}
-          onClick={() => toggle(SwitcherMenuState.Versions)}
-        >
-          {currentVersion.label}
-        </div>
+        {docs.length > 1 ? (
+          <div
+            className={clsx(
+              'switcher-menu__button',
+              'switcher-menu__button--caret',
+              state === SwitcherMenuState.Docs &&
+                'switcher-menu__button--active',
+            )}
+            onClick={() => toggle(SwitcherMenuState.Docs)}
+          >
+            {currentDoc.label}
+          </div>
+        ) : (
+          <div
+            className={clsx(
+              'switcher-menu__button',
+              'switcher-menu__button--disabled',
+            )}
+          >
+            {currentDoc.label}
+          </div>
+        )}
+        {versions.length > 1 ? (
+          <div
+            className={clsx(
+              'switcher-menu__button',
+              'switcher-menu__button--caret',
+              state === SwitcherMenuState.Versions &&
+                'switcher-menu__button--active',
+            )}
+            onClick={() => toggle(SwitcherMenuState.Versions)}
+          >
+            {currentVersion.label}
+          </div>
+        ) : (
+          <div
+            className={clsx(
+              'switcher-menu__button',
+              'switcher-menu__button--disabled',
+            )}
+          >
+            {currentVersion.label}
+          </div>
+        )}
       </div>
       <SwitcherMenuDropdown
         items={docs}

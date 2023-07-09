@@ -44,11 +44,19 @@
 .switcher-menu__button {
   position: relative;
   cursor: pointer;
-  padding: 0.5rem;
+  padding: calc(0.5rem - 2px);
   background-color: var(--ifm-color-primary);
+  border: var(--ifm-color-primary) solid 2px;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.switcher-menu__button--disabled {
+  background-color: transparent;
+  border: var(--ifm-color-primary-dark) solid 2px;
+  color: var(--ifm-color-primary-dark);
+  cursor: unset;
 }
 
 .switcher-menu__button--caret {
@@ -78,6 +86,7 @@
 
 .switcher-menu__button--active {
   background-color: var(--ifm-color-primary-dark);
+  border-color: var(--ifm-color-primary-dark);
 }
 
 .switcher-menu__button:first-child.switcher-menu__button--active {
