@@ -24,6 +24,7 @@
   color: var(--ifm-font-color-base);
   background-color: var(--ifm-color-primary-darkest);
 }
+
 .switcher-subsection__content {
   padding: 1rem 1rem 0 1rem;
 }
@@ -98,14 +99,22 @@
 .switcher-menu__link {
   display: flex;
   flex-direction: row;
+  padding: 0.25rem 0.5rem;
+  border-radius: var(--ifm-global-radius);
+}
+
+.switcher-menu__link--active {
+  background-color: var(--ifm-color-primary);
 }
 
 .switcher-menu__icon {
   fill: var(--ifm-font-color-base);
   width: 3rem;
+  margin-left: -0.5rem;
 }
 
 .switcher-menu__content {
+  flex: 1 1 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
