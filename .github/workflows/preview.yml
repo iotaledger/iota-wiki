@@ -60,3 +60,5 @@ jobs:
           VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
           PR_LABELS: false
           PREBUILT: true
+          PRODUCTION: false
+          GITHUB_DEPLOYMENT_ENV: Preview
