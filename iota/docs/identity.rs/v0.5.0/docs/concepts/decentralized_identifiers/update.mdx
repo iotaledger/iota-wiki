@@ -73,7 +73,7 @@ The following properties can be specified for a service:
 The following example demonstrates adding verification methods and services to a DID Document.
 
 <Tabs
-  groupId="programming-languages"
+  groupId="language"
   defaultValue="nodejs"
   values={[
     { label: "Node.js", value: "nodejs" },
@@ -100,7 +100,7 @@ https://github.com/iotaledger/identity.rs/blob/support/v0.5/examples/account/man
 
 The Example above starts by [creating an identity using the account](./create.mdx).
 
-<Tabs groupId="code-examples">
+<Tabs groupId="language">
 <TabItem value="Rust" label="Rust">
 
 ```rust
@@ -162,7 +162,7 @@ Note that the Account does not allow removing all capability invocation keys.
 
 Another verification method can be added to the DID document using the Account:
 
-<Tabs groupId="code-examples">
+<Tabs groupId="language">
 <TabItem value="Rust" label="Rust">
 
 ```rust
@@ -226,7 +226,7 @@ Since the `MethodScope` is not specified, the verification method will be create
 
 Verification relationship can be attached to a verification method by referencing its fragment.
 
-<Tabs groupId="code-examples">
+<Tabs groupId="language">
 <TabItem value="Rust" label="Rust">
 
 ```rust
@@ -297,7 +297,7 @@ property now has both an embedded and a referenced verification method.
 
 Similar to verification methods, services can be added to a DID Document.
 
-<Tabs groupId="code-examples">
+<Tabs groupId="language">
 <TabItem value="Rust" label="Rust">
 
 ```rust
@@ -373,7 +373,7 @@ The updated Document with the newly created service looks as follows.
 
 Verification methods and/or their relationships can be removed from the DID Document. The following code removes the verification method that we created previously.
 
-<Tabs groupId="code-examples">
+<Tabs groupId="language">
 <TabItem value="Rust" label="Rust">
 
 ```rust

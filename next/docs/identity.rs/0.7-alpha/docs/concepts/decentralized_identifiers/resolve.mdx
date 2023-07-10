@@ -28,7 +28,7 @@ The following examples demonstrate how to resolve an IOTA DID Document from its 
 
 Once the `Resolver` has been configured with a `Client` it will resolve IOTA DID Documents according to the read procedure defined in the [IOTA DID Method Specification](../../specs/did/iota_did_method_spec.mdx#read). It fetches the latest [Alias Output](../../specs/did/iota_did_method_spec.mdx#alias-output) from the network specified in the DID (see [DID Format](../../specs/did/iota_did_method_spec.mdx#did-format)), then extracts and validates the DID Document from it.
 
-<Tabs>
+<Tabs groupId="language">
 <TabItem value="rust" label="Rust">
 
 ```rust
@@ -94,7 +94,7 @@ const document = await resolver.resolve(did);
 
 The `Client` can also be used directly, to resolve individual DIDs from its configured network.
 
-<Tabs>
+<Tabs groupId="language">
 <TabItem value="rust" label="Rust">
 
 ```rust
@@ -150,7 +150,7 @@ a particular DID method (such as for instance the IOTA method) gets resolved. Th
 
 ### Resolving multiple DID methods
 
-<Tabs groupId="programming-language">
+<Tabs groupId="language">
 <TabItem value="rust" label="Rust">
 
 ```rust reference

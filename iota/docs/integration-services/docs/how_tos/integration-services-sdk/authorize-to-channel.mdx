@@ -31,7 +31,7 @@ The example-6 script performs the following tasks:
 
 You can run the example with the following command:
 
-<Tabs groupId={"programmingLanguage"}>
+<Tabs groupId="language">
 <TabItem value="Java" label={'Java'}>
 
 ```bash
@@ -56,7 +56,7 @@ npm run example-6
 
 In this example, the `userClient` tries to read from a channel while it did not have read/write permissions. This will raise an exception. The correct way is to first request subscription as shown in the following script:
 
-<Tabs groupId={"programmingLanguage"}>
+<Tabs groupId="language">
 <TabItem value="Java" label={'Java'}>
 
 ```java
@@ -86,7 +86,7 @@ const { subscriptionLink } = await userClient.requestSubscription(
 
 In order to allow `userClient` to read and write on that channel, its subscription needs to be authorized as shown in the following script:
 
-<Tabs groupId={"programmingLanguage"}>
+<Tabs groupId="language">
 <TabItem value="Java" label={'Java'}>
 
 ```java
@@ -134,7 +134,7 @@ for (const subscription of unauthorizedSubscriptions) {
 
 `userClient` can now write on a channel any JSON payload as using the following script:
 
-<Tabs groupId={"programmingLanguage"}>
+<Tabs groupId="language">
 <TabItem value="Java" label={'Java'}>
 
 ```java
@@ -158,7 +158,7 @@ await ownerClient.write(channelAddress, {
 
 `userClient` can now read from the channel successfully using the following script:
 
-<Tabs groupId={"programmingLanguage"}>
+<Tabs groupId="language">
 <TabItem value="Java" label={'Java'}>
 
 ```java

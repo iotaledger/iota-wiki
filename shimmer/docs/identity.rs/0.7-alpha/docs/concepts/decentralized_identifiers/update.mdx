@@ -67,7 +67,7 @@ The following properties can be specified for a service:
 
 The following example demonstrates managing verification methods and services in a DID Document.
 
-<Tabs groupId="programming-language">
+<Tabs groupId="language">
 <TabItem value="rust" label="Rust">
 
 ```rust reference
@@ -88,7 +88,7 @@ https://github.com/iotaledger/identity.rs/blob/main/bindings/wasm/examples/src/0
 
 The example above starts by [creating an identity](./create.mdx).
 
-<Tabs groupId="programming-language">
+<Tabs groupId="language">
 <TabItem value="rust" label="Rust">
 
 ```rust
@@ -141,7 +141,7 @@ This creates and publishes an Alias Output containing a DID Document with one ve
 
 ### Adding Verification Method
 
-<Tabs groupId="programming-language">
+<Tabs groupId="language">
 <TabItem value="rust" label="Rust">
 
 ```rust
@@ -204,7 +204,7 @@ Notice that these changes to the document are not published yet. This will be do
 
 Verification relationship can be attached to a verification method by referencing its fragment.
 
-<Tabs groupId="programming-language">
+<Tabs groupId="language">
 <TabItem value="rust" label="Rust">
 
 ```rust
@@ -262,7 +262,7 @@ This will add `Authentication` relationship to the verification method with the 
 
 ### Adding a Service
 
-<Tabs groupId="programming-language">
+<Tabs groupId="language">
 <TabItem value="rust" label="Rust">
 
 ```rust
@@ -335,7 +335,7 @@ The updated Document with the newly created service looks as follows.
 
 ### Removing Verification Method
 
-<Tabs groupId="programming-language">
+<Tabs groupId="language">
 <TabItem value="rust" label="Rust">
 
 ```rust
@@ -392,7 +392,7 @@ This removes the original verification method with the fragment `key-1`.
 
 Publish the updated DID Document inside the Alias Output taking into account the increase in the storage deposit needed.
 
-<Tabs groupId="programming-language">
+<Tabs groupId="language">
 <TabItem value="rust" label="Rust">
 
 ```rust

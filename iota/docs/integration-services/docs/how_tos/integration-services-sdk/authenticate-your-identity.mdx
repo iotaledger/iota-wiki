@@ -41,7 +41,7 @@ everything may yet run smoothly.
 
 ## Prerequisites
 
-<Tabs groupId={"programmingLanguage"}>
+<Tabs groupId="language">
 <TabItem value="Java" label={'Java'}>
 
 - [JDK 16](https://openjdk.java.net/projects/jdk/16/) (recommended)
@@ -58,7 +58,7 @@ everything may yet run smoothly.
 
 ### Required Packages
 
-<Tabs groupId={"programmingLanguage"}>
+<Tabs groupId="language">
 <TabItem value="Java" label={'Java'}>
 
 Ideally every dependency listed in the
@@ -78,7 +78,7 @@ This example uses `Axios` as the HTTP client, `bs58` to decode Base58, and [@nob
 
 Newer versions may work, but the examples were tested with the following versions:
 
-<Tabs groupId={'packageManagerNode'}>
+<Tabs groupId="nodePackageManager">
 <TabItem value="npm" label="npm">
 
 ```bash
@@ -127,7 +127,7 @@ You can find your current API version using the [http://localhost:3000/info](htt
 Never save your secret key in plain text in your code. Use local environment variables or IOTA [Stronghold](https://wiki.iota.org/stronghold.rs/welcome) to store your secret keys securely.
 :::
 
-<Tabs groupId={"programmingLanguage"}>
+<Tabs groupId="language">
 <TabItem value="Java" label={'Java'}>
 
 ```java
@@ -184,7 +184,7 @@ The returned response body will look like this .js object.
 
 ### 2. Hash the Nonce
 
-<Tabs groupId={"programmingLanguage"}>
+<Tabs groupId="language">
 <TabItem value="Java" label={'Java'}>
 
 After you have retrieved the nonce, you should hash it. You can use insert java method to hash the nonce with the
@@ -240,7 +240,7 @@ Never save your secret key in plain text in your code. Use local environment var
 IOTA [Stronghold](https://wiki.iota.org/stronghold.rs/welcome) to store your secret keys securely.
 :::
 
-<Tabs groupId={"programmingLanguage"}>
+<Tabs groupId="language">
 <TabItem value="Java" label={'Java'}>
 
 ```java.]
@@ -291,7 +291,7 @@ The example's nonce and secret key will generate the following signed nonce:
 
 The last step is to request the JWT. You can use the following code snippet with your signed nonce in the request body.
 
-<Tabs groupId={"programmingLanguage"}>
+<Tabs groupId="language">
 <TabItem value="Java" label={'Java'}>
 
 ```java
@@ -351,7 +351,7 @@ The returned JS object will contain the following JWT:
 
 This is an example of a GET request to the API with the JWT from the last step included in the `Authorization`:
 
-<Tabs groupId={"programmingLanguage"}>
+<Tabs groupId="language">
 <TabItem value="Java" label={'Java'}>
 
 ```java
@@ -416,7 +416,7 @@ You can find the complete code
 example [here](https://github.com/albydeca/iota-is-sdk/blob/main/src/main/java/net/gradbase/clients/BaseClient.java).
 All snippets above are taken from there.
 
-<Tabs groupId={"programmingLanguage"}>
+<Tabs groupId="language">
 <TabItem value="Java" label={'Java'}>
 
 You can find the complete code example in this [repository](https://github.com/albydeca/iota-is-sdk/blob/main/src/main/java/net/gradbase/clients/BaseClient.java).
