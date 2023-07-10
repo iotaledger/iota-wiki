@@ -15,7 +15,6 @@ export type Item = {
   icon?: ComponentType<SVGProps<SVGSVGElement>>;
 };
 
-// TODO: Add default version.
 export type Version = Item;
 export type Doc = Item & {
   subsection: string;
@@ -23,7 +22,6 @@ export type Doc = Item & {
   defaultVersion?: string;
 };
 
-// TODO: Add default doc.
 export type Subsection = Item & {
   defaultDoc?: string;
 };
