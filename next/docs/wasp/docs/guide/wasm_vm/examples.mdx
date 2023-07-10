@@ -27,7 +27,7 @@ the SoloContext to create full-blown tests for the `dividend` example smart cont
 Let's start with a simple test. We are going to use the `member` function to add a valid
 new member/factor combination to the member group.
 
-<Tabs>
+<Tabs groupId="language">
 
 <TabItem value="go">
 
@@ -65,7 +65,7 @@ way, but in both cases one required parameter is omitted. The idea is to test th
 function properly panics by checking the ctx.Err value is not nil after the call. Finally,
 the error message text is checked to see if it contains the expected error message.
 
-<Tabs>
+<Tabs groupId="language">
 
 <TabItem value="go">
 
@@ -104,7 +104,7 @@ the `Params` proxy initialization lines that we wanted to be detected as missing
 
 Now let's see a more complex example:
 
-<Tabs>
+<Tabs groupId="language">
 
 <TabItem value="go">
 
@@ -152,7 +152,7 @@ balances.
 
 Now let's skip to the most complex test of all:
 
-<Tabs>
+<Tabs groupId="language">
 
 <TabItem value="go">
 
@@ -238,7 +238,7 @@ through a [call()](call.mdx) from within another Func, in which these return val
 be used normally. Since solo executes [`post()`](post.mdx) requests synchronously, it is
 possible to have a Func return a result and test for certain result values.
 
-<Tabs>
+<Tabs groupId="language">
 
 <TabItem value="go">
 
