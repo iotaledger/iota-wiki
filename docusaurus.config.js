@@ -1,16 +1,17 @@
-const { glob, merge } = require('./src/utils/config');
+const { merge } = require('./src/utils/config');
 const path = require('path');
+const { create_doc_plugin, globStatic } = require('./src/utils/config');
+const common = require('./common/docusaurus.config');
+const contentConfigs = require('./contentPlugins');
 
 module.exports = async () => {
+  const contentPlugins = (await contentConfigs()).map((contentConfig) =>
+    create_doc_plugin(contentConfig),
+  );
+
   const {
-    ENVIRONMENT = 'iota',
-    EXTERNAL = '',
     MODE = 'development',
   } = process.env;
-
-  if (!['iota', 'shimmer', 'next'].includes(ENVIRONMENT)) {
-    throw "Set ENVIRONMENT to 'iota', 'shimmer', or 'next'";
-  }
 
   if (!['development', 'production'].includes(MODE)) {
     throw "Set MODE to 'development', or 'production'";
@@ -18,28 +19,81 @@ module.exports = async () => {
 
   const isProduction = MODE === 'production';
 
-  const externalPathPatterns = EXTERNAL.split(',')
-    .map((pathPattern) => pathPattern.trim())
-    .filter((pathPattern) => pathPattern !== '');
-  const externalDirectory = path.join(ENVIRONMENT, 'external');
-  const external = await glob(externalPathPatterns, externalDirectory);
-
-  const internal = await glob(['tutorials', 'common', ENVIRONMENT]);
-
   const scripts = {
     scripts: ['/js/search-environment-observer.js'],
   };
 
-  const search = {
+  const themeConfig = {
     themeConfig: {
+      image: 'img/iota-wiki.png',
+      navbar: {
+        hideOnScroll: true,
+        logo: {
+          alt: 'IOTA Wiki Logo',
+          src: 'img/logo.svg',
+          srcDark: 'img/logo_dark.svg',
+        },
+        items: [
+          {
+            label: 'Get Started',
+            to: '/get-started/placeholder',
+            activeBaseRegex: '^(/[^/]+)?/get-started/.*',
+          },
+          {
+            label: 'Learn',
+            to: '/learn/placeholder',
+            activeBaseRegex:
+              '^(/[^/]+)?/learn/.*'
+          },
+          {
+            label: 'Build',
+            to: '/build/placeholder',
+            activeBaseRegex:
+              '^(/[^/]+)?/build/.*' 
+          },
+          {
+            label: 'Maintain',
+            to: '/maintain/placeholder',
+            activeBaseRegex: '^(/[^/]+)?/maintain/.*',
+          }
+        ],
+      },
+      footer: {},
+      socials: [
+        {
+          url: 'https://www.youtube.com/c/iotafoundation',
+          backgroundColor: 'var(--ifm-color-gray-900)',
+        },
+        {
+          url: 'https://www.github.com/iotaledger/',
+          backgroundColor: '#2C3850',
+        },
+        {
+          url: 'https://discord.iota.org/',
+          backgroundColor: '#4B576F',
+        },
+        {
+          url: 'https://www.twitter.com/iota/',
+          backgroundColor: '#6A768E',
+        },
+        {
+          url: 'https://www.reddit.com/r/iota/',
+          backgroundColor: '#7D89A1',
+        },
+        {
+          url: 'https://www.linkedin.com/company/iotafoundation/',
+          backgroundColor: '#8995AD',
+        },
+        {
+          url: 'https://www.instagram.com/iotafoundation/',
+          backgroundColor: '#99A5BD',
+        },
+      ],
       algolia: {
         appId: 'YTLE56KAO4',
         apiKey: '75358d60d302f7f93f630d63128abb03',
         indexName: 'iota',
         contextualSearch: true,
-        searchParameters: {
-          facetFilters: [`environment:${ENVIRONMENT}`],
-        },
       },
     },
   };
@@ -64,10 +118,48 @@ module.exports = async () => {
     ],
   };
 
+  const staticDirs = await globStatic('/docs/**/static/', __dirname);
+
   return merge(
-    ...external,
-    ...internal,
-    search,
+    common,
+    {
+      title: 'IOTA Wiki',
+      tagline: 'The complete reference for IOTA/Shimmer',
+      baseUrl: '/',
+      presets: [
+        [
+          '@docusaurus/preset-classic',
+          {
+            docs: false,
+            blog: false,
+            theme: {
+              customCss: require.resolve('./src/iota/css/custom.css'),
+            },
+            sitemap: {
+              changefreq: 'daily',
+              priority: 0.5,
+            },
+            pages: {
+              path: path.resolve(__dirname, '../src/iota/pages'),
+            },
+          },
+        ],
+      ],
+      plugins: [
+        ...contentPlugins
+      ],
+      stylesheets: [
+        {
+          href: 'https://cdn.jsdelivr.net/npm/katex@0.13.24/dist/katex.min.css',
+          type: 'text/css',
+          integrity:
+            'sha384-odtC+0UGzzFL/6PNoE8rX/SPcQDXBJ+uRepguP4QkPCm2LBxH3FA3y+fKSiJ+AmM',
+          crossorigin: 'anonymous',
+        },
+      ],
+      staticDirectories: [...staticDirs],
+    },
+    themeConfig,
     isProduction ? production : {},
     scripts,
   );
