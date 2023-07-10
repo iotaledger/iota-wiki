@@ -33,10 +33,7 @@ array of all bets in a round, if it weren't for typedefs you could not define it
 
 Instead, now you add the following to your schema definition file:
 
-<Tabs
-      values={[
-          {label: 'schema.yaml', value: 'yaml'},
-      ]}>
+<Tabs>
 <TabItem value="yaml">
 
 ```yaml
@@ -52,12 +49,7 @@ state:
 The [Schema Tool](usage.mdx) will generate the following code in `typedefs.xx` for the
 `BettingRound` type:
 
-<Tabs
-	values={[
-		{label: 'Go', value: 'go'},
-		{label: 'Rust', value: 'rust'},
-        {label: 'TypeScript', value: 'ts'},
-	]}>
+<Tabs>
 
 <TabItem value="go">
 
@@ -201,12 +193,7 @@ for the types `ArrayOfImmutableBet` and `ArrayOfMutableBet`. These are subsequen
 in the state definition that is generated in `state.xx`:
 
 <Tabs
-      groupId="language"
-      values={[
-          {label: 'Go', value: 'go'},
-          {label: 'Rust', value: 'rust'},
-          {label: 'TypeScript', value: 'ts'},
-      ]}>
+      groupId="language">
 
 <TabItem value="go">
 
