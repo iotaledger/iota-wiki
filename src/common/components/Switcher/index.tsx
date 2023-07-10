@@ -69,8 +69,11 @@ function SwitcherMenuDropdown(props: SwitcherMenuDropdownProps) {
                   <div className='switcher-menu__label'>
                     {label}
                     <div className='switcher-menu__badges'>
-                      {badges.map((badge) => (
-                        <span className='badge switcher-menu__badge'>
+                      {Array.from(new Set(badges)).map((badge) => (
+                        <span
+                          key={badge}
+                          className='badge switcher-menu__badge'
+                        >
                           {badge}
                         </span>
                       ))}

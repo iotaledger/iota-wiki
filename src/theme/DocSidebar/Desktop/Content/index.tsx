@@ -4,25 +4,25 @@
  *  - Add switcher.
  */
 
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import clsx from 'clsx';
-import {ThemeClassNames} from '@docusaurus/theme-common';
+import { ThemeClassNames } from '@docusaurus/theme-common';
 import {
   useAnnouncementBar,
   useScrollPosition,
 } from '@docusaurus/theme-common/internal';
 import DocSidebarItems from '@theme/DocSidebarItems';
-import type {Props} from '@theme/DocSidebar/Desktop/Content';
+import type { Props } from '@theme/DocSidebar/Desktop/Content';
 import Switcher from '@site/src/common/components/Switcher';
 
 import styles from './styles.module.css';
 
 function useShowAnnouncementBar() {
-  const {isActive} = useAnnouncementBar();
+  const { isActive } = useAnnouncementBar();
   const [showAnnouncementBar, setShowAnnouncementBar] = useState(isActive);
 
   useScrollPosition(
-    ({scrollY}) => {
+    ({ scrollY }) => {
       if (isActive) {
         setShowAnnouncementBar(scrollY === 0);
       }
@@ -46,7 +46,8 @@ export default function DocSidebarDesktopContent({
         styles.menu,
         showAnnouncementBar && styles.menuWithAnnouncementBar,
         className,
-      )}>
+      )}
+    >
       <ul className={clsx(ThemeClassNames.docs.docSidebarMenu, 'menu__list')}>
         <Switcher />
         <DocSidebarItems items={sidebar} activePath={path} level={1} />
