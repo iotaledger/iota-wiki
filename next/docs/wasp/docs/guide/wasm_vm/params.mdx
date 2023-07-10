@@ -39,7 +39,7 @@ the `member` function:
 
 <Tabs groupId="language">
 
-<TabItem value="go">
+<TabItem value="go" label="Go">
 
 ```go
 type ImmutableMemberParams struct {
@@ -58,7 +58,7 @@ func (s ImmutableMemberParams) Factor() wasmtypes.ScImmutableUint64 {
 ```
 
 </TabItem>
-<TabItem value="rust">
+<TabItem value="rust" label="Rust">
 
 ```rust
 #[derive(Clone)]
@@ -80,7 +80,7 @@ impl ImmutableMemberParams {
 ```
 
 </TabItem>
-<TabItem value="ts">
+<TabItem value="typescript" label="Typescript">
 
 ```ts
 export class ImmutableMemberParams extends wasmtypes.ScProxy {

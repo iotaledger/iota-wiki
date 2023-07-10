@@ -49,7 +49,7 @@ the 1000 tokens it passes to the function:
 
 <Tabs groupId="language">
 
-<TabItem value="go">
+<TabItem value="go" label="Go">
 
 ```go
 f := dividend.ScFuncs.Divide(ctx)
@@ -57,7 +57,7 @@ f.Func.TransferBaseTokens(1000).Call()
 ```
 
 </TabItem>
-<TabItem value="rust">
+<TabItem value="rust" label="Rust">
 
 ```rust
 let f = dividend::ScFuncs::divide(ctx);
@@ -65,7 +65,7 @@ f.func.transfer_base_tokens(1000).call();
 ```
 
 </TabItem>
-<TabItem value="ts">
+<TabItem value="typescript" label="Typescript">
 
 ```ts
 let f = dividend.ScFuncs.divide(ctx);
@@ -80,7 +80,7 @@ return the dispersion factor for a specific address:
 
 <Tabs groupId="language">
 
-<TabItem value="go">
+<TabItem value="go" label="Go">
 
 ```go
 f := dividend.ScFuncs.GetFactor(ctx)
@@ -90,7 +90,7 @@ factor := f.Results.Factor().Value()
 ```
 
 </TabItem>
-<TabItem value="rust">
+<TabItem value="rust" label="Rust">
 
 ```rust
 let f = dividend::ScFuncs::get_factor(ctx);
@@ -100,7 +100,7 @@ let factor = f.results.factor().value();
 ```
 
 </TabItem>
-<TabItem value="ts">
+<TabItem value="typescript" label="Typescript">
 
 ```ts
 let f = dividend.ScFuncs.getFactor(ctx);
@@ -125,7 +125,7 @@ member function like this:
 
 <Tabs groupId="language">
 
-<TabItem value="go">
+<TabItem value="go" label="Go">
 
 ```go
 altContract := NewScHname("alternateName")
@@ -134,7 +134,7 @@ f.Func.OfContract(altContract).TransferBaseTokens(1000).Call()
 ```
 
 </TabItem>
-<TabItem value="rust">
+<TabItem value="rust" label="Rust">
 
 ```rust
 let alt_contract = ScHname::new("alternateName");
@@ -143,7 +143,7 @@ f.func.of_contract(alt_contract).transfer_base_tokens(1000).call();
 ```
 
 </TabItem>
-<TabItem value="ts">
+<TabItem value="typescript" label="Typescript">
 
 ```ts
 let altContract = ScHname.fromString('alternateName');

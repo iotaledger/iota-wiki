@@ -25,7 +25,7 @@ the W3C specification.
 The following example demonstrates how to resolve the DID: "did:iota:H3C2AVvLMv6gmMNam3uVAjZpfkcJCwDwnZn6z3wXmqPV" from the `main` network.
 
 <Tabs groupId="language">
-<TabItem value="Rust" label="Rust">
+<TabItem value="rust" label="Rust">
 
 ```rust
 use identity::iota::Resolver;
@@ -63,7 +63,7 @@ the resolver needs to be configured to have a client capable of operating on sai
 The following example demonstrates how one can setup a `Resolver` with a given `client` and then attempt resolving a specified `did` which may be on any Tangle (public or private).
 
 <Tabs groupId="language">
-<TabItem value="Rust" label="Rust">
+<TabItem value="rust" label="Rust">
 
 ```rust
 use identity::iota::Resolver;
@@ -123,7 +123,7 @@ The fact that a DID Document [can be updated](./update.mdx) implies that the sta
 also depends on when this operation was carried out. The `Resolver` provides a way to view the entire history of a DID Document (up to the time when the method is called).
 
 <Tabs groupId="language">
-<TabItem value="Rust" label="Rust">
+<TabItem value="rust" label="Rust">
 
 ```rust
 use identity::iota::Resolver;
@@ -159,14 +159,14 @@ async function callResolveHistory(did) {
 This section shows complete examples from the Iota Identity Framework code base. The first example creates a DID Document, publishes it to the Tangle and then resolves it.
 
 <Tabs groupId="language">
-<TabItem value="nodejs">
+<TabItem value="node" label="Node.js">
 
 ```ts reference
 https://github.com/iotaledger/identity.rs/blob/support/v0.5/bindings/wasm/examples/src/resolve_did.js
 ```
 
 </TabItem>
-<TabItem value="rust">
+<TabItem value="rust" label="Rust">
 
 ```rust reference
 https://github.com/iotaledger/identity.rs/blob/support/v0.5/examples/low-level-api/resolve_did.rs
@@ -178,14 +178,14 @@ https://github.com/iotaledger/identity.rs/blob/support/v0.5/examples/low-level-a
 This second example demonstrates creating, publishing changes and then resolving the history of a DID Document.
 
 <Tabs groupId="language">
-<TabItem value="nodejs">
+<TabItem value="node" label="Node.js">
 
 ```ts reference
 https://github.com/iotaledger/identity.rs/blob/support/v0.5/bindings/wasm/examples/src/resolve_history.js
 ```
 
 </TabItem>
-<TabItem value="rust">
+<TabItem value="rust" label="Rust">
 
 ```rushttps://github.com/iotaledger/identity.rs/blob/support/v0.5/examples/low-level-api/resolve_history.rs
     t reference

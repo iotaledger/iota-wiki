@@ -28,7 +28,7 @@ created in [example-0](./run-how-tos.mdx) and then performs the following tasks:
 You can run the example with the following command:
 
 <Tabs groupId="language">
-<TabItem value="Java" label={'Java'}>
+<TabItem value="java" label="Java">
 
 ```bash
 mvn exec:_java -Dexec.mainClass=net.gradbase.how_tos.CreateChannel
@@ -37,7 +37,7 @@ mvn exec:_java -Dexec.mainClass=net.gradbase.how_tos.CreateChannel
 **Example source code**: [Example-5](https://github.com/albydeca/iota-is-sdk/blob/main/examples/src/main/java/net/gradbase/examples/CreateChannel.java)
 
 </TabItem>
-<TabItem value="Nodejs" label={'Node.js'}>
+<TabItem value="node" label="Node.js">
 
 ```bash
 npm run example-5
@@ -53,7 +53,7 @@ npm run example-5
 You can create a channel using the following script:
 
 <Tabs groupId="language">
-<TabItem value="Java" label={'Java'}>
+<TabItem value="java" label="Java">
 
 ```java
 Map<String, String> topics = new HashMap<String, String>();
@@ -72,7 +72,7 @@ System.out.println(channelAddress);
 ```
 
 </TabItem>
-<TabItem value="Nodejs" label={'Node.js'}>
+<TabItem value="node" label="Node.js">
 
 ```js
 // The owner creates a channel where he/she want to publish data of type 'example-data'.
@@ -90,7 +90,7 @@ const { channelAddress } = await ownerClient.create({
 You can write on a channel using the following script:
 
 <Tabs groupId="language">
-<TabItem value="Java" label={'Java'}>
+<TabItem value="java" label="Java">
 
 ```java
 // Writing 3 data packets to channel
@@ -101,7 +101,7 @@ for (int i = 0; i < 3; i++) {
 ```
 
 </TabItem>
-<TabItem value="Nodejs" label={'Node.js'}>
+<TabItem value="node" label="Node.js">
 
 ```js
 await channel.write(channelAddress, {
@@ -121,7 +121,7 @@ await channel.write(channelAddress, {
 You can read from a channel using the following script:
 
 <Tabs groupId="language">
-<TabItem value="Java" label={'Java'}>
+<TabItem value="java" label="Java">
 
 ```java
 List<ChannelData> datas = channelClient.read(channelAddress, null, null, null, null, null);
@@ -132,7 +132,7 @@ for (ChannelData data : datas) {
 ```
 
 </TabItem>
-<TabItem value="Nodejs" label={'Node.js'}>
+<TabItem value="node" label="Node.js">
 
 ```java
 const channelData = await channel.read(channelAddress);

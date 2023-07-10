@@ -49,7 +49,7 @@ representations of each field, all separated by vertical bars.
 Here is the `events` section that can be found in the demo `fairroulette` smart contract:
 
 <Tabs groupId="schema">
-<TabItem value="yaml">
+<TabItem value="yaml" label="YAML">
 
 ```yaml
 events:
@@ -76,7 +76,7 @@ for the `FairRouletteEvents` struct:
 
 <Tabs groupId="language">
 
-<TabItem value="go">
+<TabItem value="go" label="Go">
 
 ```go
 package fairroulette
@@ -144,7 +144,7 @@ func (e FairRouletteEvents) Winner(
 ```
 
 </TabItem>
-<TabItem value="rust">
+<TabItem value="rust" label="Rust">
 
 ```rust
 use wasmlib::*;
@@ -212,7 +212,7 @@ impl FairRouletteEvents {
 ```
 
 </TabItem>
-<TabItem value="ts">
+<TabItem value="typescript" label="Typescript">
 
 ```ts
 import * as wasmlib from 'wasmlib';
@@ -285,21 +285,21 @@ into a single string before emitting it. Here is the way in which `fairroulette`
 
 <Tabs groupId="language">
 
-<TabItem value="go">
+<TabItem value="go" label="Go">
 
 ```go
     f.Events.Bet(bet.Better.Address(), bet.Amount, bet.Number)
 ```
 
 </TabItem>
-<TabItem value="rust">
+<TabItem value="rust" label="Rust">
 
 ```rust
     f.events.bet(&bet.better.address(), bet.amount, bet.number);
 ```
 
 </TabItem>
-<TabItem value="ts">
+<TabItem value="typescript" label="Typescript">
 
 ```ts
 f.events.bet(bet.better.address(), bet.amount, bet.number);

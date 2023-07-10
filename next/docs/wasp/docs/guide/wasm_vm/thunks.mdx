@@ -35,7 +35,7 @@ contents has been omitted for now):
 
 <Tabs groupId="language">
 
-<TabItem value="go">
+<TabItem value="go" label="Go">
 
 ```go
 var exportMap = wasmlib.ScExportMap{
@@ -72,7 +72,7 @@ func viewGetOwnerThunk(ctx wasmlib.ScViewContext) {}
 ```
 
 </TabItem>
-<TabItem value="rust">
+<TabItem value="rust" label="Rust">
 
 ```rust
 const EXPORT_MAP: ScExportMap = ScExportMap {
@@ -109,7 +109,7 @@ fn view_get_owner_thunk(ctx: &ScViewContext) {}
 ```
 
 </TabItem>
-<TabItem value="ts">
+<TabItem value="typescript" label="Typescript">
 
 ```ts
 const exportMap: wasmlib.ScExportMap = {
@@ -179,7 +179,7 @@ Here is the generated `main.xx` that forms the main entry point for the Wasm cod
 
 <Tabs groupId="language">
 
-<TabItem value="go">
+<TabItem value="go" label="Go">
 
 ```go
 //go:build wasm
@@ -210,7 +210,7 @@ func onLoad() {
 ```
 
 </TabItem>
-<TabItem value="rust">
+<TabItem value="rust" label="Rust">
 
 ```rust
 use dividend::*;
@@ -230,7 +230,7 @@ fn on_load() {
 ```
 
 </TabItem>
-<TabItem value="ts">
+<TabItem value="typescript" label="Typescript">
 
 ```ts
 import * as wasmvmhost from 'wasmvmhost';
@@ -256,7 +256,7 @@ pattern in the generated `lib.xx`:
 
 <Tabs groupId="language">
 
-<TabItem value="go">
+<TabItem value="go" label="Go">
 
 ```go
 type SetOwnerContext struct {
@@ -287,7 +287,7 @@ func funcSetOwnerThunk(ctx wasmlib.ScFuncContext) {
 ```
 
 </TabItem>
-<TabItem value="rust">
+<TabItem value="rust" label="Rust">
 
 ```rust
 pub struct SetOwnerContext {
@@ -314,7 +314,7 @@ fn func_set_owner_thunk(ctx: &ScFuncContext) {
 ```
 
 </TabItem>
-<TabItem value="ts">
+<TabItem value="typescript" label="Typescript">
 
 ```ts
 // this class is actually defined in contract.ts

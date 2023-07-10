@@ -29,14 +29,14 @@ We recommend you update _Rust_ to the [latest stable version](https://github.com
 [_cmake_](https://cmake.org/documentation/) and [_openssl_](https://www.openssl.org/docs/) are required to run Rust. To run the build process successfully using Cargo, you may need install additional build tools onto your system.
 
 <Tabs groupId="os">
-<TabItem value={'windows'} label={'Windows'}>
+<TabItem value="windows" label="Windows">
 
 You can download _cmake_ from the [official cmake website](https://cmake.org/download/).
 You can install _openssl_ with [vcpkg](https://github.com/microsoft/vcpkg) or
 [chocolatey](https://chocolatey.org/).
 
 <Tabs groupId="windowsPackageManager">
-<TabItem value={'chocolatey'} label={'chocolatey'}>
+<TabItem value="chocolatey" label="chocolatey">
 
 ```bash
 choco install openssl
@@ -45,7 +45,7 @@ set OPENSSL_ROOT_DIR="C:\Program Files\OpenSSL-Win64"
 ```
 
 </TabItem>
-<TabItem value={'vcpkg'} label={'vcpkg'}>
+<TabItem value="vcpkg" label="vcpkg">
 
 ```bash
 ./vcpkg.exe install openssl:x64-windows
@@ -57,7 +57,7 @@ set VCPKGRS_DYNAMIC=1
 </TabItem>
 </Tabs>
 </TabItem>
-<TabItem value={'macOS'} label={'macOS'}>
+<TabItem value="mac" label="macOS">
 
 You can install _cmake_ and _openssl_ with [_Homebrew_](https://docs.brew.sh/) by running the following
 commands:
@@ -70,7 +70,7 @@ OPENSSL_ROOT_DIR=$(brew --prefix openssl@1.1)
 ```
 
 </TabItem>
-<TabItem value={'linux'} label={'Linux'}>
+<TabItem value="linux" label="Linux">
 
 You can install _cmake_ and _openssl_ with your distro's package manager or download them from their websites.
 On Debian and Ubuntu, you will also need the

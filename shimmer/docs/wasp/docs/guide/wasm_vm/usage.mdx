@@ -43,7 +43,7 @@ all lower case. This is to conform to best practices for package names in most l
 The generated schema definition file looks like this:
 
 <Tabs groupId="schema">
-<TabItem value="yaml">
+<TabItem value="yaml" label="YAML">
 
 ```yaml
 name: MySmartContract
@@ -88,7 +88,7 @@ tool there to generate the initial code for the desired language:
 
 <Tabs groupId="language">
 
-<TabItem value="go">
+<TabItem value="go" label="Go">
 
 If you want to generate Go code, you should run the schema tool with the `-go` option like
 this:
@@ -98,7 +98,7 @@ schema -go
 ```
 
 </TabItem>
-<TabItem value="rust">
+<TabItem value="rust" label="Rust">
 
 If you want to generate Rust code, you should run the schema tool with the `-rs` option
 like this:
@@ -108,7 +108,7 @@ schema -rs
 ```
 
 </TabItem>
-<TabItem value="ts">
+<TabItem value="typescript" label="Typescript">
 
 If you want to generate TypeScript code, you should run the schema tool with the `-ts`
 option like this:
@@ -132,7 +132,7 @@ that will compile successfully into a Wasm code file. You compile these as follo
 
 <Tabs groupId="language">
 
-<TabItem value="go">
+<TabItem value="go" label="Go">
 
 ```shell
 tinygo build -target wasm go/main.go
@@ -145,7 +145,7 @@ will be regenerated and overwritten whenever the schema tool is run again.
 See the [TinyGo](https://tinygo.org/) documentation for more build options.
 
 </TabItem>
-<TabItem value="rust">
+<TabItem value="rust" label="Rust">
 
 After generating the Rust code, you should first modify the Cargo.toml file to your
 liking, and potentially add the new project to a Rust workspace. Cargo.toml will not be
@@ -163,7 +163,7 @@ See the [wasm-pack](https://rustwasm.github.io/wasm-pack/) documentation for mor
 options.
 
 </TabItem>
-<TabItem value="ts">
+<TabItem value="typescript" label="Typescript">
 
 ```shell
 npx asc ts/mysmartcontract/lib.ts --outFile mysmartcontract_ts.wasm --lib path/to/node_modules
@@ -188,7 +188,7 @@ before you even start modifying it:
 
 <Tabs groupId="language">
 
-<TabItem value="go">
+<TabItem value="go" label="Go">
 
 ```go
 package mysmartcontract
@@ -214,7 +214,7 @@ func viewGetOwner(ctx wasmlib.ScViewContext, f *GetOwnerContext) {
 ```
 
 </TabItem>
-<TabItem value="rust">
+<TabItem value="rust" label="Rust">
 
 ```rust
 use wasmlib::*;
@@ -239,7 +239,7 @@ pub fn view_get_owner(_ctx: &ScViewContext, f: &GetOwnerContext) {
 ```
 
 </TabItem>
-<TabItem value="ts">
+<TabItem value="typescript" label="Typescript">
 
 ```ts
 import * as wasmlib from 'wasmlib';

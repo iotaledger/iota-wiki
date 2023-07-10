@@ -38,7 +38,7 @@ first part of the code that implements it, which contains the `init()` function:
 
 <Tabs groupId="language">
 
-<TabItem value="go">
+<TabItem value="go" label="Go">
 
 ```go
 // This example implements 'dividend', a simple smart contract that will
@@ -90,7 +90,7 @@ func funcInit(ctx wasmlib.ScFuncContext, f *InitContext) {
 ```
 
 </TabItem>
-<TabItem value="rust">
+<TabItem value="rust" label="Rust">
 
 ```rust
 // This example implements 'dividend', a simple smart contract that will
@@ -138,7 +138,7 @@ pub fn func_init(ctx: &ScFuncContext, f: &InitContext) {
 ```
 
 </TabItem>
-<TabItem value="ts">
+<TabItem value="typescript" label="Typescript">
 
 ```ts
 // This example implements 'dividend', a simple smart contract that will
@@ -196,7 +196,7 @@ handle such changes through its state by providing a proper function interface:
 
 <Tabs groupId="language">
 
-<TabItem value="go">
+<TabItem value="go" label="Go">
 
 ```go
 // 'setOwner' is used to change the owner of the smart contract.
@@ -215,7 +215,7 @@ func funcSetOwner(_ wasmlib.ScFuncContext, f *SetOwnerContext) {
 ```
 
 </TabItem>
-<TabItem value="rust">
+<TabItem value="rust" label="Rust">
 
 ```rust
 // 'setOwner' is used to change the owner of the smart contract.
@@ -234,7 +234,7 @@ pub fn func_set_owner(_ctx: &ScFuncContext, f: &SetOwnerContext) {
 ```
 
 </TabItem>
-<TabItem value="ts">
+<TabItem value="typescript" label="Typescript">
 
 ```ts
 // 'setOwner' is used to change the owner of the smart contract.

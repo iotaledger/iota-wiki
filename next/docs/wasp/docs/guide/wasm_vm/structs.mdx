@@ -33,7 +33,7 @@ bet. And you would keep track of all bets in state storage in an array of Bet st
 do so, you would insert the following into the schema definition file:
 
 <Tabs groupId="schema">
-<TabItem value="yaml">
+<TabItem value="yaml" label="YAML">
 
 ```yaml
 structs:
@@ -54,7 +54,7 @@ struct:
 
 <Tabs groupId="language">
 
-<TabItem value="go">
+<TabItem value="go" label="Go">
 
 ```go
 package betting
@@ -126,7 +126,7 @@ func (o MutableBet) Value() *Bet {
 ```
 
 </TabItem>
-<TabItem value="rust">
+<TabItem value="rust" label="Rust">
 
 ```rust
 use wasmlib::*;
@@ -204,7 +204,7 @@ impl MutableBet {
 ```
 
 </TabItem>
-<TabItem value="ts">
+<TabItem value="typescript" label="Typescript">
 
 ```ts
 import * as wasmtypes from 'wasmlib/wasmtypes';
@@ -279,7 +279,7 @@ The generated code in `state.xx` that implements the state interface is shown he
 
 <Tabs groupId="language">
 
-<TabItem value="go">
+<TabItem value="go" label="Go">
 
 ```go
 package betting
@@ -352,7 +352,7 @@ func (s MutableBettingState) Owner() wasmtypes.ScMutableAgentID {
 ```
 
 </TabItem>
-<TabItem value="rust">
+<TabItem value="rust" label="Rust">
 
 ```rust
 use wasmlib::*;
@@ -439,7 +439,7 @@ impl MutableBettingState {
 ```
 
 </TabItem>
-<TabItem value="ts">
+<TabItem value="typescript" label="Typescript">
 
 ```ts
 import * as wasmtypes from 'wasmlib/wasmtypes';

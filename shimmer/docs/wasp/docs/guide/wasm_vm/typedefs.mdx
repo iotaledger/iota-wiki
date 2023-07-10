@@ -34,7 +34,7 @@ array of all bets in a round, if it weren't for typedefs you could not define it
 Instead, now you add the following to your schema definition file:
 
 <Tabs groupId="schema">
-<TabItem value="yaml">
+<TabItem value="yaml" label="YAML">
 
 ```yaml
 typedefs:
@@ -51,7 +51,7 @@ The [Schema Tool](usage.mdx) will generate the following code in `typedefs.xx` f
 
 <Tabs groupId="language">
 
-<TabItem value="go">
+<TabItem value="go" label="Go">
 
 ```go
 import "github.com/iotaledger/wasp/packages/wasmvm/wasmlib/go/wasmlib/wasmtypes"
@@ -94,7 +94,7 @@ type MutableBettingRound = ArrayOfMutableBet
 ```
 
 </TabItem>
-<TabItem value="rust">
+<TabItem value="rust" label="Rust">
 
 ```rust
 use wasmlib::*;
@@ -146,7 +146,7 @@ pub type MutableBettingRound = ArrayOfMutableBet;
 ```
 
 </TabItem>
-<TabItem value="ts">
+<TabItem value="typescript" label="Typescript">
 
 ```ts
 import * as wasmtypes from 'wasmlib/wasmtypes';
@@ -194,7 +194,7 @@ in the state definition that is generated in `state.xx`:
 
 <Tabs groupId="language">
 
-<TabItem value="go">
+<TabItem value="go" label="Go">
 
 ```go
 package betting
@@ -275,7 +275,7 @@ func (s MutableBettingState) Rounds() ArrayOfMutableBettingRound {
 ```
 
 </TabItem>
-<TabItem value="rust">
+<TabItem value="rust" label="Rust">
 
 ```rust
 use wasmlib::*;
@@ -370,7 +370,7 @@ impl MutableBettingState {
 ```
 
 </TabItem>
-<TabItem value="ts">
+<TabItem value="typescript" label="Typescript">
 
 ```ts
 import * as wasmtypes from 'wasmlib/wasmtypes';

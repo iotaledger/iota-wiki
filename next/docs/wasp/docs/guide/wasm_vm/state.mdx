@@ -34,7 +34,7 @@ accesses the state variables in a type-safe way. Let's examine the `state` secti
 `dividend` example in more detail:
 
 <Tabs groupId="schema">
-<TabItem value="yaml">
+<TabItem value="yaml" label="YAML">
 
 ```yaml
 state:
@@ -68,7 +68,7 @@ of the state variables through mutable proxies:
 
 <Tabs groupId="language">
 
-<TabItem value="go">
+<TabItem value="go" label="Go">
 
 ```go
 type MutableDividendState struct {
@@ -101,7 +101,7 @@ func (s MutableDividendState) TotalFactor() wasmtypes.ScMutableUint64 {
 ```
 
 </TabItem>
-<TabItem value="rust">
+<TabItem value="rust" label="Rust">
 
 ```rust
 #[derive(Clone)]
@@ -137,7 +137,7 @@ impl MutableDividendState {
 ```
 
 </TabItem>
-<TabItem value="ts">
+<TabItem value="typescript" label="Typescript">
 
 ```ts
 export class MutableDividendState extends wasmtypes.ScProxy {

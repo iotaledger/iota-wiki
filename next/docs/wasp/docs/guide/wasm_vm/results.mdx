@@ -36,7 +36,7 @@ function:
 
 <Tabs groupId="language">
 
-<TabItem value="go">
+<TabItem value="go" label="Go">
 
 ```go
 type MutableGetFactorResults struct {
@@ -50,7 +50,7 @@ func (s MutableGetFactorResults) Factor() wasmtypes.ScMutableUint64 {
 ```
 
 </TabItem>
-<TabItem value="rust">
+<TabItem value="rust" label="Rust">
 
 ```rust
 #[derive(Clone)]
@@ -67,7 +67,7 @@ impl MutableGetFactorResults {
 ```
 
 </TabItem>
-<TabItem value="ts">
+<TabItem value="typescript" label="Typescript">
 
 ```ts
 export class MutableGetFactorResults extends wasmtypes.ScProxy {

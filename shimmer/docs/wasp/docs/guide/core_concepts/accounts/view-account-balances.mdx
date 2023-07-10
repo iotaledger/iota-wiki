@@ -33,14 +33,14 @@ A map of `token ID -> amount` (the base token is identified by an empty token ID
 ### Examples
 
 <Tabs groupId="language">
-<TabItem value="solo">
+<TabItem value="solo" label="Solo">
 
 ```go
 balances := chain.L2Assets(agentID)
 ```
 
 </TabItem>
-<TabItem value="soloctx">
+<TabItem value="soloctx" label="Solo (Schema)">
 
 ```go
 b := coreaccounts.ScFuncs.Balance(ctx)
@@ -51,7 +51,7 @@ balances := b.Results.Balances()
 ```
 
 </TabItem>
-<TabItem value="rust">
+<TabItem value="rust" label="Rust">
 
 ```rust
 let b = coreaccounts::ScFuncs::balance(ctx);
@@ -61,7 +61,7 @@ let balances = b.results.balances();
 ```
 
 </TabItem>
-<TabItem value="go">
+<TabItem value="go" label="Go">
 
 ```go
 b := coreaccounts.ScFuncs.Balance(ctx)
@@ -84,14 +84,14 @@ Get the total funds controlled by the chain.
 - A map of [token_color] -> [amount] .
 
 <Tabs groupId="language">
-<TabItem value="solo">
+<TabItem value="solo" label="Solo">
 
 ```go
 balances := chain.L2TotalAssets()
 ```
 
 </TabItem>
-<TabItem value="soloctx">
+<TabItem value="soloctx" label="Solo (Schema)">
 
 ```go
 b := coreaccounts.ScFuncs.TotalAssets(ctx)
@@ -101,7 +101,7 @@ balances := b.Results.Balances()
 ```
 
 </TabItem>
-<TabItem value="rust">
+<TabItem value="rust" label="Rust">
 
 ```rust
 let b = coreaccounts::ScFuncs::total_assets(ctx);
@@ -110,7 +110,7 @@ let balances = b.results.balances();
 ```
 
 </TabItem>
-<TabItem value="go">
+<TabItem value="go" label="Go">
 
 ```go
 b := coreaccounts.ScFuncs.TotalAssets(ctx)
@@ -132,14 +132,14 @@ Get a list of all accounts that exist on the chain.
 A list of accounts (Agent IDs).
 
 <Tabs groupId="language">
-<TabItem value="solo">
+<TabItem value="solo" label="Solo">
 
 ```go
 accounts := chain.L2Accounts()
 ```
 
 </TabItem>
-<TabItem value="soloctx">
+<TabItem value="soloctx" label="Solo (Schema)">
 
 ```go
 a := coreaccounts.ScFuncs.Accounts(ctx)
@@ -149,7 +149,7 @@ accounts := a.Results.AllAccounts()
 ```
 
 </TabItem>
-<TabItem value="rust">
+<TabItem value="rust" label="Rust">
 
 ```rust
 let a = coreaccounts::ScFuncs::accounts(ctx);
@@ -158,7 +158,7 @@ let accounts = a.results.all_accounts();
 ```
 
 </TabItem>
-<TabItem value="go">
+<TabItem value="go" label="Go">
 
 ```go
 a := coreaccounts.ScFuncs.Accounts(ctx)
