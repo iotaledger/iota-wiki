@@ -43,6 +43,7 @@ some nodes in the network can be configured to dump a complete state of the chai
 and committing all the blocks that produced that state. However as those blocks aren't downloaded, they are not available in the DB.
 
 The snapshot format is as follows:
+
 1. Number `4` in 4 byte unsigned integer little endian format representing the length of state index,
 2. state index in 4 byte unsigned integer little endian format,
 3. Number `40` in 4 byte unsigned integer little endian format representing the length of state commitment: `20` bytes for trie root and
@@ -50,10 +51,10 @@ The snapshot format is as follows:
 4. trie root in `20` bytes,
 5. the mentioned block hash in `20` bytes,
 6. for each key-value pair of state:
-    1. length of the key in 4 byte unsigned integer little endian format,
-    2. the key itself,
-    3. length of the value in 4 byte unsigned integer little endian format,
-    4. the value itself.
+   1. length of the key in 4 byte unsigned integer little endian format,
+   2. the key itself,
+   3. length of the value in 4 byte unsigned integer little endian format,
+   4. the value itself.
 
 The order of the key-value pairs in snapshot is not defined and two snapshots with same key-value pairs in different order should
 be consider as being the same.
@@ -88,13 +89,13 @@ State manager does this in following steps:
 1. If snapshot index `12` is available, it is obtained and loaded to the DB. The request is complete.
 2. If not, block index `12` is obtained and commitment of block index `11` is known.
 3. As commitment of block (state) index `11` is known, it can be checked if snapshot index `11` is available. If it is,
-the snapshot is obtained and loaded to the DB and only the last step of the algorithm is needed.
+   the snapshot is obtained and loaded to the DB and only the last step of the algorithm is needed.
 4. If not, as commitment of block index `11` is known, the block may be requested and obtained. After obtaining block
-index `11` commitment of block index `10` is known.
-3. Using block index `10` commitment the DB is checked to make sure that it is already present.
-4. As block index `10` is already committed, block index `11` is committed. This makes state `11` present in the DB.
-5. As state `11` is already committed (by committing block index `11` or by loading snapshot index `11`), block index
-`12` is committed. This makes state `12` present in the DB and completes the request.
+   index `11` commitment of block index `10` is known.
+5. Using block index `10` commitment the DB is checked to make sure that it is already present.
+6. As block index `10` is already committed, block index `11` is committed. This makes state `11` present in the DB.
+7. As state `11` is already committed (by committing block index `11` or by loading snapshot index `11`), block index
+   `12` is committed. This makes state `12` present in the DB and completes the request.
 
 To obtain blocks, state manager sends requests to 5 other randomly chosen nodes. If the block is not received (either messages
 got lost or these nodes do not have the requested block), 5 other randomly chosen nodes are queried. This process is repeated
@@ -132,10 +133,10 @@ in several occasions:
 
 1. Storing preliminary block, which is sent by consensus of other nodes.
 2. When the node is catching up many states and block cache limit is too small to store all the blocks, WAL is used to avoid
-fetching the same block twice.
+   fetching the same block twice.
 3. In case of adding new node to the network to avoid catch up taking a lot of time when snapshots are not available,
-the new node can be configured (`wal.loadToStore=true`) to load the DB with blocks from WAL on startup. WAL can be copied
-from some other node. This is also true for any catch up over many states, when WAL (part of it) is missing for some reasons.
+   the new node can be configured (`wal.loadToStore=true`) to load the DB with blocks from WAL on startup. WAL can be copied
+   from some other node. This is also true for any catch up over many states, when WAL (part of it) is missing for some reasons.
 
 ## Pruning
 
@@ -153,6 +154,7 @@ obtained by the chain. Note, that such node will require a lot of resources to m
 ### State manager
 
 The following parameters may be provided in section `stateManager`:
+
 - `blockCacheMaxSize`: the limit of the blocks in block cache. Default is 1k.
 - `blockCacheBlocksInCacheDuration`: the limit of the time block stays in block cache. Default is 1 hour.
 - `blockCacheBlockCleaningPeriod`: how often state manager should find and delete blocks, that stayed in block cache
@@ -173,6 +175,7 @@ The following parameters may be provided in section `stateManager`:
 ### Snapshots
 
 The following parameters may be provided in section `snapshots`:
+
 - `period`: how often state snapshots should be made: 1000 meaning "every 1000th state", 0 meaning "making snapshots is disabled".
   Snapshots are disabled by default.
 - `localPath`: the path to the snapshots folder in this node's disk. Default is `waspdb/snap`.
@@ -182,6 +185,7 @@ The following parameters may be provided in section `snapshots`:
 ### WAL
 
 The following parameters may be provided in section `wal`:
+
 - `loadToStore`: load blocks from WAL to the store on node start-up. This function is off (`false`) by default.
 - `enabled`: whether the WAL is enabled. It is enabled by default.
 - `path`: the path to the WAL folder. Default is `waspdb/wal`.
