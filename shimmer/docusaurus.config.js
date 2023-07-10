@@ -8,7 +8,7 @@ module.exports = async () => {
       async (contentConfig) => await create_doc_plugin(contentConfig),
     ),
   );
-  //console.log(contentPlugins);
+
   const staticDirs = await globStatic('/docs/**/static/', __dirname);
 
   return {

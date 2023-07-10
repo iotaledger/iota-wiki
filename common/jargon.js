@@ -1,7 +1,7 @@
 module.exports = {
   'address checksum':
     'Checksum validation is a way to determine if an address is valid and does not contain typos.',
-  'dynamic po':
+  'dynamic pow':
     '(In development for IOTA 1.5 and Shimmer): With this feature, the coordinator can issue a milestone and simultaneously set the future PoW score. This means that if the network is not fully utilized, the PoW will be reduced to the point where it can be executed by microdevices. Accordingly, the coordinator can also raise the PoW difficulty in case of high utilization and thus make an attack very expensive.',
   'auto peering':
     'A mechanism that allows nodes to automatically select their neighbors without manual intervention by the node operator.',

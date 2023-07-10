@@ -37,7 +37,7 @@ The node selects these blocks by using an algorithm called **Uniform Random Tip 
 
 :::tip Send Data
 
-The Stardust protocol allows you to attach [metadata](outputs.md#metadata) to any transaction.
+The _Stardust_ protocol allows you to attach [metadata](outputs.md#metadata) to any transaction.
 
 :::
 
