@@ -101,7 +101,7 @@ Keep in mind this will take a while and has no hot reloading capability.
 
 ## Contributing
 
-The IOTA Wiki is maintained by the IF and community contributions are always welcome. The DX team and related Teams from the IF will review all issues and pull requests posted to this repository. If you notice any mistakes, or feel something is missing, feel free to create an issue to discuss with the team or directly create a pull request with suggestions. Here is a basic workflow to open a pull request:
+The IOTA Wiki is maintained by the IF and community contributions are always welcome. The DX team and related teams from the IF will review all issues and pull requests posted to this repository. If you notice any mistakes, or feel something is missing, feel free to create an issue to discuss with the team or directly create a pull request with suggestions. Here is a basic workflow to open a pull request:
 
 1. Fork this repository to your own account and clone it (`git clone https://github.com/<YOUR_USERNAME>/iota-wiki.git`)
 2. Create a feature branch for your changes (`git checkout -b feat/amazing-feature`).
