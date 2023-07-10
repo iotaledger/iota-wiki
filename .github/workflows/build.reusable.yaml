@@ -54,6 +54,10 @@ jobs:
         with:
           path: node_modules/.cache
           key: ${{ inputs.environment }}-build-artifacts-${{ hashFiles('package.json', 'yarn.lock', 'src/**/*.*') }}
+      # Create reference docs
+      - name: Build reference docs
+        run: |
+          ./scripts/gen_${{ inputs.environment }}_references.sh
       - name: Build ${{ inputs.environment }}
         run: |
           yarn build:production:${{ inputs.environment }}
