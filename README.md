@@ -70,7 +70,7 @@ To preview the Wiki locally, use the following steps. For more preview and build
 1. Clone the repository by running `git clone https://github.com/iota-wiki/iota-wiki.git` and go to the directory with `cd iota-wiki`.
 2. Install dependencies with `yarn`.
 3. Build plugins once with `yarn build:plugins`
-3. Preview a specific environment with `yarn start:<environment>` where environment can be `iota`, `shimmer` or `next`.
+4. Preview a specific environment with `yarn start:<environment>` where environment can be `iota`, `shimmer` or `next`.
 
 You should always prefer previewing only a specific environment of the Wiki, but if you need a complete Wiki build you can replace step 3 with `yarn start:all`.
 Keep in mind this will take a while and has no hot reloading capability.
