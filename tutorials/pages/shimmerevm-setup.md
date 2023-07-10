@@ -19,7 +19,7 @@ Add a new network on your Metamask, as shown below:
 
 - Network Name: `ShimmerEVM Testnet`
 - New RPC URL: `https://json-rpc.evm.testnet.shimmer.network`
-- Chain ID: `1071`
+- Chain ID: `1072`
 - Currency Symbol: `SMR` (Can be anything you wish)
 - Explorer URL: https://explorer.evm.testnet.shimmer.network
 

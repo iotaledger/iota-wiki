@@ -7,7 +7,7 @@
 
 const StorageTypes = ['localStorage', 'sessionStorage', 'none'] as const;
 
-export type StorageType = typeof StorageTypes[number];
+export type StorageType = (typeof StorageTypes)[number];
 
 const DefaultStorageType: StorageType = 'localStorage';
 

@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import Link from '@docusaurus/Link';
-import { Shimmer, Wallet } from '@site/src/common/icons';
+import { Shimmer } from '@site/src/common/icons';
 import CoreLibImg from '@site/static/img/homepage/section_core_libraries.png';
 import CoreLibImgDark from '@site/static/img/homepage/section_core_libraries_dark.png';
 import ThemedImage from '@theme/ThemedImage';
@@ -32,7 +32,7 @@ const Languages: FC<LanguagesProps> = (props) => {
 const LibrariesSection: FC = () => (
   <div className='libraries__cards'>
     <div className='libraries__card libraries__card--wide'>
-      <img className='libraries__logo' src='/img/homepage/resources_bot.svg' />
+      <img className='libraries__logo' src='/img/homepage/sdk_card_anim.svg' />
       <div className='libraries__section'>
         <div className='libraries__head'>
           <div className='libraries__icon'>
@@ -43,7 +43,7 @@ const LibrariesSection: FC = () => (
               Rust: '/iota-sdk/getting-started/rust',
               NodeJS: '/iota-sdk/getting-started/nodejs',
               Python: '/iota-sdk/getting-started/python',
-              Java: '/iota-sdk/getting-started/java',
+              WASM: '/iota-sdk/getting-started/wasm',
             }}
           />
         </div>

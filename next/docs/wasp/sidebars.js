@@ -46,6 +46,11 @@ module.exports = {
         },
         {
           type: 'doc',
+          label: 'State manager',
+          id: 'guide/core_concepts/state_manager',
+        },
+        {
+          type: 'doc',
           label: 'State, Transitions and State Anchoring',
           id: 'guide/core_concepts/states',
         },

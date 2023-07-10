@@ -123,7 +123,7 @@ target.
 
 ### `registerERC721NFTCollection`
 
-Registers an ERC20 contract to act as a proxy for an NFT collection, at address
+Registers an ERC721 contract to act as a proxy for an NFT collection, at address
 `0x107404xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx`, where `xxx...` is the first 17
 bytes of the collection ID.
 
