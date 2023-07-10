@@ -1,3 +1,9 @@
+/**
+ * SWIZZLED VERSION: 2.4.1
+ * REASONS:
+ *  - Add switcher.
+ */
+
 import React from 'react';
 import clsx from 'clsx';
 import {

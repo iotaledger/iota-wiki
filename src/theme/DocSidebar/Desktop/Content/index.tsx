@@ -1,5 +1,5 @@
 /**
- * SWIZZLED VERSION: 2.2.0
+ * SWIZZLED VERSION: 2.4.1
  * REASONS:
  *  - Add switcher.
  */
@@ -11,6 +11,7 @@ import {
   useAnnouncementBar,
   useScrollPosition,
 } from '@docusaurus/theme-common/internal';
+import { translate } from '@docusaurus/Translate';
 import DocSidebarItems from '@theme/DocSidebarItems';
 import type { Props } from '@theme/DocSidebar/Desktop/Content';
 import Switcher from '@site/src/common/components/Switcher';
@@ -41,6 +42,11 @@ export default function DocSidebarDesktopContent({
 
   return (
     <nav
+      aria-label={translate({
+        id: 'theme.docs.sidebar.navAriaLabel',
+        message: 'Docs sidebar',
+        description: 'The ARIA label for the sidebar navigation',
+      })}
       className={clsx(
         'menu thin-scrollbar',
         styles.menu,
