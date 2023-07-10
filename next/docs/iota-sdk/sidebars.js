@@ -236,13 +236,13 @@ module.exports = {
           id: 'references/rust-api-reference',
           label: 'Rust',
         },
+        nodejs_references,
+        python_references,
         {
           type: 'doc',
           id: 'references/wasm-api-reference',
           label: 'WASM',
         },
-        nodejs_references,
-        python_references,
       ],
     },
     {
