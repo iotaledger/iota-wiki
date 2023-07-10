@@ -10,7 +10,6 @@
  */
 
 const fs = require('fs');
-const path = require('path');
 
 function directoryExists(path) {
   try {
