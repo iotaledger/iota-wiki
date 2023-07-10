@@ -32,7 +32,7 @@ const Languages: FC<LanguagesProps> = (props) => {
 const LibrariesSection: FC = () => (
   <div className='libraries__cards'>
     <div className='libraries__card libraries__card--wide'>
-      <img className='libraries__logo' src='/img/homepage/resources_bot.svg' />
+      <img className='libraries__logo' src='/img/homepage/sdk_card_anim.svg' />
       <div className='libraries__section'>
         <div className='libraries__head'>
           <div className='libraries__icon'>

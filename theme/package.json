@@ -12,17 +12,17 @@
     "test": "jest"
   },
   "dependencies": {
-    "@docusaurus/theme-classic": "2.2.0",
+    "@docusaurus/theme-classic": "2.4.1",
     "@metamask/providers": "^10.2.1",
     "clsx": "^1.2.1"
   },
   "devDependencies": {
-    "@docusaurus/types": "2.2.0",
-    "@types/react": "17.0.2",
+    "@docusaurus/types": "2.4.1",
+    "@types/react": "18.2.14",
     "copyfiles": "^2.4.1",
     "nodemon": "^2.0.16",
-    "prettier": "^2.4.1",
-    "react": "17.0.2",
+    "prettier": "^2.8.8",
+    "react": "18.2.0",
     "typescript": "^4.9"
   },
   "peerDependencies": {

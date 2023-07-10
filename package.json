@@ -44,17 +44,17 @@
   },
   "dependencies": {
     "@algolia/client-search": "^4.14.1",
-    "@docusaurus/core": "2.2.0",
-    "@docusaurus/plugin-client-redirects": "2.2.0",
-    "@docusaurus/preset-classic": "2.2.0",
+    "@docusaurus/core": "2.4.1",
+    "@docusaurus/plugin-client-redirects": "2.4.1",
+    "@docusaurus/preset-classic": "2.4.1",
     "@iota-wiki/plugin-tutorial": "workspace:^",
     "@mdx-js/react": "^1.6.21",
     "@popperjs/core": "^2.11.5",
     "@saucelabs/theme-github-codeblock": "^0.2.3",
     "@svgr/webpack": "^5.5.0",
     "clsx": "^1.2.1",
-    "docusaurus-plugin-openapi-docs": "^1.4.7",
-    "docusaurus-theme-openapi-docs": "^1.4.7",
+    "docusaurus-plugin-openapi-docs": "^v2.0.0-beta.3",
+    "docusaurus-theme-openapi-docs": "^v2.0.0-beta.3",
     "file-loader": "^6.2.0",
     "flickity": "2.3.0",
     "flickity-fade": "^2.0.0",
@@ -62,9 +62,9 @@
     "hast-util-is-element": "1.1.0",
     "plugin-image-zoom": "flexanalytics/plugin-image-zoom",
     "raw-loader": "^4.0.2",
-    "react": "17.0.2",
+    "react": "18.2.0",
     "react-collapsible": "^2.8.4",
-    "react-dom": "17.0.2",
+    "react-dom": "18.0.0",
     "react-flickity-component": "^3.6.3",
     "react-image-gallery": "^1.2.7",
     "react-player": "^2.11.2",
@@ -72,7 +72,7 @@
     "react-select": "^5.2.2",
     "rehype-katex": "4",
     "rehype-lodash-template": "^0.2.1",
-    "remark-code-import": "^0.3.0",
+    "remark-code-import": "^0.4.0",
     "remark-import-partial": "^0.0.2",
     "remark-math": "^3.0.1",
     "remark-remove-comments": "^0.2.0",
@@ -80,8 +80,8 @@
     "webpack": "^5.81.0"
   },
   "resolutions": {
-    "@types/react": "17.0.2",
-    "@types/react-dom": "17.0.2"
+    "@types/react": "18.2.14",
+    "@types/react-dom": "18.0.0"
   },
   "browserslist": {
     "production": [
@@ -96,12 +96,12 @@
     ]
   },
   "devDependencies": {
-    "@docusaurus/module-type-aliases": "2.2.0",
-    "@docusaurus/plugin-google-gtag": "2.2.0",
+    "@docusaurus/module-type-aliases": "2.4.1",
+    "@docusaurus/plugin-google-gtag": "2.4.1",
     "@iota-wiki/cli": "workspace:^",
     "@tsconfig/docusaurus": "^1.0.6",
-    "@types/react": "17.0.2",
-    "@types/react-dom": "17.0.2",
+    "@types/react": "18.2.14",
+    "@types/react-dom": "18.0.0",
     "@types/webpack-env": "^1.16.3",
     "@typescript-eslint/eslint-plugin": "^5.9.1",
     "@typescript-eslint/parser": "^5.9.1",
@@ -109,7 +109,7 @@
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-react": "^7.26.0",
     "eslint-plugin-react-hooks": "^4.2.0",
-    "prettier": "^2.4.1",
+    "prettier": "^2.8.8",
     "svgo": "^2.8.0",
     "typescript": "^4.5.4"
   },

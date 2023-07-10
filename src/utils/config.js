@@ -1,4 +1,5 @@
 const path = require('path');
+const defaultSettings = require('../common/defaultContentPlugin');
 
 /**
  * Merges multiple configuration objects into one object.
@@ -91,7 +92,57 @@ async function glob(patterns, directoryPath = '.') {
   );
 }
 
+/**
+ * Finds static directories using a glob path pattern relative to the cwd.
+ * @param {string} pattern
+ * @returns
+ */
+async function globStatic(pattern, cwd = __dirname) {
+  if (!pattern) return [];
+
+  const { globby } = await import('globby');
+  const staticDir = await globby(cwd + pattern, { onlyDirectories: true });
+  return staticDir;
+}
+
+// Inspired by https://github.com/dyte-in/docs/
+/**
+ * Create a section
+ * @param {import('@docusaurus/plugin-content-docs').Options} options
+ */
+function create_doc_plugin({ ...options }) {
+  const clone = { ...defaultSettings };
+  // Check if options has a rehypePlugin array
+  if (options.rehypePlugins) {
+    // If it does, add it to the clone and delete it from options
+    clone.rehypePlugins = defaultSettings.rehypePlugins.concat(
+      options.rehypePlugins,
+    );
+    delete options.rehypePlugins;
+  }
+
+  // Check if options has a remarkPlugins array
+  if (options.remarkPlugins) {
+    // If it does, add it to the clone and delete it from options
+    clone.remarkPlugins = defaultSettings.remarkPlugins.concat(
+      options.remarkPlugins,
+    );
+    delete options.remarkPlugins;
+  }
+
+  return [
+    '@docusaurus/plugin-content-docs',
+    /** @type {import('@docusaurus/plugin-content-docs').Options} */
+    ({
+      ...clone,
+      ...options,
+    }),
+  ];
+}
+
 module.exports = {
   glob,
   merge,
+  create_doc_plugin,
+  globStatic,
 };
