@@ -2720,7 +2720,7 @@ __metadata:
     "@saucelabs/theme-github-codeblock": ^0.2.3
     "@svgr/webpack": ^5.5.0
     "@tsconfig/docusaurus": ^1.0.6
-    "@types/react": 18.0.0
+    "@types/react": 18.2.14
     "@types/react-dom": 18.0.0
     "@types/webpack-env": ^1.16.3
     "@typescript-eslint/eslint-plugin": ^5.9.1
@@ -2740,7 +2740,7 @@ __metadata:
     plugin-image-zoom: flexanalytics/plugin-image-zoom
     prettier: ^2.4.1
     raw-loader: ^4.0.2
-    react: 18.0.0
+    react: 18.2.0
     react-collapsible: ^2.8.4
     react-dom: 18.0.0
     react-flickity-component: ^3.6.3
@@ -2777,12 +2777,12 @@ __metadata:
     "@docusaurus/theme-classic": 2.4.1
     "@docusaurus/types": 2.4.1
     "@metamask/providers": ^10.2.1
-    "@types/react": 18.0.0
+    "@types/react": 18.2.14
     clsx: ^1.2.1
     copyfiles: ^2.4.1
     nodemon: ^2.0.16
     prettier: ^2.4.1
-    react: 18.0.0
+    react: 18.2.0
     typescript: ^4.9
   peerDependencies:
     react: "*"
@@ -4983,14 +4983,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react@npm:18.0.0":
-  version: 18.0.0
-  resolution: "@types/react@npm:18.0.0"
+"@types/react@npm:18.2.14":
+  version: 18.2.14
+  resolution: "@types/react@npm:18.2.14"
   dependencies:
     "@types/prop-types": "*"
     "@types/scheduler": "*"
     csstype: ^3.0.2
-  checksum: 8a9769e2cabe335c86179881577e6ca32f3a6abdd5adbe2d498e48b78d532130da828a53ef25f21915179da454654b811292e0a8191c8a81af3bf4b05f5673bd
+  checksum: a6a5e8cc78f486b9020d1ad009aa6c56943c68c7c6376e0f8399e9cbcd950b7b8f5d73f00200f5379f5e58d31d57d8aed24357f301d8e86108cd438ce6c8b3dd
   languageName: node
   linkType: hard
 
@@ -14967,12 +14967,12 @@ plugin-image-zoom@flexanalytics/plugin-image-zoom:
   languageName: node
   linkType: hard
 
-"react@npm:18.0.0":
-  version: 18.0.0
-  resolution: "react@npm:18.0.0"
+"react@npm:18.2.0":
+  version: 18.2.0
+  resolution: "react@npm:18.2.0"
   dependencies:
     loose-envify: ^1.1.0
-  checksum: 293020b96536b3c7113ee57ca5c990a3f25649d1751b1c7a3aabd16dff0691fe9f1eed1206616d0906d05933536052037340a0c8d0941ff870b0eb469a2f975b
+  checksum: 88e38092da8839b830cda6feef2e8505dec8ace60579e46aa5490fc3dc9bba0bd50336507dc166f43e3afc1c42939c09fe33b25fae889d6f402721dcd78fca1b
   languageName: node
   linkType: hard
 
