@@ -2750,7 +2750,7 @@ __metadata:
     react-select: ^5.2.2
     rehype-katex: 4
     rehype-lodash-template: ^0.2.1
-    remark-code-import: ^0.3.0
+    remark-code-import: ^0.4.0
     remark-import-partial: ^0.0.2
     remark-math: ^3.0.1
     remark-remove-comments: ^0.2.0
@@ -15200,13 +15200,13 @@ plugin-image-zoom@flexanalytics/plugin-image-zoom:
   languageName: node
   linkType: hard
 
-"remark-code-import@npm:^0.3.0":
-  version: 0.3.0
-  resolution: "remark-code-import@npm:0.3.0"
+"remark-code-import@npm:^0.4.0":
+  version: 0.4.0
+  resolution: "remark-code-import@npm:0.4.0"
   dependencies:
     to-gatsby-remark-plugin: ^0.1.0
     unist-util-visit: ^2.0.1
-  checksum: e5c21707ee364836481603233e3e5b6db09fcc0a9f591bbb67f51753c094435cf093154f4e851582946f81d7d93d97a390b3b9cb5ae6e77151a8161eff05d7d3
+  checksum: 0c49879dcb7d4f4dae41f11aaf45aac4acafd91ce52219537374ed0449928579f95f3cf32572e217e4d89745a30f0f12f382a110f6e73d79481cdd909d1bd312
   languageName: node
   linkType: hard
 
