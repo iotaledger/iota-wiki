@@ -32,7 +32,7 @@ time, the number of the item that was bet on, and the agent ID of the one who pl
 bet. And you would keep track of all bets in state storage in an array of Bet structs. To
 do so, you would insert the following into the schema definition file:
 
-<Tabs groupId="schema">
+<Tabs groupId="schema" queryString>
 <TabItem value="yaml" label="YAML">
 
 ```yaml
@@ -52,7 +52,7 @@ state:
 The [Schema Tool](usage.mdx) will generate the following code in `structs.xx` for the Bet
 struct:
 
-<Tabs groupId="language">
+<Tabs groupId="language" queryString>
 
 <TabItem value="go" label="Go">
 
@@ -277,7 +277,7 @@ toBytes() (de)serialization code to automatically transform byte arrays into Bet
 
 The generated code in `state.xx` that implements the state interface is shown here:
 
-<Tabs groupId="language">
+<Tabs groupId="language" queryString>
 
 <TabItem value="go" label="Go">
 

@@ -42,7 +42,7 @@ schema definition file inside this subfolder. Note that the generated subfolder 
 all lower case. This is to conform to best practices for package names in most languages.
 The generated schema definition file looks like this:
 
-<Tabs groupId="schema">
+<Tabs groupId="schema" queryString>
 <TabItem value="yaml" label="YAML">
 
 ```yaml
@@ -86,7 +86,7 @@ fill out some sections with the definitions you know you will need.
 The next step is to navigate into the new `mysmartcontract` subfolder and run the schema
 tool there to generate the initial code for the desired language:
 
-<Tabs groupId="language">
+<Tabs groupId="language" queryString>
 
 <TabItem value="go" label="Go">
 
@@ -130,7 +130,7 @@ schema -rs -go
 The schema tool will generate a complete set of source files for the desired language(s),
 that will compile successfully into a Wasm code file. You compile these as follows:
 
-<Tabs groupId="language">
+<Tabs groupId="language" queryString>
 
 <TabItem value="go" label="Go">
 
@@ -186,7 +186,7 @@ each other, and you will see what we mean.
 Here is an example of the initially generated code, `mysmartcontract.xx` looks like this
 before you even start modifying it:
 
-<Tabs groupId="language">
+<Tabs groupId="language" queryString>
 
 <TabItem value="go" label="Go">
 

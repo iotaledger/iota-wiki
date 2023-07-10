@@ -28,7 +28,7 @@ The following code example will:
 
 ## Code Example
 
-<Tabs groupId="language">
+<Tabs groupId="language" queryString>
 <TabItem value="rust" label="Rust">
 
 ```rust reference

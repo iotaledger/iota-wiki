@@ -33,7 +33,7 @@ The [Schema Tool](usage.mdx) will use this information to generate the specific 
 accesses the state variables in a type-safe way. Let's examine the `state` section of the
 `dividend` example in more detail:
 
-<Tabs groupId="schema">
+<Tabs groupId="schema" queryString>
 <TabItem value="yaml" label="YAML">
 
 ```yaml
@@ -66,7 +66,7 @@ Here is part of the corresponding code in `state.xx` that the [Schema Tool](usag
 generates. The `MutableDividendState` struct defines a type-safe interface to access each
 of the state variables through mutable proxies:
 
-<Tabs groupId="language">
+<Tabs groupId="language" queryString>
 
 <TabItem value="go" label="Go">
 

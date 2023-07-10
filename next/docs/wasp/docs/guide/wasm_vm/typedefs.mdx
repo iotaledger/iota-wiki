@@ -33,7 +33,7 @@ array of all bets in a round, if it weren't for typedefs you could not define it
 
 Instead, now you add the following to your schema definition file:
 
-<Tabs groupId="schema">
+<Tabs groupId="schema" queryString>
 <TabItem value="yaml" label="YAML">
 
 ```yaml
@@ -49,7 +49,7 @@ state:
 The [Schema Tool](usage.mdx) will generate the following code in `typedefs.xx` for the
 `BettingRound` type:
 
-<Tabs groupId="language">
+<Tabs groupId="language" queryString>
 
 <TabItem value="go" label="Go">
 
@@ -192,7 +192,7 @@ Note how `ImmutableBettingRound` and `MutableBettingRound` type aliases are crea
 for the types `ArrayOfImmutableBet` and `ArrayOfMutableBet`. These are subsequently used
 in the state definition that is generated in `state.xx`:
 
-<Tabs groupId="language">
+<Tabs groupId="language" queryString>
 
 <TabItem value="go" label="Go">
 

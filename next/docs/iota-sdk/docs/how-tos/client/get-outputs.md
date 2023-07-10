@@ -27,7 +27,7 @@ The following code example will:
 
 ## Code Example
 
-<Tabs groupId="language">
+<Tabs groupId="language" queryString>
 <TabItem value="rust" label="Rust">
 
 ```rust reference
@@ -53,7 +53,7 @@ https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how
 
 ## Expected Output
 
-<Tabs groupId="language">
+<Tabs groupId="language" queryString>
 <TabItem value="rust" label="Rust">
 
 ```bash
