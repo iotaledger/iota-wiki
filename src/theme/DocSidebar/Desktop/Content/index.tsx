@@ -1,7 +1,7 @@
 /**
- * SWIZZLED VERSION: 2.0.0-rc.1
+ * SWIZZLED VERSION: 2.4.1
  * REASONS:
- *  - Add version picker.
+ *  - Add switcher.
  */
 
 import React, { useState } from 'react';
@@ -11,9 +11,10 @@ import {
   useAnnouncementBar,
   useScrollPosition,
 } from '@docusaurus/theme-common/internal';
+import { translate } from '@docusaurus/Translate';
 import DocSidebarItems from '@theme/DocSidebarItems';
 import type { Props } from '@theme/DocSidebar/Desktop/Content';
-import VersionPicker from '@site/src/common/components/VersionPicker';
+import Switcher from '@site/src/common/components/Switcher';
 
 import styles from './styles.module.css';
 
@@ -41,6 +42,11 @@ export default function DocSidebarDesktopContent({
 
   return (
     <nav
+      aria-label={translate({
+        id: 'theme.docs.sidebar.navAriaLabel',
+        message: 'Docs sidebar',
+        description: 'The ARIA label for the sidebar navigation',
+      })}
       className={clsx(
         'menu thin-scrollbar',
         styles.menu,
@@ -48,8 +54,8 @@ export default function DocSidebarDesktopContent({
         className,
       )}
     >
-      <VersionPicker />
       <ul className={clsx(ThemeClassNames.docs.docSidebarMenu, 'menu__list')}>
+        <Switcher />
         <DocSidebarItems items={sidebar} activePath={path} level={1} />
       </ul>
     </nav>

@@ -1,49 +1,42 @@
 /**
- * SWIZZLED VERSION: 2.0.0-rc.1
+ * SWIZZLED VERSION: 2.4.1
  * REASONS:
- *  - Add version picker.
+ *  - Add switcher.
  */
 
 import React from 'react';
 import clsx from 'clsx';
 import {
   NavbarSecondaryMenuFiller,
-  type NavbarSecondaryMenuComponent,
   ThemeClassNames,
 } from '@docusaurus/theme-common';
 import { useNavbarMobileSidebar } from '@docusaurus/theme-common/internal';
 import DocSidebarItems from '@theme/DocSidebarItems';
 import type { Props } from '@theme/DocSidebar/Mobile';
-import VersionPicker from '@site/src/common/components/VersionPicker';
+import Switcher from '@site/src/common/components/Switcher';
 
-// eslint-disable-next-line react/function-component-definition
-const DocSidebarMobileSecondaryMenu: NavbarSecondaryMenuComponent<Props> = ({
-  sidebar,
-  path,
-}: Props) => {
+function DocSidebarMobileSecondaryMenu({ sidebar, path }: Props) {
   const mobileSidebar = useNavbarMobileSidebar();
   return (
-    <>
-      <VersionPicker />
-      <ul className={clsx(ThemeClassNames.docs.docSidebarMenu, 'menu__list')}>
-        <DocSidebarItems
-          items={sidebar}
-          activePath={path}
-          onItemClick={(item) => {
-            // Mobile sidebar should only be closed if the category has a link
-            if (item.type === 'category' && item.href) {
-              mobileSidebar.toggle();
-            }
-            if (item.type === 'link') {
-              mobileSidebar.toggle();
-            }
-          }}
-          level={1}
-        />
-      </ul>
-    </>
+    <ul className={clsx(ThemeClassNames.docs.docSidebarMenu, 'menu__list')}>
+      <Switcher />
+      <DocSidebarItems
+        items={sidebar}
+        activePath={path}
+        onItemClick={(item) => {
+          // Mobile sidebar should only be closed if the category has a link
+          if (item.type === 'category' && item.href) {
+            mobileSidebar.toggle();
+          }
+          if (item.type === 'link') {
+            mobileSidebar.toggle();
+          }
+        }}
+        level={1}
+      />
+    </ul>
   );
-};
+}
 
 function DocSidebarMobile(props: Props) {
   return (
