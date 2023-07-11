@@ -34,11 +34,11 @@ snippets), while keeping the language agnostic instructions outside the tabs.
 
 #### Tabs Example
 
-<Tabs groupId="language">
+<Tabs groupId="language" queryString>
   <TabItem value="java" label="Java">
     Java specific code and text goes here.
   </TabItem>
-  <TabItem value="nodejs" label="Nodejs">
+  <TabItem value="node" label="Node.js">
     Nodejs specific code and text goes here.
   </TabItem>
 </Tabs>

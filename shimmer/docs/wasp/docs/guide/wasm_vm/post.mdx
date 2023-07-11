@@ -31,15 +31,9 @@ particular interest to smart contracts that need a delayed action like betting c
 with a timed betting round, or to create time-lock functionality in a smart contract.
 Here's how that works:
 
-<Tabs defaultValue="go"
-      groupId="language"
-      values={[
-          {label: 'Go', value: 'go'},
-          {label: 'Rust', value: 'rust'},
-          {label: 'TypeScript', value: 'ts'},
-      ]}>
+<Tabs groupId="language" queryString>
 
-<TabItem value="go">
+<TabItem value="go" label="Go">
 
 ```go
 eor := ScFuncs.EndOfRound(ctx)
@@ -47,7 +41,7 @@ eor.Func.Delay(3600).Post()
 ```
 
 </TabItem>
-<TabItem value="rust">
+<TabItem value="rust" label="Rust">
 
 ```rust
 let eor = ScFuncs::end_of_round(ctx);
@@ -55,7 +49,7 @@ eor.func.delay(3600).post();
 ```
 
 </TabItem>
-<TabItem value="ts">
+<TabItem value="typescript" label="Typescript">
 
 ```ts
 let eor = sc.ScFuncs.endOfRound(ctx);

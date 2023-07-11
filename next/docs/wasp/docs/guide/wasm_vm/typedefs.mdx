@@ -33,11 +33,8 @@ array of all bets in a round, if it weren't for typedefs you could not define it
 
 Instead, now you add the following to your schema definition file:
 
-<Tabs defaultValue="yaml"
-      values={[
-          {label: 'schema.yaml', value: 'yaml'},
-      ]}>
-<TabItem value="yaml">
+<Tabs groupId="schema" queryString>
+<TabItem value="yaml" label="YAML">
 
 ```yaml
 typedefs:
@@ -52,14 +49,9 @@ state:
 The [Schema Tool](usage.mdx) will generate the following code in `typedefs.xx` for the
 `BettingRound` type:
 
-<Tabs defaultValue="go"
-	values={[
-		{label: 'Go', value: 'go'},
-		{label: 'Rust', value: 'rust'},
-        {label: 'TypeScript', value: 'ts'},
-	]}>
+<Tabs groupId="language" queryString>
 
-<TabItem value="go">
+<TabItem value="go" label="Go">
 
 ```go
 import "github.com/iotaledger/wasp/packages/wasmvm/wasmlib/go/wasmlib/wasmtypes"
@@ -102,7 +94,7 @@ type MutableBettingRound = ArrayOfMutableBet
 ```
 
 </TabItem>
-<TabItem value="rust">
+<TabItem value="rust" label="Rust">
 
 ```rust
 use wasmlib::*;
@@ -154,7 +146,7 @@ pub type MutableBettingRound = ArrayOfMutableBet;
 ```
 
 </TabItem>
-<TabItem value="ts">
+<TabItem value="typescript" label="Typescript">
 
 ```ts
 import * as wasmtypes from 'wasmlib/wasmtypes';
@@ -200,15 +192,9 @@ Note how `ImmutableBettingRound` and `MutableBettingRound` type aliases are crea
 for the types `ArrayOfImmutableBet` and `ArrayOfMutableBet`. These are subsequently used
 in the state definition that is generated in `state.xx`:
 
-<Tabs defaultValue="go"
-      groupId="language"
-      values={[
-          {label: 'Go', value: 'go'},
-          {label: 'Rust', value: 'rust'},
-          {label: 'TypeScript', value: 'ts'},
-      ]}>
+<Tabs groupId="language" queryString>
 
-<TabItem value="go">
+<TabItem value="go" label="Go">
 
 ```go
 package betting
@@ -289,7 +275,7 @@ func (s MutableBettingState) Rounds() ArrayOfMutableBettingRound {
 ```
 
 </TabItem>
-<TabItem value="rust">
+<TabItem value="rust" label="Rust">
 
 ```rust
 use wasmlib::*;
@@ -384,7 +370,7 @@ impl MutableBettingState {
 ```
 
 </TabItem>
-<TabItem value="ts">
+<TabItem value="typescript" label="Typescript">
 
 ```ts
 import * as wasmtypes from 'wasmlib/wasmtypes';

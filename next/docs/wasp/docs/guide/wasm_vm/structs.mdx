@@ -32,11 +32,8 @@ time, the number of the item that was bet on, and the agent ID of the one who pl
 bet. And you would keep track of all bets in state storage in an array of Bet structs. To
 do so, you would insert the following into the schema definition file:
 
-<Tabs defaultValue="yaml"
-      values={[
-          {label: 'schema.yaml', value: 'yaml'},
-      ]}>
-<TabItem value="yaml">
+<Tabs groupId="schema" queryString>
+<TabItem value="yaml" label="YAML">
 
 ```yaml
 structs:
@@ -55,15 +52,9 @@ state:
 The [Schema Tool](usage.mdx) will generate the following code in `structs.xx` for the Bet
 struct:
 
-<Tabs defaultValue="go"
-      groupId="language"
-      values={[
-          {label: 'Go', value: 'go'},
-          {label: 'Rust', value: 'rust'},
-          {label: 'TypeScript', value: 'ts'},
-      ]}>
+<Tabs groupId="language" queryString>
 
-<TabItem value="go">
+<TabItem value="go" label="Go">
 
 ```go
 package betting
@@ -135,7 +126,7 @@ func (o MutableBet) Value() *Bet {
 ```
 
 </TabItem>
-<TabItem value="rust">
+<TabItem value="rust" label="Rust">
 
 ```rust
 use wasmlib::*;
@@ -213,7 +204,7 @@ impl MutableBet {
 ```
 
 </TabItem>
-<TabItem value="ts">
+<TabItem value="typescript" label="Typescript">
 
 ```ts
 import * as wasmtypes from 'wasmlib/wasmtypes';
@@ -286,15 +277,9 @@ toBytes() (de)serialization code to automatically transform byte arrays into Bet
 
 The generated code in `state.xx` that implements the state interface is shown here:
 
-<Tabs defaultValue="go"
-      groupId="language"
-      values={[
-          {label: 'Go', value: 'go'},
-          {label: 'Rust', value: 'rust'},
-          {label: 'TypeScript', value: 'ts'},
-      ]}>
+<Tabs groupId="language" queryString>
 
-<TabItem value="go">
+<TabItem value="go" label="Go">
 
 ```go
 package betting
@@ -367,7 +352,7 @@ func (s MutableBettingState) Owner() wasmtypes.ScMutableAgentID {
 ```
 
 </TabItem>
-<TabItem value="rust">
+<TabItem value="rust" label="Rust">
 
 ```rust
 use wasmlib::*;
@@ -454,7 +439,7 @@ impl MutableBettingState {
 ```
 
 </TabItem>
-<TabItem value="ts">
+<TabItem value="typescript" label="Typescript">
 
 ```ts
 import * as wasmtypes from 'wasmlib/wasmtypes';

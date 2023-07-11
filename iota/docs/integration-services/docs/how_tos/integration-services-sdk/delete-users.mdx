@@ -29,8 +29,8 @@ The `example-3` script authenticates an Integration Service client to manage Ide
 
 You can run the example with the following command:
 
-<Tabs groupId={"programmingLanguage"}>
-<TabItem value="Java" label={'Java'}>
+<Tabs groupId="language" queryString>
+<TabItem value="java" label="Java">
 
 ```bash
 mvn exec:_java -Dexec.mainClass=net.gradbase.how_tos.DeleteUser
@@ -39,7 +39,7 @@ mvn exec:_java -Dexec.mainClass=net.gradbase.how_tos.DeleteUser
 **Example source code**: [Example-3](https://github.com/albydeca/iota-is-sdk/blob/main/examples/src/main/java/net/gradbase/examples/DeleteUser.java)
 
 </TabItem>
-<TabItem value="Nodejs" label={'Node.js'}>
+<TabItem value="node" label="Node.js">
 
 ```bash
 npm run example-3
@@ -54,8 +54,8 @@ npm run example-3
 
 You can remove an identity from the Integration Services backend by running the following script:
 
-<Tabs groupId={"programmingLanguage"}>
-<TabItem value="Java" label={'Java'}>
+<Tabs groupId="language" queryString>
+<TabItem value="java" label="Java">
 
 ```java
 // Remove the user and also revoke the user's credentials
@@ -63,7 +63,7 @@ identityClient.remove(someIdentity.getId(), true);
 ```
 
 </TabItem>
-<TabItem value="Nodejs" label={'Node.js'}>
+<TabItem value="node" label="Node.js">
 
 ```js
 // Remove the user and also revoke the user's credentials
@@ -83,15 +83,15 @@ You can only remove an identity in the Integration Services backend, **the Ident
 
 You can retrieve an Identity from the Tangle by running the following script:
 
-<Tabs groupId={"programmingLanguage"}>
-<TabItem value="Java" label={'Java'}>
+<Tabs groupId="language" queryString>
+<TabItem value="java" label="Java">
 
 ```java
 JSONObject recoveredIdentity = identityClient.latestDocument(someIdentity.getId());
 ```
 
 </TabItem>
-<TabItem value="Nodejs" label={'Node.js'}>
+<TabItem value="node" label="Node.js">
 
 ```js
 const recoveredIdentity = await identity.latestDocument(userIdentity.id);

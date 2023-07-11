@@ -48,12 +48,8 @@ representations of each field, all separated by vertical bars.
 
 Here is the `events` section that can be found in the demo `fairroulette` smart contract:
 
-<Tabs defaultValue="yaml"
-      values={[
-          {label: 'schema.yaml', value: 'yaml'},
-          {label: 'schema.json', value: 'json'},
-      ]}>
-<TabItem value="yaml">
+<Tabs groupId="schema" queryString>
+<TabItem value="yaml" label="YAML">
 
 ```yaml
 events:
@@ -78,15 +74,9 @@ events:
 The [Schema Tool](usage.mdx) will generate `events.xx` which contains the following code
 for the `FairRouletteEvents` struct:
 
-<Tabs defaultValue="go"
-      groupId="language"
-      values={[
-          {label: 'Go', value: 'go'},
-          {label: 'Rust', value: 'rust'},
-          {label: 'TypeScript', value: 'ts'},
-      ]}>
+<Tabs groupId="language" queryString>
 
-<TabItem value="go">
+<TabItem value="go" label="Go">
 
 ```go
 package fairroulette
@@ -154,7 +144,7 @@ func (e FairRouletteEvents) Winner(
 ```
 
 </TabItem>
-<TabItem value="rust">
+<TabItem value="rust" label="Rust">
 
 ```rust
 use wasmlib::*;
@@ -222,7 +212,7 @@ impl FairRouletteEvents {
 ```
 
 </TabItem>
-<TabItem value="ts">
+<TabItem value="typescript" label="Typescript">
 
 ```ts
 import * as wasmlib from 'wasmlib';
@@ -293,29 +283,23 @@ Notice how the generated functions use the WasmLib EventEncoder to encode the pa
 into a single string before emitting it. Here is the way in which `fairroulette` emits the
 `bet` event in its smart contract code:
 
-<Tabs defaultValue="go"
-      groupId="language"
-      values={[
-          {label: 'Go', value: 'go'},
-          {label: 'Rust', value: 'rust'},
-          {label: 'TypeScript', value: 'ts'},
-      ]}>
+<Tabs groupId="language" queryString>
 
-<TabItem value="go">
+<TabItem value="go" label="Go">
 
 ```go
     f.Events.Bet(bet.Better.Address(), bet.Amount, bet.Number)
 ```
 
 </TabItem>
-<TabItem value="rust">
+<TabItem value="rust" label="Rust">
 
 ```rust
     f.events.bet(&bet.better.address(), bet.amount, bet.number);
 ```
 
 </TabItem>
-<TabItem value="ts">
+<TabItem value="typescript" label="Typescript">
 
 ```ts
 f.events.bet(bet.better.address(), bet.amount, bet.number);

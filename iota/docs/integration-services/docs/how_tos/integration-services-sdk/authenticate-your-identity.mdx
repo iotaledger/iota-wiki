@@ -41,15 +41,15 @@ everything may yet run smoothly.
 
 ## Prerequisites
 
-<Tabs groupId={"programmingLanguage"}>
-<TabItem value="Java" label={'Java'}>
+<Tabs groupId="language" queryString>
+<TabItem value="java" label="Java">
 
 - [JDK 16](https://openjdk.java.net/projects/jdk/16/) (recommended)
 - A reference to an instance of the [Integration Services API](https://github.com/iotaledger/integration-services)
 - [Maven](https://maven.apache.org/)
 
 </TabItem>
-<TabItem value="Nodejs" label={'Node.js'}>
+<TabItem value="node" label="Node.js">
 
 - A recent version of [Node.js](https://nodejs.org/en/download/) (>v16.17.0).
 
@@ -58,8 +58,8 @@ everything may yet run smoothly.
 
 ### Required Packages
 
-<Tabs groupId={"programmingLanguage"}>
-<TabItem value="Java" label={'Java'}>
+<Tabs groupId="language" queryString>
+<TabItem value="java" label="Java">
 
 Ideally every dependency listed in the
 project's [POM](https://github.com/albydeca/iota-is-sdk/blob/main/pom.xml) (`mvn clean install`). This example uses in
@@ -72,13 +72,13 @@ particular:
 - `org.json.*`
 
 </TabItem>
-<TabItem value="Nodejs" label={'Node.js'}>
+<TabItem value="node" label="Node.js">
 
 This example uses `Axios` as the HTTP client, `bs58` to decode Base58, and [@noble/ed25519](https://www.npmjs.com/package/noble-ed25519) to sign the nonce. However, you can use any package as long as it accomplishes the same result.
 
 Newer versions may work, but the examples were tested with the following versions:
 
-<Tabs groupId={'packageManagerNode'}>
+<Tabs groupId="nodePackageManager" queryString>
 <TabItem value="npm" label="npm">
 
 ```bash
@@ -127,8 +127,8 @@ You can find your current API version using the [http://localhost:3000/info](htt
 Never save your secret key in plain text in your code. Use local environment variables or IOTA [Stronghold](https://wiki.iota.org/stronghold.rs/welcome) to store your secret keys securely.
 :::
 
-<Tabs groupId={"programmingLanguage"}>
-<TabItem value="Java" label={'Java'}>
+<Tabs groupId="language" queryString>
+<TabItem value="java" label="Java">
 
 ```java
     private String createNonce(String didId)
@@ -156,7 +156,7 @@ Never save your secret key in plain text in your code. Use local environment var
 ```
 
 </TabItem>
-<TabItem value="Nodejs" label={'Node.js'}>
+<TabItem value="node" label="Node.js">
 
 ```js title="./authenticate.js"
 import axios from 'axios';
@@ -184,8 +184,8 @@ The returned response body will look like this .js object.
 
 ### 2. Hash the Nonce
 
-<Tabs groupId={"programmingLanguage"}>
-<TabItem value="Java" label={'Java'}>
+<Tabs groupId="language" queryString>
+<TabItem value="java" label="Java">
 
 After you have retrieved the nonce, you should hash it. You can use insert java method to hash the nonce with the
 SHA-256 hash function and convert it to hexadecimal.
@@ -204,7 +204,7 @@ byte[] convertNonce = DatatypeConverter.parseHexBinary(hashNonceHex);
 ```
 
 </TabItem>
-<TabItem value="Nodejs" label={'Node.js'}>
+<TabItem value="node" label="Node.js">
 
 After you have retrieved the nonce, you should hash it. You can use the Node API's [createHash()](https://nodejs.org/api/crypto.html#hashupdatedata-inputencoding) function to hash the nonce with the SHA-256 hash function and convert it to hexadecimal.{#hashupdatedata-inputencoding) function to hash the nonce with the sha-256 hash function and convert it to hexadecimal.-node}
 
@@ -240,8 +240,8 @@ Never save your secret key in plain text in your code. Use local environment var
 IOTA [Stronghold](https://wiki.iota.org/stronghold.rs/welcome) to store your secret keys securely.
 :::
 
-<Tabs groupId={"programmingLanguage"}>
-<TabItem value="Java" label={'Java'}>
+<Tabs groupId="language" queryString>
+<TabItem value="java" label="Java">
 
 ```java.]
 
@@ -258,7 +258,7 @@ IOTA [Stronghold](https://wiki.iota.org/stronghold.rs/welcome) to store your sec
 ```
 
 </TabItem>
-<TabItem value="Nodejs" label={'Node.js'}>
+<TabItem value="node" label="Node.js">
 
 ```js title="./authenticate.js"
 import * as ed from '@noble/ed25519';
@@ -291,8 +291,8 @@ The example's nonce and secret key will generate the following signed nonce:
 
 The last step is to request the JWT. You can use the following code snippet with your signed nonce in the request body.
 
-<Tabs groupId={"programmingLanguage"}>
-<TabItem value="Java" label={'Java'}>
+<Tabs groupId="language" queryString>
+<TabItem value="java" label="Java">
 
 ```java
 final String endpoint = "authentication/prove-ownership/" + didId;
@@ -316,7 +316,7 @@ this.jwt = response.getString("jwt");
 ```
 
 </TabItem>
-<TabItem value="Nodejs" label={'Node.js'}>
+<TabItem value="node" label="Node.js">
 
 ```js title="./authenticate.js"
 import axios from 'axios';
@@ -351,8 +351,8 @@ The returned JS object will contain the following JWT:
 
 This is an example of a GET request to the API with the JWT from the last step included in the `Authorization`:
 
-<Tabs groupId={"programmingLanguage"}>
-<TabItem value="Java" label={'Java'}>
+<Tabs groupId="language" queryString>
+<TabItem value="java" label="Java">
 
 ```java
     private HttpEntity sendGetRequest(String endpoint, Map<String, String> params, boolean needsBearer,
@@ -392,7 +392,7 @@ This is an example of a GET request to the API with the JWT from the last step i
 ```
 
 </TabItem>
-<TabItem value="Nodejs" label={'Node.js'}>
+<TabItem value="node" label="Node.js">
 
 ```js title="./authenticate.js"
 import axios from 'axios';
@@ -416,14 +416,14 @@ You can find the complete code
 example [here](https://github.com/albydeca/iota-is-sdk/blob/main/src/main/java/net/gradbase/clients/BaseClient.java).
 All snippets above are taken from there.
 
-<Tabs groupId={"programmingLanguage"}>
-<TabItem value="Java" label={'Java'}>
+<Tabs groupId="language" queryString>
+<TabItem value="java" label="Java">
 
 You can find the complete code example in this [repository](https://github.com/albydeca/iota-is-sdk/blob/main/src/main/java/net/gradbase/clients/BaseClient.java).
 All snippets above are taken from there.
 
 </TabItem>
-<TabItem value="Nodejs" label={'Node.js'}>
+<TabItem value="node" label="Node.js">
 
 The following snippet is the final code using all functions together to request a JWT.
 You can find the complete code example at this [repository](https://github.com/Schereo/is-node-authentication))

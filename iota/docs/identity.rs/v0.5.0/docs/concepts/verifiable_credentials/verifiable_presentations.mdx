@@ -170,22 +170,15 @@ so setting a signature expiration alone should not be relied upon.
 The following code demonstrates how to use the IOTA Identity Framework end-to-end to create and sign a verifiable presentation as a holder,
 serialize it to JSON for transmission, deserialize it on the receiving side as a verifier, and finally validate it with various options.
 
-<Tabs
-  groupId="programming-languages"
-  defaultValue="nodejs"
-  values={[
-    { label: "Node.js", value: "nodejs" },
-    { label: "Rust", value: "rust" }
-  ]}
->
-<TabItem value="nodejs">
+<Tabs groupId="language" queryString>
+<TabItem value="node" label="Node.js">
 
 ```ts reference
 https://github.com/iotaledger/identity.rs/blob/support/v0.5/bindings/wasm/examples-account/src/create_vp.ts
 ```
 
 </TabItem>
-<TabItem value="rust">
+<TabItem value="rust" label="Rust">
 
 ```rust reference
 https://github.com/iotaledger/identity.rs/blob/support/v0.5/examples/account/create_vp.rs

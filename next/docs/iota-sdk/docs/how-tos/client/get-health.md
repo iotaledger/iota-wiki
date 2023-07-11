@@ -28,7 +28,7 @@ The following code example will:
 
 ## Code Example
 
-<Tabs groupId="language">
+<Tabs groupId="language" queryString>
 <TabItem value="rust" label="Rust">
 
 ```rust reference
@@ -36,7 +36,7 @@ https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/client/
 ```
 
 </TabItem>
-<TabItem value="nodejs" label="Nodejs">
+<TabItem value="node" label="Node.js">
 
 ```typescript reference
 https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/client/get-health.ts

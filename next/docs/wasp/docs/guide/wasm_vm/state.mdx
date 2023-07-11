@@ -33,11 +33,8 @@ The [Schema Tool](usage.mdx) will use this information to generate the specific 
 accesses the state variables in a type-safe way. Let's examine the `state` section of the
 `dividend` example in more detail:
 
-<Tabs defaultValue="yaml"
-    values={[
-        {label: 'schema.yaml', value: 'yaml'},
-     ]}>
-<TabItem value="yaml">
+<Tabs groupId="schema" queryString>
+<TabItem value="yaml" label="YAML">
 
 ```yaml
 state:
@@ -69,15 +66,9 @@ Here is part of the corresponding code in `state.xx` that the [Schema Tool](usag
 generates. The `MutableDividendState` struct defines a type-safe interface to access each
 of the state variables through mutable proxies:
 
-<Tabs defaultValue="go"
-      groupId="language"
-      values={[
-          {label: 'Go', value: 'go'},
-          {label: 'Rust', value: 'rust'},
-          {label: 'TypeScript', value: 'ts'},
-      ]}>
+<Tabs groupId="language" queryString>
 
-<TabItem value="go">
+<TabItem value="go" label="Go">
 
 ```go
 type MutableDividendState struct {
@@ -110,7 +101,7 @@ func (s MutableDividendState) TotalFactor() wasmtypes.ScMutableUint64 {
 ```
 
 </TabItem>
-<TabItem value="rust">
+<TabItem value="rust" label="Rust">
 
 ```rust
 #[derive(Clone)]
@@ -146,7 +137,7 @@ impl MutableDividendState {
 ```
 
 </TabItem>
-<TabItem value="ts">
+<TabItem value="typescript" label="Typescript">
 
 ```ts
 export class MutableDividendState extends wasmtypes.ScProxy {

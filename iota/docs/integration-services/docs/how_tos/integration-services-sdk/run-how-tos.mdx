@@ -21,13 +21,13 @@ import TabItem from '@theme/TabItem';
 
 You can find many examples related to managing identities and channels in the Github repo:).
 
-<Tabs groupId={"programmingLanguage"}>
-<TabItem value="Java" label={'Java'}>
+<Tabs groupId="language" queryString>
+<TabItem value="java" label="Java">
 
 [Examples](https://github.com/albydeca/iota-is-sdk/tree/main/examples)
 
 </TabItem>
-<TabItem value="Nodejs" label={'Node.js'}>
+<TabItem value="node" label="Node.js">
 
 [Examples](https://github.com/iotaledger/integration-services/tree/master/clients/client-sdk/examples)
 
@@ -38,8 +38,8 @@ The next sections will describe each example in detail.
 
 ## Running Examples
 
-<Tabs groupId={"programmingLanguage"}>
-<TabItem value="Java" label={'Java'}>
+<Tabs groupId="language" queryString>
+<TabItem value="java" label="Java">
 
 1. Get Integration Service API's endpoint by setting the `api-key` and `api-url` in `env.properties` file.
 2. Make sure you have an `adminIdentity.json` file which is actually an Admin Identity. If this is not the case, please run example-0 (details below) to make the identity an `AdminIdentity`
@@ -51,7 +51,7 @@ The next sections will describe each example in detail.
 Alternatively, a basic [Dockerfile](https://github.com/albydeca/iota-is-sdk/blob/main/Dockerfile) has been provided that will allow you to run all the examples in one go.
 
 </TabItem>
-<TabItem value="Nodejs" label={'Node.js'}>
+<TabItem value="node" label="Node.js">
 
 In order to run examples, you will need to:
 
@@ -76,8 +76,8 @@ npm install
 
 ### Configure the Examples
 
-<Tabs groupId={"programmingLanguage"}>
-<TabItem value="Java" label={'Java'}>
+<Tabs groupId="language" queryString>
+<TabItem value="java" label="Java">
 
 In Java, you will need to set up a `env.properties` file with the following properties:
 
@@ -91,7 +91,7 @@ identity-file=adminIdentity.json
 Please note the Java SDK assumes that an instance of the API, including its MongoDB connection, is already running elsewhere.
 
 </TabItem>
-<TabItem value="Nodejs" label={'Node.js'}>
+<TabItem value="node" label="Node.js">
 
 1. Set Integration Service API's endpoint by setting the `API_KEY` and `API_URL` in `.env` file.
 2. Set the MongoDB endpoint for the API by setting `MONGO_URL`, `DB_NAME` and `SECRET_KEY` in `.env` file.
@@ -127,8 +127,8 @@ AUDIT_TRAIL_URL=http://localhost:3002
 
 ## Run Example 0
 
-<Tabs groupId={"programmingLanguage"}>
-<TabItem value="Java" label={'Java'}>
+<Tabs groupId="language" queryString>
+<TabItem value="java" label="Java">
 
 Once you have completed the previous steps, if you do not have an identity stored in `adminIdentity.json` which is actually an Admin Identity
 you can run [example-0](https://github.com/albydeca/iota-is-sdk/blob/main/examples/src/main/java/net/gradbase/examples/AddAsRootIdentity.java)
@@ -138,7 +138,7 @@ mvn exec:_java -Dexec.mainClass=net.gradbase.how_tos.AddAsRootIdentity
 ```
 
 </TabItem>
-<TabItem value="Nodejs" label={'Node.js'}>
+<TabItem value="node" label="Node.js">
 
 Once you have completed the previous steps, you can run [example-0](https://github.com/iotaledger/integration-services/blob/master/clients/client-sdk/examples/0-MakeRootIdentityAdmin.ts) to create a decentralized identity with `Admin` role
 that will be used in the other examples using the following command:

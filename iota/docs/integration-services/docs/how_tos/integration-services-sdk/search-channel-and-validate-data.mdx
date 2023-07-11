@@ -18,8 +18,8 @@ import TabItem from '@theme/TabItem';
 The **example-7** script is similar to previous example ([Authorize Channel](authorize-to-channel.mdx)) that creates a
 channel as `Owner` and authorizes a `User` to write on it but:
 
-<Tabs groupId={"programmingLanguage"}>
-<TabItem value="Java" label={'Java'}>
+<Tabs groupId="language" queryString>
+<TabItem value="java" label="Java">
 
 ```bash
 mvn exec:_java -Dexec.mainClass=net.gradbase.how_tos.SearchChannelAndValidateData
@@ -28,7 +28,7 @@ mvn exec:_java -Dexec.mainClass=net.gradbase.how_tos.SearchChannelAndValidateDat
 **Example source code**: [Example-7](https://github.com/albydeca/iota-is-sdk/blob/main/examples/src/main/java/net/gradbase/examples/SearchChannelAndValidateData.java)
 
 </TabItem>
-<TabItem value="Nodejs" label={'Node.js'}>
+<TabItem value="node" label="Node.js">
 
 ```bash
 npm run example-7
@@ -43,7 +43,7 @@ npm run example-7
 
 Since the signature does not match, `results` is a set of tampered data, so the validation will notify it when running the following script:
 
-<Tabs groupId="language">
+<Tabs groupId="language" queryString>
 <TabItem value="java" label="Java">
 
 ```java
@@ -52,7 +52,7 @@ JSONArray validated = userClient.validate(channelAddress, resuts);
 ```
 
 </TabItem>
-<TabItem value="nodejs" label="Nodejs">
+<TabItem value="node" label="Node.js">
 
 ```js
 // Now try to validate the manipulated data
