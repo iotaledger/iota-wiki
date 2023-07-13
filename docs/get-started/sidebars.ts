@@ -1,4 +1,5 @@
-module.exports = [
+module.exports = {
+    getStarted: [
         {
             type: 'category',
             label: 'Introduction',
@@ -9,16 +10,16 @@ module.exports = [
                     label: 'IOTA',
                     items:
                         [
-                            'get-started/introduction/iota/introduction',
-                            'get-started/introduction/iota/mainnet',
+                            'introduction/iota/introduction',
+                            'introduction/iota/mainnet',
                             {
                                 type: 'category',
                                 label: 'IOTA Token',
                                 items: [
-                                    'get-started/introduction/iota/iota-token/distribution',
-                                    'get-started/introduction/iota/iota-token/buying']
+                                    'introduction/iota/iota-token/distribution',
+                                    'introduction/iota/iota-token/buying']
                             },
-                            'get-started/introduction/iota/staking',
+                            'introduction/iota/staking',
                         ]
                 },
                 {
@@ -30,10 +31,10 @@ module.exports = [
                                 type: 'category',
                                 label: 'Shimmer Token',
                                 items: [
-                                    'get-started/introduction/shimmer/shimmer-token/distribution',
-                                    'get-started/introduction/shimmer/shimmer-token/buying']
+                                    'introduction/shimmer/shimmer-token/distribution',
+                                    'introduction/shimmer/shimmer-token/buying']
                             },
-                            'get-started/introduction/shimmer/staging-canary',
+                            'introduction/shimmer/staging-canary',
                         ]
                 },
                 {
@@ -41,8 +42,8 @@ module.exports = [
                     label: 'Community',
                     items:
                         [
-                            'get-started/community/community-links',
-                            'get-started/community/governance',
+                            'community/community-links',
+                            'community/governance',
                         ]
                 },
                 {
@@ -50,9 +51,9 @@ module.exports = [
                     label: 'Programmes',
                     items:
                         [
-                            'get-started/programmes/bug-bounties',
-                            'get-started/programmes/EDF-grant-programme',
-                            'get-started/programmes/touchpoint',
+                            'programmes/bug-bounties',
+                            'programmes/EDF-grant-programme',
+                            'programmes/touchpoint',
                         ]
                 },
                 {
@@ -60,7 +61,7 @@ module.exports = [
                     label: 'Wallets',
                     items:
                         [
-                            'get-started/wallets/firefly',
+                            'wallets/firefly',
                             {
                                 type: 'link',
                                 label: 'TanglePay',
@@ -87,9 +88,10 @@ module.exports = [
 
                         ]
                 },
-                'get-started/research-papers',
-                'get-started/glossary',
-                'get-started/faq',
+                'research-papers',
+                'glossary',
+                'faq',
             ]
         }]
+}
 ;
