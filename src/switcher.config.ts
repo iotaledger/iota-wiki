@@ -1,5 +1,5 @@
 import type { Config } from './common/components/Switcher';
-import { Identity, IotaCore, SmartContracts, Stronghold, Wallet } from './common/icons';
+import { Identity, IotaCore, SmartContracts, Streams, Stronghold, Wallet } from './common/icons';
 
 const config: Config = {
   docs: [
@@ -123,6 +123,19 @@ const config: Config = {
           id: 'stronghold-rs',
           label: '1.1.0',
           badges: ['IOTA/Shimmer'],
+        },
+      ],
+    },
+    {
+      id: 'iota-streams',
+      label: 'Streams',
+      icon: Streams,
+      subsection: 'layer-1',
+      versions: [
+        {
+          id: 'iota-streams',
+          label: '0.2.0',
+          badges: ['IOTA'],
         },
       ],
     },

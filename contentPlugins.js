@@ -154,6 +154,12 @@ module.exports = async () => {
       sidebarPath: path.resolve(__dirname, 'docs/build/stronghold.rs/1.1.0/sidebars.js'),
     },
     {
+      id: 'iota-streams',
+      path: path.resolve(__dirname, 'docs/build/streams/0.2.0/docs'),
+      routeBasePath: 'streams',
+      sidebarPath: path.resolve(__dirname, 'docs/build/streams/0.2.0/sidebars.js'),
+    },
+    {
       id: 'maintain',
       path: path.resolve(__dirname, 'docs/maintain'),
       routeBasePath: 'maintain',

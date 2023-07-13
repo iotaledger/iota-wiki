@@ -102,12 +102,6 @@ module.exports = async () => {
       include: ['*.md'],
     },
     {
-      id: 'iota-streams',
-      path: path.resolve(__dirname, 'docs/streams/docs'),
-      routeBasePath: 'streams',
-      sidebarPath: path.resolve(__dirname, 'docs/streams/sidebars.js'),
-    },
-    {
       id: 'iota-zebra-tutorials',
       path: path.resolve(__dirname, 'docs/zebra-iota-edge-sdk/tutorials'),
       routeBasePath: 'zebra-tutorials',
