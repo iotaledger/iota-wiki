@@ -124,6 +124,12 @@ module.exports = async () => {
       ),
     },
     {
+      id: 'iotajs',
+      path: path.resolve(__dirname, 'docs/build/iota.js/2.0.0-rc.1/docs'),
+      routeBasePath: 'iota.js',
+      sidebarPath: path.resolve(__dirname, 'docs/build/iota.js/2.0.0-rc.1/sidebars.js'),
+    },
+    {
       id: 'wallet-rs-0-1-0',
       path: path.resolve(__dirname, 'docs/build/wallet.rs/0.1.0/docs'),
       routeBasePath: 'wallet.rs/0.1.0',

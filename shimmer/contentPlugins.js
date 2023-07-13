@@ -61,12 +61,6 @@ module.exports = [
     },
   },
   {
-    id: 'iotajs',
-    path: path.resolve(__dirname, 'docs/iota.js/docs'),
-    routeBasePath: 'iota.js',
-    sidebarPath: path.resolve(__dirname, 'docs/iota.js/sidebars.js'),
-  },
-  {
     id: 'inx-api-core-v0',
     path: path.resolve(__dirname, 'docs/inx-api-core-v0/docs'),
     routeBasePath: 'inx-api-core-v0',

@@ -80,6 +80,20 @@ const config: Config = {
       ],
     },
     {
+      id: 'iotajs',
+      label: 'iota.js',
+      description: 'Interact with the network.',
+      icon: IotaCore,
+      subsection: 'layer-1',
+      versions: [
+        {
+          id: 'iotajs',
+          label: '2.0.0-rc.1',
+          badges: ['Shimmer'],
+        },
+      ],
+    },
+    {
       id: 'wallet-rs-0-1-0',
       label: 'wallet.rs',
       description: 'Interact with the network.',
