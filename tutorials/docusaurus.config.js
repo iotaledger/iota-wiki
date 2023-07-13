@@ -91,7 +91,7 @@ module.exports = {
         title: 'Generate WASM Smart Contract using Schema Tool',
         description:
           'In this tutorial you will learn how to use schema tool to generate smart contract template code on rust and golang',
-        preview: '/IOTA-Smart-Contract-Tutorials-G.jpg',
+        preview: '/IOTA-Smart-Contract-Tutorials-G.png',
         route: 'smart-contracts/guide/wasm_vm/usage',
         tags: ['text', 'video'],
       },
@@ -102,7 +102,7 @@ module.exports = {
         title: 'Generate WASM Smart Contract using Schema Tool in Typescript',
         description:
           'In this tutorial you will learn how to use schema tool to generate smart contract template code on typescript',
-        preview: '/IOTA-Smart-Contract-Tutorials-G.jpg',
+        preview: '/IOTA-Smart-Contract-Tutorials-G.png',
         route: 'https://www.youtube.com/watch?v=P5HMgmY3DMM',
         tags: ['video'],
       },
