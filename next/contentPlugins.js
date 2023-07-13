@@ -55,12 +55,6 @@ module.exports = [
     include: ['*.md'],
   },
   {
-    id: 'wasp',
-    path: path.resolve(__dirname, 'docs/wasp/docs'),
-    routeBasePath: 'smart-contracts',
-    sidebarPath: path.resolve(__dirname, 'docs/wasp/sidebars.js'),
-  },
-  {
     id: 'iota-chronicle-rs',
     path: path.resolve(__dirname, 'docs/chronicle/docs'),
     routeBasePath: 'chronicle',

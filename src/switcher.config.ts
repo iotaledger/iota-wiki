@@ -32,6 +32,20 @@ const config: Config = {
       ],
     },
     {
+      id: 'wasp-0-7-0',
+      label: 'Smart Contracts',
+      description: 'Create smart contracts.',
+      icon: IotaCore,
+      subsection: 'layer-2',
+      versions: [
+        {
+          id: 'wasp-0-7-0',
+          label: '0.7.0',
+          badges: ['Shimmer'],
+        },
+      ],
+    },
+    {
       id: 'identity-rs-0-5',
       label: 'Identity',
       description: 'Trustless digital identity management.',
@@ -105,6 +119,11 @@ const config: Config = {
         label: 'Layer 1',
         description: 'Interact with the network.',
         id: 'layer-1',
+      },
+      {
+        label: 'Layer 2',
+        description: 'Create smart contracts.',
+        id: 'layer-2',
       }
     ],
   ],

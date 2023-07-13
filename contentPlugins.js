@@ -36,6 +36,12 @@ module.exports = async () => {
       ],
     },
     {
+      id: 'wasp-0-7-0',
+      path: path.resolve(__dirname, 'docs/build/wasp/0.7.0/docs'),
+      routeBasePath: 'smart-contracts',
+      sidebarPath: path.resolve(__dirname, 'docs/build/wasp/0.7.0/sidebars.js'),
+    },
+    {
       id: 'identity-rs-0-5',
       path: path.resolve(__dirname, 'docs/build/identity.rs/v0.5.0/docs'),
       routeBasePath: 'identity.rs',
