@@ -16,7 +16,7 @@ keywords:
 At the moment, there are no active staking periods.
 :::
 
-IOTA introduced two new networks that will exist alongside the main network: the Shimmer staging network and the Assembly trustless smart contract network. These networks provide additional utility for the IOTA token and offer staking opportunities.
+IOTA introduced two new networks alongside the main network: the Shimmer staging network and the Assembly trustless smart contract network. These networks provide additional utility for the IOTA token and offer staking opportunities.
 
 :::info
 Find the blog post introducing IOTA staking [here](https://blog.iota.org/introducing-iota-staking/).

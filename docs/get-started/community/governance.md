@@ -1,5 +1,5 @@
 ---
-description: An overview and Introduction to the Governance of Shimmer
+description: An Overview and Introduction to the Governance of Shimmer
 image: /img/learn/governance/shimmer-gov.png
 keywords:
   - Introduction
@@ -16,17 +16,17 @@ The Shimmer community, supported by the IOTA Foundation, has developed a Governa
 
 **1. Open discussions in the Shimmer Discord** Fostered by a group of community members that regularly discuss and meet publicly to progress and develop Governance systems and tools for the Shimmer Community. You can participate in this activity in The [#Governance-Discussions](https://discord.com/channels/397872799483428865/839927402242637834) channels (make sure to activate the Governance role in the IOTA/Shimmer Discord) and participate in the [weekly meetings](https://youtube.com/playlist?list=PL5joP0FyJQU4eKPWfQWradNVjMIPq86ID) every Thursday at 3 pm CET. Every Community member is welcome and invited to join this important work.
 
-**2. The official IOTA/Shimmer [Governance Forum](https://govern.iota.org)**- Here is the place for specific discussions about proposals. It is the first stage of reaching community consensus on proposed changes through soft consensus polling in the forum.
+**2. The official IOTA/Shimmer [Governance Forum](https://govern.iota.org)**is the place for specific proposal discussions. It is the first stage of reaching community consensus on proposed changes through soft consensus polling in the forum.
 
 **3. Fully utilized decentralized and immutable On-Chain Governance [voting functionality](https://wiki.iota.org/shimmer/learn/governance/governance-tech.md)** integrated into the [Firefly Shimmer Wallet](https://firefly.iota.org/) and the [Hornet Nodes](/develop/what-is-shimmer/nodes/hornet). This allows every SMR Token holder to make decisions in the SMR network based on proposals passed through the forum's governance process. Voting is a protocol feature of L1, so no Smart Contracts are needed for this type of voting.
 
 Governance processes in SMR are defined in the **[Shimmer Governance Framework](https://wiki.iota.org/shimmer/learn/governance/the-shimmer-governance-framework.md)**. This framework has been developed by the Community Governance working group in many months of discussions and is the foundational building block of how Governance in SMR works.
 It mainly defines:
 
-- Who are the stakeholders and their roles in Governance processes.
-- Where do proposal discussions take place, how do they need to be structured, which rules to follow and how do they move through the three staged Governance processes to come to a final and binding decision.
-- What is the scope of Governance in the SMR network.
-- How and when do Polls and Votes take place, and which rules apply to those decisions.
+- Who are the stakeholders, and their roles in Governance processes?
+- Where do proposal discussions take place, how do they need to be structured, which rules to follow, and how do they move through the three staged Governance processes to come to a final and binding decision?
+- What is the scope of Governance in the SMR network?
+- How and when do Polls and Votes take place, and which rules apply to those decisions?
 
 ## Summary of the Shimmer Governance processes
 
@@ -34,11 +34,11 @@ It mainly defines:
 
 #### Phase 1
 
-This is an open discussion phase in the [Governance forum](https://govern.iota.org/c/shimmer-governance-proposals/phase-1-discussions/52). Forum members can submit proposals, and the community can discuss it and request changes and additions. If it finds enough support in Phase 1 signaled through likes or votes on the proposal, it can move to the next phase.
+This is an open discussion phase in the [Governance forum](https://govern.iota.org/c/shimmer-governance-proposals/phase-1-discussions/52). Forum members can submit proposals, and the community can discuss them and request changes and additions. It can move to the next phase if it finds enough support in Phase 1, signaled through likes or votes on the proposal.
 
 #### Phase 2
 
-In this [Phase, the "Temperature check"](https://govern.iota.org/c/shimmer-governance-proposals/phase-2-temperature-check/53), the proposal in the forum has reached its final form. It follows a specific template that requests to lay out reasoning and exact implementation specifications for the proposed change. During a one-week forum-poll, the active forum members can decide if the proposal should move to the final phase where it will be presented to the Community of SMR Token Holders in an On-Chain Governance vote.
+In this [Phase, the "Temperature check"](https://govern.iota.org/c/shimmer-governance-proposals/phase-2-temperature-check/53), the proposal in the forum has reached its final form. It follows a specific template that requests to lay out reasoning and exact implementation specifications for the proposed change. During a one-week forum poll, the active forum members can decide if the proposal should move to the final phase, where it will be presented to the Community of SMR Token Holders in an On-Chain Governance vote.
 
 #### Phase 3
 
@@ -51,9 +51,9 @@ This feature consists of 2 components:
 #### The Hornet - INX participation Plugin
 
 - This feature can be activated as a [plugin](/inx-participation/welcome) in every Hornet Shimmer node and enables node operators to participate in the decentralized counting and verification of on-chain Governance votes.
-  - Node operators can add proposals that are due for an on-chain vote through an easy interface by uploading the unique proposal ID to their node.
-  - Counting of votes is based on a time-based accumulation. Each milestone (every 5 seconds) that a node finds a vote on a UTXO Output, the SMR tokens sitting on that output and the vote statement (proposal ID, question, and answer) are registered by the nodes and added to the count for that output in an internal database. This leads to a time-based growth of casted votes, meaning the longer a voter participates with SMR tokens in a vote, the more votes are counted for the voter.
-  - Node operators are always able to access this counting data and verify the correct counting of votes by comparing their count to other node operators counts.
+  - Node operators can add proposals due for an on-chain vote through an easy interface by uploading the unique proposal ID to their node.
+  - Counting of votes is based on a time-based accumulation. For each milestone (every 5 seconds) that a node finds a vote on a UTXO Output, the SMR tokens sitting on that output and the vote statement (proposal ID, question, and answer) are registered by the nodes and added to the count for that output in an internal database. This leads to a time-based growth of casted votes, meaning the longer a voter participates with SMR tokens in a vote, the more votes are counted for the voter.
+  - Node operators are always able to access this counting data and verify the correct counting of votes by comparing their count to other node operators' counts.
 
 #### The Firefly Governance function
 
@@ -74,17 +74,17 @@ This feature consists of 2 components:
 
 A detailed technical description of this voting functionality can be found in the [Governance - tech](https://wiki.iota.org/shimmer/learn/governance/governance-tech.md) section of the Wiki.
 
-A detailed description on how to participate in Governance votes can be found in the [Firefly Shimmer Governance Guide](https://wiki.iota.org/shimmer/learn/governance/shimmer-firefly-governance-guide.md)
+A detailed description of how to participate in Governance votes can be found in the [Firefly Shimmer Governance Guide](https://wiki.iota.org/shimmer/learn/governance/shimmer-firefly-governance-guide.md)
 
-### Shimmer Governance Ressources
+### Shimmer Governance Resources
 
 - [IOTA/Shimmer Governance Forum](https://govern.iota.org) where all official proposals are discussed.
-- [Shimmer Governance Guide](https://govern.iota.org/t/read-first-shimmer-governance-guide/1406) A short introduction how to use the Governance forum and how to create proposals.
+- [Shimmer Governance Guide](https://govern.iota.org/t/read-first-shimmer-governance-guide/1406) A short introduction to using the Governance forum and creating proposals.
 - [Firefly Handbook](https://iotaledger.GitHub.io/firefly/specifications/governance/) A short definition and explainer of the Firefly Governance functions
 - [YouTube Playlist](https://youtube.com/playlist?list=PL5joP0FyJQU4eKPWfQWradNVjMIPq86ID) with recording of all Governance meetings.
 - [Meeting minutes](https://www.tangletreasury.org/governance-and-treasury-minutes) of all governance meetings collected on a community-driven website.
 - [Shimmer Governance](https://twitter.com/ShimmerGov) Twitter account of the Governance working group.
 - [Shimmer Governance](https://GitHub.com/iota-community/Shimmer-Governance) GitHub Repo for the Shimmer Governance system.
 - [INX Participation](https://GitHub.com/iotaledger/inx-participation) GitHub Repo for the INX Participation Node Plugin that counts the votes.
-- [Community Governance](https://GitHub.com/iota-community/Community-Governance) GitHub Repo for the initial IOTA Governance system and first vote.
+- [Community Governance](https://GitHub.com/iota-community/Community-Governance) GitHub Repo for the initial IOTA Governance system and the first vote.
 - [IOTA Treasury](https://iotatreasury.org/) Website developed for the first Governance vote in our Communities history, which explains the core features of the voting system.

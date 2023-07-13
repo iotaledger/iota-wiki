@@ -11,9 +11,9 @@ keywords:
 # IOTA Mainnet
 
 The IOTA mainnet is the IOTA network that uses the IOTA tokens that are traded on cryptocurrency exchanges. This network is the
-most stable. Any feature that is deployed in the The IOTA has been priorly tested on
-the [devnet](https://wiki.iota.org/introduction/reference/networks/devnet/) and/or [Shimmer](../shimmer/staging-canary.md),
-IOTA's staging network which is used a canary before features are added to the IOTA mainnet.
+most stable. Any feature that is deployed in the IOTA has been priorly tested on
+the [devnet](https://wiki.iota.org/introduction/reference/networks/devnet/) and [Shimmer](../shimmer/staging-canary.md),
+IOTA's staging network is used as a canary before features are added to the IOTA mainnet.
 
 ## Public Infrastructure
 

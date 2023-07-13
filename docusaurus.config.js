@@ -9,9 +9,7 @@ module.exports = async () => {
     create_doc_plugin(contentConfig),
   );
 
-  const {
-    MODE = 'development',
-  } = process.env;
+  const { MODE = 'development' } = process.env;
 
   if (!['development', 'production'].includes(MODE)) {
     throw "Set MODE to 'development', or 'production'";
@@ -42,20 +40,18 @@ module.exports = async () => {
           {
             label: 'Learn',
             to: '/learn/stardust/introduction',
-            activeBaseRegex:
-              '^(/[^/]+)?/learn/.*'
+            activeBaseRegex: '^(/[^/]+)?/learn/.*',
           },
           {
             label: 'Build',
             to: '/build/networks/mainnet',
-            activeBaseRegex:
-              '^(/[^/]+)?/build/.*' 
+            activeBaseRegex: '^(/[^/]+)?/build/.*',
           },
           {
             label: 'Maintain',
             to: '/maintain/placeholder',
             activeBaseRegex: '^(/[^/]+)?/maintain/.*',
-          }
+          },
         ],
       },
       footer: {},
@@ -145,9 +141,7 @@ module.exports = async () => {
           },
         ],
       ],
-      plugins: [
-        ...contentPlugins
-      ],
+      plugins: [...contentPlugins],
       stylesheets: [
         {
           href: 'https://cdn.jsdelivr.net/npm/katex@0.13.24/dist/katex.min.css',

@@ -16,21 +16,21 @@ keywords:
 
 # Shimmer: IOTA's Staging Network for Tokenization and Smart Contracts
 
-Shimmer, the staging network of IOTA, serves as a crucial testing ground for new advancements before their deployment on
-the IOTA network. With a focus on innovation, Shimmer provides a platform for testing cutting-edge features such as
+Shimmer, the staging network of IOTA, serves as a crucial testing ground for new advancements before deployment on
+the IOTA network. Shimmer focuses on innovation and provides a platform for testing cutting-edge features such as
 tokenization and smart contracts.
 
 ## Shimmer: A Canary Network for Innovation
 
 Shimmer acts as a canary network for the IOTA ecosystem, allowing developers and enthusiasts to experiment with emerging
-technologies. It serves as a testing environment where new features are introduced and evaluated for their
+technologies. It is a testing environment where new features are introduced and evaluated for
 functionality, scalability, and security. Shimmer's primary goal is to identify and refine innovations that will
 eventually be implemented on the main IOTA network.
 
 ## Tokenization on Shimmer
 
 Tokenization is a key feature of Shimmer, enabling the creation and management of custom tokens on the network. Through
-Shimmer's tokenization framework, users can create non-fungible tokens (NFTs), native tokens, and alias outputs. These
+In Shimmer's tokenization framework, users can create non-fungible tokens (NFTs), native tokens, and alias outputs. These
 tokenization capabilities provide a foundation for various use cases, including digital assets, decentralized finance
 (DeFi), and supply chain management. By experimenting with tokenization on Shimmer, developers can explore the
 possibilities and refine the implementation of these features before they are introduced to the wider IOTA network.
@@ -47,7 +47,7 @@ developers and opens up opportunities for integrating existing Ethereum-based pr
 ## Shimmer Devnet: Stability for Decentralized Applications and Smart Contracts
 
 To ensure the stability and reliability of decentralized applications (dApps) and smart contracts, Shimmer features a
-dedicated development network, known as the Shimmer Devnet. The Shimmer Devnet provides a controlled environment for
+dedicated development network known as the Shimmer Devnet. The Shimmer Devnet provides a controlled environment for
 developers to test their applications and contracts under real-world conditions. This network mimics the main Shimmer
 network, allowing developers to evaluate the performance and behavior of their projects before deploying them to the
 Shimmer Mainnet. By utilizing the Shimmer Devnet, developers can identify and address any potential issues or
@@ -56,8 +56,8 @@ vulnerabilities, ensuring a smoother transition to the production-ready Shimmer 
 ## Embracing Innovation with Shimmer
 
 Shimmer represents a significant step forward for the IOTA ecosystem, providing a dedicated platform for testing and
-refining new features. By focusing on tokenization and smart contracts, Shimmer enables developers to explore the full
-potential of these technologies within the IOTA network. Through the Shimmer Devnet, developers can ensure the stability
-and reliability of their decentralized applications and smart contracts before launching them on the Shimmer Mainnet. As
-Shimmer continues to evolve, it will serve as a catalyst for innovation, driving the growth and adoption of the IOTA
+refining new features. Shimmer enables developers to explore the full
+potential of these technologies within the IOTA network by focusing on tokenization and smart contracts. Developers can ensure the stability
+and reliability of their decentralized applications and smart contracts through the Shimmer Devnet before launching them on the Shimmer Mainnet. As
+Shimmer continues to evolve; it will catalyze innovation, driving the growth and adoption of the IOTA
 ecosystem.

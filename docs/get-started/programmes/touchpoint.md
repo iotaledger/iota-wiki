@@ -5,42 +5,41 @@ world-class expertise, and smart money for builders, investors, and experts. Joi
 projects in DeFi, gaming, NFTs, and other verticals.'
 image: /img/shimmer-wiki.png
 keywords:
-- Touchpoint program
-- open builders program
-- tailored support
-- world-class expertise
-- smart money
+  - Touchpoint program
+  - open builders program
+  - tailored support
+  - world-class expertise
+  - smart money
 ---
 
 # Touchpoint: Empowering Collaboration in Web3
 
 [Touchpoint](https://assembly.sc/touchpoint) is an open builders program that leverages the power of the community to provide access to tailored support,
 world-class expertise, and smart money. It offers a collaborative environment for builders, investors, and experts to
-come together and grow alongside 35+ other projects across DeFi, gaming, NFTs, and other verticals.
+come together and grow alongside 35+ projects across DeFi, gaming, NFTs, and other verticals.
 
 ## No Frills Support
 
 Touchpoint takes a modular and flexible approach by design. Instead of a set curriculum, the program encourages
-collaboration among participants and provides frequent and honest input. Whether it's collaborating with other program
+collaboration among participants and provides frequent and honest input. Whether collaborating with other program
 participants or seeking guidance from the Touchpoint team, builders can access the support they need without unnecessary
 formalities.
 
 ## World-Class Expertise
 
 Collaboration with a growing community of subject matter experts is a key advantage of Touchpoint. From smart contract
-specialists to token economic experts, participants have the opportunity to tap into a wealth of knowledge and
+specialists to token economic experts, participants can tap into a wealth of knowledge and
 experience. This network of experts is committed to supporting DAOs and contributing to the success of projects within
 the Touchpoint ecosystem.
 
 ## Leading Investors
 
-Touchpoint provides hands-on support with fundraising efforts. Participants gain access to leading investors who are
-dedicated to supporting ecosystem projects within the Assembly ecosystem. Whether you're looking for financial support
+Touchpoint provides hands-on support with fundraising efforts. Participants gain access to leading investors dedicated to supporting ecosystem projects within the Assembly ecosystem. Whether you're looking for financial support
 or introductions to potential backers, Touchpoint can help you navigate the fundraising landscape.
 
 ## Who is Touchpoint for?
 
-Touchpoint is designed to cater to builders, investors, and experts who are actively involved in the Assembly ecosystem.
+Touchpoint is designed to cater to builders, investors, and experts actively involved in the Assembly ecosystem.
 
 - **Builders**: Those seeking help with building on Assembly and looking for public or private funding, technical
   support, or ecosystem strategies.
@@ -63,7 +62,7 @@ the right match for you and your project.
 
 ### 3. Onboarding
 
-Based on your current stage of development and short-term goals, Touchpoint helps you get started. Concrete next steps
+Touchpoint helps you get started based on your current development stage and short-term goals. Concrete next steps
 will be agreed upon, and you'll be connected with talent, capital, and knowledge from across the community.
 
 ### 4. Get to Work

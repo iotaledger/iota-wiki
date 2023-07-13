@@ -1,5 +1,5 @@
 ---
-description: The IOTA token is designed to facilitate value transfer between humans and machines, with a fair distribution and a focus on sustainability. It enables feeless transactions and supports a wide range of use cases.
+description: The IOTA token is designed to facilitate value transfer between humans and machines, with fair distribution and a focus on sustainability. It enables feeless transactions and supports a wide range of use cases.
 image: /img/logo/Chrysalis_logo_dark.png
 keywords:
   - IOTA token
@@ -17,17 +17,17 @@ supported by a non-profit foundation and designed for feeless transactions, open
 economy.
 :::
 
-The IOTA token is a powerful tool for value transfer among humans and machines.
+The IOTA token is a powerful tool for value transfer between humans and machines.
 
 ## Fair Distribution
 
-Since it's genesis, it was important for the IOTA token to be created fairly. There were **no locked tokens**, **no early
+Since its genesis, it has been important for the IOTA token to be created fairly. There were **no locked tokens**, **no early
 corporate investors**, and **no tokens were awarded to founders**.
 
 ## A Non-Profit Foundation
 
 The IOTA Foundation is a non-profit organization. This gives the IOTA token more trust and value. It ensures we can
-achieve our vision of creating an open-source, standardized protocol for the world to use.
+achieve our vision of creating an open-source, standardized protocol for the world.
 
 ## Designed For The Long Haul
 
