@@ -32,4 +32,4 @@ discoveries can have a significant impact on the security and reliability of the
 
 ## Active Bug Bounties
 
-* [Stronghold](ADD LINK)
+- [Stronghold](ADD LINK)

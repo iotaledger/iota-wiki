@@ -10,6 +10,7 @@ keywords:
   - decentralized
   - blockchain
 ---
+
 # Introduction to IOTA
 
 IOTA is a distributed ledger technology (DLT) that empowers individuals to have control over their private data, run
@@ -57,4 +58,4 @@ the [IOTA mainnet](mainnet.md), which is the stable network used for managing IO
 and [Shimmer, the staging network](../shimmer/staging-canary.md) for testing and deploying the latest protocol updates.
 The Shimmer network acts as a testing ground to validate new features and improvements before they are implemented on
 the mainnet. The upcoming significant update for IOTA is Stardust, and it is part of the ongoing effort called
-Coordicide, which aims to achieve full decentralization. 
+Coordicide, which aims to achieve full decentralization.

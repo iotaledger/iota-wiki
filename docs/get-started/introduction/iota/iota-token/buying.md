@@ -7,6 +7,7 @@ keywords:
   - IOTA cryptocurrency
   - major exchanges
 ---
+
 # Buying IOTA
 
 IOTA is listed on most major cryptocurrency exchanges.

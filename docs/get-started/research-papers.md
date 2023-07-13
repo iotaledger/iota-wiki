@@ -8,7 +8,7 @@ keywords:
   - keyword4
 ---
 
-# Research Papers 
+# Research Papers
 
 The research department of the IOTA Foundation aims for academic validation of the whole protocol and regularly publishes papers and studies to the academic world following a strictly peer-reviewed approach in the protocol development.
 

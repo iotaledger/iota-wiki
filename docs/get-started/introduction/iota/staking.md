@@ -12,7 +12,6 @@ keywords:
 
 # Staking in the IOTA Network Ecosystem
 
-
 :::danger no active staking periods
 At the moment, there are no active staking periods.
 :::
@@ -70,13 +69,13 @@ After the launch of the Assembly network, IOTA token holders can continue stakin
 Assembly offers two mechanisms for rewarding ASMB token stakers:
 
 1. Inflationary token distribution: ASMB holders receive newly minted ASMB tokens.
-    - The yearly inflation rate for the Assembly supply is 8%.
-    - The specific mechanism for distribution is yet to be published.
+
+   - The yearly inflation rate for the Assembly supply is 8%.
+   - The specific mechanism for distribution is yet to be published.
 
 2. Staking for security: ASMB token holders can stake their tokens with a validator to secure the Assembly smart contract chains.
-    - Validators are required to deposit ASMB tokens as a security bond.
-    - Validators may use tokens deposited by ASMB holders.
-    - Delegated stake increases the security bond and allows validators to offer higher rewards to stakers.
+   - Validators are required to deposit ASMB tokens as a security bond.
+   - Validators may use tokens deposited by ASMB holders.
+   - Delegated stake increases the security bond and allows validators to offer higher rewards to stakers.
 
 By participating in staking, IOTA token holders can earn rewards and contribute to the security and functionality of the IOTA network ecosystem.
-

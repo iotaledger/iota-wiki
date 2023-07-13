@@ -8,6 +8,7 @@ keywords:
   - community DAO
   - Tangle ecosystem
 ---
+
 # Shimmer Token Distribution
 
 The distribution of Shimmer tokens is an important aspect of the Shimmer network ecosystem. Here is a breakdown of how

@@ -1,14 +1,24 @@
 ---
 description: "Discover Shimmer, IOTA's staging network designed to test and deploy innovative features like tokenization and smart contracts. Explore Shimmer's capabilities and understand its role as a testing ground for advancements before their implementation on the IOTA network."
 image: /img/docssection/shimmer_dark.svg
-keywords: [ Shimmer, IOTA, staging network, tokenization, smart contracts, canary network, innovation, Shimmer Devnet ]
+keywords:
+  [
+    Shimmer,
+    IOTA,
+    staging network,
+    tokenization,
+    smart contracts,
+    canary network,
+    innovation,
+    Shimmer Devnet,
+  ]
 ---
 
 # Shimmer: IOTA's Staging Network for Tokenization and Smart Contracts
 
 Shimmer, the staging network of IOTA, serves as a crucial testing ground for new advancements before their deployment on
 the IOTA network. With a focus on innovation, Shimmer provides a platform for testing cutting-edge features such as
-tokenization and smart contracts. 
+tokenization and smart contracts.
 
 ## Shimmer: A Canary Network for Innovation
 
@@ -21,7 +31,7 @@ eventually be implemented on the main IOTA network.
 
 Tokenization is a key feature of Shimmer, enabling the creation and management of custom tokens on the network. Through
 Shimmer's tokenization framework, users can create non-fungible tokens (NFTs), native tokens, and alias outputs. These
-tokenization capabilities provide a foundation for various use cases, including digital assets, decentralized finance 
+tokenization capabilities provide a foundation for various use cases, including digital assets, decentralized finance
 (DeFi), and supply chain management. By experimenting with tokenization on Shimmer, developers can explore the
 possibilities and refine the implementation of these features before they are introduced to the wider IOTA network.
 

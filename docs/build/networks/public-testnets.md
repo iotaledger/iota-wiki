@@ -6,12 +6,12 @@ Short explanation on the purpose of the network, what protocol it runs and what 
 
 Table with the following info:
 
-|                  |           |
-|------------------|-----------|
-| Protocol Version |           |
-| Public APIs      |           |
-| Libs             |           |
-| Features         |           |
+|                  |     |
+| ---------------- | --- |
+| Protocol Version |     |
+| Public APIs      |     |
+| Libs             |     |
+| Features         |     |
 
 ## Shimmer
 
@@ -19,15 +19,9 @@ Short explanation on the purpose of the network, what protocol it runs and what 
 
 Table with the following info:
 
-|                  |           |
-|------------------|-----------|
-| Protocol Version |           |
-| Public APIs      |           |
-| Libs             |           |
-| Features         |           |
-
-
-
-
-
-
+|                  |     |
+| ---------------- | --- |
+| Protocol Version |     |
+| Public APIs      |     |
+| Libs             |     |
+| Features         |     |

@@ -7,7 +7,8 @@ keywords:
   - Governance
   - DAO
 ---
-# Governance 
+
+# Governance
 
 The Shimmer community, supported by the IOTA Foundation, has developed a Governance system for Shimmer.
 
@@ -50,26 +51,26 @@ This feature consists of 2 components:
 #### The Hornet - INX participation Plugin
 
 - This feature can be activated as a [plugin](/inx-participation/welcome) in every Hornet Shimmer node and enables node operators to participate in the decentralized counting and verification of on-chain Governance votes.
-    - Node operators can add proposals that are due for an on-chain vote through an easy interface by uploading the unique proposal ID to their node.
-    - Counting of votes is based on a time-based accumulation. Each milestone (every 5 seconds) that a node finds a vote on a UTXO Output, the SMR tokens sitting on that output and the vote statement (proposal ID, question, and answer) are registered by the nodes and added to the count for that output in an internal database. This leads to a time-based growth of casted votes, meaning the longer a voter participates with SMR tokens in a vote, the more votes are counted for the voter.
-    - Node operators are always able to access this counting data and verify the correct counting of votes by comparing their count to other node operators counts.
+  - Node operators can add proposals that are due for an on-chain vote through an easy interface by uploading the unique proposal ID to their node.
+  - Counting of votes is based on a time-based accumulation. Each milestone (every 5 seconds) that a node finds a vote on a UTXO Output, the SMR tokens sitting on that output and the vote statement (proposal ID, question, and answer) are registered by the nodes and added to the count for that output in an internal database. This leads to a time-based growth of casted votes, meaning the longer a voter participates with SMR tokens in a vote, the more votes are counted for the voter.
+  - Node operators are always able to access this counting data and verify the correct counting of votes by comparing their count to other node operators counts.
 
 #### The Firefly Governance function
 
 - The Shimmer Firefly Wallet includes a Governance Dashboard. In this Dashboard, all On-Chain Voting activities are managed, and users can:
-    - Participate in ongoing votes on official proposals that followed the Governance process laid out in the Shimmer Governance Framework
-    - Register custom proposals that may be initiated by individual projects and communities but do not fall under the official Governance process and vote on these custom proposals.
+  - Participate in ongoing votes on official proposals that followed the Governance process laid out in the Shimmer Governance Framework
+  - Register custom proposals that may be initiated by individual projects and communities but do not fall under the official Governance process and vote on these custom proposals.
 
 **Voting in Firefly Shimmer works like this:**
 
 - For every Wallet of a Firefly profile, the user can define how many Shimmer tokens should participate in Governance decisions. This amount of tokens creates Voting Power.
 - To use this Voting Power, Firefly moves those tokens to a new output and locks them to participate in Governance votes. So the tokens cannot be used to be spent on different things unless the user unlocks them again by decreasing the voting power, which frees those tokens.
 - Once the Firefly Wallet recognizes that a new proposal is present in the nodes it is connected to, it displays this proposal in the Governance Dashboard
-    - **A Proposal passes through four different phases**:
-        - **Announcement:** The proposal has been uploaded to the node, and Firefly has seen the proposal. The voter is not yet able to participate in voting because voting starts in the future
-        - **Voting open:** The user can cast a vote on the proposal. Votes are now only registered, but counting votes has yet to start. In this phase, voters are free to change their vote without directly influencing the following count of their votes.
-        - **Counting:** Now all participating Nodes are actively counting and accumulating votes on this proposal. The longer a user keeps its tokens actively voting on this proposal. The more votes will be counted for the user. Users can change their voting power and opinions during the counting phase. Still, this change only influences the future count from the time of the change and does not influence the already counted votes of a user on this proposal.
-        - **Ended:** The Proposal counting is over, and the final vote result is displayed.
+  - **A Proposal passes through four different phases**:
+    - **Announcement:** The proposal has been uploaded to the node, and Firefly has seen the proposal. The voter is not yet able to participate in voting because voting starts in the future
+    - **Voting open:** The user can cast a vote on the proposal. Votes are now only registered, but counting votes has yet to start. In this phase, voters are free to change their vote without directly influencing the following count of their votes.
+    - **Counting:** Now all participating Nodes are actively counting and accumulating votes on this proposal. The longer a user keeps its tokens actively voting on this proposal. The more votes will be counted for the user. Users can change their voting power and opinions during the counting phase. Still, this change only influences the future count from the time of the change and does not influence the already counted votes of a user on this proposal.
+    - **Ended:** The Proposal counting is over, and the final vote result is displayed.
 
 A detailed technical description of this voting functionality can be found in the [Governance - tech](https://wiki.iota.org/shimmer/learn/governance/governance-tech.md) section of the Wiki.
 
