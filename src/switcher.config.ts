@@ -50,6 +50,25 @@ const config: Config = {
         },
       ],
     },
+    {
+      id: 'wallet-rs-0-1-0',
+      label: 'wallet.rs',
+      description: 'Interact with the network.',
+      icon: IotaCore,
+      subsection: 'layer-1',
+      versions: [
+        {
+          id: 'wallet-rs-0-1-0',
+          label: '0.1.0',
+          badges: ['IOTA'],
+        },
+        {
+          id: 'wallet-rs-1-0-0-rc-6',
+          label: '1.0.0-rc.6',
+          badges: ['Shimmer']
+        },
+      ],
+    },
   ],
   sections: [
     [
