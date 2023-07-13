@@ -16,9 +16,24 @@ module.exports = async () => {
     },
     {
       id: 'build',
-      path: path.resolve(__dirname, 'docs/build'),
-      sidebarPath: path.resolve(__dirname, 'docs/build/sidebars.ts'),
+      path: path.resolve(__dirname, 'docs/build/getting-started'),
+      sidebarPath: path.resolve(__dirname, 'docs/build/getting-started/sidebars.ts'),
       routeBasePath: 'build',
+    },
+    {
+      id: 'iota-sdk-1-0-0',
+      path: path.resolve(__dirname, 'docs/build/iota-sdk/1.0.0/docs'),
+      routeBasePath: 'iota-sdk',
+      sidebarPath: require.resolve('./docs/build/iota-sdk/1.0.0/sidebars.js'),
+      //overriding default exclude array to include the python api's classes with _ at the beginning
+      //but still exclude any _admonitions
+      exclude: [
+        // '**/_*.{js,jsx,ts,tsx,md}',
+        // '**/_*/**',
+        '**/*.test.{js,jsx,ts,tsx}',
+        '**/__tests__/**',
+        '**/_admonitions/_**',
+      ],
     },
     {
       id: 'maintain',

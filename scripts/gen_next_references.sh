@@ -9,7 +9,7 @@ python -m venv .venv
 source .venv/bin/activate
 pip install -r requirements-dev.txt
 PYTHONPATH=. pydoc-markdown
-cp -Rv docs/references/python ../../../../next/docs/iota-sdk/docs/references/
+cp -Rv docs/references/python ../../../../docs/build/iota-sdk/1.0.0/docs/references/
 deactivate
 cd -
 
@@ -18,7 +18,7 @@ cd bindings/nodejs
 # The SDK still uses yarn classic: https://github.com/iotaledger/iota-sdk/issues/433
 yarn set version classic
 yarn
-yarn create-api-docs --out ../../../../next/docs/iota-sdk/docs/references/nodejs
+yarn create-api-docs --out ../../../../docs/build/iota-sdk/1.0.0/docs/references/nodejs
 cd -
 
 # Return to root and cleanup
