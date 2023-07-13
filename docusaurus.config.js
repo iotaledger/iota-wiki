@@ -36,12 +36,12 @@ module.exports = async () => {
         items: [
           {
             label: 'Get Started',
-            to: '/get-started/placeholder',
+            to: '/get-started/introduction/iota/introduction/',
             activeBaseRegex: '^(/[^/]+)?/get-started/.*',
           },
           {
             label: 'Learn',
-            to: '/learn/placeholder',
+            to: '/learn/iota/introduction',
             activeBaseRegex:
               '^(/[^/]+)?/learn/.*'
           },
