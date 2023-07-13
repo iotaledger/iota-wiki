@@ -142,6 +142,12 @@ module.exports = async () => {
       ),
     },
     {
+      id: 'stronghold-rs',
+      path: path.resolve(__dirname, 'docs/build/stronghold.rs/1.1.0/docs'),
+      routeBasePath: 'stronghold.rs',
+      sidebarPath: path.resolve(__dirname, 'docs/build/stronghold.rs/1.1.0/sidebars.js'),
+    },
+    {
       id: 'maintain',
       path: path.resolve(__dirname, 'docs/maintain'),
       routeBasePath: 'maintain',

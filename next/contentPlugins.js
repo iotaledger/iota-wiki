@@ -132,10 +132,4 @@ module.exports = [
     routeBasePath: 'inx-spammer',
     sidebarPath: path.resolve(__dirname, 'docs/inx-spammer/sidebars.js'),
   },
-  {
-    id: 'stronghold-rs',
-    path: path.resolve(__dirname, 'docs/stronghold.rs/docs'),
-    routeBasePath: 'stronghold.rs',
-    sidebarPath: path.resolve(__dirname, 'docs/stronghold.rs/sidebars.js'),
-  },
 ];

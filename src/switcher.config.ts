@@ -1,5 +1,5 @@
 import type { Config } from './common/components/Switcher';
-import { Identity, IotaCore } from './common/icons';
+import { Identity, IotaCore, SmartContracts, Stronghold, Wallet } from './common/icons';
 
 const config: Config = {
   docs: [
@@ -27,20 +27,6 @@ const config: Config = {
         {
           id: 'iota-sdk-1-0-0',
           label: '1.0.0',
-          badges: ['Shimmer'],
-        },
-      ],
-    },
-    {
-      id: 'wasp-0-7-0',
-      label: 'Smart Contracts',
-      description: 'Create smart contracts.',
-      icon: IotaCore,
-      subsection: 'layer-2',
-      versions: [
-        {
-          id: 'wasp-0-7-0',
-          label: '0.7.0',
           badges: ['Shimmer'],
         },
       ],
@@ -97,7 +83,7 @@ const config: Config = {
       id: 'wallet-rs-0-1-0',
       label: 'wallet.rs',
       description: 'Interact with the network.',
-      icon: IotaCore,
+      icon: Wallet,
       subsection: 'layer-1',
       versions: [
         {
@@ -109,6 +95,34 @@ const config: Config = {
           id: 'wallet-rs-1-0-0-rc-6',
           label: '1.0.0-rc.6',
           badges: ['Shimmer']
+        },
+      ],
+    },
+    {
+      id: 'stronghold-rs',
+      label: 'Stronghold',
+      description: 'Securely store secrets.',
+      icon: Stronghold,
+      subsection: 'layer-1',
+      versions: [
+        {
+          id: 'stronghold-rs',
+          label: '1.1.0',
+          badges: ['IOTA/Shimmer'],
+        },
+      ],
+    },
+    {
+      id: 'wasp-0-7-0',
+      label: 'Smart Contracts',
+      description: 'Create smart contracts.',
+      icon: SmartContracts,
+      subsection: 'layer-2',
+      versions: [
+        {
+          id: 'wasp-0-7-0',
+          label: '0.7.0',
+          badges: ['Shimmer'],
         },
       ],
     },

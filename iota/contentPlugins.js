@@ -116,12 +116,5 @@ module.exports = async () => {
         'docs/zebra-iota-edge-sdk/sidebars.js',
       ),
     },
-
-    {
-      id: 'stronghold-rs',
-      path: path.resolve(__dirname, 'docs/stronghold.rs/docs'),
-      routeBasePath: 'stronghold.rs',
-      sidebarPath: path.resolve(__dirname, 'docs/stronghold.rs/sidebars.js'),
-    },
   ];
 };
