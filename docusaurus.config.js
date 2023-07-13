@@ -47,7 +47,7 @@ module.exports = async () => {
           },
           {
             label: 'Build',
-            to: '/build/placeholder',
+            to: '/build/networks/mainnet',
             activeBaseRegex:
               '^(/[^/]+)?/build/.*' 
           },
