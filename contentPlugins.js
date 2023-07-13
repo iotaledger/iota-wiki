@@ -36,6 +36,25 @@ module.exports = async () => {
       ],
     },
     {
+      id: 'iota-rs-1-4-0',
+      path: path.resolve(__dirname, 'docs/build/iota.rs/1.4.0/docs'),
+      routeBasePath: 'iota.rs/1.4.0',
+      sidebarPath: path.resolve(
+        __dirname,
+        'docs/build/iota.rs/1.4.0/sidebars.js',
+      ),
+    },
+    {
+      id: 'iota-rs-2-0-1-rc-7',
+      path: path.resolve(__dirname, 'docs/build/iota.rs/2.0.1-rc.7/docs'),
+      routeBasePath: 'iota.rs/2.0.1-rc.7',
+      sidebarPath: path.resolve(
+        __dirname,
+        'docs/build/iota.rs/2.0.1-rc.7/sidebars.js',
+      ),
+    },
+    },
+    {
       id: 'maintain',
       path: path.resolve(__dirname, 'docs/maintain'),
       routeBasePath: 'maintain',

@@ -31,6 +31,25 @@ const config: Config = {
         },
       ],
     },
+    {
+      id: 'iota-rs-1-4-0',
+      label: 'iota.rs',
+      description: 'Interact with the network.',
+      icon: IotaCore,
+      subsection: 'layer-1',
+      versions: [
+        {
+          id: 'iota-rs-1-4-0',
+          label: '1.4.0',
+          badges: ['IOTA'],
+        },
+        {
+          id: 'iota-rs-2-0-1-rc-7',
+          label: '2.0.1-rc.7',
+          badges: ['Shimmer']
+        },
+      ],
+    },
   ],
   sections: [
     [
