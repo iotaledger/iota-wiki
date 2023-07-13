@@ -1,5 +1,5 @@
 import type { Config } from './common/components/Switcher';
-import { IotaCore } from './common/icons';
+import { Identity, IotaCore } from './common/icons';
 
 const config: Config = {
   docs: [
@@ -27,6 +27,35 @@ const config: Config = {
         {
           id: 'iota-sdk-1-0-0',
           label: '1.0.0',
+          badges: ['Shimmer'],
+        },
+      ],
+    },
+    {
+      id: 'identity-rs-0-5',
+      label: 'Identity',
+      description: 'Trustless digital identity management.',
+      icon: Identity,
+      subsection: 'layer-1',
+      versions: [
+        {
+          id: 'identity-rs-0-5',
+          label: '0.5',
+          badges: ['IOTA'],
+        },
+        {
+          id: 'identity-rs-0-6',
+          label: '0.6',
+          badges: ['IOTA'],
+        },
+        {
+          id: 'identity-rs-0-7-alpha',
+          label: '0.7-alpha',
+          badges: ['Shimmer'],
+        },
+        {
+          id: 'identity-rs-next',
+          label: 'next',
           badges: ['Shimmer'],
         },
       ],

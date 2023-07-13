@@ -21,21 +21,6 @@ module.exports = [
     docItemComponent: '@theme/ApiItem',
   },
   {
-    id: 'iota-sdk',
-    path: path.resolve(__dirname, 'docs/iota-sdk/docs'),
-    routeBasePath: 'iota-sdk',
-    sidebarPath: require.resolve('./docs/iota-sdk/sidebars.js'),
-    //overriding default exclude array to include the python api's classes with _ at the beginning
-    //but still exclude any _admonitions
-    exclude: [
-      // '**/_*.{js,jsx,ts,tsx,md}',
-      // '**/_*/**',
-      '**/*.test.{js,jsx,ts,tsx}',
-      '**/__tests__/**',
-      '**/_admonitions/_**',
-    ],
-  },
-  {
     id: 'cli-wallet',
     path: path.resolve(__dirname, 'docs/cli-wallet/docs'),
     routeBasePath: 'cli-wallet',
@@ -83,21 +68,6 @@ module.exports = [
     versions: {
       current: {
         label: 'IOTA',
-        badge: true,
-      },
-    },
-  },
-  {
-    id: 'identity-rs',
-    path: path.resolve(__dirname, 'docs/identity.rs/0.7-alpha/docs'),
-    routeBasePath: 'identity.rs',
-    sidebarPath: path.resolve(
-      __dirname,
-      'docs/identity.rs/0.7-alpha/sidebars.js',
-    ),
-    versions: {
-      current: {
-        label: '0.7',
         badge: true,
       },
     },

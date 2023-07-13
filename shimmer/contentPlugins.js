@@ -21,18 +21,6 @@ module.exports = [
     docItemComponent: '@theme/ApiItem',
   },
   {
-    id: 'iota-rs',
-    path: path.resolve(__dirname, 'docs/iota.rs/docs'),
-    routeBasePath: 'iota.rs',
-    sidebarPath: path.resolve(__dirname, 'docs/iota.rs/sidebars.js'),
-  },
-  {
-    id: 'wallet-rs',
-    path: path.resolve(__dirname, 'docs/wallet.rs/docs'),
-    routeBasePath: 'wallet.rs',
-    sidebarPath: path.resolve(__dirname, 'docs/wallet.rs/sidebars.js'),
-  },
-  {
     id: 'hornet',
     path: path.resolve(__dirname, 'docs/hornet/docs'),
     routeBasePath: 'hornet',
@@ -74,21 +62,6 @@ module.exports = [
     versions: {
       current: {
         label: 'IOTA',
-        badge: true,
-      },
-    },
-  },
-  {
-    id: 'identity-rs',
-    path: path.resolve(__dirname, 'docs/identity.rs/0.7-alpha/docs'),
-    routeBasePath: 'identity.rs',
-    sidebarPath: path.resolve(
-      __dirname,
-      'docs/identity.rs/0.7-alpha/sidebars.js',
-    ),
-    versions: {
-      current: {
-        label: '0.7',
         badge: true,
       },
     },
