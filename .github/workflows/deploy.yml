@@ -9,12 +9,7 @@ on:
 
 jobs:
   build:
-    strategy:
-      matrix:
-        environment: [iota, shimmer, next]
     uses: ./.github/workflows/build.reusable.yaml
-    with:
-      environment: ${{ matrix.environment }}
   config:
     uses: ./.github/workflows/config.reusable.yaml
   deploy:
@@ -34,9 +29,7 @@ jobs:
       # Paths of the build artifacts are preserved (`build`, `build/shimmer`, and `build/next`)
       - name: Extract build
         run: |
-          tar -xf iota.tar
-          tar -xf shimmer.tar
-          tar -xf next.tar
+          tar -xf wiki.tar
       # Convert to Vercel project and upload
       - name: Install Vercel CLI
         run: npm install --global vercel@latest

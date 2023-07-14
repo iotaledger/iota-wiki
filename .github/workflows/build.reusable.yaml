@@ -1,11 +1,7 @@
 name: build
 on:
   workflow_call:
-    inputs:
-      environment:
-        description: 'The environment to build'
-        required: true
-        type: string
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -41,35 +37,25 @@ jobs:
       - name: Build theme
         run: |
           yarn build:theme
-      # Submodules cached per environment to save time
-      - name: Cache submodules
-        uses: actions/cache@v3
-        with:
-          path: |
-            ${{ inputs.environment }}/external
-            .git/modules
-          key: ${{ inputs.environment }}-submodules-${{ hashFiles('.gitmodules') }}
-          restore-keys: |
-            ${{ inputs.environment }}-submodules
       # Artifacts cached after install to prevent removal by Yarn
       - name: Cache build artifacts
         uses: actions/cache@v3
         with:
           path: node_modules/.cache
-          key: ${{ inputs.environment }}-build-artifacts-${{ hashFiles('package.json', 'yarn.lock', 'src/**/*.*') }}
+          key: wiki-build-artifacts-${{ hashFiles('package.json', 'yarn.lock', 'src/**/*.*') }}
       # Create reference docs
-      - name: Build reference docs
+      #- name: Build reference docs
+      #  run: |
+      #    ./scripts/gen_${{ inputs.environment }}_references.sh
+      - name: Build
         run: |
-          ./scripts/gen_${{ inputs.environment }}_references.sh
-      - name: Build ${{ inputs.environment }}
-        run: |
-          yarn build:production:${{ inputs.environment }}
+          yarn build
       # Archive build directory to single file to reduce upload time
-      - name: Archive ${{ inputs.environment }}
+      - name: Archive
         run: |
-          tar -cf ${{ inputs.environment }}.tar build
-      - name: Upload ${{ inputs.environment }}
+          tar -cf wiki.tar build
+      - name: Upload
         uses: actions/upload-artifact@v3
         with:
           name: build
-          path: ${{ inputs.environment }}.tar
+          path: wiki.tar
