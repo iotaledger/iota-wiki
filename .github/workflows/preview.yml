@@ -16,7 +16,7 @@ jobs:
         environment: [iota, shimmer, next]
     uses: ./.github/workflows/build.reusable.yaml
     with:
-      ref: ${{ github.event.issue.pull_request }}
+      ref: ${{ github.event.issue.pull_request.ref }}
       environment: ${{ matrix.environment }}
   config:
     needs: [build]
