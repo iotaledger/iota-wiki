@@ -6,5 +6,8 @@ on:
 
 jobs:
   build:
+    runs-on: ubuntu-latest
     if: github.actor == 'dependabot[bot]'
-    uses: ./.github/workflows/build.reusable.yaml
+    steps:
+      - name: build
+        uses: ./.github/actions/build/
