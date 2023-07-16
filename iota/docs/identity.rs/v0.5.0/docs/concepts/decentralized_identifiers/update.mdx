@@ -73,7 +73,7 @@ The following properties can be specified for a service:
 The following example demonstrates adding verification methods and services to a DID Document.
 
 <Tabs groupId="language" queryString>
-<TabItem value="node" label="Node.js">
+<TabItem value="typescript-node" label="Typescript (Node.js)">
 
 ```ts reference
 https://github.com/iotaledger/identity.rs/blob/support/v0.5/bindings/wasm/examples-account/src/manipulate_did.ts
@@ -104,7 +104,7 @@ let mut account: Account = Account::builder()
 ```
 
 </TabItem>
-<TabItem value="node" label="Node.js">
+<TabItem value="typescript-node" label="Typescript (Node.js)">
 
 ```js
 let builder = new AccountBuilder({
@@ -169,7 +169,7 @@ account
 ```
 
 </TabItem>
-<TabItem value="node" label="Node.js">
+<TabItem value="typescript-node" label="Typescript (Node.js)">
 
 ```js
 await account.createMethod({
@@ -236,7 +236,7 @@ account
 ```
 
 </TabItem>
-<TabItem value="node" label="Node.js">
+<TabItem value="typescript-node" label="Typescript (Node.js)">
 
 ```js
 await account.attachMethodRelationships({
@@ -305,7 +305,7 @@ account
 ```
 
 </TabItem>
-<TabItem value="node" label="Node.js">
+<TabItem value="typescript-node" label="Typescript (Node.js)">
 
 ```js
 await account.createService({
@@ -379,7 +379,7 @@ account
 ```
 
 </TabItem>
-<TabItem value="node" label="Node.js">
+<TabItem value="typescript-node" label="Typescript (Node.js)">
 
 ```js
 await account.deleteMethod({ fragment: 'my-next-key' });

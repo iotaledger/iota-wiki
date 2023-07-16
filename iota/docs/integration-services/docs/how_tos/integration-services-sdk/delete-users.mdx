@@ -39,7 +39,7 @@ mvn exec:_java -Dexec.mainClass=net.gradbase.how_tos.DeleteUser
 **Example source code**: [Example-3](https://github.com/albydeca/iota-is-sdk/blob/main/examples/src/main/java/net/gradbase/examples/DeleteUser.java)
 
 </TabItem>
-<TabItem value="node" label="Node.js">
+<TabItem value="typescript-node" label="Typescript (Node.js)">
 
 ```bash
 npm run example-3
@@ -63,7 +63,7 @@ identityClient.remove(someIdentity.getId(), true);
 ```
 
 </TabItem>
-<TabItem value="node" label="Node.js">
+<TabItem value="typescript-node" label="Typescript (Node.js)">
 
 ```js
 // Remove the user and also revoke the user's credentials
@@ -91,7 +91,7 @@ JSONObject recoveredIdentity = identityClient.latestDocument(someIdentity.getId(
 ```
 
 </TabItem>
-<TabItem value="node" label="Node.js">
+<TabItem value="typescript-node" label="Typescript (Node.js)">
 
 ```js
 const recoveredIdentity = await identity.latestDocument(userIdentity.id);

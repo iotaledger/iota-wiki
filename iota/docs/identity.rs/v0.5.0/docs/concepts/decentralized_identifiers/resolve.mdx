@@ -40,7 +40,7 @@ let doc: ResolvedIotaDocument = resolver.resolve(&did).await?;
 ```
 
 </TabItem>
-<TabItem value="node" label="Node.js">
+<TabItem value="typescript-node" label="Typescript (Node.js)">
 
 ```js
 const { DID, Resolver, ResolvedDocument } = require('@iota/identity-wasm/node');
@@ -81,7 +81,7 @@ async fn build_and_resolve(client: Client, did: IotaDID) -> Result<ResolvedIotaD
 ```
 
 </TabItem>
-<TabItem value="node" label="Node.js">
+<TabItem value="typescript-node" label="Typescript (Node.js)">
 
 ```js
 const {
@@ -139,7 +139,7 @@ async fn call_resolve_history(did: IotaDID) -> Result<DocumentHistory> {
 ```
 
 </TabItem>
-<TabItem value="node" label="Node.js">
+<TabItem value="typescript-node" label="Typescript (Node.js)">
 
 ```js
 const { DID, Resolver, DocumentHistory } = require('@iota/identity-wasm/node');
@@ -159,7 +159,7 @@ async function callResolveHistory(did) {
 This section shows complete examples from the Iota Identity Framework code base. The first example creates a DID Document, publishes it to the Tangle and then resolves it.
 
 <Tabs groupId="language" queryString>
-<TabItem value="node" label="Node.js">
+<TabItem value="typescript-node" label="Typescript (Node.js)">
 
 ```ts reference
 https://github.com/iotaledger/identity.rs/blob/support/v0.5/bindings/wasm/examples/src/resolve_did.js
@@ -178,7 +178,7 @@ https://github.com/iotaledger/identity.rs/blob/support/v0.5/examples/low-level-a
 This second example demonstrates creating, publishing changes and then resolving the history of a DID Document.
 
 <Tabs groupId="language" queryString>
-<TabItem value="node" label="Node.js">
+<TabItem value="typescript-node" label="Typescript (Node.js)">
 
 ```ts reference
 https://github.com/iotaledger/identity.rs/blob/support/v0.5/bindings/wasm/examples/src/resolve_history.js
