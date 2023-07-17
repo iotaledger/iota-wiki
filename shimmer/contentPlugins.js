@@ -21,18 +21,6 @@ module.exports = [
     docItemComponent: '@theme/ApiItem',
   },
   {
-    id: 'iota-rs',
-    path: path.resolve(__dirname, 'docs/iota.rs/docs'),
-    routeBasePath: 'iota.rs',
-    sidebarPath: path.resolve(__dirname, 'docs/iota.rs/sidebars.js'),
-  },
-  {
-    id: 'wallet-rs',
-    path: path.resolve(__dirname, 'docs/wallet.rs/docs'),
-    routeBasePath: 'wallet.rs',
-    sidebarPath: path.resolve(__dirname, 'docs/wallet.rs/sidebars.js'),
-  },
-  {
     id: 'hornet',
     path: path.resolve(__dirname, 'docs/hornet/docs'),
     routeBasePath: 'hornet',
@@ -61,12 +49,6 @@ module.exports = [
     include: ['*.md'],
   },
   {
-    id: 'wasp',
-    path: path.resolve(__dirname, 'docs/wasp/docs'),
-    routeBasePath: 'smart-contracts',
-    sidebarPath: path.resolve(__dirname, 'docs/wasp/sidebars.js'),
-  },
-  {
     id: 'iota-chronicle-rs',
     path: path.resolve(__dirname, 'docs/chronicle/docs'),
     routeBasePath: 'chronicle',
@@ -77,27 +59,6 @@ module.exports = [
         badge: true,
       },
     },
-  },
-  {
-    id: 'identity-rs',
-    path: path.resolve(__dirname, 'docs/identity.rs/0.7-alpha/docs'),
-    routeBasePath: 'identity.rs',
-    sidebarPath: path.resolve(
-      __dirname,
-      'docs/identity.rs/0.7-alpha/sidebars.js',
-    ),
-    versions: {
-      current: {
-        label: '0.7',
-        badge: true,
-      },
-    },
-  },
-  {
-    id: 'iotajs',
-    path: path.resolve(__dirname, 'docs/iota.js/docs'),
-    routeBasePath: 'iota.js',
-    sidebarPath: path.resolve(__dirname, 'docs/iota.js/sidebars.js'),
   },
   {
     id: 'inx-api-core-v0',
@@ -164,12 +125,6 @@ module.exports = [
     path: path.resolve(__dirname, 'docs/inx-spammer/docs'),
     routeBasePath: 'inx-spammer',
     sidebarPath: path.resolve(__dirname, 'docs/inx-spammer/sidebars.js'),
-  },
-  {
-    id: 'stronghold-rs',
-    path: path.resolve(__dirname, 'docs/stronghold.rs/docs'),
-    routeBasePath: 'stronghold.rs',
-    sidebarPath: path.resolve(__dirname, 'docs/stronghold.rs/sidebars.js'),
   },
   {
     id: 'cli-wallet',

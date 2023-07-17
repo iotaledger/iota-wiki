@@ -102,12 +102,6 @@ module.exports = async () => {
       include: ['*.md'],
     },
     {
-      id: 'iota-streams',
-      path: path.resolve(__dirname, 'docs/streams/docs'),
-      routeBasePath: 'streams',
-      sidebarPath: path.resolve(__dirname, 'docs/streams/sidebars.js'),
-    },
-    {
       id: 'iota-zebra-tutorials',
       path: path.resolve(__dirname, 'docs/zebra-iota-edge-sdk/tutorials'),
       routeBasePath: 'zebra-tutorials',
@@ -115,70 +109,6 @@ module.exports = async () => {
         __dirname,
         'docs/zebra-iota-edge-sdk/sidebars.js',
       ),
-    },
-
-    {
-      id: 'stronghold-rs',
-      path: path.resolve(__dirname, 'docs/stronghold.rs/docs'),
-      routeBasePath: 'stronghold.rs',
-      sidebarPath: path.resolve(__dirname, 'docs/stronghold.rs/sidebars.js'),
-    },
-
-    {
-      id: 'wallet-rs',
-      path: path.resolve(__dirname, 'docs/wallet.rs/docs'),
-      routeBasePath: 'wallet.rs',
-      sidebarPath: path.resolve(__dirname, 'docs/wallet.rs/sidebars.js'),
-      versions: {
-        current: {
-          label: 'IOTA',
-          badge: true,
-        },
-      },
-    },
-    {
-      id: 'iota-rs',
-      path: path.resolve(__dirname, 'docs/iota.rs/docs'),
-      routeBasePath: 'iota.rs',
-      sidebarPath: path.resolve(__dirname, 'docs/iota.rs/sidebars.js'),
-      versions: {
-        current: {
-          label: 'IOTA',
-          badge: true,
-        },
-      },
-    },
-
-    {
-      id: 'identity-rs-0-5',
-      path: path.resolve(__dirname, 'docs/identity.rs/v0.5.0/docs'),
-      routeBasePath: 'identity.rs',
-      sidebarPath: path.resolve(
-        __dirname,
-        'docs/identity.rs/v0.5.0/sidebars.js',
-      ),
-      versions: {
-        current: {
-          label: '0.5',
-          path: '0.5',
-          badge: true,
-        },
-      },
-    },
-    {
-      id: 'identity-rs-0-6',
-      path: path.resolve(__dirname, 'docs/identity.rs/v0.6.0/docs'),
-      routeBasePath: 'identity.rs',
-      sidebarPath: path.resolve(
-        __dirname,
-        'docs/identity.rs/v0.6.0/sidebars.js',
-      ),
-      versions: {
-        current: {
-          label: '0.6',
-          badge: true,
-        },
-      },
     },
   ];
 };
