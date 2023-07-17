@@ -28,6 +28,6 @@ can engage with fellow developers and experts who can provide guidance and assis
 ## Joining the Discussion
 
 If you wish to participate in broader discussions about IOTA SDK or seek additional support, you can visit the
-#clients-discussion channel on the [IOTA Discord](https://discord.iota.org). This channel serves as a hub for
+#development channel on the [IOTA Discord](https://discord.iota.org). This channel serves as a hub for
 discussions related to the IOTA client libraries, where you can interact with other developers and receive further
 assistance.
