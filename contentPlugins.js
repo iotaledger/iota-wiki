@@ -17,7 +17,10 @@ module.exports = async () => {
     {
       id: 'build',
       path: path.resolve(__dirname, 'docs/build/getting-started'),
-      sidebarPath: path.resolve(__dirname, 'docs/build/getting-started/sidebars.ts'),
+      sidebarPath: path.resolve(
+        __dirname,
+        'docs/build/getting-started/sidebars.ts',
+      ),
       routeBasePath: 'build',
     },
     {
@@ -127,7 +130,10 @@ module.exports = async () => {
       id: 'iotajs',
       path: path.resolve(__dirname, 'docs/build/iota.js/2.0.0-rc.1/docs'),
       routeBasePath: 'iota.js',
-      sidebarPath: path.resolve(__dirname, 'docs/build/iota.js/2.0.0-rc.1/sidebars.js'),
+      sidebarPath: path.resolve(
+        __dirname,
+        'docs/build/iota.js/2.0.0-rc.1/sidebars.js',
+      ),
     },
     {
       id: 'wallet-rs-0-1-0',
@@ -151,13 +157,19 @@ module.exports = async () => {
       id: 'stronghold-rs',
       path: path.resolve(__dirname, 'docs/build/stronghold.rs/1.1.0/docs'),
       routeBasePath: 'stronghold.rs',
-      sidebarPath: path.resolve(__dirname, 'docs/build/stronghold.rs/1.1.0/sidebars.js'),
+      sidebarPath: path.resolve(
+        __dirname,
+        'docs/build/stronghold.rs/1.1.0/sidebars.js',
+      ),
     },
     {
       id: 'iota-streams',
       path: path.resolve(__dirname, 'docs/build/streams/0.2.0/docs'),
       routeBasePath: 'streams',
-      sidebarPath: path.resolve(__dirname, 'docs/build/streams/0.2.0/sidebars.js'),
+      sidebarPath: path.resolve(
+        __dirname,
+        'docs/build/streams/0.2.0/sidebars.js',
+      ),
     },
     {
       id: 'maintain',

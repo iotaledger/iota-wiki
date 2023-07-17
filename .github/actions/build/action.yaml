@@ -2,7 +2,7 @@ name: build
 description: Build the wiki
 
 runs:
-  using: "composite"
+  using: 'composite'
   steps:
     - uses: actions/setup-node@v3
       with:

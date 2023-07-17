@@ -46,7 +46,7 @@ module.exports = async () => {
             label: 'Build',
             to: '/iota-sdk/welcome',
             activeBaseRegex:
-              '^(/[^/]+)?/iota-sdk/.*|' + 
+              '^(/[^/]+)?/iota-sdk/.*|' +
               '^(/[^/]+)?/build/.*|' +
               '^(/[^/]+)?/identity.rs/.*|' +
               '^(/[^/]+)?/iota.rs/.*|' +
@@ -54,7 +54,7 @@ module.exports = async () => {
               '^(/[^/]+)?/wallet.rs/.*|' +
               '^(/[^/]+)?/stronghold.rs/.*|' +
               '^(/[^/]+)?/streams/.*|' +
-              '^(/[^/]+)?/smart-contracts/.*'
+              '^(/[^/]+)?/smart-contracts/.*',
           },
           {
             label: 'Maintain',
