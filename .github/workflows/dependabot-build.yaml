@@ -6,10 +6,9 @@ on:
 
 jobs:
   build:
+    runs-on: ubuntu-latest
     if: github.actor == 'dependabot[bot]'
-    strategy:
-      matrix:
-        environment: [iota, shimmer, next]
-    uses: ./.github/workflows/build.reusable.yaml
-    with:
-      environment: ${{ matrix.environment }}
+    steps:
+      - uses: actions/checkout@v3
+      - name: build
+        uses: ./.github/actions/build/
