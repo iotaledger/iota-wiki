@@ -148,14 +148,14 @@ const config: Config = {
       ],
     },
     {
-      id: 'wasp-0-7-0',
+      id: 'smart-contract-0-7-0',
       label: 'Smart Contracts',
       description: 'Create smart contracts.',
       icon: SmartContracts,
       subsection: 'layer-2',
       versions: [
         {
-          id: 'wasp-0-7-0',
+          id: 'smart-contract-0-7-0',
           label: '0.7.0',
           badges: ['Shimmer'],
         },
@@ -176,6 +176,20 @@ const config: Config = {
         {
           id: 'hornet-2-0-0-rc-6',
           label: '2.0.0-rc.6',
+          badges: ['Shimmer'],
+        },
+      ],
+    },
+    {
+      id: 'wasp-0-7-0',
+      label: 'Wasp',
+      description: 'Create smart contracts.',
+      icon: SmartContracts,
+      subsection: 'maintain-layer-2',
+      versions: [
+        {
+          id: 'wasp-0-7-0',
+          label: '0.7.0',
           badges: ['Shimmer'],
         },
       ],

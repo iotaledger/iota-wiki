@@ -39,7 +39,7 @@ module.exports = async () => {
       ],
     },
     {
-      id: 'wasp-0-7-0',
+      id: 'smart-contract-0-7-0',
       path: path.resolve(__dirname, 'docs/build/wasp/0.7.0/docs'),
       routeBasePath: 'smart-contracts',
       sidebarPath: path.resolve(__dirname, 'docs/build/wasp/0.7.0/sidebars.js'),
@@ -194,6 +194,12 @@ module.exports = async () => {
           badge: true,
         },
       },
+    },
+    {
+      id: 'wasp-0-7-0',
+      path: path.resolve(__dirname, 'docs/maintain/wasp/0.7.0/docs'),
+      routeBasePath: 'wasp',
+      sidebarPath: path.resolve(__dirname, 'docs/maintain/wasp/0.7.0/sidebars.js'),
     },
   ];
 };
