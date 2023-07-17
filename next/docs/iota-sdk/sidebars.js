@@ -128,6 +128,7 @@ module.exports = {
       type: 'category',
       label: 'How To',
       items: [
+        'how-tos/introduction',
         {
           type: 'category',
           label: 'Accounts and Addresses',
