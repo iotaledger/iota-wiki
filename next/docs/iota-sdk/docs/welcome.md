@@ -25,9 +25,14 @@ and IOTA networks running the [Stardust protocol](https://wiki.iota.org/shimmer/
 It consists of two main modules: `client` and `wallet`.
 
 The `wallet` uses high-level functions that simplify everyday operation with a standardized interface for developers to
-build applications involving value transactions. Unlike the `client` module, it maintains a state. It can optionally
-interact
-with [IOTA Stronghold](https://github.com/iotaledger/stronghold.rs/) for seed handling, storage, and state backup.
+build applications involving value transactions. For
+example, [`Account.sync()`](references/nodejs/classes/Account/#sync) acts as a
+high-level function that in
+turn calls [`Client.basic_output_ids()`](references/nodejs/classes/Client/#basicoutputids)
+and [`Client.get_outputs()`](references/nodejs/classes/Client/#getoutputs)). Unlike the `client` module, it
+maintains a state. It
+can optionally interact with [IOTA Stronghold](https://github.com/iotaledger/stronghold.rs/) for seed handling, storage,
+and state backup.
 
 The `client` provide more flexibility and access to low-level functions, which are usually kept "under the hood" by the
 `wallet` module. It aims to allow you to customize in depth how you interact with the network, at the cost of some
@@ -49,7 +54,8 @@ programming pattern, so our Python binding uses named constructor arguments.
 
 ## Your Application In the IOTA Network
 
-Your application communicates directly with the IOTA SDK in Rust or through one of the language bindings. The IOTA SDK turns
+Your application communicates directly with the IOTA SDK in Rust or through one of the language bindings. The IOTA SDK
+turns
 your requests into REST API calls and sends them to a node. The node, in turn, interacts with the
 rest of an IOTA network, which could be
 the [main operational network (mainnet)](https://wiki.iota.org/shimmer/develop/explanations/what-is-shimmer/networks/#shimmer-mainnet)
