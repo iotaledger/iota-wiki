@@ -75,7 +75,7 @@ https://github.com/iotaledger/identity.rs/blob/main/examples/0_basic/1_update_di
 ```
 
 </TabItem>
-<TabItem value="node" label="Node.js">
+<TabItem value="typescript-node" label="Typescript (Node.js)">
 
 ```ts reference
 https://github.com/iotaledger/identity.rs/blob/main/bindings/wasm/examples/src/0_basic/1_update_did.ts
@@ -108,7 +108,7 @@ let (_, did): (Address, StardustDID) = create_did(&client, &mut secret_manager).
 ```
 
 </TabItem>
-<TabItem value="node" label="Node.js">
+<TabItem value="typescript-node" label="Typescript (Node.js)">
 
 ```js
 const { didClient, secretManager, did } = await createIdentity();
@@ -153,7 +153,7 @@ This creates and publishes an Alias Output containing a DID Document with one ve
 ```
 
 </TabItem>
-<TabItem value="node" label="Node.js">
+<TabItem value="typescript-node" label="Typescript (Node.js)">
 
 ```js
 // Insert a new Ed25519 verification method in the DID document.
@@ -216,7 +216,7 @@ document.attach_method_relationship(
 ```
 
 </TabItem>
-<TabItem value="node" label="Node.js">
+<TabItem value="typescript-node" label="Typescript (Node.js)">
 
 ```js
 // Attach a new method relationship to the existing method.
@@ -277,7 +277,7 @@ document.metadata.updated = Some(Timestamp::now_utc());
 ```
 
 </TabItem>
-<TabItem value="node" label="Node.js">
+<TabItem value="typescript-node" label="Typescript (Node.js)">
 
 ```js
 // Add a new Service.
@@ -345,7 +345,7 @@ document.remove_method(&original_method).unwrap();
 ```
 
 </TabItem>
-<TabItem value="node" label="Node.js">
+<TabItem value="typescript-node" label="Typescript (Node.js)">
 
 ```js
 // Remove a verification method.
@@ -411,7 +411,7 @@ let updated: StardustDocument = client.publish_did_output(&secret_manager, alias
 ```
 
 </TabItem>
-<TabItem value="node" label="Node.js">
+<TabItem value="typescript-node" label="Typescript (Node.js)">
 
 ```js
 // Resolve the latest output and update it with the given document.

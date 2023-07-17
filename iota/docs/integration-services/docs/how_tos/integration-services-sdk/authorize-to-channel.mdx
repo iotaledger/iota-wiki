@@ -41,7 +41,7 @@ mvn exec:_java -Dexec.mainClass=net.gradbase.how_tos.AuthorizeToChannel
 **Example source code**: [Example-6](https://github.com/albydeca/iota-is-sdk/blob/main/examples/src/main/java/net/gradbase/examples/AuthorizeToChannel.java)
 
 </TabItem>
-<TabItem value="node" label="Node.js">
+<TabItem value="typescript-node" label="Typescript (Node.js)">
 
 ```bash
 npm run example-6
@@ -67,7 +67,7 @@ System.out.println("subscription link " + subscriptionLink);
 ```
 
 </TabItem>
-<TabItem value="node" label="Node.js">
+<TabItem value="typescript-node" label="Typescript (Node.js)">
 
 ```js
 // Request subscription to the channel as the user. The returned subscriptionLink can be used to authorize the user to the channel.
@@ -104,7 +104,7 @@ for (SubscriptionInternal sub : allSubs) {
 ```
 
 </TabItem>
-<TabItem value="node" label="Node.js">
+<TabItem value="typescript-node" label="Typescript (Node.js)">
 
 ```js
 // Find subscriptions to the channel that are not already authorized.
@@ -142,7 +142,7 @@ ownerClient.write(channelAddress, "log", null, new JSONObject().put("log", "This
 ```
 
 </TabItem>
-<TabItem value="node" label="Node.js">
+<TabItem value="typescript-node" label="Typescript (Node.js)">
 
 ```js
 // Writing data to the channel as the channel owner.
@@ -169,7 +169,7 @@ await ownerClient.write(channelAddress, {
 ```
 
 </TabItem>
-    <TabItem value="node" label="Node.js">
+    <TabItem value="typescript-node" label="Typescript (Node.js)">
 
 ```js
 // Writing data to the channel as the channel owner.
