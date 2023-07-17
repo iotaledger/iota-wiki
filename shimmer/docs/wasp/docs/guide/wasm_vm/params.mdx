@@ -37,15 +37,9 @@ passed to the function.
 For example, here is the structure generated for the immutable [Params](params.mdx) for
 the `member` function:
 
-<Tabs defaultValue="go"
-      groupId="language"
-      values={[
-          {label: 'Go', value: 'go'},
-          {label: 'Rust', value: 'rust'},
-          {label: 'TypeScript', value: 'ts'},
-      ]}>
+<Tabs groupId="language" queryString>
 
-<TabItem value="go">
+<TabItem value="go" label="Go">
 
 ```go
 type ImmutableMemberParams struct {
@@ -64,7 +58,7 @@ func (s ImmutableMemberParams) Factor() wasmtypes.ScImmutableUint64 {
 ```
 
 </TabItem>
-<TabItem value="rust">
+<TabItem value="rust" label="Rust">
 
 ```rust
 #[derive(Clone)]
@@ -86,7 +80,7 @@ impl ImmutableMemberParams {
 ```
 
 </TabItem>
-<TabItem value="ts">
+<TabItem value="typescript" label="Typescript">
 
 ```ts
 export class ImmutableMemberParams extends wasmtypes.ScProxy {

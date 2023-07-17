@@ -51,15 +51,9 @@ receive 20/100th of that amount.
 
 Here is the `divide` function:
 
-<Tabs defaultValue="go"
-      groupId="language"
-      values={[
-          {label: 'Go', value: 'go'},
-          {label: 'Rust', value: 'rust'},
-          {label: 'TypeScript', value: 'ts'},
-      ]}>
+<Tabs groupId="language" queryString>
 
-<TabItem value="go">
+<TabItem value="go" label="Go">
 
 ```go
 // 'divide' is a function that will take any iotas it receives and properly
@@ -116,7 +110,7 @@ func funcDivide(ctx wasmlib.ScFuncContext, f *DivideContext) {
 ```
 
 </TabItem>
-<TabItem value="rust">
+<TabItem value="rust" label="Rust">
 
 ```rust
 // 'divide' is a function that will take any iotas it receives and properly
@@ -176,7 +170,7 @@ pub fn func_divide(ctx: &ScFuncContext, f: &DivideContext) {
 ```
 
 </TabItem>
-<TabItem value="ts">
+<TabItem value="typescript" label="Typescript">
 
 ```ts
 // 'divide' is a function that will take any iotas it receives and properly

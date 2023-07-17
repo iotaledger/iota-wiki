@@ -37,15 +37,8 @@ storage deposit. It will fail if the amount transferred is less than this minimu
 
 :::
 
-<Tabs
-defaultValue="solo"
-values={[
-{label: 'Solo', value: 'solo'},
-{label: 'Solo (Schema)', value: 'soloctx'},
-{label: 'Rust (Schema)', value: 'rust'},
-{label: 'Go (Schema)', value: 'go'},
-]}>
-<TabItem value="solo">
+<Tabs groupId="language" queryString>
+<TabItem value="solo" label="Solo">
 
 ```go
 // deposits N base tokens from wallet into chain
@@ -54,7 +47,7 @@ require.NoError(t, err)
 ```
 
 </TabItem>
-<TabItem value="soloctx">
+<TabItem value="soloctx" label="Solo (Schema)">
 
 ```go
 // deposits N base tokens from wallet into chain
@@ -64,7 +57,7 @@ require.NoError(t, ctx.Err)
 ```
 
 </TabItem>
-<TabItem value="rust">
+<TabItem value="rust" label="Rust">
 
 ```rust
 // deposits N iotas from wallet into chain
@@ -73,7 +66,7 @@ d.func.transfer_base_tokens(N).post();
 ```
 
 </TabItem>
-<TabItem value="go">
+<TabItem value="go" label="Go">
 
 ```go
 // deposits N iotas from wallet into chain

@@ -67,7 +67,7 @@ The following properties can be specified for a service:
 
 The following example demonstrates managing verification methods and services in a DID Document.
 
-<Tabs groupId="programming-language">
+<Tabs groupId="language" queryString>
 <TabItem value="rust" label="Rust">
 
 ```rust reference
@@ -75,7 +75,7 @@ https://github.com/iotaledger/identity.rs/blob/main/examples/0_basic/1_update_di
 ```
 
 </TabItem>
-<TabItem value="node" label="Node.js">
+<TabItem value="typescript-node" label="Typescript (Node.js)">
 
 ```ts reference
 https://github.com/iotaledger/identity.rs/blob/main/bindings/wasm/examples/src/0_basic/1_update_did.ts
@@ -88,7 +88,7 @@ https://github.com/iotaledger/identity.rs/blob/main/bindings/wasm/examples/src/0
 
 The example above starts by [creating an identity](./create.mdx).
 
-<Tabs groupId="programming-language">
+<Tabs groupId="language" queryString>
 <TabItem value="rust" label="Rust">
 
 ```rust
@@ -108,7 +108,7 @@ let (_, did): (Address, StardustDID) = create_did(&client, &mut secret_manager).
 ```
 
 </TabItem>
-<TabItem value="node" label="Node.js">
+<TabItem value="typescript-node" label="Typescript (Node.js)">
 
 ```js
 const { didClient, secretManager, did } = await createIdentity();
@@ -141,7 +141,7 @@ This creates and publishes an Alias Output containing a DID Document with one ve
 
 ### Adding Verification Method
 
-<Tabs groupId="programming-language">
+<Tabs groupId="language" queryString>
 <TabItem value="rust" label="Rust">
 
 ```rust
@@ -153,7 +153,7 @@ This creates and publishes an Alias Output containing a DID Document with one ve
 ```
 
 </TabItem>
-<TabItem value="node" label="Node.js">
+<TabItem value="typescript-node" label="Typescript (Node.js)">
 
 ```js
 // Insert a new Ed25519 verification method in the DID document.
@@ -204,7 +204,7 @@ Notice that these changes to the document are not published yet. This will be do
 
 Verification relationship can be attached to a verification method by referencing its fragment.
 
-<Tabs groupId="programming-language">
+<Tabs groupId="language" queryString>
 <TabItem value="rust" label="Rust">
 
 ```rust
@@ -216,7 +216,7 @@ document.attach_method_relationship(
 ```
 
 </TabItem>
-<TabItem value="node" label="Node.js">
+<TabItem value="typescript-node" label="Typescript (Node.js)">
 
 ```js
 // Attach a new method relationship to the existing method.
@@ -262,7 +262,7 @@ This will add `Authentication` relationship to the verification method with the 
 
 ### Adding a Service
 
-<Tabs groupId="programming-language">
+<Tabs groupId="language" queryString>
 <TabItem value="rust" label="Rust">
 
 ```rust
@@ -277,7 +277,7 @@ document.metadata.updated = Some(Timestamp::now_utc());
 ```
 
 </TabItem>
-<TabItem value="node" label="Node.js">
+<TabItem value="typescript-node" label="Typescript (Node.js)">
 
 ```js
 // Add a new Service.
@@ -335,7 +335,7 @@ The updated Document with the newly created service looks as follows.
 
 ### Removing Verification Method
 
-<Tabs groupId="programming-language">
+<Tabs groupId="language" queryString>
 <TabItem value="rust" label="Rust">
 
 ```rust
@@ -345,7 +345,7 @@ document.remove_method(&original_method).unwrap();
 ```
 
 </TabItem>
-<TabItem value="node" label="Node.js">
+<TabItem value="typescript-node" label="Typescript (Node.js)">
 
 ```js
 // Remove a verification method.
@@ -392,7 +392,7 @@ This removes the original verification method with the fragment `key-1`.
 
 Publish the updated DID Document inside the Alias Output taking into account the increase in the storage deposit needed.
 
-<Tabs groupId="programming-language">
+<Tabs groupId="language" queryString>
 <TabItem value="rust" label="Rust">
 
 ```rust
@@ -411,7 +411,7 @@ let updated: StardustDocument = client.publish_did_output(&secret_manager, alias
 ```
 
 </TabItem>
-<TabItem value="node" label="Node.js">
+<TabItem value="typescript-node" label="Typescript (Node.js)">
 
 ```js
 // Resolve the latest output and update it with the given document.

@@ -72,15 +72,15 @@ The following properties can be specified for a service:
 
 The following example demonstrates adding verification methods and services to a DID Document.
 
-<Tabs>
-<TabItem value="Rust" label="Rust">
+<Tabs groupId="language" queryString>
+<TabItem value="rust" label="Rust">
 
 ```rust reference
 https://github.com/iotaledger/identity.rs/blob/support/v0.6/examples/account/manipulate_did.rs
 ```
 
 </TabItem>
-<TabItem value="node" label="Node.js">
+<TabItem value="typescript-node" label="Typescript (Node.js)">
 
 ```js reference
 https://github.com/iotaledger/identity.rs/blob/support/v0.6/bindings/wasm/examples-account/src/manipulate_did.ts
@@ -93,8 +93,8 @@ https://github.com/iotaledger/identity.rs/blob/support/v0.6/bindings/wasm/exampl
 
 The Example above starts by [creating an identity using the account](./create.mdx).
 
-<Tabs groupId="code-examples">
-<TabItem value="Rust" label="Rust">
+<Tabs groupId="language" queryString>
+<TabItem value="rust" label="Rust">
 
 ```rust
 let mut account: Account = Account::builder()
@@ -104,7 +104,7 @@ let mut account: Account = Account::builder()
 ```
 
 </TabItem>
-<TabItem value="node" label="Node.js">
+<TabItem value="typescript-node" label="Typescript (Node.js)">
 
 ```js
 let builder = new AccountBuilder({
@@ -155,8 +155,8 @@ Note that the Account does not allow removing all capability invocation keys.
 
 Another verification method can be added to the DID document using the Account:
 
-<Tabs groupId="code-examples">
-<TabItem value="Rust" label="Rust">
+<Tabs groupId="language" queryString>
+<TabItem value="rust" label="Rust">
 
 ```rust
 account
@@ -169,7 +169,7 @@ account
 ```
 
 </TabItem>
-<TabItem value="node" label="Node.js">
+<TabItem value="typescript-node" label="Typescript (Node.js)">
 
 ```js
 await account.createMethod({
@@ -219,8 +219,8 @@ Since the `MethodScope` is not specified, the verification method will be create
 
 Verification relationship can be attached to a verification method by referencing its fragment.
 
-<Tabs groupId="code-examples">
-<TabItem value="Rust" label="Rust">
+<Tabs groupId="language" queryString>
+<TabItem value="rust" label="Rust">
 
 ```rust
 account
@@ -236,7 +236,7 @@ account
 ```
 
 </TabItem>
-<TabItem value="node" label="Node.js">
+<TabItem value="typescript-node" label="Typescript (Node.js)">
 
 ```js
 await account.attachMethodRelationships({
@@ -290,8 +290,8 @@ property now has both an embedded and a referenced verification method.
 
 Similar to verification methods, services can be added to a DID Document.
 
-<Tabs groupId="code-examples">
-<TabItem value="Rust" label="Rust">
+<Tabs groupId="language" queryString>
+<TabItem value="rust" label="Rust">
 
 ```rust
 account
@@ -305,7 +305,7 @@ account
 ```
 
 </TabItem>
-<TabItem value="node" label="Node.js">
+<TabItem value="typescript-node" label="Typescript (Node.js)">
 
 ```js
 await account.createService({
@@ -366,8 +366,8 @@ The updated Document with the newly created service looks as follows.
 
 Verification methods and/or their relationships can be removed from the DID Document. The following code removes the verification method that we created previously.
 
-<Tabs groupId="code-examples">
-<TabItem value="Rust" label="Rust">
+<Tabs groupId="language" queryString>
+<TabItem value="rust" label="Rust">
 
 ```rust
 account
@@ -379,7 +379,7 @@ account
 ```
 
 </TabItem>
-<TabItem value="node" label="Node.js">
+<TabItem value="typescript-node" label="Typescript (Node.js)">
 
 ```js
 await account.deleteMethod({ fragment: 'my-next-key' });

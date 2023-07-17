@@ -29,22 +29,15 @@ Select your programming language of choice and press the green play button to ex
 
 :::
 
-<Tabs
-    groupId="programming-languages"
-    defaultValue="nodejs"
-    values={[
-        { label: "Node.js", value: "nodejs" },
-        { label: "Rust", value: "rust" }
-    ]}
->
-<TabItem value="nodejs">
+<Tabs groupId="language" queryString>
+<TabItem value="typescript-node" label="Typescript (Node.js)">
 
 ```ts reference
 https://github.com/iotaledger/identity.rs/blob/support/v0.6/bindings/wasm/examples-account/src/create_did.ts
 ```
 
 </TabItem>
-<TabItem value="rust">
+<TabItem value="rust" label="Rust">
 
 ```rust reference
 https://github.com/iotaledger/identity.rs/blob/support/v0.6/examples/account/create_did.rs

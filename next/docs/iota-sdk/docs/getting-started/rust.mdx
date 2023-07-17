@@ -40,7 +40,7 @@ rustup update stable
 You must also install `cmake`, `clang`, and `openssl`. You may need to install additional build tools on your system to
 run the build process successfully using Cargo.
 
-<Tabs groupId="operatingSystem">
+<Tabs groupId="os" queryString>
 <TabItem value="linux" label="Linux">
 
 You can install `cmake`, `clang`, and `openssl` with your distro's package manager or download them from their websites.
@@ -48,7 +48,7 @@ On Debian and Ubuntu, you will also need the `build-essential` and `libudev-dev`
 
 </TabItem>
 
-<TabItem value="macOS" label="MacOS">
+<TabItem value="mac" label="macOS">
 
 You can install `cmake` and `openssl` with `Homebrew`:
 
@@ -62,7 +62,7 @@ brew install cmake openssl@1.1
 You can download `cmake` from the [official website](https://cmake.org/download/). You can install `openssl`
 with [vcpkg](https://github.com/microsoft/vcpkg) or [chocolatey](https://chocolatey.org/).
 
-<Tabs groupId="windowsPackageManager">
+<Tabs groupId="windowsPackageManager" queryString>
 <TabItem value="vcpkg" label="vcpkg">
 
 ```shell

@@ -28,7 +28,7 @@ The following examples demonstrate how to resolve an IOTA DID Document from its 
 
 Once the `Resolver` has been configured with a `Client` it will resolve IOTA DID Documents according to the read procedure defined in the [IOTA DID Method Specification](../../specs/did/iota_did_method_spec.mdx#read). It fetches the latest [Alias Output](../../specs/did/iota_did_method_spec.mdx#alias-output) from the network specified in the DID (see [DID Format](../../specs/did/iota_did_method_spec.mdx#did-format)), then extracts and validates the DID Document from it.
 
-<Tabs>
+<Tabs groupId="language" queryString>
 <TabItem value="rust" label="Rust">
 
 ```rust
@@ -58,7 +58,7 @@ async fn main() -> anyhow::Result<()>{
 ```
 
 </TabItem>
-<TabItem value="node" label="Node.js">
+<TabItem value="typescript-node" label="Typescript (Node.js)">
 
 ```js
 const {
@@ -94,7 +94,7 @@ const document = await resolver.resolve(did);
 
 The `Client` can also be used directly, to resolve individual DIDs from its configured network.
 
-<Tabs>
+<Tabs groupId="language" queryString>
 <TabItem value="rust" label="Rust">
 
 ```rust
@@ -119,7 +119,7 @@ async fn main() -> anyhow::Result<()>{
 ```
 
 </TabItem>
-<TabItem value="node" label="Node.js">
+<TabItem value="typescript-node" label="Typescript (Node.js)">
 
 ```js
 const { IotaDID, IotaIdentityClient } = require('@iota/identity-wasm/node');
@@ -150,7 +150,7 @@ a particular DID method (such as for instance the IOTA method) gets resolved. Th
 
 ### Resolving multiple DID methods
 
-<Tabs groupId="programming-language">
+<Tabs groupId="language" queryString>
 <TabItem value="rust" label="Rust">
 
 ```rust reference
@@ -158,7 +158,7 @@ https://github.com/iotaledger/identity.rs/blob/main/examples/1_advanced/5_custom
 ```
 
 </TabItem>
-<TabItem value="node" label="Node.js">
+<TabItem value="typescript-node" label="Typescript (Node.js)">
 
 ```ts reference
 https://github.com/iotaledger/identity.rs/blob/main/bindings/wasm/examples/src/1_advanced/4_custom_resolution.ts

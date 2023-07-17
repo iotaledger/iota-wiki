@@ -45,22 +45,15 @@ Revocation List 2020 is not yet supported in the IOTA Identity Framework
 
 The following code exemplifies how you can revoke a [Verifiable Credential(VC)](overview.mdx) by removing a verification method (public key) from the DID Document of the Issuer. This means the VC can no longer be validated. This would invalidate every VC signed with the same public key, meaning the Issuer would have to sign every VC with a different key.
 
-<Tabs
-  groupId="programming-languages"
-  defaultValue="nodejs"
-  values={[
-    { label: "Node.js", value: "nodejs" },
-    { label: "Rust", value: "rust" }
-  ]}
->
-<TabItem value="nodejs">
+<Tabs groupId="language" queryString>
+<TabItem value="typescript-node" label="Typescript (Node.js)">
 
 ```ts reference
 https://github.com/iotaledger/identity.rs/blob/support/v0.5/bindings/wasm/examples-account/src/revoke_vc.ts
 ```
 
 </TabItem>
-<TabItem value="rust">
+<TabItem value="rust" label="Rust">
 
 ```rust reference
 https://github.com/iotaledger/identity.rs/blob/support/v0.5/examples/account/revoke_vc.rs

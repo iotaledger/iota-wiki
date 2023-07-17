@@ -24,8 +24,8 @@ the W3C specification.
 
 The following example demonstrates how to resolve the DID: "did:iota:H3C2AVvLMv6gmMNam3uVAjZpfkcJCwDwnZn6z3wXmqPV" from the `main` network.
 
-<Tabs>
-<TabItem value="Rust" label="Rust">
+<Tabs groupId="language" queryString>
+<TabItem value="rust" label="Rust">
 
 ```rust
 use identity_iota::client::Resolver;
@@ -40,7 +40,7 @@ let doc: ResolvedIotaDocument = resolver.resolve(&did).await?;
 ```
 
 </TabItem>
-<TabItem value="node" label="Node.js">
+<TabItem value="typescript-node" label="Typescript (Node.js)">
 
 ```js
 const { DID, Resolver, ResolvedDocument } = require('@iota/identity-wasm/node');
@@ -61,8 +61,8 @@ the resolver needs to be configured to have a client capable of operating on sai
 
 The following example demonstrates how one can setup a `Resolver` with a given `client` and then attempt resolving a specified `did` which may be on any Tangle (public or private).
 
-<Tabs>
-<TabItem value="Rust" label="Rust">
+<Tabs groupId="language" queryString>
+<TabItem value="rust" label="Rust">
 
 ```rust
 use identity_iota::client::Resolver;
@@ -80,7 +80,7 @@ async fn build_and_resolve(client: Client, did: IotaDID) -> Result<ResolvedIotaD
 ```
 
 </TabItem>
-<TabItem value="node" label="Node.js">
+<TabItem value="typescript-node" label="Typescript (Node.js)">
 
 ```js
 const {
@@ -121,8 +121,8 @@ advanced use cases where more control is desired. To accommodate for such situat
 The fact that a DID Document [can be updated](./update.mdx) implies that the state of the DID Document can change over time, or in other words the result of resolving a DID
 also depends on when this operation was carried out. The `Resolver` provides a way to view the entire history of a DID Document (up to the time when the method is called).
 
-<Tabs>
-<TabItem value="Rust" label="Rust">
+<Tabs groupId="language" queryString>
+<TabItem value="rust" label="Rust">
 
 ```rust
 use identity_iota::client::Resolver;
@@ -138,7 +138,7 @@ async fn call_resolve_history(did: IotaDID) -> Result<DocumentHistory> {
 ```
 
 </TabItem>
-<TabItem value="node" label="Node.js">
+<TabItem value="typescript-node" label="Typescript (Node.js)">
 
 ```js
 const { DID, Resolver, DocumentHistory } = require('@iota/identity-wasm/node');
@@ -157,15 +157,15 @@ async function callResolveHistory(did) {
 
 This section shows complete examples from the Iota Identity Framework code base. The first example creates a DID Document, publishes it to the Tangle and then resolves it.
 
-<Tabs>
-<TabItem value="Rust" label="Rust">
+<Tabs groupId="language" queryString>
+<TabItem value="rust" label="Rust">
 
 ```rust reference
 https://github.com/iotaledger/identity.rs/blob/support/v0.6/examples/low-level-api/resolve_did.rs
 ```
 
 </TabItem>
-<TabItem value="node" label="Node.js">
+<TabItem value="typescript-node" label="Typescript (Node.js)">
 
 ```js reference
 https://github.com/iotaledger/identity.rs/blob/support/v0.6/bindings/wasm/examples/src/resolve_did.js
@@ -176,15 +176,15 @@ https://github.com/iotaledger/identity.rs/blob/support/v0.6/bindings/wasm/exampl
 
 This second example demonstrates creating, publishing changes and then resolving the history of a DID Document.
 
-<Tabs>
-<TabItem value="Rust" label="Rust">
+<Tabs groupId="language" queryString>
+<TabItem value="rust" label="Rust">
 
 ```rust reference
 https://github.com/iotaledger/identity.rs/tree/support/v0.6/examples/low-level-api/resolve_history.rs
 ```
 
 </TabItem>
-<TabItem value="node" label="Node.js">
+<TabItem value="typescript-node" label="Typescript (Node.js)">
 
 ```js reference
 https://github.com/iotaledger/identity.rs/tree/support/v0.6/bindings/wasm/examples/src/resolve_history.js

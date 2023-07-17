@@ -18,15 +18,8 @@ import TabItem from '@theme/TabItem';
 
 The `withdraw` endpoint sends L2 funds owned by the caller to their L1 address.
 
-<Tabs
-    defaultValue="solo"
-    values={[
-        {label: 'Solo', value: 'solo'},
-        {label: 'Solo (Schema)', value: 'soloctx'},
-        {label: 'Rust (Schema)', value: 'rust'},
-        {label: 'Go (Schema)', value: 'go'},
-    ]}>
-<TabItem value="solo">
+<Tabs groupId="language" queryString>
+<TabItem value="solo" label="Solo">
 
 ```go
 // withdraw from chain to wallet
@@ -36,7 +29,7 @@ require.NoError(t, err)
 ```
 
 </TabItem>
-<TabItem value="soloctx">
+<TabItem value="soloctx" label="Solo (Schema)">
 
 ```go
 // withdraw from chain to wallet
@@ -46,7 +39,7 @@ require.NoError(t, ctx.Err)
 ```
 
 </TabItem>
-<TabItem value="rust">
+<TabItem value="rust" label="Rust">
 
 ```rust
 // withdraw from chain to wallet
@@ -55,7 +48,7 @@ w.func.post();
 ```
 
 </TabItem>
-<TabItem value="go">
+<TabItem value="go" label="Go">
 
 ```go
 // withdraw from chain to wallet
