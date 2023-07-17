@@ -24,23 +24,21 @@ The IOTA SDK provides a convenient and efficient way to interact with nodes in t
 and IOTA networks running the [Stardust protocol](https://wiki.iota.org/shimmer/develop/explanations/what-is-stardust).
 It consists of two main modules: `client` and `wallet`.
 
-The `wallet` uses high-level functions that simplify everyday operation with a standardized interface for developers to
-build applications involving value transactions. For
-example, [`Account.sync()`](references/nodejs/classes/Account/#sync) acts as a
-high-level function that in
-turn calls [`Client.basic_output_ids()`](references/nodejs/classes/Client/#basicoutputids)
-and [`Client.get_outputs()`](references/nodejs/classes/Client/#getoutputs)). Unlike the `client` module, it
-maintains a state. It
-can optionally interact with [IOTA Stronghold](https://github.com/iotaledger/stronghold.rs/) for seed handling, storage,
-and state backup.
+The `wallet` module uses high-level functions that simplify everyday operations with a standardized interface for
+developers to build value transaction applications. For example, [`Account.sync()`](references/nodejs/classes/Account/#sync)
+acts as a high-level function that, in turn, calls [`Client.basic_output_ids()`](references/nodejs/classes/Client/#basicoutputids)
+and [`Client.get_outputs()`](references/nodejs/classes/Client/#getoutputs)). Unlike the `client` module, the `wallet`
+module maintains a state. It can optionally interact with [IOTA Stronghold](https://github.com/iotaledger/stronghold.rs/)
+for seed handling, storage, and state backup.
 
-The `client` provide more flexibility and access to low-level functions, which are usually kept "under the hood" by the
-`wallet` module. It aims to allow you to customize in depth how you interact with the network, at the cost of some
-additional
-complexity.
+The `client` module provides more flexibility and access to low-level functions, which are usually kept "under the hood" by the
+`wallet` module. It aims to allow you to customize how you interact with the network in depth, at the cost of
+additional complexity.
 
-You can use this documentation to get your `wallet` or `client` up and running in
-the [programming language of your choice](#available-programming-languages), [connect to the testnet](explanations/testnet-and-test-tokens.md#connect-to-the-testnet-api), [explore the network](explanations/testnet-and-test-tokens.md#explore-the-network),
+You can use this documentation to get your application up and running in using the
+[programming language of your choice](#available-programming-languages),
+[connect to the testnet](explanations/testnet-and-test-tokens.md#connect-to-the-testnet-api),
+[explore the network](explanations/testnet-and-test-tokens.md#explore-the-network),
 and [get test tokens](explanations/testnet-and-test-tokens.md#get-test-tokens) to develop your application.
 
 ## Available Programming Languages
@@ -55,12 +53,13 @@ programming pattern, so our Python binding uses named constructor arguments.
 ## Your Application In the IOTA Network
 
 Your application communicates directly with the IOTA SDK in Rust or through one of the language bindings. The IOTA SDK
-turns
-your requests into REST API calls and sends them to a node. The node, in turn, interacts with the
-rest of an IOTA network, which could be
-the [main operational network (mainnet)](https://wiki.iota.org/shimmer/develop/explanations/what-is-shimmer/networks/#shimmer-mainnet)
+turns your requests into REST API calls and sends them to a node. The node, in turn, interacts with the rest of an
+IOTA network, which could be the
+[main operational network (mainnet)](https://wiki.iota.org/shimmer/develop/explanations/what-is-shimmer/networks/#shimmer-mainnet)
 or
-a [network for testing purposes (testnet)](https://wiki.iota.org/shimmer/develop/explanations/what-is-shimmer/networks/#public-testnet). !["An overview of the IOTA SDK layers."](/img/layered_overview.png 'An overview of the IOTA SDK layers.')
+a [network for testing purposes (testnet)](https://wiki.iota.org/shimmer/develop/explanations/what-is-shimmer/networks/#public-testnet).
+
+!["An overview of the IOTA SDK layers."](/img/layered_overview.png 'An overview of the IOTA SDK layers.')
 
 ## Secure Secret Management
 
