@@ -1,13 +1,12 @@
 ---
-description: 'Explore the how-to guides in the IOTA SDK, offering step-by-step instructions on various topics and functionalities.
-
-Keywords:
-- how-to guides
-- instructions
-- IOTA SDK
-- code examples
+description: 'Explore the how-to guides in the IOTA SDK, offering step-by-step instructions on various topics and functionalities.'
+image: /img/banner/client_lib_overview.png
+keywords:
+  - how-to guides
+  - instructions
+  - IOTA SDK
+  - code examples
 ---
-
 
 # About How-to Guides
 
@@ -22,4 +21,4 @@ or [minting NFTs](nfts/mint-nft.mdx), you can find dedicated guides that walk yo
 
 With the how-to guides in the IOTA SDK, you can overcome implementation hurdles and gain a deeper understanding
 of the IOTA ecosystem. These guides empower you with the knowledge and practical examples to seamlessly integrate IOTA
-functionality into your projects. 
+functionality into your projects.

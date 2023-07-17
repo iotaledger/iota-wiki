@@ -45,7 +45,7 @@ in [Node.js](getting-started/nodejs.mdx), [Python](getting-started/python.mdx) a
 
 Each of these languages has specific set up instructions you will need to follow to use IOTA SDK in your project. Every
 binding is adjusted for the language's conventions and best practices. For example, Python developers avoid the Builder
-programming pattern, so our Python binding uses named constructor arguments. 
+programming pattern, so our Python binding uses named constructor arguments.
 
 ## Your Application In the IOTA Network
 

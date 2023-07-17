@@ -116,7 +116,7 @@ module.exports = {
       items: [
         {
           type: 'doc',
-          id: 'explanations/account-approaches',
+          id: 'explanations/accounts-and-addresses',
         },
         {
           type: 'doc',
