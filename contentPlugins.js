@@ -71,7 +71,6 @@ module.exports = async () => {
       versions: {
         current: {
           label: '0.6',
-          path: '0.6',
           badge: true,
         },
       },
@@ -172,9 +171,29 @@ module.exports = async () => {
       ),
     },
     {
-      id: 'maintain',
-      path: path.resolve(__dirname, 'docs/maintain'),
-      routeBasePath: 'maintain',
+      id: 'hornet-1-2-4',
+      path: path.resolve(__dirname, 'docs/maintain/hornet/1.2.4/docs'),
+      routeBasePath: 'hornet',
+      sidebarPath: path.resolve(__dirname, 'docs/maintain/hornet/1.2.4/sidebars.js'),
+      versions: {
+        current: {
+          label: '1.2.4',
+          badge: true,
+        },
+      },
+    },
+    {
+      id: 'hornet-2-0-0-rc-6',
+      path: path.resolve(__dirname, 'docs/maintain/hornet/2.0.0-rc.6/docs'),
+      routeBasePath: 'hornet',
+      sidebarPath: path.resolve(__dirname, 'docs/maintain/hornet/2.0.0-rc.6/sidebars.js'),
+      versions: {
+        current: {
+          label: '2.0.0-rc.6',
+          path: '2.0.0-rc.6',
+          badge: true,
+        },
+      },
     },
   ];
 };

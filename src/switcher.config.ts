@@ -1,5 +1,6 @@
 import type { Config } from './common/components/Switcher';
 import {
+  Hornet,
   Identity,
   IotaCore,
   SmartContracts,
@@ -160,6 +161,25 @@ const config: Config = {
         },
       ],
     },
+    {
+      id: 'hornet-1-2-4',
+      label: 'Hornet',
+      description: 'Create smart contracts.',
+      icon: Hornet,
+      subsection: 'maintain-layer-1',
+      versions: [
+        {
+          id: 'hornet-1-2-4',
+          label: '1.2.4',
+          badges: ['IOTA'],
+        },
+        {
+          id: 'hornet-2-0-0-rc-6',
+          label: '2.0.0-rc.6',
+          badges: ['Shimmer'],
+        },
+      ],
+    },
   ],
   sections: [
     [
@@ -172,6 +192,18 @@ const config: Config = {
         label: 'Layer 2',
         description: 'Create smart contracts.',
         id: 'layer-2',
+      },
+    ],
+    [
+      {
+        label: 'Layer 1',
+        description: 'Interact with the network.',
+        id: 'maintain-layer-1',
+      },
+      {
+        label: 'Layer 2',
+        description: 'Create smart contracts.',
+        id: 'maintain-layer-2',
       },
     ],
   ],

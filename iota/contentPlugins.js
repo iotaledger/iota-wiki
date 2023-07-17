@@ -55,18 +55,6 @@ module.exports = async () => {
       showLastUpdateTime: true,
     },
     {
-      id: 'iota-hornet',
-      path: path.resolve(__dirname, 'docs/hornet/docs'),
-      routeBasePath: 'hornet',
-      sidebarPath: path.resolve(__dirname, 'docs/hornet/sidebars.js'),
-      versions: {
-        current: {
-          label: 'IOTA',
-          badge: true,
-        },
-      },
-    },
-    {
       id: 'iota-integration-services',
       path: path.resolve(__dirname, 'docs/integration-services/docs'),
       routeBasePath: 'integration-services',
