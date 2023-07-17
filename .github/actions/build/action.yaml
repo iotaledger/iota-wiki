@@ -42,6 +42,7 @@ runs:
     - name: Build reference docs
       run: |
         ./scripts/gen_sdk_references.sh
+      shell: bash
     - name: Build
       run: |
         yarn build
