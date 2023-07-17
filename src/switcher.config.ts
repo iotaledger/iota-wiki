@@ -1,5 +1,6 @@
 import type { Config } from './common/components/Switcher';
 import {
+  Chronicle,
   Hornet,
   Identity,
   IotaCore,
@@ -190,6 +191,25 @@ const config: Config = {
         {
           id: 'wasp-0-7-0',
           label: '0.7.0',
+          badges: ['Shimmer'],
+        },
+      ],
+    },
+    {
+      id: 'chronicle-rs',
+      label: 'Chronicle',
+      description: 'Store and query data.',
+      icon: Chronicle,
+      subsection: 'maintain-layer-1',
+      versions: [
+        {
+          id: 'chronicle-rs',
+          label: '0.3.0',
+          badges: ['IOTA'],
+        },
+        {
+          id: 'inx-chronicle',
+          label: '1.0.0-rc.1',
           badges: ['Shimmer'],
         },
       ],

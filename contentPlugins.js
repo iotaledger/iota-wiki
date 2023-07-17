@@ -201,5 +201,30 @@ module.exports = async () => {
       routeBasePath: 'wasp',
       sidebarPath: path.resolve(__dirname, 'docs/maintain/wasp/0.7.0/sidebars.js'),
     },
+    {
+      id: 'chronicle-rs',
+      path: path.resolve(__dirname, 'docs/maintain/chronicle/0.3.0/docs'),
+      routeBasePath: 'chronicle',
+      sidebarPath: path.resolve(__dirname, 'docs/maintain/chronicle/0.3.0/sidebars.js'),
+      versions: {
+        current: {
+          label: '0.3.0',
+          badge: true,
+        },
+      },
+    },
+    {
+      id: 'inx-chronicle',
+      path: path.resolve(__dirname, 'docs/maintain/chronicle/1.0.0-rc.1/docs'),
+      routeBasePath: 'chronicle',
+      sidebarPath: path.resolve(__dirname, 'docs/maintain/chronicle/1.0.0-rc.1/sidebars.js'),
+      versions: {
+        current: {
+          label: '1.0.0-rc.1',
+          path: '1.0.0-rc.1',
+          badge: true,
+        },
+      },
+    },
   ];
 };

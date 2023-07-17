@@ -61,7 +61,8 @@ module.exports = async () => {
             to: '/hornet/welcome',
             activeBaseRegex: 
               '^(/[^/]+)?/hornet/.*|' +
-              '^(/[^/]+)?/wasp/.*'
+              '^(/[^/]+)?/wasp/.*|' +
+              '^(/[^/]+)?/chronicle/.*'
           },
         ],
       },

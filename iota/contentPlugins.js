@@ -35,18 +35,6 @@ module.exports = async () => {
       docItemComponent: '@theme/ApiItem',
     },
     {
-      id: 'iota-chronicle-rs',
-      path: path.resolve(__dirname, 'docs/chronicle/docs'),
-      routeBasePath: 'chronicle',
-      sidebarPath: path.resolve(__dirname, 'docs/chronicle/sidebars.js'),
-      versions: {
-        current: {
-          label: 'IOTA',
-          badge: true,
-        },
-      },
-    },
-    {
       id: 'iota-goshimmer',
       path: path.resolve(__dirname, 'docs/goshimmer/docs'),
       routeBasePath: 'goshimmer',
