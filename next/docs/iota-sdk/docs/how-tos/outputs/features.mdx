@@ -15,13 +15,21 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AccountClient from '../../_admonitions/_account-client.md';
 
-Outputs can have different features. This how to exaplains how to add them to an output.
+The Stardust protocol introduced
+[multiple new output features](https://wiki.iota.org/shimmer/develop/explanations/what-is-stardust/output-features/)
+that allow you to add [metadata](https://wiki.iota.org/shimmer/develop/explanations/what-is-stardust/output-features/#metadata),
+a [sender](https://wiki.iota.org/shimmer/develop/explanations/what-is-stardust/output-features/#sender)
+(or [issuer](https://wiki.iota.org/shimmer/develop/explanations/what-is-stardust/output-features/#issuer) in the case of
+[NFTs](https://wiki.iota.org/shimmer/develop/explanations/what-is-stardust/tokenization/#non-fungible-tokens-nfts)) to
+outputs or [tag](https://wiki.iota.org/shimmer/develop/explanations/what-is-stardust/output-features/#tag) them by adding
+some small indexation data to the output.
 
 <AccountClient />
 
 :::info Output Features
 
-Different outputs can have different featues. This tables shows you which ouput has which features. You can find the output specs in [TIP-018](https://wiki.iota.org/tips/tips/TIP-0018)
+Different outputs can have different features. This table shows you which output has which features. You can find the
+output specs in [TIP-018](https://wiki.iota.org/tips/tips/TIP-0018)
 
 | Output  | Sender | Metadata | Immutable Metadata | Tag | Immutable Issuer |
 | ------- | :----: | :------: | :----------------: | :-: | :--------------: |
@@ -39,27 +47,27 @@ The following example will:
 1. Create multiple NFT outputs with all possible features
 
 <Tabs groupId="language" queryString>
-<TabItem value="rust" label="Rust">
+    <TabItem value="rust" label="Rust">
 
-```rust reference
-https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/outputs/features.rs
-```
+        ```rust reference
+        https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/outputs/features.rs
+        ```
 
-</TabItem>
-<TabItem value="typescript-node" label="Typescript (Node.js)">
+    </TabItem>
+    <TabItem value="typescript-node" label="Typescript (Node.js)">
 
-```typescript reference
-https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/outputs/features.ts
-```
+        ```typescript reference
+        https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/outputs/features.ts
+        ```
 
-</TabItem>
-<TabItem value="python" label="Python">
+    </TabItem>
+    <TabItem value="python" label="Python">
 
-```python reference
-https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how_tos/outputs/features.py
-```
+        ```python reference
+        https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how_tos/outputs/features.py
+        ```
 
-</TabItem>
+    </TabItem>
 </Tabs>
 
 ## Expected Output
@@ -174,3 +182,5 @@ https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how
   }
 ]
 ```
+
+

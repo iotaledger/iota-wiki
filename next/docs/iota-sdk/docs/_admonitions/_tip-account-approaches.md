@@ -1,6 +1,6 @@
-:::tip Account Approaches
+:::tip Account and Addresses
 
-The SDK supports a [multi-account approach](../explanations/account-approaches.md#multi-account-approach) and
-a [single-account approach](../explanations/account-approaches.md#single-account-approach).
+The SDK supports a [multi-account approach](../explanations/accounts-and-addresses.md#multi-account-model) and
+a [single-account approach](../explanations/accounts-and-addresses.md#single-account-model).
 
 :::

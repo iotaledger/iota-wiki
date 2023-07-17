@@ -11,12 +11,23 @@ keywords:
 
 # Troubleshooting
 
-## StackExchange
+When you encounter a problem or need assistance while working with IOTA, there are several resources available to you.
 
-The [IOTA StackExchange](https://iota.stackexchange.com/) a nice tool for developers to find answers for a problem. You can simply search for your problem and find a solution.
+## IOTA StackExchange
 
-If there is not a solution at the moment, you can submit your question and share it on the TODO channel on [Discord](https://discord.iota.org).
+The [IOTA StackExchange](https://iota.stackexchange.com/) is a valuable tool for developers seeking answers to their
+questions. By simply searching for your specific problem, you can find existing solutions and insights from the IOTA
+community.
 
-## Joining The Discussion
+## Discord Community
 
-If you want to get involved in discussions about this library, or you are looking for support, you can visit the #clients-discussion channel on [Discord](https://discord.iota.org).
+If you cannot find an immediate solution to your question, you can post your query on the dedicated IOTA-SDK channel
+within the official [IOTA Discord](https://discord.iota.org) server. By sharing your question with the community, you
+can engage with fellow developers and experts who can provide guidance and assistance.
+
+## Joining the Discussion
+
+If you wish to participate in broader discussions about IOTA SDK or seek additional support, you can visit the
+#clients-discussion channel on the [IOTA Discord](https://discord.iota.org). This channel serves as a hub for
+discussions related to the IOTA client libraries, where you can interact with other developers and receive further
+assistance.

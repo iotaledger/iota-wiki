@@ -12,34 +12,42 @@ keywords:
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
-import TipAccountApproaches from '../../_admonitions/_tip-account-approaches.md';
 
-Create a [BIP39 mnemonic](https://en.bitcoin.it/wiki/BIP_0039) to generate addresses and sign transactions.
+# Create a Seed Mnemonic
+
+## About Mnemonics
+
+Mnemonics are a popular method for generating cryptographic seeds in a more user-friendly way. A mnemonic phrase, seed phrase, or recovery phrase is a sequence of words that users can easily remember. These
+words are carefully selected from a predefined wordlist to ensure compatibility across different wallets and systems.
+
+The IOTA SDK uses the [BIP39 standard](https://en.bitcoin.it/wiki/BIP_0039) to generate addresses and sign transactions.
+This means that the SDK can deterministically derive the seed from a mnemonic or seed phrase, making it easier for your
+users to write down or remember.
 
 ## Code Example
 
 <Tabs groupId="language" queryString>
-<TabItem value="rust" label="Rust">
+    <TabItem value="rust" label="Rust">
 
-```rust reference
-https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/accounts_and_addresses/create_mnemonic.rs
-```
+        ```rust reference
+        https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/accounts_and_addresses/create_mnemonic.rs
+        ```
 
-</TabItem>
-<TabItem value="typescript-node" label="Typescript (Node.js)">
+    </TabItem>
+    <TabItem value="typescript-node" label="Typescript (Node.js)">
 
-```typescript reference
-https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/accounts_and_addresses/create-mnemonic.ts
-```
+        ```typescript reference
+        https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/accounts_and_addresses/create-mnemonic.ts
+        ```
 
-</TabItem>
-<TabItem value="python" label="Python">
+    </TabItem>
+    <TabItem value="python" label="Python">
 
-```python reference
-https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how_tos/accounts_and_addresses/create_mnemonic.py
-```
+        ```python reference
+        https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how_tos/accounts_and_addresses/create_mnemonic.py
+        ```
 
-</TabItem>
+    </TabItem>
 </Tabs>
 
 ## Expected Output
