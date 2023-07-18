@@ -5,7 +5,7 @@ image: /img/logo/iota_mark_light.png
 keywords:
   - how to
   - advanced transaction
-  - ouputs
+  - outputs
   - nodejs
   - python
   - rust
@@ -15,8 +15,9 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import TipFaucet from '../../_admonitions/_tip-faucet.md';
 
-If you need more advanced features or unlock conditions in your transaction this how to will show you how to send custom outputs.
-You can learn more about how to create custom outputs with specific [unlock conditions](../outputs/unlock-conditions.mdx) and [features](../outputs/features.mdx) in the related How-Tos.
+If you need more advanced features or unlock conditions in your transaction this guide will show you how to send custom outputs.
+You can use the related How-To guides to learn more about crating custom outputs with specific [unlock conditions](../outputs/unlock-conditions.mdx)
+and [features](../outputs/features.mdx).
 
 <TipFaucet />
 
@@ -25,6 +26,26 @@ You can learn more about how to create custom outputs with specific [unlock cond
 <Tabs groupId="language" queryString>
 <TabItem value="rust" label="Rust">
 
+The following example will:
+
+1. Instantiate a [`Wallet`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/core/struct.Wallet.html).
+2. Get Alice's [`Account`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/account/struct.Account.html) which was
+   [created in the first guide](../accounts-and-addresses/create-account.mdx).
+3. Sync the account with the node to get the latest transactions by calling the [`Account.sync()`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/account/struct.Account.html#method.sync)
+   function.
+4. Create a [`BasicOutput`](https://docs.rs/iota-sdk/latest/iota_sdk/types/block/output/basic/struct.BasicOutput.html)
+   that is [time-locked](https://wiki.iota.org/shimmer/develop/explanations/what-is-stardust/unlock-conditions/#timelock) for one
+   hour by calling the [`BasicOutputBuilder()`](https://docs.rs/iota-sdk/latest/iota_sdk/types/block/output/basic/struct.BasicOutputBuilder.html)
+   function and passing the [`AddressUnlockCondition`](https://docs.rs/iota-sdk/latest/iota_sdk/types/block/output/unlock_condition/struct.AddressUnlockCondition.html) and
+   the [`TimelockUnlockCondition`](https://docs.rs/iota-sdk/latest/iota_sdk/types/block/output/unlock_condition/struct.TimelockUnlockCondition.html) in as
+   [`unlockConditions`](https://docs.rs/iota-sdk/latest/iota_sdk/types/block/output/unlock_condition/struct.UnlockConditions.html)
+   to the `BasicOutputBuilder()` by chaining calls to the
+   [`BasicOutputBuilder.add_unlock_condition()`](https://docs.rs/iota-sdk/latest/iota_sdk/types/block/output/basic/struct.BasicOutputBuilder.html#method.add_unlock_condition)
+5. Send the `BasicOutput` created in the previous step by calling the
+   ['Account.send_outputs()'](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/account/struct.Account.html#method.send_outputs) function.
+6. Await for the `Transaction` to get confirmed by calling the ['Account.retryTransactionUntilIncluded'](../../../references/nodejs/classes/Account/#retrytransactionuntilincluded)
+   function.
+
 ```rust reference
 https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/advanced_transactions/advanced_transaction.rs
 ```
@@ -32,12 +53,48 @@ https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/advance
 </TabItem>
 <TabItem value="typescript-node" label="Typescript (Node.js)">
 
+The following example will:
+
+1. Instantiate a [`Wallet`](../../../references/python/iota_sdk/wallet/).
+2. Get Alice's account which was [created in the first guide](../accounts-and-addresses/create-account.mdx).
+3. Sync the account with the node to get the latest transactions by calling the [`Account.sync()`](../../../references/nodejs/classes/Account/#sync)
+   function.
+4. Create a [`BasicOutput`](../../../references/nodejs/classes/BasicOutput/) that is
+   [time-locked](https://wiki.iota.org/shimmer/develop/explanations/what-is-stardust/unlock-conditions/#timelock) for one
+   hour by calling the [`Client.buildBasicOutput()`](../../../references/nodejs/classes/Client/#buildbasicoutput)
+   function and passing the [`AddressUnlockCondition`](../../../references/nodejs/classes/AddressUnlockCondition/) and
+   the [`TimelockUnlockCondition`](../../../references/nodejs/classes/TimelockUnlockCondition/) in as
+   [`unlockConditions`](../../../references/nodejs/classes/UnlockCondition/) to the `Client`.
+5. Send the [`Output`](../../../references/nodejs/classes/Output/) created in the previous step by calling the
+   ['Account.sendOutputs()'](../../../references/nodejs/classes/Account/#sendoutputs) function.
+6. Await for the [`Transaction`](../../../references/nodejs/classes/Transaction/) to get confirmed by calling the
+   ['Account.retryTransactionUntilIncluded'](../../../references/nodejs/classes/Account/#retrytransactionuntilincluded)
+   function.
+
 ```typescript reference
 https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/advanced_transactions/advanced_transaction.ts
 ```
 
 </TabItem>
 <TabItem value="python" label="Python">
+
+1. Instantiate a [`Wallet`](../../../references/python/iota_sdk/wallet/).
+2. Get Alice's [`Account`](../../../references/python/iota_sdk/wallet/account/) which was
+   [created in the first guide](../accounts-and-addresses/create-account.mdx).
+3. Sync the account with the node to get the latest transactions by calling the [`Account.sync()`](../../../references/python/iota_sdk/wallet/account/#sync)
+   function.
+
+4. Create a `BasicOutput` that is
+   [time-locked](https://wiki.iota.org/shimmer/develop/explanations/what-is-stardust/unlock-conditions/#timelock) for one
+   hour by calling the [`Client.build_basic_output()`](../../../references/python/iota_sdk/client/#build_basic_output)
+   function and passing the [`AddressUnlockCondition`](../../..references/python/iota_sdk/types/unlock_condition/#addressunlockcondition-objects) and
+   the [`TimelockUnlockCondition`](references/python/iota_sdk/types/unlock_condition/#timelockunlockcondition-objects) in as
+   [`UnlockConditions`](../../../references/python/iota_sdk/types/unlock_condition/) to the `Client`.
+5. Send the [`Output`](../../../references/python/iota_sdk/types/output/) created in the previous step by calling the
+   ['Account.sendOutputs()'](../../../references/python/iota_sdk/wallet/account/#send_outputs) function.
+6. Await for the [`Transaction`](../../../references/python/iota_sdk/types/transaction/) to get confirmed by calling
+   the ['Account.retry_transaction_until_included'](../../../references/python/iota_sdk/wallet/account/#retry_transaction_until_included)
+   function.
 
 ```python reference
 https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how_tos/advanced_transactions/advanced_transaction.py
