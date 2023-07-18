@@ -11,8 +11,7 @@ keywords:
 
 # Contribute to the IOTA SDK
 
-Thank you for considering contributing to the IOTA SDK. We offer various ways for you to get involved and make a
-difference.
+If you're thinking about contributing to the IOTA SDK project, please consider the following ways to get involved.
 
 ## Join the IOTA Libraries Initiative
 
@@ -21,13 +20,13 @@ at enhancing the developer experience. You can contribute in the following areas
 
 - Quality assurance and code review
 - Documentation improvements
-- Creating code samples
+- Code sample creation
 
 To get started, join the #experience channel on [Discord](https://discord.iota.org).
 
 ## Contribute to the Project's GitHub Repository
 
-All the project's code is open source and hosted on [GitHub](https://github.com/iotaledger/iota-sdk). You can contribute
+All of the project's code is open source and hosted on [GitHub](https://github.com/iotaledger/iota-sdk). You can contribute
 in the following ways:
 
 - Report any bugs you encounter
