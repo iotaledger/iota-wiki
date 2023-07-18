@@ -18,20 +18,23 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import TipAccountApproaches from '../../_admonitions/_tip-account-approaches.md';
 
-This How-To will show you how to create an account.
+An [`Account`](../../../references/nodejs/classes/Account/) is a fundamental component of the protocol that allows users
+to manage their digital assets and interact with the network. It serves as a container for holding tokens and other
+assets, enabling users to send and receive transactions, and engage in various activities within the IOTA ecosystem.
 
 <TipAccountApproaches />
 
 ## Code Example
 
-The following example will:
-
-1. Create a wallet.
-2. Use it to store the [Stronghold](https://wiki.iota.org/stronghold.rs/welcome) mnemonic.
-3. Create an account with the alias "Alice".
-
 <Tabs groupId="language" queryString>
 <TabItem value="rust" label="Rust">
+
+The following example will:
+1. Instantiate a [`Wallet`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/core/struct.Wallet.html).
+2. Use it to store the [Stronghold](https://wiki.iota.org/stronghold.rs/welcome) mnemonic.
+3. Create an [`Account`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/account/struct.Account.html) with the alias
+"Alice" by calling the [`Wallet.create_account()`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/core/struct.Wallet.html#method.create_account)
+function.
 
 ```rust reference
 https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/accounts_and_addresses/create_account.rs
@@ -40,12 +43,26 @@ https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/account
 </TabItem>
 <TabItem value="typescript-node" label="Typescript (Node.js)">
 
+The following example will:
+1. Instantiate a [`Wallet`](../../../references/nodejs/classes/Wallet/).
+2. Use it to store the [Stronghold](https://wiki.iota.org/stronghold.rs/welcome) mnemonic.
+3. Create an [`Account`](../../../references/nodejs/classes/Account/) with the alias "Alice" by calling the
+[`Wallet.createAccount()`](../../../references/nodejs/classes/Wallet/#createAccount)
+function.
+
 ```typescript reference
 https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/accounts_and_addresses/create-account.ts
 ```
 
 </TabItem>
 <TabItem value="python" label="Python">
+
+The following example will:
+1. Instantiate a [`Wallet`](../../../references/python/iota_sdk/wallet/).
+2. Use it to store the [Stronghold](https://wiki.iota.org/stronghold.rs/welcome) mnemonic.
+3. Create an [`Account`](https://wiki.iota.org/next/iota-sdk/references/python/iota_sdk/wallet/account/) with the alias
+"Alice" by calling the [`Wallet.create_account()`](../../../references/python/iota_sdk/wallet/#create_account)
+function.
 
 ```python reference
 https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how_tos/accounts_and_addresses/create_account.py

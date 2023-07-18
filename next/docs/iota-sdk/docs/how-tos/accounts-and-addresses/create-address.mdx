@@ -28,14 +28,18 @@ generate an address for each user in this account.
 
 ## Code Example
 
-The following example will:
-
-1. Create a wallet.
-2. Get Alice's account which was [created in the first guide](create-account.mdx).
-3. Generate an address in Alice's account.
-
 <Tabs groupId="language" queryString>
 <TabItem value="rust" label="Rust">
+
+The following example will:
+
+1. Instantiate a [`Wallet`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/core/struct.Wallet.html).
+2. Get Alice's [`Account`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/account/struct.Account.html) which was
+[created in the first guide](./create-account.mdx).
+3. Generate an [`AccountAddress`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/account/types/struct.AccountAddress.html)
+in Alice's account by calling the
+[`Account.generate_ed25519_addresses()`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/account/struct.Account.html#method.generate_ed25519_addresses)
+function.
 
 ```rust reference
 https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/accounts_and_addresses/create_address.rs
@@ -44,12 +48,28 @@ https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/account
 </TabItem>
 <TabItem value="typescript-node" label="Typescript (Node.js)">
 
+The following example will:
+
+1. Instantiate a [`Wallet`](../../../references/nodejs/classes/Wallet).
+2. Get Alice's [`Account`](../../../references/nodejs/classes/Account) which was
+[created in the first guide](./create-account.mdx).
+3. Generate an [`Address`](../../../references/nodejs/classes/Address/) in Alice's account by calling the
+[`Account.generateEd25519Addresses()`](../../../references/nodejs/classes/Account/#generateed25519addresses) function.
+
 ```typescript reference
 https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/accounts_and_addresses/create-address.ts
 ```
 
 </TabItem>
 <TabItem value="python" label="Python">
+
+The following example will:
+
+1. Instantiate a [`Wallet`](../../../references/python/iota_sdk/wallet/).
+2. Get Alice's [`Account`](../../../references/python/iota_sdk/wallet/account/) which was
+[created in the first guide](./create-account.mdx).
+3. Generate an [`Address`](../../../references/python/iota_sdk/types/address/) in Alice's account by calling the
+[`Account.generateEd25519Addresses()`](../../../references/python/iota_sdk/wallet/account/#generate_ed25519_addresses) function.
 
 ```python reference
 https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how_tos/accounts_and_addresses/create_address.py

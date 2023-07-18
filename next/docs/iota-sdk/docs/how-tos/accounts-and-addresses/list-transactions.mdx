@@ -13,13 +13,13 @@ keywords:
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-This How-To will show you how to list all transactions of an account.
+This guide will show you how to list all transactions of an [`Account`](../../../references/nodejs/classes/Account/).
 
 :::tip Sync Options
 
 If you want to list incoming transactions you need to specify that in your `sync` call.
 Transactions for outputs that you synced before with other sync options, will not be requested later.
-Also only transactions that weren't pruned on the point of syncing will be listed.
+Also, only transactions that weren't pruned on the point of syncing will be listed.
 
 :::tip
 
@@ -28,6 +28,17 @@ Also only transactions that weren't pruned on the point of syncing will be liste
 <Tabs groupId="language" queryString>
 <TabItem value="rust" label="Rust">
 
+The following example will:
+
+1. Instantiate a [`Wallet`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/core/struct.Wallet.html).
+2. Get Alice's [`Account`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/account/struct.Account.html) which was
+[created in the first guide](./create-account.mdx).
+3. Get all the [`Transactions`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/account/types/struct.Transaction.html)
+related to the `Account` by calling the [`Account.transactions()`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/account/struct.AccountInner.html#method.transactions)
+function.
+4. Get all the incoming `Transactions` related to the `Account` by calling the
+[`Account.incoming_transactions()`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/account/struct.AccountInner.html#method.incoming_transactions) function.
+
 ```rust reference
 https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/accounts_and_addresses/list_transactions.rs
 ```
@@ -35,12 +46,34 @@ https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/account
 </TabItem>
 <TabItem value="typescript-node" label="Typescript (Node.js)">
 
+The following example will:
+
+1. Instantiate a [`Wallet`](../../../references/nodejs/classes/Wallet).
+2. Get Alice's [`Account`](../../../references/nodejs/classes/Account) which was
+[created in the first guide](./create-account.mdx).
+3. Get all the [`Transactions`](../../../references/nodejs/classes/Transaction/)
+related to the `Account` by calling the [`Account.transactions()`](../../../references/nodejs/classes/Account/#transactions)
+function.
+4. Get all the incoming `Transactions` related to the `Account` by calling the
+[`Account.incomingTransactions()`](../../../references/nodejs/classes/Account/#incomingtransactions) function.
+
 ```typescript reference
 https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/accounts_and_addresses/list-transactions.ts
 ```
 
 </TabItem>
 <TabItem value="python" label="Python">
+
+The following example will:
+
+1. Instantiate a [`Wallet`](../../../references/python/iota_sdk/wallet/).
+2. Get Alice's [`Account`](../../../references/python/iota_sdk/wallet/account/) which was
+[created in the first guide](./create-account.mdx).
+3. Get all the [`Transactions`](../../../references/python/iota_sdk/types/transaction/)
+related to the `Account` by calling the [`Account.transactions()`](../../..references/python/iota_sdk/wallet/account/#transactions)
+function.
+4. Get all the incoming `Transactions` related to the `Account` by calling the
+[`Account.incomingTransactions()`](../../../references/python/iota_sdk/wallet/account/#incoming_transactions) function.
 
 ```python reference
 https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how_tos/accounts_and_addresses/list_transactions.py
