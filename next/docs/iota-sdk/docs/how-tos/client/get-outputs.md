@@ -22,16 +22,23 @@ output type, just change the function to the output type you need.
 
 <AccountClient/>
 
-The following code example will:
-
-1. Create a `Client` which will connect to the [Shimmer Testnet](https://api.testnet.shimmer.network).
-2. Use the created client to query for outputs with the specified parameters.
-3. Print the first output found.
-
 ## Code Example
 
 <Tabs groupId="language" queryString>
 <TabItem value="rust" label="Rust">
+
+The following code example will:
+
+1. Create a [`Client`](https://docs.rs/iota-sdk/latest/iota_sdk/client/core/struct.Client.html) that will connect to the
+   node defined in your `.env` file's `NODE_URL` variable.
+2. Query the node for basic outputs with the specified 
+[`QueryParameters`](https://docs.rs/iota-sdk/latest/iota_sdk/client/node_api/indexer/query_parameters/enum.QueryParameter.html)
+using the [`Client.basic_output_ids()`](https://docs.rs/iota-sdk/latest/iota_sdk/client/core/struct.ClientInner.html#method.basic_output_ids)
+function. 
+3. Get the outputs retrieved in the previous step using the 
+[`Client.get_outputs()`](https://docs.rs/iota-sdk/latest/iota_sdk/client/core/struct.Client.html#method.get_outputs) 
+function.
+4. Print the first output found.
 
 ```rust reference
 https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/client/get_outputs.rs
@@ -40,12 +47,36 @@ https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/client/
 </TabItem>
 <TabItem value="typescript-node" label="Typescript (Node.js)">
 
+The following code example will:
+
+1. Create a [`Client`]../../../references//nodejs/classes/Client/) that will connect to the
+   node defined in your `.env` file's `NODE_URL` variable.
+2. Query the node for basic outputs with the specified
+   [`QueryParameters`]../../../references//nodejs/api_ref/#queryparameter)
+   using the [`Client.basicOutputIds()`]../../../references//nodejs/classes/Client/#basicoutputids)
+   function.
+3. Get the outputs retrieved in the previous step using the
+   [`Client.getOutputs()`]../../../references//nodejs/classes/Client/#getoutputs)
+   function.
+4. Print the first output found.
+
 ```typescript reference
 https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/client/get-outputs.ts
 ```
 
 </TabItem>
 <TabItem value="python" label="Python">
+
+The following code example will:
+
+1. Create a [`Client`]../../../references//python/iota_sdk/client/) that will connect to the
+   node defined in your `.env` file's `NODE_URL` variable.
+2. Query the node for basic outputs with the specified `QueryParameters` using the [`Client.basic_output_ids()`]../../../references//python/iota_sdk/client/_node_indexer_api/#basic_output_ids)
+   function.
+3. Get the outputs retrieved in the previous step using the
+   [`Client.get_outputs()`]../../../references//python/iota_sdk/client/_high_level_api/#get_outputs)
+   function.
+4. Print the first output found.
 
 ```python reference
 https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how_tos/client/get_outputs.py
