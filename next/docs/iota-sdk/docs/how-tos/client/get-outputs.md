@@ -49,14 +49,14 @@ https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/client/
 
 The following code example will:
 
-1. Create a [`Client`]../../../references//nodejs/classes/Client/) that will connect to the
+1. Create a [`Client`](../../../references/nodejs/classes/Client/) that will connect to the
    node defined in your `.env` file's `NODE_URL` variable.
 2. Query the node for basic outputs with the specified
-   [`QueryParameters`]../../../references//nodejs/api_ref/#queryparameter)
-   using the [`Client.basicOutputIds()`]../../../references//nodejs/classes/Client/#basicoutputids)
+   [`QueryParameters`](../../../references/nodejs/api_ref/#queryparameter)
+   using the [`Client.basicOutputIds()`](../../../references/nodejs/classes/Client/#basicoutputids)
    function.
 3. Get the outputs retrieved in the previous step using the
-   [`Client.getOutputs()`]../../../references//nodejs/classes/Client/#getoutputs)
+   [`Client.getOutputs()`](../../../references/nodejs/classes/Client/#getoutputs)
    function.
 4. Print the first output found.
 
@@ -69,12 +69,12 @@ https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how
 
 The following code example will:
 
-1. Create a [`Client`]../../../references//python/iota_sdk/client/) that will connect to the
+1. Create a [`Client`](../../../references/python/iota_sdk/client/) that will connect to the
    node defined in your `.env` file's `NODE_URL` variable.
-2. Query the node for basic outputs with the specified `QueryParameters` using the [`Client.basic_output_ids()`]../../../references//python/iota_sdk/client/_node_indexer_api/#basic_output_ids)
+2. Query the node for basic outputs with the specified `QueryParameters` using the [`Client.basic_output_ids()`](../../../references/python/iota_sdk/client/_node_indexer_api/#basic_output_ids)
    function.
 3. Get the outputs retrieved in the previous step using the
-   [`Client.get_outputs()`]../../../references//python/iota_sdk/client/_high_level_api/#get_outputs)
+   [`Client.get_outputs()`](../../../references/python/iota_sdk/client/_high_level_api/#get_outputs)
    function.
 4. Print the first output found.
 
