@@ -16,8 +16,8 @@ import TabItem from '@theme/TabItem';
 import TipFaucet from '../../_admonitions/_tip-faucet.md';
 
 You can retrieve the balance for any [account you created](./create-account.mdx) by calling the
-[`Account.getBalance()`](../../../references/nodejs/classes/Account/#getbalance) function. Bear in mind that you should
-always [`sync`](references/nodejs/classes/Account/#sync) the [`Account`](../../../references/nodejs/classes/Account/#sync)
+[`Account.getBalance()`](../../references/nodejs/classes/Account/#getbalance) function. Bear in mind that you should
+always [`sync`](references/nodejs/classes/Account/#sync) the [`Account`](../../references/nodejs/classes/Account/)
 with the node to get the latest outputs. The sync function also returns the balance.
 
 <TipFaucet />
@@ -44,12 +44,12 @@ https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/account
 
 The following example will:
 
-1. Instantiate a [`Wallet`](../../../references/nodejs/classes/Wallet).
-2. Get Alice's [`Account`](../../../references/nodejs/classes/Account) which was
+1. Instantiate a [`Wallet`](../../references/nodejs/classes/Wallet).
+2. Get Alice's [`Account`](../../references/nodejs/classes/Account) which was
    [created in the first guide](./create-account.mdx).
-3. Sync the account with the node to get the latest transactions by calling the [`Account.sync()`](../../../references/nodejs/classes/Account/#sync)
+3. Sync the account with the node to get the latest transactions by calling the [`Account.sync()`](../../references/nodejs/classes/Account/#sync)
    function.
-4. Request the account's balance by calling the [`Account.getBalance()`](../../../references/nodejs/classes/Account/#getbalance)
+4. Request the account's balance by calling the [`Account.getBalance()`](../../references/nodejs/classes/Account/#getbalance)
    function.
 
 ```typescript reference
@@ -61,12 +61,12 @@ https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how
 
 The following example will:
 
-1. Instantiate a [`Wallet`](../../../references/python/iota_sdk/wallet/).
-2. Get Alice's [`Account`](../../../references/python/iota_sdk/wallet/account/) which was
+1. Instantiate a [`Wallet`](../../references/python/iota_sdk/wallet/).
+2. Get Alice's [`Account`](../../references/python/iota_sdk/wallet/account/) which was
    [created in the first guide](./create-account.mdx).
-3. Sync the account with the node to get the latest transactions by calling the [`Account.sync()`](../../../references/python/iota_sdk/wallet/account/#sync)
+3. Sync the account with the node to get the latest transactions by calling the [`Account.sync()`](../../references/python/iota_sdk/wallet/account/#sync)
    function.
-4. Request the account's balance by calling the [`Account.getBalance()`](../../../references/python/iota_sdk/wallet/account/#get_balance)
+4. Request the account's balance by calling the [`Account.getBalance()`](../../references/python/iota_sdk/wallet/account/#get_balance)
    function.
 
 ```python reference

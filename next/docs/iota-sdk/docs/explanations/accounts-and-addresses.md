@@ -19,8 +19,8 @@ to [create an account for each user](#multi-account-model)
 or [use one account and generate multiple addresses](#single-account-model), which you can then link to the users in
 your database. The SDK is as flexible as possible and aims to cover as many use cases as possible.
 
-The SDK supports deterministic derivation of multiple accounts from a single seed for multiple accounts from a single
-seed. An account is an identifier from which multiple addresses can be derived.
+The SDK supports deterministic derivation of multiple accounts from a single seed for multiple accounts. An account is
+an identifier from which multiple addresses can be derived.
 
 The SDK also allows users to assign a unique alias to each account. Since addresses are reusable, they can be
 mapped to your users clearly and concisely.
@@ -33,6 +33,6 @@ link the accounts to your own database's internal user IDs.
 
 ## Single Account Model
 
-You should use the single account model to create a single account and then create an address for each user. You will
+Use the single account model to create only one account and then create an address for each user. You will
 need to link the associated addresses to your internal user IDs and store which owns which address in a database. Most
-exchanges are familiar with the single account model and find it easier to use, implement, and back up.
+exchanges are familiar with this model and find it easier to use, implement, and back up.

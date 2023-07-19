@@ -43,14 +43,14 @@ https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/nfts/se
 
 The following example will:
 
-1. Instantiate a [`Wallet`](../../../references/nodejs/classes/Wallet).
+1. Instantiate a [`Wallet`](../../references/nodejs/classes/Wallet).
 2. Get Alice's account which was [created in the first guide](../accounts-and-addresses/create-account.mdx).
-3. Sync the account with the node to get the latest transactions by calling the [`Account.sync()`](../../../references/nodejs/classes/Account/#sync)
+3. Sync the account with the node to get the latest transactions by calling the [`Account.sync()`](../../references/nodejs/classes/Account/#sync)
    function.
 4. Set `nftId` as the first NFT Id in the balance.
-5. Define the outputs for the transaction as the [`SendNftParams`](https://wiki.iota.org/next/iota-sdk/references/nodejs/interfaces/SendNftParams/).
-6. Prepare the transaction that will send the NFT using the [`Account.prepareSendNft()`](https://wiki.iota.org/next/iota-sdk/references/nodejs/classes/Account/#preparesendnft) function.
-7. Send the transaction using the [`Account.send()`](https://wiki.iota.org/next/iota-sdk/references/nodejs/classes/Account/#send)
+5. Define the outputs for the transaction as the [`SendNftParams`](../../references/nodejs/interfaces/SendNftParams/).
+6. Prepare the transaction that will send the NFT using the [`Account.prepareSendNft()`](../../references/nodejs/classes/Account/#preparesendnft) function.
+7. Send the transaction using the [`Account.send()`](../../references/nodejs/classes/Account/#send)
    function.
 
 ```typescript reference
@@ -62,14 +62,14 @@ https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how
 
 The following example will:
 
-1. Instantiate a [`Wallet`](../../../references/python/iota_sdk/wallet/).
+1. Instantiate a [`Wallet`](../../references/python/iota_sdk/wallet/).
 2. Get Alice's account which was [created in the first guide](../accounts-and-addresses/create-account.mdx).
-3. Sync the account with the node to get the latest transactions by calling the [`Account.sync()`](../../../references/python/iota_sdk/wallet/account/#sync)
+3. Sync the account with the node to get the latest transactions by calling the [`Account.sync()`](../../references/python/iota_sdk/wallet/account/#sync)
    function.
 4. Create the `SendNFTParams` setting `nft_id` as the first NFT Id in the balance.
-5. Prepare the transaction that will mint the NFT using the [`Account.prepare_send_nft()`](https://wiki.iota.org/next/iota-sdk/references/python/iota_sdk/wallet/account/#prepare_send_nft)
+5. Prepare the transaction that will mint the NFT using the [`Account.prepare_send_nft()`](../../references/python/iota_sdk/wallet/account/#prepare_send_nft)
    function.
-6. Send the prepared transaction using the [`Account.send()`](https://wiki.iota.org/next/iota-sdk/references/python/iota_sdk/wallet/account/#send)
+6. Send the prepared transaction using the [`Account.send()`](../../references/python/iota_sdk/wallet/account/#send)
    function.
 
 ```python reference

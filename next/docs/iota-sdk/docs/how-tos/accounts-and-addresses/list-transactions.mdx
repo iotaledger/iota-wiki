@@ -13,7 +13,12 @@ keywords:
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-This guide will show you how to list all transactions of an [`Account`](../../../references/nodejs/classes/Account/).
+An account can have multiple transactions associated with it, capturing its history of sending and receiving assets
+or other activities. Transactions are linked to specific accounts, providing a transparent record of the account's
+interactions and facilitating the secure transfer of value across the network.
+
+This guide will show you how to list all the transactions of all the addresses of an
+[`Account`](../../references/nodejs/classes/Account/).
 
 :::tip Sync Options
 
@@ -31,13 +36,17 @@ Also, only transactions that weren't pruned on the point of syncing will be list
 The following example will:
 
 1. Instantiate a [`Wallet`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/core/struct.Wallet.html).
-2. Get Alice's [`Account`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/account/struct.Account.html) which was
+2. Get Alice's [`Account`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/account/struct.Account.html) which
+   was
    [created in the first guide](./create-account.mdx).
-3. Get all the [`Transactions`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/account/types/struct.Transaction.html)
-   related to the `Account` by calling the [`Account.transactions()`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/account/struct.AccountInner.html#method.transactions)
+3. Get all the
+   [`Transactions`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/account/types/struct.Transaction.html)
+   related to the `Account` by calling the
+   [`Account.transactions()`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/account/struct.AccountInner.html#method.transactions)
    function.
 4. Get all the incoming `Transactions` related to the `Account` by calling the
-   [`Account.incoming_transactions()`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/account/struct.AccountInner.html#method.incoming_transactions) function.
+   [`Account.incoming_transactions()`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/account/struct.AccountInner.html#method.incoming_transactions)
+   function.
 
 ```rust reference
 https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/accounts_and_addresses/list_transactions.rs
@@ -48,14 +57,15 @@ https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/account
 
 The following example will:
 
-1. Instantiate a [`Wallet`](../../../references/nodejs/classes/Wallet).
-2. Get Alice's [`Account`](../../../references/nodejs/classes/Account) which was
+1. Instantiate a [`Wallet`](../../references/nodejs/classes/Wallet).
+2. Get Alice's [`Account`](../../references/nodejs/classes/Account) which was
    [created in the first guide](./create-account.mdx).
-3. Get all the [`Transactions`](../../../references/nodejs/classes/Transaction/)
-   related to the `Account` by calling the [`Account.transactions()`](../../../references/nodejs/classes/Account/#transactions)
+3. Get all the [`Transactions`](../../references/nodejs/classes/Transaction/)
+   related to the `Account` by calling the
+   [`Account.transactions()`](../../references/nodejs/classes/Account/#transactions)
    function.
 4. Get all the incoming `Transactions` related to the `Account` by calling the
-   [`Account.incomingTransactions()`](../../../references/nodejs/classes/Account/#incomingtransactions) function.
+   [`Account.incomingTransactions()`](../../references/nodejs/classes/Account/#incomingtransactions) function.
 
 ```typescript reference
 https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/accounts_and_addresses/list-transactions.ts
@@ -66,14 +76,16 @@ https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how
 
 The following example will:
 
-1. Instantiate a [`Wallet`](../../../references/python/iota_sdk/wallet/).
-2. Get Alice's [`Account`](../../../references/python/iota_sdk/wallet/account/) which was
+1. Instantiate a [`Wallet`](../../references/python/iota_sdk/wallet/).
+2. Get Alice's [`Account`](../../references/python/iota_sdk/wallet/account/) which was
    [created in the first guide](./create-account.mdx).
-3. Get all the [`Transactions`](../../../references/python/iota_sdk/types/transaction/)
-   related to the `Account` by calling the [`Account.transactions()`](../../..references/python/iota_sdk/wallet/account/#transactions)
+3. Get all the [`Transactions`](../../references/python/iota_sdk/types/transaction/)
+   related to the `Account` by calling the
+   [`Account.transactions()`](../../..references/python/iota_sdk/wallet/account/#transactions)
    function.
 4. Get all the incoming `Transactions` related to the `Account` by calling the
-   [`Account.incoming_transactions()`](../../../references/python/iota_sdk/wallet/account/#incoming_transactions) function.
+   [`Account.incoming_transactions()`](../../references/python/iota_sdk/wallet/account/#incoming_transactions)
+   function.
 
 ```python reference
 https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how_tos/accounts_and_addresses/list_transactions.py

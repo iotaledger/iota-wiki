@@ -52,16 +52,16 @@ https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/native_
 
 The following example will:
 
-1. Instantiate a [`Wallet`](../../../references/nodejs/classes/Wallet).
+1. Instantiate a [`Wallet`](../../references/nodejs/classes/Wallet).
 2. Get Alice's account which was [created in the first guide](../accounts-and-addresses/create-account.mdx).
-3. Sync the account with the node to get the latest transactions by calling the [`Account.sync()`](../../../references/nodejs/classes/Account/#sync)
+3. Sync the account with the node to get the latest transactions by calling the [`Account.sync()`](../../references/nodejs/classes/Account/#sync)
    function.
 4. Search the account's balance for a native token with a balance of at least `SEND_NATIVE_TOKEN_AMOUNT`.
-5. Prepare the outputs for the transaction by creating a new [`SendNativeTokensParams`](https://wiki.iota.org/next/iota-sdk/references/nodejs/interfaces/SendNativeTokensParams/).
+5. Prepare the outputs for the transaction by creating a new [`SendNativeTokensParams`](../../references/nodejs/interfaces/SendNativeTokensParams/).
 6. Display the balance before sending.
-7. Prepare the transaction that will send the tokens using the [`Account.prepareSendNativeTokens()`](https://wiki.iota.org/next/iota-sdk/references/nodejs/classes/Account/#preparesendnativetokens)
+7. Prepare the transaction that will send the tokens using the [`Account.prepareSendNativeTokens()`](../../references/nodejs/classes/Account/#preparesendnativetokens)
    function.
-8. Send the prepared transaction using the [`Account.send()`](https://wiki.iota.org/next/iota-sdk/references/nodejs/classes/Account/#send)
+8. Send the prepared transaction using the [`Account.send()`](../../references/nodejs/classes/Account/#send)
    function.
 9. Sync the account again, and display the native token balance after sending.
 
@@ -74,15 +74,15 @@ https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how
 
 The following example will:
 
-1. Instantiate a [`Wallet`](../../../references/python/iota_sdk/wallet/).
+1. Instantiate a [`Wallet`](../../references/python/iota_sdk/wallet/).
 2. Get Alice's account which was [created in the first guide](../accounts-and-addresses/create-account.mdx).
-3. Sync the account with the node to get the latest transactions by calling the [`Account.sync()`](../../../references/python/iota_sdk/wallet/account/#sync)
+3. Sync the account with the node to get the latest transactions by calling the [`Account.sync()`](../../references/python/iota_sdk/wallet/account/#sync)
    function.
 4. Display the balance before sending.
 5. Define the outputs for the transaction that will send the tokens by creating the `SendNativeTokensParams`.
-6. Prepare the transaction that will send the tokens using the [`Account.prepare_send_native_tokens()`](https://wiki.iota.org/next/iota-sdk/references/python/iota_sdk/wallet/account/#prepare_send_native_tokens)
+6. Prepare the transaction that will send the tokens using the [`Account.prepare_send_native_tokens()`](../../references/python/iota_sdk/wallet/account/#prepare_send_native_tokens)
    function.
-7. Send the prepared transaction using the [`Account.send()`](https://wiki.iota.org/next/iota-sdk/references/python/iota_sdk/wallet/account/#send)
+7. Send the prepared transaction using the [`Account.send()`](../../references/python/iota_sdk/wallet/account/#send)
    function.
 8. Sync the account again, and display the native token balance after minting.
 

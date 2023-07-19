@@ -22,8 +22,8 @@ Any transaction with an amount that is below the minimum
 microtransaction.
 
 The IOTA SDK has a convenient
-[`TransactionOption`](../../../references/nodejs/interfaces/TransactionOptions/#allowmicroamount)
-called [`allowMicroAmount`](../../../references/nodejs/interfaces/TransactionOptions/#allowmicroamount) to help you easily
+[`TransactionOption`](../../references/nodejs/interfaces/TransactionOptions/#allowmicroamount)
+called [`allowMicroAmount`](../../references/nodejs/interfaces/TransactionOptions/#allowmicroamount) to help you easily
 send a microtransaction.
 
 <TipFaucet />
@@ -43,7 +43,7 @@ The following example will:
    function.
 4. Send a micro transaction using the
    [`Account.send()` function](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/account/struct.Account.html#method.send) with
-   the [`allow_micro_amount`](../../../references/nodejs/interfaces/TransactionOptions/#allowmicroamount)
+   the [`allow_micro_amount`](../../references/nodejs/interfaces/TransactionOptions/#allowmicroamount)
    [`TransactionOption`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/account/struct.TransactionOptions.html).
    set as `true`.
 
@@ -56,14 +56,14 @@ https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/advance
 
 The following example will:
 
-1. Instantiate a [`Wallet`](../../../references/nodejs/classes/Wallet).
+1. Instantiate a [`Wallet`](../../references/nodejs/classes/Wallet).
 2. Get Alice's account which was [created in the first guide](../accounts-and-addresses/create-account.mdx).
-3. Sync the account with the node to get the latest transactions by calling the [`Account.sync()`](../../../references/nodejs/classes/Account/#sync)
+3. Sync the account with the node to get the latest transactions by calling the [`Account.sync()`](../../references/nodejs/classes/Account/#sync)
    function.
 4. Send a micro transaction using the
-   [`Account.send()` function](../../../references/nodejs/classes/Account/#send) with
-   the [`allowMicroAmount`](../../../references/nodejs/interfaces/TransactionOptions/#allowmicroamount)
-   [`TransactionOption`](../../../references/nodejs/interfaces/TransactionOptions/) set as `true`.
+   [`Account.send()` function](../../references/nodejs/classes/Account/#send) with
+   the [`allowMicroAmount`](../../references/nodejs/interfaces/TransactionOptions/#allowmicroamount)
+   [`TransactionOption`](../../references/nodejs/interfaces/TransactionOptions/) set as `true`.
 
 ```typescript reference
 https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/advanced_transactions/send_micro_transaction.ts
@@ -74,13 +74,13 @@ https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how
 
 The following example will:
 
-1. Instantiate a [`Wallet`](../../../references/python/iota_sdk/wallet/).
+1. Instantiate a [`Wallet`](../../references/python/iota_sdk/wallet/).
 2. Get Alice's account which was [created in the first guide](../accounts-and-addresses/create-account.mdx).
-3. Sync the account with the node to get the latest transactions by calling the [`Account.sync()`](../../../references/nodejs/classes/Account/#sync)
+3. Sync the account with the node to get the latest transactions by calling the [`Account.sync()`](../../references/nodejs/classes/Account/#sync)
    function.
 4. Send a micro transaction using the
    [`Account.send()` function](../../..references/python/iota_sdk/wallet/account/#send) with
-   the `allowMicroAmount` [`TransactionOption`](../../../references/python/iota_sdk/types/transaction_options/) set as `true`.
+   the `allowMicroAmount` [`TransactionOption`](../../references/python/iota_sdk/types/transaction_options/) set as `true`.
 
 ```python reference
 https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how_tos/advanced_transactions/send_micro_transaction.py

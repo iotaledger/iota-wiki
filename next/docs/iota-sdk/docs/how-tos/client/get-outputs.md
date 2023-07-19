@@ -18,7 +18,34 @@ import AccountClient from '../../\_admonitions/\_account-client.md'
 Querying outputs allows you to retrieve specific information about transactions or assets on
 the [Tangle](https://wiki.iota.org/shimmer/learn/tangle/). You can verify the status of transactions, track the movement
 of assets, and gather relevant details such as transaction history, ownership, or other metadata. You can query for any
-output type, just change the function to the output type you need.
+output type using the following functions:
+
+<Tabs groupId="language" queryString>
+<TabItem value="rust" label="Rust">
+
+- [`Client.basic_output_ids()`](https://docs.rs/iota-sdk/latest/iota_sdk/client/core/struct.ClientInner.html#method.basic_output_ids)
+- [`Client.alias_output_ids()`](https://docs.rs/iota-sdk/latest/iota_sdk/client/core/struct.ClientInner.html#method.alias_output_ids)
+- [`Client.foundry_output_ids()`](https://docs.rs/iota-sdk/latest/iota_sdk/client/core/struct.ClientInner.html#method.foundry_output_ids)
+- [`Client.nft_output_ids()`](https://docs.rs/iota-sdk/latest/iota_sdk/client/core/struct.ClientInner.html#method.nft_output_ids)
+
+</TabItem>
+<TabItem value="typescript-node" label="Typescript (Node.js)">
+
+- [`Client.basicOutputIds()`](../../references/nodejs/classes/Client/#basicoutputids)
+- [`Client.aliasOutputIds()`](../../references/nodejs/classes/Client/#aliasoutputids)
+- [`Client.nftOutputIds()`](../../references/nodejs/classes/Client/#nftoutputids)
+- [`Client.foundryOutputIds()`](../../references/nodejs/classes/Client/#foundryoutputids)
+
+</TabItem>
+<TabItem value="python" label="Python">
+
+- [`Client.basic_output_ids()`](../../references/python/iota_sdk/client/_node_indexer_api/#basic_output_ids)
+- [`Client.alias_output_ids()`](../../references/python/iota_sdk/client/_node_indexer_api/#alias_output_ids)
+- [`Client.foundry_output_ids()`](../../references/python/iota_sdk/client/_node_indexer_api/#foundry_output_ids)
+- [`Client.nft_output_ids()`](../../references/python/iota_sdk/client/_node_indexer_api/#nft_output_ids)
+
+</TabItem>
+</Tabs>
 
 <AccountClient/>
 
@@ -49,14 +76,14 @@ https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/client/
 
 The following code example will:
 
-1. Create a [`Client`](../../../references/nodejs/classes/Client/) that will connect to the
+1. Create a [`Client`](../../references/nodejs/classes/Client/) that will connect to the
    node defined in your `.env` file's `NODE_URL` variable.
 2. Query the node for basic outputs with the specified
-   [`QueryParameters`](../../../references/nodejs/api_ref/#queryparameter)
-   using the [`Client.basicOutputIds()`](../../../references/nodejs/classes/Client/#basicoutputids)
+   [`QueryParameters`](../../references/nodejs/api_ref/#queryparameter)
+   using the [`Client.basicOutputIds()`](../../references/nodejs/classes/Client/#basicoutputids)
    function.
 3. Get the outputs retrieved in the previous step using the
-   [`Client.getOutputs()`](../../../references/nodejs/classes/Client/#getoutputs)
+   [`Client.getOutputs()`](../../references/nodejs/classes/Client/#getoutputs)
    function.
 4. Print the first output found.
 
@@ -69,12 +96,12 @@ https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how
 
 The following code example will:
 
-1. Create a [`Client`](../../../references/python/iota_sdk/client/) that will connect to the
+1. Create a [`Client`](../../references/python/iota_sdk/client/) that will connect to the
    node defined in your `.env` file's `NODE_URL` variable.
-2. Query the node for basic outputs with the specified `QueryParameters` using the [`Client.basic_output_ids()`](../../../references/python/iota_sdk/client/_node_indexer_api/#basic_output_ids)
+2. Query the node for basic outputs with the specified `QueryParameters` using the [`Client.basic_output_ids()`](../../references/python/iota_sdk/client/_node_indexer_api/#basic_output_ids)
    function.
 3. Get the outputs retrieved in the previous step using the
-   [`Client.get_outputs()`](../../../references/python/iota_sdk/client/_high_level_api/#get_outputs)
+   [`Client.get_outputs()`](../../references/python/iota_sdk/client/_high_level_api/#get_outputs)
    function.
 4. Print the first output found.
 

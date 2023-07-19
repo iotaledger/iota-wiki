@@ -16,10 +16,10 @@ import TipAccountApproaches from '../../_admonitions/_tip-account-approaches.md'
 
 <TipAccountApproaches />
 
-An [`Account`](../../../references/nodejs/classes/Account/) is always initialised with a default
-[`Address`](../../../references/nodejs/classes/Address/). However, depending on you approach, your application may handle
+An [`Account`](../../references/nodejs/classes/Account/) is always initialised with a default
+[`Address`](../../references/nodejs/classes/Address/). However, depending on you approach, your application may handle
 many addresses. The IOTA SDK provides a convenient function to list all the `Addresses` related to an `Account`:
-[`account.addresses()`](../../../references/nodejs/classes/Account/#addresses).
+[`account.addresses()`](../../references/nodejs/classes/Account/#addresses).
 
 This function will retrieve accurate and up-to-date information such as the address balance,
 transaction history, and other relevant metadata, facilitating seamless management of multiple users within your
@@ -48,11 +48,11 @@ https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/account
 
 The following example will:
 
-1. Instantiate a [`Wallet`](../../../references/nodejs/classes/Wallet).
-2. Get Alice's [`Account`](../../../references/nodejs/classes/Account) which was
+1. Instantiate a [`Wallet`](../../references/nodejs/classes/Wallet).
+2. Get Alice's [`Account`](../../references/nodejs/classes/Account) which was
    [created in the first guide](./create-account.mdx).
-3. Get all the [`Addresses`](../../../references/nodejs/classes/Address)
-   related to the `Account` by calling the [`Account.addresses()`](../../../references/nodejs/classes/Account/#addresses)
+3. Get all the [`Addresses`](../../references/nodejs/classes/Address)
+   related to the `Account` by calling the [`Account.addresses()`](../../references/nodejs/classes/Account/#addresses)
    function.
 
 ```typescript reference
@@ -64,11 +64,11 @@ https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how
 
 The following example will:
 
-1. Instantiate a [`Wallet`](../../../references/python/iota_sdk/wallet/).
-2. Get Alice's [`Account`](../../../references/python/iota_sdk/wallet/account/) which was
+1. Instantiate a [`Wallet`](../../references/python/iota_sdk/wallet/).
+2. Get Alice's [`Account`](../../references/python/iota_sdk/wallet/account/) which was
    [created in the first guide](./create-account.mdx).
-3. Get all the [`Addresses`](../../../references/python/iota_sdk/types/address/)
-   related to the `Account` by calling the [`Account.addresses()`](../../../references/python/iota_sdk/wallet/account/#addresses)
+3. Get all the [`Addresses`](../../references/python/iota_sdk/types/address/)
+   related to the `Account` by calling the [`Account.addresses()`](../../references/python/iota_sdk/wallet/account/#addresses)
    function.
 
 ```python reference
