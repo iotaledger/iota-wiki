@@ -31,13 +31,13 @@ The following code example will:
 
 1. Create a [`Client`](https://docs.rs/iota-sdk/latest/iota_sdk/client/core/struct.Client.html) that will connect to the
    node defined in your `.env` file's `NODE_URL` variable.
-2. Query the node for basic outputs with the specified 
-[`QueryParameters`](https://docs.rs/iota-sdk/latest/iota_sdk/client/node_api/indexer/query_parameters/enum.QueryParameter.html)
-using the [`Client.basic_output_ids()`](https://docs.rs/iota-sdk/latest/iota_sdk/client/core/struct.ClientInner.html#method.basic_output_ids)
-function. 
-3. Get the outputs retrieved in the previous step using the 
-[`Client.get_outputs()`](https://docs.rs/iota-sdk/latest/iota_sdk/client/core/struct.Client.html#method.get_outputs) 
-function.
+2. Query the node for basic outputs with the specified
+   [`QueryParameters`](https://docs.rs/iota-sdk/latest/iota_sdk/client/node_api/indexer/query_parameters/enum.QueryParameter.html)
+   using the [`Client.basic_output_ids()`](https://docs.rs/iota-sdk/latest/iota_sdk/client/core/struct.ClientInner.html#method.basic_output_ids)
+   function.
+3. Get the outputs retrieved in the previous step using the
+   [`Client.get_outputs()`](https://docs.rs/iota-sdk/latest/iota_sdk/client/core/struct.Client.html#method.get_outputs)
+   function.
 4. Print the first output found.
 
 ```rust reference
