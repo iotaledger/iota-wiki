@@ -32,5 +32,5 @@ in the Tangle.
 ## Get Test Tokens
 
 You can get Testnet token using the [Shimmer Faucet](https://faucet.testnet.shimmer.network).
-You only need to input a valid Testnet [address](accounts-and-addresses.md), and the faucet will send you test tokens,
+You only need to input a valid Testnet [address](accounts-and-addresses.md) and the faucet will send you test tokens,
 so you can safely develop your application without risking any capital.

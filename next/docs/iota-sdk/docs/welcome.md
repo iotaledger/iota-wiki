@@ -46,9 +46,8 @@ and [get test tokens](explanations/testnet-and-test-tokens.md#get-test-tokens) t
 The IOTA SDK is written in [Rust](getting-started/rust.mdx) and also has convenient bindings
 in [Node.js](getting-started/nodejs.mdx), [Python](getting-started/python.mdx) and [Wasm](getting-started/wasm.mdx).
 
-Each of these languages has specific set up instructions you will need to follow to use IOTA SDK in your project. Every
-binding is adjusted for the language's conventions and best practices. For example, Python developers avoid the Builder
-programming pattern, so our Python binding uses named constructor arguments.
+Each of these languages has specific set-up instructions you will need to follow to use the IOTA SDK in your project. The bindings libraries are individually adjusted for the language's conventions and best practices. For example, Python developers avoid the Builder
+programming pattern, so the Python binding uses named constructor arguments.
 
 ## Your Application In the IOTA Network
 

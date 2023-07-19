@@ -32,10 +32,8 @@ The following example will:
 1. Instantiate a [`Wallet`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/core/struct.Wallet.html).
 2. Get Alice's [`Account`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/account/struct.Account.html) which was
    [created in the first guide](./create-account.mdx).
-3. Sync the account with the node to get the latest transactions by calling the [`Account.sync()`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/account/struct.Account.html#method.sync)
-   function.
-4. Request the account's balance by calling the [`Account.balance()`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/account/struct.Account.html#method.balance)
-   function.
+3. [Sync](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/account/struct.Account.html#method.sync) the account with the node to get the latest transactions.
+4. Request the account's [balance](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/account/struct.Account.html#method.balance).
 
 ```rust reference
 https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/accounts_and_addresses/check_balance.rs

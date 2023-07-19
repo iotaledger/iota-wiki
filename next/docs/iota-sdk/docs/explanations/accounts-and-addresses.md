@@ -22,7 +22,7 @@ your database. The SDK is as flexible as possible and aims to cover as many use 
 The SDK supports deterministic derivation of multiple accounts from a single seed for multiple accounts from a single
 seed. An account is an identifier from which multiple addresses can be derived.
 
-The SDK also allows consumers to assign a unique alias to each account. Since addresses are reusable, they can be
+The SDK also allows users to assign a unique alias to each account. Since addresses are reusable, they can be
 mapped to your users clearly and concisely.
 
 ## Multi-Account Model
