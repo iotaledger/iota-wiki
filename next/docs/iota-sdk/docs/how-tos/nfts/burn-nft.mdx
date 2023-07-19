@@ -31,6 +31,19 @@ associated ownership rights.
 <Tabs groupId="language" queryString>
 <TabItem value="rust" label="Rust">
 
+The following example will:
+
+1. Instantiate a [`Wallet`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/core/struct.Wallet.html).
+2. Get Alice's [`Account`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/account/struct.Account.html) which was
+   [created in the first guide](../accounts-and-addresses/create-account.mdx).
+3. Sync the account with the node to get the latest transactions by calling the [`Account.sync()`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/account/struct.Account.html#method.sync)
+   function.
+4. Set the `nft_id` as the first NFT in the balance.
+5. Print the NFT balance before burning.
+6. Burn the NFT by calling the [`Account.burn()`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/account/struct.Account.html#method.burn)
+   function.
+7. Sync the account again, and display the NFT balance after minting.
+
 ```rust reference
 https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/nfts/burn_nft.rs
 ```
@@ -38,12 +51,35 @@ https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/nfts/bu
 </TabItem>
 <TabItem value="typescript-node" label="Typescript (Node.js)">
 
+The following example will:
+
+1. Instantiate a [`Wallet`](../../../references/nodejs/classes/Wallet).
+2. Get Alice's account which was [created in the first guide](../accounts-and-addresses/create-account.mdx).
+3. Sync the account with the node to get the latest transactions by calling the [`Account.sync()`](../../../references/nodejs/classes/Account/#sync)
+   function.
+4. Set `nftId` as the first NFT Id in the balance and display the balance.
+5. Prepare the transaction that will burn the NFT by calling the [`Account.prepareBurnNft()`](https://wiki.iota.org/next/iota-sdk/references/nodejs/classes/Account/#prepareburnnft) function.
+6. Send the transaction using the [`Account.send()`](https://wiki.iota.org/next/iota-sdk/references/nodejs/classes/Account/#send)
+   function.
+7. Sync the account again, and display the NFT balance after minting.
+
 ```typescript reference
 https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/nfts/burn_nft.ts
 ```
 
 </TabItem>
 <TabItem value="python" label="Python">
+
+The following example will:
+
+1. Instantiate a [`Wallet`](../../../references/python/iota_sdk/wallet/).
+2. Get Alice's account which was [created in the first guide](../accounts-and-addresses/create-account.mdx).
+3. Sync the account with the node to get the latest transactions by calling the [`Account.sync()`](../../../references/python/iota_sdk/wallet/account/#sync)
+   function.
+4. Set `nftId` as the first NFT Id in the balance and display the balance.
+5. Prepare the transaction that will burn the NFT by calling the [`Account.prepare_burn_nft()`](https://wiki.iota.org/next/iota-sdk/references/python/iota_sdk/wallet/account/#prepare_burn_nft) function.
+6. Send the prepared transaction using the [`Account.send()`](https://wiki.iota.org/next/iota-sdk/references/python/iota_sdk/wallet/account/#send)
+   function.
 
 ```python reference
 https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how_tos/nfts/burn_nft.py
