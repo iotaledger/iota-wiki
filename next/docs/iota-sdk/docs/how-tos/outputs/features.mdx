@@ -1,6 +1,6 @@
 ---
 title: Features
-description: 'How to create ouputs with different features'
+description: 'How to create outputs with different features'
 image: /img/logo/iota_mark_light.png
 keywords:
   - how to
@@ -42,12 +42,24 @@ output specs in [TIP-018](https://wiki.iota.org/tips/tips/TIP-0018)
 
 ## Code Example
 
-The following example will:
-
-1. Create multiple NFT outputs with all possible features
-
 <Tabs groupId="language" queryString>
 <TabItem value="rust" label="Rust">
+
+The following example will:
+
+Create multiple NFT outputs with all possible features using the
+[`NftOutputBuilder`](https://docs.rs/iota-sdk/latest/iota_sdk/types/block/output/nft/struct.NftOutputBuilder.html)
+and use the
+[`NftOutputBuilder.add_feature`](https://docs.rs/iota-sdk/latest/iota_sdk/types/block/output/nft/struct.NftOutputBuilder.html#method.add_feature)
+function to add the
+[`SenderFeature`](https://docs.rs/iota-sdk/latest/iota_sdk/types/block/output/feature/struct.SenderFeature.html),
+[`MetadataFeature`](https://docs.rs/iota-sdk/latest/iota_sdk/types/block/output/feature/struct.MetadataFeature.html)
+and [`TagFeature`](https://docs.rs/iota-sdk/latest/iota_sdk/types/block/output/feature/struct.TagFeature.html)
+as mutable features and use the
+[`NftOutputBuilder.add_immutable_feature()`](https://docs.rs/iota-sdk/latest/iota_sdk/types/block/output/nft/struct.NftOutputBuilder.html#method.add_immutable_feature)
+function to add the
+[`IssuerFeature`](https://docs.rs/iota-sdk/latest/iota_sdk/types/block/output/feature/struct.IssuerFeature.html)
+and `MetadataFeature` as immutable features.
 
 ```rust reference
 https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/outputs/features.rs
@@ -56,12 +68,37 @@ https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/outputs
 </TabItem>
 <TabItem value="typescript-node" label="Typescript (Node.js)">
 
+The following example will:
+
+Create multiple NFT outputs with all possible features using the
+[`Client.buildNftOutput()`](https://wiki.iota.org/next/iota-sdk/references/nodejs/classes/Client/#buildnftoutput)
+function and add the
+[`SenderFeature`](https://wiki.iota.org/next/iota-sdk/references/nodejs/classes/SenderFeature/),
+[`MetadataFeature`](https://wiki.iota.org/next/iota-sdk/references/nodejs/classes/MetadataFeature/)
+and [`TagFeature`](https://wiki.iota.org/next/iota-sdk/references/nodejs/classes/TagFeature/)
+as `features` and add the
+[`IssuerFeature`](https://wiki.iota.org/next/iota-sdk/references/nodejs/classes/IssuerFeature/) and
+`MetadataFeature` as `immutable_features`.
+
 ```typescript reference
 https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/outputs/features.ts
 ```
 
 </TabItem>
 <TabItem value="python" label="Python">
+
+The following example will:
+
+Create multiple NFT outputs with all possible features using the
+[`Client.build_nft_output()`](https://wiki.iota.org/next/iota-sdk/references/python/iota_sdk/client/#build_nft_output)
+function and add the
+[`SenderFeature`](https://wiki.iota.org/next/iota-sdk/references/python/iota_sdk/types/feature/#senderfeature-objects),
+[`MetadataFeature`](https://wiki.iota.org/next/iota-sdk/references/python/iota_sdk/types/feature/#metadatafeature-objects)
+and
+[`TagFeature`](https://wiki.iota.org/next/iota-sdk/references/python/iota_sdk/types/feature/#tagfeature-objects)
+as `features` and add the
+[`IssuerFeature`](https://wiki.iota.org/next/iota-sdk/references/python/iota_sdk/types/feature/#issuerfeature-objects)
+and `MetadataFeature` as `immutable_features`.
 
 ```python reference
 https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how_tos/outputs/features.py
