@@ -1,6 +1,7 @@
 import type { Config } from './common/components/Switcher';
 import {
   Chronicle,
+  GoShimmer,
   Hornet,
   Identity,
   IotaCore,
@@ -165,7 +166,7 @@ const config: Config = {
     {
       id: 'hornet-1-2-4',
       label: 'Hornet',
-      description: 'Create smart contracts.',
+      description: 'Run a node',
       icon: Hornet,
       subsection: 'maintain-layer-1',
       versions: [
@@ -184,7 +185,7 @@ const config: Config = {
     {
       id: 'wasp-0-7-0',
       label: 'Wasp',
-      description: 'Create smart contracts.',
+      description: 'Create smart contracts',
       icon: SmartContracts,
       subsection: 'maintain-layer-2',
       versions: [
@@ -198,7 +199,7 @@ const config: Config = {
     {
       id: 'chronicle-rs',
       label: 'Chronicle',
-      description: 'Store and query data.',
+      description: 'Store and query data',
       icon: Chronicle,
       subsection: 'maintain-layer-1',
       versions: [
@@ -212,6 +213,20 @@ const config: Config = {
           label: '1.0.0-rc.1',
           badges: ['Shimmer'],
         },
+      ],
+    },
+    {
+      id: 'goshimmer',
+      label: 'GoShimmer',
+      description: 'Research Node implementation for IOTA 2.0',
+      icon: GoShimmer,
+      subsection: 'maintain-layer-1',
+      versions: [
+        {
+          id: 'goshimmer',
+          label: '0.9.8',
+          badges: ['IOTA 2.0'],
+        }
       ],
     },
   ],

@@ -21,12 +21,6 @@ module.exports = [
     docItemComponent: '@theme/ApiItem',
   },
   {
-    id: 'iota-goshimmer',
-    path: path.resolve(__dirname, 'docs/goshimmer/docs'),
-    routeBasePath: 'goshimmer',
-    sidebarPath: path.resolve(__dirname, 'docs/goshimmer/sidebars.js'),
-  },
-  {
     id: 'introduction-docs',
     path: path.resolve(__dirname, 'docs/introduction-docs/docs'),
     routeBasePath: 'introduction',

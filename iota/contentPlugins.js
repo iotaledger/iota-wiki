@@ -35,14 +35,6 @@ module.exports = async () => {
       docItemComponent: '@theme/ApiItem',
     },
     {
-      id: 'iota-goshimmer',
-      path: path.resolve(__dirname, 'docs/goshimmer/docs'),
-      routeBasePath: 'goshimmer',
-      sidebarPath: path.resolve(__dirname, 'docs/goshimmer/sidebars.js'),
-      editUrl: 'https://github.com/iotaledger/iota-wiki/edit/main/',
-      showLastUpdateTime: true,
-    },
-    {
       id: 'iota-integration-services',
       path: path.resolve(__dirname, 'docs/integration-services/docs'),
       routeBasePath: 'integration-services',

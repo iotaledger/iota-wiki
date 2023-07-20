@@ -59,10 +59,11 @@ module.exports = async () => {
           {
             label: 'Maintain',
             to: '/hornet/welcome',
-            activeBaseRegex: 
+            activeBaseRegex:
               '^(/[^/]+)?/hornet/.*|' +
               '^(/[^/]+)?/wasp/.*|' +
-              '^(/[^/]+)?/chronicle/.*'
+              '^(/[^/]+)?/chronicle/.*|',
+              '^(/[^/]+)?/goshimmer/.*'
           },
         ],
       },

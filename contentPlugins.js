@@ -226,5 +226,11 @@ module.exports = async () => {
         },
       },
     },
+    {
+      id: 'goshimmer',
+      path: path.resolve(__dirname, 'docs/maintain/goshimmer/0.9.8/docs'),
+      routeBasePath: 'goshimmer',
+      sidebarPath: path.resolve(__dirname, 'docs/maintain/goshimmer/0.9.8/sidebars.js'),
+    },
   ];
 };
