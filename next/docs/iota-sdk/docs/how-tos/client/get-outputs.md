@@ -58,17 +58,26 @@ The following code example will:
 
 1. Create a [`Client`](https://docs.rs/iota-sdk/latest/iota_sdk/client/core/struct.Client.html) that will connect to the
    node defined in your `.env` file's `NODE_URL` variable.
+
+```rust reference
+https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/client/get_outputs.rs#L26-L31
+```
+
 2. Query the node for basic outputs with the specified
    [`QueryParameters`](https://docs.rs/iota-sdk/latest/iota_sdk/client/node_api/indexer/query_parameters/enum.QueryParameter.html)
    using the [`Client.basic_output_ids()`](https://docs.rs/iota-sdk/latest/iota_sdk/client/core/struct.ClientInner.html#method.basic_output_ids)
    function.
+
+```rust reference
+https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/client/get_outputs.rs#L42-L49
+```
+
 3. Get the outputs retrieved in the previous step using the
    [`Client.get_outputs()`](https://docs.rs/iota-sdk/latest/iota_sdk/client/core/struct.Client.html#method.get_outputs)
    function.
-4. Print the first output found.
 
 ```rust reference
-https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/client/get_outputs.rs
+https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/client/get_outputs.rs#L55
 ```
 
 </TabItem>
@@ -78,17 +87,26 @@ The following code example will:
 
 1. Create a [`Client`](../../references/nodejs/classes/Client/) that will connect to the
    node defined in your `.env` file's `NODE_URL` variable.
+
+```typescript reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/client/get-outputs.ts#L13-L20
+```
+
 2. Query the node for basic outputs with the specified
    [`QueryParameters`](../../references/nodejs/api_ref/#queryparameter)
    using the [`Client.basicOutputIds()`](../../references/nodejs/classes/Client/#basicoutputids)
    function.
+
+```typescript reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/client/get-outputs.ts#L24-L32
+```
+
 3. Get the outputs retrieved in the previous step using the
    [`Client.getOutputs()`](../../references/nodejs/classes/Client/#getoutputs)
    function.
-4. Print the first output found.
 
 ```typescript reference
-https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/client/get-outputs.ts
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/client/get-outputs.ts#L36
 ```
 
 </TabItem>
@@ -98,12 +116,47 @@ The following code example will:
 
 1. Create a [`Client`](../../references/python/iota_sdk/client/) that will connect to the
    node defined in your `.env` file's `NODE_URL` variable.
+
+```python reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how_tos/client/get_outputs.py#L8-L11
+```
+
 2. Query the node for basic outputs with the specified `QueryParameters` using the [`Client.basic_output_ids()`](../../references/python/iota_sdk/client/_node_indexer_api/#basic_output_ids)
    function.
+
+```python reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how_tos/client/get_outputs.py#L13-L22
+```
+
 3. Get the outputs retrieved in the previous step using the
    [`Client.get_outputs()`](../../references/python/iota_sdk/client/_high_level_api/#get_outputs)
    function.
-4. Print the first output found.
+
+```python reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how_tos/client/get_outputs.py#L27
+```
+
+</TabItem>
+</Tabs>
+
+## Full Example Code
+
+<Tabs groupId="language" queryString>
+<TabItem value="rust" label="Rust">
+
+```rust reference
+https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/client/get_outputs.rs
+```
+
+</TabItem>
+<TabItem value="typescript-node" label="Typescript (Node.js)">
+
+```typescript reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/client/get-outputs.ts
+```
+
+</TabItem>
+<TabItem value="python" label="Python">
 
 ```python reference
 https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how_tos/client/get_outputs.py
