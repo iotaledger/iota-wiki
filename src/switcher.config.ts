@@ -260,6 +260,18 @@ const config: Config = {
         id: 'maintain-layer-2',
       },
     ],
+    [
+      {
+        label: 'Layer 1',
+        description: 'Interact with the network.',
+        id: 'maintain-layer-1',
+      },
+      {
+        label: 'Layer 2',
+        description: 'Create smart contracts.',
+        id: 'maintain-layer-2',
+      },
+    ],
   ],
 };
 
