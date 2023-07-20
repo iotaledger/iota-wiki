@@ -226,7 +226,7 @@ const config: Config = {
           id: 'goshimmer',
           label: '0.9.8',
           badges: ['IOTA 2.0'],
-        }
+        },
       ],
     },
   ],

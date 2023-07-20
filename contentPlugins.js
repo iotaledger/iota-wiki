@@ -174,7 +174,10 @@ module.exports = async () => {
       id: 'hornet-1-2-4',
       path: path.resolve(__dirname, 'docs/maintain/hornet/1.2.4/docs'),
       routeBasePath: 'hornet',
-      sidebarPath: path.resolve(__dirname, 'docs/maintain/hornet/1.2.4/sidebars.js'),
+      sidebarPath: path.resolve(
+        __dirname,
+        'docs/maintain/hornet/1.2.4/sidebars.js',
+      ),
       versions: {
         current: {
           label: '1.2.4',
@@ -186,7 +189,10 @@ module.exports = async () => {
       id: 'hornet-2-0-0-rc-6',
       path: path.resolve(__dirname, 'docs/maintain/hornet/2.0.0-rc.6/docs'),
       routeBasePath: 'hornet',
-      sidebarPath: path.resolve(__dirname, 'docs/maintain/hornet/2.0.0-rc.6/sidebars.js'),
+      sidebarPath: path.resolve(
+        __dirname,
+        'docs/maintain/hornet/2.0.0-rc.6/sidebars.js',
+      ),
       versions: {
         current: {
           label: '2.0.0-rc.6',
@@ -199,13 +205,19 @@ module.exports = async () => {
       id: 'wasp-0-7-0',
       path: path.resolve(__dirname, 'docs/maintain/wasp/0.7.0/docs'),
       routeBasePath: 'wasp',
-      sidebarPath: path.resolve(__dirname, 'docs/maintain/wasp/0.7.0/sidebars.js'),
+      sidebarPath: path.resolve(
+        __dirname,
+        'docs/maintain/wasp/0.7.0/sidebars.js',
+      ),
     },
     {
       id: 'chronicle-rs',
       path: path.resolve(__dirname, 'docs/maintain/chronicle/0.3.0/docs'),
       routeBasePath: 'chronicle',
-      sidebarPath: path.resolve(__dirname, 'docs/maintain/chronicle/0.3.0/sidebars.js'),
+      sidebarPath: path.resolve(
+        __dirname,
+        'docs/maintain/chronicle/0.3.0/sidebars.js',
+      ),
       versions: {
         current: {
           label: '0.3.0',
@@ -217,7 +229,10 @@ module.exports = async () => {
       id: 'inx-chronicle',
       path: path.resolve(__dirname, 'docs/maintain/chronicle/1.0.0-rc.1/docs'),
       routeBasePath: 'chronicle',
-      sidebarPath: path.resolve(__dirname, 'docs/maintain/chronicle/1.0.0-rc.1/sidebars.js'),
+      sidebarPath: path.resolve(
+        __dirname,
+        'docs/maintain/chronicle/1.0.0-rc.1/sidebars.js',
+      ),
       versions: {
         current: {
           label: '1.0.0-rc.1',
@@ -230,7 +245,10 @@ module.exports = async () => {
       id: 'goshimmer',
       path: path.resolve(__dirname, 'docs/maintain/goshimmer/0.9.8/docs'),
       routeBasePath: 'goshimmer',
-      sidebarPath: path.resolve(__dirname, 'docs/maintain/goshimmer/0.9.8/sidebars.js'),
+      sidebarPath: path.resolve(
+        __dirname,
+        'docs/maintain/goshimmer/0.9.8/sidebars.js',
+      ),
     },
   ];
 };
