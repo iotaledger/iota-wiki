@@ -23,24 +23,75 @@ However, you can only destroy a foundry output as long as its circulating native
 
 <DestroyFoundry />
 
-## Code Example
+## Example Code
 
-Before you run the example you should make sure the first foundry on your account has zero circulating supply. If you
+Before you run the example, you should make sure the first foundry on your account has zero circulating supply. If you
 have no available foundries, you can create one by [creating a native token](create.mdx). If you've already created your
 tokens but need to empty the foundry, you can decrease your native token supply by [melting them](melt.mdx).
 
 <Tabs groupId="language" queryString>
 <TabItem value="rust" label="Rust">
 
-The following example will:
+1. Instantiate a [`Wallet`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/core/struct.Wallet.html), get Alice's `Account` which was
+   [created in the first guide](../accounts-and-addresses/create-account.mdx) and [sync it](../accounts-and-addresses/check-balance.mdx).
+2. Get the first foundry in the account's balance.
+
+```rust reference
+https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/native_tokens/destroy_foundry.rs#L33
+```
+
+3. Burn the foundry by calling the [`Account.burn()`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/account/struct.Account.html#method.burn)
+   function.
+
+```rust reference
+https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/native_tokens/destroy_foundry.rs#L42
+```
+
+</TabItem>
+<TabItem value="typescript-node" label="Typescript (Node.js)">
 
 1. Instantiate a [`Wallet`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/core/struct.Wallet.html), get Alice's `Account` which was
    [created in the first guide](../accounts-and-addresses/create-account.mdx) and [sync it](../accounts-and-addresses/check-balance.mdx).
-2. Search the account's balance for a foundry.
-3. Display the number of foundries in the balance before destroying.
-4. Burn the foundry by calling the [`Account.burn()`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/account/struct.Account.html#method.burn)
+2. Get the first foundry in the account's balance.
+
+```typescript reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/native_tokens/destroy-foundry.ts#L30
+```
+
+3. Prepare the transaction that will burn the tokens using the [`Account.prepareDestroyFoundry()`](../../references/nodejs/classes/Account/#preparedestroyfoundry)
+   function and send the prepared transaction using the [`Account.send()`](../../references/nodejs/classes/Account/#send)
    function.
-5. Display the number of foundries in the balance after destroying.
+
+```typescript reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/native_tokens/destroy-foundry.ts#L35-L37
+```
+
+</TabItem>
+<TabItem value="python" label="Python">
+
+1. Instantiate a [`Wallet`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/core/struct.Wallet.html), get Alice's `Account` which was
+   [created in the first guide](../accounts-and-addresses/create-account.mdx) and [sync it](../accounts-and-addresses/check-balance.mdx).
+2. Get the first foundry in the account's balance.
+
+```python reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how_tos/native_tokens/destroy_foundry.py#L23
+```
+
+3. Prepare the transaction that will burn the tokens using the [`Account.prepare_destroy_foundry()`](../../references/python/iota_sdk/wallet/account/#prepare_destroy_foundry)
+   function and send the prepared transaction using the [`Account.send()`](../../references/python/iota_sdk/wallet/account/#send)
+   function.
+
+```python reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how_tos/native_tokens/destroy_foundry.py#L26C1-L26C1
+```
+
+</TabItem>
+</Tabs>
+
+### Full Example Code
+
+<Tabs groupId="language" queryString>
+<TabItem value="rust" label="Rust">
 
 ```rust reference
 https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/native_tokens/destroy_foundry.rs
@@ -49,36 +100,12 @@ https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/native_
 </TabItem>
 <TabItem value="typescript-node" label="Typescript (Node.js)">
 
-The following example will:
-
-1. Instantiate a [`Wallet`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/core/struct.Wallet.html), get Alice's `Account` which was
-   [created in the first guide](../accounts-and-addresses/create-account.mdx) and [sync it](../accounts-and-addresses/check-balance.mdx).
-2. Search the account's balance for a foundry.
-3. Display the number of foundries in the balance before destroying.
-4. Prepare the transaction that will burn the tokens using the [`Account.prepareDestroyFoundry()`](../../references/nodejs/classes/Account/#preparedestroyfoundry)
-   function.
-5. Send the prepared transaction using the [`Account.send()`](../../references/nodejs/classes/Account/#send)
-   function.
-6. Sync the account again, and display the number of foundries in the balance after destroying.
-
 ```typescript reference
 https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/native_tokens/destroy-foundry.ts
 ```
 
 </TabItem>
 <TabItem value="python" label="Python">
-
-The following example will:
-
-1. Instantiate a [`Wallet`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/core/struct.Wallet.html), get Alice's `Account` which was
-   [created in the first guide](../accounts-and-addresses/create-account.mdx) and [sync it](../accounts-and-addresses/check-balance.mdx).
-2. Search the account's balance for a foundry.
-3. Display the number of foundries in the balance before destroying.
-4. Prepare the transaction that will burn the tokens using the [`Account.prepare_destroy_foundry()`](../../references/python/iota_sdk/wallet/account/#prepare_destroy_foundry)
-   function.
-5. Send the prepared transaction using the [`Account.send()`](../../references/python/iota_sdk/wallet/account/#send)
-   function.
-6. Sync the account again, and display the native token balance after minting.
 
 ```python reference
 https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how_tos/native_tokens/destroy_foundry.py
@@ -87,7 +114,7 @@ https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how
 </TabItem>
 </Tabs>
 
-## Expected Output
+### Expected Output
 
 ```plaintext
 Foundries before destroying: 51

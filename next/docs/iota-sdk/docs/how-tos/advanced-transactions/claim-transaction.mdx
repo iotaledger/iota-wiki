@@ -19,7 +19,7 @@ import TabItem from '@theme/TabItem';
 You can use the SDK to send transaction with funds that have to be claimed (for example a
 [micro transaction](send-micro-transaction.mdx)). This guide will show you how to claim all claimable outputs in an account.
 
-## Code Example
+## Example Code
 
 <Tabs groupId="language" queryString>
 <TabItem value="rust" label="Rust">
@@ -78,21 +78,7 @@ https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how
 </TabItem>
 </Tabs>
 
-## Expected Output
-
-```plaintext
-Available outputs to claim:
-0xa8652127daebb702c5f7a758452886779156f9983513b604d4df53ba03e2ab4b0000
-0x1141f4403c6e6a8f49cf07c5af6a6d84a4434f36d0feabf14955d00ce273e82a0000
-0x166977bac6f564694c5ed949ef4d11f076edf03dc26813b54011bf0acd1bd7ec0000
-0x4c660f6fdfe839186fd1b1176769f34f6fc9843b9bbe2499694c921303b793600000
-0x4f04a922dcac8d22b95f1edb269a0aee056f2fa11bbcf0cbb408f937480e81190000
-0xebcc726e9de91de5885aeab1c16b910e3f4044887c4ef594dbf48b44199ba3220000
-Transaction sent: 0xee58a362aeb97abfac42e7b44c718ccf15d915456a1eb2046cde89af0d3fd216
-Block sent: https://explorer.shimmer.network/testnet/block/0xa51ad0cbe612d5f30ee9c96bbe840cb15ffafa8abdffcd571aa0153448e0ebe7
-```
-
-## Putting It All Together
+### Full Example Code
 
 <Tabs groupId="language" queryString>
 <TabItem value="rust" label="Rust">
@@ -117,3 +103,17 @@ https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how
 
 </TabItem>
 </Tabs>
+
+### Expected Output
+
+```plaintext
+Available outputs to claim:
+0xa8652127daebb702c5f7a758452886779156f9983513b604d4df53ba03e2ab4b0000
+0x1141f4403c6e6a8f49cf07c5af6a6d84a4434f36d0feabf14955d00ce273e82a0000
+0x166977bac6f564694c5ed949ef4d11f076edf03dc26813b54011bf0acd1bd7ec0000
+0x4c660f6fdfe839186fd1b1176769f34f6fc9843b9bbe2499694c921303b793600000
+0x4f04a922dcac8d22b95f1edb269a0aee056f2fa11bbcf0cbb408f937480e81190000
+0xebcc726e9de91de5885aeab1c16b910e3f4044887c4ef594dbf48b44199ba3220000
+Transaction sent: 0xee58a362aeb97abfac42e7b44c718ccf15d915456a1eb2046cde89af0d3fd216
+Block sent: https://explorer.shimmer.network/testnet/block/0xa51ad0cbe612d5f30ee9c96bbe840cb15ffafa8abdffcd571aa0153448e0ebe7
+```

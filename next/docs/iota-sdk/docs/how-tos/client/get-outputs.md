@@ -49,7 +49,7 @@ output type using the following functions:
 
 <AccountClient/>
 
-## Code Example
+## Example Code
 
 <Tabs groupId="language" queryString>
 <TabItem value="rust" label="Rust">
@@ -112,7 +112,7 @@ https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how
 </TabItem>
 </Tabs>
 
-## Expected Output
+### Expected Output
 
 <Tabs groupId="language" queryString>
 <TabItem value="rust" label="Rust">

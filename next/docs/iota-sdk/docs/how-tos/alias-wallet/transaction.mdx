@@ -26,7 +26,7 @@ transaction from an alias account.
 <AliasNFT />
 <TipFaucet />
 
-## Code Example
+## Example Code
 
 <Tabs groupId="language" queryString>
 <TabItem value="rust" label="Rust">
@@ -38,17 +38,34 @@ The following example will:
 2. Sync the account with the node to get the latest transactions by calling the [`Account.sync()`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/account/struct.Account.html#method.sync)
    function. Note how the [`SyncOptions`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/account/struct.SyncOptions.html) for the Alias set [`AliasSyncOptions.basicOutputs`](../../references/nodejs/interfaces/AliasSyncOptions/#basicoutputs)
    to `true`.
-3. Request the account's balance by calling the [`Account.balance()`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/account/struct.Account.html#method.balance)
-   function.
-4. Retrieve the Alias Id of the first [`AliasOutput`](https://docs.rs/iota-sdk/latest/iota_sdk/types/block/output/alias/struct.AliasOutput.html) related to Alice's
+
+```rust reference
+https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/alias_wallet/transaction.rs#L24-L30
+```
+
+```rust reference
+https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/alias_wallet/transaction.rs#L43
+```
+
+3. Retrieve the Alias Id of the first [`AliasOutput`](https://docs.rs/iota-sdk/latest/iota_sdk/types/block/output/alias/struct.AliasOutput.html) related to Alice's
    account.
-5. Retrieve the Alias' address using the [`Client.alias_id_to_bech32()`](https://docs.rs/iota-sdk/latest/iota_sdk/client/core/struct.ClientInner.html#method.alias_id_to_bech32)
+
+```rust reference
+https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/alias_wallet/transaction.rs#L48
+```
+
+4. Retrieve the Alias' address using the [`Client.alias_id_to_bech32()`](https://docs.rs/iota-sdk/latest/iota_sdk/client/core/struct.ClientInner.html#method.alias_id_to_bech32)
    function.
-6. Send 1 SMR to an address using the [`Account.send()`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/account/struct.Account.html#method.send) function.
+
+```rust reference
+https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/alias_wallet/transaction.rs#L52
+```
+
+5. Send 1 SMR to an address using the [`Account.send()`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/account/struct.Account.html#method.send) function.
    Make sure to update the code sample to send to the address of your choice.
 
 ```rust reference
-https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/alias_wallet/transaction.rs
+https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/alias_wallet/transaction.rs#L63-L72
 ```
 
 </TabItem>
@@ -61,18 +78,40 @@ The following example will:
 2. Sync the account with the node to get the latest transactions by calling the [`Account.sync()`](../../references/nodejs/classes/Account/#sync)
    function. Note how the [`SyncOptions`](../../references/nodejs/interfaces/SyncOptions/#alias) for the Alias set [`AliasSyncOptions.basicOutputs`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/account/struct.AliasSyncOptions.html)
    to `true`.
-3. Request the account's balance by calling the [`Account.balance()`](../../references/nodejs/classes/Account/#balance)
-   function.
-4. Retrieve the Alias Id of the first [`AliasOutput`](../../references/nodejs/classes/AliasOutput/) related to Alice's
+
+```typescript reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/alias_wallet/transaction.ts#L22-L26
+```
+
+```typescript reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/alias_wallet/transaction.ts#L36
+```
+
+3. Retrieve the Alias Id of the first [`AliasOutput`](../../references/nodejs/classes/AliasOutput/) related to Alice's
    account.
-5. Retrieve the Alias' address using the [`Utils.aliasIdToBech32()`](../../references/nodejs/classes/Utils/#aliasidtobech32)
+
+```typescript reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/alias_wallet/transaction.ts#L43
+```
+
+4. Retrieve the Alias' address using the [`Utils.aliasIdToBech32()`](../../references/nodejs/classes/Utils/#aliasidtobech32)
    function.
-6. Define the inputs for the transaction as the first Output that can be unlocked by the Alias address.
-7. Send 1 SMR to an address using the [`Account.send()`](../../references/nodejs/classes/Account/#send) function.
+
+```typescript reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/alias_wallet/transaction.ts#L47-L50
+```
+
+5. Define the inputs for the transaction as the first Output that can be unlocked by the Alias address.
+
+```typescript reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/alias_wallet/transaction.ts#L53-L60
+```
+
+6. Send 1 SMR to an address using the [`Account.sendWithParams()`](../../references/nodejs/classes/Account/#sendwithparams) function.
    Make sure to update the code sample to send to the address of your choice.
 
 ```typescript reference
-https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/alias_wallet/transaction.ts
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/alias_wallet/transaction.ts#L62-L73
 ```
 
 </TabItem>
@@ -85,14 +124,62 @@ The following example will:
 2. Sync the account with the node to get the latest transactions by calling the [`Account.sync()`](../../references/python/iota_sdk/wallet/account/#sync)
    function. Note how the [`sync_options`](../../references/python/iota_sdk/wallet/sync_options) for the Alias set [`AliasSyncOptions.basic_outputs`](../../references/python/iota_sdk/wallet/sync_options/#aliassyncoptions-objects)
    to `true`.
-3. Request the account's balance by calling the [`Account.getBalance()`](../../references/python/iota_sdk/wallet/account/#get_balance)
+
+```python reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how_tos/alias_wallet/transaction.py#L9
+```
+
+```python reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how_tos/alias_wallet/transaction.py#L20
+```
+
+3. Retrieve the Alias Id of the first `AliasOutput` related to Alice's account.
+
+```python reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how_tos/alias_wallet/transaction.py#L25
+```
+
+4. Retrieve the [`AliasAddress`](../../references/python/iota_sdk/types/address/#aliasaddress-objects) using the [`Utils.alias_id_to_bech32()`](../../references/python/iota_sdk/utils/#alias_id_to_bech32)
    function.
-4. Retrieve the Alias Id of the first `AliasOutput` related to Alice's account.
-5. Retrieve the [`AliasAddress`](../../references/python/iota_sdk/types/address/#aliasaddress-objects) using the [`Utils.alias_id_to_bech32()`](../../references/python/iota_sdk/utils/#alias_id_to_bech32)
-   function.
-6. Define the inputs for the transaction as the first Output that can be unlocked by the Alias address.
-7. Send 1 SMR to an address using the [`Account.send()`](../../references/python/iota_sdk/wallet/account/#send) function.
+
+```python reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how_tos/alias_wallet/transaction.py#L29-L30
+```
+
+5. Define the inputs for the transaction as the first Output that can be unlocked by the Alias address.
+
+```python reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how_tos/alias_wallet/transaction.py#L34
+```
+
+6. Send 1 SMR to an address using the [`Account.send_with_params()`](../../references/python/iota_sdk/wallet/account/#send_with_params) function.
    Make sure to update the code sample to send to the address of your choice.
+
+```python reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how_tos/alias_wallet/transaction.py#L36-L43
+```
+
+</TabItem>
+</Tabs>
+
+### Full Example Code
+
+<Tabs groupId="language" queryString>
+<TabItem value="rust" label="Rust">
+
+```rust reference
+https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/alias_wallet/transaction.rs
+```
+
+</TabItem>
+<TabItem value="typescript-node" label="Typescript (Node.js)">
+
+```typescript reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/alias_wallet/transaction.ts
+```
+
+</TabItem>
+<TabItem value="python" label="Python">
 
 ```python reference
 https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how_tos/alias_wallet/transaction.py
@@ -101,7 +188,7 @@ https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how
 </TabItem>
 </Tabs>
 
-## Expected Output
+### Expected Output
 
 ```plaintext
 Balance before sending funds from alias: 2000000000

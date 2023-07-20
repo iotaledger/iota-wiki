@@ -28,28 +28,40 @@ by transferring its Alias output.
 <AliasNFT />
 <TipFaucet />
 
-## Code Example
+## Example Code
 
 <Tabs groupId="language" queryString>
 <TabItem value="rust" label="Rust">
 
 The following example will:
 
-1. Instantiate a [`Wallet`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/core/struct.Wallet.html).
-2. Get Alice's [`Account`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/account/struct.Account.html) which was
+1. Instantiate a [`Wallet`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/core/struct.Wallet.html), get Alice's `Account` which was
    [created in the first guide](../accounts-and-addresses/create-account.mdx).
-3. Sync the account with the node to get the latest transactions by calling the [`Account.sync()`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/account/struct.Account.html#method.sync)
+2. Request the account's balance by calling the [`Account.sync()`](https://docs.rs/iota-sdk/latest/iota_sdk//wallet/account/struct.Account.html#method.sync) function.
    function.
-4. Request the account's balance by calling the [`Account.balance()`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/account/struct.Account.html#method.balance)
-   function.
-5. Retrieve the Alias Id of the first [`AliasOutput`](https://docs.rs/iota-sdk/latest/iota_sdk/types/block/output/alias/struct.AliasOutput.html) related to Alice's
-   account.
-6. Retrieve the Alias' address using the [`Client.alias_id_to_bech32()`](https://docs.rs/iota-sdk/latest/iota_sdk/client/core/struct.ClientInner.html#method.alias_id_to_bech32)
-   function.
-7. Request funds to the `FAUCET_URL` you defined in the `.env` file by calling the [`Client::utils::request_funds_from_faucet`](https://docs.rs/iota-sdk/latest/iota_sdk/client/utils/fn.request_funds_from_faucet.html) function.
 
 ```rust reference
-https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/alias_wallet/request_funds.rs
+https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/alias_wallet/request_funds.rs#L34
+```
+
+3. Retrieve the Alias Id of the first [`AliasOutput`](https://docs.rs/iota-sdk/latest/iota_sdk/types/block/output/alias/struct.AliasOutput.html) related to Alice's
+   account.
+
+```rust reference
+https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/alias_wallet/request_funds.rs#L39
+```
+
+4. Retrieve the Alias address using the [`Client.alias_id_to_bech32()`](https://docs.rs/iota-sdk/latest/iota_sdk/client/core/struct.ClientInner.html#method.alias_id_to_bech32)
+   function.
+
+```rust reference
+https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/alias_wallet/request_funds.rs#L43
+```
+
+5. Request funds to the `FAUCET_URL` you defined in the `.env` file by calling the [`Client::utils::request_funds_from_faucet`](https://docs.rs/iota-sdk/latest/iota_sdk/client/utils/fn.request_funds_from_faucet.html) function.
+
+```rust reference
+https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/alias_wallet/request_funds.rs#L44
 ```
 
 </TabItem>
@@ -59,13 +71,80 @@ The following example will:
 
 1. Instantiate a [`Wallet`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/core/struct.Wallet.html), get Alice's `Account` which was
    [created in the first guide](../accounts-and-addresses/create-account.mdx) and [sync it](../accounts-and-addresses/check-balance.mdx).
-2. Request the account's balance by calling the [`Account.balance()`](../../references/nodejs/classes/Account/#balance)
+2. Request the account's balance by calling the [`Account.sync()`](../../references/nodejs/classes/Account/#sync)
    function.
+
+```typescript reference
+    https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/alias_wallet/request-funds.ts#L29
+```
+
 3. Retrieve the Alias Id of the first [`AliasOutput`](../../references/nodejs/classes/AliasOutput/) related to Alice's
    account.
+
+```typescript reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/alias_wallet/request-funds.ts#L36
+```
+
 4. Retrieve the Alias' address using the [`Utils.aliasIdToBech32()`](../../references/nodejs/classes/Utils/#aliasidtobech32)
    function.
+
+```typescript reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/alias_wallet/request-funds.ts#L40-L43
+```
+
 5. Request funds to the `FAUCET_URL` you defined in the `.env` file by calling the [`Client.requestFundsFromFaucet()`](../../references/nodejs/classes/Client/#requestfundsfromfaucet) function.
+
+```typescript reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/alias_wallet/request-funds.ts#L44-L46
+```
+
+</TabItem>
+<TabItem value="python" label="Python">
+
+1. Instantiate a [`Wallet`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/core/struct.Wallet.html), get Alice's `Account` which was
+   [created in the first guide](../accounts-and-addresses/create-account.mdx) and [sync it](../accounts-and-addresses/check-balance.mdx).
+2. Request the account's balance by calling the [`Account.sync()`](../../references/python/iota_sdk/wallet/account/#sync)
+   function.
+
+```python reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how_tos/alias_wallet/request_funds.py#L16
+```
+
+3. Retrieve the Alias Id of the first `AliasOutput` related to Alice's account.
+
+```python reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how_tos/alias_wallet/request_funds.py#L22
+```
+
+4. Retrieve the [`AliasAddress`](../../references/python/iota_sdk/types/address/#aliasaddress-objects) using the [`Utils.alias_id_to_bech32()`](../../references/python/iota_sdk/utils/#alias_id_to_bech32)
+   function.
+
+```python reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how_tos/alias_wallet/request_funds.py#L26-L7
+```
+
+5. Request funds to the `FAUCET_URL` you defined in the `.env` file by calling the
+   [`Client.request_funds_from_faucet`](../../references/python/iota_sdk/client/_utils/#request_funds_from_faucet)
+   function.
+
+```python reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how_tos/alias_wallet/request_funds.py#L28-L29
+```
+
+</TabItem>
+</Tabs>
+
+### Full Example Code
+
+<Tabs groupId="language" queryString>
+<TabItem value="rust" label="Rust">
+
+```rust reference
+https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/alias_wallet/request_funds.rs
+```
+
+</TabItem>
+<TabItem value="typescript-node" label="Typescript (Node.js)">
 
 ```typescript reference
 https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/alias_wallet/request-funds.ts
@@ -73,16 +152,6 @@ https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how
 
 </TabItem>
 <TabItem value="python" label="Python">
-1. Instantiate a [`Wallet`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/core/struct.Wallet.html), get Alice's `Account` which was
-[created in the first guide](../accounts-and-addresses/create-account.mdx) and [sync it](../accounts-and-addresses/check-balance.mdx).
-4. Request the account's balance by calling the [`Account.getBalance()`](../../references/python/iota_sdk/wallet/account/#get_balance)
-   function.
-5. Retrieve the Alias Id of the first `AliasOutput` related to Alice's account.
-6. Retrieve the [`AliasAddress`](../../references/python/iota_sdk/types/address/#aliasaddress-objects) using the [`Utils.alias_id_to_bech32()`](../../references/python/iota_sdk/utils/#alias_id_to_bech32)
-   function.
-7. Request funds to the `FAUCET_URL` you defined in the `.env` file by calling the
-   [`Client.request_funds_from_faucet`](../../references/python/iota_sdk/client/_utils/#request_funds_from_faucet)
-   function.
 
 ```python reference
 https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how_tos/alias_wallet/request_funds.py
@@ -91,7 +160,7 @@ https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how
 </TabItem>
 </Tabs>
 
-## Expected Output
+### Expected Output
 
 ```plaintext
 Balance before requesting funds on alias address: 1000000000
