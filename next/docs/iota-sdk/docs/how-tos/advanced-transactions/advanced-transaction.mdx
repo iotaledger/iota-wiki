@@ -39,23 +39,35 @@ The following example will:
    to the `BasicOutputBuilder()` by chaining calls to the
    [`BasicOutputBuilder.add_unlock_condition()`](https://docs.rs/iota-sdk/latest/iota_sdk/types/block/output/basic/struct.BasicOutputBuilder.html#method.add_unlock_condition)
 
+<div className={'hide-code-block-extras'}>
+
 ```rust reference
 https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/advanced_transactions/advanced_transaction.rs#L47-L52
 ```
 
+</div>
+
 3. Send the `BasicOutput` created in the previous step by calling the
    ['Account.send_outputs()'](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/account/struct.Account.html#method.send_outputs) function.
+
+<div className={'hide-code-block-extras'}>
 
 ```rust reference
 https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/advanced_transactions/advanced_transaction.rs#L54
 ```
 
+</div>
+
 4. Await for the `Transaction` to get confirmed by calling the ['Account.retryTransactionUntilIncluded'](../../references/nodejs/classes/Account/#retrytransactionuntilincluded)
    function.
+
+<div className={'hide-code-block-extras'}>
 
 ```rust reference
 https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/advanced_transactions/advanced_transaction.rs#L58-L60
 ```
+
+</div>
 
 </TabItem>
 <TabItem value="typescript-node" label="Typescript (Node.js)">
@@ -71,24 +83,36 @@ The following example will:
    the [`TimelockUnlockCondition`](../../references/nodejs/classes/TimelockUnlockCondition/) in as
    [`unlockConditions`](../../references/nodejs/classes/UnlockCondition/) to the `Client`.
 
+<div className={'hide-code-block-extras'}>
+
 ```typescript reference
 https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/advanced_transactions/advanced_transaction.ts#L41-L52
 ```
 
+</div>
+
 3. Send the [`Output`](../../references/nodejs/classes/Output/) created in the previous step by calling the
    ['Account.sendOutputs()'](../../references/nodejs/classes/Account/#sendoutputs) function.
+
+<div className={'hide-code-block-extras'}>
 
 ```typescript reference
 https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/advanced_transactions/advanced_transaction.ts#L54
 ```
 
+</div>
+
 4. Await for the [`Transaction`](../../references/nodejs/classes/Transaction/) to get confirmed by calling the
    ['Account.retryTransactionUntilIncluded'](../../references/nodejs/classes/Account/#retrytransactionuntilincluded)
    function.
 
+<div className={'hide-code-block-extras'}>
+
 ```typescript reference
 https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/advanced_transactions/advanced_transaction.ts#L57-L59
 ```
+
+</div>
 
 </TabItem>
 <TabItem value="python" label="Python">
@@ -102,24 +126,36 @@ https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how
    the [`TimelockUnlockCondition`](references/python/iota_sdk/types/unlock_condition/#timelockunlockcondition-objects) in as
    [`UnlockConditions`](../../references/python/iota_sdk/types/unlock_condition/) to the `Client`.
 
+<div className={'hide-code-block-extras'}>
+
 ```python reference
 https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how_tos/advanced_transactions/advanced_transaction.py#L29-L37
 ```
 
+</div>
+
 3. Send the [`Output`](../../references/python/iota_sdk/types/output/) created in the previous step by calling the
    ['Account.sendOutputs()'](../../references/python/iota_sdk/wallet/account/#send_outputs) function.
+
+<div className={'hide-code-block-extras'}>
 
 ```python reference
 https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how_tos/advanced_transactions/advanced_transaction.py#L39
 ```
 
+</div>
+
 4. Await for the [`Transaction`](../../references/python/iota_sdk/types/transaction/) to get confirmed by calling
    the ['Account.retry_transaction_until_included'](../../references/python/iota_sdk/wallet/account/#retry_transaction_until_included)
    function.
 
+<div className={'hide-code-block-extras'}>
+
 ```python reference
 https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how_tos/advanced_transactions/advanced_transaction.py#L42
 ```
+
+</div>
 
 </TabItem>
 </Tabs>

@@ -31,16 +31,24 @@ The following example will:
    [created in the first guide](../accounts-and-addresses/create-account.mdx) and [sync it](../accounts-and-addresses/check-balance.mdx).
 2. Search the account's balance for a foundry and the first native token Id.
 
+<div className={'hide-code-block-extras'}>
+
 ```rust reference
 https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/native_tokens/mint.rs#L39-L42
 ```
 
+</div>
+
 3. Mint `MINT_AMOUNT` native tokens by calling the [`Account.mint_native_token()`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/account/struct.Account.html#method.mint_native_token)
    function.
+
+<div className={'hide-code-block-extras'}>
 
 ```rust reference
 https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/native_tokens/mint.rs#L62
 ```
+
+</div>
 
 </TabItem>
 <TabItem value="typescript-node" label="Typescript (Node.js)">
@@ -51,17 +59,25 @@ The following example will:
    [created in the first guide](../accounts-and-addresses/create-account.mdx) and [sync it](../accounts-and-addresses/check-balance.mdx).
 2. Search the account's balance for a foundry and the first native token Id.
 
+<div className={'hide-code-block-extras'}>
+
 ```typescript reference
 https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/native_tokens/mint.ts#L32-L36
 ```
+
+</div>
 
 3. Prepare to mint `MINT_AMOUNT` native tokens transaction by calling the [`Account.prepareMintNativeToken()`](../../references/nodejs/classes/Account/#preparemintnativetoken)
    function and send the prepared transaction using the [`Account.send()`](../../references/nodejs/classes/Account/#send)
    function.
 
+<div className={'hide-code-block-extras'}>
+
 ```typescript reference
 https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/native_tokens/mint.ts#L45-L47
 ```
+
+</div>
 
 </TabItem>
 <TabItem value="python" label="Python">
@@ -72,17 +88,25 @@ The following example will:
    [created in the first guide](../accounts-and-addresses/create-account.mdx) and [sync it](../accounts-and-addresses/check-balance.mdx).
 2. Search the account's balance for a foundry and the first native token Id.
 
+<div className={'hide-code-block-extras'}>
+
 ```python reference
 https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how_tos/native_tokens/mint.py#L17-L20
 ```
+
+</div>
 
 3. Prepare to mint 10 native tokens transaction by calling the [`Account.prepare_mint_native_token()`](../../references/python/iota_sdk/wallet/account/#prepare_mint_native_token)
    function and send the prepared transaction using the [`Account.send()`](../../references/python/iota_sdk/wallet/account/#send)
    function.
 
+<div className={'hide-code-block-extras'}>
+
 ```python reference
 https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how_tos/native_tokens/mint.py#L31
 ```
+
+</div>
 
 </TabItem>
 </Tabs>

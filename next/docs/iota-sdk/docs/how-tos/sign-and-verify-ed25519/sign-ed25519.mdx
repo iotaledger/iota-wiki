@@ -26,63 +26,99 @@ process guarantees that the data has not been tampered with and originated from 
 
 1. Create a [`StrongholdSecretManager`](https://docs.rs/iota-sdk/latest/iota_sdk/client/secret/stronghold/type.StrongholdSecretManager.html) with the `STRONGHOLD_PASSWORD` and `MNEMONIC` variables in your `.env` file.
 
+<div className={'hide-code-block-extras'}>
+
 ```rust reference
 https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/sign_and_verify_ed25519/sign_ed25519.rs#L41-L49
 ```
 
+</div>
+
 2. Use the [`SecretManager`](https://docs.rs/iota-sdk/latest/iota_sdk/client/secret/enum.SecretManager.html) to sign the `FOUNDRY_METADATA` message as bytes using the [`StrongholdAdapter.sign_ed25519()`](https://docs.rs/iota-sdk/latest/iota_sdk/client/stronghold/struct.StrongholdAdapter.html#method.sign_ed25519) function.
+
+<div className={'hide-code-block-extras'}>
 
 ```rust reference
 https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/sign_and_verify_ed25519/sign_ed25519.rs#L46-L49
 ```
 
+</div>
+
 3. Hash the public key to get the address using the [`hex_public_key_to_bech32_address()`](https://docs.rs/iota-sdk/latest/iota_sdk/client/utils/fn.hex_public_key_to_bech32_address.html) function.
+
+<div className={'hide-code-block-extras'}>
 
 ```rust reference
 https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/sign_and_verify_ed25519/sign_ed25519.rs#L57
 ```
+
+</div>
 
 </TabItem>
 <TabItem value="typescript-node" label="Typescript (Node.js)">
 
 1. Create a [`StrongholdSecretManager`](../../references/nodejs/interfaces/StrongholdSecretManager/) with the `STRONGHOLD_PASSWORD` and `MNEMONIC` variables in your `.env` file.
 
+<div className={'hide-code-block-extras'}>
+
 ```typescript reference
 https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/sign_and_verify_ed25519/sign-ed25519.ts#L41-L46
 ```
 
+</div>
+
 2. Use the [`SecretManager`](../../references/nodejs/classes/SecretManager/) to sign the `FOUNDRY_METADATA` message as bytes using the [`SecretManager.signEd25519()`](../../references/nodejs/classes/SecretManager/#signed25519) function.
+
+<div className={'hide-code-block-extras'}>
 
 ```typescript reference
 https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/sign_and_verify_ed25519/sign-ed25519.ts#L53-L63
 ```
 
+</div>
+
 3. Hash the public key to get the address using the [`Utils.hexPublicKeyToBech32Address()`](../../references/nodejs/classes/Utils/#hexpublickeytobech32address) function.
+
+<div className={'hide-code-block-extras'}>
 
 ```typescript reference
 https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/sign_and_verify_ed25519/sign-ed25519.ts#L68-L71
 ```
+
+</div>
 
 </TabItem>
 <TabItem value="python" label="Python">
 
 1. Create a [`StrongholdSecretManager`](../../references/python/iota_sdk/secret_manager/#strongholdsecretmanager-objects) with the `STRONGHOLD_PASSWORD` and `MNEMONIC` variables in your `.env` file.
 
+<div className={'hide-code-block-extras'}>
+
 ```python reference
 https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how_tos/sign_and_verify_ed25519/sign_ed25519.py#L20-L21
 ```
 
+</div>
+
 2. Use the [`SecretManager`](../../references/python/iota_sdk/secret_manager/) to sign the `FOUNDRY_METADATA` message as bytes using the [`SecretManager.sign_ed25519()`](../../references/python/iota_sdk/secret_manager/#sign_ed25519) function.
+
+<div className={'hide-code-block-extras'}>
 
 ```python reference
 https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how_tos/sign_and_verify_ed25519/sign_ed25519.py#L29-L37
 ```
 
+</div>
+
 3. Hash the public key to get the address using the [`Utils.hex_public_key_to_bech32_address()`](../../references/python/iota_sdk/utils/#hex_public_key_to_bech32_address) function.
+
+<div className={'hide-code-block-extras'}>
 
 ```python reference
 https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how_tos/sign_and_verify_ed25519/sign_ed25519.py#L41-L42
 ```
+
+</div>
 
 </TabItem>
 </Tabs>

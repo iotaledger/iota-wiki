@@ -39,34 +39,54 @@ The following example will:
    function. Note how the [`SyncOptions`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/account/struct.SyncOptions.html) for the Alias set [`AliasSyncOptions.basicOutputs`](../../references/nodejs/interfaces/AliasSyncOptions/#basicoutputs)
    to `true`.
 
+<div className={'hide-code-block-extras'}>
+
 ```rust reference
 https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/alias_wallet/transaction.rs#L24-L30
 ```
+
+</div>
+
+<div className={'hide-code-block-extras'}>
 
 ```rust reference
 https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/alias_wallet/transaction.rs#L43
 ```
 
+</div>
+
 3. Retrieve the Alias Id of the first [`AliasOutput`](https://docs.rs/iota-sdk/latest/iota_sdk/types/block/output/alias/struct.AliasOutput.html) related to Alice's
    account.
+
+<div className={'hide-code-block-extras'}>
 
 ```rust reference
 https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/alias_wallet/transaction.rs#L48
 ```
 
+</div>
+
 4. Retrieve the Alias' address using the [`Client.alias_id_to_bech32()`](https://docs.rs/iota-sdk/latest/iota_sdk/client/core/struct.ClientInner.html#method.alias_id_to_bech32)
    function.
+
+<div className={'hide-code-block-extras'}>
 
 ```rust reference
 https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/alias_wallet/transaction.rs#L52
 ```
 
+</div>
+
 5. Send 1 SMR to an address using the [`Account.send()`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/account/struct.Account.html#method.send) function.
    Make sure to update the code sample to send to the address of your choice.
+
+<div className={'hide-code-block-extras'}>
 
 ```rust reference
 https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/alias_wallet/transaction.rs#L63-L72
 ```
+
+</div>
 
 </TabItem>
 <TabItem value="typescript-node" label="Typescript (Node.js)">
@@ -79,40 +99,64 @@ The following example will:
    function. Note how the [`SyncOptions`](../../references/nodejs/interfaces/SyncOptions/#alias) for the Alias set [`AliasSyncOptions.basicOutputs`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/account/struct.AliasSyncOptions.html)
    to `true`.
 
+<div className={'hide-code-block-extras'}>
+
 ```typescript reference
 https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/alias_wallet/transaction.ts#L22-L26
 ```
+
+</div>
+
+<div className={'hide-code-block-extras'}>
 
 ```typescript reference
 https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/alias_wallet/transaction.ts#L36
 ```
 
+</div>
+
 3. Retrieve the Alias Id of the first [`AliasOutput`](../../references/nodejs/classes/AliasOutput/) related to Alice's
    account.
+
+<div className={'hide-code-block-extras'}>
 
 ```typescript reference
 https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/alias_wallet/transaction.ts#L43
 ```
 
+</div>
+
 4. Retrieve the Alias' address using the [`Utils.aliasIdToBech32()`](../../references/nodejs/classes/Utils/#aliasidtobech32)
    function.
+
+<div className={'hide-code-block-extras'}>
 
 ```typescript reference
 https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/alias_wallet/transaction.ts#L47-L50
 ```
 
+</div>
+
 5. Define the inputs for the transaction as the first Output that can be unlocked by the Alias address.
+
+<div className={'hide-code-block-extras'}>
 
 ```typescript reference
 https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/alias_wallet/transaction.ts#L53-L60
 ```
 
+</div>
+
 6. Send 1 SMR to an address using the [`Account.sendWithParams()`](../../references/nodejs/classes/Account/#sendwithparams) function.
    Make sure to update the code sample to send to the address of your choice.
+
+<div className={'hide-code-block-extras'}>
 
 ```typescript reference
 https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/alias_wallet/transaction.ts#L62-L73
 ```
+
+</div>
 
 </TabItem>
 <TabItem value="python" label="Python">
@@ -125,39 +169,63 @@ The following example will:
    function. Note how the [`sync_options`](../../references/python/iota_sdk/wallet/sync_options) for the Alias set [`AliasSyncOptions.basic_outputs`](../../references/python/iota_sdk/wallet/sync_options/#aliassyncoptions-objects)
    to `true`.
 
+<div className={'hide-code-block-extras'}>
+
 ```python reference
 https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how_tos/alias_wallet/transaction.py#L9
 ```
+
+</div>
+
+<div className={'hide-code-block-extras'}>
 
 ```python reference
 https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how_tos/alias_wallet/transaction.py#L20
 ```
 
+</div>
+
 3. Retrieve the Alias Id of the first `AliasOutput` related to Alice's account.
+
+<div className={'hide-code-block-extras'}>
 
 ```python reference
 https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how_tos/alias_wallet/transaction.py#L25
 ```
 
+</div>
+
 4. Retrieve the [`AliasAddress`](../../references/python/iota_sdk/types/address/#aliasaddress-objects) using the [`Utils.alias_id_to_bech32()`](../../references/python/iota_sdk/utils/#alias_id_to_bech32)
    function.
+
+<div className={'hide-code-block-extras'}>
 
 ```python reference
 https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how_tos/alias_wallet/transaction.py#L29-L30
 ```
 
+</div>
+
 5. Define the inputs for the transaction as the first Output that can be unlocked by the Alias address.
+
+<div className={'hide-code-block-extras'}>
 
 ```python reference
 https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how_tos/alias_wallet/transaction.py#L34
 ```
 
+</div>
+
 6. Send 1 SMR to an address using the [`Account.send_with_params()`](../../references/python/iota_sdk/wallet/account/#send_with_params) function.
    Make sure to update the code sample to send to the address of your choice.
+
+<div className={'hide-code-block-extras'}>
 
 ```python reference
 https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how_tos/alias_wallet/transaction.py#L36-L43
 ```
+
+</div>
 
 </TabItem>
 </Tabs>

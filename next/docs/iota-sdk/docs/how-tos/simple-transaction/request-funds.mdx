@@ -33,15 +33,23 @@ using the `request_funds_from_faucet` function.
    related to the `Account` by calling the [`Account.addresses()`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/account/struct.AccountInner.html#method.addresses)
    function.
 
+<div className={'hide-code-block-extras'}>
+
 ```rust reference
 https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/simple_transaction/request_funds.rs#L30
 ```
 
+</div>
+
 3. Request funds to the `FAUCET_URL` you defined in the `.env` file by calling the [`Client::utils::request_funds_from_faucet`](https://docs.rs/iota-sdk/latest/iota_sdk/client/utils/fn.request_funds_from_faucet.html) function.
+
+<div className={'hide-code-block-extras'}>
 
 ```rust reference
 https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/simple_transaction/request_funds.rs#L36-L37
 ```
+
+</div>
 
 </TabItem>
 <TabItem value="typescript-node" label="Typescript (Node.js)">
@@ -53,15 +61,23 @@ The following example will:
 2. Retrieve the first address related to Alice's account by calling the
    [`Account.addresses()`](../../references/nodejs/classes/Account/#addresses) function.
 
+<div className={'hide-code-block-extras'}>
+
 ```typescript reference
 https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/simple_transaction/request-funds.ts#L29
 ```
 
+</div>
+
 3. Request funds to the `FAUCET_URL` you defined in the `.env` file by calling the [`Client.requestFundsFromFaucet`](../../references/nodejs/classes/Client/#requestfundsfromfaucet) function.
+
+<div className={'hide-code-block-extras'}>
 
 ```typescript reference
 https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/simple_transaction/request-funds.ts#L32-L38
 ```
+
+</div>
 
 </TabItem>
 <TabItem value="python" label="Python">
@@ -72,17 +88,25 @@ https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how
    related to the `Account` by calling the [`Account.addresses()`](../../references/python/iota_sdk/wallet/account/#addresses)
    function.
 
+<div className={'hide-code-block-extras'}>
+
 ```python reference
 https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how_tos/simple_transaction/request_funds.py#L17
 ```
+
+</div>
 
 3. Request funds to the `FAUCET_URL` you defined in the `.env` file by calling the
    [`Client.request_funds_from_faucet`](../../references/python/iota_sdk/client/_utils/#request_funds_from_faucet)
    function.
 
+<div className={'hide-code-block-extras'}>
+
 ```python reference
 https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how_tos/simple_transaction/request_funds.py#L20
 ```
+
+</div>
 
 </TabItem>
 </Tabs>

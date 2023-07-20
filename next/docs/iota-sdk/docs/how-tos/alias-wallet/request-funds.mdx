@@ -40,29 +40,45 @@ The following example will:
 2. Request the account's balance by calling the [`Account.sync()`](https://docs.rs/iota-sdk/latest/iota_sdk//wallet/account/struct.Account.html#method.sync) function.
    function.
 
+<div className={'hide-code-block-extras'}>
+
 ```rust reference
 https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/alias_wallet/request_funds.rs#L34
 ```
 
+</div>
+
 3. Retrieve the Alias Id of the first [`AliasOutput`](https://docs.rs/iota-sdk/latest/iota_sdk/types/block/output/alias/struct.AliasOutput.html) related to Alice's
    account.
+
+<div className={'hide-code-block-extras'}>
 
 ```rust reference
 https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/alias_wallet/request_funds.rs#L39
 ```
 
+</div>
+
 4. Retrieve the Alias address using the [`Client.alias_id_to_bech32()`](https://docs.rs/iota-sdk/latest/iota_sdk/client/core/struct.ClientInner.html#method.alias_id_to_bech32)
    function.
+
+<div className={'hide-code-block-extras'}>
 
 ```rust reference
 https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/alias_wallet/request_funds.rs#L43
 ```
 
+</div>
+
 5. Request funds to the `FAUCET_URL` you defined in the `.env` file by calling the [`Client::utils::request_funds_from_faucet`](https://docs.rs/iota-sdk/latest/iota_sdk/client/utils/fn.request_funds_from_faucet.html) function.
+
+<div className={'hide-code-block-extras'}>
 
 ```rust reference
 https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/alias_wallet/request_funds.rs#L44
 ```
+
+</div>
 
 </TabItem>
 <TabItem value="typescript-node" label="Typescript (Node.js)">
@@ -74,29 +90,45 @@ The following example will:
 2. Request the account's balance by calling the [`Account.sync()`](../../references/nodejs/classes/Account/#sync)
    function.
 
+<div className={'hide-code-block-extras'}>
+
 ```typescript reference
     https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/alias_wallet/request-funds.ts#L29
 ```
 
+</div>
+
 3. Retrieve the Alias Id of the first [`AliasOutput`](../../references/nodejs/classes/AliasOutput/) related to Alice's
    account.
+
+<div className={'hide-code-block-extras'}>
 
 ```typescript reference
 https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/alias_wallet/request-funds.ts#L36
 ```
 
+</div>
+
 4. Retrieve the Alias' address using the [`Utils.aliasIdToBech32()`](../../references/nodejs/classes/Utils/#aliasidtobech32)
    function.
+
+<div className={'hide-code-block-extras'}>
 
 ```typescript reference
 https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/alias_wallet/request-funds.ts#L40-L43
 ```
 
+</div>
+
 5. Request funds to the `FAUCET_URL` you defined in the `.env` file by calling the [`Client.requestFundsFromFaucet()`](../../references/nodejs/classes/Client/#requestfundsfromfaucet) function.
+
+<div className={'hide-code-block-extras'}>
 
 ```typescript reference
 https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/alias_wallet/request-funds.ts#L44-L46
 ```
+
+</div>
 
 </TabItem>
 <TabItem value="python" label="Python">
@@ -106,30 +138,46 @@ https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how
 2. Request the account's balance by calling the [`Account.sync()`](../../references/python/iota_sdk/wallet/account/#sync)
    function.
 
+<div className={'hide-code-block-extras'}>
+
 ```python reference
 https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how_tos/alias_wallet/request_funds.py#L16
 ```
 
+</div>
+
 3. Retrieve the Alias Id of the first `AliasOutput` related to Alice's account.
+
+<div className={'hide-code-block-extras'}>
 
 ```python reference
 https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how_tos/alias_wallet/request_funds.py#L22
 ```
 
+</div>
+
 4. Retrieve the [`AliasAddress`](../../references/python/iota_sdk/types/address/#aliasaddress-objects) using the [`Utils.alias_id_to_bech32()`](../../references/python/iota_sdk/utils/#alias_id_to_bech32)
    function.
+
+<div className={'hide-code-block-extras'}>
 
 ```python reference
 https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how_tos/alias_wallet/request_funds.py#L26-L7
 ```
 
+</div>
+
 5. Request funds to the `FAUCET_URL` you defined in the `.env` file by calling the
    [`Client.request_funds_from_faucet`](../../references/python/iota_sdk/client/_utils/#request_funds_from_faucet)
    function.
 
+<div className={'hide-code-block-extras'}>
+
 ```python reference
 https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how_tos/alias_wallet/request_funds.py#L28-L29
 ```
+
+</div>
 
 </TabItem>
 </Tabs>
