@@ -62,8 +62,8 @@ module.exports = async () => {
             activeBaseRegex:
               '^(/[^/]+)?/hornet/.*|' +
               '^(/[^/]+)?/wasp/.*|' +
-              '^(/[^/]+)?/chronicle/.*|',
-              '^(/[^/]+)?/goshimmer/.*'
+              '^(/[^/]+)?/chronicle/.*|' +
+              '^(/[^/]+)?/goshimmer/.*',
           },
         ],
       },
