@@ -51,8 +51,6 @@ output type using the following functions:
 
 ## Example Code
 
-
-<div className={'hide-code-block-extras'}>
 <Tabs groupId="language" queryString>
 <TabItem value="rust" label="Rust">
 
@@ -166,7 +164,6 @@ https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how
 
 </TabItem>
 </Tabs>
-</div>
 
 ### Expected Output
 

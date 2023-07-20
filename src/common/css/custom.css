@@ -52,9 +52,3 @@
   content: 'head';
   background-color: var(--ifm-color-secondary-darkest);
 }
-
-/** Added to hide the See full example on GitHub link in imported code examples **/
-
-.hide-code-block-extras a{
-  display:none;
-}
