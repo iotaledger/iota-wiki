@@ -55,6 +55,6 @@
 
 /** Added to hide the See full example on GitHub link in imported code examples **/
 
-.hide-code-block-extras a{
-  display:none;
+.hide-code-block-extras a {
+  display: none;
 }
