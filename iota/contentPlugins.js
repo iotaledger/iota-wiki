@@ -35,38 +35,6 @@ module.exports = async () => {
       docItemComponent: '@theme/ApiItem',
     },
     {
-      id: 'iota-chronicle-rs',
-      path: path.resolve(__dirname, 'docs/chronicle/docs'),
-      routeBasePath: 'chronicle',
-      sidebarPath: path.resolve(__dirname, 'docs/chronicle/sidebars.js'),
-      versions: {
-        current: {
-          label: 'IOTA',
-          badge: true,
-        },
-      },
-    },
-    {
-      id: 'iota-goshimmer',
-      path: path.resolve(__dirname, 'docs/goshimmer/docs'),
-      routeBasePath: 'goshimmer',
-      sidebarPath: path.resolve(__dirname, 'docs/goshimmer/sidebars.js'),
-      editUrl: 'https://github.com/iotaledger/iota-wiki/edit/main/',
-      showLastUpdateTime: true,
-    },
-    {
-      id: 'iota-hornet',
-      path: path.resolve(__dirname, 'docs/hornet/docs'),
-      routeBasePath: 'hornet',
-      sidebarPath: path.resolve(__dirname, 'docs/hornet/sidebars.js'),
-      versions: {
-        current: {
-          label: 'IOTA',
-          badge: true,
-        },
-      },
-    },
-    {
       id: 'iota-integration-services',
       path: path.resolve(__dirname, 'docs/integration-services/docs'),
       routeBasePath: 'integration-services',

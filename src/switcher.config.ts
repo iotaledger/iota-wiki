@@ -1,5 +1,8 @@
 import type { Config } from './common/components/Switcher';
 import {
+  Chronicle,
+  GoShimmer,
+  Hornet,
   Identity,
   IotaCore,
   SmartContracts,
@@ -147,16 +150,82 @@ const config: Config = {
       ],
     },
     {
-      id: 'wasp-0-7-0',
+      id: 'smart-contract-0-7-0',
       label: 'Smart Contracts',
       description: 'Create smart contracts.',
       icon: SmartContracts,
       subsection: 'layer-2',
       versions: [
         {
+          id: 'smart-contract-0-7-0',
+          label: '0.7.0',
+          badges: ['Shimmer'],
+        },
+      ],
+    },
+    {
+      id: 'hornet-1-2-4',
+      label: 'Hornet',
+      description: 'Run a node',
+      icon: Hornet,
+      subsection: 'maintain-layer-1',
+      versions: [
+        {
+          id: 'hornet-1-2-4',
+          label: '1.2.4',
+          badges: ['IOTA'],
+        },
+        {
+          id: 'hornet-2-0-0-rc-6',
+          label: '2.0.0-rc.6',
+          badges: ['Shimmer'],
+        },
+      ],
+    },
+    {
+      id: 'wasp-0-7-0',
+      label: 'Wasp',
+      description: 'Create smart contracts',
+      icon: SmartContracts,
+      subsection: 'maintain-layer-2',
+      versions: [
+        {
           id: 'wasp-0-7-0',
           label: '0.7.0',
           badges: ['Shimmer'],
+        },
+      ],
+    },
+    {
+      id: 'chronicle-rs',
+      label: 'Chronicle',
+      description: 'Store and query data',
+      icon: Chronicle,
+      subsection: 'maintain-layer-1',
+      versions: [
+        {
+          id: 'chronicle-rs',
+          label: '0.3.0',
+          badges: ['IOTA'],
+        },
+        {
+          id: 'inx-chronicle',
+          label: '1.0.0-rc.1',
+          badges: ['Shimmer'],
+        },
+      ],
+    },
+    {
+      id: 'goshimmer',
+      label: 'GoShimmer',
+      description: 'Research Node implementation for IOTA 2.0',
+      icon: GoShimmer,
+      subsection: 'maintain-layer-1',
+      versions: [
+        {
+          id: 'goshimmer',
+          label: '0.9.8',
+          badges: ['IOTA 2.0'],
         },
       ],
     },
@@ -172,6 +241,18 @@ const config: Config = {
         label: 'Layer 2',
         description: 'Create smart contracts.',
         id: 'layer-2',
+      },
+    ],
+    [
+      {
+        label: 'Layer 1',
+        description: 'Interact with the network.',
+        id: 'maintain-layer-1',
+      },
+      {
+        label: 'Layer 2',
+        description: 'Create smart contracts.',
+        id: 'maintain-layer-2',
       },
     ],
   ],

@@ -27,18 +27,6 @@ module.exports = [
     sidebarPath: require.resolve('./docs/cli-wallet/sidebars.js'),
   },
   {
-    id: 'hornet',
-    path: path.resolve(__dirname, 'docs/hornet/docs'),
-    routeBasePath: 'hornet',
-    sidebarPath: path.resolve(__dirname, 'docs/hornet/sidebars.js'),
-  },
-  {
-    id: 'iota-goshimmer',
-    path: path.resolve(__dirname, 'docs/goshimmer/docs'),
-    routeBasePath: 'goshimmer',
-    sidebarPath: path.resolve(__dirname, 'docs/goshimmer/sidebars.js'),
-  },
-  {
     id: 'introduction-docs',
     path: path.resolve(__dirname, 'docs/introduction-docs/docs'),
     routeBasePath: 'introduction',
@@ -53,18 +41,6 @@ module.exports = [
       'docs/iota-2.0-research-specifications/sidebars.js',
     ),
     include: ['*.md'],
-  },
-  {
-    id: 'iota-chronicle-rs',
-    path: path.resolve(__dirname, 'docs/chronicle/docs'),
-    routeBasePath: 'chronicle',
-    sidebarPath: path.resolve(__dirname, 'docs/chronicle/sidebars.js'),
-    versions: {
-      current: {
-        label: 'IOTA',
-        badge: true,
-      },
-    },
   },
   {
     id: 'inx-api-core-v0',
