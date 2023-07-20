@@ -39,16 +39,122 @@ Different outputs can have different unlock conditions. This tables shows you wh
 
 The following example will use the create multiple outputs and add the following
 [`unlock_conditions`](https://docs.rs/iota-sdk/latest/iota_sdk/types/block/output/unlock_condition/index.html)
-using the
-[`add_unlock_condition`](https://docs.rs/iota-sdk/latest/iota_sdk/types/block/output/basic/struct.BasicOutputBuilder.html#method.add_unlock_condition)
+using the [`add_unlock_condition`](https://docs.rs/iota-sdk/latest/iota_sdk/types/block/output/basic/struct.BasicOutputBuilder.html#method.add_unlock_condition)
 function of each output type:
 
-1. [`StorageDepositReturnUnlockCondition`](https://docs.rs/iota-sdk/latest/iota_sdk/types/block/output/unlock_condition/struct.StorageDepositReturnUnlockCondition.html)
-2. [`TimelockUnlockCondition`](https://docs.rs/iota-sdk/latest/iota_sdk/types/block/output/unlock_condition/struct.TimelockUnlockCondition.html)
-3. [`ExpirationUnlockCondition`](https://docs.rs/iota-sdk/latest/iota_sdk/types/block/output/unlock_condition/struct.ExpirationUnlockCondition.html)
+1. [`StorageDepositReturnUnlockCondition`](https://docs.rs/iota-sdk/latest/iota_sdk/types/block/output/unlock_condition/struct.StorageDepositReturnUnlockCondition.html).
+
+```rust reference
+https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/outputs/unlock_conditions.rs#L55-L62
+```
+
+2. [`TimelockUnlockCondition`](https://docs.rs/iota-sdk/latest/iota_sdk/types/block/output/unlock_condition/struct.TimelockUnlockCondition.html).
+
+```rust reference
+https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/outputs/unlock_conditions.rs#L64-L67
+```
+
+3. [`ExpirationUnlockCondition`](https://docs.rs/iota-sdk/latest/iota_sdk/types/block/output/unlock_condition/struct.ExpirationUnlockCondition.html).
+
+```rust reference
+https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/outputs/unlock_conditions.rs#L69-L71
+```
+
 4. [`GovernorAddressUnlockCondition`](https://docs.rs/iota-sdk/latest/iota_sdk/types/block/output/unlock_condition/struct.GovernorAddressUnlockCondition.html)
-5. [`StateControllerAddressUnlockCondition`](https://docs.rs/iota-sdk/latest/iota_sdk/types/block/output/unlock_condition/struct.StateControllerAddressUnlockCondition.html)
-6. [`ImmutableAliasAddressUnlockCondition`](https://docs.rs/iota-sdk/latest/iota_sdk/types/block/output/unlock_condition/struct.ImmutableAliasAddressUnlockCondition.html)
+   and [`StateControllerAddressUnlockCondition`](https://docs.rs/iota-sdk/latest/iota_sdk/types/block/output/unlock_condition/struct.StateControllerAddressUnlockCondition.html).
+
+```rust reference
+https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/outputs/unlock_conditions.rs#L73-L76
+```
+
+6. [`ImmutableAliasAddressUnlockCondition`](https://docs.rs/iota-sdk/latest/iota_sdk/types/block/output/unlock_condition/struct.ImmutableAliasAddressUnlockCondition.html).
+
+```rust reference
+https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/outputs/unlock_conditions.rs#L78-L80
+```
+
+</TabItem>
+<TabItem value="typescript-node" label="Typescript (Node.js)">
+
+The following example will add the following
+[`unlockConditions`](../../references/nodejs/classes/UnlockCondition/)
+by passing them as [output parameters](../../references/nodejs/interfaces/BasicOutputBuilderParams/#unlockconditions)
+when building the outputs:
+
+1. [`StorageDepositReturnUnlockCondition`](../../references/nodejs/classes/StorageDepositReturnUnlockCondition/).
+
+```typescript reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/outputs/unlock-conditions.ts#L55-L63
+```
+
+2. [`TimelockUnlockCondition`](../../references/nodejs/classes/TimelockUnlockCondition/).
+
+```typescript reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/outputs/unlock-conditions.ts#L66-L71
+```
+
+3. [`ExpirationUnlockCondition`](../../references/nodejs/classes/ExpirationUnlockCondition/).
+
+```typescript reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/outputs/unlock-conditions.ts#L74-L82
+```
+
+4. [`GovernorAddressUnlockCondition`](../../references/nodejs/classes/GovernorAddressUnlockCondition/) and [`StateControllerAddressUnlockCondition`](../../references/nodejs/classes/StateControllerAddressUnlockCondition/).
+
+```typescript reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/outputs/unlock-conditions.ts#L85-L96
+```
+
+6. [`ImmutableAliasAddressUnlockCondition`](../../references/nodejs/classes/ImmutableAliasAddressUnlockCondition/).
+
+```typescript reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/outputs/unlock-conditions.ts#L99-L107
+```
+
+</TabItem>
+<TabItem value="python" label="Python">
+
+The following example will add the following [`unlockConditions`](../../references/python/iota_sdk/client/#parameters-2)
+by passing them as [output parameters](../../references/nodejs/interfaces/BasicOutputBuilderParams/#unlockconditions)
+when building the outputs:
+
+1. [`StorageDepositReturnUnlockCondition`](https://wiki.iota.org/next/iota-sdk/references/python/iota_sdk/types/unlock_condition/#storagedepositreturnunlockcondition-objects).
+
+```python reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how_tos/outputs/unlock_conditions.py#L28-L36
+```
+
+2. [`TimelockUnlockCondition`](https://wiki.iota.org/next/iota-sdk/references/python/iota_sdk/types/unlock_condition/#timelockunlockcondition-objects).
+
+```python reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how_tos/outputs/unlock_conditions.py#L40-L45
+```
+
+3. [`ExpirationUnlockCondition`](https://wiki.iota.org/next/iota-sdk/references/python/iota_sdk/types/unlock_condition/#expirationunlockcondition-objects).
+
+```python reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how_tos/outputs/unlock_conditions.py#L49-L57
+```
+
+4. [`GovernorAddressUnlockCondition`](https://wiki.iota.org/next/iota-sdk/references/python/iota_sdk/types/unlock_condition/#statecontrolleraddressunlockcondition-objects) and [`StateControllerAddressUnlockCondition`](https://wiki.iota.org/next/iota-sdk/references/python/iota_sdk/types/unlock_condition/#governoraddressunlockcondition-objects).
+
+```python reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how_tos/outputs/unlock_conditions.py#L61-L72
+```
+
+6. [`ImmutableAliasAddressUnlockCondition`](https://wiki.iota.org/next/iota-sdk/references/python/iota_sdk/types/unlock_condition/#immutablealiasaddressunlockcondition-objects).
+
+```python reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how_tos/outputs/unlock_conditions.py#L75-L83
+```
+
+</TabItem>
+</Tabs>
+
+### Full Example Code
+
+<Tabs groupId="language" queryString>
+<TabItem value="rust" label="Rust">
 
 ```rust reference
 https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/outputs/unlock_conditions.rs
@@ -57,38 +163,12 @@ https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/outputs
 </TabItem>
 <TabItem value="typescript-node" label="Typescript (Node.js)">
 
-The following example will add the following
-[`unlockConditions`](../../references/nodejs/classes/UnlockCondition/)
-by passing them as [output
-parameters](../../references/nodejs/interfaces/BasicOutputBuilderParams/#unlockconditions)
-when building the outputs:
-
-1. [`StorageDepositReturnUnlockCondition`](../../references/nodejs/classes/StorageDepositReturnUnlockCondition/)
-2. [`TimelockUnlockCondition`](../../references/nodejs/classes/TimelockUnlockCondition/)
-3. [`ExpirationUnlockCondition`](../../references/nodejs/classes/ExpirationUnlockCondition/)
-4. [`GovernorAddressUnlockCondition`](../../references/nodejs/classes/GovernorAddressUnlockCondition/)
-5. [`StateControllerAddressUnlockCondition`](../../references/nodejs/classes/StateControllerAddressUnlockCondition/)
-6. [`ImmutableAliasAddressUnlockCondition`](../../references/nodejs/classes/ImmutableAliasAddressUnlockCondition/)
-
 ```typescript reference
 https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/outputs/unlock-conditions.ts
 ```
 
 </TabItem>
 <TabItem value="python" label="Python">
-
-The following example will add the following
-[`unlockConditions`](../../references/python/iota_sdk/client/#parameters-2)
-by passing them as [output
-parameters](../../references/nodejs/interfaces/BasicOutputBuilderParams/#unlockconditions)
-when building the outputs:
-
-1. [`StorageDepositReturnUnlockCondition`](https://docs.rs/iota-sdk/latest/iota_sdk/types/block/output/unlock_condition/struct.StorageDepositReturnUnlockCondition.html)
-2. [`TimelockUnlockCondition`](https://docs.rs/iota-sdk/latest/iota_sdk/types/block/output/unlock_condition/struct.TimelockUnlockCondition.html)
-3. [`ExpirationUnlockCondition`](https://docs.rs/iota-sdk/latest/iota_sdk/types/block/output/unlock_condition/struct.ExpirationUnlockCondition.html)
-4. [`GovernorAddressUnlockCondition`](https://docs.rs/iota-sdk/latest/iota_sdk/types/block/output/unlock_condition/struct.GovernorAddressUnlockCondition.html)
-5. [`StateControllerAddressUnlockCondition`](https://docs.rs/iota-sdk/latest/iota_sdk/types/block/output/unlock_condition/struct.StateControllerAddressUnlockCondition.html)
-6. [`ImmutableAliasAddressUnlockCondition`](https://docs.rs/iota-sdk/latest/iota_sdk/types/block/output/unlock_condition/struct.ImmutableAliasAddressUnlockCondition.html)
 
 ```python reference
 https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how_tos/outputs/unlock_conditions.py
