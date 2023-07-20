@@ -19,6 +19,8 @@ number of UTXOs, which can improve transaction efficiency and reduce storage dep
 
 ## Code Example
 
+To consolidate outputs you will need to:
+
 <Tabs groupId="language" queryString>
 <TabItem value="rust" label="Rust">
 
@@ -168,6 +170,32 @@ OUTPUT #0
 - address: rms1qr58umklvtqa4yxxwmskgzyhx2axfe5tfvunu5gauqu9sns7ava3u3kehwq
 - amount: 1000000000
 - native tokens: None
+```
+
+</TabItem>
+</Tabs>
+
+## Putting It All Together
+
+<Tabs groupId="language" queryString>
+<TabItem value="rust" label="Rust">
+
+```rust reference
+https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/accounts_and_addresses/consolidate_outputs.rs
+```
+
+</TabItem>
+<TabItem value="typescript-node" label="Typescript (Node.js)">
+
+```typescript reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/accounts_and_addresses/consolidate-outputs.ts
+```
+
+</TabItem>
+<TabItem value="python" label="Python">
+
+```python reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how_tos/accounts_and_addresses/consolidate_outputs.py
 ```
 
 </TabItem>

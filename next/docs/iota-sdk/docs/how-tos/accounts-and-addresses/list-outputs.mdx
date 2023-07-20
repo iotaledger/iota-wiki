@@ -17,6 +17,8 @@ This guide will show you how to list all the outputs that can be unlocked by any
 
 ## Code Example
 
+To list outputs you will need to:
+
 <Tabs groupId="language" queryString>
 <TabItem value="rust" label="Rust">
 
@@ -27,11 +29,16 @@ The following example will:
 2. Get all the [`Outputs`](https://docs.rs/iota-sdk/latest/iota_sdk/types/block/output/enum.Output.html)
    related to the `Account` by calling the [`Account.outputs()`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/account/struct.AccountInner.html#method.outputs)
    function.
+
+```rust reference
+https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/accounts_and_addresses/list_outputs.rs#L29-L31
+```
+
 3. Get all the unspent `Outputs` related to the `Account` by calling the
    [`Account.unspent_outputs()`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/account/struct.AccountInner.html#method.unspent_outputs) function.
 
 ```rust reference
-https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/accounts_and_addresses/list_outputs.rs
+https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/accounts_and_addresses/list_outputs.rs#L35-L37
 ```
 
 </TabItem>
@@ -44,11 +51,17 @@ The following example will:
 2. Get all the [`Outputs`](../../references/nodejs/classes/Output/)
    related to the `Account` by calling the [`Account.outputs()`](../../references/nodejs/classes/Account/#outputs)
    function.
-3. Get all the unspent `Outputs` related to the `Account` by calling the
-   [`Account.unspentOutputs()`](../../references/nodejs/classes/Account/#unspentoutputs) function.
 
 ```typescript reference
-https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/accounts_and_addresses/list-outputs.ts
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/accounts_and_addresses/list-outputs.ts#L27-L30
+```
+
+    3. Get all the unspent `Outputs` related to the `Account` by calling the
+
+[`Account.unspentOutputs()`](../../references/nodejs/classes/Account/#unspentoutputs) function.
+
+```typescript reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/accounts_and_addresses/list-outputs.ts#L32-L35
 ```
 
 </TabItem>
@@ -61,11 +74,16 @@ The following example will:
 2. Get all the [`Outputs`](../../references/python/iota_sdk/types/output/)
    related to the `Account` by calling the [`Account.outputs()`](../../references/python/iota_sdk/wallet/account/#outputs)
    function.
+
+```python reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how_tos/accounts_and_addresses/list_outputs.py#L21-L22
+```
+
 3. Get all the unspent `Outputs` related to the `Account` by calling the
    [`Account.unspent_outputs()`](../../references/python/iota_sdk/wallet/account/#unspent_outputs) function.
 
 ```python reference
-https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how_tos/accounts_and_addresses/list_outputs.py
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how_tos/accounts_and_addresses/list_outputs.py#L29-L30
 ```
 
 </TabItem>
@@ -92,3 +110,29 @@ Unspent output ids:
 0x64aa46c5008b9d361318b50d5d1928dbe14cef3ba94e3876133c8eb33445910e0200
 0x22efc1c85c925d3cea275b355ef37c8c0795713ac5c0a1ec3d6634d6e9d134160000
 ```
+
+## Putting It All Together
+
+<Tabs groupId="language" queryString>
+<TabItem value="rust" label="Rust">
+
+```rust reference
+https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/accounts_and_addresses/list_outputs.rs
+```
+
+</TabItem>
+<TabItem value="typescript-node" label="Typescript (Node.js)">
+
+```typescript reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/accounts_and_addresses/list-outputs.ts
+```
+
+</TabItem>
+<TabItem value="python" label="Python">
+
+```python reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how_tos/accounts_and_addresses/list_outputs.py
+```
+
+</TabItem>
+</Tabs>

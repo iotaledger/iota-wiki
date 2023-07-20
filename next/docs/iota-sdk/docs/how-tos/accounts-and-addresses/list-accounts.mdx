@@ -29,40 +29,34 @@ platform.
 <Tabs groupId="language" queryString>
 <TabItem value="rust" label="Rust">
 
-The following example will:
-
 1. Instantiate a [`Wallet`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/core/struct.Wallet.html).
 2. Call the [`Wallet.get_accounts()`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/core/struct.Wallet.html#method.get_accounts)
    function to retrieve all the [`Accounts`](../../references/nodejs/classes/Account/) related to the wallet.
 
 ```rust reference
-https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/accounts_and_addresses/list_accounts.rs
+https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/accounts_and_addresses/list_accounts.rs#L24-L26
 ```
 
 </TabItem>
 <TabItem value="typescript-node" label="Typescript (Node.js)">
-
-The following example will:
 
 1. Instantiate a [`Wallet`](../../references/nodejs/classes/Wallet).
 2. Call the [`Wallet.getAccounts()`](../../references/nodejs/classes/Wallet/#getaccounts)
    function to retrieve all the [`Accounts`](../../references/nodejs/classes/Account/) related to the wallet.
 
 ```typescript reference
-https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/accounts_and_addresses/list-accounts.ts
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/accounts_and_addresses/list-accounts.ts#L25-L29
 ```
 
 </TabItem>
 <TabItem value="python" label="Python">
-
-The following example will:
 
 1. Instantiate a [`Wallet`](../../references/python/iota_sdk/wallet).
 2. Call the [`Wallet.get_accounts()`](../../references/python/iota_sdk/wallet/#get_accounts)
    function to retrieve all the [`Accounts`](../../references/python/iota_sdk/wallet/account/) related to the wallet.
 
 ```python reference
-https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how_tos/accounts_and_addresses/list_accounts.py
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how_tos/accounts_and_addresses/list_accounts.py#L13-L14
 ```
 
 </TabItem>
@@ -73,3 +67,29 @@ https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how
 ```plaintext
 Alice
 ```
+
+## Putting It All Together
+
+<Tabs groupId="language" queryString>
+<TabItem value="rust" label="Rust">
+
+```rust reference
+https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/accounts_and_addresses/list_accounts.rs
+```
+
+</TabItem>
+<TabItem value="typescript-node" label="Typescript (Node.js)">
+
+```typescript reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/accounts_and_addresses/list-accounts.ts
+```
+
+</TabItem>
+<TabItem value="python" label="Python">
+
+```python reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how_tos/accounts_and_addresses/list_accounts.py
+```
+
+</TabItem>
+</Tabs>
