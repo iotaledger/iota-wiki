@@ -74,8 +74,8 @@ https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how
 
 </div>
 
-3. Prepare a [`Transaction`](../../references/nodejs/classes/Transaction/) to consolidate the Outputs by calling
-   the [`Account.prepareConsolidateOutputs()`](../../references/nodejs/classes/Account/#prepareconsolidateoutputs) function.
+3. Prepare a [`Transaction`](../../../references/nodejs/classes/Transaction/) to consolidate the Outputs by calling
+   the [`Account.prepareConsolidateOutputs()`](../../../references/nodejs/classes/Account/#prepareconsolidateoutputs) function.
 
 <div className={'hide-code-block-extras'}>
 
@@ -85,7 +85,7 @@ https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how
 
 </div>
 
-4. Send the `Transaction` by calling the [`PreparedTransaction.send()`](../../references/nodejs/classes/PreparedTransaction/#send)
+4. Send the `Transaction` by calling the [`PreparedTransaction.send()`](../../../references/nodejs/classes/PreparedTransaction/#send)
    function.
 
 <div className={'hide-code-block-extras'}>
@@ -96,7 +96,7 @@ https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how
 
 </div>
 
-5. Await for the `Transaction` to get confirmed by calling the ['Account.retryTransactionUntilIncluded'](../../references/nodejs/classes/Account/#retrytransactionuntilincluded)
+5. Await for the `Transaction` to get confirmed by calling the ['Account.retryTransactionUntilIncluded'](../../../references/nodejs/classes/Account/#retrytransactionuntilincluded)
    function.
 
 <div className={'hide-code-block-extras'}>
@@ -115,7 +115,7 @@ The following example will:
 1. Instantiate a [`Wallet`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/core/struct.Wallet.html), get Alice's `Account` which was
    [created in the first guide](../accounts-and-addresses/create-account.mdx) and [sync it](../accounts-and-addresses/check-balance.mdx).
 2. Get all the unspent `Outputs` related to the `Account` by calling the
-   [`Account.unspent_outputs()`](../../references/python/iota_sdk/wallet/account/#unspent_outputs) function.
+   [`Account.unspent_outputs()`](../../../references/python/iota_sdk/wallet/account/#unspent_outputs) function.
 
 <div className={'hide-code-block-extras'}>
 
@@ -125,9 +125,9 @@ https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how
 
 </div>
 
-3. Prepare a [`Transaction`](../../references/python/iota_sdk/types/transaction/) to consolidate the Outputs by calling
-   the [`Account.prepare_consolidate_outputs()`](../../references/python/iota_sdk/wallet/account/#prepare_consolidate_outputs) function
-   and [`send()`](../../references/python/iota_sdk/wallet/account/#send) it.
+3. Prepare a [`Transaction`](../../../references/python/iota_sdk/types/transaction/) to consolidate the Outputs by calling
+   the [`Account.prepare_consolidate_outputs()`](../../../references/python/iota_sdk/wallet/account/#prepare_consolidate_outputs) function
+   and [`send()`](../../../references/python/iota_sdk/wallet/account/#send) it.
 
 <div className={'hide-code-block-extras'}>
 
@@ -137,7 +137,7 @@ https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how
 
 </div>
 
-4. Await for the `Transaction` to get confirmed by calling the ['Account.retry_transaction_until_included'](../../references/python/iota_sdk/wallet/account/#retry_transaction_until_included)
+4. Await for the `Transaction` to get confirmed by calling the ['Account.retry_transaction_until_included'](../../../references/python/iota_sdk/wallet/account/#retry_transaction_until_included)
    function.
 
 <div className={'hide-code-block-extras'}>

@@ -90,8 +90,8 @@ https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/nfts/mi
 
 1. Instantiate a [`Wallet`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/core/struct.Wallet.html), get Alice's `Account` which was
    [created in the first guide](../accounts-and-addresses/create-account.mdx) and [sync it](../accounts-and-addresses/check-balance.mdx).
-2. Define the `senderAddress` as the first [`Address`](../../references/nodejs/classes/Address/)
-   in the [`Account`](../../references/nodejs/classes/Account/).
+2. Define the `senderAddress` as the first [`Address`](../../../references/nodejs/classes/Address/)
+   in the [`Account`](../../../references/nodejs/classes/Account/).
 
 <div className={'hide-code-block-extras'}>
 
@@ -101,7 +101,7 @@ https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how
 
 </div>
 
-3. Create a new [`MintNftParams`](../../references/nodejs/interfaces/MintNftParams/) and set its
+3. Create a new [`MintNftParams`](../../../references/nodejs/interfaces/MintNftParams/) and set its
    values. Note that these include setting the [sender](https://wiki.iota.org/shimmer/develop/explanations/what-is-stardust/output-features/#sender)
    and the [issuer](https://wiki.iota.org/shimmer/develop/explanations/what-is-stardust/output-features/#issuer).
 
@@ -113,8 +113,8 @@ https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how
 
 </div>
 
-4. Prepare the transaction that will mint the NFTs using the [`Account.prepareMintNfts()`](../../references/nodejs/classes/Account/#preparemintnfts)
-   function and send the prepared transaction using the [`Account.send()`](../../references/nodejs/classes/Account/#send)
+4. Prepare the transaction that will mint the NFTs using the [`Account.prepareMintNfts()`](../../../references/nodejs/classes/Account/#preparemintnfts)
+   function and send the prepared transaction using the [`Account.send()`](../../../references/nodejs/classes/Account/#send)
    function.
 
 <div className={'hide-code-block-extras'}>
@@ -125,8 +125,8 @@ https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how
 
 </div>
 
-6. Build the outputs for the transaction to mint another NFT using the [`Client.buildNftOutput()`](../../references/nodejs/classes/Client/#buildnftoutput)
-   function and send the transaction using the [`Account.sendOutputs()`](../../references/nodejs/classes/Account/#sendoutputs) function.
+6. Build the outputs for the transaction to mint another NFT using the [`Client.buildNftOutput()`](../../../references/nodejs/classes/Client/#buildnftoutput)
+   function and send the transaction using the [`Account.sendOutputs()`](../../../references/nodejs/classes/Account/#sendoutputs) function.
 
 <div className={'hide-code-block-extras'}>
 
@@ -153,8 +153,8 @@ https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how
 
 </div>
 
-2. Prepare the transaction that will mint the NFT using the [`Account.prepare_mint_nfts()`](../../references/python/iota_sdk/wallet/account/#prepare_mint_nfts)
-   function and send the prepared transaction using the [`Account.send()`](../../references/python/iota_sdk/wallet/account/#send)
+2. Prepare the transaction that will mint the NFT using the [`Account.prepare_mint_nfts()`](../../../references/python/iota_sdk/wallet/account/#prepare_mint_nfts)
+   function and send the prepared transaction using the [`Account.send()`](../../../references/python/iota_sdk/wallet/account/#send)
    function.
 
 <div className={'hide-code-block-extras'}>

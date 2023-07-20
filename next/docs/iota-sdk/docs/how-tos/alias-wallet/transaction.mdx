@@ -36,7 +36,7 @@ The following example will:
 1. Instantiate a [`Wallet`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/core/struct.Wallet.html), get Alice's `Account` which was
    [created in the first guide](../accounts-and-addresses/create-account.mdx).
 2. Sync the account with the node to get the latest transactions by calling the [`Account.sync()`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/account/struct.Account.html#method.sync)
-   function. Note how the [`SyncOptions`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/account/struct.SyncOptions.html) for the Alias set [`AliasSyncOptions.basicOutputs`](../../references/nodejs/interfaces/AliasSyncOptions/#basicoutputs)
+   function. Note how the [`SyncOptions`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/account/struct.SyncOptions.html) for the Alias set [`AliasSyncOptions.basicOutputs`](../../../references/nodejs/interfaces/AliasSyncOptions/#basicoutputs)
    to `true`.
 
 <div className={'hide-code-block-extras'}>
@@ -95,8 +95,8 @@ The following example will:
 
 1. Instantiate a [`Wallet`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/core/struct.Wallet.html), get Alice's `Account` which was
    [created in the first guide](../accounts-and-addresses/create-account.mdx).
-2. Sync the account with the node to get the latest transactions by calling the [`Account.sync()`](../../references/nodejs/classes/Account/#sync)
-   function. Note how the [`SyncOptions`](../../references/nodejs/interfaces/SyncOptions/#alias) for the Alias set [`AliasSyncOptions.basicOutputs`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/account/struct.AliasSyncOptions.html)
+2. Sync the account with the node to get the latest transactions by calling the [`Account.sync()`](../../../references/nodejs/classes/Account/#sync)
+   function. Note how the [`SyncOptions`](../../../references/nodejs/interfaces/SyncOptions/#alias) for the Alias set [`AliasSyncOptions.basicOutputs`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/account/struct.AliasSyncOptions.html)
    to `true`.
 
 <div className={'hide-code-block-extras'}>
@@ -115,7 +115,7 @@ https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how
 
 </div>
 
-3. Retrieve the Alias Id of the first [`AliasOutput`](../../references/nodejs/classes/AliasOutput/) related to Alice's
+3. Retrieve the Alias Id of the first [`AliasOutput`](../../../references/nodejs/classes/AliasOutput/) related to Alice's
    account.
 
 <div className={'hide-code-block-extras'}>
@@ -126,7 +126,7 @@ https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how
 
 </div>
 
-4. Retrieve the Alias' address using the [`Utils.aliasIdToBech32()`](../../references/nodejs/classes/Utils/#aliasidtobech32)
+4. Retrieve the Alias' address using the [`Utils.aliasIdToBech32()`](../../../references/nodejs/classes/Utils/#aliasidtobech32)
    function.
 
 <div className={'hide-code-block-extras'}>
@@ -147,7 +147,7 @@ https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how
 
 </div>
 
-6. Send 1 SMR to an address using the [`Account.sendWithParams()`](../../references/nodejs/classes/Account/#sendwithparams) function.
+6. Send 1 SMR to an address using the [`Account.sendWithParams()`](../../../references/nodejs/classes/Account/#sendwithparams) function.
    Make sure to update the code sample to send to the address of your choice.
 
 <div className={'hide-code-block-extras'}>
@@ -165,8 +165,8 @@ The following example will:
 
 1. Instantiate a [`Wallet`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/core/struct.Wallet.html), get Alice's `Account` which was
    [created in the first guide](../accounts-and-addresses/create-account.mdx).
-2. Sync the account with the node to get the latest transactions by calling the [`Account.sync()`](../../references/python/iota_sdk/wallet/account/#sync)
-   function. Note how the [`sync_options`](../../references/python/iota_sdk/wallet/sync_options) for the Alias set [`AliasSyncOptions.basic_outputs`](../../references/python/iota_sdk/wallet/sync_options/#aliassyncoptions-objects)
+2. Sync the account with the node to get the latest transactions by calling the [`Account.sync()`](../../../references/python/iota_sdk/wallet/account/#sync)
+   function. Note how the [`sync_options`](../../../references/python/iota_sdk/wallet/sync_options) for the Alias set [`AliasSyncOptions.basic_outputs`](../../../references/python/iota_sdk/wallet/sync_options/#aliassyncoptions-objects)
    to `true`.
 
 <div className={'hide-code-block-extras'}>
@@ -195,7 +195,7 @@ https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how
 
 </div>
 
-4. Retrieve the [`AliasAddress`](../../references/python/iota_sdk/types/address/#aliasaddress-objects) using the [`Utils.alias_id_to_bech32()`](../../references/python/iota_sdk/utils/#alias_id_to_bech32)
+4. Retrieve the [`AliasAddress`](../../../references/python/iota_sdk/types/address/#aliasaddress-objects) using the [`Utils.alias_id_to_bech32()`](../../../references/python/iota_sdk/utils/#alias_id_to_bech32)
    function.
 
 <div className={'hide-code-block-extras'}>
@@ -216,7 +216,7 @@ https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how
 
 </div>
 
-6. Send 1 SMR to an address using the [`Account.send_with_params()`](../../references/python/iota_sdk/wallet/account/#send_with_params) function.
+6. Send 1 SMR to an address using the [`Account.send_with_params()`](../../../references/python/iota_sdk/wallet/account/#send_with_params) function.
    Make sure to update the code sample to send to the address of your choice.
 
 <div className={'hide-code-block-extras'}>
