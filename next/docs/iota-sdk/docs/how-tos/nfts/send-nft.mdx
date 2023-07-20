@@ -25,14 +25,11 @@ associated collectible or token value and any other attributes it defines.
 
 The following example will:
 
-1. Instantiate a [`Wallet`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/core/struct.Wallet.html).
-2. Get Alice's [`Account`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/account/struct.Account.html) which was
-   [created in the first guide](../accounts-and-addresses/create-account.mdx).
-3. Sync the account with the node to get the latest transactions by calling the [`Account.sync()`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/account/struct.Account.html#method.sync)
-   function.
-4. Set `nft_id` as the first NFT Id in the balance.
-5. Define the outputs for the transaction as the [`SendNftParams`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/struct.SendNftParams.html).
-6. Send the NFT transaction using the [`Account.send_nft()`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/struct.SendNftParams.html) function.
+1. Instantiate a [`Wallet`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/core/struct.Wallet.html), Get Alice's `Account` which was
+   [created in the first guide](../accounts-and-addresses/create-account.mdx) and [sync it](../accounts-and-addresses/check-balance.mdx).
+2. Set `nft_id` as the first NFT Id in the balance.
+3. Define the outputs for the transaction as the [`SendNftParams`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/struct.SendNftParams.html).
+4. Send the NFT transaction using the [`Account.send_nft()`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/struct.SendNftParams.html) function.
 
 ```rust reference
 https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/nfts/send_nft.rs
@@ -43,14 +40,12 @@ https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/nfts/se
 
 The following example will:
 
-1. Instantiate a [`Wallet`](../../references/nodejs/classes/Wallet).
-2. Get Alice's account which was [created in the first guide](../accounts-and-addresses/create-account.mdx).
-3. Sync the account with the node to get the latest transactions by calling the [`Account.sync()`](../../references/nodejs/classes/Account/#sync)
-   function.
-4. Set `nftId` as the first NFT Id in the balance.
-5. Define the outputs for the transaction as the [`SendNftParams`](../../references/nodejs/interfaces/SendNftParams/).
-6. Prepare the transaction that will send the NFT using the [`Account.prepareSendNft()`](../../references/nodejs/classes/Account/#preparesendnft) function.
-7. Send the transaction using the [`Account.send()`](../../references/nodejs/classes/Account/#send)
+1. Instantiate a [`Wallet`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/core/struct.Wallet.html), Get Alice's `Account` which was
+   [created in the first guide](../accounts-and-addresses/create-account.mdx) and [sync it](../accounts-and-addresses/check-balance.mdx).
+2. Set `nftId` as the first NFT Id in the balance.
+3. Define the outputs for the transaction as the [`SendNftParams`](../../references/nodejs/interfaces/SendNftParams/).
+4. Prepare the transaction that will send the NFT using the [`Account.prepareSendNft()`](../../references/nodejs/classes/Account/#preparesendnft) function.
+5. Send the transaction using the [`Account.send()`](../../references/nodejs/classes/Account/#send)
    function.
 
 ```typescript reference

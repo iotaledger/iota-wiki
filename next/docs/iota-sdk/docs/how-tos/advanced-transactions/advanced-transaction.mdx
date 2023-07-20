@@ -28,12 +28,9 @@ and [features](../outputs/features.mdx).
 
 The following example will:
 
-1. Instantiate a [`Wallet`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/core/struct.Wallet.html).
-2. Get Alice's [`Account`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/account/struct.Account.html) which was
-   [created in the first guide](../accounts-and-addresses/create-account.mdx).
-3. Sync the account with the node to get the latest transactions by calling the [`Account.sync()`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/account/struct.Account.html#method.sync)
-   function.
-4. Create a [`BasicOutput`](https://docs.rs/iota-sdk/latest/iota_sdk/types/block/output/basic/struct.BasicOutput.html)
+1. Instantiate a [`Wallet`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/core/struct.Wallet.html), Get Alice's `Account` which was
+   [created in the first guide](../accounts-and-addresses/create-account.mdx) and [sync it](../accounts-and-addresses/check-balance.mdx).
+2. Create a [`BasicOutput`](https://docs.rs/iota-sdk/latest/iota_sdk/types/block/output/basic/struct.BasicOutput.html)
    that is [time-locked](https://wiki.iota.org/shimmer/develop/explanations/what-is-stardust/unlock-conditions/#timelock) for one
    hour by calling the [`BasicOutputBuilder()`](https://docs.rs/iota-sdk/latest/iota_sdk/types/block/output/basic/struct.BasicOutputBuilder.html)
    function and passing the [`AddressUnlockCondition`](https://docs.rs/iota-sdk/latest/iota_sdk/types/block/output/unlock_condition/struct.AddressUnlockCondition.html) and
@@ -41,9 +38,9 @@ The following example will:
    [`unlockConditions`](https://docs.rs/iota-sdk/latest/iota_sdk/types/block/output/unlock_condition/struct.UnlockConditions.html)
    to the `BasicOutputBuilder()` by chaining calls to the
    [`BasicOutputBuilder.add_unlock_condition()`](https://docs.rs/iota-sdk/latest/iota_sdk/types/block/output/basic/struct.BasicOutputBuilder.html#method.add_unlock_condition)
-5. Send the `BasicOutput` created in the previous step by calling the
+3. Send the `BasicOutput` created in the previous step by calling the
    ['Account.send_outputs()'](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/account/struct.Account.html#method.send_outputs) function.
-6. Await for the `Transaction` to get confirmed by calling the ['Account.retryTransactionUntilIncluded'](../../references/nodejs/classes/Account/#retrytransactionuntilincluded)
+4. Await for the `Transaction` to get confirmed by calling the ['Account.retryTransactionUntilIncluded'](../../references/nodejs/classes/Account/#retrytransactionuntilincluded)
    function.
 
 ```rust reference
@@ -55,19 +52,17 @@ https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/advance
 
 The following example will:
 
-1. Instantiate a [`Wallet`](../../references/nodejs/classes/Wallet).
-2. Get Alice's account which was [created in the first guide](../accounts-and-addresses/create-account.mdx).
-3. Sync the account with the node to get the latest transactions by calling the [`Account.sync()`](../../references/nodejs/classes/Account/#sync)
-   function.
-4. Create a [`BasicOutput`](../../references/nodejs/classes/BasicOutput/) that is
+1. Instantiate a [`Wallet`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/core/struct.Wallet.html), Get Alice's `Account` which was
+   [created in the first guide](../accounts-and-addresses/create-account.mdx) and [sync it](../accounts-and-addresses/check-balance.mdx).
+2. Create a [`BasicOutput`](../../references/nodejs/classes/BasicOutput/) that is
    [time-locked](https://wiki.iota.org/shimmer/develop/explanations/what-is-stardust/unlock-conditions/#timelock) for one
    hour by calling the [`Client.buildBasicOutput()`](../../references/nodejs/classes/Client/#buildbasicoutput)
    function and passing the [`AddressUnlockCondition`](../../references/nodejs/classes/AddressUnlockCondition/) and
    the [`TimelockUnlockCondition`](../../references/nodejs/classes/TimelockUnlockCondition/) in as
    [`unlockConditions`](../../references/nodejs/classes/UnlockCondition/) to the `Client`.
-5. Send the [`Output`](../../references/nodejs/classes/Output/) created in the previous step by calling the
+3. Send the [`Output`](../../references/nodejs/classes/Output/) created in the previous step by calling the
    ['Account.sendOutputs()'](../../references/nodejs/classes/Account/#sendoutputs) function.
-6. Await for the [`Transaction`](../../references/nodejs/classes/Transaction/) to get confirmed by calling the
+4. Await for the [`Transaction`](../../references/nodejs/classes/Transaction/) to get confirmed by calling the
    ['Account.retryTransactionUntilIncluded'](../../references/nodejs/classes/Account/#retrytransactionuntilincluded)
    function.
 

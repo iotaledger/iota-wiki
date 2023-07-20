@@ -57,17 +57,15 @@ https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/alias_w
 
 The following example will:
 
-1. Instantiate a [`Wallet`](../../references/nodejs/classes/Wallet).
-2. Get Alice's account which was [created in the first guide](../accounts-and-addresses/create-account.mdx).
-3. Sync the account with the node to get the latest transactions by calling the [`Account.sync()`](../../references/nodejs/classes/Account/#sync)
+1. Instantiate a [`Wallet`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/core/struct.Wallet.html), Get Alice's `Account` which was
+   [created in the first guide](../accounts-and-addresses/create-account.mdx) and [sync it](../accounts-and-addresses/check-balance.mdx).
+2. Request the account's balance by calling the [`Account.balance()`](../../references/nodejs/classes/Account/#balance)
    function.
-4. Request the account's balance by calling the [`Account.balance()`](../../references/nodejs/classes/Account/#balance)
-   function.
-5. Retrieve the Alias Id of the first [`AliasOutput`](../../references/nodejs/classes/AliasOutput/) related to Alice's
+3. Retrieve the Alias Id of the first [`AliasOutput`](../../references/nodejs/classes/AliasOutput/) related to Alice's
    account.
-6. Retrieve the Alias' address using the [`Utils.aliasIdToBech32()`](../../references/nodejs/classes/Utils/#aliasidtobech32)
+4. Retrieve the Alias' address using the [`Utils.aliasIdToBech32()`](../../references/nodejs/classes/Utils/#aliasidtobech32)
    function.
-7. Request funds to the `FAUCET_URL` you defined in the `.env` file by calling the [`Client.requestFundsFromFaucet()`](../../references/nodejs/classes/Client/#requestfundsfromfaucet) function.
+5. Request funds to the `FAUCET_URL` you defined in the `.env` file by calling the [`Client.requestFundsFromFaucet()`](../../references/nodejs/classes/Client/#requestfundsfromfaucet) function.
 
 ```typescript reference
 https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/alias_wallet/request-funds.ts
@@ -75,13 +73,8 @@ https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how
 
 </TabItem>
 <TabItem value="python" label="Python">
-
-The following example will:
-
-1. Instantiate a [`Wallet`](../../references/python/iota_sdk/wallet/).
-2. Get Alice's account which was [created in the first guide](../accounts-and-addresses/create-account.mdx).
-3. Sync the account with the node to get the latest transactions by calling the [`Account.sync()`](../../references/python/iota_sdk/wallet/account/#sync)
-   function.
+1. Instantiate a [`Wallet`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/core/struct.Wallet.html), Get Alice's `Account` which was
+[created in the first guide](../accounts-and-addresses/create-account.mdx) and [sync it](../accounts-and-addresses/check-balance.mdx).
 4. Request the account's balance by calling the [`Account.getBalance()`](../../references/python/iota_sdk/wallet/account/#get_balance)
    function.
 5. Retrieve the Alias Id of the first `AliasOutput` related to Alice's account.

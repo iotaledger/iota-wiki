@@ -24,14 +24,13 @@ number of UTXOs, which can improve transaction efficiency and reduce storage dep
 
 The following example will:
 
-1. Instantiate a [`Wallet`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/core/struct.Wallet.html).
-2. Get Alice's [`Account`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/account/struct.Account.html) which was
-   [created in the first guide](./create-account.mdx).
-3. Get all the unspent `Outputs` related to the `Account` by calling the
+1. Instantiate a [`Wallet`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/core/struct.Wallet.html), Get Alice's `Account` which was
+   [created in the first guide](../accounts-and-addresses/create-account.mdx) and [sync it](../accounts-and-addresses/check-balance.mdx).
+2. Get all the unspent `Outputs` related to the `Account` by calling the
    [`Account.unspent_outputs()`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/account/struct.AccountInner.html#method.unspent_outputs) function.
-4. Prepare a [`Transaction`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/account/types/struct.Transaction.html) to consolidate the Outputs by calling
+3. Prepare a [`Transaction`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/account/types/struct.Transaction.html) to consolidate the Outputs by calling
    the [`Account.consolidate_outputs()`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/account/struct.Account.html#method.consolidate_outputs) function.
-5. Await for the `Transaction` to get confirmed by calling the ['Account.retry_transaction_until_included)'](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/account/struct.Account.html#method.retry_transaction_until_included)
+4. Await for the `Transaction` to get confirmed by calling the ['Account.retry_transaction_until_included)'](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/account/struct.Account.html#method.retry_transaction_until_included)
    function.
 
 ```rust reference
@@ -43,17 +42,16 @@ https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/account
 
 The following example will:
 
-1. Instantiate a [`Wallet`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/core/struct.Wallet.html).
-2. Get Alice's [`Account`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/account/struct.Account.html) which was
-   [created in the first guide](./create-account.mdx).
-3. Get all the unspent `Outputs` related to the `Account` by calling the
+1. Instantiate a [`Wallet`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/core/struct.Wallet.html), Get Alice's `Account` which was
+   [created in the first guide](../accounts-and-addresses/create-account.mdx) and [sync it](../accounts-and-addresses/check-balance.mdx).
+2. Get all the unspent `Outputs` related to the `Account` by calling the
    [`Account.unspent_outputs()`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/account/struct.AccountInner.html#method.unspent_outputs)
    function.
-4. Prepare a [`Transaction`](../../references/nodejs/classes/Transaction/) to consolidate the Outputs by calling
+3. Prepare a [`Transaction`](../../references/nodejs/classes/Transaction/) to consolidate the Outputs by calling
    the [`Account.prepareConsolidateOutputs()`](../../references/nodejs/classes/Account/#prepareconsolidateoutputs) function.
-5. Send the `Transaction` by calling the [`PreparedTransaction.send()`](../../references/nodejs/classes/PreparedTransaction/#send)
+4. Send the `Transaction` by calling the [`PreparedTransaction.send()`](../../references/nodejs/classes/PreparedTransaction/#send)
    function.
-6. Await for the `Transaction` to get confirmed by calling the ['Account.retryTransactionUntilIncluded'](../../references/nodejs/classes/Account/#retrytransactionuntilincluded)
+5. Await for the `Transaction` to get confirmed by calling the ['Account.retryTransactionUntilIncluded'](../../references/nodejs/classes/Account/#retrytransactionuntilincluded)
    function.
 
 ```typescript reference
@@ -65,16 +63,15 @@ https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how
 
 The following example will:
 
-1. Instantiate a [`Wallet`](../../references/python/iota_sdk/wallet/).
-2. Get Alice's [`Account`](../../references/python/iota_sdk/wallet/account/) which was
-   [created in the first guide](./create-account.mdx).
-3. Get all the unspent `Outputs` related to the `Account` by calling the
+1. Instantiate a [`Wallet`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/core/struct.Wallet.html), Get Alice's `Account` which was
+   [created in the first guide](../accounts-and-addresses/create-account.mdx) and [sync it](../accounts-and-addresses/check-balance.mdx).
+2. Get all the unspent `Outputs` related to the `Account` by calling the
    [`Account.unspent_outputs()`](../../references/python/iota_sdk/wallet/account/#unspent_outputs) function.
-4. Prepare a [`Transaction`](../../references/python/iota_sdk/types/transaction/) to consolidate the Outputs by calling
+3. Prepare a [`Transaction`](../../references/python/iota_sdk/types/transaction/) to consolidate the Outputs by calling
    the [`Account.prepare_consolidate_outputs()`](../../references/python/iota_sdk/wallet/account/#prepare_consolidate_outputs) function.
-5. Send the `Transaction` by calling the [`Account.send()`](../../references/python/iota_sdk/wallet/account/#send)
+4. Send the `Transaction` by calling the [`Account.send()`](../../references/python/iota_sdk/wallet/account/#send)
    function.
-6. Await for the `Transaction` to get confirmed by calling the ['Account.retry_transaction_until_included'](../../references/python/iota_sdk/wallet/account/#retry_transaction_until_included)
+5. Await for the `Transaction` to get confirmed by calling the ['Account.retry_transaction_until_included'](../../references/python/iota_sdk/wallet/account/#retry_transaction_until_included)
    function.
 
 ```python reference

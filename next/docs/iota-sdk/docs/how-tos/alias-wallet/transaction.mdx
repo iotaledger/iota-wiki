@@ -33,19 +33,18 @@ transaction from an alias account.
 
 The following example will:
 
-1. Instantiate a [`Wallet`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/core/struct.Wallet.html).
-2. Get Alice's [`Account`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/account/struct.Account.html) which was
+1. Instantiate a [`Wallet`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/core/struct.Wallet.html), Get Alice's `Account` which was
    [created in the first guide](../accounts-and-addresses/create-account.mdx).
-3. Sync the account with the node to get the latest transactions by calling the [`Account.sync()`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/account/struct.Account.html#method.sync)
+2. Sync the account with the node to get the latest transactions by calling the [`Account.sync()`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/account/struct.Account.html#method.sync)
    function. Note how the [`SyncOptions`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/account/struct.SyncOptions.html) for the Alias set [`AliasSyncOptions.basicOutputs`](../../references/nodejs/interfaces/AliasSyncOptions/#basicoutputs)
    to `true`.
-4. Request the account's balance by calling the [`Account.balance()`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/account/struct.Account.html#method.balance)
+3. Request the account's balance by calling the [`Account.balance()`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/account/struct.Account.html#method.balance)
    function.
-5. Retrieve the Alias Id of the first [`AliasOutput`](https://docs.rs/iota-sdk/latest/iota_sdk/types/block/output/alias/struct.AliasOutput.html) related to Alice's
+4. Retrieve the Alias Id of the first [`AliasOutput`](https://docs.rs/iota-sdk/latest/iota_sdk/types/block/output/alias/struct.AliasOutput.html) related to Alice's
    account.
-6. Retrieve the Alias' address using the [`Client.alias_id_to_bech32()`](https://docs.rs/iota-sdk/latest/iota_sdk/client/core/struct.ClientInner.html#method.alias_id_to_bech32)
+5. Retrieve the Alias' address using the [`Client.alias_id_to_bech32()`](https://docs.rs/iota-sdk/latest/iota_sdk/client/core/struct.ClientInner.html#method.alias_id_to_bech32)
    function.
-7. Send 1 SMR to an address using the [`Account.send()`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/account/struct.Account.html#method.send) function.
+6. Send 1 SMR to an address using the [`Account.send()`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/account/struct.Account.html#method.send) function.
    Make sure to update the code sample to send to the address of your choice.
 
 ```rust reference
@@ -57,19 +56,19 @@ https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/alias_w
 
 The following example will:
 
-1. Instantiate a [`Wallet`](../../references/nodejs/classes/Wallet).
-2. Get Alice's account which was [created in the first guide](../accounts-and-addresses/create-account.mdx).
-3. Sync the account with the node to get the latest transactions by calling the [`Account.sync()`](../../references/nodejs/classes/Account/#sync)
+1. Instantiate a [`Wallet`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/core/struct.Wallet.html), Get Alice's `Account` which was
+   [created in the first guide](../accounts-and-addresses/create-account.mdx).
+2. Sync the account with the node to get the latest transactions by calling the [`Account.sync()`](../../references/nodejs/classes/Account/#sync)
    function. Note how the [`SyncOptions`](../../references/nodejs/interfaces/SyncOptions/#alias) for the Alias set [`AliasSyncOptions.basicOutputs`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/account/struct.AliasSyncOptions.html)
    to `true`.
-4. Request the account's balance by calling the [`Account.balance()`](../../references/nodejs/classes/Account/#balance)
+3. Request the account's balance by calling the [`Account.balance()`](../../references/nodejs/classes/Account/#balance)
    function.
-5. Retrieve the Alias Id of the first [`AliasOutput`](../../references/nodejs/classes/AliasOutput/) related to Alice's
+4. Retrieve the Alias Id of the first [`AliasOutput`](../../references/nodejs/classes/AliasOutput/) related to Alice's
    account.
-6. Retrieve the Alias' address using the [`Utils.aliasIdToBech32()`](../../references/nodejs/classes/Utils/#aliasidtobech32)
+5. Retrieve the Alias' address using the [`Utils.aliasIdToBech32()`](../../references/nodejs/classes/Utils/#aliasidtobech32)
    function.
-7. Define the inputs for the transaction as the first Output that can be unlocked by the Alias address.
-8. Send 1 SMR to an address using the [`Account.send()`](../../references/nodejs/classes/Account/#send) function.
+6. Define the inputs for the transaction as the first Output that can be unlocked by the Alias address.
+7. Send 1 SMR to an address using the [`Account.send()`](../../references/nodejs/classes/Account/#send) function.
    Make sure to update the code sample to send to the address of your choice.
 
 ```typescript reference
@@ -81,18 +80,18 @@ https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how
 
 The following example will:
 
-1. Instantiate a [`Wallet`](../../references/python/iota_sdk/wallet/).
-2. Get Alice's account which was [created in the first guide](../accounts-and-addresses/create-account.mdx).
-3. Sync the account with the node to get the latest transactions by calling the [`Account.sync()`](../../references/python/iota_sdk/wallet/account/#sync)
+1. Instantiate a [`Wallet`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/core/struct.Wallet.html), Get Alice's `Account` which was
+   [created in the first guide](../accounts-and-addresses/create-account.mdx).
+2. Sync the account with the node to get the latest transactions by calling the [`Account.sync()`](../../references/python/iota_sdk/wallet/account/#sync)
    function. Note how the [`sync_options`](../../references/python/iota_sdk/wallet/sync_options) for the Alias set [`AliasSyncOptions.basic_outputs`](../../references/python/iota_sdk/wallet/sync_options/#aliassyncoptions-objects)
    to `true`.
-4. Request the account's balance by calling the [`Account.getBalance()`](../../references/python/iota_sdk/wallet/account/#get_balance)
+3. Request the account's balance by calling the [`Account.getBalance()`](../../references/python/iota_sdk/wallet/account/#get_balance)
    function.
-5. Retrieve the Alias Id of the first `AliasOutput` related to Alice's account.
-6. Retrieve the [`AliasAddress`](../../references/python/iota_sdk/types/address/#aliasaddress-objects) using the [`Utils.alias_id_to_bech32()`](../../references/python/iota_sdk/utils/#alias_id_to_bech32)
+4. Retrieve the Alias Id of the first `AliasOutput` related to Alice's account.
+5. Retrieve the [`AliasAddress`](../../references/python/iota_sdk/types/address/#aliasaddress-objects) using the [`Utils.alias_id_to_bech32()`](../../references/python/iota_sdk/utils/#alias_id_to_bech32)
    function.
-7. Define the inputs for the transaction as the first Output that can be unlocked by the Alias address.
-8. Send 1 SMR to an address using the [`Account.send()`](../../references/python/iota_sdk/wallet/account/#send) function.
+6. Define the inputs for the transaction as the first Output that can be unlocked by the Alias address.
+7. Send 1 SMR to an address using the [`Account.send()`](../../references/python/iota_sdk/wallet/account/#send) function.
    Make sure to update the code sample to send to the address of your choice.
 
 ```python reference

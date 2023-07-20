@@ -26,14 +26,11 @@ You can use the SDK to send transaction with funds that have to be claimed (for 
 
 The following example will:
 
-1. Instantiate a [`Wallet`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/core/struct.Wallet.html).
-2. Get Alice's [`Account`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/account/struct.Account.html) which was
-   [created in the first guide](../accounts-and-addresses/create-account.mdx).
-3. Sync the account with the node to get the latest transactions by calling the [`Account.sync()`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/account/struct.Account.html#method.sync)
+1. Instantiate a [`Wallet`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/core/struct.Wallet.html), Get Alice's `Account` which was
+   [created in the first guide](../accounts-and-addresses/create-account.mdx) and [sync it](../accounts-and-addresses/check-balance.mdx).
+2. Retrieve all claimable outputs in the account by calling the [`Account.claimable_outputs()`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/account/struct.Account.html#method.claimable_outputs)
    function.
-4. Retrieve all claimable outputs in the account by calling the [`Account.claimable_outputs()`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/account/struct.Account.html#method.claimable_outputs)
-   function.
-5. Claim all the outputs in the account by calling the [`Account.claim_outputs()`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/account/struct.Account.html#method.claim_outputs) function.
+3. Claim all the outputs in the account by calling the [`Account.claim_outputs()`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/account/struct.Account.html#method.claim_outputs) function.
 
 ```rust reference
 https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/advanced_transactions/claim_transaction.rs
@@ -44,13 +41,11 @@ https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/advance
 
 The following example will:
 
-1. Instantiate a [`Wallet`](../../references/nodejs/classes/Wallet).
-2. Get Alice's account which was [created in the first guide](../accounts-and-addresses/create-account.mdx).
-3. Sync the account with the node to get the latest transactions by calling the [`Account.sync()`](../../references/nodejs/classes/Account/#sync)
+1. Instantiate a [`Wallet`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/core/struct.Wallet.html), Get Alice's `Account` which was
+   [created in the first guide](../accounts-and-addresses/create-account.mdx) and [sync it](../accounts-and-addresses/check-balance.mdx).
+2. Retrieve all claimable outputs in the account by calling the [`Account.claimableOutputs()`](../../references/nodejs/classes/Account/#claimableoutputs)
    function.
-4. Retrieve all claimable outputs in the account by calling the [`Account.claimableOutputs()`](../../references/nodejs/classes/Account/#claimableoutputs)
-   function.
-5. Claim all the outputs in the account by calling the [`Account.claimOutputs()`](../../references/nodejs/classes/Account/#claimoutputs) function.
+3. Claim all the outputs in the account by calling the [`Account.claimOutputs()`](../../references/nodejs/classes/Account/#claimoutputs) function.
 
 ```typescript reference
 https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/advanced_transactions/claim_transaction.ts

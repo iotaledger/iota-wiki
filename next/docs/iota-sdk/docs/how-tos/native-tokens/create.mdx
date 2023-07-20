@@ -31,16 +31,13 @@ To create a Foundry you need an Alias Output which owns it. This Alias Output on
 
 The following example will:
 
-1. Instantiate a [`Wallet`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/core/struct.Wallet.html).
-2. Get Alice's [`Account`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/account/struct.Account.html) which was
-   [created in the first guide](../accounts-and-addresses/create-account.mdx).
-3. Sync the account with the node to get the latest transactions by calling the [`Account.sync()`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/account/struct.Account.html#method.sync)
-   function.
-4. Check the account's balance for an [`Alias Output`](https://wiki.iota.org/shimmer/tips/tips/TIP-0018/#alias-output)
+1. Instantiate a [`Wallet`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/core/struct.Wallet.html), Get Alice's `Account` which was
+   [created in the first guide](../accounts-and-addresses/create-account.mdx) and [sync it](../accounts-and-addresses/check-balance.mdx).
+2. Check the account's balance for an [`Alias Output`](https://wiki.iota.org/shimmer/tips/tips/TIP-0018/#alias-output)
    it can use to create the [native tokens](https://wiki.iota.org/shimmer/tips/tips/TIP-0018/#native-tokens-in-outputs).
    If the account doesn't have any, it will create one.
-5. Define the [`CreateNativeTokenParams`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/struct.CreateNativeTokenParams.html).
-6. Create the native token using the [`Account.create_native_token()`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/account/struct.Account.html#method.create_native_token)
+3. Define the [`CreateNativeTokenParams`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/struct.CreateNativeTokenParams.html).
+4. Create the native token using the [`Account.create_native_token()`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/account/struct.Account.html#method.create_native_token)
    function.
 
 ```rust reference
@@ -52,18 +49,16 @@ https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/native_
 
 The following example will:
 
-1. Instantiate a [`Wallet`](../../references/nodejs/classes/Wallet).
-2. Get Alice's account which was [created in the first guide](../accounts-and-addresses/create-account.mdx).
-3. Sync the account with the node to get the latest transactions by calling the [`Account.sync()`](../../references/nodejs/classes/Account/#sync)
-   function.
-4. Check the account's balance for an [`Alias Output`](https://wiki.iota.org/shimmer/tips/tips/TIP-0018/#alias-output)
+1. Instantiate a [`Wallet`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/core/struct.Wallet.html), Get Alice's `Account` which was
+   [created in the first guide](../accounts-and-addresses/create-account.mdx) and [sync it](../accounts-and-addresses/check-balance.mdx).
+2. Check the account's balance for an [`Alias Output`](https://wiki.iota.org/shimmer/tips/tips/TIP-0018/#alias-output)
    it can use to create the [native tokens](https://wiki.iota.org/shimmer/tips/tips/TIP-0018/#native-tokens-in-outputs).
    If the account doesn't have any, it will create one.
-5. Define the [`CreateNativeTokenParams`](../../references/nodejs/interfaces/CreateNativeTokenParams/).
-6. Prepare the transaction that will create the native token using the
+3. Define the [`CreateNativeTokenParams`](../../references/nodejs/interfaces/CreateNativeTokenParams/).
+4. Prepare the transaction that will create the native token using the
    [`Account.prepareCreateNativeToken()`](../../references/nodejs/classes/Account/#preparecreatenativetoken)
    function.
-7. Send the prepared transaction using the [`Account.send()`](../../references/nodejs/classes/Account/#send)
+5. Send the prepared transaction using the [`Account.send()`](../../references/nodejs/classes/Account/#send)
    function.
 
 ```typescript reference
@@ -75,18 +70,16 @@ https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how
 
 The following example will:
 
-1. Instantiate a [`Wallet`](../../references/python/iota_sdk/wallet/).
-2. Get Alice's account which was [created in the first guide](../accounts-and-addresses/create-account.mdx).
-3. Sync the account with the node to get the latest transactions by calling the [`Account.sync()`](../../references/python/iota_sdk/wallet/account/#sync)
-   function.
-4. Check the account's balance for an [`Alias Output`](https://wiki.iota.org/shimmer/tips/tips/TIP-0018/#alias-output)
+1. Instantiate a [`Wallet`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/core/struct.Wallet.html), Get Alice's `Account` which was
+   [created in the first guide](../accounts-and-addresses/create-account.mdx) and [sync it](../accounts-and-addresses/check-balance.mdx).
+2. Check the account's balance for an [`Alias Output`](https://wiki.iota.org/shimmer/tips/tips/TIP-0018/#alias-output)
    it can use to create the [native tokens](https://wiki.iota.org/shimmer/tips/tips/TIP-0018/#native-tokens-in-outputs).
    If the account doesn't have any, it will create one.
-5. Define the `CreateNativeTokenParams`.
-6. Prepare the transaction that will create the native token using the
+3. Define the `CreateNativeTokenParams`.
+4. Prepare the transaction that will create the native token using the
    [`Account.prepare_create_native_token()`](../../references/python/iota_sdk/wallet/account/#prepare_create_native_token)
    function.
-7. Send the prepared transaction using the [`Account.send()`](../../references/python/iota_sdk/wallet/account/#send)
+5. Send the prepared transaction using the [`Account.send()`](../../references/python/iota_sdk/wallet/account/#send)
    function.
 
 ```python reference
