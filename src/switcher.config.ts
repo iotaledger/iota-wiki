@@ -153,7 +153,7 @@ const buildDocs = [
     label: 'Smart Contracts',
     description: 'Create smart contracts.',
     icon: SmartContracts,
-    subsection: 'layer-2',
+    subsection: 'build-layer-2',
     versions: [
       {
         id: 'smart-contract-0-7-0',
@@ -246,18 +246,6 @@ const config: Config = {
         label: 'Layer 2',
         description: 'Create smart contracts.',
         id: 'build-layer-2',
-      },
-    ],
-    [
-      {
-        label: 'Layer 1',
-        description: 'Interact with the network.',
-        id: 'maintain-layer-1',
-      },
-      {
-        label: 'Layer 2',
-        description: 'Create smart contracts.',
-        id: 'maintain-layer-2',
       },
     ],
     [
