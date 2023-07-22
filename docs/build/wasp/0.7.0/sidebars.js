@@ -21,130 +21,38 @@ module.exports = {
       id: 'overview',
     },
     {
+      type: 'link',
+      label: 'Run and maintain a Wasp Node',
+      href: '/wasp/running-a-node',
+    },
+    {
       type: 'category',
-      label: 'Core Concepts',
+      label: 'Wasm VM (Experimental)',
       items: [
         {
           type: 'doc',
-          label: 'Smart Contracts',
-          id: 'guide/core_concepts/smart-contracts',
+          label: 'Wasm VM for ISC',
+          id: 'guide/wasm_vm/intro',
         },
         {
           type: 'doc',
-          label: 'ISC Architecture',
-          id: 'guide/core_concepts/isc-architecture',
+          label: 'Smart Contract Concepts',
+          id: 'guide/wasm_vm/concepts',
         },
         {
           type: 'doc',
-          label: 'Validators and Access Nodes',
-          id: 'guide/core_concepts/validators',
+          label: 'Call Context',
+          id: 'guide/wasm_vm/context',
         },
         {
           type: 'doc',
-          label: 'Consensus',
-          id: 'guide/core_concepts/consensus',
+          label: 'Smart Contract Schema Tool',
+          id: 'guide/wasm_vm/schema',
         },
         {
           type: 'doc',
-          label: 'State manager',
-          id: 'guide/core_concepts/state_manager',
-        },
-        {
-          type: 'doc',
-          label: 'State, Transitions and State Anchoring',
-          id: 'guide/core_concepts/states',
-        },
-        {
-          type: 'doc',
-          label: 'Anatomy of a Smart Contract',
-          id: 'guide/core_concepts/smart-contract-anatomy',
-        },
-        {
-          type: 'doc',
-          label: 'Calling a Smart Contract',
-          id: 'guide/core_concepts/invocation',
-        },
-        {
-          type: 'doc',
-          label: 'Sandbox Interface',
-          id: 'guide/core_concepts/sandbox',
-        },
-        {
-          type: 'category',
-          label: 'Core Contracts',
-          items: [
-            {
-              type: 'doc',
-              label: 'Overview',
-              id: 'guide/core_concepts/core_contracts/overview',
-            },
-            {
-              type: 'doc',
-              label: 'root',
-              id: 'guide/core_concepts/core_contracts/root',
-            },
-            {
-              type: 'doc',
-              label: 'accounts',
-              id: 'guide/core_concepts/core_contracts/accounts',
-            },
-            {
-              type: 'doc',
-              label: 'blob',
-              id: 'guide/core_concepts/core_contracts/blob',
-            },
-            {
-              type: 'doc',
-              label: 'blocklog',
-              id: 'guide/core_concepts/core_contracts/blocklog',
-            },
-            {
-              type: 'doc',
-              label: 'governance',
-              id: 'guide/core_concepts/core_contracts/governance',
-            },
-            {
-              type: 'doc',
-              label: 'errors',
-              id: 'guide/core_concepts/core_contracts/errors',
-            },
-            {
-              type: 'doc',
-              label: 'evm',
-              id: 'guide/core_concepts/core_contracts/evm',
-            },
-          ],
-        },
-        {
-          type: 'category',
-          label: 'Accounts',
-          items: [
-            {
-              type: 'doc',
-              label: 'How Accounts Work',
-              id: 'guide/core_concepts/accounts/how-accounts-work',
-            },
-            {
-              type: 'doc',
-              label: 'How To Deposit To a Chain',
-              id: 'guide/core_concepts/accounts/how-to-deposit-to-a-chain',
-            },
-            {
-              type: 'doc',
-              label: 'How To Withdraw From a Chain',
-              id: 'guide/core_concepts/accounts/how-to-withdraw-from-a-chain',
-            },
-            {
-              type: 'doc',
-              label: 'View Account Balances',
-              id: 'guide/core_concepts/accounts/view-account-balances',
-            },
-            {
-              type: 'doc',
-              label: 'The Common Account',
-              id: 'guide/core_concepts/accounts/the-common-account',
-            },
-          ],
+          label: 'Using the Schema Tool',
+          id: 'guide/wasm_vm/usage',
         },
         {
           type: 'category',
@@ -191,68 +99,6 @@ module.exports = {
               id: 'guide/solo/the-l2-ledger',
             },
           ],
-        },
-      ],
-    },
-    {
-      type: 'category',
-      label: 'ISC Chains and Nodes',
-      items: [
-        {
-          type: 'doc',
-          label: 'Running a Node',
-          id: 'guide/chains_and_nodes/running-a-node',
-        },
-        {
-          type: 'doc',
-          label: 'Configuring wasp-cli',
-          id: 'guide/chains_and_nodes/wasp-cli',
-        },
-        {
-          type: 'doc',
-          label: 'Setting Up a Chain',
-          id: 'guide/chains_and_nodes/setting-up-a-chain',
-        },
-        {
-          type: 'doc',
-          label: 'Chain Management',
-          id: 'guide/chains_and_nodes/chain-management',
-        },
-        {
-          type: 'doc',
-          label: 'Testnet',
-          id: 'guide/chains_and_nodes/testnet',
-        },
-      ],
-    },
-    {
-      type: 'category',
-      label: 'Wasm VM (Experimental)',
-      items: [
-        {
-          type: 'doc',
-          label: 'Wasm VM for ISC',
-          id: 'guide/wasm_vm/intro',
-        },
-        {
-          type: 'doc',
-          label: 'Smart Contract Concepts',
-          id: 'guide/wasm_vm/concepts',
-        },
-        {
-          type: 'doc',
-          label: 'Call Context',
-          id: 'guide/wasm_vm/context',
-        },
-        {
-          type: 'doc',
-          label: 'Smart Contract Schema Tool',
-          id: 'guide/wasm_vm/schema',
-        },
-        {
-          type: 'doc',
-          label: 'Using the Schema Tool',
-          id: 'guide/wasm_vm/usage',
         },
         {
           type: 'doc',
@@ -426,18 +272,8 @@ module.exports = {
     },
     {
       type: 'doc',
-      label: 'Configuration',
-      id: 'configuration',
-    },
-    {
-      type: 'doc',
       label: 'Contribute',
       id: 'contribute',
-    },
-    {
-      type: 'doc',
-      label: 'Metrics',
-      id: 'metrics',
     },
   ],
 };
