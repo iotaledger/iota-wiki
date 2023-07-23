@@ -34,7 +34,7 @@ You can use a copy of the `stronghold.snapshot` file as a backup. You can implem
 
 ## How to Restore From a Backup
 
-Place a snapshot file in the directory that wallet.rs expects.
+Place a snapshot file in the directory that the IOTA SDK expects.
 
 ## How to Export a User's Stronghold
 
