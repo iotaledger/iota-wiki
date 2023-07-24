@@ -237,7 +237,7 @@ You can use the following example to send tokens to an address.
 https://github.com/iotaledger/iota-sdk/tree/develop/bindings/nodejs/examples/exchange/5-send-amount.ts
 ```
 
-The full function signature is `account.send(outputs[, options])`.
+The full function signature is `account.send(amount, address[, options])`.
 
 Default options are fine and successful; however, you can provide additional options, such as `remainderValueStrategy`, which can have the following values:
 
@@ -254,6 +254,8 @@ TransactionOptions {
 ```
 
 The `account.send()` function returns a `transaction` with its id. The `blockId` can be used later for checking the confirmation status. You can obtain individual transactions related to the given account using the `account.transactions()` function.
+
+`account.sendWithParams()` can be used to send to multiple addresses in the same transaction.
 
 :::note Dust Protection
 
