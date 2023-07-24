@@ -15,6 +15,13 @@ module.exports = async () => {
     baseUrl: '/shimmer/',
     themeConfig: {
       image: 'img/shimmer-wiki.png',
+      announcementBar: {
+        id: 'iota-sdk',
+        content: 'The new IOTA SDK got released, <a target="_blank" href="/iota-sdk/welcome/">check it out</a>🚀. It deprecates iota.js, iota.rs and wallet.rs',
+        backgroundColor: '#10a299',
+        textColor: '#ffffff',
+        isCloseable: true,
+      },
       navbar: {
         hideOnScroll: true,
         logo: {
