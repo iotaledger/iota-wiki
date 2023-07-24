@@ -8,8 +8,7 @@ keywords:
   - transactions
   - hornet
   - libraries
-  - wallet.rs
-  - iota.rs
+  - iota-sdk
   - Firefly
   - explanation
 ---
@@ -21,6 +20,8 @@ TODO: Update for Stardust/Shimmer.
 :::
 
 ## Which Libraries are Available for Stardust?
+
+You can use the [IOTA-SDK](../../../iota-sdk/docs/welcome.md) to interact with nodes running the Stardust protocol.
 
 ## What is Dust Protection and How Does it Work?
 
