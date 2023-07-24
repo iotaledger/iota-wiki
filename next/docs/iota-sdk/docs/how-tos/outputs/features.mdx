@@ -1,6 +1,6 @@
 ---
 title: Features
-description: 'How to create ouputs with different features'
+description: 'How to create outputs with different features'
 image: /img/logo/iota_mark_light.png
 keywords:
   - how to
@@ -15,13 +15,20 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AccountClient from '../../_admonitions/_account-client.md';
 
-Outputs can have different features. This how to exaplains how to add them to an output.
+The Stardust protocol introduced
+[multiple new output features](https://wiki.iota.org/shimmer/develop/explanations/what-is-stardust/output-features/)
+that allow you to add [metadata](https://wiki.iota.org/shimmer/develop/explanations/what-is-stardust/output-features/#metadata),
+a [sender](https://wiki.iota.org/shimmer/develop/explanations/what-is-stardust/output-features/#sender)
+(or [issuer](https://wiki.iota.org/shimmer/develop/explanations/what-is-stardust/output-features/#issuer) in the case of
+[NFTs](https://wiki.iota.org/shimmer/develop/explanations/what-is-stardust/tokenization/#non-fungible-tokens-nfts)) or [tag](https://wiki.iota.org/shimmer/develop/explanations/what-is-stardust/output-features/#tag) them by adding
+some small indexation data to the output.
 
 <AccountClient />
 
 :::info Output Features
 
-Different outputs can have different featues. This tables shows you which ouput has which features. You can find the output specs in [TIP-018](https://wiki.iota.org/tips/tips/TIP-0018)
+Different outputs can have different features. This table shows you which output has which features. You can find the
+output specs in [TIP-018](https://wiki.iota.org/tips/tips/TIP-0018)
 
 | Output  | Sender | Metadata | Immutable Metadata | Tag | Immutable Issuer |
 | ------- | :----: | :------: | :----------------: | :-: | :--------------: |
@@ -32,11 +39,188 @@ Different outputs can have different featues. This tables shows you which ouput 
 
 :::
 
-## Code Example
+## Example Code
 
-The following example will:
+<Tabs groupId="language" queryString>
+<TabItem value="rust" label="Rust">
 
-1. Create multiple NFT outputs with all possible features
+1. Create multiple NFT outputs using the
+   [`NftOutputBuilder`](https://docs.rs/iota-sdk/latest/iota_sdk/types/block/output/nft/struct.NftOutputBuilder.html)
+   and use the [`NftOutputBuilder.add_feature`](https://docs.rs/iota-sdk/latest/iota_sdk/types/block/output/nft/struct.NftOutputBuilder.html#method.add_feature)
+   function to add the following features:
+
+- [`SenderFeature`](https://docs.rs/iota-sdk/latest/iota_sdk/types/block/output/feature/struct.SenderFeature.html).
+
+<div className={'hide-code-block-extras'}>
+
+```rust reference
+https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/outputs/features.rs#L44-L47
+```
+
+</div>
+
+- [`MetadataFeature`](https://docs.rs/iota-sdk/latest/iota_sdk/types/block/output/feature/struct.MetadataFeature.html).
+
+<div className={'hide-code-block-extras'}>
+
+```rust reference
+https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/outputs/features.rs#L54-L57
+```
+
+</div>
+
+- [`TagFeature`](https://docs.rs/iota-sdk/latest/iota_sdk/types/block/output/feature/struct.TagFeature.html).
+
+<div className={'hide-code-block-extras'}>
+
+```rust reference
+https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/outputs/features.rs#L64-L66
+```
+
+</div>
+
+2. Add the following immutable features:
+
+- [`IssuerFeature`](https://docs.rs/iota-sdk/latest/iota_sdk/types/block/output/feature/struct.IssuerFeature.html) as an immutable feature.
+
+<div className={'hide-code-block-extras'}>
+
+```rust reference
+https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/outputs/features.rs#L49-L52
+```
+
+</div>
+
+- [`MetadataFeature`](https://docs.rs/iota-sdk/latest/iota_sdk/types/block/output/feature/struct.MetadataFeature.html)as an immutable feature.
+
+<div className={'hide-code-block-extras'}>
+
+```rust reference
+https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/outputs/features.rs#L59-L62
+```
+
+</div>
+
+</TabItem>
+<TabItem value="typescript-node" label="Typescript (Node.js)">
+
+1. Create multiple NFT outputs with all possible features using the
+   [`Client.buildNftOutput()`](../../../references/nodejs/classes/Client/#buildnftoutput) function and add the following features:
+
+- [`SenderFeature`](../../../references/nodejs/classes/SenderFeature/).
+
+<div className={'hide-code-block-extras'}>
+
+```typescript reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/outputs/features.ts#L37-L41
+```
+
+</div>
+
+- [`MetadataFeature`](../../../references/nodejs/classes/MetadataFeature/).
+
+<div className={'hide-code-block-extras'}>
+
+```typescript reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/outputs/features.ts#L53-L57
+```
+
+</div>
+
+- [`TagFeature`](../../../references/nodejs/classes/TagFeature/).
+
+<div className={'hide-code-block-extras'}>
+
+```typescript reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/outputs/features.ts#L69-L73
+```
+
+</div>
+
+2. Add the following immutable features:
+
+- [`IssuerFeature`](../../../references/nodejs/classes/IssuerFeature/).
+
+<div className={'hide-code-block-extras'}>
+
+```typescript reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/outputs/features.ts#L44-L50
+```
+
+</div>
+
+- [`MetadataFeature`](../../../references/nodejs/classes/MetadataFeature/).
+
+<div className={'hide-code-block-extras'}>
+
+```typescript reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/outputs/features.ts#L60-L66
+```
+
+</div>
+
+</TabItem>
+<TabItem value="python" label="Python">
+
+1. Create multiple NFT outputs using the [`Client.build_nft_output()`](../../../references/python/iota_sdk/client/#build_nft_output)
+   function and add the following features:
+
+- [`SenderFeature`](../../../references/python/iota_sdk/types/feature/#senderfeature-objects).
+
+<div className={'hide-code-block-extras'}>
+
+```python reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how_tos/outputs/features.py#L17-L25
+```
+
+</div>
+
+- [`MetadataFeature`](../../../references/python/iota_sdk/types/feature/#metadatafeature-objects).
+
+<div className={'hide-code-block-extras'}>
+
+```python reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how_tos/outputs/features.py#L41-L49
+```
+
+</div>
+
+- [`TagFeature`](../../../references/python/iota_sdk/types/feature/#tagfeature-objects).
+
+<div className={'hide-code-block-extras'}>
+
+```python reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how_tos/outputs/features.py#L65-L73
+```
+
+</div>
+
+2. Add the following immutable features:
+
+- [`IssuerFeature`](../../../references/python/iota_sdk/types/feature/#issuerfeature-objects).
+
+<div className={'hide-code-block-extras'}>
+
+```python reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how_tos/outputs/features.py#L29-L37
+```
+
+</div>
+
+- [`MetadataFeature`](../../../references/python/iota_sdk/types/feature/#metadatafeature-objects).
+
+<div className={'hide-code-block-extras'}>
+
+```python reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how_tos/outputs/features.py#L53-L61
+```
+
+</div>
+
+</TabItem>
+</Tabs>
+
+## Full Example Code
 
 <Tabs groupId="language" queryString>
 <TabItem value="rust" label="Rust">
@@ -62,7 +246,7 @@ https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how
 </TabItem>
 </Tabs>
 
-## Expected Output
+### Expected Output
 
 ```json
 [

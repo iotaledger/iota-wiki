@@ -7,7 +7,7 @@ keywords:
   - Shimmer Tangle Explorer
   - test tokens
   - testnet network
-  - testnet tokens
+  - Testnet tokens
   - Shimmer Faucet
 ---
 
@@ -15,7 +15,7 @@ keywords:
 
 ## Connect to the Testnet API
 
-We recommend you start interacting with Shimmer on a _testnet_ network. The _testnet_ will allow you to safely get
+We recommend you start interacting with Shimmer on a _Testnet_ network. The _Testnet_ will allow you to safely get
 acquainted with the IOTA SDK without the risk of losing any funds if you make a mistake along the way.
 
 You can use this public load-balanced Shimmer Testnet API:
@@ -31,5 +31,6 @@ in the Tangle.
 
 ## Get Test Tokens
 
-You will need some tokens to test value-based transactions on testnet network properly. You can get some testnet tokens
-through the [Shimmer Faucet](https://faucet.testnet.shimmer.network).
+You can get Testnet token using the [Shimmer Faucet](https://faucet.testnet.shimmer.network).
+You only need to input a valid Testnet [address](accounts-and-addresses.md) and the faucet will send you test tokens,
+so you can safely develop your application without risking any capital.

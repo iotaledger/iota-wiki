@@ -18,17 +18,70 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import TipAccountApproaches from '../../_admonitions/_tip-account-approaches.md';
 
-After you have [created an account](./create-account.mdx), you have a single address in the account. But you can generate more addresses.
+After you have [created an account](./create-account.mdx), you have a single address in the account. This should be
+enough for one user using
+the [single-account model](../../explanations/accounts-and-addresses.md#single-account-model). However, if you want to use
+the [multi-account-account model](../../explanations/accounts-and-addresses.md#multi-account-model), you will need to
+generate an address for each user in this account.
 
 <TipAccountApproaches />
 
-## Code Example
+## Example Code
 
-The following example will:
+<Tabs groupId="language" queryString>
+<TabItem value="rust" label="Rust">
 
-1. Create a wallet.
-2. Get Alice's account which was [created in the first guide](create-account.mdx).
-3. Generate an address in Alice's account.
+1. Instantiate a [`Wallet`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/core/struct.Wallet.html) and get Alice's [`Account`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/account/struct.Account.html) which was
+   [created in the first guide](./create-account.mdx).
+2. Generate an [`AccountAddress`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/account/types/struct.AccountAddress.html)
+   in Alice's account by calling the
+   [`Account.generate_ed25519_addresses()`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/account/struct.Account.html#method.generate_ed25519_addresses)
+   function.
+
+<div className={'hide-code-block-extras'}>
+
+```rust reference
+https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/accounts_and_addresses/create_address.rs#L44-L46
+```
+
+</div>
+
+</TabItem>
+<TabItem value="typescript-node" label="Typescript (Node.js)">
+
+1. Instantiate a [`Wallet`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/core/struct.Wallet.html) and get Alice's [`Account`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/account/struct.Account.html) which was
+   [created in the first guide](./create-account.mdx).
+2. Generate an [`Address`](../../../references/nodejs/classes/Address/) in Alice's account by calling the
+   [`Account.generateEd25519Addresses()`](../../../references/nodejs/classes/Account/#generateed25519addresses) function.
+
+<div className={'hide-code-block-extras'}>
+
+```typescript reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/accounts_and_addresses/create-address.ts#L31
+```
+
+</div>
+
+</TabItem>
+<TabItem value="python" label="Python">
+
+1. Instantiate a [`Wallet`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/core/struct.Wallet.html) and get Alice's [`Account`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/account/struct.Account.html) which was
+   [created in the first guide](./create-account.mdx).
+2. Generate an [`Address`](../../../references/python/iota_sdk/types/address/) in Alice's account by calling the
+   [`Account.generate_ed25519_addresses()`](../../../references/python/iota_sdk/wallet/account/#generate_ed25519_addresses) function.
+
+<div className={'hide-code-block-extras'}>
+
+```python reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how_tos/accounts_and_addresses/create_address.py#L18
+```
+
+</div>
+
+</TabItem>
+</Tabs>
+
+### Full Example Code
 
 <Tabs groupId="language" queryString>
 <TabItem value="rust" label="Rust">
@@ -52,9 +105,10 @@ https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how
 ```
 
 </TabItem>
+
 </Tabs>
 
-## Expected Output
+### Expected Output
 
 ```plaintext
 Generated address: rms1qrjahvcjhfl668vegm8vej48prsdh9n4rwpzr33j60m6vvux5yjhg2w9hq3

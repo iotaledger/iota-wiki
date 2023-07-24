@@ -9,40 +9,41 @@ keywords:
   - GitHub
 ---
 
-# Contribute to the Project
+# Contribute to the IOTA SDK
 
-Thank you for thinking about contributing to the project! We have the following ways that you can contribute.
+If you're thinking about contributing to the IOTA SDK project, please consider the following ways to get involved.
 
 ## Join the IOTA Libraries Initiative
 
-The [IOTA Libraries Initiative](https://github.com/iota-community/X-Team_IOTA_Libraries) is a collaborative effort to help improve the developer experience.
+The [IOTA Libraries Initiative](https://github.com/iota-community/X-Team_IOTA_Libraries) is a collaborative effort aimed
+at enhancing the developer experience. You can contribute in the following areas:
 
-- Quality assurance and review
-- Documentation
-- Code samples
+- Quality assurance and code review
+- Documentation improvements
+- Code sample creation
 
-If you'd like to get involved, join the #experience channel on [Discord](https://discord.iota.org).
+To get started, join the #experience channel on [Discord](https://discord.iota.org).
 
-## Contribute to the project's GitHub Repository
+## Contribute to the Project's GitHub Repository
 
-All the code is open source and hosted on [GitHub](https://github.com/iotaledger/iota-sdk) where you can do the following:
+All of the project's code is open source and hosted on [GitHub](https://github.com/iotaledger/iota-sdk). You can contribute
+in the following ways:
 
-- Report a bug
-- Suggest a new feature
-- Contribute to the documentation
+- Report any bugs you encounter
+- Suggest new features or enhancements
+- Contribute to the project's documentation
 
 ## Contribute to the Documentation
 
-This documentation is also open source and hosted on GitHub.
-
-If you want to contribute new documentation or fix an error, see the [contribution guidelines](https://github.com/iotaledger/documentation/blob/develop/.github/CONTRIBUTING.md).
+The project's documentation is also open source and available on GitHub. If you wish to contribute new documentation or
+fix any errors, please refer to
+the [contribution guidelines](https://github.com/iotaledger/documentation/blob/develop/.github/CONTRIBUTING.md).
 
 ## Share Your Knowledge
 
-Helping others is an important part of any open source ecosystem.
+Helping others is a crucial aspect of any open source ecosystem. By sharing your knowledge with the community, you can
+provide immense value and potentially inspire others to learn and contribute. Join the ongoing discussions in the
+#clients-discussion channel on [Discord](https://discord.iota.org).
 
-By sharing your knowledge with others, you can provide a lot of value to the community and maybe inspire someone else to learn and contribute.
-
-Take a look at what discussions are going on in the #clients-discussion channel on [Discord](https://discord.iota.org).
-
-Thanks :heart:
+Your contributions play a vital role in shaping and improving the project. We appreciate your interest and look forward
+to your valuable contributions!
