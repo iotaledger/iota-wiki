@@ -1,0 +1,176 @@
+---
+title: Features
+description: 'How to create ouputs with different features'
+image: /img/logo/iota_mark_light.png
+keywords:
+  - how to
+  - outputs
+  - features
+  - nodejs
+  - python
+  - rust
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import AccountClient from '../../_admonitions/_account-client.md';
+
+Outputs can have different features. This how to exaplains how to add them to an output.
+
+<AccountClient />
+
+:::info Output Features
+
+Different outputs can have different featues. This tables shows you which ouput has which features. You can find the output specs in [TIP-018](https://wiki.iota.org/tips/tips/TIP-0018)
+
+| Output  | Sender | Metadata | Immutable Metadata | Tag | Immutable Issuer |
+| ------- | :----: | :------: | :----------------: | :-: | :--------------: |
+| Basic   |   x    |    x     |                    |  x  |                  |
+| Alias   |   x    |    x     |         x          |     |        x         |
+| Foundry |        |    x     |         x          |     |                  |
+| NFT     |   x    |    x     |         x          |  x  |        x         |
+
+:::
+
+## Code Example
+
+The following example will:
+
+1. Create multiple NFT outputs with all possible features
+
+<Tabs groupId="language" queryString>
+<TabItem value="rust" label="Rust">
+
+```rust reference
+https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/outputs/features.rs
+```
+
+</TabItem>
+<TabItem value="typescript-node" label="Typescript (Node.js)">
+
+```typescript reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/outputs/features.ts
+```
+
+</TabItem>
+<TabItem value="python" label="Python">
+
+```python reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how_tos/outputs/features.py
+```
+
+</TabItem>
+</Tabs>
+
+## Expected Output
+
+```json
+[
+  {
+    "type": 6,
+    "amount": "49300",
+    "nftId": "0x0000000000000000000000000000000000000000000000000000000000000000",
+    "unlockConditions": [
+      {
+        "type": 0,
+        "address": {
+          "type": 0,
+          "pubKeyHash": "0x7ffec9e1233204d9c6dce6812b1539ee96af691ca2e4d9065daa85907d33e5d3"
+        }
+      }
+    ],
+    "features": [
+      {
+        "type": 0,
+        "address": {
+          "type": 0,
+          "pubKeyHash": "0x7ffec9e1233204d9c6dce6812b1539ee96af691ca2e4d9065daa85907d33e5d3"
+        }
+      }
+    ]
+  },
+  {
+    "type": 6,
+    "amount": "49300",
+    "nftId": "0x0000000000000000000000000000000000000000000000000000000000000000",
+    "unlockConditions": [
+      {
+        "type": 0,
+        "address": {
+          "type": 0,
+          "pubKeyHash": "0x7ffec9e1233204d9c6dce6812b1539ee96af691ca2e4d9065daa85907d33e5d3"
+        }
+      }
+    ],
+    "immutableFeatures": [
+      {
+        "type": 1,
+        "address": {
+          "type": 0,
+          "pubKeyHash": "0x7ffec9e1233204d9c6dce6812b1539ee96af691ca2e4d9065daa85907d33e5d3"
+        }
+      }
+    ]
+  },
+  {
+    "type": 6,
+    "amount": "47500",
+    "nftId": "0x0000000000000000000000000000000000000000000000000000000000000000",
+    "unlockConditions": [
+      {
+        "type": 0,
+        "address": {
+          "type": 0,
+          "pubKeyHash": "0x7ffec9e1233204d9c6dce6812b1539ee96af691ca2e4d9065daa85907d33e5d3"
+        }
+      }
+    ],
+    "features": [
+      {
+        "type": 2,
+        "data": "0x48656c6c6f2c20576f726c6421"
+      }
+    ]
+  },
+  {
+    "type": 6,
+    "amount": "47500",
+    "nftId": "0x0000000000000000000000000000000000000000000000000000000000000000",
+    "unlockConditions": [
+      {
+        "type": 0,
+        "address": {
+          "type": 0,
+          "pubKeyHash": "0x7ffec9e1233204d9c6dce6812b1539ee96af691ca2e4d9065daa85907d33e5d3"
+        }
+      }
+    ],
+    "immutableFeatures": [
+      {
+        "type": 2,
+        "data": "0x48656c6c6f2c20576f726c6421"
+      }
+    ]
+  },
+  {
+    "type": 6,
+    "amount": "47400",
+    "nftId": "0x0000000000000000000000000000000000000000000000000000000000000000",
+    "unlockConditions": [
+      {
+        "type": 0,
+        "address": {
+          "type": 0,
+          "pubKeyHash": "0x7ffec9e1233204d9c6dce6812b1539ee96af691ca2e4d9065daa85907d33e5d3"
+        }
+      }
+    ],
+    "features": [
+      {
+        "type": 3,
+        "tag": "0x48656c6c6f2c20576f726c6421"
+      }
+    ]
+  }
+]
+```

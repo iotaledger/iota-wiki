@@ -1,0 +1,129 @@
+---
+title: Check Balance
+description: "How to check a wallet account's balance."
+image: /img/logo/iota_mark_light.png
+keywords:
+  - how to
+  - get balance
+  - check balance
+  - nodejs
+  - python
+  - rust
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import TipFaucet from '../../_admonitions/_tip-faucet.md';
+
+You can retrieve the balance for any [account you created](./create-account.mdx) by calling the
+`Account.balance()` function. Bear in mind that you should always sync the account with the node to get the latest
+outputs. The sync function also returns the balance. So in some cases just calling that might be enough.
+
+<TipFaucet />
+
+## Code Example
+
+The following example will:
+
+1. Create a wallet.
+2. Get Alice's account which was [created in the first guide](./create-account.mdx).
+3. Sync the account with the node to get the latest transactions.
+4. Request the account's balance.
+
+<WarningUnlockConditions />
+
+<Tabs groupId="language" queryString>
+<TabItem value="rust" label="Rust">
+
+```rust reference
+https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/accounts_and_addresses/check_balance.rs
+```
+
+</TabItem>
+<TabItem value="typescript-node" label="Typescript (Node.js)">
+
+```typescript reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/accounts_and_addresses/check-balance.ts
+```
+
+</TabItem>
+<TabItem value="python" label="Python">
+
+```python reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how_tos/accounts_and_addresses/check_balance.py
+```
+
+</TabItem>
+</Tabs>
+
+## Expected Output
+
+<Tabs groupId="language" queryString>
+<TabItem value="rust" label="Rust">
+
+```plaintext
+Balance {
+    base_coin: BaseCoinBalance {
+        total: 1398000000,
+        available: 1398000000,
+    },
+    required_storage_deposit: RequiredStorageDeposit {
+        alias: 0,
+        basic: 213000,
+        foundry: 0,
+        nft: 0,
+    },
+    native_tokens: [],
+    nfts: [],
+    aliases: [],
+    foundries: [],
+    potentially_locked_outputs: {},
+}
+```
+
+</TabItem>
+<TabItem value="typescript-node" label="Typescript (Node.js)">
+
+```plaintext
+Balance {
+  baseCoin: { total: '1398000000', available: '1398000000', votingPower: '0'
+    },
+  requiredStorageDeposit: {
+    alias: '0',
+    basic: '213000',
+    foundry: '0',
+    nft: '0'
+    },
+  nativeTokens: [],
+  nfts: [],
+  aliases: [],
+  foundries: [],
+  potentiallyLockedOutputs: {}
+}
+```
+
+</TabItem>
+<TabItem value="python" label="Python">
+
+```plaintext
+Balance {
+    "baseCoin": {
+        "total": "1398000000",
+        "available": "1398000000"
+    },
+    "requiredStorageDeposit": {
+        "alias": "0",
+        "basic": "213000",
+        "foundry": "0",
+        "nft": "0"
+    },
+    "nativeTokens": [],
+    "nfts": [],
+    "aliases": [],
+    "foundries": [],
+    "potentiallyLockedOutputs": {}
+}
+```
+
+</TabItem>
+</Tabs>

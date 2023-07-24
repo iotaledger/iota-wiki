@@ -1,0 +1,67 @@
+---
+title: Send Native Tokens
+sidebar_label: Send
+description: 'How to send native tokens'
+image: /img/logo/iota_mark_light.png
+keywords:
+  - how to
+  - send native token
+  - send
+  - native token
+  - nodejs
+  - python
+  - rust
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+After you have [created](create.mdx) a
+[native token](https://wiki.iota.org/shimmer/introduction/explanations/what_is_stardust/tokenization#native-tokens),
+you can easily send it by calling the `Account.send_native_tokens(params, options)` function.
+
+As with any output, you can set [output unlock conditions](https://wiki.iota.org/shimmer/introduction/explanations/what_is_stardust/unlock_conditions).
+Keep in mind that if you set unlock conditions, whoever you send the native tokens to may need to
+claim them.
+
+## Code Example
+
+The following example will:
+
+1. Create an account manager.
+2. Get Alice's account which was [created in the first guide](../accounts-and-addresses/create-account.mdx).
+3. Define the type of native token and amount to send.
+4. Send the native tokens calling the `Account.send_native_tokens(params, options)` function.
+
+<Tabs groupId="language" queryString>
+<TabItem value="rust" label="Rust">
+
+```rust reference
+https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/native_tokens/send.rs
+```
+
+</TabItem>
+<TabItem value="typescript-node" label="Typescript (Node.js)">
+
+```typescript reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/native_tokens/send.ts
+```
+
+</TabItem>
+<TabItem value="python" label="Python">
+
+```python reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how_tos/native_tokens/send.py
+```
+
+</TabItem>
+</Tabs>
+
+## Expected Output
+
+```plaintext
+Balance before sending: 50
+Transaction sent: 0x9a1ea93962b5d4ba3a27053f4727dcc95b29ee35dc85c43d9d6be4635ab10463
+Block included: https://explorer.shimmer.network/testnet/block/0xb22cba455a3176ef62352f907b0fc5e5e49b4797563826141f8057cfa960a640
+Balance after sending: 40
+```

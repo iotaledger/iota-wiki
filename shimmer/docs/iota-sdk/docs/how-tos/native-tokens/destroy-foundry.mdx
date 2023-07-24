@@ -1,0 +1,71 @@
+---
+title: Destroy a Foundry
+sidebar_label: Destroy a Foundry
+description: 'How to destroy a foundry using iota-sdk'
+image: /img/logo/iota_mark_light.png
+keywords:
+  - how to
+  - destroy
+  - destroy foundry
+  - foundry
+  - nodejs
+  - python
+  - rust
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import DestroyFoundry from '../../_admonitions/_destroy_foundry.md';
+
+You can destroy a foundry by calling the `Account.burn(burn, options)` function. The function will
+destroy a foundry output as long as its circulating
+[native token](https://wiki.iota.org/shimmer/introduction/explanations/ledger/foundry) supply is zero.
+
+<DestroyFoundry />
+
+## Code Example
+
+Before you run the example you should make sure the first foundy on your account has zero circulating supply. If you have no available
+foundries, you can create one by [creating a native token](create.mdx). If you've already created your
+tokens but need to empty the foundry, you can decrease your native token supply by [melting them](melt.mdx).
+
+The following example will:
+
+1. Create a wallet.
+2. Get Alice's account which was [created in the first guide](../accounts-and-addresses/create-account.mdx).
+3. [Get the account's balance](./../accounts-and-addresses/check-balance.mdx) and show the amount of foundries.
+4. Try to destroy the first [foundry](https://wiki.iota.org/shimmer/introduction/explanations/ledger/foundry) output.
+5. Get the account's foundry count again to show the difference after step 4.
+
+<Tabs groupId="language" queryString>
+<TabItem value="rust" label="Rust">
+
+```rust reference
+https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/native_tokens/destroy_foundry.rs
+```
+
+</TabItem>
+<TabItem value="typescript-node" label="Typescript (Node.js)">
+
+```typescript reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/native_tokens/destroy-foundry.ts
+```
+
+</TabItem>
+<TabItem value="python" label="Python">
+
+```python reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how_tos/native_tokens/destroy_foundry.py
+```
+
+</TabItem>
+</Tabs>
+
+## Expected Output
+
+```plaintext
+Foundries before destroying: 51
+Transaction sent: 0xe0930e445aa9e78f59e3979744102bb0980fe6332950c7bb4785700dcb24fe8e
+Block included: https://explorer.shimmer.network/testnet/block/0x31d08663ae1d175d798d0f2925f41fa97f0eee8f9e233a4f5dacedb1398ed544
+Foundries after destroying: 50
+```

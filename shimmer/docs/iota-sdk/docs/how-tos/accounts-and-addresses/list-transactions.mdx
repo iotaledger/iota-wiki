@@ -1,0 +1,63 @@
+---
+title: List Transactions
+description: 'How to list transactions'
+image: /img/logo/iota_mark_light.png
+keywords:
+  - how to
+  - list transactions
+  - nodejs
+  - python
+  - rust
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+This How-To will show you how to list all transactions of an account.
+
+:::tip Sync Options
+
+If you want to list incoming transactions you need to specify that in your `sync` call.
+Transactions for outputs that you synced before with other sync options, will not be requested later.
+Also only transactions that weren't pruned on the point of syncing will be listed.
+
+:::tip
+
+## Code Example
+
+<Tabs groupId="language" queryString>
+<TabItem value="rust" label="Rust">
+
+```rust reference
+https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/accounts_and_addresses/list_transactions.rs
+```
+
+</TabItem>
+<TabItem value="typescript-node" label="Typescript (Node.js)">
+
+```typescript reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/accounts_and_addresses/list-transactions.ts
+```
+
+</TabItem>
+<TabItem value="python" label="Python">
+
+```python reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how_tos/accounts_and_addresses/list_transactions.py
+```
+
+</TabItem>
+</Tabs>
+
+## Expected Output
+
+```plaintext
+Sent transactions:
+0x3b92c80c5d108b0b756989aafe8843b98f1981726e5ddfe70bb51bc8e0ad5dbc
+Received transactions:
+0x3461e923da5e8222fac50397493d2237030d3ad743ecce141300de9477441756
+0x22efc1c85c925d3cea275b355ef37c8c0795713ac5c0a1ec3d6634d6e9d13416
+0x033f3766d7f202d82af52a17242da3747d9e51ca79704854307fe30a67526a54
+0x738d5c74d03aa5e954e4028a963d42d5f2283d24d69abc994dcb89f55dd3f67c
+0xde54940601a3153f4cae4986ee83853ee17c7eae389a0d1d7b7c678c6dec5f20
+```
