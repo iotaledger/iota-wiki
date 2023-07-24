@@ -84,8 +84,8 @@ And there are few additional interesting notes:
 - Using different `accounts` may be useful to split addresses/keys into some independent spaces, and it is up to
   developers to implement. \_Using different `accounts` may have a negative impact on a performance while you are on the
   [account discovery](https://github.com/bitcoin/bips/blob/master/bip-0044.mediawiki#account-discovery) phase. If you are
-  planning on using many multiple accounts then you may be interested in our stateful library
-  [wallet.rs](https://wiki.iota.org/wallet.rs/welcome) that incorporates all business logic needed to efficiently manage
+  planning on using many multiple accounts then you may be interested in our
+  [IOTA SDK](/iota-sdk/welcome/) that incorporates all business logic needed to efficiently manage
   independent accounts.
   Our [exchange guide](https://wiki.iota.org/docs/build/exchange-integration/exchange-integration-guide)
   provides some useful tips on how different accounts may be leveraged.
@@ -95,26 +95,9 @@ And there are few additional interesting notes:
 In case of IOTA, the derivation path of address/key space is `[seed]/44/4218/{int}/{0,1}/{int}`. The levels `purpose`
 and `coin_type` are given, the rest levels are up to developers to integrate.
 
-## Related How-to Guides and Tutorials
+## Related How-to Guides
 
-<Tabs groupId="library" queryString>
-<TabItem value="wallet.rs" label="wallet.rs">
-
-- [Create a wallet account](https://wiki.iota.org/shimmer/wallet.rs/how_tos/accounts_and_addresses/create_a_wallet_account/)
-- [Create an address](https://wiki.iota.org/shimmer/wallet.rs/how_tos/accounts_and_addresses/generate_address/)
-
-</TabItem>
-<TabItem value="iota.rs" label="iota.rs">
-
-- [Generate addresses](https://wiki.iota.org/shimmer/iota.rs/how_tos/generate_addresses/).
-
-</TabItem>
-<TabItem value="iota.js" label="iota.js">
-
-- [Create an address](https://wiki.iota.org/shimmer/iota.js/how_tos/address/)
-- [Create a addresses](https://wiki.iota.org/shimmer/iota.js/tutorials/value-transactions/generate-addresses/)
-- [Create a public addresses](https://wiki.iota.org/shimmer/iota.js/tutorials/value-transactions/public-addresses/)
-
-</TabItem>
-
-</Tabs>
+- [Create an Account](/iota-sdk/how-tos/accounts-and-addresses/create-account/)
+- [List Accounts](/iota-sdk/how-tos/accounts-and-addresses/list-accounts/)
+- [List Addresses](/iota-sdk/how-tos/accounts-and-addresses/list-addresses/)
+- [Create an Address](/iota-sdk/how-tos/accounts-and-addresses/create-address/)
