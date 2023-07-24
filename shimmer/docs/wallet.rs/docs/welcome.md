@@ -15,7 +15,7 @@ keywords:
 :::caution
 
 This is documentation for wallet.rs, which is no longer actively maintained.
-For up-to-date documentation, see the the documentation for its successor the [IOTA SDK](/iota-sdk/welcome).
+For up-to-date documentation, see the documentation for its successor the [IOTA SDK](/iota-sdk/welcome).
 
 :::
 

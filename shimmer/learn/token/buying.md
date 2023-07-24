@@ -13,4 +13,4 @@ You can buy Shimmer tokens currently on the following exchanges and marketplaces
 - [Soonaverse](https://soonaverse.com/tokens/all): Buy with IOTA Tokens
 - [Iotabee](https://iotabee.com/swap): Swap IOTA for SMR
 
-If you are an exchange that would like to integrate Shimmer, take a look at our [exchange guide](/wallet.rs/how_tos/exchange_guide).
+If you are an exchange that would like to integrate Shimmer, take a look at our [exchange guide](iota-sdk/how-tos/exchange-guide).

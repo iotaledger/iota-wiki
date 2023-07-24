@@ -88,12 +88,29 @@ set OPENSSL_DIR="C:\Program Files\OpenSSL-Win64"
 
 ### Install the SDK Using Cargo
 
-To start using the IOTA SDK in your Rust project, you can include the following dependencies in your `Cargo.toml` file:
+<Tabs>
+<TabItem value="cargo" label="Using argo">
+
+To start using the IOTA SDK in your Rust project, you can include it as a dependencies in your project's `Cargo.toml` by running:
+
+```bash
+cargo add iota-sdk
+```
+
+</TabItem>
+
+<TabItem value="cargo.toml" label="Add it Cargo.toml">
+
+To start using the IOTA SDK in your Rust project, you can include the following line under `dependencies` in your `Cargo.toml`:
 
 ```toml
 [dependencies]
-iota-sdk = { branch = "develop" }
+iota-sdk = "1.0.0"
 ```
+
+
+</TabItem>
+</Tabs>
 
 ### Build the SDK from Source
 

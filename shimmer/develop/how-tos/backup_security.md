@@ -42,7 +42,7 @@ You can create a new Stronghold snapshot on the fly to allow a user to leave you
 
 ## How to Rekey a Stronghold/Password Rotation
 
-To change a Stronghold password, you read a snapshot into a vault and then write it out with a new encryption password. You can view this [code](https://github.com/iotaledger/wallet.rs/blob/d1b8893d73aae35dfcf7c5c8006e2177988d25d0/src/stronghold.rs#L436-L451) for the source.
+To change a Stronghold password, you read a snapshot into a vault and then write it out with a new encryption password. You can view this [code](https://github.com/iotaledger/iota-sdk/blob/develop/sdk/src/client/stronghold/mod.rs#L296-L409) for the source.
 
 :::note
 
