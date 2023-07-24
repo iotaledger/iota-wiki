@@ -18,7 +18,7 @@ module.exports = async () => {
       announcementBar: {
         id: 'iota-sdk',
         content:
-          'The new IOTA SDK got released, <a target="_blank" href="/iota-sdk/welcome/">check it out</a>🚀. It deprecates iota.js, iota.rs and wallet.rs',
+          'The new IOTA SDK got released, <a target="_blank" href="/shimmer/iota-sdk/welcome/">check it out</a>🚀. It deprecates iota.js, iota.rs, and wallet.rs',
         backgroundColor: '#10a299',
         textColor: '#ffffff',
         isCloseable: true,
