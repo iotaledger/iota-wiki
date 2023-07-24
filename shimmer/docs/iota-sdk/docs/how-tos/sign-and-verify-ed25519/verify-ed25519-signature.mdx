@@ -15,11 +15,59 @@ keywords:
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-## Code Example
+Once you have [signed data with Ed25519](sign-ed25519.mdx), you can use the
+[`Utils.verifyEd25519Signature(signature, message)`](../../../references/nodejs/classes/Utils/#verifyed25519signature)
+function to verify that the data hasn't been modified by any third-party.
+
+## Example Code
+
+<Tabs groupId="language" queryString>
+<TabItem value="rust" label="Rust">
 
 The following example will:
 
-1. Verify an Ed25519 signature.
+1. Verify an Ed25519 signature using the [`Ed25519Signature.verify()`](https://docs.rs/iota-sdk/latest/iota_sdk/types/block/signature/struct.Ed25519Signature.html#method.verify) function.
+
+<div className={'hide-code-block-extras'}>
+
+```rust reference
+https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/sign_and_verify_ed25519/verify_ed25519_signature.rs#L17-L22
+```
+
+</div>
+
+</TabItem>
+<TabItem value="typescript-node" label="Typescript (Node.js)">
+
+The following example will:
+
+1. Verify an Ed25519 signature using the [`Utils.verifyEd25519Signature()`](../../../references/nodejs/classes/Utils/#verifyed25519signature) function.
+
+<div className={'hide-code-block-extras'}>
+
+```typescript reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/sign_and_verify_ed25519/verify-ed25519-signature.ts#L25-L29
+```
+
+</div>
+
+</TabItem>
+<TabItem value="python" label="Python">
+
+1. Verify an Ed25519 signature using the [`Utils.verify_ed25519_signature()`](../../../references/python/iota_sdk/utils/#verify_ed25519_signature) function.
+
+<div className={'hide-code-block-extras'}>
+
+```python reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how_tos/sign_and_verify_ed25519/verify_ed25519_signature.py#L9-L13
+```
+
+</div>
+
+</TabItem>
+</Tabs>
+
+### Full Example Code
 
 <Tabs groupId="language" queryString>
 <TabItem value="rust" label="Rust">
@@ -45,7 +93,7 @@ https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how
 </TabItem>
 </Tabs>
 
-## Expected Output
+### Expected Output
 
 ```plaintext
 Valid signature: true

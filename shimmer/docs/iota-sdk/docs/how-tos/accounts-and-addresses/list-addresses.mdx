@@ -14,9 +14,74 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import TipAccountApproaches from '../../_admonitions/_tip-account-approaches.md';
 
-An account is always initialised with a default address. This How-To will show you how to show the already created ones.
+<TipAccountApproaches />
 
-## Code Example
+An [`Account`](../../../references/nodejs/classes/Account/) is always initialised with a default
+[`Address`](../../../references/nodejs/classes/Address/). However, depending on you approach, your application may handle
+many addresses. The IOTA SDK provides a convenient function to list all the `Addresses` related to an `Account`:
+[`account.addresses()`](../../../references/nodejs/classes/Account/#addresses).
+
+This function will retrieve accurate and up-to-date information such as the address balance,
+transaction history, and other relevant metadata, facilitating seamless management of multiple users within your
+platform.
+
+## Example Code
+
+<Tabs groupId="language" queryString>
+<TabItem value="rust" label="Rust">
+
+1. Instantiate a [`Wallet`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/core/struct.Wallet.html) and get Alice's `Account` which was
+   [created in the first guide](./create-account.mdx).
+2. Get all the [`AccountAddress`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/account/types/struct.AccountAddress.html)
+   related to the `Account` by calling the [`Account.addresses()`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/account/struct.AccountInner.html#method.addresses)
+   function.
+
+<div className={'hide-code-block-extras'}>
+
+```rust reference
+https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/accounts_and_addresses/list_addresses.rs#L22-L26
+```
+
+</div>
+
+</TabItem>
+<TabItem value="typescript-node" label="Typescript (Node.js)">
+
+1. Instantiate a [`Wallet`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/core/struct.Wallet.html) and get Alice's `Account` which was
+   [created in the first guide](./create-account.mdx).
+2. Get all the [`Addresses`](../../../references/nodejs/classes/Address)
+   related to the `Account` by calling the [`Account.addresses()`](../../../references/nodejs/classes/Account/#addresses)
+   function.
+
+<div className={'hide-code-block-extras'}>
+
+```typescript reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/accounts_and_addresses/list-addresses.ts#L23-L27
+```
+
+</div>
+
+</TabItem>
+<TabItem value="python" label="Python">
+
+1. Instantiate a [`Wallet`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/core/struct.Wallet.html) and get Alice's `Account` which was
+   [created in the first guide](./create-account.mdx).
+2. Get all the [`Addresses`](../../../references/python/iota_sdk/types/address/)
+   related to the `Account` by calling the [`Account.addresses()`](../../../references/python/iota_sdk/wallet/account/#addresses)
+   function.
+
+<div className={'hide-code-block-extras'}>
+
+```python reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how_tos/accounts_and_addresses/list_addresses.py#L13-L18
+```
+
+</div>
+
+</TabItem>
+</Tabs>
+
+### Full Example Code
 
 <Tabs groupId="language" queryString>
 <TabItem value="rust" label="Rust">
@@ -42,7 +107,7 @@ https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how
 </TabItem>
 </Tabs>
 
-## Expected Output
+### Expected Output
 
 ```plaintext
 rms1qpjt6zr7rfvl27le5xjcv0qhr90l92wtm6eu6v6jhtgvrjp7mwufq6nqxn8

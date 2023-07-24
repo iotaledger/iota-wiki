@@ -17,19 +17,104 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import DestroyFoundry from '../../_admonitions/_destroy_foundry.md';
 
-You may want to burn some native tokens. To do so, you will need to call the
-`Account.burn(burn, options)` function.
+Burning native tokens refers to the permanent removal or destruction of those tokens from circulation. It renders the
+tokens unusable and reduces their total supply, often done to maintain scarcity, increase the value of remaining tokens,
+or enforce specific rules within an ecosystem.
 
 <DestroyFoundry />
 
-## Code Example
+## Example Code
+
+<Tabs groupId="language" queryString>
+<TabItem value="rust" label="Rust">
 
 The following example will:
 
-1. Create a wallet.
-2. Get Alice's account which was [created in the first guide](../accounts-and-addresses/create-account.mdx).
-3. [Get the account's balance](../accounts-and-addresses/check-balance.mdx).
-4. Burn 1 native token of the first ID with enough funds.
+1. Instantiate a [`Wallet`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/core/struct.Wallet.html), get Alice's `Account` which was
+   [created in the first guide](../accounts-and-addresses/create-account.mdx) and [sync it](../accounts-and-addresses/check-balance.mdx).
+2. Search the account's balance for a native token with a balance of at least `BURN_AMOUNT`.
+
+<div className={'hide-code-block-extras'}>
+
+```rust reference
+https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/native_tokens/burn.rs#L51-L52
+```
+
+</div>
+
+3. Burn the native tokens by calling the [`Account.burn()`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/account/struct.Account.html#method.burn)
+   function.
+
+<div className={'hide-code-block-extras'}>
+
+```rust reference
+https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/native_tokens/burn.rs#L62
+```
+
+</div>
+
+</TabItem>
+<TabItem value="typescript-node" label="Typescript (Node.js)">
+
+The following example will:
+
+1. Instantiate a [`Wallet`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/core/struct.Wallet.html), get Alice's `Account` which was
+   [created in the first guide](../accounts-and-addresses/create-account.mdx) and [sync it](../accounts-and-addresses/check-balance.mdx).
+2. Search the account's balance for a native token with a balance of at least `BURN_AMOUNT`.
+
+<div className={'hide-code-block-extras'}>
+
+```typescript reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/native_tokens/burn.ts#L32-L34
+```
+
+</div>
+
+3. Prepare the transaction that will burn the tokens using the [`Account.prepareBurnNativeToken()`](../../../references/nodejs/classes/Account/#prepareburnnativetoken)
+   function and send the prepared transaction using the [`Account.send()`](../../../references/nodejs/classes/Account/#send)
+   function.
+
+<div className={'hide-code-block-extras'}>
+
+```typescript reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/native_tokens/burn.ts#L52-L54
+```
+
+</div>
+
+</TabItem>
+<TabItem value="python" label="Python">
+
+The following example will:
+
+1. Instantiate a [`Wallet`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/core/struct.Wallet.html), get Alice's `Account` which was
+   [created in the first guide](../accounts-and-addresses/create-account.mdx) and [sync it](../accounts-and-addresses/check-balance.mdx).
+2. Search the account's balance for a native token with a balance of at least 10.
+
+<div className={'hide-code-block-extras'}>
+
+```python reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how_tos/native_tokens/burn.py#L22-L25
+```
+
+</div>
+
+3. Prepare the transaction that will burn the tokens using the [`Account.prepare_burn_native_token()`](../../../references/python/iota_sdk/wallet/account/#prepare_burn_native_token)
+   function and send the prepared transaction using the [`Account.send()`](../../../references/python/iota_sdk/wallet/account/#send)
+   function.
+
+<div className={'hide-code-block-extras'}>
+
+```python reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how_tos/native_tokens/burn.py#L31-L32
+```
+
+</div>
+
+</TabItem>
+</Tabs>
+
+### Full Example Code
 
 <Tabs groupId="language" queryString>
 <TabItem value="rust" label="Rust">
@@ -55,7 +140,7 @@ https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how
 </TabItem>
 </Tabs>
 
-## Expected Output
+### Expected Output
 
 ```plaintext
 Balance before burning: 30
