@@ -2715,6 +2715,7 @@ __metadata:
     "@docusaurus/preset-classic": 2.4.1
     "@iota-wiki/cli": "workspace:^"
     "@iota-wiki/plugin-tutorial": "workspace:^"
+    "@iota-wiki/theme": "workspace:^"
     "@mdx-js/react": ^1.6.21
     "@popperjs/core": ^2.11.5
     "@saucelabs/theme-github-codeblock": ^0.2.3
@@ -2770,7 +2771,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@iota-wiki/theme@workspace:theme":
+"@iota-wiki/theme@workspace:^, @iota-wiki/theme@workspace:theme":
   version: 0.0.0-use.local
   resolution: "@iota-wiki/theme@workspace:theme"
   dependencies:
