@@ -78,7 +78,8 @@ module.exports = {
     [
       '@iota-wiki/plugin-tutorial',
       {
-        title: 'Generate a WASM Smart Contract Using the Schema Tool in Typescript',
+        title:
+          'Generate a WASM Smart Contract Using the Schema Tool in Typescript',
         description:
           'In this tutorial you will learn how to use schema tool to generate smart contract template code on typescript',
         preview: '/IOTA-Smart-Contract-Tutorials-G.jpg',
@@ -184,7 +185,7 @@ module.exports = {
       {
         title: 'Guide - Deploy a Solidity Smart Contract Using Hardhat',
         description:
-            'In this tutorial you will learn how to deploy a solidity smart contract on EVM using hardhat.',
+          'In this tutorial you will learn how to deploy a solidity smart contract on EVM using hardhat.',
         preview: '/IOTA-Smart-Contract-Tutorials-F.jpg',
         route: 'smart-contracts/guide/evm/tooling#hardhat',
         tags: ['text', 'video'],
