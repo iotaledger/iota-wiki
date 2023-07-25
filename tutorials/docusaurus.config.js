@@ -37,7 +37,8 @@ module.exports = {
         title: 'Run a Wasp Chain',
         description: 'In this tutorial you will learn how to run a wasp chain.',
         preview: '/IOTA-Smart-Contract-Tutorials-B.jpg',
-        route: '/shimmer/smart-contracts/guide/chains_and_nodes/setting-up-a-chain',
+        route:
+          '/shimmer/smart-contracts/guide/chains_and_nodes/setting-up-a-chain',
         tags: ['text', 'video'],
       },
     ],
