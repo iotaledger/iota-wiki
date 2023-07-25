@@ -18,10 +18,11 @@ keywords:
 
 The official IOTA libraries serve as `one-source-code-of-truth` to IOTA users and provide binding to other programming languages. Below is a list of the IOTA libraries. You can also check out the [IOTA client libraries blog post](https://blog.iota.org/the-new-iota-client-libraries-harder-better-faster-stronger/), to learn about the libraries' core principles.
 
-- [client-lib](client.md): a general purpose IOTA client library for interacting with the IOTA network (Tangle).
-- [wallet-lib](wallet.md): a stateful library specifically designed to be used for IOTA value-based transfers.
+- [IOTA SDK](https://wiki.iota.org/shimmer/iota-sdk/welcome/): The IOTA SDK replaces `iota.rs`, `iota.js` and `wallet.rs` with a convenient development kit, written
+  in [Rust](https://wiki.iota.org/shimmer/iota-sdk/getting-started/rust/), with bindings for
+  [Node.js](https://wiki.iota.org/shimmer/iota-sdk/getting-started/nodejs/),
+  [Python](https://wiki.iota.org/shimmer/iota-sdk/getting-started/python/), and [Wasm](https://wiki.iota.org/shimmer/iota-sdk/getting-started/wasm/).
 - [iota.go](https://github.com/iotaledger/iota.go/tree/v3): an IOTA client library in Golang.
-- [iota.js](https://github.com/iotaledger/iota.js/tree/feat/stardust): an initial IOTA client library in Typescript that can be used in a web browser.
 - [iota.c](https://github.com/iotaledger/iota.c/tree/develop): a special-purpose library in C for embedded devices (with microcontrollers) covering a basic features of `client-lib` or `wallet-lib.`
 
 <div class="iframe-wrapper">
