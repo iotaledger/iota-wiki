@@ -15,7 +15,7 @@ keywords:
 
 # Shimmer Token
 
-Similar to the IOTA token, Shimmer tokens (short SMR) also act as a medium for value exchange, has no inflation
+Similar to the [IOTA token](../iota/iota-token.md), the Shimmer token (SMR) also acts as a medium for value exchange, has no inflation, 
 and is not subject to any fees. However, unlike the IOTA token, SMR could not be bought beforehand in an ICO but was
 only distributed to IOTA token holders who staked their tokens during the Shimmer staking periods on the IOTA mainnet.
 
@@ -30,7 +30,7 @@ The initial supply of SMR was distributed in the following way:
 |------------------|------------|----------------------|-----------------------------------------------------------------------------------------------------------------------------------|
 | IOTA Stakers     | 80%        | 1,450,896,407        | Rewarded to IOTA token holders who staked their tokens on the IOTA mainnet.                                                       |
 | Community DAO    | 10%        | 181,362,051          | To foster community involvement and governance, enabling members to contribute to the Shimmer ecosystem's development and growth. |
-| Tangle Ecosystem | 10%        | 181,362,051          | To support and incentivize projects that leverage the IOTA Tangle, contributing to the overall ecosystem's development.           |
+| Tangle Ecosystem | 10%        | 181,362,051          | To support and incentivize projects that leverage the IOTA Tangle, contributing to the ecosystem's development.           |
 
 The distribution of Shimmer tokens across these categories aims to create a balanced and inclusive network, promoting
 participation, community engagement, and innovation within the Shimmer ecosystem.
@@ -38,7 +38,7 @@ participation, community engagement, and innovation within the Shimmer ecosystem
 ### IOTA Stakers Allocation
 
 A significant portion of the Shimmer tokens, accounting for 80% of the total supply, is allocated to IOTA stakers. This
-amounts to 1,450,896,407 SMR tokens. IOTA token holders who [staked their tokens had the opportunity](/get-started/introduction/iota/staking/#iota-staking-for-smr-rewards) to receive SMR tokens as rewards for their participation in the IOTA mainnet.
+amounts to 1,450,896,407 SMR tokens. IOTA token holders who [staked their tokens had the opportunity](/get-started/introduction/iota/staking/#iota-staking-for-smr-rewards) to receive SMR tokens as rewards for participating in the IOTA mainnet.
 
 ### Community DAO Allocation
 

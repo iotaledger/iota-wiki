@@ -50,7 +50,7 @@ based in Berlin, Germany.
 ## Continuous Innovation
 
 The IOTA protocol is continuously evolving through research and development. It consists of two main public networks:
-the IOTA mainnet, which is the production level network managing IOTA tokens, and
+the IOTA mainnet, which is the production-level network managing IOTA tokens, and
 the [Shimmer the staging network](/get-started/introduction/shimmer/introduction/) for testing and deploying the
 latest protocol updates. The Shimmer network acts as a testing ground to validate new features and improvements before
 they are implemented on the IOTA mainnet.

@@ -14,17 +14,17 @@ keywords:
 
 # IOTA Token
 
-The IOTA token acts as the medium to do value transfers within the IOTA mainnet. However, unlike other cryptos
+The IOTA token is the medium to transfer value within the IOTA mainnet. However, unlike other cryptos
 there are no fees to be paid with the base token, meaning that IOTA tokens are transferred 1 to 1 to the receiver,
 without miners or other intermediaries taking a cut.
 
 ## Fair Distribution & No Inflation
 
-Unlike most other cryptocurrencies, all 2,779,530,283,277,76 IOTA tokens have been fairly distributed up on its
+Unlike most other cryptocurrencies, all 2,779,530,283,277,76 IOTA tokens have been fairly distributed upon its
 initial ICO without any early VC funding or tokens allocated to founders. Furthermore, there are no vesting schedules
-or token lockups, meaning that the entire supply is circulating.
+or token lockups, meaning the entire supply is circulating.
 
-Also unlike other protocols, IOTA has no inflation baked into its protocol, meaning that token holders are not getting
+IOTA has no inflation baked into its protocol, meaning that token holders are not getting
 artificially diluted and the supply stays static.
 
 ## Buying IOTA
