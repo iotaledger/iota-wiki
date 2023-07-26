@@ -31,4 +31,4 @@ discoveries can significantly impact the security and reliability of these innov
 
 ## Active Bug Bounties
 
-- [Stronghold](ADD LINK)
+There are currently no active bug bounties.

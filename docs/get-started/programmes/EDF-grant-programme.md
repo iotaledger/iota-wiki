@@ -1,5 +1,5 @@
 ---
-sidebar_label: EDF
+sidebar_label: Ecosystem Development Fund
 description: Empower development and innovation within the IOTA ecosystem with over USD 1M available in funding grants. Apply today to turn your ideas into reality.
 image: /img/participate/banner/banner_edf.png
 keywords:
