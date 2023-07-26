@@ -127,11 +127,6 @@ module.exports = {
           id: 'explanations/protocol_tip',
           label: 'Protocol TIPs',
         },
-        {
-          type: 'doc',
-          id: 'explanations/faq',
-          label: 'FAQ',
-        },
       ],
     },
     {

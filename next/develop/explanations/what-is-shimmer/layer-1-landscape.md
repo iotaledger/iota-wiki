@@ -41,9 +41,9 @@ in the [Shimmer Testnet](https://wiki.iota.org/shimmer/develop/endpoints/testnet
 ### IOTA
 
 In IOTA, you can attach
-an [IndexationPayload](https://wiki.iota.org/iota.rs/explanations/messages_payloads_and_transactions/#indexationpayload)
-to a [message](https://wiki.iota.org/iota.rs/explanations/messages_payloads_and_transactions/#messages) or
-any [SignedTransaction](https://wiki.iota.org/iota.rs/explanations/messages_payloads_and_transactions/#signedtransaction).
+an [IndexationPayload](https://wiki.iota.org/learn/about-iota/messages/#indexation-payload)
+to a [message](https://wiki.iota.org/learn/about-iota/messages/) or
+any `SignedTransaction`.
 The IndexationPayload allows you to add an index to a data message and arbitrary data.
 
 ### Shimmer

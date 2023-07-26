@@ -6,6 +6,12 @@ image: /img/shimmer-wiki.png
 
 # IOTA Client Libraries
 
+:::warning Deprecated
+
+The IOTA client libraries have been deprecated and replaced by the [IOTA SDK](https://wiki.iota.org/shimmer/iota-sdk/welcome/).
+
+:::
+
 :::note tl;dr;
 
 You can use the IOTA client libraries to handle communications between your node and

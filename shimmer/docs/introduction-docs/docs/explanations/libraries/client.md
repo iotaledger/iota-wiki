@@ -15,6 +15,12 @@ keywords:
 
 # IOTA Client Library
 
+:::warning Deprecated
+
+The IOTA client libraries have been deprecated and replaced by the [IOTA SDK](https://wiki.iota.org/shimmer/iota-sdk/welcome).
+
+:::
+
 The official client library for interacting with the IOTA Tangle allows you to:
 
 - Create blocks and transactions.
