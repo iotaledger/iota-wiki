@@ -13,7 +13,7 @@ keywords:
   - how to
 ---
 
-# Backup and Security
+# Back Up and Security
 
 ## Security Checklist
 
@@ -28,7 +28,7 @@ keywords:
 - Don't use SQLite.
 - Don't store passwords and backups on the same device.
 
-## How to Backup Your Account
+## How to Back Up Your Account
 
 You can use a copy of the `stronghold.snapshot` file as a backup. You can implement a [_cronjob_](https://linux.die.net/man/1/crontab), [_rsync_](https://linux.die.net/man/1/rsync) or [_scp_](https://linux.die.net/man/1/scp) with a date-time suffix to periodically back up your account.
 
