@@ -37,6 +37,9 @@ module.exports = [
     path: path.resolve(__dirname, 'docs/iota-sdk/docs'),
     routeBasePath: 'iota-sdk',
     sidebarPath: require.resolve('./docs/iota-sdk/sidebars.js'),
+    remarkPlugins: [
+      [require('@docusaurus/remark-plugin-npm2yarn'), { sync: true }],
+    ],
     //overriding default exclude array to include the python api's classes with _ at the beginning
     //but still exclude any _admonitions
     exclude: [
