@@ -14,7 +14,8 @@ keywords:
 
 # Touchpoint: Empowering Collaboration in Web3
 
-[Touchpoint](https://assembly.sc/touchpoint) is an open builders program that leverages the power of the community to provide access to tailored support,
+[Touchpoint](https://assembly.sc/touchpoint) is an open builders program that leverages the power of the community to
+provide access to tailored support,
 world-class expertise, and smart money. It offers a collaborative environment for builders, investors, and experts to
 come together and grow alongside 35+ projects across DeFi, gaming, NFTs, and other verticals.
 
@@ -34,7 +35,8 @@ the Touchpoint ecosystem.
 
 ## Leading Investors
 
-Touchpoint provides hands-on support with fundraising efforts. Participants gain access to leading investors dedicated to supporting ecosystem projects within the Assembly ecosystem. Whether you're looking for financial support
+Touchpoint provides hands-on support with fundraising efforts. Participants gain access to leading investors dedicated
+to supporting ecosystem projects within the Assembly ecosystem. Whether you're looking for financial support
 or introductions to potential backers, Touchpoint can help you navigate the fundraising landscape.
 
 ## Who is Touchpoint for?
@@ -50,31 +52,17 @@ Touchpoint is designed to cater to builders, investors, and experts actively inv
 
 ## How It Works
 
-### 1. Application
-
-Whether you're a builder, investor, or expert, [complete the application form](https://airtable.com/shrxW5Fs6NGDOkkBv) to introduce yourself, your organization,
-and how you would like to contribute to the community.
-
-### 2. Screening
-
-After submitting your application, there will be a short call to align on your objectives and ensure that Touchpoint is
-the right match for you and your project.
-
-### 3. Onboarding
-
-Touchpoint helps you get started based on your current development stage and short-term goals. Concrete next steps
-will be agreed upon, and you'll be connected with talent, capital, and knowledge from across the community.
-
-### 4. Get to Work
-
-Once inside the program, leverage the community, team, and resources to support you where you need it most. This
-includes activities such as community building, product design and roadmaps, product feedback and beta testing, funding
-and public launches, and more.
-
-### 5. Contribute to the Ecosystem's Success
-
-As a member of the Touchpoint program, you're encouraged to contribute to the growth and success of the ecosystem. Share
-your learnings and knowledge with other program/community members, adding to the collective Touchpoint knowledge base.
+1. **Application**: As a builder, investor, or
+   expert, [complete the application form](https://airtable.com/shrxW5Fs6NGDOkkBv) to introduce yourself, your
+   organization, and your potential contributions.
+2. **Screening**: A short call will follow your application to align on your objectives and ensure Touchpoint is a good
+   fit for your project.
+3. **Onboarding**: Touchpoint will help you get started, agreeing on concrete next steps based on your current
+   development stage and short-term goals. You'll be connected with the necessary talent, capital, and knowledge.
+4. **Get to Work**: Leverage the community, team, and resources for support in areas such as community building, product
+   design, feedback and beta testing, funding, public launches, and more.
+5. **Contribute to the Ecosystem's Success**: As a member, you're encouraged to contribute to the growth and success of
+   the ecosystem by sharing your learnings and knowledge, thereby enriching the collective Touchpoint knowledge base.
 
 Join Touchpoint today and benefit from tailored support, world-class expertise, and smart money to drive the success of
 your Web3 project.

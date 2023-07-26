@@ -11,7 +11,7 @@ keywords:
   - blockchain
 ---
 
-# Introduction to IOTA
+# Introduction
 
 IOTA is a distributed ledger technology (DLT) that empowers individuals to have control over their private data, run
 tamper-proof programs, and engage in asset ownership and trading without the need for intermediaries. DLTs, as the name
@@ -31,11 +31,10 @@ The Tangle is a replicated data structure across a network of nodes, forming a d
 enables parallel validation of transactions without total ordering, eliminating intermediaries and offering a highly
 performant consensus and ledger solution.
 
-## Data Transfer
+## IOTA Mainnet
 
-IOTA allows fast, secure, and free transfer of data, opening up a wide array of use cases. Clients send and receive
-messages through nodes, facilitating decentralized transport of data and value in a single message with the highest
-security grade and zero fees.
+The IOTA mainnet is the production grade network on which the [IOTA token](/get-started/introduction/iota/iota-token/)
+is available. It currently runs the [Chrysalis protocol version](/learn/chrysalis/introduction/).
 
 ## Feeless Transactions
 
@@ -43,19 +42,15 @@ Unlike traditional cryptocurrencies, IOTA requires no fees for transaction proce
 sender's wallet is exactly the same as the amount added to the recipient's wallet, making transactions seamless and
 cost-effective.
 
-## Energy Efficiency
+## Powered by a Non-Profit Foundation
 
-IOTA prides itself on its lightweight and energy-efficient network. Designed to minimize energy consumption, the IOTA
-network ensures efficient transaction processing while reducing environmental impact.
-
-Explore the full details of IOTA's innovative features, including the Tangle, feeless transactions, data transfer, and
-energy efficiency, driving the future of blockchain technology.
+Main development of IOTA is fostered by the [IOTA Foundation](https://iota.org), which is a non-profit organization
+based in Berlin, Germany.
 
 ## Continuous Innovation
 
 The IOTA protocol is continuously evolving through research and development. It consists of two main public networks:
-the [IOTA mainnet](mainnet.md), which is the stable network used for managing IOTA tokens,
-and [Shimmer, the staging network](../shimmer/staging-canary.md) for testing and deploying the latest protocol updates.
-The Shimmer network acts as a testing ground to validate new features and improvements before they are implemented on
-the mainnet. The upcoming significant update for IOTA is Stardust, and it is part of the ongoing effort called
-Coordicide, which aims to achieve full decentralization.
+the IOTA mainnet, which is the production-level network managing IOTA tokens, and
+the [Shimmer the staging network](/get-started/introduction/shimmer/introduction/) for testing and deploying the
+latest protocol updates. The Shimmer network acts as a testing ground to validate new features and improvements before
+they are implemented on the IOTA mainnet.

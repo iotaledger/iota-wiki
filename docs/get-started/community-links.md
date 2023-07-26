@@ -22,27 +22,10 @@ To engage with the IOTA Foundation and ecosystem projects, follow, subscribe, an
 following social media platforms. Please exercise caution and only engage with officially supported channels to avoid
 scammers.
 
-### Discord
-
-First and foremost, join the IOTA Community on [the IOTA Discord](https://discord.iota.org/) server. It's a platform to
-connect with the IOTA Foundation members and the vibrant IOTA community.
-
-### Twitter
-
-Sign up for a Twitter account and follow the [IOTA Foundation](https://twitter.com/iota/)
-and [Shimmer](https://twitter.com/shimmernet). Like and retweet news from these accounts, as well as from other
-interesting IOTA-related projects.
-
-### LinkedIn
-
-Create a LinkedIn account and follow the [IOTA Foundation](https://www.linkedin.com/company/iotafoundation/). Like and
-share articles from the IOTA Foundation and other ecosystem members to expand awareness within your professional
-network.
-
-### YouTube
-
-Sign up for a YouTube account and subscribe to the [IOTA Foundation channel](https://www.youtube.com/c/iotafoundation).
-Watch videos by the IOTA Foundation, learn about solutions built with IOTA, and share them with others.
+* **Discord**: Join the IOTA Community on [the IOTA Discord](https://discord.iota.org/) server to connect with the IOTA Foundation members and the vibrant IOTA community.
+* **Twitter**: Sign up for Twitter, follow the [IOTA Foundation](https://twitter.com/iota/) and [Shimmer](https://twitter.com/shimmernet). Engage with these accounts and other interesting IOTA-related projects by liking and retweeting their posts.
+* **LinkedIn**: Create a LinkedIn account, follow the [IOTA Foundation](https://www.linkedin.com/company/iotafoundation/). Like and share articles from the IOTA Foundation and other ecosystem members to raise awareness within your professional network.
+* **YouTube**: Sign up for a YouTube account, subscribe to the [IOTA Foundation channel](https://www.youtube.com/c/iotafoundation). Watch, learn, and share videos about solutions built with IOTA.
 
 ## Join the IOTA X-Teams
 
