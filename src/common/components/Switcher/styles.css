@@ -10,7 +10,7 @@
   margin-bottom: 1rem;
 }
 
-.badge--switcher{
+.badge--switcher {
   background-color: var(--ifm-color-gray-700);
 }
 
@@ -110,7 +110,7 @@
   border-color: var(--ifm-color-gray-500);
 }
 
-[data-them="dark"] .switcher-menu__button--active {
+[data-them='dark'] .switcher-menu__button--active {
   background-color: var(--ifm-color-gray-700);
 }
 
@@ -130,7 +130,7 @@
   justify-content: center;
 }
 
-[data-theme="dark"] .switcher-menu__dropdown {
+[data-theme='dark'] .switcher-menu__dropdown {
   background-color: var(--ifm-color-gray-800);
 }
 
