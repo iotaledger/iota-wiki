@@ -49,7 +49,7 @@ everything may yet run smoothly.
 - [Maven](https://maven.apache.org/)
 
 </TabItem>
-<TabItem value="node" label="Node.js">
+<TabItem value="typescript-node" label="Typescript (Node.js)">
 
 - A recent version of [Node.js](https://nodejs.org/en/download/) (>v16.17.0).
 
@@ -72,7 +72,7 @@ particular:
 - `org.json.*`
 
 </TabItem>
-<TabItem value="node" label="Node.js">
+<TabItem value="typescript-node" label="Typescript (Node.js)">
 
 This example uses `Axios` as the HTTP client, `bs58` to decode Base58, and [@noble/ed25519](https://www.npmjs.com/package/noble-ed25519) to sign the nonce. However, you can use any package as long as it accomplishes the same result.
 
@@ -156,7 +156,7 @@ Never save your secret key in plain text in your code. Use local environment var
 ```
 
 </TabItem>
-<TabItem value="node" label="Node.js">
+<TabItem value="typescript-node" label="Typescript (Node.js)">
 
 ```js title="./authenticate.js"
 import axios from 'axios';
@@ -204,7 +204,7 @@ byte[] convertNonce = DatatypeConverter.parseHexBinary(hashNonceHex);
 ```
 
 </TabItem>
-<TabItem value="node" label="Node.js">
+<TabItem value="typescript-node" label="Typescript (Node.js)">
 
 After you have retrieved the nonce, you should hash it. You can use the Node API's [createHash()](https://nodejs.org/api/crypto.html#hashupdatedata-inputencoding) function to hash the nonce with the SHA-256 hash function and convert it to hexadecimal.{#hashupdatedata-inputencoding) function to hash the nonce with the sha-256 hash function and convert it to hexadecimal.-node}
 
@@ -258,7 +258,7 @@ IOTA [Stronghold](https://wiki.iota.org/stronghold.rs/welcome) to store your sec
 ```
 
 </TabItem>
-<TabItem value="node" label="Node.js">
+<TabItem value="typescript-node" label="Typescript (Node.js)">
 
 ```js title="./authenticate.js"
 import * as ed from '@noble/ed25519';
@@ -316,7 +316,7 @@ this.jwt = response.getString("jwt");
 ```
 
 </TabItem>
-<TabItem value="node" label="Node.js">
+<TabItem value="typescript-node" label="Typescript (Node.js)">
 
 ```js title="./authenticate.js"
 import axios from 'axios';
@@ -392,7 +392,7 @@ This is an example of a GET request to the API with the JWT from the last step i
 ```
 
 </TabItem>
-<TabItem value="node" label="Node.js">
+<TabItem value="typescript-node" label="Typescript (Node.js)">
 
 ```js title="./authenticate.js"
 import axios from 'axios';
@@ -423,7 +423,7 @@ You can find the complete code example in this [repository](https://github.com/a
 All snippets above are taken from there.
 
 </TabItem>
-<TabItem value="node" label="Node.js">
+<TabItem value="typescript-node" label="Typescript (Node.js)">
 
 The following snippet is the final code using all functions together to request a JWT.
 You can find the complete code example at this [repository](https://github.com/Schereo/is-node-authentication))

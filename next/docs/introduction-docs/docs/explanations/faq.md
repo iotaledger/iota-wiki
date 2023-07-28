@@ -8,8 +8,7 @@ keywords:
   - transactions
   - hornet
   - libraries
-  - wallet.rs
-  - iota.rs
+  - IOTA SDK
   - Firefly
   - explanation
 ---

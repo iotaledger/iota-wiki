@@ -11,6 +11,13 @@ keywords:
   - explanation
 ---
 
+:::caution
+
+This is documentation for iota.rs, which is no longer actively maintained.
+For up-to-date documentation, see the documentation for its successor the [IOTA SDK](/iota-sdk/welcome).
+
+:::
+
 # Welcome
 
 ![IOTA Client Library](/img/Banner/banner_client_lib.png)

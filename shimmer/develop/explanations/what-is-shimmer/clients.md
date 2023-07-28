@@ -6,6 +6,12 @@ image: /img/shimmer-wiki.png
 
 # IOTA Client Libraries
 
+:::warning Deprecated
+
+The IOTA client libraries have been deprecated and replaced by the [IOTA SDK](https://wiki.iota.org/shimmer/iota-sdk/welcome).
+
+:::
+
 :::note tl;dr;
 
 You can use the IOTA client libraries to handle communications between your node and
@@ -60,8 +66,8 @@ protected snapshots that you can easily back up or share between devices.
 ### Flexible Account Models
 
 The library supports
-both [single-ccount](https://wiki.iota.org/shimmer/wallet.rs/explanations/account_approaches/#single-account-approach)
-and [multi-account](https://wiki.iota.org/shimmer/wallet.rs/explanations/account_approaches/#multi-account-approach)
+both [single-ccount](https://wiki.iota.org/shimmer/iota-sdk/explanations/accounts-and-addresses//#single-account-approach)
+and [multi-account](https://wiki.iota.org/shimmer/iota-sdk/explanations/accounts-and-addresses//#multi-account-approach)
 models. You can use the multi-account model if you want to create an individual account for each of your users, or
 the
 single-account model if you want to control a single account from which you can generate an address for each of your

@@ -144,23 +144,37 @@ Create a new alias output.
 > Account "main": create-alias-output
 ```
 
-### `decrease-native-token-supply`
+### `create-native-token`
 
-Melts a native token.
+Creates a native token.
 
 #### Parameters
 
-| Name       | Optional | Default | Example                                                                        |
-| ---------- | -------- | ------- | ------------------------------------------------------------------------------ |
-| `token_id` | ✘        | N/A     | 0x08860e1f3593ba86c597cf86f61d8b04d8a714c02c7c5da7132d45be9c2ce6445c0300000000 |
-| `amount`   | ✘        | N/A     | 100                                                                            |
+| Name                    | Optional | Default | Example       |
+| ----------------------- | -------- | ------- | ------------- |
+| `circulating_supply`    | ✘        | N/A     | 1000          |
+| `maximum_supply`        | ✘        | N/A     | 1000          |
+| `foundry_metadata_hex`  | ✓        | None    | 0xabcdef      |
+| `foundry_metadata_file` | ✓        | None    | metadata.json |
 
-#### Example
+#### Examples
 
-Melt the provided amount of a native token.
+Create a native token with a maximum supply.
 
 ```sh
-> Account "main": decrease-native-token-supply 0x08860e1f3593ba86c597cf86f61d8b04d8a714c02c7c5da7132d45be9c2ce6445c0300000000 100
+> Account "main": create-native-token 1000 1000
+```
+
+Create a native token with a maximum supply and hexadecimal foundry metadata.
+
+```sh
+> Account "main": create-native-token 1000 1000 --foundry-metadata-hex 0xabcdef
+```
+
+Create a native token with a maximum supply and foundry metadata from a file.
+
+```sh
+> Account "main": create-native-token 1000 1000 --foundry-metadata-file metadata.json
 ```
 
 ### `decrease-voting-power`
@@ -264,25 +278,6 @@ Displays the account interface usage.
 > Account "main": help
 ```
 
-### `increase-native-token-supply`
-
-Mints more of a native token.
-
-#### Parameters
-
-| Name       | Optional | Default | Example                                                                        |
-| ---------- | -------- | ------- | ------------------------------------------------------------------------------ |
-| `token_id` | ✘        | N/A     | 0x08860e1f3593ba86c597cf86f61d8b04d8a714c02c7c5da7132d45be9c2ce6445c0300000000 |
-| `amount`   | ✘        | N/A     | 10                                                                             |
-
-#### Example
-
-Mint 10 additional native tokens.
-
-```sh
-> Account "main": increase-native-token-supply 0x08860e1f3593ba86c597cf86f61d8b04d8a714c02c7c5da7132d45be9c2ce6445c0300000000 10
-```
-
 ### `increase-voting-power`
 
 Increases the voting power of the account.
@@ -301,37 +296,42 @@ Increase the voting power of the account by 100000.
 > Account "main": increase-voting-power 100000
 ```
 
-### `mint-native-token`
+### `melt-native-token`
 
-Mints a native token.
+Melts a native token.
 
 #### Parameters
 
-| Name                    | Optional | Default | Example       |
-| ----------------------- | -------- | ------- | ------------- |
-| `circulating_supply`    | ✘        | N/A     | 1000          |
-| `maximum_supply`        | ✘        | N/A     | 1000          |
-| `foundry_metadata_hex`  | ✓        | None    | 0xabcdef      |
-| `foundry_metadata_file` | ✓        | None    | metadata.json |
+| Name       | Optional | Default | Example                                                                        |
+| ---------- | -------- | ------- | ------------------------------------------------------------------------------ |
+| `token_id` | ✘        | N/A     | 0x08860e1f3593ba86c597cf86f61d8b04d8a714c02c7c5da7132d45be9c2ce6445c0300000000 |
+| `amount`   | ✘        | N/A     | 100                                                                            |
 
-#### Examples
+#### Example
 
-Mint a native token with a maximum supply.
+Melt the provided amount of a native token.
 
 ```sh
-> Account "main": mint-native-token 1000 1000
+> Account "main": melt-native-token 0x08860e1f3593ba86c597cf86f61d8b04d8a714c02c7c5da7132d45be9c2ce6445c0300000000 100
 ```
 
-Mint a native token with a maximum supply and hexadecimal foundry metadata.
+### `mint-native-token`
+
+Mints more of a native token.
+
+#### Parameters
+
+| Name       | Optional | Default | Example                                                                        |
+| ---------- | -------- | ------- | ------------------------------------------------------------------------------ |
+| `token_id` | ✘        | N/A     | 0x08860e1f3593ba86c597cf86f61d8b04d8a714c02c7c5da7132d45be9c2ce6445c0300000000 |
+| `amount`   | ✘        | N/A     | 10                                                                             |
+
+#### Example
+
+Mint 10 additional native tokens.
 
 ```sh
-> Account "main": mint-native-token 1000 1000 --foundry-metadata-hex 0xabcdef
-```
-
-Mint a native token with a maximum supply and foundry metadata from a file.
-
-```sh
-> Account "main": mint-native-token 1000 1000 --foundry-metadata-file metadata.json
+> Account "main": mint-native-token 0x08860e1f3593ba86c597cf86f61d8b04d8a714c02c7c5da7132d45be9c2ce6445c0300000000 10
 ```
 
 ### `mint-nft`

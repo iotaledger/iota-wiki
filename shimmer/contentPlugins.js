@@ -33,6 +33,30 @@ module.exports = [
     sidebarPath: path.resolve(__dirname, 'docs/wallet.rs/sidebars.js'),
   },
   {
+    id: 'iota-sdk',
+    path: path.resolve(__dirname, 'docs/iota-sdk/docs'),
+    routeBasePath: 'iota-sdk',
+    sidebarPath: require.resolve('./docs/iota-sdk/sidebars.js'),
+    remarkPlugins: [
+      [require('@docusaurus/remark-plugin-npm2yarn'), { sync: true }],
+    ],
+    //overriding default exclude array to include the python api's classes with _ at the beginning
+    //but still exclude any _admonitions
+    exclude: [
+      // '**/_*.{js,jsx,ts,tsx,md}',
+      // '**/_*/**',
+      '**/*.test.{js,jsx,ts,tsx}',
+      '**/__tests__/**',
+      '**/_admonitions/_**',
+    ],
+  },
+  {
+    id: 'cli-wallet',
+    path: path.resolve(__dirname, 'docs/cli-wallet/docs'),
+    routeBasePath: 'cli-wallet',
+    sidebarPath: require.resolve('./docs/cli-wallet/sidebars.js'),
+  },
+  {
     id: 'hornet',
     path: path.resolve(__dirname, 'docs/hornet/docs'),
     routeBasePath: 'hornet',
@@ -170,11 +194,5 @@ module.exports = [
     path: path.resolve(__dirname, 'docs/stronghold.rs/docs'),
     routeBasePath: 'stronghold.rs',
     sidebarPath: path.resolve(__dirname, 'docs/stronghold.rs/sidebars.js'),
-  },
-  {
-    id: 'cli-wallet',
-    path: path.resolve(__dirname, 'docs/cli-wallet/docs'),
-    routeBasePath: 'cli-wallet',
-    sidebarPath: require.resolve('./docs/cli-wallet/sidebars.js'),
   },
 ];
