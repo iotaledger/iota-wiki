@@ -32,6 +32,10 @@ runs:
       run: |
         yarn build:theme
       shell: bash
+    - name: Generate APIs
+      run: |
+        yarn generate:api
+      shell: bash
     # Artifacts cached after install to prevent removal by Yarn
     - name: Cache build artifacts
       uses: actions/cache@v3

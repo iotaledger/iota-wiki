@@ -8,6 +8,7 @@ import {
   SmartContracts,
   Streams,
   Stronghold,
+  Tools,
   Wallet,
 } from './common/icons';
 
@@ -145,6 +146,18 @@ const buildDocs = [
         id: 'iota-streams',
         label: '0.2.0',
         badges: ['IOTA'],
+      },
+    ],
+  },
+  {
+    id: 'apis',
+    label: 'APIs',
+    description: 'All available APIs.',
+    icon: Tools,
+    subsection: 'build-layer-1',
+    versions: [
+      {
+        id: 'apis',
       },
     ],
   },

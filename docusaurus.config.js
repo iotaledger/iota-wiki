@@ -106,6 +106,7 @@ module.exports = async () => {
       },
     },
   };
+
   const production = {
     themeConfig: {
       matomo: {
@@ -154,7 +155,76 @@ module.exports = async () => {
           },
         ],
       ],
-      plugins: [...contentPlugins],
+      plugins: [
+        ...contentPlugins,
+        [
+          "docusaurus-plugin-openapi-docs",
+          {
+            id: "openapi",
+            docsPluginId: "apis", // e.g. "classic" or the plugin-content-docs id
+            config: {
+              coreApi: {
+                specPath: 'https://raw.githubusercontent.com/iotaledger/tips/main/tips/TIP-0013/rest-api.yaml',
+                // https://raw.githubusercontent.com/iotaledger/tips/main/tips/TIP-0025/core-rest-api.yaml
+                outputDir: path.resolve(__dirname, 'docs/build/apis/core'),
+                sidebarOptions: {
+                  groupPathsBy: "tag",
+                },
+              },
+              indexerApi: {
+                specPath: 'https://raw.githubusercontent.com/iotaledger/tips/main/tips/TIP-0026/indexer-rest-api.yaml',
+                outputDir: path.resolve(__dirname, 'docs/build/apis/indexer'),
+                sidebarOptions: {
+                  groupPathsBy: "tag",
+                },
+              },
+              poiApi: {
+                specPath: 'https://raw.githubusercontent.com/iotaledger/inx-poi/develop/rest-api.yaml',
+                outputDir: path.resolve(__dirname, 'docs/build/apis/poi'),
+                sidebarOptions: {
+                  groupPathsBy: "tag",
+                },
+              },
+              // participationApi: {
+              //   specPath: 'https://raw.githubusercontent.com/iotaledger/inx-participation/develop/rest-api.yaml',
+              //   outputDir: path.resolve(__dirname, 'docs/build/apis/participation'),
+              //   sidebarOptions: {
+              //     groupPathsBy: "tag",
+              //   },
+              // },
+              explorerApi: {
+                specPath: 'https://raw.githubusercontent.com/iotaledger/inx-chronicle/main/documentation/api/api-explorer.yml',
+                outputDir: path.resolve(__dirname, 'docs/build/apis/explorer'),
+                sidebarOptions: {
+                  groupPathsBy: "tag",
+                },
+              },
+              // coreV0: {
+              //   specPath: 'https://raw.githubusercontent.com/iotaledger/inx-api-core-v0/develop/rest-api.yaml',
+              //   outputDir: path.resolve(__dirname, 'docs/build/apis/core-v0'),
+              //   sidebarOptions: {
+              //     groupPathsBy: "tag",
+              //   },
+              // },
+              // coreV1: {
+              //   specPath: 'https://raw.githubusercontent.com/iotaledger/inx-api-core-v1/develop/rest-api.yaml',
+              //   outputDir: path.resolve(__dirname, 'docs/build/apis/core-v1'),
+              //   sidebarOptions: {
+              //     groupPathsBy: "tag",
+              //   },
+              // },
+              ircMetadata: {
+                specPath: 'https://raw.githubusercontent.com/iotaledger/inx-irc-metadata/develop/rest-api.yaml',
+                outputDir: path.resolve(__dirname, 'docs/build/apis/irc-metadata'),
+                sidebarOptions: {
+                  groupPathsBy: "tag",
+                },
+              },
+
+            }
+          },
+        ],
+      ],
       stylesheets: [
         {
           href: 'https://cdn.jsdelivr.net/npm/katex@0.13.24/dist/katex.min.css',
