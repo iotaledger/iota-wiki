@@ -27,24 +27,8 @@ is simply a random list of english words.
 
 ### Related How-to Guides
 
-<Tabs groupId="library" queryString>
-<TabItem value="wallet.rs" label="wallet.rs">
+The IOTA SDK is secured by [Stronghold](https://wiki.iota.org/shimmer/stronghold/welcome) by default. This
+means that you can simply create an `StrongholdSecretManager` instance, and Stronghold will generate and store your seed securely.
 
-The wallet.rs library is secured by [Stronghold](https://wiki.iota.org/shimmer/stronghold/welcome) by default. This
-means that you can simply create an `AccountManager` instance, and Stronghold will generate and store your seed securely.
-
-You can still use the library to generate a mnemonic by calling the `AccountManager.generateMnemonic()` function.
-
-</TabItem>
-<TabItem value="iota.rs" label="iota.rs">
-
-- [Generate a seed mnemonic](https://wiki.iota.org/shimmer/iota.rs/how_tos/generate_mnemonic/)
-
-</TabItem>
-<TabItem value="iota.js" label="iota.js">
-
-- [Generate a seed](https://wiki.iota.org/shimmer/iota.js/how_tos/address/#generate-a-seed)
-- [Generate a seed mnemonic and master seed](https://wiki.iota.org/shimmer/iota.js/tutorials/value-transactions/generate-a-seed/#generate-an-ed25519-master-seed)
-
-</TabItem>
-</Tabs>
+- [Create Random Mnemonic](/iota-sdk/how-tos/accounts-and-addresses/create-mnemonic/)
+- [Create an Account](/iota-sdk/how-tos/accounts-and-addresses/create-account/)

@@ -13,7 +13,7 @@ keywords:
   - how to
 ---
 
-# Backup and Security
+# Back Up and Security
 
 ## Security Checklist
 
@@ -28,13 +28,13 @@ keywords:
 - Don't use SQLite.
 - Don't store passwords and backups on the same device.
 
-## How to Backup Your Account
+## How to Back Up Your Account
 
 You can use a copy of the `stronghold.snapshot` file as a backup. You can implement a [_cronjob_](https://linux.die.net/man/1/crontab), [_rsync_](https://linux.die.net/man/1/rsync) or [_scp_](https://linux.die.net/man/1/scp) with a date-time suffix to periodically back up your account.
 
 ## How to Restore From a Backup
 
-Place a snapshot file in the directory that wallet.rs expects.
+Place a snapshot file in the directory that the IOTA SDK expects.
 
 ## How to Export a User's Stronghold
 
@@ -42,7 +42,7 @@ You can create a new Stronghold snapshot on the fly to allow a user to leave you
 
 ## How to Rekey a Stronghold/Password Rotation
 
-To change a Stronghold password, you read a snapshot into a vault and then write it out with a new encryption password. You can view this [code](https://github.com/iotaledger/wallet.rs/blob/d1b8893d73aae35dfcf7c5c8006e2177988d25d0/src/stronghold.rs#L436-L451) for the source.
+To change a Stronghold password, you read a snapshot into a vault and then write it out with a new encryption password. You can view this [code](https://github.com/iotaledger/iota-sdk/blob/develop/sdk/src/client/stronghold/mod.rs#L296-L409) for the source.
 
 :::note
 

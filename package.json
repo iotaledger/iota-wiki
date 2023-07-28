@@ -30,6 +30,7 @@
     "@docusaurus/core": "2.4.1",
     "@docusaurus/plugin-client-redirects": "2.4.1",
     "@docusaurus/preset-classic": "2.4.1",
+    "@docusaurus/remark-plugin-npm2yarn": "^2.4.1",
     "@iota-wiki/plugin-tutorial": "workspace:^",
     "@iota-wiki/theme": "workspace:^",
     "@mdx-js/react": "^1.6.21",

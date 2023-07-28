@@ -11,6 +11,13 @@ keywords:
 - IOTA
 ---
 
+:::caution
+
+This is documentation for iota.js, which is no longer actively maintained.
+For up-to-date documentation, see the documentation for its successor the [IOTA SDK](/iota-sdk/welcome).
+
+:::
+
 # Welcome
 
 The iota.js client library is implemented in TypeScript to strongly type the objects sent and received from the API. You

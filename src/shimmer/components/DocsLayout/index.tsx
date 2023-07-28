@@ -58,8 +58,8 @@ export default function DocsLayout() {
         <ProtocolSection />
       </DocsSection>
       <DocsSection
-        header='Core Libraries'
-        description='With the Shimmer core libraries you can easily integrate Shimmer into your own applications.'
+        header='IOTA SDK'
+        description='With the IOTA SDK you can easily integrate Shimmer into your own applications.'
       >
         <CoreLibrariesSection />
       </DocsSection>
