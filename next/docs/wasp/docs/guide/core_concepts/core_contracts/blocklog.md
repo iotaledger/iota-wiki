@@ -148,17 +148,6 @@ Returns a list of events triggered by the smart contract with hname `h`.
 
 - `e`: ([`Array`](https://github.com/iotaledger/wasp/blob/develop/packages/kv/collections/array.go) of `[]byte`)
 
-### `controlAddresses()`
-
-Returns the current state controller and governing addresses and at what block index they were set.
-
-#### Returns
-
-- `s`: ([`iotago::Address`](https://github.com/iotaledger/iota.go/blob/develop/address.go)) The state controller
-  address.
-- `g`: ([`iotago::Address`](https://github.com/iotaledger/iota.go/blob/develop/address.go)) The governing address.
-- `n` (`uint32`):The block index where the specified addresses were set.
-
 ### `hasUnprocessable(u requestID)`
 
 Asserts whether or not a given requestID (`u`) is present in the "unprocessable list"
