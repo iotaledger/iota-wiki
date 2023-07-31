@@ -177,6 +177,10 @@ module.exports = async () => {
       id: 'apis',
       path: path.resolve(__dirname, 'docs/build/apis'),
       routeBasePath: 'apis',
+      sidebarPath: path.resolve(
+        __dirname,
+        'docs/build/apis/sidebars.ts',
+      ),
       docItemComponent: '@theme/ApiItem',
     },
     {

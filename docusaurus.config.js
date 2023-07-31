@@ -165,10 +165,9 @@ module.exports = async () => {
             config: {
               coreApi: {
                 specPath: 'https://raw.githubusercontent.com/iotaledger/tips/main/tips/TIP-0013/rest-api.yaml',
-                // https://raw.githubusercontent.com/iotaledger/tips/main/tips/TIP-0025/core-rest-api.yaml
                 outputDir: path.resolve(__dirname, 'docs/build/apis/core'),
                 sidebarOptions: {
-                  groupPathsBy: "tag",
+                  groupPathsBy: 'tag',
                 },
               },
               indexerApi: {
