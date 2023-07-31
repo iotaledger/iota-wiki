@@ -16,7 +16,7 @@ keywords:
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
-import WarningUnlockConditions from '../../_admonitions/_warning-unlock-conditions.md'
+import WarningUnlockConditions from '../../_admonitions/_warning-unlock-conditions.md';
 
 Listening to events in an application is essential for real-time data updates and a seamless user experience. By
 subscribing to events, you can trigger a callback as soon as the event happens, such as transfers, deposits, or
@@ -40,9 +40,9 @@ https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/wallet/events.r
 </div>
 
 2. Use the `Wallet` instance to listen to events with the
-[`Wallet.listen()`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/core/struct.WalletInner.html#method.listen) function.
-You can listen for a specific
-[`WalletEventType`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/events/types/enum.WalletEventType.html).
+   [`Wallet.listen()`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/core/struct.WalletInner.html#method.listen) function.
+   You can listen for a specific
+   [`WalletEventType`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/events/types/enum.WalletEventType.html).
 
 <div className={'hide-code-block-extras'}>
 
@@ -76,9 +76,9 @@ https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/exc
 </div>
 
 3. Use the `Wallet` instance to listen to events with the
-[`Wallet.listen()`](../../references/nodejs/classes/Wallet/#listen) function. You can listen for a specific
-[`WalletEventType`](../../references/nodejs/enums/WalletEventType/), in this case,
-[`WalletEventType.NewOutput`](../../references/nodejs/enums/WalletEventType/#newoutput).
+   [`Wallet.listen()`](../../references/nodejs/classes/Wallet/#listen) function. You can listen for a specific
+   [`WalletEventType`](../../references/nodejs/enums/WalletEventType/), in this case,
+   [`WalletEventType.NewOutput`](../../references/nodejs/enums/WalletEventType/#newoutput).
 
 <div className={'hide-code-block-extras'}>
 
@@ -87,7 +87,6 @@ https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/exc
 ```
 
 </div>
-
 
 </TabItem>
 <TabItem value="python" label="Python">
@@ -99,6 +98,7 @@ https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/exc
 ```python reference
 https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/exchange/4_listen_events.py#L19
 ```
+
 </div>
 
 2. Define a callback.
@@ -112,8 +112,8 @@ https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/exc
 </div>
 
 3. Use the `wallet` instance to listen to events with the
-[`wallet.listen()`](../../references/python/iota_sdk/wallet/#listen) function. You can listen for a specific
-[`WalletEventType`](../../references/python/iota_sdk/types/event/), in this case, `WalletEventType.NewOutput`.
+   [`wallet.listen()`](../../references/python/iota_sdk/wallet/#listen) function. You can listen for a specific
+   [`WalletEventType`](../../references/python/iota_sdk/types/event/), in this case, `WalletEventType.NewOutput`.
 
 <div className={'hide-code-block-extras'}>
 
@@ -125,7 +125,6 @@ https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/exc
 
 </TabItem>
 </Tabs>
-
 
 ### Full Example Code
 
@@ -154,7 +153,6 @@ https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/exc
 </Tabs>
 
 ### Expected Output
-
 
 ```js
 AccountIndex: 0
