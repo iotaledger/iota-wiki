@@ -1,4 +1,3 @@
-import type { Config } from './common/components/Switcher';
 import {
   Chronicle,
   GoShimmer,
@@ -9,7 +8,7 @@ import {
   Streams,
   Stronghold,
   Wallet,
-} from './common/icons';
+} from './common/icons/index';
 
 const buildDocs = [
   {
@@ -233,7 +232,7 @@ const maintainDocs = [
   },
 ];
 
-const config: Config = {
+const config = {
   docs: [...buildDocs, ...maintainDocs],
   sections: [
     [
