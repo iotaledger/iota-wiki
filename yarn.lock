@@ -2756,7 +2756,7 @@ __metadata:
     react-collapsible: ^2.8.4
     react-dom: 18.0.0
     react-flickity-component: ^3.6.3
-    react-image-gallery: ^1.2.7
+    react-image-gallery: ^1.3.0
     react-player: ^2.11.2
     react-popper: ^2.3.0
     react-select: ^5.2.2
@@ -14692,12 +14692,12 @@ plugin-image-zoom@flexanalytics/plugin-image-zoom:
   languageName: node
   linkType: hard
 
-"react-image-gallery@npm:^1.2.7":
-  version: 1.2.12
-  resolution: "react-image-gallery@npm:1.2.12"
+"react-image-gallery@npm:^1.3.0":
+  version: 1.3.0
+  resolution: "react-image-gallery@npm:1.3.0"
   peerDependencies:
     react: ^16.0.0 || ^17.0.0 || ^18.0.0
-  checksum: ba986edd0520f94f80248d05e9ef1523890791fde998584d4a82913355f0c57103f8fe9091c625316caeeef96908bbf7ce498fe105136af568a7f501268da9b2
+  checksum: 59043609bbcee62bd7c9c72feb59df63abfc246e227c0fae3032d72544c3916a2ff64eae777c7b3400a04221d9791a13ac4b984bd5c25c7ff11ccc7157d92d44
   languageName: node
   linkType: hard
 
