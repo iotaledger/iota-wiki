@@ -2726,6 +2726,7 @@ __metadata:
     "@docusaurus/preset-classic": 2.4.1
     "@docusaurus/remark-plugin-npm2yarn": ^2.4.1
     "@iota-wiki/cli": "workspace:^"
+    "@iota-wiki/plugin-docs": "workspace:^"
     "@iota-wiki/plugin-tutorial": "workspace:^"
     "@iota-wiki/theme": "workspace:^"
     "@mdx-js/react": ^1.6.21
@@ -2771,6 +2772,16 @@ __metadata:
     typescript: ^4.5.4
     url-loader: ^4.1.1
     webpack: ^5.81.0
+  languageName: unknown
+  linkType: soft
+
+"@iota-wiki/plugin-docs@workspace:^, @iota-wiki/plugin-docs@workspace:plugins/docs":
+  version: 0.0.0-use.local
+  resolution: "@iota-wiki/plugin-docs@workspace:plugins/docs"
+  dependencies:
+    "@docusaurus/plugin-content-docs": 2.4.1
+    "@docusaurus/types": 2.4.1
+    typescript: ^4.6.3
   languageName: unknown
   linkType: soft
 
