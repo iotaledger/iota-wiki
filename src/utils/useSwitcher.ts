@@ -1,10 +1,7 @@
 import useRouteContext from '@docusaurus/useRouteContext';
-// TODO: Change to use `useAllDocsData` from `@docusaurus/plugin-content-docs/client`.
-import { useAllPluginInstancesData } from '@docusaurus/useGlobalData';
+import { useAllDocsData } from '@docusaurus/plugin-content-docs/client';
 import config from '../switcher.config';
 import { MenuItem } from '../common/components/Switcher';
-
-const PLUGIN_NAME = 'docusaurus-plugin-content-docs';
 
 export type Switcher = {
   subsections: MenuItem[];
@@ -13,7 +10,7 @@ export type Switcher = {
 };
 
 export default function useSwitcher(): Switcher | undefined {
-  const plugins = useAllPluginInstancesData(PLUGIN_NAME);
+  const plugins = useAllDocsData();
   const pluginId = useRouteContext().plugin.id;
 
   function getPath(id: string) {
