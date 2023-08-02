@@ -76,14 +76,14 @@ We broke the code into separate snippets to help you understand it better. To ma
 ```javascript
 // Libraries
 import {
-    AddressUnlockCondition,
-    Ed25519Address,
-    IssuerFeature,
-    MintNftParams,
-    SenderFeature,
-    utf8ToHex,
-    Utils,
-    Wallet,
+  AddressUnlockCondition,
+  Ed25519Address,
+  IssuerFeature,
+  MintNftParams,
+  SenderFeature,
+  utf8ToHex,
+  Utils,
+  Wallet,
 } from '@iota/sdk';
 const IPFS = require('ipfs-core');
 const fs = require('fs');
@@ -160,13 +160,11 @@ async function run() {
 
 ```javascript
 if (!process.env.STRONGHOLD_PASSWORD) {
-    throw new Error(
-        '.env STRONGHOLD_PASSWORD is undefined, see .env.example',
-    );
+  throw new Error('.env STRONGHOLD_PASSWORD is undefined, see .env.example');
 }
 
 const wallet = new Wallet({
-    storagePath: process.env.WALLET_DB_PATH,
+  storagePath: process.env.WALLET_DB_PATH,
 });
 
 const account = await wallet.getAccount('Alice');

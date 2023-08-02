@@ -239,17 +239,17 @@ module.exports = {
         title: 'Create an NFT with the IOTA SDK and IPFS in NodeJs',
         description:
           'In this tutorial you will learn how to create a NFT on the Shimmer network with iota-sdk and IPFS.',
-          preview: '/create-nft-with-wallet-lib.png',
-          route: 'tutorials/create-nft-with-iota-sdk',
-          tags: [
-            'text',
-            'getting-started',
-            'node_js',
-            'iota-sdk',
-            'ipfs',
-            'shimmer',
-            'sdk'
-          ],
+        preview: '/create-nft-with-wallet-lib.png',
+        route: 'tutorials/create-nft-with-iota-sdk',
+        tags: [
+          'text',
+          'getting-started',
+          'node_js',
+          'iota-sdk',
+          'ipfs',
+          'shimmer',
+          'sdk',
+        ],
       },
     ],
   ],
