@@ -1,6 +1,13 @@
 ---
 description: This article provides an overview of the White Flag Consensus approach and its benefits in optimizing transaction confirmation and handling double spends.
-keywords: [ "White Flag Consensus", "Blockchain", "Transaction Confirmation", "Double Spends", "Conflict Resolution" ]
+keywords:
+  [
+    'White Flag Consensus',
+    'Blockchain',
+    'Transaction Confirmation',
+    'Double Spends',
+    'Conflict Resolution',
+  ]
 ---
 
 # White Flag Consensus
@@ -17,7 +24,7 @@ deterministically resolve these conflicts.
 Unlike traditional consensus mechanisms that often require complex and resource-intensive calculations to decide which
 of the conflicting transactions to approve, White Flag Consensus simplifies this process.
 
-Under the White Flag approach, transactions are confirmed without any voting or other consensus mechanism used to decide
+Under the White Flag approach, transactions are confirmed without any voting or other consensus mechanism to decide
 between conflicting transactions. Instead, it uses a deterministic method that decides the confirmation order of
 transactions based on their appearance in the past milestone. In essence, it retroactively determines the
 order of transactions, removing the need for decision-making during the transaction confirmation phase.
@@ -26,8 +33,8 @@ order of transactions, removing the need for decision-making during the transact
 
 In the case of double spends, White Flag Consensus chooses to approve the first transaction that does not conflict with
 the transactions approved in the past.
-Any conflicting transactions that appear later are automatically ignored and left unconfirmed. 
-This deterministic approach means that every node will reach the same state without needing to communicate or coordinate.
+Any conflicting transactions that appear later are automatically ignored and left unconfirmed.
+This deterministic approach means that every node will reach the same state without communicating or coordinating.
 
 ## Benefits of White Flag Consensus
 
@@ -39,12 +46,11 @@ The White Flag Consensus approach offers several key benefits:
 2. **Predictability**: Its deterministic nature makes the confirmation process predictable, as the state of the ledger
    after confirming a milestone does not depend on the order in which transactions are processed.
 
-3. **Security**: It provides a robust mechanism for handling double spends, enhancing the security of the network.
-
+3. **Security**: It provides a robust mechanism for handling double spends, enhancing the network's security.
 
 :::tip Learn More
 
-You can learn more about the [White Flag Consensus in IOTA](https://wiki.iota.org/tips/tips/TIP-0002) in the 
+You can learn more about the [White Flag Consensus in IOTA](https://wiki.iota.org/tips/tips/TIP-0002) in the
 [TIPS section](../tips.md).
 
 :::

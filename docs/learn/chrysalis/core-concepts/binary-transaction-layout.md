@@ -1,6 +1,13 @@
 ---
 description: This article explains the benefits of using binary transaction payloads over trinary ones, including improvements in computational efficiency, compatibility, and ease of integration.
-keywords: [ "Binary Transaction Payloads", "Trinary Transaction Payloads", "Computational Efficiency", "Compatibility", "Integration" ]
+keywords:
+  [
+    'Binary Transaction Payloads',
+    'Trinary Transaction Payloads',
+    'Computational Efficiency',
+    'Compatibility',
+    'Integration',
+  ]
 ---
 
 # Binary Transaction Layout
@@ -10,8 +17,7 @@ keywords: [ "Binary Transaction Payloads", "Trinary Transaction Payloads", "Comp
 Traditionally, some distributed ledger technologies (DLTs) used trinary data formats.
 The decision was based on the fact that trinary logic systems can theoretically store and process information more
 efficiently than binary systems.
-However, in practice, the digital world is built upon binary logic, which has led to certain challenges with trinary
-data structures, such as transaction payloads.
+However, in practice, the digital world is built upon binary logic, leading to trinary data structure challenges, such as transaction payloads.
 
 Binary transaction payloads, on the other hand, align more closely with conventional technology standards, offering
 several benefits over their trinary counterparts.
@@ -27,17 +33,17 @@ additional computational overhead.
 ## Compatibility and Interoperability
 
 Binary transaction payloads enhance compatibility and interoperability with existing systems.
-As the majority of technologies used today are based on binary logic,
+As most technologies used today are based on binary logic,
 adopting binary payloads simplifies integration efforts and reduces the likelihood of compatibility issues.
 This advantage makes it easier for developers and platforms to adopt and interact with IOTA using binary payloads.
 
 ## Ease of Integration and Development
 
-The prevalence of binary systems also extends to the realm of development tools and libraries.
-Developers have a wealth of resources and tools optimized for binary data at their disposal,
+The prevalence of binary systems also extends to development tools and libraries.
+Developers have a wealth of resources and tools optimized for binary data,
 which eases integration, boosts development speed, and reduces the chances of errors.
 When using trinary payloads, the pool of available resources is significantly reduced,
-potentially slowing down development and increasing complexity.
+potentially slowing development and increasing complexity.
 
 :::tip Learn More
 

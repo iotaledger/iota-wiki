@@ -1,13 +1,21 @@
 ---
-description: Introduction to IOTA's data structure, The Tangle, and its associated elements including blocks, slots, payloads, and comparison with traditional blockchains.
-keywords: [ "IOTA", "Tangle", "Blockchain", "Data Structures", "Distributed Ledger", "UTXO" ]
+description: ‘Introduction to IOTA's data structure, The Tangle, and its associated elements, including blocks, slots, payloads, and comparison with traditional blockchains.’
+keywords:
+  [
+    'IOTA',
+    'Tangle',
+    'Blockchain',
+    'Data Structures',
+    'Distributed Ledger',
+    'UTXO',
+  ]
 ---
 
 # Data Structures in IOTA 2.0
 
 ## The Tangle
 
-The Tangle is a unique data structure replicated across a decentralized network of computers, also known as 
+The Tangle is a unique data structure replicated across a decentralized network of computers, also known as
 [nodes](networking.md#nodes).
 This robust foundation for tracking token ownership forms a directed acyclic graph (DAG) of blocks, known as a block-DAG
 architecture. Its distributed nature ensures data immutability and a resilient, tamper-proof environment for data
@@ -35,19 +43,19 @@ ensuring the fair part of the throughput to selected [validators](validators.md)
 ## Payloads
 
 Payloads can be part of a block and are specified as either a Tagged Data payload, holding a tag and associated data, or
-a Transaction Payload, using the Unspent Transaction Output (UTXO) model for ledger accounting. A UTXO transaction
+a Transaction Payload using the Unspent Transaction Output (UTXO) model for ledger accounting. A UTXO transaction
 consumes unspent outputs from previous transactions and generates new outputs.
 
 ### Transaction Payload
 
 IOTA 2.0 uses the Unspent Transaction Output (UTXO) model for ledger accounting, a method prevalent in cryptocurrencies
 like Bitcoin, Cardano, and IOTA. Each transaction in this model consumes unspent outputs from previous transactions and
-generates new outputs. Therefore, when a user wishes to transfer tokens, they create a transaction specifying which
+generates new outputs. Therefore, when users wish to transfer tokens, they create a transaction specifying which
 existing UTXOs are consumed and which new UTXOs are created.
 
 ### Tagged Data Payload
 
-Tagged Data payload holds a tag and associated data.
+The tagged Data payload holds a tag and associated data.
 
 ## Slots
 

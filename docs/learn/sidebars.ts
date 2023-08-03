@@ -11,7 +11,7 @@ module.exports = {
           label: 'Core Concepts',
           items: [
             'stardust/core-concepts/multi-asset-ledger',
-            'stardust/core-concepts/consensus',
+            // 'stardust/core-concepts/consensus',
             'stardust/core-concepts/output-unlock-conditions',
             'stardust/core-concepts/output-features',
             'stardust/core-concepts/storage-deposit',
