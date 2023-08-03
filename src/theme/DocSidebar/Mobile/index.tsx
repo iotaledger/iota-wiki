@@ -14,12 +14,31 @@ import { useNavbarMobileSidebar } from '@docusaurus/theme-common/internal';
 import DocSidebarItems from '@theme/DocSidebarItems';
 import type { Props } from '@theme/DocSidebar/Mobile';
 import Switcher from '@site/src/common/components/Switcher';
+import useSwitcher from '@site/src/utils/useSwitcher';
 
 function DocSidebarMobileSecondaryMenu({ sidebar, path }: Props) {
   const mobileSidebar = useNavbarMobileSidebar();
+  const { before, switcher, after } = useSwitcher();
+
   return (
     <ul className={clsx(ThemeClassNames.docs.docSidebarMenu, 'menu__list')}>
-      <Switcher />
+      {before && (
+        <DocSidebarItems
+          items={before}
+          activePath={path}
+          onItemClick={(item) => {
+            // Mobile sidebar should only be closed if the category has a link
+            if (item.type === 'category' && item.href) {
+              mobileSidebar.toggle();
+            }
+            if (item.type === 'link') {
+              mobileSidebar.toggle();
+            }
+          }}
+          level={1}
+        />
+      )}
+      {switcher && <Switcher {...switcher} />}
       <DocSidebarItems
         items={sidebar}
         activePath={path}
@@ -34,6 +53,22 @@ function DocSidebarMobileSecondaryMenu({ sidebar, path }: Props) {
         }}
         level={1}
       />
+      {after && (
+        <DocSidebarItems
+          items={after}
+          activePath={path}
+          onItemClick={(item) => {
+            // Mobile sidebar should only be closed if the category has a link
+            if (item.type === 'category' && item.href) {
+              mobileSidebar.toggle();
+            }
+            if (item.type === 'link') {
+              mobileSidebar.toggle();
+            }
+          }}
+          level={1}
+        />
+      )}
     </ul>
   );
 }

@@ -1,11 +1,10 @@
 import type { ComponentType, SVGProps } from 'react';
 import React, { useState } from 'react';
-
-import useSwitcher from '@site/src/utils/useSwitcher';
 import Link from '@docusaurus/Link';
 import clsx from 'clsx';
 
 import './styles.css';
+import { SwitcherProps } from '@site/src/utils/useSwitcher';
 
 export type Item = {
   id: string;
@@ -171,11 +170,8 @@ function SwitcherMenu(props: SwitcherMenuProps) {
   );
 }
 
-export default function Switcher() {
-  const currentSwitcher = useSwitcher();
-  if (!currentSwitcher) return null;
-
-  const { subsections, docs, versions } = currentSwitcher;
+export default function Switcher(props: SwitcherProps['switcher']) {
+  const { subsections, docs, versions } = props;
 
   return (
     <div className='switcher'>

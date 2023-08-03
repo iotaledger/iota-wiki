@@ -3,11 +3,16 @@ import { useAllDocsData } from '@docusaurus/plugin-content-docs/client';
 import { useDocsSidebar } from '@docusaurus/theme-common/internal';
 import config from '../switcher.config';
 import { MenuItem } from '../common/components/Switcher';
+import { PropSidebarItem } from '@docusaurus/plugin-content-docs';
 
-export type Switcher = {
-  subsections: MenuItem[];
-  docs: MenuItem[];
-  versions: MenuItem[];
+export type SwitcherProps = {
+  before?: PropSidebarItem[];
+  after?: PropSidebarItem[];
+  switcher?: {
+    subsections: MenuItem[];
+    docs: MenuItem[];
+    versions: MenuItem[];
+  };
 };
 
 function findCurrentSection(sections, docId, sidebarId) {
@@ -35,14 +40,16 @@ function findSidebarItems(item, plugins) {
   if (!item) return;
 
   const { docId, sidebarId } = item;
+  const items = plugins[docId]?.globalSidebars[sidebarId];
+  if (!items) throw `No global sidebar '${sidebarId}' found for doc '${docId}'`;
 
-  // TODO: Add sidebar items during build and resolve here.
+  return items;
 }
 
-export default function useSwitcher(): Switcher | undefined {
+export default function useSwitcher(): SwitcherProps {
   const plugins = useAllDocsData();
   const docId = useRouteContext().plugin.id;
-  const sidebarId = useDocsSidebar().items;
+  const sidebarId = useDocsSidebar().name;
 
   const sections = config.sections.map((section) => {
     const subsections = section.subsections.map((subsection) => {
@@ -59,10 +66,10 @@ export default function useSwitcher(): Switcher | undefined {
       subsections,
     };
   });
-  if (!sections) return;
+  if (!sections) return {};
 
   const current = findCurrentSection(sections, docId, sidebarId);
-  if (!current) return;
+  if (!current) return {};
 
   function getPath(id: string) {
     // Find the registered entry path of a doc.
@@ -85,7 +92,7 @@ export default function useSwitcher(): Switcher | undefined {
     after: findSidebarItems(current.section.after, plugins),
   };
 
-  return {
+  const switcher = {
     versions: currentVersions.map((version) => ({
       ...version,
       to: getPath(version.id),
@@ -117,6 +124,10 @@ export default function useSwitcher(): Switcher | undefined {
         active: currentSubsection && subsection.id === currentSubsection.id,
       };
     }),
+  };
+
+  return {
+    switcher,
     ...currentSidebars,
   };
 }

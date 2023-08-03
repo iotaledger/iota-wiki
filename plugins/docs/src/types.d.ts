@@ -8,10 +8,7 @@ import {
 } from '@docusaurus/types';
 
 export type PluginOptions = DocsPluginOptions & {
-  globalSidebars: {
-    sidebar: string;
-    id: string;
-  }[];
+  globalSidebars: string[];
 };
 
 export type Options = Partial<PluginOptions>;

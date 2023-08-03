@@ -14,6 +14,28 @@ export default async function pluginDocs(
 
   return {
     ...plugin,
+    contentLoaded: async ({ actions, content, ...args }) => {
+      const setGlobalData = (data: {}) => {
+        actions.setGlobalData({
+          ...data,
+          globalSidebars: Object.fromEntries(
+            // This is safe because we only allow the 'current' version.
+            Object.entries(content.loadedVersions[0].sidebars).filter(
+              ([sidebarId]) => globalSidebars.includes(sidebarId),
+            ),
+          ),
+        });
+      };
+
+      await plugin.contentLoaded({
+        ...args,
+        content,
+        actions: {
+          ...actions,
+          setGlobalData,
+        },
+      });
+    },
   };
 }
 
