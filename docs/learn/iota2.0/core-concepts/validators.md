@@ -14,7 +14,7 @@ keywords:
   ]
 ---
 
-# Validators, Their Selection, and Rotation in IOTA 2.0
+# Validators
 
 In IOTA 2.0, validators are special [nodes](networking.md#nodes) that issue validation
 [blocks](data-structures.md#blocks) to enable the entire network to agree on the ledger state and the set of blocks in

@@ -11,7 +11,7 @@ keywords:
   ]
 ---
 
-# Data Structures in IOTA 2.0
+# Data Structures
 
 ## The Tangle
 

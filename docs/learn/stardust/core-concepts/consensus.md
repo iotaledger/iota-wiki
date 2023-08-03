@@ -1,6 +1,4 @@
 ---
-id: coordinator
-title: The Coordinator
 description: What is the Coordinator in the Shimmer network?
 image: /img/iota-wiki.png
 keywords:

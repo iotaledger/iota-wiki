@@ -10,7 +10,7 @@ keywords:
   - BIC credits
 ---
 
-# IOTA 2.0: Accounts, Mana, Staking, and Delegation
+# Mana, Staking and Delegation
 
 ## Accounts
 

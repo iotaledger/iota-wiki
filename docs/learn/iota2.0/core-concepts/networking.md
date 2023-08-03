@@ -12,7 +12,7 @@ keywords:
   ]
 ---
 
-# Understanding the IOTA Network: Nodes, Synchronization, and Autopeering
+# Networking and Peering
 
 The IOTA network, based on the innovative [Tangle](data-structures.md#the-tangle), comprises many nodes that work
 together to maintain network integrity and facilitate transactions.
