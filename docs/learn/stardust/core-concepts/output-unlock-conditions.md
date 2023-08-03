@@ -14,10 +14,9 @@ image: /img/logo/preview.png
 
 # Output Unlock Conditions
 
-As discussed [previously](./rethink-utxo.md), the redesigned UTXO model allows for
-implementing additional logic on transfers. Outputs, that are technically the results of a transfer, may define special
-unlocking logic. When these outputs are consumed in subsequent transfers they have to satisfy all unlock conditions that
-are defined on them.
+The redesigned UTXO model allows for implementing additional logic on transfers. Outputs, that are technically the 
+results of a transfer, may define special unlocking logic. When these outputs are consumed in subsequent transfers 
+they have to satisfy all unlock conditions that  are defined on them.
 
 ## Address
 
@@ -50,3 +49,10 @@ Outputs may be timelocked, meaning no one can unlock them before a specific dead
 becomes possible to time smart contract requests in the future. An NFT auction organizer for example could prepare an
 on-ledger smart contract request that closes the auction at a given date and time, transferring the to-be-sold NFT to
 the highest bidder at that moment.
+
+:::tip Learn More
+
+You can learn more about [output unlock conditions](https://wiki.iota.org/tips/tips/TIP-0018) in the
+[TIPS section](../tips.md).
+
+:::

@@ -47,3 +47,10 @@ built around the network. It becomes possible to map data (Metadata Feature) sto
 (Sender Feature) for a specific purpose (Tag Feature).
 
 To read more about outputs, the Stardust ledger and tokenization concepts check out [TIP-18](https://wiki.iota.org/shimmer/tips/tips/TIP-0018/).
+
+:::tip Learn More
+
+You can learn more about [outputs features in Shimmer](https://wiki.iota.org/tips/tips/TIP-0018/#nft-locking--unlocking)
+in the [TIPS section](../tips.md).
+
+:::
