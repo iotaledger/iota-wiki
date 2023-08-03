@@ -4,6 +4,11 @@ module.exports = async () => {
   const buildPlugins = [
     {
       id: 'build',
+      globalSidebars: [
+        {
+          sidebar: 'build',
+        },
+      ],
       path: path.resolve(__dirname, 'docs/build/getting-started'),
       sidebarPath: path.resolve(
         __dirname,
