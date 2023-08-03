@@ -75,7 +75,7 @@ Never modify quotes. Fix typos in a quote only if you are the first to publish i
 
 Do not contract short quotes. Put `[…]` in place of an omitted part. Never omit parts that change the meaning of the quote, its emotion, or anything else that could lead to misinterpreting it.
 
-Use American English style notation: use double ticks (`"`) and put commas and full stops inside the quote. For long quotes, use [paragraph-style quotes](./formatting#paragraph-quotes) instead.
+Use American English style notation: use double ticks (`"`) and put commas and full stops inside the quote. For long quotes, use [paragraph-style quotes](./formatting.md#paragraph-quotes) instead.
 
 ## Date and Time
 
