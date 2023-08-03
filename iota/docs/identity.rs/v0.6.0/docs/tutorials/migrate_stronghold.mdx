@@ -26,15 +26,16 @@ After verifying that your new Stronghold Snapshot works as intended, make sure t
 ## Rust
 
 To migrate a v1 Stronghold Snapshot from Identity 0.6.2 or earlier in Rust to a v2 Stronghold Snapshot, follow these steps:
+
 - Create a new crate with `cargo new --bin stronghold-migration && cd stronghold-migration`.
 - Run `cargo add iota-sdk --features stronghold`.
 - Run `cargo add anyhow`.
 - Copy the code from [rust migration tool](#Rust-Migration-Tool) into `main.rs`.
 - The program takes 4 arguments, 2 of them required.
-    - Required: The path to the current stronghold snapshot.
-    - Required: The password to the current stronghold snapshot.
-    - Optional: The path where the migrated snapshot shall be written. If not given, the old snapshot will be overwritten.
-    - Optional: The password of the migrated snapshot.
+  - Required: The path to the current stronghold snapshot.
+  - Required: The password to the current stronghold snapshot.
+  - Optional: The path where the migrated snapshot shall be written. If not given, the old snapshot will be overwritten.
+  - Optional: The password of the migrated snapshot.
 - Run `cargo run --release -- $CURRENT_PATH $CURRENT_PASSWORD $NEW_PATH $NEW_PASSWORD`.
 
 ### Rust Migration Tool
@@ -95,77 +96,86 @@ fn main() -> anyhow::Result<()> {
 ## Wasm
 
 To migrate a v1 Stronghold Snapshot from Identity 0.6.0 or earlier in Wasm to a v2 Stronghold Snapshot, follows these steps. Note that we're using the iota-sdk nodejs version for this process.
+
 - Create a new directory `mkdir stronghold-migration && cd stronghold-migration`.
 - Run `npm init` and accept the defaults.
 - Add these dependencies in `package.json`:
-    - `"@iota/sdk": "^1.0.3"`
-    - `"readline-sync": "^1.4.10"`
+  - `"@iota/sdk": "^1.0.3"`
+  - `"readline-sync": "^1.4.10"`
 - Copy the code from [Wasm migration tool](#Wasm-Migration-Tool) into a new file called `index.js`.
 - The program takes 4 arguments, 2 of them required.
-    - Required: The path to the current stronghold snapshot.
-    - Required: The password to the current stronghold snapshot.
-    - Optional: The path where the migrated snapshot shall be written. If not given, the old snapshot will be overwritten.
-    - Optional: The password of the migrated snapshot.
+  - Required: The path to the current stronghold snapshot.
+  - Required: The password to the current stronghold snapshot.
+  - Optional: The path where the migrated snapshot shall be written. If not given, the old snapshot will be overwritten.
+  - Optional: The password of the migrated snapshot.
 - Run `node index.js $CURRENT_PATH $CURRENT_PASSWORD $NEW_PATH $NEW_PASSWORD`.
 
 ### Wasm Migration Tool
 
 ```javascript
-const { migrateStrongholdSnapshotV2ToV3 } = require("@iota/sdk");
+const { migrateStrongholdSnapshotV2ToV3 } = require('@iota/sdk');
 const readline = require('readline-sync');
 
 async function migrate() {
   const args = process.argv.slice(2);
-  let currentPath = args.at(0)
-  let currentPassword = args.at(1)
-  let newPath = args.at(2)
-  let newPassword = args.at(3)
+  let currentPath = args.at(0);
+  let currentPassword = args.at(1);
+  let newPath = args.at(2);
+  let newPassword = args.at(3);
 
   if (!currentPath) {
-    console.log("expected path to the current stronghold as the first argument");
-    process.exit(0)
+    console.log(
+      'expected path to the current stronghold as the first argument',
+    );
+    process.exit(0);
   }
 
   if (!currentPassword) {
-    console.log("expected password of the current stronghold as the second argument");
-    process.exit(0)
+    console.log(
+      'expected password of the current stronghold as the second argument',
+    );
+    process.exit(0);
   }
 
-  currentPath = String(currentPath)
-  currentPassword = String(currentPassword)
+  currentPath = String(currentPath);
+  currentPassword = String(currentPassword);
 
   if (!newPath) {
-    const answer = readline.question("WARNING: The current stronghold snapshot will be overwritten, since no new path was given. Enter `yes` to continue\n")
+    const answer = readline.question(
+      'WARNING: The current stronghold snapshot will be overwritten, since no new path was given. Enter `yes` to continue\n',
+    );
 
-    if (answer !== "yes") {
-      console.log("Operation aborted");
-      process.exit(0)
+    if (answer !== 'yes') {
+      console.log('Operation aborted');
+      process.exit(0);
     }
 
-    newPath = currentPath
+    newPath = currentPath;
   } else {
-    newPath = String(newPath)
+    newPath = String(newPath);
   }
 
   if (!newPassword) {
-    console.log("NOTE: The password of the new stronghold will be the same as the current one.");
+    console.log(
+      'NOTE: The password of the new stronghold will be the same as the current one.',
+    );
 
-    newPassword = currentPassword
+    newPassword = currentPassword;
   } else {
-    newPassword = String(newPassword)
+    newPassword = String(newPassword);
   }
 
   migrateStrongholdSnapshotV2ToV3(
     currentPath,
     currentPassword,
-    "identity.rs",
+    'identity.rs',
     100,
     newPath,
     newPassword,
-  )
+  );
 
-  console.log("Migration successful.")
+  console.log('Migration successful.');
 }
 
-migrate()
+migrate();
 ```
