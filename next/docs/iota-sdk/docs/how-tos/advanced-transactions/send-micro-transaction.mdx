@@ -18,12 +18,12 @@ import TabItem from '@theme/TabItem';
 import TipFaucet from '../../_admonitions/_tip-faucet.md';
 
 Any transaction with an amount that is below the minimum
-[storage deposit](https://wiki.iota.org/shimmer/develop/explanations/what-is-stardust/storage-deposit/) is considered a
+[storage deposit](https://wiki.iota.org/shimmer/develop/explanations/what-is-stardust/storage-deposit.md) is considered a
 microtransaction.
 
 The IOTA SDK has a convenient
-[`TransactionOption`](../../../references/nodejs/interfaces/TransactionOptions/#allowmicroamount)
-called [`allowMicroAmount`](../../../references/nodejs/interfaces/TransactionOptions/#allowmicroamount) to help you easily
+[`TransactionOption`](../../references/nodejs/interfaces/TransactionOptions.md#allowmicroamount)
+called [`allowMicroAmount`](../../references/nodejs/interfaces/TransactionOptions.md#allowmicroamount) to help you easily
 send a microtransaction.
 
 <TipFaucet />
@@ -40,7 +40,7 @@ The following example will:
    [created in the first guide](../accounts-and-addresses/create-account.mdx) and [sync it](../accounts-and-addresses/check-balance.mdx).
 2. Send a micro transaction using the
    [`Account.send()`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/account/struct.Account.html#method.send) function with
-   the [`TransactionOption::allow_micro_amount`](../../../references/nodejs/interfaces/TransactionOptions/#allowmicroamount)
+   the [`TransactionOption::allow_micro_amount`](../../references/nodejs/interfaces/TransactionOptions.md#allowmicroamount)
    set as `true`.
 
 <div className={'hide-code-block-extras'}>
@@ -59,8 +59,8 @@ The following example will:
 1. Instantiate a [`Wallet`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/core/struct.Wallet.html), get Alice's `Account` which was
    [created in the first guide](../accounts-and-addresses/create-account.mdx) and [sync it](../accounts-and-addresses/check-balance.mdx).
 2. Send a micro transaction using the
-   [`Account.send()` function](../../../references/nodejs/classes/Account/#send) with
-   the [`TransactionOption:allowMicroAmount`](../../../references/nodejs/interfaces/TransactionOptions/#allowmicroamount) set as `true`.
+   [`Account.send()` function](../../references/nodejs/classes/Account.md#send) with
+   the [`TransactionOption:allowMicroAmount`](../../references/nodejs/interfaces/TransactionOptions.md#allowmicroamount) set as `true`.
 
 <div className={'hide-code-block-extras'}>
 
@@ -78,8 +78,8 @@ The following example will:
 1. Instantiate a [`Wallet`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/core/struct.Wallet.html), get Alice's `Account` which was
    [created in the first guide](../accounts-and-addresses/create-account.mdx) and [sync it](../accounts-and-addresses/check-balance.mdx).
 2. Send a micro transaction using the
-   [`Account.send()` function](../../..references/python/iota_sdk/wallet/account/#send) with
-   the [`TransactionOption:allowMicroAmount`](../../../references/python/iota_sdk/types/transaction_options/) set as `true`.
+   [`Account.send()` function](../../references/python/iota_sdk/wallet/account.md#send) with
+   the [`TransactionOption:allowMicroAmount`](../../references/python/iota_sdk/types/transaction_options.md) set as `true`.
 
 <div className={'hide-code-block-extras'}>
 

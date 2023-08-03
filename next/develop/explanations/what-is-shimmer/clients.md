@@ -39,7 +39,7 @@ commands to suit your needs.
 
 ## High-level Overview
 
-|                                    | [wallet.rs](#walletrs) | [iota.rs](#iotars) | [iota.js](iotajs) |
+|                                    | [wallet.rs](#walletrs) | [iota.rs](#iotars) | [iota.js](#iotajs) |
 | ---------------------------------- | ---------------------- | ------------------ | ----------------- |
 | Main language                      | Rust                   | Rust               | TypeScript        |
 | Java binding                       | Yes                    | Yes                | No                |
