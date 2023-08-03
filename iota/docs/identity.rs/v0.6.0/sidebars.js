@@ -89,7 +89,7 @@ module.exports = {
     {
       type: 'category',
       label: 'Tutorials',
-      items: ['tutorials/overview', 'tutorials/validate_university_degree'],
+      items: ['tutorials/overview', 'tutorials/migrate-stronghold', 'tutorials/validate_university_degree'],
     },
     {
       type: 'category',
