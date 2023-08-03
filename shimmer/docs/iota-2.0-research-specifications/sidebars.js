@@ -10,31 +10,32 @@
  */
 
 module.exports = {
-  // But you can create a sidebar manually
-  /**/
-  tutorialSidebar: [
-    'Preface',
-    '1.1 Introduction',
-    '2.2 Message Layout',
-    '2.3 Standard Payloads Layout',
-    '2.4 Data Flow',
-    '3.3 Peer Discovery',
-    '3.4 Neighbor Selection',
-    '3.5 Manual Peering',
-    '4.1 The Tangle',
-    '4.2 Timestamps',
-    '4.3 Tip Selection Algorithm',
-    '4.4 Solidification',
-    '4.5 Rate Control',
-    '4.6 Congestion Control',
-    '4.7 Markers',
-    '5.1 UTXO',
-    '5.2 Ledger State',
-    '5.3 Mana',
-    '6.1 Objects of Consensus',
-    '6.2 Opinion Setting',
-    '6.3 Fast Probabilistic Consensus',
-    '6.4 Finalization',
-    '6.5 dRNG',
-  ],
+
+    // But you can create a sidebar manually
+    /**/
+    tutorialSidebar: [
+        'Preface',
+        '1.1_introduction',
+        '2.2_message_layout',
+        '2.3_standard_payloads_layout',
+        '2.4_data_flow',
+        '3.3_peer_discovery',
+        '3.4_neighbor_selection',
+        '3.5_manual_peering',
+        '4.1_the_tangle',
+        '4.2_timestamps',
+        '4.3_tip_selection_algorithm',
+        '4.4_solidification',
+        '4.5_rate_control',
+        '4.6_congestion_control',
+        '4.7_markers',
+        '5.1_utxo',
+        '5.2_ledger_state',
+        '5.3_mana',
+        '6.1_objects_of_consensus',
+        '6.2_opinion_setting',
+        '6.3_fast_probabilistic_consensus',
+        '6.4_finalization',
+        '6.5_drng',
+    ],
 };
