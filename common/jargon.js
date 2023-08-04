@@ -1,229 +1,232 @@
 module.exports = {
   'address checksum':
-    'Checksum validation is a way to determine if an address is valid and does not contain typos.',
+    'Checksum validation is a method to ensure an address is valid and free of typographical errors.',
   'dynamic pow':
-    '(In development for IOTA 1.5 and Shimmer): With this feature, the coordinator can issue a milestone and simultaneously set the future PoW score. This means that if the network is not fully utilized, the PoW will be reduced to the point where it can be executed by microdevices. Accordingly, the coordinator can also raise the PoW difficulty in case of high utilization and thus make an attack very expensive.',
+    '(In development for IOTA 1.5 and Shimmer): This feature enables the coordinator to issue a milestone while simultaneously setting the future PoW score. If the network is underutilized, the PoW will decrease to a level manageable by microdevices. Conversely, the coordinator can increase the PoW difficulty during high utilization, making attacks prohibitively expensive.',
   'auto peering':
-    'A mechanism that allows nodes to automatically select their neighbors without manual intervention by the node operator.',
+    "A mechanism enabling nodes to select their neighbors automatically, without the node operator's manual intervention.",
   'API(application programming interfaces)':
-    'The way for applications to interact with the Tangle.',
+    'These interfaces facilitate interactions between applications and the Tangle.',
   'atomic transactions':
-    'Instead of the bundle construct, IOTA and Shimmer use simpler Atomic Transactions. An Atomic Transaction includes everything related to a transaction in a single message instead of splitting it up (Bundles). This reduces network overhead and signature verification load, improves spam protection and rate control, and shortens the length of Merkle proofs (for future sharding). It also reduces implementation overhead and increases maintainability of the core node software.',
+    'Instead of the bundle construct, IOTA and Shimmer use simpler Atomic Transactions. These transactions encapsulate all related information within a single message, reducing network overhead, improving spam protection and rate control, and simplifying Merkle proofs. This simplification also lowers implementation overhead and enhances the maintainability of the core node software.',
   'application layer':
-    '(iota 2.0) The top layer of the 3-layer communication protocol. The IOTA protocol allows a variety of external applications to run on the Message Tangle. Anyone can design an application and users can decide which applications to run on their nodes. These applications will all use the communication layer to transmit and store data.',
+    '(iota 2.0) The top layer of the 3-layer communication protocol. The IOTA protocol supports various external applications running on the Message Tangle. Applications can be designed by anyone, and users decide which applications to run on their nodes. All applications use the communication layer to transmit and store data.',
   'approval switch':
-    '(iota 2.0) When a message is selected as a parent, we can choose from the strong or weak tip pool. This mechanism is called Approval Switch.',
+    '(iota 2.0) This mechanism allows for a selection between the strong or weak tip pool when a message is selected as a parent.',
   'approval weight':
-    '(iota 2.0) A message gets Mana-weight by approving the message directly or indirectly. However, only strong parents can pass on the mana weight to the past, while weak parents receive the weight from their weak children but do not pass it on.',
+    '(iota 2.0) A message receives Mana-weight by direct or indirect approval. However, only strong parents can pass on the mana weight to the past, while weak parents receive the weight from their weak children but do not pass it on.',
   approvers:
-    '(iota 2.0)Parents are approved by their referencing messages called approvers. It is thus a reverse mapping of parents. As in the parents definition, an approver might be either strong or weak.',
+    "(iota 2.0) Parents are approved by their referencing messages, known as approvers. It's essentially a reverse mapping of parents. An approver might be either strong or weak, as in the parents' definition.",
   balance:
-    'Funds on the addresses (account). These are always available and cannot be deleted or forgotten.',
+    'The funds on the addresses (account). These are always available and cannot be deleted or forgotten.',
   'blockchain bottleneck':
-    'The more transactions are issued, the more the block rate and size become a bottleneck in the system. It is no longer possible to capture all incoming transactions in a prompt manner. Attempts to speed up block rates result in more orphaned blocks (blocks are left behind) and reduce the security of the blockchain.',
+    'As more transactions are issued, the block rate and size become bottlenecks in the system. It becomes increasingly difficult to promptly process all incoming transactions. Attempts to speed up block rates result in more orphaned blocks (blocks left behind), reducing the security of the blockchain.',
   branch:
-    '(iota 2.0) A version of the ledger that temporarily coexists with other versions, each spawned by conflicting transactions.',
-  bee: '(Deprecated) Node software developed by the IOTA foundation using the Rust programming language.',
+    '(iota 2.0) This term refers to a version of the ledger that temporarily coexists with other versions, each spawned by conflicting transactions.',
+  bee: '(Deprecated) Node software developed by the IOTA foundation, written in the Rust programming language.',
   'bootstrapping attack':
-    'An attack in which a node downloads malicious snapshot files, including invalid transactions and balances.',
-  curl: 'This is one of the hash functions currently in use. It is based on the "sponge" construction of the Keccak inventors (SHA-3).',
+    'An attack where a node downloads malicious snapshot files, including invalid transactions and balances.',
+  curl: "This is one of the currently used hash functions. It's based on the 'sponge' construction invented by the creators of Keccak (SHA-3).",
   confirmed:
-    'Confirmed transactions. Messages in the Tangle are considered for confirmation only when they are directly or indirectly referenced by a milestone that the Coordinator node has validated. To allow the nodes to recognize the milestones, all nodes that participate in the same network are configured with the Merkle root address of a Coordinator that they trust to confirm messages. Using this address, nodes can validate the signatures in milestones to verify whether the trusted Coordinator signs them. To make sure that new messages always have a chance of being confirmed, the Coordinator sends indexed milestones at regular intervals. This way, nodes can compare the indexes of their milestones to check whether they are synchronized with the rest of the network.',
+    "Transactions are considered confirmed in the Tangle only when they are directly or indirectly referenced by a milestone validated by the Coordinator node. Nodes can recognize milestones because they're all configured with the Merkle root address of a Coordinator they trust to confirm messages. Using this address, nodes can validate the signatures in milestones to verify whether the trusted Coordinator signed them. To ensure that new messages always have a chance of being confirmed, the Coordinator regularly sends indexed milestones. This allows nodes to compare the indexes of their milestones and check whether they are synchronized with the rest of the network.",
   ctps: 'Confirmed transactions per second.',
   'cumulative weight':
-    'A system for valuing transactions. Each additional transaction that references a transaction increases its cumulative weight. When tips are selected, a path through transactions that has a higher cumulative weight is preferred.',
+    'A system for valuing transactions. The cumulative weight of a transaction increases with each additional transaction that references it. A path through transactions with a higher cumulative weight is preferred when selecting tips.',
   chronicle:
-    "A permanode solution of the IOTA Foundation. It allows to store all transactions reaching a node in a distributed database that is secure and scales well. Chronicle is used to store the Tangle's unlimited data flow and make it queryable. In other words, permanence allows the entire history of the Tangle to be stored indefinitely and makes that data easily accessible.",
+    "A permanode solution from the IOTA Foundation. It enables storing all transactions reaching a node in a secure and scalable distributed database. Chronicle allows the Tangle's unlimited data flow to be stored indefinitely and makes it easily accessible.",
   consensus:
-    'Agreement on a specific date or value in distributed multi-agent systems, in the presence of faulty processes.',
-  'coordinator (only up to iota 2.0)':
-    'A trusted entity, as protection against malicious transactions. The Tangle is not yet a final product, it is still in beta. The network currently relies on a kind of shield, the so-called coordinator. It is open-source and runs on a Hornet node. The COO acts as a centralized, voluntary, and temporary alternative consensus mechanism for the Tangle. To do this, the COO sends honest transactions to the full nodes at regular intervals. These packets contain a signed message with no value, called a milestone. The full nodes in the Tangle consider a transaction as confirmed only if it is approved by a milestone. Important: The coordinator can only confirm transactions, but he cannot bypass the consensus rules. To create, freeze or steal tokens is not possible for him. This fixed rule and the COO address is hardcoded on each full node, so the coordinator\u2019s influence on the tangle is very limited, since the tangle is also constantly monitored by all the other full nodes. > The Coo will be switched off with the IOTA 2.0 upgrade.',
+    'Agreement on a specific date or value in distributed multi-agent systems, even in the presence of faulty processes.',
+  coordinator:
+    "(only up to iota 2.0) A trusted entity used as protection against malicious transactions. The Tangle is still in its beta phase and relies on the coordinator. This is open-source and runs on a Hornet node. The COO acts as a centralized, voluntary, and temporary alternative consensus mechanism for the Tangle by regularly sending honest transactions to the full nodes. These transactions contain a signed message with no value, called a milestone. Full nodes consider a transaction as confirmed only if it is approved by a milestone. The coordinator can confirm transactions but can't bypass consensus rules. Hence, creating, freezing, or stealing tokens is impossible for it. The coordinator's influence on the tangle is limited as the tangle is continuously monitored by all other full nodes. The COO will be switched off with the IOTA 2.0 upgrade.",
   'communication layer':
-    '(iota 2.0) This layer stores and communicates information. This layer contains the distributed ledger or tangle. The rate control and timestamps are also located in this layer.',
+    '(iota 2.0) This layer stores and communicates information. It contains the distributed ledger or Tangle. The rate control and timestamps are also located in this layer.',
   'core object type':
-    '(iota 2.0) An object type that must be parsed by all nodes. Parsers are computer programs responsible for decomposing and converting an input into a format more suitable for further processing.',
+    '(iota 2.0) This is an object type that all nodes must parse. Parsers are computer programs that decompose and convert input into a format more suitable for further processing.',
   'core application':
-    '(iota 2.0) Core application that must be executed by all nodes, for example the value transfer application.',
-  child: '(iota 2.0) A transaction that gets referenced by Parents.',
+    '(iota 2.0) A core application is an application that all nodes must execute. For instance, the value transfer application.',
+  child: '(iota 2.0) A transaction that is referenced by Parents.',
   chrysalis: 'The name of the IOTA 1.5 network upgrade.',
   stardust: 'The name of the first Shimmer network upgrade.',
-  data: 'The tangle is a way of proving the integrity of data (verifiability of completeness and origin) in a trustworthy manner. At present, there are several cryptographic methods that make this possible, but security gaps are repeatedly discovered here, making data vulnerable to manipulation. This is a major problem, especially in cloud computing, where third-party audit tools are sometimes even used (for a fee) to ensure this data integrity. This is exactly where IOTA and Shimmer come in and offers a relatively easy way to escape this with its protocol and without fees.',
+  data: 'The Tangle proves the integrity of data (verifiability of completeness and origin) in a reliable manner. Current cryptographic methods for this have repeated security vulnerabilities, making data prone to manipulation. This is especially problematic in cloud computing where sometimes third-party audit tools are even used (for a fee) to ensure this data integrity. IOTA and Shimmer offer a relatively straightforward and fee-free solution to this with their protocol.',
   'data transactions':
     'These are confirmed directly and are notarized. With the help of "notarization", it can be proven that an electronic document existed in a certain form at a certain time and has not been changed since its creation. When a notarization is created, a unique hash (fingerprint) of a document is calculated and stored together with a timestamp in the ledger (Tangle) in an immutable manner.',
   'data storage':
-    'Just like the internet, the IOTA and Shimmer protocols do not store data or in other words, the Tangle is not a data storage. If someone wants to store the history of transactions in a decentralized way, they can build a second-layer solution for this themselves or pay third parties for this storage. For the basic layer, IOTA and Shimmer focus on performance, throughput, and security rather than building a global database.',
+    'Contrary to the internet, neither the IOTA nor Shimmer protocols serve as data storage. The Tangle is not designed as a data repository. If one wishes to maintain a decentralized transaction history, they can either design a second-layer solution themselves or commission third parties for this task. At its core, IOTA and Shimmer prioritize performance, throughput, and security over acting as a global database.',
   'distributed ledger technology (dlt)':
-    'This is a database architecture that allows owners of digital assets to transfer and document them from peer to peer. Each transfer in a DLT is stored as a record in a distributed ledger (database). This database is stored in all nodes of a network.',
+    'DLT is a database system that enables the peer-to-peer transfer and recording of digital assets. Each transaction within a DLT is recorded in a distributed ledger, which is maintained across all network nodes.',
   devnet:
-    'The DevNet (developer network) is a pure test network to research and test a Tangle without Coordinator.',
+    'DevNet, or developer network, is a dedicated test network to experiment with and test a Tangle that operates without a Coordinator.',
   decay:
-    'Both Mana and pending Mana decay proportionally to its value, preventing Mana from growing indefinitely over time.',
+    'Both Mana and pending Mana decay in proportion to their value, ensuring that Mana does not perpetually accumulate over time.',
   'double-spending':
-    'Double-spending is a threat to a digital money system, where the same single digital token can be spent more than once. Unlike physical money, a digital token consists of a digital file that can be duplicated or counterfeited.',
+    'Double-spending represents a major threat to digital currency systems. It involves spending the same digital token more than once. Digital tokens, unlike physical currency, comprise digital files that can be easily duplicated or counterfeited.',
   'drng (decentralized random number generator)':
-    'This random number generator is required in Fast Probabilistic Consensus (FPC) to make the consensus model more resilient to attacks. In the case of conflicting transactions, the FPC votes on the transactions in question in several rounds. The threshold at which a node changes its mind in this vote is 50% +/- a small random deviation (using dRNG). In order to avoid stalemate or a specific outcome in the voting, this additional random component prevents potentially malicious nodes from influencing the voting process.',
+    'dRNG is crucial for the Fast Probabilistic Consensus (FPC) as it fortifies the consensus model against attacks. For conflicting transactions, the FPC conducts several rounds of voting. The decision threshold for nodes is 50% plus or minus a slight random deviation generated by dRNG. This randomness prevents potential adversaries from manipulating the vote.',
   'dust protection':
-    '(iota 1.5) Someone who wants to harm IOTA could automatically send 1i for years to repeatedly recreated addresses, driving up the ledger\u2019s memory requirements to the point where a full-node would eventually only run on large servers. In Chrysalis if you want to create a microtransaction (<1Mi) you need to activate dust on the receiving address. That will allow you to receive a certain amount of dust. Also, the addresses with Colored Coins have to be tokenized. After the Coordicide, there will be another solution for IOTA 2.0.',
+    '(iota 1.5) To prevent IOTA from being exploited, one might continually send 1i to newly generated addresses for years, causing the ledger’s memory requirements to surge until only large servers could operate a full node. With Chrysalis, microtransactions (<1Mi) require the recipient address to enable dust. This permits a limited amount of dust transactions. Additionally, addresses with Colored Coins must be tokenized. Post-Coordicide, IOTA 2.0 will introduce a different solution.',
   'directed acyclic graph (dag)':
-    'A directed acyclic graph is DLT structure that consists of edges and vertices that never form a closed loop. The Tangle is a form of directed acyclic graph.',
+    'A directed acyclic graph (DAG) is a DLT structure made up of vertices and edges that never create a closed loop. The Tangle is a type of DAG.',
   'eclipse attack':
-    'A cyber-attack that aims to isolate a specific node rather than attack the entire network.',
+    'An eclipse attack seeks to isolate a specific node rather than targeting the entire network.',
   'eth virtual machine':
-    'A VM is what executes the Smart Contract code so that it runs deterministically. The language in which you run the code provides hooks to access the sandbox on which the VM runs. In the case of Shimmer, this is the ISC sandbox, which only provides access to Shimmer tokens, thus consensus also runs on Shimmer tokens. It is only the VM that Shimmer works with, foreign tokens have nothing to do with a VM running the SC code, not the ETH VM, nor the Cartesi VM.',
+    "A virtual machine (VM) executes Smart Contract code to ensure deterministic outcomes. The programming language used to run the code provides hooks to the VM's sandbox. In Shimmer's context, this is the ISC sandbox, limited to Shimmer tokens, thereby ensuring consensus revolves around these tokens. The VM handles the execution of the smart contract code, unrelated to the token type, be it ETH VM or Cartesi VM.",
   epoch:
-    '(iota 2.0) A time interval used for a specific type of consensus mana. At the end of each epoch, a snapshot is taken of the state of mana distribution on the network. Since this tool uses the timestamp of messages, each node can eventually reach a consensus on the mana distribution of an epoch.',
+    "(iota 2.0) An epoch is a set time interval reserved for a specific consensus mana type. At every epoch's conclusion, the network captures a snapshot of the mana distribution. Given that this tool leverages timestamps of messages, each node can eventually agree on an epoch’s mana allocation.",
   faucet:
-    'A pool of tokens (funds). Upon uncomplicated request, one gets a limited number of tokens for testing, especially for developers of own apps this is a great help.',
+    'A faucet is a reservoir of tokens. Users can easily request a limited quantity of tokens for testing purposes, which proves particularly useful for app developers.',
   firefly:
-    'Firefly is a wallet, intended to serve as a platform for the current and future IOTA and Shimmer ecosystem.',
+    'Firefly is a wallet designed to cater to the present and future needs of the IOTA and Shimmer ecosystems.',
   finality:
-    'The property that once a transaction has been completed, there is no way to reverse or change it. This is the moment when the parties involved in a transfer can consider the transaction completed. Finality can be deterministic or probabilistic.',
-  'full nodes (hornet, bee)':
-    'They form the core (infrastructure) of the network. In order to participate in the peer-to-peer network, the full node must always be online and connected to neighbors (other full nodes). In addition, the transaction database must be synchronized with all other full nodes in the network. The role of full nodes is to interact with clients (wallets, DApps, etc.) and attach their transactions to the ledger, make transactions known to all other full nodes in the network, validate transactions and store them in the ledger.',
+    "Finality indicates that once a transaction has been executed, it's irreversible and finalized. This is the juncture where the transaction parties recognize its completion. Finality can be deterministic or probabilistic.",
+  'full nodes (hornet)':
+    "Full nodes constitute the network's backbone. For a full node to be part of the peer-to-peer network, it must always be online and connected to other full nodes. Moreover, it has to synchronize its transaction database with every other full node in the network. Full nodes process transactions from clients (like wallets and DApps), append them to the ledger, and share them with all other network nodes.",
   'future cone':
-    'All messages that directly or indirectly reference a message are called its future cone.',
-  fork: 'In IT, this is a new development branch after a project is split into a second follow-on project; the source code or parts of it are developed independently of the original parent project.',
+    'The future cone refers to all messages that directly or indirectly reference a particular message.',
+  fork: 'In IT, a fork represents a new development direction taken after branching out from an original project. The source code, or portions of it, is then developed independently from the parent project.',
   'fpc(fast probabilistic consensus)':
-    'Consensus that uses a random number and node opinions to reach consensus. In On-Tangle Voting, it is only used in a specific edge case. Check out OTVFPCS.',
+    'FPC is a consensus mechanism that employs a random number and node opinions to achieve consensus. In On-Tangle Voting, FPC is utilized only in specific edge cases. For more details, refer to OTVFPCS.',
   'genesis transaction':
-    'The Genesis transaction is the first transaction that created all IOTA and Shimmer tokens and distributed them to the addresses of the buyers.',
+    "The Genesis transaction is the inaugural transaction that spawned all IOTA and Shimmer tokens, distributing them to the purchasers' addresses.",
   'goshimmer (no main net)':
-    'Prototype of the coordinator less version of IOTA written in the Go programming language. GoShimmer implements the various modules of Coordicide, such as auto peering, node identities, Mana, etc. GoShimmer serves as a test environment for the first alpha version and the test network. Everything tested here will be gradually merged with Hornet and Bee.',
+    'GoShimmer is a prototype of IOTA’s coordinator-less version written in the Go language. GoShimmer encapsulates various Coordicide modules, like auto peering, node identities, Mana, among others. It serves as a testing ground for the first alpha version and the testnet. Components tested in GoShimmer are systematically integrated with Hornet.',
   'generic data object':
-    '(iota 2.0) The most basic object type. All unrecognized data objects are defined this way.',
+    '(iota 2.0) This is the most elementary object type. All unrecognized data objects are treated as generic data objects.',
   history:
-    'The list of transactions that were directly or indirectly authorized by a particular transaction.',
+    'History refers to the compilation of transactions that were directly or indirectly authorized by a specific transaction.',
   'hash values':
-    'Checksums that are applied to the encryption of messages of variable length. Hash values are like fingerprints of a very long data set. Each message is assigned a very specific hash value.',
+    'Checksums generated from the encryption of variable-length messages. Hash values act like unique fingerprints for a long data set, with each message assigned a specific hash value.',
   hooks:
-    'An interface that allows foreign program code to be integrated into an existing application to extend it, change its flow, or intercept certain events.',
+    'Interfaces that allow external program code to be integrated into an existing application to extend its functionality, modify its flow, or intercept certain events.',
   'hornet node':
-    'Community-developed IOTA Node written in the Go programming language. In addition, the coordinator also runs as a plugin via Hornet.',
+    'A community-developed IOTA Node written in the Go programming language. Additionally, the coordinator runs as a plugin via Hornet.',
   'hornet node (shimmer)':
-    'Shimmer Node written in the Go programming language. In addition, the coordinator also runs as a plugin via Hornet.',
+    'A Shimmer Node, also written in the Go programming language. Similarly to the IOTA Node, the coordinator runs as a plugin via Hornet.',
   'inclusion state':
-    'Used to determine if a transaction has been accepted and confirmed by the network. Especially for a transaction and a list of tips: Inclusion state is true if the tip refers to this transaction.',
+    'Determines whether a transaction has been accepted and confirmed by the network. For any given transaction and a list of tips, the inclusion state is true if the tip refers to that transaction.',
   'local snapshots':
-    'Local snapshots are used to limit the memory requirements of the nodes. For this purpose, on the individual nodes old, already confirmed, transactions are deleted from the database. What remains is only a small file (list) with the balances on the respective addresses. Nodes perform the snapshot independently and at their own discretion. This feature allows faster synchronization, lower system resource requirements and no more waiting for global snapshots to clean up the database.',
+    'Local snapshots help limit the memory requirements of nodes by allowing them to independently delete old, confirmed transactions from their databases, leaving behind a small file with the balances of respective addresses. This feature facilitates faster synchronization, reduces system resource requirements, and eliminates the need to wait for global snapshots for database cleanup.',
   layer:
-    'In DLT a 2nd-layer refers to a secondary framework or protocol built on top of an existing distributed ledger. On these second layers, other applications can be executed without putting too much strain on the base layer. For example, Smart Contracts.',
+    'In DLT, a 2nd-layer refers to a secondary framework or protocol built on top of an existing distributed ledger. These secondary layers allow for additional applications to be executed without putting excessive strain on the base layer. Smart Contracts, for example, are executed on these second layers.',
   'local modifiers':
-    'User-defined conditions that can be considered by nodes during tip selection. In IOTA and Shimmer, nodes do not necessarily have the same view of the tangle. Different types of information that are only available to them locally can be used to strengthen security.',
+    'User-defined conditions that nodes can consider during tip selection. In IOTA and Shimmer, nodes may not necessarily have the same view of the tangle. They can use various types of locally available information to enhance security.',
   'merkle tree':
-    'A Merkle tree is a data structure used in computer science applications. In cryptocurrencies, Merkle trees are used to encode more efficiently and securely.',
+    'A Merkle tree is a data structure employed in computer science. In cryptocurrencies, Merkle trees are utilized for efficient and secure data encoding.',
   mainnet:
-    'The public usable IOTA network, in which the IOTA tokens are used that are traded on cryptocurrency exchanges.',
+    'The publicly accessible IOTA network where tradable IOTA tokens on cryptocurrency exchanges are used.',
   milestone:
-    '(iota 1.5) Milestones are messages that are signed and issued by the coordinator. Their main goal is to help the Tangle grow healthily and guarantee finality. When milestones directly or indirectly approve a transaction in the Tangle, nodes mark the status of that transaction and its entire history as confirmed.',
+    '(IOTA 1.5) Milestones are messages signed and issued by the coordinator. They are instrumental in ensuring healthy growth of the Tangle and guaranteeing finality. When milestones directly or indirectly approve a transaction in the Tangle, nodes mark the status of that transaction and its entire history as confirmed.',
   message:
-    'A message is a core data type that reflects a vertex in the communication layer DAG. It contains the following properties: References to other messages, the sender\u2019s public key, the issuing time of the message, the message sequence number from the node that issued the message, the payload that can be interpreted by higher layers, the nonce that the message uses to satisfy the PoW requirement, a signature that signs all of the above fields. A message is not forwarded until it becomes "solid", i.e., its history is known to the node. Messages must meet a PoW requirement, which currently is to find a nonce so that the hash of the message\u2019s fields (minus the signature) has a certain number of leading zeros.',
+    "A message is a core data type that represents a vertex in the communication layer's DAG. It contains properties like references to other messages, the sender's public key, the issuing time of the message, the payload (interpretable by higher layers), the nonce for PoW requirement, and a signature. A message is not forwarded until it becomes \"solid,\" i.e., its history is known to the node. Messages must meet a PoW requirement, which currently involves finding a nonce so that the hash of the message's fields (excluding the signature) has a certain number of leading zeros.",
   'message overhead':
-    'The additional information (metadata) that must be sent along with the actual information (data). This can include signatures, polls and anything that is transmitted over the network but is not the transaction itself.',
-  mana: ' (iota 2.0) When a value transaction is processed, a quantity called Mana will be "pledged" to a specified node ID. This quantity is related to the amount of IOTA moved into the transaction. The only way to gain Mana is to convince some token holder to pledge it to you. In this sense, Mana is Delegated Proof of Token Ownership. Mana, therefore, provides adequate Sybil protection because it is difficult to acquire it in arbitrary amounts.',
+    'The extra information (metadata) that must be sent along with the actual data. This may include signatures, polls, and any other data transmitted over the network that is not the transaction itself.',
+  mana: '(iota 2.0) When a value transaction is processed, a quantity named Mana is "pledged" to a specified node ID. This quantity correlates with the amount of IOTA involved in the transaction. The only way to acquire Mana is by persuading a token holder to pledge it to you. As such, Mana serves as a Delegated Proof of Token Ownership and offers robust Sybil protection due to its challenging acquisition process.',
   markers:
-    '(iota 2.0) A tool that exists only locally and allows certain calculations to be performed more efficiently, such as the calculation of the approval weight or the presence of certain messages in the past or future cone of another message.',
+    '(iota 2.0) A local tool that enhances efficiency in certain calculations, such as the computation of approval weight or determining the presence of specific messages in the past or future cone of another message.',
   'messages per second (mps)':
-    'The amount of messages issued to the network every second.',
+    'Represents the number of messages dispatched to the network every second.',
   'nakamoto consensus':
-    'Named after the creator of Bitcoin, Satoshi Nakamoto, the Nakamoto Consensus describes the replacement of coordination / communication between known agents with a cryptographic puzzle (Proof-of-Work). Completion of the puzzle determines which agent acts next.',
+    "Named after Bitcoin's creator, Satoshi Nakamoto, this consensus describes the use of a cryptographic puzzle (Proof-of-Work) to replace coordination/communication between known agents. Solving the puzzle determines the subsequent agent's action.",
   neighbors:
-    'Network nodes that are directly connected and can exchange messages without intermediate nodes.',
+    'Directly connected network nodes that can exchange messages without intermediary nodes.',
   nodes:
-    'A node is any computer that connects to other nodes in the network via software. In principle, they serve as a connection point for data transfers. The Tangle works with different types of nodes, such as full nodes (Hornet, Bee), permanodes (Chronicle) or smart contract nodes (Wasp).',
+    'A node is any computer that communicates with other nodes in the network using specific software. Essentially, nodes act as connection points for data transfers. The Tangle employs various node types, including full nodes (Hornet, Bee), permanodes (Chronicle), and smart contract nodes (Wasp).',
   'network layer':
-    '(iota 2.0) This layer manages the lower layers of Internet communication such as TCP. In this layer, the connections between the nodes are managed by the Auto peering and Peer Discovery modules and the Gossip protocol.',
+    '(iota 2.0) This layer oversees the lower levels of Internet communication, such as TCP. It manages node connections through the Auto-peering, Peer Discovery modules, and the Gossip protocol.',
   'network id':
-    'The network ID enables user-specific subtangles in which nodes can only recognize messages from the network ID listed in their configuration file.',
+    'An identifier enabling user-specific subtangles. Nodes can only recognize messages from the network ID stipulated in their configuration file.',
   orphan:
-    'A transaction (or block) that is not referenced by any subsequent transaction (or block). An orphan is not considered confirmed and will not be part of the consensus.',
+    'A transaction (or block) lacking references from any subsequent transaction (or block). Orphans are unconfirmed and remain excluded from consensus.',
   object:
-    ' (iota 2.0) The most basic unit of information in the IOTA protocol. Each object has a type and size and contains data.',
+    '(iota 2.0) The fundamental unit of information in the IOTA protocol. Each object possesses a type, size, and data.',
   oracles:
-    'Oracles are designed to build a secure bridge between the digital and physical worlds in a decentralized, permissionless way. They bring off-chain data to decentralized applications and smart contracts on the network.',
-  otv: '(iota 2.0) On Tangle Voting is the official name for the multiverse consensus described by Hans Moog. It is a new consensus mechanism that allows nodes to vote on conflicts directly by publishing a message to the tangle.',
+    'Oracles establish a secure, decentralized bridge between digital and physical realms. They introduce off-chain data to decentralized applications and smart contracts within the network.',
+  otv: "(iota 2.0) On Tangle Voting, known as the multiverse consensus articulated by Hans Moog. It's a novel consensus mechanism allowing nodes to vote on conflicts by publishing a message to the tangle.",
   otvfpcs:
-    '(iota 2.0) On Tangle Voting with FPCS (Fast Probabilistic Consensus on a Set) is a mechanism for breaking metastability, which can be used in addition to OTV (On Tangle Voting). Generally, in IOTA2.0, reaching a high approval weight is the finality criteria. If the approval weight is high enough, the message / transaction is finalized. With OTVFPC the initial opinion is created with OTV, if after some time the opinions of the nodes are still split, for whatever reason, FPC is activated to break this metastable state. The finality of value transactions should be reached faster this way.',
+    '(iota 2.0) On Tangle Voting with FPCS (Fast Probabilistic Consensus on a Set) is a method designed to resolve metastability. In IOTA 2.0, achieving high approval weight signals finality. If this weight is sufficiently high, the message/transaction is confirmed. With OTVFPC, OTV forms the initial opinion. If node opinions remain divided over time, FPC initiates to resolve this metastable state, expediting transaction finality.',
   parents:
-    'A message directly references up to 8 previous messages that we call its parents. In IOTA 2.0 a parent can be either strong or weak (see approval switch).',
+    'A message can directly reference up to 8 preceding messages, known as its parents. In IOTA 2.0, a parent might be either strong or weak (see approval switch).',
   'parallel reality ledger state':
-    '(iota 2.0) This state is used to track conflicts in the tangle. Two new ledger entries that are causally valid but in conflict with each other (ex. Double Spend) are posted into two separate "realities" for this purpose, representing possible but mutually exclusive future ledger states. The consensus mechanism (with FPC, etc.) will now operate until the perception of most nodes tilts in one direction and one of the two possible ledger states is accepted as true.',
+    '(iota 2.0) A state to monitor tangle conflicts. Two conflicting but causally valid ledger entries (e.g., Double Spend) are placed into separate "realities." These represent potential but exclusive future ledger states. The consensus mechanism, aided by FPC, operates until most nodes\' perceptions align, leading to the acceptance of one true ledger state.',
   'partition tolerant':
-    'This means that a part of the Tangle can be disconnected from the main tangle for a certain time and continue to run without an Internet connection. These parts can be reconnected to the main Tangle when the Internet connection is restored.',
+    'A segment of the Tangle can operate offline, disconnected from the main tangle for a duration, and later reconnect once an Internet connection resumes.',
   'past cone':
-    'All messages that are directly or indirectly referenced by a message are called its past cone.',
+    'The set of messages that are directly or indirectly referenced by a given message is termed its past cone.',
   'parasite chain attacks':
-    'A double spending attack on the Tangle. Here, an attacker attempts to reverse a transaction by setting up an alternate Tangle in which the funds were not spent. He then tries to get the majority of the network to accept the alternative Tangle as the legitimate one.',
+    'A double-spending attack targeting the Tangle. Attackers attempt to reverse a transaction by creating an alternate Tangle where the funds remain unspent, seeking to convince the network majority to accept this version as legitimate.',
   permanode:
-    'This type of node permanently stores the entire transaction history, possibly with the help of external storage solutions, and possibly only specific transactions (selective permanode).',
-  pending: 'A transaction has been seen by the network but not yet confirmed.',
+    'This node type permanently retains the entire transaction history, potentially with external storage aids, or selectively stores specific transactions (selective permanode).',
+  pending:
+    'A transaction that has been propagated through the network but not yet confirmed.',
   'peer to peer network':
-    'A decentralized network of different network nodes that are connected to each other and exchange data.',
-  peering: 'The process of discovering and connecting to other network nodes.',
+    'A decentralized network comprising distinct nodes interconnected and engaged in data exchange.',
+  peering:
+    'The procedure of detecting and establishing connections with other network nodes.',
   payload:
-    '(iota 2.0)A field in a message that determines the type. Examples are value payload (TransactionType type), FPC opinion payload (StatementType type), dRNG payload (Payload), Salt declaration payload, generic data payload.',
+    '(iota 2.0) A message field specifying the type. Examples include value payload (TransactionType type), FPC opinion payload (StatementType type), dRNG payload (Payload), Salt declaration payload, generic data payload.',
   'private tangle':
-    'A private tangle is comparable to a test network under complete control of the operator. This allows companies and developers to test their applications under self-defined environment variables without external influences and protected from prying eyes. There is no interoperability between a private Tangle and the IOTA or Shimmer Tangle. So, sending from one to the other does not work either. Each private Tangle is an independent network with its own nodes, tokens, and coordinator.',
+    "A private tangle functions akin to a test network entirely under the operator's control. It allows companies and developers to test their applications in a controlled environment, free from external influences and away from prying eyes. There is no interoperability between a private Tangle and the IOTA or Shimmer Tangle, prohibiting any transmission between them. Each private Tangle operates as an independent network with its own nodes, tokens, and coordinator.",
   'proof of work (pow)':
-    'A time-consuming (expensive) mathematical calculation that uses computational power to prevent spam attacks. It consists of a difficult cryptographic puzzle that is easy to verify.',
+    'A computationally intensive mathematical operation that prevents spam attacks by requiring a costly cryptographic puzzle solution that is, nonetheless, easy to validate.',
   'proof of inclusion (poi)':
-    'With PoI, one is able to provide evidence that a transaction was indirectly referenced by another transaction without having to present the full chain of actual transactions between the two transactions. This is done by using a sequence of hashes instead of the actual transaction data to prove the inclusion of a transaction (inclusion) in the referenced subtangle.',
+    'PoI enables proving that a transaction was indirectly referenced by another without needing to present the entire chain of transactions linking them. Instead, a sequence of hashes replaces actual transaction data to validate the inclusion of a transaction in the referenced subtangle.',
   pruning:
-    'In computer science, this is a term for simplifying, shortening, and optimizing decision trees. In Shimmer, this is done by local snapshots on each full node. Old transactions that have already been confirmed are deleted from the database, leaving only a file (list) of credits on each address.',
+    'In computer science, pruning refers to the simplification, truncation, and optimization of decision trees. In Shimmer, this is achieved by local snapshots on each full node. Confirmed transactions are removed from the database, leaving only a list of balances for each address.',
   'public and private keys':
-    'These are used in cryptographic systems which use key pairs. There are public keys which can be shared and private keys which are known only to the owner. The generation of such keys depends on cryptographic algorithms based on mathematical problems to generate one-way functions. Effective security requires keeping the private key to remain only known to the owner. Public keys derived from this private key can be shared and used by others to verify ownership of the private key, without exposing the private key. Public keys function as addresses in IOTA and Shimmer.',
+    'These are essential components of cryptographic systems utilizing key pairs, consisting of public keys, which can be shared, and private keys known only to the owner. The generation of these keys depends on cryptographic algorithms based on mathematical problems yielding one-way functions. Security depends on the private key remaining private. Public keys derived from the private key can be shared and used to verify ownership of the private key without revealing it. In IOTA and Shimmer, public keys function as addresses.',
   rebroadcast:
-    'Repeats the sending of a transaction. While a transaction is being sent to a node, it may go offline. In this case, the node may not forward the transactions to its neighbors, and the rest of the network will never see these transactions. As a result, that transaction will never be referenced by the coordinator and thus never confirmed. Resending a bundle means resending the same bundle to a node. This way you give your transactions another chance to be forwarded to the rest of the network.',
+    'Rebroadcasting involves retransmitting a transaction. If a node goes offline while a transaction is being sent, it may not relay the transactions to its neighbors, making these transactions invisible to the network. Consequently, these transactions will never be referenced by the coordinator and hence never confirmed. Resending a bundle refers to transmitting the same bundle to a node, providing another opportunity for your transactions to be relayed to the network.',
   'reusable addresses':
-    'With the introduction of the Ed25519 signature scheme, through the IOTA 1.5 Chrysalis upgrade, reusable addresses are now supported.',
+    'Following the IOTA 1.5 Chrysalis upgrade and the introduction of the Ed25519 signature scheme, reusable addresses are now possible.',
   reattachment:
-    'Resending a transaction by re-selecting a tip and referencing newer tips by repeating PoW.',
-  salt: 'In cryptography, salt is a randomly chosen string of characters that is appended to a given plaintext before it is further processed to increase the entropy (disorder) of the input. It is often used for storing and transmitting passwords to increase information security.',
-  sandbox: 'An isolated area where programs can be tested.',
+    'The process of resending a transaction through the reselection of a tip, referencing newer tips, and performing PoW again.',
+  salt: "In cryptography, a salt is a random string appended to plaintext before further processing, thereby enhancing input entropy (disorder). It's commonly used in password storage and transmission to bolster information security.",
+  sandbox: 'A controlled environment where programs can be tested safely.',
   'software as a service (saas)':
-    'The SaaS model is a subset of cloud computing. It is based on the principle that the software and IT infrastructure can be operated by an external service provider and rented by the customer as a service.',
+    'SaaS is a subset of cloud computing, based on the principle that the software and IT infrastructure are managed by an external service provider and leased to the customer as a service.',
   'smart contract':
-    'Smart contracts are contracts or programs that are automatically executed.',
+    'Smart contracts are programs that execute contracts automatically.',
   'smart contract chain':
-    'Smart contracts are processed via a so-called contract chain, the representation of the contract state. A smart contract writes its state every time it is requested, and a new block is added for each of these state updates. All these updates are collected and confirmed in one block. So, the chain also contains all the past states. The chain can contain many Smart Contracts, all working on the same global state of the chain. From this perspective, the Contract chain is essentially a blockchain anchored on the Tangle. IOTA Smart Contracts can be considered "classic" Smart Contracts, but with the added feature that you can have multiple such parallel chains all using the same native IOTA and Shimmer tokens, and trading between them in a trusted manner on the Tangle. This enables trusted interoperability between different applications.',
+    'Smart contracts operate through a contract chain, which represents the contract state. Every request to a smart contract adds a new block to this chain. These updates are confirmed in one block, also containing all past states. The chain can contain multiple Smart Contracts all working on the same global state. Essentially, the Contract chain is a blockchain anchored on the Tangle. IOTA Smart Contracts are similar to "classic" Smart Contracts but feature multiple parallel chains that use the same native IOTA and Shimmer tokens, enabling trusted interoperability between different applications.',
   'solidification time':
-    'The time of solidification when the entire history of a transaction has been received by a node.',
+    'Solidification time is when a node has received the entire history of a transaction.',
   'splitting attacks':
-    'An attack in which a malicious node attempts to split the tangle into two branches. As one of the branches grows, the attacker publishes transactions on the other branch to keep both alive. Splitting attacks attempt to slow down the consensus process or perform double spending.',
+    'An attack in which a malicious node tries to split the Tangle into two branches. Splitting attacks aim to slow down the consensus process or enable double spending.',
   sharding:
-    'Nodes have an upper limit on transactions per second (TPS) they can process. Through a type of database partitioning (breaking a very large database into smaller ones) into more manageable segments (shards), each shard would contain a unique set of account balances and nodes would then be assigned to individual shards to validate transactions. The goal is that by dividing into more manageable segments, it will increase transaction throughput and thus overcome scalability issues.',
+    'Sharding is a type of database partitioning that divides a large database into smaller, more manageable segments, or shards. Each shard contains a unique set of account balances, and nodes are assigned to individual shards to validate transactions. The goal is to increase transaction throughput and thus address scalability issues.',
   signatures:
-    'Signatures prove ownership of an address. Clients (Wallets) need this proof before nodes validate a transaction. To prove ownership, input transactions must be signed with the private key used to create the address.',
+    'Signatures prove ownership of an address. Nodes require this proof to validate a transaction. To prove ownership, input transactions must be signed with the private key used to create the address.',
   solidity:
-    '(iota 2.0) A message is marked as solid if its entire past cone until the Genesis (or the latest snapshot) is known.',
+    '(iota 2.0) A message is marked as solid if its entire past cone up to the Genesis (or the latest snapshot) is known.',
   subtangle:
-    'A consistent section of the tangle (i.e., a subset of messages / value objects) such that each contained message / value object also contains its referenced messages / value objects.',
+    'A consistent section of the Tangle (i.e., a subset of messages / value objects) such that each contained message/value object also contains its referenced messages/value objects.',
   streams:
-    'IOTA Streams is a multifunctional second layer data transfer protocol that can be used for various types of data transfer (e.g., streaming data). For example, it allows sensors and other devices to encrypt entire data streams and anchor them in the IOTA Tangle. IOTA\u2019s consensus protocol adds integrity and authenticity to these message streams. Given these characteristics, IOTA Streams fills an important need in industries where integrity, privacy, and immutability collide.',
+    "IOTA Streams is a second layer data transfer protocol used for various types of data transfer, including streaming data. It allows devices to encrypt entire data streams and anchor them in the IOTA Tangle. IOTA's consensus protocol ensures the integrity and authenticity of these message streams. This makes IOTA Streams particularly useful in industries where integrity, privacy, and immutability are crucial.",
   'sybil attack':
-    'An attempt to gain control of a peer-to-peer network by forging multiple false identities.',
+    'An attempt to take control of a peer-to-peer network by creating multiple false identities.',
   snapshot:
-    'A special feature of the Tangle. A snapshot deletes all transactions. Only transactions with a balance > 0 are kept. The metadata such as tags and messages are also deleted. What is left behind is just a list of addresses and balances. After a snapshot, the nodes use this list as "genesis", a new starting point for the tangle. This reduces the size of the tangle network, allowing nodes to use less memory. Full nodes perform what are called "Local Snapshots" independently and at their own discretion.',
+    'A snapshot is a special feature of the Tangle that removes all transactions, keeping only those with a balance > 0. Metadata like tags and messages are also deleted, leaving a list of addresses and balances. After a snapshot, nodes use this list as the new "genesis" or starting point for the Tangle. This reduces the size of the Tangle, allowing nodes to use less memory. Full nodes can perform "Local Snapshots" independently and at their own discretion.',
   tangle:
-    'The Tangle is the underlying core data structure. In mathematical terms it is a directed acyclic graph (DAG). The Tangle is the distributed ledger that stores all transactions.',
+    'The Tangle is the core underlying data structure of IOTA. In mathematical terms, it is a directed acyclic graph (DAG). The Tangle is the distributed ledger storing all transactions.',
   'ternary system':
-    'A trit (trinary digit) can have exactly three states (3 x 1 = 3): -1, 0 and 1. Three trits result in one tryte (33 = 27) and can thus represent 27 combinations. In IOTA, the letters A-Z (26 pieces) and the number 9 are used for this purpose.',
+    'A trit (trinary digit) can have three states: -1, 0 and 1. Three trits result in one tryte, which can thus represent 27 combinations. In IOTA, the letters A-Z (26 in total) and the number 9 are used for this purpose.',
   token:
-    'The digital currency form (cryptocurrency). It is a powerful tool for value transfer between people and machines. Total number: 2,779,530,283,277,761 IOTA. The base units are Pi, Ti, Gi, Mi, ki, i',
-  'trinity (iota 1.0)': 'Depreciated IOTA Wallet',
+    'The digital currency form (cryptocurrency) of IOTA. It is a powerful tool for transferring value between people and machines. The total number of IOTA tokens is 2,779,530,283,277,761. The base units are Pi, Ti, Gi, Mi, ki, i',
+  'trinity (iota 1.0)': 'The deprecated IOTA Wallet',
   tip: 'A transaction that has not yet been approved.',
   'tip selection':
-    'The process of selecting previous transactions to be referenced by a new transaction. In these references, a transaction ties into the existing data structure. IOTA and Shimmer only enforces that a transaction approves up to eight other transactions, the tip selection strategy is left to the user (with a good default provided by Shimmer).',
-  'tip transaction': 'A solid end transaction that is not yet a parent.',
+    'The process of selecting previous transactions to reference in a new transaction. These references allow a transaction to tie into the existing data structure. IOTA and Shimmer only enforce that a transaction approves up to eight other transactions, the tip selection strategy is left to the user (with a suitable default provided by Shimmer).',
+  'tip transaction':
+    'A solid end transaction that has not yet become a parent.',
   transaction:
-    ' (iota 2.0) A message that contains a Token transfer as a payload. The transferred tokens can be native IOTA Tokens or native IOTA Assets.',
+    '(iota 2.0) A message that contains a Token transfer as a payload. The transferred tokens can be native IOTA Tokens or native IOTA Assets.',
   'utxo model':
-    'This is a so-called addressing model. UTXO stands for "unspent transaction output", which simply means that you not only keep track of the credits on the address, but also keep track of where the credits come from and where they are sent when they are spent. Each token on an address is thus uniquely identifiable and each issue names the exact token they want to move. This enables faster and more accurate conflict handling and improves the resilience and security of the protocol.',
+    'UTXO stands for "unspent transaction output". It is a type of addressing model that tracks not only the credits on an address but also their origins and destinations when spent. Each token on an address is uniquely identifiable, and each output names the exact token it wants to move. This model enables faster and more accurate conflict resolution, enhancing the protocol\'s resilience and security.',
   'value layer':
-    '(iota 2.0) The Value layer builds on the Communication layer. It works exclusively with payloads of type Value object. This layer has several tasks: Forming the ledger state, processing, validation and output of transactions, conflict detection, conflict resolution via FPC, forming a DAG from value objects, tip selection (on value object tips).',
+    '(iota 2.0) The Value layer builds on the Communication layer. It works exclusively with payloads of type Value object. This layer has several responsibilities: forming the ledger state, processing, validating and outputting transactions, conflict detection, conflict resolution via FPC, forming a DAG from value objects, tip selection (on value object tips).',
   'value transactions':
-    'Value transactions either withdraw tokens from an address or deposit them to an address. Nodes must verify these transactions to ensure that the sender actually owns the Shimmer tokens and that additional tokens are never generated. To do this, the following checks are performed: All Shimmer tokens withdrawn from an address are also deposited into one or more other addresses; the value of each transaction does not exceed the total global supply; signatures are valid.',
+    'Value transactions either withdraw tokens from an address or deposit them to an address. Nodes verify these transactions to ensure that the sender owns the Shimmer tokens and that additional tokens are not generated. To do this, the following checks are performed: All Shimmer tokens withdrawn from an address are also deposited into one or more other addresses; the value of each transaction does not exceed the total global supply; signatures are valid.',
   'version number': '(iota 2.0) Indicates the correct format of each type.',
   'white-flag approach':
-    '(iota 1.5) Used to calculate credits. A simpler, conflict-avoiding approach that improves the speed and efficiency of tip selection, eliminates certain attacks, and significantly reduces the need for reattachments.',
-  wasp: 'The Wasp node software is an implementation of Smart Contracts on the Tangle.',
+    '(iota 1.5) A simplified, conflict-avoiding approach that improves the speed and efficiency of tip selection, eliminates certain attacks, and significantly reduces the need for reattachments.',
+  wasp: 'Wasp is the node software that implements Smart Contracts on the Tangle.',
 };
