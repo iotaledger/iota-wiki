@@ -3,6 +3,7 @@ import { OptionValidationContext, PluginOptions } from './types';
 import docsPlugin, {
   validateOptions as docsValidateOptions,
   LoadedContent as DocsContentLoaded,
+  PropVersionMetadata,
 } from '@docusaurus/plugin-content-docs';
 
 export default async function pluginDocs(
@@ -15,15 +16,22 @@ export default async function pluginDocs(
   return {
     ...plugin,
     contentLoaded: async ({ actions, content, ...args }) => {
+      const globalSidebarEntries = [];
+
+      const createData = async (name: string, data: string) => {
+        const versionMetadata = JSON.parse(data) as PropVersionMetadata;
+        if (versionMetadata.docsSidebars) {
+          Object.entries(versionMetadata.docsSidebars)
+            .filter(([sidebarId]) => globalSidebars.includes(sidebarId))
+            .forEach((entry) => globalSidebarEntries.push(entry));
+        }
+        return await actions.createData(name, data);
+      };
+
       const setGlobalData = (data: {}) => {
         actions.setGlobalData({
           ...data,
-          globalSidebars: Object.fromEntries(
-            // This is safe because we only allow the 'current' version.
-            Object.entries(content.loadedVersions[0].sidebars).filter(
-              ([sidebarId]) => globalSidebars.includes(sidebarId),
-            ),
-          ),
+          globalSidebars: Object.fromEntries(globalSidebarEntries),
         });
       };
 
@@ -32,6 +40,7 @@ export default async function pluginDocs(
         content,
         actions: {
           ...actions,
+          createData,
           setGlobalData,
         },
       });
