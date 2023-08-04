@@ -10,6 +10,10 @@
   margin-bottom: 1rem;
 }
 
+.menu__list-item:not(:first-child).switcher {
+  margin-top: 1rem;
+}
+
 .badge--switcher {
   background-color: var(--ifm-color-gray-700);
 }

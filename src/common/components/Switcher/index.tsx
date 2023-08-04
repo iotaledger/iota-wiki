@@ -174,7 +174,7 @@ export default function Switcher(props: SwitcherProps['switcher']) {
   const { subsections, docs, versions } = props;
 
   return (
-    <div className='switcher'>
+    <div className='switcher menu__list-item'>
       {subsections.map((subsection) =>
         subsection.active ? (
           <div
