@@ -5,9 +5,9 @@ const common = require('./common/docusaurus.config');
 const contentConfigs = require('./contentPlugins');
 
 module.exports = async () => {
-  const contentPlugins = (await contentConfigs()).map((contentConfig) =>
-    create_doc_plugin(contentConfig),
-  );
+  // const contentPlugins = (await contentConfigs()).map((contentConfig) =>
+  //   create_doc_plugin(contentConfig),
+  // );
 
   const { MODE = 'development' } = process.env;
 
@@ -154,7 +154,14 @@ module.exports = async () => {
           },
         ],
       ],
-      plugins: [...contentPlugins],
+      plugins: [
+        [
+          '@docusaurus/plugin-content-docs',
+          {
+            sidebarPath: 'sidebars.js',
+          },
+        ],
+      ],
       stylesheets: [
         {
           href: 'https://cdn.jsdelivr.net/npm/katex@0.13.24/dist/katex.min.css',
