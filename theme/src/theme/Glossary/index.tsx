@@ -14,11 +14,11 @@ export default function Glossary() {
       return acc;
     }, {});
 
-  var char = '';
+  let char = '';
   return (
     <>
       {Object.entries(sortedGlossary).map(([key, value]) => {
-        var heading = null;
+        let heading = null;
         if (key.charAt(0) !== char) {
           char = key.charAt(0);
           heading = char;
