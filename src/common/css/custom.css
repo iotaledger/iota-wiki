@@ -28,6 +28,48 @@
   background-color: var(--ifm-color-primary);
 }
 
+/*------------Jargon---------------*/
+/* Add a dashed line under jargon terms */
+.jargon-term {
+  text-decoration: underline var(--ifm-color-primary-light);
+}
+/* Add a question mark behind/above jargon terms */
+.jargon-term::after {
+  content: '?';
+  font-weight: bold;
+  display: inline-block;
+  transform: translate(0, -0.5em);
+  font-size: 75%;
+  color: var(--ifm-color-primary-light);
+  margin-left: 3px;
+}
+/* Hover behavior for the therm itself */
+.jargon-term:hover {
+  position: relative;
+  text-decoration: none;
+  cursor: help;
+}
+/* Hide info by default */
+.jargon-term .jargon-info {
+  display: none;
+}
+/* Show info on hover */
+.jargon-term:hover .jargon-info {
+  display: block;
+  position: absolute;
+  top: 1.5em;
+  left: 0;
+  background: var(--ifm-hover-overlay);
+  border: 1px solid var(--ifm-color-primary-light);
+  padding: 1rem;
+  border-radius: 4px;
+  font-size: 90%;
+  min-width: 250px;
+  max-width: 450px;
+  z-index: 1;
+}
+/*---------------------------------*/
+
 .post > .menu__link::before {
   content: 'post';
   background-color: var(--openapi-code-green);
