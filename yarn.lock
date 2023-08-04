@@ -2207,7 +2207,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@docusaurus/theme-common@npm:2.4.1, @docusaurus/theme-common@npm:>=2.3.0 <2.5.0, @docusaurus/theme-common@npm:^2.4.1":
+"@docusaurus/theme-common@npm:2.4.1, @docusaurus/theme-common@npm:>=2.3.0 <2.5.0":
   version: 2.4.1
   resolution: "@docusaurus/theme-common@npm:2.4.1"
   dependencies:
@@ -2725,7 +2725,7 @@ __metadata:
     "@docusaurus/plugin-google-gtag": 2.4.1
     "@docusaurus/preset-classic": 2.4.1
     "@docusaurus/remark-plugin-npm2yarn": ^2.4.1
-    "@docusaurus/theme-common": ^2.4.1
+    "@docusaurus/theme-common": 2.4.1
     "@iota-wiki/cli": "workspace:^"
     "@iota-wiki/plugin-docs": "workspace:^"
     "@iota-wiki/plugin-tutorial": "workspace:^"
