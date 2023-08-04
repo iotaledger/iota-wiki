@@ -7,6 +7,7 @@ import { PropSidebarItem } from '@docusaurus/plugin-content-docs';
 
 export type SwitcherProps = {
   before?: PropSidebarItem[];
+  main?: PropSidebarItem[];
   after?: PropSidebarItem[];
   switcher?: {
     subsections: MenuItem[];
@@ -49,7 +50,7 @@ function findSidebarItems(item, plugins) {
 export default function useSwitcher(): SwitcherProps {
   const plugins = useAllDocsData();
   const docId = useRouteContext().plugin.id;
-  const sidebarId = useDocsSidebar().name;
+  const currentSidebar = useDocsSidebar();
 
   const sections = config.sections.map((section) => {
     const subsections = section.subsections.map((subsection) => {
@@ -66,10 +67,10 @@ export default function useSwitcher(): SwitcherProps {
       subsections,
     };
   });
-  if (!sections) return {};
+  if (!sections) return { main: currentSidebar.items };
 
-  const current = findCurrentSection(sections, docId, sidebarId);
-  if (!current) return {};
+  const current = findCurrentSection(sections, docId, currentSidebar.name);
+  if (!current) return { main: currentSidebar.items };
 
   function getPath(id: string) {
     // Find the registered entry path of a doc.
@@ -89,6 +90,8 @@ export default function useSwitcher(): SwitcherProps {
   const currentVersion = current.version;
   const currentSidebars = {
     before: findSidebarItems(current.section.before, plugins),
+    // Only display main sidebar if we are in a subsection.
+    main: currentSubsection ? currentSidebar.items : undefined,
     after: findSidebarItems(current.section.after, plugins),
   };
 

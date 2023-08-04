@@ -36,11 +36,10 @@ function useShowAnnouncementBar() {
 
 export default function DocSidebarDesktopContent({
   path,
-  sidebar,
   className,
 }: Props): JSX.Element {
   const showAnnouncementBar = useShowAnnouncementBar();
-  const { before, switcher, after } = useSwitcher();
+  const { before, switcher, main, after } = useSwitcher();
 
   return (
     <nav
@@ -61,7 +60,7 @@ export default function DocSidebarDesktopContent({
           <DocSidebarItems items={before} activePath={path} level={1} />
         )}
         {switcher && <Switcher {...switcher} />}
-        <DocSidebarItems items={sidebar} activePath={path} level={1} />
+        {main && <DocSidebarItems items={main} activePath={path} level={1} />}
         {after && <DocSidebarItems items={after} activePath={path} level={1} />}
       </ul>
     </nav>
