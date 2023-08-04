@@ -51,5 +51,5 @@ signature.
 ---
 
 - Learn more about consensus in the [IOTA Smart Contracts Architecture description](https://github.com/iotaledger/wasp/blob/master/documentation/ISC_WP_Nov_10_2021.pdf).
-- Participate and use the [preconfigured development Docker setup](/smart-contracts/guide/development_tools/docker_preconfigured).
+- Participate and use the [preconfigured development Docker setup](https://github.com/iotaledger/wasp/tree/develop/tools/local-setup).
 - Build a decentralized application with the [Schema Tool](/smart-contracts/guide/wasm_vm/schema).
