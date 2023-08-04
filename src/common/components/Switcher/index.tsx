@@ -24,7 +24,17 @@ export type Doc = Item & {
 export type Subsection = Item & {
   defaultDoc?: string;
 };
-export type Section = Subsection[];
+
+export type Sidebar = {
+  docId: string;
+  sidebarId: string;
+};
+
+export type Section = {
+  before?: Sidebar;
+  subsections: Subsection[];
+  after?: Sidebar;
+};
 
 export type Config = {
   docs: Doc[];

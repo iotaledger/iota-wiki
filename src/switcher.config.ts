@@ -1,3 +1,4 @@
+import type { Config } from './common/components/Switcher/index';
 import {
   Chronicle,
   GoShimmer,
@@ -218,7 +219,7 @@ const maintainDocs = [
   },
 ];
 
-const config = {
+const config: Config = {
   docs: [...buildDocs, ...maintainDocs],
   sections: [
     {
