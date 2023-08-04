@@ -233,6 +233,17 @@ module.exports = {
         tags: ['text', 'shimmer', 'video', 'wasp', 'iscp'],
       },
     ],
+    [
+      '@iota-wiki/plugin-tutorial',
+      {
+        title: 'Send Shimmer Tokens with iota-sdk in NodeJs',
+        description:
+          'In this tutorial you will learn how to send Shimmer Tokens with iota-sdk in NodeJs.',
+        preview: '/send-shimmer-tokens-with-iota-sdk.png',
+        route: 'tutorials/send-shimmer-tokens-with-iota-sdk',
+        tags: ['text', 'iota-sdk', 'sdk', 'getting-started', 'rust', 'shimmer'],
+      },
+    ],
   ],
   staticDirectories: [path.resolve(__dirname, 'static')],
 };
