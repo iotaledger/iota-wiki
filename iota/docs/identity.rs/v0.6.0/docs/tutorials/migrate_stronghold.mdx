@@ -39,7 +39,7 @@ To migrate a v1 Stronghold Snapshot from Identity 0.6.2 or earlier in Rust to a 
   - Required: The path to the current stronghold snapshot.
   - Required: The password to the current stronghold snapshot.
   - Optional: The path where the migrated snapshot shall be written. If not given, the old snapshot will be overwritten.
-  - Optional: The password of the migrated snapshot.
+  - Optional: The password of the migrated snapshot. If not given, the current password will be used.
 - Run `cargo run --release -- $CURRENT_PATH $CURRENT_PASSWORD $NEW_PATH $NEW_PASSWORD`.
 
 ### Rust Migration Tool
@@ -111,7 +111,7 @@ To migrate a v1 Stronghold Snapshot from Identity 0.6.0 or earlier in Wasm to a 
   - Required: The path to the current stronghold snapshot.
   - Required: The password to the current stronghold snapshot.
   - Optional: The path where the migrated snapshot shall be written. If not given, the old snapshot will be overwritten.
-  - Optional: The password of the migrated snapshot.
+  - Optional: The password of the migrated snapshot. If not given, the current password will be used.
 - Run `node index.js $CURRENT_PATH $CURRENT_PASSWORD $NEW_PATH $NEW_PASSWORD`.
 
 ### Wasm Migration Tool
