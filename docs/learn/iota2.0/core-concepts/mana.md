@@ -89,11 +89,3 @@ In addition to obtaining [Mana](mana.md) from holding IOTA tokens, Mana is also 
 and
 delegating IOTA tokens. This forms the basis for a sustainable tokenomics model, as value isn't extracted from other
 IOTA holders. Rewards are distributed to validators and delegators based on specific parameters.
-
-:::tip Learn More
-
-You can learn more about
-the [Accounts](https://wiki.iota.org/tips/tips/TIP-0042), [Mana](https://wiki.iota.org/tips/tips/TIP-0039) in the
-[TIPS section](../tips.md).
-
-:::
