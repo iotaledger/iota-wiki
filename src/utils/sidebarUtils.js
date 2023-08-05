@@ -1,28 +1,19 @@
 const path = require('path');
 const fs = require('fs');
+const { kebabCase } = require('lodash');
 
 function normalizePaths(base, item) {
   if (Array.isArray(item)) {
     return item.map((i) => normalizePaths(base, i));
   } else if (item && item.constructor === Object) {
     if (item.type) {
-      if (item.items)
-        return {
-          ...item,
-          items: normalizePaths(base, item.items),
-        };
-      if (item.id)
-        return {
-          ...item,
-          id: normalizePaths(base, item.id),
-        };
-      if (item.dirName) {
-        return {
-          ...item,
-          dirName: normalizePaths(base, item.dirName),
-        };
-      }
-      return item;
+      return {
+        ...item,
+        id: item.id ? normalizePaths(base, item.id) : undefined,
+        items: item.items ? normalizePaths(base, item.items) : undefined,
+        dirName: item.dirName ? normalizePaths(base, item.dirName) : undefined,
+        link: item.link ? normalizePaths(base, item.link) : undefined,
+      };
     }
     return Object.fromEntries(
       Object.entries(item).map(([key, value]) => [
@@ -48,15 +39,18 @@ async function gatherSidebars(rootPath) {
   );
   const sidebars = Object.fromEntries(
     entries.map(([p, m]) => [
-      p,
+      kebabCase(p),
       normalizePaths(p, Object.entries(m.default)[0][1]),
     ]),
   );
 
-  fs.writeFileSync(
-    'sidebars.js',
-    `module.exports = ${JSON.stringify(sidebars)}`,
-  );
+  const filePath = `sidebars-${rootPath}.js`;
+  const fileData = `module.exports = ${JSON.stringify(sidebars)}`;
+
+  fs.writeFileSync(filePath, fileData);
+  return filePath;
 }
 
-gatherSidebars('docs');
+module.exports = {
+  gatherSidebars,
+};

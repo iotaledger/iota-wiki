@@ -3,6 +3,7 @@ const path = require('path');
 const { create_doc_plugin, globStatic } = require('./src/utils/config');
 const common = require('./common/docusaurus.config');
 const contentConfigs = require('./contentPlugins');
+const { gatherSidebars } = require('./src/utils/sidebarUtils');
 
 module.exports = async () => {
   // const contentPlugins = (await contentConfigs()).map((contentConfig) =>
@@ -158,7 +159,8 @@ module.exports = async () => {
         [
           '@docusaurus/plugin-content-docs',
           {
-            sidebarPath: 'sidebars.js',
+            sidebarPath: await gatherSidebars('docs'),
+            routeBasePath: '/',
           },
         ],
       ],
