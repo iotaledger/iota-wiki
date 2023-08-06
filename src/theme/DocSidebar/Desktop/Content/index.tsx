@@ -2,6 +2,7 @@
  * SWIZZLED VERSION: 2.4.1
  * REASONS:
  *  - Add switcher.
+ *  - Add static sidebar logic.
  */
 
 import React, { useState } from 'react';

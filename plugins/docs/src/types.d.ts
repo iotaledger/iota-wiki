@@ -1,7 +1,9 @@
+import { PropSidebarItem } from '@docusaurus/plugin-content-docs';
 import {
   Options as DocsOptions,
   PluginOptions as DocsPluginOptions,
 } from '@docusaurus/plugin-content-docs';
+import { GlobalPluginData as DocsGlobalPluginData } from '@docusaurus/plugin-content-docs/src/client';
 import {
   OptionValidationContext as DocsOptionValidationContext,
   Validate,
@@ -18,6 +20,12 @@ export type OptionValidationContext = {
   // so we just pass validate function on to the docs plugin validation.
   validate: Validate<DocsOptions, DocsPluginOptions>;
   options: PluginOptions;
+};
+
+export type GlobalPluginData = DocsGlobalPluginData & {
+  globalSidebars?: {
+    [key: string]: PropSidebarItem[];
+  };
 };
 
 declare module '@docusaurus/plugin-content-docs' {
