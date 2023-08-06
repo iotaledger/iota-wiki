@@ -4,7 +4,6 @@ This plugin wraps the Docusaurus docs plugin and adds the possibility to expose 
 
 ## Usage
 
-
 ```
 yarn add @iota-wiki/plugin-docs
 ```

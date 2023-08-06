@@ -35,7 +35,7 @@ export default async function pluginDocs(
         return await actions.createData(name, data);
       };
 
-      const setGlobalData = (data: {}) => {
+      const setGlobalData = (data: object) => {
         actions.setGlobalData({
           ...data,
           globalSidebars: Object.fromEntries(globalSidebarEntries),
