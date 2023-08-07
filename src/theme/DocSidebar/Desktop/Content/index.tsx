@@ -2,6 +2,7 @@
  * SWIZZLED VERSION: 2.4.1
  * REASONS:
  *  - Add switcher.
+ *  - Add static sidebar logic.
  */
 
 import React, { useState } from 'react';
@@ -17,6 +18,7 @@ import type { Props } from '@theme/DocSidebar/Desktop/Content';
 import Switcher from '@site/src/common/components/Switcher';
 
 import styles from './styles.module.css';
+import useSwitcher from '@site/src/utils/useSwitcher';
 
 function useShowAnnouncementBar() {
   const { isActive } = useAnnouncementBar();
@@ -35,10 +37,10 @@ function useShowAnnouncementBar() {
 
 export default function DocSidebarDesktopContent({
   path,
-  sidebar,
   className,
 }: Props): JSX.Element {
   const showAnnouncementBar = useShowAnnouncementBar();
+  const { before, switcher, main, after } = useSwitcher();
 
   return (
     <nav
@@ -55,8 +57,12 @@ export default function DocSidebarDesktopContent({
       )}
     >
       <ul className={clsx(ThemeClassNames.docs.docSidebarMenu, 'menu__list')}>
-        <Switcher />
-        <DocSidebarItems items={sidebar} activePath={path} level={1} />
+        {before && (
+          <DocSidebarItems items={before} activePath={path} level={1} />
+        )}
+        {switcher && <Switcher {...switcher} />}
+        {main && <DocSidebarItems items={main} activePath={path} level={1} />}
+        {after && <DocSidebarItems items={after} activePath={path} level={1} />}
       </ul>
     </nav>
   );

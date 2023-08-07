@@ -1,73 +1,181 @@
 import useRouteContext from '@docusaurus/useRouteContext';
-// TODO: Change to use `useAllDocsData` from `@docusaurus/plugin-content-docs/client`.
-import { useAllPluginInstancesData } from '@docusaurus/useGlobalData';
+import { useAllDocsData } from '@docusaurus/plugin-content-docs/client';
+import { useDocsSidebar } from '@docusaurus/theme-common/internal';
 import config from '../switcher.config';
-import { MenuItem } from '../common/components/Switcher';
+import {
+  Doc,
+  MenuItem,
+  Section,
+  Sidebar,
+  Subsection,
+} from '../common/components/Switcher';
+import { PropSidebarItem } from '@docusaurus/plugin-content-docs';
+import { GlobalPluginData } from '@iota-wiki/plugin-docs';
 
-const PLUGIN_NAME = 'docusaurus-plugin-content-docs';
-
-export type Switcher = {
-  subsections: MenuItem[];
-  docs: MenuItem[];
-  versions: MenuItem[];
+export type SwitcherProps = {
+  before?: PropSidebarItem[];
+  main?: PropSidebarItem[];
+  after?: PropSidebarItem[];
+  switcher?: {
+    subsections: MenuItem[];
+    docs: MenuItem[];
+    versions: MenuItem[];
+  };
 };
 
-export default function useSwitcher(): Switcher | undefined {
-  const plugins = useAllPluginInstancesData(PLUGIN_NAME);
-  const pluginId = useRouteContext().plugin.id;
+type ConfigTree = (Omit<Section, 'subsections'> & {
+  subsections: (Subsection & { docs: Doc[] })[];
+})[];
 
-  function getPath(id: string) {
-    // Find the registered entry path of a doc.
-    const { docs, mainDocId } = plugins[id].versions[0];
-    const { path } = docs.find((doc) => doc.id === mainDocId);
-    return path;
+function findCurrentSection(
+  configTree: ConfigTree,
+  docId: string,
+  sidebarId: string,
+) {
+  for (const section of configTree) {
+    if (
+      [section.before, section.after].some(
+        (item) => item && item.docId === docId && item.sidebarId === sidebarId,
+      )
+    ) {
+      // In this case we are outside of any subsections, so no
+      // subsection, doc, or version to return.
+      return { section };
+    }
+    for (const subsection of section.subsections) {
+      for (const doc of subsection.docs) {
+        for (const version of doc.versions) {
+          if (version.id === docId) {
+            return { section, subsection, doc, version };
+          }
+        }
+      }
+    }
   }
+}
 
-  const currentDoc = config.docs.find((doc) =>
-    doc.versions.some((version) => version.id === pluginId),
-  );
-  if (!currentDoc) return;
+function findSidebarItems(
+  item: Sidebar,
+  plugins: {
+    [pluginId: string]: GlobalPluginData;
+  },
+) {
+  if (!item) return;
 
-  const currentSubsections = config.sections.find((subsections) =>
-    subsections.some((subsection) => subsection.id === currentDoc.subsection),
-  );
-  if (!currentSubsections) return;
+  const { docId, sidebarId } = item;
+  const items = plugins[docId]?.globalSidebars?.[sidebarId];
+  if (!items) throw `No global sidebar '${sidebarId}' found for doc '${docId}'`;
 
-  const currentDocs = config.docs.filter(
-    ({ subsection }) => subsection === currentDoc.subsection,
-  );
+  return items;
+}
 
-  return {
-    versions: currentDoc.versions.map((version) => ({
-      ...version,
-      to: getPath(version.id),
-      active: version.id === pluginId,
-    })),
-    docs: currentDocs.map((doc) => {
-      const id = doc.defaultVersion ?? doc.versions[0].id;
+export default function useSwitcher(): SwitcherProps {
+  const plugins = useAllDocsData();
+  const docId = useRouteContext().plugin.id;
+  const { name: sidebarId, items: sidebarItems } = useDocsSidebar();
 
+  // Convert the sections and docs configuration into a single
+  // tree structure of sections, subsections, docs, and versions.
+  const configTree = config.sections.map((section) => {
+    const subsections = section.subsections.map((subsection) => {
+      const docs = config.docs.filter(
+        (doc) => doc.subsection === subsection.id,
+      );
       return {
-        ...doc,
-        to: getPath(id),
-        active: doc.id === currentDoc.id,
+        ...subsection,
+        docs,
       };
-    }),
-    subsections: currentSubsections.map((subsection) => {
-      let id;
+    });
+    return {
+      ...section,
+      subsections,
+    };
+  });
+  if (!configTree) return { main: sidebarItems };
 
+  const current = findCurrentSection(configTree, docId, sidebarId);
+  if (!current) return { main: sidebarItems };
+
+  let currentDocLinks, currentVersionLinks;
+  const currentSubsectionLinks = current.section.subsections.map(
+    (subsection) => {
+      const docLinks = subsection.docs.map((doc) => {
+        const versionLinks = doc.versions.map((version) => {
+          // Find the registered entry path of a docs plugin.
+          // We can take the first version, because we only allow one
+          // Docusaurus docs plugin version for our versioning system.
+          const { docs, mainDocId } = plugins[version.id].versions[0];
+          const { path: to } = docs.find((doc) => doc.id === mainDocId);
+
+          const active = current.version && current.version.id === version.id;
+
+          return {
+            ...version,
+            to,
+            active,
+          };
+        });
+
+        // Resolve the doc link to the default version or the first version configured.
+        let to = versionLinks[0].to;
+        if (doc.defaultVersion) {
+          const foundVersion = versionLinks.find(
+            (version) => version.id === doc.defaultVersion,
+          );
+          if (!foundVersion)
+            throw `Default version ${doc.defaultVersion} of doc ${doc.label} not found.`;
+
+          to = foundVersion.to;
+        }
+
+        let active = false;
+        if (current.doc && doc.id === current.doc.id) {
+          currentVersionLinks = versionLinks;
+          active = true;
+        }
+
+        return {
+          ...doc,
+          to,
+          active,
+        };
+      });
+
+      // Resolve the subsection link to the default doc or the first doc configured.
+      let to = docLinks[0].to;
       if (subsection.defaultDoc) {
-        const doc = config.docs.find((doc) => doc.id === subsection.defaultDoc);
-        id = doc.defaultVersion ?? doc.versions[0].id;
-      } else {
-        id = config.docs.filter((doc) => doc.subsection === subsection.id)[0]
-          .versions[0].id;
+        const foundDoc = docLinks.find(
+          (doc) => doc.id === subsection.defaultDoc,
+        );
+        if (!foundDoc)
+          throw `Default doc ${subsection.defaultDoc} of subsection ${subsection.label} not found.`;
+
+        to = foundDoc.to;
+      }
+
+      let active = false;
+      if (current.subsection && subsection.id === current.subsection.id) {
+        currentDocLinks = docLinks;
+        active = true;
       }
 
       return {
         ...subsection,
-        to: getPath(id),
-        active: subsection.id === currentDoc.subsection,
+        to,
+        active,
       };
-    }),
+    },
+  );
+
+  return {
+    switcher: {
+      subsections: currentSubsectionLinks,
+      docs: currentDocLinks,
+      versions: currentVersionLinks,
+    },
+    before: findSidebarItems(current.section.before, plugins),
+    // Only display main sidebar if we are in a subsection.
+    main: current.subsection ? sidebarItems : undefined,
+    after: findSidebarItems(current.section.after, plugins),
   };
 }

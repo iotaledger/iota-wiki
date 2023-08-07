@@ -13,20 +13,6 @@ import {
 
 const buildDocs = [
   {
-    id: 'build',
-    label: 'Getting Started',
-    description: 'Learn about the different networks and how to get started.',
-    icon: IotaCore,
-    subsection: 'build-layer-1',
-    versions: [
-      {
-        id: 'build',
-        label: '',
-        badges: ['IOTA/Shimmer'],
-      },
-    ],
-  },
-  {
     id: 'iota-sdk-1-0-0',
     label: 'IOTA SDK',
     description: 'Interact with the network.',
@@ -236,31 +222,39 @@ const maintainDocs = [
 const config: Config = {
   docs: [...buildDocs, ...maintainDocs],
   sections: [
-    [
-      {
-        label: 'Layer 1',
-        description: 'Build applications on our feeless multi-asset L1 DAG.',
-        id: 'build-layer-1',
+    {
+      before: {
+        docId: 'build',
+        sidebarId: 'build',
       },
-      {
-        label: 'Layer 2',
-        description: 'Build dApps with ISC, our L2 smart contracts platform.',
-        id: 'build-layer-2',
-      },
-    ],
-    [
-      {
-        label: 'Layer 1',
-        description:
-          'Setup nodes and indexers for our feeless multi-asset L1 DAG.',
-        id: 'maintain-layer-1',
-      },
-      {
-        label: 'Layer 2',
-        description: 'Setup nodes for ISC, our L2 smart contracts platform.',
-        id: 'maintain-layer-2',
-      },
-    ],
+      subsections: [
+        {
+          label: 'Layer 1',
+          description: 'Build applications on our feeless multi-asset L1 DAG.',
+          id: 'build-layer-1',
+        },
+        {
+          label: 'Layer 2',
+          description: 'Build dApps with ISC, our L2 smart contracts platform.',
+          id: 'build-layer-2',
+        },
+      ],
+    },
+    {
+      subsections: [
+        {
+          label: 'Layer 1',
+          description:
+            'Setup nodes and indexers for our feeless multi-asset L1 DAG.',
+          id: 'maintain-layer-1',
+        },
+        {
+          label: 'Layer 2',
+          description: 'Setup nodes for ISC, our L2 smart contracts platform.',
+          id: 'maintain-layer-2',
+        },
+      ],
+    },
   ],
 };
 

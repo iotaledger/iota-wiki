@@ -1,4 +1,4 @@
-/** @type {import('@docusaurus/plugin-content-docs').Options} */
+/** @type {import('@iota-wiki/plugin-docs').Options} */
 module.exports = {
   editUrl: 'https://github.com/iotaledger/iota-wiki/edit/main/',
   showLastUpdateTime: true,
