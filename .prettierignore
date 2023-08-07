@@ -1,6 +1,10 @@
 # Dependencies
 /node_modules
 
+# Markdown files
+**/*.md
+**/*.mdx
+
 # External documentation
 /*/external
 

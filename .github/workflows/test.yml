@@ -23,6 +23,15 @@ jobs:
       - name: Lint Wiki
         run: |
           yarn lint:check
+      - name: Lint IOTA Markdown
+        run: |
+          yarn lint:md:check:iota
+      - name: Lint Shimmer Markdown
+        run: |
+          yarn lint:md:check:shimmer
+      - name: Lint Next Markdown
+        run: |
+          yarn lint:md:check:next
       - name: Format Wiki
         run: |
           yarn format:check
