@@ -16,7 +16,7 @@ const default_config = {
     },
     MD013: false,
     MD033: {
-        allowed_elements: ['Tabs', 'TabItem', 'CodeBlock'],
+      allowed_elements: ['Tabs', 'TabItem', 'CodeBlock'],
     },
     MD034: false,
     MD041: false,
