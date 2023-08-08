@@ -14,7 +14,7 @@ keywords:
 
 # The Switch to UTXO in IOTA
 
-Before Chrysalis, IOTA used a balance model where every address had a single value, its current balance. However,
+Before Chrysalis, IOTA used an account model where every address had a single value, its current balance. However,
 as issues arise when handling conflicts (i.e., double spends), it becomes difficult to ascertain which transactions are
 legitimate and which ones are effectively double spends.
 
