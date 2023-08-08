@@ -72,4 +72,4 @@ and the ledger of each node.
 
 ## Signatures
 
-IOTA 2.0 used Ed25519 signatures to strengthen the security of transactions, making them safe and reliable.
+IOTA 2.0 uses Ed25519 signatures to strengthen the security of transactions, making them safe and reliable.

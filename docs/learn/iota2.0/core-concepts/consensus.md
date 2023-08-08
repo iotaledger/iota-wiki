@@ -48,8 +48,7 @@ The first dimension separates the agreement tasks for blocks and transactions:
 The second dimension provides different consensus flags or confidence levels about the irreversibility of objects:
 
 1. **Pre-Acceptance flag:** An internal flag used to define `Acceptance`. This flag is raised when a supermajority of the online committee members causally references the block.
-2. **Acceptance flag:** An internal flag used for generating slot commitment chains. This flag is raised when a given
-   an online supermajority of pre-accepted validation blocks has acknowledged block or transaction.
+2. **Acceptance flag:** An internal flag used for generating slot commitment chains. This flag is raised when a given online supermajority of pre-accepted validation blocks has acknowledged block or transaction.
 3. **Pre-Confirmation flag:** An internal flag used to define `Confirmation`. This flag is raised when the block is
    causally referenced by a supermajority of the total committee, not just those currently online.
 4. **Confirmation flag:** A flag exposed to the user, showing whether a given block or transaction has been acknowledged

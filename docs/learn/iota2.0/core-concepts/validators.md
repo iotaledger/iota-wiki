@@ -62,9 +62,9 @@ This block can be of any type, e.g., a validation block.
 
 ### Selection and Voting Weight
 
-Each validator's stake is computed as the sum of the locked funds and the delegated stake from other nodes.
+Each validator's stake is computed as the sum of the locked funds and the delegated stake from other accounts.
 
-The next committee is formed by taking a predefined number of validators with the largest stake. When deciding between
+The next committee is formed by taking a predefined number of random validators with the largest stake. When deciding between
 equal stakeholders, ties are broken deterministically by using a hash function.
 
 As a result of changes in the delegation of stake and the set of active validators, committees evolve across epochs.
