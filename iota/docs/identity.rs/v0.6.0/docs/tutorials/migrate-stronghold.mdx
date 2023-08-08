@@ -1,7 +1,7 @@
 ---
 title: Migrate Stronghold
 sidebar_label: Migrate Stronghold
-description: Provides instructions on how to migrate Stronghold Snapshot files from v1 to v2
+description: Provides instructions on how to migrate Stronghold Snapshot files from v2 to v3
 image: /img/Identity_icon.png
 keywords:
   - tutorials
@@ -11,15 +11,15 @@ import Announcement from '../../src/partials/_announcement.mdx';
 
 <Announcement />
 
-With the Rust 0.6.3 and Wasm 0.6.1 version of IOTA Identity, Stronghold was updated to [v2](https://github.com/iotaledger/stronghold.rs/releases/tag/iota-stronghold-v2.0.0). The new Stronghold release, besides many security enhancements, introduces an updated Snapshot format and requires old Snapshots to be migrated to the new format.
+With the Rust 0.6.3 and Wasm 0.6.1 version of IOTA Identity, Stronghold was updated to [2.0](https://github.com/iotaledger/stronghold.rs/releases/tag/iota-stronghold-v2.0.0). The new Stronghold release, besides many security enhancements, introduces an updated Snapshot format and requires old Snapshots to be migrated to the new format.
 
 :::info
 
-Stronghold Snapshots v1 must be migrated to v2 before they can be used with Identity Rust 0.6.3 and Wasm 0.6.1.
+Stronghold Snapshots v2 must be migrated to v3 before they can be used with Identity Rust 0.6.3 and Wasm 0.6.1.
 
 :::
 
-To migrate Stronghold Snapshot files from the v1 to the v2 format the following instructions using IOTA SDK for Rust or Nodejs can be utilized.
+To migrate Stronghold Snapshot files from the v2 to the v3 format the following instructions using IOTA SDK for Rust or Nodejs can be utilized.
 
 :::danger
 
@@ -29,7 +29,7 @@ After verifying that your new Stronghold Snapshot works as intended, make sure t
 
 ## Rust
 
-To migrate a v1 Stronghold Snapshot from Identity 0.6.2 or earlier in Rust to a v2 Stronghold Snapshot that can be used with Identity 0.6.3 Rust, follow these steps:
+To migrate a v2 Stronghold Snapshot from Identity 0.6.2 or earlier in Rust to a v3 Stronghold Snapshot that can be used with Identity 0.6.3 Rust or later, follow these steps:
 
 - Create a new crate with `cargo new --bin stronghold-migration && cd stronghold-migration`.
 - Run `cargo add iota-sdk --features stronghold`.
@@ -99,7 +99,7 @@ fn main() -> anyhow::Result<()> {
 
 ## Wasm
 
-To migrate a v1 Stronghold Snapshot from Identity 0.6.0 or earlier in Wasm to a v2 Stronghold Snapshot that can be used with Identity Wasm 0.6.1, follows these steps. Note that we're using the iota-sdk nodejs version for this process.
+To migrate a v2 Stronghold Snapshot from Identity 0.6.0 or earlier in Wasm to a v3 Stronghold Snapshot that can be used with Identity Wasm 0.6.1, follows these steps. Note that we're using the iota-sdk nodejs version for this process.
 
 - Create a new directory `mkdir stronghold-migration && cd stronghold-migration`.
 - Run `npm init` and accept the defaults.
