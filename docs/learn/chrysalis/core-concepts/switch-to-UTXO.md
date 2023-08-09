@@ -1,58 +1,74 @@
 ---
-sidebarLabel: Switch to UTXO
-description: Learn about the transformation from balance models to Unspent Transaction Output (UTXO) models in IOTA, outlining the problems, solutions, and implications of this change.
-keywords:
-  [
-    'IOTA',
-    'UTXO',
-    'Balance Models',
-    'Conflicts',
-    'Reattachments',
-    'Colored Coins',
-  ]
+description: This article provides an in-depth look into IOTA's shift from WOTS addresses to the UTXO model and the motivations and processes behind this migration.
+keywords: [ 'IOTA', 'WOTS', 'UTXO', 'Migration', 'Chrysalis', 'Ed25519', 'Security', 'Protocol Design', 'User Experience' ]
 ---
+# Switch to UTXO 
 
-# The Switch to UTXO in IOTA
+With Chrysalis, IOTA moved away from the Winternitz One-Time Signature (WOTS) system to the Unspent Transaction Output (
+UTXO) model, addressing several issues related to security, protocol design, and user experience.
 
-Before Chrysalis, IOTA used an account model where every address had a single value, its current balance. However,
-as issues arise when handling conflicts (i.e., double spends), it becomes difficult to ascertain which transactions are
-legitimate and which ones are effectively double spends.
+## Challenges with the Account Balance Model
 
-### The Challenge with Balance Models
+Before the transition to Chrysalis, IOTA operated on an account model.
+\Every address held a distinct balance value.
+However, when double-spends or conflicts arose, discerning legitimate transactions from double-spends became complex.
+This model posed two main challenges:
 
-The balance model is relatively straightforward - it keeps track of every address and its corresponding balance.
-However, this simplicity poses some significant problems:
+- **Conflict Handling**: Identifying the transaction performing a double-spend was intricate, leading to extensive
+  "conflict sets" and reducing the efficiency in addressing conflicts.
+- **Reattachments**: In cases where funds were received at an already spent address, it became possible for anyone to
+  reattach the preceding transaction and drain the address, even without the private key.
 
-**Conflict handling**: In the case of conflicts, such as double spends, identifying the transaction performing the
-double spend can be a complex process.
-This issue significantly inhibits the efficiency of dealing with conflicts and leads to large "conflict sets".
+### UTXO: A Robust Alternative
 
-**Reattachments**: If funds are received on an already spent address, anyone can reattach the previous spend and drain
-the address without requiring the private key of that address.
-This problem has been exploited before when users fail to follow the advice of using addresses only once.
+To combat these challenges, IOTA adopted the UTXO model.
+Instead of addresses having an overarching balance, each address had multiple sub-balances,
+identifiable by markers indicating the transaction that created them.
+This model's benefits include:
 
-### The UTXO Solution
+- **Enhanced Conflict Resolution**: Rapid and accurate conflict identification became possible, streamlining consensus
+  mechanisms.
+- **Fortified Security**: The UTXO model negated the possibility of malicious actors spending fresh funds via
+  reattaching old transactions.
 
-To counter these problems, the Unspent Transaction Output (UTXO) model is an effective solution.
-Instead of an address having a total balance, it contains multiple sub-balances,
-each tagged with a marker indicating which transaction created the funds.
-Every token on an address is uniquely identifiable, and every transaction specifically names the exact coins it wishes
-to move.
+Even though UTXO demanded a slightly more intricate implementation and marginally larger transactions, the overwhelming
+advantages justified the shift, marking a significant leap towards efficient conflict resolution, augmented security,
+and the potential adoption of colored coins.
 
-Benefits of UTXO include:
+## Reflections on the Migration
 
-**Efficient conflict handling**: The UTXO model allows for the rapid and precise identification of conflicts, reducing
-the overhead for consensus mechanisms based on voting.
+The migration from WOTS to UTXO was meticulously planned to ensure a seamless transition.
 
-**Security against reattachments**: With the UTXO model, malicious actors can no longer spend newly received funds by
-reattaching an old transaction.
+### Benefits
 
-While the UTXO model is slightly more complex to implement and requires slightly larger transactions, its benefits
-overwhelmingly outweigh these minor drawbacks. The shift to the UTXO model in IOTA is a pivotal move towards efficient
-conflict resolution, increased security, and the potential adoption of colored coins.
+While WOTS had its advantages, it was not without limitations:
+
+- **Size of Signatures**: WOTS signatures occupied a substantial portion of transaction data.
+- **One-time Spending**: Addresses were deemed safe only for a single transaction.
+  Any further transactions risked exposing parts of the private key, compromising transaction security.
+- **Growing List of Addresses**: Nodes were compelled to constantly update a list of used addresses to prevent multiple
+  spends from the same address.
+
+With Chrysalis, IOTA supports only Ed25519 addresses, thereby discontinuing WOTS addresses.
+
+### A Look Back at the Migration Process
+
+This crucial migration encompassed:
+
+1. **Migration Bundles**: Users generated bundles in the older network targeting their Ed25519 addresses in the
+   Chrysalis Phase 2 network.
+2. **Minting by the Coordinator**: Migrated funds took the form of receipts, minted by the Coordinator and subsequently
+   incorporated within milestones in the newer network.
+3. **Node Assessment**: Nodes in the new network meticulously evaluated these receipts, creating new UTXOs in the ledger
+   to represent the transferred funds.
+
+This systematic approach ensured a hassle-free migration, allowing users to transition their funds with minimal
+interruptions, all the while safeguarding their assets' security and integrity.
 
 :::tip Learn More
 
-You can learn more about the [switch to UTXO](https://wiki.iota.org/tips/tips/TIP-0007) in the [TIPS section](../tips.md).
+Learn more about the [Switch to UTXO](https://wiki.iota.org/tips/tips/TIP-0007/) and
+the [migration to Ed25519 addresses](https://wiki.iota.org/tips/tips/TIP-0017/)
 
 :::
+
