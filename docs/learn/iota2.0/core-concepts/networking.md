@@ -65,9 +65,9 @@ You should exchange your node's `multiaddr` in direct messages.
 
 ## Auto-peering
 
-IOTA 2.0 supports the automatic discovery of peers through the `autopeering` module. It's disabled by default but can be
-enabled if the node has at least four static peers. An `autopeering` module will use the specified entry nodes
-under `p2p.autopeering.entryNodes` to find peers.
+IOTA 2.0 supports the automatic discovery of peers through the `autopeering` module.
+By default, the node software will peer up to four autopeered peers and initiate a gossip protocol with them.
+An `autopeering` module will use the specified entry nodes under `p2p.autopeering.entryNodes` to find peers.
 
 :::warning
 

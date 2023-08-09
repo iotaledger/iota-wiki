@@ -37,7 +37,7 @@ agreement and promote a more democratic and inclusive validation process.
 ## Validator Registration and Committee Selection Process
 
 To be included in the committee of an epoch, a node must go through three steps: _Registration_, _Activity_, and
-_Selection_. The committee is formed by taking a predetermined number of validators who have the largest stake.
+_Selection_. The committee is formed by taking a predetermined number of random validators who have the largest stake.
 
 ### Registration
 

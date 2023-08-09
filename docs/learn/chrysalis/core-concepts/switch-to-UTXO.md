@@ -1,8 +1,20 @@
 ---
 description: This article provides an in-depth look into IOTA's shift from WOTS addresses to the UTXO model and the motivations and processes behind this migration.
-keywords: [ 'IOTA', 'WOTS', 'UTXO', 'Migration', 'Chrysalis', 'Ed25519', 'Security', 'Protocol Design', 'User Experience' ]
+keywords:
+  [
+    'IOTA',
+    'WOTS',
+    'UTXO',
+    'Migration',
+    'Chrysalis',
+    'Ed25519',
+    'Security',
+    'Protocol Design',
+    'User Experience',
+  ]
 ---
-# Switch to UTXO 
+
+# Switch to UTXO
 
 With Chrysalis, IOTA moved away from the Winternitz One-Time Signature (WOTS) system to the Unspent Transaction Output (
 UTXO) model, addressing several issues related to security, protocol design, and user experience.
@@ -71,4 +83,3 @@ Learn more about the [Switch to UTXO](https://wiki.iota.org/tips/tips/TIP-0007/)
 the [migration to Ed25519 addresses](https://wiki.iota.org/tips/tips/TIP-0017/)
 
 :::
-

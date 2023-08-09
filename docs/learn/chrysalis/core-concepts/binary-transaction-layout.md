@@ -14,7 +14,7 @@ keywords:
 
 ## Binary vs. Trinary
 
-Traditionally, some distributed ledger technologies (DLTs) used trinary data formats.
+In the past, IOTA used trinary data formats.
 The decision was based on the fact that trinary logic systems can theoretically store and process information more
 efficiently than binary systems.
 However, in practice, the digital world is built upon binary logic, leading to trinary data structure challenges, such as transaction payloads.

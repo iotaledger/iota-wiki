@@ -35,10 +35,11 @@ You can obtain mana by:
 Unlike traditional blockchains, block creation in IOTA is not reserved for a limited group, and any IOTA account holder
 can create blocks with their Mana.
 
-Mana exists in two forms: stored on the unspent outputs and allotted to chosen accounts as BIC credits.
+Mana exists in three forms: [potential](#potential-mana) from holding IOTA
+tokens, [stored](#stored-mana-transferrable-mana) on the unspent outputs and allotted to chosen accounts
+as [BIC credits](#bic-credits-mana-for-congestion-control).
 [Stored mana](#stored-mana-transferrable-mana) is transferable. However, Mana allotted
-as [BIC credits](#bic-credits-mana-for-congestion-control) isn't transferable
-and can only be used for creating blocks.
+as [BIC credits](#bic-credits-mana-for-congestion-control) isn't transferable and can only be used for creating blocks.
 
 ### Potential Mana
 
@@ -62,12 +63,12 @@ burned when a block is scheduled.
 IOTA's staking and delegation mechanisms incentivize users to contribute to the protocol's security.
 There are no entry barriers to becoming a validator or a delegator.
 
-### Validation blocks
+### Validation Blocks
 
 [Validation blocks](data-structures.md#validation-blocks) are lightweight,
 with a maximum number of parents larger than 8.
 They do not burn BIC, and only those issued by [nodes](networking.md#nodes) selected for the committee are considered.
-Keep in mind that all validation blocks issued by nodes not selected for the committee will be discarded
+Keep in mind that all validation blocks issued by nodes not selected for the committee will be discarded.
 
 ### Registration
 
