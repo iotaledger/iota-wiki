@@ -1,5 +1,6 @@
 import useRouteContext from '@docusaurus/useRouteContext';
-import { useAllDocsData } from '@docusaurus/plugin-content-docs/client';
+import { PropSidebarItem } from '@docusaurus/plugin-content-docs';
+import { GlobalPluginData as DocsGlobalPluginData, useAllDocsData } from '@docusaurus/plugin-content-docs/client';
 import { useDocsSidebar } from '@docusaurus/theme-common/internal';
 import config from '../switcher.config';
 import {
@@ -9,8 +10,12 @@ import {
   Sidebar,
   Subsection,
 } from '../common/components/Switcher';
-import { PropSidebarItem } from '@docusaurus/plugin-content-docs';
-import { GlobalPluginData } from '@iota-wiki/plugin-docs';
+
+export type GlobalPluginData = DocsGlobalPluginData & {
+  globalSidebars?: {
+    [key: string]: PropSidebarItem[];
+  };
+};
 
 export type SwitcherProps = {
   before?: PropSidebarItem[];
@@ -70,7 +75,9 @@ function findSidebarItems(
 }
 
 export default function useSwitcher(): SwitcherProps {
-  const plugins = useAllDocsData();
+  const plugins = useAllDocsData() as {
+    [pluginId: string]: GlobalPluginData;
+  };
   const docId = useRouteContext().plugin.id;
   const { name: sidebarId, items: sidebarItems } = useDocsSidebar();
 
