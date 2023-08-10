@@ -1,6 +1,9 @@
 import useRouteContext from '@docusaurus/useRouteContext';
 import { PropSidebarItem } from '@docusaurus/plugin-content-docs';
-import { GlobalPluginData as DocsGlobalPluginData, useAllDocsData } from '@docusaurus/plugin-content-docs/client';
+import {
+  GlobalPluginData as DocsGlobalPluginData,
+  useAllDocsData,
+} from '@docusaurus/plugin-content-docs/client';
 import { useDocsSidebar } from '@docusaurus/theme-common/internal';
 import config from '../switcher.config';
 import {
