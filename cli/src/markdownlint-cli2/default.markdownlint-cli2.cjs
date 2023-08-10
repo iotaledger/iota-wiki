@@ -15,9 +15,6 @@ const default_config = {
       indent: 4,
     },
     MD013: false,
-    MD033: {
-      allowed_elements: ['Tabs', 'TabItem', 'CodeBlock'],
-    },
     MD034: false,
     MD041: false,
   },
