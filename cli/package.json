@@ -34,7 +34,7 @@
     "ink-spinner": "^4.0.3",
     "ink-text-input": "^4.0.3",
     "isomorphic-git": "^1.17.2",
-    "markdownlint-cli2": "^0.7.0",
+    "markdownlint-cli2": "^0.8.1",
     "prettier": "2.8.8",
     "remark": "^14.0.2",
     "remark-lint-no-dead-urls": "^1.1.0",

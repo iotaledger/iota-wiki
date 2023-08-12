@@ -8,11 +8,11 @@ const internalConfig = require.resolve(
 export class Lint extends Command {
   static paths = [[`lint`]];
   config = Option.String(`-c,--config`);
-  args = Option.Rest();
+  args = Option.Proxy();
 
   async execute() {
     return await shell(
-      'npx markdownlint-cli2-config ' + internalConfig + ' ',
+      'npx markdownlint-cli2 --config ' + internalConfig + ' ',
       this.args,
       {
         env: {

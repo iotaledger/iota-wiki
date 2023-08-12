@@ -2715,7 +2715,7 @@ __metadata:
     ink-spinner: ^4.0.3
     ink-text-input: ^4.0.3
     isomorphic-git: ^1.17.2
-    markdownlint-cli2: ^0.7.0
+    markdownlint-cli2: ^0.8.1
     nodemon: ^2.0.16
     prettier: 2.8.8
     raw-loader: ^4.0.2
@@ -11997,38 +11997,38 @@ __metadata:
   languageName: node
   linkType: hard
 
-"markdownlint-cli2@npm:^0.7.0":
-  version: 0.7.1
-  resolution: "markdownlint-cli2@npm:0.7.1"
+"markdownlint-cli2@npm:^0.8.1":
+  version: 0.8.1
+  resolution: "markdownlint-cli2@npm:0.8.1"
   dependencies:
     globby: 13.1.4
-    markdownlint: 0.28.2
+    markdownlint: 0.29.0
     markdownlint-cli2-formatter-default: 0.0.4
     micromatch: 4.0.5
     strip-json-comments: 5.0.0
-    yaml: 2.2.2
+    yaml: 2.3.1
   bin:
     markdownlint-cli2: markdownlint-cli2.js
     markdownlint-cli2-config: markdownlint-cli2-config.js
     markdownlint-cli2-fix: markdownlint-cli2-fix.js
-  checksum: 665dc5cf66bade88f802bac0938a9dc828517d8362ce65f98ab0ca1abf81d3a92fcf280ad4c0990949cbab02c858b325f35ec836e0075fa2704a82e38333bf46
+  checksum: 38464d73d91a1abe1cc43f925112e567ee27eb20f536e4a0c1329e28cea4366db68e9c365127bbd95f2580bf2983ec8ea61e98ece1c868c17994b542e37e495d
   languageName: node
   linkType: hard
 
-"markdownlint-micromark@npm:0.1.2":
-  version: 0.1.2
-  resolution: "markdownlint-micromark@npm:0.1.2"
-  checksum: f1ae330db8e9cad942de8f8e422287c38e94e9eb733031e73929023b03838f945776756dd7d6a4b3c9a5fa4ec1c1db6c0e0edd8b59ddc57defbdab2f01d31ce9
+"markdownlint-micromark@npm:0.1.5":
+  version: 0.1.5
+  resolution: "markdownlint-micromark@npm:0.1.5"
+  checksum: fc69c340c31a06b46cf358759348a12b60b0080d82406ec1ed2e015e96b664e4075584980cf1bf029287109503ec37d0da012ec67827bc7a21a9f7d0b5a624b8
   languageName: node
   linkType: hard
 
-"markdownlint@npm:0.28.2":
-  version: 0.28.2
-  resolution: "markdownlint@npm:0.28.2"
+"markdownlint@npm:0.29.0":
+  version: 0.29.0
+  resolution: "markdownlint@npm:0.29.0"
   dependencies:
     markdown-it: 13.0.1
-    markdownlint-micromark: 0.1.2
-  checksum: 2b83ff8223d7002ebcc8228abfd34c1f85f6c9b14e591a162498140dfa6d89b5083bbc45b097e279e5ae9a2e54b8603807634eb5141f575fce601ad781ce77aa
+    markdownlint-micromark: 0.1.5
+  checksum: 5785f5173f553510516bf1f68a0768118dcae3a3a19234f6ed57d5d5a8f5beedcca859593fdcf0d8e90fdccb69fd0e168e77416f5712e04e2062c5bf2dca5612
   languageName: node
   linkType: hard
 
@@ -18780,14 +18780,7 @@ plugin-image-zoom@flexanalytics/plugin-image-zoom:
   languageName: node
   linkType: hard
 
-"yaml@npm:2.2.2":
-  version: 2.2.2
-  resolution: "yaml@npm:2.2.2"
-  checksum: d90c235e099e30094dcff61ba3350437aef53325db4a6bcd04ca96e1bfe7e348b191f6a7a52b5211e2dbc4eeedb22a00b291527da030de7c189728ef3f2b4eb3
-  languageName: node
-  linkType: hard
-
-"yaml@npm:^2.0.0":
+"yaml@npm:2.3.1, yaml@npm:^2.0.0":
   version: 2.3.1
   resolution: "yaml@npm:2.3.1"
   checksum: 2c7bc9a7cd4c9f40d3b0b0a98e370781b68b8b7c4515720869aced2b00d92f5da1762b4ffa947f9e795d6cd6b19f410bd4d15fdd38aca7bd96df59bd9486fb54
