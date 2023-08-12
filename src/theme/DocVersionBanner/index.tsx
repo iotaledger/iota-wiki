@@ -57,9 +57,7 @@ function UnmaintainedVersionLabel({
         versionLabel: <b>{versionMetadata.label}</b>,
       }}
     >
-      {
-        'This is documentation for {siteTitle} {versionLabel}, which is no longer actively maintained.'
-      }
+      {'Version {versionLabel} is being deprecated.'}
     </Translate>
   );
 }
@@ -91,24 +89,22 @@ function LatestVersionSuggestionLabel({
       id='theme.docs.versions.latestVersionSuggestionLabel'
       description='The label used to tell the user to check the latest version'
       values={{
-        versionLabel,
         latestVersionLink: (
           <b>
             <Link to={to} onClick={onClick}>
               <Translate
                 id='theme.docs.versions.latestVersionLinkLabel'
                 description='The label used for the latest version suggestion link label'
+                values={{ versionLabel }}
               >
-                latest version
+                {'{versionLabel}'}
               </Translate>
             </Link>
           </b>
         ),
       }}
     >
-      {
-        'For up-to-date documentation, see the {latestVersionLink} ({versionLabel}).'
-      }
+      {'The latest version is {latestVersionLink}.'}
     </Translate>
   );
 }
@@ -149,13 +145,17 @@ function DocVersionBannerEnabled({
       <div>
         <BannerLabel siteTitle={siteTitle} versionMetadata={versionMetadata} />
       </div>
-      <div className='margin-top--md'>
-        <LatestVersionSuggestionLabel
-          versionLabel={latestVersionSuggestion.label}
-          to={latestVersionSuggestedDoc.path}
-          onClick={() => savePreferredVersionName(latestVersionSuggestion.name)}
-        />
-      </div>
+      {latestVersionSuggestion.label !== versionMetadata.label && (
+        <div className='margin-top--md'>
+          <LatestVersionSuggestionLabel
+            versionLabel={latestVersionSuggestion.label}
+            to={latestVersionSuggestedDoc.path}
+            onClick={() =>
+              savePreferredVersionName(latestVersionSuggestion.name)
+            }
+          />
+        </div>
+      )}
     </div>
   );
 }
