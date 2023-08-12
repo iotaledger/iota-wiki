@@ -173,6 +173,13 @@ module.exports = async () => {
         __dirname,
         'docs/build/stronghold.rs/1.1.0/sidebars.js',
       ),
+      versions: {
+        current: {
+          label: '1.1.0',
+          badge: true,
+          banner: 'unmaintained',
+        },
+      },
     },
     {
       id: 'iota-streams',
