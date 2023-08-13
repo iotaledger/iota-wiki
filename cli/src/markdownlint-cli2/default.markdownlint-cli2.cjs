@@ -12,9 +12,13 @@ if (env.CUSTOM_CONFIG) {
 const default_config = {
   config: {
     MD007: {
-      indent: 4,
+      indent: 2,
+    },
+    MD010: {
+      code_blocks: false,
     },
     MD013: false,
+    MD033: false,
     MD034: false,
     MD041: false,
   },
