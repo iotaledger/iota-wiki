@@ -18,13 +18,13 @@ Node.js binding to the IOTA client library.
 - Using NPM:
 
 ```bash
-$ npm i @iota/client
+npm i @iota/client
 ```
 
 - Using yarn:
 
 ```bash
-$ yarn add @iota/client
+yarn add @iota/client
 ```
 
 ## Requirements
@@ -480,13 +480,13 @@ Gets the utxo changes by the given milestone index.
 | ----- | -------- | -------------------------- |
 | index | `number` | The index of the milestone |
 
-**Returns** a promise resolving to the [MilestoneUTXOChanges](#MilestoneUTXOChanges).
+**Returns** a promise resolving to the [MilestoneUTXOChanges](#milestoneutxochanges).
 
 #### getReceipts(): Promise<Receipts[]>
 
 Get all receipts.
 
-**Returns** a promise resolving to the [Receipts](#Receipts).
+**Returns** a promise resolving to the [Receipts](#receipts).
 
 #### getReceiptsMigratedAt(index): Promise<Receipts[]>
 
@@ -496,13 +496,13 @@ Get all receipts for a given milestone index
 | ----- | -------- | -------------------------- |
 | index | `number` | The index of the milestone |
 
-**Returns** a promise resolving to the [Receipts](#Receipts).
+**Returns** a promise resolving to the [Receipts](#receipts).
 
 #### getTreasury(): Promise<Treasury/>
 
 Get the treasury amount.
 
-**Returns** a promise resolving to the [Treasury](#Treasury).
+**Returns** a promise resolving to the [Treasury](#treasury).
 
 #### getIncludedMessage(): Promise<Message/>
 

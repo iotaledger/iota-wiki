@@ -68,7 +68,7 @@ In this pop-up menu you can enter the following functions:
 
 - Empty wallets can be hidden to keep your main wallet overview organized. If a wallet still contains funds, you will not be able to hide it by clicking this option but will be offered to transfer the funds to another wallet and hide the wallet afterward. A hidden wallet can be shown again by enabling the function "show hidden wallets" in the advanced account settings.
 
-#### Transaction detail view.
+#### Transaction detail view
 
 ![transaction details view](/img/learn/firefly/transaction_details_view.png)
 

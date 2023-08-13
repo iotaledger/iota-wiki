@@ -52,7 +52,7 @@ where `:blockID` is the base58 encoded block ID, e.g. 4MSkwAPzGwnjCJmTfbpW4z4GRC
 
 #### Client lib - `GetBlock`
 
-Blocks can be retrieved via `GetBlock(base58EncodedID string) (*jsonmodels.Block, error) `
+Blocks can be retrieved via `GetBlock(base58EncodedID string) (*jsonmodels.Block, error)`
 
 ```go
 block, err := goshimAPI.GetBlock(base58EncodedBlockID)

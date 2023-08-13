@@ -42,7 +42,7 @@ mkdir notarization-tutorial
 cd notarization-tutorial
 ```
 
-2.  You should run the Node.js initializer to configure the project.
+2. You should run the Node.js initializer to configure the project.
 
 ```bash
 npm init --yes

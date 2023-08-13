@@ -41,15 +41,20 @@ One of the easiest ways to run a node is to use [Docker](https://www.docker.com/
 
 1. [Install docker](https://docs.docker.com/get-docker/). On Linux, make sure you install both the [Docker Engine](https://docs.docker.com/engine/install/) and [Docker Compose](https://docs.docker.com/compose/install/).
 2. Clone the GoShimmer repository.
+
    ```shell
-   $ git clone git@github.com:iotaledger/goshimmer.git
+   git clone git@github.com:iotaledger/goshimmer.git
    ```
+
 3. Create a `config.json` from the provided `config.default.json`.
+
    ```shell
-   $ cd goshimmer
-   $ cp config.default.json config.json
+   cd goshimmer
+   cp config.default.json config.json
    ```
+
    Make sure, that following entry is present in `config.json`:
+
    ```json
    {
      "prometheus": {
@@ -57,9 +62,11 @@ One of the easiest ways to run a node is to use [Docker](https://www.docker.com/
      }
    }
    ```
+
 4. From the root of the repo, start GoShimmer with:
+
    ```shell
-   $ docker compose up
+   docker compose up
    ```
 
 You should be able to reach the Monitoring Dashboard via browser at [localhost:3000](http://localhost:3000). Default login credentials are:
@@ -77,6 +84,7 @@ If you run the [released binaries](https://github.com/iotaledger/goshimmer/relea
 ### GoShimmer Configuration
 
 1. Make sure that the `prometheus.bindAddress` config parameter is set in your `config.json`:
+
    ```json
    {
      "prometheus": {
@@ -84,7 +92,9 @@ If you run the [released binaries](https://github.com/iotaledger/goshimmer/relea
      }
    }
    ```
+
 2. Make sure, that the `prometheus` plugin is enabled in your `config.json`:
+
    ```json
    {
      "node": {
@@ -102,11 +112,14 @@ First, we take a look on how to configure and run Prometheus as a standalone app
 
 1. [Download](https://prometheus.io/download/) the latest release of Prometheus for your system.
 2. Unpack the downloaded file:
+
    ```shell
-   $ tar xvfz prometheus-*.tar.gz
-   $ cd prometheus-*
+   tar xvfz prometheus-*.tar.gz
+   cd prometheus-*
    ```
+
 3. Create a `prometheus.yml` in the unpacked directory with the following content:
+
    ```yaml
    scrape_configs:
      - job_name: goshimmer_local
@@ -116,11 +129,14 @@ First, we take a look on how to configure and run Prometheus as a standalone app
              # goshimmer prometheus plugin export
              - 127.0.0.1:9311
    ```
+
 4. Start Prometheus from the unpacked folder:
+
    ```shell
    # By default, Prometheus stores its database in ./data (flag --storage.tsdb.path).
    $ ./prometheus --config.file=prometheus.yml
    ```
+
 5. You can access the prometheus server at [localhost:9090](http://localhost:9090).
 6. (Optional) Prometheus server is running, but observe that [localhost:9090/targets](http://localhost:9090/targets) shows the target being `DOWN`. Run GoShimmer with the configuration from the previous stage, and you will soon see the `goshimmer_local` target being `UP`.
 
@@ -129,39 +145,50 @@ First, we take a look on how to configure and run Prometheus as a standalone app
 Note: you have to have root privileges with your user to carry out the following steps.
 
 1. Create a Prometheus user, directories, and set this user as the owner of those directories.
+
    ```shell
-   $ sudo useradd --no-create-home --shell /bin/false prometheus
-   $ sudo mkdir /etc/prometheus
-   $ sudo mkdir /var/lib/prometheus
-   $ sudo chown prometheus:prometheus /etc/prometheus
-   $ sudo chown prometheus:prometheus /var/lib/prometheus
+   sudo useradd --no-create-home --shell /bin/false prometheus
+   sudo mkdir /etc/prometheus
+   sudo mkdir /var/lib/prometheus
+   sudo chown prometheus:prometheus /etc/prometheus
+   sudo chown prometheus:prometheus /var/lib/prometheus
    ```
+
 2. Download Prometheus source, extract and rename.
+
    ```shell
-   $ wget https://github.com/prometheus/prometheus/releases/download/v2.19.1/prometheus-2.19.1.linux-amd64.tar.gz
-   $ tar xvfz prometheus-2.19.1.linux-amd64.tar.gz
-   $ mv prometheus-2.19.1.linux-amd64.tar.gz prometheus-files
+   wget https://github.com/prometheus/prometheus/releases/download/v2.19.1/prometheus-2.19.1.linux-amd64.tar.gz
+   tar xvfz prometheus-2.19.1.linux-amd64.tar.gz
+   mv prometheus-2.19.1.linux-amd64.tar.gz prometheus-files
    ```
+
 3. Copy Prometheus binaries to `/bin` and change their ownership
+
    ```shell
-   $ sudo cp prometheus-files/prometheus /usr/local/bin/
-   $ sudo cp prometheus-files/promtool /usr/local/bin/
-   $ sudo chown prometheus:prometheus /usr/local/bin/prometheus
-   $ sudo chown prometheus:prometheus /usr/local/bin/promtool
+   sudo cp prometheus-files/prometheus /usr/local/bin/
+   sudo cp prometheus-files/promtool /usr/local/bin/
+   sudo chown prometheus:prometheus /usr/local/bin/prometheus
+   sudo chown prometheus:prometheus /usr/local/bin/promtool
    ```
+
 4. Copy Prometheus console libraries to `/etc` and change their ownership.
+
    ```shell
-   $ sudo cp -r prometheus-files/consoles /etc/prometheus
-   $ sudo cp -r prometheus-files/console_libraries /etc/prometheus
-   $ sudo chown -R prometheus:prometheus /etc/prometheus/consoles
-   $ sudo chown -R prometheus:prometheus /etc/prometheus/console_libraries
+   sudo cp -r prometheus-files/consoles /etc/prometheus
+   sudo cp -r prometheus-files/console_libraries /etc/prometheus
+   sudo chown -R prometheus:prometheus /etc/prometheus/consoles
+   sudo chown -R prometheus:prometheus /etc/prometheus/console_libraries
    ```
+
 5. Create Prometheus config file, define targets.
    To create and open up the config file:
+
    ```shell
-   $ sudo nano /etc/prometheus/prometheus.yml
+   sudo nano /etc/prometheus/prometheus.yml
    ```
+
    Put the following content into the file:
+
    ```yaml
    scrape_configs:
      - job_name: goshimmer_local
@@ -171,15 +198,18 @@ Note: you have to have root privileges with your user to carry out the following
              # goshimmer prometheus plugin export
              - 127.0.0.1:9311
    ```
+
    Save and exit the editor.
 6. Change ownership of the config file.
+
    ```shell
-   $ sudo chown prometheus:prometheus /etc/prometheus/prometheus.yml
+   sudo chown prometheus:prometheus /etc/prometheus/prometheus.yml
    ```
+
 7. Create a Prometheus service file.
 
    ```shell
-   $ sudo nano /etc/systemd/system/prometheus.service
+   sudo nano /etc/systemd/system/prometheus.service
    ```
 
    Copy the following content into the file:
@@ -205,21 +235,25 @@ Note: you have to have root privileges with your user to carry out the following
    ```
 
 8. Reload `systemd` service to register the prometheus service.
+
    ```shell
-   $ sudo systemctl daemon-reload
-   $ sudo systemctl start prometheus
+   sudo systemctl daemon-reload
+   sudo systemctl start prometheus
    ```
+
 9. Check if the service is running.
+
    ```shell
-   $ sudo systemctl status prometheus
+   sudo systemctl status prometheus
    ```
+
 10. You can access the prometheus server at [localhost:9090](http://localhost:9090).
 11. (Optional) Prometheus server is running, but observe that [localhost:9090/targets](http://localhost:9090/targets) shows the target being `DOWN`. Run GoShimmer with the configuration from the previous stage, and you will soon see the `goshimmer_local` target being `UP`.
 
 +1. When you want to stop the service, run:
 
 ```shell
-$ sudo systemctl stop prometheus
+sudo systemctl stop prometheus
 ```
 
 Prometheus now collects metrics from your node, but we need to setup Grafana to visualize the collected data.
@@ -234,10 +268,12 @@ Depending on where you install Grafana from, the configuration directories will 
 
 1. [Download Grafana](https://grafana.com/grafana/download) binary and extract it into a folder.
    For example:
+
    ```shell
-   $ wget https://dl.grafana.com/oss/release/grafana-7.0.4.linux-amd64.tar.gz
-   $ tar -zxvf grafana-7.0.4.linux-amd64.tar.gz
+   wget https://dl.grafana.com/oss/release/grafana-7.0.4.linux-amd64.tar.gz
+   tar -zxvf grafana-7.0.4.linux-amd64.tar.gz
    ```
+
 2. We will need couple files from the GoShimmer repository. Here we suppose, that you have the repository directory `goshimmer` on the same level as the extracted `grafana-7.0.4` directory:
 
    ```
@@ -261,16 +297,18 @@ Depending on where you install Grafana from, the configuration directories will 
    We copy a couple configuration files from the repository into Grafana's directory:
 
    ```shell
-   $ cp -R goshimmer/tools/monitoring/grafana/dashboards/local_dashboard.json grafana-7.0.4/public/dashboards/
-   $ cp goshimmer/tools/monitoring/grafana/provisioning/datasources/datasources.yaml grafana-7.0.4/conf/provisioning/datasources/datasources.yaml
-   $ cp goshimmer/tools/monitoring/grafana/provisioning/dashboards/dashboards.yaml grafana-7.0.4/conf/provisioning/dashboards/dashboards.yaml
+   cp -R goshimmer/tools/monitoring/grafana/dashboards/local_dashboard.json grafana-7.0.4/public/dashboards/
+   cp goshimmer/tools/monitoring/grafana/provisioning/datasources/datasources.yaml grafana-7.0.4/conf/provisioning/datasources/datasources.yaml
+   cp goshimmer/tools/monitoring/grafana/provisioning/dashboards/dashboards.yaml grafana-7.0.4/conf/provisioning/dashboards/dashboards.yaml
    ```
 
 3. Run Grafana.
+
    ```shell
-   $ cd grafana-7.0.4/bin
-   $ ./grafana-server
+   cd grafana-7.0.4/bin
+   ./grafana-server
    ```
+
 4. Open Moitoring Dashboard at [localhost:3000](http://localhost:3000).
 
 Default login credentials are:
@@ -291,22 +329,30 @@ then Grafana is configured to run as a system service without any modification. 
 
 1. Copy [datasource yaml config](https://github.com/iotaledger/goshimmer/blob/develop/tools/monitoring/grafana/provisioning/datasources/datasources.yaml) to `/etc/grafana`:
    (assuming you are at the root of the cloned GoShimmer repository)
+
    ```shell
-   $ sudo cp tools/monitoring/grafana/provisioning/datasources/datasources.yaml /etc/grafana/provisioning/datasources
+   sudo cp tools/monitoring/grafana/provisioning/datasources/datasources.yaml /etc/grafana/provisioning/datasources
    ```
+
 2. Copy [dashboard yaml config](https://github.com/iotaledger/goshimmer/blob/develop/tools/monitoring/grafana/provisioning/dashboards/dashboards.yaml) to `/etc/grafana`:
+
    ```shell
-   $ sudo cp tools/monitoring/grafana/provisioning/dashboards/dashboards.yaml /etc/grafana/provisioning/dashboards
+   sudo cp tools/monitoring/grafana/provisioning/dashboards/dashboards.yaml /etc/grafana/provisioning/dashboards
    ```
+
 3. Copy [GoShimmer Local Metrics](https://github.com/iotaledger/goshimmer/blob/develop/tools/monitoring/grafana/dashboards/local_dashboard.json) dashboard to `/var/lib/grafana/`:
+
    ```shell
-   $ sudo cp -R tools/monitoring/grafana/dashboards /var/lib/grafana/
+   sudo cp -R tools/monitoring/grafana/dashboards /var/lib/grafana/
    ```
+
 4. Reload daemon and start Grafana.
+
    ```shell
-   $ sudo systemctl daemon-reload
-   $ sudo systemctl start grafana-server
+   sudo systemctl daemon-reload
+   sudo systemctl start grafana-server
    ```
+
 5. Open Moitoring Dashboard at [localhost:3000](http://localhost:3000).
 
 Default login credentials are:

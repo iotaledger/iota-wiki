@@ -189,6 +189,7 @@ we can start using it for its sole purpose, to actually store and read the parti
 
 - `ForEach` - allows to apply a `Consumer` function for every object residing within the cache and the underlying persistence layer.
   For example, this is how we can count the number of blocks.
+
   ```Go
   blockCount := 0
   blockStorage.ForEach(func(key []byte, cachedObject generic.CachedObject) bool {
@@ -197,9 +198,11 @@ we can start using it for its sole purpose, to actually store and read the parti
         })
   }
   ```
+
 - `Store` - storing an object in the objectStorage. An extended version is method `StoreIfAbsent`
   that stores an object only if it was not stored before and returns boolean indication if the object was stored.
   `ComputeIfAbsent` works similarly but does not access the value log.
+
   ```Go
   cachedBlock := blockStorage.Store(newBlock)
   cachedBlock, stored := blockStorage.StoreIfAbsent(newBlock)

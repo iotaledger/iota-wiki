@@ -19,7 +19,7 @@ This crate contains procedural macros for Stronghold.
 
 The GuardDebug macro is used to block inspection of a data structure. It implements the Debug trait and explicitly blocks the reading of the internal data on the structure its derived on. Instead, the data will be returned out as a `(guarded)` string.
 
-##### Example:
+##### Example
 
 ```rust
 #[derive(GuardDebug)]

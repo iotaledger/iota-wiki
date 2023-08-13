@@ -5,7 +5,7 @@ description:
   into the new Chrysalis network
 ---
 
-# Network Token migration:
+# Network Token migration
 
 ## Why does IOTA migrate tokens?
 

@@ -19,11 +19,11 @@ This is the API documentation for the Audit Trail Gateway of the [Integration Se
 
 #### GET
 
-##### Summary:
+##### Summary
 
 Search for a channel
 
-##### Description:
+##### Description
 
 Search for a channel. A client can search for a channel which it is interested in.
 
@@ -63,11 +63,11 @@ Search for a channel. A client can search for a channel which it is interested i
 
 #### GET
 
-##### Summary:
+##### Summary
 
 Get information about a channel
 
-##### Description:
+##### Description
 
 Get information about a channel with address channel-address.
 
@@ -87,11 +87,11 @@ Get information about a channel with address channel-address.
 
 #### DELETE
 
-##### Summary:
+##### Summary
 
 Delete information of a channel
 
-##### Description:
+##### Description
 
 Delete information of a channel with address channel-address. The author of a channel can delete its entry in the database. In this case all subscriptions will be deleted and the channel won’t be found in the system anymore. The data & channel won’t be deleted from the IOTA Tangle since its data is immutable on the tangle!
 
@@ -120,11 +120,11 @@ Delete information of a channel with address channel-address. The author of a ch
 
 #### POST
 
-##### Summary:
+##### Summary
 
 Add an existing channel into the database
 
-##### Description:
+##### Description
 
 Add an existing channel into the database. Clients are able to add existing channels into the database so others can subscribe to them. This will be automatically called when a channel will be created.
 
@@ -146,11 +146,11 @@ Add an existing channel into the database. Clients are able to add existing chan
 
 #### PUT
 
-##### Summary:
+##### Summary
 
 Update channel information
 
-##### Description:
+##### Description
 
 Update channel information. The author of a channel can update topics of a channel.
 
@@ -174,11 +174,11 @@ Update channel information. The author of a channel can update topics of a chann
 
 #### POST
 
-##### Summary:
+##### Summary
 
 Create a new channel
 
-##### Description:
+##### Description
 
 Create a new channel. An author can create a new channel with specific topics where other clients can subscribe to.
 
@@ -201,11 +201,11 @@ Create a new channel. An author can create a new channel with specific topics wh
 
 #### POST
 
-##### Summary:
+##### Summary
 
 Write data to a channel
 
-##### Description:
+##### Description
 
 Write data to a channel with address channel address. Write permission is mandatory. The type and metadata fields are not encrypted to have a possibility to search for events. The payload is stored encrypted for encrypted channels.
 
@@ -233,11 +233,11 @@ Write data to a channel with address channel address. Write permission is mandat
 
 #### GET
 
-##### Summary:
+##### Summary
 
 Get data from the channel
 
-##### Description:
+##### Description
 
 Get data from the channel with address channel address. The first possible message a subscriber can receive is the time the subscription got approved all messages before are not received. Read permission is mandatory.
 
@@ -272,11 +272,11 @@ Get data from the channel with address channel address. The first possible messa
 
 #### GET
 
-##### Summary:
+##### Summary
 
 Get the history of a channel.
 
-##### Description:
+##### Description
 
 Get all data of a channel using a shared key (in case of encrypted channels). Mainly used from auditors to evaluate a log stream.
 
@@ -299,11 +299,11 @@ Get all data of a channel using a shared key (in case of encrypted channels). Ma
 
 #### POST
 
-##### Summary:
+##### Summary
 
 Validates channel data by comparing the log of each link with the data on the tangle.
 
-##### Description:
+##### Description
 
 Validates data of a channel.
 
@@ -333,11 +333,11 @@ Validates data of a channel.
 
 #### POST
 
-##### Summary:
+##### Summary
 
 Re import the data from the tangle into the database.
 
-##### Description:
+##### Description
 
 The user can decide to re-import the data from the Tangle into the database. A reason for it could be a malicious state of the data.
 
@@ -367,11 +367,11 @@ The user can decide to re-import the data from the Tangle into the database. A r
 
 #### GET
 
-##### Summary:
+##### Summary
 
 Get information about the server
 
-##### Description:
+##### Description
 
 Get information about the server like commitHash, server identity id and api version
 
@@ -386,11 +386,11 @@ Get information about the server like commitHash, server identity id and api ver
 
 #### GET
 
-##### Summary:
+##### Summary
 
 Get a subscription state by identity id.
 
-##### Description:
+##### Description
 
 Get a subscription state of a channel by identity id.
 
@@ -417,11 +417,11 @@ Get a subscription state of a channel by identity id.
 
 #### PUT
 
-##### Summary:
+##### Summary
 
 Updates an existing subscription
 
-##### Description:
+##### Description
 
 Updates an existing subscription
 
@@ -452,11 +452,11 @@ Updates an existing subscription
 
 #### GET
 
-##### Summary:
+##### Summary
 
 Get all subscriptions of a channel.
 
-##### Description:
+##### Description
 
 Get all subscriptions of a channel. Use the is-authorized query parameter to filter for authorized subscriptions.
 
@@ -486,11 +486,11 @@ Get all subscriptions of a channel. Use the is-authorized query parameter to fil
 
 #### GET
 
-##### Summary:
+##### Summary
 
 Get a subscription by identity id.
 
-##### Description:
+##### Description
 
 Get a subscription of a channel by identity id.
 
@@ -518,11 +518,11 @@ Get a subscription of a channel by identity id.
 
 #### POST
 
-##### Summary:
+##### Summary
 
 Adds an existing subscription
 
-##### Description:
+##### Description
 
 Adds an existing subscription (e.g. the subscription was not created with the api but locally.)
 
@@ -551,11 +551,11 @@ Adds an existing subscription (e.g. the subscription was not created with the ap
 
 #### PUT
 
-##### Summary:
+##### Summary
 
 Updates an existing subscription
 
-##### Description:
+##### Description
 
 Updates an existing subscription
 
@@ -585,11 +585,11 @@ Updates an existing subscription
 
 #### DELETE
 
-##### Summary:
+##### Summary
 
 Deletes subscription
 
-##### Description:
+##### Description
 
 Deletes an existing subscription
 
@@ -621,11 +621,11 @@ Deletes an existing subscription
 
 #### POST
 
-##### Summary:
+##### Summary
 
 Request subscription to a channel
 
-##### Description:
+##### Description
 
 Request subscription to a channel with address channel-address. A client can request a subscription to a channel which it then is able to read/write from.
 
@@ -656,11 +656,11 @@ Request subscription to a channel with address channel-address. A client can req
 
 #### POST
 
-##### Summary:
+##### Summary
 
 Authorize a subscription to a channel
 
-##### Description:
+##### Description
 
 Authorize a subscription to a channel with address channel-address. The author of a channel can authorize a subscriber to read/write from a channel. Eventually after verifying its identity (using the SSI Bridge).
 
@@ -690,11 +690,11 @@ Authorize a subscription to a channel with address channel-address. The author o
 
 #### POST
 
-##### Summary:
+##### Summary
 
 Revoke subscription to a channel.
 
-##### Description:
+##### Description
 
 Revoke subscription to a channel. Only the author of a channel can revoke a subscription from a channel.
 

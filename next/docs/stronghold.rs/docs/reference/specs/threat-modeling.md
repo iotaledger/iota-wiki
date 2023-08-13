@@ -26,7 +26,7 @@ Stronghold is simple in concept; it is used to store secrets.
 These secrets should never be revealed, even to their owners.
 Users can interact with secrets through controlled methods called [procedures](./../../explanations/procedures.md).
 
-### Typical use of Stronghold:
+### Typical use of Stronghold
 
 ### Typical use of Stronghold
 

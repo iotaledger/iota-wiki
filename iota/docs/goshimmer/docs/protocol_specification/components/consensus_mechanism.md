@@ -15,18 +15,18 @@ keywords:
 
 The consensus mechanism is necessary to achieve agreement among the nodes of the network. In case of a double spend, one way to decide which transaction should be considered valid would be to order them and pick the oldest one. However, the Tangle is only partially ordered. To tackle this problem in the context of the Tangle, we have designed an open and leaderless consensus mechanism that utilizes the Tangle as a medium to exchange votes. Any node can add a block to the Tangle, and each block added to the Tangle represents a virtual vote (i.e. there is no additional overhead to communicate votes) to its entire past.
 
-The consensus mechanism can broadly be devided into consensus on two separate entities. On the one hand, we need to resolve any conflicts on the underlying UTXO ledger to prevent double spends. On the other hand, we need to make sure that blocks within the Tangle are not orphaned. Both are simply derived by observing the Tangle and objectively keeping track of [Approval Weight (AW)](#Approval-Weight-AW) with cMana (more specifically [active cMana](#Active-cMana)) as a Sibyl protection. Once a [conflict](ledgerstate.md#conflicts) (or block) reaches a certain AW threshold, an application can consider it as _confirmed_. To simplify this notion we introduce [Grades of Finality (GoF)](#Grades-of-Finality-GoF) where a higher GoF represents a higher confidence.
+The consensus mechanism can broadly be devided into consensus on two separate entities. On the one hand, we need to resolve any conflicts on the underlying UTXO ledger to prevent double spends. On the other hand, we need to make sure that blocks within the Tangle are not orphaned. Both are simply derived by observing the Tangle and objectively keeping track of [Approval Weight (AW)](#approval-weight-aw) with cMana (more specifically [active cMana](#active-cmana)) as a Sibyl protection. Once a [conflict](ledgerstate.md#conflicts) (or block) reaches a certain AW threshold, an application can consider it as _confirmed_. To simplify this notion we introduce [Grades of Finality (GoF)](#grades-of-finality-gof) where a higher GoF represents a higher confidence.
 
 | Name                | Component   | Initial/local opinion             | Consensus      | Comparable blockchain mechanism for voting/finality |
 | ------------------- | ----------- | --------------------------------- | -------------- | --------------------------------------------------- |
 | voting on conflicts | UTXO ledger | OTV/FPCS                          | conflict/tx AW | longest chain rule                                  |
 | finality of blocks  | Tangle      | inclusion score via tip selection | block AW       | x block rule                                        |
 
-On an abstract level, a node can be seen as a replicated state machine, just following whatever it receives through the Tangle, and, in case of blocks containing transactions, modifying the UTXO ledger. Only when a node wants to issue a block (read as: _cast a vote_) it needs to evaluate its own local opinion via [modular conflict selection function](#Modular-Conflict-Selection-Function). This decoupling of coming to consensus and setting the initial opinion allows for great flexibility and separation of concerns.
+On an abstract level, a node can be seen as a replicated state machine, just following whatever it receives through the Tangle, and, in case of blocks containing transactions, modifying the UTXO ledger. Only when a node wants to issue a block (read as: _cast a vote_) it needs to evaluate its own local opinion via [modular conflict selection function](#modular-conflict-selection-function). This decoupling of coming to consensus and setting the initial opinion allows for great flexibility and separation of concerns.
 
 ## Approval Weight (AW)
 
-Approval weight represents the [weight](#active-consensus-mana) of conflicts (and blocks), similar to the longest chain rule in Nakamoto consensus. However, instead of selecting a leader based on a puzzle (PoW) or stake (PoS), it allows every node to express its opinion by simply issuing any block and attaching it in a part of the Tangle it _likes_ (based on its initial opinion on blocks and possibly utilizing the [like switch](#Like-Switch) to express its opinion on conflicts).
+Approval weight represents the [weight](#active-consensus-mana) of conflicts (and blocks), similar to the longest chain rule in Nakamoto consensus. However, instead of selecting a leader based on a puzzle (PoW) or stake (PoS), it allows every node to express its opinion by simply issuing any block and attaching it in a part of the Tangle it _likes_ (based on its initial opinion on blocks and possibly utilizing the [like switch](#like-switch) to express its opinion on conflicts).
 
 It is important to note that tracking of AW for conflicts and markers/blocks is orthogonal. Thus, a block can reach a high AW whereas its contained payload, e.g., a transaction being a double spend, does not reach any AW on conflict/UTXO level.
 
@@ -42,7 +42,7 @@ Approval weight AW increases because of voters (nodes) that cast votes for confl
 
 #### Conflicts
 
-Tracking voters of [conflicts](ledgerstate.md#conflicts) is an effective way of objective virtual voting. It allows nodes to express their opinion simply by attaching a statement to a conflict they like (see [like switch](#Like-Switch)). This statement needs to propagate down the conflict DAG, adding support to each of the conflict's parents. In case a voter changes their opinion, support needs to be revoked from all conflicting conflicts and their children. Thus, a node can only support one conflict of a conflict set.
+Tracking voters of [conflicts](ledgerstate.md#conflicts) is an effective way of objective virtual voting. It allows nodes to express their opinion simply by attaching a statement to a conflict they like (see [like switch](#like-switch)). This statement needs to propagate down the conflict DAG, adding support to each of the conflict's parents. In case a voter changes their opinion, support needs to be revoked from all conflicting conflicts and their children. Thus, a node can only support one conflict of a conflict set.
 
 To make this more clear consider the following example:
 
@@ -123,7 +123,7 @@ GoF | AW
 2 | >= 0.45
 3 | >= 0.67
 
-These thresholds play a curcial role in the safety vs. liveness of the protocol, together with the exact workings of [active cMana](#Active-cMana). We are currently investigating them with in-depth simulations.
+These thresholds play a curcial role in the safety vs. liveness of the protocol, together with the exact workings of [active cMana](#active-cmana). We are currently investigating them with in-depth simulations.
 
 - The higher the AW threshold the more voters a conflict or block will need to reach a certain GoF -> more secure but higher confirmation time.
 - As a consequence of the above point, TangleTime will be tougher to advance; making the cMana window more likely to get stuck and confirmations to halt forever.

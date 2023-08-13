@@ -95,7 +95,7 @@ Gets the balance in the address.
 | --------- | ----------- | ----------- | ------------------------- |
 | [address] | `list[str]` | `undefined` | The address Bech32 string |
 
-**Returns** the [BalanceAddressResponse](#BalanceAddressResponse).
+**Returns** the [BalanceAddressResponse](#balanceaddressresponse).
 
 #### get_address_outputs(address, options (optional)): list[UtxoInput]
 
@@ -106,7 +106,7 @@ Gets the UTXO outputs associated with the given address.
 | [address] | `str`                                               | `undefined` | The address Bech32 string |
 | [options] | `[[AddressOutputsOptions](#addressoutputsoptions)]` | `undefined` | The query filters         |
 
-**Returns** the list of [UtxoInput](#UtxoInput).
+**Returns** the list of [UtxoInput](#utxoinput).
 
 #### find_outputs(output_ids (optional), addresses (optional)): list[OutputResponse]
 
@@ -143,7 +143,7 @@ Gets the utxo changes by the given milestone index.
 
 Get all receipts.
 
-**Returns** the [ReceiptDto](#ReceiptDto).
+**Returns** the [ReceiptDto](#receiptdto).
 
 #### get_receipts_migrated_at(index): Vec<ReceiptDto/>
 
@@ -153,13 +153,13 @@ Get all receipts for a given milestone index.
 | ------- | ----- | ----------- | -------------------------- |
 | [index] | `int` | `undefined` | The index of the milestone |
 
-**Returns** the [ReceiptDto](#ReceiptDto).
+**Returns** the [ReceiptDto](#receiptdto).
 
 #### get_treasury(): TreasuryResponse
 
 Get the treasury amount.
 
-**Returns** the [TreasuryResponse](#TreasuryResponse).
+**Returns** the [TreasuryResponse](#treasuryresponse).
 
 #### get_included_message(): Message
 
@@ -609,7 +609,7 @@ output_dto = {
 }
 ```
 
-Please refer to [TreasuryOutputDto](#treasuryoutputdto), [SignatureLockedSingleOutputDto](#signaturelockedsingleoutputdto), and [SignatureLockedDustAllowanceOutputDto](#signaturelockedDustallowanceoutputdto) for the details of these types.
+Please refer to [TreasuryOutputDto](#treasuryoutputdto), [SignatureLockedSingleOutputDto](#signaturelockedsingleoutputdto), and [SignatureLockedDustAllowanceOutputDto](#signaturelockeddustallowanceoutputdto) for the details of these types.
 
 #### SignatureLockedSingleOutputDto
 
@@ -803,7 +803,7 @@ unlock_block = {
 }
 ```
 
-Please refer to [Ed25519Signature](#ed25519Signature) for the details of this type.
+Please refer to [Ed25519Signature](#ed25519signature) for the details of this type.
 
 #### Ed25519Signature
 

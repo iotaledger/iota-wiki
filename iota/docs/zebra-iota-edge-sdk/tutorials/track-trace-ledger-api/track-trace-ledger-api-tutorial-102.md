@@ -19,9 +19,9 @@ We will use the following identifiers in this example:
 5. Barcode value - `3700123300014` and `991616586826831`
 6. RFID EPC - `urn:epc:id:sgtin:9524444.100000.10` and `4ae80b6a6c81616588146032`
 
-## Tutorial Part I : Barcode Scan Transactions.
+## Tutorial Part I : Barcode Scan Transactions
 
-### List all Barcode Values Scanned.
+### List all Barcode Values Scanned
 
 This API endpoint allows you to retrieve a list of all the barcode values that have been scanned corresponding to a given API Key.
 
@@ -53,7 +53,7 @@ Response:
 
 As seen above, the list of barcode values and the total number of transaction events recorded on the Tangle for each barcode value.
 
-### List all Barcode Scanners Used.
+### List all Barcode Scanners Used
 
 Thi API allows you to get a list of all the Barcode scanners devices associated with a given API Key.
 
@@ -85,7 +85,7 @@ Response:
 
 As seen above, you get a list of all the scanners and the total number of transaction events recorded on the Tangle for each device.
 
-### Retrieve the last transaction involving a Barcode Value.
+### Retrieve the last transaction involving a Barcode Value
 
 This API endpoint allows you to retrieve the last transaction involving a value. By including the URL query parameter `lastN`, the API allows you to retrieve the most recent `N` transactions. In this case we want to retrieve the most recent transaction, so we set the `lastN` parameter equal to `1`.
 
@@ -117,7 +117,7 @@ Response:
 
 As seen above we can successfully retrieve the last transaction involving a barcode value.
 
-### Retrieve the transactions of a Scanner using pagination.
+### Retrieve the transactions of a Scanner using pagination
 
 This API endpoint allows you use pagination to retrieve Barcode scanning devices transactions. By including the URL parameter `limit`, the API allows you to retrieve pages of `N` transactions. In this case we set the limit to `1`, thus we get a response of 1 transaction and a `link` in the headers showing the start message root of the next page of transactions.
 
@@ -150,7 +150,7 @@ link -> </scan/3700123300014?startRoot=656b49...&limit=1>; rel="next"; type="app
 
 As seen above, one can use the information in the header to retrieve the next page of transactions. Pagination is also available for transactions involving a `value` and `EPC`
 
-### Obtain the details of the Streams Channel used to track a Barcode Value.
+### Obtain the details of the Streams Channel used to track a Barcode Value
 
 This API allows you to retrieve the IOTA Streams channel that contains all read transactions of a respective Barcode value.
 
@@ -171,9 +171,9 @@ Response
 
 With the above information, one can use the IOTA Streams libraries, for instance the [anchors library](https://github.com/iotaledger/tangle.js/tree/main/libs/anchors), to retrieve the transactions from their own application. In this case the network is `devnet` and it is followed by the channel ID. You need to take into account that the Streams Channel used is an encrypted one, thus the channel ID has three colon-separated components: the channel address, the announce message ID and the keyload message ID. The usage of the Javascript libraries might facilitate the consumption of Track and Trace Ledger data in different application contexts, for instance, to enable a more efficient refresh of a Web UI.
 
-## Tutorial Part II : RFID Read Transactions.
+## Tutorial Part II : RFID Read Transactions
 
-### List all EPCs Read.
+### List all EPCs Read
 
 This API allows you to retrieve a list of all the RFID tags EPCs that have been read and associated to the given API Key as follows:
 
@@ -205,7 +205,7 @@ Response:
 
 As seen above the list of all the RFID tags EPCs and the total number of transaction events recorded on the Tangle for each RFID EPC.
 
-### List all RFID Readers Used.
+### List all RFID Readers Used
 
 This API allows you to retrieve a list of all the RFID Readers (devices) associated to the given API Key
 
@@ -237,7 +237,7 @@ Response:
 
 As seen above, the list of RFID readers and the total number of transaction events recorded on the Tangle for each device.
 
-### Retrieve the last transaction involving an RFID EPC.
+### Retrieve the last transaction involving an RFID EPC
 
 This API endpoint allows you to retrieve the last transaction involving an RFID EPC. By including the URL parameter `lastN`, the API allows you to retrieve the most recent `N` transactions. In this case we want to retrieve the most recent transaction, so we set the `lastN` parameter equal to `1`.
 
@@ -273,7 +273,7 @@ Response:
 
 As seen above we can successfully retrieve the last transaction involving an RFID EPC.
 
-### Retrieve the transactions of a Reader using pagination.
+### Retrieve the transactions of a Reader using pagination
 
 This API endpoint allows you to use pagination to retrieve RFID readers devices transactions. By including the URL parameter `limit`, the API allows you to retrieve pages of `N` transactions. In this case we set the limit to `1`, thus we get a response of 1 transaction and a `link` in the headers showing the start message root of the next page of transactions.
 
@@ -306,7 +306,7 @@ link →</read/urn:epc:id:sgtin:9524444.100000.10?startRoot=5d3eae...&limit=1>; 
 
 As seen above, one can use the information in the header to retrieve the next page of transactions.
 
-### Obtain the details of the Streams Channel used to track an EPC.
+### Obtain the details of the Streams Channel used to track an EPC
 
 This API allows you to retrieve the details of the IOTA Streams channel that contains all read transactions of a respective RFID EPC.
 
@@ -472,9 +472,9 @@ The `location` header contains a reference to the operation log entry that allow
 Location: /operation-log/2a3114...
 ```
 
-## Tutorial Part III : Print Transactions.
+## Tutorial Part III : Print Transactions
 
-### Get a list of the RFID tag EPC or barcode values that have been printed.
+### Get a list of the RFID tag EPC or barcode values that have been printed
 
 You can get a list of EPCs of all the RFID tags printed and Values of all the Barcodes printed as follows:
 
@@ -506,7 +506,7 @@ Response:
 
 You can see from the response that either the barcode value or the RFID tags EPC is provided and the total number of print transaction events associated. Hence you can use the returned EPC or value to get a list of all transactions associated to it.
 
-### List all Printers Used.
+### List all Printers Used
 
 You can get a list of all the printers as follows.
 
@@ -538,7 +538,7 @@ Response:
 
 As seen above we were able to retrieve a list of all printers and the total number of print events associated to the device.
 
-### Retrieve all printing operations made with a printer using pagination.
+### Retrieve all printing operations made with a printer using pagination
 
 This API endpoint allows you use pagination to retrieve RFID/Barcode printer devices transactions. By including the url parameter `limit`, the API allows you to retrieve pages of `N` device transactions. In this case we set the limit to `1`, thus we get a response of 1 transaction and a `link` in the headers showing the start message root of the next page of transactions.
 

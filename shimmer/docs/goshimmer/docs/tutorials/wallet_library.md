@@ -38,6 +38,7 @@ The command line wallet and this tutorial are aimed at a developer audience, you
 
 1. Download the latest cli-wallet for the system of your choice from the [GoShimmer GitHub Releases](https://github.com/iotaledger/goshimmer/releases) page.
 2. If needed, make the downloaded binary executable. If you are using linux you can run:
+
    ```shell
    chmod +x <downloaded-binary>
    ```
@@ -285,7 +286,7 @@ date -d "+7 days" +%s
 Once you have a unix timestamp, you can execute the transfer by running:
 
 ```shell
-$ ./cli-wallet send-funds -amount 500 -dest-addr 1E5Q82XTF5QGyC598br9oCj71cREyjD1CGUk2gmaJaFQt -lock-until 1621426409
+./cli-wallet send-funds -amount 500 -dest-addr 1E5Q82XTF5QGyC598br9oCj71cREyjD1CGUk2gmaJaFQt -lock-until 1621426409
 ```
 
 ### Conditional Sending

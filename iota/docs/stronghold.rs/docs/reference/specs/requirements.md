@@ -2,11 +2,7 @@
 
 # Requirements Specification
 
-[requirements]: #requirements
-
 ## Frontmatter
-
-[frontmatter]: #frontmatter
 
 ```yaml
 title: Project
@@ -45,15 +41,11 @@ Guidelines for Requirements:
 
 ## Summary
 
-[summary]: #summary
-
 <!--
 Short summary of this document.
 -->
 
 ## Conceptual Model
-
-[conceptual-model]: #conceptual-model
 
 <!--
 The conceptual model seeks to define at a high level how the product works.
@@ -61,23 +53,17 @@ The conceptual model seeks to define at a high level how the product works.
 
 ## Structural Model
 
-[structural-model]: #structural-model
-
 <!--
 The structural model shows how the parts of the product fit together and exist in the larger ecosystem.
 -->
 
 ## Behavioral Model
 
-[behavioral-model]: #behavioral-model
-
 <!--
 The behavioral model explains how the system behaves at runtime.
 -->
 
 ## Components
-
-[components]: #components
 
 <!--
 Please describe the logical components of the system.  the data and what things mean.
@@ -87,15 +73,11 @@ and physical database schemas and message schemas at the physical level.
 
 ## Functional Requirements
 
-[functionalrequirements]: #functionalrequirements
-
 <!--
 This is the section where functional requirements must be described in Outline form.
 -->
 
 ## Non-functional Requirements
-
-[nonfunctionalrequirements]: #nonfunctionalrequirements
 
 <!--
 - Performance requirements (speeds etc.)
@@ -107,16 +89,12 @@ This is the section where functional requirements must be described in Outline f
 
 ## Sequence Diagrams
 
-[sequences]: #sequences
-
 <!--
 Where applicable, sequence diagrams should be used to explain the complexity of the business
 logic that the solution seeks to resolve. They should be images and stored in this
 -->
 
 ## Job story examples
-
-[jobstories]: #jobstories
 
 <!--
 Where applicable, write from the perspective of the person who will be using
@@ -126,8 +104,6 @@ When ＿＿＿ , I want to ＿＿＿, so I can ＿＿＿.
 -->
 
 ## Important Testing Verifications
-
-[testing]: #testing
 
 <!--
 In many cases, spec-compliant implementations will do well to have a list of

@@ -103,8 +103,8 @@ After the objective checks, the following subjective checks are done:
 
 At this point, the missing steps are the most computationally expensive:
 
-7.  Inputs' conflicting conflicts check: it checks if the conflicts of the inputs are conflicting. As in the last step, if the block does not pass this check, the block is marked as `invalid` and not booked. If it passes the check, it goes to the next step.
-8.  Conflict check: it checks if the inputs are conflicting with an unconfirmed transaction. In this step, the conflict to which the block belongs is computed. In both cases (passing the check or not), the transaction is booked into the ledger state and the block is booked into the Tangle, but its conflict ID will be different depending on the outcome of the check.
+7. Inputs' conflicting conflicts check: it checks if the conflicts of the inputs are conflicting. As in the last step, if the block does not pass this check, the block is marked as `invalid` and not booked. If it passes the check, it goes to the next step.
+8. Conflict check: it checks if the inputs are conflicting with an unconfirmed transaction. In this step, the conflict to which the block belongs is computed. In both cases (passing the check or not), the transaction is booked into the ledger state and the block is booked into the Tangle, but its conflict ID will be different depending on the outcome of the check.
 
 [![Booker](/img/protocol_specification/booker.png 'Booker')](/img/protocol_specification/booker.png)
 

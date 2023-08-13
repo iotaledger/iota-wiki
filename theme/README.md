@@ -52,7 +52,7 @@ import code_snippet from '!!raw-loader!../../code_snippet.py'
 ## Swizzling components
 
 ```bash
-$ npm swizzle @iota-wiki/theme [component name]
+npm swizzle @iota-wiki/theme [component name]
 ```
 
 All components used by this theme can be found [here](https://github.com/iota-wiki/iota-wiki/tree/main/theme/src/theme)

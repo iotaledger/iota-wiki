@@ -14,7 +14,7 @@ keywords:
 
 # Ledgerstate API Methods
 
-## HTTP APIs:
+## HTTP APIs
 
 - [/ledgerstate/addresses/:address](#ledgerstateaddressesaddress)
 - [/ledgerstate/addresses/:address/unspentOutputs](#ledgerstateaddressesaddressunspentoutputs)
@@ -31,7 +31,7 @@ keywords:
 - [/ledgerstate/transactions](#ledgerstatetransactions)
 - [/ledgerstate/addresses/unspentOutputs](#ledgerstateaddressesunspentoutputs)
 
-## Client Lib APIs:
+## Client Lib APIs
 
 - [GetAddressOutputs()](#client-lib---getaddressoutputs)
 - [GetAddressUnspentOutputs()](#client-lib---getaddressunspentoutputs)
@@ -851,7 +851,7 @@ fmt.Println("consensus mana pledgeID:", resp.ConsensusPledgeID)
 | `unlockBlocks`      | []UnlockBlock | The unlock block containing signatures unlocking the inputs or references to previous unlock blocks. |
 | `dataPayload`       | []byte        | The raw data payload that can be attached to the transaction.                                        |
 
-#### Type `Input `
+#### Type `Input`
 
 | Field                | Type               | Description                                                 |
 | :------------------- | :----------------- | :---------------------------------------------------------- |

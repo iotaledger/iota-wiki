@@ -68,7 +68,7 @@ Chronicle uses a [RON](https://github.com/ron-rs/ron) file to store configuratio
 
 ### Running Chronicle
 
-See [Building Chronicle](#Building-Chronicle).
+See [Building Chronicle](#building-chronicle).
 
 ```bash
 cd target/release && cp /path/to/your/config.ron ./

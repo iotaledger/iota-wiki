@@ -34,7 +34,7 @@ The client gives access to all Stronghold features and holds all state like secr
 
 ## Procedures
 
-### **Requests**:
+### **Requests**
 
 - `SLIP10Generate`: Generate a raw SLIP10 seed of the specified size (in bytes, defaults to 64 bytes/512 bits) and store it in the `Location`.
 - `SLIP10Derive`: Derive a Slip10 child key from a seed or parent key. Store the output in a specified `Location` and return the corresponding `ChainCode`.
@@ -44,7 +44,7 @@ The client gives access to all Stronghold features and holds all state like secr
 - `Ed25519PublicKey`: Derive an Ed25519 public key from the corresponding private key stored at the specified `Location`.
 - `Ed25519Sign`: Use the specified Ed25519 compatible key to sign the given message. Compatible keys are any record that contain the desired key material in the first 32 bytes, in particular SLIP10 keys are compatible.
 
-### **Responses**:
+### **Responses**
 
 - `SLIP10Generate`: Returns a `StatusMessage` indicating the result of the request.
 - `SLIP10Derive`: Returns a `ResultMessage` with the `ChainCode` inside of it.

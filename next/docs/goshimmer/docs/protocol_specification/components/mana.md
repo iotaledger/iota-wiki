@@ -49,10 +49,10 @@ From the pledged mana of a transaction, a node can calculate locally the `Base M
 A `Base Mana Vector` consists of Base Mana 1 and Base Mana 2 and their respective `Effective Base Mana`.
 Given a value transaction, Base Mana 1 and Base Mana 2 are determined as follows:
 
-1.  Base Mana 1 is revoked from the node that created the output(s) used as input(s) in the transaction, and is pledged to
+1. Base Mana 1 is revoked from the node that created the output(s) used as input(s) in the transaction, and is pledged to
     the node creating the new output(s). The amount of `Base Mana 1` revoked and pledged is equal to the balance of the
     input.
-2.  Base Mana 2 is freshly created at the issuance time of the transaction, awarded to the node, but decays with time.
+2. Base Mana 2 is freshly created at the issuance time of the transaction, awarded to the node, but decays with time.
     The amount of `Base Mana 2` pledged is determined with `Pending Mana` concept: funds sitting at an address generate
     `pending mana` that grows over time, but bounded.
     - `Mana_pending = (alpha*S)/gamma*(1-e^(-gamma*t))`, where `alpha` and `gamma` are chosen parameters, `S` is the amount
@@ -121,17 +121,17 @@ The first implementation of mana in GoShimmer will:
 In this section, detailed GoShimmer implementation design considerations will be outlined about the mana module.
 In short, changes can be classified into 3 categories:
 
-1.  Transaction related changes,
-2.  Mana module functionality,
-3.  and related tools/utilities, such as API, visualization, analytics.
+1. Transaction related changes,
+2. Mana module functionality,
+3. and related tools/utilities, such as API, visualization, analytics.
 
 ### Transaction
 
 As described above, 3 new fields will be added to the transaction layout:
 
-1.  `Timestamp` time.time
-2.  `AccessManaNodeID` []bytes
-3.  `ConsensusManaNodeID` []bytes
+1. `Timestamp` time.time
+2. `AccessManaNodeID` []bytes
+3. `ConsensusManaNodeID` []bytes
 
 By adding these fields to the signed transaction, `valuetransfers/packages/transaction` should be modified.
 
@@ -153,13 +153,13 @@ Node owners are free to choose to whom they pledge mana to with the transaction,
 lets the client know, what `AccessManaNodeID` and `ConsensusManaNodeID` are allowed. This could be a new API endpoint
 that works like this:
 
-1.  Client asks node what nodeIDs can be included for pledging a certain type (access, consensus) mana.
-2.  Node answers with either:
+1. Client asks node what nodeIDs can be included for pledging a certain type (access, consensus) mana.
+2. Node answers with either:
 
 - Don't care. Any node IDs are valid.
 - List of nodeIDs that are allowed for each type.
 
-3.  If a client sends back the transaction with invalid or empty mana fields, the transaction is considered invalid.
+3. If a client sends back the transaction with invalid or empty mana fields, the transaction is considered invalid.
 
 This way node owners can decide who their transactions are pledging mana to. It could be only their node, or they could
 provide mana pledging as a service. They could delegate access mana to others, but hold own to consensus mana, or the
@@ -222,7 +222,7 @@ type BaseManaVector struct {
 
 - `BookMana(transaction)`: Book mana of a transaction. Trigger `ManaBooked` event. Note, that this method updates
   `BaseMana` with respect to time and to new `Base Mana 1` and `Base Mana 2` values.
-- `GetWeightedMana(nodeID, weight) mana`: Return `weight` \*` Effective Base Mana 1` + (1-`weight`)+`Effective Base Mana 2`.
+- `GetWeightedMana(nodeID, weight) mana`: Return `weight` \* `Effective Base Mana 1` + (1-`weight`)+`Effective Base Mana 2`.
   `weight` is a number in [0,1] interval. Notice, that `weight` = 1 results in only returning `Effective Base Mana 1`,
   and the other way around. Note, that this method also updates `BaseMana` of the node with respect to time.
 - `GetMana(nodeID) mana`: Return 0.5*`Effective Base Mana 1` + 0.5*`Effective Base Mana 2` of a particular node. Note, that
@@ -243,8 +243,8 @@ type BaseManaVector struct {
 
 There are two cases when the values within `Base Mana Vector` are updated:
 
-1.  A confirmed transaction pledges mana.
-2.  Any module accesses the `Base Mana Vector`, and hence its values are updated with respect to `access time`.
+1. A confirmed transaction pledges mana.
+2. Any module accesses the `Base Mana Vector`, and hence its values are updated with respect to `access time`.
 
 First, let's explore the former.
 
@@ -587,8 +587,8 @@ is visualized for a node:
 
 There are two ways to visualize mana in GoShimmer:
 
-1.  Node Local Dashboard
-2.  Grafana Dashboard
+1. Node Local Dashboard
+2. Grafana Dashboard
 
 While `Local Dashboard` gives flexibility in what and how to visualize, `Grafana Dashboard` is better at storing historic
 data but can only visualize time series. Therefore, both of these ways will be utilized, depending on which suits the best.

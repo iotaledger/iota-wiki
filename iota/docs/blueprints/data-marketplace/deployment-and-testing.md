@@ -100,7 +100,7 @@ Instead of deploying your own data marketplace, you can test our demo app by add
 5. Extract the content of the archive, and open the folder in a code editor such as [Visual Studio Code](https://code.visualstudio.com/Download) to start working with the script
 
    :::info:
-   Read the` README.md` file before you start using the script.
+   Read the `README.md` file before you start using the script.
    :::
 
    The script is pre-configured to publish data for the selected device. You’ll find the sensor ID and its secret key in the `config.json` file.

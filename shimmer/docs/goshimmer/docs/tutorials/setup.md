@@ -507,7 +507,7 @@ cp local_dashboard.json grafana/dashboards
 chmod -R 777 grafana
 ```
 
-#### Run GoShimmer with Prometheus and Grafana:
+#### Run GoShimmer with Prometheus and Grafana
 
 ```shell
 docker compose up -d

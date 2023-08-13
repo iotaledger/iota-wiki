@@ -18,7 +18,7 @@ Where [example file name] is one of the
 [examples](https://github.com/iotaledger/iota.rs/tree/develop/bindings/python/examples).
 
 For instance, to run
-[`00_get_info.py` ](https://github.com/iotaledger/iota.rs/blob/develop/bindings/python/examples/00_get_info.py),
+[`00_get_info.py`](https://github.com/iotaledger/iota.rs/blob/develop/bindings/python/examples/00_get_info.py),
 you should run:
 
 ```bash

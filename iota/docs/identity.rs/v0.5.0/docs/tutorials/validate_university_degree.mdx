@@ -66,7 +66,7 @@ For professional IOTA implementations we strongly recommend using our key manage
 
 :::
 
-### Example Weakhold file:
+### Example Weakhold file
 
 ```json
 {
@@ -91,7 +91,7 @@ For professional IOTA implementations we strongly recommend using our key manage
 
 In this process, you will complete the different steps from the perspective of one of the mentioned roles above:
 
-### 1. **Holder**: Create a DID.
+### 1. **Holder**: Create a DID
 
 The first thing you will need to do in this tutorial is to create a DID(Decentralized Identifier) Document for Alice.
 
@@ -164,7 +164,7 @@ addVerificationMethod(
 );
 ```
 
-###5. **Holder**: Set Up a Document
+### 5. **Holder**: Set Up a Document
 
 You should set up a document representing Alice's degree, containing her DID which will later be signed by the **issuer**.
 
@@ -251,7 +251,7 @@ let signedVpPath = './signedCredentials/offlineVerifiablePresentation.json';
 checkVerifiablePresentation(signedVpPath);
 ```
 
-### 10. **Issuer**: Revoke the Verification for Alice's Credential.
+### 10. **Issuer**: Revoke the Verification for Alice's Credential
 
 Unfortunately the University found out, that Alice had cheated on her final exam. Therefore, the University wants to revoke the verification of Alice's credential.
 
@@ -274,7 +274,7 @@ removeVerificationMethod(
 );
 ```
 
-#### 2. Only revoke the one Merkle key used for the signature.
+#### 2. Only revoke the one Merkle key used for the signature
 
 - [removeMerkleKey.js](https://github.com/adrian-grassl/iota-identity-tutorial/blob/master/removeMerkleKey.js)
 

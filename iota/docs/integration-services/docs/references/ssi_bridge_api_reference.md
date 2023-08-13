@@ -19,11 +19,11 @@ This is the API documentation for the SSI Bridge of the [Integration Services](h
 
 #### GET
 
-##### Summary:
+##### Summary
 
 Request a nonce which must be signed by the private key
 
-##### Description:
+##### Description
 
 Request a nonce which must be signed by the private key of the client and send it to /prove-ownership/{identity-id} endpoint via POST. This allows a user to prove ownership of its identity public key.
 
@@ -43,11 +43,11 @@ Request a nonce which must be signed by the private key of the client and send i
 
 #### POST
 
-##### Summary:
+##### Summary
 
 Get an authentication token by signing a nonce
 
-##### Description:
+##### Description
 
 Get an authentication token by signing a nonce using the private key. If signature is verified, a JWT string will be returned in the response. The nonce can be received from GET /prove-ownership/{identity-id} endpoint. The JWT is used for any future API interaction.
 
@@ -71,11 +71,11 @@ Get an authentication token by signing a nonce using the private key. If signatu
 
 #### POST
 
-##### Summary:
+##### Summary
 
 Verify a signed jwt
 
-##### Description:
+##### Description
 
 Check if the jwt was signed by the Integration Service.
 
@@ -93,11 +93,11 @@ Check if the jwt was signed by the Integration Service.
 
 #### POST
 
-##### Summary:
+##### Summary
 
 Create a new decentralized digital identity (DID)
 
-##### Description:
+##### Description
 
 Create a new decentralized digital identity (DID). Identity DID document is signed and published to the ledger (IOTA Tangle). A digital identity can represent an individual, an organization or an object. The privateAuthKey controlling the identity is returned. It is recommended to securely (encrypt) store the privateAuthKey locally, since it is not stored on the APIs Bridge.
 
@@ -120,11 +120,11 @@ Create a new decentralized digital identity (DID). Identity DID document is sign
 
 #### POST
 
-##### Summary:
+##### Summary
 
 Create a new keypair.
 
-##### Description:
+##### Description
 
 Create a new keypair.
 
@@ -153,11 +153,11 @@ Create a new keypair.
 
 #### GET
 
-##### Summary:
+##### Summary
 
 Search for identities
 
-##### Description:
+##### Description
 
 Search for identities in the system and returns a list of existing identities.
 
@@ -192,11 +192,11 @@ Search for identities in the system and returns a list of existing identities.
 
 #### GET
 
-##### Summary:
+##### Summary
 
 Get information about a specific identity
 
-##### Description:
+##### Description
 
 Get information (including attached credentials) about a specific identity using the identity-id (DID identifier).
 
@@ -216,11 +216,11 @@ Get information (including attached credentials) about a specific identity using
 
 #### DELETE
 
-##### Summary:
+##### Summary
 
 Removes an identity from the Bridge
 
-##### Description:
+##### Description
 
 Removes an identity from the Bridge. An identity can only delete itself and is not able to delete other identities. Administrators are able to remove other identities. The identity cannot be removed from the immutable IOTA Tangle but only at the Bridge. Also the identity credentials will remain and the identity is still able to interact with other bridges.
 
@@ -251,11 +251,11 @@ Removes an identity from the Bridge. An identity can only delete itself and is n
 
 #### POST
 
-##### Summary:
+##### Summary
 
 Register an existing identity into the Bridge
 
-##### Description:
+##### Description
 
 Register an existing identity into the Bridge. This can be used if the identity already exists or it was only created locally. Registering an identity in the Bridge makes it possible to search for it by using some of the identity attributes, i.e., the username.
 
@@ -269,11 +269,11 @@ Register an existing identity into the Bridge. This can be used if the identity 
 
 #### PUT
 
-##### Summary:
+##### Summary
 
 Update claim of a registered identity
 
-##### Description:
+##### Description
 
 Update claim of a registered identity.
 
@@ -296,11 +296,11 @@ Update claim of a registered identity.
 
 #### GET
 
-##### Summary:
+##### Summary
 
 Get information about the server
 
-##### Description:
+##### Description
 
 Get information about the server like commitHash, server identity id and api version
 
@@ -315,11 +315,11 @@ Get information about the server like commitHash, server identity id and api ver
 
 #### GET
 
-##### Summary:
+##### Summary
 
 Get the latest version of an identity document (DID)
 
-##### Description:
+##### Description
 
 Get the latest version of an identity document (DID) from the IOTA Tangle.
 
@@ -341,11 +341,11 @@ Get the latest version of an identity document (DID) from the IOTA Tangle.
 
 #### POST
 
-##### Summary:
+##### Summary
 
 Adds Trusted Root identity identifiers (DIDs)
 
-##### Description:
+##### Description
 
 Adds Trusted Root identity identifiers (DIDs). Trusted roots are DIDs of identities which are trusted by the Bridge. This identity DIDs can be DIDs of other organizations. By adding them to the list Trusted Roots their Verifiable Credentials (VCs) are automatically trusted when checking at the Bridge.
 
@@ -366,11 +366,11 @@ Adds Trusted Root identity identifiers (DIDs). Trusted roots are DIDs of identit
 
 #### GET
 
-##### Summary:
+##### Summary
 
 Returns a list of Trusted Root identity identifiers (DIDs)
 
-##### Description:
+##### Description
 
 Returns a list of Trusted Root identity identifiers (DIDs). Trusted roots are DIDs of identities which are trusted by the Bridge. This identity DIDs can be DIDs of other organizations. By adding them to the list Trusted Roots their Verifiable Credentials (VCs) are automatically trusted when checking at the Bridge.
 
@@ -386,11 +386,11 @@ Returns a list of Trusted Root identity identifiers (DIDs). Trusted roots are DI
 
 #### DELETE
 
-##### Summary:
+##### Summary
 
 Remove Trusted Root identity identifiers (DIDs)
 
-##### Description:
+##### Description
 
 Remove Trusted Root identity identifiers (DIDs). Trusted roots are DIDs of identities which are trusted by the Bridge. This identity DIDs can be DIDs of other organizations. By adding them to the list Trusted Roots their Verifiable Credentials (VCs) are automatically trusted when checking at the Bridge.
 
@@ -419,11 +419,11 @@ Remove Trusted Root identity identifiers (DIDs). Trusted roots are DIDs of ident
 
 #### POST
 
-##### Summary:
+##### Summary
 
 Verify the authenticity of an identity and issue a credential
 
-##### Description:
+##### Description
 
 Verify the authenticity of an identity (of an individual, organization or object) and issue a credential stating the identity verification status. Only previously verified identities (based on a network of trust) with assigned privileges can verify other identities. Having a verified identity provides the opportunity for other identities to identify and verify a the entity they interact to.
 
@@ -446,11 +446,11 @@ Verify the authenticity of an identity (of an individual, organization or object
 
 #### POST
 
-##### Summary:
+##### Summary
 
 Check the verifiable credential of an identity
 
-##### Description:
+##### Description
 
 Check the verifiable credential of an identity. Validates the signed verifiable credential against the Issuer information stored onto the IOTA Tangle and checks if the issuer identity (DID) contained in the credential is from a trusted root.
 
@@ -466,11 +466,11 @@ Check the verifiable credential of an identity. Validates the signed verifiable 
 
 #### POST
 
-##### Summary:
+##### Summary
 
 Check the verifiable presentation of an identity
 
-##### Description:
+##### Description
 
 Check the verifiable presentation of an identity.
 
@@ -486,11 +486,11 @@ Check the verifiable presentation of an identity.
 
 #### POST
 
-##### Summary:
+##### Summary
 
 Revoke one specific verifiable credential of an identity
 
-##### Description:
+##### Description
 
 Revoke one specific verifiable credential of an identity. In the case of individual and organization identities the reason could be that the user has left the organization. Only organization admins (with verified identities) or the identity owner itself can do that.
 

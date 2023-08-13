@@ -254,7 +254,7 @@ Response:
 ]
 ```
 
-### Obtain a list of the transactions made with a scanning device.
+### Obtain a list of the transactions made with a scanning device
 
 The API is designed so that it is also possible to know all the transactions that have originated from a particular scanning device. For such purpose, a dedicated Stream Channel is also maintained for each scanning device.
 

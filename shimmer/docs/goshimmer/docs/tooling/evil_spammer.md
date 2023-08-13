@@ -65,7 +65,7 @@ Example usage:
 go run . quick --urls http://localhost:8080,http://localhost:8090 --rate 50 --duration 1m --tu 1s --dbc 100ms
 ```
 
-### Go interactive!
+### Go interactive
 
 Simply run
 
@@ -265,7 +265,7 @@ clients := evilwallet.GetClients(1)
 clients[0].PostTransaction(txC)
 ```
 
-### Compose your own scenario!
+### Compose your own scenario
 
 The most exciting part of evil wallet is to create whatever scenario easily!
 

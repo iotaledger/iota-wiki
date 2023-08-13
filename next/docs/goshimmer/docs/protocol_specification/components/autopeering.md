@@ -159,9 +159,9 @@ The maximum number of neighbors is a parameter of the gossip protocol. This sect
 
 The operations involved during neighbor selection are listed in the following:
 
-1.  Get an up-to-date list of verified and known peers from the _Peer Discovery_ protocol.
-2.  Use [mana rank](#Mana_rank) to filter the previous list to obtain a list of peers to be potential neighbors.
-3.  Use the score function to request/accept neighbors.
+1. Get an up-to-date list of verified and known peers from the _Peer Discovery_ protocol.
+2. Use [mana rank](#Mana_rank) to filter the previous list to obtain a list of peers to be potential neighbors.
+3. Use the score function to request/accept neighbors.
 
 The score between two nodes is measured through the score function _s_, defined by:
 

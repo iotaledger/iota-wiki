@@ -7,7 +7,7 @@ description: Frequently asked questions and helpful troubleshooting information 
 
 ## Setup and installation
 
-#### I'm worried I might make a mistake when setting up Firefly.
+#### I'm worried I might make a mistake when setting up Firefly
 
 Don't worry! All you need to do is download Firefly only from the [official website](https://firefly.iota.org/) for your preferred OS and start the setup. The application has been designed to guide you through setting up your profile, securing it, and migrating your tokens successfully.
 
@@ -199,7 +199,7 @@ You should thoroughly verify them before confirming the transaction.
 
 You can change both your PIN and password under `Security` found in the settings of your dashboard.
 
-#### Can I reuse an address? I know that this was always a problem in Trinity.
+#### Can I reuse an address? I know that this was always a problem in Trinity
 
 You can reuse an address in Firefly due to the EdDSA reusable address format.
 

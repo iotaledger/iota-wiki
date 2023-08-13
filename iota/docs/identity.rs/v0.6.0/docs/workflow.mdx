@@ -20,7 +20,7 @@ In this article you will learn about the software development process for the IO
 
 ## Issues
 
-Issues are opened when a certain task or problem is noted but cannot immediately be fixed. Issues may contain bug reports, requests, or larger topics. Please use the correct GitHub issue template for your issue type. Only IOTA Foundation members should use the task templates flagged for maintainers. You should make sure to [label](#issue-Labels) the issue correctly. As a contributor, you may also add issues to a certain [project](https://github.com/iotaledger/identity.rs/projects/).
+Issues are opened when a certain task or problem is noted but cannot immediately be fixed. Issues may contain bug reports, requests, or larger topics. Please use the correct GitHub issue template for your issue type. Only IOTA Foundation members should use the task templates flagged for maintainers. You should make sure to [label](#issue-labels) the issue correctly. As a contributor, you may also add issues to a certain [project](https://github.com/iotaledger/identity.rs/projects/).
 
 ## Git
 
@@ -63,7 +63,7 @@ We recommend integrating `dev` or `epic` regularly, depending on where the branc
 
 #### Epic (epic/)
 
-Long-lived `epic` branches should be created as soon as a feature is expected to require more than one PR. The `epic` branch should be branched from `dev` and should only accept merges that are related to the feature being developed. A PR should be opened as soon as the branch is created to publicly notify contributors about the development, the goals and requirements of the feature, and the existence of the branch. It is recommended you integrate `dev` often to reduce the possibility and potential size of merge conflicts. Epic branches must not be squash-merged, otherwise the [changelog generator](#Changelog) will not detect its constituent PRs.
+Long-lived `epic` branches should be created as soon as a feature is expected to require more than one PR. The `epic` branch should be branched from `dev` and should only accept merges that are related to the feature being developed. A PR should be opened as soon as the branch is created to publicly notify contributors about the development, the goals and requirements of the feature, and the existence of the branch. It is recommended you integrate `dev` often to reduce the possibility and potential size of merge conflicts. Epic branches must not be squash-merged, otherwise the [changelog generator](#changelog) will not detect its constituent PRs.
 
 ### Semantic Versioning
 
@@ -75,11 +75,11 @@ For more detailed information and an overview of advanced features, see [Semanti
 
 ### Changelog
 
-A changelog is a file describing a software project for humans to grasp the type and content of changes from version to version. Changelogs are closely related to the versioning of software, since individual changes are grouped into versions that are, in our case, referenced by a [SemVer string](#Semantic-Versioning). We generally follow the recommendations from [keepachangelog](https://keepachangelog.com/en/1.0.0/). The changelog in this project is generated from the titles and [labels](#PR-Labels) of [pull requests](#Pull-Requests).
+A changelog is a file describing a software project for humans to grasp the type and content of changes from version to version. Changelogs are closely related to the versioning of software, since individual changes are grouped into versions that are, in our case, referenced by a [SemVer string](#semantic-versioning). We generally follow the recommendations from [keepachangelog](https://keepachangelog.com/en/1.0.0/). The changelog in this project is generated from the titles and [labels](#pr-labels) of [pull requests](#pull-requests).
 
 #### PR labels
 
-Labels are used to categorize changes in [pull requests](#Pull-Requests). Adding a label will include the labeled [PR](#Pull-Requests) title in the related section of the generated [changelog](#Changelog).
+Labels are used to categorize changes in [pull requests](#pull-requests). Adding a label will include the labeled [PR](#pull-requests) title in the related section of the generated [changelog](#changelog).
 
 Changelogs are generated for the core Rust library and each binding separately. To attach a PR to a specific changelog, use the following labels:
 
@@ -95,17 +95,17 @@ It is also necessary to add an appropriate label for the type of change in the P
 
 ##### Changed
 
-Maps to the major version of [Semantic Versioning](#Semantic-Versioning).
+Maps to the major version of [Semantic Versioning](#semantic-versioning).
 labels: `Breaking change`
 
 ##### Added
 
-Maps to the minor version of [Semantic Versioning](#Semantic-Versioning).
+Maps to the minor version of [Semantic Versioning](#semantic-versioning).
 labels: `Added`
 
 ##### Patch
 
-Maps to the patch version of [Semantic Versioning](#Semantic-Versioning).
+Maps to the patch version of [Semantic Versioning](#semantic-versioning).
 labels: `Patch`
 
 ##### Deprecated
@@ -115,7 +115,7 @@ labels: `Deprecated`
 
 ##### Removed
 
-Marks features as being removed. Typically the features should have been deprecated in the previous version. This maps to the major version of [Semantic Versioning](#Semantic-Versioning).
+Marks features as being removed. Typically the features should have been deprecated in the previous version. This maps to the major version of [Semantic Versioning](#semantic-versioning).
 labels: `Removed`
 
 ##### Excluded tags
@@ -137,7 +137,7 @@ The following labels are used to categorize issues but do not have any effect on
 
 With the release process, we can deliver versions of our software to the community. We use sensible automation where it helps to remove tedium. However, some steps that require active decision-making remain manual.
 
-The final list of changes from the [changelog](#Changelog) informs the version of the release. If at least one change mapping to a major version is included, the major version needs to be incremented. In that case, the minor and patch versions are set to `0`. If there are no changes related to a major version, but changes related to a minor version are present, the minor version needs to be incremented while the patch version is set to `0`. Otherwise, only the patch version is incremented. Determining the version of the release is the responsibility of the person performing the release.
+The final list of changes from the [changelog](#changelog) informs the version of the release. If at least one change mapping to a major version is included, the major version needs to be incremented. In that case, the minor and patch versions are set to `0`. If there are no changes related to a major version, but changes related to a minor version are present, the minor version needs to be incremented while the patch version is set to `0`. Otherwise, only the patch version is incremented. Determining the version of the release is the responsibility of the person performing the release.
 
 The determined version of the release is used to create the [hotfix](#hotfix) or [release](#release) branch. For example, a major release from the previous version `v2.3.1` will create the `release/v3.0.0` branch.
 
@@ -153,9 +153,9 @@ You should follow these steps to create a release:
    2.2. Determine the next version string.
    2.3. Run the workflow. The workflow will create a PR from `dev` targeting `dev` with release related changes.
 3. Review the PR.
-   3.1. The PR will update the changelog, check that it has all expected entries in the appropriate sections and the determined version matches the changelog according to [SemVer](#Semantic-Versioning).
+   3.1. The PR will update the changelog, check that it has all expected entries in the appropriate sections and the determined version matches the changelog according to [SemVer](#semantic-versioning).
    3.2. The PR will update project version strings, ensure these are correct and match the expected version.
-   3.3. Refer to [Troubleshooting](#Troubleshooting) if anything is incorrect.
+   3.3. Refer to [Troubleshooting](#troubleshooting) if anything is incorrect.
 4. Merge the PR.
    4.1. On merging to `dev`, an automatic workflow is triggered that builds and publishes artifacts to the appropriate package manager (`crates.io` for Rust, `npm` for the WASM bindings), and creates a GitHub Release (only for `main` version releases of the core Rust library).
 5. For `main` version releases, merge the `dev` branch into the `main` branch.
@@ -166,13 +166,13 @@ You should follow these steps to create a release:
 
 Update the titles of the relevant PRs, then re-run the workflow with the same parameters. The release PR will be updated with the new changelog.
 
-#### The changelog in the release PR is missing entries, has unrelated entries, or entries in the wrong section.
+#### The changelog in the release PR is missing entries, has unrelated entries, or entries in the wrong section
 
-Fix the [labels](#PR-Labels) on the relevant PRs, then re-run the workflow with the same parameters. The release PR will be updated with the new changelog.
+Fix the [labels](#pr-labels) on the relevant PRs, then re-run the workflow with the same parameters. The release PR will be updated with the new changelog.
 
 #### The release description in the release PR is missing or wrong
 
-Fix the issue description, milestone, and label according to the [release summaries guide](#Release-Summary) and re-run the workflow with the same parameters. The release PR will be updated with the new changelog.
+Fix the issue description, milestone, and label according to the [release summaries guide](#release-summary) and re-run the workflow with the same parameters. The release PR will be updated with the new changelog.
 
 #### Features or code are missing from the release
 

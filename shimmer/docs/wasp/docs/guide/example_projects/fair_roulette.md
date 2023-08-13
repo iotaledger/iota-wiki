@@ -265,9 +265,11 @@ This means that to get a proper value from a view call, you should use `readUInt
 #### Install Dependencies
 
 1. Go to your frontend directory ( contracts/wasm/fairroulette/frontend for example)
+
    ```shell
    cd  contracts/wasm/fairroulette/frontend
    ```
+
 2. Install dependencies running:
 
    ```shell

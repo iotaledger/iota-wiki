@@ -50,7 +50,7 @@ curl -H 'Host: ensuresec.solutions.iota.org' http://192.168.49.2/info
 You can avoid using the `Host` header by mapping the host/IP association in your `/etc/hosts`. In that case you could
 use directly `http://ensuresec.solutions.iota.org/info` in your default browser.
 
-If you want to change the domain name, please visit the[ configuration section](configuration.md) for more information.
+If you want to change the domain name, please visit the [configuration section](configuration.md) for more information.
 
 ## Port Forwarding
 

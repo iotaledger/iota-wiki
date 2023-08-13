@@ -59,12 +59,14 @@ implementation group: 'net.gradbase', name: 'iota.is.sdk', version: '0.0.1'
 Please set up the following files in order to run the code locally:
 
 - `env.properties` - with the following structure:
+
   ```
   api-key=XXXXXXX
   api-version=vX.X
   api-url=XXXXXXX
   identity-file=adminIdentity.json
   ```
+
 - `adminIdentity.json` - will contain the admin identity object (json file with elements `doc` and `key`)
 
 You are now ready to use the JAR and access the classes. Please remember to keep the `env.properties` _in the same folder as the JAR_.

@@ -221,7 +221,7 @@ Returns the AgentID of the chain owner.
 
 Returns information about the chain.
 
-#### Returns:
+#### Returns
 
 - `c` (`ChainID`): The chain ID
 - `o` (`AgentID`): The chain owner

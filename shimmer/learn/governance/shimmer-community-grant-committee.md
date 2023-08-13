@@ -17,7 +17,7 @@ The Committee received a budget of 27.204.307 SMR for one year of operation from
 
 ## 4. Specification
 
-### Mission of the Shimmer Community Grant Committee:
+### Mission of the Shimmer Community Grant Committee
 
 _A community-led committee-based grant program to support the Shimmer network and empower its ecosystem_
 
@@ -55,7 +55,7 @@ The 12 months period will start on the day when the Firefly vote (Phase 3) resul
 - In case of serious violation of terms of the contract, like a breach of NDA, insider trading, or not disclosed conflict of interest, reviewers will be immediately discarded from the committee position by the committee lead and removed as signers of the multisig wallet.
 - Replacement positions will be offered to the runner-up candidates of the committee selection process (Phase 3 results).
 
-### Requirements for Committee members:
+### Requirements for Committee members
 
 - All committee members will do KYC to reveal and verify their identity and sign a legally binding contract (employment or service provider) with the DAO LLC.
 - All committee members must reveal any potential conflicts of interest to become committee members. They need to indicate if they currently are or have been in the past part of a team in a DLT project or have other connections or affiliations to projects or groups that could cause a conflict of interest. A conflict of interest policy needs to be accepted and signed.
@@ -65,7 +65,7 @@ The 12 months period will start on the day when the Firefly vote (Phase 3) resul
 - All members will sign NDAs and Insider Trading disclosures.
 - All Committee members are required to operate the Gnosis Multi-Signature Wallet with a Ledger Nano or similar device.
 
-### Selection process for committee members and the Program Lead:
+### Selection process for committee members and the Program Lead
 
 - Please review [the selection process specification](https://govern.iota.org/t/community-grant-committee-selection-proccess-specification/1436) that describes the community-driven selection process
 - Phase 1 started on 6 November 22 - you can check the applications here:
@@ -77,13 +77,13 @@ The 12 months period will start on the day when the Firefly vote (Phase 3) resul
 
 ### 4.2 Funding Priorities
 
-#### Funding objectives:
+#### Funding objectives
 
 - To increase the utility of the Shimmer network and attract new builders.
 - To promote Shimmer and make it more visible and attractive in the DLT space.
 - To enable projects to establish successful and profitable business models on Shimmer.
 
-#### Target areas for grant funding:
+#### Target areas for grant funding
 
 - Applications and integrations (front-ends, Defi, Gaming, and other applications that use the Shimmer protocol on L1 or L2)
 - Incentivizing established successful projects from different ecosystems to deploy their application on the Shimmer network
@@ -96,7 +96,7 @@ The 12 months period will start on the day when the Firefly vote (Phase 3) resul
 - Events, Community meetups, and hackathons
 - Bounties
 
-### Guiding principles for funding decisions:
+### Guiding principles for funding decisions
 
 1. **A proposal must be relevant to the Shimmer network and its ecosystem.**
 2. **A proposal that segregates individuals, organizations, or communities based on sex, race, color, ethnic or social origin, genetic features, language, religion or belief, political or any other opinion, membership of a national minority, property, birth, disability, age or sexual orientation.**
@@ -108,11 +108,11 @@ The 12 months period will start on the day when the Firefly vote (Phase 3) resul
 8. **A proposal that creates any conflict of interest from members of the proposing team or committee members must be reported to the committee Lead. Committee members with conflicts of interest cannot process, comment, or vote on a proposal.**
 9. **Any attempts of Bribery or offer of future payments, token ownership, or compensations/gifts of any form to committee members will lead to the immediate cancellation of a proposal process. Accepted bribes by committee members will lead to the immediate removal of the members from the committee.**
 
-### 4.3 Application and approval process:
+### 4.3 Application and approval process
 
 **Easy and quick access to funding** is essential to a successful grant program. Numerous examples in the space have shown that this is one of the most critical reasons teams consider when choosing a network.
 
-### Funding Tiers and requirements:
+### Funding Tiers and requirements
 
 As long as the market cap of Shimmer is low, we need to take a considerably more secure approach in the early stages. Therefore, we should define a threshold based on the Shimmer market cap, which will lead to the halt of funding, the start of financing with low tiers, and the switch to regular tiers.
 
@@ -208,7 +208,7 @@ The teams must provide the following details in an [**application questionnaire 
 - **Tier 3** (Funding budget 50.000 - 200.000 USD) - required score **minimum 15 of 20**
 - **Tier 1 & 2** (Funding up to 50.000 USD) - required score **minimum 13 of 20**
 
-### Possible Extra Scoring Points:
+### Possible Extra Scoring Points
 
 - Projects offer 0,5% of the projects total token supply to go to the community Treasury: **one extra point can be granted.**
 - Projects offer 1% of the projects total token supply to go to the community Treasury: **two extra points can be granted.**
@@ -229,7 +229,7 @@ We reserve the ability to place specific projects into different tiers even if p
 The committee will host a publicly accessible database (Notion) where all accepted proposals are listed, and all spending can be tracked by the community (including the respective Links to Stablecoin Payouts)
 [**Proposed structure example by JD Sutton**](https://www.tangletreasury.org/treasury-expenses)
 
-### Complaint process:
+### Complaint process
 
 Should a project feel it has been treated unjustly by a decision of the grant committee, it should first contact the Programm Lead and try to resolve the issue. If that is not successfull the project can open a complaint thread in the Governance forum and lay out the reasons for the complaint respectfully to the community.
 If a Grant Reviewer is also a Governance Forum Moderator, this moderator is excluded from any moderation activities in this specific forum conversation.
