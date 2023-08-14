@@ -189,10 +189,6 @@ module.exports = {
           type: 'category',
           label: 'Core REST API',
           collapsed: true,
-          link: {
-            type: 'doc',
-            id: 'nodes/core-rest-api/iota-core-rest-api',
-          },
           items: require('./nodes/core-rest-api/sidebar'),
         },
       ],
