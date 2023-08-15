@@ -44,12 +44,20 @@ module.exports = {
     {
       type: 'category',
       label: 'Wallets',
+      link: {
+        type: 'generated-index',
+        title: 'Wallets',
+        description: 'A list of all wallets including community wallets.',
+        slug: '/wallets',
+        keywords: ['wallets', 'firefly', 'tanglepay'],
+      },
       items: [
         'wallets/firefly',
         {
           type: 'link',
           label: 'TanglePay',
           href: 'https://tanglepay.com/',
+          description: 'Your IOTA & Shimmer Wallet for DeFi and NFTs.'
         },
       ],
     },
