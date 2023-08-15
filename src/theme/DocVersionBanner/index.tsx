@@ -1,3 +1,11 @@
+/**
+ * SWIZZLED VERSION: 2.4.1
+ * REASONS:
+ *  - Remove use of siteTitle as it is irrelevant in our setup.
+ *  - Link to our own latest version.
+ *  - Add `deprecated` banner.
+ */
+
 import React, { type ComponentType } from 'react';
 import clsx from 'clsx';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
@@ -19,13 +27,14 @@ import type {
   PropVersionMetadata,
 } from '@docusaurus/plugin-content-docs';
 
+type WikiVersionBanner = VersionBanner & 'deprecated';
+
 type BannerLabelComponentProps = {
   siteTitle: string;
   versionMetadata: PropVersionMetadata;
 };
 
 function UnreleasedVersionLabel({
-  siteTitle,
   versionMetadata,
 }: BannerLabelComponentProps) {
   return (
@@ -33,19 +42,15 @@ function UnreleasedVersionLabel({
       id='theme.docs.versions.unreleasedVersionLabel'
       description="The label used to tell the user that he's browsing an unreleased doc version"
       values={{
-        siteTitle,
         versionLabel: <b>{versionMetadata.label}</b>,
       }}
     >
-      {
-        'This is unreleased documentation for {siteTitle} {versionLabel} version.'
-      }
+      {'This is unreleased documentation for {versionLabel} version.'}
     </Translate>
   );
 }
 
 function UnmaintainedVersionLabel({
-  siteTitle,
   versionMetadata,
 }: BannerLabelComponentProps) {
   return (
@@ -53,22 +58,38 @@ function UnmaintainedVersionLabel({
       id='theme.docs.versions.unmaintainedVersionLabel'
       description="The label used to tell the user that he's browsing an unmaintained doc version"
       values={{
-        siteTitle,
         versionLabel: <b>{versionMetadata.label}</b>,
       }}
     >
       {
-        'This is documentation for {siteTitle} {versionLabel}, which is no longer actively maintained.'
+        'This is documentation for {versionLabel}, which is no longer actively maintained.'
       }
     </Translate>
   );
 }
 
+function DeprecatedVersionLabel({
+  versionMetadata,
+}: BannerLabelComponentProps) {
+  return (
+    <Translate
+      id='theme.docs.versions.deprecatedVersionLabel'
+      description="The label used to tell the user that he's browsing a deprecated doc version"
+      values={{
+        versionLabel: <b>{versionMetadata.label}</b>,
+      }}
+    >
+      {'This is documentation for {versionLabel}, which is being deprecated.'}
+    </Translate>
+  );
+}
+
 const BannerLabelComponents: {
-  [banner in VersionBanner]: ComponentType<BannerLabelComponentProps>;
+  [banner in WikiVersionBanner]: ComponentType<BannerLabelComponentProps>;
 } = {
   unreleased: UnreleasedVersionLabel,
   unmaintained: UnmaintainedVersionLabel,
+  deprecated: DeprecatedVersionLabel,
 };
 
 function BannerLabel(props: BannerLabelComponentProps) {
@@ -149,7 +170,7 @@ function DocVersionBannerEnabled({
       <div>
         <BannerLabel siteTitle={siteTitle} versionMetadata={versionMetadata} />
       </div>
-      <div className='margin-top--md'>
+      <div>
         <LatestVersionSuggestionLabel
           versionLabel={latestVersionSuggestion.label}
           to={latestVersionSuggestedDoc.path}
