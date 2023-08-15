@@ -133,7 +133,7 @@ module.exports = async () => {
     common,
     {
       title: 'IOTA Wiki',
-      tagline: 'The complete reference for IOTA/Shimmer',
+      tagline: 'The complete reference for IOTA and Shimmer',
       baseUrl: '/',
       presets: [
         [

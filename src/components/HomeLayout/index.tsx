@@ -13,11 +13,12 @@ import {
   Hornet,
   IntegrationServices,
   IotaCore,
-  IotaToken,
   PickAWallet,
+  Shimmer,
   Search,
   Tips,
   Tutorials,
+  Wasp,
 } from '@site/src/common/icons';
 import CoreLibrariesSection from './CoreLibrariesSection';
 import AppLibrariesSection from './AppLibrariesSection';
@@ -80,15 +81,14 @@ export default function HomeLayout() {
                 </p>
               </div>
             </Link>
-            <Link to='/get-started/introduction/iota/iota-token/#buying-iota' className='about__card'>
+            <Link to='/get-started/introduction/shimmer/introduction' className='about__card'>
               <div className='about__section'>
                 <div className='about__icon'>
-                  <IotaToken />
+                  <Shimmer />
                 </div>
-                <h3 className='about__header'>Get IOTA tokens</h3>
+                <h3 className='about__header'>What is Shimmer?</h3>
                 <p className='about__description'>
-                  The IOTA token is used to transact value on the IOTA
-                  distributed ledger.
+                  A scalable and feeless network enabling frictionless decentralized and scalable Web3 economies.
                 </p>
               </div>
             </Link>
@@ -146,6 +146,37 @@ export default function HomeLayout() {
                   className='nodes__button button button--outline button--primary'
                 >
                   Set up a Hornet node
+                </Link>
+              </div>
+            </div>
+            <div className='nodes__card'>
+              <div className='nodes__icon'>
+                <Wasp />
+              </div>
+              <div className='nodes__section'>
+                <h3 className='nodes__header'>Wasp</h3>
+                <ul className='nodes__features'>
+                  <li className='nodes__feature'>
+                    <Link to='/smart-contracts/guide/core_concepts/validators'>
+                      Validate smart contracts
+                    </Link>
+                  </li>
+                  <li className='nodes__feature'>
+                    <Link to='/smart-contracts/guide/chains_and_nodes/running-a-node'>
+                      Run the Shimmer Smart Contract Protocol
+                    </Link>
+                  </li>
+                  <li className='nodes__feature'>
+                    <Link to='/smart-contracts/guide/evm/introduction'>
+                      Run EVM/Solidity Smart Contract
+                    </Link>
+                  </li>
+                </ul>
+                <Link
+                  to='/smart-contracts/guide/chains_and_nodes/running-a-node'
+                  className='nodes__button button button--outline button--primary'
+                >
+                  Run a smart contract node
                 </Link>
               </div>
             </div>

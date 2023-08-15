@@ -1,10 +1,10 @@
 [
   {
-    "title": "The complete reference for IOTA",
-    "description": "Build apps capable of taking millions of users on journeys they’ve never been on before. Simple. Scalable. Secure.",
+    "title": "The complete reference for IOTA and Shimmer",
+    "description": "Build apps capable of taking millions of users on journeys they've never been on before. Simple. Scalable. Secure.",
     "outlinedButton": {
-      "buttonText": "Learn About IOTA",
-      "url": "/get-started/introduction/iota/introduction"
+      "buttonText": "Introduction",
+      "url": "/get-started/introduction"
     },
     "solidButton": {
       "buttonText": "Start building",

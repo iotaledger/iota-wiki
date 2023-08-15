@@ -3,7 +3,7 @@ import AppLibImgDark from '@site/static/img/homepage/section_application_librari
 import ThemedImage from '@theme/ThemedImage';
 import React, { FC } from 'react';
 import Link from '@docusaurus/Link';
-import { Identity, Streams, Stronghold } from '@site/src/common/icons';
+import { Identity, SmartContracts, Streams, Stronghold } from '@site/src/common/icons';
 
 interface LanguagesProps {
   languages?: { [key: string]: string };
@@ -140,14 +140,37 @@ const LibrariesSection: FC = () => (
         </Link>
       </div>
     </div>
-    <div className='spaceholder__card__img'>
-      <ThemedImage
-        alt='Core Libraries'
-        sources={{
-          light: AppLibImg,
-          dark: AppLibImgDark,
-        }}
+    <div className='libraries__card libraries__card--wide'>
+      <img
+        className='libraries__logo'
+        src='/img/homepage/smartcontracts_bot.svg'
       />
+      <div className='libraries__section'>
+        <div className='libraries__head'>
+          <div className='libraries__icon'>
+            <SmartContracts />
+          </div>
+        </div>
+        <h3 className='libraries__header'>IOTA Smart Contracts</h3>
+        <p className='libraries__body'>
+          The IOTA Smart Contracts Protocol brings scalable and flexible smart
+          contracts into the IOTA ecosystem.
+        </p>
+        <div className='start-building__buttons'>
+          <Link
+            to='/smart-contracts/overview'
+            className='start-building__button button button--outline button--primary'
+          >
+            Learn about ISC
+          </Link>
+          {/* <Link
+            to='/smart-contracts/guide/evm/examples/introduction'
+            className='start-building__button button button--primary'
+          >
+            Run a smart contract
+          </Link> */}
+        </div>
+      </div>
     </div>
   </div>
 );
