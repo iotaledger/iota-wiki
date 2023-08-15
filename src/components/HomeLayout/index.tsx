@@ -66,7 +66,7 @@ export default function HomeLayout() {
         <HomepageSection header='Use IOTA'>
           <div className='about__cards'>
             <Link
-              to='learn/about-iota/an-introduction-to-iota'
+              to='/get-started/introduction/iota/introduction'
               className='about__card'
             >
               <div className='about__section'>
@@ -80,7 +80,7 @@ export default function HomeLayout() {
                 </p>
               </div>
             </Link>
-            <Link to='learn/iota-token/buying-iota' className='about__card'>
+            <Link to='/get-started/introduction/iota/iota-token/#buying-iota' className='about__card'>
               <div className='about__section'>
                 <div className='about__icon'>
                   <IotaToken />
@@ -92,7 +92,7 @@ export default function HomeLayout() {
                 </p>
               </div>
             </Link>
-            <Link to='/use/wallets/what-is-a-wallet' className='about__card'>
+            <Link to='/get-started/wallets' className='about__card'>
               <div className='about__section'>
                 <div className='about__icon'>
                   <PickAWallet />

@@ -4,11 +4,11 @@
     "description": "Build apps capable of taking millions of users on journeys they’ve never been on before. Simple. Scalable. Secure.",
     "outlinedButton": {
       "buttonText": "Learn About IOTA",
-      "url": "/learn/about-iota/an-introduction-to-iota"
+      "url": "/get-started/introduction/iota/introduction"
     },
     "solidButton": {
       "buttonText": "Start building",
-      "url": "/develop/welcome"
+      "url": "/build/networks/overview"
     },
     "imagePath": "/img/homepage/header.svg"
   },
