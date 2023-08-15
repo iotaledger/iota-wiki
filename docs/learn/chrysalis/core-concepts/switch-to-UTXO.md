@@ -19,7 +19,7 @@ where they go when they are spent.
 
 ## The Problem with the Balance Mode
 
-Before Chrysalis, IOTA used an account balance model to track addresses.
+Before Chrysalis, IOTA used an account model to track balances.
 This meant every address had a single value associated with it, its current balance.
 This meant the ledger tracked **Address1**, which was associated with **Balance1**, **Address2** was associated with **Balance2**, and so on.
 
