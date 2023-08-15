@@ -21,28 +21,16 @@ where they go when they are spent.
 
 Before Chrysalis, IOTA used an account balance model to track addresses.
 This meant every address had a single value associated with it, its current balance.
-This meant the ledger tracked **Address1**, which was associated with **Balance1**, **Address2** was associated with \*
-\*Balance2\*\*, and so on.
+This meant the ledger tracked **Address1**, which was associated with **Balance1**, **Address2** was associated with **Balance2**, and so on.
 
 ### Double-spends
 
 The main problem with this model was dealing with double-spends, also known as conflicts.
-It took a lot of work to determine which of multiple transactions performed a double spend and which used legitimate
-funds.
-
-### Reatachments
-
-Another problem with using an account balance model is reattachments.
-If somebody ever receives funds at an address already used to send tokens, anybody can just reattach the previous
-transaction and empty the address again,
-even if they do not control the private key.
+It took a lot of work to determine which of multiple transactions performed a double spend and which used legitimate funds.
 
 ## The UTXO Solution
 
 Since Chrysalis, IOTA switched to the UTXO model to keep track of balances.
-Every address contains its total balance and multiple sub-balances with a marker indicating precisely which transaction
-created the funds.
-Every coin on an address can be uniquely identifiable, and every transaction names the exact coins it wants to move.
 This switch significantly improved how we identify conflicts and, therefore, also stops malicious actors from spending
 newly received funds by reattaching an old transaction.
 
