@@ -22,7 +22,7 @@ UTXO) model, addressing several issues related to security, protocol design, and
 ## Challenges with the Account Balance Model
 
 Before the transition to Chrysalis, IOTA operated on an account model.
-\Every address held a distinct balance value.
+Every address held a distinct balance value.
 However, when double-spends or conflicts arose, discerning legitimate transactions from double-spends became complex.
 This model posed two main challenges:
 
