@@ -1,1 +1,3 @@
-List of iota2.0 related tips, perhaps with a short overview.
+# IOTA 2.0 TIPs
+
+The following Tangle Improvement Proposals (TIPs) are currently implemented in the IOTA 2.0 protocol.

@@ -2,6 +2,25 @@ module.exports = {
   build: [
     {
       type: 'category',
+      label: 'Chrysalis',
+      collapsed: true,
+      items: [
+        'chrysalis/introduction',
+        {
+          type: 'category',
+          label: 'Core Concepts',
+          items: [
+            'chrysalis/core-concepts/white-flag-consensus',
+            'chrysalis/core-concepts/switch-to-UTXO',
+            'chrysalis/core-concepts/EdDSA-support',
+            'chrysalis/core-concepts/binary-transaction-layout',
+          ],
+        },
+        'chrysalis/tips',
+      ],
+    },
+    {
+      type: 'category',
       label: 'Stardust',
       collapsed: true,
       items: [
@@ -22,21 +41,31 @@ module.exports = {
     },
     {
       type: 'category',
-      label: 'Chrysalis',
+      label: 'IOTA 2.0',
       collapsed: true,
       items: [
-        'chrysalis/introduction',
+        {
+          type: 'category',
+          label: 'Introduction',
+          items: [
+            'iota2.0/introduction/five-principles',
+            'iota2.0/introduction/digital-autonomy',
+          ],
+        },
         {
           type: 'category',
           label: 'Core Concepts',
           items: [
-            'chrysalis/core-concepts/white-flag-consensus',
-            'chrysalis/core-concepts/switch-to-UTXO',
-            'chrysalis/core-concepts/EdDSA-support',
-            'chrysalis/core-concepts/binary-transaction-layout',
+            'iota2.0/core-concepts/data-structures',
+            'iota2.0/core-concepts/data-flow',
+            'iota2.0/core-concepts/networking',
+            'iota2.0/core-concepts/communication',
+            'iota2.0/core-concepts/consensus',
+            'iota2.0/core-concepts/mana',
+            'iota2.0/core-concepts/validators',
           ],
         },
-        'chrysalis/tips',
+        'iota2.0/tips',
       ],
     },
     {
@@ -172,35 +201,6 @@ module.exports = {
             },
           ],
         },
-      ],
-    },
-    {
-      type: 'category',
-      label: 'IOTA 2.0',
-      collapsed: true,
-      items: [
-        {
-          type: 'category',
-          label: 'Introduction',
-          items: [
-            'iota2.0/introduction/five-principles',
-            'iota2.0/introduction/digital-autonomy',
-          ],
-        },
-        {
-          type: 'category',
-          label: 'Core Concepts',
-          items: [
-            'iota2.0/core-concepts/consensus',
-            'iota2.0/core-concepts/mana',
-            'iota2.0/core-concepts/data-flow',
-            'iota2.0/core-concepts/networking',
-            'iota2.0/core-concepts/data-structures',
-            'iota2.0/core-concepts/validators',
-            'iota2.0/core-concepts/communication',
-          ],
-        },
-        'iota2.0/tips',
       ],
     },
   ],
