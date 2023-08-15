@@ -13,8 +13,7 @@ where they go when they are spent.
 
 Before Chrysalis, IOTA used an account balance model to track addresses.
 This meant every address had a single value associated with it, its current balance.
-This meant the ledger tracked **Address1**, which was associated with **Balance1**, **Address2** was associated with *
-*Balance2**, and so on.
+This meant the ledger tracked **Address1**, which was associated with **Balance1**, **Address2** was associated with **Balance2**, and so on.
 
 ### Double-spends
 
@@ -52,7 +51,7 @@ meaning that addresses in Chrysalis are reusable and can be safely used to send 
 
 :::tip Learn More
 
-You can learn more about the [switch to UTXO](https://wiki.iota.org/tips/tips/TIP-0007) in
+You can learn more about the [switch to UTXO](https://wiki.iota.org/tips/tips/TIP-0007) and [Ed25519](https://wiki.iota.org/tips/tips/TIP-0017/) in
 the [TIPS section](../tips.md).
 
 :::
