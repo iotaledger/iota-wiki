@@ -1,4 +1,4 @@
-@import '../../common/css/custom.css';
+@import '../common/css/custom.css';
 @import 'variables.css';
 
 html {
@@ -366,17 +366,4 @@ ul ul .table-of-contents__link {
 .math {
   overflow-x: auto;
   margin-bottom: 1em;
-}
-
-div[class^='announcementBar_'] {
-  --site-announcement-bar-stripe-color1: yellow;
-  --site-announcement-bar-stripe-color2: black;
-  background: repeating-linear-gradient(
-    35deg,
-    var(--site-announcement-bar-stripe-color1),
-    var(--site-announcement-bar-stripe-color1) 20px,
-    var(--site-announcement-bar-stripe-color2) 10px,
-    var(--site-announcement-bar-stripe-color2) 40px
-  );
-  font-weight: bold;
 }

@@ -142,14 +142,14 @@ module.exports = async () => {
             docs: false,
             blog: false,
             theme: {
-              customCss: require.resolve('./src/iota/css/custom.css'),
+              customCss: require.resolve('./src/css/custom.css'),
             },
             sitemap: {
               changefreq: 'daily',
               priority: 0.5,
             },
             pages: {
-              path: path.resolve(__dirname, '../src/iota/pages'),
+              path: path.resolve(__dirname, './src/pages'),
             },
           },
         ],
