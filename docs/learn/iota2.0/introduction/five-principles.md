@@ -1,7 +1,16 @@
 ---
 description: Learn about the five principles behind IOTA 2.0.
 image: /img/iota-wiki.png
-keywords: [ 'explanation', 'IOTA 2.0', 'accessibility', 'Parallelism', 'Volume and Velocity', 'Social Dynamics', 'Sustainable Economics' ]
+keywords:
+  [
+    'explanation',
+    'IOTA 2.0',
+    'accessibility',
+    'Parallelism',
+    'Volume and Velocity',
+    'Social Dynamics',
+    'Sustainable Economics',
+  ]
 ---
 
 # Five Principles

@@ -66,7 +66,7 @@ You should exchange your node's `multiaddr` in direct messages.
 ## Auto-peering
 
 IOTA 2.0 supports the automatic discovery of peers through the `autopeering` module.
-An `autopeering` module will use the specified entry nodes under `p2p.autopeering.entryNodes` to find peers, connect to them and initiate a  gossip protocol with them.
+An `autopeering` module will use the specified entry nodes under `p2p.autopeering.entryNodes` to find peers, connect to them and initiate a gossip protocol with them.
 
 :::warning
 

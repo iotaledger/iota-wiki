@@ -1,6 +1,15 @@
 ---
 description: 'Learn about the increasing need for digital autonomy in an interconnected world, and how IOTA endeavors to achieve this through a decentralized, global infrastructure of trust.'
-keywords: ['digital autonomy', 'DLT', 'interoperability', 'decentralization', 'IOTA 2.0', 'value extraction', 'global programmable infrastructure']
+keywords:
+  [
+    'digital autonomy',
+    'DLT',
+    'interoperability',
+    'decentralization',
+    'IOTA 2.0',
+    'value extraction',
+    'global programmable infrastructure',
+  ]
 ---
 
 # Digital Autonomy

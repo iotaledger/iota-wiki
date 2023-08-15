@@ -1,6 +1,15 @@
 ---
 description: Learn about IOTA's Stardust upgrade, focusing on its key features and enhancements.
-keywords: [ IOTA, Stardust, Multi-Asset Ledger, ISC, Output Features, Unlock Conditions, White Flag Consensus ]
+keywords:
+  [
+    IOTA,
+    Stardust,
+    Multi-Asset Ledger,
+    ISC,
+    Output Features,
+    Unlock Conditions,
+    White Flag Consensus,
+  ]
 ---
 
 # What is Stardust?
@@ -44,5 +53,3 @@ in Stardust.
 This approach differs from platforms that run smart contracts on their primary layer,
 ensuring the main layer remains efficient and speedy while also providing the flexibility that smart contracts offer on
 L2 chains.
-
-
