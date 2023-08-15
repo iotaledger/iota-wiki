@@ -1,6 +1,6 @@
 ---
 title: Firefly Wallet
-description: The Firefly Wallet sets a new standard for Software Wallets in DLT. Learn everything here.
+description: Official wallet from the IOTA Foundation.
 keywords:
   - Firefly Wallet
   - Shimmer Wallet
