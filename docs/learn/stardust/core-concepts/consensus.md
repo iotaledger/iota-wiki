@@ -12,8 +12,8 @@ keywords:
 
 :::note
 
-The Coordinator is a temporary feature and will be removed with the
-upcoming [IOTA 2.0 update](../../iota2.0/core-concepts/consensus.md).
+The Coordinator is a temporary feature and will be removed with the upcoming 
+[IOTA 2.0 update](../../iota2.0/core-concepts/consensus.md).
 
 :::
 
