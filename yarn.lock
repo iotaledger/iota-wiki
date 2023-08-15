@@ -2756,8 +2756,8 @@ __metadata:
     "@typescript-eslint/eslint-plugin": ^5.9.1
     "@typescript-eslint/parser": ^5.9.1
     clsx: ^1.2.1
-    docusaurus-plugin-openapi-docs: ^v2.0.0-beta.3
-    docusaurus-theme-openapi-docs: ^v2.0.0-beta.3
+    docusaurus-plugin-openapi-docs: "dr-electron/docusaurus-openapi-docs#head=unify-tab-naming&workspace=docusaurus-plugin-openapi-docs"
+    docusaurus-theme-openapi-docs: "dr-electron/docusaurus-openapi-docs#head=unify-tab-naming&workspace=docusaurus-theme-openapi-docs"
     eslint: ^8.46.0
     eslint-config-prettier: ^8.9.0
     eslint-plugin-react: ^7.26.0
@@ -8007,7 +8007,34 @@ __metadata:
   languageName: node
   linkType: hard
 
-"docusaurus-plugin-openapi-docs@npm:^2.0.0-beta.3, docusaurus-plugin-openapi-docs@npm:^v2.0.0-beta.3":
+"docusaurus-plugin-openapi-docs@dr-electron/docusaurus-openapi-docs#head=unify-tab-naming&workspace=docusaurus-plugin-openapi-docs":
+  version: 2.0.0-beta.3
+  resolution: "docusaurus-plugin-openapi-docs@https://github.com/dr-electron/docusaurus-openapi-docs.git#workspace=docusaurus-plugin-openapi-docs&commit=8ba07632a84deee284235582eccae0c8420cafd8"
+  dependencies:
+    "@apidevtools/json-schema-ref-parser": ^10.1.0
+    "@docusaurus/plugin-content-docs": ">=2.3.0 <2.5.0"
+    "@docusaurus/utils": ">=2.3.0 <2.5.0"
+    "@docusaurus/utils-validation": ">=2.3.0 <2.5.0"
+    "@paloaltonetworks/openapi-to-postmanv2": 3.1.0-hotfix.1
+    "@paloaltonetworks/postman-collection": ^4.1.0
+    "@redocly/openapi-core": ^1.0.0-beta.125
+    chalk: ^4.1.2
+    clsx: ^1.1.1
+    fs-extra: ^9.0.1
+    json-pointer: ^0.6.2
+    json-schema-merge-allof: ^0.8.1
+    lodash: ^4.17.20
+    mustache: ^4.2.0
+    slugify: ^1.6.5
+    swagger2openapi: ^7.0.8
+    xml-formatter: ^2.6.1
+  peerDependencies:
+    react: ^16.8.4 || ^17.0.0
+  checksum: 0f49a432f40925d77283d23d2dddd169994d710add7b051defd9affb435a21f385e151a79836dd8739e9b30da5f36c70b41935813de4b62af62bbb3c7a20b28f
+  languageName: node
+  linkType: hard
+
+"docusaurus-plugin-openapi-docs@npm:^2.0.0-beta.3":
   version: 2.0.0-beta.3
   resolution: "docusaurus-plugin-openapi-docs@npm:2.0.0-beta.3"
   dependencies:
@@ -8046,9 +8073,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"docusaurus-theme-openapi-docs@npm:^v2.0.0-beta.3":
+"docusaurus-theme-openapi-docs@dr-electron/docusaurus-openapi-docs#head=unify-tab-naming&workspace=docusaurus-theme-openapi-docs":
   version: 2.0.0-beta.3
-  resolution: "docusaurus-theme-openapi-docs@npm:2.0.0-beta.3"
+  resolution: "docusaurus-theme-openapi-docs@https://github.com/dr-electron/docusaurus-openapi-docs.git#workspace=docusaurus-theme-openapi-docs&commit=8ba07632a84deee284235582eccae0c8420cafd8"
   dependencies:
     "@docusaurus/theme-common": ">=2.3.0 <2.5.0"
     "@hookform/error-message": ^2.0.1
@@ -8078,7 +8105,7 @@ __metadata:
   peerDependencies:
     react: ^16.8.4 || ^17.0.0
     react-dom: ^16.8.4 || ^17.0.0
-  checksum: 3a74bd65179f3a346870104d87d8426f41b347ada7deb27f02f6edd94c950eb4fe955177e95a2fd4dc56eb3c6d1212a20d4435513f4a242e20bb4205ea705931
+  checksum: 69c9a4a0d9be5e8722b5732b48364e4c58850e477712ec839a85731edfdc25db676d4fda460fa19b2a2992adc2aea93033adda1163c63154f163b0b4505a0617
   languageName: node
   linkType: hard
 
