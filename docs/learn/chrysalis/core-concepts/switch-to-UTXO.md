@@ -26,14 +26,6 @@ However, Chrysalis introduced a voting-based Coordicide solution.
 This meant that it was necessary to identify conflicts quickly and precisely so we could reduce the amount of voting
 required to resolve these conflicts.
 
-### Reatachments
-
-Another problem with using an account balance model is reattachments.
-If somebody ever receives funds at an address already used to send tokens, anybody can just reattach the previous
-transaction and empty the address again,
-even if they do not control the private key.
-There have been many cases in DLTs where this was used as an “attack vector” when users didn’t follow the advice to use
-addresses only once.
 
 ## The UTXO Solution
 
