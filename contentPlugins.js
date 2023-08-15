@@ -177,7 +177,7 @@ module.exports = async () => {
         current: {
           label: '1.1.0',
           badge: true,
-          banner: 'unmaintained',
+          banner: 'deprecated',
         },
       },
     },

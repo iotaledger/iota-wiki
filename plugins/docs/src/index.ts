@@ -59,9 +59,48 @@ export function validateOptions({
   validate,
   options,
 }: OptionValidationContext): PluginOptions {
-  const { globalSidebars = [], ...docsOptions } = options;
+  const { versions = {}, globalSidebars = [], ...docsOptions } = options;
+
+  const versionEntries = Object.entries(versions);
+  if (versionEntries.length > 1)
+    throw 'Multiple Docusuaurus doc versions not allowed in the Wiki';
+
+  // Handle version banner.
+  const versionBannerMap = {};
+  const docsVersionEntries = versionEntries.map(
+    ([versionLabel, versionOptions]) => {
+      // TODO: validate banner
+      const { banner, ...docsVersionOptions } = versionOptions;
+      versionBannerMap[versionLabel] = banner;
+      return [versionLabel, docsVersionOptions];
+    },
+  );
+
+  const validatedDocsOptions = docsValidateOptions({
+    validate,
+    options: {
+      ...docsOptions,
+      versions: Object.fromEntries(docsVersionEntries),
+    },
+  });
+
+  // Re-add banner.
+  validatedDocsOptions.versions = Object.fromEntries(
+    Object.entries(validatedDocsOptions.versions).map(
+      ([versionLabel, versionOptions]) => {
+        return [
+          versionLabel,
+          {
+            ...versionOptions,
+            banner: versionBannerMap[versionLabel],
+          },
+        ];
+      },
+    ),
+  );
+
   return {
-    ...docsValidateOptions({ validate, options: docsOptions }),
+    ...validatedDocsOptions,
     globalSidebars,
   };
 }
