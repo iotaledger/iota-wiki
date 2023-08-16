@@ -284,9 +284,9 @@ keywords:
   </dt>
   <dd>
     <p>
-      A type wrapping a <a href='JwkStorage'>JwkStorage</a> and{' '}
-      <a href='KeyIdStorage'>KeyIdStorage</a> that should always be used
-      together when working with storage backed DID documents.
+      A type wrapping a <code>JwkStorage</code> and <code>KeyIdStorage</code>{' '}
+      that should always be used together when working with storage backed DID
+      documents.
     </p>
   </dd>
   <dt>
@@ -5496,7 +5496,7 @@ Deserializes an instance from a JSON object.
 
 ## Storage
 
-A type wrapping a [JwkStorage](JwkStorage) and [KeyIdStorage](KeyIdStorage) that should always be used together when
+A type wrapping a `JwkStorage` and `KeyIdStorage` that should always be used together when
 working with storage backed DID documents.
 
 **Kind**: global class
@@ -5510,7 +5510,7 @@ working with storage backed DID documents.
 
 ### new Storage(jwkStorage, keyIdStorage)
 
-Constructs a new [Storage](#Storage).
+Constructs a new `Storage`.
 
 | Param        | Type                      |
 | ------------ | ------------------------- |
@@ -5521,7 +5521,7 @@ Constructs a new [Storage](#Storage).
 
 ### storage.keyIdStorage() ⇒ <code>KeyIdStorage</code>
 
-Obtain the wrapped [KeyIdStorage](KeyIdStorage).
+Obtain the wrapped `KeyIdStorage`.
 
 **Kind**: instance method of [<code>Storage</code>](#Storage)
 
@@ -5529,7 +5529,7 @@ Obtain the wrapped [KeyIdStorage](KeyIdStorage).
 
 ### storage.keyStorage() ⇒ <code>JwkStorage</code>
 
-Obtain the wrapped [JwkStorage](JwkStorage).
+Obtain the wrapped `JwkStorage`.
 
 **Kind**: instance method of [<code>Storage</code>](#Storage)
 
