@@ -1,5 +1,5 @@
 module.exports = {
-  build: [
+  'learn': [
     {
       type: 'category',
       label: 'Stardust',

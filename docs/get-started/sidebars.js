@@ -1,5 +1,5 @@
 module.exports = {
-  getStarted: [
+  'get-started': [
     {
       type: 'category',
       label: 'Introduction',

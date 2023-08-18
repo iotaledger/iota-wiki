@@ -7,7 +7,7 @@ node_modules
 # Generated files
 .docusaurus
 .cache-loader
-sidebars*.js
+/sidebars*.js
 
 # External
 /external/*

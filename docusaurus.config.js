@@ -140,7 +140,10 @@ module.exports = async () => {
         [
           '@docusaurus/preset-classic',
           {
-            docs: false,
+            docs: {
+              sidebarPath: await gatherSidebars('docs'),
+              routeBasePath: '/',
+            },
             blog: false,
             theme: {
               customCss: require.resolve('./src/iota/css/custom.css'),
@@ -152,15 +155,6 @@ module.exports = async () => {
             pages: {
               path: path.resolve(__dirname, '../src/iota/pages'),
             },
-          },
-        ],
-      ],
-      plugins: [
-        [
-          '@docusaurus/plugin-content-docs',
-          {
-            sidebarPath: await gatherSidebars('docs'),
-            routeBasePath: '/',
           },
         ],
       ],
