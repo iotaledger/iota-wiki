@@ -19,7 +19,7 @@ import TipFaucet from '../../_admonitions/_tip-faucet.md';
 The stardust update allows you to create your own [native tokens](https://wiki.iota.org/shimmer/introduction/explanations/what_is_stardust/tokenization#native-tokens)
 Native tokens are minted by a so-called Foundry. The Foundry allows you to specify a max supply once and change the circulating supply.
 
-You can also specify some custom metadata in the foundry output or follow a standard like [IRC30](https://wiki.iota.org/tips/tips/TIP-0030/).
+You can also specify some custom metadata in the foundry output or follow a standard like [IRC30](https://wiki.iota.org/tips/tips/TIP-0030.md).
 To create a Foundry you need an Alias Output which owns it. This Alias Output only needs to be generated once and can own multiple foundries.
 
 <TipFaucet />
@@ -31,8 +31,8 @@ To create a Foundry you need an Alias Output which owns it. This Alias Output on
 
 1. Instantiate a [`Wallet`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/core/struct.Wallet.html), get Alice's `Account` which was
    [created in the first guide](../accounts-and-addresses/create-account.mdx) and [sync it](../accounts-and-addresses/check-balance.mdx).
-2. Check the account's balance for an [`Alias Output`](https://wiki.iota.org/shimmer/tips/tips/TIP-0018/#alias-output)
-   it can use to create the [native tokens](https://wiki.iota.org/shimmer/tips/tips/TIP-0018/#native-tokens-in-outputs).
+2. Check the account's balance for an [`Alias Output`](https://wiki.iota.org/shimmer/tips/tips/TIP-0018.md#alias-output)
+   it can use to create the [native tokens](https://wiki.iota.org/shimmer/tips/tips/TIP-0018.md#native-tokens-in-outputs).
    If the account doesn't have any, it will create one.
 
 <div className={'hide-code-block-extras'}>
@@ -69,8 +69,8 @@ https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/native_
 
 1. Instantiate a [`Wallet`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/core/struct.Wallet.html), get Alice's `Account` which was
    [created in the first guide](../accounts-and-addresses/create-account.mdx) and [sync it](../accounts-and-addresses/check-balance.mdx).
-2. Check the account's balance for an [`Alias Output`](https://wiki.iota.org/shimmer/tips/tips/TIP-0018/#alias-output)
-   it can use to create the [native tokens](https://wiki.iota.org/shimmer/tips/tips/TIP-0018/#native-tokens-in-outputs).
+2. Check the account's balance for an [`Alias Output`](https://wiki.iota.org/shimmer/tips/tips/TIP-0018.md#alias-output)
+   it can use to create the [native tokens](https://wiki.iota.org/shimmer/tips/tips/TIP-0018.md#native-tokens-in-outputs).
    If the account doesn't have any, it will create one.
 
 <div className={'hide-code-block-extras'}>
@@ -81,7 +81,7 @@ https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how
 
 </div>
 
-3. Define the [`CreateNativeTokenParams`](../../../references/nodejs/interfaces/CreateNativeTokenParams/).
+3. Define the [`CreateNativeTokenParams`](../../references/nodejs/interfaces/CreateNativeTokenParams.md).
 
 <div className={'hide-code-block-extras'}>
 
@@ -92,8 +92,8 @@ https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how
 </div>
 
 4. Prepare the transaction that will create the native token using the
-   [`Account.prepareCreateNativeToken()`](../../../references/nodejs/classes/Account/#preparecreatenativetoken)
-   function and send the prepared transaction using the [`Account.send()`](../../../references/nodejs/classes/Account/#send)
+   [`Account.prepareCreateNativeToken()`](../../references/nodejs/classes/Account.md#preparecreatenativetoken)
+   function and send the prepared transaction using the [`Account.send()`](../../references/nodejs/classes/Account.md#send)
    function.
 
 <div className={'hide-code-block-extras'}>
@@ -109,8 +109,8 @@ https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how
 
 1. Instantiate a [`Wallet`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/core/struct.Wallet.html), get Alice's `Account` which was
    [created in the first guide](../accounts-and-addresses/create-account.mdx) and [sync it](../accounts-and-addresses/check-balance.mdx).
-2. Check the account's balance for an [`Alias Output`](https://wiki.iota.org/shimmer/tips/tips/TIP-0018/#alias-output)
-   it can use to create the [native tokens](https://wiki.iota.org/shimmer/tips/tips/TIP-0018/#native-tokens-in-outputs).
+2. Check the account's balance for an [`Alias Output`](https://wiki.iota.org/shimmer/tips/tips/TIP-0018.md#alias-output)
+   it can use to create the [native tokens](https://wiki.iota.org/shimmer/tips/tips/TIP-0018.md#native-tokens-in-outputs).
    If the account doesn't have any, it will create one.
 
 <div className={'hide-code-block-extras'}>
@@ -132,8 +132,8 @@ https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how
 </div>
 
 4. Prepare the transaction that will create the native token using the
-   [`Account.prepare_create_native_token()`](../../../references/python/iota_sdk/wallet/account/#prepare_create_native_token)
-   function and send the prepared transaction using the [`Account.send()`](../../../references/python/iota_sdk/wallet/account/#send)
+   [`Account.prepare_create_native_token()`](../../references/python/iota_sdk/wallet/account.md#prepare_create_native_token)
+   function and send the prepared transaction using the [`Account.send()`](../../references/python/iota_sdk/wallet/account.md#send)
    function.
 
 <div className={'hide-code-block-extras'}>

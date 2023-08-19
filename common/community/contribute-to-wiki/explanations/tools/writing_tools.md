@@ -15,7 +15,7 @@ tags:
 # Writing Tools
 
 There are several writing tools you can use to improve your [style and grammar](#style-and-grammar)
-, [structure](#structure), add [diagrams](../../reference/structure/overview)
+, [structure](#structure), add [diagrams](../../reference/structure/overview.md)
 and learn about [markdown and Docusaurus components](#markdown-and-components).
 
 ## Style and Grammar
@@ -32,7 +32,7 @@ to help your writing read and look better.
 
 ### IOTA Wiki Style Guide
 
-This wiki has its own [style guide](../../reference/style/manifesto) you can use so your writing is cohesive with the
+This wiki has its own [style guide](../../reference/style/manifesto.md) you can use so your writing is cohesive with the
 rest of the wiki.
 
 ## Markdown and Components

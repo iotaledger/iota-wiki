@@ -1,0 +1,110 @@
+---
+title: Check For Unlock Conditions
+description: 'How to check for unlock conditions for outputs'
+image: /img/logo/iota_mark_light.png
+keywords:
+  - how to
+  - outputs
+  - unlock conditions
+  - nodejs
+  - python
+  - rust
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import OutputUnlockConditions from '../../_admonitions/_output_unlock_conditions.md';
+
+Outputs can have different unlock conditions. This guide explains how to check for them in an output.
+
+<OutputUnlockConditions />
+
+## Example Code
+
+<Tabs groupId="language" queryString>
+<TabItem value="rust" label="Rust">
+
+You can check for
+[`UnlockConditions`](https://docs.rs/iota-sdk/latest/iota_sdk/types/block/output/unlock_condition/enum.UnlockCondition.html)
+using the [Output.unlock_conditions()](https://docs.rs/iota-sdk/latest/iota_sdk/types/block/output/enum.Output.html#method.unlock_conditions)
+function.
+It will return all the unlock conditions for any output.
+This example looks for the [`AddressUnlockCondition`](https://docs.rs/iota-sdk/latest/iota_sdk/types/block/output/unlock_condition/struct.AddressUnlockCondition.html).
+
+<div className={'hide-code-block-extras'}>
+
+```rust reference
+https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/wallet/17_check_unlock_conditions.rs#L49-L60
+```
+
+</div>
+
+</TabItem>
+<TabItem value="typescript-node" label="Typescript (Node.js)">
+
+You can check for
+[`UnlockConditions`](../../references/nodejs/classes/UnlockCondition.md)
+using the [CommonOutput.getUnlockConditions()](../../references/nodejs/classes/CommonOutput.md#getunlockconditions)
+function.
+It will return all the unlock conditions for any output.
+This example looks for the [`AddressUnlockCondition`](../../references/nodejs/classes/AddressUnlockCondition.md).
+
+<div className={'hide-code-block-extras'}>
+
+```typescript reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/wallet/17-check-unlock-conditions.ts#L40-L53
+```
+
+</div>
+
+</TabItem>
+<TabItem value="python" label="Python">
+
+You can check for
+[`UnlockConditions`](../../references/python/iota_sdk/types/unlock_condition.md)
+by inspecting the `Output.unlockConditions` attribute.
+It will return all the unlock conditions for any output.
+This example looks for the [`AddressUnlockCondition`](../../references/python/iota_sdk/types/unlock_condition.md#addressunlockcondition-objects).
+
+<div className={'hide-code-block-extras'}>
+
+```python reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/wallet/13-check-unlock-conditions.py#L29-L31
+```
+
+</div>
+
+</TabItem>
+</Tabs>
+
+### Full Example Code
+
+<Tabs groupId="language" queryString>
+<TabItem value="rust" label="Rust">
+
+```rust reference
+https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/wallet/17_check_unlock_conditions.rs
+```
+
+</TabItem>
+<TabItem value="typescript-node" label="Typescript (Node.js)">
+
+```typescript reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/wallet/17-check-unlock-conditions.ts
+```
+
+</TabItem>
+<TabItem value="python" label="Python">
+
+```python reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/wallet/13-check-unlock-conditions.py
+```
+
+</TabItem>
+</Tabs>
+
+### Expected Output
+
+```plaintext
+The output has only an address unlock condition and the address is from the account: [account ID]
+```

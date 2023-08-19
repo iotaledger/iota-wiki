@@ -301,7 +301,7 @@ If any part of the process is aborted or fails, it can be redone! If something s
 
 IMPORTANT: Never share personal information regarding the number of tokens you own, their type, or where and how you keep them, how you secure them, including passwords, recovery passphrases, and user names of wallet accounts or exchanges. Do NOT share that information with anyone – including members of the IOTA Foundation.
 
-Read more about "Security During Token Migration" on Chrysalis [here](https://blog.iota.org/security-during-token-migration/).
+Read more about "Security During Token Migration" on _Chrysalis_ [here](https://blog.iota.org/security-during-token-migration/).
 
 #### If I have multiple addresses associated with one seed, will the Chrysalis migration send all of my tokens to one address?
 

@@ -28,7 +28,7 @@ mapped to your users clearly and concisely.
 ## Multi-Account Model
 
 Use the multi-account model to create an account for each user. As you can assign
-an arbitrary unique [account alias](../references/nodejs/interfaces/AccountMeta/#alias) to any account, you can easily
+an arbitrary unique [account alias](../references/nodejs/interfaces/AccountMeta.md#alias) to any account, you can easily
 link the accounts to your own database's internal user IDs.
 
 ## Single Account Model

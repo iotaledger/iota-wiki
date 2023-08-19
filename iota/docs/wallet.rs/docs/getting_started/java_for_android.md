@@ -39,7 +39,7 @@ These variables are used to generate correct binaries during cross compilation a
 
 When building an app, you as a developer must decide for how many architectures you make an APK for. Binaries need to be generated for each architecture.
 
-The android-app example has a [build.gradle](../../../bindings/java/examples/android-app/build.gradle) file that shows the enabled list in a variable called `archTriplets`. You can disable and enable them, as long as you have at least one. (This file will also automatically compile our binaries when we run gradle. Feel free to use it in your project!)
+The android-app example has a [build.gradle](https://github.com/iotaledger/wallet.rs/blob/production/bindings/java/examples/android-app/build.gradle) file that shows the enabled list in a variable called `archTriplets`. You can disable and enable them, as long as you have at least one. (This file will also automatically compile our binaries when we run gradle. Feel free to use it in your project!)
 
 We will use `archTriplets` for the enabled list of device targets during this tutorial.
 
