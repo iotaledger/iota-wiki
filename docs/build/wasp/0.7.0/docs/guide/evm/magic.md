@@ -28,7 +28,17 @@ i.e. it is not a pure-Solidity contract.
 The Magic contract has several methods, which are categorized into specialized
 interfaces: `ISCSandbox`, `ISCAccounts`, `ISCUtil` and so on.
 You can access these interfaces from any Solidity contract by importing
-the [ISC library](https://github.com/iotaledger/wasp/blob/develop/packages/vm/core/evm/iscmagic/ISC.sol).
+the [ISC library](https://www.npmjs.com/package/@iota/iscmagic):
+
+```sh
+yarn add @iota/iscmagic
+```
+
+Thereon you can import it into your contracts as such:
+
+```solidity
+import "@iota/iscmagic/ISC.sol";
+```
 
 The Magic contract also provides proxy ERC20 contracts to manipulate ISC base
 tokens and native tokens on L2.
@@ -40,7 +50,7 @@ tokens and native tokens on L2.
 ```solidity
 pragma solidity >=0.8.5;
 
-import "@iscmagic/ISC.sol";
+import "@iota/iscmagic/ISC.sol";
 
 contract MyEVMContract {
     event EntropyEvent(bytes32 entropy);
@@ -65,7 +75,7 @@ You can call native contracts using [`ISC.sandbox.call`](https://github.com/iota
 ```solidity
 pragma solidity >=0.8.5;
 
-import "@iscmagic/ISC.sol";
+import "@iota/iscmagic/ISC.sol";
 
 contract MyEVMContract {
     event EntropyEvent(bytes32 entropy);
