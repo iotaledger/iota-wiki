@@ -4,7 +4,7 @@ In this tutorial, you will upload your desired image to [IPFS](https://ipfs.tech
 
 ## Prerequisites
 
-- [Node.js](https://nodejs.org/en/).
+- [Node.js](https://nodejs.org/en/) v16 and above supported. Tested till v20.
 - Finish the [Set up testnet address and receive funds from faucet](https://wiki.iota.org/tutorials/wallet-setup) tutorial.
 
 ## Set Up
