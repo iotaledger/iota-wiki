@@ -16,7 +16,7 @@ This tutorial shows how to get Shimmer testnet tokens and send them to another a
 
 [Install NodeJs](https://nodejs.org/) and update to the latest stable version available.
 
-If you want, you can change the [BIP39 mnemonic](https://en.bitcoin.it/wiki/BIP_0039) and choose a different password, but be sure to set the node URLs to a Shimmer testnet node (we use the nodes provided by IF in this tutorial). For example:
+Setup an env file and if you want, you can change the [BIP39 mnemonic](https://en.bitcoin.it/wiki/BIP_0039) and choose a different password, but be sure to set the node URLs to a Shimmer testnet node (we use the nodes provided by IF in this tutorial). For example:
 
 ```sh
 # Mnemonics (Don't ever use them to manage real funds!)
@@ -104,7 +104,7 @@ Now you should have some tokens. To validate that, we can use the library to ins
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const _syncBalance = await account.sync();
 
-// After syncing the balance can also be computed with the local data
+// After syncing the balance can also be computed with the local data. (This is optional.)
 const balance = await account.getBalance();
 console.log('Balance', balance);
 ```
