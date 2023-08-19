@@ -3,6 +3,7 @@ tasks:
     init: |
       corepack enable
       yarn
+      yarn build:theme && yarn build:plugins
       yarn build:all
     command: yarn serve
 github:

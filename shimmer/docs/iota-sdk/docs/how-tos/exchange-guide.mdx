@@ -31,7 +31,7 @@ Features of the IOTA SDK:
 :::note Stardust Update
 
 The Stardust update is a set of protocol changes that were first deployed to the Shimmer network.
-See [What is Stardust?](https://wiki.iota.org/shimmer/develop/explanations/what-is-stardust/)
+See [What is Stardust?](https://wiki.iota.org/shimmer/develop/explanations/what-is-stardust.md)
 for an overview of its features or [TIPs](https://github.com/iotaledger/tips)
 flagged `Stardust` for a deeper understanding of the protocol changes.
 
@@ -78,35 +78,35 @@ Most of the APIs are the same and the changes are fairly minimal, here are some 
 
 - The npm package changes from [`@iota/wallet`](https://www.npmjs.com/package/@iota/wallet) to
   [`@iota/sdk`](https://www.npmjs.com/package/@iota/sdk).
-- [`AccountManager`](https://wiki.iota.org/shimmer/wallet.rs/references/nodejs/classes/AccountManager/)
+- [`AccountManager`](https://wiki.iota.org/shimmer/wallet.rs/references/nodejs/classes/AccountManager.md)
   becomes
-  [`Wallet`](../references/nodejs/classes/Wallet/).
-- [`manager.generateMnemonic()`](https://wiki.iota.org/shimmer/wallet.rs/references/nodejs/classes/AccountManager/#generatemnemonic)
+  [`Wallet`](../references/nodejs/classes/Wallet.md).
+- [`manager.generateMnemonic()`](https://wiki.iota.org/shimmer/wallet.rs/references/nodejs/classes/AccountManager.md#generatemnemonic)
   becomes
-  [`Utils.generateMnemonic()`](../references/nodejs/classes/Utils/#generatemnemonic).
-- [`AccountManager.generateAddress`](https://wiki.iota.org/shimmer/wallet.rs/references/nodejs/classes/AccountManager/#generateaddress)
+  [`Utils.generateMnemonic()`](../references/nodejs/classes/Utils.md#generatemnemonic).
+- [`AccountManager.generateAddress`](https://wiki.iota.org/shimmer/wallet.rs/references/nodejs/classes/AccountManager.md#generateaddress)
   becomes
-  [`Wallet.generateEd25519Addresses`](../references/nodejs/classes/Wallet/#generateed25519address).
-- [`Account.sendAmount`](https://wiki.iota.org/shimmer/wallet.rs/references/nodejs/classes/Account/) becomes
-  [`send`](../references/nodejs/classes/Account/#send).
+  [`Wallet.generateEd25519Addresses`](../references/nodejs/classes/Wallet.md#generateed25519address).
+- [`Account.sendAmount`](https://wiki.iota.org/shimmer/wallet.rs/references/nodejs/classes/Account.md) becomes
+  [`send`](../references/nodejs/classes/Account.md#send).
 - The callbacks to `listen` now provide a properly typed
-  [`Event`](../references/nodejs/classes/Event/).
+  [`Event`](../references/nodejs/classes/Event.md).
 
 </TabItem>
 <TabItem value="python" label="Python">
 
-- The pip package changes from `iota-wallet` to [`iota-sdk`](https://pypi.org/project/iota-sdk/).
-- [`wallet.generate_mnemonic()`](https://wiki.iota.org/shimmer/wallet.rs/references/python/iota_wallet/wallet/#generate_mnemonic)
+- The pip package changes from `iota-wallet` to [`iota-sdk`](https://pypi.org/project/iota-sdk.md).
+- [`wallet.generate_mnemonic()`](https://wiki.iota.org/shimmer/wallet.rs/references/python/iota_wallet/wallet.md#generate_mnemonic)
   becomes
-  [`utils.generate_mnemonic()`](../references/python/iota_sdk/utils/#generate_mnemonic).
-- [`wallet.generate_address()`](https://wiki.iota.org/shimmer/wallet.rs/references/python/iota_wallet/wallet/#generate_address)
+  [`utils.generate_mnemonic()`](../references/python/iota_sdk/utils.md#generate_mnemonic).
+- [`wallet.generate_address()`](https://wiki.iota.org/shimmer/wallet.rs/references/python/iota_wallet/wallet.md#generate_address)
   becomes
-  [`wallet.generate_ed25519_addresses()`](../references/python/iota_sdk/wallet/#generate_ed25519_address).
-- [`account.send_amount`](https://wiki.iota.org/shimmer/wallet.rs/references/python/iota_wallet/account/#send_amount)
+  [`wallet.generate_ed25519_addresses()`](../references/python/iota_sdk/wallet/wallet.md#generate_ed25519_address).
+- [`account.send_amount`](https://wiki.iota.org/shimmer/wallet.rs/references/python/iota_wallet/account.md#send_amount)
   becomes
-  [`account.send`](../references/python/iota_sdk/wallet/account/#send).
+  [`account.send`](../references/python/iota_sdk/wallet/account.md#send).
 - The callbacks to `listen` now provide a properly typed
-  [`event`](../references/python/iota_sdk/types/event/).
+  [`event`](../references/python/iota_sdk/types/event.md).
 
 </TabItem>
 </Tabs>
@@ -220,7 +220,7 @@ complexities and makes transacting in a network very easy and convenient.
 :::warning Back up and Security
 
 Keep the `stronghold` password and the `stronghold` database on separate devices.
-See the [backup and security guide](https://wiki.iota.org/shimmer/introduction/how_tos/backup_security/) for more
+See the [backup and security guide](https://wiki.iota.org/shimmer/introduction/how_tos/backup_security.md) for more
 information.
 
 :::
@@ -309,40 +309,40 @@ instance include:
 <TabItem value="typescript-node" label="Typescript (Node.js)">
 
 You get an instance of any created account using
-[`Wallet.getAccount(accountId|alias)`](../references/nodejs/classes/Wallet/#getaccount)
+[`Wallet.getAccount(accountId|alias)`](../references/nodejs/classes/Wallet.md#getaccount)
 or get all accounts with
-[`Wallet.getAccounts()`](../references/nodejs/classes/Wallet/#getaccounts).
+[`Wallet.getAccounts()`](../references/nodejs/classes/Wallet.md#getaccounts).
 
-Common methods of an [`Account`](../references/nodejs/classes/Account/)
+Common methods of an [`Account`](../references/nodejs/classes/Account.md)
 instance include:
 
-- [`account.addresses()`](../references/nodejs/classes/Account/#addresses):
+- [`account.addresses()`](../references/nodejs/classes/Account.md#addresses):
   Returns a list of addresses related to the account.
-- [`account.generateEd25519Addresses()`](../references/nodejs/classes/Account/#generateed25519addresses):
+- [`account.generateEd25519Addresses()`](../references/nodejs/classes/Account.md#generateed25519addresses):
   Generates one or more new address(es) for the address index incremented by 1.
-- [`account.getBalance()`](../references/nodejs/classes/Account/#getbalance):
+- [`account.getBalance()`](../references/nodejs/classes/Account.md#getbalance):
   Returns the balance for the given account.
-- [`account.sync()`](../references/nodejs/classes/Account/#sync): Sync the
+- [`account.sync()`](../references/nodejs/classes/Account.md#sync): Sync the
   account information with the Tangle.
 
 </TabItem>
 <TabItem value="python" label="Python">
 
 You get an instance of any created account using
-[`wallet.get_account(accountId|alias)`](../references/python/iota_sdk/wallet/#get_account)
+[`wallet.get_account(accountId|alias)`](../references/python/iota_sdk/wallet/wallet.md#get_account)
 or get all accounts with
-[`wallet.get_accounts()`](../references/python/iota_sdk/wallet/#get_accounts).
+[`wallet.get_accounts()`](../references/python/iota_sdk/wallet/wallet.md#get_accounts).
 
 Common methods of an
-[`Account`](../references/python/iota_sdk/wallet/account/) instance include:
+[`Account`](../references/python/iota_sdk/wallet/account.md) instance include:
 
-- [`account.addresses()`](../references/python/iota_sdk/wallet/account/#addresses):
+- [`account.addresses()`](../references/python/iota_sdk/wallet/account.md#addresses):
   Returns a list of addresses related to the account.
-- [`account.generate_ed25519_addresses()`](../references/python/iota_sdk/wallet/account/#generate_ed25519_addresses):
+- [`account.generate_ed25519_addresses()`](../references/python/iota_sdk/wallet/account.md#generate_ed25519_addresses):
   Generates one or more new address(es) for the address index incremented by 1.
-- [`account.get_balance()`](../references/python/iota_sdk/wallet/account/#get_balance):
+- [`account.get_balance()`](../references/python/iota_sdk/wallet/account.md#get_balance):
   Returns the balance for the given account.
-- [`account.sync()`](../references/python/iota_sdk/wallet/account/#sync):
+- [`account.sync()`](../references/python/iota_sdk/wallet/account.md#sync):
   Sync the account information with the Tangle.
 
 </TabItem>
@@ -415,7 +415,7 @@ for address in addresses:
 
 </Tabs>
 
-You can use the [Faucet](https://faucet.testnet.shimmer.network/) to request test tokens and test your account.
+You can use the [Faucet](https://faucet.testnet.shimmer.network.md) to request test tokens and test your account.
 
 There are two types of addresses, `internal` and `public` (external). This approach is known as a _BIP32 Hierarchical Deterministic wallet (HD Wallet)_.
 
@@ -515,16 +515,16 @@ to get all the outputs that are stored in the account, or
 </TabItem>
 <TabItem value="typescript-node" label="Typescript (Node.js)">
 
-Alternatively you can use [`account.outputs()`](../references/nodejs/classes/Account/#outputs) to get all the outputs
-that are stored in the account, or [`account.unspentOutputs()`](../references/nodejs/classes/Account/#unspentoutputs),
+Alternatively you can use [`account.outputs()`](../references/nodejs/classes/Account.md#outputs) to get all the outputs
+that are stored in the account, or [`account.unspentOutputs()`](../references/nodejs/classes/Account.md#unspentoutputs),
 to get the unspent outputs only.
 
 </TabItem>
 <TabItem value="python" label="Python">
 
 Alternatively you can use
-[`account.outputs()`](../references/python/iota_sdk/wallet/account/#outputs) to get all the outputs that are stored in
-the account, or [`account.unspent_outputs()`](../references/python/iota_sdk/wallet/account/#unspent_outputs),
+[`account.outputs()`](../references/python/iota_sdk/wallet/account.md#outputs) to get all the outputs that are stored in
+the account, or [`account.unspent_outputs()`](../references/python/iota_sdk/wallet/account.md#unspent_outputs),
 to get the unspent outputs only.
 
 </TabItem>
@@ -584,30 +584,30 @@ https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/exc
 
 The full function signature is
 [`Account.send(amount, address,
-transactionOptions?)`](../references/nodejs/classes/Account/#send).
+transactionOptions?)`](../references/nodejs/classes/Account.md#send).
 
 The default
-[`TransactionOptions`](../references/nodejs/interfaces/TransactionOptions/)
+[`TransactionOptions`](../references/nodejs/interfaces/TransactionOptions.md)
 are fine and successful. However, you can provide additional options, such as
-[`remainderValueStrategy`](../references/nodejs/interfaces/TransactionOptions/#remaindervaluestrategy),
+[`remainderValueStrategy`](../references/nodejs/interfaces/TransactionOptions.md#remaindervaluestrategy),
 which can have the following values:
 
-- [`changeAddress`](../references/nodejs/api_ref/#changeaddress): Send the
+- [`changeAddress`](../references/nodejs/api_ref.md#changeaddress): Send the
   remainder value to an internal address.
-- [`reuseAddress`](../references/nodejs/api_ref/#reuseaddress): Send the
+- [`reuseAddress`](../references/nodejs/api_ref.md#reuseaddress): Send the
   remainder value back to its original address.
-- [`customAddress`](../references/nodejs/api_ref/#customaddress): Send the
+- [`customAddress`](../references/nodejs/api_ref.md#customaddress): Send the
   remainder value back to a provided account address.
 
 The `account.send()` function returns a
-[`Transaction`](../references/nodejs/classes/Transaction/)
+[`Transaction`](../references/nodejs/classes/Transaction.md)
 with its id. You can use the `blockId` to check the confirmation status. You can obtain individual
 transactions related to the given account using the
-[`account.transactions()`](../references/nodejs/classes/Account/#transactions)
+[`account.transactions()`](../references/nodejs/classes/Account.md#transactions)
 function.
 
 You can use the
-[`account.sendWithParams()`](../references/nodejs/classes/Account/#sendwithparams)
+[`account.sendWithParams()`](../references/nodejs/classes/Account.md#sendwithparams)
 to send to multiple addresses in a single transaction.
 
 </TabItem>
@@ -619,12 +619,12 @@ https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/exc
 
 The full function signature is
 [`Account.send(send(amount: str, address: str, options: Optional[TransactionOptions] =
-None)`](../references/python/iota_sdk/wallet/account/#send).
+None)`](../references/python/iota_sdk/wallet/account.md#send).
 
 The default
-[`TransactionOptions`](../references/python/iota_sdk/types/transaction_options/)
+[`TransactionOptions`](../references/python/iota_sdk/types/transaction_options.md)
 are fine and successful. However, you can provide additional options, such as
-[`remainderValueStrategy`](../references/python/iota_sdk/types/transaction_options/#remaindervaluestrategy-objects),
+[`remainderValueStrategy`](../references/python/iota_sdk/types/transaction_options.md#remaindervaluestrategy-objects),
 which can have the following values:
 
 - `changeAddress`: Send the remainder value to an internal address.
@@ -632,14 +632,14 @@ which can have the following values:
 - `customAddress`: Send the remainder value back to a provided account address.
 
 The `account.send()` function returns a
-[`Transaction`](../references/python/iota_sdk/types/transaction/)
+[`Transaction`](../references/python/iota_sdk/types/transaction.md)
 with its id. You can use the `blockId` to check the confirmation status. You can obtain individual
 transactions related to the given account using the
-[`account.transactions()`](../references/python/iota_sdk/wallet/account/#transactions)
+[`account.transactions()`](../references/python/iota_sdk/wallet/account.md#transactions)
 function.
 
 You can use the
-[`account.send_with_params()`](../references/python/iota_sdk/wallet/account/#send_with_params)
+[`account.send_with_params()`](../references/python/iota_sdk/wallet/account.md#send_with_params)
 to send to multiple addresses in a single transaction.
 
 </TabItem>

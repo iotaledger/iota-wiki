@@ -121,7 +121,7 @@ Once an idea successfully passes phase 2, a vote is initiated in phase 3 using t
       <td>
         <ul>
           <li>The post must discuss one of the
-            <a href="./governance-scope.md"> parameters that are open for governance </a>
+            <a href="/learn/governance/governance-scope"> parameters that are open for governance </a>
           </li>
           <li>The post must follow the rules set for
             <a href="#guaranteeing-stability---resubmital-delay"> resubmittal delays </a>
@@ -201,7 +201,7 @@ Once an idea successfully passes phase 2, a vote is initiated in phase 3 using t
         <ul>
           <li>Spam</li>
           <li>Does not talk about the
-            <a href="./governance-scope.md"> parameters open for governance </a>
+            <a href="/learn/governance/governance-scope"> parameters open for governance </a>
           </li>
           <li>Proposal has no engagement over 30 days</li>
           <li>Proposal doesn't reach a minimum of votes/likes</li>
@@ -223,7 +223,7 @@ Once an idea successfully passes phase 2, a vote is initiated in phase 3 using t
         <ul>
           <li>Option “Make no changes” reaches the simple majority of votes</li>
           <li>Does not reach 5% quorum of
-            <a href="d#maximum-achievable-votes">maximum achievable votes
+            <a href="#maximum-achievable-votes">maximum achievable votes
             </a>
           </li>
           <li>Canceled through an emergency proposal submitted during the 7-day cooldown.</li>

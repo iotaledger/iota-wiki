@@ -1,5 +1,5 @@
 ---
-title: Unlock Conditions
+title: Add Unlock Conditions
 description: 'How to set unlock conditions for outputs'
 image: /img/logo/iota_mark_light.png
 keywords:
@@ -14,23 +14,13 @@ keywords:
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AccountClient from '../../_admonitions/_account-client.md';
+import OutputUnlockConditions from '../../_admonitions/_output_unlock_conditions.md';
 
 Outputs can have different unlock conditions. This guide explains how to add them to an output.
 
 <AccountClient />
 
-:::info Output Unlock Conditions
-
-Different outputs can have different unlock conditions. This table shows you which output is compatible with which unlock condition. You can find the output specs in [TIP-018](https://wiki.iota.org/tips/tips/TIP-0018)
-
-| Output  | Address | Storage Deposit Return | Timelock | Expiration | State Controller Address | Governor Address | Immutable Alias Address |
-| ------- | :-----: | :--------------------: | :------: | :--------: | :----------------------: | :--------------: | :---------------------: |
-| Basic   |    x    |           x            |    x     |     x      |                          |                  |                         |
-| Alias   |         |                        |          |            |            x             |        x         |                         |
-| Foundry |         |                        |          |            |                          |                  |            x            |
-| NFT     |    x    |           x            |    x     |     x      |                          |                  |                         |
-
-:::
+<OutputUnlockConditions />
 
 ## Example Code
 
@@ -97,11 +87,11 @@ https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/outputs
 <TabItem value="typescript-node" label="Typescript (Node.js)">
 
 The following example will add the following
-[`unlockConditions`](../../../references/nodejs/classes/UnlockCondition/)
-by passing them as [output parameters](../../../references/nodejs/interfaces/BasicOutputBuilderParams/#unlockconditions)
+[`unlockConditions`](../../references/nodejs/classes/UnlockCondition.md)
+by passing them as [output parameters](../../references/nodejs/interfaces/BasicOutputBuilderParams.md#unlockconditions)
 when building the outputs:
 
-1. [`StorageDepositReturnUnlockCondition`](../../../references/nodejs/classes/StorageDepositReturnUnlockCondition/).
+1. [`StorageDepositReturnUnlockCondition`](../../references/nodejs/classes/StorageDepositReturnUnlockCondition.md).
 
 <div className={'hide-code-block-extras'}>
 
@@ -111,7 +101,7 @@ https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how
 
 </div>
 
-2. [`TimelockUnlockCondition`](../../../references/nodejs/classes/TimelockUnlockCondition/).
+2. [`TimelockUnlockCondition`](../../references/nodejs/classes/TimelockUnlockCondition.md).
 
 <div className={'hide-code-block-extras'}>
 
@@ -121,7 +111,7 @@ https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how
 
 </div>
 
-3. [`ExpirationUnlockCondition`](../../../references/nodejs/classes/ExpirationUnlockCondition/).
+3. [`ExpirationUnlockCondition`](../../references/nodejs/classes/ExpirationUnlockCondition.md).
 
 <div className={'hide-code-block-extras'}>
 
@@ -131,7 +121,7 @@ https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how
 
 </div>
 
-4. [`GovernorAddressUnlockCondition`](../../../references/nodejs/classes/GovernorAddressUnlockCondition/) and [`StateControllerAddressUnlockCondition`](../../../references/nodejs/classes/StateControllerAddressUnlockCondition/).
+4. [`GovernorAddressUnlockCondition`](../../references/nodejs/classes/GovernorAddressUnlockCondition.md) and [`StateControllerAddressUnlockCondition`](../../references/nodejs/classes/StateControllerAddressUnlockCondition.md).
 
 <div className={'hide-code-block-extras'}>
 
@@ -141,7 +131,7 @@ https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how
 
 </div>
 
-6. [`ImmutableAliasAddressUnlockCondition`](../../../references/nodejs/classes/ImmutableAliasAddressUnlockCondition/).
+6. [`ImmutableAliasAddressUnlockCondition`](../../references/nodejs/classes/ImmutableAliasAddressUnlockCondition.md).
 
 <div className={'hide-code-block-extras'}>
 
@@ -154,11 +144,11 @@ https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how
 </TabItem>
 <TabItem value="python" label="Python">
 
-The following example will add the following [`unlockConditions`](../../../references/python/iota_sdk/client/#parameters-2)
-by passing them as [output parameters](../../../references/nodejs/interfaces/BasicOutputBuilderParams/#unlockconditions)
+The following example will add the following [`unlockConditions`](../../references/python/iota_sdk/client/client.md#parameters-2)
+by passing them as [output parameters](../../references/nodejs/interfaces/BasicOutputBuilderParams.md#unlockconditions)
 when building the outputs:
 
-1. [`StorageDepositReturnUnlockCondition`](https://wiki.iota.org/next/iota-sdk/references/python/iota_sdk/types/unlock_condition/#storagedepositreturnunlockcondition-objects).
+1. [`StorageDepositReturnUnlockCondition`](https://wiki.iota.org/next/iota-sdk/references/python/iota_sdk/types/unlock_condition.md#storagedepositreturnunlockcondition-objects).
 
 <div className={'hide-code-block-extras'}>
 
@@ -168,7 +158,7 @@ https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how
 
 </div>
 
-2. [`TimelockUnlockCondition`](https://wiki.iota.org/next/iota-sdk/references/python/iota_sdk/types/unlock_condition/#timelockunlockcondition-objects).
+2. [`TimelockUnlockCondition`](https://wiki.iota.org/next/iota-sdk/references/python/iota_sdk/types/unlock_condition.md#timelockunlockcondition-objects).
 
 <div className={'hide-code-block-extras'}>
 
@@ -178,7 +168,7 @@ https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how
 
 </div>
 
-3. [`ExpirationUnlockCondition`](https://wiki.iota.org/next/iota-sdk/references/python/iota_sdk/types/unlock_condition/#expirationunlockcondition-objects).
+3. [`ExpirationUnlockCondition`](https://wiki.iota.org/next/iota-sdk/references/python/iota_sdk/types/unlock_condition.md#expirationunlockcondition-objects).
 
 <div className={'hide-code-block-extras'}>
 
@@ -188,7 +178,7 @@ https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how
 
 </div>
 
-4. [`GovernorAddressUnlockCondition`](https://wiki.iota.org/next/iota-sdk/references/python/iota_sdk/types/unlock_condition/#statecontrolleraddressunlockcondition-objects) and [`StateControllerAddressUnlockCondition`](https://wiki.iota.org/next/iota-sdk/references/python/iota_sdk/types/unlock_condition/#governoraddressunlockcondition-objects).
+4. [`GovernorAddressUnlockCondition`](https://wiki.iota.org/next/iota-sdk/references/python/iota_sdk/types/unlock_condition.md#statecontrolleraddressunlockcondition-objects) and [`StateControllerAddressUnlockCondition`](https://wiki.iota.org/next/iota-sdk/references/python/iota_sdk/types/unlock_condition.md#governoraddressunlockcondition-objects).
 
 <div className={'hide-code-block-extras'}>
 
@@ -198,7 +188,7 @@ https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how
 
 </div>
 
-6. [`ImmutableAliasAddressUnlockCondition`](https://wiki.iota.org/next/iota-sdk/references/python/iota_sdk/types/unlock_condition/#immutablealiasaddressunlockcondition-objects).
+6. [`ImmutableAliasAddressUnlockCondition`](https://wiki.iota.org/next/iota-sdk/references/python/iota_sdk/types/unlock_condition.md#immutablealiasaddressunlockcondition-objects).
 
 <div className={'hide-code-block-extras'}>
 

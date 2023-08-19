@@ -39,16 +39,16 @@ commands to suit your needs.
 
 ## High-level Overview
 
-|                                    | [wallet.rs](#walletrs) | [iota.rs](#iotars) | [iota.js](iotajs) |
-| ---------------------------------- | ---------------------- | ------------------ | ----------------- |
-| Main language                      | Rust                   | Rust               | TypeScript        |
-| Java binding                       | Yes                    | Yes                | No                |
-| Python binding                     | Yes                    | Yes                | No                |
-| NodeJs binding                     | Yes                    | Yes                | No                |
-| Stateful                           | Yes                    | No                 | No                |
-| Recommended for value transactions | Yes                    | No                 | No                |
-| Secured by Stronghold              | Always                 | Optional           | Optional          |
-| Latest Features                    | Yes                    | Yes                | Almost            |
+|                                    | [wallet.rs](#walletrs) | [iota.rs](#iotars) | [iota.js](#iotajs) |
+| ---------------------------------- | ---------------------- | ------------------ | ------------------ |
+| Main language                      | Rust                   | Rust               | TypeScript         |
+| Java binding                       | Yes                    | Yes                | No                 |
+| Python binding                     | Yes                    | Yes                | No                 |
+| NodeJs binding                     | Yes                    | Yes                | No                 |
+| Stateful                           | Yes                    | No                 | No                 |
+| Recommended for value transactions | Yes                    | No                 | No                 |
+| Secured by Stronghold              | Always                 | Optional           | Optional           |
+| Latest Features                    | Yes                    | Yes                | Almost             |
 
 ## wallet.rs
 

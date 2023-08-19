@@ -110,23 +110,20 @@ async function globStatic(pattern, cwd = __dirname) {
  * Create a section
  * @param {import('@docusaurus/plugin-content-docs').Options} options
  */
-function create_doc_plugin({ ...options }) {
-  const clone = { ...defaultSettings };
+async function create_doc_plugin({ ...options }) {
+  const setting = await defaultSettings();
+
   // Check if options has a rehypePlugin array
   if (options.rehypePlugins) {
     // If it does, add it to the clone and delete it from options
-    clone.rehypePlugins = defaultSettings.rehypePlugins.concat(
-      options.rehypePlugins,
-    );
+    setting.rehypePlugins.push(...options.rehypePlugins);
     delete options.rehypePlugins;
   }
 
   // Check if options has a remarkPlugins array
   if (options.remarkPlugins) {
     // If it does, add it to the clone and delete it from options
-    clone.remarkPlugins = defaultSettings.remarkPlugins.concat(
-      options.remarkPlugins,
-    );
+    setting.remarkPlugins.push(...options.remarkPlugins);
     delete options.remarkPlugins;
   }
 
@@ -134,7 +131,7 @@ function create_doc_plugin({ ...options }) {
     '@docusaurus/plugin-content-docs',
     /** @type {import('@docusaurus/plugin-content-docs').Options} */
     ({
-      ...clone,
+      ...setting,
       ...options,
     }),
   ];
