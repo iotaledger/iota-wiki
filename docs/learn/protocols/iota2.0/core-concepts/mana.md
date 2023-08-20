@@ -1,3 +1,5 @@
+import ManaCalculator from '@site/src/components/ManaCalculator';
+
 # Tokenomics: Mana, Accounts, Staking and Delegation
 
 Mana is a scarce resource used to access the IOTA ledger and update its state through block creation. It is a spendable asset tracked in the ledger state, powering smart contracts, DeFi applications, block creation, and various other services, and is linked to [accounts](#accounts), which allow you to [stake or delegate](#staking-and-delegation-1) mana to receive [Mana rewards](#mana-rewards).
@@ -237,3 +239,7 @@ A reward scheme is always a powerful mechanism to incentivize actors to have cer
 - No incentives for centralizing the funds of validators and delegators.
   - By the construction of our reward formulas, there is no incentive for the centralization of validator funds. Technically speaking, this means that two different validators do not get more rewards by combining their stake.
   - Analogously, the concentration of delegator funds is disincentivized by the construction of our reward formula. As more delegated stake is concentrated on the same validator, the rewards of the delegators become smaller. Then, the delegators are incentivized to redelegate to validators with less delegated stake. In the long run, under the assumption that actors are rational, the system should stabilize around a constant ratio of delegated and validator stake among pools.
+
+## Mana Calculator
+
+<ManaCalculator/>
