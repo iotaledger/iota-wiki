@@ -66,27 +66,6 @@ const LibrariesSection: FC = () => (
         </Link>
       </div>
     </div>
-    <div className='nodes__card '>
-      <div className='nodes__icon'>
-        <SmartContracts />
-      </div>
-      <div className='nodes__section'>
-        <div className='nodes__head'></div>
-        <h3 className='nodes__header'>IOTA Smart Contracts</h3>
-        <p className='nodes__body'>
-          The IOTA Smart Contracts Protocol brings scalable and flexible smart
-          contracts to the early stage and still experimental test chain.
-        </p>
-        <div className='start-building__buttons'>
-          <Link
-            to='/smart-contracts/overview'
-            className='start-building__button button button--outline button--primary'
-          >
-            Learn about ISC
-          </Link>
-        </div>
-      </div>
-    </div>
     <div className='nodes__card'>
       <div className='nodes__icon'>
         <Identity />

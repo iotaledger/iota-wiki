@@ -4,6 +4,13 @@ module.exports = {
       type: 'category',
       label: 'Introduction',
       collapsed: false,
+      link: {
+        type: 'generated-index',
+        title: 'Introduction',
+        description: 'Learn more about both our mainnet and our staging network Shimmer.',
+        slug: '/introduction',
+        keywords: ['introduction', 'iota', 'shimmer'],
+      },
       items: [
         {
           type: 'category',

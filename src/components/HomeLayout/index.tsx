@@ -12,16 +12,17 @@ import {
   Discord,
   Hornet,
   IntegrationServices,
-  IotaToken,
+  IotaCore,
   PickAWallet,
-  Search,
   Shimmer,
+  Search,
   Tips,
   Tutorials,
   Wasp,
 } from '@site/src/common/icons';
 import CoreLibrariesSection from './CoreLibrariesSection';
 import AppLibrariesSection from './AppLibrariesSection';
+import FeaturedSlider from '@site/src/common/components/FeaturedSlider';
 
 interface HomepageSectionProps {
   header?: string;
@@ -62,59 +63,36 @@ export default function HomeLayout() {
   return (
     <Layout description={siteConfig.tagline}>
       <div className='homepage'>
-        <HomepageSection className='homepage__section--intro'>
-          <div className='intro'>
-            <div className='intro__section'>
-              <h1 className='intro__header'>{siteConfig.tagline}</h1>
-              <p className='intro__description'>
-                This is unreleased documentation in active development. For
-                up-to-date releases, please see <a href='/shimmer'>Shimmer</a>{' '}
-                and <a href='/'>IOTA</a> documentation.
-              </p>
-              <div className='intro__buttons'>
-                <Link
-                  to='learn/welcome'
-                  className='intro__button button button--outline button--primary'
-                >
-                  Learn about Shimmer
-                </Link>
-                <Link
-                  to='#core-libraries'
-                  className='intro__button button button--primary'
-                >
-                  Start building
-                </Link>
-              </div>
-            </div>
-          </div>
-        </HomepageSection>
-        <HomepageSection header='Use Shimmer'>
+        <FeaturedSlider />
+        <HomepageSection header='Use IOTA'>
           <div className='about__cards'>
-            <Link to='learn/welcome' className='about__card'>
+            <Link
+              to='/get-started/introduction/iota/introduction'
+              className='about__card'
+            >
               <div className='about__section'>
                 <div className='about__icon'>
-                  <Shimmer />
+                  <IotaCore />
                 </div>
-                <h3 className='about__header'>What is Shimmer?</h3>
+                <h3 className='about__header'>What is IOTA?</h3>
                 <p className='about__description'>
                   An open, feeless and scalable distributed ledger, designed to
                   support data and value transfer.
                 </p>
               </div>
             </Link>
-            <Link to='learn/token/buying' className='about__card'>
+            <Link to='/get-started/introduction/shimmer/introduction' className='about__card'>
               <div className='about__section'>
                 <div className='about__icon'>
-                  <IotaToken />
+                  <Shimmer />
                 </div>
-                <h3 className='about__header'>Get Shimmer tokens</h3>
+                <h3 className='about__header'>What is Shimmer?</h3>
                 <p className='about__description'>
-                  The Shimmer token is used to transact value on the Shimmer
-                  distributed ledger.
+                  A scalable and feeless network enabling frictionless decentralized and scalable Web3 economies.
                 </p>
               </div>
             </Link>
-            <Link to='/use/wallets/what-is-a-wallet' className='about__card'>
+            <Link to='/get-started/wallets' className='about__card'>
               <div className='about__section'>
                 <div className='about__icon'>
                   <PickAWallet />
@@ -122,7 +100,7 @@ export default function HomeLayout() {
                 <h3 className='about__header'>Pick a wallet</h3>
                 <p className='about__description'>
                   Choose a wallet to store your public and private keys and
-                  interact with the Shimmer network.
+                  interact with the IOTA network.
                 </p>
               </div>
             </Link>
@@ -130,19 +108,19 @@ export default function HomeLayout() {
         </HomepageSection>
         <HomepageSection
           header='Core Libraries'
-          description='With the Shimmer core libraries you can easily integrate Shimmer into your own applications.'
+          description='With the IOTA core libraries you can easily integrate IOTA into your own applications.'
         >
           <CoreLibrariesSection />
         </HomepageSection>
         <HomepageSection
           header='Application Libraries'
-          description='With the Shimmer application libraries you can easily integrate Shimmer into your own applications.'
+          description='With the IOTA application libraries you can easily integrate IOTA into your own applications.'
         >
           <AppLibrariesSection />
         </HomepageSection>
         <HomepageSection
           header='Nodes and extensions'
-          description='Nodes are the core of an Shimmer network. They run the node software, which gives them read and write access to the Shimmer network. You can extend their functionality with additional extensions such as INX plugins or the Wasp software for Smart Contracts'
+          description='Nodes are the core of an IOTA network. They run the node software, which gives them read and write access to the IOTA network. You can extend their functionality with additional extensions such as INX plugins or the Wasp software for Smart Contracts'
         >
           <div className='nodes__cards'>
             <div className='nodes__card'>
@@ -160,11 +138,6 @@ export default function HomeLayout() {
                   <li className='nodes__feature'>
                     <Link to='/hornet/getting_started'>
                       Participate in the network
-                    </Link>
-                  </li>
-                  <li className='nodes__feature'>
-                    <Link to='/hornet/how_tos/post_installation'>
-                      Manage your node
                     </Link>
                   </li>
                 </ul>
@@ -220,18 +193,18 @@ export default function HomeLayout() {
                     </Link>
                   </li>
                   <li className='nodes__feature'>
-                    <Link to='/chronicle/reference/authentication'>
-                      Configure authentication
+                    <Link to='/chronicle/welcome#project-structure'>
+                      Solution for storing all transactions
                     </Link>
                   </li>
                   <li className='nodes__feature'>
-                    <Link to='/chronicle/reference/api'>
-                      Using the API of your permanode
+                    <Link to='/chronicle/config_reference'>
+                      Managing and accessing the permanode
                     </Link>
                   </li>
                 </ul>
                 <Link
-                  to='/chronicle/getting_started/docker'
+                  to='chronicle/getting_started'
                   className='nodes__button button button--outline button--primary'
                 >
                   Try the permanode framework
@@ -258,11 +231,11 @@ export default function HomeLayout() {
               </div>
               <h3 className='resources__header'>Try a tutorial</h3>
               <p className='resources__description'>
-                Now that you understand the basics of Shimmer, it’s time to
-                start your own project!
+                Now that you understand the basics of IOTA, it’s time to start
+                your own project!
               </p>
             </Link>
-            <Link to='develop/tools' className='resources__card'>
+            <Link to='integration-services/welcome' className='resources__card'>
               <div className='resources__icon'>
                 <IntegrationServices />
               </div>
@@ -277,17 +250,14 @@ export default function HomeLayout() {
         </HomepageSection>
         <HomepageSection header='Further links'>
           <div className='further__cards'>
-            <Link
-              to='https://discord.shimmer.network/'
-              className='further__card'
-            >
+            <Link to='https://discord.iota.org/' className='further__card'>
               <div className='further__section'>
                 <div className='further__icon'>
                   <Discord />
                 </div>
                 <h3 className='further__header'>Join Discord</h3>
                 <p className='further__description'>
-                  Check out the Shimmer community on Discord.
+                  Check out the IOTA community on Discord.
                 </p>
               </div>
             </Link>
@@ -305,7 +275,7 @@ export default function HomeLayout() {
               </div>
             </Link>
             <Link
-              to='https://explorer.shimmer.network/testnet'
+              to='https://explorer.iota.org/mainnet'
               className='further__card'
             >
               <div className='further__section'>
@@ -314,7 +284,7 @@ export default function HomeLayout() {
                 </div>
                 <h3 className='further__header'>Visit the explorer</h3>
                 <p className='further__description'>
-                  View transactions and data stored on the Shimmer Tangle.
+                  View transactions and data stored on the IOTA Tangle.
                 </p>
               </div>
             </Link>
