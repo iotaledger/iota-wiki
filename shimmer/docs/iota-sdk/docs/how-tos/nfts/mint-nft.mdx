@@ -14,13 +14,13 @@ keywords:
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-Minting an [NFT](https://wiki.iota.org/shimmer/develop/explanations/what-is-stardust/tokenization/#non-fungible-tokens-nfts)
-refers to creating a unique and indivisible digital asset on [the Tangle](https://wiki.iota.org/shimmer/learn/tangle/).
+Minting an [NFT](https://wiki.iota.org/shimmer/develop/explanations/what-is-stardust/tokenization.md#non-fungible-tokens-nfts)
+refers to creating a unique and indivisible digital asset on [the Tangle](https://wiki.iota.org/shimmer/learn/tangle.md).
 When you mint an NFT, you usually associate a digital file, such as artwork, music, or video, with a specific token on
 the Tangle, establishing its authenticity, ownership, and uniqueness. This is done by assigning
-[metadata](https://wiki.iota.org/shimmer/develop/explanations/what-is-stardust/output-features/#metadata)
+[metadata](https://wiki.iota.org/shimmer/develop/explanations/what-is-stardust/output-features.md#metadata)
 to the NFT, including details about the creator
-(or [issuer](https://wiki.iota.org/shimmer/develop/explanations/what-is-stardust/output-features/#issuer)), the asset's
+(or [issuer](https://wiki.iota.org/shimmer/develop/explanations/what-is-stardust/output-features.md#issuer)), the asset's
 description, and any additional information relevant to its value or characteristics.
 
 ## Example Code
@@ -42,8 +42,8 @@ https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/nfts/mi
 </div>
 
 3. Create a new [`MintNftParams`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/struct.MintNftParams.html) and set its
-   values. Note that these include setting the [sender](https://wiki.iota.org/shimmer/develop/explanations/what-is-stardust/output-features/#sender)
-   and the [issuer](https://wiki.iota.org/shimmer/develop/explanations/what-is-stardust/output-features/#issuer).
+   values. Note that these include setting the [sender](https://wiki.iota.org/shimmer/develop/explanations/what-is-stardust/output-features.md#sender)
+   and the [issuer](https://wiki.iota.org/shimmer/develop/explanations/what-is-stardust/output-features.md#issuer).
 
 <div className={'hide-code-block-extras'}>
 
@@ -90,8 +90,8 @@ https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/nfts/mi
 
 1. Instantiate a [`Wallet`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/core/struct.Wallet.html), get Alice's `Account` which was
    [created in the first guide](../accounts-and-addresses/create-account.mdx) and [sync it](../accounts-and-addresses/check-balance.mdx).
-2. Define the `senderAddress` as the first [`Address`](../../../references/nodejs/classes/Address/)
-   in the [`Account`](../../../references/nodejs/classes/Account/).
+2. Define the `senderAddress` as the first [`Address`](../../references/nodejs/classes/Address.md)
+   in the [`Account`](../../references/nodejs/classes/Account.md).
 
 <div className={'hide-code-block-extras'}>
 
@@ -101,9 +101,9 @@ https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how
 
 </div>
 
-3. Create a new [`MintNftParams`](../../../references/nodejs/interfaces/MintNftParams/) and set its
-   values. Note that these include setting the [sender](https://wiki.iota.org/shimmer/develop/explanations/what-is-stardust/output-features/#sender)
-   and the [issuer](https://wiki.iota.org/shimmer/develop/explanations/what-is-stardust/output-features/#issuer).
+3. Create a new [`MintNftParams`](../../references/nodejs/interfaces/MintNftParams.md) and set its
+   values. Note that these include setting the [sender](https://wiki.iota.org/shimmer/develop/explanations/what-is-stardust/output-features.md#sender)
+   and the [issuer](https://wiki.iota.org/shimmer/develop/explanations/what-is-stardust/output-features.md#issuer).
 
 <div className={'hide-code-block-extras'}>
 
@@ -113,8 +113,8 @@ https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how
 
 </div>
 
-4. Prepare the transaction that will mint the NFTs using the [`Account.prepareMintNfts()`](../../../references/nodejs/classes/Account/#preparemintnfts)
-   function and send the prepared transaction using the [`Account.send()`](../../../references/nodejs/classes/Account/#send)
+4. Prepare the transaction that will mint the NFTs using the [`Account.prepareMintNfts()`](../../references/nodejs/classes/Account.md#preparemintnfts)
+   function and send the prepared transaction using the [`Account.send()`](../../references/nodejs/classes/Account.md#send)
    function.
 
 <div className={'hide-code-block-extras'}>
@@ -125,8 +125,8 @@ https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how
 
 </div>
 
-6. Build the outputs for the transaction to mint another NFT using the [`Client.buildNftOutput()`](../../../references/nodejs/classes/Client/#buildnftoutput)
-   function and send the transaction using the [`Account.sendOutputs()`](../../../references/nodejs/classes/Account/#sendoutputs) function.
+6. Build the outputs for the transaction to mint another NFT using the [`Client.buildNftOutput()`](../../references/nodejs/classes/Client.md#buildnftoutput)
+   function and send the transaction using the [`Account.sendOutputs()`](../../references/nodejs/classes/Account.md#sendoutputs) function.
 
 <div className={'hide-code-block-extras'}>
 
@@ -153,8 +153,8 @@ https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how
 
 </div>
 
-2. Prepare the transaction that will mint the NFT using the [`Account.prepare_mint_nfts()`](../../../references/python/iota_sdk/wallet/account/#prepare_mint_nfts)
-   function and send the prepared transaction using the [`Account.send()`](../../../references/python/iota_sdk/wallet/account/#send)
+2. Prepare the transaction that will mint the NFT using the [`Account.prepare_mint_nfts()`](../../references/python/iota_sdk/wallet/account.md#prepare_mint_nfts)
+   function and send the prepared transaction using the [`Account.send()`](../../references/python/iota_sdk/wallet/account.md#send)
    function.
 
 <div className={'hide-code-block-extras'}>

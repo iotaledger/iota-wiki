@@ -5,8 +5,10 @@ const common = require('./common/docusaurus.config');
 const contentConfigs = require('./contentPlugins');
 
 module.exports = async () => {
-  const contentPlugins = (await contentConfigs()).map((contentConfig) =>
-    create_doc_plugin(contentConfig),
+  const contentPlugins = await Promise.all(
+    (
+      await contentConfigs()
+    ).map(async (contentConfig) => await create_doc_plugin(contentConfig)),
   );
 
   const { MODE = 'development' } = process.env;

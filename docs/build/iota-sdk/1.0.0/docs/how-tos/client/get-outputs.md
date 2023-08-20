@@ -16,7 +16,7 @@ import TabItem from "@theme/TabItem";
 import AccountClient from '../../\_admonitions/\_account-client.md'
 
 Querying outputs allows you to retrieve specific information about transactions or assets on
-the [Tangle](https://wiki.iota.org/shimmer/learn/tangle/). You can verify the status of transactions, track the movement
+the [Tangle](https://wiki.iota.org/shimmer/learn/tangle.md). You can verify the status of transactions, track the movement
 of assets, and gather relevant details such as transaction history, ownership, or other metadata. You can query for any
 output type using the following functions:
 
@@ -31,18 +31,18 @@ output type using the following functions:
 </TabItem>
 <TabItem value="typescript-node" label="Typescript (Node.js)">
 
-- [`Client.basicOutputIds()`](../../../references/nodejs/classes/Client/#basicoutputids)
-- [`Client.aliasOutputIds()`](../../../references/nodejs/classes/Client/#aliasoutputids)
-- [`Client.nftOutputIds()`](../../../references/nodejs/classes/Client/#nftoutputids)
-- [`Client.foundryOutputIds()`](../../../references/nodejs/classes/Client/#foundryoutputids)
+- [`Client.basicOutputIds()`](../../references/nodejs/classes/Client.md#basicoutputids)
+- [`Client.aliasOutputIds()`](../../references/nodejs/classes/Client.md#aliasoutputids)
+- [`Client.nftOutputIds()`](../../references/nodejs/classes/Client.md#nftoutputids)
+- [`Client.foundryOutputIds()`](../../references/nodejs/classes/Client.md#foundryoutputids)
 
 </TabItem>
 <TabItem value="python" label="Python">
 
-- [`Client.basic_output_ids()`](../../../references/python/iota_sdk/client/_node_indexer_api/#basic_output_ids)
-- [`Client.alias_output_ids()`](../../../references/python/iota_sdk/client/_node_indexer_api/#alias_output_ids)
-- [`Client.foundry_output_ids()`](../../../references/python/iota_sdk/client/_node_indexer_api/#foundry_output_ids)
-- [`Client.nft_output_ids()`](../../../references/python/iota_sdk/client/_node_indexer_api/#nft_output_ids)
+- [`Client.basic_output_ids()`](../../references/python/iota_sdk/client/_node_indexer_api.md#basic_output_ids)
+- [`Client.alias_output_ids()`](../../references/python/iota_sdk/client/_node_indexer_api.md#alias_output_ids)
+- [`Client.foundry_output_ids()`](../../references/python/iota_sdk/client/_node_indexer_api.md#foundry_output_ids)
+- [`Client.nft_output_ids()`](../../references/python/iota_sdk/client/_node_indexer_api.md#nft_output_ids)
 
 </TabItem>
 </Tabs>
@@ -97,7 +97,7 @@ https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/client/
 
 The following code example will:
 
-1. Create a [`Client`](../../../references/nodejs/classes/Client/) that will connect to the
+1. Create a [`Client`](../../references/nodejs/classes/Client.md) that will connect to the
    node defined in your `.env` file's `NODE_URL` variable.
 
 <div className={'hide-code-block-extras'}>
@@ -109,8 +109,8 @@ https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how
 </div>
 
 2. Query the node for basic outputs with the specified
-   [`QueryParameters`](../../../references/nodejs/api_ref/#queryparameter)
-   using the [`Client.basicOutputIds()`](../../../references/nodejs/classes/Client/#basicoutputids)
+   [`QueryParameters`](../../references/nodejs/api_ref.md#queryparameter)
+   using the [`Client.basicOutputIds()`](../../references/nodejs/classes/Client.md#basicoutputids)
    function.
 
 <div className={'hide-code-block-extras'}>
@@ -122,7 +122,7 @@ https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how
 </div>
 
 3. Get the outputs retrieved in the previous step using the
-   [`Client.getOutputs()`](../../../references/nodejs/classes/Client/#getoutputs)
+   [`Client.getOutputs()`](../../references/nodejs/classes/Client.md#getoutputs)
    function.
 
 <div className={'hide-code-block-extras'}>
@@ -138,7 +138,7 @@ https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how
 
 The following code example will:
 
-1. Create a [`Client`](../../../references/python/iota_sdk/client/) that will connect to the
+1. Create a [`Client`](../../references/python/iota_sdk/client/client.md) that will connect to the
    node defined in your `.env` file's `NODE_URL` variable.
 
 <div className={'hide-code-block-extras'}>
@@ -149,7 +149,7 @@ https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how
 
 </div>
 
-2. Query the node for basic outputs with the specified `QueryParameters` using the [`Client.basic_output_ids()`](../../../references/python/iota_sdk/client/_node_indexer_api/#basic_output_ids)
+2. Query the node for basic outputs with the specified `QueryParameters` using the [`Client.basic_output_ids()`](../../references/python/iota_sdk/client/_node_indexer_api.md#basic_output_ids)
    function.
 
 <div className={'hide-code-block-extras'}>
@@ -161,7 +161,7 @@ https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how
 </div>
 
 3. Get the outputs retrieved in the previous step using the
-   [`Client.get_outputs()`](../../../references/python/iota_sdk/client/_high_level_api/#get_outputs)
+   [`Client.get_outputs()`](../../references/python/iota_sdk/client/_high_level_api.md#get_outputs)
    function.
 
 <div className={'hide-code-block-extras'}>

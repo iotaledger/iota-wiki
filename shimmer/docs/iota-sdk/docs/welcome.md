@@ -25,9 +25,9 @@ and IOTA networks running the [Stardust protocol](https://wiki.iota.org/shimmer/
 It consists of two main modules: `client` and `wallet`.
 
 The `wallet` module uses high-level functions that simplify everyday operations with a standardized interface for
-developers to build value transaction applications. For example, [`Account.sync()`](references/nodejs/classes/Account/#sync)
-acts as a high-level function that, in turn, calls [`Client.basic_output_ids()`](references/nodejs/classes/Client/#basicoutputids)
-and [`Client.get_outputs()`](references/nodejs/classes/Client/#getoutputs)). Unlike the `client` module, the `wallet`
+developers to build value transaction applications. For example, [`Account.sync()`](./references/nodejs/classes/Account.md#sync)
+acts as a high-level function that, in turn, calls [`Client.basic_output_ids()`](./references/nodejs/classes/Client.md#basicoutputids)
+and [`Client.get_outputs()`](./references/nodejs/classes/Client.md#getoutputs)). Unlike the `client` module, the `wallet`
 module maintains a state. It can optionally interact with [IOTA Stronghold](https://github.com/iotaledger/stronghold.rs/)
 for seed handling, storage, and state backup.
 

@@ -10,7 +10,7 @@ Before reading this tutorial we recommend that you read the [first part](../zebr
 
 All the scaffolding needed to create a solution for managing credentials on Android devices is packaged under the so-called _Holder Application_. This application also allows sharing credentials with interested parties by way of a scannable data matrix.
 
-The application guides the user to set up an Identity (a DID document) before associating Verifiable Credentials to this Identity. As this is just a reference application, the app self-signs the Verifiable Credentials, but ordinarily they would be signed by a third party such as a government in the case of personal details. An interested party can scan and verify the credential when presented in the form of a data matrix (see _[103 Tutorial](../zebra-iota-edge-sdk/zebra-iota-edge-sdk-103-tutorial.md)_).
+The application guides the user to set up an Identity (a DID document) before associating Verifiable Credentials to this Identity. As this is just a reference application, the app self-signs the Verifiable Credentials, but ordinarily they would be signed by a third party such as a government in the case of personal details. An interested party can scan and verify the credential when presented in the form of a data matrix (see [103 Tutorial](../zebra-iota-edge-sdk/zebra-iota-edge-sdk-103-tutorial.md)).
 
 Note: The _Holder Application_ also includes partial functionality as an issuer of credentials (see [104 Tutorial](../zebra-iota-edge-sdk/zebra-iota-edge-sdk-104-tutorial.md)).
 

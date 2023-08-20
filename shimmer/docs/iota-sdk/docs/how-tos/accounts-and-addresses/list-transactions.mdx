@@ -18,12 +18,12 @@ or other activities. Transactions are linked to specific accounts, providing a t
 interactions and facilitating the secure transfer of value across the network.
 
 This guide will show you how to list all the transactions of all the addresses of an
-[`Account`](../../../references/nodejs/classes/Account/).
+[`Account`](../../references/nodejs/classes/Account.md).
 
 :::tip Sync Options
 
-If you want to list incoming transactions you need to specify that in your `sync` call.
-Transactions for outputs that you synced before with other sync options, will not be requested later.
+If you want to list incoming transactions, you need to specify that in your `sync` call.
+Transactions for outputs that you synced before with other sync options will not be requested later.
 Also, only transactions that weren't pruned on the point of syncing will be listed.
 
 :::tip
@@ -34,7 +34,7 @@ Also, only transactions that weren't pruned on the point of syncing will be list
 <TabItem value="rust" label="Rust">
 
 1. Instantiate a [`Wallet`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/core/struct.Wallet.html), get Alice's `Account` which was
-   [created in the first guide](../accounts-and-addresses/create-account.mdx) and [sync it](../accounts-and-addresses/check-balance.mdx).
+   [created in the first guide](./create-account.mdx) and [sync it](./check-balance.mdx).
 2. Get all the
    [`Transactions`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/account/types/struct.Transaction.html)
    related to the `Account` by calling the
@@ -65,10 +65,10 @@ https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/account
 <TabItem value="typescript-node" label="Typescript (Node.js)">
 
 1. Instantiate a [`Wallet`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/core/struct.Wallet.html), get Alice's `Account` which was
-   [created in the first guide](../accounts-and-addresses/create-account.mdx) and [sync it](../accounts-and-addresses/check-balance.mdx).
-2. Get all the [`Transactions`](../../../references/nodejs/classes/Transaction/)
+   [created in the first guide](./create-account.mdx) and [sync it](./check-balance.mdx).
+2. Get all the [`Transactions`](../../references/nodejs/classes/Transaction.md)
    related to the `Account` by calling the
-   [`Account.transactions()`](../../../references/nodejs/classes/Account/#transactions) function.
+   [`Account.transactions()`](../../references/nodejs/classes/Account.md#transactions) function.
 
 <div className={'hide-code-block-extras'}>
 
@@ -79,7 +79,7 @@ https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how
 </div>
 
 3. Get all the incoming `Transactions` related to the `Account` by calling the
-   [`Account.incomingTransactions()`](../../../references/nodejs/classes/Account/#incomingtransactions) function.
+   [`Account.incomingTransactions()`](../../references/nodejs/classes/Account.md#incomingtransactions) function.
 
 <div className={'hide-code-block-extras'}>
 
@@ -93,10 +93,10 @@ https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how
 <TabItem value="python" label="Python">
 
 1. Instantiate a [`Wallet`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/core/struct.Wallet.html), get Alice's `Account` which was
-   [created in the first guide](../accounts-and-addresses/create-account.mdx) and [sync it](../accounts-and-addresses/check-balance.mdx).
-2. Get all the [`Transactions`](../../../references/python/iota_sdk/types/transaction/)
+   [created in the first guide](./create-account.mdx) and [sync it](./check-balance.mdx).
+2. Get all the [`Transactions`](../../references/python/iota_sdk/types/transaction.md)
    related to the `Account` by calling the
-   [`Account.transactions()`](../../..references/python/iota_sdk/wallet/account/#transactions)
+   [`Account.transactions()`](../../references/python/iota_sdk/wallet/account.md#transactions)
    function.
 
 <div className={'hide-code-block-extras'}>
@@ -108,7 +108,7 @@ https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how
 </div>
 
 3. Get all the incoming `Transactions` related to the `Account` by calling the
-   [`Account.incoming_transactions()`](../../../references/python/iota_sdk/wallet/account/#incoming_transactions)
+   [`Account.incoming_transactions()`](../../references/python/iota_sdk/wallet/account.md#incoming_transactions)
    function.
 
 <div className={'hide-code-block-extras'}>
