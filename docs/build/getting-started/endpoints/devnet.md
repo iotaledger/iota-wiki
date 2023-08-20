@@ -10,7 +10,7 @@ keywords:
   - Endpoints
 ---
 
-# Devnet
+# IOTA Devnet
 
 Since the Chrysalis update, the `testnet` is now called `devnet`. We recommend using the `devnet` to develop and test your application.
 

@@ -11,7 +11,7 @@ keywords:
   - Endpoints
 ---
 
-# Mainnet
+# IOTA Mainnet
 
 ## Public Infrastructure
 
