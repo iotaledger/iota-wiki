@@ -2757,7 +2757,7 @@ __metadata:
     "@typescript-eslint/parser": ^5.9.1
     clsx: ^1.2.1
     docusaurus-plugin-openapi-docs: "jlvandenhout/docusaurus-openapi-docs#workspace=docusaurus-plugin-openapi-docs&head=unify-tab-naming"
-    docusaurus-theme-openapi-docs: ^v2.0.0-beta.3
+    docusaurus-theme-openapi-docs: "jlvandenhout/docusaurus-openapi-docs#workspace=docusaurus-theme-openapi-docs&head=unify-tab-naming"
     eslint: ^8.46.0
     eslint-config-prettier: ^8.9.0
     eslint-plugin-react: ^7.26.0
@@ -8073,9 +8073,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"docusaurus-theme-openapi-docs@npm:^v2.0.0-beta.3":
+"docusaurus-theme-openapi-docs@jlvandenhout/docusaurus-openapi-docs#workspace=docusaurus-theme-openapi-docs&head=unify-tab-naming":
   version: 2.0.0-beta.3
-  resolution: "docusaurus-theme-openapi-docs@npm:2.0.0-beta.3"
+  resolution: "docusaurus-theme-openapi-docs@https://github.com/jlvandenhout/docusaurus-openapi-docs.git#workspace=docusaurus-theme-openapi-docs&commit=5c20431881d393b11aaeaa75bb049c9968996f4d"
   dependencies:
     "@docusaurus/theme-common": ">=2.3.0 <2.5.0"
     "@hookform/error-message": ^2.0.1
@@ -8105,7 +8105,7 @@ __metadata:
   peerDependencies:
     react: ^16.8.4 || ^17.0.0
     react-dom: ^16.8.4 || ^17.0.0
-  checksum: 3a74bd65179f3a346870104d87d8426f41b347ada7deb27f02f6edd94c950eb4fe955177e95a2fd4dc56eb3c6d1212a20d4435513f4a242e20bb4205ea705931
+  checksum: 58b47b721ae0694e8c9d2264be070876f2adbe66a2731b6ec440a22726fdea74b012aa52a1e1a40bba6e55a945139c4ecef1d40f03a7de34cd2c452855a4344f
   languageName: node
   linkType: hard
 
