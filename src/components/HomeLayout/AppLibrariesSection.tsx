@@ -3,7 +3,12 @@ import AppLibImgDark from '@site/static/img/homepage/section_application_librari
 import ThemedImage from '@theme/ThemedImage';
 import React, { FC } from 'react';
 import Link from '@docusaurus/Link';
-import { Identity, SmartContracts, Streams, Stronghold } from '@site/src/common/icons';
+import {
+  Identity,
+  SmartContracts,
+  Streams,
+  Stronghold,
+} from '@site/src/common/icons';
 
 interface LanguagesProps {
   languages?: { [key: string]: string };

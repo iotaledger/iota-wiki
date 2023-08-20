@@ -10,6 +10,8 @@ keywords:
   - BIC credits
 ---
 
+import ManaCalculator from '@site/src/components/ManaCalculator';
+
 # Mana, Staking and Delegation
 
 ## Accounts
@@ -90,3 +92,7 @@ In addition to obtaining [Mana](mana.md) from holding IOTA tokens, Mana is also 
 and
 delegating IOTA tokens. This forms the basis for a sustainable tokenomics model, as value isn't extracted from other
 IOTA holders. Rewards are distributed to validators and delegators based on specific parameters.
+
+## Mana Calculator
+
+<ManaCalculator/>
