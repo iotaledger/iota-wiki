@@ -269,5 +269,6 @@ module.exports = {
         },
       ],
     },
+    'glossary'
   ],
 };
