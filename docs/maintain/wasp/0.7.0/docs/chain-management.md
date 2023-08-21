@@ -20,7 +20,7 @@ You can view the chain state using the dashboard (`<URL>/wasp/dashboard` when us
 ## Managing Chain Configuration and Validators
 
 You can manage the chain configuration and committee of validators by interacting with
-the [Governance contract](../core_concepts/core_contracts/governance.md).
+the [Governance contract](/learn/smart-contracts/core_concepts/core_contracts/governance).
 
 The “Chain Owner” is the only one who can perform administrative tasks.
 

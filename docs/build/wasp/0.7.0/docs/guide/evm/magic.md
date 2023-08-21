@@ -22,7 +22,7 @@ functionality through the _ISC Magic Contract_.
 The Magic contract is an EVM contract deployed by default on every ISC chain, in the EVM genesis block, at
 address `0x1074000000000000000000000000000000000000`.
 The implementation of the Magic contract is baked-in in
-the [`evm`](../core_concepts/core_contracts/evm.md) [core contract](../core_concepts/core_contracts/overview.md));
+the [`evm`](/learn/smart-contracts/core_concepts/core_contracts/evm) [core contract](/learn/smart-contracts/core_concepts/core_contracts/overview));
 i.e. it is not a pure-Solidity contract.
 
 The Magic contract has several methods, which are categorized into specialized
@@ -56,7 +56,7 @@ contract MyEVMContract {
 In the example above, `ISC.sandbox.getEntropy()` calls the
 [`getEntropy`](https://github.com/iotaledger/wasp/blob/develop/packages/vm/core/evm/iscmagic/ISCSandbox.sol#L20)
 method of the `ISCSandbox` interface, which, in turn,
-calls [ISC Sandbox's](../core_concepts/sandbox.md) `GetEntropy`.
+calls [ISC Sandbox's](/learn/smart-contracts/core_concepts/sandbox) `GetEntropy`.
 
 ### Calling a native contract
 
@@ -100,20 +100,20 @@ contract MyEVMContract {
 - [ERC20NativeTokens](https://github.com/iotaledger/wasp/blob/develop/packages/vm/core/evm/iscmagic/ERC20NativeTokens.sol)
   contract, available at `ISC.nativeTokens(foundrySN)` after being registered
   by the foundry owner by calling
-  [`registerERC20NativeToken`](../core_concepts/core_contracts/evm.md#registerERC20NativeToken)
+  [`registerERC20NativeToken`](/learn/smart-contracts/core_concepts/core_contracts/evm#registerERC20NativeToken)
   (address `0x107402xxxxxxxx00000000000000000000000000` where `xxxxxxxx` is the
   little-endian encoding of the foundry serial number)
 - [ERC20ExternalNativeTokens](https://github.com/iotaledger/wasp/blob/develop/packages/vm/core/evm/iscmagic/ERC20ExternalNativeTokens.sol)
   contract, available at a dynamically assigned address after being registered
   by the foundry owner by calling
-  [`registerERC20NativeTokenOnRemoteChain`](../core_concepts/core_contracts/evm.md#registerERC20NativeTokenOnRemoteChain)
+  [`registerERC20NativeTokenOnRemoteChain`](/learn/smart-contracts/core_concepts/core_contracts/evm#registerERC20NativeTokenOnRemoteChain)
   on the chain that controls the foundry.
 - [ERC721NFTs](https://github.com/iotaledger/wasp/blob/develop/packages/vm/core/evm/iscmagic/ERC721NFTs.sol)
   contract, available at `ISC.nfts`
   (address `0x1074030000000000000000000000000000000000`)
 - [ERC721NFTCollection](https://github.com/iotaledger/wasp/blob/develop/packages/vm/core/evm/iscmagic/ERC721NFTCollection.sol)
   contract, available at `ISC.erc721NFTCollection(collectionID)`, after being
-  registered by calling [`registerERC721NFTCollection`](../core_concepts/core_contracts/evm.md#registerERC721NFTCollection).
+  registered by calling [`registerERC721NFTCollection`](/learn/smart-contracts/core_concepts/core_contracts/evm#registerERC721NFTCollection).
 
 There are some usage examples in
 the [ISCTest.sol](https://github.com/iotaledger/wasp/blob/develop/packages/evm/evmtest/ISCTest.sol) contract (used
