@@ -14,7 +14,7 @@ export default async function pluginDocs(
 ): Promise<Plugin<LoadedContent>> {
   // Destructure to separate the Docusaurus docs plugin options
   // and initialize the Docusaurus docs plugin to wrap.
-  const { banner, globalSidebars, ...docsOptions } = options;
+  const { bannerPath, globalSidebars, ...docsOptions } = options;
   const plugin = await docsPlugin(context, docsOptions);
 
   return {
@@ -22,7 +22,8 @@ export default async function pluginDocs(
     getPathsToWatch: () => {
       const pathsToWatch = plugin.getPathsToWatch();
 
-      if (banner) pathsToWatch.push(path.resolve(context.siteDir, banner));
+      if (bannerPath)
+        pathsToWatch.push(path.resolve(context.siteDir, bannerPath));
 
       return pathsToWatch;
     },
@@ -31,8 +32,8 @@ export default async function pluginDocs(
       return {
         ...docsLoadedContent,
         // Load banner content from file
-        banner: banner
-          ? await fs.readFile(banner, {
+        bannerContent: bannerPath
+          ? await fs.readFile(bannerPath, {
               encoding: 'utf-8',
             })
           : undefined,
@@ -40,20 +41,20 @@ export default async function pluginDocs(
     },
     translateContent: ({ content, ...args }) => {
       // Propagate banner content
-      const { banner, ...docsContent } = content;
+      const { bannerContent, ...docsContent } = content;
       const docsContentLoaded = plugin.translateContent({
         content: docsContent,
         ...args,
       });
       return {
         ...docsContentLoaded,
-        banner,
+        bannerContent,
       };
     },
     // Override the `contentLoaded` function to add sidebars to the
     // global data exposed by the Docusaurus docs plugin.
     contentLoaded: async ({ actions, content, ...args }) => {
-      const { banner, ...docsContent } = content;
+      const { bannerContent, ...docsContent } = content;
       const globalSidebarEntries = [];
 
       const createData = async (name: string, data: string) => {
@@ -66,15 +67,25 @@ export default async function pluginDocs(
             .filter(([sidebarId]) => globalSidebars.includes(sidebarId))
             .forEach((entry) => globalSidebarEntries.push(entry));
         }
-        return await actions.createData(name, data);
+
+        return await actions.createData(
+          name,
+          // Expose banner content to be used by the DocBanner theme component
+          JSON.stringify(
+            {
+              ...versionMetadata,
+              bannerContent,
+            },
+            null,
+            2,
+          ),
+        );
       };
 
       const setGlobalData = (data: object) => {
         actions.setGlobalData({
           ...data,
           globalSidebars: Object.fromEntries(globalSidebarEntries),
-          // Expose banner content globally to be used by the Banner theme component
-          banner,
         });
       };
 
@@ -95,10 +106,10 @@ export function validateOptions({
   validate,
   options,
 }: OptionValidationContext): PluginOptions {
-  const { banner, globalSidebars = [], ...docsOptions } = options;
+  const { bannerPath, globalSidebars = [], ...docsOptions } = options;
   return {
     ...docsValidateOptions({ validate, options: docsOptions }),
     globalSidebars,
-    banner,
+    bannerPath,
   };
 }

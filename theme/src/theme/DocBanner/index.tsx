@@ -1,18 +1,19 @@
 import React from 'react';
 import { useActivePlugin } from '@docusaurus/plugin-content-docs/client';
-import { GlobalBannerData } from '@iota-wiki/plugin-docs';
+import { useDoc } from '@docusaurus/theme-common/internal';
+import { DocMetadata } from '@iota-wiki/plugin-docs';
 import ReactMarkdown from 'react-markdown';
 import './styles.css';
 
 export default function DocBanner() {
   const { pluginData } = useActivePlugin();
-  const { banner } = pluginData as GlobalBannerData;
+  const { bannerContent } = useDoc().metadata as DocMetadata;
 
-  if (!banner) return null;
+  if (!bannerContent) return null;
 
   return (
     <ReactMarkdown className='doc-banner alert alert--warning margin-bottom--md'>
-      {banner}
+      {bannerContent}
     </ReactMarkdown>
   );
 }
