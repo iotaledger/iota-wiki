@@ -2821,6 +2821,7 @@ __metadata:
     "@artsy/to-title-case": ^1.1.0
     "@docusaurus/theme-classic": 2.4.1
     "@docusaurus/types": 2.4.1
+    "@iota-wiki/plugin-docs": "workspace:^"
     "@metamask/providers": ^10.2.1
     "@types/react": 18.2.18
     clsx: ^1.2.1
@@ -2829,6 +2830,7 @@ __metadata:
     nodemon: ^2.0.16
     prettier: ^2.8.8
     react: 18.2.0
+    react-markdown: ^8.0.7
     typescript: ^4.9
   peerDependencies:
     react: "*"
@@ -14897,7 +14899,7 @@ plugin-image-zoom@flexanalytics/plugin-image-zoom:
   languageName: node
   linkType: hard
 
-"react-markdown@npm:^8.0.1":
+"react-markdown@npm:^8.0.1, react-markdown@npm:^8.0.7":
   version: 8.0.7
   resolution: "react-markdown@npm:8.0.7"
   dependencies:

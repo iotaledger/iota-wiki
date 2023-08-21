@@ -14,9 +14,11 @@
   "dependencies": {
     "@artsy/to-title-case": "^1.1.0",
     "@docusaurus/theme-classic": "2.4.1",
+    "@iota-wiki/plugin-docs": "workspace:^",
     "@metamask/providers": "^10.2.1",
     "clsx": "^1.2.1",
-    "html-react-parser": "^4.0.0"
+    "html-react-parser": "^4.0.0",
+    "react-markdown": "^8.0.7"
   },
   "devDependencies": {
     "@docusaurus/types": "2.4.1",

@@ -8,9 +8,11 @@ import {
   Validate,
 } from '@docusaurus/types';
 
-export type LoadedContent = DocsLoadedContent & {
+export type GlobalBannerData = {
   banner?: string;
 };
+
+export type LoadedContent = DocsLoadedContent & GlobalBannerData;
 
 export type PluginOptions = DocsPluginOptions & {
   globalSidebars: string[];

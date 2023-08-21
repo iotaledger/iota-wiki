@@ -16,3 +16,7 @@ declare module '@theme/CodeSnippetBlock' {
 declare module '@theme/AddToMetaMaskButton' {
   export default function AddToMetaMaskButton(): JSX.Element;
 }
+
+declare module '@theme/Banner' {
+  export default function Banner(): JSX.Element;
+}
