@@ -1,5 +1,6 @@
 import React, { lazy } from 'react';
 import { useActivePlugin } from '@docusaurus/plugin-content-docs/client';
+import Admonition from '@theme/Admonition';
 import { GlobalBannerData } from '@iota-wiki/plugin-docs';
 
 export default function Banner() {
@@ -9,5 +10,9 @@ export default function Banner() {
   if (!banner) return null;
 
   const ReactMarkdown = lazy(() => import('react-markdown'));
-  return <ReactMarkdown>{banner}</ReactMarkdown>;
+  return (
+    <Admonition type='caution'>
+      <ReactMarkdown>{banner}</ReactMarkdown>
+    </Admonition>
+  );
 }
