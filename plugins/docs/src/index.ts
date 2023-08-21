@@ -6,6 +6,7 @@ import docsPlugin, {
   PropVersionMetadata,
 } from '@docusaurus/plugin-content-docs';
 import fs from 'fs/promises';
+import path from 'path';
 
 export default async function pluginDocs(
   context: LoadContext,
@@ -18,6 +19,13 @@ export default async function pluginDocs(
 
   return {
     ...plugin,
+    getPathsToWatch: () => {
+      const pathsToWatch = plugin.getPathsToWatch();
+
+      if (banner) pathsToWatch.push(path.resolve(context.siteDir, banner));
+
+      return pathsToWatch;
+    },
     loadContent: async () => {
       const docsLoadedContent = await plugin.loadContent();
       return {
