@@ -1,14 +1,20 @@
 import {
   Options as DocsOptions,
   PluginOptions as DocsPluginOptions,
+  LoadedContent as DocsLoadedContent,
 } from '@docusaurus/plugin-content-docs';
 import {
   OptionValidationContext as DocsOptionValidationContext,
   Validate,
 } from '@docusaurus/types';
 
+export type LoadedContent = DocsLoadedContent & {
+  banner?: string;
+};
+
 export type PluginOptions = DocsPluginOptions & {
   globalSidebars: string[];
+  banner?: string;
 };
 
 export type Options = Partial<PluginOptions>;
