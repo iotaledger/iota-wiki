@@ -10,20 +10,6 @@ module.exports = {
       items: [
         'explanations/what-is-shimmer/layer-1-landscape',
         'explanations/what-is-shimmer/networks',
-        {
-          type: 'category',
-          label: 'About Nodes',
-          collapsed: true,
-          link: {
-            type: 'doc',
-            id: 'explanations/what-is-shimmer/nodes/about-nodes',
-          },
-          items: [
-            'explanations/what-is-shimmer/nodes/about-nodes',
-            'explanations/what-is-shimmer/nodes/hornet',
-            'explanations/what-is-shimmer/nodes/become-a-node-operator',
-          ],
-        },
         'explanations/what-is-shimmer/clients',
         'explanations/what-is-shimmer/tokens-and-wallets',
       ],

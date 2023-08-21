@@ -16,6 +16,58 @@ module.exports = {
             'chrysalis/core-concepts/binary-transaction-layout',
           ],
         },
+        {
+          type: 'category',
+          label: 'Node Software',
+          collapsed: true,
+          items: [
+            {
+              label: 'Introduction',
+              type: 'doc',
+              id: 'chrysalis/nodes/node-software',
+            },
+            {
+              label: 'Hornet',
+              type: 'link',
+              href: '/hornet/welcome',
+            },
+            {
+              label: 'Chronicle',
+              type: 'link',
+              href: '/chronicle/welcome',
+            },
+          ],
+        },
+        {
+          type: 'category',
+          label: 'About Nodes',
+          collapsed: true,
+          items: [
+            {
+              label: 'Introduction',
+              type: 'doc',
+              id: 'chrysalis/nodes/about-nodes',
+            },
+            'chrysalis/nodes/become-a-node-operator',
+            {
+              type: 'category',
+              label: 'API Reference',
+              collapsed: true,
+              items: [
+                'chrysalis/nodes/api_reference',
+              ],
+            },
+            {
+              type: 'category',
+              label: 'Explanations',
+              collapsed: false,
+              items: [
+                'chrysalis/nodes/explanations/nodes_101',
+                'chrysalis/nodes/explanations/security_101',
+              ],
+            },
+          ],
+        },
         'chrysalis/tips',
       ],
     },
@@ -34,6 +86,20 @@ module.exports = {
             'stardust/core-concepts/output-unlock-conditions',
             'stardust/core-concepts/output-features',
             'stardust/core-concepts/storage-deposit',
+          ],
+        },
+        {
+          type: 'category',
+          label: 'About Nodes',
+          collapsed: true,
+          link: {
+            type: 'doc',
+            id: 'stardust/nodes/about-nodes',
+          },
+          items: [
+            'stardust/nodes/about-nodes',
+            'stardust/nodes/hornet',
+            'stardust/nodes/become-a-node-operator',
           ],
         },
         'stardust/tips',
