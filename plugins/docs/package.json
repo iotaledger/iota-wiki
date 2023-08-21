@@ -6,6 +6,7 @@
   "scripts": {
     "clean": "rm -rf ./lib",
     "build": "tsc --build",
+    "watch": "tsc --watch",
     "prepack": "yarn build"
   },
   "packageManager": "yarn@3.2.2",
