@@ -1,7 +1,8 @@
-import React, { lazy } from 'react';
+import React from 'react';
 import { useActivePlugin } from '@docusaurus/plugin-content-docs/client';
-import Admonition from '@theme/Admonition';
 import { GlobalBannerData } from '@iota-wiki/plugin-docs';
+import ReactMarkdown from 'react-markdown';
+import './styles.css';
 
 export default function Banner() {
   const { pluginData } = useActivePlugin();
@@ -9,10 +10,9 @@ export default function Banner() {
 
   if (!banner) return null;
 
-  const ReactMarkdown = lazy(() => import('react-markdown'));
   return (
-    <Admonition type='caution'>
-      <ReactMarkdown>{banner}</ReactMarkdown>
-    </Admonition>
+    <ReactMarkdown className='banner alert alert--warning margin-bottom--md'>
+      {banner}
+    </ReactMarkdown>
   );
 }

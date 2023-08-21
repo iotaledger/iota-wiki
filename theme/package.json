@@ -6,7 +6,8 @@
   "types": "src/types.d.ts",
   "license": "MIT",
   "scripts": {
-    "build": "tsc --build && prettier --config ../.prettierrc.json --write \"dist/theme/**/*.js\"",
+    "copy": "copyfiles -u 1 \"./src/**/*.css\" \"./dist\"",
+    "build": "tsc --build && yarn copy && prettier --config ../.prettierrc.json --write \"dist/theme/**/*.js\"",
     "watch": "nodemon --watch src --ext '*' --exec yarn build",
     "prepack": "yarn build",
     "test": "jest"
@@ -18,7 +19,7 @@
     "@metamask/providers": "^10.2.1",
     "clsx": "^1.2.1",
     "html-react-parser": "^4.0.0",
-    "react-markdown": "^8.0.7"
+    "react-markdown": "6"
   },
   "devDependencies": {
     "@docusaurus/types": "2.4.1",
