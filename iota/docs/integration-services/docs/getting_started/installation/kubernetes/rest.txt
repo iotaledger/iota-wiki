@@ -1,2 +1,0 @@
-With the previous default setup you'll be able to reference the database from within the cluster via the following URL:
-`mongodb://username:password@mongodb-service.default.svc.cluster.local:27017/integration-service?readPreference=primary&appname=integration-service-api&ssl=false`
