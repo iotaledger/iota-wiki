@@ -16,8 +16,8 @@ import DocItemTOCMobile from '@theme/DocItem/TOC/Mobile';
 import DocItemTOCDesktop from '@theme/DocItem/TOC/Desktop';
 import DocItemContent from '@theme/DocItem/Content';
 import DocBreadcrumbs from '@theme/DocBreadcrumbs';
-import Banner from '@theme/Banner';
 import type { Props } from '@theme/DocItem/Layout';
+import DocBanner from '@theme/DocBanner';
 
 import styles from './styles.module.css';
 
@@ -50,11 +50,11 @@ export default function DocItemLayout({ children }: Props): JSX.Element {
   return (
     <div className='row'>
       <div className={clsx('col', !docTOC.hidden && styles.docItemCol)}>
+        <DocBanner />
         <DocVersionBanner />
         <div className={styles.docItemContainer}>
           <article>
             <DocBreadcrumbs />
-            <Banner />
             <DocVersionBadge />
             {docTOC.mobile}
             <DocItemContent>{children}</DocItemContent>

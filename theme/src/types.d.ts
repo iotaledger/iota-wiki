@@ -17,6 +17,6 @@ declare module '@theme/AddToMetaMaskButton' {
   export default function AddToMetaMaskButton(): JSX.Element;
 }
 
-declare module '@theme/Banner' {
-  export default function Banner(): JSX.Element;
+declare module '@theme/DocBanner' {
+  export default function DocBanner(): JSX.Element;
 }
