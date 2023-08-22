@@ -2,7 +2,6 @@ import type { LoadContext, Plugin } from '@docusaurus/types';
 import { LoadedContent, OptionValidationContext, PluginOptions } from './types';
 import docsPlugin, {
   validateOptions as docsValidateOptions,
-  LoadedContent as DocsContentLoaded,
   PropVersionMetadata,
 } from '@docusaurus/plugin-content-docs';
 import fs from 'fs/promises';
