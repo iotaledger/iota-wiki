@@ -307,13 +307,13 @@ Read more about "Security During Token Migration" on _Chrysalis_ [here](https://
 
 Yes, Firefly will send your funds to one address in migration.
 
-#### I have lots of addresses with less than 1Mi balance. What should I do?
+#### I have lots of addresses with less than 1 IOTA balance. What should I do?
 
-Firefly will attempt to consolidate all of your funds, but there is a chance some dust (<1 Mi) is lost. If you have lots of addresses with <1Mi funds, it is recommended you first consolidate your balance in Trinity before 28 April 2021.
+Firefly will attempt to consolidate all of your funds, but there is a chance some dust (<1 IOTA) is lost. If you have lots of addresses with <1Mi funds, it is recommended you first consolidate your balance in Trinity before 28 April 2021.
 
-#### In Chrysalis, will it be possible to migrate a seed for which all the addresses sum to less than 1 Mi?
+#### In Chrysalis, will it be possible to migrate a seed for which all the addresses sum to less than 1 IOTA?
 
-Seeds with <1 Mi balance in total will not migrate. We recommend sending all of those small balances to a seed with a balance of >=1 Mi to migrate.
+Seeds with <1 IOTA balance in total will not migrate. We recommend sending all of those small balances to a seed with a balance of >=1 IOTA to migrate.
 
 #### Will the Firefly mobile app be available upon Chrysalis release, or do I have to migrate on PC?
 
@@ -323,7 +323,7 @@ For now, the migration will be done via PC. Once Chrysalis is complete, we will 
 
 The migration will bundle addresses together to avoid issues. Have a look at this article by the IOTA community for further information about how to consolidate your tokens.
 
-Firefly will attempt to consolidate all of your funds, but there is a chance some dust (<1 Mi) is lost.
+Firefly will attempt to consolidate all of your funds, but there is a chance some dust (<1 IOTA) is lost.
 
 #### What are the tax implications of the migration?
 

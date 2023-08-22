@@ -199,18 +199,18 @@ aliases. This is what we call alias locking. An alias locked output specifies an
 from this output. The owner of the alias account can spend aforementioned alias locked outputs by unlocking/moving the
 alias in the very same transaction. We will use the term `ExtendedLockedOutput` for outputs that support alias locking.
 
-Let's illustrate this through a simple example. Alice wants to send 10 Mi to Bob's alias account. Bob then wants to
-spend the 10 Mi from his alias account to his address account.
+Let's illustrate this through a simple example. Alice wants to send 10 IOTA to Bob's alias account. Bob then wants to
+spend the 10 IOTA from his alias account to his address account.
 
 1. Bob creates an alias where `aliasID=BobAliasID` with Transaction A.
 
 [![Bob creates an alias](/img/protocol_specification/bob_alias.png 'Bob creates an alias')](/img/protocol_specification/bob_alias.png)
 
 2. Bob shares `BobAliasID` with Alice.
-3. Alice sends 10 Mi to Bob by sending Transaction B that creates an `ExtendedLockedOutput`, specifying the balance,
+3. Alice sends 10 IOTA to Bob by sending Transaction B that creates an `ExtendedLockedOutput`, specifying the balance,
    and `aliasID=BobAliasID`.
 
-[![Alice sends 10 Mi to Bob](/img/protocol_specification/alice_sends_10_mi.png 'Alice sends 10 Mi to Bob')](/img/protocol_specification/alice_sends_10_mi.png)
+[![Alice sends 10 IOTA to Bob](/img/protocol_specification/alice_sends_10_mi.png 'Alice sends 10 IOTA to Bob')](/img/protocol_specification/alice_sends_10_mi.png)
 
 4. Bob can spend the outputs created by Alice by creating Transaction C that moves his `BobAlias` (to the very same
    address), and including the `ExtendedLockedOutput` with `aliasID=BobAliasID`.
@@ -323,7 +323,7 @@ it is perfect to store metadata belonging to the NFT.
 The ID of an IOTA NFT is also a valid address, therefore the NFT itself can receive and manage funds and other NFTs as
 well. Refer to the [cli-wallet tutorial](../../tutorials/wallet_library.md) for an overview of what you can do with an NFT.
 
-Interestingly, minting an IOTA NFT costs you only the minimum required deposit balance (0.0001 MI at the moment), which
+Interestingly, minting an IOTA NFT costs you only the minimum required deposit balance (0.0001 IOTA at the moment), which
 you can take back when you destroy the NFT. This is required so that NFTs are not minted out of thin air, and there are
 some IOTAs backing the output. Otherwise, the ledger database could be easily spammed.
 Transferring NFTs is also feeless, just like any other transaction in IOTA.

@@ -82,7 +82,7 @@ rules, then it falls under what we define as a migration bundle:
 
 - It contains exactly one output transaction of which the destination address is a valid migration address and is
   positioned as the tail transaction within the bundle (meaning `currentIndex` 0). **The output transaction value is at
-  least 1'000'000 tokens (1 Mi).**
+  least 1 IOTA.**
 - It does not contain any zero-value transactions which do not hold signature fragments. This means that transactions
   other than the tail transaction must always be part of an input.
 - Input transactions must not use migration addresses.
@@ -104,7 +104,7 @@ Here are a few things to consider:
 
 For further information about the migration bundles, see the [RFC-0035](https://github.com/luca-moser/protocol-rfcs/blob/rfc/wotsicide/text/0035-wotsicide/0035-wotsicide.md#migration-bundle) page.
 
-As an example, [this bundle](https://explorer.iota.org/mainnet/bundle/ZRAFFSEPRKDYGGA9DJQBWCXG9CGODUNZUBOWHVFQY9DK9HCHJQTHHSYBQRGZHGXWAPXDTJPPFJ9XFUALW) is a valid migration bundle. It spends 1 Mi
+As an example, [this bundle](https://explorer.iota.org/mainnet/bundle/ZRAFFSEPRKDYGGA9DJQBWCXG9CGODUNZUBOWHVFQY9DK9HCHJQTHHSYBQRGZHGXWAPXDTJPPFJ9XFUALW) is a valid migration bundle. It spends 1 IOTA
 
 - from:
   `YVLQWMRUZ9RCQODQZFYDNRVXHERUFPSDVLDRQLHEWGJLRTMEAQNX9OHZJVTONDHMUJQECDCUAR9PUIGAZPAAEHTZXB`

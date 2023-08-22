@@ -213,7 +213,7 @@ Each `SignedTransaction` includes the following set of information:
 
 ## Dust Protection
 
-Since IOTA is feeless and has the ability to send microtransactions, attackers could use this to spam the network with very low value transactions, which we call dust. To avoid this, we only allow microtransaction below 1Mi (dust) of IOTA tokens to another address if you already have at least 1Mi as a dust allowance output on that address. The number of allowed dust outputs on an address is the amount of the dust allowance outputs divided by 100,000 and rounded down, that is, 10 outputs for each 1 Mi deposited, with a maximum of 100 dust outputs in total.
+Since IOTA is feeless and has the ability to send microtransactions, attackers could use this to spam the network with very low value transactions, which we call dust. To avoid this, we only allow microtransaction below 1Mi (dust) of IOTA tokens to another address if you already have at least 1Mi as a dust allowance output on that address. The number of allowed dust outputs on an address is the amount of the dust allowance outputs divided by 100,000 and rounded down, that is, 10 outputs for each 1 IOTA deposited, with a maximum of 100 dust outputs in total.
 
 :::note
 

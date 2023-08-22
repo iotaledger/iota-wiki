@@ -34,18 +34,18 @@ The address balance is calculated as the total of the UTXO balances on that addr
 Recognising the risk of ledger bloat, a dust protection mechanism is introduced.
 When thinking about dust we now have to think about UTXOs rather than addresses. This is really tricky as we will see.
 
-The basic rule of IOTA 1.5 dust protection is that "UTXOs cannot hold under 1 million IOTA (1 Mi)".
-Try to remember this very important rule as it makes sending amounts under 1 Mi very tricky!
+The basic rule of IOTA 1.5 dust protection is that "UTXOs cannot hold under 1 IOTA.
+Try to remember this very important rule as it makes sending amounts under 1 IOTA can be tricky!
 
-To understand why this is tricky, let's look at an example where I try to send 10i to an address that already contains 5 Mi. You may assume that you could add 10i to that 5 Mi, so that you have a total of 5.00001 Mi, which respects the basic dust protection rule.
+To understand why this is tricky, let's look at an example where I try to send 10 micros to an address that already contains 5 IOTA. You may assume that you could add 10 micros to that 5 IOTA, so that you have a total of 5.000001 IOTA, which respects the basic dust protection rule.
 But no!
 
-Each UTXO is actually a self-contained pot, which only contains the output from a transaction. And in this case that pot would only contain the 10i you sent (ie the output of that transaction). So, as the UTXO only contains 10i, you have broken the dust protection rule.
+Each UTXO is actually a self-contained pot, which only contains the output from a transaction. And in this case that pot would only contain the 10 micros you sent (ie the output of that transaction). So, as the UTXO only contains 10 micros, you have broken the dust protection rule.
 (You may need to re-read that a few times to understand it properly)
 
-To overcome this problem, a special UTXO called a "dust allowance output" was introduced. Users could now lock 1- 10 Mi on a dust allowance output, and could then receive up to 10 dust UTXOs per Mi deposited, on the associated address.
-eg I create a dust allowance output with 2 Mi locked on Address A. You can now send up to 20 dust transactions (a dust transaction is anything under 1 Mi) to Address A.
-Users can also sweep the dust UTXOs - this means combining multiple dust UTXOs into a single UTXO (eg 1i + 1i + 1i -> 3i on 1 UTXO). This frees up spare UTXOs on your dust-enabled address.
+To overcome this problem, a special UTXO called a "dust allowance output" was introduced. Users could now lock 1- 10 IOTA on a dust allowance output, and could then receive up to 10 dust UTXOs per IOTA deposited, on the associated address.
+eg I create a dust allowance output with 2 IOTA locked on Address A. You can now send up to 20 dust transactions (a dust transaction is anything under 1 IOTA) to Address A.
+Users can also sweep the dust UTXOs - this means combining multiple dust UTXOs into a single UTXO (eg 1 micro + 1 micro + 1 micro -> 3 micro on 1 UTXO). This frees up spare UTXOs on your dust-enabled address.
 
 This was a reasonable interim solution, but unfortunately it is not compatible with IOTA 2.0, as it requires total ordering of the Tangle (to determine if the transaction is valid, and that the dust protection rules are fulfilled). IOTA 2.0 does not have total ordering.
 
@@ -56,18 +56,18 @@ The 1.5 dust protection is also not ready for IOTA 2.0. Therefore a new dust pro
 
 The rules of the new dust protection are:
 
-1. Any UTXO must contain a minimum deposit (for the sake of simplicity, let's make this 1 Mi for our examples).
+1. Any UTXO must contain a minimum deposit (for the sake of simplicity, let's make this 1 IOTA for our examples).
 2. The amount of data any UTXO can hold is proportional to the amount of IOTA on that UTXO. The IOTA acts as a deposit to secure that data on the Tangle, and you can add more IOTA to add more data. This is why the official name for the new dust protection was chosen to be _storage deposit_ The actual cost of IOTA per byte is currently being decided, and can change over time.
 
-To send amounts smaller than 1 Mi, or to send native assets, we introduce a new system of "conditional sending", which does not require total ordering of the Tangle (and is therefore ready for IOTA 2.0).
-Let's look at how this works if I want to send 10i to an address which already holds 5 Mi (assuming the minimum deposit is 1 Mi). As before I cannot just send 10i, because the UTXO will have a value of 10i (well below the minimal amount of 1 Mi).
+To send amounts smaller than 1 IOTA, or to send native assets, we introduce a new system of "conditional sending", which does not require total ordering of the Tangle (and is therefore ready for IOTA 2.0).
+Let's look at how this works if I want to send 10 micros to an address which already holds 5 IOTA (assuming the minimum deposit is 1 IOTA). As before I cannot just send 10 micros, because the UTXO will have a value of 10 micros (well below the minimal amount of 1 IOTA).
 I cannot use a special dust-UTXO as in 1.5, because these need total ordering of the Tangle.
 Instead I use "conditional sending":
 
-1. I send the 10i together with the minimal deposit amount (1 Mi) - a total of 1.00001 Mi (which meets the storage deposit criteria) - to the target address.
+1. I send the 10 micros together with the minimal deposit amount (1 IOTA) - a total of 1.00001 IOTA (which meets the storage deposit criteria) - to the target address.
 2. This is however a special type of transaction which needs a further step to complete. It has to be "claimed" by the recipient. 2 things can therefore happen to this transaction:
-   a) The 10i is claimed by the recipient - the 10i is transferred together with the recipient's own minimal deposit to a new valid UTXO. The recipient needs their own 1 Mi deposit to claim the 10i. At the same time the sender's 1 Mi deposit is returned to the sender.
-   b) The 10i is not claimed in a reasonable time period (set by the sender), and the total amount of 1.00001 Mi can now be reclaimed or spent by the sender (the mechanism is a bit more complex but this is the simplest way of describing it).
+   a) The 10 micros is claimed by the recipient - the 10 micros is transferred together with the recipient's own minimal deposit to a new valid UTXO. The recipient needs their own 1 IOTA deposit to claim the 10 micros. At the same time the sender's 1 IOTA deposit is returned to the sender.
+   b) The 10 micros is not claimed in a reasonable time period (set by the sender), and the total amount of 1.00001 IOTA can now be reclaimed or spent by the sender (the mechanism is a bit more complex but this is the simplest way of describing it).
 
 #### Bonus
 

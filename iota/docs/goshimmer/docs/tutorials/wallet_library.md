@@ -810,7 +810,7 @@ IOTA 2.0 DevNet CLI-Wallet 0.2
 Sweeping NFT owned funds... [DONE]
 ```
 
-If you check the balance, it should be updated. So the wallet contains 1 MI more:
+If you check the balance, it should be updated. So the wallet contains 1 IOTA more:
 
 ```shell
 ./cli-wallet balance
