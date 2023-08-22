@@ -6,7 +6,6 @@ import ReactMarkdown from 'react-markdown';
 import './styles.css';
 
 export default function DocBanner() {
-  const { pluginData } = useActivePlugin();
   const { bannerContent } = useDoc().metadata as DocMetadata;
 
   if (!bannerContent) return null;
