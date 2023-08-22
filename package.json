@@ -56,7 +56,7 @@
     "@svgr/webpack": "^5.5.0",
     "clsx": "^1.2.1",
     "docusaurus-plugin-openapi-docs": "jlvandenhout/docusaurus-openapi-docs#workspace=docusaurus-plugin-openapi-docs&head=unify-tab-naming",
-    "docusaurus-theme-openapi-docs": "jlvandenhout/docusaurus-openapi-docs#workspace=docusaurus-theme-openapi-docs&head=unify-tab-naming",
+    "docusaurus-theme-openapi-docs": "2.0.0-beta.3",
     "file-loader": "^6.2.0",
     "flickity": "2.3.0",
     "flickity-fade": "^2.0.0",
