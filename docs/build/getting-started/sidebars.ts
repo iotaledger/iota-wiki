@@ -25,6 +25,42 @@ module.exports = {
     },
     {
       type: 'category',
+      label: 'Tools',
+      link: {
+        type: 'generated-index',
+        title: 'Tools',
+        slug: '/tools',
+      },
+      items: [
+        {
+          type: 'link',
+          label: 'CLI Wallet',
+          href: '/cli-wallet/welcome',
+        },
+        {
+          type: 'link',
+          label: 'WASP CLI',
+          href: '/smart-contracts/guide/chains_and_nodes/wasp-cli',
+        },
+        {
+          label: 'Schema Tool',
+          type: 'link',
+          href: '/smart-contracts/guide/wasm_vm/schema',
+        },
+        {
+          label: 'Explorer',
+          type: 'link',
+          href: 'https://explorer.shimmer.network',
+        },
+        {
+          label: 'Testnet Faucet',
+          type: 'link',
+          href: 'https://faucet.testnet.shimmer.network',
+        },
+      ],
+    },
+    {
+      type: 'category',
       label: 'Community Libs',
       collapsed: true,
       items: [

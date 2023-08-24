@@ -157,7 +157,7 @@ export default function HomeLayout() {
                 <h3 className='nodes__header'>Wasp</h3>
                 <ul className='nodes__features'>
                   <li className='nodes__feature'>
-                    <Link to='/smart-contracts/guide/core_concepts/validators'>
+                    <Link to='/learn/smart-contracts/core_concepts/validators'>
                       Validate smart contracts
                     </Link>
                   </li>
@@ -235,7 +235,7 @@ export default function HomeLayout() {
                 your own project!
               </p>
             </Link>
-            <Link to='integration-services/welcome' className='resources__card'>
+            <Link to='build/tools' className='resources__card'>
               <div className='resources__icon'>
                 <IntegrationServices />
               </div>

@@ -20,5 +20,5 @@ The IOTA Foundation currently provides the following public load-balanced mainne
 - https://chrysalis-nodes.iota.org.
 - https://chrysalis-nodes.iota.cafe.
 
-These endpoints have MQTT (via WebSockets) exposed and offer the HTTP REST API (according to this [specification](nodes/rest-api/iota-rest-api.info.mdx))
+These endpoints have MQTT (via WebSockets) exposed and offer the HTTP REST API (according to this [specification](/apis/core/v1/iota-rest-api))
 over TLS.

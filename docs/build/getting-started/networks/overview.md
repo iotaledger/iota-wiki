@@ -54,7 +54,7 @@ The IndexationPayload allows you to add an index to a data message and arbitrary
 
 You can use the [INX-PoI](https://wiki.iota.org/shimmer/inx-poi/welcome/) node extension to verify if any piece of data
 was included in the Tangle. This feature does not rely on
-the [Chronicle](/maintain/chronicle/welcome) permanode, so it drastically reduces the node operator's storage
+the [Chronicle](/chronicle/welcome) permanode, so it drastically reduces the node operator's storage
 requirements.
 
 #### Tagged Data Payload
