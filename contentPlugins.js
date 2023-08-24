@@ -35,6 +35,7 @@ module.exports = async () => {
       id: 'identity-rs-0-5',
       path: path.resolve(__dirname, 'docs/build/identity.rs/v0.5.0/docs'),
       routeBasePath: 'identity.rs',
+      bannerPath: path.resolve(__dirname, 'banners/identity-deprecated.mdx'),
       sidebarPath: path.resolve(
         __dirname,
         'docs/build/identity.rs/v0.5.0/sidebars.js',
@@ -51,6 +52,10 @@ module.exports = async () => {
       id: 'identity-rs-0-6',
       path: path.resolve(__dirname, 'docs/build/identity.rs/v0.6.0/docs'),
       routeBasePath: 'identity.rs',
+      bannerPath: path.resolve(
+        __dirname,
+        'banners/identity-stronghold-migration.mdx',
+      ),
       sidebarPath: path.resolve(
         __dirname,
         'docs/build/identity.rs/v0.6.0/sidebars.js',
@@ -129,6 +134,7 @@ module.exports = async () => {
       id: 'iotajs',
       path: path.resolve(__dirname, 'docs/build/iota.js/2.0.0-rc.1/docs'),
       routeBasePath: 'iota.js',
+      bannerPath: path.resolve(__dirname, 'banners/iota-js-deprecated.mdx'),
       sidebarPath: path.resolve(
         __dirname,
         'docs/build/iota.js/2.0.0-rc.1/sidebars.js',
