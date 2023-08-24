@@ -62,7 +62,7 @@ In general, storage implementations are free to support any [JSON Web Algorithm]
 
 ## Implementation
 
-The IOTA Identity library ships two implementations of key storage. The `JwkMemStore` and `KeyIdMemstore` are insecure in-memory implementations intended as example implementations and for testing. The default key storage implementation is `Stronghold`, which is an example of a storage that implements both storage interfaces simultaneously. `Stronghold` may be interesting for implementers to look at, too, as it needs to deal with some challenges the in-memory version does not have to deal with.
+The IOTA Identity library ships two implementations of key storage. The `JwkMemStore` and `KeyIdMemstore` are insecure in-memory implementations intended as example implementations and for testing. The default key storage implementation is `Stronghold`, which is an example of a storage that implements both storage interfaces simultaneously. `Stronghold` may be interesting for implementers to look at, too, as it needs to deal with some challenges the in-memory version does not have to deal with. Note that the `Stronghold` implementation is only available in Rust.
 
 This section will detail some common challenges and embeds the `MemStore` implementations in Rust and TypeScript.
 
