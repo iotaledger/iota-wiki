@@ -26,7 +26,7 @@ The logical structure of IOTA Smart Contracts is independent of the VM type:
 
 Each smart contract on the chain is identified by a _hname_ (pronounced "aitch-name"), which is a `uint32` value
 calculated as a hash of the smart contract's instance name (a string).
-For example, the hname of the [`root`](../core_concepts/core_contracts/root.md) core contract is `0xcebf5908`. This
+For example, the hname of the [`root`](/learn/smart-contracts/core_concepts/core_contracts/root) core contract is `0xcebf5908`. This
 value uniquely identifies this contract in every chain.
 
 ## State
@@ -47,7 +47,7 @@ Only the smart contract program can change its data state and spend from its
 account. Tokens can be sent to the smart contract account by any other agent on
 the ledger, be it a wallet with an address or another smart contract.
 
-See [Accounts](../core_concepts/accounts/how-accounts-work.md) for more information on sending and receiving tokens.
+See [Accounts](/learn/smart-contracts/core_concepts/accounts/how-accounts-work) for more information on sending and receiving tokens.
 
 ## Entry Points
 
@@ -65,7 +65,7 @@ There are two types of entry points:
 ## Execution Results
 
 After a request to a Smart Contract is executed (a call to a full entry point), a _receipt_ will be added to
-the [`blocklog`](../core_concepts/core_contracts/blocklog.md) core contract. The receipt details the execution results
+the [`blocklog`](/learn/smart-contracts/core_concepts/core_contracts/blocklog) core contract. The receipt details the execution results
 of said request: whether it was successful, the block it was included in, and other information.
 Any events dispatched by the smart contract in context of this execution will also be added to the receipt.
 

@@ -14,7 +14,7 @@ keywords:
 
 # EVM Compatibility in IOTA Smart Contracts
 
-The [`evm`](../core_concepts/core_contracts/evm.md) [core contract](../core_concepts/core_contracts/overview.md)
+The [`evm`](/learn/smart-contracts/core_concepts/core_contracts/evm) [core contract](/learn/smart-contracts/core_concepts/core_contracts/overview)
 provides EVM support in IOTA Smart Contracts. It stores the EVM state (account balances, state, code,
 etc.) and provides a way to execute EVM code to manipulate the state.
 
@@ -40,10 +40,10 @@ Here are some of the most important properties and limitations of EVM support in
   request
   is the Ethereum address that signed the original transaction (e.g., the Metamask account).
 
-- While ISC contracts are identified by an [hname](../core_concepts/smart-contract-anatomy.md), EVM contracts are
+- While ISC contracts are identified by an [hname](/learn/smart-contracts/core_concepts/smart-contract-anatomy), EVM contracts are
   identified by their Ethereum address.
 
-- EVM contracts are not listed in the chain's [contract registry](../core_concepts/core_contracts/root.md).
+- EVM contracts are not listed in the chain's [contract registry](/learn/smart-contracts/core_concepts/core_contracts/root).
 
 - EVM contracts cannot be called via regular ISC requests; they can only be
   called through the JSON-RPC service.
@@ -53,7 +53,7 @@ Here are some of the most important properties and limitations of EVM support in
   It would be inefficient to do that since it would be duplicating work done by the ISC layer.
 
 - Any Ethereum transactions present in an ISC block are executed by
-  the [`evm`](../core_concepts/core_contracts/evm.md) [core contract](../core_concepts/core_contracts/overview.md),
+  the [`evm`](/learn/smart-contracts/core_concepts/core_contracts/evm) [core contract](/learn/smart-contracts/core_concepts/core_contracts/overview),
   updating the EVM state accordingly. An emulated Ethereum block is also created and stored to provide compatibility
   with EVM tools. As the emulated block is not part of a real Ethereum blockchain, some attributes of the blocks will
   contain dummy values (e.g. `stateRoot`, `nonce`, etc.).

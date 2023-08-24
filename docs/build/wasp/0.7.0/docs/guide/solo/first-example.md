@@ -13,8 +13,8 @@ keywords:
 # First Example
 
 The following is an example of a _Solo_ test. It deploys a new chain and invokes some view calls in the
-[`root`](../core_concepts/core_contracts/root.md) and [`governance`](../core_concepts/core_contracts/governance.md)
-[core contracts](../core_concepts/core_contracts/overview.md).
+[`root`](/learn/smart-contracts/core_concepts/core_contracts/root) and [`governance`](/learn/smart-contracts/core_concepts/core_contracts/governance)
+[core contracts](/learn/smart-contracts/core_concepts/core_contracts/overview).
 
 ```go
 import (
@@ -81,7 +81,7 @@ The output of the test will be something like this:
 
 :::
 
-The [core contracts](../core_concepts/core_contracts/overview.md) listed in the log are automatically deployed on each
+The [core contracts](/learn/smart-contracts/core_concepts/core_contracts/overview) listed in the log are automatically deployed on each
 new chain. The log also shows their _contract IDs_.
 
 The output fragment in the log `state transition --> #1` means that the state of the chain has changed from block index

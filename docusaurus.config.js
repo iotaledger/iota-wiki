@@ -1,4 +1,4 @@
-const { merge } = require('./src/utils/config');
+const { glob, merge } = require('./src/utils/config');
 const path = require('path');
 const { create_doc_plugin, globStatic } = require('./src/utils/config');
 const common = require('./common/docusaurus.config');
@@ -10,6 +10,9 @@ module.exports = async () => {
       await contentConfigs()
     ).map(async (contentConfig) => await create_doc_plugin(contentConfig)),
   );
+
+  // Get tips and tutorials
+  const additionalPlugins = await glob(['docs/external/tips', 'tutorials']);
 
   const { MODE = 'development' } = process.env;
 
@@ -171,5 +174,6 @@ module.exports = async () => {
     themeConfig,
     isProduction ? production : {},
     scripts,
+    ...additionalPlugins,
   );
 };

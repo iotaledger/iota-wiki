@@ -14,6 +14,17 @@ module.exports = {
     },
     {
       type: 'category',
+      label: 'Endpoints',
+      collapsed: true,
+      items: [
+        'endpoints/mainnet',
+        'endpoints/devnet',
+        'endpoints/shimmer',
+        'endpoints/testnet',
+      ],
+    },
+    {
+      type: 'category',
       label: 'Community Libs',
       collapsed: true,
       items: [

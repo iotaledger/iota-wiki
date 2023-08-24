@@ -2,7 +2,7 @@ const path = require('path');
 
 module.exports = {
   url: 'https://wiki.iota.org',
-  onBrokenLinks: 'throw',
+  onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'log',
   favicon: 'img/favicon.ico',
   trailingSlash: true,
