@@ -49,8 +49,5 @@ runs:
       shell: bash
     - name: Build
       run: |
-        yarn build
-      # Avoid running out of memory
-      env:
-        NODE_OPTIONS: '--max-old-space-size=2048'
+        NODE_OPTIONS='--max-old-space-size=2048' yarn build
       shell: bash
