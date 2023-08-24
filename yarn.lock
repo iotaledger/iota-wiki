@@ -2756,8 +2756,8 @@ __metadata:
     "@typescript-eslint/eslint-plugin": ^5.9.1
     "@typescript-eslint/parser": ^5.9.1
     clsx: ^1.2.1
-    docusaurus-plugin-openapi-docs: "jlvandenhout/docusaurus-openapi-docs#workspace=docusaurus-plugin-openapi-docs&head=unify-tab-naming"
-    docusaurus-theme-openapi-docs: 2.0.0-beta.3
+    docusaurus-plugin-openapi-docs: "dr-electron/docusaurus-openapi-docs#workspace=docusaurus-theme-openapi-docs&head=tmp-fix-until-612"
+    docusaurus-theme-openapi-docs: "dr-electron/docusaurus-openapi-docs#workspace=docusaurus-theme-openapi-docs&head=tmp-fix-until-612"
     eslint: ^8.46.0
     eslint-config-prettier: ^8.9.0
     eslint-plugin-react: ^7.26.0
@@ -8007,30 +8007,39 @@ __metadata:
   languageName: node
   linkType: hard
 
-"docusaurus-plugin-openapi-docs@jlvandenhout/docusaurus-openapi-docs#workspace=docusaurus-plugin-openapi-docs&head=unify-tab-naming":
+"docusaurus-plugin-openapi-docs@dr-electron/docusaurus-openapi-docs#workspace=docusaurus-theme-openapi-docs&head=tmp-fix-until-612":
   version: 2.0.0-beta.3
-  resolution: "docusaurus-plugin-openapi-docs@https://github.com/jlvandenhout/docusaurus-openapi-docs.git#workspace=docusaurus-plugin-openapi-docs&commit=a3634824e622f1b13b9dc1d10294f353123ecea9"
+  resolution: "docusaurus-plugin-openapi-docs@https://github.com/dr-electron/docusaurus-openapi-docs.git#workspace=docusaurus-theme-openapi-docs&commit=843f3b394586eeba99b1bdcdff9a249655534622"
   dependencies:
-    "@apidevtools/json-schema-ref-parser": ^10.1.0
-    "@docusaurus/plugin-content-docs": ">=2.3.0 <2.5.0"
-    "@docusaurus/utils": ">=2.3.0 <2.5.0"
-    "@docusaurus/utils-validation": ">=2.3.0 <2.5.0"
-    "@paloaltonetworks/openapi-to-postmanv2": 3.1.0-hotfix.1
+    "@docusaurus/theme-common": ">=2.3.0 <2.5.0"
+    "@hookform/error-message": ^2.0.1
+    "@nextui-org/react": ^1.0.0-beta.12
+    "@paloaltonetworks/postman-code-generators": 1.1.15-patch.2
     "@paloaltonetworks/postman-collection": ^4.1.0
-    "@redocly/openapi-core": ^1.0.0-beta.125
-    chalk: ^4.1.2
+    "@reduxjs/toolkit": ^1.7.1
     clsx: ^1.1.1
-    fs-extra: ^9.0.1
-    json-pointer: ^0.6.2
-    json-schema-merge-allof: ^0.8.1
+    copy-text-to-clipboard: ^3.1.0
+    crypto-js: ^4.1.1
+    docusaurus-plugin-openapi-docs: ^2.0.0-beta.3
+    docusaurus-plugin-sass: ^0.2.3
+    file-saver: ^2.0.5
     lodash: ^4.17.20
-    mustache: ^4.2.0
-    slugify: ^1.6.5
-    swagger2openapi: ^7.0.8
+    node-polyfill-webpack-plugin: ^2.0.1
+    prism-react-renderer: ^1.3.5
+    react-hook-form: ^7.43.8
+    react-live: ^4.0.0
+    react-magic-dropzone: ^1.0.1
+    react-markdown: ^8.0.1
+    react-modal: ^3.15.1
+    react-redux: ^7.2.0
+    rehype-raw: ^6.1.1
+    sass: ^1.58.1
+    webpack: ^5.61.0
     xml-formatter: ^2.6.1
   peerDependencies:
     react: ^16.8.4 || ^17.0.0
-  checksum: ac501eaf48d884fb11c4452f5f89fff4a0ab720dc85f5404b8a0709e77cf936680ecc5e332c5aac7c8ed04306841b8b76df3d290363b3c534480216bd5d1e608
+    react-dom: ^16.8.4 || ^17.0.0
+  checksum: b7a9ed946a1b30c41ddc7e81cbede2d732c36ad2fb4ae78aea93dad9bd735ae273e8c5856f9cb2bfd3c31ec7ce27904573480f7143c3d95a95440ad8e723754c
   languageName: node
   linkType: hard
 
@@ -8073,9 +8082,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"docusaurus-theme-openapi-docs@npm:2.0.0-beta.3":
+"docusaurus-theme-openapi-docs@dr-electron/docusaurus-openapi-docs#workspace=docusaurus-theme-openapi-docs&head=tmp-fix-until-612":
   version: 2.0.0-beta.3
-  resolution: "docusaurus-theme-openapi-docs@npm:2.0.0-beta.3"
+  resolution: "docusaurus-theme-openapi-docs@https://github.com/dr-electron/docusaurus-openapi-docs.git#workspace=docusaurus-theme-openapi-docs&commit=843f3b394586eeba99b1bdcdff9a249655534622"
   dependencies:
     "@docusaurus/theme-common": ">=2.3.0 <2.5.0"
     "@hookform/error-message": ^2.0.1
@@ -8105,7 +8114,7 @@ __metadata:
   peerDependencies:
     react: ^16.8.4 || ^17.0.0
     react-dom: ^16.8.4 || ^17.0.0
-  checksum: 3a74bd65179f3a346870104d87d8426f41b347ada7deb27f02f6edd94c950eb4fe955177e95a2fd4dc56eb3c6d1212a20d4435513f4a242e20bb4205ea705931
+  checksum: 8762e6292a8f529592f42f1c588fefce397ac32b8a2e699f8d4cd695019626eb2160b67e771e4bb59bf42d664bb84e54b3d660316e9387034e14b44d5141af64
   languageName: node
   linkType: hard
 
