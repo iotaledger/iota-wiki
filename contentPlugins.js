@@ -181,6 +181,16 @@ module.exports = async () => {
       ),
     },
     {
+      id: 'apis',
+      path: path.resolve(__dirname, 'docs/build/apis'),
+      routeBasePath: 'apis',
+      sidebarPath: path.resolve(
+        __dirname,
+        'docs/build/apis/sidebars.ts',
+      ),
+      docItemComponent: '@theme/ApiItem',
+    },
+    {
       id: 'iota-streams',
       path: path.resolve(__dirname, 'docs/build/streams/0.2.0/docs'),
       routeBasePath: 'streams',

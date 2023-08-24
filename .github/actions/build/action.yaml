@@ -32,6 +32,10 @@ runs:
       run: |
         yarn build:theme
       shell: bash
+    - name: Generate APIs
+      run: |
+        yarn generate:api
+      shell: bash
     # Artifacts cached after install to prevent removal by Yarn
     - name: Cache build artifacts
       uses: actions/cache@v3
@@ -45,5 +49,5 @@ runs:
       shell: bash
     - name: Build
       run: |
-        yarn build
+        NODE_OPTIONS='--max-old-space-size=4096' yarn build
       shell: bash
