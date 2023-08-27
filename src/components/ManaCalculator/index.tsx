@@ -3,7 +3,7 @@ import Select from 'react-select';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import {
-  calculateManaGeneratedPerEpoch,
+  calculateManaRewards,
   calculatePassiveRewards,
   calculateTPS,
 } from './calculator';
@@ -98,6 +98,9 @@ function ValidatorCard({
 
 export default function ManaCalculator() {
   const [state, setState] = useState({
+    epoch: 1154 + 1,
+    initialEpoch: 0,
+    finalEpoch: 100,
     validators: [
       {
         lockedStake: 100,
@@ -245,54 +248,158 @@ export default function ManaCalculator() {
     });
   }
 
-  const epoch = 1154 + 1;
-  let manaGeneratedPerEpoch = calculateManaGeneratedPerEpoch(
-    state.stake,
-    state.delegator.validator,
-    null,
-    state.validators,
-    epoch,
-    'Delegator',
-  );
-  let passiveRewards = calculatePassiveRewards(state.stake, epoch);
+  function handleEpochChange(value: number) {
+    setState({
+      ...state,
+      epoch: value,
+    });
+  }
 
-  let grantedTPS = calculateTPS(manaGeneratedPerEpoch, state.congestion);
-  let additionalTPS = calculateTPS(passiveRewards, state.congestion);
-  let totalTPS = grantedTPS + additionalTPS;
+  function handleInitialEpochChange(value: number) {
+    setState({
+      ...state,
+      initialEpoch: value,
+    });
+  }
 
-  const delegatorResults = {
-    manaGeneratedPerEpoch: manaGeneratedPerEpoch,
-    passiveRewards: passiveRewards,
-    totalTPS: totalTPS,
+  function handleFinalEpochChange(value: number) {
+    setState({
+      ...state,
+      finalEpoch: value,
+    });
+  }
+
+  // Calulate Mana rewards for delegator and validator
+  let delegatorResults = {
+    manaGeneratedPerEpoch: 0,
+    passiveRewards: 0,
+    totalTPS: 0,
   };
-
-  manaGeneratedPerEpoch = calculateManaGeneratedPerEpoch(
-    state.stake,
-    state.delegator.validator,
-    {
-      performanceFactor: state.validator.performanceFactor,
-      fixedCost: state.validator.fixedCost,
-      shareOfYourStakeLocked: state.validator.shareOfYourStakeLocked,
-      attractedNewDelegatedStake: state.validator.attractedNewDelegatedStake,
-      attractedDelegatedStakeFromOtherPools:
-        state.validator.attractedDelegatedStakeFromOtherPools,
-    } as ValidatorParameters,
-    state.validators,
-    epoch,
-    'Validator',
-  );
-  grantedTPS = calculateTPS(manaGeneratedPerEpoch, state.congestion);
-  totalTPS = grantedTPS + additionalTPS;
-
-  const validatorResults = {
-    manaGeneratedPerEpoch: manaGeneratedPerEpoch,
-    passiveRewards: passiveRewards,
-    totalTPS: totalTPS,
+  let validatorResults = {
+    manaGeneratedPerEpoch: 0,
+    passiveRewards: 0,
+    totalTPS: 0,
   };
+  {
+    let manaGeneratedPerEpoch = calculateManaRewards(
+      state.stake,
+      state.delegator.validator,
+      null,
+      state.validators,
+      state.epoch,
+      null,
+      'Delegator',
+    );
+    let passiveRewards = calculatePassiveRewards(
+      state.stake,
+      state.epoch,
+      state.epoch + 1,
+    );
+
+    let grantedTPS = calculateTPS(manaGeneratedPerEpoch, state.congestion);
+    let additionalTPS = calculateTPS(passiveRewards, state.congestion);
+    let totalTPS = grantedTPS + additionalTPS;
+
+    delegatorResults = {
+      manaGeneratedPerEpoch: manaGeneratedPerEpoch,
+      passiveRewards: passiveRewards,
+      totalTPS: totalTPS,
+    };
+
+    manaGeneratedPerEpoch = calculateManaRewards(
+      state.stake,
+      state.delegator.validator,
+      {
+        performanceFactor: state.validator.performanceFactor,
+        fixedCost: state.validator.fixedCost,
+        shareOfYourStakeLocked: state.validator.shareOfYourStakeLocked,
+        attractedNewDelegatedStake: state.validator.attractedNewDelegatedStake,
+        attractedDelegatedStakeFromOtherPools:
+          state.validator.attractedDelegatedStakeFromOtherPools,
+      } as ValidatorParameters,
+      state.validators,
+      state.epoch,
+      null,
+      'Validator',
+    );
+    grantedTPS = calculateTPS(manaGeneratedPerEpoch, state.congestion);
+    totalTPS = grantedTPS + additionalTPS;
+
+    validatorResults.manaGeneratedPerEpoch = manaGeneratedPerEpoch;
+    validatorResults.passiveRewards = passiveRewards;
+    validatorResults.totalTPS = totalTPS;
+  }
+
+  // Calulate Mana rewards for delegator and validator
+  let delegatorAccumulateResults = {
+    manaGenerated: 0,
+    passiveRewards: 0,
+    totalTPS: 0,
+  };
+  let validatorAccumulateResults = {
+    manaGenerated: 0,
+    passiveRewards: 0,
+    totalTPS: 0,
+  };
+  {
+    let manaGenerated = calculateManaRewards(
+      state.stake,
+      state.delegator.validator,
+      null,
+      state.validators,
+      state.initialEpoch,
+      state.finalEpoch,
+      'Delegator',
+    );
+    let passiveRewards = calculatePassiveRewards(
+      state.stake,
+      state.initialEpoch,
+      state.finalEpoch,
+    );
+
+    let grantedTPS = calculateTPS(manaGenerated, state.congestion);
+    let additionalTPS = calculateTPS(passiveRewards, state.congestion);
+    let totalTPS = grantedTPS + additionalTPS;
+
+    delegatorAccumulateResults.manaGenerated = manaGenerated;
+    delegatorAccumulateResults.passiveRewards = passiveRewards;
+    delegatorAccumulateResults.totalTPS = totalTPS;
+
+    manaGenerated = calculateManaRewards(
+      state.stake,
+      state.delegator.validator,
+      {
+        performanceFactor: state.validator.performanceFactor,
+        fixedCost: state.validator.fixedCost,
+        shareOfYourStakeLocked: state.validator.shareOfYourStakeLocked,
+        attractedNewDelegatedStake: state.validator.attractedNewDelegatedStake,
+        attractedDelegatedStakeFromOtherPools:
+          state.validator.attractedDelegatedStakeFromOtherPools,
+      } as ValidatorParameters,
+      state.validators,
+      state.initialEpoch,
+      state.finalEpoch,
+      'Validator',
+    );
+    grantedTPS = calculateTPS(manaGenerated, state.congestion);
+    totalTPS = grantedTPS + additionalTPS;
+
+    validatorAccumulateResults.manaGenerated = manaGenerated;
+    validatorAccumulateResults.passiveRewards = passiveRewards;
+    validatorAccumulateResults.totalTPS = totalTPS;
+  }
 
   return (
     <Tabs>
       <TabItem value='tps' label='TPS'>
+        <div className='row'>
+          <label className='col col--4'>Epoch:</label>
+          <input
+            className='col col--4'
+            value={state.epoch}
+            onChange={(e) => handleEpochChange(Number(e.target.value))}
+          ></input>
+        </div>
         <div className='row'>
           {state.validators.map((validator, i) => (
             <div className='col col--4' key={i}>
@@ -360,8 +467,87 @@ export default function ManaCalculator() {
           </TabItem>
         </Tabs>
       </TabItem>
-      <TabItem value='mana' label='Mana'>
-        <div>Mana</div>
+      <TabItem value='mana' label='Mana accumulation'>
+        <div className='row'>
+          <label className='col col--3'>Initial epoch:</label>
+          <input
+            className='col col--3'
+            value={state.initialEpoch}
+            onChange={(e) => handleInitialEpochChange(Number(e.target.value))}
+          ></input>
+          <label className='col col--3'>Final epoch:</label>
+          <input
+            className='col col--3'
+            value={state.finalEpoch}
+            onChange={(e) => handleFinalEpochChange(Number(e.target.value))}
+          ></input>
+        </div>
+        <div className='row'>
+          {state.validators.map((validator, i) => (
+            <div className='col col--4' key={i}>
+              <ValidatorCard
+                validator={validator}
+                handleDelete={handleDelete}
+                handleStakeChange={handleStakeChange}
+                handleDelegatedStakeChange={handleDelegatedStakeChange}
+                handleFCChange={handleFCChange}
+                handlePFChange={handlePFChange}
+                id={i}
+              />
+            </div>
+          ))}
+        </div>
+        <div className='row'>
+          <div className='col col--2'>You are a:</div>
+        </div>
+        <Tabs>
+          <TabItem value='Delegator' label='Delegator'>
+            <DelegatorForm
+              stake={state.stake}
+              validators={state.validators}
+              handleOwnStakeChange={handleOwnStakeChange}
+              handleValidatorChange={handleValidatorChange}
+            />
+            <OutputForm
+              manaGeneratedPerEpoch={delegatorAccumulateResults.manaGenerated}
+              passiveRewards={delegatorAccumulateResults.passiveRewards}
+              totalTPS={delegatorAccumulateResults.totalTPS}
+              handleCongestionChange={handleCongestionChange}
+            />
+          </TabItem>
+          <TabItem value='Validator' label='Validator'>
+            <ValidatorForm
+              stake={state.stake}
+              performanceFactor={state.validator.performanceFactor}
+              fixedCost={state.validator.fixedCost}
+              shareOfYourStakeLocked={state.validator.shareOfYourStakeLocked}
+              attractedNewDelegatedStake={
+                state.validator.attractedNewDelegatedStake
+              }
+              attractedDelegatedStakeFromOtherPools={
+                state.validator.attractedDelegatedStakeFromOtherPools
+              }
+              handleOwnStakeChange={handleOwnStakeChange}
+              handleOwnPFChange={handleOwnPFChange}
+              handleOwnFCChange={handleOwnFCChange}
+              handleShareOfYourStakeLockedChange={
+                handleShareOfYourStakeLockedChange
+              }
+              handleAttractedNewDelegatedStakeChange={
+                handleAttractedNewDelegatedStakeChange
+              }
+              handleAttractedDelegatedStakeFromOtherPoolsChange={
+                handleAttractedDelegatedStakeFromOtherPoolsChange
+              }
+            />
+            <OutputForm
+              manaGeneratedPerEpoch={validatorResults.manaGeneratedPerEpoch}
+              passiveRewards={validatorResults.passiveRewards}
+              totalTPS={validatorResults.totalTPS}
+              handleCongestionChange={handleCongestionChange}
+            />
+          </TabItem>
+        </Tabs>
       </TabItem>
     </Tabs>
   );

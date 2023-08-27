@@ -5,18 +5,30 @@ import {
   IOTA_SUPPLY,
   targetReward,
   EPOCH_DURATION,
+  decay,
 } from './utils';
 import { ValidatorParameters, ValidatorProps } from './types';
 
-export function calculateManaGeneratedPerEpoch(
+export function calculateManaRewards(
   stake: number,
   yourPool: number,
   validatorParameters: ValidatorParameters,
   validators: ValidatorProps[],
-  epoch: number,
+  initialEpoch: number,
+  finalEpoch: number,
   yourRole: 'Validator' | 'Delegator',
 ): number {
-  // Initialies lockedStake array with the stake of each validator
+  let totalTargetReward = 0;
+  let epochDiff = 1;
+  if (finalEpoch) {
+    for (let i = 0; i < epochDiff; i++) {
+      totalTargetReward += decay(targetReward(initialEpoch + i), epochDiff - i);
+    }
+  } else {
+    finalEpoch = initialEpoch + 1;
+    totalTargetReward = targetReward(initialEpoch);
+  }
+
   const lockedStake: number[] = validators.map(
     (validator) => validator.lockedStake,
   );
@@ -74,17 +86,17 @@ export function calculateManaGeneratedPerEpoch(
         poolRewards[i] =
           ((lockedStake[i] + delegatedStake[i]) / totalStake +
             lockedStake[i] / totalValidatorsStake) *
-            targetReward(epoch) *
+            totalTargetReward *
             (performance[i] / 2.0) -
-          fixedCosts[i];
+          epochDiff * fixedCosts[i];
       }
     } else {
       for (let i = 0; i < lockedStake.length; i++) {
         poolRewards[i] =
           ((lockedStake[i] + delegatedStake[i]) / totalStake) *
-            targetReward(epoch) *
+            totalTargetReward *
             (performance[i] / 2.0) -
-          fixedCosts[i];
+          epochDiff * fixedCosts[i];
       }
     }
   }
@@ -96,10 +108,10 @@ export function calculateManaGeneratedPerEpoch(
       validatorRewards[i] = 0;
       poolRewards[i] = 0;
     } else if (poolRewards[i] === 0) {
-      validatorRewards[i] = fixedCosts[i];
+      validatorRewards[i] = epochDiff * fixedCosts[i];
     } else {
       validatorRewards[i] =
-        fixedCosts[i] +
+        epochDiff * fixedCosts[i] +
         poolRewards[i] * profitMargin +
         ((1 - profitMargin) * poolRewards[i] * lockedStake[i]) /
           (delegatedStake[i] + lockedStake[i]);
@@ -129,11 +141,15 @@ export function calculateManaGeneratedPerEpoch(
   return rewards;
 }
 
-export function calculatePassiveRewards(tokens: number, epoch): number {
+export function calculatePassiveRewards(
+  tokens: number,
+  initialEpoch: number,
+  finalEpoch: number,
+): number {
   return potential_Mana(
     tokens,
-    first_slot_of_epoch(epoch) - 1,
-    first_slot_of_epoch(epoch + 1) - 1,
+    first_slot_of_epoch(initialEpoch) - 1,
+    first_slot_of_epoch(finalEpoch) - 1,
     GENERATION_PER_SLOT,
   );
 }
