@@ -34,7 +34,7 @@ the [ISC library](https://www.npmjs.com/package/@iota/iscmagic):
 yarn add @iota/iscmagic
 ```
 
-Thereon you can import it into your contracts as such:
+You can import it into your contracts like this:
 
 ```solidity
 import "@iota/iscmagic/ISC.sol";
