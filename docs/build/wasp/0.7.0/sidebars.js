@@ -233,6 +233,11 @@ module.exports = {
         },
         {
           type: 'doc',
+          label: 'Magic Contract Usage',
+          id: 'guide/evm/magic-uses',
+        },
+        {
+          type: 'doc',
           label: 'Tooling',
           id: 'guide/evm/tooling',
         },
