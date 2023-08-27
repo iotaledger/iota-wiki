@@ -18,24 +18,26 @@ keywords:
 ## Send Assets and Tokens to L1
 
 :::info
-Currently, you can only send back a token to L1 if it was originally send to L2 from L1.
+
+Currently, you can only send back a token to L1 if it was originally sent to L2 from L1.
+
 :::
 
-You can decide how much storage deposit to do by defining it in baseTokens:
+You can decide how much storage deposit to add by defining it in baseTokens:
 
 ```solidity
 allowance.baseTokens = storageDeposit
 ```
 
-Do make sure this amount is big enough to cover the gas fee or else the call will fail.
+Make sure the amount is big enough to cover the gas fee or the call will fail.
 
-Define assets to send and the balance that will be sent will be deducted after tokens for gas fee from it:
+Define assets to send, and the actual balance will be deducted from after tokens for gas fee got subtracted:
 
 ```solidity
 ISCAssets memory assets;
 ```
 
-So, if you're sending base tokens, you can define as:
+So, if you're sending base tokens, you can define them as:
 
 ```solidity
 assets.baseTokens
