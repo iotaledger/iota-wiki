@@ -16,6 +16,7 @@ import {
   ChangeCongestionEvent,
   CongestionType,
   ManaCalculatorProps,
+  ValidatorParameters,
 } from './types';
 
 function ValidatorCard({
@@ -123,6 +124,13 @@ export default function ManaCalculator() {
     delegator: {
       validator: 0,
     },
+    validator: {
+      performanceFactor: 1.0,
+      fixedCost: 0.0,
+      shareOfYourStakeLocked: 1.0,
+      attractedNewDelegatedStake: 0.0,
+      attractedDelegatedStakeFromOtherPools: 0.1,
+    },
   } as ManaCalculatorProps);
 
   function handleDelete(id: number) {
@@ -199,8 +207,46 @@ export default function ManaCalculator() {
     });
   }
 
+  function handleOwnPFChange(value: number) {
+    setState({
+      ...state,
+      validator: { ...state.validator, performanceFactor: value },
+    });
+  }
+
+  function handleOwnFCChange(value: number) {
+    setState({
+      ...state,
+      validator: { ...state.validator, fixedCost: value },
+    });
+  }
+
+  function handleShareOfYourStakeLockedChange(value: number) {
+    setState({
+      ...state,
+      validator: { ...state.validator, shareOfYourStakeLocked: value },
+    });
+  }
+
+  function handleAttractedNewDelegatedStakeChange(value: number) {
+    setState({
+      ...state,
+      validator: { ...state.validator, attractedNewDelegatedStake: value },
+    });
+  }
+
+  function handleAttractedDelegatedStakeFromOtherPoolsChange(value: number) {
+    setState({
+      ...state,
+      validator: {
+        ...state.validator,
+        attractedDelegatedStakeFromOtherPools: value,
+      },
+    });
+  }
+
   const epoch = 1154 + 1;
-  const manaGeneratedPerEpoch = calculateManaGeneratedPerEpoch(
+  let manaGeneratedPerEpoch = calculateManaGeneratedPerEpoch(
     state.stake,
     state.delegator.validator,
     null,
@@ -208,11 +254,41 @@ export default function ManaCalculator() {
     epoch,
     'Delegator',
   );
-  const passiveRewards = calculatePassiveRewards(state.stake, epoch);
+  let passiveRewards = calculatePassiveRewards(state.stake, epoch);
 
-  const grantedTPS = calculateTPS(manaGeneratedPerEpoch, state.congestion);
-  const additionalTPS = calculateTPS(passiveRewards, state.congestion);
-  const totalTPS = grantedTPS + additionalTPS;
+  let grantedTPS = calculateTPS(manaGeneratedPerEpoch, state.congestion);
+  let additionalTPS = calculateTPS(passiveRewards, state.congestion);
+  let totalTPS = grantedTPS + additionalTPS;
+
+  const delegatorResults = {
+    manaGeneratedPerEpoch: manaGeneratedPerEpoch,
+    passiveRewards: passiveRewards,
+    totalTPS: totalTPS,
+  };
+
+  manaGeneratedPerEpoch = calculateManaGeneratedPerEpoch(
+    state.stake,
+    state.delegator.validator,
+    {
+      performanceFactor: state.validator.performanceFactor,
+      fixedCost: state.validator.fixedCost,
+      shareOfYourStakeLocked: state.validator.shareOfYourStakeLocked,
+      attractedNewDelegatedStake: state.validator.attractedNewDelegatedStake,
+      attractedDelegatedStakeFromOtherPools:
+        state.validator.attractedDelegatedStakeFromOtherPools,
+    } as ValidatorParameters,
+    state.validators,
+    epoch,
+    'Validator',
+  );
+  grantedTPS = calculateTPS(manaGeneratedPerEpoch, state.congestion);
+  totalTPS = grantedTPS + additionalTPS;
+
+  const validatorResults = {
+    manaGeneratedPerEpoch: manaGeneratedPerEpoch,
+    passiveRewards: passiveRewards,
+    totalTPS: totalTPS,
+  };
 
   return (
     <Tabs>
@@ -244,14 +320,43 @@ export default function ManaCalculator() {
               handleValidatorChange={handleValidatorChange}
             />
             <OutputForm
-              manaGeneratedPerEpoch={manaGeneratedPerEpoch}
-              passiveRewards={passiveRewards}
-              totalTPS={totalTPS}
+              manaGeneratedPerEpoch={delegatorResults.manaGeneratedPerEpoch}
+              passiveRewards={delegatorResults.passiveRewards}
+              totalTPS={delegatorResults.totalTPS}
               handleCongestionChange={handleCongestionChange}
             />
           </TabItem>
           <TabItem value='Validator' label='Validator'>
-            <ValidatorForm />
+            <ValidatorForm
+              stake={state.stake}
+              performanceFactor={state.validator.performanceFactor}
+              fixedCost={state.validator.fixedCost}
+              shareOfYourStakeLocked={state.validator.shareOfYourStakeLocked}
+              attractedNewDelegatedStake={
+                state.validator.attractedNewDelegatedStake
+              }
+              attractedDelegatedStakeFromOtherPools={
+                state.validator.attractedDelegatedStakeFromOtherPools
+              }
+              handleOwnStakeChange={handleOwnStakeChange}
+              handleOwnPFChange={handleOwnPFChange}
+              handleOwnFCChange={handleOwnFCChange}
+              handleShareOfYourStakeLockedChange={
+                handleShareOfYourStakeLockedChange
+              }
+              handleAttractedNewDelegatedStakeChange={
+                handleAttractedNewDelegatedStakeChange
+              }
+              handleAttractedDelegatedStakeFromOtherPoolsChange={
+                handleAttractedDelegatedStakeFromOtherPoolsChange
+              }
+            />
+            <OutputForm
+              manaGeneratedPerEpoch={validatorResults.manaGeneratedPerEpoch}
+              passiveRewards={validatorResults.passiveRewards}
+              totalTPS={validatorResults.totalTPS}
+              handleCongestionChange={handleCongestionChange}
+            />
           </TabItem>
         </Tabs>
       </TabItem>
@@ -303,8 +408,95 @@ function DelegatorForm({
   );
 }
 
-function ValidatorForm() {
-  return <div>Validator</div>;
+function ValidatorForm({
+  stake,
+  performanceFactor,
+  fixedCost,
+  shareOfYourStakeLocked,
+  attractedNewDelegatedStake,
+  attractedDelegatedStakeFromOtherPools,
+  handleOwnStakeChange,
+  handleOwnPFChange,
+  handleOwnFCChange,
+  handleShareOfYourStakeLockedChange,
+  handleAttractedNewDelegatedStakeChange,
+  handleAttractedDelegatedStakeFromOtherPoolsChange,
+}: {
+  stake: number;
+  performanceFactor: number;
+  fixedCost: number;
+  shareOfYourStakeLocked: number;
+  attractedNewDelegatedStake: number;
+  attractedDelegatedStakeFromOtherPools: number;
+  handleOwnStakeChange: ChangeEvent;
+  handleOwnPFChange: ChangeEvent;
+  handleOwnFCChange: ChangeEvent;
+  handleShareOfYourStakeLockedChange: ChangeEvent;
+  handleAttractedNewDelegatedStakeChange: ChangeEvent;
+  handleAttractedDelegatedStakeFromOtherPoolsChange: ChangeEvent;
+}) {
+  return (
+    <div>
+      <div className='row'>
+        <label className='col col--4'>Stake:</label>
+        <input
+          className='col col--4'
+          value={stake}
+          onChange={(e) => handleOwnStakeChange(Number(e.target.value))}
+        ></input>
+      </div>
+      <div className='row'>
+        <label className='col col--4'>Performance factor:</label>
+        <input
+          className='col col--4'
+          value={performanceFactor}
+          onChange={(e) => handleOwnPFChange(Number(e.target.value))}
+        ></input>
+      </div>
+      <div className='row'>
+        <label className='col col--4'>Fixed costs:</label>
+        <input
+          className='col col--4'
+          value={fixedCost}
+          onChange={(e) => handleOwnFCChange(Number(e.target.value))}
+        ></input>
+      </div>
+      <div className='row'>
+        <label className='col col--4'>Share of your stake locked:</label>
+        <input
+          className='col col--4'
+          value={shareOfYourStakeLocked}
+          onChange={(e) =>
+            handleShareOfYourStakeLockedChange(Number(e.target.value))
+          }
+        ></input>
+      </div>
+      <div className='row'>
+        <label className='col col--4'>Attracted new delegated stake:</label>
+        <input
+          className='col col--4'
+          value={attractedNewDelegatedStake}
+          onChange={(e) =>
+            handleAttractedNewDelegatedStakeChange(Number(e.target.value))
+          }
+        ></input>
+      </div>
+      <div className='row'>
+        <label className='col col--4'>
+          Attracted delegated stake from other pools:
+        </label>
+        <input
+          className='col col--4'
+          value={attractedDelegatedStakeFromOtherPools}
+          onChange={(e) =>
+            handleAttractedDelegatedStakeFromOtherPoolsChange(
+              Number(e.target.value),
+            )
+          }
+        ></input>
+      </div>
+    </div>
+  );
 }
 
 function OutputForm({
