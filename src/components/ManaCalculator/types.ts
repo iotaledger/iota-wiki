@@ -25,6 +25,9 @@ export enum UserType {
 }
 
 export interface ManaCalculatorProps {
+  epoch: number;
+  initialEpoch: number;
+  finalEpoch: number;
   validators: ValidatorProps[];
   userType: UserType;
   congestion: CongestionType;

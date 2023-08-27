@@ -38,7 +38,7 @@ export function first_slot_of_epoch(n: number): number {
 }
 
 // returns the decayed value of value by n epochs
-function decay(value: number, n: number): number {
+export function decay(value: number, n: number): number {
   if (value != 0 && n != 0) {
     const decay = Math.exp(-BETA_PER_YEAR * EPOCH_DURATION_IN_YEARS * n);
     value = Math.floor(value * decay);
