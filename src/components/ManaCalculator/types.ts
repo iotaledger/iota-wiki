@@ -11,12 +11,12 @@ export interface ValidatorProps {
   fixedCost: number;
 }
 
-export interface ValiatorParameters {
+export interface ValidatorParameters {
   shareOfYourStakeLocked: number;
   attractedNewDelegatedStake: number;
   attractedDelegatedStakeFromOtherPools: number;
-  yourFixedCost: number;
-  yourPerformance: number;
+  fixedCost: number;
+  performanceFactor: number;
 }
 
 export enum UserType {
@@ -30,6 +30,13 @@ export interface ManaCalculatorProps {
   congestion: CongestionType;
   delegator: {
     validator: number;
+  };
+  validator: {
+    shareOfYourStakeLocked: number;
+    attractedNewDelegatedStake: number;
+    attractedDelegatedStakeFromOtherPools: number;
+    fixedCost: number;
+    performanceFactor: number;
   };
   stake: number;
 }

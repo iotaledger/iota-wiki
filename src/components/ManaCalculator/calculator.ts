@@ -6,12 +6,12 @@ import {
   targetReward,
   EPOCH_DURATION,
 } from './utils';
-import { ValiatorParameters, ValidatorProps } from './types';
+import { ValidatorParameters, ValidatorProps } from './types';
 
 export function calculateManaGeneratedPerEpoch(
   stake: number,
   yourPool: number,
-  validatorParameters: ValiatorParameters,
+  validatorParameters: ValidatorParameters,
   validators: ValidatorProps[],
   epoch: number,
   yourRole: 'Validator' | 'Delegator',
@@ -32,8 +32,8 @@ export function calculateManaGeneratedPerEpoch(
 
   if (yourRole === 'Validator') {
     lockedStake.push(stake * validatorParameters.shareOfYourStakeLocked);
-    fixedCosts.push(validatorParameters.yourFixedCost);
-    performance.push(validatorParameters.yourPerformance);
+    fixedCosts.push(validatorParameters.fixedCost);
+    performance.push(validatorParameters.performanceFactor);
     delegatedStake.push(
       (1 - validatorParameters.shareOfYourStakeLocked) * stake +
         validatorParameters.attractedNewDelegatedStake +
