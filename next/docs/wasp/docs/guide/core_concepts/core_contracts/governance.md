@@ -195,6 +195,22 @@ Changes optional extra metadata that is appended to the L1 AliasOutput.
 
 - `x` (`bytes`): the optional metadata
 
+### `setPayoutAgentID`
+
+`setPayoutAgentID` sets the payout AgentID. The default AgentID is the chain owner. Transaction fee will be taken to ensure the common account has minimum storage deposit which is in base token. The rest of transaction fee will be transferred to payout AgentID.
+
+#### Parameters
+
+- `s` (`AgentID`): the payout AgentID
+
+### `setMinCommonAccountBalance`
+
+`setMinCommonAccountBalance` sets the minimum balanced to be held in the common account.
+
+#### Parameters
+
+- `ms` (`AgentID`): the minimum common account balance
+
 ---
 
 ## Views
@@ -268,13 +284,35 @@ Returns the current access nodes and candidates.
 
 Returns whether the chain is undergoing maintenance.
 
+#### Returns
+
 - `m` (`bool`): `true` if the chain is in maintenance mode
 
 ### `getCustomMetadata()`
 
 Returns the extra metadata that is added to the chain AliasOutput.
 
+#### Returns
+
 - `x` (`bytes`): the optional metadata
+
+### `getPayoutAgentID`
+
+`getPayoutAgentID` gets the payout AgentID.
+
+Returns the payout AgentID of the chain.
+
+#### Returns
+
+- `s` (`AgentID`): the payout AgentID.
+
+### `getMinCommonAccountBalance`
+
+`getMinCommonAccountBalance` returns the minimum balanced to be held in the common account.
+
+#### Returns
+
+- `ms` (`uint64`): the minimum storage deposit.
 
 ## Schemas
 
@@ -316,25 +354,3 @@ A ratio between two values `x` and `y`, expressed as two `int32` numbers `a:b`, 
 - The certificate. (`[]byte` prefixed by `uint16` size)
 - Whether the access node is part of the committee of validators. (`bool`)
 - The API base URL. (`string` prefixed by `uint16` size)
-
-### `SetPayoutAgentID`
-
-`SetPayoutAgentID` sets the payout AgentID. The default AgentID is the chain owner. Transaction fee will be taken to ensure the common account has minimum storage deposit which is in base token. The rest of transaction fee will be transferred to payout AgentID.
-
-### `GetPayoutAgentID`
-
-`GetPayoutAgentID` gets the payout AgentID.
-
-Returns the payout AgentID of the chain.
-
-- `s` (`AgentID`): the payout AgentID.
-
-### `SetMinCommonAccountBalance`
-
-`SetMinCommonAccountBalance` sets the minimum balanced to be held in the common account.
-
-### `GetMinCommonAccountBalance`
-
-`GetMinCommonAccountBalance` returns the minimum balanced to be held in the common account.
-
-- `ms` (`uint64`): the minimum storage deposit.
