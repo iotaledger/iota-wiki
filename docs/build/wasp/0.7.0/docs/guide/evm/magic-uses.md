@@ -29,9 +29,9 @@ You can decide how much storage deposit to add by defining it in baseTokens:
 allowance.baseTokens = storageDeposit
 ```
 
-Make sure the amount is big enough to cover the gas fee or the call will fail.
+Ensure the amount is big enough to cover the gas fee, or the call will fail.
 
-Define assets to send, and the actual balance will be deducted from after tokens for gas fee got subtracted:
+Define assets to send, and the actual balance will be deducted after the tokens for the gas fee get subtracted:
 
 ```solidity
 ISCAssets memory assets;
