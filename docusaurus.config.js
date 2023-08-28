@@ -44,7 +44,7 @@ module.exports = async () => {
           },
           {
             label: 'Learn',
-            to: '/learn/chyrsalis/introduction',
+            to: '/learn/chrysalis/introduction',
             activeBaseRegex: '^(/[^/]+)?/learn/.*',
           },
           {
