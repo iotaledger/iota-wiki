@@ -5,12 +5,12 @@ image: /img/shimmer-wiki.png
 # Shimmer Mainnet
 
 You can access the Stardust protocols' stable features by using
-the [Shimmer Mainnet](../../endpoints/shimmer.md). Although it is an
-innovation network, all the Stardust protocol features have been tested on the [public testnet](#public-testnet). You can rest assured that your experience will be stable and reliable.
+the [Shimmer Mainnet](../endpoints/shimmer.md). Although it is an
+innovation network, all the Stardust protocol features have been tested on the [public testnet](public-testnets.md#shimmer). You can rest assured that your experience will be stable and reliable.
 
 :::tip Public APIs
 
-You can find a list of public APIs in the [Shimmer Endpoints](../../endpoints/shimmer.md) section.
+You can find a list of public APIs in the [Shimmer Endpoints](../endpoints/shimmer.md) section.
 
 :::
 
