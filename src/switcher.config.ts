@@ -136,18 +136,6 @@ const buildDocs = [
     ],
   },
   {
-    id: 'apis',
-    label: 'APIs',
-    description: 'All available APIs.',
-    icon: Tools,
-    subsection: 'build-layer-1',
-    versions: [
-      {
-        id: 'apis',
-      },
-    ],
-  },
-  {
     id: 'cli-wallet',
     label: 'CLI Wallet',
     icon: Wallet,

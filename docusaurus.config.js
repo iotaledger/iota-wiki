@@ -44,12 +44,12 @@ module.exports = async () => {
           },
           {
             label: 'Learn',
-            to: '/learn/stardust/introduction',
+            to: '/learn/chrysalis/introduction',
             activeBaseRegex: '^(/[^/]+)?/learn/.*',
           },
           {
             label: 'Build',
-            to: '/iota-sdk/welcome',
+            to: '/build/networks/overview',
             activeBaseRegex:
               '^(/[^/]+)?/iota-sdk/.*|' +
               '^(/[^/]+)?/build/.*|' +
@@ -162,64 +162,6 @@ module.exports = async () => {
       ],
       plugins: [
         ...contentPlugins,
-        [
-          "docusaurus-plugin-openapi-docs",
-          {
-            id: "openapi",
-            docsPluginId: "apis", // e.g. "classic" or the plugin-content-docs id
-            config: {
-              coreApiChrysalis: {
-                specPath: 'https://raw.githubusercontent.com/iotaledger/tips/main/tips/TIP-0013/rest-api.yaml',
-                outputDir: path.resolve(__dirname, 'docs/build/apis/core/v1'),
-                sidebarOptions: {
-                  groupPathsBy: 'tag',
-                },
-              },
-              coreApiShimmer: {
-                specPath: 'https://raw.githubusercontent.com/iotaledger/tips/main/tips/TIP-0025/core-rest-api.yaml',
-                outputDir: path.resolve(__dirname, 'docs/build/apis/core/v2'),
-                sidebarOptions: {
-                  groupPathsBy: 'tag',
-                },
-              },
-              waspApi: {
-                specPath: 'https://raw.githubusercontent.com/iotaledger/wasp/develop/clients/apiclient/api/openapi.yaml',
-                outputDir: path.resolve(__dirname, 'docs/build/apis/wasp'),
-                sidebarOptions: {
-                  groupPathsBy: "tag",
-                },
-              },
-              indexerApi: {
-                specPath: 'https://raw.githubusercontent.com/iotaledger/tips/main/tips/TIP-0026/indexer-rest-api.yaml',
-                outputDir: path.resolve(__dirname, 'docs/build/apis/indexer'),
-                sidebarOptions: {
-                  groupPathsBy: "tag",
-                },
-              },
-              poiApi: {
-                specPath: 'https://raw.githubusercontent.com/iotaledger/inx-poi/develop/rest-api.yaml',
-                outputDir: path.resolve(__dirname, 'docs/build/apis/poi'),
-                sidebarOptions: {
-                  groupPathsBy: "tag",
-                },
-              },
-              explorerApi: {
-                specPath: 'https://raw.githubusercontent.com/iotaledger/inx-chronicle/main/documentation/api/api-explorer.yml',
-                outputDir: path.resolve(__dirname, 'docs/build/apis/explorer'),
-                sidebarOptions: {
-                  groupPathsBy: "tag",
-                },
-              },
-              ircMetadata: {
-                specPath: 'https://raw.githubusercontent.com/iotaledger/inx-irc-metadata/develop/rest-api.yaml',
-                outputDir: path.resolve(__dirname, 'docs/build/apis/irc-metadata'),
-                sidebarOptions: {
-                  groupPathsBy: "tag",
-                },
-              },
-            }
-          },
-        ],
       ],
       stylesheets: [
         {

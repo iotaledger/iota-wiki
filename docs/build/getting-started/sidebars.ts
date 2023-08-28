@@ -5,11 +5,11 @@ module.exports = {
       label: 'Networks',
       collapsed: true,
       items: [
-        'networks/legacy-mainnet',
-        'networks/mainnet',
         'networks/overview',
-        'networks/public-testnets',
+        'networks/mainnet',
         'networks/shimmer',
+        'networks/public-testnets',
+        'networks/legacy-mainnet',
       ],
     },
     {
