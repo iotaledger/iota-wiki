@@ -29,7 +29,7 @@ You can use this section to get a high-level overview of the IOTA and Shimmer ne
 | [Tokenization](#tokenization)                                  | None                                                                         | NFTs, Native Tokens, Alias Outputs                                                                                                                                                                                                                                                                                                                                                    |
 | [Storage deposits](#storage-deposits)                          | None                                                                         | Yes                                                                                                                                                                                                                                                                                                                                                                                   |
 | [Output unlock conditions](#output-unlock-conditions)          | [Address](https://wiki.iota.org/learn/stardust/core-concepts/output-unlock-conditions) | [Address](https://wiki.iota.org/learn/stardust/core-concepts/output-unlock-conditions), [Storage Deposit Returns](https://wiki.iota.org/learn/stardust/core-concepts/output-unlock-conditions#storage-deposit-return), [Expiration](https://wiki.iota.org/learn/stardust/core-concepts/output-unlock-conditions#expiration), [Timelock](https://wiki.iota.org/learn/stardust/core-concepts/output-unlock-conditions#timelock) |
-| [IOTA Smart Contract (ISC)](#iota-smart-contracts-isc) Support | No                                                                           | In alpha state                                                                                                                                                                                                                                                                                                                                                                        |
+| [IOTA Smart Contract (ISC)](#iota-smart-contracts-isc) Support | No                                                                           | In beta state                                                                                                                                                                                                                                                                                                                                                                        |
 
 ## Stability
 
@@ -60,7 +60,7 @@ requirements.
 #### Tagged Data Payload
 
 You can use a [Tagged Data Payload](https://wiki.iota.org/shimmer/tips/tips/TIP-0023/) to attach binary data and a tag
-to extend an object with arbitrary data.
+to extend an object with arbitrary data. Keep in mind this will not be indexed by the core nodes and you might want to create your own indexer based on INX or find a community driven project
 
 ## Tokenization
 
@@ -72,7 +72,7 @@ The IOTA network does not support custom tokens yet.
 
 The Stardust protocol introduces
 a [tokenization framework](https://wiki.iota.org/learn/stardust/core-concepts/multi-asset-ledger)
-that enables Native Tokens, NFTs and native tokens and foundries on layer 1, as long as you can cover the
+that enables Native Tokens, NFTs and foundries on layer 1, as long as you can cover the
 minimum [storage deposit](#storage-deposits).
 
 ## Storage Deposits
