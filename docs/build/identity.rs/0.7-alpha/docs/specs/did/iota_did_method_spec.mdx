@@ -125,15 +125,15 @@ The types are defined in [TIP-21](#data-types--subschema-notation).
 
 The payload must contain the following fields:
 
-- `metadata`: contains metadata about the DID Document. For example, `created` to indicate the time of
+- `meta`: contains metadata about the DID Document. For example, `created` to indicate the time of
   creation, and `updated` to indicate the time of the last update to the document. It can also include other properties.
-- `document`: which contains the DID Document. In the example below, the document only contains one verification method. The `id` and `controller` is specified by `did:0:0` which references the DID of the document itself, since the DID is unknown at the time of publishing. It also deduplicates the DID of the document to reduce the size of the state metadata, in turn reducing the required storage deposit.
+- `doc`: which contains the DID Document. In the example below, the document only contains one verification method. The `id` and `controller` is specified by `did:0:0` which references the DID of the document itself, since the DID is unknown at the time of publishing. It also deduplicates the DID of the document to reduce the size of the state metadata, in turn reducing the required storage deposit.
 
 Example State Metadata Document:
 
 ```json
 {
-  "document": {
+  "doc": {
     "id": "did:0:0",
     "verificationMethod": [
       {
@@ -144,7 +144,7 @@ Example State Metadata Document:
       }
     ]
   },
-  "metadata": {
+  "meta": {
     "created": "2022-08-02T21:39:48Z",
     "updated": "2022-08-02T21:39:48Z"
   }
