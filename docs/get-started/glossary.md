@@ -166,7 +166,7 @@ description: Glossary of all specialized names and phrases used in the IOTA and 
 
 - **Tangle:** The Tangle is the underlying core data structure. In mathematical terms it is a directed acyclic graph (DAG). The Tangle is the distributed ledger that stores all transactions.
 - **Ternary system:** A trit (trinary digit) can have exactly three states (3 x 1 = 3): -1, 0 and 1. Three trits result in one tryte (33 = 27) and can thus represent 27 combinations. In IOTA, the letters A-Z (26 pieces) and the number 9 are used for this purpose.
-- **Token:** The digital currency form (cryptocurrency). It is a powerful tool for value transfer between people and machines. Total number: 2,779,530,283,277,761 IOTA. The base units are Pi, Ti, Gi, Mi, ki, i
+- **Token:** The digital currency form (cryptocurrency). It is a powerful tool for value transfer between people and machines. Total number: 2,779,530,283,277,761 IOTA. The base units are IOTA and micros.
 - **Trinity (IOTA 1.0):** Depreciated IOTA Wallet
 - **Tip:** A transaction that has not yet been approved.
 - **Tip Selection:** The process of selecting previous transactions to be referenced by a new transaction. In these references, a transaction ties into the existing data structure. IOTA and Shimmer only enforces that a transaction approves up to eight other transactions, the tip selection strategy is left to the user (with a good default provided by Shimmer).

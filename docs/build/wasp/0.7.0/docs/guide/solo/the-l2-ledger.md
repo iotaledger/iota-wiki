@@ -4,13 +4,13 @@ well as with addresses on the L1 ledger.'
 image: /img/logo/WASP_logo_dark.png
 keywords:
 
-- testing
-- solo
-- account
-- address
-- wallet
-- balances
-- ledger
+  - testing
+  - solo
+  - account
+  - address
+  - wallet
+  - balances
+  - ledger
 
 ---
 
@@ -53,7 +53,7 @@ func TestTutorialAccounts(t *testing.T) {
 	// for now our on-chain account is empty:
 	chain.AssertL2BaseTokens(userAgentID, 0)
 
-	// send 1 Mi from the L1 wallet to own account on-chain, controlled by the same wallet
+	// send 1 IOTA from the L1 wallet to own account on-chain, controlled by the same wallet
 	req := solo.NewCallParams(accounts.Contract.Name, accounts.FuncDeposit.Name).
 		AddBaseTokens(1 * isc.Million)
 
@@ -61,7 +61,7 @@ func TestTutorialAccounts(t *testing.T) {
 	gas1, gasFee1, err := chain.EstimateGasOnLedger(req, userWallet, true)
 	require.NoError(t, err)
 	storageDeposit1 := chain.EstimateNeededStorageDeposit(req, userWallet)
-	require.Zero(t, storageDeposit1) // since 1 Mi is enough
+	require.Zero(t, storageDeposit1) // since 1 IOTA is enough
 
 	// send the deposit request
 	req.WithGasBudget(gas1).
@@ -69,9 +69,9 @@ func TestTutorialAccounts(t *testing.T) {
 	_, err = chain.PostRequestSync(req, userWallet)
 	require.NoError(t, err)
 
-	// our L1 balance is 1 Mi + gas fee short
+	// our L1 balance is 1 IOTA + gas fee short
 	env.AssertL1BaseTokens(userAddress, utxodb.FundsFromFaucetAmount-1*isc.Million-gasFee1)
-	// our L2 balance is 1 Mi
+	// our L2 balance is 1 IOTA
 	chain.AssertL2BaseTokens(userAgentID, 1*isc.Million)
 	// (the gas fee went to the chain's private account)
 
@@ -100,10 +100,10 @@ func TestTutorialAccounts(t *testing.T) {
 
 The example above creates a chain and a wallet with `utxodb.FundsFromFaucetAmount` base tokens on L1.
 Then, it sends 1 million tokens to the corresponding on-chain account by posting a
-[`deposit`](/learn/smart-contracts/core_concepts/core_contracts/accounts#deposit) request to the
-[`accounts` core contract](/learn/smart-contracts/core_concepts/core_contracts/accounts) on the chain.
+[`deposit`](../core_concepts/core_contracts/accounts.md#deposit) request to the
+[`accounts` core contract](../core_concepts/core_contracts/accounts.md) on the chain.
 
-Finally, it sends a [`withdraw`](/learn/smart-contracts/core_concepts/core_contracts/accounts#withdraw) request to the `accounts` core
+Finally, it sends a [`withdraw`](../core_concepts/core_contracts/accounts.md#withdraw) request to the `accounts` core
 contract to get the tokens back to L1.
 
 Both requests are affected by the gas fees and the storage deposit.
@@ -118,7 +118,7 @@ The first step in the deposit request is to create a request to deposit the fund
 
 #### 2. Add Base Tokens
 
-In the example above we want to deposit 1 Mi, so we call `AddBaseTokens(1 * isc.Million)`.
+In the example above we want to deposit 1 IOTA, so we call `AddBaseTokens(1 * isc.Million)`.
 
 This instructs Solo to take that amount from the L1 balance and add it to the transaction. This is only possible for
 on-ledger requests.
@@ -131,7 +131,7 @@ We use `chain.EstimateGasOnLedger` before actually sending the request to estima
 
 #### 4. Estimate Storage Deposit
 
-On-ledger requests also require a storage deposit. We use `EstimateNeededStorageDeposit` for this. As the 1 Mi already
+On-ledger requests also require a storage deposit. We use `EstimateNeededStorageDeposit` for this. As the 1 IOTA already
 included is enough for the storage deposit there’s no need to add more.
 
 #### 5. Add Gas Budget to the Request
@@ -144,7 +144,7 @@ Finally, we send the on-ledger request with `PostRequestSync`.
 
 #### 7. The Chain Picks Up the Request
 
-Any attached base tokens (1 Mi + gas fee) are automatically credited to the sender's L2 account.
+Any attached base tokens (1 IOTA + gas fee) are automatically credited to the sender's L2 account.
 
 #### 8. The chain executes the request
 
@@ -152,7 +152,7 @@ The gas fee is deducted from the sender's L2 account.
 
 #### 9. The Transfer is Complete
 
-We have exactly 1 Mi on our L2 balance.
+We have exactly 1 IOTA on our L2 balance.
 
 ### Withdraw Request
 

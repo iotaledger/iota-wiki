@@ -199,7 +199,7 @@ This will again set up a manager, open our account and unlock it using our passw
 Next we will tell the account manager the amount of tokens we want to send to what address by defining an output. The function to send tokens accepts a list of outputs, so in this case we will provide a list with one entry.
 
 ```rust
-    // Send a transaction with 1 Mi
+    // Send a transaction with 1 IOTA
     let outputs = vec![AddressWithAmount {
         address: "rms1qpszqzadsym6wpppd6z037dvlejmjuke7s24hm95s9fg9vpua7vluaw60xu".to_string(),
         amount: 1_000_000,
