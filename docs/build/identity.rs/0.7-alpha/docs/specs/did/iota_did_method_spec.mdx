@@ -14,7 +14,7 @@ keywords:
 
 # IOTA DID Method Specification
 
-Draft 11 August 2022
+28 August 2023
 
 ## Abstract
 
@@ -28,11 +28,11 @@ Data types and subschemas used throughout this TIP are defined in [draft TIP-21]
 
 ### UTXO Ledger
 
-The unspent transaction output ([UTXO](https://wiki.iota.org/IOTA-2.0-Research-Specifications/5.1UTXO)) model defines a ledger state where outputs are created by a transaction consuming outputs of previous transactions as inputs. IOTA and Shimmer have several output types, the relevant ones for the IOTA DID Method are: Basic Outputs for value transactions, and Alias Outputs for storage of DID Documents.
+The unspent transaction output ([UTXO](https://wiki.iota.org/IOTA-2.0-Research-Specifications/5.1UTXO)) model defines a ledger state where outputs are created by a transaction consuming outputs of previous transactions as inputs. The Stardust version of the protocol defines several output types, the relevant ones for the IOTA DID Method are: Basic Outputs for value transactions, and Alias Outputs for storage of DID Documents.
 
-All outputs must hold a minimum amount of coins to be stored on the ledger. For output types that can hold arbitrary data, for instance the Alias Output, the amount of coins held by the output must cover the byte cost of the data stored. This helps control the ledger size from growing uncontrollably while guaranteeing that the data is not pruned from the nodes, which is important for resolving DID Documents. This deposit is fully refundable and can be reclaimed when the output is destroyed.
+All outputs must hold a minimum amount of tokens to be stored on the ledger. For output types that can hold arbitrary data, for instance the Alias Output, the amount of tokens held by the output must cover the byte cost of the data stored. This prevents the ledger size from growing uncontrollably while guaranteeing that the data is not pruned from the nodes, which is important for resolving DID Documents. This deposit is fully refundable and can be reclaimed when the output is destroyed.
 
-Data saved in an output and covered by the storage deposit will be stored in _all_ nodes on the network and can be retrieved from any node. This provides strong guarantees for any data stored in the ledger.
+Data stored in an output and covered by the storage deposit will be stored in _all_ nodes on the network and can be retrieved from any node. This provides strong guarantees for any data stored in the ledger.
 
 ### Alias Output
 
@@ -59,7 +59,7 @@ The governor, on the other hand, can unlock a governance transition indicated by
 
 Storing DID Documents in the ledger state means they inherently benefit from the guarantees the ledger provides.
 
-1. Conflicts among nodes are sorted out and dealt with by the ledger.
+1. Conflicts among nodes are resolved and dealt with by the ledger.
 2. Replay attacks are not possible since transactions need to be confirmed by the ledger.
 3. The Alias Output includes the `State Index` which provides linear history for updates of a DID Document.
 
@@ -153,7 +153,7 @@ Example State Metadata Document:
 
 ## Controllers
 
-A state controller can directly update the DID Document and the amount of coins held by the Alias Output, but it cannot destroy the output. A governor, on the other hand, can indirectly update the DID Document by updating the state controller. The governor can also destroy the output by performing a governance transition without producing an Alias Output with the same `Alias ID`.
+A state controller can directly update the DID Document and the amount of tokens held by the Alias Output, but it cannot destroy the output. A governor, on the other hand, can indirectly update the DID Document by updating the state controller. The governor can also destroy the output by performing a governance transition without producing an Alias Output with the same `Alias ID`.
 
 As of now, only one state controller and one governor can be set for an Alias Output. Support for multiple controllers may be possible depending on future updates of the protocol.
 
@@ -176,7 +176,7 @@ Creation steps:
 2. Create the payload and the headers as described in the [Anatomy of the State Metadata](#anatomy-of-the-state-metadata).
 3. Create a new Alias Output with the payload and the headers stored in its `State Metadata`.
 4. Set the state controller and the governor unlock conditions to the addresses that should control state and governance transitions, respectively.
-5. Set enough coins in the output to cover the byte cost.
+5. Set enough tokens in the output to cover the byte cost.
 6. Publish a new transaction with an existing output that contains at least the storage deposit from step 6 as input, and the newly created Alias Output as output.
 
 Once the transaction is confirmed, the DID is published and can be formatted by using the `Alias ID` as the tag in [DID Format](#did-format).
