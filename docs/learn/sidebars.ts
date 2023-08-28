@@ -53,9 +53,7 @@ module.exports = {
               type: 'category',
               label: 'API Reference',
               collapsed: true,
-              items: [
-                'chrysalis/nodes/api_reference',
-              ],
+              items: ['chrysalis/nodes/api_reference'],
             },
             {
               type: 'category',
@@ -103,35 +101,6 @@ module.exports = {
           ],
         },
         'stardust/tips',
-      ],
-    },
-    {
-      type: 'category',
-      label: 'IOTA 2.0',
-      collapsed: true,
-      items: [
-        {
-          type: 'category',
-          label: 'Introduction',
-          items: [
-            'iota2.0/introduction/five-principles',
-            'iota2.0/introduction/digital-autonomy',
-          ],
-        },
-        {
-          type: 'category',
-          label: 'Core Concepts',
-          items: [
-            'iota2.0/core-concepts/data-structures',
-            'iota2.0/core-concepts/data-flow',
-            'iota2.0/core-concepts/networking',
-            'iota2.0/core-concepts/communication',
-            'iota2.0/core-concepts/consensus',
-            'iota2.0/core-concepts/mana',
-            'iota2.0/core-concepts/validators',
-          ],
-        },
-        'iota2.0/tips',
       ],
     },
     {
@@ -269,6 +238,6 @@ module.exports = {
         },
       ],
     },
-    'glossary'
+    'glossary',
   ],
 };
