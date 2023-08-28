@@ -189,6 +189,55 @@ module.exports = async () => {
         'docs/build/streams/0.2.0/sidebars.js',
       ),
     },
+    {
+      id: 'introduction-docs-chrysalis',
+      path: path.resolve(__dirname, 'docs/build/introduction-docs/chrysalis/docs'),
+      routeBasePath: 'introduction',
+      sidebarPath: path.resolve(
+        __dirname,
+        'docs/build/introduction-docs/chrysalis/sidebars.js',
+      ),
+      versions: {
+        current: {
+          label: 'Chrysalis',
+          badge: true,
+        },
+      },
+    },
+    {
+      id: 'introduction-docs-stardust',
+      path: path.resolve(__dirname, 'docs/build/introduction-docs/stardust/docs'),
+      routeBasePath: 'introduction',
+      sidebarPath: path.resolve(
+        __dirname,
+        'docs/build/introduction-docs/stardust/sidebars.js',
+      ),
+      versions: {
+        current: {
+          label: 'Stardust',
+          path: 'stardust',
+          badge: true,
+        },
+      },
+    },
+    {
+      id: 'cli-wallet',
+      path: path.resolve(__dirname, 'docs/build/cli-wallet/1.0.0/docs'),
+      routeBasePath: 'cli-wallet',
+      sidebarPath: path.resolve(
+        __dirname,
+        'docs/build/cli-wallet/1.0.0/sidebars.js',
+      ),
+    },
+    {
+      id: 'iota-zebra-tutorials',
+      path: path.resolve(__dirname, 'docs/build/zebra-iota-edge-sdk/tutorials'),
+      routeBasePath: 'zebra-tutorials',
+      sidebarPath: path.resolve(
+        __dirname,
+        'docs/build/zebra-iota-edge-sdk/sidebars.js',
+      ),
+    },
   ];
 
   const maintainPlugins = [

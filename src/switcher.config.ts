@@ -136,6 +136,19 @@ const buildDocs = [
     ],
   },
   {
+    id: 'cli-wallet',
+    label: 'CLI Wallet',
+    icon: Wallet,
+    subsection: 'build-layer-1',
+    versions: [
+      {
+        id: 'cli-wallet',
+        label: '1.0.0',
+        badges: ['Shimmer'],
+      },
+    ],
+  },
+  {
     id: 'smart-contract-0-7-0',
     label: 'Smart Contracts',
     description: 'Create smart contracts.',
