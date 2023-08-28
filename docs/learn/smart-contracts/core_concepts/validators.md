@@ -26,7 +26,7 @@ Depending on the governance model, chain owners can rotate the committee of vali
 By rotating the committee of validators, validators can be deleted, added, or replaced.
 
 ISC does not define how to select validators to form a committee: it could be a solitary choice of the chain's owner, or
-it could be a [public competition](https://wiki.assembly.sc/learn/introduction/) between candidates.
+it could be a public competition between candidates.
 ISC does not define how validators are rewarded either.
 
 ## Access Nodes
