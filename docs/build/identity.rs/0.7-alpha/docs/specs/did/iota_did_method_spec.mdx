@@ -223,13 +223,6 @@ Note that this operation irreversibly and irrecoverably deletes the DID. This is
 
 The `did:iota` method is implemented in the [IOTA Identity framework](https://github.com/iotaledger/identity.rs). This framework supports a number of operations that are standardized, some are standardized across the SSI community, and some are the invention of the IOTA Foundation.
 
-### Standardized Verification Method Types
-
-The IOTA Identity framework currently supports two Verification Method Types:
-
-- `Ed25519VerificationKey2018`: can be used to sign DID Document updates, Verifiable Credentials, Verifiable Presentations, and arbitrary data with a `JcsEd25519Signature2020`.
-- `X25519KeyAgreementKey2019`: can be used to perform [Diffie-Hellman key exchange](https://en.wikipedia.org/wiki/Diffie%E2%80%93Hellman_key_exchange) operations to derive a shared secret between two parties.
-
 ### Revocation
 
 Revocation of Verifiable Credentials and signatures can be achieved using the [Revocation Bitmap 2022](../revocation_bitmap_2022.mdx) where issuers store a bitmap of indices in the DID Document. These indices correspond to verifiable credentials they have issued. If the binary value of the index in the bitmap is 1 (one), the verifiable credential is revoked, if it is 0 (zero) it is not revoked.
