@@ -31,6 +31,7 @@ jobs:
           ref: ${{ github.event.issue.pull_request && format('refs/pull/{0}/merge', github.event.issue.number) || '' }}
           # Needed for showLastUpdateTime to work
           fetch-depth: 0
+          submodules: true
       - name: build
         uses: ./.github/actions/build/
       # Convert to Vercel project and upload
