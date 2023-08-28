@@ -44,12 +44,12 @@ module.exports = async () => {
           },
           {
             label: 'Learn',
-            to: '/learn/stardust/introduction',
+            to: '/learn/chyrsalis/introduction',
             activeBaseRegex: '^(/[^/]+)?/learn/.*',
           },
           {
             label: 'Build',
-            to: '/iota-sdk/welcome',
+            to: '/build/networks/overview',
             activeBaseRegex:
               '^(/[^/]+)?/iota-sdk/.*|' +
               '^(/[^/]+)?/build/.*|' +
