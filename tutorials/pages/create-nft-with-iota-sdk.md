@@ -217,4 +217,4 @@ Run the script `create-nft.js` and check the console output to follow the steps 
 node create-nft.js
 ```
 
-Make sure to check out the transaction block that minted your NFT in the Shimmer explorer. If everything went according to plan, the transaction spent a basic output and created two new unspent outputs, one NFT output, and a new basic output. In the newly created NFT output, you can see the immutable metadata of your NFT together with the unique IPFS URL.
+Check out the transaction block that minted your NFT in the [Shimmer Testnet Explorer](https://explorer.shimmer.network/testnet). If everything went according to plan, the transaction spent a basic output and created two new unspent outputs, one NFT output, and a new basic output. In the newly created NFT output, you can see the immutable metadata of your NFT together with the unique IPFS URL.
