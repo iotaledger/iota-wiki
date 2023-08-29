@@ -113,7 +113,7 @@ This should show a positive balance. If no tokens appear, try to request tokens 
 
 ## Send Tokens
 
-Now that we have some tokens, we can send them around.
+Now that you have some tokens, you can send them to a valid address using the `Account.send` function. 
 
 ```js
 await account.sync();
