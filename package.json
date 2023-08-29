@@ -4,8 +4,7 @@
   "scripts": {
     "build:plugins": "yarn ./plugins/tutorial build && yarn ./plugins/docs build",
     "build:theme": "yarn ./theme build",
-    "build:all": "(yarn generate:api && yarn build --out-dir build)",
-    "build:production": "(MODE=\"production\" yarn checkout:remote && yarn build:plugins && yarn build:iota)",
+    "build:production": "(MODE=\"production\" yarn checkout:remote && yarn build:plugins && yarn build:theme && yarn generate:api && yarn build)",
     "checkout": "git submodule update --init",
     "checkout:remote": "yarn checkout --remote",
     "generate:api": "docusaurus gen-api-docs all",
