@@ -6,7 +6,7 @@ In this tutorial, you will upload your desired image to [IPFS](https://ipfs.tech
 
 - [Node.js](https://nodejs.org/en/) v16 and above supported. Tested till v20.
 - [IOTA SDK](https://www.npmjs.com/package/@iota/sdk) v1.0.6 used here.
-- Finish the [Set up testnet address and receive funds from faucet](https://wiki.iota.org/tutorials/wallet-setup) tutorial.
+- Finish the [Set Up a Testnet Address and Receive Funds from the Faucet](https://wiki.iota.org/tutorials/wallet-setup) tutorial.
 
 ## Set Up
 
