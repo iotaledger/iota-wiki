@@ -1,6 +1,6 @@
 # Create an NFT with the IOTA SDK and IPFS in NodeJs
 
-In this tutorial, you will upload your desired image to [IPFS](https://ipfs.tech/) and create an NFT from the unique IPFS URL on the Shimmer testnet. This tutorial will build on the tutorial "[Setup testnet address and receive funds from the faucet](https://wiki.iota.org/tutorials/wallet-setup)". If you haven't completed it, please do so, and afterward, come back here, or make sure you have a prefunded wallet. You will use the same folder and development environment as in the mentioned prerequired tutorial, allowing you to reuse the Stronghold account with funds on it.
+In this tutorial, you will upload your desired image to [IPFS](https://ipfs.tech/) and create an NFT from the unique IPFS URL on the Shimmer Testnet. This tutorial will build on the tutorial "[Setup Testnet address and receive funds from the faucet](https://wiki.iota.org/tutorials/wallet-setup)". If you still need to complete it, please do so, and afterward, come back here or make sure you have a funded wallet. You will use the same folder and development environment as in the mentioned prerequired tutorial, allowing you to reuse the Stronghold account with funds on it.
 
 ## Prerequisites
 
