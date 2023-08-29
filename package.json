@@ -15,7 +15,7 @@
     "format:check": "prettier --cache --check .",
     "format:svg": "svgo ./src/**/*.svg",
     "docusaurus": "docusaurus",
-    "start": "yarn generate:api && docusaurus start",
+    "start": "yarn generate:api && NODE_OPTIONS=--max-old-space-size=8192 docusaurus start",
     "build": "docusaurus build",
     "swizzle": "docusaurus swizzle",
     "deploy": "docusaurus deploy",
