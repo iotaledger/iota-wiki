@@ -12,7 +12,7 @@ This tutorial shows how to get Shimmer testnet tokens and send them to another a
 - Fetch your balance
 - Send tokens to another address
 
-## Setup your environment
+## Set Up Your Environment
 
 [Install NodeJs](https://nodejs.org/) and update to the latest stable version available.
 
