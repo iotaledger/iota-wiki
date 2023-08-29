@@ -15,6 +15,11 @@ keywords:
 
 # Welcome
 
+:::caution
+This is documentation for wallet.rs, which is no longer actively maintained.
+For up-to-date documentation, see the documentation for its successor the [IOTA SDK](/iota-sdk/welcome).
+:::
+
 Welcome to the official IOTA Wallet Library Software documentation. You can use our documentation to help streamline integrating an IOTA Wallet into your applications. If you want to learn more about the IOTA client libraries, you can check out our [blog post](https://blog.iota.org/the-new-iota-client-libraries-harder-better-faster-stronger/) on how they work.
 
 ## wallet.rs

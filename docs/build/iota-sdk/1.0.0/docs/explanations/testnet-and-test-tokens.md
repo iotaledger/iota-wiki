@@ -13,7 +13,7 @@ keywords:
 
 # Testnet and Test Tokens
 
-## Connect to the Testnet API
+## Connect to the Public Testnet
 
 We recommend you start interacting via the Public Testnet network. The Public Testnet will allow you to safely get
 acquainted with the IOTA SDK without the risk of losing any funds if you make a mistake along the way.
