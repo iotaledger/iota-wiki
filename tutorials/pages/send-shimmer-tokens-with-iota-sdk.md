@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This tutorial shows how to get Shimmer testnet tokens and send them to another address using javascript/typescript.
+This tutorial shows you how to get Shimmer Testnet tokens and send them to another address using JavaScript/TypesSript.
 
 ### What you will learn
 
