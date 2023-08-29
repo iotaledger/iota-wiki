@@ -1,12 +1,4 @@
-[submodule "iota/external/tips"]
-	path = iota/external/tips
-	url = https://github.com/iotaledger/tips
-	branch = main
-[submodule "next/external/tips"]
-	path = next/external/tips
-	url = https://github.com/iotaledger/tips
-	branch = main
-[submodule "shimmer/external/tips"]
-	path = shimmer/external/tips
+[submodule "docs/external/tips"]
+	path = docs/external/tips
 	url = https://github.com/iotaledger/tips
 	branch = main
