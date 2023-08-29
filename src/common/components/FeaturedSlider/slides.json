@@ -8,13 +8,13 @@
     },
     "solidButton": {
       "buttonText": "Start building",
-      "url": "/build/networks-endpoints/"
+      "url": "/iota-sdk/welcome"
     },
     "imagePath": "/img/homepage/header.svg"
   },
   {
     "title": "Send IOTA Tokens with Javascript",
-    "description": "Learn how to create your seed, addres, send IOTA Tokens and retrieve your balance in the Devnet.",
+    "description": "Learn how to create your seed, address, send IOTA Tokens and retrieve your balance in the Devnet.",
     "imagePath": "/img/homepage/resources_bot.svg",
     "solidButton": {
       "buttonText": "Start tutorial",

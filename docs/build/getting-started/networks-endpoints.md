@@ -109,6 +109,33 @@ Mainnet.
   </tbody>
 </table>
 
+### Testnet EVM
+
+The Testnet EVM (also called ShimmerEVM Beta) runs as a layer 2 on top of the Public Testnet. This network does not run
+any IOTA protocol but instead uses ISC to facilitate an Ethereum Virtual Machine and has an enshrined bridge from to
+layer 1.
+
+<table>
+  <tbody>
+    <tr>
+      <th>Base Token</th>
+      <th>Protocol</th>
+      <th>RPC URL</th>
+      <th>Chain ID</th>
+      <th>Faucet</th>
+    </tr>
+    <tr>
+      <td>Testnet Tokens (no value)</td>
+      <td>ISC / EVM</td>
+      <td>
+        <a href="https://json-rpc.evm.testnet.shimmer.network">https://json-rpc.evm.testnet.shimmer.network</a>
+      </td>
+      <td>1072</td>
+      <td><a href="https://evm-faucet.testnet.shimmer.network">https://evm-faucet.testnet.shimmer.network</a></td>
+    </tr>
+  </tbody>
+</table>
+
 ## DevNet
 
 [The DevNet](https://explorer.iota.org/legacy-mainnet) is a legacy network running the Chrysalis protocol and is to be
