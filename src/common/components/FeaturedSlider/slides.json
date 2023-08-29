@@ -8,7 +8,7 @@
     },
     "solidButton": {
       "buttonText": "Start building",
-      "url": "/build/networks/overview"
+      "url": "/build/networks-endpoints/"
     },
     "imagePath": "/img/homepage/header.svg"
   },

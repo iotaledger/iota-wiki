@@ -1,27 +1,9 @@
 module.exports = {
   build: [
     {
-      type: 'category',
-      label: 'Networks',
-      collapsed: true,
-      items: [
-        'networks/overview',
-        'networks/mainnet',
-        'networks/shimmer',
-        'networks/public-testnets',
-        'networks/legacy-mainnet',
-      ],
-    },
-    {
-      type: 'category',
-      label: 'Endpoints',
-      collapsed: true,
-      items: [
-        'endpoints/mainnet',
-        'endpoints/devnet',
-        'endpoints/shimmer',
-        'endpoints/testnet',
-      ],
+      type: 'doc',
+      label: 'Networks & Endpoints',
+      id: 'networks-endpoints',
     },
     {
       type: 'category',

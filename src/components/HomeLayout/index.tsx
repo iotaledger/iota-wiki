@@ -107,8 +107,8 @@ export default function HomeLayout() {
           </div>
         </HomepageSection>
         <HomepageSection
-          header='Core Libraries'
-          description='With the IOTA core libraries you can easily integrate IOTA into your own applications.'
+          header='IOTA SDK'
+          description='With the IOTA SDK you can easily integrate IOTA into your own applications.'
         >
           <CoreLibrariesSection />
         </HomepageSection>

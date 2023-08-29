@@ -49,7 +49,7 @@ module.exports = async () => {
           },
           {
             label: 'Build',
-            to: '/build/networks/overview',
+            to: '/build/networks-endpoints/',
             activeBaseRegex:
               '^(/[^/]+)?/iota-sdk/.*|' +
               '^(/[^/]+)?/build/.*|' +
