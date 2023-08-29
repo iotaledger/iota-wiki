@@ -95,7 +95,7 @@ require('dotenv').config({ path: './.env' });
 
 #### 2. Upload file to IPFS
 
-The function `uploadByPath()` starts a local IPFS node, reads the file from the provided path, uploads it to IPFS and returns the unique IPFS content identifer.
+The function `uploadByPath()` starts a local IPFS node, reads the file from the provided path, uploads it to IPFS, and returns the unique IPFS content identifier.
 
 ```javascript
 async function uploadByPath(filePath) {
