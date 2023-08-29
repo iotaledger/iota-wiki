@@ -17,6 +17,10 @@ keywords:
 
 This pages gives an overview around the different networks available in the IOTA ecosystem.
 
+In general, all endpoints are load balanced but are also subject to rate limiting.
+If you are developing a production level application for IOTA, consider setting up your own infrastructure in order to
+have more control and to not run into any limits.
+
 ## IOTA Mainnet
 
 [The IOTA Mainnet](https://explorer.iota.org/mainnet) is the production network within the IOTA ecosystem using the IOTA
@@ -111,7 +115,8 @@ Mainnet.
 
 ### Testnet EVM
 
-[The Testnet EVM](https://explorer.evm.testnet.shimmer.network/) (also called ShimmerEVM Beta) runs as a layer 2 on top of the Public Testnet. This network does not run
+[The Testnet EVM](https://explorer.evm.testnet.shimmer.network/) (also called ShimmerEVM Beta) runs as a layer 2 on top
+of the Public Testnet. This network does not run
 any IOTA protocol but instead uses ISC to facilitate an Ethereum Virtual Machine and has an enshrined bridge from to
 layer 1.
 
