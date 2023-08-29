@@ -1,4 +1,4 @@
-# Send Shimmer tokens with iota-sdk in NodeJs
+# Send Shimmer tokens with IOTA SDK in NodeJs
 
 ## Introduction
 
