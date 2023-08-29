@@ -211,7 +211,7 @@ await wallet.setStrongholdPassword(process.env.STRONGHOLD_PASSWORD);
 run();
 ```
 
-Run the script `create-nft.js` and check the console output to follow along the steps described above:
+Run the script `create-nft.js` and check the console output to follow the steps described above:
 
 ```sh
 node create-nft.js
