@@ -111,7 +111,7 @@ Mainnet.
 
 ### Testnet EVM
 
-The Testnet EVM (also called ShimmerEVM Beta) runs as a layer 2 on top of the Public Testnet. This network does not run
+[The Testnet EVM](https://explorer.evm.testnet.shimmer.network/) (also called ShimmerEVM Beta) runs as a layer 2 on top of the Public Testnet. This network does not run
 any IOTA protocol but instead uses ISC to facilitate an Ethereum Virtual Machine and has an enshrined bridge from to
 layer 1.
 
