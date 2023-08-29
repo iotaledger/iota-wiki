@@ -111,7 +111,7 @@ console.log('Balance', balance);
 
 This should show a positive balance. If no tokens appear, try to request tokens from the faucet again. If that still doesn't work, please come over to [our Discord](https://discord.iota.org/), and we'll sort it out.
 
-## Send tokens
+## Send Tokens
 
 Now that we have some tokens, we can send them around.
 
