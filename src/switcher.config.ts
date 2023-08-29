@@ -182,7 +182,7 @@ const maintainDocs = [
     {
         id: 'hornet-1-2-4',
         label: 'Hornet',
-        description: 'Run a node',
+        description: 'The primary node software for IOTA.',
         icon: Hornet,
         subsection: 'maintain-layer-1',
         versions: [
@@ -201,7 +201,7 @@ const maintainDocs = [
     {
         id: 'wasp-0-7-0',
         label: 'Wasp',
-        description: 'Create smart contracts',
+        description: 'The node software to run an ISC network',
         icon: SmartContracts,
         subsection: 'maintain-layer-2',
         versions: [
@@ -215,7 +215,7 @@ const maintainDocs = [
     {
         id: 'chronicle-rs',
         label: 'Chronicle',
-        description: 'Store and query data',
+        description: 'Indexer, archival node, analytics.',
         icon: Chronicle,
         subsection: 'maintain-layer-1',
         versions: [
@@ -234,7 +234,7 @@ const maintainDocs = [
     {
         id: 'goshimmer',
         label: 'GoShimmer',
-        description: 'Research Node implementation for IOTA 2.0',
+        description: 'Research node implementation for IOTA 2.0',
         icon: GoShimmer,
         subsection: 'maintain-layer-1',
         versions: [
