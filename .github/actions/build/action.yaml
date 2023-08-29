@@ -49,5 +49,5 @@ runs:
       shell: bash
     - name: Build
       run: |
-        NODE_OPTIONS='--max-old-space-size=4096' yarn build
+        NODE_OPTIONS='--max-old-space-size=4096' yarn build:production
       shell: bash
