@@ -145,4 +145,4 @@ Congratulations, you are now able to manage your tokens programmatically!
 
 ## What's next?
 
-You now can create an account, generate addresses and transfer tokens. Check out the [documentation](https://wiki.iota.org/shimmer/iota-sdk/welcome) to see what more you can do. Create some native tokens, non-fungible tokens (NFTs) and develop your own application! Have fun and good luck!
+You can now create an account, generate addresses, and transfer tokens. Check out the [documentation](https://wiki.iota.org/shimmer/iota-sdk/welcome) to see what more you can do. [Create native tokens](/iota-sdk/how-tos/native-tokens/create/), or [mint non-fungible tokens (NFTs)](/iota-sdk/how-tos/nfts/mint-nft/) and develop your application! Have fun and good luck!
