@@ -1,5 +1,5 @@
-name: build
-description: Build the wiki
+name: prepare
+description: Prepare environment for building the Wiki
 
 runs:
   using: 'composite'
@@ -24,17 +24,9 @@ runs:
       run: |
         yarn
       shell: bash
-    - name: Build plugins
+    - name: Prepare build
       run: |
-        yarn build:plugins
-      shell: bash
-    - name: Build theme
-      run: |
-        yarn build:theme
-      shell: bash
-    - name: Generate APIs
-      run: |
-        yarn generate:api
+        yarn prepare
       shell: bash
     # Artifacts cached after install to prevent removal by Yarn
     - name: Cache build artifacts
@@ -42,12 +34,3 @@ runs:
       with:
         path: node_modules/.cache
         key: wiki-build-artifacts-${{ hashFiles('package.json', 'yarn.lock', 'src/**/*.*') }}
-    # Create reference docs
-    - name: Build reference docs
-      run: |
-        ./scripts/gen_sdk_references.sh
-      shell: bash
-    - name: Build
-      run: |
-        NODE_OPTIONS='--max-old-space-size=4096' yarn build
-      shell: bash

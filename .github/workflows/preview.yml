@@ -29,10 +29,10 @@ jobs:
       - uses: actions/checkout@v3
         with:
           ref: ${{ github.event.issue.pull_request && format('refs/pull/{0}/merge', github.event.issue.number) || '' }}
-          # Needed for showLastUpdateTime to work
-          fetch-depth: 0
-      - name: build
-        uses: ./.github/actions/build/
+      - name: Prepare
+        uses: ./.github/actions/prepare/
+      - name: Build
+        run: yarn build
       # Convert to Vercel project and upload
       - name: Install Vercel CLI
         run: npm install --global vercel@latest
