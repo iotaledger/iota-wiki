@@ -109,7 +109,7 @@ const balance = await account.getBalance();
 console.log('Balance', balance);
 ```
 
-This should show a positive balance. If no tokens appear, try to request tokens from the faucet again. If that still doesn't work, please come over to [our Discord](https://discord.iota.org/) and we'll sort it out.
+This should show a positive balance. If no tokens appear, try to request tokens from the faucet again. If that still doesn't work, please come over to [our Discord](https://discord.iota.org/), and we'll sort it out.
 
 ## Send tokens
 
