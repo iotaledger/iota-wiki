@@ -21,7 +21,7 @@ status, receipts, block, and event details.
 
 To avoid having a monotonically increasing state size, only the latest `N`
 blocks (and their events and receipts) are stored. This parameter can be configured
-when [deploying the chain](../../chains_and_nodes/setting-up-a-chain.md).
+when [deploying the chain](/wasp/setting-up-a-chain).
 
 ---
 
