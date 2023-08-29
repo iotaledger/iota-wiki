@@ -13,6 +13,11 @@ keywords:
 
 # Welcome
 
+:::caution
+This is documentation for iota.rs, which is no longer actively maintained.
+For up-to-date documentation, see the documentation for its successor the [IOTA SDK](/iota-sdk/welcome).
+:::
+
 ![IOTA Client Library](/img/Banner/banner_client_lib.png)
 
 The iota.rs library handles communications between your software and the IOTA network.
