@@ -57,6 +57,7 @@ module.exports = {
             'concepts/verifiable_credentials/verifiable_presentations',
           ],
           'Domain Linkage': ['concepts/domain_linkage/domain_linkage'],
+          'Key Storage': ['concepts/key_storage/key_storage'],
         },
       ],
     },
