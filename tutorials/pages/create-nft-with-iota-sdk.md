@@ -135,7 +135,7 @@ async function uploadByPath(filePath) {
 }
 ```
 
-#### 3. Prepare NFT metadata
+#### 3. Prepare the NFT's metadata
 
 This part calls the `uploadByPath()` function described above and prepares the metadata of your NFT. Make sure to give your NFT a nice name here.
 
