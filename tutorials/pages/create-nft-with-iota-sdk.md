@@ -18,7 +18,7 @@ Navigate to the folder you created when completing the [Set Up a Testnet Address
 cd wallet-setup
 ```
 
-#### Install Packages
+#### Install packages
 
 Next to the existing dependencies of the wallet setup tutorial, you will only need to add two more packages by running the following commands:
 
