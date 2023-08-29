@@ -16,7 +16,7 @@ This tutorial shows you how to get Shimmer Testnet tokens and send them to anoth
 
 Before you begin, please ensure you have [Installed NodeJs](https://nodejs.org/) and updated it to the latest stable version.
 
-Setup an env file and if you want, you can change the [BIP39 mnemonic](https://en.bitcoin.it/wiki/BIP_0039) and choose a different password, but be sure to set the node URLs to a Shimmer testnet node (we use the nodes provided by IF in this tutorial). For example:
+Setup a `.env` file, and if you want, you can change the [BIP39 mnemonic](https://en.bitcoin.it/wiki/BIP_0039) and choose a different password, but be sure to set the node URLs to a Shimmer Testnet node (we use the nodes provided by IF in this tutorial). For example:
 
 ```sh
 # Mnemonics (Don't ever use them to manage real funds!)
