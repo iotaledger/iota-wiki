@@ -81,14 +81,18 @@ export default function HomeLayout() {
                 </p>
               </div>
             </Link>
-            <Link to='/get-started/introduction/shimmer/introduction' className='about__card'>
+            <Link
+              to='/get-started/introduction/shimmer/introduction'
+              className='about__card'
+            >
               <div className='about__section'>
                 <div className='about__icon'>
                   <Shimmer />
                 </div>
                 <h3 className='about__header'>What is Shimmer?</h3>
                 <p className='about__description'>
-                  A scalable and feeless network enabling frictionless decentralized and scalable Web3 economies.
+                  A scalable and feeless network enabling frictionless
+                  decentralized and scalable Web3 economies.
                 </p>
               </div>
             </Link>
