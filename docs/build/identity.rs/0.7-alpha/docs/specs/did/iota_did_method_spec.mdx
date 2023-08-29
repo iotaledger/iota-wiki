@@ -133,21 +133,30 @@ Example State Metadata Document:
 
 ```json
 {
-  "doc": {
-    "id": "did:0:0",
-    "verificationMethod": [
-      {
-        "id": "did:0:0#key-1",
-        "controller": "did:0:0",
-        "type": "Ed25519VerificationKey2018",
-        "publicKeyMultibase": "z6BNtMbKY78XDVuqfh4u15bZkByu94XNVr9RpqEGCNncn"
-      }
-    ]
-  },
-  "meta": {
-    "created": "2022-08-02T21:39:48Z",
-    "updated": "2022-08-02T21:39:48Z"
-  }
+   "doc":{
+      "id":"did:0:0",
+      "verificationMethod":[
+         {
+            "id":"did:0:0#jkGOGVO3Te7ADpvlplr47eP9ucLt41zm",
+            "controller":"did:0:0",
+            "type":"JsonWebKey",
+            "publicKeyJwk":{
+               "kty":"OKP",
+               "alg":"EdDSA",
+               "kid":"jkGOGVO3Te7ADpvlplr47eP9ucLt41zm",
+               "crv":"Ed25519",
+               "x":"D5w8vG6tKEnpBAia5J4vNgLID8k0BspHz-cVMBCC3RQ"
+            }
+         }
+      ],
+      "authentication":[
+         "did:0:0#jkGOGVO3Te7ADpvlplr47eP9ucLt41zm"
+      ]
+   },
+   "meta":{
+      "created":"2023-08-28T14:49:37Z",
+      "updated":"2023-08-28T14:50:27Z"
+   }
 }
 ```
 
