@@ -12,7 +12,7 @@ In this tutorial, you will upload your desired image to [IPFS](https://ipfs.tech
 
 ### Prepare Your Development Environment
 
-Navigate to the folder you created when completing the [set up a testnet address and receive funds from the faucet tutorial](https://wiki.iota.org/tutorials/wallet-setup):
+Navigate to the folder you created when completing the [Set Up a Testnet Address and Receive Funds from the Faucet tutorial](https://wiki.iota.org/tutorials/wallet-setup):
 
 ```bash
 cd wallet-setup
