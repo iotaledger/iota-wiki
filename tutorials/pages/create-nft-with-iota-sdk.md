@@ -69,7 +69,7 @@ Create a new file `create-nft.js` and add the following code:
 
 :::note
 
-We broke the code into separate snippets to help you understand it better. To make it work, copy all code snippets one after another into the file that you have just created.
+We broke the code into separate snippets to help you understand it better. To make it work, copy all code snippets into the file you have just created.
 
 :::
 
