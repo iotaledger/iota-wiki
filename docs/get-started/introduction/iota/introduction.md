@@ -34,7 +34,7 @@ performant consensus and ledger solution.
 ## IOTA Mainnet
 
 The IOTA mainnet is the production grade network on which the [IOTA token](/get-started/introduction/iota/iota-token/)
-is available. It currently runs the [Chrysalis protocol version](/learn/chrysalis/introduction/).
+is available. It currently runs the [Chrysalis protocol version](/learn/protocols/chrysalis/introduction/).
 
 ## Feeless Transactions
 

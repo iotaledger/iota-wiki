@@ -38,7 +38,7 @@ token.
     </tr>
     <tr>
       <td>IOTA Token</td>
-      <td><a href="/learn/chrysalis/introduction/">Chrysalis</a></td>
+      <td><a href="/learn/protocols/chrysalis/introduction/">Chrysalis</a></td>
       <td>
           <a href="https://chrysalis-nodes.iota.org/api/v1/info">https://chrysalis-nodes.iota.org</a>
           , <a href="https://chrysalis-nodes.iota.cafe/api/v1/info">https://chrysalis-nodes.iota.cafe</a>
@@ -69,7 +69,7 @@ Mainnet.
     </tr>
     <tr>
       <td>Shimmer Token</td>
-      <td><a href="/learn/stardust/introduction/">Stardust</a></td>
+      <td><a href="/learn/protocols/stardust/introduction/">Stardust</a></td>
       <td>
           <a href="https://api.shimmer.network/api/core/v2/info">https://api.shimmer.network</a>
       </td>
@@ -98,7 +98,7 @@ Mainnet.
     </tr>
     <tr>
       <td>Testnet Tokens (no value)</td>
-      <td><a href="/learn/stardust/introduction/">Stardust</a></td>
+      <td><a href="/learn/protocols/stardust/introduction/">Stardust</a></td>
       <td>
         <a href="https://api.testnet.shimmer.network/api/core/v2/info">https://api.testnet.shimmer.network</a>
       </td>
@@ -158,7 +158,7 @@ decommissioned once IOTA Mainnet runs under Stardust.
     </tr>
     <tr>
       <td>Testnet Tokens (no value)</td>
-      <td><a href="/learn/chrysalis/introduction/">Chrysalis</a></td>
+      <td><a href="/learn/protocols/chrysalis/introduction/">Chrysalis</a></td>
       <td>
         <a href="https://api.lb-0.h.chrysalis-devnet.iota.cafe/api/v1/info">https://api.lb-0.h.chrysalis-devnet.iota.cafe</a>
         , <a href="https://api.lb-1.h.chrysalis-devnet.iota.cafe/api/v1/info">https://https://api.lb-1.h.chrysalis-devnet.iota.cafe</a>

@@ -22,7 +22,7 @@ unlike most staging networks, Shimmer has a [token called SMR](/get-started/intr
 is traded on major exchanges, thus giving the network real monetary value, which in turn is beneficial to foster the
 testing of upcoming protocol changes even further.
 
-Currently, Shimmer runs the [Stardust protocol](/learn/stardust/introduction/) version, enabling tokenization and the anchoring of L2 smart contract
+Currently, Shimmer runs the [Stardust protocol](/learn/protocols/stardust/introduction/) version, enabling tokenization and the anchoring of L2 smart contract
 chains into L1.
 
 Shimmer is also the network on which the Shimmer EVM runs, an L2 solution that provides smart contract
