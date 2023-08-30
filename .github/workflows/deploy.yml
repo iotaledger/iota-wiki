@@ -10,16 +10,19 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    env:
+      MODE: production
     steps:
       - uses: actions/checkout@v3
         with:
           # Needed for showLastUpdateTime to work
           fetch-depth: 0
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 16
-      - name: build
-        uses: ./.github/actions/build/
+      - name: Prepare
+        uses: ./.github/actions/prepare/
+      - name: Checkout remote
+        run: yarn checkout:remote
+      - name: Build
+        run: yarn build
       # Convert to Vercel project and upload
       - name: Install Vercel CLI
         run: npm install --global vercel@latest

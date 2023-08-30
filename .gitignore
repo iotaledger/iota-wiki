@@ -7,6 +7,7 @@ node_modules
 # Generated files
 .docusaurus
 .cache-loader
+/tmp
 
 # External
 /external/*
