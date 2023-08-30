@@ -53,7 +53,7 @@ const buildDocs = [
         id: 'identity-rs-0-5',
         label: '0.5',
         badges: ['IOTA'],
-      }
+      },
     ],
   },
   {
@@ -112,7 +112,7 @@ const buildDocs = [
         id: 'iota-rs-1-4-0',
         label: '1.4.0',
         badges: ['IOTA'],
-      }
+      },
     ],
   },
   {
@@ -145,7 +145,7 @@ const buildDocs = [
         id: 'wallet-rs-0-1-0',
         label: '0.1.0',
         badges: ['IOTA'],
-      }
+      },
     ],
   },
   {
@@ -195,7 +195,7 @@ const maintainDocs = [
         id: 'hornet-1-2-4',
         label: '1.2.4',
         badges: ['IOTA'],
-      }
+      },
     ],
   },
   {
@@ -269,6 +269,10 @@ const config: Config = {
       ],
     },
     {
+      before: {
+        docId: 'maintain',
+        sidebarId: 'maintain',
+      },
       subsections: [
         {
           label: 'Layer 1',

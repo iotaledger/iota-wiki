@@ -1,5 +1,6 @@
 module.exports = {
   build: [
+    'welcome',
     {
       type: 'doc',
       label: 'Networks & Endpoints',

@@ -255,6 +255,16 @@ module.exports = async () => {
 
   const maintainPlugins = [
     {
+      id: 'maintain',
+      globalSidebars: ['maintain'],
+      path: path.resolve(__dirname, 'docs/maintain/getting-started'),
+      sidebarPath: path.resolve(
+        __dirname,
+        'docs/maintain/getting-started/sidebars.ts',
+      ),
+      routeBasePath: 'maintain',
+    },
+    {
       id: 'hornet-1-2-4',
       path: path.resolve(__dirname, 'docs/maintain/hornet/1.2.4/docs'),
       routeBasePath: 'hornet',

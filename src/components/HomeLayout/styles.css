@@ -372,7 +372,6 @@
 
 .libraries__section {
   flex: 1 1 0;
-  aspect-ratio: 1/1;
   display: flex;
   flex-direction: column;
 }
@@ -678,4 +677,8 @@
   .spaceholder__card__img {
     display: none;
   }
+}
+
+p.libraries__feature {
+  flex-grow: 1;
 }
