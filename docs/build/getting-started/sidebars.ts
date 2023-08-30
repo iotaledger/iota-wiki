@@ -57,6 +57,11 @@ module.exports = {
           label: 'IotaWallet.NET',
           href: 'https://github.com/IOTA-NET/IotaWallet.NET',
         },
+        {
+          type: 'link',
+          label: 'Shimmer++',
+          href: 'https://eddytheco.github.io/Shimmerpp/about/',
+        },
       ],
     },
   ],
