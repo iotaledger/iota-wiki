@@ -35,14 +35,9 @@ const buildDocs = [
     subsection: 'build-layer-1',
     versions: [
       {
-        id: 'identity-rs-0-5',
-        label: '0.5',
-        badges: ['IOTA'],
-      },
-      {
-        id: 'identity-rs-0-6',
-        label: '0.6',
-        badges: ['IOTA'],
+        id: 'identity-rs-next',
+        label: 'next',
+        badges: ['Shimmer'],
       },
       {
         id: 'identity-rs-0-7-alpha',
@@ -50,10 +45,15 @@ const buildDocs = [
         badges: ['Shimmer'],
       },
       {
-        id: 'identity-rs-next',
-        label: 'next',
-        badges: ['Shimmer'],
+        id: 'identity-rs-0-6',
+        label: '0.6',
+        badges: ['IOTA'],
       },
+      {
+        id: 'identity-rs-0-5',
+        label: '0.5',
+        badges: ['IOTA'],
+      }
     ],
   },
   {
@@ -104,15 +104,15 @@ const buildDocs = [
     subsection: 'build-layer-1',
     versions: [
       {
-        id: 'iota-rs-1-4-0',
-        label: '1.4.0',
-        badges: ['IOTA'],
-      },
-      {
         id: 'iota-rs-2-0-1-rc-7',
         label: '2.0.1-rc.7',
         badges: ['Shimmer'],
       },
+      {
+        id: 'iota-rs-1-4-0',
+        label: '1.4.0',
+        badges: ['IOTA'],
+      }
     ],
   },
   {
@@ -137,15 +137,15 @@ const buildDocs = [
     subsection: 'build-layer-1',
     versions: [
       {
-        id: 'wallet-rs-0-1-0',
-        label: '0.1.0',
-        badges: ['IOTA'],
-      },
-      {
         id: 'wallet-rs-1-0-0-rc-6',
         label: '1.0.0-rc.6',
         badges: ['Shimmer'],
       },
+      {
+        id: 'wallet-rs-0-1-0',
+        label: '0.1.0',
+        badges: ['IOTA'],
+      }
     ],
   },
   {
@@ -187,15 +187,15 @@ const maintainDocs = [
     subsection: 'maintain-layer-1',
     versions: [
       {
-        id: 'hornet-1-2-4',
-        label: '1.2.4',
-        badges: ['IOTA'],
-      },
-      {
         id: 'hornet-2-0-0-rc-6',
         label: '2.0.0-rc.6',
         badges: ['Shimmer'],
       },
+      {
+        id: 'hornet-1-2-4',
+        label: '1.2.4',
+        badges: ['IOTA'],
+      }
     ],
   },
   {
@@ -220,14 +220,14 @@ const maintainDocs = [
     subsection: 'maintain-layer-1',
     versions: [
       {
-        id: 'chronicle-rs',
-        label: '0.3.0',
-        badges: ['IOTA'],
-      },
-      {
         id: 'inx-chronicle',
         label: '1.0.0-rc.1',
         badges: ['Shimmer'],
+      },
+      {
+        id: 'chronicle-rs',
+        label: '0.3.0',
+        badges: ['IOTA'],
       },
     ],
   },

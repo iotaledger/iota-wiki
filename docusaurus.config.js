@@ -63,7 +63,7 @@ module.exports = async () => {
           },
           {
             label: 'Maintain',
-            to: '/hornet/welcome',
+            to: '/hornet/2.0.0-rc.6/welcome',
             activeBaseRegex:
               '^(/[^/]+)?/hornet/.*|' +
               '^(/[^/]+)?/wasp/.*|' +
