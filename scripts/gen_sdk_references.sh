@@ -1,12 +1,15 @@
+#!/bin/sh
+
 # Create temporaty directory to work in and clone SDK
-mkdir tmp && cd tmp
+mkdir tmp
+cd tmp
 git clone --depth 1 --branch develop https://github.com/iotaledger/iota-sdk
 cd iota-sdk
 
 # Generate and copy Python references
 cd bindings/python
-python -m venv .venv
-source .venv/bin/activate
+python3 -m venv .venv
+. .venv/bin/activate
 pip install -r requirements-dev.txt
 PYTHONPATH=. pydoc-markdown
 cp -Rv docs/references/python ../../../../docs/build/iota-sdk/1.0.0/docs/references/
