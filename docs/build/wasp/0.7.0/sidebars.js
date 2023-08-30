@@ -21,11 +21,6 @@ module.exports = {
       id: 'overview',
     },
     {
-      type: 'link',
-      label: 'Run and maintain a Wasp Node',
-      href: '/wasp/running-a-node',
-    },
-    {
       type: 'category',
       label: 'Wasm VM (Experimental)',
       items: [
