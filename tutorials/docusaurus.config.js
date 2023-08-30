@@ -261,8 +261,8 @@ module.exports = {
         preview: '/send-shimmer-tokens-with-iota-sdk.png',
         route: 'tutorials/send-shimmer-tokens-with-iota-sdk',
         tags: ['text', 'iota-sdk', 'sdk', 'getting-started', 'rust', 'shimmer'],
-      }
-    ]
+      },
+    ],
   ],
   staticDirectories: [path.resolve(__dirname, 'static')],
 };
