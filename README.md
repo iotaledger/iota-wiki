@@ -63,39 +63,24 @@ The IOTA Wiki is built using [TypeScript](https://www.typescriptlang.org/), [Rea
 
 ### Preview Locally
 
-Because the Wiki is a large project composed of several Docusaurus builds and external documentation, a full build takes a while. To speed up development, we provide environment variables to select different configurations, and some convenience scripts with environment variables pre-configured.
+To preview the Wiki locally, use the following steps. For more detailed scripts, see [Pre-configured scripts](#pre-configured-scripts) for reference.
 
-To preview the Wiki locally, use the following steps. For more preview and build configurations, see [Pre-configured scripts](#pre-configured-scripts) and [Environment variables](#environment-variables) for reference.
+> Please note that the Wiki has a lot of content, so currently the initial build is taking a while. Effort is taken to try and reduce the build time in the future.
 
-1. Clone the repository by running `git clone https://github.com/iota-wiki/iota-wiki.git` and go to the directory with `cd iota-wiki`.
+1. Clone the repository by running `git clone https://github.com/iotaledger/iota-wiki.git` and go to the directory with `cd iota-wiki`.
 2. Install dependencies with `yarn`.
-3. Build the theme and all plugins once with `yarn build:theme && yarn build:plugins`
-4. Preview a specific environment with `yarn start:<environment>` where environment can be `iota`, `shimmer` or `next`.
-
-You should always prefer previewing only a specific environment of the Wiki, but if you need a complete Wiki build you can replace step 3 with `yarn start:all`.
-Keep in mind this will take a while and has no hot reloading capability.
+3. Prepare the environment by running `yarn prepare`, this has to be done only once.
+4. Preview the Wiki with `yarn start`, this will start a development server serving the Wiki with hot reload capability, so it will update content after any changes were made.
 
 #### Pre-configured scripts
 
-| Script                          | Explanation                                                                                                                                                         |
-| ------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `start:<environment>`           | Start a development server for the `iota`, `shimmer`, or `next` environment, with hot reloading on changes.                                                         |
-| `start:all`                     | Build all environments and serve the result, without hot reloading on changes.                                                                                      |
-| `build:<environment>`           | Build the `iota`, `shimmer`, or `next` environment.                                                                                                                 |
-| `build:all`                     | Build all environments.                                                                                                                                             |
-| `checkout:remote:<environment>` | Check out the latest version of external documentation for the `iota`, `shimmer`, or `next` environment.                                                            |
-| `checkout:remote`               | Check out the latest version of external documentation.                                                                                                             |
-| `generate:api`                  | Generate available API documentation configured through the [Docusaurus OpenAPI plugin](https://www.npmjs.com/package/@paloaltonetworks/docusaurus-plugin-openapi). |
-
-#### Environment variables
-
-| Variable    | Accepts                                 | Default       | Explanation                                                                                                                  |
-| ----------- | --------------------------------------- | ------------- | ---------------------------------------------------------------------------------------------------------------------------- |
-| ENVIRONMENT | One of `iota`, `shimmer`, or `next`     | `iota`        | The environment to build.                                                                                                    |
-| MODE        | One of `development`, or `production`   | `development` | Depending on the mode chosen, some functionalities are included or excluded (analytics for example).                         |
-| EXTERNAL    | A comma separated list of glob patterns |               | What external documentation to include in the build. Glob patterns are relative to the `<environment>/external` directories. |
-
-> For example `ENVIRONMENT=iota EXTERNAL=tips/** yarn start` starts a development server for the `iota` environment with the TIPs included
+| Script            | Explanation                                                                                                                                                                                                         |
+| ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `prepare`         | Prepare the environment by checking out submodules and building local packages needed for the Wiki build.                                                                                                           |
+| `start`           | Start a development server serving the Wiki, with hot reloading on changes.                                                                                                                                         |
+| `build`           | Build the Wiki. To build for production, checkout the latest version of external documentation by running `yarn checkout:remote` and set the `MODE` environment variable to `production`.                           |
+| `checkout:remote` | Check out the latest version of external documentation.                                                                                                                                                             |
+| `generate:api`    | Generate available API documentation configured through the [Docusaurus OpenAPI plugin](https://www.npmjs.com/package/@paloaltonetworks/docusaurus-plugin-openapi) and by compiling documentation from source code. |
 
 <!-- CONTRIBUTING -->
 
@@ -106,7 +91,7 @@ The IOTA Wiki is maintained by the IF and community contributions are always wel
 1. Fork this repository to your own account and clone it (`git clone https://github.com/<YOUR_USERNAME>/iota-wiki.git`)
 2. Create a feature branch for your changes (`git checkout -b feat/amazing-feature`).
 3. Make your changes and optionally [preview them locally](#preview-locally).
-4. Run `yarn lint` and `yarn format` and fix any remaining errors and warnings.
+4. Run `yarn format` and `yarn lint` and fix any remaining errors and warnings.
 5. Commit your changes (`git commit -m 'Add some amazing feature'`).
 6. Push your changes to your fork (`git push origin feat/amazing-feature`).
 7. Open a pull request to the `main` branch of this repository.
