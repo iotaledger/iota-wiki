@@ -23,6 +23,7 @@ cd wallet-setup
 Next to the existing dependencies of the wallet setup tutorial, you will only need to add two more packages by running the following commands:
 
 While writing this tutorial the `@iota/sdk` version used was v1.0.6.
+
 ```bash
 npm install @iota/sdk
 npm install ipfs-core
@@ -181,6 +182,7 @@ await wallet.setStrongholdPassword(process.env.STRONGHOLD_PASSWORD);
 #### 5. Mint NFT
 
 You should prepare the parameters for minting the NFT and define them in a `MintNftParms` type.
+
 - `address`: (optional) Bech32 encoded address to which the Nft will be minted. The default will use the first address of the account.
 - `sender`: Bech32 encoded sender address
 - `metadata`: Hex encoded bytes containing metadata as per IRC27 from [TIP-27](https://wiki.iota.org/shimmer/tips/tips/TIP-0027/#nft-schema) as done in the previous step.
