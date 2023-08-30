@@ -44,12 +44,12 @@ module.exports = async () => {
           },
           {
             label: 'Learn',
-            to: '/learn/protocols/chrysalis/introduction',
+            to: '/learn/protocols/introduction',
             activeBaseRegex: '^(/[^/]+)?/learn/.*',
           },
           {
             label: 'Build',
-            to: '/build/networks-endpoints/',
+            to: '/build/welcome/',
             activeBaseRegex:
               '^(/[^/]+)?/iota-sdk/.*|' +
               '^(/[^/]+)?/build/.*|' +
@@ -63,7 +63,7 @@ module.exports = async () => {
           },
           {
             label: 'Maintain',
-            to: '/hornet/2.0.0-rc.6/welcome',
+            to: '/maintain/welcome',
             activeBaseRegex:
               '^(/[^/]+)?/hornet/.*|' +
               '^(/[^/]+)?/wasp/.*|' +
