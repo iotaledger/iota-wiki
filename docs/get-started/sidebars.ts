@@ -42,7 +42,7 @@ module.exports = {
     },
     {
       type: 'category',
-      label: 'Programmes',
+      label: 'Programs',
       items: [
         'programs/touchpoint',
         'programs/EDF-grant-programme',
