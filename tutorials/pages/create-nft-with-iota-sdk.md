@@ -180,13 +180,13 @@ await wallet.setStrongholdPassword(process.env.STRONGHOLD_PASSWORD);
 
 #### 5. Mint NFT
 
-We've to prepare our params for NFT minting, which are defined in MintNftParmas type.
-- `address`: (optional) Bech32 encoded address to which the Nft will be minted. Default will use the first address of the account.
+You should prepare the parameters for minting the NFT and define them in a `MintNftParms` type.
+- `address`: (optional) Bech32 encoded address to which the Nft will be minted. The default will use the first address of the account.
 - `sender`: Bech32 encoded sender address
-- `metadata`: Hex encoded bytes containing metadata as per IRC27 from [TIP-27](https://wiki.iota.org/shimmer/tips/tips/TIP-0027/#nft-schema) as done in previous step.
-- `tag`: Hex encoded bytes with some custom tags that can help you categorise.
+- `metadata`: Hex encoded bytes containing metadata as per IRC27 from [TIP-27](https://wiki.iota.org/shimmer/tips/tips/TIP-0027/#nft-schema) as done in the previous step.
+- `tag`: Hex encoded bytes with custom tags that can help you categorize.
 - `issuer`: Bech32 encoded issuer address
-- `immutableMetadata`: Similar to metadata as hex encoded bytes however this one can not be updated later once minted. Can contain core properties that is supposed to be immutable.
+- `immutableMetadata`: Similar to metadata as hex encoded bytes. However, this one can not be updated later once minted. It can contain core properties that are immutable.
 
 ```js
       const params: MintNftParams = {
