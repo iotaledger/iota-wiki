@@ -2,41 +2,57 @@ module.exports = {
   build: [
     {
       type: 'category',
-      label: 'Chrysalis',
-      collapsed: true,
+      label: 'Protocols',
+      collapsed: false,
       items: [
-        'chrysalis/introduction',
+        {
+          type: 'doc',
+          label: 'Introduction',
+          id: 'protocols/introduction',
+        },
+        {
+          type: 'doc',
+          label: 'The Coordinator',
+          id: 'protocols/coordinator',
+        },
         {
           type: 'category',
-          label: 'Core Concepts',
+          label: 'Chrysalis',
+          collapsed: true,
           items: [
-            'chrysalis/core-concepts/white-flag-consensus',
-            'chrysalis/core-concepts/switch-to-UTXO',
-            'chrysalis/core-concepts/EdDSA-support',
-            'chrysalis/core-concepts/binary-transaction-layout',
+            'protocols/chrysalis/introduction',
+            {
+              type: 'category',
+              label: 'Core Concepts',
+              items: [
+                'protocols/chrysalis/core-concepts/white-flag-consensus',
+                'protocols/chrysalis/core-concepts/switch-to-UTXO',
+                'protocols/chrysalis/core-concepts/EdDSA-support',
+                'protocols/chrysalis/core-concepts/binary-transaction-layout',
+              ],
+            },
+            'protocols/chrysalis/tips',
           ],
         },
-        'chrysalis/tips',
-      ],
-    },
-    {
-      type: 'category',
-      label: 'Stardust',
-      collapsed: true,
-      items: [
-        'stardust/introduction',
         {
           type: 'category',
-          label: 'Core Concepts',
+          label: 'Stardust',
+          collapsed: true,
           items: [
-            'stardust/core-concepts/multi-asset-ledger',
-            'stardust/core-concepts/consensus',
-            'stardust/core-concepts/output-unlock-conditions',
-            'stardust/core-concepts/output-features',
-            'stardust/core-concepts/storage-deposit',
+            'protocols/stardust/introduction',
+            {
+              type: 'category',
+              label: 'Core Concepts',
+              items: [
+                'protocols/stardust/core-concepts/multi-asset-ledger',
+                'protocols/stardust/core-concepts/output-unlock-conditions',
+                'protocols/stardust/core-concepts/output-features',
+                'protocols/stardust/core-concepts/storage-deposit',
+              ],
+            },
+            'protocols/stardust/tips',
           ],
         },
-        'stardust/tips',
       ],
     },
     {

@@ -23,7 +23,7 @@ Stardust introduces custom, user-defined tokens. Fungible tokens, called **nativ
 token
 foundries. One does not need to convert base currency into native tokens. They are injected into the ledger out of thin
 air. Anyone is free to issue their own tokens, but keep in mind that holding native tokens in one's wallet increases the
-required storage deposit in the base currency. We will elaborate on storage deposits [here](./storage-deposit.md).
+required storage deposit in the base currency. We will elaborate on storage deposits [here](storage-deposit.md).
 
 ## Non-fungible Tokens (NFTs)
 

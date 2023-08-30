@@ -12,7 +12,7 @@ keywords:
   ]
 ---
 
-# What is Stardust?
+# Introduction
 
 Stardust represents the next phase in the IOTA protocol.
 While [Chrysalis](../chrysalis/introduction.md) focused on token transfers, Stardust introduced
@@ -48,7 +48,7 @@ If a user decides they no longer need the storage, they can reclaim their deposi
 
 ## ISC Support
 
-You can deploy [IOTA Smart Contracts (ISC)](../smart-contracts/core_concepts/smart-contracts.md) as Layer 2 (L2) chains
+You can deploy [IOTA Smart Contracts (ISC)](../../smart-contracts/core_concepts/smart-contracts.md) as Layer 2 (L2) chains
 in Stardust.
 This approach differs from platforms that run smart contracts on their primary layer,
 ensuring the main layer remains efficient and speedy while also providing the flexibility that smart contracts offer on
