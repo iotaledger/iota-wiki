@@ -61,22 +61,22 @@ over http is beyond the scope of Wasp and should be done in addition. Wasp is on
 configured (by `snapshots.networkPaths` parameter) http addresses. A folder, serving snapshot files over http must contain
 `INDEX` file with new line separated list of snapshot file names.
 
-If chain is started with empty database (usually, if the database hasn't yet been created or it was deleted), the node checks, if
-it can load a snapshot: it scans local folder and all the network addresses for available snapshot files. In local folder it reads
-all the files with names that satisfy search pattern `*-*.snap`. In each network location Wasp reads all the files listed in `INDEX`
+If a chain starts with an empty database (usually if the database hasn't been created yet or was deleted), the node checks if
+it can load a snapshot: it scans the local folder and all the network addresses for available snapshot files. In the local folder, it reads
+all the files with names that satisfy the search pattern `*-*.snap`. In each network location, Wasp reads all the files listed in `INDEX`
 file of that location. Wasp reads a state index and a commitment from the contents of these files. File names are not used to obtain
-this information and full snapshot files are not (down)loaded yet. Among all the available snapshot files, the node chooses the one
-with largest state index and loads it to the store. If there are several files with the same largest state index, the node tries
-to load them one by one starting from the local ones until one snapshot is loaded correctly. If loading fails for all candidates,
-the node is started with empty database.
+this information, and full snapshot files are not (down)loaded yet. The node chooses 
+the one with the largest state index and loads it to the store among all available snapshot files. If several files have the same largest state index, 
+the node loads them one by one, starting from the local ones until one snapshot is loaded correctly. If loading fails for all candidates,
+the node will start with an empty database.
 
-To load a specific snapshot, `snapshots.snapshotsToLoad` parameter can be used. In that case the node searches for snapshots with
-block hash, provided in the parameter. Once again if loading of all such found files fails, the node is started with empty database.
+You can use the `snapshots.snapshotsToLoad` parameter to load a specific snapshot. In that case, the node searches for snapshots with
+the block hash provided in the parameter. Once again, if loading all found files fails, the node starts with an empty database.
 
-After a snapshot is loaded, earlier blocks (ones with smaller state index than snapshot) cannot be retrieved and committed to the DB
-(this is discussed in [Obtaining blocks section](#obtaining-blocks)). This constraint can cause problems (especially in case of reorg),
-if loaded snapshot is too recent. To avoid that, making snapshots is delayed by `snapshots.delay` states. E.g., if `snapshots.period`
-is `100` and `snapshots.delay` is `20`, then snapshot index `100` will be produced, when block index `120` is committed, snapshot index
+After a snapshot is loaded, earlier blocks (ones with a smaller state index than the snapshot) cannot be retrieved and committed to the DB
+(this is discussed in [Obtaining blocks section](#obtaining-blocks)). This constraint can cause problems (especially in reorg)
+if the loaded snapshot is too recent. To avoid that, making snapshots is delayed by `snapshots.delay` states. E.g., if `snapshots.period`
+is `100` and `snapshots.delay` is `20`, then snapshot index `100` will be produced. When block index `120` is committed, snapshot index
 `200` will be produced, when snapshot index `220` is committed, etc... For the data to be available after this delay, `snapshot.delay`
 value must be considerably smaller than `stateManager.pruningMinStatesToKeep`.
 
@@ -92,8 +92,8 @@ state is reached.
 E.g., let's say, that the last state in the DB is state index `10` and request to have state index `12` is received.
 State manager does this in following steps:
 
-1. Block index `12` is obtained and commitment of block index `11` is known.
-2. As commitment of block (state) index `11` is known, the block may be requested and obtained. After obtaining block
+1. Block index `12` is obtained, and commitment of block index `11` is known.
+2. As the commitment of block (state) index `11` is known, the block may be requested and obtained. After obtaining block
    index `11` commitment of block index `10` is known.
 3. Using block index `10` commitment the DB is checked to make sure that it is already present.
 4. As block index `10` is already committed, block index `11` is committed. This makes state `11` present in the DB.
@@ -185,16 +185,16 @@ The following parameters may be provided in section `stateManager`:
 
 The following parameters may be provided in section `snapshots`:
 
-- `snapshotsToLoad`: the comma list of `<chainID>:<hash>` pairs, where chain `<chainID>` must be started using snapshot with block hash `<hash>`.
+- `snapshotsToLoad`: the comma sepparated list of `<chainID>:<hash>` pairs, where chain `<chainID>` must be started using snapshot with block hash `<hash>`.
   The list can also contain `<hash>` entry. This hash will be used for other chains, which are not configured separately. There is
-  no point in having several `<hash>` or `<chainID>:<hash>` entries with same `<chainID>` as only the last such entry is taken into
-  account. Note that if chain is configured to start from some snapshot and the snapshot is not available (or other error occurs
-  during snapshot loading), chain is started with empty DB. Default is empty list, which means, that the newest available snapshot
+  no point in having several `<hash>` or `<chainID>:<hash>` entries with the same `<chainID>` as only the last such entry is taken into
+  account. Note that if the chain is configured to start from some snapshot and the snapshot is not available (or another error occurs
+  during snapshot loading), the chain will start with an empty DB. The default is an empty list, which means that the newest available snapshot
   will be loaded for every chain.
 - `period`: how often state snapshots should be made: 1000 meaning "every 1000th state", 0 meaning "making snapshots is disabled".
   Snapshots are disabled by default.
-- `delay`: how many states to delay making of the snapshot; it must be considerably smaller than `stateManager.pruningMinStatesToKeep`.
-  Default is 20.
+- `delay`: how many states to delay making the snapshot; it must be considerably smaller than `stateManager.pruningMinStatesToKeep`.
+  The default is 20.
 - `localPath`: the path to the snapshots folder in this node's disk. Default is `waspdb/snap`.
 - `networkPaths`: the comma separated list of paths to the remote (http(s)) snapshot locations. The list is empty by default.
 
