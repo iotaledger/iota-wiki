@@ -81,7 +81,7 @@ module.exports = {
         {
           type: 'link',
           label: 'Shimmer Explorer',
-          href: 'https://explorer.chrysalis.network/',
+          href: 'https://explorer.shimmer.network/',
         },
       ],
     },
