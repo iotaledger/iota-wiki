@@ -48,23 +48,10 @@ const LibrariesSection: FC = () => (
           />
         </div>
         <h3 className='libraries__feature'>IOTA SDK</h3>
-        <ul className='libraries__feature'>
-          <li className='libraries__feature'>
-            <Link to='/iota-sdk/how-tos/accounts-and-addresses/create-address'>
-              Create an address
-            </Link>
-          </li>
-          <li className='libraries__feature'>
-            <Link to='/iota-sdk/how-tos/simple-transaction'>
-              Send a transaction
-            </Link>
-          </li>
-          <li className='libraries__feature'>
-            <Link to='/iota-sdk/how-tos/outputs/features'>
-              Test the latest output features
-            </Link>
-          </li>
-        </ul>
+        <p>
+          The IOTA SDK provides a convenient and efficient way to interact with
+          nodes in the Shimmer and IOTA networks running the Stardust protocol.
+        </p>
         <Link
           to='/iota-sdk/welcome'
           className='nodes__button button button--outline button--primary'

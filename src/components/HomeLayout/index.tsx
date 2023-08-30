@@ -133,18 +133,12 @@ export default function HomeLayout() {
               </div>
               <div className='nodes__section'>
                 <h3 className='nodes__header'>Hornet</h3>
-                <ul className='nodes__features'>
-                  <li className='nodes__feature'>
-                    <Link to='/hornet/welcome'>
-                      A node implementation written in Go
-                    </Link>
-                  </li>
-                  <li className='nodes__feature'>
-                    <Link to='/hornet/getting_started'>
-                      Participate in the network
-                    </Link>
-                  </li>
-                </ul>
+                <p className='libraries__feature'>
+                  Hornet is an easy-to-install node software that offers full
+                  node capabilities and network updates, granting you direct
+                  access to the IOTA network and contributing to its resilience
+                  by validating messages and transactions.
+                </p>
                 <Link
                   to='/hornet/how_tos/using_docker'
                   className='nodes__button button button--outline button--primary'
@@ -159,23 +153,10 @@ export default function HomeLayout() {
               </div>
               <div className='nodes__section'>
                 <h3 className='nodes__header'>Wasp</h3>
-                <ul className='nodes__features'>
-                  <li className='nodes__feature'>
-                    <Link to='/learn/smart-contracts/core_concepts/validators'>
-                      Validate smart contracts
-                    </Link>
-                  </li>
-                  <li className='nodes__feature'>
-                    <Link to='/smart-contracts/guide/chains_and_nodes/running-a-node'>
-                      Run the Shimmer Smart Contract Protocol
-                    </Link>
-                  </li>
-                  <li className='nodes__feature'>
-                    <Link to='/smart-contracts/guide/evm/introduction'>
-                      Run EVM/Solidity Smart Contract
-                    </Link>
-                  </li>
-                </ul>
+                <p className='libraries__feature'>
+                  WASP is an INX plugin you can install and use to run your
+                  smart contract chain using the IOTA Smart Contracts protocol.
+                </p>
                 <Link
                   to='/smart-contracts/guide/chains_and_nodes/running-a-node'
                   className='nodes__button button button--outline button--primary'
@@ -190,23 +171,10 @@ export default function HomeLayout() {
               </div>
               <div className='nodes__section'>
                 <h3 className='nodes__header'>Chronicle</h3>
-                <ul className='nodes__features'>
-                  <li className='nodes__feature'>
-                    <Link to='/chronicle/welcome'>
-                      Efficient and reliable permanodes
-                    </Link>
-                  </li>
-                  <li className='nodes__feature'>
-                    <Link to='/chronicle/welcome#project-structure'>
-                      Solution for storing all transactions
-                    </Link>
-                  </li>
-                  <li className='nodes__feature'>
-                    <Link to='/chronicle/config_reference'>
-                      Managing and accessing the permanode
-                    </Link>
-                  </li>
-                </ul>
+                <p className='libraries__feature'>
+                  Chronicle is a permanode solution that allows you to store and
+                  retrieve IOTA messages and data in real time.
+                </p>
                 <Link
                   to='chronicle/getting_started'
                   className='nodes__button button button--outline button--primary'
