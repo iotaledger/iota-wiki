@@ -65,8 +65,8 @@ If a chain starts with an empty database (usually if the database hasn't been cr
 it can load a snapshot: it scans the local folder and all the network addresses for available snapshot files. In the local folder, it reads
 all the files with names that satisfy the search pattern `*-*.snap`. In each network location, Wasp reads all the files listed in `INDEX`
 file of that location. Wasp reads a state index and a commitment from the contents of these files. File names are not used to obtain
-this information, and full snapshot files are not (down)loaded yet. The node chooses 
-the one with the largest state index and loads it to the store among all available snapshot files. If several files have the same largest state index, 
+this information, and full snapshot files are not (down)loaded yet. The node chooses
+the one with the largest state index and loads it to the store among all available snapshot files. If several files have the same largest state index,
 the node loads them one by one, starting from the local ones until one snapshot is loaded correctly. If loading fails for all candidates,
 the node will start with an empty database.
 
