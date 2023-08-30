@@ -236,14 +236,33 @@ module.exports = {
     [
       '@iota-wiki/plugin-tutorial',
       {
+        title: 'Create an NFT with the IOTA SDK and IPFS in NodeJs',
+        description:
+          'In this tutorial you will learn how to create a NFT on the Shimmer network with iota-sdk and IPFS.',
+        preview: '/create-nft-with-wallet-lib.png',
+        route: 'tutorials/create-nft-with-iota-sdk',
+        tags: [
+          'text',
+          'getting-started',
+          'node_js',
+          'iota-sdk',
+          'ipfs',
+          'shimmer',
+          'sdk',
+        ],
+      },
+    ],
+    [
+      '@iota-wiki/plugin-tutorial',
+      {
         title: 'Send Shimmer Tokens with IOTA SDK in NodeJs',
         description:
           'In this tutorial you will learn how to send Shimmer Tokens with IOTA SDK in NodeJs.',
         preview: '/send-shimmer-tokens-with-iota-sdk.png',
         route: 'tutorials/send-shimmer-tokens-with-iota-sdk',
         tags: ['text', 'iota-sdk', 'sdk', 'getting-started', 'rust', 'shimmer'],
-      },
-    ],
+      }
+    ]
   ],
   staticDirectories: [path.resolve(__dirname, 'static')],
 };
