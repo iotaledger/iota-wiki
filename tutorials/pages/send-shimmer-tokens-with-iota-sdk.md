@@ -6,11 +6,11 @@ This tutorial shows you how to get Shimmer Testnet tokens and send them to anoth
 
 ### What you will learn
 
-- Create a Stronghold account
-- Generate a Shimmer address
-- Get some Shimmer testnet tokens
-- Fetch your balance
-- Send tokens to another address
+- [Create a Stronghold account](#create-an-account)
+- [Generate a Shimmer address](#generate-an-address)
+- [Get some Shimmer testnet tokens](https://faucet.testnet.shimmer.network/)
+- [Fetch your balance](#check-the-balance)
+- [Send tokens to another address](#send-tokens)
 
 ## Set Up Your Environment
 
