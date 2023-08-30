@@ -184,10 +184,7 @@ module.exports = async () => {
       id: 'apis',
       path: path.resolve(__dirname, 'docs/build/apis'),
       routeBasePath: 'apis',
-      sidebarPath: path.resolve(
-        __dirname,
-        'docs/build/apis/sidebars.ts',
-      ),
+      sidebarPath: path.resolve(__dirname, 'docs/build/apis/sidebars.ts'),
       docItemComponent: '@theme/ApiItem',
     },
     {
@@ -201,7 +198,10 @@ module.exports = async () => {
     },
     {
       id: 'introduction-docs-chrysalis',
-      path: path.resolve(__dirname, 'docs/build/introduction-docs/chrysalis/docs'),
+      path: path.resolve(
+        __dirname,
+        'docs/build/introduction-docs/chrysalis/docs',
+      ),
       routeBasePath: 'introduction',
       sidebarPath: path.resolve(
         __dirname,
@@ -216,7 +216,10 @@ module.exports = async () => {
     },
     {
       id: 'introduction-docs-stardust',
-      path: path.resolve(__dirname, 'docs/build/introduction-docs/stardust/docs'),
+      path: path.resolve(
+        __dirname,
+        'docs/build/introduction-docs/stardust/docs',
+      ),
       routeBasePath: 'introduction',
       sidebarPath: path.resolve(
         __dirname,

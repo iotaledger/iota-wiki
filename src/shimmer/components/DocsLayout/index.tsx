@@ -113,7 +113,7 @@ export default function DocsLayout() {
               <h3 className='nodes__header'>Wasp</h3>
               <ul className='nodes__features'>
                 <li className='nodes__feature'>
-                  <Link to='/smart-contracts/guide/core_concepts/validators'>
+                  <Link to='/learn/smart-contracts/core_concepts/validators'>
                     Validate smart contracts
                   </Link>
                 </li>

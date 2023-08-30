@@ -63,7 +63,7 @@ The Agent ID of the common account is `<hname=0>@<address zero (0x00000...)>`.
 
 ### Ethereum Address
 
-An L2 account can also be owned by an Ethereum address. See [EVM](../../evm/introduction.md) for more information.
+An L2 account can also be owned by an Ethereum address. See [EVM](/smart-contracts/guide/evm/introduction) for more information.
 The Agent ID of an Ethereum address is just the address prefixed with `0x`,
 e.g. `0xd36722adec3edcb29c8e7b5a47f352d701393462`.
 

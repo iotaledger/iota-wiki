@@ -7,7 +7,8 @@ module.exports = {
       link: {
         type: 'generated-index',
         title: 'Introduction',
-        description: 'Learn more about both our mainnet and our staging network Shimmer.',
+        description:
+          'Learn more about both our mainnet and our staging network Shimmer.',
         slug: '/introduction',
         keywords: ['introduction', 'iota', 'shimmer'],
       },
@@ -64,7 +65,7 @@ module.exports = {
           type: 'link',
           label: 'TanglePay',
           href: 'https://tanglepay.com/',
-          description: 'Your IOTA & Shimmer Wallet for DeFi and NFTs.'
+          description: 'Your IOTA & Shimmer Wallet for DeFi and NFTs.',
         },
       ],
     },
