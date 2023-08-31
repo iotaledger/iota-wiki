@@ -33,10 +33,6 @@ module.exports = {
     },
     {
       type: 'doc',
-      id: 'testnet',
-    },
-    {
-      type: 'doc',
       id: 'configuration',
     },
     {
