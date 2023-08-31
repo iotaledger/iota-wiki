@@ -22,13 +22,13 @@ The IOTA DID Method Specification describes a method of implementing the [Decent
 
 ## Data Types & Subschema Notation
 
-Data types and subschemas used throughout this TIP are defined in [draft TIP-21](https://github.com/iotaledger/tips/pull/41).
+Data types and subschemas used throughout this TIP are defined in [TIP-21](https://github.com/iotaledger/tips/blob/main/tips/TIP-0021/tip-0021.md).
 
 ## Introduction
 
 ### UTXO Ledger
 
-The unspent transaction output ([UTXO](https://wiki.iota.org/IOTA-2.0-Research-Specifications/5.1UTXO)) model defines a ledger state where outputs are created by a transaction consuming outputs of previous transactions as inputs. The Stardust version of the protocol defines several output types, the relevant ones for the IOTA DID Method are: Basic Outputs for value transactions, and Alias Outputs for storage of DID Documents.
+The unspent transaction output ([UTXO](https://wiki.iota.org/IOTA-2.0-Research-Specifications/5.1UTXO)) model defines a ledger state which is comprised of unspent outputs. Outputs are created by a transaction consuming outputs of previous transactions as inputs. The Stardust version of the protocol defines several output types, the relevant ones for the IOTA DID Method are: Basic Outputs for value transactions, and Alias Outputs for storage of DID Documents.
 
 All outputs must hold a minimum amount of tokens to be stored on the ledger. For output types that can hold arbitrary data, for instance the Alias Output, the amount of tokens held by the output must cover the byte cost of the data stored. This prevents the ledger size from growing uncontrollably while guaranteeing that the data is not pruned from the nodes, which is important for resolving DID Documents. This deposit is fully refundable and can be reclaimed when the output is destroyed.
 
@@ -36,7 +36,7 @@ Data stored in an output and covered by the storage deposit will be stored in _a
 
 ### Alias Output
 
-The [Alias Output](https://github.com/lzpap/tips/blob/master/tips/TIP-0018/tip-0018.mdx#alias-output) is a specific implementation of the [UTXO state machine](https://github.com/lzpap/tips/blob/master/tips/TIP-0018/tip-0018.mdx#chain-constraint-in-utxo). Some of its relevant properties are:
+The [Alias Output](https://github.com/iotaledger/tips/blob/main/tips/TIP-0018/tip-0018.md#alias-output) is a specific implementation of the [UTXO state machine](https://github.com/iotaledger/tips/blob/main/tips/TIP-0018/tip-0018.md#chain-constraint-in-utxo). Some of its relevant properties are:
 
 - **Amount**: the amount of IOTA coins held by the output.
 - **Alias ID**: 32 byte array, a unique identifier of the alias, which is the BLAKE2b-256 hash
@@ -47,7 +47,7 @@ The [Alias Output](https://github.com/lzpap/tips/blob/master/tips/TIP-0018/tip-0
   - State Controller Address Unlock Condition
   - Governor Address Unlock Condition
 
-Consuming an Alias Output in a transaction means that the alias is transitioned into the next state. The current state is defined as the consumed Alias Output, while the next state is defined as the **Alias Output with the same explicit `Alias ID` on the output side**. There are two types of transitions: `state transition` and `governance transition`.
+Consuming an Alias Output in a transaction may transition it into the next state. The current state is defined as the consumed Alias Output, while the next state is defined as the **Alias Output with the same explicit `Alias ID` on the output side**. There are two types of transitions: `state transition` and `governance transition`.
 
 All outputs include an `Unlock Conditions` property. This feature defines how the output can be unlocked and spent. The Alias Output supports two types of unlock conditions that can be set: the state controller and governor. Each of these can be either an Ed25519 Address, Alias Address or an NFT Address. An Alias Output can have at most one of each unlock condition.
 
@@ -60,8 +60,8 @@ The governor, on the other hand, can unlock a governance transition indicated by
 Storing DID Documents in the ledger state means they inherently benefit from the guarantees the ledger provides.
 
 1. Conflicts among nodes are resolved and dealt with by the ledger.
-2. Replay attacks are not possible since transactions need to be confirmed by the ledger.
-3. The Alias Output includes the `State Index` which provides linear history for updates of a DID Document.
+2. Replay attacks are mitigated since transactions need to be confirmed by the ledger.
+3. Through the `State Index` a linear history for updates of a DID Document is provided.
 
 ## DID Method Name
 
@@ -126,8 +126,8 @@ The types are defined in [TIP-21](#data-types--subschema-notation).
 The payload must contain the following fields:
 
 - `meta`: contains metadata about the DID Document. For example, `created` to indicate the time of
-  creation, and `updated` to indicate the time of the last update to the document. It can also include other properties.
-- `doc`: which contains the DID Document. In the example below, the document only contains one verification method. The `id` and `controller` is specified by `did:0:0` which references the DID of the document itself, since the DID is unknown at the time of publishing. It also deduplicates the DID of the document to reduce the size of the state metadata, in turn reducing the required storage deposit.
+  creation, and `updated` to indicate the time of the last update to the document. It may also include other properties.
+- `doc`: contains the DID Document. In the example below, the document only contains one verification method. The `id` and `controller` is specified by `did:0:0` which references the DID of the document itself, since the DID is unknown at the time of publishing. It also deduplicates the DID of the document to reduce the size of the state metadata, in turn reducing the required storage deposit.
 
 Example State Metadata Document:
 
@@ -244,7 +244,7 @@ Currently standardized `services`:
 
 ## Security Considerations
 
-The `did:iota` method is implemented on the [IOTA](https://iota.org), a public permissionless and feeless Distributed Ledger Technology (DLT), making it resistant against almost all censorship attack vectors. Up until the `Coordicide` update for the IOTA network, a reliability on the coordinator exists for resolving ordering conflicts. This has a minor censorship possibility, that, in the wrost case, can prevent transactions from getting confirmed.
+The `did:iota` method is implemented on the [IOTA](https://iota.org), a public permissionless and feeless Distributed Ledger Technology (DLT), making it resistant against almost all censorship attack vectors. Up until the `Coordicide` update for the IOTA network, a dependency on the coordinator exists for resolving ordering conflicts. This has a minor censorship possibility, that, in the worst case, can prevent transactions from getting confirmed.
 
 ### Private Key Management
 
