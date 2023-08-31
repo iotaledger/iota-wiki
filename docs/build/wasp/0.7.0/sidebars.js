@@ -22,6 +22,72 @@ module.exports = {
     },
     {
       type: 'category',
+      label: 'EVM',
+      items: [
+        {
+          type: 'doc',
+          label: 'Introduction',
+          id: 'guide/evm/introduction',
+        },
+        {
+          type: 'doc',
+          label: 'Quickstart',
+          id: 'guide/evm/quickstart',
+        },
+        {
+          type: 'doc',
+          label: 'Compatibility',
+          id: 'guide/evm/compatibility',
+        },
+        {
+          type: 'doc',
+          label: 'How to Use',
+          id: 'guide/evm/using',
+        },
+        {
+          type: 'doc',
+          label: 'The Magic Contract',
+          id: 'guide/evm/magic',
+        },
+        {
+          type: 'doc',
+          label: 'Magic Contract Usage',
+          id: 'guide/evm/magic-uses',
+        },
+        {
+          type: 'doc',
+          label: 'Tooling',
+          id: 'guide/evm/tooling',
+        },
+        {
+          type: 'category',
+          label: 'Examples',
+          items: [
+            {
+              type: 'doc',
+              label: 'Example Contract',
+              id: 'guide/evm/examples/introduction',
+            },
+            {
+              type: 'doc',
+              label: 'ERC20',
+              id: 'guide/evm/examples/ERC20',
+            },
+            {
+              type: 'doc',
+              label: 'ERC721',
+              id: 'guide/evm/examples/ERC721',
+            },
+          ],
+        },
+      ],
+    },
+    {
+      type: 'doc',
+      id: 'testnet',
+    },
+    {
+      type: 'category',
       label: 'Wasm VM (Experimental)',
       items: [
         {
@@ -195,78 +261,16 @@ module.exports = {
           label: 'Colored Tokens and Time Locks',
           id: 'guide/wasm_vm/timelock',
         },
-      ],
-    },
-    {
-      type: 'category',
-      label: 'EVM',
-      items: [
-        {
-          type: 'doc',
-          label: 'Introduction',
-          id: 'guide/evm/introduction',
-        },
-        {
-          type: 'doc',
-          label: 'Quickstart',
-          id: 'guide/evm/quickstart',
-        },
-        {
-          type: 'doc',
-          label: 'Compatibility',
-          id: 'guide/evm/compatibility',
-        },
-        {
-          type: 'doc',
-          label: 'How to Use',
-          id: 'guide/evm/using',
-        },
-        {
-          type: 'doc',
-          label: 'The Magic Contract',
-          id: 'guide/evm/magic',
-        },
-        {
-          type: 'doc',
-          label: 'Magic Contract Usage',
-          id: 'guide/evm/magic-uses',
-        },
-        {
-          type: 'doc',
-          label: 'Tooling',
-          id: 'guide/evm/tooling',
-        },
         {
           type: 'category',
-          label: 'Examples',
+          label: 'Example projects',
           items: [
             {
               type: 'doc',
-              label: 'Example Contract',
-              id: 'guide/evm/examples/introduction',
-            },
-            {
-              type: 'doc',
-              label: 'ERC20',
-              id: 'guide/evm/examples/ERC20',
-            },
-            {
-              type: 'doc',
-              label: 'ERC721',
-              id: 'guide/evm/examples/ERC721',
+              label: 'Fair Roulette',
+              id: 'guide/wasm_vm/example_projects/fair_roulette',
             },
           ],
-        },
-      ],
-    },
-    {
-      type: 'category',
-      label: 'Example projects',
-      items: [
-        {
-          type: 'doc',
-          label: 'Fair Roulette',
-          id: 'guide/example_projects/fair_roulette',
         },
       ],
     },
