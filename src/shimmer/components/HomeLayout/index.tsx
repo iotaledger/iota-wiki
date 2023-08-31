@@ -177,37 +177,6 @@ export default function HomeLayout() {
             </div>
             <div className='nodes__card'>
               <div className='nodes__icon'>
-                <Wasp />
-              </div>
-              <div className='nodes__section'>
-                <h3 className='nodes__header'>Wasp</h3>
-                <ul className='nodes__features'>
-                  <li className='nodes__feature'>
-                    <Link to='/smart-contracts/guide/core_concepts/validators'>
-                      Validate smart contracts
-                    </Link>
-                  </li>
-                  <li className='nodes__feature'>
-                    <Link to='/smart-contracts/guide/chains_and_nodes/running-a-node'>
-                      Run the Shimmer Smart Contract Protocol
-                    </Link>
-                  </li>
-                  <li className='nodes__feature'>
-                    <Link to='/smart-contracts/guide/evm/introduction'>
-                      Run EVM/Solidity Smart Contract
-                    </Link>
-                  </li>
-                </ul>
-                <Link
-                  to='/smart-contracts/guide/chains_and_nodes/running-a-node'
-                  className='nodes__button button button--outline button--primary'
-                >
-                  Run a smart contract node
-                </Link>
-              </div>
-            </div>
-            <div className='nodes__card'>
-              <div className='nodes__icon'>
                 <Chronicle />
               </div>
               <div className='nodes__section'>

@@ -128,8 +128,8 @@ async function create_doc_plugin({ ...options }) {
   }
 
   return [
-    '@docusaurus/plugin-content-docs',
-    /** @type {import('@docusaurus/plugin-content-docs').Options} */
+    '@iota-wiki/plugin-docs',
+    /** @type {import('@iota-wiki/plugin-docs').Options} */
     ({
       ...setting,
       ...options,

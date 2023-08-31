@@ -1,0 +1,196 @@
+.switcher {
+  --ifm-heading-color: var(--ifm-font-color-base);
+  --ifm-link-color: var(--ifm-font-color-base);
+  --ifm-link-hover-color: var(--ifm-font-color-base);
+  --ifm-link-hover-decoration: none;
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--ifm-global-radius);
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+
+.menu__list-item:not(:first-child).switcher {
+  margin-top: 1rem;
+}
+
+.badge--switcher {
+  background-color: var(--ifm-color-gray-700);
+}
+
+.switcher-subsection {
+  display: block;
+  background-color: var(--ifm-color-gray-400);
+  opacity: 0.75;
+}
+
+.switcher-subsection--active {
+  opacity: 1;
+  background-color: var(--ifm-color-gray-200);
+  border-bottom: 4px solid var(--ifm-color-gray-800);
+}
+
+[data-theme='dark'] .switcher-subsection {
+  background-color: var(--ifm-color-gray-900);
+}
+
+[data-theme='dark'] .switcher-subsection--active {
+  background-color: var(--ifm-color-gray-800);
+}
+
+.switcher-subsection__content {
+  padding: 1rem 1rem 0 1rem;
+}
+
+.switcher-subsection__description {
+  font-size: 0.8rem;
+}
+
+.switcher-menu {
+  margin-bottom: 1rem;
+}
+
+.switcher-menu__buttons {
+  display: grid;
+  grid-template-columns: auto 40%;
+  gap: 0.1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.switcher-menu__button {
+  position: relative;
+  cursor: pointer;
+  padding: calc(0.5rem - 2px);
+  background-color: var(--ifm-color-gray-200);
+  border: var(--ifm-color-gray-500) solid 1px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+[data-theme='dark'] .switcher-menu__button {
+  background-color: var(--ifm-color-gray-800);
+}
+
+.switcher-menu__button--disabled {
+  background-color: transparent;
+  border: var(--ifm-color-gray-500) solid 1px;
+  color: var(--ifm-font-color-base);
+  cursor: unset;
+}
+
+[data-theme='dark'] .switcher-menu__button--disabled {
+  background-color: var(--ifm-color-gray-800);
+}
+
+.switcher-menu__button--caret {
+  padding-right: 1.2rem;
+}
+
+.switcher-menu__button--caret:after {
+  display: inline-block;
+  content: '';
+  background: var(--ifm-menu-link-sublist-icon) 50% / 1.5rem 1.5rem;
+  height: 0.9rem;
+  width: 0.9rem;
+  rotate: 180deg;
+  position: absolute;
+  right: 0.3rem;
+}
+
+.switcher-menu__button:first-child {
+  border-top-left-radius: var(--ifm-global-radius);
+  border-bottom-left-radius: var(--ifm-global-radius);
+}
+
+.switcher-menu__button:last-child {
+  border-top-right-radius: var(--ifm-global-radius);
+  border-bottom-right-radius: var(--ifm-global-radius);
+}
+
+.switcher-menu__button--active {
+  background-color: var(--ifm-color-gray-200);
+  border-color: var(--ifm-color-gray-500);
+}
+
+[data-them='dark'] .switcher-menu__button--active {
+  background-color: var(--ifm-color-gray-700);
+}
+
+.switcher-menu__button:first-child.switcher-menu__button--active {
+  border-bottom-left-radius: 0;
+}
+
+.switcher-menu__button:last-child.switcher-menu__button--active {
+  border-bottom-right-radius: 0;
+}
+
+.switcher-menu__dropdown {
+  overflow: hidden;
+  height: 0;
+  background-color: var(--ifm-color-gray-200);
+  display: flex;
+  justify-content: center;
+}
+
+[data-theme='dark'] .switcher-menu__dropdown {
+  background-color: var(--ifm-color-gray-800);
+}
+
+.switcher-menu__dropdown--active {
+  height: unset;
+  padding: 1rem 0;
+}
+
+.switcher-menu__items {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.switcher-menu__item {
+  padding: 0;
+}
+
+.switcher-menu__item:not(:first-child) {
+  margin-top: 0.5rem;
+}
+
+.switcher-menu__link {
+  display: flex;
+  flex-direction: row;
+  padding: 0.25rem 0.5rem;
+  border-radius: var(--ifm-global-radius);
+}
+
+.switcher-menu__link--active {
+  background-color: var(--ifm-color-gray-500);
+}
+
+.switcher-menu__icon {
+  fill: var(--ifm-font-color-base);
+  width: 3rem;
+  margin-left: -0.5rem;
+}
+
+.switcher-menu__content {
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.switcher-menu__description {
+  font-size: 0.7rem;
+}
+
+.switcher-menu__label {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.switcher-menu__badge {
+  background-color: var(--ifm-color-gray-900);
+  margin-left: 1rem;
+}

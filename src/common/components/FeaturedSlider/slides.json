@@ -1,20 +1,20 @@
 [
   {
-    "title": "The complete reference for IOTA",
-    "description": "Build apps capable of taking millions of users on journeys they’ve never been on before. Simple. Scalable. Secure.",
+    "title": "The complete reference for IOTA and Shimmer",
+    "description": "Build apps capable of taking millions of users on journeys they've never been on before. Simple. Scalable. Secure.",
     "outlinedButton": {
-      "buttonText": "Learn About IOTA",
-      "url": "/learn/about-iota/an-introduction-to-iota"
+      "buttonText": "Introduction",
+      "url": "/get-started/introduction"
     },
     "solidButton": {
       "buttonText": "Start building",
-      "url": "/develop/welcome"
+      "url": "/iota-sdk/welcome"
     },
     "imagePath": "/img/homepage/header.svg"
   },
   {
     "title": "Send IOTA Tokens with Javascript",
-    "description": "Learn how to create your seed, addres, send IOTA Tokens and retrieve your balance in the Devnet.",
+    "description": "Learn how to create your seed, address, send IOTA Tokens and retrieve your balance in the Devnet.",
     "imagePath": "/img/homepage/resources_bot.svg",
     "solidButton": {
       "buttonText": "Start tutorial",
