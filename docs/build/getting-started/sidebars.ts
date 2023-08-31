@@ -23,7 +23,7 @@ module.exports = {
         {
           type: 'link',
           label: 'WASP CLI',
-          href: '/smart-contracts/guide/chains_and_nodes/wasp-cli',
+          href: '/wasp/wasp-cli',
         },
         {
           label: 'Schema Tool',

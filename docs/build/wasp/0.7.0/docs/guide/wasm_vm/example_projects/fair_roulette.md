@@ -37,7 +37,7 @@ Therefore the roulette is Fair.
 The mandatory setup consists out of:
 
 - 1 [GoShimmer](https://wiki.iota.org/goshimmer/welcome) node >= 0.7.5v ([25c827e8326a](https://github.com/iotaledger/goshimmer/commit/25c827e8326a))
-- 1 Beta [Wasp node](../../guide/chains_and_nodes/running-a-node.md).
+- 1 Beta [Wasp node](/wasp/running-a-node).
 - 1 Static file server (nginx, Apache, fasthttp)
 
 ## Technicalities
@@ -95,7 +95,7 @@ To interact with a smart contract, you will need:
 
 The PoC consists of two projects residing in `contracts/wasm/fairroulette`.
 
-One is the smart contract itself. Its boilerplate was generated using the new [Schema tool](../wasm_vm/intro.mdx) which is shipped with this beta release.
+One is the smart contract itself. Its boilerplate was generated using the new [Schema tool](/smart-contracts/guide/wasm_vm/intro) which is shipped with this beta release.
 The contract logic is written in Rust, but the same implementation can be achieved
 interchangeably with Golang and Assemblyscript which is demonstrated in the root folder
 and `./src`.
@@ -284,7 +284,7 @@ cp config.dev.sample.js config.dev.js
 
 Make sure to update the config values according to your setup.
 
-The `chainId` is the chainId which gets defined after [deploying a chain](../chains_and_nodes/setting-up-a-chain.md#deploy-the-isc-chain). You can get your chain id from your dashboard, or list all chains by running:
+The `chainId` is the chainId which gets defined after [deploying a chain](/wasp/setting-up-a-chain#deploy-the-isc-chain). You can get your chain id from your dashboard, or list all chains by running:
 
 ```shell
 wasp-cli chain list
@@ -309,7 +309,7 @@ If you want to expose the dev server to the public, it might be required to bind
 
 ## Deployment
 
-You should follow the [Deployment](../chains_and_nodes/setting-up-a-chain.md#deploy-the-isc-chain) documentation until you reach the `deploy-contract` command.
+You should follow the [Deployment](/wasp/setting-up-a-chain#deploy-the-isc-chain) documentation until you reach the `deploy-contract` command.
 
 The deployment of a contract requires funds to be deposited to the **chain**.
 You can do this by executing the following command from the directory where your Wasp node was configured:

@@ -268,7 +268,7 @@ module.exports = {
             {
               type: 'doc',
               label: 'Fair Roulette',
-              id: 'guide/example_projects/fair_roulette',
+              id: 'guide/wasm_vm/example_projects/fair_roulette',
             },
           ],
         },
