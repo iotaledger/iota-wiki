@@ -33,7 +33,7 @@ exports.articleRedirects = [
   },
   {
     from: '/develop/network-token-migration/',
-    to: '/tips/',
+    to: '/tips/tips/TIP-0017/',
   },
   {
     from: '/develop/nodes/about-nodes/',
@@ -246,7 +246,7 @@ exports.articleRedirects = [
   },
   {
     from: '/shimmer/develop/explanations/what-is-stardust/dynamic-pow/',
-    to: '/tips/tips/',
+    to: '/tips/',
   },
   {
     from: '/shimmer/develop/explanations/what-is-stardust/output-features/',
