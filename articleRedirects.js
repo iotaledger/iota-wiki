@@ -33,7 +33,7 @@ exports.articleRedirects = [
   },
   {
     from: '/develop/network-token-migration/',
-    to: '/tips/tips/TIP-0017/',
+    to: '/tips/',
   },
   {
     from: '/develop/nodes/about-nodes/',
@@ -498,7 +498,7 @@ exports.articleRedirects = [
   },
   {
     from: '/shimmer/smart-contracts/guide/example_projects/fair_roulette/',
-    to: '/smart-contracts/guide/example_projects/fair_roulette/',
+    to: '/smart-contracts/guide/wasm_vm/example_projects/fair_roulette/',
   },
   {
     from: '/shimmer/smart-contracts/metrics/',
