@@ -261,6 +261,7 @@ module.exports = async () => {
                 existingPath.replace('/tutorials/', '/shimmer/tutorials'),
                 existingPath.replace('/wallet.rs/1.0.0-rc.6/', '/shimmer/wallet.rs',
                 ),
+                existingPath.replace('/learn/governance/', '/shimmer/learn/governance/'),
               ];
               return undefined; // Return a falsy value: no redirect created
             },
