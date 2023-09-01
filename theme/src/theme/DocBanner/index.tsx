@@ -1,5 +1,4 @@
 import React from 'react';
-import { useActivePlugin } from '@docusaurus/plugin-content-docs/client';
 import { useDoc } from '@docusaurus/theme-common/internal';
 import { DocMetadata } from '@iota-wiki/plugin-docs';
 import ReactMarkdown from 'react-markdown';
