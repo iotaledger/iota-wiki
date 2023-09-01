@@ -401,30 +401,6 @@ exports.articleRedirects = [
     to: '/learn/glossary/',
   },
   {
-    from: '/shimmer/learn/governance/governance-scope/',
-    to: '/get-started/introduction/shimmer/governance/',
-  },
-  {
-    from: '/shimmer/learn/governance/governance-tech/',
-    to: '/get-started/introduction/shimmer/governance/',
-  },
-  {
-    from: '/shimmer/learn/governance/shimmer-community-grant-committee/',
-    to: '/get-started/introduction/shimmer/governance/',
-  },
-  {
-    from: '/shimmer/learn/governance/shimmer-firefly-governance-guide/',
-    to: '/get-started/introduction/shimmer/governance/',
-  },
-  {
-    from: '/shimmer/learn/governance/shimmer-governance-intro/',
-    to: '/get-started/introduction/shimmer/governance/',
-  },
-  {
-    from: '/shimmer/learn/governance/the-shimmer-governance-framework/',
-    to: '/get-started/introduction/shimmer/governance/',
-  },
-  {
     from: '/shimmer/learn/maintenance/',
     to: '/learn/protocols/stardust/introduction/',
   },
