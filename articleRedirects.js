@@ -104,10 +104,6 @@ exports.articleRedirects = [
     to: '/get-started/faq',
   },
   {
-    from: '/learn/glossary',
-    to: '/get-started/glossary',
-  },
-  {
     from: '/learn/iota-token/buying-iota',
     to: '/get-started/introduction/iota/iota-token',
   },
