@@ -3,6 +3,7 @@ const path = require('path');
 const { create_doc_plugin, globStatic } = require('./src/utils/config');
 const common = require('./common/docusaurus.config');
 const contentConfigs = require('./contentPlugins');
+const articleRedirectsFile = require('./articleRedirects');
 
 module.exports = async () => {
   const contentPlugins = await Promise.all(
@@ -224,6 +225,111 @@ module.exports = async () => {
                   groupPathsBy: 'tag',
                 },
               },
+            },
+          },
+        ],
+        [
+          '@docusaurus/plugin-client-redirects',
+          {
+            redirects: articleRedirectsFile.articleRedirects,
+            // directory redirects - only added for directories that didn't have a direct match
+            createRedirects(existingPath) {
+              const redirects = [
+                {
+                  from: '/develop/nodes/rest-api',
+                  to: '/apis/core/v1',
+                },
+                {
+                  from: '/shimmer/chronicle',
+                  to: '/chronicle/1.0.0-rc.1',
+                },
+                {
+                  from: '/shimmer/cli-wallet',
+                  to: '/cli-wallet',
+                },
+                {
+                  from: '/shimmer/community',
+                  to: '/community',
+                },
+                {
+                  from: '/shimmer/develop/nodes/core-rest-api',
+                  to: '/apis/core/v2',
+                },
+                {
+                  from: '/shimmer/goshimmer',
+                  to: '/goshimmer',
+                },
+                {
+                  from: '/shimmer/hornet',
+                  to: '/hornet/2.0.0-rc.6',
+                },
+                {
+                  from: '/shimmer/identity.rs',
+                  to: '/identity.rs/0.7',
+                },
+                {
+                  from: '/shimmer/introduction',
+                  to: '/introduction/stardust',
+                },
+                {
+                  from: '/shimmer/iota-sdk',
+                  to: '/iota-sdk',
+                },
+                {
+                  from: '/shimmer/iota.js',
+                  to: '/iota.js',
+                },
+                {
+                  from: '/shimmer/iota.rs',
+                  to: '/iota.rs/2.0.1-rc.7',
+                },
+                {
+                  from: '/shimmer/smart-contracts/guide/chains_and_nodes',
+                  to: '/smart-contracts/guide/chains_and_nodes',
+                },
+                {
+                  from: '/shimmer/smart-contracts/guide/core_concepts',
+                  to: '/learn/smart-contracts/core_concepts',
+                },
+                {
+                  from: '/shimmer/smart-contracts/guide/evm/compatibility',
+                  to: '/smart-contracts/guide/evm/compatibility',
+                },
+                {
+                  from: '/shimmer/smart-contracts/guide/evm',
+                  to: '/smart-contracts/guide/evm',
+                },
+                {
+                  from: '/shimmer/smart-contracts/guide/solo',
+                  to: '/smart-contracts/guide/solo',
+                },
+                {
+                  from: '/shimmer/smart-contracts/guide/wasm_vm',
+                  to: '/smart-contracts/guide/wasm_vm',
+                },
+                {
+                  from: '/shimmer/stronghold.rs',
+                  to: '/stronghold.rs',
+                },
+                {
+                  from: '/shimmer/team',
+                  to: '/team',
+                },
+                {
+                  from: '/shimmer/tutorials',
+                  to: '/tutorials',
+                },
+                {
+                  from: '/shimmer/wallet.rs',
+                  to: '/wallet.rs/1.0.0-rc.6',
+                },
+              ];
+
+              for (const redirect of redirects) {
+                if (existingPath.includes(redirect.to)) {
+                  return existingPath.replace(redirect.to, redirect.from);
+                }
+              }
             },
           },
         ],
