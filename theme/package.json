@@ -24,7 +24,7 @@
   },
   "devDependencies": {
     "@docusaurus/types": "2.4.1",
-    "@types/react": "18.2.18",
+    "@types/react": "18.2.21",
     "copyfiles": "^2.4.1",
     "nodemon": "^2.0.16",
     "prettier": "^2.8.8",

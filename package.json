@@ -67,7 +67,7 @@
     "webpack": "^5.81.0"
   },
   "resolutions": {
-    "@types/react": "18.2.18",
+    "@types/react": "18.2.21",
     "@types/react-dom": "18.0.0"
   },
   "browserslist": {
@@ -87,7 +87,7 @@
     "@docusaurus/plugin-google-gtag": "2.4.1",
     "@iota-wiki/cli": "workspace:^",
     "@tsconfig/docusaurus": "^1.0.6",
-    "@types/react": "18.2.18",
+    "@types/react": "18.2.21",
     "@types/react-dom": "18.0.0",
     "@types/webpack-env": "^1.16.3",
     "@typescript-eslint/eslint-plugin": "^5.9.1",
