@@ -2703,7 +2703,7 @@ __metadata:
     "@iota-wiki/core": "workspace:^"
     "@types/babel__generator": ^7
     "@types/copyfiles": ^2
-    "@types/node": ^16.9.4
+    "@types/node": ^16.18.46
     "@types/prettier": ^2
     "@yarnpkg/shell": ^3.2.0
     axios: ^0.27.2
@@ -4868,10 +4868,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:^16.9.4":
-  version: 16.18.38
-  resolution: "@types/node@npm:16.18.38"
-  checksum: a3baa141e49ce94486f083eea1240cf38479a73ba663e1bf3f52f85b466125821b6e3ea85ded38fde3901530aca4601291395a50eefcea533a4f3b45171bda28
+"@types/node@npm:^16.18.46":
+  version: 16.18.46
+  resolution: "@types/node@npm:16.18.46"
+  checksum: 1aed3fe9693f2098b8dac8c76c809c1925a456da00dd6f06c1ccb55c62ccfbbe7ec43ccfd12001f9cb4ff84e138292ae53456435dfecd5c4bb1324394c3e09c7
   languageName: node
   linkType: hard
 
