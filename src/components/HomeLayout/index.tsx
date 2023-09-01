@@ -78,7 +78,7 @@ export default function HomeLayout() {
                   Introduction
                 </Link>
                 <Link
-                  to='/iota-sdk/welcome'
+                  to='/build/welcome'
                   className='intro__button button button--primary'
                 >
                   Start building
