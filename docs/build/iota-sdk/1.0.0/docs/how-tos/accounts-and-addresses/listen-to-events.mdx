@@ -26,130 +26,130 @@ subscribing to events, such as transfers, deposits, or withdrawals, you can trig
 ## Example Code
 
 <Tabs groupId="language" queryString>
-    <TabItem value="rust" label="Rust">
+<TabItem value="rust" label="Rust">
 
-        1. Instantiate a [`Wallet`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/core/struct.Wallet.html).
+1. Instantiate a [`Wallet`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/core/struct.Wallet.html).
 
-        <div className={'hide-code-block-extras'}>
+<div className={'hide-code-block-extras'}>
 
-            ```rust reference
-            https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/wallet/events.rs#L38-L44
-            ```
+```rust reference
+https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/wallet/events.rs#L38-L44
+```
 
-        </div>
+</div>
 
-        2. Use the `Wallet` instance to listen to events with the
-        [`Wallet.listen()`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/core/struct.WalletInner.html#method.listen) function.
-        You can listen for a specific
-        [`WalletEventType`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/events/types/enum.WalletEventType.html).
+2. Use the `Wallet` instance to listen to events with the
+   [`Wallet.listen()`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/core/struct.WalletInner.html#method.listen) function.
+   You can listen for a specific
+   [`WalletEventType`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/events/types/enum.WalletEventType.html).
 
-        <div className={'hide-code-block-extras'}>
+<div className={'hide-code-block-extras'}>
 
-            ```rust reference
-            https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/wallet/events.rs#L46-L50
-            ```
+```rust reference
+https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/wallet/events.rs#L46-L50
+```
 
-        </div>
+</div>
 
-    </TabItem>
-    <TabItem value="typescript-node" label="Typescript (Node.js)">
+</TabItem>
+<TabItem value="typescript-node" label="Typescript (Node.js)">
 
-        1. Instantiate a [`Wallet`](../../references/nodejs/classes/Wallet).
+1. Instantiate a [`Wallet`](../../references/nodejs/classes/Wallet).
 
-        <div className={'hide-code-block-extras'}>
+<div className={'hide-code-block-extras'}>
 
-            ```typescript reference
-            https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/exchange/4-listen-events.ts#L21-L23
-            ```
+```typescript reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/exchange/4-listen-events.ts#L21-L23
+```
 
-        </div>
+</div>
 
-        2. Define a callback.
+2. Define a callback.
 
-        <div className={'hide-code-block-extras'}>
+<div className={'hide-code-block-extras'}>
 
-            ```typescript reference
-            https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/exchange/4-listen-events.ts#L25-L31
-            ```
+```typescript reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/exchange/4-listen-events.ts#L25-L31
+```
 
-        </div>
+</div>
 
-        3. Use the `Wallet` instance to listen to events with the
-        [`Wallet.listen()`](../../references/nodejs/classes/Wallet/#listen) function. You can listen for a specific
-        [`WalletEventType`](../../references/nodejs/enums/WalletEventType/), in this case,
-        [`WalletEventType.NewOutput`](../../references/nodejs/enums/WalletEventType/#newoutput).
+3. Use the `Wallet` instance to listen to events with the
+   [`Wallet.listen()`](../../references/nodejs/classes/Wallet/#listen) function. You can listen for a specific
+   [`WalletEventType`](../../references/nodejs/enums/WalletEventType/), in this case,
+   [`WalletEventType.NewOutput`](../../references/nodejs/enums/WalletEventType/#newoutput).
 
-        <div className={'hide-code-block-extras'}>
+<div className={'hide-code-block-extras'}>
 
-            ```typescript reference
-            https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/exchange/4-listen-events.ts#L34
-            ```
+```typescript reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/exchange/4-listen-events.ts#L34
+```
 
-        </div>
+</div>
 
-    </TabItem>
-    <TabItem value="python" label="Python">
+</TabItem>
+<TabItem value="python" label="Python">
 
-        1. Instantiate a [`wallet`](../../references/python/iota_sdk/wallet/).
+1. Instantiate a [`wallet`](../../references/python/iota_sdk/wallet/).
 
-        <div className={'hide-code-block-extras'}>
+<div className={'hide-code-block-extras'}>
 
-            ```python reference
-            https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/exchange/4_listen_events.py#L19
-            ```
+```python reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/exchange/4_listen_events.py#L19
+```
 
-        </div>
+</div>
 
-        2. Define a callback.
+2. Define a callback.
 
-        <div className={'hide-code-block-extras'}>
+<div className={'hide-code-block-extras'}>
 
-            ```python reference
-            https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/exchange/4_listen_events.py#L26-L33
-            ```
+```python reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/exchange/4_listen_events.py#L26-L33
+```
 
-        </div>
+</div>
 
-        3. Use the `wallet` instance to listen to events with the
-        [`wallet.listen()`](../../references/python/iota_sdk/wallet/#listen) function. You can listen for a specific
-        [`WalletEventType`](../../references/python/iota_sdk/types/event/), in this case, `WalletEventType.NewOutput`.
+3. Use the `wallet` instance to listen to events with the
+   [`wallet.listen()`](../../references/python/iota_sdk/wallet/#listen) function. You can listen for a specific
+   [`WalletEventType`](../../references/python/iota_sdk/types/event/), in this case, `WalletEventType.NewOutput`.
 
-        <div className={'hide-code-block-extras'}>
+<div className={'hide-code-block-extras'}>
 
-            ```python reference
-            https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/exchange/4_listen_events.py#L37
-            ```
+```python reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/exchange/4_listen_events.py#L37
+```
 
-        </div>
+</div>
 
-    </TabItem>
+</TabItem>
 
 </Tabs>
 
 ### Full Example Code
 
 <Tabs groupId="language" queryString>
-    <TabItem value="rust" label="Rust">
+<TabItem value="rust" label="Rust">
 
-        ```rust reference
-        https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/wallet/events.rs
-        ```
+```rust reference
+https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/wallet/events.rs
+```
 
-    </TabItem>
-    <TabItem value="typescript-node" label="Typescript (Node.js)">
+</TabItem>
+<TabItem value="typescript-node" label="Typescript (Node.js)">
 
-        ```typescript reference
-        https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/exchange/4-listen-events.ts
-        ```
+```typescript reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/exchange/4-listen-events.ts
+```
 
-    </TabItem>
-    <TabItem value="python" label="Python">
+</TabItem>
+<TabItem value="python" label="Python">
 
-        ```python reference
-        https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/exchange/4_listen_events.py
-        ```
+```python reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/exchange/4_listen_events.py
+```
 
-    </TabItem>
+</TabItem>
 
 </Tabs>
 
