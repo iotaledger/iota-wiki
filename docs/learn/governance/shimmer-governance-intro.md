@@ -18,7 +18,7 @@ The Shimmer community, supported by the IOTA Foundation, has developed a Governa
 
 **2. The official IOTA/Shimmer [Governance Forum](https://govern.iota.org)**is the place for specific proposal discussions. It is the first stage of reaching community consensus on proposed changes through soft consensus polling in the forum.
 
-**3. Fully utilized decentralized and immutable On-Chain Governance [voting functionality](https://wiki.iota.org/shimmer/learn/governance/governance-tech.md)** integrated into the [Firefly Shimmer Wallet](https://firefly.iota.org/) and the [Hornet Nodes](/hornet/welcome). This allows every SMR Token holder to make decisions in the SMR network based on proposals passed through the forum's governance process. Voting is a protocol feature of L1, so no Smart Contracts are needed for this type of voting.
+**3. Fully utilized decentralized and immutable On-Chain Governance [voting functionality](./governance-tech.md)** integrated into the [Firefly Shimmer Wallet](https://firefly.iota.org/) and the [Hornet Nodes](/hornet/2.0.0-rc.6/welcome). This allows every SMR Token holder to make decisions in the SMR network based on proposals passed through the forum's governance process. Voting is a protocol feature of L1, so no Smart Contracts are needed for this type of voting.
 
 Governance processes in SMR are defined in the **[Shimmer Governance Framework](https://wiki.iota.org/shimmer/learn/governance/the-shimmer-governance-framework.md)**. This framework has been developed by the Community Governance working group in many months of discussions and is the foundational building block of how Governance in SMR works.
 It mainly defines:
@@ -51,9 +51,9 @@ This feature consists of 2 components:
 #### The Hornet - INX participation Plugin
 
 - This feature can be activated as a [plugin](/hornet/2.0.0-rc.6/inx-plugins/participation/welcome) in every Hornet Shimmer node and enables node operators to participate in the decentralized counting and verification of on-chain Governance votes.
-  - Node operators can add proposals due for an on-chain vote through an easy interface by uploading the unique proposal ID to their node.
-  - Counting of votes is based on a time-based accumulation. For each milestone (every 5 seconds) that a node finds a vote on a UTXO Output, the SMR tokens sitting on that output and the vote statement (proposal ID, question, and answer) are registered by the nodes and added to the count for that output in an internal database. This leads to a time-based growth of casted votes, meaning the longer a voter participates with SMR tokens in a vote, the more votes are counted for the voter.
-  - Node operators are always able to access this counting data and verify the correct counting of votes by comparing their count to other node operators' counts.
+  - Node operators can add proposals that are due for an on-chain vote through an easy interface by uploading the unique proposal ID to their node.
+  - Counting of votes is based on a time-based accumulation. Each milestone (every 5 seconds) that a node finds a vote on a UTXO Output, the SMR tokens sitting on that output and the vote statement (proposal ID, question, and answer) are registered by the nodes and added to the count for that output in an internal database. This leads to a time-based growth of casted votes, meaning the longer a voter participates with SMR tokens in a vote, the more votes are counted for the voter.
+  - Node operators are always able to access this counting data and verify the correct counting of votes by comparing their count to other node operators counts.
 
 #### The Firefly Governance function
 
