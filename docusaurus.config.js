@@ -235,76 +235,62 @@ module.exports = async () => {
           '@docusaurus/plugin-client-redirects',
           {
             redirects: articleRedirectsFile.articleRedirects,
+            // directory redirects - only added for directories that didn't have a direct match
             createRedirects(existingPath) {
-              if (existingPath.includes('/community')) {
-                // directory redirects - only added for directories that didn't have a direct match
-                return [
-                  existingPath.replace(
-                    'develop/nodes/rest-api',
-                    'apis/core/v1/',
-                  ),
-                  existingPath.replace(
-                    'shimmer/chronicle',
-                    'chronicle/1.0.0-rc.1/',
-                  ),
-                  existingPath.replace('shimmer/cli-wallet', 'cli-wallet/'),
-                  existingPath.replace('shimmer/community', 'community/'),
-                  existingPath.replace(
-                    'shimmer/develop/nodes/core-rest-api',
-                    'apis/core/v2/',
-                  ),
-                  existingPath.replace('shimmer/goshimmer', 'goshimmer/'),
-                  existingPath.replace('shimmer/hornet', 'hornet/2.0.0-rc.6/'),
-                  existingPath.replace(
-                    'shimmer/identity.rs',
-                    'identity.rs/0.7/',
-                  ),
-                  existingPath.replace(
-                    'shimmer/introduction',
-                    'introduction/stardust/',
-                  ),
-                  existingPath.replace('shimmer/iota-sdk', 'iota-sdk/'),
-                  existingPath.replace('shimmer/iota.js', 'iota.js/'),
-                  existingPath.replace(
-                    'shimmer/iota.rs',
-                    'iota.rs/2.0.1-rc.7/',
-                  ),
-                  existingPath.replace(
-                    'shimmer/smart-contracts/guide/chains_and_nodes',
-                    'smart-contracts/guide/chains_and_nodes/',
-                  ),
-                  existingPath.replace(
-                    'shimmer/smart-contracts/guide/core_concepts',
-                    'learn/smart-contracts/core_concepts/',
-                  ),
-                  existingPath.replace(
-                    'shimmer/smart-contracts/guide/evm/compatibility',
-                    'smart-contracts/guide/evm/compatibility/',
-                  ),
-                  existingPath.replace(
-                    'shimmer/smart-contracts/guide/evm',
-                    'smart-contracts/guide/evm/',
-                  ),
-                  existingPath.replace(
-                    'shimmer/smart-contracts/guide/solo',
-                    'smart-contracts/guide/solo/',
-                  ),
-                  existingPath.replace(
-                    'shimmer/smart-contracts/guide/wasm_vm',
-                    'smart-contracts/guide/wasm_vm/',
-                  ),
-                  existingPath.replace(
-                    'shimmer/stronghold.rs',
-                    'stronghold.rs/',
-                  ),
-                  existingPath.replace('shimmer/team', 'team/'),
-                  existingPath.replace('shimmer/tutorials', 'tutorials/'),
-                  existingPath.replace(
-                    'shimmer/wallet.rs',
-                    'wallet.rs/1.0.0-rc.6/',
-                  ),
-                ];
-              }
+              return [
+                existingPath.replace('develop/nodes/rest-api', 'apis/core/v1/'),
+                existingPath.replace(
+                  'shimmer/chronicle',
+                  'chronicle/1.0.0-rc.1/',
+                ),
+                existingPath.replace('shimmer/cli-wallet', 'cli-wallet/'),
+                existingPath.replace('shimmer/community', 'community/'),
+                existingPath.replace(
+                  'shimmer/develop/nodes/core-rest-api',
+                  'apis/core/v2/',
+                ),
+                existingPath.replace('shimmer/goshimmer', 'goshimmer/'),
+                existingPath.replace('shimmer/hornet', 'hornet/2.0.0-rc.6/'),
+                existingPath.replace('shimmer/identity.rs', 'identity.rs/0.7/'),
+                existingPath.replace(
+                  'shimmer/introduction',
+                  'introduction/stardust/',
+                ),
+                existingPath.replace('shimmer/iota-sdk', 'iota-sdk/'),
+                existingPath.replace('shimmer/iota.js', 'iota.js/'),
+                existingPath.replace('shimmer/iota.rs', 'iota.rs/2.0.1-rc.7/'),
+                existingPath.replace(
+                  'shimmer/smart-contracts/guide/chains_and_nodes',
+                  'smart-contracts/guide/chains_and_nodes/',
+                ),
+                existingPath.replace(
+                  'shimmer/smart-contracts/guide/core_concepts',
+                  'learn/smart-contracts/core_concepts/',
+                ),
+                existingPath.replace(
+                  'shimmer/smart-contracts/guide/evm/compatibility',
+                  'smart-contracts/guide/evm/compatibility/',
+                ),
+                existingPath.replace(
+                  'shimmer/smart-contracts/guide/evm',
+                  'smart-contracts/guide/evm/',
+                ),
+                existingPath.replace(
+                  'shimmer/smart-contracts/guide/solo',
+                  'smart-contracts/guide/solo/',
+                ),
+                existingPath.replace(
+                  'shimmer/smart-contracts/guide/wasm_vm',
+                  'smart-contracts/guide/wasm_vm/',
+                ),
+                existingPath.replace('shimmer/stronghold.rs', 'stronghold.rs/'),
+                existingPath.replace('shimmer/team', 'team/'),
+                existingPath.replace('shimmer/tutorials', 'tutorials/'),
+                existingPath.replace(
+                  'shimmer/wallet.rs',
+                  'wallet.rs/1.0.0-rc.6/',
+                ),
+              ];
               return undefined; // Return a falsy value: no redirect created
             },
           },
