@@ -22,10 +22,6 @@ module.exports = async () => {
 
   const isProduction = MODE === 'production';
 
-  const scripts = {
-    scripts: ['/js/search-environment-observer.js'],
-  };
-
   const themeConfig = {
     themeConfig: {
       image: 'img/iota-wiki.png',
@@ -245,7 +241,6 @@ module.exports = async () => {
     },
     themeConfig,
     isProduction ? production : {},
-    scripts,
     ...additionalPlugins,
   );
 };
