@@ -1,0 +1,189 @@
+---
+title: Listen To Events
+description: 'How to listen to events using the IOTA SDK.'
+image: /img/logo/iota_mark_light.png
+keywords:
+  - how to
+  - listen
+  - events
+  - listen to events
+  - get outputs
+  - get transactions
+  - nodejs
+  - python
+  - rust
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import WarningUnlockConditions from '../../_admonitions/_warning-unlock-conditions.md';
+
+Listening to events in an application is essential for real-time data updates and a seamless user experience. By
+subscribing to events, such as transfers, deposits, or withdrawals, you can trigger a callback as soon as the event occurs.
+
+<WarningUnlockConditions />
+
+## Example Code
+
+<Tabs groupId="language" queryString>
+<TabItem value="rust" label="Rust">
+
+1. Instantiate a [`Wallet`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/core/struct.Wallet.html).
+
+<div className={'hide-code-block-extras'}>
+
+```rust reference
+https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/wallet/events.rs#L38-L44
+```
+
+</div>
+
+2. Use the `Wallet` instance to listen to events with the
+   [`Wallet.listen()`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/core/struct.WalletInner.html#method.listen) function.
+   You can listen for a specific
+   [`WalletEventType`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/events/types/enum.WalletEventType.html).
+
+<div className={'hide-code-block-extras'}>
+
+```rust reference
+https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/wallet/events.rs#L46-L50
+```
+
+</div>
+
+</TabItem>
+<TabItem value="typescript-node" label="Typescript (Node.js)">
+
+1. Instantiate a [`Wallet`](../../references/nodejs/classes/Wallet.md).
+
+<div className={'hide-code-block-extras'}>
+
+```typescript reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/exchange/4-listen-events.ts#L21-L23
+```
+
+</div>
+
+2. Define a callback.
+
+<div className={'hide-code-block-extras'}>
+
+```typescript reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/exchange/4-listen-events.ts#L25-L31
+```
+
+</div>
+
+3. Use the `Wallet` instance to listen to events with the
+   [`Wallet.listen()`](../../references/nodejs/classes/Wallet.md#listen) function. You can listen for a specific
+   [`WalletEventType`](../../references/nodejs/enums/WalletEventType.md), in this case,
+   [`WalletEventType.NewOutput`](../../references/nodejs/enums/WalletEventType.md#newoutput).
+
+<div className={'hide-code-block-extras'}>
+
+```typescript reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/exchange/4-listen-events.ts#L34
+```
+
+</div>
+
+</TabItem>
+<TabItem value="python" label="Python">
+
+1. Instantiate a [`wallet`](../../references/python/iota_sdk/wallet/wallet.md).
+
+<div className={'hide-code-block-extras'}>
+
+```python reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/exchange/4_listen_events.py#L19
+```
+
+</div>
+
+2. Define a callback.
+
+<div className={'hide-code-block-extras'}>
+
+```python reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/exchange/4_listen_events.py#L26-L33
+```
+
+</div>
+
+3. Use the `wallet` instance to listen to events with the
+   [`wallet.listen()`](../../references/python/iota_sdk/wallet/wallet.md#listen) function. You can listen for a specific
+   [`WalletEventType`](../../references/python/iota_sdk/types/event.md), in this case, `WalletEventType.NewOutput`.
+
+<div className={'hide-code-block-extras'}>
+
+```python reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/exchange/4_listen_events.py#L37
+```
+
+</div>
+
+</TabItem>
+
+</Tabs>
+
+### Full Example Code
+
+<Tabs groupId="language" queryString>
+<TabItem value="rust" label="Rust">
+
+```rust reference
+https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/wallet/events.rs
+```
+
+</TabItem>
+<TabItem value="typescript-node" label="Typescript (Node.js)">
+
+```typescript reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/exchange/4-listen-events.ts
+```
+
+</TabItem>
+<TabItem value="python" label="Python">
+
+```python reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/exchange/4_listen_events.py
+```
+
+</TabItem>
+
+</Tabs>
+
+### Expected Output
+
+```js
+AccountIndex: 0
+Event: {
+  type: 2,
+  output: {
+    outputId: '0x581f43218322d742c0ba1f0d738d6afbc9beaaf4c47f439ab048766b25843f920100',
+    metadata: {
+      blockId: '0x7fdf4079802bd00d022cc382a422491724af6564d31522b7f34133d119b7979d',
+      transactionId: '0x581f43218322d742c0ba1f0d738d6afbc9beaaf4c47f439ab048766b25843f92',
+      outputIndex: 1,
+      isSpent: false,
+      milestoneIndexBooked: 6316391,
+      milestoneTimestampBooked: 1690125643,
+      ledgerIndex: 6450179
+    },
+    output: {
+      type: 3,
+      amount: '3043981300',
+      nativeTokens: [Array],
+      unlockConditions: [Array]
+    },
+    isSpent: false,
+    address: {
+      type: 0,
+      pubKeyHash: '0x194eb32b9b6c61207192c7073562a0b3adf50a7c1f268182b552ec8999380acb'
+    },
+    networkId: '1856588631910923207',
+    remainder: false,
+    chain: { coinType: 4218, account: 0, change: 0, addressIndex: 0 }
+  }
+}
+```
