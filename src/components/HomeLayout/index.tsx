@@ -68,7 +68,7 @@ export default function HomeLayout() {
               <h1 className='intro__header'>{siteConfig.tagline}</h1>
               <p className='intro__description'>
                 Build apps capable of taking millions of users on journeys
-                they've never been on before. Simple. Scalable. Secure.
+                they&apos;ve never been on before. Simple. Scalable. Secure.
               </p>
               <div className='intro__buttons'>
                 <Link
