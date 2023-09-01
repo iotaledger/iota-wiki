@@ -51,8 +51,8 @@ module.exports = async () => {
             label: 'Build',
             to: '/build/welcome/',
             activeBaseRegex:
-              '^(/[^/]+)?/iota-sdk/.*|' +
               '^(/[^/]+)?/build/.*|' +
+              '^(/[^/]+)?/iota-sdk/.*|' +
               '^(/[^/]+)?/identity.rs/.*|' +
               '^(/[^/]+)?/iota.rs/.*|' +
               '^(/[^/]+)?/iota.js/.*|' +
@@ -65,6 +65,7 @@ module.exports = async () => {
             label: 'Maintain',
             to: '/maintain/welcome',
             activeBaseRegex:
+              '^(/[^/]+)?/maintain/.*|' +
               '^(/[^/]+)?/hornet/.*|' +
               '^(/[^/]+)?/wasp/.*|' +
               '^(/[^/]+)?/chronicle/.*|' +
