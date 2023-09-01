@@ -240,67 +240,67 @@ module.exports = async () => {
               return [
                 existingPath.replace(
                   '/apis/core/v1/',
-                  '/develop/nodes/rest-api',
+                  '/develop/nodes/rest-api/',
                 ),
                 existingPath.replace(
                   '/chronicle/1.0.0-rc.1/',
-                  '/shimmer/chronicle',
+                  '/shimmer/chronicle/',
                 ),
                 existingPath.replace('/cli-wallet/', '/shimmer/cli-wallet'),
-                existingPath.replace('/community/', '/shimmer/community'),
+                existingPath.replace('/community/', '/shimmer/community/'),
                 existingPath.replace(
                   '/apis/core/v2/',
-                  '/shimmer/develop/nodes/core-rest-api',
+                  '/shimmer/develop/nodes/core-rest-api/',
                 ),
                 existingPath.replace('/goshimmer/', '/shimmer/goshimmer'),
-                existingPath.replace('/hornet/2.0.0-rc.6/', '/shimmer/hornet'),
+                existingPath.replace('/hornet/2.0.0-rc.6/', '/shimmer/hornet/'),
                 existingPath.replace(
                   '/identity.rs/0.7/',
-                  '/shimmer/identity.rs',
+                  '/shimmer/identity.rs/',
                 ),
                 existingPath.replace(
                   '/introduction/stardust/',
                   '/shimmer/introduction',
                 ),
-                existingPath.replace('/iota-sdk/', '/shimmer/iota-sdk'),
-                existingPath.replace('/iota.js/', '/shimmer/iota.js'),
+                existingPath.replace('/iota-sdk/', '/shimmer/iota-sdk/'),
+                existingPath.replace('/iota.js/', '/shimmer/iota.js/'),
                 existingPath.replace(
                   '/iota.rs/2.0.1-rc.7/',
-                  '/shimmer/iota.rs',
+                  '/shimmer/iota.rs/',
                 ),
                 existingPath.replace(
                   '/smart-contracts/guide/chains_and_nodes/',
-                  '/shimmer/smart-contracts/guide/chains_and_nodes',
+                  '/shimmer/smart-contracts/guide/chains_and_nodes/',
                 ),
                 existingPath.replace(
                   '/learn/smart-contracts/core_concepts/',
-                  '/shimmer/smart-contracts/guide/core_concepts',
+                  '/shimmer/smart-contracts/guide/core_concepts/',
                 ),
                 existingPath.replace(
                   '/smart-contracts/guide/evm/compatibility/',
-                  '/shimmer/smart-contracts/guide/evm/compatibility',
+                  '/shimmer/smart-contracts/guide/evm/compatibility/',
                 ),
                 existingPath.replace(
                   '/smart-contracts/guide/evm/',
-                  '/shimmer/smart-contracts/guide/evm',
+                  '/shimmer/smart-contracts/guide/evm/',
                 ),
                 existingPath.replace(
                   '/smart-contracts/guide/solo/',
-                  '/shimmer/smart-contracts/guide/solo',
+                  '/shimmer/smart-contracts/guide/solo/',
                 ),
                 existingPath.replace(
                   '/smart-contracts/guide/wasm_vm/',
-                  '/shimmer/smart-contracts/guide/wasm_vm',
+                  '/shimmer/smart-contracts/guide/wasm_vm/',
                 ),
                 existingPath.replace(
                   '/stronghold.rs/',
-                  '/shimmer/stronghold.rs',
+                  '/shimmer/stronghold.rs/',
                 ),
                 existingPath.replace('/team/', '/shimmer/team'),
-                existingPath.replace('/tutorials/', '/shimmer/tutorials'),
+                existingPath.replace('/tutorials/', '/shimmer/tutorials/'),
                 existingPath.replace(
                   '/wallet.rs/1.0.0-rc.6/',
-                  '/shimmer/wallet.rs',
+                  '/shimmer/wallet.rs/',
                 ),
               ];
               return undefined; // Return a falsy value: no redirect created
