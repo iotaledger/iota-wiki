@@ -23,10 +23,6 @@ module.exports = async () => {
 
   const isProduction = MODE === 'production';
 
-  const scripts = {
-    scripts: ['/js/search-environment-observer.js'],
-  };
-
   const themeConfig = {
     themeConfig: {
       image: 'img/iota-wiki.png',
@@ -52,8 +48,8 @@ module.exports = async () => {
             label: 'Build',
             to: '/build/welcome/',
             activeBaseRegex:
-              '^(/[^/]+)?/iota-sdk/.*|' +
               '^(/[^/]+)?/build/.*|' +
+              '^(/[^/]+)?/iota-sdk/.*|' +
               '^(/[^/]+)?/identity.rs/.*|' +
               '^(/[^/]+)?/iota.rs/.*|' +
               '^(/[^/]+)?/iota.js/.*|' +
@@ -66,6 +62,7 @@ module.exports = async () => {
             label: 'Maintain',
             to: '/maintain/welcome',
             activeBaseRegex:
+              '^(/[^/]+)?/maintain/.*|' +
               '^(/[^/]+)?/hornet/.*|' +
               '^(/[^/]+)?/wasp/.*|' +
               '^(/[^/]+)?/chronicle/.*|' +
@@ -237,33 +234,106 @@ module.exports = async () => {
             redirects: articleRedirectsFile.articleRedirects,
             // directory redirects - only added for directories that didn't have a direct match
             createRedirects(existingPath) {
-              return [
-                existingPath.replace('/apis/core/v1/', '/develop/nodes/rest-api'),
-                existingPath.replace('/chronicle/1.0.0-rc.1/', '/shimmer/chronicle',),
-                existingPath.replace('/cli-wallet/', '/shimmer/cli-wallet'),
-                existingPath.replace('/community/', '/shimmer/community'),
-                existingPath.replace('/apis/core/v2/', '/shimmer/develop/nodes/core-rest-api',),
-                existingPath.replace('/goshimmer/', '/shimmer/goshimmer'),
-                existingPath.replace('/hornet/2.0.0-rc.6/', '/shimmer/hornet'),
-                existingPath.replace('/identity.rs/0.7/', '/shimmer/identity.rs'),
-                existingPath.replace('/introduction/stardust/', '/shimmer/introduction',),
-                existingPath.replace('/iota-sdk/', '/shimmer/iota-sdk'),
-                existingPath.replace('/iota.js/', '/shimmer/iota.js'),
-                existingPath.replace('/iota.rs/2.0.1-rc.7/', '/shimmer/iota.rs'),
-                existingPath.replace('/smart-contracts/guide/chains_and_nodes/', '/shimmer/smart-contracts/guide/chains_and_nodes',),
-                existingPath.replace('/learn/smart-contracts/core_concepts/', '/shimmer/smart-contracts/guide/core_concepts',),
-                existingPath.replace('/smart-contracts/guide/evm/compatibility/', '/shimmer/smart-contracts/guide/evm/compatibility',),
-                existingPath.replace('/smart-contracts/guide/evm/', '/shimmer/smart-contracts/guide/evm',),
-                existingPath.replace('/smart-contracts/guide/solo/', '/shimmer/smart-contracts/guide/solo',),
-                existingPath.replace('/smart-contracts/guide/wasm_vm/', '/shimmer/smart-contracts/guide/wasm_vm',),
-                existingPath.replace('/stronghold.rs/', '/shimmer/stronghold.rs'),
-                existingPath.replace('/team/', '/shimmer/team'),
-                existingPath.replace('/tutorials/', '/shimmer/tutorials'),
-                existingPath.replace('/wallet.rs/1.0.0-rc.6/', '/shimmer/wallet.rs',
-                ),
-                existingPath.replace('/learn/governance/', '/shimmer/learn/governance/'),
+              const redirects = [
+                {
+                  from: '/develop/nodes/rest-api',
+                  to: '/apis/core/v1',
+                },
+                {
+                  from: '/shimmer/chronicle',
+                  to: '/chronicle/1.0.0-rc.1',
+                },
+                {
+                  from: '/shimmer/cli-wallet',
+                  to: '/cli-wallet',
+                },
+                {
+                  from: '/shimmer/community',
+                  to: '/community',
+                },
+                {
+                  from: '/shimmer/develop/nodes/core-rest-api',
+                  to: '/apis/core/v2',
+                },
+                {
+                  from: '/shimmer/goshimmer',
+                  to: '/goshimmer',
+                },
+                {
+                  from: '/shimmer/hornet',
+                  to: '/hornet/2.0.0-rc.6',
+                },
+                {
+                  from: '/shimmer/identity.rs',
+                  to: '/identity.rs/0.7',
+                },
+                {
+                  from: '/shimmer/introduction',
+                  to: '/introduction/stardust',
+                },
+                {
+                  from: '/shimmer/iota-sdk',
+                  to: '/iota-sdk',
+                },
+                {
+                  from: '/shimmer/iota.js',
+                  to: '/iota.js',
+                },
+                {
+                  from: '/shimmer/iota.rs',
+                  to: '/iota.rs/2.0.1-rc.7',
+                },
+                {
+                  from: '/shimmer/smart-contracts/guide/chains_and_nodes',
+                  to: '/smart-contracts/guide/chains_and_nodes',
+                },
+                {
+                  from: '/shimmer/smart-contracts/guide/core_concepts',
+                  to: '/learn/smart-contracts/core_concepts',
+                },
+                {
+                  from: '/shimmer/smart-contracts/guide/evm/compatibility',
+                  to: '/smart-contracts/guide/evm/compatibility',
+                },
+                {
+                  from: '/shimmer/smart-contracts/guide/evm',
+                  to: '/smart-contracts/guide/evm',
+                },
+                {
+                  from: '/shimmer/smart-contracts/guide/solo',
+                  to: '/smart-contracts/guide/solo',
+                },
+                {
+                  from: '/shimmer/smart-contracts/guide/wasm_vm',
+                  to: '/smart-contracts/guide/wasm_vm',
+                },
+                {
+                  from: '/shimmer/stronghold.rs',
+                  to: '/stronghold.rs',
+                },
+                {
+                  from: '/shimmer/team',
+                  to: '/team',
+                },
+                {
+                  from: '/shimmer/tutorials',
+                  to: '/tutorials',
+                },
+                {
+                  from: '/shimmer/wallet.rs',
+                  to: '/wallet.rs/1.0.0-rc.6',
+                },
+                {
+                  from: '/shimmer/learn/governance/',
+                  to: '/learn/governance/',
+                },
               ];
-              return undefined; // Return a falsy value: no redirect created
+
+              for (const redirect of redirects) {
+                if (existingPath.includes(redirect.to)) {
+                  return existingPath.replace(redirect.to, redirect.from);
+                }
+              }
             },
           },
         ],
@@ -281,7 +351,6 @@ module.exports = async () => {
     },
     themeConfig,
     isProduction ? production : {},
-    scripts,
     ...additionalPlugins,
   );
 };
