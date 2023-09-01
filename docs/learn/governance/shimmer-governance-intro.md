@@ -20,7 +20,7 @@ The Shimmer community, supported by the IOTA Foundation, has developed a Governa
 
 **3. Fully utilized decentralized and immutable On-Chain Governance [voting functionality](./governance-tech.md)** integrated into the [Firefly Shimmer Wallet](https://firefly.iota.org/) and the [Hornet Nodes](/hornet/2.0.0-rc.6/welcome). This allows every SMR Token holder to make decisions in the SMR network based on proposals passed through the forum's governance process. Voting is a protocol feature of L1, so no Smart Contracts are needed for this type of voting.
 
-Governance processes in SMR are defined in the **[Shimmer Governance Framework](https://wiki.iota.org/shimmer/learn/governance/the-shimmer-governance-framework.md)**. This framework has been developed by the Community Governance working group in many months of discussions and is the foundational building block of how Governance in SMR works.
+Governance processes in SMR are defined in the **[Shimmer Governance Framework](/learn/governance/the-shimmer-governance-framework.md)**. This framework has been developed by the Community Governance working group in many months of discussions and is the foundational building block of how Governance in SMR works.
 It mainly defines:
 
 - Who are the stakeholders, and their roles in Governance processes?
@@ -72,9 +72,9 @@ This feature consists of 2 components:
     - **Counting:** Now all participating Nodes are actively counting and accumulating votes on this proposal. The longer a user keeps its tokens actively voting on this proposal. The more votes will be counted for the user. Users can change their voting power and opinions during the counting phase. Still, this change only influences the future count from the time of the change and does not influence the already counted votes of a user on this proposal.
     - **Ended:** The Proposal counting is over, and the final vote result is displayed.
 
-A detailed technical description of this voting functionality can be found in the [Governance - tech](https://wiki.iota.org/shimmer/learn/governance/governance-tech.md) section of the Wiki.
+A detailed technical description of this voting functionality can be found in the [Governance - tech](/learn/governance/governance-tech.md) section of the Wiki.
 
-A detailed description of how to participate in Governance votes can be found in the [Firefly Shimmer Governance Guide](https://wiki.iota.org/shimmer/learn/governance/shimmer-firefly-governance-guide.md)
+A detailed description of how to participate in Governance votes can be found in the [Firefly Shimmer Governance Guide](/learn/governance/shimmer-firefly-governance-guide.md)
 
 ### Shimmer Governance Resources
 

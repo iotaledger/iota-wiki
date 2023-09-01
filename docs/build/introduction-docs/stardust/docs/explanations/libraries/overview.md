@@ -16,7 +16,7 @@ keywords:
 
 :::warning Deprecated
 
-The IOTA client libraries have been deprecated and replaced by the [IOTA SDK](https://wiki.iota.org/shimmer/iota-sdk/welcome).
+The IOTA client libraries have been deprecated and replaced by the [IOTA SDK](/iota-sdk/welcome).
 
 :::
 
@@ -24,10 +24,10 @@ The IOTA client libraries have been deprecated and replaced by the [IOTA SDK](ht
 
 The official IOTA libraries serve as `one-source-code-of-truth` to IOTA users and provide binding to other programming languages. Below is a list of the IOTA libraries. You can also check out the [IOTA client libraries blog post](https://blog.iota.org/the-new-iota-client-libraries-harder-better-faster-stronger/), to learn about the libraries' core principles.
 
-- [IOTA SDK](https://wiki.iota.org/shimmer/iota-sdk/welcome/): The IOTA SDK replaces `iota.rs`, `iota.js` and `wallet.rs` with a convenient development kit, written
-  in [Rust](https://wiki.iota.org/shimmer/iota-sdk/getting-started/rust/), with bindings for
-  [Node.js](https://wiki.iota.org/shimmer/iota-sdk/getting-started/nodejs/),
-  [Python](https://wiki.iota.org/shimmer/iota-sdk/getting-started/python/), and [Wasm](https://wiki.iota.org/shimmer/iota-sdk/getting-started/wasm/).
+- [IOTA SDK](/iota-sdk/welcome/): The IOTA SDK replaces `iota.rs`, `iota.js` and `wallet.rs` with a convenient development kit, written
+  in [Rust](/iota-sdk/getting-started/rust/), with bindings for
+  [Node.js](/iota-sdk/getting-started/nodejs/),
+  [Python](/iota-sdk/getting-started/python/), and [Wasm](/iota-sdk/getting-started/wasm/).
 - [iota.go](https://github.com/iotaledger/iota.go/tree/v3): an IOTA client library in Golang.
 - [iota.c](https://github.com/iotaledger/iota.c/tree/develop): a special-purpose library in C for embedded devices (with microcontrollers) covering a basic features of `client-lib` or `wallet-lib.`
 

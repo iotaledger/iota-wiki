@@ -17,7 +17,7 @@ keywords:
 
 :::warning Deprecated
 
-The IOTA client libraries have been deprecated and replaced by the [IOTA SDK](https://wiki.iota.org/shimmer/iota-sdk/welcome).
+The IOTA client libraries have been deprecated and replaced by the [IOTA SDK](/iota-sdk/welcome).
 
 :::
 

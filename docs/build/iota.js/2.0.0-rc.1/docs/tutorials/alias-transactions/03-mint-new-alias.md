@@ -11,7 +11,7 @@ keywords:
 
 # Mint a New Alias Address
 
-You can use an [Alias Output](https://wiki.iota.org/shimmer/introduction/explanations/ledger/alias/) to store proof of the world state included in the ledger and never pruned. An Alias Output is associated with an Alias ID (also known as an [Alias Address](#calculate-the-alias-id)). An Alias ID remains immutable during its lifetime.
+You can use an [Alias Output](/introduction/explanations/ledger/alias/) to store proof of the world state included in the ledger and never pruned. An Alias Output is associated with an Alias ID (also known as an [Alias Address](#calculate-the-alias-id)). An Alias ID remains immutable during its lifetime.
 
 For instance, an Alias Output can contain a hash or digital signature as a commitment to the state of a particular dynamic data set, as it happens with Smart Contracts. A data validator can use such proof to ensure that the concerned data has not been tampered with. When there is a change in the data, a transition to a new state is recorded on the ledger by a new transaction that generates a new Alias Output with the original Alias ID. The Alias ID remains constant, whereas a new Alias Output is generated to hold the new state.
 

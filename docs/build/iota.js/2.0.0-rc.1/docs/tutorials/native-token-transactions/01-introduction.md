@@ -29,14 +29,14 @@ Ledger. Each UTXO, also known as **output**, has an associated number of tokens,
 Thus, the permanent data on the ledger is composed of a set of records (_Outputs_) that can be unlocked by the owner of
 its associated address, i.e., the one who knows the address' private key.
 
-There are different [Output types](https://wiki.iota.org/shimmer/learn/outputs) in the [Stardust Protocol](https://wiki.iota.org/shimmer/introduction/welcome). This tutorial will focus on
-outputs that involve user-defined [native tokens](https://wiki.iota.org/shimmer/introduction/explanations/ledger/foundry/), a.k.a digital assets. The tutorial will also use [Alias](https://wiki.iota.org/shimmer/introduction/explanations/ledger/alias/) and [Foundry](https://wiki.iota.org/shimmer/learn/outputs/#foundry-output) Outputs.
+There are different [Output types](/learn/outputs) in the [Stardust Protocol](/introduction/welcome). This tutorial will focus on
+outputs that involve user-defined [native tokens](/introduction/explanations/ledger/foundry/), a.k.a digital assets. The tutorial will also use [Alias](/introduction/explanations/ledger/alias/) and [Foundry](/learn/outputs/#foundry-output) Outputs.
 
 :::info Foundries
 A _Foundry Output_ is an Output that controls the supply of user-defined, custom tokens, also known as _native tokens_.
 :::
 
-Last but not least, you will learn how to define [UTXOs](https://wiki.iota.org/shimmer/introduction/explanations/what_is_stardust/rethink_utxo/) to transfer native tokens among addresses.
+Last but not least, you will learn how to define [UTXOs](/introduction/explanations/what_is_stardust/rethink_utxo/) to transfer native tokens among addresses.
 
 :::tip NFTs
 If you want to mint Non-Fungible Tokens (NFTs), you can check out this [how-to guide](../../how_tos/mint_nft.mdx).
@@ -44,4 +44,4 @@ If you want to mint Non-Fungible Tokens (NFTs), you can check out this [how-to g
 
 ## Storage Costs and Deposits
 
-You need to take into account that both Alias and Foundry outputs need to be stored by [Hornet Nodes](https://wiki.iota.org/shimmer/hornet/welcome), so there is a [storage cost](https://wiki.iota.org/shimmer/iotajs/tutorials/value-transactions/introduction/#storage-costs-and-deposits) as with any UTXO.
+You need to take into account that both Alias and Foundry outputs need to be stored by [Hornet Nodes](/hornet/welcome), so there is a [storage cost](/iotajs/tutorials/value-transactions/introduction/#storage-costs-and-deposits) as with any UTXO.

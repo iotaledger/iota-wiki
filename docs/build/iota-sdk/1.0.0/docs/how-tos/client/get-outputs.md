@@ -16,7 +16,7 @@ import TabItem from "@theme/TabItem";
 import AccountClient from '../../\_admonitions/\_account-client.md'
 
 Querying outputs allows you to retrieve specific information about transactions or assets on
-the [Tangle](https://wiki.iota.org/shimmer/learn/tangle.md). You can verify the status of transactions, track the movement
+the [Tangle](/learn/tangle.md). You can verify the status of transactions, track the movement
 of assets, and gather relevant details such as transaction history, ownership, or other metadata. You can query for any
 output type using the following functions:
 
