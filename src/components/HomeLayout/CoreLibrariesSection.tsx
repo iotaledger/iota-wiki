@@ -3,7 +3,7 @@ import CoreLibImgDark from '@site/static/img/homepage/section_core_libraries_dar
 import ThemedImage from '@theme/ThemedImage';
 import React, { FC } from 'react';
 import Link from '@docusaurus/Link';
-import { IotaCore, Shimmer, Wallet } from '@site/src/common/icons';
+import { Shimmer } from '@site/src/common/icons';
 
 interface LanguagesProps {
   languages?: { [key: string]: string };
