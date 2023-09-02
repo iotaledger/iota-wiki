@@ -69,7 +69,7 @@ In this step, you need to transition the Alias Address to a new state, as one of
 
 ### Query for the Alias Output
 
-First, you need to find the unspent Alias Output of your Alias Address through a query to the [indexing plugin](https://wiki.iota.org/shimmer/inx-indexer/welcome/) using the Alias ID. You need to obtain the full Output details, as you will need to use it as Input for your transaction.
+First, you need to find the unspent Alias Output of your Alias Address through a query to the [indexing plugin](/hornet/2.0.0-rc.6/inx-plugins/indexer/api_reference) using the Alias ID. You need to obtain the full Output details, as you will need to use it as Input for your transaction.
 
 ```typescript
 const indexerPlugin = new IndexerPluginClient(client);
@@ -123,7 +123,7 @@ const initialFoundryOutput: IFoundryOutput =
   initialFoundryOutputDetails.output as IFoundryOutput;
 ```
 
-Keep in mind that you will need to use the `Bech32Helper.toBech32(bech32Text, humanReadablePart)`(references/client/classes/Bech32Helper/#frombech32) function to convert your Alias ID to a Bech32 address to match the format of the parameter expected by the indexing plugin.
+Keep in mind that you will need to use the `Bech32Helper.toBech32(bech32Text, humanReadablePart)`(references/client/classes/Bech32Helper#frombech32) function to convert your Alias ID to a Bech32 address to match the format of the parameter expected by the indexing plugin.
 
 At the end of this step, you know **Input #2**.
 

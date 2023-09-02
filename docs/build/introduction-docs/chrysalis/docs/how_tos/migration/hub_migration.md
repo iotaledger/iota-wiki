@@ -13,7 +13,7 @@ keywords:
 
 :::info
 
-This guide outlines how to switch from using IOTA Hub to [Wallet.rs](https://wiki.iota.org/wallet.rs/welcome) or its [bindings](https://wiki.iota.org/wallet.rs/libraries/overview) instead.
+This guide outlines how to switch from using IOTA Hub to [Wallet.rs](/wallet.rs/welcome) or its bindings instead.
 
 :::
 
@@ -31,11 +31,11 @@ Dave de Fijter
 
 Because of the unique features of IOTA 1.0, it was difficult to manage IOTA transactions with just a library. With the Chrysalis update, we have updated to be more accommodating to industry-wide standards and developers.
 
-IOTA Hub was deprecated with the Chrysalis upgrade and will not work with the new protocol changes. If you somehow still use Hub, we recommend that you to switch our new wallet library [Iota.rs](https://wiki.iota.org/iota.rs/welcome), or its [bindings](https://wiki.iota.org/iota.rs/libraries/overview), where you can easily manage IOTA addresses, deposits, and withdrawals for user accounts.
+IOTA Hub was deprecated with the Chrysalis upgrade and will not work with the new protocol changes. If you somehow still use Hub, we recommend that you to switch our new wallet library [Iota.rs](/iota.rs/welcome), or its bindings, where you can easily manage IOTA addresses, deposits, and withdrawals for user accounts.
 
 To upgrade from Hub to a Chrysalis implementation you will need to:
 
-- Integrate the Chrysalis network using [Wallet.rs](https://wiki.iota.org/wallet.rs/welcome) as mentioned in the [Exchange section](../exchange.md).
+- Integrate the Chrysalis network using [Wallet.rs](/wallet.rs/welcome) as mentioned in the [Exchange section](../exchange.md).
 - Pause withdrawals/deposits.
 - Make sure all balances have been swept and all deposits have been processed.
 - [Transfer all IOTA to a generated migration address](token_migration.md).

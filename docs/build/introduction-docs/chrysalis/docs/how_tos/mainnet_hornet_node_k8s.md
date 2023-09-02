@@ -9,7 +9,7 @@ keywords:
 
 # How to Run Hornet On Kubernetes
 
-This page explains how to run [IOTA mainnet](../reference/networks/mainnet.md) [Hornet](https://wiki.iota.org/hornet/welcome) nodes in a Kubernetes (K8s) environment. [Kubernetes](https://kubernetes.io/docs/concepts/overview/what-is-kubernetes/) is a portable, extensible, open-source platform for managing containerized workloads and services that facilitates both **declarative configuration** and automation. It has a large, rapidly growing ecosystem. K8s services, support, and tools are widely available on multiple cloud providers.
+This page explains how to run [IOTA mainnet](../reference/networks/mainnet.md) [Hornet](/hornet/welcome) nodes in a Kubernetes (K8s) environment. [Kubernetes](https://kubernetes.io/docs/concepts/overview/what-is-kubernetes/) is a portable, extensible, open-source platform for managing containerized workloads and services that facilitates both **declarative configuration** and automation. It has a large, rapidly growing ecosystem. K8s services, support, and tools are widely available on multiple cloud providers.
 
 If you are not familiar with K8s we recommend you to start by [learning the K8s technology](https://kubernetes.io/docs/tutorials/kubernetes-basics/).
 
@@ -27,7 +27,7 @@ You will also need to [properly configure](https://kubernetes.io/docs/reference/
 You can pass the following parameters as variables on the command line to the one-click script:
 
 - `NAMESPACE`: The namespace where the one-click script will create the K8s objects. `tangle` by default.
-- `PEER`: A [multipeer address](https://wiki.iota.org/hornet/post_installation/peering#addressing-peer-neighbors) that will be used to peer your nodes with. If you do not provide an address, auto-peering will be configured for the set's first Hornet Node (`hornet-0`).
+- `PEER`: A [multipeer address](/hornet/references/peering) that will be used to peer your nodes with. If you do not provide an address, auto-peering will be configured for the set's first Hornet Node (`hornet-0`).
 - `INSTANCES`: The number of Hornet instances to be deployed. `1` by default.
 - `INGRESS_CLASS`: The class associated with the [Ingress](https://kubernetes.io/docs/concepts/services-networking/ingress/) object that will be used to externally expose the Node API endpoint so that it can be load balanced. It can depend on the target K8s environment. `nginx` by default.
 

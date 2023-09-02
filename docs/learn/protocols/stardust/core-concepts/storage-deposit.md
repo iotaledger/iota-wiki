@@ -30,7 +30,7 @@ amount of base currency tokens to cover the storage on nodes. The amount depends
 ledger entry.
 
 The storage deposit is not a fee because it is fully refunded as soon as the ledger entry is cleaned up. Read more
-about the new storage deposit system in [TIP-19](https://wiki.iota.org/shimmer/tips/tips/TIP-0019/).
+about the new storage deposit system in [TIP-19](/tips/tips/TIP-0019).
 
 ## Data Storage in Outputs
 
@@ -51,7 +51,7 @@ Arbitrary data storage becomes a general feature of outputs. Some examples of wh
 
 :::tip Learn More
 
-You can learn more about the [storage deposits](https://wiki.iota.org/tips/tips/TIP-0019) in the
+You can learn more about the [storage deposits](/tips/tips/TIP-0019) in the
 [TIPS section](../tips.md).
 
 :::

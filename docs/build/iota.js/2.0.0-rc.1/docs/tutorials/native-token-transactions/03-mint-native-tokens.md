@@ -18,19 +18,19 @@ keywords:
 
 To mint a new native token you will need the following:
 
-- An initial _unspent Output_ with enough funds to cover the [storage costs](https://wiki.iota.org/shimmer/introduction/explanations/what_is_stardust/storage_deposit/) of the different Outputs involved. In the Testnet, you can [request funds through the Faucet](../value-transactions/06-request-funds-from-the-faucet.md).
+- An initial _unspent Output_ with enough funds to cover the [storage costs](/introduction/stardust/explanations/what_is_stardust/storage_deposit) of the different Outputs involved. In the Testnet, you can [request funds through the Faucet](../value-transactions/06-request-funds-from-the-faucet.md).
 
 :::info Storage Deposits
 
-[Storage deposits](https://wiki.iota.org/shimmer/learn/role-of-token/#storage-deposits) can only be covered by **protocol-defined tokens** (`SMR`).
+[Storage deposits](/learn/protocols/stardust/core-concepts/storage-deposit) can only be covered by **protocol-defined tokens** (`SMR`).
 
 :::
 
-- An _Alias Address_ that you will use to control the Foundry Output associated with your new native tokens. Any change made to the Foundry state will require the keys of the [State Controller](https://wiki.iota.org/shimmer/tips/tips/TIP-0018/#state-controller-address-unlock-condition) of this Alias Address and the corresponding state transition that will generate an unspent Alias Output.
+- An _Alias Address_ that you will use to control the Foundry Output associated with your new native tokens. Any change made to the Foundry state will require the keys of the [State Controller](/tips/tips/TIP-0018#state-controller-address-unlock-condition) of this Alias Address and the corresponding state transition that will generate an unspent Alias Output.
 
 - A _Token Scheme_ that defines a class of tokens with _initial supply_ (how many native tokens of that class you will mint initially) and _maximum supply_.
 
-- A _Foundry Output_ that captures all the parameters and the state related to your new native tokens, including the [Token Scheme](https://wiki.iota.org/shimmer/tips/tips/TIP-0018/#simple-token-scheme-validation-rules).
+- A _Foundry Output_ that captures all the parameters and the state related to your new native tokens, including the [Token Scheme](/tips/tips/TIP-0018#simple-token-scheme-validation-rules).
 
 - An _Address_ to which you will transfer the initial supply of native tokens through a Basic Output. You can find a guide to generating your [seed](../value-transactions/03-generate-a-seed.md) and [address](../value-transactions/04-generate-addresses.md) in the [send value transactions tutorial](../value-transactions/01-introduction.md).
 
@@ -58,7 +58,7 @@ This tutorial assumes that the newly minted Alias ID holds enough funds (protoco
 
 ### Obtain the Current Alias Output
 
-Once you have your Alias ID, you will need to get its current unspent Alias Output through the [Indexer Plugin](https://wiki.iota.org/shimmer/inx-indexer/welcome/). The Alias Output will participate in a transaction that will create a new Foundry Output and mint native tokens.
+Once you have your Alias ID, you will need to get its current unspent Alias Output through the [Indexer Plugin](/hornet/2.0.0-rc.6/inx-plugins/indexer/api_reference). The Alias Output will participate in a transaction that will create a new Foundry Output and mint native tokens.
 
 ```typescript
 const aliasId = '0x8c81...';
@@ -110,7 +110,7 @@ You can observe that you need to define the total amount and the maximum supply 
 
 ## Define the Foundry Output
 
-Your next step is to define the Foundry Output (`IFoundryOutput`) that will control your new Token Scheme. You will need to set the serial number of the Foundry (`1` in this case), the formerly defined token scheme and the [unlock conditions](https://wiki.iota.org/shimmer/introduction/explanations/what_is_stardust/unlock_conditions/). The Foundry Output can only be unlocked by the state controller of the Alias Address that controls it.
+Your next step is to define the Foundry Output (`IFoundryOutput`) that will control your new Token Scheme. You will need to set the serial number of the Foundry (`1` in this case), the formerly defined token scheme and the [unlock conditions](/introduction/stardust/explanations/what_is_stardust/unlock_conditions). The Foundry Output can only be unlocked by the state controller of the Alias Address that controls it.
 
 As with the Alias Output, you need to deliberately set the amount to `0`, as at this point in time you don't know the amount of protocol-defined tokens you will need to cover the storage deposit for this Output.
 
@@ -154,7 +154,7 @@ That token class ID is simply the Foundry ID that will remain immutable regardle
 
 ## Define the Basic Output That Will Hold the Initial Batch of Minted Tokens
 
-As the Foundry has an initial set of minted tokens, you will need a [Basic Output](https://wiki.iota.org/shimmer/introduction/explanations/ledger/simple_transfers/) to hold those native tokens. This new Basic Output will hold the initial amount of minted native tokens identified through their token class ID. As with other Outputs, you need to set the amount of protocol-defined tokens to `0` as you don't know yet the storage deposit cost.
+As the Foundry has an initial set of minted tokens, you will need a [Basic Output](/introduction/stardust/explanations/ledger/simple_transfers) to hold those native tokens. This new Basic Output will hold the initial amount of minted native tokens identified through their token class ID. As with other Outputs, you need to set the amount of protocol-defined tokens to `0` as you don't know yet the storage deposit cost.
 
 ```typescript
 const nativeTokenOwnerAddress = '0x647f....';

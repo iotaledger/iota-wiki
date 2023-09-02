@@ -56,6 +56,11 @@ module.exports = {
             },
             {
               type: 'doc',
+              id: 'references/peering',
+              label: 'Peering',
+            },
+            {
+              type: 'doc',
               id: 'references/api_reference',
               label: 'API Reference',
             },

@@ -53,7 +53,7 @@ const destAddress = '0xc8413...';
 
 ## Query Native Tokens Output to be Spent
 
-The first thing you need to do is to find the Basic Output that holds the native tokens. The easiest way to do it is through a query to the [indexation plugin](https://wiki.iota.org/shimmer/inx-indexer/welcome/), as shown below. You will need to obtain the full Output details, as you will need to use it as Input for your following transaction.
+The first thing you need to do is to find the Basic Output that holds the native tokens. The easiest way to do it is through a query to the [indexation plugin](/hornet/2.0.0-rc.6/inx-plugins/indexer/api_reference), as shown below. You will need to obtain the full Output details, as you will need to use it as Input for your following transaction.
 
 ```typescript
 const indexerPlugin = new IndexerPluginClient(client);

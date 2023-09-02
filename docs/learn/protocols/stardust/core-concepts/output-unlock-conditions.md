@@ -50,7 +50,7 @@ the highest bidder at that moment.
 
 :::tip Learn More
 
-You can learn more about [output unlock conditions](https://wiki.iota.org/tips/tips/TIP-0018) in the
+You can learn more about [output unlock conditions](/tips/tips/TIP-0018) in the
 [TIPS section](../tips.md).
 
 :::

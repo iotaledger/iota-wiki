@@ -33,7 +33,7 @@ some immutable data attached to them. Consequently, NFTs are supported on the ba
 
 Minting an NFT doesn't require expensive gas fees; all that needs to be in place is the right amount of storage deposit
 tokens that are 100% refunded after the NFT is destroyed. The issuer's identity may also be immutably attached to the NFT next to arbitrary data, making it possible to detect
-counterfeits. [TIP-27](https://wiki.iota.org/shimmer/tips/tips/TIP-0027/)
+counterfeits. [TIP-27](/tips/tips/TIP-0027)
 explains the recommended way of structuring NFT metadata for future verification and dApp interoperability.
 
 ### Asset Wrapping
@@ -47,8 +47,8 @@ you will first need to wrap assets to another chain as a native Layer 1 asset.
 
 :::tip Learn More
 
-You can learn more about the [tokenization](https://wiki.iota.org/tips/tips/TIP-0018),
-[NFTs](https://wiki.iota.org/tips/tips/TIP-0027) and [Native Tokens](https://wiki.iota.org/tips/tips/TIP-0030/) in
+You can learn more about the [tokenization](/tips/tips/TIP-0018),
+[NFTs](/tips/tips/TIP-0027) and [Native Tokens](/tips/tips/TIP-0030/) in
 the [TIPS section](../tips.md).
 
 :::

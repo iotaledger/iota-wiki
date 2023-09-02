@@ -17,9 +17,9 @@ from the ledger.
 
 This section will show you how to issue a transaction that will transfer the ownership of your NFT to a different
 address. Since you probably want to recover the tokens you used to cover
-the [storage deposits](https://wiki.iota.org/shimmer/iota.js/tutorials/value-transactions/introduction/#storage-costs-and-deposits),
+the [storage deposits](/iota.js/tutorials/value-transactions/introduction#storage-costs-and-deposits),
 this code example includes an
-additional [storage deposit return](https://wiki.iota.org/shimmer/introduction/explanations/what_is_stardust/unlock_conditions/#storage-deposit-return) [unlock condition](https://wiki.iota.org/shimmer/introduction/explanations/what_is_stardust/unlock_conditions/)
+additional [storage deposit return](/learn/protocols/stardust/core-concepts/output-unlock-conditions#storage-deposit-return) [unlock condition](/learn/protocols/stardust/core-concepts/output-unlock-conditions)
 to the NFT Output.
 
 ## Preparation
@@ -48,7 +48,7 @@ const nftBuyerAddr = '0x57d3...';
 ## Query For the NFT Output
 
 You will first need to query for the NFT Output of your NFT. The easiest way to do so is through a query to
-the [indexation plugin](https://wiki.iota.org/shimmer/inx-indexer/welcome/) by NFT ID. You need to obtain the full
+the [indexation plugin](/hornet/2.0.0-rc.6/inx-plugins/indexer/api_reference) by NFT ID. You need to obtain the full
 Output details as you need to use them as input for the transaction.
 
 ```typescript
@@ -70,9 +70,9 @@ const initialNftOutput: INftOutput =
 Once you have [queried for the NFT output](#query-for-the-nft-output), you should create the new NFT Output by cloning
 it, and then set the two new unlock conditions:
 
-1. The [address](https://wiki.iota.org/shimmer/introduction/explanations/what_is_stardust/unlock_conditions/#address)
+1. The [address](/learn/protocols/stardust/core-concepts/output-unlock-conditions#address)
    corresponding to the new owner of the NFT (for instance, the buyer of the NFT).
-2. A [storage deposit unlock condition](https://wiki.iota.org/shimmer/introduction/explanations/what_is_stardust/unlock_conditions/#storage-deposit-return)
+2. A [storage deposit unlock condition](/learn/protocols/stardust/core-concepts/output-unlock-conditions#storage-deposit-return)
    that will allow you to get a refund of the storage costs of the NFT Output. That way, the `SMR` tokens you used to cover
    the storage costs will be refunded whenever the new owner of the NFT decides to unlock it.
 

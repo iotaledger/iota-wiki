@@ -14,7 +14,7 @@ keywords:
 
 You can try executing all the steps described in this tutorial again but using a new output ID corresponding to the
 value `999.95 SMR` in the origin address. This time, instead of hard-coding the output ID, you can obtain the output
-ID through the [indexation plugin](https://wiki.iota.org/shimmer/inx-indexer/welcome). The indexation plugin keeps the
+ID through the [indexation plugin](/hornet/2.0.0-rc.6/inx-plugins/indexer/api_reference). The indexation plugin keeps the
 correspondence between addresses and their associated outputs, so it is easy to obtain the balance of an address.
 
 ```typescript

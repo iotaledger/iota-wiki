@@ -13,9 +13,9 @@ For each step, a function is defined that you should be able to reuse in your ap
 
 ## Before you begin
 
-If you are unfamiliar with W3C Decentralized Identifiers (DID) and Verifiable Credentials (VCs), we recommend reading the overviews of chapters 2, 3.1 and 3.2 of the [IOTA Identity guide](https://wiki.iota.org/identity.rs/introduction).
+If you are unfamiliar with W3C Decentralized Identifiers (DID) and Verifiable Credentials (VCs), we recommend reading the overviews of chapters 2, 3.1 and 3.2 of the [IOTA Identity guide](/identity.rs/introduction).
 
-The IOTA Identity framework is implemented in Rust. In order to use it in JavaScript, WASM bindings are available from the NPM package `@iota/identity-wasm`. Please refer to [IOTA Identity WASM - Getting Started](https://wiki.iota.org/identity.rs/libraries/wasm/getting_started) for set up instructions in both NodeJS and web (browser) contexts. This tutorial assumes a web context, but code comments show where usage is not the same as in NodeJS.
+The IOTA Identity framework is implemented in Rust. In order to use it in JavaScript, WASM bindings are available from the NPM package `@iota/identity-wasm`. Please refer to [IOTA Identity WASM - Getting Started](/identity.rs/libraries/wasm/getting_started) for set up instructions in both NodeJS and web (browser) contexts. This tutorial assumes a web context, but code comments show where usage is not the same as in NodeJS.
 
 To complete the tutorial, you will need the following imports:
 
@@ -207,4 +207,4 @@ run()
 
 ## Further Reading
 
-To engross yourself further, please refer to the [IOTA Identity Wiki](https://wiki.iota.org/identity.rs/introduction) and the [GitHub repository](https://github.com/iotaledger/identity.rs).
+To engross yourself further, please refer to the [IOTA Identity Wiki](/identity.rs/introduction) and the [GitHub repository](https://github.com/iotaledger/identity.rs).

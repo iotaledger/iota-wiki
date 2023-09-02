@@ -55,9 +55,9 @@ And there are few additional interesting notes:
   developers to implement. \_Using different `accounts` may have a negative impact on a performance while you are on the
   [account discovery](https://github.com/bitcoin/bips/blob/master/bip-0044.mediawiki#account-discovery) phase. If you are
   planning on using many multiple accounts then you may be interested in our stateful library
-  [wallet.rs](https://wiki.iota.org/wallet.rs/welcome) that incorporates all business logic needed to efficiently manage
+  [wallet.rs](/wallet.rs/welcome) that incorporates all business logic needed to efficiently manage
   independent accounts.
-  Our [exchange guide](https://wiki.iota.org/introduction/how_tos/exchange)
+  Our [exchange guide](/introduction/how_tos/exchange)
   provides some useful tips on how different accounts may be leveraged.
 
 ![address_generation](/img/libraries/address_generation.svg)

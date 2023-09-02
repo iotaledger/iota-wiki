@@ -15,7 +15,7 @@ keywords:
 ![IOTA Client Library Overview](/img/Banner/banner_client_lib_overview.png)
 
 The iota.rs library is designed to simplify how you connect and interact
-with [nodes](https://wiki.iota.org/chrysalis-docs/node_software) in the IOTA network. You can use it to generate
+with [nodes](/introduction/explanations/node_software) in the IOTA network. You can use it to generate
 addresses, send messages, sign and send transactions, and more.
 
 Beyond establishing the initial connection to a node, iota.rs has no state. Operations use only the data you pass during
@@ -25,9 +25,9 @@ your application.
 This stateless approach makes iota.rs easy to use and understand. But since you are in full control of data management,
 you are also fully responsible for it, which could feel overwhelming if you handle complex or sensitive data. If you
 plan on managing funds in your application, take a look at
-our [wallet.rs library](https://wiki.iota.org/wallet.rs/welcome) instead. It allows you to manage your user's funds
+our [wallet.rs library](/wallet.rs/welcome) instead. It allows you to manage your user's funds
 safely, and it already includes our best security practices. It
-uses [stronghold.rs](https://wiki.iota.org/stronghold.rs/welcome) to store sensitive data and iota.rs to communicate
+uses [stronghold.rs](/stronghold.rs/welcome) to store sensitive data and iota.rs to communicate
 with the IOTA network and, unlike iota.rs, it has a state.
 
 ## Supported Languages
@@ -44,12 +44,8 @@ powerful no matter which language you choose.
 Your application communicates with iota.rs either directly in Rust or through one of the language bindings. The iota.rs
 library turns your requests into REST API calls and sends them to a node through the Internet. The node, in turn,
 interacts with the rest of an IOTA network, which could be
-the [main operational network (mainnet)](https://wiki.iota.org/introduction/reference/networks/mainnet) or
-a [network for testing purposes (devnet)](https://wiki.iota.org/introduction/reference/networks/devnet).
-
-Different nodes can run on different software, but they always expose the same interface to clients. For example, one
-node could be a [Hornet](https://wiki.iota.org/hornet/welcome) node, and the other could be
-a [Bee](https://wiki.iota.org/bee/welcome) node, and they both would appear the same for any client.
+the [main operational network (mainnet)](/introduction/reference/networks/mainnet) or
+a [network for testing purposes (devnet)](/introduction/reference/networks/devnet).
 
 ![A diagram that illustrates the text above. It has three layers: the application layer that includes iota.rs and its bindings, communication layer (the Internet network), and IOTA network layer with nodes that operate on one of the IOTA networks.](/img/overview/layered_overview.svg 'An overview of IOTA layers.')
 

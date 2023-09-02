@@ -20,7 +20,7 @@ performant implementation, furthermore its [IOTA Node Extension (INX)](https://T
 for Stardust eases the development of application specific node extensions.
 
 - [Official GitHub Repository](https://github.com/iotaledger/hornet)
-- [Documentation](https://wiki.iota.org/hornet/develop/welcome)
+- [Documentation](/hornet/2.0.0-rc.6/welcome)
 
 ## Node API Specification
 

@@ -22,7 +22,7 @@ Faucets are useful in test and private networks to distribute test tokens to dev
 
 The recommended setup is to use the provided [Docker images](https://hub.docker.com/r/iotaledger/inx-faucet).
 
-If you want to run your own private network with it's own faucet, have a look at our [Run a Private Tangle](https://wiki.iota.org/hornet/develop/how_tos/private_tangle) guide.
+If you want to run your own private network with it's own faucet, have a look at our [Run a Private Tangle](/hornet/2.0.0-rc.6/how_tos/private_tangle) guide.
 
 To run your own faucet you need to provide a private key containing funds to the faucet. To do this you start `inx-faucet` by passing a `FAUCET_PRV_KEY` environment variable containing the private key.
 

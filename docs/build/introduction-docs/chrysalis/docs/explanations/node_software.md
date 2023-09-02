@@ -22,7 +22,7 @@ Hornet is an EDF-supported community node written in Go and has already proven i
 ## Hornet
 
 - [Official GitHub Repository](https://github.com/gohornet/hornet).
-- [Documentation](https://wiki.iota.org/hornet/welcome).
+- [Documentation](/hornet/welcome).
 
 ## Node API Specification
 

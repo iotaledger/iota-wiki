@@ -20,7 +20,7 @@ Through the INX interface, Chronicle listens to all blocks in the Tangle that ar
 
 ## Documentation
 
-The documentation for Chronicle can be found in [our wiki](https://wiki.iota.org/shimmer/chronicle/welcome), the supported APIs are documented [here](https://wiki.iota.org/shimmer/chronicle/reference/api).
+The documentation for Chronicle can be found in [our wiki](./welcome.md), the supported APIs are documented [here](./reference/api.md).
 
 ## Development
 

@@ -43,7 +43,7 @@ Features of the Wallet Library:
 
 ### How Does it Work?
 
-The Wallet Library is a stateful package with a standardized interface for developers to build applications involving value transactions. It offers abstractions to handle payments and can optionally interact with [Stronghold](https://wiki.iota.org/stronghold.rs/getting_started) for seed handling, seed storage, and state backup.
+The Wallet Library is a stateful package with a standardized interface for developers to build applications involving value transactions. It offers abstractions to handle payments and can optionally interact with [Stronghold](/stronghold.rs/getting_started) for seed handling, seed storage, and state backup.
 
 :::note
 
@@ -72,7 +72,7 @@ Since all `wallet.rs` bindings are based on core principles provided by the `wal
 
 First, you should install the components that are needed to use `wallet.rs` and the binding of your choice; it may vary a bit from language to language. In the case of the [NodeJs binding](./../getting_started/nodejs.mdx), it is straightforward since it is distributed via the `npm` package manager.
 
-You can read more about [backup and security in this guide](https://wiki.iota.org/shimmer/introduction/how_tos/backup_security).
+You can read more about [backup and security in this guide](/introduction/how_tos/backup_security).
 
 ```bash
 npm install @iota/wallet dotenv
@@ -97,7 +97,7 @@ SH_PASSWORD="here is your super secure password"
 MNEMONIC="here is your super secure 24 word mnemonic, it's only needed here the first time"
 ```
 
-After you have updated the `.env` file, you can initialize the `AccountManager` instance with a secret manager([`Stronghold`](https://wiki.iota.org/stronghold.rs/welcome) by default) and client options.
+After you have updated the `.env` file, you can initialize the `AccountManager` instance with a secret manager([`Stronghold`](/stronghold.rs/welcome) by default) and client options.
 
 :::note
 
@@ -111,7 +111,7 @@ One of the key principles behind the `stronghold` is that no one can get a seed 
 
 :::note
 
-Keep the `stronghold` password and the `stronghold` database on separate devices. See the [backup and security guide](https://wiki.iota.org/introduction/how_tos/backup_security/) for more information.
+Keep the `stronghold` password and the `stronghold` database on separate devices. See the [backup and security guide](/introduction/how_tos/backup_security/) for more information.
 
 :::
 
