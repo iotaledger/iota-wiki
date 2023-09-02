@@ -17,7 +17,7 @@ keywords:
 
 An [NFT](/learn/protocols/stardust/core-concepts/multi-asset-ledger#non-fungible-tokens-nfts) is a unique token on the ledger. Its owner
 controls it through the private key of
-an [address](https://wiki.iota.org/iota.rs/explanations/address_key_space/). An NFT has a unique ID assigned by the
+an [address](/iota.rs/explanations/address_key_space/). An NFT has a unique ID assigned by the
 Ledger, bound to an Output in the Ledger. An NFT has some immutable
 features that cannot be changed through the lifetime of the NFT, namely the issuer of the NFT. Additionally, immutable
 metadata links the NFT with a Digital Asset (image, video, etc.). The owner of the NFT can only change non-immutable

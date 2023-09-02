@@ -26,8 +26,8 @@ issue transactions that involve NFT Output.
 
 ## Introduction
 
-Starting from [Chrysalis](https://wiki.iota.org/introduction/welcome), IOTA is
-a [UTXO-based (Unspent Transaction Output)](https://wiki.iota.org/introduction/reference/details#unspent-transaction-output-utxo)
+Starting from [Chrysalis](/introduction/welcome), IOTA is
+a [UTXO-based (Unspent Transaction Output)](/introduction/reference/details#unspent-transaction-output-utxo)
 Ledger. Each UTXO, also known as **Output**, has an associated number of tokens that determines its value.
 Thus, the permanent data on the ledger is composed of a set of records (_Outputs_) that can be unlocked by the owner of
 its associated address, i.e., the one who knows the address' private key.

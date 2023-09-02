@@ -82,7 +82,7 @@ npm run start create-did alice alice-password
 This will create a minimal DID document for alice, and publish it to the Tangle. A Stronghold file `alice.hodl` will be created under `/stronghold-files` which contains the Account's state and the private key of the main verification method of the DID.
 `alice-password` will be used as a password for the stronghold storage. Obviously this password must be more secure in production applications.
 
-See [Creating a Decentralized Identity](https://wiki.iota.org/identity.rs/concepts/decentralized_identifiers/create) for more information about generating DIDs.
+See [Creating a Decentralized Identity](/identity.rs/concepts/decentralized_identifiers/create) for more information about generating DIDs.
 
 ### 2. **Issuer**: Create a DID
 
@@ -97,7 +97,7 @@ with that `uni-of-oslo.hodl` will be created under `/stronhold-files`.
 ### 3. **Issuer**: Add a Verification Method
 
 Since the university will need to issue a signed verifiable credential for Alice, a verification method should be added to the university's DID document.
-Read more about adding verification methods in [update DID Documents](https://wiki.iota.org/identity.rs/concepts/decentralized_identifiers/update).
+Read more about adding verification methods in [update DID Documents](/identity.rs/concepts/decentralized_identifiers/update).
 
 To add a Verification Method the following command can be used:
 
@@ -126,7 +126,7 @@ npm run start create-vm alice alice-password key-1
 
 ### 5: **Issuer**: Create Revocation list
 
-In order for the issuer to be able to revoke credentials in the future, a revocation list is needed. See [Verifiable Credential Revocation](https://wiki.iota.org/identity.rs/concepts/verifiable_credentials/revocation) for further details.
+In order for the issuer to be able to revoke credentials in the future, a revocation list is needed. See [Verifiable Credential Revocation](/identity.rs/concepts/verifiable_credentials/revocation) for further details.
 The following command can be used to create a revocation list:
 
 ```bash

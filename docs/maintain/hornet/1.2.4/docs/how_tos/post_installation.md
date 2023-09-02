@@ -23,7 +23,7 @@ The most important configuration files are:
 
 :::note
 
-Hornet version 0.5.x targets the legacy IOTA 1.0 network. Hornet version 1.x.x targets the IOTA 1.5 network, also known as [Chrysalis](https://wiki.iota.org/introduction/explanations/update/what_is_chrysalis), which is the focus of this documentation.
+Hornet version 0.5.x targets the legacy IOTA 1.0 network. Hornet version 1.x.x targets the IOTA 1.5 network, also known as [Chrysalis](/introduction/explanations/update/what_is_chrysalis), which is the focus of this documentation.
 
 :::
 
@@ -143,4 +143,4 @@ If you would like to offer proof of work to clients, consider increasing the `re
 We recommend that you provide your HTTP REST API behind a reverse proxy, such as [HAProxy](http://www.haproxy.org/), [Traefik](https://traefik.io/), [Nginx](https://www.nginx.com/), or [Apache](https://www.apache.org/) configured with TLS.
 When using our [recommended setup](using_docker.md) this is done for you automatically.
 
-You can explore more details regarding different API calls at the [IOTA client library documentation](https://wiki.iota.org/iota.rs/welcome).
+You can explore more details regarding different API calls at the [IOTA client library documentation](/iota.rs/welcome).

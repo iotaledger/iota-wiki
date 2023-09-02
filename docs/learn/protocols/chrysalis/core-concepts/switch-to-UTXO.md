@@ -58,7 +58,7 @@ meaning that addresses in Chrysalis are reusable and can be safely used to send 
 
 :::tip Learn More
 
-You can learn more about the [switch to UTXO](https://wiki.iota.org/tips/tips/TIP-0007) and
-[Ed25519](https://wiki.iota.org/tips/tips/TIP-0017/) in the [TIPS section](../tips.md).
+You can learn more about the [switch to UTXO](/tips/tips/TIP-0007) and
+[Ed25519](/tips/tips/TIP-0017/) in the [TIPS section](../tips.md).
 
 :::

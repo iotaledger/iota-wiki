@@ -28,7 +28,7 @@ Configure the docker images via command-line arguments by editing the `docker-co
 
 Refer to the Chronicle CLI (run `inx-chronicle --help`) for details about configuring Chronicle via command-line arguments.
 
-See the [Hornet Wiki](https://wiki.iota.org/hornet/references/configuration/) for details about configuring `Hornet`.
+See the [Hornet Wiki](/hornet/references/configuration/) for details about configuring `Hornet`.
 
 ## Environment
 

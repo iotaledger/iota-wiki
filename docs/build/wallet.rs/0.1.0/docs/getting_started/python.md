@@ -15,7 +15,7 @@ keywords:
 
 :::note
 
-In a production setup, do not store passwords in the host's environment variables or in the source code. For reference, review our [backup and security recommendations](https://wiki.iota.org/introduction/how_tos/backup_security/) for production setups.
+In a production setup, do not store passwords in the host's environment variables or in the source code. For reference, review our [backup and security recommendations](/introduction/how_tos/backup_security/) for production setups.
 :::
 
 ## Requirements

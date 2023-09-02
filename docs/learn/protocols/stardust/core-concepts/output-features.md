@@ -45,7 +45,7 @@ built around the network. It becomes possible to map data (Metadata Feature) sto
 
 :::tip Learn More
 
-You can learn more about [outputs features in Shimmer](https://wiki.iota.org/tips/tips/TIP-0018#nft-locking--unlocking)
+You can learn more about [outputs features in Shimmer](/tips/tips/TIP-0018#nft-locking--unlocking)
 in the [TIPS section](../tips.md).
 
 :::

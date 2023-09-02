@@ -50,7 +50,7 @@ The White Flag Consensus approach offers several key benefits:
 
 :::tip Learn More
 
-You can learn more about the [White Flag Consensus in IOTA](https://wiki.iota.org/tips/tips/TIP-0002) in the
+You can learn more about the [White Flag Consensus in IOTA](/tips/tips/TIP-0002) in the
 [TIPS section](../tips.md).
 
 :::

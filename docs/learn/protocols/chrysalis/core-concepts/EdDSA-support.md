@@ -42,6 +42,6 @@ benefiting users who have network usage constraints or wish to minimize data tra
 
 :::tip Learn More
 
-You can learn more about the [Ed25519 signature in IOTA](https://wiki.iota.org/tips/tips/TIP-0014) in the [TIPS section](../tips.md).
+You can learn more about the [Ed25519 signature in IOTA](/tips/tips/TIP-0014) in the [TIPS section](../tips.md).
 
 :::

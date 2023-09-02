@@ -47,8 +47,8 @@ you will first need to wrap assets to another chain as a native Layer 1 asset.
 
 :::tip Learn More
 
-You can learn more about the [tokenization](https://wiki.iota.org/tips/tips/TIP-0018),
-[NFTs](https://wiki.iota.org/tips/tips/TIP-0027) and [Native Tokens](https://wiki.iota.org/tips/tips/TIP-0030/) in
+You can learn more about the [tokenization](/tips/tips/TIP-0018),
+[NFTs](/tips/tips/TIP-0027) and [Native Tokens](/tips/tips/TIP-0030/) in
 the [TIPS section](../tips.md).
 
 :::

@@ -51,7 +51,7 @@ Arbitrary data storage becomes a general feature of outputs. Some examples of wh
 
 :::tip Learn More
 
-You can learn more about the [storage deposits](https://wiki.iota.org/tips/tips/TIP-0019) in the
+You can learn more about the [storage deposits](/tips/tips/TIP-0019) in the
 [TIPS section](../tips.md).
 
 :::

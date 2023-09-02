@@ -36,7 +36,7 @@ Therefore the roulette is Fair.
 
 The mandatory setup consists out of:
 
-- 1 [GoShimmer](https://wiki.iota.org/goshimmer/welcome) node >= 0.7.5v ([25c827e8326a](https://github.com/iotaledger/goshimmer/commit/25c827e8326a))
+- 1 [GoShimmer](/goshimmer/welcome) node >= 0.7.5v ([25c827e8326a](https://github.com/iotaledger/goshimmer/commit/25c827e8326a))
 - 1 Beta [Wasp node](/wasp/running-a-node).
 - 1 Static file server (nginx, Apache, fasthttp)
 
@@ -74,7 +74,7 @@ As these requests cost some fees, and to be able to bet with real tokens, the pl
 
 As the game runs on a testnet, you can request funds from the GoShimmer faucets inside the network.
 
-See: [How to Obtain Tokens From the Faucet](https://wiki.iota.org/goshimmer/tutorials/obtain_tokens)
+See: [How to Obtain Tokens From the Faucet](/goshimmer/tutorials/obtain_tokens)
 
 After you have acquired some funds, they will reside inside an address that is handled by a wallet.
 
@@ -105,7 +105,7 @@ This frontend sends On-ledger requests to place bets towards the fair roulette s
 
 ### The Smart Contract
 
-See: [Anatomy of a Smart Contract](https://wiki.iota.org/wasp/guide/core_concepts/smart-contract-anatomy)
+See: [Anatomy of a Smart Contract](/wasp/guide/core_concepts/smart-contract-anatomy)
 
 As the smart contract is the only actor that is allowed to modify state in the context of the game, it needs to handle a few tasks such as:
 
@@ -167,7 +167,7 @@ However, there is a bit more to the concept than to simply subscribe to a web so
 
 On and Off Ledger requests have a predefined structure. They need to get encoded strictly and include a list of transactions provided by Goshimmer. They also need to get signed by the client using the private key originating from a seed.
 
-Wasp uses the [ExtendedLockedOutput](https://wiki.iota.org/goshimmer/protocol_specification/components/advanced_outputs) message type, which enables certain additional properties such as:
+Wasp uses the [ExtendedLockedOutput](/goshimmer/protocol_specification/components/advanced_outputs) message type, which enables certain additional properties such as:
 
 - A fallback address and a fallback timeout
 - Unlockable by AliasUnlockBlock (if address is of Misaddress type)
@@ -232,13 +232,13 @@ This transaction also requires an address to send the request to, and also a var
 For Wasp, the address to send funds to is the chainId.
 :::
 
-See: [CoreTypes](https://wiki.iota.org/wasp/misc/coretypes) and [Invoking](https://wiki.iota.org/wasp/guide/solo/invoking-sc)
+See: [CoreTypes](/wasp/misc/coretypes) and [Invoking](/wasp/guide/solo/invoking-sc)
 
 ##### CallView
 
 The [callView](https://github.com/iotaledger/wasp/blob/7b3ddc54891ccf021c7aaa32db35d88361fade16/contracts/wasm/fairroulette/frontend/src/lib/fairroulette_client/fair_roulette_service.ts#L165) function is responsible for calling smart contract view functions.
 
-See: [Calling a view](https://wiki.iota.org/wasp/guide/solo/view-sc)
+See: [Calling a view](/wasp/guide/solo/view-sc)
 
 To give access to the smart contracts state, you can use view functions to return selected parts of the state.
 

@@ -18,8 +18,8 @@ With the IOTA client libraries you can easily integrate IOTA into your own appli
 
 The official IOTA libraries serve as `one-source-code-of-truth` to IOTA users and provide binding to other programming languages. Below is a list of the IOTA libraries. You can also check out the [IOTA client libraries blog post](https://blog.iota.org/the-new-iota-client-libraries-harder-better-faster-stronger/), to learn about the libraries' core principles.
 
-- [client-lib](https://wiki.iota.org/iota.rs/welcome): a general purpose IOTA client library for interacting with the IOTA network (Tangle).
-- [wallet-lib](https://wiki.iota.org/wallet.rs/welcome): a stateful library specifically designed to be used for IOTA value-based transfers .
+- [client-lib](/iota.rs/welcome): a general purpose IOTA client library for interacting with the IOTA network (Tangle).
+- [wallet-lib](/wallet.rs/welcome): a stateful library specifically designed to be used for IOTA value-based transfers .
 - [iota.c](https://github.com/iotaledger/iota.c): a special-purpose library in C for embedded devices (with microcontrollers) covering a basic features of `client-lib` or `wallet-lib.`
 - [iota.js](https://github.com/iotaledger/iota.js/tree/chrysalis): an initial IOTA client library in Typescript that can be used in a web browser.
 - [iota.go](https://github.com/iotaledger/iota.go/tree/chrysalis/phase2): an initial IOTA client library in Golang.

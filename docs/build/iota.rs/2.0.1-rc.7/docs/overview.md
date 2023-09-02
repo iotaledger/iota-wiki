@@ -1,6 +1,6 @@
 ---
 description: 'The iota.rs library is designed to simplify how you connect and interact
-with [nodes](https://wiki.iota.org/chrysalis-docs/node_software) in the IOTA network. '
+with [nodes](/chrysalis-docs/node_software) in the IOTA network. '
 image: /img/overview/layered_overview.svg
 keywords:
 
@@ -28,7 +28,7 @@ your application.
 This stateless approach makes iota.rs easy to use and understand. But since you are in full control of data management,
 you are also fully responsible for it, which could feel overwhelming if you handle complex or sensitive data. If you
 plan on managing funds in your application, take a look at
-our [wallet.rs library](https://wiki.iota.org/wallet.rs/welcome) instead.
+our [wallet.rs library](/wallet.rs/welcome) instead.
 
 ## Supported Languages
 
@@ -44,8 +44,8 @@ powerful no matter which language you choose.
 Your application communicates with iota.rs either directly in Rust or through one of the language bindings. The iota.rs
 library turns your requests into REST API calls and sends them to a node through the Internet. The node, in turn,
 interacts with the rest of an IOTA network, which could be
-the [main operational network (mainnet)](https://wiki.iota.org/introduction/reference/networks/mainnet) or
-a [network for testing purposes (devnet)](https://wiki.iota.org/introduction/reference/networks/devnet).
+the [main operational network (mainnet)](/introduction/reference/networks/mainnet) or
+a [network for testing purposes (devnet)](/introduction/reference/networks/devnet).
 
 Different nodes can run on different software, but they always expose the same interface to clients. For example, one
 node could be a [Hornet](/hornet/welcome) node, and the other could be

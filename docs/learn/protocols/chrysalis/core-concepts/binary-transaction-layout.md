@@ -47,8 +47,8 @@ potentially slowing development and increasing complexity.
 
 :::tip Learn More
 
-You can learn more about the [Binary to ternary conversion](https://wiki.iota.org/tips/tips/TIP-0005/),
-[transaction payloads](https://wiki.iota.org/tips/tips/TIP-0007/),
-and [Tangle messages](https://wiki.iota.org/tips/tips/TIP-0006/) in the [TIPS section](../tips.md).
+You can learn more about the [Binary to ternary conversion](/tips/tips/TIP-0005/),
+[transaction payloads](/tips/tips/TIP-0007/),
+and [Tangle messages](/tips/tips/TIP-0006/) in the [TIPS section](../tips.md).
 
 :::

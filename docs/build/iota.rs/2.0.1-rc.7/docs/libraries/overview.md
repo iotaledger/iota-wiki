@@ -35,6 +35,6 @@ You can use the [Shimmer Tangle Explorer](https://explorer.shimmer.network/testn
 ## Get Test Tokens
 
 If you plan on managing funds in your application, take a look at
-our [wallet.rs library](https://wiki.iota.org/wallet.rs/welcome) instead.
+our [wallet.rs library](/wallet.rs/welcome) instead.
 
 In any case, to properly test value-based transactions on testnet network, you are going to need some tokens. You can get some testnet tokens through the [Shimmer Faucet](https://faucet.testnet.shimmer.network).
