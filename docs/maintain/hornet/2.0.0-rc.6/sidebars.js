@@ -51,7 +51,8 @@ module.exports = {
           link: {
             type: 'generated-index',
             title: 'INX-Plugins',
-            description: 'Use custom plugins to extend the functionality of your node.',
+            description:
+              'Use custom plugins to extend the functionality of your node.',
             slug: '/inx-plugins',
             keywords: ['inx', 'plugins'],
           },
