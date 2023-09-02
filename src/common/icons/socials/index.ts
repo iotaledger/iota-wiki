@@ -1,8 +1,8 @@
-export { default as Discord } from './discord.svg';
-export { default as Facebook } from './facebook.svg';
-export { default as Github } from './github.svg';
-export { default as Instagram } from './instagram.svg';
-export { default as LinkedIn } from './linkedin.svg';
-export { default as Reddit } from './reddit.svg';
-export { default as Twitter } from './twitter.svg';
-export { default as Youtube } from './youtube.svg';
+export { default as Discord } from '@site/static/icons/socials/discord.svg';
+export { default as Facebook } from '@site/static/icons/socials/facebook.svg';
+export { default as Github } from '@site/static/icons/socials/github.svg';
+export { default as Instagram } from '@site/static/icons/socials/instagram.svg';
+export { default as LinkedIn } from '@site/static/icons/socials/linkedin.svg';
+export { default as Reddit } from '@site/static/icons/socials/reddit.svg';
+export { default as Twitter } from '@site/static/icons/socials/twitter.svg';
+export { default as Youtube } from '@site/static/icons/socials/youtube.svg';
