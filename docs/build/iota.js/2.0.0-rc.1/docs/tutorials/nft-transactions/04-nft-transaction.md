@@ -17,9 +17,9 @@ from the ledger.
 
 This section will show you how to issue a transaction that will transfer the ownership of your NFT to a different
 address. Since you probably want to recover the tokens you used to cover
-the [storage deposits](/iota.js/tutorials/value-transactions/introduction/#storage-costs-and-deposits),
+the [storage deposits](/iota.js/tutorials/value-transactions/introduction#storage-costs-and-deposits),
 this code example includes an
-additional [storage deposit return](/learn/protocols/stardust/core-concepts/output-unlock-conditions/#storage-deposit-return) [unlock condition](/learn/protocols/stardust/core-concepts/output-unlock-conditions/)
+additional [storage deposit return](/learn/protocols/stardust/core-concepts/output-unlock-conditions#storage-deposit-return) [unlock condition](/learn/protocols/stardust/core-concepts/output-unlock-conditions/)
 to the NFT Output.
 
 ## Preparation
@@ -70,9 +70,9 @@ const initialNftOutput: INftOutput =
 Once you have [queried for the NFT output](#query-for-the-nft-output), you should create the new NFT Output by cloning
 it, and then set the two new unlock conditions:
 
-1. The [address](/learn/protocols/stardust/core-concepts/output-unlock-conditions/#address)
+1. The [address](/learn/protocols/stardust/core-concepts/output-unlock-conditions#address)
    corresponding to the new owner of the NFT (for instance, the buyer of the NFT).
-2. A [storage deposit unlock condition](/learn/protocols/stardust/core-concepts/output-unlock-conditions/#storage-deposit-return)
+2. A [storage deposit unlock condition](/learn/protocols/stardust/core-concepts/output-unlock-conditions#storage-deposit-return)
    that will allow you to get a refund of the storage costs of the NFT Output. That way, the `SMR` tokens you used to cover
    the storage costs will be refunded whenever the new owner of the NFT decides to unlock it.
 

@@ -30,7 +30,7 @@ Thus, the permanent data on the ledger is composed of a set of records (_Outputs
 its associated address, i.e., the one who knows the address' private key.
 
 There are different [Output types](/tips/tips/TIP-0018#output-design) in the [Stardust Protocol](/introduction/stardust/welcome). This tutorial will focus on
-outputs that involve user-defined [native tokens](/introduction/stardust/explanations/ledger/foundry/), a.k.a digital assets. The tutorial will also use [Alias](/introduction/stardust/explanations/ledger/alias/) and [Foundry](/tips/tips/TIP-0018#output-design/#foundry-output) Outputs.
+outputs that involve user-defined [native tokens](/introduction/stardust/explanations/ledger/foundry/), a.k.a digital assets. The tutorial will also use [Alias](/introduction/stardust/explanations/ledger/alias/) and [Foundry](/tips/tips/TIP-0018#output-design#foundry-output) Outputs.
 
 :::info Foundries
 A _Foundry Output_ is an Output that controls the supply of user-defined, custom tokens, also known as _native tokens_.

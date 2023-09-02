@@ -18,7 +18,7 @@ keywords:
 
 - [Remix IDE](https://remix.ethereum.org/).
 - [A Metamask Wallet](https://metamask.io/).
-- [Connect your MetaMask with the public Testnet](../../tooling/#metamask).
+- [Connect your MetaMask with the public Testnet](../../tooling#metamask).
 
 ### Required Prior Knowledge
 
@@ -39,7 +39,7 @@ You can use the [Remix IDE](https://remix.ethereum.org/) to deploy any regular S
 
 Set the environment to `Injected Web3` and connect Remix with your MetaMask wallet.
 If you haven’t already, please follow the instructions
-on [how to connect your MetaMask with the public Testnet.](../../tooling/#metamask).
+on [how to connect your MetaMask with the public Testnet.](../../tooling#metamask).
 
 ## 1. Create a Smart Contract
 

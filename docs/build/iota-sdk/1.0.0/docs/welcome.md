@@ -51,9 +51,9 @@ programming pattern, so the Python binding uses named constructor arguments.
 Your application communicates directly with the IOTA SDK in Rust or through one of the language bindings. The IOTA SDK
 turns your requests into REST API calls and sends them to a node. The node, in turn, interacts with the rest of an
 IOTA network, which could be the
-[main operational network (mainnet)](/build/networks-endpoints/#shimmer)
+[main operational network (mainnet)](/build/networks-endpoints#shimmer)
 or
-a [network for testing purposes (testnet)](/build/networks-endpoints/#public-testnet).
+a [network for testing purposes (testnet)](/build/networks-endpoints#public-testnet).
 
 !["An overview of the IOTA SDK layers."](/img/layered_overview.png 'An overview of the IOTA SDK layers.')
 

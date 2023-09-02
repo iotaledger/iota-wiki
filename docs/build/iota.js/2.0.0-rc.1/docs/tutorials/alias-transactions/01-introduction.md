@@ -36,4 +36,4 @@ outputs turn into inputs and generate new outputs, typically another Alias Outpu
 
 ## Storage Costs and Deposits
 
-You need to take into account that Alias Output as any other UTXOs need to be stored by [Hornet Nodes](/hornet/welcome), so there is a [storage cost](/iota.js/tutorials/value-transactions/introduction/#storage-costs-and-deposits).
+You need to take into account that Alias Output as any other UTXOs need to be stored by [Hornet Nodes](/hornet/welcome), so there is a [storage cost](/iota.js/tutorials/value-transactions/introduction#storage-costs-and-deposits).

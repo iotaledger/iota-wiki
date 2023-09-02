@@ -123,7 +123,7 @@ const initialFoundryOutput: IFoundryOutput =
   initialFoundryOutputDetails.output as IFoundryOutput;
 ```
 
-Keep in mind that you will need to use the `Bech32Helper.toBech32(bech32Text, humanReadablePart)`(references/client/classes/Bech32Helper/#frombech32) function to convert your Alias ID to a Bech32 address to match the format of the parameter expected by the indexing plugin.
+Keep in mind that you will need to use the `Bech32Helper.toBech32(bech32Text, humanReadablePart)`(references/client/classes/Bech32Helper#frombech32) function to convert your Alias ID to a Bech32 address to match the format of the parameter expected by the indexing plugin.
 
 At the end of this step, you know **Input #2**.
 

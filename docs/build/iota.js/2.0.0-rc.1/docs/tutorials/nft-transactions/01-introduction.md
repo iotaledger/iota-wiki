@@ -19,7 +19,7 @@ keywords:
 
 # Stardust for iota.js: NFT Transactions
 
-This tutorial will get you acquainted with the structure and functionality of [NFT Transactions](/learn/protocols/stardust/core-concepts/multi-asset-ledger/#non-fungible-tokens-nfts) in
+This tutorial will get you acquainted with the structure and functionality of [NFT Transactions](/learn/protocols/stardust/core-concepts/multi-asset-ledger#non-fungible-tokens-nfts) in
 IOTA's [Stardust protocol](/introduction/welcome) in
 the [Shimmer network](https://shimmer.network) using [iota.js](https://github.com/iotaledger/iota.js) primitives to
 issue transactions that involve NFT Output.
@@ -39,4 +39,4 @@ Outputs turn into Inputs and generate new Outputs, typically another NFT Output 
 
 ## Storage Costs and Deposits
 
-You need to take into account that NFT Output, as any other UTXOs, need to be stored by [Hornet Nodes](/hornet/welcome), so there is a [storage cost](/iota.js/tutorials/value-transactions/introduction/#storage-costs-and-deposits).
+You need to take into account that NFT Output, as any other UTXOs, need to be stored by [Hornet Nodes](/hornet/welcome), so there is a [storage cost](/iota.js/tutorials/value-transactions/introduction#storage-costs-and-deposits).

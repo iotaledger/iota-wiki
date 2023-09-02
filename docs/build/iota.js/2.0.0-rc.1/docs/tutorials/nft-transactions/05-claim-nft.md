@@ -17,7 +17,7 @@ keywords:
 
 In the previous section of this tutorial, you [transferred and NFT](./04-nft-transaction.md) to a new owner. However,
 since you added
-a [storage deposit return unlock condition](/learn/protocols/stardust/core-concepts/output-unlock-conditions/#storage-deposit-return)
+a [storage deposit return unlock condition](/learn/protocols/stardust/core-concepts/output-unlock-conditions#storage-deposit-return)
 to the transfer, the new owner will need to create a new Output to return the deposit.
 
 This section will show you how to refund the issuer of the NFT and gain complete control over the NFT. To do so, you
@@ -25,7 +25,7 @@ will need to do the following:
 
 Issue a [new NFT transaction](./04-nft-transaction.md) that changes the unlock conditions so that the only remaining
 condition is
-the [address](/learn/protocols/stardust/core-concepts/output-unlock-conditions/#address).
+the [address](/learn/protocols/stardust/core-concepts/output-unlock-conditions#address).
 
 Create an additional Input with enough funds to cover the storage deposit for the new NFT Output,
 Generate an Output to refund the issuer.
@@ -93,9 +93,9 @@ At the end of this step you have obtained **Input #1** of your transaction.
 ## Set the New Unlock Conditions
 
 You can create the new NFT Output by cloning the [one received from the node](#query-nft-output), removing
-the [storage deposit return unlock condition](/learn/protocols/stardust/core-concepts/output-unlock-conditions/#storage-deposit-return),
+the [storage deposit return unlock condition](/learn/protocols/stardust/core-concepts/output-unlock-conditions#storage-deposit-return),
 and only keep
-the [address unlock condition](/learn/protocols/stardust/core-concepts/output-unlock-conditions/#address).
+the [address unlock condition](/learn/protocols/stardust/core-concepts/output-unlock-conditions#address).
 That way, you will have full control of the NFT through your address keys.
 
 The `amount` field is set to `0`, so you can later calculate the minimum storage deposit needed for your new NFT Output.

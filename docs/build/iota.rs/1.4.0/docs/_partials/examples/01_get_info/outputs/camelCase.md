@@ -28,5 +28,5 @@ The most important properties are:
   fully synced.
 - `bech32HRP`: Indicates whether the given node is a part of [devnet](https://wiki.iota.org/introduction/reference/networks/devnet)
   (`atoi`) or [mainnet](https://wiki.iota.org/introduction/reference/networks/mainnet) (`iota`). You can find more info regarding the
-  [IOTA address format](https://wiki.iota.org/introduction/reference/details/#iota-15-address-anatomy) in the official
+  [IOTA address format](https://wiki.iota.org/introduction/reference/details#iota-15-address-anatomy) in the official
   [Chrysalis documentation](https://wiki.iota.org/introduction/welcome).

@@ -26,11 +26,11 @@ To mint a new native token you will need the following:
 
 :::
 
-- An _Alias Address_ that you will use to control the Foundry Output associated with your new native tokens. Any change made to the Foundry state will require the keys of the [State Controller](/tips/tips/TIP-0018/#state-controller-address-unlock-condition) of this Alias Address and the corresponding state transition that will generate an unspent Alias Output.
+- An _Alias Address_ that you will use to control the Foundry Output associated with your new native tokens. Any change made to the Foundry state will require the keys of the [State Controller](/tips/tips/TIP-0018#state-controller-address-unlock-condition) of this Alias Address and the corresponding state transition that will generate an unspent Alias Output.
 
 - A _Token Scheme_ that defines a class of tokens with _initial supply_ (how many native tokens of that class you will mint initially) and _maximum supply_.
 
-- A _Foundry Output_ that captures all the parameters and the state related to your new native tokens, including the [Token Scheme](/tips/tips/TIP-0018/#simple-token-scheme-validation-rules).
+- A _Foundry Output_ that captures all the parameters and the state related to your new native tokens, including the [Token Scheme](/tips/tips/TIP-0018#simple-token-scheme-validation-rules).
 
 - An _Address_ to which you will transfer the initial supply of native tokens through a Basic Output. You can find a guide to generating your [seed](../value-transactions/03-generate-a-seed.md) and [address](../value-transactions/04-generate-addresses.md) in the [send value transactions tutorial](../value-transactions/01-introduction.md).
 
