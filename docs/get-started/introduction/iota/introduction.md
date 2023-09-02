@@ -33,8 +33,8 @@ performant consensus and ledger solution.
 
 ## IOTA Mainnet
 
-The IOTA mainnet is the production grade network on which the [IOTA token](/get-started/introduction/iota/iota-token/)
-is available. It currently runs the [Chrysalis protocol version](/learn/protocols/chrysalis/introduction/).
+The IOTA mainnet is the production grade network on which the [IOTA token](/get-started/introduction/iota/iota-token)
+is available. It currently runs the [Chrysalis protocol version](/learn/protocols/chrysalis/introduction).
 
 ## Feeless Transactions
 
@@ -51,6 +51,6 @@ based in Berlin, Germany.
 
 The IOTA protocol is continuously evolving through research and development. It consists of two main public networks:
 the IOTA mainnet, which is the production-level network managing IOTA tokens, and
-the [Shimmer the staging network](/get-started/introduction/shimmer/introduction/) for testing and deploying the
+the [Shimmer the staging network](/get-started/introduction/shimmer/introduction) for testing and deploying the
 latest protocol updates. The Shimmer network acts as a testing ground to validate new features and improvements before
 they are implemented on the IOTA mainnet.
