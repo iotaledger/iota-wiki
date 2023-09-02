@@ -2,8 +2,8 @@
 
 The following Tangle Improvement Proposals (TIPs) are currently implemented in the IOTA protocol.
 
-| #   | Title                                                                    | Description                                                                      | Type      | Layer     | Status | Initial Target |
-| --- | ------------------------------------------------------------------------ | -------------------------------------------------------------------------------- | --------- | --------- | ------ | -------------- |
+| #   | Title                                               | Description                                                                      | Type      | Layer     | Status | Initial Target |
+| --- | --------------------------------------------------- | -------------------------------------------------------------------------------- | --------- | --------- | ------ | -------------- |
 | 1   | [TIP Process](/tips/tips/TIP-0001)                  | Purpose and guidelines of the contribution framework                             | Process   | -         | Active | -              |
 | 2   | [White Flag Ordering](/tips/tips/TIP-0002)          | Mitigate conflict spamming by ignoring conflicts                                 | Standards | Core      | Active | Chrysalis      |
 | 3   | [Uniform Random Tip Selection](/tips/tips/TIP-0003) | Perform fast tip-selection to increase message throughput                        | Standards | Core      | Active | Chrysalis      |
