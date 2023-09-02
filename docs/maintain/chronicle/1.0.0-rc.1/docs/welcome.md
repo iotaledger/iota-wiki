@@ -20,7 +20,7 @@ Through the INX interface, Chronicle listens to all blocks in the Tangle that ar
 
 ## Documentation
 
-The documentation for Chronicle can be found in [our wiki](/chronicle/welcome), the supported APIs are documented [here](/chronicle/reference/api).
+The documentation for Chronicle can be found in [our wiki](./welcome.md), the supported APIs are documented [here](./reference/api.md).
 
 ## Development
 

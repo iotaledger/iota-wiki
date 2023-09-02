@@ -18,7 +18,7 @@ keywords:
 
 To mint a new native token you will need the following:
 
-- An initial _unspent Output_ with enough funds to cover the [storage costs](/introduction/explanations/what_is_stardust/storage_deposit/) of the different Outputs involved. In the Testnet, you can [request funds through the Faucet](../value-transactions/06-request-funds-from-the-faucet.md).
+- An initial _unspent Output_ with enough funds to cover the [storage costs](/introduction/stardust/explanations/what_is_stardust/storage_deposit/) of the different Outputs involved. In the Testnet, you can [request funds through the Faucet](../value-transactions/06-request-funds-from-the-faucet.md).
 
 :::info Storage Deposits
 
@@ -110,7 +110,7 @@ You can observe that you need to define the total amount and the maximum supply 
 
 ## Define the Foundry Output
 
-Your next step is to define the Foundry Output (`IFoundryOutput`) that will control your new Token Scheme. You will need to set the serial number of the Foundry (`1` in this case), the formerly defined token scheme and the [unlock conditions](/introduction/explanations/what_is_stardust/unlock_conditions/). The Foundry Output can only be unlocked by the state controller of the Alias Address that controls it.
+Your next step is to define the Foundry Output (`IFoundryOutput`) that will control your new Token Scheme. You will need to set the serial number of the Foundry (`1` in this case), the formerly defined token scheme and the [unlock conditions](/introduction/stardust/explanations/what_is_stardust/unlock_conditions/). The Foundry Output can only be unlocked by the state controller of the Alias Address that controls it.
 
 As with the Alias Output, you need to deliberately set the amount to `0`, as at this point in time you don't know the amount of protocol-defined tokens you will need to cover the storage deposit for this Output.
 
@@ -154,7 +154,7 @@ That token class ID is simply the Foundry ID that will remain immutable regardle
 
 ## Define the Basic Output That Will Hold the Initial Batch of Minted Tokens
 
-As the Foundry has an initial set of minted tokens, you will need a [Basic Output](/introduction/explanations/ledger/simple_transfers/) to hold those native tokens. This new Basic Output will hold the initial amount of minted native tokens identified through their token class ID. As with other Outputs, you need to set the amount of protocol-defined tokens to `0` as you don't know yet the storage deposit cost.
+As the Foundry has an initial set of minted tokens, you will need a [Basic Output](/introduction/stardust/explanations/ledger/simple_transfers/) to hold those native tokens. This new Basic Output will hold the initial amount of minted native tokens identified through their token class ID. As with other Outputs, you need to set the amount of protocol-defined tokens to `0` as you don't know yet the storage deposit cost.
 
 ```typescript
 const nativeTokenOwnerAddress = '0x647f....';
