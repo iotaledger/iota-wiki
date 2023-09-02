@@ -30,7 +30,6 @@ module.exports = {
           items: [
             'introduction/shimmer/introduction',
             'introduction/shimmer/shimmer-token',
-            'introduction/shimmer/governance',
           ],
         },
       ],

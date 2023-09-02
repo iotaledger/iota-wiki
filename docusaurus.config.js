@@ -323,6 +323,10 @@ module.exports = async () => {
                   from: '/shimmer/wallet.rs',
                   to: '/wallet.rs/1.0.0-rc.6',
                 },
+                {
+                  from: '/shimmer/learn/governance/',
+                  to: '/learn/governance/',
+                },
               ];
 
               for (const redirect of redirects) {
