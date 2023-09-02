@@ -49,7 +49,7 @@ A new [Uniform Random Tip Selection](https://github.com/iotaledger/protocol-rfcs
 
 With Chrysalis, we wanted to offer a more standard API on both the node and client library level. Node implementations provide a completely redesigned [RESTful](https://editor.swagger.io/?url=https://raw.githubusercontent.com/rufsam/protocol-rfcs/master/text/0026-rest-api/rest-api.yaml) and [eventful](https://playground.asyncapi.io/?load=https://raw.githubusercontent.com/luca-moser/protocol-rfcs/rfc/node-event-api/text/0033-node-event-api/0033-node-event-api.yml) API implementations.
 
-Our [client libraries](/build/networks/iota-1.5#libraries) provide high-level abstractions that allow developers to build solutions that are easier to develop and cheaper to maintain.
+Our [client libraries](/build/welcome) provide high-level abstractions that allow developers to build solutions that are easier to develop and cheaper to maintain.
 
 ## Full Changelog
 

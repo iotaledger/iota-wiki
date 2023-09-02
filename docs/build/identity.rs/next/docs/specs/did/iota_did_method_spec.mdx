@@ -18,7 +18,7 @@ keywords:
 
 ## Abstract
 
-The IOTA DID Method Specification describes a method of implementing the [Decentralized Identifiers](https://www.w3.org/TR/did-core/) (DID) standard on [IOTA](https://iota.org), a Distributed Ledger Technology (DLT). It conforms to the [DID specification v1.0](https://www.w3.org/TR/did-core/) and describes how to perform Create, Read, Update and Delete (CRUD) operations for IOTA DID Documents using unspent transaction outputs ([UTXO](/IOTA-2.0-Research-Specifications/5.1UTXO)) on the IOTA and [Shimmer](https://shimmer.network/) networks, introduced with the [Stardust upgrade](https://blog.shimmer.network/stardust-upgrade-in-a-nutshell/).
+The IOTA DID Method Specification describes a method of implementing the [Decentralized Identifiers](https://www.w3.org/TR/did-core/) (DID) standard on [IOTA](https://iota.org), a Distributed Ledger Technology (DLT). It conforms to the [DID specification v1.0](https://www.w3.org/TR/did-core/) and describes how to perform Create, Read, Update and Delete (CRUD) operations for IOTA DID Documents using unspent transaction outputs ([UTXO](/introduction/reference/details#unspent-transaction-output-utxo)) on the IOTA and [Shimmer](https://shimmer.network/) networks, introduced with the [Stardust upgrade](https://blog.shimmer.network/stardust-upgrade-in-a-nutshell/).
 
 ## Data Types & Subschema Notation
 
@@ -28,7 +28,7 @@ Data types and subschemas used throughout this TIP are defined in [TIP-21](https
 
 ### UTXO Ledger
 
-The unspent transaction output ([UTXO](/IOTA-2.0-Research-Specifications/5.1UTXO)) model defines a ledger state which is comprised of unspent outputs. Outputs are created by a transaction consuming outputs of previous transactions as inputs. The Stardust version of the protocol defines several output types, the relevant ones for the IOTA DID Method are: Basic Outputs for value transactions, and Alias Outputs for storage of DID Documents.
+The unspent transaction output ([UTXO](/introduction/reference/details#unspent-transaction-output-utxo)) model defines a ledger state which is comprised of unspent outputs. Outputs are created by a transaction consuming outputs of previous transactions as inputs. The Stardust version of the protocol defines several output types, the relevant ones for the IOTA DID Method are: Basic Outputs for value transactions, and Alias Outputs for storage of DID Documents.
 
 All outputs must hold a minimum amount of tokens to be stored on the ledger. For output types that can hold arbitrary data, for instance the Alias Output, the amount of tokens held by the output must cover the byte cost of the data stored. This prevents the ledger size from growing uncontrollably while guaranteeing that the data is not pruned from the nodes, which is important for resolving DID Documents. This deposit is fully refundable and can be reclaimed when the output is destroyed.
 

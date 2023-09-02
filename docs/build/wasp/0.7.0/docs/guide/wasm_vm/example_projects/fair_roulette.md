@@ -105,7 +105,7 @@ This frontend sends On-ledger requests to place bets towards the fair roulette s
 
 ### The Smart Contract
 
-See: [Anatomy of a Smart Contract](/wasp/guide/core_concepts/smart-contract-anatomy)
+See: [Anatomy of a Smart Contract](/learn/smart-contracts/core_concepts/smart-contract-anatomy)
 
 As the smart contract is the only actor that is allowed to modify state in the context of the game, it needs to handle a few tasks such as:
 
@@ -232,13 +232,13 @@ This transaction also requires an address to send the request to, and also a var
 For Wasp, the address to send funds to is the chainId.
 :::
 
-See: [CoreTypes](/wasp/misc/coretypes) and [Invoking](/wasp/guide/solo/invoking-sc)
+See: [Invoking](/smart-contracts/guide/solo/invoking-sc)
 
 ##### CallView
 
 The [callView](https://github.com/iotaledger/wasp/blob/7b3ddc54891ccf021c7aaa32db35d88361fade16/contracts/wasm/fairroulette/frontend/src/lib/fairroulette_client/fair_roulette_service.ts#L165) function is responsible for calling smart contract view functions.
 
-See: [Calling a view](/wasp/guide/solo/view-sc)
+See: [Calling a view](/smart-contracts/guide/solo/view-sc)
 
 To give access to the smart contracts state, you can use view functions to return selected parts of the state.
 

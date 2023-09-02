@@ -1,6 +1,6 @@
 ---
 description: 'The iota.rs library is designed to simplify how you connect and interact
-with [nodes](/chrysalis-docs/node_software) in the IOTA network. '
+with [nodes](/introduction/node_software) in the IOTA network. '
 image: /img/overview/layered_overview.svg
 keywords:
 

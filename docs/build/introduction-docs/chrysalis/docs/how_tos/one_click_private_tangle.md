@@ -33,7 +33,7 @@ There are three main nodes identified:
 
 These three nodes are peered amongst each other as our architecture is based on Docker, so that each node runs within a Docker Container and all containers are attached to the same network named `private-tangle`.
 
-To facilitate adding extra nodes to your Tangle, an [autopeering](/hornet/post_installation/peering#autopeering) entry node is automatically created. Furthermore, the `Spammer` and the `node1` enable by default autopeering so that they can be peered with any extra node later added. The autopeering entry node listens on the _UDP_ port `14626`.
+To facilitate adding extra nodes to your Tangle, an [autopeering](/hornet/references/peering#autopeering) entry node is automatically created. Furthermore, the `Spammer` and the `node1` enable by default autopeering so that they can be peered with any extra node later added. The autopeering entry node listens on the _UDP_ port `14626`.
 
 In addition, to make your Tangle easier to use, a Tangle Explorer can be deployed, conveniently, similar to the one at [https://explorer.iota.org](https://explorer.iota.org). As a result, all the participants in the network are able to browse and visualize messages or IOTA Streams channels. The Tangle Explorer deployment involves two containers, one with the REST API listening at port `4000` and one with the Web Application exposed to the host at port `8082`. The Tangle Explorer also uses MQTT to watch what is happening on your Tangle. This is the rationale for having a connection between the Explorer's REST API Container and the Hornet Node through port `1881`.
 
@@ -90,7 +90,7 @@ The summary of services exposed to the outside world (through the host) is as fo
 
 The deployment architecture described above can be easily transitioned to production-ready by incorporating a reverse proxy leveraging [NGINX](https://docs.nginx.com/nginx/admin-guide/web-server/reverse-proxy/#). As a result, the amount of ports exposed to the outside world can be reduced or load balancing between the nodes of your Tangle can be achieved. IOTA intends to provide automatic, "one-click" deployment of this kind of enhanced architectures in a future version of this software.
 
-To support the deployment of an IOTA Tangle, the IOTA Community has developed a set of shell scripts and configuration templates to make it easier to deploy a (Docker based) Tangle with the architecture described above. You can also customize the [default configuration files](https://github.com/iotaledger/one-click-tangle/blob/chrysalis/hornet-private-net/config) if, for instance, you want to enable extra [Hornet plugins](/hornet/post_installation#configuration-files).
+To support the deployment of an IOTA Tangle, the IOTA Community has developed a set of shell scripts and configuration templates to make it easier to deploy a (Docker based) Tangle with the architecture described above. You can also customize the [default configuration files](https://github.com/iotaledger/one-click-tangle/blob/chrysalis/hornet-private-net/config) if, for instance, you want to enable extra [Hornet plugins](/hornet/how_tos/post_installation/#configuration-files).
 
 But now let us see how we can launch our Tangle via a "single-click". We have two options: through the [AWS Marketplace](https://aws.amazon.com/marketplace/pp/B095WQQTNG/) or through any [Docker-enabled machine](#one-click-private-tangle-on-any-docker-enabled-vm).
 
@@ -98,7 +98,7 @@ But now let us see how we can launch our Tangle via a "single-click". We have tw
 
 To materialize on AWS using the deployment architecture described above, go to the AWS Marketplace and install this [product](https://aws.amazon.com/marketplace/pp/B095WQQTNG/) and follow the [instructions](https://github.com/iotaledger/one-click-tangle/blob/chrysalis/hornet-private-net/README_AWS.md). That's it!
 
-Behind the scenes, the process will launch all the Docker containers (through docker-compose), create a key pair for the Coordinator, configure the Coordinator public key for the initial node, generate an initial IOTA Address holding all IOTAs, the identity for our Nodes, etc., meaning our [deployment architecture](#mvp-deployment-architecture-of-a-private-tangle) and all the steps described [here](/hornet/getting_started/private_tangle), but **fully automated**, with "one-click"!.
+Behind the scenes, the process will launch all the Docker containers (through docker-compose), create a key pair for the Coordinator, configure the Coordinator public key for the initial node, generate an initial IOTA Address holding all IOTAs, the identity for our Nodes, etc., meaning our [deployment architecture](#mvp-deployment-architecture-of-a-private-tangle) and all the steps described [here](https://github.com/iotaledger/hornet/tree/production/private_tangle), but **fully automated**, with "one-click"!.
 
 Below are the parameters of this "one-click" installation (further details can be found at [here](https://github.com/iotaledger/one-click-tangle/tree/chrysalis/hornet-private-net/config)):
 
@@ -150,7 +150,7 @@ To start your Tangle through the command line:
 
 You can optionally pass the amount of time (in seconds) to wait for the Coordinator bootstrap step. This step enables the Coordinator to bootstrap by emitting its first milestone.
 
-Behind the scenes, our process will create the identity for the Coordinator, the keys that will be used for signing milestones, an initial IOTA Address holding all IOTAs, the identity of our Nodes, etc meaning all the steps described [here](/hornet/getting_started/private_tangle), but fully automated.
+Behind the scenes, our process will create the identity for the Coordinator, the keys that will be used for signing milestones, an initial IOTA Address holding all IOTAs, the identity of our Nodes, etc meaning all the steps described [here](https://github.com/iotaledger/hornet/tree/production/private_tangle), but fully automated.
 
 After the process finishes, you should see the following docker containers up and running:
 
@@ -247,7 +247,7 @@ After executing the commands described above, a new Docker container (named `my-
 
 :::note
 
-In case you want to spin a node from a different machine (or base folder), you would need to manually pass those parameters, including a [multiaddr](/hornet/post_installation/peering#addressing-peer-neighbors) peer address of a node to peer with (for instance `node1`) you want to peer with, as explained [here](https://github.com/iotaledger/one-click-tangle/tree/chrysalis/hornet-private-net/extra-nodes).
+In case you want to spin a node from a different machine (or base folder), you would need to manually pass those parameters, including a [multiaddr](/hornet/references/peering) peer address of a node to peer with (for instance `node1`) you want to peer with, as explained [here](https://github.com/iotaledger/one-click-tangle/tree/chrysalis/hornet-private-net/extra-nodes).
 
 :::
 

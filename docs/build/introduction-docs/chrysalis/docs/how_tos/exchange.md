@@ -153,7 +153,7 @@ let account = await manager.createAccount({
 
 Each account is related to a specific IOTA network (mainnet/devnet) which is referenced by a node property, such as node url (in this example, the Chrysalis devnet balancer).
 
-For more information about `clientOptions`, please refer to the [Wallet NodeJs API Reference](/wallet.rs/libraries/nodejs/api_reference).
+For more information about `clientOptions`, please refer to the [Wallet NodeJs API Reference](/wallet.rs/reference/nodejs).
 
 The `Alias` can be whatever fits to the given use case and should be unique. The `Alias` is typically used to identify the given account later on. Each account is also represented by an `index` which is incremented (by 1) every time a new account is created. Any account can then be referred to via `index`, `alias`, or one of its generated `addresses`.
 
@@ -252,7 +252,7 @@ data: {
 
 `accountId` can then be used to identify the given account via `AccountManager.getAccount(accountId)`.
 
-For further reference, you can read more about events in the [API reference](/wallet.rs/libraries/nodejs/api_reference#addeventlistenerevent-cb).
+For further reference, you can read more about events in the [API reference](/wallet.rs/reference/nodejs).
 
 ### 5. Check the Account Balance
 
