@@ -15,7 +15,7 @@ keywords:
 
 # Mint a New NFT
 
-An [NFT](/introduction/explanations/ledger/nft/) is a unique token on the ledger. Its owner
+An [NFT](/learn/protocols/stardust/core-concepts/multi-asset-ledger/#non-fungible-tokens-nfts/) is a unique token on the ledger. Its owner
 controls it through the private key of
 an [address](https://wiki.iota.org/iota.rs/explanations/address_key_space/). An NFT has a unique ID assigned by the
 Ledger, bound to an Output in the Ledger. An NFT has some immutable
@@ -25,14 +25,14 @@ aspects of
 the NFT by unlocking its unspent Output in a transaction and generating a
 new Output (conserving the NFT ID). The owner can also use a transaction to transfer the NFT to another owner. As with
 other types of Outputs, NFT Outputs must also cover
-their [storage costs](/introduction/explanations/what_is_stardust/storage_deposit/) with
+their [storage costs](/learn/protocols/stardust/core-concepts/storage-deposit/) with
 protocol-defined tokens (`SMR`).
 
 To mint an NFT, you will need the following:
 
 - A unspent [Basic Output](/tips/tips/TIP-0018/#basic-output) that holds enough funds for
   the minimal storage deposit needed for the NFT Output. In
-  the [Testnet](/introduction/reference/networks/betanet/), you
+  the [Testnet](/build/networks-endpoints/#public-testnet/), you
   can [request funds from the Faucet](/iota.js/tutorials/value-transactions/request-funds-from-the-faucet/).
 
 - The key pair that corresponds to the Shimmer address that owns the former Output, as you need to unlock a certain

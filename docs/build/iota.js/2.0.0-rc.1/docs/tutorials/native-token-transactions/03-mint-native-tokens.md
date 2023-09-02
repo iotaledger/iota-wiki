@@ -22,7 +22,7 @@ To mint a new native token you will need the following:
 
 :::info Storage Deposits
 
-[Storage deposits](/learn/role-of-token/#storage-deposits) can only be covered by **protocol-defined tokens** (`SMR`).
+[Storage deposits](/learn/protocols/stardust/core-concepts/storage-deposit) can only be covered by **protocol-defined tokens** (`SMR`).
 
 :::
 
@@ -58,7 +58,7 @@ This tutorial assumes that the newly minted Alias ID holds enough funds (protoco
 
 ### Obtain the Current Alias Output
 
-Once you have your Alias ID, you will need to get its current unspent Alias Output through the [Indexer Plugin](/inx-indexer/welcome/). The Alias Output will participate in a transaction that will create a new Foundry Output and mint native tokens.
+Once you have your Alias ID, you will need to get its current unspent Alias Output through the [Indexer Plugin](/hornet/2.0.0-rc.6/inx-plugins/indexer/api_reference/). The Alias Output will participate in a transaction that will create a new Foundry Output and mint native tokens.
 
 ```typescript
 const aliasId = '0x8c81...';

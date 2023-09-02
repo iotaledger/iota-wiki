@@ -17,7 +17,7 @@ keywords:
 
 In the previous section of this tutorial, you [transferred and NFT](./04-nft-transaction.md) to a new owner. However,
 since you added
-a [storage deposit return unlock condition](/introduction/explanations/what_is_stardust/unlock_conditions/#storage-deposit-return)
+a [storage deposit return unlock condition](/learn/protocols/stardust/core-concepts/output-unlock-conditions/#storage-deposit-return)
 to the transfer, the new owner will need to create a new Output to return the deposit.
 
 This section will show you how to refund the issuer of the NFT and gain complete control over the NFT. To do so, you
@@ -25,7 +25,7 @@ will need to do the following:
 
 Issue a [new NFT transaction](./04-nft-transaction.md) that changes the unlock conditions so that the only remaining
 condition is
-the [address](/introduction/explanations/what_is_stardust/unlock_conditions/#address).
+the [address](/learn/protocols/stardust/core-concepts/output-unlock-conditions/#address).
 
 Create an additional Input with enough funds to cover the storage deposit for the new NFT Output,
 Generate an Output to refund the issuer.
@@ -70,7 +70,7 @@ const nftOwnerPrivateKey = '0xc2be...';
 ## Query For the NFT Output
 
 You will first need to retrieve the NFT Output of your NFT from the network. The easiest way to do so is through a query
-to the [indexation plugin](/inx-indexer/welcome/) by NFT ID. You need to obtain the full
+to the [indexation plugin](/hornet/2.0.0-rc.6/inx-plugins/indexer/api_reference/) by NFT ID. You need to obtain the full
 Output details as you need to use them as Input for the transaction.
 
 ```typescript
@@ -93,9 +93,9 @@ At the end of this step you have obtained **Input #1** of your transaction.
 ## Set the New Unlock Conditions
 
 You can create the new NFT Output by cloning the [one received from the node](#query-nft-output), removing
-the [storage deposit return unlock condition](/introduction/explanations/what_is_stardust/unlock_conditions/#storage-deposit-return),
+the [storage deposit return unlock condition](/learn/protocols/stardust/core-concepts/output-unlock-conditions/#storage-deposit-return),
 and only keep
-the [address unlock condition](/introduction/explanations/what_is_stardust/unlock_conditions/#address).
+the [address unlock condition](/learn/protocols/stardust/core-concepts/output-unlock-conditions/#address).
 That way, you will have full control of the NFT through your address keys.
 
 The `amount` field is set to `0`, so you can later calculate the minimum storage deposit needed for your new NFT Output.
@@ -204,7 +204,7 @@ At the end of this sub-step you know the total cost that should be covered by yo
 ### Find an Output With Enough Funds
 
 You can find the right Basic Output by querying
-the [indexation plugin](/inx-indexer/welcome/). You should check that the Output has not
+the [indexation plugin](/hornet/2.0.0-rc.6/inx-plugins/indexer/api_reference/). You should check that the Output has not
 been spent yet.
 
 ```typescript

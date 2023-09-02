@@ -93,7 +93,7 @@ The output details contain two different groups of information:
   the [Ed22519 public key hash](../../references/client/interfaces/IEd25519Address.md#pubkeyhash) of your initial
   address. That means that only the one who controls the private key corresponding to that public key hash can
   unlock this output and use the corresponding funds. The protocol defines other
-  possible [unlock conditions](/introduction/explanations/what_is_stardust/unlock_conditions)
+  possible [unlock conditions](/learn/protocols/stardust/core-concepts/output-unlock-conditions)
   that will be when you [prepare the transaction](08-transfer-funds.md#Preparing-outputs).
 
 ## Putting It All Together

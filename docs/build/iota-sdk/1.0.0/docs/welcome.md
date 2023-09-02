@@ -21,7 +21,7 @@ keywords:
 ![IOTA SDK Overview](/img/banner/client_lib_overview.png)
 
 The IOTA SDK provides a convenient and efficient way to interact with nodes in the Shimmer
-and IOTA networks running the [Stardust protocol](/develop/explanations/what-is-stardust).
+and IOTA networks running the [Stardust protocol](/learn/protocols/stardust/introduction).
 It consists of two main modules: `client` and `wallet`.
 
 The `wallet` module uses high-level functions that simplify everyday operations with a standardized interface for
@@ -51,9 +51,9 @@ programming pattern, so the Python binding uses named constructor arguments.
 Your application communicates directly with the IOTA SDK in Rust or through one of the language bindings. The IOTA SDK
 turns your requests into REST API calls and sends them to a node. The node, in turn, interacts with the rest of an
 IOTA network, which could be the
-[main operational network (mainnet)](/develop/explanations/what-is-shimmer/networks/#shimmer-mainnet)
+[main operational network (mainnet)](/build/networks-endpoints/#shimmer)
 or
-a [network for testing purposes (testnet)](/develop/explanations/what-is-shimmer/networks/#public-testnet).
+a [network for testing purposes (testnet)](/build/networks-endpoints/#public-testnet).
 
 !["An overview of the IOTA SDK layers."](/img/layered_overview.png 'An overview of the IOTA SDK layers.')
 

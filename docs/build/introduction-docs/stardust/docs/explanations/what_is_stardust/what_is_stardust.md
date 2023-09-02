@@ -54,11 +54,11 @@ ISC can be deployed as multiple Layer 2 (L2) chains, unlike many other projects 
 
 ### Advantages
 
-- [L1 is not congested with smart contracts](/smart-contracts/guide/core_concepts/smart-contracts/#scalable-smart-contracts).
+- [L1 is not congested with smart contracts](/learn/smart-contracts/core_concepts/smart-contracts/#scalable-smart-contracts/#scalable-smart-contracts).
 - Since L1 is not limited by the speed of the smart contract VM, transactions per second (TPS) increase significantly.
 - No maximal extractable value (MEV). No front-running or sandwich attacks, resulting in a “fairer” DeFi environment. A set fee and randomization of transactions are included in blocks, making MEV impossible.
 - Native randomness beacon (random number generator, or RNG). This is freely available to all dApps, removing the need for expensive, trusted third-party RNGs.
-- L1 smart contracts are complex on a [DAG](/learn/tangle/) as the order of events is less apparent than on a regular blockchain (where there is no parallel execution).
+- L1 smart contracts are complex on a [DAG](/get-started/introduction/iota/introduction/#the-tangle) as the order of events is less apparent than on a regular blockchain (where there is no parallel execution).
 - We have designed a system where L2 chains can interact using the IOTA L1. Assets can be transferred cross-chain via Layer 1 without collateralized bridges. This is a significant advantage of ISC compared to other L2 solutions and is comparable to the IBC system on Cosmos.
 - ISC is horizontally scalable. When one SC chain becomes saturated, you can easily spin up a second chain to handle the additional throughput.
 - Every L2 chain can behave as a sovereign ecosystem and be fully customized, which is very appealing to many projects. Recent examples include DyDx and Dogechain, both building sovereign chains on Cosmos.

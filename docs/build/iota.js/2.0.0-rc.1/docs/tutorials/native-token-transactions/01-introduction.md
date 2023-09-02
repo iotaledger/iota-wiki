@@ -23,14 +23,14 @@ This tutorial will show you how to user-defined native tokens, also known as **D
 
 ## Introduction
 
-Starting from [Chrysalis](https://wiki.iota.org/introduction/welcome), IOTA is
-a [UTXO-based (Unspent Transaction Output)](/introduction/stardust/reference/details#unspent-transaction-output-utxo)
+Starting from [Chrysalis](/learn/protocols/chrysalis/introduction), IOTA is
+a [UTXO-based (Unspent Transaction Output)](/learn/protocols/chrysalis/core-concepts/switch-to-UTXO)
 Ledger. Each UTXO, also known as **output**, has an associated number of tokens, protocol-defined Tokens (SMR) and, optionally, user-defined native tokens) that determines its value.
 Thus, the permanent data on the ledger is composed of a set of records (_Outputs_) that can be unlocked by the owner of
 its associated address, i.e., the one who knows the address' private key.
 
-There are different [Output types](/learn/outputs) in the [Stardust Protocol](/introduction/stardust/welcome). This tutorial will focus on
-outputs that involve user-defined [native tokens](/introduction/stardust/explanations/ledger/foundry/), a.k.a digital assets. The tutorial will also use [Alias](/introduction/stardust/explanations/ledger/alias/) and [Foundry](/learn/outputs/#foundry-output) Outputs.
+There are different [Output types](/tips/tips/TIP-0018#output-design) in the [Stardust Protocol](/introduction/stardust/welcome). This tutorial will focus on
+outputs that involve user-defined [native tokens](/introduction/stardust/explanations/ledger/foundry/), a.k.a digital assets. The tutorial will also use [Alias](/introduction/stardust/explanations/ledger/alias/) and [Foundry](/tips/tips/TIP-0018#output-design/#foundry-output) Outputs.
 
 :::info Foundries
 A _Foundry Output_ is an Output that controls the supply of user-defined, custom tokens, also known as _native tokens_.
@@ -44,4 +44,4 @@ If you want to mint Non-Fungible Tokens (NFTs), you can check out this [how-to g
 
 ## Storage Costs and Deposits
 
-You need to take into account that both Alias and Foundry outputs need to be stored by [Hornet Nodes](/hornet/welcome), so there is a [storage cost](/iotajs/tutorials/value-transactions/introduction/#storage-costs-and-deposits) as with any UTXO.
+You need to take into account that both Alias and Foundry outputs need to be stored by [Hornet Nodes](/hornet/welcome), so there is a [storage cost](/learn/protocols/stardust/core-concepts/storage-deposit) as with any UTXO.

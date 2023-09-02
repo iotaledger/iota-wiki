@@ -57,7 +57,7 @@ This node won't be "officially" recognized by the committee, but will still be a
 ### Changing the Set of Validators
 
 You can do this in different ways, depending on whom the
-[governor address](/introduction/explanations/ledger/alias) of the alias output of the
+[governor address](/tips/tips/TIP-0018#alias-output) of the alias output of the
 chain is.
 
 - If the chain governor address is the chain committee, you can perform the rotation by calling
