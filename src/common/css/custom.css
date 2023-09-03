@@ -90,6 +90,7 @@
   background-color: var(--ifm-background-color) !important;
 }
 
-.react-select__single-value , .react-select__multi-value__label {
+.react-select__single-value,
+.react-select__multi-value__label {
   color: var(--ifm-font-color-base) !important;
 }
