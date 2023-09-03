@@ -579,6 +579,7 @@ function DelegatorForm({
             handleValidatorChange(e.value);
           }}
           className='col col--4'
+          classNamePrefix='react-select'
           options={validatorOptions}
         />
       </div>
@@ -710,6 +711,7 @@ function OutputForm({
         <div className='col col--4'>Total TPS granted with</div>
         <Select
           className='col col--4'
+          classNamePrefix='react-select'
           onChange={(e) => {
             handleCongestionChange(e.value);
           }}
