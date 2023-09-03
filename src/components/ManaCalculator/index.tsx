@@ -18,6 +18,7 @@ import {
   ManaCalculatorProps,
   ValidatorParameters,
 } from './types';
+import { Details } from '@docusaurus/theme-common/Details';
 
 function ValidatorCard({
   validator,
@@ -401,19 +402,23 @@ export default function ManaCalculator() {
           ></input>
         </div>
         <div className='row'>
-          {state.validators.map((validator, i) => (
-            <div className='col col--4' key={i}>
-              <ValidatorCard
-                validator={validator}
-                handleDelete={handleDelete}
-                handleStakeChange={handleStakeChange}
-                handleDelegatedStakeChange={handleDelegatedStakeChange}
-                handleFCChange={handleFCChange}
-                handlePFChange={handlePFChange}
-                id={i}
-              />
+          <Details summary='Advanced Settings - Validators'>
+            <div className='row'>
+              {state.validators.map((validator, i) => (
+                <div className='col col--4' key={i}>
+                  <ValidatorCard
+                    validator={validator}
+                    handleDelete={handleDelete}
+                    handleStakeChange={handleStakeChange}
+                    handleDelegatedStakeChange={handleDelegatedStakeChange}
+                    handleFCChange={handleFCChange}
+                    handlePFChange={handlePFChange}
+                    id={i}
+                  />
+                </div>
+              ))}
             </div>
-          ))}
+          </Details>
         </div>
         <div className='row'>
           <div className='col col--2'>You are a:</div>
@@ -482,21 +487,23 @@ export default function ManaCalculator() {
             onChange={(e) => handleFinalEpochChange(Number(e.target.value))}
           ></input>
         </div>
-        <div className='row'>
-          {state.validators.map((validator, i) => (
-            <div className='col col--4' key={i}>
-              <ValidatorCard
-                validator={validator}
-                handleDelete={handleDelete}
-                handleStakeChange={handleStakeChange}
-                handleDelegatedStakeChange={handleDelegatedStakeChange}
-                handleFCChange={handleFCChange}
-                handlePFChange={handlePFChange}
-                id={i}
-              />
-            </div>
-          ))}
-        </div>
+        <Details summary='Advanced Settings - Validators'>
+          <div className='row'>
+            {state.validators.map((validator, i) => (
+              <div className='col col--4' key={i}>
+                <ValidatorCard
+                  validator={validator}
+                  handleDelete={handleDelete}
+                  handleStakeChange={handleStakeChange}
+                  handleDelegatedStakeChange={handleDelegatedStakeChange}
+                  handleFCChange={handleFCChange}
+                  handlePFChange={handlePFChange}
+                  id={i}
+                />
+              </div>
+            ))}
+          </div>
+        </Details>
         <div className='row'>
           <div className='col col--2'>You are a:</div>
         </div>
