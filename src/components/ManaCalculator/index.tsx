@@ -417,6 +417,20 @@ export default function ManaCalculator() {
                   />
                 </div>
               ))}
+              <button
+                className='button button--danger col--4'
+                onClick={() => {
+                  state.validators.push({
+                    lockedStake: 100,
+                    delegatedStake: 0,
+                    performanceFactor: 1.0,
+                    fixedCost: 0.0,
+                  });
+                  setState({ ...state });
+                }}
+              >
+                +
+              </button>
             </div>
           </Details>
         </div>
@@ -502,6 +516,20 @@ export default function ManaCalculator() {
                 />
               </div>
             ))}
+            <button
+              className='button button--danger col--4'
+              onClick={() => {
+                state.validators.push({
+                  lockedStake: 100,
+                  delegatedStake: 0,
+                  performanceFactor: 1.0,
+                  fixedCost: 0.0,
+                });
+                setState({ ...state });
+              }}
+            >
+              +
+            </button>
           </div>
         </Details>
         <div className='row'>
