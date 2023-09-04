@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Select from 'react-select';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import './styles.css';
 import {
   calculateManaRewards,
   calculatePassiveRewards,
@@ -38,60 +39,50 @@ function ValidatorCard({
   id: number;
 }) {
   return (
-    <div className='card'>
-      <div className='card__header'>
-        <div className='row'>
-          <div className='card__title col'>Validator {id + 1}</div>
-          <button
-            className='button button--danger col'
-            onClick={() => handleDelete(id)}
-          >
-            X
-          </button>
-        </div>
+    <div className='mana_card card col col--3'>
+      <div className='row'>
+        <div className='card__title col'>Validator {id + 1}</div>
+        <button
+          className='button button--danger col--12'
+          onClick={() => handleDelete(id)}
+        >
+          X
+        </button>
       </div>
-      <div className='card__body'>
-        <div className='row'>
-          <label className='col'>
-            Stake:
-            <input
-              type='number'
-              value={validator.lockedStake}
-              onChange={(e) => handleStakeChange(Number(e.target.value), id)}
-            ></input>
-          </label>
-        </div>
-        <div className='row'>
-          <label className='col'>
-            Delegated:
-            <input
-              value={validator.delegatedStake}
-              onChange={(e) =>
-                handleDelegatedStakeChange(Number(e.target.value), id)
-              }
-            ></input>
-          </label>
-        </div>
+      <div className='row'>
+        <label className='col col--8'>Stake:</label>
+        <input
+          className='col  col--4 rounded_inputs'
+          type='number'
+          value={validator.lockedStake}
+          onChange={(e) => handleStakeChange(Number(e.target.value), id)}
+        ></input>
       </div>
-      <div className='card__footer'>
-        <div className='row'>
-          <label className='col'>
-            PF:
-            <input
-              value={validator.performanceFactor}
-              onChange={(e) => handlePFChange(Number(e.target.value), id)}
-            ></input>
-          </label>
-        </div>
-        <div className='row'>
-          <label className='col'>
-            FC:
-            <input
-              value={validator.fixedCost}
-              onChange={(e) => handleFCChange(Number(e.target.value), id)}
-            ></input>
-          </label>
-        </div>
+      <div className='row'>
+        <label className='col col--8'>Delegated:</label>
+        <input
+          className='col  col--4 rounded_inputs'
+          value={validator.delegatedStake}
+          onChange={(e) =>
+            handleDelegatedStakeChange(Number(e.target.value), id)
+          }
+        ></input>
+      </div>
+      <div className='row'>
+        <label className='col col--8'>PF:</label>
+        <input
+          className='col  col--4 rounded_inputs'
+          value={validator.performanceFactor}
+          onChange={(e) => handlePFChange(Number(e.target.value), id)}
+        ></input>
+      </div>
+      <div className='row'>
+        <label className='col col--8'>FC:</label>
+        <input
+          className='col  col--4 rounded_inputs'
+          value={validator.fixedCost}
+          onChange={(e) => handleFCChange(Number(e.target.value), id)}
+        ></input>
       </div>
     </div>
   );
@@ -393,13 +384,15 @@ export default function ManaCalculator() {
   return (
     <Tabs>
       <TabItem value='tps' label='TPS'>
-        <div className='row'>
-          <label className='col col--4'>Epoch:</label>
-          <input
-            className='col col--4'
-            value={state.epoch}
-            onChange={(e) => handleEpochChange(Number(e.target.value))}
-          ></input>
+        <div className='table'>
+          <div className='row'>
+            <label className='col col--6'>Epoch:</label>
+            <input
+              className='col col--6 align-right'
+              value={state.epoch}
+              onChange={(e) => handleEpochChange(Number(e.target.value))}
+            ></input>
+          </div>
         </div>
         <div className='row'>
           <Details summary='Advanced Settings - Validators'>
@@ -417,6 +410,8 @@ export default function ManaCalculator() {
                   />
                 </div>
               ))}
+            </div>
+            <div className='row'>
               <button
                 className='button button--danger col--4'
                 onClick={() => {
@@ -487,35 +482,39 @@ export default function ManaCalculator() {
         </Tabs>
       </TabItem>
       <TabItem value='mana' label='Mana accumulation'>
-        <div className='row'>
-          <label className='col col--3'>Initial epoch:</label>
-          <input
-            className='col col--3'
-            value={state.initialEpoch}
-            onChange={(e) => handleInitialEpochChange(Number(e.target.value))}
-          ></input>
-          <label className='col col--3'>Final epoch:</label>
-          <input
-            className='col col--3'
-            value={state.finalEpoch}
-            onChange={(e) => handleFinalEpochChange(Number(e.target.value))}
-          ></input>
+        <div className='table'>
+          <div className='row'>
+            <label className='col col--3 '>Initial epoch:</label>
+            <input
+              className='col col--3 align-right'
+              value={state.initialEpoch}
+              onChange={(e) => handleInitialEpochChange(Number(e.target.value))}
+            ></input>
+            <label className='col col--3'>Final epoch:</label>
+            <input
+              className='col col--3 align-right'
+              value={state.finalEpoch}
+              onChange={(e) => handleFinalEpochChange(Number(e.target.value))}
+            ></input>
+          </div>
         </div>
         <Details summary='Advanced Settings - Validators'>
           <div className='row'>
             {state.validators.map((validator, i) => (
-              <div className='col col--4' key={i}>
-                <ValidatorCard
-                  validator={validator}
-                  handleDelete={handleDelete}
-                  handleStakeChange={handleStakeChange}
-                  handleDelegatedStakeChange={handleDelegatedStakeChange}
-                  handleFCChange={handleFCChange}
-                  handlePFChange={handlePFChange}
-                  id={i}
-                />
-              </div>
+              <ValidatorCard
+                validator={validator}
+                handleDelete={handleDelete}
+                handleStakeChange={handleStakeChange}
+                handleDelegatedStakeChange={handleDelegatedStakeChange}
+                handleFCChange={handleFCChange}
+                handlePFChange={handlePFChange}
+                id={i}
+                key={i}
+              />
             ))}
+          </div>
+
+          <div className='row'>
             <button
               className='button button--danger col--4'
               onClick={() => {
@@ -605,23 +604,26 @@ function DelegatorForm({
   });
 
   return (
-    <div>
-      <div className='row'>
-        <div className='col col--4'>Validator you delegate to:</div>
-        <Select
-          defaultValue={{ value: 0, label: `Validator 1` }}
-          onChange={(e) => {
-            handleValidatorChange(e.value);
-          }}
-          className='col col--4'
-          classNamePrefix='react-select'
-          options={validatorOptions}
-        />
+    <div className='table'>
+      <div className='row '>
+        <div className='col col--6'>Validator you delegate to:</div>
+
+        <div className='col col--6'>
+          <Select
+            defaultValue={{ value: 0, label: `Validator 1` }}
+            onChange={(e) => {
+              handleValidatorChange(e.value);
+            }}
+            classNamePrefix='react-select'
+            options={validatorOptions}
+          />
+        </div>
       </div>
-      <div className='row'>
-        <label className='col col--4'>Amount you delegate:</label>
+
+      <div className='row '>
+        <div className='col col--6'>Amount you delegate:</div>
         <input
-          className='col col--4'
+          className='align-right col col--6'
           value={stake}
           onChange={(e) => handleOwnStakeChange(Number(e.target.value))}
         ></input>
@@ -658,57 +660,61 @@ function ValidatorForm({
   handleAttractedDelegatedStakeFromOtherPoolsChange: ChangeEvent;
 }) {
   return (
-    <div>
-      <div className='row'>
-        <label className='col col--4'>Stake:</label>
+    <div className='table'>
+      <div className='row '>
+        <div className='col col--6'>Stake:</div>
+
         <input
-          className='col col--4'
+          className='col col--6 align-right'
           value={stake}
           onChange={(e) => handleOwnStakeChange(Number(e.target.value))}
         ></input>
       </div>
-      <div className='row'>
-        <label className='col col--4'>Performance factor:</label>
+      <div className='row '>
+        <div className='col col--6'>Performance factor:</div>
         <input
-          className='col col--4'
+          className='col col--6 align-right'
           value={performanceFactor}
           onChange={(e) => handleOwnPFChange(Number(e.target.value))}
         ></input>
       </div>
-      <div className='row'>
-        <label className='col col--4'>Fixed costs:</label>
+
+      <div className='row '>
+        <div className='col col--6'>Fixed costs:</div>
+
         <input
-          className='col col--4'
+          className='col col--6 align-right'
           value={fixedCost}
           onChange={(e) => handleOwnFCChange(Number(e.target.value))}
         ></input>
       </div>
-      <div className='row'>
-        <label className='col col--4'>Share of your stake locked:</label>
+      <div className='row '>
+        <div className='col col--6'>Share of your stake locked:</div>
         <input
-          className='col col--4'
+          className='col col--6 align-right '
           value={shareOfYourStakeLocked}
           onChange={(e) =>
             handleShareOfYourStakeLockedChange(Number(e.target.value))
           }
         ></input>
       </div>
-      <div className='row'>
-        <label className='col col--4'>Attracted new delegated stake:</label>
+      <div className='row '>
+        <div className='col col--6'>Attracted new delegated stake:</div>
         <input
-          className='col col--4'
+          className='col col--6 align-right'
           value={attractedNewDelegatedStake}
           onChange={(e) =>
             handleAttractedNewDelegatedStakeChange(Number(e.target.value))
           }
         ></input>
       </div>
-      <div className='row'>
-        <label className='col col--4'>
+      <div className='row '>
+        <div className='col col--6'>
           Attracted delegated stake from other pools:
-        </label>
+        </div>
+
         <input
-          className='col col--4'
+          className='col col--6 align-right'
           value={attractedDelegatedStakeFromOtherPools}
           onChange={(e) =>
             handleAttractedDelegatedStakeFromOtherPoolsChange(
@@ -733,31 +739,36 @@ function OutputForm({
   handleCongestionChange: ChangeCongestionEvent;
 }) {
   return (
-    <div>
-      <div className='row'>
-        <div className='col col--4'>Mana generation per epoch:</div>
-        <div className='col col--4'>{manaGeneratedPerEpoch}</div>
+    <div className='table'>
+      <div className='row '>
+        <div className='col col--6'> Mana generation per epoch</div>
+        <div className='col col--6 align-right'>{manaGeneratedPerEpoch}</div>
       </div>
-      <div className='row'>
-        <div className='col col--4'>Additional rewards per epoch:</div>
-        <div className='col col--4'>{passiveRewards}</div>
+      <div className='row '>
+        <div className='col col--6'>Additional rewards per epoch</div>
+        <div className='col col--6 align-right'>{passiveRewards}</div>
       </div>
-      <div className='row'>
+
+      <div className='row '>
         <div className='col col--4'>Total TPS granted with</div>
-        <Select
-          className='col col--4'
-          classNamePrefix='react-select'
-          onChange={(e) => {
-            handleCongestionChange(e.value);
-          }}
-          defaultValue={{ value: CongestionType.LOW, label: 'Low Congestion' }}
-          options={[
-            { value: CongestionType.LOW, label: 'Low Congestion' },
-            { value: CongestionType.MEDIUM, label: 'Stable Price' },
-            { value: CongestionType.HIGH, label: 'Extreme Congestion' },
-          ]}
-        />
-        <div className='col col--4'>{totalTPS}</div>
+        <div className='col col--4'>
+          <Select
+            classNamePrefix='react-select'
+            onChange={(e) => {
+              handleCongestionChange(e.value);
+            }}
+            defaultValue={{
+              value: CongestionType.LOW,
+              label: 'Low Congestion',
+            }}
+            options={[
+              { value: CongestionType.LOW, label: 'Low Congestion' },
+              { value: CongestionType.MEDIUM, label: 'Stable Price' },
+              { value: CongestionType.HIGH, label: 'Extreme Congestion' },
+            ]}
+          />
+        </div>
+        <div className='col col--4 align-right'>{totalTPS}</div>
       </div>
     </div>
   );
