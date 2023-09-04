@@ -138,7 +138,10 @@ module.exports = async () => {
       id: 'iotajs',
       path: path.resolve(__dirname, 'docs/build/iota.js/2.0.0-rc.1/docs'),
       routeBasePath: 'iota.js',
-      bannerPath: path.resolve(__dirname, 'banners/pre-sdk-libs-deprecated.mdx'),
+      bannerPath: path.resolve(
+        __dirname,
+        'banners/pre-sdk-libs-deprecated.mdx',
+      ),
       sidebarPath: path.resolve(
         __dirname,
         'docs/build/iota.js/2.0.0-rc.1/sidebars.js',
