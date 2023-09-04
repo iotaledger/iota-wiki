@@ -1,0 +1,36 @@
+.mana_card {
+  padding: 1em;
+  margin: 0 0.3em 0.3em 0;
+  text-align: left;
+  align-items: stretch;
+}
+.mana_card > .row {
+  padding: 0.3em;
+}
+
+.row > .button {
+  margin: 0 var(--ifm-spacing-horizontal);
+}
+
+.table .row {
+  background: var(--ifm-table-stripe-background);
+  border: var(--ifm-table-border-width) solid var(--ifm-table-border-color);
+}
+
+.table .row .col {
+  padding: 6px;
+}
+
+.table .row .col--4:nth-child(1),
+.table .row .col--4:nth-child(2),
+.table .row .col--6:nth-child(1) {
+  border-right: var(--ifm-table-border-width) solid
+    var(--ifm-table-border-color);
+}
+
+.table .row:nth-child(even) {
+  background: var(--ifm-table-cell-color);
+}
+.table .align-right {
+  text-align: right;
+}
