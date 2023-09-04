@@ -13,10 +13,6 @@ keywords:
 
 # Welcome
 
-:::caution
-This is documentation for Streams, which is no longer actively maintained.
-:::
-
 This is the documentation for the official IOTA Streams software. You can read more about core principles behind IOTA Streams in the following blog [post](https://blog.iota.org/iota-streams-alpha-7e91ee326ac0/).
 
 Streams is an organizational tool for structuring and navigating secure data through the Tangle. Streams organizes data by ordering it in a uniform and interoperable structure. Needless to say, it is also based on our official _one source code of truth_ [IOTA Rust library](https://github.com/iotaledger/iota.rs).

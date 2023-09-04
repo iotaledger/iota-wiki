@@ -13,6 +13,12 @@ keywords:
 
 ![Wasp Node](/img/Banner/banner_wasp.png)
 
+:::caution
+
+Smart Contracts are currently only compatible with the stardust update and therefore only compatible with the Shimmer main- and testnetwork.
+
+:::
+
 IOTA Smart Contracts (ISC) is a platform that brings scalable and flexible smart contracts into the IOTA ecosystem. It
 allows anyone to spin up a smart contract blockchain and anchor it to the IOTA Tangle, a design that offers multiple
 advantages.
