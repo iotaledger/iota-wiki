@@ -1,0 +1,124 @@
+---
+title: Destroy Alias Output
+description: 'How to programmatically destroy an alias output'
+image: /img/logo/iota_mark_light.png
+keywords:
+  - how to
+  - destroy
+  - alias
+  - output
+  - nodejs
+  - python
+  - rust
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+You can destroy an alias output by ID. If the alias still owns any outputs when you try to destroy it, you will get an error.
+
+## Example Code
+
+<Tabs groupId="language" queryString>
+<TabItem value="rust" label="Rust">
+
+The following example will:
+
+1. Instantiate a [`Wallet`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/core/struct.Wallet.html), get Alice's `Account` which was
+   [created in the first guide](../accounts-and-addresses/create-account.mdx).
+2. Destroy an alias output transaction by calling the [`Account.burn()`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/account/struct.Account.html#method.burn) function.
+
+<div className={'hide-code-block-extras'}>
+
+```rust reference
+https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/alias/destroy.rs#L44
+```
+
+</div>
+
+3. Retry transaction until included [`Transaction`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/account/struct.Account.html#method.retry_transaction_until_included) that was sent.
+
+<div className={'hide-code-block-extras'}>
+
+```rust reference
+https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/alias/destroy.rs#L47
+```
+
+</div>
+
+</TabItem>
+<TabItem value="typescript-node" label="Typescript (Node.js)">
+
+The following example will:
+
+1. Instantiate a [`Wallet`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/core/struct.Wallet.html), get Alice's `Account` which was
+   [created in the first guide](../accounts-and-addresses/create-account.mdx) and [sync it](../accounts-and-addresses/check-balance.mdx).
+2. Destroy an alias output transaction by calling the [`Account.preparedestroyalias()`](../../references/nodejs/classes/Account.md#preparedestroyalias) function.
+
+<div className={'hide-code-block-extras'}>
+
+```typescript reference
+    https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/alias/destroy.ts#L56
+```
+
+</div>
+
+3. Retry transaction until included [`Transaction`](../../references/nodejs/classes/Account/#retrytransactionuntilincluded) that was sent.
+
+<div className={'hide-code-block-extras'}>
+
+```typescript reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/alias/destroy.ts#L63
+```
+
+</div>
+
+</TabItem>
+<TabItem value="python" label="Python">
+
+1. Instantiate a [`Wallet`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/core/struct.Wallet.html), get Alice's `Account` which was
+   [created in the first guide](../accounts-and-addresses/create-account.mdx) and [sync it](../accounts-and-addresses/check-balance.mdx).
+2. Destroy an alias output transaction by calling the [`Account.prepare_destroy_alias()`](../../references/python/iota_sdk/wallet/account.md#prepare_destroy_alias) function.
+
+<div className={'hide-code-block-extras'}>
+
+```python reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how_tos/alias/destroy.py#L25
+```
+
+</div>
+
+</TabItem>
+</Tabs>
+
+### Full Example Code
+
+<Tabs groupId="language" queryString>
+<TabItem value="rust" label="Rust">
+
+```rust reference
+https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/alias_wallet/destroy.rs
+```
+
+</TabItem>
+<TabItem value="typescript-node" label="Typescript (Node.js)">
+
+```typescript reference
+https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/alias/destroy.rs
+```
+
+</TabItem>
+<TabItem value="python" label="Python">
+
+```python reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how_tos/alias/destroy.py
+```
+
+</TabItem>
+</Tabs>
+
+### Expected Output
+
+```plaintext
+...
+```
