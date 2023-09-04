@@ -1,0 +1,16 @@
+.mana_card {
+  padding: 1em;
+  margin: 0 0.3em 0.3em 0;
+  text-align: left;
+  align-items: stretch;
+}
+.mana_card > .row {
+  padding: 0.3em;
+}
+
+.mana_card input,
+.rounded_inputs {
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
