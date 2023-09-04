@@ -594,28 +594,32 @@ function DelegatorForm({
   });
 
   return (
-    <div className='forms'>
-      <div className='row'>
-        <div className='col col--4'>Validator you delegate to:</div>
-        <Select
-          defaultValue={{ value: 0, label: `Validator 1` }}
-          onChange={(e) => {
-            handleValidatorChange(e.value);
-          }}
-          className='col col--4 col--offset-4'
-          classNamePrefix='react-select'
-          options={validatorOptions}
-        />
-      </div>
-      <div className='row'>
-        <label className='col col--4'>Amount you delegate:</label>
-        <input
-          className='col col--4  col--offset-4 rounded_inputs'
-          value={stake}
-          onChange={(e) => handleOwnStakeChange(Number(e.target.value))}
-        ></input>
-      </div>
-    </div>
+    <table>
+      <tbody>
+        <tr>
+          <td>Validator you delegate to:</td>
+          <td>
+            <Select
+              defaultValue={{ value: 0, label: `Validator 1` }}
+              onChange={(e) => {
+                handleValidatorChange(e.value);
+              }}
+              options={validatorOptions}
+            />
+          </td>
+        </tr>
+
+        <tr>
+          <td>Amount you delegate:</td>
+          <td>
+            <input
+              value={stake}
+              onChange={(e) => handleOwnStakeChange(Number(e.target.value))}
+            ></input>
+          </td>
+        </tr>
+      </tbody>
+    </table>
   );
 }
 
@@ -647,66 +651,78 @@ function ValidatorForm({
   handleAttractedDelegatedStakeFromOtherPoolsChange: ChangeEvent;
 }) {
   return (
-    <div>
-      <div className='row'>
-        <label className='col col--8'>Stake:</label>
-        <input
-          className='col col--4 rounded_inputs'
-          value={stake}
-          onChange={(e) => handleOwnStakeChange(Number(e.target.value))}
-        ></input>
-      </div>
-      <div className='row'>
-        <label className='col col--8'>Performance factor:</label>
-        <input
-          className='col col--4 rounded_inputs'
-          value={performanceFactor}
-          onChange={(e) => handleOwnPFChange(Number(e.target.value))}
-        ></input>
-      </div>
-      <div className='row'>
-        <label className='col col--8'>Fixed costs:</label>
-        <input
-          className='col col--4 rounded_inputs'
-          value={fixedCost}
-          onChange={(e) => handleOwnFCChange(Number(e.target.value))}
-        ></input>
-      </div>
-      <div className='row'>
-        <label className='col col--8'>Share of your stake locked:</label>
-        <input
-          className='col col--4 rounded_inputs'
-          value={shareOfYourStakeLocked}
-          onChange={(e) =>
-            handleShareOfYourStakeLockedChange(Number(e.target.value))
-          }
-        ></input>
-      </div>
-      <div className='row'>
-        <label className='col col--8'>Attracted new delegated stake:</label>
-        <input
-          className='col col--4 rounded_inputs'
-          value={attractedNewDelegatedStake}
-          onChange={(e) =>
-            handleAttractedNewDelegatedStakeChange(Number(e.target.value))
-          }
-        ></input>
-      </div>
-      <div className='row'>
-        <label className='col col--8'>
-          Attracted delegated stake from other pools:
-        </label>
-        <input
-          className='col col--4 rounded_inputs'
-          value={attractedDelegatedStakeFromOtherPools}
-          onChange={(e) =>
-            handleAttractedDelegatedStakeFromOtherPoolsChange(
-              Number(e.target.value),
-            )
-          }
-        ></input>
-      </div>
-    </div>
+    <table>
+      <tbody>
+        <tr>
+          <td>Stake:</td>
+          <td>
+            <input
+              className='col col--4 rounded_inputs'
+              value={stake}
+              onChange={(e) => handleOwnStakeChange(Number(e.target.value))}
+            ></input>
+          </td>
+        </tr>
+        <tr>
+          <td>Performance factor:</td>
+          <td>
+            <input
+              className='col col--4 rounded_inputs'
+              value={performanceFactor}
+              onChange={(e) => handleOwnPFChange(Number(e.target.value))}
+            ></input>
+          </td>
+        </tr>
+        <tr>
+          <td>Fixed costs:</td>
+          <td>
+            <input
+              className='col col--4 rounded_inputs'
+              value={fixedCost}
+              onChange={(e) => handleOwnFCChange(Number(e.target.value))}
+            ></input>
+          </td>
+        </tr>
+        <tr>
+          <td>Share of your stake locked:</td>
+          <td>
+            <input
+              className='col col--4 rounded_inputs'
+              value={shareOfYourStakeLocked}
+              onChange={(e) =>
+                handleShareOfYourStakeLockedChange(Number(e.target.value))
+              }
+            ></input>
+          </td>
+        </tr>
+        <tr>
+          <td>Attracted new delegated stake:</td>
+          <td>
+            <input
+              className='col col--4 rounded_inputs'
+              value={attractedNewDelegatedStake}
+              onChange={(e) =>
+                handleAttractedNewDelegatedStakeChange(Number(e.target.value))
+              }
+            ></input>
+          </td>
+        </tr>
+        <tr>
+          <td>Attracted delegated stake from other pools:</td>
+          <td>
+            <input
+              className='col col--4 rounded_inputs'
+              value={attractedDelegatedStakeFromOtherPools}
+              onChange={(e) =>
+                handleAttractedDelegatedStakeFromOtherPoolsChange(
+                  Number(e.target.value),
+                )
+              }
+            ></input>
+          </td>
+        </tr>
+      </tbody>
+    </table>
   );
 }
 
@@ -722,32 +738,37 @@ function OutputForm({
   handleCongestionChange: ChangeCongestionEvent;
 }) {
   return (
-    <div className='rounded_inputs'>
-      <div className='row'>
-        <div className='col col--4'>Mana generation per epoch:</div>
-        <div className='col col--4  col--offset-4'>{manaGeneratedPerEpoch}</div>
-      </div>
-      <div className='row'>
-        <div className='col col--4'>Additional rewards per epoch:</div>
-        <div className='col col--4  col--offset-4'>{passiveRewards}</div>
-      </div>
-      <div className='row'>
-        <div className='col col--4'>Total TPS granted with</div>
-        <Select
-          className='col col--4'
-          classNamePrefix='react-select'
-          onChange={(e) => {
-            handleCongestionChange(e.value);
-          }}
-          defaultValue={{ value: CongestionType.LOW, label: 'Low Congestion' }}
-          options={[
-            { value: CongestionType.LOW, label: 'Low Congestion' },
-            { value: CongestionType.MEDIUM, label: 'Stable Price' },
-            { value: CongestionType.HIGH, label: 'Extreme Congestion' },
-          ]}
-        />
-        <div className='col col--4 '>{totalTPS}</div>
-      </div>
-    </div>
+    <table>
+      <tbody>
+        <tr>
+          <td colSpan={2}>Mana generation per epoch</td>
+          <td>{manaGeneratedPerEpoch}</td>
+        </tr>
+        <tr>
+          <td colSpan={2}>Additional rewards per epoch</td>
+          <td>{passiveRewards}</td>
+        </tr>
+        <tr>
+          <td>Total TPS granted with</td>
+          <td>
+            <Select
+              onChange={(e) => {
+                handleCongestionChange(e.value);
+              }}
+              defaultValue={{
+                value: CongestionType.LOW,
+                label: 'Low Congestion',
+              }}
+              options={[
+                { value: CongestionType.LOW, label: 'Low Congestion' },
+                { value: CongestionType.MEDIUM, label: 'Stable Price' },
+                { value: CongestionType.HIGH, label: 'Extreme Congestion' },
+              ]}
+            />
+          </td>
+          <td>{totalTPS}</td>
+        </tr>
+      </tbody>
+    </table>
   );
 }
