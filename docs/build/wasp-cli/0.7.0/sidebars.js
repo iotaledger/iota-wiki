@@ -17,15 +17,15 @@ module.exports = {
   tutorialSidebar: [
     {
       type: 'doc',
-      id: 'running-a-node',
+      id: 'wasp-cli',
     },
     {
       type: 'doc',
-      id: 'configuration',
+      id: 'setting-up-a-chain',
     },
     {
       type: 'doc',
-      id: 'metrics',
+      id: 'chain-management',
     },
   ],
 };

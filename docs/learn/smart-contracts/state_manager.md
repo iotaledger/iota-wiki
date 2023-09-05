@@ -9,7 +9,7 @@ keywords:
   - WAL
 ---
 
-# State manager
+# State Manager
 
 State manager aims at keeping the state of the node up to date by retrieving missing data and ensuring that it is
 consistently stored in the DB. It services requests by other Wasp components (consensus, mempool), which mainly
