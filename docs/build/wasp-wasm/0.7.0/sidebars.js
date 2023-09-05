@@ -21,68 +21,6 @@ module.exports = {
       id: 'overview',
     },
     {
-      type: 'category',
-      label: 'EVM',
-      items: [
-        {
-          type: 'doc',
-          label: 'Introduction',
-          id: 'guide/evm/introduction',
-        },
-        {
-          type: 'doc',
-          label: 'Quickstart',
-          id: 'guide/evm/quickstart',
-        },
-        {
-          type: 'doc',
-          label: 'Compatibility',
-          id: 'guide/evm/compatibility',
-        },
-        {
-          type: 'doc',
-          label: 'How to Use',
-          id: 'guide/evm/using',
-        },
-        {
-          type: 'doc',
-          label: 'The Magic Contract',
-          id: 'guide/evm/magic',
-        },
-        {
-          type: 'doc',
-          label: 'Magic Contract Usage',
-          id: 'guide/evm/magic-uses',
-        },
-        {
-          type: 'doc',
-          label: 'Tooling',
-          id: 'guide/evm/tooling',
-        },
-        {
-          type: 'category',
-          label: 'Examples',
-          items: [
-            {
-              type: 'doc',
-              label: 'Example Contract',
-              id: 'guide/evm/examples/introduction',
-            },
-            {
-              type: 'doc',
-              label: 'ERC20',
-              id: 'guide/evm/examples/ERC20',
-            },
-            {
-              type: 'doc',
-              label: 'ERC721',
-              id: 'guide/evm/examples/ERC721',
-            },
-          ],
-        },
-      ],
-    },
-    {
       type: 'doc',
       id: 'testnet',
     },
@@ -93,27 +31,27 @@ module.exports = {
         {
           type: 'doc',
           label: 'Wasm VM for ISC',
-          id: 'guide/wasm_vm/intro',
+          id: 'wasm_vm/intro',
         },
         {
           type: 'doc',
           label: 'Smart Contract Concepts',
-          id: 'guide/wasm_vm/concepts',
+          id: 'wasm_vm/concepts',
         },
         {
           type: 'doc',
           label: 'Call Context',
-          id: 'guide/wasm_vm/context',
+          id: 'wasm_vm/context',
         },
         {
           type: 'doc',
           label: 'Smart Contract Schema Tool',
-          id: 'guide/wasm_vm/schema',
+          id: 'wasm_vm/schema',
         },
         {
           type: 'doc',
           label: 'Using the Schema Tool',
-          id: 'guide/wasm_vm/usage',
+          id: 'wasm_vm/usage',
         },
         {
           type: 'category',
@@ -122,144 +60,221 @@ module.exports = {
             {
               type: 'doc',
               label: 'What is Solo?',
-              id: 'guide/solo/what-is-solo',
+              id: 'solo/what-is-solo',
             },
             {
               type: 'doc',
               label: 'First Example',
-              id: 'guide/solo/first-example',
+              id: 'solo/first-example',
             },
             {
               type: 'doc',
               label: 'The L1 Ledger',
-              id: 'guide/solo/the-l1-ledger',
+              id: 'solo/the-l1-ledger',
             },
             {
               type: 'doc',
               label: 'Deploying a Smart Contract',
-              id: 'guide/solo/deploying-sc',
+              id: 'solo/deploying-sc',
             },
             {
               type: 'doc',
               label: 'Invoking a Smart Contract',
-              id: 'guide/solo/invoking-sc',
+              id: 'solo/invoking-sc',
             },
             {
               type: 'doc',
               label: 'Calling a View',
-              id: 'guide/solo/view-sc',
+              id: 'solo/view-sc',
             },
             {
               type: 'doc',
               label: 'Error Handling',
-              id: 'guide/solo/error-handling',
+              id: 'solo/error-handling',
             },
             {
               type: 'doc',
               label: 'Accounts',
-              id: 'guide/solo/the-l2-ledger',
+              id: 'solo/the-l2-ledger',
             },
           ],
         },
         {
           type: 'doc',
           label: 'Data Access Proxies',
-          id: 'guide/wasm_vm/proxies',
+          id: 'wasm_vm/proxies',
         },
         {
           type: 'doc',
           label: 'WasmLib Data Types',
-          id: 'guide/wasm_vm/types',
+          id: 'wasm_vm/types',
         },
         {
           type: 'doc',
           label: 'Structured Data Types',
-          id: 'guide/wasm_vm/structs',
+          id: 'wasm_vm/structs',
         },
         {
           type: 'doc',
           label: 'Type Definitions',
-          id: 'guide/wasm_vm/typedefs',
+          id: 'wasm_vm/typedefs',
         },
         {
           type: 'doc',
           label: 'Smart Contract State',
-          id: 'guide/wasm_vm/state',
+          id: 'wasm_vm/state',
         },
         {
           type: 'doc',
           label: 'Triggering Events',
-          id: 'guide/wasm_vm/events',
+          id: 'wasm_vm/events',
         },
         {
           type: 'doc',
           label: 'Function Definitions',
-          id: 'guide/wasm_vm/funcs',
+          id: 'wasm_vm/funcs',
         },
         {
           type: 'doc',
           label: 'Limiting Access',
-          id: 'guide/wasm_vm/access',
+          id: 'wasm_vm/access',
         },
         {
           type: 'doc',
           label: 'Function Parameters',
-          id: 'guide/wasm_vm/params',
+          id: 'wasm_vm/params',
         },
         {
           type: 'doc',
           label: 'Function Results',
-          id: 'guide/wasm_vm/results',
+          id: 'wasm_vm/results',
         },
         {
           type: 'doc',
           label: 'Thunk Functions',
-          id: 'guide/wasm_vm/thunks',
+          id: 'wasm_vm/thunks',
         },
         {
           type: 'doc',
           label: 'View-Only Functions',
-          id: 'guide/wasm_vm/views',
+          id: 'wasm_vm/views',
         },
         {
           type: 'doc',
           label: 'Smart Contract Initialization',
-          id: 'guide/wasm_vm/init',
+          id: 'wasm_vm/init',
         },
         {
           type: 'doc',
           label: 'Token Transfers',
-          id: 'guide/wasm_vm/transfers',
+          id: 'wasm_vm/transfers',
         },
         {
           type: 'doc',
           label: 'Function Descriptors',
-          id: 'guide/wasm_vm/funcdesc',
+          id: 'wasm_vm/funcdesc',
         },
         {
           type: 'doc',
           label: 'Calling Functions',
-          id: 'guide/wasm_vm/call',
+          id: 'wasm_vm/call',
         },
         {
           type: 'doc',
           label: 'Posting Asynchronous Requests',
-          id: 'guide/wasm_vm/post',
+          id: 'wasm_vm/post',
         },
         {
           type: 'doc',
           label: 'Testing Smart Contracts',
-          id: 'guide/wasm_vm/test',
+          id: 'wasm_vm/test',
         },
         {
           type: 'doc',
           label: 'Example Tests',
-          id: 'guide/wasm_vm/examples',
+          id: 'wasm_vm/examples',
         },
         {
           type: 'doc',
           label: 'Colored Tokens and Time Locks',
-          id: 'guide/wasm_vm/timelock',
+          id: 'wasm_vm/timelock',
+        },
+        {
+          type: 'category',
+          label: 'Core Contracts',
+          items: [
+            {
+              type: 'doc',
+              label: 'Overview',
+              id: 'core_contracts/overview',
+            },
+            {
+              type: 'doc',
+              label: 'root',
+              id: 'core_contracts/root',
+            },
+            {
+              type: 'doc',
+              label: 'accounts',
+              id: 'core_contracts/accounts',
+            },
+            {
+              type: 'doc',
+              label: 'blob',
+              id: 'core_contracts/blob',
+            },
+            {
+              type: 'doc',
+              label: 'blocklog',
+              id: 'core_contracts/blocklog',
+            },
+            {
+              type: 'doc',
+              label: 'governance',
+              id: 'core_contracts/governance',
+            },
+            {
+              type: 'doc',
+              label: 'errors',
+              id: 'core_contracts/errors',
+            },
+            {
+              type: 'doc',
+              label: 'evm',
+              id: 'core_contracts/evm',
+            },
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Accounts',
+          items: [
+            {
+              type: 'doc',
+              label: 'How Accounts Work',
+              id: 'accounts/how-accounts-work',
+            },
+            {
+              type: 'doc',
+              label: 'How To Deposit To a Chain',
+              id: 'accounts/how-to-deposit-to-a-chain',
+            },
+            {
+              type: 'doc',
+              label: 'How To Withdraw From a Chain',
+              id: 'accounts/how-to-withdraw-from-a-chain',
+            },
+            {
+              type: 'doc',
+              label: 'View Account Balances',
+              id: 'accounts/view-account-balances',
+            },
+            {
+              type: 'doc',
+              label: 'The Common Account',
+              id: 'accounts/the-common-account',
+            },
+          ],
         },
         {
           type: 'category',
@@ -268,16 +283,11 @@ module.exports = {
             {
               type: 'doc',
               label: 'Fair Roulette',
-              id: 'guide/wasm_vm/example_projects/fair_roulette',
+              id: 'wasm_vm/example_projects/fair_roulette',
             },
           ],
         },
       ],
-    },
-    {
-      type: 'doc',
-      label: 'Contribute',
-      id: 'contribute',
     },
   ],
 };
