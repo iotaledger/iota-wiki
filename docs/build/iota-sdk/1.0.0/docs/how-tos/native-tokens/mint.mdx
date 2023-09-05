@@ -1,0 +1,147 @@
+---
+title: Mint Native Tokens
+sidebar_label: Increase Circulating Supply
+description: 'How to mint native tokens'
+image: /img/logo/iota_mark_light.png
+keywords:
+  - how to
+  - increase native token circulating supply
+  - mint
+  - foundry
+  - nodejs
+  - python
+  - rust
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+After you have [created](create.mdx) a
+[native token](/introduction/stardust/explanations/what_is_stardust/tokenization#native-tokens),
+you may want to increase the circulating native token supply by minting more tokens.
+
+## Example Code
+
+<Tabs groupId="language" queryString>
+<TabItem value="rust" label="Rust">
+
+The following example will:
+
+1. Instantiate a [`Wallet`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/core/struct.Wallet.html), get Alice's `Account` which was
+   [created in the first guide](../accounts-and-addresses/create-account.mdx) and [sync it](../accounts-and-addresses/check-balance.mdx).
+2. Search the account's balance for a foundry and the first native token Id.
+
+<div className={'hide-code-block-extras'}>
+
+```rust reference
+https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/native_tokens/mint.rs#L39-L42
+```
+
+</div>
+
+3. Mint `MINT_AMOUNT` native tokens by calling the [`Account.mint_native_token()`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/account/struct.Account.html#method.mint_native_token)
+   function.
+
+<div className={'hide-code-block-extras'}>
+
+```rust reference
+https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/native_tokens/mint.rs#L62
+```
+
+</div>
+
+</TabItem>
+<TabItem value="typescript-node" label="Typescript (Node.js)">
+
+The following example will:
+
+1. Instantiate a [`Wallet`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/core/struct.Wallet.html), get Alice's `Account` which was
+   [created in the first guide](../accounts-and-addresses/create-account.mdx) and [sync it](../accounts-and-addresses/check-balance.mdx).
+2. Search the account's balance for a foundry and the first native token Id.
+
+<div className={'hide-code-block-extras'}>
+
+```typescript reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/native_tokens/mint.ts#L32-L36
+```
+
+</div>
+
+3. Prepare to mint `MINT_AMOUNT` native tokens transaction by calling the [`Account.prepareMintNativeToken()`](../../references/nodejs/classes/Account.md#preparemintnativetoken)
+   function and send the prepared transaction using the [`Account.send()`](../../references/nodejs/classes/Account.md#send)
+   function.
+
+<div className={'hide-code-block-extras'}>
+
+```typescript reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/native_tokens/mint.ts#L45-L47
+```
+
+</div>
+
+</TabItem>
+<TabItem value="python" label="Python">
+
+The following example will:
+
+1. Instantiate a [`Wallet`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/core/struct.Wallet.html), get Alice's `Account` which was
+   [created in the first guide](../accounts-and-addresses/create-account.mdx) and [sync it](../accounts-and-addresses/check-balance.mdx).
+2. Search the account's balance for a foundry and the first native token Id.
+
+<div className={'hide-code-block-extras'}>
+
+```python reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how_tos/native_tokens/mint.py#L17-L20
+```
+
+</div>
+
+3. Prepare to mint 10 native tokens transaction by calling the [`Account.prepare_mint_native_token()`](../../references/python/iota_sdk/wallet/account.md#prepare_mint_native_token)
+   function and send the prepared transaction using the [`Account.send()`](../../references/python/iota_sdk/wallet/account.md#send)
+   function.
+
+<div className={'hide-code-block-extras'}>
+
+```python reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how_tos/native_tokens/mint.py#L31
+```
+
+</div>
+
+</TabItem>
+</Tabs>
+
+### Full Example Code
+
+<Tabs groupId="language" queryString>
+<TabItem value="rust" label="Rust">
+
+```rust reference
+https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/native_tokens/mint.rs
+```
+
+</TabItem>
+<TabItem value="typescript-node" label="Typescript (Node.js)">
+
+```typescript reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/native_tokens/mint.ts
+```
+
+</TabItem>
+<TabItem value="python" label="Python">
+
+```python reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how_tos/native_tokens/mint.py
+```
+
+</TabItem>
+</Tabs>
+
+### Expected Output
+
+```
+Balance before minting: 90
+Transaction sent: 0x6dbec7c73ef511c3945eda6265d3de29a4f572a3bd95e39221cff18135e18ca6
+Block included: https://explorer.shimmer.network/testnet/block/0x7b677c0562d8b2a7fdc1fd6182bb6364af517d41ec38a9dab9b29a1c7422f574
+Balance after minting: 100
+```

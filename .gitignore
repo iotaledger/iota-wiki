@@ -7,10 +7,12 @@ node_modules
 # Generated files
 .docusaurus
 .cache-loader
+/tmp
 
 # External
 /external/*
 !/external/.keep
+.idea/
 
 # Yarn
 .pnp.*

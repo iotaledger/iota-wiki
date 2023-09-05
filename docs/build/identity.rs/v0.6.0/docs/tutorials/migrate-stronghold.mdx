@@ -1,0 +1,181 @@
+---
+title: Migrate Stronghold
+sidebar_label: Migrate Stronghold
+description: Provides instructions on how to migrate Stronghold Snapshot files from v2 to v3
+image: /img/Identity_icon.png
+keywords:
+  - tutorials
+---
+
+With the Rust 0.6.3 and Wasm 0.6.1 version of IOTA Identity, Stronghold was updated to [2.0](https://github.com/iotaledger/stronghold.rs/releases/tag/iota-stronghold-v2.0.0). The new Stronghold release, besides many security enhancements, introduces an updated Snapshot format and requires old Snapshots to be migrated to the new format.
+
+:::info
+
+Stronghold Snapshots v2 must be migrated to v3 before they can be used with Identity Rust 0.6.3 and Wasm 0.6.1.
+
+:::
+
+To migrate Stronghold Snapshot files from the v2 to the v3 format the following instructions using IOTA SDK for Rust or Nodejs can be utilized.
+
+:::danger
+
+After verifying that your new Stronghold Snapshot works as intended, make sure to securely delete the old Stronghold Snapshot and **all** of your backups, and replace them with backups of the migrated Stronghold Snapshot, if desired.
+
+:::
+
+## Rust
+
+To migrate a v2 Stronghold Snapshot from Identity 0.6.2 or earlier in Rust to a v3 Stronghold Snapshot that can be used with Identity 0.6.3 Rust or later, follow these steps:
+
+- Create a new crate with `cargo new --bin stronghold-migration && cd stronghold-migration`.
+- Run `cargo add iota-sdk --features stronghold`.
+- Run `cargo add anyhow`.
+- Copy the code from [rust migration tool](#rust-migration-tool) into `main.rs`.
+- The program takes 4 arguments, 2 of them required.
+  - Required: The path to the current stronghold snapshot.
+  - Required: The password to the current stronghold snapshot.
+  - Optional: The path where the migrated snapshot shall be written. If not given, the old snapshot will be overwritten.
+  - Optional: The password of the migrated snapshot. If not given, the current password will be used.
+- Run `cargo run --release -- $CURRENT_PATH $CURRENT_PASSWORD $NEW_PATH $NEW_PASSWORD`.
+
+### Rust Migration Tool
+
+```rust
+use std::{io::stdin, path::PathBuf, process::exit};
+
+use iota_sdk::client::{stronghold::StrongholdAdapter, Password};
+
+fn main() -> anyhow::Result<()> {
+    let mut args = std::env::args();
+    // Skip file name.
+    args.next().expect("expected file name to be set");
+
+    let current_path: PathBuf = args
+        .next()
+        .expect("expected path to the current stronghold as the first argument")
+        .try_into()?;
+
+    let current_password: Password = args
+        .next()
+        .expect("expected password of the current stronghold as the second argument")
+        .try_into()?;
+
+    let new_path: Option<PathBuf> = args.next().map(TryInto::try_into).transpose()?;
+    let new_password: Option<Password> = args.next().map(TryInto::try_into).transpose()?;
+
+    if new_path.is_none() {
+        println!("WARNING: The current stronghold snapshot will be overwritten, since no new path was given. Enter `yes` to continue");
+        let mut answer = String::new();
+        stdin().read_line(&mut answer).unwrap();
+
+        if answer != "yes" {
+            println!("Operation aborted");
+            exit(0);
+        }
+    }
+
+    if new_password.is_none() {
+        println!("NOTE: The password of the new stronghold will be the same as the current one.");
+    }
+
+    StrongholdAdapter::migrate_snapshot_v2_to_v3(
+        current_path,
+        current_password,
+        "identity.rs",
+        100,
+        new_path,
+        new_password,
+    )?;
+
+    println!("Migration successful.");
+
+    Ok(())
+}
+```
+
+## Wasm
+
+To migrate a v2 Stronghold Snapshot from Identity 0.6.0 or earlier in Wasm to a v3 Stronghold Snapshot that can be used with Identity Wasm 0.6.1, follows these steps. Note that we're using the iota-sdk nodejs version for this process.
+
+- Create a new directory `mkdir stronghold-migration && cd stronghold-migration`.
+- Run `npm init` and accept the defaults.
+- Add these dependencies in `package.json`:
+  - `"@iota/sdk": "^1.0.3"`
+  - `"readline-sync": "^1.4.10"`
+- Copy the code from [Wasm migration tool](#wasm-migration-tool) into a new file called `index.js`.
+- The program takes 4 arguments, 2 of them required.
+  - Required: The path to the current stronghold snapshot.
+  - Required: The password to the current stronghold snapshot.
+  - Optional: The path where the migrated snapshot shall be written. If not given, the old snapshot will be overwritten.
+  - Optional: The password of the migrated snapshot. If not given, the current password will be used.
+- Run `node index.js $CURRENT_PATH $CURRENT_PASSWORD $NEW_PATH $NEW_PASSWORD`.
+
+### Wasm Migration Tool
+
+```javascript
+const { migrateStrongholdSnapshotV2ToV3 } = require('@iota/sdk');
+const readline = require('readline-sync');
+
+async function migrate() {
+  const args = process.argv.slice(2);
+  let currentPath = args.at(0);
+  let currentPassword = args.at(1);
+  let newPath = args.at(2);
+  let newPassword = args.at(3);
+
+  if (!currentPath) {
+    console.log(
+      'expected path to the current stronghold as the first argument',
+    );
+    process.exit(0);
+  }
+
+  if (!currentPassword) {
+    console.log(
+      'expected password of the current stronghold as the second argument',
+    );
+    process.exit(0);
+  }
+
+  currentPath = String(currentPath);
+  currentPassword = String(currentPassword);
+
+  if (!newPath) {
+    const answer = readline.question(
+      'WARNING: The current stronghold snapshot will be overwritten, since no new path was given. Enter `yes` to continue\n',
+    );
+
+    if (answer !== 'yes') {
+      console.log('Operation aborted');
+      process.exit(0);
+    }
+
+    newPath = currentPath;
+  } else {
+    newPath = String(newPath);
+  }
+
+  if (!newPassword) {
+    console.log(
+      'NOTE: The password of the new stronghold will be the same as the current one.',
+    );
+
+    newPassword = currentPassword;
+  } else {
+    newPassword = String(newPassword);
+  }
+
+  migrateStrongholdSnapshotV2ToV3(
+    currentPath,
+    currentPassword,
+    'identity.rs',
+    100,
+    newPath,
+    newPassword,
+  );
+
+  console.log('Migration successful.');
+}
+
+migrate();
+```

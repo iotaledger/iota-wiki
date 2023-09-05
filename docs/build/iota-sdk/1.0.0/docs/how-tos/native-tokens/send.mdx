@@ -1,0 +1,176 @@
+---
+title: Send Native Tokens
+sidebar_label: Send
+description: 'How to send native tokens'
+image: /img/logo/iota_mark_light.png
+keywords:
+  - how to
+  - send native token
+  - send
+  - native token
+  - nodejs
+  - python
+  - rust
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+After you have [created](create.mdx) a
+[native token](/introduction/stardust/explanations/what_is_stardust/tokenization#native-tokens),
+you can easily send it by calling the `Account.send_native_tokens(params, options)` function.
+
+As with any output, you can set [output unlock conditions](/introduction/stardust/explanations/what_is_stardust/unlock_conditions).
+Keep in mind that if you set unlock conditions, whoever you send the native tokens to may need to
+claim them.
+
+## Example Code
+
+<Tabs groupId="language" queryString>
+<TabItem value="rust" label="Rust">
+
+1. Instantiate a [`Wallet`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/core/struct.Wallet.html), get Alice's `Account` which was
+   [created in the first guide](../accounts-and-addresses/create-account.mdx) and [sync it](../accounts-and-addresses/check-balance.mdx).
+2. Search the account's balance for a native token with a balance of at least `SEND_NATIVE_TOKEN_AMOUNT`.
+
+<div className={'hide-code-block-extras'}>
+
+```rust reference
+https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/native_tokens/send.rs#L41-L45
+```
+
+</div>
+
+3. Prepare the outputs for the transaction by creating a new [`SendNativeTokensParams`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/struct.SendNativeTokensParams.html).
+
+<div className={'hide-code-block-extras'}>
+
+```rust reference
+https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/native_tokens/send.rs#L62-L65
+```
+
+</div>
+
+4. Send the native tokens by calling the [`account.send_native_tokens()`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/account/struct.Account.html#method.send_native_tokens)
+   function.
+
+<div className={'hide-code-block-extras'}>
+
+```rust reference
+https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/native_tokens/send.rs#L67
+```
+
+</div>
+
+</TabItem>
+<TabItem value="typescript-node" label="Typescript (Node.js)">
+
+1. Instantiate a [`Wallet`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/core/struct.Wallet.html), get Alice's `Account` which was
+   [created in the first guide](../accounts-and-addresses/create-account.mdx) and [sync it](../accounts-and-addresses/check-balance.mdx).
+2. Search the account's balance for a native token with a balance of at least `SEND_NATIVE_TOKEN_AMOUNT`.
+
+<div className={'hide-code-block-extras'}>
+
+```typescript reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/native_tokens/send.ts#L33-L35
+```
+
+</div>
+
+3. Prepare the outputs for the transaction by creating a new [`SendNativeTokensParams`](../../references/nodejs/interfaces/SendNativeTokensParams.md).
+
+<div className={'hide-code-block-extras'}>
+
+```typescript reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/native_tokens/send.ts#L38-L43
+```
+
+</div>
+
+4. Prepare the transaction that will send the tokens using the [`Account.prepareSendNativeTokens()`](../../references/nodejs/classes/Account.md#preparesendnativetokens)
+   function and send the prepared transaction using the [`Account.send()`](../../references/nodejs/classes/Account.md#send)
+   function.
+
+<div className={'hide-code-block-extras'}>
+
+```typescript reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/native_tokens/send.ts#L55-L57
+```
+
+</div>
+
+</TabItem>
+<TabItem value="python" label="Python">
+
+1. Instantiate a [`Wallet`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/core/struct.Wallet.html), get Alice's `Account` which was
+   [created in the first guide](../accounts-and-addresses/create-account.mdx) and [sync it](../accounts-and-addresses/check-balance.mdx).
+
+2. Search the account's balance for a native token with a balance of at least 10.
+
+<div className={'hide-code-block-extras'}>
+
+```python reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how_tos/native_tokens/send.py#L16-L17
+```
+
+</div>
+
+3. Define the outputs for the transaction that will send the tokens by creating the `SendNativeTokensParams`.
+
+<div className={'hide-code-block-extras'}>
+
+```python reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how_tos/native_tokens/send.py#L25-L31
+```
+
+</div>
+
+4. Prepare the transaction that will send the tokens using the [`Account.prepare_send_native_tokens()`](../../references/python/iota_sdk/wallet/account.md#prepare_send_native_tokens)
+   function and send the prepared transaction using the [`Account.send()`](../../references/python/iota_sdk/wallet/account.md#send)
+   function.
+
+<div className={'hide-code-block-extras'}>
+
+```python reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how_tos/native_tokens/send.py#L33
+```
+
+</div>
+
+</TabItem>
+</Tabs>
+
+### Full Example Code
+
+<Tabs groupId="language" queryString>
+<TabItem value="rust" label="Rust">
+
+```rust reference
+https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/native_tokens/send.rs
+```
+
+</TabItem>
+<TabItem value="typescript-node" label="Typescript (Node.js)">
+
+```typescript reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/native_tokens/send.ts
+```
+
+</TabItem>
+<TabItem value="python" label="Python">
+
+```python reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how_tos/native_tokens/send.py
+```
+
+</TabItem>
+</Tabs>
+
+### Expected Output
+
+```plaintext
+Balance before sending: 50
+Transaction sent: 0x9a1ea93962b5d4ba3a27053f4727dcc95b29ee35dc85c43d9d6be4635ab10463
+Block included: https://explorer.shimmer.network/testnet/block/0xb22cba455a3176ef62352f907b0fc5e5e49b4797563826141f8057cfa960a640
+Balance after sending: 40
+```

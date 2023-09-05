@@ -1,0 +1,194 @@
+---
+title: Advanced Transaction
+description: 'How to send an advanced transaction'
+image: /img/logo/iota_mark_light.png
+keywords:
+  - how to
+  - advanced transaction
+  - outputs
+  - nodejs
+  - python
+  - rust
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import TipFaucet from '../../_admonitions/_tip-faucet.md';
+
+If you need more advanced features or unlock conditions in your transaction this guide will show you how to send custom outputs.
+You can use the related How-To guides to learn more about crating custom outputs with specific [unlock conditions](../outputs/unlock-conditions.mdx)
+and [features](../outputs/features.mdx).
+
+<TipFaucet />
+
+## Example Code
+
+<Tabs groupId="language" queryString>
+<TabItem value="rust" label="Rust">
+
+The following example will:
+
+1. Instantiate a [`Wallet`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/core/struct.Wallet.html), get Alice's `Account` which was
+   [created in the first guide](../accounts-and-addresses/create-account.mdx) and [sync it](../accounts-and-addresses/check-balance.mdx).
+2. Create a [`BasicOutput`](https://docs.rs/iota-sdk/latest/iota_sdk/types/block/output/basic/struct.BasicOutput.html)
+   that is [time-locked](/learn/protocols/stardust/core-concepts/output-unlock-conditions#timelock) for one
+   hour by calling the [`BasicOutputBuilder()`](https://docs.rs/iota-sdk/latest/iota_sdk/types/block/output/basic/struct.BasicOutputBuilder.html)
+   function and passing the [`AddressUnlockCondition`](https://docs.rs/iota-sdk/latest/iota_sdk/types/block/output/unlock_condition/struct.AddressUnlockCondition.html) and
+   the [`TimelockUnlockCondition`](https://docs.rs/iota-sdk/latest/iota_sdk/types/block/output/unlock_condition/struct.TimelockUnlockCondition.html) in as
+   [`unlockConditions`](https://docs.rs/iota-sdk/latest/iota_sdk/types/block/output/unlock_condition/struct.UnlockConditions.html)
+   to the `BasicOutputBuilder()` by chaining calls to the
+   [`BasicOutputBuilder.add_unlock_condition()`](https://docs.rs/iota-sdk/latest/iota_sdk/types/block/output/basic/struct.BasicOutputBuilder.html#method.add_unlock_condition)
+
+<div className={'hide-code-block-extras'}>
+
+```rust reference
+https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/advanced_transactions/advanced_transaction.rs#L47-L52
+```
+
+</div>
+
+3. Send the `BasicOutput` created in the previous step by calling the
+   ['Account.send_outputs()'](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/account/struct.Account.html#method.send_outputs) function.
+
+<div className={'hide-code-block-extras'}>
+
+```rust reference
+https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/advanced_transactions/advanced_transaction.rs#L54
+```
+
+</div>
+
+4. Await for the `Transaction` to get confirmed by calling the ['Account.retryTransactionUntilIncluded'](../../references/nodejs/classes/Account.md#retrytransactionuntilincluded)
+   function.
+
+<div className={'hide-code-block-extras'}>
+
+```rust reference
+https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/advanced_transactions/advanced_transaction.rs#L58-L60
+```
+
+</div>
+
+</TabItem>
+<TabItem value="typescript-node" label="Typescript (Node.js)">
+
+The following example will:
+
+1. Instantiate a [`Wallet`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/core/struct.Wallet.html), get Alice's `Account` which was
+   [created in the first guide](../accounts-and-addresses/create-account.mdx) and [sync it](../accounts-and-addresses/check-balance.mdx).
+2. Create a [`BasicOutput`](../../references/nodejs/classes/BasicOutput.md) that is
+   [time-locked](/learn/protocols/stardust/core-concepts/output-unlock-conditions#timelock) for one
+   hour by calling the [`Client.buildBasicOutput()`](../../references/nodejs/classes/Client.md#buildbasicoutput)
+   function and passing the [`AddressUnlockCondition`](../../references/nodejs/classes/AddressUnlockCondition.md) and
+   the [`TimelockUnlockCondition`](../../references/nodejs/classes/TimelockUnlockCondition.md) in as
+   [`unlockConditions`](../../references/nodejs/classes/UnlockCondition.md) to the `Client`.
+
+<div className={'hide-code-block-extras'}>
+
+```typescript reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/advanced_transactions/advanced_transaction.ts#L41-L52
+```
+
+</div>
+
+3. Send the [`Output`](../../references/nodejs/classes/Output.md) created in the previous step by calling the
+   ['Account.sendOutputs()'](../../references/nodejs/classes/Account.md#sendoutputs) function.
+
+<div className={'hide-code-block-extras'}>
+
+```typescript reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/advanced_transactions/advanced_transaction.ts#L54
+```
+
+</div>
+
+4. Await for the [`Transaction`](../../references/nodejs/classes/Transaction.md) to get confirmed by calling the
+   ['Account.retryTransactionUntilIncluded'](../../references/nodejs/classes/Account.md#retrytransactionuntilincluded)
+   function.
+
+<div className={'hide-code-block-extras'}>
+
+```typescript reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/advanced_transactions/advanced_transaction.ts#L57-L59
+```
+
+</div>
+
+</TabItem>
+<TabItem value="python" label="Python">
+
+1. Instantiate a [`Wallet`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/core/struct.Wallet.html), get Alice's `Account` which was
+   [created in the first guide](../accounts-and-addresses/create-account.mdx) and [sync it](../accounts-and-addresses/check-balance.mdx).
+2. Create a `BasicOutput` that is
+   [time-locked](/learn/protocols/stardust/core-concepts/output-unlock-conditions#timelock) for one
+   hour by calling the [`Client.build_basic_output()`](../../references/python/iota_sdk/client/client.md#build_basic_output)
+   function and passing the [`AddressUnlockCondition`](../../references/python/iota_sdk/types/unlock_condition.md#addressunlockcondition-objects) and
+   the [`TimelockUnlockCondition`](../../references/python/iota_sdk/types/unlock_condition.md#timelockunlockcondition-objects) in as
+   [`UnlockConditions`](../../references/python/iota_sdk/types/unlock_condition.md) to the `Client`.
+
+<div className={'hide-code-block-extras'}>
+
+```python reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how_tos/advanced_transactions/advanced_transaction.py#L29-L37
+```
+
+</div>
+
+3. Send the [`Output`](../../references/python/iota_sdk/types/output.md) created in the previous step by calling the
+   ['Account.sendOutputs()'](../../references/python/iota_sdk/wallet/account.md#send_outputs) function.
+
+<div className={'hide-code-block-extras'}>
+
+```python reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how_tos/advanced_transactions/advanced_transaction.py#L39
+```
+
+</div>
+
+4. Await for the [`Transaction`](../../references/python/iota_sdk/types/transaction.md) to get confirmed by calling
+   the ['Account.retry_transaction_until_included'](../../references/python/iota_sdk/wallet/account.md#retry_transaction_until_included)
+   function.
+
+<div className={'hide-code-block-extras'}>
+
+```python reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how_tos/advanced_transactions/advanced_transaction.py#L42
+```
+
+</div>
+
+</TabItem>
+</Tabs>
+
+### Full Example Code
+
+<Tabs groupId="language" queryString>
+<TabItem value="rust" label="Rust">
+
+```rust reference
+https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/advanced_transactions/advanced_transaction.rs
+```
+
+</TabItem>
+<TabItem value="typescript-node" label="Typescript (Node.js)">
+
+```typescript reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/advanced_transactions/advanced_transaction.ts
+```
+
+</TabItem>
+<TabItem value="python" label="Python">
+
+```python reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how_tos/advanced_transactions/advanced_transaction.py
+```
+
+</TabItem>
+</Tabs>
+
+### Expected Output
+
+```plaintext
+Transaction sent: 0x1f9bf3dd9e6c8cae9b23e3f2d4af4039518894b1dc4b605e41aea94fe93c995d
+Block sent: https://explorer.shimmer.network/testnet/block/0x14fdeb191112e222e60cd18eecf803797013587b1e7c2f38f5075ba87b3a69b3
+```

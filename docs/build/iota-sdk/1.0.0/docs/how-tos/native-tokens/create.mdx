@@ -1,0 +1,187 @@
+---
+title: Create Native Tokens
+sidebar_label: Create
+description: 'How to create native tokens'
+image: /img/logo/iota_mark_light.png
+keywords:
+  - how to
+  - create a native token
+  - nodejs
+  - python
+  - java
+  - rust
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import TipFaucet from '../../_admonitions/_tip-faucet.md';
+
+The stardust update allows you to create your own [native tokens](/introduction/stardust/explanations/what_is_stardust/tokenization#native-tokens)
+Native tokens are minted by a so-called Foundry. The Foundry allows you to specify a max supply once and change the circulating supply.
+
+You can also specify some custom metadata in the foundry output or follow a standard like [IRC30](/tips/tips/TIP-0030).
+To create a Foundry you need an Alias Output which owns it. This Alias Output only needs to be generated once and can own multiple foundries.
+
+<TipFaucet />
+
+## Example Code
+
+<Tabs groupId="language" queryString>
+<TabItem value="rust" label="Rust">
+
+1. Instantiate a [`Wallet`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/core/struct.Wallet.html), get Alice's `Account` which was
+   [created in the first guide](../accounts-and-addresses/create-account.mdx) and [sync it](../accounts-and-addresses/check-balance.mdx).
+2. Check the account's balance for an [`Alias Output`](/tips/tips/TIP-0018#alias-output)
+   it can use to create the [native tokens](/tips/tips/TIP-0018#native-tokens-in-outputs).
+   If the account doesn't have any, it will create one.
+
+<div className={'hide-code-block-extras'}>
+
+```rust reference
+https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/native_tokens/create.rs#L43-L60
+```
+
+</div>
+
+3. Define the [`CreateNativeTokenParams`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/struct.CreateNativeTokenParams.html).
+
+<div className={'hide-code-block-extras'}>
+
+```rust reference
+https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/native_tokens/create.rs#L64-L69
+```
+
+</div>
+
+4. Create the native token using the [`Account.create_native_token()`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/account/struct.Account.html#method.create_native_token)
+   function.
+
+<div className={'hide-code-block-extras'}>
+
+```rust reference
+https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/native_tokens/create.rs#L71
+```
+
+</div>
+
+</TabItem>
+<TabItem value="typescript-node" label="Typescript (Node.js)">
+
+1. Instantiate a [`Wallet`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/core/struct.Wallet.html), get Alice's `Account` which was
+   [created in the first guide](../accounts-and-addresses/create-account.mdx) and [sync it](../accounts-and-addresses/check-balance.mdx).
+2. Check the account's balance for an [`Alias Output`](/tips/tips/TIP-0018#alias-output)
+   it can use to create the [native tokens](/tips/tips/TIP-0018#native-tokens-in-outputs).
+   If the account doesn't have any, it will create one.
+
+<div className={'hide-code-block-extras'}>
+
+```typescript reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/native_tokens/create.ts#L32-L50
+```
+
+</div>
+
+3. Define the [`CreateNativeTokenParams`](../../references/nodejs/interfaces/CreateNativeTokenParams.md).
+
+<div className={'hide-code-block-extras'}>
+
+```typescript reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/native_tokens/create.ts#L55-L59
+```
+
+</div>
+
+4. Prepare the transaction that will create the native token using the
+   [`Account.prepareCreateNativeToken()`](../../references/nodejs/classes/Account.md#preparecreatenativetoken)
+   function and send the prepared transaction using the [`Account.send()`](../../references/nodejs/classes/Account.md#send)
+   function.
+
+<div className={'hide-code-block-extras'}>
+
+```typescript reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/native_tokens/create.ts#L61-L62
+```
+
+</div>
+
+</TabItem>
+<TabItem value="python" label="Python">
+
+1. Instantiate a [`Wallet`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/core/struct.Wallet.html), get Alice's `Account` which was
+   [created in the first guide](../accounts-and-addresses/create-account.mdx) and [sync it](../accounts-and-addresses/check-balance.mdx).
+2. Check the account's balance for an [`Alias Output`](/tips/tips/TIP-0018#alias-output)
+   it can use to create the [native tokens](/tips/tips/TIP-0018#native-tokens-in-outputs).
+   If the account doesn't have any, it will create one.
+
+<div className={'hide-code-block-extras'}>
+
+```python reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how_tos/native_tokens/create.py#L24-L32
+```
+
+</div>
+
+3. Define the `CreateNativeTokenParams`.
+
+<div className={'hide-code-block-extras'}>
+
+```python reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how_tos/native_tokens/create.py#L39-L43
+```
+
+</div>
+
+4. Prepare the transaction that will create the native token using the
+   [`Account.prepare_create_native_token()`](../../references/python/iota_sdk/wallet/account.md#prepare_create_native_token)
+   function and send the prepared transaction using the [`Account.send()`](../../references/python/iota_sdk/wallet/account.md#send)
+   function.
+
+<div className={'hide-code-block-extras'}>
+
+```python reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how_tos/native_tokens/create.py#L45-L46
+```
+
+</div>
+
+</TabItem>
+</Tabs>
+
+### Full Example Code
+
+<Tabs groupId="language" queryString>
+<TabItem value="rust" label="Rust">
+
+```rust reference
+https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/native_tokens/create.rs
+```
+
+</TabItem>
+<TabItem value="typescript-node" label="Typescript (Node.js)">
+
+```typescript reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/native_tokens/create.ts
+```
+
+</TabItem>
+<TabItem value="python" label="Python">
+
+```python reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how_tos/native_tokens/create.py
+```
+
+</TabItem>
+</Tabs>
+
+### Expected Output
+
+```plaintext
+Transaction sent: 0x3e7fe86a2b01a7006fe037249be51852d298d32df69507140d3b41c1a6d7fb90
+Block included: https://explorer.shimmer.network/testnet/block/0xca4f8150014bc548214be6b02bed3b7d43041adef8838965815a367f73c7272d
+Account synced
+Preparing transaction to create native token...
+Transaction sent: 0xcfc5ffae0c7be8cfb7c334d6f6bb39a2ddff612c9a9048c88e3d9158f7cc4832
+Block included: https://explorer.shimmer.network/testnet/block/0x558c0dcede60609bbb641e9f1d9a7802b48a3c3d5827328a054385140d447436
+Created token: 0x089dc1b964591b15819ef1912fab48c001fed4558b37766dfa5daa512495d5b25a0100000000
+Account synced
+```

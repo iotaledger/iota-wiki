@@ -1,0 +1,148 @@
+---
+title: Destroy a Foundry
+sidebar_label: Destroy a Foundry
+description: 'How to destroy a foundry using iota-sdk'
+image: /img/logo/iota_mark_light.png
+keywords:
+  - how to
+  - destroy
+  - destroy foundry
+  - foundry
+  - nodejs
+  - python
+  - rust
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import DestroyFoundry from '../../_admonitions/_destroy_foundry.md';
+
+If at any point you want to disable the production of your
+[native token](/introduction/stardust/explanations/ledger/foundry), you should destroy the foundry.
+However, you can only destroy a foundry output as long as its circulating native token supply is zero.
+
+<DestroyFoundry />
+
+## Example Code
+
+Before you run the example, you should make sure the first foundry on your account has zero circulating supply. If you
+have no available foundries, you can create one by [creating a native token](create.mdx). If you've already created your
+tokens but need to empty the foundry, you can decrease your native token supply by [melting them](melt.mdx).
+
+<Tabs groupId="language" queryString>
+<TabItem value="rust" label="Rust">
+
+1. Instantiate a [`Wallet`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/core/struct.Wallet.html), get Alice's `Account` which was
+   [created in the first guide](../accounts-and-addresses/create-account.mdx) and [sync it](../accounts-and-addresses/check-balance.mdx).
+2. Get the first foundry in the account's balance.
+
+<div className={'hide-code-block-extras'}>
+
+```rust reference
+https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/native_tokens/destroy_foundry.rs#L33
+```
+
+</div>
+
+3. Burn the foundry by calling the [`Account.burn()`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/account/struct.Account.html#method.burn)
+   function.
+
+<div className={'hide-code-block-extras'}>
+
+```rust reference
+https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/native_tokens/destroy_foundry.rs#L42
+```
+
+</div>
+
+</TabItem>
+<TabItem value="typescript-node" label="Typescript (Node.js)">
+
+1. Instantiate a [`Wallet`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/core/struct.Wallet.html), get Alice's `Account` which was
+   [created in the first guide](../accounts-and-addresses/create-account.mdx) and [sync it](../accounts-and-addresses/check-balance.mdx).
+2. Get the first foundry in the account's balance.
+
+<div className={'hide-code-block-extras'}>
+
+```typescript reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/native_tokens/destroy-foundry.ts#L30
+```
+
+</div>
+
+3. Prepare the transaction that will burn the tokens using the [`Account.prepareDestroyFoundry()`](../../references/nodejs/classes/Account.md#preparedestroyfoundry)
+   function and send the prepared transaction using the [`Account.send()`](../../references/nodejs/classes/Account.md#send)
+   function.
+
+<div className={'hide-code-block-extras'}>
+
+```typescript reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/native_tokens/destroy-foundry.ts#L35-L37
+```
+
+</div>
+
+</TabItem>
+<TabItem value="python" label="Python">
+
+1. Instantiate a [`Wallet`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/core/struct.Wallet.html), get Alice's `Account` which was
+   [created in the first guide](../accounts-and-addresses/create-account.mdx) and [sync it](../accounts-and-addresses/check-balance.mdx).
+2. Get the first foundry in the account's balance.
+
+<div className={'hide-code-block-extras'}>
+
+```python reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how_tos/native_tokens/destroy_foundry.py#L23
+```
+
+</div>
+
+3. Prepare the transaction that will burn the tokens using the [`Account.prepare_destroy_foundry()`](../../references/python/iota_sdk/wallet/account.md#prepare_destroy_foundry)
+   function and send the prepared transaction using the [`Account.send()`](../../references/python/iota_sdk/wallet/account.md#send)
+   function.
+
+<div className={'hide-code-block-extras'}>
+
+```python reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how_tos/native_tokens/destroy_foundry.py#L26C1-L26C1
+```
+
+</div>
+
+</TabItem>
+</Tabs>
+
+### Full Example Code
+
+<Tabs groupId="language" queryString>
+<TabItem value="rust" label="Rust">
+
+```rust reference
+https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/native_tokens/destroy_foundry.rs
+```
+
+</TabItem>
+<TabItem value="typescript-node" label="Typescript (Node.js)">
+
+```typescript reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/native_tokens/destroy-foundry.ts
+```
+
+</TabItem>
+<TabItem value="python" label="Python">
+
+```python reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how_tos/native_tokens/destroy_foundry.py
+```
+
+</TabItem>
+</Tabs>
+
+### Expected Output
+
+```plaintext
+Foundries before destroying: 51
+Transaction sent: 0xe0930e445aa9e78f59e3979744102bb0980fe6332950c7bb4785700dcb24fe8e
+Block included: https://explorer.shimmer.network/testnet/block/0x31d08663ae1d175d798d0f2925f41fa97f0eee8f9e233a4f5dacedb1398ed544
+Foundries after destroying: 50
+```

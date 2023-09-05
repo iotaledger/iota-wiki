@@ -1,0 +1,160 @@
+---
+title: Send NFT
+description: 'How to send NFT to another address'
+image: /img/logo/iota_mark_light.png
+keywords:
+  - how to
+  - send
+  - nft
+  - nodejs
+  - python
+  - rust
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+Sending an [NFT](/learn/protocols/stardust/core-concepts/multi-asset-ledger#non-fungible-tokens-nfts)
+allows you to transfer ownership of the unique digital asset to another user. By sending an NFT you grant the new owner full control and possession of the token, including its
+associated collectible or token value and any other attributes it defines.
+
+## Example Code
+
+<Tabs groupId="language" queryString>
+<TabItem value="rust" label="Rust">
+
+1. Instantiate a [`Wallet`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/core/struct.Wallet.html), get Alice's `Account` which was
+   [created in the first guide](../accounts-and-addresses/create-account.mdx) and [sync it](../accounts-and-addresses/check-balance.mdx).
+2. Set `nft_id` as the first NFT Id in the balance.
+
+<div className={'hide-code-block-extras'}>
+
+```rust reference
+https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/nfts/send_nft.rs#L38
+```
+
+</div>
+
+3. Define the outputs for the transaction as the [`SendNftParams`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/struct.SendNftParams.html).
+
+<div className={'hide-code-block-extras'}>
+
+```rust reference
+https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/nfts/send_nft.rs#L44
+```
+
+</div>
+
+4. Send the NFT transaction using the [`Account.send_nft()`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/struct.SendNftParams.html) function.
+
+<div className={'hide-code-block-extras'}>
+
+```rust reference
+https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/nfts/send_nft.rs#L48
+```
+
+</div>
+
+</TabItem>
+<TabItem value="typescript-node" label="Typescript (Node.js)">
+
+The following example will:
+
+1. Instantiate a [`Wallet`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/core/struct.Wallet.html), get Alice's `Account` which was
+   [created in the first guide](../accounts-and-addresses/create-account.mdx) and [sync it](../accounts-and-addresses/check-balance.mdx).
+2. Set `nftId` as the first NFT Id in the balance.
+
+<div className={'hide-code-block-extras'}>
+
+```typescript reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/nfts/send_nft.ts#L43
+```
+
+</div>
+
+3. Define the outputs for the transaction as the [`SendNftParams`](../../references/nodejs/interfaces/SendNftParams.md).
+
+<div className={'hide-code-block-extras'}>
+
+```typescript reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/nfts/send_nft.ts#L45-L50
+```
+
+</div>
+
+4. Prepare the transaction that will send the NFT using the [`Account.prepareSendNft()`](../../references/nodejs/classes/Account.md#preparesendnft) function
+   and send the transaction using the [`Account.send()`](../../references/nodejs/classes/Account.md#send)
+   function.
+
+<div className={'hide-code-block-extras'}>
+
+```typescript reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/nfts/send_nft.ts#L53-L55
+```
+
+</div>
+
+</TabItem>
+<TabItem value="python" label="Python">
+
+The following example will:
+
+1. Instantiate a [`Wallet`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/core/struct.Wallet.html), get Alice's `Account` which was
+   [created in the first guide](../accounts-and-addresses/create-account.mdx) and [sync it](../accounts-and-addresses/check-balance.mdx).
+2. Create the `SendNFTParams` setting `nft_id` as the first NFT Id in the balance.
+
+<div className={'hide-code-block-extras'}>
+
+```python reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how_tos/nfts/send_nft.py#L21-L24
+```
+
+</div>
+
+3. Prepare the transaction that will mint the NFT using the [`Account.prepare_send_nft()`](../../references/python/iota_sdk/wallet/account.md#prepare_send_nft)
+   function and send the prepared transaction using the [`Account.send()`](../../references/python/iota_sdk/wallet/account.md#send)
+   function.
+
+<div className={'hide-code-block-extras'}>
+
+```python reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how_tos/nfts/send_nft.py#L26
+```
+
+</div>
+
+</TabItem>
+</Tabs>
+
+### Full Example Code
+
+<Tabs groupId="language" queryString>
+<TabItem value="rust" label="Rust">
+
+```rust reference
+https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/nfts/send_nft.rs
+```
+
+</TabItem>
+<TabItem value="typescript-node" label="Typescript (Node.js)">
+
+```typescript reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/nfts/send_nft.ts
+```
+
+</TabItem>
+<TabItem value="python" label="Python">
+
+```python reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how_tos/nfts/send_nft.py
+```
+
+</TabItem>
+</Tabs>
+
+### Expected Output
+
+```bash
+Transaction sent: 0x58716bf9c7d3b36276a3ce9b57b43693c03bd6816198a7fe8ee1b814c424dae6
+Block included: https://explorer.shimmer.network/testnet/block/0xd7ccfb7922a719dcee7e4bf15eaf3a6983c378b7a4c16adf34a3eb001cfc5773
+```
