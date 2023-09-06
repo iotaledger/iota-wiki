@@ -196,9 +196,9 @@ The following parameters may be provided in section `snapshots`:
 - `delay`: how many states to delay making the snapshot; it must be considerably smaller than `stateManager.pruningMinStatesToKeep`.
   The default is 20.
 - `localPath`: the path to the snapshots folder in this node's disk. Default is `waspdb/snap`.
-- `networkPaths`: the comma separated list of urls which serve snapshots. The urls may have http (e.g., `http://server.org/path/`) or https
-  (e.g., `https://server.org/path/`) scheme for remote locations or file (e.g., `file://path/to/folder`) scheme for local snapshot locations.
-  Scheme is compulsory in the url. The list is empty by default.
+- `networkPaths`: the comma-separated list of URLs that serve snapshots. The URLs may have the HTTP (e.g., `http://server.org/path/`) or the HTTPS
+  (e.g., `https://server.org/path/`) scheme for remote locations or a file path (e.g., `file://path/to/folder`) scheme for local snapshot locations.
+  The scheme is compulsory in the URL. The list is empty by default.
 
 ### WAL
 
