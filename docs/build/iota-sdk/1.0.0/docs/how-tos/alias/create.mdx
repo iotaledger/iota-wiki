@@ -17,7 +17,7 @@ import TabItem from '@theme/TabItem';
 
 An [Alias Output](https://wiki.iota.org/tips/tips/TIP-0018/#alias-output) is a specific implementation of a UTXO state machine. The Alias ID, the unique identifier of an instance of the deployed state machine, is generated deterministically by the protocol and is not allowed to change in future state transitions.
 
-Alias Output represents an alias account in the ledger with two control levels and a permanentAlias Address. The account owns other outputs that are locked under Alias Address. The account keeps track of state transitions (`State Index` counter), controlled foundries (`Foundry Counter`) and anchors the layer 2 state as metadata into the UTXO ledger.
+An Alias Output represents an alias account in the ledger with two control levels and a permanent Alias Address. The account owns other outputs that are locked under the Alias Address. The account keeps track of state transitions (`State Index` counter) and controlled foundries (`Foundry Counter`) and anchors the layer 2 state as metadata into the UTXO ledger.
 
 ## Example Code
 
