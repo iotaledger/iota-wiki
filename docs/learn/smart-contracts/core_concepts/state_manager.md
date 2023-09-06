@@ -58,7 +58,7 @@ The snapshot format is as follows:
 The node that makes a snapshot can serve it over http and new nodes can use this to speed up the catch up. Serving the snapshots
 over http is beyond the scope of Wasp and should be done in addition. Wasp is only responsible for making snapshots in local
 (configurable by `snapshots.localPath` parameter) folder and obtaining them on start when needed from the same local folder or from
-configured (by `snapshots.networkPaths` parameter) urls. A folder, referenced in `snapshots.networkPaths` parameter must contain
+configured (by `snapshots.networkPaths` parameter) URLs. A folder, referenced in the `snapshots.networkPaths` parameter must contain
 `INDEX` file with new line separated list of snapshot file names.
 
 If a chain starts with an empty database (usually if the database hasn't been created yet or was deleted), the node checks if
