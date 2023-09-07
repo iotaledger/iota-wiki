@@ -375,6 +375,16 @@ module.exports = async () => {
                 },
               ];
 
+              // Version redirects are only used to asign path with the actual version it to the "current" version
+              const versionRedirects = [
+                {
+                  from: '/identity.rs/0.6',
+                  to: '/identity.rs',
+                },
+              ];
+
+              redirects.push(...versionRedirects);
+
               for (const redirect of redirects) {
                 if (existingPath.includes(redirect.to)) {
                   return existingPath.replace(redirect.to, redirect.from);
