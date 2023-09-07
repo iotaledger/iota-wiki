@@ -118,6 +118,10 @@ module.exports = async () => {
       id: 'iota-rs-2-0-1-rc-7',
       path: path.resolve(__dirname, 'docs/build/iota.rs/2.0.1-rc.7/docs'),
       routeBasePath: 'iota.rs',
+      bannerPath: path.resolve(
+        __dirname,
+        'banners/pre-sdk-libs-deprecated.mdx',
+      ),
       sidebarPath: path.resolve(
         __dirname,
         'docs/build/iota.rs/2.0.1-rc.7/sidebars.js',
@@ -134,7 +138,10 @@ module.exports = async () => {
       id: 'iotajs',
       path: path.resolve(__dirname, 'docs/build/iota.js/2.0.0-rc.1/docs'),
       routeBasePath: 'iota.js',
-      bannerPath: path.resolve(__dirname, 'banners/iota-js-deprecated.mdx'),
+      bannerPath: path.resolve(
+        __dirname,
+        'banners/pre-sdk-libs-deprecated.mdx',
+      ),
       sidebarPath: path.resolve(
         __dirname,
         'docs/build/iota.js/2.0.0-rc.1/sidebars.js',
@@ -159,6 +166,10 @@ module.exports = async () => {
       id: 'wallet-rs-1-0-0-rc-6',
       path: path.resolve(__dirname, 'docs/build/wallet.rs/1.0.0-rc.6/docs'),
       routeBasePath: 'wallet.rs',
+      bannerPath: path.resolve(
+        __dirname,
+        'banners/pre-sdk-libs-deprecated.mdx',
+      ),
       sidebarPath: path.resolve(
         __dirname,
         'docs/build/wallet.rs/1.0.0-rc.6/sidebars.js',
@@ -191,6 +202,10 @@ module.exports = async () => {
       id: 'iota-streams',
       path: path.resolve(__dirname, 'docs/build/streams/0.2.0/docs'),
       routeBasePath: 'streams',
+      bannerPath: path.resolve(
+        __dirname,
+        'banners/iota-streams-deprecated.mdx',
+      ),
       sidebarPath: path.resolve(
         __dirname,
         'docs/build/streams/0.2.0/sidebars.js',
