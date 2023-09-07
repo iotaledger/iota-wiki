@@ -58,7 +58,7 @@ The snapshot format is as follows:
 The node that makes a snapshot can serve it over http and new nodes can use this to speed up the catch up. Serving the snapshots
 over http is beyond the scope of Wasp and should be done in addition. Wasp is only responsible for making snapshots in local
 (configurable by `snapshots.localPath` parameter) folder and obtaining them on start when needed from the same local folder or from
-configured (by `snapshots.networkPaths` parameter) http addresses. A folder, serving snapshot files over http must contain
+configured (by `snapshots.networkPaths` parameter) URLs. A folder, referenced in the `snapshots.networkPaths` parameter must contain
 `INDEX` file with new line separated list of snapshot file names.
 
 If a chain starts with an empty database (usually if the database hasn't been created yet or was deleted), the node checks if
@@ -196,7 +196,9 @@ The following parameters may be provided in section `snapshots`:
 - `delay`: how many states to delay making the snapshot; it must be considerably smaller than `stateManager.pruningMinStatesToKeep`.
   The default is 20.
 - `localPath`: the path to the snapshots folder in this node's disk. Default is `waspdb/snap`.
-- `networkPaths`: the comma separated list of paths to the remote (http(s)) snapshot locations. The list is empty by default.
+- `networkPaths`: the comma-separated list of URLs that serve snapshots. The URLs may have the HTTP (e.g., `http://server.org/path/`) or the HTTPS
+  (e.g., `https://server.org/path/`) scheme for remote locations or a file path (e.g., `file://path/to/folder`) scheme for local snapshot locations.
+  The scheme is compulsory in the URL. The list is empty by default.
 
 ### WAL
 
