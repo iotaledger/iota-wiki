@@ -126,6 +126,26 @@ This operation cannot be reverted.
 
 - `s` (`uint32`): The serial number of the foundry.
 
+
+### `mintNFT(I ImmutableData, a AgentID, C CollectionID, w WithdrawOnMint)`
+
+Mints an NFT with ImmutableData `I` that will be owned by the AgentID `a`.
+It's possible to mint as part of a collection `C` (the caller must be the owner of the collection NFT to mint new NFTs as part of said collection).
+The mint can be done directly to any L1 address (it is not necessary for the target to have an account on the chain)
+
+#### Parameters
+
+- `I` (`[]byte`): ImmutableData for the NFT.
+- `a` (`AgentID`): AgentID that will be the owner of the NFT.
+- `C` (optional `NFTID` - default empty): collectionID (NFTID) for the NFT.
+- `w` (optional `bool` - default `false`): whether to withdrawal the NFT in the minting step (can only be `true` when the targetAgentID is a L1 address).
+
+#### Returns
+
+- `D` (`MintID`): the internal ID of the NFT at the time of minting that can be used by users/contracts to obtain the resulting NFTID on the next block
+
+
+
 ---
 
 ## Views
@@ -275,6 +295,19 @@ Returns the data for a given NFT with ID `z` that is on the chain.
 
 - `e`: [`NFTData`](#nftdata)
 
+### `NFTIDbyMintID(D MintID)`
+
+Returns the NFTID `z` for a given MintID `D`.
+
+#### Parameters
+
+- `D` (`MintID`): MintID producted at the time the NFT was minted
+
+#### Returns
+
+- `z` (`NFTID`): The ID of the NFT
+
+
 ### `getAccountNonce(a AgentID)`
 
 Returns the current account nonce for a give AgentID `a`.
@@ -301,6 +334,21 @@ FoundrySerialNumber = uint32
 ```
 TokenID = [38]byte
 ```
+
+
+### `NFTID`
+
+```
+NFTID = [32]byte
+```
+
+### `MintID`
+
+```
+MintID = [6]byte
+```
+
+
 
 ### `NFTData`
 
