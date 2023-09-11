@@ -17,7 +17,7 @@ keywords:
 
 ---
 
-# EVM Tooling
+# Compatible Tools
 
 EVM on IOTA Smart Contracts has been integrated in a way that the existing EVM tooling is compatible and can be used
 directly with an IOTA Smart Contracts chain running EVM as long as you take a couple of things into account.

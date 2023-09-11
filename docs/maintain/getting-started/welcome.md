@@ -27,6 +27,6 @@ removing the Coordinator from the IOTA networks.
 ### WASP - IOTA Smart Contracts
 
 [WASP](/wasp/running-a-node) is an INX plugin you can install and use to run your smart contract chain.
-You can use the documentation to get your node up and running, and [set up](/wasp/setting-up-a-chain) and
+You can use the documentation to get your node up and running, and [set up](/wasp-cli/setting-up-a-chain/) and
 [manage](/wasp/chain-management) a chain, or check out the available
 [configuration options](/wasp/configuration).

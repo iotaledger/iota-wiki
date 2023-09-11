@@ -12,10 +12,7 @@ keywords:
   - JSON
   - RPC
 ---
-
-# The ISC Magic Usage
-
-## Send Assets and Tokens to L1
+# Send Assets and Tokens to L1
 
 :::info
 
