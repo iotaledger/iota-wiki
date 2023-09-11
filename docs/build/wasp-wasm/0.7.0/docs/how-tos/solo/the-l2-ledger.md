@@ -100,10 +100,10 @@ func TestTutorialAccounts(t *testing.T) {
 
 The example above creates a chain and a wallet with `utxodb.FundsFromFaucetAmount` base tokens on L1.
 Then, it sends 1 million tokens to the corresponding on-chain account by posting a
-[`deposit`](/wasp-wasm/core_contracts/accounts#deposit) request to the
-[`accounts` core contract](/wasp-wasm/core_contracts/accounts) on the chain.
+[`deposit`](/wasp-wasm/reference/core-contracts/accounts#deposit) request to the
+[`accounts` core contract](/wasp-wasm/reference/core-contracts/accounts) on the chain.
 
-Finally, it sends a [`withdraw`](/wasp-wasm/core_contracts/accounts#withdraw) request to the `accounts` core
+Finally, it sends a [`withdraw`](/wasp-wasm/reference/core-contracts/accounts#withdraw) request to the `accounts` core
 contract to get the tokens back to L1.
 
 Both requests are affected by the gas fees and the storage deposit.

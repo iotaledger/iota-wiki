@@ -27,7 +27,7 @@ The logical structure of IOTA Smart Contracts is independent of the VM type:
 
 Each smart contract on the chain is identified by a _hname_ (pronounced "aitch-name"), which is a `uint32` value
 calculated as a hash of the smart contract's instance name (a string).
-For example, the hname of the [`root`](/wasp-wasm/core_contracts/root/) core contract
+For example, the hname of the [`root`](/wasp-wasm/reference/core-contracts/root/) core contract
 is `0xcebf5908`. This
 value uniquely identifies this contract in every chain.
 
@@ -68,7 +68,7 @@ There are two types of entry points:
 ## Execution Results
 
 After a request to a Smart Contract is executed (a call to a full entry point), a _receipt_ will be added to
-the [`blocklog`](/wasp-wasm/core_contracts/blocklog/) core contract. The receipt details the
+the [`blocklog`](/wasp-wasm/reference/core-contracts/blocklog/) core contract. The receipt details the
 execution results
 of said request: whether it was successful, the block it was included in, and other information.
 Any events dispatched by the smart contract in context of this execution will also be added to the receipt.
