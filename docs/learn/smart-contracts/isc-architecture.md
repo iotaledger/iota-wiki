@@ -14,7 +14,7 @@ keywords:
 # ISC Architecture
 
 IOTA Smart Contracts work as a _layer 2_ (L2 for short) extension of the [_IOTA Multi-Asset
-Ledger_](https://github.com/lzpap/tips/blob/master/tips/TIP-0018/tip-0018.md) (Layer 1, or L1 for short, also sometimes
+Ledger_](../protocols/stardust/core-concepts/multi-asset-ledger.md) (Layer 1, or L1 for short, also sometimes
 called the UTXO Ledger).
 
 In IOTA Smart Contracts, each L2 chain has its own state and smart contracts that cause this state to change.

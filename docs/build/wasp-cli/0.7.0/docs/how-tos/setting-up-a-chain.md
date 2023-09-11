@@ -81,7 +81,7 @@ chain.
 The `--quorum` flag indicates the minimum amount of nodes required to form a consensus. The recommended formula to
 obtain this number `floor(N*2/3)+1` where `N` is the number of nodes in your committee.
 
-The `--block-keep-amount` parameter determines how many blocks are stored in the [`blocklog`](/learn/smart-contracts/core_concepts/core_contracts/blocklog) core contract.
+The `--block-keep-amount` parameter determines how many blocks are stored in the [`blocklog`](/wasp-wasm/core_contracts/blocklog) core contract.
 
 After deployment, the chain must be activated by the node operators of all peers.
 
@@ -94,7 +94,7 @@ wasp-cli chain activate --chain=<name>
 ## Testing If It Works
 
 You can check that the chain was properly deployed in the Wasp node dashboard (`<URL>/wasp/dashboard` when using `node-docker-setup`).
-Note that the chain was deployed with some [core contracts](/learn/smart-contracts/core_concepts/core_contracts/overview).
+Note that the chain was deployed with some [core contracts](/wasp-wasm/core_contracts/overview).
 
 You should also have an EVM-JSONRPC server opened on:
 

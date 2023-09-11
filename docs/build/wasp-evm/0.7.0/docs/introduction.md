@@ -16,11 +16,11 @@ keywords:
 
 The current release of IOTA Smart Contracts has experimental support
 for [EVM](https://ethereum.org/en/developers/docs/evm/)/[Solidity](https://docs.soliditylang.org/en/v0.8.16/) smart
-contracts, as well as Wasm based smart contracts, providing limited compatibility with existing smart contracts and
+contracts, as well as [Wasm](/wasp-wasm/overview/) smart contracts, providing limited compatibility with existing smart contracts and
 tooling from other EVM based chains like Ethereum. This allows us to offer the existing ecosystem around EVM/Solidity a
 familiar alternative.
 
-### What is EVM/Solidity
+### What is EVM/Solidity?
 
 [EVM](https://ethereum.org/en/developers/docs/evm/) stands for "Ethereum Virtual Machine" and is currently the tried and
 tested virtual machine running most smart contract implementations.
@@ -37,7 +37,7 @@ changes to function on IOTA Smart Contracts.
 ### How IOTA Smart Contracts Work With EVM
 
 Every deployed IOTA Smart Contracts chain automatically includes a core contract
-called [`evm`](/learn/smart-contracts/core_concepts/core_contracts/evm). This core contract is responsible for running EVM code and
+called [`evm`](/wasp-wasm/core_contracts/evm/). This core contract is responsible for running EVM code and
 storing the EVM state.
 
 The Wasp node also provides a standard JSON-RPC service, which allows you to interact with the EVM layer using existing

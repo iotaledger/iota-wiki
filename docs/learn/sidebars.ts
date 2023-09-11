@@ -72,28 +72,13 @@ module.exports = {
                 },
                 {
                     type: 'doc',
-                    label: 'Validators and Access Nodes',
-                    id: 'smart-contracts/validators',
-                },
-                {
-                    type: 'doc',
-                    label: 'Consensus',
-                    id: 'smart-contracts/consensus',
-                },
-                {
-                    type: 'doc',
-                    label: 'State manager',
-                    id: 'smart-contracts/state_manager',
-                },
-                {
-                    type: 'doc',
-                    label: 'State, Transitions and State Anchoring',
-                    id: 'smart-contracts/states',
-                },
-                {
-                    type: 'doc',
                     label: 'Anatomy of a Smart Contract',
                     id: 'smart-contracts/smart-contract-anatomy',
+                },
+                {
+                    type: 'doc',
+                    label: 'Sandbox Interface',
+                    id: 'smart-contracts/sandbox',
                 },
                 {
                     type: 'doc',
@@ -102,8 +87,23 @@ module.exports = {
                 },
                 {
                     type: 'doc',
-                    label: 'Sandbox Interface',
-                    id: 'smart-contracts/sandbox',
+                    label: 'State, Transitions and State Anchoring',
+                    id: 'smart-contracts/states',
+                },
+                {
+                    type: 'doc',
+                    label: 'State manager',
+                    id: 'smart-contracts/state_manager',
+                },
+                {
+                    type: 'doc',
+                    label: 'Validators and Access Nodes',
+                    id: 'smart-contracts/validators',
+                },
+                {
+                    type: 'doc',
+                    label: 'Consensus',
+                    id: 'smart-contracts/consensus',
                 },
             ],
         },
