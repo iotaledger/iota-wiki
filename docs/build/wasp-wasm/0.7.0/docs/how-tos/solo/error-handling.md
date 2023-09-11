@@ -44,7 +44,7 @@ Note that this test still ends with the state `#4`, although the last request to
 ```
 
 This shows that a chain block is always generated, regardless of whether the smart contract call succeeds or not. The
-result of the request is stored in the chain's [`blocklog`](/wasp-wasm/core_contracts/blocklog) in the form of
+result of the request is stored in the chain's [`blocklog`](/wasp-wasm/reference/core-contracts/blocklog) in the form of
 a receipt. In fact, the received Go error `err` in the test above is just generated from the request receipt.
 
 If a panic occurs during a smart contract call, it is recovered by the VM context, and the request is marked as failed.

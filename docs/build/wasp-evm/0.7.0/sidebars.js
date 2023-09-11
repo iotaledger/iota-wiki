@@ -24,12 +24,6 @@ module.exports = {
             type: 'category',
             label: 'Getting Started',
             items: [
-
-                {
-                    type: 'doc',
-                    label: 'Compatibility',
-                    id: 'getting-started/compatibility',
-                },
                 {
                     type: 'doc',
                     label: 'Quickstart',
@@ -39,6 +33,11 @@ module.exports = {
                     type: 'doc',
                     label: 'Compatible Tools',
                     id: 'getting-started/compatible-tools'
+                },
+                {
+                    type: 'doc',
+                    label: 'Compatibility & Limitations',
+                    id: 'getting-started/compatibility',
                 },
             ]
         },
@@ -52,8 +51,23 @@ module.exports = {
                     id: 'how-tos/using',
                 },
                 {
+                    type: 'doc',
+                    label: 'Create a Basic Contract',
+                    id: 'how-tos/create-a-basic-contract',
+                },
+                {
+                    type: 'doc',
+                    label: 'Create Custom Tokens',
+                    id: 'how-tos/ERC20',
+                },
+                {
+                    type: 'doc',
+                    label: 'Create NFTs',
+                    id: 'how-tos/ERC721',
+                },
+                {
                     type: 'category',
-                    label: 'The Magic Contract',
+                    label: 'Use the Magic Contract',
                     items: [
                         {
                             type: 'doc',
@@ -76,21 +90,6 @@ module.exports = {
                             id: 'how-tos/magic-contract/send-tokens-to-l1',
                         },
                     ]
-                },
-                {
-                    type: 'doc',
-                    label: 'Create a Basic Contract',
-                    id: 'how-tos/create-a-basic-contract',
-                },
-                {
-                    type: 'doc',
-                    label: 'Create Custom Tokens',
-                    id: 'how-tos/ERC20',
-                },
-                {
-                    type: 'doc',
-                    label: 'Create NFTs',
-                    id: 'how-tos/ERC721',
                 },
             ]
         },

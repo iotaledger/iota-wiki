@@ -10,7 +10,7 @@ keywords:
   - Tests
 ---
 
-# Setting Up a Chain
+# Set Up a Chain
 
 :::note
 
@@ -41,7 +41,7 @@ PubKey: 8oQ9xHWvfnShRxB22avvjbMyAumZ7EXKujuthqrzapNM
 PeeringURL:  127.0.0.1:4000
 ```
 
-PubKey and PeeringURL should be provided to other node operators.
+You should provide your `PubKey` and `PeeringURL` to other node operators.
 They can use this info to trust your node and accept communications with it.
 That's done by invoking `wasp-cli peering trust <Name for the peer> <PubKey> <PeeringURL>`, e.g.:
 
@@ -49,7 +49,7 @@ That's done by invoking `wasp-cli peering trust <Name for the peer> <PubKey> <Pe
 wasp-cli peering trust another-node 8oQ9xHWvfnShRxB22avvjbMyAumZ7EXKujuthqrzapNM 127.0.0.1:4000
 ```
 
-The list of trusted peers of your wasp node can be viewed with:
+You can view the list your wasp node's trusted peers by calling:
 
 ```shell
 wasp-cli peering list-trusted
@@ -57,9 +57,11 @@ wasp-cli peering list-trusted
 
 All the nodes in a committee must trust each other to run the chain.
 
-## Starting The Chain
+## Start the Chain
 
-### Requesting Test Funds (only for testnet)
+### Request Test Funds (only for testnet)
+
+You can request test funds to safely develop you application by calling:
 
 ```shell
 wasp-cli request-funds
@@ -73,28 +75,27 @@ You can deploy your IOTA Smart Contracts chain by running:
 wasp-cli chain deploy --peers=foo,bar,baz --chain=mychain --description="My chain" --block-keep-amount=10000
 ```
 
-The names in `--peers=foo,bar,baz` correspond to the names of the trusted peers of the node.
+The names in `--peers=foo,bar,baz` correspond to the names the node's trusted peers.
 
-The `--chain=mychain` flag sets up an alias for the chain. From now on all chain commands will be targeted to this
-chain.
+The `--chain=mychain` flag sets up an alias for the chain. 
+From now on, all chain commands will be targeted to this chain.
 
-The `--quorum` flag indicates the minimum amount of nodes required to form a consensus. The recommended formula to
-obtain this number `floor(N*2/3)+1` where `N` is the number of nodes in your committee.
+The `--quorum` flag indicates the minimum number of nodes required to form a consensus. 
+The recommended formula to obtain this number `floor(N*2/3)+1` where `N` is the number of nodes in your committee.
 
-The `--block-keep-amount` parameter determines how many blocks are stored in the [`blocklog`](/wasp-wasm/core_contracts/blocklog) core contract.
+The `--block-keep-amount` parameter determines how many blocks are stored in the [`blocklog`](/wasp-wasm/reference/core-contracts/blocklog) core contract.
 
 After deployment, the chain must be activated by the node operators of all peers.
 
 ```shell
 wasp-cli chain add <name> <chainID> # adds the chain to the wasp-cli config, can be skipped on the wasp-cli that initiated the deployment
 wasp-cli chain activate --chain=<name>
-
 ```
 
-## Testing If It Works
+## Test If It Works
 
 You can check that the chain was properly deployed in the Wasp node dashboard (`<URL>/wasp/dashboard` when using `node-docker-setup`).
-Note that the chain was deployed with some [core contracts](/wasp-wasm/core_contracts/overview).
+Note that the chain was deployed with some [core contracts](/wasp-wasm/reference/core-contracts/overview).
 
 You should also have an EVM-JSONRPC server opened on:
 

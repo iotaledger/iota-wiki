@@ -164,7 +164,7 @@ const buildDocs = [
   },
   {
     id: 'wasp-evm-0-7-0',
-    label: 'EVM Smart Contracts',
+    label: 'EVM',
     description: 'Create EVM smart contracts.',
     icon: SmartContracts,
     subsection: 'build-layer-2',
@@ -192,7 +192,7 @@ const buildDocs = [
   },
   {
     id: 'wasp-wasm-0-7-0',
-    label: 'WASM Smart Contracts',
+    label: 'WASM',
     description: 'Create WASM smart contracts.',
     icon: SmartContracts,
     subsection: 'build-layer-2',

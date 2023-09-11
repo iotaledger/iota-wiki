@@ -37,7 +37,7 @@ changes to function on IOTA Smart Contracts.
 ### How IOTA Smart Contracts Work With EVM
 
 Every deployed IOTA Smart Contracts chain automatically includes a core contract
-called [`evm`](/wasp-wasm/core_contracts/evm/). This core contract is responsible for running EVM code and
+called [`evm`](/wasp-wasm/reference/core-contracts/evm/). This core contract is responsible for running EVM code and
 storing the EVM state.
 
 The Wasp node also provides a standard JSON-RPC service, which allows you to interact with the EVM layer using existing

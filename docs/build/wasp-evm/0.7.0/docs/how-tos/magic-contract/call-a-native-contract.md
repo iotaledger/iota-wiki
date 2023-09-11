@@ -1,4 +1,4 @@
-# Call a native contract
+# Call a Native Contract
 
 You can call native contracts using [`ISC.sandbox.call`](https://github.com/iotaledger/wasp/blob/develop/packages/vm/core/evm/iscmagic/ISCSandbox.sol#L56):
 

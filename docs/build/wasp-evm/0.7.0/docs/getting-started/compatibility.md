@@ -14,7 +14,7 @@ keywords:
 
 # EVM Compatibility in IOTA Smart Contracts
 
-The [`evm`](/wasp-wasm/core_contracts/evm) [core contract](/wasp-wasm/core_contracts/overview)
+The [`evm`](/wasp-wasm/reference/core-contracts/evm) [core contract](/wasp-wasm/reference/core-contracts/overview)
 provides EVM support in IOTA Smart Contracts. It stores the EVM state (account balances, state, code,
 etc.) and provides a way to execute EVM code to manipulate the state.
 
@@ -27,6 +27,8 @@ Ethereum blocks containing Ethereum transactions. Since ISC works in a fundament
 providing 100% compatibility is not possible. We do our best to emulate the behavior of an Ethereum node, so the
 Ethereum tools think they are interfacing with an actual Ethereum node, but some differences in behavior are inevitable.
 
+## Properties and Limitations
+
 :::warning
 There is a difference in the decimal precision of ether (18 decimal places) to MIOTA/SMR(6 decimal places). Because of this, when sending native tokens in the EVM, which are expressed in wei (ether = 10<sup>18</sup>wei), the last 12 decimal places will be ignored.
 
@@ -35,34 +37,34 @@ example: 1,999,999,999,999,999,999 wei = 1.999,999 SMR/MIOTA
 
 Here are some of the most important properties and limitations of EVM support in IOTA Smart Contracts:
 
-## Wrapped Calls to the JSON-RPC
+### Wrapped Calls to the JSON-RPC
 
 The Wasp node provides a JSON-RPC service, the standard protocol used by Ethereum tools. Upon receiving a signed
   Ethereum transaction via JSON-RPC, the transaction is wrapped into an ISC off-ledger request. The sender of the
   request
   is the Ethereum address that signed the original transaction (e.g., the Metamask account).
 
-## Contract ID Source
+### Contract ID Source
 
 While ISC contracts are identified by an [hname](/learn/smart-contracts/core_concepts/smart-contract-anatomy), EVM contracts are
   identified by their Ethereum address.
 
-## WASM Root Contract List
+### WASM Root Contract List
 
-EVM contracts are not listed in the chain's [contract registry](/wasp-wasm/core_contracts/root).
+EVM contracts are not listed in the chain's [contract registry](/wasp-wasm/reference/core-contracts/root).
 
-## On-ledger Requests 
+### On-ledger Requests 
 
 EVM contracts cannot be called via regular ISC requests; they can only be called through the JSON-RPC service.
 As a consequence, EVM contracts cannot receive on-ledger requests.
 
-## Block Structure and Storage
+### Block Structure and Storage
 
 In contrast with an Ethereum blockchain, which stores the state in a Merkle tree, the EVM state is stored in raw form.
   It would be inefficient to do that since it would be duplicating work done by the ISC layer.
 
 Any Ethereum transactions present in an ISC block are executed by
-  the [`evm`](/wasp-wasm/core_contracts/evm) [core contract](/wasp-wasm/core_contracts/overview),
+  the [`evm`](/wasp-wasm/reference/core-contracts/evm) [core contract](/wasp-wasm/reference/core-contracts/overview),
   updating the EVM state accordingly. An emulated Ethereum block is also created and stored to provide compatibility
   with EVM tools. As the emulated block is not part of a real Ethereum blockchain, some attributes of the blocks will
   contain dummy values (e.g. `stateRoot`, `nonce`, etc.).
@@ -70,29 +72,28 @@ Any Ethereum transactions present in an ISC block are executed by
 Each stored block contains the executed Ethereum transactions and corresponding Ethereum receipts. If storage is
   limited, you can configure EVM so that only the latest N blocks are stored.
 
-
-## No Enforced Block Time
+### No Enforced Block Time
 
 There is no guaranteed _block time_. A new EVM "block" will be created only when an ISC block is created, and ISC does
   not enforce an average block time.
 
-## L2 Token Ownership
+### L2 Token Ownership
 
 Any Ethereum address is accepted as a valid `AgentID`, and thus can own L2 tokens on an IOTA Smart Contract chain,
   just like IOTA addresses.
 
-## Retrieving the Ethereum Balance
+### Retrieving the Ethereum Balance
 
 The Ethereum balance of an account is tied to its L2 ISC balance in the token used to pay for gas. For example,
   by default `eth_getBalance` will return the L2 base token balance of the given Ethereum account.
 
-## The Magic Contract
+### The Magic Contract
 
 To manipulate the owned ISC tokens and access ISC functionality in general, there is
-  a [special Ethereum contract](magic.md) that provides bindings to the ISC sandbox (e.g. call `isc.send(...)` to send
-  tokens).
+a [special Ethereum contract](../how-tos/magic-contract/magic.md) that provides bindings to the ISC sandbox 
+(e.g. call `isc.send(...)` to send tokens).
 
-## Gas Fees
+### Gas Fees
 The used EVM gas is converted to ISC gas before being charged to the sender. The conversion ratio is configurable. The
 token used to pay for gas is the same token configured in the ISC chain (IOTA by default). The gas fee is debited from
 the sender's L2 account and must be deposited beforehand.

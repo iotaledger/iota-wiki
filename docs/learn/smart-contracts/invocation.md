@@ -87,7 +87,7 @@ etc.) has an associated gas cost.
 
 For users to specify how much they're willing to pay for a request, they need to specify a `GasBudget` in the request.
 This gas budget is the "maximum operations that this request can execute" and will be charged as a fee based on the
-chain's current [fee policy](core_contracts/governance.md#fee-policy).
+chain's current [fee policy](core-contracts/governance.md#fee-policy).
 
 The funds to cover the gas used will be charged directly from the user's on-chain account.
 

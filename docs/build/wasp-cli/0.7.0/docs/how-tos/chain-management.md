@@ -11,25 +11,25 @@ keywords:
 
 ---
 
-# Chain Management
+# Manage a Chain
 
 ## Monitoring
 
 You can view the chain state using the dashboard (`<URL>/wasp/dashboard` when using `node-docker-setup`).
 
-## Managing Chain Configuration and Validators
+## Manage Chain Configuration and Validators
 
 You can manage the chain configuration and committee of validators by interacting with
-the [Governance contract](/wasp-wasm/core_contracts/governance).
+the [Governance contract](/wasp-wasm/reference/core-contracts/governance/).
 
 The “Chain Owner” is the only one who can perform administrative tasks.
 
-### Changing Chain Ownership
+### Change Chain Ownership
 
 To change the chain ownership, the current “Chain Owner” must call `delegateChainOwnership` specifying the `agentID` of
 the next owner. The next owner must call `claimChainOwnership` to finalize the process.
 
-### Changing Access Nodes
+### Change Access Nodes
 
 For new access nodes to join the network, they need to:
 
@@ -45,7 +45,7 @@ After this, new nodes should be able to sync the state and execute view queries 
 
 You can remove an access node by calling `changeAccessNodes`.
 
-Alternatively, to add any node as an "access node", you can add "non-permissioned" access nodes, without the signature from the chain owner.
+Alternatively, you can add "non-permissioned" access nodes without the signature from the chain owner to add any node as an "access node".
 You can do this by using the following command:
 
 ```shell
@@ -54,15 +54,14 @@ wasp-cli chain access-nodes <add|remove> <pubkey (0x...)>
 
 This node won't be "officially" recognized by the committee, but will still be able to sync the state and provide all regular functionality.
 
-### Changing the Set of Validators
+### Change the Set of Validators
 
-You can do this in different ways, depending on whom the
-[governor address](/tips/tips/TIP-0018#alias-output) of the alias output of the
-chain is.
+You can do this in different ways, depending on who controls the [governor address](/tips/tips/TIP-0018#alias-output) 
+from the alias output of the chain.
 
 - If the chain governor address is the chain committee, you can perform the rotation by calling
   `rotateStateController` after adding the next state controller via `addAllowedStateControllerAddress`.
-- If the chain governor address is a regular user wallet (that you control), you can issue the rotation transaction using wasp-cli:
+- If the chain governor address is a regular user wallet that you control, you can issue the rotation transaction using wasp-cli:
 
 ```shell
 wasp-cli chain rotate <new controller address>

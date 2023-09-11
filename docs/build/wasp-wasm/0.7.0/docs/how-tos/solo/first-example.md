@@ -13,8 +13,8 @@ keywords:
 # First Example
 
 The following is an example of a _Solo_ test. It deploys a new chain and invokes some view calls in the
-[`root`](/wasp-wasm/core_contracts/root) and [`governance`](/wasp-wasm/core_contracts/governance)
-[core contracts](/wasp-wasm/core_contracts/overview).
+[`root`](/wasp-wasm/reference/core-contracts/root) and [`governance`](/wasp-wasm/reference/core-contracts/governance)
+[core contracts](/wasp-wasm/reference/core-contracts/overview).
 
 ```go
 import (
@@ -81,7 +81,7 @@ The output of the test will be something like this:
 
 :::
 
-The [core contracts](/wasp-wasm/core_contracts/overview) listed in the log are automatically deployed on each
+The [core contracts](/wasp-wasm/reference/core-contracts/overview) listed in the log are automatically deployed on each
 new chain. The log also shows their _contract IDs_.
 
 The output fragment in the log `state transition --> #1` means that the state of the chain has changed from block index
