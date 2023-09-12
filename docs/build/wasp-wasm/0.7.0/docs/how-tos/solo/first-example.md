@@ -9,6 +9,7 @@ keywords:
   - new chain
   - how-to
 ---
+
 # First Example
 
 The following is an example of a _Solo_ test. It deploys a new chain and invokes some view calls in the

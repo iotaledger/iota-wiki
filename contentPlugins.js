@@ -29,19 +29,28 @@ module.exports = async () => {
       id: 'wasp-cli-0-7-0',
       path: path.resolve(__dirname, 'docs/build/wasp-cli/0.7.0/docs'),
       routeBasePath: 'wasp-cli',
-      sidebarPath: path.resolve(__dirname, 'docs/build/wasp-cli/0.7.0/sidebars.js'),
+      sidebarPath: path.resolve(
+        __dirname,
+        'docs/build/wasp-cli/0.7.0/sidebars.js',
+      ),
     },
     {
       id: 'wasp-evm-0-7-0',
       path: path.resolve(__dirname, 'docs/build/wasp-evm/0.7.0/docs'),
       routeBasePath: 'wasp-evm',
-      sidebarPath: path.resolve(__dirname, 'docs/build/wasp-evm/0.7.0/sidebars.js'),
+      sidebarPath: path.resolve(
+        __dirname,
+        'docs/build/wasp-evm/0.7.0/sidebars.js',
+      ),
     },
     {
       id: 'wasp-wasm-0-7-0',
       path: path.resolve(__dirname, 'docs/build/wasp-wasm/0.7.0/docs'),
       routeBasePath: 'wasp-wasm',
-      sidebarPath: path.resolve(__dirname, 'docs/build/wasp-wasm/0.7.0/sidebars.js'),
+      sidebarPath: path.resolve(
+        __dirname,
+        'docs/build/wasp-wasm/0.7.0/sidebars.js',
+      ),
     },
     {
       id: 'identity-rs-0-5',

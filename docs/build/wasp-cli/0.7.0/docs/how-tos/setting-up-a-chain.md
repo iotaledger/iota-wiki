@@ -77,10 +77,10 @@ wasp-cli chain deploy --peers=foo,bar,baz --chain=mychain --description="My chai
 
 The names in `--peers=foo,bar,baz` correspond to the names the node's trusted peers.
 
-The `--chain=mychain` flag sets up an alias for the chain. 
+The `--chain=mychain` flag sets up an alias for the chain.
 From now on, all chain commands will be targeted to this chain.
 
-The `--quorum` flag indicates the minimum number of nodes required to form a consensus. 
+The `--quorum` flag indicates the minimum number of nodes required to form a consensus.
 The recommended formula to obtain this number `floor(N*2/3)+1` where `N` is the number of nodes in your committee.
 
 The `--block-keep-amount` parameter determines how many blocks are stored in the [`blocklog`](/wasp-wasm/reference/core-contracts/blocklog) core contract.

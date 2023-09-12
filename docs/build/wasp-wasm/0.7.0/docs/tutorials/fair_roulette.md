@@ -13,6 +13,7 @@ keywords:
   - Wasm
   - tutorial
 ---
+
 # Fair Roulette
 
 Fair roulette is an example reference implementation which demonstrates the development, setup, and interaction with a smart contract.
