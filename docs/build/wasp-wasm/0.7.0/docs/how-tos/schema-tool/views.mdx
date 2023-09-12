@@ -1,38 +1,46 @@
 ---
+description: "Explore the characteristics and constraints of view-only functions in smart contracts,
+illustrated through a 'getFactor' function example."
 keywords:
-  - results
-  - call context
-  - view function
-  - retrieve state
-
-description: Views are smart contract functions that only allow you to retrieve state information about the smart contract. They have a special, limited call context that does not allow them to change the smart contract state.
-
+- View-Only Functions
+- Smart Contracts
+- Call Context
+- Immutable Proxies
+- Cross-Chain Requests
 image: /img/logo/WASP_logo_dark.png
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# View-Only Functions
+# Use View-Only Functions
 
-View-only functions, or Views for short, are smart contract functions that only allow you
-to _retrieve_ state information about the smart contract. They receive a special, limited
-[Call Context](context.mdx) that does not allow access to functionality that could result
-in changes to the smart contract state. This means that all access to the state storage
-will be through immutable proxies. It also means that they cannot receive or transfer
-tokens, because changes to the smart contract account are by definition state changes as
-well.
+View-only functions, also known as "views",
+are smart contract functions specialized in retrieving state information without altering the smart contract's state.
 
-Views are allowed to [`call()`](call.mdx) other views on the same chain, but they cannot
-call any non-view smart contract function, nor can they [`post()`](post.mdx) cross-chain
-requests.
+## Characteristics
 
-View functions will always return some data to their caller. It would be silly not to
-return data from a View because by definition it cannot have any other side effects that
-show up elsewhere.
+### Immutable Proxies
 
-For demonstration purposes we provided a View function with the `dividend` smart contract,
-called 'getFactor':
+All state storage accesses occur through immutable proxies, ensuring the state remains unchanged.
+
+### Restricted Functionalities
+
+Views have a limited [Call Context](../../explanations/context.mdx),
+disabling any function that might induce state changes, including token transactions.
+
+### Intra-chain Calls
+
+While they can [`call()`](call.mdx) other views within the same chain,
+they cannot initiate non-view functions or [`post()`](post.mdx) cross-chain requests.
+
+### Return Data
+
+These functions are designed to return data to the caller, as they can't induce any other external effects.
+
+## Use Case: 'getFactor' Function
+
+To illustrate the use of view-only functions, consider the `getFactor()` function integrated in the `dividend` smart contract:
 
 <Tabs groupId="language" queryString>
 
@@ -118,10 +126,8 @@ export function viewGetFactor(
 </TabItem>
 </Tabs>
 
-Return values are passed to the caller through the predefined [Results](results.mdx) map
-associated with the [Call Context](context.mdx). Again, this works the same way as for
-Funcs, although Funcs do not necessarily return values to the caller. The
+The return values are passed to the caller through the predefined [Results](results.mdx) map
+associated with the [Call Context](../../explanations/context.mdx).
+Again, this works the same as for Funcs, although Funcs do not necessarily return values to the caller. The
 [Schema Tool](../schema-tool/usage.mdx) will generate a function-specific [Results](results.mdx)
 structure with type-safe proxies to the result fields in this map.
-
-In the next section we will look at [smart contract initialization](init.mdx).

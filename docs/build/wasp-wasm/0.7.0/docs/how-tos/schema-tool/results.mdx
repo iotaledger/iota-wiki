@@ -1,35 +1,34 @@
 ---
-keywords:
-  - results
-  - function
-  - user function
-  - error message
-  - implementations
-  - mandatory parameter
-  - immutable state
-  - definition
-
-description: The optional `results` subsection contains field definitions for each of the results a function produces. The layout of the field definitions is identical to that of the state field definitions
-
 image: /img/logo/WASP_logo_dark.png
+description: "Understand how to outline function results using the 'results' subsection and how the Schema Tool aids in this process."
+keywords:
+  - Function Results
+  - Schema Tool
+  - Results Subsection
+  - Mutable Structure
+  - Result Variables
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Function Results
+# Define Function Results
 
-The optional `results` subsection contains field definitions for each of the results a
-function produces. The layout of the field definitions is identical to that of the
-[Params](params.mdx) field definitions.
+You can use the optional `results` subsection to detail the results a function can produce.
+This setup aligns with the field definitions seen in the [Params](params.mdx) subsection.
 
-The [Schema Tool](../schema-tool/usage.mdx) will automatically generate a mutable structure with member
-variables for proxies to each result variable in the [Results](results.mdx) map. The user
-will be able to set the result variables through this structure, which is passed to the
-function.
+## Schema Tool Features
 
-When this subsection is empty, or completely omitted, no structure will be generated or
-passed to the function.
+The [Schema Tool](../schema-tool/usage.mdx) assists in this setup by:
+
+- Creating a mutable structure that includes proxies for each result variable found in the [Results](results.mdx) map.
+- Enabling users to assign values to result variables via this generated structure during the function call.
+
+:::note
+
+If the `results` subsection is not used, no structure will be created or conveyed to the function.
+
+:::
 
 For example, here is the structure generated for the mutable results for the `getFactor`
 function:
@@ -84,7 +83,3 @@ export class MutableGetFactorResults extends wasmtypes.ScProxy {
 Note that the [Schema Tool](../schema-tool/usage.mdx) will also generate an immutable version of the
 structure, suitable for accessing the results after by the caller of this smart contract
 function.
-
-In the next section we will look at how so-called [thunk functions](thunks.mdx)
-encapsulate access and parameter checking and set up the type-safe function-specific
-contexts.

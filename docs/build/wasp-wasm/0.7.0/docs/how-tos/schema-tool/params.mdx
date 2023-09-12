@@ -1,38 +1,37 @@
 ---
+description: "Learn how to define function parameters using the 'params' subsection, and how the Schema Tool facilitates this process."
 keywords:
-  - params
-  - parameters
-  - field definition
-  - field type
-  - optional
-  - schema tool
-  - structure
-  - immutable
-
-description: The optional params subsection contains field definitions for each of the parameters that a function takes.
-
+  - Function Parameters
+  - Schema Tool
+  - Params Subsection
+  - Optional Parameters
+  - Parameter Proxy
 image: /img/logo/WASP_logo_dark.png
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Function Parameters
+# Define Function Parameters
 
-The optional [`params`](params.mdx) subsection contains field definitions for each of the
-parameters that a function takes. The layout of the field definitions is identical to the
-[`state`](../schema-tool/state.mdx) subsection field definitions with one addition, the field type can be
-followed by a question mark to indicate that the parameter is optional.
+You can use the optional [`params`](params.mdx) subsection to specify the parameters a function accepts.
+This section can define both mandatory and optional parameters.
+Optional parameters are denoted with a question mark `?` following the field type.
 
-The [Schema Tool](../schema-tool/usage.mdx) will automatically generate an immutable structure with
-member variables for proxies to each parameter variable in the [Params](params.mdx) map.
-It will also generate code to check the presence of each non-optional parameter, and it
-will also verify the parameter's data type. This checking is done before the function is
-called. The user will be able to immediately start using the parameter proxy through the
-structure that is passed to the function.
+## Schema Tool Automation
 
-When this subsection is empty or completely omitted, no structure will be generated or
-passed to the function.
+The [Schema Tool](../schema-tool/usage.mdx) streamlines the creation of functions by:
+
+- Generating an immutable structure holding parameter proxies from the [Params](params.mdx) map.
+- Checking the presence and data type of non-optional parameters before the function call.
+
+These functionalities allow users to directly use parameter proxies in the structure passed to the function.
+
+:::note
+
+Omitting the `params` subsection results in no structure generation or parameter passing to the function.
+
+:::
 
 For example, here is the structure generated for the immutable [Params](params.mdx) for
 the `member` function:
@@ -99,8 +98,5 @@ export class ImmutableMemberParams extends wasmtypes.ScProxy {
 </TabItem>
 </Tabs>
 
-Note that the [Schema Tool](../schema-tool/usage.mdx) will also generate a mutable version of the
-structure, suitable for providing the parameters when calling this smart contract function
-from any [Call Context](context.mdx).
-
-In the next section, we will look at the [`results`](results.mdx) subsection.
+The [Schema Tool](../schema-tool/usage.mdx) will also generate a mutable version of the structure,
+suitable for providing the parameters when calling this smart contract function from any [Call Context](context.mdx).

@@ -1,50 +1,81 @@
 ---
+description: "Explore how synchronous function calls work between smart contracts, highlighting the role of function descriptors in parameter and token passage, and understanding the ISC host's role in this procedure."
 keywords:
-  - value
-  - Synchronous functions
-  - function descriptor
-  - smart contract chain
-  - views
-  - funcs
-
-description: Synchronous calls can only be made between contracts that are running on the same contract chain. When calling a smart contract function you can only access the memory assigned to that specific smart contract, the only way to share data between smart contracts that call each other is through function parameters and return values.
+  - Synchronous Calls
+  - Smart Contracts
+  - Function Descriptors
+  - ISC Host
+  - Function Parameters
+  - Smart Contract Memory
 image: /img/logo/WASP_logo_dark.png
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Calling Functions
+# Call Functions
 
-Synchronous function calls between smart contracts act very similar to how normal function
-calls work in any programming language, but with a slight twist. With normal function
-calls you share all the global memory that you can access with every function that you
-call. However, when calling a smart contract function you can only access the memory
-assigned to that specific smart contract. Remember, each smart contract runs in its own
-sandbox environment. Therefore, the only way to share data between smart contracts that
-call each other is through function parameters and return values.
+Synchronous function calls between smart contracts act very similar to how normal function calls work in any programming language,
+but with a slight twist.
+With normal function calls, you share all the global memory that you can access with every function that you call.
+However, when calling a smart contract function,
+you can only access the memory assigned to that specific smart contract.
 
-Synchronous calls can only be made between contracts that are running on the same contract
-chain. The ISC host knows about all the contracts it is running on a chain, and therefore
-is able to dispatch the call to the correct contract function. The function descriptor is
-used to specify the call parameters (if any) through its [Params](params.mdx) proxy, and
-to invoke the function through its `func` interface.
+## How Synchronous Calls Operate
 
-In addition, when the function that is called is not a [View](views.mdx), it is possible
-to pass tokens to the function call through this interface. Note that the only way to call
-a function and properly pass tokens to it _within the same chain_ is through the function
-descriptor. Otherwise, the `allowance()` function will not register any incoming tokens.
+### Memory Access
 
-When the call is made, the calling function will be paused and wait for the called
-function to complete. After completion, it may access the returned values (if any) through
-the [Results](results.mdx) proxy of the function descriptor.
+Unlike standard function calls in programming,
+where global memory is accessible to every function,
+smart contract functions can only access memory designated to that specific contract,
+as each operates in a unique sandbox environment.
 
-When calling a function from a View function, it is only possible to call other View
-functions. The ScFuncs interface enforces this at compile-time because it expects an
-`ScViewContext` to be passed to the constructor that creates the function descriptor.
+### Data Sharing
 
-Here's how a smart contract would tell a `dividend` contract on the same chain to divide
-the 1000 tokens it passes to the function:
+If you want to share data between smart contracts, you will need to use:
+
+- Function [parameters](params.mdx)
+- [Return](results.mdx) values
+
+## The ISC Host Role
+
+Ensuring smooth synchronous calls between contracts on the same chain, the ISC host:
+
+- Recognizes all contracts functioning on a chain.
+- Directs the call appropriately to the destined contract function using function descriptors.
+
+### Function Descriptors
+
+Function descriptors allow:
+
+- Specification of call parameters via the [Params](params.mdx) proxy.
+- Function invocation through the `func` interface.
+- Passing tokens to non-[View](views.mdx) function calls within the same chain.
+
+:::note
+
+The only way to call a function and properly pass tokens to it within the same chain is through the function descriptor.
+Otherwise, the allowance() function will not register any incoming tokens.
+
+:::
+
+### Call Process
+
+During a call:
+
+- The initiator function pauses and awaits the completion of the called function.
+- Post-completion, retrieves potential returned values through the [Results](results.mdx) proxy.
+
+### Calling From View Functions
+
+When a view function initiates a call:
+
+- It can only reach out to other [view](views.mdx) functions.
+- The `ScFuncs` interface mandates an `ScViewContext` for the constructor creating the function descriptor.
+
+## Usage Example
+
+Here's how a smart contract would tell a `dividend` contract on the same chain to divide the 1000 tokens it passes to the function:
 
 <Tabs groupId="language" queryString>
 
@@ -152,6 +183,3 @@ f.func.ofContract(altContract).transferBaseTokens(1000).call();
 
 </TabItem>
 </Tabs>
-
-In the next section we will look at how to use function descriptors to
-[asynchronously call](post.mdx) smart contract functions on any chain.

@@ -8,17 +8,16 @@ keywords:
   - results
 
 image: /img/logo/WASP_logo_dark.png
-
 description: The code generated for Funcs will be able to inspect and modify the smart contract state, whereas the code generated for Views will only be able to inspect the state.
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Function Definitions
+# Define Functions
 
 Here is the full schema definition file for the `dividend` example. We will now focus on
-its `funcs` and `views` sections. Since they are structured identically we will only need
+its [`funcs` and `views` sections](../../explanations/context.md). Since they are structured identically we will only need
 to explain the layout of these sections once.
 
 <Tabs groupId="schema" queryString>
@@ -69,17 +68,15 @@ views:
 
 As you can see each of the `funcs` and `views` sections defines their functions in the
 same way. The only resulting difference is in the way the [Schema Tool](../schema-tool/usage.mdx)
-generates code for them. The code generated for Funcs will be able to inspect and modify
-the smart contract state, whereas the code generated for Views will only be able to
-inspect the state.
+generates code for them:
+
+- The code generated for Funcs will be able to inspect and modify the smart contract state.
+- The code generated for Views will only be able to inspect the state.
 
 Functions are defined as named subsections in the schema definition file. The name of the
 subsection will become the name of the function. In turn, there can be 3 optional
 subsections under each function subsection.
 
-- `access` indicates who is allowed to access the function.
+- [`access`](access.mdx) indicates who is allowed to access the function.
 - `params` holds the field definitions that describe the function parameters.
 - `results` holds the field definitions that describe the function results.
-
-We will now examine each subsection in more detail. In the next section we will first look
-at the [`access`](access.mdx) subsection.

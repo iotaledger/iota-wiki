@@ -24,7 +24,7 @@ i.e. [the L2 ledger](../../explanations/how-accounts-work.md).
 ## Entry Points
 
 The `accounts` contract provides functions to deposit and withdraw tokens, information about the assets deposited on the
-chain, and the functionality to create and utilize foundries.
+chain, and the functionality to create and use foundries.
 
 ### `deposit()`
 

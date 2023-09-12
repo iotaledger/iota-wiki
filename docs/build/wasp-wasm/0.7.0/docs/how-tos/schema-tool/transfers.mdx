@@ -1,52 +1,60 @@
 ---
+description: 'Explore methods in the Call Context that facilitate the handling and transfer of asset balances in smart contracts using the `dividend` example.'
 keywords:
-  - balances
-  - color
-  - smart contract function
-  - address
-  - members
-  - incoming
-  - tokens
-  - incoming
-
-description: There are two methods in the call context that deal with token balances. The balances() method can be used to determine the current asset balances. The allowance() method can be used to determine the caller assets that the function is allowed to use.
+  - Call Context
+  - Asset Balances
+  - ScBalances Proxy
+  - ScTransfer Proxy
+  - Dividend Smart Contract
 image: /img/logo/WASP_logo_dark.png
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Token Transfers
+# Transfer Tokens
 
-There are two methods in the [Call Context](context.mdx) that deal with token balances.
-The first one is the `balances()` method, which can be used to determine the current asset
-balances that are governed by this smart contract. The second one is the `allowance()`
-method, which can be used to determine the caller assets that the current call to the
-smart contract function is allowed to use.
+The [Call Context](../../explanations/context.mdx) in smart contracts introduces two vital methods -
+`balances()` and `allowance()` - to manage token balances efficiently.
+Understanding how to use these can be foundational in setting up smart contracts,
+as demonstrated in the `dividend` smart contract example.
 
-Both methods provide access to zero or more balances of assets, through a special
-`ScBalances` proxy. Note that the `allowance()` balances are not automatically transferred
-to the smart contract but instead will need to explicitly be transferred by the function.
-That way, if a function cannot handle the transfer the tokens will stay safely in the
-caller's on-chain account. The function explicitly transfers only assets it understands,
-and only in the amount that its algorithm defines, and never more than the allowed amount.
+## Methods Overview
 
-There is also a `transfer_allowed()` method in the [Call Context](context.mdx) that can
-transfer assets from the caller's on-chain account to any other on-chain account. The
-assets to be transferred are provided to the method through a special `ScTransfer` proxy,
-which is essentially a mutable version of `ScBalances`. We will be using the
-`transfer_allowed()` method in the `dividend` example to disperse the incoming iotas to
-the member accounts.
+### 1. **`balances()` Method**:
 
-The idea behind the dividend smart contract is that once we have set up the list of
-members, consisting of address/factor pairs, and knowing the total sum of the factors, we
-can automatically pay out a dividend to each of the members in the list according to the
-factors involved. Whatever amount of iotas gets sent to the `divide()` function will be
-divided over the members in proportion based on their respective factors. For example, you
-could set it up so that address A has a factor of 50, B has 30, and C has 20, for a total
-of 100 to divide. Then whenever an amount of iotas gets sent to the `divide()` function,
-address A will receive 50/100th, address B will receive 30/100th, and address C will
-receive 20/100th of that amount.
+- **Functionality**: Fetch the present asset balances regulated by the smart contract.
+- **Access**: Through the `ScBalances` proxy.
+
+### 2. **`allowance()` Method**:
+
+- **Functionality**: Verify the caller assets that the current smart contract function can use.
+- **Transfer Requirement**: Assets are not automatically transferred;
+  the function must instigate the transfer explicitly within the allowed limit.
+- **Access**: Through the `ScBalances` proxy.
+
+### 3. **`transfer_allowed()` Method**:
+
+- **Functionality**: Facilitate asset transfers from the caller's on-chain account to another on-chain account.
+- **Proxy**: uses the `ScTransfer` proxy, a mutable variant of `ScBalances`.
+- **Application**: In the `dividend` contract, it aids in distributing iotas to member accounts.
+
+## Dividend Smart Contract Example
+
+The `dividend` smart contract operates on a principle of equitable asset distribution to its members based on predefined factors.
+Here's how it works:
+
+1. **Setup**: Establish a list of members with associated address/factor pairs and calculate the total factor sum.
+2. **Function**: The `divide()` function manages the dividend distribution.
+3. **Dividend Allocation**:
+   - **Input**: Iotas sent to the `divide()` function.
+   - **Distribution**: Proportional to the individual's factor.
+   - **Example**: For factors A:50, B:30, and C:20 (total 100):
+     - **A receives**: 50/100 of the input iotas.
+     - **B receives**: 30/100 of the input iotas.
+     - **C receives**: 20/100 of the input iotas.
+
+In this system, asset distribution is transparent, fair, and automated, ensuring a streamlined division process.
 
 Here is the `divide` function:
 
@@ -232,6 +240,3 @@ export function funcDivide(
 
 </TabItem>
 </Tabs>
-
-In the next section we will introduce [Function Descriptors](funcdesc.mdx) that can be
-used to initiate smart contract functions.

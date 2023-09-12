@@ -1,48 +1,50 @@
 ---
+description: "This article outlines how to trigger events in smart contracts utilizing ISC sandbox's ScFuncContext and the Schema Tool for structured events."
 keywords:
-  - functions
-  - state
-  - structures
-  - storage
-  - named fields
-description: The smart contracts can trigger events that the user can subscribe to and that convey changes to its state.
+  - Smart Contracts
+  - ISC Sandbox
+  - Schema Tool
+  - Event-driven
+  - Call Context
+  - ScFuncContext
+  - Event Triggering
 image: /img/logo/WASP_logo_dark.png
 ---
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
+# Trigger Events
 
-# Triggering Events
+Smart contracts operate in a confined environment but need a mechanism to interact with users.
+A solution to this is triggering events, which is facilitated through smart contracts.
 
-Smart contracts do not live in a vacuum. Even though they run in a very limited sandbox,
-from a larger perspective there will have to be a way for users to interact with them.
-Since smart contracts are essentially event-driven, and requests run asynchronously from
-the user's perspective, there is a need for triggering events by the smart contracts
-themselves. Of course, it would be possible for users to periodically call a view function
-to retrieve the latest state of the smart contract, but this burdens the nodes
-unnecessarily. A better way is to have the smart contracts trigger events that the user
-can subscribe to and that convey changes to its state.
+## ISC Sandbox Interface
 
-To support events the ISC sandbox provides only a very rudimentary interface. The
-`ScFuncContext` [Call Context](context.mdx) exposes this interface through its `event()`
-function, which takes a completely arbitrary text string as parameter. It is up to the
-smart contract creator to format this text string in a meaningful way, and it's up to the
-user to interpret this text string correctly. This is error-prone, inconsistent, and means
-that a lot of code needs to be written both on the smart contract side that generates
-these events, and on the client side that handles these events. And with any change to the
-formatting of these events both ends need to be modified to stay in sync.
+The `ScFuncContext` [Call Context](context.mdx) in ISC Sandbox has an `event()` function to support event triggering.
+This function takes a text string parameter, requiring creators and users to maintain and understand the chosen format.
+However, this setup is prone to errors and inconsistency due to the arbitrary nature of the text strings used.
 
-This is why the [Schema Tool](../schema-tool/usage.mdx) allows you to define your own structured events.
-The [Schema Tool](../schema-tool/usage.mdx) will generate a structure that will become part of all Func
-function contexts. Events can only be triggered from within a Func. They will become part
-of the state of the smart contract because every event is logged in the core `blocklog`
-contract. Therefore, events cannot be triggered from within a View.
+## Structured Events with Schema Tool
 
-For each event defined in the `events` section of the schema definition file, this events
-structure will contain a member function that takes the defined types of parameters and
-will automatically encode the event as a consistently formatted string and pass it to the
-`event()` function. The string consists of the name of the event, a timestamp, and string
-representations of each field, all separated by vertical bars.
+To mitigate issues stemming from the rudimentary interface,
+use the [Schema Tool](../schema-tool/usage.mdx) to define structured events,
+making event creation and handling more consistent and less error-prone.
+
+This tool allows you to establish structured events that are integrated into all Func function contexts.
+Note that events:
+
+- Can only be triggered within a Func
+- Become part of the smart contract's state
+- Are logged in the core `blocklog` contract
+- Cannot be triggered within a View
+
+## Event Structure
+
+Define each event in the `events` section of the schema definition file.
+This setup ensures that events are encoded consistently,
+utilizing a function that automatically formats the event string with the event name, timestamp, and parameter fields,
+delimited by vertical bars.
+This structured approach facilitates streamlined, error-resistant event triggering.
+
+### Example
 
 Here is the `events` section that can be found in the demo `fairroulette` smart contract:
 
@@ -311,6 +313,3 @@ stream and respond to any events it deems noteworthy. The [Schema Tool](../schem
 automatically generate the necessary client side code that properly listens for the
 events, parses the event strings into a type-safe structure, and passes this structure to
 the corresponding handler function.
-
-In the next section we will explore how the [Schema Tool](../schema-tool/usage.mdx) helps to simplify
-smart contract [function definitions](funcs.mdx).

@@ -16,17 +16,17 @@ import TabItem from '@theme/TabItem';
 
 # Structured Data Types
 
-The [Schema Tool](../../how-tos/schema-tool/usage.mdx) allows you to define your own structured data types that are
+The [Schema Tool](../../how-tos/schema-tool/usage.mdx) allows you to define your structured data types that are
 composed of the predefined WasmLib value data types. The tool will generate a struct with
-named fields according to the definition in the schema definition file, and also will
-generate code to serialize and deserialize the structure to a byte array, so that it can
+named fields according to the definition in the schema definition file and also will
+generate code to serialize and deserialize the structure to a byte array so that it can
 be saved as a single unit of data bytes, for example in state storage.
 
-You can use structs directly as a type in state storage definitions and the
+You can use structs directly as a type in state storage definitions, and the
 [Schema Tool](../../how-tos/schema-tool/usage.mdx) will automatically generate the proxy code to access and
 (de)serialize it properly.
 
-For example, let's say you are creating a `betting` smart contract. Then you would want to
+For example, let's say you are creating a `betting` smart contract. Then, you would want to
 store information for each bet. The Bet structure could consist of the bet amount and
 time, the number of the item that was bet on, and the agent ID of the one who placed the
 bet. And you would keep track of all bets in state storage in an array of Bet structs. To
@@ -505,13 +505,9 @@ export class MutableBettingState extends wasmtypes.ScProxy {
 </TabItem>
 </Tabs>
 
-The end results are ImmutableBettingState and MutableBettingState structures that can
+The results are ImmutableBettingState and MutableBettingState structures that can
 directly interface to the state of the betting contract.
 
-Note how the comments from the schema definition file have been copied to the structure
-definition in the code and also to the access functions for the fields. This will allow
-your development environment to pop up context-sensitive help for those fields and access
-functions.
-
-In the next section we will look at how to use [type definitions](typedefs.mdx) to
-properly define container nesting relationships.
+Note how the comments from the schema definition file have been copied to the code's structure definition and access
+functions for the fields. This will allow your development environment to pop up context - sensitive help
+for those fields and access functions.
