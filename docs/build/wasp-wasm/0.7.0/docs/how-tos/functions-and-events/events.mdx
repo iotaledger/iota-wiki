@@ -5,9 +5,7 @@ keywords:
   - structures
   - storage
   - named fields
-
 description: The smart contracts can trigger events that the user can subscribe to and that convey changes to its state.
-
 image: /img/logo/WASP_logo_dark.png
 ---
 
@@ -34,8 +32,8 @@ that a lot of code needs to be written both on the smart contract side that gene
 these events, and on the client side that handles these events. And with any change to the
 formatting of these events both ends need to be modified to stay in sync.
 
-This is why the [Schema Tool](usage.mdx) allows you to define your own structured events.
-The [Schema Tool](usage.mdx) will generate a structure that will become part of all Func
+This is why the [Schema Tool](../schema-tool/usage.mdx) allows you to define your own structured events.
+The [Schema Tool](../schema-tool/usage.mdx) will generate a structure that will become part of all Func
 function contexts. Events can only be triggered from within a Func. They will become part
 of the state of the smart contract because every event is logged in the core `blocklog`
 contract. Therefore, events cannot be triggered from within a View.
@@ -71,7 +69,7 @@ events:
 </TabItem>
 </Tabs>
 
-The [Schema Tool](usage.mdx) will generate `events.xx` which contains the following code
+The [Schema Tool](../schema-tool/usage.mdx) will generate `events.xx` which contains the following code
 for the `FairRouletteEvents` struct:
 
 <Tabs groupId="language" queryString>
@@ -309,10 +307,10 @@ f.events.bet(bet.better.address(), bet.amount, bet.number);
 </Tabs>
 
 The smart contract client code can define handler functions to listen in to the event
-stream and respond to any events it deems noteworthy. The [Schema Tool](usage.mdx) will
+stream and respond to any events it deems noteworthy. The [Schema Tool](../schema-tool/usage.mdx) will
 automatically generate the necessary client side code that properly listens for the
 events, parses the event strings into a type-safe structure, and passes this structure to
 the corresponding handler function.
 
-In the next section we will explore how the [Schema Tool](usage.mdx) helps to simplify
+In the next section we will explore how the [Schema Tool](../schema-tool/usage.mdx) helps to simplify
 smart contract [function definitions](funcs.mdx).

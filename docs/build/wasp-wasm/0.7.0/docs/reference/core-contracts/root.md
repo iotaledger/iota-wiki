@@ -13,7 +13,6 @@ keywords:
 - ownership
 - views
 - reference
-
 ---
 
 # The `root` Contract

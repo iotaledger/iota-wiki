@@ -11,7 +11,6 @@ keywords:
 - validate smart contracts
 - install
 - how-to
-
 ---
 
 # Testing Smart Contracts with Solo
@@ -65,7 +64,7 @@ You will need a smart contract to test along with Solo.
 You can find example implementations of Wasm smart contracts, including source code and tests, in the Wasp
 repository’s [contracts/wasm folder](https://github.com/iotaledger/wasp/tree/develop/contracts/wasm).
 
-For information on creating Wasm smart contracts, refer to the [Wasm VM chapter](../wasm_vm/intro.mdx).
+For information on creating Wasm smart contracts, refer to the [Wasm VM chapter](../../introduction.mdx).
 
 The following sections will present some Solo usage examples. You can find the example code in
 the [Wasp repository](https://github.com/iotaledger/wasp/tree/develop/documentation/tutorial-examples).

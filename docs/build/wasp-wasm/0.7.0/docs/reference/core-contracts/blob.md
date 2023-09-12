@@ -11,7 +11,6 @@ keywords:
   - views
   - reference
 ---
-
 # The `blob` Contract
 
 The `blob` contract is one of the [core contracts](overview.md) on each IOTA Smart Contracts chain.

@@ -8,7 +8,6 @@ keywords:
   - agentID
 
 description: The optional access subsection indicates the agent who is allowed to access the function. When this definition is omitted, anyone is allowed to call the function.
-
 image: /img/logo/WASP_logo_dark.png
 ---
 
@@ -27,7 +26,7 @@ following:
   provide functionality that can initialize and/or modify this variable. As long as this
   state variable has not been set, nobody will be allowed to call this function.
 
-The [Schema Tool](usage.mdx) will automatically generate code to properly check the access
+The [Schema Tool](../schema-tool/usage.mdx) will automatically generate code to properly check the access
 rights of the agent that called the function before the actual function is called.
 
 You can see usage examples of the access identifier in the schema definition file, where

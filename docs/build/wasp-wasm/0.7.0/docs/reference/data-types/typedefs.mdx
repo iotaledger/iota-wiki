@@ -11,20 +11,19 @@ description: You can add a typedefs section to the schema definition file, where
 
 image: /img/logo/WASP_logo_dark.png
 ---
-
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 # Type Definitions
 
-We allow nesting of [container types](../wasm_vm/proxies.mdx#container-proxies), but it
+We allow nesting of [container types](../../how-tos/functions-and-events/proxies.mdx#container-proxies), but it
 is not possible to specify these types directly because the type name syntax only allows
 you to specify a single container type.
 
 There is a simple solution to this problem. You can add a `typedefs` section to the schema
 definition file, where you can define a single type name for a container type. That way
 you can easily create containers that contain such container types. The
-[Schema Tool](usage.mdx) will automatically generate the in-between proxy types necessary
+[Schema Tool](../../how-tos/schema-tool/usage.mdx) will automatically generate the in-between proxy types necessary
 to make this work.
 
 To keep it at the `betting` smart contract from [the previous section](structs.mdx),
@@ -46,7 +45,7 @@ state:
 </TabItem>
 </Tabs>
 
-The [Schema Tool](usage.mdx) will generate the following code in `typedefs.xx` for the
+The [Schema Tool](../../how-tos/schema-tool/usage.mdx) will generate the following code in `typedefs.xx` for the
 `BettingRound` type:
 
 <Tabs groupId="language" queryString>
@@ -449,5 +448,5 @@ Which in turn is an array of `Bet`. So, the desired result has been achieved. An
 access step along the way only allows you to take the path laid out which is checked at
 compile-time.
 
-In the next section we will explore how the [Schema Tool](usage.mdx) generates a proxy
-interface to mutable [State](state.mdx).
+In the next section we will explore how the [Schema Tool](../../how-tos/schema-tool/usage.mdx) generates a proxy
+interface to mutable [State](../../how-tos/schema-tool/state.mdx).

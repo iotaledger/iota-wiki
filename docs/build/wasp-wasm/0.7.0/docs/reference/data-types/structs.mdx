@@ -10,20 +10,19 @@ description: You can use structs directly as a type in state storage definitions
 
 image: /img/logo/WASP_logo_dark.png
 ---
-
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 # Structured Data Types
 
-The [Schema Tool](usage.mdx) allows you to define your own structured data types that are
+The [Schema Tool](../../how-tos/schema-tool/usage.mdx) allows you to define your own structured data types that are
 composed of the predefined WasmLib value data types. The tool will generate a struct with
 named fields according to the definition in the schema definition file, and also will
 generate code to serialize and deserialize the structure to a byte array, so that it can
 be saved as a single unit of data bytes, for example in state storage.
 
 You can use structs directly as a type in state storage definitions and the
-[Schema Tool](usage.mdx) will automatically generate the proxy code to access and
+[Schema Tool](../../how-tos/schema-tool/usage.mdx) will automatically generate the proxy code to access and
 (de)serialize it properly.
 
 For example, let's say you are creating a `betting` smart contract. Then you would want to
@@ -49,7 +48,7 @@ state:
 </TabItem>
 </Tabs>
 
-The [Schema Tool](usage.mdx) will generate the following code in `structs.xx` for the Bet
+The [Schema Tool](../../how-tos/schema-tool/usage.mdx) will generate the following code in `structs.xx` for the Bet
 struct:
 
 <Tabs groupId="language" queryString>

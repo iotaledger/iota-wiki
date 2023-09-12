@@ -13,7 +13,6 @@ keywords:
 - ownership
 - views
 - reference
-
 ---
 
 # The `evm` Contract

@@ -23,7 +23,7 @@ The optional `results` subsection contains field definitions for each of the res
 function produces. The layout of the field definitions is identical to that of the
 [Params](params.mdx) field definitions.
 
-The [Schema Tool](usage.mdx) will automatically generate a mutable structure with member
+The [Schema Tool](../schema-tool/usage.mdx) will automatically generate a mutable structure with member
 variables for proxies to each result variable in the [Results](results.mdx) map. The user
 will be able to set the result variables through this structure, which is passed to the
 function.
@@ -81,7 +81,7 @@ export class MutableGetFactorResults extends wasmtypes.ScProxy {
 </TabItem>
 </Tabs>
 
-Note that the [Schema Tool](usage.mdx) will also generate an immutable version of the
+Note that the [Schema Tool](../schema-tool/usage.mdx) will also generate an immutable version of the
 structure, suitable for accessing the results after by the caller of this smart contract
 function.
 

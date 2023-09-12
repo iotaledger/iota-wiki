@@ -12,7 +12,6 @@ keywords:
   - receipts
   - reference
 ---
-
 # Core Contracts
 
 ![Wasp Node Core Contracts Overview](/img/Banner/banner_wasp_core_contracts_overview.png)

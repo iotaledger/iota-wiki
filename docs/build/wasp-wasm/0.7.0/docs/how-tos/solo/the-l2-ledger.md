@@ -13,7 +13,6 @@ keywords:
 - ledger
 
 ---
-
 # The L2 Ledger
 
 Each chain in IOTA Smart Contracts contains its own L2 ledger, independent of the L1 ledger.
