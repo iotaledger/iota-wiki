@@ -14,6 +14,13 @@ keywords:
 
 # EVM/Solidity Based Smart Contracts
 
+:::caution
+
+Smart Contracts are currently only compatible with the stardust update and therefore only compatible with the Shimmer
+main and testnet.
+
+:::
+
 The current release of IOTA Smart Contracts has experimental support
 for [EVM](https://ethereum.org/en/developers/docs/evm/)/[Solidity](https://docs.soliditylang.org/en/v0.8.16/) smart
 contracts, as well as [Wasm](/wasp-wasm/overview/) smart contracts, providing limited compatibility with existing smart contracts and
