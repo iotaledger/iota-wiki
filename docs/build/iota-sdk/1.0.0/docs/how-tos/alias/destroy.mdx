@@ -36,12 +36,12 @@ https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/alias/d
 
 </div>
 
-3. Retry transaction until included [`Transaction`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/account/struct.Account.html#method.retry_transaction_until_included) that was sent.
+3. Retry the [`Transaction`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/account/struct.Account.html#method.retry_transaction_until_included) until included.
 
 <div className={'hide-code-block-extras'}>
 
 ```rust reference
-https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/alias/destroy.rs#L47
+https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/alias/destroy.rs#L47-L49
 ```
 
 </div>
@@ -53,17 +53,17 @@ The following example will:
 
 1. Instantiate a [`Wallet`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/core/struct.Wallet.html), get Alice's `Account` which was
    [created in the first guide](../accounts-and-addresses/create-account.mdx) and [sync it](../accounts-and-addresses/check-balance.mdx).
-2. Destroy an alias output transaction by calling the [`Account.preparedestroyalias()`](../../references/nodejs/classes/Account.md#preparedestroyalias) function.
+2. Prepare the transaction to destroy an Alias Output by calling the [`Account.preparedestroyalias()`](../../references/nodejs/classes/Account.md#preparedestroyalias) function, and then [send](../../references/nodejs/classes/Account.md#send) it.
 
 <div className={'hide-code-block-extras'}>
 
 ```typescript reference
-    https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/alias/destroy.ts#L56
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/alias/destroy.ts#L56-L58
 ```
 
 </div>
 
-3. Retry transaction until included [`Transaction`](../../references/nodejs/classes/Account/#retrytransactionuntilincluded) that was sent.
+3. Retry transaction until included [`Transaction`](../../references/nodejs/classes/Account.md#retrytransactionuntilincluded) that was sent.
 
 <div className={'hide-code-block-extras'}>
 
@@ -78,7 +78,7 @@ https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how
 
 1. Instantiate a [`Wallet`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/core/struct.Wallet.html), get Alice's `Account` which was
    [created in the first guide](../accounts-and-addresses/create-account.mdx) and [sync it](../accounts-and-addresses/check-balance.mdx).
-2. Destroy an alias output transaction by calling the [`Account.prepare_destroy_alias()`](../../references/python/iota_sdk/wallet/account.md#prepare_destroy_alias) function.
+2. Destroy the transaction that will destroy the alias output by calling the [`Account.prepare_destroy_alias()`](../../references/python/iota_sdk/wallet/account.md#prepare_destroy_alias) function, and then [send](../../references/python/iota_sdk/wallet/account.md#send) it.
 
 <div className={'hide-code-block-extras'}>
 

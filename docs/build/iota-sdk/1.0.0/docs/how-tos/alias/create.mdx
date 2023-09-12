@@ -15,9 +15,9 @@ keywords:
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-The Alias Output is a specific implementation of a UTXO state machine. Alias ID, the unique identifier of an instance of the deployed state machine, is generated deterministically by the protocol and is not allowed to change in any future state transitions.
+An [Alias Output](https://wiki.iota.org/tips/tips/TIP-0018/#alias-output) is a specific implementation of a UTXO state machine. The Alias ID, the unique identifier of an instance of the deployed state machine, is generated deterministically by the protocol and is not allowed to change in future state transitions.
 
-Alias Output represents an alias account in the ledger with two control levels and a permanentAlias Address. The account owns other outputs that are locked under Alias Address. The account keeps track of state transitions (`State Index` counter), controlled foundries (`Foundry Counter`) and anchors the layer 2 state as metadata into the UTXO ledger.
+An Alias Output represents an alias account in the ledger with two control levels and a permanent Alias Address. The account owns other outputs that are locked under the Alias Address. The account keeps track of state transitions (`State Index` counter) and controlled foundries (`Foundry Counter`) and anchors the layer 2 state as metadata into the UTXO ledger.
 
 ## Example Code
 
@@ -28,7 +28,7 @@ The following example will:
 
 1. Instantiate a [`Wallet`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/core/struct.Wallet.html), get Alice's `Account` which was
    [created in the first guide](../accounts-and-addresses/create-account.mdx).
-2. Create an alias output transaction by calling the [`Account.create_alias_output()`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/account/struct.CreateAliasParams.html) function.
+2. Create an Alias Output transaction by calling the [`Account.create_alias_output()`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/account/struct.CreateAliasParams.html) function.
 
 <div className={'hide-code-block-extras'}>
 
@@ -38,12 +38,12 @@ https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/alias/c
 
 </div>
 
-3. Retry transaction until included [`Transaction`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/account/struct.Account.html#method.retry_transaction_until_included) that was sent.
+3. Retry the [`Transaction`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/account/struct.Account.html#method.retry_transaction_until_included) until included.
 
 <div className={'hide-code-block-extras'}>
 
 ```rust reference
-https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/alias/create.rs#L43
+https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/alias/create.rs#L43-L45
 ```
 
 </div>
@@ -65,7 +65,7 @@ The following example will:
 
 </div>
 
-3. Retry transaction until included [`Transaction`](../../references/nodejs/classes/Account/#retrytransactionuntilincluded) that was sent.
+3. Retry transaction until included [`Transaction`](../../references/nodejs/classes/Account.md#retrytransactionuntilincluded) that was sent.
 
 <div className={'hide-code-block-extras'}>
 
