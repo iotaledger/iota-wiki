@@ -32,11 +32,11 @@ At the lowest level data is stored on the ISC host in maps that take a byte stri
 and a byte string as value. There are 3 predefined maps from the viewpoint of WasmLib.
 They are:
 
-- the [State](state.mdx) map, which holds all state storage values
+- the [State](../schema-tool/state.mdx) map, which holds all state storage values
 - the [Params](params.mdx) map, which holds the current function call's parameter values
 - the [Results](results.mdx) map, which returns the function call's result values
 
-The [Schema Tool](usage.mdx) is able to build a more complex, JSON-like data structure
+The [Schema Tool](../schema-tool/usage.mdx) is able to build a more complex, JSON-like data structure
 on top of these maps, but in the end it all translates to simple key/value access on the
 underlying map.
 
@@ -48,7 +48,7 @@ defines the underlying map and the key that uniquely defines the value's locatio
 map. Value proxies can manipulate the value they refer to and will perform appropriate
 type conversion of the byte string that makes up the stored value.
 
-The [Schema Tool](usage.mdx) will make sure that the type-safe code that it generates
+The [Schema Tool](../schema-tool/usage.mdx) will make sure that the type-safe code that it generates
 always uses the appropriate proxy type.
 
 ## Container Proxies
@@ -58,7 +58,7 @@ value proxies, they refer to their virtual container through a proxy object that
 the underlying map and the key that uniquely defines the virtual container in that map.
 Contrary to value proxies these virtual containers need no storage.
 
-The [Schema Tool](usage.mdx) automatically generates code that allows the user to navigate
+The [Schema Tool](../schema-tool/usage.mdx) automatically generates code that allows the user to navigate
 the virtual path through the nested virtual containers. In the end this path leads to
 access to value proxies of all values that are located in that virtual container.
 
@@ -70,7 +70,7 @@ able to define surprisingly complex data structures.
 ### Map Proxies
 
 A map is a key/value store where the key is one of our supported value types. Within a
-map, keys are always of the same data type. The root maps ([State](state.mdx),
+map, keys are always of the same data type. The root maps ([State](../schema-tool/state.mdx),
 [Params](params.mdx), and [Results](results.mdx)) can store elements of any type, but
 their keys are limited to human-readable strings. This is because these keys needs to be
 defined in the schema definition file. Virtual maps, which are nested under a root map,
@@ -101,4 +101,4 @@ state storage. In practice a function will only use proxies to data that it actu
 needs to access.
 
 In the next section we will go into more detail about the supported
-[WasmLib Data Types](types.mdx).
+[WasmLib Data Types](../../reference/data-types/types.mdx).

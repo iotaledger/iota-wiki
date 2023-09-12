@@ -21,10 +21,10 @@ import TabItem from '@theme/TabItem';
 
 The optional [`params`](params.mdx) subsection contains field definitions for each of the
 parameters that a function takes. The layout of the field definitions is identical to the
-[`state`](state.mdx) subsection field definitions with one addition, the field type can be
+[`state`](../schema-tool/state.mdx) subsection field definitions with one addition, the field type can be
 followed by a question mark to indicate that the parameter is optional.
 
-The [Schema Tool](usage.mdx) will automatically generate an immutable structure with
+The [Schema Tool](../schema-tool/usage.mdx) will automatically generate an immutable structure with
 member variables for proxies to each parameter variable in the [Params](params.mdx) map.
 It will also generate code to check the presence of each non-optional parameter, and it
 will also verify the parameter's data type. This checking is done before the function is
@@ -99,7 +99,7 @@ export class ImmutableMemberParams extends wasmtypes.ScProxy {
 </TabItem>
 </Tabs>
 
-Note that the [Schema Tool](usage.mdx) will also generate a mutable version of the
+Note that the [Schema Tool](../schema-tool/usage.mdx) will also generate a mutable version of the
 structure, suitable for providing the parameters when calling this smart contract function
 from any [Call Context](context.mdx).
 

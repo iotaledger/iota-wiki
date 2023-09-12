@@ -10,7 +10,6 @@ keywords:
   - l1
   - how-to
 ---
-
 # The L1 Ledger
 
 IOTA Smart Contracts work as a **layer 2** (**L2**) extension of the _IOTA Multi-Asset Ledger_, **layer 1** (**L1**).

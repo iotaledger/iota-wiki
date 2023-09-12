@@ -13,14 +13,13 @@ description: Use the SoloContext to create full-blown tests for the dividend exa
 
 image: /img/logo/WASP_logo_dark.png
 ---
-
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 # Example Tests
 
-In the previous sections we showed how you can [`call()`](call.mdx) or
-[`post()`](post.mdx) smart contract function requests. We also created a few wrapper
+In the previous sections we showed how you can [`call()`](../functions-and-events/call.mdx) or
+[`post()`](../functions-and-events/post.mdx) smart contract function requests. We also created a few wrapper
 functions to simplify calling these functions even further. Now we will look at how to use
 the SoloContext to create full-blown tests for the `dividend` example smart contract.
 
@@ -231,11 +230,11 @@ any remaining tokens are not transferred, but remain in the sender's account.
 Finally, we call `divide` again with 2M+234 tokens and again verify the asset balances
 afterwards.
 
-Next we will show how to test [Views](views.mdx) and/or [Funcs](funcs.mdx) that return
-a result. Note that even though Funcs are usually invoked through a [`post()`](post.mdx)
+Next we will show how to test [Views](../functions-and-events/views.mdx) and/or [Funcs](../functions-and-events/funcs.mdx) that return
+a result. Note that even though Funcs are usually invoked through a [`post()`](../functions-and-events/post.mdx)
 request, in which case any return values are inaccessible, they still can be invoked
-through a [call()](call.mdx) from within another Func, in which these return values can
-be used normally. Since solo executes [`post()`](post.mdx) requests synchronously, it is
+through a [call()](../functions-and-events/call.mdx) from within another Func, in which these return values can
+be used normally. Since solo executes [`post()`](../functions-and-events/post.mdx) requests synchronously, it is
 possible to have a Func return a result and test for certain result values.
 
 <Tabs groupId="language" queryString>

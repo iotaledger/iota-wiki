@@ -93,7 +93,7 @@ the `Custom (1074) network`.
 
 [![Environment will be set to Injected Web3](https://user-images.githubusercontent.com/7383572/146169653-fd692eab-6e74-4b17-8833-bd87dafc0ce2.png)](https://user-images.githubusercontent.com/7383572/146169653-fd692eab-6e74-4b17-8833-bd87dafc0ce2.png)
 
-## Video Tutorial
+### Video Tutorial
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/0_rmmprEKrM" title="ShimmerEVM Tutorial: Connect to ShimmerEVM Testnet & Deploy a Solidity Smart Contract" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
@@ -120,7 +120,7 @@ often offered through block explorer APIs.
 
 :::
 
-## Video Tutorial
+### Video Tutorial
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/rRscvKirroo" title="ShimmerEVM Tutorial: Deploying a Smart Contract with Hardhat" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 

@@ -16,7 +16,6 @@ keywords:
 - chain info
 - fee info
 - reference
-
 ---
 
 # The `governance` Contract

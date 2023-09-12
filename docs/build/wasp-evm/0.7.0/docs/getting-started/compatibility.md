@@ -53,15 +53,15 @@ While ISC contracts are identified by an [hname](/learn/smart-contracts/core_con
 
 EVM contracts are not listed in the chain's [contract registry](/wasp-wasm/reference/core-contracts/root).
 
-### On-ledger Requests 
+### On-ledger Requests
 
 EVM contracts cannot be called via regular ISC requests; they can only be called through the JSON-RPC service.
 As a consequence, EVM contracts cannot receive on-ledger requests.
 
 ### Block Structure and Storage
 
-In contrast with an Ethereum blockchain, which stores the state in a Merkle tree, the EVM state is stored in raw form.
-  It would be inefficient to do that since it would be duplicating work done by the ISC layer.
+Unlike Ethereum's blockchain that houses the state in a Merkle tree, the EVM state resides in a raw form to prevent the
+duplication of efforts undertaken by the ISC layer.
 
 Any Ethereum transactions present in an ISC block are executed by
   the [`evm`](/wasp-wasm/reference/core-contracts/evm) [core contract](/wasp-wasm/reference/core-contracts/overview),
@@ -79,8 +79,8 @@ There is no guaranteed _block time_. A new EVM "block" will be created only when
 
 ### L2 Token Ownership
 
-Any Ethereum address is accepted as a valid `AgentID`, and thus can own L2 tokens on an IOTA Smart Contract chain,
-  just like IOTA addresses.
+In the IOTA Smart Contract chain, both IOTA and Ethereum addresses are a valid `AgentID`, facilitating the ownership of L2
+tokens.
 
 ### Retrieving the Ethereum Balance
 
@@ -89,9 +89,8 @@ The Ethereum balance of an account is tied to its L2 ISC balance in the token us
 
 ### The Magic Contract
 
-To manipulate the owned ISC tokens and access ISC functionality in general, there is
-a [special Ethereum contract](../how-tos/magic-contract/magic.md) that provides bindings to the ISC sandbox 
-(e.g. call `isc.send(...)` to send tokens).
+A [dedicated Ethereum contract](../how-tos/magic-contract/magic.md) exists to manage ISC tokens and generally avail ISC
+functionalities, introducing commands like `isc.send(...)` for token transfers.
 
 ### Gas Fees
 The used EVM gas is converted to ISC gas before being charged to the sender. The conversion ratio is configurable. The

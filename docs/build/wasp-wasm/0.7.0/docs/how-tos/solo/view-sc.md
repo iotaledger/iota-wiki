@@ -10,7 +10,6 @@ keywords:
   - synchronous
   - entry points
 ---
-
 # Calling a View
 
 The following snippet shows how you can call the view function `getString` of the smart contract `solotutorial` without

@@ -8,7 +8,6 @@ keywords:
   - reference
 
 description: The WasmLib provides direct support for the basic value data types that are found in all programming languages, and WasmLib versions of ISC-specific value data types.
-
 image: /img/logo/WASP_logo_dark.png
 ---
 
@@ -24,7 +23,7 @@ as human-readable text string.
 
 These are mostly simple built-in scalar data types as provided by most programming
 languages. Each integer data type has a clearly defined storage size. The
-[Schema Tool](usage.mdx) will attempt to use the closest matching built-in data type when
+[Schema Tool](../../how-tos/schema-tool/usage.mdx)) will attempt to use the closest matching built-in data type when
 generating code for a specific language.
 
 - `BigInt` - An arbitrary-length unsigned integer.
@@ -58,7 +57,7 @@ More detailed explanations about their specific uses can be found in the
 
 ## Full Matrix of WasmLib Types
 
-WasmLib implements a full set of [value proxies](proxies.mdx#value-proxies) for each
+WasmLib implements a full set of [value proxies](../../how-tos/functions-and-events/proxies.mdx#value-proxies) for each
 predefined value type that provide access to data on the ISC host. But there is one aspect
 of this data that we have not considered yet. Some data provided by the host is mutable,
 whereas other data may be immutable. To facilitate this distinction, each value proxy type
@@ -100,11 +99,8 @@ The consistent naming makes it easy to remember the type names. Bool, Bytes, Str
 the integer types are the odd ones out. They are implemented in WasmLib by the closest
 equivalents in the chosen WasmLib implementation programming language.
 
-The [Schema Tool](usage.mdx) will automatically generate the proper (im)mutable proxies
+The [Schema Tool](../../how-tos/schema-tool/usage.mdx) will automatically generate the proper (im)mutable proxies
 from the schema definition. For example, View functions will only be able to access the
-[State](state.mdx) map through immutable proxies. The same goes for the
-[Params](params.mdx) map that was passed into a Func or View, and for the
-[Results](results.mdx) map that was returned from a call to a Func or View.
-
-In the next section we will show how use these predefined types to create user-defined
-[Structured Data Types](structs.mdx).
+[State](../../how-tos/schema-tool/state.mdx) map through immutable proxies. The same goes for the
+[Params](../../how-tos/functions-and-events/params.mdx) map that was passed into a Func or View, and for the
+[Results](../../how-tos/functions-and-events/results.mdx) map that was returned from a call to a Func or View.

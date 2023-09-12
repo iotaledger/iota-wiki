@@ -16,13 +16,13 @@ import TabItem from '@theme/TabItem';
 
 # Function Descriptors
 
-The [Schema Tool](usage.mdx) provides us with an easy way to get access to smart contract
+The [Schema Tool](../schema-tool/usage.mdx) provides us with an easy way to get access to smart contract
 functions through _function descriptors_. These are structures that provide access to the
 optional [Params](params.mdx) and [Results](results.mdx) maps through strict compile-time
 checked interfaces. They will also allow you to initiate the function by calling it
 [synchronously](call.mdx), or posting a request to run it [asynchronously](post.mdx).
 
-The [Schema Tool](usage.mdx) will generate a specific function descriptor for each func
+The [Schema Tool](../schema-tool/usage.mdx) will generate a specific function descriptor for each func
 and view. It will also generate an interface called ScFuncs, that can be used to create
 and initialize each function descriptor. Here is the code generated for the `dividend`
 example in `contract.xx`:
