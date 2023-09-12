@@ -414,7 +414,7 @@ exports.articleRedirects = [
   },
   {
     from: '/shimmer/learn/smart-contracts/smart-contracts-chains',
-    to: 'http://localhost:3000/learn/smart-contracts/isc-architecture',
+    to: '/learn/smart-contracts/isc-architecture',
   },
   {
     from: '/shimmer/learn/smart-contracts/smart-contracts-community-tutorials',
