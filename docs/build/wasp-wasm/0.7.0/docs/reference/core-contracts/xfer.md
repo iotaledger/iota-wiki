@@ -10,6 +10,7 @@ keywords:
   - balance
   - reference
 ---
+
 # `accounts.transferAccountToChain`
 
 The `transferAccountToChain` function of the `accounts` contract is one that needs

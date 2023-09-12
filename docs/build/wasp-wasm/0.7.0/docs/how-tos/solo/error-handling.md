@@ -9,6 +9,7 @@ keywords:
   - state
   - transition
 ---
+
 # Error Handling
 
 The following test posts a request to the `solotutorial` smart contract without the expected parameter `"str"`, causing

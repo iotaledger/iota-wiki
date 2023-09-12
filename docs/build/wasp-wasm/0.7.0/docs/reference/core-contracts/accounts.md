@@ -10,6 +10,7 @@ keywords:
   - balance
   - reference
 ---
+
 # The `accounts` Contract
 
 The `accounts` contract is one of the [core contracts](overview.md) on each IOTA Smart Contracts

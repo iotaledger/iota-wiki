@@ -40,14 +40,14 @@ Here are some of the most important properties and limitations of EVM support in
 ### Wrapped Calls to the JSON-RPC
 
 The Wasp node provides a JSON-RPC service, the standard protocol used by Ethereum tools. Upon receiving a signed
-  Ethereum transaction via JSON-RPC, the transaction is wrapped into an ISC off-ledger request. The sender of the
-  request
-  is the Ethereum address that signed the original transaction (e.g., the Metamask account).
+Ethereum transaction via JSON-RPC, the transaction is wrapped into an ISC off-ledger request. The sender of the
+request
+is the Ethereum address that signed the original transaction (e.g., the Metamask account).
 
 ### Contract ID Source
 
 While ISC contracts are identified by an [hname](/learn/smart-contracts/core_concepts/smart-contract-anatomy), EVM contracts are
-  identified by their Ethereum address.
+identified by their Ethereum address.
 
 ### WASM Root Contract List
 
@@ -64,18 +64,18 @@ Unlike Ethereum's blockchain that houses the state in a Merkle tree, the EVM sta
 duplication of efforts undertaken by the ISC layer.
 
 Any Ethereum transactions present in an ISC block are executed by
-  the [`evm`](/wasp-wasm/reference/core-contracts/evm) [core contract](/wasp-wasm/reference/core-contracts/overview),
-  updating the EVM state accordingly. An emulated Ethereum block is also created and stored to provide compatibility
-  with EVM tools. As the emulated block is not part of a real Ethereum blockchain, some attributes of the blocks will
-  contain dummy values (e.g. `stateRoot`, `nonce`, etc.).
+the [`evm`](/wasp-wasm/reference/core-contracts/evm) [core contract](/wasp-wasm/reference/core-contracts/overview),
+updating the EVM state accordingly. An emulated Ethereum block is also created and stored to provide compatibility
+with EVM tools. As the emulated block is not part of a real Ethereum blockchain, some attributes of the blocks will
+contain dummy values (e.g. `stateRoot`, `nonce`, etc.).
 
 Each stored block contains the executed Ethereum transactions and corresponding Ethereum receipts. If storage is
-  limited, you can configure EVM so that only the latest N blocks are stored.
+limited, you can configure EVM so that only the latest N blocks are stored.
 
 ### No Enforced Block Time
 
 There is no guaranteed _block time_. A new EVM "block" will be created only when an ISC block is created, and ISC does
-  not enforce an average block time.
+not enforce an average block time.
 
 ### L2 Token Ownership
 
@@ -85,7 +85,7 @@ tokens.
 ### Retrieving the Ethereum Balance
 
 The Ethereum balance of an account is tied to its L2 ISC balance in the token used to pay for gas. For example,
-  by default `eth_getBalance` will return the L2 base token balance of the given Ethereum account.
+by default `eth_getBalance` will return the L2 base token balance of the given Ethereum account.
 
 ### The Magic Contract
 
@@ -93,6 +93,7 @@ A [dedicated Ethereum contract](../how-tos/magic-contract/magic.md) exists to ma
 functionalities, introducing commands like `isc.send(...)` for token transfers.
 
 ### Gas Fees
+
 The used EVM gas is converted to ISC gas before being charged to the sender. The conversion ratio is configurable. The
 token used to pay for gas is the same token configured in the ISC chain (IOTA by default). The gas fee is debited from
 the sender's L2 account and must be deposited beforehand.

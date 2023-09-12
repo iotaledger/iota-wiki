@@ -16,11 +16,10 @@ module.exports = {
   // But you can create a sidebar manually
   tutorialSidebar: [
     {
-      type:'category',
+      type: 'category',
       label: 'How Tos',
       collapsed: false,
-      items:[
-
+      items: [
         {
           type: 'doc',
           label: 'Configure wasp-cli',
@@ -36,7 +35,7 @@ module.exports = {
           label: 'Manage a Chain',
           id: 'how-tos/chain-management',
         },
-      ]
-    }
+      ],
+    },
   ],
 };
