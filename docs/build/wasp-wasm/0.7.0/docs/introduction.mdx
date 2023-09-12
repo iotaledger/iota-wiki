@@ -1,92 +1,50 @@
 ---
+description: "Get to know IOTA Smart Contracts' flexible programming with Wasm VM, supporting a secure and dynamic smart contract development environment."
 keywords:
-  - Rust
-  - Go
-  - TypeScript
-  - WASM
-  - memory space
-  - smart contract state
-  - API
-  - Access
-  - store
-  - state
-
-description: IOTA Smart Contracts (ISC) provides a very flexible way of programming smart contracts by providing an API to a sandboxed environment that allows you to interact deterministically and without any security risks with ISC-provided functionality.
-
+  - IOTA Smart Contracts
+  - Wasm VM
+  - Smart contract development
+  - WasmLib
+  - Supported languages
 image: /img/wasm_vm/IscHost.png
 ---
 
 # Introduction to the Wasm VM for ISC
 
 :::warning
-The Wasm VM is still in an experimental state, it is a testament to the "VM plugin" architecture of ISC.
+The Wasm VM is in experimental state, showcasing ISC's "VM plugin" architecture.
 
-Experiment away, but please don't rely on it for any valuable applications (stick to EVM for now).
+Experiment but avoid using it for production applications; opt for [EVM](/wasm-evm/introduction).
 :::
 
 :::caution
-
-Smart Contracts are currently only compatible with the stardust update and therefore only compatible with the Shimmer
-main and testnet.
-
+ISC Smart Contracts are only compatible with the Stardust protocol, deployed on the Shimmer main and testnet.
 :::
 
-IOTA Smart Contracts (ISC) provides a very flexible way of programming smart contracts by
-providing an API to a sandboxed environment that allows you to interact deterministically
-and without any security risks with ISC-provided functionality. The API provides a generic
-way to store, access, and modify the state of smart contracts. The API can be used by any
-kind of Virtual Machine (VM) to implement a system to load and run smart contract code on
-top of ISC. The actual VMs can be implemented by whoever wants to create them.
+IOTA Smart Contracts (ISC) provide a sandboxed environment through an API, facilitating secure and deterministic interactions with ISC functions. This API supports any Virtual Machine (VM) aiming to build a system for smart contract code execution on ISC.
 
-[![Wasp node ISC Host](/img/wasm_vm/IscHost.png)](/img/wasm_vm/IscHost.png)
+![Wasp node ISC Host](/img/wasm_vm/IscHost.png)
 
-Of course, we provide an example implementation of such a VM to allow anyone to get a
-taste of what it is like to program a smart contract for ISC. Our VM implementation uses
-[WebAssembly](https://webassembly.org/) (Wasm) code as an intermediate compilation target.
-The implementation of the Wasm VM currently uses the open-source
-[Wasmtime](https://wasmtime.dev/) runtime environment. The Wasm VM enables dynamic
-loading and running of smart contracts that have been compiled to Wasm code.
-
-We chose Wasm to be able to program smart contracts from many programming languages. Since
-more and more languages are becoming capable of generating the intermediate Wasm code this
-will eventually allow developers to choose a language they are familiar with.
-
-Because each Wasm code unit runs in its own memory space and cannot access anything
-outside that memory by design, Wasm code is ideally suited for secure smart contracts.
-The Wasm VM runtime system will only provide access to external functionality that is
-necessary for the smart contracts to be able to do their thing, but nothing more. In our
-case, we only provide access to the ISC host's sandboxed API environment. The way we do
-that is by providing a small, self-contained library that can be linked to the Wasm code.
-This library is called `WasmLib`.
+We offer a VM example utilizing [WebAssembly (Wasm)](https://webassembly.org/) as a compilation target, facilitated by the open-source [Wasmtime runtime](https://wasmtime.dev/). This setup encourages dynamic smart contract operations compiled to Wasm code, promoting security and adaptability with different programming languages.
 
 ![Wasm VM](/img/wasm_vm/WasmVM.png)
 
-As you can see, we can have any number of smart contracts running in our Wasm VM. Each
-smart contract is a separately compiled Wasm code unit that contains its own copy of
-WasmLib embedded into it. Each WasmLib provides the ISC sandbox functionality to its
-corresponding smart contract and knows how to use it to access the underlying smart
-contract state storage through the VM runtime system. This makes the ISC sandbox API
-access seamless to the smart contract by hiding the details of bridging the gap between
-the smart contract's memory space, and the otherwise inaccessible memory space of the ISC
-host.
+The Wasm VM operates with self-contained `WasmLib` libraries linked to individual Wasm codes, optimizing the ISC sandbox functionality and smart contract state storage access.
 
-The ISC sandbox environment enables the following functionality:
+## Supported Functionalities
 
-- Access to smart contract metadata
-- Access to request data for smart contract function calls
-- Access to the smart contract state data
-- A way to return result data to the caller of a smart contract function
-- Access to tokens meant for the smart contract, and the ability to move them
-- Ability to initiate or call other smart contract functions
-- Access to logging functionality
-- Access to several utility functions provided by the host
+The ISC sandbox environment offers:
 
-The initial WasmLib implementation was created for the [Rust](https://www.rust-lang.org/)
-programming language. Rust had the most advanced and stable support for generating Wasm
-code at the time when we started implementing our Wasm VM environment. In the meantime,
-we have also implemented fully functional [Go](https://golang.org/) and
-[TypeScript](https://www.typescriptlang.org/) implementations. We currently support the
-following Wasm code generators:
+- Smart contract metadata and state data access
+- Request data retrieval for function calls
+- Token management within the contract
+- Utility functions from the host
+- Smooth initiation of other smart contract functions
+- Logging facility
+
+## Supported Languages
+
+The WasmLib started with [Rust](https://www.rust-lang.org/) support, expanding to include [Go](https://golang.org/) and [TypeScript](https://www.typescriptlang.org/) with the help of respective Wasm code generators:
 
 | Language   | Wasm code generator                                |
 | ---------- | -------------------------------------------------- |
@@ -94,16 +52,8 @@ following Wasm code generators:
 | Rust       | [wasm-pack](https://rustwasm.github.io/wasm-pack/) |
 | TypeScript | [AssemblyScript](https://www.assemblyscript.org/)  |
 
-All WasmLib implementations use only a very small common subset of their host language.
-The same goes for the interface they provide to smart contract writers. This keeps the
-coding style very similar, barring some syntactic idiosyncrasies. The reason for doing
-this is that we wanted to make it as easy as possible for anyone to start working with our
-smart contract system. If you have previous experience in any C-style language you should
-quickly feel comfortable writing smart contracts in any of the supported languages,
-without having to dive too deeply into the more esoteric aspects of the chosen language.
+These generators maintain a common subset of their host language, aiming for a unified coding style to simplify the initiation into smart contract creation, welcoming developers with a C-style language background to quickly adapt.
 
-We will next discuss some [`concepts`](explanations/concepts.mdx) that are central to (ISC) smart
-contract programming.
 
 ## Video Tutorial
 
