@@ -1,5 +1,5 @@
 ---
-description: How to configure the wasp-cli. Requirements and configuration parameters.
+description: How to configure wasp-cli. Requirements and configuration parameters.
 image: /img/logo/WASP_logo_dark.png
 keywords:
   - Wasp-cli
@@ -8,14 +8,14 @@ keywords:
   - command line
 ---
 
-# Configuring wasp-cli
+# Configure wasp-cli
 
-Step-by-step instructions on how to use wasp-cli to interact with Wasp nodes on the Hornet network.
+You can use these step-by-step instructions on how to use wasp-cli to interact with Wasp nodes on the Hornet network.
 
 ## Download wasp-cli
 
 Download the latest wasp-cli binary from the repo [releases page](https://github.com/iotaledger/wasp/releases).
-(For ease of use, it is recommend to add `wasp-cli` to your system `PATH`).
+(For ease of use, it is recommended to add `wasp-cli` to your system `PATH`).
 
 ## Configuration
 

@@ -4,10 +4,10 @@ validators.'
 image: /img/logo/WASP_logo_dark.png
 keywords:
 
-- Smart Contracts
-- Chain
-- Management
-- Grafana
+  - Smart Contracts
+  - Chain
+  - Management
+  - Grafana
 
 ---
 
@@ -52,7 +52,7 @@ You can do this by using the following command:
 wasp-cli chain access-nodes <add|remove> <pubkey (0x...)>
 ```
 
-This node won't be "officially" recognized by the committee, but will still be able to sync the state and provide all regular functionality.
+This node won't be "officially" recognized by the committee but will still be able to sync the state and provide all regular functionality.
 
 ### Change the Set of Validators
 
@@ -67,7 +67,7 @@ from the alias output of the chain.
 wasp-cli chain rotate <new controller address>
 ```
 
-or:
+Or:
 
 ```shell
 wasp-cli chain rotate-with-dkg --peers=<...>

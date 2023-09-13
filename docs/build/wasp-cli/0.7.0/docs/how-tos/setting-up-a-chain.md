@@ -1,5 +1,5 @@
 ---
-description: Setting up a chain requirements, configuration parameters, validators and tests.
+description: Setting up a chain: requirements, configuration parameters, validators, and tests.
 image: /img/logo/WASP_logo_dark.png
 keywords:
   - Smart Contracts
@@ -14,7 +14,7 @@ keywords:
 
 :::note
 
-It is possible to run a "committee" of a single Wasp node, and this is okay for testing purposes.
+It is possible to run a "committee" of a single Wasp node, which is okay for testing purposes.
 
 However, in normal operation, multiple Wasp nodes should be used.
 :::
@@ -42,14 +42,14 @@ PeeringURL:  127.0.0.1:4000
 ```
 
 You should provide your `PubKey` and `PeeringURL` to other node operators.
-They can use this info to trust your node and accept communications with it.
+They can use this info to trust and accept communications with your node.
 That's done by invoking `wasp-cli peering trust <Name for the peer> <PubKey> <PeeringURL>`, e.g.:
 
 ```shell
 wasp-cli peering trust another-node 8oQ9xHWvfnShRxB22avvjbMyAumZ7EXKujuthqrzapNM 127.0.0.1:4000
 ```
 
-You can view the list your wasp node's trusted peers by calling:
+You can view the list of your wasp node's trusted peers by calling:
 
 ```shell
 wasp-cli peering list-trusted
@@ -59,9 +59,9 @@ All the nodes in a committee must trust each other to run the chain.
 
 ## Start the Chain
 
-### Request Test Funds (only for testnet)
+### Request Test Funds (only for Testnet)
 
-You can request test funds to safely develop you application by calling:
+You can request test funds to safely develop your application by calling:
 
 ```shell
 wasp-cli request-funds
@@ -75,13 +75,13 @@ You can deploy your IOTA Smart Contracts chain by running:
 wasp-cli chain deploy --peers=foo,bar,baz --chain=mychain --description="My chain" --block-keep-amount=10000
 ```
 
-The names in `--peers=foo,bar,baz` correspond to the names the node's trusted peers.
+The names in `--peers=foo,bar,baz` correspond to the names of the node's trusted peers.
 
 The `--chain=mychain` flag sets up an alias for the chain.
-From now on, all chain commands will be targeted to this chain.
+From now on, all chain commands will target this chain.
 
 The `--quorum` flag indicates the minimum number of nodes required to form a consensus.
-The recommended formula to obtain this number `floor(N*2/3)+1` where `N` is the number of nodes in your committee.
+The recommended formula to obtain this number is `floor(N*2/3)+1` where `N` is the number of nodes in your committee.
 
 The `--block-keep-amount` parameter determines how many blocks are stored in the [`blocklog`](/wasp-wasm/reference/core-contracts/blocklog) core contract.
 
@@ -94,7 +94,7 @@ wasp-cli chain activate --chain=<name>
 
 ## Test If It Works
 
-You can check that the chain was properly deployed in the Wasp node dashboard (`<URL>/wasp/dashboard` when using `node-docker-setup`).
+You can check that the chain was deployed correctly in the Wasp node dashboard (`<URL>/wasp/dashboard` when using `node-docker-setup`).
 Note that the chain was deployed with some [core contracts](/wasp-wasm/reference/core-contracts/overview).
 
 You should also have an EVM-JSONRPC server opened on:
@@ -117,7 +117,7 @@ wasp-cli chain deploy-contract wasmtime inccounter "inccounter SC" tools/cluster
 
 The `inccounter_bg.wasm` file is a precompiled Wasm contract included in the Wasp repo as an example.
 
-If you check the dashboard again, you should see that the `inccounter` contract is listed in the chain.
+If you recheck the dashboard, you should see that the `inccounter` contract is listed in the chain.
 
 ### Interacting With a Smart Contract
 
@@ -141,7 +141,7 @@ counter: 0
 
 :::note
 
-The part after `|` is necessary because the return value is encoded, and you need to know the _schema_ in order to
+The part after `|` is necessary because the return value is encoded, and you need to know the _schema_ to
 decode it. **The schema definition is in its early stages and will likely change in the future.**
 
 :::
@@ -152,7 +152,7 @@ You can now call the `increment` function by running:
 wasp-cli chain post-request inccounter increment
 ```
 
-After the request has been processed by the committee, you should get a new
+After the committee has processed the request, you should get a new
 counter value after calling `getCounter`:
 
 ```shell
