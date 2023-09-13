@@ -1,5 +1,5 @@
 ---
-description: Setting up a chain: requirements, configuration parameters, validators, and tests.
+description: 'Setting up a chain: requirements, configuration parameters, validators, and tests.'
 image: /img/logo/WASP_logo_dark.png
 keywords:
   - Smart Contracts
