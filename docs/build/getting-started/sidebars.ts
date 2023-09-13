@@ -23,7 +23,7 @@ module.exports = {
         {
           type: 'link',
           label: 'WASP CLI',
-          href: '/wasp-cli',
+          href: '/wasp-cli/how-tos/wasp-cli',
         },
         {
           label: 'Schema Tool',

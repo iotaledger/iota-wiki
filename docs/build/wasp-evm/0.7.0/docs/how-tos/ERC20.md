@@ -25,7 +25,7 @@ keywords:
 This guide assumes you are familiar with [tokens](https://en.wikipedia.org/wiki/Cryptocurrency#Crypto_token)
 in [blockchain](https://en.wikipedia.org/wiki/Blockchain),
 [Ethereum Request for Comments (ERCs)](https://eips.ethereum.org/erc)(also known as Ethereum Improvement Proposals (EIP))
-, [NFTs](learn/protocols/stardust/core-concepts/multi-asset-ledger#non-fungible-tokens-nfts), [Smart Contracts](/learn/smart-contracts/smart-contracts) and have
+, [NFTs](learn/protocols/stardust/core-concepts/multi-asset-ledger#non-fungible-tokens-nfts), [Smart Contracts](/learn/smart-contracts/introduction) and have
 already tinkered with [Solidity](https://docs.soliditylang.org/en/v0.8.16/).
 ERC20 is a standard for fungible tokens and is defined in
 the [EIP-20 Token Standard](https://eips.ethereum.org/EIPS/eip-20) by Ethereum.
@@ -39,7 +39,7 @@ You can use the [Remix IDE](https://remix.ethereum.org/) to deploy any regular S
 
 Set the environment to `Injected Web3` and connect Remix with your MetaMask wallet.
 If you haven’t already, please follow the instructions
-on [how to connect your MetaMask with the public Testnet.](../../tooling#metamask).
+on [how to connect your MetaMask with the public Testnet.](../getting-started/compatible-tools.md#metamask).
 
 ## 1. Create a Smart Contract
 
