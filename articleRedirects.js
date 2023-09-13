@@ -461,6 +461,18 @@ exports.articleRedirects = [
     to: '/search',
   },
   {
+    from: '/smart-contracts',
+    to: '/learn/smart-contracts/introduction',
+  },
+  {
+    from: '/shimmer/smart-contracts',
+    to: '/learn/smart-contracts/introduction',
+  },
+  {
+    from: '/next/smart-contracts',
+    to: '/learn/smart-contracts/introduction',
+  },
+  {
     from: '/shimmer/smart-contracts/configuration',
     to: '/wasp/configuration',
   },
