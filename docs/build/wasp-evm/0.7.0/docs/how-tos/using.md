@@ -15,7 +15,7 @@ keywords:
   - how to
 ---
 
-# How to use EVM in IOTA Smart Contracts
+# How To Set Up EVM in IOTA Smart Contracts
 
 ## 1. Deploy an IOTA Smart Contracts Chain
 
