@@ -104,6 +104,16 @@ If you want to change the port to a different value you can create a file named 
 ```
 HTTP_PORT=9000
 ```
+If you don't have a dns name for your node, you can use the (external) ip address for NODE_HOST, for example 192.168.1.123 or your public ip address.
+With this setting you can reach the dashboard of the node from within your network or from internet.
+COMPOSE_FILE and ACME_EMAIL are not needed for HTTP. You can remove them from your `.env` file or place a `#` before it to make it a remark:
+
+```
+#COMPOSE_FILE=docker-compose.yml:docker-compose-https.yml
+#ACME_EMAIL=your-email@example.com
+
+NODE_HOST=your-external-ip-address
+```
 
 ### 2. Setup neighbors
 
