@@ -9,7 +9,7 @@ keywords:
 
 # Exposed Metrics
 
-You can see all exposed metrics at our [metrics endpoint](https://wasp.sc.iota.org/metrics). Refer to the [testnet endpoints description](/smart-contracts/testnet#endpoints) for access details.
+Refer to the [testnet endpoints description](/build/networks-endpoints/#testnet-evm) for access details.
 
 | Metric                                     | Description                                           |
 | ------------------------------------------ | ----------------------------------------------------- |

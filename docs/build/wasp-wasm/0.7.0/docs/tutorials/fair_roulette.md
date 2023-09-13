@@ -95,7 +95,7 @@ To interact with a smart contract, you will need:
 
 The PoC consists of two projects residing in `contracts/wasm/fairroulette`.
 
-One is the smart contract itself. Its boilerplate was generated using the new [Schema tool](/smart-contracts/guide/wasm_vm/intro) which is shipped with this beta release.
+One is the smart contract itself. Its boilerplate was generated using the new [Schema tool](/wasp-wasm/introduction/) which is shipped with this beta release.
 The contract logic is written in Rust, but the same implementation can be achieved
 interchangeably with Golang and Assemblyscript which is demonstrated in the root folder
 and `./src`.
@@ -232,13 +232,13 @@ This transaction also requires an address to send the request to, and also a var
 For Wasp, the address to send funds to is the chainId.
 :::
 
-See: [Invoking](/smart-contracts/guide/solo/invoking-sc)
+See: [Invoking](/wasp-wasm/how-tos/solo/invoking-sc)
 
 ##### CallView
 
 The [callView](https://github.com/iotaledger/wasp/blob/7b3ddc54891ccf021c7aaa32db35d88361fade16/contracts/wasm/fairroulette/frontend/src/lib/fairroulette_client/fair_roulette_service.ts#L165) function is responsible for calling smart contract view functions.
 
-See: [Calling a view](/smart-contracts/guide/solo/view-sc)
+See: [Calling a view](/wasp-wasm/how-tos/solo/view-sc)
 
 To give access to the smart contracts state, you can use view functions to return selected parts of the state.
 
