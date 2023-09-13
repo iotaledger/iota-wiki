@@ -17,7 +17,7 @@ module.exports = {
   tutorialSidebar: [
     {
       type: 'category',
-      label: 'How Tos',
+      label: 'How To',
       collapsed: false,
       items: [
         {

@@ -43,7 +43,7 @@ module.exports = {
     },
     {
       type: 'category',
-      label: 'How Tos',
+      label: 'How To',
       items: [
         {
           type: 'doc',

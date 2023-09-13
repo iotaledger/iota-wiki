@@ -57,7 +57,7 @@ More detailed explanations about their specific uses can be found in the
 
 ## Full Matrix of WasmLib Types
 
-WasmLib implements a full set of [value proxies](../../explanations/functions-and-events/proxies.mdx#value-proxies) for each
+WasmLib implements a full set of [value proxies](../../explanations/proxies.mdx#value-proxies) for each
 predefined value type that provide access to data on the ISC host. But there is one aspect
 of this data that we have not considered yet. Some data provided by the host is mutable,
 whereas other data may be immutable. To facilitate this distinction, each value proxy type
@@ -102,5 +102,5 @@ equivalents in the chosen WasmLib implementation programming language.
 The [Schema Tool](../../how-tos/schema-tool/usage.mdx) will automatically generate the proper (im)mutable proxies
 from the schema definition. For example, View functions will only be able to access the
 [State](../../how-tos/schema-tool/state.mdx) map through immutable proxies. The same goes for the
-[Params](../../how-tos/functions-and-events/params.mdx) map that was passed into a Func or View, and for the
-[Results](../../how-tos/functions-and-events/results.mdx) map that was returned from a call to a Func or View.
+[Params](../../how-tos/schema-tool/params.mdx) map that was passed into a Func or View, and for the
+[Results](../../how-tos/schema-tool/results.mdx) map that was returned from a call to a Func or View.

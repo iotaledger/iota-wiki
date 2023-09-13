@@ -142,25 +142,19 @@ module.exports = {
           ],
         },
         {
-          type: 'category',
-          label: 'Accounts',
-          items: [
-            {
-              type: 'doc',
-              label: 'Deposit To a Chain',
-              id: 'how-tos/accounts/deposit-to-a-chain',
-            },
-            {
-              type: 'doc',
-              label: 'Withdraw From a Chain',
-              id: 'how-tos/accounts/withdraw-from-a-chain',
-            },
-            {
-              type: 'doc',
-              label: 'View Account Balances',
-              id: 'how-tos/accounts/view-account-balances',
-            },
-          ],
+          type: 'doc',
+          label: 'Deposit To a Chain',
+          id: 'how-tos/deposit-to-a-chain',
+        },
+        {
+          type: 'doc',
+          label: 'Withdraw From a Chain',
+          id: 'how-tos/withdraw-from-a-chain',
+        },
+        {
+          type: 'doc',
+          label: 'View Account Balances',
+          id: 'how-tos/view-account-balances',
         },
         {
           type: 'category',

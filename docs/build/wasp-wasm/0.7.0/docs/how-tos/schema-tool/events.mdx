@@ -18,14 +18,14 @@ A solution to this is triggering events, which is facilitated through smart cont
 
 ## ISC Sandbox Interface
 
-The `ScFuncContext` [Call Context](context.mdx) in ISC Sandbox has an `event()` function to support event triggering.
+The `ScFuncContext` [Call Context](../../explanations/context.mdx) in ISC Sandbox has an `event()` function to support event triggering.
 This function takes a text string parameter, requiring creators and users to maintain and understand the chosen format.
 However, this setup is prone to errors and inconsistency due to the arbitrary nature of the text strings used.
 
 ## Structured Events with Schema Tool
 
 To mitigate issues stemming from the rudimentary interface,
-use the [Schema Tool](../schema-tool/usage.mdx) to define structured events,
+use the [Schema Tool](usage.mdx) to define structured events,
 making event creation and handling more consistent and less error-prone.
 
 This tool allows you to establish structured events that are integrated into all Func function contexts.
@@ -71,7 +71,7 @@ events:
 </TabItem>
 </Tabs>
 
-The [Schema Tool](../schema-tool/usage.mdx) will generate `events.xx` which contains the following code
+The [Schema Tool](usage.mdx) will generate `events.xx` which contains the following code
 for the `FairRouletteEvents` struct:
 
 <Tabs groupId="language" queryString>
@@ -309,7 +309,7 @@ f.events.bet(bet.better.address(), bet.amount, bet.number);
 </Tabs>
 
 The smart contract client code can define handler functions to listen in to the event
-stream and respond to any events it deems noteworthy. The [Schema Tool](../schema-tool/usage.mdx) will
+stream and respond to any events it deems noteworthy. The [Schema Tool](usage.mdx) will
 automatically generate the necessary client side code that properly listens for the
 events, parses the event strings into a type-safe structure, and passes this structure to
 the corresponding handler function.
