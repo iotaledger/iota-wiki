@@ -23,7 +23,7 @@ main and testnet.
 
 The current release of IOTA Smart Contracts has experimental support
 for [EVM](https://ethereum.org/en/developers/docs/evm/)/[Solidity](https://docs.soliditylang.org/en/v0.8.16/) smart
-contracts, as well as [Wasm](/wasp-wasm/overview/) smart contracts, providing limited compatibility with existing smart contracts and
+contracts, as well as [Wasm](/wasp-wasm/introduction/) smart contracts, providing limited compatibility with existing smart contracts and
 tooling from other EVM based chains like Ethereum. This allows us to offer the existing ecosystem around EVM/Solidity a
 familiar alternative.
 

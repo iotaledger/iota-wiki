@@ -19,7 +19,7 @@ keywords:
 
 ## 1. Deploy an IOTA Smart Contracts Chain
 
-When [deploying an IOTA Smart Contracts chain](/wasp-cli/setting-up-a-chain/), EVM support is automatically
+When [deploying an IOTA Smart Contracts chain](/wasp-cli/how-tos/setting-up-a-chain/), EVM support is automatically
 added with the default configuration. The `wasp-cli chain deploy` command accepts the following EVM-specific option:
 
 - `--evm-chainid <n>`: EVM chain ID (default: 1074).

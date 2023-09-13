@@ -52,13 +52,13 @@ There are two ways to interact with smart contracts.
 
 #### On Ledger Requests
 
-See: [On-ledger Requests](/learn/smart-contracts/core_concepts/invocation#on-ledger)
+See: [On-ledger Requests](/learn/smart-contracts/invocation#on-ledger)
 
 On-ledger requests are sent to GoShimmer nodes. Wasp periodically requests new On-ledger requests from GoShimmer nodes, and handles them accordingly. These messages are validated through the network and take some time to be processed.
 
 #### Off Ledger Requests
 
-See: [Off-ledger Requests](/learn/smart-contracts/core_concepts/invocation#off-ledger)
+See: [Off-ledger Requests](/learn/smart-contracts/invocation#off-ledger)
 
 Off-ledger requests are directly sent to Wasp nodes and do not require validation through GoShimmer nodes. They are therefore faster. However, they require an initial deposit of funds to a chain account as this account will initiate required On-ledger requests on behalf of the desired contract or player.
 
@@ -105,7 +105,7 @@ This frontend sends On-ledger requests to place bets towards the fair roulette s
 
 ### The Smart Contract
 
-See: [Anatomy of a Smart Contract](/learn/smart-contracts/core_concepts/smart-contract-anatomy)
+See: [Anatomy of a Smart Contract](/learn/smart-contracts/smart-contract-anatomy)
 
 As the smart contract is the only actor that is allowed to modify state in the context of the game, it needs to handle a few tasks such as:
 
@@ -284,7 +284,7 @@ cp config.dev.sample.js config.dev.js
 
 Make sure to update the config values according to your setup.
 
-The `chainId` is the chainId which gets defined after [deploying a chain](/wasp-cli/setting-up-a-chain/#deploy-the-isc-chain). You can get your chain id from your dashboard, or list all chains by running:
+The `chainId` is the chainId which gets defined after [deploying a chain](/wasp-cli/how-tos/setting-up-a-chain/#deploy-the-isc-chain). You can get your chain id from your dashboard, or list all chains by running:
 
 ```shell
 wasp-cli chain list
@@ -309,7 +309,7 @@ If you want to expose the dev server to the public, it might be required to bind
 
 ## Deployment
 
-You should follow the [Deployment](/wasp-cli/setting-up-a-chain/#deploy-the-isc-chain) documentation until you reach the `deploy-contract` command.
+You should follow the [Deployment](/wasp-cli/how-tos/setting-up-a-chain/#deploy-the-isc-chain) documentation until you reach the `deploy-contract` command.
 
 The deployment of a contract requires funds to be deposited to the **chain**.
 You can do this by executing the following command from the directory where your Wasp node was configured:

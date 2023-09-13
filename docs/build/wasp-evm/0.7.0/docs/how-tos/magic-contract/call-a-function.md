@@ -3,7 +3,7 @@
 In the example above, `ISC.sandbox.getEntropy()` calls the
 [`getEntropy`](https://github.com/iotaledger/wasp/blob/develop/packages/vm/core/evm/iscmagic/ISCSandbox.sol#L20)
 method of the `ISCSandbox` interface, which, in turn,
-calls [ISC Sandbox's](/learn/smart-contracts/core_concepts/sandbox) `GetEntropy`.
+calls [ISC Sandbox's](/learn/smart-contracts/sandbox) `GetEntropy`.
 
 ```solidity
 pragma solidity >=0.8.5;

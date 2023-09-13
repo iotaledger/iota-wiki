@@ -18,14 +18,14 @@ keywords:
 
 - [Remix IDE](https://remix.ethereum.org/).
 - [A Metamask Wallet](https://metamask.io/).
-- [Connect your MetaMask with the public Testnet](../../tooling#metamask).
+- [Connect your MetaMask with the public Testnet](../getting-started/compatible-tools.md#metamask).
 
 ### Required Prior Knowledge
 
 This guide assumes you are familiar with [tokens](https://en.wikipedia.org/wiki/Cryptocurrency#Crypto_token)
 in [blockchain](https://en.wikipedia.org/wiki/Blockchain),
 [Ethereum Request for Comments (ERCs)](https://eips.ethereum.org/erc)(also known as Ethereum Improvement Proposals (EIP))
-, [NFTs](learn/protocols/stardust/core-concepts/multi-asset-ledger#non-fungible-tokens-nfts), [Smart Contracts](/learn/smart-contracts/core_concepts/smart-contracts) and have
+, [NFTs](learn/protocols/stardust/core-concepts/multi-asset-ledger#non-fungible-tokens-nfts), [Smart Contracts](/learn/smart-contracts/smart-contracts) and have
 already tinkered with [Solidity](https://docs.soliditylang.org/en/v0.8.16/).
 ERC20 is a standard for fungible tokens and is defined in
 the [EIP-20 Token Standard](https://eips.ethereum.org/EIPS/eip-20) by Ethereum.

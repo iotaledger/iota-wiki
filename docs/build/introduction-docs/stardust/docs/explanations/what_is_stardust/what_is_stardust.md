@@ -54,7 +54,7 @@ ISC can be deployed as multiple Layer 2 (L2) chains, unlike many other projects 
 
 ### Advantages
 
-- [L1 is not congested with smart contracts](/learn/smart-contracts/core_concepts/smart-contracts#scalable-smart-contracts).
+- [L1 is not congested with smart contracts](/learn/smart-contracts/smart-contracts#scalable-smart-contracts).
 - Since L1 is not limited by the speed of the smart contract VM, transactions per second (TPS) increase significantly.
 - No maximal extractable value (MEV). No front-running or sandwich attacks, resulting in a “fairer” DeFi environment. A set fee and randomization of transactions are included in blocks, making MEV impossible.
 - Native randomness beacon (random number generator, or RNG). This is freely available to all dApps, removing the need for expensive, trusted third-party RNGs.
