@@ -26,11 +26,6 @@ module.exports = {
       items: [
         {
           type: 'doc',
-          label: 'Smart Contract Concepts',
-          id: 'explanations/concepts',
-        },
-        {
-          type: 'doc',
           label: 'How Accounts Work',
           id: 'explanations/how-accounts-work',
         },
