@@ -126,7 +126,6 @@ This operation cannot be reverted.
 
 - `s` (`uint32`): The serial number of the foundry.
 
-
 ### `mintNFT(I ImmutableData, a AgentID, C CollectionID, w WithdrawOnMint)`
 
 Mints an NFT with ImmutableData `I` that will be owned by the AgentID `a`.
@@ -143,8 +142,6 @@ The mint can be done directly to any L1 address (it is not necessary for the tar
 #### Returns
 
 - `D` (`MintID`): the internal ID of the NFT at the time of minting that can be used by users/contracts to obtain the resulting NFTID on the next block
-
-
 
 ---
 
@@ -307,7 +304,6 @@ Returns the NFTID `z` for a given MintID `D`.
 
 - `z` (`NFTID`): The ID of the NFT
 
-
 ### `getAccountNonce(a AgentID)`
 
 Returns the current account nonce for a give AgentID `a`.
@@ -335,7 +331,6 @@ FoundrySerialNumber = uint32
 TokenID = [38]byte
 ```
 
-
 ### `NFTID`
 
 ```
@@ -347,8 +342,6 @@ NFTID = [32]byte
 ```
 MintID = [6]byte
 ```
-
-
 
 ### `NFTData`
 
