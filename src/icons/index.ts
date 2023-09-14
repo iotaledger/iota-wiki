@@ -1,2 +1,7 @@
-export * from './iota';
-export * from './socials';
+import iota from './iota';
+import socials from './socials';
+
+export default {
+  ...iota,
+  ...socials,
+};
