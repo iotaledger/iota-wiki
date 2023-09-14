@@ -81,7 +81,7 @@ module.exports = {
             },
             {
               type: 'doc',
-              label: 'Cal a Native Contract',
+              label: 'Call a Native Contract',
               id: 'how-tos/magic-contract/call-a-native-contract',
             },
             {

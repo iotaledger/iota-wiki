@@ -16,8 +16,7 @@ keywords:
 
 :::caution
 
-Smart Contracts are currently only compatible with the stardust update and therefore only compatible with the Shimmer
-main and testnet.
+Smart Contracts are currently only compatible with the Stardust protocol and therefore only compatible with the Shimmer and Public Testnet networks.
 
 :::
 
