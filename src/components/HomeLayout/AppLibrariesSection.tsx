@@ -1,11 +1,8 @@
 import React, { FC } from 'react';
 import Link from '@docusaurus/Link';
-import {
-  Identity,
-  SmartContracts,
-  Streams,
-  Stronghold,
-} from '@site/src/common/icons';
+import icons from '@site/src/icons';
+
+const { Identity, SmartContracts, Streams, Stronghold } = icons;
 
 interface LanguagesProps {
   languages?: { [key: string]: string };

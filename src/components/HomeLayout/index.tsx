@@ -7,7 +7,11 @@ import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import clsx from 'clsx';
 import './styles.css';
-import {
+import icons from '@site/src/icons';
+import CoreLibrariesSection from './CoreLibrariesSection';
+import AppLibrariesSection from './AppLibrariesSection';
+
+const {
   Chronicle,
   Discord,
   Hornet,
@@ -19,9 +23,7 @@ import {
   Tips,
   Tutorials,
   Wasp,
-} from '@site/src/common/icons';
-import CoreLibrariesSection from './CoreLibrariesSection';
-import AppLibrariesSection from './AppLibrariesSection';
+} = icons;
 
 interface HomepageSectionProps {
   header?: string;

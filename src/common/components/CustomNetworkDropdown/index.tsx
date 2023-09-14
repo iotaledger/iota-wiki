@@ -12,11 +12,13 @@ import type {
 } from '@theme/NavbarItem/DropdownNavbarItem';
 import './styles.css';
 
-import { IotaCore, Shimmer, Next } from '../../icons';
+import icons from '@site/src/icons';
 import {
   fetchSitemapUrlsFromNetwork,
   getBestNetworkUrlMatch,
 } from '@site/src/utils/networkUtils';
+
+const { IotaCore, Shimmer, Next } = icons;
 
 interface NetworkDropdownItem {
   label: string;

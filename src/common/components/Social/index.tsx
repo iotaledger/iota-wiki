@@ -15,6 +15,7 @@ export interface SocialsConfig extends ThemeConfig {
 
 function SocialLink({ url, backgroundColor }: Social) {
   const { name, Icon } = get_socials_data(url);
+
   return (
     <a
       className='social__link padding-horiz--sm padding-vert--md'
