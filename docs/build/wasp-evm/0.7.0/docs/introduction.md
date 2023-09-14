@@ -16,12 +16,13 @@ keywords:
 
 :::caution
 
-Smart Contracts are currently only compatible with the Stardust protocol and therefore only compatible with the Shimmer and Public Testnet networks.
+Smart Contracts are currently only compatible with the [Stardust protocol](/learn/protocols/stardust/introduction) and
+therefore only compatible with the [Shimmer](/build/networks-endpoints/#shimmer) and
+[Public Testnet networks](/build/networks-endpoints/#public-testnet).
 
 :::
 
-The current release of IOTA Smart Contracts has experimental support
-for [EVM](https://ethereum.org/en/developers/docs/evm/)/[Solidity](https://docs.soliditylang.org/en/v0.8.16/) smart
+The current release of IOTA Smart Contracts has support for [EVM](https://ethereum.org/en/developers/docs/evm/)/[Solidity](https://docs.soliditylang.org/en/v0.8.16/) smart
 contracts, as well as [Wasm](/wasp-wasm/introduction/) smart contracts, providing limited compatibility with existing smart contracts and
 tooling from other EVM based chains like Ethereum. This allows us to offer the existing ecosystem around EVM/Solidity a
 familiar alternative.
@@ -34,8 +35,7 @@ tested virtual machine running most smart contract implementations.
 [Solidity](https://soliditylang.org/) is the programming language of choice with EVM, which was created for this
 specific purpose.
 
-The main benefit of using EVM/Solidity right now is its sheer amount of resources from years of development and
-experimentation on Ethereum. Many articles, tutorials, examples, and tools are available for EVM/Solidity, and the IOTA
+The main benefit of using EVM/Solidity right now is its sheer amount of resources from years of development andf
 Smart Contracts implementation is fully compatible with all of them. If you have experience developing on other EVM
 based chains, you will feel right at home. Any existing contracts you've written will probably need no (or very minimal)
 changes to function on IOTA Smart Contracts.

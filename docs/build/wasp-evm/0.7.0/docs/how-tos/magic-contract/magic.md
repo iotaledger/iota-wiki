@@ -17,7 +17,7 @@ keywords:
 
 [EVM and ISC are inherently very different platforms](../../getting-started/compatibility.md).
 Some EVM-specific actions (e.g., manipulating Ethereum tokens) are disabled, and EVM contracts can access ISC-specific
-functionality through the _ISC Magic Contract_.
+functionality through the \_[ISC Magic Contract](../../reference/magic-contract.md)\_\_.
 
 The Magic contract is an EVM contract deployed by default on every ISC chain, in the EVM genesis block, at
 address `0x1074000000000000000000000000000000000000`.

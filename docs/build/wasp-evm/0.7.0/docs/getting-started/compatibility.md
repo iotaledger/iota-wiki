@@ -40,8 +40,8 @@ Here are some of the most important properties and limitations of EVM support in
 ### Wrapped Calls to the JSON-RPC
 
 The Wasp node provides a JSON-RPC service, the standard protocol used by Ethereum tools. Upon receiving a signed
-Ethereum transaction via JSON-RPC, the transaction is wrapped into an ISC off-ledger request. The sender of the
-request
+Ethereum transaction via JSON-RPC, the transaction is wrapped into an ISC
+[off-ledger request](/learn/smart-contracts/invocation#off-ledger-requests). The sender of the request
 is the Ethereum address that signed the original transaction (e.g., the Metamask account).
 
 ### Contract ID Source
@@ -56,7 +56,7 @@ EVM contracts are not listed in the chain's [contract registry](/wasp-wasm/refer
 ### On-ledger Requests
 
 EVM contracts cannot be called via regular ISC requests; they can only be called through the JSON-RPC service.
-As a consequence, EVM contracts cannot receive on-ledger requests.
+As a consequence, EVM contracts cannot receive [on-ledger requests](/learn/smart-contracts/invocation#on-ledger-requests).
 
 ### Block Structure and Storage
 
@@ -75,7 +75,7 @@ limited, you can configure EVM so that only the latest N blocks are stored.
 ### No Enforced Block Time
 
 There is no guaranteed _block time_. A new EVM "block" will be created only when an ISC block is created, and ISC does
-not enforce an average block time.
+not enforce an average block time. This means that block times are variable; a new block will be created as soon as needed. The average block time in the [Public Testnet](/build/networks-endpoints#public-testnet) is 8.4 seconds.
 
 ### L2 Token Ownership
 

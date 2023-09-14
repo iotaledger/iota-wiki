@@ -63,16 +63,16 @@ let your wallet interact with web applications utilizing an EVM chain (dApps).
 
 To use your EVM chain with MetaMask, simply open up MetaMask and click on the network drop-down list at the very top. At
 the bottom of this list, you will see the option `Add network`. On the new page you will see a list of popular network with the option `Add a network manually`.
-For example this would be the config to add the ShimmerEVM testnet:
+For example this would be the config to add the [Public Testnet](/build/networks-endpoints/#public-testnet):
 
-- Network Name: `ShimmerEVM Testnet`
+- Network Name: `Public Testnet`
 - New RPC URL: `https://json-rpc.evm.testnet.shimmer.network/`
 - Chain ID: `1072`
 - Currency Symbol: `SMR`
 - Block Explorer URL: `https://explorer.evm.testnet.shimmer.network/`
 
 Ensure that your `RPC Url` and `Chain ID` are set correctly and match the dashboard values. The `Network Name` can be
-whatever you see fit. Click "Save" to add the ShimmerEVM Testnet to MetaMask.
+whatever you see fit. Click "Save" to add the [Public Testnet](/build/networks-endpoints/#public-testnet) to MetaMask.
 
 If you wish to use additional EVM chains with Metamask, you can add more Custom RPC networks, as long as they have a
 unique `Chain ID` and `RPC Url`. Once you have done this, you can start using MetaMask to manage your EVM wallet or
@@ -95,7 +95,7 @@ the `Custom (1074) network`.
 
 ### Video Tutorial
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/0_rmmprEKrM" title="ShimmerEVM Tutorial: Connect to ShimmerEVM Testnet & Deploy a Solidity Smart Contract" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/0_rmmprEKrM" title="ShimmerEVM Tutorial: Connect to Public Testnet & Deploy a Solidity Smart Contract" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## Hardhat
 

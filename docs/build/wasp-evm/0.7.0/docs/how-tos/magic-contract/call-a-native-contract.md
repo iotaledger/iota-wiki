@@ -20,6 +20,6 @@ contract MyEVMContract {
 }
 ```
 
-`ISC.util.hn` is used to get the `hname` of the incounter countract and the
+`ISC.util.hn` is used to get the `hname` of the incounter count and the
 `incCounter` entry point. You can also call view entry points using
 [ISC.sandbox.callView](https://github.com/iotaledger/wasp/blob/develop/packages/vm/core/evm/iscmagic/ISCSandbox.sol#L59).

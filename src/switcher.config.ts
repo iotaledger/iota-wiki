@@ -192,7 +192,7 @@ const buildDocs = [
   },
   {
     id: 'wasp-wasm-0-7-0',
-    label: 'WASM',
+    label: 'WASM (Experimental)',
     description: 'Create WASM smart contracts.',
     icon: SmartContracts,
     subsection: 'build-layer-2',
