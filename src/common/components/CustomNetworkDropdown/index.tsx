@@ -12,7 +12,7 @@ import type {
 } from '@theme/NavbarItem/DropdownNavbarItem';
 import './styles.css';
 
-import { IotaCore, Shimmer, Next } from '../../icons';
+import { IotaCore, Shimmer, Next } from '@site/src/icons';
 import {
   fetchSitemapUrlsFromNetwork,
   getBestNetworkUrlMatch,

@@ -8,7 +8,7 @@ import {
   LinkedIn,
   Instagram,
   Facebook,
-} from '../common/icons';
+} from '@site/src/icons';
 
 const map: Array<{
   name: string;

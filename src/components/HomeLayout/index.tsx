@@ -19,7 +19,7 @@ import {
   Tips,
   Tutorials,
   Wasp,
-} from '@site/src/common/icons';
+} from '@site/src/icons';
 import CoreLibrariesSection from './CoreLibrariesSection';
 import AppLibrariesSection from './AppLibrariesSection';
 

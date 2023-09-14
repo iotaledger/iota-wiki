@@ -10,7 +10,7 @@ import {
   Stronghold,
   Tools,
   Wallet,
-} from './common/icons';
+} from '@site/src/icons';
 
 const buildDocs = [
   {
