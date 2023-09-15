@@ -1,7 +1,7 @@
 ---
 sidebar_label: Ecosystem Development Fund
 description: Empower development and innovation within the IOTA ecosystem with over USD 1M available in funding grants. Apply today to turn your ideas into reality.
-image: /img/participate/banner/banner_edf.png
+image: /img/banner/banner_edf.png
 keywords:
   - IOTA Development Fund
   - funding grants
@@ -12,7 +12,7 @@ keywords:
 
 # IOTA Ecosystem Development Fund (EDF)
 
-![Ecosystem Development Fund](/img/participate/banner/banner_edf.png)
+![Ecosystem Development Fund](/img/banner/banner_edf.png)
 
 The [IOTA Ecosystem Development Fund (EDF)](https://fund.iota.org/) empowers development and innovation within the IOTA
 ecosystem by providing funding grants.
