@@ -1,7 +1,11 @@
+const { generatePluginConfig } = require('./src/utils/pluginConfigGenerators');
+const { buildPluginsConfig, maintainPluginsConfig } = require('./versionedConfig');
+
 const path = require('path');
 
 module.exports = async () => {
   const buildPlugins = [
+    ...generatePluginConfig(buildPluginsConfig, __dirname + '/docs/build/'),
     {
       id: 'build',
       globalSidebars: ['build'],
@@ -11,226 +15,6 @@ module.exports = async () => {
         'docs/build/getting-started/sidebars.ts',
       ),
       routeBasePath: 'build',
-    },
-    {
-      id: 'iota-sdk-1-0',
-      path: path.resolve(__dirname, 'docs/build/iota-sdk/1.0/docs'),
-      routeBasePath: 'iota-sdk',
-      sidebarPath: require.resolve('./docs/build/iota-sdk/1.0/sidebars.js'),
-      //overriding default exclude array to include the python api's classes with _ at the beginning
-      //but still exclude any _admonitions
-      exclude: [
-        '**/*.test.{js,jsx,ts,tsx}',
-        '**/__tests__/**',
-        '**/_admonitions/_**',
-      ],
-    },
-    {
-      id: 'wasp-cli-0-7',
-      path: path.resolve(__dirname, 'docs/build/wasp-cli/0.7/docs'),
-      routeBasePath: 'wasp-cli',
-      sidebarPath: path.resolve(
-        __dirname,
-        'docs/build/wasp-cli/0.7/sidebars.js',
-      ),
-    },
-    {
-      id: 'wasp-evm-0-7',
-      path: path.resolve(__dirname, 'docs/build/wasp-evm/0.7/docs'),
-      routeBasePath: 'wasp-evm',
-      sidebarPath: path.resolve(
-        __dirname,
-        'docs/build/wasp-evm/0.7/sidebars.js',
-      ),
-    },
-    {
-      id: 'wasp-wasm-0-7',
-      path: path.resolve(__dirname, 'docs/build/wasp-wasm/0.7/docs'),
-      routeBasePath: 'wasp-wasm',
-      sidebarPath: path.resolve(
-        __dirname,
-        'docs/build/wasp-wasm/0.7/sidebars.js',
-      ),
-    },
-    {
-      id: 'identity-rs-0-5',
-      path: path.resolve(__dirname, 'docs/build/identity.rs/0.5/docs'),
-      routeBasePath: 'identity.rs',
-      bannerPath: path.resolve(__dirname, 'banners/identity-deprecated.mdx'),
-      sidebarPath: path.resolve(
-        __dirname,
-        'docs/build/identity.rs/0.5/sidebars.js',
-      ),
-      versions: {
-        current: {
-          label: '0.5',
-          path: '0.5',
-          badge: true,
-        },
-      },
-    },
-    {
-      id: 'identity-rs-0-6',
-      path: path.resolve(__dirname, 'docs/build/identity.rs/0.6/docs'),
-      routeBasePath: 'identity.rs',
-      bannerPath: path.resolve(
-        __dirname,
-        'banners/identity-stronghold-migration.mdx',
-      ),
-      sidebarPath: path.resolve(
-        __dirname,
-        'docs/build/identity.rs/0.6/sidebars.js',
-      ),
-      versions: {
-        current: {
-          label: '0.6',
-          badge: true,
-        },
-      },
-    },
-    {
-      id: 'identity-rs-0-7-alpha',
-      path: path.resolve(__dirname, 'docs/build/identity.rs/0.7-alpha/docs'),
-      routeBasePath: 'identity.rs',
-      sidebarPath: path.resolve(
-        __dirname,
-        'docs/build/identity.rs/0.7-alpha/sidebars.js',
-      ),
-      versions: {
-        current: {
-          label: '0.7',
-          path: '0.7',
-          badge: true,
-        },
-      },
-    },
-    {
-      id: 'identity-rs-next',
-      path: path.resolve(__dirname, 'docs/build/identity.rs/next/docs'),
-      routeBasePath: 'identity.rs',
-      sidebarPath: path.resolve(
-        __dirname,
-        'docs/build/identity.rs/next/sidebars.js',
-      ),
-      versions: {
-        current: {
-          label: 'next',
-          path: 'next',
-          badge: true,
-        },
-      },
-    },
-    {
-      id: 'iota-rs-1-4',
-      path: path.resolve(__dirname, 'docs/build/iota.rs/1.4/docs'),
-      routeBasePath: 'iota.rs',
-      sidebarPath: path.resolve(
-        __dirname,
-        'docs/build/iota.rs/1.4/sidebars.js',
-      ),
-      versions: {
-        current: {
-          label: '1.4',
-          badge: true,
-        },
-      },
-    },
-    {
-      id: 'iota-rs-2-0-rc-7',
-      path: path.resolve(__dirname, 'docs/build/iota.rs/2.0-rc.7/docs'),
-      routeBasePath: 'iota.rs',
-      bannerPath: path.resolve(
-        __dirname,
-        'banners/pre-sdk-libs-deprecated.mdx',
-      ),
-      sidebarPath: path.resolve(
-        __dirname,
-        'docs/build/iota.rs/2.0-rc.7/sidebars.js',
-      ),
-      versions: {
-        current: {
-          label: '2.0-rc.7',
-          path: '2.0-rc.7',
-          badge: true,
-        },
-      },
-    },
-    {
-      id: 'iotajs',
-      path: path.resolve(__dirname, 'docs/build/iota.js/2.0-rc.1/docs'),
-      routeBasePath: 'iota.js',
-      bannerPath: path.resolve(
-        __dirname,
-        'banners/pre-sdk-libs-deprecated.mdx',
-      ),
-      sidebarPath: path.resolve(
-        __dirname,
-        'docs/build/iota.js/2.0-rc.1/sidebars.js',
-      ),
-    },
-    {
-      id: 'wallet-rs-0-1',
-      path: path.resolve(__dirname, 'docs/build/wallet.rs/0.1/docs'),
-      routeBasePath: 'wallet.rs',
-      sidebarPath: path.resolve(
-        __dirname,
-        'docs/build/wallet.rs/0.1/sidebars.js',
-      ),
-      versions: {
-        current: {
-          label: '0.1',
-          badge: true,
-        },
-      },
-    },
-    {
-      id: 'wallet-rs-1-0-rc-6',
-      path: path.resolve(__dirname, 'docs/build/wallet.rs/1.0-rc.6/docs'),
-      routeBasePath: 'wallet.rs',
-      bannerPath: path.resolve(
-        __dirname,
-        'banners/pre-sdk-libs-deprecated.mdx',
-      ),
-      sidebarPath: path.resolve(
-        __dirname,
-        'docs/build/wallet.rs/1.0-rc.6/sidebars.js',
-      ),
-      versions: {
-        current: {
-          label: '1.0-rc.6',
-          path: '1.0-rc.6',
-          badge: true,
-        },
-      },
-    },
-    {
-      id: 'stronghold-rs',
-      path: path.resolve(__dirname, 'docs/build/stronghold.rs/1.1/docs'),
-      routeBasePath: 'stronghold.rs',
-      sidebarPath: path.resolve(
-        __dirname,
-        'docs/build/stronghold.rs/1.1/sidebars.js',
-      ),
-    },
-    {
-      id: 'apis',
-      path: path.resolve(__dirname, 'docs/build/apis/docs'),
-      routeBasePath: 'apis',
-      sidebarPath: path.resolve(__dirname, 'docs/build/apis/sidebars.js'),
-      docItemComponent: '@theme/ApiItem',
-    },
-    {
-      id: 'iota-streams',
-      path: path.resolve(__dirname, 'docs/build/streams/0.2/docs'),
-      routeBasePath: 'streams',
-      bannerPath: path.resolve(
-        __dirname,
-        'banners/iota-streams-deprecated.mdx',
-      ),
-      sidebarPath: path.resolve(
-        __dirname,
-        'docs/build/streams/0.2/sidebars.js',
-      ),
     },
     {
       id: 'introduction-docs-chrysalis',
@@ -270,15 +54,6 @@ module.exports = async () => {
       },
     },
     {
-      id: 'cli-wallet',
-      path: path.resolve(__dirname, 'docs/build/cli-wallet/1.0/docs'),
-      routeBasePath: 'cli-wallet',
-      sidebarPath: path.resolve(
-        __dirname,
-        'docs/build/cli-wallet/1.0/sidebars.js',
-      ),
-    },
-    {
       id: 'iota-zebra-tutorials',
       path: path.resolve(__dirname, 'docs/build/zebra-iota-edge-sdk/tutorials'),
       routeBasePath: 'zebra-tutorials',
@@ -290,6 +65,7 @@ module.exports = async () => {
   ];
 
   const maintainPlugins = [
+    ...generatePluginConfig(maintainPluginsConfig, __dirname + '/docs/maintain/'),
     {
       id: 'maintain',
       globalSidebars: ['maintain'],
@@ -300,87 +76,9 @@ module.exports = async () => {
       ),
       routeBasePath: 'maintain',
     },
-    {
-      id: 'hornet-1-2',
-      path: path.resolve(__dirname, 'docs/maintain/hornet/1.2/docs'),
-      routeBasePath: 'hornet',
-      sidebarPath: path.resolve(
-        __dirname,
-        'docs/maintain/hornet/1.2/sidebars.js',
-      ),
-      versions: {
-        current: {
-          label: '1.2',
-          badge: true,
-        },
-      },
-    },
-    {
-      id: 'hornet-2-0-rc-6',
-      path: path.resolve(__dirname, 'docs/maintain/hornet/2.0-rc.6/docs'),
-      routeBasePath: 'hornet',
-      sidebarPath: path.resolve(
-        __dirname,
-        'docs/maintain/hornet/2.0-rc.6/sidebars.js',
-      ),
-      versions: {
-        current: {
-          label: '2.0-rc.6',
-          path: '2.0-rc.6',
-          badge: true,
-        },
-      },
-    },
-    {
-      id: 'wasp-0-7',
-      path: path.resolve(__dirname, 'docs/maintain/wasp/0.7/docs'),
-      routeBasePath: 'wasp',
-      sidebarPath: path.resolve(
-        __dirname,
-        'docs/maintain/wasp/0.7/sidebars.js',
-      ),
-    },
-    {
-      id: 'chronicle-rs',
-      path: path.resolve(__dirname, 'docs/maintain/chronicle/0.3/docs'),
-      routeBasePath: 'chronicle',
-      sidebarPath: path.resolve(
-        __dirname,
-        'docs/maintain/chronicle/0.3/sidebars.js',
-      ),
-      versions: {
-        current: {
-          label: '0.3',
-          badge: true,
-        },
-      },
-    },
-    {
-      id: 'inx-chronicle',
-      path: path.resolve(__dirname, 'docs/maintain/chronicle/1.0-rc.1/docs'),
-      routeBasePath: 'chronicle',
-      sidebarPath: path.resolve(
-        __dirname,
-        'docs/maintain/chronicle/1.0-rc.1/sidebars.js',
-      ),
-      versions: {
-        current: {
-          label: '1.0-rc.1',
-          path: '1.0-rc.1',
-          badge: true,
-        },
-      },
-    },
-    {
-      id: 'goshimmer',
-      path: path.resolve(__dirname, 'docs/maintain/goshimmer/0.9/docs'),
-      routeBasePath: 'goshimmer',
-      sidebarPath: path.resolve(
-        __dirname,
-        'docs/maintain/goshimmer/0.9/sidebars.js',
-      ),
-    },
   ];
+
+  console.log('buildPlugins', buildPlugins);
 
   return [
     {
