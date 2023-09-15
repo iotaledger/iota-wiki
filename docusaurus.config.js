@@ -1,6 +1,6 @@
 const { glob, merge } = require('./src/utils/config');
 const path = require('path');
-const { create_doc_plugin, globStatic } = require('./src/utils/config');
+const { create_doc_plugin } = require('./src/utils/config');
 const common = require('./common/docusaurus.config');
 const contentConfigs = require('./contentPlugins');
 const articleRedirectsFile = require('./articleRedirects');
@@ -130,8 +130,6 @@ module.exports = async () => {
       ],
     ],
   };
-
-  const staticDirs = await globStatic('/docs/**/static/', __dirname);
 
   return merge(
     common,
@@ -347,7 +345,6 @@ module.exports = async () => {
           crossorigin: 'anonymous',
         },
       ],
-      staticDirectories: [...staticDirs],
     },
     themeConfig,
     isProduction ? production : {},
