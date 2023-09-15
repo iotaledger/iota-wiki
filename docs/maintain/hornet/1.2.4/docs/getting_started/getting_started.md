@@ -1,6 +1,6 @@
 ---
 description: Getting started with the recommended requirements and installation links.
-image: /img/Banner/banner_hornet_getting_started.png
+image: /img/banner/banner_hornet_getting_started.png
 keywords:
   - IOTA Node
   - Hornet Node
@@ -14,7 +14,7 @@ keywords:
 
 # Getting Started
 
-![Hornet Node getting started](/img/Banner/banner_hornet_getting_started.png)
+![Hornet Node getting started](/img/banner/banner_hornet_getting_started.png)
 
 Running a node is an efficient way to use IOTA. By doing so, you have direct access to the Tangle instead of having to
 connect to and trust someone else's node. Additionally, you help the IOTA network to become more distributed and resilient.

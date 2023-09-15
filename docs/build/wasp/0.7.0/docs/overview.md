@@ -1,6 +1,6 @@
 ---
 description: IOTA Smart Contracts allow you to run smart contracts on top of the IOTA Tangle.
-image: /img/Banner/banner_wasp.png
+image: /img/banner/banner_wasp.png
 keywords:
   - smart contracts
   - core concepts
@@ -11,7 +11,7 @@ keywords:
 
 # IOTA Smart Contracts
 
-![Wasp Node](/img/Banner/banner_wasp.png)
+![Wasp Node](/img/banner/banner_wasp.png)
 
 :::caution
 

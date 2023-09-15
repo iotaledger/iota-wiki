@@ -1,6 +1,6 @@
 ---
 description: In this section we describe individual crates and components of Stronghold.
-image: /img/Banner/banner_stronghold_structure.png
+image: /img/banner/banner_stronghold_structure.png
 keywords:
   - reference
   - ToC
@@ -10,7 +10,7 @@ keywords:
 
 # IOTA Stronghold Structure
 
-![Stronghold Structure](/img/Banner/banner_stronghold_structure.png)
+![Stronghold Structure](/img/banner/banner_stronghold_structure.png)
 
 In this section we describe the individual crates and components of Stronghold:
 

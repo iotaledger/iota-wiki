@@ -1,6 +1,6 @@
 ---
 description: Get started with the IOTA Client Library and choose your programming language.
-image: /img/Banner/banner_client_lib_getting_started.png
+image: /img/banner/banner_client_lib_getting_started.png
 keywords:
   - rust
   - node.js

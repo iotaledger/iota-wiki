@@ -1,6 +1,6 @@
 ---
 description: Get started with Stronghold. Prerequisites, how to build and use the library.
-image: /img/Banner/banner_stronghold.png
+image: /img/banner/banner_stronghold.png
 keywords:
   - getting started
   - open-source

@@ -1,6 +1,6 @@
 ---
 description: INX-Participation is an extension for nodes to enable on-tangle voting.
-image: /img/Banner/banner_hornet.png
+image: /img/banner/banner_hornet.png
 keywords:
   - IOTA Node
   - Hornet Node
