@@ -3,8 +3,8 @@ import React from 'react';
 import Layout from '@theme/Layout';
 
 import './styles.css';
-import TutorialFilters from '@site/src/common/components/TutorialFilters';
-import TutorialCards from '@site/src/common/components/TutorialCards';
+import TutorialFilters from '@site/src/components/TutorialFilters';
+import TutorialCards from '@site/src/components/TutorialCards';
 
 function TutorialHeader() {
   return (
