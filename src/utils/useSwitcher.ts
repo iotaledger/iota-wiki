@@ -12,7 +12,7 @@ import {
   MenuItem,
   Section,
   Sidebar,
-  Subsection,
+  Item,
 } from '../common/components/Switcher';
 
 export type GlobalPluginData = DocsGlobalPluginData & {
@@ -33,7 +33,7 @@ export type SwitcherProps = {
 };
 
 type ConfigTree = (Omit<Section, 'subsections'> & {
-  subsections: (Subsection & { docs: Doc[] })[];
+  subsections: (Item & { docs: Doc[] })[];
 })[];
 
 function findCurrentSection(
@@ -158,17 +158,8 @@ export default function useSwitcher(): SwitcherProps {
         };
       });
 
-      // Resolve the subsection link to the default doc or the first doc configured.
+      // Resolve the subsection link to the first doc configured.
       let to = docLinks[0].to;
-      if (subsection.defaultDoc) {
-        const foundDoc = docLinks.find(
-          (doc) => doc.id === subsection.defaultDoc,
-        );
-        if (!foundDoc)
-          throw `Default doc ${subsection.defaultDoc} of subsection ${subsection.label} not found.`;
-
-        to = foundDoc.to;
-      }
 
       let active = false;
       if (current.subsection && subsection.id === current.subsection.id) {

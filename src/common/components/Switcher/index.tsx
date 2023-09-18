@@ -21,10 +21,6 @@ export type Doc = Item & {
   defaultVersion?: string;
 };
 
-export type Subsection = Item & {
-  defaultDoc?: string;
-};
-
 export type Sidebar = {
   docId: string;
   sidebarId: string;
@@ -32,7 +28,7 @@ export type Sidebar = {
 
 export type Section = {
   before?: Sidebar;
-  subsections: Subsection[];
+  subsections: Item[];
   after?: Sidebar;
 };
 

@@ -52,10 +52,11 @@ function generatePluginConfig(pluginConfig, basePath) {
 function generateSwitcherConfig(pluginConfig) {
   let plugins = [];
   for (const plugin of pluginConfig) {
-      //TODO: Rethink how we use ids in the switcher and/or determine the main plugin id
-      const firstLabel = plugin.versions[0].label;
       plugins.push({
-          id: plugin.id + (firstLabel ? '-' + firstLabel.replace(/\./g, '-') : ''),
+          // Here any unique id could be uses as this is just used to track the active plugin in the switcher.
+          // So we use the plugin id without version label. So it actually isn't the actual plugin id of the plugin.
+          // Confusing, I know ;)
+          id: plugin.id,
           label: plugin.label,
           icon: plugin.icon,
           description: plugin.description,
