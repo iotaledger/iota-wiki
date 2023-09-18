@@ -14,7 +14,9 @@ export type Item = {
   icon?: string;
 };
 
-export type Version = Item;
+export type Version = Omit<Item, 'id'> & {
+  id?: string;
+};
 export type Doc = Item & {
   subsection: string;
   versions: Version[];
