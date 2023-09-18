@@ -78,8 +78,6 @@ module.exports = async () => {
     },
   ];
 
-  console.log('buildPlugins', buildPlugins);
-
   return [
     {
       id: 'get-started',
