@@ -50,7 +50,28 @@ function generatePluginConfig(pluginConfig, basePath) {
  * @param {import('../common/components/Switcher').Doc[]} pluginConfig
  */
 function generateSwitcherConfig(pluginConfig) {
-    return pluginConfig;
+  let plugins = [];
+  for (const plugin of pluginConfig) {
+      //TODO: Rethink how we use ids in the switcher and/or determine the main plugin id
+      const firstLabel = plugin.versions[0].label;
+      plugins.push({
+          id: plugin.id + (firstLabel ? '-' + firstLabel.replace(/\./g, '-') : ''),
+          label: plugin.label,
+          icon: plugin.icon,
+          description: plugin.description,
+          subsection: plugin.subsection,
+          versions: plugin.versions.map((version) => {
+              const {label, badges} = version;
+              return {
+                  id: plugin.id + (label ? '-' + label.replace(/\./g, '-') : ''),
+                  label: label,
+                  badges: badges,
+              };
+          }),
+      });
+  }
+
+  return plugins;
 };
 
 module.exports = {
