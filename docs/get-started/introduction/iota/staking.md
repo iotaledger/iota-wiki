@@ -1,5 +1,4 @@
 ---
-id: staking-iota
 title: Staking IOTA
 description: Everything you need to know about all the different upcoming staking opportunities in the IOTA, and Shimmer network.
 keywords:
