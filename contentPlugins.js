@@ -5,7 +5,6 @@ const path = require('path');
 
 module.exports = async () => {
   const buildPlugins = [
-    ...generatePluginConfig(buildPluginsConfig, __dirname + '/docs/build/'),
     {
       id: 'build',
       globalSidebars: ['build'],
@@ -16,6 +15,7 @@ module.exports = async () => {
       ),
       routeBasePath: 'build',
     },
+    ...generatePluginConfig(buildPluginsConfig, __dirname + '/docs/build/'),
     {
       id: 'introduction-docs-chrysalis',
       path: path.resolve(

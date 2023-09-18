@@ -22,18 +22,22 @@ function generatePluginConfig(pluginConfig, basePath) {
         }
 
         for (const version of plugin.versions) {
+            const {label, badges, ...rest} = version;
             plugins.push({
-                id: plugin.id + (version.label ? '-' + version.label.replace(/\./g, '-') : ''),
-                path: path.resolve(basePath + plugin.id + '/' + (version.label ? version.label : '') + '/docs'),
+                id: plugin.id + (label ? '-' + label.replace(/\./g, '-') : ''),
+                path: path.resolve(basePath + plugin.id + '/' + (label ? label : '') + '/docs'),
                 routeBasePath: plugin.routeBasePath ? plugin.routeBasePath : plugin.id,
-                sidebarPath: path.resolve(basePath + plugin.id + '/' + (version.label ? version.label : '') + '/sidebars.js'),
-                versions: {
+                sidebarPath: path.resolve(basePath + plugin.id + '/' + (label ? label : '') + '/sidebars.js'),
+                versions: 
+                plugin.versions.length > 1 ? {
                     current: {
-                      label: version.label,
-                      path: mainVersion.label === version.label ? undefined : version.label,
+                      label: label,
+                      path: mainVersion.label === label ? undefined : label,
                       badge: true,
                     },
-                },
+                } : 
+                undefined,
+                ...rest,
             });
         }
     }
