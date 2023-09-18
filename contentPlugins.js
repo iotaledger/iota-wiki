@@ -1,5 +1,8 @@
 const { generatePluginConfig } = require('./src/utils/pluginConfigGenerators');
-const { buildPluginsConfig, maintainPluginsConfig } = require('./versionedConfig');
+const {
+  buildPluginsConfig,
+  maintainPluginsConfig,
+} = require('./versionedConfig');
 
 const path = require('path');
 
@@ -65,7 +68,10 @@ module.exports = async () => {
   ];
 
   const maintainPlugins = [
-    ...generatePluginConfig(maintainPluginsConfig, __dirname + '/docs/maintain/'),
+    ...generatePluginConfig(
+      maintainPluginsConfig,
+      __dirname + '/docs/maintain/',
+    ),
     {
       id: 'maintain',
       globalSidebars: ['maintain'],
