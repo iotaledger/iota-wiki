@@ -5,7 +5,7 @@ import {
   useAllDocsData,
 } from '@docusaurus/plugin-content-docs/client';
 import { useDocsSidebar } from '@docusaurus/theme-common/internal';
-import config from '../switcher.config';
+import config from '../../switcher.config';
 import {
   Doc,
   MenuItem,

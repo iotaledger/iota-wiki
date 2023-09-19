@@ -1,4 +1,4 @@
-import type { Config } from './common/components/Switcher';
+import type { Config } from './src/common/components/Switcher';
 
 const buildDocs = [
   {
