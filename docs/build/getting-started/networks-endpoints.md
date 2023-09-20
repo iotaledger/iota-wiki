@@ -138,7 +138,7 @@ layer 1.
       </td>
       <td>1072</td>
       <td><a href="https://evm-faucet.testnet.shimmer.network">https://evm-faucet.testnet.shimmer.network</a></td>
-      <td>https://explorer.evm.testnet.shimmer.network</td>
+      <td><a href="https://explorer.evm.testnet.shimmer.network">https://explorer.evm.testnet.shimmer.network</a></td>
     </tr>
   </tbody>
 </table>
