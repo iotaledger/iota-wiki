@@ -22,7 +22,7 @@ functionality through the _ISC Magic Contract_.
 The Magic contract is an EVM contract deployed by default on every ISC chain, in the EVM genesis block, at
 address `0x1074000000000000000000000000000000000000`.
 The implementation of the Magic contract is baked-in in
-the [`evm`](/learn/smart-contracts/core_concepts/core_contracts/evm) [core contract](/learn/smart-contracts/core_concepts/core_contracts/overview));
+the [`evm`](/learn/smart-contracts/core_concepts/core_contracts/evm) [core contract](/learn/smart-contracts/core_concepts/core_contracts/overview);
 i.e. it is not a pure-Solidity contract.
 
 The Magic contract has several methods, which are categorized into specialized
