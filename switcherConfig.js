@@ -1,4 +1,4 @@
-import type { Config } from './common/components/Switcher';
+// @ts-check
 
 const buildDocs = [
   {
@@ -263,7 +263,8 @@ const maintainDocs = [
   },
 ];
 
-const config: Config = {
+/** @type {import('./src/common/components/Switcher').Config} */
+const config = {
   docs: [...buildDocs, ...maintainDocs],
   sections: [
     {
@@ -306,4 +307,4 @@ const config: Config = {
   ],
 };
 
-export default config;
+module.exports = config;
