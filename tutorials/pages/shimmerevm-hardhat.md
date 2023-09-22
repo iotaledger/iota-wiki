@@ -131,11 +131,11 @@ module.exports = {
   defaultNetwork: 'shimmerevm',
   networks: {
     shimmerevm: {
-        url: 'https://json-rpc.evm.shimmer.network',
-        chainId: 148,
-        timeout: 60000
-    }
-  }
+      url: 'https://json-rpc.evm.shimmer.network',
+      chainId: 148,
+      timeout: 60000,
+    },
+  },
 };
 ```
 

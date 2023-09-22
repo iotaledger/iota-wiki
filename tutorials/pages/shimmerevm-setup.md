@@ -11,7 +11,7 @@ In this tutorial, we will connect to Shimmer EVM, connect Metamask to it and dep
 - [Metamask](https://metamask.io/) or any other wallet of your choice.
 - [Remix](https://remix-project.org/) or any other development environment of your choice.
 
-## Connect to Shimmer EVM 
+## Connect to Shimmer EVM
 
 First, let's setup our Metamask with the EVM. For this exercise, we will use the EVM chain. You can find all endpoints [here](/smart-contracts/mainnet).
 
