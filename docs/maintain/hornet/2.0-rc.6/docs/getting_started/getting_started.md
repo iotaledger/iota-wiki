@@ -57,7 +57,7 @@ the [`config.json`](../how_tos/post_installation.md) file.
 ## Operating System
 
 HORNET is written in Go and can be deployed on all major platforms.
-The [recommended setup](../how_tos/using_docker.md) uses Docker to run HORNET together with some [INX](/hornet/2.0.0-rc.6/inx-plugins) extensions secured behind a [Traefik](https://traefik.io) SSL reverse proxy.
+The [recommended setup](../how_tos/using_docker.md) uses Docker to run HORNET together with some [INX](/hornet/2.0-rc.6/inx-plugins) extensions secured behind a [Traefik](https://traefik.io) SSL reverse proxy.
 
 ## Configuration
 

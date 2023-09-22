@@ -78,16 +78,16 @@ Most of the APIs are the same and the changes are fairly minimal, here are some 
 
 - The npm package changes from [`@iota/wallet`](https://www.npmjs.com/package/@iota/wallet) to
   [`@iota/sdk`](https://www.npmjs.com/package/@iota/sdk).
-- [`AccountManager`](/wallet.rs/1.0.0-rc.6/references/nodejs/classes/AccountManager)
+- [`AccountManager`](/wallet.rs/1.0-rc.6/references/nodejs/classes/AccountManager)
   becomes
   [`Wallet`](../references/nodejs/classes/Wallet.md).
-- [`manager.generateMnemonic()`](/wallet.rs/1.0.0-rc.6/references/nodejs/classes/AccountManager#generatemnemonic)
+- [`manager.generateMnemonic()`](/wallet.rs/1.0-rc.6/references/nodejs/classes/AccountManager#generatemnemonic)
   becomes
   [`Utils.generateMnemonic()`](../references/nodejs/classes/Utils.md#generatemnemonic).
-- [`AccountManager.generateAddress`](/wallet.rs/1.0.0-rc.6/references/nodejs/classes/AccountManager#generateaddress)
+- [`AccountManager.generateAddress`](/wallet.rs/1.0-rc.6/references/nodejs/classes/AccountManager#generateaddress)
   becomes
   [`Wallet.generateEd25519Addresses`](../references/nodejs/classes/Wallet.md#generateed25519address).
-- [`Account.sendAmount`](/wallet.rs/1.0.0-rc.6/references/nodejs/classes/Account) becomes
+- [`Account.sendAmount`](/wallet.rs/1.0-rc.6/references/nodejs/classes/Account) becomes
   [`send`](../references/nodejs/classes/Account.md#send).
 - The callbacks to `listen` now provide a properly typed
   [`Event`](../references/nodejs/classes/Event.md).
@@ -96,13 +96,13 @@ Most of the APIs are the same and the changes are fairly minimal, here are some 
 <TabItem value="python" label="Python">
 
 - The pip package changes from `iota-wallet` to [`iota-sdk`](https://pypi.org/project/iota-sdk.md).
-- [`wallet.generate_mnemonic()`](/wallet.rs/1.0.0-rc.6/references/python/iota_wallet/wallet#generate_mnemonic)
+- [`wallet.generate_mnemonic()`](/wallet.rs/1.0-rc.6/references/python/iota_wallet/wallet#generate_mnemonic)
   becomes
   [`utils.generate_mnemonic()`](../references/python/iota_sdk/utils.md#generate_mnemonic).
-- [`wallet.generate_address()`](/wallet.rs/1.0.0-rc.6/references/python/iota_wallet/wallet#generate_address)
+- [`wallet.generate_address()`](/wallet.rs/1.0-rc.6/references/python/iota_wallet/wallet#generate_address)
   becomes
   [`wallet.generate_ed25519_addresses()`](../references/python/iota_sdk/wallet/wallet.md#generate_ed25519_address).
-- [`account.send_amount`](/wallet.rs/1.0.0-rc.6/references/python/iota_wallet/account#send_amount)
+- [`account.send_amount`](/wallet.rs/1.0-rc.6/references/python/iota_wallet/account#send_amount)
   becomes
   [`account.send`](../references/python/iota_sdk/wallet/account.md#send).
 - The callbacks to `listen` now provide a properly typed

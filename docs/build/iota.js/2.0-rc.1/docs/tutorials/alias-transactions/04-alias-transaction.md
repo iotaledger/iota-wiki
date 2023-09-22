@@ -34,7 +34,7 @@ const stateControllerPrivateKey = '0xa060ff...';
 
 ## Query Alias Output
 
-You will first need to find the Alias Output of your Alias. The easiest way to do so is through a query to the [indexation plugin](/hornet/2.0.0-rc.6/inx-plugins/indexer/api_reference) by Alias ID. Observe that you need to obtain the full output details as we need to use them as input for the transaction.
+You will first need to find the Alias Output of your Alias. The easiest way to do so is through a query to the [indexation plugin](/hornet/2.0-rc.6/inx-plugins/indexer/api_reference) by Alias ID. Observe that you need to obtain the full output details as we need to use them as input for the transaction.
 
 ```typescript
 const indexerPlugin = new IndexerPluginClient(client);
