@@ -137,21 +137,8 @@ iota-sdk = "1.0.0"
 
 To use the Client module, you simply need to create a `Client`.
 
-```rust
-use iota_sdk::client::{Client, Result};
-
-#[tokio::main]
-async fn main() -> Result<()> {
-    let client = Client::builder()
-        .with_node("https://api.testnet.shimmer.network")? // Insert your node URL here
-        .finish()
-        .await?;
-
-    let info = client.get_info().await?;
-    println!("Node Info: {info:?}");
-
-    Ok(())
-}
+```rust reference
+https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/client/getting_started.rs#L10-L23
 ```
 
 ### Wallet
@@ -159,47 +146,8 @@ async fn main() -> Result<()> {
 To use the Wallet module, you need to create a `Wallet`.
 For this example to work `features = ["stronghold"]` is needed in the Cargo.toml import. To persist the wallet in a database, `"rocksdb"` can be added.
 
-```rust
-use iota_sdk::{
-    client::{
-        constants::SHIMMER_COIN_TYPE,
-        secret::{stronghold::StrongholdSecretManager, SecretManager},
-    },
-    wallet::{ClientOptions, Result, Wallet},
-};
-
-#[tokio::main]
-async fn main() -> Result<()> {
-    // Setup Stronghold secret manager.
-    // WARNING: Never hardcode passwords in production code.
-    let secret_manager = StrongholdSecretManager::builder()
-        .password("password".to_owned()) // A password to encrypt the stored data.
-        .build("vault.stronghold")?; // The path to store the account snapshot.
-
-    let client_options = ClientOptions::new().with_node("https://api.testnet.shimmer.network")?;
-
-    // Set up and store the wallet.
-    let wallet = Wallet::builder()
-        .with_secret_manager(SecretManager::Stronghold(secret_manager))
-        .with_client_options(client_options)
-        .with_coin_type(SHIMMER_COIN_TYPE)
-        .finish()
-        .await?;
-
-    // Generate a mnemonic and store it in the Stronghold vault.
-    // INFO: It is best practice to back up the mnemonic somewhere secure.
-    let mnemonic = wallet.generate_mnemonic()?;
-    wallet.store_mnemonic(mnemonic).await?;
-
-    // Create an account.
-    let account = wallet
-        .create_account()
-        .with_alias("Alice") // A name to associate with the created account.
-        .finish()
-        .await?;
-
-    Ok(())
-}
+```rust reference
+https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/wallet/getting_started.rs#L12-L56
 ```
 
 ## What's next?

@@ -92,40 +92,16 @@ deactivate
 
 After you [installed the library](#install-the-iota-sdk), you can create a `Client` instance and interface with it.
 
-```python
-from iota_sdk import Client
-
-# Create a Client instance
-client = Client(nodes=['https://api.testnet.shimmer.network'])
-
-# Get the node info
-node_info = client.get_info()
-print(f'{node_info}')
+```python reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/client/getting_started.py
 ```
 
 ### Wallet
 
 After you [installed the library](#install-the-iota-sdk), you can create a `Wallet` instance and interact with it.
 
-```python
-from iota_sdk import Wallet, StrongholdSecretManager, CoinType
-
-# This example creates a new database and account
-
-wallet_options = {
-    'nodes': ['https://api.testnet.shimmer.network'],
-}
-
-secret_manager = StrongholdSecretManager("wallet.stronghold", "some_hopefully_secure_password")
-
-wallet = Wallet('./alice-database', wallet_options, coin_type=CoinType.SHIMMER, secret_manager)
-
-# Store the mnemonic in the Stronghold snapshot. This only needs to be done once
-account = wallet.store_mnemonic("flame fever pig forward exact dash body idea link scrub tennis minute " +
-          "surge unaware prosper over waste kitten ceiling human knife arch situate civil")
-
-account = wallet.create_account('Alice')
-print(account)
+```python reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/wallet/getting_started.py#L4-L48
 ```
 
 ## What's next?

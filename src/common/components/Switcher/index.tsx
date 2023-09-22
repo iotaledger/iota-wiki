@@ -1,7 +1,7 @@
-import type { ComponentType, SVGProps } from 'react';
 import React, { useState } from 'react';
 import Link from '@docusaurus/Link';
 import clsx from 'clsx';
+import icons from '@site/src/icons/iota';
 
 import './styles.css';
 import { SwitcherProps } from '@site/src/utils/useSwitcher';
@@ -11,7 +11,7 @@ export type Item = {
   label: string;
   description?: string;
   badges?: string[];
-  icon?: ComponentType<SVGProps<SVGSVGElement>>;
+  icon?: string;
 };
 
 export type Version = Item;
@@ -52,6 +52,11 @@ enum SwitcherMenuState {
   Versions,
 }
 
+function Icon({ icon, className }: { icon: string; className: string }) {
+  const Comp = icons[icon];
+  return <Comp className={className} />;
+}
+
 type SwitcherMenuDropdownProps = { items: MenuItem[]; active: boolean };
 
 function SwitcherMenuDropdown(props: SwitcherMenuDropdownProps) {
@@ -64,7 +69,7 @@ function SwitcherMenuDropdown(props: SwitcherMenuDropdownProps) {
     >
       <ul className='switcher-menu__items'>
         {props.items.map(
-          ({ id, label, to, active, icon: Icon, description, badges = [] }) => (
+          ({ id, label, to, active, icon, description, badges = [] }) => (
             <li className='switcher-menu__item' key={id}>
               <Link
                 className={clsx(
@@ -73,7 +78,7 @@ function SwitcherMenuDropdown(props: SwitcherMenuDropdownProps) {
                 )}
                 to={to}
               >
-                {Icon && <Icon className='switcher-menu__icon' />}
+                {icon && <Icon icon={icon} className='switcher-menu__icon' />}
                 <div className='switcher-menu__content'>
                   <div className='switcher-menu__label'>
                     {label}

@@ -1,23 +1,11 @@
 import type { Config } from './common/components/Switcher';
-import {
-  Chronicle,
-  GoShimmer,
-  Hornet,
-  Identity,
-  IotaCore,
-  SmartContracts,
-  Streams,
-  Stronghold,
-  Tools,
-  Wallet,
-} from './common/icons';
 
 const buildDocs = [
   {
     id: 'iota-sdk-1-0-0',
     label: 'IOTA SDK',
     description: 'Seamlessly integrate IOTA into your app.',
-    icon: IotaCore,
+    icon: 'IotaCore',
     subsection: 'build-layer-1',
     versions: [
       {
@@ -31,7 +19,7 @@ const buildDocs = [
     id: 'identity-rs-0-5',
     label: 'Identity',
     description: 'Trustless digital identity management.',
-    icon: Identity,
+    icon: 'Identity',
     subsection: 'build-layer-1',
     versions: [
       {
@@ -60,7 +48,7 @@ const buildDocs = [
     id: 'stronghold-rs',
     label: 'Stronghold',
     description: 'Securely store secrets.',
-    icon: Stronghold,
+    icon: 'Stronghold',
     subsection: 'build-layer-1',
     versions: [
       {
@@ -74,7 +62,7 @@ const buildDocs = [
     id: 'cli-wallet',
     label: 'CLI Wallet',
     description: 'Command line wallet.',
-    icon: Wallet,
+    icon: 'Wallet',
     subsection: 'build-layer-1',
     versions: [
       {
@@ -88,7 +76,7 @@ const buildDocs = [
     id: 'apis',
     label: 'APIs',
     description: 'All available APIs.',
-    icon: Tools,
+    icon: 'Tools',
     subsection: 'build-layer-1',
     versions: [
       {
@@ -100,7 +88,7 @@ const buildDocs = [
     id: 'iota-rs-1-4-0',
     label: 'iota.rs (deprecated)',
     description: 'Legacy client SDK.',
-    icon: IotaCore,
+    icon: 'IotaCore',
     subsection: 'build-layer-1',
     versions: [
       {
@@ -119,7 +107,7 @@ const buildDocs = [
     id: 'iotajs',
     label: 'iota.js (deprecated)',
     description: 'Legacy JavaScript SDK.',
-    icon: IotaCore,
+    icon: 'IotaCore',
     subsection: 'build-layer-1',
     versions: [
       {
@@ -133,7 +121,7 @@ const buildDocs = [
     id: 'wallet-rs-0-1-0',
     label: 'wallet.rs (deprecated)',
     description: 'Legacy wallet SDK.',
-    icon: Wallet,
+    icon: 'Wallet',
     subsection: 'build-layer-1',
     versions: [
       {
@@ -152,7 +140,7 @@ const buildDocs = [
     id: 'iota-streams',
     label: 'Streams (deprecated)',
     description: 'Secure data channels over the Tangle.',
-    icon: Streams,
+    icon: 'Streams',
     subsection: 'build-layer-1',
     versions: [
       {
@@ -166,7 +154,7 @@ const buildDocs = [
     id: 'wasp-evm-0-7-0',
     label: 'EVM',
     description: 'Create EVM smart contracts.',
-    icon: SmartContracts,
+    icon: 'SmartContracts',
     subsection: 'build-layer-2',
     versions: [
       {
@@ -180,7 +168,7 @@ const buildDocs = [
     id: 'wasp-cli-0-7-0',
     label: 'Wasp CLI',
     description: 'Create custom smart contract chains.',
-    icon: SmartContracts,
+    icon: 'SmartContracts',
     subsection: 'build-layer-2',
     versions: [
       {
@@ -194,7 +182,7 @@ const buildDocs = [
     id: 'wasp-wasm-0-7-0',
     label: 'WASM (Experimental)',
     description: 'Create WASM smart contracts.',
-    icon: SmartContracts,
+    icon: 'SmartContracts',
     subsection: 'build-layer-2',
     versions: [
       {
@@ -211,7 +199,7 @@ const maintainDocs = [
     id: 'hornet-1-2-4',
     label: 'Hornet',
     description: 'The primary node software for IOTA.',
-    icon: Hornet,
+    icon: 'Hornet',
     subsection: 'maintain-layer-1',
     versions: [
       {
@@ -230,7 +218,7 @@ const maintainDocs = [
     id: 'wasp-0-7-0',
     label: 'Wasp',
     description: 'The node software to run an ISC network',
-    icon: SmartContracts,
+    icon: 'SmartContracts',
     subsection: 'maintain-layer-2',
     versions: [
       {
@@ -244,7 +232,7 @@ const maintainDocs = [
     id: 'chronicle-rs',
     label: 'Chronicle',
     description: 'Indexer, archival node, analytics.',
-    icon: Chronicle,
+    icon: 'Chronicle',
     subsection: 'maintain-layer-1',
     versions: [
       {
@@ -263,7 +251,7 @@ const maintainDocs = [
     id: 'goshimmer',
     label: 'GoShimmer',
     description: 'Research node implementation for IOTA 2.0',
-    icon: GoShimmer,
+    icon: 'GoShimmer',
     subsection: 'maintain-layer-1',
     versions: [
       {
