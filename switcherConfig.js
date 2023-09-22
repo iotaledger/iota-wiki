@@ -2,15 +2,15 @@
 
 const buildDocs = [
   {
-    id: 'iota-sdk-1-0-0',
+    id: 'iota-sdk-1-0',
     label: 'IOTA SDK',
     description: 'Seamlessly integrate IOTA into your app.',
     icon: 'IotaCore',
     subsection: 'build-layer-1',
     versions: [
       {
-        id: 'iota-sdk-1-0-0',
-        label: '1.0.0',
+        id: 'iota-sdk-1-0',
+        label: '1.0',
         badges: ['Shimmer'],
       },
     ],
@@ -53,7 +53,7 @@ const buildDocs = [
     versions: [
       {
         id: 'stronghold-rs',
-        label: '1.1.0',
+        label: '1.1',
         badges: ['IOTA/Shimmer'],
       },
     ],
@@ -67,7 +67,7 @@ const buildDocs = [
     versions: [
       {
         id: 'cli-wallet',
-        label: '1.0.0',
+        label: '1.0',
         badges: ['Shimmer'],
       },
     ],
@@ -85,20 +85,20 @@ const buildDocs = [
     ],
   },
   {
-    id: 'iota-rs-1-4-0',
+    id: 'iota-rs-1-4',
     label: 'iota.rs (deprecated)',
     description: 'Legacy client SDK.',
     icon: 'IotaCore',
     subsection: 'build-layer-1',
     versions: [
       {
-        id: 'iota-rs-2-0-1-rc-7',
-        label: '2.0.1-rc.7',
+        id: 'iota-rs-2-0-rc-7',
+        label: '2.0-rc.7',
         badges: ['Shimmer'],
       },
       {
-        id: 'iota-rs-1-4-0',
-        label: '1.4.0',
+        id: 'iota-rs-1-4',
+        label: '1.4',
         badges: ['IOTA'],
       },
     ],
@@ -112,26 +112,26 @@ const buildDocs = [
     versions: [
       {
         id: 'iotajs',
-        label: '2.0.0-rc.1',
+        label: '2.0-rc.1',
         badges: ['Shimmer'],
       },
     ],
   },
   {
-    id: 'wallet-rs-0-1-0',
+    id: 'wallet-rs-0-1',
     label: 'wallet.rs (deprecated)',
     description: 'Legacy wallet SDK.',
     icon: 'Wallet',
     subsection: 'build-layer-1',
     versions: [
       {
-        id: 'wallet-rs-1-0-0-rc-6',
-        label: '1.0.0-rc.6',
+        id: 'wallet-rs-1-0-rc-6',
+        label: '1.0-rc.6',
         badges: ['Shimmer'],
       },
       {
-        id: 'wallet-rs-0-1-0',
-        label: '0.1.0',
+        id: 'wallet-rs-0-1',
+        label: '0.1',
         badges: ['IOTA'],
       },
     ],
@@ -145,49 +145,49 @@ const buildDocs = [
     versions: [
       {
         id: 'iota-streams',
-        label: '0.2.0',
+        label: '0.2',
         badges: ['IOTA'],
       },
     ],
   },
   {
-    id: 'wasp-evm-0-7-0',
+    id: 'wasp-evm-0-7',
     label: 'EVM',
     description: 'Create EVM smart contracts.',
     icon: 'SmartContracts',
     subsection: 'build-layer-2',
     versions: [
       {
-        id: 'wasp-evm-0-7-0',
-        label: '0.7.0',
+        id: 'wasp-evm-0-7',
+        label: '0.7',
         badges: ['Shimmer'],
       },
     ],
   },
   {
-    id: 'wasp-cli-0-7-0',
+    id: 'wasp-cli-0-7',
     label: 'Wasp CLI',
     description: 'Create custom smart contract chains.',
     icon: 'SmartContracts',
     subsection: 'build-layer-2',
     versions: [
       {
-        id: 'wasp-cli-0-7-0',
-        label: '0.7.0',
+        id: 'wasp-cli-0-7',
+        label: '0.7',
         badges: ['Shimmer'],
       },
     ],
   },
   {
-    id: 'wasp-wasm-0-7-0',
+    id: 'wasp-wasm-0-7',
     label: 'WASM (Experimental)',
     description: 'Create WASM smart contracts.',
     icon: 'SmartContracts',
     subsection: 'build-layer-2',
     versions: [
       {
-        id: 'wasp-wasm-0-7-0',
-        label: '0.7.0',
+        id: 'wasp-wasm-0-7',
+        label: '0.7',
         badges: ['Shimmer'],
       },
     ],
@@ -196,34 +196,34 @@ const buildDocs = [
 
 const maintainDocs = [
   {
-    id: 'hornet-1-2-4',
+    id: 'hornet-1-2',
     label: 'Hornet',
     description: 'The primary node software for IOTA.',
     icon: 'Hornet',
     subsection: 'maintain-layer-1',
     versions: [
       {
-        id: 'hornet-2-0-0-rc-6',
-        label: '2.0.0-rc.6',
+        id: 'hornet-2-0-rc-6',
+        label: '2.0-rc.6',
         badges: ['Shimmer'],
       },
       {
-        id: 'hornet-1-2-4',
-        label: '1.2.4',
+        id: 'hornet-1-2',
+        label: '1.2',
         badges: ['IOTA'],
       },
     ],
   },
   {
-    id: 'wasp-0-7-0',
+    id: 'wasp-0-7',
     label: 'Wasp',
     description: 'The node software to run an ISC network',
     icon: 'SmartContracts',
     subsection: 'maintain-layer-2',
     versions: [
       {
-        id: 'wasp-0-7-0',
-        label: '0.7.0',
+        id: 'wasp-0-7',
+        label: '0.7',
         badges: ['Shimmer'],
       },
     ],
@@ -237,12 +237,12 @@ const maintainDocs = [
     versions: [
       {
         id: 'inx-chronicle',
-        label: '1.0.0-rc.1',
+        label: '1.0-rc.1',
         badges: ['Shimmer'],
       },
       {
         id: 'chronicle-rs',
-        label: '0.3.0',
+        label: '0.3',
         badges: ['IOTA'],
       },
     ],
@@ -256,7 +256,7 @@ const maintainDocs = [
     versions: [
       {
         id: 'goshimmer',
-        label: '0.9.8',
+        label: '0.9',
         badges: ['IOTA 2.0'],
       },
     ],
