@@ -21,18 +21,6 @@ module.exports = {
     },
     {
       type: 'doc',
-      id: 'wasp-cli',
-    },
-    {
-      type: 'doc',
-      id: 'setting-up-a-chain',
-    },
-    {
-      type: 'doc',
-      id: 'chain-management',
-    },
-    {
-      type: 'doc',
       id: 'configuration',
     },
     {

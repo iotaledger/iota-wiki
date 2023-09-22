@@ -9,14 +9,14 @@ keywords:
 
 # Exposed Metrics
 
-You can see all exposed metrics at our [metrics endpoint](https://wasp.sc.iota.org/metrics). Refer to the [testnet endpoints description](/smart-contracts/testnet#endpoints) for access details.
+Refer to the [testnet endpoints description](/build/networks-endpoints/#testnet-evm) for access details.
 
-| Metric                                     | Description                                           |
-| ------------------------------------------ | ----------------------------------------------------- |
-| `wasp_off_ledger_requests_counter`         | Off-ledger requests per chain.                        |
-| `wasp_on_ledger_request_counter`           | On-ledger requests per chain.                         |
-| `wasp_processed_request_counter`           | Total number of requests processed.                   |
-| `messages_received_per_chain`              | Number of messages received per chain.                |
-| `receive_requests_acknowledgement_message` | Number of request acknowledgement messages per chain. |
-| `request_processing_time`                  | Time to process request.                              |
-| `vm_run_time`                              | Time it takes to run the vm.                          |
+| Metric                                     | Description                                          |
+| ------------------------------------------ | ---------------------------------------------------- |
+| `wasp_off_ledger_requests_counter`         | Off-ledger requests per chain.                       |
+| `wasp_on_ledger_request_counter`           | On-ledger requests per chain.                        |
+| `wasp_processed_request_counter`           | Total number of requests processed.                  |
+| `messages_received_per_chain`              | Number of messages received per chain.               |
+| `receive_requests_acknowledgement_message` | Number of request acknowledgment messages per chain. |
+| `request_processing_time`                  | Time to process request.                             |
+| `vm_run_time`                              | Time it takes to run the VM.                         |

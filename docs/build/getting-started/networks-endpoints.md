@@ -128,6 +128,7 @@ layer 1.
       <th>RPC URL</th>
       <th>Chain ID</th>
       <th>Faucet</th>
+      <th>Explorer</th>
     </tr>
     <tr>
       <td>Testnet Tokens (no value)</td>
@@ -137,6 +138,7 @@ layer 1.
       </td>
       <td>1072</td>
       <td><a href="https://evm-faucet.testnet.shimmer.network">https://evm-faucet.testnet.shimmer.network</a></td>
+      <td><a href="https://explorer.evm.testnet.shimmer.network">https://explorer.evm.testnet.shimmer.network</a></td>
     </tr>
   </tbody>
 </table>

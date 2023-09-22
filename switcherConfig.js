@@ -151,14 +151,42 @@ const buildDocs = [
     ],
   },
   {
-    id: 'smart-contract-0-7-0',
-    label: 'Smart Contracts',
-    description: 'Create smart contracts.',
+    id: 'wasp-evm-0-7-0',
+    label: 'EVM',
+    description: 'Create EVM smart contracts.',
     icon: 'SmartContracts',
     subsection: 'build-layer-2',
     versions: [
       {
-        id: 'smart-contract-0-7-0',
+        id: 'wasp-evm-0-7-0',
+        label: '0.7.0',
+        badges: ['Shimmer'],
+      },
+    ],
+  },
+  {
+    id: 'wasp-cli-0-7-0',
+    label: 'Wasp CLI',
+    description: 'Create custom smart contract chains.',
+    icon: 'SmartContracts',
+    subsection: 'build-layer-2',
+    versions: [
+      {
+        id: 'wasp-cli-0-7-0',
+        label: '0.7.0',
+        badges: ['Shimmer'],
+      },
+    ],
+  },
+  {
+    id: 'wasp-wasm-0-7-0',
+    label: 'WASM (Experimental)',
+    description: 'Create WASM smart contracts.',
+    icon: 'SmartContracts',
+    subsection: 'build-layer-2',
+    versions: [
+      {
+        id: 'wasp-wasm-0-7-0',
         label: '0.7.0',
         badges: ['Shimmer'],
       },
