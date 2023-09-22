@@ -169,7 +169,7 @@ module.exports = {
         description:
           'In this tutorial, we will connect to Shimmer EVM Testnet, connect Metamask to it, get funded and deploy a smart contract in Solidity.',
         preview: '/connect-shimmerevm-testnet-and-deploy.png',
-        route: 'tutorials/shimmerevm-setup',
+        route: 'tutorials/shimmerevm-testnet-setup',
         tags: [
           'text',
           'shimmer',
@@ -195,11 +195,11 @@ module.exports = {
     [
       '@iota-wiki/plugin-tutorial',
       {
-        title: 'Tutorial - Deploy a Solidity Smart Contract Using Hardhat',
+        title: 'Tutorial - Deploy a Solidity Smart Contract on ShimmerEVM Testnet Using Hardhat',
         description:
           'In this tutorial, you will learn how to set up Hardhat and use it to build, test and deploy a simple smart contract on ShimmerEVM.',
         preview: '/shimmerevm-hardhat.jpg',
-        route: 'tutorials/shimmerevm-hardhat',
+        route: 'tutorials/shimmerevm-testnet-hardhat',
         tags: [
           'text',
           'shimmer',
@@ -261,6 +261,45 @@ module.exports = {
         preview: '/send-shimmer-tokens-with-iota-sdk.png',
         route: 'tutorials/send-shimmer-tokens-with-iota-sdk',
         tags: ['text', 'iota-sdk', 'sdk', 'getting-started', 'rust', 'shimmer'],
+      },
+    ],
+    [
+      '@iota-wiki/plugin-tutorial',
+      {
+        title:
+          'Connect to Shimmer EVM and Deploy a Solidity Smart Contract',
+        description:
+          'In this tutorial, we will connect to Shimmer EVM, connect Metamask to it, get funded and deploy a smart contract in Solidity.',
+        preview: '/connect-shimmerevm-and-deploy.png',
+        route: 'tutorials/shimmerevm-setup',
+        tags: [
+          'text',
+          'shimmer',
+          'solidity',
+          'getting-started',
+          'wasp',
+          'iscp',
+          'video',
+        ],
+      },
+    ],
+    [
+      '@iota-wiki/plugin-tutorial',
+      {
+        title: 'Tutorial - Deploy a Solidity Smart Contract on ShimmerEVM Using Hardhat',
+        description:
+          'In this tutorial, you will learn how to set up Hardhat and use it to build, test and deploy a simple smart contract on ShimmerEVM.',
+        preview: '/shimmerevm-hardhat.jpg',
+        route: 'tutorials/shimmerevm-hardhat',
+        tags: [
+          'text',
+          'shimmer',
+          'solidity',
+          'shimmerevm',
+          'hardhat',
+          'iscp',
+          'video',
+        ],
       },
     ],
   ],

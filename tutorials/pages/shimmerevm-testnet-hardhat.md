@@ -128,14 +128,14 @@ Some important things to note are data types. `event` means that we can subscrib
 ```js
 module.exports = {
   solidity: '0.8.18',
-  defaultNetwork: 'shimmerevm',
+  defaultNetwork: 'shimmerevm-testnet',
   networks: {
-    shimmerevm: {
-        url: 'https://json-rpc.evm.shimmer.network',
-        chainId: 148,
-        timeout: 60000
-    }
-  }
+    'shimmerevm-testnet': {
+      url: 'https://json-rpc.evm.testnet.shimmer.network',
+      chainId: 1072,
+      accounts: [priv_key],
+    },
+  },
 };
 ```
 
@@ -190,31 +190,29 @@ npx hardhat compile
 Run this command in root of the project directory:
 
 ```sh
-npx hardhat run scripts/deploy.js --network shimmerevm
+npx hardhat run scripts/deploy.js --network shimmerevm-testnet
 ```
 
-The contract will be deployed on ShimmerEVM, and you can check the deployment status here on the [explorer](https://explorer.evm.shimmer.network/).
+The contract will be deployed on ShimmerEVM Testnet, and you can check the deployment status here on the [explorer](https://explorer.evm.testnet.shimmer.network/).
 
 If you want to further verify your contract, add the following to your `hardhat.config.js`:
 
 ```js
 etherscan: {
-    apiKey:
-      {
-        shimmerevm: "xxx"
-      },
-    customChains: [
-      {
-        apikey: "xxx",
-        network: "shimmerevm",
-        chainId: 148,
-        urls: {
-          apiURL: "https://explorer.evm.shimmer.network/api",
-          browserURL: "https://explorer.evm.shimmer.network/"
-        }
-      }
-    ]
+  apiKey: {
+    'shimmerevm-testnet': 'ABCDE12345ABCDE12345ABCDE123456789',
   },
+  customChains: [
+    {
+      network: 'shimmerevm-testnet',
+      chainId: 1072,
+      urls: {
+        apiURL: 'https://explorer.evm.testnet.shimmer.network/api',
+        browserURL: 'https://explorer.evm.testnet.shimmer.network/',
+      },
+    },
+  ],
+}
 ```
 
 Then you can verify by running:
@@ -230,3 +228,7 @@ You can easily copy the address and unlock time from the output of the [deploy s
 :::
 
 And Voila! You've successfully deployed your first Hardhat Smart Contract on ShimmerEVM and verified it on explorer.
+
+## Video Tutorial
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/rRscvKirroo" title="ShimmerEVM Tutorial: Deploying a Smart Contract with Hardhat" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
