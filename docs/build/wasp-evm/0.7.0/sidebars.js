@@ -43,6 +43,17 @@ module.exports = {
     },
     {
       type: 'category',
+      label: 'Explanations',
+      items: [
+        {
+          type: 'doc',
+          label: 'How Accounts Work',
+          id: 'explanations/how-accounts-work',
+        },
+      ],
+    },
+    {
+      type: 'category',
       label: 'How To',
       items: [
         {
@@ -88,6 +99,21 @@ module.exports = {
               type: 'doc',
               label: 'Send Tokens to L1',
               id: 'how-tos/magic-contract/send-tokens-to-l1',
+            },
+            {
+              type: 'doc',
+              label: 'Deposit To a Chain',
+              id: 'how-tos/deposit-to-a-chain',
+            },
+            {
+              type: 'doc',
+              label: 'Withdraw From a Chain',
+              id: 'how-tos/withdraw-from-a-chain',
+            },
+            {
+              type: 'doc',
+              label: 'View Account Balances',
+              id: 'how-tos/view-account-balances',
             },
           ],
         },
