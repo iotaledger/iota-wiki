@@ -257,7 +257,7 @@ module.exports = async () => {
                 },
                 {
                   from: '/shimmer/chronicle',
-                  to: '/chronicle/1.0.0-rc.1',
+                  to: '/chronicle/1.0-rc.1',
                 },
                 {
                   from: '/shimmer/cli-wallet',
