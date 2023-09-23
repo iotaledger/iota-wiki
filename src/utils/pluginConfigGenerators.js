@@ -22,15 +22,17 @@ function generatePluginConfig(pluginConfig, basePath) {
 
     for (const version of plugin.versions) {
       const { label, badges, ...rest } = version;
+      // TODO: This could be removed once we don't use points in paths anymore.
+      const plugin_name_path = plugin.routeBasePath
+        ? plugin.routeBasePath
+        : plugin.id;
+      const extended_base_path =
+        basePath + plugin_name_path + '/' + (label ? label : '');
       plugins.push({
         id: plugin.id + (label ? '-' + label.replace(/\./g, '-') : ''),
-        path: path.resolve(
-          basePath + plugin.id + '/' + (label ? label : '') + '/docs',
-        ),
-        routeBasePath: plugin.routeBasePath ? plugin.routeBasePath : plugin.id,
-        sidebarPath: path.resolve(
-          basePath + plugin.id + '/' + (label ? label : '') + '/sidebars.js',
-        ),
+        path: path.resolve(extended_base_path + '/docs'),
+        routeBasePath: plugin_name_path,
+        sidebarPath: path.resolve(extended_base_path + '/sidebars.js'),
         versions:
           plugin.versions.length > 1
             ? {
