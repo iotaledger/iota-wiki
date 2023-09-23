@@ -46,9 +46,9 @@ any object in a GDPR-compliant, cost-efficient, and privacy-enabling manner.
 
 ### Smart Contracts
 
-The [IOTA Smart Contracts (ISC)](/smart-contracts/overview) bring scalable, flexible, and cost-effective smart
+The [IOTA Smart Contracts (ISC)](/learn/smart-contracts/introduction) bring scalable, flexible, and cost-effective smart
 contract functionality to the IOTA ecosystem. By anchoring multiple chains to the IOTA Tangle, ISC enables
 higher throughput and lower fees than traditional single-chain solutions. Users have the freedom to create custom
 chains with control over gas fees and privacy settings, and the platform is virtual machine-agnostic, supporting both
-[Rust/Wasm](/smart-contracts/guide/wasm_vm/intro) and [Solidity/EVM](/smart-contracts/guide/evm/introduction)
+[Rust/Wasm](/wasp-wasm/introduction) and [Solidity/EVM](/wasp-evm/introduction)
 smart contracts.
