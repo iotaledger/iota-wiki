@@ -1,9 +1,9 @@
-# Connect to Shimmer EVM Testnet and deploy a Solidity Smart Contract
+import {AddToMetaMaskButton, EVMNetworks} from '@theme/AddToMetaMaskButton';
+
+# Connect to ShimmerEVM Testnet and deploy a Solidity Smart Contract
 
 :::info
-
-In this tutorial, we will connect to Shimmer EVM Testnet, connect Metamask to it, get funded and deploy a smart contract in Solidity.
-
+In this tutorial, we will connect to ShimmerEVM Testnet, connect Metamask to it, get funded and deploy a smart contract in Solidity.
 :::
 
 ## Prerequisites
@@ -11,16 +11,19 @@ In this tutorial, we will connect to Shimmer EVM Testnet, connect Metamask to it
 - [Metamask](https://metamask.io/) or any other wallet of your choice.
 - [Remix](https://remix-project.org/) or any other development environment of your choice.
 
-## Connect to Shimmer EVM Testnet
+## Connect to ShimmerEVM Testnet
 
-First, let's setup our Metamask with the EVM. For this exercise, we will use the testnet EVM chain. You can find all endpoints [here](/build/networks-endpoints/#testnet-evm).
+You can either just use the following button to add the ShimmerEVM Testnet network to Metamask
+or enter the information manually.
 
-Add a new network on your Metamask, as shown below:
+<AddToMetaMaskButton cfg={EVMNetworks["shimmerevm-testnet"]}/>
+
+To add the ShimmerEVM Testnet network manually to your Metamask use following info:
 
 - Network Name: `ShimmerEVM Testnet`
 - New RPC URL: `https://json-rpc.evm.testnet.shimmer.network`
 - Chain ID: `1072`
-- Currency Symbol: `SMR` (Can be anything you wish)
+- Currency Symbol: `SMR`
 - Explorer URL: https://explorer.evm.testnet.shimmer.network
 
 ![Metamask Adding New Network](/metamask-shimmerevm.png 'Metamask Adding New Network')
@@ -63,7 +66,7 @@ contract Storage {
 
 If you've a different smart contract that you wish to deploy, feel free to.
 
-Go to the Run tab and Select `Injected Provider - Metamask` as your enviroment as shown below:
+Go to the Run tab and Select `Injected Provider - Metamask` as your environment as shown below:
 ![Injected Provider - MetaMask](https://i.imgur.com/0Ot1ije.png 'Injected Provider - MetaMask')
 
 Then, click on Deploy and confirm the Metamask transaction as shown below:
@@ -73,10 +76,11 @@ And voila—it's done!
 
 ## Video Tutorial
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/0_rmmprEKrM" title="ShimmerEVM Tutorial: Connect to ShimmerEVM Testnet & Deploy a Solidity Smart Contract" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/0_rmmprEKrM"
+        title="ShimmerEVM Tutorial: Connect to ShimmerEVM Testnet & Deploy a Solidity Smart Contract" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen></iframe>
 
 :::info
-
 Feel free to play around and reach out to us on [discord](https://discord.shimmer.network/) on `#evm-contracts-dev` in case you're facing any issues.
-
 :::

@@ -16,7 +16,7 @@ keywords:
 
 Welcome to the "Build" section of the IOTA Wiki. This section is for developers interested in using the IOTA and Shimmer
 networks for decentralized applications, integrating their exchange, minting NFTs, and much more. Here, you can find all
-the available [Networks and Endpoints](networks-endpoints.md), links for all the available
+the available [Networks and Endpoints](networks-endpoints.mdx), links for all the available
 [Tools](/build/tools), [APIS](/apis/welcome), and all the documentation to communicate with the Layer 1 networks,
 build
 decentralized applications and interact with Layer 2 [smart contracts](#smart-contracts).
