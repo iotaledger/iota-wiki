@@ -56,29 +56,17 @@ function generatePluginConfig(pluginConfig, basePath) {
  * @param {import('../common/components/Switcher').Doc[]} pluginConfig
  */
 function generateSwitcherConfig(pluginConfig) {
-  let plugins = [];
-  for (const plugin of pluginConfig) {
-    plugins.push({
-      // Here any unique id could be uses as this is just used to track the active plugin in the switcher.
-      // So we use the plugin id without version label. So it actually isn't the actual plugin id of the plugin.
-      // Confusing, I know ;)
-      id: plugin.id,
-      label: plugin.label,
-      icon: plugin.icon,
-      description: plugin.description,
-      subsection: plugin.subsection,
-      versions: plugin.versions.map((version) => {
-        const { label, badges } = version;
-        return {
-          id: plugin.id + (label ? '-' + label.replace(/\./g, '-') : ''),
-          label: label,
-          badges: badges,
-        };
-      }),
-    });
-  }
-
-  return plugins;
+  return pluginConfig.map((plugin) => ({
+    ...plugin,
+    versions: plugin.versions.map((version) => {
+      const { label, badges } = version;
+      return {
+        id: plugin.id + (label ? '-' + label.replace(/\./g, '-') : ''),
+        label,
+        badges,
+      };
+    }),
+  }));
 }
 
 module.exports = {
