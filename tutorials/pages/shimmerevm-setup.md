@@ -1,9 +1,7 @@
-# Connect to Shimmer EVM and deploy a Solidity Smart Contract
+# Connect to ShimmerEVM and deploy a Solidity Smart Contract
 
 :::info
-
-In this tutorial, we will connect to Shimmer EVM, connect Metamask to it and deploy a smart contract in Solidity.
-
+In this tutorial, we will connect to ShimmerEVM via Metamask and deploy a smart contract in Solidity.
 :::
 
 ## Prerequisites
@@ -11,31 +9,33 @@ In this tutorial, we will connect to Shimmer EVM, connect Metamask to it and dep
 - [Metamask](https://metamask.io/) or any other wallet of your choice.
 - [Remix](https://remix-project.org/) or any other development environment of your choice.
 
-## Connect to Shimmer EVM
+## Connect to ShimmerEVM
 
-First, let's setup our Metamask with the EVM. For this exercise, we will use the EVM chain. You can find all endpoints [here](/build/networks-endpoints/#shimmerevm).
+First, let's setup our Metamask with the ShimmerEVM. You can find all
+endpoints [here](/build/networks-endpoints/#shimmerevm).
 
 Add a new network on your Metamask, as shown below:
 
 - Network Name: `ShimmerEVM`
 - New RPC URL: `https://json-rpc.evm.shimmer.network`
 - Chain ID: `148`
-- Currency Symbol: `SMR` (Can be anything you wish)
+- Currency Symbol: `SMR`
 - Explorer URL: https://explorer.evm.shimmer.network
 
 ![Metamask Adding New Network](/metamask-shimmerevm-mainnet.png 'Metamask Adding New Network')
 
-Alternatively, you can setup your own EVM Smart Contract Chain on top of the Shimmer network and provide a custom URL, which might look something like: `https://api.sc.testnet.shimmer.network/chain/rms1prr4r7az8e46qhagz5atugjm6x0xrg27d84677e3lurg0s6s76jr59dw4ls/evm/jsonrpc` as well as your own custom Chain ID.
-
 Hit `Save` and wait for Metamask to connect to the network.
 
-At this point, our Metamask wallet is connected to the Shimmer EVM, but we don't have any funds in it. So, let's try to get some.
+At this point, our Metamask wallet is connected to the ShimmerEVM, but we don't have any funds in it.
+So, let's try to get some.
 
 ## Get EVM Account Funded
 
-You can get SMR funds from either transferring to your own account using Firefly or from some exchange which has SMR. Know more about [SMR token](https://shimmer.network/token) and where you can get here.
+You can get SMR funds from either transferring to your own account using Firefly or from some exchange which has SMR.
+Know more about [SMR token](https://shimmer.network/token) and where you can get here.
 
-Now, open [Remix ide](https://remix.ethereum.org/) or your favourite IDE and let's try to deploy a solidity smart contract.
+Now, open [Remix ide](https://remix.ethereum.org/) or your favourite IDE and let's try to deploy a solidity smart
+contract.
 
 ## Deploy Solidity Smart Contract
 
@@ -57,7 +57,7 @@ contract Storage {
 
 If you've a different smart contract that you wish to deploy, feel free to.
 
-Go to the Run tab and Select `Injected Provider - Metamask` as your enviroment as shown below:
+Go to the Run tab and Select `Injected Provider - Metamask` as your environment as shown below:
 ![Injected Provider - MetaMask](https://i.imgur.com/0Ot1ije.png 'Injected Provider - MetaMask')
 
 Then, click on Deploy and confirm the Metamask transaction that pops up.
@@ -65,7 +65,6 @@ Then, click on Deploy and confirm the Metamask transaction that pops up.
 And voila—it's done!
 
 :::info
-
-Feel free to play around and reach out to us on [discord](https://discord.shimmer.network/) on `#evm-contracts-dev` in case you're facing any issues.
-
+Feel free to play around and reach out to us on [discord](https://discord.shimmer.network/) on `#evm-contracts-dev` in
+case you're facing any issues.
 :::

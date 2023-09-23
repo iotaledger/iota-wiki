@@ -13,6 +13,8 @@ keywords:
   - Endpoints
 ---
 
+import {AddToMetaMaskButton, EVMNetworks} from '@theme/AddToMetaMaskButton';
+
 # Networks & Endpoints
 
 This pages gives an overview around the different networks available in the IOTA ecosystem.
@@ -65,7 +67,6 @@ Mainnet.
       <th>HTTP REST API</th>
       <th>Event API</th>
       <th>Permanode API</th>
-      <th>Faucet</th>
     </tr>
     <tr>
       <td>Shimmer Token</td>
@@ -77,7 +78,31 @@ Mainnet.
           wss://api.shimmer.network:443/api/mqtt/v1 (MQTT 3.1)
       </td>
       <td>https://chronicle.shimmer.network</td>
-      <td>N/A</td>
+    </tr>
+  </tbody>
+</table>
+
+### ShimmerEVM
+
+[ShimmerEVM](https://explorer.evm.shimmer.network/) is the L2 EVM running on top of the Shimmer network.
+
+<AddToMetaMaskButton cfg={EVMNetworks["shimmerevm"]}/>
+
+<table>
+  <tbody>
+    <tr>
+      <th>Base Token</th>
+      <th>Protocol</th>
+      <th>RPC URL</th>
+      <th>Chain ID</th>
+      <th>Explorer</th>
+    </tr>
+    <tr>
+      <td>Shimmer Token</td>
+      <td>ISC / EVM</td>
+      <td><a href="https://json-rpc.evm.shimmer.network">https://json-rpc.evm.shimmer.network</a></td>
+      <td>148</td>
+      <td><a href="https://explorer.evm.shimmer.network">https://explorer.evm.shimmer.network</a></td>
     </tr>
   </tbody>
 </table>
@@ -114,6 +139,8 @@ Mainnet.
 </table>
 
 ### Testnet EVM
+
+<AddToMetaMaskButton cfg={EVMNetworks["shimmerevm-testnet"]}/>
 
 [The Testnet EVM](https://explorer.evm.testnet.shimmer.network/) (also called ShimmerEVM Beta) runs as a layer 2 on top
 of the Public Testnet. This network does not run
