@@ -173,7 +173,10 @@ module.exports = async () => {
               coreApiChrysalis: {
                 specPath:
                   'https://raw.githubusercontent.com/iotaledger/tips/main/tips/TIP-0013/rest-api.yaml',
-                outputDir: path.resolve(__dirname, 'docs/build/apis/core/v1'),
+                outputDir: path.resolve(
+                  __dirname,
+                  'docs/build/apis/docs/core/v1',
+                ),
                 sidebarOptions: {
                   groupPathsBy: 'tag',
                 },
@@ -181,7 +184,10 @@ module.exports = async () => {
               coreApiShimmer: {
                 specPath:
                   'https://raw.githubusercontent.com/iotaledger/tips/main/tips/TIP-0025/core-rest-api.yaml',
-                outputDir: path.resolve(__dirname, 'docs/build/apis/core/v2'),
+                outputDir: path.resolve(
+                  __dirname,
+                  'docs/build/apis/docs/core/v2',
+                ),
                 sidebarOptions: {
                   groupPathsBy: 'tag',
                 },
@@ -189,7 +195,7 @@ module.exports = async () => {
               waspApi: {
                 specPath:
                   'https://raw.githubusercontent.com/iotaledger/wasp/develop/clients/apiclient/api/openapi.yaml',
-                outputDir: path.resolve(__dirname, 'docs/build/apis/wasp'),
+                outputDir: path.resolve(__dirname, 'docs/build/apis/docs/wasp'),
                 sidebarOptions: {
                   groupPathsBy: 'tag',
                 },
@@ -197,7 +203,10 @@ module.exports = async () => {
               indexerApi: {
                 specPath:
                   'https://raw.githubusercontent.com/iotaledger/tips/main/tips/TIP-0026/indexer-rest-api.yaml',
-                outputDir: path.resolve(__dirname, 'docs/build/apis/indexer'),
+                outputDir: path.resolve(
+                  __dirname,
+                  'docs/build/apis/docs/indexer',
+                ),
                 sidebarOptions: {
                   groupPathsBy: 'tag',
                 },
@@ -205,7 +214,7 @@ module.exports = async () => {
               poiApi: {
                 specPath:
                   'https://raw.githubusercontent.com/iotaledger/inx-poi/develop/rest-api.yaml',
-                outputDir: path.resolve(__dirname, 'docs/build/apis/poi'),
+                outputDir: path.resolve(__dirname, 'docs/build/apis/docs/poi'),
                 sidebarOptions: {
                   groupPathsBy: 'tag',
                 },
@@ -213,7 +222,10 @@ module.exports = async () => {
               explorerApi: {
                 specPath:
                   'https://raw.githubusercontent.com/iotaledger/inx-chronicle/main/documentation/api/api-explorer.yml',
-                outputDir: path.resolve(__dirname, 'docs/build/apis/explorer'),
+                outputDir: path.resolve(
+                  __dirname,
+                  'docs/build/apis/docs/explorer',
+                ),
                 sidebarOptions: {
                   groupPathsBy: 'tag',
                 },
@@ -223,7 +235,7 @@ module.exports = async () => {
                   'https://raw.githubusercontent.com/iotaledger/inx-irc-metadata/develop/rest-api.yaml',
                 outputDir: path.resolve(
                   __dirname,
-                  'docs/build/apis/irc-metadata',
+                  'docs/build/apis/docs/irc-metadata',
                 ),
                 sidebarOptions: {
                   groupPathsBy: 'tag',
@@ -245,7 +257,7 @@ module.exports = async () => {
                 },
                 {
                   from: '/shimmer/chronicle',
-                  to: '/chronicle/1.0.0-rc.1',
+                  to: '/chronicle/1.0-rc.1',
                 },
                 {
                   from: '/shimmer/cli-wallet',
@@ -265,7 +277,7 @@ module.exports = async () => {
                 },
                 {
                   from: '/shimmer/hornet',
-                  to: '/hornet/2.0.0-rc.6',
+                  to: '/hornet/2.0-rc.6',
                 },
                 {
                   from: '/shimmer/identity.rs',
@@ -285,7 +297,7 @@ module.exports = async () => {
                 },
                 {
                   from: '/shimmer/iota.rs',
-                  to: '/iota.rs/2.0.1-rc.7',
+                  to: '/iota.rs/2.0-rc.7',
                 },
                 {
                   from: '/shimmer/smart-contracts/guide/chains_and_nodes',
@@ -325,7 +337,7 @@ module.exports = async () => {
                 },
                 {
                   from: '/shimmer/wallet.rs',
-                  to: '/wallet.rs/1.0.0-rc.6',
+                  to: '/wallet.rs/1.0-rc.6',
                 },
                 {
                   from: '/shimmer/learn/governance/',
