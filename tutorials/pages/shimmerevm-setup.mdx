@@ -1,3 +1,5 @@
+import {AddToMetaMaskButton, EVMNetworks} from '@theme/AddToMetaMaskButton';
+
 # Connect to ShimmerEVM and deploy a Solidity Smart Contract
 
 :::info
@@ -14,7 +16,12 @@ In this tutorial, we will connect to ShimmerEVM via Metamask and deploy a smart 
 First, let's setup our Metamask with the ShimmerEVM. You can find all
 endpoints [here](/build/networks-endpoints/#shimmerevm).
 
-Add a new network on your Metamask, as shown below:
+You can either just use the following button to add the ShimmerEVM network to Metamask
+or enter the information manually.
+
+<AddToMetaMaskButton cfg={EVMNetworks["shimmerevm"]}/>
+
+To add the ShimmerEVM network manually to your Metamask use following info:
 
 - Network Name: `ShimmerEVM`
 - New RPC URL: `https://json-rpc.evm.shimmer.network`
