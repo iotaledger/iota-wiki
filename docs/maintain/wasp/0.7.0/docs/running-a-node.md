@@ -15,12 +15,12 @@ keywords:
 
 # Running a Node
 
-Due to wasp being desgined as an INX plugin, its necessary to run the wasp node alongside your own hornet node, for this we provide a simple docker-compose setup.
+As Wasp is an INX plugin, you must run the wasp node alongside your hornet node. You can use the simple docker-compose setup to do so.
 
-## Setup
+## Set Up
 
 Clone and follow the instructions on the [node-docker-setup repo](https://github.com/iotaledger/node-docker-setup).
 
 :::note
-This is aimed for prodution-ready deployment, if you're looking to spawn a local node for testing/development, please see: [local-setup](https://github.com/iotaledger/wasp/tree/develop/tools/local-setup)
+This is aimed at production-ready deployment. If you're looking to spawn a local node for testing/development, please see the [local-setup](https://github.com/iotaledger/wasp/tree/develop/tools/local-setup)
 :::

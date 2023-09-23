@@ -4,6 +4,7 @@ const { create_doc_plugin, globStatic } = require('./src/utils/config');
 const common = require('./common/docusaurus.config');
 const contentConfigs = require('./contentPlugins');
 const articleRedirectsFile = require('./articleRedirects');
+const switcherConfig = require('./switcherConfig');
 
 module.exports = async () => {
   const contentPlugins = await Promise.all(
@@ -56,7 +57,9 @@ module.exports = async () => {
               '^(/[^/]+)?/wallet.rs/.*|' +
               '^(/[^/]+)?/stronghold.rs/.*|' +
               '^(/[^/]+)?/streams/.*|' +
-              '^(/[^/]+)?/smart-contracts/.*',
+              '^(/[^/]+)?/wasp-cli/.*' +
+              '^(/[^/]+)?/wasp-wasm/.*' +
+              '^(/[^/]+)?/wasp-evm/.*',
           },
           {
             label: 'Maintain',
@@ -107,6 +110,7 @@ module.exports = async () => {
         indexName: 'iota',
         contextualSearch: true,
       },
+      switcher: switcherConfig,
     },
   };
 

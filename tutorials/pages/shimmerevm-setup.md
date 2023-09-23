@@ -13,7 +13,7 @@ In this tutorial, we will connect to Shimmer EVM, connect Metamask to it and dep
 
 ## Connect to Shimmer EVM
 
-First, let's setup our Metamask with the EVM. For this exercise, we will use the EVM chain. You can find all endpoints [here](/smart-contracts/mainnet).
+First, let's setup our Metamask with the EVM. For this exercise, we will use the EVM chain. You can find all endpoints [here](/build/networks-endpoints/#shimmerevm).
 
 Add a new network on your Metamask, as shown below:
 
