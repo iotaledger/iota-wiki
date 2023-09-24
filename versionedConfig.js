@@ -100,16 +100,16 @@ exports.buildPluginsConfig = [
     subsection: 'build-layer-1',
     versions: [
       {
+        label: '1.4',
+        badges: ['IOTA'],
+      },
+      {
         label: '2.0-rc.7',
         badges: ['Shimmer'],
         bannerPath: path.resolve(
           __dirname,
           'banners/pre-sdk-libs-deprecated.mdx',
         ),
-      },
-      {
-        label: '1.4',
-        badges: ['IOTA'],
       },
     ],
   },
@@ -140,16 +140,16 @@ exports.buildPluginsConfig = [
     subsection: 'build-layer-1',
     versions: [
       {
+        label: '0.1',
+        badges: ['IOTA'],
+      },
+      {
         label: '1.0-rc.6',
         badges: ['Shimmer'],
         bannerPath: path.resolve(
           __dirname,
           'banners/pre-sdk-libs-deprecated.mdx',
         ),
-      },
-      {
-        label: '0.1',
-        badges: ['IOTA'],
       },
     ],
   },
@@ -177,6 +177,7 @@ exports.buildPluginsConfig = [
       {
         label: '',
         badges: ['IOTA/Shimmer'],
+        docItemComponent: '@theme/ApiItem',
       },
     ],
   },
@@ -222,12 +223,12 @@ exports.maintainPluginsConfig = [
     subsection: 'maintain-layer-1',
     versions: [
       {
-        label: '2.0-rc.6',
-        badges: ['Shimmer'],
-      },
-      {
         label: '1.2',
         badges: ['IOTA'],
+      },
+      {
+        label: '2.0-rc.6',
+        badges: ['Shimmer'],
       },
     ],
   },
@@ -252,12 +253,12 @@ exports.maintainPluginsConfig = [
     subsection: 'maintain-layer-1',
     versions: [
       {
-        label: '1.0-rc.1',
-        badges: ['Shimmer'],
-      },
-      {
         label: '0.3',
         badges: ['IOTA'],
+      },
+      {
+        label: '1.0-rc.1',
+        badges: ['Shimmer'],
       },
     ],
   },
@@ -269,7 +270,6 @@ exports.maintainPluginsConfig = [
     subsection: 'maintain-layer-1',
     versions: [
       {
-        id: 'goshimmer',
         label: '0.9',
         badges: ['IOTA 2.0'],
       },
