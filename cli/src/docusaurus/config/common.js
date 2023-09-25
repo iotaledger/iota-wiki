@@ -63,10 +63,7 @@ module.exports = async () => {
 
   // Get relative configuration path and import it.
   const configPath = path
-    .relative(
-      __dirname,
-      path.join(process.cwd(), IOTA_WIKI_DIRECTORY, 'docusaurus.config.js'),
-    )
+    .relative(__dirname, path.join(IOTA_WIKI_DIRECTORY, 'docusaurus.config.js'))
     .split(path.sep)
     .join(path.posix.sep);
   const config = require(configPath);
