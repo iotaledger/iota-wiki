@@ -1,10 +1,11 @@
 import { Command, Option } from 'clipanion';
 import path from 'path';
 
-const internalConfig = require.resolve('../docusaurus/config/build.js');
+const buildConfig = require.resolve('../docusaurus/config/build.js');
 const SUPPORTED_PLUGINS = [
   '@docusaurus/plugin-content-docs',
   '@docusaurus/plugin-content-pages',
+  '@iota-wiki/plugin-docs',
 ];
 
 export class Check extends Command {
@@ -25,7 +26,8 @@ export class Check extends Command {
     const directory = this.directory || process.cwd();
 
     process.env['IOTA_WIKI_DIRECTORY'] = directory;
-    const { plugins = [] } = require(internalConfig);
+    const config = require(buildConfig);
+    const { plugins = [] } = await config();
 
     const pluginPaths = plugins.reduce((pluginPaths, plugin) => {
       if (Array.isArray(plugin)) {
