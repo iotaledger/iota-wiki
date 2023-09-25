@@ -41,13 +41,6 @@ module.exports = {
   plugins: [
     'plugin-image-zoom',
     [
-      '@docusaurus/plugin-content-pages',
-      {
-        id: 'common',
-        path: path.resolve(__dirname, '../src/common/pages'),
-      },
-    ],
-    [
       '@docusaurus/plugin-content-docs',
       {
         id: 'community',
