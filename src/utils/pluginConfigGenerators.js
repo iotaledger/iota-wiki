@@ -1,6 +1,5 @@
 const path = require('path');
 
-
 /**
  * Find main version of a plugin by resolving it to the default version or the first version configured.
  * @param {import('../common/components/Switcher').Doc} plugin
@@ -69,17 +68,20 @@ function generateSwitcherConfig(pluginConfig) {
   return pluginConfig.map((plugin) => {
     const mainVersion = findMainVersion(plugin);
     return {
-    ...plugin,
-    id: plugin.id + (mainVersion.label ? '-' + mainVersion.label.replace(/\./g, '-') : ''),
-    versions: plugin.versions.map((version) => {
-      const { label, badges } = version;
-      return {
-        id: plugin.id + (label ? '-' + label.replace(/\./g, '-') : ''),
-        label,
-        badges,
-      };
-    }),
-  }});
+      ...plugin,
+      id:
+        plugin.id +
+        (mainVersion.label ? '-' + mainVersion.label.replace(/\./g, '-') : ''),
+      versions: plugin.versions.map((version) => {
+        const { label, badges } = version;
+        return {
+          id: plugin.id + (label ? '-' + label.replace(/\./g, '-') : ''),
+          label,
+          badges,
+        };
+      }),
+    };
+  });
 }
 
 module.exports = {
