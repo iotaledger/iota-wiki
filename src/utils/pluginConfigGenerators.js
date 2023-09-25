@@ -29,6 +29,7 @@ function generatePluginConfig(pluginConfig, basePath) {
     const mainVersion = findMainVersion(doc);
 
     return doc.versions.map((version) => {
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
       const { label, badges, ...rest } = version;
 
       // TODO: This could be removed once we don't use points in paths anymore.
@@ -42,18 +43,19 @@ function generatePluginConfig(pluginConfig, basePath) {
         path: path.resolve(extended_base_path + '/docs'),
         routeBasePath: plugin_name_path,
         sidebarPath: path.resolve(extended_base_path + '/sidebars.js'),
+        ...(doc.versions.length > 1
+          ? {
+              versions: {
+                current: {
+                  label,
+                  path: mainVersion.label === label ? undefined : label,
+                  badge: true,
+                },
+              },
+            }
+          : {}),
         ...rest,
       };
-
-      if (doc.versions.length > 1) {
-        plugin.versions = {
-          current: {
-            label,
-            path: mainVersion.label === label ? undefined : label,
-            badge: true,
-          },
-        };
-      }
 
       return plugin;
     });

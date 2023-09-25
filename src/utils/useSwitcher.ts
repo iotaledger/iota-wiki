@@ -159,7 +159,7 @@ export default function useSwitcher(): SwitcherProps {
       });
 
       // Resolve the subsection link to the first doc configured.
-      let to = docLinks[0].to;
+      const to = docLinks[0].to;
 
       let active = false;
       if (current.subsection && subsection.id === current.subsection.id) {
