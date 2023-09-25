@@ -261,9 +261,9 @@ additional constraints also have to be met.
   transaction on the ledger.
 - The governance controller of an alias output can change the state controller, meaning that a committee rotation can
   be carried out without changing the smart contract chain account, aliasID.
-    - A smart contract chain can be self governed, if the state and governance controllers coincide.
-    - A smart contract chain can be governed by an address account, or by another smart contract chain through an
-      alias account.
+  - A smart contract chain can be self governed, if the state and governance controllers coincide.
+  - A smart contract chain can be governed by an address account, or by another smart contract chain through an
+    alias account.
 - Each Extended Output is a request which is “sent” to the alias account. The ISCP can retrieve the backlog of
   requests by retrieving all outputs for the aliasID. Consuming the Extended Output means it is atomically removed
   from the backlog. It can only be done by the state controller, i.e. the committee of the smart contract chain.

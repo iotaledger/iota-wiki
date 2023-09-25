@@ -71,7 +71,8 @@ To preview the Wiki locally, use the following steps. For more detailed scripts,
 2. Install dependencies with `yarn`.
 3. Prepare the environment by running `yarn prepare`, this has to be done only once.
 4. Preview the Wiki with `yarn start`, this will start a development server serving the Wiki with hot reload capability, so it will update content after any changes were made.
-y
+
+
 #### Pre-configured scripts
 
 | Script            | Explanation                                                                                                                                                                                                         |
