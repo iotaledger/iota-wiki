@@ -1,6 +1,6 @@
 ---
 description: Choose your binding and get started with the IOTA Client Library.
-image: /img/Banner/banner_client_lib_getting_started.png
+image: /img/banner/banner_client_lib_getting_started.png
 keywords:
   - rust
   - python
@@ -14,7 +14,7 @@ keywords:
 
 # Getting Started
 
-![IOTA Client Library getting started](/img/Banner/banner_client_lib_getting_started.png)
+![IOTA Client Library getting started](/img/banner/banner_client_lib_getting_started.png)
 
 ## Required Prior Knowledge
 

@@ -1,6 +1,6 @@
 ---
 description: INX-Indexer is a ledger indexing tool to provide structured and queryable data to wallets and other applications.
-image: /img/Banner/banner_hornet.png
+image: /img/banner/banner_hornet.png
 keywords:
   - IOTA Node
   - Hornet Node

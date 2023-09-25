@@ -1,6 +1,6 @@
 ---
 description: Getting started with the recommended requirements and installation links.
-image: /img/Banner/banner_hornet_getting_started.png
+image: /img/banner/banner_hornet_getting_started.png
 keywords:
   - IOTA Node
   - HORNET Node
@@ -14,7 +14,7 @@ keywords:
 
 # Getting Started
 
-![HORNET Node getting started](/img/Banner/banner_hornet_getting_started.png)
+![HORNET Node getting started](/img/banner/banner_hornet_getting_started.png)
 
 Running a node is an efficient way to use IOTA or Shimmer. By doing so, you have direct access to the Tangle instead of having to
 connect to and trust someone else's node. Additionally, you help the network to become more distributed and resilient.

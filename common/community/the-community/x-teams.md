@@ -4,12 +4,12 @@ description: The IOTA X - Teams is where community engagement and the IOTA
   Foundation meet each other to work together on solutions. A lot of real
   progress in the Protocol evolves out of this amazing collaborations. Take part
   in it!
-image: /img/participate/banner/banner_x_team.png
+image: /img/banner/banner_x_team.png
 ---
 
 # The IOTA X-Teams
 
-![IOTA X-Teams](/img/participate/banner/banner_x_team.png)
+![IOTA X-Teams](/img/banner/banner_x_team.png)
 
 Sustainable open source software is always, first and foremost, a community effort. By its very nature, the health of every project in this domain has as much to do with those consuming the code as it has to do with those maintaining it.
 

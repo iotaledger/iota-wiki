@@ -1,6 +1,6 @@
 ---
 description: INX-MQTT provides an event-based real-time streaming node API.
-image: /img/Banner/banner_hornet.png
+image: /img/banner/banner_hornet.png
 keywords:
   - IOTA Node
   - Hornet Node

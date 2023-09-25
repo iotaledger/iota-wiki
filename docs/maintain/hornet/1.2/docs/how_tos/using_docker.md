@@ -1,6 +1,6 @@
 ---
 description: Learn how to install and run a Hornet node using Docker. It is recommended for macOS and Windows.
-image: /img/Banner/banner_hornet_using_docker.png
+image: /img/banner/banner_hornet_using_docker.png
 keywords:
   - IOTA Node
   - Hornet Node
@@ -14,7 +14,7 @@ keywords:
 
 # Install Hornet using Docker
 
-![Hornet Node using Docker](/img/Banner/banner_hornet_using_docker.png)
+![Hornet Node using Docker](/img/banner/banner_hornet_using_docker.png)
 
 This guide represents the recommended setup to run a Hornet node.
 It includes everything required to setup a public node accessible by wallets and applications:

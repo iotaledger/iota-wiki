@@ -15,7 +15,7 @@ keywords:
 
 # Overview
 
-![IOTA Client Library Overview](/img/Banner/banner_client_lib_overview.png)
+![IOTA Client Library Overview](/img/banner/banner_client_lib_overview.png)
 
 The iota.rs library is designed to simplify how you connect and interact
 with [nodes](/introduction/explanations/node_software) in the IOTA network. You can use it to generate

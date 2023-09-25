@@ -1,6 +1,6 @@
 ---
 description: How to run your own private Chrysalis Tangle
-image: /img/Banner/banner_hornet_private_tangle.png
+image: /img/banner/banner_hornet_private_tangle.png
 keywords:
   - IOTA Node
   - HORNET Node
@@ -13,7 +13,7 @@ keywords:
 
 # Run a Private Tangle
 
-![HORNET Node Private Tangle](/img/Banner/banner_hornet_private_tangle.png)
+![HORNET Node Private Tangle](/img/banner/banner_hornet_private_tangle.png)
 
 This guide explains how you can run your own private tangle.
 Private tangles are targetted at developers wanting to test their solutions in a private network environment.
