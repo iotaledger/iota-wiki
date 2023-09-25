@@ -41,11 +41,11 @@ module.exports = {
     },
     {
       type: 'category',
-      label: 'Programmes',
+      label: 'Programs',
       items: [
         'programs/touchpoint',
-        'programmes/EDF-grant-programme',
-        'programmes/bug-bounties',
+        'programs/EDF-grant-programme',
+        'programs/bug-bounties',
       ],
     },
     {
