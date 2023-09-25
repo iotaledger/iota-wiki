@@ -26,48 +26,39 @@ function findMainVersion(plugin) {
  * @param {string} basePath
  */
 function generatePluginConfig(pluginConfig, basePath) {
-  let plugins = [];
+  return pluginConfig.flatMap((doc) => {
+    const mainVersion = findMainVersion(doc);
 
-  for (const plugin of pluginConfig) {
-    const mainVersion = findMainVersion(plugin);
-
-    for (const version of plugin.versions) {
+    return doc.versions.map((version) => {
       const { label, badges, ...rest } = version;
+
       // TODO: This could be removed once we don't use points in paths anymore.
-      const plugin_name_path = plugin.routeBasePath
-        ? plugin.routeBasePath
-        : plugin.id;
+      const plugin_name_path = doc.routeBasePath ? doc.routeBasePath : doc.id;
+
       const extended_base_path =
         basePath + plugin_name_path + '/' + (label ? label : '');
-      if (plugin.versions.length > 1) {
-        plugins.push({
-          id: plugin.id + (label ? '-' + label.replace(/\./g, '-') : ''),
-          path: path.resolve(extended_base_path + '/docs'),
-          routeBasePath: plugin_name_path,
-          sidebarPath: path.resolve(extended_base_path + '/sidebars.js'),
-          versions:{
-                  current: {
-                    label: label,
-                    path: mainVersion.label === label ? undefined : label,
-                    badge: true,
-                  },
-          },
-          ...rest,
-        });
-      }
-      else {
-        plugins.push({
-          id: plugin.id + (label ? '-' + label.replace(/\./g, '-') : ''),
-          path: path.resolve(extended_base_path + '/docs'),
-          routeBasePath: plugin_name_path,
-          sidebarPath: path.resolve(extended_base_path + '/sidebars.js'),
-          ...rest,
-        });
-      }
-    }
-  }
 
-  return plugins;
+      plugin = {
+        id: doc.id + (label ? '-' + label.replace(/\./g, '-') : ''),
+        path: path.resolve(extended_base_path + '/docs'),
+        routeBasePath: plugin_name_path,
+        sidebarPath: path.resolve(extended_base_path + '/sidebars.js'),
+        ...rest,
+      };
+
+      if (doc.versions.length > 1) {
+        plugin.versions = {
+          current: {
+            label,
+            path: mainVersion.label === label ? undefined : label,
+            badge: true,
+          },
+        };
+      }
+
+      return plugin;
+    });
+  });
 }
 
 /**
