@@ -13,7 +13,7 @@ keywords:
   - Endpoints
 ---
 
-import {AddToMetaMaskButton, EVMNetworks} from '@theme/AddToMetaMaskButton';
+import { AddToMetaMaskButton, EVMNetworks } from '@theme/AddToMetaMaskButton';
 
 # Networks & Endpoints
 
@@ -40,14 +40,16 @@ token.
     </tr>
     <tr>
       <td>IOTA Token</td>
-      <td><a href="/learn/protocols/chrysalis/introduction/">Chrysalis</a></td>
       <td>
-          <a href="https://chrysalis-nodes.iota.org/api/v1/info">https://chrysalis-nodes.iota.org</a>
-          , <a href="https://chrysalis-nodes.iota.cafe/api/v1/info">https://chrysalis-nodes.iota.cafe</a>
+        <a href='/learn/protocols/chrysalis/introduction/'>Chrysalis</a>
       </td>
       <td>
-        wss://chrysalis-nodes.iota.org:443 (MQTT 3.1, /mqtt)
+        <a href='https://chrysalis-nodes.iota.org/api/v1/info'>
+          https://chrysalis-nodes.iota.org
+        </a>
+        , <a href='https://chrysalis-nodes.iota.cafe/api/v1/info'>https://chrysalis-nodes.iota.cafe</a>
       </td>
+      <td>wss://chrysalis-nodes.iota.org:443 (MQTT 3.1, /mqtt)</td>
       <td>N/A</td>
       <td>N/A</td>
     </tr>
@@ -70,13 +72,15 @@ Mainnet.
     </tr>
     <tr>
       <td>Shimmer Token</td>
-      <td><a href="/learn/protocols/stardust/introduction/">Stardust</a></td>
       <td>
-          <a href="https://api.shimmer.network/api/core/v2/info">https://api.shimmer.network</a>
+        <a href='/learn/protocols/stardust/introduction/'>Stardust</a>
       </td>
       <td>
-          wss://api.shimmer.network:443/api/mqtt/v1 (MQTT 3.1)
+        <a href='https://api.shimmer.network/api/core/v2/info'>
+          https://api.shimmer.network
+        </a>
       </td>
+      <td>wss://api.shimmer.network:443/api/mqtt/v1 (MQTT 3.1)</td>
       <td>https://chronicle.shimmer.network</td>
     </tr>
   </tbody>
@@ -86,7 +90,7 @@ Mainnet.
 
 [ShimmerEVM](https://explorer.evm.shimmer.network/) is the L2 EVM running on top of the Shimmer network.
 
-<AddToMetaMaskButton cfg={EVMNetworks["shimmerevm"]}/>
+<AddToMetaMaskButton cfg={EVMNetworks['shimmerevm']} />
 
 <table>
   <tbody>
@@ -100,9 +104,17 @@ Mainnet.
     <tr>
       <td>Shimmer Token</td>
       <td>ISC / EVM</td>
-      <td><a href="https://json-rpc.evm.shimmer.network">https://json-rpc.evm.shimmer.network</a></td>
+      <td>
+        <a href='https://json-rpc.evm.shimmer.network'>
+          https://json-rpc.evm.shimmer.network
+        </a>
+      </td>
       <td>148</td>
-      <td><a href="https://explorer.evm.shimmer.network">https://explorer.evm.shimmer.network</a></td>
+      <td>
+        <a href='https://explorer.evm.shimmer.network'>
+          https://explorer.evm.shimmer.network
+        </a>
+      </td>
     </tr>
   </tbody>
 </table>
@@ -123,16 +135,20 @@ Mainnet.
     </tr>
     <tr>
       <td>Testnet Tokens (no value)</td>
-      <td><a href="/learn/protocols/stardust/introduction/">Stardust</a></td>
       <td>
-        <a href="https://api.testnet.shimmer.network/api/core/v2/info">https://api.testnet.shimmer.network</a>
+        <a href='/learn/protocols/stardust/introduction/'>Stardust</a>
       </td>
       <td>
-        wss://api.testnet.shimmer.network:443/api/mqtt/v1 (MQTT 3.1)
+        <a href='https://api.testnet.shimmer.network/api/core/v2/info'>
+          https://api.testnet.shimmer.network
+        </a>
       </td>
+      <td>wss://api.testnet.shimmer.network:443/api/mqtt/v1 (MQTT 3.1)</td>
       <td>https://chronicle.testnet.shimmer.network</td>
       <td>
-        <a href="https://faucet.testnet.shimmer.network/api/info">https://faucet.testnet.shimmer.network</a>
+        <a href='https://faucet.testnet.shimmer.network/api/info'>
+          https://faucet.testnet.shimmer.network
+        </a>
       </td>
     </tr>
   </tbody>
@@ -140,7 +156,7 @@ Mainnet.
 
 ### Testnet EVM
 
-<AddToMetaMaskButton cfg={EVMNetworks["shimmerevm-testnet"]}/>
+<AddToMetaMaskButton cfg={EVMNetworks['shimmerevm-testnet']} />
 
 [The Testnet EVM](https://explorer.evm.testnet.shimmer.network/) (also called ShimmerEVM Beta) runs as a layer 2 on top
 of the Public Testnet. This network does not run
@@ -161,11 +177,21 @@ layer 1.
       <td>Testnet Tokens (no value)</td>
       <td>ISC / EVM</td>
       <td>
-        <a href="https://json-rpc.evm.testnet.shimmer.network">https://json-rpc.evm.testnet.shimmer.network</a>
+        <a href='https://json-rpc.evm.testnet.shimmer.network'>
+          https://json-rpc.evm.testnet.shimmer.network
+        </a>
       </td>
       <td>1072</td>
-      <td><a href="https://evm-faucet.testnet.shimmer.network">https://evm-faucet.testnet.shimmer.network</a></td>
-      <td><a href="https://explorer.evm.testnet.shimmer.network">https://explorer.evm.testnet.shimmer.network</a></td>
+      <td>
+        <a href='https://evm-faucet.testnet.shimmer.network'>
+          https://evm-faucet.testnet.shimmer.network
+        </a>
+      </td>
+      <td>
+        <a href='https://explorer.evm.testnet.shimmer.network'>
+          https://explorer.evm.testnet.shimmer.network
+        </a>
+      </td>
     </tr>
   </tbody>
 </table>
@@ -187,15 +213,21 @@ decommissioned once IOTA Mainnet runs under Stardust.
     </tr>
     <tr>
       <td>Testnet Tokens (no value)</td>
-      <td><a href="/learn/protocols/chrysalis/introduction/">Chrysalis</a></td>
       <td>
-        <a href="https://api.lb-0.h.chrysalis-devnet.iota.cafe/api/v1/info">https://api.lb-0.h.chrysalis-devnet.iota.cafe</a>
-        , <a href="https://api.lb-1.h.chrysalis-devnet.iota.cafe/api/v1/info">https://https://api.lb-1.h.chrysalis-devnet.iota.cafe</a>
+        <a href='/learn/protocols/chrysalis/introduction/'>Chrysalis</a>
+      </td>
+      <td>
+        <a href='https://api.lb-0.h.chrysalis-devnet.iota.cafe/api/v1/info'>
+          https://api.lb-0.h.chrysalis-devnet.iota.cafe
+        </a>
+        , <a href='https://api.lb-1.h.chrysalis-devnet.iota.cafe/api/v1/info'>https://https://api.lb-1.h.chrysalis-devnet.iota.cafe</a>
       </td>
       <td>wss://api.lb-0.h.chrysalis-devnet.iota.cafe:443 (MQTT 3.1, /mqtt)</td>
       <td>https://chronicle.testnet.shimmer.network</td>
       <td>
-        <a href="https://faucet.testnet.shimmer.network/api/info">https://faucet.testnet.shimmer.network</a>
+        <a href='https://faucet.testnet.shimmer.network/api/info'>
+          https://faucet.testnet.shimmer.network
+        </a>
       </td>
     </tr>
   </tbody>
