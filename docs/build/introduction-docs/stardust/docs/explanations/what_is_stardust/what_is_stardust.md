@@ -15,7 +15,7 @@ image: /img/logo/preview.png
 The previous IOTA protocol, Chrysalis, was optimized for a single application: sending digital money from A to B.
 The upcoming Stardust upgrade introduces computation and utility to the ledger:
 
-- Making IOTA an **infrastructure and settlement layer** for [second-layer smart contract chains](/smart-contracts/overview) using [IOTA Smart Contracts (ISC)](#isc).
+- Making IOTA an **infrastructure and settlement layer** for [second-layer smart contract chains](/learn/smart-contracts/introduction/) using [IOTA Smart Contracts (ISC)](#isc).
 - Transforming IOTA into a **multi-asset ledger** with custom, user-defined tokens using the new [tokenization framework](#tokenization-framework).
 
 ## Tokenization Framework
@@ -54,7 +54,7 @@ ISC can be deployed as multiple Layer 2 (L2) chains, unlike many other projects 
 
 ### Advantages
 
-- [L1 is not congested with smart contracts](/learn/smart-contracts/core_concepts/smart-contracts#scalable-smart-contracts).
+- [L1 is not congested with smart contracts](/learn/smart-contracts/introduction/#scalable-smart-contracts).
 - Since L1 is not limited by the speed of the smart contract VM, transactions per second (TPS) increase significantly.
 - No maximal extractable value (MEV). No front-running or sandwich attacks, resulting in a “fairer” DeFi environment. A set fee and randomization of transactions are included in blocks, making MEV impossible.
 - Native randomness beacon (random number generator, or RNG). This is freely available to all dApps, removing the need for expensive, trusted third-party RNGs.

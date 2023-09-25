@@ -1,0 +1,78 @@
+---
+description: The `deposit` entry point credits the transferred tokens into your on-chain account.
+image: /img/logo/WASP_logo_dark.png
+keywords:
+  - smart contracts
+  - deposit
+  - transfer
+  - chain
+  - Rust
+  - Solo
+  - how to
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# How to Deposit to a Chain
+
+Any assets attached to an on-ledger request are automatically deposited to the sender's L2 account before executing the
+request.
+So, to deposit tokens, you only need to send _any_ on-ledger request with the tokens attached.
+
+A commonly needed operation is to only deposit some funds and do nothing else.
+The `deposit` entry point of the [`accounts` core contract](../reference/core-contracts/accounts.md) is a no-op function that serves
+this purpose.
+
+:::note Gas Fees
+
+All requests are charged a gas fee, so the L2 account may receive fewer tokens than the amount sent.
+
+:::
+
+:::info Storage Deposits
+
+The IOTA L1 transaction needs a minimum amount of tokens attached for
+storage deposit. It will fail if the amount transferred is less than this minimum amount.
+
+:::
+
+<Tabs groupId="language" queryString>
+<TabItem value="solo" label="Solo">
+
+```go
+// deposits N base tokens from wallet into chain
+err := chain.DepositBaseTokensToL2(N, wallet)
+require.NoError(t, err)
+```
+
+</TabItem>
+<TabItem value="soloctx" label="Solo (Schema)">
+
+```go
+// deposits N base tokens from wallet into chain
+d := coreaccounts.ScFuncs.Deposit(ctx.Sign(wallet))
+d.Func.TransferBaseTokes(N).Post()
+require.NoError(t, ctx.Err)
+```
+
+</TabItem>
+<TabItem value="rust" label="Rust">
+
+```rust
+// deposits N iotas from wallet into chain
+let d = coreaccounts::ScFuncs::deposit(ctx.sign(wallet));
+d.func.transfer_base_tokens(N).post();
+```
+
+</TabItem>
+<TabItem value="go" label="Go">
+
+```go
+// deposits N iotas from wallet into chain
+d := coreaccounts.ScFuncs.Deposit(ctx.Sign(wallet))
+d.Func.TransferBaseTokens(N).Post()
+```
+
+</TabItem>
+</Tabs>
