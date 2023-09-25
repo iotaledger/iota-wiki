@@ -34,7 +34,7 @@ The Shimmer staking period was limited to these initial 90 days.
 
 ### IOTA Staking for SMR Rewards
 
-Shimmer, the staging network and battlefield for IOTA's core technology innovations, will be bootstrapped purely from IOTA token stakers. The initial token supply of the Shimmer network will only rely on the amount of IOTA tokens staked for Shimmer in the 90-day staking period, and 100% of the initial supply will be distributed to IOTA token holders.
+Shimmer, the staging network and battlefield for IOTA's core technology innovations, will be bootstrapped purely from IOTA token stakers. The initial token supply of the Shimmer network will only rely on the amount of IOTA tokens staked for Shimmer in the 90-day staking period, and 80% of the initial supply will be distributed to IOTA token holders, while the remaining 20% will be distributed equally between the Community DAO and the Tangle Ecosystem.
 
 - The staking functionality in the Firefly Wallet will be used for Shimmer.
 - Shimmer tokens will be distributed at a fixed rate of `1 SMR per 1 MIOTA per milestone`.
