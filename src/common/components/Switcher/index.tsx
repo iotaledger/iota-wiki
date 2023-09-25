@@ -14,15 +14,13 @@ export type Item = {
   icon?: string;
 };
 
-export type Version = Item;
+export type Version = Omit<Item, 'id'> & {
+  id?: string;
+};
 export type Doc = Item & {
   subsection: string;
   versions: Version[];
   defaultVersion?: string;
-};
-
-export type Subsection = Item & {
-  defaultDoc?: string;
 };
 
 export type Sidebar = {
@@ -32,7 +30,7 @@ export type Sidebar = {
 
 export type Section = {
   before?: Sidebar;
-  subsections: Subsection[];
+  subsections: Item[];
   after?: Sidebar;
 };
 
