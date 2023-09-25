@@ -14,7 +14,7 @@ keywords:
 
 # Touchpoint: Empowering Collaboration in Web3
 
-[Touchpoint](https://assembly.sc/touchpoint) is an open builders program that leverages the power of the community to
+[Touchpoint](https://shimmer.network/touchpoint) is an open builders program that leverages the power of the community to
 provide access to tailored support,
 world-class expertise, and smart money. It offers a collaborative environment for builders, investors, and experts to
 come together and grow alongside 35+ projects across DeFi, gaming, NFTs, and other verticals.
@@ -36,18 +36,18 @@ the Touchpoint ecosystem.
 ## Leading Investors
 
 Touchpoint provides hands-on support with fundraising efforts. Participants gain access to leading investors dedicated
-to supporting ecosystem projects within the Assembly ecosystem. Whether you're looking for financial support
+to supporting ecosystem projects within the Shimmer ecosystem. Whether you're looking for financial support
 or introductions to potential backers, Touchpoint can help you navigate the fundraising landscape.
 
 ## Who is Touchpoint for?
 
-Touchpoint is designed to cater to builders, investors, and experts actively involved in the Assembly ecosystem.
+Touchpoint is designed to cater to builders, investors, and experts actively involved in the Shimmer ecosystem.
 
-- **Builders**: Those seeking help with building on Assembly and looking for public or private funding, technical
+- **Builders**: Those seeking help with building on Shimmer and looking for public or private funding, technical
   support, or ecosystem strategies.
 - **Investors**: Individuals or organizations looking to actively invest in and support new projects or bring existing
-  projects from their network to build on Assembly.
-- **Experts**: Those willing to participate in the Assembly ecosystem by offering their products, services, or
+  projects from their network to build on Shimmer.
+- **Experts**: Those willing to participate in the Shimmer ecosystem by offering their products, services, or
   experiences in a given domain.
 
 ## How It Works

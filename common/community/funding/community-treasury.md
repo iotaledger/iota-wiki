@@ -7,7 +7,7 @@ description: A Decentralized Community governed Fund to support projects in the 
 
 ![Community Treasury](https://github.com/iota-community/Community-Governance/raw/main/assets/iota_community_treasury.png)
 
-The IOTA community treasury will be set up as soon as the IOTA network gets upgraded with the Stardust ledger, and smart contracts can be executed on the Mainnet. The IOTA Community will be able to use a budget of 50 TI to support the ecosystem via grants. Until this is possible, the community is also deciding on setting up a [Community Treasury Grant Committee](https://govern.iota.org/t/sgp-0005-shimmer-community-treasury-grant-committee/1576) for the Shimmer network.
+The IOTA community treasury will be set up as soon as the IOTA network gets upgraded with the Stardust ledger, and smart contracts can be executed on the Mainnet. The IOTA Community will be able to use a budget of 50,000,000 IOTA to support the ecosystem via grants. Until this is possible, the community is also deciding on setting up a [Community Treasury Grant Committee](https://govern.iota.org/t/sgp-0005-shimmer-community-treasury-grant-committee/1576) for the Shimmer network.
 
 ## Initial Voting
 
