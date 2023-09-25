@@ -8,7 +8,7 @@ import React from 'react';
 import Footer from '@theme-original/Footer';
 import type FooterType from '@theme/Footer';
 import type { WrapperProps } from '@docusaurus/types';
-import Social from '@site/src/common/components/Social';
+import Social from '@site/src/components/Social';
 
 type Props = WrapperProps<typeof FooterType>;
 
