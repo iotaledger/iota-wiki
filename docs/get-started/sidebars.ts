@@ -42,7 +42,11 @@ module.exports = {
     {
       type: 'category',
       label: 'Programmes',
-      items: ['programmes/EDF-grant-programme', 'programmes/bug-bounties'],
+      items: [
+        'programs/touchpoint',
+        'programmes/EDF-grant-programme',
+        'programmes/bug-bounties',
+      ],
     },
     {
       type: 'category',
