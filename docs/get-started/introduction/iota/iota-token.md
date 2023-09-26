@@ -21,11 +21,13 @@ without miners or other intermediaries taking a cut. The maximum supply is 4,600
 The smallest denomination of IOTA is called "micros", with 6 decimal points. The total supply consists therefore
 out of 4,600,000,000 IOTA tokens or 4,600,000,000,000,000 micros.
 
-:::info
-Note that previously one micro was called one IOTA and 1,000,000 IOTAs made up 1 MIOTA (mega IOTA), however
+:::info About MIOTA
+
+Previously, one micro was called one IOTA, and 1,000,000 IOTAs made up 1 MIOTA (mega IOTA), however
 with the change to the supply and upgrade to the Stardust protocol on the 4th of October 2023 on the IOTA Mainnet, the
-IOTA Foundation opted to remove the [SI prefixes](https://en.wikipedia.org/wiki/Metric_prefix) in order to align with
+IOTA Foundation opted to remove the [SI prefixes](https://en.wikipedia.org/wiki/Metric_prefix) to align with
 the more common denominations used in the DLT space.
+
 :::
 
 ## Supply Change With Stardust Upgrade
