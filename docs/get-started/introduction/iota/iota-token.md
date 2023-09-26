@@ -62,10 +62,12 @@ around ~12-13% over a 4-year period is carried out via outputs which have been t
 
 ## Buying IOTA
 
-:::caution
-Note that some exchanges might still be using the symbol `MIOTA` on their platforms which represents 1,000,000 (1
-million) micro tokens. Before buying or selling IOTAs, make sure you understand what denomination the exchange is
-working with, so you don't get tricked into selling/buying under/over the current market price.
+:::caution 
+
+Note that some exchanges might still be using the symbol `MIOTA` on their platforms, which represents 1 IOTA or 1,000,000 (1
+million) micros. Before you buy or sell IOTAs, please make sure you understand what denomination the exchange is
+using so you don't get tricked into selling/buying under/over the current market price.
+
 :::
 
 IOTA is listed on most major cryptocurrency exchanges:
