@@ -1,0 +1,136 @@
+---
+title: Create Alias Output
+description: 'How to programmatically create an alias output'
+image: /img/logo/iota_mark_light.png
+keywords:
+  - how to
+  - create
+  - alias
+  - output
+  - nodejs
+  - python
+  - rust
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+An [Alias Output](https://wiki.iota.org/tips/tips/TIP-0018/#alias-output) is a specific implementation of a UTXO state machine. The Alias ID, the unique identifier of an instance of the deployed state machine, is generated deterministically by the protocol and is not allowed to change in future state transitions.
+
+An Alias Output represents an alias account in the ledger with two control levels and a permanent Alias Address. The account owns other outputs that are locked under the Alias Address. The account keeps track of state transitions (`State Index` counter) and controlled foundries (`Foundry Counter`) and anchors the layer 2 state as metadata into the UTXO ledger.
+
+## Example Code
+
+<Tabs groupId="language" queryString>
+<TabItem value="rust" label="Rust">
+
+The following example will:
+
+1. Instantiate a [`Wallet`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/core/struct.Wallet.html), get Alice's `Account` which was
+   [created in the first guide](../accounts-and-addresses/create-account.mdx).
+2. Create an Alias Output transaction by calling the [`Account.create_alias_output()`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/account/struct.CreateAliasParams.html) function.
+
+<div className={'hide-code-block-extras'}>
+
+```rust reference
+https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/alias/create.rs#L40
+```
+
+</div>
+
+3. Retry the [`Transaction`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/account/struct.Account.html#method.retry_transaction_until_included) until included.
+
+<div className={'hide-code-block-extras'}>
+
+```rust reference
+https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/alias/create.rs#L43-L45
+```
+
+</div>
+
+</TabItem>
+<TabItem value="typescript-node" label="Typescript (Node.js)">
+
+The following example will:
+
+1. Instantiate a [`Wallet`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/core/struct.Wallet.html), get Alice's `Account` which was
+   [created in the first guide](../accounts-and-addresses/create-account.mdx) and [sync it](../accounts-and-addresses/check-balance.mdx).
+2. Create an Alias Output transaction by calling the [`Account.prepareCreateAliasOutput()`](../../references/nodejs/classes/Account.md#preparecreatealiasoutput) function, and then [send](../../references/nodejs/classes/Account.md#send) it.
+
+<div className={'hide-code-block-extras'}>
+
+```typescript reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/alias/create.ts#L53-L55
+```
+
+</div>
+
+3. Retry transaction until included [`Transaction`](../../references/nodejs/classes/Account.md#retrytransactionuntilincluded) that was sent.
+
+<div className={'hide-code-block-extras'}>
+
+```typescript reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/alias/create.ts#L60
+```
+
+</div>
+
+</TabItem>
+<TabItem value="python" label="Python">
+
+1. Instantiate a [`Wallet`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/core/struct.Wallet.html), get Alice's `Account` which was
+   [created in the first guide](../accounts-and-addresses/create-account.mdx) and [sync it](../accounts-and-addresses/check-balance.mdx).
+2. Prepare an Alias Output transaction by calling the [`Account.prepare_create_alias_output()`](../../references/python/iota_sdk/wallet/account.md#prepare_create_alias_output) function, and then [send](../../references/python/iota_sdk/wallet/account.md#send) it.
+
+<div className={'hide-code-block-extras'}>
+
+```python reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how_tos/alias/create.py#L22
+```
+
+</div>
+
+</TabItem>
+</Tabs>
+
+### Full Example Code
+
+<Tabs groupId="language" queryString>
+<TabItem value="rust" label="Rust">
+
+```rust reference
+https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/alias_wallet/request_funds.rs
+```
+
+</TabItem>
+<TabItem value="typescript-node" label="Typescript (Node.js)">
+
+```typescript reference
+https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/alias/create.rs
+```
+
+</TabItem>
+<TabItem value="python" label="Python">
+
+```python reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how_tos/alias/create.py
+```
+
+</TabItem>
+</Tabs>
+
+### Expected Output
+
+```plaintext
+Aliases BEFORE:
+[
+  ...
+]
+Sending the create-alias transaction...
+Transaction sent: 0x7ce05ab09bc562c7b383067b774edd780e3a9235e9c76a5cccabdd9744b6a719
+Block included: https://explorer.shimmer.network/testnet/block/0x603c0e010b4e7665913c04729aad692a1c7557234185e98c821e1142fa49823d
+Aliases AFTER:
+[
+  ...
+]
+```

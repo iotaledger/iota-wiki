@@ -1,0 +1,135 @@
+---
+title: Destroy Alias Output
+description: 'How to programmatically destroy an alias output'
+image: /img/logo/iota_mark_light.png
+keywords:
+  - how to
+  - destroy
+  - alias
+  - output
+  - nodejs
+  - python
+  - rust
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+You can destroy an alias output by ID.
+
+## Example Code
+
+<Tabs groupId="language" queryString>
+<TabItem value="rust" label="Rust">
+
+The following example will:
+
+1. Instantiate a [`Wallet`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/core/struct.Wallet.html), get Alice's `Account` which was
+   [created in the first guide](../accounts-and-addresses/create-account.mdx).
+2. Destroy an Alias Output transaction by calling the [`Account.burn()`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/account/struct.Account.html#method.burn) function.
+
+<div className={'hide-code-block-extras'}>
+
+```rust reference
+https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/alias/destroy.rs#L44
+```
+
+</div>
+
+3. Retry the [`Transaction`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/account/struct.Account.html#method.retry_transaction_until_included) until included.
+
+<div className={'hide-code-block-extras'}>
+
+```rust reference
+https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/alias/destroy.rs#L47-L49
+```
+
+</div>
+
+</TabItem>
+<TabItem value="typescript-node" label="Typescript (Node.js)">
+
+The following example will:
+
+1. Instantiate a [`Wallet`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/core/struct.Wallet.html), get Alice's `Account` which was
+   [created in the first guide](../accounts-and-addresses/create-account.mdx) and [sync it](../accounts-and-addresses/check-balance.mdx).
+2. Prepare the transaction to destroy an Alias Output by calling the [`Account.preparedestroyalias()`](../../references/nodejs/classes/Account.md#preparedestroyalias) function, and then [send](../../references/nodejs/classes/Account.md#send) it.
+
+<div className={'hide-code-block-extras'}>
+
+```typescript reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/alias/destroy.ts#L56-L58
+```
+
+</div>
+
+3. Retry transaction until included [`Transaction`](../../references/nodejs/classes/Account.md#retrytransactionuntilincluded) that was sent.
+
+<div className={'hide-code-block-extras'}>
+
+```typescript reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/alias/destroy.ts#L63
+```
+
+</div>
+
+</TabItem>
+<TabItem value="python" label="Python">
+
+1. Instantiate a [`Wallet`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/core/struct.Wallet.html), get Alice's `Account` which was
+   [created in the first guide](../accounts-and-addresses/create-account.mdx) and [sync it](../accounts-and-addresses/check-balance.mdx).
+2. Destroy the transaction that will destroy the alias output by calling the [`Account.prepare_destroy_alias()`](../../references/python/iota_sdk/wallet/account.md#prepare_destroy_alias) function, and then [send](../../references/python/iota_sdk/wallet/account.md#send) it.
+
+<div className={'hide-code-block-extras'}>
+
+```python reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how_tos/alias/destroy.py#L25
+```
+
+</div>
+
+</TabItem>
+</Tabs>
+
+### Full Example Code
+
+<Tabs groupId="language" queryString>
+<TabItem value="rust" label="Rust">
+
+```rust reference
+https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/alias_wallet/destroy.rs
+```
+
+</TabItem>
+<TabItem value="typescript-node" label="Typescript (Node.js)">
+
+```typescript reference
+https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/alias/destroy.rs
+```
+
+</TabItem>
+<TabItem value="python" label="Python">
+
+```python reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how_tos/alias/destroy.py
+```
+
+</TabItem>
+</Tabs>
+
+### Expected Output
+
+```plaintext
+Aliases BEFORE destroying (142):
+ [
+  ...
+]
+Sending the destroy-alias transaction...
+Transaction sent: 0x829a635a7edc28bee4d4a1019b7b1f1bedec11d83c118b6f2a7904590f4bb458
+Block included: https://explorer.shimmer.network/testnet/block/0xd455b8132c0b109dd0b2d1d157c6b1d7275318f69dcf56f536a7b14d9fa17bb3
+Destroyed alias 0xf708a29e9619e847916de76c2e167e87a704c235dcbd7cda018865be7f561b5a
+Aliases AFTER destroying (141):
+ [
+  ...
+]
+```
