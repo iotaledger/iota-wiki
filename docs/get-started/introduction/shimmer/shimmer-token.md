@@ -27,7 +27,7 @@ out of 1,813,620,509 SMR tokens or 1,813,620,509,061,365 glow.
 The initial supply of SMR was distributed in the following way:
 
 | Allocation       | Percentage | # SMR Tokens  | Purpose                                                                                                                           |
-| ---------------- | ---------- |---------------| --------------------------------------------------------------------------------------------------------------------------------- |
+| ---------------- | ---------- | ------------- | --------------------------------------------------------------------------------------------------------------------------------- |
 | IOTA Stakers     | 80%        | 1,450,896,407 | Rewarded to IOTA token holders who staked their tokens on the IOTA mainnet.                                                       |
 | Community DAO    | 10%        | 181,362,051   | To foster community involvement and governance, enabling members to contribute to the Shimmer ecosystem's development and growth. |
 | Tangle Ecosystem | 10%        | 181,362,051   | To support and incentivize projects that leverage the IOTA Tangle, contributing to the ecosystem's development.                   |

@@ -36,7 +36,7 @@ increased to 4,600,000,000,000,000 micros (4,600,000,000 IOTAs) where the additi
 1,820,469,716,722,240 micros was distributed under following allocations and unlock schedules:
 
 | Allocation                   | Percentage | # IOTA Tokens | Unlock Schedule                                      |
-|------------------------------|------------|---------------|------------------------------------------------------|
+| ---------------------------- | ---------- | ------------- | ---------------------------------------------------- |
 | IOTA Foundation              | 7.075%     | 325,469,717   | 10% initial unlock, 4 year vesting, bi-weekly unlock |
 | Tangle Ecosystem Association | 12%        | 552,000,000   | 10% initial unlock, 4 year vesting, bi-weekly unlock |
 | UAE Entity                   | 12%        | 552,000,000   | 10% initial unlock, 4 year vesting, bi-weekly unlock |
