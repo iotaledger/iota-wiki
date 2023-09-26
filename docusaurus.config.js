@@ -57,8 +57,8 @@ module.exports = async () => {
               '^(/[^/]+)?/wallet.rs/.*|' +
               '^(/[^/]+)?/stronghold.rs/.*|' +
               '^(/[^/]+)?/streams/.*|' +
-              '^(/[^/]+)?/wasp-cli/.*' +
-              '^(/[^/]+)?/wasp-wasm/.*' +
+              '^(/[^/]+)?/wasp-cli/.*|' +
+              '^(/[^/]+)?/wasp-wasm/.*|' +
               '^(/[^/]+)?/wasp-evm/.*',
           },
           {
