@@ -1,17 +1,18 @@
 import useRouteContext from '@docusaurus/useRouteContext';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import { PropSidebarItem } from '@docusaurus/plugin-content-docs';
 import {
   GlobalPluginData as DocsGlobalPluginData,
   useAllDocsData,
 } from '@docusaurus/plugin-content-docs/client';
 import { useDocsSidebar } from '@docusaurus/theme-common/internal';
-import config from '../switcher.config';
 import {
+  Config,
   Doc,
   MenuItem,
   Section,
   Sidebar,
-  Subsection,
+  Item,
 } from '../common/components/Switcher';
 
 export type GlobalPluginData = DocsGlobalPluginData & {
@@ -32,7 +33,7 @@ export type SwitcherProps = {
 };
 
 type ConfigTree = (Omit<Section, 'subsections'> & {
-  subsections: (Subsection & { docs: Doc[] })[];
+  subsections: (Item & { docs: Doc[] })[];
 })[];
 
 function findCurrentSection(
@@ -83,6 +84,12 @@ export default function useSwitcher(): SwitcherProps {
   };
   const docId = useRouteContext().plugin.id;
   const { name: sidebarId, items: sidebarItems } = useDocsSidebar();
+  const {
+    siteConfig: { themeConfig },
+  } = useDocusaurusContext();
+
+  const config = themeConfig.switcher as Config;
+  if (!config) return { main: sidebarItems };
 
   // Convert the sections and docs configuration into a single
   // tree structure of sections, subsections, docs, and versions.
@@ -151,17 +158,8 @@ export default function useSwitcher(): SwitcherProps {
         };
       });
 
-      // Resolve the subsection link to the default doc or the first doc configured.
-      let to = docLinks[0].to;
-      if (subsection.defaultDoc) {
-        const foundDoc = docLinks.find(
-          (doc) => doc.id === subsection.defaultDoc,
-        );
-        if (!foundDoc)
-          throw `Default doc ${subsection.defaultDoc} of subsection ${subsection.label} not found.`;
-
-        to = foundDoc.to;
-      }
+      // Resolve the subsection link to the first doc configured.
+      const to = docLinks[0].to;
 
       let active = false;
       if (current.subsection && subsection.id === current.subsection.id) {

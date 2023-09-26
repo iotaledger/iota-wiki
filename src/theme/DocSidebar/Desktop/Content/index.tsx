@@ -15,7 +15,7 @@ import {
 import { translate } from '@docusaurus/Translate';
 import DocSidebarItems from '@theme/DocSidebarItems';
 import type { Props } from '@theme/DocSidebar/Desktop/Content';
-import Switcher from '@site/src/common/components/Switcher';
+import Switcher from '@site/src/components/Switcher';
 
 import styles from './styles.module.css';
 import useSwitcher from '@site/src/utils/useSwitcher';

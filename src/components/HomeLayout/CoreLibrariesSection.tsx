@@ -3,7 +3,9 @@ import CoreLibImgDark from '@site/static/img/homepage/section_core_libraries_dar
 import ThemedImage from '@theme/ThemedImage';
 import React, { FC } from 'react';
 import Link from '@docusaurus/Link';
-import { Shimmer } from '@site/src/common/icons';
+import icons from '@site/src/icons';
+
+const { Shimmer } = icons;
 
 interface LanguagesProps {
   languages?: { [key: string]: string };

@@ -414,35 +414,35 @@ exports.articleRedirects = [
   },
   {
     from: '/shimmer/learn/smart-contracts/smart-contracts-chains',
-    to: '/learn/smart-contracts/core_concepts/isc-architecture',
+    to: '/learn/smart-contracts/isc-architecture',
   },
   {
     from: '/shimmer/learn/smart-contracts/smart-contracts-community-tutorials',
-    to: '/smart-contracts/overview',
+    to: '/learn/smart-contracts/introduction',
   },
   {
     from: '/shimmer/learn/smart-contracts/smart-contracts-consensus',
-    to: '/learn/smart-contracts/core_concepts/smart-contracts',
+    to: '/learn/smart-contracts/introduction',
   },
   {
     from: '/shimmer/learn/smart-contracts/smart-contracts-dapps',
-    to: '/smart-contracts/overview',
+    to: '/learn/smart-contracts/introduction',
   },
   {
     from: '/shimmer/learn/smart-contracts/smart-contracts-introduction',
-    to: '/smart-contracts/overview',
+    to: '/learn/smart-contracts/introduction',
   },
   {
     from: '/shimmer/learn/smart-contracts/smart-contracts-tangle',
-    to: '/smart-contracts/overview',
+    to: '/learn/smart-contracts/introduction',
   },
   {
     from: '/shimmer/learn/smart-contracts/smart-contracts-validators',
-    to: '/smart-contracts/overview',
+    to: '/learn/smart-contracts/introduction',
   },
   {
     from: '/shimmer/learn/smart-contracts/smart-contracts-VM-and-languages',
-    to: '/smart-contracts/overview',
+    to: '/learn/smart-contracts/introduction',
   },
   {
     from: '/shimmer/learn/tangle',
@@ -461,24 +461,36 @@ exports.articleRedirects = [
     to: '/search',
   },
   {
+    from: '/smart-contracts',
+    to: '/learn/smart-contracts/introduction',
+  },
+  {
+    from: '/shimmer/smart-contracts',
+    to: '/learn/smart-contracts/introduction',
+  },
+  {
+    from: '/next/smart-contracts',
+    to: '/learn/smart-contracts/introduction',
+  },
+  {
     from: '/shimmer/smart-contracts/configuration',
     to: '/wasp/configuration',
   },
   {
     from: '/shimmer/smart-contracts/contribute',
-    to: '/smart-contracts/contribute',
+    to: '/learn/smart-contracts/introduction',
   },
   {
     from: '/shimmer/smart-contracts/guide/example_projects/fair_roulette',
-    to: '/smart-contracts/guide/wasm_vm/example_projects/fair_roulette',
+    to: '/wasp-wasm/tutorials/fair_roulette',
   },
   {
     from: '/shimmer/smart-contracts/metrics',
     to: '/wasp/metrics',
   },
   {
-    from: '/shimmer/smart-contracts/overview',
-    to: '/smart-contracts/overview',
+    from: '/shimmer/learn/smart-contracts/introduction',
+    to: '/learn/smart-contracts/introduction',
   },
   {
     from: '/shimmer/use/wallets/firefly/faq-and-troubleshooting',

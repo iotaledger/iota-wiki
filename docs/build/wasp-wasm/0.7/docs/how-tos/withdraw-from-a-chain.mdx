@@ -1,0 +1,60 @@
+---
+description: The `withdraw` endpoint sends L2 funds owned by the caller to their L1 address.
+image: /img/logo/WASP_logo_dark.png
+keywords:
+  - smart contracts
+  - withdraw
+  - transfer
+  - chain
+  - Rust
+  - Solo
+  - how to
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# How to Withdraw From a Chain
+
+The `withdraw` endpoint sends L2 funds owned by the caller to their L1 address.
+
+<Tabs groupId="language" queryString>
+<TabItem value="solo" label="Solo">
+
+```go
+// withdraw from chain to wallet
+req := solo.NewCallParams(accounts.Contract.Name, accounts.FuncWithdraw.Name)
+_, err := chain.PostRequestSync(req.WithMaxAffordableGasBudget(), wallet)
+require.NoError(t, err)
+```
+
+</TabItem>
+<TabItem value="soloctx" label="Solo (Schema)">
+
+```go
+// withdraw from chain to wallet
+w := coreaccounts.ScFuncs.Withdraw(ctx.Sign(wallet))
+w.Func.Post()
+require.NoError(t, ctx.Err)
+```
+
+</TabItem>
+<TabItem value="rust" label="Rust">
+
+```rust
+// withdraw from chain to wallet
+let w = coreaccounts::ScFuncs::withdraw(ctx.sign(wallet));
+w.func.post();
+```
+
+</TabItem>
+<TabItem value="go" label="Go">
+
+```go
+// withdraw from chain to wallet
+w := coreaccounts.ScFuncs.Withdraw(ctx.sign(wallet))
+w.Func.Post()
+```
+
+</TabItem>
+</Tabs>

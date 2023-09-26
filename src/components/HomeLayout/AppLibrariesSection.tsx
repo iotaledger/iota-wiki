@@ -1,11 +1,8 @@
 import React, { FC } from 'react';
 import Link from '@docusaurus/Link';
-import {
-  Identity,
-  SmartContracts,
-  Streams,
-  Stronghold,
-} from '@site/src/common/icons';
+import icons from '@site/src/icons';
+
+const { Identity, SmartContracts, Streams, Stronghold } = icons;
 
 interface LanguagesProps {
   languages?: { [key: string]: string };
@@ -135,7 +132,7 @@ const LibrariesSection: FC = () => (
         </p>
         <div className='start-building__buttons'>
           <Link
-            to='/smart-contracts/overview'
+            to='/wasp-evm/introduction'
             className='start-building__button button button--outline button--primary'
           >
             Learn about ISC

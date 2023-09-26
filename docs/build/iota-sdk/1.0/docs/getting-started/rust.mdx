@@ -1,0 +1,185 @@
+---
+image: /img/banner/client_lib_overview.png
+description: 'Learn how to get started with the IOTA SDK in Rust and build applications for IOTA.'
+keywords:
+  - rust
+  - cargo
+  - IOTA SDK
+  - installation
+  - client
+  - wallet
+  - usage
+  - how-to guides
+  - examples
+  - development
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import WarningPasswordStorage from '../_admonitions/_warning-password-storage.md';
+
+# Getting Started with Rust
+
+<WarningPasswordStorage />
+
+## Install the IOTA SDK
+
+### Requirements
+
+The IOTA SDK requires `Rust` and `Cargo`. You can find installation instructions in
+the [Rust documentation](https://doc.rust-lang.org/cargo/getting-started/installation.html).
+
+We recommend that you update the Rust compiler to the latest stable version first:
+
+```shell
+rustup update stable
+```
+
+#### Dependencies
+
+You must also install `cmake`, `clang`, `pkg-config` and `openssl`. You may need to install additional build tools on
+your system to run the build process successfully using Cargo.
+
+<Tabs groupId="os" queryString>
+<TabItem value="linux" label="Linux">
+
+You can install `cmake`, `clang`, and `openssl` with your distro's package manager or download them from their websites.
+On Debian and Ubuntu, you will also need the `build-essential` and `libudev-dev` packages.
+
+</TabItem>
+
+<TabItem value="mac" label="macOS">
+
+You can install `cmake` and `openssl` with `Homebrew`:
+
+```
+brew install cmake openssl@1.1
+```
+
+</TabItem>
+<TabItem value="windows" label="Windows">
+
+You can download `cmake` from the [official website](https://cmake.org/download/). You can install `openssl`
+with [vcpkg](https://github.com/microsoft/vcpkg) or [chocolatey](https://chocolatey.org/).
+
+<Tabs groupId="windowsPackageManager" queryString>
+<TabItem value="vcpkg" label="vcpkg">
+
+```shell
+./vcpkg.exe install openssl:x64-windows
+./vcpkg.exe integrate install
+# You may want to add this to the system environment variables since you'll need it to compile the crate
+set VCPKGRS_DYNAMIC=1
+```
+
+</TabItem>
+<TabItem value="chocolatey" label="chocolatey">
+
+```
+choco install openssl
+# You may need to set the OPENSSL_DIR environment variable
+set OPENSSL_DIR="C:\Program Files\OpenSSL-Win64"
+```
+
+</TabItem>
+</Tabs>
+</TabItem>
+</Tabs>
+
+### Install the SDK Using Cargo
+
+<Tabs>
+<TabItem value="cargo" label="Cargo add">
+
+To start using the IOTA SDK in your Rust project, you can include it as a dependencies in your project's `Cargo.toml` by running:
+
+```bash
+cargo add iota-sdk
+```
+
+</TabItem>
+
+<TabItem value="manual" label="Cargo.toml">
+
+To start using the IOTA SDK in your Rust project, you can include the following line under `dependencies` in your `Cargo.toml`:
+
+```toml
+[dependencies]
+iota-sdk = "1.0.0"
+```
+
+</TabItem>
+</Tabs>
+
+### Build the SDK from Source
+
+1. Download the repository to any directory you choose:
+
+   ```shell
+   git clone https://github.com/iotaledger/iota-sdk
+   ```
+
+2. Move to the base directory:
+
+   ```shell
+   cd iota-sdk/
+   ```
+
+3. Build the SDK by running the following:
+
+   ```shell
+   cargo build
+   ```
+
+## Usage
+
+### Client
+
+To use the Client module, you simply need to create a `Client`.
+
+```rust reference
+https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/client/getting_started.rs#L10-L23
+```
+
+### Wallet
+
+To use the Wallet module, you need to create a `Wallet`.
+For this example to work `features = ["stronghold"]` is needed in the Cargo.toml import. To persist the wallet in a database, `"rocksdb"` can be added.
+
+```rust reference
+https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/wallet/getting_started.rs#L12-L56
+```
+
+## What's next?
+
+### How-To Guides
+
+Once you have [installed the IOTA SDK](#install-the-iota-sdk), you can start building your application. You can find
+usage examples in this Wiki's [how-to guides](../how-tos/introduction.md).
+
+### More Examples
+
+You can use the provided code [examples](https://github.com/iotaledger/iota-sdk/tree/develop/sdk/examples) to get
+acquainted with the IOTA SDK. You can use the following command to run any example:
+
+```bash
+cargo run --release --all-features --example example_name
+```
+
+- Where `example_name` is the name from
+  the [Cargo.toml](https://github.com/iotaledger/iota-sdk/tree/develop/sdk/sdk/Cargo.toml) name from the example folder.
+  For example:
+
+```bash
+cargo run --release --all-features --example node_api_core_get_info
+```
+
+You can get a list of the available code examples with the following command:
+
+```bash
+cargo run --example
+```
+
+## API Reference
+
+The IOTA SDK Rust API Reference is in the [crate documentation](https://docs.rs/iota-sdk/latest/iota_sdk/).

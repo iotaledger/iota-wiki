@@ -15,7 +15,7 @@
     "clean": "rm -rf ./dist",
     "build": "npx tsc --build && tsc-alias && yarn copy",
     "copy:internal": "copyfiles \"src/**/!(*.ts|*.js|*.tsx)\" dist/cli",
-    "copy:external": "copyfiles \"../src/common/css/**/!(*.ts|*.js|*.tsx)\" \"../src/common/icons/**/!(*.ts|*.js|*.tsx)\" \"../src/next/css/**/!(*.ts|*.js|*.tsx)\" dist/cli",
+    "copy:external": "copyfiles \"../src/common/css/**/!(*.ts|*.js|*.tsx)\" \"../src/icons/**/(*.ts|*.js|*.tsx)\" \"../static/icons/**/!(*.ts|*.js|*.tsx)\" \"../src/next/css/**/!(*.ts|*.js|*.tsx)\" dist/cli",
     "copy": "yarn copy:internal && yarn copy:external",
     "watch": "nodemon --watch src --ext '*' --exec yarn build",
     "prepack": "yarn build"

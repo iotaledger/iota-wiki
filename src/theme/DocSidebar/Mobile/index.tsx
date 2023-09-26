@@ -14,7 +14,7 @@ import {
 import { useNavbarMobileSidebar } from '@docusaurus/theme-common/internal';
 import DocSidebarItems from '@theme/DocSidebarItems';
 import type { Props } from '@theme/DocSidebar/Mobile';
-import Switcher from '@site/src/common/components/Switcher';
+import Switcher from '@site/src/components/Switcher';
 import useSwitcher from '@site/src/utils/useSwitcher';
 
 function DocSidebarMobileSecondaryMenu({ path }: Props) {
