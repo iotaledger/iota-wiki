@@ -18,7 +18,7 @@ The IOTA token is the medium to transfer value within the IOTA mainnet. However,
 there are no fees to be paid with the base token, meaning that IOTA tokens are transferred 1 to 1 to the receiver,
 without miners or other intermediaries taking a cut. The maximum supply is 4,600,000,000 IOTAs.
 
-Note that the smallest denomination of IOTA is called "micros" with 6 decimal points. The total supply consists therefore
+The smallest denomination of IOTA is called "micros", with 6 decimal points. The total supply consists therefore
 out of 4,600,000,000 IOTA tokens or 4,600,000,000,000,000 micros.
 
 :::info
