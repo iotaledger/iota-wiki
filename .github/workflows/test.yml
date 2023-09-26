@@ -15,28 +15,21 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 16
-          cache: 'yarn'
-      - name: Allow modern Yarn
-        run: |
-          corepack enable
-      - name: Install dependencies
-        run: |
-          yarn
+      - name: Prepare Yarn
+        uses: ./.github/actions/prepare/
       - name: Lint Wiki
-        run: |
-          yarn lint:check
+        run: yarn lint:check
       - name: Format Wiki
-        run: |
-          yarn format:check
+        run: yarn format:check
   build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - name: Prepare
+      - name: Prepare Yarn
         uses: ./.github/actions/prepare/
+      - name: Prepare build
+        run: yarn prepare
+        shell: bash
       - name: Checkout remote
         run: yarn checkout:remote
       - name: Build

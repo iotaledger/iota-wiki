@@ -1,7 +1,9 @@
 name: deploy
+
 env:
   VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
   VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+
 on:
   workflow_dispatch:
   schedule:
@@ -17,8 +19,11 @@ jobs:
         with:
           # Needed for showLastUpdateTime to work
           fetch-depth: 0
-      - name: Prepare
+      - name: Prepare Yarn
         uses: ./.github/actions/prepare/
+      - name: Prepare build
+        run: yarn prepare
+        shell: bash
       - name: Checkout remote
         run: yarn checkout:remote
       - name: Build
