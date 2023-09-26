@@ -1,5 +1,8 @@
 import { Command, Option } from 'clipanion';
 import path from 'path';
+import visit from 'unist-util-visit';
+import checkUrl from 'link-check';
+import { parse } from 'node-html-parser';
 
 const buildConfig = require.resolve('../docusaurus/config/build.js');
 const SUPPORTED_PLUGINS = [
@@ -7,6 +10,7 @@ const SUPPORTED_PLUGINS = [
   '@docusaurus/plugin-content-pages',
   '@iota-wiki/plugin-docs',
 ];
+const SUPPORTED_PROTOCOLS = ['http:', 'https:'];
 
 export class Check extends Command {
   static paths = [[`check`]];
@@ -43,21 +47,75 @@ export class Check extends Command {
       return pluginPaths;
     }, []);
 
-    return await new Promise<number>((resolve, reject) =>
+    const hostnames = new Map<string, Set<string>>();
+
+    function RemarkLinkVisitor() {
+      return async (tree) => {
+        visit(tree, (node) => {
+          let url: URL;
+          if (node.type === 'link') {
+            // @ts-ignore
+            url = new URL(node.url);
+          }
+          if (node.type === 'jsx' || node.type === 'html') {
+            // @ts-ignore
+            const element = parse(node.value);
+            if (element.tagName === 'a') {
+              url = new URL(element.getAttribute('href'));
+            }
+          }
+          if (url && SUPPORTED_PROTOCOLS.includes(url.protocol)) {
+            if (hostnames.has(url.hostname)) {
+              hostnames.get(url.hostname).add(url.href);
+            } else {
+              hostnames.set(url.hostname, new Set([url.href]));
+            }
+          }
+        });
+        return tree;
+      };
+    }
+
+    const result = await new Promise<number>((resolve, reject) =>
       engine(
         {
           processor: remark(),
           files: pluginPaths,
           extensions: ['md', 'mdx'],
-          plugins: ['remark-lint-no-dead-urls'],
-          color: true,
-          quiet: true,
-          frail: true,
+          plugins: [RemarkLinkVisitor],
         },
         (error, status) => {
           error ? reject(error) : resolve(status);
         },
       ),
     );
+
+    const results = [];
+
+    await Promise.all(
+      Array.from(hostnames.values()).map(async (urls) => {
+        for (const url of Array.from(urls)) {
+          console.log(`Checking ${url}...`);
+          await new Promise<void>((resolve) => {
+            checkUrl(url, (err, result) => {
+              if (err) results.push({ status: 'error', message: err });
+              else
+                results.push({
+                  status: result.status,
+                  message: `${url} => ${result.statusCode}`,
+                });
+              resolve();
+            });
+          });
+        }
+      }),
+    );
+
+    const alive = results.filter(({ status }) => status === 'alive');
+    const dead = results.filter(({ status }) => status === 'dead');
+    dead.forEach(({ status, message }) => console.log(`${status}: ${message}`));
+    console.log(`alive: ${alive.length}, dead: ${dead.length}`);
+
+    return result;
   }
 }
