@@ -27,4 +27,4 @@ runs:
       uses: actions/cache@v3
       with:
         path: node_modules/.cache
-        key: wiki-build-artifacts-${{ hashFiles('package.json', 'yarn.lock', 'src/**/*.*') }}
+        key: wiki-build-artifacts
