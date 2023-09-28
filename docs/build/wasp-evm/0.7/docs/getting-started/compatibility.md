@@ -14,7 +14,7 @@ keywords:
 
 # EVM Compatibility in IOTA Smart Contracts
 
-The [`evm`](/wasp-wasm/reference/core-contracts/evm) [core contract](/wasp-wasm/reference/core-contracts/overview)
+The [`evm`](../reference/core-contracts/evm.md) [core contract](../reference/core-contracts/overview.md)
 provides EVM support in IOTA Smart Contracts. It stores the EVM state (account balances, state, code,
 etc.) and provides a way to execute EVM code to manipulate the state.
 
@@ -53,7 +53,7 @@ identified by their Ethereum address.
 
 ### WASM Root Contract List
 
-EVM contracts are not listed in the chain's [contract registry](/wasp-wasm/reference/core-contracts/root).
+EVM contracts are not listed in the chain's [contract registry](../reference/core-contracts/root.md).
 
 ### On-ledger Requests
 
@@ -66,7 +66,7 @@ Unlike Ethereum's blockchain that houses the state in a Merkle tree, the EVM sta
 duplication of efforts undertaken by the ISC layer.
 
 Any Ethereum transactions present in an ISC block are executed by
-the [`evm`](/wasp-wasm/reference/core-contracts/evm) [core contract](/wasp-wasm/reference/core-contracts/overview),
+the [`evm`](../reference/core-contracts/evm.md) [core contract](../reference/core-contracts/overview.md),
 updating the EVM state accordingly. An emulated Ethereum block is also created and stored to provide compatibility
 with EVM tools. As the emulated block is not part of a real Ethereum blockchain, some attributes of the blocks will
 contain dummy values (e.g. `stateRoot`, `nonce`, etc.).
