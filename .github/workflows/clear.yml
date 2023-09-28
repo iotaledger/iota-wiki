@@ -24,6 +24,8 @@ jobs:
           ref: ${{ github.event.issue.pull_request && format('refs/pull/{0}/merge', github.event.issue.number) || '' }}
       - name: Prepare Yarn
         uses: ./.github/actions/prepare/
+      - name: Clear Docusaurus build cache
+        run: yarn clear
       - name: Prepare build
         run: yarn prepare
         shell: bash
