@@ -52,18 +52,17 @@ function ValidatorCard({
           </button>
         </div>
         <div className='row'>
-          <div className='col col--9'>Stake:</div>
+          <div className='col col--8'>Stake:</div>
           <input
-            className='col col--3 align-right'
-            type='number'
+            className='col col--4 align-right'
             value={validator.lockedStake}
             onChange={(e) => handleStakeChange(Number(e.target.value), id)}
           ></input>
         </div>
         <div className='row'>
-          <div className='col col--9'>Delegated:</div>
+          <div className='col col--8'>Delegated:</div>
           <input
-            className='col col--3 align-right'
+            className='col col--4 align-right'
             value={validator.delegatedStake}
             onChange={(e) =>
               handleDelegatedStakeChange(Number(e.target.value), id)
@@ -71,17 +70,17 @@ function ValidatorCard({
           ></input>
         </div>
         <div className='row'>
-          <div className='col col--9'>PF:</div>
+          <div className='col col--8'>PF:</div>
           <input
-            className='col col--3 align-right'
+            className='col col--4 align-right'
             value={validator.performanceFactor}
             onChange={(e) => handlePFChange(Number(e.target.value), id)}
           ></input>
         </div>
         <div className='row'>
-          <div className='col col--9'>FC:</div>
+          <div className='col col--8'>FC:</div>
           <input
-            className='col col--3 align-right'
+            className='col col--4 align-right'
             value={validator.fixedCost}
             onChange={(e) => handleFCChange(Number(e.target.value), id)}
           ></input>

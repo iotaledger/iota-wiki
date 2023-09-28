@@ -19,7 +19,7 @@
 }
 
 .table .row .col--4:nth-child(1),
-.table .row .col--9:nth-child(1),
+.table .row .col--8:nth-child(1),
 .table .row .col--4:nth-child(2),
 .table .row .col--6:nth-child(1) {
   border-right: var(--ifm-table-border-width) solid
