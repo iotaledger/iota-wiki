@@ -3,6 +3,7 @@ import path from 'path';
 import visit from 'unist-util-visit';
 import checkUrl from 'link-check';
 import { parse } from 'node-html-parser';
+import { writeFile } from 'fs/promises';
 
 const buildConfig = require.resolve('../docusaurus/config/build.js');
 const SUPPORTED_PLUGINS = [
@@ -24,6 +25,7 @@ export class Check extends Command {
   });
 
   async execute() {
+    console.time('check');
     const { engine } = await import('unified-engine');
     const { remark } = await import('remark');
 
@@ -47,35 +49,28 @@ export class Check extends Command {
       return pluginPaths;
     }, []);
 
-    const hostnames = new Map<string, Set<string>>();
+    const urls = [];
 
+    // A Remark plugin that visits all link-like elements, extracts the URLs,
+    // and adds them to the `urls` array.
     function RemarkLinkVisitor() {
       return async (tree) => {
         visit(tree, (node) => {
-          let url: URL;
-          if (node.type === 'link') {
-            // @ts-ignore
-            url = new URL(node.url);
-          }
+          // @ts-ignore
+          if (node.type === 'link') urls.push(node.url);
           if (node.type === 'jsx' || node.type === 'html') {
             // @ts-ignore
             const element = parse(node.value);
-            if (element.tagName === 'a') {
-              url = new URL(element.getAttribute('href'));
-            }
-          }
-          if (url && SUPPORTED_PROTOCOLS.includes(url.protocol)) {
-            if (hostnames.has(url.hostname)) {
-              hostnames.get(url.hostname).add(url.href);
-            } else {
-              hostnames.set(url.hostname, new Set([url.href]));
-            }
+            if (element.tagName === 'a')
+              urls.push(element.getAttribute('href'));
           }
         });
         return tree;
       };
     }
 
+    // The Unified engine that runs the RemarkLinkVisitor plugin on all
+    // reachable markdown files.
     const result = await new Promise<number>((resolve, reject) =>
       engine(
         {
@@ -83,26 +78,60 @@ export class Check extends Command {
           files: pluginPaths,
           extensions: ['md', 'mdx'],
           plugins: [RemarkLinkVisitor],
+          silent: true,
         },
         (error, status) => {
           error ? reject(error) : resolve(status);
         },
       ),
     );
-
     const results = [];
 
+    // Validate URLs, extract the remote URLs, and gather them by hostname.
+    const urlsByHostname = urls.reduce<Map<string, Set<string>>>(
+      (urlsByHostname, url) => {
+        let validUrl: URL;
+
+        try {
+          validUrl = new URL(url);
+        } catch (error) {
+          results.push({ status: 'error', url, message: error });
+          return urlsByHostname;
+        }
+
+        if (
+          validUrl.hostname !== 'localhost' &&
+          SUPPORTED_PROTOCOLS.includes(validUrl.protocol)
+        ) {
+          if (urlsByHostname.has(validUrl.hostname)) {
+            urlsByHostname.get(validUrl.hostname).add(validUrl.href);
+          } else {
+            urlsByHostname.set(validUrl.hostname, new Set([validUrl.href]));
+          }
+        } else {
+          results.push({ status: 'error', url, message: 'ignored' });
+        }
+
+        return urlsByHostname;
+      },
+      new Map<string, Set<string>>(),
+    );
+
+    // Check all links for liveness. The checking is done in sequence per hostname
+    // to prevent getting rate limitted on a hostname.
+    // It will build an array of objects with a status of `alive`, `dead`, or `error` and
+    // a message providing info about the result.
     await Promise.all(
-      Array.from(hostnames.values()).map(async (urls) => {
+      Array.from(urlsByHostname.values()).map(async (urls) => {
         for (const url of Array.from(urls)) {
-          console.log(`Checking ${url}...`);
           await new Promise<void>((resolve) => {
-            checkUrl(url, (err, result) => {
-              if (err) results.push({ status: 'error', message: err });
+            checkUrl(url, (error, result) => {
+              if (error) results.push({ status: 'error', url, message: error });
               else
                 results.push({
                   status: result.status,
-                  message: `${url} => ${result.statusCode}`,
+                  url,
+                  message: result.statusCode,
                 });
               resolve();
             });
@@ -111,10 +140,22 @@ export class Check extends Command {
       }),
     );
 
-    const alive = results.filter(({ status }) => status === 'alive');
-    const dead = results.filter(({ status }) => status === 'dead');
-    dead.forEach(({ status, message }) => console.log(`${status}: ${message}`));
-    console.log(`alive: ${alive.length}, dead: ${dead.length}`);
+    const segragatedResults = {
+      error: results.filter(({ status }) => status === 'error'),
+      alive: results.filter(({ status }) => status === 'alive'),
+      dead: results.filter(({ status }) => status === 'dead'),
+    };
+
+    await writeFile(
+      'url.report.json',
+      JSON.stringify(segragatedResults, null, 2),
+    );
+
+    console.log(
+      `alive: ${segragatedResults.alive.length}, dead: ${segragatedResults.dead.length}, error: ${segragatedResults.error.length}`,
+    );
+
+    console.timeEnd('check');
 
     return result;
   }
