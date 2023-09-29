@@ -1,0 +1,46 @@
+name: clear
+
+on:
+  workflow_dispatch:
+  issue_comment:
+    types: [created]
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.issue.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  clear:
+    if: |
+      github.event_name == 'workflow_dispatch' ||
+      (
+        github.event.issue.pull_request && 
+        contains(github.event.comment.body, '/clear-build')
+      )
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          ref: ${{ github.event.issue.pull_request && format('refs/pull/{0}/merge', github.event.issue.number) || '' }}
+      - name: Prepare Yarn
+        uses: ./.github/actions/prepare/
+      - name: Clear Docusaurus build cache
+        run: yarn clear
+      - name: Prepare build
+        run: yarn prepare
+        shell: bash
+      - name: Build
+        run: yarn build
+      # Create a comment on the pull request that the clear build completed
+      - name: Comment on pull request
+        if: github.event_name != 'workflow_dispatch'
+        uses: actions/github-script@v6.4.0
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: `Clear build has completed and caches have been renewed.`
+            })
