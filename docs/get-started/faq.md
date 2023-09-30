@@ -5,5 +5,5 @@ description: Questions and answers collections. Clear outlined information for t
 
 - [Chrysalis mainnet FAQ](/introduction/explanations/faq/)
 - [Firefly wallet FAQ](/use/wallets/firefly/faq-and-troubleshooting)
-- [Identity FAQ](http://localhost:3000/identity.rs/faq/)
+- [Identity Examples](/identity.rs/faq/)
 - [GoShimmer devnet FAQ](/goshimmer/faq/)
