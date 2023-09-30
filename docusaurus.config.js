@@ -9,7 +9,9 @@ const {
   buildPluginsConfig,
   maintainPluginsConfig,
 } = require('./versionedConfig');
-const { createMainVersionRedirects } = require('./src/utils/pluginConfigGenerators');
+const {
+  createMainVersionRedirects,
+} = require('./src/utils/pluginConfigGenerators');
 
 module.exports = async () => {
   const contentPlugins = await Promise.all(
@@ -18,9 +20,11 @@ module.exports = async () => {
     ).map(async (contentConfig) => await create_doc_plugin(contentConfig)),
   );
 
-
-  const buildMainVersionRedirects = createMainVersionRedirects(buildPluginsConfig);
-  const maintainMainVersionRedirects = createMainVersionRedirects(maintainPluginsConfig);
+  const buildMainVersionRedirects =
+    createMainVersionRedirects(buildPluginsConfig);
+  const maintainMainVersionRedirects = createMainVersionRedirects(
+    maintainPluginsConfig,
+  );
 
   // Get tutorials
   const additionalPlugins = await glob(['tutorials']);

@@ -68,10 +68,9 @@ function generatePluginConfig(pluginConfig, basePath) {
  * @returns {Array} - An array of redirects.
  */
 function createMainVersionRedirects(versionedConfig) {
-  redirects = []
+  redirects = [];
   for (const doc of versionedConfig) {
-    if (doc.versions.length > 1){
-
+    if (doc.versions.length > 1) {
       // Find main version
       const mainVersion = findMainVersion(doc);
 
