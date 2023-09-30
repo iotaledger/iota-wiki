@@ -1,0 +1,361 @@
+---
+title: Unlock Conditions
+description: 'How to set unlock conditions for outputs'
+image: /img/logo/iota_mark_light.png
+keywords:
+  - how to
+  - outputs
+  - unlock conditions
+  - nodejs
+  - python
+  - rust
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import AccountClient from '../../_admonitions/_account-client.md';
+
+Outputs can have different unlock conditions. This guide explains how to add them to an output.
+
+<AccountClient />
+
+:::info Output Unlock Conditions
+
+Different outputs can have different unlock conditions. This table shows you which output is compatible with which unlock condition. You can find the output specs in [TIP-018](/tips/tips/TIP-0018)
+
+| Output  | Address | Storage Deposit Return | Timelock | Expiration | State Controller Address | Governor Address | Immutable Alias Address |
+| ------- | :-----: | :--------------------: | :------: | :--------: | :----------------------: | :--------------: | :---------------------: |
+| Basic   |    x    |           x            |    x     |     x      |                          |                  |                         |
+| Alias   |         |                        |          |            |            x             |        x         |                         |
+| Foundry |         |                        |          |            |                          |                  |            x            |
+| NFT     |    x    |           x            |    x     |     x      |                          |                  |                         |
+
+:::
+
+## Example Code
+
+<Tabs groupId="language" queryString>
+<TabItem value="rust" label="Rust">
+
+The following example will use the create multiple outputs and add the following
+[`unlock_conditions`](https://docs.rs/iota-sdk/latest/iota_sdk/types/block/output/unlock_condition/index.html)
+using the [`add_unlock_condition`](https://docs.rs/iota-sdk/latest/iota_sdk/types/block/output/basic/struct.BasicOutputBuilder.html#method.add_unlock_condition)
+function of each output type:
+
+1. [`StorageDepositReturnUnlockCondition`](https://docs.rs/iota-sdk/latest/iota_sdk/types/block/output/unlock_condition/struct.StorageDepositReturnUnlockCondition.html).
+
+<div className={'hide-code-block-extras'}>
+
+```rust reference
+https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/outputs/unlock_conditions.rs#L55-L62
+```
+
+</div>
+
+2. [`TimelockUnlockCondition`](https://docs.rs/iota-sdk/latest/iota_sdk/types/block/output/unlock_condition/struct.TimelockUnlockCondition.html).
+
+<div className={'hide-code-block-extras'}>
+
+```rust reference
+https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/outputs/unlock_conditions.rs#L64-L67
+```
+
+</div>
+
+3. [`ExpirationUnlockCondition`](https://docs.rs/iota-sdk/latest/iota_sdk/types/block/output/unlock_condition/struct.ExpirationUnlockCondition.html).
+
+<div className={'hide-code-block-extras'}>
+
+```rust reference
+https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/outputs/unlock_conditions.rs#L69-L71
+```
+
+</div>
+
+4. [`GovernorAddressUnlockCondition`](https://docs.rs/iota-sdk/latest/iota_sdk/types/block/output/unlock_condition/struct.GovernorAddressUnlockCondition.html)
+   and [`StateControllerAddressUnlockCondition`](https://docs.rs/iota-sdk/latest/iota_sdk/types/block/output/unlock_condition/struct.StateControllerAddressUnlockCondition.html).
+
+<div className={'hide-code-block-extras'}>
+
+```rust reference
+https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/outputs/unlock_conditions.rs#L73-L76
+```
+
+</div>
+
+6. [`ImmutableAliasAddressUnlockCondition`](https://docs.rs/iota-sdk/latest/iota_sdk/types/block/output/unlock_condition/struct.ImmutableAliasAddressUnlockCondition.html).
+
+<div className={'hide-code-block-extras'}>
+
+```rust reference
+https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/outputs/unlock_conditions.rs#L78-L80
+```
+
+</div>
+
+</TabItem>
+<TabItem value="typescript-node" label="Typescript (Node.js)">
+
+The following example will add the following
+[`unlockConditions`](../../references/nodejs/classes/UnlockCondition.md)
+by passing them as [output parameters](../../references/nodejs/interfaces/BasicOutputBuilderParams.md#unlockconditions)
+when building the outputs:
+
+1. [`StorageDepositReturnUnlockCondition`](../../references/nodejs/classes/StorageDepositReturnUnlockCondition.md).
+
+<div className={'hide-code-block-extras'}>
+
+```typescript reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/outputs/unlock-conditions.ts#L55-L63
+```
+
+</div>
+
+2. [`TimelockUnlockCondition`](../../references/nodejs/classes/TimelockUnlockCondition.md).
+
+<div className={'hide-code-block-extras'}>
+
+```typescript reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/outputs/unlock-conditions.ts#L66-L71
+```
+
+</div>
+
+3. [`ExpirationUnlockCondition`](../../references/nodejs/classes/ExpirationUnlockCondition.md).
+
+<div className={'hide-code-block-extras'}>
+
+```typescript reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/outputs/unlock-conditions.ts#L74-L82
+```
+
+</div>
+
+4. [`GovernorAddressUnlockCondition`](../../references/nodejs/classes/GovernorAddressUnlockCondition.md) and [`StateControllerAddressUnlockCondition`](../../references/nodejs/classes/StateControllerAddressUnlockCondition.md).
+
+<div className={'hide-code-block-extras'}>
+
+```typescript reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/outputs/unlock-conditions.ts#L85-L96
+```
+
+</div>
+
+6. [`ImmutableAliasAddressUnlockCondition`](../../references/nodejs/classes/ImmutableAliasAddressUnlockCondition.md).
+
+<div className={'hide-code-block-extras'}>
+
+```typescript reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/outputs/unlock-conditions.ts#L99-L107
+```
+
+</div>
+
+</TabItem>
+<TabItem value="python" label="Python">
+
+The following example will add the following [`unlockConditions`](../../references/python/iota_sdk/client/client.md#parameters-2)
+by passing them as [output parameters](../../references/nodejs/interfaces/BasicOutputBuilderParams.md#unlockconditions)
+when building the outputs:
+
+1. [`StorageDepositReturnUnlockCondition`](../../references/python/iota_sdk/types/unlock_condition.md#storagedepositreturnunlockcondition-objects).
+
+<div className={'hide-code-block-extras'}>
+
+```python reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how_tos/outputs/unlock_conditions.py#L28-L36
+```
+
+</div>
+
+2. [`TimelockUnlockCondition`](../../references/python/iota_sdk/types/unlock_condition.md#timelockunlockcondition-objects).
+
+<div className={'hide-code-block-extras'}>
+
+```python reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how_tos/outputs/unlock_conditions.py#L40-L45
+```
+
+</div>
+
+3. [`ExpirationUnlockCondition`](../../references/python/iota_sdk/types/unlock_condition.md#expirationunlockcondition-objects).
+
+<div className={'hide-code-block-extras'}>
+
+```python reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how_tos/outputs/unlock_conditions.py#L49-L57
+```
+
+</div>
+
+4. [`GovernorAddressUnlockCondition`](../../references/python/iota_sdk/types/unlock_condition.md#statecontrolleraddressunlockcondition-objects) and [`StateControllerAddressUnlockCondition`](../../references/python/iota_sdk/types/unlock_condition.md#governoraddressunlockcondition-objects).
+
+<div className={'hide-code-block-extras'}>
+
+```python reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how_tos/outputs/unlock_conditions.py#L61-L71
+```
+
+</div>
+
+6. [`ImmutableAliasAddressUnlockCondition`](../../references/python/iota_sdk/types/unlock_condition.md#immutablealiasaddressunlockcondition-objects).
+
+<div className={'hide-code-block-extras'}>
+
+```python reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how_tos/outputs/unlock_conditions.py#L75-L83
+```
+
+</div>
+
+</TabItem>
+</Tabs>
+
+### Full Example Code
+
+<Tabs groupId="language" queryString>
+<TabItem value="rust" label="Rust">
+
+```rust reference
+https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/outputs/unlock_conditions.rs
+```
+
+</TabItem>
+<TabItem value="typescript-node" label="Typescript (Node.js)">
+
+```typescript reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/outputs/unlock-conditions.ts
+```
+
+</TabItem>
+<TabItem value="python" label="Python">
+
+```python reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how_tos/outputs/unlock_conditions.py
+```
+
+</TabItem>
+</Tabs>
+
+### Expected Output
+
+```json
+[
+  {
+    "type": 3,
+    "amount": "42600",
+    "unlockConditions": [
+      {
+        "type": 0,
+        "address": {
+          "type": 0,
+          "pubKeyHash": "0x7ffec9e1233204d9c6dce6812b1539ee96af691ca2e4d9065daa85907d33e5d3"
+        }
+      }
+    ]
+  },
+  {
+    "type": 3,
+    "amount": "46800",
+    "unlockConditions": [
+      {
+        "type": 0,
+        "address": {
+          "type": 0,
+          "pubKeyHash": "0x7ffec9e1233204d9c6dce6812b1539ee96af691ca2e4d9065daa85907d33e5d3"
+        }
+      },
+      {
+        "type": 1,
+        "returnAddress": {
+          "type": 0,
+          "pubKeyHash": "0x7ffec9e1233204d9c6dce6812b1539ee96af691ca2e4d9065daa85907d33e5d3"
+        },
+        "amount": "1000000"
+      }
+    ]
+  },
+  {
+    "type": 3,
+    "amount": "43100",
+    "unlockConditions": [
+      {
+        "type": 0,
+        "address": {
+          "type": 0,
+          "pubKeyHash": "0x7ffec9e1233204d9c6dce6812b1539ee96af691ca2e4d9065daa85907d33e5d3"
+        }
+      },
+      {
+        "type": 2,
+        "unixTime": 1
+      }
+    ]
+  },
+  {
+    "type": 3,
+    "amount": "46400",
+    "unlockConditions": [
+      {
+        "type": 0,
+        "address": {
+          "type": 0,
+          "pubKeyHash": "0x7ffec9e1233204d9c6dce6812b1539ee96af691ca2e4d9065daa85907d33e5d3"
+        }
+      },
+      {
+        "type": 3,
+        "returnAddress": {
+          "type": 0,
+          "pubKeyHash": "0x7ffec9e1233204d9c6dce6812b1539ee96af691ca2e4d9065daa85907d33e5d3"
+        },
+        "unixTime": 1
+      }
+    ]
+  },
+  {
+    "type": 4,
+    "amount": "50300",
+    "aliasId": "0x0000000000000000000000000000000000000000000000000000000000000000",
+    "stateIndex": 0,
+    "stateMetadata": "0x",
+    "foundryCounter": 0,
+    "unlockConditions": [
+      {
+        "type": 4,
+        "address": {
+          "type": 0,
+          "pubKeyHash": "0x7ffec9e1233204d9c6dce6812b1539ee96af691ca2e4d9065daa85907d33e5d3"
+        }
+      },
+      {
+        "type": 5,
+        "address": {
+          "type": 0,
+          "pubKeyHash": "0x7ffec9e1233204d9c6dce6812b1539ee96af691ca2e4d9065daa85907d33e5d3"
+        }
+      }
+    ]
+  },
+  {
+    "type": 5,
+    "amount": "52800",
+    "serialNumber": 1,
+    "tokenScheme": {
+      "type": 0,
+      "mintedTokens": "0x32",
+      "meltedTokens": "0x0",
+      "maximumSupply": "0x64"
+    },
+    "unlockConditions": [
+      {
+        "type": 6,
+        "address": {
+          "type": 8,
+          "aliasId": "0xe8506eb1dc96cbe3b24ef8102551328bfff767393389e824e7cef199e52d87b6"
+        }
+      }
+    ]
+  }
+]
+```

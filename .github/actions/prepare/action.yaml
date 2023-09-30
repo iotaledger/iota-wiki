@@ -1,0 +1,30 @@
+name: prepare
+description: Prepare Yarn and caches
+
+runs:
+  using: 'composite'
+  steps:
+    - uses: actions/setup-node@v3
+      with:
+        node-version: 16
+    - name: Allow modern Yarn
+      run: corepack enable
+      shell: bash
+    # Dependencies manually cached because `actions/setup-node@v3` does not support corepack
+    - name: Cache dependencies
+      uses: actions/cache@v3
+      with:
+        path: |
+          .yarn/cache
+        key: wiki-dependencies-${{ hashFiles('yarn.lock') }}
+        restore-keys: |
+          wiki-dependencies
+    - name: Install dependencies
+      run: yarn
+      shell: bash
+    # Artifacts cached after install to prevent removal by Yarn
+    - name: Cache build artifacts
+      uses: actions/cache@v3
+      with:
+        path: node_modules/.cache
+        key: wiki-build-artifacts

@@ -29,7 +29,7 @@ module.exports = {
 A button to add the ShimmerEVM network to MetaMask.
 
 ```
-import AddToMetaMaskButton from '@theme/AddToMetaMaskButton'
+import {AddToMetaMaskButton} from '@theme/AddToMetaMaskButton'
 
 <AddToMetaMaskButton />
 ```

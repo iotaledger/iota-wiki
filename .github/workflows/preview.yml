@@ -1,7 +1,9 @@
 name: preview
+
 env:
   VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
   VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+
 on:
   workflow_dispatch:
   pull_request:
@@ -10,8 +12,12 @@ on:
   issue_comment:
     types: [created]
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.issue.number || github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
 jobs:
-  build:
+  preview:
     if: |
       github.event_name == 'workflow_dispatch' ||
       (
@@ -24,36 +30,18 @@ jobs:
           )
         )
       )
-    strategy:
-      matrix:
-        environment: [iota, shimmer, next]
-    uses: ./.github/workflows/build.reusable.yaml
-    with:
-      ref: ${{ github.event.issue.pull_request && format('refs/pull/{0}/merge', github.event.issue.number) || '' }}
-      environment: ${{ matrix.environment }}
-  config:
-    needs: [build]
-    uses: ./.github/workflows/config.reusable.yaml
-  deploy:
     runs-on: ubuntu-latest
-    needs:
-      - build
-      - config
     steps:
-      - uses: actions/setup-node@v3
+      - uses: actions/checkout@v3
         with:
-          node-version: 16
-      # All previous jobs upload to same artifact so only a single download required
-      - name: Download build
-        uses: actions/download-artifact@v3
-        with:
-          name: build
-      # Paths of the build artifacts are preserved (`build`, `build/shimmer`, and `build/next`)
-      - name: Extract build
-        run: |
-          tar -xf iota.tar
-          tar -xf shimmer.tar
-          tar -xf next.tar
+          ref: ${{ github.event.issue.pull_request && format('refs/pull/{0}/merge', github.event.issue.number) || '' }}
+      - name: Prepare Yarn
+        uses: ./.github/actions/prepare/
+      - name: Prepare build
+        run: yarn prepare
+        shell: bash
+      - name: Build
+        run: yarn build
       # Convert to Vercel project and upload
       - name: Install Vercel CLI
         run: npm install --global vercel@latest

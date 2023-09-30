@@ -1,0 +1,24 @@
+{
+  "name": "@iota-wiki/plugin-docs",
+  "version": "0.1.0",
+  "main": "dist/index.js",
+  "types": "src/types.d.ts",
+  "scripts": {
+    "clean": "rm -rf ./lib",
+    "build": "tsc --build",
+    "watch": "tsc --watch",
+    "prepack": "yarn build"
+  },
+  "packageManager": "yarn@3.2.2",
+  "devDependencies": {
+    "@docusaurus/types": "2.4.1",
+    "typescript": "^4.6.3"
+  },
+  "files": [
+    "dist",
+    "src/types.d.ts"
+  ],
+  "dependencies": {
+    "@docusaurus/plugin-content-docs": "2.4.1"
+  }
+}

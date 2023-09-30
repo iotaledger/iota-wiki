@@ -1,0 +1,158 @@
+---
+image: /img/banner/client_lib_overview.png
+description: 'Learn how to get started with the IOTA SDK in Node.js and build applications on the Shimmer network.'
+keywords:
+  - node.js
+  - IOTA SDK
+  - installation
+  - client
+  - wallet
+  - usage
+  - how-to guides
+  - examples
+  - development
+---
+
+import WarningPasswordStorage from '../_admonitions/_warning-password-storage.md';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Getting Started with Node.js
+
+<WarningPasswordStorage />
+
+## Requirements
+
+- One of the following Node.js versions: '16.x', '18.x';
+
+## Install the IOTA SDK
+
+### Install Using a Package Manager
+
+To start using the IOTA SDK in your Node.js project, you can install the IOTA SDK from your package manager of choice:
+
+```bash npm2yarn
+npm i @iota/sdk
+```
+
+### Build the Binding from Source
+
+#### Requirements
+
+If you want to build the IOTA SDK from source, please ensure you have the installed the following:
+
+- A [supported version of Node and Rust](https://github.com/neon-bindings/neon#platform-support).
+- Python < 3.11
+- Yarn v1
+
+#### Windows
+
+On Windows, you will also need LLVM. Our workflow uses
+`https://github.com/llvm/llvm-project/releases/download/llvmorg-11.0.1/LLVM-11.0.1-win64.exe`. You may also need to set
+an environment variable `RUSTFLAGS` to `-C target-feature=+crt-static`.
+
+:::tip Install LLVM with Chocolatey
+
+If you use [Chocolatey](https://chocolatey.org) you can install LLVM by executing `choco install llvm`
+
+:::
+
+#### Build
+
+You can build the IOTA SDK from source by doing the following:
+
+1. Download the repository to any directory you choose:
+
+```shell
+git clone https://github.com/iotaledger/iota-sdk
+```
+
+2. Move to the Node.js binding directory:
+
+```shell
+cd iota-sdk/bindings/nodejs
+```
+
+3. Install the necessary dependencies with either of the following commands:
+
+<Tabs groupId="nodePackageManager" queryString>
+<TabItem value="npm" label="npm">
+
+```sh
+npm install
+```
+
+</TabItem>
+<TabItem value="yarn" label="Yarn">
+
+```shell
+yarn install
+```
+
+</TabItem>
+</Tabs>
+
+4. Build the SDK:
+
+<Tabs groupId="nodePackageManager" queryString>
+<TabItem value="npm" label="npm">
+
+```shell
+npm run build
+```
+
+</TabItem>
+<TabItem value="yarn" label="Yarn">
+
+```shell
+yarn build
+```
+
+</TabItem>
+</Tabs>
+
+This command uses the [cargo-cp-artifact](https://github.com/neon-bindings/cargo-cp-artifact) utility to run the Rust
+build and copy the built library into `./build/Release/index.node`.
+Prebuild requires that the binary is in `build/Release` as though it was built with node-gyp.
+
+## Usage
+
+### Client
+
+After you [installed the library](#install-the-iota-sdk), you can create a `Client` instance and interface with it.
+
+```typescript reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/client/getting-started.ts#L4-L23
+```
+
+### Wallet
+
+After you [installed the library](#installing-the-iota-sdk), you can create a `Wallet` instance and interact with it.
+
+```typescript reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/wallet/getting-started.ts#L4-L60
+```
+
+## What's next?
+
+### How-To Guides
+
+Once you have [installed the IOTA SDK](#install-the-iota-sdk), you can start building your application. You can find
+usage examples in this Wiki's [how-to guides](../how-tos/introduction.md).
+
+### More Examples
+
+You can use the provided code [examples](https://github.com/iotaledger/iota-sdk/tree/develop/bindings/nodejs/examples)
+to get acquainted with the IOTA SDK. You can use the following commands to run any example:
+
+```bash
+cd examples
+yarn
+yarn run-example ./[example folder]/[example file]
+```
+
+- Where `[example file]` is the file name from the example folder. For example:
+
+```bash
+yarn run-example  examples/client/00_get_info.ts
+```

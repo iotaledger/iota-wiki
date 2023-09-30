@@ -1,0 +1,139 @@
+---
+image: /img/banner/client_lib_overview.png
+description: 'Learn how to get started with the IOTA SDK in Python and build applications on the Shimmer network.'
+keywords:
+  - python
+  - IOTA SDK
+  - installation
+  - client
+  - wallet
+  - usage
+  - how-to guides
+  - examples
+  - API reference
+---
+
+import WarningPasswordStorage from '../_admonitions/_warning-password-storage.md';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Getting Started with Python
+
+<WarningPasswordStorage />
+
+## Requirements
+
+- [Python 3.10+](https://www.python.org)
+- [pip ^21.x](https://pypi.org/project/pip)
+- `Rust` and `Cargo` to compile the binding. Install them [here](https://doc.rust-lang.org/cargo/getting-started/installation.html).
+
+## Install the IOTA SDK
+
+### Install Using a Pip
+
+To start using the IOTA SDK in your Python project, you can use pip to install:
+
+```sh
+pip install iota-sdk
+```
+
+### Build the Binding from Source
+
+1. Move to the Python bindings directory:
+
+```bash
+cd iota-sdk/bindings/python
+```
+
+2. (optional) You can run the following commands create a virtual environment and use it:
+
+<Tabs groupId="os" queryString>
+<TabItem value="linux" label="Linux">
+
+```bash
+python3 -m venv iota_sdk_venv
+source iota_sdk_venv/bin/activate
+```
+
+</TabItem>
+<TabItem value="mac" label="macOS">
+
+```bash
+python3 -m venv iota_sdk_venv
+source iota_sdk_venv/bin/activate
+```
+
+</TabItem>
+<TabItem value="windows" label="Windows">
+
+```bash
+.\iota_sdk_venv\Scripts\activate
+```
+
+</TabItem>
+</Tabs>
+
+3. Install the required dependencies and build the wheel by running the following commands:
+
+```bash
+pip install -r requirements-dev.txt
+pip install .
+```
+
+4. (optional) If you want to deactivate the virtual environment, run the following command:
+
+```bash
+deactivate
+```
+
+## Usage
+
+### Client
+
+After you [installed the library](#install-the-iota-sdk), you can create a `Client` instance and interface with it.
+
+```python reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/client/getting_started.py
+```
+
+### Wallet
+
+After you [installed the library](#install-the-iota-sdk), you can create a `Wallet` instance and interact with it.
+
+```python reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/wallet/getting_started.py#L4-L48
+```
+
+## What's next?
+
+### How-To Guides
+
+Once you have [installed the IOTA SDK](#install-the-iota-sdk), you can start building your application. You can find
+usage examples in this Wiki's [how-to guides](../how-tos/introduction.md).
+
+### More Examples
+
+You can use the provided code [examples](https://github.com/iotaledger/iota-sdk/tree/develop/bindings/python/examples)
+to get acquainted with the IOTA SDK. You can use the following command to run any example:
+
+```bash
+python3 example/[example file]
+```
+
+- Where `[example file]` is the file name from the example folder. For example:
+
+```bash
+python3 examples/client/00_get_info.py
+```
+
+### API Reference
+
+You can generate the Python API reference with the following command from this directory:
+
+```bash
+pip install pydoc-markdown && pydoc-markdown
+```
+
+## API Reference
+
+The IOTA SDK Rust API Reference is in the [crate documentation](https://docs.rs/iota-sdk/latest/iota_sdk/).

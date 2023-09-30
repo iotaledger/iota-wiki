@@ -1,0 +1,148 @@
+---
+title: Burn NFT
+description: 'How to burn NFT'
+image: /img/logo/iota_mark_light.png
+keywords:
+  - how to
+  - burn
+  - nft
+  - nodejs
+  - python
+  - rust
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+When you burn an [NFT](/learn/protocols/stardust/core-concepts/multi-asset-ledger#non-fungible-tokens-nfts),
+you permanently remove it from the ledger state, rendering it unusable and nontransferable. The associated [storage deposit](/learn/protocols/stardust/core-concepts/storage-deposit) will automatically be returned to its original account.
+
+:::warning irreversible
+
+Burning an NFT is irreversible and signifies the destruction of its digital representation and
+associated ownership rights.
+
+:::
+
+## Example Code
+
+<Tabs groupId="language" queryString>
+<TabItem value="rust" label="Rust">
+
+The following example will:
+
+1. Instantiate a [`Wallet`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/core/struct.Wallet.html), get Alice's `Account` which was
+   [created in the first guide](../accounts-and-addresses/create-account.mdx) and [sync it](../accounts-and-addresses/check-balance.mdx).
+2. Set the `nft_id` as the first NFT in the balance.
+
+<div className={'hide-code-block-extras'}>
+
+```rust reference
+https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/nfts/burn_nft.rs#L33
+```
+
+</div>
+
+3. Burn the NFT by calling the [`Account.burn()`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/account/struct.Account.html#method.burn)
+   function.
+
+<div className={'hide-code-block-extras'}>
+
+```rust reference
+https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/nfts/burn_nft.rs#L42
+```
+
+</div>
+
+</TabItem>
+<TabItem value="typescript-node" label="Typescript (Node.js)">
+
+The following example will:
+
+1. Instantiate a [`Wallet`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/core/struct.Wallet.html), get Alice's `Account` which was
+   [created in the first guide](../accounts-and-addresses/create-account.mdx) and [sync it](../accounts-and-addresses/check-balance.mdx).
+2. Set `nftId` as the first NFT Id in the balance and display the balance.
+
+<div className={'hide-code-block-extras'}>
+
+```typescript reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/nfts/burn_nft.ts#L42
+```
+
+</div>
+
+3. Prepare the transaction that will burn the NFT by calling the [`Account.prepareBurnNft()`](../../references/nodejs/classes/Account.md#prepareburnnft) function and send the transaction using the [`Account.send()`](../../references/nodejs/classes/Account.md#send)
+   function.
+
+<div className={'hide-code-block-extras'}>
+
+```typescript reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/nfts/burn_nft.ts#L47-L49
+```
+
+</div>
+
+</TabItem>
+<TabItem value="python" label="Python">
+
+The following example will:
+
+1. Instantiate a [`Wallet`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/core/struct.Wallet.html), get Alice's `Account` which was
+   [created in the first guide](../accounts-and-addresses/create-account.mdx) and [sync it](../accounts-and-addresses/check-balance.mdx).
+2. Set `nftId` as the first NFT Id in the balance and display the balance.
+
+<div className={'hide-code-block-extras'}>
+
+```python reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how_tos/nfts/burn_nft.py#L20
+```
+
+</div>
+
+3. Prepare the transaction that will burn the NFT by calling the [`Account.prepare_burn_nft()`](../../references/python/iota_sdk/wallet/account.md#prepare_burn_nft) function and send the prepared transaction using the [`Account.send()`](../../references/python/iota_sdk/wallet/account.md#send)
+   function.
+
+<div className={'hide-code-block-extras'}>
+
+```python reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how_tos/nfts/burn_nft.py#L23
+```
+
+</div>
+
+</TabItem>
+</Tabs>
+
+## Full Example Code
+
+<Tabs groupId="language" queryString>
+<TabItem value="rust" label="Rust">
+
+```rust reference
+https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/nfts/burn_nft.rs
+```
+
+</TabItem>
+<TabItem value="typescript-node" label="Typescript (Node.js)">
+
+```typescript reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/nfts/burn_nft.ts
+```
+
+</TabItem>
+<TabItem value="python" label="Python">
+
+```python reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how_tos/nfts/burn_nft.py
+```
+
+</TabItem>
+</Tabs>
+
+### Expected Output
+
+```bash
+Transaction sent: 0xed7955f0c2d1a1e267b61b0a1859b58a9b5112385c18feae1a198f3a9992d19e
+Block included: https://explorer.shimmer.network/testnet/block/0x1c4fe528677089eeffaa01eefe34eda4a75f7c6f2020d83af61221571979f616
+Burned NFT 0xd2356323fad25efa3ec772a341d122eaf5ea3bf1cba48b70a1038b7d00bc385d
+```

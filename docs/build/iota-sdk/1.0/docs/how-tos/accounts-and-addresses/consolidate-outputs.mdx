@@ -1,0 +1,270 @@
+---
+title: Consolidate Outputs
+description: 'How to consolidate outputs'
+image: /img/logo/iota_mark_light.png
+keywords:
+  - how to
+  - consolidate outputs
+  - nodejs
+  - python
+  - rust
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+[UTXOs](/tips/tips/TIP-0020#utxo) can accumulate over time as users perform transactions,
+resulting in a fragmented UTXO set with many small outputs. Consolidating these outputs allows you to reduce the overall
+number of UTXOs, which can improve transaction efficiency and reduce storage deposit fees.
+
+## Example Code
+
+<Tabs groupId="language" queryString>
+<TabItem value="rust" label="Rust">
+
+1. Instantiate a [`Wallet`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/core/struct.Wallet.html), get Alice's `Account` which was
+   [created in the first guide](./create-account.mdx) and [sync it](./check-balance.mdx).
+2. Get all the unspent `Outputs` related to the `Account` by calling the
+   [`Account.unspent_outputs()`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/account/struct.AccountInner.html#method.unspent_outputs) function.
+
+<div className={'hide-code-block-extras'}>
+
+```rust reference
+https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/accounts_and_addresses/consolidate_outputs.rs#L46
+```
+
+</div>
+
+3. Prepare and send a [`Transaction`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/account/types/struct.Transaction.html) to consolidate the Outputs by calling
+   the [`Account.consolidate_outputs()`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/account/struct.Account.html#method.consolidate_outputs) function.
+
+<div className={'hide-code-block-extras'}>
+
+```rust reference
+https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/accounts_and_addresses/consolidate_outputs.rs#L62-L64
+```
+
+</div>
+
+4. Await for the `Transaction` to get confirmed by calling the [`Account.retry_transaction_until_included()`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/account/struct.Account.html#method.retry_transaction_until_included)
+   function.
+
+<div className={'hide-code-block-extras'}>
+
+```rust reference
+https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/accounts_and_addresses/consolidate_outputs.rs#L68-L70
+```
+
+</div>
+
+</TabItem>
+<TabItem value="typescript-node" label="Typescript (Node.js)">
+
+1. Instantiate a [`Wallet`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/core/struct.Wallet.html), get Alice's `Account` which was
+   [created in the first guide](./create-account.mdx) and [sync it](./check-balance.mdx).
+2. Get all the unspent `Outputs` related to the `Account` by calling the
+   [`Account.unspent_outputs()`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/account/struct.AccountInner.html#method.unspent_outputs)
+   function.
+
+<div className={'hide-code-block-extras'}>
+
+```typescript reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/accounts_and_addresses/consolidate-outputs.ts#L51
+```
+
+</div>
+
+3. Prepare a [`Transaction`](../../references/nodejs/classes/Transaction.md) to consolidate the Outputs by calling
+   the [`Account.prepareConsolidateOutputs()`](../../references/nodejs/classes/Account.md#prepareconsolidateoutputs) function.
+
+<div className={'hide-code-block-extras'}>
+
+```typescript reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/accounts_and_addresses/consolidate-outputs.ts#L70-L72
+```
+
+</div>
+
+4. Send the `Transaction` by calling the [`PreparedTransaction.send()`](../../references/nodejs/classes/PreparedTransaction.md#send)
+   function.
+
+<div className={'hide-code-block-extras'}>
+
+```typescript reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/accounts_and_addresses/consolidate-outputs.ts#L73
+```
+
+</div>
+
+5. Await for the `Transaction` to get confirmed by calling the [`Account.retryTransactionUntilIncluded`](../../references/nodejs/classes/Account.md#retrytransactionuntilincluded)
+   function.
+
+<div className={'hide-code-block-extras'}>
+
+```typescript reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/accounts_and_addresses/consolidate-outputs.ts#L77-L79
+```
+
+</div>
+
+</TabItem>
+<TabItem value="python" label="Python">
+
+The following example will:
+
+1. Instantiate a [`Wallet`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/core/struct.Wallet.html), get Alice's `Account` which was
+   [created in the first guide](./create-account.mdx) and [sync it](./check-balance.mdx).
+2. Get all the unspent `Outputs` related to the `Account` by calling the
+   [`Account.unspent_outputs()`](../../references/python/iota_sdk/wallet/account.md#unspent_outputs) function.
+
+<div className={'hide-code-block-extras'}>
+
+```python reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how_tos/accounts_and_addresses/consolidate_outputs.py#L30
+```
+
+</div>
+
+3. Prepare a [`Transaction`](../../references/python/iota_sdk/types/transaction.md) to consolidate the Outputs by calling
+   the [`Account.prepare_consolidate_outputs()`](../../references/python/iota_sdk/wallet/account.md#prepare_consolidate_outputs) function
+   and [`send()`](../../references/python/iota_sdk/wallet/account.md#send) it.
+
+<div className={'hide-code-block-extras'}>
+
+```python reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how_tos/accounts_and_addresses/consolidate_outputs.py#L48-L49
+```
+
+</div>
+
+4. Await for the `Transaction` to get confirmed by calling the [`Account.retry_transaction_until_included`](../../references/python/iota_sdk/wallet/account.md#retry_transaction_until_included)
+   function.
+
+<div className={'hide-code-block-extras'}>
+
+```python reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how_tos/accounts_and_addresses/consolidate_outputs.py#L53
+```
+
+</div>
+
+</TabItem>
+</Tabs>
+
+### Full Example Code
+
+<Tabs groupId="language" queryString>
+<TabItem value="rust" label="Rust">
+
+```rust reference
+https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/accounts_and_addresses/consolidate_outputs.rs
+```
+
+</TabItem>
+<TabItem value="typescript-node" label="Typescript (Node.js)">
+
+```typescript reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/accounts_and_addresses/consolidate-outputs.ts
+```
+
+</TabItem>
+<TabItem value="python" label="Python">
+
+```python reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how_tos/accounts_and_addresses/consolidate_outputs.py
+```
+
+</TabItem>
+</Tabs>
+
+### Expected Output
+
+<Tabs groupId="language" queryString>
+<TabItem value="rust" label="Rust">
+
+```plaintext
+Account synced
+Outputs BEFORE consolidation:
+OUTPUT #0
+- address: Bech32Address(rms1qr58umklvtqa4yxxwmskgzyhx2axfe5tfvunu5gauqu9sns7ava3u3kehwq)
+- amount: 1000000
+- native tokens: Some(NativeTokens([]))
+OUTPUT #1
+- address: Bech32Address(rms1qr58umklvtqa4yxxwmskgzyhx2axfe5tfvunu5gauqu9sns7ava3u3kehwq)
+- amount: 998000000
+- native tokens: Some(NativeTokens([]))
+OUTPUT #2
+- address: Bech32Address(rms1qz7652a7c7s9pcur04x7jlmmnyfq8mpxgahmz50tzqutmv6p72vus60pqsd)
+- amount: 1000000
+- native tokens: Some(NativeTokens([]))
+Sending consolidation transaction...
+Transaction sent: 0x245f75cb1b985304ceb022687e5c70ed6a936d667258015303e3f7f9ec285bbf
+Transaction included: https://explorer.shimmer.network/testnet/block/0x5c06b0d2a16e22a54ca2f976a12d56515b58f8310c77de724b8d03dc4f862180
+Account synced
+Outputs AFTER consolidation:
+OUTPUT #0
+- address: Bech32Address(rms1qr58umklvtqa4yxxwmskgzyhx2axfe5tfvunu5gauqu9sns7ava3u3kehwq)
+- amount: 1000000000
+- native tokens: Some(NativeTokens([]))
+```
+
+</TabItem>
+<TabItem value="typescript-node" label="Typescript (Node.js)">
+
+```plaintext
+Account synced
+Outputs BEFORE consolidation:
+OUTPUT #0
+- address: rms1qr58umklvtqa4yxxwmskgzyhx2axfe5tfvunu5gauqu9sns7ava3u3kehwq
+- amount: 1000000
+- native tokens: undefined
+OUTPUT #1
+- address: rms1qr58umklvtqa4yxxwmskgzyhx2axfe5tfvunu5gauqu9sns7ava3u3kehwq
+- amount: 998000000
+- native tokens: undefined
+OUTPUT #2
+- address: rms1qz7652a7c7s9pcur04x7jlmmnyfq8mpxgahmz50tzqutmv6p72vus60pqsd
+- amount: 1000000
+- native tokens: undefined
+Sending consolidation transaction...
+Transaction sent: 0x245f75cb1b985304ceb022687e5c70ed6a936d667258015303e3f7f9ec285bbf
+Transaction included: https://explorer.shimmer.network/testnet/block/0x5c06b0d2a16e22a54ca2f976a12d56515b58f8310c77de724b8d03dc4f862180
+Account synced
+Outputs AFTER consolidation:
+OUTPUT #0
+- address: rms1qr58umklvtqa4yxxwmskgzyhx2axfe5tfvunu5gauqu9sns7ava3u3kehwq
+- amount: 1000000000
+- native tokens: undefined
+```
+
+</TabItem>
+<TabItem value="python" label="Python">
+
+```plaintext
+Account synced
+Outputs BEFORE consolidation:
+OUTPUT #0
+- address: rms1qr58umklvtqa4yxxwmskgzyhx2axfe5tfvunu5gauqu9sns7ava3u3kehwq
+- amount: 1000000
+- native tokens: None
+OUTPUT #1
+- address: rms1qr58umklvtqa4yxxwmskgzyhx2axfe5tfvunu5gauqu9sns7ava3u3kehwq
+- amount: 998000000
+- native tokens: None
+OUTPUT #2
+- address: rms1qz7652a7c7s9pcur04x7jlmmnyfq8mpxgahmz50tzqutmv6p72vus60pqsd
+- amount: 1000000
+- native tokens: None
+Sending consolidation transaction...
+Transaction sent: 0x245f75cb1b985304ceb022687e5c70ed6a936d667258015303e3f7f9ec285bbf
+Transaction included: https://explorer.shimmer.network/testnet/block/0x5c06b0d2a16e22a54ca2f976a12d56515b58f8310c77de724b8d03dc4f862180
+Account synced
+Outputs AFTER consolidation:
+OUTPUT #0
+- address: rms1qr58umklvtqa4yxxwmskgzyhx2axfe5tfvunu5gauqu9sns7ava3u3kehwq
+- amount: 1000000000
+- native tokens: None
+```
+
+</TabItem>
+</Tabs>

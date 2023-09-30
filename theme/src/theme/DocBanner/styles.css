@@ -1,0 +1,7 @@
+.doc-banner p {
+  margin: 0;
+}
+
+.doc-banner p + p {
+  margin: var(--ifm-paragraph-margin-bottom) 0 0;
+}

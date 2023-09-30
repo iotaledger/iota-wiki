@@ -1,0 +1,206 @@
+---
+title: Mint an NFT
+description: 'How to mint an NFT'
+image: /img/logo/iota_mark_light.png
+keywords:
+  - how to
+  - mint
+  - nft
+  - nodejs
+  - python
+  - rust
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+Minting an [NFT](/learn/protocols/stardust/core-concepts/multi-asset-ledger#non-fungible-tokens-nfts)
+refers to creating a unique and indivisible digital asset on [the Tangle](/get-started/introduction/iota/introduction#the-tangle).
+When you mint an NFT, you usually associate a digital file, such as artwork, music, or video, with a specific token on
+the Tangle, establishing its authenticity, ownership, and uniqueness. This is done by assigning
+[metadata](/learn/protocols/stardust/core-concepts/output-features#metadata)
+to the NFT, including details about the creator
+(or [issuer](/learn/protocols/stardust/core-concepts/output-features#issuer)), the asset's
+description, and any additional information relevant to its value or characteristics.
+
+## Example Code
+
+<Tabs groupId="language" queryString>
+<TabItem value="rust" label="Rust">
+
+1. Instantiate a [`Wallet`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/core/struct.Wallet.html), get Alice's `Account` which was
+   [created in the first guide](../accounts-and-addresses/create-account.mdx) and [sync it](../accounts-and-addresses/check-balance.mdx).
+2. Define the `sender_address` as the first [`Address`](https://docs.rs/iota-sdk/latest/iota_sdk/types/block/address/enum.Address.html)
+   in the [`Account`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/account/struct.Account.html).
+
+<div className={'hide-code-block-extras'}>
+
+```rust reference
+https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/nfts/mint_nft.rs#L53
+```
+
+</div>
+
+3. Create a new [`MintNftParams`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/struct.MintNftParams.html) and set its
+   values. Note that these include setting the [sender](/learn/protocols/stardust/core-concepts/output-features#sender)
+   and the [issuer](/learn/protocols/stardust/core-concepts/output-features#issuer).
+
+<div className={'hide-code-block-extras'}>
+
+```rust reference
+https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/nfts/mint_nft.rs#L60-L66
+```
+
+</div>
+
+4. Mint the NFTs using the [`Account.mint_nfts()`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/account/struct.Account.html#method.mint_nfts)
+   function.
+
+<div className={'hide-code-block-extras'}>
+
+```rust reference
+https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/nfts/mint_nft.rs#L68
+```
+
+</div>
+
+5. Build the outputs for the transaction to mint another NFT using the [`NftOutputBuilder`](https://docs.rs/iota-sdk/latest/iota_sdk/types/block/output/nft/struct.NftOutputBuilder.html).
+
+<div className={'hide-code-block-extras'}>
+
+```rust reference
+https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/nfts/mint_nft.rs#L84-L91
+```
+
+</div>
+
+6. Send the transaction using the [`Account.send_outputs()`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/account/struct.Account.html#method.send_outputs)
+   function.
+
+<div className={'hide-code-block-extras'}>
+
+```rust reference
+https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/nfts/mint_nft.rs#L93
+```
+
+</div>
+
+</TabItem>
+<TabItem value="typescript-node" label="Typescript (Node.js)">
+
+1. Instantiate a [`Wallet`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/core/struct.Wallet.html), get Alice's `Account` which was
+   [created in the first guide](../accounts-and-addresses/create-account.mdx) and [sync it](../accounts-and-addresses/check-balance.mdx).
+2. Define the `senderAddress` as the first [`Address`](../../references/nodejs/classes/Address.md)
+   in the [`Account`](../../references/nodejs/classes/Account.md).
+
+<div className={'hide-code-block-extras'}>
+
+```typescript reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/nfts/mint_nft.ts#L50
+```
+
+</div>
+
+3. Create a new [`MintNftParams`](../../references/nodejs/interfaces/MintNftParams.md) and set its
+   values. Note that these include setting the [sender](/learn/protocols/stardust/core-concepts/output-features#sender)
+   and the [issuer](/learn/protocols/stardust/core-concepts/output-features#issuer).
+
+<div className={'hide-code-block-extras'}>
+
+```typescript reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/nfts/mint_nft.ts#L55-L62
+```
+
+</div>
+
+4. Prepare the transaction that will mint the NFTs using the [`Account.prepareMintNfts()`](../../references/nodejs/classes/Account.md#preparemintnfts)
+   function and send the prepared transaction using the [`Account.send()`](../../references/nodejs/classes/Account.md#send)
+   function.
+
+<div className={'hide-code-block-extras'}>
+
+```typescript reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/nfts/mint_nft.ts#L63-L65
+```
+
+</div>
+
+6. Build the outputs for the transaction to mint another NFT using the [`Client.buildNftOutput()`](../../references/nodejs/classes/Client.md#buildnftoutput)
+   function and send the transaction using the [`Account.sendOutputs()`](../../references/nodejs/classes/Account.md#sendoutputs) function.
+
+<div className={'hide-code-block-extras'}>
+
+```typescript reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/nfts/mint_nft.ts#L82-L96
+```
+
+</div>
+
+</TabItem>
+<TabItem value="python" label="Python">
+
+The following example will:
+
+1. Instantiate a [`Wallet`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/core/struct.Wallet.html), get Alice's `Account` which was
+   [created in the first guide](../accounts-and-addresses/create-account.mdx) and [sync it](../accounts-and-addresses/check-balance.mdx).
+2. Create a new `MintNftParams` and set its values.
+
+<div className={'hide-code-block-extras'}>
+
+```python reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how_tos/nfts/mint_nft.py#L21-L23
+```
+
+</div>
+
+2. Prepare the transaction that will mint the NFT using the [`Account.prepare_mint_nfts()`](../../references/python/iota_sdk/wallet/account.md#prepare_mint_nfts)
+   function and send the prepared transaction using the [`Account.send()`](../../references/python/iota_sdk/wallet/account.md#send)
+   function.
+
+<div className={'hide-code-block-extras'}>
+
+```python reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how_tos/nfts/mint_nft.py#L25
+```
+
+</div>
+
+</TabItem>
+</Tabs>
+
+## Full Example Code
+
+<Tabs groupId="language" queryString>
+<TabItem value="rust" label="Rust">
+
+```rust reference
+https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/nfts/mint_nft.rs
+```
+
+</TabItem>
+<TabItem value="typescript-node" label="Typescript (Node.js)">
+
+```typescript reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/nfts/mint_nft.ts
+```
+
+</TabItem>
+<TabItem value="python" label="Python">
+
+```python reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how_tos/nfts/mint_nft.py
+```
+
+</TabItem>
+</Tabs>
+
+### Expected Output
+
+```bash
+Transaction sent: 0x4890a22c8c06a55d0e28b00d7a684c2a25479ae02b644824a5930ff059418280
+Block included: https://explorer.shimmer.network/testnet/block/0xa7e1459879b7a4114b505ad2c5c67bf62b98b13a5ba530018c928530af873c3b
+Minted NFT 1
+Transaction sent: 0x308078cfd811fb99621e51791a431c6a306a077aceb99df6409188c61a27f372
+Block included: https://explorer.shimmer.network/testnet/block/0xa020b148abdeeb94256e4f78dd4e3d623420fd233e0bbf7c20f64fd53d4f4b8d
+Minted NFT 2
+```

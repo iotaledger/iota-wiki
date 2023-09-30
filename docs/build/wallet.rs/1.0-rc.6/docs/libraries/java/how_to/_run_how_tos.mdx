@@ -1,0 +1,30 @@
+## Prerequisites
+
+Before you can run the examples, please refer to the [Java Getting Started guide](./../../../getting_started/java.mdx) to install
+the library
+
+### Set Up Your .env file
+
+The code examples use a `.env` file to store variables. You can download
+the [example file](https://github.com/iotaledger/wallet.rs/blob/develop/wallet/.env.example) or create a new one with
+the following variables:
+
+```dotenv reference
+https://github.com/iotaledger/wallet.rs/tree/develop/wallet/.env.example
+```
+
+The `.env.example` uses public [Shimmer Beta](/build/networks-endpoints#public-testnet)
+URLS. If you want to use another node, you should update the `NODE_URL` and `FAUCET_URL` values to match the
+[Hornet node](#hornet-node) you want to use.
+
+## Run Code Examples
+
+The IOTA Wallet Java library has numerous [examples](https://github.com/iotaledger/wallet.rs/tree/develop/wallet/bindings/java/examples/src)
+you can run to get acquainted with the library. You can run any example with the following
+command from the `examples` directory:
+
+```bash
+.././gradlew run -Pexample=CreateAccount
+```
+
+To run another example of your choice, replace `CreateAccount` with the name of any other example from the [Java examples directory](https://github.com/iotaledger/wallet.rs/tree/develop/wallet/bindings/java/examples/src).

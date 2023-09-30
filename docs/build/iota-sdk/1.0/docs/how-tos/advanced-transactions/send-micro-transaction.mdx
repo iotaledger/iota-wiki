@@ -1,0 +1,127 @@
+---
+title: Send a Micro Transaction
+description: 'How to send a microtransaction'
+image: /img/logo/iota_mark_light.png
+keywords:
+  - how to
+  - micro-transaction
+  - send micro-transaction
+  - microtransaction
+  - send microtransaction
+  - nodejs
+  - python
+  - rust
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import TipFaucet from '../../_admonitions/_tip-faucet.md';
+
+Any transaction with an amount that is below the minimum
+[storage deposit](/learn/protocols/stardust/core-concepts/storage-deposit) is considered a
+microtransaction.
+
+The IOTA SDK has a convenient
+[`TransactionOption`](../../references/nodejs/interfaces/TransactionOptions.md#allowmicroamount)
+called [`allowMicroAmount`](../../references/nodejs/interfaces/TransactionOptions.md#allowmicroamount) to help you easily
+send a microtransaction.
+
+<TipFaucet />
+
+## Example Code
+
+<Tabs groupId="language" queryString>
+
+<TabItem value="rust" label="Rust">
+
+The following example will:
+
+1. Instantiate a [`Wallet`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/core/struct.Wallet.html), get Alice's `Account` which was
+   [created in the first guide](../accounts-and-addresses/create-account.mdx) and [sync it](../accounts-and-addresses/check-balance.mdx).
+2. Send a micro transaction using the
+   [`Account.send()`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/account/struct.Account.html#method.send) function with
+   the [`TransactionOption::allow_micro_amount`](../../references/nodejs/interfaces/TransactionOptions.md#allowmicroamount)
+   set as `true`.
+
+<div className={'hide-code-block-extras'}>
+
+```rust reference
+https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/advanced_transactions/send_micro_transaction.rs#L46-L55
+```
+
+</div>
+
+</TabItem>
+<TabItem value="typescript-node" label="Typescript (Node.js)">
+
+The following example will:
+
+1. Instantiate a [`Wallet`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/core/struct.Wallet.html), get Alice's `Account` which was
+   [created in the first guide](../accounts-and-addresses/create-account.mdx) and [sync it](../accounts-and-addresses/check-balance.mdx).
+2. Send a micro transaction using the
+   [`Account.send()` function](../../references/nodejs/classes/Account.md#send) with
+   the [`TransactionOption:allowMicroAmount`](../../references/nodejs/interfaces/TransactionOptions.md#allowmicroamount) set as `true`.
+
+<div className={'hide-code-block-extras'}>
+
+```typescript reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/advanced_transactions/send_micro_transaction.ts#L36-L38
+```
+
+</div>
+
+</TabItem>
+<TabItem value="python" label="Python">
+
+The following example will:
+
+1. Instantiate a [`Wallet`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/core/struct.Wallet.html), get Alice's `Account` which was
+   [created in the first guide](../accounts-and-addresses/create-account.mdx) and [sync it](../accounts-and-addresses/check-balance.mdx).
+2. Send a micro transaction using the
+   [`Account.send()` function](../../references/python/iota_sdk/wallet/account.md#send) with
+   the [`TransactionOption:allowMicroAmount`](../../references/python/iota_sdk/types/transaction_options.md) set as `true`.
+
+<div className={'hide-code-block-extras'}>
+
+```python reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how_tos/advanced_transactions/send_micro_transaction.py#L21-L26
+```
+
+</div>
+
+</TabItem>
+
+</Tabs>
+
+### Full Example Code
+
+<Tabs groupId="language" queryString>
+<TabItem value="rust" label="Rust">
+
+```rust reference
+https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/advanced_transactions/send_micro_transaction.rs
+```
+
+</TabItem>
+<TabItem value="typescript-node" label="Typescript (Node.js)">
+
+```typescript reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/advanced_transactions/send_micro_transaction.ts
+```
+
+</TabItem>
+<TabItem value="python" label="Python">
+
+```python reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how_tos/advanced_transactions/send_micro_transaction.py
+```
+
+</TabItem>
+</Tabs>
+
+### Expected Output
+
+```plaintext
+Transaction sent: 0x4f04a922dcac8d22b95f1edb269a0aee056f2fa11bbcf0cbb408f937480e8119
+Block included: https://explorer.shimmer.network/testnet/block/0xb7134950c962b88d280589e9431dcb70527c4cb72cb640e614c896643180007a
+```

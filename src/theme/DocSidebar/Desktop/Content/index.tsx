@@ -1,7 +1,8 @@
 /**
- * SWIZZLED VERSION: 2.0.0-rc.1
+ * SWIZZLED VERSION: 2.4.1
  * REASONS:
- *  - Add version picker.
+ *  - Add switcher.
+ *  - Add static sidebar logic.
  */
 
 import React, { useState } from 'react';
@@ -11,11 +12,13 @@ import {
   useAnnouncementBar,
   useScrollPosition,
 } from '@docusaurus/theme-common/internal';
+import { translate } from '@docusaurus/Translate';
 import DocSidebarItems from '@theme/DocSidebarItems';
 import type { Props } from '@theme/DocSidebar/Desktop/Content';
-import VersionPicker from '@site/src/common/components/VersionPicker';
+import Switcher from '@site/src/components/Switcher';
 
 import styles from './styles.module.css';
+import useSwitcher from '@site/src/utils/useSwitcher';
 
 function useShowAnnouncementBar() {
   const { isActive } = useAnnouncementBar();
@@ -34,13 +37,18 @@ function useShowAnnouncementBar() {
 
 export default function DocSidebarDesktopContent({
   path,
-  sidebar,
   className,
 }: Props): JSX.Element {
   const showAnnouncementBar = useShowAnnouncementBar();
+  const { before, switcher, main, after } = useSwitcher();
 
   return (
     <nav
+      aria-label={translate({
+        id: 'theme.docs.sidebar.navAriaLabel',
+        message: 'Docs sidebar',
+        description: 'The ARIA label for the sidebar navigation',
+      })}
       className={clsx(
         'menu thin-scrollbar',
         styles.menu,
@@ -48,9 +56,13 @@ export default function DocSidebarDesktopContent({
         className,
       )}
     >
-      <VersionPicker />
       <ul className={clsx(ThemeClassNames.docs.docSidebarMenu, 'menu__list')}>
-        <DocSidebarItems items={sidebar} activePath={path} level={1} />
+        {before && (
+          <DocSidebarItems items={before} activePath={path} level={1} />
+        )}
+        {switcher && <Switcher {...switcher} />}
+        {main && <DocSidebarItems items={main} activePath={path} level={1} />}
+        {after && <DocSidebarItems items={after} activePath={path} level={1} />}
       </ul>
     </nav>
   );
