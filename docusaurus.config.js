@@ -5,6 +5,11 @@ const common = require('./common/docusaurus.config');
 const contentConfigs = require('./contentPlugins');
 const articleRedirectsFile = require('./articleRedirects');
 const switcherConfig = require('./switcherConfig');
+const {
+  buildPluginsConfig,
+  maintainPluginsConfig,
+} = require('./versionedConfig');
+const { createMainVersionRedirects } = require('./src/utils/pluginConfigGenerators');
 
 module.exports = async () => {
   const contentPlugins = await Promise.all(
@@ -12,6 +17,10 @@ module.exports = async () => {
       await contentConfigs()
     ).map(async (contentConfig) => await create_doc_plugin(contentConfig)),
   );
+
+
+  const buildMainVersionRedirects = createMainVersionRedirects(buildPluginsConfig);
+  const maintainMainVersionRedirects = createMainVersionRedirects(maintainPluginsConfig);
 
   // Get tutorials
   const additionalPlugins = await glob(['tutorials']);
@@ -281,6 +290,9 @@ module.exports = async () => {
             // directory redirects - only added for directories that didn't have a direct match
             createRedirects(existingPath) {
               const redirects = [
+                // Version redirects are only used to asign paths with the actual version to the "current" version
+                ...buildMainVersionRedirects,
+                ...maintainMainVersionRedirects,
                 {
                   from: '/develop/nodes/rest-api',
                   to: '/apis/core/v1',
@@ -374,16 +386,6 @@ module.exports = async () => {
                   to: '/learn/governance/',
                 },
               ];
-
-              // Version redirects are only used to asign path with the actual version it to the "current" version
-              const versionRedirects = [
-                {
-                  from: '/identity.rs/0.6',
-                  to: '/identity.rs',
-                },
-              ];
-
-              redirects.push(...versionRedirects);
 
               for (const redirect of redirects) {
                 if (existingPath.includes(redirect.to)) {
