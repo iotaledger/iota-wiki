@@ -75,7 +75,7 @@ export class Check extends Command {
       engine(
         {
           processor: remark(),
-          files: pluginPaths,
+          files: [pluginPaths[0]],
           extensions: ['md', 'mdx'],
           plugins: [RemarkLinkVisitor],
           silent: true,
