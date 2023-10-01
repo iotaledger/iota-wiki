@@ -2753,7 +2753,7 @@ __metadata:
     "@saucelabs/theme-github-codeblock": ^0.2.3
     "@svgr/webpack": ^5.5.0
     "@tsconfig/docusaurus": ^1.0.6
-    "@types/react": 18.2.22
+    "@types/react": 18.2.24
     "@types/react-dom": 18.2.7
     "@types/webpack-env": ^1.16.3
     "@typescript-eslint/eslint-plugin": ^5.9.1
@@ -2824,7 +2824,7 @@ __metadata:
     "@docusaurus/types": 2.4.1
     "@iota-wiki/plugin-docs": "workspace:^"
     "@metamask/providers": ^10.2.1
-    "@types/react": 18.2.22
+    "@types/react": 18.2.24
     clsx: ^1.2.1
     copyfiles: ^2.4.1
     html-react-parser: ^4.0.0
@@ -5032,14 +5032,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react@npm:18.2.22":
-  version: 18.2.22
-  resolution: "@types/react@npm:18.2.22"
+"@types/react@npm:18.2.24":
+  version: 18.2.24
+  resolution: "@types/react@npm:18.2.24"
   dependencies:
     "@types/prop-types": "*"
     "@types/scheduler": "*"
     csstype: ^3.0.2
-  checksum: 44289523dabaadcd3fd85689abb98f9ebcc8492d7e978348d1c986138acef4801030b279e89a19e38a6319e294bcea77559e37e0c803e4bacf2b8ae3a56ba587
+  checksum: ea5d8204e71b1c9c6631f429a93f8e7be0614cdbdb464e92b3181bdccd8a7c45e30ded8b13da726684b6393f651317c36d54832e3d3cdea0da480a3f26268909
   languageName: node
   linkType: hard
 
