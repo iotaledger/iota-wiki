@@ -150,8 +150,8 @@ export class Check extends Command {
       `alive: ${segragatedResults.alive.length}, dead: ${segragatedResults.dead.length}, error: ${segragatedResults.error.length}`,
     );
 
-    console.log(
-      `dead: ${segragatedResults.dead}`,
+    console.error(
+      `${JSON.stringify(segragatedResults.dead, null, 4)}`,
     );
 
     console.timeEnd('check');
