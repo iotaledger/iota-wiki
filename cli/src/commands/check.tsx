@@ -146,17 +146,16 @@ export class Check extends Command {
       dead: results.filter(({ status }) => status === 'dead'),
     };
 
-    await writeFile(
-      'url.report.json',
-      JSON.stringify(segragatedResults, null, 2),
-    );
-
     console.log(
       `alive: ${segragatedResults.alive.length}, dead: ${segragatedResults.dead.length}, error: ${segragatedResults.error.length}`,
     );
 
+    console.log(
+      `dead: ${segragatedResults.dead}`,
+    );
+
     console.timeEnd('check');
 
-    return result;
+    return segragatedResults.dead.length > 0 ? 1 : 0;
   }
 }
