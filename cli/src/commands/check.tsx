@@ -146,9 +146,7 @@ export class Check extends Command {
       dead: results.filter(({ status }) => status === 'dead'),
     };
 
-    console.error(
-      `${JSON.stringify(segragatedResults.dead, null, 4)}`,
-    );
+    console.error(`${JSON.stringify(segragatedResults.dead, null, 4)}`);
 
     console.log(
       `alive: ${segragatedResults.alive.length}, dead: ${segragatedResults.dead.length}, error: ${segragatedResults.error.length}`,

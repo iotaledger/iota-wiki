@@ -43,4 +43,3 @@ jobs:
               title: 'Fix broken links',
               body: `The following links are possibly broken:\n${output}`,
             });
-      
