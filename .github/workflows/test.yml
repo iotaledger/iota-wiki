@@ -22,11 +22,7 @@ jobs:
       # - name: Build Cli
       #   run: cd cli && yarn && yarn build && cd ..
       # - name: Lint IOTA Markdown
-      #   run: yarn lint:md:check:iota
-      # - name: Lint Shimmer Markdown
-      #   run: yarn lint:md:check:shimmer
-      # - name: Lint Next Markdown
-      #   run: yarn lint:md:check:next
+      #   run: yarn lint:md:check
       - name: Format Wiki
         run: yarn format:check
   build:
