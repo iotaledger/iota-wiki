@@ -12,6 +12,9 @@ keywords:
   - how to
 ---
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 # Install HORNET using Docker
 
 ![HORNET Node using Docker](/img/banner/banner_hornet_using_docker.png)
@@ -65,8 +68,8 @@ Once you have completed all the installation [requirements](#requirements), you 
 ```sh
 mkdir hornet
 cd hornet
-curl -L -O "https://github.com/iotaledger/node-docker-setup/releases/download/v1.0.0-rc.2/node-docker-setup-v1.0.0-rc.2.tar.gz"
-tar -zxf node-docker-setup-v1.0.0-rc.2.tar.gz
+curl -L -O "https://github.com/iotaledger/node-docker-setup/releases/download/v1.0.0-rc.16/node-docker-setup-v1.0.0-rc.16.tar.gz"
+tar -zxf node-docker-setup-v1.0.0-rc.16.tar.gz
 ```
 
 ## Prepare
@@ -81,7 +84,8 @@ The commands assume you are using Linux.
 
 You can configure your node to either use HTTP or HTTPS. For publicly exposed nodes we heavily recommend using HTTPS.
 
-#### 1.1 HTTPS
+<Tabs queryString="protocol">
+<TabItem value="https" label="HTTPS">
 
 Create a file named `.env` add the following to the file:
 
@@ -96,7 +100,8 @@ NODE_HOST=node.your-domain.com
 - Replace `your-email@example.com` with the e-mail used for issuing a [Let's Encrypt](https://letsencrypt.org) SSL certificate.
 - Replace `node.your-domain.com` with the domain pointing to your public IP address as described in the [requirements](#requirements).
 
-#### 1.2 HTTP
+</TabItem>
+<TabItem value="http" label="HTTP">
 
 By default this setup will expose the Traefik reverse proxy on the default HTTP port `80`.
 If you want to change the port to a different value you can create a file named `.env` and add the following to e.g. expose it over port `9000`:
@@ -115,6 +120,9 @@ You don’t need `COMPOSE_FILE` and `ACME_EMAIL` for HTTP. You can remove them f
 
 NODE_HOST=your-external-ip-address
 ```
+
+</TabItem>
+</Tabs>
 
 ### 2. Setup neighbors
 
