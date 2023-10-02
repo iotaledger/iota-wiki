@@ -146,12 +146,12 @@ export class Check extends Command {
       dead: results.filter(({ status }) => status === 'dead'),
     };
 
-    console.log(
-      `alive: ${segragatedResults.alive.length}, dead: ${segragatedResults.dead.length}, error: ${segragatedResults.error.length}`,
-    );
-
     console.error(
       `${JSON.stringify(segragatedResults.dead, null, 4)}`,
+    );
+
+    console.log(
+      `alive: ${segragatedResults.alive.length}, dead: ${segragatedResults.dead.length}, error: ${segragatedResults.error.length}`,
     );
 
     console.timeEnd('check');
