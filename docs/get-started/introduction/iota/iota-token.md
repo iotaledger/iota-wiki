@@ -35,7 +35,7 @@ the more common denominations used in the DLT space.
 On the 4th of October 2023, the IOTA Mainnet was upgraded to run under the Stardust protocol. With the upgrade, a
 change in the supply was also executed, where the initial supply of ~2,779,530,283 IOTAs (2,779,530,283,277,761 micros, to be precise) was
 increased to 4,600,000,000 IOTAs (4,600,000,000,000,000 micros), where the additional new supply of
-~1,820,469,713 IOTAs were distributed under the following allocations and unlock schedules:
+~1,820,469,716 IOTAs were distributed under the following allocations and unlock schedules:
 
 | Allocation                   | Percentage | # IOTA Tokens | Unlock Schedule                                      |
 | ---------------------------- | ---------- | ------------- | ---------------------------------------------------- |
