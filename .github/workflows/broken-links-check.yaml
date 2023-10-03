@@ -1,0 +1,45 @@
+name: check-links
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 0 * * 1'
+
+jobs:
+  check-links:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          cache: 'yarn'
+      - name: Allow modern Yarn
+        run: |
+          corepack enable
+      - name: Install dependencies
+        run: |
+          yarn
+      - name: Install cli
+        run: cd cli && yarn && yarn build && cd ..
+      - name: Check Links
+        id: check-links
+        # Run link checker and save outputs to files. https://stackoverflow.com/a/692407
+        run: |
+          yarn lint:links > >(tee -a stdout.txt) 2> >(tee -a stderr.txt >&2)
+      - name: Create issue
+        uses: actions/github-script@v6.4.0
+        if: always() && steps.check-links.outcome == 'failure'
+        with:
+          script: |
+            const fs = require('fs');
+            const input = fs.readFileSync('stderr.txt');
+            const data = JSON.parse(input);
+            const urls = data.map(item => item.url);
+            const output = urls.map(url => `- [ ] ${url}`).join('\n');
+            github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: 'Fix broken links',
+              body: `The following links are possibly broken:\n${output}`,
+            });

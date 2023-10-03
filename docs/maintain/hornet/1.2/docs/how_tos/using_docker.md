@@ -12,6 +12,9 @@ keywords:
   - how to
 ---
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 # Install Hornet using Docker
 
 ![Hornet Node using Docker](/img/banner/banner_hornet_using_docker.png)
@@ -62,7 +65,8 @@ tar -zxf node-docker-setup_chrysalis-v1.0.0-rc.16.tar.gz
 
 You can configure your node to either use HTTP or HTTPS. For publicly exposed nodes we heavily recommend using HTTPS.
 
-#### 1.1 HTTPS
+<Tabs queryString="protocol">
+<TabItem value="https" label="HTTPS">
 
 Create a file named `.env` add the following to the file:
 
@@ -77,7 +81,8 @@ NODE_HOST=node.your-domain.com
 - Replace `your-email@example.com` with the e-mail used for issuing a [Let's Encrypt](https://letsencrypt.org) SSL certificate.
 - Replace `node.your-domain.com` with the domain pointing to your public IP address as described in the [requirements](#requirements).
 
-#### 1.2 HTTP
+</TabItem>
+<TabItem value="http" label="HTTP">
 
 By default this setup will expose the Traefik reverse proxy on the default HTTP port `80`.
 If you want to change the port to a different value you can create a file named `.env` and add the following to e.g. expose it over port `9000`:
@@ -85,6 +90,9 @@ If you want to change the port to a different value you can create a file named 
 ```
 HTTP_PORT=9000
 ```
+
+</TabItem>
+</Tabs>
 
 ### 2. Setup neighbors
 
