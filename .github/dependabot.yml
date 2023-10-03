@@ -6,6 +6,11 @@ updates:
     schedule:
       interval: 'monthly'
     ignore:
-      - dependency-name: 'fs-extra'
       - dependency-name: '*'
         update-types: ['version-update:semver-major']
+      - dependency-name: '@docusaurus*'
+      - dependency-name: 'eslint*'
+      - dependency-name: 'prettier*'
+      - dependency-name: 'react'
+      - dependency-name: 'react-dom'
+      - dependency-name: 'fs-extra'
