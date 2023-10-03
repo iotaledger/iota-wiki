@@ -20,7 +20,7 @@ jobs:
       - name: Lint Wiki
         run: yarn lint:check
       # - name: Build Cli
-      #   run: cd cli && yarn && yarn build && cd ..
+      #   run: yarn ./cli build
       # - name: Lint IOTA Markdown
       #   run: yarn lint:md:check
       - name: Format Wiki
