@@ -14,6 +14,11 @@ keywords:
 
 # How the IOTA Chrysalis Phase 2 Token Migration Works
 
+:::caution
+Since the launch of the Stardust protocol on the IOTA Mainnet, this mechanism is no longer applied, instead
+the migrations will be facilitated through an L2 solution.
+:::
+
 For the Chrysalis Phase 2 transition, the IOTA Foundation developed a way to migrate funds to the new network. IOTA created this new mechanism because the previous network did not support the WOTS addresses.
 
 Before proceeding into the developed mechanism, below is our reasoning for why other mechanisms were not chosen:

@@ -19,39 +19,38 @@ import { AddToMetaMaskButton, EVMNetworks } from '@theme/AddToMetaMaskButton';
 
 This pages gives an overview around the different networks available in the IOTA ecosystem.
 
+:::info
 In general, all endpoints are load balanced but are also subject to rate limiting.
 If you are developing a production level application for IOTA, consider setting up your own infrastructure in order to
 have more control and to not run into any limits.
+:::
 
 ## IOTA Mainnet
 
 [The IOTA Mainnet](https://explorer.iota.org/mainnet) is the production network within the IOTA ecosystem using the IOTA
 token.
 
-<table>
+<table style={{ wordBreak: 'break-all', verticalAlign: 'middle' }}>
   <tbody>
     <tr>
-      <th>Base Token</th>
-      <th>Protocol</th>
+      <th style={{ width: '150px' }}>Base Token</th>
+      <th style={{ width: '100px' }}>Protocol</th>
       <th>HTTP REST API</th>
       <th>Event API</th>
       <th>Permanode API</th>
-      <th>Faucet</th>
     </tr>
     <tr>
-      <td>IOTA Token</td>
-      <td>
-        <a href='/learn/protocols/chrysalis/introduction/'>Chrysalis</a>
+      <td style={{ textAlign: 'center' }}>IOTA Token</td>
+      <td style={{ textAlign: 'center' }}>
+        <a href='/learn/protocols/stardust/introduction/'>Stardust</a>
       </td>
       <td>
-        <a href='https://chrysalis-nodes.iota.org/api/v1/info'>
-          https://chrysalis-nodes.iota.org
+        <a href='https://api.stardust-mainnet.iotaledger.net/api/v2/info'>
+          https://api.stardust-mainnet.iotaledger.net
         </a>
-        , <a href='https://chrysalis-nodes.iota.cafe/api/v1/info'>https://chrysalis-nodes.iota.cafe</a>
       </td>
-      <td>wss://chrysalis-nodes.iota.org:443 (MQTT 3.1, /mqtt)</td>
-      <td>N/A</td>
-      <td>N/A</td>
+      <td>wss://api.stardust-mainnet.iotaledger.net:443 (MQTT 3.1, /mqtt)</td>
+      <td>https://chronicle.stardust-mainnet.iotaledger.net</td>
     </tr>
   </tbody>
 </table>
@@ -61,18 +60,18 @@ token.
 [Shimmer](https://explorer.iota.org/shimmer) is the staging network for new protocol versions before they hit IOTA
 Mainnet.
 
-<table>
+<table style={{ wordBreak: 'break-all', verticalAlign: 'middle' }}>
   <tbody>
     <tr>
-      <th>Base Token</th>
-      <th>Protocol</th>
+      <th style={{ width: '150px' }}>Base Token</th>
+      <th style={{ width: '100px' }}>Protocol</th>
       <th>HTTP REST API</th>
       <th>Event API</th>
       <th>Permanode API</th>
     </tr>
     <tr>
-      <td>Shimmer Token</td>
-      <td>
+      <td style={{ textAlign: 'center' }}>Shimmer Token</td>
+      <td style={{ textAlign: 'center' }}>
         <a href='/learn/protocols/stardust/introduction/'>Stardust</a>
       </td>
       <td>
@@ -92,24 +91,24 @@ Mainnet.
 
 <AddToMetaMaskButton cfg={EVMNetworks['shimmerevm']} />
 
-<table>
+<table style={{ wordBreak: 'break-all', verticalAlign: 'middle' }}>
   <tbody>
     <tr>
-      <th>Base Token</th>
-      <th>Protocol</th>
+      <th style={{ width: '150px' }}>Base Token</th>
+      <th style={{ width: '120px' }}>Protocol</th>
+      <th style={{ width: '100px' }}>Chain ID</th>
       <th>RPC URL</th>
-      <th>Chain ID</th>
       <th>Explorer</th>
     </tr>
     <tr>
-      <td>Shimmer Token</td>
-      <td>ISC / EVM</td>
+      <td style={{ textAlign: 'center' }}>Shimmer Token</td>
+      <td style={{ textAlign: 'center' }}>ISC / EVM</td>
+      <td style={{ textAlign: 'center' }}>148</td>
       <td>
         <a href='https://json-rpc.evm.shimmer.network'>
           https://json-rpc.evm.shimmer.network
         </a>
       </td>
-      <td>148</td>
       <td>
         <a href='https://explorer.evm.shimmer.network'>
           https://explorer.evm.shimmer.network
@@ -123,19 +122,19 @@ Mainnet.
 
 [The Public Testnet](https://explorer.iota.org/testnet) acts as a test bed for builders without any real world value.
 
-<table>
+<table style={{ wordBreak: 'break-all', verticalAlign: 'middle' }}>
   <tbody>
     <tr>
-      <th>Base Token</th>
-      <th>Protocol</th>
-      <th>HTTP REST API</th>
+      <th style={{ width: '150px' }}>Base Token</th>
+      <th style={{ width: '100px' }}>Protocol</th>
+      <th style={{ width: '200px' }}>HTTP REST API</th>
       <th>Event API</th>
       <th>Permanode API</th>
       <th>Faucet</th>
     </tr>
     <tr>
-      <td>Testnet Tokens (no value)</td>
-      <td>
+      <td style={{ textAlign: 'center' }}>Testnet Tokens (no value)</td>
+      <td style={{ textAlign: 'center' }}>
         <a href='/learn/protocols/stardust/introduction/'>Stardust</a>
       </td>
       <td>
@@ -163,25 +162,25 @@ of the Public Testnet. This network does not run
 any IOTA protocol but instead uses ISC to facilitate an Ethereum Virtual Machine and has an enshrined bridge from to
 layer 1.
 
-<table>
+<table style={{ wordBreak: 'break-all', verticalAlign: 'middle' }}>
   <tbody>
     <tr>
-      <th>Base Token</th>
-      <th>Protocol</th>
+      <th style={{ width: '150px' }}>Base Token</th>
+      <th style={{ width: '150px' }}>Protocol</th>
+      <th style={{ width: '100px' }}>Chain ID</th>
       <th>RPC URL</th>
-      <th>Chain ID</th>
       <th>Faucet</th>
       <th>Explorer</th>
     </tr>
     <tr>
       <td>Testnet Tokens (no value)</td>
       <td>ISC / EVM</td>
+      <td>1072</td>
       <td>
         <a href='https://json-rpc.evm.testnet.shimmer.network'>
           https://json-rpc.evm.testnet.shimmer.network
         </a>
       </td>
-      <td>1072</td>
       <td>
         <a href='https://evm-faucet.testnet.shimmer.network'>
           https://evm-faucet.testnet.shimmer.network
@@ -198,22 +197,26 @@ layer 1.
 
 ## DevNet
 
-[The DevNet](https://explorer.iota.org/legacy-mainnet) is a legacy network running the Chrysalis protocol and is to be
-decommissioned once IOTA Mainnet runs under Stardust.
+:::caution
+This network is going to be decommissioned by the end of 2023,
+consider building on the Public Testnet instead.
+:::
 
-<table>
+[The DevNet](https://explorer.iota.org/legacy-mainnet) is a legacy network running the Chrysalis protocol.
+
+<table style={{ wordBreak: 'break-all', verticalAlign: 'middle' }}>
   <tbody>
     <tr>
-      <th>Base Token</th>
-      <th>Protocol</th>
+      <th style={{ width: '150px' }}>Base Token</th>
+      <th style={{ width: '100px' }}>Protocol</th>
       <th>HTTP REST API</th>
       <th>Event API</th>
       <th>Permanode API</th>
       <th>Faucet</th>
     </tr>
     <tr>
-      <td>Testnet Tokens (no value)</td>
-      <td>
+      <td style={{ textAlign: 'center' }}>Testnet Tokens (no value)</td>
+      <td style={{ textAlign: 'center' }}>
         <a href='/learn/protocols/chrysalis/introduction/'>Chrysalis</a>
       </td>
       <td>
@@ -235,12 +238,12 @@ decommissioned once IOTA Mainnet runs under Stardust.
 
 ## Legacy
 
-The legacy IOTA Mainnet still running for the sole purpose to facilitate token migrations into the IOTA Mainnet.
-See following [page](https://chrysalis.iota.org/status) for a status on the token migration.
-
-:::info Migration Only
-The legacy IOTA Mainnet only allows the creation of migration transactions and can only be used via FireFly.
+:::caution
+With the upgrade of the IOTA Mainnet to the Stardust protocol, migrations have been stopped and will re-commence
+once a new mechanism via an L2 chain is set up.
 :::
+
+The legacy IOTA Mainnet was running for the sole purpose to facilitate token migrations into the IOTA Mainnet.
 
 <table>
   <tbody>
