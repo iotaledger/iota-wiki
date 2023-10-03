@@ -1,9 +1,9 @@
 import { Command, Option } from 'clipanion';
 import path from 'path';
 import visit from 'unist-util-visit';
+import { Node } from 'unist';
 import checkUrl from 'link-check';
 import { parse } from 'node-html-parser';
-import { writeFile } from 'fs/promises';
 
 const buildConfig = require.resolve('../docusaurus/config/build.js');
 const SUPPORTED_PLUGINS = [
@@ -12,6 +12,22 @@ const SUPPORTED_PLUGINS = [
   '@iota-wiki/plugin-docs',
 ];
 const SUPPORTED_PROTOCOLS = ['http:', 'https:'];
+
+interface LinkNode extends Node {
+  url: string;
+}
+
+interface JsxOrHtmlNode extends Node {
+  value: string;
+}
+
+function isLinkNode(node: Node): node is LinkNode {
+  return node.type === 'link';
+}
+
+function isJsxOrHtmlNode(node: Node): node is JsxOrHtmlNode {
+  return node.type === 'jsx' || node.type === 'html';
+}
 
 export class Check extends Command {
   static paths = [[`check`]];
@@ -56,10 +72,8 @@ export class Check extends Command {
     function RemarkLinkVisitor() {
       return async (tree) => {
         visit(tree, (node) => {
-          // @ts-ignore
-          if (node.type === 'link') urls.push(node.url);
-          if (node.type === 'jsx' || node.type === 'html') {
-            // @ts-ignore
+          if (isLinkNode(node)) urls.push(node.url);
+          if (isJsxOrHtmlNode(node)) {
             const element = parse(node.value);
             if (element.tagName === 'a')
               urls.push(element.getAttribute('href'));
@@ -71,7 +85,7 @@ export class Check extends Command {
 
     // The Unified engine that runs the RemarkLinkVisitor plugin on all
     // reachable markdown files.
-    const result = await new Promise<number>((resolve, reject) =>
+    await new Promise<number>((resolve, reject) =>
       engine(
         {
           processor: remark(),
