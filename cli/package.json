@@ -34,6 +34,8 @@
     "ink-spinner": "^4.0.3",
     "ink-text-input": "^4.0.3",
     "isomorphic-git": "^1.17.2",
+    "link-check": "^5.2.0",
+    "node-html-parser": "^6.1.10",
     "prettier": "2.8.8",
     "remark": "^14.0.2",
     "remark-lint-no-dead-urls": "^1.1.0",
