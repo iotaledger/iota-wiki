@@ -63,6 +63,31 @@ function generatePluginConfig(pluginConfig, basePath) {
 }
 
 /**
+ * Generate directs versioned links to the main version.
+ * @param {import('../common/components/Switcher').Doc[]} versionedConfig - An array of versioned plugin configurations.
+ * @returns {Array} - An array of redirects.
+ */
+function createMainVersionRedirects(versionedConfig) {
+  redirects = [];
+  for (const doc of versionedConfig) {
+    if (doc.versions.length > 1) {
+      // Find main version
+      const mainVersion = findMainVersion(doc);
+
+      // TODO: This could be removed once we don't use points in paths anymore.
+      const routeBasePath = doc.routeBasePath ? doc.routeBasePath : doc.id;
+
+      redirects.push({
+        from: '/' + routeBasePath + '/' + mainVersion.label,
+        to: '/' + routeBasePath,
+      });
+    }
+  }
+
+  return redirects;
+}
+
+/**
  * Generate the switcher config from the versioned config.
  * @param {import('../common/components/Switcher').Doc[]} pluginConfig
  */
@@ -89,4 +114,5 @@ function generateSwitcherConfig(pluginConfig) {
 module.exports = {
   generatePluginConfig,
   generateSwitcherConfig,
+  createMainVersionRedirects,
 };
