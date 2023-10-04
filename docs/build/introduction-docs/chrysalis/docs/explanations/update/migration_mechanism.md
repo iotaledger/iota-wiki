@@ -110,4 +110,4 @@ A verifier node is a Chrysalis Phase 2 node which upon seeing receipts:
 2. Then performs WOTS signature verification of the legacy milestone bundle and all confirmed bundles.
 3. Additionally, it also checks that all confirmed funds on the legacy network for the given legacy milestone, are indeed minted with a given batch of receipts (i.e. nothing is left out).
 
-For further reference, you can read the [Hornet as a verifier node](/hornet/how_tos/run_as_a_verifier) page.
+For further reference, you can read the [Hornet as a verifier node](/hornet/1.2/how_tos/run_as_a_verifier) page.
