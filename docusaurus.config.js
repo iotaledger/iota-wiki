@@ -323,7 +323,7 @@ module.exports = async () => {
                 },
                 {
                   from: '/shimmer/hornet',
-                  to: '/hornet/2.0-rc.6',
+                  to: '/hornet/2.0',
                 },
                 {
                   from: '/shimmer/identity.rs',
