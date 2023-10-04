@@ -50,7 +50,7 @@ If you plan to send, mint, or receive tokens, native assets, or NFTs during the 
 
 Because every node in the SMR network knows the status of every UTXO in the Tangle, they can observe and register changes to these UTXOs.
 As soon as a vote transaction is issued and confirmed, the UTXO will hold a piece of attached metadata information.
-Hornet nodes with activated [INX participation plugin](/hornet/2.0-rc.6/inx-plugins/participation/welcome) monitor the ledger for UTXOs that contain this specific metadata.
+Hornet nodes with activated [INX participation plugin](/hornet/2.0/inx-plugins/participation/welcome) monitor the ledger for UTXOs that contain this specific metadata.
 They count all UTXOs that have this metadata for every new milestone in the Tangle and create a database for the counted votes of this event.
 
 This database includes the following information for every milestone:
@@ -113,7 +113,7 @@ Shimmer's voting system builds upon IOTA's [first governance vote in 2022](https
 In contrast to the earlier voting system developed for the IOTA network, this Shimmer version does not rely on the IOTA Foundation to add governance events to the Firefly wallet. Every community member can:
 
 - Create a governance event following the [specifications for participation events](https://github.com/iota-community/treasury/blob/main/specifications/hornet-participation-plugin.md)
-- Add this governance event to a Hornet node with the [INX Participation Plugin](/hornet/2.0-rc.6/inx-plugins/participation/welcome)
+- Add this governance event to a Hornet node with the [INX Participation Plugin](/hornet/2.0/inx-plugins/participation/welcome)
 - Add this governance event to the Shimmer Firefly wallet by connecting Shimmer Firefly to a node that carries this event and use the [“add event”](./shimmer-firefly-governance-guide.md#6-adding-custom-community-proposals-to-firefly) function in the Governance section
 - Vote on this event with SMR tokens
 
