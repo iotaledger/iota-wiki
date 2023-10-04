@@ -223,12 +223,12 @@ exports.maintainPluginsConfig = [
     subsection: 'maintain-layer-1',
     versions: [
       {
-        label: '1.2',
-        badges: ['IOTA'],
+        label: '2.0',
+        badges: ['IOTA/Shimmer'],
       },
       {
-        label: '2.0-rc.6',
-        badges: ['Shimmer'],
+        label: '1.2',
+        badges: ['Deprecated'],
       },
     ],
   },
