@@ -27,7 +27,7 @@ directly with an IOTA Smart Contracts chain running EVM as long as you take a co
 1. Please make sure you use the correct JSON-RPC endpoint URL in your tooling for your chain. You can find the JSON-RPC
    endpoint URL in the Wasp dashboard (`<URL>/wasp/dashboard` when using `node-docker-setup`).
 2. Please ensure you use the correct `Chain ID` configured while starting the JSON-RPC service. If you did not
-   explicitly define this while starting the service, the default Chain ID will be `1074`.
+   explicitly define this while starting the service, the default Chain ID will be `1072`.
 3. Fees are being handled on the IOTA Smart Contracts chain level, not the EVM level. Because of this, you can simply
    use a gas price of 0 on the EVM level at this time.
 
