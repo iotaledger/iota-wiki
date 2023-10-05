@@ -104,7 +104,7 @@ With `nano` you can save your changes and exit the editor using `CTRL+O` and `CT
 
 :::note
 
-You can configure your node to either use HTTP or HTTPS. For publicly exposed nodes we heavily recommend using HTTPS.
+You can configure your node to either use HTTP or HTTPS. For publicly exposed nodes, we heavily recommend using HTTPS.
 
 :::
 
