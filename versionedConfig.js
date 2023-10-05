@@ -81,7 +81,7 @@ exports.buildPluginsConfig = [
         badges: ['IOTA'],
         bannerPath: path.resolve(
           __dirname,
-          'banners/identity-stronghold-migration.mdx',
+          'banners/identity-06-deprecation-migration.mdx',
         ),
       },
       {
