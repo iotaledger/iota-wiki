@@ -99,7 +99,7 @@ We are using `nano` in the following example:
 nano .env
 ```
 
-Follow the instructions provided in the file.<br>
+Follow the instructions provided in the file.  
 With `nano` you can save your changes and exit the editor using `CTRL+O` and `CTRL+X`.
 
 ```sh
