@@ -1,7 +1,6 @@
 import { default as Chronicle } from '@site/static/icons/iota/chronicle.svg';
 import { default as Chrysalis } from '@site/static/icons/iota/chrysalis.svg';
 import { default as GettingStarted } from '@site/static/icons/iota/getting_started.svg';
-import { default as GoShimmer } from '@site/static/icons/iota/go_shimmer.svg';
 import { default as Hornet } from '@site/static/icons/iota/hornet.svg';
 import { default as Identity } from '@site/static/icons/iota/identity.svg';
 import { default as IntegrationServices } from '@site/static/icons/iota/integration_services.svg';
@@ -25,7 +24,6 @@ export default {
   Chronicle,
   Chrysalis,
   GettingStarted,
-  GoShimmer,
   Hornet,
   Identity,
   IntegrationServices,

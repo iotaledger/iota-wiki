@@ -8,7 +8,6 @@ description: Glossary of all specialized names and phrases used in the IOTA and 
 ## A
 
 - **Address Checksum:** Checksum validation is a way to determine if an address is valid and does not contain typos.
-- **Dynamic PoW** (In development for IOTA 1.5 and Shimmer): With this feature, the coordinator can issue a milestone and simultaneously set the future PoW score. This means that if the network is not fully utilized, the PoW will be reduced to the point where it can be executed by microdevices. Accordingly, the coordinator can also raise the PoW difficulty in case of high utilization and thus make an attack very expensive.
 - **Auto peering:** A mechanism that allows nodes to automatically select their neighbors without manual intervention by the node operator.
 - **API(Application Programming Interfaces):** The way for applications to interact with the Tangle.
 - **Atomic Transactions:** Instead of the bundle construct, IOTA and Shimmer use simpler Atomic Transactions. An Atomic Transaction includes everything related to a transaction in a single message instead of splitting it up (Bundles). This reduces network overhead and signature verification load, improves spam protection and rate control, and shortens the length of Merkle proofs (for future sharding). It also reduces implementation overhead and increases maintainability of the core node software.
@@ -22,12 +21,10 @@ description: Glossary of all specialized names and phrases used in the IOTA and 
 - **Balance:** Funds on the addresses (account). These are always available and cannot be deleted or forgotten.
 - **Blockchain Bottleneck:** The more transactions are issued, the more the block rate and size become a bottleneck in the system. It is no longer possible to capture all incoming transactions in a prompt manner. Attempts to speed up block rates result in more orphaned blocks (blocks are left behind) and reduce the security of the blockchain.
 - **Branch (IOTA 2.0):** A version of the ledger that temporarily coexists with other versions, each spawned by conflicting transactions.
-- **Bee:** Node software developed by the IOTA foundation using the Rust programming language.
 - **Bootstrapping attack:** An attack in which a node downloads malicious snapshot files, including invalid transactions and balances.
 
 ## C
 
-- **Curl:** This is one of the hash functions currently in use. It is based on the “sponge” construction of the Keccak inventors (SHA-3).
 - **Confirmed:** Confirmed transactions. Messages in the Tangle are considered for confirmation only when they are directly or indirectly referenced by a milestone that the Coordinator node has validated. To allow the nodes to recognize the milestones, all nodes that participate in the same network are configured with the Merkle root address of a Coordinator that they trust to confirm messages. Using this address, nodes can validate the signatures in milestones to verify whether the trusted Coordinator signs them. To make sure that new messages always have a chance of being confirmed, the Coordinator sends indexed milestones at regular intervals. This way, nodes can compare the indexes of their milestones to check whether they are synchronized with the rest of the network.
 - **CTPS:** Confirmed transactions per second.
 - **Cumulative Weight:** A system for valuing transactions. Each additional transaction that references a transaction increases its cumulative weight. When tips are selected, a path through transactions that has a higher cumulative weight is preferred.
@@ -35,8 +32,6 @@ description: Glossary of all specialized names and phrases used in the IOTA and 
 - **Consensus:** Agreement on a specific date or value in distributed multi-agent systems, in the presence of faulty processes.
 - **Coordinator (only up to IOTA 2.0):** A trusted entity, as protection against malicious transactions. The Tangle is not yet a final product, it is still in beta. The network currently relies on a kind of shield, the so-called coordinator. It is open-source and runs on a Hornet node. The COO acts as a centralized, voluntary, and temporary alternative consensus mechanism for the Tangle. To do this, the COO sends honest transactions to the full nodes at regular intervals. These packets contain a signed message with no value, called a milestone. The full nodes in the Tangle consider a transaction as confirmed only if it is approved by a milestone. Important: The coordinator can only confirm transactions, but he cannot bypass the consensus rules. To create, freeze or steal tokens is not possible for him. This fixed rule and the COO address is hardcoded on each full node, so the coordinator’s influence on the tangle is very limited, since the tangle is also constantly monitored by all the other full nodes. > The Coo will be switched off with the IOTA 2.0 upgrade.
 - **Communication Layer (IOTA 2.0):** This layer stores and communicates information. This layer contains the distributed ledger or tangle. The rate control and timestamps are also located in this layer.
-- **Core Object type (IOTA 2.0):** An object type that must be parsed by all nodes. Parsers are computer programs responsible for decomposing and converting an input into a format more suitable for further processing.
-- **Core Application (IOTA 2.0):** Core application that must be executed by all nodes, for example the value transfer application.
 - **Child (IOTA 2.0):** A transaction that gets referenced by Parents.
 - **Chrysalis:** The name of the IOTA 1.5 network upgrade.
 - **Stardust:** The name of the first Shimmer network upgrade.
@@ -65,24 +60,20 @@ description: Glossary of all specialized names and phrases used in the IOTA and 
 - **Faucet:** A pool of tokens (funds). Upon uncomplicated request, one gets a limited number of tokens for testing, especially for developers of own apps this is a great help.
 - **Firefly:** Firefly is a wallet, intended to serve as a platform for the current and future IOTA and Shimmer ecosystem.
 - **Finality:** The property that once a transaction has been completed, there is no way to reverse or change it. This is the moment when the parties involved in a transfer can consider the transaction completed. Finality can be deterministic or probabilistic.
-- **Full nodes (Hornet, Bee):** They form the core (infrastructure) of the network. In order to participate in the peer-to-peer network, the full node must always be online and connected to neighbors (other full nodes). In addition, the transaction database must be synchronized with all other full nodes in the network. The role of full nodes is to interact with clients (wallets, DApps, etc.) and attach their transactions to the ledger, make transactions known to all other full nodes in the network, validate transactions and store them in the ledger.
+- **Full nodes (Hornet):** They form the core (infrastructure) of the network. In order to participate in the peer-to-peer network, the full node must always be online and connected to neighbors (other full nodes). In addition, the transaction database must be synchronized with all other full nodes in the network. The role of full nodes is to interact with clients (wallets, DApps, etc.) and attach their transactions to the ledger, make transactions known to all other full nodes in the network, validate transactions and store them in the ledger.
 - **Future Cone:** All messages that directly or indirectly reference a message are called its future cone.
 - **Fork:** In IT, this is a new development branch after a project is split into a second follow-on project; the source code or parts of it are developed independently of the original parent project.
-- **FPC(Fast Probabilistic Consensus):** Consensus that uses a random number and node opinions to reach consensus. In On-Tangle Voting, it is only used in a specific edge case. Check out OTVFPCS.
 
 ## G
 
 - **Genesis transaction:** The Genesis transaction is the first transaction that created all IOTA and Shimmer tokens and distributed them to the addresses of the buyers.
-- **GoShimmer (No Main net):** Prototype of the coordinator less version of IOTA written in the Go programming language. GoShimmer implements the various modules of Coordicide, such as auto peering, node identities, Mana, etc. GoShimmer serves as a test environment for the first alpha version and the test network. Everything tested here will be gradually merged with Hornet and Bee.
-- **Generic Data Object (IOTA 2.0):** The most basic object type. All unrecognized data objects are defined this way.
 
 ## H
 
 - **History:** The list of transactions that were directly or indirectly authorized by a particular transaction.
 - **Hash values:** Checksums that are applied to the encryption of messages of variable length. Hash values are like fingerprints of a very long data set. Each message is assigned a very specific hash value.
 - **Hooks:** An interface that allows foreign program code to be integrated into an existing application to extend it, change its flow, or intercept certain events.
-- **Hornet Node (IOTA 1.5):** Community-developed IOTA Node written in the Go programming language. In addition, the coordinator also runs as a plugin via Hornet.
-- **Hornet Node (Shimmer):** Shimmer Node written in the Go programming language. In addition, the coordinator also runs as a plugin via Hornet.
+- **Hornet Node:** Node software written in the Go programming language.
 
 ## I
 
@@ -119,7 +110,6 @@ description: Glossary of all specialized names and phrases used in the IOTA and 
 - **Object (IOTA 2.0):** the most basic unit of information in the IOTA protocol. Each object has a type and size and contains data.
 - **Oracles:** Oracles are designed to build a secure bridge between the digital and physical worlds in a decentralized, permissionless way. They bring off-chain data to decentralized applications and smart contracts on the network.
 - **OTV (IOTA 2.0):** On Tangle Voting is the official name for the multiverse consensus described by Hans Moog. It is a new consensus mechanism that allows nodes to vote on conflicts directly by publishing a message to the tangle.
-- **OTVFPCS (IOTA 2.0):** On Tangle Voting with FPCS (Fast Probabilistic Consensus on a Set) is a mechanism for breaking metastability, which can be used in addition to OTV (On Tangle Voting). Generally, in IOTA2.0, reaching a high approval weight is the finality criteria. If the approval weight is high enough, the message / transaction is finalized. With OTVFPC the initial opinion is created with OTV, if after some time the opinions of the nodes are still split, for whatever reason, FPC is activated to break this metastable state. The finality of value transactions should be reached faster this way.
 
 ## P
 
@@ -133,7 +123,6 @@ description: Glossary of all specialized names and phrases used in the IOTA and 
 - **Peer to Peer Network:** A decentralized network of different network nodes that are connected to each other and exchange data.
 - **Peering:** The process of discovering and connecting to other network nodes.
 - **Payload (IOTA 2.0):** A field in a message that determines the type. Examples are value payload (TransactionType type), FPC opinion payload (StatementType type), dRNG payload (Payload), Salt declaration payload, generic data payload.
-- **Private Tangle:** A private tangle is comparable to a test network under complete control of the operator. This allows companies and developers to test their applications under self-defined environment variables without external influences and protected from prying eyes. There is no interoperability between a private Tangle and the IOTA or Shimmer Tangle. So, sending from one to the other does not work either. Each private Tangle is an independent network with its own nodes, tokens, and coordinator.
 - **Proof of Work (PoW):** A time-consuming (expensive) mathematical calculation that uses computational power to prevent spam attacks. It consists of a difficult cryptographic puzzle that is easy to verify.
 - **Proof of Inclusion (PoI):** With PoI, one is able to provide evidence that a transaction was indirectly referenced by another transaction without having to present the full chain of actual transactions between the two transactions. This is done by using a sequence of hashes instead of the actual transaction data to prove the inclusion of a transaction (inclusion) in the referenced subtangle.
 - **Pruning:** In computer science, this is a term for simplifying, shortening, and optimizing decision trees. In Shimmer, this is done by local snapshots on each full node. Old transactions that have already been confirmed are deleted from the database, leaving only a file (list) of credits on each address.
@@ -167,7 +156,6 @@ description: Glossary of all specialized names and phrases used in the IOTA and 
 - **Tangle:** The Tangle is the underlying core data structure. In mathematical terms it is a directed acyclic graph (DAG). The Tangle is the distributed ledger that stores all transactions.
 - **Ternary system:** A trit (trinary digit) can have exactly three states (3 x 1 = 3): -1, 0 and 1. Three trits result in one tryte (33 = 27) and can thus represent 27 combinations. In IOTA, the letters A-Z (26 pieces) and the number 9 are used for this purpose.
 - **Token:** The digital currency form (cryptocurrency). It is a powerful tool for value transfer between people and machines. Total number: 2,779,530,283,277,761 IOTA. The base units are IOTA and micros.
-- **Trinity (IOTA 1.0):** Depreciated IOTA Wallet
 - **Tip:** A transaction that has not yet been approved.
 - **Tip Selection:** The process of selecting previous transactions to be referenced by a new transaction. In these references, a transaction ties into the existing data structure. IOTA and Shimmer only enforces that a transaction approves up to eight other transactions, the tip selection strategy is left to the user (with a good default provided by Shimmer).
 - **Tip Transaction:** A solid end transaction that is not yet a parent.
@@ -179,7 +167,6 @@ description: Glossary of all specialized names and phrases used in the IOTA and 
 
 ## V
 
-- **Value Layer (IOTA 2.0):** The Value layer builds on the Communication layer. It works exclusively with payloads of type Value object. This layer has several tasks: Forming the ledger state, processing, validation and output of transactions, conflict detection, conflict resolution via FPC, forming a DAG from value objects, tip selection (on value object tips).
 - **Value Transactions:** Value transactions either withdraw tokens from an address or deposit them to an address. Nodes must verify these transactions to ensure that the sender actually owns the Shimmer tokens and that additional tokens are never generated. To do this, the following checks are performed: All Shimmer tokens withdrawn from an address are also deposited into one or more other addresses; the value of each transaction does not exceed the total global supply; signatures are valid.
 - **Version Number (IOTA 2.0):** Indicates the correct format of each type.
 
