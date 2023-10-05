@@ -62,7 +62,7 @@ The commands assume you are using Linux.
 Once you have completed all the installation [requirements](#requirements), you can download the latest release by running the following command:
 
 ```sh
-mkdir node-docker-setup && cd node-docker-setup && curl -L https://node-docker-setup.iota.org/stardust | tar -zx 
+mkdir node-docker-setup && cd node-docker-setup && curl -L https://node-docker-setup.iota.org/stardust | tar -zx
 ```
 
 ## Prepare
@@ -72,7 +72,6 @@ mkdir node-docker-setup && cd node-docker-setup && curl -L https://node-docker-s
 The commands assume you are using Linux.
 
 :::
-
 
 ### 1. Generate dashboard credentials
 
@@ -88,12 +87,14 @@ Copy the output of the command for the next step.
 ### 2. Setup your Environment
 
 Copy the `env_template` file to `.env` using the following command:
+
 ```sh
 cp env_template .env
 ```
 
 Modify the `.env` file to fit your needs with the editor of your choice
 We are using `nano` in the following example:
+
 ```sh
 nano .env
 ```
@@ -107,10 +108,10 @@ With `nano` you can save your changes and exit the editor using `CTRL+O` and `CT
 # Uncomment the lines to fit your needs and rename the file to ".env" at the end
 # with the following command:
 #
-#   mv env_template .env 
+#   mv env_template .env
 
 #
-# HINT: You either have to choose a HTTP or a HTTPS setup. 
+# HINT: You either have to choose a HTTP or a HTTPS setup.
 #       Do not uncomment lines in both sections.
 #
 
@@ -121,8 +122,8 @@ With `nano` you can save your changes and exit the editor using `CTRL+O` and `CT
 # The default port for the HTTP setup is 80. If you want to change that, uncomment the following line.
 #HTTP_PORT=8080
 
-# HTTP setup is exposed on localhost only by default. 
-# If you want to expose it in your local network, specify the local IP address of the node in your network.  
+# HTTP setup is exposed on localhost only by default.
+# If you want to expose it in your local network, specify the local IP address of the node in your network.
 #NODE_HOST=192.168.1.10
 
 #######################
@@ -135,7 +136,7 @@ With `nano` you can save your changes and exit the editor using `CTRL+O` and `CT
 # You need to specify your email address to automatically get a valid SSL certificate via "letsencrypt.org"
 #ACME_EMAIL=your-email@example.com
 
-# You need to specify the domain name of your node to automatically get a valid SSL certificate via "letsencrypt.org" 
+# You need to specify the domain name of your node to automatically get a valid SSL certificate via "letsencrypt.org"
 #NODE_HOST=node.your-domain.com
 
 ###################
