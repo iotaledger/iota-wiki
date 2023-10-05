@@ -36,7 +36,7 @@ Therefore the roulette is Fair.
 
 The mandatory setup consists out of:
 
-- 1 [GoShimmer](/goshimmer/welcome) node >= 0.7.5v ([25c827e8326a](https://github.com/iotaledger/goshimmer/commit/25c827e8326a))
+- 1 [GoShimmer](https://github.com/iotaledger/goshimmer) node >= 0.7.5v ([25c827e8326a](https://github.com/iotaledger/goshimmer/commit/25c827e8326a))
 - 1 Beta [Wasp node](/wasp/running-a-node).
 - 1 Static file server (nginx, Apache, fasthttp)
 
@@ -73,8 +73,6 @@ See: [placeBetOffLedger](https://github.com/iotaledger/wasp/blob/7b3ddc54891ccf0
 As these requests cost some fees, and to be able to bet with real tokens, the player will need a source of funds.
 
 As the game runs on a testnet, you can request funds from the GoShimmer faucets inside the network.
-
-See: [How to Obtain Tokens From the Faucet](/goshimmer/tutorials/obtain_tokens)
 
 After you have acquired some funds, they will reside inside an address that is handled by a wallet.
 
@@ -167,7 +165,7 @@ However, there is a bit more to the concept than to simply subscribe to a web so
 
 On and Off Ledger requests have a predefined structure. They need to get encoded strictly and include a list of transactions provided by Goshimmer. They also need to get signed by the client using the private key originating from a seed.
 
-Wasp uses the [ExtendedLockedOutput](/goshimmer/protocol_specification/components/advanced_outputs) message type, which enables certain additional properties such as:
+Wasp uses the [ExtendedLockedOutput](/learn/protocols/stardust/core-concepts/output-unlock-conditions/) message type, which enables certain additional properties such as:
 
 - A fallback address and a fallback timeout
 - Unlockable by AliasUnlockBlock (if address is of Misaddress type)
