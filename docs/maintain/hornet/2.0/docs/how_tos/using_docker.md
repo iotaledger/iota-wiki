@@ -92,7 +92,7 @@ Copy the `env_template` file to `.env` using the following command:
 cp env_template .env
 ```
 
-Modify the `.env` file to fit your needs with the editor of your choice
+Modify the `.env` file to fit your needs with the editor of your choice.
 We are using `nano` in the following example:
 
 ```sh
@@ -101,6 +101,12 @@ nano .env
 
 Follow the instructions provided in the file.  
 With `nano` you can save your changes and exit the editor using `CTRL+O` and `CTRL+X`.
+
+:::note
+
+You can configure your node to either use HTTP or HTTPS. For publicly exposed nodes we heavily recommend using HTTPS.
+
+:::
 
 ```sh
 # This is an example configuration file.
@@ -184,12 +190,6 @@ With `nano` you can save your changes and exit the editor using `CTRL+O` and `CT
 #DASHBOARD_PASSWORD=0000000000000000000000000000000000000000000000000000000000000000
 #DASHBOARD_SALT=0000000000000000000000000000000000000000000000000000000000000000
 ```
-
-:::note
-
-You can configure your node to either use HTTP or HTTPS. For publicly exposed nodes we heavily recommend using HTTPS.
-
-:::
 
 ### 3. Setup neighbors
 
