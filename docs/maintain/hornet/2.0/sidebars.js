@@ -38,11 +38,6 @@ module.exports = {
               id: 'how_tos/post_installation',
               label: 'Post Installation',
             },
-            {
-              type: 'doc',
-              id: 'how_tos/private_tangle',
-              label: 'Run a Private Tangle',
-            },
           ],
         },
         {

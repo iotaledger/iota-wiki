@@ -19,12 +19,6 @@ keywords:
 Running a node is an efficient way to use IOTA or Shimmer. By doing so, you have direct access to the Tangle instead of having to
 connect to and trust someone else's node. Additionally, you help the network to become more distributed and resilient.
 
-The node software is the backbone of the network. For an overview of tasks a node is responsible for, please
-see our [Node 101](/develop/nodes/explanations/nodes_101/) section.
-
-To make sure that your device meets the minimum security requirements for running a node, please
-see our [Security 101](/develop/nodes/explanations/security_101/) section.
-
 :::note
 
 Make sure you install HORNET v2.0.0+ since it is the minimum version that targets the Stardust upgrade.
@@ -53,6 +47,12 @@ HORNET exposes different functionality on different ports:
 These ports are important for flawless node operation. The REST HTTP API port is optional and is only needed if
 you want to offer access to your node's API. All ports can be customized inside
 the [`config.json`](../how_tos/post_installation.md) file.
+
+:::note
+
+You don't need to expose the REST HTTP API port if you are using the [recommended setup](../how_tos/using_docker.md).
+
+:::
 
 ## Operating System
 
