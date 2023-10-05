@@ -262,17 +262,4 @@ exports.maintainPluginsConfig = [
       },
     ],
   },
-  {
-    id: 'goshimmer',
-    label: 'GoShimmer',
-    description: 'Research node implementation for IOTA 2.0',
-    icon: 'GoShimmer',
-    subsection: 'maintain-layer-1',
-    versions: [
-      {
-        label: '0.9',
-        badges: ['IOTA 2.0'],
-      },
-    ],
-  },
 ];
