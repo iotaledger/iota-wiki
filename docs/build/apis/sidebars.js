@@ -15,9 +15,9 @@ function resolveSidebarPaths(category) {
   }
 }
 
-function generateDirectoryPath(label) {
+function generateDirectoryPath(basePath, label) {
   const directoryName = label.toLowerCase().replaceAll(/s+/g, '-');
-  const directoryPath = path.join(__dirname, directoryName);
+  const directoryPath = path.join(__dirname, basePath, directoryName);
   return directoryPath;
 }
 
@@ -92,7 +92,7 @@ module.exports = {
   apis: [
     'welcome',
     ...categories
-      .filter(({ label }) => directoryExists(generateDirectoryPath(label)))
+      .filter(({ label }) => directoryExists(generateDirectoryPath('docs', label)))
       .map(resolveSidebarPaths),
   ],
 };
