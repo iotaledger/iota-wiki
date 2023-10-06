@@ -69,25 +69,16 @@ exports.buildPluginsConfig = [
     subsection: 'build-layer-1',
     versions: [
       {
-        label: 'next',
-        badges: ['Shimmer'],
-      },
-      {
-        label: '0.7-alpha',
-        badges: ['Shimmer'],
+        label: '1.0-rc.1',
+        badges: ['IOTA/Shimmer'],
       },
       {
         label: '0.6',
-        badges: ['IOTA'],
+        badges: ['Deprecated'],
         bannerPath: path.resolve(
           __dirname,
           'banners/identity-06-deprecation-migration.mdx',
         ),
-      },
-      {
-        label: '0.5',
-        badges: ['IOTA'],
-        bannerPath: path.resolve(__dirname, 'banners/identity-deprecated.mdx'),
       },
     ],
   },
