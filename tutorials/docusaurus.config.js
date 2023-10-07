@@ -184,17 +184,6 @@ module.exports = {
     [
       '@iota-wiki/plugin-tutorial',
       {
-        title: 'Guide - Deploy a Solidity Smart Contract Using Hardhat',
-        description:
-          'In this tutorial you will learn how to deploy a solidity smart contract on EVM using hardhat.',
-        preview: '/IOTA-Smart-Contract-Tutorials-F.jpg',
-        route: '/shimmer/smart-contracts/guide/evm/tooling#hardhat',
-        tags: ['text', 'video'],
-      },
-    ],
-    [
-      '@iota-wiki/plugin-tutorial',
-      {
         title:
           'Tutorial - Deploy a Solidity Smart Contract on ShimmerEVM Testnet Using Hardhat',
         description:

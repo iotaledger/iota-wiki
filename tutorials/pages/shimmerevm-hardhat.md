@@ -220,7 +220,7 @@ etherscan: {
 Then you can verify by running:
 
 ```sh
-npx hardhat verify --network shimmerevm-testnet <address> <unlock time>
+npx hardhat verify --network shimmerevm <address> <unlock time>
 ```
 
 :::tip Address and unlock time
