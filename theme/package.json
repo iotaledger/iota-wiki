@@ -19,7 +19,7 @@
     "@iota-wiki/plugin-docs": "workspace:^",
     "@metamask/providers": "^10.2.1",
     "clsx": "^1.2.1",
-    "html-react-parser": "^4.0.0",
+    "html-react-parser": "^4.2.2",
     "react-markdown": "6"
   },
   "devDependencies": {
