@@ -63,7 +63,6 @@ Starring repositories on GitHub helps indicate the popularity and quality of a p
 repositories related to IOTA:
 
 - [Firefly](https://github.com/iotaledger/firefly)
-- [GoShimmer](https://github.com/iotaledger/goshimmer)
 - [Hornet](https://github.com/iotaledger/hornet)
 - [Identity](https://github.com/iotaledger/identity.rs)
 - [iota.rs](https://github.com/iotaledger/iota.rs)
