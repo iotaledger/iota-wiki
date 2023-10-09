@@ -1,22 +1,15 @@
 const path = require('path');
 
+const MAIN_BADGE = 'Shimmer';
+
 /**
- * Find main version of a plugin by resolving it to the default version or the first version configured.
+ * Find main version of a plugin by resolving it to the first version with the corresponding batch.
  * @param {import('../common/components/Switcher').Doc} plugin
  */
-function findMainVersion(plugin) {
-  let mainVersion = plugin.versions[0];
-  if (plugin.defaultVersion) {
-    const foundVersion = plugin.versions.find(
-      (version) => version.label === plugin.defaultVersion,
-    );
-    if (!foundVersion)
-      throw `Default version ${plugin.defaultVersion} of doc ${plugin.label} not found.`;
-
-    mainVersion = foundVersion;
-  }
-
-  return mainVersion;
+function findMainVersion(plugin, badge = MAIN_BADGE) {
+  return plugin.versions.find((version) =>
+    version.badges.some((b) => b.includes(badge)),
+  );
 }
 
 /**
@@ -26,7 +19,7 @@ function findMainVersion(plugin) {
  */
 function generatePluginConfig(pluginConfig, basePath) {
   return pluginConfig.flatMap((doc) => {
-    const mainVersion = findMainVersion(doc);
+    const mainVersion = findMainVersion(doc) ?? doc.versions[0];
 
     return doc.versions.map((version) => {
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -93,7 +86,7 @@ function createMainVersionRedirects(versionedConfig) {
  */
 function generateSwitcherConfig(pluginConfig) {
   return pluginConfig.map((plugin) => {
-    const mainVersion = findMainVersion(plugin);
+    const mainVersion = findMainVersion(plugin) ?? plugin.versions[0];
     return {
       ...plugin,
       id:
@@ -115,4 +108,5 @@ module.exports = {
   generatePluginConfig,
   generateSwitcherConfig,
   createMainVersionRedirects,
+  MAIN_BADGE,
 };

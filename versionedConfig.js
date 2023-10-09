@@ -70,7 +70,7 @@ exports.buildPluginsConfig = [
     versions: [
       {
         label: '1.0-rc.1',
-        badges: ['IOTA/Shimmer'],
+        badges: ['IOTA', 'Shimmer'],
       },
       {
         label: '0.6',
@@ -154,7 +154,7 @@ exports.buildPluginsConfig = [
     versions: [
       {
         label: '1.1',
-        badges: ['IOTA/Shimmer'],
+        badges: ['IOTA', 'Shimmer'],
       },
     ],
   },
@@ -167,7 +167,7 @@ exports.buildPluginsConfig = [
     versions: [
       {
         label: '',
-        badges: ['IOTA/Shimmer'],
+        badges: ['IOTA', 'Shimmer'],
         docItemComponent: '@theme/ApiItem',
       },
     ],
@@ -215,7 +215,7 @@ exports.maintainPluginsConfig = [
     versions: [
       {
         label: '2.0',
-        badges: ['IOTA/Shimmer'],
+        badges: ['IOTA', 'Shimmer'],
       },
       {
         label: '1.2',
