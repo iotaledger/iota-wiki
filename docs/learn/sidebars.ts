@@ -57,7 +57,14 @@ module.exports = {
           type: 'category',
           label: 'IOTA 2.0',
           collapsed: true,
-          items: ['protocols/iota2.0/introduction-to-digital-autonomy'],
+          items: [
+            'protocols/iota2.0/introduction-to-digital-autonomy',
+            {
+              type: 'category',
+              label: 'Core Concepts',
+              items: ['protocols/iota2.0/core-concepts/data-flow'],
+            },
+          ],
         },
       ],
     },
