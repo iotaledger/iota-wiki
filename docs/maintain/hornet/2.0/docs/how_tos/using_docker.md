@@ -1,5 +1,5 @@
 ---
-description: Learn how to install and run a HORNET node using Docker. It is recommended for macOS and Windows.
+description: Learn how to install and run a HORNET node using Docker.
 image: /img/banner/banner_hornet_using_docker.png
 keywords:
   - IOTA Node
@@ -9,6 +9,7 @@ keywords:
   - Run
   - macOS
   - Windows
+  - Linux
   - how to
 ---
 
@@ -34,11 +35,6 @@ It includes everything required to setup a public node accessible by wallets and
 - [inx-spammer](https://github.com/iotaledger/inx-spammer) - Network spammer.
 - [wasp](https://github.com/iotaledger/wasp) - L2 Node for IOTA Smart Contracts.
 
-We only recommend running a node on hosted servers and not on personal computers.
-Please take into consideration the points explained in the [Security 101](/develop/nodes/explanations/security_101#securing-your-device).
-
-HORNET Docker images (amd64/x86_64 and arm64 architecture) are available at the [iotaledger/hornet](https://hub.docker.com/r/iotaledger/hornet) Docker hub.
-
 ## Requirements
 
 1. A recent release of Docker enterprise or community edition. You can find installation instructions in the [official Docker documentation](https://docs.docker.com/engine/install/).
@@ -63,13 +59,10 @@ The commands assume you are using Linux.
 
 :::
 
-Once you have completed all the installation [requirements](#requirements), you can download the latest release by running:
+Once you have completed all the installation [requirements](#requirements), you can download the latest release by running the following command:
 
 ```sh
-mkdir hornet
-cd hornet
-curl -L -O "https://github.com/iotaledger/node-docker-setup/releases/download/v1.0.1/node-docker-setup_stardust-v1.0.1.tar.gz"
-tar -zxf node-docker-setup_stardust-v1.0.1.tar.gz
+mkdir node-docker-setup && cd node-docker-setup && curl -L https://node-docker-setup.iota.org/stardust | tar -zx
 ```
 
 ## Prepare
@@ -80,51 +73,125 @@ The commands assume you are using Linux.
 
 :::
 
-### 1. Setup Environment
+### 1. Generate dashboard credentials
 
-You can configure your node to either use HTTP or HTTPS. For publicly exposed nodes we heavily recommend using HTTPS.
+To access your HORNET dashboard, a set of credentials need to be configured.
+Run the following command to generate a password hash and salt for the dashboard:
 
-<Tabs queryString="protocol">
-<TabItem value="https" label="HTTPS">
-
-Create a file named `.env` add the following to the file:
-
-```
-COMPOSE_FILE=docker-compose.yml:docker-compose-https.yml
-
-ACME_EMAIL=your-email@example.com
-
-NODE_HOST=node.your-domain.com
+```sh
+docker compose run hornet tools pwd-hash
 ```
 
-- Replace `your-email@example.com` with the e-mail used for issuing a [Let's Encrypt](https://letsencrypt.org) SSL certificate.
-- Replace `node.your-domain.com` with the domain pointing to your public IP address as described in the [requirements](#requirements).
+Copy the output of the command for the next step.
 
-</TabItem>
-<TabItem value="http" label="HTTP">
+### 2. Setup your Environment
 
-By default this setup will expose the Traefik reverse proxy on the default HTTP port `80`.
-If you want to change the port to a different value you can create a file named `.env` and add the following to e.g. expose it over port `9000`:
+Copy the `env_template` file to `.env` using the following command:
 
-```
-HTTP_PORT=9000
+```sh
+cp env_template .env
 ```
 
-If you don't have a DNS name for your node, you can use the (external) IP address for `NODE_HOST`, for example, `192.168.1.123`, or your public IP address.
-With this setting, you can reach the node dashboard from within your network or the internet.
-You don’t need `COMPOSE_FILE` and `ACME_EMAIL` for HTTP. You can remove them from your `.env` file or place a `#` before it to make it a remark:
+Modify the `.env` file to fit your needs with the editor of your choice.
+We are using `nano` in the following example:
 
+```sh
+nano .env
 ```
+
+Follow the instructions provided in the file.  
+With `nano` you can save your changes and exit the editor using `CTRL+O` and `CTRL+X`.
+
+:::note
+
+You can configure your node to either use HTTP or HTTPS. For publicly exposed nodes, we heavily recommend using HTTPS.
+
+:::
+
+```sh
+# This is an example configuration file.
+#
+# Uncomment the lines to fit your needs and rename the file to ".env" at the end
+# with the following command:
+#
+#   mv env_template .env
+
+#
+# HINT: You either have to choose a HTTP or a HTTPS setup.
+#       Do not uncomment lines in both sections.
+#
+
+######################
+# HTTP setup section #
+######################
+
+# The default port for the HTTP setup is 80. If you want to change that, uncomment the following line.
+#HTTP_PORT=8080
+
+# HTTP setup is exposed on localhost only by default.
+# If you want to expose it in your local network, specify the local IP address of the node in your network.
+#NODE_HOST=192.168.1.10
+
+#######################
+# HTTPS setup section #
+#######################
+
+# The following line needs to be uncommented to activate HTTPS (HTTP access will be deactivated).
 #COMPOSE_FILE=docker-compose.yml:docker-compose-https.yml
+
+# You need to specify your email address to automatically get a valid SSL certificate via "letsencrypt.org"
 #ACME_EMAIL=your-email@example.com
 
-NODE_HOST=your-external-ip-address
+# You need to specify the domain name of your node to automatically get a valid SSL certificate via "letsencrypt.org"
+#NODE_HOST=node.your-domain.com
+
+###################
+# network section #
+###################
+
+# Choose the correct network by uncommenting one of the following lines.
+#HORNET_CONFIG_FILE=config_mainnet.json
+#HORNET_CONFIG_FILE=config_shimmer.json
+#HORNET_CONFIG_FILE=config_testnet.json
+
+####################
+# profiles section #
+####################
+
+# Uncomment the following line to enable prometheus and grafana
+# Grafana will be available under <NODE_HOST>/grafana
+# WARNING: Do not forget to set a new password after the first start (default: admin/admin)
+#COMPOSE_PROFILES=${COMPOSE_PROFILES},monitoring
+
+# Uncomment the following line to enable the API endpoint for historical data of the legacy network.
+# Legacy API will be available under <NODE_HOST>/api/core/v0
+# You need to provide a legacy database under "data/database_legacy/". (Subfolders: "snapshot", "spent", "tangle")
+#COMPOSE_PROFILES=${COMPOSE_PROFILES},history-legacy
+
+# Uncomment the following line to enable the API endpoint for historical data of the chrysalis network.
+# Chrysalis API will be available under <NODE_HOST>/api/core/v1
+# You need to provide a chrysalis database under "data/database_chrysalis/". (Subfolders: "tangle", "utxo")
+#COMPOSE_PROFILES=${COMPOSE_PROFILES},history-chrysalis
+
+# Uncomment the following line to enable wasp
+# WASP API will be available under <NODE_HOST>/wasp/api
+# WASP Dashboard will be available under <NODE_HOST>/wasp/dashboard
+#COMPOSE_PROFILES=${COMPOSE_PROFILES},wasp
+
+#####################
+# Dashboard section #
+#####################
+
+# Choose a dashboard username (default: admin)
+#DASHBOARD_USERNAME=admin
+
+# Generate a new password and salt using the following command:
+#   docker compose run hornet tools pwd-hash
+#DASHBOARD_PASSWORD=0000000000000000000000000000000000000000000000000000000000000000
+#DASHBOARD_SALT=0000000000000000000000000000000000000000000000000000000000000000
 ```
 
-</TabItem>
-</Tabs>
-
-### 2. Setup neighbors
+### 3. Setup neighbors
 
 Add your HORNET neighbor addresses to the `peering.json` file.
 
@@ -135,72 +202,14 @@ See [peering](../references/peering.md) for more information.
 
 :::
 
-### 3. Create the `data` folder
+### 4. Create the `data` folder
 
 All files used by HORNET, the INX extensions, Wasp, Traefik & co will be stored in a directory called `data`.
-Docker image runs under user with user id 65532 and group id 65532, so this directory needs to have the correct permissions to be accessed by the containers.
+Docker image runs under user with user id `65532` and group id `65532`, so this directory needs to have the correct permissions to be accessed by the containers.
 To create this directory with correct permissions run the contained script:
 
 ```sh
 ./prepare_docker.sh
-```
-
-### 4. Select the target network
-
-By default, the `node-docker-setup` joins the `Shimmer` network.
-
-If you want to switch to the `testnet`, create a file named `.env` if you did not create it already and add the following line:
-
-```
-HORNET_CONFIG_FILE=config_testnet.json
-```
-
-### 5. Set dashboard credentials
-
-To access your HORNET dashboard, a set of credentials need to be configured.
-Run the following command to generate a password hash and salt for the dashboard:
-
-```
-docker compose run hornet tool pwd-hash
-```
-
-Create a file named `.env` if you did not create it already and add the following lines:
-
-```
-DASHBOARD_PASSWORD=0000000000000000000000000000000000000000000000000000000000000000
-DASHBOARD_SALT=0000000000000000000000000000000000000000000000000000000000000000
-```
-
-- Update the `DASHBOARD_PASSWORD` and `DASHBOARD_SALT` values in the `.env` file with the result of the previous command.
-
-If you want to change the default `admin` username, you can add this line to your `.env` file:
-
-```
-DASHBOARD_USERNAME=someotherusername
-```
-
-### 6. Enable additional monitoring
-
-To enable additional monitoring (cAdvisor, Prometheus, Grafana), the docker compose profile needs to be configured.
-Create a file named `.env` if you did not create it already and add the following line:
-
-```
-COMPOSE_PROFILES=monitoring
-```
-
-### 7. Enable Wasp node
-
-To also run a Wasp node, the docker compose profile needs to be configured.
-Create a file named `.env` if you did not create it already and add the following line:
-
-```
-COMPOSE_PROFILES=wasp
-```
-
-If you already enabled the `monitoring` profile, modify the profiles:
-
-```
-COMPOSE_PROFILES=monitoring,wasp
 ```
 
 ## Run
@@ -222,6 +231,8 @@ After starting the node you will be able to access your services at the followin
 - API: `https://node.your-domain.com/api/routes`
 - HORNET Dashboard: `https://node.your-domain.com/dashboard`
 - Grafana: `https://node.your-domain.com/grafana` _(optional if using "monitoring" profile)_
+- Legacy-API: `https://node.your-domain.com/api/core/v0/info` _(optional if using "history-legacy" profile)_
+- Chrysalis-API: `https://node.your-domain.com/api/core/v1/info` _(optional if using "history-chrysalis" profile)_
 - Wasp API: `https://node.your-domain.com/wasp/api` _(optional if using "wasp" profile)_
 - Wasp Dashboard: `https://node.your-domain.com/wasp/dashboard` _(optional if using "wasp" profile)_
 
@@ -242,6 +253,8 @@ After starting the node you will be able to access your services at the followin
 - API: `http://localhost/api/routes`
 - HORNET Dashboard: `http://localhost/dashboard`
 - Grafana: `http://localhost/grafana` _(optional if using "monitoring" profile)_
+- Legacy-API: `http://localhost/api/core/v0/info` _(optional if using "history-legacy" profile)_
+- Chrysalis-API: `http://localhost/api/core/v1/info` _(optional if using "history-chrysalis" profile)_
 - Wasp API: `http://localhost/wasp/api` _(optional if using "wasp" profile)_
 - Wasp Dashboard: `http://localhost/wasp/dashboard` _(optional if using "wasp" profile)_
 

@@ -44,22 +44,20 @@ module.exports = {
         {
           'Decentralized Identifiers (DID)': [
             'concepts/decentralized_identifiers/overview',
+            'concepts/decentralized_identifiers/alias',
             'concepts/decentralized_identifiers/create',
             'concepts/decentralized_identifiers/update',
             'concepts/decentralized_identifiers/resolve',
-            'concepts/decentralized_identifiers/private_tangle',
+            'concepts/decentralized_identifiers/delete',
           ],
           'Verifiable Credentials': [
             'concepts/verifiable_credentials/overview',
             'concepts/verifiable_credentials/create',
-            'concepts/verifiable_credentials/revoke',
+            'concepts/verifiable_credentials/revocation',
             'concepts/verifiable_credentials/verifiable_presentations',
           ],
-          'Advanced Concepts': [
-            'concepts/advanced/overview',
-            'concepts/advanced/did_messages',
-            'concepts/advanced/storage_interface',
-          ],
+          'Domain Linkage': ['concepts/domain_linkage/domain_linkage'],
+          'Key Storage': ['concepts/key_storage/key_storage'],
         },
       ],
     },
@@ -73,10 +71,7 @@ module.exports = {
           type: 'category',
           label: 'Rust',
           collapsed: true,
-          items: [
-            'libraries/rust/getting_started',
-            'libraries/rust/api_reference',
-          ],
+          items: ['libraries/rust/getting_started'],
         },
         {
           type: 'category',
@@ -91,11 +86,6 @@ module.exports = {
     },
     {
       type: 'category',
-      label: 'Tutorials',
-      items: ['tutorials/overview', 'tutorials/validate_university_degree'],
-    },
-    {
-      type: 'category',
       label: 'Specifications',
       collapsed: true,
       items: [
@@ -106,40 +96,7 @@ module.exports = {
           collapsed: true,
           items: ['specs/did/overview', 'specs/did/iota_did_method_spec'],
         },
-        {
-          type: 'category',
-          label: 'IOTA DIDComm',
-          collapsed: true,
-          items: [
-            'specs/didcomm/overview',
-            {
-              type: 'category',
-              label: 'Protocols',
-              collapsed: true,
-              items: [
-                'specs/didcomm/protocols/connection',
-                'specs/didcomm/protocols/authentication',
-                'specs/didcomm/protocols/presentation',
-                'specs/didcomm/protocols/issuance',
-                'specs/didcomm/protocols/signing',
-                'specs/didcomm/protocols/revocation',
-                'specs/didcomm/protocols/revocation-options',
-                'specs/didcomm/protocols/post',
-                'specs/didcomm/protocols/termination',
-              ],
-            },
-            {
-              type: 'category',
-              label: 'Resources',
-              collapsed: true,
-              items: [
-                'specs/didcomm/resources/credential-info',
-                'specs/didcomm/resources/problem-reports',
-              ],
-            },
-            'specs/didcomm/CHANGELOG',
-          ],
-        },
+        'specs/revocation_bitmap_2022',
       ],
     },
     'glossary',
