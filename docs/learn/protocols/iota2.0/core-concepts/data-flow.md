@@ -84,7 +84,7 @@ If the block does not pass this check, a `BlockFiltered` event is triggered. If 
 
 #### 4.2.5 Mana check
 
-This process checks if the RMC (Reference Mana Cost) requirements are met, as defined in Congestion Control. To summarize, this step checks if the Mana burnt in the block is larger or equal to the Reference Mana Cost of the slot. The RMC calculation is objective, so if a block does not burn the required Mana, it can be directly rejected.
+This process checks if the RMC (Reference Mana Cost) requirements are met, as defined in Congestion Control. To summarize, this step checks if the Mana burnt in the block is larger or equal to the Reference Mana Cost of the slot times the block's workscore. Both the RMC and workscore calculations are objective, so if a block does not burn the required Mana, it can be directly rejected.
 
 It also checks if the account BIC committed at `maxCommitableAge` slots in the past is non-negative, among other account-related filters.
 
