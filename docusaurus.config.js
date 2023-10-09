@@ -10,7 +10,7 @@ const {
   maintainPluginsConfig,
 } = require('./versionedConfig');
 const {
-  createMainVersionRedirects,
+  createVersionRedirects,
 } = require('./src/utils/pluginConfigGenerators');
 
 module.exports = async () => {
@@ -20,9 +20,8 @@ module.exports = async () => {
     ).map(async (contentConfig) => await create_doc_plugin(contentConfig)),
   );
 
-  const buildMainVersionRedirects =
-    createMainVersionRedirects(buildPluginsConfig);
-  const maintainMainVersionRedirects = createMainVersionRedirects(
+  const buildMainVersionRedirects = createVersionRedirects(buildPluginsConfig);
+  const maintainMainVersionRedirects = createVersionRedirects(
     maintainPluginsConfig,
   );
 

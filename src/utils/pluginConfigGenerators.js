@@ -1,6 +1,6 @@
 const path = require('path');
 
-const MAIN_BADGE = 'Shimmer';
+const MAIN_BADGE = 'IOTA';
 
 /**
  * Find main version of a plugin by resolving it to the first version with the corresponding batch.
@@ -60,21 +60,42 @@ function generatePluginConfig(pluginConfig, basePath) {
  * @param {import('../common/components/Switcher').Doc[]} versionedConfig - An array of versioned plugin configurations.
  * @returns {Array} - An array of redirects.
  */
-function createMainVersionRedirects(versionedConfig) {
+function createVersionRedirects(versionedConfig) {
   redirects = [];
   for (const doc of versionedConfig) {
-    if (doc.versions.length > 1) {
-      // Find main version
-      const mainVersion = findMainVersion(doc);
+    // Find main version
+    const mainVersion = findMainVersion(doc);
+    const mainShimmerVersion = findMainVersion(doc, 'Shimmer');
 
-      // TODO: This could be removed once we don't use points in paths anymore.
-      const routeBasePath = doc.routeBasePath ? doc.routeBasePath : doc.id;
+    // TODO: This could be removed once we don't use points in paths anymore.
+    const routeBasePath = doc.routeBasePath ? doc.routeBasePath : doc.id;
 
+    if (mainVersion) {
+      // Redirect deep version link to route base path
       redirects.push({
         from: '/' + routeBasePath + '/' + mainVersion.label,
         to: '/' + routeBasePath,
       });
+
+      // Redirect to main IOTA version
+      redirects.push({
+        from: '/' + routeBasePath + '/iota',
+        to: '/' + routeBasePath,
+      });
     }
+
+    if (mainShimmerVersion && mainShimmerVersion !== mainVersion)
+      // Redirect to main Shimmer version
+      redirects.push({
+        from: '/' + routeBasePath + '/shimmer/',
+        to: '/' + routeBasePath + '/' + mainShimmerVersion.label,
+      });
+    else if (mainShimmerVersion === mainVersion)
+      // Redirect to main Shimmer version if it is the main version
+      redirects.push({
+        from: '/' + routeBasePath + '/shimmer/',
+        to: '/' + routeBasePath,
+      });
   }
 
   return redirects;
@@ -107,6 +128,6 @@ function generateSwitcherConfig(pluginConfig) {
 module.exports = {
   generatePluginConfig,
   generateSwitcherConfig,
-  createMainVersionRedirects,
+  createVersionRedirects,
   MAIN_BADGE,
 };
