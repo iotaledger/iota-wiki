@@ -1,0 +1,60 @@
+name: Generate SDK Documentation and Upload to AWS S3
+
+on:
+  workflow_dispatch:  # Enables the manual trigger
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '14'  # or any other version you prefer
+
+    - name: Generate and copy Python references
+      run: |
+        mkdir tmp
+        cd tmp
+        git clone --depth 1 --branch develop https://github.com/iotaledger/iota-sdk
+        cd iota-sdk/bindings/python
+
+        python3 -m venv .venv
+        source .venv/bin/activate
+        pip install -r requirements-dev.txt
+        PYTHONPATH=. pydoc-markdown
+        cp -Rv docs/references/python ../../../../docs/build/iota-sdk/1.0/docs/references/
+        deactivate
+
+    - name: Generate and copy Node.js references
+      run: |
+        cd tmp/iota-sdk/bindings/nodejs
+        yarn set version classic
+        yarn
+        yarn create-api-docs --out ../../../../docs/build/iota-sdk/1.0/docs/references/nodejs
+
+    - name: Compress generated docs
+      run: |
+        tar czvf iota-sdk-docs.tar.gz docs/build/iota-sdk/1.0/
+
+    - name: Upload docs to AWS S3
+      env:
+        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY }}
+        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      run: |
+        aws s3 cp iota-sdk-docs.tar.gz s3://s3://files.iota.org/iota-wiki/iota-sdk-docs/
+
+# not needed
+#    - name: Cleanup
+#      run: |
+#        cd ../../
+#        rm -rf tmp
