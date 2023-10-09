@@ -23,7 +23,7 @@ The [Governance forum](https://govern.iota.org), [introduced by the IOTA Foundat
 - Phase 2 - Temperature check
 - Phase 3 - Voting
 
-Once an idea successfully passes phase 2, a vote is initiated in phase 3 using the Firefly voting mechanism based on Shimmer token ownership. This method uses the functionalities of the already developed Firefly Governance and the Hornet [INX participation plugin](/hornet/2.0-rc.6/inx-plugins/participation/welcome) developed and used first in the [Build vs. Burn](https://blog.iota.org/iota-treasury-vote-how-to-take-part/) vote that happened in June 2022.
+Once an idea successfully passes phase 2, a vote is initiated in phase 3 using the Firefly voting mechanism based on Shimmer token ownership. This method uses the functionalities of the already developed Firefly Governance and the Hornet [INX participation plugin](/hornet/2.0/inx-plugins/participation/welcome) developed and used first in the [Build vs. Burn](https://blog.iota.org/iota-treasury-vote-how-to-take-part/) vote that happened in June 2022.
 
 **To be accepted and implemented as a vote in Firefly, a governance proposal must successfully pass through the first two phases of the framework that work as a filter mechanism to only allow proposals that fulfill specific criteria to be implemented as a Firefly vote.**
 

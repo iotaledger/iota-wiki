@@ -48,7 +48,7 @@ const nftBuyerAddr = '0x57d3...';
 ## Query For the NFT Output
 
 You will first need to query for the NFT Output of your NFT. The easiest way to do so is through a query to
-the [indexation plugin](/hornet/2.0-rc.6/inx-plugins/indexer/api_reference) by NFT ID. You need to obtain the full
+the [indexation plugin](/hornet/2.0/inx-plugins/indexer/api_reference) by NFT ID. You need to obtain the full
 Output details as you need to use them as input for the transaction.
 
 ```typescript

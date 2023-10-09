@@ -53,6 +53,12 @@ module.exports = {
             'protocols/stardust/tips',
           ],
         },
+        {
+          type: 'category',
+          label: 'IOTA 2.0',
+          collapsed: true,
+          items: ['protocols/iota2.0/introduction-to-digital-autonomy'],
+        },
       ],
     },
     {
