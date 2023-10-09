@@ -10,7 +10,7 @@ exports.buildPluginsConfig = [
     versions: [
       {
         label: '1.0',
-        badges: ['Shimmer'],
+        badges: ['IOTA', 'Shimmer'],
         //overriding default exclude array to include the python api's classes with _ at the beginning
         //but still exclude any _admonitions
         exclude: [
@@ -91,16 +91,16 @@ exports.buildPluginsConfig = [
     subsection: 'build-layer-1',
     versions: [
       {
-        label: '1.4',
-        badges: ['IOTA'],
-      },
-      {
         label: '2.0-rc.7',
         badges: ['Shimmer'],
         bannerPath: path.resolve(
           __dirname,
           'banners/pre-sdk-libs-deprecated.mdx',
         ),
+      },
+      {
+        label: '1.4',
+        badges: ['IOTA'],
       },
     ],
   },
@@ -131,16 +131,16 @@ exports.buildPluginsConfig = [
     subsection: 'build-layer-1',
     versions: [
       {
-        label: '0.1',
-        badges: ['IOTA'],
-      },
-      {
         label: '1.0-rc.6',
         badges: ['Shimmer'],
         bannerPath: path.resolve(
           __dirname,
           'banners/pre-sdk-libs-deprecated.mdx',
         ),
+      },
+      {
+        label: '0.1',
+        badges: ['IOTA'],
       },
     ],
   },
@@ -199,7 +199,7 @@ exports.buildPluginsConfig = [
     versions: [
       {
         label: '1.0',
-        badges: ['Shimmer'],
+        badges: ['IOTA', 'Shimmer'],
       },
     ],
   },
@@ -244,12 +244,12 @@ exports.maintainPluginsConfig = [
     subsection: 'maintain-layer-1',
     versions: [
       {
-        label: '0.3',
-        badges: ['IOTA'],
+        label: '1.0-rc.2',
+        badges: ['IOTA', 'Shimmer'],
       },
       {
-        label: '1.0-rc.1',
-        badges: ['Shimmer'],
+        label: '0.3',
+        badges: ['IOTA'],
       },
     ],
   },
