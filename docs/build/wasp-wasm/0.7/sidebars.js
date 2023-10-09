@@ -279,16 +279,5 @@ module.exports = {
         },
       ],
     },
-    {
-      type: 'category',
-      label: 'Tutorials',
-      items: [
-        {
-          type: 'doc',
-          label: 'Fair Roulette',
-          id: 'tutorials/fair_roulette',
-        },
-      ],
-    },
   ],
 };

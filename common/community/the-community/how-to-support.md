@@ -95,7 +95,6 @@ After you have fulfilled the requirements, open the following repositories and _
 ![Add a star to IOTA's repositories on Github](/img/participate/how-to-support/github_iota_star.png)
 
 - [Firefly](https://github.com/iotaledger/firefly)
-- [GoShimmer](https://github.com/iotaledger/goshimmer)
 - [Hornet](https://github.com/iotaledger/hornet)
 - [Identity](https://github.com/iotaledger/identity.rs)
 - [iota.rs](https://github.com/iotaledger/iota.rs)

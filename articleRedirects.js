@@ -481,10 +481,6 @@ exports.articleRedirects = [
     to: '/learn/smart-contracts/introduction',
   },
   {
-    from: '/shimmer/smart-contracts/guide/example_projects/fair_roulette',
-    to: '/wasp-wasm/tutorials/fair_roulette',
-  },
-  {
     from: '/shimmer/smart-contracts/metrics',
     to: '/wasp/metrics',
   },

@@ -17,11 +17,6 @@ IOTA network as it is made entirely of Hornet nodes. You can use the documentati
 [Chronicle](/chronicle/welcome) is a permanode solution that allows you to store and retrieve IOTA
 messages and data in real time.
 
-### GoShimmer
-
-[GoShimmer](/goshimmer/welcome) is an experimental node software for IOTA's Coordicide aimed at
-removing the Coordinator from the IOTA networks.
-
 ## Layer 2
 
 ### WASP - IOTA Smart Contracts
