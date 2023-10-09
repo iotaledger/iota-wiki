@@ -29,7 +29,7 @@ exports.buildPluginsConfig = [
     subsection: 'build-layer-2',
     versions: [
       {
-        label: '0.7',
+        label: 'v1.0.0-rc.6',
         badges: ['Shimmer'],
       },
     ],
@@ -42,7 +42,7 @@ exports.buildPluginsConfig = [
     subsection: 'build-layer-2',
     versions: [
       {
-        label: '0.7',
+        label: 'v1.0.0-rc.6',
         badges: ['Shimmer'],
       },
     ],
@@ -55,7 +55,7 @@ exports.buildPluginsConfig = [
     subsection: 'build-layer-2',
     versions: [
       {
-        label: '0.7',
+        label: 'v1.0.0-rc.6',
         badges: ['Shimmer'],
       },
     ],
@@ -231,7 +231,7 @@ exports.maintainPluginsConfig = [
     subsection: 'maintain-layer-2',
     versions: [
       {
-        label: '0.7',
+        label: 'v1.0.0-rc.6',
         badges: ['Shimmer'],
       },
     ],
