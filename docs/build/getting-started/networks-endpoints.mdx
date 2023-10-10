@@ -30,60 +30,18 @@ have more control and to not run into any limits.
 [The IOTA Mainnet](https://explorer.iota.org/mainnet) is the production network within the IOTA ecosystem using the IOTA
 token.
 
-<table style={{ wordBreak: 'break-all', verticalAlign: 'middle' }}>
-  <tbody>
-    <tr>
-      <th style={{ width: '150px' }}>Base Token</th>
-      <th style={{ width: '100px' }}>Protocol</th>
-      <th>HTTP REST API</th>
-      <th>Event API</th>
-      <th>Permanode API</th>
-    </tr>
-    <tr>
-      <td style={{ textAlign: 'center' }}>IOTA Token</td>
-      <td style={{ textAlign: 'center' }}>
-        <a href='/learn/protocols/stardust/introduction/'>Stardust</a>
-      </td>
-      <td>
-        <a href='https://api.stardust-mainnet.iotaledger.net/api/core/v2/info'>
-          https://api.stardust-mainnet.iotaledger.net
-        </a>
-      </td>
-      <td>wss://api.stardust-mainnet.iotaledger.net:443 (MQTT 3.1, /mqtt)</td>
-      <td>https://chronicle.stardust-mainnet.iotaledger.net</td>
-    </tr>
-  </tbody>
-</table>
+| Base Token | Protocol | HTTP REST API                               | Event API                                                       | Permanode API                                     |
+| ---------- | -------- | ------------------------------------------- | --------------------------------------------------------------- | ------------------------------------------------- |
+| IOTA Token | Stardust | https://api.stardust-mainnet.iotaledger.net | wss://api.stardust-mainnet.iotaledger.net:443 (MQTT 3.1, /mqtt) | https://chronicle.stardust-mainnet.iotaledger.net |
 
 ## Shimmer
 
 [Shimmer](https://explorer.iota.org/shimmer) is the staging network for new protocol versions before they hit IOTA
 Mainnet.
 
-<table style={{ wordBreak: 'break-all', verticalAlign: 'middle' }}>
-  <tbody>
-    <tr>
-      <th style={{ width: '150px' }}>Base Token</th>
-      <th style={{ width: '100px' }}>Protocol</th>
-      <th>HTTP REST API</th>
-      <th>Event API</th>
-      <th>Permanode API</th>
-    </tr>
-    <tr>
-      <td style={{ textAlign: 'center' }}>Shimmer Token</td>
-      <td style={{ textAlign: 'center' }}>
-        <a href='/learn/protocols/stardust/introduction/'>Stardust</a>
-      </td>
-      <td>
-        <a href='https://api.shimmer.network/api/core/v2/info'>
-          https://api.shimmer.network
-        </a>
-      </td>
-      <td>wss://api.shimmer.network:443/api/mqtt/v1 (MQTT 3.1)</td>
-      <td>https://chronicle.shimmer.network</td>
-    </tr>
-  </tbody>
-</table>
+| Base Token    | Protocol | HTTP REST API               | Event API                                            | Permanode API                     |
+| ------------- | -------- | --------------------------- | ---------------------------------------------------- | --------------------------------- |
+| Shimmer Token | Stardust | https://api.shimmer.network | wss://api.shimmer.network:443/api/mqtt/v1 (MQTT 3.1) | https://chronicle.shimmer.network |
 
 ### ShimmerEVM
 
@@ -91,67 +49,17 @@ Mainnet.
 
 <AddToMetaMaskButton cfg={EVMNetworks['shimmerevm']} />
 
-<table style={{ wordBreak: 'break-all', verticalAlign: 'middle' }}>
-  <tbody>
-    <tr>
-      <th style={{ width: '150px' }}>Base Token</th>
-      <th style={{ width: '120px' }}>Protocol</th>
-      <th style={{ width: '100px' }}>Chain ID</th>
-      <th>RPC URL</th>
-      <th>Explorer</th>
-    </tr>
-    <tr>
-      <td style={{ textAlign: 'center' }}>Shimmer Token</td>
-      <td style={{ textAlign: 'center' }}>ISC / EVM</td>
-      <td style={{ textAlign: 'center' }}>148</td>
-      <td>
-        <a href='https://json-rpc.evm.shimmer.network'>
-          https://json-rpc.evm.shimmer.network
-        </a>
-      </td>
-      <td>
-        <a href='https://explorer.evm.shimmer.network'>
-          https://explorer.evm.shimmer.network
-        </a>
-      </td>
-    </tr>
-  </tbody>
-</table>
+| Base Token    | Protocol  | Chain ID | RPC URL                              | Explorer                             |
+| ------------- | --------- | -------- | ------------------------------------ | ------------------------------------ |
+| Shimmer Token | ISC / EVM | 148      | https://json-rpc.evm.shimmer.network | https://explorer.evm.shimmer.network |
 
 ## Public Testnet
 
 [The Public Testnet](https://explorer.iota.org/testnet) acts as a test bed for builders without any real world value.
 
-<table style={{ wordBreak: 'break-all', verticalAlign: 'middle' }}>
-  <tbody>
-    <tr>
-      <th style={{ width: '150px' }}>Base Token</th>
-      <th style={{ width: '100px' }}>Protocol</th>
-      <th style={{ width: '200px' }}>HTTP REST API</th>
-      <th>Event API</th>
-      <th>Permanode API</th>
-      <th>Faucet</th>
-    </tr>
-    <tr>
-      <td style={{ textAlign: 'center' }}>Testnet Tokens (no value)</td>
-      <td style={{ textAlign: 'center' }}>
-        <a href='/learn/protocols/stardust/introduction/'>Stardust</a>
-      </td>
-      <td>
-        <a href='https://api.testnet.shimmer.network/api/core/v2/info'>
-          https://api.testnet.shimmer.network
-        </a>
-      </td>
-      <td>wss://api.testnet.shimmer.network:443/api/mqtt/v1 (MQTT 3.1)</td>
-      <td>https://chronicle.testnet.shimmer.network</td>
-      <td>
-        <a href='https://faucet.testnet.shimmer.network/api/info'>
-          https://faucet.testnet.shimmer.network
-        </a>
-      </td>
-    </tr>
-  </tbody>
-</table>
+| Base Token                | Protocol | HTTP REST API                       | Event API                                                    | Permanode API                             | Faucet                                 |
+| ------------------------- | -------- | ----------------------------------- | ------------------------------------------------------------ | ----------------------------------------- | -------------------------------------- |
+| Testnet Tokens (no value) | Stardust | https://api.testnet.shimmer.network | wss://api.testnet.shimmer.network:443/api/mqtt/v1 (MQTT 3.1) | https://chronicle.testnet.shimmer.network | https://faucet.testnet.shimmer.network |
 
 ### Testnet EVM
 
@@ -162,38 +70,9 @@ of the Public Testnet. This network does not run
 any IOTA protocol but instead uses ISC to facilitate an Ethereum Virtual Machine and has an enshrined bridge from to
 layer 1.
 
-<table style={{ wordBreak: 'break-all', verticalAlign: 'middle' }}>
-  <tbody>
-    <tr>
-      <th style={{ width: '150px' }}>Base Token</th>
-      <th style={{ width: '150px' }}>Protocol</th>
-      <th style={{ width: '100px' }}>Chain ID</th>
-      <th>RPC URL</th>
-      <th>Faucet</th>
-      <th>Explorer</th>
-    </tr>
-    <tr>
-      <td>Testnet Tokens (no value)</td>
-      <td>ISC / EVM</td>
-      <td>1072</td>
-      <td>
-        <a href='https://json-rpc.evm.testnet.shimmer.network'>
-          https://json-rpc.evm.testnet.shimmer.network
-        </a>
-      </td>
-      <td>
-        <a href='https://evm-faucet.testnet.shimmer.network'>
-          https://evm-faucet.testnet.shimmer.network
-        </a>
-      </td>
-      <td>
-        <a href='https://explorer.evm.testnet.shimmer.network'>
-          https://explorer.evm.testnet.shimmer.network
-        </a>
-      </td>
-    </tr>
-  </tbody>
-</table>
+| Base Token                | Protocol  | Chain ID | RPC URL                                      | Faucet                                     | Explorer                                     |
+| ------------------------- | --------- | -------- | -------------------------------------------- | ------------------------------------------ | -------------------------------------------- |
+| Testnet Tokens (no value) | ISC / EVM | 1072     | https://json-rpc.evm.testnet.shimmer.network | https://evm-faucet.testnet.shimmer.network | https://explorer.evm.testnet.shimmer.network |
 
 ## DevNet
 
@@ -204,37 +83,9 @@ consider building on the Public Testnet instead.
 
 [The DevNet](https://explorer.iota.org/legacy-mainnet) is a legacy network running the Chrysalis protocol.
 
-<table style={{ wordBreak: 'break-all', verticalAlign: 'middle' }}>
-  <tbody>
-    <tr>
-      <th style={{ width: '150px' }}>Base Token</th>
-      <th style={{ width: '100px' }}>Protocol</th>
-      <th>HTTP REST API</th>
-      <th>Event API</th>
-      <th>Permanode API</th>
-      <th>Faucet</th>
-    </tr>
-    <tr>
-      <td style={{ textAlign: 'center' }}>Testnet Tokens (no value)</td>
-      <td style={{ textAlign: 'center' }}>
-        <a href='/learn/protocols/chrysalis/introduction/'>Chrysalis</a>
-      </td>
-      <td>
-        <a href='https://api.lb-0.h.chrysalis-devnet.iota.cafe/api/v1/info'>
-          https://api.lb-0.h.chrysalis-devnet.iota.cafe
-        </a>
-        , <a href='https://api.lb-1.h.chrysalis-devnet.iota.cafe/api/v1/info'>https://https://api.lb-1.h.chrysalis-devnet.iota.cafe</a>
-      </td>
-      <td>wss://api.lb-0.h.chrysalis-devnet.iota.cafe:443 (MQTT 3.1, /mqtt)</td>
-      <td>https://chronicle.testnet.shimmer.network</td>
-      <td>
-        <a href='https://faucet.testnet.shimmer.network/api/info'>
-          https://faucet.testnet.shimmer.network
-        </a>
-      </td>
-    </tr>
-  </tbody>
-</table>
+| Base Token                | Protocol  | HTTP REST API                                                                                         | Event API                                                         | Permanode API                             | Faucet                                 |
+| ------------------------- | --------- | ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------- | -------------------------------------- |
+| Testnet Tokens (no value) | Chrysalis | https://api.lb-0.h.chrysalis-devnet.iota.cafe , https://https://api.lb-1.h.chrysalis-devnet.iota.cafe | wss://api.lb-0.h.chrysalis-devnet.iota.cafe:443 (MQTT 3.1, /mqtt) | https://chronicle.testnet.shimmer.network | https://faucet.testnet.shimmer.network |
 
 ## Legacy
 
@@ -245,17 +96,6 @@ once a new mechanism via an L2 chain is set up.
 
 The legacy IOTA Mainnet was running for the sole purpose to facilitate token migrations into the IOTA Mainnet.
 
-<table>
-  <tbody>
-    <tr>
-      <th>Base Token</th>
-      <th>Protocol</th>
-      <th>HTTP REST API</th>
-    </tr>
-    <tr>
-      <td>IOTA Token (Unmigrated)</td>
-      <td>Legacy Trinary Protocol</td>
-      <td>https://api-legacy.iotaledger.net</td>
-    </tr>
-  </tbody>
-</table>
+| Base Token              | Protocol                | HTTP REST API                     |
+| ----------------------- | ----------------------- | --------------------------------- |
+| IOTA Token (Unmigrated) | Legacy Trinary Protocol | https://api-legacy.iotaledger.net |
