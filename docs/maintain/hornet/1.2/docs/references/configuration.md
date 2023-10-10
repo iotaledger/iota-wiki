@@ -189,8 +189,8 @@ Example:
 
 | Name                      | Description                                           | Type   |
 | :------------------------ | :---------------------------------------------------- | :----- |
-| [milestones](#Milestones) | Milestones based pruning                              | object |
-| [size](#Size)             | Database size based pruning                           | object |
+| [milestones](#milestones) | Milestones based pruning                              | object |
+| [size](#size)             | Database size based pruning                           | object |
 | pruneReceipts             | Whether to delete old receipts data from the database | bool   |
 
 ### Milestones

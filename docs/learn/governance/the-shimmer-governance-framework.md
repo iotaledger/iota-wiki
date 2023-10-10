@@ -205,7 +205,7 @@ Once an idea successfully passes phase 2, a vote is initiated in phase 3 using t
           </li>
           <li>Proposal has no engagement over 30 days</li>
           <li>Proposal doesn't reach a minimum of votes/likes</li>
-          <li>Proposal conflicts with the 
+          <li>Proposal conflicts with the
             <a href="#guaranteeing-stability---resubmital-delay"> resubmittal delay rules </a>
           </li>
           <li>Proposal does not meet the
@@ -334,7 +334,7 @@ The outcome of this process in phase 1 should be a defined and specified proposa
 
 To initiate an idea's discussion and decision-making process, a [forum moderator](#governance-forum-moderators) will only allow a post to be published in the [Shimmer Governance Proposals / Phase 1 Discussions](https://govern.iota.org/c/shimmer-governance-proposals/phase-1-discussions/52) subcategory and grant the phase 1 status to a discussion if the topic of the proposal fits one of the [defined Governance parameters](./governance-scope.md) and follows the Shimmer governance framework [guiding principles.](#42-shimmer-governance-framework-guiding-principles)
 
-##### Proposal Acceptance Requirements Phase 1:
+##### Proposal Acceptance Requirements Phase 1
 
 - Discussion topic created in the governance forum under the [Governance Proposals / Phase 1 - Discussion](https://govern.iota.org/c/shimmer-governance-proposals/phase-1-discussions/52) subcategory tagged with phase 1
 - Duration: topics close automatically after 30 days of inactivity.
@@ -343,7 +343,7 @@ To initiate an idea's discussion and decision-making process, a [forum moderator
 - A phase 1 topic post needs approval by a moderator and receives the phase 1 tag once it is approved to be published.
 - It can only receive a phase 1 tag and become a governance proposal if it discusses one of the parameters [open for community governance](./governance-scope.md), follows the [guiding principles](#42-shimmer-governance-framework-guiding-principles) and does not conflict with the [resubmittal delay rules](#guaranteeing-stability---resubmital-delay).
 
-##### Requirements for a phase 1 proposal to move forward in the process and become a phase 2 temperature check proposal:
+##### Requirements for a phase 1 proposal to move forward in the process and become a phase 2 temperature check proposal
 
 - The latest version of the proposal posted by the proposal submitter has either received 50 likes or the latest poll created by the proposal submitter on the latest version of the proposal has received 50 votes in favor of the proposal.
 
@@ -407,7 +407,7 @@ A forum moderator publishes an [announcement post](#the-announcement-forum-post-
 
 The same announcement will also be posted on the [Shimmer Governance Twitter account](https://twitter.com/ShimmerGov), which the moderators run.
 
-##### The announcement forum-post in phase 3 uses this template:
+##### The announcement forum-post in phase 3 uses this template
 
 _[Phase 3] Shimmer Governance Vote announcement:_
 

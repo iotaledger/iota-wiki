@@ -38,7 +38,7 @@ function then transfers it into the caller's L2 account on that chain.
   the internal call to transferAllowanceTo(). Default 100 (MinGasFee).
   But better to provide it so that it matches the fee structure.
 
-### IMPORTANT CONSIDERATIONS:
+### IMPORTANT CONSIDERATIONS
 
 1. The caller contract needs to provide sufficient base tokens in its
    allowance, to cover the gas fee GAS1 for this request.

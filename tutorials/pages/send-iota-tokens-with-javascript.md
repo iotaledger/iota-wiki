@@ -10,7 +10,7 @@ In this tutorial you will learn how to send IOTA Tokens in the Devnet. We will g
 
 And now, let's start with preparing the development environment. This tutorial assumes that you have [Node.js](https://nodejs.org/en/) installed.
 
-## 0. Setup Development Environment.
+## 0. Setup Development Environment
 
 First let's create a new folder for the tutorial in your favourite location.
 
@@ -37,7 +37,7 @@ When the previous call failed with `'tsc' is not recognized as an internal or ex
 npm install typescript@latest -g
 ```
 
-## 1. Create and save your seed.
+## 1. Create and save your seed
 
 Create a new directory, a new file called `create_seed.js` and add the content below:
 
@@ -69,7 +69,7 @@ You should see something like this, with another seed:
 
 You will need to add this seed in the following files!
 
-## 2. Get your first address.
+## 2. Get your first address
 
 Next we want to generate an address, where we want to deposit some IOTA Devnet Tokens.
 
@@ -118,7 +118,7 @@ This prints something like this:
 
 Tip: In Devnet addresses begin with `atoi...`, whereas in the Mainnet they begin with ìota...`.
 
-## 3. Get some Devnet Tokens.
+## 3. Get some Devnet Tokens
 
 Now we need to visit the Faucet to get some tokens. Just input your address and request some tokens!
 
@@ -167,7 +167,7 @@ Now you should have 1000000 IOTA Tokens, or 1 Million IOTA (1MI).
 
 > Your balance: 100000000
 
-## 5. Send IOTA Tokens.
+## 5. Send IOTA Tokens
 
 The last step is to send the tokens to another address, lets create a file for that and add the content below!
 

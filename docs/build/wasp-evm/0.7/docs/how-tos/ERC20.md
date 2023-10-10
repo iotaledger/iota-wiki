@@ -93,7 +93,7 @@ Go to the second tab and compile your smart contract with the **Compile ERC20.so
 
 ![Copy contract address](/img/evm/examples/explorer-contract-address.png)
 
-## 5. Have some Fun!
+## 5. Have some Fun
 
 Now you should see your token in MetaMask. You can send them to your friends without any fees or gas costs.
 

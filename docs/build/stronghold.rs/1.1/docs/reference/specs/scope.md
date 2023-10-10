@@ -16,11 +16,7 @@ keywords:
 
 # Project Scope (Scope){#scope}
 
-[scope]: #Scope
-
 ## Frontmatter
-
-[frontmatter]: #frontmatter
 
 ```yaml
 title: Stronghold
@@ -40,8 +36,6 @@ updated: 2021-Apr-27
 
 ## License
 
-[license]: #license
-
 <!--
 Please specify licenses here and in the frontmatter.
 -->
@@ -50,8 +44,6 @@ All code is licensed under the Apache-2 license, all text and images are license
 
 ## Language
 
-[language]: #language
-
 <!--
 Do not change this section.
 -->
@@ -59,8 +51,6 @@ Do not change this section.
 The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in this document are to be interpreted as described in RFC 2119.
 
 ## Versioning
-
-[versioning]: #versioning
 
 <!--
 Do not change this section.
@@ -72,8 +62,6 @@ Software releases will follow [strict semantic versioning](https://semver.org/).
 
 ## Hierarchy
 
-[hierarchy]: #hierarchy
-
 <!--
 Do not change this section.
 -->
@@ -81,8 +69,6 @@ Do not change this section.
 All documents in this specification are understood to flow from this document and be bound to its licenses and language as described above.
 
 ## Summary
-
-[summary]: #summary
 
 Stronghold is a secure software implementation (often used in conjunction with - or existing purely on - specialist hardware) with the
 sole purpose of isolating the seed, private keys, personally identifiable information (PII) and policy records from exposure
@@ -100,8 +86,6 @@ Additionally, a system for enabling Stronghold-based systems to securely communi
 that devices on different networks can collaborate cryptographically.
 
 ## Motivation
-
-[motivation]: #motivation
 
 ### Research
 
@@ -126,8 +110,6 @@ available to the pantheon of IOTA Products.
 
 ## Product Introduction{#product}
 
-[product]: #product
-
 ### Business Application Benefits
 
 - Enhance the security posture of critical IOTA Products
@@ -148,14 +130,10 @@ available to the pantheon of IOTA Products.
 
 ## Stakeholders
 
-[stakeholders]: #stakeholders
-
 A number of IOTA foundation stakeholders have been involved in the design process, ranging
 from Engineering to Product and developer outreach.
 
 ## Guide-level explanation
-
-[guide-level-explanation]: #guide-level-explanation
 
 Stronghold itself has several core components:
 
@@ -193,8 +171,6 @@ suitable to their needs.
 This work will be undertaken in house by IOTA developers.
 
 ## Prior art
-
-[prior-art]: #prior-art
 
 There is a massive amount of prior art.
 
@@ -387,8 +363,6 @@ https://keycard.tech/
 
 ## Unresolved questions
 
-[unresolved-questions]: #unresolved-questions
-
 <!--
 - What parts of the design do you expect to resolve through the spec process
 before this gets merged?
@@ -399,8 +373,6 @@ be addressed in the future independently of the solution that comes out it?
 -->
 
 ## Future possibilities
-
-[future-possibilities]: #future-possibilities
 
 - Having a CLI
 - Having a service that can run as a daemon

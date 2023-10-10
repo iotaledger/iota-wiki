@@ -19,6 +19,10 @@ jobs:
         uses: ./.github/actions/prepare/
       - name: Lint Wiki
         run: yarn lint:check
+      # - name: Build Cli
+      #   run: yarn ./cli build
+      # - name: Lint IOTA Markdown
+      #   run: yarn lint:md:check
       - name: Format Wiki
         run: yarn format:check
   build:

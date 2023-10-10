@@ -97,7 +97,7 @@ Copy the `inx-proto` file from [here](https://github.com/iotaledger/inx/blob/dev
 
 ### Prepare and run files for simple requests
 
-#### Create new file `ReadBlock.js` and add the following code.
+#### Create new file `ReadBlock.js` and add the following code
 
 ```javascript
 const client = require('./config.js');
@@ -158,7 +158,7 @@ node ./ReadBlock.js
 
 ---
 
-#### Create new file `ReadNodeConfiguration.js` and add the following code.
+#### Create new file `ReadNodeConfiguration.js` and add the following code
 
 ```javascript
 const client = require('./config.js');
@@ -189,7 +189,7 @@ node ./ReadNodeConfiguration.js
 
 ---
 
-#### Create new file `ReadNodeStatus.js` and add the following code.
+#### Create new file `ReadNodeStatus.js` and add the following code
 
 ```javascript
 const client = require('./config.js');
@@ -222,7 +222,7 @@ node ./ReadNodeStatus.js
 
 ### Prepare and run files for streaming requests
 
-#### Create new file `ListenToBlocks.js` and add the following code.
+#### Create new file `ListenToBlocks.js` and add the following code
 
 ```javascript
 const client = require('./config.js');
@@ -255,7 +255,7 @@ node ./ListenToBlocks.js
 
 ---
 
-#### Create new file `ListenToLatestMilestones.js` and add the following code.
+#### Create new file `ListenToLatestMilestones.js` and add the following code
 
 ```javascript
 const client = require('./config.js');
@@ -284,7 +284,7 @@ node ./ListenToLatestMilestones.js
 
 ---
 
-#### Create new file `ReadUnspentOutputs.js` and add the following code.
+#### Create new file `ReadUnspentOutputs.js` and add the following code
 
 ```javascript
 const client = require('./config.js');

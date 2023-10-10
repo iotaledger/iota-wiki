@@ -11,11 +11,7 @@ keywords:
 
 # Stronghold Engineering Specification {#engineering-spec}
 
-[engineering-spec]: #engineering-spec
-
 ## Frontmatter
-
-[frontmatter]: #frontmatter
 
 ```yaml
 title: Stronghold
@@ -37,13 +33,9 @@ updated: 2021-Apr-27
 
 ## Summary {#summary}
 
-[summary]: #summary
-
 This document introduces the High-Level Specification of the Stronghold.
 
 ## Logical System Design {#system-design}
-
-[system-design]: #system-design
 
 ### Low Level
 

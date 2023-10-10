@@ -139,7 +139,7 @@ starting a new interaction with the library.
 
 | Required | Default Value                                 | Type                            | Definition                                     |
 | -------- | --------------------------------------------- | ------------------------------- | ---------------------------------------------- |
-| ✘        | True,<br />Duration::from_secs(30),<br />True | [BrokerOptions](#BrokerOptions) | If not defined the default values will be used |
+| ✘        | True,<br />Duration::from_secs(30),<br />True | [BrokerOptions](#brokeroptions) | If not defined the default values will be used |
 
 <MinimumNodes />
 
@@ -455,7 +455,7 @@ only checking and already know the addresses.
 
 A list of tuples with value of [AddressBalancePair](#addressbalancepair). The usize is the balance of the address.
 
-#### Implementation details:
+#### Implementation details
 
 Please make sure to follow these steps when implementing this method:
 
@@ -835,7 +835,7 @@ only be retrieved for outputs which are part of a confirmed transaction.
 
 #### Returns
 
-An [OutputMetadata](#OutputMetadata) that contains information about the output.
+An [OutputMetadata](#outputmetadata) that contains information about the output.
 
 ### get_address()
 
@@ -876,7 +876,7 @@ Find all outputs based on the requests criteria.
 
 #### Returns
 
-A vector of [OutputMetadata](#OutputMetadata).
+A vector of [OutputMetadata](#outputmetadata).
 
 ### get_milestone()
 

@@ -10,6 +10,8 @@
     "lint": "eslint --cache --fix .",
     "lint:check": "eslint --cache .",
     "lint:links": "iota-wiki check",
+    "lint:md": "yarn iota-wiki lint --fix docs/**/*.{md,mdx}",
+    "lint:md:check": "yarn iota-wiki lint docs/**/*.{md,mdx}",
     "format": "prettier --cache --write .",
     "format:check": "prettier --cache --check .",
     "format:svg": "svgo ./src/**/*.svg",

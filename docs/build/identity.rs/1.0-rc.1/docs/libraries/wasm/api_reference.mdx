@@ -1918,6 +1918,76 @@ Deserializes an instance from a JSON object.
 | ----- | ---------------- |
 | json  | <code>any</code> |
 
+<a name='DomainLinkageValidator'></a>
+
+## DomainLinkageValidator
+
+A validator for a Domain Linkage Configuration and Credentials.
+
+**Kind**: global class
+
+- [DomainLinkageValidator](#DomainLinkageValidator)
+  - [new DomainLinkageValidator(signatureVerifier)](#new_DomainLinkageValidator_new)
+  - [.validateLinkage(issuer, configuration, domain, options)](#DomainLinkageValidator+validateLinkage)
+  - [.validateCredential(issuer, credentialJwt, domain, options)](#DomainLinkageValidator+validateCredential)
+
+<a name='new_DomainLinkageValidator_new'></a>
+
+### new DomainLinkageValidator(signatureVerifier)
+
+Creates a new `DomainLinkageValidator`. If a `signatureVerifier` is provided it will be used when
+verifying decoded JWS signatures, otherwise the default which is only capable of handling the `EdDSA`
+algorithm will be used.
+
+| Param             | Type                                                |
+| ----------------- | --------------------------------------------------- |
+| signatureVerifier | <code>IJwsVerifier</code> \| <code>undefined</code> |
+
+<a name='DomainLinkageValidator+validateLinkage'></a>
+
+### domainLinkageValidator.validateLinkage(issuer, configuration, domain, options)
+
+Validates the linkage between a domain and a DID.
+[`DomainLinkageConfiguration`] is validated according to [DID Configuration Resource Verification](https://identity.foundation/.well-known/resources/did-configuration/#did-configuration-resource-verification).
+
+Linkage is valid if no error is thrown.
+
+# Note
+
+- Only the [JSON Web Token Proof Format](https://identity.foundation/.well-known/resources/did-configuration/#json-web-token-proof-format)
+- Only the Credential issued by `issuer` is verified.
+
+# Errors
+
+- Semantic structure of `configuration` is invalid.
+- `configuration` includes multiple credentials issued by `issuer`.
+- Validation of the matched Domain Linkage Credential fails.
+
+**Kind**: instance method of [<code>DomainLinkageValidator</code>](#DomainLinkageValidator)
+
+| Param         | Type                                                                           |
+| ------------- | ------------------------------------------------------------------------------ |
+| issuer        | [<code>CoreDocument</code>](#CoreDocument) \| <code>IToCoreDocument</code>     |
+| configuration | [<code>DomainLinkageConfiguration</code>](#DomainLinkageConfiguration)         |
+| domain        | <code>string</code>                                                            |
+| options       | [<code>JwtCredentialValidationOptions</code>](#JwtCredentialValidationOptions) |
+
+<a name='DomainLinkageValidator+validateCredential'></a>
+
+### domainLinkageValidator.validateCredential(issuer, credentialJwt, domain, options)
+
+Validates a [Domain Linkage Credential](https://identity.foundation/.well-known/resources/did-configuration/#domain-linkage-credential).
+Error will be thrown in case the validation fails.
+
+**Kind**: instance method of [<code>DomainLinkageValidator</code>](#DomainLinkageValidator)
+
+| Param         | Type                                                                           |
+| ------------- | ------------------------------------------------------------------------------ |
+| issuer        | [<code>CoreDocument</code>](#CoreDocument) \| <code>IToCoreDocument</code>     |
+| credentialJwt | [<code>Jwt</code>](#Jwt)                                                       |
+| domain        | <code>string</code>                                                            |
+| options       | [<code>JwtCredentialValidationOptions</code>](#JwtCredentialValidationOptions) |
+
 <a name='Duration'></a>
 
 ## Duration
@@ -4640,7 +4710,7 @@ Validation is done with respect to the properties set in `options`.
   be trusted. This section contains more information on additional checks that should be carried out before and
   after calling this method.
 
-## The state of the supplied DID Documents.
+## The state of the supplied DID Documents
 
 The caller must ensure that the DID Documents in `holder` are up-to-date.
 
@@ -4674,7 +4744,7 @@ Validates the semantic structure of the [Presentation](#Presentation).
 
 Attempt to extract the holder of the presentation.
 
-# Errors:
+# Errors
 
 - If deserialization/decoding of the presentation fails.
 - If the holder can't be parsed as DIDs.

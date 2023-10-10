@@ -57,7 +57,7 @@ audit report in our
 ## Joining the discussion
 
 If you want to get involved in discussions about this library, or you're looking for support, go to the
-#stronghold-discussion channel on [Discord](https://discord.iota.org).
+`#stronghold-discussion` channel on [Discord](https://discord.iota.org).
 
 ## Software Bill of Materials
 

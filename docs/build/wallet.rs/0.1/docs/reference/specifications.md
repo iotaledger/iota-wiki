@@ -340,7 +340,7 @@ The following should be considered when implementing this method:
 - The updated address history should not be written down in the database/persistent storage. Instead, the method should only return the updated address history (with transaction hashes). This ensures that there are no partial writes to the database.
 - To sync addresses for an account from scratch, _gap_limit = 10_ should be sent as arguments.
 
-* To sync addresses from the latest address, _gap_limit = 1_ should be sent as arguments.
+- To sync addresses from the latest address, _gap_limit = 1_ should be sent as arguments.
 
 ##### Parameters
 

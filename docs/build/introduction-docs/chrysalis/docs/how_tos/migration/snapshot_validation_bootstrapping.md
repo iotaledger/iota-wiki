@@ -60,7 +60,7 @@ Make sure you have Go installed by issuing `go version` on your command line.
 ```
 
 6. Generate the sha256 hashes of the generated snapshot.
-   files: `sha256sum genesis_snapshot.bin genesis_snapshot_alt.bin global_snapshot.csv `; Example output:
+   files: `sha256sum genesis_snapshot.bin genesis_snapshot_alt.bin global_snapshot.csv`; Example output:
 
 ```
 $ sha256sum genesis_snapshot.bin genesis_snapshot_alt.bin global_snapshot.csv
