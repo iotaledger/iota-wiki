@@ -13,7 +13,7 @@ In the IOTA 2.0 protocol, these three elements are abstracted into layers, where
 
 ## 1. Network Layer
 
-The network layer modules maintain the network. You can think of the network as a pure P2P overlay network. This means that it is a system that runs on top of another network (e.g., the internet), but unlike client-server systems, all nodes have the same roles and perform the same actions.
+The network will be maintained by the network layer modules, which can be characterized as a pure P2P overlay network. This means that it is a system that runs on top of another network (e.g., the internet), but unlike client-server systems, all nodes have the same roles and perform the same actions.
 
 IOTA 2.0's Network Layer consists of two primary modules: the peer discovery module, which maintains a list of nodes actively using the network, and the neighbor selection module (also known as autopeering module), which selects peers in a random secure way. The network layer also manages the gossip between nodes.
 
@@ -84,7 +84,7 @@ If the block does not pass this check, a `BlockFiltered` event is triggered. If 
 
 #### 4.2.5 Mana check
 
-This process checks if the RMC (Reference Mana Cost) requirements are met, as defined in Congestion Control. To summarize, this step checks if the Mana burnt in the block is larger or equal to the Reference Mana Cost of the slot. The RMC calculation is objective, so if a block does not burn the required Mana, it can be directly rejected.
+This process checks if the RMC (Reference Mana Cost) requirements are met, as defined in Congestion Control. To summarize, this step checks if the Mana burnt in the block is larger or equal to the Reference Mana Cost of the slot times the block's workscore. Both the RMC and workscore calculations are objective, so if a block does not burn the required Mana, it can be directly rejected.
 
 It also checks if the account BIC committed at `maxCommitableAge` slots in the past is non-negative, among other account-related filters.
 
@@ -161,7 +161,7 @@ You can think of the scheduler as a gatekeeper that offers protection for your n
 
 Once the steps above are successful, the block is enqueued into the outbox. The outbox is split into several queues, each corresponding to a different block issuer. Those separate queues ensure that the minimum share of throughput reserved to a certain block issuer is not affected by the network usage of the other nodes. Furthermore, separating blocks into different queues guarantees that no block issuers will have their blocks delayed because of spamming from other issuers.
 
-Once the block is enqueued into the right queue, this queue is sorted by increasing the block timestamp. This ensures that blocks are scheduled in the same order by every node with high probability. Furthermore, blocks can only be scheduled when ready, meaning that all parents are scheduled or accepted.
+Once the block is enqueued into the right queue, this queue is sorted by block timestamp in increasing order. This ensures that blocks are scheduled in the same order by every node with high probability. Furthermore, blocks can only be scheduled when ready, meaning that all parents are scheduled or accepted.
 
 The dequeuing process (i.e., fetching the blocks from these queues to be gossiped and added to the tip pool) uses a modified version of the deficit round robin (DRR) algorithm. A maximum (fixed) global `SCHEDULING_RATE`, at which blocks will be scheduled, is set.
 
@@ -171,7 +171,7 @@ Blocks that are scheduled by the node can be gossiped and added to the tip pool.
 
 ### 4.6 Tip Manager
 
-A scheduled block is finally added to one of two tip sets, "strong" and "weak" . Additionally, all strong parents of the scheduled block, which are still part of the strong tip set, are removed from it, whereas any parent in the weak tip is removed regardless of the reference type.
+A scheduled block is finally added to one of two tip sets, "strong" and "weak" . Additionally, all strong parents of the scheduled block that are still part of the strong tip set are removed from it, whereas any parent in the weak tip is removed regardless of the reference type.
 
 The tip selection mechanism performs a uniform random tip selection from a subset of the tip pool to guarantee good properties of the Tangle. Specifically, it will select tips uniformly at random only from tips that are not excessively old and pass the fishing condition. For that reason, when a block is to be issued and its parents are selected, the tip manager will check if the selected parents respect these conditions and discard them if needed. In that case, the discarded parent is also removed from the tip set and a new parent is selected until the required number of parents is met.
 
