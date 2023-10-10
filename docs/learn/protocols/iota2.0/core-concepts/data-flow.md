@@ -8,7 +8,7 @@ This article provides a detailed description of the interaction between the IOTA
 
 In the IOTA 2.0 protocol, these three elements are abstracted into layers, where upper layers build on the functionality of the layers below. The definition of these layers allows for different functionalities to be conveniently separated into modules and addressed individually. This article will describe all the modules and their interactions.
 
-![Different layers of the protocol](/img/learn/protocols/iota2.0/core-concepts/data-flow/layers.png)
+![Different layers of the protocol](/img/learn/protocols/iota2.0/core-concepts/data-flow/layers.png)  
 **Image 1:** Different layers of the protocol.
 
 ## 1. Network Layer
@@ -43,7 +43,7 @@ For example, take the Parser component. The function `ProcessGossipBlock` will t
 
 In the last case, the event will trigger the `Attach` method (the entry to the Block DAG component), whereas the first two events do not trigger any other component.
 
-[![Data flow overview](/img/learn/protocols/iota2.0/core-concepts/data-flow/dataflow.png)](/img/learn/protocols/iota2.0/core-concepts/data-flow/dataflow.png)
+![Data flow overview](/img/learn/protocols/iota2.0/core-concepts/data-flow/dataflow.png)  
 **Image 2:** Data flow overview.
 
 We present the data flow, i.e., the life cycle of a block, from block reception (or creation) until acceptance in the Tangle. Notice that any block created locally by the node or received from a neighbor must pass through most of the data flow. Specifically, all blocks pass from the Block DAG component to the Tip Manager and the consensus/Notarization. The Data Flow (Image 2) is almost precise; however, some of the components' explanations were simplified for didactic purposes. Please see the node software documentation for a precise representation of each component's implementation.
@@ -98,7 +98,7 @@ This process checks if the slot the block commits to is neither too old nor too 
 
 This process checks if the block signature is valid. If the block does not pass this check, a `BlockFiltered` event is triggered. If it passes the check, a `BlockParsed` event is issued, which will trigger the Block DAG module.
 
-![The parser](/img/learn/protocols/iota2.0/core-concepts/data-flow/parser.png)
+![The parser](/img/learn/protocols/iota2.0/core-concepts/data-flow/parser.png)  
 **Image 3:** The parser.
 
 ### 4.3 Block DAG/Solidifier
@@ -119,7 +119,7 @@ The solidifier will also perform the parents' age check. It consists of checking
 
 This condition is necessary to guarantee the monotonicity of the Tangle, i.e., that the timestamps of the blocks increase with respect to the direction in which the Tangle is growing. As in the solidification case, the block is marked as `invalid` if the above condition is not met. If the block passes all the checks above, a `BlockSolid` event is issued, which will trigger the Booker module.
 
-![The Block DAG/solidifier](/img/learn/protocols/iota2.0/core-concepts/data-flow/solidifier.png)
+![The Block DAG/solidifier](/img/learn/protocols/iota2.0/core-concepts/data-flow/solidifier.png)  
 **Image 4:** The Block DAG/Solidifier component.
 
 ### 4.4 Booker
@@ -152,7 +152,7 @@ This process checks that all the consumed inputs are not conflicting. If the tra
 
 Finally, whenever a block is booked, it triggers the Scheduler and the consensus components (which work in parallel).
 
-[![The booker](/img/learn/protocols/iota2.0/core-concepts/data-flow/booker.png)]
+![The booker](/img/learn/protocols/iota2.0/core-concepts/data-flow/booker.png)  
 **Image 5:** The booker.
 
 ### 4.5 Scheduler
