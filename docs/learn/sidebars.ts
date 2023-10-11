@@ -62,7 +62,10 @@ module.exports = {
             {
               type: 'category',
               label: 'Core Concepts',
-              items: ['protocols/iota2.0/core-concepts/data-flow'],
+              items: [
+                'protocols/iota2.0/core-concepts/data-flow',
+                'protocols/iota2.0/core-concepts/data-structures',
+              ],
             },
           ],
         },

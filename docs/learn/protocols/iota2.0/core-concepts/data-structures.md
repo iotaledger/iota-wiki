@@ -372,7 +372,7 @@ In this section, you can find a brief overview of the content of the blocks desc
 
 ### Strong, Weak, Shallow Like Parents
 
-Each new block references several previous blocks, also called parents of the new block. The IOTA protocol has three references or parent types; they are crucial for the [consensus](consensus/introduction.md) protocol and are described in detail in the section.
+Each new block references several previous blocks, also called parents of the new block. The IOTA protocol has three references or parent types; they are crucial for the consensus protocol and are described in detail in the section.
 
 ### Slot Index
 
