@@ -323,7 +323,7 @@ module.exports = async () => {
                 },
                 {
                   from: '/shimmer/hornet',
-                  to: '/hornet/2.0',
+                  to: '/hornet',
                 },
                 {
                   from: '/shimmer/identity.rs',
@@ -391,11 +391,14 @@ module.exports = async () => {
                 },
               ];
 
+              let paths = [];
               for (const redirect of redirects) {
-                if (existingPath.includes(redirect.to)) {
-                  return existingPath.replace(redirect.to, redirect.from);
+                if (existingPath.startsWith(redirect.to)) {
+                  paths.push(existingPath.replace(redirect.to, redirect.from));
                 }
               }
+
+              return paths.length > 0 ? paths : undefined;
             },
           },
         ],
