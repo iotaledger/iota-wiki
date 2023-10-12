@@ -3,7 +3,7 @@
 This article provides a detailed description of the interaction between the IOTA 2.0 protocol components. You can divide the protocol into three main elements:
 
 - A [P2P overlay network](#1-network-layer).
-- An immutable data structure.
+- An immutable [data structure](data-structures.md).
 - A consensus mechanism.
 
 In the IOTA 2.0 protocol, these three elements are abstracted into layers, where upper layers build on the functionality of the layers below. The definition of these layers allows for different functionalities to be conveniently separated into modules and addressed individually. This article will describe all the modules and their interactions.
@@ -19,7 +19,7 @@ IOTA 2.0's Network Layer consists of two primary modules: the peer discovery mod
 
 ## 2. Communication Layer
 
-The communication layer's concern is the information propagated through the network layer, contained in objects called blocks. This layer builds a DAG with blocks as vertices called The Tangle: a replicated, shared, and distributed data structure that emerges through a combination of deterministic rules, cooperation, and direct or virtual voting.
+The communication layer's concern is the information propagated through the network layer, contained in objects called blocks. This layer builds a DAG with blocks as vertices called [The Tangle](data-structures.md): a replicated, shared, and distributed data structure that emerges through a combination of deterministic rules, cooperation, and direct or virtual voting.
 
 Since nodes have finite capabilities, the network can process a limited number of blocks. Thus, the network could become overloaded simply because of honest heavy usage or malicious (spam) attacks. To protect the network from coming to a halt or just getting inconsistent, the rate control and congestion control modules control when and how many blocks can be gossiped.
 
@@ -27,7 +27,7 @@ Since nodes have finite capabilities, the network can process a limited number o
 
 The application layer lives on top of the communication layer. The application layer is mainly related to objects called payloads (e.g., transactions are a type of payload). Anybody can develop applications on this layer, and nodes can choose which applications to run. Of course, these applications can also be dependent on each other.
 
-Nodes must also run several core applications, such as the engine, which maintains the ledger state and a quantity called Mana. Mana is a scarce resource that serves as a Sybil protection mechanism and spam protection. All nodes must also run the Approval Weight and Finality Gadget application, which provides a protocol that produces consensus between nodes on whether blocks are to be included in the Tangle (instead of being orphaned) and on whether transactions inside included blocks should mutate the ledger (instead of being deemed non-mutating). Lastly, the same gadget enables nodes to reorganize their perception of the Tangle when necessary, using the fork-choice rule.
+Nodes must also run several core applications, such as the engine, which maintains the [ledger state](data-structures.md) and a quantity called Mana. Mana is a scarce resource that serves as a Sybil protection mechanism and spam protection. All nodes must also run the Approval Weight and Finality Gadget application, which provides a protocol that produces consensus between nodes on whether blocks are to be included in the Tangle (instead of being orphaned) and on whether transactions inside included blocks should mutate the ledger (instead of being deemed non-mutating). Lastly, the same gadget enables nodes to reorganize their perception of the Tangle when necessary, using the fork-choice rule.
 
 ## 4. Data Flow
 
@@ -54,13 +54,13 @@ Finally, note that this Data Flow concerns _nodes_ and not _clients_. Clients ge
 
 The `IssuePayload` function creates a valid payload, provided to the `CreateBlock` method, along with a set of parents chosen with the Tip Selection Algorithm. Then, the block is signed. Notice that block generation should follow the rates imposed by the rate setter, as defined in rate control, and that the block's type of references should be consistent with the preferred reality of the issuer.
 
-All blocks have a commitment field, which is the hash of a series of information from older slots, e.g., the Merkle root of the Merkle Tree containing the blocks included in the older slots, ledger state at the end of the slots, or Block Issuance Credits.
+All blocks have a commitment field, which is the hash of a series of information from older slots (see [Data Structures](data-structures.md)), e.g., the Merkle root of the Merkle Tree containing the blocks included in the older slots, ledger state at the end of the slots, or Block Issuance Credits.
 
 There are certain rules for creating the commitment:
 A block must not commit to excessively old slots, for example, the "genesis" slot.
 A block must not commit to excessively recent slots. For example, the slot to which the block belongs, since the information the block commits to might still change.
 
-By comparing these commitments, it becomes straightforward to identify the existence of divergences between the nodes' perceptions of the Tangle. Additionally, these commitments in the blocks enable the creation of Slot Commitment Chains.
+By comparing these commitments, it becomes straightforward to identify the existence of divergences between the nodes' perceptions of the Tangle. Additionally, these commitments in the blocks enable the creation of Slot Commitment Chains (see [Data Structures](data-structures.md)).
 
 ### 4.2 Parser
 
@@ -140,11 +140,11 @@ The VM will only execute the transaction if it passes objective checks, particul
 
 This process checks if the values of the generated outputs respect the transaction validation rules. Particularly, it checks if the sum of the IOTA values of the generated outputs equals the sum of the IOTA values of the consumed inputs (analogously, checks are done for any other native tokens).
 
-It also checks if the Mana values of the generated outputs follow the Mana validation rules. If the transaction does not pass this check, it is marked as `invalid` and not executed. If it passes the check, it goes to the next step.
+It also checks if the Mana values of the generated outputs follow the Mana validation rules (see [Data structures](data-structures.md)). If the transaction does not pass this check, it is marked as `invalid` and not executed. If it passes the check, it goes to the next step.
 
 #### Unlock conditions
 
-This process checks that the unlock conditions of the transaction are valid. If the transaction fails to pass this check, it is marked as `invalid` and not executed. If it passes the check, it goes to the next step.
+This process checks that the unlock conditions of the transaction are valid. If the transaction(see [Data structures](data-structures.md)) fails to pass this check, it is marked as `invalid` and not executed. If it passes the check, it goes to the next step.
 
 #### Inputs' validity check
 
