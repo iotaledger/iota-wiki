@@ -110,13 +110,17 @@ You can configure your node to either use HTTP or HTTPS. For publicly exposed no
 
 ```sh
 # This is an example configuration file.
+# Keep this file as an example and make a working file with the following command:
 #
-# Uncomment the lines to fit your needs and rename the file to ".env" at the end
-# with the following command:
+#   cp env_template .env
 #
-#   mv env_template .env
+# You can edit the .env file with a command like: 
+#
+#   nano .env 
+#
+# The .env file is your personal configuration and is used by Docker.
+#
 
-#
 # HINT: You either have to choose a HTTP or a HTTPS setup.
 #       Do not uncomment lines in both sections.
 #
