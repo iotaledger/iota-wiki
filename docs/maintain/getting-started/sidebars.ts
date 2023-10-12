@@ -1,5 +1,3 @@
 module.exports = {
-  maintain: [
-    'welcome',
-  ],
+  maintain: ['welcome'],
 };
