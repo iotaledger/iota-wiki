@@ -177,7 +177,7 @@ The tip selection mechanism performs a uniform random tip selection from a subse
 
 After selecting parents, the algorithm chooses the type of reference (strong, weak, etc.) it uses for each parent, depending on the opinion the node has about the past cones of these parents.
 
-Finally, if the block being issued is a [validation block](mana.md), the tip selection may differ from the tip selection of regular blocks; specifically, committee members will always try to reference all known blocks from other committee members (in addition to the random tips).
+Finally, if the block being issued is a [validation block](mana.md#validation-blocks), the tip selection may differ from the tip selection of regular blocks; specifically, committee members will always try to reference all known blocks from other committee members (in addition to the random tips).
 
 ### 4.7 Consensus and Notarization
 
