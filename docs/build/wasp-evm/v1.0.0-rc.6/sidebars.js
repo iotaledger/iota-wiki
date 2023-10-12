@@ -123,6 +123,7 @@ module.exports = {
       type: 'category',
       label: 'Reference',
       items: [
+        'reference/json-rpc-spec',
         'reference/magic-contract',
         {
           type: 'category',
