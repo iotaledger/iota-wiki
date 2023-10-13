@@ -1,15 +1,8 @@
-.mana_card {
-  padding: 1em;
-  margin: 0 0.3em 0.3em 0;
-  text-align: left;
-  align-items: stretch;
+.mana--card {
+  box-sizing: border-box;
 }
-.mana_card > .row {
-  padding: 0.3em;
-}
-
 .row > .button {
-  margin: 0 var(--ifm-spacing-horizontal);
+  margin: 0;
 }
 
 .table .row {
@@ -18,10 +11,15 @@
 }
 
 .table .row .col {
-  padding: 6px;
+  box-sizing: border-box;
+}
+
+.table .row .add-button {
+  margin: 0 calc(50% - var(--ifm-navbar-padding-horizontal));
 }
 
 .table .row .col--4:nth-child(1),
+.table .row .col--8:nth-child(1),
 .table .row .col--4:nth-child(2),
 .table .row .col--6:nth-child(1) {
   border-right: var(--ifm-table-border-width) solid

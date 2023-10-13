@@ -39,50 +39,52 @@ function ValidatorCard({
   id: number;
 }) {
   return (
-    <div className='mana_card card col col--3'>
-      <div className='row'>
-        <div className='card__title col'>Validator {id + 1}</div>
-        <button
-          className='button button--danger col--12'
-          onClick={() => handleDelete(id)}
-        >
-          X
-        </button>
-      </div>
-      <div className='row'>
-        <label className='col col--8'>Stake:</label>
-        <input
-          className='col  col--4 rounded_inputs'
-          type='number'
-          value={validator.lockedStake}
-          onChange={(e) => handleStakeChange(Number(e.target.value), id)}
-        ></input>
-      </div>
-      <div className='row'>
-        <label className='col col--8'>Delegated:</label>
-        <input
-          className='col  col--4 rounded_inputs'
-          value={validator.delegatedStake}
-          onChange={(e) =>
-            handleDelegatedStakeChange(Number(e.target.value), id)
-          }
-        ></input>
-      </div>
-      <div className='row'>
-        <label className='col col--8'>PF:</label>
-        <input
-          className='col  col--4 rounded_inputs'
-          value={validator.performanceFactor}
-          onChange={(e) => handlePFChange(Number(e.target.value), id)}
-        ></input>
-      </div>
-      <div className='row'>
-        <label className='col col--8'>FC:</label>
-        <input
-          className='col  col--4 rounded_inputs'
-          value={validator.fixedCost}
-          onChange={(e) => handleFCChange(Number(e.target.value), id)}
-        ></input>
+    <div className='col col--4'>
+      <div className='table'>
+        <div className='row'>
+          <div className='col col--9'>Validator {id + 1}</div>
+
+          <button
+            className=' col col--3 button button--danger  align-right'
+            onClick={() => handleDelete(id)}
+          >
+            X
+          </button>
+        </div>
+        <div className='row'>
+          <div className='col col--8'>Stake:</div>
+          <input
+            className='col col--4 align-right'
+            value={validator.lockedStake}
+            onChange={(e) => handleStakeChange(Number(e.target.value), id)}
+          ></input>
+        </div>
+        <div className='row'>
+          <div className='col col--8'>Delegated:</div>
+          <input
+            className='col col--4 align-right'
+            value={validator.delegatedStake}
+            onChange={(e) =>
+              handleDelegatedStakeChange(Number(e.target.value), id)
+            }
+          ></input>
+        </div>
+        <div className='row'>
+          <div className='col col--8'>PF:</div>
+          <input
+            className='col col--4 align-right'
+            value={validator.performanceFactor}
+            onChange={(e) => handlePFChange(Number(e.target.value), id)}
+          ></input>
+        </div>
+        <div className='row'>
+          <div className='col col--8'>FC:</div>
+          <input
+            className='col col--4 align-right'
+            value={validator.fixedCost}
+            onChange={(e) => handleFCChange(Number(e.target.value), id)}
+          ></input>
+        </div>
       </div>
     </div>
   );
@@ -393,27 +395,24 @@ export default function ManaCalculator() {
               onChange={(e) => handleEpochChange(Number(e.target.value))}
             ></input>
           </div>
-        </div>
-        <div className='row'>
           <Details summary='Advanced Settings - Validators'>
             <div className='row'>
               {state.validators.map((validator, i) => (
-                <div className='col col--4' key={i}>
-                  <ValidatorCard
-                    validator={validator}
-                    handleDelete={handleDelete}
-                    handleStakeChange={handleStakeChange}
-                    handleDelegatedStakeChange={handleDelegatedStakeChange}
-                    handleFCChange={handleFCChange}
-                    handlePFChange={handlePFChange}
-                    id={i}
-                  />
-                </div>
+                <ValidatorCard
+                  validator={validator}
+                  handleDelete={handleDelete}
+                  handleStakeChange={handleStakeChange}
+                  handleDelegatedStakeChange={handleDelegatedStakeChange}
+                  handleFCChange={handleFCChange}
+                  handlePFChange={handlePFChange}
+                  id={i}
+                  key={i}
+                />
               ))}
             </div>
             <div className='row'>
               <button
-                className='button button--danger col--4'
+                className='button button--danger col--4 add-button'
                 onClick={() => {
                   state.validators.push({
                     lockedStake: 100,
@@ -497,40 +496,40 @@ export default function ManaCalculator() {
               onChange={(e) => handleFinalEpochChange(Number(e.target.value))}
             ></input>
           </div>
+          <Details summary='Advanced Settings - Validators'>
+            <div className='row'>
+              {state.validators.map((validator, i) => (
+                <ValidatorCard
+                  validator={validator}
+                  handleDelete={handleDelete}
+                  handleStakeChange={handleStakeChange}
+                  handleDelegatedStakeChange={handleDelegatedStakeChange}
+                  handleFCChange={handleFCChange}
+                  handlePFChange={handlePFChange}
+                  id={i}
+                  key={i}
+                />
+              ))}
+            </div>
+            <div className='row'>
+              <button
+                className='button button--danger col--4 add-button'
+                onClick={() => {
+                  state.validators.push({
+                    lockedStake: 100,
+                    delegatedStake: 0,
+                    performanceFactor: 1.0,
+                    fixedCost: 0.0,
+                  });
+                  setState({ ...state });
+                }}
+              >
+                +
+              </button>
+            </div>
+          </Details>
         </div>
-        <Details summary='Advanced Settings - Validators'>
-          <div className='row'>
-            {state.validators.map((validator, i) => (
-              <ValidatorCard
-                validator={validator}
-                handleDelete={handleDelete}
-                handleStakeChange={handleStakeChange}
-                handleDelegatedStakeChange={handleDelegatedStakeChange}
-                handleFCChange={handleFCChange}
-                handlePFChange={handlePFChange}
-                id={i}
-                key={i}
-              />
-            ))}
-          </div>
 
-          <div className='row'>
-            <button
-              className='button button--danger col--4'
-              onClick={() => {
-                state.validators.push({
-                  lockedStake: 100,
-                  delegatedStake: 0,
-                  performanceFactor: 1.0,
-                  fixedCost: 0.0,
-                });
-                setState({ ...state });
-              }}
-            >
-              +
-            </button>
-          </div>
-        </Details>
         <div className='row'>
           <div className='col col--2'>You are a:</div>
         </div>
