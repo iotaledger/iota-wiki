@@ -1,4 +1,14 @@
-exports.articleRedirects = [
+const fs = require('fs');
+
+function directoryExists(directoryPath) {
+  try {
+    return fs.statSync(directoryPath).isDirectory();
+  } catch (err) {
+    return false;
+  }
+}
+
+const ApiCore = [
   {
     from: '/develop/category/nodes/rest-api/messages',
     to: '/apis/core/v1/submit-a-message',
@@ -23,6 +33,38 @@ exports.articleRedirects = [
     from: '/develop/category/nodes/rest-api/utxo',
     to: '/apis/core/v1/find-an-output-by-its-identifier',
   },
+  {
+    from: '/shimmer/develop/category/nodes/core-rest-api/blocks',
+    to: '/apis/core/v2/submit-a-block',
+  },
+  {
+    from: '/shimmer/develop/category/nodes/core-rest-api/control',
+    to: '/apis/core/v2/prunes-the-node-database',
+  },
+  {
+    from: '/shimmer/develop/category/nodes/core-rest-api/milestones',
+    to: '/apis/core/v2/look-up-a-milestone-by-a-given-milestone-id',
+  },
+  {
+    from: '/shimmer/develop/category/nodes/core-rest-api/node',
+    to: '/apis/core/v2/returns-the-health-of-the-node',
+  },
+  {
+    from: '/shimmer/develop/category/nodes/core-rest-api/peers',
+    to: '/apis/core/v2/get-information-about-the-peers-of-the-node',
+  },
+  {
+    from: '/shimmer/develop/category/nodes/core-rest-api/tangle',
+    to: '/apis/core/v2/returns-tips-that-are-ideal-for-attaching-a-block',
+  },
+  {
+    from: '/shimmer/develop/category/nodes/core-rest-api/utxo',
+    to: '/apis/core/v2/find-an-output-by-its-identifier',
+  },
+];
+
+exports.articleRedirects = [
+  ...(directoryExists('./docs/build/apis/docs/core') ? ApiCore : []),
   {
     from: '/develop/endpoints/devnet',
     to: '/build/networks-endpoints',
@@ -155,34 +197,6 @@ exports.articleRedirects = [
   {
     from: '/shimmer/cookie-policy',
     to: '/cookie-policy',
-  },
-  {
-    from: '/shimmer/develop/category/nodes/core-rest-api/blocks',
-    to: '/apis/core/v2/submit-a-block',
-  },
-  {
-    from: '/shimmer/develop/category/nodes/core-rest-api/control',
-    to: '/apis/core/v2/prunes-the-node-database',
-  },
-  {
-    from: '/shimmer/develop/category/nodes/core-rest-api/milestones',
-    to: '/apis/core/v2/look-up-a-milestone-by-a-given-milestone-id',
-  },
-  {
-    from: '/shimmer/develop/category/nodes/core-rest-api/node',
-    to: '/apis/core/v2/returns-the-health-of-the-node',
-  },
-  {
-    from: '/shimmer/develop/category/nodes/core-rest-api/peers',
-    to: '/apis/core/v2/get-information-about-the-peers-of-the-node',
-  },
-  {
-    from: '/shimmer/develop/category/nodes/core-rest-api/tangle',
-    to: '/apis/core/v2/returns-tips-that-are-ideal-for-attaching-a-block',
-  },
-  {
-    from: '/shimmer/develop/category/nodes/core-rest-api/utxo',
-    to: '/apis/core/v2/find-an-output-by-its-identifier',
   },
   {
     from: '/shimmer/develop/docs',

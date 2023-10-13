@@ -40,6 +40,9 @@ jobs:
       - name: Prepare build
         run: yarn prepare
         shell: bash
+      - name: Generate API
+        run: yarn generate:api
+        shell: bash
       - name: Build
         run: yarn build
       # Convert to Vercel project and upload

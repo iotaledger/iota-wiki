@@ -10,18 +10,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 16
-          cache: 'yarn'
-      - name: Allow modern Yarn
-        run: |
-          corepack enable
-      - name: Install dependencies
-        run: |
-          yarn
-      - name: Install cli
-        run: cd cli && yarn && yarn build && cd ..
+      - name: Prepare Yarn
+        uses: ./.github/actions/prepare/
+      - name: Build CLI
+        run: yarn build:cli
       - name: Check Links
         id: check-links
         # Run link checker and save outputs to files. https://stackoverflow.com/a/692407

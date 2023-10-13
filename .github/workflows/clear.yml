@@ -29,6 +29,9 @@ jobs:
       - name: Prepare build
         run: yarn prepare
         shell: bash
+      - name: Generate API
+        run: yarn generate:api
+        shell: bash
       - name: Build
         run: yarn build
       # Create a comment on the pull request that the clear build completed

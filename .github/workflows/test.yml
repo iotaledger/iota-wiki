@@ -36,5 +36,8 @@ jobs:
         shell: bash
       - name: Checkout remote
         run: yarn checkout:remote
+      - name: Generate API
+        run: yarn generate:api
+        shell: bash
       - name: Build
         run: yarn build

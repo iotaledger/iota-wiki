@@ -2,6 +2,7 @@
   "name": "@iota-wiki/core",
   "version": "1.1.0",
   "scripts": {
+    "build:cli": "yarn ./cli build",
     "build:plugins": "yarn ./plugins/tutorial build && yarn ./plugins/docs build",
     "build:theme": "yarn ./theme build",
     "checkout": "git submodule update --init",
@@ -15,7 +16,7 @@
     "format": "prettier --cache --write .",
     "format:check": "prettier --cache --check .",
     "format:svg": "svgo ./src/**/*.svg",
-    "prepare": "yarn checkout && yarn build:plugins && yarn build:theme && yarn generate:api",
+    "prepare": "yarn build:plugins && yarn build:theme && yarn checkout",
     "docusaurus": "docusaurus",
     "start": "NODE_OPTIONS='--max-old-space-size=4096' docusaurus start",
     "build": "NODE_OPTIONS='--max-old-space-size=4096' docusaurus build",

@@ -25,4 +25,4 @@
 !/docs/build/iota-sdk/1.0.0/docs/references/wasm-api-reference.md
 /docs/build/apis
 !/docs/build/apis/welcome.md
-!/docs/build/apis/sidebars.ts
+!/docs/build/apis/sidebars.js
