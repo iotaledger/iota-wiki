@@ -74,6 +74,8 @@ function ValidatorCard({
           <div className='col col--8'>PF:</div>
           <input
             className='col col--4 align-right'
+            type='number'
+            step='0.01'
             value={validator.performanceFactor}
             onChange={(e) => handlePFChange(Number(e.target.value), id)}
           ></input>
@@ -82,6 +84,8 @@ function ValidatorCard({
           <div className='col col--8'>FC:</div>
           <input
             className='col col--4 align-right'
+            type='number'
+            step='0.01'
             value={validator.fixedCost}
             onChange={(e) => handleFCChange(Number(e.target.value), id)}
           ></input>
@@ -626,6 +630,8 @@ function ValidatorForm({
           <div className='col col--6'>Performance factor:</div>
           <input
             className='col col--6 align-right'
+            type='number'
+            step='0.01'
             value={performanceFactor}
             onChange={(e) => handleOwnPFChange(Number(e.target.value))}
           ></input>
@@ -633,9 +639,10 @@ function ValidatorForm({
 
         <div className='row '>
           <div className='col col--6'>Fixed costs:</div>
-
           <input
             className='col col--6 align-right'
+            type='number'
+            step='0.01'
             value={fixedCost}
             onChange={(e) => handleOwnFCChange(Number(e.target.value))}
           ></input>
