@@ -12,6 +12,7 @@ const REWARDS_MANA_SHARE_COEFFICIENT = 2;
 export const RMC_LOW_CONGESTION = 100000;
 export const RMC_STABLE_CONGESTION = 9000000;
 export const RMC_EXTREME_CONGESTION = 500000000;
+export const EPOCH = 1154 + 1;
 
 // given t in seconds, returns the slot that time t belongs to
 function time_to_slot(t: number): number {

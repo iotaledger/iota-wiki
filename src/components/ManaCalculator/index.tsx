@@ -20,6 +20,7 @@ import {
   ValidatorParameters,
 } from './types';
 import { Details } from '@docusaurus/theme-common/Details';
+import { EPOCH } from './utils';
 
 function ValidatorCard({
   validator,
@@ -92,7 +93,6 @@ function ValidatorCard({
 
 export default function ManaCalculator() {
   const [state, setState] = useState({
-    epoch: 1154 + 1,
     initialEpoch: 0,
     finalEpoch: 100,
     validators: [
@@ -242,13 +242,6 @@ export default function ManaCalculator() {
     });
   }
 
-  function handleEpochChange(value: number) {
-    setState({
-      ...state,
-      epoch: value,
-    });
-  }
-
   function handleInitialEpochChange(value: number) {
     setState({
       ...state,
@@ -280,15 +273,11 @@ export default function ManaCalculator() {
       state.delegator.validator,
       null,
       state.validators,
-      state.epoch,
+      EPOCH,
       null,
       'Delegator',
     );
-    let passiveRewards = calculatePassiveRewards(
-      state.stake,
-      state.epoch,
-      state.epoch + 1,
-    );
+    let passiveRewards = calculatePassiveRewards(state.stake, EPOCH, EPOCH + 1);
 
     let grantedTPS = calculateTPS(manaGeneratedPerEpoch, state.congestion);
     let additionalTPS = calculateTPS(passiveRewards, state.congestion);
@@ -312,7 +301,7 @@ export default function ManaCalculator() {
           state.validator.attractedDelegatedStakeFromOtherPools,
       } as ValidatorParameters,
       state.validators,
-      state.epoch,
+      EPOCH,
       null,
       'Validator',
     );
@@ -387,14 +376,6 @@ export default function ManaCalculator() {
     <Tabs>
       <TabItem value='tps' label='TPS'>
         <div className='table'>
-          <div className='row'>
-            <label className='col col--6'>Epoch:</label>
-            <input
-              className='col col--6 align-right'
-              value={state.epoch}
-              onChange={(e) => handleEpochChange(Number(e.target.value))}
-            ></input>
-          </div>
           <Details summary='Advanced Settings - Validators'>
             <div className='row'>
               {state.validators.map((validator, i) => (
