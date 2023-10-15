@@ -621,59 +621,61 @@ function ValidatorForm({
           onChange={(e) => handleOwnStakeChange(Number(e.target.value))}
         ></input>
       </div>
-      <div className='row '>
-        <div className='col col--6'>Performance factor:</div>
-        <input
-          className='col col--6 align-right'
-          value={performanceFactor}
-          onChange={(e) => handleOwnPFChange(Number(e.target.value))}
-        ></input>
-      </div>
-
-      <div className='row '>
-        <div className='col col--6'>Fixed costs:</div>
-
-        <input
-          className='col col--6 align-right'
-          value={fixedCost}
-          onChange={(e) => handleOwnFCChange(Number(e.target.value))}
-        ></input>
-      </div>
-      <div className='row '>
-        <div className='col col--6'>Share of your stake locked:</div>
-        <input
-          className='col col--6 align-right '
-          value={shareOfYourStakeLocked}
-          onChange={(e) =>
-            handleShareOfYourStakeLockedChange(Number(e.target.value))
-          }
-        ></input>
-      </div>
-      <div className='row '>
-        <div className='col col--6'>Attracted new delegated stake:</div>
-        <input
-          className='col col--6 align-right'
-          value={attractedNewDelegatedStake}
-          onChange={(e) =>
-            handleAttractedNewDelegatedStakeChange(Number(e.target.value))
-          }
-        ></input>
-      </div>
-      <div className='row '>
-        <div className='col col--6'>
-          Attracted delegated stake from other pools:
+      <Details summary='Advanced Settings - Validator'>
+        <div className='row '>
+          <div className='col col--6'>Performance factor:</div>
+          <input
+            className='col col--6 align-right'
+            value={performanceFactor}
+            onChange={(e) => handleOwnPFChange(Number(e.target.value))}
+          ></input>
         </div>
 
-        <input
-          className='col col--6 align-right'
-          value={attractedDelegatedStakeFromOtherPools}
-          onChange={(e) =>
-            handleAttractedDelegatedStakeFromOtherPoolsChange(
-              Number(e.target.value),
-            )
-          }
-        ></input>
-      </div>
+        <div className='row '>
+          <div className='col col--6'>Fixed costs:</div>
+
+          <input
+            className='col col--6 align-right'
+            value={fixedCost}
+            onChange={(e) => handleOwnFCChange(Number(e.target.value))}
+          ></input>
+        </div>
+        <div className='row '>
+          <div className='col col--6'>Share of your stake locked:</div>
+          <input
+            className='col col--6 align-right '
+            value={shareOfYourStakeLocked}
+            onChange={(e) =>
+              handleShareOfYourStakeLockedChange(Number(e.target.value))
+            }
+          ></input>
+        </div>
+        <div className='row '>
+          <div className='col col--6'>Attracted new delegated stake:</div>
+          <input
+            className='col col--6 align-right'
+            value={attractedNewDelegatedStake}
+            onChange={(e) =>
+              handleAttractedNewDelegatedStakeChange(Number(e.target.value))
+            }
+          ></input>
+        </div>
+        <div className='row '>
+          <div className='col col--6'>
+            Attracted delegated stake from other pools:
+          </div>
+
+          <input
+            className='col col--6 align-right'
+            value={attractedDelegatedStakeFromOtherPools}
+            onChange={(e) =>
+              handleAttractedDelegatedStakeFromOtherPoolsChange(
+                Number(e.target.value),
+              )
+            }
+          ></input>
+        </div>
+      </Details>
     </div>
   );
 }
