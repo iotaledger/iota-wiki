@@ -373,197 +373,168 @@ export default function ManaCalculator() {
   }
 
   return (
-    <Tabs>
-      <TabItem value='tps' label='TPS'>
-        <div className='table'>
-          <Details summary='Advanced Settings - Validators'>
-            <div className='row'>
-              {state.validators.map((validator, i) => (
-                <ValidatorCard
-                  validator={validator}
-                  handleDelete={handleDelete}
-                  handleStakeChange={handleStakeChange}
-                  handleDelegatedStakeChange={handleDelegatedStakeChange}
-                  handleFCChange={handleFCChange}
-                  handlePFChange={handlePFChange}
-                  id={i}
-                  key={i}
-                />
-              ))}
-            </div>
-            <div className='row'>
-              <button
-                className='button button--danger col--4 add-button'
-                onClick={() => {
-                  state.validators.push({
-                    lockedStake: 100,
-                    delegatedStake: 0,
-                    performanceFactor: 1.0,
-                    fixedCost: 0.0,
-                  });
-                  setState({ ...state });
-                }}
-              >
-                +
-              </button>
-            </div>
-          </Details>
-        </div>
-        <div className='row'>
-          <div className='col col--2'>You are a:</div>
-        </div>
-        <Tabs>
-          <TabItem value='Delegator' label='Delegator'>
-            <DelegatorForm
-              stake={state.stake}
-              validators={state.validators}
-              handleOwnStakeChange={handleOwnStakeChange}
-              handleValidatorChange={handleValidatorChange}
-            />
-            <OutputForm
-              manaGeneratedPerEpoch={delegatorResults.manaGeneratedPerEpoch}
-              passiveRewards={delegatorResults.passiveRewards}
-              totalTPS={delegatorResults.totalTPS}
-              handleCongestionChange={handleCongestionChange}
-            />
-          </TabItem>
-          <TabItem value='Validator' label='Validator'>
-            <ValidatorForm
-              stake={state.stake}
-              performanceFactor={state.validator.performanceFactor}
-              fixedCost={state.validator.fixedCost}
-              shareOfYourStakeLocked={state.validator.shareOfYourStakeLocked}
-              attractedNewDelegatedStake={
-                state.validator.attractedNewDelegatedStake
-              }
-              attractedDelegatedStakeFromOtherPools={
-                state.validator.attractedDelegatedStakeFromOtherPools
-              }
-              handleOwnStakeChange={handleOwnStakeChange}
-              handleOwnPFChange={handleOwnPFChange}
-              handleOwnFCChange={handleOwnFCChange}
-              handleShareOfYourStakeLockedChange={
-                handleShareOfYourStakeLockedChange
-              }
-              handleAttractedNewDelegatedStakeChange={
-                handleAttractedNewDelegatedStakeChange
-              }
-              handleAttractedDelegatedStakeFromOtherPoolsChange={
-                handleAttractedDelegatedStakeFromOtherPoolsChange
-              }
-            />
-            <OutputForm
-              manaGeneratedPerEpoch={validatorResults.manaGeneratedPerEpoch}
-              passiveRewards={validatorResults.passiveRewards}
-              totalTPS={validatorResults.totalTPS}
-              handleCongestionChange={handleCongestionChange}
-            />
-          </TabItem>
-        </Tabs>
-      </TabItem>
-      <TabItem value='mana' label='Mana accumulation'>
-        <div className='table'>
+    <div>
+      <Tabs>
+        <TabItem value='tps' label='TPS'>
+          <div className='table'></div>
           <div className='row'>
-            <label className='col col--3 '>Initial epoch:</label>
-            <input
-              className='col col--3 align-right'
-              value={state.initialEpoch}
-              onChange={(e) => handleInitialEpochChange(Number(e.target.value))}
-            ></input>
-            <label className='col col--3'>Final epoch:</label>
-            <input
-              className='col col--3 align-right'
-              value={state.finalEpoch}
-              onChange={(e) => handleFinalEpochChange(Number(e.target.value))}
-            ></input>
+            <div className='col col--2'>You are a:</div>
           </div>
-          <Details summary='Advanced Settings - Validators'>
+          <Tabs>
+            <TabItem value='Delegator' label='Delegator'>
+              <DelegatorForm
+                stake={state.stake}
+                validators={state.validators}
+                handleOwnStakeChange={handleOwnStakeChange}
+                handleValidatorChange={handleValidatorChange}
+              />
+              <OutputForm
+                manaGeneratedPerEpoch={delegatorResults.manaGeneratedPerEpoch}
+                passiveRewards={delegatorResults.passiveRewards}
+                totalTPS={delegatorResults.totalTPS}
+                handleCongestionChange={handleCongestionChange}
+              />
+            </TabItem>
+            <TabItem value='Validator' label='Validator'>
+              <ValidatorForm
+                stake={state.stake}
+                performanceFactor={state.validator.performanceFactor}
+                fixedCost={state.validator.fixedCost}
+                shareOfYourStakeLocked={state.validator.shareOfYourStakeLocked}
+                attractedNewDelegatedStake={
+                  state.validator.attractedNewDelegatedStake
+                }
+                attractedDelegatedStakeFromOtherPools={
+                  state.validator.attractedDelegatedStakeFromOtherPools
+                }
+                handleOwnStakeChange={handleOwnStakeChange}
+                handleOwnPFChange={handleOwnPFChange}
+                handleOwnFCChange={handleOwnFCChange}
+                handleShareOfYourStakeLockedChange={
+                  handleShareOfYourStakeLockedChange
+                }
+                handleAttractedNewDelegatedStakeChange={
+                  handleAttractedNewDelegatedStakeChange
+                }
+                handleAttractedDelegatedStakeFromOtherPoolsChange={
+                  handleAttractedDelegatedStakeFromOtherPoolsChange
+                }
+              />
+              <OutputForm
+                manaGeneratedPerEpoch={validatorResults.manaGeneratedPerEpoch}
+                passiveRewards={validatorResults.passiveRewards}
+                totalTPS={validatorResults.totalTPS}
+                handleCongestionChange={handleCongestionChange}
+              />
+            </TabItem>
+          </Tabs>
+        </TabItem>
+        <TabItem value='mana' label='Mana accumulation'>
+          <div className='table'>
             <div className='row'>
-              {state.validators.map((validator, i) => (
-                <ValidatorCard
-                  validator={validator}
-                  handleDelete={handleDelete}
-                  handleStakeChange={handleStakeChange}
-                  handleDelegatedStakeChange={handleDelegatedStakeChange}
-                  handleFCChange={handleFCChange}
-                  handlePFChange={handlePFChange}
-                  id={i}
-                  key={i}
-                />
-              ))}
+              <label className='col col--3 '>Initial epoch:</label>
+              <input
+                className='col col--3 align-right'
+                value={state.initialEpoch}
+                onChange={(e) =>
+                  handleInitialEpochChange(Number(e.target.value))
+                }
+              ></input>
+              <label className='col col--3'>Final epoch:</label>
+              <input
+                className='col col--3 align-right'
+                value={state.finalEpoch}
+                onChange={(e) => handleFinalEpochChange(Number(e.target.value))}
+              ></input>
             </div>
-            <div className='row'>
-              <button
-                className='button button--danger col--4 add-button'
-                onClick={() => {
-                  state.validators.push({
-                    lockedStake: 100,
-                    delegatedStake: 0,
-                    performanceFactor: 1.0,
-                    fixedCost: 0.0,
-                  });
-                  setState({ ...state });
-                }}
-              >
-                +
-              </button>
-            </div>
-          </Details>
-        </div>
+          </div>
 
+          <div className='row'>
+            <div className='col col--2'>You are a:</div>
+          </div>
+          <Tabs>
+            <TabItem value='Delegator' label='Delegator'>
+              <DelegatorForm
+                stake={state.stake}
+                validators={state.validators}
+                handleOwnStakeChange={handleOwnStakeChange}
+                handleValidatorChange={handleValidatorChange}
+              />
+              <OutputForm
+                manaGeneratedPerEpoch={delegatorAccumulateResults.manaGenerated}
+                passiveRewards={delegatorAccumulateResults.passiveRewards}
+                totalTPS={delegatorAccumulateResults.totalTPS}
+                handleCongestionChange={handleCongestionChange}
+              />
+            </TabItem>
+            <TabItem value='Validator' label='Validator'>
+              <ValidatorForm
+                stake={state.stake}
+                performanceFactor={state.validator.performanceFactor}
+                fixedCost={state.validator.fixedCost}
+                shareOfYourStakeLocked={state.validator.shareOfYourStakeLocked}
+                attractedNewDelegatedStake={
+                  state.validator.attractedNewDelegatedStake
+                }
+                attractedDelegatedStakeFromOtherPools={
+                  state.validator.attractedDelegatedStakeFromOtherPools
+                }
+                handleOwnStakeChange={handleOwnStakeChange}
+                handleOwnPFChange={handleOwnPFChange}
+                handleOwnFCChange={handleOwnFCChange}
+                handleShareOfYourStakeLockedChange={
+                  handleShareOfYourStakeLockedChange
+                }
+                handleAttractedNewDelegatedStakeChange={
+                  handleAttractedNewDelegatedStakeChange
+                }
+                handleAttractedDelegatedStakeFromOtherPoolsChange={
+                  handleAttractedDelegatedStakeFromOtherPoolsChange
+                }
+              />
+              <OutputForm
+                manaGeneratedPerEpoch={validatorResults.manaGeneratedPerEpoch}
+                passiveRewards={validatorResults.passiveRewards}
+                totalTPS={validatorResults.totalTPS}
+                handleCongestionChange={handleCongestionChange}
+              />
+            </TabItem>
+          </Tabs>
+        </TabItem>
+      </Tabs>
+      <Details summary='Advanced Settings - Validators'>
         <div className='row'>
-          <div className='col col--2'>You are a:</div>
+          {state.validators.map((validator, i) => (
+            <ValidatorCard
+              validator={validator}
+              handleDelete={handleDelete}
+              handleStakeChange={handleStakeChange}
+              handleDelegatedStakeChange={handleDelegatedStakeChange}
+              handleFCChange={handleFCChange}
+              handlePFChange={handlePFChange}
+              id={i}
+              key={i}
+            />
+          ))}
         </div>
-        <Tabs>
-          <TabItem value='Delegator' label='Delegator'>
-            <DelegatorForm
-              stake={state.stake}
-              validators={state.validators}
-              handleOwnStakeChange={handleOwnStakeChange}
-              handleValidatorChange={handleValidatorChange}
-            />
-            <OutputForm
-              manaGeneratedPerEpoch={delegatorAccumulateResults.manaGenerated}
-              passiveRewards={delegatorAccumulateResults.passiveRewards}
-              totalTPS={delegatorAccumulateResults.totalTPS}
-              handleCongestionChange={handleCongestionChange}
-            />
-          </TabItem>
-          <TabItem value='Validator' label='Validator'>
-            <ValidatorForm
-              stake={state.stake}
-              performanceFactor={state.validator.performanceFactor}
-              fixedCost={state.validator.fixedCost}
-              shareOfYourStakeLocked={state.validator.shareOfYourStakeLocked}
-              attractedNewDelegatedStake={
-                state.validator.attractedNewDelegatedStake
-              }
-              attractedDelegatedStakeFromOtherPools={
-                state.validator.attractedDelegatedStakeFromOtherPools
-              }
-              handleOwnStakeChange={handleOwnStakeChange}
-              handleOwnPFChange={handleOwnPFChange}
-              handleOwnFCChange={handleOwnFCChange}
-              handleShareOfYourStakeLockedChange={
-                handleShareOfYourStakeLockedChange
-              }
-              handleAttractedNewDelegatedStakeChange={
-                handleAttractedNewDelegatedStakeChange
-              }
-              handleAttractedDelegatedStakeFromOtherPoolsChange={
-                handleAttractedDelegatedStakeFromOtherPoolsChange
-              }
-            />
-            <OutputForm
-              manaGeneratedPerEpoch={validatorResults.manaGeneratedPerEpoch}
-              passiveRewards={validatorResults.passiveRewards}
-              totalTPS={validatorResults.totalTPS}
-              handleCongestionChange={handleCongestionChange}
-            />
-          </TabItem>
-        </Tabs>
-      </TabItem>
-    </Tabs>
+        <div className='row'>
+          <button
+            className='button button--danger col--4 add-button'
+            onClick={() => {
+              state.validators.push({
+                lockedStake: 100,
+                delegatedStake: 0,
+                performanceFactor: 1.0,
+                fixedCost: 0.0,
+              });
+              setState({ ...state });
+            }}
+          >
+            +
+          </button>
+        </div>
+      </Details>
+    </div>
   );
 }
 
