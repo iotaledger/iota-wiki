@@ -701,12 +701,12 @@ function OutputForm({
   return (
     <div className='table'>
       <div className='row '>
-        <div className='col col--6'> Mana generation per epoch</div>
-        <div className='col col--6 align-right'>{manaGeneratedPerEpoch}</div>
+        <div className='col col--6'>Mana generation (holding IOTA)</div>
+        <div className='col col--6 align-right'>{passiveRewards}</div>
       </div>
       <div className='row '>
-        <div className='col col--6'>Additional rewards per epoch</div>
-        <div className='col col--6 align-right'>{passiveRewards}</div>
+        <div className='col col--6'>Mana rewards (delegation/validation)</div>
+        <div className='col col--6 align-right'>{manaGeneratedPerEpoch}</div>
       </div>
 
       <div className='row '>
