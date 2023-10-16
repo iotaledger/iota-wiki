@@ -68,4 +68,4 @@ This page deals with the JSON-RPC API used by EVM execution clients.
 | 2   | [net_peerCount](https://openethereum.github.io/JSONRPC-net-module#net_peercount) | _Returns number of peers currently connected to the client_             | ✅ |
 | 3   | [net_version](https://openethereum.github.io/JSONRPC-net-module#net_version)     | _Returns the current network protocol version_                        | ✅ |
 
-You can read on complete set of available Spec [here](https://ethereum.github.io/execution-apis/api-documentation/).
+You can find the complete set of available specs in the [Ethereum API Documentation](https://ethereum.github.io/execution-apis/api-documentation/).
