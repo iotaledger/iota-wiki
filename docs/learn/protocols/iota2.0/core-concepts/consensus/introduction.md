@@ -63,7 +63,7 @@ Once the network recovers from its divided state and a [supermajority](prelimina
 
 :::info
 
-You can learn more about a formal description of consensus protocols supporting both safety and liveness in the [Ebb-and-FlowProtocols: AResolutionoftheAvailability-FinalityDilemma paper](https://arxiv.org/pdf/2009.04987).
+You can learn more about a formal description of consensus protocols supporting both safety and liveness in the [Ebb and Flow Protocols: A Resolution of the Availability-Finality Dilemma  paper](https://arxiv.org/pdf/2009.04987).
 
 :::
 
