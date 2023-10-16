@@ -259,9 +259,6 @@ One prominent example of branches is defined using the causal history of transac
 
 The set of all conflicts in the causal history of a transaction $tx$ is called the branch of $tx$ and denoted as $Branch(tx)$.
 
-### Block Branches
-
-Another important use case of branches is defined on the block level.
 
 #### Branch of a block
 
