@@ -22,6 +22,12 @@ A committee member is expected to issue _validation blocks_ every `frequencyVali
 
 Denote the total committee for epoch $e$ as <code>$\mathcal{C}_{total}(e)$</code>. Denote the _voting weight_ of a node $i$ at epoch $e$ as $W_i(e)$. Note that $W_i(e)>0$ if and only if $i$ is a committee member in epoch $e$, i.e., <code>$i\in \mathcal{C}_{total}(e)$</code>.
 
+:::info 
+
+In the first version of the protocol, all committee members have the same weight, specifically if $W_i(e)>0$, then $W_i(e)=1$. This will be changed in future updates of the protocol.
+
+:::
+
 The total committee is determined for [slot commitment chains](#slot-commitment-chain). Specifically, two nodes that adopt the same slot commitment chain before an epoch $e$ start perceive the same total committee for epoch $e$.
 
 To support the dynamic availability of the protocol and timely generate slot commitments, only actively participating committee members are considered when determining which blocks and transactions are [accepted](consensus-flags.md#acceptance-flag).
@@ -122,7 +128,7 @@ Block references in IOTA 2.0 simultaneously serve two purposes:
 
 Block references are crucial in the consensus protocol as they guide the [tip selection algorithm](tip-selection-algorithm.md#tip-selection-algorithm).
 
-##### Reference Types
+#### Reference Types
 
 ###### Strong
 
