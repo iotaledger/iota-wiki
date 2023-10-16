@@ -36,7 +36,7 @@ The online committee is a subjective notion determined by each node locally base
 
 :::
 
-##### Total weight
+#### Total weight
 
 Denote the _total weight_ of the total committee at epoch $e$ as:
 
