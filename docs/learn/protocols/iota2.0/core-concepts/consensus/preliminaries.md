@@ -289,6 +289,6 @@ When issuing a new block, the node finds the preferred branch (an appropriate su
 
 :::info Learn More
 
-You can find more details about the reality-based UTXO ledger in the [Reality-basedUTXOLedger paper](https://arxiv.org/pdf/2205.01345).
+You can find more details about the reality-based UTXO ledger in the [Reality-based UTXO Ledger paper](https://arxiv.org/pdf/2205.01345).
 
 :::
