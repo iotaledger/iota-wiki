@@ -2,7 +2,7 @@
 
 The [JSON-RPC](https://www.jsonrpc.org/specification) is a stateless, lightweight remote procedure call (RPC) protocol. It defines several data structures and the rules around their processing. It is transport agnostic because the concepts can be used within the same process, over sockets, HTTP, or in various message-passing environments. It uses JSON (RFC 4627) as data format.
 
-This page deals mainly with the JSON-RPC API used by EVM execution clients.
+This page deals with the JSON-RPC API used by EVM execution clients.
 
 ## JSON-RPC Methods According to [Ethereum Client API](https://ethereum.org/en/developers/docs/apis/json-rpc/)
 
