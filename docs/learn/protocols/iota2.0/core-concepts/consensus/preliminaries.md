@@ -191,7 +191,7 @@ The total weight of validators that reference a specific commitment in the past 
 
 The reference Mana cost (RMC) is calculated from the contents of the slot and the previous slot’s RMC.
 
-::: note
+:::note
 
 A commitment is linked to the commitment of the previous slot. All commitments form a slot commitment tree, where the path between the tree root (the genesis) and any node in the tree determines a _slot commitment chain_. Nodes that adopt the same slot commitment consequently adopt the same slot commitment chain. So, they agree on the common prefix of the ledger and the Tangle up to the last slot of the chain.
 
