@@ -116,7 +116,7 @@ Finalization in the IOTA 2.0 consensus protocol works on the slot commitment lev
 
 This means finalization of the commitment $C_s$ implies that all blocks and transactions committed into $C_s$ and all the previous commitments in the [slot commitment chain](introduction.md#slot-commitment-chains) that ends at $C_s$ are finalized as well.
 
-A slot commitment $C$ is _finalized_ if a block contains the commitment $C$ ,and this block gets [confirmed](#confirmation-of-blocks-and-non-conflicting-transactions).
+A slot commitment $C$ is _finalized_ if a block contains the commitment $C$, and this block gets [confirmed](#confirmation-of-blocks-and-non-conflicting-transactions).
 
 ### Example
 

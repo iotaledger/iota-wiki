@@ -13,7 +13,7 @@ $$
 W(C_{s})=\sum_{i\in IssuerIDs(A)}W_i(e),
 $$
 
-**Where slot $s$ belongs to epoch $e$.**
+Where slot $s$ belongs to epoch $e$.
 
 ### Example
 
