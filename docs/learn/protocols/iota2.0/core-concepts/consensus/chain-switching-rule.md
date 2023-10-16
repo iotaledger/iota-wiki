@@ -27,7 +27,7 @@ All the blocks, that are included in the set $A$ in the above definition, are hi
 
 **Image:** Illustration for computing the weight of a slot commitment.
 
-:::note Cumulative weight of a slot commitment chain
+### Cumulative Weight of a Slot Commitment Chain
 
 Let $(C_1,\ldots,C_s,C_{s+1}\dots,C_{s+d})$ be a slot commitment chain. Then the cumulative weight of the chain $(C_1,\ldots,C_s)$ with a drifting parameter $d$ is defined as
 
@@ -39,11 +39,9 @@ $$
 
 The chain switching rule relies on the last finalized slot and the [cumulative weight of slot commitment chains](preliminaries.md#5-cumulative-weight).
 
-:::note Conflicting slot commitments
+### Conflicting Slot Commitments
 
 Two slot commitment chains are called _conflicting_ if none of them is a prefix of the other. A slot commitment $C$ is called conflicting to a slot commitment chain if this chain is conflicting with the slot commitment chain that ends at $C$.
-
-:::
 
 Suppose a node adopts a slot commitment chain $ch_{loc}=(C_1,\dots,C_{s+d})$ and receives a block $b$ from a conflicting slot commitment chain $ch_{fork}=(B_1,\dots,B_{s+d})$. Then the node proceeds with the following steps:
 
@@ -52,8 +50,7 @@ Suppose a node adopts a slot commitment chain $ch_{loc}=(C_1,\dots,C_{s+d})$ and
 3. Check if the inequality holds <code>$CW(B_1,\dots,B_s)\le CW(C_1,\dots,C_s)$</code>. If yes, ignore the block $b$ and stay on the chain $ch_{loc}$. Otherwise, proceed with the next step.
 4. If there exist at least `optsChainSwitchingThreshold=3` consecutive indices when the cumulative weight of the conflicting chain $ch_{fork}$ is larger than the one of the currently adopted chain $ch_{loc}$, i.e. <code>$CW(B_1,\dots,B_{t})>CW(C_1,\dots,C_{t}), CW(B_1,\dots,B_{t+1})>CW(C_1,\dots,C_{t+1}), CW(B_1,\dots,B_{t+2})>CW(C_1,\dots,C_{t+2})$</code> for $f\le t \le s-2$, then request the attestation for the cumulative weight, validate the attestations and switch $ch_{loc}$ to $ch_{fork}$ after the current slot is completed.
 
-:::note Chain Switching
+### Chain Switching
 
 Switching the chain only happens when the current slot is finished. This property is important for the safety of the finalization flag as it does not allow honest nodes to vote on conflicting chains within one slot.
 
-:::
