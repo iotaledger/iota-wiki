@@ -14,7 +14,7 @@ The committee members are fixed within a given epoch, and their voting weights r
 
 ### Epoch Committee
 
-For an epoch, a fixed subset of validators is responsible for achieving agreement about blocks and transactions issued during the epoch. This set has the size `committeeTotalSeats` ( between `25` and `50`). The selected set of validators is called the _epoch committee_.
+For an epoch, a fixed subset of validators is responsible for achieving agreement about blocks and transactions issued during the epoch. This set has the size `committeeTotalSeats` (between `25` and `50`). The selected set of validators is called the _epoch committee_.
 
 A committee member is expected to issue _validation blocks_ every `frequencyValidationBlock` seconds (set to either `0.5` or `1`) and to follow the [tip selection algorithm](tip-selection-algorithm.md) for selecting tips to be referenced by the validation blocks.
 
