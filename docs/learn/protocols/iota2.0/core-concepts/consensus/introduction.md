@@ -91,7 +91,7 @@ The [Confirmation flag](consensus-flags.md#confirmation-flag) is a flag that is 
 
 #### Finalization
 
-The [Finalization](consensus-flags.md#finalization-flag) is a flag that is exposed to the user in the wallet. This block or transaction flag relies on finalizing the slot commitment that commits to the block or transaction. The latter means that a block containing a given [slot commitment](preliminaries.md#slot-commitment-chain) (and all objects assigned to it) gets [confirmed](consensus-flags.md#confirmation-flag). This flag is safe under any network conditions.
+The [Finalization flag](consensus-flags.md#finalization-flag) is a flag that is exposed to the user in the wallet. This block or transaction flag relies on finalizing the slot commitment that commits to the block or transaction. The latter means that a block containing a given [slot commitment](preliminaries.md#slot-commitment-chain) (and all objects assigned to it) gets [confirmed](consensus-flags.md#confirmation-flag). This flag is safe under any network conditions.
 
 The flag hierarchy from Pre-Acceptance to Finalization is summarized in the following diagram:
 
