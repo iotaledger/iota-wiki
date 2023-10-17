@@ -35,7 +35,7 @@ $$
 CW(C_1,\ldots,C_s)=\sum_{j=1}^{s}W(C_j).
 $$
 
-### Chain Switching Rule Algorithm
+## Chain Switching Rule Algorithm
 
 The chain switching rule relies on the last finalized slot and the [cumulative weight of slot commitment chains](preliminaries.md#5-cumulative-weight).
 
