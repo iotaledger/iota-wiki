@@ -70,7 +70,7 @@ In the following, the time instant index $t$ and epoch index $e$ are omitted in 
 
 The basic unit data structure in IOTA 2.0 is called a block. The collection of all blocks is called the Tangle. Since blocks contain references to previously issued blocks, the Tangle is a directed acyclic graph (DAG).
 
-For the notation of this article, the content of a block is $b$, using the following fields:
+For the notation of this article, a block is denoted as $b$, and a specific content of the block is referred to using the following fields
 
 | Name of the field    | Description                                                         |
 | -------------------- | ------------------------------------------------------------------- |
