@@ -30,7 +30,7 @@ In the following example, $7$ committee members have equal weight, and only $4$ 
 
 ## Pre-Confirmation Flag
 
-To pre-confirm blocks, nodes make use of the weight of the [total committee](preliminaries.md#epoch-committee) $\mathcal{C}_{total}$. In principle, the same methodology as for the pre-acceptance flag is used for this flag. However, the weight of nodes approving a block (or voting for a transaction) is compared with the [total weight](preliminaries.md#epoch-committee) <code>$W_{total}$</code>. This preliminary flag is defined for blocks only.
+To pre-confirm blocks, nodes make use of the weight of the [total committee](preliminaries.md#epoch-committee) $\mathcal{C}_{total}$. In principle, the same methodology as for the pre-acceptance flag is used for this flag. However, the weight of nodes approving a block (or voting for a transaction) is compared with the [total weight](preliminaries.md#epoch-committee) $W_{total}$. This preliminary flag is defined for blocks only.
 
 A block $b$ is _pre-confirmed_ if there exists a [total supermajority of blocks](preliminaries.md#total-and-online-supermajority) $S$ such that every block in $S$ [approves](preliminaries.md#about-blocks-and-the-tangle) $b$. In this case, $S$ _pre-confirms_ $b$.
 

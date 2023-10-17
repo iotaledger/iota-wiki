@@ -4,7 +4,7 @@ Before diving deeper into the consensus algorithm's inner workings, you should f
 
 ## Epochs and Slots
 
-The IOTA protocol divides time into non-overlapping slots of fixed duration `slotDurationSeconds`, set to `10` seconds. Slots are indexed with the slot index $s = 0, 1, 2, 3,...$. The slot indexed with $0$ is a unique slot that commences at negative infinity and concludes at the genesis timestamp `genesisUnixTime`. Every `2^slotsPerEpochExponent` sequential slots are grouped into epochs, which are enumerated with the epoch index <code>$e = 0, 1, 2, 3,...$</code>.
+The IOTA protocol divides time into non-overlapping slots of fixed duration `slotDurationSeconds`, set to `10` seconds. Slots are indexed with the slot index $s = 0, 1, 2, 3,...$. The slot indexed with $0$ is a unique slot that commences at negative infinity and concludes at the genesis timestamp `genesisUnixTime`. Every `2^slotsPerEpochExponent` sequential slots are grouped into epochs, which are enumerated with the epoch index $e = 0, 1, 2, 3,...$.
 
 Using slots primarily aims to generate [commitments](#slot-commitment-chain) for short time intervals. Generating commitments in a timely manner allows nodes to keep in Random Access Memory (RAM) only data of bounded size.
 
@@ -20,7 +20,7 @@ A committee member is expected to issue validation blocks every `frequencyValida
 
 #### Total committee
 
-Denote the total committee for epoch $e$ as $\mathcal{C}_{total}(e)$. Denote the voting weight of a node $i$ at epoch $e$ as $W_i(e)$. Note that $W_i(e)>0$ if and only if $i$ is a committee member in epoch $e$, i.e., <code>$i\in \mathcal{C}_{total}(e)$</code>.
+Denote the total committee for epoch $e$ as $\mathcal{C}_{total}(e)$. Denote the voting weight of a node $i$ at epoch $e$ as $W_i(e)$. Note that $W_i(e)>0$ if and only if $i$ is a committee member in epoch $e$, i.e., $i\in \mathcal{C}_{total}(e)$.
 
 :::info 
 
