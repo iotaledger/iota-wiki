@@ -1,5 +1,3 @@
-const path = require('path');
-
 exports.buildPluginsConfig = [
   {
     id: 'iota-sdk',
