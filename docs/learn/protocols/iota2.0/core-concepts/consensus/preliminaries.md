@@ -206,7 +206,7 @@ The actual moment depends on the [accepted Tangle time](tip-selection-algorithm.
 - the [accepted Tangle time](tip-selection-algorithm.md#eligible-tips) is larger than `slotEnd+minCommittableSlotAge*slotDurationSeconds`;
 - the current wall clock is at least `slotEnd+maxCommittableSlotAge*slotDurationSeconds`;
 
-Then the node generates the commitment of the required slot.
+then the node generates the commitment of the required slot.
 
 ### Reality-based UTXO ledger
 
