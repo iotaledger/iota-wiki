@@ -33,7 +33,7 @@ $$
 Branch(b)\gets \left(addStrongBranch \cup addWeakBranch \cup addLikeBranch\right) \setminus removeConflicts.
 $$
 
-Second, add the branch of the payload of $b$ to the result, i.e. <code>$Branch(b)\gets Branch(b)\cup Branch(b.Tx)$</code>.
+Second, add the branch of the payload of $b$ to the result, i.e. $Branch(b)\gets Branch(b)\cup Branch(b.Tx)$.
 
 :::note
 
@@ -43,9 +43,9 @@ The set $Branch(b)$ is subjective for a node that computes the branch. This is b
 
 ## Algorithm to Compute the Preferred Reality
 
-There could be many realities in the [reality-based UTXO ledger](preliminaries.md#reality-based-utxo-ledger). However, a unique _preferred_ reality for a node identifies all conflicting transactions supported by the node. To find the preferred reality, the node can proceed with the following steps:
+There could be many realities in the [reality-based UTXO ledger](preliminaries.md#reality-based-utxo-ledger). However, a unique preferred reality for a node identifies all conflicting transactions supported by the node. To find the preferred reality, the node can proceed with the following steps:
 
-1. Calculate the _approval weight_ for each [unaccepted](consensus-flags.md#acceptance-flag) [conflict](preliminaries.md#reality-based-utxo-ledger). The approval weight is determined as the combined weight of the online committee members who have voted in favor of this particular conflict and have not altered their stance in favor of a different conflicting transaction in any subsequent block.
+1. Calculate the approval weight for each [unaccepted](consensus-flags.md#acceptance-flag) [conflict](preliminaries.md#reality-based-utxo-ledger). The approval weight is determined as the combined weight of the online committee members who have voted in favor of this particular conflict and have not altered their stance in favor of a different conflicting transaction in any subsequent block.
 2. Set $C$ to be the set of all conflicts and $R$ to be the empty set (which will eventually be constructed as a reality).
 3. Find the conflict with the largest approval weight. In the case of many conflicts of equal weight, find the conflict with the largest hash of the conflict id. Include this transaction to $R$.
 4. Remove all transactions that are conflicting with the selected transaction from $C$.
@@ -54,4 +54,4 @@ There could be many realities in the [reality-based UTXO ledger](preliminaries.m
 ## Additional Literature
 
 - Sebastian Müller, Andreas Penzkofer, Nikita Polyanskii, Jonas Theis, William Sanders, and Hans Moog. ["Tangle 2.0 Leaderless Nakamoto Consensus on the Heaviest DAG."](https://ieeexplore.ieee.org/iel7/6287639/6514899/09907014.pdf) IEEE Access 10 (2022): 105807-105842.
-- Sebastian Müller, Andreas Penzkofer, Nikita Polyanskii, Jonas Theis, William Sanders, and Hans Moog. ["Reality-based UTXO ledger."](https://arxiv.org/pdf/2205.01345) ACM DLT (2023): to appear.
+- Sebastian Müller, Andreas Penzkofer, Nikita Polyanskii, Jonas Theis, William Sanders, and Hans Moog. ["Reality-based UTXO ledger."](https://arxiv.org/pdf/2205.01345) ACM DLT 2.3 (2023): 1-33.

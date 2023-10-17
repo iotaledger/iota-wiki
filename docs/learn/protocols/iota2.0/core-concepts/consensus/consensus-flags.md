@@ -30,7 +30,7 @@ In the following example, $7$ committee members have equal weight, and only $4$ 
 
 ## Pre-Confirmation Flag
 
-To pre-confirm blocks, nodes make use of the weight of the [total committee](preliminaries.md#epoch-committee) <code>$\mathcal{C}_{total}$</code>. In principle, the same methodology as for the pre-acceptance flag is used for this flag. However, the weight of nodes approving a block (or voting for a transaction) is compared with the [total weight](preliminaries.md#epoch-committee) <code>$W_{total}$</code>. This preliminary flag is defined for blocks only.
+To pre-confirm blocks, nodes make use of the weight of the [total committee](preliminaries.md#epoch-committee) $\mathcal{C}_{total}$. In principle, the same methodology as for the pre-acceptance flag is used for this flag. However, the weight of nodes approving a block (or voting for a transaction) is compared with the [total weight](preliminaries.md#epoch-committee) <code>$W_{total}$</code>. This preliminary flag is defined for blocks only.
 
 A block $b$ is _pre-confirmed_ if there exists a [total supermajority of blocks](preliminaries.md#total-and-online-supermajority) $S$ such that every block in $S$ [approves](preliminaries.md#about-blocks-and-the-tangle) $b$. In this case, $S$ _pre-confirms_ $b$.
 
@@ -49,7 +49,7 @@ Once a block or transaction is accepted, it stays accepted in the perception of 
 
 ### Acceptance of Blocks and Non-Conflicting Transactions
 
-A block $b$ is _accepted_ if there is an [online supermajority](preliminaries.md#total-and-online-supermajority) of [pre-accepted](#pre-acceptance-flag) blocks approving $b$. If the transaction included in the block is non-conflicting, it also becomes accepted.
+A block $b$ is accepted if there is an [online supermajority](preliminaries.md#total-and-online-supermajority) of [pre-accepted](#pre-acceptance-flag) blocks approving $b$. If the transaction included in the block is non-conflicting, it also becomes accepted.
 
 #### Example
 
@@ -60,7 +60,7 @@ In the following example, the online committee consists of $4$ nodes with equal 
 
 ### Acceptance of Conflicting Transactions
 
-A conflicting transaction $tx$ is _accepted_ if there exists an [online supermajority](preliminaries.md#total-and-online-supermajority) of [pre-accepted](#pre-acceptance-flag) blocks which [vote](preliminaries.md#reality-based-utxo-ledger) for $tx$.
+A conflicting transaction $tx$ is accepted if there exists an [online supermajority](preliminaries.md#total-and-online-supermajority) of [pre-accepted](#pre-acceptance-flag) blocks which [vote](preliminaries.md#reality-based-utxo-ledger) for $tx$.
 
 :::warning Removed Transactions
 
@@ -81,7 +81,7 @@ Note that the blue node initially voted for transaction $tx'$ because it was del
 
 ### Confirmation of Blocks and Non-Conflicting Transactions
 
-A block $b$ is _confirmed_ if there is a [total supermajority](preliminaries.md#total-and-online-supermajority) of [pre-confirmed](#pre-confirmation-flag) blocks approving $b$. In addition, these pre-confirmed blocks must be issued within `optsConfirmationRatificationThreshold=2` slots after the slot at which $b$ is issued. If the transaction in the block is non-conflicting, it is also confirmed.
+A block $b$ is confirmed if there is a [total supermajority](preliminaries.md#total-and-online-supermajority) of [pre-confirmed](#pre-confirmation-flag) blocks approving $b$. In addition, these pre-confirmed blocks must be issued within `optsConfirmationRatificationThreshold=2` slots after the slot at which $b$ is issued. If the transaction in the block is non-conflicting, it is also confirmed.
 
 :::note
 
@@ -98,7 +98,7 @@ In the following example, the block $b$ is confirmed as a total supermajority of
 
 ### Confirmation of Conflicting Transactions
 
-A conflicting transaction $tx$ is _confirmed_ if $tx$ is [accepted](#acceptance-of-conflicting-transactions) and one of the attachments (blocks containing $tx$) is [confirmed](#confirmation-of-blocks-and-non-conflicting-transactions).
+A conflicting transaction $tx$ is confirmed if $tx$ is [accepted](#acceptance-of-conflicting-transactions) and one of the attachments (blocks containing $tx$) is [confirmed](#confirmation-of-blocks-and-non-conflicting-transactions).
 
 #### Example
 
@@ -116,7 +116,7 @@ Finalization in the IOTA 2.0 consensus protocol works on the slot commitment lev
 
 This means finalization of the commitment $C_s$ implies that all blocks and transactions committed into $C_s$ and all the previous commitments in the [slot commitment chain](introduction.md#slot-commitment-chains) that ends at $C_s$ are finalized as well.
 
-A slot commitment $C$ is _finalized_ if a block contains the commitment $C$, and this block gets [confirmed](#confirmation-of-blocks-and-non-conflicting-transactions).
+A slot commitment $C$ is finalized if a block contains the commitment $C$, and this block gets [confirmed](#confirmation-of-blocks-and-non-conflicting-transactions).
 
 ### Example
 

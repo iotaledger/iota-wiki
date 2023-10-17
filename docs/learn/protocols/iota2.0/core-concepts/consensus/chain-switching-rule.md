@@ -7,7 +7,7 @@ The chain switching rule in IOTA 2.0 is a tool that enables liveness for finaliz
 ### Weight of a Slot Commitment
 
 Let $(C_1,\ldots,C_s,C_{s+1},\dots,C_{s+d})$ be a slot commitment chain.
-Let $A$ denote the set of all [accepted](consensus-flags.md#acceptance-flag) validation blocks that are committed into $C_{s+1},\dots,C_{s+d}$ such that each block from $A$ [approves](preliminaries.md#about-blocks-and-the-tangle) $C_s$. Then the _weight_ of the slot commitment $C_s$ with _drifting parameter_ $d$ (in the code, it is set to parameter `maxCommittableSlotAge`) is defined as the sum of [voting weights](preliminaries.md#epoch-committee) of committee members who issued a block from $A$, i.e. those committee members who approve this commitment during $d$ slots after slot $s$, i.e.
+Let $A$ denote the set of all [accepted](consensus-flags.md#acceptance-flag) validation blocks that are committed into $C_{s+1},\dots,C_{s+d}$ such that each block from $A$ [approves](preliminaries.md#about-blocks-and-the-tangle) $C_s$. Then the weight of the slot commitment $C_s$ with drifting parameter $d$ (in the code, it is set to parameter `maxCommittableSlotAge`) is defined as the sum of [voting weights](preliminaries.md#epoch-committee) of committee members who issued a block from $A$, i.e. those committee members who approve this commitment during $d$ slots after slot $s$, i.e.
 
 $$
 W(C_{s})=\sum_{i\in IssuerIDs(A)}W_i(e),
@@ -41,14 +41,14 @@ The chain switching rule relies on the last finalized slot and the [cumulative w
 
 ### Conflicting Slot Commitments
 
-Two slot commitment chains are called _conflicting_ if none of them is a prefix of the other. A slot commitment $C$ is called conflicting to a slot commitment chain if this chain is conflicting with the slot commitment chain that ends at $C$.
+Two slot commitment chains are called conflicting if none of them is a prefix of the other. A slot commitment $C$ is called conflicting to a slot commitment chain if this chain is conflicting with the slot commitment chain that ends at $C$.
 
 Suppose a node adopts a slot commitment chain $ch_{loc}=(C_1,\dots,C_{s+d})$ and receives a block $b$ from a conflicting slot commitment chain $ch_{fork}=(B_1,\dots,B_{s+d})$. Then the node proceeds with the following steps:
 
-1. Find the slot index $f$ of the forking point, i.e. $C_1=B_1,\dots,C_f=B_f$ and <code>$C_{f+1}\neq B_{f+1}$</code>.
+1. Find the slot index $f$ of the forking point, i.e. $C_1=B_1,\dots,C_f=B_f$ and $C_{f+1}\neq B_{f+1}$.
 2. Check if the last finalized slot of the chain $ch_{loc}$ is greater than $f$. If yes, ignore the block $b$ and stay on the chain $ch_{loc}$. Otherwise, proceed with the next step.
-3. Check if the inequality holds <code>$CW(B_1,\dots,B_s)\le CW(C_1,\dots,C_s)$</code>. If yes, ignore the block $b$ and stay on the chain $ch_{loc}$. Otherwise, proceed with the next step.
-4. If there exist at least `optsChainSwitchingThreshold=3` consecutive indices when the cumulative weight of the conflicting chain $ch_{fork}$ is larger than the one of the currently adopted chain $ch_{loc}$, i.e. <code>$CW(B_1,\dots,B_{t})>CW(C_1,\dots,C_{t}), CW(B_1,\dots,B_{t+1})>CW(C_1,\dots,C_{t+1}), CW(B_1,\dots,B_{t+2})>CW(C_1,\dots,C_{t+2})$</code> for $f\le t \le s-2$, then request the attestation for the cumulative weight, validate the attestations and switch $ch_{loc}$ to $ch_{fork}$ after the current slot is completed.
+3. Check if the inequality holds $CW(B_1,\dots,B_s)\le CW(C_1,\dots,C_s)$. If yes, ignore the block $b$ and stay on the chain $ch_{loc}$. Otherwise, proceed with the next step.
+4. If there exist at least `optsChainSwitchingThreshold=3` consecutive indices when the cumulative weight of the conflicting chain $ch_{fork}$ is larger than the one of the currently adopted chain $ch_{loc}$, i.e. $CW(B_1,\dots,B_{t})>CW(C_1,\dots,C_{t}), CW(B_1,\dots,B_{t+1})>CW(C_1,\dots,C_{t+1}), CW(B_1,\dots,B_{t+2})>CW(C_1,\dots,C_{t+2})$ for $f\le t \le s-2$, then request the attestation for the cumulative weight, validate the attestations and switch $ch_{loc}$ to $ch_{fork}$ after the current slot is completed.
 
 ### Chain Switching
 

@@ -4,7 +4,7 @@ Before diving deeper into the consensus algorithm's inner workings, you should f
 
 ## Epochs and Slots
 
-The IOTA protocol divides time into non-overlapping _slots_ of fixed duration `slotDurationSeconds`, set to `10` seconds. Slots are indexed with the slot index <code>$s = 0, 1, 2, 3,...$</code>. The slot indexed with $0$ is a unique slot that commences at negative infinity and concludes at the genesis timestamp `genesisUnixTime`. Every `2^slotsPerEpochExponent` sequential slots are grouped into _epochs_, which are enumerated with the epoch index <code>$e = 0, 1, 2, 3,...$</code>.
+The IOTA protocol divides time into non-overlapping slots of fixed duration `slotDurationSeconds`, set to `10` seconds. Slots are indexed with the slot index $s = 0, 1, 2, 3,...$. The slot indexed with $0$ is a unique slot that commences at negative infinity and concludes at the genesis timestamp `genesisUnixTime`. Every `2^slotsPerEpochExponent` sequential slots are grouped into epochs, which are enumerated with the epoch index <code>$e = 0, 1, 2, 3,...$</code>.
 
 Using slots primarily aims to generate [commitments](#slot-commitment-chain) for short time intervals. Generating commitments in a timely manner allows nodes to keep in Random Access Memory (RAM) only data of bounded size.
 
@@ -14,13 +14,13 @@ The committee members are fixed within a given epoch, and their voting weights r
 
 ### Epoch Committee
 
-For an epoch, a fixed subset of validators is responsible for achieving agreement about blocks and transactions issued during the epoch. This set has the size `committeeTotalSeats` (between `25` and `50`). The selected set of validators is called the _epoch committee_.
+For an epoch, a fixed subset of validators is responsible for achieving agreement about blocks and transactions issued during the epoch. This set has the size `committeeTotalSeats` (between `25` and `50`). The selected set of validators is called the epoch committee.
 
-A committee member is expected to issue _validation blocks_ every `frequencyValidationBlock` seconds (set to either `0.5` or `1`) and to follow the [tip selection algorithm](tip-selection-algorithm.md) for selecting tips to be referenced by the validation blocks.
+A committee member is expected to issue validation blocks every `frequencyValidationBlock` seconds (set to either `0.5` or `1`) and to follow the [tip selection algorithm](tip-selection-algorithm.md) for selecting tips to be referenced by the validation blocks.
 
 #### Total committee
 
-Denote the total committee for epoch $e$ as <code>$\mathcal{C}_{total}(e)$</code>. Denote the _voting weight_ of a node $i$ at epoch $e$ as $W_i(e)$. Note that $W_i(e)>0$ if and only if $i$ is a committee member in epoch $e$, i.e., <code>$i\in \mathcal{C}_{total}(e)$</code>.
+Denote the total committee for epoch $e$ as $\mathcal{C}_{total}(e)$. Denote the voting weight of a node $i$ at epoch $e$ as $W_i(e)$. Note that $W_i(e)>0$ if and only if $i$ is a committee member in epoch $e$, i.e., <code>$i\in \mathcal{C}_{total}(e)$</code>.
 
 :::info 
 
@@ -28,13 +28,13 @@ In the first version of the protocol, all committee members have the same weight
 
 :::
 
-The total committee is determined for [slot commitment chains](#slot-commitment-chain). Specifically, two nodes that adopt the same slot commitment chain before an epoch $e$ start perceive the same total committee for epoch $e$.
+The total committee is determined for [slot commitment chains](#slot-commitment-chain). Specifically, two nodes that adopt the same slot commitment chain before an epoch $e$ starts perceive the same total committee for epoch $e$.
 
 To support the dynamic availability of the protocol and timely generate slot commitments, only actively participating committee members are considered when determining which blocks and transactions are [accepted](consensus-flags.md#acceptance-flag).
 
 #### Online committee
 
-At time instant $t$ at epoch $e$, a node perceives the _online committee_ <code>$\mathcal{C}_{online}(t)\subset \mathcal{C}_{total}(e)$</code>, as a subset of the committee that consists of committee members who have issued at least one block with the timestamp within `(t-activityWindow, t]`.
+At time instant $t$ at epoch $e$, a node perceives the online committee $\mathcal{C}_{online}(t)\subset \mathcal{C}_{total}(e)$, as a subset of the committee that consists of committee members who have issued at least one block with the timestamp within `(t-activityWindow, t]`.
 
 :::info
 
@@ -44,7 +44,7 @@ The online committee is a subjective notion determined by each node locally base
 
 #### Total weight
 
-Denote the _total weight_ of the total committee at epoch $e$ as:
+Denote the total weight of the total committee at epoch $e$ as:
 
 $$
 W_{total}(e)=\sum_{i\in\mathcal{C}_{total}(e)}W_i(e)
@@ -52,7 +52,7 @@ $$
 
 #### Online weight
 
-Denote the _online weight_ of the online committee at moment $t$ at epoch $e$ as:
+Denote the online weight of the online committee at moment $t$ at epoch $e$ as:
 
 $$
 W_{online}(t)=\sum_{i\in\mathcal{C}_{online}(t)}W_i(e).
@@ -68,7 +68,7 @@ In the following, the time instant index $t$ and epoch index $e$ are omitted in 
 
 ## About Blocks and the Tangle
 
-The basic unit data structure in IOTA 2.0 is called a _block_. The collection of all blocks is called the _Tangle_. Since blocks contain references to previously issued blocks, the Tangle is a directed acyclic graph (DAG).
+The basic unit data structure in IOTA 2.0 is called a block. The collection of all blocks is called the Tangle. Since blocks contain references to previously issued blocks, the Tangle is a directed acyclic graph (DAG).
 
 For the notation of this article, the content of a block is $b$, using the following fields:
 
@@ -92,17 +92,17 @@ Some fields in the block structure have been omitted to simply this article.
 
 #### Block approves block
 
-A block $b$ _approves_ a block $c$ if there is a sequence of blocks $b_1=b,b_2,\ldots,b_t=c$ such that $b_i$ directly references $b_{i+1}$, i.e. $b_{i+1}\in b_i.References$.
+A block $b$ approves a block $c$ if there is a sequence of blocks $b_1=b,b_2,\ldots,b_t=c$ such that $b_i$ directly references $b_{i+1}$, i.e. $b_{i+1}\in b_i.References$.
 
 #### Cones of a block
 
 ##### Past cone of a block
 
-For block $b$, the set of blocks that $b$ approves is the _past cone_ of $b$.
+For block $b$, the set of blocks that $b$ approves is the past cone of $b$.
 
 ##### Future cone of a block
 
-For block $b$, the set of blocks that approve $b$, is the _future cone_ of $b$.
+For block $b$, the set of blocks that approve $b$, is the future cone of $b$.
 
 ##### Example
 
@@ -113,11 +113,11 @@ In the following example, the past cone of block $x$ is highlighted in red, enco
 
 #### Block votes for conflicting transaction
 
-A block $b$ and the issuer $b.IssuerID$ _vote_ for a [conflicting transaction](#reality-based-utxo-ledger) $tx$ if the [branch of block](#reality-based-utxo-ledger) $b$ contains $tx$.
+A block $b$ and the issuer $b.IssuerID$ vote for a [conflicting transaction](#reality-based-utxo-ledger) $tx$ if the [branch of block](#reality-based-utxo-ledger) $b$ contains $tx$.
 
 #### Block approves slot commitment
 
-A block $b$ _approves_ a slot commitment $C$ if the [slot commitment chain](#slot-commitment-chain) that ends with <code>$b.SlotCommitmentID$</code> contains $C$. For instance, the block $b$ approves the slot commitment $C$ if $b$ contains $C$, i.e., $b.SlotCommitmentID = C$.
+A block $b$ approves a slot commitment $C$ if the [slot commitment chain](#slot-commitment-chain) that ends with $b.SlotCommitmentID$ contains $C$. For instance, the block $b$ approves the slot commitment $C$ if $b$ contains $C$, i.e., $b.SlotCommitmentID = C$.
 
 ### Block References
 
@@ -148,7 +148,7 @@ To formally define consensus flags, the notion of total and online supermajoriti
 
 #### Total supermajority
 
-A set of blocks $A$ is called a _total supermajority_ of blocks if the relative weight of the issuers of blocks from $A$ is more than $2/3$ of the [total weight](#epoch-committee). In other words, let <code>$IssuerIDs(A)=\{b.IssuerID: \ b\in A\}$</code>, then
+A set of blocks $A$ is called a total supermajority of blocks if the relative weight of the issuers of blocks from $A$ is more than $2/3$ of the [total weight](#epoch-committee). In other words, let $IssuerIDs(A)=\{b.IssuerID: \ b\in A\}$, then
 
 $$
 \sum_{i\in IssuerIDs(A)}W_i > \frac{2}{3} W_{total}.
@@ -156,7 +156,7 @@ $$
 
 #### Online supermajority
 
-A set of blocks $A$ is called an _online supermajority_ of blocks if the relative weight of issuers of blocks from $A$ is more than $2/3$ of the [online weight](#epoch-committee). In other words,
+A set of blocks $A$ is called an online supermajority of blocks if the relative weight of issuers of blocks from $A$ is more than $2/3$ of the [online weight](#epoch-committee). In other words,
 
 $$
 \sum_{i\in IssuerIDs(A)}W_i > \frac{2}{3} W_{online}.
@@ -165,7 +165,7 @@ $$
 ### Slot Commitment Chain
 
 Each block in IOTA 2.0 contains a commitment to the content of a certain slot in the past.
-A _slot commitment_ is a hash value that encapsulates all the crucial information about a slot (such as [accepted](consensus-flags.md#acceptance-flag) blocks and transactions, the index of the slot, etc.). A slot commitment is calculated by combining the following pieces of information through hashing:
+A slot commitment is a hash value that encapsulates all the crucial information about a slot (such as [accepted](consensus-flags.md#acceptance-flag) blocks and transactions, the index of the slot, etc.). A slot commitment is calculated by combining the following pieces of information through hashing:
 
 #### 1. Protocol version
 
@@ -193,7 +193,7 @@ The reference Mana cost (RMC) is calculated from the contents of the slot and th
 
 :::note
 
-A commitment is linked to the commitment of the previous slot. All commitments form a slot commitment tree, where the path between the tree root (the genesis) and any node in the tree determines a _slot commitment chain_. Nodes that adopt the same slot commitment consequently adopt the same slot commitment chain. So, they agree on the common prefix of the ledger and the Tangle up to the last slot of the chain.
+A commitment is linked to the commitment of the previous slot. All commitments form a slot commitment tree, where the path between the tree root (the genesis) and any node in the tree determines a slot commitment chain. Nodes that adopt the same slot commitment consequently adopt the same slot commitment chain. So, they agree on the common prefix of the ledger and the Tangle up to the last slot of the chain.
 
 :::
 
@@ -214,23 +214,23 @@ As [Chrysalis](../../../chrysalis/introduction.md) and [Stardust](../../../stard
 
 However, the append-only nature of the UTXO ledger can compromise this benefit when conflicting transactions arise. To address this issue, IOTA 2.0 uses an enhanced UTXO ledger model, called the [reality-based UTXO ledger](preliminaries.md#reality-based-utxo-ledger), that optimistically updates the ledger and maintains a record of the dependencies of possible conflicts.
 
-A UTXO transaction should have a list of unique outputs called _UTXOs_. In addition, each transaction has a list of inputs, which are UTXOs of previous transactions. A transaction is said to spend its _inputs_.
+A UTXO transaction should have a list of unique outputs called UTXOs. In addition, each transaction has a list of inputs, which are UTXOs of previous transactions. A transaction is said to spend its inputs.
 
 #### Ledger DAG
 
-The _ledger DAG_ is a DAG whose vertex set consists of all transactions. There is a directed edge between two transactions $tx$ and $ty$ if $tx$ spends the output of $ty$. The ledger DAG's root is the genesis with no outgoing edges.
+The ledger DAG is a DAG whose vertex set consists of all transactions. There is a directed edge between two transactions $tx$ and $ty$ if $tx$ spends the output of $ty$. The ledger DAG's root is the genesis with no outgoing edges.
 
 #### Causal history of a transaction
 
-The _causal history_ of a given transaction $tx$ consists of all transactions that can be reached from the transaction $tx$ by traversing the ledger DAG along the directed edges.
+The causal history of a given transaction $tx$ consists of all transactions that can be reached from the transaction $tx$ by traversing the ledger DAG along the directed edges.
 
 #### Conflict
 
-A transaction $tx$ is a _conflict_ if there is another transaction $ty$ such that $tx$ and $ty$ attempt to spend at least one identical input.
+A transaction $tx$ is a conflict if there is another transaction $ty$ such that $tx$ and $ty$ attempt to spend at least one identical input.
 
 #### Conflicting transactions
 
-Two transactions $tx$ and $ty$ are called _conflicting_ if the causal history of $tx$ and the causal history of $ty$ contain some transaction $tx'$ and $ty'$ which spend at least one identical input.
+Two transactions $tx$ and $ty$ are called conflicting if the causal history of $tx$ and the causal history of $ty$ contain some transaction $tx'$ and $ty'$ which spend at least one identical input.
 
 #### Non-conflicting transaction
 
@@ -238,7 +238,7 @@ A transaction $tx$ is _non-conflicting_ if there is no transaction $ty$ such tha
 
 #### Rejected transaction
 
-A transaction $tx$ is _rejected_ if there is a transaction $ty$, which is conflicting with $tx$ and has been [accepted](consensus-flags.md#acceptance-of-conflicting-transactions).
+A transaction $tx$ is rejected if there is a transaction $ty$, which is conflicting with $tx$ and has been [accepted](consensus-flags.md#acceptance-of-conflicting-transactions).
 
 In other words, once a transaction gets [accepted](consensus-flags.md#acceptance-flag), all transactions conflicting with it get rejected. Rejected transactions are removed from the reality-based ledger.
 
@@ -251,7 +251,7 @@ To understand the voting mechanism on the Tangle, it is essential to introduce t
 A branch is a subset of conflicts $B$ if these two properties hold:
 
 1. Set $B$ does not contain two conflicting transactions.
-2. For any conflict <code>$tx\in B$</code>, all conflicts in the causal history of $tx$ are contained in $B$.
+2. For any conflict $tx\in B$, all conflicts in the causal history of $tx$ are contained in $B$.
 
 One prominent example of branches is defined using the causal history of transactions.
 
@@ -266,7 +266,7 @@ For a block $b$, there is the branch of $b$, which is encoded through the refere
 
 #### Vote
 
-A block _votes_ for a conflicting transaction $tx$ if the branch of the block contains $tx$. In such a case, the issuer of the block is also said to _vote_ for $tx$.
+A block votes for a conflicting transaction $tx$ if the branch of the block contains $tx$. In such a case, the issuer of the block is also said to vote for $tx$.
 
 The issuer of a block votes for (supports) all conflicts in the branch of that block. Nodes use this simple idea to agree on which conflicting transactions should be accepted and included in the ledger and which should be rejected.
 
@@ -274,9 +274,9 @@ To determine the conflicts supported by a node, you need to understand the conce
 
 #### Reality
 
-A maximal branch is called a _reality_. In other words, for a reality, there is no larger branch containing this reality.
+A maximal branch is called a reality. In other words, for a reality, there is no larger branch containing this reality.
 
-There is an exponential number of realities in the number of conflicts. However, every node at any moment can find its unique _preferred_ reality by following the [algorithm](relevant-algorithms.md#algorithm-to-compute-the-preferred-reality). This algorithm is practical as it has quadratic complexity in the number of conflicts.
+There is an exponential number of realities in the number of conflicts. However, every node at any moment can find its unique preferred reality by following the [algorithm](relevant-algorithms.md#algorithm-to-compute-the-preferred-reality). This algorithm is practical as it has quadratic complexity in the number of conflicts.
 
 The preferred reality represents the complete set of conflicts supported by a node. In principle, when choosing between two conflicting transactions, a node supports the one that has received more votes from the committee, i.e., validation blocks with more voting weight voted for that transaction.
 

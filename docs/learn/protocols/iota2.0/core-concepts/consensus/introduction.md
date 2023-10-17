@@ -51,13 +51,13 @@ This task focuses on resolving conflicts that arise when multiple transactions i
 
 ### Provide Consensus Flags
 
-The second dimension provides different _consensus flags_ or confidence levels about the irreversibility of blocks and transactions.
+The second dimension provides different consensus flags or confidence levels about the irreversibility of blocks and transactions.
 
-When they receive a new validation block, nodes examine the Tangle to identify distinct _validation block patterns_, and attribute specific flags to blocks in the Tangle or transactions contained in the blocks.
+When they receive a new validation block, nodes examine the Tangle to identify distinct validation block patterns, and attribute specific flags to blocks in the Tangle or transactions contained in the blocks.
 
 A pattern corresponds to a causally ordered set of validation blocks. For instance, if a block is [approved](preliminaries.md#about-blocks-and-the-tangle) by a supermajority of the committee (validators holding more than $2/3$ of the total voting power), then the block gets the [pre-confirmed flag](#pre-confirmation). In this context, the validation blocks from these validators constitute a validation block pattern necessary for pre-confirmation.
 
-The IOTA 2.0 consensus protocol is endowed with dynamic availability. This attribute ensures continuous operation even when some validator committee members may be offline or the network experiences partitions. During such instances, the online validator committee within each partition maintains the process of updating their _available_ ledger, which is constructed from the transactions that have been [accepted](#acceptance).
+The IOTA 2.0 consensus protocol is endowed with dynamic availability. This attribute ensures continuous operation even when some validator committee members may be offline or the network experiences partitions. During such instances, the online validator committee within each partition maintains the process of updating their available ledger, which is constructed from the transactions that have been [accepted](#acceptance).
 
 Once the network recovers from its divided state and a [supermajority](preliminaries.md#total-and-online-supermajority) of the committee is back online, the transaction finalization process recommences. The consensus flags differentiate between degrees of irreversibility. This aspect balances safety and liveness, providing different trade-offs to manage various network conditions effectively.
 
