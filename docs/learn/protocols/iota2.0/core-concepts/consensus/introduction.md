@@ -55,7 +55,7 @@ The second dimension provides different _consensus flags_ or confidence levels a
 
 When they receive a new validation block, nodes examine the Tangle to identify distinct _validation block patterns_, and attribute specific flags to blocks in the Tangle or transactions contained in the blocks.
 
-A pattern corresponds to a causally ordered set of validation blocks. For instance, if a block (object) is [approved](preliminaries.md#about-blocks-and-the-tangle) by a supermajority of the committee (validators holding more than $2/3$ of the total voting power), then the block gets the [pre-confirmed flag](#pre-confirmation). In this context, the validation blocks from these validators constitute a validation block pattern necessary for pre-confirmation.
+A pattern corresponds to a causally ordered set of validation blocks. For instance, if a block is [approved](preliminaries.md#about-blocks-and-the-tangle) by a supermajority of the committee (validators holding more than $2/3$ of the total voting power), then the block gets the [pre-confirmed flag](#pre-confirmation). In this context, the validation blocks from these validators constitute a validation block pattern necessary for pre-confirmation.
 
 The IOTA 2.0 consensus protocol is endowed with dynamic availability. This attribute ensures continuous operation even when some validator committee members may be offline or the network experiences partitions. During such instances, the online validator committee within each partition maintains the process of updating their _available_ ledger, which is constructed from the transactions that have been [accepted](#acceptance).
 
