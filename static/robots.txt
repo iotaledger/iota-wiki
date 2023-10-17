@@ -1,0 +1,10 @@
+User-agent: *
+Disallow: /iota.rs/
+Disallow: /iota.js/
+Disallow: /wallet.rs/
+Disallow: /streams/
+Disallow: /hornet/1.2/
+Disallow: /introduction/
+Disallow: /identity.rs/0.6/
+Disallow: /identity.rs/0.6/
+Disallow: /learn/protocols/chrysalis/
