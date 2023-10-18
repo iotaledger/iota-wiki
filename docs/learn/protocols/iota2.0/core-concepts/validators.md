@@ -101,7 +101,7 @@ $$
 
 where:
 
-- $`\varphi_i\in [0,1]`$ is the "performance factor", which measures the quality of validator $i$'s services at slot $s$;
+- $\varphi_i\in [0,1]$ is the "performance factor", which measures the quality of validator $i$'s services at slot $s$;
 - $L_i(e)$ and $D_i(e)$ are the token value locked by committee member $i$ and delegated to committee member $i$ for epoch $e$;
 - $L(e)$ and $D(e)$ are the token value locked by the whole committee and delegated to all committee members for epoch $e$;
 - $\alpha>0$ is a global parameter specified by the protocol.
