@@ -126,7 +126,7 @@ Adversarial validators can stop issuing validation blocks. In this case, the Tan
 
 #### Many competing chains
 
-It is easy for the adversary to create many competing slot commitment chains. Recall that by the consensus protocol, honest nodes prefer the heaviest chain with the most recent quorum certificate. Honest nodes will simply ignore blocks with unfamiliar commitments lacking sufficient support.
+It is easy for the adversary to create many competing slot commitment chains. Recall that by the consensus protocol, honest nodes prefer the heaviest chain with the most recent finalized commitment. Honest nodes will simply ignore blocks with unfamiliar commitments lacking sufficient support.
 
 #### Incorrect extension of the chain
 
