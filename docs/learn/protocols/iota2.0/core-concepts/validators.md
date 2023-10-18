@@ -96,10 +96,10 @@ Committee members should commit to a slot once the slot becomes committable. Thi
 Well-performing validators are eligible for Mana rewards. Let $R(s)$ denote the target reward for a slot $s$ in epoch $e$. The rewards $R_i(s)$ to an epoch-$e$ committee member $i$ for slot $s$ are calculated as follows
 
 $$
-R_i(s) = \dfrac{R(s)}{1+\alpha}\left(\dfrac{L_i(e) + D_{i}(e)}{L(e) + D(e)}+\alpha \dfrac{L_i(e)}{L(e)}\right)\varphi_i
+R_i(s) = \dfrac{R(s)}{1+\alpha}\left(\dfrac{L_i(e) + D_{i}(e)}{L(e) + D(e)}+\alpha \dfrac{L_i(e)}{L(e)}\right)\varphi_i,
 $$
 
-**Where**:
+where:
 
 - $`\varphi_i\in [0,1]`$ is the "performance factor", which measures the quality of validator $i$'s services at slot $s$;
 - $L_i(e)$ and $D_i(e)$ are the token value locked by committee member $i$ and delegated to committee member $i$ for epoch $e$;
