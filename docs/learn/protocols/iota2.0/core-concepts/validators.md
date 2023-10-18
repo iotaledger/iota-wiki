@@ -110,6 +110,12 @@ Since the parameter $\alpha>0$, the reward distribution privileges pools with a 
 
 After epoch $e$ ends, the delegators of the validator's pool can claim their Mana rewards. The validator may continue to stake or end its stake by going through an unbonding period of its locked tokens. After this period ends, the validator can unlock their tokens and claim their Mana rewards by creating a transaction that consumes the original output that was staked and includes the Mana on the output side of the transaction.
 
+:::note
+
+More details about Mana rewards and incentives can be found in [Tokenomics: Mana, Accounts, Staking and Delegation](mana.md)
+
+:::
+
 ## Handling Misbehavior and Adversarial Validators
 
 In general, the consensus protocol in IOTA 2.0 handles adversarial validators with at most $1/3$ of the total voting weight, where adversarial actors can misbehave. Here are some examples of adversarial misbehavior and how the protocol can handle them:
