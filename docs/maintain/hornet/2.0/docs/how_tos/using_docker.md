@@ -37,7 +37,7 @@ It includes everything required to setup a public node accessible by wallets and
 
 ## Requirements
 
-1. A recent release of Docker enterprise or community edition. You can find installation instructions in the [official Docker documentation](https://docs.docker.com/engine/install/).
+1. A recent release of Docker enterprise or community edition. Avoid using the Docker version shipped with your OS since these are mostly out of date. You can find installation instructions in the [official Docker documentation](https://docs.docker.com/engine/install/).
 2. [Docker Compose CLI plugin](https://docs.docker.com/compose/install/linux/).
 3. A registered domain name pointing to the public IP address of your server. _(optional if not using HTTPS)_
 4. Opening up the following ports in your servers firewall:
@@ -47,7 +47,6 @@ It includes everything required to setup a public node accessible by wallets and
 - `80 TCP` - Used for HTTP. _(can be changed, see below)_
 - `443 TCP` - Used for HTTPS. _(optional if not using HTTPS)_
 - `4000 TCP/UDP` - Used for Wasp gossip. _(optional if not using Wasp)_
-- `5550 TCP` - Used for Wasp nanomsg events. _(optional if not using Wasp)_
 
 5. [curl](https://curl.se/).
 
