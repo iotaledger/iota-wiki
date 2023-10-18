@@ -63,7 +63,7 @@ The selected committee will become the actual committee for epoch $e$ only if th
 
 Therefore, committees evolve across epochs due to changes in the delegation of stake and the set of active validators.
 
-:::note Upoming Updates
+:::note Upcoming Updates
 
 The committee selection procedure will be changed in one of the next upgrades. Eventually, it will be based on a random lottery, where a stakeholder is selected for the committee with a probability that depends on the stake in the corresponding pool.
 
