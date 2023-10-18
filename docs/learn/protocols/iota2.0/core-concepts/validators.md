@@ -18,7 +18,7 @@ The ledger needs to be not only secure but also live, i.e., transactions issued 
 
 ### Efficient Consensus
 
-The bounded size of a committee reduces the number of blocks required to reach an agreement in the network. Since the outcome of the IOTA 2.0 consensus protocol is solely based on the validation blocks, this allows for fast confirmation times and reasonable communication complexity.
+The bounded size of a committee reduces the number of blocks required to reach an agreement in the network. Since the outcome of the IOTA 2.0 [consensus protocol](consensus/introduction.md) is solely based on the validation blocks, this allows for fast confirmation times and reasonable communication complexity.
 
 ### Decentralized Democracy
 
@@ -51,11 +51,11 @@ The registration is only considered successful when the registration block and t
 
 ### Activity
 
-In the _activity period_, defined as `[epochStart-epochSetupDuration-activityDuration, epochStart-epochSetupDuration)`, an actor has to have at least one accepted block. This block can be of any type, e.g., it could be a validation block. All actors who have an accepted block within the activity period are called $`e`$-`preActive`. Note that this step needs to be done before every epoch if a validator wants to participate in the committee.
+In the _activity period_, defined as `[epochStart-epochSetupDuration-activityDuration, epochStart-epochSetupDuration)`, an actor has to have at least one accepted block. This block can be of any type, e.g., it could be a validation block. All actors who have an accepted block within the activity period are called $e$-`preActive`. Note that this step needs to be done before every epoch if a validator wants to participate in the committee.
 
 ### Selection and Voting Weight
 
-The stake of each validator is the sum of the locked funds and the delegated stake from other nodes. Let $S_i(e)=L_i(e)+D_i(e)$ denote the pool's stake of node $i$ for epoch $e$, where $L_i(e)$ is the token value locked by node $i$ and $D_i(e)$ is the token value delegated to node $i$. The value $S_i(e)$ is fixed at the slot that ends at `epochStart-epochSetupDuration`. The stake vector of all $e$-preActive validators is considered, i.e. $`\mathbf{S}(e)=(S_j(e))|_{j \ \text{is }e\text{-preActive}}`$.
+The stake of each validator is the sum of the locked funds and the delegated stake from other nodes. Let $S_i(e)=L_i(e)+D_i(e)$ denote the pool's stake of node $i$ for epoch $e$, where $L_i(e)$ is the token value locked by node $i$ and $D_i(e)$ is the token value delegated to node $i$. The value $S_i(e)$ is fixed at the slot that ends at `epochStart-epochSetupDuration`. The stake vector of all $e$-preActive validators is considered, i.e. $\mathbf{S}(e)=(S_j(e))|_{j \ \text{is }e\text{-preActive}}$.
 
 Then, the next committee is formed by taking `committeeTotalSeats` validators who have the largest stake in $\mathbf{S}(e)$. When deciding between equal stakeholders, ties are broken deterministically by using a hash function. The voting weight of all selected committee members is equal to $1$.
 
@@ -79,22 +79,21 @@ The timestamp difference between two consecutive validation blocks by a given co
 
 ### Proper Referencing
 
-Since only validation blocks are important for the consensus for IOTA 2.0, epoch committee members use a hybrid tip selection algorithm:
+Since only validation blocks are important for the consensus for IOTA 2.0, epoch committee members use a [tip selection algorithm](consensus/tip-selection-algorithm.md) with an increased number of parents:
 
-- Referencing latest validation blocks: to improve confirmation time, it is important to reference all the latest validation blocks within the adopted slot commitment chain.
-- Uniform tip selection algorithm: committee members should pick up and reference not only validation blocks but choose uniformly at random `blockMaxParent` eligible blocks in their tip pool.
+- Uniform tip selection algorithm: committee members should select uniformly at random `blockTypeValidatorMaxParent` eligible blocks in their tip pool as strong parents.
 
 ### Correct Voting
 
-The opinion that a validation block expresses through different references should be aligned with the preferred reality of the block issuer. For instance, the block should not represent a vote for two transactions that are conflicting with each other. In the latter case, the vote of the issuer is not counted in the consensus protocol.
+The opinion that a validation block expresses through different [references](consensus/preliminaries.md#block-references) should be aligned with the [preferred reality](consensus/preliminaries.md#reality) of the block issuer. For instance, the block should not represent a vote for two transactions that are conflicting with each other. In the latter case, the vote of the issuer is not counted in the consensus protocol.
 
 ### Regular Committing to Slots
 
-Committee members should commit to a slot once the slot becomes committable. This ensures that the slot commitment chain is consistently updated and finalization functions properly.
+Committee members should commit to a slot once the slot becomes committable. This ensures that the [slot commitment chain](consensus/preliminaries.md#slot-commitment-chain) is consistently updated and [finalization](consensus/consensus-flags.md#finalization-flag) functions properly.
 
 ## Rewards and Incentives
 
-Well-performing validators are eligible for Mana rewards. Let $R(s)$ denote the target reward for a slot $s$ in epoch $e$. The rewards $R_i(s)$ to an epoch-$`e`$ committee member $i$ for slot $s$ are calculated as follows
+Well-performing validators are eligible for Mana rewards. Let $R(s)$ denote the target reward for a slot $s$ in epoch $e$. The rewards $R_i(s)$ to an epoch-$e$ committee member $i$ for slot $s$ are calculated as follows
 
 $$
 R_i(s) = \dfrac{R(s)}{1+\alpha}\left(\dfrac{L_i(e) + D_{i}(e)}{L(e) + D(e)}+\alpha \dfrac{L_i(e)}{L(e)}\right)\varphi_i
