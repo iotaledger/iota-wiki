@@ -12,7 +12,7 @@ keywords:
   - Governance
 ---
 
-On-chain governance is essential for any decentralized DLT. The ability to make decisions through voting functionalities executed on the Blockchain / DAG removes a centralization point and gives token holders the power to make their own decisions. IOTA and Shimmer token holders can now carry out governance decisions with the Firefly Wallet.
+On-chain governance is essential for any decentralized DLT. The ability to make decisions through voting functionalities executed on the Blockchain / DAG removes a centralization point and gives token holders the power to make their own decisions. IOTA and Shimmer token holders can now engage in governance with the Firefly Wallet.
 With the support of the IOTA Foundation, the community has developed a highly flexible and secure system for casting votes directly on the Tangle
 through the Firefly Wallet while votes are counted in the network’s Hornet nodes.
 
