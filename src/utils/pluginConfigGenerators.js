@@ -71,11 +71,13 @@ function createVersionRedirects(versionedConfig) {
     const routeBasePath = doc.routeBasePath ? doc.routeBasePath : doc.id;
 
     if (mainVersion) {
-      // Redirect deep version link to route base path
-      redirects.push({
-        from: '/' + routeBasePath + '/' + mainVersion.label,
-        to: '/' + routeBasePath,
-      });
+      if (doc.versions.length > 1) {
+        // Redirect deep version link to route base path
+        redirects.push({
+          from: '/' + routeBasePath + '/' + mainVersion.label,
+          to: '/' + routeBasePath,
+        });
+      }
 
       // Redirect to main IOTA version
       redirects.push({
