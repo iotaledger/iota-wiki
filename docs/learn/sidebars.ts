@@ -141,7 +141,7 @@ module.exports = {
       label: 'Governance',
       collapsed: true,
       items: [
-        'governance/governance-intro',
+        'governance/shimmer-governance-intro',
         'governance/governance-tech',
         'governance/the-shimmer-governance-framework',
         'governance/shimmer-community-grant-committee',
