@@ -249,7 +249,7 @@ exports.maintainPluginsConfig = [
       },
       {
         label: '0.3',
-        badges: ['IOTA'],
+        badges: ['Deprecated'],
       },
     ],
   },

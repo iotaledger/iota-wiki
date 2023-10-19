@@ -66,6 +66,19 @@ module.exports = {
                 'protocols/iota2.0/core-concepts/data-flow',
                 'protocols/iota2.0/core-concepts/data-structures',
                 'protocols/iota2.0/core-concepts/mana',
+                {
+                  type: 'category',
+                  label: 'Consensus',
+                  items: [
+                    'protocols/iota2.0/core-concepts/consensus/introduction',
+                    'protocols/iota2.0/core-concepts/consensus/preliminaries',
+                    'protocols/iota2.0/core-concepts/consensus/tip-selection-algorithm',
+                    'protocols/iota2.0/core-concepts/consensus/consensus-flags',
+                    'protocols/iota2.0/core-concepts/consensus/chain-switching-rule',
+                    'protocols/iota2.0/core-concepts/consensus/relevant-algorithms',
+                  ],
+                },
+                'protocols/iota2.0/core-concepts/validators',
               ],
             },
           ],
@@ -129,7 +142,7 @@ module.exports = {
       label: 'Governance',
       collapsed: true,
       items: [
-        'governance/shimmer-governance-intro',
+        'governance/governance-intro',
         'governance/governance-tech',
         'governance/the-shimmer-governance-framework',
         'governance/shimmer-community-grant-committee',
