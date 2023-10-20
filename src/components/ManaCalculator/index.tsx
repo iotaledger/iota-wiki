@@ -20,7 +20,7 @@ import {
   ValidatorParameters,
 } from './types';
 import { Details } from '@docusaurus/theme-common/Details';
-import { EPOCH } from './utils';
+import { EPOCH, fromMicro, toMicro } from './utils';
 
 function ValidatorCard({
   validator,
@@ -56,17 +56,17 @@ function ValidatorCard({
           <div className='col col--8'>Stake:</div>
           <input
             className='col col--4 align-right'
-            value={validator.lockedStake}
-            onChange={(e) => handleStakeChange(Number(e.target.value), id)}
+            value={fromMicro(validator.lockedStake)}
+            onChange={(e) => handleStakeChange(toMicro(Number(e.target.value)), id)}
           ></input>
         </div>
         <div className='row'>
           <div className='col col--8'>Delegated:</div>
           <input
             className='col col--4 align-right'
-            value={validator.delegatedStake}
+            value={fromMicro(validator.delegatedStake)}
             onChange={(e) =>
-              handleDelegatedStakeChange(Number(e.target.value), id)
+              handleDelegatedStakeChange(toMicro(Number(e.target.value)), id)
             }
           ></input>
         </div>
@@ -101,27 +101,27 @@ export default function ManaCalculator() {
     finalEpoch: 100,
     validators: [
       {
-        lockedStake: 100,
-        delegatedStake: 0,
+        lockedStake: toMicro(100),
+        delegatedStake: toMicro(0),
         performanceFactor: 1.0,
         fixedCost: 0.0,
       },
       {
-        lockedStake: 100,
-        delegatedStake: 0,
+        lockedStake: toMicro(100),
+        delegatedStake: toMicro(0),
         performanceFactor: 1.0,
         fixedCost: 0.0,
       },
       {
-        lockedStake: 100,
-        delegatedStake: 0,
+        lockedStake: toMicro(100),
+        delegatedStake: toMicro(0),
         performanceFactor: 1.0,
         fixedCost: 0.0,
       },
     ],
     userType: UserType.DELEGATOR,
     congestion: CongestionType.LOW,
-    stake: 100,
+    stake: toMicro(100),
     delegator: {
       validator: 0,
     },
@@ -579,8 +579,8 @@ function DelegatorForm({
         <div className='col col--6'>Amount you delegate:</div>
         <input
           className='align-right col col--6'
-          value={stake}
-          onChange={(e) => handleOwnStakeChange(Number(e.target.value))}
+          value={fromMicro(stake)}
+          onChange={(e) => handleOwnStakeChange(toMicro(Number(e.target.value)))}
         ></input>
       </div>
     </div>
@@ -618,11 +618,10 @@ function ValidatorForm({
     <div className='table'>
       <div className='row '>
         <div className='col col--6'>Stake:</div>
-
         <input
           className='col col--6 align-right'
-          value={stake}
-          onChange={(e) => handleOwnStakeChange(Number(e.target.value))}
+          value={fromMicro(stake)}
+          onChange={(e) => handleOwnStakeChange(toMicro(Number(e.target.value)))}
         ></input>
       </div>
       <Details summary='Advanced Settings - Validator'>
@@ -701,12 +700,12 @@ function OutputForm({
   return (
     <div className='table'>
       <div className='row '>
-        <div className='col col--6'> Mana generation per epoch</div>
-        <div className='col col--6 align-right'>{manaGeneratedPerEpoch}</div>
+        <div className='col col--6'>Mana generation (holding IOTA)</div>
+        <div className='col col--6 align-right'>{fromMicro(passiveRewards)}</div>
       </div>
       <div className='row '>
-        <div className='col col--6'>Additional rewards per epoch</div>
-        <div className='col col--6 align-right'>{passiveRewards}</div>
+        <div className='col col--6'>Mana rewards (delegation/validation)</div>
+        <div className='col col--6 align-right'>{fromMicro(manaGeneratedPerEpoch)}</div>
       </div>
 
       <div className='row '>

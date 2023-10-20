@@ -101,3 +101,13 @@ export function targetReward(n: number): number {
   }
   return reward;
 }
+
+//returns The number of Mana/IOTA from micros
+export function fromMicro(n: number): number {
+  return n / 1_000_000;
+}
+
+//returns The number of micro(Mana/IOTA).
+export function toMicro(n: number): number {
+  return n * 1_000_000;
+}
