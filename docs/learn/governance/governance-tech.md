@@ -116,7 +116,7 @@ In contrast to the earlier voting system developed, the current version does not
 
 - Create a governance event following the [specifications for participation events](https://github.com/iota-community/treasury/blob/main/specifications/hornet-participation-plugin.md)
 - Add this governance event to a Hornet node with the [INX Participation Plugin](/hornet/2.0/inx-plugins/participation/welcome)
-- Add this governance event to the Firefly wallet by connecting the Wallet to a node that carries this event and use the [“add event”](./shimmer-firefly-governance-guide.md#6-adding-custom-community-proposals-to-firefly) function in the Governance section
+- Add this governance event to the Firefly wallet by connecting the Wallet to a node that carries this event and use the [“add event”](./firefly-governance-guide.md#6-adding-custom-community-proposals-to-firefly) function in the Governance section
 - Vote on this event with tokens
 
 Community members, projects, or other ecosystem participants can create governance events and invite the token holders to participate in such votes.

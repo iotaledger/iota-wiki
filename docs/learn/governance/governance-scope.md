@@ -1,7 +1,7 @@
 ---
 title: Governance Scope
 description: Defines exactly in which areas of the Shimmer network governance processes are currently implemented
-image: /img/learn/governance/shimmer-gov.png
+image: /img/learn/governance/iota_governance.png
 keywords:
   - Shimmer
   - Governance
