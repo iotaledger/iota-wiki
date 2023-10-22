@@ -1,6 +1,6 @@
 ---
 description: An Overview and Introduction to the Governance of Shimmer and IOTA
-image: /img/learn/governance/shimmer-gov.png
+image: /img/learn/governance/iota_governance.png
 keywords:
   - Introduction
   - Shimmer
