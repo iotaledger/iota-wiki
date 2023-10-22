@@ -75,7 +75,7 @@ This feature consists of 2 components:
 
 A detailed technical description of this voting functionality can be found in the [Governance - tech](./governance-tech.md) section of the Wiki.
 
-A detailed description of how to participate in Governance votes can be found in the [Firefly Governance Guide](./shimmer-firefly-governance-guide.md)
+A detailed description of how to participate in Governance votes can be found in the [Firefly Governance Guide](./firefly-governance-guide.md)
 
 ### Governance Resources
 
