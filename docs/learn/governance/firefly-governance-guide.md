@@ -1,7 +1,7 @@
 ---
 title: Governance Guide to Firefly
 description: A step-by-step guide to the Governance functionality in the Firefly Wallet
-image: /img/learn/governance/shimmer-gov.png
+image: /img/learn/governance/iota_governance.png
 keywords:
   - guide
   - Firefly
