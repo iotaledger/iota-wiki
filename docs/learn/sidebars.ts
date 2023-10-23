@@ -147,7 +147,7 @@ module.exports = {
         'governance/the-shimmer-governance-framework',
         'governance/shimmer-community-grant-committee',
         'governance/governance-scope',
-        'governance/shimmer-firefly-governance-guide',
+        'governance/firefly-governance-guide',
       ],
     },
     'glossary',
