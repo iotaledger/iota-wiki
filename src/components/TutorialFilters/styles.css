@@ -13,6 +13,10 @@
   justify-content: space-between;
 }
 
+.tutorial-filters__row {
+  padding-top: 20px;
+}
+
 .tutorial-filter__search {
   flex-grow: 1;
   max-width: 50%;

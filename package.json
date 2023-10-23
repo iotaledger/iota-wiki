@@ -52,7 +52,6 @@
     "plugin-image-zoom": "flexanalytics/plugin-image-zoom",
     "raw-loader": "^4.0.2",
     "react": "18.2.0",
-    "react-collapsible": "^2.8.4",
     "react-dom": "18.2.0",
     "react-flickity-component": "^3.6.3",
     "react-image-gallery": "^1.3.0",
