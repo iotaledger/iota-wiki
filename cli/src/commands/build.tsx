@@ -15,7 +15,7 @@ export class Build extends Command {
   });
 
   static usage = Command.Usage({
-    description: `Build the provided directory.`,
+    description: `Build current directory or sections of the wiki.`,
   });
 
   async execute() {
@@ -27,7 +27,7 @@ export class Build extends Command {
 
 const BuildComponent = ({ directory }: { directory: string }) => {
   const directories = [
-    { label: 'All', value: '' },
+    { label: 'Current directory', value: '' },
     { label: 'Build', value: 'build' },
     { label: 'Get Started', value: 'get-started' },
     { label: 'Learn', value: 'learn' },

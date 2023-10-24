@@ -14,7 +14,7 @@ export class Start extends Command {
   });
 
   static usage = Command.Usage({
-    description: `Preview the selected section of the wiki.`,
+    description: `Preview current directory or sections of the wiki.`,
   });
 
   async execute() {
@@ -26,7 +26,7 @@ export class Start extends Command {
 
 const StartComponent = ({ directory }: { directory: string }) => {
   const directories = [
-    { label: 'All', value: '' },
+    { label: 'Current directory', value: '' },
     { label: 'Build', value: 'build' },
     { label: 'Get Started', value: 'get-started' },
     { label: 'Learn', value: 'learn' },
