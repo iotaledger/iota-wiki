@@ -28,13 +28,56 @@ module.exports = async () => {
   // Get tutorials
   const additionalPlugins = await glob(['tutorials']);
 
-  const { MODE = 'development' } = process.env;
+  const { MODE = 'development', SELECTED_SECTION = 'all' } = process.env;
 
   if (!['development', 'production'].includes(MODE)) {
     throw "Set MODE to 'development', or 'production'";
   }
 
   const isProduction = MODE === 'production';
+
+  const navbarItems = [
+    {
+      label: 'Get Started',
+      to: '/get-started/introduction/iota/introduction/',
+      activeBaseRegex: '^(/[^/]+)?/get-started/.*',
+    },
+    {
+      label: 'Learn',
+      to: '/learn/protocols/introduction',
+      activeBaseRegex: '^(/[^/]+)?/learn/.*',
+    },
+    {
+      label: 'Build',
+      to: '/build/welcome/',
+      activeBaseRegex:
+        '^(/[^/]+)?/build/.*|' +
+        '^(/[^/]+)?/iota-sdk/.*|' +
+        '^(/[^/]+)?/identity.rs/.*|' +
+        '^(/[^/]+)?/iota.rs/.*|' +
+        '^(/[^/]+)?/iota.js/.*|' +
+        '^(/[^/]+)?/wallet.rs/.*|' +
+        '^(/[^/]+)?/stronghold.rs/.*|' +
+        '^(/[^/]+)?/streams/.*|' +
+        '^(/[^/]+)?/wasp-cli/.*|' +
+        '^(/[^/]+)?/wasp-wasm/.*|' +
+        '^(/[^/]+)?/wasp-evm/.*',
+    },
+    {
+      label: 'Maintain',
+      to: '/maintain/welcome',
+      activeBaseRegex:
+        '^(/[^/]+)?/maintain/.*|' +
+        '^(/[^/]+)?/hornet/.*|' +
+        '^(/[^/]+)?/wasp/.*|' +
+        '^(/[^/]+)?/chronicle/.*|' +
+        '^(/[^/]+)?/goshimmer/.*',
+    },
+  ]
+
+  const activeNavbarItems = navbarItems.filter((item) => {
+    return SELECTED_SECTION === 'all' || new RegExp(item.activeBaseRegex).test(`/${SELECTED_SECTION}/`)
+  })
 
   const themeConfig = {
     themeConfig: {
@@ -46,44 +89,7 @@ module.exports = async () => {
           src: 'img/logo.svg',
           srcDark: 'img/logo_dark.svg',
         },
-        items: [
-          {
-            label: 'Get Started',
-            to: '/get-started/introduction/iota/introduction/',
-            activeBaseRegex: '^(/[^/]+)?/get-started/.*',
-          },
-          {
-            label: 'Learn',
-            to: '/learn/protocols/introduction',
-            activeBaseRegex: '^(/[^/]+)?/learn/.*',
-          },
-          {
-            label: 'Build',
-            to: '/build/welcome/',
-            activeBaseRegex:
-              '^(/[^/]+)?/build/.*|' +
-              '^(/[^/]+)?/iota-sdk/.*|' +
-              '^(/[^/]+)?/identity.rs/.*|' +
-              '^(/[^/]+)?/iota.rs/.*|' +
-              '^(/[^/]+)?/iota.js/.*|' +
-              '^(/[^/]+)?/wallet.rs/.*|' +
-              '^(/[^/]+)?/stronghold.rs/.*|' +
-              '^(/[^/]+)?/streams/.*|' +
-              '^(/[^/]+)?/wasp-cli/.*|' +
-              '^(/[^/]+)?/wasp-wasm/.*|' +
-              '^(/[^/]+)?/wasp-evm/.*',
-          },
-          {
-            label: 'Maintain',
-            to: '/maintain/welcome',
-            activeBaseRegex:
-              '^(/[^/]+)?/maintain/.*|' +
-              '^(/[^/]+)?/hornet/.*|' +
-              '^(/[^/]+)?/wasp/.*|' +
-              '^(/[^/]+)?/chronicle/.*|' +
-              '^(/[^/]+)?/goshimmer/.*',
-          },
-        ],
+        items: activeNavbarItems,
       },
       footer: {},
       socials: [
