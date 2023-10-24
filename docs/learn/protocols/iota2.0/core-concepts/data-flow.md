@@ -21,8 +21,7 @@ IOTA 2.0's Network Layer consists of two primary modules: the peer discovery mod
 
 The communication layer's concern is the information propagated through the network layer, contained in objects called blocks. This layer builds a DAG with blocks as vertices called [The Tangle](data-structures.md): a replicated, shared, and distributed data structure that emerges through a combination of deterministic rules, cooperation, and direct or virtual voting.
 
-Since nodes have finite capabilities, the network can process a limited number of blocks. Thus, the network could become overloaded simply because of honest heavy usage or malicious (spam) attacks. To protect the network from coming to a halt or just getting inconsistent, the [rate control](communication-layer.md) and  [congestion control](communication-layer.md)
-modules control when and how many blocks can be gossiped.
+Since nodes have finite capabilities, the network can process a limited number of blocks. Thus, the network could become overloaded simply because of honest heavy usage or malicious (spam) attacks. To protect the network from coming to a halt or just getting inconsistent, the rate control and congestion control modules control when and how many blocks can be gossiped.
 
 ## 3. (Decentralized) Application Layer
 
@@ -53,7 +52,7 @@ Finally, note that this Data Flow concerns _nodes_ and not _clients_. Clients ge
 
 ### 4.1 Block Factory
 
-The `IssuePayload` function creates a valid payload, provided to the `CreateBlock` method, along with a set of parents chosen with the [Tip Selection Algorithm](communication-layer.md). Then, the block is signed. Notice that block generation should follow the rates imposed by the rate setter, as defined in r [rate control](communication-layer.md), and that the block's type of references should be consistent with the preferred reality of the issuer(see the [consensus article](consensus/introduction.md).
+The `IssuePayload` function creates a valid payload, provided to the `CreateBlock` method, along with a set of parents chosen with the Tip Selection Algorithm. Then, the block is signed. Notice that block generation should follow the rates imposed by the rate setter, as defined in rate control, and that the block's type of references should be consistent with the preferred reality of the issuer(see the [consensus article](consensus/introduction.md).
 
 All blocks have a commitment field, which is the hash of a series of information from older slots (see [Data Structures](data-structures.md)), e.g., the Merkle root of the Merkle Tree containing the blocks included in the older slots, ledger state at the end of the slots, or Block Issuance Credits.
 
@@ -85,7 +84,7 @@ If the block does not pass this check, a `BlockFiltered` event is triggered. If 
 
 #### 4.2.5 Mana check
 
-This process checks if the RMC (Reference Mana Cost) requirements are met, as defined in  [Congestion Control](communication-layer.md). To summarize, this step checks if the Mana burnt in the block is larger or equal to the Reference Mana Cost of the slot times the block's workscore. Both the RMC and workscore calculations are objective, so if a block does not burn the required Mana, it can be directly rejected.
+This process checks if the RMC (Reference Mana Cost) requirements are met, as defined in Congestion Control. To summarize, this step checks if the Mana burnt in the block is larger or equal to the Reference Mana Cost of the slot times the block's workscore. Both the RMC and workscore calculations are objective, so if a block does not burn the required Mana, it can be directly rejected.
 
 It also checks if the account BIC committed at `maxCommitableAge` slots in the past is non-negative, among other account-related filters.
 
@@ -160,11 +159,11 @@ Finally, whenever a block is booked, it triggers the Scheduler and the consensus
 
 You can think of the scheduler as a gatekeeper that offers protection for your neighbors, since the protocol only gossips blocks that it has scheduled.
 
-Once the steps above are successful, the block is enqueued into the outbox. The outbox is split into several queues, each corresponding to a different block issuer. Those separate queues ensure that the minimum share of throughput reserved to a certain block issuer is not affected by the network usage of the other nodes. Furthermore, separating blocks into different queues guarantees that no block issuers will have their blocks delayed because of spamming from other issuers (see the Scheduler description in the [Communication Layer wiki page](communication-layer.md)).
+Once the steps above are successful, the block is enqueued into the outbox. The outbox is split into several queues, each corresponding to a different block issuer. Those separate queues ensure that the minimum share of throughput reserved to a certain block issuer is not affected by the network usage of the other nodes. Furthermore, separating blocks into different queues guarantees that no block issuers will have their blocks delayed because of spamming from other issuers.
 
 Once the block is enqueued into the right queue, this queue is sorted by block timestamp in increasing order. This ensures that blocks are scheduled in the same order by every node with high probability. Furthermore, blocks can only be scheduled when ready, meaning that all parents are scheduled or accepted.
 
-The dequeuing process (i.e., fetching the blocks from these queues to be gossiped and added to the tip pool) uses a modified version of the deficit round robin (DRR) algorithm, as described in [Congestion Control](communication-layer.md). A maximum (fixed) global `SCHEDULING_RATE`, at which blocks will be scheduled, is set.
+The dequeuing process (i.e., fetching the blocks from these queues to be gossiped and added to the tip pool) uses a modified version of the deficit round robin (DRR) algorithm. A maximum (fixed) global `SCHEDULING_RATE`, at which blocks will be scheduled, is set.
 
 In severe congestion, when the buffer length exceeds a maximum length parameter, blocks will be dropped from the issuer queue's tail (latest timestamp). This buffer management policy favors the highest Mana nodes during periods of severe congestion, dropping blocks from low-Mana issuers first.
 

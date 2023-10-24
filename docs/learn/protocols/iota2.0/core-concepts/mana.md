@@ -42,7 +42,7 @@ You can obtain Mana in different ways:
 
 Contrary to how ledger writing rights are managed in traditional blockchains, block creation in IOTA is not reserved for a limited group of miners or validators. Any IOTA account holder can add a Block Issuer Feature to the account and create blocks by consuming Mana. Furthermore, users do not need to pay this Mana to other actors to create blocks on their behalf, as in fee-based systems. Still, they can use Mana in the protocol to take advantage of functionality without intermediaries.
 
-Specifically, Mana is burned each time a block is created, meaning it is subtracted from the Mana balance of the block creator. The network's congestion levels determine the amount required to be burned, and nodes dynamically regulate this amount as the blocks are received (see the [Communication Layer article](communication-layer.md)).
+Specifically, Mana is burned each time a block is created, meaning it is subtracted from the Mana balance of the block creator. The network's congestion levels determine the amount required to be burned, and nodes dynamically regulate this amount as the blocks are received.
 
 ![A generic transaction payload](/img/learn/protocols/iota2.0/core-concepts/data-flow/payload.png)
 
@@ -53,7 +53,7 @@ To understand how Mana is dealt with in more detail, consider the figure above, 
 The newly minted Mana can be allocated in two ways:
 
 - By default, Mana will be stored on the unspent outputs.
-- Mana can also be allotted to a chosen account as [Block Issuance Credits (BIC)](#block-issuance-credits-bic) (see the [Communication Layer article](communication-layer.md)). Note that this is not the default behavior of the wallet, but it is technically possible to do so (for example, one might want to allot extra BIC to issue data blocks in the future).
+- Mana can also be allotted to a chosen account as [Block Issuance Credits (BIC)](#block-issuance-credits-bic). Note that this is not the default behavior of the wallet, but it is technically possible to do so (for example, one might want to allot extra BIC to issue data blocks in the future).
 
 If you store mana in unspent outputs, you can transfer it just like IOTA tokens, and we retain the ability to process updates in parallel efficiently. On the other hand, BIC are not transferable and can only be used to burn as part of the block creation process. By default, in our wallet implementation, the surplus of Mana left after creating a new block is stored in the unspent outputs. However, by the protocol design, if the surplus of Mana isn’t allotted or stored, it will be lost.
 
