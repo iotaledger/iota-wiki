@@ -10,7 +10,7 @@ interface DefaultComponentProps {
 const DefaultComponent: FC<DefaultComponentProps> = (props) => {
   const items = [
     {
-      label: 'Preview the current directory.',
+      label: 'Preview the selected section of the wiki.',
       value: 'start',
     },
     {
