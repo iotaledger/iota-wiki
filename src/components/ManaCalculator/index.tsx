@@ -16,11 +16,53 @@ import {
   ChangeEvent,
   ChangeCongestionEvent,
   CongestionType,
-  ManaCalculatorProps,
   ValidatorParameters,
+  NetworkType,
+  ManaCalculatorProps,
 } from './types';
 import { Details } from '@docusaurus/theme-common/Details';
-import { EPOCH, fromMicro, toMicro } from './utils';
+import { EPOCH, fromMicro, getNetworkSupply, toMicro } from './utils';
+
+function getDefaultParameters(network: NetworkType): ManaCalculatorProps {
+  return {
+    initialEpoch: 0,
+    finalEpoch: 100,
+    validators: [
+      {
+        lockedStake: toMicro(100),
+        delegatedStake: toMicro(0),
+        performanceFactor: 1.0,
+        fixedCost: 0.0,
+      },
+      {
+        lockedStake: toMicro(100),
+        delegatedStake: toMicro(0),
+        performanceFactor: 1.0,
+        fixedCost: 0.0,
+      },
+      {
+        lockedStake: toMicro(100),
+        delegatedStake: toMicro(0),
+        performanceFactor: 1.0,
+        fixedCost: 0.0,
+      },
+    ],
+    userType: UserType.DELEGATOR,
+    congestion: CongestionType.LOW,
+    stake: toMicro(100),
+    delegator: {
+      validator: 0,
+    },
+    validator: {
+      performanceFactor: 1.0,
+      fixedCost: 0.0,
+      shareOfYourStakeLocked: 1.0,
+      attractedNewDelegatedStake: 0.0,
+      attractedDelegatedStakeFromOtherPools: 0.1,
+    },
+    network
+  } as ManaCalculatorProps
+}
 
 function ValidatorCard({
   validator,
@@ -96,43 +138,7 @@ function ValidatorCard({
 }
 
 export default function ManaCalculator() {
-  const [state, setState] = useState({
-    initialEpoch: 0,
-    finalEpoch: 100,
-    validators: [
-      {
-        lockedStake: toMicro(100),
-        delegatedStake: toMicro(0),
-        performanceFactor: 1.0,
-        fixedCost: 0.0,
-      },
-      {
-        lockedStake: toMicro(100),
-        delegatedStake: toMicro(0),
-        performanceFactor: 1.0,
-        fixedCost: 0.0,
-      },
-      {
-        lockedStake: toMicro(100),
-        delegatedStake: toMicro(0),
-        performanceFactor: 1.0,
-        fixedCost: 0.0,
-      },
-    ],
-    userType: UserType.DELEGATOR,
-    congestion: CongestionType.LOW,
-    stake: toMicro(100),
-    delegator: {
-      validator: 0,
-    },
-    validator: {
-      performanceFactor: 1.0,
-      fixedCost: 0.0,
-      shareOfYourStakeLocked: 1.0,
-      attractedNewDelegatedStake: 0.0,
-      attractedDelegatedStakeFromOtherPools: 0.1,
-    },
-  } as ManaCalculatorProps);
+  const [state, setState] = useState(getDefaultParameters(NetworkType.IOTA));
 
   function handleDelete(id: number) {
     const validators = state.validators.filter((_, i) => i !== id);
@@ -260,6 +266,14 @@ export default function ManaCalculator() {
     });
   }
 
+  function handleNetworkChange(value: NetworkType){
+    setState({
+      ...getDefaultParameters(value)
+    });
+  }
+
+  const supply = getNetworkSupply(state.network)
+
   // Calulate Mana rewards for delegator and validator
   let delegatorResults = {
     manaGeneratedPerEpoch: 0,
@@ -280,6 +294,7 @@ export default function ManaCalculator() {
       EPOCH,
       null,
       'Delegator',
+      supply
     );
     let passiveRewards = calculatePassiveRewards(state.stake, EPOCH, EPOCH + 1);
 
@@ -308,6 +323,7 @@ export default function ManaCalculator() {
       EPOCH,
       null,
       'Validator',
+      supply
     );
     grantedTPS = calculateTPS(manaGeneratedPerEpoch, state.congestion);
     totalTPS = grantedTPS + additionalTPS;
@@ -337,6 +353,7 @@ export default function ManaCalculator() {
       state.initialEpoch,
       state.finalEpoch,
       'Delegator',
+      supply
     );
     let passiveRewards = calculatePassiveRewards(
       state.stake,
@@ -367,6 +384,7 @@ export default function ManaCalculator() {
       state.initialEpoch,
       state.finalEpoch,
       'Validator',
+      supply
     );
     grantedTPS = calculateTPS(manaGenerated, state.congestion);
     totalTPS = grantedTPS + additionalTPS;
@@ -378,6 +396,17 @@ export default function ManaCalculator() {
 
   return (
     <div>
+      <Select
+        defaultValue={{ value: NetworkType.IOTA, label: `IOTA` }}
+        onChange={(e) => {
+          handleNetworkChange(e.value);
+        }}
+        classNamePrefix='react-select'
+        options={[
+          { value: NetworkType.IOTA, label: `IOTA` },
+          { value: NetworkType.SHIMMER, label: `Shimmer` }
+        ]}
+        />
       <Tabs>
         <TabItem value='tps' label='TPS'>
           <div className='table'></div>
@@ -700,7 +729,7 @@ function OutputForm({
   return (
     <div className='table'>
       <div className='row '>
-        <div className='col col--6'>Mana generation (holding IOTA)</div>
+        <div className='col col--6'>Mana generation (by holding)</div>
         <div className='col col--6 align-right'>{fromMicro(passiveRewards)}</div>
       </div>
       <div className='row '>
