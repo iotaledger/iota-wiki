@@ -108,16 +108,18 @@
 }
 
 .react-select__multi-value {
-  background-color: var(--ifm-hover-overlay)!important;
+  background-color: var(--ifm-hover-overlay) !important;
   border-radius: 6px !important;
-  padding: 0.10rem 0.15rem !important;
+  padding: 0.1rem 0.15rem !important;
 }
 
 .react-select__clear-indicator:hover + * + .react-select__dropdown-indicator {
   color: var(--ifm-font-color-base) !important;
 }
 
-.react-select__dropdown-indicator:hover, .react-select__clear-indicator:hover, .react-select__multi-value__remove:hover {
+.react-select__dropdown-indicator:hover,
+.react-select__clear-indicator:hover,
+.react-select__multi-value__remove:hover {
   color: var(--docsearch-highlight-color) !important;
   transition: color 0.2s ease-in-out;
 }
