@@ -66,6 +66,7 @@ module.exports = {
                 'protocols/iota2.0/core-concepts/data-flow',
                 'protocols/iota2.0/core-concepts/data-structures',
                 'protocols/iota2.0/core-concepts/mana',
+                'protocols/iota2.0/core-concepts/mana-calculator',
               ],
             },
           ],

@@ -6,7 +6,7 @@ import {
   EPOCH_DURATION,
   decay,
 } from './utils';
-import { ValidatorParameters, ValidatorProps } from './types';
+import { UserType, ValidatorParameters, ValidatorProps } from './types';
 
 export function calculateManaRewards(
   stake: number,
@@ -15,7 +15,7 @@ export function calculateManaRewards(
   validators: ValidatorProps[],
   initialEpoch: number,
   finalEpoch: number,
-  yourRole: 'Validator' | 'Delegator',
+  userType: UserType,
   supply: number
 ): number {
   let totalTargetReward = 0;
@@ -42,7 +42,7 @@ export function calculateManaRewards(
     (validator) => validator.delegatedStake,
   );
 
-  if (yourRole === 'Validator') {
+  if (userType == UserType.VALIDATOR) {
     lockedStake.push(stake * validatorParameters.shareOfYourStakeLocked);
     fixedCosts.push(validatorParameters.fixedCost);
     performance.push(validatorParameters.performanceFactor);
@@ -58,7 +58,7 @@ export function calculateManaRewards(
     }
   }
 
-  if (yourRole === 'Delegator') {
+  if (userType == UserType.DELEGATOR) {
     delegatedStake[yourPool] += stake;
   }
 
@@ -128,13 +128,13 @@ export function calculateManaRewards(
   }
 
   let rewards = 0;
-  if (yourRole === 'Delegator') {
+  if (userType == UserType.DELEGATOR) {
     if (delegatorRewards[yourPool] > 0) {
       rewards = (delegatorRewards[yourPool] * stake) / delegatedStake[yourPool];
     }
   }
 
-  if (yourRole === 'Validator') {
+  if (userType == UserType.VALIDATOR) {
     rewards = validatorRewards[lockedStake.length - 1];
   }
 

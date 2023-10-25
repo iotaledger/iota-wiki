@@ -469,6 +469,43 @@ ul ul .table-of-contents__link {
   display: none;
 }
 
+.align-right {
+  text-align: right;
+}
+
+.align-center {
+  text-align: center;
+}
+
+.grouped-form {
+  border: 1px solid gray;
+  border-radius: 8px;
+  padding: 8px 12px;
+  margin: 5px 0px;
+}
+
+.grouped-form input:not([role$="combobox"])  {
+  background-color: var(--ifm-color-emphasis-200) !important;
+  padding: 10px;
+  border-radius: 4px;
+  border: none;
+  width: 150px;
+  margin-bottom: 1rem;
+}
+
+.inlined {
+  display: inline-block;
+}
+
+.inlined-label {
+  display: inline-block;
+  width: 150px;
+}
+
+.compact {
+  width: 200px;
+}
+
 .react-select__control {
   background-color: var(--ifm-color-emphasis-200) !important;
   border: 0 !important;
