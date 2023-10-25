@@ -9,6 +9,7 @@
   height: 100%;
   color: inherit;
   cursor: pointer;
+  border-radius: 10px;
 }
 
 .tutorial-card:hover {
@@ -22,7 +23,6 @@
   justify-content: center;
   overflow: hidden;
   height: 150px;
-  border-bottom: 2px solid var(--ifm-color-emphasis-200);
 }
 
 .tutorial-card__image {
@@ -45,16 +45,6 @@
   vertical-align: center;
 }
 
-.tutorial-card__title {
-  text-decoration: none;
-  background: linear-gradient(
-      var(--ifm-color-primary),
-      var(--ifm-color-primary)
-    )
-    0% 100% / 0% 1px no-repeat;
-  transition: background-size ease-out 200ms;
-}
-
 .tutorial-card__title--hover {
   background-size: 100% 1px;
 }
@@ -71,7 +61,8 @@
 
 .tutorial-card__body {
   font-size: smaller;
-  line-height: 1.66;
+  color: var(--ifm-color-emphasis-700);
+  font-weight: 400;
 }
 
 .tutorial-card__footer {
@@ -79,25 +70,15 @@
   flex-wrap: wrap;
 }
 
-.tag {
-  font-size: 0.675rem;
-  border: 1px solid var(--ifm-color-secondary-darkest);
-  cursor: default;
+.tag-button {
+  padding: 4px 8px;
+  font-size: 12px;
+  font-weight: 400;
   margin-right: 6px;
   margin-bottom: 6px !important;
-  border-radius: 12px;
-  display: inline-flex;
-  align-items: center;
 }
 
-.tag .text-label {
-  margin-left: 8px;
-}
-
-.tag .color-label {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  margin-left: 6px;
-  margin-right: 6px;
+.tag-button:hover {
+  background-color: transparent;
+  color: var(--ifm-button-border-color);
 }
