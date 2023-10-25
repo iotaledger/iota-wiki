@@ -79,6 +79,7 @@ module.exports = {
                   ],
                 },
                 'protocols/iota2.0/core-concepts/validators',
+                'protocols/iota2.0/core-concepts/communication-layer',
               ],
             },
           ],
