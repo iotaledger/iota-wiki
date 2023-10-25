@@ -377,7 +377,7 @@ export default function ManaCalculator() {
         handleFinalEpochChange={handleFinalEpochChange}
         handleInitialEpochChange={handleInitialEpochChange}
       />
-      <AdvanceSettingsValidator
+      <AdvancedSettingsValidator
         state={state}
         handleAddValidator={handleAddValidator}
         handleDelegatedStakeChange={handleDelegatedStakeChange}
@@ -396,7 +396,7 @@ export default function ManaCalculator() {
   );
 }
 
-function AdvanceSettingsValidator({
+function AdvancedSettingsValidator({
   state,
   handleAddValidator,
   handleDelete,
