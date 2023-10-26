@@ -14,7 +14,7 @@ The Tangle is a data structure replicated across a decentralized network of comp
 **Image 1:** The Tangle.
 
 One of the key functionalities of the Tangle is to ensure the immutability of the data stored in it. By leveraging its distributed nature, the Tangle provides a resilient and tamper-proof environment for data integrity. This means that once information is added to the Tangle, it becomes nearly impossible to alter or manipulate, enhancing the system's trustworthiness.
-Given that the Tangle is a replicated or distributed data structure, nodes have to reach a consensus on the content of the Tangle.
+Given that the Tangle is a replicated or distributed data structure, nodes have to reach a [consensus](consensus/introduction.md) on the content of the Tangle.
 
 
 ## The Tangle Versus Blockchains

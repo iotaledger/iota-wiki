@@ -201,7 +201,7 @@ export default function HomeLayout() {
                   retrieve IOTA messages and data in real time.
                 </p>
                 <Link
-                  to='chronicle/getting_started'
+                  to='/chronicle/welcome'
                   className='nodes__button button button--outline button--primary'
                 >
                   Try the permanode framework
