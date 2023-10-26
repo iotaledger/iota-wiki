@@ -4,7 +4,7 @@ This article provides a detailed description of the interaction between the IOTA
 
 - A [P2P overlay network](#1-network-layer).
 - An immutable [data structure](data-structures.md).
-- A consensus mechanism.
+- A [consensus mechanism](consensus/introduction.md).
 
 In the IOTA 2.0 protocol, these three elements are abstracted into layers, where upper layers build on the functionality of the layers below. The definition of these layers allows for different functionalities to be conveniently separated into modules and addressed individually. This article will describe all the modules and their interactions.
 
@@ -27,7 +27,7 @@ Since nodes have finite capabilities, the network can process a limited number o
 
 The application layer lives on top of the communication layer. The application layer is mainly related to objects called payloads (e.g., transactions are a type of payload). Anybody can develop applications on this layer, and nodes can choose which applications to run. Of course, these applications can also be dependent on each other.
 
-Nodes must also run several core applications, such as the engine, which maintains the [ledger state](data-structures.md) and a quantity called [Mana](mana.md). Mana is a scarce resource that serves as a Sybil protection mechanism and spam protection. All nodes must also run the Approval Weight and Finality Gadget application, which provides a protocol that produces consensus between nodes on whether blocks are to be included in the Tangle (instead of being orphaned) and on whether transactions inside included blocks should mutate the ledger (instead of being deemed non-mutating). Lastly, the same gadget enables nodes to reorganize their perception of the Tangle when necessary, using the fork-choice rule.
+Nodes must also run several core applications, such as the engine, which maintains the [ledger state](data-structures.md) and a quantity called [Mana](mana.md). Mana is a scarce resource that serves as a Sybil protection mechanism and spam protection. All nodes must also run the [Approval Weight and Finality Gadget](consensus/introduction.md) application, which provides a protocol that produces consensus between nodes on whether blocks are to be included in the Tangle (instead of being orphaned) and on whether transactions inside included blocks should mutate the ledger (instead of being deemed non-mutating). Lastly, the same gadget enables nodes to reorganize their perception of the Tangle when necessary, using the fork-choice rule.
 
 ## 4. Data Flow
 
@@ -52,7 +52,7 @@ Finally, note that this Data Flow concerns _nodes_ and not _clients_. Clients ge
 
 ### 4.1 Block Factory
 
-The `IssuePayload` function creates a valid payload, provided to the `CreateBlock` method, along with a set of parents chosen with the Tip Selection Algorithm. Then, the block is signed. Notice that block generation should follow the rates imposed by the rate setter, as defined in rate control, and that the block's type of references should be consistent with the preferred reality of the issuer.
+The `IssuePayload` function creates a valid payload, provided to the `CreateBlock` method, along with a set of parents chosen with the Tip Selection Algorithm. Then, the block is signed. Notice that block generation should follow the rates imposed by the rate setter, as defined in rate control, and that the block's type of references should be consistent with the preferred reality of the issuer(see the [consensus article](consensus/introduction.md).
 
 All blocks have a commitment field, which is the hash of a series of information from older slots (see [Data Structures](data-structures.md)), e.g., the Merkle root of the Merkle Tree containing the blocks included in the older slots, ledger state at the end of the slots, or Block Issuance Credits.
 
@@ -60,7 +60,7 @@ There are certain rules for creating the commitment:
 A block must not commit to excessively old slots, for example, the "genesis" slot.
 A block must not commit to excessively recent slots. For example, the slot to which the block belongs, since the information the block commits to might still change.
 
-By comparing these commitments, it becomes straightforward to identify the existence of divergences between the nodes' perceptions of the Tangle. Additionally, these commitments in the blocks enable the creation of Slot Commitment Chains (see [Data Structures](data-structures.md)).
+By comparing these commitments, it becomes straightforward to identify the existence of divergences between the nodes' perceptions of the Tangle. Additionally, these commitments in the blocks enable the creation of Slot Commitment Chains (see [Data Structures](data-structures.md) and the [Finality Gadget](consensus/introduction.md)).
 
 ### 4.2 Parser
 
@@ -105,7 +105,7 @@ This process checks if the block signature is valid. If the block does not pass 
 
 Only the blocks that pass the Parser are stored in memory with some metadata as boolean flags set in future points of the data flow. This process takes place in the _Block DAG_ component, where blocks are causally ordered and their dependencies are defined.
 
-_Solidification_ also takes place in the Block DAG. Solidification is the process of requesting missing blocks. In this step, the node checks if all the past cone of the block is known. If the node realizes that a block in the past cone is missing, it will send a request to its neighbors asking for that missing block. This process is recursively repeated until all of a block's past cone up to the genesis (or snapshot) becomes known to the node.
+_Solidification_ also takes place in the Block DAG. Solidification is the process of requesting missing blocks. In this step, the node checks if all the past cone (see [consensus](consensus/introduction.md)) of the block is known. If the node realizes that a block in the past cone is missing, it will send a request to its neighbors asking for that missing block. This process is recursively repeated until all of a block's past cone up to the genesis (or snapshot) becomes known to the node.
 
 This way, the protocol enables any node to retrieve the entire block history (or at least until the last available snapshot) by processing the newly received blocks, even for nodes that have just joined the network.
 
@@ -126,7 +126,7 @@ This condition is necessary to guarantee the monotonicity of the Tangle, i.e., t
 
 After solidification, the block moves on to the booker, where transactions are causally ordered, conflicts are identified, and the ledger state is updated.
 
-Booking a transaction does not mean confirming a transaction. Our protocol optimistically books transactions even when they conflict, tracks these conflicts and their dependencies accordingly, and creates a collection of different realities that are collapsed into a single confirmed reality at the end of the consensus process.
+Booking a transaction does not mean confirming a transaction. Our protocol optimistically books transactions even when they conflict, tracks these conflicts and their dependencies accordingly, and creates a collection of different realities (see [Reality-based UTXO ledger](consensus/introduction.md)) that are collapsed into a single confirmed reality at the end of the consensus process.
 
 The booking step is different between blocks that contain a transaction payload and blocks that do not contain it. In the case of a block without a transaction payload, booking into the Tangle occurs after the block has waited in a buffer until all its parents are booked. In the booking process, all conflicts are inherited from the parents, and a `BlockBooked` event is issued. This step allows the opinion of the block to be constructed. If any of the parents are marked as `invalid`, the block is also marked as `invalid` and a `BlockInvalid` event is issued.
 
@@ -171,17 +171,17 @@ Blocks that are scheduled by the node can be gossiped and added to the tip pool.
 
 ### 4.6 Tip Manager
 
-A scheduled block is finally added to one of two tip sets, "strong" and "weak" . Additionally, all strong parents of the scheduled block that are still part of the strong tip set are removed from it, whereas any parent in the weak tip is removed regardless of the reference type.
+A scheduled block is finally added to one of two tip sets, "strong" and "weak" (for more details on the Tip Selection and Tip Pools, see [Tip selection](consensus/introduction.md). Additionally, all strong parents of the scheduled block that are still part of the strong tip set are removed from it, whereas any parent in the weak tip is removed regardless of the reference type.
 
 The tip selection mechanism performs a uniform random tip selection from a subset of the tip pool to guarantee good properties of the Tangle. Specifically, it will select tips uniformly at random only from tips that are not excessively old and pass the fishing condition. For that reason, when a block is to be issued and its parents are selected, the tip manager will check if the selected parents respect these conditions and discard them if needed. In that case, the discarded parent is also removed from the tip set and a new parent is selected until the required number of parents is met.
 
-After selecting parents, the algorithm chooses the type of reference (strong, weak, etc.) it uses for each parent, depending on the opinion the node has about the past cones of these parents.
+After selecting parents, the algorithm chooses the type of reference (strong, weak, etc.) it uses for each parent, depending on the opinion the node has about the past cones of these parents (see [consensus article](consensus/introduction.md)).
 
-Finally, if the block being issued is a [validation block](mana.md#validation-blocks), the tip selection may differ from the tip selection of regular blocks; specifically, committee members will always try to reference all known blocks from other committee members (in addition to the random tips).
+Finally, if the block being issued is a [validation block](mana.md#validation-blocks), the tip selection may differ from the tip selection of regular blocks; specifically, committee members will always try to reference all known blocks from other committee members (in addition to the random tips). For more details on the validation block tip selection, see the [consensus article](consensus/introduction.md).
 
 ### 4.7 Consensus and Notarization
 
-Booked blocks continue to the consensus and notarization component. In this component, the newly booked blocks will propagate the `Witness Weight` and `Approval Weight` from validation blocks to the blocks in their past cone and transactions they approve.
+Booked blocks continue to the consensus and notarization component. In this component, the newly booked blocks will propagate the `Witness Weight` and `Approval Weight` from validation blocks to the blocks in their past cone and transactions they approve (see [consensus article](consensus/introduction.md)).
 
 This propagation is independent: blocks always propagate Witness Weight but not necessarily Approval Weight, which depends on the type of reference that the block uses.
 When blocks and transactions reach a certain Witness and Approval Weight threshold, they are marked as `accepted` and `confirmed` (among other flags). Finally, these flags trigger the Notarization process, creating slot commitments.

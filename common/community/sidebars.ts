@@ -45,6 +45,7 @@ module.exports = {
             'contribute-to-wiki/how_tos/write_a_good_tutorial',
             'contribute-to-wiki/how_tos/documentation_setup',
             'contribute-to-wiki/how_tos/how_to_write_how_tos',
+            'contribute-to-wiki/how_tos/versioning',
             'contribute-to-wiki/how_tos/request_tw',
             'contribute-to-wiki/how_tos/add_a_quiz',
           ],

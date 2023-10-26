@@ -37,7 +37,7 @@ It includes everything required to setup a public node accessible by wallets and
 
 ## Requirements
 
-1. A recent release of Docker enterprise or community edition. You can find installation instructions in the [official Docker documentation](https://docs.docker.com/engine/install/).
+1. A recent release of Docker enterprise or community edition. Avoid using the Docker version shipped with your OS since these are mostly out of date. You can find installation instructions in the [official Docker documentation](https://docs.docker.com/engine/install/).
 2. [Docker Compose CLI plugin](https://docs.docker.com/compose/install/linux/).
 3. A registered domain name pointing to the public IP address of your server. _(optional if not using HTTPS)_
 4. Opening up the following ports in your servers firewall:
@@ -47,7 +47,6 @@ It includes everything required to setup a public node accessible by wallets and
 - `80 TCP` - Used for HTTP. _(can be changed, see below)_
 - `443 TCP` - Used for HTTPS. _(optional if not using HTTPS)_
 - `4000 TCP/UDP` - Used for Wasp gossip. _(optional if not using Wasp)_
-- `5550 TCP` - Used for Wasp nanomsg events. _(optional if not using Wasp)_
 
 5. [curl](https://curl.se/).
 
@@ -108,91 +107,8 @@ You can configure your node to either use HTTP or HTTPS. For publicly exposed no
 
 :::
 
-```sh
-# This is an example configuration file.
-# Keep this file as an example and make a working file with the following command:
-#
-#   cp env_template .env
-#
-# You can edit the .env file with a command like: 
-#
-#   nano .env 
-#
-# The .env file is your personal configuration and is used by Docker.
-#
-
-# HINT: You either have to choose a HTTP or a HTTPS setup.
-#       Do not uncomment lines in both sections.
-#
-
-######################
-# HTTP setup section #
-######################
-
-# The default port for the HTTP setup is 80. If you want to change that, uncomment the following line.
-#HTTP_PORT=8080
-
-# HTTP setup is exposed on localhost only by default.
-# If you want to expose it in your local network, specify the local IP address of the node in your network.
-#NODE_HOST=192.168.1.10
-
-#######################
-# HTTPS setup section #
-#######################
-
-# The following line needs to be uncommented to activate HTTPS (HTTP access will be deactivated).
-#COMPOSE_FILE=docker-compose.yml:docker-compose-https.yml
-
-# You need to specify your email address to automatically get a valid SSL certificate via "letsencrypt.org"
-#ACME_EMAIL=your-email@example.com
-
-# You need to specify the domain name of your node to automatically get a valid SSL certificate via "letsencrypt.org"
-#NODE_HOST=node.your-domain.com
-
-###################
-# network section #
-###################
-
-# Choose the correct network by uncommenting one of the following lines.
-#HORNET_CONFIG_FILE=config_mainnet.json
-#HORNET_CONFIG_FILE=config_shimmer.json
-#HORNET_CONFIG_FILE=config_testnet.json
-
-####################
-# profiles section #
-####################
-
-# Uncomment the following line to enable prometheus and grafana
-# Grafana will be available under <NODE_HOST>/grafana
-# WARNING: Do not forget to set a new password after the first start (default: admin/admin)
-#COMPOSE_PROFILES=${COMPOSE_PROFILES},monitoring
-
-# Uncomment the following line to enable the API endpoint for historical data of the legacy network.
-# Legacy API will be available under <NODE_HOST>/api/core/v0
-# You need to provide a legacy database under "data/database_legacy/". (Subfolders: "snapshot", "spent", "tangle")
-#COMPOSE_PROFILES=${COMPOSE_PROFILES},history-legacy
-
-# Uncomment the following line to enable the API endpoint for historical data of the chrysalis network.
-# Chrysalis API will be available under <NODE_HOST>/api/core/v1
-# You need to provide a chrysalis database under "data/database_chrysalis/". (Subfolders: "tangle", "utxo")
-#COMPOSE_PROFILES=${COMPOSE_PROFILES},history-chrysalis
-
-# Uncomment the following line to enable wasp
-# WASP API will be available under <NODE_HOST>/wasp/api
-# WASP Dashboard will be available under <NODE_HOST>/wasp/dashboard
-#COMPOSE_PROFILES=${COMPOSE_PROFILES},wasp
-
-#####################
-# Dashboard section #
-#####################
-
-# Choose a dashboard username (default: admin)
-#DASHBOARD_USERNAME=admin
-
-# Generate a new password and salt using the following command:
-#   docker compose run hornet tools pwd-hash
-#DASHBOARD_PASSWORD=0000000000000000000000000000000000000000000000000000000000000000
-#DASHBOARD_SALT=0000000000000000000000000000000000000000000000000000000000000000
+```sh reference
+https://github.com/iotaledger/node-docker-setup/blob/main/stardust/env_template
 ```
 
 ### 3. Setup neighbors
