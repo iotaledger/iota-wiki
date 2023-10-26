@@ -178,7 +178,7 @@ module.exports = {
   'fair access':
     'A property that ensures accessibility to network resources and functionalities for all participants, based in some Sybil protection algorithm.',
   'fast probabilistic consensus(FPC)':
-      'FPC is a consensus mechanism that employs a random number and node opinions to achieve consensus. In On-Tangle Voting, FPC is utilized only in specific edge cases. For more details, refer to OTVFPCS.',
+    'FPC is a consensus mechanism that employs a random number and node opinions to achieve consensus. In On-Tangle Voting, FPC is utilized only in specific edge cases. For more details, refer to OTVFPCS.',
   faucet:
     'A faucet is a reservoir of tokens. Users can easily request a limited quantity of tokens for testing purposes, which proves particularly useful for app developers.',
   fees: 'Amount in Mana consumed by users for the creation of blocks.',
