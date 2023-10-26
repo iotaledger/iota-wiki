@@ -1,22 +1,6 @@
 const path = require('path');
 const { merge } = require('@wiki/utils/config');
 
-const themes = [
-  [
-    '@docusaurus/theme-classic',
-    {
-      customCss: path.resolve(
-        __dirname,
-        '../../../../src/next/css/custom.css',
-      ),
-    },
-  ],
-  '@iota-wiki/theme',
-  path.resolve(__dirname, '../theme'),
-]
-
-const plugins = ['plugin-image-zoom']
-
 const common = {
   title: 'IOTA Wiki',
   tagline: 'The complete reference for IOTA',
@@ -35,6 +19,20 @@ const common = {
         'sha384-odtC+0UGzzFL/6PNoE8rX/SPcQDXBJ+uRepguP4QkPCm2LBxH3FA3y+fKSiJ+AmM',
       crossorigin: 'anonymous',
     },
+  ],
+  plugins: ['plugin-image-zoom'],
+  themes: [
+    [
+      '@docusaurus/theme-classic',
+      {
+        customCss: path.resolve(
+          __dirname,
+          '../../../../src/next/css/custom.css',
+        ),
+      },
+    ],
+    '@iota-wiki/theme',
+    path.resolve(__dirname, '../theme'),
   ],
   themeConfig: {
     image: 'img/shimmer-wiki.png',
@@ -73,11 +71,5 @@ module.exports = async () => {
   // Allow async functions returning a configuration object.
   const external = typeof config === 'function' ? await config() : config;
 
-  const mergedConfiguration = merge(common, external)
-
-  // To avoid duplicate config
-  mergedConfiguration.themes ??= themes
-  mergedConfiguration.plugins ??= plugins
-
-  return mergedConfiguration
+  return merge(external, common);
 };
