@@ -85,7 +85,11 @@ module.exports = {
       ],
     },
     'research-papers',
-    'glossary',
+    {
+      type: 'link',
+      href: '/learn/glossary',
+      label: 'Glossary',
+    },
     'faq',
   ],
 };

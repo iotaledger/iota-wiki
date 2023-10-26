@@ -11,12 +11,11 @@ module.exports = {
     'UTXOs that map unique identifier to a mutable state. These outputs can be used by a user to hold funds, issue blocks, stake, and delegate.',
   'address checksum':
     'Checksum validation is a method to ensure an address is valid and free of typographical errors.',
-  'address Unlock Condition':
+  'Address Unlock Condition':
     ' A type of output unlock performed via a Signature Unlock in a transaction by signing the hash of the transaction data.',
   'adversarial validators':
     'Validators whose actions deviate from the protocol.',
-  'API(application programming interfaces)':
-    'These interfaces facilitate interactions between applications and the Tangle.',
+  API: 'Application Programming Interfaces; These interfaces facilitate interactions between applications and the Tangle.',
   'application layer':
     'Handles block contents and payloads, especially significant for consensus and ledger state maintenance. All applications use the communication layer to transmit and store data.',
   'approval weight':
@@ -25,7 +24,7 @@ module.exports = {
     "In IOTA 2.0, parents are approved by their referencing messages, known as approvers. It's essentially a reverse mapping of parents. An approver might be either strong or weak, as in the parents definition.",
   'atomic transactions':
     'Instead of the bundle construct, IOTA and Shimmer use simpler Atomic Transactions. These transactions encapsulate all related information within a single message, reducing network overhead, improving spam protection and rate control, and simplifying Merkle proofs. This simplification also lowers implementation overhead and enhances the maintainability of the core node software.',
-  'auto peering':
+  autopeering:
     "A mechanism enabling nodes to select their neighbors automatically, without the node operator's manual intervention.",
   automation:
     'The use of technology or systems to perform tasks or processes without human intervention.',
@@ -34,8 +33,7 @@ module.exports = {
   'balances Check':
     'A validation check within the VM to ensure that generated outputs match the consumed inputs.',
   bee: '(Deprecated) Node software developed by the IOTA foundation, written in the Rust programming language.',
-  'BIC credits':
-    'Block Issuance Credit; in other words, the Mana that is stored in an account and that is burned.',
+  BIC: 'Block Issuance Credit; BIC are a form of Mana stored in Accounts that are burnt as spam protection.',
   block:
     'Data objects processed by nodes: they contain single transactions. A block is composed of 1) block header (auxiliary information to identify the block); 2) transaction/data;  3) signature.',
   'block factory':
@@ -44,15 +42,13 @@ module.exports = {
     'The block header is all of the fields in the block wrapper except for the block and signature',
   'block inbox':
     'The initial destination for incoming blocks that need to be parsed and processed.',
-  'block issuance credits (BIC)':
-    'BIC credits are a form of Mana stored in Accounts that are burnt as spam protection.',
   'block issuers':
     'Entities responsible for creating and issuing new blocks into the network.',
   'block metadata':
     'Additional information locally (i.e., in the node) associated with a block',
   'block reception':
     'The process of receiving blocks, either created locally by a node or received from a neighbor.',
-  'block signatures':
+  'block signature':
     'Digital signatures attached to blocks to ensure their authenticity.',
   'block wrapper':
     'The block wrapper is additional data around the typical blocks giving  important metadata, including the version, time, and block issuer. This  metadata allows nodes to follow the right version of the Tangle, to verify the timestamp of blocks, and to identify the creator of each  block.',
@@ -131,8 +127,7 @@ module.exports = {
     'The gradual reduction of Mana over time to prevent a monopoly and encourage continuous contribution of work.',
   'decentralized democracy':
     'Ensuring fair opportunities and accessibility to network resources and functionalities for all participants.',
-  'decentralized finance (DeFi)':
-    'A financial system built on decentralized technology that provides financial services without intermediaries.',
+  DeFi: 'Decentralized Finance; A financial system built on decentralized technology that provides financial services without intermediaries.',
   'decentralized networks':
     'Networks where control and decision-making authority are distributed among multiple nodes rather than being centralized.',
   'deficit round robin (DRR) algorithm':
@@ -151,14 +146,11 @@ module.exports = {
     'The online representations or personas of individuals that are associated with their personal information and activities. Typically, these are implemented in a system where identities can certify other entities through a credential wallet.',
   'digital token':
     'A type of digital asset typically built on a blockchain or distributed ledger technology.',
-  'directed acyclic graph (DAG)':
-    'A data structure consisting of nodes (blocks) connected by edges (references) without cycles, used to represent transactions and their dependencies in The Tangle.',
-  'distributed ledger technology (DLT)':
-    'A type of technology that enables the secure and decentralized storage and sharing of information across a network and allows unaligned parties to maintain a common state. A DLT is a database system that enables the peer-to-peer transfer and recording of digital assets. Each transaction within a DLT is recorded in a distributed ledger, which is maintained across all network nodes.',
+  DAG: 'Directed Acyclic Graph; A data structure consisting of nodes (blocks) connected by edges (references) without cycles, used to represent transactions and their dependencies in The Tangle.',
+  DLT: 'Distributed Ledger Technologyl; A type of technology that enables the secure and decentralized storage and sharing of information across a network and allows unaligned parties to maintain a common state. A DLT is a database system that enables the peer-to-peer transfer and recording of digital assets. Each transaction within a DLT is recorded in a distributed ledger, which is maintained across all network nodes.',
   'double-spending':
     'Two transactions that attempt to consume the same UTXO. Double-spending represents a major threat to digital currency systems. It involves spending the same digital token more than once. Digital tokens, unlike physical currency, comprise digital files that can be easily duplicated or counterfeited.',
-  'decentralized random number generator(DRNG)':
-    'dRNG is crucial for the Fast Probabilistic Consensus (FPC) as it fortifies the consensus model against attacks. For conflicting transactions, the FPC conducts several rounds of voting. The decision threshold for nodes is 50% plus or minus a slight random deviation generated by dRNG. This randomness prevents potential adversaries from manipulating the vote.',
+  DRNG: 'Decentralized Random Number Generator; dRNG is crucial for the Fast Probabilistic Consensus (FPC) as it fortifies the consensus model against attacks. For conflicting transactions, the FPC conducts several rounds of voting. The decision threshold for nodes is 50% plus or minus a slight random deviation generated by dRNG. This randomness prevents potential adversaries from manipulating the vote.',
   'dust protection':
     '(iota 1.5) To prevent IOTA from being exploited, one might continually send 1i to newly generated addresses for years, causing the ledger’s memory requirements to surge until only large servers could operate a full node. With Chrysalis, microtransactions (<1Mi) require the recipient address to enable dust. This permits a limited amount of dust transactions. Additionally, addresses with Colored Coins must be tokenized. Post-Coordicide, IOTA 2.0 will introduce a different solution.',
   'dynamic availability':
@@ -177,8 +169,7 @@ module.exports = {
     'Malicious actions or vulnerabilities that can be used to manipulate or compromise a system or network.',
   'fair access':
     'A property that ensures accessibility to network resources and functionalities for all participants, based in some Sybil protection algorithm.',
-  'fast probabilistic consensus(FPC)':
-    'FPC is a consensus mechanism that employs a random number and node opinions to achieve consensus. In On-Tangle Voting, FPC is utilized only in specific edge cases. For more details, refer to OTVFPCS.',
+  FPC: 'Fast Probabilistic Consensus; FPC is a consensus mechanism that employs a random number and node opinions to achieve consensus. In On-Tangle Voting, FPC is utilized only in specific edge cases. For more details, refer to OTVFPCS.',
   faucet:
     'A faucet is a reservoir of tokens. Users can easily request a limited quantity of tokens for testing purposes, which proves particularly useful for app developers.',
   fees: 'Amount in Mana consumed by users for the creation of blocks.',
@@ -275,8 +266,7 @@ module.exports = {
     'The process of consuming a specific amount of Mana to create a block. The amount of Mana burned depends on recent congestion level.',
   markers:
     'In IOTA 2.0, a local tool that enhances efficiency in certain calculations, such as the computation of approval weight or determining the presence of specific messages in the past or future cone of another message.',
-  'Maximal or Miner Extractable Value (MEV)':
-    'The potential profit that miners or validators can extract from information they glean from your transaction while it waits in the mempool.',
+  MEV: 'Maximal or Miner Extractable Value; The potential profit that miners or validators can extract from information they glean from your transaction while it waits in the mempool.',
   mempool:
     'Where transactions are kept in waiting before being processed and where all details of a transaction can be seen by anyone. ',
   'merkle tree':
@@ -285,8 +275,7 @@ module.exports = {
     "A message is a core data type that represents a vertex in the communication layer's DAG. It contains properties like references to other messages, the sender's public key, the issuing time of the message, the payload (interpretable by higher layers), the nonce for PoW requirement, and a signature. A message is not forwarded until it becomes \"solid,\" i.e., its history is known to the node. Messages must meet a PoW requirement, which currently involves finding a nonce so that the hash of the message's fields (excluding the signature) has a certain number of leading zeros.",
   'message overhead':
     'The extra information (metadata) that must be sent along with the actual data. This may include signatures, polls, and any other data transmitted over the network that is not the transaction itself.',
-  'messages per second (MPS)':
-    'Represents the number of messages dispatched to the network every second.',
+  MPS: 'Messages Per Second; Represents the number of messages dispatched to the network every second.',
   'metadata feature': 'Enables outputs to carry additional data.',
   milestone:
     '(IOTA 1.5) Milestones are messages signed and issued by the coordinator. They are instrumental in ensuring healthy growth of the Tangle and guaranteeing finality. When milestones directly or indirectly approve a transaction in the Tangle, nodes mark the status of that transaction and its entire history as confirmed.',
@@ -310,19 +299,17 @@ module.exports = {
   node: 'A device or computer that participates in the operation of a network, including processing blocks and transactions and maintaining its integrity through validation.',
   nodes:
     'A node is any computer that communicates with other nodes in the network using specific software. Essentially, nodes act as connection points for data transfers. The Tangle employs various node types, including full nodes (Hornet, Bee), permanodes (Chronicle), and smart contract nodes (Wasp).',
-  'non-fungible token (NFT)':
-    'A type of digital token that represents ownership or proof of authenticity of a unique item or asset.',
+  NFT: 'Non-Fungible Token; A type of digital token that represents ownership or proof of authenticity of a unique item or asset.',
   'non-validator nodes': 'Nodes in the network that are not validators.',
   object:
     'In IOTA 2.0, the fundamental unit of information in the IOTA protocol. Each object possesses a type, size, and data.',
-  'On-Tangle voting (OTV)':
-    'The process of voting on conflicting transactions performed directly on the Tangle. Using proper references, each block encodes the opinion of its issuer about conflicting payloads issued in the past.',
+  OTV: 'On-Tangle Voting; The process of voting on conflicting transactions performed directly on the Tangle. Using proper references, each block encodes the opinion of its issuer about conflicting payloads issued in the past.',
   oracles:
     'Oracles establish a secure, decentralized bridge between digital and physical realms. They introduce off-chain data to decentralized applications and smart contracts within the network.',
   orphan:
     'A transaction (or block) lacking references from any subsequent transaction (or block). Orphans are unconfirmed and remain excluded from consensus.',
   'orphaned block': 'A block that is not accepted becomes orphaned.',
-  otv: "In IOTA 2.0, On Tangle Voting, known as the multiverse consensus articulated by Hans Moog. It's a novel consensus mechanism allowing nodes to vote on conflicts by publishing a message to the tangle.",
+  otv: "On Tangle Voting; In IOTA 2.0, known as the multiverse consensus articulated by Hans Moog. It's a novel consensus mechanism allowing nodes to vote on conflicts by publishing a message to the tangle.",
   otvfpcs:
     'In IOTA 2.0, On Tangle Voting with FPCS (Fast Probabilistic Consensus on a Set) is a method designed to resolve metastability. In IOTA 2.0, achieving high approval weight signals finality. If this weight is sufficiently high, the message/transaction is confirmed. With OTVFPC, OTV forms the initial opinion. If node opinions remain divided over time, FPC initiates to resolve this metastable state, expediting transaction finality.',
   outbox:
@@ -373,10 +360,8 @@ module.exports = {
     "A private tangle functions akin to a test network entirely under the operator's control. It allows companies and developers to test their applications in a controlled environment, free from external influences and away from prying eyes. There is no interoperability between a private Tangle and the IOTA or Shimmer Tangle, prohibiting any transmission between them. Each private Tangle operates as an independent network with its own nodes, tokens, and coordinator.",
   'probabilistic finality':
     'With probabilistic finality, finality is reinforced with each block added to the blockchain. The more blocks added after block A, the greater the probability that block A will not be reverted.',
-  'proof of inclusion (poi)':
-    'PoI enables proving that a transaction was indirectly referenced by another without needing to present the entire chain of transactions linking them. Instead, a sequence of hashes replaces actual transaction data to validate the inclusion of a transaction in the referenced subtangle.',
-  'proof of work (pow)':
-    'A computationally intensive mathematical operation that prevents spam attacks by requiring a costly cryptographic puzzle solution that is, nonetheless, easy to validate.',
+  PoI: 'Proof of Inclusion; PoI enables proving that a transaction was indirectly referenced by another without needing to present the entire chain of transactions linking them. Instead, a sequence of hashes replaces actual transaction data to validate the inclusion of a transaction in the referenced subtangle.',
+  PoW: 'Proof of Work; A computationally intensive mathematical operation that prevents spam attacks by requiring a costly cryptographic puzzle solution that is, nonetheless, easy to validate.',
   'protocol version':
     'A field in a block header that denotes which protocol version apply to the block.',
   pruning:
@@ -421,8 +406,7 @@ module.exports = {
     'A snapshot is a special feature of the Tangle that removes all transactions, keeping only those with a balance > 0. Metadata like tags and messages are also deleted, leaving a list of addresses and balances. After a snapshot, nodes use this list as the new "genesis" or starting point for the Tangle. This reduces the size of the Tangle, allowing nodes to use less memory. Full nodes can perform "Local Snapshots" independently and at their own discretion.',
   'social dynamics':
     'The replication of real-world social dynamics in a digital system, including account-based digital identities and the ability to manage assets and digital identity easily.',
-  'software as a service (saas)':
-    'SaaS is a subset of cloud computing, based on the principle that the software and IT infrastructure are managed by an external service provider and leased to the customer as a service.',
+  SaaS: 'Software as a Service; SaaS is a subset of cloud computing, based on the principle that the software and IT infrastructure are managed by an external service provider and leased to the customer as a service.',
   'solid blocks':
     'Blocks consistently linked to past blocks, ensuring no missing information when reviewing past blocks.',
   solidification:
@@ -483,8 +467,7 @@ module.exports = {
     'Collection of blocks selected by the node for potential selection as a parent.',
   'tip selection':
     'The process of selecting previous transactions to reference in a new transaction. These references allow a transaction to tie into the existing data structure. IOTA and Shimmer only enforce that a transaction approves up to eight other transactions, the tip selection strategy is left to the user (with a suitable default provided by Shimmer).',
-  'tip selection algorithm (TSA)':
-    'An algorithm determining which tips should be referenced by a newly created block.',
+  TSA: 'Tip Selection Algorithm; An algorithm determining which tips should be referenced by a newly created block.',
   'tip transaction':
     'A solid end transaction that has not yet become a parent.',
   token:
@@ -528,8 +511,7 @@ module.exports = {
     'Value transactions either withdraw tokens from an address or deposit them to an address. Nodes verify these transactions to ensure that the sender owns the Shimmer tokens and that additional tokens are not generated. To do this, the following checks are performed: All Shimmer tokens withdrawn from an address are also deposited into one or more other addresses; the value of each transaction does not exceed the total global supply; signatures are valid.',
   'version number':
     'In IOTA 2.0, the version number indicates the correct format of each type.',
-  'virtual machine (VM)':
-    'A component responsible for executing transactions within the ledger.',
+  VM: 'Virtual Machine; A component responsible for executing transactions within the ledger.',
   'volume and velocity':
     'The capacity to handle a large number of transactions quickly, with fast confirmation times.',
   'voting power':
