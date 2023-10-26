@@ -63,7 +63,7 @@ the chain.
 :::note
 
 When a transfer is made into an EVM account, an EVM tx will be created on the EVM side from the zero address (0x0000...) to the target account.
-Information about what is being transferred will be encoded in the that transction's data using the following format:
+Information about what is being transferred will be encoded in the transaction's data using the following format:
 
 ```
 <Sender_AgentID bytes> + <Assets bytes>
