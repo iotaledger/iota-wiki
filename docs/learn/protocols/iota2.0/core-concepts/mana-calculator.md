@@ -2,7 +2,7 @@ import ManaCalculator from '@site/src/components/ManaCalculator';
 
 # Mana Calculator 
 
-Mana is a scarce resource used to access the IOTA ledger and update its state through block creation. It is a spendable asset tracked in the ledger state, powering smart contracts, DeFi applications, block creation, and various other services. Our incentives scheme allows you to stake or delegate mana to receive Mana rewards, in addition to the Mana generation your IOTA holdings grant you without having to participate in any consensus-related activity.
+Mana is a scarce resource used to access the IOTA ledger and update its state through block creation. It is a spendable asset tracked in the ledger state, powering smart contracts, DeFi applications, block creation, and various other services. Our incentives scheme allows you to stake or delegate IOTA tokens to receive Mana rewards, in addition to the Mana generation your IOTA holdings grant you without having to participate in any consensus-related activity.
 
 In this article, we introduce the Mana Calculator: a tool to help you make decisions about the type of participation that will suit you the most, to help you predict the Mana generation you’ll be granted, and to decide the number of IOTA tokens you should hold to have a particular desired level of access guaranteed in the future.
 
