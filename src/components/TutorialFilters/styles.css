@@ -71,6 +71,10 @@
   z-index: 9999;
 }
 
+.react-select__option {
+  cursor: pointer!important;
+}
+
 .react-select__option--is-focused {
   background-color: var(--ifm-color-emphasis-300) !important;
 }
@@ -117,10 +121,14 @@
   color: var(--ifm-font-color-base) !important;
 }
 
-.react-select__dropdown-indicator:hover,
+.react-select__dropdown-indicator:hover {
+  color: var(--docsearch-highlight-color) !important;
+  transition: color 0.2s ease-in-out;
+}
+
 .react-select__clear-indicator:hover,
 .react-select__multi-value__remove:hover {
-  color: var(--docsearch-highlight-color) !important;
+  color: var(--ifm-color-gray-600) !important;
   transition: color 0.2s ease-in-out;
 }
 

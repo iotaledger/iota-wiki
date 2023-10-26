@@ -15,12 +15,11 @@ import { NormalizedOptions as Tutorial } from '@iota-wiki/plugin-tutorial';
 import { Tag, TagValues, Tags } from '@site/src/utils/tags';
 import Link from '@docusaurus/Link';
 
-const TagComp = React.forwardRef<HTMLLIElement, Tag>((tag) => (
-  <li
-    title={tag.description}
-    className='button button--outline button--primary tag-button'
-  >
-    {tag.label}
+
+const TagComp = React.forwardRef<HTMLLIElement, Tag>((tag, ref) => (
+  <li ref={ref} className='tag' title={tag.description}>
+    <span className='text-label'>{tag.label.toLowerCase()}</span>
+    <span className='color-label' style={{ backgroundColor: tag.color }} />
   </li>
 ));
 TagComp.displayName = 'TagComponent';

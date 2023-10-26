@@ -70,15 +70,24 @@
   flex-wrap: wrap;
 }
 
-.tag-button {
-  padding: 4px 8px;
-  font-size: 12px;
-  font-weight: 400;
+.tag {
+  font-size: 0.675rem;
+  border: 1px solid var(--ifm-color-secondary-darkest);
   margin-right: 6px;
   margin-bottom: 6px !important;
+  border-radius: 12px;
+  display: inline-flex;
+  align-items: center;
 }
 
-.tag-button:hover {
-  background-color: transparent;
-  color: var(--ifm-button-border-color);
+.tag .text-label {
+  margin-left: 8px;
+}
+
+.tag .color-label {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  margin-left: 6px;
+  margin-right: 6px;
 }
