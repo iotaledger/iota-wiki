@@ -43,7 +43,7 @@ You can find more information on the `PeerId` in the [libp2p docs page](https://
 
 ## Addressing Peer Neighbors
 
-To communicate to your peer neighbors, you will need an address to reach them. For that, HORNET uses the `MultiAddresses` format (also known as `multiaddr`).
+To communicate to your peer _neighbors_, you will need an address to reach them. For that, HORNET uses the `MultiAddresses` format (also known as `multiaddr`).
 
 `multiaddr` is a convention on how to encode multiple layers of addressing information into a single path structure that is future-proof.
 Basically, `multiaddr` combines several pieces of information in a single human-readable and machine-optimized string, including network protocol and [`PeerId`](#node-identity).
