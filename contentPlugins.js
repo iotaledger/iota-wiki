@@ -9,7 +9,7 @@ const path = require('path');
 module.exports = async () => {
   const { SELECTED_SECTION = 'all' } = process.env
 
-  const buildPlugin = [
+  const buildPlugins = [
     {
       id: 'build',
       globalSidebars: ['build'],
@@ -69,7 +69,7 @@ module.exports = async () => {
     },
   ];
 
-  const maintainPlugin = [
+  const maintainPlugins = [
     ...generatePluginConfig(
       maintainPluginsConfig,
       __dirname + '/docs/maintain/',
@@ -86,14 +86,14 @@ module.exports = async () => {
     },
   ];
 
-  const getStartedPlugin = [{
+  const getStartedPlugins = [{
       id: 'get-started',
       path: path.resolve(__dirname, 'docs/get-started'),
       sidebarPath: path.resolve(__dirname, 'docs/get-started/sidebars.ts'),
       routeBasePath: 'get-started',
   }]
 
-  const learnPlugin = [{
+  const learnPlugins = [{
       id: 'learn',
       path: path.resolve(__dirname, 'docs/learn'),
       sidebarPath: path.resolve(__dirname, 'docs/learn/sidebars.ts'),
@@ -101,22 +101,21 @@ module.exports = async () => {
   }]
 
   const allPlugins = [
-    ...learnPlugin,
-    ...getStartedPlugin,
-    ...buildPlugin,
-    ...maintainPlugin,
+    ...learnPlugins,
+    ...getStartedPlugins,
+    ...buildPlugins,
+    ...maintainPlugins,
   ]
 
-  const pluginMap = {
-    build: buildPlugin,
-    maintain: maintainPlugin,
-    'get-started': getStartedPlugin,
-    learn: learnPlugin,
+  const sectionPluginMap = {
+    build: buildPlugins,
+    maintain: maintainPlugins,
+    'get-started': getStartedPlugins,
+    learn: learnPlugins,
     all: allPlugins,
   }
 
-
-  return pluginMap[SELECTED_SECTION]
+  return sectionPluginMap[SELECTED_SECTION]
 };
 
 
