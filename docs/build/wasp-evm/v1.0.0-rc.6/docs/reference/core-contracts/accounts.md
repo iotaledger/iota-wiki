@@ -70,6 +70,7 @@ Information about what is being transferred will be encoded in the that transcti
 ```
 
 The encoding used for this data can be found on TIP-51
+
 :::
 
 #### Parameters
