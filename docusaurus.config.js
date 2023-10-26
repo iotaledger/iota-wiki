@@ -73,11 +73,14 @@ module.exports = async () => {
         '^(/[^/]+)?/chronicle/.*|' +
         '^(/[^/]+)?/goshimmer/.*',
     },
-  ]
+  ];
 
   const activeNavbarItems = navbarItems.filter((item) => {
-    return SELECTED_SECTION === 'all' || new RegExp(item.activeBaseRegex).test(`/${SELECTED_SECTION}/`)
-  })
+    return (
+      SELECTED_SECTION === 'all' ||
+      new RegExp(item.activeBaseRegex).test(`/${SELECTED_SECTION}/`)
+    );
+  });
 
   const themeConfig = {
     themeConfig: {
