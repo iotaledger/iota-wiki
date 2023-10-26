@@ -44,7 +44,6 @@ module.exports = {
       label: 'Programs',
       items: [
         'programs/touchpoint',
-        'programs/EDF-grant-programme',
         'programs/bug-bounties',
       ],
     },
