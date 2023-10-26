@@ -14,7 +14,7 @@ image: /img/logo/preview.png
 
 # Output Unlock Conditions
 
-The redesigned UTXO model allows for implementing additional logic on transfers. Outputs that are The results of a transfer may define special unlocking logic. When these outputs are consumed in subsequent transfers
+The redesigned _UTXO model_ allows for implementing additional logic on transfers. Outputs that are The results of a transfer may define special unlocking logic. When these outputs are consumed in subsequent transfers
 they have to satisfy all unlock conditions that are defined on them.
 
 ## Address

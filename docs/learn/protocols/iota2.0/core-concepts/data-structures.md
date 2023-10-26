@@ -8,31 +8,31 @@ This page contains references to Tangle Improvement Proposals (TIPs) that are st
 
 ## The Tangle
 
-The Tangle is a data structure replicated across a decentralized network of computers, also called "nodes." It is a robust foundation for tracking token ownership and offers several unique features. At its core, the Tangle forms a directed acyclic graph (DAG) of blocks, creating a block-DAG architecture. In this structure, newer blocks are intricately attached to multiple older ones, resulting in a highly interconnected data structure.
+The Tangle is a _data structure_ replicated across a decentralized network of computers, also called "nodes." It is a robust foundation for tracking token ownership and offers several unique features. At its core, the Tangle forms a directed acyclic graph (DAG) of blocks, creating a block-DAG architecture. In this structure, newer blocks are intricately attached to multiple older ones, resulting in a highly interconnected data structure.
 
-![Tangle - the DAG of IOTA](/img/learn/protocols/iota2.0/core-concepts/data-structures/the-tangle.png)
+![Tangle - the _DAG_ of IOTA](/img/learn/protocols/iota2.0/core-concepts/data-structures/the-tangle.png)
 **Image 1:** The Tangle.
 
-One of the key functionalities of the Tangle is to ensure the immutability of the data stored in it. By leveraging its distributed nature, the Tangle provides a resilient and tamper-proof environment for data integrity. This means that once information is added to the Tangle, it becomes nearly impossible to alter or manipulate, enhancing the system's trustworthiness.
+One of the key functionalities of the Tangle is to ensure the immutability of the data stored in it. By leveraging its distributed nature, the Tangle provides a resilient and tamper-proof environment for data _integrity_. This means that once information is added to the Tangle, it becomes nearly impossible to alter or manipulate, enhancing the system's trustworthiness.
 Given that the Tangle is a replicated or distributed data structure, nodes have to reach a [consensus](consensus/introduction.md) on the content of the Tangle.
 
 
 ## The Tangle Versus Blockchains
 
-While the Tangle and blockchains have the same function of maintaining their ledger state, the Tangle overcomes some of the difficulties blockchains face. Unlike blockchains, where only a single node can append a new block to the ledger at a time, the Tangle allows all participating nodes to write to the ledger in parallel. This is achieved through a DAG structure, which allows transactions to be processed simultaneously and independently of each other.
+While the Tangle and blockchains have the same function of maintaining their _ledger state_, the Tangle overcomes some of the difficulties blockchains face. Unlike blockchains, where only a single node can append a new block to the ledger at a time, the Tangle allows all participating nodes to write to the ledger in parallel. This is achieved through a DAG structure, which allows transactions to be processed simultaneously and independently of each other.
 
 ### Blockchains
 
 A traditional blockchain consists of a growing list of records called blocks linked together as a chain using cryptography. Transactions can only become part of the ledger if they are included in a newly issued block. If all new transactions don’t fit into one block, some must be postponed to the following blocks.
 
-Block producers typically favor including transactions from users willing to pay higher fees. Accelerating block creation or increasing block sizes doesn't solve the issues, as it is well known that this would compromise safety. In other words, to guarantee the security of the system, the throughput of the system must be artificially suppressed so that each block propagates fully before the next block is created.
+Block producers typically favor including transactions from users willing to pay higher fees. Accelerating block creation or increasing block sizes doesn't solve the issues, as it is well known that this would compromise safety. In other words, to guarantee the security of the system, the _throughput_ of the system must be artificially suppressed so that each block propagates fully before the next block is created.
 
 ![Overcoming the blockchain bottleneck.](/img/learn/protocols/iota2.0/core-concepts/data-structures/blockchain-bottleneck.png)
 **Image 2:** Overcoming the blockchain bottleneck.
 
 ### The Tangle
 
-The Tangle is a leaderless, probabilistic consensus protocol that enables parallel validation of transactions without requiring total ordering. It also eliminates the need for intermediary miners or validators in block creation, allowing all participating nodes to write to the ledger. This removes the need for additional mempools, and the Tangle itself is often seen as a distributed mempool. However, consensus on the state of the ledger is achieved through a committee-based selection process, which ensures low confirmation times.
+The Tangle is a leaderless, probabilistic consensus protocol that enables parallel validation of transactions without requiring total ordering. It also eliminates the need for intermediary miners or validators in block creation, allowing all participating nodes to write to the ledger. This removes the need for additional mempools, and the Tangle itself is often seen as a distributed mempool. However, _consensus_ on the state of the ledger is achieved through a committee-based selection process, which ensures low _confirmation_ times.
 
 ## The Blocks
 
@@ -48,9 +48,9 @@ Nodes, issuers, and wallets are three separate roles. However, they can be run o
 
 ## Block Layout
 
-The block layout in the IOTA protocol consists of a block header, content, and signature. The block header contains metadata about the block. The content contains the references, aka parents, and the signature is used to verify the authenticity of the block header and block content.
+The block layout in the IOTA protocol consists of a _block header_ , content, and signature. The _block header_  contains metadata about the block. The content contains the references, aka _parents_, and the signature is used to verify the authenticity of the _block header_  and block content.
 
-There are two types of blocks: Basic Blocks and Validation Blocks. A Basic Block can contain different types of payloads, which are processed by all nodes as part of the IOTA protocol. Validation Blocks have additional functionality and different fields, validation rules, and allowed payloads and are only issued by the current validator nodes.
+There are two types of blocks: Basic Blocks and Validation Blocks. A Basic Block can contain different types of payloads, which are processed by all nodes as part of the IOTA protocol. Validation Blocks have additional functionality and different fields, validation rules, and allowed payloads and are only issued by the current _validator_ nodes.
 
 ![The anatomy of a block](/img/learn/protocols/iota2.0/core-concepts/data-structures/block-anatomy.png)
 **Image 3**: The anatomy of a block.
@@ -75,9 +75,9 @@ The _Block Wrapper_ is serialized as follows:
     <td>This field denotes what protocol rules apply to the block.</td>
   </tr>
   <tr>
-    <td>Network ID</td>
+    <td>_Network ID_</td>
     <td>uint64</td>
-    <td>The network identifier. </td>
+    <td>The _network identifier_. </td>
   </tr>
   <tr>
     <td>Issuing Time</td>
@@ -87,7 +87,7 @@ The _Block Wrapper_ is serialized as follows:
   <tr>
     <td>Slot Commitment ID</td>
     <td>ByteArray[40]</td>
-    <td>The identifier of the slot this block commits to.</td>
+    <td>The identifier of the _slot_ this block commits to.</td>
   </tr>
   <tr>
     <td>Latest Finalized Slot</td>
@@ -252,13 +252,13 @@ layout:
   <tr>
     <td>Burned Mana</td>
     <td>uint64</td>
-    <td>The amount of Mana the Account identified by <code>Issuer ID</code> is at most willing to burn for this block. </td>
+    <td>The amount of _Mana_ the Account identified by <code>Issuer ID</code> is at most willing to burn for this block. </td>
   </tr>
 </table>
 
 ## Validation Block
 
-A Validation Block is a special block used by validators to secure the network. It is recognized by the Congestion Control of the IOTA 2.0 protocol and can be issued without burning Mana within the constraints of the allowed validator throughput. It is allowed to reference more parent blocks than a normal _Basic Block_.
+A Validation Block is a special block used by validators to secure the network. It is recognized by the Congestion Control of the IOTA 2.0 protocol and can be issued without burning _Mana_ within the constraints of the allowed validator _throughput_. It is allowed to reference more _parent blocks_ than a normal _Basic Block_.
 
 ### Serialized Layout
 
@@ -398,17 +398,17 @@ Therefore, each commitment should contain the following:
 
 - **Protocol Version**: The Version of the used protocol.
 - **Slot index**: The index of the comitted slot.
-- **Previous Slot Commitment**: The previous Slot Commitment ID creating the Slot Commitment Chain.
+- **Previous Slot Commitment**: The previous _Slot Commitment ID_ creating the Slot Commitment Chain.
 - **Commitment of Slot Content**: The Merkle tree root of Merkle trees.
-- **Cumulative Weight**: The Cumulative Weight of the Slot Commitment Chain.
+- **Cumulative Weight**: The _Cumulative Weight_ of the Slot Commitment Chain.
 - **Reference Mana Cost**: The reference mana cost of this slot.
 
 The Commitment of Slot Content is divided into:
 
-- **Tangle Root**: The hash root of a sparse Merkle tree that contains all accepted blocks issued within the slot. This serves as a statement of accepted blocks in the Tangle. It is used to prove the inclusion or absence of accepted blocks.
+- **Tangle Root**: The hash root of a sparse Merkle tree that contains all accepted blocks issued within the slot. This serves as a statement of accepted blocks in the Tangle. It is used to prove the _inclusion_ or absence of accepted blocks.
 - **State Root**: The hash root of a sparse Merkle tree containing all Unspent Transaction Outputs (UTXOs) at the slot’s conclusion. It is used for proving the existence or absence of UTXOs.
 - **State Mutation Root**: The hash root of a sparse Merkle tree containing accepted transactions in the current slot and serving as proof of state mutation from the prior slot to the current one. It helps in proving the inclusion or absence of accepted transactions.
-- **Accounts Root**: The hash root of a sparse Merkle tree containing Block Issuer (Block Issuance Credits, Issuer Public Keys, Expiry Slot) and Staking Data (Fixed Cost, Stake End Epoch, Staking Amounts) for accounts that are staking or are block issuers. It is used to provide the issuance of blocks for a given account ID.
+- **Accounts Root**: The hash root of a sparse Merkle tree containing Block Issuer (Block Issuance Credits, Issuer Public Keys, Expiry Slot) and Staking Data (Fixed Cost, Stake End Epoch, Staking Amounts) for accounts that are _staking_ or are _block issuers_. It is used to provide the issuance of blocks for a given account ID.
 - **Committee Root**: The hash root of a sparse Merkle tree containing account IDs representing current or upcoming committee members. It is only updated when the committee is successfully rotated. It is used to prove the inclusion or absence of a specific account to the committee.
 - **Rewards Root**: The hash root of a sparse Merkle tree that contains data related to rewards (e.g., pool stake, pool reward, fixed cost) for committee members at the previous epoch’s conclusion. It helps prove the existence or absence of rewards for a given account ID.
 - **Attestation Root**: The hash root of a sparse Merkle tree that contains data related to the attestation of all account IDs at the end of the slot. It is used to prove the attestation of previous commitments by a given account ID.
@@ -416,7 +416,7 @@ The Commitment of Slot Content is divided into:
 
 ### Payloads
 
-While blocks without a payload, i.e., `Payload Length` set to zero, are valid, such blocks do not contain any information. As such, blocks usually contain a payload. The detailed specification of each payload type is out of the scope of this article; we only give more detailed information for the important Transaction payload type in Section [Transactions](#Transactions). The following table lists all currently specified payloads that can be part of a block and links to their
+While blocks without a payload, i.e., `Payload Length` set to zero, are valid, such blocks do not contain any information. As such, blocks usually contain a payload. The detailed specification of each payload type is out of the scope of this article; we only give more detailed information for the important _Transaction payload_ type in Section [Transactions](#Transactions). The following table lists all currently specified payloads that can be part of a block and links to their
 specification:
 
 | Payload Name | Type Value | TIP                                                 |
@@ -427,7 +427,7 @@ specification:
 
 ### Transactions
 
-The IOTA 2.0 ledger state relies on the Unspent Transaction Output (UTXO) model. The UTXO model defines a ledger state where balances are not directly associated with addresses but with the outputs of transactions. In this model, transactions reference outputs of previous transactions as inputs, which are consumed (removed) to create new outputs. A transaction must consume all the funds of the referenced inputs.
+The IOTA 2.0 ledger state relies on the Unspent Transaction Output (UTXO) model. The _UTXO model_ defines a ledger state where balances are not directly associated with addresses but with the outputs of transactions. In this model, transactions reference outputs of previous transactions as inputs, which are consumed (removed) to create new outputs. A transaction must consume all the funds of the referenced inputs.
 
 The following image depicts the exchange of funds using UTXO:
 
@@ -514,7 +514,7 @@ The following table describes the entirety of a _Transaction Payload_ in its ser
               <details>
                 <summary>Block Issuance Credit Input</summary>
                 <blockquote>
-                  Describes an input that resolves to a BIC value of an account.
+                  Describes an input that resolves to a _BIC_ value of an account.
                 </blockquote>
               </details>
               <details>
@@ -760,9 +760,9 @@ It is serialized as follows:
 
 ##### Block Issuance Credit Input
 
-A _Block Issuance Credit Input_ provides the VM with context for the value of the BIC vector of a specific slot. It is required for any _Account_ transitions and destruction if the account contains a _Block Issuer Feature_, as any operation on the _Account_ can only be allowed if the BIC balance is non-negative at a specific point in time.
-A _Block Issuance Credit Input_ always requires a _Commitment Input_. The input will be resolved to the BIC value of the account
-identified by `Account ID` at the `Slot Index` given by the _Commitment Input_. Multiple _Block Issuance Credit Inputs_ can be present in a single transaction to provide the BIC for different accounts; however, no two _Block Issuance Credits Inputs_ can reference the same account.
+A _Block Issuance Credit Input_ provides the _VM_ with context for the value of the _BIC_ vector of a specific slot. It is required for any _Account_ transitions and destruction if the account contains a _Block Issuer Feature_, as any operation on the _Account_ can only be allowed if the _BIC_ balance is non-negative at a specific point in time.
+A _Block Issuance Credit Input_ always requires a _Commitment Input_. The input will be resolved to the _BIC_ value of the account
+identified by `Account ID` at the `Slot Index` given by the _Commitment Input_. Multiple _Block Issuance Credit Inputs_ can be present in a single transaction to provide the _BIC_ for different accounts; however, no two _Block Issuance Credits Inputs_ can reference the same account.
 
 It is serialized as follows:
 
@@ -780,7 +780,7 @@ It is serialized as follows:
     <tr>
         <td>Account ID</td>
         <td>ByteArray[32]</td>
-        <td>The ID of the Account for which this input provides the BIC.</td>
+        <td>The ID of the Account for which this input provides the _BIC_.</td>
     </tr>
 </table>
 
@@ -845,7 +845,7 @@ The following table lists all the output types that are currently supported as w
 #### Allotments
 
 The `Allotments` field contains the list of all Mana allotments, the `Account ID`, and corresponding values that convert Mana provided by the inputs in the form of stored Mana in inputs or potential Mana derived from the inputs' IOTA tokens.
-Mana listed in this field will be added upon the commitment of the slot in which the transaction was issued in the form of _Block Issuance Credits_ to the account's BIC value.
+Mana listed in this field will be added upon the commitment of the slot in which the transaction was issued in the form of _Block Issuance Credits_ to the account's _BIC_ value.
 
 Note that _Block Issuance Credits_ are used to pay for the block issuance. They are burned on the slot commitment of the
 issuance slot. The good practice would be to always allot enough Mana to cover for the block issuance.
@@ -987,7 +987,7 @@ The _Ed25519 Signature_ is supported. It is serialized as follows:
 
 The _Signature_ field over the block is computed as follows:
 
-- Let `Block Header Hash` be the BLAKE2b-256 hash over the serialized block header.
+- Let `Block Header Hash` be the BLAKE2b-256 hash over the serialized _block header_ .
 - Let `Block Hash` be the BLAKE2b-256 hash over the serialized content of the _Block_ field.
 - Let `Signing Input` be the concatenation of `Block Header Hash` and `Block Hash`.
 - Let the resulting signature be the Ed25519 signature of `Signing Input`.
