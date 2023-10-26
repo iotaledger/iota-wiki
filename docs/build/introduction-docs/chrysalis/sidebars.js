@@ -77,16 +77,6 @@ module.exports = {
           label: 'Integrate Exchange',
         },
         {
-          type: 'doc',
-          id: 'how_tos/mainnet_hornet_node_k8s',
-          label: 'Run Hornet On Kubernetes',
-        },
-        {
-          type: 'doc',
-          id: 'how_tos/one_click_private_tangle',
-          label: 'Run a Private Tangle',
-        },
-        {
           type: 'category',
           label: 'Migration From IOTA 1.0',
           items: [
