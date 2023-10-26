@@ -65,13 +65,11 @@ the chain.
 When a transfer is made into an EVM account, an EVM tx will be created on the EVM side from the zero address (0x0000...) to the target account.
 Information about what is being transferred will be encoded in the that transction's data using the following format:
 
-:::
-
 ```
 <Sender_AgentID bytes> + <Assets bytes>
 ```
 
-The encoding used for this data can be found on [TIP-51](https://github.com/iotaledger/tips-draft/blob/a55d8947a34e65c3b7ce7b3ab1d31d481c121f45/tips/TIP-0051/tip-0051.md)
+The encoding used for this data can be found on TIP-51
 :::
 
 #### Parameters
