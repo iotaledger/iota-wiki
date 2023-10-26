@@ -14,7 +14,7 @@ keywords:
 
 # How Accounts Work
 
-On the L1 Ledger, like with any DLT, we have **trustless** and **atomic** transfers of assets between addresses on the
+On the L1 Ledger, like with any _DLT_, we have **trustless** and **atomic** transfers of assets between addresses on the
 ledger.
 
 Tokens controlled by an address can be moved to another address by providing a valid signature using the private key
@@ -41,7 +41,7 @@ Tokens in an address account can only be moved through a request signed by the p
 
 ### Smart Contract
 
-Any smart contract can be the owner of a L2 account. Recall that a smart
+Any _smart contract_ can be the owner of a L2 account. Recall that a smart
 contract is uniquely identified in a chain by a [_hname_](/learn/smart-contracts/smart-contract-anatomy#identifying-a-smart-contract).
 However, the hname is not enough to identify the account since a smart contract on another chain could own it.
 

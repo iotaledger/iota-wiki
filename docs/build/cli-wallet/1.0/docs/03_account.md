@@ -80,7 +80,7 @@ Burn a provided NFT.
 
 ### `claim`
 
-Tries to claim outputs with storage deposit return, expiration or timelock unlock conditions.
+Tries to claim outputs with storage deposit return, expiration or timelock _unlock conditions_.
 
 #### Parameters
 
@@ -90,7 +90,7 @@ Tries to claim outputs with storage deposit return, expiration or timelock unloc
 
 #### Examples
 
-Try to claim all outputs with storage deposit return, expiration or timelock unlock conditions.
+Try to claim all outputs with storage deposit return, expiration or timelock _unlock conditions_.
 
 ```sh
 > Account "main": claim
@@ -373,7 +373,7 @@ Mint an NFT to a given address with hexadecimal immutable metadata and metadata 
 > Account "main": mint-nft rms1qztwng6cty8cfm42nzvq099ev7udhrnk0rw8jt8vttf9kpqnxhpsx869vr3 --immutable-metadata-hex 0xabcdef --metadata-file metadata.json
 ```
 
-Mint an NFT to a given address with hexadecimal tag and sender feature.
+Mint an NFT to a given address with hexadecimal tag and _sender feature_.
 
 ```sh
 > Account "main": mint-nft --tag 0xabcdef --sender rms1qq5k0ut6nl2vpyehdvg5k4ygyntd4r44t9lw2ksex280x60lc2fmcgdsmku
@@ -461,7 +461,7 @@ Sends an amount to an address.
 
 ### `send-native-token`
 
-Sends native tokens to an address with StorageDepositReturn and Expiration Unlock Condition.
+Sends native tokens to an address with StorageDepositReturn and _Expiration Unlock_ Condition.
 
 To send the native tokens together with the required storage deposit and without StorageDepositReturn and Expiration, provide `true` for `gift_storage_deposit`.
 

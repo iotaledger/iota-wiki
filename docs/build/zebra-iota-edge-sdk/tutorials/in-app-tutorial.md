@@ -38,7 +38,7 @@ import {
 
 ## Initialize an IOTA Identity Client
 
-We will create a client that connects to the IOTA mainnet through one of the IOTA Foundation's nodes. Data transactions (such as identities) are pruned after some time and so we should also configure a Permanode from which identities can be fetched by the client even after a pruning cycle.
+We will create a client that connects to the IOTA mainnet through one of the IOTA Foundation's nodes. _Data transactions_ (such as identities) are pruned after some time and so we should also configure a Permanode from which identities can be fetched by the client even after a pruning cycle.
 
 ```js
 async function createClient() {

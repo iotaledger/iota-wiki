@@ -87,7 +87,7 @@ Note that in Solo, all seven steps are carried out by a single call to `PostRequ
    In the real L1 ledger, the sender must wait until the ledger confirms the transaction.
 
 3. The chain picks the request from the backlog and runs the request on the VM.
-4. The VM calls the target entry point of the smart contract program. The program updates the state.
+4. The _VM_ calls the target entry point of the smart contract program. The program updates the state.
 5. The VM produces a state update transaction (the _anchor_).
 6. The chain signs the transaction with its private key (the `chain.StateControllerKeyPair()` in Solo).
 7. The chain posts the resulting transaction to the L1 ledger and, after confirmation, commits the corresponding state.
