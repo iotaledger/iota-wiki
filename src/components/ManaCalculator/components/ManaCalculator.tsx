@@ -5,7 +5,7 @@ import {
   calculateManaRewards,
   calculatePassiveRewards,
   calculateTPS,
-} from "./calculator";
+} from "../calculator";
 import {
   ChangeEvent,
   ChangeValidatorEvent,
@@ -17,9 +17,9 @@ import {
   UserType,
   ValidatorParameters,
   ValidatorProps,
-} from "./types";
+} from "../types";
 import { Details } from "@docusaurus/theme-common/Details";
-import { fromMicro, getNetworkSupply, toMicro } from "./utils";
+import { fromMicro, getNetworkSupply, toMicro } from "../utils";
 
 function getDefaultParameters(network: NetworkType): ManaCalculatorProps {
   return {
@@ -208,7 +208,7 @@ function useResults(state: ManaCalculatorProps) {
   }
 }
 
-export default function ManaCalculator() {
+export function ManaCalculator() {
   const [state, setState] = useState(getDefaultParameters(NetworkType.IOTA));
 
   function handleDelete(id: number) {
