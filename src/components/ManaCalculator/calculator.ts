@@ -2,7 +2,6 @@ import {
   GENERATION_PER_SLOT,
   first_slot_of_epoch,
   potential_Mana,
-  IOTA_SUPPLY,
   targetReward,
   EPOCH_DURATION,
   decay,
@@ -17,16 +16,17 @@ export function calculateManaRewards(
   initialEpoch: number,
   finalEpoch: number,
   yourRole: 'Validator' | 'Delegator',
+  supply: number
 ): number {
   let totalTargetReward = 0;
   let epochDiff = 1;
   if (finalEpoch) {
     for (let i = 0; i < epochDiff; i++) {
-      totalTargetReward += decay(targetReward(initialEpoch + i), epochDiff - i);
+      totalTargetReward += decay(targetReward(initialEpoch + i, supply), epochDiff - i);
     }
   } else {
     finalEpoch = initialEpoch + 1;
-    totalTargetReward = targetReward(initialEpoch);
+    totalTargetReward = targetReward(initialEpoch, supply);
   }
 
   const lockedStake: number[] = validators.map(
@@ -65,7 +65,7 @@ export function calculateManaRewards(
   const totalValidatorsStake = lockedStake.reduce((a, b) => a + b, 0);
   const totalDelegatedStake = delegatedStake.reduce((a, b) => a + b, 0);
   const totalStake = totalDelegatedStake + totalValidatorsStake;
-  const restOfTokenHoldings = IOTA_SUPPLY - totalStake;
+  const restOfTokenHoldings = supply - totalStake;
   if (restOfTokenHoldings < 0) {
     throw new Error('Pools must have (collectively) at most iotaSupply tokens');
   }

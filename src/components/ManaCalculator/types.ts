@@ -1,9 +1,3 @@
-import {
-  RMC_EXTREME_CONGESTION,
-  RMC_LOW_CONGESTION,
-  RMC_STABLE_CONGESTION,
-} from './utils';
-
 export interface ValidatorProps {
   lockedStake: number;
   delegatedStake: number;
@@ -24,6 +18,11 @@ export enum UserType {
   VALIDATOR,
 }
 
+export enum NetworkType {
+  IOTA,
+  SHIMMER,
+}
+
 export interface ManaCalculatorProps {
   epoch: number;
   initialEpoch: number;
@@ -42,12 +41,13 @@ export interface ManaCalculatorProps {
     performanceFactor: number;
   };
   stake: number;
+  network: NetworkType
 }
 
 export enum CongestionType {
-  LOW = RMC_LOW_CONGESTION,
-  MEDIUM = RMC_STABLE_CONGESTION,
-  HIGH = RMC_EXTREME_CONGESTION,
+  LOW = 100000,
+  MEDIUM = 9000000,
+  HIGH = 500000000,
 }
 
 export type DeleteValidatorEvent = (id: number) => void;

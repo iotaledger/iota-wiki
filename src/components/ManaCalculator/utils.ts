@@ -1,5 +1,8 @@
+import { NetworkType } from "./types";
+
 // Constants
-export const IOTA_SUPPLY = 4600000000000000;
+const IOTA_SUPPLY = 4600000000000000;
+const SHIMMER_SUPPLY = 1813620509000000;
 const SLOT_DURATION = 10;
 const SLOTS_IN_EPOCH = 8192;
 export const EPOCH_DURATION = SLOTS_IN_EPOCH * SLOT_DURATION;
@@ -9,9 +12,6 @@ const BETA_PER_YEAR = 1 / 3;
 export const GENERATION_PER_SLOT = Math.pow(2, -17);
 const BOOTSTRAPPING_DURATION = 1154;
 const REWARDS_MANA_SHARE_COEFFICIENT = 2;
-export const RMC_LOW_CONGESTION = 100000;
-export const RMC_STABLE_CONGESTION = 9000000;
-export const RMC_EXTREME_CONGESTION = 500000000;
 export const EPOCH = 1154 + 1;
 
 // given t in seconds, returns the slot that time t belongs to
@@ -81,9 +81,9 @@ export function potential_Mana(
 }
 
 // returns the target reward of a certain epoch n
-export function targetReward(n: number): number {
+export function targetReward(n: number, supply: number): number {
   const finalReward =
-    IOTA_SUPPLY *
+    supply *
     REWARDS_MANA_SHARE_COEFFICIENT *
     GENERATION_PER_SLOT *
     SLOTS_IN_EPOCH;
@@ -110,4 +110,12 @@ export function fromMicro(n: number): number {
 //returns The number of micro(Mana/IOTA).
 export function toMicro(n: number): number {
   return n * 1_000_000;
+}
+
+export function getNetworkSupply(network: NetworkType): number {
+  if(network == NetworkType.IOTA){
+    return IOTA_SUPPLY
+  } else {
+    return SHIMMER_SUPPLY
+  }
 }
