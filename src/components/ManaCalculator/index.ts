@@ -1,1 +1,1 @@
-export { ManaCalculator as default } from './components/ManaCalculator'
+export { ManaCalculator as default } from './components/ManaCalculator';

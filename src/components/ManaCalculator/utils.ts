@@ -1,6 +1,14 @@
-import { BETA_PER_YEAR, BOOTSTRAPPING_DURATION, EPOCH_DURATION_IN_YEARS, GENERATION_PER_SLOT, IOTA_SUPPLY, REWARDS_MANA_SHARE_COEFFICIENT, SHIMMER_SUPPLY, SLOTS_IN_EPOCH } from "./constants";
-import { NetworkType } from "./enums";
-
+import {
+  BETA_PER_YEAR,
+  BOOTSTRAPPING_DURATION,
+  EPOCH_DURATION_IN_YEARS,
+  GENERATION_PER_SLOT,
+  IOTA_SUPPLY,
+  REWARDS_MANA_SHARE_COEFFICIENT,
+  SHIMMER_SUPPLY,
+  SLOTS_IN_EPOCH,
+} from './constants';
+import { NetworkType } from './enums';
 
 // given n in slots, returns the epoch that slot n belongs to
 function slotToEpoch(n: number): number {
@@ -40,7 +48,7 @@ export function getPotentialMana(
 
   const d1 = slotAfterCreationEpoch - creationSlot;
   const d2 = consumptionSlot - firstSlotConsumptionEpoch;
-  
+
   let potentialMana = 0;
   if (epochsLeftToConsumption == 0) {
     potentialMana = value * (consumptionSlot - creationSlot) * generationRate;
@@ -52,7 +60,10 @@ export function getPotentialMana(
       Math.exp(-BETA_PER_YEAR * EPOCH_DURATION_IN_YEARS) /
       (1 - Math.exp(-BETA_PER_YEAR * EPOCH_DURATION_IN_YEARS));
     const aux = value * generationRate * c * SLOTS_IN_EPOCH;
-    const potentialMana_n = decay(value * d1 * generationRate, epochsLeftToConsumption);
+    const potentialMana_n = decay(
+      value * d1 * generationRate,
+      epochsLeftToConsumption,
+    );
     const potentialMana_n_1 = decay(aux, epochsLeftToConsumption - 1);
     const potentialMana_0 = value * d2 * generationRate + aux;
     potentialMana = potentialMana_n - potentialMana_n_1 + potentialMana_0;
@@ -93,9 +104,9 @@ export function toMicro(n: number): number {
 }
 
 export function getNetworkSupply(network: NetworkType): number {
-  if(network == NetworkType.IOTA){
-    return IOTA_SUPPLY
+  if (network == NetworkType.IOTA) {
+    return IOTA_SUPPLY;
   } else {
-    return SHIMMER_SUPPLY
+    return SHIMMER_SUPPLY;
   }
 }

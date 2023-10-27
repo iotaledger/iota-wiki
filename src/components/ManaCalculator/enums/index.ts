@@ -1,1 +1,1 @@
-export * from './parameters.enum'
+export * from './parameters.enum';

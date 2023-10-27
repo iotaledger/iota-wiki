@@ -10,3 +10,7 @@ export const GENERATION_PER_SLOT = Math.pow(2, -17);
 export const BOOTSTRAPPING_DURATION = 1154;
 export const REWARDS_MANA_SHARE_COEFFICIENT = 2;
 export const EPOCH = 1154 + 1;
+
+export const CONGESTION_LOW = 100000;
+export const CONGESTION_MEDIUM = 9000000;
+export const CONGESTION_HIGH = 500000000;

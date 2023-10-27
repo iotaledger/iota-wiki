@@ -1,15 +1,21 @@
-export enum UserType {
-    DELEGATOR,
-    VALIDATOR,
-  }
-  
-  export enum NetworkType {
-    IOTA,
-    SHIMMER,
-  }
+import {
+  CONGESTION_HIGH,
+  CONGESTION_LOW,
+  CONGESTION_MEDIUM,
+} from '../constants';
 
-  export enum CongestionType {
-    LOW = 100000,
-    MEDIUM = 9000000,
-    HIGH = 500000000,
-  }
+export enum UserType {
+  DELEGATOR,
+  VALIDATOR,
+}
+
+export enum NetworkType {
+  IOTA,
+  SHIMMER,
+}
+
+export enum CongestionType {
+  LOW = CONGESTION_LOW,
+  MEDIUM = CONGESTION_MEDIUM,
+  HIGH = CONGESTION_HIGH,
+}
