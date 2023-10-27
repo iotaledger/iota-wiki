@@ -81,7 +81,6 @@ module.exports = {
       ],
     },
     'research-papers',
-    'glossary',
     'faq',
   ],
 };
