@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import '../styles.css';
 import { NetworkType } from '../enums';
-import { getDefaultParameters, ManaStateContext, useResults } from '../hooks';
+import { getDefaultParameters, ManaStateContext } from '../hooks';
 import {
   OutputForm,
   NetworkSection,
@@ -13,8 +13,6 @@ import {
 export function ManaCalculator() {
   const [state, setState] = useState(getDefaultParameters(NetworkType.IOTA));
 
-  const results = useResults(state);
-
   return (
     <ManaStateContext.Provider value={{ state, setState }}>
       <NetworkSection />
@@ -22,7 +20,7 @@ export function ManaCalculator() {
       <OtherParametersSection />
       <AdvancedSettingsValidator />
       <br />
-      <OutputForm {...results} />
+      <OutputForm />
     </ManaStateContext.Provider>
   );
 }
