@@ -41,7 +41,7 @@ export interface ManaCalculatorProps {
     performanceFactor: number;
   };
   stake: number;
-  network: NetworkType
+  network: NetworkType;
 }
 
 export enum CongestionType {

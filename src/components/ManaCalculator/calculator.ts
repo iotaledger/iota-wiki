@@ -16,13 +16,16 @@ export function calculateManaRewards(
   initialEpoch: number,
   finalEpoch: number,
   yourRole: 'Validator' | 'Delegator',
-  supply: number
+  supply: number,
 ): number {
   let totalTargetReward = 0;
   let epochDiff = 1;
   if (finalEpoch) {
     for (let i = 0; i < epochDiff; i++) {
-      totalTargetReward += decay(targetReward(initialEpoch + i, supply), epochDiff - i);
+      totalTargetReward += decay(
+        targetReward(initialEpoch + i, supply),
+        epochDiff - i,
+      );
     }
   } else {
     finalEpoch = initialEpoch + 1;

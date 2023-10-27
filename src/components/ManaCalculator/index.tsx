@@ -60,8 +60,8 @@ function getDefaultParameters(network: NetworkType): ManaCalculatorProps {
       attractedNewDelegatedStake: 0.0,
       attractedDelegatedStakeFromOtherPools: 0.1,
     },
-    network
-  } as ManaCalculatorProps
+    network,
+  } as ManaCalculatorProps;
 }
 
 function ValidatorCard({
@@ -99,7 +99,9 @@ function ValidatorCard({
           <input
             className='col col--4 align-right'
             value={fromMicro(validator.lockedStake)}
-            onChange={(e) => handleStakeChange(toMicro(Number(e.target.value)), id)}
+            onChange={(e) =>
+              handleStakeChange(toMicro(Number(e.target.value)), id)
+            }
           ></input>
         </div>
         <div className='row'>
@@ -266,13 +268,13 @@ export default function ManaCalculator() {
     });
   }
 
-  function handleNetworkChange(value: NetworkType){
+  function handleNetworkChange(value: NetworkType) {
     setState({
-      ...getDefaultParameters(value)
+      ...getDefaultParameters(value),
     });
   }
 
-  const supply = getNetworkSupply(state.network)
+  const supply = getNetworkSupply(state.network);
 
   // Calulate Mana rewards for delegator and validator
   let delegatorResults = {
@@ -294,7 +296,7 @@ export default function ManaCalculator() {
       EPOCH,
       null,
       'Delegator',
-      supply
+      supply,
     );
     let passiveRewards = calculatePassiveRewards(state.stake, EPOCH, EPOCH + 1);
 
@@ -323,7 +325,7 @@ export default function ManaCalculator() {
       EPOCH,
       null,
       'Validator',
-      supply
+      supply,
     );
     grantedTPS = calculateTPS(manaGeneratedPerEpoch, state.congestion);
     totalTPS = grantedTPS + additionalTPS;
@@ -353,7 +355,7 @@ export default function ManaCalculator() {
       state.initialEpoch,
       state.finalEpoch,
       'Delegator',
-      supply
+      supply,
     );
     let passiveRewards = calculatePassiveRewards(
       state.stake,
@@ -384,7 +386,7 @@ export default function ManaCalculator() {
       state.initialEpoch,
       state.finalEpoch,
       'Validator',
-      supply
+      supply,
     );
     grantedTPS = calculateTPS(manaGenerated, state.congestion);
     totalTPS = grantedTPS + additionalTPS;
@@ -404,9 +406,9 @@ export default function ManaCalculator() {
         classNamePrefix='react-select'
         options={[
           { value: NetworkType.IOTA, label: `IOTA` },
-          { value: NetworkType.SHIMMER, label: `Shimmer` }
+          { value: NetworkType.SHIMMER, label: `Shimmer` },
         ]}
-        />
+      />
       <Tabs>
         <TabItem value='tps' label='TPS'>
           <div className='table'></div>
@@ -609,7 +611,9 @@ function DelegatorForm({
         <input
           className='align-right col col--6'
           value={fromMicro(stake)}
-          onChange={(e) => handleOwnStakeChange(toMicro(Number(e.target.value)))}
+          onChange={(e) =>
+            handleOwnStakeChange(toMicro(Number(e.target.value)))
+          }
         ></input>
       </div>
     </div>
@@ -650,7 +654,9 @@ function ValidatorForm({
         <input
           className='col col--6 align-right'
           value={fromMicro(stake)}
-          onChange={(e) => handleOwnStakeChange(toMicro(Number(e.target.value)))}
+          onChange={(e) =>
+            handleOwnStakeChange(toMicro(Number(e.target.value)))
+          }
         ></input>
       </div>
       <Details summary='Advanced Settings - Validator'>
@@ -730,11 +736,15 @@ function OutputForm({
     <div className='table'>
       <div className='row '>
         <div className='col col--6'>Mana generation (by holding)</div>
-        <div className='col col--6 align-right'>{fromMicro(passiveRewards)}</div>
+        <div className='col col--6 align-right'>
+          {fromMicro(passiveRewards)}
+        </div>
       </div>
       <div className='row '>
         <div className='col col--6'>Mana rewards (delegation/validation)</div>
-        <div className='col col--6 align-right'>{fromMicro(manaGeneratedPerEpoch)}</div>
+        <div className='col col--6 align-right'>
+          {fromMicro(manaGeneratedPerEpoch)}
+        </div>
       </div>
 
       <div className='row '>
