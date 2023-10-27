@@ -42,11 +42,7 @@ module.exports = {
     {
       type: 'category',
       label: 'Programs',
-      items: [
-        'programs/touchpoint',
-        'programs/EDF-grant-programme',
-        'programs/bug-bounties',
-      ],
+      items: ['programs/touchpoint', 'programs/bug-bounties'],
     },
     {
       type: 'category',
@@ -85,11 +81,6 @@ module.exports = {
       ],
     },
     'research-papers',
-    {
-      type: 'link',
-      href: '/learn/glossary',
-      label: 'Glossary',
-    },
     'faq',
   ],
 };

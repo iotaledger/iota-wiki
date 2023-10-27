@@ -2839,7 +2839,6 @@ __metadata:
     prettier: ^2.8.8
     raw-loader: ^4.0.2
     react: 18.2.0
-    react-collapsible: ^2.8.4
     react-dom: 18.2.0
     react-flickity-component: ^3.6.3
     react-image-gallery: ^1.3.0
@@ -14991,16 +14990,6 @@ plugin-image-zoom@flexanalytics/plugin-image-zoom:
     lodash.flow: ^3.3.0
     pure-color: ^1.2.0
   checksum: 00a12dddafc8a9025cca933b0dcb65fca41c81fa176d1fc3a6a9d0242127042e2c0a604f4c724a3254dd2c6aeb5ef55095522ff22f5462e419641c1341a658e4
-  languageName: node
-  linkType: hard
-
-"react-collapsible@npm:^2.8.4":
-  version: 2.10.0
-  resolution: "react-collapsible@npm:2.10.0"
-  peerDependencies:
-    react: ~15 || ~16 || ~17 || ~18
-    react-dom: ~15 || ~16 || ~17 || ~18
-  checksum: f7a883eb7c4aa91916378dfd4c98dc92a32bbdb4d6b8fad179e34ad1f2bbbab35446f5f6e126d699427bc67d1d70909c69f6be4ee744251bea4e17c7d10be2f3
   languageName: node
   linkType: hard
 
