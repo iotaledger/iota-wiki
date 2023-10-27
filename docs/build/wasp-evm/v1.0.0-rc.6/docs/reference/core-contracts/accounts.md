@@ -69,8 +69,7 @@ Information about what is being transferred will be encoded in the transaction's
 <Sender_AgentID bytes> + <Assets bytes>
 ```
 
-The encoding used for this data can be found on TIP-51
-
+The encoding used for this data can be found on [TIP-51](https://github.com/jorgemmsilva/tips/blob/b46d7bc36a0f7d4c2a1ad32ba25ec2abb4835cb3/tips/TIP-0051/tip-0051.md)
 :::
 
 #### Parameters
