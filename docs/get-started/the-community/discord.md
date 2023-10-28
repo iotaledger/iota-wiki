@@ -5,9 +5,11 @@ description: IOTA Discord verification and onboarding process explained
 
 **If you are new to [Discord](https://discord.iota.org/) as a platform, have a look at their [Beginner's Guide to Discord](https://support.discord.com/hc/en-us/articles/360045138571-Beginner-s-Guide-to-Discord) which is translated in different languages.**
 
+This is without doubt the most active community and with nearly 50,000 members a great place for everyone that wants to learn more about IOTA and get to know the people involved. A lot of IOTA Foundation Team members and also the Founders and members of the Board are active on Discord and take part in the community discussions and projects there. Every aspect of the project is covered here in separate channels and you can find the whole range of this amazing community from serious mathematics and cryptographic topic up to memes and Fun channels.
+
 ## Join the IOTA Discord
 
-Go to [discord.iota.org](https://discord.iota.org) to join the IOTA Discord.
+Go to [discord.iota.org](https://discord.iota.org) to join the IOTA Discord with its amazing community.
 
 ### Requirements
 
