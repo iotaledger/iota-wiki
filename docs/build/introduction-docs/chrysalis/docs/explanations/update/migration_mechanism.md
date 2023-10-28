@@ -15,7 +15,7 @@ keywords:
 # How the IOTA Chrysalis Phase 2 Token Migration Works
 
 :::caution
-Since the launch of the Stardust protocol on the IOTA Mainnet, this mechanism is no longer applied, instead
+Since the launch of the Stardust protocol on the IOTA _Mainnet_, this mechanism is no longer applied, instead
 the migrations will be facilitated through an L2 solution.
 :::
 
@@ -27,7 +27,7 @@ Before proceeding into the developed mechanism, below is our reasoning for why o
   been the easiest to do, it would have blocked the funds of people between the times of global snapshots. For example, if
   we would have taken global snapshots monthly (to carry over funds from burn/migration addresses), token holders would
   have been excluded from opportunities arising from the change in token price. In this case, perhaps a user wanted to sell
-  tokens but were blocked by the fact that the next global snapshot would only be performed in 20 days and so they
+  tokens but were blocked by the fact that the next global _snapshot_ would only be performed in 20 days and so they
   couldn't move their tokens to an exchange (which only supports Chrysalis Phase 2 IOTA).
 - `Supporting WOTS on Chrysalis Phase 2 (and only allowing to send to non-WOTS addresses)`: while this was also a
   viable option, we decided not to include support for WOTS as it brought several legacy problems:
@@ -50,7 +50,7 @@ The developed migration mechanism was built from the following components:
   - `Treasury Transaction`: an object which defined a `Treasury Input` referencing the last `Treasury Output` and a
     new `Treasury Output` that held the delta of what the `Treasury Transaction` was spending.
   - `Receipt`: an object which held a pointer to a legacy milestone index, a list of funds to mint, and
-    a `Treasury Transaction`. A `Receipt` can only be an inner payload of a milestone.
+    a `Treasury Transaction`. A `Receipt` can only be an inner payload of a _milestone_.
 - Chrysalis Phase 2 nodes which validated receipts.
 - Legacy nodes which provided a special API command for the above Chrysalis Phase 2 nodes.
 - `Treasury`: this was the last `Treasury Output` in the ledger. At one point, only one existed.
@@ -88,13 +88,13 @@ This meant that:
 
 - The IOTA Foundation could not mint funds out of thin air, because nodes in the Chrysalis Phase 2 network verified that the
   funds were burned in the legacy network.
-- All migration bundles, respectively transferred to `migration addresses` which were confirmed by a given legacy
+- All migration bundles, respectively transferred to `migration addresses` which were _confirmed_  by a given legacy
   milestone, had to have been migrated fully to the new network, as otherwise the verification failed.
 - Node operators were free to choose which legacy nodes they queried with their Chrysalis Phase 2 nodes, so the
   verification of migrations/receipts was decentralized. For example, a node operator chose to both operate their own
   legacy and Chrysalis Phase 2 nodes.
 
-Essentially, via the Firefly wallet, token holders:
+Essentially, via the _Firefly_ wallet, token holders:
 
 1. Produced migration bundles which sent funds to `migration addresses` controlled by the given owner.
 2. These bundles were confirmed on the legacy network.

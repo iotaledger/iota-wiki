@@ -11,7 +11,7 @@ image: /img/logo/Chrysalis_logo_dark.png
 
 # What is Chrysalis?
 
-The objective of the IOTA Foundation was to optimize the IOTA mainnet before the release of IOTA 2.0 (Coordicide) to offer an enterprise-ready solution for our ecosystem. This was achieved by an intermediate update called `Chrysalis`. You can read more about how Chrysalis was strategically released here.
+The objective of the IOTA Foundation was to optimize the IOTA _mainnet_ before the release of IOTA 2.0 (Coordicide) to offer an enterprise-ready solution for our ecosystem. This was achieved by an intermediate update called `Chrysalis`. You can read more about how Chrysalis was strategically released here.
 
 ![IOTA1.0 vs Chrysalis(IOTA1.5) confirmation time](/img/introduction/what_is_chrysalis/00.gif)
 
@@ -19,6 +19,6 @@ A chrysalis is “the form a caterpillar takes before it emerges from its cocoon
 
 ![From cocoon to butterfly](/img/introduction/02_path_to.png)
 
-Why is this process of adopting major protocol improvements relatively unique to IOTA among permissionless Digital Ledger Technologies (DLTs)? The simple answer is the absence of miners. In most permissionless DLTs, the miners’ economic incentives differ from those of regular network users. Changes to throughput and network latencies can disrupt the fee market the miners rely on. This makes them more likely to object to network upgrades as it affects their bottom line.
+Why is this process of adopting major protocol improvements relatively unique to IOTA among permissionless Digital Ledger Technologies (_DLT_s)? The simple answer is the absence of miners. In most permissionless DLTs, the miners’ economic incentives differ from those of regular network users. Changes to _throughput_ and network latencies can disrupt the fee market the miners rely on. This makes them more likely to object to network upgrades as it affects their bottom line.
 
 In IOTA, you and validators are one and the same. There is no conflict of interests between either with different motivations, meaning there is a much smoother path to network improvements. This is why we are able to incrementally and smoothly upgrade the network before Coordicide.

@@ -19,7 +19,7 @@ It can support different _VM types_ (i.e., interpreters) simultaneously on the s
 For example, it is possible to have [Wasm](/wasp-wasm/introduction/) and [EVM/Solidity](/wasp-evm/introduction/) smart
 contracts coexisting on the same chain.
 
-The logical structure of IOTA Smart Contracts is independent of the VM type:
+The logical structure of IOTA Smart Contracts is independent of the _VM_ type:
 
 ![Smart Contract Structure](/img/tutorial/SC-structure.png)
 

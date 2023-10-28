@@ -10,11 +10,11 @@ keywords:
 # Staking in the IOTA Network Ecosystem
 
 IOTA introduced a new network that will exist next to the main network: the Shimmer staging network. This marks a historical event and a vast increase of utility for the IOTA token.
-Shimmer will launch with its own native tokens: SMR. With the new tokenomics and incentive structure around this network, it is now possible to stake tokens.
+Shimmer will launch with its own native tokens: SMR. With the new _tokenomics_ and incentive structure around this network, it is now possible to stake tokens.
 
 :::info
 
-Find the blog post introducing IOTA staking [here](https://blog.iota.org/introducing-iota-staking/).
+Find the blog post introducing IOTA _staking_ [here](https://blog.iota.org/introducing-iota-staking/).
 Find the announcement of the start of IOTA staking [here](https://blog.iota.org/iota-staking-start/).
 
 :::

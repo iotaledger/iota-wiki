@@ -17,7 +17,7 @@ All JWT interactions should be performed via HTTPS.
 
 When a route is configured to be public, it can be accessed freely without providing a JWT. Thus, you should take care when specifying these routes, as a mis-configured route can open the application up to attacks. The only accepted special character is the wildcard (`*`), which will be converted to a regex `.*` and match against the original URI.
 
-For instance, a request `GET https://localhost:XXXX/api/core/v2/milestones/by-index/10000` will check the set of public routes against the segment `/api/core/v2/milestones/by-index/10000`.
+For instance, a request `GET https://localhost:XXXX/api/core/v2/_milestone_s/by-index/10000` will check the set of public routes against the segment `/api/core/v2/milestones/by-index/10000`.
 
 Matching strings include:
 

@@ -13,11 +13,11 @@ keywords:
 
 Bug bounties are programs the IOTA and Shimmer networks implement to encourage security researchers and ethical
 hackers to discover and report potential vulnerabilities in their respective systems. These programs play a crucial role
-in maintaining the security and integrity of the networks by proactively identifying and addressing security weaknesses.
+in maintaining the security and _integrity_ of the networks by proactively identifying and addressing security weaknesses.
 
 By offering financial rewards or other incentives, bug bounty programs attract skilled individuals who thoroughly
 analyze the networks' codebase, infrastructure, and protocols. These researchers aim to identify any loopholes,
-vulnerabilities, or potential exploits that malicious actors could exploit. Once a vulnerability is found, it is
+vulnerabilities, or potential _exploits_ that malicious actors could exploit. Once a vulnerability is found, it is
 reported to the development teams, who can take the necessary steps to mitigate the issue and enhance the overall
 security of the networks.
 

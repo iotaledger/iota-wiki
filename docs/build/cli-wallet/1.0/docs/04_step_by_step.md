@@ -46,7 +46,7 @@ Create a savings account.
 
 ## Tokens
 
-Enter the "main" account and get some funds from the faucet.
+Enter the "main" account and get some funds from the _faucet_.
 
 ```sh title=Input
 ./wallet main
