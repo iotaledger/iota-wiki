@@ -53,7 +53,7 @@ Finally, note that this Data Flow concerns _nodes_ and not _clients_. Clients ge
 
 ### 4.1 Block Factory
 
-The `IssuePayload` function creates a valid payload, provided to the `CreateBlock` method, along with a set of parents chosen with the [Tip Selection Algorithm](./communication-layer#tip-selection-algorithm). Then, the block is signed. Notice that block generation should follow the rates imposed by the _rate setter_, as defined in r [rate control](communication-layer.md), and that the block's type of references should be consistent with the preferred reality of the issuer(see the [consensus article](consensus/introduction.md).
+The `IssuePayload` function creates a valid payload, provided to the `CreateBlock` method, along with a set of parents chosen with the [Tip Selection Algorithm](./communication-layer.md#tip-selection-algorithm). Then, the block is signed. Notice that block generation should follow the rates imposed by the _rate setter_, as defined in r [rate control](communication-layer.md), and that the block's type of references should be consistent with the preferred reality of the issuer(see the [consensus article](consensus/introduction.md).
 
 All blocks have a _commitment field_, which is the hash of a series of information from older slots (see [Data Structures](data-structures.md)), e.g., the Merkle root of the Merkle Tree containing the blocks included in the older slots, ledger state at the end of the slots, or Block Issuance Credits.
 
