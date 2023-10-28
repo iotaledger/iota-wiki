@@ -97,6 +97,12 @@ module.exports = async () => {
       sidebarPath: path.resolve(__dirname, 'docs/learn/sidebars.ts'),
       routeBasePath: 'learn',
     },
+    {
+      id: 'community',
+      path: path.resolve(__dirname, 'docs/community'),
+      sidebarPath: path.resolve(__dirname, 'docs/community/sidebars.ts'),
+      routeBasePath: 'community',
+    },
     ...buildPlugins,
     ...maintainPlugins,
   ];
