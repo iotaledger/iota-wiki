@@ -282,7 +282,7 @@ export default function ManaCalculator() {
     passiveRewards: 0,
     totalTPS: 0,
   };
-  let validatorResults = {
+  const validatorResults = {
     manaGeneratedPerEpoch: 0,
     passiveRewards: 0,
     totalTPS: 0,
@@ -298,10 +298,14 @@ export default function ManaCalculator() {
       'Delegator',
       supply,
     );
-    let passiveRewards = calculatePassiveRewards(state.stake, EPOCH, EPOCH + 1);
+    const passiveRewards = calculatePassiveRewards(
+      state.stake,
+      EPOCH,
+      EPOCH + 1,
+    );
 
     let grantedTPS = calculateTPS(manaGeneratedPerEpoch, state.congestion);
-    let additionalTPS = calculateTPS(passiveRewards, state.congestion);
+    const additionalTPS = calculateTPS(passiveRewards, state.congestion);
     let totalTPS = grantedTPS + additionalTPS;
 
     delegatorResults = {
@@ -336,12 +340,12 @@ export default function ManaCalculator() {
   }
 
   // Calulate Mana rewards for delegator and validator
-  let delegatorAccumulateResults = {
+  const delegatorAccumulateResults = {
     manaGenerated: 0,
     passiveRewards: 0,
     totalTPS: 0,
   };
-  let validatorAccumulateResults = {
+  const validatorAccumulateResults = {
     manaGenerated: 0,
     passiveRewards: 0,
     totalTPS: 0,
@@ -357,14 +361,14 @@ export default function ManaCalculator() {
       'Delegator',
       supply,
     );
-    let passiveRewards = calculatePassiveRewards(
+    const passiveRewards = calculatePassiveRewards(
       state.stake,
       state.initialEpoch,
       state.finalEpoch,
     );
 
     let grantedTPS = calculateTPS(manaGenerated, state.congestion);
-    let additionalTPS = calculateTPS(passiveRewards, state.congestion);
+    const additionalTPS = calculateTPS(passiveRewards, state.congestion);
     let totalTPS = grantedTPS + additionalTPS;
 
     delegatorAccumulateResults.manaGenerated = manaGenerated;

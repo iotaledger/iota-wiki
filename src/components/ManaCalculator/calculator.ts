@@ -19,7 +19,7 @@ export function calculateManaRewards(
   supply: number,
 ): number {
   let totalTargetReward = 0;
-  let epochDiff = 1;
+  const epochDiff = 1;
   if (finalEpoch) {
     for (let i = 0; i < epochDiff; i++) {
       totalTargetReward += decay(
