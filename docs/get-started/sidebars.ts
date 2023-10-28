@@ -41,8 +41,8 @@ module.exports = {
     },
     {
       type: 'category',
-      label: 'Programs',
-      items: ['programs/touchpoint', 'programs/bug-bounties'],
+      label: 'Programs & Funding',
+      items: ['programs/touchpoint', 'programs/bug-bounties', 'programs/community-treasury'],
     },
     {
       type: 'category',

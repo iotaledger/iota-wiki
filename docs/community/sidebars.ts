@@ -2,12 +2,6 @@ module.exports = {
   learn: [
     {
       type: 'category',
-      label: 'Funding',
-      collapsed: true,
-      items: ['funding/edf-funding', 'funding/community-treasury'],
-    },
-    {
-      type: 'category',
       label: 'The Community',
       collapsed: true,
       items: [
