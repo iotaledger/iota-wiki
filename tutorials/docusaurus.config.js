@@ -37,8 +37,7 @@ module.exports = {
         title: 'Run a Wasp Chain',
         description: 'In this tutorial you will learn how to run a wasp chain.',
         preview: '/IOTA-Smart-Contract-Tutorials-B.jpg',
-        route:
-          '/wasp-cli/how-tos/setting-up-a-chain',
+        route: '/wasp-cli/how-tos/setting-up-a-chain',
         tags: ['text', 'video'],
       },
     ],
@@ -49,8 +48,7 @@ module.exports = {
         description:
           'In this tutorial you will learn how to deploy a wasm smart contract.',
         preview: '/IOTA-Smart-Contract-Tutorials-C.jpg',
-        route:
-          '/wasp-cli/how-tos/setting-up-a-chain#deploying-a-wasm-contract',
+        route: '/wasp-cli/how-tos/setting-up-a-chain#deploying-a-wasm-contract',
         tags: ['text', 'video'],
       },
     ],
