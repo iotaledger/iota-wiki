@@ -85,7 +85,7 @@ fn main(){
 }
 ```
 
-_[Hello-World](https://github.com/blackbird71SR/Hello-World) in all possible languages by blackbird71SR, MIT License._
+[_Hello-World_](https://github.com/blackbird71SR/Hello-World)_ in all possible languages by blackbird71SR, MIT License._
 
 ### Paragraph Quotes
 

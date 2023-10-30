@@ -212,7 +212,7 @@ console.log('Block Id:', blockId);
 ## Calculate the NFT ID
 
 It is important to understand that the new NFT ID is derived from the ID of the NFT Output. In turn, the ID of the NFT
-Output is derived from the transaction ID. The transaction ID is a hash of the transaction payload. You can calculate it
+Output is derived from the transaction ID. The transaction ID is a hash of the _transaction payload_. You can calculate it
 using the function `computeTransactionIdFromTransactionPayload` as shown below. The Output ID is
 calculated using the function `TransactionHelper.outputIdFromTransactionData`, and then the NFT ID is the Blake256 hash
 of the Output Id. Afterward, you can calculate the Bech32 address corresponding to the NFT ID using

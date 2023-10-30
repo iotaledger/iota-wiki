@@ -80,7 +80,7 @@ Change `dashboard.bindAddress` to either `0.0.0.0:8081` to listen on all availab
 
 Even if it is accessible from the Internet, any visitor will still need a valid username and password combination to access the management section of the dashboard.
 
-The password, hash, and salt can be generated using the integrated `pwd-hash` CLI tool:
+The password, hash, and _salt_ can be generated using the integrated `pwd-hash` CLI tool:
 
 ```bash
 ./hornet tools pwd-hash

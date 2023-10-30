@@ -37,7 +37,7 @@ that 1 token.
 ## Expiration
 
 In the previous example, what if the recipient never consumes the output? The sender's tokens are locked forever, even
-though they are not in the possession of the recipient. A cautious sender would also define an Expiration Unlock Condition
+though they are not in the possession of the recipient. A cautious sender would also define an _Expiration Unlock_ Condition
 on the output. As the name suggests, such outputs expire after a deadline has been met, meaning that the sender regains
 full control of the tokens in the output.
 

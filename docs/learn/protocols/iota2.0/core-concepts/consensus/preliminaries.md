@@ -4,7 +4,7 @@ Before diving deeper into the consensus algorithm's inner workings, you should f
 
 ## Epochs and Slots
 
-The IOTA protocol divides time into non-overlapping slots of fixed duration `slotDurationSeconds`, set to `10` seconds. Slots are indexed with the slot index $s = 0, 1, 2, 3,...$. The slot indexed with $0$ is a unique slot that commences at negative infinity and concludes at the genesis timestamp `genesisUnixTime`. Every `2^slotsPerEpochExponent` sequential slots are grouped into epochs, which are enumerated with the epoch index $e = 0, 1, 2, 3,...$.
+The IOTA protocol divides time into non-overlapping slots of fixed duration `slotDurationSeconds`, set to `10` seconds. Slots are indexed with the slot index $s = 0, 1, 2, 3,...$. The _slot_ indexed with $0$ is a unique slot that commences at negative infinity and concludes at the genesis timestamp `genesisUnixTime`. Every `2^slotsPerEpochExponent` sequential slots are grouped into epochs, which are enumerated with the _epoch_ index $e = 0, 1, 2, 3,...$.
 
 Using slots primarily aims to generate [commitments](#slot-commitment-chain) for short time intervals. Generating commitments in a timely manner allows nodes to keep in Random Access Memory (RAM) only data of bounded size.
 
@@ -14,9 +14,9 @@ The committee members are fixed within a given epoch, and their voting weights r
 
 ### Epoch Committee
 
-For an epoch, a fixed subset of validators is responsible for achieving agreement about blocks and transactions issued during the epoch. This set has the size `committeeTotalSeats` (between `25` and `50`). The selected set of validators is called the epoch committee.
+For an _epoch_, a fixed subset of validators is responsible for achieving agreement about blocks and transactions issued during the epoch. This set has the size `committeeTotalSeats` (between `25` and `50`). The selected set of validators is called the epoch committee.
 
-A committee member is expected to issue validation blocks every `frequencyValidationBlock` seconds (set to either `0.5` or `1`) and to follow the [tip selection algorithm](tip-selection-algorithm.md) for selecting tips to be referenced by the validation blocks.
+A committee member is expected to issue validation blocks every `frequencyValidationBlock` seconds (set to either `0.5` or `1`) and to follow the [tip selection algorithm](tip-selection-algorithm.md) for selecting tips to be referenced by the _validation blocks_.
 
 #### Total committee
 
@@ -28,9 +28,9 @@ In the first version of the protocol, all committee members have the same weight
 
 :::
 
-The total committee is determined for [slot commitment chains](#slot-commitment-chain). Specifically, two nodes that adopt the same slot commitment chain before an epoch $e$ starts perceive the same total committee for epoch $e$.
+The total committee is determined for [slot commitment chains](#slot-commitment-chain). Specifically, two nodes that adopt the same _slot commitment chain_ before an epoch $e$ starts perceive the same total committee for epoch $e$.
 
-To support the dynamic availability of the protocol and timely generate slot commitments, only actively participating committee members are considered when determining which blocks and transactions are [accepted](consensus-flags.md#acceptance-flag).
+To support the _dynamic availability_ of the protocol and timely generate slot commitments, only actively participating committee members are considered when determining which blocks and transactions are [accepted](consensus-flags.md#acceptance-flag).
 
 #### Online committee
 
@@ -44,7 +44,7 @@ The online committee is a subjective notion determined by each node locally base
 
 #### Total weight
 
-Denote the total weight of the total committee at epoch $e$ as:
+Denote the total weight of the total committee at _epoch_ $e$ as:
 
 $$
 W_{total}(e)=\sum_{i\in\mathcal{C}_{total}(e)}W_i(e)
@@ -68,7 +68,7 @@ In the following, the time instant index $t$ and epoch index $e$ are omitted in 
 
 ## About Blocks and the Tangle
 
-The basic unit data structure in IOTA 2.0 is called a block. The collection of all blocks is called the Tangle. Since blocks contain references to previously issued blocks, the Tangle is a directed acyclic graph (DAG).
+The basic unit _data structure_ in IOTA 2.0 is called a block. The collection of all blocks is called the Tangle. Since blocks contain references to previously issued blocks, the Tangle is a directed acyclic graph (_DAG_).
 
 For the notation of this article, a block is denoted as $b$, and a specific content of the block is referred to using the following fields
 
@@ -106,7 +106,7 @@ For block $b$, the set of blocks that approve $b$, is the future cone of $b$.
 
 ##### Example
 
-In the following example, the past cone of block $x$ is highlighted in red, encompassing all the blocks reachable from $x$ by following the directed edges. Similarly, the future cone is highlighted in blue.
+In the following example, the _past cone_ of block $x$ is highlighted in red, encompassing all the blocks reachable from $x$ by following the directed edges. Similarly, the future cone is highlighted in blue.
 
 ![Future and past cones of a block](/img/learn/protocols/iota2.0/core-concepts/consensus/cones-of-a-block.png 'Future and past cones of a block.')
 **Image:** Future and past cones of a block.
@@ -124,7 +124,7 @@ A block $b$ approves a slot commitment $C$ if the [slot commitment chain](#slot-
 Block references in IOTA 2.0 simultaneously serve two purposes:
 
 1. Contributing to the construction of an immutable directed acyclic graph structure on the block set.
-2. Encoding the issuer's perspective on which part of the Tangle is valid and which conflicting transactions are supported by a majority of the network. This means that nodes perform voting directly on the Tangle by including appropriate references in their blocks.
+2. Encoding the issuer's perspective on which part of the Tangle is valid and which _conflicting transactions_ are supported by a majority of the network. This means that nodes perform voting directly on the Tangle by including appropriate references in their blocks.
 
 Block references are crucial in the consensus protocol as they guide the [tip selection algorithm](tip-selection-algorithm.md#tip-selection-algorithm).
 
@@ -132,11 +132,11 @@ Block references are crucial in the consensus protocol as they guide the [tip se
 
 ###### Strong
 
-Nodes randomly select strong parents from their tip pool and attach their newly issued blocks to these selected tips. The number of strong parents sets a tradeoff between [confirmation time](consensus-flags.md#confirmation-of-blocks-and-non-conflicting-transactions) and the block size. More strong parents lead to shorter confirmation times and larger block sizes. When [computing the branch](relevant-algorithms.md#algorithm-to-compute-a-blocks-branch) of a new block, the branches of strong parents are directly inherited by the branch of the new block.
+Nodes randomly select strong parents from their _tip pool_ and attach their newly issued blocks to these selected tips. The number of strong parents sets a tradeoff between [confirmation time](consensus-flags.md#confirmation-of-blocks-and-non-conflicting-transactions) and the block size. More strong parents lead to shorter confirmation times and larger block sizes. When [computing the branch](relevant-algorithms.md#algorithm-to-compute-a-blocks-branch) of a new block, the branches of strong parents are directly inherited by the _branch_ of the new block.
 
 ###### Shallow Like
 
-Shallow like references are essential for rectifying the preliminary [block's branch](relevant-algorithms.md#algorithm-to-compute-a-blocks-branch) constructed from the strong parents. They align the block's branch with the issuer's [preferred reality](relevant-algorithms.md#algorithm-to-compute-the-preferred-reality).
+Shallow like references are essential for rectifying the preliminary [block's branch](relevant-algorithms.md#algorithm-to-compute-a-blocks-branch) constructed from the strong parents. They align the block's _branch_ with the issuer's [preferred reality](relevant-algorithms.md#algorithm-to-compute-the-preferred-reality).
 
 ###### Weak
 
@@ -144,7 +144,7 @@ Weak references serve a different purpose. They come into play when the [branche
 
 ### Total and Online Supermajority
 
-To formally define consensus flags, the notion of total and online supermajorities of blocks is introduced. A supermajority of a subset of blocks means that the issuers of these blocks have more than $2/3$ of the total voting weight.
+To formally define _consensus flags_, the notion of total and online supermajorities of blocks is introduced. A _supermajority_ of a subset of blocks means that the issuers of these blocks have more than $2/3$ of the total voting weight.
 
 #### Total supermajority
 
@@ -185,11 +185,11 @@ The hash root of a Merkle tree that contains all commitment elements at the end 
 
 #### 5. Cumulative weight
 
-The total weight of validators that reference a specific commitment in the past and the cumulative weight of the previous slot commitment.
+The total weight of validators that reference a specific commitment in the past and the _cumulative weight_ of the previous slot commitment.
 
 #### 6. Reference mana cost
 
-The reference Mana cost (RMC) is calculated from the contents of the slot and the previous slot’s RMC.
+The reference _Mana_ cost (RMC) is calculated from the contents of the slot and the previous slot’s RMC.
 
 :::note
 
@@ -210,19 +210,19 @@ then the node generates the commitment of the required slot.
 
 ### Reality-based UTXO ledger
 
-As [Chrysalis](../../../chrysalis/introduction.md) and [Stardust](../../../stardust/introduction.md), IOTA 2.0 uses the Unspent Transaction Output (UTXO) model for transactions. Its parallel processing capability allows independent transactions to be added to the ledger in any order, thus enhancing its scalability potential.
+As [Chrysalis](../../../chrysalis/introduction.md) and [Stardust](../../../stardust/introduction.md), IOTA 2.0 uses the Unspent Transaction Output (UTXO) model for transactions. Its _parallel processing_ capability allows independent transactions to be added to the ledger in any order, thus enhancing its scalability potential.
 
-However, the append-only nature of the UTXO ledger can compromise this benefit when conflicting transactions arise. To address this issue, IOTA 2.0 uses an enhanced UTXO ledger model, called the [reality-based UTXO ledger](preliminaries.md#reality-based-utxo-ledger), that optimistically updates the ledger and maintains a record of the dependencies of possible conflicts.
+However, the append-only nature of the UTXO ledger can compromise this benefit when _conflicting transactions_ arise. To address this issue, IOTA 2.0 uses an enhanced UTXO ledger model, called the [reality-based UTXO ledger](preliminaries.md#reality-based-utxo-ledger), that optimistically updates the ledger and maintains a record of the dependencies of possible conflicts.
 
 A UTXO transaction should have a list of unique outputs called UTXOs. In addition, each transaction has a list of inputs, which are UTXOs of previous transactions. A transaction is said to spend its inputs.
 
 #### Ledger DAG
 
-The ledger DAG is a DAG whose vertex set consists of all transactions. There is a directed edge between two transactions $tx$ and $ty$ if $tx$ spends the output of $ty$. The ledger DAG's root is the genesis with no outgoing edges.
+The ledger _DAG_ is a DAG whose vertex set consists of all transactions. There is a directed edge between two transactions $tx$ and $ty$ if $tx$ spends the output of $ty$. The ledger DAG's root is the genesis with no outgoing edges.
 
 #### Causal history of a transaction
 
-The causal history of a given transaction $tx$ consists of all transactions that can be reached from the transaction $tx$ by traversing the ledger DAG along the directed edges.
+The causal history of a given transaction $tx$ consists of all transactions that can be reached from the transaction $tx$ by traversing the ledger _DAG_ along the directed edges.
 
 #### Conflict
 
@@ -262,7 +262,7 @@ The set of all conflicts in the causal history of a transaction $tx$ is called t
 
 #### Branch of a block
 
-For a block $b$, there is the branch of $b$, which is encoded through the references. This branch is denoted as $Branch(b)$ and it can be computed using an [algorithm](relevant-algorithms.md#algorithm-to-compute-a-blocks-branch).
+For a block $b$, there is the branch of $b$, which is encoded through the references. This _branch_ is denoted as $Branch(b)$ and it can be computed using an [algorithm](relevant-algorithms.md#algorithm-to-compute-a-blocks-branch).
 
 #### Vote
 

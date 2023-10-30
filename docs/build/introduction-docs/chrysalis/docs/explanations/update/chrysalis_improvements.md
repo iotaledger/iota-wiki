@@ -13,22 +13,22 @@ image: /img/logo/Chrysalis_logo_dark.png
 ## White-flag Approach
 
 ![White-flag approach](/img/introduction/what_is_chrysalis/01.png)
-[The White-flag approach](https://iota.cafe/t/conflict-white-flag-mitigate-conflict-spamming-by-ignoring-conflicts/233), which is used for calculating balances. It is a simpler, conflict-ignoring approach that improved the speed and efficiency of tip selection, eliminated many network attacks, and significantly reduced the need for reattachments.
+[The White-flag approach](https://iota.cafe/t/conflict-white-flag-mitigate-conflict-spamming-by-ignoring-conflicts/233), which is used for calculating balances. It is a simpler, conflict-ignoring approach that improved the speed and efficiency of _tip selection_, eliminated many network attacks, and significantly reduced the need for reattachments.
 
 ## New Milestone Selection Algorithm
 
 ![New Milestone Selection Algorithm](/img/introduction/what_is_chrysalis/02.png)
-[A new milestone selection algorithm for the Coordinator](https://iota.cafe/t/coordinator-improvements/310) that focuses on allowing the network to support many more confirmed transactions per second (CTPS) than before, with higher computational efficiency.
+[A new milestone selection algorithm for the Coordinator](https://iota.cafe/t/coordinator-improvements/310) that focuses on allowing the network to support many more confirmed transactions per second (_CTPS_) than before, with higher computational efficiency.
 
 ## URTS Tip Selection
 
 ![URTS Tip Selection](/img/introduction/what_is_chrysalis/03.png)
-A new [Uniform Random Tip Selection](https://github.com/iotaledger/protocol-rfcs/blob/master/text/0008-uniform-random-tip-selection/0008-uniform-random-tip-selection.md) in node software. It is significantly faster and more efficient than the previous tip selection algorithm.
+A new [Uniform Random Tip Selection](https://github.com/iotaledger/protocol-rfcs/blob/master/text/0008-uniform-random-tip-selection/0008-uniform-random-tip-selection.md) in node software. It is significantly faster and more efficient than the previous _tip selection_ algorithm.
 
 ## Ed25519 Signature Scheme
 
 ![Ed25519 Signature Scheme](/img/introduction/what_is_chrysalis/04.png)
-[The Ed25519 signature scheme](https://github.com/iotaledger/protocol-rfcs/blob/ee07797acb5940b7dbb5c3411b184ccdc6afdbb1/text/0000-ed25519-signature-scheme/0000-ed25519-signature-scheme.md) has been added to the network, replacing the current Winternitz one time signature scheme (W-OTS) signature scheme. Using an EdDSA signature scheme allows the protocol and clients using the protocol to run more efficiently on established hardware. Unlike W-OTS, the Ed25519 signature scheme also allows for the re-use of private keys, and, with that, introduces reusable addresses to the protocol. This change also dramatically reduces the transaction size, saving network bandwidth and processing time.
+[The Ed25519 signature scheme](https://github.com/iotaledger/protocol-rfcs/blob/ee07797acb5940b7dbb5c3411b184ccdc6afdbb1/text/0000-ed25519-signature-scheme/0000-ed25519-signature-scheme.md) has been added to the network, replacing the current Winternitz one time signature scheme (W-OTS) signature scheme. Using an EdDSA signature scheme allows the protocol and clients using the protocol to run more efficiently on established hardware. Unlike W-OTS, the Ed25519 signature scheme also allows for the re-use of private keys, and, with that, introduces _reusable addresses_ to the protocol. This change also dramatically reduces the transaction size, saving network bandwidth and processing time.
 
 ## Atomic Transactions
 

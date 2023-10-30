@@ -5,8 +5,7 @@ In this tutorial, you will learn how to interact with the IOTA Node Extension ([
 ### Prerequisites
 
 - Network
-  - Option 1: Running [Hornet Private Tangle](https://github.com/iotaledger/hornet/tree/develop/private_tangle) (Branch **develop** for the latest [Stardust](https://blog.shimmer.network/stardust-upgrade-in-a-nutshell/) features)
-  - Option 2: Running a node in [Shimmer Beta Network](https://blog.shimmer.network/shimmer-beta-network-is-live/)
+  - Running a node in [Shimmer Beta Network](https://blog.shimmer.network/shimmer-beta-network-is-live/)
 - Development Environment and Libraries
   - Installed [Node.js](https://nodejs.org/en/)
 

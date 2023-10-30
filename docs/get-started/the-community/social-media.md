@@ -7,12 +7,6 @@ description: IOTA has a thriving and active community on all popular social medi
 
 The IOTA project has established a social media presence on all popular social media channels. These are the presences handled by the IOTA Foundation:
 
-## Discord
-
-This is without doubt the most active community and with nearly 50,000 members a great place for everyone that wants to learn more about IOTA and get to know the people involved. A lot of IOTA Foundation Team members and also the Founders and members of the Board are active on Discord and take part in the community discussions and projects there. Every aspect of the project is covered here in separate channels and you can find the whole range of this amazing community from serious mathematics and cryptographic topic up to memes and Fun channels.
-Please join us there and get to know the amazing community behind the project by following this invite Link:
-[IOTA Discord](https://discord.iota.org)
-
 ## Twitter
 
 The official IOTA Foundation Twitter Account is this one here, which will provide the newest developments, announcements, and information regarding the IOTA Project:

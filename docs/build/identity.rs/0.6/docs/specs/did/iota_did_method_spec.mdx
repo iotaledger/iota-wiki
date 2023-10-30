@@ -338,7 +338,7 @@ Currently standardized `services`:
 
 ## Security Considerations
 
-The `did:iota` method is implemented on the [IOTA Tangle](https://iota.org), a public permissionless and feeless Distributed Ledger Technology (DLT), making it resistant against almost all censorship attack vectors. Up until the `Coordicide` update for the IOTA network, a reliability on the coordinator exists for resolving ordering conflicts. This has a minor censorship possibility, that, in the worst case, can prevent ordering conflicts from resolving to a DID. However, these can only be published by the owner of the private key and therefore does not constitute a usable attack vector. Lastly, a node may decide to censor DID messages locally, however a user can easily use another node.
+The `did:iota` method is implemented on the [IOTA Tangle](https://iota.org), a public permissionless and feeless Distributed Ledger Technology (DLT), making it resistant against almost all censorship attack vectors. Up until the `Coordicide` update for the IOTA network, a reliability on the _coordinator_ exists for resolving ordering conflicts. This has a minor censorship possibility, that, in the worst case, can prevent ordering conflicts from resolving to a DID. However, these can only be published by the owner of the private key and therefore does not constitute a usable attack vector. Lastly, a node may decide to censor DID messages locally, however a user can easily use another node.
 
 Since DID messages are always to be signed and the 'chain of custody' of the signing key can be traced throughout the identity lifespan, replay, message insertion, deletion, modification and man-in-the-middle attacks are prevented.
 

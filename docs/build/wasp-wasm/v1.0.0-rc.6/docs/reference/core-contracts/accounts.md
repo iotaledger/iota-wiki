@@ -60,6 +60,19 @@ amount must be able to cover the L1 storage deposit. Otherwise, it will fail.
 Transfers the specified allowance from the sender's L2 account to the given L2 account on
 the chain.
 
+:::note
+
+When a transfer is made into an EVM account, an EVM tx will be created on the EVM side from the zero address (0x0000...) to the target account.
+Information about what is being transferred will be encoded in the transaction's data using the following format:
+
+```
+<Sender_AgentID bytes> + <Assets bytes>
+```
+
+The encoding used for this data can be found on [TIP-51](https://github.com/jorgemmsilva/tips/blob/b46d7bc36a0f7d4c2a1ad32ba25ec2abb4835cb3/tips/TIP-0051/tip-0051.md)
+
+:::
+
 #### Parameters
 
 - `a` (`AgentID`): The target L2 account.

@@ -1,6 +1,6 @@
 ---
 description: An Overview and Introduction to the Governance of Shimmer and IOTA
-image: /img/learn/governance/shimmer-gov.png
+image: /img/learn/governance/iota_governance.png
 keywords:
   - Introduction
   - Shimmer
@@ -43,7 +43,7 @@ In this [Phase, the "Temperature check"](https://govern.iota.org/c/governance-pr
 
 #### Phase 3
 
-The Proposal will be uploaded to nodes in the IOTA or Shimmer network and displayed in the respective [Firefly Wallet](https://firefly.iota.org). Token holders can vote with SMR or IOTA tokens to accept or decline the proposal.
+The Proposal will be uploaded to _nodes_ in the IOTA or Shimmer network and displayed in the respective [Firefly Wallet](https://firefly.iota.org). Token holders can vote with SMR or IOTA tokens to accept or decline the proposal.
 
 ### The On-Chain voting functionality
 
@@ -53,7 +53,7 @@ This feature consists of 2 components:
 
 - This feature can be activated as a [plugin](/hornet/2.0/inx-plugins/participation/welcome) in every Hornet node and enables node operators to participate in the decentralized counting and verification of on-chain Governance votes.
   - Node operators can add proposals that are due for an on-chain vote through an easy interface by uploading the unique proposal ID to their node.
-  - The counting of votes is based on a time-based accumulation. For each milestone (every 5 seconds) that a node finds a vote on a UTXO Output, the SMR/IOTA tokens sitting on that output and the vote statement (proposal ID, question, and answer) are registered by the nodes and added to the count for that output in an internal database. This leads to a time-based growth of cast votes, meaning the longer a voter participates with tokens in a vote, the more votes are counted for the voter.
+  - The counting of votes is based on a time-based accumulation. For each _milestone_ (every 5 seconds) that a node finds a vote on a _UTXO_ Output, the SMR/IOTA tokens sitting on that output and the vote statement (proposal ID, question, and answer) are registered by the nodes and added to the count for that output in an internal database. This leads to a time-based growth of cast votes, meaning the longer a voter participates with tokens in a vote, the more votes are counted for the voter.
   - Node operators can always access this counting data and verify the correct counting of votes by comparing their count to other node operators' counts.
 
 #### The Firefly Governance function
@@ -64,7 +64,7 @@ This feature consists of 2 components:
 
 **Voting in Firefly works like this:**
 
-- For every Wallet of a Firefly profile, the user can define how many tokens should participate in Governance decisions. This amount of tokens creates Voting Power.
+- For every Wallet of a Firefly profile, the user can define how many tokens should participate in Governance decisions. This amount of tokens creates _Voting Power_.
 - To use this Voting Power, Firefly moves those tokens to a new output and locks them to participate in Governance votes. So, the tokens cannot be used to be spent on different things unless the user unlocks them again by decreasing the voting power, which frees those tokens.
 - Once the Firefly Wallet recognizes that a new proposal is present in the nodes it is connected to, it displays this proposal in the Governance Dashboard
   - **A Proposal passes through four different phases**:
@@ -75,7 +75,7 @@ This feature consists of 2 components:
 
 A detailed technical description of this voting functionality can be found in the [Governance - tech](./governance-tech.md) section of the Wiki.
 
-A detailed description of how to participate in Governance votes can be found in the [Firefly Governance Guide](./shimmer-firefly-governance-guide.md)
+A detailed description of how to participate in Governance votes can be found in the [Firefly Governance Guide](./firefly-governance-guide.md)
 
 ### Governance Resources
 

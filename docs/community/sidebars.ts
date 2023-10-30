@@ -2,24 +2,6 @@ module.exports = {
   learn: [
     {
       type: 'category',
-      label: 'Funding',
-      collapsed: true,
-      items: ['funding/edf-funding', 'funding/community-treasury'],
-    },
-    {
-      type: 'category',
-      label: 'The Community',
-      collapsed: true,
-      items: [
-        'the-community/how-to-support',
-        'the-community/discord',
-        'the-community/x-teams',
-        'the-community/git-hub',
-        'the-community/social-media',
-      ],
-    },
-    {
-      type: 'category',
       label: 'Contribute To Wiki',
       collapsed: true,
       items: [
@@ -45,6 +27,7 @@ module.exports = {
             'contribute-to-wiki/how_tos/write_a_good_tutorial',
             'contribute-to-wiki/how_tos/documentation_setup',
             'contribute-to-wiki/how_tos/how_to_write_how_tos',
+            'contribute-to-wiki/how_tos/versioning',
             'contribute-to-wiki/how_tos/request_tw',
             'contribute-to-wiki/how_tos/add_a_quiz',
           ],

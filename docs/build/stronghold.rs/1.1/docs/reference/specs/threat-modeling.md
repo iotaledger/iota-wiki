@@ -50,7 +50,7 @@ The sole asset of Stronghold is its secrets.
 ### High Importance
 
 - **Confidentiality**: Secrets are never revealed.
-- **Integrity**: Secrets cannot be modified, only deleted.
+- **_Integrity_**: Secrets cannot be modified, only deleted.
 - **Authentication**: Only authorized users can interact with secrets,
 
 ### Mid Importance

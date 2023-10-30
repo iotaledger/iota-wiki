@@ -14,7 +14,7 @@ keywords:
 
 # How Accounts Work
 
-On the L1 Ledger, like with any DLT, we have **trustless** and **atomic** transfers of assets between addresses on the
+On the L1 Ledger, like with any _DLT_, we have **trustless** and **atomic** transfers of assets between addresses on the
 ledger.
 
 Tokens controlled by an address can be moved to another address by providing a valid signature using the private key

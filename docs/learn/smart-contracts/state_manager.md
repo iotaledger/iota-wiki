@@ -12,7 +12,7 @@ keywords:
 # State Manager
 
 State manager aims at keeping the state of the node up to date by retrieving missing data and ensuring that it is
-consistently stored in the DB. It services requests by other Wasp components (consensus, mempool), which mainly
+consistently stored in the DB. It services requests by other Wasp components (consensus, _mempool_), which mainly
 consist of ensuring that the required state is available in the node: that it may be retrieved from the permanent
 store of the node (the database; DB). An obvious way to obtain the latest state is to obtain all of the blocks,
 that resulted in making that state. So to obtain state index `n`, state manager first must commit block index `0`

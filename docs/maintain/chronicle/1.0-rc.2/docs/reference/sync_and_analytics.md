@@ -22,7 +22,7 @@ When Chronicle starts for the first time, it stores the latest network protocol 
 
 ## Ledger State
 
-When Chronicle starts syncing, it will get the current Ledger State from the INX source. Though Chronicle can sync back to the earliest data the INX connection can provide, the data may not be valid until it catches up to the ledger index of that initial state.
+When Chronicle starts _syncing_, it will get the current _Ledger State_ from the INX source. Though Chronicle can sync back to the earliest data the INX connection can provide, the data may not be valid until it catches up to the ledger index of that initial state.
 
 ## Analytics
 

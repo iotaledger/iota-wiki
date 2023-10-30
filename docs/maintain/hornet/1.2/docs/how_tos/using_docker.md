@@ -115,7 +115,7 @@ To create this directory with correct permissions run the contained script:
 ### 4. Set dashboard credentials
 
 To access your Hornet dashboard, a set of credentials need to be configured.
-Run the following command to generate a password hash and salt for the dashboard:
+Run the following command to generate a password hash and _salt_ for the dashboard:
 
 ```
 docker compose run hornet tool pwd-hash

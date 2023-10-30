@@ -22,9 +22,9 @@ blocks to the network take part in a cooperative effort.
 Chrysalis has a fixed PoW difficulty factor for a unit of data submitted to the network. Therefore, the actual
 complexity of the challenge for a block is dependent on its length only.
 
-Stardust protocol design incorporates a dynamic PoW difficulty factor based on the congestion of the network. The added
+Stardust protocol design incorporates a _dynamic Pow_ difficulty factor based on the congestion of the network. The added
 utility of the protocol upgrade could result in higher network activity. If this load reaches a certain threshold near
-the limit of the network throughput capabilities, the protocol self-adjusts the PoW difficulty factor.
+the limit of the network _throughput_ capabilities, the protocol self-adjusts the PoW difficulty factor.
 When the load is reduced, the process reverses to lower the difficulty until the threshold is reached again.
 
 This mechanism will be supported by the network after the first ever fluid protocol upgrade, meaning the feature will
