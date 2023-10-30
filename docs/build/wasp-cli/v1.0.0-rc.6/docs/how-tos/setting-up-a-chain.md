@@ -72,7 +72,7 @@ wasp-cli request-funds
 You can deploy your IOTA Smart Contracts chain by running:
 
 ```shell
-wasp-cli chain deploy --peers=foo,bar,baz --chain=mychain --description="My chain" --block-keep-amount=10000
+wasp-cli chain deploy --peers=foo,bar,baz --chain=mychain --block-keep-amount=10000
 ```
 
 The names in `--peers=foo,bar,baz` correspond to the names of the node's trusted peers.
