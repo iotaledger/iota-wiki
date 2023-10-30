@@ -97,5 +97,5 @@ functionalities, introducing commands like `isc.send(...)` for token transfers.
 ### Gas Fees
 
 The used EVM gas is converted to ISC gas before being charged to the sender. The conversion ratio is configurable. The
-token used to pay for gas is the same token configured in the ISC chain (the L1's base token by default). The gas fee is debited from
+token used to pay for gas is the L1's base token. The gas fee is debited from
 the sender's L2 account and must be deposited beforehand.

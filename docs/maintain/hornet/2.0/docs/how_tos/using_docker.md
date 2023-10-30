@@ -31,7 +31,7 @@ It includes everything required to setup a public node accessible by wallets and
 - [inx-indexer](https://github.com/iotaledger/inx-indexer) - Indexer extension for wallets and applications.
 - [inx-mqtt](https://github.com/iotaledger/inx-mqtt) - MQTT extension providing the Event API.
 - [inx-participation](https://github.com/iotaledger/inx-participation) - Participation extension providing on-tangle-voting.
-- [inx-poi](https://github.com/iotaledger/inx-poi) - Extention to generate proofs of inclusion.
+- [inx-poi](https://github.com/iotaledger/inx-poi) - Extension to generate proofs of _inclusion_.
 - [inx-spammer](https://github.com/iotaledger/inx-spammer) - Network spammer.
 - [wasp](https://github.com/iotaledger/wasp) - L2 Node for IOTA Smart Contracts.
 
@@ -107,91 +107,8 @@ You can configure your node to either use HTTP or HTTPS. For publicly exposed no
 
 :::
 
-```sh
-# This is an example configuration file.
-# Keep this file as an example and make a working file with the following command:
-#
-#   cp env_template .env
-#
-# You can edit the .env file with a command like: 
-#
-#   nano .env 
-#
-# The .env file is your personal configuration and is used by Docker.
-#
-
-# HINT: You either have to choose a HTTP or a HTTPS setup.
-#       Do not uncomment lines in both sections.
-#
-
-######################
-# HTTP setup section #
-######################
-
-# The default port for the HTTP setup is 80. If you want to change that, uncomment the following line.
-#HTTP_PORT=8080
-
-# HTTP setup is exposed on localhost only by default.
-# If you want to expose it in your local network, specify the local IP address of the node in your network.
-#NODE_HOST=192.168.1.10
-
-#######################
-# HTTPS setup section #
-#######################
-
-# The following line needs to be uncommented to activate HTTPS (HTTP access will be deactivated).
-#COMPOSE_FILE=docker-compose.yml:docker-compose-https.yml
-
-# You need to specify your email address to automatically get a valid SSL certificate via "letsencrypt.org"
-#ACME_EMAIL=your-email@example.com
-
-# You need to specify the domain name of your node to automatically get a valid SSL certificate via "letsencrypt.org"
-#NODE_HOST=node.your-domain.com
-
-###################
-# network section #
-###################
-
-# Choose the correct network by uncommenting one of the following lines.
-#HORNET_CONFIG_FILE=config_mainnet.json
-#HORNET_CONFIG_FILE=config_shimmer.json
-#HORNET_CONFIG_FILE=config_testnet.json
-
-####################
-# profiles section #
-####################
-
-# Uncomment the following line to enable prometheus and grafana
-# Grafana will be available under <NODE_HOST>/grafana
-# WARNING: Do not forget to set a new password after the first start (default: admin/admin)
-#COMPOSE_PROFILES=${COMPOSE_PROFILES},monitoring
-
-# Uncomment the following line to enable the API endpoint for historical data of the legacy network.
-# Legacy API will be available under <NODE_HOST>/api/core/v0
-# You need to provide a legacy database under "data/database_legacy/". (Subfolders: "snapshot", "spent", "tangle")
-#COMPOSE_PROFILES=${COMPOSE_PROFILES},history-legacy
-
-# Uncomment the following line to enable the API endpoint for historical data of the chrysalis network.
-# Chrysalis API will be available under <NODE_HOST>/api/core/v1
-# You need to provide a chrysalis database under "data/database_chrysalis/". (Subfolders: "tangle", "utxo")
-#COMPOSE_PROFILES=${COMPOSE_PROFILES},history-chrysalis
-
-# Uncomment the following line to enable wasp
-# WASP API will be available under <NODE_HOST>/wasp/api
-# WASP Dashboard will be available under <NODE_HOST>/wasp/dashboard
-#COMPOSE_PROFILES=${COMPOSE_PROFILES},wasp
-
-#####################
-# Dashboard section #
-#####################
-
-# Choose a dashboard username (default: admin)
-#DASHBOARD_USERNAME=admin
-
-# Generate a new password and salt using the following command:
-#   docker compose run hornet tools pwd-hash
-#DASHBOARD_PASSWORD=0000000000000000000000000000000000000000000000000000000000000000
-#DASHBOARD_SALT=0000000000000000000000000000000000000000000000000000000000000000
+```sh reference
+https://github.com/iotaledger/node-docker-setup/blob/main/stardust/env_template
 ```
 
 ### 3. Setup neighbors

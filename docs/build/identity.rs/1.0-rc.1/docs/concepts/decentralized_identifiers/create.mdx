@@ -35,7 +35,7 @@ https://github.com/iotaledger/identity.rs/blob/main/bindings/wasm/examples/src/0
 </TabItem>
 </Tabs>
 
-This examples creates a new address with funds using the faucet on a private network. Next, it creates a new DID Document with a verification method. This DID Document is then published in an Alias Output making the DID available in the ledger state and resolvable by any node.
+This examples creates a new address with funds using the _faucet_ on a private network. Next, it creates a new DID Document with a verification method. This DID Document is then published in an Alias Output making the DID available in the ledger state and resolvable by any node.
 
 Note that using the faucet is only possible on private networks or public testnets. Once the Stardust update is released on the Shimmer network or the IOTA network, an output with actual Shimmer or IOTA funds is required to create a new Alias Output that represents a DID.
 
@@ -55,6 +55,6 @@ Once the transaction is confirmed, the `Alias ID` would be assigned and the DID 
 
 ## Running a private network
 
-In order to run the examples, a private network (sometimes also called a private Tangle) needs to run locally. You can refer to [Hornet wiki](/hornet/2.0/how_tos/private_tangle) for instructions on how to run a private network.
+In order to run the examples, a private network (sometimes also called a private Tangle) needs to run locally. You can refer to [Hornet wiki](https://github.com/iotaledger/hornet/tree/develop/private_tangle) for instructions on how to run a private network.
 
 If your local private network uses different ports than Hornet, modify the API and faucet endpoints in the examples to match your local setup.

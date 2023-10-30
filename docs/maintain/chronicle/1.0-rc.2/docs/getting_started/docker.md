@@ -7,7 +7,7 @@ keywords:
 
 # Run `INX Chronicle` using Docker
 
-This guide describes the necessary steps to set up and run `Chronicle` as an INX plugin of a `Hornet` node to persist Tangle data, gather time series analytics using `InfluxDB`, and display it in meaningful ways using `Grafana`.
+This guide describes the necessary steps to set up and run `Chronicle` as an INX plugin of a `Hornet` node to persist _Tangle_ data, gather time series analytics using `InfluxDB`, and display it in meaningful ways using `Grafana`.
 
 ## Prerequisites
 

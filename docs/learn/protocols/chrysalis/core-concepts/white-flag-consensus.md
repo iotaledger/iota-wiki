@@ -13,7 +13,7 @@ keywords:
 # White Flag Consensus
 
 The White Flag Consensus is a novel approach to handling conflicts within a blockchain network, particularly for
-transaction confirmation and double-spend handling.
+transaction _confirmation_ and double-spend handling.
 
 In many blockchain systems, the threat of double spends - attempts to spend the same digital tokens more than once -
 pose significant security concerns. White Flag Consensus offers an innovative solution to efficiently and
@@ -21,13 +21,13 @@ deterministically resolve these conflicts.
 
 ## Key Aspects of White Flag Consensus
 
-Unlike traditional consensus mechanisms that often require complex and resource-intensive calculations to decide which
-of the conflicting transactions to approve, White Flag Consensus simplifies this process.
+Unlike traditional _consensus_ mechanisms that often require complex and resource-intensive calculations to decide which
+of the _conflicting transactions_ to approve, White Flag Consensus simplifies this process.
 
-Under the White Flag approach, transactions are confirmed without any voting or other consensus mechanism to decide
+Under the White Flag approach, transactions are confirmed without any voting or other _consensus mechanism_ to decide
 between conflicting transactions. Instead, it uses a deterministic method that decides the confirmation order of
 transactions based on their appearance in the past milestone. In essence, it retroactively determines the
-order of transactions, removing the need for decision-making during the transaction confirmation phase.
+order of transactions, removing the need for decision-making during the _transaction confirmation_ phase.
 
 ## Handling Double Spends
 
@@ -40,10 +40,10 @@ This deterministic approach means that every node will reach the same state with
 
 The White Flag Consensus approach offers several key benefits:
 
-1. **Efficiency**: By removing the need for consensus voting, it can confirm transactions more quickly and with fewer
+1. **Efficiency**: By removing the need for _consensus_ voting, it can confirm transactions more quickly and with fewer
    computational resources.
 
-2. **Predictability**: Its deterministic nature makes the confirmation process predictable, as the state of the ledger
+2. **Predictability**: Its deterministic nature makes the __confirmation_ process_ predictable, as the state of the ledger
    after confirming a milestone does not depend on the order in which transactions are processed.
 
 3. **Security**: It provides a robust mechanism for handling double spends, enhancing the network's security.

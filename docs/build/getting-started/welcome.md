@@ -33,7 +33,7 @@ IOTA SDK offers a streamlined integration of IOTA functionality into your projec
 ### Cli Wallet
 
 The [cli-wallet](/cli-wallet/welcome) is a stateful Command Line Interface wrapper for the IOTA SDK that
-allows you to create a wallet, create and manage accounts, send value transactions, mint, burn, and receive native
+allows you to create a wallet, create and manage accounts, send _value transactions_, mint, burn, and receive native
 tokens and NFTs, and more.
 
 ### Identity
@@ -48,7 +48,7 @@ any object in a GDPR-compliant, cost-efficient, and privacy-enabling manner.
 
 The [IOTA Smart Contracts (ISC)](/learn/smart-contracts/introduction) bring scalable, flexible, and cost-effective smart
 contract functionality to the IOTA ecosystem. By anchoring multiple chains to the IOTA Tangle, ISC enables
-higher throughput and lower fees than traditional single-chain solutions. Users have the freedom to create custom
+higher _throughput_ and lower fees than traditional single-chain solutions. Users have the freedom to create custom
 chains with control over gas fees and privacy settings, and the platform is virtual machine-agnostic, supporting both
 [Rust/Wasm](/wasp-wasm/introduction) and [Solidity/EVM](/wasp-evm/introduction)
 smart contracts.

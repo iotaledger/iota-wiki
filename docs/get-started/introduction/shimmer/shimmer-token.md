@@ -15,7 +15,7 @@ keywords:
 
 # Shimmer Token
 
-Similar to the [IOTA token](../iota/iota-token.md), the Shimmer token (SMR) also acts as a medium for value exchange, has no inflation,
+Similar to the [IOTA token](../iota/iota-token.md), the Shimmer token (SMR) also acts as a medium for value exchange, has no _inflation_,
 and is not subject to any fees. However, unlike the IOTA token, SMR could not be bought beforehand in an ICO but was
 only distributed to IOTA token holders who staked their tokens during the Shimmer staking periods on the IOTA mainnet.
 

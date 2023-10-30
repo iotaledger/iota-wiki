@@ -25,13 +25,13 @@ itself.
 
 In Chrysalis an output consists of a `{tokens, address}` pair, therefore all you can do with outputs is define their
 owner and who is allowed to unlock them. There is no restrictions whatsoever on what one might do with the funds in
-a transaction once the output is unlocked. This is what we call the cryptocurrency application, or in simple words,
+a transaction once the output is unlocked. This is what we call the _cryptocurrency_ application, or in simple words,
 digital cash.
 
 Stardust introduces new output types that are more expressive:
 
 - output types define additional fields for outputs,
-- output unlocking is configurable via unlock conditions, moreover, output types might define additional unlocking constraints based on the context of transaction that tries to unlock them.
+- output unlocking is configurable via _unlock conditions_, moreover, output types might define additional unlocking constraints based on the context of transaction that tries to unlock them.
 
 At first glance, this might look as just a small improvement, but notice that if we can
 

@@ -11,7 +11,11 @@
   display: flex;
   align-items: stretch;
   justify-content: space-between;
-  margin-bottom: 8px;
+  margin-bottom: 16px;
+}
+
+.tutorial-filters__row {
+  padding-top: 20px;
 }
 
 .tutorial-filter__search {

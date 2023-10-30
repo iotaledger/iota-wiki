@@ -1,8 +1,8 @@
 # Validators, Their Selection and Rotation
 
-Validators are special nodes that issue validation blocks to enable the entire network to agree on the ledger's state and the set of blocks in the Tangle. Validators directly contribute to the progress of the ledger and its security, and in turn, they are rewarded with Mana. The primary [responsibilities of validators](#responsibilities-and-actions-of-validators) include determining the inclusion of blocks in the Tangle, validating transactions, resolving double spends, and finalizing slot commitments.
+Validators are special _nodes_ that issue _validation blocks_ to enable the entire network to agree on the ledger's state and the set of blocks in the _Tangle_. Validators directly contribute to the progress of the ledger and its security, and in turn, they are rewarded with Mana. The primary [responsibilities of validators](#responsibilities-and-actions-of-validators) include determining the inclusion of blocks in the _Tangle_, validating transactions, resolving double spends, and finalizing _slot_ commitments.
 
-IOTA 2.0 uses Delegated Proof-of-Stake (DPoS) to determine which validators secure the network. For each epoch, a committee selection procedure determines a subset of all available validators to carry out the consensus protocol during the epoch. The validators included in the subset are referred to as the committee members for the epoch.
+IOTA 2.0 uses Delegated Proof-of-Stake (DPoS) to determine which validators secure the network. For each _epoch_, a committee selection procedure determines a subset of all available validators to carry out the _consensus_ protocol during the epoch. The validators included in the subset are referred to as the committee members for the epoch.
 
 ## The Role of Validators and Committees
 
@@ -10,7 +10,7 @@ Validators and committees bring several important properties to the IOTA 2.0 pro
 
 ### Security
 
-Validators and committees prevent double spending and malicious manipulation of the consensus. Both validator and non-validator nodes accept blocks and transactions approved by the committee and follow the slot commitment chain adopted by a majority of the committee.
+Validators and committees prevent double spending and malicious manipulation of the consensus. Both _validator_ and non-validator nodes accept blocks and transactions approved by the committee and follow the _slot commitment chain_ adopted by a majority of the committee.
 
 ### Ledger Progress
 
@@ -18,7 +18,7 @@ The ledger needs to be not only secure but also live, i.e., transactions issued 
 
 ### Efficient Consensus
 
-The bounded size of a committee reduces the number of blocks required to reach an agreement in the network. Since the outcome of the IOTA 2.0 [consensus protocol](consensus/introduction.md) is solely based on the validation blocks, this allows for fast confirmation times and reasonable communication complexity.
+The bounded size of a committee reduces the number of blocks required to reach an agreement in the network. Since the outcome of the IOTA 2.0 [consensus protocol](consensus/introduction.md) is solely based on the validation blocks, this allows for fast _confirmation_ times and reasonable communication complexity.
 
 ### Decentralized Democracy
 
@@ -39,7 +39,7 @@ The timeline of this process is depicted below (the actual duration of each peri
 
 ### Registration
 
-To register as a validator for epoch $e$, an actor has to issue a block with a transaction that mutates an account to add a corresponding staking feature. Both block and transaction have to be issued before `epochStart-epochSetupDuration-activityDuration`, where `epochStart` is the beginning of epoch $e$. The registration must provide the following information:
+To register as a validator for epoch $e$, an actor has to issue a block with a transaction that mutates an account to add a corresponding _staking_ feature. Both block and transaction have to be issued before `epochStart-epochSetupDuration-activityDuration`, where `epochStart` is the beginning of epoch $e$. The registration must provide the following information:
 
 - **Account ID**: A human-readable identifier of the actor.
 - **Profit Margin**: A fixed fraction of combined validator’s and delegators’ rewards that intends to be retained by the actor.
@@ -59,9 +59,9 @@ The stake of each validator is the sum of the locked funds and the delegated sta
 
 Then, the next committee is formed by taking `committeeTotalSeats` validators who have the largest stake in $\mathbf{S}(e)$. When deciding between equal stakeholders, ties are broken deterministically by using a hash function. The voting weight of all selected committee members is equal to $1$.
 
-The selected committee will become the actual committee for epoch $e$ only if the slot that ends `epochStart-epochSetupDuration` (slot $s$ in the image) is finalized during epoch $e-1$. Otherwise, the committee of epoch $e-1$ becomes the committee of epoch $e$. The committee is naturally incentivized to finalize that slot since the [rewards](#rewards-and-incentives) will not be paid for the following epochs and the locked funds remain locked until finalization happens.
+The selected committee will become the actual committee for epoch $e$ only if the slot that ends `epochStart-epochSetupDuration` (slot $s$ in the image) is finalized during epoch $e-1$. Otherwise, the committee of epoch $e-1$ becomes the committee of epoch $e$. The committee is naturally incentivized to finalize that slot since the [rewards](#rewards-and-incentives) will not be paid for the following epochs and the locked funds remain locked until _finalization_ happens.
 
-Therefore, committees evolve across epochs due to changes in the delegation of stake and the set of active validators.
+Therefore, committees evolve across epochs due to changes in the _delegation_ of stake and the set of active validators.
 
 :::note Upcoming Updates
 
@@ -71,7 +71,7 @@ The committee selection procedure will be changed in one of the next upgrades. E
 
 ## Responsibilities and Actions of Validators
 
-The main responsibility of validators is to issue validation blocks. The congestion control component of the protocol ensures that the members of an epoch committee have a guaranteed throughput allowance without burning any Mana during the epoch. To provide high-quality service, validation blocks should satisfy certain properties:
+The main responsibility of validators is to issue validation blocks. The congestion control component of the protocol ensures that the members of an epoch committee have a guaranteed _throughput_ allowance without burning any _Mana_ during the epoch. To provide high-quality service, validation blocks should satisfy certain properties:
 
 ### Regular Block Issuance
 
@@ -79,9 +79,9 @@ The timestamp difference between two consecutive validation blocks by a given co
 
 ### Proper Referencing
 
-Since only validation blocks are important for the consensus for IOTA 2.0, epoch committee members use a [tip selection algorithm](consensus/tip-selection-algorithm.md) with an increased number of parents:
+Since only validation blocks are important for the _consensus_ for IOTA 2.0, epoch committee members use a [tip selection algorithm](consensus/tip-selection-algorithm.md) with an increased number of _parents_:
 
-- Uniform tip selection algorithm: committee members should select uniformly at random `blockTypeValidatorMaxParent` eligible blocks in their tip pool as strong parents.
+- Uniform _tip selection_ algorithm: committee members should select uniformly at random `blockTypeValidatorMaxParent` eligible blocks in their _tip pool_ as strong parents.
 
 ### Correct Voting
 
@@ -118,7 +118,7 @@ More details about Mana rewards and incentives can be found in [Tokenomics: Mana
 
 ## Handling Misbehavior and Adversarial Validators
 
-In general, the consensus protocol in IOTA 2.0 handles adversarial validators with at most $1/3$ of the total voting weight, where adversarial actors can misbehave. Here are some examples of adversarial misbehavior and how the protocol can handle them:
+In general, the consensus protocol in IOTA 2.0 handles _adversarial validators_ with at most $1/3$ of the total voting weight, where adversarial actors can misbehave. Here are some examples of adversarial misbehavior and how the protocol can handle them:
 
 ### Censoring Valid Blocks
 
@@ -126,7 +126,7 @@ An adversarial committee member could censor a valid block by not referencing it
 
 ### Stop Issuing Blocks
 
-Adversarial validators can stop issuing validation blocks. In this case, the Tangle and the ledger will not stop growing since block and transaction acceptance requires only approval from the "online" committee. In addition, validators, who didn't issue validation blocks regularly, will get fewer rewards, if any.
+_Adversarial validators_ can stop issuing validation blocks. In this case, the _Tangle_ and the ledger will not stop growing since block and transaction acceptance requires only approval from the "online" committee. In addition, validators, who didn't issue validation blocks regularly, will get fewer rewards, if any.
 
 ### Manipulation With Slot Commitment Chains
 
@@ -136,4 +136,4 @@ It is easy for the adversary to create many competing slot commitment chains. Re
 
 #### Incorrect extension of the chain
 
-Suppose the adversary produces a slot commitment prematurely (e.g., not all conflicting transactions within the slot are resolved). In that case, the honest committee members will keep the corresponding block in the waiting tip pool to verify its accuracy once the respected slot becomes committable. Blocks with incorrect slot commitments will ultimately be discarded from the tip pool.
+Suppose the adversary produces a slot commitment prematurely (e.g., not all _conflicting transactions_ within the slot are resolved). In that case, the honest committee members will keep the corresponding block in the waiting _tip_ pool to verify its accuracy once the respected slot becomes committable. Blocks with incorrect slot commitments will ultimately be discarded from the _tip_ pool.

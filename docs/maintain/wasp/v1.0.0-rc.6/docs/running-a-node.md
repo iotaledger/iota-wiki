@@ -15,7 +15,7 @@ keywords:
 
 # Running a Node
 
-As Wasp is an INX plugin, you must run the wasp node alongside your hornet node. You can use the simple docker-compose setup to do so.
+As Wasp is an INX plugin, you must run the wasp node alongside your _hornet node_. You can use the simple docker-compose setup to do so.
 
 ## Set Up
 

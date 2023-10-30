@@ -236,7 +236,7 @@ cryptographic signature verification outcome.”
 
 ### Gatekeeper
 
-The official MacOS Application verifier and Anti-Malware service verifies integrity and developer signatures,
+The official MacOS Application verifier and Anti-Malware service verifies _integrity_ and developer signatures,
 and manages the “quarantine” flag on downloaded files.
 
 ### Riddle&Code Secure Element

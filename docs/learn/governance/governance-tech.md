@@ -12,7 +12,7 @@ keywords:
   - Governance
 ---
 
-On-chain governance is essential for any decentralized DLT. The ability to make decisions through voting functionalities executed on the Blockchain / DAG removes a centralization point and gives token holders the power to make their own decisions. IOTA and Shimmer token holders can now engage in governance with the Firefly Wallet.
+On-chain governance is essential for any decentralized _DLT_. The ability to make decisions through voting functionalities executed on the Blockchain / _DAG_ removes a centralization point and gives token holders the power to make their own decisions. IOTA and Shimmer token holders can now engage in governance with the Firefly Wallet.
 With the support of the IOTA Foundation, the community has developed a highly flexible and secure system for casting votes directly on the Tangle
 through the Firefly Wallet while votes are counted in the network’s Hornet nodes.
 
@@ -22,7 +22,7 @@ The Voting phase of a governance vote is divided into four stages:
 
 - **1. Proposal announcement:** Upon publishing the voting ballot to the [GitHub repository](https://github.com/iota-community/governance-participation-events), [Hornet](/hornet/welcome) node operators can activate the voting ballot in their nodes’ Participation Plugin to be prepared to count any votes that are cast.
 - **2. Voting Open:** The Voting Open stage lasts seven days and starts when a predefined milestone in the network is reached. After the network has passed this milestone, users can cast, change, revoke, or redo the vote using the governance functionality of the Firefly wallet. It's important to note that opinion changes during this timeframe will not affect the final vote count. Ideally, voters should vote before the next stage begins to ensure the highest possible vote count.
-- **3. Counting Start:** This directly follows the Voting Open stage. The node software counts the user's vote, which gains weight with increasing holding time at every milestone passed (a milestone is issued every five seconds). If the voter holds their vote for the predefined number of milestones, they will reach 100% of the possible votes related to their voting power (i.e., the number of tokens they have used in the vote). If users change their vote in this stage, the participation plugin updates these changes from the time when they were made. However, the previously counted votes are still valid and do not change, even if the voter’s opinion or voting power changes (examples are provided below for clarification).
+- **3. Counting Start:** This directly follows the Voting Open stage. The node software counts the user's vote, which gains weight with increasing holding time at every milestone passed (a milestone is issued every five seconds). If the voter holds their vote for the predefined number of milestones, they will reach 100% of the possible votes related to their _voting power_ (i.e., the number of tokens they have used in the vote). If users change their vote in this stage, the participation plugin updates these changes from the time when they were made. However, the previously counted votes are still valid and do not change, even if the voter’s opinion or voting power changes (examples are provided below for clarification).
 - **4. Counting Stops:** The accumulation of votes ends. All nodes will now be able to produce and verify the final result of the vote.
 
 ### Voting Details
@@ -96,7 +96,7 @@ due to the potential volatility of the Token price during the seven-day counting
 #### Voting weight examples
 
 Let's look at some examples of voting weight based on different variables.
-If the counting phase is seven days and a user has a balance of 100 SMR in their Shimmer Firefly wallet that they allocate as voting power:
+If the counting phase is seven days and a user has a _balance_of 100 SMR in their Shimmer Firefly wallet that they allocate as voting power:
 
 - Using the tokens to vote for the full seven days of the counting phase leads to 100% of the possible votes being attributed.
 - Holding the tokens for only six consecutive days out of a total of seven days accumulates only around 85.7% (6/7) of the maximum possible votes.
@@ -107,7 +107,7 @@ If the counting phase is seven days and a user has a balance of 100 SMR in their
 
 ![Voting weight examples](/img/learn/governance/vote_graphic03.png)
 
-This solution ensures that voters always have control over their tokens. The tokens never leave the user’s wallet and are never locked or unusable, and owners can remove, send, revoke, or change their opinion on them at any time, even during the counting phase, following familiar Firefly staking rules.
+This solution ensures that voters always have control over their tokens. The tokens never leave the user’s wallet and are never locked or unusable, and owners can remove, send, revoke, or change their opinion on them at any time, even during the counting phase, following familiar Firefly _staking_ rules.
 
 #### Creating and adding new governance events
 
@@ -116,7 +116,7 @@ In contrast to the earlier voting system developed, the current version does not
 
 - Create a governance event following the [specifications for participation events](https://github.com/iota-community/treasury/blob/main/specifications/hornet-participation-plugin.md)
 - Add this governance event to a Hornet node with the [INX Participation Plugin](/hornet/2.0/inx-plugins/participation/welcome)
-- Add this governance event to the Firefly wallet by connecting the Wallet to a node that carries this event and use the [“add event”](./shimmer-firefly-governance-guide.md#6-adding-custom-community-proposals-to-firefly) function in the Governance section
+- Add this governance event to the Firefly wallet by connecting the Wallet to a node that carries this event and use the [“add event”](./firefly-governance-guide.md#6-adding-custom-community-proposals-to-firefly) function in the Governance section
 - Vote on this event with tokens
 
 Community members, projects, or other ecosystem participants can create governance events and invite the token holders to participate in such votes.

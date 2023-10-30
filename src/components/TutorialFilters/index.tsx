@@ -7,10 +7,10 @@ import { useAllPluginInstancesData } from '@docusaurus/useGlobalData';
 import useIsBrowser from '@docusaurus/useIsBrowser';
 import SearchBar, { readSearchName } from '../SearchBar';
 import { sortBy } from '@site/src/utils/jsUtils';
+import { Collapsible, useCollapsible } from '@docusaurus/theme-common';
 
 import './styles.css';
 
-import Collapsible from 'react-collapsible';
 import { NormalizedOptions as Tutorial } from '@iota-wiki/plugin-tutorial';
 import { TagCategories } from '@site/src/utils/tags';
 
@@ -119,15 +119,19 @@ export function prepareUserState(): UserState | undefined {
   return undefined;
 }
 
+export function useGetActiveTags() {
+  const location = useLocation();
+  return useMemo(() => readSearchTags(location.search), [location]);
+}
+
 export function useFilteredTutorials() {
   const location = useLocation<UserState>();
-  // On SSR / first mount (hydration) no tag is selected
-  const [selectedTags, setSelectedTags] = useState<string[]>([]);
   const [searchName, setSearchName] = useState<string | null>(null);
+  // On SSR / first mount (hydration) no tag is selected
+  const selectedTags = useGetActiveTags();
   // Sync tags from QS to state (delayed on purpose to avoid SSR/Client
   // hydration mismatch)
   useEffect(() => {
-    setSelectedTags(readSearchTags(location.search));
     setSearchName(readSearchName(location.search));
     restoreUserState(location.state);
   }, [location]);
@@ -154,14 +158,14 @@ function TutorialFilters() {
   const history = useHistory();
   const filteredTutorials = useFilteredTutorials();
   const siteCountPlural = useSiteCountPlural();
-
-  const [isOpen, setIsOpen] = useState(false);
+  const { collapsed, toggleCollapsed } = useCollapsible({ initialState: true });
+  const collapsibleAnimation = { duration: 400, easing: 'linear' };
+  const selectedTags = useGetActiveTags();
 
   const changeTags = useCallback(
     (_, actionMeta) => {
       const items = getItems(actionMeta);
-      const tags = readSearchTags(location.search);
-      const newTags = toggleListItem(tags, items);
+      const newTags = toggleListItem(selectedTags, items);
       const newSearch = replaceSearchTags(location.search, newTags);
       history.push({
         ...location,
@@ -190,25 +194,34 @@ function TutorialFilters() {
         <SearchBar className='tutorial-filter__search' />
         <button
           className='button tutorial-filter__toggle'
-          onClick={() => setIsOpen(!isOpen)}
+          onClick={toggleCollapsed}
         >
           <span className='material-icons'>filter_list</span>
           <span className='tutorial-filter__toggle-label'>Filter</span>
         </button>
       </div>
-      <Collapsible trigger='' triggerDisabled={true} open={isOpen}>
-        <div className='row'>
-          {Array.from(TagCategories.entries()).map(([category, tags]) => (
-            <div className='col' key={category}>
-              <span>{category}</span>
-              <Select
-                placeholder={null}
-                options={tags}
-                {...selectProps}
-                isSearchable={false}
-              />
-            </div>
-          ))}
+      <Collapsible
+        lazy={true}
+        collapsed={collapsed}
+        animation={collapsibleAnimation}
+      >
+        <div className='row tutorial-filters__row'>
+          {Array.from(TagCategories.entries()).map(([category, tags]) => {
+            const value = tags.filter((tag) =>
+              selectedTags.includes(tag.value),
+            );
+            return (
+              <div className='col' key={category}>
+                <h5>{category}</h5>
+                <Select
+                  placeholder={null}
+                  options={tags}
+                  {...selectProps}
+                  value={value}
+                />
+              </div>
+            );
+          })}
         </div>
       </Collapsible>
       <div className='row results-row margin-horiz--none margin-top--sm margin-bottom--lg'>
