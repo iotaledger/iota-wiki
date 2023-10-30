@@ -76,7 +76,7 @@
 }
 
 .react-select__option {
-  cursor: pointer!important;
+  cursor: pointer !important;
 }
 
 .react-select__option--is-focused {
