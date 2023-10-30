@@ -13,7 +13,7 @@ export function useResults(state: ManaCalculatorProps) {
     state.finalEpoch,
   );
 
-  let additionalTPS = calculateTPS(passiveRewards, state.congestion);
+  const additionalTPS = calculateTPS(passiveRewards, state.congestion);
 
   if (state.userType == UserType.DELEGATOR) {
     const manaGenerated = calculateManaRewards(
@@ -27,15 +27,8 @@ export function useResults(state: ManaCalculatorProps) {
       state.network,
     );
 
-    let passiveRewards = calculatePassiveRewards(
-      state.stake,
-      state.initialEpoch,
-      state.finalEpoch,
-    );
-
-    let grantedTPS = calculateTPS(manaGenerated, state.congestion);
-
-    let totalTPS = grantedTPS + additionalTPS;
+    const grantedTPS = calculateTPS(manaGenerated, state.congestion);
+    const totalTPS = grantedTPS + additionalTPS;
 
     return {
       manaGenerated,
@@ -62,8 +55,8 @@ export function useResults(state: ManaCalculatorProps) {
     );
 
     const grantedTPS = calculateTPS(manaGenerated, state.congestion);
-
     const totalTPS = grantedTPS + additionalTPS;
+
     return {
       manaGenerated,
       passiveRewards,
