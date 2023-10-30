@@ -1,4 +1,5 @@
 import { createContext, useContext } from 'react';
+import { ManagerProps } from 'react-popper';
 import { CongestionType, NetworkType, UserType } from '../enums';
 import { ManaCalculatorProps, ValidatorProps } from '../types';
 import { toMicro } from '../utils';
@@ -6,7 +7,10 @@ import { toMicro } from '../utils';
 export const ManaStateContext = createContext(null);
 
 export function useManaState() {
-  const { setState, state } = useContext(ManaStateContext);
+  const { setState, state } = useContext<{
+    setState: (state: ManaCalculatorProps) => void;
+    state: ManaCalculatorProps;
+  }>(ManaStateContext);
 
   function handleDelete(id: number) {
     const validators = state.validators.filter((_, i) => i !== id);
@@ -64,7 +68,7 @@ export function useManaState() {
   function handleOwnStakeChange(value: number) {
     setState({
       ...state,
-      stake: value,
+      stakedOrDelegatedTokens: value,
     });
   }
 
@@ -152,6 +156,10 @@ export function useManaState() {
     setState({ ...state });
   }
 
+  function handleOwnHoldChange(value: number) {
+    setState({ ...state, holdedTokens: value });
+  }
+
   return {
     state,
     handleDelete,
@@ -172,6 +180,7 @@ export function useManaState() {
     handleOwnStakeChange,
     handlePFChange,
     handleValidatorChange,
+    handleOwnHoldChange,
   };
 }
 
@@ -203,7 +212,8 @@ export function getDefaultParameters(
     ],
     userType: UserType.DELEGATOR,
     congestion: CongestionType.LOW,
-    stake: toMicro(100),
+    stakedOrDelegatedTokens: toMicro(100),
+    holdedTokens: toMicro(100),
     delegator: {
       validator: 0,
     },

@@ -8,7 +8,7 @@ import { ManaCalculatorProps, ValidatorParameters } from '../types';
 
 export function useResults(state: ManaCalculatorProps) {
   const passiveRewards = calculatePassiveRewards(
-    state.stake,
+    state.holdedTokens,
     state.initialEpoch,
     state.finalEpoch,
   );
@@ -17,7 +17,7 @@ export function useResults(state: ManaCalculatorProps) {
 
   if (state.userType == UserType.DELEGATOR) {
     const manaGenerated = calculateManaRewards(
-      state.stake,
+      state.stakedOrDelegatedTokens,
       state.delegator.validator,
       null,
       state.validators,
@@ -37,7 +37,7 @@ export function useResults(state: ManaCalculatorProps) {
     };
   } else {
     const manaGenerated = calculateManaRewards(
-      state.stake,
+      state.stakedOrDelegatedTokens,
       state.delegator.validator,
       {
         performanceFactor: state.validator.performanceFactor,
