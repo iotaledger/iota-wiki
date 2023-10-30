@@ -2,24 +2,6 @@ module.exports = {
   learn: [
     {
       type: 'category',
-      label: 'Funding',
-      collapsed: true,
-      items: ['funding/edf-funding', 'funding/community-treasury'],
-    },
-    {
-      type: 'category',
-      label: 'The Community',
-      collapsed: true,
-      items: [
-        'the-community/how-to-support',
-        'the-community/discord',
-        'the-community/x-teams',
-        'the-community/git-hub',
-        'the-community/social-media',
-      ],
-    },
-    {
-      type: 'category',
       label: 'Contribute To Wiki',
       collapsed: true,
       items: [

@@ -11,4 +11,4 @@ This is documentation section about IOTA documentation: what we write and how we
 
 ## Chat with Us
 
-IOTA Wiki maintainers hang out in the `#iota-wiki` channel of the [IOTA Discord server](../the-community/discord.md). You can always leave your feedback there or talk with a programmer, an artist, or a technical writer about your contribution.
+IOTA Wiki maintainers hang out in the `#iota-wiki` channel of the [IOTA Discord server](/get-started/the-community/discord#join-the-iota-discord). You can always leave your feedback there or talk with a programmer, an artist, or a technical writer about your contribution.

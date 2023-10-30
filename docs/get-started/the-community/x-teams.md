@@ -17,7 +17,8 @@ At the IOTA Foundation, we want to open up a feedback loop between our internal 
 
 As a member of the IOTA Experience Team, you won’t be met with demands or endless formalities. By participating in the IOTA X-Teams, you will be empowered to speak as a voice for the community and guide development processes. And at the end of the day, you will have helped yourself, the IOTA Foundation, and the whole community to more solid, intuitive, and useful technologies.
 
-The IOTA X-Teams offer the possibility for engaged community members to take a more active part in the IOTA Project. The 100 % community-driven approach gives members the chance to organize Teams and work together on all kinds of tasks to strengthen the IOTA Ecosystem.
+The IOTA X-Teams offer the possibility for engaged community members to take a more active part in the IOTA Project(for example in preparing software for its
+transition from Alpha to a Full Release). The 100 % community-driven approach gives members the chance to organize Teams and work together on all kinds of tasks to strengthen the IOTA Ecosystem.
 
 The IOTA Foundation engages here with the members and a lot of successful projects and developments have emerged out of this space already.
 

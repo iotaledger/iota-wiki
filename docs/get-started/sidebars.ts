@@ -35,14 +35,28 @@ module.exports = {
       ],
     },
     {
-      type: 'doc',
-      label: 'Community Links',
-      id: 'community-links',
+      type: 'category',
+      label: 'The Community',
+      link: {
+        type: 'doc',
+        id: 'the-community/community-links',
+      },
+      collapsed: true,
+      items: [
+        'the-community/how-to-support',
+        'the-community/discord',
+        'the-community/x-teams',
+        'the-community/social-media',
+      ],
     },
     {
       type: 'category',
-      label: 'Programs',
-      items: ['programs/touchpoint', 'programs/bug-bounties'],
+      label: 'Programs & Funding',
+      items: [
+        'programs/touchpoint',
+        'programs/bug-bounties',
+        'programs/community-treasury',
+      ],
     },
     {
       type: 'category',
