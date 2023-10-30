@@ -98,6 +98,10 @@ The IOTA Wiki is maintained by the IF and community contributions are always wel
 
 Have a look at [CONTRIBUTING](.github/CONTRIBUTING.md) for further guidance.
 
+### Versioning
+
+To find out how to version your docs, read [this guide](https://wiki.iota.org/community/contribute-to-wiki/how_tos/versioning).
+
 ### Online one-click setup for contributing
 
 You can use Gitpod (a free, online, VS Code-like IDE) for contributing. With a single click it will prepare everything you need to build and contribute to the Wiki. Just click on this button and skip step 1 from above.
