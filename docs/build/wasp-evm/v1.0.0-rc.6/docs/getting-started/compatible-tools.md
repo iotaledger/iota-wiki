@@ -27,7 +27,7 @@ directly with an IOTA Smart Contracts chain running EVM as long as you take a co
 1. Please make sure you use the correct JSON-RPC endpoint URL in your tooling for your chain. You can find the JSON-RPC
    endpoint URL in the Wasp dashboard (`<URL>/wasp/dashboard` when using `node-docker-setup`).
 2. Please ensure you use the correct `Chain ID` configured while starting the JSON-RPC service. If you did not
-   explicitly define this while starting the service, the default Chain ID will be `1072`.
+   explicitly define this while starting the service, the default Chain ID will be `1073`.
 3. Fees are being handled on the IOTA Smart Contracts chain level, not the EVM level. Because of this, you can simply
    use a gas price of 0 on the EVM level at this time.
 
@@ -67,7 +67,7 @@ For example this would be the config to add the [Public Testnet](/build/networks
 
 - Network Name: `Public Testnet`
 - New RPC URL: `https://json-rpc.evm.testnet.shimmer.network/`
-- Chain ID: `1072`
+- Chain ID: `1073`
 - Currency Symbol: `SMR`
 - Block Explorer URL: `https://explorer.evm.testnet.shimmer.network/`
 
@@ -107,7 +107,7 @@ make sure you add the correct network parameters to your `hardhat.config.js`, fo
 networks: {
     'shimmerevm-testnet': {
       url: 'https://json-rpc.evm.testnet.shimmer.network',
-      chainId: 1072,
+      chainId: 1073,
       accounts: [priv_key],
     },
 }
