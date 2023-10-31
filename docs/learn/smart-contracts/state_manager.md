@@ -82,10 +82,10 @@ value must be considerably smaller than `stateManager.pruningMinStatesToKeep`.
 
 ## Obtaining blocks
 
-Requests to state manager contain the state commitment and the state manager must ensure, that block (state) with this
+Requests to the state manager contain the state commitment and the state manager must ensure, that block (state) with this
 commitment is present in the DB. It is possible that to satisfy the request state manager needs to retrieve
 several blocks. However this cannot be done in one step as only the commitment of the requested block is known. For this
-reason state (block) contains a commitment of previous block. Previous block must be committed prior to committing the
+reason state (block) contains a commitment of the previous block. Previous block must be committed prior to committing the
 requested block. And this logic can be extended up to the block, which is already present in the DB, or until the origin
 state is reached.
 
