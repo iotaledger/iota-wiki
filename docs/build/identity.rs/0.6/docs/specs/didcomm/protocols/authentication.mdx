@@ -72,7 +72,7 @@ Sent to initiate the authentication process. This MUST be a [signed DIDComm mess
 
 [^1] The signing key used for the [signed DIDComm envelope][sdm] wrapping this message MUST be an [authentication method][auth_method] in the DID document corresponding to `did`, as per the [DIDComm specification][didcomm_keys].
 
-[^2] The `upgradeEncryption` field allows negotiation of whether or not to use [sender authenticated encryption][sae] for the [authentication](#authentication) protocol and for all messages that follow it. It is RECOMMENDED to specify `"required"` as it offers various guarantees of continuous authentication and payload integrity for every message. The available options are:
+[^2] The `upgradeEncryption` field allows negotiation of whether or not to use [sender authenticated encryption][sae] for the [authentication](#authentication) protocol and for all messages that follow it. It is RECOMMENDED to specify `"required"` as it offers various guarantees of continuous authentication and payload _integrity_ for every message. The available options are:
 
 - `"required"`: the [responder](#roles) MUST initiate [sender authenticated encryption][sae], from the following [authentication-response](#authentication-response) message onwards, or send a problem-report.
 - `"optional"`: the [responder](#roles) chooses whether or not to use [sender authenticated encryption][sae].

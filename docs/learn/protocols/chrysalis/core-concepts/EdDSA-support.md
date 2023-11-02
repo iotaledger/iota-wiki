@@ -28,7 +28,7 @@ message security in modern networking and storage applications.
 
 ### Reusable Addresses
 
-One of the major benefits of supporting Ed25519 in a protocol is the introduction of reusable addresses. Unlike some
+One of the major benefits of supporting Ed25519 in a protocol is the introduction of _reusable addresses_. Unlike some
 cryptographic systems that mandate a new address for every transaction, Ed25519 allows for re-using private keys.
 This means that users can use the same address across multiple transactions, greatly simplifying the process of managing
 transactions.

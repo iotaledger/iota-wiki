@@ -56,7 +56,7 @@ ISC can be deployed as multiple Layer 2 (L2) chains, unlike many other projects 
 
 - [L1 is not congested with smart contracts](/learn/smart-contracts/introduction/#scalable-smart-contracts).
 - Since L1 is not limited by the speed of the smart contract VM, transactions per second (TPS) increase significantly.
-- No maximal extractable value (MEV). No front-running or sandwich attacks, resulting in a “fairer” DeFi environment. A set fee and randomization of transactions are included in blocks, making MEV impossible.
+- No maximal extractable value (_MEV_). No front-running or sandwich attacks, resulting in a “fairer” DeFi_environment. A set fee and randomization of transactions are included in blocks, making _MEV_ impossible.
 - Native randomness beacon (random number generator, or RNG). This is freely available to all dApps, removing the need for expensive, trusted third-party RNGs.
 - L1 smart contracts are complex on a [DAG](/get-started/introduction/iota/introduction#the-tangle) as the order of events is less apparent than on a regular blockchain (where there is no parallel execution).
 - We have designed a system where L2 chains can interact using the IOTA L1. Assets can be transferred cross-chain via Layer 1 without collateralized bridges. This is a significant advantage of ISC compared to other L2 solutions and is comparable to the IBC system on Cosmos.
@@ -67,10 +67,10 @@ ISC can be deployed as multiple Layer 2 (L2) chains, unlike many other projects 
 ### Disadvantages
 
 - Each L2 is relatively independent of IOTA and has flexibility in its behavior. They may leverage the IOTA L1 as little or as much as they want. The L2 chains will use IOTA tokens for:
-  - A storage deposit to update data on the main chain. In the future, also for mana to guarantee enough bandwidth for writing to the ledger.
+  - A storage deposit to update data on the main chain. In the future, also for _mana_ to guarantee enough bandwidth for _writing to the ledger_.
   - A storage deposit (and in the future mana) to wrap tokens for transfer between chains.
   - By default, the base token (IOTA or SMR depending on the chain) is used for paying for gas on L2 chains. However, the chain owner can change this. Any chains spawned by the IOTA Foundation will use IOTA/SMR for gas.
-- The security of each L2 chain is dependent on its validator nodes (Wasp nodes), which are independent of the IOTA mainnet nodes. This means IOTA can only guarantee their safety if we find a way to leverage L1 nodes for shared security in the future.
-- As with any interoperability solution, if most economic activity moves to L2, then the value of L1 may be compromised.
+- The security of each L2 chain is dependent on its validator nodes (Wasp nodes), which are independent of the IOTA Mainnet nodes. This means IOTA can only guarantee their safety if we find a way to leverage L1 nodes for shared security in the future.
+- As with any _interoperability_ solution, if most economic activity moves to L2, then the value of L1 may be compromised.
 
 The following sections will explain the new concepts and features in detail.

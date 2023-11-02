@@ -76,7 +76,7 @@ $ sha256sum genesis_snapshot.bin genesis_snapshot_alt.bin global_snapshot.csv
 
 :::note
 
-Loading the global snapshot ensured that your legacy Hornet node added the genesis transaction (999...) as a solid entry point: this was important as the Coordinator would issue the next milestone after the global snapshot index on top of it. Your node would **not** lose the data it already had.
+Loading the global snapshot ensured that your legacy Hornet node added the _genesis transaction_ (999...) as a solid entry point: this was important as the Coordinator would issue the next milestone after the global snapshot index on top of it. Your node would **not** lose the data it already had.
 
 :::
 

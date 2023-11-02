@@ -27,7 +27,7 @@ wasp-cli init
 
 This command will create a configuration file named `wasp-cli.json` in the current directory.
 
-After this, you will need to tell the `wasp-cli` the location of the Hornet node and the committee of Wasp nodes:
+After this, you will need to tell the `wasp-cli` the location of the _Hornet node_ and the committee of Wasp nodes:
 
 ```shell
 wasp-cli set l1.apiaddress http://localhost:14265

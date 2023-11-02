@@ -39,7 +39,7 @@ the following configuration:
 | Key      | Value                                        |
 | -------- | -------------------------------------------- |
 | RPC URL  | https://json-rpc.evm.testnet.shimmer.network |
-| Chain ID | 1072                                         |
+| Chain ID | 1073                                         |
 
 :::note
 

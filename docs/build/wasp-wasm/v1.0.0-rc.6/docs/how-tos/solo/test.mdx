@@ -8,7 +8,7 @@ keywords:
   - type conversions
   - Go
 
-description: Testing of smart contracts happens in the Solo testing environment. This enables synchronous, deterministic testing of smart contract functionality without the overhead of having to start nodes, set up a committee, and send transactions over the Tangle.
+description: Testing of smart contracts happens in the Solo testing environment. This enables synchronous, deterministic testing of smart contract functionality without the overhead of having to start nodes, set up a committee, and send transactions over the _Tangle_.
 image: /img/logo/WASP_logo_dark.png
 ---
 
@@ -20,13 +20,13 @@ import TabItem from '@theme/TabItem';
 Testing of smart contracts happens in the [Solo](../solo/what-is-solo.md) testing
 environment. This enables synchronous, deterministic testing of smart contract
 functionalities without the overhead of having to start nodes, set up a committee, and
-send transactions over the Tangle. Instead, you can use Go's built-in test environment in
+send transactions over the _Tangle_. Instead, you can use Go's built-in test environment in
 combination with Solo to deploy chains and smart contracts and simulate transactions.
 
 Solo directly interacts with the ISC code, and therfore uses all the ISC-specific data
 types directly. Our Wasm smart contracts cannot access these types directly, because they
 run in a separate, sandboxed environment. Therefore, WasmLib implements its
-[own versions](../../reference/data-types/types.mdx) of these data types, and the VM layer acts as a data type
+[own versions](../../reference/data-types/types.mdx) of these data types, and the _VM_ layer acts as a data type
 translator between both systems.
 
 The impact of this type transformation used to be that to be able to write tests in the

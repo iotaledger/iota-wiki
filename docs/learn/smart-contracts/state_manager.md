@@ -12,7 +12,7 @@ keywords:
 # State Manager
 
 State manager aims at keeping the state of the node up to date by retrieving missing data and ensuring that it is
-consistently stored in the DB. It services requests by other Wasp components (consensus, mempool), which mainly
+consistently stored in the DB. It services requests by other Wasp components (consensus, _mempool_), which mainly
 consist of ensuring that the required state is available in the node: that it may be retrieved from the permanent
 store of the node (the database; DB). An obvious way to obtain the latest state is to obtain all of the blocks,
 that resulted in making that state. So to obtain state index `n`, state manager first must commit block index `0`
@@ -82,10 +82,10 @@ value must be considerably smaller than `stateManager.pruningMinStatesToKeep`.
 
 ## Obtaining blocks
 
-Requests to state manager contain the state commitment and the state manager must ensure, that block (state) with this
+Requests to the state manager contain the state commitment and the state manager must ensure, that block (state) with this
 commitment is present in the DB. It is possible that to satisfy the request state manager needs to retrieve
 several blocks. However this cannot be done in one step as only the commitment of the requested block is known. For this
-reason state (block) contains a commitment of previous block. Previous block must be committed prior to committing the
+reason state (block) contains a commitment of the previous block. Previous block must be committed prior to committing the
 requested block. And this logic can be extended up to the block, which is already present in the DB, or until the origin
 state is reached.
 

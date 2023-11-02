@@ -10,7 +10,7 @@ The following table summarizes the required conditions used by all nodes in the 
 | Acceptance       | [Online supermajority of pre-accepted blocks approving block $b$](#acceptance-of-blocks-and-non-conflicting-transactions)   | [Online supermajority of pre-accepted blocks voting for transaction $b.Tx$\*](#acceptance-of-conflicting-transactions) |
 | Pre-Confirmation | [Total supermajority of blocks approving block $b$](#pre-confirmation-flag)                                                 | -                                                                                                                      |
 | Confirmation     | [Total supermajority of pre-confirmed blocks approving block $b$](#confirmation-of-blocks-and-non-conflicting-transactions) | [Transaction $b.Tx$ is accepted and block $b$ is confirmed](#confirmation-of-conflicting-transactions)                 |
-| Finalization     | [Confirmed block containing the slot commitment\*\*](#finalization-flag)                                                    | [Confirmed block containing the slot commitment\*\*](#finalization-flag)                                               |
+| _Finalization_     | [Confirmed block containing the slot commitment\*\*](#finalization-flag)                                                    | [Confirmed block containing the slot commitment\*\*](#finalization-flag)                                               |
 
 <sup>\*These blocks represent the latest opinion of the issuers.</sup> <br/>
 <sup>\*\*Finalization is defined on the slot commitment level. A block or transaction is finalized if it is committed into the slot commitment and this commitment is finalized.</sup>
@@ -23,7 +23,7 @@ A block $b$ is _pre-accepted_ if there exists an [online supermajority of blocks
 
 ### Example
 
-In the following example, $7$ committee members have equal weight, and only $4$ are online. Different colors are used to distinguish distinct block issuers. Block $b$ is pre-accepted because an online supermajority of the committee approves this block. Note that the block is pre-accepted even though no total supermajority of blocks approve $b$.
+In the following example, $7$ committee members have equal weight, and only $4$ are online. Different colors are used to distinguish distinct _block issuers_. Block $b$ is pre-accepted because an online supermajority of the committee approves this block. Note that the block is pre-accepted even though no total supermajority of blocks approve $b$.
 
 ![Pre-acceptance of a block](/img/learn/protocols/iota2.0/core-concepts/consensus/pre-acceptance-of-a-block.png 'Pre-acceptance of a block.')
 **Image:** Pre-acceptance of a block.
@@ -36,7 +36,7 @@ A block $b$ is _pre-confirmed_ if there exists a [total supermajority of blocks]
 
 ### Example
 
-Block $b$ is pre-confirmed in the following example because a total supermajority of nodes approves this block.
+Block $b$ is pre-confirmed in the following example because a total _supermajority_ of nodes approves this block.
 
 ![Pre-confirmation of a block](/img/learn/protocols/iota2.0/core-concepts/consensus/pre-confirmation-of-a-block.png 'Pre-confirmation of a block.')
 **Image:** Pre-confirmation of a block.
@@ -70,7 +70,7 @@ Any transaction that conflicts with an accepted transaction becomes [rejected](p
 
 #### Example:
 
-In the following example, the transaction $tx$ is accepted since an online supermajority of pre-accepted blocks vote for $tx$.
+In the following example, the transaction $tx$ is accepted since an online _supermajority_ of pre-accepted blocks vote for $tx$.
 
 Note that the blue node initially voted for transaction $tx'$ because it was delivered before $tx$. However, the blue node changes its stance in the following validation block, as it has received and processed both validation blocks that voted for $tx$. According to the blue node's local perception, $tx$ now receives support from the majority of the network. This means that the [preferred reality](relevant-algorithms.md#algorithm-to-compute-the-preferred-reality) of the blue node now contains $tx$, and the [branch](preliminaries.md#reality-based-utxo-ledger) of the next validation block is aligned with the preferred reality.
 
@@ -85,7 +85,7 @@ A block $b$ is confirmed if there is a [total supermajority](preliminaries.md#to
 
 :::note
 
-The parameter `optsConfirmationRatificationThreshold` is set to a low value to guarantee the irreversibility of the confirmation flag and the [finalization flag](#finalization-flag), which utilizes confirmation. The safety property is achieved because honest nodes do not [switch their adopted slot commitment chain](chain-switching-rule.md) until their current slot concludes. This means that the decision in the voting process is achieved in a short period while a total supermajority of nodes stays on the same slot commitment chain.
+The parameter `optsConfirmationRatificationThreshold` is set to a low value to guarantee the irreversibility of the _confirmation_ flag and the [finalization flag](#finalization-flag), which utilizes confirmation. The safety property is achieved because honest nodes do not [switch their adopted _slot_ commitment chain](chain-switching-rule.md) until their current slot concludes. This means that the decision in the voting process is achieved in a short period while a total supermajority of nodes stays on the same slot commitment chain.
 
 :::
 

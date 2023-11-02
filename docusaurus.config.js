@@ -1,7 +1,6 @@
 const { glob, merge } = require('./src/utils/config');
 const path = require('path');
 const { create_doc_plugin } = require('./src/utils/config');
-const common = require('./common/docusaurus.config');
 const contentConfigs = require('./contentPlugins');
 const articleRedirectsFile = require('./articleRedirects');
 const switcherConfig = require('./switcherConfig');
@@ -28,13 +27,59 @@ module.exports = async () => {
   // Get tutorials
   const additionalPlugins = await glob(['tutorials']);
 
-  const { MODE = 'development' } = process.env;
+  const { MODE = 'development', SELECTED_SECTION = 'all' } = process.env;
 
   if (!['development', 'production'].includes(MODE)) {
     throw "Set MODE to 'development', or 'production'";
   }
 
   const isProduction = MODE === 'production';
+
+  const navbarItems = [
+    {
+      label: 'Get Started',
+      to: '/get-started/introduction/iota/introduction/',
+      activeBaseRegex: '^(/[^/]+)?/get-started/.*',
+    },
+    {
+      label: 'Learn',
+      to: '/learn/protocols/introduction',
+      activeBaseRegex: '^(/[^/]+)?/learn/.*',
+    },
+    {
+      label: 'Build',
+      to: '/build/welcome/',
+      activeBaseRegex:
+        '^(/[^/]+)?/build/.*|' +
+        '^(/[^/]+)?/iota-sdk/.*|' +
+        '^(/[^/]+)?/identity.rs/.*|' +
+        '^(/[^/]+)?/iota.rs/.*|' +
+        '^(/[^/]+)?/iota.js/.*|' +
+        '^(/[^/]+)?/wallet.rs/.*|' +
+        '^(/[^/]+)?/stronghold.rs/.*|' +
+        '^(/[^/]+)?/streams/.*|' +
+        '^(/[^/]+)?/wasp-cli/.*|' +
+        '^(/[^/]+)?/wasp-wasm/.*|' +
+        '^(/[^/]+)?/wasp-evm/.*',
+    },
+    {
+      label: 'Maintain',
+      to: '/maintain/welcome',
+      activeBaseRegex:
+        '^(/[^/]+)?/maintain/.*|' +
+        '^(/[^/]+)?/hornet/.*|' +
+        '^(/[^/]+)?/wasp/.*|' +
+        '^(/[^/]+)?/chronicle/.*|' +
+        '^(/[^/]+)?/goshimmer/.*',
+    },
+  ];
+
+  const activeNavbarItems = navbarItems.filter((item) => {
+    return (
+      SELECTED_SECTION === 'all' ||
+      new RegExp(item.activeBaseRegex).test(`/${SELECTED_SECTION}/`)
+    );
+  });
 
   const themeConfig = {
     themeConfig: {
@@ -46,44 +91,7 @@ module.exports = async () => {
           src: 'img/logo.svg',
           srcDark: 'img/logo_dark.svg',
         },
-        items: [
-          {
-            label: 'Get Started',
-            to: '/get-started/introduction/iota/introduction/',
-            activeBaseRegex: '^(/[^/]+)?/get-started/.*',
-          },
-          {
-            label: 'Learn',
-            to: '/learn/protocols/introduction',
-            activeBaseRegex: '^(/[^/]+)?/learn/.*',
-          },
-          {
-            label: 'Build',
-            to: '/build/welcome/',
-            activeBaseRegex:
-              '^(/[^/]+)?/build/.*|' +
-              '^(/[^/]+)?/iota-sdk/.*|' +
-              '^(/[^/]+)?/identity.rs/.*|' +
-              '^(/[^/]+)?/iota.rs/.*|' +
-              '^(/[^/]+)?/iota.js/.*|' +
-              '^(/[^/]+)?/wallet.rs/.*|' +
-              '^(/[^/]+)?/stronghold.rs/.*|' +
-              '^(/[^/]+)?/streams/.*|' +
-              '^(/[^/]+)?/wasp-cli/.*|' +
-              '^(/[^/]+)?/wasp-wasm/.*|' +
-              '^(/[^/]+)?/wasp-evm/.*',
-          },
-          {
-            label: 'Maintain',
-            to: '/maintain/welcome',
-            activeBaseRegex:
-              '^(/[^/]+)?/maintain/.*|' +
-              '^(/[^/]+)?/hornet/.*|' +
-              '^(/[^/]+)?/wasp/.*|' +
-              '^(/[^/]+)?/chronicle/.*|' +
-              '^(/[^/]+)?/goshimmer/.*',
-          },
-        ],
+        items: activeNavbarItems,
       },
       footer: {},
       socials: [
@@ -122,6 +130,24 @@ module.exports = async () => {
         indexName: 'iota',
         contextualSearch: true,
       },
+      imageZoom: {
+        selector:
+          '.markdown :not(a) > img:not(.image-gallery-image):not(.image-gallery-thumbnail-image)',
+        // Optional medium-zoom options
+        // see: https://www.npmjs.com/package/medium-zoom#options
+        options: {
+          background: 'rgba(0, 0, 0, 0.6)',
+        },
+      },
+      imageSlider: {
+        videoPlaceholder: '/img/infographics/video-placeholder.png',
+      },
+      prism: {
+        additionalLanguages: ['java', 'rust', 'solidity', 'toml'],
+      },
+      colorMode: {
+        defaultMode: 'dark',
+      },
       switcher: switcherConfig,
     },
   };
@@ -148,11 +174,27 @@ module.exports = async () => {
   };
 
   return merge(
-    common,
     {
       title: 'IOTA Wiki',
       tagline: 'The complete reference for IOTA and Shimmer',
       baseUrl: '/',
+      url: 'https://wiki.iota.org',
+      onBrokenLinks: 'throw',
+      onBrokenMarkdownLinks: 'log',
+      favicon: 'img/favicon.ico',
+      trailingSlash: true,
+      organizationName: 'iota-wiki', // Usually your GitHub org/user name.
+      projectName: 'iota-wiki', // Usually your repo name.
+      stylesheets: [
+        'https://fonts.googleapis.com/css?family=Material+Icons',
+        {
+          href: 'https://cdn.jsdelivr.net/npm/katex@0.13.24/dist/katex.min.css',
+          type: 'text/css',
+          integrity:
+            'sha384-odtC+0UGzzFL/6PNoE8rX/SPcQDXBJ+uRepguP4QkPCm2LBxH3FA3y+fKSiJ+AmM',
+          crossorigin: 'anonymous',
+        },
+      ],
       presets: [
         [
           '@docusaurus/preset-classic',
@@ -401,6 +443,7 @@ module.exports = async () => {
             },
           },
         ],
+        'plugin-image-zoom',
       ],
       stylesheets: [
         {
@@ -411,6 +454,12 @@ module.exports = async () => {
           crossorigin: 'anonymous',
         },
       ],
+      themes: [
+        'docusaurus-theme-openapi-docs',
+        '@saucelabs/theme-github-codeblock',
+        '@iota-wiki/theme',
+      ],
+      staticDirectories: [path.resolve(__dirname, 'static')],
     },
     themeConfig,
     isProduction ? production : {},

@@ -17,7 +17,7 @@ keywords:
 
 :::info
 
-Firefly is IOTA's new official wallet for Chrysalis.
+_Firefly_ is IOTA's new official wallet for Chrysalis.
 
 :::
 

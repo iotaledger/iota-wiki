@@ -26,36 +26,14 @@ scammers.
 - **Twitter**: Sign up for Twitter, follow the [IOTA Foundation](https://twitter.com/iota/) and [Shimmer](https://twitter.com/shimmernet). Engage with these accounts and other interesting IOTA-related projects by liking and retweeting their posts.
 - **LinkedIn**: Create a LinkedIn account, follow the [IOTA Foundation](https://www.linkedin.com/company/iotafoundation/). Like and share articles from the IOTA Foundation and other ecosystem members to raise awareness within your professional network.
 - **YouTube**: Sign up for a YouTube account, subscribe to the [IOTA Foundation channel](https://www.youtube.com/c/iotafoundation). Watch, learn, and share videos about solutions built with IOTA.
+Find more platforms [here](./social-media.md) and learn how you can support the vision [here](./how-to-support.md).
 
 ## Join the IOTA X-Teams
 
 The IOTA X-Teams aim to bridge the gap between the IOTA Foundation's development teams and the community. By
 participating in the IOTA X-Teams, you can actively contribute to the software development process and help shape the
 future of IOTA.
-
-The IOTA Experience Team offers the opportunity for community members to become involved in preparing software for its
-transition from Alpha to a Full Release. This community-driven approach allows members to organize teams and work
-together on various tasks to strengthen the IOTA ecosystem.
-
-For more information, visit
-the [#experience Channel](https://discord.com/channels/397872799483428865/701857063923351582) in the IOTA Discord and
-the [IOTA Experience Teams Github Repository](https://github.com/iota-community/IOTA-eXperience-Team). To contribute,
-complete
-the [X-Team application form](https://docs.google.com/forms/d/e/1FAIpQLScBFw-xPHy1s8W3RnA3MFAni590p4VlGBXi75obGWUzUoB59A/viewform).
-
-## Crypto Platforms
-
-### Coinmarketcap
-
-- Register an account or use your existing Binance.com account.
-- Add [IOTA](https://coinmarketcap.com/currencies/iota/) and [Shimmer](https://coinmarketcap.com/currencies/shimmer/) to
-  your watchlist.
-- Follow and engage with the IOTA community on the Coinmarketcap community page.
-
-### Coingecko
-
-- Register an account.
-- Like [IOTA](https://www.coingecko.com/en/coins/iota) to add it to your watchlist.
+Read more about it [here](./x-teams.md).
 
 ## GitHub
 
@@ -64,16 +42,19 @@ repositories related to IOTA:
 
 - [Firefly](https://github.com/iotaledger/firefly)
 - [Hornet](https://github.com/iotaledger/hornet)
+- [IOTA Core](https://github.com/iotaledger/iota-core)
 - [Identity](https://github.com/iotaledger/identity.rs)
-- [iota.rs](https://github.com/iotaledger/iota.rs)
-- [iota.c](https://github.com/iotaledger/iota.c)
+- [IOTA SDK](https://github.com/iotaledger/iota-sdk)
 - [iota.go](https://github.com/iotaledger/iota.go)
-- [iota.js](https://github.com/iotaledger/iota.js)
-- [IOTA 2.0 Research Specifications](https://github.com/iotaledger/IOTA-2.0-Research-Specifications)
 - [IOTA Wiki](https://github.com/iota-wiki/iota-wiki)
-- [Streams](https://github.com/iotaledger/streams)
-- [Stronghold](https://github.com/iotaledger/stronghold.rs)
 - [Wasp](https://github.com/iotaledger/wasp)
 
 By engaging with the IOTA ecosystem on social media, participating in the IOTA X-Teams, and supporting projects on
 crypto platforms and GitHub, you can contribute to the growth and development of the IOTA Project.
+
+### IOTA Community GitHub
+
+The IOTA community developers are invited to host their projects under the [**IOTA Community GitHub Organization**](https://github.com/iota-community).
+
+This aims to give community developers more visibility and makes it easier to find community projects developing on IOTA.
+If you want to list your community project as an open-source-code Repository here, get in touch with [Antonio Nardella](https://github.com/antonionardella), our community manager to request a listing.

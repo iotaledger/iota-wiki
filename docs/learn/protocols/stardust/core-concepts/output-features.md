@@ -29,7 +29,7 @@ a limited size. Anyway, bigger data can always be sliced into chunks to store in
 The _Sender Feature_ allows to define a sender address directly inside an output. The protocol validates whether the address was actually signed in the transaction that created the output. Smart contract chains identify the
 sender account of an on-ledger request based on the information in the output's _Sender Feature_.
 
-Combining the _Sender Feature_ with the _Metadata Feature_ makes it possible to implement data oracles in the ledger with verified sources.
+Combining the _Sender Feature_ with the _Metadata Feature_ makes it possible to implement data _oracles_ in the ledger with verified sources.
 
 ## Issuer
 

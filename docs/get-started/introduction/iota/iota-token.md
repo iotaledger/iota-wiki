@@ -57,7 +57,7 @@ initial ICO without any early VC funding or tokens allocated to founders. Furthe
 schedules or token lockups, meaning the entire supply was circulating immediately. The IOTA Foundation was funded
 via donations from ICO purchasers with roughly ~5% of the initial token supply.
 
-IOTA still has no inflation baked into its protocol but due to the supply increase, an annual inflation of
+IOTA still has no _inflation_ baked into its protocol but due to the supply increase, an annual inflation of
 around ~12-13% over a 4-year period is carried out via outputs which have been timelocked accordingly.
 
 ## Buying IOTA
@@ -70,7 +70,7 @@ using so you don't get tricked into selling/buying under/over the current market
 
 :::
 
-IOTA is listed on most major cryptocurrency exchanges:
+IOTA is listed on most major _cryptocurrency_ exchanges:
 
 - [Binance.US](https://www.binance.us/en/home)
 - [Bitpanda](https://www.bitpanda.com)

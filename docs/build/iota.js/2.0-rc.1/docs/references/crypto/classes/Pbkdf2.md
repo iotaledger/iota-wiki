@@ -35,7 +35,7 @@ Derive a key from the parameters using Sha256.
 | Name         | Type         | Description                          |
 | :----------- | :----------- | :----------------------------------- |
 | `password`   | `Uint8Array` | The password to derive the key from. |
-| `salt`       | `Uint8Array` | The salt for the derivation.         |
+| `salt`       | `Uint8Array` | The _salt_ for the derivation.         |
 | `iterations` | `number`     | Numer of iterations to perform.      |
 | `keyLength`  | `number`     | The length of the key to derive.     |
 

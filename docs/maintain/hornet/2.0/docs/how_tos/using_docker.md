@@ -31,7 +31,7 @@ It includes everything required to setup a public node accessible by wallets and
 - [inx-indexer](https://github.com/iotaledger/inx-indexer) - Indexer extension for wallets and applications.
 - [inx-mqtt](https://github.com/iotaledger/inx-mqtt) - MQTT extension providing the Event API.
 - [inx-participation](https://github.com/iotaledger/inx-participation) - Participation extension providing on-tangle-voting.
-- [inx-poi](https://github.com/iotaledger/inx-poi) - Extention to generate proofs of inclusion.
+- [inx-poi](https://github.com/iotaledger/inx-poi) - Extension to generate proofs of _inclusion_.
 - [inx-spammer](https://github.com/iotaledger/inx-spammer) - Network spammer.
 - [wasp](https://github.com/iotaledger/wasp) - L2 Node for IOTA Smart Contracts.
 

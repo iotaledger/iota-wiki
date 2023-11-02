@@ -22,9 +22,9 @@ The [Firefly Wallet](https://firefly.iota.org/) includes decentralized Governanc
 
 ### 2. The Governance Dashboard
 
-**- Your Voting Power**
+**- Your _Voting Power_**
 
-- Derived directly from your SMR or IOTA tokens, every IOTA or Shimmer Token translates to 1 voting Power in its respective network
+- Derived directly from your SMR or IOTA tokens, every IOTA or Shimmer Token translates to 1 _voting Power_ in its respective network
 
 **- Governance Details**
 
@@ -103,7 +103,7 @@ Once you actively vote on proposals but wish to either free some tokens to use f
 ### 6. Adding custom community proposals to Firefly
 
 To enable decentralized governance, you can also use Firefly to vote on proposlas that are not added to the official IOTA Foundation nodes to which the Firefly Wallet connects by default.
-Every community can theoretically use the Firefly Wallet and ask SMR token holders to decide on proposals. Therefore, those proposals need to be added to a Hornet node (via the Hornet dashboard), and then the user can tell Firefly to display this proposal to enable voting on it.
+Every community can theoretically use the Firefly Wallet and ask SMR token holders to decide on proposals. Therefore, those proposals need to be added to a _Hornet node_ (via the Hornet dashboard), and then the user can tell Firefly to display this proposal to enable voting on it.
 
 - Click on "Add Proposals"
 

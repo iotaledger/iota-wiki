@@ -74,13 +74,14 @@ To preview the Wiki locally, use the following steps. For more detailed scripts,
 
 #### Pre-configured scripts
 
-| Script            | Explanation                                                                                                                                                                                                         |
-| ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `prepare`         | Prepare the environment by checking out submodules and building local packages needed for the Wiki build.                                                                                                           |
-| `start`           | Start a development server serving the Wiki, with hot reloading on changes.                                                                                                                                         |
-| `build`           | Build the Wiki. To build for production, checkout the latest version of external documentation by running `yarn checkout:remote` and set the `MODE` environment variable to `production`.                           |
-| `checkout:remote` | Check out the latest version of external documentation.                                                                                                                                                             |
-| `generate:api`    | Generate available API documentation configured through the [Docusaurus OpenAPI plugin](https://www.npmjs.com/package/@paloaltonetworks/docusaurus-plugin-openapi) and by compiling documentation from source code. |
+| Script                    | Explanation                                                                                                                                                                                                         |
+|---------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `prepare`                 | Prepare the environment by checking out submodules and building local packages needed for the Wiki build.                                                                                                           |
+| `start`                   | Start a development server serving the Wiki, with hot reloading on changes.                                                                                                                                         |
+| `start:section:{section}` | Start a development server serving only a section of the Wiki, with hot reloading on changes. Available sections are `build`, `get-started`, `learn`, and `maintain`.                                               |
+| `build`                   | Build the Wiki. To build for production, checkout the latest version of external documentation by running `yarn checkout:remote` and set the `MODE` environment variable to `production`.                           |
+| `checkout:remote`         | Check out the latest version of external documentation.                                                                                                                                                             |
+| `generate:api`            | Generate available API documentation configured through the [Docusaurus OpenAPI plugin](https://www.npmjs.com/package/@paloaltonetworks/docusaurus-plugin-openapi) and by compiling documentation from source code. |
 
 <!-- CONTRIBUTING -->
 
@@ -97,6 +98,10 @@ The IOTA Wiki is maintained by the IF and community contributions are always wel
 7. Open a pull request to the `main` branch of this repository.
 
 Have a look at [CONTRIBUTING](.github/CONTRIBUTING.md) for further guidance.
+
+### Versioning
+
+To find out how to version your docs, read [this guide](https://wiki.iota.org/community/contribute-to-wiki/how_tos/versioning).
 
 ### Online one-click setup for contributing
 

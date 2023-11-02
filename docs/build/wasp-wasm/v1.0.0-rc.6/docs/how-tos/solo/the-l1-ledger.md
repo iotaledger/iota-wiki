@@ -15,7 +15,7 @@ keywords:
 
 IOTA Smart Contracts work as a **layer 2** (**L2**) extension of the _IOTA Multi-Asset Ledger_, **layer 1** (**L1**).
 The specifics of the ledger is outside the scope of this documentation; for now it is sufficient to know that the ledger
-contains balances of different kinds of assets (base tokens, native tokens, foundries and NFTs) locked in addresses.
+contains balances of different kinds of assets (base tokens, native tokens, foundries and _NFT_s) locked in addresses.
 Assets can only be moved on the ledger by unlocking the corresponding address with its private key.
 
 For example:
@@ -33,7 +33,7 @@ with ID `0x94cd...`.
 You can find more information about the ledger in the
 [Multi-Asset Ledger TIP](https://github.com/lzpap/tips/blob/master/tips/TIP-0018/tip-0018.md).
 
-In normal operation, the L2 state is maintained by a committee of Wasp nodes. The L1 ledger is provided and
+In normal operation, the L2 state is maintained by a committee of Wasp _nodes_. The L1 ledger is provided and
 maintained by a network of [Hornet](https://github.com/iotaledger/hornet) nodes, which is a distributed implementation
 of the IOTA Multi-Asset Ledger.
 
@@ -53,7 +53,7 @@ func TestTutorialL1(t *testing.T) {
 }
 ```
 
-The output of the test is:
+The _output_ of the test is:
 
 ```log
 === RUN   TestTutorialL1

@@ -20,7 +20,7 @@ It's task is to issue milestones at a constant rate. Validation of the issued mi
 
 ## Setup
 
-There is only one coordinator needed in a network. If you want to run your own private network with it's own coordinator, have a look at our [Run a Private Tangle](/hornet/2.0/how_tos/private_tangle) guide.
+There is only one coordinator needed in a network. 
 
 ## Configuration
 

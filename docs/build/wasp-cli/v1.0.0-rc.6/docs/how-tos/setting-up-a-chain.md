@@ -16,7 +16,7 @@ keywords:
 
 It is possible to run a "committee" of a single Wasp node, which is okay for testing purposes.
 
-However, in normal operation, multiple Wasp nodes should be used.
+However, in normal operation, multiple Wasp _nodes_ should be used.
 :::
 
 ## Requirements
@@ -72,7 +72,7 @@ wasp-cli request-funds
 You can deploy your IOTA Smart Contracts chain by running:
 
 ```shell
-wasp-cli chain deploy --peers=foo,bar,baz --chain=mychain --description="My chain" --block-keep-amount=10000
+wasp-cli chain deploy --peers=foo,bar,baz --chain=mychain --block-keep-amount=10000
 ```
 
 The names in `--peers=foo,bar,baz` correspond to the names of the node's trusted peers.
@@ -80,7 +80,7 @@ The names in `--peers=foo,bar,baz` correspond to the names of the node's trusted
 The `--chain=mychain` flag sets up an alias for the chain.
 From now on, all chain commands will target this chain.
 
-The `--quorum` flag indicates the minimum number of nodes required to form a consensus.
+The `--quorum` flag indicates the minimum number of nodes required to form a _consensus_.
 The recommended formula to obtain this number is `floor(N*2/3)+1` where `N` is the number of nodes in your committee.
 
 The `--block-keep-amount` parameter determines how many blocks are stored in the [`blocklog`](/wasp-wasm/reference/core-contracts/blocklog) core contract.
@@ -106,7 +106,7 @@ You should also have an EVM-JSONRPC server opened on:
 ### Deploying a Wasm Contract
 
 :::warning
-The WASM VM is experimental. However, similar commands can be used to interact with the core contracts
+The WASM _VM_ is experimental. However, similar commands can be used to interact with the core contracts
 :::
 
 Now you can deploy a Wasm contract to the chain:

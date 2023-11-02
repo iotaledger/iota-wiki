@@ -57,7 +57,7 @@ For further reference, please see our [Protocol-rfc#0020 - Bech32 Address Format
 
 With the updated [wallet library](/wallet.rs/welcome), developers do not need to use a self-generated seed. By default, the seed is created and stored in Stronghold, our in-house built security enclave. It is not possible to extract the seed from Stronghold for security purposes. Stronghold uses encrypted snapshots that can easily be backed up and securely shared between devices. These snapshots are then further secured with a password.
 
-More information about IOTA Wallet Library is available on the [Wallet docs page](/wallet.rs/welcome) or in the [Exchange guide](../how_tos/exchange.md), which is mainly focuses on value transactions.
+More information about IOTA Wallet Library is available on the [Wallet docs page](/wallet.rs/welcome) or in the [Exchange guide](../how_tos/exchange.md), which is mainly focuses on _value transactions_.
 
 :::note
 
@@ -213,11 +213,11 @@ Each `SignedTransaction` includes the following set of information:
 
 ## Dust Protection
 
-Since IOTA is feeless and has the ability to send microtransactions, attackers could use this to spam the network with very low value transactions, which we call dust. To avoid this, we only allow microtransaction below 1Mi (dust) of IOTA tokens to another address if you already have at least 1Mi as a dust allowance output on that address. The number of allowed dust outputs on an address is the amount of the dust allowance outputs divided by 100,000 and rounded down, that is, 10 outputs for each 1 Mi deposited, with a maximum of 100 dust outputs in total.
+Since IOTA is feeless and has the ability to send microtransactions, attackers could use this to spam the network with very low _value transactions_, which we call dust. To avoid this, we only allow microtransaction below 1Mi (dust) of IOTA tokens to another address if you already have at least 1Mi as a dust allowance output on that address. The number of allowed dust outputs on an address is the amount of the dust allowance outputs divided by 100,000 and rounded down, that is, 10 outputs for each 1 Mi deposited, with a maximum of 100 dust outputs in total.
 
 :::note
 
-In the UTXO model, each node in the network needs to keep track of all the currently unspent outputs. When the number of outputs becomes too large, it can cause performance and memory issues. The RFC below proposes a new protocol rule regarding the processing of outputs where they transfer a very small amount of IOTA’s so-called dust outputs. Dust outputs are only allowed when they are backed up by a certain deposit on the receiving address. This limits the amount of dust outputs, thus making it expensive to proliferate dust. Since a receiver must make a deposit, the protocol makes receiving dust an opt-in feature.
+In the _UTXO model_, each node in the network needs to keep track of all the currently unspent outputs. When the number of outputs becomes too large, it can cause performance and memory issues. The RFC below proposes a new protocol rule regarding the processing of outputs where they transfer a very small amount of IOTA’s so-called dust outputs. Dust outputs are only allowed when they are backed up by a certain deposit on the receiving address. This limits the amount of dust outputs, thus making it expensive to proliferate dust. Since a receiver must make a deposit, the protocol makes receiving dust an opt-in feature.
 
 :::
 

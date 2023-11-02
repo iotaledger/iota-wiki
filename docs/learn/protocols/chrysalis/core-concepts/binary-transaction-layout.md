@@ -17,7 +17,7 @@ keywords:
 In the past, IOTA used trinary data formats.
 The decision was based on the fact that trinary logic systems can theoretically store and process information more
 efficiently than binary systems.
-However, in practice, the digital world is built upon binary logic, leading to trinary data structure challenges, such as transaction payloads.
+However, in practice, the digital world is built upon binary logic, leading to trinary _data structure_ challenges, such as transaction payloads.
 
 Binary transaction payloads, on the other hand, align more closely with conventional technology standards, offering
 several benefits over their trinary counterparts.
@@ -32,7 +32,7 @@ additional computational overhead.
 
 ## Compatibility and Interoperability
 
-Binary transaction payloads enhance compatibility and interoperability with existing systems.
+Binary transaction payloads enhance compatibility and _interoperability_ with existing systems.
 As most technologies used today are based on binary logic,
 adopting binary payloads simplifies integration efforts and reduces the likelihood of compatibility issues.
 This advantage makes it easier for developers and platforms to adopt and interact with IOTA using binary payloads.
