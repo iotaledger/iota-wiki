@@ -8,6 +8,7 @@ import {
   AdvancedSettingsValidator,
   RoleSection,
   OtherParametersSection,
+  ManaAccumulation,
 } from './';
 
 export function ManaCalculator() {
@@ -21,6 +22,7 @@ export function ManaCalculator() {
       <AdvancedSettingsValidator />
       <br />
       <OutputForm />
+      <ManaAccumulation/>
     </ManaStateContext.Provider>
   );
 }
