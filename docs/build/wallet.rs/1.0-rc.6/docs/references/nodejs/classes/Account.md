@@ -165,7 +165,7 @@ The transaction.
 ▸ **burnNft**(`nftId`, `transactionOptions?`): `Promise`<[`Transaction`](../interfaces/Transaction.md)\>
 
 Burn an nft output. Outputs controlled by it will be sweeped before if they don't have a storage
-deposit return, timelock or expiration unlock condition. This should be preferred over burning, because after
+deposit return, timelock or _expiration unlock_ condition. This should be preferred over burning, because after
 burning, the foundry can never be destroyed anymore.
 
 #### Parameters

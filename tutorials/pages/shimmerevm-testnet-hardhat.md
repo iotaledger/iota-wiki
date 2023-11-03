@@ -132,7 +132,7 @@ module.exports = {
   networks: {
     'shimmerevm-testnet': {
       url: 'https://json-rpc.evm.testnet.shimmer.network',
-      chainId: 1072,
+      chainId: 1073,
       accounts: [priv_key],
     },
   },
@@ -205,7 +205,7 @@ etherscan: {
   customChains: [
     {
       network: 'shimmerevm-testnet',
-      chainId: 1072,
+      chainId: 1073,
       urls: {
         apiURL: 'https://explorer.evm.testnet.shimmer.network/api',
         browserURL: 'https://explorer.evm.testnet.shimmer.network/',
