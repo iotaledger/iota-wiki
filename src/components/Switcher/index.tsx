@@ -20,7 +20,6 @@ export type Version = Omit<Item, 'id'> & {
 export type Doc = Item & {
   subsection: string;
   versions: Version[];
-  defaultVersion?: string;
 };
 
 export type Sidebar = {

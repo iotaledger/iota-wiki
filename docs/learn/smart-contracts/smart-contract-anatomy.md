@@ -19,7 +19,7 @@ It can support different _VM types_ (i.e., interpreters) simultaneously on the s
 For example, it is possible to have [Wasm](/wasp-wasm/introduction/) and [EVM/Solidity](/wasp-evm/introduction/) smart
 contracts coexisting on the same chain.
 
-The logical structure of IOTA Smart Contracts is independent of the VM type:
+The logical structure of IOTA Smart Contracts is independent of the _VM_ type:
 
 ![Smart Contract Structure](/img/tutorial/SC-structure.png)
 
@@ -37,7 +37,7 @@ The smart contract state is the data owned by the smart contract and stored on t
 The state is a collection of key/value pairs.
 Each key and value are byte arrays of arbitrary size (there are practical limits set by the underlying database, of
 course).
-You can think of the smart contract state as a \_partition of the chain's data state, which can only be written by the
+You can think of the smart contract state as a partition of the chain's data state, which can only be written by the
 smart contract program itself.
 
 The smart contract also owns an _account_ on the chain, stored as part of the chain state.
@@ -59,9 +59,9 @@ An entry point is a function through which you can invoke the program.
 
 There are two types of entry points:
 
-- _Full entry points_(or simply _entry points_): These functions can modify
+- _Full entry points_ (or simply _entry points_): These functions can modify
   (mutate) the smart contract's state.
-- _View entry points_(or _views_): These are read-only functions. They are only used
+- _View entry points_ (or _views_): These are read-only functions. They are only used
   to retrieve the information from the smart contract state. They cannot
   modify the state, i.e., they are read-only calls.
 

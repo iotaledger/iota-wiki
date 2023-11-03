@@ -64,6 +64,7 @@ const TutorialCard = memo(({ tutorial }: { tutorial: Tutorial }) => {
         <div className='card__image tutorial-card__image-container'>
           <img
             className='tutorial-card__image'
+            loading='lazy'
             src={tutorial.preview}
             alt={tutorial.title}
           />

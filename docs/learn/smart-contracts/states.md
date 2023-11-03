@@ -19,12 +19,12 @@ keywords:
 
 The state of the chain consists of:
 
-- A ledger of accounts owning IOTA digital assets (base tokens, native tokens, and NFTs). The chain acts as a custodian
+- A ledger of accounts owning IOTA _digital assets_ (base tokens, native tokens, and NFTs). The chain acts as a custodian
   for those funds on behalf of each account's owner.
 - A collection of arbitrary key/value pairs (the _data state_) that contains use case-specific data stored by the smart
   contracts in the chain.
 
-The chain's state is an append-only (immutable) data structure maintained by the distributed consensus of its
+The chain's state is an append-only (immutable) _data structure_ maintained by the distributed consensus of its
 validators.
 
 ## Digital Assets on the Chain
@@ -70,7 +70,7 @@ state, consuming the previous state UTXO and producing a new one.
 
 ## Anchoring the State
 
-The data state is stored outside the ledger, on the distributed database maintained by validator nodes.
+The data state is stored outside the ledger, on the distributed database maintained by _validator_ nodes.
 _Anchoring the state_ means placing the hash of the data state into the state UTXO and adding it to the L1 UTXO ledger.
 The UTXO ledger guarantees that there is _exactly one_ such output for each chain on the ledger at every moment.
 We call this output the _state output_ (or state anchor) and the containing transaction the _state transaction_ (or

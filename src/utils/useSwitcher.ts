@@ -14,6 +14,7 @@ import {
   Sidebar,
   Item,
 } from '../common/components/Switcher';
+import { MAIN_BADGE } from './pluginConfigGenerators';
 
 export type GlobalPluginData = DocsGlobalPluginData & {
   globalSidebars?: {
@@ -133,17 +134,12 @@ export default function useSwitcher(): SwitcherProps {
           };
         });
 
-        // Resolve the doc link to the default version or the first version configured.
+        // Resolve the doc link to the first MAIN_BADGE version.
         let to = versionLinks[0].to;
-        if (doc.defaultVersion) {
-          const foundVersion = versionLinks.find(
-            (version) => version.id === doc.defaultVersion,
-          );
-          if (!foundVersion)
-            throw `Default version ${doc.defaultVersion} of doc ${doc.label} not found.`;
-
-          to = foundVersion.to;
-        }
+        const foundVersion = versionLinks.find((version) =>
+          version.badges.some((b) => b.includes(MAIN_BADGE)),
+        );
+        if (foundVersion) to = foundVersion.to;
 
         let active = false;
         if (current.doc && doc.id === current.doc.id) {

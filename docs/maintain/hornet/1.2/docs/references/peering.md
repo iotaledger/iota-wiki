@@ -1,5 +1,5 @@
 ---
-description: How to configure your nodes' peers, neighbors, and auto-peering.
+description: How to configure your nodes' peers, _neighbors_, and auto-peering.
 image: /img/banner/banner_hornet_peering.png
 keywords:
   - IOTA Node
@@ -16,7 +16,7 @@ keywords:
 
 ![HORNET Node Peering](/img/banner/banner_hornet_peering.png)
 
-The IOTA network is a distributed network. It uses a gossip protocol to broadcast data among nodes.
+The IOTA network is a distributed network. It uses a _gossip protocol_ to broadcast data among nodes.
 To participate in a network, each node has to establish a secure connection to other nodes in the network (to its peer neighbors), and mutually exchange messages.
 
 ## Node Identity
@@ -43,7 +43,7 @@ You can find more information on the `PeerId` in the [libp2p docs page](https://
 
 ## Addressing Peer Neighbors
 
-To communicate to your peer neighbors, you will need an address to reach them. For that, HORNET uses the `MultiAddresses` format (also known as `multiaddr`).
+To communicate to your peer _neighbors_, you will need an address to reach them. For that, HORNET uses the `MultiAddresses` format (also known as `multiaddr`).
 
 `multiaddr` is a convention on how to encode multiple layers of addressing information into a single path structure that is future-proof.
 Basically, `multiaddr` combines several pieces of information in a single human-readable and machine-optimized string, including network protocol and [`PeerId`](#node-identity).

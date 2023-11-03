@@ -102,7 +102,7 @@ refunds the original sender, plus she creates _Basic Output #14_ into which she 
 ![Transaction H - Receiving microfunds](/img/stardust_explanations/stardust_ledger_anatomy/simple_transaction/tx_H.svg)
 
 What forces the recipient to post and execute Transaction H? Nothing. She can just keep the sender's 100i in limbo forever.
-That is why it is handy that you can combine unlock conditions. For example, the sender can add an expiration
+That is why it is handy that you can combine _unlock conditions_. For example, the sender can add an expiration
 condition to _Basic Output #11_. Once the output is expired, the recipient won't be able to claim the 1i and the sender
 takes full custody of the 101i in the output.
 
@@ -131,7 +131,7 @@ and [REST API](https://github.com/iotaledger/tips/blob/indexer-api/tips/TIP-0026
 ## Metadata Feature
 
 Another handy tool is the _Metadata Feature_ of outputs. This feature makes it possible to store arbitrary data in outputs.
-Of course, storing data in outputs increases the minimum base token requirement, but in turn it provides a data storage option
+Of course, storing data in outputs increases the minimum base token requirement, but in turn it provides a _data storage_ option
 that is 24/7 available on any network node.
 
 As soon as the output with metadata is consumed, it is pruned from nodes' databases and base tokens used as storage
