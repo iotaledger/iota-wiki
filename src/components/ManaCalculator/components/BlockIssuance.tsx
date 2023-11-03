@@ -10,11 +10,11 @@ import {
   YAxis,
 } from "recharts";
 
-export function ManaAccumulation({ results }: {  results: EpochReward[] }) {
+export function BlockIssuance({ results }: {  results: EpochReward[] }) {
   return (
     <div className="table">
       <br />
-      <h3>Mana Accumulation</h3>
+      <h3>Block Issuance Rate</h3>
       <ResponsiveContainer width="100%" height={250}>
         <AreaChart
           data={results}
@@ -36,7 +36,7 @@ export function ManaAccumulation({ results }: {  results: EpochReward[] }) {
           <Tooltip />
           <Area
             type="monotone"
-            dataKey="mana"
+            dataKey="totalTps"
             stroke="#8884d8"
             fillOpacity={1}
             fill="url(#colorUv)"
