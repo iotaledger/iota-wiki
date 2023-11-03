@@ -11,6 +11,7 @@
 .docusaurus
 .cache-loader
 /cli/dist
+/theme/dist
 
 .yarn
 /cli/test

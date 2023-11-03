@@ -70,7 +70,7 @@ RFID is similar to barcode technology in concept but presents several difference
 
 - Tags can store more data than barcodes, i.e. not only an ID but also other characteristics of an item such as, size, weight, production date, etc.
 
-To ensure interoperability, RFID is a technology regulated by [different ISO/IEC standards and by EPCGlobal](https://www.electronics-notes.com/articles/connectivity/rfid-radio-frequency-identification/standards-iec-iso-epcglobal.php), a GS-1 initiative.
+To ensure _interoperability_, RFID is a technology regulated by [different ISO/IEC standards and by EPCGlobal](https://www.electronics-notes.com/articles/connectivity/rfid-radio-frequency-identification/standards-iec-iso-epcglobal.php), a GS-1 initiative.
 
 The data stored by an RFID tag usually includes an _Electronic Product Code_ (EPC). An EPC is aimed at being a universal identifier (ID) for any physical object. EPCs can have multiple representations, human-readable (for instance as URIs) or machine-readable (binary encoding within the memory of RFID tags). The [GS1’s EPC Tag Data Standard](https://www.gs1.org/standards/epc-rfid/tds) (TDS) specifies data formats and encodings for EPCs to be stored on passive RFID (UHF Gen 2) Tags. It is important to note that RFID tags may contain other data besides EPC identifiers (and in some applications may not carry an EPC identifier at all).
 

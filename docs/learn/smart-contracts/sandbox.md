@@ -23,7 +23,7 @@ The access to the chain's state has to be curated, too. The chain owner and deve
 not necessarily the same entity. A single malicious contract could ruin the whole chain if not limited to its own space.
 Instead of working on the state as a whole, each smart contract can only modify a part of it.
 
-The only way for smart contracts to access data is to use the Sandbox interface, which is deterministic. It provides
+The only way for smart contracts to access data is to use the _Sandbox_ interface, which is deterministic. It provides
 their internal state as a list of key/value pairs.
 
 ![Sandbox](/img/sandbox.png)

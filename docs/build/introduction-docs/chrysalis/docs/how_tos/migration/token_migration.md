@@ -23,7 +23,7 @@ This included one of the innovations that directly impacted one of the most cruc
 
 Below is an overview of how the migration is taking place for normal token holders:
 
-1. You enter your seed in Firefly.
+1. You enter your seed in _Firefly_.
 2. Firefly creates a new seed for you and generates an EdDSA address for the new network.
 3. Firefly sends your funds to a specific migration address (which encapsulates your EdDSA address) on the old network.
 4. Your funds become available on the new network on the EdDSA address Firefly created for you.
@@ -83,7 +83,7 @@ rules, then it falls under what we define as a migration bundle:
 - It contains exactly one output transaction of which the destination address is a valid migration address and is
   positioned as the tail transaction within the bundle (meaning `currentIndex` 0). **The output transaction value is at
   least 1'000'000 tokens (1 Mi).**
-- It does not contain any zero-value transactions which do not hold signature fragments. This means that transactions
+- It does not contain any zero-_value transactions_ which do not hold signature fragments. This means that transactions
   other than the tail transaction must always be part of an input.
 - Input transactions must not use migration addresses.
 

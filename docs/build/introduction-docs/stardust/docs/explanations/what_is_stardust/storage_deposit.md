@@ -14,8 +14,8 @@ image: /img/logo/preview.png
 
 # Storage Deposit System
 
-Nodes in any DLT network must have a copy of the most recent ledger to be able to create or verify new transactions. The
-more user accounts there are, the more disk space is required on nodes to store the ledger state. Since transactions
+Nodes in any _DLT_ network must have a copy of the most recent ledger to be able to create or verify new transactions. The
+more user accounts there are, the more disk space is required on nodes to store the _ledger state_. Since transactions
 are feeless, a malicious user might bloat the ledger size by creating a lot of accounts with just a tiny amount of funds
 (dust) on them.
 
@@ -41,7 +41,7 @@ how much data can be stored in outputs.
 Why is it so important to store data in the ledger? Any application specific data for higher layer protocols can be
 shared via the ledger. The data is available on all network nodes as long as the outputs storing them are unspent.
 
-Arbitrary data storage becomes a general feature of outputs. Some examples of where is it useful:
+Arbitrary _data storage_ becomes a general feature of outputs. Some examples of where is it useful:
 
 - smart contract chains store L2 state commitments in their alias accounts,
 - smart contract users put L2 smart contract call data in transfers sent to the chain's account,

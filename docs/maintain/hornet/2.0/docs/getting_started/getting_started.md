@@ -41,7 +41,7 @@ should have the minimum specs:
 - SSD storage.
 - A public IP address.
 
-The amount of storage you need will depend on whether and how often you plan on pruning old data from your local
+The amount of storage you need will depend on whether and how often you plan on _pruning_ old data from your local
 database.
 
 HORNET exposes different functionality on different ports:

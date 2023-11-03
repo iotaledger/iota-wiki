@@ -116,7 +116,7 @@ In order not to lose access to the storage deposit, two additional unlock condit
 _Basic Output #7_ in Transaction F:
 
 - A _Storage Deposit Return Unlock Condition_ that forces the consumer of the output to refund _Return Amount_ of base tokens to _Return Address_,
-- and an _Expiration Unlock Condition_ that defines a time window until the recipient has to claim the transfer. If they don't do so,
+- and an __Expiration Unlock_ Condition_ that defines a time window until the recipient has to claim the transfer. If they don't do so,
   ownership of _Basic Output #7_ bounces back to the sender and the _Storage Deposit Return Unlock Condition_ is ignored.
 - The expiration time is compared to the timestamp of the confirming milestone to decide whether the unlock is valid or not.
 

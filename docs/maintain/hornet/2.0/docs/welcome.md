@@ -22,7 +22,7 @@ It provides the full node capabilities including full support of the latest netw
 By running your own node you have the following benefits:
 
 - You have direct access to the IOTA or Shimmer network, instead of having to connect to and trust someone else's node.
-- You help the network to become more distributed and resilient by validating blocks and value transactions.
+- You help the network to become more distributed and resilient by validating blocks and _value transactions_.
 
 ## Source Code
 

@@ -17,13 +17,13 @@ IOTA is unique in that it provides data-only transactions in the Tangle. However
 face two major problems:
 
 - The Tangle is permissionless, therefore anyone can send data blocks with any content and the blocks are not
-  authenticated with signatures like value transactions. The source of the data published through the Tangle is not
+  authenticated with signatures like _value transactions_. The source of the data published through the Tangle is not
   identifiable by the core protocol.
 - Data use-case applications often rely on structured, filtered and processed application-specific data. Such
   functionality puts unnecessary load on network nodes running the core protocol.
 
 Stardust removes any data processing from the core protocol, as supporting use-case specific processing requirements
-in the core protocol is unfeasible – and anyway, it would jeopardize node performance and hence transaction throughput
+in the core protocol is unfeasible – and anyway, it would jeopardize node performance and hence transaction _throughput_
 in the network.
 
 Data in Stardust is published via [Tagged Data Payloads](https://github.com/iotaledger/tips/blob/main/tips/TIP-0023/tip-0023.md), which are treated

@@ -34,6 +34,13 @@ export function RoleSection() {
         ]}
       />
       <br />
+      <label className='inlined-label'>Holded amount</label>
+      <input
+        className='col col--4'
+        value={fromMicro(state.holdedTokens)}
+        onChange={(e) => handleOwnHoldChange(toMicro(Number(e.target.value)))}
+      ></input>
+      <br />
       {state.userType === UserType.VALIDATOR ? (
         <>
           <label className='inlined-label'>Stake</label>
@@ -66,15 +73,6 @@ export function RoleSection() {
             value={fromMicro(state.stakedOrDelegatedTokens)}
             onChange={(e) =>
               handleOwnStakeChange(toMicro(Number(e.target.value)))
-            }
-          ></input>
-          <br />
-          <label className='inlined-label'>Holded amount</label>
-          <input
-            className='col col--4'
-            value={fromMicro(state.holdedTokens)}
-            onChange={(e) =>
-              handleOwnHoldChange(toMicro(Number(e.target.value)))
             }
           ></input>
         </>
