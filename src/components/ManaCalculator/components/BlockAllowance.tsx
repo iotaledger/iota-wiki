@@ -1,5 +1,4 @@
 import React from 'react';
-import { EpochReward } from '../hooks';
 import {
   Area,
   AreaChart,
@@ -9,12 +8,13 @@ import {
   XAxis,
   YAxis,
 } from 'recharts';
+import { EpochReward } from '../types';
 
-export function BlockIssuance({ results }: { results: EpochReward[] }) {
+export function BlockAllowance({ results }: { results: EpochReward[] }) {
   return (
     <div className='table'>
       <br />
-      <h3>Block Issuance Rate</h3>
+      <h3>Block Allowance</h3>
       <ResponsiveContainer width='100%' height={250}>
         <AreaChart
           data={results}

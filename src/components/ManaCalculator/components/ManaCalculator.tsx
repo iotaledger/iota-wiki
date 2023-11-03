@@ -13,7 +13,7 @@ import {
   RoleSection,
   OtherParametersSection,
   ManaAccumulation,
-  BlockIssuance,
+  BlockAllowance,
 } from './';
 
 export function ManaCalculator() {
@@ -29,7 +29,7 @@ export function ManaCalculator() {
       <br />
       <OutputForm />
       <ManaAccumulation results={results} />
-      <BlockIssuance results={results} />
+      <BlockAllowance results={results} />
     </ManaStateContext.Provider>
   );
 }
