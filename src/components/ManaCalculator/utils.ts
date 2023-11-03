@@ -1,4 +1,4 @@
-import { NetworkType } from "./types";
+import { NetworkType } from './types';
 
 // Constants
 const IOTA_SUPPLY = 4600000000000000;
@@ -113,9 +113,9 @@ export function toMicro(n: number): number {
 }
 
 export function getNetworkSupply(network: NetworkType): number {
-  if(network == NetworkType.IOTA){
-    return IOTA_SUPPLY
+  if (network == NetworkType.IOTA) {
+    return IOTA_SUPPLY;
   } else {
-    return SHIMMER_SUPPLY
+    return SHIMMER_SUPPLY;
   }
 }

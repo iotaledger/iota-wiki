@@ -484,7 +484,7 @@ ul ul .table-of-contents__link {
   margin: 5px 0px;
 }
 
-.grouped-form input:not([role$="combobox"])  {
+.grouped-form input:not([role$='combobox']) {
   background-color: var(--ifm-color-emphasis-200) !important;
   padding: 10px;
   border-radius: 4px;
