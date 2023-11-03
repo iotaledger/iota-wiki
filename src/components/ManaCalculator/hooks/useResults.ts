@@ -2,9 +2,9 @@ import {
   calculateManaRewards,
   calculatePassiveRewards,
   calculateTPS,
-} from "../actions";
-import { UserType } from "../enums";
-import { ManaCalculatorProps, ValidatorParameters } from "../types";
+} from '../actions';
+import { UserType } from '../enums';
+import { ManaCalculatorProps, ValidatorParameters } from '../types';
 
 export function useResults(state: ManaCalculatorProps) {
   const passiveRewards = calculatePassiveRewards(
@@ -15,16 +15,18 @@ export function useResults(state: ManaCalculatorProps) {
 
   const additionalTPS = calculateTPS(passiveRewards, state.congestion);
 
-  const validatorParameters = state.userType === UserType.VALIDATOR
-    ? {
-      performanceFactor: state.validator.performanceFactor,
-      fixedCost: state.validator.fixedCost,
-      shareOfYourStakeLocked: state.validator.shareOfYourStakeLocked,
-      attractedNewDelegatedStake: state.validator.attractedNewDelegatedStake,
-      attractedDelegatedStakeFromOtherPools:
-        state.validator.attractedDelegatedStakeFromOtherPools,
-    } as ValidatorParameters
-    : null;
+  const validatorParameters =
+    state.userType === UserType.VALIDATOR
+      ? ({
+          performanceFactor: state.validator.performanceFactor,
+          fixedCost: state.validator.fixedCost,
+          shareOfYourStakeLocked: state.validator.shareOfYourStakeLocked,
+          attractedNewDelegatedStake:
+            state.validator.attractedNewDelegatedStake,
+          attractedDelegatedStakeFromOtherPools:
+            state.validator.attractedDelegatedStakeFromOtherPools,
+        } as ValidatorParameters)
+      : null;
 
   const manaGenerated = calculateManaRewards(
     state.stakedOrDelegatedTokens,

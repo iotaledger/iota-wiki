@@ -22,7 +22,7 @@ export function ManaCalculator() {
       <AdvancedSettingsValidator />
       <br />
       <OutputForm />
-      <ManaAccumulation/>
+      <ManaAccumulation />
     </ManaStateContext.Provider>
   );
 }
