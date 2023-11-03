@@ -21,7 +21,7 @@ This document will detail the development of the Stronghold Engine library for I
 
 **_Development History and Breakdown:_**
 
-Stronghold Engine originally started its life as a full featured security platform. The original impetus for building the software involved the idea of a Virtual Machine/Runtime which would allow a user to store data securely. The entire state of the VM could be offloaded into a Snapshot/Image file _a le smalltalk_. This implementation was meant to contain a few other features:
+Stronghold Engine originally started its life as a full featured security platform. The original impetus for building the software involved the idea of a Virtual Machine/Runtime which would allow a user to store data securely. The entire state of the _VM_ could be offloaded into a Snapshot/Image file _a le smalltalk_. This implementation was meant to contain a few other features:
 
 - P2P networking layer
 - Secret sharing protocols
@@ -73,7 +73,7 @@ Stronghold Engine needed to be small, extensible, and secure if it was going to 
 
 **_Primitives Crate:_**
 
-The core principle behind the primitives crate hinged on implementing a bunch of traits (interfaces) which could be used to define cryptographic primitives. Each primitive contains an info data structure for describing the constraints of the algorithm and at least one trait. These primitives range from Random Number Generators to Cipher Algorithms, Hashing Algorithms and Key Derivation Functions. In this way, a developer should be able to slot in a bit of logic and have it work with the rest of the library.
+The core principle behind the primitives crate hinged on implementing a bunch of traits (interfaces) which could be used to define cryptographic primitives. Each primitive contains an info data structure for describing the constraints of the algorithm and at least one trait. These primitives range from Random Number Generators to Cipher Algorithms, Hashing Algorithms and Key Derivation Functions. In this way, a developer should be able to _slot_ in a bit of logic and have it work with the rest of the library.
 
 **_Random Crate:_**
 
@@ -95,7 +95,7 @@ A fuzz client was created to match the results of the library’s XChaCha20-Poly
 
 **_Vault Crate:_**
 
-The Vault crate contains logic and abstractions for the storage layer of this system. Importantly, the storage layer doesn’t actually define a standard shape for storing the data, instead it defines a method of reading, writing and viewing the data and the system may use any in-memory data collection type. For instance, the Proof of Concept Command Line Tool uses a hashmap wrapped in a RwLock and an Arc as its memory based data storage and the data itself is cached as bytes in that hashmap. The secure data should not be saved in any kind of persistent database; instead persistence is achieved through snapshots as detailed below.
+The Vault crate contains logic and abstractions for the storage layer of this system. Importantly, the storage layer doesn’t actually define a standard shape for storing the data, instead it defines a method of reading, writing and viewing the data and the system may use any in-memory data collection type. For instance, the Proof of Concept Command Line Tool uses a hashmap wrapped in a RwLock and an Arc as its memory based _data storage_ and the data itself is cached as bytes in that hashmap. The secure data should not be saved in any kind of persistent database; instead persistence is achieved through snapshots as detailed below.
 
 Vault defines a format of ordered chains where in each Record contains an ID, a Transaction, some metadata, a counter and the sealed data. Each of these chains starts out with a single Initial Transaction type that contains no data aside from the owner's ID. Every proceeding transaction must be a direct descendant of this transaction for it to be valid. Also, the counter is incremented every time an event occurs on the data. In this way, the system can determine which piece of data is the latest version while still maintaining a history of the data’s state over time.
 
@@ -111,7 +111,7 @@ The Vault crate includes a fuzz client. The main purpose of this fuzzer is to te
 
 The final major crate of this library suite is the snapshot crate. This crate defines a method for storing the state of the system into a file format. This file can be transferred between different Stronghold Engine devices. This file format can be extended and changed as needed to make it more secure and more appropriate for the system being used. The snapshot layer currently also uses sodiumoxide’s secretstream algorithm which uses XChaCha20-Poly1305 to encrypt and decrypt the data. A user’s password is required to encrypt and decrypt the snapshot.
 
-Data is read into the snapshot crate by way of a byte buffer. A single hexadecimal signature is written to the file’s head along with the file’s version number. A salt is generated and it is used along with the user’s inputted password to derive a unique key. The Key is used to create a header and a push stream; the header is written to the file and the push stream is used to encrypt the incoming data. The databuffer’s data is read in as 256 byte chunks and it is encrypted in the stream before it is written to the file. Decryption of the snapshot follows the opposite steps: a user supplies a password, the salt is read from the file and the password and salt are used to derive a key. The header is then read from the file and used with the key to generate a pull stream. As the data is fed through this stream and it is decrypted back into a plaintext format.
+Data is read into the snapshot crate by way of a byte buffer. A single hexadecimal signature is written to the file’s head along with the file’s version number. A _salt_ is generated and it is used along with the user’s inputted password to derive a unique key. The Key is used to create a header and a push stream; the header is written to the file and the push stream is used to encrypt the incoming data. The databuffer’s data is read in as 256 byte chunks and it is encrypted in the stream before it is written to the file. Decryption of the snapshot follows the opposite steps: a user supplies a password, the salt is read from the file and the password and salt are used to derive a key. The header is then read from the file and used with the key to generate a pull stream. As the data is fed through this stream and it is decrypted back into a plaintext format.
 
 **_Command Line Proof of Concept:_**
 

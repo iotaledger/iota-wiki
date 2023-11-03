@@ -1,0 +1,67 @@
+---
+description: This guide will help you quickly get started with the [Public Testnet](/build/networks-endpoints/#public-testnet)
+image: /img/logo/WASP_logo_dark.png
+keywords:
+  - quickstart
+  - developer
+  - using
+  - EVM
+  - Ethereum
+  - Solidity
+  - metamask
+  - JSON
+  - RPC
+---
+
+import { AddToMetaMaskButton, EVMNetworks } from '@theme/AddToMetaMaskButton';
+
+# Public Testnet Quickstart Guide
+
+This guide will help you quickly get started with the [Public Testnet](/build/networks-endpoints/#public-testnet), where you can deploy and interact with EVM-compatible smart contracts on the Shimmer Testnet.
+
+## Prerequisites
+
+- [MetaMask](https://metamask.io/) browser extension installed
+
+## Setup MetaMask
+
+Click this button:
+
+<AddToMetaMaskButton cfg={EVMNetworks['shimmerevm-testnet']} />
+
+Please read [this MetaMask guide](./compatible-tools.md#metamask) for a detailed guidance.
+
+## Get Testnet SMR Tokens
+
+1. Go to the [ShimmerEVM Testnet Toolkit](https://evm-toolkit.evm.testnet.shimmer.network/).
+2. Connect your MetaMask wallet by clicking "Connect Wallet" or paste an EVM address.
+3. Select the account you want to receive testnet SMR tokens.
+4. Click "Send funds" to get testnet SMR tokens.
+
+## Get Simulated Bridged Tokens
+
+1. Go to the [ERC20 Simulated Token Faucet](https://evm-faucet.testnet.shimmer.network/).
+2. Connect your MetaMask wallet by clicking "Connect Wallet".
+3. Select the account you want to receive simulated bridged tokens.
+4. Choose the desired token (fETH, fBTC, fUSDT, etc.) from the dropdown list.
+5. Click "Submit" to get the selected simulated bridged tokens.
+
+## Deploy and Interact with Smart Contracts
+
+You can now use your testnet SMR tokens and simulated bridged tokens to deploy and interact with smart contracts on the [Public Testnet](/build/networks-endpoints/#public-testnet). Utilize popular development tools and frameworks, such as [Truffle](https://www.trufflesuite.com/), [Hardhat](https://hardhat.org/), or [Remix](https://remix.ethereum.org/), to build, test, and deploy your smart contracts.
+
+## Explore the Public Testnet
+
+Visit the [Public Testnet Block Explorer](https://explorer.evm.testnet.shimmer.network/) to monitor the chain, track transactions, and explore deployed smart contracts.
+
+## Additional Resources
+
+- [Wasp GitHub repository](https://github.com/iotaledger/wasp) (smart contracts node implementation)
+- [Standalone Wasp dashboard](https://dashboard.evm.testnet.shimmer.network/)
+- [GitHub issues page for Wasp](https://github.com/iotaledger/wasp/issues)
+- [Wiki article on configuring wasp-cli](/wasp-cli/how-tos/wasp-cli/)
+- [EVM toolkit](https://toolkit.evm.testnet.shimmer.network/)
+- [ERC20 simulated token faucet](https://erc20-faucet.evm.testnet.shimmer.network/)
+- [Firefly Shimmer](https://firefly.iota.org)
+
+With this quickstart guide, you should now be able to set up and start exploring the [Public Testnet](/build/networks-endpoints/#public-testnet). As you begin to deploy and interact with smart contracts, remember to provide feedback on any issues or improvements you discover to help make the ShimmerEVM even better. Happy developing!

@@ -9,7 +9,7 @@ declare global {
 
 export const EVMNetworks = {
   'shimmerevm-testnet': {
-    chainId: '0x430',
+    chainId: '0x431',
     chainName: 'ShimmerEVM Testnet',
     nativeCurrency: {
       name: 'Shimmer',

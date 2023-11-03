@@ -25,9 +25,9 @@ required storage deposit in the base currency. We will elaborate on storage depo
 ## Non-fungible Tokens (NFTs)
 
 Non-fungible tokens, so-called **NFTs**, are different from native tokens because each token must be unique and must have
-some immutable data attached to them. As a consequence, NFTs are supported on base protocol level via NFT outputs.
+some immutable data attached to them. As a consequence, NFTs are supported on base protocol level via _NFT outputs_.
 
 Minting and NFT doesn't require expensive gas fees, all that needs to be in place is the right amount of storage deposit
 tokens that are 100% refunded after the NFT is destroyed. The issuer's identity may also be immutable attached to the NFT
 next to arbitrary data, making it possible to detect counterfeits. [TIP-27](https://github.com/iotaledger/tips/pull/65)
-explains the recommended way of structuring NFT metadata for future verification and dApp interoperability.
+explains the recommended way of structuring NFT metadata for future verification and dApp _interoperability_.

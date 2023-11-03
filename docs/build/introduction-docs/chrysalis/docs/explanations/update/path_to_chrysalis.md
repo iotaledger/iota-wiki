@@ -1,5 +1,5 @@
 ---
-description: Chrysalis was the most promising series of upgrades made to IOTA yet with increased transaction throughput, network stability, and improved usability.
+description: Chrysalis was the most promising series of upgrades made to IOTA yet with increased transaction _throughput_, network stability, and improved usability.
 image: /img/logo/Chrysalis_logo_dark.png
 keywords:
   - EdDSA
@@ -16,7 +16,7 @@ keywords:
 
 One of the IOTA Foundation’s primary roles is defining and delivering on a development roadmap that aligns with the Foundation's strategy to reach production-readiness and adoption.
 
-The IOTA mainnet has been operational since 2016 and the overall engineering strategy evolved significantly based on industry demand and feedback.
+The IOTA _mainnet_ has been operational since 2016 and the overall engineering strategy evolved significantly based on industry demand and feedback.
 
 Progress in Coordicide research has resulted in identifying many concepts that could already be implemented on the current IOTA mainnet and provides significant value to users of the protocol before Coordicide. This led to the formalization of our engineering strategy around Chrysalis: a series of upgrades to the protocol that achieves production-readiness before Coordicide.
 
@@ -39,16 +39,16 @@ Another important requirement was the ease of transition to the future Coordicid
 
 The plan for implementing Chrysalis was divided into two phases:
 
-**The first phase** consisted of improved tip selection (URTS), milestone selection, and White flag. These were gradually implemented in the node software. This phase required an upgrade of all nodes, including the coordinator node, and did not require a snapshot.
+**The first phase** consisted of improved tip selection (URTS), milestone selection, and White flag. These were gradually implemented in the node software. This phase required an upgrade of all nodes, including the _coordinator_ node, and did not require a snapshot.
 
 The first phase of Chrysalis resulted in:
 
-- Transaction confirmation times of around 10 seconds.
+- _Transaction confirmation_ times of around 10 seconds.
 - Transactions rarely needing reattachment.
 - A substantial TPS increase.
 - Performance and reliability improvements for nodes.
 
-**The second phase** of Chrysalis consisted of adopting and/or implementing UTXO, atomic transactions, reusable addresses (Ed25519), a transition to a binary transaction layout, and a new set of client libraries and developer tools. These represented significant changes to the core protocol and the way transactions were structured. Once everything was tested, validated, and audited, the Foundation deployed a new Chrysalis network. The upgrade consisted of an extended period when the legacy network remained operational which allowed users, exchanges, and partners to migrate to the Chrysalis network at will.
+**The second phase** of Chrysalis consisted of adopting and/or implementing UTXO, atomic transactions, _reusable addresses_ (Ed25519), a transition to a binary transaction layout, and a new set of client libraries and developer tools. These represented significant changes to the core protocol and the way transactions were structured. Once everything was tested, validated, and audited, the Foundation deployed a new Chrysalis network. The upgrade consisted of an extended period when the legacy network remained operational which allowed users, exchanges, and partners to migrate to the Chrysalis network at will.
 
 The second phase of Chrysalis consisted of:
 
@@ -108,4 +108,4 @@ Single node endpoints that expose native MQTT in case you need this are:
 
 ## Conclusion
 
-Chrysalis was the most promising series of upgrades made to IOTA yet. It was a major step for our production-readiness, with increased transaction throughput, network stability, improved usability, and enabled new features and use cases. The upcoming weeks and months are some of the most exciting in IOTA’s history. With the release of Chrysalis, we are on a clear path towards IOTA’s adoption as an enabling technology for IoT and beyond.
+Chrysalis was the most promising series of upgrades made to IOTA yet. It was a major step for our production-readiness, with increased transaction _throughput_, network stability, improved usability, and enabled new features and use cases. The upcoming weeks and months are some of the most exciting in IOTA’s history. With the release of Chrysalis, we are on a clear path towards IOTA’s adoption as an enabling technology for IoT and beyond.

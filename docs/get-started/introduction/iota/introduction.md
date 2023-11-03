@@ -13,7 +13,7 @@ keywords:
 
 # Introduction
 
-IOTA is a distributed ledger technology (DLT) that empowers individuals to have control over their private data, run
+IOTA is a distributed ledger technology (_DLT_) that empowers individuals to have control over their private data, run
 tamper-proof programs, and engage in asset ownership and trading without the need for intermediaries. DLTs, as the name
 suggests, maintain a ledger of token ownership across multiple nodes. However, unlike centralized systems, DLTs require
 consensus among independent nodes to agree on the ledger's state. This introduces the challenge of protecting the
@@ -27,9 +27,9 @@ together, creating a natural bottleneck. However, IOTA bypasses this limitation 
 for a more scalable and efficient network. It eliminates the need for centralized validation and offers a decentralized
 and secure environment for transactions and data exchange.
 
-The Tangle is a replicated data structure across a network of nodes, forming a directed acyclic graph of blocks. It
+The Tangle is a replicated _data structure_ across a network of nodes, forming a directed acyclic graph of blocks. It
 enables parallel validation of transactions without total ordering, eliminating intermediaries and offering a highly
-performant consensus and ledger solution.
+performant _consensus_ and ledger solution.
 
 ## IOTA Mainnet
 

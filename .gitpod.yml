@@ -3,9 +3,9 @@ tasks:
     init: |
       corepack enable
       yarn
-      yarn build:theme && yarn build:plugins
-      yarn build:all
-    command: yarn serve
+      yarn prepare
+      yarn generate:api
+    command: yarn start
 github:
   prebuilds:
     pullRequestsFromForks: true

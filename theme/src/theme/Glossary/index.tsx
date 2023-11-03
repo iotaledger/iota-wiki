@@ -8,7 +8,9 @@ export default function Glossary() {
   const parse = require('html-react-parser');
 
   const sortedGlossary = Object.keys(glossary)
-    .sort()
+    .sort(function (a, b) {
+      return a.toLowerCase().localeCompare(b.toLowerCase());
+    })
     .reduce((acc, key) => {
       acc[key] = glossary[key];
       return acc;
@@ -19,7 +21,7 @@ export default function Glossary() {
     <>
       {Object.entries(sortedGlossary).map(([key, value]) => {
         let heading = null;
-        if (key.charAt(0) !== char) {
+        if (key.charAt(0).toLowerCase() !== char.toLowerCase()) {
           char = key.charAt(0);
           heading = char;
         }

@@ -14,18 +14,6 @@ const BOOTSTRAPPING_DURATION = 1154;
 const REWARDS_MANA_SHARE_COEFFICIENT = 2;
 export const EPOCH = 1154 + 1;
 
-// given t in seconds, returns the slot that time t belongs to
-function time_to_slot(t: number): number {
-  const slot = Math.floor(t / SLOT_DURATION);
-  return slot;
-}
-
-// given t in seconds, returns the epoch that time t belongs to
-function time_to_epoch(t: number): number {
-  const epoch = Math.floor(t / EPOCH_DURATION);
-  return epoch;
-}
-
 // given n in slots, returns the epoch that slot n belongs to
 function slot_to_epoch(n: number): number {
   const epoch = Math.floor(n / SLOTS_IN_EPOCH);
