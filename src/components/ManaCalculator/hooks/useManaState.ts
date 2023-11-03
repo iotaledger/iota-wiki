@@ -1,5 +1,4 @@
 import { createContext, useContext } from 'react';
-import { ManagerProps } from 'react-popper';
 import { CongestionType, NetworkType, UserType } from '../enums';
 import { ManaCalculatorProps, ValidatorProps } from '../types';
 import { toMicro } from '../utils';
