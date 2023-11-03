@@ -10,11 +10,11 @@ import {
 } from 'recharts';
 import { EpochReward } from '../types';
 
-export function BlockAllowance({ results }: { results: EpochReward[] }) {
+export function BlocksAllowance({ results }: { results: EpochReward[] }) {
   return (
     <div className='table'>
       <br />
-      <h3>Block Allowance</h3>
+      <h3>Blocks Allowance</h3>
       <ResponsiveContainer width='100%' height={250}>
         <AreaChart
           data={results}
