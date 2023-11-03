@@ -191,7 +191,7 @@ export function getDefaultParameters(
   const networkParams ={
     [NetworkType.IOTA]: {
       initialEpoch: 0,
-      finalEpoch: 1000
+      finalEpoch: 365
     },
     [NetworkType.SHIMMER]: {
       initialEpoch: 0,
