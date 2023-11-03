@@ -62,7 +62,7 @@ def burn_nft(nft_id, options=None)
 ```
 
 Burn an nft output. Outputs controlled by it will be swept before if they don&#x27;t have a storage
-deposit return, timelock or expiration unlock condition. This should be preferred over burning, because after
+deposit return, timelock or _expiration unlock_ condition. This should be preferred over burning, because after
 burning, the foundry can never be destroyed anymore.
 
 ### consolidate_outputs

@@ -35,4 +35,4 @@ We recommend that you use a load balanced endpoint to multiple legacy nodes for 
 
 :::
 
-After this, if your verifier node panics because of an invalid receipt, it is clear that one of the produced receipts is not valid. In this case, as a verifier node operator, you are invited to inform the community and the IOTA Foundation of your findings. This is, by the way, the same result as when the Coordinator issues a milestone, which diverges from a consistent ledger state.
+After this, if your verifier node panics because of an invalid receipt, it is clear that one of the produced receipts is not valid. In this case, as a verifier node operator, you are invited to inform the community and the IOTA Foundation of your findings. This is, by the way, the same result as when the Coordinator issues a _milestone_, which diverges from a consistent _ledger state_.

@@ -12,7 +12,7 @@ keywords:
 
 # Consensus
 
-To update the chain, its committee must reach a consensus, meaning that more than two thirds of its validators have to
+To update the chain, its committee must reach a _consensus_, meaning that more than two thirds of its validators have to
 agree to change the state in the exact same way.
 This prevents a single malicious node from wreaking havoc over the chain, but there are also more mundane reasons for
 individual nodes to act up.

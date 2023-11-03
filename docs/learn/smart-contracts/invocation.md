@@ -52,7 +52,7 @@ Being able to combine smart contracts in this way is called _synchronous composa
 A request contains a call to a smart contract and a signature of the sender. The sender also owns the assets and funds
 processed within the request.
 Unlike calls between smart contracts, requests are not executed immediately.
-Instead, they must wait until the chain's validator nodes include them in a request batch.
+Instead, they must wait until the chain's _validator_ nodes include them in a request batch.
 This means that requests have a delay and are executed in an unpredictable order.
 
 ### Asynchronous Composability
@@ -100,7 +100,7 @@ Any funds sent to the chain via on-ledger requests are credited to the sender's 
 For contracts to use funds owned by the _caller_, the _caller_ must specify an `Allowance` in the request. Contracts can
 then claim any of the allowed funds using the sandbox `TransferAllowedFunds` function.
 
-The Allowance properly looks like the following:
+The Allowance property looks like the following:
 
 ```go
 {

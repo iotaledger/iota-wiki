@@ -1,5 +1,6 @@
 import { GENERATION_PER_SLOT } from '../constants';
-import { getFirstSlotOfEpoch, getPotentialMana } from '../utils';
+import { getFirstSlotOfEpoch } from '../utils';
+import { getPotentialMana } from './getPotentialMana';
 
 export function calculatePassiveRewards(
   tokens: number,

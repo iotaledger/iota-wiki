@@ -19,7 +19,7 @@ keywords:
 # Welcome to INX-POI
 
 INX-POI enables you to generate and verify Proof-of-Inclusion of blocks in the Tangle.
-Given a piece of data or transaction and the proof, you can verify whether it was included in the Tangle at any given time.
+Given a piece of data or transaction and the proof, you can verify whether it was included in the _Tangle_ at any given time.
 
 ## Setup
 

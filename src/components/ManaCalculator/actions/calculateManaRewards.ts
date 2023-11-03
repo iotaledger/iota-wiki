@@ -1,6 +1,8 @@
-import { targetReward, decay, getNetworkSupply } from '../utils';
+import { getNetworkSupply } from '../utils';
 import type { ValidatorParameters, ValidatorProps } from '../types';
 import { NetworkType, UserType } from '../enums';
+import { decay } from './decay';
+import { targetReward } from './targetReward';
 
 export function calculateManaRewards(
   stake: number,
