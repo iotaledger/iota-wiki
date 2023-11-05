@@ -214,7 +214,7 @@ function TutorialFilters() {
               <div className='col' key={category}>
                 <h5>{category}</h5>
                 <Select
-                  placeholder={category}
+                  placeholder={null}
                   options={tags}
                   {...selectProps}
                   value={value}
@@ -224,14 +224,11 @@ function TutorialFilters() {
           })}
         </div>
       </Collapsible>
-      <div className='row margin-vert--lg'>
-        <div className='col'>
-          <span>{siteCountPlural(filteredTutorials.length)}</span>
-        </div>
-        <div className='col col--2 tutorial-link'>
-          <span>+</span>
+      <div className='row results-row margin-horiz--none margin-top--sm margin-bottom--lg'>
+        <span>{siteCountPlural(filteredTutorials.length)}</span>
+        <div>
           <a
-            className='tutorial-link__anchor'
+            className='intro__button button button--outline button--primary'
             href='https://github.com/iota-wiki/tutorial-template'
             target='_blank'
             rel='noreferrer'

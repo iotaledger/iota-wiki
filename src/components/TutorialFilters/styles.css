@@ -11,6 +11,7 @@
   display: flex;
   align-items: stretch;
   justify-content: space-between;
+  margin-bottom: 16px;
 }
 
 .tutorial-filters__row {
@@ -53,16 +54,15 @@
 }
 
 .react-select__control {
+  cursor: pointer !important;
   background-color: var(--ifm-color-emphasis-200) !important;
   border: 0 !important;
   margin-bottom: 1rem !important;
-}
-
-.react-select__placeholder {
-  color: var(--ifm-font-color-base) !important;
+  border-radius: 6px !important;
 }
 
 .react-select__indicator {
+  cursor: pointer;
   color: var(--ifm-font-color-base) !important;
 }
 
@@ -73,6 +73,10 @@
 .react-select__menu {
   background-color: var(--ifm-color-emphasis-200) !important;
   z-index: 9999;
+}
+
+.react-select__option {
+  cursor: pointer !important;
 }
 
 .react-select__option--is-focused {
@@ -97,4 +101,41 @@
 
 .Collapsible__contentOuter {
   padding: 2px;
+}
+
+.results-row {
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.Collapsible__contentInner span {
+  display: inline-block;
+  font-family: var(--ifm-heading-font-family);
+  font-size: var(--ifm-h5-font-size);
+  margin-bottom: 4px;
+}
+
+.react-select__multi-value {
+  background-color: var(--ifm-hover-overlay) !important;
+  border-radius: 6px !important;
+  padding: 0.1rem 0.15rem !important;
+}
+
+.react-select__clear-indicator:hover + * + .react-select__dropdown-indicator {
+  color: var(--ifm-font-color-base) !important;
+}
+
+.react-select__dropdown-indicator:hover {
+  color: var(--docsearch-highlight-color) !important;
+  transition: color 0.2s ease-in-out;
+}
+
+.react-select__clear-indicator:hover,
+.react-select__multi-value__remove:hover {
+  color: var(--ifm-color-gray-600) !important;
+  transition: color 0.2s ease-in-out;
+}
+
+.react-select__multi-value__remove:hover {
+  background-color: transparent !important;
 }
