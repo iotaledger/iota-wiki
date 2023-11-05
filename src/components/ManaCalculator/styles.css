@@ -29,6 +29,3 @@
 .table .row:nth-child(even) {
   background: var(--ifm-table-cell-color);
 }
-.table .align-right {
-  text-align: right;
-}
