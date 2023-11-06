@@ -5,7 +5,6 @@ import { fromMicro } from '../utils';
 export function OutputForm() {
   const { state } = useManaState();
   const { manaGenerated, passiveRewards, totalTPS } = useResults(state);
-
   return (
     <div className='table'>
       <div className='row '>
