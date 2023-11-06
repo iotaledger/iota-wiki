@@ -8,7 +8,7 @@ import { ManaCalculatorProps, ValidatorParameters } from '../types';
 
 export function useResults(state: ManaCalculatorProps) {
   const passiveRewards = calculatePassiveRewards(
-    state.holdedTokens,
+    state.heldTokens,
     state.initialEpoch,
     state.finalEpoch,
   );

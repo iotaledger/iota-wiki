@@ -156,7 +156,7 @@ export function useManaState() {
   }
 
   function handleOwnHoldChange(value: number) {
-    setState({ ...state, holdedTokens: value });
+    setState({ ...state, heldTokens: value });
   }
 
   return {
@@ -212,7 +212,7 @@ export function getDefaultParameters(
     userType: UserType.DELEGATOR,
     congestion: CongestionType.LOW,
     stakedOrDelegatedTokens: toMicro(100),
-    holdedTokens: toMicro(100),
+    heldTokens: toMicro(100),
     delegator: {
       validator: 0,
     },
