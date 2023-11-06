@@ -1,12 +1,8 @@
-import {
-  GENERATION_PER_SLOT,
-  first_slot_of_epoch,
-  potential_Mana,
-  targetReward,
-  EPOCH_DURATION,
-  decay,
-} from './utils';
-import { UserType, ValidatorParameters, ValidatorProps } from './types';
+import { getNetworkSupply } from '../utils';
+import type { ValidatorParameters, ValidatorProps } from '../types';
+import { NetworkType, UserType } from '../enums';
+import { decay } from './decay';
+import { targetReward } from './targetReward';
 
 export function calculateManaRewards(
   stake: number,
@@ -16,8 +12,9 @@ export function calculateManaRewards(
   initialEpoch: number,
   finalEpoch: number,
   userType: UserType,
-  supply: number,
+  networkType: NetworkType,
 ): number {
+  const supply = getNetworkSupply(networkType);
   let totalTargetReward = 0;
   let epochDiff = finalEpoch - initialEpoch;
 
@@ -144,21 +141,4 @@ export function calculateManaRewards(
   }
 
   return rewards;
-}
-
-export function calculatePassiveRewards(
-  tokens: number,
-  initialEpoch: number,
-  finalEpoch: number,
-): number {
-  return potential_Mana(
-    tokens,
-    first_slot_of_epoch(initialEpoch) - 1,
-    first_slot_of_epoch(finalEpoch) - 1,
-    GENERATION_PER_SLOT,
-  );
-}
-
-export function calculateTPS(mana: number, congestion: number): number {
-  return mana / congestion / EPOCH_DURATION;
 }
