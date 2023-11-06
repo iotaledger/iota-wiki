@@ -16,7 +16,7 @@ export function BlocksAllowance({ results }: { results: EpochReward[] }) {
       <br />
       <h3>Blocks Allowance</h3>
       <ResponsiveContainer width='100%' height={250}>
-        <AreaChart data={results}>
+        <AreaChart data={results} margin={{ top: 10 }}>
           <defs>
             <linearGradient id='totalTps' x1='0' y1='0' x2='0' y2='1'>
               <stop offset='5%' stopColor='#7caae6' stopOpacity={0.8} />
@@ -30,7 +30,8 @@ export function BlocksAllowance({ results }: { results: EpochReward[] }) {
           />
           <YAxis
             width={100}
-            label={{ value: 'Blocks', angle: -90, position: 'insideLeft' }}
+            label={{ value: 'Blocks', angle: -90, position: 'insideLeft', color: "white" }}
+            color="rgb(169, 184, 214)"
           />
           <CartesianGrid
             strokeDasharray='3 3'

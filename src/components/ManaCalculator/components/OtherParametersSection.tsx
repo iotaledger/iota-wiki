@@ -11,8 +11,8 @@ export function OtherParametersSection() {
     handleFinalEpochChange,
   } = useManaState();
   return (
-    <div className='grouped-form'>
-      <p className='align-center'>Other parameters</p>
+    <div className='mana_calculator__card'>
+      <h4>Other parameters</h4>
       <label className='inlined-label'>Congestion</label>
       <Select
         className='compact inlined'

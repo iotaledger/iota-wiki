@@ -18,8 +18,8 @@ export function RoleSection() {
   });
 
   return (
-    <div className='grouped-form'>
-      <p className='align-center'>Role configuration</p>
+    <div className='mana_calculator__card'>
+      <h4>Role configuration</h4>
       <label className='inlined-label'>Your Role</label>
       <Select
         className='compact inlined'

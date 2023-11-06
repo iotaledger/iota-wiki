@@ -22,11 +22,13 @@ export function ManaCalculator() {
 
   return (
     <ManaStateContext.Provider value={{ state, setState }}>
+      <h3>Configuration</h3>
       <NetworkSection />
       <RoleSection />
       <OtherParametersSection />
       <AdvancedSettingsValidator />
       <br />
+      <h3>Results</h3>
       <OutputForm />
       <ManaAccumulation results={results} />
       <BlocksAllowance results={results} />

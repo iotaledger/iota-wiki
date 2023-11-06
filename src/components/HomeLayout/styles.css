@@ -682,3 +682,36 @@
 p.libraries__feature {
   flex-grow: 1;
 }
+
+.mana_calculator__card {
+  background-color: var(--ifm-color-emphasis-0);
+  box-shadow: 0 0 5px 0px var(--ifm-color-emphasis-300);
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: var(--ifm-global-radius);
+  color: inherit;
+  cursor: pointer;
+  transition: border-color 200ms ease-in-out;
+  padding: 15px;
+  margin: 10px 0px;
+}
+
+.mana_calculator_inner__card {
+  background-color: var(--ifm-color-emphasis-0);
+  box-shadow: none;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: var(--ifm-global-radius);
+  color: inherit;
+  cursor: pointer;
+  transition: border-color 200ms ease-in-out;
+  padding: 15px;
+  margin: 10px 0px;
+}
+
+.mana_calculator__card input:not([role$='combobox']) {
+  background-color: var(--ifm-color-emphasis-200) !important;
+  padding: 10px;
+  border-radius: 4px;
+  border: none;
+  width: 150px;
+  margin-bottom: 1rem;
+}

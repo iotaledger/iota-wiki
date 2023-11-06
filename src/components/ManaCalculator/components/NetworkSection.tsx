@@ -6,8 +6,8 @@ import Select from 'react-select';
 export function NetworkSection() {
   const { handleNetworkChange } = useManaState();
   return (
-    <div className='grouped-form'>
-      <p className='align-center'>Network configuration</p>
+    <div className='mana_calculator__card'>
+      <h4>Network configuration</h4>
       <label className='inlined-label'>Your Network</label>
       <Select
         className='compact inlined'
