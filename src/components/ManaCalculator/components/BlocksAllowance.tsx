@@ -30,8 +30,12 @@ export function BlocksAllowance({ results }: { results: EpochReward[] }) {
           />
           <YAxis
             width={100}
+<<<<<<< HEAD
             label={{ value: 'Blocks', angle: -90, position: 'insideLeft', color: "white" }}
             color="rgb(169, 184, 214)"
+=======
+            label={{ value: 'Blocks', angle: -90, position: 'insideLeft' }}
+>>>>>>> b0f1dc7fa61d9b0b6e083ca58ec227fadfa70468
           />
           <CartesianGrid
             strokeDasharray='3 3'
