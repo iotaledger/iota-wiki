@@ -21,7 +21,7 @@ export function ManaAccumulation() {
       <ResponsiveContainer width='100%' height={250}>
         <AreaChart
           data={results}
-          margin={{ top: 10, right: 30, left: 0, bottom: 0 }}
+          margin={{ top: 15, right: 15, left: 15, bottom: 15 }}
         >
           <defs>
             <linearGradient id='colorUv' x1='0' y1='0' x2='0' y2='1'>
@@ -33,8 +33,8 @@ export function ManaAccumulation() {
               <stop offset='95%' stopColor='#82ca9d' stopOpacity={0} />
             </linearGradient>
           </defs>
-          <XAxis dataKey='epoch' />
-          <YAxis width={120} />
+          <XAxis dataKey='epoch' height={50} label={{ value: 'Epochs', position: 'insideBottom'}} padding={{ left: 10, right: 10 }} />
+          <YAxis width={150} label={{ value: 'Mana', angle: -90, position: 'insideLeft' }} />
           <CartesianGrid strokeDasharray='3 3' />
           <Tooltip />
           <Area
