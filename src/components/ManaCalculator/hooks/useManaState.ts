@@ -188,7 +188,7 @@ export function getDefaultParameters(
 ): ManaCalculatorProps {
   const networkParams = {
     [NetworkType.IOTA]: {
-      initialEpoch: 0,
+      initialEpoch: 1,
       finalEpoch: 365,
     },
     [NetworkType.SHIMMER]: {
