@@ -4,7 +4,15 @@ import { fromMicro } from '../utils';
 
 export function OutputForm() {
   const { state } = useManaState();
-  const { manaGenerated, passiveRewards, totalTPS } = useResults(state);
+  const {
+    manaGenerated,
+    passiveRewards,
+    totalTPS,
+    timeToGetEnoughMana,
+    timeToGetEnoughManaAsHolder,
+  } = useResults(state);
+  const humanizeDuration = require('humanize-duration');
+
   return (
     <div className='table'>
       <div className='row '>
@@ -17,10 +25,26 @@ export function OutputForm() {
         <div className='col col--6'>Mana rewards</div>
         <div className='col col--6 align-right'>{fromMicro(manaGenerated)}</div>
       </div>
-
       <div className='row '>
         <div className='col col--6'>Total TPS granted with</div>
         <div className='col col--6 align-right'>{totalTPS}</div>
+      </div>
+      <div className='row '>
+        <div className='col col--6'>
+          Time it takes to accumulate enough mana for a standard transaction...
+        </div>
+      </div>
+      <div className='row '>
+        <div className='col col--6'>...as a delegator/validator</div>
+        <div className='col col--6 align-right'>
+          {humanizeDuration(timeToGetEnoughMana * 1000)}
+        </div>
+      </div>
+      <div className='row '>
+        <div className='col col--6'>...as a holder</div>
+        <div className='col col--6 align-right'>
+          {humanizeDuration(timeToGetEnoughManaAsHolder * 1000)}
+        </div>
       </div>
     </div>
   );

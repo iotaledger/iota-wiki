@@ -2835,6 +2835,7 @@ __metadata:
     flickity-fade: ^2.0.0
     globby: ^13.1.4
     hast-util-is-element: 1.1.0
+    humanize-duration: ^3.30.0
     plugin-image-zoom: flexanalytics/plugin-image-zoom
     prettier: ^2.8.8
     raw-loader: ^4.0.2
@@ -10749,6 +10750,13 @@ __metadata:
   version: 2.1.0
   resolution: "human-signals@npm:2.1.0"
   checksum: b87fd89fce72391625271454e70f67fe405277415b48bcc0117ca73d31fa23a4241787afdc8d67f5a116cf37258c052f59ea82daffa72364d61351423848e3b8
+  languageName: node
+  linkType: hard
+
+"humanize-duration@npm:^3.30.0":
+  version: 3.30.0
+  resolution: "humanize-duration@npm:3.30.0"
+  checksum: 6eaf888219801d47d42cfb03523e736367c260e3f32cddb4e30c30f49500e08e7cdfd413f02a5ed24943ef382b3e89c8a11e6eda3a432846385903a9f49e576a
   languageName: node
   linkType: hard
 
