@@ -13,4 +13,4 @@ keywords:
 
 You can find specifications of the APIs exposed by HORNET in the the links below:
 
-- [Core REST API v2](https://wiki.iota.org/apis/core/v2/iota-core-rest-api)
+- [Core REST API v2](/apis/core/v2/iota-core-rest-api)

@@ -24,7 +24,7 @@ We currently provide load-balanced public Shimmer Beta endpoints:
 - MQTT: wss://api.testnet.shimmer.network:443/api/mqtt/v1
 - Chronicle API: https://chronicle.testnet.shimmer.network
 
-These endpoints have MQTT (via WebSockets and raw TCP) exposed and offer the HTTP REST API (according to this specifications [TIP-25](https://editor.swagger.io/?url=https://raw.githubusercontent.com/iotaledger/tips/main/tips/TIP-0025/core-rest-api.yaml), [TIP-26](https://editor.swagger.io/?url=https://raw.githubusercontent.com/iotaledger/tips/main/tips/TIP-0026/indexer-rest-api.yaml) over TLS.
+These endpoints have MQTT (via WebSockets and raw TCP) exposed and offer the HTTP REST API (according to this specifications: [Core API](/apis/core/v2/iota-core-rest-api), [Indexer API](/apis/indexer/iota-utxo-indexer-rest-api)) over TLS.
 
 ## Developer Tools
 

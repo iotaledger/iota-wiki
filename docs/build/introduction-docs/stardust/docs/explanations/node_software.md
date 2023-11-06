@@ -24,6 +24,6 @@ for Stardust eases the development of application specific node extensions.
 
 ## Node API Specification
 
-- [Core rest-api specification](https://editor.swagger.io/?url=https://raw.githubusercontent.com/iotaledger/tips/stardust-api/tips/TIP-0025/core-rest-api.yaml).
+- [Core rest-api specification](/apis/core/v2/iota-core-rest-api).
 - [UTXO Indexer rest-api specification](https://github.com/iotaledger/tips/blob/main/tips/TIP-0026/tip-0026.md).
 - [Event API (MQTT) specification](https://studio.asyncapi.com/?url=https://raw.githubusercontent.com/iotaledger/tips/stardust-event-api/tips/TIP-0028/event-api.yml).
