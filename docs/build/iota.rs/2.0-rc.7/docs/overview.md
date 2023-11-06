@@ -60,7 +60,7 @@ appear the same for any client.
 The iota.rs library exposes operations of two types. Clients interact with nodes by calling their REST API, and the
 first group of operations mirrors the available calls. When your program invokes such an operation, it directly
 translates it into a REST call to a node. See
-the [node's REST API reference](https://editor.swagger.io/?url=https://raw.githubusercontent.com/iotaledger/tips/main/tips/TIP-0025/core-rest-api.yaml)
+the [node's REST API reference](/apis/core/v2/iota-core-rest-api)
 for a complete list of available endpoints.
 
 Operations from the first group tend to be too atomic and basic to use conveniently. The second group provides you with
