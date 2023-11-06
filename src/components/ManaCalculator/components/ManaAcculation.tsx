@@ -33,7 +33,10 @@ export function ManaAccumulation({ results }: { results: EpochReward[] }) {
             label={{ value: 'Mana', angle: -90, position: 'insideLeft' }}
             unit='M'
           />
-          <CartesianGrid strokeDasharray='3 3' stroke='rgb(255, 255, 255, 0.15)' />
+          <CartesianGrid
+            strokeDasharray='3 3'
+            stroke='rgb(255, 255, 255, 0.15)'
+          />
           <Tooltip />
           <Area
             type='monotone'
