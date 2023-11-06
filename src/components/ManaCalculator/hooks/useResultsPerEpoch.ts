@@ -46,9 +46,9 @@ export function useResultsPerEpoch(state: ManaCalculatorProps): EpochReward[] {
 
     const mana = manaGenerated + passiveRewards;
 
-    const additionalTPS = calculateTPS(passiveRewards, state.congestion);
-    const grantedTPS = calculateTPS(manaGenerated, state.congestion);
-    const totalTps = additionalTPS + grantedTPS;
+    const tpsFromPassiveRewards = calculateTPS(passiveRewards, state.congestion);
+    const tpsFromGeneratedMana = calculateTPS(manaGenerated, state.congestion);
+    const totalTps = tpsFromPassiveRewards + tpsFromGeneratedMana;
 
     results.push({
       epoch: i,
