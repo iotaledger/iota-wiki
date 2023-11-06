@@ -192,8 +192,8 @@ export function getDefaultParameters(
       finalEpoch: 365,
     },
     [NetworkType.SHIMMER]: {
-      initialEpoch: 0,
-      finalEpoch: 100,
+      initialEpoch: 1,
+      finalEpoch: 1000,
     },
   };
 
