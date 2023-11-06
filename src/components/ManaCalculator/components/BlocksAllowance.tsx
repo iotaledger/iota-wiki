@@ -10,17 +10,17 @@ import {
 } from 'recharts';
 import { EpochReward } from '../types';
 
-export function ManaAccumulation({ results }: { results: EpochReward[] }) {
+export function BlocksAllowance({ results }: { results: EpochReward[] }) {
   return (
     <div className='table'>
       <br />
-      <h3>Mana Accumulation</h3>
+      <h3>Blocks Allowance</h3>
       <ResponsiveContainer width='100%' height={250}>
-        <AreaChart data={results} margin={{ top: 10 }}>
+        <AreaChart data={results}>
           <defs>
-            <linearGradient id='manaColor' x1='0' y1='0' x2='0' y2='1'>
-              <stop offset='5%' stopColor='#8884d8' stopOpacity={0.8} />
-              <stop offset='95%' stopColor='#8884d8' stopOpacity={0} />
+            <linearGradient id='totalTps' x1='0' y1='0' x2='0' y2='1'>
+              <stop offset='5%' stopColor='#7caae6' stopOpacity={0.8} />
+              <stop offset='95%' stopColor='#7caae6' stopOpacity={0} />
             </linearGradient>
           </defs>
           <XAxis
@@ -30,8 +30,7 @@ export function ManaAccumulation({ results }: { results: EpochReward[] }) {
           />
           <YAxis
             width={100}
-            label={{ value: 'Mana', angle: -90, position: 'insideLeft' }}
-            unit='M'
+            label={{ value: 'Blocks', angle: -90, position: 'insideLeft' }}
           />
           <CartesianGrid
             strokeDasharray='3 3'
@@ -40,10 +39,10 @@ export function ManaAccumulation({ results }: { results: EpochReward[] }) {
           <Tooltip />
           <Area
             type='monotone'
-            dataKey='mana'
-            stroke='#8884d8'
+            dataKey='totalTps'
+            stroke='#7caae6'
             fillOpacity={1}
-            fill='url(#manaColor)'
+            fill='url(#totalTps)'
           />
         </AreaChart>
       </ResponsiveContainer>
