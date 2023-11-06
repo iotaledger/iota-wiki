@@ -15,7 +15,7 @@ export function OutputForm() {
       </div>
       <div className='row '>
         <div className='col col--6'>
-          Mana rewards per epoch (delegation/validation)
+          Mana rewards
         </div>
         <div className='col col--6 align-right'>{fromMicro(manaGenerated)}</div>
       </div>
