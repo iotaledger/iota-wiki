@@ -11,6 +11,7 @@ export function RoleSection() {
     handleOwnStakeChange,
     handleUserChange,
     handleValidatorChange,
+    handleOwnHoldChange,
   } = useManaState();
   const validatorOptions = state.validators.map((_, i) => {
     return { value: i, label: `Validator ${i + 1}` };
@@ -33,12 +34,19 @@ export function RoleSection() {
         ]}
       />
       <br />
+      <label className='inlined-label'>Held amount</label>
+      <input
+        className='col col--4'
+        value={fromMicro(state.heldTokens)}
+        onChange={(e) => handleOwnHoldChange(toMicro(Number(e.target.value)))}
+      ></input>
+      <br />
       {state.userType === UserType.VALIDATOR ? (
         <>
           <label className='inlined-label'>Stake</label>
           <input
             className='compact inlined'
-            value={fromMicro(state.stake)}
+            value={fromMicro(state.stakedOrDelegatedTokens)}
             onChange={(e) =>
               handleOwnStakeChange(toMicro(Number(e.target.value)))
             }
@@ -62,7 +70,7 @@ export function RoleSection() {
           <label className='inlined-label'>Delegated amount</label>
           <input
             className='col col--4'
-            value={fromMicro(state.stake)}
+            value={fromMicro(state.stakedOrDelegatedTokens)}
             onChange={(e) =>
               handleOwnStakeChange(toMicro(Number(e.target.value)))
             }
