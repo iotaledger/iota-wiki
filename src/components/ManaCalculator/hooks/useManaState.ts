@@ -186,9 +186,19 @@ export function useManaState() {
 export function getDefaultParameters(
   network: NetworkType,
 ): ManaCalculatorProps {
+  const networkParams = {
+    [NetworkType.IOTA]: {
+      initialEpoch: 1,
+      finalEpoch: 365,
+    },
+    [NetworkType.SHIMMER]: {
+      initialEpoch: 1,
+      finalEpoch: 1000,
+    },
+  };
+
   return {
-    initialEpoch: 0,
-    finalEpoch: 100,
+    ...networkParams[network],
     validators: [
       {
         lockedStake: toMicro(100),
