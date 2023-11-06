@@ -18,7 +18,6 @@ export function BlocksAllowance({ results }: { results: EpochReward[] }) {
       <ResponsiveContainer width='100%' height={250}>
         <AreaChart
           data={results}
-          margin={{ top: 10, right: 30, left: 0, bottom: 0 }}
         >
           <defs>
             <linearGradient id='totalTps' x1='0' y1='0' x2='0' y2='1'>
@@ -26,8 +25,15 @@ export function BlocksAllowance({ results }: { results: EpochReward[] }) {
               <stop offset='95%' stopColor='#7caae6' stopOpacity={0} />
             </linearGradient>
           </defs>
-          <XAxis dataKey='epoch' />
-          <YAxis width={120} />
+          <XAxis
+            dataKey='epoch'
+            height={50}
+            label={{ value: 'Epochs', position: 'insideBottom' }}
+          />
+          <YAxis
+            width={100}
+            label={{ value: 'Blocks', angle: -90, position: 'insideLeft' }}
+          />
           <CartesianGrid strokeDasharray='3 3' stroke='rgb(255, 255, 255, 0.15)' />
           <Tooltip />
           <Area

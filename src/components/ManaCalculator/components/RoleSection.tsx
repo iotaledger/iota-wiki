@@ -34,10 +34,10 @@ export function RoleSection() {
         ]}
       />
       <br />
-      <label className='inlined-label'>Holded amount</label>
+      <label className='inlined-label'>Held amount</label>
       <input
         className='col col--4'
-        value={fromMicro(state.holdedTokens)}
+        value={fromMicro(state.heldTokens)}
         onChange={(e) => handleOwnHoldChange(toMicro(Number(e.target.value)))}
       ></input>
       <br />

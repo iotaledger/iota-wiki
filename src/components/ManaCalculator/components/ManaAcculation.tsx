@@ -16,18 +16,23 @@ export function ManaAccumulation({ results }: { results: EpochReward[] }) {
       <br />
       <h3>Mana Accumulation</h3>
       <ResponsiveContainer width='100%' height={250}>
-        <AreaChart
-          data={results}
-          margin={{ top: 10, right: 30, left: 0, bottom: 0 }}
-        >
+        <AreaChart data={results} margin={{ top: 10 }}>
           <defs>
             <linearGradient id='manaColor' x1='0' y1='0' x2='0' y2='1'>
               <stop offset='5%' stopColor='#8884d8' stopOpacity={0.8} />
               <stop offset='95%' stopColor='#8884d8' stopOpacity={0} />
             </linearGradient>
           </defs>
-          <XAxis dataKey='epoch' />
-          <YAxis width={120} />
+          <XAxis
+            dataKey='epoch'
+            height={50}
+            label={{ value: 'Epochs', position: 'insideBottom' }}
+          />
+          <YAxis
+            width={100}
+            label={{ value: 'Mana', angle: -90, position: 'insideLeft' }}
+            unit='M'
+          />
           <CartesianGrid strokeDasharray='3 3' stroke='rgb(255, 255, 255, 0.15)' />
           <Tooltip />
           <Area

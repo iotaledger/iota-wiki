@@ -39,7 +39,7 @@ export function useResultsPerEpoch(state: ManaCalculatorProps): EpochReward[] {
     );
 
     const passiveRewards = calculatePassiveRewards(
-      state.holdedTokens,
+      state.heldTokens,
       state.initialEpoch,
       i,
     );
@@ -52,8 +52,8 @@ export function useResultsPerEpoch(state: ManaCalculatorProps): EpochReward[] {
 
     results.push({
       epoch: i,
-      mana: fromMicro(mana),
-      totalTps,
+      mana: fromMicro(mana) / 1_000_000,
+      totalTps
     });
   }
 

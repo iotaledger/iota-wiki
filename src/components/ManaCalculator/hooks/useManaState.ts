@@ -156,7 +156,7 @@ export function useManaState() {
   }
 
   function handleOwnHoldChange(value: number) {
-    setState({ ...state, holdedTokens: value });
+    setState({ ...state, heldTokens: value });
   }
 
   return {
@@ -186,15 +186,14 @@ export function useManaState() {
 export function getDefaultParameters(
   network: NetworkType,
 ): ManaCalculatorProps {
-
-  const networkParams ={
+  const networkParams = {
     [NetworkType.IOTA]: {
-      initialEpoch: 0,
-      finalEpoch: 365
+      initialEpoch: 1,
+      finalEpoch: 365,
     },
     [NetworkType.SHIMMER]: {
-      initialEpoch: 0,
-      finalEpoch: 100
+      initialEpoch: 1,
+      finalEpoch: 1000,
     },
   };
 
@@ -223,7 +222,7 @@ export function getDefaultParameters(
     userType: UserType.DELEGATOR,
     congestion: CongestionType.LOW,
     stakedOrDelegatedTokens: toMicro(100),
-    holdedTokens: toMicro(100),
+    heldTokens: toMicro(100),
     delegator: {
       validator: 0,
     },
