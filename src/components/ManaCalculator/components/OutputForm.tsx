@@ -6,11 +6,11 @@ import humanizeDuration from 'humanize-duration';
 export function OutputForm() {
   const { state } = useManaState();
   const {
-    manaGenerated,
+    generatedRewards,
     passiveRewards,
     totalTPS,
-    timeToGetEnoughManaInSeconds,
-    timeToGetEnoughManaAsHolderInSeconds,
+    msToTransaction,
+    passiveMsToTransaction,
   } = useResults(state);
 
   return (
@@ -23,7 +23,7 @@ export function OutputForm() {
       </div>
       <div className='row '>
         <div className='col col--6'>Mana rewards</div>
-        <div className='col col--6 align-right'>{fromMicro(manaGenerated)}</div>
+        <div className='col col--6 align-right'>{fromMicro(generatedRewards)}</div>
       </div>
       <div className='row '>
         <div className='col col--6'>Total TPS granted with</div>
@@ -37,13 +37,13 @@ export function OutputForm() {
       <div className='row '>
         <div className='col col--6'>...as a delegator/validator</div>
         <div className='col col--6 align-right'>
-          {humanizeDuration(timeToGetEnoughManaInSeconds * 1000)}
+          {humanizeDuration(msToTransaction * 1000)}
         </div>
       </div>
       <div className='row '>
         <div className='col col--6'>...as a holder</div>
         <div className='col col--6 align-right'>
-          {humanizeDuration(timeToGetEnoughManaAsHolderInSeconds * 1000)}
+          {humanizeDuration(passiveMsToTransaction * 1000)}
         </div>
       </div>
     </div>
