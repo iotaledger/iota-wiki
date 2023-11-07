@@ -18,14 +18,14 @@ export function useResults(state: ManaCalculatorProps) {
   const validatorParameters =
     state.userType === UserType.VALIDATOR
       ? ({
-        performanceFactor: state.validator.performanceFactor,
-        fixedCost: state.validator.fixedCost,
-        shareOfYourStakeLocked: state.validator.shareOfYourStakeLocked,
-        attractedNewDelegatedStake:
-          state.validator.attractedNewDelegatedStake,
-        attractedDelegatedStakeFromOtherPools:
-          state.validator.attractedDelegatedStakeFromOtherPools,
-      } as ValidatorParameters)
+          performanceFactor: state.validator.performanceFactor,
+          fixedCost: state.validator.fixedCost,
+          shareOfYourStakeLocked: state.validator.shareOfYourStakeLocked,
+          attractedNewDelegatedStake:
+            state.validator.attractedNewDelegatedStake,
+          attractedDelegatedStakeFromOtherPools:
+            state.validator.attractedDelegatedStakeFromOtherPools,
+        } as ValidatorParameters)
       : null;
 
   const generatedRewards = calculateManaRewards(

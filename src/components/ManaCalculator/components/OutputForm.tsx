@@ -23,7 +23,9 @@ export function OutputForm() {
       </div>
       <div className='row '>
         <div className='col col--6'>Mana rewards</div>
-        <div className='col col--6 align-right'>{fromMicro(generatedRewards)}</div>
+        <div className='col col--6 align-right'>
+          {fromMicro(generatedRewards)}
+        </div>
       </div>
       <div className='row '>
         <div className='col col--6'>Total TPS granted with</div>
