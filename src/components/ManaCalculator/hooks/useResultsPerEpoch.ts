@@ -27,7 +27,7 @@ export function useResultsPerEpoch(state: ManaCalculatorProps): EpochReward[] {
   const results = [];
 
   for (let i = state.initialEpoch; i <= state.finalEpoch; i++) {
-    const manaGenerated = calculateManaRewards(
+    const generatedRewards = calculateManaRewards(
       state.stakedOrDelegatedTokens,
       state.delegator.validator,
       validatorParameters,
@@ -44,13 +44,16 @@ export function useResultsPerEpoch(state: ManaCalculatorProps): EpochReward[] {
       i,
     );
 
-    const mana = manaGenerated + passiveRewards;
+    const mana = generatedRewards + passiveRewards;
 
     const tpsFromPassiveRewards = calculateTPS(
       passiveRewards,
       state.congestion,
     );
-    const tpsFromGeneratedMana = calculateTPS(manaGenerated, state.congestion);
+    const tpsFromGeneratedMana = calculateTPS(
+      generatedRewards,
+      state.congestion,
+    );
     const totalTps = tpsFromPassiveRewards + tpsFromGeneratedMana;
 
     results.push({
