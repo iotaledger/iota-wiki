@@ -39,13 +39,13 @@ export function OutputForm() {
       <div className='row '>
         <div className='col col--6'>...as a delegator/validator</div>
         <div className='col col--6 align-right'>
-          {humanizeDuration(msToTransaction * 1000)}
+          {humanizeDuration(msToTransaction)}
         </div>
       </div>
       <div className='row '>
         <div className='col col--6'>...as a holder</div>
         <div className='col col--6 align-right'>
-          {humanizeDuration(passiveMsToTransaction * 1000)}
+          {humanizeDuration(passiveMsToTransaction)}
         </div>
       </div>
     </div>
