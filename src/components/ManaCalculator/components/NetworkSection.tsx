@@ -10,7 +10,7 @@ export function NetworkSection() {
       <h4>Network configuration</h4>
       <label className='inlined-label'>Your Network</label>
       <Select
-        className='compact inlined'
+        className='mana_calculator__compact inlined'
         defaultValue={{ value: NetworkType.IOTA, label: `IOTA` }}
         onChange={(e) => {
           handleNetworkChange(e.value);

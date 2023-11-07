@@ -9,11 +9,11 @@ import {
   YAxis,
 } from 'recharts';
 import { EpochReward } from '../types';
+import { chartTooltip } from './CharTooltip';
 
 export function BlocksAllowance({ results }: { results: EpochReward[] }) {
   return (
-    <div className='table'>
-      <br />
+    <>
       <h3>Blocks Allowance</h3>
       <ResponsiveContainer width='100%' height={250}>
         <AreaChart data={results} margin={{ top: 10 }}>
@@ -30,18 +30,14 @@ export function BlocksAllowance({ results }: { results: EpochReward[] }) {
           />
           <YAxis
             width={100}
-<<<<<<< HEAD
-            label={{ value: 'Blocks', angle: -90, position: 'insideLeft', color: "white" }}
-            color="rgb(169, 184, 214)"
-=======
             label={{ value: 'Blocks', angle: -90, position: 'insideLeft' }}
->>>>>>> b0f1dc7fa61d9b0b6e083ca58ec227fadfa70468
+            color='rgb(169, 184, 214)'
           />
           <CartesianGrid
             strokeDasharray='3 3'
             stroke='rgb(255, 255, 255, 0.15)'
           />
-          <Tooltip />
+          <Tooltip content={chartTooltip('Epoch', 'Blocks')} />
           <Area
             type='monotone'
             dataKey='totalTps'
@@ -51,6 +47,6 @@ export function BlocksAllowance({ results }: { results: EpochReward[] }) {
           />
         </AreaChart>
       </ResponsiveContainer>
-    </div>
+    </>
   );
 }

@@ -26,7 +26,6 @@ export function ManaCalculator() {
       <NetworkSection />
       <RoleSection />
       <OtherParametersSection />
-      <AdvancedSettingsValidator />
       <br />
       <h3>Results</h3>
       <OutputForm />
