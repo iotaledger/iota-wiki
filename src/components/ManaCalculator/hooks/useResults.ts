@@ -13,22 +13,22 @@ export function useResults(state: ManaCalculatorProps) {
     state.finalEpoch,
   );
 
-  const additionalTPS = calculateTPS(passiveRewards, state.congestion);
+  const passiveTPS = calculateTPS(passiveRewards, state.congestion);
 
   const validatorParameters =
     state.userType === UserType.VALIDATOR
       ? ({
-          performanceFactor: state.validator.performanceFactor,
-          fixedCost: state.validator.fixedCost,
-          shareOfYourStakeLocked: state.validator.shareOfYourStakeLocked,
-          attractedNewDelegatedStake:
-            state.validator.attractedNewDelegatedStake,
-          attractedDelegatedStakeFromOtherPools:
-            state.validator.attractedDelegatedStakeFromOtherPools,
-        } as ValidatorParameters)
+        performanceFactor: state.validator.performanceFactor,
+        fixedCost: state.validator.fixedCost,
+        shareOfYourStakeLocked: state.validator.shareOfYourStakeLocked,
+        attractedNewDelegatedStake:
+          state.validator.attractedNewDelegatedStake,
+        attractedDelegatedStakeFromOtherPools:
+          state.validator.attractedDelegatedStakeFromOtherPools,
+      } as ValidatorParameters)
       : null;
 
-  const manaGenerated = calculateManaRewards(
+  const generatedRewards = calculateManaRewards(
     state.stakedOrDelegatedTokens,
     state.delegator.validator,
     validatorParameters,
@@ -39,12 +39,17 @@ export function useResults(state: ManaCalculatorProps) {
     state.network,
   );
 
-  const grantedTPS = calculateTPS(manaGenerated, state.congestion);
-  const totalTPS = grantedTPS + additionalTPS;
+  const generatedTPS = calculateTPS(generatedRewards, state.congestion);
+  const totalTPS = generatedTPS + passiveTPS;
+
+  const msToTransaction = (1 / totalTPS) * 1_000;
+  const passiveMsToTransaction = (1 / passiveTPS) * 1_000;
 
   return {
-    manaGenerated,
+    generatedRewards,
     passiveRewards,
     totalTPS,
+    msToTransaction,
+    passiveMsToTransaction,
   };
 }
