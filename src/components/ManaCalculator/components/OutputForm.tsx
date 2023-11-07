@@ -8,8 +8,8 @@ export function OutputForm() {
     manaGenerated,
     passiveRewards,
     totalTPS,
-    timeToGetEnoughMana,
-    timeToGetEnoughManaAsHolder,
+    timeToGetEnoughManaInSeconds,
+    timeToGetEnoughManaAsHolderInSeconds,
   } = useResults(state);
   const humanizeDuration = require('humanize-duration');
 
@@ -37,13 +37,13 @@ export function OutputForm() {
       <div className='row '>
         <div className='col col--6'>...as a delegator/validator</div>
         <div className='col col--6 align-right'>
-          {humanizeDuration(timeToGetEnoughMana * 1000)}
+          {humanizeDuration(timeToGetEnoughManaInSeconds * 1000)}
         </div>
       </div>
       <div className='row '>
         <div className='col col--6'>...as a holder</div>
         <div className='col col--6 align-right'>
-          {humanizeDuration(timeToGetEnoughManaAsHolder * 1000)}
+          {humanizeDuration(timeToGetEnoughManaAsHolderInSeconds * 1000)}
         </div>
       </div>
     </div>

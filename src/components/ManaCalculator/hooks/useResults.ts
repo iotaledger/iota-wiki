@@ -42,14 +42,14 @@ export function useResults(state: ManaCalculatorProps) {
   const grantedTPS = calculateTPS(manaGenerated, state.congestion);
   const totalTPS = grantedTPS + additionalTPS;
 
-  const timeToGetEnoughMana = 1 / totalTPS;
-  const timeToGetEnoughManaAsHolder = 1 / additionalTPS;
+  const timeToGetEnoughManaInSeconds = 1 / totalTPS;
+  const timeToGetEnoughManaAsHolderInSeconds = 1 / additionalTPS;
 
   return {
     manaGenerated,
     passiveRewards,
     totalTPS,
-    timeToGetEnoughMana,
-    timeToGetEnoughManaAsHolder,
+    timeToGetEnoughManaInSeconds,
+    timeToGetEnoughManaAsHolderInSeconds,
   };
 }
