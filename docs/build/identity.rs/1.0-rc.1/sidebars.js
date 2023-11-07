@@ -25,29 +25,26 @@ module.exports = {
       type: 'category',
       label: 'Getting Started',
       collapsed: false,
-      items: [
-        'getting-started/rust',
-        'getting-started/wasm',
-      ],
+      items: ['getting-started/rust', 'getting-started/wasm'],
     },
     {
       type: 'category',
       label: 'Explanations',
-      items:[
+      items: [
         'explanations/decentralized-identifiers',
         'explanations/verifiable-credentials',
         'explanations/verifiable-presentations',
         'explanations/about-alias-outputs',
-      ]
+      ],
     },
     {
       type: 'category',
       label: 'How To',
-      items:[
+      items: [
         {
           type: 'category',
           label: 'Decentralized Identifiers (DID)',
-          items:[
+          items: [
             'how-tos/decentralized-identifiers/create',
             'how-tos/decentralized-identifiers/update',
             'how-tos/decentralized-identifiers/resolve',
@@ -57,27 +54,23 @@ module.exports = {
         {
           type: 'category',
           label: 'Verifiable Credentials',
-          items:[
+          items: [
             'how-tos/verifiable-credentials/create',
             'how-tos/verifiable-credentials/revocation',
-          ]
+          ],
         },
         {
           type: 'category',
           label: 'Verifiable Presentations',
-          items:[
-            'how-tos/verifiable-presentations/create-and-validate',
-          ]
+          items: ['how-tos/verifiable-presentations/create-and-validate'],
         },
         {
           type: 'category',
           label: 'Domain Linkage',
-          items:[
-            'how-tos/domain-linkage/create-and-verify',
-          ]
+          items: ['how-tos/domain-linkage/create-and-verify'],
         },
         'how-tos/key-storage',
-      ]
+      ],
     },
     {
       type: 'category',
@@ -96,9 +89,9 @@ module.exports = {
             {
               type: 'link',
               label: 'Rust',
-              href: 'https://docs.rs/identity_iota/latest/identity_iota/index.html'
-            }
-          ]
+              href: 'https://docs.rs/identity_iota/latest/identity_iota/index.html',
+            },
+          ],
         },
         {
           type: 'category',
@@ -107,8 +100,8 @@ module.exports = {
             'references/specifications/overview',
             'references/specifications/iota-did-method-spec',
             'references/specifications/revocation-bitmap-2022',
-          ]
-        }
+          ],
+        },
       ],
     },
     'glossary',
