@@ -10,8 +10,8 @@ export enum UserType {
 }
 
 export enum NetworkType {
-  IOTA,
-  SHIMMER,
+  IOTA = 'IOTA',
+  SHIMMER = 'SMR',
 }
 
 export enum CongestionType {

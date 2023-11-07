@@ -5,6 +5,7 @@ import {
   getDefaultParameters,
   ManaStateContext,
   useResultsPerEpoch,
+  useResultsWithUnit,
 } from '../hooks';
 import {
   OutputForm,
@@ -19,7 +20,7 @@ import {
 export function ManaCalculator() {
   const [state, setState] = useState(getDefaultParameters(NetworkType.IOTA));
   const results = useResultsPerEpoch(state);
-
+  const { data, manaUnit, blocksUnit } = useResultsWithUnit(results);
   return (
     <ManaStateContext.Provider value={{ state, setState }}>
       <h3>Configuration</h3>
@@ -29,8 +30,8 @@ export function ManaCalculator() {
       <br />
       <h3>Results</h3>
       <OutputForm />
-      <ManaAccumulation results={results} />
-      <BlocksAllowance results={results} />
+      <ManaAccumulation results={data} unit={manaUnit} />
+      <BlocksAllowance results={data} unit={blocksUnit} />
     </ManaStateContext.Provider>
   );
 }

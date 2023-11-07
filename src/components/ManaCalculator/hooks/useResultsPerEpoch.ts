@@ -55,7 +55,7 @@ export function useResultsPerEpoch(state: ManaCalculatorProps): EpochReward[] {
 
     results.push({
       epoch: i,
-      mana: fromMicro(mana) / 1_000_000,
+      mana: fromMicro(mana),
       totalTps,
     });
   }

@@ -4,10 +4,7 @@ import { useManaState } from '../hooks';
 import { ValidatorCard } from './ValidatorCard';
 
 export function AdvancedSettingsValidator() {
-  const {
-    handleAddValidator,
-    state: { validators },
-  } = useManaState();
+  const { handleAddValidator, state } = useManaState();
 
   function onAddValidator() {
     handleAddValidator({
@@ -24,17 +21,19 @@ export function AdvancedSettingsValidator() {
       className='mana_calculator__card mana_calculator_inner__card table'
     >
       <div className='table'>
-        <div className='row'>
+        <div className='row small-row-head'>
           <div className='col col--2 text--center'>ID</div>
-          <div className='col col--2 horizontal-spaced text--center'>Stake</div>
+          <div className='col col--2 horizontal-spaced text--center'>
+            Stake ({state.network})
+          </div>
           <div className='col col--2 horizontal-space  text--center'>
-            Delegated
+            Delegated ({state.network})
           </div>
           <div className='col col--2 horizontal-spaced text--center'>PF</div>
           <div className='col col--2 horizontal-spaced text--center'>FC</div>
           <div className='col col--1'></div>
         </div>
-        {validators.map((validator, i) => (
+        {state.validators.map((validator, i) => (
           <div className='row row--centered' key={i}>
             <ValidatorCard validator={validator} id={i} />
           </div>

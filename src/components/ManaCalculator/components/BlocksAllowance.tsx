@@ -8,10 +8,17 @@ import {
   XAxis,
   YAxis,
 } from 'recharts';
+import { Unit } from '../hooks';
 import { EpochReward } from '../types';
 import { chartTooltip } from './CharTooltip';
 
-export function BlocksAllowance({ results }: { results: EpochReward[] }) {
+export function BlocksAllowance({
+  results,
+  unit,
+}: {
+  results: EpochReward[];
+  unit: Unit;
+}) {
   return (
     <>
       <h3>Blocks Allowance</h3>
@@ -32,12 +39,13 @@ export function BlocksAllowance({ results }: { results: EpochReward[] }) {
             width={100}
             label={{ value: 'Blocks', angle: -90, position: 'insideLeft' }}
             color='rgb(169, 184, 214)'
+            unit={unit}
           />
           <CartesianGrid
             strokeDasharray='3 3'
             stroke='rgb(255, 255, 255, 0.15)'
           />
-          <Tooltip content={chartTooltip('Epoch', 'Blocks')} />
+          <Tooltip content={chartTooltip('Epoch', 'Blocks', unit)} />
           <Area
             type='monotone'
             dataKey='totalTps'

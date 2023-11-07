@@ -8,10 +8,17 @@ import {
   XAxis,
   YAxis,
 } from 'recharts';
+import { Unit } from '../hooks';
 import { EpochReward } from '../types';
 import { chartTooltip } from './CharTooltip';
 
-export function ManaAccumulation({ results }: { results: EpochReward[] }) {
+export function ManaAccumulation({
+  results,
+  unit,
+}: {
+  results: EpochReward[];
+  unit: Unit;
+}) {
   return (
     <>
       <h3>Mana Accumulation</h3>
@@ -31,17 +38,13 @@ export function ManaAccumulation({ results }: { results: EpochReward[] }) {
           <YAxis
             width={100}
             label={{ value: 'Mana', angle: -90, position: 'insideLeft' }}
-            unit='M'
+            unit={unit}
           />
           <CartesianGrid
             strokeDasharray='3 3'
             stroke='rgb(255, 255, 255, 0.15)'
           />
-          <Tooltip
-            content={chartTooltip('Epoch', 'Mana', (v) =>
-              (v * 1_000_000).toString(),
-            )}
-          />
+          <Tooltip content={chartTooltip('Epoch', 'Mana', unit)} />
           <Area
             type='monotone'
             dataKey='mana'

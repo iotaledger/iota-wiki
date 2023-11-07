@@ -34,7 +34,7 @@ export function RoleSection() {
         ]}
       />
       <br />
-      <label className='inlined-label'>Held amount</label>
+      <label className='inlined-label'>Held amount ({state.network})</label>
       <input
         className='mana_calculator__compact inlined'
         value={fromMicro(state.heldTokens)}
@@ -43,7 +43,7 @@ export function RoleSection() {
       <br />
       {state.userType === UserType.VALIDATOR ? (
         <>
-          <label className='inlined-label'>Stake</label>
+          <label className='inlined-label'>Stake ({state.network})</label>
           <input
             className='mana_calculator__compact inlined'
             value={fromMicro(state.stakedOrDelegatedTokens)}
@@ -67,7 +67,9 @@ export function RoleSection() {
             options={validatorOptions}
           />
           <br />
-          <label className='inlined-label'>Delegated amount</label>
+          <label className='inlined-label'>
+            Delegated amount ({state.network})
+          </label>
           <input
             className='mana_calculator__compact inlined'
             value={fromMicro(state.stakedOrDelegatedTokens)}

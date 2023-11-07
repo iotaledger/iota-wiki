@@ -483,12 +483,16 @@ ul ul .table-of-contents__link {
 
 .inlined-label {
   display: inline-block;
-  width: 150px;
+  width: 200px;
 }
 
 .inlined-long-label {
   display: inline-block;
   width: 350px;
+}
+
+.small-row-head {
+  font-size: 15px;
 }
 
 .mana_calculator__compact {
