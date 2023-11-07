@@ -4,14 +4,10 @@ import {
   calculateTPS,
 } from '../actions';
 import { UserType } from '../enums';
-import {
-  EpochReward,
-  ManaCalculatorProps,
-  ValidatorParameters,
-} from '../types';
+import { EpochReward, ManaState, ValidatorParameters } from '../types';
 import { fromMicro } from '../utils';
 
-export function useResultsPerEpoch(state: ManaCalculatorProps): EpochReward[] {
+export function useResultsPerEpoch(state: ManaState): EpochReward[] {
   const validatorParameters =
     state.userType === UserType.VALIDATOR
       ? ({
@@ -36,21 +32,26 @@ export function useResultsPerEpoch(state: ManaCalculatorProps): EpochReward[] {
       i,
       state.userType,
       state.network,
+      state.generationPerSlot,
     );
 
     const passiveRewards = calculatePassiveRewards(
       state.heldTokens,
       state.initialEpoch,
       i,
+      state.generationPerSlot,
     );
 
     const mana = manaGenerated + passiveRewards;
 
     const tpsFromPassiveRewards = calculateTPS(
       passiveRewards,
-      state.congestion,
+      state.congestionAmount,
     );
-    const tpsFromGeneratedMana = calculateTPS(manaGenerated, state.congestion);
+    const tpsFromGeneratedMana = calculateTPS(
+      manaGenerated,
+      state.congestionAmount,
+    );
     const totalTps = tpsFromPassiveRewards + tpsFromGeneratedMana;
 
     results.push({

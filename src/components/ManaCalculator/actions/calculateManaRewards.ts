@@ -13,6 +13,7 @@ export function calculateManaRewards(
   finalEpoch: number,
   userType: UserType,
   networkType: NetworkType,
+  generationPerSlot: number,
 ): number {
   const supply = getNetworkSupply(networkType);
   let totalTargetReward = 0;
@@ -21,14 +22,14 @@ export function calculateManaRewards(
   if (finalEpoch) {
     for (let i = 0; i < epochDiff; i++) {
       totalTargetReward += decay(
-        targetReward(initialEpoch + i, supply),
+        targetReward(initialEpoch + i, supply, generationPerSlot),
         epochDiff - i,
       );
     }
   } else {
     epochDiff = 1;
     finalEpoch = initialEpoch + 1;
-    totalTargetReward = targetReward(initialEpoch, supply);
+    totalTargetReward = targetReward(initialEpoch, supply, generationPerSlot);
   }
 
   const lockedStake: number[] = validators.map(

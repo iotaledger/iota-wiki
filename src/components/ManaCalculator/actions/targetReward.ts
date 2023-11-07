@@ -2,18 +2,21 @@ import {
   BETA_PER_YEAR,
   BOOTSTRAPPING_DURATION,
   EPOCH_DURATION_IN_YEARS,
-  GENERATION_PER_SLOT,
   REWARDS_MANA_SHARE_COEFFICIENT,
   SLOTS_IN_EPOCH,
 } from '../constants';
 import { decay } from './decay';
 
 // Returns the target reward for the given epoch
-export function targetReward(epoch: number, supply: number): number {
+export function targetReward(
+  epoch: number,
+  supply: number,
+  generationPerSlot: number,
+): number {
   const finalReward =
     supply *
     REWARDS_MANA_SHARE_COEFFICIENT *
-    GENERATION_PER_SLOT *
+    generationPerSlot *
     SLOTS_IN_EPOCH;
   const decayBalancingConstant =
     Math.exp(1) /

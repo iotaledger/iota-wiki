@@ -1,7 +1,19 @@
 import { createContext, useContext } from 'react';
+import {
+  FINAL_EPOCH,
+  INITIAL_EPOCH,
+  IOTA_HOLD,
+  IOTA_STAKED_OR_DELEGATED,
+  SHIMMER_HOLD,
+  SHIMMER_STAKED_OR_DELEGATED,
+} from '../constants';
 import { CongestionType, NetworkType, UserType } from '../enums';
-import { ManaCalculatorProps, ValidatorProps } from '../types';
-import { toMicro } from '../utils';
+import { ManaCalculatorProps, ManaState, ValidatorProps } from '../types';
+import {
+  getNetworkCongestion,
+  getNetworkGenerationPerSlot,
+  toMicro,
+} from '../utils';
 
 export const ManaStateContext = createContext(null);
 
@@ -11,6 +23,13 @@ export function useManaState() {
     state: ManaCalculatorProps;
   }>(ManaStateContext);
 
+  return useGivenManaState(state, setState);
+}
+
+export function useGivenManaState(
+  state: ManaCalculatorProps,
+  setState: (state: ManaCalculatorProps) => void,
+) {
   function handleDelete(id: number) {
     const validators = state.validators.filter((_, i) => i !== id);
     setState({ ...state, validators });
@@ -159,8 +178,19 @@ export function useManaState() {
     setState({ ...state, heldTokens: value });
   }
 
+  const congestionAmount = getNetworkCongestion(
+    state.network,
+    state.congestion,
+  );
+  const generationPerSlot = getNetworkGenerationPerSlot(state.network);
+
   return {
-    state,
+    state: {
+      ...state,
+      congestionAmount,
+      generationPerSlot,
+    } as ManaState,
+    congestionAmount,
     handleDelete,
     handleStakeChange,
     handleAddValidator,
@@ -188,17 +218,19 @@ export function getDefaultParameters(
 ): ManaCalculatorProps {
   const networkParams = {
     [NetworkType.IOTA]: {
-      initialEpoch: 1,
-      finalEpoch: 365,
+      stakedOrDelegatedTokens: toMicro(IOTA_STAKED_OR_DELEGATED),
+      heldTokens: toMicro(IOTA_HOLD),
     },
     [NetworkType.SHIMMER]: {
-      initialEpoch: 1,
-      finalEpoch: 1000,
+      stakedOrDelegatedTokens: toMicro(SHIMMER_STAKED_OR_DELEGATED),
+      heldTokens: toMicro(SHIMMER_HOLD),
     },
   };
 
   return {
     ...networkParams[network],
+    initialEpoch: INITIAL_EPOCH,
+    finalEpoch: FINAL_EPOCH,
     validators: [
       {
         lockedStake: toMicro(100),
@@ -221,16 +253,14 @@ export function getDefaultParameters(
     ],
     userType: UserType.DELEGATOR,
     congestion: CongestionType.LOW,
-    stakedOrDelegatedTokens: toMicro(100),
-    heldTokens: toMicro(100),
     delegator: {
       validator: 0,
     },
     validator: {
       performanceFactor: 1.0,
       fixedCost: 0.0,
-      shareOfYourStakeLocked: 1.0,
-      attractedNewDelegatedStake: 0.0,
+      shareOfYourStakeLocked: 100.0,
+      attractedNewDelegatedStake: 0.0, // Should be the 1.5x of the user staked amount
       attractedDelegatedStakeFromOtherPools: 0.1,
     },
     network,
