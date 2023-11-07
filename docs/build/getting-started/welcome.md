@@ -39,7 +39,7 @@ tokens and NFTs, and more.
 ### Identity
 
 You can use the [IOTA Identity Framework](/identity.rs/introduction) to create and manage
-[Self-Sovereign Identities (SSI)](/identity.rs/decentralized_identity) for people, organizations, or
+[Self-Sovereign Identities (SSI)](/identity.rs/explanations/decentralized-identifiers) for people, organizations, or
 any object in a GDPR-compliant, cost-efficient, and privacy-enabling manner.
 
 ## Layer 2

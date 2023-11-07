@@ -39,8 +39,8 @@ const LibrariesSection: FC = () => (
           </div>
           <Languages
             languages={{
-              Rust: '/identity.rs/libraries/rust/getting_started',
-              WASM: '/identity.rs/libraries/wasm/getting_started',
+              Rust: '/identity.rs/getting-started/rust',
+              WASM: '/identity.rs/getting-started/wasm',
             }}
           />
         </div>

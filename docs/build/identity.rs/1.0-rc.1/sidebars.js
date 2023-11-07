@@ -19,84 +19,96 @@ module.exports = {
     {
       type: 'doc',
       id: 'introduction',
-      label: 'Introduction',
-    },
-    {
-      type: 'doc',
-      id: 'decentralized_identity',
-      label: 'Decentralized Identity',
+      label: 'Welcome',
     },
     {
       type: 'category',
       label: 'Getting Started',
       collapsed: false,
       items: [
-        'getting_started/overview',
-        'getting_started/install',
-        'getting_started/create_and_publish',
+        'getting-started/rust',
+        'getting-started/wasm',
       ],
     },
     {
       type: 'category',
-      label: 'Concepts',
-      collapsed: false,
-      items: [
+      label: 'Explanations',
+      items:[
+        'explanations/decentralized-identifiers',
+        'explanations/verifiable-credentials',
+        'explanations/verifiable-presentations',
+        'explanations/about-alias-outputs',
+      ]
+    },
+    {
+      type: 'category',
+      label: 'How To',
+      items:[
         {
-          'Decentralized Identifiers (DID)': [
-            'concepts/decentralized_identifiers/overview',
-            'concepts/decentralized_identifiers/alias',
-            'concepts/decentralized_identifiers/create',
-            'concepts/decentralized_identifiers/update',
-            'concepts/decentralized_identifiers/resolve',
-            'concepts/decentralized_identifiers/delete',
+          type: 'category',
+          label: 'Decentralized Identifiers (DID)',
+          items:[
+            'how-tos/decentralized-identifiers/create',
+            'how-tos/decentralized-identifiers/update',
+            'how-tos/decentralized-identifiers/resolve',
+            'how-tos/decentralized-identifiers/delete',
           ],
-          'Verifiable Credentials': [
-            'concepts/verifiable_credentials/overview',
-            'concepts/verifiable_credentials/create',
-            'concepts/verifiable_credentials/revocation',
-            'concepts/verifiable_credentials/verifiable_presentations',
-          ],
-          'Domain Linkage': ['concepts/domain_linkage/domain_linkage'],
-          'Key Storage': ['concepts/key_storage/key_storage'],
         },
-      ],
+        {
+          type: 'category',
+          label: 'Verifiable Credentials',
+          items:[
+            'how-tos/verifiable-credentials/create',
+            'how-tos/verifiable-credentials/revocation',
+          ]
+        },
+        {
+          type: 'category',
+          label: 'Verifiable Presentations',
+          items:[
+            'how-tos/verifiable-presentations/create-and-validate',
+          ]
+        },
+        {
+          type: 'category',
+          label: 'Domain Linkage',
+          items:[
+            'how-tos/domain-linkage/create-and-verify',
+          ]
+        },
+        'how-tos/key-storage',
+      ]
     },
     {
       type: 'category',
-      label: 'Programming Languages',
+      label: 'References',
       collapsed: true,
       items: [
-        'libraries/overview',
         {
           type: 'category',
-          label: 'Rust',
-          collapsed: true,
-          items: ['libraries/rust/getting_started'],
-        },
-        {
-          type: 'category',
-          label: 'WASM',
-          collapsed: true,
+          label: 'API',
           items: [
-            'libraries/wasm/getting_started',
-            'libraries/wasm/api_reference',
-          ],
+            {
+              type: 'doc',
+              id: 'references/api/wasm',
+              label: 'Wasm',
+            },
+            {
+              type: 'link',
+              label: 'Rust',
+              href: 'https://docs.rs/identity_iota/latest/identity_iota/index.html'
+            }
+          ]
         },
-      ],
-    },
-    {
-      type: 'category',
-      label: 'Specifications',
-      collapsed: true,
-      items: [
-        'specs/overview',
         {
           type: 'category',
-          label: 'IOTA DID',
-          collapsed: true,
-          items: ['specs/did/overview', 'specs/did/iota_did_method_spec'],
-        },
-        'specs/revocation_bitmap_2022',
+          label: 'Specifications',
+          items: [
+            'references/specifications/overview',
+            'references/specifications/iota-did-method-spec',
+            'references/specifications/revocation-bitmap-2022',
+          ]
+        }
       ],
     },
     'glossary',
