@@ -1,6 +1,7 @@
 import React from 'react';
 import { useManaState, useResults } from '../hooks';
 import { fromMicro } from '../utils';
+import humanizeDuration from 'humanize-duration';
 
 export function OutputForm() {
   const { state } = useManaState();
@@ -11,7 +12,6 @@ export function OutputForm() {
     timeToGetEnoughManaInSeconds,
     timeToGetEnoughManaAsHolderInSeconds,
   } = useResults(state);
-  const humanizeDuration = require('humanize-duration');
 
   return (
     <div className='table'>
