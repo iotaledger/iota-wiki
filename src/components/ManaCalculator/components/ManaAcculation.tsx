@@ -9,11 +9,11 @@ import {
   YAxis,
 } from 'recharts';
 import { EpochReward } from '../types';
+import { chartTooltip } from './CharTooltip';
 
 export function ManaAccumulation({ results }: { results: EpochReward[] }) {
   return (
-    <div className='table'>
-      <br />
+    <>
       <h3>Mana Accumulation</h3>
       <ResponsiveContainer width='100%' height={250}>
         <AreaChart data={results} margin={{ top: 10 }}>
@@ -37,7 +37,11 @@ export function ManaAccumulation({ results }: { results: EpochReward[] }) {
             strokeDasharray='3 3'
             stroke='rgb(255, 255, 255, 0.15)'
           />
-          <Tooltip />
+          <Tooltip
+            content={chartTooltip('Epoch', 'Mana', (v) =>
+              (v * 1_000_000).toString(),
+            )}
+          />
           <Area
             type='monotone'
             dataKey='mana'
@@ -47,6 +51,6 @@ export function ManaAccumulation({ results }: { results: EpochReward[] }) {
           />
         </AreaChart>
       </ResponsiveContainer>
-    </div>
+    </>
   );
 }

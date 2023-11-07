@@ -477,22 +477,6 @@ ul ul .table-of-contents__link {
   text-align: center;
 }
 
-.grouped-form {
-  border: 1px solid gray;
-  border-radius: 8px;
-  padding: 8px 12px;
-  margin: 5px 0px;
-}
-
-.grouped-form input:not([role$='combobox']) {
-  background-color: var(--ifm-color-emphasis-200) !important;
-  padding: 10px;
-  border-radius: 4px;
-  border: none;
-  width: 150px;
-  margin-bottom: 1rem;
-}
-
 .inlined {
   display: inline-block;
 }
@@ -502,14 +486,19 @@ ul ul .table-of-contents__link {
   width: 150px;
 }
 
-.compact {
+.inlined-long-label {
+  display: inline-block;
+  width: 350px;
+}
+
+.mana_calculator__compact {
   width: 200px;
+  margin-bottom: 1rem !important;
 }
 
 .react-select__control {
   background-color: var(--ifm-color-emphasis-200) !important;
   border: 0 !important;
-  margin-bottom: 1rem !important;
 }
 
 .react-select__placeholder {
@@ -540,4 +529,8 @@ ul ul .table-of-contents__link {
 .react-select__single-value,
 .react-select__multi-value__label {
   color: var(--ifm-font-color-base) !important;
+}
+
+.recharts-text {
+  fill: var(--ifm-menu-color) !important;
 }

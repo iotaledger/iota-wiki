@@ -5,48 +5,39 @@ import humanizeDuration from 'humanize-duration';
 
 export function OutputForm() {
   const { state } = useManaState();
-  const {
-    generatedRewards,
-    passiveRewards,
-    totalBPS,
-    msToTransaction,
-    passiveMsToTransaction,
-  } = useResults(state);
+  const results = useResults(state);
+  const passiveRewards = fromMicro(results.passiveRewards).toFixed(2);
+  const manaGenerated = fromMicro(results.generatedRewards).toFixed(2);
+  const totalBPS = results.totalBPS.toFixed(2);
+  const humanizer = humanizeDuration.humanizer({
+    units: ['y', 'mo', 'w', 'd', 'h', 'm', 's', 'ms'],
+    maxDecimalPoints: 3,
+  });
+  const msToTransaction = humanizer(results.msToTransaction);
+  const passiveMsToTransaction = humanizer(results.passiveMsToTransaction);
 
   return (
-    <div className='table'>
-      <div className='row '>
-        <div className='col col--6'>Mana generation (by holding)</div>
-        <div className='col col--6 align-right'>
-          {fromMicro(passiveRewards)}
-        </div>
+    <div>
+      <div className='col'>
+        Mana generation (by holding):{' '}
+        <b className='output-result'>{passiveRewards}</b>
       </div>
-      <div className='row '>
-        <div className='col col--6'>Mana rewards</div>
-        <div className='col col--6 align-right'>
-          {fromMicro(generatedRewards)}
-        </div>
+      <div className='col'>
+        Mana rewards: <b className='output-result'>{manaGenerated}</b>
       </div>
-      <div className='row '>
-        <div className='col col--6'>Total BPS granted with</div>
-        <div className='col col--6 align-right'>{totalBPS}</div>
+      <div className='col'>
+        Total BPS granted: <b className='output-result'>{totalBPS}</b>
       </div>
-      <div className='row '>
-        <div className='col col--6'>
-          Time it takes to accumulate enough mana for a standard transaction...
-        </div>
+      <div className='col'>
+        Time it takes to accumulate enough mana for a standard transaction...
       </div>
-      <div className='row '>
-        <div className='col col--6'>...as a delegator/validator</div>
-        <div className='col col--6 align-right'>
-          {humanizeDuration(msToTransaction)}
-        </div>
+      <div className='col'>
+        ...as a delegator/validator:{' '}
+        <b className='output-result'>{msToTransaction}</b>
       </div>
-      <div className='row '>
-        <div className='col col--6'>...as a holder</div>
-        <div className='col col--6 align-right'>
-          {humanizeDuration(passiveMsToTransaction)}
-        </div>
+      <div className='col'>
+        ...as a holder:{' '}
+        <b className='output-result'>{passiveMsToTransaction}</b>
       </div>
     </div>
   );
