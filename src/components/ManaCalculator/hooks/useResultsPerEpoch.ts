@@ -1,7 +1,7 @@
 import {
   calculateManaRewards,
   calculatePassiveRewards,
-  calculateTPS,
+  calculateBPS,
 } from '../actions';
 import { UserType } from '../enums';
 import {
@@ -46,20 +46,20 @@ export function useResultsPerEpoch(state: ManaCalculatorProps): EpochReward[] {
 
     const mana = generatedRewards + passiveRewards;
 
-    const tpsFromPassiveRewards = calculateTPS(
+    const bpsFromPassiveRewards = calculateBPS(
       passiveRewards,
       state.congestion,
     );
-    const tpsFromGeneratedMana = calculateTPS(
+    const bpsFromGeneratedMana = calculateBPS(
       generatedRewards,
       state.congestion,
     );
-    const totalTps = tpsFromPassiveRewards + tpsFromGeneratedMana;
+    const totalBps = bpsFromPassiveRewards + bpsFromGeneratedMana;
 
     results.push({
       epoch: i,
       mana: fromMicro(mana) / 1_000_000,
-      totalTps,
+      totalBps,
     });
   }
 

@@ -8,7 +8,7 @@ export function OutputForm() {
   const {
     generatedRewards,
     passiveRewards,
-    totalTPS,
+    totalBPS,
     msToTransaction,
     passiveMsToTransaction,
   } = useResults(state);
@@ -28,8 +28,8 @@ export function OutputForm() {
         </div>
       </div>
       <div className='row '>
-        <div className='col col--6'>Total TPS granted with</div>
-        <div className='col col--6 align-right'>{totalTPS}</div>
+        <div className='col col--6'>Total BPS granted with</div>
+        <div className='col col--6 align-right'>{totalBPS}</div>
       </div>
       <div className='row '>
         <div className='col col--6'>

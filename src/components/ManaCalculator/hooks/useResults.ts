@@ -1,7 +1,7 @@
 import {
   calculateManaRewards,
   calculatePassiveRewards,
-  calculateTPS,
+  calculateBPS,
 } from '../actions';
 import { UserType } from '../enums';
 import { ManaCalculatorProps, ValidatorParameters } from '../types';
@@ -13,7 +13,7 @@ export function useResults(state: ManaCalculatorProps) {
     state.finalEpoch,
   );
 
-  const passiveTPS = calculateTPS(passiveRewards, state.congestion);
+  const passiveBPS = calculateBPS(passiveRewards, state.congestion);
 
   const validatorParameters =
     state.userType === UserType.VALIDATOR
@@ -39,16 +39,16 @@ export function useResults(state: ManaCalculatorProps) {
     state.network,
   );
 
-  const generatedTPS = calculateTPS(generatedRewards, state.congestion);
-  const totalTPS = generatedTPS + passiveTPS;
+  const generatedBPS = calculateBPS(generatedRewards, state.congestion);
+  const totalBPS = generatedBPS + passiveBPS;
 
-  const msToTransaction = (1 / totalTPS) * 1_000;
-  const passiveMsToTransaction = (1 / passiveTPS) * 1_000;
+  const msToTransaction = (1 / totalBPS) * 1_000;
+  const passiveMsToTransaction = (1 / passiveBPS) * 1_000;
 
   return {
     generatedRewards,
     passiveRewards,
-    totalTPS,
+    totalBPS,
     msToTransaction,
     passiveMsToTransaction,
   };

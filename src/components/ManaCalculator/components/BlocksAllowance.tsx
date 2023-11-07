@@ -18,7 +18,7 @@ export function BlocksAllowance({ results }: { results: EpochReward[] }) {
       <ResponsiveContainer width='100%' height={250}>
         <AreaChart data={results}>
           <defs>
-            <linearGradient id='totalTps' x1='0' y1='0' x2='0' y2='1'>
+            <linearGradient id='totalBps' x1='0' y1='0' x2='0' y2='1'>
               <stop offset='5%' stopColor='#7caae6' stopOpacity={0.8} />
               <stop offset='95%' stopColor='#7caae6' stopOpacity={0} />
             </linearGradient>
@@ -39,10 +39,10 @@ export function BlocksAllowance({ results }: { results: EpochReward[] }) {
           <Tooltip />
           <Area
             type='monotone'
-            dataKey='totalTps'
+            dataKey='totalBps'
             stroke='#7caae6'
             fillOpacity={1}
-            fill='url(#totalTps)'
+            fill='url(#totalBps)'
           />
         </AreaChart>
       </ResponsiveContainer>
