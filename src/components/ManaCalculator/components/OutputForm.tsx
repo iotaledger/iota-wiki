@@ -9,8 +9,12 @@ export function OutputForm() {
   const passiveRewards = fromMicro(results.passiveRewards).toFixed(2);
   const manaGenerated = fromMicro(results.generatedRewards).toFixed(2);
   const totalTPS = results.totalTPS.toFixed(2);
-  const msToTransaction = humanizeDuration(results.msToTransaction);
-  const passiveMsToTransaction = humanizeDuration(results.passiveMsToTransaction);
+  const humanizer = humanizeDuration.humanizer({
+    units: ['y', 'mo', 'w', 'd', 'h', 'm', 's', 'ms'],
+    maxDecimalPoints: 3,
+  });
+  const msToTransaction = humanizer(results.msToTransaction);
+  const passiveMsToTransaction = humanizer(results.passiveMsToTransaction);
 
   return (
     <div>
