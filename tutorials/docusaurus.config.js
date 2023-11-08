@@ -37,8 +37,7 @@ module.exports = {
         title: 'Run a Wasp Chain',
         description: 'In this tutorial you will learn how to run a wasp chain.',
         preview: '/IOTA-Smart-Contract-Tutorials-B.jpg',
-        route:
-          '/shimmer/smart-contracts/guide/chains_and_nodes/setting-up-a-chain',
+        route: '/wasp-cli/how-tos/setting-up-a-chain',
         tags: ['text', 'video'],
       },
     ],
@@ -49,8 +48,7 @@ module.exports = {
         description:
           'In this tutorial you will learn how to deploy a wasm smart contract.',
         preview: '/IOTA-Smart-Contract-Tutorials-C.jpg',
-        route:
-          'smart-contracts/guide/chains_and_nodes/setting-up-a-chain#deploying-a-wasm-contract',
+        route: '/wasp-cli/how-tos/setting-up-a-chain#deploying-a-wasm-contract',
         tags: ['text', 'video'],
       },
     ],
@@ -61,7 +59,7 @@ module.exports = {
         description:
           'In this tutorial you will learn how to deploy a solidity smart contract on EVM using remix and metamask.',
         preview: '/IOTA-Smart-Contract-Tutorials-E.jpg',
-        route: '/shimmer/smart-contracts/guide/evm/tooling#remix',
+        route: '/wasp-evm/getting-started/compatible-tools#remix',
         tags: ['text', 'video'],
       },
     ],
@@ -72,7 +70,7 @@ module.exports = {
         description:
           'In this tutorial you will learn how to use schema tool to generate smart contract template code on rust and golang',
         preview: '/IOTA-Smart-Contract-Tutorials-G.png',
-        route: '/shimmer/smart-contracts/guide/wasm_vm/usage',
+        route: '/wasp-wasm/how-tos/schema-tool/usage',
         tags: ['text', 'video'],
       },
     ],

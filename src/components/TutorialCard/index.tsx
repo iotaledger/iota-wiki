@@ -5,15 +5,15 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import React, { memo, useState } from 'react';
+import React, { memo } from 'react';
 import useBaseUrl from '@docusaurus/useBaseUrl';
-import clsx from 'clsx';
 
 import './styles.css';
 import FavoriteIcon from '../svgIcons/FavoriteIcon';
 import { sortBy } from '@site/src/utils/jsUtils';
 import { NormalizedOptions as Tutorial } from '@iota-wiki/plugin-tutorial';
 import { Tag, TagValues, Tags } from '@site/src/utils/tags';
+import Link from '@docusaurus/Link';
 
 const TagComp = React.forwardRef<HTMLLIElement, Tag>((tag, ref) => (
   <li ref={ref} className='tag' title={tag.description}>
@@ -43,24 +43,9 @@ function TutorialCardTag({ tags }: { tags: string[] }) {
 const TutorialCard = memo(({ tutorial }: { tutorial: Tutorial }) => {
   const tutorialSource = tutorial.source && useBaseUrl(tutorial.source);
   const tutorialRoute = tutorial.route && useBaseUrl(tutorial.route);
-  const [hovering, setHovering] = useState(false);
-
-  const handleClick = (event, url) => {
-    event.preventDefault();
-    event.stopPropagation();
-    window.location.href = url;
-  };
-
   return (
-    <li
-      key={tutorial.title}
-      onMouseOver={() => setHovering(true)}
-      onMouseOut={() => setHovering(false)}
-    >
-      <div
-        onClick={(event) => handleClick(event, tutorialRoute)}
-        className='card shadow--md tutorial-card'
-      >
+    <li key={tutorial.title}>
+      <Link to={tutorialRoute} className='card shadow--md tutorial-card'>
         <div className='card__image tutorial-card__image-container'>
           <img
             className='tutorial-card__image'
@@ -71,24 +56,17 @@ const TutorialCard = memo(({ tutorial }: { tutorial: Tutorial }) => {
         </div>
         <div className='card__body'>
           <div className='tutorial-card__header'>
-            <h4
-              className={clsx(
-                'tutorial-card__title',
-                hovering && 'tutorial-card__title--hover',
-              )}
-            >
-              {tutorial.title}
-            </h4>
+            <h4 className='tutorial-card__title'>{tutorial.title}</h4>
             {tutorial.tags.includes('favorite') && (
               <FavoriteIcon svgClass='svg-icon-favorite' size='small' />
             )}
             {tutorial.source && (
-              <div
-                onClick={(event) => handleClick(event, tutorialSource)}
+              <Link
+                to={tutorialSource}
                 className='button button--secondary button--sm tutorial-card__source-button'
               >
                 source
-              </div>
+              </Link>
             )}
           </div>
           <p className='tutorial-card__body'>{tutorial.description}</p>
@@ -96,7 +74,7 @@ const TutorialCard = memo(({ tutorial }: { tutorial: Tutorial }) => {
         <ul className='card__footer tutorial-card__footer'>
           <TutorialCardTag tags={tutorial.tags} />
         </ul>
-      </div>
+      </Link>
     </li>
   );
 });

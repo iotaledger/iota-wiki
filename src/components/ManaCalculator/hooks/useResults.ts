@@ -14,7 +14,7 @@ export function useResults(state: ManaState) {
     state.generationPerSlot,
   );
 
-  const additionalTPS = calculateTPS(passiveRewards, state.congestionAmount);
+  const passiveTPS = calculateTPS(passiveRewards, state.congestionAmount);
 
   const validatorParameters =
     state.userType === UserType.VALIDATOR
@@ -29,7 +29,7 @@ export function useResults(state: ManaState) {
         } as ValidatorParameters)
       : null;
 
-  const manaGenerated = calculateManaRewards(
+  const generatedRewards = calculateManaRewards(
     state.stakedOrDelegatedTokens,
     state.delegator.validator,
     validatorParameters,
@@ -41,12 +41,17 @@ export function useResults(state: ManaState) {
     state.generationPerSlot,
   );
 
-  const grantedTPS = calculateTPS(manaGenerated, state.congestionAmount);
-  const totalTPS = grantedTPS + additionalTPS;
+  const generatedTPS = calculateTPS(generatedRewards, state.congestionAmount);
+  const totalTPS = generatedTPS + passiveTPS;
+
+  const msToTransaction = (1 / totalTPS) * 1_000;
+  const passiveMsToTransaction = (1 / passiveTPS) * 1_000;
 
   return {
-    manaGenerated,
+    generatedRewards,
     passiveRewards,
     totalTPS,
+    msToTransaction,
+    passiveMsToTransaction,
   };
 }
