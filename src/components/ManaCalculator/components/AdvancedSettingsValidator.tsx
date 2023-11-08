@@ -30,8 +30,12 @@ export function AdvancedSettingsValidator() {
           <div className='col col--2 horizontal-space  text--center'>
             Delegated
           </div>
-          <div className='col col--2 horizontal-spaced text--center'>PF</div>
-          <div className='col col--2 horizontal-spaced text--center'>FC</div>
+          <div className='col col--2 horizontal-spaced text--center'>
+            Performance factor
+          </div>
+          <div className='col col--2 horizontal-spaced text--center'>
+            Fixed costs
+          </div>
           <div className='col col--1'></div>
         </div>
         {validators.map((validator, i) => (
