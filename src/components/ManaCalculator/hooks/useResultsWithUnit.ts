@@ -4,12 +4,18 @@ export enum Unit {
   default = 'default',
   K = 'K',
   M = 'M',
+  G = 'G',
+  T = 'T',
+  P = 'P',
 }
 
 const UNIT_MAP: { [unit in Unit]: { val: number; dp: number } } = {
   default: { val: 1, dp: 0 },
   K: { val: 1000, dp: 3 },
   M: { val: 1000000, dp: 6 },
+  G: { val: 1000000000, dp: 9 },
+  T: { val: 1000000000000, dp: 12 },
+  P: { val: 1000000000000000, dp: 15 },
 };
 
 const getUnit = (value: number): Unit => {
@@ -20,6 +26,12 @@ const getUnit = (value: number): Unit => {
   const checkLength = Math.abs(value).toString().length;
 
   if (checkLength > UNIT_MAP.M.dp) {
+    bestUnits = Unit.M;
+  } else if (checkLength > UNIT_MAP.K.dp) {
+    bestUnits = Unit.K;
+  } else if (checkLength > UNIT_MAP.G.dp) {
+    bestUnits = Unit.G;
+  } else if (checkLength > UNIT_MAP.M.dp) {
     bestUnits = Unit.M;
   } else if (checkLength > UNIT_MAP.K.dp) {
     bestUnits = Unit.K;
