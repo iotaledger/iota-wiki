@@ -57,8 +57,11 @@
   cursor: pointer !important;
   background-color: var(--ifm-color-emphasis-200) !important;
   border: 0 !important;
-  margin-bottom: 1rem !important;
   border-radius: 6px !important;
+}
+
+.react-select-spaced__control {
+  margin-bottom: 1rem !important;
 }
 
 .react-select__indicator {

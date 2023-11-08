@@ -92,3 +92,18 @@
 .mana-calculator__tooltip > p {
   margin: 0;
 }
+
+.inlined-label {
+  display: inline-block;
+  width: 150px;
+}
+
+.inlined-long-label {
+  display: inline-block;
+  width: 350px;
+}
+
+.mana_calculator__compact {
+  width: 200px;
+  margin-bottom: 1rem !important;
+}
