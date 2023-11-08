@@ -1,4 +1,4 @@
-# Tokenomics: Mana, Accounts, Staking and _Delegation_
+# Tokenomics: Mana, Accounts, Staking and Delegation
 
 Mana is a scarce resource used to access the IOTA ledger and update its state through block creation. It is a spendable asset tracked in the _ledger state_, powering smart contracts, DeFi_applications, block creation, and various other services, and is linked to [accounts](#accounts), which allow you to [stake or delegate](#staking-and-delegation-1) IOTA to receive [Mana rewards](#mana-rewards).
 
