@@ -9,7 +9,7 @@ import {
   SHIMMER_THROUGHPUT,
   SLOTS_IN_EPOCH,
 } from './constants';
-import { CongestionType, NetworkType } from './enums';
+import { CongestionType, NetworkType, UserType } from './enums';
 
 // Given a slot, returns the epoch that slot belongs to
 export function slotToEpoch(slot: number): number {
@@ -74,5 +74,13 @@ export function getNetworkThroughput(network: NetworkType): number {
     return IOTA_THROUGHPUT;
   } else {
     return SHIMMER_THROUGHPUT;
+  }
+}
+
+export function getStakedOrDelegated(userType: UserType) {
+  if(userType == UserType.DELEGATOR) {
+    return "delegatedTokens"
+  } else {
+    return "stakedTokens"
   }
 }

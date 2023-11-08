@@ -28,8 +28,9 @@ export const IOTA_GENERATION_PER_SLOT = Math.pow(2, -17);
 
 export const IOTA_THROUGHPUT = 100;
 
-export const IOTA_HOLD = 600;
-export const IOTA_STAKED_OR_DELEGATED = 600;
+export const IOTA_HOLD = 600; // IOTA
+export const IOTA_STAKED = 600; // IOTA
+export const IOTA_DELEGATED = 600; // IOTA
 
 // SHIMMER
 
@@ -45,5 +46,7 @@ export const SHIMMER_GENERATION_PER_SLOT = Math.pow(2, -16);
 
 export const SHIMMER_THROUGHPUT = 100;
 
-export const SHIMMER_HOLD = 600;
-export const SHIMMER_STAKED_OR_DELEGATED = 600;
+export const SHIMMER_HOLD = 600; // SMR
+export const SHIMMER_STAKED = 600; // SMR
+export const SHIMMER_DELEGATED= 600; // SMR
+

@@ -2,16 +2,19 @@ import { createContext, useContext } from 'react';
 import {
   FINAL_EPOCH,
   INITIAL_EPOCH,
+  IOTA_DELEGATED,
   IOTA_HOLD,
-  IOTA_STAKED_OR_DELEGATED,
+  IOTA_STAKED,
+  SHIMMER_DELEGATED,
   SHIMMER_HOLD,
-  SHIMMER_STAKED_OR_DELEGATED,
+  SHIMMER_STAKED,
 } from '../constants';
 import { CongestionType, NetworkType, UserType } from '../enums';
 import { ManaCalculatorProps, ManaState, ValidatorProps } from '../types';
 import {
   getNetworkCongestion,
   getNetworkGenerationPerSlot,
+  getStakedOrDelegated,
   toMicro,
 } from '../utils';
 
@@ -86,7 +89,7 @@ export function useGivenManaState(
   function handleOwnStakeChange(value: number) {
     setState({
       ...state,
-      stakedOrDelegatedTokens: value,
+      [getStakedOrDelegated(state.userType)]: value,
     });
   }
 
@@ -183,12 +186,14 @@ export function useGivenManaState(
     state.congestion,
   );
   const generationPerSlot = getNetworkGenerationPerSlot(state.network);
+  const stakedOrDelegatedTokens = state[getStakedOrDelegated(state.userType)]
 
   return {
     state: {
       ...state,
       congestionAmount,
       generationPerSlot,
+      stakedOrDelegatedTokens
     } as ManaState,
     congestionAmount,
     handleDelete,
@@ -218,11 +223,13 @@ export function getDefaultParameters(
 ): ManaCalculatorProps {
   const networkParams = {
     [NetworkType.IOTA]: {
-      stakedOrDelegatedTokens: toMicro(IOTA_STAKED_OR_DELEGATED),
+      stakedTokens: toMicro(IOTA_STAKED),
+      delegatedTokens: toMicro(IOTA_DELEGATED),
       heldTokens: toMicro(IOTA_HOLD),
     },
     [NetworkType.SHIMMER]: {
-      stakedOrDelegatedTokens: toMicro(SHIMMER_STAKED_OR_DELEGATED),
+      stakedTokens: toMicro(SHIMMER_STAKED),
+      delegatedTokens: toMicro(SHIMMER_DELEGATED),
       heldTokens: toMicro(SHIMMER_HOLD),
     },
   };
