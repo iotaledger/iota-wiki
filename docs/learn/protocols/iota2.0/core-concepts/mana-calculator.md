@@ -14,7 +14,7 @@ Here, we introduce the Mana calculator: a tool to help you make decisions about 
 
 - **Input the number of tokens you own:** No matter which network and role you choose, your Mana generation will depend on how many available tokens you have. Pay attention to the units! The input should be done in IOTA or Shimmer (not microIota or Glow).
 
-With the inputs above, you can already estimate how much Mana you’ll be granted per epoch. But what does it mean in TPS? How many blocks per second does your Mana grant you? The answer depends on the size of your block and the network congestion levels. However, we can use a default block size, which will be enough for most applications, and assume certain levels of congestion. This takes us to the last step in this calculator:
+With the inputs above, you can already estimate how much Mana you’ll be granted per epoch. But what does it mean in BPS? How many blocks per second does your Mana grant you? The answer depends on the size of your block and the network congestion levels. However, we can use a default block size, which will be enough for most applications, and assume certain levels of congestion. This takes us to the last step in this calculator:
 
 - **Choose a congestion level:** Given a certain Mana generation per epoch, this can be translated into a number of blocks issued per second that depends on the congestion level. Choose one of the given congestion levels (low, stable, or extreme) to estimate how many blocks per second your tokens and participation grant you! This metric is also shown in another way: time until block issuance, which tells you in which periodicity you’ll be able to issue a block.
 
@@ -23,7 +23,7 @@ With the inputs above, you can already estimate how much Mana you’ll be grante
 
 ## Advanced settings
 
-The steps outlined above can give you a rough estimate of your Mana generation and granted TPS. However, playing with the advanced settings will give you more precise results. 
+The steps outlined above can give you a rough estimate of your Mana generation and granted BPS. However, playing with the advanced settings will give you more precise results. 
 
 - **Change the state of the system:** The calculator's default settings assume a certain level of participation in the consensus (i.e., locked stake, delegated stake, and performance factor of validators). Those settings can be changed under the “Advanced Settings - State of the System” tab. You can also add or delete validators and change their fixed costs. 
 
