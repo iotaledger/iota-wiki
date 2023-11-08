@@ -218,6 +218,7 @@ function TutorialFilters() {
                   options={tags}
                   {...selectProps}
                   value={value}
+                  className='react-select-spaced__control'
                 />
               </div>
             );

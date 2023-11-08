@@ -18,11 +18,11 @@ export function RoleSection() {
   });
 
   return (
-    <div className='grouped-form'>
-      <p className='align-center'>Role configuration</p>
+    <div className='mana_calculator__card'>
+      <h4>Role configuration</h4>
       <label className='inlined-label'>Your Role</label>
       <Select
-        className='compact inlined'
+        className='mana_calculator__compact inlined'
         defaultValue={{ value: UserType.DELEGATOR, label: `Delegator` }}
         onChange={(e) => {
           handleUserChange(e.value);
@@ -36,7 +36,7 @@ export function RoleSection() {
       <br />
       <label className='inlined-label'>Held amount</label>
       <input
-        className='col col--4'
+        className='mana_calculator__compact inlined'
         value={fromMicro(state.heldTokens)}
         onChange={(e) => handleOwnHoldChange(toMicro(Number(e.target.value)))}
       ></input>
@@ -45,7 +45,7 @@ export function RoleSection() {
         <>
           <label className='inlined-label'>Stake</label>
           <input
-            className='compact inlined'
+            className='mana_calculator__compact inlined'
             value={fromMicro(state.stakedOrDelegatedTokens)}
             onChange={(e) =>
               handleOwnStakeChange(toMicro(Number(e.target.value)))
@@ -58,7 +58,7 @@ export function RoleSection() {
         <>
           <label className='inlined-label'>Delegating to</label>
           <Select
-            className='compact inlined'
+            className='mana_calculator__compact inlined'
             defaultValue={{ value: 0, label: `Validator 1` }}
             onChange={(e) => {
               handleValidatorChange(e.value);
@@ -69,7 +69,7 @@ export function RoleSection() {
           <br />
           <label className='inlined-label'>Delegated amount</label>
           <input
-            className='col col--4'
+            className='mana_calculator__compact inlined'
             value={fromMicro(state.stakedOrDelegatedTokens)}
             onChange={(e) =>
               handleOwnStakeChange(toMicro(Number(e.target.value)))
