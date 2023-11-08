@@ -481,28 +481,10 @@ ul ul .table-of-contents__link {
   display: inline-block;
 }
 
-.inlined-label {
-  display: inline-block;
-  width: 200px;
-}
-
-.inlined-long-label {
-  display: inline-block;
-  width: 350px;
-}
-
-.small-row-head {
-  font-size: 15px;
-}
-
-.mana_calculator__compact {
-  width: 200px;
-  margin-bottom: 1rem !important;
-}
-
 .react-select__control {
   background-color: var(--ifm-color-emphasis-200) !important;
   border: 0 !important;
+  margin: 0 !important;
 }
 
 .react-select__placeholder {
