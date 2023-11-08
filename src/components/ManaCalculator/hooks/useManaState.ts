@@ -235,8 +235,10 @@ export function getDefaultParameters(
     },
   };
 
+  const finalNetworkParams = networkParams[network];
+
   return {
-    ...networkParams[network],
+    ...finalNetworkParams,
     initialEpoch: INITIAL_EPOCH,
     finalEpoch: FINAL_EPOCH,
     validators: getValidators(network),
@@ -249,7 +251,7 @@ export function getDefaultParameters(
       performanceFactor: 1.0,
       fixedCost: 0.0,
       shareOfYourStakeLocked: 100.0,
-      attractedNewDelegatedStake: 0.0, // Should be the 1.5x of the user staked amount
+      attractedNewDelegatedStake: finalNetworkParams.stakedTokens * 1.5,
       attractedDelegatedStakeFromOtherPools: 0.1,
     },
     network,
