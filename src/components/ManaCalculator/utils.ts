@@ -78,9 +78,9 @@ export function getNetworkThroughput(network: NetworkType): number {
 }
 
 export function getStakedOrDelegated(userType: UserType) {
-  if(userType == UserType.DELEGATOR) {
-    return "delegatedTokens"
+  if (userType == UserType.DELEGATOR) {
+    return 'delegatedTokens';
   } else {
-    return "stakedTokens"
+    return 'stakedTokens';
   }
 }

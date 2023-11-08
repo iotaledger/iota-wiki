@@ -48,5 +48,4 @@ export const SHIMMER_THROUGHPUT = 100;
 
 export const SHIMMER_HOLD = 600; // SMR
 export const SHIMMER_STAKED = 600; // SMR
-export const SHIMMER_DELEGATED= 600; // SMR
-
+export const SHIMMER_DELEGATED = 600; // SMR

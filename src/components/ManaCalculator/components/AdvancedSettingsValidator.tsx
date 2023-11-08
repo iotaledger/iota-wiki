@@ -29,8 +29,12 @@ export function AdvancedSettingsValidator() {
           <div className='col col--2 horizontal-space  text--center'>
             Delegated ({state.network})
           </div>
-          <div className='col col--2 horizontal-spaced text--center'>Performance factor</div>
-          <div className='col col--2 horizontal-spaced text--center'>Fixed costs</div>
+          <div className='col col--2 horizontal-spaced text--center'>
+            Performance factor
+          </div>
+          <div className='col col--2 horizontal-spaced text--center'>
+            Fixed costs
+          </div>
           <div className='col col--1'></div>
         </div>
         {state.validators.map((validator, i) => (

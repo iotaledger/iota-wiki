@@ -14,6 +14,7 @@ import { ManaCalculatorProps, ManaState, ValidatorProps } from '../types';
 import {
   getNetworkCongestion,
   getNetworkGenerationPerSlot,
+  getNetworkSupply,
   getStakedOrDelegated,
   toMicro,
 } from '../utils';
@@ -186,14 +187,14 @@ export function useGivenManaState(
     state.congestion,
   );
   const generationPerSlot = getNetworkGenerationPerSlot(state.network);
-  const stakedOrDelegatedTokens = state[getStakedOrDelegated(state.userType)]
+  const stakedOrDelegatedTokens = state[getStakedOrDelegated(state.userType)];
 
   return {
     state: {
       ...state,
       congestionAmount,
       generationPerSlot,
-      stakedOrDelegatedTokens
+      stakedOrDelegatedTokens,
     } as ManaState,
     congestionAmount,
     handleDelete,
@@ -238,26 +239,7 @@ export function getDefaultParameters(
     ...networkParams[network],
     initialEpoch: INITIAL_EPOCH,
     finalEpoch: FINAL_EPOCH,
-    validators: [
-      {
-        lockedStake: toMicro(100),
-        delegatedStake: toMicro(0),
-        performanceFactor: 1.0,
-        fixedCost: 0.0,
-      },
-      {
-        lockedStake: toMicro(100),
-        delegatedStake: toMicro(0),
-        performanceFactor: 1.0,
-        fixedCost: 0.0,
-      },
-      {
-        lockedStake: toMicro(100),
-        delegatedStake: toMicro(0),
-        performanceFactor: 1.0,
-        fixedCost: 0.0,
-      },
-    ],
+    validators: getValidators(network),
     userType: UserType.DELEGATOR,
     congestion: CongestionType.LOW,
     delegator: {
@@ -272,4 +254,22 @@ export function getDefaultParameters(
     },
     network,
   } as ManaCalculatorProps;
+}
+
+export function getValidators(network: NetworkType): ValidatorProps[] {
+  const supply = getNetworkSupply(network);
+
+  const delegated = [1.5, 1, 1.5, 2.0];
+
+  return delegated.flatMap((delegated) => {
+    const stake = [1, 1, 0.25, 0.5, 0.75, 1.12, 1.5, 1.75];
+    return stake.map((stake) => {
+      return {
+        lockedStake: (supply * stake) / 100,
+        delegatedStake: (supply * delegated) / 100,
+        performanceFactor: 1.0,
+        fixedCost: 0.0,
+      };
+    });
+  });
 }
