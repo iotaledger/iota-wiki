@@ -239,7 +239,3 @@ A reward scheme is always a powerful mechanism to incentivize actors to have cer
 - No incentives for centralizing the funds of validators and delegators.
   - By the construction of our reward formulas, there is no incentive for the centralization of validator funds. Technically speaking, this means that two different validators do not get more rewards by combining their stake.
   - Analogously, the concentration of delegator funds is disincentivized by the construction of our reward formula. As more delegated stake is concentrated on the same validator, the rewards of the delegators become smaller. Then, the delegators are incentivized to redelegate to validators with less delegated stake. In the long run, under the assumption that actors are rational, the system should stabilize around a constant ratio of delegated and validator stake among pools.
-
-## Mana Calculator
-
-<ManaCalculator/>
