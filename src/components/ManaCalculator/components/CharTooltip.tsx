@@ -1,9 +1,15 @@
 import React from 'react';
+import { TooltipProps } from 'recharts';
 import { getSizeOfUnit, Unit } from '../hooks';
 
 export function chartTooltip(xLabel: string, yLabel: string, unit: Unit) {
   const unitSize = getSizeOfUnit(unit);
-  return ({ active, payload, label }) => {
+
+  const ChartTooltip = ({
+    active,
+    payload,
+    label,
+  }: TooltipProps<number, string>) => {
     if (active && payload && payload.length) {
       const value = payload[0].value * unitSize;
       return (
@@ -16,4 +22,6 @@ export function chartTooltip(xLabel: string, yLabel: string, unit: Unit) {
 
     return null;
   };
+
+  return ChartTooltip;
 }
