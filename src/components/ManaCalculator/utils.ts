@@ -31,3 +31,7 @@ export function getNetworkSupply(network: NetworkType): number {
     return SHIMMER_SUPPLY;
   }
 }
+
+export const roundMax = function (num: number, places: number) {
+  return +(Math.round(Number(num + 'e+' + places)) + 'e-' + places);
+};

@@ -1,14 +1,14 @@
 import React from 'react';
 import { useManaState, useResults } from '../hooks';
-import { fromMicro } from '../utils';
+import { fromMicro, roundMax } from '../utils';
 import humanizeDuration from 'humanize-duration';
 
 export function OutputForm() {
   const { state } = useManaState();
   const results = useResults(state);
-  const passiveRewards = fromMicro(results.passiveRewards).toFixed(6);
-  const manaGenerated = fromMicro(results.generatedRewards).toFixed(6);
-  const totalTPS = results.totalTPS.toFixed(6);
+  const passiveRewards = roundMax(fromMicro(results.passiveRewards), 6);
+  const manaGenerated = roundMax(fromMicro(results.generatedRewards), 6);
+  const totalTPS = roundMax(results.totalTPS, 2);
   const humanizer = humanizeDuration.humanizer({
     units: ['y', 'mo', 'w', 'd', 'h', 'm', 's', 'ms'],
     maxDecimalPoints: 3,
