@@ -23,7 +23,7 @@ export const stringifyUnit = (unit: Unit): string => {
 const getUnit = (value: number): Unit => {
   let bestUnits: Unit = Unit.default;
 
-  const checkLength = Math.abs(value).toFixed(2).replace('.', '').length;
+  const checkLength = Math.abs(value).toFixed(0).replace('.', '').length;
 
   if (checkLength > UNIT_MAP.M.dp) {
     bestUnits = Unit.M;
