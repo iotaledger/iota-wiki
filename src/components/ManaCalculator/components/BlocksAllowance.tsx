@@ -10,7 +10,7 @@ import {
 } from 'recharts';
 import { stringifyUnit, Unit } from '../hooks';
 import { EpochReward } from '../types';
-import { chartTooltip } from './CharTooltip';
+import { chartTooltip } from './ChartTooltip';
 
 export function BlocksAllowance({
   results,
