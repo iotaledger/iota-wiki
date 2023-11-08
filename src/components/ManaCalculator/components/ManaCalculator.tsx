@@ -11,7 +11,6 @@ import {
 import {
   OutputForm,
   NetworkSection,
-  AdvancedSettingsValidator,
   RoleSection,
   OtherParametersSection,
   ManaAccumulation,
