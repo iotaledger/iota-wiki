@@ -8,7 +8,7 @@ import TutorialCards from '@site/src/components/TutorialCards';
 
 function TutorialHeader() {
   return (
-    <section className='container margin-top--lg margin-bottom--lg text--center'>
+    <section className='container margin-top--lg margin-bottom--sm text--center'>
       <div className='row'>
         <div className='col col--2 col--offset-0'>
           <h1 className='tutorial-header'>Tutorials</h1>

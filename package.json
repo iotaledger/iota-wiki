@@ -53,6 +53,7 @@
     "flickity-fade": "^2.0.0",
     "globby": "^13.1.4",
     "hast-util-is-element": "1.1.0",
+    "humanize-duration": "^3.30.0",
     "plugin-image-zoom": "flexanalytics/plugin-image-zoom",
     "raw-loader": "^4.0.2",
     "react": "18.2.0",
@@ -75,7 +76,7 @@
   },
   "resolutions": {
     "@types/react": "18.2.24",
-    "@types/react-dom": "18.2.7"
+    "@types/react-dom": "18.2.14"
   },
   "browserslist": {
     "production": [
@@ -95,9 +96,9 @@
     "@iota-wiki/cli": "workspace:^",
     "@tsconfig/docusaurus": "^1.0.6",
     "@types/react": "18.2.24",
-    "@types/react-dom": "18.2.7",
+    "@types/react-dom": "18.2.14",
     "@types/webpack-env": "^1.18.2",
-    "@typescript-eslint/eslint-plugin": "^5.9.1",
+    "@typescript-eslint/eslint-plugin": "^5.62.0",
     "@typescript-eslint/parser": "^5.9.1",
     "eslint": "^8.48.0",
     "eslint-config-prettier": "^8.9.0",
