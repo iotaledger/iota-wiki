@@ -6,9 +6,9 @@ import humanizeDuration from 'humanize-duration';
 export function OutputForm() {
   const { state } = useManaState();
   const results = useResults(state);
-  const passiveRewards = fromMicro(results.passiveRewards).toFixed(2);
-  const manaGenerated = fromMicro(results.generatedRewards).toFixed(2);
-  const totalTPS = results.totalTPS.toFixed(2);
+  const passiveRewards = fromMicro(results.passiveRewards).toFixed(6);
+  const manaGenerated = fromMicro(results.generatedRewards).toFixed(6);
+  const totalTPS = results.totalTPS.toFixed(6);
   const humanizer = humanizeDuration.humanizer({
     units: ['y', 'mo', 'w', 'd', 'h', 'm', 's', 'ms'],
     maxDecimalPoints: 3,
