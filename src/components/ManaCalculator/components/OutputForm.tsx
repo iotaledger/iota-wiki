@@ -8,7 +8,7 @@ export function OutputForm() {
   const results = useResults(state);
   const passiveRewards = roundMax(fromMicro(results.passiveRewards), 6);
   const manaGenerated = roundMax(fromMicro(results.generatedRewards), 6);
-  const totalTPS = roundMax(results.totalTPS, 2);
+  const totalBPS = roundMax(results.totalBPS, 2);
   const humanizer = humanizeDuration.humanizer({
     units: ['y', 'mo', 'w', 'd', 'h', 'm', 's', 'ms'],
     maxDecimalPoints: 3,
@@ -26,7 +26,7 @@ export function OutputForm() {
         Mana rewards: <b className='output-result'>{manaGenerated}</b>
       </div>
       <div className='col'>
-        Total TPS granted: <b className='output-result'>{totalTPS}</b>
+        Total BPS granted: <b className='output-result'>{totalBPS}</b>
       </div>
       <div className='col'>
         Time it takes to accumulate enough mana for a standard transaction...
