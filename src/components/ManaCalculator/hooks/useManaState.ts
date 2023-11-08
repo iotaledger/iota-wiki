@@ -1,7 +1,23 @@
 import { createContext, useContext } from 'react';
+import {
+  FINAL_EPOCH,
+  INITIAL_EPOCH,
+  IOTA_DELEGATED,
+  IOTA_HOLD,
+  IOTA_STAKED,
+  SHIMMER_DELEGATED,
+  SHIMMER_HOLD,
+  SHIMMER_STAKED,
+} from '../constants';
 import { CongestionType, NetworkType, UserType } from '../enums';
-import { ManaCalculatorProps, ValidatorProps } from '../types';
-import { toMicro } from '../utils';
+import { ManaCalculatorProps, ManaState, ValidatorProps } from '../types';
+import {
+  getNetworkCongestion,
+  getNetworkGenerationPerSlot,
+  getNetworkSupply,
+  getStakedOrDelegated,
+  toMicro,
+} from '../utils';
 
 export const ManaStateContext = createContext(null);
 
@@ -11,6 +27,13 @@ export function useManaState() {
     state: ManaCalculatorProps;
   }>(ManaStateContext);
 
+  return useGivenManaState(state, setState);
+}
+
+export function useGivenManaState(
+  state: ManaCalculatorProps,
+  setState: (state: ManaCalculatorProps) => void,
+) {
   function handleDelete(id: number) {
     const validators = state.validators.filter((_, i) => i !== id);
     setState({ ...state, validators });
@@ -67,7 +90,7 @@ export function useManaState() {
   function handleOwnStakeChange(value: number) {
     setState({
       ...state,
-      stakedOrDelegatedTokens: value,
+      [getStakedOrDelegated(state.userType)]: value,
     });
   }
 
@@ -159,8 +182,20 @@ export function useManaState() {
     setState({ ...state, heldTokens: value });
   }
 
+  const congestionAmount = getNetworkCongestion(
+    state.network,
+    state.congestion,
+  );
+  const generationPerSlot = getNetworkGenerationPerSlot(state.network);
+  const stakedOrDelegatedTokens = state[getStakedOrDelegated(state.userType)];
+
   return {
-    state,
+    state: {
+      ...state,
+      congestionAmount,
+      generationPerSlot,
+      stakedOrDelegatedTokens,
+    } as ManaState,
     handleDelete,
     handleStakeChange,
     handleAddValidator,
@@ -188,51 +223,54 @@ export function getDefaultParameters(
 ): ManaCalculatorProps {
   const networkParams = {
     [NetworkType.IOTA]: {
-      initialEpoch: 1,
-      finalEpoch: 365,
+      stakedTokens: toMicro(IOTA_STAKED),
+      delegatedTokens: toMicro(IOTA_DELEGATED),
+      heldTokens: toMicro(IOTA_HOLD),
     },
     [NetworkType.SHIMMER]: {
-      initialEpoch: 1,
-      finalEpoch: 1000,
+      stakedTokens: toMicro(SHIMMER_STAKED),
+      delegatedTokens: toMicro(SHIMMER_DELEGATED),
+      heldTokens: toMicro(SHIMMER_HOLD),
     },
   };
 
+  const finalNetworkParams = networkParams[network];
+
   return {
-    ...networkParams[network],
-    validators: [
-      {
-        lockedStake: toMicro(100),
-        delegatedStake: toMicro(0),
-        performanceFactor: 1.0,
-        fixedCost: 0.0,
-      },
-      {
-        lockedStake: toMicro(100),
-        delegatedStake: toMicro(0),
-        performanceFactor: 1.0,
-        fixedCost: 0.0,
-      },
-      {
-        lockedStake: toMicro(100),
-        delegatedStake: toMicro(0),
-        performanceFactor: 1.0,
-        fixedCost: 0.0,
-      },
-    ],
+    ...finalNetworkParams,
+    initialEpoch: INITIAL_EPOCH,
+    finalEpoch: FINAL_EPOCH,
+    validators: getValidators(network),
     userType: UserType.DELEGATOR,
     congestion: CongestionType.LOW,
-    stakedOrDelegatedTokens: toMicro(100),
-    heldTokens: toMicro(100),
     delegator: {
       validator: 0,
     },
     validator: {
       performanceFactor: 1.0,
       fixedCost: 0.0,
-      shareOfYourStakeLocked: 1.0,
-      attractedNewDelegatedStake: 0.0,
+      shareOfYourStakeLocked: 100.0,
+      attractedNewDelegatedStake: finalNetworkParams.stakedTokens * 1.5,
       attractedDelegatedStakeFromOtherPools: 0.1,
     },
     network,
   } as ManaCalculatorProps;
+}
+
+export function getValidators(network: NetworkType): ValidatorProps[] {
+  const supply = getNetworkSupply(network);
+
+  const delegated = [1.5, 1, 1.5, 2.0];
+
+  return delegated.flatMap((delegated) => {
+    const stake = [1, 1, 0.25, 0.5, 0.75, 1.12, 1.5, 1.75];
+    return stake.map((stake) => {
+      return {
+        lockedStake: (supply * stake) / 100,
+        delegatedStake: (supply * delegated) / 100,
+        performanceFactor: 1.0,
+        fixedCost: 0.0,
+      };
+    });
+  });
 }

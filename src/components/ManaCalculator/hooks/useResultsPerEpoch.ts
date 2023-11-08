@@ -4,14 +4,10 @@ import {
   calculateBPS,
 } from '../actions';
 import { UserType } from '../enums';
-import {
-  EpochReward,
-  ManaCalculatorProps,
-  ValidatorParameters,
-} from '../types';
+import { EpochReward, ManaState, ValidatorParameters } from '../types';
 import { fromMicro } from '../utils';
 
-export function useResultsPerEpoch(state: ManaCalculatorProps): EpochReward[] {
+export function useResultsPerEpoch(state: ManaState): EpochReward[] {
   const validatorParameters =
     state.userType === UserType.VALIDATOR
       ? ({
@@ -36,23 +32,25 @@ export function useResultsPerEpoch(state: ManaCalculatorProps): EpochReward[] {
       i,
       state.userType,
       state.network,
+      state.generationPerSlot,
     );
 
     const passiveRewards = calculatePassiveRewards(
       state.heldTokens,
       state.initialEpoch,
       i,
+      state.generationPerSlot,
     );
 
     const mana = generatedRewards + passiveRewards;
 
     const bpsFromPassiveRewards = calculateBPS(
       passiveRewards,
-      state.congestion,
+      state.congestionAmount,
     );
     const bpsFromGeneratedMana = calculateBPS(
       generatedRewards,
-      state.congestion,
+      state.congestionAmount,
     );
     const totalBps = bpsFromPassiveRewards + bpsFromGeneratedMana;
 

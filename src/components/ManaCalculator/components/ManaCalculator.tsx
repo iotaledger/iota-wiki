@@ -4,6 +4,7 @@ import { NetworkType } from '../enums';
 import {
   getDefaultParameters,
   ManaStateContext,
+  useGivenManaState,
   useResultsPerEpoch,
   useResultsWithUnit,
 } from '../hooks';
@@ -19,7 +20,8 @@ import {
 
 export function ManaCalculator() {
   const [state, setState] = useState(getDefaultParameters(NetworkType.IOTA));
-  const results = useResultsPerEpoch(state);
+  const manaState = useGivenManaState(state, setState);
+  const results = useResultsPerEpoch(manaState.state);
   const { data, manaUnit, blocksUnit } = useResultsWithUnit(results);
   return (
     <ManaStateContext.Provider value={{ state, setState }}>

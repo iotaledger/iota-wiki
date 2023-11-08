@@ -1,5 +1,15 @@
-import { IOTA_SUPPLY, SHIMMER_SUPPLY, SLOTS_IN_EPOCH } from './constants';
-import { NetworkType } from './enums';
+import {
+  IOTA_CONGESTION,
+  IOTA_GENERATION_PER_SLOT,
+  IOTA_SUPPLY,
+  IOTA_THROUGHPUT,
+  SHIMMER_CONGESTION,
+  SHIMMER_GENERATION_PER_SLOT,
+  SHIMMER_SUPPLY,
+  SHIMMER_THROUGHPUT,
+  SLOTS_IN_EPOCH,
+} from './constants';
+import { CongestionType, NetworkType, UserType } from './enums';
 
 // Given a slot, returns the epoch that slot belongs to
 export function slotToEpoch(slot: number): number {
@@ -29,6 +39,49 @@ export function getNetworkSupply(network: NetworkType): number {
     return IOTA_SUPPLY;
   } else {
     return SHIMMER_SUPPLY;
+  }
+}
+
+export function getNetworkCongestion(
+  network: NetworkType,
+  congestionType: CongestionType,
+): number {
+  if (congestionType === CongestionType.MEDIUM) {
+    const supply = getNetworkSupply(network);
+    const generation = getNetworkGenerationPerSlot(network);
+    const throughput = getNetworkThroughput(network);
+
+    return (supply * generation) / (10 * throughput);
+  } else {
+    if (network == NetworkType.IOTA) {
+      return IOTA_CONGESTION[congestionType];
+    } else {
+      return SHIMMER_CONGESTION[congestionType];
+    }
+  }
+}
+
+export function getNetworkGenerationPerSlot(network: NetworkType): number {
+  if (network == NetworkType.IOTA) {
+    return IOTA_GENERATION_PER_SLOT;
+  } else {
+    return SHIMMER_GENERATION_PER_SLOT;
+  }
+}
+
+export function getNetworkThroughput(network: NetworkType): number {
+  if (network == NetworkType.IOTA) {
+    return IOTA_THROUGHPUT;
+  } else {
+    return SHIMMER_THROUGHPUT;
+  }
+}
+
+export function getStakedOrDelegated(userType: UserType) {
+  if (userType == UserType.DELEGATOR) {
+    return 'delegatedTokens';
+  } else {
+    return 'stakedTokens';
   }
 }
 

@@ -18,7 +18,8 @@ export interface ManaCalculatorProps {
     fixedCost: number;
     performanceFactor: number;
   };
-  stakedOrDelegatedTokens: number;
+  stakedTokens: number;
+  delegatedTokens: number;
   heldTokens: number;
   network: NetworkType;
 }
