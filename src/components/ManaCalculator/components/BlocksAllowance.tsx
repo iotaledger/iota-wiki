@@ -8,7 +8,7 @@ import {
   XAxis,
   YAxis,
 } from 'recharts';
-import { Unit } from '../hooks';
+import { stringifyUnit, Unit } from '../hooks';
 import { EpochReward } from '../types';
 import { chartTooltip } from './CharTooltip';
 
@@ -19,6 +19,7 @@ export function BlocksAllowance({
   results: EpochReward[];
   unit: Unit;
 }) {
+  const unitString = stringifyUnit(unit);
   return (
     <>
       <h3>Blocks Allowance</h3>
@@ -39,7 +40,7 @@ export function BlocksAllowance({
             width={100}
             label={{ value: 'Blocks', angle: -90, position: 'insideLeft' }}
             color='rgb(169, 184, 214)'
-            unit={unit}
+            unit={unitString}
           />
           <CartesianGrid
             strokeDasharray='3 3'

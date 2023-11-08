@@ -8,7 +8,7 @@ import {
   XAxis,
   YAxis,
 } from 'recharts';
-import { Unit } from '../hooks';
+import { stringifyUnit, Unit } from '../hooks';
 import { EpochReward } from '../types';
 import { chartTooltip } from './CharTooltip';
 
@@ -19,6 +19,7 @@ export function ManaAccumulation({
   results: EpochReward[];
   unit: Unit;
 }) {
+  const unitString = stringifyUnit(unit);
   return (
     <>
       <h3>Mana Accumulation</h3>
@@ -38,7 +39,7 @@ export function ManaAccumulation({
           <YAxis
             width={100}
             label={{ value: 'Mana', angle: -90, position: 'insideLeft' }}
-            unit={unit}
+            unit={unitString}
           />
           <CartesianGrid
             strokeDasharray='3 3'

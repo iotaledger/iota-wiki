@@ -12,12 +12,18 @@ const UNIT_MAP: { [unit in Unit]: { val: number; dp: number } } = {
   M: { val: 1000000, dp: 6 },
 };
 
+export const stringifyUnit = (unit: Unit): string => {
+  if (unit == Unit.default) {
+    return '';
+  } else {
+    return unit;
+  }
+};
+
 const getUnit = (value: number): Unit => {
   let bestUnits: Unit = Unit.default;
-  if (!value || value === 0) {
-    return Unit.M;
-  }
-  const checkLength = Math.abs(value).toString().length;
+
+  const checkLength = Math.abs(value).toFixed(2).replace('.', '').length;
 
   if (checkLength > UNIT_MAP.M.dp) {
     bestUnits = Unit.M;

@@ -196,7 +196,6 @@ export function useGivenManaState(
       generationPerSlot,
       stakedOrDelegatedTokens,
     } as ManaState,
-    congestionAmount,
     handleDelete,
     handleStakeChange,
     handleAddValidator,
