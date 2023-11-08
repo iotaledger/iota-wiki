@@ -74,3 +74,21 @@
   display: flex;
   align-items: center;
 }
+
+.mana-calculator__tooltip {
+  background-color: var(--ifm-color-emphasis-100);
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: var(--ifm-global-radius);
+  color: inherit;
+  padding: 10px;
+}
+
+.mana-calculator__button {
+  background-color: var(--ifm-color-emphasis-100);
+  margin: 0px;
+  margin-top: 1rem;
+}
+
+.mana-calculator__tooltip > p {
+  margin: 0;
+}
