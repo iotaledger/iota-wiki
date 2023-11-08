@@ -39,8 +39,8 @@ const LibrariesSection: FC = () => (
           </div>
           <Languages
             languages={{
-              Rust: '/identity.rs/libraries/rust/getting_started',
-              WASM: '/identity.rs/libraries/wasm/getting_started',
+              Rust: '/identity.rs/getting-started/rust',
+              WASM: '/identity.rs/getting-started/wasm',
             }}
           />
         </div>
@@ -52,7 +52,7 @@ const LibrariesSection: FC = () => (
           individuals, organizations, and objects.
         </p>
         <Link
-          to='/identity.rs/introduction'
+          to='/identity.rs/welcome'
           className='libraries__button button button--outline button--primary'
         >
           Create an identity
