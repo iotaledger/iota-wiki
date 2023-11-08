@@ -30,7 +30,7 @@ const getUnit = (value: number): Unit => {
   let bestUnits: Unit = Unit.default;
 
   const checkLength = Math.abs(value).toFixed(0).replace('.', '').length;
-
+  console.log(checkLength, value)
   if (checkLength > UNIT_MAP.M.dp) {
     bestUnits = Unit.M;
   } else if (checkLength > UNIT_MAP.K.dp) {
@@ -60,7 +60,7 @@ export function useResultsWithUnit(results: EpochReward[]): UseResultsWithUnit {
   const averageMana =
     results.reduce((acc, reward) => acc + reward.mana, 0) / results.length;
   const averageBlocks =
-    results.reduce((acc, reward) => acc + reward.totalTps, 0) / results.length;
+    results.reduce((acc, reward) => acc + reward.totalBps, 0) / results.length;
 
   const manaUnit = getUnit(averageMana);
   const blocksUnit = getUnit(averageBlocks);
@@ -72,7 +72,7 @@ export function useResultsWithUnit(results: EpochReward[]): UseResultsWithUnit {
     return {
       ...reward,
       mana: reward.mana / manaSize,
-      totalTps: reward.totalTps / blocksSize,
+      totalTps: reward.totalBps / blocksSize,
     };
   });
 

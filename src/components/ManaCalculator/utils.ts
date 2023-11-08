@@ -84,3 +84,7 @@ export function getStakedOrDelegated(userType: UserType) {
     return 'stakedTokens';
   }
 }
+
+export const roundMax = function (num: number, places: number) {
+  return +(Math.round(Number(num + 'e+' + places)) + 'e-' + places);
+};
