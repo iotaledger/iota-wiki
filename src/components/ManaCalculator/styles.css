@@ -83,10 +83,19 @@
   padding: 10px;
 }
 
+.mana-calculator__transparent-button {
+  background-color: transparent !important;
+}
+
 .mana-calculator__button {
   background-color: var(--ifm-color-emphasis-100);
   margin: 0px;
   margin-top: 1rem;
+  color: var(--ifm-font-color-base);
+}
+
+.mana-calculator__button:hover {
+  color: var(--ifm-font-color-base);
 }
 
 .mana-calculator__tooltip > p {

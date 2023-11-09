@@ -43,7 +43,7 @@ export function ManaAccumulation({
           />
           <CartesianGrid
             strokeDasharray='3 3'
-            stroke='rgb(255, 255, 255, 0.15)'
+            stroke='rgb(150, 150, 150, 0.3)'
           />
           <Tooltip content={chartTooltip('Epoch', 'Mana', unit)} />
           <Area

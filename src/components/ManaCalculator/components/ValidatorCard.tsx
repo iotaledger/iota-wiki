@@ -47,7 +47,7 @@ export function ValidatorCard({
         onChange={(e) => handleFCChange(Number(e.target.value), id)}
       ></input>
       <button
-        className=' button button--remove'
+        className=' button button--remove mana-calculator__button mana-calculator__transparent-button'
         onClick={() => handleDelete(id)}
       >
         Remove
