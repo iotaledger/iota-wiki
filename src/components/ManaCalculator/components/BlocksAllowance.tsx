@@ -39,12 +39,11 @@ export function BlocksAllowance({
           <YAxis
             width={100}
             label={{ value: 'Blocks', angle: -90, position: 'insideLeft' }}
-            color='rgb(169, 184, 214)'
             unit={unitString}
           />
           <CartesianGrid
             strokeDasharray='3 3'
-            stroke='rgb(255, 255, 255, 0.15)'
+            stroke='rgb(150, 150, 150, 0.3)'
           />
           <Tooltip content={chartTooltip('Epoch', 'Blocks', unit)} />
           <Area

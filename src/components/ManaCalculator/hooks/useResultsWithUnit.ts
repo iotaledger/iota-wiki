@@ -30,7 +30,7 @@ const getUnit = (value: number): Unit => {
   let bestUnits: Unit = Unit.default;
 
   const checkLength = Math.abs(value).toFixed(0).replace('.', '').length;
-  console.log(checkLength, value);
+
   if (checkLength > UNIT_MAP.M.dp) {
     bestUnits = Unit.M;
   } else if (checkLength > UNIT_MAP.K.dp) {
