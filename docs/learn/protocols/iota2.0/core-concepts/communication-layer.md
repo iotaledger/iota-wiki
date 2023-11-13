@@ -62,10 +62,10 @@ RMC is computed according to an algorithm based on recent traffic activity, wher
 Let the number of blocks issued by accounts not in debt at slot $i-$MCA be $n_{i-MCA}$. Hence, if $n_{i-MCA}$ is lower than a given threshold $T_{low}$, then RMC decreases; otherwise, if $n_{i-MCA}$ is larger than a threshold $T_{high}$, then RMC increases. The value RMC at slot $i$ is calculated as:
 
 $$
-RMC*i = \begin{cases}
-\min(RMC*{i-1} + \alpha; RMC*{max}) &\text{if $n*{i-MCA}>T*{high}$}\\
-\max(RMC*{i-1} - \beta; RMC*{min}) &\text{if $n*{i-MCA}<T*{low}$}\\
-RMC*{i-1} &\text{otherwise}
+RMC_i = \begin{cases}
+\min(RMC_{i-1} + \alpha; RMC_{max}) &\text{if $n_{i-MCA}>T_{high}$}\\
+\max(RMC_{i-1} - \beta; RMC_{min}) &\text{if $n_{i-MCA}<T_{low}$}\\
+RMC_{i-1} &\text{otherwise}
 \end{cases}
 $$
 
@@ -118,17 +118,19 @@ The DRR scheduler iterates over all issuer queues in sequence and increments its
 
 ```vbnet
 IF Len(outbox) > 0
-    b = outbox[ID].head
-    WHILE ID.deficit < b.work_score OR b.timestamp > now() OR (parents(b) not scheduled OR not accepted)
-        ID.deficit += mana[ID]
+    FOR ID in round robin over all accounts
+        ID.deficit += ID.quantum
         IF ID.deficit > maxDeficit
             ID.deficit = maxDeficit
-        ID++
-    ID.deficit -= b.work_score
-    IF ID.deficit < 0
-        ID.deficit = 0
+        IF Len(outbox[ID]) == 0
+	        continue
+	    b = outbox[ID].head
+	    IF ID.deficit >= b.workScore AND (parents(b) scheduled OR accepted)
+	        break
+    ID.deficit -= b.workScore
     schedule(b)
-pause(mu*b.work_score)
+
+pause(mu*b.workScore)
 ```
 
 In order to provide a high-performance system, each validator issues a fixed number of special blocks per slot, called *validation blocks*, which receive special treatment during scheduling and do not burn any Mana. A second scheduling buffer, reserved for validation blocks only, includes a set of queues, one for each validator, in which blocks are scheduled in the order they are received. If a validator issues more validation blocks than its allowance, the validator will not receive rewards for the given epoch, and its Mana balance will be decreased by an amount proportional to its stake.
