@@ -26,7 +26,7 @@ while facilitating encrypted communication.
 A DID is a unique identifier that can be resolved to a DID Document. This document contains data such as public keys, enabling the holder to prove ownership over their personal data, but also URIs that link to public information about the identity. DIDs are the fundamental building blocks of decentralized digital identity.
 This implementation complies to the [DID specifications v1.0](https://www.w3.org/TR/did-core//) from the World Wide Web Consortium (W3C).
 
-In the IOTA Identity framework, we have implemented the DID standard according to the `iota` [DID Method Specification](/identity.rs/references/specifications/iota-did-method-spec/). Other implementations of DID on IOTA must follow the `iota` DID Method Specification if they also want to use the `iota` method name. It should not be necessary to re-implement the specification, if you can use library though.
+In the IOTA Identity framework, we have implemented the DID standard according to the `iota` [DID Method Specification](/identity.rs/references/specifications/iota-did-method-spec/). Other implementations of DID on IOTA must follow the `iota` DID Method Specification if they also want to use the `iota` method name. Libraries implementing the `iota` DID Method Specification are provided for [Rust](../getting-started/rust.mdx) and [WASM](../getting-started/wasm.mdx).
 
 An example of a DID conforming to the `iota` method specification:
 `did:iota:0xe4edef97da1257e83cbeb49159cfdd2da6ac971ac447f233f8439cf29376ebfe`
@@ -56,8 +56,7 @@ The IOTA method is a specific implementation following the [IOTA DID Method Spec
 This provides unique rules for the protocol to follow in order to manage a DID Document.
 In our case, it describes how DID Documents are uploaded and queried to and from the IOTA ledger.
 
-Lastly, a DID also contains a set of random characters that are unique per identity.
-This makes the identity unique and makes sure every identity resolves to a single DID Document.
+Lastly, a DID also contains a set of random characters that are unique per identity and resolve to a single DID Document.
 
 :::tip Requires basic knowledge of Asymmetric Encryption
 
@@ -66,8 +65,9 @@ Please read or view some materials on the subject before continuing.
 
 :::
 
-A DID Document mostly contains two important pieces of data: public keys and services.
-The public keys can be used to prove ownership over the identity,
+A DID Document mostly contains two important pieces of data: verification methods and services.
+
+Verification methods contain public key material that can be used to prove ownership over the identity,
 by cryptographically signing something with the associated private key.
 The public key can be used to verify that the identity subject signed the data and therefore controls the private key.
 Ownership over the private keys, therefore, proves ownership over the identity.
@@ -94,7 +94,7 @@ and at the same time provide a way to send them encrypted messages.
 The Identity is Self-Sovereign, meaning the subject is always in control;
 whether it is creating, updating or destroying it.
 
-DIDs become more interesting when you combine them [Verifiable Credentials (VC)](verifiable-credentials.mdx).
+DIDs become more interesting when you combine them with [Verifiable Credentials (VC)](verifiable-credentials.mdx).
 In essence, Verifiable Credentials (VCs) are signed statements by trusted third parties about a certain identity.
 The signer, or Issuer, is referenced by the DID and so is the subject, often called the Holder.
 The Holder controls a copy of this statement and can share it with other parties, the Verifiers,
