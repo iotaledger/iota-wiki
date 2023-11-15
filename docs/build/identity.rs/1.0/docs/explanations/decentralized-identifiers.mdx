@@ -94,12 +94,12 @@ and at the same time provide a way to send them encrypted messages.
 The Identity is Self-Sovereign, meaning the subject is always in control;
 whether it is creating, updating or destroying it.
 
-DIDs become more interesting when you combine them with [Verifiable Credentials (VC)](verifiable-credentials.mdx).
-In essence, Verifiable Credentials (VCs) are signed statements by trusted third parties about a certain identity.
-The signer, or Issuer, is referenced by the DID and so is the subject, often called the Holder.
-The Holder controls a copy of this statement and can share it with other parties, the Verifiers,
+DIDs become more interesting when you combine them with [verifiable credentials (VC)](verifiable-credentials.mdx).
+In essence, verifiable credentials (VCs) are signed statements by trusted third parties about a certain identity.
+The signer, or Issuer, is referenced by the DID and so is the subject, often called the holder.
+The holder controls a copy of this statement and can share it with other parties, the _Verifiers_,
 that can verify the statement and check which party made the statement, without having to ask the Issuer.
-Instead, they can verify the signature of the Issuer by checking the Issuers DID Document.
+Instead, they can verify the signature of the issuer by checking the issuers DID Document.
 
 This puts Holders back in control over their own data,
 while making the data much more trustworthy as it has become verifiable.

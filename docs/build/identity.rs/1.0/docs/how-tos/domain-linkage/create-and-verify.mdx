@@ -25,8 +25,8 @@ This linkage can transfer trust from a domain to a DID and vice versa.
 For instance, if an entity trusts a domain, it can also trust the linked DID and all documents signed by
 the verification methods included in the DID Document.
 
-A use case could be a verifier that trusts `www.example.com`, and receives a Verifiable Presentation issued by `did:foo:abc`.
-If `did:foo:abc` is linked to `www.example.com`, the verifier can trust that the Verifiable Presentation is issued by
+A use case could be a verifier that trusts `www.example.com`, and receives a verifiable presentation issued by `did:foo:abc`.
+If `did:foo:abc` is linked to `www.example.com`, the verifier can trust that the verifiable presentation is issued by
 the same entity controlling `www.example.com`.
 The DIF has approved a [Well Known DID Configuration](https://identity.foundation/.well-known/resources/did-configuration/) draft to standardize this connection by introducing
 the [DID Configuration Resource](https://identity.foundation/.well-known/resources/did-configuration/#did-configuration-resource) and the [Linked Domain Service Endpoint](https://identity.foundation/.well-known/resources/did-configuration/#linked-domain-service-endpoint).

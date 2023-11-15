@@ -232,7 +232,7 @@ The `did:iota` method is implemented in the [IOTA Identity framework](https://gi
 
 ### Revocation
 
-Revocation of Verifiable Credentials and signatures can be achieved using the [Revocation Bitmap 2022](./revocation-bitmap-2022.mdx) where issuers store a bitmap of indices in the DID Document. These indices correspond to verifiable credentials they have issued. If the binary value of the index in the bitmap is 1 (one), the verifiable credential is revoked, if it is 0 (zero) it is not revoked.
+Revocation of verifiable credentials and signatures can be achieved using the [Revocation Bitmap 2022](./revocation-bitmap-2022.mdx) where issuers store a bitmap of indices in the DID Document. These indices correspond to verifiable credentials they have issued. If the binary value of the index in the bitmap is 1 (one), the verifiable credential is revoked, if it is 0 (zero) it is not revoked.
 
 ### Standardized Services
 
@@ -256,7 +256,7 @@ All private keys or seeds used for the `did:iota` method should be equally well 
 
 The public IOTA and Shimmer networks are immutable. This means that once something is included, it can never be completely removed. For example, destroying an Alias Output will remove it from the ledger state, but it can still be stored in permanodes or by any party that records historical ledger states.
 
-That directly conflicts with certain privacy laws such as GDPR, which have a 'right-to-be-forgotten' for Personal Identifiable Information (PII). As such, users should NEVER upload any PII, including inside DID Documents. While Verifiable Credentials can be made public, this should only be utilized by Identity for Organisations and Identity for Things.
+That directly conflicts with certain privacy laws such as GDPR, which have a 'right-to-be-forgotten' for Personal Identifiable Information (PII). As such, users should NEVER upload any PII, including inside DID Documents. While verifiable credentials can be made public, this should only be utilized by Identity for Organisations and Identity for Things.
 
 ### Correlation Risks
 
