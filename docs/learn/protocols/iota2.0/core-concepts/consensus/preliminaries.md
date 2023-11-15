@@ -132,11 +132,11 @@ Block references are crucial in the consensus protocol as they guide the [tip se
 
 ###### Strong
 
-Nodes randomly select strong parents from their _tip pool_ and attach their newly issued blocks to these selected tips. The number of strong parents sets a tradeoff between [confirmation time](consensus-flags.md#confirmation-of-blocks-and-non-conflicting-transactions) and the block size. More strong parents lead to shorter confirmation times and larger block sizes. When [computing the branch](relevant-algorithms.md#algorithm-to-compute-a-blocks-branch) of a new block, the branches of strong parents are directly inherited by the _branch_ of the new block.
+Nodes randomly select strong parents from their _tip pool_ and attach their newly issued blocks to these selected tips. The number of strong parents sets a tradeoff between [confirmation time](consensus-flags.md#confirmation-of-blocks-and-non-conflicting-transactions) and the block size. More strong parents lead to shorter confirmation times and larger block sizes. When [computing the branch](relevant-algorithms.md#algorithm-to-compute-a-blocks-branch) of a new block, the branches of strong parents are directly inherited by the branch of the new block.
 
 ###### Shallow Like
 
-Shallow like references are essential for rectifying the preliminary [block's branch](relevant-algorithms.md#algorithm-to-compute-a-blocks-branch) constructed from the strong parents. They align the block's _branch_ with the issuer's [preferred reality](relevant-algorithms.md#algorithm-to-compute-the-preferred-reality).
+Shallow like references are essential for rectifying the preliminary [block's branch](relevant-algorithms.md#algorithm-to-compute-a-blocks-branch) constructed from the strong parents. They align the block's branch with the issuer's [preferred reality](relevant-algorithms.md#algorithm-to-compute-the-preferred-reality).
 
 ###### Weak
 
@@ -262,7 +262,7 @@ The set of all conflicts in the causal history of a transaction $tx$ is called t
 
 #### Branch of a block
 
-For a block $b$, there is the branch of $b$, which is encoded through the references. This _branch_ is denoted as $Branch(b)$ and it can be computed using an [algorithm](relevant-algorithms.md#algorithm-to-compute-a-blocks-branch).
+For a block $b$, there is the branch of $b$, which is encoded through the references. This branch is denoted as $Branch(b)$ and it can be computed using an [algorithm](relevant-algorithms.md#algorithm-to-compute-a-blocks-branch).
 
 #### Vote
 

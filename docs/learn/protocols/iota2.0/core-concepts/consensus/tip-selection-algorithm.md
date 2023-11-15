@@ -16,7 +16,7 @@ The node selects uniformly at random at most `blockMaxParent` (or `blockTypeVali
 
 After adding a new strong parent to the list of references $L$, the node attempts to select shallow-like references to align the current [branch of the block](relevant-algorithms.md#algorithm-to-compute-a-blocks-branch) with the [preferred reality](relevant-algorithms.md#algorithm-to-compute-the-preferred-reality).
 
-If `blockMaxParent` (or `blockTypeValidatorMaxParent`) shallow-like references are not sufficient to align the _branch_, the strong parent is removed from the list of references $L$ and moved to the weak tip pool $\mathcal{W}$, which is initialized as an empty set before running the _tip selection_ algorithm.
+If `blockMaxParent` (or `blockTypeValidatorMaxParent`) shallow-like references are not sufficient to align the branch, the strong parent is removed from the list of references $L$ and moved to the weak tip pool $\mathcal{W}$, which is initialized as an empty set before running the _tip selection_ algorithm.
 
 ### 3. Weak References
 
