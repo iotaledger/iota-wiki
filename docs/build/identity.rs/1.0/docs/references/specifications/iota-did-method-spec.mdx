@@ -28,7 +28,7 @@ Data types and subschemas used throughout this TIP are defined in [TIP-21](https
 
 ### UTXO Ledger
 
-The unspent transaction output ([UTXO](/learn/protocols/chrysalis/core-concepts/switch-to-UTXO/)) model defines a ledger state which is comprised of unspent outputs. Outputs are created by a transaction consuming outputs of previous transactions as inputs. The Stardust version of the protocol defines several output types, the relevant ones for the IOTA DID Method are: Basic Outputs for _value transactions_, and Alias Outputs for storage of DID Documents.
+The unspent transaction output ([UTXO](/tips/tips/TIP-0020/)) model defines a ledger state which is comprised of unspent outputs. Outputs are created by a transaction consuming outputs of previous transactions as inputs. The Stardust version of the protocol defines several output types, the relevant ones for the IOTA DID Method are: Basic Outputs for _value transactions_, and Alias Outputs for storage of DID Documents.
 
 All outputs must hold a minimum amount of tokens to be stored on the ledger. For output types that can hold arbitrary data, for instance the Alias Output, the amount of tokens held by the output must cover the byte cost of the data stored. This prevents the ledger size from growing uncontrollably while guaranteeing that the data is not pruned from the nodes, which is important for resolving DID Documents. This deposit is fully refundable and can be reclaimed when the output is destroyed.
 
