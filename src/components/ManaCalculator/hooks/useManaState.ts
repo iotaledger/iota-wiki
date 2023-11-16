@@ -64,6 +64,7 @@ export function useGivenManaState(
   }
 
   function handlePFChange(value: number, id: number) {
+    if (value < 0 || value > 1) return;
     setState({
       ...state,
       validators: state.validators.map((validator, i) => {
@@ -88,6 +89,7 @@ export function useGivenManaState(
   }
 
   function handleOwnStakeChange(value: number) {
+    if (value > state.heldTokens) return;
     setState({
       ...state,
       [getStakedOrDelegated(state.userType)]: value,
@@ -109,6 +111,7 @@ export function useGivenManaState(
   }
 
   function handleOwnPFChange(value: number) {
+    if (value < 0 || value > 1) return;
     setState({
       ...state,
       validator: { ...state.validator, performanceFactor: value },
@@ -147,6 +150,7 @@ export function useGivenManaState(
   }
 
   function handleInitialEpochChange(value: number) {
+    if (value > state.finalEpoch) return;
     setState({
       ...state,
       initialEpoch: value,
@@ -154,6 +158,7 @@ export function useGivenManaState(
   }
 
   function handleFinalEpochChange(value: number) {
+    if (state.initialEpoch > value) return;
     setState({
       ...state,
       finalEpoch: value,

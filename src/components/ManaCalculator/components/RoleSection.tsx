@@ -37,6 +37,8 @@ export function RoleSection() {
       <label className='inlined-label'>Held amount ({state.network})</label>
       <input
         className='mana_calculator__compact inlined'
+        type='number'
+        min='0'
         value={fromMicro(state.heldTokens)}
         onChange={(e) => handleOwnHoldChange(toMicro(Number(e.target.value)))}
       ></input>
@@ -46,6 +48,8 @@ export function RoleSection() {
           <label className='inlined-label'>Stake ({state.network})</label>
           <input
             className='mana_calculator__compact inlined'
+            type='number'
+            min='0'
             value={fromMicro(state.stakedOrDelegatedTokens)}
             onChange={(e) =>
               handleOwnStakeChange(toMicro(Number(e.target.value)))
@@ -72,6 +76,8 @@ export function RoleSection() {
           </label>
           <input
             className='mana_calculator__compact inlined'
+            type='number'
+            min='0'
             value={fromMicro(state.stakedOrDelegatedTokens)}
             onChange={(e) =>
               handleOwnStakeChange(toMicro(Number(e.target.value)))

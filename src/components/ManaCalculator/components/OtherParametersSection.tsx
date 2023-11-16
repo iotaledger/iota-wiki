@@ -35,6 +35,8 @@ export function OtherParametersSection() {
       <label className='inlined-label'>Initial epoch</label>
       <input
         className='mana_calculator__compact inlined'
+        type='number'
+        min='0'
         value={state.initialEpoch}
         onChange={(e) => handleInitialEpochChange(Number(e.target.value))}
       ></input>
@@ -42,6 +44,8 @@ export function OtherParametersSection() {
       <label className='inlined-label'>Final epoch</label>
       <input
         className='mana_calculator__compact inlined'
+        type='number'
+        min={state.initialEpoch + 1}
         value={state.finalEpoch}
         onChange={(e) => handleFinalEpochChange(Number(e.target.value))}
       ></input>

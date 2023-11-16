@@ -22,11 +22,14 @@ export function ValidatorCard({
       <div className='col col--2'>Validator {id + 1}</div>
       <input
         className='col col--2 align-right horizontal-spaced'
+        type='number'
+        min='0'
         value={fromMicro(validator.lockedStake)}
         onChange={(e) => handleStakeChange(toMicro(Number(e.target.value)), id)}
       ></input>
       <input
         className='col col--2 align-right horizontal-spaced'
+        type='number'
         value={fromMicro(validator.delegatedStake)}
         onChange={(e) =>
           handleDelegatedStakeChange(toMicro(Number(e.target.value)), id)
@@ -36,12 +39,15 @@ export function ValidatorCard({
         className='col col--2 align-right horizontal-spaced'
         type='number'
         step='0.01'
+        min='0'
+        max='1'
         value={validator.performanceFactor}
         onChange={(e) => handlePFChange(Number(e.target.value), id)}
       ></input>
       <input
         className='col col--2 align-right horizontal-spaced'
         type='number'
+        min='0'
         step='0.01'
         value={validator.fixedCost}
         onChange={(e) => handleFCChange(Number(e.target.value), id)}
