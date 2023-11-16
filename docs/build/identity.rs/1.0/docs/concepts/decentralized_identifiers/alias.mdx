@@ -27,6 +27,6 @@ The arbitrary data stored in the `State Metadata` of the Alias output must be co
 
 ### Alias Id
 
-Each Alias Output has an `Alias ID`. This ID is assigned after a transaction creates a new Alias Output. The actual DID is derived from this `Alias ID`, hence it is be unknown before publishing the transaction. Consequently, the DID inside the `State Metadata` will be replaced by the placeholder `did:0:0` to indicate self.
+Each Alias Output has an `Alias ID`. This ID is assigned after a transaction creates a new Alias Output. The actual DID is derived from this `Alias ID`, hence it will be unknown before publishing the transaction. Consequently, the DID inside the `State Metadata` will be replaced by the placeholder `did:0:0` to indicate self.
 
-If a transaction has an Alias Output as input, its `Alias ID` can be kept by one of its outputs. This feature is necessary for updating the DID Documents since the DID itself is derived from the Alias Output.
+If a transaction has an Alias Output as input, its `Alias ID` can be kept by one of its outputs. This feature is necessary for updating the DID Documents since the DID itself is derived from the `Alias ID`.
