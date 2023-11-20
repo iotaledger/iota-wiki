@@ -27,7 +27,7 @@ $$
 removeConflicts  \gets ConflictWith(addLikeBranch),
 $$
 
-The function $ConflictWith(S)$ returns the set of all conflicts conflicting with at least one element from $S$. Finally, you can define the _branch_ of the block $b$ in two steps. First:
+The function $ConflictWith(S)$ returns the set of all conflicts conflicting with at least one element from $S$. Finally, you can define the branch of the block $b$ in two steps. First:
 
 $$
 Branch(b)\gets \left(addStrongBranch \cup addWeakBranch \cup addLikeBranch\right) \setminus removeConflicts.
