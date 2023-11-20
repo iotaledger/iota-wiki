@@ -58,8 +58,8 @@ _Nodes_ expose an API to calculate the required deposit depending on the size of
 ### Alias ID
 
 Each Alias Output has an `Alias ID`. This ID is assigned after a transaction creates a new Alias Output.
-The actual DID is derived from this `Alias ID`, hence it is unknown before publishing the transaction.
+The actual DID is derived from this `Alias ID`, hence it will be unknown before publishing the transaction.
 Consequently, the DID inside the `State Metadata` will be replaced by the placeholder `did:0:0` to indicate self.
 
 If a transaction has an Alias Output as input, its `Alias ID` can be kept by one of its outputs.
-This feature is necessary for updating the DID Documents since the DID itself is derived from the Alias Output.
+This feature is necessary for updating the DID Documents since the DID itself is derived from the `Alias ID`.

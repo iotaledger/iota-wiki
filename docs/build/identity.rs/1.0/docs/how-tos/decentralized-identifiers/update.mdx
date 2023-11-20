@@ -83,25 +83,49 @@ Before you can update anything, you will need to [create an Identity](./create.m
 <TabItem value="rust" label="Rust">
 
 ```rust
-// Create a new client to interact with the IOTA ledger.
-let client: Client = Client::builder().with_primary_node(NETWORK_ENDPOINT, None)?.finish()?;
+  // Create a new client to interact with the IOTA ledger.
+  let client: Client = Client::builder()
+    .with_primary_node(API_ENDPOINT, None)?
+    .finish()
+    .await?;
 
-// Create a new secret manager backed by a Stronghold.
-let mut secret_manager: SecretManager = SecretManager::Stronghold(
-StrongholdSecretManager::builder()
-  .password("secure_password")
-  .build(random_stronghold_path())?,
-);
+  // Create a new secret manager backed by a Stronghold.
+  let mut secret_manager: SecretManager = SecretManager::Stronghold(
+    StrongholdSecretManager::builder()
+      .password(Password::from("secure_password".to_owned()))
+      .build(random_stronghold_path())?,
+  );
 
-// Create a new DID in an Alias Output for us to modify.
-let (_, did): (Address, StardustDID) = create_did(&client, &mut secret_manager).await?;
+  // Create a new DID in an Alias Output for us to modify.
+  let storage: MemStorage = MemStorage::new(JwkMemStore::new(), KeyIdMemstore::new());
+  let (_, document, fragment_1): (Address, IotaDocument, String) =
+    create_did(&client, &mut secret_manager, &storage).await?;
+  let did: IotaDID = document.id().clone();
+
 ```
 
 </TabItem>
 <TabItem value="typescript-node" label="Typescript (Node.js)">
 
 ```js
-const { didClient, secretManager, did } = await createIdentity();
+    const client = new Client({
+        primaryNode: API_ENDPOINT,
+        localPow: true,
+    });
+    const didClient = new IotaIdentityClient(client);
+
+    // Generate a random mnemonic for our wallet.
+    const secretManager: MnemonicSecretManager = {
+        mnemonic: Utils.generateMnemonic(),
+    };
+
+    // Creates a new wallet and identity (see "0_create_did" example).
+    const storage: Storage = new Storage(new JwkMemStore(), new KeyIdMemStore());
+    let { document, fragment } = await createDid(
+        client,
+        secretManager,
+        storage,
+    );
 ```
 
 </TabItem>
@@ -112,19 +136,27 @@ This creates and publishes an Alias Output containing a DID Document with one ve
 ```json
 {
   "doc": {
-    "id": "did:iota:rms:0x6fdcc441ab461aaee2ec1837ea5068fe2bc643a9ac0729a055ef5df42a762483",
+    "id": "did:iota:tst:0x19ed80fbd2a644fc2347e27e46e09d42b89df9b1ba09ae41832a9d47d686776a",
     "verificationMethod": [
       {
-        "id": "did:iota:rms:0x6fdcc441ab461aaee2ec1837ea5068fe2bc643a9ac0729a055ef5df42a762483#key-1",
-        "controller": "did:iota:rms:0x6fdcc441ab461aaee2ec1837ea5068fe2bc643a9ac0729a055ef5df42a762483",
-        "type": "Ed25519VerificationKey2018",
-        "publicKeyMultibase": "z94fP8Vo6qJtejpycjUcYtiSTbLGuCNYUTrjQX9hT2gSv"
+        "id": "did:iota:tst:0x19ed80fbd2a644fc2347e27e46e09d42b89df9b1ba09ae41832a9d47d686776a#HZ11e0XacuODQw5FcoMHtcdxl8oXHbSnIhQMUgVzWBE",
+        "controller": "did:iota:tst:0x19ed80fbd2a644fc2347e27e46e09d42b89df9b1ba09ae41832a9d47d686776a",
+        "type": "JsonWebKey",
+        "publicKeyJwk": {
+          "kty": "OKP",
+          "alg": "EdDSA",
+          "kid": "HZ11e0XacuODQw5FcoMHtcdxl8oXHbSnIhQMUgVzWBE",
+          "crv": "Ed25519",
+          "x": "475CGLtezvySFMCHhx6hE9S97MIYMLb4B-pbVEHaCtY"
+        }
       }
     ]
   },
   "meta": {
-    "created": "2022-09-12T21:58:06Z",
-    "updated": "2022-09-12T21:58:06Z"
+    "created": "2023-11-16T20:40:03Z",
+    "updated": "2023-11-16T20:40:03Z",
+    "governorAddress": "tst1qrjsnlg6nqd2kdzx4q880nl74jtrcajm7ae57zazl0l7ye09ahh4x6z9gtd",
+    "stateControllerAddress": "tst1qrjsnlg6nqd2kdzx4q880nl74jtrcajm7ae57zazl0l7ye09ahh4x6z9gtd"
   }
 }
 ```
@@ -136,25 +168,29 @@ This creates and publishes an Alias Output containing a DID Document with one ve
 
 ```rust
   // Insert a new Ed25519 verification method in the DID document.
-  let keypair: KeyPair = KeyPair::new(KeyType::Ed25519)?;
-  let method: IotaVerificationMethod =
-    IotaVerificationMethod::new(document.id().clone(), keypair.type_(), keypair.public(), "#key-2")?;
-  document.insert_method(method, MethodScope::VerificationMethod)?;
+  let fragment_2: String = document
+    .generate_method(
+      &storage,
+      JwkMemStore::ED25519_KEY_TYPE,
+      JwsAlgorithm::EdDSA,
+      None,
+      MethodScope::VerificationMethod,
+    )
+    .await?;
 ```
 
 </TabItem>
 <TabItem value="typescript-node" label="Typescript (Node.js)">
 
 ```js
-// Insert a new Ed25519 verification method in the DID document.
-let keypair = new KeyPair(KeyType.Ed25519);
-let method = new IotaVerificationMethod(
-  document.id(),
-  keypair.type(),
-  keypair.public(),
-  '#key-2',
-);
-document.insertMethod(method, MethodScope.VerificationMethod());
+  // Insert a new Ed25519 verification method in the DID document.
+  await document.generateMethod(
+      storage,
+      JwkMemStore.ed25519KeyType(),
+      JwsAlgorithm.EdDSA,
+      "#key-2",
+      MethodScope.VerificationMethod(),
+  );
 ```
 
 </TabItem>
@@ -165,25 +201,39 @@ This creates a new verification method that includes a newly generated Ed25519 p
 ```json
 {
   "doc": {
-    "id": "did:iota:rms:0x6fdcc441ab461aaee2ec1837ea5068fe2bc643a9ac0729a055ef5df42a762483",
+    "id": "did:iota:tst:0x19ed80fbd2a644fc2347e27e46e09d42b89df9b1ba09ae41832a9d47d686776a",
     "verificationMethod": [
       {
-        "id": "did:iota:rms:0x6fdcc441ab461aaee2ec1837ea5068fe2bc643a9ac0729a055ef5df42a762483#key-1",
-        "controller": "did:iota:rms:0x6fdcc441ab461aaee2ec1837ea5068fe2bc643a9ac0729a055ef5df42a762483",
-        "type": "Ed25519VerificationKey2018",
-        "publicKeyMultibase": "z94fP8Vo6qJtejpycjUcYtiSTbLGuCNYUTrjQX9hT2gSv"
+        "id": "did:iota:tst:0x19ed80fbd2a644fc2347e27e46e09d42b89df9b1ba09ae41832a9d47d686776a#HZ11e0XacuODQw5FcoMHtcdxl8oXHbSnIhQMUgVzWBE",
+        "controller": "did:iota:tst:0x19ed80fbd2a644fc2347e27e46e09d42b89df9b1ba09ae41832a9d47d686776a",
+        "type": "JsonWebKey",
+        "publicKeyJwk": {
+          "kty": "OKP",
+          "alg": "EdDSA",
+          "kid": "HZ11e0XacuODQw5FcoMHtcdxl8oXHbSnIhQMUgVzWBE",
+          "crv": "Ed25519",
+          "x": "475CGLtezvySFMCHhx6hE9S97MIYMLb4B-pbVEHaCtY"
+        }
       },
       {
-        "id": "did:iota:rms:0x6fdcc441ab461aaee2ec1837ea5068fe2bc643a9ac0729a055ef5df42a762483#key-2",
-        "controller": "did:iota:rms:0x6fdcc441ab461aaee2ec1837ea5068fe2bc643a9ac0729a055ef5df42a762483",
-        "type": "Ed25519VerificationKey2018",
-        "publicKeyMultibase": "zHiCj7kbZdWznNvBhqxXwgoEChYseKrArLFdi5kPKAVRq"
+        "id": "did:iota:tst:0x19ed80fbd2a644fc2347e27e46e09d42b89df9b1ba09ae41832a9d47d686776a#yJz-sPlCmd432JKqK_hkiPml2kj22Jv0aAFy_2jJ8nE",
+        "controller": "did:iota:tst:0x19ed80fbd2a644fc2347e27e46e09d42b89df9b1ba09ae41832a9d47d686776a",
+        "type": "JsonWebKey",
+        "publicKeyJwk": {
+          "kty": "OKP",
+          "alg": "EdDSA",
+          "kid": "yJz-sPlCmd432JKqK_hkiPml2kj22Jv0aAFy_2jJ8nE",
+          "crv": "Ed25519",
+          "x": "h8ndZ4_Urmzf4xN4emqS8r5q4pAQvAh0k2YHq5JLBBo"
+        }
       }
     ]
   },
   "meta": {
-    "created": "2022-09-12T21:58:06Z",
-    "updated": "2022-09-12T21:58:06Z"
+    "created": "2023-11-16T20:40:03Z",
+    "updated": "2023-11-16T20:40:03Z",
+    "governorAddress": "tst1qrjsnlg6nqd2kdzx4q880nl74jtrcajm7ae57zazl0l7ye09ahh4x6z9gtd",
+    "stateControllerAddress": "tst1qrjsnlg6nqd2kdzx4q880nl74jtrcajm7ae57zazl0l7ye09ahh4x6z9gtd"
   }
 }
 ```
@@ -198,10 +248,10 @@ You can attach verification relationships to a verification method by referencin
 <TabItem value="rust" label="Rust">
 
 ```rust
-// Attach a new method relationship to the existing method.
+// Attach a new method relationship to the inserted method.
 document.attach_method_relationship(
-    &document.id().to_url().join("#key-1")?,
-    MethodRelationship::Authentication,
+  &document.id().to_url().join(format!("#{fragment_2}"))?,
+  MethodRelationship::Authentication,
 )?;
 ```
 
@@ -209,11 +259,11 @@ document.attach_method_relationship(
 <TabItem value="typescript-node" label="Typescript (Node.js)">
 
 ```js
-// Attach a new method relationship to the existing method.
-document.attachMethodRelationship(
-  did.join('#key-1'),
-  MethodRelationship.Authentication,
-);
+// Attach a new method relationship to the inserted method.
+document.attach_method_relationship(
+  &document.id().to_url().join(format!("#{fragment_2}"))?,
+  MethodRelationship::Authentication,
+)?;
 ```
 
 </TabItem>
@@ -225,28 +275,42 @@ Note that `Authentication` references the already included `key-2` verification 
 ```json {12,19}
 {
   "doc": {
-    "id": "did:iota:rms:0x6fdcc441ab461aaee2ec1837ea5068fe2bc643a9ac0729a055ef5df42a762483",
+    "id": "did:iota:tst:0x19ed80fbd2a644fc2347e27e46e09d42b89df9b1ba09ae41832a9d47d686776a",
     "verificationMethod": [
       {
-        "id": "did:iota:rms:0x6fdcc441ab461aaee2ec1837ea5068fe2bc643a9ac0729a055ef5df42a762483#key-1",
-        "controller": "did:iota:rms:0x6fdcc441ab461aaee2ec1837ea5068fe2bc643a9ac0729a055ef5df42a762483",
-        "type": "Ed25519VerificationKey2018",
-        "publicKeyMultibase": "z94fP8Vo6qJtejpycjUcYtiSTbLGuCNYUTrjQX9hT2gSv"
+        "id": "did:iota:tst:0x19ed80fbd2a644fc2347e27e46e09d42b89df9b1ba09ae41832a9d47d686776a#HZ11e0XacuODQw5FcoMHtcdxl8oXHbSnIhQMUgVzWBE",
+        "controller": "did:iota:tst:0x19ed80fbd2a644fc2347e27e46e09d42b89df9b1ba09ae41832a9d47d686776a",
+        "type": "JsonWebKey",
+        "publicKeyJwk": {
+          "kty": "OKP",
+          "alg": "EdDSA",
+          "kid": "HZ11e0XacuODQw5FcoMHtcdxl8oXHbSnIhQMUgVzWBE",
+          "crv": "Ed25519",
+          "x": "475CGLtezvySFMCHhx6hE9S97MIYMLb4B-pbVEHaCtY"
+        }
       },
       {
-        "id": "did:iota:rms:0x6fdcc441ab461aaee2ec1837ea5068fe2bc643a9ac0729a055ef5df42a762483#key-2",
-        "controller": "did:iota:rms:0x6fdcc441ab461aaee2ec1837ea5068fe2bc643a9ac0729a055ef5df42a762483",
-        "type": "Ed25519VerificationKey2018",
-        "publicKeyMultibase": "zHiCj7kbZdWznNvBhqxXwgoEChYseKrArLFdi5kPKAVRq"
+        "id": "did:iota:tst:0x19ed80fbd2a644fc2347e27e46e09d42b89df9b1ba09ae41832a9d47d686776a#yJz-sPlCmd432JKqK_hkiPml2kj22Jv0aAFy_2jJ8nE",
+        "controller": "did:iota:tst:0x19ed80fbd2a644fc2347e27e46e09d42b89df9b1ba09ae41832a9d47d686776a",
+        "type": "JsonWebKey",
+        "publicKeyJwk": {
+          "kty": "OKP",
+          "alg": "EdDSA",
+          "kid": "yJz-sPlCmd432JKqK_hkiPml2kj22Jv0aAFy_2jJ8nE",
+          "crv": "Ed25519",
+          "x": "h8ndZ4_Urmzf4xN4emqS8r5q4pAQvAh0k2YHq5JLBBo"
+        }
       }
     ],
     "authentication": [
-      "did:iota:rms:0x6fdcc441ab461aaee2ec1837ea5068fe2bc643a9ac0729a055ef5df42a762483#key-2"
+      "did:iota:tst:0x19ed80fbd2a644fc2347e27e46e09d42b89df9b1ba09ae41832a9d47d686776a#yJz-sPlCmd432JKqK_hkiPml2kj22Jv0aAFy_2jJ8nE"
     ]
   },
   "meta": {
-    "created": "2022-09-12T21:58:06Z",
-    "updated": "2022-09-12T21:58:06Z"
+    "created": "2023-11-16T20:40:03Z",
+    "updated": "2023-11-16T20:40:03Z",
+    "governorAddress": "tst1qrjsnlg6nqd2kdzx4q880nl74jtrcajm7ae57zazl0l7ye09ahh4x6z9gtd",
+    "stateControllerAddress": "tst1qrjsnlg6nqd2kdzx4q880nl74jtrcajm7ae57zazl0l7ye09ahh4x6z9gtd"
   }
 }
 ```
@@ -259,28 +323,28 @@ You can also add custom properties can to a service by setting `properties`:
 <TabItem value="rust" label="Rust">
 
 ```rust
-// Add a new Service.
-let service: StardustService = Service::from_json_value(json!({
+  // Add a new Service.
+  let service: Service = Service::from_json_value(json!({
     "id": document.id().to_url().join("#linked-domain")?,
     "type": "LinkedDomains",
     "serviceEndpoint": "https://iota.org/"
-}))?;
-assert!(document.insert_service(service));
-document.metadata.updated = Some(Timestamp::now_utc());
+  }))?;
+  assert!(document.insert_service(service).is_ok());
+  document.metadata.updated = Some(Timestamp::now_utc());
 ```
 
 </TabItem>
 <TabItem value="typescript-node" label="Typescript (Node.js)">
 
 ```js
-// Add a new Service.
-const service: StardustService = new StardustService({
-  id: did.join('#linked-domain'),
-  type: 'LinkedDomains',
-  serviceEndpoint: 'https://iota.org/',
-});
-document.insertService(service);
-document.setMetadataUpdated(Timestamp.nowUTC());
+  // Add a new Service.
+  const service: Service = new Service({
+      id: did.join("#linked-domain"),
+      type: "LinkedDomains",
+      serviceEndpoint: "https://iota.org/",
+  });
+  document.insertService(service);
+  document.setMetadataUpdated(Timestamp.nowUTC());
 ```
 
 </TabItem>
@@ -291,35 +355,49 @@ The updated Document with the newly created service looks as follows.
 ```json {21-27}
 {
   "doc": {
-    "id": "did:iota:rms:0x6fdcc441ab461aaee2ec1837ea5068fe2bc643a9ac0729a055ef5df42a762483",
+    "id": "did:iota:tst:0x19ed80fbd2a644fc2347e27e46e09d42b89df9b1ba09ae41832a9d47d686776a",
     "verificationMethod": [
       {
-        "id": "did:iota:rms:0x6fdcc441ab461aaee2ec1837ea5068fe2bc643a9ac0729a055ef5df42a762483#key-1",
-        "controller": "did:iota:rms:0x6fdcc441ab461aaee2ec1837ea5068fe2bc643a9ac0729a055ef5df42a762483",
-        "type": "Ed25519VerificationKey2018",
-        "publicKeyMultibase": "z94fP8Vo6qJtejpycjUcYtiSTbLGuCNYUTrjQX9hT2gSv"
+        "id": "did:iota:tst:0x19ed80fbd2a644fc2347e27e46e09d42b89df9b1ba09ae41832a9d47d686776a#HZ11e0XacuODQw5FcoMHtcdxl8oXHbSnIhQMUgVzWBE",
+        "controller": "did:iota:tst:0x19ed80fbd2a644fc2347e27e46e09d42b89df9b1ba09ae41832a9d47d686776a",
+        "type": "JsonWebKey",
+        "publicKeyJwk": {
+          "kty": "OKP",
+          "alg": "EdDSA",
+          "kid": "HZ11e0XacuODQw5FcoMHtcdxl8oXHbSnIhQMUgVzWBE",
+          "crv": "Ed25519",
+          "x": "475CGLtezvySFMCHhx6hE9S97MIYMLb4B-pbVEHaCtY"
+        }
       },
       {
-        "id": "did:iota:rms:0x6fdcc441ab461aaee2ec1837ea5068fe2bc643a9ac0729a055ef5df42a762483#key-2",
-        "controller": "did:iota:rms:0x6fdcc441ab461aaee2ec1837ea5068fe2bc643a9ac0729a055ef5df42a762483",
-        "type": "Ed25519VerificationKey2018",
-        "publicKeyMultibase": "zHiCj7kbZdWznNvBhqxXwgoEChYseKrArLFdi5kPKAVRq"
+        "id": "did:iota:tst:0x19ed80fbd2a644fc2347e27e46e09d42b89df9b1ba09ae41832a9d47d686776a#yJz-sPlCmd432JKqK_hkiPml2kj22Jv0aAFy_2jJ8nE",
+        "controller": "did:iota:tst:0x19ed80fbd2a644fc2347e27e46e09d42b89df9b1ba09ae41832a9d47d686776a",
+        "type": "JsonWebKey",
+        "publicKeyJwk": {
+          "kty": "OKP",
+          "alg": "EdDSA",
+          "kid": "yJz-sPlCmd432JKqK_hkiPml2kj22Jv0aAFy_2jJ8nE",
+          "crv": "Ed25519",
+          "x": "h8ndZ4_Urmzf4xN4emqS8r5q4pAQvAh0k2YHq5JLBBo"
+        }
       }
     ],
     "authentication": [
-      "did:iota:rms:0x6fdcc441ab461aaee2ec1837ea5068fe2bc643a9ac0729a055ef5df42a762483#key-2"
+      "did:iota:tst:0x19ed80fbd2a644fc2347e27e46e09d42b89df9b1ba09ae41832a9d47d686776a#yJz-sPlCmd432JKqK_hkiPml2kj22Jv0aAFy_2jJ8nE"
     ],
     "service": [
       {
-        "id": "did:iota:rms:0x6fdcc441ab461aaee2ec1837ea5068fe2bc643a9ac0729a055ef5df42a762483#linked-domain",
+        "id": "did:iota:tst:0x19ed80fbd2a644fc2347e27e46e09d42b89df9b1ba09ae41832a9d47d686776a#linked-domain",
         "type": "LinkedDomains",
         "serviceEndpoint": "https://iota.org/"
       }
     ]
   },
   "meta": {
-    "created": "2022-09-12T21:58:06Z",
-    "updated": "2022-09-12T21:58:19Z"
+    "created": "2023-11-16T20:40:03Z",
+    "updated": "2023-11-16T20:40:08Z",
+    "governorAddress": "tst1qrjsnlg6nqd2kdzx4q880nl74jtrcajm7ae57zazl0l7ye09ahh4x6z9gtd",
+    "stateControllerAddress": "tst1qrjsnlg6nqd2kdzx4q880nl74jtrcajm7ae57zazl0l7ye09ahh4x6z9gtd"
   }
 }
 ```
@@ -333,8 +411,8 @@ You can also remove verification methods at any time using the following snippet
 
 ```rust
 // Remove a verification method.
-let original_method: DIDUrl<IotaDID> = document.resolve_method("key-1", None).unwrap().id().clone();
-document.remove_method(&original_method).unwrap();
+let original_method: DIDUrl = document.resolve_method(fragment_1.as_str(), None).unwrap().id().clone();
+document.purge_method(&storage, &original_method).await.unwrap();
 ```
 
 </TabItem>
@@ -342,8 +420,8 @@ document.remove_method(&original_method).unwrap();
 
 ```js
 // Remove a verification method.
-let originalMethod = document.resolveMethod("key-1") as IotaVerificationMethod;
-document.removeMethod(originalMethod?.id());
+let originalMethod = document.resolveMethod(fragment) as VerificationMethod;
+await document.purgeMethod(storage, originalMethod?.id());
 ```
 
 </TabItem>
@@ -354,29 +432,37 @@ This removes the original verification method with the fragment `key-1`.
 ```json
 {
   "doc": {
-    "id": "did:iota:rms:0x6fdcc441ab461aaee2ec1837ea5068fe2bc643a9ac0729a055ef5df42a762483",
+    "id": "did:iota:tst:0x19ed80fbd2a644fc2347e27e46e09d42b89df9b1ba09ae41832a9d47d686776a",
     "verificationMethod": [
       {
-        "id": "did:iota:rms:0x6fdcc441ab461aaee2ec1837ea5068fe2bc643a9ac0729a055ef5df42a762483#key-2",
-        "controller": "did:iota:rms:0x6fdcc441ab461aaee2ec1837ea5068fe2bc643a9ac0729a055ef5df42a762483",
-        "type": "Ed25519VerificationKey2018",
-        "publicKeyMultibase": "zHiCj7kbZdWznNvBhqxXwgoEChYseKrArLFdi5kPKAVRq"
+        "id": "did:iota:tst:0x19ed80fbd2a644fc2347e27e46e09d42b89df9b1ba09ae41832a9d47d686776a#yJz-sPlCmd432JKqK_hkiPml2kj22Jv0aAFy_2jJ8nE",
+        "controller": "did:iota:tst:0x19ed80fbd2a644fc2347e27e46e09d42b89df9b1ba09ae41832a9d47d686776a",
+        "type": "JsonWebKey",
+        "publicKeyJwk": {
+          "kty": "OKP",
+          "alg": "EdDSA",
+          "kid": "yJz-sPlCmd432JKqK_hkiPml2kj22Jv0aAFy_2jJ8nE",
+          "crv": "Ed25519",
+          "x": "h8ndZ4_Urmzf4xN4emqS8r5q4pAQvAh0k2YHq5JLBBo"
+        }
       }
     ],
     "authentication": [
-      "did:iota:rms:0x6fdcc441ab461aaee2ec1837ea5068fe2bc643a9ac0729a055ef5df42a762483#key-2"
+      "did:iota:tst:0x19ed80fbd2a644fc2347e27e46e09d42b89df9b1ba09ae41832a9d47d686776a#yJz-sPlCmd432JKqK_hkiPml2kj22Jv0aAFy_2jJ8nE"
     ],
     "service": [
       {
-        "id": "did:iota:rms:0x6fdcc441ab461aaee2ec1837ea5068fe2bc643a9ac0729a055ef5df42a762483#linked-domain",
+        "id": "did:iota:tst:0x19ed80fbd2a644fc2347e27e46e09d42b89df9b1ba09ae41832a9d47d686776a#linked-domain",
         "type": "LinkedDomains",
         "serviceEndpoint": "https://iota.org/"
       }
     ]
   },
   "meta": {
-    "created": "2022-09-12T21:58:06Z",
-    "updated": "2022-09-12T21:58:19Z"
+    "created": "2023-11-16T20:40:03Z",
+    "updated": "2023-11-16T20:40:08Z",
+    "governorAddress": "tst1qrjsnlg6nqd2kdzx4q880nl74jtrcajm7ae57zazl0l7ye09ahh4x6z9gtd",
+    "stateControllerAddress": "tst1qrjsnlg6nqd2kdzx4q880nl74jtrcajm7ae57zazl0l7ye09ahh4x6z9gtd"
   }
 }
 ```
@@ -389,40 +475,40 @@ Publish the updated DID Document inside the Alias Output taking into account the
 <TabItem value="rust" label="Rust">
 
 ```rust
-// Resolve the latest output and update it with the given document.
-let alias_output: AliasOutput = client.update_did_output(document.clone()).await?;
+  // Resolve the latest output and update it with the given document.
+  let alias_output: AliasOutput = client.update_did_output(document.clone()).await?;
 
-// Because the size of the DID document increased, we have to increase the allocated storage deposit.
-// This increases the deposit amount to the new minimum.
-let rent_structure: RentStructure = client.get_rent_structure().await?;
-let alias_output: AliasOutput = AliasOutputBuilder::from(&alias_output)
-  .with_minimum_storage_deposit(rent_structure)
-  .finish()?;
+  // Because the size of the DID document increased, we have to increase the allocated storage deposit.
+  // This increases the deposit amount to the new minimum.
+  let rent_structure: RentStructure = client.get_rent_structure().await?;
+  let alias_output: AliasOutput = AliasOutputBuilder::from(&alias_output)
+    .with_minimum_storage_deposit(rent_structure)
+    .finish()?;
 
-// Publish the updated Alias Output.
-let updated: StardustDocument = client.publish_did_output(&secret_manager, alias_output).await?;
+  // Publish the updated Alias Output.
+  let updated: IotaDocument = client.publish_did_output(&secret_manager, alias_output).await?;
 ```
 
 </TabItem>
 <TabItem value="typescript-node" label="Typescript (Node.js)">
 
 ```js
-// Resolve the latest output and update it with the given document.
-const aliasOutput: IAliasOutput = await didClient.updateDidOutput(document);
+  // Resolve the latest output and update it with the given document.
+  let aliasOutput: AliasOutput = await didClient.updateDidOutput(document);
 
-// Because the size of the DID document increased, we have to increase the allocated storage deposit.
-// This increases the deposit amount to the new minimum.
-const rentStructure: IRent = await didClient.getRentStructure();
-aliasOutput.amount = TransactionHelper.getStorageDeposit(
-  aliasOutput,
-  rentStructure,
-).toString();
+  // Because the size of the DID document increased, we have to increase the allocated storage deposit.
+  // This increases the deposit amount to the new minimum.
+  const rentStructure: IRent = await didClient.getRentStructure();
 
-// Publish the output.
-const updated: StardustDocument = await didClient.publishDidOutput(
-  secretManager,
-  aliasOutput,
-);
+  aliasOutput = await client.buildAliasOutput({
+      ...aliasOutput,
+      amount: Utils.computeStorageDeposit(aliasOutput, rentStructure),
+      aliasId: aliasOutput.getAliasId(),
+      unlockConditions: aliasOutput.getUnlockConditions(),
+  });
+
+  // Publish the output.
+  const updated: IotaDocument = await didClient.publishDidOutput(secretManager, aliasOutput);
 ```
 
 </TabItem>
