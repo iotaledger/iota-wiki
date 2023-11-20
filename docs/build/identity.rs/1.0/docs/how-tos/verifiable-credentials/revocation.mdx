@@ -1,0 +1,129 @@
+---
+sidebar_label: Revoke
+description: Explain how a VC can be revoked
+image: /img/Identity_icon.png
+keywords:
+  - verifiable
+  - credentials
+  - revoke
+  - revocation
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Revoke a Verifiable Credential
+
+The [example](#example) below demonstrates two methods that an issuer can use to revoke a verifiable credential
+using the IOTA Identity Framework:
+
+1. By using the [`credentialStatus`](https://www.w3.org/TR/vc-data-model/#status) field in a credential and linking to a
+[revocation bitmap](#revocation-bitmap),
+using the [`RevocationBitmap2022`](/identity.rs/references/specifications/revocation-bitmap-2022/).
+2. By [removing the verification method](#removing-the-verification-method) that signed the credential.
+This invalidates all credentials that were signed with that verification method.
+
+## Revocation Bitmap
+
+
+One of the ways for an issuer to control the status of its credentials is by using a revocation list.
+At the most basic level, revocation information for all verifiable credentials issued by an issuer are expressed as
+simple binary values.
+The issuer keeps a list of all verifiable credentials it has issued in a bitmap.
+Each verifiable credential is associated with a unique index in the list.
+
+<Tabs groupId="language" queryString>
+<TabItem value="rust" label="Rust">
+
+```rust reference
+https://github.com/iotaledger/identity.rs/blob/main/examples/0_basic/7_revoke_vc.rs#L167
+```
+
+</TabItem>
+<TabItem value="typescript-node" label="Typescript (Node.js)">
+
+```ts reference
+https://github.com/iotaledger/identity.rs/blob/main/bindings/wasm/examples/src/0_basic/7_revoke_vc.ts#L156
+```
+
+</TabItem>
+</Tabs>
+
+If the binary value of the index in the bitmap is 1 (one), the verifiable credential is revoked,
+if it is 0 (zero) it is not revoked.
+
+For example, with this approach the issuer adds an index to a credential in the `credentialStatus` field, such as `"5"`.
+This part of the credential might then look like this:
+
+```json
+"credentialStatus": {
+  "id": "did:iota:EvaQhPXXsJsGgxSXGhZGMCvTt63KuAFtaGThx6a5nSpw#revocation",
+  "type": "RevocationBitmap2022",
+  "revocationBitmapIndex": "5"
+},
+```
+
+The verifier uses the `id` field (`did:iota:EvaQhPXXsJsGgxSXGhZGMCvTt63KuAFtaGThx6a5nSpw#revocation`) to look up the
+service in the issuer's DID document:
+
+```json
+{
+  "id": "did:iota:EvaQhPXXsJsGgxSXGhZGMCvTt63KuAFtaGThx6a5nSpw#revocation",
+  "type": "RevocationBitmap2022",
+  "serviceEndpoint": "data:application/octet-stream;base64,ZUp5ek1tQmdZR1NBQUFFZ1ptVUFBQWZPQUlF"
+}
+```
+
+During verification, the verifier decodes the revocation bitmap embedded in the `data` url.
+This bitmap written as a bitstring looks like this: `000001`.
+Here, the 5th bit is set, which means the credential with that index is revoked,
+while all other credentials aren't revoked.
+
+## Removing the Verification Method
+
+A less efficient alternative is to remove the verification method that signed the credential from the DID Document of
+the issuer.
+This means the VC can no longer be validated.
+
+However, this will also invalidate every VC signed with that verification method,
+meaning that the issuer will have to sign every VC with a different key to retain
+precise control over which credential is revoked.
+
+
+<Tabs groupId="language" queryString>
+<TabItem value="rust" label="Rust">
+
+```rust reference
+https://github.com/iotaledger/identity.rs/blob/main/examples/0_basic/7_revoke_vc.rs#L197-L204
+```
+
+</TabItem>
+<TabItem value="typescript-node" label="Typescript (Node.js)">
+
+```ts reference
+https://github.com/iotaledger/identity.rs/blob/main/bindings/wasm/examples/src/0_basic/7_revoke_vc.ts#L192C1-L195
+```
+
+</TabItem>
+</Tabs>
+
+## Full Example Code
+
+The following code exemplifies how you can revoke a [Verifiable Credential (VC)](../../explanations/verifiable-credentials.mdx).
+
+<Tabs groupId="language" queryString>
+<TabItem value="rust" label="Rust">
+
+```rust reference
+https://github.com/iotaledger/identity.rs/blob/main/examples/0_basic/7_revoke_vc.rs
+```
+
+</TabItem>
+<TabItem value="typescript-node" label="Typescript (Node.js)">
+
+```ts reference
+https://github.com/iotaledger/identity.rs/blob/main/bindings/wasm/examples/src/0_basic/7_revoke_vc.ts
+```
+
+</TabItem>
+</Tabs>
