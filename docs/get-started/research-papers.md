@@ -1,6 +1,6 @@
 ---
 description: Links to all the Research papers published from IOTA Foundation Researchers.
-image: /img/logo/Chrysalis_logo_dark.png
+image: /img/logo/preview.png
 keywords:
   - keyword1
   - keyword2
