@@ -3,6 +3,7 @@ import {
   calculatePassiveRewards,
   calculateBPS,
 } from '../actions';
+import { EPOCH_DURATION } from '../constants';
 import { UserType } from '../enums';
 import { ManaState, ValidatorParameters } from '../types';
 
@@ -13,8 +14,6 @@ export function useResults(state: ManaState) {
     state.finalEpoch,
     state.generationPerSlot,
   );
-
-  const passiveBPS = calculateBPS(passiveRewards, state.congestionAmount);
 
   const validatorParameters =
     state.userType === UserType.VALIDATOR
@@ -41,11 +40,16 @@ export function useResults(state: ManaState) {
     state.generationPerSlot,
   );
 
-  const generatedBPS = calculateBPS(generatedRewards, state.congestionAmount);
-  const totalBPS = generatedBPS + passiveBPS;
+  const yourBlocksPerEpoch = passiveRewards / state.congestionAmount;
+  const yourAdditionalBlocksPerEpoch =
+    generatedRewards / state.congestionAmount;
+
+  const yourTPS = yourBlocksPerEpoch / EPOCH_DURATION;
+  const yourAdditionalTPS = yourAdditionalBlocksPerEpoch / EPOCH_DURATION;
+  const totalBPS = yourTPS + yourAdditionalTPS;
 
   const msToTransaction = (1 / totalBPS) * 1_000;
-  const passiveMsToTransaction = (1 / passiveBPS) * 1_000;
+  const passiveMsToTransaction = (1 / yourTPS) * 1_000;
 
   return {
     generatedRewards,

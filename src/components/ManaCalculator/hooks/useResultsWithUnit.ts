@@ -49,7 +49,6 @@ const getUnit = (value: number): Unit => {
 interface UseResultsWithUnit {
   data: EpochReward[];
   manaUnit: Unit;
-  blocksUnit: Unit;
 }
 
 export function getSizeOfUnit(unit: Unit): number {
@@ -79,6 +78,5 @@ export function useResultsWithUnit(results: EpochReward[]): UseResultsWithUnit {
   return {
     data,
     manaUnit,
-    blocksUnit,
   };
 }

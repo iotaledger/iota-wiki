@@ -7,4 +7,3 @@ export * from './RoleSection';
 export * from './OutputForm';
 export * from './NetworkSection';
 export * from './ManaAcculation';
-export * from './BlocksAllowance';
