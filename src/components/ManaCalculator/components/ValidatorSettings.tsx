@@ -52,7 +52,9 @@ export function ValidatorSettings() {
           0,
         )}
         onChange={(e) =>
-          handleAttractedNewDelegatedStakeChange(Number(e.target.value))
+          handleAttractedNewDelegatedStakeChange(
+            toMicro(Number(e.target.value)),
+          )
         }
       ></input>
     </Details>
