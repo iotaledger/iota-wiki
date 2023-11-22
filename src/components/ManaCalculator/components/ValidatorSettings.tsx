@@ -16,13 +16,13 @@ export function ValidatorSettings() {
       summary='Validator Settings'
       className='mana_calculator__card mana_calculator_inner__card'
     >
-      <label className='inlined-long-label'>Staked amount ({state.network})</label>
+      <label className='inlined-long-label'>
+        Staked amount ({state.network})
+      </label>
       <input
-          className='mana_calculator__compact inlined'
-          value={fromMicro(state.stakedOrDelegatedTokens)}
-          onChange={(e) =>
-          handleOwnStakeChange(toMicro(Number(e.target.value)))
-          }
+        className='mana_calculator__compact inlined'
+        value={fromMicro(state.stakedOrDelegatedTokens)}
+        onChange={(e) => handleOwnStakeChange(toMicro(Number(e.target.value)))}
       ></input>
       <br />
       <label className='inlined-long-label'>Performance factor</label>
@@ -47,7 +47,10 @@ export function ValidatorSettings() {
       </label>
       <input
         className='mana_calculator__compact input--vertical-spaced'
-        value={roundMax(fromMicro(state.validator.attractedNewDelegatedStake),0)}
+        value={roundMax(
+          fromMicro(state.validator.attractedNewDelegatedStake),
+          0,
+        )}
         onChange={(e) =>
           handleAttractedNewDelegatedStakeChange(Number(e.target.value))
         }

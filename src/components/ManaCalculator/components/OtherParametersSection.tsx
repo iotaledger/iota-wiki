@@ -47,12 +47,11 @@ export function OtherParametersSection() {
         onChange={(e) => handleFinalEpochChange(Number(e.target.value))}
       ></input>
       {state.userType === UserType.HOLDER ? (
-      <>
-      </>
-      ) : (   
-      <>
-      < AdvancedSettingsValidator />
-      </>
+        <></>
+      ) : (
+        <>
+          <AdvancedSettingsValidator />
+        </>
       )}
     </div>
   );
