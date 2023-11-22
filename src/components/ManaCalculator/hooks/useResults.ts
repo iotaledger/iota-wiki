@@ -47,7 +47,6 @@ export function useResults(state: ManaState) {
     state.generationPerSlot,
   );
 
-
   const generatedRewardsInTheFirstEpoch = calculateManaRewards(
     state.stakedOrDelegatedTokens,
     state.delegator.validator,
@@ -64,13 +63,16 @@ export function useResults(state: ManaState) {
   const yourAdditionalBlocksInPeriod =
     generatedRewards / state.congestionAmount;
 
-  const yourPassiveBlocksInTheFirstEpoch = passiveRewardsInTheFirstEpoch / state.congestionAmount;
+  const yourPassiveBlocksInTheFirstEpoch =
+    passiveRewardsInTheFirstEpoch / state.congestionAmount;
   const yourAdditionalBlocksInTheFirstEpoch =
     generatedRewardsInTheFirstEpoch / state.congestionAmount;
-  
-  const yourTotalBlocksInPeriod = yourPassiveBlocksInPeriod + yourAdditionalBlocksInPeriod
 
-  const yourTotalBlocksInTheFirstEpoch = yourPassiveBlocksInTheFirstEpoch + yourAdditionalBlocksInTheFirstEpoch
+  const yourTotalBlocksInPeriod =
+    yourPassiveBlocksInPeriod + yourAdditionalBlocksInPeriod;
+
+  const yourTotalBlocksInTheFirstEpoch =
+    yourPassiveBlocksInTheFirstEpoch + yourAdditionalBlocksInTheFirstEpoch;
 
   const blockAllowance = yourTotalBlocksInPeriod;
 

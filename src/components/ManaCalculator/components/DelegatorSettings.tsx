@@ -16,13 +16,13 @@ export function DelegatorSettings() {
       summary='Delegator Settings'
       className='mana_calculator__card mana_calculator_inner__card'
     >
-      <label className='inlined-long-label'>Delegated amount ({state.network})</label>
+      <label className='inlined-long-label'>
+        Delegated amount ({state.network})
+      </label>
       <input
-          className='mana_calculator__compact inlined'
-          value={fromMicro(state.stakedOrDelegatedTokens)}
-          onChange={(e) =>
-          handleOwnStakeChange(toMicro(Number(e.target.value)))
-          }
+        className='mana_calculator__compact inlined'
+        value={fromMicro(state.stakedOrDelegatedTokens)}
+        onChange={(e) => handleOwnStakeChange(toMicro(Number(e.target.value)))}
       ></input>
       <br />
     </Details>

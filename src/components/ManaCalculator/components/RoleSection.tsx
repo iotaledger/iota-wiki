@@ -43,13 +43,11 @@ export function RoleSection() {
         onChange={(e) => handleOwnHoldChange(toMicro(Number(e.target.value)))}
       ></input>
       <br />
-      {
-       state.userType === UserType.VALIDATOR ? (
+      {state.userType === UserType.VALIDATOR ? (
         <>
-        <ValidatorSettings />
+          <ValidatorSettings />
         </>
-      ) :  
-      state.userType === UserType.DELEGATOR ? (
+      ) : state.userType === UserType.DELEGATOR ? (
         <>
           <label className='inlined-label'>Delegating to</label>
           <Select
@@ -73,10 +71,9 @@ export function RoleSection() {
             }
           ></input>
         </>
-      ): (   
-        <>
-        </>
-      )} 
+      ) : (
+        <></>
+      )}
     </div>
   );
 }
