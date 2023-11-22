@@ -2,6 +2,8 @@
 
 ## Keys 
 
+You can use the following mnemonics and keys to access while working with the IOTA Sandbox.
+
 ### Wallet
 
 | Name                                | Value                                                                                                                                                     |
@@ -28,12 +30,14 @@
 
 ## Passwords
 
+You can use the following credentials to access dashboards within the IOTA Sandbox.
+
 ### Hornet Dashboard
 
-Username: `admin`  
-Password: `admin`
+**Username**: `admin`  
+**Password**: `admin`
 
 ### Wasp Dashboard
 
-Username: `wasp`  
-Password: `wasp`
+**Username**: `wasp`  
+**Password**: `wasp`
