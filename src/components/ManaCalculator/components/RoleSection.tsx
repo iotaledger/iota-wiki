@@ -4,6 +4,7 @@ import Select from 'react-select';
 import { UserType } from '../enums';
 import { fromMicro, toMicro } from '../utils';
 import { ValidatorSettings } from './ValidatorSettings';
+import { DelegatorSettings } from './DelegatorSettings';
 
 export function RoleSection() {
   const {
@@ -31,30 +32,24 @@ export function RoleSection() {
         options={[
           { value: UserType.DELEGATOR, label: `Delegator` },
           { value: UserType.VALIDATOR, label: `Validator` },
+          { value: UserType.HOLDER, label: `Holder` },
         ]}
       />
       <br />
-      <label className='inlined-label'>Held amount ({state.network})</label>
+      <label className='inlined-label'>Owned amount ({state.network})</label>
       <input
         className='mana_calculator__compact inlined'
         value={fromMicro(state.heldTokens)}
         onChange={(e) => handleOwnHoldChange(toMicro(Number(e.target.value)))}
       ></input>
       <br />
-      {state.userType === UserType.VALIDATOR ? (
+      {
+       state.userType === UserType.VALIDATOR ? (
         <>
-          <label className='inlined-label'>Stake ({state.network})</label>
-          <input
-            className='mana_calculator__compact inlined'
-            value={fromMicro(state.stakedOrDelegatedTokens)}
-            onChange={(e) =>
-              handleOwnStakeChange(toMicro(Number(e.target.value)))
-            }
-          ></input>
-          <br />
-          <ValidatorSettings />
+        <ValidatorSettings />
         </>
-      ) : (
+      ) :  
+      state.userType === UserType.DELEGATOR ? (
         <>
           <label className='inlined-label'>Delegating to</label>
           <Select
@@ -78,7 +73,10 @@ export function RoleSection() {
             }
           ></input>
         </>
-      )}
+      ): (   
+        <>
+        </>
+      )} 
     </div>
   );
 }

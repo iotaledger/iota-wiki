@@ -3,6 +3,7 @@ export * from './ManaCalculator';
 export * from './OtherParametersSection';
 export * from './ValidatorCard';
 export * from './ValidatorSettings';
+export * from './DelegatorSettings';
 export * from './RoleSection';
 export * from './OutputForm';
 export * from './NetworkSection';

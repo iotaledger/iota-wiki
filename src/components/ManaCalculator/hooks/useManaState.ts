@@ -234,8 +234,8 @@ export function getDefaultParameters(
       shareOfYourStakeLocked: 1.0,
       attractedNewDelegatedStake:
         (finalNetworkParams.stakedTokens *
-          validators.reduce((a, b) => a + b.lockedStake, 0)) /
-        validators.reduce((a, b) => a + b.delegatedStake, 0),
+          validators.reduce((a, b) => a + b.delegatedStake, 0)) /
+        validators.reduce((a, b) => a + b.lockedStake, 0),
       attractedDelegatedStakeFromOtherPools: 0,
     },
     network,
