@@ -16,7 +16,7 @@ function resolveSidebarPaths(category) {
 }
 
 function generateDirectoryPath(basePath, label) {
-  const directoryName = label.toLowerCase().replaceAll(/ +/g, '-');
+  const directoryName = label.toLowerCase().replaceAll(/\s+/g, '-');
   const directoryPath = path.join(__dirname, basePath, directoryName);
   return directoryPath;
 }
