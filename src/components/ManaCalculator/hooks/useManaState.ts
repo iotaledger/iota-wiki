@@ -153,6 +153,15 @@ export function useGivenManaState(
     setState({
       ...state,
       userType: value,
+      [getStakedOrDelegated(value)]: state.heldTokens,
+      ...(value === UserType.VALIDATOR
+        ? {
+            validator: {
+              ...state.validator,
+              attractedNewDelegatedStake: state.heldTokens,
+            },
+          }
+        : {}),
     });
   }
 
@@ -162,7 +171,27 @@ export function useGivenManaState(
   }
 
   function handleOwnHoldChange(value: number) {
-    setState({ ...state, heldTokens: value });
+    setState({
+      ...state,
+      ...getDerivedValuesFromHeldTokens(value),
+    });
+  }
+
+  function getDerivedValuesFromHeldTokens(
+    heldTokens: number,
+  ): Partial<ManaCalculatorProps> {
+    return {
+      heldTokens,
+      [getStakedOrDelegated(state.userType)]: heldTokens,
+      ...(state.userType === UserType.VALIDATOR
+        ? {
+            validator: {
+              ...state.validator,
+              attractedNewDelegatedStake: heldTokens,
+            },
+          }
+        : {}),
+    };
   }
 
   const congestionAmount = getNetworkCongestion(
