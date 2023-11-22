@@ -7,17 +7,7 @@ import { ValidatorSettings } from './ValidatorSettings';
 import { DelegatorSettings } from './DelegatorSettings';
 
 export function RoleSection() {
-  const {
-    state,
-    handleOwnStakeChange,
-    handleUserChange,
-    handleValidatorChange,
-    handleOwnHoldChange,
-  } = useManaState();
-  const validatorOptions = state.validators.map((_, i) => {
-    return { value: i, label: `Validator ${i + 1}` };
-  });
-
+  const { state, handleUserChange, handleOwnHoldChange } = useManaState();
   return (
     <div className='mana_calculator__card'>
       <h4>Role configuration</h4>
@@ -43,40 +33,13 @@ export function RoleSection() {
         onChange={(e) => handleOwnHoldChange(toMicro(Number(e.target.value)))}
       ></input>
       <br />
-      {
-       state.userType === UserType.VALIDATOR ? (
-        <>
+      {state.userType === UserType.VALIDATOR ? (
         <ValidatorSettings />
-        </>
-      ) :  
-      state.userType === UserType.DELEGATOR ? (
-        <>
-          <label className='inlined-label'>Delegating to</label>
-          <Select
-            className='mana_calculator__compact inlined'
-            defaultValue={{ value: 0, label: `Validator 1` }}
-            onChange={(e) => {
-              handleValidatorChange(e.value);
-            }}
-            classNamePrefix='react-select'
-            options={validatorOptions}
-          />
-          <br />
-          <label className='inlined-label'>
-            Delegated amount ({state.network})
-          </label>
-          <input
-            className='mana_calculator__compact inlined'
-            value={fromMicro(state.stakedOrDelegatedTokens)}
-            onChange={(e) =>
-              handleOwnStakeChange(toMicro(Number(e.target.value)))
-            }
-          ></input>
-        </>
-      ): (   
-        <>
-        </>
-      )} 
+      ) : state.userType === UserType.DELEGATOR ? (
+        <DelegatorSettings />
+      ) : (
+        <></>
+      )}
     </div>
   );
 }
