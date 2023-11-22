@@ -3,7 +3,7 @@ import { CongestionType } from './enums/parameters.enum';
 // GENERIC
 
 export const INITIAL_EPOCH = 1;
-export const FINAL_EPOCH = 1000;
+export const FINAL_EPOCH = 10;
 export const SLOT_DURATION = 10;
 export const SLOTS_IN_EPOCH = 8192;
 export const EPOCH_DURATION = SLOTS_IN_EPOCH * SLOT_DURATION;
@@ -21,7 +21,7 @@ export const IOTA_SUPPLY = 4600000000000000;
 export const IOTA_CONGESTION = {
   [CongestionType.HIGH]: 350000000,
   [CongestionType.MEDIUM]: 0, // Dynamic
-  [CongestionType.LOW]: 5000000,
+  [CongestionType.LOW]: 500000,
 };
 
 export const IOTA_GENERATION_PER_SLOT = Math.pow(2, -17);
@@ -37,9 +37,9 @@ export const IOTA_DELEGATED = 600; // IOTA
 export const SHIMMER_SUPPLY = 1813620509000000;
 
 export const SHIMMER_CONGESTION = {
-  [CongestionType.HIGH]: 350000000,
+  [CongestionType.HIGH]: 275000000,
   [CongestionType.MEDIUM]: 0, // Dynamic
-  [CongestionType.LOW]: 5000000,
+  [CongestionType.LOW]: 500000,
 };
 
 export const SHIMMER_GENERATION_PER_SLOT = Math.pow(2, -16);

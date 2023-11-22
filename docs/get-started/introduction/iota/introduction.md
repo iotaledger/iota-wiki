@@ -1,6 +1,6 @@
 ---
 description: Explore the key features of IOTA, including the Tangle, feeless transactions, data transfer, and energy efficiency. Learn how IOTA revolutionizes the blockchain industry with its innovative protocols.
-image: /img/logo/Chrysalis_logo_dark.png
+image: /img/logo/preview.png
 keywords:
   - IOTA
   - Tangle
@@ -34,7 +34,7 @@ performant _consensus_ and ledger solution.
 ## IOTA Mainnet
 
 The IOTA mainnet is the production grade network on which the [IOTA token](/get-started/introduction/iota/iota-token)
-is available. It currently runs the [Chrysalis protocol version](/learn/protocols/chrysalis/introduction).
+is available. It currently runs the [Stardust protocol version](/learn/protocols/stardust/introduction).
 
 ## Feeless Transactions
 

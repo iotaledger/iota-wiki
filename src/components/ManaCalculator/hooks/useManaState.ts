@@ -125,27 +125,10 @@ export function useGivenManaState(
     });
   }
 
-  function handleShareOfYourStakeLockedChange(value: number) {
-    setState({
-      ...state,
-      validator: { ...state.validator, shareOfYourStakeLocked: value },
-    });
-  }
-
   function handleAttractedNewDelegatedStakeChange(value: number) {
     setState({
       ...state,
       validator: { ...state.validator, attractedNewDelegatedStake: value },
-    });
-  }
-
-  function handleAttractedDelegatedStakeFromOtherPoolsChange(value: number) {
-    setState({
-      ...state,
-      validator: {
-        ...state.validator,
-        attractedDelegatedStakeFromOtherPools: value,
-      },
     });
   }
 
@@ -204,7 +187,6 @@ export function useGivenManaState(
     handleDelete,
     handleStakeChange,
     handleAddValidator,
-    handleAttractedDelegatedStakeFromOtherPoolsChange,
     handleAttractedNewDelegatedStakeChange,
     handleCongestionChange,
     handleDelegatedStakeChange,
@@ -215,7 +197,6 @@ export function useGivenManaState(
     handleOwnFCChange,
     handleOwnPFChange,
     handleUserChange,
-    handleShareOfYourStakeLockedChange,
     handleOwnStakeChange,
     handlePFChange,
     handleValidatorChange,
@@ -240,12 +221,13 @@ export function getDefaultParameters(
   };
 
   const finalNetworkParams = networkParams[network];
+  const validators = getValidators(network);
 
   return {
     ...finalNetworkParams,
     initialEpoch: INITIAL_EPOCH,
     finalEpoch: FINAL_EPOCH,
-    validators: getValidators(network),
+    validators,
     userType: UserType.DELEGATOR,
     congestion: CongestionType.LOW,
     delegator: {
@@ -254,9 +236,12 @@ export function getDefaultParameters(
     validator: {
       performanceFactor: 1.0,
       fixedCost: 0.0,
-      shareOfYourStakeLocked: 100.0,
-      attractedNewDelegatedStake: finalNetworkParams.stakedTokens * 1.5,
-      attractedDelegatedStakeFromOtherPools: 0.1,
+      shareOfYourStakeLocked: 1.0,
+      attractedNewDelegatedStake:
+        (finalNetworkParams.stakedTokens *
+          validators.reduce((a, b) => a + b.delegatedStake, 0)) /
+        validators.reduce((a, b) => a + b.lockedStake, 0),
+      attractedDelegatedStakeFromOtherPools: 0,
     },
     network,
   } as ManaCalculatorProps;

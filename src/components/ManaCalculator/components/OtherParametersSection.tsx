@@ -1,6 +1,7 @@
 import React from 'react';
 import { useManaState } from '../hooks/useManaState';
 import Select from 'react-select';
+import { UserType } from '../enums';
 import { CongestionType } from '../enums';
 import { AdvancedSettingsValidator } from './AdvancedSettingsValidator';
 
@@ -49,7 +50,13 @@ export function OtherParametersSection() {
         value={state.finalEpoch}
         onChange={(e) => handleFinalEpochChange(Number(e.target.value))}
       ></input>
-      <AdvancedSettingsValidator />
+      {state.userType === UserType.HOLDER ? (
+        <></>
+      ) : (
+        <>
+          <AdvancedSettingsValidator />
+        </>
+      )}
     </div>
   );
 }
