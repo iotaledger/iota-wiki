@@ -7,6 +7,7 @@ import {
   SHIMMER_GENERATION_PER_SLOT,
   SHIMMER_SUPPLY,
   SHIMMER_THROUGHPUT,
+  SLOT_DURATION,
   SLOTS_IN_EPOCH,
 } from './constants';
 import { CongestionType, NetworkType, UserType } from './enums';
@@ -51,7 +52,7 @@ export function getNetworkCongestion(
     const generation = getNetworkGenerationPerSlot(network);
     const throughput = getNetworkThroughput(network);
 
-    return (supply * generation) / (10 * throughput);
+    return (supply * generation) / (SLOT_DURATION * throughput);
   } else {
     if (network == NetworkType.IOTA) {
       return IOTA_CONGESTION[congestionType];

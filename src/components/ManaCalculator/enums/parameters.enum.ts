@@ -1,6 +1,7 @@
 export enum UserType {
   DELEGATOR,
   VALIDATOR,
+  HOLDER,
 }
 
 export enum NetworkType {
