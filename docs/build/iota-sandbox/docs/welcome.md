@@ -10,10 +10,21 @@ keywords:
 
 ![IOTA Sandbox](/img/banner/banner_iota_sandbox.svg)
 
-The IOTA Sandbox is a dedicated local network for developers to prototype and test smart contracts, INX plugins, and L1 applications within the IOTA ecosystem. It provides a safe, isolated environment for development and experimentation, crucial for ensuring functionality before deployment in production scenarios. 
+The IOTA Sandbox serves as a local network designed specifically for developers. 
+It enables prototyping and testing of smart contracts, INX plugins, and Layer 1 applications within the IOTA ecosystem. 
+This Sandbox offers a secure and isolated environment for developers to experiment and verify functionality prior to deploying in production settings.
 
-:::note
+:::warning For research & development only  
 
-The IOTA Sandbox is not intended for creating production-ready networks, but rather for research and development purposes only. Also always consider using the [public testnet](https://wiki.iota.org/build/networks-endpoints/#public-testnet) first. Join us in pioneering the next wave of IOTA innovations, where you can experiment with confidence and community support.
+The IOTA Sandbox is intended for research and development purposes only. 
+It is not for creating production-ready networks. 
+
+:::
+
+:::tip Public Testnet
+
+If possible, 
+you should use the [public testnet](https://wiki.iota.org/build/networks-endpoints/#public-testnet)
+where you can experiment with confidence and community support.
 
 :::

@@ -6,14 +6,9 @@ module.exports = {
       label: 'Welcome',
     },
     {
-      type: 'category',
-      label: 'How to',
-      items: [
-        {
-          type: 'doc',
-          id: 'how-tos/install',
-        },
-      ],
+      type: 'doc',
+      id: 'getting-started',
+      label: 'Getting Started',
     },
     {
       type: 'category',
