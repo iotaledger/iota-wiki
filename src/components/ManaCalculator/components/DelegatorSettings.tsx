@@ -32,6 +32,8 @@ export function DelegatorSettings() {
       </label>
       <input
         className='mana_calculator__compact inlined'
+        type='number'
+        min='0'
         value={fromMicro(state.stakedOrDelegatedTokens)}
         onChange={(e) => handleOwnStakeChange(toMicro(Number(e.target.value)))}
       ></input>
