@@ -10,7 +10,6 @@ export function OutputForm() {
   const passiveRewards = roundMax(fromMicro(results.passiveRewards), 6);
   const manaGenerated = roundMax(fromMicro(results.generatedRewards), 6);
   const blockAllowance = roundMax(results.blockAllowance, 2);
-  const totalBPS = roundMax(results.totalBPS, 20);
   const humanizer = humanizeDuration.humanizer({
     units: ['y', 'mo', 'w', 'd', 'h', 'm', 's', 'ms'],
     maxDecimalPoints: 3,

@@ -1,8 +1,4 @@
-import {
-  calculateManaRewards,
-  calculatePassiveRewards,
-  calculateBPS,
-} from '../actions';
+import { calculateManaRewards, calculatePassiveRewards } from '../actions';
 import { EPOCH_DURATION } from '../constants';
 import { UserType } from '../enums';
 import { ManaState, ValidatorParameters } from '../types';

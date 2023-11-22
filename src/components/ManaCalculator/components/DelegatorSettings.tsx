@@ -1,7 +1,7 @@
 import React from 'react';
 import { Details } from '@docusaurus/theme-common/Details';
 import { useManaState } from '../hooks';
-import { fromMicro, toMicro, roundMax } from '../utils';
+import { fromMicro, toMicro } from '../utils';
 import Select from 'react-select';
 
 export function DelegatorSettings() {
