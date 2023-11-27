@@ -83,6 +83,47 @@ exports.buildPluginsConfig = [
     ],
   },
   {
+    id: 'stronghold-rs',
+    routeBasePath: 'stronghold.rs',
+    label: 'Stronghold',
+    description: 'Securely store secrets.',
+    icon: 'Stronghold',
+    subsection: 'build-layer-1',
+    versions: [
+      {
+        label: '1.1',
+        badges: ['IOTA', 'Shimmer'],
+      },
+    ],
+  },
+  {
+    id: 'apis',
+    label: 'APIs',
+    description: 'All available APIs.',
+    icon: 'Tools',
+    subsection: 'build-layer-1',
+    versions: [
+      {
+        label: '',
+        badges: ['IOTA', 'Shimmer'],
+        docItemComponent: '@theme/ApiItem',
+      },
+    ],
+  },
+  {
+    id: 'cli-wallet',
+    label: 'CLI Wallet',
+    description: 'Command line wallet.',
+    icon: 'Wallet',
+    subsection: 'build-layer-1',
+    versions: [
+      {
+        label: '1.0',
+        badges: ['IOTA', 'Shimmer'],
+      },
+    ],
+  },
+  {
     id: 'iota-rs',
     routeBasePath: 'iota.rs',
     label: 'iota.rs (deprecated)',
@@ -145,34 +186,6 @@ exports.buildPluginsConfig = [
     ],
   },
   {
-    id: 'stronghold-rs',
-    routeBasePath: 'stronghold.rs',
-    label: 'Stronghold',
-    description: 'Securely store secrets.',
-    icon: 'Stronghold',
-    subsection: 'build-layer-1',
-    versions: [
-      {
-        label: '1.1',
-        badges: ['IOTA', 'Shimmer'],
-      },
-    ],
-  },
-  {
-    id: 'apis',
-    label: 'APIs',
-    description: 'All available APIs.',
-    icon: 'Tools',
-    subsection: 'build-layer-1',
-    versions: [
-      {
-        label: '',
-        badges: ['IOTA', 'Shimmer'],
-        docItemComponent: '@theme/ApiItem',
-      },
-    ],
-  },
-  {
     id: 'iota-streams',
     routeBasePath: 'streams',
     label: 'Streams (deprecated)',
@@ -187,19 +200,6 @@ exports.buildPluginsConfig = [
           __dirname,
           'banners/iota-streams-deprecated.mdx',
         ),
-      },
-    ],
-  },
-  {
-    id: 'cli-wallet',
-    label: 'CLI Wallet',
-    description: 'Command line wallet.',
-    icon: 'Wallet',
-    subsection: 'build-layer-1',
-    versions: [
-      {
-        label: '1.0',
-        badges: ['IOTA', 'Shimmer'],
       },
     ],
   },
