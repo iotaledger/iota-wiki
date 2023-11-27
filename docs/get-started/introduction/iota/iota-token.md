@@ -80,3 +80,4 @@ IOTA is listed on most major _cryptocurrency_ exchanges:
 - [Upbit](https://upbit.com/)
 - [Bitvavo](https://bitvavo.com)
 - [Indodax](https://indodax.com/)
+- [Viviswap](https://viviswap.com/)
