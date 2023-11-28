@@ -120,3 +120,39 @@
   width: 200px;
   margin-bottom: 1rem !important;
 }
+
+.mana_calculator__custom_wrapper {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.validator_card {
+  padding: 4px 0;
+}
+
+.validator_card .errored {
+  position: relative;
+  padding: 1.25rem 0;
+}
+
+.validator_card .errored p {
+  position: absolute;
+  bottom: -2px;
+}
+
+.mana_calculator__custom_wrapper p {
+  margin-top: 0.25rem;
+  margin-bottom: 0;
+  font-size: 12px;
+  color: red;
+}
+
+.mana_calculator__compact + p {
+  margin-top: -0.75rem;
+  margin-bottom: 0.25rem;
+}
+
+.mana_calculator__custom_wrapper input.w-full {
+  width: 100%;
+}

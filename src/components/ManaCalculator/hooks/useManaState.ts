@@ -39,60 +39,64 @@ export function useGivenManaState(
     setState({ ...state, validators });
   }
 
-  function handleStakeChange(value: number, id: number) {
+  function handleStakeChange(value: string, id: number) {
+    const stakedTokens = getValidInputValue(value, toMicro);
     setState({
       ...state,
       validators: state.validators.map((validator, i) => {
         return {
           ...validator,
-          lockedStake: i === id ? value : validator.lockedStake,
+          lockedStake: i === id ? stakedTokens : validator.lockedStake,
         };
       }),
     });
   }
 
-  function handleDelegatedStakeChange(value: number, id: number) {
+  function handleDelegatedStakeChange(value: string, id: number) {
+    const delegatedStake = getValidInputValue(value, toMicro);
     setState({
       ...state,
       validators: state.validators.map((validator, i) => {
         return {
           ...validator,
-          delegatedStake: i === id ? value : validator.delegatedStake,
+          delegatedStake: i === id ? delegatedStake : validator.delegatedStake,
         };
       }),
     });
   }
 
-  function handlePFChange(value: number, id: number) {
-    if (value < 0 || value > 1) return;
+  function handlePFChange(value: string, id: number) {
+    const performanceFactor = getValidInputValue(value);
     setState({
       ...state,
       validators: state.validators.map((validator, i) => {
         return {
           ...validator,
-          performanceFactor: i === id ? value : validator.performanceFactor,
+          performanceFactor:
+            i === id ? performanceFactor : validator.performanceFactor,
         };
       }),
     });
   }
 
-  function handleFCChange(value: number, id: number) {
+  function handleFCChange(value: string, id: number) {
+    const fixedCost = getValidInputValue(value);
     setState({
       ...state,
       validators: state.validators.map((validator, i) => {
         return {
           ...validator,
-          fixedCost: i === id ? value : validator.fixedCost,
+          fixedCost: i === id ? fixedCost : validator.fixedCost,
         };
       }),
     });
   }
 
-  function handleOwnStakeChange(value: number) {
-    if (value > state.heldTokens) return;
+  function handleOwnStakeChange(value: string) {
+    const stakedTokens = getValidInputValue(value, toMicro);
     setState({
       ...state,
-      [getStakedOrDelegated(state.userType)]: value,
+      [getStakedOrDelegated(state.userType)]: stakedTokens,
     });
   }
 
@@ -110,41 +114,43 @@ export function useGivenManaState(
     });
   }
 
-  function handleOwnPFChange(value: number) {
-    if (value < 0 || value > 1) return;
+  function handleOwnPFChange(value: string) {
+    const performanceFactor = getValidInputValue(value);
     setState({
       ...state,
-      validator: { ...state.validator, performanceFactor: value },
+      validator: { ...state.validator, performanceFactor },
     });
   }
 
-  function handleOwnFCChange(value: number) {
+  function handleOwnFCChange(value: string) {
+    const fixedCost = getValidInputValue(value);
     setState({
       ...state,
-      validator: { ...state.validator, fixedCost: value },
+      validator: { ...state.validator, fixedCost },
     });
   }
 
-  function handleAttractedNewDelegatedStakeChange(value: number) {
+  function handleAttractedNewDelegatedStakeChange(value: string) {
+    const attractedNewDelegatedStake = getValidInputValue(value);
     setState({
       ...state,
-      validator: { ...state.validator, attractedNewDelegatedStake: value },
+      validator: { ...state.validator, attractedNewDelegatedStake },
     });
   }
 
-  function handleInitialEpochChange(value: number) {
-    if (value > state.finalEpoch) return;
+  function handleInitialEpochChange(value: string) {
+    const initialEpoch = getValidInputValue(value);
     setState({
       ...state,
-      initialEpoch: value,
+      initialEpoch,
     });
   }
 
-  function handleFinalEpochChange(value: number) {
-    if (state.initialEpoch > value) return;
+  function handleFinalEpochChange(value: string) {
+    const finalEpoch = getValidInputValue(value);
     setState({
       ...state,
-      finalEpoch: value,
+      finalEpoch,
     });
   }
 
@@ -166,8 +172,12 @@ export function useGivenManaState(
     setState({ ...state });
   }
 
-  function handleOwnHoldChange(value: number) {
-    setState({ ...state, heldTokens: value });
+  function handleOwnHoldChange(value: string) {
+    const heldTokens = getValidInputValue(value, toMicro);
+    setState({
+      ...state,
+      heldTokens,
+    });
   }
 
   const congestionAmount = getNetworkCongestion(
@@ -177,6 +187,12 @@ export function useGivenManaState(
   const generationPerSlot = getNetworkGenerationPerSlot(state.network);
   const stakedOrDelegatedTokens = state[getStakedOrDelegated(state.userType)];
 
+  const userOwned = state.heldTokens + stakedOrDelegatedTokens;
+  const maxTotalSupply =
+    userOwned +
+    state.validators.reduce((a, b) => a + b.lockedStake, 0) +
+    state.validators.reduce((a, b) => a + b.delegatedStake, 0);
+
   return {
     state: {
       ...state,
@@ -184,6 +200,7 @@ export function useGivenManaState(
       generationPerSlot,
       stakedOrDelegatedTokens,
     } as ManaState,
+    maxTotalSupply,
     handleDelete,
     handleStakeChange,
     handleAddValidator,
@@ -202,6 +219,29 @@ export function useGivenManaState(
     handleValidatorChange,
     handleOwnHoldChange,
   };
+}
+
+function getValidInputValue(
+  num: string,
+  transformNumber?: (number) => number,
+): number {
+  let value = inputValuetoNumber(num);
+
+  if (transformNumber) {
+    value = transformNumber(value);
+  }
+
+  const isInvalid = isNaN(value);
+
+  if (isInvalid) {
+    throw new Error('Invalid number');
+  }
+
+  return value;
+}
+
+function inputValuetoNumber(value: string) {
+  return Number(Number(value).toString());
 }
 
 export function getDefaultParameters(

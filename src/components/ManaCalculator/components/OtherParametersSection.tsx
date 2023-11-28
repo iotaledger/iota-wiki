@@ -4,6 +4,7 @@ import Select from 'react-select';
 import { UserType } from '../enums';
 import { CongestionType } from '../enums';
 import { AdvancedSettingsValidator } from './AdvancedSettingsValidator';
+import { ManaCalculatorInput } from '.';
 
 export function OtherParametersSection() {
   const {
@@ -34,22 +35,21 @@ export function OtherParametersSection() {
       />
       <br />
       <label className='inlined-label'>Initial epoch</label>
-      <input
+      <ManaCalculatorInput
         className='mana_calculator__compact inlined'
-        type='number'
-        min='0'
+        min={1}
+        max={state.finalEpoch}
         value={state.initialEpoch}
-        onChange={(e) => handleInitialEpochChange(Number(e.target.value))}
-      ></input>
+        onChange={handleInitialEpochChange}
+      />
       <br />
       <label className='inlined-label'>Final epoch</label>
-      <input
+      <ManaCalculatorInput
         className='mana_calculator__compact inlined'
-        type='number'
-        min={state.initialEpoch + 1}
+        min={state.initialEpoch}
         value={state.finalEpoch}
-        onChange={(e) => handleFinalEpochChange(Number(e.target.value))}
-      ></input>
+        onChange={handleFinalEpochChange}
+      />
       {state.userType === UserType.HOLDER ? (
         <></>
       ) : (
