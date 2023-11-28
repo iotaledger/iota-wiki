@@ -21,6 +21,7 @@ export function ManaCalculatorInput({
   useEffect(() => {
     try {
       verifyMinAndMax(value);
+      setErrorMessage('');
     } catch (error) {
       setErrorMessage(error.message);
     }
