@@ -20,4 +20,6 @@ API: `http://localhost/faucet/`
 Dashboard: `http://localhost/wasp/`  
 API: `http://localhost/wasp/api/`
 
-## TODO: Add missing endpoints
+## Chronicle
+
+API: `http://localhost/chronicle/`

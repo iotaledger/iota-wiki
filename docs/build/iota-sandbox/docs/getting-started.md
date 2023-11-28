@@ -1,6 +1,3 @@
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-
 # Getting Started With the IOTA Sandbox
 
 You can use this guide to [install](#install-the-iota-sandbox-using-docker)
@@ -40,7 +37,10 @@ The commands assume you are using Linux.
 
 #### Set Up Your Environment
 
-TODO - I didn't need any extra setup steps to run the sandbox, am I missing something? Or can wedelete this?
+In most cases the default setup should be enough. But you can edit the `.env` file to configure some optional settings:
+```sh reference
+https://github.com/iotaledger/iota-sandbox/blob/add-chronicle-setup/sandbox/.env
+```
 
 #### Bootstrap
 
@@ -56,26 +56,11 @@ sudo ./bootstrap.sh
 
 You can start the IOTA Sandbox by running:
 
-<Tabs groupId="profile" queryString>
-<TabItem value="default" label="Default">
-
 ```sh
 docker compose up -d
 ```
 
-</TabItem>
-<TabItem value="wasp" label="Wasp">
-
-```sh
-docker compose --profile=wasp up -d
-```
-
-</TabItem>
-</Tabs>
-
 - `-d` Instructs Docker to start the containers in the background.
-- `-d` Instructs Docker to start the containers in the background.
-
 
 :::tip Available endpoints
 
