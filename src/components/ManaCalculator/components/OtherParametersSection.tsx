@@ -47,6 +47,7 @@ export function OtherParametersSection() {
       <ManaCalculatorInput
         className='mana_calculator__compact inlined'
         min={state.initialEpoch}
+        max={Number.MAX_SAFE_INTEGER}
         value={state.finalEpoch}
         onChange={handleFinalEpochChange}
       />
