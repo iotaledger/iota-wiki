@@ -20,7 +20,8 @@
     "@metamask/providers": "^10.2.1",
     "clsx": "^1.2.1",
     "html-react-parser": "^4.2.2",
-    "react-markdown": "6"
+    "react-markdown": "6",
+    "web3": "^4.2.2"
   },
   "devDependencies": {
     "@docusaurus/types": "2.4.1",
