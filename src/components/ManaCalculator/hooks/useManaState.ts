@@ -40,7 +40,7 @@ export function useGivenManaState(
   }
 
   function handleStakeChange(value: number, id: number) {
-    setState({
+    const newStateWithValidators = {
       ...state,
       validators: state.validators.map((validator, i) => {
         return {
@@ -48,6 +48,10 @@ export function useGivenManaState(
           lockedStake: i === id ? value : validator.lockedStake,
         };
       }),
+    };
+    setState({
+      ...newStateWithValidators,
+      ...getDerivedRoleValues(newStateWithValidators, state.stakedTokens),
     });
   }
 
@@ -87,10 +91,11 @@ export function useGivenManaState(
     });
   }
 
-  function handleOwnStakeChange(value: number) {
+  function handleOwnStakeChange(stakedTokens: number) {
     setState({
       ...state,
-      [getStakedOrDelegated(state.userType)]: value,
+      [getStakedOrDelegated(state.userType)]: stakedTokens,
+      ...getDerivedRoleValues(state, stakedTokens),
     });
   }
 
@@ -149,19 +154,12 @@ export function useGivenManaState(
     });
   }
 
-  function handleUserChange(value: UserType) {
+  function handleUserChange(newUserType: UserType) {
     setState({
       ...state,
-      userType: value,
-      [getStakedOrDelegated(value)]: state.heldTokens,
-      ...(value === UserType.VALIDATOR
-        ? {
-            validator: {
-              ...state.validator,
-              attractedNewDelegatedStake: state.heldTokens,
-            },
-          }
-        : {}),
+      userType: newUserType,
+      [getStakedOrDelegated(newUserType)]: state.heldTokens,
+      ...getDerivedRoleValues(state, state.heldTokens, newUserType),
     });
   }
 
@@ -173,25 +171,9 @@ export function useGivenManaState(
   function handleOwnHoldChange(value: number) {
     setState({
       ...state,
-      ...getDerivedValuesFromHeldTokens(value),
+      heldTokens: value,
+      [getStakedOrDelegated(state.userType)]: value,
     });
-  }
-
-  function getDerivedValuesFromHeldTokens(
-    heldTokens: number,
-  ): Partial<ManaCalculatorProps> {
-    return {
-      heldTokens,
-      [getStakedOrDelegated(state.userType)]: heldTokens,
-      ...(state.userType === UserType.VALIDATOR
-        ? {
-            validator: {
-              ...state.validator,
-              attractedNewDelegatedStake: heldTokens,
-            },
-          }
-        : {}),
-    };
   }
 
   const congestionAmount = getNetworkCongestion(
@@ -269,6 +251,24 @@ export function getDefaultParameters(
     },
     network,
   } as ManaCalculatorProps;
+}
+
+function getDerivedRoleValues(
+  state: ManaCalculatorProps,
+  stakedTokens: number,
+  userType: UserType = state.userType,
+) {
+  return userType === UserType.VALIDATOR
+    ? {
+        validator: {
+          ...state.validator,
+          attractedNewDelegatedStake:
+            (stakedTokens *
+              state.validators.reduce((a, b) => a + b.delegatedStake, 0)) /
+            state.validators.reduce((a, b) => a + b.lockedStake, 0),
+        },
+      }
+    : {};
 }
 
 export function getValidators(network: NetworkType): ValidatorProps[] {
