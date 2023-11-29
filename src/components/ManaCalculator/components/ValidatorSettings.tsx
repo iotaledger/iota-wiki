@@ -11,8 +11,13 @@ export function ValidatorSettings() {
     handleOwnFCChange,
     handleOwnStakeChange,
     handleAttractedNewDelegatedStakeChange,
-    maxTotalSupply,
+    maxAvailableSupply,
   } = useManaState();
+
+  const maxAttractedNewDelegatedStake =
+    fromMicro(maxAvailableSupply) +
+    fromMicro(state.validator.attractedNewDelegatedStake);
+
   return (
     <Details
       summary='Validator Settings'
@@ -52,7 +57,7 @@ export function ValidatorSettings() {
       <ManaCalculatorInput
         className='mana_calculator__compact input--vertical-spaced'
         min={0}
-        max={maxTotalSupply}
+        max={maxAttractedNewDelegatedStake}
         value={roundMax(
           fromMicro(state.validator.attractedNewDelegatedStake),
           0,

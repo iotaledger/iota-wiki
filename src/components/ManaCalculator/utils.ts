@@ -89,3 +89,24 @@ export function getStakedOrDelegated(userType: UserType) {
 export const roundMax = function (num: number, places: number) {
   return +(Math.round(Number(num + 'e+' + places)) + 'e-' + places);
 };
+
+
+export function getValidInputValue(
+  num: string,
+  transformNumber?: (number: number) => number,
+): number {
+  let value = Number(Number(num).toString());
+
+  if (transformNumber) {
+    value = transformNumber(value);
+  }
+
+  const isInvalid = isNaN(value);
+
+  if (isInvalid) {
+    throw new Error('Invalid number');
+  }
+
+  return value;
+}
+

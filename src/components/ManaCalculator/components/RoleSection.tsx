@@ -8,8 +8,12 @@ import { DelegatorSettings } from './DelegatorSettings';
 import { ManaCalculatorInput } from '.';
 
 export function RoleSection() {
-  const { state, handleUserChange, handleOwnHoldChange, maxTotalSupply } =
-    useManaState();
+  const {
+    state,
+    handleUserChange,
+    handleOwnHoldChange,
+    maxAvailableOwnedAmount,
+  } = useManaState();
   return (
     <div className='mana_calculator__card'>
       <h4>Role configuration</h4>
@@ -31,7 +35,7 @@ export function RoleSection() {
       <label className='inlined-label'>Owned amount ({state.network})</label>
       <ManaCalculatorInput
         min={0}
-        max={maxTotalSupply}
+        max={fromMicro(maxAvailableOwnedAmount)}
         className='mana_calculator__compact inlined'
         value={fromMicro(state.heldTokens)}
         onChange={handleOwnHoldChange}

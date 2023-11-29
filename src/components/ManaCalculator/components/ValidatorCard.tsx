@@ -17,8 +17,14 @@ export function ValidatorCard({
     handleDelegatedStakeChange,
     handlePFChange,
     handleFCChange,
-    maxTotalSupply,
+    maxAvailableSupply,
   } = useManaState();
+
+  const maxValidatorLockedStake =
+    fromMicro(maxAvailableSupply) + fromMicro(validator.lockedStake);
+
+  const maxValidatorDelegatedStake =
+    fromMicro(maxAvailableSupply) + fromMicro(validator.delegatedStake);
 
   return (
     <>
@@ -27,7 +33,7 @@ export function ValidatorCard({
         <ManaCalculatorInput
           className='w-full'
           min={0}
-          max={maxTotalSupply}
+          max={maxValidatorLockedStake}
           value={fromMicro(validator.lockedStake)}
           onChange={(value: string) => handleStakeChange(value, id)}
         />
@@ -36,7 +42,7 @@ export function ValidatorCard({
         <ManaCalculatorInput
           className='w-full'
           min={0}
-          max={maxTotalSupply}
+          max={maxValidatorDelegatedStake}
           value={fromMicro(validator.delegatedStake)}
           onChange={(value: string) => handleDelegatedStakeChange(value, id)}
         />

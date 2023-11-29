@@ -12,10 +12,12 @@ import {
 import { CongestionType, NetworkType, UserType } from '../enums';
 import { ManaCalculatorProps, ManaState, ValidatorProps } from '../types';
 import {
+  fromMicro,
   getNetworkCongestion,
   getNetworkGenerationPerSlot,
   getNetworkSupply,
   getStakedOrDelegated,
+  getValidInputValue,
   toMicro,
 } from '../utils';
 
@@ -187,11 +189,27 @@ export function useGivenManaState(
   const generationPerSlot = getNetworkGenerationPerSlot(state.network);
   const stakedOrDelegatedTokens = state[getStakedOrDelegated(state.userType)];
 
-  const userOwned = state.heldTokens + stakedOrDelegatedTokens;
-  const maxTotalSupply =
-    userOwned +
-    state.validators.reduce((a, b) => a + b.lockedStake, 0) +
-    state.validators.reduce((a, b) => a + b.delegatedStake, 0);
+  const networkSupply = getNetworkSupply(state.network);
+
+  const userOwnedTokens = state.heldTokens;
+
+  const totalValidatorsLockedStake = state.validators.reduce(
+    (a, b) => a + b.lockedStake,
+    0,
+  );
+  const totalValidatorsDelegatedStake = state.validators.reduce(
+    (a, b) => a + b.delegatedStake,
+    0,
+  );
+
+  const totalValidatorsStake =
+    totalValidatorsLockedStake + totalValidatorsDelegatedStake;
+
+  const totalStake = userOwnedTokens + totalValidatorsStake;
+
+  const maxAvailableOwnedAmount = networkSupply - totalValidatorsStake;
+
+  const maxAvailableSupply = Math.max(networkSupply - totalStake, 0);
 
   return {
     state: {
@@ -200,7 +218,8 @@ export function useGivenManaState(
       generationPerSlot,
       stakedOrDelegatedTokens,
     } as ManaState,
-    maxTotalSupply,
+    maxAvailableOwnedAmount,
+    maxAvailableSupply,
     handleDelete,
     handleStakeChange,
     handleAddValidator,
@@ -219,29 +238,6 @@ export function useGivenManaState(
     handleValidatorChange,
     handleOwnHoldChange,
   };
-}
-
-function getValidInputValue(
-  num: string,
-  transformNumber?: (number) => number,
-): number {
-  let value = inputValuetoNumber(num);
-
-  if (transformNumber) {
-    value = transformNumber(value);
-  }
-
-  const isInvalid = isNaN(value);
-
-  if (isInvalid) {
-    throw new Error('Invalid number');
-  }
-
-  return value;
-}
-
-function inputValuetoNumber(value: string) {
-  return Number(Number(value).toString());
 }
 
 export function getDefaultParameters(
