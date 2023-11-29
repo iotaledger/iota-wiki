@@ -12,7 +12,6 @@ import {
 import { CongestionType, NetworkType, UserType } from '../enums';
 import { ManaCalculatorProps, ManaState, ValidatorProps } from '../types';
 import {
-  fromMicro,
   getNetworkCongestion,
   getNetworkGenerationPerSlot,
   getNetworkSupply,
