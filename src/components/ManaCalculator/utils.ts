@@ -90,7 +90,6 @@ export const roundMax = function (num: number, places: number) {
   return +(Math.round(Number(num + 'e+' + places)) + 'e-' + places);
 };
 
-
 export function getValidInputValue(
   num: string,
   transformNumber?: (number: number) => number,
@@ -109,4 +108,3 @@ export function getValidInputValue(
 
   return value;
 }
-
