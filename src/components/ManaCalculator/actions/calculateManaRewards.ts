@@ -32,16 +32,20 @@ export function calculateManaRewards(
     totalTargetReward = targetReward(initialEpoch, supply, generationPerSlot);
   }
 
-  const lockedStake: number[] = validators.map(
+  const filteredValidators = validators.filter(
+    (validator) => !validator.excluded,
+  );
+
+  const lockedStake: number[] = filteredValidators.map(
     (validator) => validator.lockedStake,
   );
-  const fixedCosts: number[] = validators.map(
+  const fixedCosts: number[] = filteredValidators.map(
     (validator) => validator.fixedCost,
   );
-  const performance: number[] = validators.map(
+  const performance: number[] = filteredValidators.map(
     (validator) => validator.performanceFactor,
   );
-  const delegatedStake: number[] = validators.map(
+  const delegatedStake: number[] = filteredValidators.map(
     (validator) => validator.delegatedStake,
   );
 
@@ -55,7 +59,7 @@ export function calculateManaRewards(
         validatorParameters.attractedDelegatedStakeFromOtherPools *
           delegatedStake.reduce((a, b) => a + b, 0),
     );
-    for (let i = 0; i < validators.length; i++) {
+    for (let i = 0; i < filteredValidators.length; i++) {
       delegatedStake[i] *=
         1 - validatorParameters.attractedDelegatedStakeFromOtherPools;
     }

@@ -150,9 +150,16 @@ export function useGivenManaState(
   }
 
   function handleUserChange(value: UserType) {
+    const validators = [...state.validators];
+    if (value === UserType.VALIDATOR) {
+      validators[0].excluded = true;
+    } else {
+      validators[0].excluded = false;
+    }
     setState({
       ...state,
       userType: value,
+      validators,
     });
   }
 
