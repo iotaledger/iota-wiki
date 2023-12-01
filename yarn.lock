@@ -2767,7 +2767,7 @@ __metadata:
     "@types/copyfiles": ^2
     "@types/node": ^16.18.60
     "@types/prettier": ^2
-    "@yarnpkg/shell": ^3.2.0
+    "@yarnpkg/shell": ^3.3.0
     axios: ^1.6.0
     clipanion: ^3.2.0-rc.10
     copyfiles: ^2.4.1
@@ -5656,7 +5656,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@yarnpkg/fslib@npm:^2.9.0":
+"@yarnpkg/fslib@npm:^2.10.3":
   version: 2.10.3
   resolution: "@yarnpkg/fslib@npm:2.10.3"
   dependencies:
@@ -5676,32 +5676,31 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@yarnpkg/parsers@npm:^2.5.1":
-  version: 2.5.1
-  resolution: "@yarnpkg/parsers@npm:2.5.1"
+"@yarnpkg/parsers@npm:^2.6.0":
+  version: 2.6.0
+  resolution: "@yarnpkg/parsers@npm:2.6.0"
   dependencies:
     js-yaml: ^3.10.0
     tslib: ^1.13.0
-  checksum: 42f98b8bd635add304ce392c6f600b46e40c2c4429d7b6c38b70f50b5fd6a854dd2369e0987b70546a3c8f690d280f040a885b35acfde891f5e173fc3f974277
+  checksum: 4bad9f077c338b702342964544d426762323d9f70af3242373194eb2f3982cfd551b860d615fbdd2715aba1cefdb793f4e2f3a8c69ddffe7989682cd03102ede
   languageName: node
   linkType: hard
 
-"@yarnpkg/shell@npm:^3.2.0":
-  version: 3.2.5
-  resolution: "@yarnpkg/shell@npm:3.2.5"
+"@yarnpkg/shell@npm:^3.3.0":
+  version: 3.3.0
+  resolution: "@yarnpkg/shell@npm:3.3.0"
   dependencies:
-    "@yarnpkg/fslib": ^2.9.0
-    "@yarnpkg/parsers": ^2.5.1
+    "@yarnpkg/fslib": ^2.10.3
+    "@yarnpkg/parsers": ^2.6.0
     chalk: ^3.0.0
     clipanion: 3.2.0-rc.4
     cross-spawn: 7.0.3
     fast-glob: ^3.2.2
     micromatch: ^4.0.2
-    stream-buffers: ^3.0.2
     tslib: ^1.13.0
   bin:
     shell: ./lib/cli.js
-  checksum: 89fe80fec6ccd5a1a713ea11285bce17fe1f3cc42507b4e63565818c4afb41e588d368cf7c198fe2b3eeb900cae87233c2d52c27da288a57f82f85a07cf9b221
+  checksum: 02a0ab902560f80486d52a46da57e8c5ea391c6ff9173bda24e449c4169925b46b8cb7c2ca7d14cdc0c61fcd1731139bdf8295b7d7c41d997bdb6fea614c2ba3
   languageName: node
   linkType: hard
 
@@ -17232,13 +17231,6 @@ plugin-image-zoom@flexanalytics/plugin-image-zoom:
     inherits: ~2.0.4
     readable-stream: ^3.5.0
   checksum: 4c47ef64d6f03815a9ca3874e2319805e8e8a85f3550776c47ce523b6f4c6cd57f40e46ec6a9ab8ad260fde61863c2718f250d3bedb3fe9052444eb9abfd9921
-  languageName: node
-  linkType: hard
-
-"stream-buffers@npm:^3.0.2":
-  version: 3.0.2
-  resolution: "stream-buffers@npm:3.0.2"
-  checksum: b09fdeea606e3113ebd0e07010ed0cf038608fa396130add9e45deaff5cc3ba845dc25c31ad24f8341f85907846344cb7c85f75ea52c6572e2ac646e9b6072d0
   languageName: node
   linkType: hard
 
