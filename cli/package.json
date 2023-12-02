@@ -45,7 +45,7 @@
   "devDependencies": {
     "@types/babel__generator": "^7",
     "@types/copyfiles": "^2",
-    "@types/node": "^16.18.60",
+    "@types/node": "^16.18.66",
     "@types/prettier": "^2",
     "copyfiles": "^2.4.1",
     "nodemon": "^2.0.16",
