@@ -13,19 +13,22 @@ jobs:
       - name: Check out repository code
         uses: actions/checkout@v4
 
-      - name: Use Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: current
-
-      - name: Install dependencies
-        run: yarn install --frozen-lockfile
+      - name: Prepare Yarn
+        uses: ./.github/actions/prepare/
+      - name: Prepare build
+        run: yarn prepare
+        shell: bash
+      - name: Checkout remote
+        run: yarn checkout:remote
+      - name: Generate API
+        run: yarn generate:api
+        shell: bash
 
       - name: Install Playwright browsers
         run: yarn playwright install --with-deps chromium
 
       - name: Build the website
-        run: yarn docusaurus build
+        run: yarn build
 
       - name: Take screenshots with Playwright
         run: yarn playwright test
