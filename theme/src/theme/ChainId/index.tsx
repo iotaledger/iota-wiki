@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react';
 import { Web3 } from 'web3';
 
-interface GetChainIdProps {
+interface ChainIdProps {
   url: string;
 }
 
-export function GetChainId(props: GetChainIdProps) {
+export function ChainId(props: ChainIdProps) {
   const [value, setValue] = useState<string | null>(null);
 
   useEffect(() => {
