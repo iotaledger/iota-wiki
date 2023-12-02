@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Web3 } from 'web3';
 
 interface GetChainIdProps {
@@ -6,21 +6,15 @@ interface GetChainIdProps {
 }
 
 export function GetChainId(props: GetChainIdProps) {
-  const [chainId, setChainId] = useState<bigint | null>(null);
-  const [error, setError] = useState<Error | null>(null);
-
-  console.log(props.url);
+  const [value, setValue] = useState<string | null>(null);
 
   useEffect(() => {
     const web3 = new Web3(props.url);
-    web3.eth.getChainId().then(setChainId).catch(setError);
+    web3.eth
+      .getChainId()
+      .then((chainId) => setValue(chainId.toString()))
+      .catch((error) => setValue(`Error: ${error.message}`));
   }, []);
 
-  console.log(chainId);
-  return (
-    <>
-      {chainId !== null && <span>{chainId.toString()}</span>}
-      {error !== null && <span>Error: {error.message}</span>}
-    </>
-  );
+  return value;
 }
