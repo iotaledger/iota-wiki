@@ -25,7 +25,7 @@
     "@babel/parser": "^7.23.0",
     "@babel/types": "^7.21.5",
     "@iota-wiki/core": "workspace:^",
-    "@yarnpkg/shell": "^3.2.0",
+    "@yarnpkg/shell": "^3.3.0",
     "axios": "^1.6.0",
     "clipanion": "^3.2.0-rc.10",
     "ink": "^3.2.0",
