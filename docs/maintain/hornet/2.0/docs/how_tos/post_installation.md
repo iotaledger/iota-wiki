@@ -72,7 +72,7 @@ When using our [recommended setup](using_docker.md) this is done for you automat
 
 You can find all the HTTP REST API related options in the [`config.json` reference](../references/configuration.md#restapi)
 
-## Update
+## Update to 2.x.x
 
 You can update HORNET to the latest stable version with no breaking updates by running the following command:
 
