@@ -71,3 +71,10 @@ When using our [recommended setup](using_docker.md) this is done for you automat
 ### Other
 
 You can find all the HTTP REST API related options in the [`config.json` reference](../references/configuration.md#restapi)
+
+## Update
+
+To update to none breaking updates, you can use the following command:
+```sh
+docker compose down && docker compose pull && docker compose up -d
+```
