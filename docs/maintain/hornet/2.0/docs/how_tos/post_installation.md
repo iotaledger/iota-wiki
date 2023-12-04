@@ -74,7 +74,8 @@ You can find all the HTTP REST API related options in the [`config.json` referen
 
 ## Update
 
-To update to none breaking updates, you can use the following command:
+You can update HORNET to the latest stable version with no breaking updates by running the following command:
+
 ```sh
 docker compose down && docker compose pull && docker compose up -d
 ```
