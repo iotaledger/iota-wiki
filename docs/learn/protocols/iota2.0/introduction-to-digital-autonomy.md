@@ -8,7 +8,7 @@ To understand how IOTA 2.0 works, one must first understand the vision conceived
 
 :::tip
 
-For more background, three peer-reviewed research papers underpin the theoretical foundation of IOTA 2.0. The Ledger Paper introduces an innovative transaction approach rooted in real-world data, the Networking Paper introduces ‘pre-consensus’ through the IOTA Congestion Control Algorithm (ICCA) to enhance _throughput_ and manage congestion efficiently, and the Consensus Paper guarantees well-informed decision-making by employing the ‘heaviest DAG’ method. Find out more about these papers [in this blog post](htttps://blog.iota.org/solid-foundation-iota20).
+For more background, three peer-reviewed research papers underpin the theoretical foundation of IOTA 2.0. The Ledger Paper introduces an innovative transaction approach rooted in real-world data, the Networking Paper introduces ‘pre-consensus’ through the IOTA Congestion Control Algorithm (ICCA) to enhance _throughput_ and manage congestion efficiently, and the Consensus Paper guarantees well-informed decision-making by employing the ‘heaviest DAG’ method. Find out more about these papers [in this blog post](https://blog.iota.org/solid-foundation-iota20/).
 
 :::
 
