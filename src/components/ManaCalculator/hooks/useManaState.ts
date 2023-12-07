@@ -201,42 +201,40 @@ export function useGivenManaState(
     0,
   );
 
-  const totalValidatorsStake =
-    totalValidatorsLockedStake + totalValidatorsDelegatedStake;
+const maxAvailableSupply = Math.max(
+  networkSupply -
+    totalValidatorsLockedStake -
+    totalValidatorsDelegatedStake -
+    userOwnedTokens,
+  0,
+);
 
-  const totalStake = userOwnedTokens + totalValidatorsStake;
-
-  const maxAvailableOwnedAmount = networkSupply - totalValidatorsStake;
-
-  const maxAvailableSupply = Math.max(networkSupply - totalStake, 0);
-
-  return {
-    state: {
-      ...state,
-      congestionAmount,
-      generationPerSlot,
-      stakedOrDelegatedTokens,
-    } as ManaState,
-    maxAvailableOwnedAmount,
-    maxAvailableSupply,
-    handleDelete,
-    handleStakeChange,
-    handleAddValidator,
-    handleAttractedNewDelegatedStakeChange,
-    handleCongestionChange,
-    handleDelegatedStakeChange,
-    handleFCChange,
-    handleInitialEpochChange,
-    handleNetworkChange,
-    handleFinalEpochChange,
-    handleOwnFCChange,
-    handleOwnPFChange,
-    handleUserChange,
-    handleOwnStakeChange,
-    handlePFChange,
-    handleValidatorChange,
-    handleOwnHoldChange,
-  };
+return {
+  state: {
+    ...state,
+    congestionAmount,
+    generationPerSlot,
+    stakedOrDelegatedTokens,
+  } as ManaState,
+  maxAvailableSupply,
+  handleDelete,
+  handleStakeChange,
+  handleAddValidator,
+  handleAttractedNewDelegatedStakeChange,
+  handleCongestionChange,
+  handleDelegatedStakeChange,
+  handleFCChange,
+  handleInitialEpochChange,
+  handleNetworkChange,
+  handleFinalEpochChange,
+  handleOwnFCChange,
+  handleOwnPFChange,
+  handleUserChange,
+  handleOwnStakeChange,
+  handlePFChange,
+  handleValidatorChange,
+  handleOwnHoldChange,
+};
 }
 
 export function getDefaultParameters(

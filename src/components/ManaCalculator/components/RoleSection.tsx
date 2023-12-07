@@ -8,12 +8,9 @@ import { DelegatorSettings } from './DelegatorSettings';
 import { ValidatedInput } from '../../ValidatedInput/ValidatedInput';
 
 export function RoleSection() {
-  const {
-    state,
-    handleUserChange,
-    handleOwnHoldChange,
-    maxAvailableOwnedAmount,
-  } = useManaState();
+  const { state, handleUserChange, handleOwnHoldChange, maxAvailableSupply } =
+    useManaState();
+
   return (
     <div className='mana_calculator__card'>
       <h4>Role configuration</h4>
@@ -35,7 +32,7 @@ export function RoleSection() {
       <label className='inlined-label'>Owned amount ({state.network})</label>
       <ValidatedInput
         min={0}
-        max={fromMicro(maxAvailableOwnedAmount)}
+        max={fromMicro(maxAvailableSupply + state.heldTokens)}
         className='mana_calculator__compact inlined'
         value={fromMicro(state.heldTokens)}
         onChange={handleOwnHoldChange}
