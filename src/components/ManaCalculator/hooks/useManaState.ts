@@ -169,11 +169,13 @@ export function useGivenManaState(
   }
 
   function handleOwnHoldChange(value: number) {
-    setState({
+    const newState = {
       ...state,
       heldTokens: value,
       [getStakedOrDelegated(state.userType)]: value,
-    });
+    };
+
+    setState({ ...newState, ...getDerivedRoleValues(newState, value) });
   }
 
   const congestionAmount = getNetworkCongestion(
