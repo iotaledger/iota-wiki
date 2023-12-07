@@ -2,7 +2,7 @@ import React from 'react';
 import { Details } from '@docusaurus/theme-common/Details';
 import { useManaState } from '../hooks';
 import { fromMicro, roundMax } from '../utils';
-import { ManaCalculatorInput } from '.';
+import { ValidatedInput } from '../../ValidatedInput/ValidatedInput';
 
 export function ValidatorSettings() {
   const {
@@ -30,7 +30,7 @@ export function ValidatorSettings() {
       <label className='inlined-long-label'>
         Staked amount ({state.network})
       </label>
-      <ManaCalculatorInput
+      <ValidatedInput
         className='mana_calculator__compact inlined'
         min={0}
         max={fromMicro(state.heldTokens)}
@@ -39,7 +39,7 @@ export function ValidatorSettings() {
       />
       <br />
       <label className='inlined-long-label'>Performance factor</label>
-      <ManaCalculatorInput
+      <ValidatedInput
         className='mana_calculator__compact input--vertical-spaced'
         min={0}
         max={1}
@@ -48,7 +48,7 @@ export function ValidatorSettings() {
       />
       <br />
       <label className='inlined-long-label'>Fixed costs</label>
-      <ManaCalculatorInput
+      <ValidatedInput
         className='mana_calculator__compact input--vertical-spaced'
         min={0}
         max={Number.MAX_SAFE_INTEGER}
@@ -58,13 +58,13 @@ export function ValidatorSettings() {
       <label className='inlined-long-label'>
         Attracted new delegated stake ({state.network})
       </label>
-      <ManaCalculatorInput
+      <ValidatedInput
         className='mana_calculator__compact input--vertical-spaced'
         min={0}
         max={maxAttractedNewDelegatedStake}
         value={attractedNewDelegatedStake}
         onChange={handleAttractedNewDelegatedStakeChange}
-      ></ManaCalculatorInput>
+      ></ValidatedInput>
     </Details>
   );
 }

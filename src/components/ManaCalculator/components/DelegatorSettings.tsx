@@ -3,7 +3,7 @@ import { Details } from '@docusaurus/theme-common/Details';
 import { useManaState } from '../hooks';
 import { fromMicro } from '../utils';
 import Select from 'react-select';
-import { ManaCalculatorInput } from '.';
+import { ValidatedInput } from '../../ValidatedInput/ValidatedInput';
 
 export function DelegatorSettings() {
   const { state, handleOwnStakeChange, handleValidatorChange } = useManaState();
@@ -31,7 +31,7 @@ export function DelegatorSettings() {
       <label className='inlined-label'>
         Delegated amount ({state.network})
       </label>
-      <ManaCalculatorInput
+      <ValidatedInput
         className='mana_calculator__compact inlined'
         value={fromMicro(state.stakedOrDelegatedTokens)}
         min={0}

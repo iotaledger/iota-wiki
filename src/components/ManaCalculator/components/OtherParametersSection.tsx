@@ -4,7 +4,7 @@ import Select from 'react-select';
 import { UserType } from '../enums';
 import { CongestionType } from '../enums';
 import { AdvancedSettingsValidator } from './AdvancedSettingsValidator';
-import { ManaCalculatorInput } from '.';
+import { ValidatedInput } from '../../ValidatedInput/ValidatedInput';
 
 export function OtherParametersSection() {
   const {
@@ -35,7 +35,7 @@ export function OtherParametersSection() {
       />
       <br />
       <label className='inlined-label'>Initial epoch</label>
-      <ManaCalculatorInput
+      <ValidatedInput
         className='mana_calculator__compact inlined'
         min={1}
         max={state.finalEpoch}
@@ -44,7 +44,7 @@ export function OtherParametersSection() {
       />
       <br />
       <label className='inlined-label'>Final epoch</label>
-      <ManaCalculatorInput
+      <ValidatedInput
         className='mana_calculator__compact inlined'
         min={state.initialEpoch}
         max={Number.MAX_SAFE_INTEGER}

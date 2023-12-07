@@ -1,6 +1,6 @@
 import React, { JSX, useEffect, useState } from 'react';
 
-interface IManaCalculatorCustomInput {
+interface IValidatedInput {
   value: string | number;
   onChange: (value: string) => void;
   className?: string;
@@ -8,13 +8,13 @@ interface IManaCalculatorCustomInput {
   max?: number;
 }
 
-export function ManaCalculatorInput({
+export function ValidatedInput({
   value,
   onChange,
   className,
   min,
   max,
-}: IManaCalculatorCustomInput): JSX.Element {
+}: IValidatedInput): JSX.Element {
   const [errorMessage, setErrorMessage] = useState<string>('');
   const [inputValue, setInputValue] = useState<string | number>(value);
 
@@ -62,9 +62,7 @@ export function ManaCalculatorInput({
 
   return (
     <div
-      className={`mana_calculator__custom_wrapper ${
-        errorMessage ? 'errored' : ''
-      }`}
+      className={`validated_input__wrapper ${errorMessage ? 'errored' : ''}`}
     >
       <input
         className={className}
@@ -73,7 +71,7 @@ export function ManaCalculatorInput({
         value={inputValue}
         onChange={handleInputChange}
       />
-      {errorMessage && <p className='mana_calculator__error'>{errorMessage}</p>}
+      {errorMessage && <p className='validated_input__error'>{errorMessage}</p>}
     </div>
   );
 }

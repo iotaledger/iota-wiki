@@ -5,7 +5,7 @@ import { UserType } from '../enums';
 import { fromMicro } from '../utils';
 import { ValidatorSettings } from './ValidatorSettings';
 import { DelegatorSettings } from './DelegatorSettings';
-import { ManaCalculatorInput } from '.';
+import { ValidatedInput } from '../../ValidatedInput/ValidatedInput';
 
 export function RoleSection() {
   const {
@@ -33,7 +33,7 @@ export function RoleSection() {
       />
       <br />
       <label className='inlined-label'>Owned amount ({state.network})</label>
-      <ManaCalculatorInput
+      <ValidatedInput
         min={0}
         max={fromMicro(maxAvailableOwnedAmount)}
         className='mana_calculator__compact inlined'

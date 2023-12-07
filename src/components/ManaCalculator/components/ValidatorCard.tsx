@@ -2,7 +2,7 @@ import React from 'react';
 import { useManaState } from '../hooks';
 import { ValidatorProps } from '../types';
 import { fromMicro } from '../utils';
-import { ManaCalculatorInput } from '.';
+import { ValidatedInput } from '../../ValidatedInput/ValidatedInput';
 
 export function ValidatorCard({
   validator,
@@ -30,7 +30,7 @@ export function ValidatorCard({
     <>
       <div className='col col--2'>Validator {id + 1}</div>
       <div className='validator_card col col--2 align-right horizontal-spaced'>
-        <ManaCalculatorInput
+        <ValidatedInput
           className='w-full'
           min={0}
           max={maxValidatorLockedStake}
@@ -39,7 +39,7 @@ export function ValidatorCard({
         />
       </div>
       <div className='validator_card col col--2 align-right horizontal-spaced'>
-        <ManaCalculatorInput
+        <ValidatedInput
           className='w-full'
           min={0}
           max={maxValidatorDelegatedStake}
@@ -48,7 +48,7 @@ export function ValidatorCard({
         />
       </div>
       <div className='validator_card col col--2 align-right horizontal-spaced'>
-        <ManaCalculatorInput
+        <ValidatedInput
           className='w-full'
           min={0}
           max={1}
@@ -57,7 +57,7 @@ export function ValidatorCard({
         />
       </div>
       <div className='validator_card col col--2 align-right horizontal-spaced'>
-        <ManaCalculatorInput
+        <ValidatedInput
           className='w-full'
           min={0}
           max={Number.MAX_SAFE_INTEGER}
