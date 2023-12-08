@@ -105,7 +105,7 @@ export function useGivenManaState(
     const newState: ManaCalculatorProps = {
       ...state,
       [getStakedOrDelegated(state.userType)]: stakedTokens,
-    }
+    };
 
     setState({
       ...newState,
@@ -199,7 +199,7 @@ export function useGivenManaState(
     newState = {
       ...newState,
       ...getDerivedRoleValues(newState, heldTokens),
-    }
+    };
 
     setState(newState);
   }
