@@ -25,7 +25,7 @@
     "@babel/parser": "^7.23.0",
     "@babel/types": "^7.21.5",
     "@iota-wiki/core": "workspace:^",
-    "@yarnpkg/shell": "^3.2.0",
+    "@yarnpkg/shell": "^3.3.0",
     "axios": "^1.6.0",
     "clipanion": "^3.2.0-rc.10",
     "ink": "^3.2.0",
@@ -45,12 +45,12 @@
   "devDependencies": {
     "@types/babel__generator": "^7",
     "@types/copyfiles": "^2",
-    "@types/node": "^16.18.60",
+    "@types/node": "^16.18.66",
     "@types/prettier": "^2",
     "copyfiles": "^2.4.1",
     "nodemon": "^2.0.16",
     "raw-loader": "^4.0.2",
-    "tsc-alias": "^1.8.6",
+    "tsc-alias": "^1.8.8",
     "typescript-plugin-css-modules": "^4.1.1"
   },
   "peerDependencies": {
