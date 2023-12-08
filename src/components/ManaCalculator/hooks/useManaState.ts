@@ -155,11 +155,24 @@ export function useGivenManaState(
   }
 
   function handleUserChange(newUserType: UserType) {
-    setState({
+    const validators = [...state.validators];
+
+    if (newUserType === UserType.VALIDATOR) {
+      validators[0].excluded = true;
+    } else {
+      validators[0].excluded = false;
+    }
+
+    const newState = {
       ...state,
       userType: newUserType,
+      validators,
       [getStakedOrDelegated(newUserType)]: state.heldTokens,
-      ...getDerivedRoleValues(state, state.heldTokens, newUserType),
+    };
+
+    setState({
+      ...newState,
+      ...getDerivedRoleValues(newState, newState.heldTokens, newUserType),
     });
   }
 
