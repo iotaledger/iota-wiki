@@ -2,12 +2,15 @@ import React from 'react';
 import { useManaState } from '../hooks';
 import Select from 'react-select';
 import { UserType } from '../enums';
-import { fromMicro, toMicro } from '../utils';
+import { fromMicro } from '../utils';
 import { ValidatorSettings } from './ValidatorSettings';
 import { DelegatorSettings } from './DelegatorSettings';
+import { ValidatedInput } from '../../ValidatedInput/ValidatedInput';
 
 export function RoleSection() {
-  const { state, handleUserChange, handleOwnHoldChange } = useManaState();
+  const { state, handleUserChange, handleOwnHoldChange, maxAvailableSupply } =
+    useManaState();
+
   return (
     <div className='mana_calculator__card'>
       <h4>Role configuration</h4>
@@ -27,11 +30,13 @@ export function RoleSection() {
       />
       <br />
       <label className='inlined-label'>Owned amount ({state.network})</label>
-      <input
+      <ValidatedInput
+        min={0}
+        max={fromMicro(maxAvailableSupply + state.heldTokens)}
         className='mana_calculator__compact inlined'
         value={fromMicro(state.heldTokens)}
-        onChange={(e) => handleOwnHoldChange(toMicro(Number(e.target.value)))}
-      ></input>
+        onChange={handleOwnHoldChange}
+      />
       <br />
       {state.userType === UserType.VALIDATOR ? (
         <ValidatorSettings />
