@@ -70,6 +70,7 @@ module.exports = {
       },
       items: [
         'wallets/firefly',
+        'wallets/bloom',
         {
           type: 'link',
           label: 'TanglePay',

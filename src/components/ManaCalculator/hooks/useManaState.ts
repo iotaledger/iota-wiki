@@ -42,7 +42,8 @@ export function useGivenManaState(
 
   function handleStakeChange(value: string, id: number) {
     const stakedTokens = getValidInputValue(value, toMicro);
-    setState({
+
+    const newStateWithValidators = {
       ...state,
       validators: state.validators.map((validator, i) => {
         return {
@@ -50,6 +51,11 @@ export function useGivenManaState(
           lockedStake: i === id ? stakedTokens : validator.lockedStake,
         };
       }),
+    };
+
+    setState({
+      ...newStateWithValidators,
+      ...getDerivedRoleValues(newStateWithValidators, stakedTokens),
     });
   }
 
@@ -95,9 +101,15 @@ export function useGivenManaState(
 
   function handleOwnStakeChange(value: string) {
     const stakedTokens = getValidInputValue(value, toMicro);
-    setState({
+
+    const newState: ManaCalculatorProps = {
       ...state,
       [getStakedOrDelegated(state.userType)]: stakedTokens,
+    }
+
+    setState({
+      ...newState,
+      ...getDerivedRoleValues(newState, stakedTokens),
     });
   }
 
@@ -132,7 +144,7 @@ export function useGivenManaState(
   }
 
   function handleAttractedNewDelegatedStakeChange(value: string) {
-    const attractedNewDelegatedStake = getValidInputValue(value);
+    const attractedNewDelegatedStake = getValidInputValue(value, toMicro);
     setState({
       ...state,
       validator: { ...state.validator, attractedNewDelegatedStake },
@@ -161,10 +173,12 @@ export function useGivenManaState(
     });
   }
 
-  function handleUserChange(value: UserType) {
+  function handleUserChange(newUserType: UserType) {
     setState({
       ...state,
-      userType: value,
+      userType: newUserType,
+      [getStakedOrDelegated(newUserType)]: state.heldTokens,
+      ...getDerivedRoleValues(state, state.heldTokens, newUserType),
     });
   }
 
@@ -175,10 +189,19 @@ export function useGivenManaState(
 
   function handleOwnHoldChange(value: string) {
     const heldTokens = getValidInputValue(value, toMicro);
-    setState({
+
+    let newState = {
       ...state,
       heldTokens,
-    });
+      [getStakedOrDelegated(state.userType)]: heldTokens,
+    };
+
+    newState = {
+      ...newState,
+      ...getDerivedRoleValues(newState, heldTokens),
+    }
+
+    setState(newState);
   }
 
   const congestionAmount = getNetworkCongestion(
@@ -278,6 +301,24 @@ export function getDefaultParameters(
     },
     network,
   } as ManaCalculatorProps;
+}
+
+function getDerivedRoleValues(
+  state: ManaCalculatorProps,
+  stakedTokens: number,
+  userType: UserType = state.userType,
+) {
+  return userType === UserType.VALIDATOR
+    ? {
+        validator: {
+          ...state.validator,
+          attractedNewDelegatedStake:
+            (stakedTokens *
+              state.validators.reduce((a, b) => a + b.delegatedStake, 0)) /
+            state.validators.reduce((a, b) => a + b.lockedStake, 0),
+        },
+      }
+    : {};
 }
 
 export function getValidators(network: NetworkType): ValidatorProps[] {

@@ -27,6 +27,10 @@ export function ValidatedInput({
     }
   }, [min, max]);
 
+  useEffect(() => {
+    setInputValue(value);
+  }, [value]);
+
   function verifyMinAndMax(value: string | number) {
     let message = '';
 
