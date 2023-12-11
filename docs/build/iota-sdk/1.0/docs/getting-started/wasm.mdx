@@ -147,49 +147,13 @@ A bundler such as [webpack](https://webpack.js.org/) or [rollup](https://rollupj
 
 After you [installed the library](#install-the-iota-sdk), you can create a `Client` instance and interface with it.
 
-```typescript reference
-https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/client/getting-started.ts#L4-L23
-```
+https://github.com/iotaledger/iota-sdk/tree/develop/bindings/wasm#client-usage
 
 ### Wallet
 
 After you [installed the library](#installing-the-iota-sdk), you can create a `Wallet` instance and interact with it.
 
-```typescript reference
-https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/wallet/getting-started.ts#L4-L60
-```
-
-### Web Usage
-
-```javascript
-import init, {Wallet, CoinType} from "@iota/sdk-wasm/web";
-
-init().then(() => {
-    const wallet = new Wallet({
-        storagePath: './my-database',
-        coinType: CoinType.Shimmer,
-        clientOptions: {
-            nodes: ['https://api.testnet.shimmer.network'],
-        },
-        secretManager: {
-            mnemonic: "my development mnemonic",
-        },
-    });
-
-    const account = await wallet.createAccount({
-        alias: 'Alice',
-    });
-
-    account.addresses().then((addresses) => {
-        console.log(addresses);
-    });
-}).catch(console.error);
-
-// Default path to load is "iota_sdk_wasm_bg.wasm",
-// but you can override it by passing a path explicitly.
-//
-// init("./static/iota_sdk_wasm_bg.wasm").then(...)
-```
+https://github.com/iotaledger/iota-sdk/tree/develop/bindings/wasm#wallet-usage
 
 ## What's next?
 
