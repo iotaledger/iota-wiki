@@ -154,8 +154,6 @@ A bundler such as [webpack](https://webpack.js.org/) or [rollup](https://rollupj
 
 ### Client
 
-#### Node.js
-
 After you [installed the library](#install-the-iota-sdk), you can create a `Client` instance and interface with it.
 
 The following example creates a [`Client`](https://wiki.iota.org/shimmer/iota-sdk/references/nodejs/classes/Client/)
@@ -164,6 +162,8 @@ the [Shimmer Testnet](https://api.testnet.shimmer.network), and retrieves the no
 calling [`Client.getInfo()`](https://wiki.iota.org/shimmer/iota-sdk/references/nodejs/classes/Client/#getinfo),
 and then print the node's information.
 
+<Tabs groupId="usage" queryString>
+<TabItem value="Node.js" label="Node.js">
 <div className={'hide-code-block-extras'}>
 
 ```typescript reference
@@ -171,9 +171,8 @@ https://github.com/iotaledger/iota-sdk/blob/develop/bindings/wasm/README.md#L127
 ```
 
 </div>
-
-#### Web
-
+</TabItem>
+<TabItem value="Web" label="Web">
 <div className={'hide-code-block-extras'}>
 
 ```typescript reference
@@ -181,6 +180,8 @@ https://github.com/iotaledger/iota-sdk/blob/develop/bindings/wasm/README.md#L151
 ```
 
 </div>
+</TabItem>
+</Tabs>
 
 ### Wallet
 
@@ -194,19 +195,19 @@ by calling
 the [`Wallet.createAccount(data)`](https://wiki.iota.org/iota-sdk/references/nodejs/classes/Wallet/#createaccount)
 function.
 
-#### Node.js
 
-
+<Tabs groupId="usage" queryString>
+<TabItem value="Node.js" label="Node.js">
 <div className={'hide-code-block-extras'}>
 
 ```typescript reference
 https://github.com/iotaledger/iota-sdk/blob/develop/bindings/wasm/README.md#L184-L208
 ```
 
+
 </div>
-
-#### Web
-
+</TabItem>
+<TabItem value="Web" label="Web">
 <div className={'hide-code-block-extras'}>
 
 ```typescript reference
@@ -214,6 +215,8 @@ https://github.com/iotaledger/iota-sdk/blob/develop/bindings/wasm/README.md#L214
 ```
 
 </div>
+</TabItem>
+</Tabs>
 
 ## What's Next?
 
