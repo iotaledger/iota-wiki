@@ -43,6 +43,15 @@ Use the Node.js bindings if you can. The Wasm bindings are just more portable an
 
 :::
 
+### Requirements
+
+- One of the following [Node.js](https://nodejs.org/) versions: '16.x', '18.x';
+- [`wasm-bindgen`](https://github.com/rustwasm/wasm-bindgen). You can install it by running:
+
+```bash
+cargo install wasm-bindgen-cli
+```
+
 ### Install Using a Package Manager
 
 To start using the IOTA SDK in your Wasm project, you can install the IOTA SDK from your package manager of choice:
@@ -145,17 +154,68 @@ A bundler such as [webpack](https://webpack.js.org/) or [rollup](https://rollupj
 
 ### Client
 
+#### Node.js
+
 After you [installed the library](#install-the-iota-sdk), you can create a `Client` instance and interface with it.
 
-https://github.com/iotaledger/iota-sdk/tree/develop/bindings/wasm#client-usage
+The following example creates a [`Client`](https://wiki.iota.org/shimmer/iota-sdk/references/nodejs/classes/Client/)
+instance connected to
+the [Shimmer Testnet](https://api.testnet.shimmer.network), and retrieves the node's information by
+calling [`Client.getInfo()`](https://wiki.iota.org/shimmer/iota-sdk/references/nodejs/classes/Client/#getinfo),
+and then print the node's information.
+
+<div className={'hide-code-block-extras'}>
+
+```typescript reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/wasm/README.md#L127-L145
+```
+
+</div>
+
+#### Web
+
+<div className={'hide-code-block-extras'}>
+
+```typescript reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/wasm/README.md#L151-L168
+```
+
+</div>
 
 ### Wallet
 
 After you [installed the library](#installing-the-iota-sdk), you can create a `Wallet` instance and interact with it.
 
-https://github.com/iotaledger/iota-sdk/tree/develop/bindings/wasm#wallet-usage
+The following example will create a
+new [`Wallet`](https://wiki.iota.org/iota-sdk/references/nodejs/classes/Wallet/) [`Account`](https://wiki.iota.org/iota-sdk/references/nodejs/classes/Account/)
+that connects to the [Shimmer Testnet](https://api.testnet.shimmer.network) using the
+[`MnemonicSecretManager`](https://wiki.iota.org/iota-sdk/references/nodejs/interfaces/MnemonicSecretManager/)
+by calling
+the [`Wallet.createAccount(data)`](https://wiki.iota.org/iota-sdk/references/nodejs/classes/Wallet/#createaccount)
+function.
 
-## What's next?
+#### Node.js
+
+
+<div className={'hide-code-block-extras'}>
+
+```typescript reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/wasm/README.md#L184-L208
+```
+
+</div>
+
+#### Web
+
+<div className={'hide-code-block-extras'}>
+
+```typescript reference
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/wasm/README.md#L214-L239
+```
+
+</div>
+
+## What's Next?
 
 ### How-To Guides
 
@@ -182,4 +242,5 @@ yarn run-example examples/client/00_get_info.ts
 
 ## API Reference
 
-The IOTA SDK Rust API Reference is in the [crate documentation](https://docs.rs/iota-sdk/latest/iota_sdk/).
+If you are using the Wasm binding, you use the Node.js API reference in the
+[IOTA Wiki](https://wiki.iota.org/shimmer/iota-sdk/references/nodejs/api_ref/).
