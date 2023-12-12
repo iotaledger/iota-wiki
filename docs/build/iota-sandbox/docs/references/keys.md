@@ -41,3 +41,8 @@ You can use the following credentials to access dashboards within the IOTA Sandb
 
 **Username**: `wasp`  
 **Password**: `wasp`
+
+### Grafana Dashboard
+
+**Username**: `admin`  
+**Password**: `admin`
