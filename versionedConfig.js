@@ -22,6 +22,19 @@ exports.buildPluginsConfig = [
     ],
   },
   {
+    id: 'isc',
+    label: 'ISC',
+    description: 'Create smart contracts.',
+    icon: 'SmartContracts',
+    subsection: 'build-layer-2',
+    versions: [
+      {
+        label: 'v1.0.0-rc.6',
+        badges: ['Shimmer'],
+      },
+    ],
+  },
+  {
     id: 'wasp-evm',
     label: 'EVM',
     description: 'Create EVM smart contracts.',
