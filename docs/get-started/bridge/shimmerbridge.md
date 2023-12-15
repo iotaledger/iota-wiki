@@ -1,4 +1,4 @@
-# ShimmerBridge user guide
+# ShimmerBridge User Guide
 
 ## Introduction
 This is a guide on how to use ShimmerBridge. This web application allows you to transfer wrapped tokens between different networks by interacting with the decentralized samrt contract of LayerZero. The networks currently supported by ShimmerBridge are **Ethereum, Avalanche C-Chain, Polygon, Arbitrum One, Optimism, Base, Fantom, and Binance Smart Chain.** You can transfer several wrapped tokens, including **ETH, USDT, USDC, WBTC, AVAX, MATIC, FTM, and BNB.** This guide explains how to bridge assets with ShimmerBridge, including selecting the source chain, choosing the token to transfer, entering the number of tokens, and transferring the tokens. It also covers troubleshooting issues that may arise during the transfer process.
