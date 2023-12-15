@@ -5,7 +5,7 @@
 [ShimnmerBridge](https://shimmerbridge.org/) is a web application that allows you to transfer wrapped tokens between different networks by interacting with the decentralized smart contract of [LayerZero](https://layerzero.network/). ShimmerBridge supports the **Ethereum, Avalanche C-Chain, Polygon, Arbitrum One, Optimism, Base, Fantom, and Binance Smart Chain** 
 networks. You can transfer several wrapped tokens, including **ETH, USDT, USDC, WBTC, AVAX, MATIC, FTM, and BNB.** 
 
-This guide explains how to bridge assets with ShimmerBridge, including selecting the source chain, choosing the token to transfer, entering the number of tokens, and transferring the tokens. It also covers troubleshooting issues that may arise during the transfer process.
+This guide explains how to bridge tokens with ShimmerBridge, including selecting the source chain, choosing the token to transfer, entering the number of tokens, and transferring the tokens. It also covers troubleshooting issues that may arise during the transfer process.
 
 The token addresses on each network are listed [at the end of this guide](#shimmerbridge-token-addresses) for your reference.
 
@@ -13,7 +13,7 @@ The token addresses on each network are listed [at the end of this guide](#shimm
 
 ### 1. Accept the Terms and Conditions
 
-Go to **https://shimemrbridge.org/terms** and read the terms and conditions carefully before using ShimmerBridge. Once you understand the terms and conditions, enter the ShimmerBridge User Interface and connect your Web3 Wallet.
+Go to **https://shimmerbridge.org/terms** and read the terms and conditions carefully before using ShimmerBridge. Once you understand the terms and conditions, enter the ShimmerBridge User Interface and connect your Web3 Wallet.
 
 
 ![Layer Zero UI1](/img/introduction/Layer Zero UI1.png)
@@ -63,10 +63,10 @@ Conditions that will hinder your transfer will be indicated in the "Action butto
 
 ### Limit Exceeded
 - This can occur for bridgeable tokens that exist on several networks (ETH/WETH, USDT, and USDC).
-- These tokens can enter SHimmer EVM from different source chains but are represented as one token on Shimmer EVM. If you aim to send these tokens out of Shimmer EVM, the LayerZero contracts on each chain can only payout the amount of this tokens that are currently locked in the contract, so you cannot send more assets back than currently are available to release. This would otherwise exceed the limits of that contract.
+- These tokens can enter Shimmer EVM from different source chains but are represented as one token on Shimmer EVM. If you aim to send these tokens out of Shimmer EVM, the LayerZero contracts on each chain can only payout the amount of this tokens that are currently locked in the contract, so you cannot send more assets back than currently are available to release. This would otherwise exceed the limits of that contract.
 - Example:
-    - On Ethereum, 100 USDT are locked in the Bridge contract (from people that did send this USDT from ETH to Shimmer EVM)
-    - On Avalanche, also 100 USDT are locked in the Bridge contract (from people that did send this USDT from Avalanche to Shimmer EVM)
+    - On Ethereum, 100 USDT are locked in the Bridge contract (from users that did send this USDT from ETH to Shimmer EVM)
+    - On Avalanche, also 100 USDT are locked in the Bridge contract (from users that did send this USDT from Avalanche to Shimmer EVM)
     - You hold 150 USDT in your Wallet on Shimmer EVM
     - If you try to send this 150 USDT to Avalanche, it will exceed the amount currently locked in the Avalanche USDT Bridge contract; therefore, you can't execute such a transfer.
     - Reduce the amount you attempt to send until it is below the Limit.
@@ -135,6 +135,7 @@ Address: `0x82af49447d8a07e3bd95bd0d56f35241523fbab1`
 
 :::
 
+:::info Polygon
 
 - USDC - USD Coin
 Address: `0x3c499c542cEF5E3811e1192ce70d8cC03d5c3359`
@@ -149,7 +150,6 @@ Address: `0x1BFD67037B42Cf73acF2047067bd4F2C47D9BfD6`
 Address: `0x7ceB23fD6bC0adD59E62ac25578270cFf1b9f619`
 
 :::
-
 
 :::info Optimism
 
@@ -166,7 +166,6 @@ Address: `0x68f180fcCe6836688e9084f035309E29Bf0A2095`
 Address: `0x4200000000000000000000000000000000000006`
 
 :::
-
 
 :::info Binance Smart Chain
 
@@ -219,5 +218,5 @@ Address: `0x9702230A8Ea53601f5cD2dc00fDBc13d4dF4A8c7`
 ---
 
 
-**Visit [Github](https://github.com/iotaledger) to review the Open Source code of the ShimmerBridgeA Web Application.**
-**The Audit Report of ShimmerBridge Web Application is available on the [Zokyo Security Github Repository ](https://github.com/zokyo-sec/audit-reports)**
+**Visit [Github](https://github.com/iotaledger) to review the Open Source code of the ShimmerBridge Web Application.**
+**The Audit Report of the ShimmerBridge Web Application is available on the [Zokyo Security Github Repository](https://github.com/zokyo-sec/audit-reports)**
