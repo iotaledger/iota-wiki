@@ -1,59 +1,67 @@
 # ShimmerBridge User Guide
 
 ## Introduction
-This is a guide on how to use ShimmerBridge. This web application allows you to transfer wrapped tokens between different networks by interacting with the decentralized samrt contract of LayerZero. The networks currently supported by ShimmerBridge are **Ethereum, Avalanche C-Chain, Polygon, Arbitrum One, Optimism, Base, Fantom, and Binance Smart Chain.** You can transfer several wrapped tokens, including **ETH, USDT, USDC, WBTC, AVAX, MATIC, FTM, and BNB.** This guide explains how to bridge assets with ShimmerBridge, including selecting the source chain, choosing the token to transfer, entering the number of tokens, and transferring the tokens. It also covers troubleshooting issues that may arise during the transfer process.
 
-The token addresses on each network are listed at the end of this guide for your reference.
+[ShimnmerBridge](https://shimmerbridge.org/) is a web application that allows you to transfer wrapped tokens between different networks by interacting with the decentralized smart contract of [LayerZero](https://layerzero.network/). ShimmerBridge supports the **Ethereum, Avalanche C-Chain, Polygon, Arbitrum One, Optimism, Base, Fantom, and Binance Smart Chain** 
+networks. You can transfer several wrapped tokens, including **ETH, USDT, USDC, WBTC, AVAX, MATIC, FTM, and BNB.** 
+
+This guide explains how to bridge assets with ShimmerBridge, including selecting the source chain, choosing the token to transfer, entering the number of tokens, and transferring the tokens. It also covers troubleshooting issues that may arise during the transfer process.
+
+The token addresses on each network are listed [at the end of this guide](#shimmerbridge-token-addresses) for your reference.
 
 ## Bridge Assets with ShimmerBridge
 
-**1.)** Enter **https://shimemrbridge.org/terms** and read the terms and conditions carefully before you start using ShimmerBridge. Once you understand the terms and conditions, enter the ShimmerBridge User Interface and connect your Web3 Wallet.
+### 1. Accept the Terms and Conditions
+
+Go to **https://shimemrbridge.org/terms** and read the terms and conditions carefully before using ShimmerBridge. Once you understand the terms and conditions, enter the ShimmerBridge User Interface and connect your Web3 Wallet.
 
 
 ![Layer Zero UI1](/img/introduction/Layer Zero UI1.png)
 
-**2.)** **Select the source chain** - from the source chain you want to bridge a token into Shimmer EVM. To send tokens out of Shimmer EVM, select Shimmer EVM as the source chain.
+### 2. Select the Source Chain
+
+ You should select the source chain from which you want to bridge a token into [Shimmer EVM](https://shimmer.network/evm). To send tokens out of Shimmer EVM, select Shimmer EVM as the source chain.
 
 
-**3.)** Click "**Select Token**" - choose a token to transfer from the source chain. The Interface will display all bridgeable tokens and your token balance in the selection dropdown. Also, all other bridgeable tokens you hold in one of the other available networks are displayed. 
-- The app will automatically select Shimmer EVM as your destination chain in case you choose another network than Shimmer EVM. The app will always set the matching token on the destination chain based on your source chain token selection.
+3.) Select the Token to Transfer
+Click "**Select Token**"  to choose a token to transfer from the source chain. The Interface will display all bridgeable tokens and your token balance in the selection dropdown. Also, all other bridgeable tokens you hold in one of the other available networks are displayed. 
+- The app will automatically select Shimmer EVM as your destination chain. If you choose another network, the app will always set the matching token on the destination chain based on your source chain token selection.
 
-**4.)** **Enter the number of tokens you want to bridge from the source chain**
+4. Enter the Number of Tokens You Want to Bridge from the Source Chain
 - The app will display:
-    -  the amount of bridged tokens you will receive on the destination chain. 
-    - The necessary fees for the token transfer are displayed in the native gas token of the source chain. Ensure you have enough gas tokens on the source chain to pay the fees.
+    - The amount of bridged tokens you will receive on the destination chain. 
+    - The necessary fees for the token transfer in the native gas token of the source chain. Ensure you have enough gas tokens on the source chain to pay the fees.
 
-::: info
+::: info Gas on Destination
 
-**Gas on Destination:**
 If you do not own any gas token on the destination chain (in this case, SMR on Shimmer EVM), you can arrange an airdrop of native gas tokens to your wallet as part of your transfer. This will increase your fee but enable you to have the necessary amount of gas in the destination chain for further activities.
 Either use "Max," which gives you 0.25 SMR, or specify a custom amount.
 
-::::
+:::
 
-**5.)** **Transfer the tokens**
+### 5. Transfer the Tokens
 - Click "**Transfer**". Your wallet will ask you to approve the token spending and confirm the transaction
-- After your confirmation, a popup will occur; if you click the link, you are forwarded to [LayerZero Scan](https://layerzeroscan.com/), to observe the detailed progress of your bridge interaction.
+- After your confirmation, a popup will occur; if you click on the link, you will be forwarded to [LayerZero Scan](https://layerzeroscan.com/) to observe the detailed progress of your bridge interaction.
 - The ShimmerBridge app will also display the progress of your transaction, including an estimated period till the bridging is completed in the "transactions" box that appears after confirmation.
 - Once the status changes to "completed", your tokens have arrived in your wallet.
-- Ensure you have imported the correct token into your wallet on the destination chain to see it.
+- Please make sure you have imported the correct token into your wallet on the destination chain to see it.
 
 ## Troubleshooting
 
 Conditions that will hinder your transfer will be indicated in the "Action button" as follows:
 
-**`Insufficient Balance`**
+### Insufficient Balance
 
 - You entered a higher amount of tokens than you hold in your account.
     -  Reduce the amount you want to transfer or add more tokens to your wallet.
 
 
-**`Not enough native for Gas`**
+### Not Enough Native for Gas
 
  - You must own more gas on the source chain to pay the required fees.
     -  You need to send more of the source chain's native gas token to your wallet to resolve this.
 
-**`Limit exceeded`**
+### Limit Exceeded
 - This can occur for bridgeable tokens that exist on several networks (ETH/WETH, USDT, and USDC).
 - These tokens can enter SHimmer EVM from different source chains but are represented as one token on Shimmer EVM. If you aim to send these tokens out of Shimmer EVM, the LayerZero contracts on each chain can only payout the amount of this tokens that are currently locked in the contract, so you cannot send more assets back than currently are available to release. This would otherwise exceed the limits of that contract.
 - Example:
@@ -64,15 +72,9 @@ Conditions that will hinder your transfer will be indicated in the "Action butto
     - Reduce the amount you attempt to send until it is below the Limit.
 
 For any further questions or issues, please visit the XXXXXX Discord.
+## ShimmerBridge Token Addresses
 
-
-
----
-
-
-## ShimmerBridge token addresses:
-
-### **LayerZero ShimmerBridge wrapped tokens on SMR EVM:**
+### Layerzero Shimmerbridge Wrapped Tokens on Smr Evm
 
 :::info
 
@@ -102,10 +104,9 @@ Address: `0x2A6F394085B8E33fbD9dcFc776BCE4ed95F1900D`
 
 :::
 
-### **LayerZero ShimmerBridge wrapped tokens on connected networks**
+### Layerzero Shimmerbridge Wrapped Tokens on Connected Networks
 
-#### **Ethereum**
-:::info
+:::info Ethereum
 
 - USDC - USD Coin
 Address: `0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48`
@@ -118,8 +119,7 @@ Address: `0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599`
 
 :::
 
-#### **Arbitrum**
-:::info
+:::info Arbitrum
 
 - USDC - USD Coin
 Address: `0xaf88d065e77c8cC2239327C5EDb3A432268e5831`
@@ -135,8 +135,6 @@ Address: `0x82af49447d8a07e3bd95bd0d56f35241523fbab1`
 
 :::
 
-#### **Polygon**
-:::info
 
 - USDC - USD Coin
 Address: `0x3c499c542cEF5E3811e1192ce70d8cC03d5c3359`
@@ -152,9 +150,8 @@ Address: `0x7ceB23fD6bC0adD59E62ac25578270cFf1b9f619`
 
 :::
 
-#### **Optimism**
 
-:::info
+:::info Optimism
 
 - USDC - USD Coin
 Address: `0x0b2C639c533813f4Aa9D7837CAf62653d097Ff85`
@@ -170,9 +167,8 @@ Address: `0x4200000000000000000000000000000000000006`
 
 :::
 
-#### **Binance Smart Chain**
 
-:::info
+:::info Binance Smart Chain
 
 - BNB - Binance Coin
 Native Gas Token
@@ -185,8 +181,7 @@ Address: `0x55d398326f99059fF775485246999027B3197955`
 
 :::
 
-#### **Base**
-:::info
+:::info Base
 
 - USDC - USD Coin
 Address: `0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913`
@@ -196,8 +191,7 @@ Address: `0x4200000000000000000000000000000000000006`
 
 :::
 
-#### **Fantom**
-:::info
+:::info Fantom
 
 - FTM - Fantom
 Native Gas Token
@@ -207,8 +201,7 @@ Address: `0x28a92dde19D9989F39A49905d7C9C2FAc7799bDf`
 
 :::
 
-#### **Avalanche C-Chain**
-:::info
+:::info Avalanche C-Chain
 
 - AVAX - Avalanche
 Native Gas Token
@@ -226,5 +219,5 @@ Address: `0x9702230A8Ea53601f5cD2dc00fDBc13d4dF4A8c7`
 ---
 
 
-**The Open Source code of the ShimmerBridgeA Web Application is available [here]()**
-**The Audit Report of ShimmerBridge Web Application is available [here]()**
+**Visit [Github](https://github.com/iotaledger) to review the Open Source code of the ShimmerBridgeA Web Application.**
+**The Audit Report of ShimmerBridge Web Application is available on the [Zokyo Security Github Repository ](https://github.com/zokyo-sec/audit-reports)**
