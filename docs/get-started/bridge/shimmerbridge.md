@@ -7,7 +7,7 @@ The token addresses on each network are listed at the end of this guide for your
 
 ## Bridge Assets with ShimmerBridge
 
-**1.)** Enter **https://shimerbridge.org/terms** and read the terms and conditions carefully before you start using ShimmerBridge. Once you understand the terms and conditions, enter the ShimmerBridge User Interface and connect your Web3 Wallet.
+**1.)** Enter **https://shimemrbridge.org/terms** and read the terms and conditions carefully before you start using ShimmerBridge. Once you understand the terms and conditions, enter the ShimmerBridge User Interface and connect your Web3 Wallet.
 
 
 ![Layer Zero UI1](/img/introduction/Layer Zero UI1.png)
