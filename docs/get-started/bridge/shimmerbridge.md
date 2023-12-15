@@ -10,7 +10,7 @@ The token addresses on each network are listed at the end of this guide for your
 **1.)** Enter **https://shimerbridge.org/terms** and read the terms and conditions carefully before you start using ShimmerBridge. Once you understand the terms and conditions, enter the ShimmerBridge User Interface and connect your Web3 Wallet.
 
 
-![Layer Zero UI1](https://hackmd.io/_uploads/S1LLTTD8p.png)
+![Layer Zero UI1](/img/introduction/Layer Zero UI1.png)
 
 **2.)** **Select the source chain** - from the source chain you want to bridge a token into Shimmer EVM. To send tokens out of Shimmer EVM, select Shimmer EVM as the source chain.
 
