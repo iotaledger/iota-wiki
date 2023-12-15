@@ -219,4 +219,5 @@ Address: `0x9702230A8Ea53601f5cD2dc00fDBc13d4dF4A8c7`
 
 
 **Visit [Github](https://github.com/iotaledger) to review the Open Source code of the ShimmerBridge Web Application.**
+
 **The Audit Report of the ShimmerBridge Web Application is available on the [Zokyo Security Github Repository](https://github.com/zokyo-sec/audit-reports)**
