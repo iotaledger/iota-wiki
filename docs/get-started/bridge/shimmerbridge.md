@@ -22,10 +22,8 @@ Go to **https://shimmerbridge.org/terms** and read the terms and conditions care
 
  You should select the source chain from which you want to bridge a token into [Shimmer EVM](https://shimmer.network/evm). To send tokens out of Shimmer EVM, select Shimmer EVM as the source chain.
 
-
 3.) Select the Token to Transfer
 Click "**Select Token**"  to choose a token to transfer from the source chain. The Interface will display all bridgeable tokens and your token balance in the selection dropdown. Also, all other bridgeable tokens you hold in one of the other available networks are displayed. 
-- The app will automatically select Shimmer EVM as your destination chain. If you choose another network, the app will always set the matching token on the destination chain based on your source chain token selection.
 
 4. Enter the Number of Tokens You Want to Bridge from the Source Chain
 - The app will display:
@@ -60,6 +58,11 @@ Conditions that will hinder your transfer will be indicated in the "Action butto
 
  - You must own more gas on the source chain to pay the required fees.
     -  You need to send more of the source chain's native gas token to your wallet to resolve this.
+  
+### Select different chain
+
+- You have selected an incompatible selection of source and destination chain. It is only possible to bridge in and out of Shimmer EVM with ShimmerBridge; you cannot send from ETH to Avalanche, for example.
+    - Send either tokens into Shimmer EVM or send them from Shimmer EVM out to another chain.
 
 ### Limit Exceeded
 - This can occur for bridgeable tokens that exist on several networks (ETH/WETH, USDT, and USDC).
