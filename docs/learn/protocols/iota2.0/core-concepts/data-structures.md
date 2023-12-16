@@ -75,9 +75,9 @@ The _Block Wrapper_ is serialized as follows:
     <td>This field denotes what protocol rules apply to the block.</td>
   </tr>
   <tr>
-    <td>_Network ID_</td>
+    <td>Network ID</td>
     <td>uint64</td>
-    <td>The _network identifier_. </td>
+    <td>The network identifier. </td>
   </tr>
   <tr>
     <td>Issuing Time</td>
