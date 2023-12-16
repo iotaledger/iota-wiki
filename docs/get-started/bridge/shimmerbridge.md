@@ -16,7 +16,7 @@ The token addresses on each network are listed [at the end of this guide](#shimm
 Go to **https://shimmerbridge.org/terms** and read the terms and conditions carefully before using ShimmerBridge. Once you understand the terms and conditions, enter the ShimmerBridge User Interface and connect your Web3 Wallet.
 
 
-![Layer Zero UI1](/img/introduction/Layer Zero UI1.png)
+![Layer Zero UI1](/img/introduction/Layer_Zero_Ui.png)
 
 ### 2. Select the Source Chain
 
