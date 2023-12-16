@@ -2,7 +2,7 @@
 
 ## Introduction
 
-[ShimnmerBridge](https://shimmerbridge.org/) is a web application that allows you to transfer wrapped tokens between different networks by interacting with the decentralized smart contract of [LayerZero](https://layerzero.network/). ShimmerBridge supports the **Ethereum, Avalanche C-Chain, Polygon, Arbitrum One, Optimism, Base, Fantom, and Binance Smart Chain** 
+[ShimnmerBridge](https://shimmerbridge.org/) is a web application that allows you to transfer wrapped tokens between different networks by interacting with the decentralized smart contracts of [LayerZero](https://layerzero.network/). ShimmerBridge supports the **Ethereum, Avalanche C-Chain, Polygon, Arbitrum One, Optimism, Base, Fantom, and Binance Smart Chain** 
 networks. You can transfer several wrapped tokens, including **ETH, USDT, USDC, WBTC, AVAX, MATIC, FTM, and BNB.** 
 
 This guide explains how to bridge tokens with ShimmerBridge, including selecting the source chain, choosing the token to transfer, entering the number of tokens, and transferring the tokens. It also covers troubleshooting issues that may arise during the transfer process.
@@ -66,7 +66,7 @@ Conditions that will hinder your transfer will be indicated in the "Action butto
 
 ### Limit Exceeded
 - This can occur for bridgeable tokens that exist on several networks (ETH/WETH, USDT, and USDC).
-- These tokens can enter Shimmer EVM from different source chains but are represented as one token on Shimmer EVM. If you aim to send these tokens out of Shimmer EVM, the LayerZero contracts on each chain can only payout the amount of this tokens that are currently locked in the contract, so you cannot send more assets back than currently are available to release. This would otherwise exceed the limits of that contract.
+- These tokens can enter Shimmer EVM from different source chains but are represented as one token on Shimmer EVM. If you aim to send these tokens out of Shimmer EVM, the LayerZero contracts on each chain can only payout the amount of these tokens that are currently locked in the contract, so you cannot send more assets back than currently are available to release. This would otherwise exceed the limits of that contract.
 - Example:
     - On Ethereum, 100 USDT are locked in the Bridge contract (from users that did send this USDT from ETH to Shimmer EVM)
     - On Avalanche, also 100 USDT are locked in the Bridge contract (from users that did send this USDT from Avalanche to Shimmer EVM)
@@ -77,7 +77,7 @@ Conditions that will hinder your transfer will be indicated in the "Action butto
 For any further questions or issues, please visit the XXXXXX Discord.
 ## ShimmerBridge Token Addresses
 
-### Layerzero Shimmerbridge Wrapped Tokens on Smr Evm
+### LayerZero ShimmerBridge Wrapped Tokens on Shimmer Evm
 
 :::info
 
@@ -107,7 +107,7 @@ Address: `0x2A6F394085B8E33fbD9dcFc776BCE4ed95F1900D`
 
 :::
 
-### Layerzero Shimmerbridge Wrapped Tokens on Connected Networks
+### LayerZero ShimmerBridge Wrapped Tokens on Connected Networks
 
 :::info Ethereum
 
@@ -198,7 +198,7 @@ Address: `0x4200000000000000000000000000000000000006`
 - FTM - Fantom
 Native Gas Token
 
-- USDC - Layer Zero USD Coin
+- USDC - LayerZero USD Coin
 Address: `0x28a92dde19D9989F39A49905d7C9C2FAc7799bDf`
 
 :::
