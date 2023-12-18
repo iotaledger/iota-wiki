@@ -74,7 +74,8 @@ Conditions that will hinder your transfer will be indicated in the "Action butto
     - If you try to send this 150 USDT to Avalanche, it will exceed the amount currently locked in the Avalanche USDT Bridge contract; therefore, you can't execute such a transfer.
     - Reduce the amount you attempt to send until it is below the Limit.
 
-For any further questions or issues, please visit the XXXXXX Discord.
+For any further questions or support, please visit the [LayerZero Discord](https://discord-layerzero.netlify.app/discord).
+
 ## ShimmerBridge Token Addresses
 
 ### LayerZero ShimmerBridge Wrapped Tokens on Shimmer Evm
@@ -220,7 +221,10 @@ Address: `0x9702230A8Ea53601f5cD2dc00fDBc13d4dF4A8c7`
 
 ---
 
+More Information about the LayerZero protocol is available in their [official documentation](https://docs.layerzero.network/)
 
-**Visit [Github](https://github.com/iotaledger) to review the Open Source code of the ShimmerBridge Web Application.**
+Visit [Github](https://github.com/iotaledger) to review the Open Source code of the ShimmerBridge Web Application.
 
-**The Audit Report of the ShimmerBridge Web Application is available on the [Zokyo Security Github Repository](https://github.com/zokyo-sec/audit-reports)**
+The Audit Report of the ShimmerBridge Web Application is available on the [Zokyo Security Github Repository](https://github.com/zokyo-sec/audit-reports)
+
+The Audit Reports of the LayerZero protocol are available in this [LayerZero GitHub Repository](https://github.com/LayerZero-Labs/LayerZero/tree/main/audit)
