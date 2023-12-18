@@ -22,15 +22,17 @@ Go to **https://shimmerbridge.org/terms** and read the terms and conditions care
 
  You should select the source chain from which you want to bridge a token into [Shimmer EVM](https://shimmer.network/evm). To send tokens out of Shimmer EVM, select Shimmer EVM as the source chain.
 
-3.) Select the Token to Transfer
+### 3. Select the Token to Transfer
+
 Click "**Select Token**"  to choose a token to transfer from the source chain. The Interface will display all bridgeable tokens and your token balance in the selection dropdown. Also, all other bridgeable tokens you hold in one of the other available networks are displayed. 
 
-4. Enter the Number of Tokens You Want to Bridge from the Source Chain
+### 4. Enter the Number of Tokens You Want to Bridge From the Source Chain
+
 - The app will display:
     - The amount of bridged tokens you will receive on the destination chain. 
     - The necessary fees for the token transfer in the native gas token of the source chain. Ensure you have enough gas tokens on the source chain to pay the fees.
 
-::: info Gas on Destination
+:::info Gas on Destination
 
 If you do not own any gas token on the destination chain (in this case, SMR on Shimmer EVM), you can arrange an airdrop of native gas tokens to your wallet as part of your transfer. This will increase your fee but enable you to have the necessary amount of gas in the destination chain for further activities.
 Either use "Max," which gives you 0.25 SMR, or specify a custom amount.
@@ -38,6 +40,7 @@ Either use "Max," which gives you 0.25 SMR, or specify a custom amount.
 :::
 
 ### 5. Transfer the Tokens
+
 - Click "**Transfer**". Your wallet will ask you to approve the token spending and confirm the transaction
 - After your confirmation, a popup will occur; if you click on the link, you will be forwarded to [LayerZero Scan](https://layerzeroscan.com/) to observe the detailed progress of your bridge interaction.
 - The ShimmerBridge app will also display the progress of your transaction, including an estimated period till the bridging is completed in the "transactions" box that appears after confirmation.
@@ -53,26 +56,29 @@ Conditions that will hinder your transfer will be indicated in the "Action butto
 - You entered a higher amount of tokens than you hold in your account.
     -  Reduce the amount you want to transfer or add more tokens to your wallet.
 
-
 ### Not Enough Native for Gas
 
  - You must own more gas on the source chain to pay the required fees.
     -  You need to send more of the source chain's native gas token to your wallet to resolve this.
   
-### Select different chain
+### Select Different Chain
 
 - You have selected an incompatible selection of source and destination chain. It is only possible to bridge in and out of Shimmer EVM with ShimmerBridge; you cannot send from ETH to Avalanche, for example.
     - Send either tokens into Shimmer EVM or send them from Shimmer EVM out to another chain.
 
 ### Limit Exceeded
+
 - This can occur for bridgeable tokens that exist on several networks (ETH/WETH, USDT, and USDC).
-- These tokens can enter Shimmer EVM from different source chains but are represented as one token on Shimmer EVM. If you aim to send these tokens out of Shimmer EVM, the LayerZero contracts on each chain can only payout the amount of these tokens that are currently locked in the contract, so you cannot send more assets back than currently are available to release. This would otherwise exceed the limits of that contract.
-- Example:
-    - On Ethereum, 100 USDT are locked in the Bridge contract (from users that did send this USDT from ETH to Shimmer EVM)
-    - On Avalanche, also 100 USDT are locked in the Bridge contract (from users that did send this USDT from Avalanche to Shimmer EVM)
-    - You hold 150 USDT in your Wallet on Shimmer EVM
-    - If you try to send this 150 USDT to Avalanche, it will exceed the amount currently locked in the Avalanche USDT Bridge contract; therefore, you can't execute such a transfer.
-    - Reduce the amount you attempt to send until it is below the Limit.
+- These tokens can enter Shimmer EVM from different source chains but are represented as one token on Shimmer EVM. 
+If you aim to send these tokens out of Shimmer EVM, the LayerZero contracts on each chain can only payout the amount of these tokens that are currently locked in the contract, so you cannot send more assets back than currently are available to release. This would otherwise exceed the limits of that contract.
+ 
+#### Example
+
+- On Ethereum, 100 USDT are locked in the Bridge contract (from users that did send this USDT from ETH to Shimmer EVM)
+- On Avalanche, also 100 USDT are locked in the Bridge contract (from users that did send this USDT from Avalanche to Shimmer EVM)
+- You hold 150 USDT in your Wallet on Shimmer EVM
+- If you try to send this 150 USDT to Avalanche, it will exceed the amount currently locked in the Avalanche USDT Bridge contract; therefore, you can't execute such a transfer.
+- Reduce the amount you attempt to send until it is below the Limit.
 
 For any further questions or support, please visit the [LayerZero Discord](https://discord-layerzero.netlify.app/discord).
 
@@ -217,9 +223,7 @@ Address: `0x9702230A8Ea53601f5cD2dc00fDBc13d4dF4A8c7`
 
 :::
 
-
-
----
+## Useful Links
 
 More Information about the LayerZero protocol is available in their [official documentation](https://docs.layerzero.network/)
 
