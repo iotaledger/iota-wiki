@@ -131,7 +131,11 @@ Address:
 ```
 
 - [FTM](https://explorer.evm.shimmer.network/address/0x8C96Dd1A8B1952Ce6F3a582170bb173eD591D40D?tab=internal_txns) - Fantom 
-Address:`0x8C96Dd1A8B1952Ce6F3a582170bb173eD591D40D`
+Address:
+
+```plaintext
+0x8C96Dd1A8B1952Ce6F3a582170bb173eD591D40D
+```
 
 - [BNB](https://explorer.evm.shimmer.network/address/0x2A6F394085B8E33fbD9dcFc776BCE4ed95F1900D?tab=contract) - Binance Coin
 Address:
