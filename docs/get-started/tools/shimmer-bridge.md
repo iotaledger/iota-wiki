@@ -2,10 +2,10 @@
 
 ## Introduction
 
-[ShimnmerBridge](https://shimmerbridge.org/) is a web application that allows you to transfer wrapped tokens between different networks by interacting with the decentralized smart contracts of [LayerZero](https://layerzero.network/). ShimmerBridge supports the **Ethereum, Avalanche C-Chain, Polygon, Arbitrum One, Optimism, Base, Fantom, and Binance Smart Chain** 
+[ShimmerBridge](https://shimmerbridge.org/) is a web application that allows you to transfer wrapped tokens between different networks by interacting with the decentralized smart contracts of [LayerZero](https://layerzero.network/). ShimmerBridge supports the **Ethereum, Avalanche C-Chain, Polygon, Arbitrum One, Optimism, Base, Fantom, and Binance Smart Chain** 
 networks. You can transfer several wrapped tokens, including **ETH, USDT, USDC, WBTC, AVAX, MATIC, FTM, and BNB.** 
 
-This guide explains how to bridge tokens with ShimmerBridge, including selecting the source chain, choosing the token to transfer, entering the number of tokens, and transferring the tokens. It also covers troubleshooting issues that may arise during the transfer process.
+This guide explains how to bridge tokens with ShimmerBridge, including selecting the source chain, choosing the token to transfer, entering the number of tokens and transferring the tokens. It also covers troubleshooting issues that may arise during the transfer process.
 
 The token addresses on each network are listed [at the end of this guide](#shimmerbridge-token-addresses) for your reference.
 
@@ -20,11 +20,11 @@ Go to **https://shimmerbridge.org/terms** and read the terms and conditions care
 
 ### 2. Select the Source Chain
 
- You should select the source chain from which you want to bridge a token into [Shimmer EVM](https://shimmer.network/evm). To send tokens out of Shimmer EVM, select Shimmer EVM as the source chain.
+You should select the source chain from which you want to bridge a token into [Shimmer EVM](https://shimmer.network/evm). To send tokens out of Shimmer EVM, select Shimmer EVM as the source chain.
 
 ### 3. Select the Token to Transfer
 
-Click "**Select Token**"  to choose a token to transfer from the source chain. The Interface will display all bridgeable tokens and your token balance in the selection dropdown. Also, all other bridgeable tokens you hold in one of the other available networks are displayed. 
+Click "**Select Token**" to choose a token to transfer from the source chain. The Interface will display all bridgeable tokens and your token balance in the selection dropdown. Also all other bridgeable tokens you hold in one of the other available networks are displayed. 
 
 ### 4. Enter the Number of Tokens You Want to Bridge From the Source Chain
 
@@ -35,7 +35,7 @@ Click "**Select Token**"  to choose a token to transfer from the source chain. T
 :::info Gas on Destination
 
 If you do not own any gas token on the destination chain (in this case, SMR on Shimmer EVM), you can arrange an airdrop of native gas tokens to your wallet as part of your transfer. This will increase your fee but enable you to have the necessary amount of gas in the destination chain for further activities.
-Either use "Max," which gives you 0.25 SMR, or specify a custom amount.
+Either use "Max", which gives you 0.25 SMR, or specify a custom amount.
 
 :::
 
@@ -68,7 +68,7 @@ Conditions that will hinder your transfer will be indicated in the "Action butto
 
 ### Limit Exceeded
 
-- This can occur for bridgeable tokens that exist on several networks (ETH/WETH, USDT, and USDC).
+- This can occur for bridgeable tokens that exist on several networks (ETH/WETH, USDT and USDC).
 - These tokens can enter Shimmer EVM from different source chains but are represented as one token on Shimmer EVM. 
 If you aim to send these tokens out of Shimmer EVM, the LayerZero contracts on each chain can only payout the amount of these tokens that are currently locked in the contract, so you cannot send more assets back than currently are available to release. This would otherwise exceed the limits of that contract.
  
