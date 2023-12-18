@@ -93,6 +93,11 @@ module.exports = {
           label: 'Shimmer Explorer',
           href: 'https://explorer.shimmer.network/',
         },
+        {
+          type: 'doc',
+          label: 'Shimmer Bridge',
+          id: 'tools/shimmer-bridge',
+        },
       ],
     },
     'research-papers',
