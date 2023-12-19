@@ -2,8 +2,7 @@
 
 ## Introduction
 
-[ShimmerBridge](https://shimmerbridge.org/) is a web application that allows you to transfer wrapped tokens between different networks by interacting with the decentralized smart contracts of [LayerZero](https://layerzero.network/). ShimmerBridge supports the **Ethereum, Avalanche C-Chain, Polygon, Arbitrum One, Optimism, Base, Fantom, and Binance Smart Chain** 
-networks. You can transfer several wrapped tokens, including **ETH, USDT, USDC, WBTC, AVAX, MATIC, FTM, and BNB.** 
+[ShimmerBridge](https://shimmerbridge.org/) is a web application that allows you to transfer wrapped tokens between ShimmerEVM and several other blockchain networks by interacting with the decentralized smart contracts of [LayerZero](https://layerzero.network/) deployed on each of those networks. ShimmerBridge supports connections from ShimmerEVM to **Ethereum, Avalanche C-Chain, Polygon, Arbitrum One, Optimism, Base, Fantom, and Binance Smart Chain.** You can transfer several wrapped tokens, including **ETH, USDT, USDC, WBTC, AVAX, MATIC, FTM, and BNB.** 
 
 This guide explains how to bridge tokens with ShimmerBridge, including selecting the source chain, choosing the token to transfer, entering the number of tokens and transferring the tokens. It also covers troubleshooting issues that may arise during the transfer process.
 
