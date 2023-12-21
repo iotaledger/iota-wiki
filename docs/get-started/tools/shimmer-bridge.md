@@ -23,7 +23,7 @@ You should select the source chain from which you want to bridge a token into [S
 
 ### 3. Select the Token to Transfer
 
-Click "**Select Token**" to choose a token to transfer from the source chain. The Interface will display all bridgeable tokens and your token balance in the selection dropdown. Also all other bridgeable tokens you hold in one of the other available networks are displayed. 
+Click "**Select Token**" to choose a token to transfer from the source chain. The Interface will display all bridgeable tokens and your token balance in the selection dropdown. Also, all other bridgeable tokens you hold in one of the other available networks are displayed. 
 
 ### 4. Enter the Number of Tokens You Want to Bridge From the Source Chain
 
@@ -33,8 +33,10 @@ Click "**Select Token**" to choose a token to transfer from the source chain. Th
 
 :::info Gas on Destination
 
-If you do not own any gas token on the destination chain (in this case, SMR on Shimmer EVM), you can arrange an airdrop of native gas tokens to your wallet as part of your transfer. This will increase your fee but enable you to have the necessary amount of gas in the destination chain for further activities.
-Either use "Max", which gives you 0.25 SMR, or specify a custom amount.
+Using Shimmer EVM will require you to own **Shimmer Tokens ($SMR)** to pay for gas fees. You can arrange an airdrop of a maximum of 1 SMR token to your address as part of your Bridge transfer. 
+This will be added to the total fees you pay for the transfer and enable you to have the necessary amount of gas in Shimmer EVM to start your journey and interact with the first dApps.
+Click the highlighted "add" next to "Gas on destination". A popup will open that lets you define how many SMR tokens you want to receive.
+Either use the "Max - setting", which gives you 1 SMR, or specify a custom amount of up to 1 SMR.
 
 :::
 
