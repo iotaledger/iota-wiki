@@ -2,7 +2,7 @@
 
 ## Introduction
 
-[ShimmerBridge](https://shimmerbridge.org/) is a web application that allows you to transfer wrapped tokens between ShimmerEVM and several other blockchain networks by interacting with the decentralized smart contracts of [LayerZero](https://layerzero.network/) deployed on each of those networks. ShimmerBridge supports connections from ShimmerEVM to **Ethereum, Avalanche C-Chain, Polygon, Arbitrum One, Optimism, Base, Fantom, and Binance Smart Chain.** You can transfer several wrapped tokens, including **ETH, USDT, USDC, WBTC, AVAX, MATIC, FTM, and BNB.** 
+[ShimmerBridge](https://shimmerbridge.org/) is a web application that allows you to transfer wrapped tokens between [ShimmerEVM](https://shimmer.network/evm) and several other blockchain networks by interacting with the decentralized smart contracts of [LayerZero](https://layerzero.network/) deployed on each of those networks. ShimmerBridge supports connections from ShimmerEVM to **Ethereum, Avalanche C-Chain, Polygon, Arbitrum One, Optimism, Base, Fantom, and Binance Smart Chain.** You can transfer several wrapped tokens, including **ETH, USDT, USDC, WBTC, AVAX, MATIC, FTM, and BNB.** 
 
 This guide explains how to bridge tokens with ShimmerBridge, including selecting the source chain, choosing the token to transfer, entering the number of tokens and transferring the tokens. It also covers troubleshooting issues that may arise during the transfer process.
 
@@ -81,7 +81,9 @@ If you aim to send these tokens out of Shimmer EVM, the LayerZero contracts on e
 - If you try to send this 150 USDT to Avalanche, it will exceed the amount currently locked in the Avalanche USDT Bridge contract; therefore, you can't execute such a transfer.
 - Reduce the amount you attempt to send until it is below the Limit.
 
-For any further questions or support, please visit the [LayerZero Discord](https://discord-layerzero.netlify.app/discord).
+For any further support, please visit the [LayerZero Discord](https://discord-layerzero.netlify.app/discord).
+
+If you have general questions about Shimmernet or the Shimmer Token, we welcome you to join the [IOTA/Shimmer Discord Community](https://discord.shimmer.network/).
 
 ## ShimmerBridge Token Addresses
 
