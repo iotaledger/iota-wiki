@@ -85,6 +85,13 @@ For any further support, please visit the [LayerZero Discord](https://discord-la
 
 If you have general questions about Shimmernet or the Shimmer Token, we welcome you to join the [IOTA/Shimmer Discord Community](https://discord.shimmer.network/).
 
+## Tools:
+
+- [LayerZero Scan](https://layerzeroscan.com/) - LayerZero Cross Chain Explorer
+- [ShimmerEVM Explorer](https://explorer.evm.shimmer.network/) - ShimmerEVM Explorer by Blockscout
+- [Shimmer Firefly Wallet](https://firefly.iota.org) - Official Shimmer L1 Wallet to store your $SMR Tokens
+- [ShimmerEVM Toolkit](https://evm-toolkit.evm.shimmer.network/) - Application to withdraw $SMR Tokens from ShimmerEVM to Shimmer L1
+
 ## ShimmerBridge Token Addresses
 
 ### LayerZero ShimmerBridge Wrapped Tokens on Shimmer Evm
