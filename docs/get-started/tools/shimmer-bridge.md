@@ -2,7 +2,7 @@
 
 ## Introduction
 
-[ShimmerBridge](https://shimmerbridge.org/) is a web application that allows you to transfer wrapped tokens between [ShimmerEVM](https://shimmer.network/evm) and several other blockchain networks by interacting with the decentralized smart contracts of [LayerZero](https://layerzero.network/) deployed on each of those networks. ShimmerBridge supports connections from ShimmerEVM to **Ethereum, Avalanche C-Chain, Polygon, Arbitrum One, Optimism, Base, Fantom, and Binance Smart Chain.** You can transfer several wrapped tokens, including **ETH, USDT, USDC, WBTC, AVAX, MATIC, FTM, and BNB.** 
+[ShimmerBridge](https://shimmerbridge.org/) is a web application provided by the Tangle DAO LLC, that allows you to transfer wrapped tokens between [ShimmerEVM](https://shimmer.network/evm) and several other blockchain networks by interacting with the decentralized smart contracts of [LayerZero](https://layerzero.network/) deployed on each of those networks. ShimmerBridge supports connections from ShimmerEVM to **Ethereum, Avalanche C-Chain, Polygon, Arbitrum One, Optimism, Base, Fantom, and Binance Smart Chain.** You can transfer several wrapped tokens, including **ETH, USDT, USDC, WBTC, AVAX, MATIC, FTM, and BNB.** 
 
 This guide explains how to bridge tokens with ShimmerBridge, including selecting the source chain, choosing the token to transfer, entering the number of tokens and transferring the tokens. It also covers troubleshooting issues that may arise during the transfer process.
 
@@ -343,8 +343,8 @@ Native Gas Token
 
 More Information about the LayerZero protocol is available in their [official documentation](https://docs.layerzero.network/)
 
-Visit [Github](https://github.com/iotaledger) to review the Open Source code of the ShimmerBridge Web Application.
+Visit [Github](https://github.com/zokyo-sec) to review the Open Source code of the ShimmerBridge Web Application.
 
-The Audit Report of the ShimmerBridge Web Application is available on the [Zokyo Security Github Repository](https://github.com/zokyo-sec/audit-reports)
+The Audit Report of the ShimmerBridge Web Application is available in this [Zokyo Security Github Repository](https://github.com/zokyo-sec/audit-reports)
 
 The Audit Reports of the LayerZero protocol are available in this [LayerZero GitHub Repository](https://github.com/LayerZero-Labs/LayerZero/tree/main/audit)
