@@ -16,6 +16,7 @@ import {
   getNetworkGenerationPerSlot,
   getNetworkSupply,
   getStakedOrDelegated,
+  getValidInputValue,
   toMicro,
 } from '../utils';
 
@@ -39,58 +40,76 @@ export function useGivenManaState(
     setState({ ...state, validators });
   }
 
-  function handleStakeChange(value: number, id: number) {
+  function handleStakeChange(value: string, id: number) {
+    const stakedTokens = getValidInputValue(value, toMicro);
+
+    const newStateWithValidators = {
+      ...state,
+      validators: state.validators.map((validator, i) => {
+        return {
+          ...validator,
+          lockedStake: i === id ? stakedTokens : validator.lockedStake,
+        };
+      }),
+    };
+
+    setState({
+      ...newStateWithValidators,
+      ...getDerivedRoleValues(newStateWithValidators, stakedTokens),
+    });
+  }
+
+  function handleDelegatedStakeChange(value: string, id: number) {
+    const delegatedStake = getValidInputValue(value, toMicro);
     setState({
       ...state,
       validators: state.validators.map((validator, i) => {
         return {
           ...validator,
-          lockedStake: i === id ? value : validator.lockedStake,
+          delegatedStake: i === id ? delegatedStake : validator.delegatedStake,
         };
       }),
     });
   }
 
-  function handleDelegatedStakeChange(value: number, id: number) {
+  function handlePFChange(value: string, id: number) {
+    const performanceFactor = getValidInputValue(value);
     setState({
       ...state,
       validators: state.validators.map((validator, i) => {
         return {
           ...validator,
-          delegatedStake: i === id ? value : validator.delegatedStake,
+          performanceFactor:
+            i === id ? performanceFactor : validator.performanceFactor,
         };
       }),
     });
   }
 
-  function handlePFChange(value: number, id: number) {
+  function handleFCChange(value: string, id: number) {
+    const fixedCost = getValidInputValue(value);
     setState({
       ...state,
       validators: state.validators.map((validator, i) => {
         return {
           ...validator,
-          performanceFactor: i === id ? value : validator.performanceFactor,
+          fixedCost: i === id ? fixedCost : validator.fixedCost,
         };
       }),
     });
   }
 
-  function handleFCChange(value: number, id: number) {
-    setState({
-      ...state,
-      validators: state.validators.map((validator, i) => {
-        return {
-          ...validator,
-          fixedCost: i === id ? value : validator.fixedCost,
-        };
-      }),
-    });
-  }
+  function handleOwnStakeChange(value: string) {
+    const stakedTokens = getValidInputValue(value, toMicro);
 
-  function handleOwnStakeChange(value: number) {
-    setState({
+    const newState: ManaCalculatorProps = {
       ...state,
-      [getStakedOrDelegated(state.userType)]: value,
+      [getStakedOrDelegated(state.userType)]: stakedTokens,
+    };
+
+    setState({
+      ...newState,
+      ...getDerivedRoleValues(newState, stakedTokens),
     });
   }
 
@@ -108,38 +127,43 @@ export function useGivenManaState(
     });
   }
 
-  function handleOwnPFChange(value: number) {
+  function handleOwnPFChange(value: string) {
+    const performanceFactor = getValidInputValue(value);
     setState({
       ...state,
-      validator: { ...state.validator, performanceFactor: value },
+      validator: { ...state.validator, performanceFactor },
     });
   }
 
-  function handleOwnFCChange(value: number) {
+  function handleOwnFCChange(value: string) {
+    const fixedCost = getValidInputValue(value);
     setState({
       ...state,
-      validator: { ...state.validator, fixedCost: value },
+      validator: { ...state.validator, fixedCost },
     });
   }
 
-  function handleAttractedNewDelegatedStakeChange(value: number) {
+  function handleAttractedNewDelegatedStakeChange(value: string) {
+    const attractedNewDelegatedStake = getValidInputValue(value, toMicro);
     setState({
       ...state,
-      validator: { ...state.validator, attractedNewDelegatedStake: value },
+      validator: { ...state.validator, attractedNewDelegatedStake },
     });
   }
 
-  function handleInitialEpochChange(value: number) {
+  function handleInitialEpochChange(value: string) {
+    const initialEpoch = getValidInputValue(value);
     setState({
       ...state,
-      initialEpoch: value,
+      initialEpoch,
     });
   }
 
-  function handleFinalEpochChange(value: number) {
+  function handleFinalEpochChange(value: string) {
+    const finalEpoch = getValidInputValue(value);
     setState({
       ...state,
-      finalEpoch: value,
+      finalEpoch,
     });
   }
 
@@ -149,10 +173,25 @@ export function useGivenManaState(
     });
   }
 
-  function handleUserChange(value: UserType) {
-    setState({
+  function handleUserChange(newUserType: UserType) {
+    const validators = [...state.validators];
+
+    if (newUserType === UserType.VALIDATOR) {
+      validators[0].excluded = true;
+    } else {
+      validators[0].excluded = false;
+    }
+
+    const newState = {
       ...state,
-      userType: value,
+      userType: newUserType,
+      validators,
+      [getStakedOrDelegated(newUserType)]: state.heldTokens,
+    };
+
+    setState({
+      ...newState,
+      ...getDerivedRoleValues(newState, newState.heldTokens, newUserType),
     });
   }
 
@@ -161,8 +200,21 @@ export function useGivenManaState(
     setState({ ...state });
   }
 
-  function handleOwnHoldChange(value: number) {
-    setState({ ...state, heldTokens: value });
+  function handleOwnHoldChange(value: string) {
+    const heldTokens = getValidInputValue(value, toMicro);
+
+    let newState = {
+      ...state,
+      heldTokens,
+      [getStakedOrDelegated(state.userType)]: heldTokens,
+    };
+
+    newState = {
+      ...newState,
+      ...getDerivedRoleValues(newState, heldTokens),
+    };
+
+    setState(newState);
   }
 
   const congestionAmount = getNetworkCongestion(
@@ -172,6 +224,27 @@ export function useGivenManaState(
   const generationPerSlot = getNetworkGenerationPerSlot(state.network);
   const stakedOrDelegatedTokens = state[getStakedOrDelegated(state.userType)];
 
+  const networkSupply = getNetworkSupply(state.network);
+
+  const userOwnedTokens = state.heldTokens;
+
+  const totalValidatorsLockedStake = state.validators.reduce(
+    (a, b) => a + b.lockedStake,
+    0,
+  );
+  const totalValidatorsDelegatedStake = state.validators.reduce(
+    (a, b) => a + b.delegatedStake,
+    0,
+  );
+
+  const maxAvailableSupply = Math.max(
+    networkSupply -
+      totalValidatorsLockedStake -
+      totalValidatorsDelegatedStake -
+      userOwnedTokens,
+    0,
+  );
+
   return {
     state: {
       ...state,
@@ -179,6 +252,7 @@ export function useGivenManaState(
       generationPerSlot,
       stakedOrDelegatedTokens,
     } as ManaState,
+    maxAvailableSupply,
     handleDelete,
     handleStakeChange,
     handleAddValidator,
@@ -240,6 +314,24 @@ export function getDefaultParameters(
     },
     network,
   } as ManaCalculatorProps;
+}
+
+function getDerivedRoleValues(
+  state: ManaCalculatorProps,
+  stakedTokens: number,
+  userType: UserType = state.userType,
+) {
+  return userType === UserType.VALIDATOR
+    ? {
+        validator: {
+          ...state.validator,
+          attractedNewDelegatedStake:
+            (stakedTokens *
+              state.validators.reduce((a, b) => a + b.delegatedStake, 0)) /
+            state.validators.reduce((a, b) => a + b.lockedStake, 0),
+        },
+      }
+    : {};
 }
 
 export function getValidators(network: NetworkType): ValidatorProps[] {

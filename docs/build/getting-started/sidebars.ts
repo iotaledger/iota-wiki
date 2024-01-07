@@ -36,6 +36,21 @@ module.exports = {
           href: 'https://explorer.shimmer.network',
         },
         {
+          label: 'Shimmer EVM Explorer',
+          type: 'link',
+          href: 'https://explorer.evm.shimmer.network/',
+        },
+        {
+          label: 'Shimmer EVM Toolkit',
+          type: 'link',
+          href: 'https://evm-toolkit.evm.shimmer.network/',
+        },
+        {
+          label: 'Shimmer EVM Testnet Toolkit & Faucet',
+          type: 'link',
+          href: 'https://evm-toolkit.evm.testnet.shimmer.network/',
+        },
+        {
           label: 'Testnet Faucet',
           type: 'link',
           href: 'https://faucet.testnet.shimmer.network',
