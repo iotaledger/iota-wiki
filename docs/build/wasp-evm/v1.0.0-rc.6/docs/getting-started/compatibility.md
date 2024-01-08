@@ -43,13 +43,12 @@ Here are some of the most important properties and limitations of EVM support in
 
 The Wasp node provides a JSON-RPC service, the standard protocol used by Ethereum tools. Upon receiving a signed
 Ethereum transaction via JSON-RPC, the transaction is wrapped into an ISC
-[off-ledger request](/learn/smart-contracts/invocation#off-ledger-requests). The sender of the request
+[off-ledger request](/learn/smart-contracts/smart-contract-execution#off-ledger-requests). The sender of the request
 is the Ethereum address that signed the original transaction (e.g., the Metamask account).
 
 ### Contract ID Source
 
-While ISC contracts are identified by an [hname](/learn/smart-contracts/smart-contract-anatomy), EVM contracts are
-identified by their Ethereum address.
+While ISC contracts are identified by an `hname`, EVM contracts are identified by their Ethereum address.
 
 ### WASM Root Contract List
 
@@ -58,7 +57,7 @@ EVM contracts are not listed in the chain's [contract registry](../reference/cor
 ### On-ledger Requests
 
 EVM contracts cannot be called via regular ISC requests; they can only be called through the JSON-RPC service.
-As a consequence, EVM contracts cannot receive [on-ledger requests](/learn/smart-contracts/invocation#on-ledger-requests).
+As a consequence, EVM contracts cannot receive [on-ledger requests](/learn/smart-contracts/smart-contract-execution#on-ledger-requests).
 
 ### Block Structure and Storage
 

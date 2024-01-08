@@ -20,7 +20,7 @@ ledger.
 Tokens controlled by an address can be moved to another address by providing a valid signature using the private key
 that controls the source address.
 
-In IOTA Smart Contracts, [each chain has a L1 address](/learn/smart-contracts/states#digital-assets-on-the-chain) (also known as the _Chain
+In IOTA Smart Contracts, [each chain has a L1 address](/learn/smart-contracts/accounts-addresses-and-fees) (also known as the _Chain
 ID_) which enables it to control L1 assets (base tokens, native tokens and NFTs).
 The chain acts as a custodian of the L1 assets on behalf of different entities, thus providing a _L2 Ledger_.
 
@@ -42,11 +42,11 @@ Tokens in an address account can only be moved through a request signed by the p
 ### Smart Contract
 
 Any _smart contract_ can be the owner of a L2 account. Recall that a smart
-contract is uniquely identified in a chain by a [_hname_](/learn/smart-contracts/smart-contract-anatomy#identifying-a-smart-contract).
+contract is uniquely identified in a chain by a _hname_.
 However, the hname is not enough to identify the account since a smart contract on another chain could own it.
 
 Thus, the Agent ID of a smart contract is composed as the contract hname plus the [_chain
-ID_](/learn/smart-contracts/states#digital-assets-on-the-chain), with syntax `<hname>@<chain-id>`. For
+ID_](/learn/smart-contracts/state-management-and-anchoring#digital-assets), with syntax `<hname>@<chain-id>`. For
 example: `cebf5908@tgl1pzehtgythywhnhnz26s2vtpe2wy4y64pfcwkp9qvzhpwghzxhwkps2tk0nd`.
 
 Note that this allows trustless transfers of assets between smart contracts on the same or different chains.
