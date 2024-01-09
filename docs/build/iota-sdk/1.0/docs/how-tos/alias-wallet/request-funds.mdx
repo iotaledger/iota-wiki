@@ -13,7 +13,6 @@ keywords:
   - python
   - rust
 ---
-
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import TipFaucet from '../../_admonitions/_tip-faucet.md';
@@ -43,7 +42,7 @@ The following example will:
 <div className={'hide-code-block-extras'}>
 
 ```rust reference
-https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/alias_wallet/request_funds.rs#L34
+https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/alias_wallet/request_funds.rs#L38
 ```
 
 </div>
@@ -54,18 +53,18 @@ https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/alias_w
 <div className={'hide-code-block-extras'}>
 
 ```rust reference
-https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/alias_wallet/request_funds.rs#L39
+https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/alias_wallet/request_funds.rs#L43
 ```
 
 </div>
 
-4. Retrieve the Alias address using the [`Client.alias_id_to_bech32()`](https://docs.rs/iota-sdk/latest/iota_sdk/client/core/struct.ClientInner.html#method.alias_id_to_bech32)
+4. Retrieve the Alias address using the [`AliasAddress.to_bech32()`](https://docs.rs/iota-sdk/latest/iota_sdk/types/block/address/struct.AliasAddress.html#impl-ToBech32Ext-for-T)
    function.
 
 <div className={'hide-code-block-extras'}>
 
 ```rust reference
-https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/alias_wallet/request_funds.rs#L43
+https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/alias_wallet/request_funds.rs#L47
 ```
 
 </div>
@@ -75,7 +74,7 @@ https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/alias_w
 <div className={'hide-code-block-extras'}>
 
 ```rust reference
-https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/alias_wallet/request_funds.rs#L44
+https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/alias_wallet/request_funds.rs#L48
 ```
 
 </div>
@@ -93,7 +92,7 @@ The following example will:
 <div className={'hide-code-block-extras'}>
 
 ```typescript reference
-    https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/alias_wallet/request-funds.ts#L33
+    https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/alias_wallet/request-funds.ts#L35
 ```
 
 </div>
@@ -104,7 +103,7 @@ The following example will:
 <div className={'hide-code-block-extras'}>
 
 ```typescript reference
-https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/alias_wallet/request-funds.ts#L40
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/alias_wallet/request-funds.ts#L42
 ```
 
 </div>
@@ -115,7 +114,7 @@ https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how
 <div className={'hide-code-block-extras'}>
 
 ```typescript reference
-https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/alias_wallet/request-funds.ts#L44-L47
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/alias_wallet/request-funds.ts#L46-L49
 ```
 
 </div>
@@ -125,7 +124,7 @@ https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how
 <div className={'hide-code-block-extras'}>
 
 ```typescript reference
-https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/alias_wallet/request-funds.ts#L48-L50
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/alias_wallet/request-funds.ts#L50-L52
 ```
 
 </div>
@@ -141,7 +140,7 @@ https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how
 <div className={'hide-code-block-extras'}>
 
 ```python reference
-https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how_tos/alias_wallet/request_funds.py#L16
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how_tos/alias_wallet/request_funds.py#L18
 ```
 
 </div>
@@ -151,7 +150,7 @@ https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how
 <div className={'hide-code-block-extras'}>
 
 ```python reference
-https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how_tos/alias_wallet/request_funds.py#L22
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how_tos/alias_wallet/request_funds.py#L24
 ```
 
 </div>
@@ -162,7 +161,7 @@ https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how
 <div className={'hide-code-block-extras'}>
 
 ```python reference
-https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how_tos/alias_wallet/request_funds.py#L26-L27
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how_tos/alias_wallet/request_funds.py#L28-L29
 ```
 
 </div>
@@ -174,7 +173,7 @@ https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how
 <div className={'hide-code-block-extras'}>
 
 ```python reference
-https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how_tos/alias_wallet/request_funds.py#L28-L29
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how_tos/alias_wallet/request_funds.py#L30-L31
 ```
 
 </div>
