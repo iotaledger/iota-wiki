@@ -69,40 +69,29 @@ https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/account
 <div className={'hide-code-block-extras'}>
 
 ```typescript reference
-https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/accounts_and_addresses/consolidate-outputs.ts#L51
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/accounts_and_addresses/consolidate-outputs.ts#L48
 ```
 
 </div>
 
-3. Prepare a [`Transaction`](../../references/nodejs/classes/Transaction.md) to consolidate the Outputs by calling
-   the [`Account.prepareConsolidateOutputs()`](../../references/nodejs/classes/Account.md#prepareconsolidateoutputs) function.
+3. Send a [`Transaction`](../../references/nodejs/classes/Transaction.md) to consolidate the Outputs by calling
+   the [`Account.consolidateOutputs()`TODO Fix](../../references/nodejs/classes/Account.md#consolidateoutputs) function.
 
 <div className={'hide-code-block-extras'}>
 
 ```typescript reference
-https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/accounts_and_addresses/consolidate-outputs.ts#L70-L72
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/accounts_and_addresses/consolidate-outputs.ts#L67-L69
 ```
 
 </div>
 
-4. Send the `Transaction` by calling the [`PreparedTransaction.send()`](../../references/nodejs/classes/PreparedTransaction.md#send)
+4. Await for the `Transaction` to get confirmed by calling the [`Account.retryTransactionUntilIncluded`](../../references/nodejs/classes/Account.md#retrytransactionuntilincluded)
    function.
 
 <div className={'hide-code-block-extras'}>
 
 ```typescript reference
-https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/accounts_and_addresses/consolidate-outputs.ts#L73
-```
-
-</div>
-
-5. Await for the `Transaction` to get confirmed by calling the [`Account.retryTransactionUntilIncluded`](../../references/nodejs/classes/Account.md#retrytransactionuntilincluded)
-   function.
-
-<div className={'hide-code-block-extras'}>
-
-```typescript reference
-https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/accounts_and_addresses/consolidate-outputs.ts#L77-L79
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/accounts_and_addresses/consolidate-outputs.ts#L73-L75
 ```
 
 </div>

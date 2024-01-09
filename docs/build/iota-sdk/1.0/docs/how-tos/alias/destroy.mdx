@@ -58,17 +58,18 @@ The following example will:
 <div className={'hide-code-block-extras'}>
 
 ```typescript reference
-https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/alias/destroy.ts#L56-L58
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/alias/destroy.ts#L57-L59
 ```
 
 </div>
 
-3. Retry transaction until included [`Transaction`](../../references/nodejs/classes/Account.md#retrytransactionuntilincluded) that was sent.
+3. Await for the `Transaction` to get confirmed by calling the [`Account.retryTransactionUntilIncluded`](../../references/nodejs/classes/Account.md#retrytransactionuntilincluded)
+   function.
 
 <div className={'hide-code-block-extras'}>
 
 ```typescript reference
-https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/alias/destroy.ts#L63
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/alias/destroy.ts#L64-L66
 ```
 
 </div>
@@ -104,7 +105,7 @@ https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/alias/d
 <TabItem value="typescript-node" label="Typescript (Node.js)">
 
 ```typescript reference
-https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/alias/destroy.rs
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/alias/destroy.ts
 ```
 
 </TabItem>
