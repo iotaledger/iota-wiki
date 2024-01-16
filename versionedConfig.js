@@ -217,10 +217,6 @@ exports.maintainPluginsConfig = [
         label: '2.0',
         badges: ['IOTA', 'Shimmer'],
       },
-      {
-        label: '1.2',
-        badges: ['Deprecated'],
-      },
     ],
   },
   {
