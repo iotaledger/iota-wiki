@@ -89,17 +89,6 @@ module.exports = {
     [
       '@iota-wiki/plugin-tutorial',
       {
-        title: 'Send Shimmer Tokens with wallet.rs',
-        description:
-          'In this tutorial you will learn how to send Shimmer Tokens with wallet.rs.',
-        preview: '/send-shimmer-tokens-with-wallet-lib.png',
-        route: 'tutorials/send-shimmer-tokens-with-wallet-lib',
-        tags: ['text', 'wallet', 'getting-started', 'rust', 'shimmer'],
-      },
-    ],
-    [
-      '@iota-wiki/plugin-tutorial',
-      {
         title: 'Interact with IOTA Node Extension (INX)',
         description:
           'In this tutorial you will learn how to interact with the IOTA Node Extension (INX) interface based on gRPC.',
@@ -139,24 +128,6 @@ module.exports = {
         preview: '/setup_iota-js_for_development.png',
         route: 'tutorials/setup_iota-js_for_development',
         tags: ['text', 'getting-started', 'client', 'shimmer', 'js'],
-      },
-    ],
-    [
-      '@iota-wiki/plugin-tutorial',
-      {
-        title: 'Create a NFT with wallet.rs and IPFS',
-        description:
-          'In this tutorial you will learn how to create a NFT on the Shimmer network with wallet.rs and IPFS.',
-        preview: '/create-nft-with-wallet-lib.png',
-        route: 'tutorials/create-nft-with-wallet-lib',
-        tags: [
-          'text',
-          'getting-started',
-          'node_js',
-          'wallet',
-          'ipfs',
-          'shimmer',
-        ],
       },
     ],
     [
