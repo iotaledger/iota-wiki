@@ -15,7 +15,7 @@ keywords:
 # Introduction
 
 Stardust represents the next phase in the IOTA protocol.
-While [Chrysalis](../chrysalis/introduction.md) focused on token transfers, Stardust introduced
+While _Chrysalis_ focused on token transfers, Stardust introduced
 advanced functionalities to the ledger, broadening IOTA's utility and scope.
 
 ## Multi Asset Ledger

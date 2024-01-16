@@ -3,7 +3,7 @@
 The following Tangle Improvement Proposals (TIPs) are currently implemented in the Stardust protocol.
 
 The _Status_ of a TIP reflects its current state with respect to its progression to being supported on
-the [IOTA](../chrysalis/introduction.md) mainnet.
+the [IOTA](../stardust/introduction.md) mainnet.
 
 - `Draft` TIPs are work in progress. They may or may not have a working implementation on a testnet.
 - `Proposed` TIPs are demonstrated to have a working implementation. These TIPs are supported on Shimmer, the staging

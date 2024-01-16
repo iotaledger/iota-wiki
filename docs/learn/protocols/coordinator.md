@@ -17,7 +17,7 @@ and will be removed with the upcoming IOTA 2.0 update.
 
 The Coordinator is a [node plugin](https://github.com/iotaledger/inx-tendercoo) that sends signed blocks called milestones that nodes trust
 and use to confirm blocks and reach _consensus_. Blocks that are directly or indirectly referenced by a milestone block
-are automatically deemed confirmed, though whether they mutate the ledger depends on the [White-Flag consensus](/learn/protocols/chrysalis/core-concepts/white-flag-consensus)
+are automatically deemed confirmed, though whether they mutate the ledger depends on the [White-Flag consensus](/tips/tips/TIP-0002)
 approach.
 The current Coordinator is based on the Tendermint Core BFT consensus, which enables a committee of validators to operate as a distributed Coordinator.
 

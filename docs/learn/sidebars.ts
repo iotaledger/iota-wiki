@@ -17,25 +17,6 @@ module.exports = {
         },
         {
           type: 'category',
-          label: 'Chrysalis',
-          collapsed: true,
-          items: [
-            'protocols/chrysalis/introduction',
-            {
-              type: 'category',
-              label: 'Core Concepts',
-              items: [
-                'protocols/chrysalis/core-concepts/white-flag-consensus',
-                'protocols/chrysalis/core-concepts/switch-to-UTXO',
-                'protocols/chrysalis/core-concepts/EdDSA-support',
-                'protocols/chrysalis/core-concepts/binary-transaction-layout',
-              ],
-            },
-            'protocols/chrysalis/tips',
-          ],
-        },
-        {
-          type: 'category',
           label: 'Stardust',
           collapsed: true,
           items: [

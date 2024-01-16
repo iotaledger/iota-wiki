@@ -1,14 +1,8 @@
-# clients
-**/iota.rs @thibault-martinez
-**/wallet.rs @thibault-martinez
+# sdk
 **/iota-sdk @thibault-martinez
-**/iota.js @thibault-martinez
 
 # chronicle
 **/chronicle @Alexandcoats
-
-# goshimmer
-**/goshimmer @karimodm
 
 # hornet and inx plugins
 **/hornet @muXxer
@@ -29,9 +23,6 @@
 
 # protocol - introduction-docs
 **/introduction-docs @luca-moser
-
-# research
-**/iota-2.0-research-specifications @darcy-camargo
 
 # WASP - ISC
 **/wasp @fijter
