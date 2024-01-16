@@ -129,7 +129,7 @@ You can configure your node to either use HTTP or HTTPS. For publicly exposed no
 
 :::info
 
-Just activating a Wasp node isn't enough for full participation in a smart contracts chain. If you're using our ShimmerEVM chain, a standalone Wasp node isn't necessary. For setting up your own chain, see our guide for the required steps: [Set Up a Chain](/wasp-cli/how-tos/setting-up-a-chain/)
+Activating a Wasp node isn't enough to fully participate in a smart contract chain. You don't need a standalone Wasp node if you're using our ShimmerEVM chain. For setting up your own chain, see our guide for the required steps: [Set Up a Chain](/wasp-cli/how-tos/setting-up-a-chain/)
 
 :::
 
