@@ -70,7 +70,7 @@ module.exports = {
         {
           type: 'link',
           label: 'IotaWallet.NET',
-          href: 'https://github.com/IOTA-NET/IotaWallet.NET',
+          href: 'https://github.com/IOTA-NET/IotaSDK.NET',
         },
         {
           type: 'link',
