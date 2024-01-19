@@ -123,86 +123,6 @@ exports.buildPluginsConfig = [
       },
     ],
   },
-  {
-    id: 'iota-rs',
-    routeBasePath: 'iota.rs',
-    label: 'iota.rs (deprecated)',
-    description: 'Legacy client SDK.',
-    icon: 'IotaCore',
-    subsection: 'build-layer-1',
-    versions: [
-      {
-        label: '2.0-rc.7',
-        badges: ['Shimmer'],
-        bannerPath: path.resolve(
-          __dirname,
-          'banners/pre-sdk-libs-deprecated.mdx',
-        ),
-      },
-      {
-        label: '1.4',
-        badges: ['IOTA'],
-      },
-    ],
-  },
-  {
-    id: 'iota-js',
-    routeBasePath: 'iota.js',
-    label: 'iota.js (deprecated)',
-    description: 'Legacy JavaScript SDK.',
-    icon: 'IotaCore',
-    subsection: 'build-layer-1',
-    versions: [
-      {
-        label: '2.0-rc.1',
-        badges: ['Shimmer'],
-        bannerPath: path.resolve(
-          __dirname,
-          'banners/pre-sdk-libs-deprecated.mdx',
-        ),
-      },
-    ],
-  },
-  {
-    id: 'wallet-rs',
-    routeBasePath: 'wallet.rs',
-    label: 'wallet.rs (deprecated)',
-    description: 'Legacy wallet SDK.',
-    icon: 'Wallet',
-    subsection: 'build-layer-1',
-    versions: [
-      {
-        label: '1.0-rc.6',
-        badges: ['Shimmer'],
-        bannerPath: path.resolve(
-          __dirname,
-          'banners/pre-sdk-libs-deprecated.mdx',
-        ),
-      },
-      {
-        label: '0.1',
-        badges: ['IOTA'],
-      },
-    ],
-  },
-  {
-    id: 'iota-streams',
-    routeBasePath: 'streams',
-    label: 'Streams (deprecated)',
-    description: 'Secure data channels over the Tangle.',
-    icon: 'Streams',
-    subsection: 'build-layer-1',
-    versions: [
-      {
-        label: '0.2',
-        badges: ['IOTA'],
-        bannerPath: path.resolve(
-          __dirname,
-          'banners/iota-streams-deprecated.mdx',
-        ),
-      },
-    ],
-  },
 ];
 
 exports.maintainPluginsConfig = [
@@ -242,10 +162,6 @@ exports.maintainPluginsConfig = [
       {
         label: '1.0-rc.2',
         badges: ['IOTA', 'Shimmer'],
-      },
-      {
-        label: '0.3',
-        badges: ['Deprecated'],
       },
     ],
   },

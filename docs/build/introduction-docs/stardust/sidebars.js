@@ -110,16 +110,6 @@ module.exports = {
               id: 'explanations/libraries/overview',
               label: 'Overview',
             },
-            {
-              type: 'doc',
-              id: 'explanations/libraries/client',
-              label: 'Client Lib',
-            },
-            {
-              type: 'doc',
-              id: 'explanations/libraries/wallet',
-              label: 'Wallet Lib',
-            },
           ],
         },
         {

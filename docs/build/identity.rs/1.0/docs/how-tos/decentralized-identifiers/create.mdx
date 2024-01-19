@@ -96,7 +96,7 @@ https://github.com/iotaledger/identity.rs/blob/main/bindings/wasm/examples/src/0
 Next, you need to construct a new [Alias Output](../../explanations/about-alias-outputs.mdx) that includes the
 DID Document in the [State Metadata](../../explanations/about-alias-outputs.mdx).
 The created Alias Output contains an encoded version of the DID Document in its `State Metadata`, and has the state
-controller and the governor set to the generated [Ed25519](/learn/protocols/chrysalis/core-concepts/EdDSA-support/) address.
+controller and the governor set to the generated Ed25519 address.
 
 Note that controllers don't need to be Ed25519 addresses, they can be any type of output.
 However, they must be unlocked in order perform a state or governance transition when the DID Document is updated or destroyed.

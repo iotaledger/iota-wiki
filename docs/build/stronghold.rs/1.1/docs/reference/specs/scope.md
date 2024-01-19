@@ -152,7 +152,7 @@ prior work from Daniel Thompson-Yvetot and Tensor at their security boutique "IO
 
 ### 2. High level library (stronghold.rs)
 
-The high level library integrates engine.rs and iota.rs to a fully fledged secret storage and
+The high level library integrates engine.rs to a fully fledged secret storage and
 enclave based system for operations in the context of the IOTA Protocol.
 
 Its primary purpose is to serve as the operational enclave for several IOTA Products:
