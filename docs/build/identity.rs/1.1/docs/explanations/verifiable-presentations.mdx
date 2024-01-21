@@ -1,0 +1,40 @@
+# Verifiable Presentations
+
+A verifiable presentation is the recommended data format for sharing one or more [verifiable credentials](./verifiable-credentials.mdx).
+It is constructed and signed by a holder to prove control over their credentials and can be presented to a verifier for [validation](#validation).
+
+For instance: after an issuer [creates and issues](./../how-tos/verifiable-credentials/create.mdx) a [verifiable credential](./verifiable-credentials.mdx) to a holder, such as a university issuing a degree to a graduate,
+the holder stores it securely until asked to present it.
+A company could then request proof of that university degree: the holder can [create a verifiable presentation](./../how-tos/verifiable-credentials/create.mdx)
+containing their credential, which is already signed by their university, and present it to the company to [validate](./../how-tos/verifiable-credentials/create.mdx#validate-a-vc).
+
+Note that verifiable presentations that contain personal data should, as with verifiable credentials, be transmitted and stored securely off-chain to satisfy data privacy regulations such as [GDPR](https://gdpr.eu/).
+
+:::note
+
+See the [Verifiable Credentials Data Model Specification](https://www.w3.org/TR/vc-data-model/#presentations) for more information on verifiable presentations.
+
+:::
+
+## Security Considerations
+
+### Replay Attacks
+
+A verifiable presentation without a challenge and domain properties could potentially be stored by a malicious actor
+and replayed to a different verifier, impersonating the holder.
+This is because the holder's signature on a presentation would still be seen as valid indefinitely,
+until they [rotate](https://www.w3.org/TR/did-core/#verification-method-rotation) the verification method used.
+
+To mitigate this, verifiers should always send a unique challenge and domain when requesting a verifiable presentation.
+These properties are then included in the proof section of the presentation by the holder during signing using [Proof Options](#proof-options).
+The digital signature prevents these properties from being altered as it would invalidate the signature, effectively preventing a malicious
+actor from injecting different values into old verifiable presentations. A presentation without a challenge and domain
+in its proof that matches what was sent by the verifier should be considered invalid.
+
+The challenge string should be sufficiently random and unique for each verifiable presentation requested by a verifier to avoid
+being predicted. The domain, which does not need to be random, is an additional measure. In the unlikely occurrence
+of two verifiers generating the same random challenge, the domain would sufficiently distinguish those requests.
+
+Holders may additionally specify that their signature on a verifiable presentation expires after a short duration, as
+per [Proof Options](./../how-tos/verifiable-presentations/create-and-validate.mdx#proof-options). However, verifiers and different implementations could choose to ignore that property,
+so setting a signature expiration alone should not be relied upon.
