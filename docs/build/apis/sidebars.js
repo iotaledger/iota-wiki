@@ -94,5 +94,10 @@ module.exports = {
     ...categories
       .filter(({ label }) => directoryExists(generateDirectoryPath('docs', label)))
       .map(resolveSidebarPaths),
+    {
+      type: 'link',
+      label: 'ShimmerEVM Explorer API',
+      href: 'https://explorer.evm.shimmer.network/api-docs',
+    },
   ],
 };
