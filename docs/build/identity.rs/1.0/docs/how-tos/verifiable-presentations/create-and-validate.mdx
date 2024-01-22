@@ -13,8 +13,8 @@ import TabItem from '@theme/TabItem';
 
 The IOTA Identity Framework enables holders tos easily construct
 [verifiable presentations](./../../explanations/verifiable-presentations.mdx).
-As demonstrated in the [example](#example),
-holders only need to pass in their credentials to present and sign the presentation.
+As demonstrated in the [example](#example-code),
+holders only need to pass in their credentials to create a JWT presentation.
 
 ## Properties
 
@@ -34,49 +34,27 @@ However, the holder property should be included to satisfy [subject-holder relat
 After creation, the holder signs the verifiable presentation using a private key linked to one of the verification
 methods in their DID Document and transmits it to a verifier for validation.
 
-## Proof Options
+## Creation and Validation
 
-A digital signature on a verifiable presentation provides data integrity,
+Verifiable presentation can be issued as a JWT that provides data integrity,
 and also proves the [DID](../../explanations/decentralized-identifiers.mdx) of the holder.
-
-### Metadata Properties
-
-The proof section embedded in a presentation may also include additional metadata.
-
-The following metadata properties can be configured by the framework and are optional and omitted by default:
-
-- **Created**: Timestamp of when the presentation was signed.
-- **Expires**: Timestamp after which the presentation is no longer considered valid.
-- **Challenge**: Arbitrary random string. Sent by the verifier and mitigates replay attacks; should be sufficiently random and uniquely generated per presentation request.
-- **Domain**: Arbitrary string. Sent by the verifier and can help mitigate replay attacks when used with a challenge.
-- **Proof Purpose**: Indicates the purpose of the signature.
-  - **AssertionMethod**: To assert a claim. The signing verification method must have an [`assertionMethod`](https://www.w3.org/TR/did-core/#assertion) relationship to be valid.
-  - **Authentication**: To authenticate the signer. The signing verification method must have an [`authentication`](https://www.w3.org/TR/did-core/#authentication) relationship to be valid.
 
 :::note
 
-Verifiers should always send a challenge and domain
+Verifiers should always send a challenge
 to [mitigate replay attacks](./../../explanations/verifiable-presentations.mdx#security-considerations).
-
 :::
 
-A verifier could also choose to ignore some or all of these options.
-See [Proof Verifier Options](#proof-verifier-options) for more information.
-
-## Validation
 
 The IOTA Identity Framework provides several options for verifiers to validate various sections of a verifiable presentation.
-See the [example](#example) for a demonstration of how to validate a presentation.
+See the [example](#example-code) for a demonstration of how to validate a presentation.
 
 The framework checks:
 
 - **Semantic structure**: Ensures the presentation and its credentials adhere to the specification.
 - **Presentation proof**: Verifies the presentation signature against the DID Document of the holder.
 - **Credential proofs**: Verifies the credential signatures against the DID Documents of their respective issuers.
-- **Optional validations**: Additional checks on signatures and credential fields can be configured by the verifier.
 
-Note that a verifier may specify which DID Documents to use for the holder and issuers.
-Otherwise, they are resolved from the Tangle automatically.
 
 Currently, the following are **not** checked automatically:
 
@@ -91,25 +69,6 @@ against the given options.
 
 The default validation behavior may be modified by the following options.
 
-### Proof Verifier Options
-
-While the framework always verifies that the digital signature on a verifiable presentation is valid,
-a verifier may validate additional fields in the proof on a presentation.
-Notably, to mitigate potential [replay attacks](./../../explanations/verifiable-presentations.mdx#security-considerations),
-a verifier should always check that the challenge and domain fields match what was sent to the holder when
-requesting the presentation.
-
-The following options are available:
-
-- **Method Scope**: check the signing verification method has a particular [verification relationship](https://www.w3.org/TR/did-core/#verification-relationships). Overridden by the proof purpose check.
-- **Method Type**: check the signing verification method has a particular type.
-- **Challenge**: check the challenge field matches this string.
-- **Domain**: check the domain field matches this string.
-- **Proof Purpose**: require a specific purpose on the proof. See [Proof Options](#proof-options).
-- **Allow Expired**: accept proofs where the current datetime is after their expiration. Default is to reject expired proofs.
-
-See [Proof Options](#proof-options) for more information on setting these properties as a holder when signing a verifiable presentation.
-
 ## Subject-Holder Relationship
 
 Specifies the expected relationship between the holder that signed the verifiable presentation and the subject
@@ -117,7 +76,7 @@ specified in each [verifiable credential](./../../explanations/verifiable-creden
 This can be restricted by the [`nonTransferable`](https://www.w3.org/TR/vc-data-model/#nontransferable-property) property,
 which indicates that a verifiable credential must only be encapsulated into a verifiable presentation whose holder matches the credential subject.
 
-By default, the framework always enforces that the holder matches the subject on all credentials.
+By default, the framework always enforces that the holder matches the subject.
 
 The following options are available to modify that behavior:
 
@@ -132,13 +91,6 @@ for further discussion on the different subject-holder relationships.
 
 :::
 
-### Credential Validation Options
-
-These options specify conditions that all credentials in a verifiable presentation must satisfy.
-
-- **Expiry Date**: Check that the [`expirationDate`](https://www.w3.org/TR/vc-data-model/#expiration) property, if present, is not before a specific datetime. Defaults to the current datetime if unset.
-- **Issuance Date**: Check that the [`issuanceDate`](https://www.w3.org/TR/vc-data-model/#issuance-date) property, if present, is not after a specific datetime. Defaults to the current datetime if unset.
-- **Verifier Options**: See [Proof Verifier Options](#proof-verifier-options) for details.
 
 ## Example Code
 

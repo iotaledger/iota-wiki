@@ -36,31 +36,12 @@ In the IOTA Identity Framework, you can create a Verifiable Credential with the 
 - [**Evidence**](https://www.w3.org/TR/vc-data-model/#evidence): Optional list of objects that can be used by the issuer to provide the verifier with additional supporting information in a verifiable credential.
 - [**Non-Transferable**](https://www.w3.org/TR/vc-data-model/#nontransferable-property): Optional flag that indicates that a verifiable credential must only be encapsulated in a [verifiable presentation](./../../explanations/verifiable-presentations.mdx) whose proof was issued by the credential subject.
 
+
+
+
 ## Signing {#signing}
 
-After creation, the issuer signs the verifiable credential using one of their private keys,
-embedding the digital signature in its [proof](https://www.w3.org/TR/vc-data-model/#proofs-signatures) section.
-
-This is what allows verifiers to independently validate the credential using the corresponding public key from the issuer's DID Document.
-
-### Proof Options {#proof-options}
-
-A digital signature on a verifiable credential both provides data integrity and proves the DID of the issuer.
-The proof section embedded in a credential may also include additional metadata.
-
-The following metadata properties can be configured by the framework and are optional and omitted by default:
-
-- **Created**: Timestamp of when the credential was signed, recommended.
-- **Expires**: Timestamp after which the signature is no longer considered valid. Implementers should prefer to set the dedicated **Expiration Date** property on credentials instead.
-- **Proof Purpose**: Indicates the purpose of the signature.
-  - **AssertionMethod**: To assert a claim. The signing verification method must have an [`assertionMethod`](https://www.w3.org/TR/did-core/#assertion) relationship to be valid.
-  - **Authentication**: To authenticate the signer. The signing verification method must have an [`authentication`](https://www.w3.org/TR/did-core/#authentication) relationship to be valid.
-
-Most verifiable credentials should be signed with the assertion method proof purpose
-to clearly indicate that the signature is asserting a claim and restrict it to valid verification methods.
-Whereas a proof may be attached to a [verifiable presentation](./../../explanations/verifiable-presentations.mdx) for authentication purposes.
-
-Other metadata fields such as `challenge` and `domain` may be included, however they are more pertinent for [verifiable presentations](./../../explanations/verifiable-presentations.mdx).
+After preparing the verifiable credential, the issuer creates a signed JWT containing VC in the claims using one of their private keys. This is what allows verifiers to independently validate the credential using the corresponding public key from the issuer's DID Document.
 
 ## Validation
 
@@ -71,7 +52,7 @@ Verifiers should ensure certain properties of a credential are valid when receiv
 The IOTA Identity Framework supports the following checks during credential validation:
 
 - **Semantic structure**: Ensures the credential adheres to the specification.
-- **Proof**: Verifies the signature against the DID Document of the issuer.
+- **Signature**: Verifies the JWS against the DID Document of the issuer.
 - **Optional validations**: Additional checks on credential properties, and the signature can be configured by specifying [Validation Options](#validation-options).
 
 ### Validation Options
@@ -80,7 +61,7 @@ These options specify conditions that specific properties in a credential must s
 
 - **Expiry Date**: Check that the [`expirationDate`](https://www.w3.org/TR/vc-data-model/#expiration) property, if present, is not before a specific datetime. Defaults to the current datetime if unset.
 - **Issuance Date**: Check that that [`issuanceDate`](https://www.w3.org/TR/vc-data-model/#issuance-date) property, if present, is not after a specific datetime. Defaults to the current datetime if unset.
-- **Verifier Options**: Validates aspects of the credential signature and its metadata, see [Proof Options](#proof-options).
+- **Verifier Options**: Validates aspects of the credential signature.
 
 ## Sharing Verifiable Credentials
 
