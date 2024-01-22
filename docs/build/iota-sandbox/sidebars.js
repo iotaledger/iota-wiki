@@ -12,6 +12,16 @@ module.exports = {
     },
     {
       type: 'category',
+      label: 'How To',
+      items: [
+        {
+          type: 'doc',
+          id: 'how-tos/setup-chain',
+        },
+      ],
+    },
+    {
+      type: 'category',
       label: 'References',
       items: [
         {
