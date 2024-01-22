@@ -1,3 +1,11 @@
+---
+title: Endpoints
+description: Endpoints of the IOTA Sandbox
+keywords:
+  - api
+  - endpoints
+---
+
 # Endpoints
 
 Once you have [installed](../getting-started.md#install-the-iota-sandbox-using-docker),
@@ -40,6 +48,8 @@ EVM Toolkit is not active by default. You need to enable the `evm-toolkit` profi
 :::info Port
 
 The EVM Toolkit is available on port `8082` by default. You can change it in the `.env` file.
+
+:::
 
 Frontend: `http://localhost:8082/`
 
