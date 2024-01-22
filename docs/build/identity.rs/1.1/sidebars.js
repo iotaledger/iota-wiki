@@ -57,6 +57,7 @@ module.exports = {
           items: [
             'how-tos/verifiable-credentials/create',
             'how-tos/verifiable-credentials/revocation',
+            'how-tos/verifiable-credentials/selective-disclosure',
           ],
         },
         {
