@@ -31,7 +31,9 @@ Ethereum tools think they are interfacing with an actual Ethereum node, but some
 
 :::warning
 
-There is a difference in the decimal precision of ether (18 decimal places) to MIOTA/SMR(6 decimal places). Because of this, when sending native tokens in the EVM, which are expressed in wei (ether = 10<sup>18</sup>wei), the last 12 decimal places will be ignored.
+There is a difference in the decimal precision of ether (18 decimal places) to MIOTA/SMR(6 decimal places). 
+Because of this, when sending native tokens in the EVM, which are expressed in wei (ether = 10<sup>18</sup>wei), 
+the last 12 decimal places will be ignored.
 
 Example: 1,999,999,999,999,999,999 wei = 1.999,999 SMR/MIOTA
 
@@ -43,7 +45,7 @@ Here are some of the most important properties and limitations of EVM support in
 
 The Wasp node provides a JSON-RPC service, the standard protocol used by Ethereum tools. Upon receiving a signed
 Ethereum transaction via JSON-RPC, the transaction is wrapped into an ISC
-[off-ledger request](/learn/smart-contracts/invocation#off-ledger-requests). The sender of the request
+[off-ledger request](../explanations/invocation.md#off-ledger-requests). The sender of the request
 is the Ethereum address that signed the original transaction (e.g., the Metamask account).
 
 ### Contract ID Source
@@ -58,7 +60,7 @@ EVM contracts are not listed in the chain's [contract registry](../reference/cor
 ### On-ledger Requests
 
 EVM contracts cannot be called via regular ISC requests; they can only be called through the JSON-RPC service.
-As a consequence, EVM contracts cannot receive [on-ledger requests](/learn/smart-contracts/invocation#on-ledger-requests).
+As a consequence, EVM contracts cannot receive [on-ledger requests](../explanations/invocation.md#on-ledger-requests).
 
 ### Block Structure and Storage
 
@@ -91,7 +93,7 @@ by default `eth_getBalance` will return the L2 base token balance of the given E
 
 ### The Magic Contract
 
-A [dedicated Ethereum contract](../how-tos/magic-contract/magic.md) exists to manage ISC tokens and generally avail ISC
+A [dedicated Ethereum contract](../how-tos/use-the-magic-contract/magic.md) exists to manage ISC tokens and generally avail ISC
 functionalities, introducing commands like `isc.send(...)` for token transfers.
 
 ### Gas Fees

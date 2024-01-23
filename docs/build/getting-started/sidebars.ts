@@ -23,12 +23,12 @@ module.exports = {
         {
           type: 'link',
           label: 'WASP CLI',
-          href: '/wasp-cli/how-tos/wasp-cli',
+          href: '/isc/how-tos/manage-chains/wasp-cli',
         },
         {
           label: 'Schema Tool',
           type: 'link',
-          href: '/wasp-wasm/how-tos/schema-tool/introduction',
+          href: '/isc/how-tos/wasm/introduction',
         },
         {
           label: 'Explorer',

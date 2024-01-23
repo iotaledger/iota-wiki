@@ -16,7 +16,7 @@ Smart contracts are programs that are immutably stored in the chain.
 
 Through _VM abstraction_, the ISC virtual machine is agnostic about the interpreter used to execute each smart contract.
 It can support different _VM types_ (i.e., interpreters) simultaneously on the same chain.
-For example, it is possible to have [Wasm](/isc/getting-started/languages-and-vms#wasm-vm-for-isc) and [EVM/Solidity](/isc/getting-started/languages-and-vms#evmsolidity-based-smart-contracts) smart
+For example, it is possible to have [Wasm](../getting-started/languages-and-vms.md#wasm-vm-for-isc) and [EVM/Solidity](../getting-started/languages-and-vms.md#evmsolidity-based-smart-contracts) smart
 contracts coexisting on the same chain.
 
 The logical structure of IOTA Smart Contracts is independent of the _VM_ type:
@@ -27,7 +27,7 @@ The logical structure of IOTA Smart Contracts is independent of the _VM_ type:
 
 Each smart contract on the chain is identified by a _hname_ (pronounced "aitch-name"), which is a `uint32` value
 calculated as a hash of the smart contract's instance name (a string).
-For example, the hname of the [`root`](/isc/reference/core-contracts/root/) core contract
+For example, the hname of the [`root`](../reference/core-contracts/root.md) core contract
 is `0xcebf5908`. This
 value uniquely identifies this contract in every chain.
 
@@ -49,7 +49,7 @@ Only the smart contract program can change its data state and spend from its
 account. Tokens can be sent to the smart contract account by any other agent on
 the ledger, be it a wallet with an address or another smart contract.
 
-See [Accounts](/isc/explanations/how-accounts-work/) for more information on sending and receiving
+See [Accounts](https://wiki.iota.org/build/wasp-wasm/how-accounts-work/) for more information on sending and receiving
 tokens.
 
 ## Entry Points
@@ -68,7 +68,7 @@ There are two types of entry points:
 ## Execution Results
 
 After a request to a Smart Contract is executed (a call to a full entry point), a _receipt_ will be added to
-the [`blocklog`](/isc/reference/core-contracts/blocklog/) core contract. The receipt details the
+the [`blocklog`](../reference/core-contracts/blocklog.md) core contract. The receipt details the
 execution results
 of said request: whether it was successful, the block it was included in, and other information.
 Any events dispatched by the smart contract in context of this execution will also be added to the receipt.

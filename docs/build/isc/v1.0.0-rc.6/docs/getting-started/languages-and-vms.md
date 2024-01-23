@@ -1,7 +1,5 @@
 # Supported Virtual Machines & Languages
 
-## EVM/Solidity Based Smart Contracts
-
 :::caution
 
 Smart Contracts are currently only compatible with the [Stardust protocol](/learn/protocols/stardust/introduction) and
@@ -10,10 +8,12 @@ therefore only compatible with the [Shimmer](/build/networks-endpoints/#shimmer)
 
 :::
 
-The current release of IOTA Smart Contracts has support for [EVM](https://ethereum.org/en/developers/docs/evm/)/[Solidity](https://docs.soliditylang.org/en/v0.8.16/) smart
-contracts, as well as [Wasm]() smart contracts, providing limited compatibility with existing smart contracts and
-tooling from other EVM based chains like Ethereum. This allows us to offer the existing ecosystem around EVM/Solidity a
-familiar alternative.
+The current release of IOTA Smart Contracts has support for [EVM/Solidity](#evmsolidity-based-smart-contracts) smart
+contracts, as well as [Wasm](#wasm-vm-for-isc) smart contracts, providing limited compatibility with
+existing smart contracts and tooling from other EVM based chains like Ethereum. This allows us to offer the existing 
+ecosystem around EVM/Solidity a familiar alternative.
+
+## EVM/Solidity Based Smart Contracts
 
 ### What is EVM/Solidity?
 
@@ -31,24 +31,37 @@ changes to function on IOTA Smart Contracts.
 ### How IOTA Smart Contracts Work With EVM
 
 Every deployed IOTA Smart Contracts chain automatically includes a core contract
-called [`evm`](./reference/core-contracts/evm.md). This core contract is responsible for running EVM code and
+called [`evm`](../reference/core-contracts/evm.md). This core contract is responsible for running EVM code and
 storing the EVM state.
 
 The Wasp node also provides a standard JSON-RPC service, which allows you to interact with the EVM layer using existing
 tooling like [MetaMask](https://metamask.io/), [Remix](https://remix.ethereum.org/) or [Hardhat](https://hardhat.org/).
 Deploying EVM contracts is as easy as pointing your tools to the JSON-RPC endpoint.
 
-## VM for ISC
+:::warning EVM Compatibility
 
-:::warning
+The ISC EVM layer is also designed to be as compatible as possible with existing Ethereum
+[tools](tools.md) and functionalities. However, please make sure you have checked out the current
+[properties and limitations](compatibility.md). 
+
+For example, there is a difference in the decimal precision of ether (18 decimal places) to MIOTA/SMR(6 decimal places).
+
+:::
+
+
+## Wasm VM for ISC
+
+:::warning Experimental
+
 The Wasm _VM_ is in experimental state, showcasing ISC's "VM plugin" architecture.
 
-Experiment but avoid using it for production applications; opt for [EVM](/wasp-evm/introduction).
+Experiment but avoid using it for production applications; opt for [EVM](quick-start.mdx).
+
 :::
 
 IOTA Smart Contracts (ISC) provide a sandboxed environment through an API, facilitating secure and deterministic 
 interactions with ISC functions. This API supports any Virtual Machine (VM) aiming to build a system for smart contract 
-code execution on ISC.
+ code execution on ISC.
 
 ![Wasp node ISC Host](/img/wasm_vm/IscHost.png)
 
@@ -65,12 +78,12 @@ functionality and smart contract state storage access.
 
 The ISC sandbox environment offers:
 
-- Smart contract metadata and state data access
-- Request data retrieval for function calls
-- Token management within the contract
-- Utility functions from the host
-- Smooth initiation of other smart contract functions
-- Logging facility
+- Smart contract metadata and state data access.
+- Request data retrieval for function calls.
+- Token management within the contract.
+- Utility functions from the host.
+- Smooth initiation of other smart contract functions.
+- Logging facility.
 
 ### Supported Languages
 

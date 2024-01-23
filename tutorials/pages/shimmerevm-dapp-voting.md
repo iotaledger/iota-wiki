@@ -283,7 +283,7 @@ Please make a note of the ABI while you're compiling it. You will need it later.
 
 Most of the front end is design work which is not the focus of this tutorial, so let's jump to the js part. You can use [this project](https://github.com/anistark/smart-contracts-demo/tree/main/voting) if you're looking for a ready design to get started. Feel free to make changes to the design to suit your needs.
 
-We will also use [Metamask](/wasp-evm/getting-started/compatible-tools) in this section, so please ensure you have installed and logged in to Metamask.
+We will also use [Metamask](/isc/getting-started/tools) in this section, so please ensure you have installed and logged in to Metamask.
 The first thing you need to do is check that Metamask is accessible from your dApp:
 
 ```javascript!

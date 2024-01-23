@@ -41,7 +41,7 @@ chain ID after deployment.**
 
 ## Wasp-cli
 
-The Wasp CLI has some basic functionalities to manage an EVM chain. Given the [compatibility](./compatibility.md) with
+The Wasp CLI has some basic functionalities to manage an EVM chain. Given the [compatibility](compatibility.md) with
 existing tooling, only the basics are covered to get started with IOTA Smart Contracts and EVM.
 
 The JSON-RPC endpoint automatically starts with Wasp, and you can use the CLI tools to deploy a new chain that spawns up
