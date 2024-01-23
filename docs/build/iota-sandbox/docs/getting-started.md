@@ -1,5 +1,6 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import LinuxCommands from '@site/docs/_admonitions/_linux-commands.md';
 
 # Getting Started With the IOTA Sandbox
 
@@ -31,11 +32,7 @@ mkdir iota-sandbox && cd iota-sandbox && curl -L https://github.com/Dr-Electron/
 
 ### Prepare
 
-:::note
-
-The commands assume you are using Linux.
-
-:::
+<LinuxCommands/>
 
 #### Set Up Your Environment
 

@@ -15,6 +15,7 @@ keywords:
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import LinuxCommands from '@site/docs/_admonitions/_linux-commands.md';
 
 # Install HORNET using Docker
 
@@ -52,11 +53,7 @@ It includes everything required to setup a public node accessible by wallets and
 
 ## Download the latest release
 
-:::note
-
-The commands assume you are using Linux.
-
-:::
+<LinuxCommands/>
 
 Once you have completed all the installation [requirements](#requirements), you can download the latest release by running the following command:
 
@@ -66,11 +63,7 @@ mkdir node-docker-setup && cd node-docker-setup && curl -L https://node-docker-s
 
 ## Prepare
 
-:::note
-
-The commands assume you are using Linux.
-
-:::
+<LinuxCommands/>
 
 ### 1. Generate dashboard credentials
 
