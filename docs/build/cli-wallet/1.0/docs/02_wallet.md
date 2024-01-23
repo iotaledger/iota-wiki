@@ -87,7 +87,7 @@ When just initialised, the wallet has no account yet, use the `new` command to c
 | Name                 | Description                                    | Default                             | Environment Variable | Example                  |
 | -------------------- | ---------------------------------------------- | ----------------------------------- | -------------------- | ------------------------ |
 | `--mnemonic` (`-m`)  | Initialises a wallet from an existing mnemonic | ✘                                   | ✘                    | "aunt middle impose ..." |
-| `--node-url` (`-n`)  | Sets the node to connect to                    | https://api.testnet.shimmer.network | `NODE_URL`           | http://localhost:14265   |
+| `--node-url` (`-n`)  | Sets the node to connect to                    | `https://api.testnet.shimmer.network` | `NODE_URL`           | http://localhost:14265   |
 | `--coin-type` (`-c`) | Sets the coin type associated with the wallet  | 4219 (=Shimmer)                     | ✘                    | 4218(=IOTA)              |
 
 #### Examples
