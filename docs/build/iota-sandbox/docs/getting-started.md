@@ -7,15 +7,15 @@ You can use this guide to [install](#install-the-iota-sandbox-using-docker)
 and [run](#run) the [IOTA Sandbox](welcome.md).
 It includes everything you need to develop your own IOTA dApps, plugins, and more.
 
-## Install the IOTA Sandbox using Docker
+## Install the IOTA Sandbox Using Docker
 
 ### Requirements
 
 1. A recent release of [Docker](https://www.docker.com/). Avoid using the Docker version shipped with your OS since these are mostly out of date. You can find installation instructions in the [official Docker documentation](https://docs.docker.com/).
 2. [Docker Compose CLI plugin](https://docs.docker.com/compose/install/linux/).
-3. Make sure ports 80, 80... are not in use by other applications. If they are change them in the `.env` file.
+3. Make sure ports 80, 8081 and 8082 are not in use by other applications. If they are change them in the `.env` file.
 
-### Download the latest release
+### Download the Latest Release
 
 :::note 
 
@@ -60,6 +60,7 @@ The commands assume you are using Linux.
 #### Set Up Your Environment
 
 In most cases the default setup should be enough. But you can edit the `.env` file to configure some optional settings:
+
 <Tabs groupId="network" queryString>
 <TabItem value="iota" label="IOTA">
 

@@ -42,7 +42,7 @@ API: `http://localhost/chronicle/`
 
 :::info Profile
 
-EVM Toolkit is not active by default. You need to enable the `evm-toolkit` profile to use it.
+The EVM Toolkit is not active by default. You need to enable the `evm-toolkit` profile to use it.
 
 :::
 :::info Port

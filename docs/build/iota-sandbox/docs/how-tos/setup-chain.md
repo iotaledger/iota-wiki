@@ -1,18 +1,23 @@
 ---
-title: Setup a Chain
-description: Setup a wasp chain in the IOTA Sandbox
+title: Set Up a Chain
+description: Set up a wasp chain in the IOTA Sandbox
 keywords:
   - how to
   - setup
   - chain
 ---
 
-To setup a chain you should have the wasp profile enabled. You can do this by uncommenting the `wasps` line in the `.env` file.
+To set up a chain,  you should enable the wasp profile. You can do this by uncommenting the `wasps` line in the `.env` file.
 
-Afterwards you can just follow the how-tos for [configuring wasp-cli](/wasp-cli/how-tos/wasp-cli/) and [setting up a chain](/wasp-cli/how-tos/setting-up-a-chain#start-the-chain).
-You can find the endpoints needed in the [endpoints section](./../references/endpoints.md).
+Afterward, you can just follow the how-tos for [configuring wasp-cli](/wasp-cli/how-tos/wasp-cli/) and [setting up a chain](/wasp-cli/how-tos/setting-up-a-chain#start-the-chain).
+:::tip Available Endpoints
 
-## Optional: Enable and configure EVM toolkit
+You can find the available endpoints in the [endpoints reference](./../references/endpoints.md).
 
-Enable the EVM toolkit by uncommenting the `evm-toolkit` line in the `.env` file.
-After that add change the `text` and `chainAddress` to your needs in the `assets/evm-toolkit/networks.json` file.
+:::
+
+
+## (Optional) Enable and Configure EVM Toolkit
+
+Enable the [EVM toolkit](https://evm-toolkit.evm.shimmer.network/) by uncommenting the `evm-toolkit` line in the `.env` file.
+After that, change the `text` and `chainAddress` to your needs in the `assets/evm-toolkit/networks.json` file.
