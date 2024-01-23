@@ -20,7 +20,11 @@ You can view the chain state using the dashboard (`<URL>/wasp/dashboard` when us
 ## Manage Chain Configuration and Validators
 
 You can manage the chain configuration and committee of validators by interacting with
+<<<<<<<< HEAD:docs/maintain/wasp/v1.0.0-rc.6/docs/how-tos/chain-management.md
 the [Governance contract](/isc/reference/core-contracts/governance).
+========
+the [Governance contract](../../reference/core-contracts/governance.md).
+>>>>>>>> 136ca6e9c8 (re-merge EVM and WASM):docs/build/isc/v1.0.0-rc.6/docs/how-tos/manage-chains/chain-management.md
 
 The “Chain Owner” is the only one who can perform administrative tasks.
 
