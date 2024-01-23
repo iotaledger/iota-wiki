@@ -156,10 +156,10 @@ A bundler such as [webpack](https://webpack.js.org/) or [rollup](https://rollupj
 
 After you [installed the library](#install-the-iota-sdk), you can create a `Client` instance and interface with it.
 
-The following example creates a [`Client`](https://wiki.iota.org/shimmer/iota-sdk/references/nodejs/classes/Client/)
+The following example creates a [`Client`](../references/nodejs/classes/Client.md)
 instance connected to
-the [Shimmer Testnet](https://api.testnet.shimmer.network), and retrieves the node's information by
-calling [`Client.getInfo()`](https://wiki.iota.org/shimmer/iota-sdk/references/nodejs/classes/Client/#getinfo),
+the Shimmer Testnet, and retrieves the node's information by
+calling [`Client.getInfo()`](../references/nodejs/classes/Client#getinfo),
 and then print the node's information.
 
 <Tabs groupId="usage" queryString>
@@ -189,7 +189,7 @@ After you [installed the library](#installing-the-iota-sdk), you can create a `W
 
 The following example will create a
 new [`Wallet`](https://wiki.iota.org/iota-sdk/references/nodejs/classes/Wallet/) [`Account`](https://wiki.iota.org/iota-sdk/references/nodejs/classes/Account/)
-that connects to the [Shimmer Testnet](https://api.testnet.shimmer.network) using the
+that connects to the Shimmer Testnet using the
 [`MnemonicSecretManager`](https://wiki.iota.org/iota-sdk/references/nodejs/interfaces/MnemonicSecretManager/)
 by calling
 the [`Wallet.createAccount(data)`](https://wiki.iota.org/iota-sdk/references/nodejs/classes/Wallet/#createaccount)

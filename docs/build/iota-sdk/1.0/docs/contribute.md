@@ -37,7 +37,7 @@ in the following ways:
 
 The project's documentation is also open source and available on GitHub. If you wish to contribute new documentation or
 fix any errors, please refer to
-the [contribution guidelines](https://github.com/iotaledger/documentation/blob/develop/.github/CONTRIBUTING.md).
+the [contribution guidelines](https://github.com/iotaledger/iota-wiki/blob/main/.github/CONTRIBUTING.md).
 
 ## Share Your Knowledge
 

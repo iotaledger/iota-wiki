@@ -34,7 +34,7 @@ Transaction A shows an example transaction that creates a foundry:
 - Foundries support only one unlock condition, namely the _Immutable Alias Address Unlock Condition_. It can never be changed
   during the lifetime of the foundry, therefore the issuer role can only be transferred via the controlling alias.
 - Metadata about the token may be put in the _Immutable Metadata Feature_ of the foundry. For example, it may hold an
-  [IRC30](https://github.com/iotaledger/tips/blob/token-metadata-schema/tips/TIP-0030/tip-0030.md) compatible JSON file.
+  [IRC30](/tips/tips/TIP-0030) compatible JSON file.
   By hosting token metadata on-chain in a foundry output, we make the data available on all network nodes 24/7. There is
   no need for additional, off-chain metadata servers.
 

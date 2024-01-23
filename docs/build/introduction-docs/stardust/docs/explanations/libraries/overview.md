@@ -28,7 +28,7 @@ The official IOTA libraries serve as `one-source-code-of-truth` to IOTA users an
   in [Rust](/iota-sdk/getting-started/rust), with bindings for
   [Node.js](/iota-sdk/getting-started/nodejs),
   [Python](/iota-sdk/getting-started/python), and [Wasm](/iota-sdk/getting-started/wasm).
-- [iota.go](https://github.com/iotaledger/iota.go/tree/v3): an IOTA client library in Golang.
+- [iota.go](https://github.com/iotaledger/iota.go/tree/production): an IOTA client library in Golang.
 
 <div class="iframe-wrapper">
 <iframe src="https://www.youtube.com/embed/N2VW3zJQmso" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>

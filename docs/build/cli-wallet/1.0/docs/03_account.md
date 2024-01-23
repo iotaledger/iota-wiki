@@ -246,7 +246,7 @@ Requests funds from a faucet.
 | Name      | Optional | Default                                              | Example                                                         |
 | --------- | -------- | ---------------------------------------------------- | --------------------------------------------------------------- |
 | `address` | ✓        | The latest address of the account                    | rms1qztwng6cty8cfm42nzvq099ev7udhrnk0rw8jt8vttf9kpqnxhpsx869vr3 |
-| `url`     | ✓        | <https://faucet.testnet.shimmer.network/api/enqueue> | <http://localhost:8091/api/enqueue>                             |
+| `url`     | ✓        | `https://faucet.testnet.shimmer.network/api/enqueue` | <http://localhost:8091/api/enqueue>                             |
 
 #### Examples
 
