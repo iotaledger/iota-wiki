@@ -1,5 +1,5 @@
 ---
-description: test
+description: The IOTA Sandbox serves as a local network designed specifically for developers.
 keywords:
   - sandbox
   - TOC

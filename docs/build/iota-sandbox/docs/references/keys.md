@@ -1,6 +1,10 @@
 ---
 title: Keys and Passwords for the IOTA Sandbox
 description: Keys and Passwords for the IOTA Sandbox
+keywords:
+  - keys
+  - passwords
+  - reference
 ---
 ## Keys 
 

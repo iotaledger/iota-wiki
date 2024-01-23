@@ -1,3 +1,11 @@
+---
+description: Set up and get started with the IOTA Sandbox
+keywords:
+  - how to
+  - setup
+  - sandbox
+---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import LinuxCommands from '@site/docs/_admonitions/_linux-commands.md';

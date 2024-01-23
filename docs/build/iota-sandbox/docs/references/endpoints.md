@@ -4,6 +4,7 @@ description: Endpoints of the IOTA Sandbox
 keywords:
   - api
   - endpoints
+  - reference
 ---
 
 # Endpoints
