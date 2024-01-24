@@ -25,9 +25,7 @@ onto L2.
 To send EVM transactions, you need to have an Ethereum address that owns tokens on the ISC chain (L2). These tokens will
 be used to cover gas fees.
 
-## Firefly Wallet
-
-## Bloom Wallet
+### Bloom Wallet
 
 The most intuitive way to do this is using [Bloom wallet](https://bloomwallet.io/). Connect it to the network of your
 choice, and you will be able to send base tokens from L1 to L2.

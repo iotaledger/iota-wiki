@@ -68,3 +68,12 @@ validity and security.
 
 Running a request on a blockchain involves computational resources, for which users must compensate. This compensation,
 known as 'gas', varies depending on the complexity and size of the request. Users specify a `GasBudget`
+
+
+:::tip Dive Deeper
+
+You can gain a deeper understanding
+of [ISC Architecture](/isc/explanations/isc-architecture/) and [smart contract invocation](/isc/explanations/invocation/)
+in the [IOTA Smart Contracts](/isc/introduction) documentation.
+
+:::

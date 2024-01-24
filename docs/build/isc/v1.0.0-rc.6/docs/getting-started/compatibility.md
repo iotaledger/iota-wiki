@@ -50,7 +50,7 @@ is the Ethereum address that signed the original transaction (e.g., the Metamask
 
 ### Contract ID Source
 
-While ISC contracts are identified by an [hname](/learn/smart-contracts/smart-contract-anatomy), EVM contracts are
+While ISC contracts are identified by an [hname](../explanations/smart-contract-anatomy.md), EVM contracts are
 identified by their Ethereum address.
 
 ### WASM Root Contract List

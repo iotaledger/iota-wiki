@@ -2,22 +2,27 @@
 description: An overview of the ISC Protocol, detailing the function and interaction of smart contracts, virtual machines, validators, state, and blockchains in IOTA.
 image: /img/logo/WASP_logo_dark.png
 keywords:
-- ISC Protocol
-- IOTA Smart Contracts
-- Virtual Machines
-- Validators
-- Blockchain Technology
+  - ISC Protocol
+  - IOTA Smart Contracts
+  - Virtual Machines
+  - Validators
+  - Blockchain Technology
 ---
+
 # ISC Protocol Overview
 
 ## TL;DR;
 
-- [Smart Contracts](#smart-contracts): Digital programs on a blockchain, written in various programming languages, compiled into bytecode and executed by virtual machines.
-- [Virtual Machines](#virtual-machines): Essential engines that run smart contracts, process inputs, and enforce rules, with IOTA supporting EVM and WASM VM.
-- [Validators](#validators): Key network components operating virtual machines, managing blockchain state and history, and facilitating smart contract execution.
-- [State](#state): The dynamic data interacted with and altered by smart contracts, forming the blockchain's historical record.
-- [Blockchains](#blockchains): Structures of linked blocks containing state updates, representing the chain’s history and enabling parallel smart contract execution.
-
+- [Smart Contracts](#smart-contracts): Digital programs on a blockchain, written in various programming languages,
+  compiled into bytecode and executed by virtual machines.
+- [Virtual Machines](#virtual-machines): Essential engines that run smart contracts, process inputs, and enforce rules,
+  with IOTA supporting EVM and WASM VM.
+- [Validators](#validators): Key network components operating virtual machines, managing blockchain state and history,
+  and facilitating smart contract execution.
+- [State](#state): The dynamic data interacted with and altered by smart contracts, forming the blockchain's historical
+  record.
+- [Blockchains](#blockchains): Structures of linked blocks containing state updates, representing the chain’s history
+  and enabling parallel smart contract execution.
 
 ## Smart Contracts
 
@@ -39,17 +44,26 @@ and orderly operation. The IOTA architecture currently supports two types of vir
 ## Validators
 
 Validators are critical components in a blockchain network. They operate the virtual machines and are responsible for
-storing the [state](accounts-addresses-and-fees.md) and history of the blockchain. Validators process requests to run smart contracts, 
+storing the [state](accounts-addresses-and-fees.md) and history of the blockchain. Validators process requests to run
+smart contracts,
 achieve consensus on state updates, and create a blockchain that represents the history of said state updates.
 
 ## State
 
-The state in a [blockchain](#blockchains) is the data that smart contracts interact with and modify. It's a record of 
+The state in a [blockchain](#blockchains) is the data that smart contracts interact with and modify. It's a record of
 all changes made by executing smart contracts, committed in blocks, and forms the backbone of the blockchain's history.
 
 ## Blockchains
 
 Blockchains in IOTA are structures composed of blocks linked cryptographically, containing [state](#state) updates. They
-chronicle the history of all updates leading to the current state. Chain owners own these blockchains which are produced 
+chronicle the history of all updates leading to the current state. Chain owners own these blockchains which are produced
 by validators. These blockchains are anchored in the IOTA ledger, allowing for parallel anchoring of chains and enabling
 simultaneous execution of smart contracts across different chains.
+
+:::tip Dive Deeper
+
+You can gain a deeper understanding
+of [validators](/isc/explanations/validators#validators) and [access nodes](/isc/explanations/validators#access-nodes)
+in the [IOTA Smart Contracts](/isc/introduction) documentation.
+
+:::

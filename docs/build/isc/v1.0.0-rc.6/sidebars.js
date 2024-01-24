@@ -49,11 +49,6 @@ module.exports = {
       items: [
         {
           type: 'doc',
-          label: 'ISC Functionality',
-          id: 'explanations/isc-functionality',
-        },
-        {
-          type: 'doc',
           label: 'ISC Architecture',
           id: 'explanations/isc-architecture',
         },

@@ -2,21 +2,25 @@
 description: An insightful overview of the consensus process in IOTA Smart Contracts, detailing the steps involved in updating the chain.
 image: /img/logo/WASP_logo_dark.png
 keywords:
-- IOTA Smart Contracts
-- Consensus Process
-- Validator Nodes
-- Blockchain Updates
-- State Anchor
+  - IOTA Smart Contracts
+  - Consensus Process
+  - Validator Nodes
+  - Blockchain Updates
+  - State Anchor
 ---
+
 # Consensus
 
 ## TL;DR;
 
-- [Introduction](#introduction): IOTA's Smart Contract protocol requires consensus among validators, with more than two-thirds agreement needed for state changes.
-- [1. Formulate the Batch Proposals](#1-formulate-the-batch-proposals): Validator nodes begin the consensus process with batch proposals, requiring mutual agreement to ensure uniform inputs and results.
-- [2. Agree On the Batch](#2-agree-on-the-batch): A finalized batch is created by filtering and ordering requests from all proposals, safeguarding against manipulation.
-- [3. Establish the State Anchor](#3-establish-the-state-anchor): Validators independently execute smart contract requests to create a new block, followed by crafting a state anchor for Layer 1 transaction validation.
-
+- [Introduction](#introduction): IOTA's Smart Contract protocol requires consensus among validators, with more than
+  two-thirds agreement needed for state changes.
+- [1. Formulate the Batch Proposals](#1-formulate-the-batch-proposals): Validator nodes begin the consensus process with
+  batch proposals, requiring mutual agreement to ensure uniform inputs and results.
+- [2. Agree On the Batch](#2-agree-on-the-batch): A finalized batch is created by filtering and ordering requests from
+  all proposals, safeguarding against manipulation.
+- [3. Establish the State Anchor](#3-establish-the-state-anchor): Validators independently execute smart contract
+  requests to create a new block, followed by crafting a state anchor for Layer 1 transaction validation.
 
 ## Introduction
 
@@ -52,3 +56,10 @@ commitment to this new state. The state anchor, bearing a timestamp derived from
 validators. This unified signature guarantees that any validator can publish the transaction to Layer 1. Although state
 anchors can be published after every update, they are typically released every ten seconds to minimize the load on the
 Tangle.
+
+:::tip Dive Deeper
+
+You can gain a deeper understanding of [consensus](/isc/explanations/consensus/) in
+the [IOTA Smart Contracts](/isc/introduction) documentation.
+
+:::

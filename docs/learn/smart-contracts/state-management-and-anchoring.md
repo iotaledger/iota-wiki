@@ -13,16 +13,20 @@ keywords:
 
 ## TL;DR;
 
-- [Introduction](#introduction): In IOTA Smart Contracts, 'state' represents the chain's current status, including data and digital assets, updated via blockchain blocks.
-- [Digital Assets](#digital-assets): Digital assets in IOTA are managed by Layer 1 addresses, with each smart contract chain having a unique address to act as a custodian.
-- [Data](#data): The data state comprises key/value pairs managed outside the UTXO ledger by validator nodes, ensuring data consistency and traceability.
-- [Anchoring](#anchoring): The anchoring process embeds the data state hash into the L1 ledger, creating a tamper-proof record and ensuring a globally consistent state.
+- [Introduction](#introduction): In IOTA Smart Contracts, 'state' represents the chain's current status, including data
+  and digital assets, updated via blockchain blocks.
+- [Digital Assets](#digital-assets): Digital assets in IOTA are managed by Layer 1 addresses, with each smart contract
+  chain having a unique address to act as a custodian.
+- [Data](#data): The data state comprises key/value pairs managed outside the UTXO ledger by validator nodes, ensuring
+  data consistency and traceability.
+- [Anchoring](#anchoring): The anchoring process embeds the data state hash into the L1 ledger, creating a tamper-proof
+  record and ensuring a globally consistent state.
 
 ## Introduction
 
 In IOTA Smart Contracts, the 'state' represents the current status of the chain, including its data and digital assets.
 This state is updated through blocks that form an immutable blockchain. Each block contains changes or mutations,
-leading to a new state. 
+leading to a new state.
 
 ## Digital Assets
 
@@ -44,3 +48,12 @@ Anchoring is the process of embedding the hash of the data state into a state UT
 tamper-proof record. This mechanism ensures that there is global consensus on the chain’s state, which is both immutable
 and consistent. The state transition in the chain occurs via a transaction that updates both the chain's assets and the
 state hash, represented as a sequence of UTXOs on the L1 ledger.
+
+:::tip Dive Deeper
+
+You can gain a deeper understanding
+of [on-chain digital assets](/isc/explanations/states/#digital-assets-on-the-chain), and
+the [data state](/isc/explanations/states/#the-data-state) in the [IOTA Smart Contracts](/isc/introduction)
+documentation.
+
+:::
