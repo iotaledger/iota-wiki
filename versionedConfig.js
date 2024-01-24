@@ -23,7 +23,7 @@ exports.buildPluginsConfig = [
   },
   {
     id: 'isc',
-    label: 'ISC',
+    label: 'Smart contracts',
     description: 'Create smart contracts.',
     icon: 'SmartContracts',
     subsection: 'build-layer-2',
@@ -34,32 +34,32 @@ exports.buildPluginsConfig = [
       },
     ],
   },
-  // {
-  //   id: 'wasp-evm',
-  //   label: 'EVM',
-  //   description: 'Create EVM smart contracts.',
-  //   icon: 'SmartContracts',
-  //   subsection: 'build-layer-2',
-  //   versions: [
-  //     {
-  //       label: 'v1.0.0-rc.6',
-  //       badges: ['Shimmer'],
-  //     },
-  //   ],
-  // },
-  // {
-  //   id: 'wasp-cli',
-  //   label: 'Wasp CLI',
-  //   description: 'Create custom smart contract chains.',
-  //   icon: 'SmartContracts',
-  //   subsection: 'build-layer-2',
-  //   versions: [
-  //     {
-  //       label: 'v1.0.0-rc.6',
-  //       badges: ['Shimmer'],
-  //     },
-  //   ],
-  // },
+  {
+    id: 'solo',
+    label: 'Solo',
+    description: 'Test ISC smart contracts.',
+    icon: 'SmartContracts',
+    subsection: 'build-layer-2',
+    versions: [
+      {
+        label: 'v1.0.0-rc.6',
+        badges: ['Shimmer'],
+      },
+    ],
+  },
+  {
+    id: 'schema',
+    label: 'Schema tool',
+    description: 'Generate WASM smart contracts.',
+    icon: 'SmartContracts',
+    subsection: 'build-layer-2',
+    versions: [
+      {
+        label: 'v1.0.0-rc.6',
+        badges: ['Shimmer'],
+      },
+    ],
+  },
   // {
   //   id: 'wasp-wasm',
   //   label: 'WASM (Experimental)',

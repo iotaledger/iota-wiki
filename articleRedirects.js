@@ -488,7 +488,7 @@ exports.articleRedirects = [
   },
   {
     from: '/shimmer/smart-contracts/configuration',
-    to: '/wasp/configuration',
+    to: '/wasp/reference/configuration',
   },
   {
     from: '/shimmer/smart-contracts/contribute',
@@ -496,7 +496,7 @@ exports.articleRedirects = [
   },
   {
     from: '/shimmer/smart-contracts/metrics',
-    to: '/wasp/metrics',
+    to: '/wasp/reference/metrics',
   },
   {
     from: '/shimmer/learn/smart-contracts/introduction',

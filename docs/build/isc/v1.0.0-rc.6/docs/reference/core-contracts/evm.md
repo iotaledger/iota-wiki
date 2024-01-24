@@ -20,7 +20,7 @@ keywords:
 The `evm` contract is one of the [core contracts](overview.md) on each IOTA Smart Contracts chain.
 
 The `evm` core contract provides the necessary infrastructure to accept Ethereum transactions and execute EVM code.
-It also includes the implementation of the [ISC Magic contract](../../how-tos/use-the-magic-contract/magic.md).
+It also includes the implementation of the [ISC Magic contract](../../how-tos/magic.md).
 
 :::note
 

@@ -27,7 +27,7 @@ module.exports = {
         title: 'Run a Wasp Node',
         description: 'In this tutorial you will learn how to run a wasp node.',
         preview: '/IOTA-Smart-Contract-Tutorials-A.jpg',
-        route: '/wasp/running-a-node',
+        route: '/wasp/how-tos/running-a-node',
         tags: ['text', 'video'],
       },
     ],
@@ -37,7 +37,7 @@ module.exports = {
         title: 'Run a Wasp Chain',
         description: 'In this tutorial you will learn how to run a wasp chain.',
         preview: '/IOTA-Smart-Contract-Tutorials-B.jpg',
-        route: '/isc/how-tos/manage-chains/setting-up-a-chain',
+        route: '/wasp/how-tos/setting-up-a-chain',
         tags: ['text', 'video'],
       },
     ],
@@ -48,8 +48,7 @@ module.exports = {
         description:
           'In this tutorial you will learn how to deploy a wasm smart contract.',
         preview: '/IOTA-Smart-Contract-Tutorials-C.jpg',
-        route:
-          '/isc/how-tos/manage-chains/setting-up-a-chain#deploying-a-wasm-contract',
+        route: '/wasp/how-tos/setting-up-a-chain#deploying-a-wasm-contract',
         tags: ['text', 'video'],
       },
     ],
@@ -71,7 +70,7 @@ module.exports = {
         description:
           'In this tutorial you will learn how to use schema tool to generate smart contract template code on rust and golang',
         preview: '/IOTA-Smart-Contract-Tutorials-G.png',
-        route: '/isc/how-tos/wasm/usage',
+        route: '/schema/how-tos/usage',
         tags: ['text', 'video'],
       },
     ],

@@ -93,7 +93,7 @@ by default `eth_getBalance` will return the L2 base token balance of the given E
 
 ### The Magic Contract
 
-A [dedicated Ethereum contract](../how-tos/use-the-magic-contract/magic.md) exists to manage ISC tokens and generally avail ISC
+A [dedicated Ethereum contract](../how-tos/magic.md) exists to manage ISC tokens and generally avail ISC
 functionalities, introducing commands like `isc.send(...)` for token transfers.
 
 ### Gas Fees
