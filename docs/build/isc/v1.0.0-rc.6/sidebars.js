@@ -110,63 +110,22 @@ module.exports = {
       label: 'How To',
       collapsed: false,
       items: [
+        'how-tos/introduction',
         {
-          type: 'category',
-          label: 'EVM',
-          collapsed: false,
-          items: [
-            {
-              type: 'doc',
-              label: 'Use EVM in ISC',
-              id: 'how-tos/EVM/using',
-            },
-            {
-              type: 'doc',
-              label: 'Create a Basic Solidity Contract',
-              id: 'how-tos/EVM/create-a-basic-contract',
-            },
-            {
-              type: 'doc',
-              label: 'Create Custom Tokens - ERC20',
-              id: 'how-tos/EVM/ERC20',
-            },
-            {
-              type: 'doc',
-              label: 'Create NFTs - ERC721',
-              id: 'how-tos/EVM/ERC721',
-            },
-          ],
+          type: 'doc',
+          label: 'Get funds',
+          id: 'how-tos/get-funds',
         },
         {
-          type: 'category',
-          label: 'Use the Magic Contract',
-          items: [
-            {
-              type: 'doc',
-              label: 'Use the Magic Contract',
-              id: 'how-tos/use-the-magic-contract/magic',
-            },
-            {
-              type: 'doc',
-              label: 'Send Tokens to L1',
-              id: 'how-tos/use-the-magic-contract/send-tokens-to-l1',
-            },
-            {
-              type: 'doc',
-              label: 'Deposit To a Chain',
-              id: 'how-tos/use-the-magic-contract/deposit-to-a-chain',
-            },
-            {
-              type: 'doc',
-              label: 'Withdraw From a Chain',
-              id: 'how-tos/use-the-magic-contract/withdraw-from-a-chain',
-            },
-            {
-              type: 'doc',
-              label: 'View Account Balances',
-              id: 'how-tos/use-the-magic-contract/view-account-balances',
-            },
-          ],
+          type: 'doc',
+          label: 'Create a simple contract',
+          id: 'how-tos/simple-contract',
+        },
+
+        {
+          type: 'doc',
+          label: 'Send tokens to L1',
+          id: 'how-tos/send-tokens-to-l1',
         },
       ],
     },

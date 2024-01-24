@@ -1,0 +1,55 @@
+---
+description: Creating a basic contract using ISC functionality.
+image: /img/logo/WASP_logo_dark.png
+keywords:
+  - configure
+  - using
+  - EVM
+  - magic
+  - Ethereum
+  - Solidity
+  - metamask
+  - JSON
+  - RPC
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Create a Simple Contract using ISC functionality
+
+## Example Code
+
+<Tabs groupId="language" queryString>
+<TabItem value="solidity" label="Solidity">
+
+```solidity
+// SPDX-License-Identifier: MIT
+
+pragma solidity ^0.8.0;
+
+import "@iota/iscmagic/ISC.sol";
+
+contract Entropy {
+    event EntropyEvent(bytes32 entropy);
+
+    // this will emit a "random" value taken from the ISC entropy value
+    function emitEntropy() public {
+        bytes32 e = ISC.sandbox.getEntropy();
+        emit EntropyEvent(e);
+    }
+}
+```
+
+</TabItem>
+<TabItem value="rust" label="Rust">
+
+Coming soon
+
+</TabItem>
+<TabItem value="go" label="Go">
+
+Coming soon
+
+</TabItem>
+</Tabs>
