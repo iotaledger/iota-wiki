@@ -170,27 +170,6 @@ module.exports = {
         },
         {
           type: 'category',
-          label: 'Manage ISC Chains',
-          items: [
-            {
-              id: 'how-tos/manage-chains/wasp-cli',
-              label: 'Configure wasp-cli',
-              type: 'doc',
-            },
-            {
-              id: 'how-tos/manage-chains/setting-up-a-chain',
-              label: 'Set Up a Chain',
-              type: 'doc',
-            },
-            {
-              id: 'how-tos/manage-chains/chain-management',
-              label: 'Manage a Chain',
-              type: 'doc',
-            },
-          ],
-        },
-        {
-          type: 'category',
           label: 'Test Smart Contracts with Solo',
           items: [
             {

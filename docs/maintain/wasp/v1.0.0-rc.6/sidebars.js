@@ -27,5 +27,26 @@ module.exports = {
       type: 'doc',
       id: 'metrics',
     },
+    {
+      type: 'category',
+      label: 'Manage ISC Chains',
+      items: [
+        {
+          id: 'manage-chains/wasp-cli',
+          label: 'Configure wasp-cli',
+          type: 'doc',
+        },
+        {
+          id: 'manage-chains/setting-up-a-chain',
+          label: 'Set Up a Chain',
+          type: 'doc',
+        },
+        {
+          id: 'manage-chains/chain-management',
+          label: 'Manage a Chain',
+          type: 'doc',
+        },
+      ],
+    },
   ],
 };
