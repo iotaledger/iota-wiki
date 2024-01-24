@@ -26,7 +26,7 @@ combination with Solo to deploy chains and smart contracts and simulate transact
 Solo directly interacts with the ISC code, and therfore uses all the ISC-specific data
 types directly. Our Wasm smart contracts cannot access these types directly, because they
 run in a separate, sandboxed environment. Therefore, WasmLib implements its
-[own versions](../../reference/wasm-lib-data-types.mdx) of these data types, and the _VM_ layer acts as a data type
+[own versions](/isc/reference/wasm-lib-data-types) of these data types, and the _VM_ layer acts as a data type
 translator between both systems.
 
 The impact of this type transformation used to be that to be able to write tests in the
@@ -36,13 +36,17 @@ contract function calls. This burdened the user with an unnecessary increased le
 curve and countless unnecessary type conversions.
 
 <<<<<<<< HEAD:docs/build/isc/v1.0.0-rc.6/docs/solo/how-tos/test.mdx
+<<<<<<<< HEAD:docs/build/isc/v1.0.0-rc.6/docs/solo/how-tos/test.mdx
 With the introduction of the [Schema Tool](../../schema/how-tos/usage.mdx), we were able to remove this
 ========
 With the introduction of the [Schema Tool](../wasm/usage.mdx), we were able to remove this
 >>>>>>>> 136ca6e9c8 (re-merge EVM and WASM):docs/build/isc/v1.0.0-rc.6/docs/how-tos/solo/test.mdx
+========
+With the introduction of the [Schema Tool](/schema/how-tos/usage), we were able to remove this
+>>>>>>>> c1e6382878 (apply suggestions by @jlvandenhout):docs/build/solo/v1.0.0-rc.6/docs/how-tos/test.mdx
 impedance mismatch and allow the users to test smart contract functionality in terms of
 the WasmLib data types and functions that they are already familiar with. To that end, we
-introduced `SoloContext`, a new [Call Context](../../explanations/context.mdx) that specifically works with
+introduced `SoloContext`, a new [Call Context](/isc/explanations/context) that specifically works with
 the Solo testing environment. We aimed to simplify the testing of smart contracts as much
 as possible, keeping the full Solo interface hidden as much as possible, but still
 available when necessary.
@@ -50,10 +54,14 @@ available when necessary.
 The only concession we still have to make is to the language used. Because Solo only works
 in the Go language environment, we have to use the Go language version of the interface
 <<<<<<<< HEAD:docs/build/isc/v1.0.0-rc.6/docs/solo/how-tos/test.mdx
+<<<<<<<< HEAD:docs/build/isc/v1.0.0-rc.6/docs/solo/how-tos/test.mdx
 code that the [Schema Tool](../../schema/how-tos/usage.mdx) generates when testing our smart contracts. Because
 ========
 code that the [Schema Tool](../wasm/usage.mdx) generates when testing our smart contracts. Because
 >>>>>>>> 136ca6e9c8 (re-merge EVM and WASM):docs/build/isc/v1.0.0-rc.6/docs/how-tos/solo/test.mdx
+========
+code that the [Schema Tool](/schema/how-tos/usage) generates when testing our smart contracts. Because
+>>>>>>>> c1e6382878 (apply suggestions by @jlvandenhout):docs/build/solo/v1.0.0-rc.6/docs/how-tos/test.mdx
 WasmLib programming for Go, Rust, and TypeScript are practically identical, we feel that
 this is not unsurmountable. The WasmLib interfaces only differ slightly if language
 idiosyncrasies force differences in syntax or naming conventions. This hurdle used to be a
@@ -81,7 +89,7 @@ func TestDeploy(t *testing.T) {
 The first line will automatically create a new chain, and upload and deploy the provided
 example `dividend` contract to this chain. It returns a `SoloContext` for further use. The
 second line verifies the existence of the deployed contract on the chain associated with
-that [Call Context](../../explanations/context.mdx).
+that [Call Context](/isc/explanations/context).
 
 Here is another part of the `dividend` test code, where you can see how we wrap repetitive
 calls to smart contract functions that are used in multiple tests:
@@ -117,6 +125,7 @@ func dividendGetFactor(ctx *wasmsolo.SoloContext, member *wasmsolo.SoloAgent) ui
 
 As you can see, we pass the `SoloContext` and the parameters to the wrapper functions,
 <<<<<<<< HEAD:docs/build/isc/v1.0.0-rc.6/docs/solo/how-tos/test.mdx
+<<<<<<<< HEAD:docs/build/isc/v1.0.0-rc.6/docs/solo/how-tos/test.mdx
 then use the `SoloContext` to create a [Function Descriptor](../../schema/how-tos/funcdesc.mdx) for the wrapped
 function, pass any parameters through the [Params](../../schema/how-tos/params.mdx) proxy, and then either
 [`post()`](../../schema/how-tos/post.mdx) the function request or [`call`](../../schema/how-tos/call.mdx) the function. Any
@@ -136,6 +145,17 @@ or within Solo test code. The [Call Context](../../explanations/context.mdx) kno
 ========
 [`call()`](../wasm/call.mdx) or [`post()`](../wasm/post.mdx) the function call through the function
 >>>>>>>> 136ca6e9c8 (re-merge EVM and WASM):docs/build/isc/v1.0.0-rc.6/docs/how-tos/solo/test.mdx
+========
+then use the `SoloContext` to create a [Function Descriptor](/schema/how-tos/funcdesc) for the wrapped
+function, pass any parameters through the its [Params](/schema/how-tos/params) proxy, and then either
+[`post()`](/schema/how-tos/post) the function request or [`call()`](/schema/how-tos/call the function. Any
+results returned are extracted through the descriptor's [Results](/schema/how-tos/results) proxy, and
+returned by the wrapper function.
+
+There is hardly any difference in the way the function interface is used within Wasm code
+or within Solo test code. The [Call Context](/isc/explanations/context) knows how to properly
+[`call()`](/schema/how-tos/call) or [`post()`](/schema/how-tos/post the function call through the function
+>>>>>>>> c1e6382878 (apply suggestions by @jlvandenhout):docs/build/solo/v1.0.0-rc.6/docs/how-tos/test.mdx
 descriptor. This makes for seamless testing of smart contracts.
 
 In the [next section](examples.mdx) we will go deeper into how the helper member functions

@@ -125,10 +125,14 @@ request counters to catch up with the one request that is pending.
 
 The `WaitForPendingRequests()` method can also be used whenever a smart contract function
 <<<<<<<< HEAD:docs/build/isc/v1.0.0-rc.6/docs/solo/how-tos/timelock.mdx
+<<<<<<<< HEAD:docs/build/isc/v1.0.0-rc.6/docs/solo/how-tos/timelock.mdx
 is known to [`post()`](../../schema/how-tos/post.mdx) a request to itself. Such requests are not immediately
 ========
 is known to [`post()`](../wasm/post.mdx) a request to itself. Such requests are not immediately
 >>>>>>>> 136ca6e9c8 (re-merge EVM and WASM):docs/build/isc/v1.0.0-rc.6/docs/how-tos/solo/timelock.mdx
+========
+is known to [`post()`](/schema/how-tos/post) a request to itself. Such requests are not immediately
+>>>>>>>> c1e6382878 (apply suggestions by @jlvandenhout):docs/build/solo/v1.0.0-rc.6/docs/how-tos/timelock.mdx
 executed, but added to the backlog, so you need to wait for these pending requests to
 actually be processed. The advantage of having to explicitly wait for those requests is
 that you can inspect the in-between state, which means that you can test even a function
