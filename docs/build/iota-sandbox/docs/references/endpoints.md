@@ -52,12 +52,6 @@ http://localhost/faucet/
 
 ## Wasp
 
-:::info Profile
-
-Wasp is not active by default. You need to enable the `wasp` profile to use it.
-
-:::
-
 ### Dashboard 
 
 ```plaintext
