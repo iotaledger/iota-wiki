@@ -33,7 +33,7 @@ blockchain's engine to process these contracts.
 
 ## Virtual Machines
 
-[Validators](#validators) run th virtual machines are the powerhouses that run smart contracts. They take the
+Virtual machines, operated by [Validators](#validators), are the execution engines of smart contracts that understand smart contract bytecode and are able compute state changes. They take the
 current [state](#state) of the [blockchain](#blockchains) and the inputs from users, execute the smart contract's
 bytecode, and produce a new state. These machines also set rules and restrictions for smart contracts, ensuring secure
 and orderly operation. The IOTA architecture currently supports two types of virtual machines:
@@ -50,8 +50,7 @@ achieve consensus on state updates, and create a blockchain that represents the 
 
 ## State
 
-The state in a [blockchain](#blockchains) is the data that smart contracts interact with and modify. It's a record of
-all changes made by executing smart contracts, committed in blocks, and forms the backbone of the blockchain's history.
+The state in a [blockchain](#blockchains) is a key-value store that smart contracts interact with and modify. It's a result of smart contract execution, committed in blocks, forming a blockchain representing the history of state updates leading to the current state.
 
 ## Blockchains
 
