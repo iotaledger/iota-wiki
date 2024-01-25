@@ -1,6 +1,5 @@
 ---
-description: 'An introductory guide to oracles in blockchain, explaining their role in providing external data to smart
- contracts and their implementation in Shimmer EVM.'
+description: 'Learn about the role of in oracles in blockchain,their role in providing external data to smart contracts and the available oracles in Shimmer EVM.'
 image: /img/logo/WASP_logo_dark.png
 keywords:
 - Blockchain Oracles
