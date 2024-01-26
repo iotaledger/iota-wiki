@@ -17,20 +17,25 @@ import TabItem from '@theme/TabItem';
 The [example](#example) below demonstrates two methods that an issuer can use to revoke a verifiable credential
 using the IOTA Identity Framework:
 
-1. By using the [`credentialStatus`](https://www.w3.org/TR/vc-data-model/#status) field in a credential and linking to a
-[revocation bitmap](#revocation-bitmap),
-using the [`RevocationBitmap2022`](/identity.rs/references/specifications/revocation-bitmap-2022/).
+1. By using the [`credentialStatus`](https://www.w3.org/TR/vc-data-model/#status) field in a credential and linking
+to a [revocation method](#revocation-methods).
 2. By [removing the verification method](#removing-the-verification-method) that signed the credential.
 This invalidates all credentials that were signed with that verification method.
 
-## Revocation Bitmap
+## Revocation methods
+The IOTA Identity Framework supports two different revocation methods: `RevocationBitmap2022` and `StatusList2021`. 
+### Revocation Bitmap
+[RevocationBitmap2022](/identity.rs/references/specifications/revocation-bitmap-2022/) is the default credential revocation method used in the IOTA Identity Framework. It allows
+issuers to control whether a credential is _valid_ or _revoked_. To do so, a revocation list (represented
+as a bitmap) is stored in the issuer's DID document.
+When a credential is issued, a unique index from the issuer's revocation list
+is chosen, linking the credential's status to the value of the list entry. To change the status of a credential, the issuer
+simply updates the corresponding entry in its revocation list.
 
-
-One of the ways for an issuer to control the status of its credentials is by using a revocation list.
-At the most basic level, revocation information for all verifiable credentials issued by an issuer are expressed as
-simple binary values.
-The issuer keeps a list of all verifiable credentials it has issued in a bitmap.
-Each verifiable credential is associated with a unique index in the list.
+With `RevocationBitmap2022` the `identity.rs` library completely handles the processes required to handle credentials revocation;
+from creation and storage of the revocation list to its lookup. 
+This makes `RevocationBitmap2022` the preferred way for users to handle credential revocation, but it requires sufficient
+funds to rent out the required on-tangle space.
 
 <Tabs groupId="language" queryString>
 <TabItem value="rust" label="Rust">
@@ -78,6 +83,70 @@ During verification, the verifier decodes the revocation bitmap embedded in the 
 This bitmap written as a bitstring looks like this: `000001`.
 Here, the 5th bit is set, which means the credential with that index is revoked,
 while all other credentials aren't revoked.
+
+### StatusList2021
+[StatusList2021](https://www.w3.org/TR/2023/WD-vc-status-list-20230427) offers similar functionalities but in a more flexible way. 
+The main difference is that `StatusList2021` is completely agnostic in regards to how the issuer's status list
+is stored and fetched, as long as its location can be encoded through an URL. For instance, the status list
+can be made available over HTTP (e.g. `http://example.com/credentials/status`) or through the
+Interplanetary File System (e.g. `ipfs://QmXDWGdVBhbDoXXzKNMhJk5ejnZgxpMBVzW4EhQaHPD3Mi`).
+This flexibility though requires the issuer to manually fetch and update its status list.
+
+Furthermore, credentials can be in any of these three different states:
+- _valid_
+- _suspended_: the credential won't be temporarily accepted. This status can be reversed.
+- _revoked_: the credential isn't valid anymore. This status **cannot** be reversed.
+
+<Tabs groupId="language" queryString>
+<TabItem value="rust" label="Rust">
+
+```rust reference
+https://github.com/iotaledger/identity.rs/blob/main/examples/1_advanced/8_status_list_2021.rs#L86-L90
+```
+
+</TabItem>
+<TabItem value="typescript-node" label="Typescript (Node.js)">
+
+```ts reference
+https://github.com/iotaledger/identity.rs/blob/main/bindings/wasm/examples/src/1_advanced/7_status_list_2021.ts#L72-L76
+```
+
+</TabItem>
+</Tabs>
+
+First, an issuer creates a credential that encodes a certain status list, specifying its purpose (either `revocation` or `suspension`)
+and the location at which it will be available (`http://example.com/credentials/status` in this case). After creation, the issuer
+must make the credential available at the chosen URL, so that verifiers may be able to fetch it.
+
+<Tabs groupId="language" queryString>
+<TabItem value="rust" label="Rust">
+
+```rust reference
+https://github.com/iotaledger/identity.rs/blob/main/examples/1_advanced/8_status_list_2021.rs#L173
+```
+
+</TabItem>
+<TabItem value="typescript-node" label="Typescript (Node.js)">
+
+```ts reference
+https://github.com/iotaledger/identity.rs/blob/main/bindings/wasm/examples/src/1_advanced/7_status_list_2021.ts#L147
+```
+
+</TabItem>
+</Tabs>
+
+To set the status of a credential the issuer retrieves the status list credential and set the value of the chosen entry index.
+This sets the `credentialStatus` of the revoked credential to something similar to the following snippet:
+
+```json
+{
+    "id": "https://example.com/credentials/status#94567",
+    "type": "StatusList2021Entry",
+    "statusPurpose": "revocation",
+    "statusListIndex": "94567",
+    "statusListCredential": "https://example.com/credentials/status"
+}
+```
 
 ## Removing the Verification Method
 
