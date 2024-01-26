@@ -1,8 +1,11 @@
 ---
 title: Endpoints
-description: Endpoints of the IOTA Sandbox
+description: Endpoints and credentials of the IOTA Sandbox
 keywords:
   - api
+  - passwords
+  - users
+  - credentials
   - endpoints
   - reference
 ---
@@ -16,28 +19,63 @@ you can access the following endpoints:
 
 ## Hornet
 
-Dashboard: `http://localhost/`  
-API: `http://localhost/`
+### Dashboard 
+
+```plaintext
+http://localhost/
+```
+
+#### Default Credentials
+
+**Username**: `admin`  
+**Password**: `admin`
+
+### API
+
+```plaintext
+http://localhost/
+```
 
 ## Faucet
 
-Frontend: `http://localhost/faucet/`  
-API: `http://localhost/faucet/`
+### Frontend
+
+```plaintext
+http://localhost/faucet/
+```  
+
+### API
+
+```plaintext
+http://localhost/faucet/
+```
 
 ## Wasp
 
-:::info Profile
+### Dashboard 
 
-Wasp is not active by default. You need to enable the `wasp` profile to use it.
+```plaintext
+http://localhost/wasp/
+```
 
-:::
+#### Default Credentials
 
-Dashboard: `http://localhost/wasp/`  
-API: `http://localhost/wasp/api/`
+**Username**: `wasp`  
+**Password**: `wasp`
+
+### API
+
+```plaintext
+http://localhost/wasp/api/
+```
 
 ## Chronicle
 
-API: `http://localhost/chronicle/`
+### API 
+
+```plaintext
+http://localhost/chronicle/
+```
 
 ## EVM Toolkit
 
@@ -52,8 +90,21 @@ The EVM Toolkit is available on port `8082` by default. You can change it in the
 
 :::
 
-Frontend: `http://localhost:8082/`
+### Frontend 
+
+```plaintext
+http://localhost:8082/
+```
 
 ## Grafana
 
-Frontend: `http://localhost/grafana/`
+### Frontend 
+
+```plaintext
+http://localhost/grafana/
+```
+
+#### Default Credentials
+
+**Username**: `admin`  
+**Password**: `admin`

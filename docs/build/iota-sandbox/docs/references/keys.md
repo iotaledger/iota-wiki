@@ -1,9 +1,8 @@
 ---
-title: Keys and Passwords for the IOTA Sandbox
-description: Keys and Passwords for the IOTA Sandbox
+title: Keys for the IOTA Sandbox
+description: Keys for the IOTA Sandbox
 keywords:
   - keys
-  - passwords
   - reference
 ---
 ## Keys 
@@ -34,21 +33,3 @@ You can use the following mnemonics and keys to access while working with the IO
 | Token ed25519 private key           | d50e772a711c3bf71ae676a8dc6a9726346c200d676a8fa7a6e254f341233115e073300fae90b10163e4b2b70c3fa8a93360992ed1a4cc2f6b386b5121c540a4                        |
 | Token bech32 address with `snd` HRP | snd1qqweu75ldpyann5jsthqsa6m0thx4tmqxncj6uqxf5q974pmqx30yfng7ya                                                                                         |
 
-## Passwords
-
-You can use the following credentials to access dashboards within the IOTA Sandbox.
-
-### Hornet Dashboard
-
-**Username**: `admin`  
-**Password**: `admin`
-
-### Wasp Dashboard
-
-**Username**: `wasp`  
-**Password**: `wasp`
-
-### Grafana Dashboard
-
-**Username**: `admin`  
-**Password**: `admin`
