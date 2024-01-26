@@ -16,7 +16,7 @@ module.exports = {
       items: [
         {
           type: 'doc',
-          id: 'how-tos/setup-chain',
+          id: 'how-tos/interact-wasp',
         },
       ],
     },
