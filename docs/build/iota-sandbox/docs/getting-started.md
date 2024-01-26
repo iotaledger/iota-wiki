@@ -35,7 +35,7 @@ The commands assume you are using Linux.
 Once you have completed all the installation [requirements](#requirements), you can download the sandbox. The following command will download the latest version.
 
 ```sh
-mkdir iota-sandbox && cd iota-sandbox && curl -L https://github.com/Dr-Electron/iota-sandbox/releases/download/v1.0.0/iota_sandbox.tar.gz | tar -zx
+mkdir iota-sandbox && cd iota-sandbox && curl -L https://github.com/Dr-Electron/iota-sandbox/releases/latest/download/iota_sandbox.tar.gz | tar -zx
 ```
 
 ### Prepare
