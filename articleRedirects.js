@@ -42,10 +42,6 @@ const ApiCore = [
 exports.articleRedirects = [
   ...(directoryExists('./docs/build/apis/docs/core') ? ApiCore : []),
   {
-    from: '/develop/endpoints/devnet',
-    to: '/build/networks-endpoints',
-  },
-  {
     from: '/develop/endpoints/mainnet',
     to: '/build/networks-endpoints',
   },
