@@ -21,7 +21,7 @@ keywords:
 
 ## Introduction
 
-Smart contracts are essentially self-executing contracts, run on blockchain networks. Network nodes, also known as 
+Smart contracts are self-executing contracts run on blockchain networks. Network nodes, also known as 
 [Validators](chain-owners-validators-and-access-nodes.md) activate these contracts in response to specific [user requests](#invoking-a-smart-contract). 
 
 ## Structure of a Smart Contract
