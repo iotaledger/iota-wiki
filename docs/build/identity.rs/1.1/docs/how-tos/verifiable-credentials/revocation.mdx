@@ -85,17 +85,19 @@ Here, the 5th bit is set, which means the credential with that index is revoked,
 while all other credentials aren't revoked.
 
 ### StatusList2021
-[StatusList2021](https://www.w3.org/TR/2023/WD-vc-status-list-20230427) offers similar functionalities but in a more flexible way. 
+[StatusList2021](https://www.w3.org/TR/2023/WD-vc-status-list-20230427) offers similar functionalities to `RevocationBitmap2022`
+but in a more flexible way. 
 The main difference is that `StatusList2021` is completely agnostic in regards to how the issuer's status list
 is stored and fetched, as long as its location can be encoded through an URL. For instance, the status list
 can be made available over HTTP (e.g. `http://example.com/credentials/status`) or through the
 Interplanetary File System (e.g. `ipfs://QmXDWGdVBhbDoXXzKNMhJk5ejnZgxpMBVzW4EhQaHPD3Mi`).
-This flexibility though requires the issuer to manually fetch and update its status list.
 
-Furthermore, credentials can be in any of these three different states:
-- _valid_
-- _suspended_: the credential won't be temporarily accepted. This status can be reversed.
-- _revoked_: the credential isn't valid anymore. This status **cannot** be reversed.
+This flexibility, although it requires the issuer to manually fetch and update its status list, allows for an arbitrary number of
+entries in the status list, in contrast with `RevocationBitmap2022` where the lenght of the list is limited by the DLT's constraints.
+
+Furthermore, `StatusList2021` introduces a new credential state: _suspended_. Suspended credentials are credentials that will not be 
+accepted by a validator as _valid_, but that might become valid again in the future. Instead, _revoked_ credentials **cannot** ever
+be valid again, as the _revoked_ state is irreversible.
 
 <Tabs groupId="language" queryString>
 <TabItem value="rust" label="Rust">
@@ -135,7 +137,7 @@ https://github.com/iotaledger/identity.rs/blob/main/bindings/wasm/examples/src/1
 </TabItem>
 </Tabs>
 
-To set the status of a credential the issuer retrieves the status list credential and set the value of the chosen entry index.
+To set the status of a credential, the issuer retrieves the status list credential and set the value of the chosen entry index.
 This sets the `credentialStatus` of the revoked credential to something similar to the following snippet:
 
 ```json
@@ -157,7 +159,7 @@ This means the VC can no longer be validated.
 However, this will also invalidate every VC signed with that verification method,
 meaning that the issuer will have to sign every VC with a different key to retain
 precise control over which credential is revoked.
-
+n
 
 <Tabs groupId="language" queryString>
 <TabItem value="rust" label="Rust">
