@@ -103,8 +103,8 @@ module.exports = {
     {
       type: 'category',
       label: 'How To',
-      collapsed: false,
       items: [
+        'introduction',
         {
           type: 'category',
           label: 'EVM',
@@ -114,6 +114,11 @@ module.exports = {
               type: 'doc',
               label: 'Use EVM in ISC',
               id: 'how-tos/EVM/using',
+            },
+            {
+              type: 'doc',
+              label: 'Fund Your EVM Account',
+              id: 'how-tos/EVM/get-funds',
             },
             {
               type: 'doc',
