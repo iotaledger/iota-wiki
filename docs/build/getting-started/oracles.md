@@ -67,11 +67,6 @@ You can learn more about Pyth Oracles in their [official documentation](https://
 
 You can use the following example code to get data from Pyth Oracles in Shimmer EVM:
 
-:::note 
-
-The following example uses [`ether.js` v4](https://www.npmjs.com/package/ethers/v/4.0.43).
-
-:::
 
 ```typescript
 import {ethers} from "ethers";
@@ -79,7 +74,7 @@ import fetch from "node-fetch";
 
 // Provider
 const providerURL = "https://json-rpc.evm.shimmer.network"
-const provider = new ethers.providers.JsonRpcProvider(providerURL);
+const provider = new ethers.JsonRpcProvider(providerURL);
 
 //  Pyth Oracle contract on ShimmerEVM Mainnet
 const contractAddress = '0xA2aa501b19aff244D90cc15a4Cf739D2725B5729';
@@ -108,7 +103,7 @@ async function getPrice() {
       console.log('Price:', price);
       console.log('Confidence Interval:', priceData.conf.toString());
       // Convert publishTime to a formatted date
-      const publishTimeDate = new Date(priceData.publishTime.toNumber() * 1000);
+      const publishTimeDate = new Date(Number(priceData.publishTime) * 1000);
       console.log('Publish Time:', publishTimeDate.toUTCString());
       console.log('\n');
     }
@@ -126,4 +121,3 @@ async function main() {
 }
 
 main();
-```
