@@ -67,8 +67,14 @@ You can learn more about Pyth Oracles in their [official documentation](https://
 
 You can use the following example code to get data from Pyth Oracles in Shimmer EVM:
 
+:::note 
+
+The following example uses [`ether.js` v4](https://www.npmjs.com/package/ethers/v/4.0.43).
+
+:::
+
 ```typescript
-import ethers from "ethers";
+import {ethers} from "ethers";
 import fetch from "node-fetch";
 
 // Provider
