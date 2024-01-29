@@ -13,7 +13,7 @@ keywords:
 
 ## TL;DR;
 
-- [Introduction](#introduction): Smart contracts are programs run by validators upon request by validators in response to user requests.
+- [Introduction](#introduction): Smart contracts are programs run by [validators](chain-owners-validators-and-access-nodes.md#validator-nodes) upon requests.
 - [Structure of a Smart Contract](#structure-of-a-smart-contract): Comprising functions within a decentralized framework, smart contracts have a unique state and accounts, managed by validator node consensus.
 - [View Entry Points](#view-entry-points): Read-only operations in smart contracts that do not modify data or incur execution fees.
 - [Full Entry Points](#full-entry-points): Functions that can alter a contract's state and typically require execution fees.
@@ -21,7 +21,7 @@ keywords:
 
 ## Introduction
 
-Smart contracts are self-executing contracts run on blockchain networks. Network nodes, also known as 
+Smart contracts are essentially programs run by upon requests. Network nodes, also known as 
 [Validators](chain-owners-validators-and-access-nodes.md) activate these contracts in response to specific [user requests](#invoking-a-smart-contract). 
 
 ## Structure of a Smart Contract
