@@ -7,10 +7,4 @@ keywords:
   - chain
 ---
 
-The sandbox comes with a bootstrapped wasp chain. You can find it's ID and RPC url in the [Wasp Dashboard](../references/endpoints.md#Wasp).
-
-
-## (Optional) Enable and Configure EVM Toolkit
-
-Enable the [EVM toolkit](https://evm-toolkit.evm.shimmer.network/) by uncommenting the `evm-toolkit` line in the `.env` file.
-After that, change the `text` and `chainAddress` to your needs in the `assets/evm-toolkit/networks.json` file.
+The sandbox comes with a bootstrapped wasp chain and the [EVM Toolkit](https://github.com/iotaledger/evm-toolkit) preconfigured. You can find its ID and RPC url in the [Wasp Dashboard](../references/endpoints.md#Wasp).
