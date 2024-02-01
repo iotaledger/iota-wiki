@@ -86,10 +86,10 @@ while all other credentials aren't revoked.
 
 ### StatusList2021
 [StatusList2021](https://www.w3.org/TR/2023/WD-vc-status-list-20230427) offers similar functionalities to `RevocationBitmap2022`
-but in a more flexible way. 
+but in a more flexible and scalable way. 
 The main difference is that `StatusList2021` is completely agnostic in regards to how the issuer's status list
 is stored and fetched, as long as its location can be encoded through an URL. For instance, the status list
-can be made available over HTTP (e.g. `http://example.com/credentials/status`) or through the
+can be made available over HTTP (e.g. `https://example.com/credentials/status`) or through the
 Interplanetary File System (e.g. `ipfs://QmXDWGdVBhbDoXXzKNMhJk5ejnZgxpMBVzW4EhQaHPD3Mi`).
 
 This flexibility, although it requires the issuer to manually fetch and update its status list, allows for an arbitrary number of
@@ -117,7 +117,7 @@ https://github.com/iotaledger/identity.rs/blob/main/bindings/wasm/examples/src/1
 </Tabs>
 
 First, an issuer creates a credential that encodes a certain status list, specifying its purpose (either `revocation` or `suspension`)
-and the location at which it will be available (`http://example.com/credentials/status` in this case). After creation, the issuer
+and the location at which it will be available (`https://example.com/credentials/status` in this case). After creation, the issuer
 must make the credential available at the chosen URL, so that verifiers may be able to fetch it.
 
 <Tabs groupId="language" queryString>
