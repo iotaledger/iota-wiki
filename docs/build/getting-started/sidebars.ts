@@ -51,6 +51,11 @@ module.exports = {
           href: 'https://evm-toolkit.evm.testnet.shimmer.network/',
         },
         {
+          label: 'Oracles for Shimmer EVM',
+          type: 'doc',
+          id: 'oracles',
+        },
+        {
           label: 'Testnet Faucet',
           type: 'link',
           href: 'https://faucet.testnet.shimmer.network',
