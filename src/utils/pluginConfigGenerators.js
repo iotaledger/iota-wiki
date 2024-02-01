@@ -84,12 +84,6 @@ function createVersionRedirects(versionedConfig) {
         from: '/' + routeBasePath + '/iota',
         to: '/' + routeBasePath,
       });
-
-      // Redirect to main IOTA version
-      redirects.push({
-        from: '/' + routeBasePath + '/iota',
-        to: '/' + routeBasePath,
-      });
     }
 
     if (mainShimmerVersion && mainShimmerVersion !== mainVersion)
