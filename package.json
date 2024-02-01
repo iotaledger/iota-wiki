@@ -54,6 +54,7 @@
     "globby": "^13.1.4",
     "hast-util-is-element": "1.1.0",
     "humanize-duration": "^3.30.0",
+    "infima": "^0.2.0-alpha.43",
     "plugin-image-zoom": "flexanalytics/plugin-image-zoom",
     "raw-loader": "^4.0.2",
     "react": "18.2.0",
