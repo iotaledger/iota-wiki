@@ -84,7 +84,6 @@ function createVersionRedirects(versionedConfig) {
         from: '/' + routeBasePath + '/iota',
         to: '/' + routeBasePath,
       });
-
     }
 
     if (mainShimmerVersion && mainShimmerVersion !== mainVersion)
