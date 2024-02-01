@@ -37,6 +37,13 @@ from creation and storage of the revocation list to its lookup.
 This makes `RevocationBitmap2022` the preferred way for users to handle credential revocation, but it requires sufficient
 funds to rent out the required on-tangle space.
 
+:::note
+
+The size of the revocation list is limited by DLT's size constraints. With the assumption of only one such revocation list
+per issuer's DID document, one may expect to be able to handle roughly around 50k entries.
+
+:::
+
 <Tabs groupId="language" queryString>
 <TabItem value="rust" label="Rust">
 
@@ -120,6 +127,20 @@ First, an issuer creates a credential that encodes a certain status list, specif
 and the location at which it will be available (`https://example.com/credentials/status` in this case). After creation, the issuer
 must make the credential available at the chosen URL, so that verifiers may be able to fetch it.
 
+Upon issueing a credential, in order to revoke it or suspend it later on, the issuer sets the `credentialStatus` field, linking
+to an entry in its status list. The snippet below shows what `credentialStatus` would look like when linking to the previously created
+status list credential. 
+
+```json
+{
+    "id": "https://example.com/credentials/status#94567",
+    "type": "StatusList2021Entry",
+    "statusPurpose": "revocation",
+    "statusListIndex": "94567",
+    "statusListCredential": "https://example.com/credentials/status"
+}
+```
+
 <Tabs groupId="language" queryString>
 <TabItem value="rust" label="Rust">
 
@@ -137,18 +158,7 @@ https://github.com/iotaledger/identity.rs/blob/main/bindings/wasm/examples/src/1
 </TabItem>
 </Tabs>
 
-To set the status of a credential, the issuer retrieves the status list credential and set the value of the chosen entry index.
-This sets the `credentialStatus` of the revoked credential to something similar to the following snippet:
-
-```json
-{
-    "id": "https://example.com/credentials/status#94567",
-    "type": "StatusList2021Entry",
-    "statusPurpose": "revocation",
-    "statusListIndex": "94567",
-    "statusListCredential": "https://example.com/credentials/status"
-}
-```
+To set the status of a credential, the issuer retrieves the status list credential and sets the value of the chosen entry index.
 
 ## Removing the Verification Method
 
