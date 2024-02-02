@@ -22,7 +22,9 @@ It includes everything you need to develop your own IOTA dApps, plugins, and mor
 
 1. A recent release of [Docker](https://www.docker.com/). Avoid using the Docker version shipped with your OS since these are mostly out of date. You can find installation instructions in the [official Docker documentation](https://docs.docker.com/).
 2. [Docker Compose CLI plugin](https://docs.docker.com/compose/install/linux/).
-3. Make sure ports 80 and 8082 are not in use by other applications. If they are change them in the `.env` file.
+3. sed
+4. jq
+5. Make sure ports 80 and 8082 are not in use by other applications. If they are change them in the `.env` file. Optional: If you enabled the explorer profile by default it will use port 8081
 
 ### Download the Latest Release
 
