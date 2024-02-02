@@ -22,7 +22,7 @@
   },
   "dependencies": {
     "@babel/generator": "^7.21.5",
-    "@babel/parser": "^7.23.0",
+    "@babel/parser": "^7.23.9",
     "@babel/types": "^7.23.6",
     "@iota-wiki/core": "workspace:^",
     "@yarnpkg/shell": "^3.3.0",
@@ -33,7 +33,7 @@
     "ink-select-input": "^4.2.2",
     "ink-spinner": "^4.0.3",
     "ink-text-input": "^4.0.3",
-    "isomorphic-git": "^1.25.2",
+    "isomorphic-git": "^1.25.3",
     "link-check": "^5.2.0",
     "markdownlint-cli2": "^0.8.1",
     "node-html-parser": "^6.1.10",

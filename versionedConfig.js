@@ -1,5 +1,3 @@
-const path = require('path');
-
 exports.buildPluginsConfig = [
   {
     id: 'iota-sdk',
@@ -72,14 +70,6 @@ exports.buildPluginsConfig = [
         label: '1.0',
         badges: ['IOTA', 'Shimmer'],
       },
-      {
-        label: '0.6',
-        badges: ['Deprecated'],
-        bannerPath: path.resolve(
-          __dirname,
-          'banners/identity-06-deprecation-migration.mdx',
-        ),
-      },
     ],
   },
   {
@@ -119,6 +109,19 @@ exports.buildPluginsConfig = [
     versions: [
       {
         label: '1.0',
+        badges: ['IOTA', 'Shimmer'],
+      },
+    ],
+  },
+  {
+    id: 'iota-sandbox',
+    label: 'IOTA Sandbox',
+    description: 'Your tool for local development.',
+    icon: 'Tools',
+    subsection: 'build-tools',
+    versions: [
+      {
+        label: '',
         badges: ['IOTA', 'Shimmer'],
       },
     ],

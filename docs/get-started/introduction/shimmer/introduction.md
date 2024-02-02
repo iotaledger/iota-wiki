@@ -10,7 +10,7 @@ tags:
     smart contracts,
     canary network,
     innovation,
-    Shimmer Devnet,
+    Shimmer Testnet,
   ]
 ---
 

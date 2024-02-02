@@ -40,15 +40,6 @@ module.exports = async () => {
         },
       },
     },
-    {
-      id: 'iota-zebra-tutorials',
-      path: path.resolve(__dirname, 'docs/build/zebra-iota-edge-sdk/tutorials'),
-      routeBasePath: 'zebra-tutorials',
-      sidebarPath: path.resolve(
-        __dirname,
-        'docs/build/zebra-iota-edge-sdk/sidebars.js',
-      ),
-    },
   ];
 
   const maintainPlugins = [
