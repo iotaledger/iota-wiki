@@ -30,6 +30,11 @@ const config = {
           description: 'Build dApps with ISC, our L2 smart contracts platform.',
           id: 'build-layer-2',
         },
+        {
+          label: 'Tools',
+          description: 'Tools to develop your dApps.',
+          id: 'build-tools',
+        },
       ],
     },
     {

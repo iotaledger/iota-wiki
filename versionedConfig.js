@@ -123,6 +123,19 @@ exports.buildPluginsConfig = [
       },
     ],
   },
+  {
+    id: 'iota-sandbox',
+    label: 'IOTA Sandbox',
+    description: 'Your tool for local development.',
+    icon: 'Tools',
+    subsection: 'build-tools',
+    versions: [
+      {
+        label: '',
+        badges: ['IOTA', 'Shimmer'],
+      },
+    ],
+  },
 ];
 
 exports.maintainPluginsConfig = [

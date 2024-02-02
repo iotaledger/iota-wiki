@@ -17,6 +17,11 @@ module.exports = {
       items: [
         {
           type: 'link',
+          label: 'IOTA Sandbox',
+          href: '/iota-sandbox/welcome',
+        },
+        {
+          type: 'link',
           label: 'CLI Wallet',
           href: '/cli-wallet/welcome',
         },
