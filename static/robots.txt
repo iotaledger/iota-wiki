@@ -2,3 +2,4 @@ User-agent: *
 Disallow: /introduction/
 Disallow: /identity.rs/0.6/
 Disallow: /identity.rs/0.6/
+Disallow: /zebra-tutorials/
