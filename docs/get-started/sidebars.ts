@@ -10,7 +10,7 @@ module.exports = {
         description:
           'Learn more about both our mainnet and our staging network Shimmer.',
         slug: '/introduction',
-        tags: ['introduction', 'iota', 'shimmer'],
+        keywors: ['introduction', 'iota', 'shimmer'],
       },
       items: [
         {
@@ -66,7 +66,7 @@ module.exports = {
         title: 'Wallets',
         description: 'A list of all wallets including community wallets.',
         slug: '/wallets',
-        tags: ['wallets', 'firefly', 'tanglepay'],
+        keywors: ['wallets', 'firefly', 'tanglepay'],
       },
       items: [
         'wallets/firefly',
