@@ -7,4 +7,4 @@ keywords:
   - chain
 ---
 
-The sandbox comes with a bootstrapped wasp chain and the [EVM Toolkit](https://github.com/iotaledger/evm-toolkit) preconfigured. You can find its ID and RPC url in the [Wasp Dashboard](../references/endpoints.md#Wasp). Together with the prefunded [L2 account](../references/keys.md#l2-account) you can use it together with tools like hardhat or ethers.js.
+The sandbox comes with a bootstrapped wasp chain and the [EVM Toolkit](https://github.com/iotaledger/evm-toolkit) preconfigured. You can find its ID and RPC url in the [Wasp Dashboard](../references/endpoints.md#dashboard-1). Together with the prefunded [L2 account](../references/keys.md#l2-account) you can use it together with tools like hardhat or ethers.js.
