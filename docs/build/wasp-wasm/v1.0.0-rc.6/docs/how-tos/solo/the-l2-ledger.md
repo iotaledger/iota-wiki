@@ -2,7 +2,7 @@
 description: 'Smart contracts can exchange assets between themselves on the same chain and between different chains, as
 well as with addresses on the L1 ledger.'
 image: /img/logo/WASP_logo_dark.png
-keywords:
+tags:
 
 - testing
 - solo

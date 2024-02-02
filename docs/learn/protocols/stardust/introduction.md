@@ -1,6 +1,6 @@
 ---
 description: Learn about IOTA's Stardust upgrade, focusing on its key features and enhancements.
-keywords:
+tags:
   [
     IOTA,
     Stardust,

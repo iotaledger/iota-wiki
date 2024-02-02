@@ -1,7 +1,7 @@
 ---
 description: Each smart contract instance has a program with a collection of entry points and a state.
 image: /img/tutorial/SC-structure.png
-keywords:
+tags:
   - smart contracts
   - structure
   - state

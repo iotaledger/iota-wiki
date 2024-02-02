@@ -1,7 +1,7 @@
 ---
 description: IOTA Stronghold is a secure software implementation with the sole purpose of isolating digital secrets from exposure to hackers and accidental leaks.
 image: /img/banner/banner_stronghold_overview.png
-keywords:
+tags:
   - reference
   - rust
   - secure

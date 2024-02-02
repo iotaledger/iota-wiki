@@ -1,7 +1,7 @@
 ---
 description: The IOTA token is designed to facilitate value transfer between humans and machines, with fair distribution and a focus on sustainability. It enables feeless transactions and supports a wide range of use cases.
 image: /img/logo/preview.png
-keywords:
+tags:
   - IOTA token
   - value transfer
   - fair distribution

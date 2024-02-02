@@ -1,7 +1,7 @@
 ---
 description: In this section we describe individual crates and components of Stronghold.
 image: /img/banner/banner_stronghold_structure.png
-keywords:
+tags:
   - reference
   - ToC
   - crates

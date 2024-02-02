@@ -1,7 +1,7 @@
 ---
 description: 'Discover how Stronghold models threats using STRIDE and how the different threat levels are handled'
 image: /img/logo/Stronghold_icon.png
-keywords:
+tags:
   - threat modeling
   - security
   - explanation

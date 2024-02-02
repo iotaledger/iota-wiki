@@ -1,7 +1,7 @@
 ---
 description: Explanations clarify a single topic.
 image: /img/logo/iota_logo.svg
-keywords:
+tags:
   - explanations
   - clarify
 ---

@@ -1,7 +1,7 @@
 ---
 description: Stronghold is a secure software implementation with the sole purpose of isolating the seed, private keys, personally identifiable information (PII) and policy records from exposure to the genuinely hostile environment of user devices.
 image: /img/logo/Stronghold_icon.png
-keywords:
+tags:
   - reference
   - rust
   - private key

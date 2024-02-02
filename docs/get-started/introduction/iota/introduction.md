@@ -1,7 +1,7 @@
 ---
 description: Explore the key features of IOTA, including the Tangle, feeless transactions, data transfer, and energy efficiency. Learn how IOTA revolutionizes the blockchain industry with its innovative protocols.
 image: /img/logo/preview.png
-keywords:
+tags:
   - IOTA
   - Tangle
   - feeless transactions

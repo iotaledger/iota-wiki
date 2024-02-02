@@ -4,7 +4,7 @@ secure
 database for working with cryptography, which ensures that secrets are never revealed - but can be used according to
 best practices.'
 image: /img/banner/banner_stronghold.png
-keywords:
+tags:
 
 - welcome
 - open-source
