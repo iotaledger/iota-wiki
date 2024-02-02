@@ -55,7 +55,7 @@ http://localhost/faucet/
 ### Dashboard 
 
 ```plaintext
-http://localhost/wasp/
+http://localhost/wasp/dashboard/
 ```
 
 #### Default Credentials
