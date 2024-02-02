@@ -38,7 +38,7 @@ http://localhost/
 
 ### INX
 
-´´´plaintext
+```plaintext
 http://localhost:9029/
 ```
 
@@ -85,11 +85,6 @@ http://localhost/chronicle/
 
 ## EVM Toolkit
 
-:::info Profile
-
-The EVM Toolkit is not active by default. You need to enable the `evm-toolkit` profile to use it.
-
-:::
 :::info Port
 
 The EVM Toolkit is available on port `8082` by default. You can change it in the `.env` file.
