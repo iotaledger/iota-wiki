@@ -1,6 +1,6 @@
 ---
 title: Manifesto
-keywords:
+tags:
   - reference
 description: The IOTA Wiki's technical writers' manifesto.
 image: /img/iota-wiki.png

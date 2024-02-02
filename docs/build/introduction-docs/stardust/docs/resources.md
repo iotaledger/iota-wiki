@@ -1,7 +1,7 @@
 ---
 description: Official and Community resources to help you develop and troubleshoot your application.
 image: /img/logo/preview.png
-keywords:
+tags:
   - tangle explorer
   - discord
   - stackExchange

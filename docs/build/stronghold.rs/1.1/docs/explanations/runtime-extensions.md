@@ -1,7 +1,7 @@
 ---
 description: Runtime extensions
 image: /img/logo/Stronghold_icon.png
-keywords:
+tags:
   - apit
   - security
   - runtime

@@ -2,7 +2,7 @@
 description: 'The evm core contract provides the necessary infrastructure to accept Ethereum transactions and execute
 EVM code.'
 image: /img/logo/WASP_logo_dark.png
-keywords:
+tags:
 
 - smart contracts
 - core

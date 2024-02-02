@@ -1,7 +1,7 @@
 ---
 image: /img/shimmer-wiki.png
 description: Learn about the bug bounty programs in IOTA and Shimmer networks, incentivizing security researchers to identify and report vulnerabilities.
-keywords:
+tags:
   - bug bounties
   - security researchers
   - vulnerability identification

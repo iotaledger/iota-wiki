@@ -1,5 +1,5 @@
 ---
-keywords:
+tags:
   - reference
 description: The technical writer's guide for IOTA Wiki.
 image: /img/iota-wiki.png

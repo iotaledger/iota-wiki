@@ -1,7 +1,7 @@
 ---
 description: Learn about Stronghold as a concurrent software, the actor model STM with TL2 and RLU.
 image: /img/logo/Stronghold_icon.png
-keywords:
+tags:
   - actor model
   - rlu
   - STM

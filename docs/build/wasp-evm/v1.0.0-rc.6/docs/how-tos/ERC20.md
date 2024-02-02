@@ -1,7 +1,7 @@
 ---
 description: Solidity smart contract ERC20.
 image: /img/logo/WASP_logo_dark.png
-keywords:
+tags:
   - smart contracts
   - EVM
   - Solidity

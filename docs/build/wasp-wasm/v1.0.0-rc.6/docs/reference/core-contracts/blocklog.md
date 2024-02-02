@@ -1,7 +1,7 @@
 ---
 description: The `blocklog` contract keeps track of the blocks of requests processed by the chain.
 image: /img/logo/WASP_logo_dark.png
-keywords:
+tags:
   - core contracts
   - blocklog
   - views

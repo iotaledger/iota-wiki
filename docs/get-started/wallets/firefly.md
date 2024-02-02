@@ -1,7 +1,7 @@
 ---
 title: Firefly Wallet
 description: Official wallet from the IOTA Foundation.
-keywords:
+tags:
   - Firefly Wallet
   - Shimmer Wallet
   - IOTA Wallet

@@ -1,7 +1,7 @@
 ---
 description: 'The `accounts` contract keeps the ledger of on-chain accounts.'
 image: /img/logo/WASP_logo_dark.png
-keywords:
+tags:
   - core contracts
   - accounts
   - deposit

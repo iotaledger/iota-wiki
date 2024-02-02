@@ -1,6 +1,6 @@
 ---
 description: Get an overview of IOTA's different protocol versions.
-keywords: [
+tags: [
     IOTA,
     Stardust,
     Chrysalis,

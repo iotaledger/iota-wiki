@@ -1,7 +1,7 @@
 ---
 description: Getting started with your project.
 image: /img/logo/iota_logo.svg
-keywords:
+tags:
   - install
   - prerequisites
   - getting started

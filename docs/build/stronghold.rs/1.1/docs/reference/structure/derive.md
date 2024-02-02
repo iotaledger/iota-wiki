@@ -1,7 +1,7 @@
 ---
 description: The Derive crate contains procedural macros for Stronghold.
 image: /img/logo/Stronghold_icon.png
-keywords:
+tags:
   - reference
   - rust
   - crate

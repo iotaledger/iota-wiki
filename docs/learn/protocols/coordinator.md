@@ -1,7 +1,7 @@
 ---
 description: The Coordinator - IOTA's PoA finality gadget.
 image: /img/iota-wiki.png
-keywords:
+tags:
   - explanation
   - shimmer
 ---

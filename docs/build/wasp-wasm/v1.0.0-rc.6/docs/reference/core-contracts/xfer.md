@@ -1,7 +1,7 @@
 ---
 description: 'The `transferAccountToChain` contract needs special consideration.'
 image: /img/logo/WASP_logo_dark.png
-keywords:
+tags:
   - core contracts
   - accounts
   - deposit
