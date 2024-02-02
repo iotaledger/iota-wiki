@@ -35,11 +35,11 @@ You can use the following pre-funded mnemonics and addresses while working with 
 | Name                                | Value                                                                                                                                                  |
 |-------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Token mnemonic                      | income seed actor ankle gesture sock twenty satoshi bonus sister use afraid phrase muffin purse alpha year volcano name recall slim stick sister eagle |
-| EVM Address                         | snd1qqrku7yz0wd87v20qxnd7hyzunjpt36jckk5t227k93e5rhzhtqlxwk4qsu                                                                                        |
+| Token bech32 address with `snd` HRP | snd1qqrku7yz0wd87v20qxnd7hyzunjpt36jckk5t227k93e5rhzhtqlxwk4qsu                                                                                        |
 
 ### L2 Account
 
 | Name                                | Value                                                                                                                                                       |
 |-------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Token mnemonic                      | echo mass dentist hood neutral claw fragile scare magnet float citizen pink order hundred village edge quality excuse donor spawn heart happy extend resist |
-| Token bech32 address with `snd` HRP | 0xb62ea087c36eBd77Fb58174Ae162395722dE9Cb0                                                                                                                  |
+| EVM Address                         | 0xb62ea087c36eBd77Fb58174Ae162395722dE9Cb0                                                                                                                  |
