@@ -36,6 +36,12 @@ http://localhost/
 http://localhost/
 ```
 
+### INX
+
+´´´plaintext
+http://localhost:9029/
+```
+
 ## Faucet
 
 ### Frontend
