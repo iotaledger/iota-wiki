@@ -55,7 +55,7 @@ Like and retweet news in the ecosystem.
 
 - Difficulty level: **easy**
 - Time needed: **15 minutes/week**
-- Requirements: [Sign up to Twitter](https://twitter.com/i/flow/signup)
+- Requirements: [Sign up to Twitter](https://twitter.com/)
 
 Follow the [IOTA Foundation](https://twitter.com/iota/) and [Shimmer](https://twitter.com/shimmernet) on Twitter and follow them daily to _like_ and _retweet_. Look for other projects or ecosystem members, follow them, and like their tweets.
 
