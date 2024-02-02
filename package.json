@@ -45,6 +45,7 @@
     "@popperjs/core": "^2.11.5",
     "@saucelabs/theme-github-codeblock": "^0.2.3",
     "@svgr/webpack": "^5.5.0",
+    "bufferutil": "^4.0.8",
     "clsx": "^1.2.1",
     "docusaurus-plugin-openapi-docs": "dr-electron/docusaurus-openapi-docs#head=tmp-fix-type&workspace=docusaurus-plugin-openapi-docs",
     "docusaurus-theme-openapi-docs": "dr-electron/docusaurus-openapi-docs#head=tmp-fix-type&workspace=docusaurus-theme-openapi-docs",
@@ -54,6 +55,7 @@
     "globby": "^13.1.4",
     "hast-util-is-element": "1.1.0",
     "humanize-duration": "^3.30.0",
+    "infima": "^0.2.0-alpha.43",
     "plugin-image-zoom": "flexanalytics/plugin-image-zoom",
     "raw-loader": "^4.0.2",
     "react": "18.2.0",
@@ -72,7 +74,10 @@
     "remark-math": "^3.0.1",
     "remark-remove-comments": "^0.2.0",
     "url-loader": "^4.1.1",
-    "webpack": "^5.89.0"
+    "utf-8-validate": "^6.0.3",
+    "webpack": "^5.89.0",
+    "webpack-node-externals": "^3.0.0",
+    "ws": "^8.16.0"
   },
   "resolutions": {
     "@types/react": "18.2.46",
