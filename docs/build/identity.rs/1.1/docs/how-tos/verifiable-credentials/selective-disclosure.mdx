@@ -100,10 +100,22 @@ The digests are contained in the `_sd` property in `address`. This allows both k
 
 For further details, see the [example](#full-example-code) below and the [sd-jwt-payload crate](https://github.com/iotaledger/sd-jwt-payload).
 
+## Presentation format
+
+The SD-JWT is presented in the following [format](https://www.ietf.org/archive/id/draft-ietf-oauth-selective-disclosure-jwt-07.html#section-5):
+
+> `<Issuer-signed JWT>~<Disclosure 1>~<Disclosure 2>~...~<Disclosure N>~<optional KB-JWT>`
 
 ## Key Binding JWT
 
-When a verifier receives an SD-JWT, it may be desirable to verify that the identity of the presenter matches the holder of the Credential. For that purpose a Key Binding JWT can be used, in which the holder can proof the possession of the private key that corresponds with his public key.
+When a verifier receives an SD-JWT, it may be desirable to verify that the identity of the presenter matches the holder of the Credential. For that purpose a [Key Binding JWT (KB-JWT)](https://www.ietf.org/archive/id/draft-ietf-oauth-selective-disclosure-jwt-07.html#section-4.3) can be used.
+
+
+- The verifier sends a nonce to the holder.
+- The holder creates a JWT containing the nonce and the digest of issuer-signed JWT and the disclosures 1→N.
+- The holder sends the KB-JWT to the verifier as a part of the presentation. 
+- By verifying the KB-JWT, the verifier ensures the identity of the holder, the integrity of the data, the freshness of the signature and the intended audience.
+
 
 
 ## Full Example Code
