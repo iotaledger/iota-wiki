@@ -37,7 +37,7 @@ Besides reading and writing to the contract state, the Sandbox interface allows 
 - The ID of whoever had deployed the contract.
 - The timestamp of the current block.
 - Cryptographic utilities like hashing, signature verification, and so on.
-- The [events](/schema/how-tos/events) dispatch.
+- The [events](/isc/schema/how-tos/events) dispatch.
 - Entropy that emulates randomness in an unpredictable yet deterministic way.
 - Logging. Used for debugging in a test environment.
 

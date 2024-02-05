@@ -28,7 +28,7 @@ module.exports = {
         {
           label: 'Schema Tool',
           type: 'link',
-          href: '/schema/introduction',
+          href: '/isc/schema/introduction',
         },
         {
           label: 'Explorer',
