@@ -104,7 +104,7 @@ module.exports = {
       type: 'category',
       label: 'How To',
       items: [
-        'introduction',
+        'how-tos/introduction',
         {
           type: 'category',
           label: 'EVM',
