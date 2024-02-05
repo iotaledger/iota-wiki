@@ -21,7 +21,7 @@ keywords:
 
 ## Introduction
 
-Smart contracts are essentially programs run by upon requests. Network nodes, also known as 
+Smart contracts are essentially programs run by a network of nodes upon requests. Network nodes, also known as 
 [Validators](chain-owners-validators-and-access-nodes.md) activate these contracts in response to specific [user requests](#invoking-a-smart-contract). 
 
 ## Structure of a Smart Contract
