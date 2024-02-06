@@ -39,7 +39,7 @@ You can use it to specify the purpose of the verification method.
 
 ### Relationships
 
-The following relationships are supported by the Identity Framework:
+The Identity Framework supports the following relationships:
 
 - **[Authentication](https://www.w3.org/TR/did-core/#authentication)**: Used to specify authentication methods for the DID subject.
 - **[Assertion](https://www.w3.org/TR/did-core/#assertion)**: Used to verify verifiable credentials.
@@ -49,7 +49,7 @@ The following relationships are supported by the Identity Framework:
 
 Verification methods can be either [embedded or referenced](https://www.w3.org/TR/did-core/#referring-to-verification-methods). Referencing verification
 methods allows them to be used by more than one verification relationship.
-When you create a verification method using the identity framework, specifying the `MethodScope` option will result in an embedded verification method.
+When you create a verification method using the Identity Framework, specifying the `MethodScope` option will result in an embedded verification method.
 Leaving that option unset will create the verification method as a map entry of the `verificationMethod` property.
 You can also add verification relationships afterward using references.
 
