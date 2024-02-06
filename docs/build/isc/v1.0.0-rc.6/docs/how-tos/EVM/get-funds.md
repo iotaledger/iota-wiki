@@ -23,7 +23,7 @@ onto L2.
 
 :::tip Testnet
 
-If you want to fund your Testnet account, please refer to our [Public Testnet Quickstart Guide](../../getting-started/quick-start.mdx)
+If you want to fund your Testnet account, please refer to our [ShimmerEVM Testnet Quickstart Guide](../../getting-started/quick-start.mdx)
 
 :::
 

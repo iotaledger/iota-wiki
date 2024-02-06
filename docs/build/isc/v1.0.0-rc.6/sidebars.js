@@ -133,7 +133,7 @@ module.exports = {
             {
               type: 'doc',
               label: 'Deploy a Smart Contract',
-              id: 'how-tos/EVM/deploy-a-smart-contract'
+              id: 'how-tos/EVM/deploy-a-smart-contract',
             },
             {
               type: 'doc',

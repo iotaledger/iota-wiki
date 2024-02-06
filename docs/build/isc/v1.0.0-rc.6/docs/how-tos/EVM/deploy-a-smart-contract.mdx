@@ -1,21 +1,28 @@
+---
+tags:
+- Smart Contract Deployment
+- Shimmer EVM
+- Remix IDE
+- Hardhat 
+- Shimmer EVM Testnet
+image: /img/logo/WASP_logo_dark.png
+description: 'Learn how to deploy smart contracts to Shimmer EVM and Shimmer EVM Testnet using popular tools like Remix and Hardhat.'
+---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import {AddToMetaMaskButton, EVMNetworks} from '@theme/AddToMetaMaskButton';
+import { ChainId } from '@theme/ChainId';
 
 # Deploy a Smart Contract
 
-You can deploy your smart contracts to Shimmer EVM and the Shimmer EVM Testnet using popular tools
-like [Hardhat](#hardhat) and [Remix](#remix).
+You can deploy your smart contracts to [Shimmer EVM](https://explorer.evm.shimmer.network/) and
+the [Shimmer EVM Testnet](https://explorer.evm.testnet.shimmer.network/) using popular tools like [Remix](#remix)
+and [Hardhat](#hardhat).
 
 :::tip Get a Basic Contract
 
 This guide will deploy the `Counter` contract you can find in
 the [How to Create a Basic Solidity Contract Guide](create-a-basic-contract.md).
-
-:::
-
-:::tip Connect Metamask
-
-You can find a detailes
 
 :::
 
@@ -25,45 +32,62 @@ Deploying a Solidity smart contract using Remix is a straightforward process tha
 setup of development environments on your machine. Remix is a powerful, browser-based IDE that allows you to write,
 compile, and deploy smart contracts.
 
-### 1. Access Remix IDE
+### 1. Connect to Metamask
+
+Before you get started, make sure you have connected Metamask to your network of choice.
+
+:::tip Networks & Endpoints
+
+You can check the connection details in the [Networks & Endpoints section](/build/networks-endpoints/).
+
+:::
+
+<Tabs>
+<TabItem value='testnet' label='ShimmerEVM Testnet'>
+<AddToMetaMaskButton cfg={EVMNetworks['shimmerevm-testnet']}/>
+</TabItem>
+<TabItem value='shimmerEVM' label='Shimmer EVM'>
+<AddToMetaMaskButton cfg={EVMNetworks['shimmerevm']}/>
+</TabItem>
+</Tabs>
+
+### 2. Access Remix IDE
 
 Open your web browser and navigate to [Remix IDE](https://remix.ethereum.org/).
 
 ### 2. Create and Write Your Smart Contract
 
-1. In the File Explorers tab on the left, click the "Create New File" icon.
+1. In the `File Explorer` tab on the left, click the `Create New File` icon.
 2. Name your file `Counter.sol`.
 3. Copy the Solidity code for the [basic counter smart contract](create-a-basic-contract.md) and paste it into
    the `Counter.sol` file you just created in Remix.
 
 ### 3. Compile Your Smart Contract
 
-1. Navigate to the "Solidity Compiler" tab on the left sidebar.
+1. Navigate to the `Solidity Compiler` tab on the left sidebar.
 2. Select the appropriate compiler version that matches the version specified in your contract (`^0.8.6` or similar).
-   You
-   might need to enable "Auto compile" or click the "Compile" button manually.
+   You might need to enable "Auto compile" or click the "Compile" button manually.
 3. If there are errors, Remix will display them, and you'll need to correct them before proceeding.
 
 ### 4. Deploy Your Smart Contract
 
 1. Switch to the "Deploy & Run Transactions" tab on the left sidebar.
-2. In the "Environment" dropdown, select the appropriate environment:
-    * JavaScript VM: For deploying and testing in a simulated blockchain provided by Remix.
-    * Injected Web3: To use a real Ethereum network via MetaMask or another Web3 provider. This requires you to have
-      MetaMask
-      installed and an Ethereum network selected (e.g., Ropsten test network) with some ether for gas fees.
-    * Web3 Provider: To connect to an Ethereum node directly. This is an advanced option and not typically used for
-      basic
-      testing.
+2. In the "Environment" dropdown, select and select `Injected Web3` from the `Environment` dropdown.
 
-   After selecting the environment, make sure the contract Counter is selected in the "Contract" dropdown.
-3. Click the "Deploy" button. If you're using an Ethereum network, confirm the transaction in your Web3 wallet.
+   ![Select Injected Provider from the Environment dropdown](/img/evm/remix-injected-provider-metamask.png)
+   
+3. After selecting the environment, make sure the contract Counter is selected in the `Contract` dropdown.
+4. Click the `Deploy` button. If you're using an Ethereum network, confirm the transaction in your Web3 wallet.
 
 ### 5. Interact with Your Deployed Contract
 
-Once deployed, the contract instance will appear under the "Deployed Contracts" section.
+Once deployed, the contract instance will appear under the `Deployed Contracts` section.
 Here, you can interact with your contract by calling its functions. For the Counter contract, you'll see buttons to call
-its increment, decrement, and getCount functions directly from Remix.
+its `increment`, `decrement`, and `getCount` functions directly from Remix.
+
+### Video Tutorial
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/0_rmmprEKrM" title="ShimmerEVM Tutorial: Connect to ShimmerEVM Testnet & Deploy a Solidity Smart Contract" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## Hardhat
 
@@ -103,7 +127,7 @@ project. Here's a step-by-step guide:
 
 1. Inside the `contracts` folder, create a new file called  `Counter.sol` and paste the content of
    the [Counter Basic Contract](create-a-basic-contract.md).
- 
+
 ### 3. Create a Deployment Script:
 
 1. Navigate to the `scripts` folder.
@@ -132,29 +156,15 @@ project. Here's a step-by-step guide:
 1. Add your preferred network parameters to the `hardhat.config.js`, for example:
 
 <Tabs>
-<TabItem value='testnet' label='Public Testnet'>
+<TabItem value='testnet' label='ShimmerEVM Testnet'>
 
 ```javascript
 networks: {
     'shimmerevm-testnet': {
         url: 'https://json-rpc.evm.testnet.shimmer.network',
-        chainId: 1073,
-        accounts: [YOUR PRIVATE KEY],
+        chainId:1073,
+        accounts: ['YOUR PRIVATE KEY'],
     },
-},
-//verify config
-etherscan: {
-    apiKey: {
-    'shimmerevm-testnet': 'ABCDEFG123456'
-    },
-    customChains: [{
-        network: 'shimmerevm-testnet',
-        chainId: 1073,
-        urls: {
-            apiURL: 'https://explorer.evm.testnet.shimmer.network/api',
-            browserURL: ' https://explorer.evm.testnet.shimmer.network/'
-        }
-    }]
 }
 ```
 
@@ -165,23 +175,9 @@ etherscan: {
 networks: {
     'shimmerevm': {
         url: 'https://json-rpc.evm.shimmer.network',
-        chainId: 148,
+        chainId: 148, 
         accounts: [YOUR PRIVATE KEY],
     },
-},
-//verify config
-etherscan: {
-    apiKey: {
-        'shimmerevm': 'ABCDEFG123456'
-    },
-    customChains: [{
-        network: 'shimmerevm',
-        chainId: 148,
-        urls: {
-            apiURL: 'https://explorer.evm.shimmer.network/api',
-            browserURL: 'https://explorer.evm.shimmer.network/'
-        }
-    }]
 }
 ```
 
@@ -202,19 +198,23 @@ often offered through block explorer APIs.
    ```
 
 3. If you have no compilation errors, you can deploy your contract by running the following command:
-   
+
    ```bash
    npx hardhat run scripts/deploy.js --network shimmerevm-testnet
    ```
 
-   Expected output:
+   **Expected output**:
 
    ```bash
    Counter deployed to: 0x123456789ABCDEFGHIJK123456789ABCDEFGHIJK
    ```
-   
-4. Verify your smart contract by running:
-   
-   ```bash
-   npx hardhat verify --network  shimmerevm-testnet 0x123456789ABCDEFGHIJK123456789ABCDEFGHIJK
-   ```
+   ***** `0x123456789ABCDEFGHIJK123456789ABCDEFGHIJK` is the contract unlock address.
+
+4. You can verify your contract by visiting
+   the [ShimmerEVM Testnet Explorer](https://explorer.evm.testnet.shimmer.network/),
+   and searching for the address from the previous step. If you access the `Contract` tab, you should be able to see
+   your code and interact with your contract.
+
+### Video Tutorial
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/rRscvKirroo" title="ShimmerEVM Tutorial: Deploying a Smart Contract with Hardhat" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
