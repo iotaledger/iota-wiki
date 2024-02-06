@@ -15,25 +15,28 @@ import TabItem from '@theme/TabItem';
 # Selective Disclosure (SD-JWT)
 
 
-Holders of verifiable credentials may prefer not to disclose all the information contained within the credential to a verifier. Instead, they may opt to only share a specific subset of the properties included in the VC. The identity library implements the [IETF Specifications](https://www.ietf.org/archive/id/draft-ietf-oauth-selective-disclosure-jwt-07.html) which outlines a mechanism to enable the selective disclosure of individual properties within the JSON object of JWT claims.
+Holders of verifiable credentials may prefer to keep all the information contained within the credential private from a verifier. Instead, they may opt only to share a specific subset of the properties included in the VC. The identity library implements the [IETF Specifications](https://www.ietf.org/archive/id/draft-ietf-oauth-selective-disclosure-jwt-07.html), which outlines a mechanism to enable the selective disclosure of individual properties within the JSON object of JWT claims.
 
 ## Concept
 
-#### Issuance ✍️
-During the issuance process, the issuer replaces a subset of the fields contained in a credential with digests of their salted values and creates a signed JWT. Next, JWT alongside the plain text disclosures and the salt used the for digest creation are sent to the holder. 
+### Issuance
 
-#### Presentation 📃
-At this stage, the holder has the flexibility to selectively choose which fields to disclose to the verifier. The chosen disclosures are sent in plain text together with the JWT that contains the digests to the verifier. 
+During the issuance process, the issuer replaces a subset of the fields in a credential with digests of their salted values and creates a signed JWT. Next, JWT, alongside the plain text disclosures and the salt used for digest creation are sent to the holder. 
+
+### Presentation
+
+At this stage, the holder can selectively choose which fields to disclose to the verifier. The disclosures are sent in plain text, with the JWT containing the digests to the verifier. 
 
 :::note
 Only values replaced by digests through the issuer can be selectively disclosed. The holder **can not** conceal values provided in plain text in the JWT claims.
 :::
 
 
-#### Validation 🔬
-With these values and a valid signature, the verifier is able to reconstruct a verified VC that exclusively contains the information the holder intended to disclose.
+### Validation
 
-## How it works
+With these values and a valid signature, the verifier is able to reconstruct a Verified Credential (VC) that exclusively contains the information the holder intended to disclose.
+
+## How It Works
 
 As the SD JWT remains a valid JWT, giving the following JWT claim of an address credential in accordance with the [VC Data Model v1.1](https://www.w3.org/TR/vc-data-model/#json-web-token):
 
@@ -64,7 +67,7 @@ As the SD JWT remains a valid JWT, giving the following JWT claim of an address 
 
 ```
 
-The issuer makes the values of "locality", "postal_code", "street_address" selectively disclosable, giving the holder the freedom to select what details of the address to be disclosed and presented.
+The issuer makes the values of "locality", "postal_code", and "street_address" selectively disclosable, giving the holder the freedom to select what details of the address to be disclosed and presented.
 
 ```json
 {
@@ -108,13 +111,13 @@ The SD-JWT is presented in the following [format](https://www.ietf.org/archive/i
 
 ## Key Binding JWT
 
-When a verifier receives an SD-JWT, it may be desirable to verify that the identity of the presenter matches the holder of the Credential. For that purpose a [Key Binding JWT (KB-JWT)](https://www.ietf.org/archive/id/draft-ietf-oauth-selective-disclosure-jwt-07.html#section-4.3) can be used.
+When a verifier receives an SD-JWT, it may be desirable to verify that the presenter's identity matches the holder of the Credential. For that purpose, a [Key Binding JWT (KB-JWT)](https://www.ietf.org/archive/id/draft-ietf-oauth-selective-disclosure-jwt-07.html#section-4.3) can be used.
 
 
 - The verifier sends a nonce to the holder.
-- The holder creates a JWT containing the nonce and the digest of issuer-signed JWT and the disclosures 1→N.
+- The holder creates a JWT containing the nonce and the digest of the issuer-signed JWT and the disclosures 1→N.
 - The holder sends the KB-JWT to the verifier as a part of the presentation. 
-- By verifying the KB-JWT, the verifier ensures the identity of the holder, the integrity of the data, the freshness of the signature and the intended audience.
+- By verifying the KB-JWT, the verifier ensures the identity of the holder, the integrity of the data, the freshness of the signature, and the intended audience.
 
 
 
