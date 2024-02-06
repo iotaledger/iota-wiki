@@ -1,7 +1,7 @@
 ---
 description: Learn about the distribution of Shimmer tokens in the Shimmer network ecosystem.
 image: /img/docssection/shimmer_dark.svg
-keywords:
+tags:
   - Shimmer token
   - token distribution
   - IOTA stakers

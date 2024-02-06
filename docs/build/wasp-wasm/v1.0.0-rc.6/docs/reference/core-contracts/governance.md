@@ -2,7 +2,7 @@
 description: 'The `governance` contract defines the set of identities that constitute the state controller, access nodes,
 who is the chain owner, and the fees for request execution.'
 image: /img/logo/WASP_logo_dark.png
-keywords:
+tags:
 
 - core contracts
 - governance

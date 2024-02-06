@@ -1,7 +1,7 @@
 ---
 description: Calling smart contract view functions with Solo.
 image: /img/tutorial/call_view.png
-keywords:
+tags:
   - how to
   - testing
   - solo

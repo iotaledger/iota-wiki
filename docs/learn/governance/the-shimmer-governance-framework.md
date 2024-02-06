@@ -2,7 +2,7 @@
 title: The Shimmer Governance Framework
 description: This is the full specification for all governance processes in the Shimmer network. Detailed rules and procedures are defined here.
 image: /img/learn/governance/iota_governance.png
-keywords:
+tags:
   - Specification
   - Shimmer
   - Governance

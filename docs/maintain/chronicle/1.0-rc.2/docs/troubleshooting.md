@@ -1,7 +1,7 @@
 ---
 description: Troubleshooting the docs-template.
 image: /img/logo/iota_logo.svg
-keywords:
+tags:
   - discussion
   - channel
   - problem

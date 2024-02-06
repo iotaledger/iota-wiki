@@ -2,7 +2,7 @@
 description: 'Smart Contracts can only interact with the world by using the Sandbox interface which provides limited and
 deterministic access to the state through a key/value storage abstraction.'
 image: /img/sandbox.png
-keywords:
+tags:
 
 - smart contracts
 - sandbox

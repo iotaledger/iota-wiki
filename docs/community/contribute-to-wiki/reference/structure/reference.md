@@ -1,7 +1,7 @@
 ---
 description: Reference guides are technical descriptions of the project.
 image: /img/libraries/messages_in_tangle.svg
-keywords:
+tags:
   - reference
   - API
 ---

@@ -2,7 +2,7 @@
 description: 'IOTA Smart Contracts chains keeps a ledger of on-chain account balances. On-chain accounts are identified
 by an AgentID.'
 image: /img/tutorial/accounts.png
-keywords:
+tags:
 
 - smart contracts
 - on-chain account

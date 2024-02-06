@@ -1,7 +1,7 @@
 ---
 description: "Discover Shimmer, IOTA's staging network designed to test and deploy innovative features like tokenization and smart contracts. Explore Shimmer's capabilities and understand its role as a testing ground for advancements before their implementation on the IOTA network."
 image: /img/docssection/shimmer_dark.svg
-keywords:
+tags:
   [
     Shimmer,
     IOTA,
@@ -10,7 +10,7 @@ keywords:
     smart contracts,
     canary network,
     innovation,
-    Shimmer Devnet,
+    Shimmer Testnet,
   ]
 ---
 

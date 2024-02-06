@@ -2,7 +2,7 @@
 title: Overview
 description: All software projects share the same documentation structure on IOTA Wiki.
 image: /img/logo/iota_logo.svg
-keywords:
+tags:
   - reference
 ---
 
