@@ -28,11 +28,11 @@ A globally unique persistent identifier that does not require a centralized regi
 
 ### Decentralized Identity Management
 
-An type of identity management that is based on the use of decentralized identifiers. Decentralized identity management extends authority for identifier generation, registration, and assignment beyond traditional roots of trust such as X.500 directory services, the Domain Name System, and most national ID systems.
+A type of identity management that is based on the use of decentralized identifiers. Decentralized identity management extends authority for identifier generation, registration, and assignment beyond traditional roots of trust, such as X.500 directory services, the Domain Name System, and most national ID systems.
 
 ### DID Controller
 
-An entity that has the capability to make changes to a DID document. A DID may have more than one DID controller. The DID controller(s) can be denoted by the optional controller property at the top level of the DID document. Note that one DID controller may be the DID subject.
+An entity that can make changes to a DID document. A DID may have more than one DID controller. The DID controller(s) can be denoted by the optional controller property at the top level of the DID document. Note that one DID controller may be the DID subject.
 
 ### DID Delegate
 
@@ -40,7 +40,7 @@ An entity to whom a DID controller has granted permission to use a verification 
 
 ### DID Document
 
-A set of data describing the DID subject, including mechanisms, such as public keys and pseudonymous biometrics, that the DID subject or a DID delegate can use to authenticate itself and prove its association with the DID. A DID document may also contain other attributes or claims describing the DID subject. A DID document may have one or more different representations as defined in § 6. Core Representations or in the W3C DID Specification Registries [DID-SPEC-REGISTRIES].
+A set of data describing the DID subject, including mechanisms, such as public keys and pseudonymous biometrics, that the DID subject or a DID delegate can use to authenticate itself and prove its association with the DID. A DID document may also contain other attributes or claims describing the DID subject. A DID document may have one or more different representations as defined in [§ 6. Representations](https://www.w3.org/TR/did-core/#representations) or in the W3C DID Specification Registries [DID-SPEC-REGISTRIES](https://www.w3.org/TR/did-core/#bib-did-spec-registries).
 
 ### DID Fragment
 
@@ -48,19 +48,19 @@ The portion of a DID URL that follows the first hash sign character (#). DID fra
 
 ### DID Method
 
-A definition of how a specific DID scheme must be implemented to work with a specific verifiable data registry. A DID method is defined by a DID method specification, which must specify the precise operations by which DIDs are created, resolved and deactivated, where DID documents are written and updated. See § 7. Methods.
+A definition of how a specific DID scheme must be implemented to work with a specific verifiable data registry. A DID method is defined by a DID method specification, which must specify the precise operations by which DIDs are created, resolved, and deactivated, where DID documents are written and updated. [See W3's Methods](https://www.w3.org/TR/did-core/#methods).
 
 ### DID Path
 
-The portion of a DID URL that begins with and includes the first forward-slash (/) character and ends with either a question mark (?) character or a fragment hash sign (#) character (or the end of the DID URL). DID path syntax is identical to URI path syntax. See § 3.2.3 Path.
+The portion of a DID URL that begins with and includes the first forward-slash (/) character and ends with either a question mark (?) character or a fragment hash sign (#) character (or the end of the DID URL). DID path syntax is identical to URI path syntax. See [Path](https://www.w3.org/TR/did-core/#path).
 
 ### DID Query
 
-The portion of a DID URL that follows and includes the first question mark character (?). DID query syntax is identical to URI query syntax. See § 3.2.4 Query.
+The portion of a DID URL that follows and includes the first question mark character (?). DID query syntax is identical to URI query syntax. See [Query](https://www.w3.org/TR/did-core/#query).
 
 ### DID Resolution
 
-The function that takes, as an input, a DID and a set of input metadata and returns a DID document in a conforming representation plus additional metadata. This function relies on the "Read" operation of the applicable DID method. The inputs and outputs of this function are defined in § 8. Resolution.
+The function that takes, as an input, a DID and a set of input metadata and returns a DID document in a conforming representation plus additional metadata. This function relies on the "Read" operation of the applicable DID method. The inputs and outputs of this function are defined in [Resolution](https://www.w3.org/TR/did-core/#resolution).
 
 ### DID Resolver
 
@@ -80,7 +80,7 @@ A DID plus any additional syntactic component that conforms to the definition in
 
 ### DID URL Dereferencing
 
-The function that takes as its input a DID URL, a DID document, plus a set of dereferencing options, and returns a resource. This resource may be a DID document plus additional metadata, or it may be a secondary resource contained within the DID document, or it may be a resource entirely external to the DID document. If the function begins with a DID URL, it uses the DID resolution function to fetch a DID document indicated by the DID contained within the DID URL. The dereferencing function can then perform additional processing on the DID document to return the dereferenced resource indicated by the DID URL. The inputs and outputs of this function are defined in § 8.2 DID URL Dereferencing.
+The function that takes as its input a DID URL, a DID document, plus a set of dereferencing options, and returns a resource. This resource may be a DID document plus additional metadata, or it may be a secondary resource contained within the DID document, or it may be a resource entirely external to the DID document. If the function begins with a DID URL, it uses the DID resolution function to fetch a DID document indicated by the DID contained within the DID URL. The dereferencing function can then perform additional processing on the DID document to return the dereferenced resource indicated by the DID URL. The inputs and outputs of this function are defined in [DID URL Dereferencing](https://www.w3.org/TR/did-core/#did-url-dereferencing).
 
 ## IOTA Terminology
 
@@ -94,11 +94,11 @@ A data object contained inside a DID document that contains all the metadata nec
 
 ### Resource
 
-As defined by [RFC3986]: "...the term 'resource' is used in a general sense for whatever might be identified by a URI." Similarly, any resource may serve as a DID subject identified by a DID.
+As defined by [RFC3986](https://www.rfc-editor.org/rfc/rfc3986): "...the term 'resource' is used in a general sense for whatever might be identified by a URI." Similarly, any resource may serve as a DID subject identified by a DID
 
 ### Representation
 
-As defined for HTTP by [RFC7231]: "information that is intended to reflect a past, current, or desired state of a given resource, in a format that can be readily communicated via the protocol, and that consists of a set of representation metadata and a potentially unbounded stream of representation data." A DID document is a representation of information describing a DID subject. The § 6. Core Representations section of the DID Core specification defines several representation formats for a DID document.
+As defined for HTTP by [RFC7231](https://httpwg.org/specs/rfc7231.html): "information that is intended to reflect a past, current, or desired state of a given resource, in a format that can be readily communicated via the protocol, and that consists of a set of representation metadata and a potentially unbounded stream of representation data." A DID document is a representation of information describing a DID subject. The [Representations](https://www.w3.org/TR/did-core/#representations) section of the DID Core specification defines several representation formats for a DID document.
 
 ### Service
 
@@ -110,15 +110,15 @@ A network address (such as an HTTP URL) at which a service operates on behalf of
 
 ### Uniform Resource Identifier (URI)
 
-The standard identifier format for all resources on the World Wide Web as defined by [RFC3986]. A DID is a type of URI scheme.
+The standard identifier format for all resources on the World Wide Web as defined by [RFC3986](https://www.rfc-editor.org/rfc/rfc3986). A DID is a type of URI scheme.
 
 ### Verifiable Credential
 
-A standard data model and representation format for cryptographically-verifiable digital credentials as defined by the W3C [VC-DATA-MODEL].
+A standard data model and representation format for cryptographically-verifiable digital credentials as defined by the W3C [VC-DATA-MODEL](https://www.w3.org/TR/vc-data-model/).
 
 ### Verifiable Data Registry
 
-A system that facilitates the creation, verification, updating, or deactivation of decentralized identifiers and DID documents. A verifiable data registry may also be used for other cryptographically-verifiable data structures such as verifiable credentials. For more information, see [VC-DATA-MODEL].
+A system that facilitates the creation, verification, updating, or deactivation of decentralized identifiers and DID documents. A verifiable data registry may also be used for other cryptographically-verifiable data structures, such as verifiable credentials. For more information, see [VC-DATA-MODEL](https://www.w3.org/TR/vc-data-model/).
 
 ### Verifiable Timestamp
 
@@ -132,9 +132,10 @@ A set of parameters that can be used together with a process or protocol to inde
 
 ### Verification Relationship
 
-An expression of the relationship between the DID subject and a verification method. An example of a verification relationship is § 5.4.1 authentication.
+An expression of the relationship between the DID subject and a verification method. An example of a verification relationship is [authentication](https://www.w3.org/TR/did-core/#authentication).
 
 ### Universally Unique Identifier (UUID)
 
-A type of globally unique identifier defined by [RFC4122]. UUIDs are similar to DIDs in that they do not require a centralized registration authority. UUIDs differ from DIDs in that they are not resolvable or cryptographically-verifiable.
+A type of globally unique identifier defined by [RFC4122](https://www.rfc-editor.org/rfc/rfc4122). UUIDs are similar to DIDs in that they do not require a centralized registration authority. UUIDs differ from DIDs in that they are not resolvable or cryptographically verifiable.
+In addition to the terminology above, this specification also uses terminology from the [INFRA](https://infra.spec.whatwg.org/) specification to formally define the abstract data model. When [INFRA](https://infra.spec.whatwg.org/) terminology is used, such as string, ordered set, and map, it is linked directly to that specification.
 In addition to the terminology above, this specification also uses terminology from the [INFRA] specification to formally define the abstract data model. When [INFRA] terminology is used, such as string, ordered set, and map, it is linked directly to that specification.

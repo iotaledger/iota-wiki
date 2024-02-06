@@ -63,7 +63,7 @@ https://github.com/iotaledger/identity.rs/blob/v1.1.0/bindings/wasm/examples/src
 
 As a bare minimum, a [DID document](../../explanations/decentralized-identifiers.mdx) needs at least one verification method.
 
-At this point the DID itself is unknown since the Alias Output is not published yet and didn't get an `Alias ID` assigned.
+At this point, the DID itself is unknown since the Alias Output is not published yet and didn't get an `Alias ID` assigned.
 
 :::tip
 
@@ -125,7 +125,7 @@ https://github.com/iotaledger/identity.rs/blob/v1.1.0/bindings/wasm/examples/src
 
 The byte cost for the document is automatically calculated and a new transaction is published that includes
 the Basic Output as input and the newly generated Alias Output as output, as well as another Basic Output which contains
-the remaining token.
+the remaining tokens.
 
 The DID is only known once the [Alias Output](../../explanations/about-alias-outputs.mdx) is successfully published,
 since the DID's [Tag](../../references/specifications/iota-did-method-spec.mdx#iota-tag) contains the
@@ -176,5 +176,5 @@ https://github.com/iotaledger/identity.rs/blob/v1.1.0/bindings/wasm/examples/src
 
 In order to run the examples, you will need to run the [IOTA Sandbox](/iota-sandbox/welcome/) locally.
 
-If you want to use different, you will need to modify the API and faucet endpoints in the examples to match your local
+If you want to use something different, you will need to modify the API and faucet endpoints in the examples to match your
 setup.

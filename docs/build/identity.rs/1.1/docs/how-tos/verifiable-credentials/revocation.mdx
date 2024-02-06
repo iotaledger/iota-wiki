@@ -39,8 +39,8 @@ funds to rent out the required on-tangle space.
 
 :::note
 
-The size of the revocation list is limited by DLT's size constraints. With the assumption of only one such revocation list
-per issuer's DID document, one may expect to be able to handle roughly around 50k entries.
+DLT's size constraints limit the size of the revocation list. With the assumption of only one such revocation list
+per the issuer's DID document, one may expect to be able to handle roughly 50k entries.
 
 :::
 
@@ -86,7 +86,7 @@ service in the issuer's DID document:
 }
 ```
 
-During verification, the verifier decodes the revocation bitmap embedded in the `data` url.
+During verification, the verifier decodes the revocation bitmap embedded in the `data` URL.
 This bitmap written as a bitstring looks like this: `000001`.
 Here, the 5th bit is set, which means the credential with that index is revoked,
 while all other credentials aren't revoked.
@@ -95,15 +95,14 @@ while all other credentials aren't revoked.
 [StatusList2021](https://www.w3.org/TR/2023/WD-vc-status-list-20230427) offers similar functionalities to `RevocationBitmap2022`
 but in a more flexible and scalable way. 
 The main difference is that `StatusList2021` is completely agnostic in regards to how the issuer's status list
-is stored and fetched, as long as its location can be encoded through an URL. For instance, the status list
+is stored and fetched, as long as its location can be encoded through a URL. For instance, the status list
 can be made available over HTTP (e.g. `https://example.com/credentials/status`) or through the
 Interplanetary File System (e.g. `ipfs://QmXDWGdVBhbDoXXzKNMhJk5ejnZgxpMBVzW4EhQaHPD3Mi`).
 
 This flexibility, although it requires the issuer to manually fetch and update its status list, allows for an arbitrary number of
-entries in the status list, in contrast with `RevocationBitmap2022` where the lenght of the list is limited by the DLT's constraints.
+entries in the status list, in contrast with `RevocationBitmap2022`, where the length of the list is limited by the DLT's constraints.
 
-Furthermore, `StatusList2021` introduces a new credential state: _suspended_. Suspended credentials are credentials that will not be 
-accepted by a validator as _valid_, but that might become valid again in the future. Instead, _revoked_ credentials **cannot** ever
+Furthermore, `StatusList2021` introduces a new credential state: _suspended_. Suspended credentials are credentials that a validator will not accept as _valid_, but that might become valid again in the future. Instead, _revoked_ credentials **cannot** ever
 be valid again, as the _revoked_ state is irreversible.
 
 <Tabs groupId="language" queryString>
@@ -125,9 +124,9 @@ https://github.com/iotaledger/identity.rs/blob/v1.1.0/bindings/wasm/examples/src
 
 First, an issuer creates a credential that encodes a certain status list, specifying its purpose (either `revocation` or `suspension`)
 and the location at which it will be available (`https://example.com/credentials/status` in this case). After creation, the issuer
-must make the credential available at the chosen URL, so that verifiers may be able to fetch it.
+must make the credential available at the chosen URL so that verifiers can fetch it.
 
-Upon issueing a credential, in order to revoke it or suspend it later on, the issuer sets the `credentialStatus` field, linking
+Upon issuing a credential, to revoke it or suspend it later, the issuer sets the `credentialStatus` field, linking
 to an entry in its status list. The snippet below shows what `credentialStatus` would look like when linking to the previously created
 status list credential. 
 
@@ -169,7 +168,6 @@ This means the VC can no longer be validated.
 However, this will also invalidate every VC signed with that verification method,
 meaning that the issuer will have to sign every VC with a different key to retain
 precise control over which credential is revoked.
-n
 
 <Tabs groupId="language" queryString>
 <TabItem value="rust" label="Rust">

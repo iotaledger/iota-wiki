@@ -21,7 +21,7 @@ whereas the IOTA Identity framework provides strongly-typed resolution for a bet
 
 This functionality is primarily provided by the `Resolver`, which can:
 
-- [Resolve Iota DID Documents](#resolving-an-iota-did).
+- [Resolve IOTA DID Documents](#resolving-an-iota-did).
 - [Resolve DID Documents from multiple DID methods](#resolving-multiple-did-methods).
 - Resolve the DID Documents referenced in a verifiable presentation or credential.
 
@@ -154,7 +154,7 @@ const document = await didClient.resolveDid(did);
 ## Advanced Resolver Configuration
 
 You can configure the `Resolver` to support many use cases by attaching custom resolution handlers.
-This enables the  `Resolver` to resolve multiple DID methods as well as customizing how
+This enables the  `Resolver` to resolve multiple DID methods, as well as customizing how
 a particular DID method (such as the IOTA method) gets resolved.
 
 This feature is mainly intended to be used together with the Resolver's convenience methods for

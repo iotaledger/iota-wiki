@@ -24,9 +24,9 @@ while facilitating encrypted communication.
 
 
 A DID is a unique identifier that can be resolved to a DID Document. This document contains data such as public keys, enabling the holder to prove ownership over their personal data, but also URIs that link to public information about the identity. DIDs are the fundamental building blocks of decentralized digital identity.
-This implementation complies to the [DID specifications v1.0](https://www.w3.org/TR/did-core//) from the World Wide Web Consortium (W3C).
+This implementation complies with the [DID specifications v1.0](https://www.w3.org/TR/did-core//) from the World Wide Web Consortium (W3C).
 
-In the IOTA Identity framework, we have implemented the DID standard according to the `iota` [DID Method Specification](/identity.rs/references/specifications/iota-did-method-spec/). Other implementations of DID on IOTA must follow the `iota` DID Method Specification if they also want to use the `iota` method name. Libraries implementing the `iota` DID Method Specification are provided for [Rust](../getting-started/rust.mdx) and [WASM](../getting-started/wasm.mdx).
+In the IOTA Identity framework, we have implemented the DID standard according to the `iota` [DID Method Specification](/identity.rs/references/specifications/iota-did-method-spec/). Other implementations of DID on IOTA must follow the `iota` DID Method Specification if they want to use the `iota` method name. Libraries implementing the `iota` DID Method Specification are provided for [Rust](../getting-started/rust.mdx) and [WASM](../getting-started/wasm.mdx).
 
 An example of a DID conforming to the `iota` method specification:
 `did:iota:0xe4edef97da1257e83cbeb49159cfdd2da6ac971ac447f233f8439cf29376ebfe`
@@ -65,7 +65,11 @@ Please read or view some materials on the subject before continuing.
 
 :::
 
+### DID Document Anatomy
+
 A DID Document mostly contains two important pieces of data: verification methods and services.
+
+#### Verification Methods
 
 Verification methods contain public key material that can be used to prove ownership over the identity,
 by cryptographically signing something with the associated private key.
@@ -82,6 +86,8 @@ This may lead to loss of funds or control over your own digital identity.
 
 :::
 
+#### Services
+
 Services are URIs that point to more information about the identity.
 This could be something as simple as a website for an organizational identity.
 These services are publicly available for all to read,
@@ -92,14 +98,16 @@ and should not contain Personal Identifiable Information (PII) in the case of hu
 DIDs allow any subject to have a unique identifier that they can prove ownership of,
 and at the same time provide a way to send them encrypted messages.
 The Identity is Self-Sovereign, meaning the subject is always in control;
-whether it is creating, updating or destroying it.
+whether it is [creating](../how-tos/decentralized-identifiers/create.mdx), [updating](../how-tos/decentralized-identifiers/update.mdx), or [destroying](../how-tos/decentralized-identifiers/destroy.mdx) it.
+
+### Verifiable Credentials
 
 DIDs become more interesting when you combine them with [verifiable credentials (VC)](verifiable-credentials.mdx).
 In essence, verifiable credentials (VCs) are signed statements by trusted third parties about a certain identity.
 The signer, or Issuer, is referenced by the DID and so is the subject, often called the holder.
 The holder controls a copy of this statement and can share it with other parties, the _Verifiers_,
-that can verify the statement and check which party made the statement, without having to ask the Issuer.
-Instead, they can verify the signature of the issuer by checking the issuers DID Document.
+who can verify the statement and check which party made the statement without asking the Issuer.
+Instead, they can verify the issuer's signature by checking the issuer's DID Document.
 
 This puts Holders back in control over their own data,
 while making the data much more trustworthy as it has become verifiable.
@@ -114,11 +122,11 @@ Inherently, IOTA provides some unique features that have a major impact on the u
 DID Documents are stored in the ledger state and are covered [storage deposit](/learn/protocols/stardust/core-concepts/storage-deposit/).
 This guarantees that all nodes will have an up-to-date copy of the latest DID Document.
 Resolving a DID into its document can usually be done by any IOTA node in the network.
-This solves many issues regarding availability, accessibility or synchronization.
+This solves many issues regarding availability, accessibility, and synchronization.
 
 ### Layer1 Interactions
 
-DID Document are stored in an [Alias Outputs](./about-alias-outputs.mdx),
+DID Documents are stored in [Alias Outputs](./about-alias-outputs.mdx),
 this allows them to directly interact with Layer 1 artifacts like [NFTs and native assets](/learn/protocols/stardust/core-concepts/multi-asset-ledger/).
 
 For instance, an Alias Output representing a DID can hold native assets or control NFTs.

@@ -17,8 +17,8 @@ import TabItem from '@theme/TabItem';
 ## Introduction
 
 The `JwkDocumentExt` API allows you to modify a DID document, for example, adding new verification methods.
-It enables storing the secrets that verification methods represent in a secure manner.
-It does so by using the two storage interfaces, namely the `JwkStorage` and `KeyIdStorage`.
+It enables storing the secrets that verification methods represent securely.
+It does so using the two storage interfaces, the `JwkStorage` and `KeyIdStorage`.
 We refer to both of these as the **key storage**.
 
 The main idea behind the key storage is strongly inspired by the architecture of key management systems (KMS)
@@ -39,7 +39,7 @@ The two interfaces making up the key storage have two respective responsibilitie
 
 :::info
 
-Even though there are two separate interfaces, you can implement them using the same backing storage, if desired.
+Even though there are two separate interfaces, you can implement them using the same backing storage.
 
 :::
 
@@ -72,16 +72,16 @@ While within a document, each fragment must be unique, the same is not true give
 so we cannot rely only on fragments if we don't want to partition the `KeyIdStorage` by DID.
 The solution to this is using a `MethodDigest`, a hash over a verification method.
 
-When following best security practices, each verification method has its own key associated, and thus a unique public key.
-That, plus the fragment of a method ensures the `MethodDigest` is unique.
+When following best security practices, each verification method has its own associated key and, thus, a unique public key.
+That, plus the fragment of a method, ensures the `MethodDigest` is unique.
 
-So in essence, a `JwkStorage` stores a `KeyId -> JWK` mapping while a `KeyIdStorage` stores a `MethodDigest -> KeyId` mapping.
+So, in essence, a `JwkStorage` stores a `KeyId -> JWK` mapping while a `KeyIdStorage` stores a `MethodDigest -> KeyId` mapping.
 
 :::caution
 
 Given the construction and limitations of the method digest,
 no two documents should contain a method that shares both the same fragment and public key.
-This should not happen under typical circumstances, but is good to keep in mind.
+This should not happen under typical circumstances, but it is good to keep it in mind.
 
 :::
 
