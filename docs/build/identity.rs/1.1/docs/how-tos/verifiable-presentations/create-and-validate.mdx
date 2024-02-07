@@ -11,7 +11,7 @@ import TabItem from '@theme/TabItem';
 
 # Create and Validate Verifiable Presentations
 
-The IOTA Identity Framework enables holders tos easily construct
+The IOTA Identity Framework enables holders to easily construct
 [verifiable presentations](./../../explanations/verifiable-presentations.mdx).
 As demonstrated in the [example](#example-code),
 holders only need to pass in their credentials to create a JWT presentation.
@@ -36,7 +36,7 @@ methods in their DID Document and transmits it to a verifier for validation.
 
 ## Creation and Validation
 
-Verifiable presentation can be issued as a JWT that provides data integrity,
+A Verifiable Presentation can be issued as a JWT that provides data integrity,
 and also proves the [DID](../../explanations/decentralized-identifiers.mdx) of the holder.
 
 :::note
@@ -52,7 +52,7 @@ See the [example](#example-code) for a demonstration of how to validate a presen
 The framework checks:
 
 - **Semantic structure**: Ensures the presentation and its credentials adhere to the specification.
-- **Presentation proof**: Verifies the presentation signature against the DID Document of the holder.
+- **Presentation proof**: Verifies the presentation signature against the holder's DID document.
 - **Credential proofs**: Verifies the credential signatures against the DID Documents of their respective issuers.
 
 
@@ -102,14 +102,14 @@ and finally validate it with various options.
 <TabItem value="rust" label="Rust">
 
 ```rust reference
-https://github.com/iotaledger/identity.rs/blob/v1.0.0/examples/0_basic/6_create_vp.rs
+https://github.com/iotaledger/identity.rs/blob/v1.1.0/examples/0_basic/6_create_vp.rs
 ```
 
 </TabItem>
 <TabItem value="typescript-node" label="Typescript (Node.js)">
 
 ```ts reference
-https://github.com/iotaledger/identity.rs/blob/v1.0.0/bindings/wasm/examples/src/0_basic/6_create_vp.ts
+https://github.com/iotaledger/identity.rs/blob/v1.1.0/bindings/wasm/examples/src/0_basic/6_create_vp.ts
 ```
 
 </TabItem>

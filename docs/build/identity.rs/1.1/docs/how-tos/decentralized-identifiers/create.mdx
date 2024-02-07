@@ -45,14 +45,14 @@ you will need an output with actual Shimmer or IOTA funds to create a new Alias 
 <TabItem value="rust" label="Rust">
 
 ```rust reference
-https://github.com/iotaledger/identity.rs/blob/v1.0.0/examples/0_basic/0_create_did.rs#L52
+https://github.com/iotaledger/identity.rs/blob/v1.1.0/examples/0_basic/0_create_did.rs#L52
 ```
 
 </TabItem>
 <TabItem value="typescript-node" label="Typescript (Node.js)">
 
 ```ts reference
-https://github.com/iotaledger/identity.rs/blob/v1.0.0/bindings/wasm/examples/src/0_basic/0_create_did.ts#L40-L51
+https://github.com/iotaledger/identity.rs/blob/v1.1.0/bindings/wasm/examples/src/0_basic/0_create_did.ts#L40-L51
 ```
 
 </TabItem>
@@ -63,7 +63,7 @@ https://github.com/iotaledger/identity.rs/blob/v1.0.0/bindings/wasm/examples/src
 
 As a bare minimum, a [DID document](../../explanations/decentralized-identifiers.mdx) needs at least one verification method.
 
-At this point the DID itself is unknown since the Alias Output is not published yet and didn't get an `Alias ID` assigned.
+At this point, the DID itself is unknown since the Alias Output is not published yet and didn't get an `Alias ID` assigned.
 
 :::tip
 
@@ -77,14 +77,14 @@ the DID inside the document.
 <TabItem value="rust" label="Rust">
 
 ```ts reference
-https://github.com/iotaledger/identity.rs/blob/v1.0.0/examples/0_basic/0_create_did.rs#L59-L71
+https://github.com/iotaledger/identity.rs/blob/v1.1.0/examples/0_basic/0_create_did.rs#L59-L71
 ```
 
 </TabItem>
 <TabItem value="typescript-node" label="Typescript (Node.js)">
 
 ```rust reference
-https://github.com/iotaledger/identity.rs/blob/v1.0.0/bindings/wasm/examples/src/0_basic/0_create_did.ts#L55C44-L65
+https://github.com/iotaledger/identity.rs/blob/v1.1.0/bindings/wasm/examples/src/0_basic/0_create_did.ts#L55C44-L65
 ```
 
 </TabItem>
@@ -107,14 +107,14 @@ However, they must be unlocked in order perform a state or governance transition
 <TabItem value="rust" label="Rust">
 
 ```rust reference
-https://github.com/iotaledger/identity.rs/blob/v1.0.0/examples/0_basic/0_create_did.rs#L75
+https://github.com/iotaledger/identity.rs/blob/v1.1.0/examples/0_basic/0_create_did.rs#L75
 ```
 
 </TabItem>
 <TabItem value="typescript-node" label="Typescript (Node.js)">
 
 ```ts reference
-https://github.com/iotaledger/identity.rs/blob/v1.0.0/bindings/wasm/examples/src/0_basic/0_create_did.ts#L70
+https://github.com/iotaledger/identity.rs/blob/v1.1.0/bindings/wasm/examples/src/0_basic/0_create_did.ts#L70
 ```
 
 </TabItem>
@@ -125,7 +125,7 @@ https://github.com/iotaledger/identity.rs/blob/v1.0.0/bindings/wasm/examples/src
 
 The byte cost for the document is automatically calculated and a new transaction is published that includes
 the Basic Output as input and the newly generated Alias Output as output, as well as another Basic Output which contains
-the remaining token.
+the remaining tokens.
 
 The DID is only known once the [Alias Output](../../explanations/about-alias-outputs.mdx) is successfully published,
 since the DID's [Tag](../../references/specifications/iota-did-method-spec.mdx#iota-tag) contains the
@@ -139,14 +139,14 @@ the DID Document is stored on the ledger and can be [resolved](resolve.mdx) usin
 <TabItem value="rust" label="Rust">
 
 ```rust reference
-https://github.com/iotaledger/identity.rs/blob/v1.0.0/examples/0_basic/0_create_did.rs#L78
+https://github.com/iotaledger/identity.rs/blob/v1.1.0/examples/0_basic/0_create_did.rs#L78
 ```
 
 </TabItem>
 <TabItem value="typescript-node" label="Typescript (Node.js)">
 
 ```ts reference
-https://github.com/iotaledger/identity.rs/blob/v1.0.0/bindings/wasm/examples/src/0_basic/0_create_did.ts#L74
+https://github.com/iotaledger/identity.rs/blob/v1.1.0/bindings/wasm/examples/src/0_basic/0_create_did.ts#L74
 ```
 
 </TabItem>
@@ -159,23 +159,22 @@ https://github.com/iotaledger/identity.rs/blob/v1.0.0/bindings/wasm/examples/src
 <TabItem value="rust" label="Rust">
 
 ```rust reference
-https://github.com/iotaledger/identity.rs/blob/v1.0.0/examples/0_basic/0_create_did.rs
+https://github.com/iotaledger/identity.rs/blob/v1.1.0/examples/0_basic/0_create_did.rs
 ```
 
 </TabItem>
 <TabItem value="typescript-node" label="Typescript (Node.js)">
 
 ```ts reference
-https://github.com/iotaledger/identity.rs/blob/v1.0.0/bindings/wasm/examples/src/0_basic/0_create_did.ts
+https://github.com/iotaledger/identity.rs/blob/v1.1.0/bindings/wasm/examples/src/0_basic/0_create_did.ts
 ```
 
 </TabItem>
 </Tabs>
 
-## Running a Private Network
+## Running Examples Locally
 
-In order to run the examples, you will need to run a private network needs to run locally.
-You can refer to [Hornet repository](https://github.com/iotaledger/hornet/tree/develop/private_tangle) for instructions on how to run a private network.
+In order to run the examples, you will need to run the [IOTA Sandbox](/iota-sandbox/welcome/) locally.
 
-If your local private network uses different ports than Hornet, modify the API and faucet endpoints in the examples
-to match your local setup.
+If you want to use something different, you will need to modify the API and faucet endpoints in the examples to match your
+setup.

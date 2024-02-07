@@ -21,7 +21,7 @@ whereas the IOTA Identity framework provides strongly-typed resolution for a bet
 
 This functionality is primarily provided by the `Resolver`, which can:
 
-- [Resolve Iota DID Documents](#resolving-an-iota-did).
+- [Resolve IOTA DID Documents](#resolving-an-iota-did).
 - [Resolve DID Documents from multiple DID methods](#resolving-multiple-did-methods).
 - Resolve the DID Documents referenced in a verifiable presentation or credential.
 
@@ -31,7 +31,7 @@ The following examples demonstrate how to resolve an IOTA DID Document from its 
 
 ### Resolver
 
-Once you have configured `Resolver` with a [`Client`](/iota-sdk/welcome), it will resolve
+Once you have configured a `Resolver` with a [`Client`](/iota-sdk/welcome), it will resolve
 IOTA DID Documents according to the read procedure defined in the [IOTA DID Method Specification](../../references/specifications/iota-did-method-spec.mdx#read).
 It fetches the latest [Alias Output](../../references/specifications/iota-did-method-spec.mdx#alias-output) from the network specified in the DID (see [DID Format](../../references/specifications/iota-did-method-spec.mdx#did-format)),
 then extracts and validates the DID Document from it.
@@ -154,7 +154,7 @@ const document = await didClient.resolveDid(did);
 ## Advanced Resolver Configuration
 
 You can configure the `Resolver` to support many use cases by attaching custom resolution handlers.
-This enables the  `Resolver` to resolve multiple DID methods as well as customizing how
+This enables the  `Resolver` to resolve multiple DID methods, as well as customizing how
 a particular DID method (such as the IOTA method) gets resolved.
 
 This feature is mainly intended to be used together with the Resolver's convenience methods for
@@ -167,14 +167,14 @@ and [credentials](./../../explanations/verifiable-credentials.mdx).
 <TabItem value="rust" label="Rust">
 
 ```rust reference
-https://github.com/iotaledger/identity.rs/blob/v1.0.0/examples/1_advanced/5_custom_resolution.rs
+https://github.com/iotaledger/identity.rs/blob/v1.1.0/examples/1_advanced/5_custom_resolution.rs
 ```
 
 </TabItem>
 <TabItem value="typescript-node" label="Typescript (Node.js)">
 
 ```ts reference
-https://github.com/iotaledger/identity.rs/blob/v1.0.0/bindings/wasm/examples/src/1_advanced/4_custom_resolution.ts
+https://github.com/iotaledger/identity.rs/blob/v1.1.0/bindings/wasm/examples/src/1_advanced/4_custom_resolution.ts
 ```
 
 </TabItem>
