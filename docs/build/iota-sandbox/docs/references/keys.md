@@ -42,4 +42,4 @@ You can use the following pre-funded mnemonics and addresses while working with 
 | Name                                | Value                                                                                                                                                       |
 |-------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Token mnemonic                      | echo mass dentist hood neutral claw fragile scare magnet float citizen pink order hundred village edge quality excuse donor spawn heart happy extend resist |
-| EVM Address                         | 0xb62ea087c36eBd77Fb58174Ae162395722dE9Cb0                                                                                                                  |
+| EVM Address                         | 0xdfd94ab7d15eece895f87e34712ee4f8ea75c3af                                                                                                                  |
