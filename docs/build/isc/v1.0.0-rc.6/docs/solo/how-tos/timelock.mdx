@@ -124,7 +124,7 @@ this will happen in a separate goroutine in the background, so we explicitly wai
 request counters to catch up with the one request that is pending.
 
 The `WaitForPendingRequests()` method can also be used whenever a smart contract function
-is known to [`post()`](/schema/how-tos/post) a request to itself. Such requests are not immediately
+is known to [`post()`](/isc/schema/how-tos/post) a request to itself. Such requests are not immediately
 executed, but added to the backlog, so you need to wait for these pending requests to
 actually be processed. The advantage of having to explicitly wait for those requests is
 that you can inspect the in-between state, which means that you can test even a function

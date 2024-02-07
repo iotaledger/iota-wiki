@@ -70,7 +70,7 @@ module.exports = {
         description:
           'In this tutorial you will learn how to use schema tool to generate smart contract template code on rust and golang',
         preview: '/IOTA-Smart-Contract-Tutorials-G.png',
-        route: '/schema/how-tos/usage',
+        route: '/isc/schema/how-tos/usage',
         tags: ['text', 'video'],
       },
     ],

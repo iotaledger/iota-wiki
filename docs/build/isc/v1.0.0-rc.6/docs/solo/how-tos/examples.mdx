@@ -19,8 +19,8 @@ import TabItem from '@theme/TabItem';
 
 # Example Tests
 
-In the previous sections we showed how you can [`call()`](/schema/how-tos/call) or
-[`post()`](/schema/how-tos/post) smart contract function requests. We also created a few wrapper
+In the previous sections we showed how you can [`call()`](/isc/schema/how-tos/call) or
+[`post()`](/isc/schema/how-tos/post) smart contract function requests. We also created a few wrapper
 functions to simplify calling these functions even further. Now we will look at how to use
 the SoloContext to create full-blown tests for the `dividend` example smart contract.
 
@@ -231,11 +231,11 @@ any remaining tokens are not transferred, but remain in the sender's account.
 Finally, we call `divide` again with 2M+234 tokens and again verify the asset balances
 afterwards.
 
-Next we will show how to test [Views](/schema/how-tos/views) and/or [Funcs](/schema/how-tos/funcs that return
-a result. Note that even though Funcs are usually invoked through a [`post()`](/schema/how-tos/post)
+Next we will show how to test [Views](/isc/schema/how-tos/views) and/or [Funcs](/isc/schema/how-tos/funcs that return
+a result. Note that even though Funcs are usually invoked through a [`post()`](/isc/schema/how-tos/post)
 request, in which case any return values are inaccessible, they still can be invoked
-through a [call()](/schema/how-tos/call) from within another Func, in which these return values can
-be used normally. Since solo executes [`post()`](/schema/how-tos/post) requests synchronously, it is
+through a [call()](/isc/schema/how-tos/call) from within another Func, in which these return values can
+be used normally. Since solo executes [`post()`](/isc/schema/how-tos/post) requests synchronously, it is
 possible to have a Func return a result and test for certain result values.
 
 <Tabs groupId="language" queryString>

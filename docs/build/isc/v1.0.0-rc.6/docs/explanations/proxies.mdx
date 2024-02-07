@@ -32,12 +32,12 @@ At the core, data is secured in maps on the ISC host with byte strings serving a
 
 The WasmLib recognizes three predefined maps:
 
-- **[State Map](/schema/how-tos/state):** A repository for all state storage values.
-- **[Params Map](/schema/how-tos/params):** Holds the parameter values of the current function call.
-- **[Results Map](/schema/how-tos/results):** Returns the result values of the function call.
+- **[State Map](/isc/schema/how-tos/state):** A repository for all state storage values.
+- **[Params Map](/isc/schema/how-tos/params):** Holds the parameter values of the current function call.
+- **[Results Map](/isc/schema/how-tos/results):** Returns the result values of the function call.
 
 Through these maps, a complex,
-JSON-like data structure can be created with the aid of the [Schema Tool](/schema/how-tos/usage),
+JSON-like data structure can be created with the aid of the [Schema Tool](/isc/schema/how-tos/usage),
 although, fundamentally, this structure is rooted in simple key-value access on the underlying map.
 
 ## Proxy Varieties
@@ -49,7 +49,7 @@ Proxies are segmented into various categories to facilitate different functional
 Representing a single instance of a predetermined data type,
 value proxies are basic entities facilitating type conversion of the byte string representing the stored value.
 
-The [Schema Tool](/schema/how-tos/usage) ensures type-safe code generation, always selecting the suitable proxy type.
+The [Schema Tool](/isc/schema/how-tos/usage) ensures type-safe code generation, always selecting the suitable proxy type.
 
 ### Container Proxies
 
