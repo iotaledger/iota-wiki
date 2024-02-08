@@ -122,7 +122,7 @@ module.exports = {
             },
             {
               type: 'doc',
-              label: 'Fund Your EVM Account',
+              label: 'Send Funds from L1 to L2',
               id: 'how-tos/EVM/send-funds-from-L1-to-L2',
             },
             {
