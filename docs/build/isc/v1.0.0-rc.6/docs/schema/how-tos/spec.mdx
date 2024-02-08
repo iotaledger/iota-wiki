@@ -144,7 +144,7 @@ However, after the compilation, information is extracted from the raw string, so
 
 ### Compile
 
-An emitter is used for filling corresponding values into templates under `tools/isc/schema/generator`.
+An emitter is used for filling corresponding values into templates under `tools/schema/generator`.
 For how to do meta-programming with emitter, see section [Emitter](#emitter)
 
 ```go
@@ -346,7 +346,7 @@ Is the current processed field an array?
 
 ##### basetype
 
-Is the current processed field in basetype? `basetype`s are defined in the map `FieldTypes` in `tools/isc/schema/model/field.go`.
+Is the current processed field in basetype? `basetype`s are defined in the map `FieldTypes` in `tools/schema/model/field.go`.
 
 ##### core
 
@@ -441,7 +441,7 @@ If you want to process a template under negate condition, then you can call
 $#if condition else elseTemplate
 ```
 
-Here `else` is a predefined empty template, which is defined at[`tools/isc/schema/generator/templates.go`.
+Here `else` is a predefined empty template, which is defined at[`tools/schema/generator/templates.go`.
 
 #### set
 

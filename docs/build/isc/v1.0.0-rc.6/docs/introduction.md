@@ -11,16 +11,11 @@ keywords:
   - explanation
 
 ---
+import NetworkWarning from './_admonitions/_network_warning.md'
 
 # Introduction
 
-:::caution
-
-Smart Contracts are currently only compatible with the [Stardust protocol](/learn/protocols/stardust/introduction) and
-therefore only compatible with the [Shimmer](/build/networks-endpoints/#shimmer) and
-[Public Testnet networks](/build/networks-endpoints/#public-testnet).
-
-:::
+<NetworkWarning/>
 
 Smart contracts are deterministic applications that run on distributed network with multiple
 [validators](explanations/validators.md) that execute and validate the same code.

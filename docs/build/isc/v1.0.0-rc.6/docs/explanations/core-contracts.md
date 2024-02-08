@@ -21,17 +21,17 @@ There are currently 7 core smart contracts that are always deployed on each
 chain. These are responsible for the vital functions of the chain and
 provide infrastructure for all other smart contracts:
 
-- [`root`](/isc/reference/core-contracts/root): Responsible for the initialization of the chain, maintains registry of deployed contracts.
+- [`root`](../reference/core-contracts/root.md): Responsible for the initialization of the chain, maintains registry of deployed contracts.
 
-- [`accounts`](/isc/reference/core-contracts/accounts): Manages the on-chain ledger of accounts.
+- [`accounts`](../reference/core-contracts/accounts.md): Manages the on-chain ledger of accounts.
 
-- [`blob`](/isc/reference/core-contracts/blob): Responsible for the registry of binary objects of arbitrary size.
+- [`blob`](../reference/core-contracts/blob.md): Responsible for the registry of binary objects of arbitrary size.
 
-- [`blocklog`](/isc/reference/core-contracts/blocklog): Keeps track of the blocks and receipts of requests that were processed by the chain.
+- [`blocklog`](../reference/core-contracts/blocklog.md): Keeps track of the blocks and receipts of requests that were processed by the chain.
 
-- [`governance`](/isc/reference/core-contracts/governance): Handles the administrative functions of the chain. For example: rotation of the committee of validators of the chain, fees and other chain-specific configurations.
+- [`governance`](../reference/core-contracts/governance.md): Handles the administrative functions of the chain. For example: rotation of the committee of validators of the chain, fees and other chain-specific configurations.
 
-- [`errors`](/isc/reference/core-contracts/errors): Keeps a map of error codes to error messages templates. These error codes are used in request receipts.
+- [`errors`](../reference/core-contracts/errors.md): Keeps a map of error codes to error messages templates. These error codes are used in request receipts.
 
-- [`evm`](/isc/reference/core-contracts/evm): Provides the necessary infrastructure to accept Ethereum
+- [`evm`](../reference/core-contracts/evm.md): Provides the necessary infrastructure to accept Ethereum
   transactions and execute EVM code.

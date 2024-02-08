@@ -23,8 +23,8 @@ exports.buildPluginsConfig = [
   },
   {
     id: 'isc',
-    label: 'Smart contracts',
-    description: 'Create smart contracts.',
+    label: 'Smart Contracts',
+    description: 'Create Smart Contracts.',
     icon: 'SmartContracts',
     subsection: 'build-layer-2',
     versions: [

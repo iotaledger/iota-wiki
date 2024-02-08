@@ -1,15 +1,12 @@
+import EVMCompatibility from '../_admonitions/_EVM_compatibility.md'
+import NetworkWarning from '../_admonitions/_network_warning.md'
+
 # Supported Virtual Machines & Languages
 
-:::caution
-
-Smart Contracts are currently only compatible with the [Stardust protocol](/learn/protocols/stardust/introduction) and
-therefore only compatible with the [Shimmer](/build/networks-endpoints/#shimmer) and
-[Public Testnet networks](/build/networks-endpoints/#public-testnet).
-
-:::
+<NetworkWarning/>
 
 The current release of IOTA Smart Contracts has support for [EVM/Solidity](#evmsolidity-based-smart-contracts) smart
-contracts, as well as [Wasm](#wasm-vm-for-isc) smart contracts, providing limited compatibility with
+contracts, as well as experimental [Wasm](#wasm-vm-for-isc) smart contracts, providing limited compatibility with
 existing smart contracts and tooling from other EVM based chains like Ethereum. This allows us to offer the existing 
 ecosystem around EVM/Solidity a familiar alternative.
 
@@ -26,7 +23,7 @@ specific purpose.
 The main benefit of using EVM/Solidity right now is its sheer amount of resources from years of development and the IOTA
 Smart Contracts implementation is fully compatible with all of them. If you have experience developing on other EVM
 based chains, you will feel right at home. Any existing contracts you've written will probably need no (or very minimal)
-changes to function on IOTA Smart Contracts.
+[changes to function on IOTA Smart Contracts](compatibility.md).
 
 ### How IOTA Smart Contracts Work With EVM
 
@@ -38,16 +35,7 @@ The Wasp node also provides a standard JSON-RPC service, which allows you to int
 tooling like [MetaMask](https://metamask.io/), [Remix](https://remix.ethereum.org/) or [Hardhat](https://hardhat.org/).
 Deploying EVM contracts is as easy as pointing your tools to the JSON-RPC endpoint.
 
-:::warning EVM Compatibility
-
-The ISC EVM layer is also designed to be as compatible as possible with existing Ethereum
-[tools](tools.mdx) and functionalities. However, please make sure you have checked out the current
-[properties and limitations](compatibility.md). 
-
-For example, there is a difference in the decimal precision of ether (18 decimal places) to MIOTA/SMR(6 decimal places).
-
-:::
-
+<EVMCompatibility />
 
 ## Wasm VM for ISC
 

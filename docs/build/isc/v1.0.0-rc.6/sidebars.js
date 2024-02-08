@@ -69,6 +69,11 @@ module.exports = {
         },
         {
           type: 'doc',
+          label: 'Data Access Proxies',
+          id: 'explanations/proxies',
+        },
+        {
+          type: 'doc',
           label: 'State, Transitions and State Anchoring',
           id: 'explanations/states',
         },
@@ -118,7 +123,7 @@ module.exports = {
             {
               type: 'doc',
               label: 'Fund Your EVM Account',
-              id: 'how-tos/EVM/get-funds',
+              id: 'how-tos/EVM/send-funds-from-L1-to-L2',
             },
             {
               type: 'doc',

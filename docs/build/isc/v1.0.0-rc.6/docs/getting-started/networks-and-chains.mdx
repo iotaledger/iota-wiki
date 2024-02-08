@@ -9,7 +9,7 @@ keywords:
   - Endpoints
 ---
 
-import {AddToMetaMaskButton, EVMNetworks} from '@theme/AddToMetaMaskButton';
+import { AddToMetaMaskButton, EVMNetworks } from '@theme/AddToMetaMaskButton';
 
 # Networks & Chains
 
@@ -17,20 +17,19 @@ import {AddToMetaMaskButton, EVMNetworks} from '@theme/AddToMetaMaskButton';
 
 [ShimmerEVM](https://explorer.evm.shimmer.network/) is the L2 EVM running on top of the Shimmer network.
 
-<AddToMetaMaskButton cfg={EVMNetworks['shimmerevm']}/>
+<AddToMetaMaskButton cfg={EVMNetworks['shimmerevm']} />
 
 | Base Token    | Protocol  | Chain ID                                              | RPC URL                                                                       | Explorer                             |
 |---------------|-----------|-------------------------------------------------------|-------------------------------------------------------------------------------|--------------------------------------|
 | Shimmer Token | ISC / EVM | <ChainId url='https://json-rpc.evm.shimmer.network'/> | https://json-rpc.evm.shimmer.network or wss://ws.json-rpc.evm.shimmer.network | https://explorer.evm.shimmer.network |
 
-## Testnet EVM
+## ShimmerEVM Testnet
 
-<AddToMetaMaskButton cfg={EVMNetworks['shimmerevm-testnet']}/>
+<AddToMetaMaskButton cfg={EVMNetworks['shimmerevm-testnet']} />
 
-[The Testnet EVM](https://explorer.evm.testnet.shimmer.network/) (also called ShimmerEVM Beta) runs as a layer 2 on top
-of the [Public Testnet](/build/networks-endpoints/#public-testnet). This network does not run
-any IOTA protocol but instead uses ISC to facilitate an Ethereum Virtual Machine and has an enshrined bridge to
-layer 1.
+[The ShimmerEVM Testnet](https://explorer.evm.testnet.shimmer.network/) runs as a layer 2 on top
+of the [Public Testnet](/build/networks-endpoints/#public-testnet). This network uses ISC to facilitate
+an Ethereum Virtual Machine and has an enshrined bridge to layer 1.
 
 :::info
 This network is subject to occasional resets (no data retention) which are usually announced with a one-week grace period.

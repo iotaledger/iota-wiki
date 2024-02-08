@@ -30,7 +30,7 @@
   registered by calling [`registerERC721NFTCollection`](./core-contracts/evm.md#registerERC721NFTCollection).
 
 There are some usage examples in
-the [ISCTest.sol](https://github.com/iotaledger/wasp/blob/develop/packages/evm/evmtest/ISCTest.sol) contract (used
+the [ISC How-To Guides](../how-tos/introduction.md)  and the [ISCTest.sol](https://github.com/iotaledger/wasp/blob/develop/packages/evm/evmtest/ISCTest.sol) contract (used
 internally in unit tests).
 
 ## Call a Native Contract

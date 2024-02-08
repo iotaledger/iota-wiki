@@ -14,16 +14,18 @@ keywords:
   - RPC
   - how to
 ---
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 import {AddToMetaMaskButton, EVMNetworks} from '@theme/AddToMetaMaskButton';
 
-# How To Fund Your L2 Account
+# Send Funds From L1 to L2
 
 There are multiple types of assets available on both IOTA L1 and L2, here we discuss a few of them, and how to get them
 onto L2.
 
 :::tip Testnet
 
-If you want to fund your Testnet account, please refer to our [Public Testnet Quickstart Guide](../../getting-started/quick-start.mdx)
+If you want to fund your ShimmerEVM Testnet account using the [ShimmerEVM Toolkit](https://evm-toolkit.evm.testnet.shimmer.network/), please refer to our [Public Testnet Quickstart Guide](../../getting-started/quick-start.mdx)
 
 :::
 
@@ -34,7 +36,7 @@ be used to cover gas fees.
 
 ### Firefly Wallet
 
-You can use your [Firefly Wallet](https://firefly.iota.org/) to easily send L1 SMR to your L2 Shimmer EVM account. 
+You can use your [Firefly Wallet](https://firefly.iota.org/) to easily send L1 SMR to your L2 ShimmerEVM account. 
 
 #### Requirements
 
@@ -42,11 +44,18 @@ You can use your [Firefly Wallet](https://firefly.iota.org/) to easily send L1 S
 * [Firefly Wallet](https://firefly.iota.org/)
 * [Metamask](https://metamask.io/)
 
-1. The first thing you will need to do is add Shimmer EVM to Metamask by hitting the following button.
+1. The first thing you will need to do is add ShimmerEVM to Metamask by hitting the following button.
 
-    <AddToMetaMaskButton cfg={EVMNetworks['shimmerevm']}/>
+<Tabs>
+<TabItem value='testnet' label='ShimmerEVM Testnet'>
+<AddToMetaMaskButton cfg={EVMNetworks['shimmerevm-testnet']}/>
+</TabItem>
+<TabItem value='shimmerEVM' label='ShimmerEVM'>
+<AddToMetaMaskButton cfg={EVMNetworks['shimmerevm']}/>
+</TabItem>
+</Tabs>
 
-2. Once you have added Shimmer EVM to Metamask, you can get your address:
+2. Once you have added ShimmerEVM to Metamask, you can get your address:
 
    ![Copy your Metamask address](/img/evm/how-tos/get-funds/copy-your-address.png)
 
@@ -54,9 +63,9 @@ You can use your [Firefly Wallet](https://firefly.iota.org/) to easily send L1 S
 
    ![Click send assets](/img/evm/how-tos/get-funds/firefly/select-send-assets.png)
 
-4. Select Shimmer EVM in the network dropdown.
+4. Select ShimmerEVM in the network dropdown.
 
-   ![Select the Shimmer EVM network](/img/evm/how-tos/get-funds/firefly/select-shimmer-evm.png)
+   ![Select the ShimmerEVM network](/img/evm/how-tos/get-funds/firefly/select-shimmer-evm.png)
 
 5. Enter the amount of `SMR` tokens you want to transfer, and the Metamask address from step 2, and click on `Next`
 
@@ -70,35 +79,27 @@ You can use your [Firefly Wallet](https://firefly.iota.org/) to easily send L1 S
 
 * [Shimmer Tokens](/get-started/introduction/shimmer/shimmer-token/)
 * [Bloom Wallet](https://bloomwallet.io/)
-* [Metamask](https://metamask.io/)
 
 
-You can use your [Bloom Wallet](https://bloomwallet.io/) to easily send L1 SMR to your L2 Shimmer EVM account.
+You can use your [Bloom Wallet](https://bloomwallet.io/) to easily send L1 SMR to your L2 ShimmerEVM account.
 
-1. The first thing you will need to do is add Shimmer EVM to Metamask by hitting the following button:
-
-   <AddToMetaMaskButton cfg={EVMNetworks['shimmerevm']}/>
-
-2. Once you have added Shimmer EVM to Metamask, you can get your address:
-
-   ![Copy your Metamask address](/img/evm/how-tos/get-funds/copy-your-address.png)
-
-3. Next, you will need to open your [Bloom Wallet](https://firefly.iota.org/) and click on `Send`.
+1. First, you will need to open your [Bloom Wallet](https://firefly.iota.org/) and click on `Send`.
 
    ![Click send](/img/evm/how-tos/get-funds/bloom/select-send.png)
 
-4. Select an account with `SMR` tokens.
+2. Select an account with `SMR` tokens.
 
    ![Select an account with SMR tokens](/img/evm/how-tos/get-funds/bloom/select-the-smr-token.png)
 
-5. Enter the address you copied in step 2.
+3. Bloom will automatically create a ShimmerEVM address for you, so you can send funds to that address from the Shimmer 
+EVM dropdown. Alternatively, you can input any other ShimmerEVM address.
 
-   ![ Enter the address you copied in step 2](/img/evm/how-tos/get-funds/bloom/enter-the-recipient-address.png)
+   ![Select you ShimmerEVM Address](/img/evm/how-tos/get-funds/bloom/enter-the-recipient-address.png)
 
-6. Enter the amount of `SMR` tokens you want to transfer.
+4. Enter the amount of `SMR` tokens you want to transfer.
    
    ![Enter the amount of SMR tokens you want to transfer](/img/evm/how-tos/get-funds/bloom/enter-the-amount.png)
 
-7. Review the transaction details and click on `Confirm`.
+5. Review the transaction details and click on `Confirm`.
 
    ![Hit Send](/img/evm/how-tos/get-funds/bloom/review-and-confirm-the-transaction.png)

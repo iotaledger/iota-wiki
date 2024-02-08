@@ -49,7 +49,7 @@ contract is uniquely identified in a chain by a [_hname_](smart-contract-anatomy
 However, the hname is not enough to identify the account since a smart contract on another chain could own it.
 
 Thus, the Agent ID of a smart contract is composed as the contract hname plus the [_chain
-ID_](//isc/explanations/states#digital-assets-on-the-chain), with syntax `<hname>@<chain-id>`. For
+ID_](states.md#digital-assets-on-the-chain), with syntax `<hname>@<chain-id>`. For
 example: `cebf5908@tgl1pzehtgythywhnhnz26s2vtpe2wy4y64pfcwkp9qvzhpwghzxhwkps2tk0nd`.
 
 Note that this allows trustless transfers of assets between smart contracts on the same or different chains.

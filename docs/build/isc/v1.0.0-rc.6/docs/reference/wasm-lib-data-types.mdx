@@ -23,7 +23,7 @@ as human-readable text string.
 
 These are mostly simple built-in scalar data types as provided by most programming
 languages. Each integer data type has a clearly defined storage size. The
-[Schema Tool](/isc/schema/how-tos/usage) will attempt to use the closest matching built-in data type when
+[Schema Tool](../schema/how-tos/usage.mdx) will attempt to use the closest matching built-in data type when
 generating code for a specific language.
 
 - `BigInt` - An arbitrary-length unsigned integer.
@@ -99,8 +99,8 @@ The consistent naming makes it easy to remember the type names. Bool, Bytes, Str
 the integer types are the odd ones out. They are implemented in WasmLib by the closest
 equivalents in the chosen WasmLib implementation programming language.
 
-The [Schema Tool](/isc/schema/how-tos/usage) will automatically generate the proper (im)mutable proxies
+The [Schema Tool](../schema/how-tos/usage.mdx) will automatically generate the proper immutable proxies
 from the schema definition. For example, View functions will only be able to access the
-[State](/isc/schema/how-tos/state) map through immutable proxies. The same goes for the
-[Params](/isc/schema/how-tos/params) map that was passed into a Func or View, and for the
-[Results](/isc/schema/how-tos/results) map that was returned from a call to a Func or View.
+[State](../schema/how-tos/state.mdx) map through immutable proxies. The same goes for the
+[Params](../schema/how-tos/params.mdx) map that was passed into a Func or View, and for the
+[Results](../schema/how-tos/results.mdx) map that was returned from a call to a Func or View.
