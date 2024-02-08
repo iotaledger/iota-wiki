@@ -45,23 +45,6 @@ chain ID after deployment.**
 
 :::
 
-## Wasp-cli
-
-The Wasp CLI has some basic functionalities to manage an EVM chain. Given the [compatibility](compatibility.md) with
-existing tooling, only the basics are covered to get started with IOTA Smart Contracts and EVM.
-
-The JSON-RPC endpoint automatically starts with Wasp, and you can use the CLI tools to deploy a new chain that spawns up
-a new EVM chain automatically and to deposit tokens to an EVM chain address. The following example allows you to deposit
-your network's base token (IOTA on the IOTA network, SMR on the Shimmer network) to an EVM address. For example, the EVM
-address can be a [Metamask](https://metamask.io/) generated address.
-
-```shell
-wasp-cli chain deposit <0xEthAddress> base:1000000
-```
-
-After this, you will have the balance on your Ethereum account available to pay for gas fees, for example, with
-Metamask.
-
 ## MetaMask
 
 [MetaMask](https://metamask.io/) is a popular EVM compatible wallet which runs in a browser extension that allows you to
@@ -174,6 +157,23 @@ If you input the correct configuration parameters for the JSON-RPC endpoint to t
 to, [Ethers.js](https://docs.ethers.io/) and [Web3.js](https://web3js.readthedocs.io/) are also compatible with EVM
 chains on IOTA Smart Contracts. Alternatively, you can let both interact through MetaMask instead so that it uses the
 network configured in MetaMask. For more information on this, read their documentation.
+
+## Wasp-cli
+
+The Wasp CLI has some basic functionalities to manage an EVM chain. Given the [compatibility](compatibility.md) with
+existing tooling, only the basics are covered to get started with IOTA Smart Contracts and EVM.
+
+The JSON-RPC endpoint automatically starts with Wasp, and you can use the CLI tools to deploy a new chain that spawns up
+a new EVM chain automatically and to deposit tokens to an EVM chain address. The following example allows you to deposit
+your network's base token (IOTA on the IOTA network, SMR on the Shimmer network) to an EVM address. For example, the EVM
+address can be a [Metamask](https://metamask.io/) generated address.
+
+```shell
+wasp-cli chain deposit <0xEthAddress> base:1000000
+```
+
+After this, you will have the balance on your Ethereum account available to pay for gas fees, for example, with
+Metamask.
 
 ## Other Tooling
 
