@@ -1,7 +1,7 @@
 ---
 description: Learn how to install and run a HORNET node using Docker.
 image: /img/banner/banner_hornet_using_docker.png
-keywords:
+tags:
   - IOTA Node
   - HORNET Node
   - Docker

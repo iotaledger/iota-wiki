@@ -1,7 +1,7 @@
 ---
 description: INX-Faucet is a faucet application for test and development networks as well as for private networks.
 image: /img/banner/banner_hornet.png
-keywords:
+tags:
   - IOTA Node
   - Hornet Node
   - INX

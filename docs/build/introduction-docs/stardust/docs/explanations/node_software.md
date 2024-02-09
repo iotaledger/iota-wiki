@@ -1,7 +1,7 @@
 ---
 description: Node software is the backbone of the IOTA and Shimmer networks.
 image: /img/logo/preview.png
-keywords:
+tags:
   - Node
   - Hornet
   - Golang

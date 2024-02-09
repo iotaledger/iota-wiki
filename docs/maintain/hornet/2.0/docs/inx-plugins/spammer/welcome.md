@@ -1,7 +1,7 @@
 ---
 description: INX-Spammer is a tool to generate transactions in the network thereby increasing reference and confirmation rates.
 image: /img/banner/banner_hornet.png
-keywords:
+tags:
   - IOTA Node
   - Hornet Node
   - INX

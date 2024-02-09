@@ -1,7 +1,7 @@
 ---
 description: Firefly is Shimmer's new official wallet. You can verify your Firefly download on Windows, maxOS, and/or Linux.
 image: /img/logo/preview.png
-keywords:
+tags:
   - Firefly
   - DLT
   - wallet

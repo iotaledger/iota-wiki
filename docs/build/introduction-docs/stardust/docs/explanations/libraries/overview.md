@@ -1,7 +1,7 @@
 ---
 description: The IOTA client libraries allow you to easily integrate IOTA into your own applications.
 image: /img/logo/preview.png
-keywords:
+tags:
   - wallet library
   - client library
   - Tangle

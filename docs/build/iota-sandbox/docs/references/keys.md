@@ -1,7 +1,7 @@
 ---
 title: Keys for the IOTA Sandbox
 description: Keys for the IOTA Sandbox
-keywords:
+tags:
   - keys
   - reference
 ---

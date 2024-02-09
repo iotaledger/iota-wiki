@@ -1,7 +1,7 @@
 ---
 description: How to run a node. Requirements, configuration parameters, dashboard configuration, and tests.
 image: /img/logo/WASP_logo_dark.png
-keywords:
+tags:
   - Smart Contracts
   - Running a node
   - Go-lang

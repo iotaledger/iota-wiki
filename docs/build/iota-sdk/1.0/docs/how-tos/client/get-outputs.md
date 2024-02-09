@@ -2,7 +2,7 @@
 title: Get Outputs
 description: 'Find outputs specifying certain search criteria'
 image: /img/logo/iota_mark_light.png
-keywords:
+tags:
   - how to
   - client
   - outputs

@@ -1,7 +1,7 @@
 ---
 image: /img/iota_layers_overview.svg
 description: 'Learn about the multi-account and single-account models in the IOTA SDK for managing user accounts and addresses on the IOTA network.'
-keywords:
+tags:
   - IOTA SDK
   - accounts
   - multi-account model
