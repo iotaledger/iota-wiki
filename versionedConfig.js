@@ -20,35 +20,9 @@ exports.buildPluginsConfig = [
     ],
   },
   {
-    id: 'wasp-evm',
-    label: 'EVM',
-    description: 'Create EVM smart contracts.',
-    icon: 'SmartContracts',
-    subsection: 'build-layer-2',
-    versions: [
-      {
-        label: 'v1.0.0-rc.6',
-        badges: ['Shimmer'],
-      },
-    ],
-  },
-  {
-    id: 'wasp-cli',
-    label: 'Wasp CLI',
-    description: 'Create custom smart contract chains.',
-    icon: 'SmartContracts',
-    subsection: 'build-layer-2',
-    versions: [
-      {
-        label: 'v1.0.0-rc.6',
-        badges: ['Shimmer'],
-      },
-    ],
-  },
-  {
-    id: 'wasp-wasm',
-    label: 'WASM (Experimental)',
-    description: 'Create WASM smart contracts.',
+    id: 'isc',
+    label: 'Smart Contracts',
+    description: 'Create Smart Contracts.',
     icon: 'SmartContracts',
     subsection: 'build-layer-2',
     versions: [

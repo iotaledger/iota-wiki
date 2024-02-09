@@ -1,0 +1,69 @@
+---
+tags:
+  - definition
+  - yaml
+  - smart contract creator
+  - one-time
+  - contract generation
+  - datatypes
+description: the syntax of a schema definition file will be described here.
+image: /img/logo/WASP_logo_dark.png
+---
+
+# YAML Schema Definition: Level 1 Attributes
+
+The schema definition file can have the following level 1 attributes:
+
+## name
+
+- **Type**: Single string
+- **Usage**: Dictates the package name for the smart contract
+
+## description
+
+- **Type**: Single string
+- **Usage**: Describes the smart contract's functionality (currently not utilized in the final smart contract)
+
+## events
+
+- **Type**: Map of strings
+- **Usage**: Define structured events ([more info](./events.mdx))
+- **Restriction**: Field data types must be primitive; arrays, maps, or typedefs are not allowed
+
+## structs
+
+- **Type**: Map of string maps
+- **Usage**: Declare structs for future development, usable in schema definitions
+- **Restriction**: Fields must hold primitive types; arrays, maps, or typedef aliases are prohibited
+
+## typedefs
+
+- **Type**: Map of strings
+- **Usage**: Create aliases for primitive values; supports primitive values, maps of primitive values, or arrays of primitive values
+- **Restriction**: Nested typedefs are not permissible
+
+## state
+
+- **Type**: Map of strings
+- **Usage**: Contains key/value pairs for use-case specific data ([details](../../explanations/states.md))
+- **Note**: To employ nested types, create a typedef alias for arrays or maps, but ensure map keys are primitive
+
+## funcs & views
+
+Describe functions and views sharing the same parameter and result names, ensuring they adhere to identical data types. The attributes common to both are:
+
+- **`access`**
+- **Requirement**: Must be a state variable
+- **Details**: Defines access permissions ([read more](./access.mdx#limiting-access))
+
+- **`params`**
+- **Type**: Can vary — array, map, or typedef alias
+- **Usage**: Specifies input parameters
+
+- **`results`**
+- **Type**: Can vary — array, map, or typedef alias
+- **Usage**: Designates return values
+
+### Special Note on `funcs`
+
+- **Reserved Keyword**: `init` — relates to a distinct function ([explore](./init.mdx))

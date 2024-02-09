@@ -21,7 +21,7 @@ messages and data in real time.
 
 ### WASP - IOTA Smart Contracts
 
-[WASP](/wasp/running-a-node) is an INX plugin you can install and use to run your smart contract chain.
-You can use the documentation to get your node up and running, and [set up](/wasp-cli/how-tos/setting-up-a-chain/) and
-[manage](/wasp-cli/how-tos/chain-management) a chain, or check out the available
-[configuration options](/wasp/configuration).
+[WASP](/wasp/how-tos/running-a-node) is an INX plugin you can install and use to run your smart contract chain.
+You can use the documentation to get your node up and running, and [set up](/wasp/how-tos/setting-up-a-chain/) and
+[manage](/wasp/how-tos/chain-management) a chain, or check out the available
+[configuration options](/wasp/reference/configuration).
