@@ -1,7 +1,7 @@
 ---
 description: INX-IRC-Metadata enables you to query the metadata of NFT and native tokens.
 image: /img/banner/banner_hornet.png
-keywords:
+tags:
   - IOTA Node
   - Hornet Node
   - INX

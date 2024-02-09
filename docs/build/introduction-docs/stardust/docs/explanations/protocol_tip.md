@@ -1,7 +1,7 @@
 ---
 description: The Stardust protocol changes are described in full detail in these TIPs hosted on our Github.
 image: /img/logo/preview.png
-keywords:
+tags:
   - TIP
   - RFC
   - protocol

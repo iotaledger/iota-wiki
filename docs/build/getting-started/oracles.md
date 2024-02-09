@@ -1,7 +1,7 @@
 ---
 description: 'Learn about the role of in oracles in blockchain,their role in providing external data to smart contracts and the available oracles in Shimmer EVM.'
 image: /img/logo/WASP_logo_dark.png
-keywords:
+tags:
 - Blockchain Oracles
 - Smart Contracts
 - Shimmer EVM

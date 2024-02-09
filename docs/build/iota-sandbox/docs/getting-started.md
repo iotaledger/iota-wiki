@@ -1,6 +1,6 @@
 ---
 description: Set up and get started with the IOTA Sandbox
-keywords:
+tags:
   - how to
   - setup
   - sandbox

@@ -1,7 +1,7 @@
 ---
 description: Introducing the HORNET nodes configuration files and their settings.
 image: /img/logo/HORNET_logo.png
-keywords:
+tags:
   - IOTA Node
   - HORNET Node
   - Configuration

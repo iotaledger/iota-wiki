@@ -1,7 +1,7 @@
 ---
 title: Interact with Wasp
 description: Interact with a wasp chain and configure the needed tools.
-keywords:
+tags:
   - how to
   - setup
   - chain

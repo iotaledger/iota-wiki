@@ -1,7 +1,7 @@
 ---
 title: Endpoints
 description: Endpoints and credentials of the IOTA Sandbox
-keywords:
+tags:
   - api
   - passwords
   - users

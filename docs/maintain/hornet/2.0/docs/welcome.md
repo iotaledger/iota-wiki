@@ -1,7 +1,7 @@
 ---
 description: HORNET is a powerful, easy to install node software written in Go. It provides the full node capabilities including full support of the latest network updates.
 image: /img/banner/banner_hornet.png
-keywords:
+tags:
   - IOTA Node
   - HORNET Node
   - HORNET

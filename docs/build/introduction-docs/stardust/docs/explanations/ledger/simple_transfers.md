@@ -1,5 +1,5 @@
 ---
-keywords:
+tags:
   - Ledger
   - UTXO
   - explanation
