@@ -1,13 +1,8 @@
 ---
 description: Invoking smart contracts with on-ledger and off-ledger requests with Solo.
 image: /img/tutorial/send_request.png
-<<<<<<<< HEAD:docs/build/isc/v1.0.0-rc.6/docs/solo/how-tos/invoking-sc.md
 tags:
   - how-to
-========
-keywords:
-  - how-tos
->>>>>>>> c1e6382878 (apply suggestions by @jlvandenhout):docs/build/solo/v1.0.0-rc.6/docs/how-tos/invoking-sc.md
   - explanation
   - testing
   - PostRequestSync

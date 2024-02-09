@@ -87,11 +87,7 @@ etc.) has an associated gas cost.
 
 For users to specify how much they're willing to pay for a request, they need to specify a `GasBudget` in the request.
 This gas budget is the "maximum operations that this request can execute" and will be charged as a fee based on the
-<<<<<<<< HEAD:docs/build/isc/v1.0.0-rc.6/docs/explanations/invocation.md
 chain's current [fee policy](../reference/core-contracts/governance.md#fee-policy).
-========
-chain's current [fee policy](/isc/reference/core-contracts/governance#fee-policy).
->>>>>>>> 136ca6e9c8 (re-merge EVM and WASM):docs/learn/smart-contracts/invocation.md
 
 The funds to cover the gas used will be charged directly from the user's on-chain account.
 

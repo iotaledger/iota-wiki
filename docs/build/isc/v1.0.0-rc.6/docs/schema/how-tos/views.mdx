@@ -26,7 +26,7 @@ All state storage accesses occur through immutable proxies, ensuring the state r
 
 ### Restricted Functionalities
 
-Views have a limited [Call Context](/isc/explanations/context),
+Views have a limited [Call Context](../../explanations/context.mdx),
 disabling any function that might induce state changes, including token transactions.
 
 ### Intra-chain Calls
@@ -127,7 +127,7 @@ export function viewGetFactor(
 </Tabs>
 
 The return values are passed to the caller through the predefined [Results](results.mdx) map
-associated with the [Call Context](/isc/explanations/context).
+associated with the [Call Context](../../explanations/context.mdx).
 Again, this works the same as for Funcs, although Funcs do not necessarily return values to the caller. The
 [Schema Tool](usage.mdx) will generate a function-specific [Results](results.mdx)
 structure with type-safe proxies to the result fields in this map.

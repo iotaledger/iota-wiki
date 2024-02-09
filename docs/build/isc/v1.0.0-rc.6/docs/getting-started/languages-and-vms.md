@@ -7,7 +7,7 @@ import NetworkWarning from '../_admonitions/_network_warning.md'
 
 The current release of IOTA Smart Contracts has support for [EVM/Solidity](#evmsolidity-based-smart-contracts) smart
 contracts, as well as experimental [Wasm](#wasm-vm-for-isc) smart contracts, providing limited compatibility with
-existing smart contracts and tooling from other EVM based chains like Ethereum. This allows us to offer the existing
+existing smart contracts and tooling from other EVM based chains like Ethereum. This allows us to offer the existing 
 ecosystem around EVM/Solidity a familiar alternative.
 
 ## EVM/Solidity Based Smart Contracts
@@ -47,14 +47,14 @@ Experiment but avoid using it for production applications; opt for [EVM](quick-s
 
 :::
 
-IOTA Smart Contracts (ISC) provide a sandboxed environment through an API, facilitating secure and deterministic
-interactions with ISC functions. This API supports any Virtual Machine (VM) aiming to build a system for smart contract
-code execution on ISC.
+IOTA Smart Contracts (ISC) provide a sandboxed environment through an API, facilitating secure and deterministic 
+interactions with ISC functions. This API supports any Virtual Machine (VM) aiming to build a system for smart contract 
+ code execution on ISC.
 
 ![Wasp node ISC Host](/img/wasm_vm/IscHost.png)
 
 You can use a [WebAssembly (Wasm)](https://webassembly.org/) VM as a compilation target, facilitated by the open-source
-[Wasmtime runtime](https://wasmtime.dev/). This setup encourages dynamic smart contract operations compiled to Wasm code,
+[Wasmtime runtime](https://wasmtime.dev/). This setup encourages dynamic smart contract operations compiled to Wasm code, 
 promoting security and adaptability with different programming languages.
 
 ![Wasm VM](/img/wasm_vm/WasmVM.png)
@@ -75,7 +75,7 @@ The ISC sandbox environment offers:
 
 ### Supported Languages
 
-The WasmLib started with [Rust](https://www.rust-lang.org/) support, expanding to include [Go](https://golang.org/)
+The WasmLib started with [Rust](https://www.rust-lang.org/) support, expanding to include [Go](https://golang.org/) 
 and [TypeScript](https://www.typescriptlang.org/) with the help of respective Wasm code generators:
 
 | Language   | Wasm code generator                                |
@@ -84,5 +84,5 @@ and [TypeScript](https://www.typescriptlang.org/) with the help of respective Wa
 | Rust       | [wasm-pack](https://rustwasm.github.io/wasm-pack/) |
 | TypeScript | [AssemblyScript](https://www.assemblyscript.org/)  |
 
-These generators maintain a common subset of their host language, aiming for a unified coding style to simplify the
+These generators maintain a common subset of their host language, aiming for a unified coding style to simplify the 
 initiation into smart contract creation, welcoming developers with a C-style language background to quickly adapt.

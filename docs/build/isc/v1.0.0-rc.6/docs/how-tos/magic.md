@@ -48,11 +48,7 @@ tokens and native tokens on L2.
 In the example below, `ISC.sandbox.getEntropy()` calls the
 [`getEntropy`](https://github.com/iotaledger/wasp/blob/develop/packages/vm/core/evm/iscmagic/ISCSandbox.sol#L20)
 method of the `ISCSandbox` interface, which, in turn,
-<<<<<<<< HEAD:docs/build/isc/v1.0.0-rc.6/docs/how-tos/magic.md
 calls [ISC Sandbox's](../explanations/sandbox.md) `GetEntropy`.
-========
-calls [ISC Sandbox's](/learn/smart-contracts/sandbox) `GetEntropy`.
->>>>>>>> 136ca6e9c8 (re-merge EVM and WASM):docs/build/isc/v1.0.0-rc.6/docs/how-tos/use-the-magic-contract/magic.md
 
 ```solidity
 pragma solidity >=0.8.5;

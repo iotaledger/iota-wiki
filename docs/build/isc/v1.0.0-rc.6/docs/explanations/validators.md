@@ -46,8 +46,4 @@ It is common for validator nodes to be part of a private subnet and have only a 
 outside world, protecting the committee from external attacks.
 
 The management of validator and access nodes is done through
-<<<<<<<< HEAD:docs/build/isc/v1.0.0-rc.6/docs/explanations/validators.md
 the [`governance` core contract](../reference/core-contracts/governance.md).
-========
-the [`governance` core contract](/isc/reference/core-contracts/governance/).
->>>>>>>> 136ca6e9c8 (re-merge EVM and WASM):docs/learn/smart-contracts/validators.md

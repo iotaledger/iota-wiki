@@ -83,11 +83,7 @@ From now on, all chain commands will target this chain.
 The `--quorum` flag indicates the minimum number of nodes required to form a _consensus_.
 The recommended formula to obtain this number is `floor(N*2/3)+1` where `N` is the number of nodes in your committee.
 
-<<<<<<<< HEAD:docs/maintain/wasp/v1.0.0-rc.6/docs/how-tos/setting-up-a-chain.md
 The `--block-keep-amount` parameter determines how many blocks are stored in the [`blocklog`](/isc/reference/core-contracts/blocklog) core contract.
-========
-The `--block-keep-amount` parameter determines how many blocks are stored in the [`blocklog`](../../reference/core-contracts/blocklog.md) core contract.
->>>>>>>> 136ca6e9c8 (re-merge EVM and WASM):docs/build/isc/v1.0.0-rc.6/docs/how-tos/manage-chains/setting-up-a-chain.md
 
 After deployment, the chain must be activated by the node operators of all peers.
 
@@ -99,11 +95,7 @@ wasp-cli chain activate --chain=<name>
 ## Test If It Works
 
 You can check that the chain was deployed correctly in the Wasp node dashboard (`<URL>/wasp/dashboard` when using `node-docker-setup`).
-<<<<<<<< HEAD:docs/maintain/wasp/v1.0.0-rc.6/docs/how-tos/setting-up-a-chain.md
 Note that the chain was deployed with some [core contracts](/isc/reference/core-contracts/overview).
-========
-Note that the chain was deployed with some [core contracts](../../reference/core-contracts/overview.md).
->>>>>>>> 136ca6e9c8 (re-merge EVM and WASM):docs/build/isc/v1.0.0-rc.6/docs/how-tos/manage-chains/setting-up-a-chain.md
 
 You should also have an EVM-JSONRPC server opened on:
 

@@ -30,22 +30,14 @@ their internal state as a list of key/value pairs.
 
 Besides reading and writing to the contract state, the Sandbox interface allows smart contracts to access:
 
-<<<<<<<< HEAD:docs/build/isc/v1.0.0-rc.6/docs/explanations/sandbox.md
 - The [ID](how-accounts-work.md) of the contract.
-========
-- The [ID](/isc/explanations/how-accounts-work) of the contract.
->>>>>>>> 136ca6e9c8 (re-merge EVM and WASM):docs/learn/smart-contracts/sandbox.md
 - The details of the current request or view call.
 - The current request allowance and a way to claim the allowance.
 - The balances owned by the contract.
 - The ID of whoever had deployed the contract.
 - The timestamp of the current block.
 - Cryptographic utilities like hashing, signature verification, and so on.
-<<<<<<<< HEAD:docs/build/isc/v1.0.0-rc.6/docs/explanations/sandbox.md
 - The [events](../schema/how-tos/events.mdx) dispatch.
-========
-- The [events](/isc/how-tos/wasm/events) dispatch.
->>>>>>>> 136ca6e9c8 (re-merge EVM and WASM):docs/learn/smart-contracts/sandbox.md
 - Entropy that emulates randomness in an unpredictable yet deterministic way.
 - Logging. Used for debugging in a test environment.
 

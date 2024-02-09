@@ -19,18 +19,8 @@ import TabItem from '@theme/TabItem';
 
 # Example Tests
 
-<<<<<<<< HEAD:docs/build/isc/v1.0.0-rc.6/docs/solo/how-tos/examples.mdx
-<<<<<<<< HEAD:docs/build/isc/v1.0.0-rc.6/docs/solo/how-tos/examples.mdx
 In the previous sections we showed how you can [`call()`](../../schema/how-tos/call.mdx) or
 [`post()`](../../schema/how-tos/post.mdx) smart contract function requests. We also created a few wrapper
-========
-In the previous sections we showed how you can [`call()`](../wasm/call.mdx) or
-[`post()`](../wasm/post.mdx) smart contract function requests. We also created a few wrapper
->>>>>>>> 136ca6e9c8 (re-merge EVM and WASM):docs/build/isc/v1.0.0-rc.6/docs/how-tos/solo/examples.mdx
-========
-In the previous sections we showed how you can [`call()`](/schema/how-tos/call) or
-[`post()`](/schema/how-tos/post) smart contract function requests. We also created a few wrapper
->>>>>>>> c1e6382878 (apply suggestions by @jlvandenhout):docs/build/solo/v1.0.0-rc.6/docs/how-tos/examples.mdx
 functions to simplify calling these functions even further. Now we will look at how to use
 the SoloContext to create full-blown tests for the `dividend` example smart contract.
 
@@ -241,27 +231,11 @@ any remaining tokens are not transferred, but remain in the sender's account.
 Finally, we call `divide` again with 2M+234 tokens and again verify the asset balances
 afterwards.
 
-<<<<<<<< HEAD:docs/build/isc/v1.0.0-rc.6/docs/solo/how-tos/examples.mdx
-<<<<<<<< HEAD:docs/build/isc/v1.0.0-rc.6/docs/solo/how-tos/examples.mdx
 Next we will show how to test [Views](../../schema/how-tos/views.mdx) and/or [Funcs](../../schema/how-tos/funcs.mdx) that return
 a result. Note that even though Funcs are usually invoked through a [`post()`](../../schema/how-tos/post.mdx)
 request, in which case any return values are inaccessible, they still can be invoked
 through a [call()](../../schema/how-tos/call.mdx) from within another Func, in which these return values can
 be used normally. Since solo executes [`post()`](../../schema/how-tos/post.mdx) requests synchronously, it is
-========
-Next we will show how to test [Views](../wasm/views.mdx) and/or [Funcs](../wasm/funcs.mdx) that return
-a result. Note that even though Funcs are usually invoked through a [`post()`](../wasm/post.mdx)
-request, in which case any return values are inaccessible, they still can be invoked
-through a [call()](../wasm/call.mdx) from within another Func, in which these return values can
-be used normally. Since solo executes [`post()`](../wasm/post.mdx) requests synchronously, it is
->>>>>>>> 136ca6e9c8 (re-merge EVM and WASM):docs/build/isc/v1.0.0-rc.6/docs/how-tos/solo/examples.mdx
-========
-Next we will show how to test [Views](/schema/how-tos/views) and/or [Funcs](/schema/how-tos/funcs that return
-a result. Note that even though Funcs are usually invoked through a [`post()`](/schema/how-tos/post)
-request, in which case any return values are inaccessible, they still can be invoked
-through a [call()](/schema/how-tos/call) from within another Func, in which these return values can
-be used normally. Since solo executes [`post()`](/schema/how-tos/post) requests synchronously, it is
->>>>>>>> c1e6382878 (apply suggestions by @jlvandenhout):docs/build/solo/v1.0.0-rc.6/docs/how-tos/examples.mdx
 possible to have a Func return a result and test for certain result values.
 
 <Tabs groupId="language" queryString>
