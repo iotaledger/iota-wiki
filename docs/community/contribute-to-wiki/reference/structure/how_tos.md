@@ -1,7 +1,7 @@
 ---
 description: How Tos give users step by step instructions on how to complete a concrete task.
 image: /img/logo/iota_logo.svg
-keywords:
+tags:
   - How Tos
   - action oriented
 ---

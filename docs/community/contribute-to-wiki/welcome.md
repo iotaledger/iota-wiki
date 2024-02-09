@@ -1,5 +1,5 @@
 ---
-keywords:
+tags:
   - getting started
 description: How to contribute to the IOTA wiki.
 image: /img/iota-wiki.png

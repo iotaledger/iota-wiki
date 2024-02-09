@@ -24,7 +24,7 @@ Please note that this pattern does not rely on a Permanode storing the entire Ta
 
 ### Network
 
-- A running [Hornet Private Tangle](https://github.com/iotaledger/hornet/tree/develop/private_tangle). You should use the **develop** branch to have the latest [Stardust](https://blog.shimmer.network/stardust-upgrade-in-a-nutshell/) features.
+- You can use the [IOTA Sandbox](/iota-sandbox/welcome/) to run this tutorial locally. 
 - The node should run the [INX-POI](https://github.com/iotaledger/inx-poi). The node(s) will start the INX-POI plugin by default.
 
 ### Development Environment and Libraries

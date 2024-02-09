@@ -1,7 +1,7 @@
 ---
 description: Learn how to install and run a HORNET node using Docker.
 image: /img/banner/banner_hornet_using_docker.png
-keywords:
+tags:
   - IOTA Node
   - HORNET Node
   - Docker
@@ -15,6 +15,7 @@ keywords:
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import LinuxCommands from '@site/docs/_admonitions/_linux-commands.md';
 
 # Install HORNET using Docker
 
@@ -52,25 +53,37 @@ It includes everything required to setup a public node accessible by wallets and
 
 ## Download the latest release
 
-:::note
+<LinuxCommands/>
 
-The commands assume you are using Linux.
+Once you have completed all the installation [requirements](#requirements), you can download one of the latest releases, depending on the network you want to join, by running the following command:
 
-:::
-
-Once you have completed all the installation [requirements](#requirements), you can download the latest release by running the following command:
+<Tabs groupId="network" queryString>
+<TabItem value="iota" label="IOTA">
 
 ```sh
-mkdir node-docker-setup && cd node-docker-setup && curl -L https://node-docker-setup.iota.org/stardust | tar -zx
+mkdir node-docker-setup && cd node-docker-setup && curl -L https://node-docker-setup.iota.org/iota | tar -zx
 ```
+
+</TabItem>
+<TabItem value="shimmer" label="Shimmer">
+
+```sh
+mkdir node-docker-setup && cd node-docker-setup && curl -L https://node-docker-setup.iota.org/shimmer | tar -zx
+```
+
+</TabItem>
+<TabItem value="testnet" label="Testnet">
+
+```sh
+mkdir node-docker-setup && cd node-docker-setup && curl -L https://node-docker-setup.iota.org/testnet | tar -zx
+```
+
+</TabItem>
+</Tabs>
 
 ## Prepare
 
-:::note
-
-The commands assume you are using Linux.
-
-:::
+<LinuxCommands/>
 
 ### 1. Generate dashboard credentials
 
@@ -107,9 +120,35 @@ You can configure your node to either use HTTP or HTTPS. For publicly exposed no
 
 :::
 
+:::info
+
+Activating a Wasp node isn't enough to fully participate in a smart contract chain. You don't need a standalone Wasp node if you're using our ShimmerEVM chain. For setting up your own chain, see our guide for the required steps: [Set Up a Chain](/wasp-cli/how-tos/setting-up-a-chain/)
+
+:::
+
+<Tabs groupId="network" queryString>
+<TabItem value="iota" label="IOTA">
+
 ```sh reference
-https://github.com/iotaledger/node-docker-setup/blob/main/stardust/env_template
+https://github.com/iotaledger/node-docker-setup/blob/main/iota/env_template
 ```
+
+</TabItem>
+<TabItem value="shimmer" label="Shimmer">
+
+```sh reference
+https://github.com/iotaledger/node-docker-setup/blob/main/shimmer/env_template
+```
+
+</TabItem>
+<TabItem value="testnet" label="Testnet">
+
+```sh reference
+https://github.com/iotaledger/node-docker-setup/blob/main/testnet/env_template
+```
+
+</TabItem>
+</Tabs>
 
 ### 3. Setup neighbors
 

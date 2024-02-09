@@ -37,11 +37,14 @@ export function AdvancedSettingsValidator() {
           </div>
           <div className='col col--1'></div>
         </div>
-        {state.validators.map((validator, i) => (
-          <div className='row row--centered' key={i}>
-            <ValidatorCard validator={validator} id={i} />
-          </div>
-        ))}
+        {state.validators.map(
+          (validator, i) =>
+            !validator.excluded && (
+              <div className='row row--centered' key={i}>
+                <ValidatorCard validator={validator} id={i} />
+              </div>
+            ),
+        )}
       </div>
       <button
         className='button button--block mana-calculator__button '

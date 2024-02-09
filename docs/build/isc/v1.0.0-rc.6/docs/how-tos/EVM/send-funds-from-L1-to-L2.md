@@ -1,7 +1,7 @@
 ---
 description: How to send funds from L1 to L2.
 image: /img/logo/WASP_logo_dark.png
-keywords:
+tags:
   - configure
   - using
   - EVM

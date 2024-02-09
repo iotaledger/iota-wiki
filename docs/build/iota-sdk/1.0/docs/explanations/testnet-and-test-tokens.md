@@ -1,7 +1,7 @@
 ---
 image: /img/banner/client_lib_overview.png
 description: 'Learn how to connect to the Public Testnet API, explore the network using the Public Testnet Explorer, and obtain test tokens through the Public Testnet Faucet for testing value-based transactions.'
-keywords:
+tags:
   - Public Testnet
   - API
   - Public Testnet Explorer

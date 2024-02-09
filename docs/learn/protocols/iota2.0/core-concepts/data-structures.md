@@ -75,9 +75,9 @@ The _Block Wrapper_ is serialized as follows:
     <td>This field denotes what protocol rules apply to the block.</td>
   </tr>
   <tr>
-    <td>_Network ID_</td>
+    <td>Network ID</td>
     <td>uint64</td>
-    <td>The _network identifier_. </td>
+    <td>The network identifier. </td>
   </tr>
   <tr>
     <td>Issuing Time</td>
@@ -423,7 +423,7 @@ specification:
 | ------------ | ---------- | --------------------------------------------------- |
 | No Payload   | -          | -                                                   |
 | Tagged Data  | 5          | [TIP-23](https://wiki.iota.org/tips/tips/TIP-0023/) |
-| Transaction  | 6          | [TIP-45](https://wiki.iota.org/tips/tips/TIP-0045/) |
+| Transaction  | 6          | [TIP-45](https://github.com/iotaledger/tips/blob/tip45/tips/TIP-0045/tip-0045.md) |
 
 ### Transactions
 
@@ -446,7 +446,7 @@ A _Transaction Payload_ is made up of two parts:
 The _Transaction Payload ID_ is the [BLAKE2b-256](https://tools.ietf.org/html/rfc7693) hash of the entire serialized payload data, including unlocks.
 
 The following table describes the entirety of a _Transaction Payload_ in its serialized form following the notation from
-[TIP-45](https://wiki.iota.org/tips/tips/TIP-0045/):
+[TIP-45](https://github.com/iotaledger/tips/blob/tip45/tips/TIP-0045/tip-0045.md):
 
 <table>
   <tr>
@@ -713,8 +713,8 @@ the transaction was meant for the IOTA mainnet, shimmer, testnet-1, or a private
 
 | Network Name        | Resulting `Network ID` | Network Name defined in                                                          |
 | ------------------- | ---------------------- | -------------------------------------------------------------------------------- |
-| `iota-mainnet`      | `9374574019616453254`  | [TIP-22](https://wiki.iota.org/tips/tips/TIP-0022/tip-0022.md#detailed-design)   |
-| `shimmer`           | `14364762045254553490` | [TIP-32](https://wiki.iota.org/tips/tips/TIP-0032/tip-0032.md#global-parameters) |
+| `iota-mainnet`      | `9374574019616453254`  | [TIP-22](/tips/tips/TIP-0022)                                                    |
+| `shimmer`           | `14364762045254553490` | [TIP-32](/tips/tips/TIP-0032#global-parameters)                                  |
 | `testnet-1`         | `1856588631910923207`  | -                                                                                |
 | `example-mynetwork` | `1967754805504104511`  | -                                                                                |
 
@@ -722,7 +722,7 @@ the transaction was meant for the IOTA mainnet, shimmer, testnet-1, or a private
 
 The transaction timestamp is expressed as a `Slot Index`, as there is no need for finer granularity. The validity of the
 transaction timestamp is checked in comparison with the `Block` timestamp. Therefore, it is performed at the level of
-semantic validation of a block, described in [TIP-46](https://wiki.iota.org/tips/tips/TIP-0046/tip-0046.md).
+semantic validation of a block, described in [TIP-46](https://github.com/iotaledger/tips/blob/tip46/tips/TIP-0046/tip-0046.md).
 
 #### Context Inputs
 
@@ -735,7 +735,7 @@ The `Context Inputs` field holds inputs that provide additional contextual infor
 ##### Commitment Input
 
 A _Commitment Input_ allows referencing a commitment to a certain slot. It is used to provide a notion of time for transaction execution that is linked to the containing _Block_'s _Issuing Time_. It proves that the time at the transaction execution is past a certain slot in the past, as the slot has already been committed.
-The slot reference is the _Commitment ID_ and can be resolved to the _Commitment_ value before executing the transaction. The _Commitment_ provides the `Slot Index`, which is the time reference. A Block that contains a transaction with a Commitment input has additional validation rules as defined in [TIP-46](https://wiki.iota.org/tips/tips/TIP-0046/). Only one
+The slot reference is the _Commitment ID_ and can be resolved to the _Commitment_ value before executing the transaction. The _Commitment_ provides the `Slot Index`, which is the time reference. A Block that contains a transaction with a Commitment input has additional validation rules as defined in [TIP-46](https://github.com/iotaledger/tips/blob/tip46/tips/TIP-0046/tip-0046.md). Only one
 _Commitment Input_ may be present in a transaction.
 
 It is serialized as follows:
@@ -836,11 +836,11 @@ The following table lists all the output types that are currently supported as w
 
 | Output Name | Type Value | TIP                                                                              |
 | ----------- | ---------- | -------------------------------------------------------------------------------- |
-| Basic       | 3          | [TIP-41](https://wiki.iota.org/tips/tips/TIP-0041/tip-0041.md#basic-output)      |
-| Account     | 4          | [TIP-42](https://wiki.iota.org/tips/tips/TIP-0042/tip-0042.md#account-output)    |
-| Foundry     | 5          | [TIP-44](https://wiki.iota.org/tips/tips/TIP-0044/tip-0044.md#foundry-output)    |
-| NFT         | 6          | [TIP-43](https://wiki.iota.org/tips/tips/TIP-0043/tip-0043.md#nft-output)        |
-| Delegation  | 7          | [TIP-40](https://wiki.iota.org/tips/tips/TIP-0040/tip-0040.md#delegation-output) |
+| Basic       | 3          | [TIP-41](https://github.com/iotaledger/tips/blob/tip41/tips/TIP-0041/tip-0041.md#basic-output)      |
+| Account     | 4          | [TIP-42](https://github.com/iotaledger/tips/blob/tip42/tips/TIP-0042/tip-0042.md#account-output)    |
+| Foundry     | 5          | [TIP-44](https://github.com/iotaledger/tips/blob/tip44/tips/TIP-0044/tip-0044.md#foundry-output)    |
+| NFT         | 6          | [TIP-43](https://github.com/iotaledger/tips/blob/tip43/tips/TIP-0043/tip-0043.md#nft-output)        |
+| Delegation  | 7          | [TIP-40](https://github.com/iotaledger/tips/blob/tip40/tips/TIP-0040/tip-0040.md#delegation-output) |
 
 #### Allotments
 
@@ -852,7 +852,7 @@ issuance slot. The good practice would be to always allot enough Mana to cover f
 
 #### Payload
 
-The _Transaction Essence_ can contain another payload as described in general in [TIP-46](https://wiki.iota.org/tips/tips/TIP-0046/).
+The _Transaction Essence_ can contain another payload as described in general in [TIP-46](https://github.com/iotaledger/tips/blob/tip46/tips/TIP-0046/tip-0046.md).
 
 The following table lists all the payload types that can be nested inside a _Transaction Essence_ as well as links to the corresponding specification:
 
@@ -868,10 +868,10 @@ The following table lists all the unlock types that are currently supported, as 
 
 | Unlock Name | Type Value | TIP                                                                                    |
 | ----------- | ---------- | -------------------------------------------------------------------------------------- |
-| Signature   | 0          | [TIP-45](https://wiki.iota.org/tips/tips/TIP-0045/tip-0045#signature-unlock)           |
-| Reference   | 1          | [TIP-45](https://wiki.iota.org/tips/tips/TIP-0045/tip-0045#reference-unlock)           |
-| Account     | 2          | [TIP-42](https://wiki.iota.org/tips/tips/TIP-0042/tip-0042#account-locking--unlocking) |
-| NFT         | 3          | [TIP-43](https://wiki.iota.org/tips/tips/TIP-0043/tip-0043#nft-locking--unlocking)     |
+| Signature   | 0          | [TIP-45](https://github.com/iotaledger/tips/blob/tip45/tips/TIP-0045/tip-0045.md#signature-unlock)           |
+| Reference   | 1          | [TIP-45](https://github.com/iotaledger/tips/blob/tip45/tips/TIP-0045/tip-0045.md#reference-unlock)           |
+| Account     | 2          | [TIP-42](https://github.com/iotaledger/tips/blob/tip42/tips/TIP-0042/tip-0042.md#account-locking--unlocking) |
+| NFT         | 3          | [TIP-43](https://github.com/iotaledger/tips/blob/tip43/tips/TIP-0043/tip-0043.md#nft-locking--unlocking)     |
 
 #### Signature Unlock
 

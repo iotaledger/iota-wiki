@@ -1,7 +1,7 @@
 ---
 description: 'Explore the how-to guides in the IOTA SDK, offering step-by-step instructions on various topics and functionalities.'
 image: /img/banner/client_lib_overview.png
-keywords:
+tags:
   - how-to guides
   - instructions
   - IOTA SDK

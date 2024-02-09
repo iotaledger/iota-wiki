@@ -1,7 +1,7 @@
 ---
 description: INX-api-core-v1 provides historical tangle data from a hornet chrysalis database via IOTA chrysalis API.
 image: /img/banner/banner_hornet.png
-keywords:
+tags:
   - IOTA Node
   - Hornet Node
   - INX

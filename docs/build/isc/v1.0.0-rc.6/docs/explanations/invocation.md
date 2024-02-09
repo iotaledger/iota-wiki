@@ -2,7 +2,7 @@
 description: 'Smart contracts can be invoked through their entry points, from outside via a request, or from inside via a
 call.'
 image: /img/logo/WASP_logo_dark.png
-keywords:
+tags:
 
 - smart contracts
 - requests

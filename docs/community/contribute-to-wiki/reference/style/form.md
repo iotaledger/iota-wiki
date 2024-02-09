@@ -1,5 +1,5 @@
 ---
-keywords:
+tags:
   - reference
 description: The technical writer's guide for IOTA Wiki.
 image: /img/iota-wiki.png
@@ -145,7 +145,7 @@ If you have a long string of qualifiers, break it up into phrases instead.
 
 Use consistent [terminology](/learn/glossary) within a paragraph, article, project, and the whole Wiki. Avoid synonyms for technical terms unless you have mentioned that term beforehand and the relation is clear.
 
-If you refer to an object by its name, provide a qualifying noun: "the `sidebar.js` file", "the iota.rs library".
+If you refer to an object by its name, provide a qualifying noun: "the `sidebar.js` file", "the identity.rs library".
 
 #### Prefabricated Phrases
 

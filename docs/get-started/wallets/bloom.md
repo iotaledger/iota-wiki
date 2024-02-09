@@ -1,7 +1,7 @@
 ---
 title: Bloom Wallet
 description: A feature-laden Shimmer wallet.
-keywords:
+tags:
   - Bloom Wallet
   - Shimmer Wallet
   - IOTA Wallet

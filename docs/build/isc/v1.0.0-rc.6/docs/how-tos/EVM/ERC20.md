@@ -1,7 +1,7 @@
 ---
 description: Solidity smart contract ERC20.
 image: /img/logo/WASP_logo_dark.png
-keywords:
+tags:
   - smart contracts
   - EVM
   - Solidity
@@ -88,7 +88,7 @@ Go to the second tab and compile your smart contract with the **Compile ERC20.so
 
 1. Get the `contract address` from the transaction after the successful deployment. You can click on the latest
    transaction in your MetaMask Activity tab. If you have configured your MetaMask correctly,
-   the [IOTA EVM Explorer](https://explorer.wasp.sc.iota.org/) will open the transaction.
+   the [ShimmerEVM Explorer](https://explorer.evm.shimmer.network) will open the transaction.
 2. Copy the contract address and import your token into MetaMask.
 
 ![Copy contract address](/img/evm/examples/explorer-contract-address.png)

@@ -1,7 +1,7 @@
 ---
 description: An in-depth exploration of smart contract execution in blockchain technology, detailing their structure, invocation, and associated fees.
 image: /img/logo/WASP_logo_dark.png
-keywords:
+tags:
 - Smart Contracts
 - Blockchain Technology
 - Validators

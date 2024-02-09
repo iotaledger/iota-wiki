@@ -1,5 +1,5 @@
 ---
-keywords:
+tags:
   - documentation
   - inx
   - reference

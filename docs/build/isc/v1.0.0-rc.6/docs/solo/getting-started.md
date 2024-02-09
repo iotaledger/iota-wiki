@@ -2,7 +2,7 @@
 description: 'Solo is a testing framework that allows developers to validate real smart contracts and entire inter-chain
 protocols.'
 image: /img/logo/WASP_logo_dark.png
-keywords:
+tags:
 
 - testing framework
 - golang

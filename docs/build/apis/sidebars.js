@@ -37,17 +37,11 @@ const categories = [
       type: 'generated-index',
       title: 'Core API',
       description:
-        'The core API is the main API for interacting with the Tangle. V1 is meant for the IOTA network and V2 for the Shimmer staging network.',
+        'The core API is the main API for interacting with the Tangle. V2 is now used for both IOTA and the Shimmer staging network.',
       slug: '/api/core',
     },
     collapsed: true,
     items: [
-      {
-        type: 'category',
-        label: 'V1',
-        collapsed: true,
-        items: './docs/core/v1/sidebar',
-      },
       {
         type: 'category',
         label: 'V2',
@@ -94,5 +88,10 @@ module.exports = {
     ...categories
       .filter(({ label }) => directoryExists(generateDirectoryPath('docs', label)))
       .map(resolveSidebarPaths),
+    {
+      type: 'link',
+      label: 'ShimmerEVM Explorer API',
+      href: 'https://explorer.evm.shimmer.network/api-docs',
+    },
   ],
 };

@@ -1,7 +1,7 @@
 ---
 description: The ISC Magic Contract allows EVM contracts to access ISC functionality.
 image: /img/logo/WASP_logo_dark.png
-keywords:
+tags:
   - configure
   - using
   - EVM

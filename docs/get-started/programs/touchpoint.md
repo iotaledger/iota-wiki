@@ -4,7 +4,7 @@ description: 'Discover Touchpoint, an open builders program that empowers collab
 world-class expertise, and smart money for builders, investors, and experts. Join Touchpoint and grow alongside diverse
 projects in DeFi, gaming, NFTs, and other verticals.'
 image: /img/shimmer-wiki.png
-keywords:
+tags:
   - Touchpoint program
   - open builders program
   - tailored support

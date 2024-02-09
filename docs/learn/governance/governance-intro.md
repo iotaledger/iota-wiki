@@ -1,7 +1,7 @@
 ---
 description: An Overview and Introduction to the Governance of Shimmer and IOTA
 image: /img/learn/governance/iota_governance.png
-keywords:
+tags:
   - Introduction
   - Shimmer
   - IOTA
@@ -88,4 +88,3 @@ A detailed description of how to participate in Governance votes can be found in
 - [Shimmer Governance](https://GitHub.com/iota-community/Shimmer-Governance) GitHub Repo for the Shimmer Governance system.
 - [INX Participation](https://GitHub.com/iotaledger/inx-participation) GitHub Repo for the INX Participation Node Plugin that counts the votes.
 - [Community Governance](https://GitHub.com/iota-community/Community-Governance) GitHub Repo for the initial IOTA Governance system and the first vote.
-- [IOTA Treasury](https://iotatreasury.org/) Website developed for the first Governance vote in our Community history, which explains the core features of the voting system.

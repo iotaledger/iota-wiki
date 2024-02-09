@@ -1,7 +1,7 @@
 ---
 description: Cryptographic procedures
 image: /img/logo/Stronghold_icon.png
-keywords:
+tags:
   - security
   - procedures
   - vault

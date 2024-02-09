@@ -3,6 +3,7 @@ export interface ValidatorProps {
   delegatedStake: number;
   performanceFactor: number;
   fixedCost: number;
+  excluded?: boolean;
 }
 
 export interface ValidatorParameters {

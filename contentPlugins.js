@@ -22,24 +22,6 @@ module.exports = async () => {
     },
     ...generatePluginConfig(buildPluginsConfig, __dirname + '/docs/build/'),
     {
-      id: 'introduction-docs-chrysalis',
-      path: path.resolve(
-        __dirname,
-        'docs/build/introduction-docs/chrysalis/docs',
-      ),
-      routeBasePath: 'introduction',
-      sidebarPath: path.resolve(
-        __dirname,
-        'docs/build/introduction-docs/chrysalis/sidebars.js',
-      ),
-      versions: {
-        current: {
-          label: 'Chrysalis',
-          badge: true,
-        },
-      },
-    },
-    {
       id: 'introduction-docs-stardust',
       path: path.resolve(
         __dirname,
@@ -57,15 +39,6 @@ module.exports = async () => {
           badge: true,
         },
       },
-    },
-    {
-      id: 'iota-zebra-tutorials',
-      path: path.resolve(__dirname, 'docs/build/zebra-iota-edge-sdk/tutorials'),
-      routeBasePath: 'zebra-tutorials',
-      sidebarPath: path.resolve(
-        __dirname,
-        'docs/build/zebra-iota-edge-sdk/sidebars.js',
-      ),
     },
   ];
 

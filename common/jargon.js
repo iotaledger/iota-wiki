@@ -124,8 +124,6 @@ module.exports = {
     'The process of token holders entrusting their delegated stake to a validator to act on their behalf and get rewarded with Mana.',
   'deterministic Finality':
     'Also known as  “provable” or “absolute”, finality. An absolute level of certainty that once a transaction is added to the ledger, it cannot be changed or reverted. Deterministic Finality can be faster than other types of finality but halts when there is a network split or the activity of the network is low. ',
-  devnet:
-    'DevNet, or developer network, is a dedicated test network to experiment with and test a Tangle that operates without a Coordinator.',
   'digital assets':
     'Digital possessions or resources, such as cryptocurrencies or tokens.',
   'digital Autonomy':

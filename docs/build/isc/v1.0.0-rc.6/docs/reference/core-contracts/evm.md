@@ -2,7 +2,7 @@
 description: 'The evm core contract provides the necessary infrastructure to accept Ethereum transactions and execute
 EVM code.'
 image: /img/logo/WASP_logo_dark.png
-keywords:
+tags:
 
 - smart contracts
 - core
@@ -88,7 +88,7 @@ A, and the owner of the foundry wishes to register the ERC20 contract on chain
 B. In that case, the owner must call this endpoint on chain A with `target =
 chain B`. The request to chain B is then sent as an on-ledger request.
 After a few minutes, call
-[`getERC20ExternalNativeTokensAddress`](#geterc20externalnativetokensaddress)
+[`getERC20ExternalNativeTokenAddress`](#geterc20externalnativetokenaddress)
 on chain B to find out the address of the ERC20 contract.
 
 #### Parameters
@@ -138,7 +138,7 @@ The call will fail if the address is taken by another collection with the same p
 
 ## Views
 
-### `getERC20ExternalNativeTokensAddress`
+### `getERC20ExternalNativeTokenAddress`
 
 Returns the address of an ERC20 contract registered with
 [`registerERC20NativeTokenOnRemoteChain`](#registererc20nativetokenonchain).

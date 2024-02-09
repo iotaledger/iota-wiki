@@ -1,8 +1,11 @@
+import AppLibImg from '@site/static/img/homepage/section_application_libraries.png';
+import AppLibImgDark from '@site/static/img/homepage/section_application_libraries_dark.png';
+import ThemedImage from '@theme/ThemedImage';
 import React, { FC } from 'react';
 import Link from '@docusaurus/Link';
 import icons from '@site/src/icons';
 
-const { Identity, SmartContracts, Streams, Stronghold } = icons;
+const { Identity, SmartContracts, Stronghold } = icons;
 
 interface LanguagesProps {
   languages?: { [key: string]: string };
@@ -59,31 +62,14 @@ const LibrariesSection: FC = () => (
         </Link>
       </div>
     </div>
-    <div className='libraries__card'>
-      <div className='libraries__section'>
-        <div className='libraries__head'>
-          <div className='libraries__icon'>
-            <Streams />
-          </div>
-          <Languages
-            languages={{
-              Rust: '/streams/libraries/rust/getting_started',
-            }}
-          />
-        </div>
-        <h3 className='libraries__header'>Streams</h3>
-        <p className='libraries__feature'>
-          The IOTA Streams framework provides a secure protocol for message
-          verification and protection using the Channels protocol for flexible
-          structuring of channels, publishers and subscribers.
-        </p>
-        <Link
-          to='/streams/welcome'
-          className='libraries__button button button--outline button--primary'
-        >
-          Try out Streams
-        </Link>
-      </div>
+    <div className='spaceholder__card__img'>
+      <ThemedImage
+        alt='Core Libraries'
+        sources={{
+          light: AppLibImg,
+          dark: AppLibImgDark,
+        }}
+      />
     </div>
     <div className='libraries__card'>
       <div className='libraries__section'>

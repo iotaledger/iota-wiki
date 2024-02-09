@@ -1,7 +1,7 @@
 ---
 description: An overview of state management and anchoring in IOTA Smart Contracts, detailing how blockchain state and digital assets are handled and secured.
 image: /img/logo/WASP_logo_dark.png
-keywords:
+tags:
   - IOTA Smart Contracts
   - State Management
   - Blockchain Technology

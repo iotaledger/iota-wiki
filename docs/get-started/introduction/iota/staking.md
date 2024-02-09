@@ -1,7 +1,7 @@
 ---
 title: Staking IOTA
-description: Everything you need to know about all the different upcoming staking opportunities in the IOTA, and Shimmer network.
-keywords:
+description: Everything you need to know about the different staking opportunities in the IOTA and Shimmer networks.
+tags:
   - staking IOTA
   - Shimmer network
   - staking rewards
@@ -9,8 +9,8 @@ keywords:
 
 # Staking in the IOTA Network Ecosystem
 
-IOTA introduced a new network that will exist next to the main network: the Shimmer staging network. This marks a historical event and a vast increase of utility for the IOTA token.
-Shimmer will launch with its own native tokens: SMR. With the new _tokenomics_ and incentive structure around this network, it is now possible to stake tokens.
+In 2022, IOTA introduced a new staging network and battlefield for IOTA's core technological innovations: Shimmer. This marked a vast increase in the utility of the IOTA token.
+Shimmer launched with its native tokens: SMR. With the _tokenomics_ and incentive structure around this network, it is possible to stake tokens.
 
 :::info
 
@@ -21,26 +21,24 @@ Find the announcement of the start of IOTA staking [here](https://blog.iota.org/
 
 There are several ways to stake your tokens and earn staking rewards:
 
-- Shimmer pre-launch staking to create the initial token supply for SMR and distribute it to those who stake their IOTA tokens.
-- SMR token staking to help testing on the Shimmer network and to support the network.
+- Shimmer pre-launch staking created the initial token supply for SMR and distributed it to those who stake their IOTA tokens.
+- SMR token staking helps testing on the Shimmer network and supports the network.
 
 ## Shimmer Pre-launch Staking
 
-This staking period aims to reward IOTA token holders for their participation and distribute tokens of the two new networks to them. In the case of Shimmer, it also creates the total initial supply of the network.
+The Pre-launch staking period rewarded IOTA token holders for their participation and distributed SMR tokens to them. In the case of Shimmer, it also created the total initial supply of the network.
 
-Starting from 28th December 2021, 3 p.m. CET, IOTA holders that possess IOTA tokens in the Firefly wallet and have chosen to participate in the staking period generated Shimmer tokens for 90 days.
+Starting from 28th December 2021, IOTA holders who possess IOTA tokens in the Firefly wallet and who had chosen to participate in the staking period generated Shimmer tokens for 90 days.
 
 The Shimmer staking period was limited to these initial 90 days.
 
 ### IOTA Staking for SMR Rewards
 
-Shimmer, the staging network and battlefield for IOTA's core technology innovations, will be bootstrapped purely from IOTA token stakers. The initial token supply of the Shimmer network will only rely on the amount of IOTA tokens staked for Shimmer in the 90-day staking period, and 80% of the initial supply will be distributed to IOTA token holders, while the remaining 20% will be distributed equally between the Community DAO and the Tangle Ecosystem.
+The Shimmer network was bootstrapped purely from IOTA token stakers. The initial token supply of the Shimmer network only relied on the amount of IOTA tokens staked for Shimmer in the 90-day staking period, and 80% of the initial supply was distributed to IOTA token holders, while the remaining 20% was distributed equally between the Community DAO and the Tangle Ecosystem.
 
-- The staking functionality in the Firefly Wallet will be used for Shimmer.
-- Shimmer tokens will be distributed at a fixed rate of `1 SMR per 1 MIOTA per milestone`.
+- The staking functionality in the Firefly Wallet was used for Shimmer.
+- Shimmer tokens were distributed at a fixed rate of `1 SMR per 1 MIOTA per milestone`.
 
 ![shimmer staking](/img/learn/iota-token/shimmer-staking.png)
 
-You can read how to stake and calculate the possible rewards [here](https://shimmer.network/claim).
-
-- With the launch of the Shimmer network, these generated Shimmer tokens will be distributed to the IOTA stakers. This distribution will be implemented as a functionality within the Firefly wallet. As long as the Shimmer network is not yet launched, Firefly will hold the record of rewards for the IOTA token holder.
+- With the launch of the Shimmer network, the generated Shimmer tokens were distributed to the IOTA stakers. This distribution was implemented as a functionality within the Firefly wallet. 

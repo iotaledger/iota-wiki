@@ -3,7 +3,7 @@ title: Mint Native Tokens
 sidebar_label: Increase Circulating Supply
 description: 'How to mint native tokens'
 image: /img/logo/iota_mark_light.png
-keywords:
+tags:
   - how to
   - increase native token circulating supply
   - mint
@@ -34,7 +34,7 @@ The following example will:
 <div className={'hide-code-block-extras'}>
 
 ```rust reference
-https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/native_tokens/mint.rs#L39-L42
+https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/native_tokens/mint.rs#L43-L46
 ```
 
 </div>
@@ -45,7 +45,7 @@ https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/native_
 <div className={'hide-code-block-extras'}>
 
 ```rust reference
-https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/native_tokens/mint.rs#L62
+https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/native_tokens/mint.rs#L66
 ```
 
 </div>
@@ -62,7 +62,7 @@ The following example will:
 <div className={'hide-code-block-extras'}>
 
 ```typescript reference
-https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/native_tokens/mint.ts#L32-L36
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/native_tokens/mint.ts#L37-L41
 ```
 
 </div>
@@ -74,7 +74,7 @@ https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how
 <div className={'hide-code-block-extras'}>
 
 ```typescript reference
-https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/native_tokens/mint.ts#L45-L47
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/native_tokens/mint.ts#L50-L52
 ```
 
 </div>
@@ -91,19 +91,18 @@ The following example will:
 <div className={'hide-code-block-extras'}>
 
 ```python reference
-https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how_tos/native_tokens/mint.py#L17-L20
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how_tos/native_tokens/mint.py#L16-L19
 ```
 
 </div>
 
-3. Prepare to mint 10 native tokens transaction by calling the [`Account.prepare_mint_native_token()`](../../references/python/iota_sdk/wallet/account.md#prepare_mint_native_token)
-   function and send the prepared transaction using the [`Account.send()`](../../references/python/iota_sdk/wallet/account.md#send)
+3. Prepare to mint `mint_amount` native tokens transaction by calling the [`Account.mint_native_token()`](../../references/python/iota_sdk/wallet/account.md#mint_native_token)
    function.
 
 <div className={'hide-code-block-extras'}>
 
 ```python reference
-https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how_tos/native_tokens/mint.py#L31
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how_tos/native_tokens/mint.py#L33
 ```
 
 </div>

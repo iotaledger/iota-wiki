@@ -2,7 +2,7 @@
 title: Consolidate Outputs
 description: 'How to consolidate outputs'
 image: /img/logo/iota_mark_light.png
-keywords:
+tags:
   - how to
   - consolidate outputs
   - nodejs
@@ -30,7 +30,7 @@ number of UTXOs, which can improve transaction efficiency and reduce storage dep
 <div className={'hide-code-block-extras'}>
 
 ```rust reference
-https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/accounts_and_addresses/consolidate_outputs.rs#L46
+https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/accounts_and_addresses/consolidate_outputs.rs#L52
 ```
 
 </div>
@@ -41,7 +41,7 @@ https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/account
 <div className={'hide-code-block-extras'}>
 
 ```rust reference
-https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/accounts_and_addresses/consolidate_outputs.rs#L62-L64
+https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/accounts_and_addresses/consolidate_outputs.rs#L68-L70
 ```
 
 </div>
@@ -52,7 +52,7 @@ https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/account
 <div className={'hide-code-block-extras'}>
 
 ```rust reference
-https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/accounts_and_addresses/consolidate_outputs.rs#L68-L70
+https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/accounts_and_addresses/consolidate_outputs.rs#L74-L76
 ```
 
 </div>
@@ -69,40 +69,29 @@ https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/account
 <div className={'hide-code-block-extras'}>
 
 ```typescript reference
-https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/accounts_and_addresses/consolidate-outputs.ts#L51
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/accounts_and_addresses/consolidate-outputs.ts#L48
 ```
 
 </div>
 
-3. Prepare a [`Transaction`](../../references/nodejs/classes/Transaction.md) to consolidate the Outputs by calling
-   the [`Account.prepareConsolidateOutputs()`](../../references/nodejs/classes/Account.md#prepareconsolidateoutputs) function.
+3. Send a [`Transaction`](../../references/nodejs/classes/Transaction.md) to consolidate the Outputs by calling
+   the [`Account.consolidateOutputs()`](../../references/nodejs/classes/Account.md#consolidateoutputs) <!-- TODO Update ref link --> function.
 
 <div className={'hide-code-block-extras'}>
 
 ```typescript reference
-https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/accounts_and_addresses/consolidate-outputs.ts#L70-L72
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/accounts_and_addresses/consolidate-outputs.ts#L67-L69
 ```
 
 </div>
 
-4. Send the `Transaction` by calling the [`PreparedTransaction.send()`](../../references/nodejs/classes/PreparedTransaction.md#send)
+4. Await for the `Transaction` to get confirmed by calling the [`Account.retryTransactionUntilIncluded`](../../references/nodejs/classes/Account.md#retrytransactionuntilincluded)
    function.
 
 <div className={'hide-code-block-extras'}>
 
 ```typescript reference
-https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/accounts_and_addresses/consolidate-outputs.ts#L73
-```
-
-</div>
-
-5. Await for the `Transaction` to get confirmed by calling the [`Account.retryTransactionUntilIncluded`](../../references/nodejs/classes/Account.md#retrytransactionuntilincluded)
-   function.
-
-<div className={'hide-code-block-extras'}>
-
-```typescript reference
-https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/accounts_and_addresses/consolidate-outputs.ts#L77-L79
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/accounts_and_addresses/consolidate-outputs.ts#L73-L75
 ```
 
 </div>
@@ -120,19 +109,18 @@ The following example will:
 <div className={'hide-code-block-extras'}>
 
 ```python reference
-https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how_tos/accounts_and_addresses/consolidate_outputs.py#L30
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how_tos/accounts_and_addresses/consolidate_outputs.py#L32
 ```
 
 </div>
 
 3. Prepare a [`Transaction`](../../references/python/iota_sdk/types/transaction.md) to consolidate the Outputs by calling
-   the [`Account.prepare_consolidate_outputs()`](../../references/python/iota_sdk/wallet/account.md#prepare_consolidate_outputs) function
-   and [`send()`](../../references/python/iota_sdk/wallet/account.md#send) it.
+   the [`Account.consolidate_outputs()`](../../references/python/iota_sdk/wallet/account.md#consolidate_outputs).
 
 <div className={'hide-code-block-extras'}>
 
 ```python reference
-https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how_tos/accounts_and_addresses/consolidate_outputs.py#L48-L49
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how_tos/accounts_and_addresses/consolidate_outputs.py#L46
 ```
 
 </div>
@@ -143,7 +131,7 @@ https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how
 <div className={'hide-code-block-extras'}>
 
 ```python reference
-https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how_tos/accounts_and_addresses/consolidate_outputs.py#L53
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how_tos/accounts_and_addresses/consolidate_outputs.py#L50
 ```
 
 </div>

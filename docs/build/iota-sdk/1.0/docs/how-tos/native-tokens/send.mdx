@@ -3,7 +3,7 @@ title: Send Native Tokens
 sidebar_label: Send
 description: 'How to send native tokens'
 image: /img/logo/iota_mark_light.png
-keywords:
+tags:
   - how to
   - send native token
   - send
@@ -36,7 +36,7 @@ claim them.
 <div className={'hide-code-block-extras'}>
 
 ```rust reference
-https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/native_tokens/send.rs#L41-L45
+https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/native_tokens/send.rs#L45-L49
 ```
 
 </div>
@@ -46,7 +46,7 @@ https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/native_
 <div className={'hide-code-block-extras'}>
 
 ```rust reference
-https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/native_tokens/send.rs#L62-L65
+https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/native_tokens/send.rs#L66-L69
 ```
 
 </div>
@@ -57,7 +57,7 @@ https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/native_
 <div className={'hide-code-block-extras'}>
 
 ```rust reference
-https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/native_tokens/send.rs#L67
+https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/native_tokens/send.rs#L71
 ```
 
 </div>
@@ -72,7 +72,7 @@ https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/native_
 <div className={'hide-code-block-extras'}>
 
 ```typescript reference
-https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/native_tokens/send.ts#L33-L35
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/native_tokens/send.ts#L38-L40
 ```
 
 </div>
@@ -82,19 +82,18 @@ https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how
 <div className={'hide-code-block-extras'}>
 
 ```typescript reference
-https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/native_tokens/send.ts#L38-L43
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/native_tokens/send.ts#L43-L48
 ```
 
 </div>
 
-4. Prepare the transaction that will send the tokens using the [`Account.prepareSendNativeTokens()`](../../references/nodejs/classes/Account.md#preparesendnativetokens)
-   function and send the prepared transaction using the [`Account.send()`](../../references/nodejs/classes/Account.md#send)
-   function.
+4. Create the transaction that will send the tokens using the [`Account.sendNativeTokens()`](../../references/nodejs/classes/Account.md#account.sendnativetokens) <!-- TODO Update ref link -->
+   function,
 
 <div className={'hide-code-block-extras'}>
 
 ```typescript reference
-https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/native_tokens/send.ts#L55-L57
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/native_tokens/send.ts#L60
 ```
 
 </div>
@@ -110,7 +109,7 @@ https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how
 <div className={'hide-code-block-extras'}>
 
 ```python reference
-https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how_tos/native_tokens/send.py#L16-L17
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how_tos/native_tokens/send.py#L16-L19
 ```
 
 </div>
@@ -120,19 +119,18 @@ https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how
 <div className={'hide-code-block-extras'}>
 
 ```python reference
-https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how_tos/native_tokens/send.py#L25-L31
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how_tos/native_tokens/send.py#L27-L33
 ```
 
 </div>
 
-4. Prepare the transaction that will send the tokens using the [`Account.prepare_send_native_tokens()`](../../references/python/iota_sdk/wallet/account.md#prepare_send_native_tokens)
-   function and send the prepared transaction using the [`Account.send()`](../../references/python/iota_sdk/wallet/account.md#send)
+4. Send the outputs from the previous step using the [`Account.send_native_tokens()`](../../references/python/iota_sdk/wallet/account.md#send_native_tokens)
    function.
 
 <div className={'hide-code-block-extras'}>
 
 ```python reference
-https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how_tos/native_tokens/send.py#L33
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how_tos/native_tokens/send.py#L35
 ```
 
 </div>

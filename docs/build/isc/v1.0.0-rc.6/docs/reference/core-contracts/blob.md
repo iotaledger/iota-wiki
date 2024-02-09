@@ -1,7 +1,7 @@
 ---
 description: The `blobs` contract maintains a registry of _blobs_ (a collection of arbitrary binary data) referenced from smart contracts via their hashes.
 image: /img/logo/WASP_logo_dark.png
-keywords:
+tags:
   - core contracts
   - bloc
   - binary data

@@ -1,7 +1,7 @@
 ---
 description: An overview of account types, gas costs, and fees in IOTA Smart Contracts for efficient transaction management.
 image: /img/logo/WASP_logo_dark.png
-keywords:
+tags:
   - IOTA Smart Contracts
   - Accounts and Addresses
   - Gas and Fees

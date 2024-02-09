@@ -1,7 +1,7 @@
 ---
 description: Each smart contract instance has a program with a collection of entry points and a state.
 image: /img/tutorial/SC-structure.png
-keywords:
+tags:
   - smart contracts
   - structure
   - state
@@ -49,7 +49,7 @@ Only the smart contract program can change its data state and spend from its
 account. Tokens can be sent to the smart contract account by any other agent on
 the ledger, be it a wallet with an address or another smart contract.
 
-See [Accounts](https://wiki.iota.org/build/wasp-wasm/how-accounts-work/) for more information on sending and receiving
+See [Accounts](/wasp-wasm/explanations/how-accounts-work) for more information on sending and receiving
 tokens.
 
 ## Entry Points

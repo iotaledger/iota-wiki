@@ -1,6 +1,6 @@
 ---
 description: Troubleshooting the IOTA SDK.
-keywords:
+tags:
   - discussion
   - channel
   - problem

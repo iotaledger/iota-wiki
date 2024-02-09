@@ -17,6 +17,11 @@ module.exports = {
       items: [
         {
           type: 'link',
+          label: 'IOTA Sandbox',
+          href: '/iota-sandbox/welcome',
+        },
+        {
+          type: 'link',
           label: 'CLI Wallet',
           href: '/cli-wallet/welcome',
         },
@@ -34,6 +39,26 @@ module.exports = {
           label: 'Explorer',
           type: 'link',
           href: 'https://explorer.shimmer.network',
+        },
+        {
+          label: 'Shimmer EVM Explorer',
+          type: 'link',
+          href: 'https://explorer.evm.shimmer.network/',
+        },
+        {
+          label: 'Shimmer EVM Toolkit',
+          type: 'link',
+          href: 'https://evm-toolkit.evm.shimmer.network/',
+        },
+        {
+          label: 'Shimmer EVM Testnet Toolkit & Faucet',
+          type: 'link',
+          href: 'https://evm-toolkit.evm.testnet.shimmer.network/',
+        },
+        {
+          label: 'Oracles for Shimmer EVM',
+          type: 'doc',
+          id: 'oracles',
         },
         {
           label: 'Testnet Faucet',
@@ -54,8 +79,8 @@ module.exports = {
         },
         {
           type: 'link',
-          label: 'IotaWallet.NET',
-          href: 'https://github.com/IOTA-NET/IotaWallet.NET',
+          label: 'IotaSDK.NET',
+          href: 'https://github.com/IOTA-NET/IotaSDK.NET',
         },
         {
           type: 'link',

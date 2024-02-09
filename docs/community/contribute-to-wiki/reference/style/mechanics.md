@@ -1,5 +1,5 @@
 ---
-keywords:
+tags:
   - reference
 description: The technical writer's guide for IOTA Wiki.
 image: /img/iota-wiki.png
@@ -39,15 +39,15 @@ This case overrides other guidelines.
 
 ### IOTA Products
 
-Refer to IOTA libraries by their filenames: iota.rs, wallet.rs, etc. Always use the lower-case notation. Note that it is harder to spot a sentence if it starts in lower case. Consider using the following clause instead: "The iota.rs library".
+Refer to IOTA libraries by their filenames: idenity.rs, iota.go, etc. Always use the lower-case notation. Note that it is harder to spot a sentence if it starts in lower case. Consider using the following clause instead: "The identity.rs library".
 
 Other IOTA products have an actual name. Always capitalize it: "A Hornet node. Hornet and Identity."
 
-Note that there are no determiners (the) when you refer to something by its name: "the iota.rs library" as in "the library named iota.rs", but simply "iota.rs".
+Note that there are no determiners (the) when you refer to something by its name: "the identity.rs library" as in "the library named identity.rs", but simply "identity.rs".
 
 Good:
 
-> The iota.rs library connects to a node. A node could be a Hornet node, but iota.rs handles both the same way.
+> The identity.rs library connects to a node. A node could be a Hornet node, but identity.rs handles both the same way.
 
 This case overrides other guidelines.
 

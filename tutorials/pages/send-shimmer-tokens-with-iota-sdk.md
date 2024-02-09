@@ -139,7 +139,7 @@ const blockId = await account.retryTransactionUntilIncluded(
 console.log(`Block sent: ${process.env.EXPLORER_URL}/block/${blockId}`);
 ```
 
-This could take some time. The manager will automatically review your addresses to find enough tokens to match the amount you want to send. Then, it will sign and send the resulting transaction to the node. It will warn you when you don't have enough balance, but otherwise, it will show you the transaction ID, which you can use to find your transaction in the [Testnet explorer](https://explorer.testnet.shimmer.network/testnet).
+This could take some time. The manager will automatically review your addresses to find enough tokens to match the amount you want to send. Then, it will sign and send the resulting transaction to the node. It will warn you when you don't have enough balance, but otherwise, it will show you the transaction ID, which you can use to find your transaction in the [Testnet explorer](https://explorer.shimmer.network/testnet).
 
 Congratulations, you are now able to manage your tokens programmatically!
 

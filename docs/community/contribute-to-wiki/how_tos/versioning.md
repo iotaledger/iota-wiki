@@ -1,5 +1,5 @@
 ---
-keywords:
+tags:
   - how to
 description: How to create and maintain your versioned docs.
 ---

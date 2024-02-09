@@ -2,7 +2,7 @@
 title: Destroy Alias Output
 description: 'How to programmatically destroy an alias output'
 image: /img/logo/iota_mark_light.png
-keywords:
+tags:
   - how to
   - destroy
   - alias
@@ -31,7 +31,7 @@ The following example will:
 <div className={'hide-code-block-extras'}>
 
 ```rust reference
-https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/alias/destroy.rs#L44
+https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/alias/destroy.rs#L48
 ```
 
 </div>
@@ -41,7 +41,7 @@ https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/alias/d
 <div className={'hide-code-block-extras'}>
 
 ```rust reference
-https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/alias/destroy.rs#L47-L49
+https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/alias/destroy.rs#L51-L53
 ```
 
 </div>
@@ -58,17 +58,18 @@ The following example will:
 <div className={'hide-code-block-extras'}>
 
 ```typescript reference
-https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/alias/destroy.ts#L56-L58
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/alias/destroy.ts#L57-L59
 ```
 
 </div>
 
-3. Retry transaction until included [`Transaction`](../../references/nodejs/classes/Account.md#retrytransactionuntilincluded) that was sent.
+3. Await for the `Transaction` to get confirmed by calling the [`Account.retryTransactionUntilIncluded`](../../references/nodejs/classes/Account.md#retrytransactionuntilincluded)
+   function.
 
 <div className={'hide-code-block-extras'}>
 
 ```typescript reference
-https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/alias/destroy.ts#L63
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/alias/destroy.ts#L64-L66
 ```
 
 </div>
@@ -83,7 +84,7 @@ https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how
 <div className={'hide-code-block-extras'}>
 
 ```python reference
-https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how_tos/alias/destroy.py#L25
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how_tos/alias/destroy.py#L27
 ```
 
 </div>
@@ -97,14 +98,14 @@ https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how
 <TabItem value="rust" label="Rust">
 
 ```rust reference
-https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/alias_wallet/destroy.rs
+https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/alias/destroy.rs
 ```
 
 </TabItem>
 <TabItem value="typescript-node" label="Typescript (Node.js)">
 
 ```typescript reference
-https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/alias/destroy.rs
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/alias/destroy.ts
 ```
 
 </TabItem>

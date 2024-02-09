@@ -1,7 +1,7 @@
 ---
 title: Shimmer Community Grant Committee - Operation Specification
 description: Describes the operational procedures of the elected Shimmer Community Treasury Grant Committee
-keywords:
+tags:
   - Shimmmer
   - Community
   - Treasury

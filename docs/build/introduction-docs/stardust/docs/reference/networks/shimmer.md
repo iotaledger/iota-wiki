@@ -1,7 +1,7 @@
 ---
 description: The IOTA foundation provides load-balanced public Shimmer endpoints where MQTT and the HTTP REST API are enabled.
 image: /img/logo/preview.png
-keywords:
+tags:
   - shimmer
   - MQTT
   - REST API

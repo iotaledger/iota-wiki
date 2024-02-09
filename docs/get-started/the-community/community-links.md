@@ -1,7 +1,7 @@
 ---
 title: IOTA Ecosystem Communities
 description: Explore ways to support the growth of the IOTA ecosystem by engaging with social media platforms, joining the IOTA X-Teams, and participating on crypto platforms and GitHub. Learn how to connect with the IOTA Foundation and contribute to the development of the IOTA Project.
-keywords:
+tags:
   - IOTA ecosystem
   - IOTA Foundation
   - IOTA Discord

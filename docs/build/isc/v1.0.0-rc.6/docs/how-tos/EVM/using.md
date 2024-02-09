@@ -1,7 +1,7 @@
 ---
 description: How to configure and use EVM support in IOTA Smart Contracts.
 image: /img/logo/WASP_logo_dark.png
-keywords:
+tags:
   - configure
   - using
   - EVM

@@ -1,7 +1,7 @@
 ---
 description: Compatibility between the ISC EVM layer and existing Ethereum smart contracts and tooling.
 image: /img/logo/WASP_logo_dark.png
-keywords:
+tags:
   - smart contracts
   - EVM
   - Ethereum

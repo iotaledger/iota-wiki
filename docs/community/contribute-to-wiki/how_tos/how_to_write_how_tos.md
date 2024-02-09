@@ -1,5 +1,5 @@
 ---
-keywords:
+tags:
   - how to
 description: How to write good how tos for the IOTA Wiki.
 image: /img/iota-wiki.png

@@ -1,7 +1,7 @@
 ---
 description: An overview of the IOTA Smart Contracts architecture.
 image: /img/multichain.png
-keywords:
+tags:
   - smart contracts
   - architecture
   - Layer 2
