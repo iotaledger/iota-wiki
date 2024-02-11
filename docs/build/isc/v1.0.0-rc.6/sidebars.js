@@ -156,6 +156,11 @@ module.exports = {
               label: 'Send Tokens to L1',
               id: 'how-tos/send-tokens-to-l1',
             },
+            {
+              type: 'doc',
+              label: 'Create Foundry',
+              id: 'how-tos/create-foundry',
+            }
           ],
         },
       ],
