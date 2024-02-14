@@ -92,9 +92,12 @@ dark: '/img/get-started/tools/legacy-migration-tool/dark/Software-1.png',
 
 ## Users with Software Profiles
 
+If you use a software profile, you need to restore a [backup file](#restore-a-file-backup)
+or a [text backup](#restore-a-text-backup).
+
 ### Restore a File Backup
 
-Import a Trinity SeedVault file (with the extension .kdbx).
+Import a Trinity SeedVault file (with the extension `.kdbx`).
 
 ### Restore a Text Backup
 
@@ -191,13 +194,13 @@ dark: '/img/get-started/tools/legacy-migration-tool/dark/Software-7.png',
 }}
 />
 
-#### Backup to a Stronghold File
+#### Back Up to a Stronghold File
 
 Finally, you’ll be prompted to back up to a Stronghold file by entering your wallet password. Having both a digital and
 physical backup is the best way to ensure you can always restore your wallet.
 
 <ThemedImage
-alt='Backup to Stronghold'
+alt='Back up to Stronghold'
 sources={{
 light: '/img/get-started/tools/legacy-migration-tool/light/Software-8.png',
 dark: '/img/get-started/tools/legacy-migration-tool/dark/Software-8.png',
@@ -206,7 +209,8 @@ dark: '/img/get-started/tools/legacy-migration-tool/dark/Software-8.png',
 
 ### Begin the Migration
 
-Now, let's begin the migration of your funds. Since this is an automated process, you only need to select the `Begin Migration` button. You can select `Learn about the migration` if you have any further questions.
+Now, let's begin the migration of your funds. Since this is an automated process, you only need to select the
+`Begin Migration` button. You can select `Learn about the migration` if you have any further questions.
 
 <ThemedImage
 alt='Start the migration'
@@ -216,9 +220,13 @@ dark: '/img/get-started/tools/legacy-migration-tool/dark/Software-9.png',
 }}
 />
 
+:::note
+
 Be patient! The next step could take a few moments.
 
-Congratulations, you’ve successfully migrated your funds to the Stardust network!
+:::
+
+Congratulations, you’ve successfully migrated your funds to the Stardust network.
 
 <ThemedImage
 alt='Migration Complete'
@@ -228,8 +236,12 @@ dark: '/img/get-started/tools/legacy-migration-tool/dark/Software-10.png',
 }}
 />
 
+:::tip Export Migration Logs and Stronghold
+
 To ensure a comprehensive record of your migration, we recommend that
 you [export the migration log](#export-migration-log) and [Stronghold file](#export-stronghold-file).
+
+:::
 
 ### Export Migration Log
 
@@ -245,7 +257,7 @@ and should be stored securely. This file can be imported into any wallet, ensuri
 
 ### Select the Ledger Backup Option
 
-Select "I have a Ledger backup" and then "Continue" on the next page.
+Select `I have a Ledger backup` and then `Continue` on the next page.
 
 <ThemedImage
 alt='Select I have a Ledger backup'
@@ -432,9 +444,9 @@ Once you’ve migrated all your account indexes, you can safely remove the IOTA 
 
 :::
 
-### Trouble-Shooting
+## Trouble-Shooting
 
-#### Migrating Multiple Transactions
+### Migrating Multiple Transactions
 
 If when you reach the step where you [check your balance](#check-your-balance), and it's correct, but find that you
 have multiple bundles to migrate.
@@ -472,15 +484,38 @@ light: '/img/get-started/tools/legacy-migration-tool/light/Multiple-Transactions
 dark: '/img/get-started/tools/legacy-migration-tool/dark/Multiple-Transactions-1.png',
 }}
 />
+### Addressing Balance Challenges
 
-#### Ledger Users: Threshold Considerations
+<ThemedImage
+  alt='Insufficient Balance for Migration'
+  sources={{
+    light: '/img/get-started/tools/legacy-migration-tool/light/Balance-Challenges-1.png',
+    dark: '/img/get-started/tools/legacy-migration-tool/dark/Balance-Challenges-1.png',
+  }}
+/>
 
-:::note
+If your balance appears incorrect, click `Check Again` to locate your funds.
 
-Ledger device users with funds greater than the Minimum Required Storage Deposit on the Stardust network but less than
-the 1Mi legacy network threshold.
+:::note Storage Deposits on Stardust
+
+For a successful migration, a balance of minimum
+required [storage deposit](/learn/protocols/stardust/core-concepts/storage-deposit/) is required due to Stardust’s dust
+protection policy.
 
 :::
+
+<ThemedImage
+  alt='Insufficient Balance for Migration'
+  sources={{
+    light: '/img/get-started/tools/legacy-migration-tool/light/Balance-Challenges-2.png',
+    dark: '/img/get-started/tools/legacy-migration-tool/dark/Balance-Challenges-2.png',
+  }}
+/>
+
+### Ledger Users: Threshold Considerations
+
+This section concerns Ledger device users with funds greater than the Minimum Required Storage Deposit on the Stardust
+network but less than the 1Mi legacy network threshold.
 
 <ThemedImage
 alt='1Mi > Balance > Storage Deposit'
@@ -511,32 +546,3 @@ light: '/img/get-started/tools/legacy-migration-tool/light/Ledger-Threshold-3.pn
 dark: '/img/get-started/tools/legacy-migration-tool/dark/Ledger-Threshold-3.png',
 }}
 />
-
-### Addressing Balance Challenges
-
-<ThemedImage
-alt='Insufficient Balance for Migration'
-sources={{
-light: '/img/get-started/tools/legacy-migration-tool/light/Balance-Challenges-1.png',
-dark: '/img/get-started/tools/legacy-migration-tool/dark/Balance-Challenges-1.png',
-}}
-/>
-
-If your balance appears incorrect, click `Check Again` to locate your funds.
-
-:::note Storage Deposits on Stardust
-
-For a successful migration, a balance of minimum
-required [storage deposit](/learn/protocols/stardust/core-concepts/storage-deposit/) is required due to Stardust’s dust
-protection policy.
-
-:::
-
-<ThemedImage
-alt='Insufficient Balance for Migration'
-sources={{
-light: '/img/get-started/tools/legacy-migration-tool/light/Balance-Challenges-2.png',
-dark: '/img/get-started/tools/legacy-migration-tool/dark/Balance-Challenges-2.png',
-}}
-/>
-
