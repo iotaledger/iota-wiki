@@ -13,29 +13,24 @@ tags:
 ---
 
 import DeployWithRemix from '../../_admonitions/_deploy_with_remix.md';
-import DeployWithHardhat from '../../_admonitions/_deploy_with_hardhat.md';
+import PriorKnowledge from '../../_admonitions/_EVM-required-prior-knowledge.md';
+import RemixIDE from '../../_admonitions/_remix-IDE.md';
 
 # Create ERC20 Custom Tokens
 
 ## Required Prior Knowledge
 
-This guide assumes you are familiar with the concept
-of [tokens](https://en.wikipedia.org/wiki/Cryptocurrency#Crypto_token)
-in [blockchain](https://en.wikipedia.org/wiki/Blockchain),
-[Ethereum Request for Comments (ERCs)](https://eips.ethereum.org/erc)(also known as Ethereum Improvement Proposals (
-EIP))
-, [NFTs](learn/protocols/stardust/core-concepts/multi-asset-ledger#non-fungible-tokens-nfts), [Smart Contracts](/learn/smart-contracts/introduction)
-and have already tinkered with [Solidity](https://docs.soliditylang.org/en/v0.8.16/).
-ERC20 is a standard for fungible tokens and is defined in
-the [EIP-20 Token Standard](https://eips.ethereum.org/EIPS/eip-20) by Ethereum.
-
-This guide will use the [Remix IDE](https://remix.ethereum.org/), but you can use this contract with any IDE you are
-familiar with.
+<PriorKnowledge />
 
 ## About ERC20
 
+ERC20 is a standard for fungible tokens and is defined in
+the [EIP-20 Token Standard](https://eips.ethereum.org/EIPS/eip-20) by Ethereum.
+
 With the ERC20 standard, you can create your own tokens and transfer them to the EVM on IOTA Smart Contracts without
 fees.
+
+<RemixIDE />
 
 ## 1. Create the Smart Contract
 
@@ -82,7 +77,7 @@ Once you have deployed your contract, you can add your new custom token to your 
    visit the [ShimmerEVM Explorer](https://explorer.evm.testnet.shimmer.network/)
    or  [ShimmerEVM Testnet Explorer](https://explorer.evm.testnet.shimmer.network/) and use the search bar to find transaction.
 
-   !['View on block explorer](/img/evm/how-tos/ERC20/metamask-get-transaction-or-go-to-block-explorer.png)
+!['View on block explorer](/img/evm/how-tos/ERC20/metamask-get-transaction-or-go-to-block-explorer.png)
 
 2. Copy the contract address from the transaction details, and import your custom ERC20 tokens into MetaMask.
 
