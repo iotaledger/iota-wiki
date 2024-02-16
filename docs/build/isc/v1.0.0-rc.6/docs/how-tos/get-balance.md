@@ -8,16 +8,35 @@ tags:
   - how-to
 ---
 
-## Get Balance
+# Get Balance
 
 Once you have your L1 assets on L2 you might want to check their Balance. This how-to explains you how by calling the tree functions `getL2BalanceBaseTokens`, `getL2BalanceNativeTokens`and `getL2NFTAmount` for the corresponding token types.
 
 ## Example Code
 
 1. Get the [AgentID](../explanations/how-accounts-work.md) from the sender by calling `ISC.sandbox.getSenderAccount()`.
+
+```solidity
+        ISCAgentID memory agentID = ISC.sandbox.getSenderAccount();
+```
+
 2. To get the base token balance you can call `getL2BalanceBaseTokens` with the `agentID`.
 3. To get the native token balance of a specific `NativeTokenID` use `ISC.accounts.getL2BalanceNativeTokens` with the `id` and `agentID`.
 4. To get the amount of NFTs use `ISC.accounts.getL2NFTAmount` with the `agentID`.
+
+```
+        uint64 baseBalance = ISC.accounts.getL2BalanceBaseTokens(agentID);
+        emit GotBaseBalance(baseBalance);
+
+        NativeTokenID memory id = NativeTokenID({ data: nativeTokenID});
+        uint256 nativeTokens = ISC.accounts.getL2BalanceNativeTokens(id, agentID);
+        emit GotNativeTokenBalance(nativeTokens);
+
+        uint256 nfts = ISC.accounts.getL2NFTAmount(agentID);
+        emit GotNativeTokenBalance(nfts);
+```
+
+### Full Example Code
 
 ```solidity
 // SPDX-License-Identifier: MIT
