@@ -18,12 +18,11 @@ import AboutTokens from '../_admonitions/_about-tokens.md';
 <AboutTokens/>
 <AboutAccounts/>
 
-You can decide how much storage deposit to add by defining it in baseTokens:
-Ensure the amount is big enough to cover the gas fee, or the call will fail.
-Define assets to send, and the actual balance will be deducted after the tokens for the gas fee get subtracted:
-So, if you're sending base tokens, you can define them as:
-However, if you're sending NFTs, you can define them as:
-Finally, call the send method to send the tokens.
+This how-to will show you how the ISC sandbox interface can be used to send assets from L2 to L1. This includes base tokens, native tokens, and NFTs. Before you can send these assets, you need to know how you get them on L2, and how you allow a contract to use them.
+
+Note that assets on L1 require a storage deposit, therefore the amount of base tokens sent to L1 should cover at least the storage deposit required to hold the assets on L1.
+
+## Example Code
 
 ```solidity
 // SPDX-License-Identifier: MIT
@@ -42,4 +41,26 @@ contract L1Assets {
     ISC.sandbox.send(to, allowance, false, metadata, options);
   }
 }
+```
+
+## Explanation
+
+First we will find out what assets this contract is allowed to take from the caller.
+
+```solidity
+    ISCAssets memory allowance = ISC.sandbox.getAllowanceFrom(msg.sender);
+```
+
+Then we take the allowance, which will transfer the assets from the caller to the contract.
+
+```solidity
+    ISC.sandbox.takeAllowedFunds(msg.sender, allowance);
+```
+
+Finally, the assets are sent to the specified L1 address, creating an output holding the assets. Additional options allow you to add timelock and expiration feautures to the created output.
+
+```solidity
+    ISCSendMetadata memory metadata;
+    ISCSendOptions memory options;
+    ISC.sandbox.send(to, allowance, false, metadata, options);
 ```
