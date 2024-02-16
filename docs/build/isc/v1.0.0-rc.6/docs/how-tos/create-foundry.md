@@ -17,9 +17,6 @@ The stardust update allows you to create your own native tokens. Native tokens a
 
 ## Example Code
 
-<Tabs groupId="language" queryString>
-<TabItem value="solidity" label="Solidity">
-
 ```solidity
 // SPDX-License-Identifier: MIT
 
@@ -46,26 +43,3 @@ contract CreateFoundry {
     }
 }
 ```
-
-</TabItem>
-<TabItem value="ethersjs" label="Ethers.js">
-
-```typescript
-async function main() {
-    const contract = new ethers.Contract(ISC_MAGIC_ADDRESS, getTheAbi(), wallet)
-    const nativeTokenScheme = {
-        mintedTokens: 0,
-        meltedTokens: 0,
-        maximumSupply: 100
-    };
-    const allowance = { 
-        baseTokens: 500_000,
-        nativeTokens: [],
-        nfts: []
-    };
-    const tx = await contract.foundryCreateNew(nativeTokenScheme, allowance);
-}
-```
-
-</TabItem>
-</Tabs>
