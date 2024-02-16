@@ -7,15 +7,39 @@ tags:
   - how-to
 ---
 
-
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-
 ## About Foundry
 
-The stardust update allows you to create your own native tokens. Native tokens are minted by a so-called Foundry. The Foundry allows you to specify a max supply once and change the circulating supply. This how-to will explain how to create a foundry from L2 that you can control from L2.
+The stardust update allows you to create your own native tokens. Native tokens are minted by a so-called Foundry. The Foundry allows you to specify a max supply once and change the circulating supply. This how-to will explain how to create a L1 foundry from L2.
 
 ## Example Code
+
+1. Define the `NativeTokenScheme`
+
+```solidity
+        NativeTokenScheme memory nativeTokenScheme = NativeTokenScheme({
+            mintedTokens: _mintedTokens,
+            meltedTokens: _meltedTokens,
+            maximumSupply: _maximumSupply
+        });
+```
+
+2. Set the allowance
+
+```
+        ISCAssets memory allowance = ISCAssets({
+            baseTokens: 500_000,
+            nativeTokens: new NativeToken[](0),
+            nfts: new NFTID[](0)
+        });
+```
+
+3. Create the foundry
+
+```solidity
+        uint foundrySN = ISC.accounts.foundryCreateNew(nativeTokenScheme, allowance);
+```
+
+### Full Example Code 
 
 ```solidity
 // SPDX-License-Identifier: MIT
