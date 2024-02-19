@@ -10,7 +10,7 @@ tags:
 
 # Get Balance
 
-Once you have your L1 assets on L2 you might want to check their Balance. This how-to explains you how by calling the tree functions `getL2BalanceBaseTokens`, `getL2BalanceNativeTokens`and `getL2NFTAmount` for the corresponding token types.
+Once you have your L1 assets on L2, you might want to check their balance. This guide explains how to do so by calling the tree functions `getL2BalanceBaseTokens`, `getL2BalanceNativeTokens`and `getL2NFTAmount` for the corresponding token types.
 
 ## Example Code
 
