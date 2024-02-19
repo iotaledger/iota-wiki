@@ -11,7 +11,7 @@ tags:
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-## Minting Tokens
+# Mint Native Tokens
 
 To mint tokens from a foundry, you first need to be aware that only the foundry owner can mint token so you might execute that function 
 in the same contract as [creating](./create-foundry.md) the foundry. You can then call the `ISC.accounts.mintNativeTokens` function.
