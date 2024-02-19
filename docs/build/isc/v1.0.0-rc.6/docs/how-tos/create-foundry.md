@@ -33,7 +33,7 @@ The Stardust update allows you to create your own native tokens. Native tokens a
         });
 ```
 
-3. Create the foundry
+3. Create the foundry by calling the `ISC.accounts.foundryCreateNew(nativeTokenScheme, allowance)` function:
 
 ```solidity
         uint foundrySN = ISC.accounts.foundryCreateNew(nativeTokenScheme, allowance);
