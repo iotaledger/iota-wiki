@@ -13,7 +13,7 @@ To properly use your native tokens, you should register them as ERC20 using the 
 
 ## Example Code
 
-1. Create the allowance
+1. Create the allowance.
 2. Register the native tokens specifying the foundry serial number, a name, a symbol, it's decimals and the allowance.
 
 ```solidity
