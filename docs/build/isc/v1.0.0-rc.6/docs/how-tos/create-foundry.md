@@ -23,7 +23,7 @@ The Stardust update allows you to create your own native tokens. Native tokens a
         });
 ```
 
-2. Set the allowance
+2. Set the allowance:
 
 ```
         ISCAssets memory allowance = ISCAssets({
