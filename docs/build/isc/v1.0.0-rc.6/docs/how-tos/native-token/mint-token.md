@@ -1,5 +1,5 @@
 ---
-description: How to create a L1 foundry
+description: How to mint native token on an L1 foundry.
 image: /img/logo/WASP_logo_dark.png
 tags:
   - foundry
