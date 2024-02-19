@@ -18,9 +18,9 @@ import AboutTokens from '../_admonitions/_about-tokens.md';
 <AboutTokens/>
 <AboutAccounts/>
 
-This how-to will show you how the ISC sandbox interface can be used to send assets from L2 to L1. This includes base tokens, native tokens, and NFTs. Before you can send these assets, you need to know how you get them on L2, and how you allow a contract to use them.
+This guide will show you how to use the ISC sandbox interface to send assets from L2 to L1. This includes base tokens, native tokens, and NFTs. Before you can send these assets, you need to know how you get them on L2 and how you allow a contract to use them.
 
-Note that assets on L1 require a storage deposit, therefore the amount of base tokens sent to L1 should cover at least the storage deposit required to hold the assets on L1.
+Note that assets on L1 require a storage deposit; therefore, the number of base tokens sent to L1 should cover at least the storage deposit required to hold the assets on L1.
 
 ## Example Code
 
@@ -57,7 +57,7 @@ Then we take the allowance, which will transfer the assets from the caller to th
     ISC.sandbox.takeAllowedFunds(msg.sender, allowance);
 ```
 
-Finally, the assets are sent to the specified L1 address, creating an output holding the assets. Additional options allow you to add timelock and expiration feautures to the created output.
+Finally, you can send the assets to the specified L1 address. This will create an output to hold said assets. You can use additional options to add the [timelock](/learn/protocols/stardust/core-concepts/output-unlock-conditions/#timelock) and [expiration](/learn/protocols/stardust/core-concepts/output-unlock-conditions/#expiration) unlock conditions to the output.
 
 ```solidity
     ISCSendMetadata memory metadata;
