@@ -14,7 +14,12 @@ To properly use your native tokens, you should register them as ERC20 using the 
 ## Example Code
 
 1. Create the allowance.
-2. Register the native tokens specifying the foundry serial number, a name, a symbol, it's decimals and the allowance.
+2. Register the native tokens specifying:
+* the foundry serial number
+* a name
+* a symbol
+* it's decimals 
+* the allowance.
 
 ```solidity
     function registerERC20NativeToken(uint32 _foundrySN, string calldata _name, string calldata _symbol, uint8 _decimals) public {
