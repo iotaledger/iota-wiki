@@ -7,7 +7,7 @@ tags:
   - how-to
 ---
 
-## Register Tokens
+# Register Tokens
 
 To properly use your native tokens you should register them as ERC20 using the `registerERC20NativeToken`.
 
