@@ -13,7 +13,7 @@ The Stardust update allows you to create your own native tokens. Native tokens a
 
 ## Example Code
 
-1. Define the `NativeTokenScheme`
+1. Define the `NativeTokenScheme`:
 
 ```solidity
         NativeTokenScheme memory nativeTokenScheme = NativeTokenScheme({
