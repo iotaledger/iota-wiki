@@ -9,7 +9,7 @@ tags:
 # Create a Foundry
 ## About Foundry
 
-The stardust update allows you to create your own native tokens. Native tokens are minted by a so-called Foundry. The Foundry allows you to specify a max supply once and change the circulating supply. This how-to will explain how to create a L1 foundry from L2.
+The Stardust update allows you to create your own native tokens. Native tokens are minted by a [Foundry](/tips/tips/TIP-0018/#foundry-output). The Foundry allows you to specify a maximum supply once and change the circulating supply. This how-to will explain how to create an L1 foundry from L2.
 
 ## Example Code
 
