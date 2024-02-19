@@ -5,6 +5,8 @@ tags:
   - foundry
   - EVM
   - how-to
+  - native tokens
+  - mint
 ---
 
 
