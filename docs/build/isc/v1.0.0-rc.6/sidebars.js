@@ -132,6 +132,11 @@ module.exports = {
             },
             {
               type: 'doc',
+              label: 'Deploy a Smart Contract',
+              id: 'how-tos/EVM/deploy-a-smart-contract',
+            },
+            {
+              type: 'doc',
               label: 'Create Custom Tokens - ERC20',
               id: 'how-tos/EVM/ERC20',
             },
@@ -158,16 +163,16 @@ module.exports = {
             },
             {
               type: 'category',
-              label: 'Token',
+              label: 'Tokens',
               items: [
                 {
                   type: 'doc',
-                  label: 'Create Foundry',
+                  label: 'Create a Foundry',
                   id: 'how-tos/token/create-foundry',
                 },
                 {
                   type: 'doc',
-                  label: 'Mint Token',
+                  label: 'Mint a Native Token',
                   id: 'how-tos/token/mint-token',
                 },
                 {
