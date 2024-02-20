@@ -45,13 +45,13 @@ contract L1Assets {
 
 ## Explanation
 
-First we will find out what assets this contract is allowed to take from the caller.
+First, you will find out what assets this contract is allowed to take from the caller by calling the `ISC.sandbox.getAllowanceFrom()` function.
 
 ```solidity
     ISCAssets memory allowance = ISC.sandbox.getAllowanceFrom(msg.sender);
 ```
 
-Then we take the allowance, which will transfer the assets from the caller to the contract.
+Then you take the allowance, which will transfer the assets from the caller to the contract.
 
 ```solidity
     ISC.sandbox.takeAllowedFunds(msg.sender, allowance);
