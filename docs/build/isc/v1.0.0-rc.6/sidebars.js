@@ -113,7 +113,7 @@ module.exports = {
         {
           type: 'category',
           label: 'EVM',
-          collapsed: false,
+          collapsed: true,
           items: [
             {
               type: 'doc',
