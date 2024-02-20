@@ -157,27 +157,6 @@ module.exports = {
           label: 'Use the Magic Contract',
           items: [
             {
-              type: 'category',
-              label: 'Allowance',
-              items: [
-                {
-                  type: 'doc',
-                  label: 'Allow',
-                  id: 'how-tos/allowance/allow',
-                },
-                {
-                  type: 'doc',
-                  label: 'Get Allowance',
-                  id: 'how-tos/allowance/get-allowance',
-                },
-                {
-                  type: 'doc',
-                  label: 'Take Allowance',
-                  id: 'how-tos/allowance/take-allowance',
-                },
-              ],
-            },
-            {
               type: 'doc',
               label: 'Use the Magic Contract',
               id: 'how-tos/magic',
@@ -210,6 +189,32 @@ module.exports = {
                   type: 'doc',
                   label: 'Register Token as ERC20',
                   id: 'how-tos/token/register-token',
+                },
+                {
+                  type: 'doc',
+                  label: 'Custom ERC20 Functions',
+                  id: 'how-tos/token/erc20-native-token',
+                }
+              ],
+            },
+            {
+              type: 'category',
+              label: 'Allowance',
+              items: [
+                {
+                  type: 'doc',
+                  label: 'Allow',
+                  id: 'how-tos/allowance/allow',
+                },
+                {
+                  type: 'doc',
+                  label: 'Get Allowance',
+                  id: 'how-tos/allowance/get-allowance',
+                },
+                {
+                  type: 'doc',
+                  label: 'Take Allowance',
+                  id: 'how-tos/allowance/take-allowance',
                 },
               ],
             },
