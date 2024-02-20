@@ -132,6 +132,11 @@ module.exports = {
             },
             {
               type: 'doc',
+              label: 'Deploy a Smart Contract',
+              id: 'how-tos/EVM/deploy-a-smart-contract',
+            },
+            {
+              type: 'doc',
               label: 'Create Custom Tokens - ERC20',
               id: 'how-tos/EVM/ERC20',
             },
@@ -146,6 +151,27 @@ module.exports = {
           type: 'category',
           label: 'Use the Magic Contract',
           items: [
+            {
+              type: 'category',
+              label: 'Allowance',
+              items: [
+                {
+                  type: 'doc',
+                  label: 'Allow',
+                  id: 'how-tos/allowance/allow',
+                },
+                {
+                  type: 'doc',
+                  label: 'Get Allowance',
+                  id: 'how-tos/allowance/get-allowance',
+                },
+                {
+                  type: 'doc',
+                  label: 'Take Allowance',
+                  id: 'how-tos/allowance/take-allowance',
+                }
+              ],
+            },
             {
               type: 'doc',
               label: 'Use the Magic Contract',
@@ -167,18 +193,13 @@ module.exports = {
                 },
                 {
                   type: 'doc',
-                  label: 'Create Foundry',
+                  label: 'Create a Foundry',
                   id: 'how-tos/token/create-foundry',
                 },
                 {
                   type: 'doc',
-                  label: 'Mint Token',
+                  label: 'Mint a Native Token',
                   id: 'how-tos/token/mint-token',
-                },
-                {
-                  type: 'doc',
-                  label: 'ERC20 Native Token',
-                  id: 'how-tos/token/erc20-native-token',
                 },
                 {
                   type: 'doc',

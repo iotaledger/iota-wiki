@@ -6,8 +6,6 @@ tags:
   - EVM
   - how-to
 ---
-import ExampleCodeIntro from '../../_partials/how-tos/token/_example_code_intro.md';
-
 # Create a Foundry
 ## About Foundries
 
@@ -17,22 +15,44 @@ This guide will show you how to create an L1 foundry using a L2 smart contract.
 
 ## Example Code
 
-<ExampleCodeIntro/>
+:::info Ownership
+
+You might want to look into making the function ownable with, for example,
+[OpenZeppelin](https://docs.openzeppelin.com/contracts/5.x/access-control#ownership-and-ownable)
+so only owners of the contract can call certain functionalities of your contract.
+
+:::
+
+1. Check if the amount paid to the contract is the same as the required [storage deposit](/learn/protocols/stardust/core-concepts/storage-deposit) 
+   and set the allowance.
+    
+```solidity
+require(msg.value == _storageDeposit*(10**12), "Please send exact funds to pay for storage deposit");
+ISCAssets memory allowance;
+allowance.baseTokens = _storageDeposit;
+```
+
+:::info  Payable
+
+Instead of making the function payable, you could let the contract pay for the storage deposit. 
+If so, you will need to change the `require` statement to check if the contract's balance has enough funds.
+
+:::
 
 2. Define the `NativeTokenScheme`:
 
 ```solidity
-        NativeTokenScheme memory nativeTokenScheme = NativeTokenScheme({
-            mintedTokens: _mintedTokens,
-            meltedTokens: _meltedTokens,
-            maximumSupply: _maximumSupply
-        });
+NativeTokenScheme memory nativeTokenScheme = NativeTokenScheme({
+    mintedTokens: _mintedTokens,
+    meltedTokens: _meltedTokens,
+    maximumSupply: _maximumSupply
+});
 ```
 
 3. Create the foundry by calling the `ISC.accounts.foundryCreateNew(nativeTokenScheme, allowance)` function:
 
 ```solidity
-        uint32 foundrySN = ISC.accounts.foundryCreateNew(nativeTokenScheme, allowance);
+uint32 foundrySN = ISC.accounts.foundryCreateNew(nativeTokenScheme, allowance);
 ```
 
 ### Full Example Code 
