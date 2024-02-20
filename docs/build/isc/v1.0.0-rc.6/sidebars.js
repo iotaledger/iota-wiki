@@ -174,7 +174,7 @@ module.exports = {
                   type: 'doc',
                   label: 'Take Allowance',
                   id: 'how-tos/allowance/take-allowance',
-                }
+                },
               ],
             },
             {
