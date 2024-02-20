@@ -18,7 +18,8 @@ To properly use your native tokens, you should register them as ERC20 using the 
 
 <Ownership/>
 
-1. First we check if the payed amount to the contract is the same as the [storage deposit](/learn/protocols/stardust/core-concepts/storage-deposit) we want to allow and set the allowance
+1. Check if the amount paid to the contract is the same as the required [storage deposit](/learn/protocols/stardust/core-concepts/storage-deposit)
+   and set the allowance.
 
 ```solidity
 require(msg.value == _storageDeposit*(10**12), "Please send exact funds to pay for storage deposit");
