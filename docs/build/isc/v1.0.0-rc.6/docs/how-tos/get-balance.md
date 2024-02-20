@@ -29,7 +29,7 @@ uint64 baseBalance = ISC.accounts.getL2BalanceBaseTokens(agentID);
 NativeTokenID memory id = NativeTokenID({ data: nativeTokenID});
 uint256 nativeTokens = ISC.accounts.getL2BalanceNativeTokens(id, agentID);
 ```
-4. To get the amount of NFTs use `ISC.accounts.getL2NFTAmount` with the `agentID`.
+4. To get the number of NFTs, use `ISC.accounts.getL2NFTAmount` with the `agentID`.
 ```solidity
 uint256 nfts = ISC.accounts.getL2NFTAmount(agentID);
 ```
