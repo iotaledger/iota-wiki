@@ -26,11 +26,11 @@ so only owners of the contract can call certain functionalities of your contract
 1. Check if the amount paid to the contract is the same as the required [storage deposit](/learn/protocols/stardust/core-concepts/storage-deposit) 
    and set the allowance.
     
-    ```solidity
-            require(msg.value == _storageDeposit*(10**12), "Please send exact funds to pay for storage deposit");
-            ISCAssets memory allowance;
-            allowance.baseTokens = _storageDeposit;
-    ```
+```solidity
+require(msg.value == _storageDeposit*(10**12), "Please send exact funds to pay for storage deposit");
+ISCAssets memory allowance;
+allowance.baseTokens = _storageDeposit;
+```
 
 :::info  Payable
 
@@ -42,17 +42,17 @@ If so, you will need to change the `require` statement to check if the contract'
 2. Define the `NativeTokenScheme`:
 
 ```solidity
-        NativeTokenScheme memory nativeTokenScheme = NativeTokenScheme({
-            mintedTokens: _mintedTokens,
-            meltedTokens: _meltedTokens,
-            maximumSupply: _maximumSupply
-        });
+NativeTokenScheme memory nativeTokenScheme = NativeTokenScheme({
+    mintedTokens: _mintedTokens,
+    meltedTokens: _meltedTokens,
+    maximumSupply: _maximumSupply
+});
 ```
 
 3. Create the foundry by calling the `ISC.accounts.foundryCreateNew(nativeTokenScheme, allowance)` function:
 
 ```solidity
-        uint32 foundrySN = ISC.accounts.foundryCreateNew(nativeTokenScheme, allowance);
+uint32 foundrySN = ISC.accounts.foundryCreateNew(nativeTokenScheme, allowance);
 ```
 
 ### Full Example Code 
