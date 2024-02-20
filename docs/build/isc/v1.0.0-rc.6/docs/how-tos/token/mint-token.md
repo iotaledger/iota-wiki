@@ -24,16 +24,16 @@ in the same contract as [creating](./create-foundry.md) the foundry. You can the
 1. First we check if the payed amount to the contract is the same as the [storage deposit](/learn/protocols/stardust/core-concepts/storage-deposit) we want to allow and set the allowance
 
 ```solidity
-        require(msg.value == _storageDeposit*(10**12), "Please send exact funds to pay for storage deposit");
-        ISCAssets memory allowance;
-        allowance.baseTokens = _storageDeposit;
+require(msg.value == _storageDeposit*(10**12), "Please send exact funds to pay for storage deposit");
+ISCAssets memory allowance;
+allowance.baseTokens = _storageDeposit;
 ```
 
 <Payable/>
 
 2. Mint the native token specifying the foundry serial number, the amount to mint and the allowance.
 ```solidity
-        ISC.accounts.mintNativeTokens(_foundrySN, _amount, allowance);
+ISC.accounts.mintNativeTokens(_foundrySN, _amount, allowance);
 ```
 
 ## Full Example Code
