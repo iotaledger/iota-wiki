@@ -24,7 +24,7 @@ ISCAgentID memory agentID = ISC.sandbox.getSenderAccount();
 ```solidity
 uint64 baseBalance = ISC.accounts.getL2BalanceBaseTokens(agentID);
 ```
-3. To get the native token balance of a specific `NativeTokenID` use `ISC.accounts.getL2BalanceNativeTokens` with the `id` and `agentID`.
+3. To get the native token balance of a specific `NativeTokenID`, use `ISC.accounts.getL2BalanceNativeTokens` with the `id` and `agentID`.
 ```solidity
 NativeTokenID memory id = NativeTokenID({ data: nativeTokenID});
 uint256 nativeTokens = ISC.accounts.getL2BalanceNativeTokens(id, agentID);
