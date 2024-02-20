@@ -8,24 +8,29 @@ tags:
   - how-to
 ---
 
-# Custom ERC20 functions
+# Custom ERC20 Functions
 
-Once you [registered your native token as ERC20](./erc20-native-token.md) you can basically use it like any other ERC20 token, with functions like `transfer`, `balanceOf` and so on. But as the ERC20 token maps the native token on L2 there are some additional fetures.
+Once you [registered your native token as ERC20](./erc20-native-token.md) you can use it like any other ERC20 token, with functions like
+`transfer`, `balanceOf`, etc. But, as the ERC20 token maps the native token on L2, there are some additional ISC features 
+you can take advantage of.
 
 ## Example Code
 
-1. Get your `ERC20NativeTokens` instance (In this case we will use `erc20NativeTokensAddress` and the Foundry serial number to get the contract address)
+## Get your `ERC20NativeTokens` Instance
+
+You can use the `erc20NativeTokensAddress` function and the Foundry serial number to get the contract address:
+ 
 ```solidity
 ERC20NativeTokens token = ERC20NativeTokens(
     ISC.sandbox.erc20NativeTokensAddress(_foundrySN)
 );
 ```
 
-* `nativeTokenID` will give you the native token ID of the ERC20 token
+* `nativeTokenID` will give you the native token ID of the ERC20 token:
+
 ```solidity
 NativeTokenID memory id =token.nativeTokenID();
 ```
-
 
 ### Full Example Code
 

@@ -159,8 +159,12 @@ module.exports = {
             {
               type: 'category',
               label: 'Token',
-              link: { type: 'doc', id: 'how-tos/token/introduction' },
               items: [
+                {
+                  label: 'Introduction',
+                  type: 'doc',
+                  id: 'how-tos/token/introduction',
+                },
                 {
                   type: 'doc',
                   label: 'Create Foundry',
@@ -170,6 +174,11 @@ module.exports = {
                   type: 'doc',
                   label: 'Mint Token',
                   id: 'how-tos/token/mint-token',
+                },
+                {
+                  type: 'doc',
+                  label: 'ERC20 Native Token',
+                  id: 'how-tos/token/erc20-native-token',
                 },
                 {
                   type: 'doc',
