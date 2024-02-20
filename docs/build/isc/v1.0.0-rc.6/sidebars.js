@@ -162,9 +162,20 @@ module.exports = {
               id: 'how-tos/send-tokens-to-l1',
             },
             {
-              type: 'doc',
-              label: 'Create Foundry',
-              id: 'how-tos/create-foundry',
+              type: 'category',
+              label: 'Tokens',
+              items: [
+                {
+                  type: 'doc',
+                  label: 'Create a Foundry',
+                  id: 'how-tos/token/create-foundry',
+                },
+                {
+                  type: 'doc',
+                  label: 'Mint a Native Token',
+                  id: 'how-tos/token/mint-token',
+                },
+              ],
             },
           ],
         },
