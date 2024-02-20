@@ -184,8 +184,13 @@ module.exports = {
             },
             {
               type: 'category',
-              label: 'Tokens',
+              label: 'Token',
               items: [
+                {
+                  label: 'Introduction',
+                  type: 'doc',
+                  id: 'how-tos/token/introduction',
+                },
                 {
                   type: 'doc',
                   label: 'Create a Foundry',
