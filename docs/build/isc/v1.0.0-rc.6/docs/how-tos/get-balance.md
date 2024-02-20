@@ -21,19 +21,17 @@ Once you have your L1 assets on L2, you might want to check their balance. This 
 ```
 
 2. To get the base token balance you can call `getL2BalanceBaseTokens` with the `agentID`.
-3. To get the native token balance of a specific `NativeTokenID` use `ISC.accounts.getL2BalanceNativeTokens` with the `id` and `agentID`.
-4. To get the amount of NFTs use `ISC.accounts.getL2NFTAmount` with the `agentID`.
-
-```
+```solidity
         uint64 baseBalance = ISC.accounts.getL2BalanceBaseTokens(agentID);
-        emit GotBaseBalance(baseBalance);
-
+```
+3. To get the native token balance of a specific `NativeTokenID` use `ISC.accounts.getL2BalanceNativeTokens` with the `id` and `agentID`.
+```solidity
         NativeTokenID memory id = NativeTokenID({ data: nativeTokenID});
         uint256 nativeTokens = ISC.accounts.getL2BalanceNativeTokens(id, agentID);
-        emit GotNativeTokenBalance(nativeTokens);
-
+```
+4. To get the amount of NFTs use `ISC.accounts.getL2NFTAmount` with the `agentID`.
+```solidity
         uint256 nfts = ISC.accounts.getL2NFTAmount(agentID);
-        emit GotNativeTokenBalance(nfts);
 ```
 
 ### Full Example Code
