@@ -122,6 +122,11 @@ module.exports = {
             },
             {
               type: 'doc',
+              label: 'Test Smart Contracts',
+              id: 'how-tos/EVM/test-smart-contracts',
+            },
+            {
+              type: 'doc',
               label: 'Send Funds from L1 to L2',
               id: 'how-tos/EVM/send-funds-from-L1-to-L2',
             },
@@ -129,6 +134,11 @@ module.exports = {
               type: 'doc',
               label: 'Create a Basic Solidity Contract',
               id: 'how-tos/EVM/create-a-basic-contract',
+            },
+            {
+              type: 'doc',
+              label: 'Deploy a Smart Contract',
+              id: 'how-tos/EVM/deploy-a-smart-contract',
             },
             {
               type: 'doc',
@@ -147,6 +157,27 @@ module.exports = {
           label: 'Use the Magic Contract',
           items: [
             {
+              type: 'category',
+              label: 'Allowance',
+              items: [
+                {
+                  type: 'doc',
+                  label: 'Allow',
+                  id: 'how-tos/allowance/allow',
+                },
+                {
+                  type: 'doc',
+                  label: 'Get Allowance',
+                  id: 'how-tos/allowance/get-allowance',
+                },
+                {
+                  type: 'doc',
+                  label: 'Take Allowance',
+                  id: 'how-tos/allowance/take-allowance',
+                }
+              ],
+            },
+            {
               type: 'doc',
               label: 'Use the Magic Contract',
               id: 'how-tos/magic',
@@ -157,10 +188,36 @@ module.exports = {
               id: 'how-tos/send-tokens-to-l1',
             },
             {
+              type: 'category',
+              label: 'Token',
+              items: [
+                {
+                  label: 'Introduction',
+                  type: 'doc',
+                  id: 'how-tos/token/introduction',
+                },
+                {
+                  type: 'doc',
+                  label: 'Create a Foundry',
+                  id: 'how-tos/token/create-foundry',
+                },
+                {
+                  type: 'doc',
+                  label: 'Mint a Native Token',
+                  id: 'how-tos/token/mint-token',
+                },
+                {
+                  type: 'doc',
+                  label: 'Register Token as ERC20',
+                  id: 'how-tos/token/register-token',
+                },
+              ],
+            },
+            {
               type: 'doc',
               label: 'Get Native Assets Balance',
               id: 'how-tos/get-balance',
-            }
+            },
           ],
         },
       ],
