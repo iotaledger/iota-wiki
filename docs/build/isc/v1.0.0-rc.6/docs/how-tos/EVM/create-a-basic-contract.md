@@ -6,6 +6,7 @@ tags:
   - EVM
   - Solidity
   - how to
+  - basic contract
 ---
 
 # Solidity Smart Contract Example
@@ -15,25 +16,37 @@ Solidity smart contracts on any other network. Most smart contracts will work di
 a rough indication of what a simple Solidity smart contract looks like, see the example below:
 
 ```solidity
+// SPDX-License-Identifier: MIT
 pragma solidity ^0.8.6;
-// No SafeMath needed for Solidity 0.8+
 
 contract Counter {
+    uint private count;
 
-    uint256 private _count;
-
-    function current() public view returns (uint256) {
-        return _count;
+    constructor() {
+        count = 0;
     }
 
     function increment() public {
-        _count += 1;
+        count += 1;
     }
 
     function decrement() public {
-        _count -= 1;
+        require(count > 0, "Count is already zero");
+        count -= 1;
+    }
+
+    function getCount() public view returns (uint) {
+        return count;
     }
 }
+
 ```
+
+This contract simply updates a `count` variable. It has
+three [entry points](../../explanations/smart-contract-anatomy.md#entry-points):
+
+* `increment` and `decrement`: Two full entry points that can alter
+  the [state](../../explanations/smart-contract-anatomy.md#state), i.e. the `count variable`. 
+* `getCount`: A view only entry point, which simply renders the current `count` state.
 
 For more information, please visit the [official Solidity documentation](https://docs.soliditylang.org/).
