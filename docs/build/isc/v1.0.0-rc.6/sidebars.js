@@ -159,6 +159,7 @@ module.exports = {
             {
               type: 'category',
               label: 'Token',
+              link: { type: 'doc', id: 'how-tos/token/introduction' },
               items: [
                 {
                   type: 'doc',
