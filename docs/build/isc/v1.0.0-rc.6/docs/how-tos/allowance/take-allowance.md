@@ -10,21 +10,25 @@ tags:
 
 # Take allowed Funds
 
-After having [allowed](./allow.md) native assets you can take the ones you need.
+After having [allowed](./allow.md) native assets, you can take the ones you need.
 
 ## Example Code
 
-1. We will take the NFT which we allowed in the [allow](./allow.md) how-to.
-2. We need to create the ISCAssets with the NFTID again
+The following example will take the NFT which was allowed in the [allow how-to guide](./allow.md).
+
+First, you need to recreate the `ISCAssets` with the NFTID.
+
 ```solidity
-    NFTID[] memory nftIDs = new NFTID[](1);
-    nftIDs[0] = NFTID.wrap(_allowanceNFTID);
-    ISCAssets memory assets;
-    assets.nfts = nftIDs;
+NFTID[] memory nftIDs = new NFTID[](1);
+nftIDs[0] = NFTID.wrap(_allowanceNFTID);
+ISCAssets memory assets;
+assets.nfts = nftIDs;
 ```
-3. After that we can call `takeAllowedFunds()` to take the allowance of the specified address/contract
+
+After that, you can call `takeAllowedFunds()` to take the allowance of the specified address/contract
+ 
 ```solidity
-    ISC.sandbox.takeAllowedFunds(_address, NFTID);
+ISC.sandbox.takeAllowedFunds(_address, NFTID);
 ```
 
 ## Full Example Code

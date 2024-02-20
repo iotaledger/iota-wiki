@@ -12,27 +12,39 @@ tags:
 
 ## Example Code
 
-There are multiple ways to check allowance.
-1. With `getAllowanceFrom()` you get the funds currently allowed by the given address to the caller
+There are multiple ways to check for an allowance.
+
+### `getAllowanceFrom()`
+
+`getAllowanceFrom()` fetches the funds currently allowed by the given address to the caller:
+
 ```soliditiy
-    function getAllowanceFrom(address _address) public {
-        ISCAssets assets = ISC.sandbox.getAllowanceFrom(_address);
-        emit AllowanceFrom(assets)
-    }
+function getAllowanceFrom(address _address) public {
+    ISCAssets assets = ISC.sandbox.getAllowanceFrom(_address);
+    emit AllowanceFrom(assets)
+}
 ```
-2. With `getAllowanceTo()` you get the funds currently allowed by the caller to the given address
+
+### `getAllowanceTo()`
+
+`getAllowanceTo()` fetches the funds currently allowed by the caller to the given address:
+
 ```soliditiy
-    function getAllowanceTo(address _target) public {
-        ISCAssets assets = ISC.sandbox.getAllowanceTo(_target);
-        emit AllowanceTo(assets)
-    }
+function getAllowanceTo(address _target) public {
+    ISCAssets assets = ISC.sandbox.getAllowanceTo(_target);
+    emit AllowanceTo(assets)
+}
 ```
-3. With `getAllowance()` you get the funds currently allowed between the given addresses
+
+### `getAllowance()`
+
+`getAllowance()` gets the funds currently allowed between the given addresses:
+
 ```soliditiy
-    function getAllowance(address _from, address _to) public {
-        ISCAssets assets = ISC.sandbox.getAllowance(_from, _to);
-        emit Allowance(assets)
-    }
+function getAllowance(address _from, address _to) public {
+    ISCAssets assets = ISC.sandbox.getAllowance(_from, _to);
+    emit Allowance(assets)
+}
 ```
 
 ## Full Example Code
