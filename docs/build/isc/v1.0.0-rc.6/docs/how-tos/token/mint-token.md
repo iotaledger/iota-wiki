@@ -14,14 +14,15 @@ import Payable from '../../_admonitions/_payable.md';
 
 # Mint Native Tokens
 
-To mint tokens from a foundry, you first need to be aware that only the foundry owner can mint token so you might execute that function 
-in the same contract as [creating](./create-foundry.md) the foundry. You can then call the `ISC.accounts.mintNativeTokens` function.
+To mint tokens from a [foundry](/tips/tips/TIP-0018/#foundry-output), you first need to be aware that only the foundry owner can mint token,
+so you should execute the `ISC.accounts.mintNativeTokens` function in the same contract that [created the foundry](./create-foundry.md).
 
 ## Example Code
 
 <Ownership/>
 
-1. First we check if the payed amount to the contract is the same as the [storage deposit](/learn/protocols/stardust/core-concepts/storage-deposit) we want to allow and set the allowance
+1. Check if the amount paid to the contract is the same as the required [storage deposit](/learn/protocols/stardust/core-concepts/storage-deposit)
+   and set the allowance.
 
 ```solidity
 require(msg.value == _storageDeposit*(10**12), "Please send exact funds to pay for storage deposit");
@@ -32,6 +33,7 @@ allowance.baseTokens = _storageDeposit;
 <Payable/>
 
 2. Mint the native token specifying the foundry serial number, the amount to mint and the allowance.
+ 
 ```solidity
 ISC.accounts.mintNativeTokens(_foundrySN, _amount, allowance);
 ```

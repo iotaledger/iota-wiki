@@ -158,16 +158,16 @@ module.exports = {
             },
             {
               type: 'category',
-              label: 'Token',
+              label: 'Tokens',
               items: [
                 {
                   type: 'doc',
-                  label: 'Create Foundry',
+                  label: 'Create a Foundry',
                   id: 'how-tos/token/create-foundry',
                 },
                 {
                   type: 'doc',
-                  label: 'Mint Token',
+                  label: 'Mint a Native Token',
                   id: 'how-tos/token/mint-token',
                 },
               ],
