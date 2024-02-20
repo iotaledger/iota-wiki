@@ -6,6 +6,10 @@ tags:
   - EVM
   - how-to
 ---
+
+import Ownership from '../../_admonitions/_ownership.md';
+import Payable from '../../_admonitions/_payable.md';
+
 # Create a Foundry
 ## About Foundries
 
@@ -15,13 +19,7 @@ This guide will show you how to create an L1 foundry using a L2 smart contract.
 
 ## Example Code
 
-:::info Ownership
-
-You might want to look into making the function ownable with, for example,
-[OpenZeppelin](https://docs.openzeppelin.com/contracts/5.x/access-control#ownership-and-ownable)
-so only owners of the contract can call certain functionalities of your contract.
-
-:::
+<Ownership/>
 
 1. Check if the amount paid to the contract is the same as the required [storage deposit](/learn/protocols/stardust/core-concepts/storage-deposit) and set the allowance.
 
@@ -31,12 +29,7 @@ so only owners of the contract can call certain functionalities of your contract
         allowance.baseTokens = _storageDeposit;
 ```
 
-:::info Payable
-
-Instead of making the function payable, you could let the contract pay for the storage deposit. 
-If so, you will need to change the `require` statement to check if the contract's balance has enough funds.
-
-:::
+<Payable/>
 
 2. Define the `NativeTokenScheme`:
 

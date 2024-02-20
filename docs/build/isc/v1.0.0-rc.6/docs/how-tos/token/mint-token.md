@@ -9,6 +9,9 @@ tags:
   - mint
 ---
 
+import Ownership from '../../_admonitions/_ownership.md';
+import Payable from '../../_admonitions/_payable.md';
+
 # Mint Native Tokens
 
 To mint tokens from a foundry, you first need to be aware that only the foundry owner can mint token so you might execute that function 
@@ -16,13 +19,7 @@ in the same contract as [creating](./create-foundry.md) the foundry. You can the
 
 ## Example Code
 
-:::info Ownership
-
-You might want to look into making the function ownable with, for example,
-[OpenZeppelin](https://docs.openzeppelin.com/contracts/5.x/access-control#ownership-and-ownable)
-so only owners of the contract can call certain functionalities of your contract.
-
-:::
+<Ownership/>
 
 1. First we check if the payed amount to the contract is the same as the [storage deposit](/learn/protocols/stardust/core-concepts/storage-deposit) we want to allow and set the allowance
 
@@ -32,12 +29,7 @@ so only owners of the contract can call certain functionalities of your contract
         allowance.baseTokens = _storageDeposit;
 ```
 
-:::info Payable
-
-Instead of making the function payable, you could let the contract pay for the storage deposit. 
-If so, you will need to change the `require` statement to check if the contract's balance has enough funds.
-
-:::
+<Payable/>
 
 2. Mint the native token specifying the foundry serial number, the amount to mint and the allowance.
 ```solidity
