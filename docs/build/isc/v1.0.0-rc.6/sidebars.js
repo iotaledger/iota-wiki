@@ -122,6 +122,11 @@ module.exports = {
             },
             {
               type: 'doc',
+              label: 'Test Smart Contracts',
+              id: 'how-tos/EVM/test-smart-contracts',
+            },
+            {
+              type: 'doc',
               label: 'Send Funds from L1 to L2',
               id: 'how-tos/EVM/send-funds-from-L1-to-L2',
             },
