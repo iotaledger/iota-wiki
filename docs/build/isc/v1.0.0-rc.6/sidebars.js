@@ -167,14 +167,14 @@ module.exports = {
                 },
                 {
                   type: 'doc',
-                  label: 'Register Token as ERC20',
-                  id: 'how-tos/native-token/register-erc20',
-                }
-                {
-                  type: 'doc',
                   label: 'Mint Token',
                   id: 'how-tos/native-token/mint-token',
-                }
+                },
+                {
+                  type: 'doc',
+                  label: 'Register Token as ERC20',
+                  id: 'how-tos/native-token/register-erc20',
+                },
               ]
             },
           ],
