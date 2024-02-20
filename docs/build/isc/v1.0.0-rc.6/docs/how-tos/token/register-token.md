@@ -6,9 +6,7 @@ tags:
   - EVM
   - how-to
 ---
-
-import Ownership from '../../_admonitions/_ownership.md';
-import Payable from '../../_admonitions/_payable.md';
+import ExampleCodeIntro from '../../_partials/how-tos/token/_example_code_intro.md';
 
 # Register Tokens
 
@@ -16,18 +14,8 @@ To properly use your native tokens, you should register them as ERC20 using the 
 
 ## Example Code
 
-<Ownership/>
+<ExampleCodeIntro/>
 
-1. Check if the amount paid to the contract is the same as the required [storage deposit](/learn/protocols/stardust/core-concepts/storage-deposit)
-   and set the allowance.
-
-```solidity
-require(msg.value == _storageDeposit*(10**12), "Please send exact funds to pay for storage deposit");
-ISCAssets memory allowance;
-allowance.baseTokens = _storageDeposit;
-```
-
-<Payable/>
 
 2. Register the native tokens specifying:
 * the foundry serial number
