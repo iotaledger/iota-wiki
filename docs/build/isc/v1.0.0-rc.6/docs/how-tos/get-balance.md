@@ -20,7 +20,7 @@ Once you have your L1 assets on L2, you might want to check their balance. This 
 ISCAgentID memory agentID = ISC.sandbox.getSenderAccount();
 ```
 
-2. To get the base token balance you can call `getL2BalanceBaseTokens` with the `agentID`.
+2. To get the base token balance, you can call `getL2BalanceBaseTokens` using the `agentID`.
 ```solidity
 uint64 baseBalance = ISC.accounts.getL2BalanceBaseTokens(agentID);
 ```
