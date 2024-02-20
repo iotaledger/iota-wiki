@@ -169,8 +169,8 @@ module.exports = {
                   type: 'doc',
                   label: 'Mint Token',
                   id: 'how-tos/token/mint-token',
-                }
-              ]
+                },
+              ],
             },
           ],
         },
