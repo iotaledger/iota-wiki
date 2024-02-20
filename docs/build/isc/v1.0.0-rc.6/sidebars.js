@@ -158,22 +158,22 @@ module.exports = {
             },
             {
               type: 'category',
-              label: 'Core Contracts',
+              label: 'Token',
               items: [
                 {
                   type: 'doc',
                   label: 'Create Foundry',
-                  id: 'how-tos/native-token/create-foundry',
+                  id: 'how-tos/token/create-foundry',
                 },
                 {
                   type: 'doc',
                   label: 'Mint Token',
-                  id: 'how-tos/native-token/mint-token',
+                  id: 'how-tos/token/mint-token',
                 },
                 {
                   type: 'doc',
                   label: 'Register Token as ERC20',
-                  id: 'how-tos/native-token/register-erc20',
+                  id: 'how-tos/token/register-token',
                 },
               ]
             },
