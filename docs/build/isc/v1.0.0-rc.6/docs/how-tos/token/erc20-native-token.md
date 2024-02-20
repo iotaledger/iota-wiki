@@ -16,25 +16,25 @@ Once you [registered your native token as ERC20](./erc20-native-token.md) you ca
 
 1. Get your `ERC20NativeTokens` instance (In this case we will use `erc20NativeTokensAddress` and the Foundry serial number to get the contract address)
 ```solidity
-        ERC20NativeTokens token = ERC20NativeTokens(
-            ISC.sandbox.erc20NativeTokensAddress(_foundrySN)
-        );
+ERC20NativeTokens token = ERC20NativeTokens(
+    ISC.sandbox.erc20NativeTokensAddress(_foundrySN)
+);
 ```
 
 * `nativeTokenID` will give you the native token ID of the ERC20 token
 ```solidity
-        NativeTokenID memory id =token.nativeTokenID();
+NativeTokenID memory id =token.nativeTokenID();
 ```
 
 
 ### Full Example Code
 
 ```solidity
-    function nativeTokenID(uint32 _foundrySN) public view returns (bytes memory) {
-        ERC20NativeTokens token = ERC20NativeTokens(
-            ISC.sandbox.erc20NativeTokensAddress(_foundrySN)
-        );
-        NativeTokenID memory id =token.nativeTokenID();
-        return id.data;
-    }
+function nativeTokenID(uint32 _foundrySN) public view returns (bytes memory) {
+    ERC20NativeTokens token = ERC20NativeTokens(
+        ISC.sandbox.erc20NativeTokensAddress(_foundrySN)
+    );
+    NativeTokenID memory id =token.nativeTokenID();
+    return id.data;
+}
 ```
