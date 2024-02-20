@@ -160,7 +160,7 @@ module.exports = {
               type: 'doc',
               label: 'Create Foundry',
               id: 'how-tos/create-foundry',
-            }
+            },
           ],
         },
       ],
