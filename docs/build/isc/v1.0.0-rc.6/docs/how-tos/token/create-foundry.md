@@ -50,7 +50,7 @@ You might want to look into making the function ownable with for example [OpenZe
 3. Create the foundry by calling the `ISC.accounts.foundryCreateNew(nativeTokenScheme, allowance)` function:
 
 ```solidity
-        uint foundrySN = ISC.accounts.foundryCreateNew(nativeTokenScheme, allowance);
+        uint32 foundrySN = ISC.accounts.foundryCreateNew(nativeTokenScheme, allowance);
 ```
 
 ### Full Example Code 
@@ -63,7 +63,7 @@ pragma solidity ^0.8.0;
 import "@iota/iscmagic/ISC.sol";
 
 contract CreateFoundry {
-    event CreatedFoundry(uint foundrySN);
+    event CreatedFoundry(uint32 foundrySN);
 
     function createFoundry(uint _mintedTokens, uint _meltedTokens, uint _maximumSupply, uint64 _storageDeposit) public payable {
         require(msg.value == _storageDeposit*(10**12), "Please send exact funds to pay for storage deposit");
@@ -74,7 +74,7 @@ contract CreateFoundry {
             meltedTokens: _meltedTokens,
             maximumSupply: _maximumSupply
         });
-        uint foundrySN = ISC.accounts.foundryCreateNew(nativeTokenScheme, allowance);
+        uint32 foundrySN = ISC.accounts.foundryCreateNew(nativeTokenScheme, allowance);
         emit CreatedFoundry(foundrySN);
     }
 }
