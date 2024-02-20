@@ -6,9 +6,7 @@ tags:
   - EVM
   - how-to
 ---
-
-import Ownership from '../../_admonitions/_ownership.md';
-import Payable from '../../_admonitions/_payable.md';
+import ExampleCodeIntro from '../../_partials/how-tos/token/_example_code_intro.md';
 
 # Create a Foundry
 ## About Foundries
@@ -19,17 +17,7 @@ This guide will show you how to create an L1 foundry using a L2 smart contract.
 
 ## Example Code
 
-<Ownership/>
-
-1. Check if the amount paid to the contract is the same as the required [storage deposit](/learn/protocols/stardust/core-concepts/storage-deposit) and set the allowance.
-
-```solidity
-        require(msg.value == _storageDeposit*(10**12), "Please send exact funds to pay for storage deposit");
-        ISCAssets memory allowance;
-        allowance.baseTokens = _storageDeposit;
-```
-
-<Payable/>
+<ExampleCodeIntro/>
 
 2. Define the `NativeTokenScheme`:
 
