@@ -6,14 +6,22 @@ tags:
   - EVM
   - how-to
 ---
+
+import Ownership from '../../_admonitions/_ownership.md';
+import Payable from '../../_admonitions/_payable.md';
+
 # Create a Foundry
 ## About Foundries
 
-The Stardust update allows you to create your own native tokens. Native tokens are minted by a [Foundry](/tips/tips/TIP-0018/#foundry-output). The Foundry allows you to specify a maximum supply once and change the circulating supply. This how-to will explain how to create an L1 foundry from L2.
+The Stardust update allows you to create your own native tokens. Native tokens are minted by a [Foundry](/tips/tips/TIP-0018/#foundry-output). 
+The Foundry allows you to specify your native token's maximum supply **once** and change the circulating supply. 
+This guide will show you how to create an L1 foundry using a L2 smart contract.
 
 ## Example Code
 
-1. First we check if the payed amount to the contract is the same as the storage deposit we want to allow and set the allowance
+<Ownership/>
+
+1. Check if the amount paid to the contract is the same as the required [storage deposit](/learn/protocols/stardust/core-concepts/storage-deposit) and set the allowance.
 
 ```solidity
         require(msg.value == _storageDeposit*(10**12), "Please send exact funds to pay for storage deposit");
@@ -21,21 +29,7 @@ The Stardust update allows you to create your own native tokens. Native tokens a
         allowance.baseTokens = _storageDeposit;
 ```
 
-:::info Storage Deposit
-
-In IOTA every output on L1 needs a storage deposit, you can read more about it [here](/learn/protocols/stardust/core-concepts/storage-deposit).
-
-:::
-:::info  Payable
-
-Instead of making the function payable we could also let the contract pay for the storage deposit. Then we would need to change the require to check the contract balance for enough funds.
-
-:::
-:::info Ownership
-
-You might want to look into making the function ownable with for example [OpenZeppelin](https://docs.openzeppelin.com/contracts/5.x/access-control#ownership-and-ownable) depending on your use-case so only owners of the contract can call certain functionality of your contract.
-
-:::
+<Payable/>
 
 2. Define the `NativeTokenScheme`:
 

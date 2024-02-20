@@ -176,7 +176,7 @@ module.exports = {
                   label: 'Register Token as ERC20',
                   id: 'how-tos/token/register-token',
                 },
-              ]
+              ],
             },
           ],
         },
