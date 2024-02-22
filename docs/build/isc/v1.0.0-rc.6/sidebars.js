@@ -166,6 +166,11 @@ module.exports = {
               label: 'Send Tokens to L1',
               id: 'how-tos/send-tokens-to-l1',
             },
+            {            
+              type: 'doc',
+              label: 'Get Randomness on L2',
+              id: 'how-tos/get-randomness-on-l2',
+            },
             {
               type: 'category',
               label: 'Token',
