@@ -91,13 +91,12 @@ module.exports = {
           label: 'Rust',
           type: 'doc',
           id: 'getting-started/rust',
-        },/*
-
+        },
         {
           label: 'Node.js',
           type: 'doc',
           id: 'getting-started/nodejs',
-        },*/
+        },
         {
           label: 'Python',
           type: 'doc',
