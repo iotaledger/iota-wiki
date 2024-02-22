@@ -97,12 +97,12 @@ module.exports = {
           label: 'Node.js',
           type: 'doc',
           id: 'getting-started/nodejs',
-        },
+        },*/
         {
           label: 'Python',
           type: 'doc',
           id: 'getting-started/python',
-        },
+        },/*
         {
           label: 'Wasm',
           type: 'doc',
