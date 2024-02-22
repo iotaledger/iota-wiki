@@ -29,14 +29,6 @@ Ethereum tools think they are interfacing with an actual Ethereum node, but some
 
 ## Properties and Limitations
 
-:::warning
-
-There is a difference in the decimal precision of ether (18 decimal places) to MIOTA/SMR(6 decimal places). Because of this, when sending native tokens in the EVM, which are expressed in wei (ether = 10<sup>18</sup>wei), the last 12 decimal places will be ignored.
-
-Example: 1,999,999,999,999,999,999 wei = 1.999,999 SMR/MIOTA
-
-:::
-
 Here are some of the most important properties and limitations of EVM support in IOTA Smart Contracts:
 
 ### Wrapped Calls to the JSON-RPC
