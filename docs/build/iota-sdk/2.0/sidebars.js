@@ -109,14 +109,10 @@ module.exports = {
         },
       ],
     },
-    /* {
+    {
       type: 'category',
       label: 'Explanations',
       items: [
-        {
-          type: 'doc',
-          id: 'explanations/accounts-and-addresses',
-        },
         {
           type: 'doc',
           id: 'explanations/testnet-and-test-tokens',
@@ -127,7 +123,7 @@ module.exports = {
       type: 'category',
       label: 'How To',
       items: [
-        'how-tos/introduction',
+        'how-tos/introduction' /*
         {
           type: 'category',
           label: 'Accounts and Addresses',
@@ -235,7 +231,7 @@ module.exports = {
             },
           ],
         },
-        'how-tos/exchange-guide',
+        'how-tos/exchange-guide',*/,
       ],
     },
     {
@@ -264,6 +260,6 @@ module.exports = {
       type: 'doc',
       id: 'contribute',
       label: 'Contribute',
-    },*/
+    },
   ],
 };
