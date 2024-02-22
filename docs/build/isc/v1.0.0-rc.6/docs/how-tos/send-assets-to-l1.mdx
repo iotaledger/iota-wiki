@@ -46,19 +46,19 @@ contract L1Assets {
 First, you will find out what assets this contract is allowed to take from the caller by calling the `ISC.sandbox.getAllowanceFrom()` function.
 
 ```solidity
-    ISCAssets memory allowance = ISC.sandbox.getAllowanceFrom(msg.sender);
+ISCAssets memory allowance = ISC.sandbox.getAllowanceFrom(msg.sender);
 ```
 
 Then you take the allowance, which will transfer the assets from the caller to the contract.
 
 ```solidity
-    ISC.sandbox.takeAllowedFunds(msg.sender, allowance);
+ISC.sandbox.takeAllowedFunds(msg.sender, allowance);
 ```
 
 Finally, you can send the assets to the specified L1 address. This will create an output to hold said assets. You can use additional options to add the [timelock](/learn/protocols/stardust/core-concepts/output-unlock-conditions/#timelock) and [expiration](/learn/protocols/stardust/core-concepts/output-unlock-conditions/#expiration) unlock conditions to the output.
 
 ```solidity
-    ISCSendMetadata memory metadata;
-    ISCSendOptions memory options;
-    ISC.sandbox.send(to, allowance, false, metadata, options);
+ISCSendMetadata memory metadata;
+ISCSendOptions memory options;
+ISC.sandbox.send(to, allowance, false, metadata, options);
 ```
