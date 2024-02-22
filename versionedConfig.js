@@ -7,6 +7,17 @@ exports.buildPluginsConfig = [
     subsection: 'build-layer-1',
     versions: [
       {
+        label: '2.0',
+        badges: ['experimental'],
+        //overriding default exclude array to include the python api's classes with _ at the beginning
+        //but still exclude any _admonitions
+        exclude: [
+          '**/*.test.{js,jsx,ts,tsx}',
+          '**/__tests__/**',
+          '**/_admonitions/_**',
+        ],
+      },
+      {
         label: '1.0',
         badges: ['IOTA', 'Shimmer'],
         //overriding default exclude array to include the python api's classes with _ at the beginning
