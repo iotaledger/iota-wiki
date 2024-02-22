@@ -16,7 +16,7 @@ you can take advantage of.
 
 ## Example Code
 
-### Get Your `ERC20NativeTokens` Instance
+### Get Your `nativeTokenID`
 
 You can use the `erc20NativeTokensAddress` function and the Foundry serial number to get the contract address:
  
