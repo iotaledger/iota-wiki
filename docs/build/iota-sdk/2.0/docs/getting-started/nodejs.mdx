@@ -14,8 +14,6 @@ tags:
 ---
 
 import WarningPasswordStorage from '../_admonitions/_warning-password-storage.md';
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
 import EditDotEnv from '../_admonitions/_edit_dot_env.md';
 
 # Getting Started with Node.js
@@ -77,41 +75,16 @@ cd iota-sdk/bindings/nodejs
 
 3. Install the necessary dependencies with either of the following commands:
 
-<Tabs groupId="nodePackageManager" queryString>
-<TabItem value="npm" label="npm">
-
-```sh
+```bash npm2yarn
 npm install
 ```
 
-</TabItem>
-<TabItem value="yarn" label="Yarn">
-
-```shell
-yarn install
-```
-
-</TabItem>
-</Tabs>
-
 4. Build the SDK:
 
-<Tabs groupId="nodePackageManager" queryString>
-<TabItem value="npm" label="npm">
 
-```shell
+```bash npm2yarn
 npm run build
 ```
-
-</TabItem>
-<TabItem value="yarn" label="Yarn">
-
-```shell
-yarn build
-```
-
-</TabItem>
-</Tabs>
 
 This command uses the [cargo-cp-artifact](https://github.com/neon-bindings/cargo-cp-artifact) utility to run the Rust
 build and copy the built library into `./build/Release/index.node`.

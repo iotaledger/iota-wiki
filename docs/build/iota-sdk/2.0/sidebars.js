@@ -101,15 +101,15 @@ module.exports = {
           label: 'Python',
           type: 'doc',
           id: 'getting-started/python',
-        },/*
+        },
         {
           label: 'Wasm',
           type: 'doc',
           id: 'getting-started/wasm',
-        },*/
+        },
       ],
     },
-   /* {
+    /* {
       type: 'category',
       label: 'Explanations',
       items: [
