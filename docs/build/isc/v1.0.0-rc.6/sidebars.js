@@ -113,7 +113,7 @@ module.exports = {
         {
           type: 'category',
           label: 'EVM',
-          collapsed: false,
+          collapsed: true,
           items: [
             {
               type: 'doc',
@@ -157,27 +157,6 @@ module.exports = {
           label: 'Use the Magic Contract',
           items: [
             {
-              type: 'category',
-              label: 'Allowance',
-              items: [
-                {
-                  type: 'doc',
-                  label: 'Allow',
-                  id: 'how-tos/allowance/allow',
-                },
-                {
-                  type: 'doc',
-                  label: 'Get Allowance',
-                  id: 'how-tos/allowance/get-allowance',
-                },
-                {
-                  type: 'doc',
-                  label: 'Take Allowance',
-                  id: 'how-tos/allowance/take-allowance',
-                },
-              ],
-            },
-            {
               type: 'doc',
               label: 'Use the Magic Contract',
               id: 'how-tos/magic',
@@ -186,6 +165,11 @@ module.exports = {
               type: 'doc',
               label: 'Send Tokens to L1',
               id: 'how-tos/send-tokens-to-l1',
+            },
+            {            
+              type: 'doc',
+              label: 'Get Randomness on L2',
+              id: 'how-tos/get-randomness-on-l2',
             },
             {
               type: 'category',
@@ -211,12 +195,38 @@ module.exports = {
                   label: 'Register Token as ERC20',
                   id: 'how-tos/token/register-token',
                 },
+                {
+                  type: 'doc',
+                  label: 'Custom ERC20 Functions',
+                  id: 'how-tos/token/erc20-native-token',
+                }
+              ],
+            },
+            {
+              type: 'category',
+              label: 'Allowance',
+              items: [
+                {
+                  type: 'doc',
+                  label: 'Allow',
+                  id: 'how-tos/allowance/allow',
+                },
+                {
+                  type: 'doc',
+                  label: 'Get Allowance',
+                  id: 'how-tos/allowance/get-allowance',
+                },
+                {
+                  type: 'doc',
+                  label: 'Take Allowance',
+                  id: 'how-tos/allowance/take-allowance',
+                },
               ],
             },
             {
               type: 'doc',
-              label: 'Get Randomness on L2',
-              id: 'how-tos/get-randomness-on-l2',
+              label: 'Get Native Assets Balance',
+              id: 'how-tos/get-balance',
             },
           ],
         },
