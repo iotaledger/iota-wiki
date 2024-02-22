@@ -1,27 +1,24 @@
 ---
-description: The ISC Magic Contract allows EVM contracts to access ISC functionality.
+description: You can use the ISC Magic Contract in EVM contracts to access ISC functionality, such as randomness.
 image: /img/logo/WASP_logo_dark.png
 tags:
-  - configure
-  - using
+  - magic contract
+  - randomness
   - EVM
-  - magic
   - Ethereum
   - Solidity
-  - metamask
-  - JSON
-  - RPC
+  - ISC
 ---
 
 # Get Randomness on L2
 
 ISC introduces a feature not found on many other smart contract protocols: randomness.
 
-In the ISC protocol, for each state update each validator proposes a batch of smart contract requests they would like to process next. They commit to their proposals with a signature, after which a common subset of requests is found and a combined signature is produced.
+In the ISC protocol, for each state update, each validator proposes a batch of smart contract requests that they would like to process next. They commit to their proposals with a signature, after which a common subset of requests is found, and a combined signature is produced.
 
 This combined signature is unpredictable, and not only serves as protection against MEV by pseudo-randomly ordering requests, but also provides a source of verifiable entropy for randomness on L2.
 
-This guide will show ways you can use this entropy to generate random values in your contracts.
+This guide will show you how you can use this entropy to generate random values in your contracts.
 
 :::info A note about entropy
 
@@ -91,7 +88,7 @@ function getNonce() internal returns (bytes32) {
 }
 ```
 
-### Generating integers
+### Generating Integers
 
 To then generate a random integer, you can take the entropy and a unique nonce and hash them together:
 
