@@ -213,6 +213,11 @@ module.exports = {
                 },
               ],
             },
+            {
+              type: 'doc',
+              label: 'Get Native Assets Balance',
+              id: 'how-tos/get-balance',
+            },
           ],
         },
       ],
