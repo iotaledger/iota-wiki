@@ -27,14 +27,38 @@ jobs:
         if: always() && steps.check-links.outcome == 'failure'
         with:
           script: |
+            const title: 'Fix broken links';
+            const previousIssues = await github.rest.issues.listForRepo({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              state: 'open',
+              creator: context.actor,
+            });
+            for (const issue in previousIssues) {
+              if (issue.title !== title) continue;
+
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: issue.number,
+                body: 'Closing because of new report available.'
+              });
+
+              await octokit.rest.issues.update({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: issue.number,
+                state: "closed",
+              });
+            }
             const fs = require('fs');
             const input = fs.readFileSync('stderr.txt');
             const data = JSON.parse(input);
             const urls = data.map(item => item.url);
             const output = urls.map(url => `- [ ] ${url}`).join('\n');
-            github.rest.issues.create({
+            await github.rest.issues.create({
               owner: context.repo.owner,
               repo: context.repo.repo,
-              title: 'Fix broken links',
+              title,
               body: `The following links are possibly broken:\n${output}`,
             });
