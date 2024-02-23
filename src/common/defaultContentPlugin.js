@@ -11,6 +11,7 @@ module.exports = async () => {
       require('remark-code-import'),
       require('remark-import-partial'),
       require('remark-remove-comments'),
+      [require('@docusaurus/remark-plugin-npm2yarn'), { sync: true }],
     ],
     rehypePlugins: [
       require('rehype-katex'),
