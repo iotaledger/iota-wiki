@@ -166,7 +166,7 @@ module.exports = {
               label: 'Send Assets to L1',
               id: 'how-tos/send-assets-to-l1',
             },
-            {            
+            {
               type: 'doc',
               label: 'Get Randomness on L2',
               id: 'how-tos/get-randomness-on-l2',
@@ -199,7 +199,7 @@ module.exports = {
                   type: 'doc',
                   label: 'Custom ERC20 Functions',
                   id: 'how-tos/token/erc20-native-token',
-                }
+                },
               ],
             },
             {
