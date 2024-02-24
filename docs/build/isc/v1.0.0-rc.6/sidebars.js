@@ -163,8 +163,8 @@ module.exports = {
             },
             {
               type: 'doc',
-              label: 'Send Tokens to L1',
-              id: 'how-tos/send-tokens-to-l1',
+              label: 'Send Assets to L1',
+              id: 'how-tos/send-assets-to-l1',
             },
             {            
               type: 'doc',
