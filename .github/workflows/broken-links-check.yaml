@@ -27,14 +27,29 @@ jobs:
         if: always() && steps.check-links.outcome == 'failure'
         with:
           script: |
-            const fs = require('fs');
-            const input = fs.readFileSync('stderr.txt');
-            const data = JSON.parse(input);
-            const urls = data.map(item => item.url);
-            const output = urls.map(url => `- [ ] ${url}`).join('\n');
-            github.rest.issues.create({
+            const title: 'Fix broken links';
+
+            const previousIssues = await github.rest.issues.listForRepo({
               owner: context.repo.owner,
               repo: context.repo.repo,
-              title: 'Fix broken links',
-              body: `The following links are possibly broken:\n${output}`,
+              state: 'open',
+              creator: context.actor,
             });
+
+            const previousIssueExists = previousIssues.some((issue) => {
+              issue.title === title;
+            })
+
+            if !previousIssueExists {
+              const fs = require('fs');
+              const input = fs.readFileSync('stderr.txt');
+              const data = JSON.parse(input);
+              const urls = data.map(item => item.url);
+              const output = urls.map(url => `- [ ] ${url}`).join('\n');
+              await github.rest.issues.create({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                title,
+                body: `The following links are possibly broken:\n${output}`,
+              });
+            }
