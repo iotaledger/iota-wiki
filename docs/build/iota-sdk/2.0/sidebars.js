@@ -18,7 +18,7 @@ function directoryExists(path) {
     return false;
   }
 }
-
+//
 var python_references = {};
 if (directoryExists(__dirname + '/docs/references/python')) {
   python_references = {
@@ -123,21 +123,19 @@ module.exports = {
       type: 'category',
       label: 'How To',
       items: [
-        'how-tos/introduction' /*
+        'how-tos/introduction',
+        {
+          type: 'category',
+          label: 'Wallets',
+          items:[
+              'how-tos/wallet/create-wallet'
+          ]
+        },/*
         {
           type: 'category',
           label: 'Accounts and Addresses',
           items: [
-            'how-tos/accounts-and-addresses/create-mnemonic',
-            'how-tos/accounts-and-addresses/create-account',
-            'how-tos/accounts-and-addresses/list-accounts',
-            'how-tos/accounts-and-addresses/check-balance',
-            'how-tos/accounts-and-addresses/create-address',
-            'how-tos/accounts-and-addresses/list-addresses',
-            'how-tos/accounts-and-addresses/list-transactions',
-            'how-tos/accounts-and-addresses/list-outputs',
-            'how-tos/accounts-and-addresses/consolidate-outputs',
-            'how-tos/accounts-and-addresses/listen-to-events',
+
           ],
         },
         {
@@ -220,7 +218,7 @@ module.exports = {
             'how-tos/nfts/send-nft',
             'how-tos/nfts/burn-nft',
           ],
-        },
+        },*/
         {
           type: 'category',
           label: 'Client',
@@ -230,7 +228,7 @@ module.exports = {
               dirName: 'how-tos/client',
             },
           ],
-        },
+        }/*,
         'how-tos/exchange-guide',*/,
       ],
     },
