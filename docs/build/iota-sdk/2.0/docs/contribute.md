@@ -43,7 +43,7 @@ the [contribution guidelines](https://github.com/iotaledger/iota-wiki/blob/main/
 
 Helping others is a crucial aspect of any open source ecosystem. By sharing your knowledge with the community, you can
 provide immense value and potentially inspire others to learn and contribute. Join the ongoing discussions in the
-`#libraries` channel on [Discord](https://discord.iota.org).
+`#iota-sdk` channel on [Discord](https://discord.iota.org).
 
 Your contributions play a vital role in shaping and improving the project. We appreciate your interest and look forward
 to your valuable contributions!

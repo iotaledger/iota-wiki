@@ -66,6 +66,6 @@ are further secured with a password.
 
 ## Join the Discussion
 
-If you want to get involved in discussions about this library, or you're looking for support, go to the `#libraries`
+If you want to get involved in discussions about this library, or you're looking for support, go to the `#iota-sdk`
 channel
 on [Discord](https://discord.iota.org).
