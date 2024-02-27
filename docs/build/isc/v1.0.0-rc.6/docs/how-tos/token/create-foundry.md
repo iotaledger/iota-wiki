@@ -19,20 +19,24 @@ This guide will show you how to create an L1 foundry using a L2 smart contract.
 
 <ExampleCodeIntro/>
 
-2. Define the `NativeTokenScheme`:
+### 2. Define the Token Scheme
+
+Define the `NativeTokenScheme` by specifying its `mintedTokens`, `meltedTokens` and `maximumSupply`:
 
 ```solidity
-        NativeTokenScheme memory nativeTokenScheme = NativeTokenScheme({
-            mintedTokens: _mintedTokens,
-            meltedTokens: _meltedTokens,
-            maximumSupply: _maximumSupply
-        });
+NativeTokenScheme memory nativeTokenScheme = NativeTokenScheme({
+    mintedTokens: _mintedTokens,
+    meltedTokens: _meltedTokens,
+    maximumSupply: _maximumSupply
+});
 ```
 
-3. Create the foundry by calling the `ISC.accounts.foundryCreateNew(nativeTokenScheme, allowance)` function:
+### 3. Create the Foundry
+
+Create the foundry by calling the `ISC.accounts.foundryCreateNew(nativeTokenScheme, allowance)` function:
 
 ```solidity
-        uint32 foundrySN = ISC.accounts.foundryCreateNew(nativeTokenScheme, allowance);
+uint32 foundrySN = ISC.accounts.foundryCreateNew(nativeTokenScheme, allowance);
 ```
 
 ### Full Example Code 

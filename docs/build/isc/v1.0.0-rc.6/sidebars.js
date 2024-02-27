@@ -69,11 +69,6 @@ module.exports = {
         },
         {
           type: 'doc',
-          label: 'Data Access Proxies',
-          id: 'explanations/proxies',
-        },
-        {
-          type: 'doc',
           label: 'State, Transitions and State Anchoring',
           id: 'explanations/states',
         },
@@ -111,41 +106,34 @@ module.exports = {
       items: [
         'how-tos/introduction',
         {
-          type: 'category',
-          label: 'EVM',
-          collapsed: true,
-          items: [
-            {
-              type: 'doc',
-              label: 'Test Smart Contracts',
-              id: 'how-tos/EVM/test-smart-contracts',
-            },
-            {
-              type: 'doc',
-              label: 'Send Funds from L1 to L2',
-              id: 'how-tos/EVM/send-funds-from-L1-to-L2',
-            },
-            {
-              type: 'doc',
-              label: 'Create a Basic Solidity Contract',
-              id: 'how-tos/EVM/create-a-basic-contract',
-            },
-            {
-              type: 'doc',
-              label: 'Deploy a Smart Contract',
-              id: 'how-tos/EVM/deploy-a-smart-contract',
-            },
-            {
-              type: 'doc',
-              label: 'Create Custom Tokens - ERC20',
-              id: 'how-tos/EVM/ERC20',
-            },
-            {
-              type: 'doc',
-              label: 'Create NFTs - ERC721',
-              id: 'how-tos/EVM/ERC721',
-            },
-          ],
+          type: 'doc',
+          label: 'Send Funds from L1 to L2',
+          id: 'how-tos/send-funds-from-L1-to-L2',
+        },
+        {
+          type: 'doc',
+          label: 'Create a Basic Contract',
+          id: 'how-tos/create-a-basic-contract',
+        },
+        {
+          type: 'doc',
+          label: 'Deploy a Smart Contract',
+          id: 'how-tos/deploy-a-smart-contract',
+        },
+        {
+          type: 'doc',
+          label: 'Create Custom Tokens - ERC20',
+          id: 'how-tos/ERC20',
+        },
+        {
+          type: 'doc',
+          label: 'Create NFTs - ERC721',
+          id: 'how-tos/ERC721',
+        },
+        {
+          type: 'doc',
+          label: 'Test Smart Contracts',
+          id: 'how-tos/test-smart-contracts',
         },
         {
           type: 'category',
@@ -361,6 +349,11 @@ module.exports = {
           type: 'doc',
           label: 'The Schema Tool',
           id: 'schema/introduction',
+        },
+        {
+          type: 'doc',
+          label: 'Data Access Proxies',
+          id: 'schema/proxies',
         },
         {
           type: 'category',

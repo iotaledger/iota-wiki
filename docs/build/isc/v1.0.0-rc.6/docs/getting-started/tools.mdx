@@ -19,8 +19,7 @@ tags:
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import {AddToMetaMaskButton, EVMNetworks} from '@theme/AddToMetaMaskButton';
-import DeployWithRemix from '../_admonitions/_deploy_with_remix.md';
-import DeployWithHardhat from '../_admonitions/_deploy_with_hardhat.md';
+import DeployAdmonition from '../_admonitions/_deploy_a_smart_contract.md';
 import { ChainId } from '@theme/ChainId';
 
 # Compatible Tools
@@ -97,7 +96,7 @@ the `Environment` dropdown.
 
 ![Select Injected Provider from the Environment dropdown](/img/evm/remix-injected-provider-metamask.png)
 
-<DeployWithRemix/>
+<DeployAdmonition/>
 
 Metamask will ask to connect to Remix, and once connected, it will set the `Environment` to `Injected Web3` with
 the "Custom (<ChainId url='https://json-rpc.evm.shimmer.network'/>) network" or "Custom (<ChainId url='https://json-rpc.evm.testnet.shimmer.network'/>) network".
@@ -144,7 +143,7 @@ networks: {
 </TabItem>
 </Tabs>
 
-<DeployWithHardhat/>
+<DeployAdmonition/>
 
 :::caution
 

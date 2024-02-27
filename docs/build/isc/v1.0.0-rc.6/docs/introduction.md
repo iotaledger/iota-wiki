@@ -74,5 +74,6 @@ for each request, with costs charged to your on-chain account.
 
 ## On-Ledger vs Off-Ledger Requests
 
-Requests can be on-ledger, that is, processed through 
-the Tangle, or off-ledger, directly sent to validators for faster processing.
+Requests can be [on-ledger](explanations/invocation.md#on-ledger-requests), that is, processed through 
+the Tangle, or [off-ledger](explanations/invocation.md#off-ledger-requests), directly sent to validators for faster 
+processing.

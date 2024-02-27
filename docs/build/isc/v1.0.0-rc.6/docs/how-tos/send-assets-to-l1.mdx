@@ -20,27 +20,6 @@ This guide will show you how to use the ISC sandbox interface to send assets fro
 
 Note that assets on L1 require a storage deposit; therefore, the number of base tokens sent to L1 should cover at least the storage deposit required to hold the assets on L1.
 
-## Example Code
-
-```solidity
-// SPDX-License-Identifier: MIT
-
-pragma solidity ^0.8.0;
-
-import "@iota/iscmagic/ISC.sol";
-
-contract L1Assets {
-  function withdraw(L1Address memory to) public {
-    ISCAssets memory allowance = ISC.sandbox.getAllowanceFrom(msg.sender);
-    ISC.sandbox.takeAllowedFunds(msg.sender, allowance);
-
-    ISCSendMetadata memory metadata;
-    ISCSendOptions memory options;
-    ISC.sandbox.send(to, allowance, false, metadata, options);
-  }
-}
-```
-
 ## Explanation
 
 First, you will find out what assets this contract is allowed to take from the caller by calling the `ISC.sandbox.getAllowanceFrom()` function.
@@ -61,4 +40,25 @@ Finally, you can send the assets to the specified L1 address. This will create a
 ISCSendMetadata memory metadata;
 ISCSendOptions memory options;
 ISC.sandbox.send(to, allowance, false, metadata, options);
+```
+
+## Full Example Code
+
+```solidity
+// SPDX-License-Identifier: MIT
+
+pragma solidity ^0.8.0;
+
+import "@iota/iscmagic/ISC.sol";
+
+contract L1Assets {
+  function withdraw(L1Address memory to) public {
+    ISCAssets memory allowance = ISC.sandbox.getAllowanceFrom(msg.sender);
+    ISC.sandbox.takeAllowedFunds(msg.sender, allowance);
+
+    ISCSendMetadata memory metadata;
+    ISCSendOptions memory options;
+    ISC.sandbox.send(to, allowance, false, metadata, options);
+  }
+}
 ```

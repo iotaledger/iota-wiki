@@ -16,6 +16,8 @@ After having [allowed](./allow.md) native assets, you can take the ones you need
 
 The following example will take the NFT which was allowed in the [allow how-to guide](./allow.md).
 
+### Create the `ISCAssets`
+
 First, you need to recreate the `ISCAssets` with the NFTID.
 
 ```solidity
@@ -24,6 +26,8 @@ nftIDs[0] = NFTID.wrap(_allowanceNFTID);
 ISCAssets memory assets;
 assets.nfts = nftIDs;
 ```
+
+### Call `takeAllowedFunds()`
 
 After that, you can call `takeAllowedFunds()` to take the allowance of the specified address/contract
  
