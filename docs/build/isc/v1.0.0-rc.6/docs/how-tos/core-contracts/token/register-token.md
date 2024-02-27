@@ -6,7 +6,7 @@ tags:
   - EVM
   - how-to
 ---
-import ExampleCodeIntro from '../../_partials/how-tos/token/_example_code_intro.md';
+import ExampleCodeIntro from '../../../_partials/how-tos/token/_example_code_intro.md';
 
 # Register Tokens
 

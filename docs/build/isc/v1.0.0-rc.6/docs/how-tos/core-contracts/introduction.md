@@ -15,14 +15,14 @@ tags:
 
 # The ISC Magic Contract
 
-[EVM and ISC are inherently very different platforms](../getting-started/compatibility.md).
+[EVM and ISC are inherently very different platforms](../../getting-started/compatibility.md).
 Some EVM-specific actions (e.g., manipulating Ethereum tokens) are disabled, and EVM contracts can access ISC-specific
-functionality through the \_[ISC Magic Contract](../reference/magic-contract.md)\_\_.
+functionality through the \_[ISC Magic Contract](../../reference/magic-contract.md)\_\_.
 
 The Magic contract is an EVM contract deployed by default on every ISC chain, in the EVM genesis block, at
 address `0x1074000000000000000000000000000000000000`.
 The implementation of the Magic contract is baked-in in
-the [`evm`](../reference/core-contracts/evm.md) [core contract](../reference/core-contracts/overview.md);
+the [`evm`](../../reference/core-contracts/evm.md) [core contract](../../reference/core-contracts/overview.md);
 i.e. it is not a pure-Solidity contract.
 
 The Magic contract has several methods, which are categorized into specialized
@@ -48,7 +48,7 @@ tokens and native tokens on L2.
 In the example below, `ISC.sandbox.getEntropy()` calls the
 [`getEntropy`](https://github.com/iotaledger/wasp/blob/develop/packages/vm/core/evm/iscmagic/ISCSandbox.sol#L20)
 method of the `ISCSandbox` interface, which, in turn,
-calls [ISC Sandbox's](../explanations/sandbox.md) `GetEntropy`.
+calls [ISC Sandbox's](../../explanations/sandbox.md) `GetEntropy`.
 
 ```solidity
 pragma solidity >=0.8.5;

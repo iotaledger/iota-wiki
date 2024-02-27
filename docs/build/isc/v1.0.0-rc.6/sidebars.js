@@ -99,7 +99,6 @@ module.exports = {
         },
       ],
     },
-
     {
       type: 'category',
       label: 'How To',
@@ -137,22 +136,49 @@ module.exports = {
         },
         {
           type: 'category',
-          label: 'Use the Magic Contract',
+          label: 'Interact with the Core Contracts',
           items: [
             {
               type: 'doc',
-              label: 'Use the Magic Contract',
-              id: 'how-tos/magic',
+              label: 'Introduction',
+              id: 'how-tos/core-contracts/introduction',
             },
             {
-              type: 'doc',
-              label: 'Send Assets to L1',
-              id: 'how-tos/send-assets-to-l1',
-            },
-            {
-              type: 'doc',
-              label: 'Get Randomness on L2',
-              id: 'how-tos/get-randomness-on-l2',
+              type: 'category',
+              label: 'Basics',
+              items: [
+                {
+                  type: 'doc',
+                  label: 'Get Native Assets Balance',
+                  id: 'how-tos/core-contracts/basics/get-balance',
+                },
+                {
+                  type: 'category',
+                  label: 'Allowance',
+                  items: [
+                    {
+                      type: 'doc',
+                      label: 'Allow',
+                      id: 'how-tos/core-contracts/basics/allowance/allow',
+                    },
+                    {
+                      type: 'doc',
+                      label: 'Get Allowance',
+                      id: 'how-tos/core-contracts/basics/allowance/get-allowance',
+                    },
+                    {
+                      type: 'doc',
+                      label: 'Take Allowance',
+                      id: 'how-tos/core-contracts/basics/allowance/take-allowance',
+                    },
+                  ],
+                },
+                {
+                  type: 'doc',
+                  label: 'Send Assets to L1',
+                  id: 'how-tos/core-contracts/basics/send-assets-to-l1',
+                },
+              ],
             },
             {
               type: 'category',
@@ -161,55 +187,34 @@ module.exports = {
                 {
                   label: 'Introduction',
                   type: 'doc',
-                  id: 'how-tos/token/introduction',
+                  id: 'how-tos/core-contracts/token/introduction',
                 },
                 {
                   type: 'doc',
                   label: 'Create a Foundry',
-                  id: 'how-tos/token/create-foundry',
+                  id: 'how-tos/core-contracts/token/create-foundry',
                 },
                 {
                   type: 'doc',
                   label: 'Mint a Native Token',
-                  id: 'how-tos/token/mint-token',
+                  id: 'how-tos/core-contracts/token/mint-token',
                 },
                 {
                   type: 'doc',
                   label: 'Register Token as ERC20',
-                  id: 'how-tos/token/register-token',
+                  id: 'how-tos/core-contracts/token/register-token',
                 },
                 {
                   type: 'doc',
                   label: 'Custom ERC20 Functions',
-                  id: 'how-tos/token/erc20-native-token',
-                },
-              ],
-            },
-            {
-              type: 'category',
-              label: 'Allowance',
-              items: [
-                {
-                  type: 'doc',
-                  label: 'Allow',
-                  id: 'how-tos/allowance/allow',
-                },
-                {
-                  type: 'doc',
-                  label: 'Get Allowance',
-                  id: 'how-tos/allowance/get-allowance',
-                },
-                {
-                  type: 'doc',
-                  label: 'Take Allowance',
-                  id: 'how-tos/allowance/take-allowance',
+                  id: 'how-tos/core-contracts/token/erc20-native-token',
                 },
               ],
             },
             {
               type: 'doc',
-              label: 'Get Native Assets Balance',
-              id: 'how-tos/get-balance',
+              label: 'Get Randomness on L2',
+              id: 'how-tos/core-contracts/get-randomness-on-l2',
             },
           ],
         },
