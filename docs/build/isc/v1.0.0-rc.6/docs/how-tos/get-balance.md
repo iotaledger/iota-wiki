@@ -7,13 +7,11 @@ tags:
   - EVM
   - how-to
 ---
-import LayerBalanceDiff from '../_admonitions/_layer_balance_diff.md';
 
 # Get Balance
 
 Once you have your L1 assets on L2, you might want to check their balance. This guide explains how to do so by calling the three functions `getL2BalanceBaseTokens`, `getL2BalanceNativeTokens`and `getL2NFTAmount` for the corresponding token types.
 
-<LayerBalanceDiff />
 
 ## Example Code
 
@@ -73,3 +71,4 @@ contract GetBalance {
     }
 }
 ```
+

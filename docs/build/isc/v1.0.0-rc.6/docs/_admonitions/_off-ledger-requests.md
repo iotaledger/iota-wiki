@@ -1,5 +1,5 @@
 :::note
 
-If you are using EVM, you will only need to use off-ledger requests for most of your contracts.
+You can only use on-ledger requests using the [Magic Contract](../reference/magic-contract.md) or [Core](../reference/core-contracts/overview.md) Contracts.
 
 :::
