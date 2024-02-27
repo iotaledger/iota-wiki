@@ -12,9 +12,9 @@ tags:
   - how to
 ---
 
-import DeployWithRemix from '../../_admonitions/_deploy_with_remix.md';
-import PriorKnowledge from '../../_admonitions/_EVM-required-prior-knowledge.md';
-import RemixIDE from '../../_admonitions/_remix-IDE.md';
+import DeployAdmonition from '../_admonitions/_deploy_a_smart_contract.md';
+import PriorKnowledge from '../_admonitions/_EVM-required-prior-knowledge.md';
+import RemixIDE from '../_admonitions/_remix-IDE.md';
 
 # Create ERC20 Custom Tokens
 
@@ -66,7 +66,7 @@ You can change the token name `ExampleERC20Token` and the token symbol `EET` for
 
 :::
 
-<DeployWithRemix/>
+<DeployAdmonition/>
 
 ## 2. Add Your Custom Tokens to MetaMask
 

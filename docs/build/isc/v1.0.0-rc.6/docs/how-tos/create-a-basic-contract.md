@@ -8,6 +8,7 @@ tags:
   - how to
   - basic contract
 ---
+import DeployAdmonition from '../_admonitions/_deploy_a_smart_contract.md';
 
 # Solidity Smart Contract Example
 
@@ -43,10 +44,12 @@ contract Counter {
 ```
 
 This contract simply updates a `count` variable. It has
-three [entry points](../../explanations/smart-contract-anatomy.md#entry-points):
+three [entry points](../explanations/smart-contract-anatomy.md#entry-points):
 
 * `increment` and `decrement`: Two full entry points that can alter
-  the [state](../../explanations/smart-contract-anatomy.md#state), i.e. the `count variable`. 
+  the [state](../explanations/smart-contract-anatomy.md#state), i.e. the `count variable`. 
 * `getCount`: A view only entry point, which simply renders the current `count` state.
 
 For more information, please visit the [official Solidity documentation](https://docs.soliditylang.org/).
+
+<DeployAdmonition />

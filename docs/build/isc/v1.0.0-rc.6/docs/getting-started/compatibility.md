@@ -33,7 +33,7 @@ Here are some of the most important properties and limitations of EVM support in
 
 ### Wrapped Calls to the JSON-RPC
 
-The Wasp node provides a JSON-RPC service, the standard protocol used by Ethereum tools. Upon receiving a signed
+The Wasp node provides a JSON-RPC service, the standard protocol used by Ethereum tools. We try to keep our endpoint as compatible as possible, you can find a list of supported endpoints [here](../reference/json-rpc-spec.md). Upon receiving a signed
 Ethereum transaction via JSON-RPC, the transaction is wrapped into an ISC
 [off-ledger request](../explanations/invocation.md#off-ledger-requests). The sender of the request
 is the Ethereum address that signed the original transaction (e.g., the Metamask account).

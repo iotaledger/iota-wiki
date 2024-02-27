@@ -8,7 +8,7 @@ EIP))
 , [NFTs](/learn/protocols/stardust/core-concepts/multi-asset-ledger#non-fungible-tokens-nfts), [Smart Contracts](/learn/smart-contracts/introduction)
 and have already tinkered with [Solidity](https://docs.soliditylang.org/en/v0.8.16/).
 
-You should also have basic knowledge on how to [create](../how-tos/EVM/create-a-basic-contract.md) and [deploy](../how-tos/EVM/deploy-a-smart-contract.mdx)
+You should also have basic knowledge on how to [create](../how-tos/create-a-basic-contract.md) and [deploy](../how-tos/deploy-a-smart-contract.mdx)
 a smart contract.
 
 :::

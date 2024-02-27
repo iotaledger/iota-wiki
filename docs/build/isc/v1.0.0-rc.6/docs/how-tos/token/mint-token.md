@@ -19,7 +19,9 @@ so you should execute the `ISC.accounts.mintNativeTokens` function in the same c
 
 <ExampleCodeIntro/>
 
-2. Mint the native token specifying the foundry serial number, the amount to mint and the allowance.
+### 2. Mint the Native Token
+
+Mint the native token specifying the foundry serial number, the amount to mint and the allowance.
  
 ```solidity
 ISC.accounts.mintNativeTokens(_foundrySN, _amount, allowance);
@@ -28,13 +30,13 @@ ISC.accounts.mintNativeTokens(_foundrySN, _amount, allowance);
 ## Full Example Code
 
 ```solidity
-    event MintedNativeTokens(uint32 foundrySN, uint amount);
+event MintedNativeTokens(uint32 foundrySN, uint amount);
 
-    function mintNativeTokens(uint32 _foundrySN, uint _amount, uint64 _storageDeposit) public payable {
-        require(msg.value == _storageDeposit*(10**12), "Please send exact funds to pay for storage deposit");
-        ISCAssets memory allowance;
-        allowance.baseTokens = _storageDeposit;
-        ISC.accounts.mintNativeTokens(_foundrySN, _amount, allowance);
-        emit MintedNativeTokens(_foundrySN, _amount);
-    }
+function mintNativeTokens(uint32 _foundrySN, uint _amount, uint64 _storageDeposit) public payable {
+    require(msg.value == _storageDeposit*(10**12), "Please send exact funds to pay for storage deposit");
+    ISCAssets memory allowance;
+    allowance.baseTokens = _storageDeposit;
+    ISC.accounts.mintNativeTokens(_foundrySN, _amount, allowance);
+    emit MintedNativeTokens(_foundrySN, _amount);
+}
 ```
