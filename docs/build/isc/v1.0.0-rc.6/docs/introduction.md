@@ -12,7 +12,6 @@ tags:
 
 ---
 import NetworkWarning from './_admonitions/_network_warning.md'
-import OffLedgerRequests from './_admonitions/_off-ledger-requests.md'
 
 # Introduction
 
@@ -74,8 +73,6 @@ Running a request consumes 'gas', that is the cost of executing an on-chain requ
 for each request, with costs charged to your on-chain account. 
 
 ## On-Ledger vs Off-Ledger Requests
-
-<OffLedgerRequests/>
 
 Requests can be [on-ledger](explanations/invocation.md#on-ledger-requests), that is, processed through 
 the Tangle, or [off-ledger](explanations/invocation.md#off-ledger-requests), directly sent to validators for faster 
