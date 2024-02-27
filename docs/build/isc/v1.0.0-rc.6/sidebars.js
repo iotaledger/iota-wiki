@@ -117,11 +117,6 @@ module.exports = {
           items: [
             {
               type: 'doc',
-              label: 'Use EVM in ISC',
-              id: 'how-tos/EVM/using',
-            },
-            {
-              type: 'doc',
               label: 'Test Smart Contracts',
               id: 'how-tos/EVM/test-smart-contracts',
             },
