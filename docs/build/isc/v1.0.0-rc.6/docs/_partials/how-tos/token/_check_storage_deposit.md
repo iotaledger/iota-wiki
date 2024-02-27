@@ -1,4 +1,6 @@
-1. Check if the amount paid to the contract is the same as the required [storage deposit](/learn/protocols/stardust/core-concepts/storage-deposit)
+### 1. Check the Storage Deposit
+
+Check if the amount paid to the contract is the same as the required [storage deposit](/learn/protocols/stardust/core-concepts/storage-deposit)
    and set the allowance.
 
 ```solidity

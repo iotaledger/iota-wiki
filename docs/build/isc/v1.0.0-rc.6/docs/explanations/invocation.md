@@ -13,6 +13,7 @@ tags:
 - explanation
 
 ---
+import OffLedgerRequests from './../_admonitions/_off-ledger-requests.md'
 
 # Calling a Smart Contract
 
@@ -78,6 +79,8 @@ time.
 Due to the shorter delay, off-ledger requests are preferred over on-ledger requests unless you need to move assets
 between chains or Layer 1 accounts.
 
+
+<OffLedgerRequests/>
 ---
 
 ## Gas

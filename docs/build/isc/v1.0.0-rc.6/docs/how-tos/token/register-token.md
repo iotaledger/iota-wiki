@@ -17,7 +17,9 @@ To properly use your native tokens, you should register them as ERC20 using the 
 <ExampleCodeIntro/>
 
 
-2. Register the native tokens specifying:
+###  2. Register the Native Tokens
+
+Register the native tokens specifying:
 * the foundry serial number
 * a name
 * a symbol
@@ -27,7 +29,10 @@ To properly use your native tokens, you should register them as ERC20 using the 
 ISC.sandbox.registerERC20NativeToken(_foundrySN, _name, _symbol, _decimals, allowance);
 ```
 
-3. Get the ERC20 contract address with `erc20NativeTokensAddress`:
+###  3. Get the Contract's Address
+
+Get the ERC20 contract address with `erc20NativeTokensAddress`:
+
 ```solidity
 address erc20address = ISC.sandbox.erc20NativeTokensAddress(_foundrySN);
 ```

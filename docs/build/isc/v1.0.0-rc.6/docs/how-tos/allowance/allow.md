@@ -16,13 +16,17 @@ In ISC, we have a similar concept for our native assets. You might want to use t
 
 ## Example Code
 
-1. Create a function which allows an address or contract to access a specific ID of your account:
+### 1. Create the `allow` Function
+
+Create a function which allows an address or contract to access a specific ID of your account:
  
 ```solidity
 function allow(address _address, bytes32 _allowanceNFTID) public {
 ```
 
-2. Create an `ISCAssets` object to pass as allowance:
+### 2. Create the `ISCAssets` object
+
+Create an `ISCAssets` object to pass as allowance:
 
 ```solidity
 NFTID[] memory nftIDs = new NFTID[](1);
@@ -31,7 +35,9 @@ ISCAssets memory assets;
 assets.nfts = nftIDs;
 ```
 
-3. With that asset, you can call `allow` to allow address to take our NFT:
+### 3. Use the Assets as Allowance
+
+With that asset, you can call `allow` to allow address to take our NFT:
 
 ```solidity
 ISC.sandbox.allow(_address, assets);
