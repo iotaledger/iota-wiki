@@ -112,18 +112,13 @@ module.exports = {
         },
         {
           type: 'doc',
-          label: 'Create a Basic Solidity Contract',
+          label: 'Create a Basic Contract',
           id: 'how-tos/create-a-basic-contract',
         },
         {
           type: 'doc',
           label: 'Deploy a Smart Contract',
           id: 'how-tos/deploy-a-smart-contract',
-        },
-        {
-          type: 'doc',
-          label: 'Test Smart Contracts',
-          id: 'how-tos/test-smart-contracts',
         },
         {
           type: 'doc',
@@ -134,6 +129,11 @@ module.exports = {
           type: 'doc',
           label: 'Create NFTs - ERC721',
           id: 'how-tos/ERC721',
+        },
+        {
+          type: 'doc',
+          label: 'Test Smart Contracts',
+          id: 'how-tos/test-smart-contracts',
         },
         {
           type: 'category',
