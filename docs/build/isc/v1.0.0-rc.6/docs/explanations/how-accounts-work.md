@@ -77,9 +77,9 @@ Tokens in an Ethereum account can only be moved by sending an Ethereum transacti
 The [`accounts` core contract](../reference/core-contracts/accounts.md) is responsible for managing the L2 ledger.
 By calling this contract, it is possible to:
 
-- View current account balances<!-- TODO Add account balance how-to -->
-- Deposit funds to the chain<!-- TODO Add deposit how-to -->
-- Withdraw funds from the chain<!-- TODO Add withdraw how-to -->
+- [View current account balances](../how-tos/get-balance.md)
+- [Deposit funds to the chain](../how-tos/EVM/send-funds-from-L1-to-L2.md)
+- [Withdraw funds from the chain](../how-tos/send-assets-to-l1.mdx)
 
 ## Example
 
