@@ -10,11 +10,17 @@ tags:
   - Solidity
 ---
 
-import AboutAccounts from '../_admonitions/_about-accounts.md';
+import AboutAccounts from '../../../_admonitions/_about-accounts.md';
 
 # Send Assets and Tokens to L1
 
 <AboutAccounts/>
+
+:::info
+
+ShimmerEVM has 18 decimal places, while Shimmer has 6. This means that any decimals beyond the 6th will be ignored by Shimmer, even though you can see them on ShimmerEVM. Please keep this in mind while sending your tokens to L1.
+
+:::
 
 This guide will show you how to use the ISC sandbox interface to send assets from L2 to L1. This includes base tokens, native tokens, and NFTs. Before you can send these assets, you need to know how you get them on L2 and how you allow a contract to use them.
 

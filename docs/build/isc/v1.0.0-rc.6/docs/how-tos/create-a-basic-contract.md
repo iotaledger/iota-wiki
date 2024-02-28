@@ -1,16 +1,14 @@
 ---
-description: Solidity smart contract example.
+description: Basic smart contract example.
 image: /img/logo/WASP_logo_dark.png
 tags:
   - smart contracts
-  - EVM
-  - Solidity
   - how to
   - basic contract
 ---
 import DeployAdmonition from '../_admonitions/_deploy_a_smart_contract.md';
 
-# Solidity Smart Contract Example
+# Basic Smart Contract Example
 
 [Solidity](https://docs.soliditylang.org/en/v0.8.16/) smart contracts on IOTA Smart Contracts are compatible with
 Solidity smart contracts on any other network. Most smart contracts will work directly without any modification. To get

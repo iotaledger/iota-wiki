@@ -68,7 +68,7 @@ is popular amongst other developers.
 
 :::tip Solo
 
-If you want to test ISC-specific functionalities, like the [magic contract](magic.md), you should use
+If you want to test ISC-specific functionalities, like the [magic contract](./core-contracts/introduction.md), you should use
 the [Solo Framework](../solo/getting-started.md).
 
 :::
