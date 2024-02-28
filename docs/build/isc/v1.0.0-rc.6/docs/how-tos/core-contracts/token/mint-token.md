@@ -8,7 +8,7 @@ tags:
   - native tokens
   - mint
 ---
-import ExampleCodeIntro from '../../_partials/how-tos/token/_example_code_intro.md';
+import ExampleCodeIntro from '../../../_partials/how-tos/token/_example_code_intro.md';
 
 # Mint Native Tokens
 

@@ -39,7 +39,7 @@ The average block time on [ShimmerEVM](/build/networks-endpoints#shimmerevm) is 
 
 ### The Magic Contract
 
-A [dedicated Ethereum contract](../how-tos/magic-contract/magic.md) exists to manage Layer 1 tokens and ISC
+A [dedicated Ethereum contract](../how-tos/core-contracts/introduction.md) exists to manage Layer 1 tokens and ISC
 functionalities, introducing commands like `isc.send(...)` for token transfers.
 
 ### Gas Fees
