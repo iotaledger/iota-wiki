@@ -4,13 +4,13 @@ call.'
 image: /img/logo/WASP_logo_dark.png
 tags:
 
-  - smart contracts
-  - requests
-  - on-ledger
-  - off-ledger
-  - calls
-  - invocation
-  - explanation
+- smart contracts
+- requests
+- on-ledger
+- off-ledger
+- calls
+- invocation
+- explanation
 
 ---
 
