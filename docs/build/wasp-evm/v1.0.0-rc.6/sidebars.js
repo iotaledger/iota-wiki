@@ -117,6 +117,7 @@ module.exports = {
             },
           ],
         },
+        'how-tos/integrate-your-exchange',
       ],
     },
     {

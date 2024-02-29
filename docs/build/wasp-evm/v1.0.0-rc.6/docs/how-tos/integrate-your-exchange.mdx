@@ -1,0 +1,164 @@
+---
+tags: [Build, maintain, wasp, shimmerEVM, exchange ]
+description: Learn how to integrate ShimmerEVM to your exchange.  
+sidebar_label: Integrate Your Exchange
+---
+import { AddToMetaMaskButton, EVMNetworks } from '@theme/AddToMetaMaskButton';
+import { ChainId } from '@theme/ChainId';
+
+# ShimmerEVM Exchange Integration
+
+If you already support EVM, then you probably are already familiar with what you'll need to integrate ShimmerEVM. As
+with most networks, you should be able to use the same API as [go-ethereum](https://geth.ethereum.org/) taking into account the
+[compatibility and limitations](../getting-started/compatibility.md), use the ShimmerEVM RPC
+URL (https://json-rpc.evm.shimmer.network) and ChainId (<ChainId url='https://json-rpc.evm.shimmer.network'/>), and run
+our [Hornet](/hornet/welcome/) node with the [Wasp](/wasp/running-a-node/) INX-plugin.
+
+## ShimmerEVM Network Information
+
+<AddToMetaMaskButton cfg={EVMNetworks['shimmerevm']} />
+
+| Base Token          | Protocol  | Chain ID                                              | RPC URL                                                                       | Explorer                             |
+|---------------------|-----------|-------------------------------------------------------|-------------------------------------------------------------------------------|--------------------------------------|
+| Shimmer Token (SMR) | ISC / EVM | <ChainId url='https://json-rpc.evm.shimmer.network'/> | https://json-rpc.evm.shimmer.network or wss://ws.json-rpc.evm.shimmer.network | https://explorer.evm.shimmer.network |
+
+#### Additional Info
+
+| Chain Address                                                                                                                                                                    | Alias ID                                                           |
+|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------|
+| [smr1prxvwqvwf7nru5q5xvh5thwg54zsm2y4wfnk6yk56hj3exxkg92mx20wl3s](https://explorer.shimmer.network/shimmer/addr/smr1prxvwqvwf7nru5q5xvh5thwg54zsm2y4wfnk6yk56hj3exxkg92mx20wl3s) | 0xccc7018e4fa63e5014332f45ddc8a5450da89572676d12d4d5e51c98d64155b3 |
+
+## Running a Hornet Node with Wasp
+
+### Install Hornet
+
+The easiest way to get your [Hornet](/hornet/welcome/) node up and running is using the
+provided [Docker image](/hornet/how_tos/using_docker/) which already includes the [Wasp](/wasp/running-a-node/)
+INX-plugin.
+
+### Post-Install Tasks
+
+After you have [installed your node](#install-hornet), you should make sure you:
+
+* [Configure Hornet's HTTP REST API](/hornet/how_tos/post_installation/#configuring-http-rest-api) to operate securely.
+* Review the configuration options for both
+[Hornet](/hornet/references/configuration/) and [Wasp](/wasp/configuration/).
+* [Add peers to your node](/hornet/references/peering/).
+
+### Interact with the ShimmerEVM Chain
+
+You can use [`wasp-cli`](/wasp-cli/how-tos/wasp-cli/) to safely interact with
+and [manage](wasp-cli/how-tos/chain-management/) your Wasp instance.
+
+## Creating Transactions
+
+ShimmerEVM handles transactions in the same way as standard EVM transaction with minor exceptions:
+
+- They must be signed with ShimmerEVM's ChainID (<ChainId url='https://json-rpc.evm.shimmer.network'/>).
+- The used EVM gas is converted to ISC gas before being charged to the sender.
+- EVM contracts can't receive on-ledger requests.
+
+:::warning Compatibility
+
+Please make sure that you review
+the [EVM Compatibility in IOTA Smart Contracts guide](../getting-started/compatibility.md#on-ledger-requests).
+
+:::
+
+### Determining Finality
+
+[Block times are variable in ShimmerEVM](../getting-started/compatibility.md#no-enforced-block-time). A new EVM "block"
+will be created only when an ISC block is created, and ISC does not enforce an average block time. This means that block
+times are variable; a new block will be created as soon as needed. The average block time is 2.8 seconds.
+
+## Tooling
+
+ShimmerEVM is [compatible with most wallet and tools](../getting-started/compatible-tools.md) used
+in EVM, such as [Metamask](../getting-started/compatible-tools.md#metamask), [Remix](../getting-started/compatible-tools.md#remix),
+[Hardhat](../getting-started/compatible-tools.md#hardhat) and [Ethers.js](../getting-started/compatible-tools.md#ethersjsweb3js).
+
+:::info ShimmerEVM Testnet
+
+The [ShimmerEVM Testnet](/build/networks-endpoints/#testnet-evm) is a great way to develop and test your integration
+without incurring in any risks or costs.
+
+:::
+
+## On-Chain Data
+
+ShimmerEVM support any standard way of consuming on-chain data you use for any other EVM network.
+
+## Oracle Support
+
+The ShimmerEVM network supports [Oracles](/build/oracles/) to retrieve data from outside the contract's sandbox, such as
+[Pyth](/build/oracles#pyth) and [Supra](/build/oracles#supra).
+
+## FAQs
+
+### What is the GitHub Address For the Network?
+
+SMR is the native gas token on ShimmerEVM and therefore has no GitHub repository. You can
+find [Hornet](https://github.com/iotaledger/hornet) and [Wasp](https://github.com/iotaledger/wasp) in
+the [IOTA Ledger GitHub](https://github.com/iotaledger/).
+
+### What Are the Hardware Requirements for Running a Node?
+
+You can find a detailed list of requirements in
+the [Hornet documentation](/hornet/getting_started/#recommended-requirements).
+
+### What's the Precision of Each Transaction (i.g 0.0001)?
+
+ShimmerEVM has the standard 18 decimals.
+
+### How Can I Customize RPC Port and the Directory of Block Data?
+
+The JSON RPC will be available by default on
+`<NODE_HOST>/wasp/api/v1/chains/smr1prxvwqvwf7nru5q5xvh5thwg54zsm2y4wfnk6yk56hj3exxkg92mx20wl3s/evm`
+
+You can route it however you wish using a proxy or any other stander tool for the task.
+
+### What is the RPC/SDK API?
+
+ShimmerEVM's RPC implements standard rpc API from [go-ethereum](https://geth.ethereum.org/).
+
+### How can I Access the Balance of an Account?
+
+You can use the standard EVM way using the RPC.
+
+### How can I Recover an Account?
+
+You can use any standard approach, as with Metamask for example.
+
+### Which Wallets are Officially Recognized?
+
+You can use any standard EVM compatible wallet such as [Metamask](https://metamask.io/),
+or [Firefly](/get-started/wallets/firefly/) and [Bloom](/get-started/wallets/bloom/).
+
+### Do the Nodes Use PoW?
+
+No, Hornet and Wasp nodes use
+
+### Is There a Timeout Mechanism for a Transaction in TX Pool? How Long Does It Take?
+
+Yes, 15min
+
+### Are There Any Rent or Reservation Costs?
+
+Though there are no fixed costs, you should consider that you may have to
+use [storage deposits](/learn/protocols/stardust/core-concepts/storage-deposit/).
+
+### Is the Network Ready To Receive Transfers? If Not, When Will it Be?
+
+The [Shimmer MainNet](/build/networks-endpoints/#shimmer) started on September 28, 2022.
+
+### Does the Wallet Node Need to Expose Its Port? If So, if the Machine With Nat IP Is Ok?
+
+You need to expose at least one peering port to be reachable from the outside; everything else can be closed.
+
+### Do the Addresses Follow a Particular Ruleset?
+
+Shimmer EVM can use the standard EVM account address (0x...).
+
+### Is It Necessary to Add Our Node IP Into Your Whitelist When Synchronizing?
+
+Yes, we need your IP to pair the nodes.
