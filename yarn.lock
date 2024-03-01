@@ -2802,7 +2802,7 @@ __metadata:
     ink-select-input: ^4.2.2
     ink-spinner: ^4.0.3
     ink-text-input: ^4.0.3
-    isomorphic-git: ^1.25.3
+    isomorphic-git: ^1.25.6
     link-check: ^5.2.0
     markdownlint-cli2: ^0.8.1
     node-html-parser: ^6.1.10
@@ -11817,9 +11817,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"isomorphic-git@npm:^1.25.3":
-  version: 1.25.3
-  resolution: "isomorphic-git@npm:1.25.3"
+"isomorphic-git@npm:^1.25.6":
+  version: 1.25.6
+  resolution: "isomorphic-git@npm:1.25.6"
   dependencies:
     async-lock: ^1.1.0
     clean-git-ref: ^2.0.1
@@ -11834,7 +11834,7 @@ __metadata:
     simple-get: ^4.0.1
   bin:
     isogit: cli.cjs
-  checksum: 747da1bd0435898a02f8c1ba07ce66c704ea311338b66a44830a5ce1fe9a256a3ea1ec9be5baa087f88134aa686b5d0c6dc2b9338b1fd523f2869ef2480e4d4e
+  checksum: d1fa30ede586f6bb36a526924dafa92d67a55b331ca1c2e95fe96bbd4b614302a87c1c016a1f7ca76c44cfa80b6c0e83c9df114417a6caabe82a8472d86346c3
   languageName: node
   linkType: hard
 
