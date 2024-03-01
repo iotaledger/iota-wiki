@@ -2930,7 +2930,7 @@ __metadata:
     react: 18.2.0
     react-markdown: 6
     typescript: ^4.9
-    web3: ^4.2.2
+    web3: ^4.5.0
   peerDependencies:
     react: "*"
   languageName: unknown
@@ -19306,6 +19306,26 @@ plugin-image-zoom@flexanalytics/plugin-image-zoom:
   languageName: node
   linkType: hard
 
+"web3-core@npm:^4.3.2":
+  version: 4.3.2
+  resolution: "web3-core@npm:4.3.2"
+  dependencies:
+    web3-errors: ^1.1.4
+    web3-eth-accounts: ^4.1.0
+    web3-eth-iban: ^4.0.7
+    web3-providers-http: ^4.1.0
+    web3-providers-ipc: ^4.0.7
+    web3-providers-ws: ^4.0.7
+    web3-types: ^1.3.1
+    web3-utils: ^4.1.0
+    web3-validator: ^2.0.3
+  dependenciesMeta:
+    web3-providers-ipc:
+      optional: true
+  checksum: 7505186c5b7de1ebf03bbf9ce109c809618652402ed01e93a98292432a2d31f958cb284af8b7a286a149736f0943839a098150d02034232036243b058f57d739
+  languageName: node
+  linkType: hard
+
 "web3-errors@npm:^1.1.3, web3-errors@npm:^1.1.4":
   version: 1.1.4
   resolution: "web3-errors@npm:1.1.4"
@@ -19328,6 +19348,19 @@ plugin-image-zoom@flexanalytics/plugin-image-zoom:
   languageName: node
   linkType: hard
 
+"web3-eth-abi@npm:^4.2.0":
+  version: 4.2.0
+  resolution: "web3-eth-abi@npm:4.2.0"
+  dependencies:
+    abitype: 0.7.1
+    web3-errors: ^1.1.4
+    web3-types: ^1.3.1
+    web3-utils: ^4.1.1
+    web3-validator: ^2.0.4
+  checksum: 4abe8d2457ff55dab158f26831133bb2232d17d8c53bb4e00d6c0f921b61cefea630d65bc778d899d99f2189c69a5fe21f0fbf61fe20cb1d5d6561e8b9a3b66e
+  languageName: node
+  linkType: hard
+
 "web3-eth-accounts@npm:^4.1.0":
   version: 4.1.0
   resolution: "web3-eth-accounts@npm:4.1.0"
@@ -19343,7 +19376,22 @@ plugin-image-zoom@flexanalytics/plugin-image-zoom:
   languageName: node
   linkType: hard
 
-"web3-eth-contract@npm:^4.1.2, web3-eth-contract@npm:^4.1.3":
+"web3-eth-accounts@npm:^4.1.1":
+  version: 4.1.1
+  resolution: "web3-eth-accounts@npm:4.1.1"
+  dependencies:
+    "@ethereumjs/rlp": ^4.0.1
+    crc-32: ^1.2.2
+    ethereum-cryptography: ^2.0.0
+    web3-errors: ^1.1.4
+    web3-types: ^1.3.1
+    web3-utils: ^4.1.1
+    web3-validator: ^2.0.4
+  checksum: f87f0bdf7b0bce35adb3ffd7039888c876576bcf3b82651ff2e86dde75282fcc8a5d92569e9f7a1fc441df7c52e3d6feceac608066d4c54ec5fc696ff9804de1
+  languageName: node
+  linkType: hard
+
+"web3-eth-contract@npm:^4.1.2":
   version: 4.1.3
   resolution: "web3-eth-contract@npm:4.1.3"
   dependencies:
@@ -19355,6 +19403,21 @@ plugin-image-zoom@flexanalytics/plugin-image-zoom:
     web3-utils: ^4.0.7
     web3-validator: ^2.0.3
   checksum: 3e578ecffb982e67e06269fa53099b39634c81843abdf8b2d048d35089b6d1a8332e9ceba837aec2496740f1f3c620086c6e802cc9be15538e43bb5c74951cd6
+  languageName: node
+  linkType: hard
+
+"web3-eth-contract@npm:^4.2.0":
+  version: 4.2.0
+  resolution: "web3-eth-contract@npm:4.2.0"
+  dependencies:
+    web3-core: ^4.3.2
+    web3-errors: ^1.1.4
+    web3-eth: ^4.4.0
+    web3-eth-abi: ^4.2.0
+    web3-types: ^1.3.1
+    web3-utils: ^4.1.1
+    web3-validator: ^2.0.4
+  checksum: 0547609dd9c2b4c30562304a1ade703f7cdf9acfc995e0719bbbeacb386ce76422bd713a915222e1dfcbc8564ebab322e64b965b18fc51dc066b1aabf29011e8
   languageName: node
   linkType: hard
 
@@ -19420,6 +19483,25 @@ plugin-image-zoom@flexanalytics/plugin-image-zoom:
   languageName: node
   linkType: hard
 
+"web3-eth@npm:^4.4.0":
+  version: 4.4.0
+  resolution: "web3-eth@npm:4.4.0"
+  dependencies:
+    setimmediate: ^1.0.5
+    web3-core: ^4.3.2
+    web3-errors: ^1.1.4
+    web3-eth-abi: ^4.2.0
+    web3-eth-accounts: ^4.1.1
+    web3-net: ^4.0.7
+    web3-providers-ws: ^4.0.7
+    web3-rpc-methods: ^1.1.4
+    web3-types: ^1.3.1
+    web3-utils: ^4.1.1
+    web3-validator: ^2.0.4
+  checksum: a65af603ea5e6a985127deaa511eb606d0fd2b916b07094db1dd396a0d5bea1b45a0ef839c5b5d997609aabca3025d60ec42c562c7efcc32fe3f32c4f763d05b
+  languageName: node
+  linkType: hard
+
 "web3-net@npm:^4.0.7":
   version: 4.0.7
   resolution: "web3-net@npm:4.0.7"
@@ -19480,10 +19562,28 @@ plugin-image-zoom@flexanalytics/plugin-image-zoom:
   languageName: node
   linkType: hard
 
+"web3-rpc-methods@npm:^1.1.4":
+  version: 1.1.4
+  resolution: "web3-rpc-methods@npm:1.1.4"
+  dependencies:
+    web3-core: ^4.3.2
+    web3-types: ^1.3.1
+    web3-validator: ^2.0.3
+  checksum: b51098af5eaee5f57f5684a1b6e3763f61d8141de398a4457ed2cdca2a4e7fabe49de1ef597694e98581884d5c0d74fec697fbf8d67baa3ad5d10f1e131d6c43
+  languageName: node
+  linkType: hard
+
 "web3-types@npm:^1.3.0, web3-types@npm:^1.3.1":
   version: 1.3.1
   resolution: "web3-types@npm:1.3.1"
   checksum: 02819f803f926b45843335705343ace1ee6fe84bf5d09be9382532389ce7ef47ed7f95b23ef61330979039442062f0089ab4bac6000cb7246202b17a14b44878
+  languageName: node
+  linkType: hard
+
+"web3-types@npm:^1.4.0":
+  version: 1.4.0
+  resolution: "web3-types@npm:1.4.0"
+  checksum: dcf98fbafd582f615745d84b855fc82404d01edc1191b7e3bed646d9f99cd9d5f712408b38a4aa14de42f83bddf1565fd11a4ea2f6f4069e79310e3d5db434a1
   languageName: node
   linkType: hard
 
@@ -19496,6 +19596,18 @@ plugin-image-zoom@flexanalytics/plugin-image-zoom:
     web3-types: ^1.3.0
     web3-validator: ^2.0.3
   checksum: 8dbf36d1813164efdc70c98ffac86c265c029b4df63a5b5833ad19520ac6782c26d3444fc1f95e1abbc95f17b4041f36f66664d552f5038543805fe5a5260ded
+  languageName: node
+  linkType: hard
+
+"web3-utils@npm:^4.1.0, web3-utils@npm:^4.1.1, web3-utils@npm:^4.2.0":
+  version: 4.2.0
+  resolution: "web3-utils@npm:4.2.0"
+  dependencies:
+    ethereum-cryptography: ^2.0.0
+    web3-errors: ^1.1.4
+    web3-types: ^1.4.0
+    web3-validator: ^2.0.4
+  checksum: 0ee7b832d08918a995e7cf195848779cbd0506a154d57a911432d5848090adc61e2a9543574095d07eb9577c7abac90bd316fa20d6154f87febfe3cb66073013
   languageName: node
   linkType: hard
 
@@ -19512,27 +19624,40 @@ plugin-image-zoom@flexanalytics/plugin-image-zoom:
   languageName: node
   linkType: hard
 
-"web3@npm:^4.2.2":
-  version: 4.2.2
-  resolution: "web3@npm:4.2.2"
+"web3-validator@npm:^2.0.4":
+  version: 2.0.4
+  resolution: "web3-validator@npm:2.0.4"
   dependencies:
-    web3-core: ^4.3.1
+    ethereum-cryptography: ^2.0.0
+    util: ^0.12.5
     web3-errors: ^1.1.4
-    web3-eth: ^4.3.1
-    web3-eth-abi: ^4.1.4
-    web3-eth-accounts: ^4.1.0
-    web3-eth-contract: ^4.1.3
+    web3-types: ^1.3.1
+    zod: ^3.21.4
+  checksum: 9d41bfe5764343d05f045ce526715dfd1bd88dba146ba96c2d3199c3dc9bb66c01d9dac334251078542c00f82e273489700a54db365800c16e29a2c2b30f9929
+  languageName: node
+  linkType: hard
+
+"web3@npm:^4.5.0":
+  version: 4.5.0
+  resolution: "web3@npm:4.5.0"
+  dependencies:
+    web3-core: ^4.3.2
+    web3-errors: ^1.1.4
+    web3-eth: ^4.4.0
+    web3-eth-abi: ^4.2.0
+    web3-eth-accounts: ^4.1.1
+    web3-eth-contract: ^4.2.0
     web3-eth-ens: ^4.0.8
     web3-eth-iban: ^4.0.7
     web3-eth-personal: ^4.0.8
     web3-net: ^4.0.7
     web3-providers-http: ^4.1.0
     web3-providers-ws: ^4.0.7
-    web3-rpc-methods: ^1.1.3
-    web3-types: ^1.3.1
-    web3-utils: ^4.0.7
-    web3-validator: ^2.0.3
-  checksum: b04f51380196b0b774a90090e10968395beda4a61d3a829e216b302173cd476f8e6e40b81c2691c502b068d6c7fe859df594991a4375023b13a19743e5ef4686
+    web3-rpc-methods: ^1.1.4
+    web3-types: ^1.4.0
+    web3-utils: ^4.2.0
+    web3-validator: ^2.0.4
+  checksum: 38a4b319797984fc91613d25e63014f7f2b50ae8b6d6330f4e689bd8dba2572574448852861afe4b5e4593a06517d9134b5941cf03683091af53cfea2d10f0b1
   languageName: node
   linkType: hard
 
