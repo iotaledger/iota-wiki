@@ -86,7 +86,7 @@ The funds to cover the gas used will be charged directly from the user's on-chai
 
 ## Allowance
 
-An allowance is a security feature within ERC20 token contracts that controls how much one address can spend on behalf
+An allowance is a feature within smart contracts that controls how much one address can spend on behalf
 of another address. Before a third party can withdraw tokens from your account, you must explicitly set an allowance for
 that third party's address, specifying the maximum amount of tokens they are allowed to transfer. This mechanism is used
 in various decentralized finance (DeFi) applications, where you might allow a smart contract to interact with your
