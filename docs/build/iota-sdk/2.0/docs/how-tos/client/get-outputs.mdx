@@ -1,0 +1,231 @@
+---
+title: Get Outputs
+description: 'Find outputs specifying certain search criteria'
+image: /img/logo/iota_mark_light.png
+tags:
+  - how to
+  - client
+  - outputs
+  - nodejs
+  - python
+  - rust
+---
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import AccountClient from '../../\_admonitions/\_account-client.md'
+import OutputNode from '../../_partials/_how-tos/client/get-outputs/node.md'
+import OutputRust from '../../_partials/_how-tos/client/get-outputs/rust.md'
+import OutputPython from '../../_partials/_how-tos/client/get-outputs/python.md'
+
+
+Querying outputs allows you to retrieve specific information about transactions or assets on
+the [Tangle](/get-started/introduction/iota/introduction#the-tangle). You can verify the status of transactions, track the movement
+of assets, and gather relevant details such as transaction history, ownership, or other metadata. You can query for any
+output type using the following functions:
+
+<Tabs groupId="language" queryString>
+<TabItem value="rust" label="Rust">
+
+- [`Client.basic_output_ids()`](https://docs.rs/iota-sdk/latest/iota_sdk/client/core/struct.ClientInner.html#method.basic_output_ids)
+- [`Client.alias_output_ids()`](https://docs.rs/iota-sdk/latest/iota_sdk/client/core/struct.ClientInner.html#method.alias_output_ids)
+- [`Client.foundry_output_ids()`](https://docs.rs/iota-sdk/latest/iota_sdk/client/core/struct.ClientInner.html#method.foundry_output_ids)
+- [`Client.nft_output_ids()`](https://docs.rs/iota-sdk/latest/iota_sdk/client/core/struct.ClientInner.html#method.nft_output_ids)
+
+</TabItem>
+<TabItem value="typescript-node" label="Typescript (Node.js)">
+
+- [`Client.basicOutputIds()`](../../references/nodejs/classes/Client.md#basicoutputids)
+- [`Client.aliasOutputIds()`](../../references/nodejs/classes/Client.md#aliasoutputids)
+- [`Client.nftOutputIds()`](../../references/nodejs/classes/Client.md#nftoutputids)
+- [`Client.foundryOutputIds()`](../../references/nodejs/classes/Client.md#foundryoutputids)
+
+</TabItem>
+<TabItem value="python" label="Python">
+
+- [`Client.basic_output_ids()`](../../references/python/iota_sdk/client/_node_indexer_api.md#basic_output_ids)
+- [`Client.alias_output_ids()`](../../references/python/iota_sdk/client/_node_indexer_api.md#alias_output_ids)
+- [`Client.foundry_output_ids()`](../../references/python/iota_sdk/client/_node_indexer_api.md#foundry_output_ids)
+- [`Client.nft_output_ids()`](../../references/python/iota_sdk/client/_node_indexer_api.md#nft_output_ids)
+
+</TabItem>
+</Tabs>
+
+<AccountClient/>
+
+## Example Code
+
+<Tabs groupId="language" queryString>
+<TabItem value="rust" label="Rust">
+
+The following code example will:
+
+1. Create a [`Client`](https://docs.rs/iota-sdk/latest/iota_sdk/client/core/struct.Client.html) that will connect to the
+   node defined in your `.env` file's `NODE_URL` variable.
+
+<div className={'hide-code-block-extras'}>
+
+```rust reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/sdk/examples/how_tos/client/get_outputs.rs#L26-L31
+```
+
+</div>
+
+2. Query the node for basic outputs for the specified [`Address`](https://docs.rs/iota-sdk/latest/iota_sdk/types/block/address/enum.Address.html)
+   using the [`Client.basic_output_ids()`](https://docs.rs/iota-sdk/latest/iota_sdk/client/core/struct.ClientInner.html#method.basic_output_ids)
+   and the [`BasicOutputQueryParameters::only_address_unlock_condition`](https://docs.rs/iota-sdk//latest/iota_sdk/types/block/output/unlock_condition/struct.AddressUnlockCondition.html#method.address).
+
+<div className={'hide-code-block-extras'}>
+
+```rust reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/sdk/examples/how_tos/client/get_outputs.rs#L42-L45
+```
+
+</div>
+
+3. Get the outputs retrieved in the previous step using the
+   [`Client.get_outputs()`](https://docs.rs/iota-sdk/latest/iota_sdk/client/core/struct.Client.html#method.get_outputs)
+   function.
+
+<div className={'hide-code-block-extras'}>
+
+```rust reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/sdk/examples/how_tos/client/get_outputs.rs#L50
+```
+
+</div>
+
+</TabItem>
+<TabItem value="typescript-node" label="Typescript (Node.js)">
+
+The following code example will:
+
+1. Create a [`Client`](../../references/nodejs/classes/Client.md) that will connect to the
+   node defined in your `.env` file's `NODE_URL` variable.
+
+<div className={'hide-code-block-extras'}>
+
+```typescript reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/nodejs/examples/how_tos/client/get-outputs.ts#L13-L22
+```
+
+</div>
+
+2. Query the node for basic outputs with the specified
+   [`QueryParameters`](../../references/nodejs/api_ref.md#queryparameter)
+   using the [`Client.basicOutputIds()`](../../references/nodejs/classes/Client.md#basicoutputids)
+   function.
+
+<div className={'hide-code-block-extras'}>
+
+```typescript reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/nodejs/examples/how_tos/client/get-outputs.ts#L26-L32
+```
+
+</div>
+
+3. Get the outputs retrieved in the previous step using the
+   [`Client.getOutputs()`](../../references/nodejs/classes/Client.md#getoutputs)
+   function.
+
+<div className={'hide-code-block-extras'}>
+
+```typescript reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/nodejs/examples/how_tos/client/get-outputs.ts#L36
+```
+
+</div>
+
+</TabItem>
+<TabItem value="python" label="Python">
+
+The following code example will:
+
+1. Create a [`Client`](../../references/python/iota_sdk/client/client.md) that will connect to the
+   node defined in your `.env` file's `NODE_URL` variable.
+
+<div className={'hide-code-block-extras'}>
+
+```python reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/python/examples/how_tos/client/get_outputs.py#L9-L12
+```
+
+</div>
+
+2. Define the
+   [`BasicOutputQueryParameters`](../../references/python/iota_sdk/client/_node_indexer_api.md/#basicoutputqueryparameters-objects)
+    that will be used to query the node for outputs related to the specified address.
+
+<div className={'hide-code-block-extras'}>
+
+```python reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/python/examples/how_tos/client/get_outputs.py#L14-L19
+```
+
+</div>
+
+3. Query for the `BasicOutputQueryParameters` defined in step 2
+using the [`Client.basic_output_ids()`](../../references/python/iota_sdk/client/_node_indexer_api.md#basic_output_ids)
+function.
+
+<div className={'hide-code-block-extras'}>
+
+```python reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/python/examples/how_tos/client/get_outputs.py#L23
+```
+
+</div>
+
+4. Get the outputs retrieved in the previous step using the
+   [`Client.get_outputs()`](../../references/python/iota_sdk/client/_high_level_api.md#get_outputs)
+   function.
+
+<div className={'hide-code-block-extras'}>
+
+```python reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/python/examples/how_tos/client/get_outputs.py#L28
+```
+
+</div>
+
+</TabItem>
+</Tabs>
+
+## Full Example Code
+
+<Tabs groupId="language" queryString>
+<TabItem value="rust" label="Rust">
+
+```rust reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/sdk/examples/how_tos/client/get_outputs.rs
+```
+
+</TabItem>
+<TabItem value="typescript-node" label="Typescript (Node.js)">
+
+```typescript reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/nodejs/examples/how_tos/client/get-outputs.ts
+```
+
+</TabItem>
+<TabItem value="python" label="Python">
+
+```python reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/python/examples/how_tos/client/get_outputs.py
+```
+
+</TabItem>
+</Tabs>
+
+### Expected Output
+
+<Tabs groupId="language" queryString>
+<TabItem value="rust" label="Rust">
+<OutputRust />
+</TabItem>
+<TabItem value="typescript-node" label="Typescript (Node.js)">
+<OutputNode />
+</TabItem>
+<TabItem value="python" label="Python">
+<OutputPython />
+</TabItem>
+</Tabs>
