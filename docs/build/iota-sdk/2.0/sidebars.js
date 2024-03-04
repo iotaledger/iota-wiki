@@ -126,9 +126,10 @@ module.exports = {
         'how-tos/introduction',
         {
           type: 'category',
-          label: 'Wallets',
+          label: 'Wallet',
           items:[
-              'how-tos/wallet/create-wallet'
+            'how-tos/wallet/create-mnemonic',
+            'how-tos/wallet/create-wallet'
           ]
         },/*
         {

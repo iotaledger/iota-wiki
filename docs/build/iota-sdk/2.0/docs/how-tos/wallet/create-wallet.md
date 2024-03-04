@@ -1,6 +1,8 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
+# Create a Wallet
+
 ## Example Code
 
 <Tabs groupId="language" queryString>
@@ -151,8 +153,9 @@ https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/nodejs/examples/how_tos
 
 1. Instantiate
    new [`ClientOptions`](http://localhost:3000/iota-sdk/2.0/references/python/iota_sdk/types/client_options/) ot
-   use the `node_url` defined in the `env` file, or default to
-   the [Shimmer Testnet](https://wiki.iota.org/build/networks-endpoints/#public-testnet):
+   use the `node_url` defined in
+   the [`.env`](https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/python/examples/.env.example) file, or default
+   to the [Shimmer Testnet](https://wiki.iota.org/build/networks-endpoints/#public-testnet):
 
 <div className={'hide-code-block-extras'}>
 
