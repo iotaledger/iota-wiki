@@ -93,7 +93,7 @@ in various decentralized finance (DeFi) applications, where you might allow a sm
 tokens to participate in staking, lending, or trading activities. The original token owner can adjust or revoke the
 allowance at any time, providing control over how your tokens are used by others.
 
-Any funds sent to the chain via on-ledger requests are credited to the sender's account. If you want a contract to use
+Any funds sent to the chain are credited to the sender's account. If you want a contract to use
 those funds, you must specify an `Allowance` in the request. Contracts can then claim any of the allowed funds using
 the sandbox `TransferAllowedFunds` function.
 
