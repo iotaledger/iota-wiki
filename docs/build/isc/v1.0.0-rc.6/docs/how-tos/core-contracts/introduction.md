@@ -15,7 +15,7 @@ tags:
 
 # The Core Contracts
 
-The [core contracs](../../explanations/core-contracts.md) are contracts deployed on every chain and are vital to interact with L1 and the chain itself. They can be called in Solidity through the [ISC Magic Contract](../../reference/magic-contract.md).
+The [core contracs](../../explanations/core-contracts.md) are contracts deployed on every chain and are vital to interact with L1 and the chain itself. They can be called in Solidity through the [ISC Magic Contract](../../reference/magic-contract/introduction.md).
 
 ## The ISC Magic Contract
 
