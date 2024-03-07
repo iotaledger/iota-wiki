@@ -319,8 +319,7 @@ https://blog.hashd.in/hashd-in-draft0/
 
 ### Fireblocks
 
-Fireblocks is a multisig system. Dom has more information about them.
-https://www.fireblocks.com/
+[Fireblocks](https://www.fireblocks.com/) is a multisig system.
 
 ### Vault12
 
