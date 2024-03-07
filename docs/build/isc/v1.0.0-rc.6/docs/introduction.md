@@ -18,7 +18,7 @@ import OnOffLedgerRequest from './_partials/_on_off_ledger_request.md';
 
 <NetworkWarning/>
 
-Smart contracts are deterministic applications that run on distributed network with multiple
+Smart contracts are deterministic applications that run on a distributed network with multiple
 [validators](explanations/validators.md) that execute and validate the same code.
 Their deterministic and distributed nature makes them predictable, stable and trustworthy.
 
@@ -28,7 +28,7 @@ Due to the distributed nature of smart contracts, i.e. they run on a network of 
 they usually have a limited throughput as a validator can only process a limited amount smart contracts at once.
 This can lead to relatively high [fees](#gas) for smart contract execution, as well as scalability issues when running on 
 a single blockchain. However, the IOTA Smart Contract Protocol allows **many blockchains that execute smart contracts to
-run in parallel** and communicate with one another, therefore solving the scalability problem.
+run in parallel** and communicate with one another, therefore solving the scalability problem. Enabling interoperability and horizontal scaling of dApps.
 
 At the same time, ISC provides advanced means of communication between its chains and preserves the ability to create
 complex, composed smart contracts.
@@ -53,9 +53,8 @@ smart contracts, as well as an **experimental** [Wasm VM](getting-started/langua
 
 ## Sandbox Interface
 
-Smart contracts access data via the deterministic [Sandbox interface](explanations/sandbox.md), ensuring
-security and predictability. This interface restricts contracts to their own state and provides various utilities like cryptographic functions and
-event dispatching.
+ISC Smart contracts can access the [Sandbox interface](explanations/sandbox.md). 
+This interface provides access to the chain state, native assets, allows interaction with other contracts/chains, as well as various utilities like cryptographic functions and event dispatching.
 
 ![Sandbox](/img/sandbox.png)
 
@@ -70,7 +69,7 @@ may involve delays.
 
 ### Gas
 
-Running a request consumes 'gas', that is the cost of executing an on-chain request. You can specify a `GasBudget` 
+Running a request consumes 'gas'. Gas units are a measurement of "how expensive" a computation is to execute. You can specify a `GasBudget` 
 for each request, with costs charged to your on-chain account. 
 
 <OnOffLedgerRequest/>

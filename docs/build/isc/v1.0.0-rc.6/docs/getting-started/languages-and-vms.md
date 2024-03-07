@@ -6,28 +6,27 @@ import NetworkWarning from '../_admonitions/_network_warning.md'
 <NetworkWarning/>
 
 The current release of IOTA Smart Contracts has support for [EVM/Solidity](#evmsolidity-based-smart-contracts) smart
-contracts, as well as experimental [Wasm](#wasm-vm-for-isc) smart contracts, providing limited compatibility with
+contracts, as well as experimental [Wasm](#wasm-vm-for-isc) smart contracts, providing compatibility with
 existing smart contracts and tooling from other EVM based chains like Ethereum. This allows us to offer the existing 
 ecosystem around EVM/Solidity a familiar alternative.
 
-## EVM/Solidity Based Smart Contracts
+## EVM Smart Contracts
 
 ### What is EVM/Solidity?
 
 [EVM](https://ethereum.org/en/developers/docs/evm/) stands for "Ethereum Virtual Machine" and is currently the tried and
-tested virtual machine running most smart contract implementations.
+tested virtual machine running most smart contract networks.
 
-[Solidity](https://soliditylang.org/) is the programming language of choice with EVM, which was created for this
+[Solidity](https://soliditylang.org/) is the programming language of choice for the EVM. It was created for this
 specific purpose.
 
-The main benefit of using EVM/Solidity right now is its sheer amount of resources from years of development and the IOTA
-Smart Contracts implementation is fully compatible with all of them. If you have experience developing on other EVM
-based chains, you will feel right at home. Any existing contracts you've written will probably need no (or very minimal)
-[changes to function on IOTA Smart Contracts](compatibility.md).
+The main benefit of using EVM/Solidity is its sheer amount of resources from years of development. The IOTA
+Smart Contracts implementation is fully compatible with all of them. If you have experience developing on other EVM based chains, you will feel right at home. Any existing contracts you've written will need no 
+changes to function on IOTA Smart Contracts.
 
 ### How IOTA Smart Contracts Work With EVM
 
-Every deployed IOTA Smart Contracts chain automatically includes a core contract
+Every deployed ISC chain automatically includes a core contract
 called [`evm`](../reference/core-contracts/evm.md). This core contract is responsible for running EVM code and
 storing the EVM state.
 
