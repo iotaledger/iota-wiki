@@ -73,7 +73,7 @@ known as 'gas', varies depending on the complexity and size of the request. User
 :::tip Dive Deeper
 
 You can gain a deeper understanding
-of [ISC Architecture](/isc/explanations/isc-architecture/) and [smart contract invocation](/isc/explanations/invocation/)
+of [ISC Architecture](/isc/introduction#isc-architecture) and [smart contract invocation](/isc/explanations/invocation/)
 in the [IOTA Smart Contracts](/isc/introduction) documentation.
 
 :::

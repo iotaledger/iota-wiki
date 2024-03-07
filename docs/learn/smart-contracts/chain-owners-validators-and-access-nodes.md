@@ -1,7 +1,7 @@
 ---
 description: Explore the roles of chain owners, validator nodes, and access nodes in the governance and operation of IOTA Smart Contracts.
 image: /img/logo/WASP_logo_dark.png
-keywords:
+tags:
   - IOTA Smart Contracts
   - Chain Owners
   - Validator Nodes

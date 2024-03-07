@@ -1,12 +1,14 @@
 ---
 description: An insightful overview of the consensus process in IOTA Smart Contracts, detailing the steps involved in updating the chain.
 image: /img/logo/WASP_logo_dark.png
-keywords:
-  - IOTA Smart Contracts
-  - Consensus Process
-  - Validator Nodes
-  - Blockchain Updates
-  - State Anchor
+tags:
+  - smart contracts
+  - consensus
+  - validator committee
+  - validators
+  - validator nodes
+  - explanation
+  - state anchor
 ---
 
 # Consensus

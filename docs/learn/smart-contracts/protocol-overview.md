@@ -1,7 +1,7 @@
 ---
 description: An overview of the ISC Protocol, detailing the function and interaction of smart contracts, virtual machines, validators, state, and blockchains in IOTA.
 image: /img/logo/WASP_logo_dark.png
-keywords:
+tags:
   - ISC Protocol
   - IOTA Smart Contracts
   - Virtual Machines

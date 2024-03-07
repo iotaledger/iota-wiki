@@ -399,10 +399,6 @@ exports.articleRedirects = [
     to: '/get-started/introduction/shimmer/shimmer-token',
   },
   {
-    from: '/shimmer/learn/smart-contracts/smart-contracts-chains',
-    to: '/isc/explanations/isc-architecture',
-  },
-  {
     from: '/shimmer/learn/smart-contracts/smart-contracts-community-tutorials',
     to: '/learn/smart-contracts/introduction',
   },
