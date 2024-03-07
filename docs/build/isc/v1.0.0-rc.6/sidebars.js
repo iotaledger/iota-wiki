@@ -45,62 +45,6 @@ module.exports = {
     },
     {
       type: 'category',
-      label: 'Explanations',
-      items: [
-        {
-          type: 'doc',
-          label: 'ISC Architecture',
-          id: 'explanations/isc-architecture',
-        },
-        {
-          type: 'doc',
-          label: 'Anatomy of a Smart Contract',
-          id: 'explanations/smart-contract-anatomy',
-        },
-        {
-          type: 'doc',
-          label: 'Sandbox Interface',
-          id: 'explanations/sandbox',
-        },
-        {
-          type: 'doc',
-          label: 'Calling a Smart Contract',
-          id: 'explanations/invocation',
-        },
-        {
-          type: 'doc',
-          label: 'State, Transitions and State Anchoring',
-          id: 'explanations/states',
-        },
-        {
-          type: 'doc',
-          label: 'State manager',
-          id: 'explanations/state_manager',
-        },
-        {
-          type: 'doc',
-          label: 'Validators and Access Nodes',
-          id: 'explanations/validators',
-        },
-        {
-          type: 'doc',
-          label: 'Consensus',
-          id: 'explanations/consensus',
-        },
-        {
-          type: 'doc',
-          label: 'How Accounts Work',
-          id: 'explanations/how-accounts-work',
-        },
-        {
-          type: 'link',
-          label: 'Core Contracts',
-          href: '/isc/reference/core-contracts/overview',
-        },
-      ],
-    },
-    {
-      type: 'category',
       label: 'How To',
       items: [
         'how-tos/introduction',
@@ -217,6 +161,57 @@ module.exports = {
               id: 'how-tos/core-contracts/get-randomness-on-l2',
             },
           ],
+        },
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Explanations',
+      items: [
+        {
+          type: 'doc',
+          label: 'Anatomy of a Smart Contract',
+          id: 'explanations/smart-contract-anatomy',
+        },
+        {
+          type: 'doc',
+          label: 'Sandbox Interface',
+          id: 'explanations/sandbox',
+        },
+        {
+          type: 'doc',
+          label: 'Calling a Smart Contract',
+          id: 'explanations/invocation',
+        },
+        {
+          type: 'doc',
+          label: 'State, Transitions and State Anchoring',
+          id: 'explanations/states',
+        },
+        {
+          type: 'doc',
+          label: 'State manager',
+          id: 'explanations/state_manager',
+        },
+        {
+          type: 'doc',
+          label: 'Validators and Access Nodes',
+          id: 'explanations/validators',
+        },
+        {
+          type: 'doc',
+          label: 'Consensus',
+          id: 'explanations/consensus',
+        },
+        {
+          type: 'doc',
+          label: 'How Accounts Work',
+          id: 'explanations/how-accounts-work',
+        },
+        {
+          type: 'link',
+          label: 'Core Contracts',
+          href: '/isc/reference/core-contracts/overview',
         },
       ],
     },

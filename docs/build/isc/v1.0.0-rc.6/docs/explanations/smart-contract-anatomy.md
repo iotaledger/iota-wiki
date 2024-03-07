@@ -19,17 +19,14 @@ It can support different _VM types_ (i.e., interpreters) simultaneously on the s
 For example, it is possible to have [Wasm](../getting-started/languages-and-vms.md#wasm-vm-for-isc) and [EVM/Solidity](../getting-started/languages-and-vms.md#evmsolidity-based-smart-contracts) smart
 contracts coexisting on the same chain.
 
-The logical structure of IOTA Smart Contracts is independent of the _VM_ type:
-
 ![Smart Contract Structure](/img/tutorial/SC-structure.png)
 
 ## Identifying a Smart Contract
 
-Each smart contract on the chain is identified by a _hname_ (pronounced "aitch-name"), which is a `uint32` value
-calculated as a hash of the smart contract's instance name (a string).
+The ISC [core contracts](core-contracts.md) and WASM contracts on the chain are identified by a _hname_ (pronounced 
+"aitch-name"), which is a `uint32` value calculated as a hash of the smart contract's instance name (a string).
 For example, the hname of the [`root`](../reference/core-contracts/root.md) core contract
-is `0xcebf5908`. This
-value uniquely identifies this contract in every chain.
+is `0xcebf5908`. This value uniquely identifies this contract in every chain. This does not apply to EVM contracts.
 
 ## State
 
@@ -40,7 +37,7 @@ course).
 You can think of the smart contract state as a partition of the chain's data state, which can only be written by the
 smart contract program itself.
 
-The smart contract also owns an _account_ on the chain, stored as part of the chain state.
+The smart contract also owns an accounts on the chain, stored as part of the chain state.
 The smart contract account represents the balances of base tokens, native tokens, and NFTs controlled by the smart
 contract.
 

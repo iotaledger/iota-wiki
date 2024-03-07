@@ -29,18 +29,25 @@ directly with an IOTA Smart Contracts chain running EVM as long as you take a co
 
 ## Tooling Considerations
 
-1. Please make sure you use the correct JSON-RPC endpoint URL in your tooling for your chain. If you're running your own chain, you can find the JSON-RPC
-   endpoint URL in the Wasp dashboard (`<URL>/wasp/dashboard` when using `node-docker-setup`).
-2. Please ensure you use the correct `Chain ID` configured while starting the JSON-RPC service. If you did not
-   explicitly define this while starting the service, the default Chain ID will be
-**<ChainId url='https://json-rpc.evm.shimmer.network'/>** for ShimmerEVM or
-**<ChainId url='https://json-rpc.evm.testnet.shimmer.network'/>** for the ShimmerEVM Testnet .
-3. Fees are being handled on the IOTA Smart Contracts chain level, not the EVM level. Because of this, you can simply
-   use a gas price of 0 on the EVM level at this time.
+<ol>
+    <li>
+        Please make sure you use the correct JSON-RPC endpoint URL in your tooling for your chain. If you're running your own chain, you can find the JSON-RPC
+        endpoint URL in the Wasp dashboard (<code>[URL]/wasp/dashboard</code> when using <code>node-docker-setup</code>).
+   </li>
+    <li>
+        Please ensure you use the correct `Chain ID` configured while starting the JSON-RPC service. If you did not
+        explicitly define this while starting the service, the default Chain ID will be <ChainId url='https://json-rpc.evm.shimmer.network'/>
+        for ShimmerEVM or <ChainId url='https://json-rpc.evm.testnet.shimmer.network' /> for the ShimmerEVM Testnet .
+    </li>
+    <li>
+        Fees are handled on the IOTA Smart Contracts chain level, not the EVM level. The chain will reject any requests with
+        a different gas price than specified by the chain.
+    </li>
+</ol>
 
 :::caution
 
-Re-using an existing Chain ID is not recommended and can be a security risk. For serious usage, register a unique Chain
+Re-using an existing Chain ID is not recommended and can be a security risk. For production usage, register a unique Chain
 ID on [Chainlist](https://chainlist.org/) and use that instead of the default. **It is not possible to change the EVM
 chain ID after deployment.**
 
@@ -103,10 +110,6 @@ the "Custom (<ChainId url='https://json-rpc.evm.shimmer.network'/>) network" or 
 
 ![Environment will be set to Injected Web3](/img/evm/remix-injected-provider-set.png)]
 
-### Video Tutorial
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/0_rmmprEKrM" title="ShimmerEVM Tutorial: Connect to Public Testnet & Deploy a Solidity Smart Contract" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
 ## Hardhat
 
 [Hardhat](https://hardhat.org/) is a command line toolbox that allows you to deploy, test, verify, and interact with
@@ -126,6 +129,7 @@ networks: {
 },
 ```
 ***** Where `CHAIN_ID`= <ChainId url='https://json-rpc.evm.testnet.shimmer.network'/>
+
 </TabItem>
 <TabItem value='shimmerEVM' label='ShimmerEVM'>
 
@@ -151,10 +155,6 @@ Currently, there is no validation service available for EVM/Solidity smart contr
 often offered through block explorer APIs.
 
 :::
-
-### Video Tutorial
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/rRscvKirroo" title="ShimmerEVM Tutorial: Deploying a Smart Contract with Hardhat" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## Ethers.js/Web3.js
 
