@@ -37,7 +37,7 @@ course).
 You can think of the smart contract state as a partition of the chain's data state, which can only be written by the
 smart contract program itself.
 
-The smart contract also owns an accounts on the chain, stored as part of the chain state.
+The smart contract also owns an account on the chain, stored as part of the chain state.
 The smart contract account represents the balances of base tokens, native tokens, and NFTs controlled by the smart
 contract.
 
