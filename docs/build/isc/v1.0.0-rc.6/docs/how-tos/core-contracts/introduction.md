@@ -43,6 +43,12 @@ import "@iota/iscmagic/ISC.sol";
 The Magic contract also provides proxy ERC20 contracts to manipulate ISC base
 tokens and native tokens on L2.
 
+:::info Reference Docs
+
+If you need further info about magic contracts interfaces you can check out the [magic contract docs](../../reference/magic-contract/introduction.md). 
+
+:::
+
 ## Call a Function
 
 In the example below, `ISC.sandbox.getEntropy()` calls the

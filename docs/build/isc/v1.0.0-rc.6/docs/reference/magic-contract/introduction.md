@@ -2,34 +2,36 @@
 sidebar_position: 1
 ---
 
-# Magic Contract
+# Introduction
 
-- [Common type definitions](https://github.com/iotaledger/wasp/blob/develop/packages/vm/core/evm/iscmagic/ISCTypes.sol)
-- [ISC library](https://github.com/iotaledger/wasp/blob/develop/packages/vm/core/evm/iscmagic/ISC.sol)
-- [ISCSandbox](https://github.com/iotaledger/wasp/blob/develop/packages/vm/core/evm/iscmagic/ISCSandbox.sol)
+This section documents the magic contract and all it's subcontracts
+
+- [Common type definitions](./ISCTypes.md)
+- [ISC library](./ISC.md)
+- [ISCSandbox](./ISCSandbox.md)
   interface, available at `ISC.sandbox`
-- [ISCAccounts](https://github.com/iotaledger/wasp/blob/develop/packages/vm/core/evm/iscmagic/ISCAccounts.sol)
+- [ISCAccounts](./ISCAccounts.md)
   interface, available at `ISC.accounts`
-- [ISCUtil](https://github.com/iotaledger/wasp/blob/develop/packages/vm/core/evm/iscmagic/ISCUtil.sol)
+- [ISCUtil](./ISCUtil.md)
   interface, available at `ISC.util`
-- [ERC20BaseTokens](https://github.com/iotaledger/wasp/blob/develop/packages/vm/core/evm/iscmagic/ERC20BaseTokens.sol)
+- [ERC20BaseTokens](./ERC20BaseTokens.md)
   contract, available at `ISC.baseTokens`
   (address `0x1074010000000000000000000000000000000000`)
-- [ERC20NativeTokens](https://github.com/iotaledger/wasp/blob/develop/packages/vm/core/evm/iscmagic/ERC20NativeTokens.sol)
+- [ERC20NativeTokens](./ERC20NativeTokens.md)
   contract, available at `ISC.nativeTokens(foundrySN)` after being registered
   by the foundry owner by calling
   [`registerERC20NativeToken`](../core-contracts/evm.md#registerERC20NativeToken)
   (address `0x107402xxxxxxxx00000000000000000000000000` where `xxxxxxxx` is the
   little-endian encoding of the foundry serial number)
-- [ERC20ExternalNativeTokens](https://github.com/iotaledger/wasp/blob/develop/packages/vm/core/evm/iscmagic/ERC20ExternalNativeTokens.sol)
+- [ERC20ExternalNativeTokens](./ERC20ExternalNativeTokens.md)
   contract, available at a dynamically assigned address after being registered
   by the foundry owner by calling
   [`registerERC20NativeTokenOnRemoteChain`](../core-contracts/evm.md#registerERC20NativeTokenOnRemoteChain)
   on the chain that controls the foundry.
-- [ERC721NFTs](https://github.com/iotaledger/wasp/blob/develop/packages/vm/core/evm/iscmagic/ERC721NFTs.sol)
+- [ERC721NFTs](./ERC721NFTs.md)
   contract, available at `ISC.nfts`
   (address `0x1074030000000000000000000000000000000000`)
-- [ERC721NFTCollection](https://github.com/iotaledger/wasp/blob/develop/packages/vm/core/evm/iscmagic/ERC721NFTCollection.sol)
+- [ERC721NFTCollection](./ERC721NFTCollection.md)
   contract, available at `ISC.erc721NFTCollection(collectionID)`, after being
   registered by calling [`registerERC721NFTCollection`](../core-contracts/evm.md#registerERC721NFTCollection).
 
