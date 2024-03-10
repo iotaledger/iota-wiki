@@ -28,7 +28,13 @@ function screenshotPathname(pathname: string) {
 
 test.describe('Docusaurus site screenshots', () => {
   const pathnames = extractSitemapPathnames(sitemapPath).filter(
-    (pathname) => pathname.match(/^\/(get-started|learn|build|maintain|api)/),
+    (pathname) => pathname.match(
+      'mana-calculator|' +
+      'learn/glossary|' +
+      'build/networks-endpoints|' +
+      'create-mnemonic|' +
+      '(api|apis)/core'
+    ),
   );
   console.log('Pathnames to screenshot:', pathnames);
   pathnames.forEach(screenshotPathname);
