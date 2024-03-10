@@ -29,7 +29,7 @@ function screenshotPathname(pathname: string) {
 test.describe('Docusaurus site screenshots', () => {
   const pathnames = extractSitemapPathnames(sitemapPath).filter((pathname) =>
     pathname.match(
-      '' +
+      ' ^/$|' +
         'mana-calculator|' +
         'learn/glossary|' +
         'build/networks-endpoints|' +
