@@ -1,7 +1,7 @@
 import * as fs from 'fs';
-import {test} from '@playwright/test';
-import {argosScreenshot} from '@argos-ci/playwright';
-import {extractSitemapPathnames, pathnameToArgosName} from './utils';
+import { test } from '@playwright/test';
+import { argosScreenshot } from '@argos-ci/playwright';
+import { extractSitemapPathnames, pathnameToArgosName } from './utils';
 
 // Constants
 const siteUrl = 'http://localhost:3000';
@@ -17,23 +17,24 @@ function waitForDocusaurusHydration() {
 }
 
 function screenshotPathname(pathname: string) {
-  test(`pathname ${pathname}`, async ({page}) => {
+  test(`pathname ${pathname}`, async ({ page }) => {
     const url = siteUrl + pathname;
     await page.goto(url);
     await page.waitForFunction(waitForDocusaurusHydration);
-    await page.addStyleTag({content: stylesheet});
+    await page.addStyleTag({ content: stylesheet });
     await argosScreenshot(page, pathnameToArgosName(pathname));
   });
 }
 
 test.describe('Docusaurus site screenshots', () => {
-  const pathnames = extractSitemapPathnames(sitemapPath).filter(
-    (pathname) => pathname.match(
-      'mana-calculator|' +
-      'learn/glossary|' +
-      'build/networks-endpoints|' +
-      'create-mnemonic|' +
-      '(api|apis)/core'
+  const pathnames = extractSitemapPathnames(sitemapPath).filter((pathname) =>
+    pathname.match(
+      '' +
+        'mana-calculator|' +
+        'learn/glossary|' +
+        'build/networks-endpoints|' +
+        'create-mnemonic|' +
+        '(api|apis)/core',
     ),
   );
   console.log('Pathnames to screenshot:', pathnames);
