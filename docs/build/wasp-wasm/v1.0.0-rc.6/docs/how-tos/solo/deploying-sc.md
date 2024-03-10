@@ -1,7 +1,7 @@
 ---
 description: Deploying Wasm smart contracts with Solo.
 image: /img/tutorial/send_request.png
-keywords:
+tags:
   - testing
   - PostRequestSync
   - PostRequestOffLedger

@@ -2,7 +2,7 @@
 description: 'The root contract is the first smart contract deployed on the chain. It functions as a smart contract
 factory for the chain.'
 image: /img/logo/WASP_logo_dark.png
-keywords:
+tags:
 
 - smart contracts
 - core

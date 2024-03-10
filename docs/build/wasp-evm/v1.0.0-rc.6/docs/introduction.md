@@ -2,7 +2,7 @@
 description: 'The current release of IOTA Smart Contracts also has experimental support for EVM/Solidity, providing
 limited compatibility with existing smart contracts and tooling from other EVM based chains like Ethereum.'
 image: /img/logo/WASP_logo_dark.png
-keywords:
+tags:
 
 - EVM
 - Solidity

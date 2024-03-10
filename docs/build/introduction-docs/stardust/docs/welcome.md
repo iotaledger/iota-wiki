@@ -1,5 +1,5 @@
 ---
-keywords:
+tags:
   - Welcome
   - Stardust
   - Documentation
@@ -9,7 +9,7 @@ image: /img/logo/preview.png
 
 # Welcome
 
-Stardust protocol is the successor to IOTA 1.5, also known as [Chrysalis](/introduction/welcome), that transforms IOTA into a multi-asset ledger and enables the operation of [IOTA Smart Contracts](/learn/smart-contracts/introduction/). This page outlines the new concepts
+Stardust protocol is the successor to IOTA 1.5, also known as _Chrysalis_, that transforms IOTA into a multi-asset ledger and enables the operation of [IOTA Smart Contracts](/learn/smart-contracts/introduction/). This page outlines the new concepts
 and differences compared to Chrysalis, furthermore gives an overview of different components of the IOTA technology stack.
 
 Stardust debuts on [Shimmer](https://shimmer.network/), the new staging network for IOTA, before being fully supported on the IOTA Mainnet.

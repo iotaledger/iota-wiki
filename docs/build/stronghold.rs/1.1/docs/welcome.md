@@ -4,7 +4,7 @@ secure
 database for working with cryptography, which ensures that secrets are never revealed - but can be used according to
 best practices.'
 image: /img/banner/banner_stronghold.png
-keywords:
+tags:
 
 - welcome
 - open-source
@@ -47,7 +47,7 @@ Additionally to the secure secret database [Vault](reference/structure/engine/va
 In April 2021, F-Secure performed a security assessment of the core crates of IOTA Stronghold and found nothing of
 concern. This is not an explicit declaration of fitness or freedom of error, but it is an indicator of the high quality
 of the code. You may review in our
-[GitHub repository](https://github.com/iotaledger/stronghold.rs/blob/dev/documentation/docs/meta/Audit.pdf).
+[GitHub repository](https://github.com/iotaledger/stronghold.rs/blob/6429593593aa3ce55955cfcdc37bb67a6df52787/documentation/docs/meta/Audit.pdf).
 
 In May 2022 Stronghold was also audited by [WithSecure](https://www.withsecure.com/en/home). You can find the full
 audit report in our

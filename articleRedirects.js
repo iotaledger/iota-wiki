@@ -10,30 +10,6 @@ function directoryExists(directoryPath) {
 
 const ApiCore = [
   {
-    from: '/develop/category/nodes/rest-api/messages',
-    to: '/apis/core/v1/submit-a-message',
-  },
-  {
-    from: '/develop/category/nodes/rest-api/milestones',
-    to: '/apis/core/v1/look-up-a-milestone-by-a-given-milestone-index',
-  },
-  {
-    from: '/develop/category/nodes/rest-api/node',
-    to: '/apis/core/v1/returns-the-health-of-the-node',
-  },
-  {
-    from: '/develop/category/nodes/rest-api/peers',
-    to: '/apis/core/v1/get-information-about-the-peers-of-the-node',
-  },
-  {
-    from: '/develop/category/nodes/rest-api/tangle',
-    to: '/apis/core/v1/returns-tips-that-are-ideal-for-attaching-a-message',
-  },
-  {
-    from: '/develop/category/nodes/rest-api/utxo',
-    to: '/apis/core/v1/find-an-output-by-its-identifier',
-  },
-  {
     from: '/shimmer/develop/category/nodes/core-rest-api/blocks',
     to: '/apis/core/v2/submit-a-block',
   },
@@ -65,10 +41,6 @@ const ApiCore = [
 
 exports.articleRedirects = [
   ...(directoryExists('./docs/build/apis/docs/core') ? ApiCore : []),
-  {
-    from: '/develop/endpoints/devnet',
-    to: '/build/networks-endpoints',
-  },
   {
     from: '/develop/endpoints/mainnet',
     to: '/build/networks-endpoints',
@@ -123,7 +95,7 @@ exports.articleRedirects = [
   },
   {
     from: '/learn/about-iota/energy-efficiency',
-    to: '/learn/protocols/chrysalis/introduction',
+    to: '/learn/protocols/stardust/introduction',
   },
   {
     from: '/learn/about-iota/messages',

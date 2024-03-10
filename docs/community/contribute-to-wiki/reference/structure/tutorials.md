@@ -1,7 +1,7 @@
 ---
 description: Tutorials are lessons which should guide the reader to complete a concrete project.
 image: /img/logo/iota_logo.svg
-keywords:
+tags:
   - tutorials
 ---
 

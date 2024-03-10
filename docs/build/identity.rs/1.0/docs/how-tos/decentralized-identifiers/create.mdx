@@ -3,7 +3,7 @@ title: Creating a Decentralized Identity
 sidebar_label: Create and Publish
 description: Create DID Documents and publish them to the Tangle
 image: /img/Identity_icon.png
-keywords:
+tags:
   - Documents
   - DID
   - Tangle
@@ -45,14 +45,14 @@ you will need an output with actual Shimmer or IOTA funds to create a new Alias 
 <TabItem value="rust" label="Rust">
 
 ```rust reference
-https://github.com/iotaledger/identity.rs/blob/main/examples/0_basic/0_create_did.rs#L52
+https://github.com/iotaledger/identity.rs/blob/v1.0.0/examples/0_basic/0_create_did.rs#L52
 ```
 
 </TabItem>
 <TabItem value="typescript-node" label="Typescript (Node.js)">
 
 ```ts reference
-https://github.com/iotaledger/identity.rs/blob/main/bindings/wasm/examples/src/0_basic/0_create_did.ts#L40-L51
+https://github.com/iotaledger/identity.rs/blob/v1.0.0/bindings/wasm/examples/src/0_basic/0_create_did.ts#L40-L51
 ```
 
 </TabItem>
@@ -77,14 +77,14 @@ the DID inside the document.
 <TabItem value="rust" label="Rust">
 
 ```ts reference
-https://github.com/iotaledger/identity.rs/blob/main/examples/0_basic/0_create_did.rs#L59-L71
+https://github.com/iotaledger/identity.rs/blob/v1.0.0/examples/0_basic/0_create_did.rs#L59-L71
 ```
 
 </TabItem>
 <TabItem value="typescript-node" label="Typescript (Node.js)">
 
 ```rust reference
-https://github.com/iotaledger/identity.rs/blob/main/bindings/wasm/examples/src/0_basic/0_create_did.ts#L55C44-L65
+https://github.com/iotaledger/identity.rs/blob/v1.0.0/bindings/wasm/examples/src/0_basic/0_create_did.ts#L55C44-L65
 ```
 
 </TabItem>
@@ -96,7 +96,7 @@ https://github.com/iotaledger/identity.rs/blob/main/bindings/wasm/examples/src/0
 Next, you need to construct a new [Alias Output](../../explanations/about-alias-outputs.mdx) that includes the
 DID Document in the [State Metadata](../../explanations/about-alias-outputs.mdx).
 The created Alias Output contains an encoded version of the DID Document in its `State Metadata`, and has the state
-controller and the governor set to the generated [Ed25519](/learn/protocols/chrysalis/core-concepts/EdDSA-support/) address.
+controller and the governor set to the generated Ed25519 address.
 
 Note that controllers don't need to be Ed25519 addresses, they can be any type of output.
 However, they must be unlocked in order perform a state or governance transition when the DID Document is updated or destroyed.
@@ -107,14 +107,14 @@ However, they must be unlocked in order perform a state or governance transition
 <TabItem value="rust" label="Rust">
 
 ```rust reference
-https://github.com/iotaledger/identity.rs/blob/main/examples/0_basic/0_create_did.rs#L75
+https://github.com/iotaledger/identity.rs/blob/v1.0.0/examples/0_basic/0_create_did.rs#L75
 ```
 
 </TabItem>
 <TabItem value="typescript-node" label="Typescript (Node.js)">
 
 ```ts reference
-https://github.com/iotaledger/identity.rs/blob/main/bindings/wasm/examples/src/0_basic/0_create_did.ts#L70
+https://github.com/iotaledger/identity.rs/blob/v1.0.0/bindings/wasm/examples/src/0_basic/0_create_did.ts#L70
 ```
 
 </TabItem>
@@ -139,14 +139,14 @@ the DID Document is stored on the ledger and can be [resolved](resolve.mdx) usin
 <TabItem value="rust" label="Rust">
 
 ```rust reference
-https://github.com/iotaledger/identity.rs/blob/main/examples/0_basic/0_create_did.rs#L78
+https://github.com/iotaledger/identity.rs/blob/v1.0.0/examples/0_basic/0_create_did.rs#L78
 ```
 
 </TabItem>
 <TabItem value="typescript-node" label="Typescript (Node.js)">
 
 ```ts reference
-https://github.com/iotaledger/identity.rs/blob/main/bindings/wasm/examples/src/0_basic/0_create_did.ts#L74
+https://github.com/iotaledger/identity.rs/blob/v1.0.0/bindings/wasm/examples/src/0_basic/0_create_did.ts#L74
 ```
 
 </TabItem>
@@ -159,14 +159,14 @@ https://github.com/iotaledger/identity.rs/blob/main/bindings/wasm/examples/src/0
 <TabItem value="rust" label="Rust">
 
 ```rust reference
-https://github.com/iotaledger/identity.rs/blob/main/examples/0_basic/0_create_did.rs
+https://github.com/iotaledger/identity.rs/blob/v1.0.0/examples/0_basic/0_create_did.rs
 ```
 
 </TabItem>
 <TabItem value="typescript-node" label="Typescript (Node.js)">
 
 ```ts reference
-https://github.com/iotaledger/identity.rs/blob/main/bindings/wasm/examples/src/0_basic/0_create_did.ts
+https://github.com/iotaledger/identity.rs/blob/v1.0.0/bindings/wasm/examples/src/0_basic/0_create_did.ts
 ```
 
 </TabItem>

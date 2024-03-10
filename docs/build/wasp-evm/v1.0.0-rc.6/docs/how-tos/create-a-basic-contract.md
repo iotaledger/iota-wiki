@@ -1,7 +1,7 @@
 ---
 description: Solidity smart contract example.
 image: /img/logo/WASP_logo_dark.png
-keywords:
+tags:
   - smart contracts
   - EVM
   - Solidity

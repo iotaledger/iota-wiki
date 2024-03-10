@@ -1,7 +1,7 @@
 ---
 description: How to configure wasp-cli. Requirements and configuration parameters.
 image: /img/logo/WASP_logo_dark.png
-keywords:
+tags:
   - Wasp-cli
   - Configuration
   - Hornet

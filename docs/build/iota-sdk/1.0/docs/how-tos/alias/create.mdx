@@ -2,7 +2,7 @@
 title: Create Alias Output
 description: 'How to programmatically create an alias output'
 image: /img/logo/iota_mark_light.png
-keywords:
+tags:
   - how to
   - create
   - alias
@@ -33,7 +33,7 @@ The following example will:
 <div className={'hide-code-block-extras'}>
 
 ```rust reference
-https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/alias/create.rs#L40
+https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/alias/create.rs#L44
 ```
 
 </div>
@@ -43,7 +43,7 @@ https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/alias/c
 <div className={'hide-code-block-extras'}>
 
 ```rust reference
-https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/alias/create.rs#L43-L45
+https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/alias/create.rs#L47-L49
 ```
 
 </div>
@@ -55,22 +55,23 @@ The following example will:
 
 1. Instantiate a [`Wallet`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/core/struct.Wallet.html), get Alice's `Account` which was
    [created in the first guide](../accounts-and-addresses/create-account.mdx) and [sync it](../accounts-and-addresses/check-balance.mdx).
-2. Create an Alias Output transaction by calling the [`Account.prepareCreateAliasOutput()`](../../references/nodejs/classes/Account.md#preparecreatealiasoutput) function, and then [send](../../references/nodejs/classes/Account.md#send) it.
+2. Create an Alias Output transaction by calling the [`Account.createAliasOutput()`](../../references/nodejs/classes/Account.md#createaliasoutput) <!-- TODO Update ref link --> function.
 
 <div className={'hide-code-block-extras'}>
 
 ```typescript reference
-https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/alias/create.ts#L53-L55
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/alias/create.ts#L51
 ```
 
 </div>
 
-3. Retry transaction until included [`Transaction`](../../references/nodejs/classes/Account.md#retrytransactionuntilincluded) that was sent.
+3. Await for the `Transaction` to get confirmed by calling the [`Account.retryTransactionUntilIncluded`](../../references/nodejs/classes/Account.md#retrytransactionuntilincluded)
+   function.
 
 <div className={'hide-code-block-extras'}>
 
 ```typescript reference
-https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/alias/create.ts#L60
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/alias/create.ts#L56-L58
 ```
 
 </div>
@@ -85,7 +86,7 @@ https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how
 <div className={'hide-code-block-extras'}>
 
 ```python reference
-https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how_tos/alias/create.py#L22
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how_tos/alias/create.py#L24
 ```
 
 </div>
@@ -106,7 +107,7 @@ https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/alias_w
 <TabItem value="typescript-node" label="Typescript (Node.js)">
 
 ```typescript reference
-https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/alias/create.rs
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/alias/create.ts
 ```
 
 </TabItem>

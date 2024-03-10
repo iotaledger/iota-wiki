@@ -2,7 +2,7 @@
 title: Mint an NFT
 description: 'How to mint an NFT'
 image: /img/logo/iota_mark_light.png
-keywords:
+tags:
   - how to
   - mint
   - nft
@@ -36,7 +36,7 @@ description, and any additional information relevant to its value or characteris
 <div className={'hide-code-block-extras'}>
 
 ```rust reference
-https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/nfts/mint_nft.rs#L53
+https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/nfts/mint_nft.rs#L55
 ```
 
 </div>
@@ -48,7 +48,7 @@ https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/nfts/mi
 <div className={'hide-code-block-extras'}>
 
 ```rust reference
-https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/nfts/mint_nft.rs#L60-L66
+https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/nfts/mint_nft.rs#L71-L77
 ```
 
 </div>
@@ -59,7 +59,7 @@ https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/nfts/mi
 <div className={'hide-code-block-extras'}>
 
 ```rust reference
-https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/nfts/mint_nft.rs#L68
+https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/nfts/mint_nft.rs#L79
 ```
 
 </div>
@@ -69,7 +69,7 @@ https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/nfts/mi
 <div className={'hide-code-block-extras'}>
 
 ```rust reference
-https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/nfts/mint_nft.rs#L84-L91
+https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/nfts/mint_nft.rs#L95-L102
 ```
 
 </div>
@@ -80,7 +80,7 @@ https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/nfts/mi
 <div className={'hide-code-block-extras'}>
 
 ```rust reference
-https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/nfts/mint_nft.rs#L93
+https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/nfts/mint_nft.rs#L104
 ```
 
 </div>
@@ -96,7 +96,7 @@ https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/nfts/mi
 <div className={'hide-code-block-extras'}>
 
 ```typescript reference
-https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/nfts/mint_nft.ts#L50
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/nfts/mint_nft.ts#L54
 ```
 
 </div>
@@ -108,19 +108,18 @@ https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how
 <div className={'hide-code-block-extras'}>
 
 ```typescript reference
-https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/nfts/mint_nft.ts#L55-L62
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/nfts/mint_nft.ts#L61-L74
 ```
 
 </div>
 
-4. Prepare the transaction that will mint the NFTs using the [`Account.prepareMintNfts()`](../../references/nodejs/classes/Account.md#preparemintnfts)
-   function and send the prepared transaction using the [`Account.send()`](../../references/nodejs/classes/Account.md#send)
+4. Create the transaction that will mint the NFTs using the [`Account.mintNfts()`](../../references/nodejs/classes/Account.md#mintnfts) <!-- TODO Update ref link --> 
    function.
 
 <div className={'hide-code-block-extras'}>
 
 ```typescript reference
-https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/nfts/mint_nft.ts#L63-L65
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/nfts/mint_nft.ts#L75
 ```
 
 </div>
@@ -131,7 +130,7 @@ https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how
 <div className={'hide-code-block-extras'}>
 
 ```typescript reference
-https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/nfts/mint_nft.ts#L82-L96
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/nfts/mint_nft.ts#L92-L106
 ```
 
 </div>
@@ -148,7 +147,7 @@ The following example will:
 <div className={'hide-code-block-extras'}>
 
 ```python reference
-https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how_tos/nfts/mint_nft.py#L21-L23
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how_tos/nfts/mint_nft.py#L23-L25
 ```
 
 </div>
@@ -160,7 +159,7 @@ https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how
 <div className={'hide-code-block-extras'}>
 
 ```python reference
-https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how_tos/nfts/mint_nft.py#L25
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how_tos/nfts/mint_nft.py#L27
 ```
 
 </div>

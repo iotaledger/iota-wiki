@@ -1,7 +1,7 @@
 ---
 description: INX-POI enables you to generate and verify Proof-of-Inclusion of blocks in the Tangle.
 image: /img/banner/banner_hornet.png
-keywords:
+tags:
   - IOTA Node
   - Hornet Node
   - INX

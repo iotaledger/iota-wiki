@@ -89,12 +89,6 @@
       "color": "#a42400"
     },
     {
-      "value": "streams",
-      "label": "Streams",
-      "description": "This Tutorial is using the IOTA Streams framework",
-      "color": "#001544"
-    },
-    {
       "value": "stronghold",
       "label": "Stronghold",
       "description": "This Tutorial is using the IOTA Stronghold framework",

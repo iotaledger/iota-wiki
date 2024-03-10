@@ -1,9 +1,8 @@
 ---
 description: Networks and endpoints in the IOTA ecosystem.
-keywords:
+tags:
   - mainnet
   - shimmer
-  - devnet
   - public testnet
   - MQTT
   - REST API
@@ -60,6 +59,12 @@ Mainnet.
 | ------------- | --------- | -------- | ----------------------------------------------------------------------------- | ------------------------------------ |
 | Shimmer Token | ISC / EVM | <ChainId url='https://json-rpc.evm.shimmer.network'/>      | https://json-rpc.evm.shimmer.network or wss://ws.json-rpc.evm.shimmer.network | https://explorer.evm.shimmer.network |
 
+#### Additional Info
+
+| Chain Address | Alias ID |
+|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------|
+|[smr1prxvwqvwf7nru5q5xvh5thwg54zsm2y4wfnk6yk56hj3exxkg92mx20wl3s](https://explorer.shimmer.network/shimmer/addr/smr1prxvwqvwf7nru5q5xvh5thwg54zsm2y4wfnk6yk56hj3exxkg92mx20wl3s)|0xccc7018e4fa63e5014332f45ddc8a5450da89572676d12d4d5e51c98d64155b3|
+
 ## Public Testnet
 
 [The Public Testnet](https://explorer.iota.org/testnet) acts as a test bed for builders without any real world value.
@@ -70,7 +75,7 @@ This network is subject to occasional resets (no data retention) which are usual
 
 | Base Token                | Protocol | HTTP REST API                       | Event API                                                    | Permanode API                             | Faucet                                 |
 | ------------------------- | -------- | ----------------------------------- | ------------------------------------------------------------ | ----------------------------------------- | -------------------------------------- |
-| Testnet Tokens (no value) | Stardust | https://api.testnet.shimmer.network | wss://api.testnet.shimmer.network:443/api/mqtt/v1 (MQTT 3.1) | https://chronicle.testnet.shimmer.network | https://faucet.testnet.shimmer.network |
+| Testnet Tokens (no value) | Stardust | `https://api.testnet.shimmer.network` | wss://api.testnet.shimmer.network:443/api/mqtt/v1 (MQTT 3.1) | https://chronicle.testnet.shimmer.network | https://faucet.testnet.shimmer.network |
 
 ### Testnet EVM
 
@@ -82,35 +87,17 @@ any IOTA protocol but instead uses ISC to facilitate an Ethereum Virtual Machine
 layer 1.
 
 :::info
+
 This network is subject to occasional resets (no data retention) which are usually announced with a one-week grace period.
+
 :::
 
 | Base Token                | Protocol  | Chain ID | RPC URL                                      | Faucet                                     | Explorer                                     |
 | ------------------------- | --------- | -------- | -------------------------------------------- | ------------------------------------------ | -------------------------------------------- |
 | Testnet Tokens (no value) | ISC / EVM | <ChainId url='https://json-rpc.evm.testnet.shimmer.network'/> | https://json-rpc.evm.testnet.shimmer.network | https://evm-faucet.testnet.shimmer.network | https://explorer.evm.testnet.shimmer.network |
 
-## DevNet
+#### Additional Info
 
-:::caution
-This network is going to be decommissioned by the end of 2023,
-consider building on the Public Testnet instead.
-:::
-
-[The DevNet](https://explorer.iota.org/legacy-mainnet) is a legacy network running the Chrysalis protocol.
-
-| Base Token                | Protocol  | HTTP REST API                                                                                         | Event API                                                         | Permanode API                             | Faucet                                 |
-| ------------------------- | --------- | ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------- | -------------------------------------- |
-| Testnet Tokens (no value) | Chrysalis | https://api.lb-0.h.chrysalis-devnet.iota.cafe , https://api.lb-1.h.chrysalis-devnet.iota.cafe | wss://api.lb-0.h.chrysalis-devnet.iota.cafe:443 (MQTT 3.1, /mqtt) | https://chronicle.testnet.shimmer.network | https://faucet.testnet.shimmer.network |
-
-## Legacy
-
-:::caution
-With the upgrade of the IOTA Mainnet to the Stardust protocol, migrations have been stopped and will re-commence
-once a new mechanism via an L2 chain is set up.
-:::
-
-The legacy IOTA Mainnet was running for the sole purpose to facilitate token migrations into the IOTA Mainnet.
-
-| Base Token              | Protocol                | HTTP REST API                     |
-| ----------------------- | ----------------------- | --------------------------------- |
-| IOTA Token (Unmigrated) | Legacy Trinary Protocol | https://api-legacy.iotaledger.net |
+| Chain Address | Alias ID |
+|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------|
+|[rms1ppp00k5mmd2m8my8ukkp58nd3rskw6rx8l09aj35984k74uuc5u2cywn3ex](https://explorer.shimmer.network/testnet/addr/rms1ppp00k5mmd2m8my8ukkp58nd3rskw6rx8l09aj35984k74uuc5u2cywn3ex)|0x42f7da9bdb55b3ec87e5ac1a1e6d88e16768663fde5eca3429eb6f579cc538ac|

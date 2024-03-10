@@ -2,7 +2,7 @@
 title: The Shimmer Governance Framework
 description: This is the full specification for all governance processes in the Shimmer network. Detailed rules and procedures are defined here.
 image: /img/learn/governance/iota_governance.png
-keywords:
+tags:
   - Specification
   - Shimmer
   - Governance
@@ -751,7 +751,7 @@ Read some examples about emergency proposal votes in this section [Here are some
 
 ### 4.13 Hosting of the specification in Github
 
-- This framework will be hosted on the IOTA Wiki Github under [this repository:](https://github.com/iota-wiki/iota-wiki/tree/main/shimmer/learn/governance).
+- This framework will be hosted on the IOTA Wiki Github under [this repository:](https://github.com/iotaledger/iota-wiki/tree/main/docs/learn/governance).
 - Starting with Season 1, the specification agreed on by the voters in the Phase 3 vote will be hosted as the “main” branch of the repository.
 - Any changes that happened during a season based on the [parameters under probation](#specification-parameters-under-probation) rules will be added as a pull request.
 - Once the voters have accepted the specification for the next season in a phase 3 vote, the community managers will merge the pull request containing the changes into the “main” branch.

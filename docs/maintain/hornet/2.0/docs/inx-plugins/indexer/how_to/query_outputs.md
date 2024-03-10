@@ -1,7 +1,7 @@
 ---
 description: Query the Indexer for Outputs.
 image: /img/logo/HornetLogo.png
-keywords:
+tags:
   - IOTA Node
   - HORNET Node
   - Configuration

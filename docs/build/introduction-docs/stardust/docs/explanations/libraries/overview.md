@@ -1,7 +1,7 @@
 ---
 description: The IOTA client libraries allow you to easily integrate IOTA into your own applications.
 image: /img/logo/preview.png
-keywords:
+tags:
   - wallet library
   - client library
   - Tangle
@@ -24,12 +24,11 @@ The IOTA client libraries have been deprecated and replaced by the [IOTA SDK](/i
 
 The official IOTA libraries serve as `one-source-code-of-truth` to IOTA users and provide binding to other programming languages. Below is a list of the IOTA libraries. You can also check out the [IOTA client libraries blog post](https://blog.iota.org/the-new-iota-client-libraries-harder-better-faster-stronger/), to learn about the libraries' core principles.
 
-- [IOTA SDK](/iota-sdk/welcome): The IOTA SDK replaces `iota.rs`, `iota.js` and `wallet.rs` with a convenient development kit, written
+- [IOTA SDK](/iota-sdk/welcome): A convenient development kit, written
   in [Rust](/iota-sdk/getting-started/rust), with bindings for
   [Node.js](/iota-sdk/getting-started/nodejs),
   [Python](/iota-sdk/getting-started/python), and [Wasm](/iota-sdk/getting-started/wasm).
-- [iota.go](https://github.com/iotaledger/iota.go/tree/v3): an IOTA client library in Golang.
-- [iota.c](https://github.com/iotaledger/iota.c/tree/develop): a special-purpose library in C for embedded devices (with microcontrollers) covering a basic features of `client-lib` or `wallet-lib.`
+- [iota.go](https://github.com/iotaledger/iota.go/tree/production): an IOTA client library in Golang.
 
 <div class="iframe-wrapper">
 <iframe src="https://www.youtube.com/embed/N2VW3zJQmso" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>

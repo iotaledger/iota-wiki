@@ -1,6 +1,6 @@
 ---
 description: 'This section provides a comprehensive guide targeted at developers who want to build on the IOTA network.'
-keywords:
+tags:
   [
     'IOTA',
     'Development',

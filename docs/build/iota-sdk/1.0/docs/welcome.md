@@ -1,7 +1,7 @@
 ---
 image: '/img/banner/client_lib_overview.png'
 description: 'Learn about the IOTA SDK, its main modules (client and wallet), available programming languages (Rust, Node.js, Python, and Wasm), secure secret management using Stronghold, and how to join the discussion and get support.'
-keywords:
+tags:
   - IOTA SDK
   - Rust
   - client

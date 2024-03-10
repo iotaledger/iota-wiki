@@ -1,7 +1,7 @@
 ---
 description: How to configure your nodes' peers, neighbors, and auto-peering.
 image: /img/banner/banner_hornet_peering.png
-keywords:
+tags:
   - IOTA Node
   - HORNET Node
   - configuration

@@ -2,7 +2,7 @@
 title: Request Funds
 description: 'How to programmatically request testnet funds.'
 image: /img/logo/iota_mark_light.png
-keywords:
+tags:
   - how to
   - faucet
   - testnet
@@ -36,7 +36,7 @@ using the `request_funds_from_faucet` function.
 <div className={'hide-code-block-extras'}>
 
 ```rust reference
-https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/simple_transaction/request_funds.rs#L30
+https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/simple_transaction/request_funds.rs#L34
 ```
 
 </div>
@@ -46,7 +46,7 @@ https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/simple_
 <div className={'hide-code-block-extras'}>
 
 ```rust reference
-https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/simple_transaction/request_funds.rs#L36-L37
+https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/simple_transaction/request_funds.rs#L40-L41
 ```
 
 </div>
@@ -64,7 +64,7 @@ The following example will:
 <div className={'hide-code-block-extras'}>
 
 ```typescript reference
-https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/simple_transaction/request-funds.ts#L29
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/simple_transaction/request-funds.ts#L31
 ```
 
 </div>
@@ -74,7 +74,7 @@ https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how
 <div className={'hide-code-block-extras'}>
 
 ```typescript reference
-https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/simple_transaction/request-funds.ts#L32-L34
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/simple_transaction/request-funds.ts#L34-L36
 ```
 
 </div>
@@ -86,12 +86,12 @@ https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how
    [created in the first guide](../accounts-and-addresses/create-account.mdx) and [sync it](../accounts-and-addresses/check-balance.mdx).
 2. Get all the [`Addresses`](../../references/python/iota_sdk/types/address.md)
    related to the `Account` by calling the [`Account.addresses()`](../../references/python/iota_sdk/wallet/account.md#addresses)
-   function.
+   function, and then select the first one.
 
 <div className={'hide-code-block-extras'}>
 
 ```python reference
-https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how_tos/simple_transaction/request_funds.py#L17
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how_tos/simple_transaction/request_funds.py#L19
 ```
 
 </div>
@@ -103,7 +103,7 @@ https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how
 <div className={'hide-code-block-extras'}>
 
 ```python reference
-https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how_tos/simple_transaction/request_funds.py#L20
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how_tos/simple_transaction/request_funds.py#L22
 ```
 
 </div>

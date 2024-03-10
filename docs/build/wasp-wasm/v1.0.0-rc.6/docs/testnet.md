@@ -1,7 +1,7 @@
 ---
 description: A public testnet for developers to try out smart contracts
 image: /img/logo/WASP_logo_dark.png
-keywords:
+tags:
   - Smart Contracts
   - TestNet
 ---

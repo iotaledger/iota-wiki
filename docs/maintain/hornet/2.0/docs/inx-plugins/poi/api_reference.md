@@ -1,7 +1,7 @@
 ---
 description: Links to the POI REST API reference.
 image: /img/logo/HornetLogo.png
-keywords:
+tags:
   - IOTA Node
   - Hornet Node
   - INX

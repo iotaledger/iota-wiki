@@ -2,7 +2,7 @@
 title: Governance Voting Explained
 description: A technical description of the Governance functionality in IOTA & Shimmer
 image: /img/learn/governance/vote-graphic04.png
-keywords:
+tags:
   - Documentation
   - Firefly
   - Hornet INX

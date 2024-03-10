@@ -1,0 +1,549 @@
+import ThemedImage from '@theme/ThemedImage';
+
+# IOTA Legacy Migration Tool
+
+:::info TL;DR
+
+The [IOTA Legacy Migration Tool](https://github.com/iotaledger/legacy-migration-tool/releases) is a standalone app to
+help you migrate your tokens from the legacy IOTA network to the
+current [IOTA Mainnet](/build/networks-endpoints/#iota-mainnet) running the Stardust protocol.
+The new tool allows users to migrate from
+an [81-character seed](#restore-a-text-backup), [a Trinity seed vault file](#restore-a-file-backup), or a
+[Ledger device](#users-with-ledger-devices).
+
+After successful migration, you must then use a trusted wallet,
+like [Firefly](../wallets/firefly.md), [Bloom](../wallets/bloom.md) or [TanglePay](https://tanglepay.com/), and import
+your new mnemonic, Stronghold, or Ledger device.
+
+:::
+
+The IOTA Legacy Migration Tool is a standalone app, not a wallet. When you enter your 81-character seed into the tool,
+it generates a new mnemonic and provides a Stronghold file. These are not tied to a specific wallet, giving you the
+flexibility to use them with various wallets, such
+as  [Firefly](../wallets/firefly.md), [Bloom](../wallets/bloom.md), [TanglePay](https://tanglepay.com/), or any wallet
+of your choice.
+
+The migration period started on 21 February 2024. The IOTA Foundation will regularly review the tool's demand before deciding on its future availability. Therefore, to ensure a smooth transition to the Stardust
+network, you should start your migration in a timely manner since other forms of migration may be costly and less convenient.
+
+## Migration Process Overview
+
+:::note Storage Deposits
+
+If you have lots of small amounts of $IOTA (<1Mi) spread across lots of addresses, it may not be possible to
+migrate these small amounts if their total is less than the minimum [required storage deposit on the
+Stardust network](/learn/protocols/stardust/core-concepts/storage-deposit/).
+
+:::
+
+### Enter Your Seed
+
+To initiate migration, you must enter your legacy seed in
+the [IOTA Legacy Migration Tool](https://github.com/iotaledger/legacy-migration-tool/releases) and follow the
+step-by-step instructions.
+
+### Get Your New Address
+
+After [entering your seed](#enter-your-seed-) into the IOTA Legacy Migration Tool, a new mnemonic and Stronghold file
+will be created, and an Ed25519 address specific to the Stardust network will be generated for your tokens.
+**This address will be the receiving address for the migrated tokens, so you really must write down the mnemonic and
+save the Stronghold file**.
+
+#### Software Profiles vs Ledger Devices
+
+Most users will follow the same process when using
+the [IOTA Legacy Migration Tool](https://github.com/iotaledger/legacy-migration-tool/releases),
+regardless of whether they use software profiles or a Ledger device. Some users may follow a slightly different process
+but, even with these differences taken into account, the transition has been designed to be as simple as possible.
+There are built-in options to help you throughout the process, outlined below on a case-by-case basis.
+
+#### Users with Software Profiles
+
+1. [Input seed](#restore-a-text-backup) or `.kdbx` [file](#restore-a-file-backup) into the IOTA Legacy Migration Tool desktop app.
+2. [Check whether the balance is correct](#confirm-your-balance).
+3. [Create a new password](#create-a-stronghold-password) for your Stronghold file.
+4. The IOTA Legacy Migration Tool will [generate a mnemonic and Stronghold backup file](#back-up-your-wallet-with-a-mnemonic); you should save these in a safe place.
+5. [Initiate the automated migration process](#begin-the-migration).
+6. Export [Migration Log](#export-migration-log) and [Stronghold Backup](#export-stronghold-file).
+
+#### Users with Ledger Devices
+
+1. Connect your Ledger device to your computer.
+2. [Install both the IOTA Legacy App (0.5.8) and the new IOTA App v0.8.6](#check-for-the-required-ledger-apps) on your Ledger device using
+   [Ledger Live](https://www.ledger.com/ledger-live).
+3. Close Ledger Live, open the new IOTA App on your Ledger device, and [generate a Stardust address](#generate-and-confirm-your-new-address).
+4. [Switch to the legacy Ledger App and verify the accuracy of your balance](#begin-migrating-your-tokens-on-the-legacy-app).
+5. [Initiate the automated migration process](#hit-begin-migration).
+
+## Migration Process Step-By-Step
+
+First, download the [IOTA Legacy Migration Tool](https://github.com/iotaledger/legacy-migration-tool/releases) (
+available on Windows, Mac, or Linux). You’ll be presented with three options to load your existing seed into the IOTA
+Legacy Migration Tool: importing a [text backup](#restore-a-text-backup), a [file backup](#restore-a-file-backup), or
+your [Ledger device backup](#users-with-ledger-devices).
+
+<ThemedImage
+alt='Software Profile Migrate Funds Start'
+sources={{
+light: '/img/get-started/tools/legacy-migration-tool/light/Software-1.png',
+dark: '/img/get-started/tools/legacy-migration-tool/dark/Software-1.png',
+}}
+/>
+
+## Users with Software Profiles
+
+If you use a software profile, you need to restore a [backup file](#restore-a-file-backup)
+or a [text backup](#restore-a-text-backup).
+
+### Restore a File Backup
+
+Import a Trinity SeedVault file (with the extension `.kdbx`).
+
+### Restore a Text Backup
+
+If you select the text backup option, you’ll be prompted to enter your seed before continuing.
+
+<ThemedImage
+alt='Enter your 81-character IOTA seed'
+sources={{
+light: '/img/get-started/tools/legacy-migration-tool/light/Software-2.png',
+dark: '/img/get-started/tools/legacy-migration-tool/dark/Software-2.png',
+}}
+/>
+
+### Confirm Your Balance
+
+Once you’ve entered your seed (or SeedVault), you can check if your balance is correct before beginning the migration.
+If it is not correct, hit “Check Again”.
+
+:::note
+
+If the balance is zero, check whether you mistyped your seed.
+
+:::
+
+<ThemedImage
+alt='Confirm your balance'
+sources={{
+light: '/img/get-started/tools/legacy-migration-tool/light/Software-3.png',
+dark: '/img/get-started/tools/legacy-migration-tool/dark/Software-3.png',
+}}
+/>
+
+### Create a Stronghold Password
+
+After [confirming your seed balance](#confirm-your-balance), you should create a password for your Stronghold backup
+file
+used for protecting your funds and restoring from backup. It’s important to back up your wallet to make sure you can
+always
+access your funds.
+
+<ThemedImage
+alt='Create a Stronghold Password'
+sources={{
+light: '/img/get-started/tools/legacy-migration-tool/light/Software-4.png',
+dark: '/img/get-started/tools/legacy-migration-tool/dark/Software-4.png',
+}}
+/>
+
+### Back Up Your Wallet With a Mnemonic
+
+You can now begin the backup process. The first step is generating a 24-word recovery phrase (mnemonic) and the
+Stronghold backup file. The recovery phrase will help you retrieve your funds should you lose access to your wallet and
+other backups. But the recovery phrase and Stronghold file do more than just provide a backup: you can use either one to
+access your funds in your preferred wallet post-migration, whether
+it's [Firefly](../wallets/firefly.md), [Bloom](../wallets/bloom.md) or [TanglePay](https://tanglepay.com/), or any other
+compatible wallet of your choice.
+
+<ThemedImage
+alt='Back up your wallet'
+sources={{
+light: '/img/get-started/tools/legacy-migration-tool/light/Software-5.png',
+dark: '/img/get-started/tools/legacy-migration-tool/dark/Software-5.png',
+}}
+/>
+
+:::note
+
+It is recommended that you print the “Recovery Kit Template” to help you write down your recovery phrase.
+
+:::
+
+#### Copy Your Mnemonic
+
+Copy the mnemonic words in their exact order. It is important that you keep a physical copy because digital files can
+fail.
+
+<ThemedImage
+alt='Copy your mnemonic'
+sources={{
+light: '/img/get-started/tools/legacy-migration-tool/light/Software-6.png',
+dark: '/img/get-started/tools/legacy-migration-tool/dark/Software-6.png',
+}}
+/>
+
+#### Verify Your Mnemonic
+
+Next, verify your recovery phrase to ensure you [copied it correctly](#copy-your-mnemonic).
+
+<ThemedImage
+alt='Verify your mnemonic '
+sources={{
+light: '/img/get-started/tools/legacy-migration-tool/light/Software-7.png',
+dark: '/img/get-started/tools/legacy-migration-tool/dark/Software-7.png',
+}}
+/>
+
+#### Back Up to a Stronghold File
+
+Finally, you’ll be prompted to back up to a Stronghold file by entering your wallet password. Having both a digital and
+physical backup is the best way to ensure you can always restore your wallet.
+
+<ThemedImage
+alt='Back up to Stronghold'
+sources={{
+light: '/img/get-started/tools/legacy-migration-tool/light/Software-8.png',
+dark: '/img/get-started/tools/legacy-migration-tool/dark/Software-8.png',
+}}
+/>
+
+### Begin the Migration
+
+Now, let's begin the migration of your funds. Since this is an automated process, you only need to select the
+`Begin Migration` button. You can select `Learn about the migration` if you have any further questions.
+
+<ThemedImage
+alt='Start the migration'
+sources={{
+light: '/img/get-started/tools/legacy-migration-tool/light/Software-9.png',
+dark: '/img/get-started/tools/legacy-migration-tool/dark/Software-9.png',
+}}
+/>
+
+:::note
+
+Be patient! The next step could take a few moments.
+
+:::
+
+Congratulations, you’ve successfully migrated your funds to the Stardust network.
+
+<ThemedImage
+alt='Migration Complete'
+sources={{
+light: '/img/get-started/tools/legacy-migration-tool/light/Software-10.png',
+dark: '/img/get-started/tools/legacy-migration-tool/dark/Software-10.png',
+}}
+/>
+
+:::tip Export Migration Logs and Stronghold
+
+To ensure a comprehensive record of your migration, we recommend that
+you [export the migration log](#export-migration-log) and [Stronghold file](#export-stronghold-file).
+
+:::
+
+### Export Migration Log
+
+Generate a detailed record of your migration journey by clicking on `Export Migration Log`. Save this log for future
+reference or as documentation of your successful transition.
+
+### Export Stronghold File
+
+Secure your Stronghold file by clicking on `Export Stronghold File`. This file is essential for accessing your tokens
+and should be stored securely. This file can be imported into any wallet, ensuring versatile access to your assets.
+
+## Users with Ledger devices
+
+### Select the Ledger Backup Option
+
+Select `I have a Ledger backup` and then `Continue` on the next page.
+
+<ThemedImage
+alt='Select I have a Ledger backup'
+sources={{
+light: '/img/get-started/tools/legacy-migration-tool/light/Ledger-1.png',
+dark: '/img/get-started/tools/legacy-migration-tool/dark/Ledger-1.png',
+}}
+/>
+
+### Check for the Required Ledger Apps
+
+The IOTA Legacy Migration Tool will now instruct you to make sure you have both the new IOTA App and the IOTA Legacy App
+installed through [Ledger Live](https://www.ledger.com/ledger-live/download).
+
+<ThemedImage
+alt='Check for ledger apps'
+sources={{
+light: '/img/get-started/tools/legacy-migration-tool/light/Ledger-2.png',
+dark: '/img/get-started/tools/legacy-migration-tool/dark/Ledger-2.png',
+}}
+/>
+
+In Ledger Live, open the "Manager" tab and allow the manager onto your device by pressing both buttons together. Make
+sure your Ledger firmware is up to date. Then, search for "iota" and install the latest version of both apps.
+
+:::note
+
+If you don’t have space on your device, you can safely uninstall other cryptocurrency apps and reinstall them later.
+
+:::
+
+<ThemedImage
+alt='Apps Installed'
+sources={{
+light: '/img/get-started/tools/legacy-migration-tool/light/Ledger-3.png',
+dark: '/img/get-started/tools/legacy-migration-tool/dark/Ledger-3.png',
+}}
+/>
+
+Once installed, close Ledger Live and hit `Yes, I've installed these apps` in
+the [IOTA Legacy Migration Tool](https://github.com/iotaledger/legacy-migration-tool/releases).
+Open the new IOTA app on your device and, on the next page, press `Continue`.
+
+<ThemedImage
+alt='Connect your Ledger to the IOTA Legacy Migration Tool'
+sources={{
+light: '/img/get-started/tools/legacy-migration-tool/light/Ledger-4.png',
+dark: '/img/get-started/tools/legacy-migration-tool/dark/Ledger-4.png',
+}}
+/>
+
+### Generate and Confirm Your New Address
+
+On the next page, you can generate a new Stardust address to send your tokens. Make sure the address in the IOTA
+Legacy Migration Tool matches the one on your ledger device. Confirm it matches by pressing both buttons on your device
+when prompted.
+
+<ThemedImage
+alt='Generate a Stardust Address'
+sources={{
+light: '/img/get-started/tools/legacy-migration-tool/light/Ledger-5.png',
+dark: '/img/get-started/tools/legacy-migration-tool/dark/Ledger-5.png',
+}}
+/>
+
+<ThemedImage
+alt='Confirm your Stardust Address'
+sources={{
+light: '/img/get-started/tools/legacy-migration-tool/light/Ledger-6.png',
+dark: '/img/get-started/tools/legacy-migration-tool/dark/Ledger-6.png',
+}}
+/>
+
+### Begin Migrating Your Tokens on the Legacy App
+
+Now, it’s time to switch back to the Legacy app on your device and begin migrating your tokens.
+
+<ThemedImage
+alt='Begin Migrating Your Tokens on the Legacy App'
+sources={{
+light: '/img/get-started/tools/legacy-migration-tool/light/Ledger-7.png',
+dark: '/img/get-started/tools/legacy-migration-tool/dark/Ledger-7.png',
+}}
+/>
+
+#### Select your account index
+
+On the following page, select the account index you used with Trinity. For most users, this will be the
+default index in Trinity, which was 0. If you have more than one index, you can migrate them after you’ve finished
+migrating the first index.
+
+<ThemedImage
+alt='Select Your Account Index'
+sources={{
+light: '/img/get-started/tools/legacy-migration-tool/light/Ledger-8.png',
+dark: '/img/get-started/tools/legacy-migration-tool/dark/Ledger-8.png',
+}}
+/>
+
+#### Check your balance
+
+After you've [selected your account index](#select-your-account-index), check if your balance is correct before
+beginning the migration. This can take a few minutes.
+
+Ensure your Ledger Nano displays `Generating address...` on the device screen. If nothing is happening on your
+device,
+disconnect and reconnect the device, and try again.
+
+If your balance is still incorrect after the address has been generated, hit `Check Again`.
+
+Once you are happy with your balance, press `Continue`.
+
+:::note Zero balance
+
+If the balance is zero, you likely [selected the wrong account index](#select-your-account-index).
+
+:::
+
+<ThemedImage
+alt='Check Your Balance'
+sources={{
+light: '/img/get-started/tools/legacy-migration-tool/light/Ledger-9.png',
+dark: '/img/get-started/tools/legacy-migration-tool/dark/Ledger-9.png',
+}}
+/>
+
+### Hit Begin Migration
+
+Once you have [reviewed and confirmed your balance](#check-your-balance), hit `Begin Migration`.
+
+<ThemedImage
+alt='Hit Begin Migration'
+sources={{
+light: '/img/get-started/tools/legacy-migration-tool/light/Ledger-10.png',
+dark: '/img/get-started/tools/legacy-migration-tool/dark/Ledger-10.png',
+}}
+/>
+
+#### Confirm the Migration Transaction
+
+You’ll need to confirm the transaction by checking the information displayed in the IOTA Legacy Migration Tool against
+what is displayed on your device. Scroll through, make sure it matches, and approve the transaction by pressing both
+buttons on the device.
+
+<ThemedImage
+alt='Confirm the Migration Transaction '
+sources={{
+light: '/img/get-started/tools/legacy-migration-tool/light/Ledger-11.png',
+dark: '/img/get-started/tools/legacy-migration-tool/dark/Ledger-11.png',
+}}
+/>
+
+Once approved, the IOTA Legacy Migration Tool will transfer your tokens to your new Stardust address.
+
+:::note
+
+This step can take a few minutes.
+
+:::
+
+<ThemedImage
+alt='Your Funds Have Been Migrated'
+sources={{
+light: '/img/get-started/tools/legacy-migration-tool/light/Ledger-12.png',
+dark: '/img/get-started/tools/legacy-migration-tool/dark/Ledger-12.png',
+}}
+/>
+
+:::tip Export Migration Log
+
+To ensure a comprehensive migration record, we recommend clicking on `Export Migration Log` to
+generate a detailed record of your migration history. Save this log for future reference or as documentation of your
+successful transition.
+
+:::
+
+### Migrate Another Account Index
+
+If you have more than one account index, you can begin migrating the next one by pressing `Migrate another profile`.
+
+:::note
+
+Once you’ve migrated all your account indexes, you can safely remove the IOTA Legacy App from your Ledger device.
+
+:::
+
+## Trouble-Shooting
+
+### Migrating Multiple Transactions
+
+If when you reach the step where you [check your balance](#check-your-balance), and it's correct, but find that you
+have multiple bundles to migrate.
+
+:::note
+
+This scenario can occur due to the large number of addresses that need to be migrated.
+
+:::
+
+<ThemedImage
+alt='Multiple transactions to Migrate'
+sources={{
+light: '/img/get-started/tools/legacy-migration-tool/light/Multiple-Transactions-1.png',
+dark: '/img/get-started/tools/legacy-migration-tool/dark/Multiple-Transactions-1.png',
+}}
+/>
+
+Select `Migrate funds` to sort this out, and the IOTA Legacy Migration Tool will handle all the necessary transactions.
+
+<ThemedImage
+alt='Migrate multiple transactions'
+sources={{
+light: '/img/get-started/tools/legacy-migration-tool/light/Multiple-Transactions-1.png',
+dark: '/img/get-started/tools/legacy-migration-tool/dark/Multiple-Transactions-1.png',
+}}
+/>
+
+You can then continue to a successful migration.
+
+<ThemedImage
+alt='Continue migrating'
+sources={{
+light: '/img/get-started/tools/legacy-migration-tool/light/Multiple-Transactions-1.png',
+dark: '/img/get-started/tools/legacy-migration-tool/dark/Multiple-Transactions-1.png',
+}}
+/>
+
+### Addressing Balance Challenges
+
+<ThemedImage
+  alt='Insufficient Balance for Migration'
+  sources={{
+    light: '/img/get-started/tools/legacy-migration-tool/light/Balance-Challenges-1.png',
+    dark: '/img/get-started/tools/legacy-migration-tool/dark/Balance-Challenges-1.png',
+  }}
+/>
+
+If your balance appears incorrect, click `Check Again` to locate your funds.
+
+:::note Storage Deposits on Stardust
+
+For a successful migration, a balance of minimum
+required [storage deposit](/learn/protocols/stardust/core-concepts/storage-deposit/) is required due to Stardust’s dust
+protection policy.
+
+:::
+
+<ThemedImage
+  alt='Insufficient Balance for Migration'
+  sources={{
+    light: '/img/get-started/tools/legacy-migration-tool/light/Balance-Challenges-2.png',
+    dark: '/img/get-started/tools/legacy-migration-tool/dark/Balance-Challenges-2.png',
+  }}
+/>
+
+### Ledger Users: Threshold Considerations
+
+This section concerns Ledger device users with funds greater than the Minimum Required Storage Deposit on the Stardust
+network but less than the 1Mi legacy network threshold.
+
+<ThemedImage
+alt='1Mi > Balance > Storage Deposit'
+sources={{
+light: '/img/get-started/tools/legacy-migration-tool/light/Ledger-Threshold-1.png',
+dark: '/img/get-started/tools/legacy-migration-tool/dark/Ledger-Threshold-1.png',
+}}
+/>
+
+Due to limitations of the legacy network, addresses holding amounts below the migratable threshold (1Mi) will display an
+input amount of 1 IOTA on their Ledger devices during the migration process.
+
+<ThemedImage
+alt='Threshold warning'
+sources={{
+light: '/img/get-started/tools/legacy-migration-tool/light/Ledger-Threshold-2.png',
+dark: '/img/get-started/tools/legacy-migration-tool/dark/Ledger-Threshold-2.png',
+}}
+/>
+
+Despite this discrepancy, users can confirm the transaction on their Ledger devices, ensuring the secure transfer of
+their assets to the new network.
+
+<ThemedImage
+alt='Migration Successful'
+sources={{
+light: '/img/get-started/tools/legacy-migration-tool/light/Ledger-Threshold-3.png',
+dark: '/img/get-started/tools/legacy-migration-tool/dark/Ledger-Threshold-3.png',
+}}
+/>

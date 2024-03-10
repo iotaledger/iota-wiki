@@ -1,5 +1,5 @@
 ---
-keywords:
+tags:
   - how to
   - documentation
   - docusaurus

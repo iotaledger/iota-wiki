@@ -3,7 +3,7 @@ title: Burn Native Tokens
 sidebar_label: Burn
 description: 'How to burn native tokens'
 image: /img/logo/iota_mark_light.png
-keywords:
+tags:
   - how to
   - burn
   - burn native token
@@ -32,12 +32,12 @@ The following example will:
 
 1. Instantiate a [`Wallet`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/core/struct.Wallet.html), get Alice's `Account` which was
    [created in the first guide](../accounts-and-addresses/create-account.mdx) and [sync it](../accounts-and-addresses/check-balance.mdx).
-2. Search the account's balance for a native token with a balance of at least `BURN_AMOUNT`.
+2. Search the account's balance for a native token with a balance of at least `MIN_AVAILABLE_AMOUNT` (to be able to burn BURN_AMOUNT).
 
 <div className={'hide-code-block-extras'}>
 
 ```rust reference
-https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/native_tokens/burn.rs#L51-L52
+https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/native_tokens/burn.rs#L55-L56
 ```
 
 </div>
@@ -48,7 +48,7 @@ https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/native_
 <div className={'hide-code-block-extras'}>
 
 ```rust reference
-https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/native_tokens/burn.rs#L62
+https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/native_tokens/burn.rs#L66
 ```
 
 </div>
@@ -60,12 +60,12 @@ The following example will:
 
 1. Instantiate a [`Wallet`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/core/struct.Wallet.html), get Alice's `Account` which was
    [created in the first guide](../accounts-and-addresses/create-account.mdx) and [sync it](../accounts-and-addresses/check-balance.mdx).
-2. Search the account's balance for a native token with a balance of at least `BURN_AMOUNT`.
+2. Search the account's balance for a native token with a balance of at least `MIN_AVAILABLE_AMOUNT`.
 
 <div className={'hide-code-block-extras'}>
 
 ```typescript reference
-https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/native_tokens/burn.ts#L32-L34
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/native_tokens/burn.ts#L37-L39
 ```
 
 </div>
@@ -77,7 +77,7 @@ https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how
 <div className={'hide-code-block-extras'}>
 
 ```typescript reference
-https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/native_tokens/burn.ts#L52-L54
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/native_tokens/burn.ts#L57-L59
 ```
 
 </div>
@@ -94,7 +94,7 @@ The following example will:
 <div className={'hide-code-block-extras'}>
 
 ```python reference
-https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how_tos/native_tokens/burn.py#L22-L25
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how_tos/native_tokens/burn.py#L24-L27
 ```
 
 </div>
@@ -106,7 +106,7 @@ https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how
 <div className={'hide-code-block-extras'}>
 
 ```python reference
-https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how_tos/native_tokens/burn.py#L31-L32
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how_tos/native_tokens/burn.py#L33-L34
 ```
 
 </div>

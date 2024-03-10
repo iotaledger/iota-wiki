@@ -2,7 +2,7 @@
 title: Send NFT
 description: 'How to send NFT to another address'
 image: /img/logo/iota_mark_light.png
-keywords:
+tags:
   - how to
   - send
   - nft
@@ -30,7 +30,7 @@ associated collectible or token value and any other attributes it defines.
 <div className={'hide-code-block-extras'}>
 
 ```rust reference
-https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/nfts/send_nft.rs#L38
+https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/nfts/send_nft.rs#L42
 ```
 
 </div>
@@ -40,7 +40,7 @@ https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/nfts/se
 <div className={'hide-code-block-extras'}>
 
 ```rust reference
-https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/nfts/send_nft.rs#L44
+https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/nfts/send_nft.rs#L48
 ```
 
 </div>
@@ -50,7 +50,7 @@ https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/nfts/se
 <div className={'hide-code-block-extras'}>
 
 ```rust reference
-https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/nfts/send_nft.rs#L48
+https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/nfts/send_nft.rs#L52
 ```
 
 </div>
@@ -67,7 +67,7 @@ The following example will:
 <div className={'hide-code-block-extras'}>
 
 ```typescript reference
-https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/nfts/send_nft.ts#L43
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/nfts/send_nft.ts#L51
 ```
 
 </div>
@@ -77,19 +77,17 @@ https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how
 <div className={'hide-code-block-extras'}>
 
 ```typescript reference
-https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/nfts/send_nft.ts#L45-L50
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/nfts/send_nft.ts#L53-L58
 ```
 
 </div>
 
-4. Prepare the transaction that will send the NFT using the [`Account.prepareSendNft()`](../../references/nodejs/classes/Account.md#preparesendnft) function
-   and send the transaction using the [`Account.send()`](../../references/nodejs/classes/Account.md#send)
-   function.
+4. Create the transaction that will send the NFT using the [`Account.sendNft()`](../../references/nodejs/classes/Account.md#sendnft) <!-- TODO Update ref link --> function.
 
 <div className={'hide-code-block-extras'}>
 
 ```typescript reference
-https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/nfts/send_nft.ts#L53-L55
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/how_tos/nfts/send_nft.ts#L61
 ```
 
 </div>
@@ -106,7 +104,7 @@ The following example will:
 <div className={'hide-code-block-extras'}>
 
 ```python reference
-https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how_tos/nfts/send_nft.py#L21-L24
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how_tos/nfts/send_nft.py#L23-L26
 ```
 
 </div>
@@ -118,7 +116,7 @@ https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how
 <div className={'hide-code-block-extras'}>
 
 ```python reference
-https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how_tos/nfts/send_nft.py#L26
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/how_tos/nfts/send_nft.py#L28
 ```
 
 </div>

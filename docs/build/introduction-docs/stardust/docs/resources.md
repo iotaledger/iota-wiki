@@ -1,7 +1,7 @@
 ---
 description: Official and Community resources to help you develop and troubleshoot your application.
 image: /img/logo/preview.png
-keywords:
+tags:
   - tangle explorer
   - discord
   - stackExchange
@@ -71,13 +71,3 @@ The official forum where you can ask or answer technical questions about IOTA.
 [The Tangle](https://thetangle.org)
 
 A community tool for searching transactions in the Tangle.
-
----
-
-#### TangleBayExplorer - IOTA Explorer
-
-[Tangle Bay](https://explorer.tanglebay.com/mainnet)
-
-An community tool for searching transactions in the Tangle.
-
----

@@ -1,7 +1,7 @@
 ---
 description: INX-Coordinator is the extension tasked with coordinating the grow of the tangle.
 image: /img/banner/banner_hornet.png
-keywords:
+tags:
   - IOTA Node
   - Hornet Node
   - INX

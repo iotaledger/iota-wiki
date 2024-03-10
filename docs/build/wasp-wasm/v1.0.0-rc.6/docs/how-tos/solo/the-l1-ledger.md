@@ -1,7 +1,7 @@
 ---
 description: How to interact with the L1 ledger in Solo.
 image: /img/logo/WASP_logo_dark.png
-keywords:
+tags:
   - testing
   - solo
   - UTXO

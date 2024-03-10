@@ -3,7 +3,7 @@ title: Revocation Bitmap
 sidebar_label: Revocation Bitmap
 description: The specification for the embedded revocation bitmap.
 image: /img/Identity_icon.png
-keywords:
+tags:
   - DID
   - specs
   - specifications
@@ -175,7 +175,7 @@ This section describes the rationale behind some of the design decisions of this
 
 ### Compression and maximum size
 
-Considering that messages published to the Tangle cannot exceed [32 KiB](https://github.com/iotaledger/tips/blob/main/tips/TIP-0006/tip-0006.md#message-validation) in size, and that larger messages have increased requirements, the use of compression was assessed.
+Considering that messages published to the Tangle cannot exceed [32 KiB](https://github.com/iotaledger/tips/blob/v1.0.0/tips/TIP-0006/tip-0006.md#message-validation) in size, and that larger messages have increased requirements, the use of compression was assessed.
 The precise size of a serialized bitmap varies based on the number and distribution of revoked indices. When indices are revoked uniformly randomly, roughly 100,000 - 200,000 can be achieved in a DID Document with compression, and significantly more if consecutive indices are revoked.
 
 ZLIB [[RFC 1950](https://datatracker.ietf.org/doc/html/rfc1950)] was chosen for having a free and open source software licence and being one of the most widely used compression schemes, which enhances the accessibility of this specification. Some other assessed algorithms produced only marginally better compression ratios but had far fewer existing implementations across different programming languages.

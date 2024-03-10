@@ -1,7 +1,7 @@
 ---
 description: What happens when a smart contract invocation fails?
 image: /img/logo/WASP_logo_dark.png
-keywords:
+tags:
   - testing
   - solo
   - error handling

@@ -343,8 +343,8 @@ Native Gas Token
 
 More Information about the LayerZero protocol is available in their [official documentation](https://docs.layerzero.network/)
 
-Visit [Github](https://github.com/zokyo-sec) to review the Open Source code of the ShimmerBridge Web Application.
+To review the Open Source code of the ShimmerBridge Web Application, visit [the Zokyo Security Github](https://github.com/zokyo-sec/Shimmer-Bridge)
 
-The Audit Report of the ShimmerBridge Web Application is available in this [Zokyo Security Github Repository](https://github.com/zokyo-sec/audit-reports)
+The Penetration Test Report of the ShimmerBridge Web Application is available at [Zokyo Security Pentest Results](https://github.com/zokyo-sec/audit-reports/blob/main/Shimmer/Shimmer%20Bridge_Zokyo_Jan19_2024.pdf)
 
 The Audit Reports of the LayerZero protocol are available in this [LayerZero GitHub Repository](https://github.com/LayerZero-Labs/LayerZero/tree/main/audit)

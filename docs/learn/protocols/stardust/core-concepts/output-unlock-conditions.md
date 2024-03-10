@@ -1,5 +1,5 @@
 ---
-keywords:
+tags:
   - Stardust
   - Shimmer
   - Upgrades
@@ -19,7 +19,7 @@ they have to satisfy all unlock conditions that are defined on them.
 
 ## Address
 
-Outputs are locked under addresses that can be unlocked via a signature. [Chrysalis](../../chrysalis/introduction.md) supports only this kind of output unlocking.
+Outputs are locked under addresses that can be unlocked via a signature.
 
 ## Storage Deposit Return
 

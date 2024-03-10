@@ -108,6 +108,11 @@ module.exports = {
           label: 'Shimmer Bridge',
           id: 'tools/shimmer-bridge',
         },
+        {
+          type: 'doc',
+          label: 'Legacy Network Migration Tool',
+          id: 'tools/legacy-migration-tool',
+        },
       ],
     },
     'research-papers',

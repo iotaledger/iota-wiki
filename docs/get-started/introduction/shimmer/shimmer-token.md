@@ -1,7 +1,7 @@
 ---
 description: Learn about the distribution of Shimmer tokens in the Shimmer network ecosystem.
 image: /img/docssection/shimmer_dark.svg
-keywords:
+tags:
   - Shimmer token
   - token distribution
   - IOTA stakers
@@ -58,6 +58,9 @@ overall ecosystem's development.
 You can buy Shimmer tokens currently on the following exchanges and marketplaces:
 
 - [Bitfinex](https://bitfinex.com)
-- [Bitforex](https://bitforex.com)
+- [Viviswap](https://viviswap.com)
 - [Soonaverse](https://soonaverse.com/tokens/all)
 - [Iotabee](https://iotabee.com/swap)
+- [ShimmerSea](https://shimmersea.finance/swap)
+- [TangleSwap](https://app.tangleswap.exchange/swap)
+- [Swapline](https://app.swapline.com/swap)

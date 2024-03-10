@@ -1,7 +1,7 @@
 ---
 title: Staking IOTA
 description: Everything you need to know about the different staking opportunities in the IOTA and Shimmer networks.
-keywords:
+tags:
   - staking IOTA
   - Shimmer network
   - staking rewards

@@ -1,7 +1,7 @@
 ---
 description: Chronicle is the permanode solution for the different IOTA networks.
 image: /img/logo/bee_logo.png
-keywords:
+tags:
   - Rust
   - Discord
   - Permanode

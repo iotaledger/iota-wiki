@@ -1,7 +1,7 @@
 ---
 description: Getting started with the recommended requirements and installation links.
 image: /img/banner/banner_hornet_getting_started.png
-keywords:
+tags:
   - IOTA Node
   - HORNET Node
   - Linux

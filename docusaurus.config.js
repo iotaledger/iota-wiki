@@ -53,11 +53,7 @@ module.exports = async () => {
         '^(/[^/]+)?/build/.*|' +
         '^(/[^/]+)?/iota-sdk/.*|' +
         '^(/[^/]+)?/identity.rs/.*|' +
-        '^(/[^/]+)?/iota.rs/.*|' +
-        '^(/[^/]+)?/iota.js/.*|' +
-        '^(/[^/]+)?/wallet.rs/.*|' +
         '^(/[^/]+)?/stronghold.rs/.*|' +
-        '^(/[^/]+)?/streams/.*|' +
         '^(/[^/]+)?/wasp-cli/.*|' +
         '^(/[^/]+)?/wasp-wasm/.*|' +
         '^(/[^/]+)?/wasp-evm/.*',
@@ -69,8 +65,7 @@ module.exports = async () => {
         '^(/[^/]+)?/maintain/.*|' +
         '^(/[^/]+)?/hornet/.*|' +
         '^(/[^/]+)?/wasp/.*|' +
-        '^(/[^/]+)?/chronicle/.*|' +
-        '^(/[^/]+)?/goshimmer/.*',
+        '^(/[^/]+)?/chronicle/.*',
     },
   ];
 
@@ -254,17 +249,6 @@ module.exports = async () => {
             id: 'openapi',
             docsPluginId: 'apis', // e.g. "classic" or the plugin-content-docs id
             config: {
-              coreApiChrysalis: {
-                specPath:
-                  'https://raw.githubusercontent.com/iotaledger/tips/main/tips/TIP-0013/rest-api.yaml',
-                outputDir: path.resolve(
-                  __dirname,
-                  'docs/build/apis/docs/core/v1',
-                ),
-                sidebarOptions: {
-                  groupPathsBy: 'tag',
-                },
-              },
               coreApiShimmer: {
                 specPath:
                   'https://raw.githubusercontent.com/iotaledger/tips/main/tips/TIP-0025/core-rest-api.yaml',
@@ -339,10 +323,6 @@ module.exports = async () => {
                 ...buildMainVersionRedirects,
                 ...maintainMainVersionRedirects,
                 {
-                  from: '/develop/nodes/rest-api',
-                  to: '/apis/core/v1',
-                },
-                {
                   from: '/shimmer/chronicle',
                   to: '/chronicle/1.0-rc.1',
                 },
@@ -357,10 +337,6 @@ module.exports = async () => {
                 {
                   from: '/shimmer/develop/nodes/core-rest-api',
                   to: '/apis/core/v2',
-                },
-                {
-                  from: '/shimmer/goshimmer',
-                  to: '/goshimmer',
                 },
                 {
                   from: '/shimmer/hornet',
@@ -380,11 +356,11 @@ module.exports = async () => {
                 },
                 {
                   from: '/shimmer/iota.js',
-                  to: '/iota.js',
+                  to: '/iota-sdk',
                 },
                 {
                   from: '/shimmer/iota.rs',
-                  to: '/iota.rs/2.0-rc.7',
+                  to: '/iota-sdk',
                 },
                 {
                   from: '/shimmer/smart-contracts/guide/chains_and_nodes',
@@ -424,7 +400,7 @@ module.exports = async () => {
                 },
                 {
                   from: '/shimmer/wallet.rs',
-                  to: '/wallet.rs/1.0-rc.6',
+                  to: '/iota-sdk',
                 },
                 {
                   from: '/shimmer/learn/governance/',

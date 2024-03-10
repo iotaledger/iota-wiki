@@ -1,7 +1,7 @@
 ---
 description: Easily integrate with your exchange, custody solution, or product using the IOTA SDK.
 sidebar_label: Integrate IOTA SDK With Your Exchange
-keywords:
+tags:
   - integrate
   - exchange
   - account model
@@ -78,16 +78,16 @@ Most of the APIs are the same and the changes are fairly minimal, here are some 
 
 - The npm package changes from [`@iota/wallet`](https://www.npmjs.com/package/@iota/wallet) to
   [`@iota/sdk`](https://www.npmjs.com/package/@iota/sdk).
-- [`AccountManager`](/wallet.rs/1.0-rc.6/references/nodejs/classes/AccountManager)
+- `AccountManager`
   becomes
   [`Wallet`](../references/nodejs/classes/Wallet.md).
-- [`manager.generateMnemonic()`](/wallet.rs/1.0-rc.6/references/nodejs/classes/AccountManager#generatemnemonic)
+- `manager.generateMnemonic()`
   becomes
   [`Utils.generateMnemonic()`](../references/nodejs/classes/Utils.md#generatemnemonic).
-- [`AccountManager.generateAddress`](/wallet.rs/1.0-rc.6/references/nodejs/classes/AccountManager#generateaddress)
+- `AccountManager.generateAddress`
   becomes
   [`Wallet.generateEd25519Addresses`](../references/nodejs/classes/Wallet.md#generateed25519address).
-- [`Account.sendAmount`](/wallet.rs/1.0-rc.6/references/nodejs/classes/Account) becomes
+- `Account.sendAmount` becomes
   [`send`](../references/nodejs/classes/Account.md#send).
 - The callbacks to `listen` now provide a properly typed
   [`Event`](../references/nodejs/classes/Event.md).
@@ -95,14 +95,14 @@ Most of the APIs are the same and the changes are fairly minimal, here are some 
 </TabItem>
 <TabItem value="python" label="Python">
 
-- The pip package changes from `iota-wallet` to [`iota-sdk`](https://pypi.org/project/iota-sdk.md).
-- [`wallet.generate_mnemonic()`](/wallet.rs/1.0-rc.6/references/python/iota_wallet/wallet#generate_mnemonic)
+- The pip package changes from `iota-wallet` to [`iota-sdk`](https://pypi.org/project/iota-sdk).
+- `wallet.generate_mnemonic()`
   becomes
   [`utils.generate_mnemonic()`](../references/python/iota_sdk/utils.md#generate_mnemonic).
-- [`wallet.generate_address()`](/wallet.rs/1.0-rc.6/references/python/iota_wallet/wallet#generate_address)
+- `wallet.generate_address()`
   becomes
   [`wallet.generate_ed25519_addresses()`](../references/python/iota_sdk/wallet/wallet.md#generate_ed25519_address).
-- [`account.send_amount`](/wallet.rs/1.0-rc.6/references/python/iota_wallet/account#send_amount)
+- `account.send_amount`
   becomes
   [`account.send`](../references/python/iota_sdk/wallet/account.md#send).
 - The callbacks to `listen` now provide a properly typed
@@ -120,7 +120,7 @@ Most of the APIs are the same and the changes are fairly minimal, here are some 
 First, you should install the components needed to use the IOTA SDK and the binding of your choice; it may vary a bit
 from language to language.
 
-You can read more about [backup and security in this guide](/introduction/how_tos/backup_security).
+You can read more about [backup and security in this guide](/introduction/stardust/how_tos/backup_security).
 
 <Tabs groupId="language" queryString>
 
@@ -256,7 +256,7 @@ You can import the IOTA SDK and create a wallet using the following example:
 <TabItem value="rust" label="Rust">
 
 ```rust reference
-https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/accounts_and_addresses/create_account.rs#L13-L55
+https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/accounts_and_addresses/create_account.rs#L13-L999
 ```
 
 </TabItem>
@@ -356,7 +356,7 @@ potentially, many accounts and addresses.
 <TabItem value="rust" label="Rust">
 
 ```rust reference
-https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/accounts_and_addresses/create_address.rs#L14-L54
+https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/accounts_and_addresses/create_address.rs#L14-L999
 ```
 
 </TabItem>
@@ -413,7 +413,7 @@ for address in addresses:
 
 </Tabs>
 
-You can use the [Faucet](https://faucet.testnet.shimmer.network.md) to request test tokens and test your account.
+You can use the [Faucet](https://faucet.testnet.shimmer.network) to request test tokens and test your account.
 
 There are two types of addresses, `internal` and `public` (external). This approach is known as a _BIP32 Hierarchical Deterministic wallet (HD Wallet)_.
 
@@ -431,7 +431,7 @@ You can get the available account balance across all addresses of the given acco
 <TabItem value="rust" label="Rust">
 
 ```rust reference
-https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/accounts_and_addresses/check_balance.rs#L14-L39
+https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/accounts_and_addresses/check_balance.rs#L14-L999
 ```
 
 </TabItem>
@@ -462,7 +462,7 @@ You can use the following example to listen to new output events:
 <TabItem value="rust" label="Rust">
 
 ```rust reference
-https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/wallet/events.rs#L12-L86
+https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/wallet/events.rs#L12-L999
 ```
 
 </TabItem>
@@ -476,7 +476,7 @@ https://github.com/iotaledger/iota-sdk/blob/develop/bindings/nodejs/examples/exc
 <TabItem value="python" label="Python">
 
 ```python reference
-https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/exchange/4_listen_events.py#L6-L57
+https://github.com/iotaledger/iota-sdk/blob/develop/bindings/python/examples/exchange/4_listen_events.py#L6-L62
 ```
 
 </TabItem>
@@ -543,7 +543,7 @@ you should consider a [dust protection](/tips/tips/TIP-0019) mechanism.
 <TabItem value="rust" label="Rust">
 
 ```rust reference
-https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/simple_transaction/simple_transaction.rs#L14-L55
+https://github.com/iotaledger/iota-sdk/blob/develop/sdk/examples/how_tos/simple_transaction/simple_transaction.rs#L14-L999
 ```
 
 The full function signature is

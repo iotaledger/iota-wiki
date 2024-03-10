@@ -210,7 +210,7 @@ then the node generates the commitment of the required slot.
 
 ### Reality-based UTXO ledger
 
-As [Chrysalis](../../../chrysalis/introduction.md) and [Stardust](../../../stardust/introduction.md), IOTA 2.0 uses the Unspent Transaction Output (UTXO) model for transactions. Its _parallel processing_ capability allows independent transactions to be added to the ledger in any order, thus enhancing its scalability potential.
+As _Chrysalis_ and [Stardust](../../../stardust/introduction.md), IOTA 2.0 uses the Unspent Transaction Output (UTXO) model for transactions. Its _parallel processing_ capability allows independent transactions to be added to the ledger in any order, thus enhancing its scalability potential.
 
 However, the append-only nature of the UTXO ledger can compromise this benefit when _conflicting transactions_ arise. To address this issue, IOTA 2.0 uses an enhanced UTXO ledger model, called the [reality-based UTXO ledger](preliminaries.md#reality-based-utxo-ledger), that optimistically updates the ledger and maintains a record of the dependencies of possible conflicts.
 
