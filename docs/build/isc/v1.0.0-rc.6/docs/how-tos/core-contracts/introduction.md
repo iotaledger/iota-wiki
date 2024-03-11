@@ -51,6 +51,12 @@ If you need further info about magic contracts interfaces you can check out the 
 
 ## Call a Function
 
+:::info Ease of use
+
+To make it easier for developers to use the core contracts, you should in most cases run the functions from the magic contract direcly if they exist. For example to get the native token balance you could [call the `balanceNativeToken()`](./call-view.md) directly with `callView`, or use [`getl2balancenativetokens`](./basics/get-balance.md) of the magic contract, or (the suggested way) register your native token as [`ERC20`](../../reference/magic-contract/ERC20NativeTokens.md) and call the standard [`balanceof`](../../reference/magic-contract/ERC20NativeTokens.md#balanceof) function. What you use also depends on what you optimise for. To save gas it could be for example interesting for you to call core contracts from your favorite web3 library directly and compute other things off-chain.
+
+:::
+
 In the example below, `ISC.sandbox.getEntropy()` calls the
 [`getEntropy`](https://github.com/iotaledger/wasp/blob/develop/packages/vm/core/evm/iscmagic/ISCSandbox.sol#L20)
 method of the `ISCSandbox` interface, which, in turn,

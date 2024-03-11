@@ -160,6 +160,11 @@ module.exports = {
               label: 'Get Randomness on L2',
               id: 'how-tos/core-contracts/get-randomness-on-l2',
             },
+            {
+              type: 'doc',
+              label: 'Call and Call View',
+              id: 'how-tos/core-contracts/call-view',
+            },
           ],
         },
       ],
