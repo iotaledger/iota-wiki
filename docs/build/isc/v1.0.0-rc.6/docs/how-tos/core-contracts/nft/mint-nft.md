@@ -6,7 +6,7 @@ tags:
   - EVM
   - how-to
 ---
-import ExampleCodeIntro from '../../_partials/how-tos/token/_example_code_intro.md';
+import ExampleCodeIntro from '../../../_partials/how-tos/token/_example_code_intro.md';
 
 # Mint an NFT
 ## About NFTs
@@ -35,7 +35,7 @@ IRC27NFTMetadata memory metadata = IRC27NFTMetadata({
 });
 ```
 
-4. Create all the data for the core contract call. To do that, we create a new `ISCDict` with 2 parameters like specified in the reference docs for [`mintNFT`](../../reference/core-contracts/accounts.md#mintnfti-immutabledata-a-agentid-c-collectionid-w-withdrawonmint)
+4. Create all the data for the core contract call. To do that, we create a new `ISCDict` with 2 parameters like specified in the reference docs for [`mintNFT`](../../../reference/core-contracts/accounts.md#mintnfti-immutabledata-a-agentid-c-collectionid-w-withdrawonmint)
 `I` is the immutable metadata we fill with the IRC27 metadata and
 `a` is the AgendID of the owner of the NFT
 
@@ -51,7 +51,7 @@ The full example below contains the `IRC27NFTMetadataToString` which just conver
 
 :::
 
-5. Call the magic contract `call` function with all the parameters. We need to specify the core contract we want to call, which in our case is [`account`](../../reference/core-contracts/accounts.md) and the function for [minting an NFT](../../reference/core-contracts/accounts.md#mintnfti-immutabledata-a-agentid-c-collectionid-w-withdrawonmint)
+5. Call the magic contract `call` function with all the parameters. We need to specify the core contract we want to call, which in our case is [`account`](../../../reference/core-contracts/accounts.md) and the function for [minting an NFT](../../../reference/core-contracts/accounts.md#mintnfti-immutabledata-a-agentid-c-collectionid-w-withdrawonmint)
 
 ```solidity
 ISCDict memory ret = ISC.sandbox.call(
@@ -62,7 +62,7 @@ ISCDict memory ret = ISC.sandbox.call(
 );
 ```
 
-6. The call return value will contain a mintID which we can use in for example another contract function to get the actual L1 NFT ID once it got created with the [`accounts.NFTIDbyMintID`](../../reference/core-contracts/accounts.md#nftidbymintidd-mintid) function
+6. The call return value will contain a mintID which we can use in for example another contract function to get the actual L1 NFT ID once it got created with the [`accounts.NFTIDbyMintID`](../../../reference/core-contracts/accounts.md#nftidbymintidd-mintid) function
 
 ```solidity
 function getNFTIDFromMintID(bytes memory mintID) public view returns (bytes memory) {
