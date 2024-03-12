@@ -89,28 +89,18 @@ set OPENSSL_DIR="C:\Program Files\OpenSSL-Win64"
 
 ### Install the SDK Using Cargo
 
-<Tabs>
-<TabItem value="cargo" label="Cargo add">
-
-To start using the IOTA SDK in your Rust project, you can include it as a dependencies in your project's `Cargo.toml` by running:
+To start using the IOTA SDK in your Rust project, you can include it as a dependency in your project's `Cargo.toml` by running:
 
 ```bash
 cargo add iota-sdk@2.0.0
 ```
 
-</TabItem>
-
-<TabItem value="manual" label="Cargo.toml">
-
-To start using the IOTA SDK in your Rust project, you can include the following line under `dependencies` in your `Cargo.toml`:
+Or you can include the following line under `dependencies` in your `Cargo.toml`:
 
 ```toml
 [dependencies]
 iota-sdk = "2.0.0"
 ```
-
-</TabItem>
-</Tabs>
 
 ### Build the SDK from Source
 
@@ -140,6 +130,22 @@ cargo build
 
 ## Usage
 
+:::note Asynchronous code
+
+The SDK requires an asynchronous runtime, like [Tokio](https://tokio.rs/). Add it to your dependencies by running:
+
+```bash
+cargo add tokio --features=full
+```
+
+or by adding it to your dependencies:
+
+```toml
+tokio = { version = "1.35.1", features = ["full"] }
+```
+
+:::
+
 ### Client
 
 To use the Client module, you simply need to create a `Client`.
@@ -151,11 +157,10 @@ https://github.com/iotaledger/iota-sdk/blob/2.0/sdk/examples/client/getting_star
 ### Wallet
 
 To use the Wallet module, you need to create a `Wallet`.
-For this example to work `features = ["stronghold"]` is needed in the Cargo.toml import. To persist the wallet in a database,
-`"rocksdb"` can be added.
+For this example to work `features = ["stronghold", "storage"]` is needed in the Cargo.toml import.
 
 ```rust reference
-https://github.com/iotaledger/iota-sdk/blob/2.0/sdk/examples/wallet/getting_started.rs#L12-L56
+https://github.com/iotaledger/iota-sdk/blob/2.0/sdk/examples/wallet/getting_started.rs#L11-L57
 ```
 
 ## What's next?
