@@ -1,0 +1,158 @@
+---
+title: Sign Ed25519
+description: 'How to sign with Ed25519'
+image: /img/logo/iota_mark_light.png
+tags:
+  - how to
+  - sign
+  - ed25519
+  - nodejs
+  - python
+  - rust
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+[Ed25519](https://www.cryptopp.com/wiki/Ed25519) is a widely adopted digital signature algorithm known for its strong security and
+efficiency. Signing with Ed25519 ensures data _integrity_, authenticity, and non-repudiation. When signing with Ed25519,
+a private key generates a digital signature that can be verified with the corresponding public key. This
+process guarantees that the data has not been tampered with and originated from the private key's holder.
+
+## Example Code
+
+<Tabs groupId="language" queryString>
+<TabItem value="rust" label="Rust">
+
+1. Create a [`StrongholdSecretManager`](https://docs.rs/iota-sdk/latest/iota_sdk/client/secret/stronghold/type.StrongholdSecretManager.html) with the `STRONGHOLD_PASSWORD` and `MNEMONIC` variables in your `.env` file.
+
+<div className={'hide-code-block-extras'}>
+
+```rust reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/sdk/examples/how_tos/sign_and_verify_ed25519/sign_ed25519.rs#L36-L38
+```
+
+</div>
+
+2. Use the [`SecretManager`](https://docs.rs/iota-sdk/latest/iota_sdk/client/secret/enum.SecretManager.html) to sign the `FOUNDRY_METADATA` message as bytes using the [`StrongholdAdapter.sign_ed25519()`](https://docs.rs/iota-sdk/latest/iota_sdk/client/stronghold/struct.StrongholdAdapter.html#method.sign_ed25519) function.
+
+<div className={'hide-code-block-extras'}>
+
+```rust reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/sdk/examples/how_tos/sign_and_verify_ed25519/sign_ed25519.rs#L50-L52
+```
+
+</div>
+
+3. Hash the public key to get the address using the [`hex_public_key_to_bech32_address()`](https://docs.rs/iota-sdk/latest/iota_sdk/client/utils/fn.hex_public_key_to_bech32_address.html) function.
+
+<div className={'hide-code-block-extras'}>
+
+```rust reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/sdk/examples/how_tos/sign_and_verify_ed25519/sign_ed25519.rs#L60-L61
+```
+
+</div>
+
+</TabItem>
+<TabItem value="typescript-node" label="Typescript (Node.js)">
+
+1. Create a [`StrongholdSecretManager`](../../references/nodejs/interfaces/StrongholdSecretManager.md) with the `STRONGHOLD_PASSWORD` and `MNEMONIC` variables in your `.env` file.
+
+<div className={'hide-code-block-extras'}>
+
+```typescript reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/nodejs/examples/how_tos/sign_and_verify_ed25519/sign-ed25519.ts#L41-L51
+```
+
+</div>
+
+2. Use the [`SecretManager`](../../references/nodejs/classes/SecretManager.md) to sign the `FOUNDRY_METADATA` message as bytes using the [`SecretManager.signEd25519()`](../../references/nodejs/classes/SecretManager.md#signed25519) function.
+
+<div className={'hide-code-block-extras'}>
+
+```typescript reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/nodejs/examples/how_tos/sign_and_verify_ed25519/sign-ed25519.ts#L53-L63
+```
+
+</div>
+
+3. Hash the public key to get the address using the [`Utils.hexPublicKeyToBech32Address()`](../../references/nodejs/classes/Utils.md#hexpublickeytobech32address) function.
+
+<div className={'hide-code-block-extras'}>
+
+```typescript reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/nodejs/examples/how_tos/sign_and_verify_ed25519/sign-ed25519.ts#L68-L71
+```
+
+</div>
+
+</TabItem>
+<TabItem value="python" label="Python">
+
+1. Create a [`StrongholdSecretManager`](../../references/python/iota_sdk/secret_manager/secret_manager.md#strongholdsecretmanager-objects) with the `STRONGHOLD_PASSWORD` and `MNEMONIC` variables in your `.env` file.
+
+<div className={'hide-code-block-extras'}>
+
+```python reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/python/examples/how_tos/sign_and_verify_ed25519/sign_ed25519.py#L20-L27
+```
+
+</div>
+
+2. Use the [`SecretManager`](../../references/python/iota_sdk/secret_manager/secret_manager.md) to sign the `FOUNDRY_METADATA` message as bytes using the [`SecretManager.sign_ed25519()`](../../references/python/iota_sdk/secret_manager/secret_manager.md#sign_ed25519) function.
+
+<div className={'hide-code-block-extras'}>
+
+```python reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/python/examples/how_tos/sign_and_verify_ed25519/sign_ed25519.py#L29-L37
+```
+
+</div>
+
+3. Hash the public key to get the address using the [`Utils.hex_public_key_to_bech32_address()`](../../references/python/iota_sdk/utils.md#hex_public_key_to_bech32_address) function.
+
+<div className={'hide-code-block-extras'}>
+
+```python reference
+    https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/python/examples/how_tos/sign_and_verify_ed25519/sign_ed25519.py#L41-L43
+```
+
+</div>
+
+</TabItem>
+</Tabs>
+
+### Full Example Code
+
+<Tabs groupId="language" queryString>
+<TabItem value="rust" label="Rust">
+
+```rust reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/sdk/examples/how_tos/sign_and_verify_ed25519/sign_ed25519.rs
+```
+
+</TabItem>
+<TabItem value="typescript-node" label="Typescript (Node.js)">
+
+```typescript reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/nodejs/examples/how_tos/sign_and_verify_ed25519/sign-ed25519.ts
+```
+
+</TabItem>
+<TabItem value="python" label="Python">
+
+```python reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/python/examples/how_tos/sign_and_verify_ed25519/sign_ed25519.py
+```
+
+</TabItem>
+</Tabs>
+
+### Expected Output
+
+```plaintext
+Public key: 0x67b7fc3f78763c9394fc4fcdb52cf3a973b6e064bdc3defb40a6cb2c880e6f5c
+Signature: 0x5437ee671f182507103c6ae2f6649083475019f2cc372e674be164577dd123edd7a76291ba88732bbe1fae39688b50a3678bce05c9ef32c9494b3968f4f07a01
+Address: rms1qpllaj0pyveqfkwxmnngz2c488hfdtmfrj3wfkgxtk4gtyrax0jaxzt70zy
+```
