@@ -1,0 +1,187 @@
+---
+title: Simple Transaction
+description: 'How to send a value transaction'
+image: /img/logo/iota_mark_light.png
+tags:
+  - how to
+  - faucet
+  - testnet
+  - test funds
+  - nodejs
+  - python
+  - rust
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import TipFaucet from '../../_admonitions/_tip-faucet.md';
+
+Once you have [created your account](../accounts-and-addresses/create-account.mdx) and
+[requested funds from the faucet](./request-funds.mdx) you are ready to send your first
+transaction.
+
+<TipFaucet />
+
+## Example Code
+
+The following example will:
+
+<Tabs groupId="language" queryString>
+<TabItem value="rust" label="Rust">
+
+1. Instantiate a [`Wallet`](file:///home/lucas/Documents/IOTA/iota-sdk/target/doc/iota_sdk/wallet/core/struct.Wallet.html).
+
+<div className={'hide-code-block-extras'}>
+
+```rust reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/sdk/examples/how_tos/simple_transaction/simple_transaction.rs#L30-L33
+```
+
+</div>
+
+2. Sync the wallet with the node to get the latest transactions by calling the [`Wallet.sync()`](file:///home/lucas/Documents/IOTA/iota-sdk/target/doc/iota_sdk/wallet/core/struct.Wallet.html#method.sync)
+   function.
+
+<div className={'hide-code-block-extras'}>
+
+```rust reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/sdk/examples/how_tos/simple_transaction/simple_transaction.rs#L36
+```
+
+</div>
+
+3. Send the defined `SEND_AMOUNT` to an address using the [`Wallet.send()`](file:///home/lucas/Documents/IOTA/iota-sdk/target/doc/iota_sdk/wallet/core/struct.Wallet.html#method.send) function.
+   Make sure to update the code sample to send to the address of your choice.
+
+<div className={'hide-code-block-extras'}>
+
+```rust reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/sdk/examples/how_tos/simple_transaction/simple_transaction.rs#L44
+```
+
+</div>
+
+4. Await for the transaction to be accepted by the network by calling the [`wallet.wait_for_transaction_acceptance()`](file:///home/lucas/Documents/IOTA/iota-sdk/target/doc/iota_sdk/wallet/core/struct.Wallet.html#method.wait_for_transaction_acceptance) function.
+
+<div className={'hide-code-block-extras'}>
+
+```rust reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/sdk/examples/how_tos/simple_transaction/simple_transaction.rs#L46-L48
+```
+
+</div>
+
+</TabItem>
+<TabItem value="typescript-node" label="Typescript (Node.js)">
+
+1. Instantiate a [`Wallet`](http://localhost:3000/iota-sdk/2.0/references/nodejs/classes/Wallet/).
+
+<div className={'hide-code-block-extras'}>
+
+```typescript reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/nodejs/examples/how_tos/simple_transaction/simple-transaction.ts#L26-L28
+```
+
+</div>
+
+2. Sync the wallet with the node to get the latest transactions by calling the [`Wallet.sync()`](http://localhost:3000/iota-sdk/2.0/references/nodejs/classes/Wallet/#sync)
+function.
+
+<div className={'hide-code-block-extras'}>
+
+```typescript reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/nodejs/examples/how_tos/simple_transaction/simple-transaction.ts#L30
+```
+
+</div>
+
+3. Send the defined `amount` to an `address` using the [`Wallet.send()`](http://localhost:3000/iota-sdk/2.0/references/nodejs/classes/Wallet/#send) function.
+Make sure to update the code sample to send to the address of your choice.
+
+<div className={'hide-code-block-extras'}>
+
+```typescript reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/nodejs/examples/how_tos/simple_transaction/simple-transaction.ts#L38-L42
+```
+
+</div>
+
+</TabItem>
+<TabItem value="python" label="Python">
+
+1. Instantiate a [`Wallet`](http://localhost:3000/iota-sdk/2.0/references/python/iota_sdk/wallet/).
+
+<div className={'hide-code-block-extras'}>
+
+```python reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/python/examples/how_tos/simple_transaction/simple_transaction.py#L17
+```
+
+</div>
+
+2. Sync the wallet with the node to get the latest transactions by calling the [`Wallet.sync()`](http://localhost:3000/iota-sdk/2.0/references/python/iota_sdk/wallet/#sync)
+function.
+
+<div className={'hide-code-block-extras'}>
+
+```python reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/python/examples/how_tos/simple_transaction/simple_transaction.py#L20
+```
+
+</div>
+
+3. Define the `amount` to send and the `address` to send to in the [`SendParams`](http://localhost:3000/iota-sdk/2.0/references/python/iota_sdk/types/send_params/).
+    Make sure to update the code sample to send to the address of your choice.
+
+<div className={'hide-code-block-extras'}>
+
+```python reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/python/examples/how_tos/simple_transaction/simple_transaction.py#L24-L27
+```
+
+</div>
+
+3. Send the transaction using the [`Wallet.send_with_params()`](http://localhost:3000/iota-sdk/2.0/references/python/iota_sdk/wallet/#send_with_params) function.
+
+<div className={'hide-code-block-extras'}>
+
+```python reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/python/examples/how_tos/simple_transaction/simple_transaction.py#L29
+```
+
+</div>
+
+</TabItem>
+</Tabs>
+
+### Expected Output
+
+```plaintext
+Block sent: https://explorer.shimmer.network/testnet/block/0x47ec97658791954b9bcd5e47e6791396e3f340b82e81fe2cc7218f52ebec3804
+```
+
+### Full Example Code
+
+<Tabs groupId="language" queryString>
+<TabItem value="rust" label="Rust">
+
+```rust reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/sdk/examples/how_tos/simple_transaction/simple_transaction.rs
+```
+
+</TabItem>
+<TabItem value="typescript-node" label="Typescript (Node.js)">
+
+```typescript reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/nodejs/examples/how_tos/simple_transaction/simple-transaction.ts
+```
+
+</TabItem>
+<TabItem value="python" label="Python">
+
+```python reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/python/examples/how_tos/simple_transaction/simple_transaction.py
+```
+
+</TabItem>
+</Tabs>
