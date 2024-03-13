@@ -1,0 +1,173 @@
+---
+title: Claim Transaction
+description: 'How to claim funds'
+image: /img/logo/iota_mark_light.png
+tags:
+  - how to
+  - time-lock
+  - storage deposit return
+  - unlock conditions
+  - claim output
+  - nodejs
+  - python
+  - rust
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+You can use the SDK to send transaction with funds that have to be claimed (for example a
+[micro transaction](send-micro-transaction.mdx)). This guide will show you how to claim all claimable outputs in an account.
+
+## Example Code
+
+<Tabs groupId="language" queryString>
+<TabItem value="rust" label="Rust">
+
+1. Instantiate a [`Wallet`](http://localhost:3000/iota-sdk/2.0/references/nodejs/classes/Wallet) and [sync it](../accounts-and-addresses/check-balance.mdx).
+2. Retrieve all claimable outputs in the account by calling the [`Wallet.claimable_outputs()`](file:///home/lucas/Documents/IOTA/iota-sdk/target/doc/iota_sdk/wallet/core/struct.Wallet.html#method.claimable_outputs)
+function.
+
+<div className={'hide-code-block-extras'}>
+
+```rust reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/sdk/examples/how_tos/advanced_transactions/claim_transaction.rs#L34
+```
+
+</div>
+
+3. Claim the outputs by calling the [`Wallet.claim_outputs()`](file:///home/lucas/Documents/IOTA/iota-sdk/target/doc/iota_sdk/wallet/core/struct.Wallet.html#method.claim_outputs) function.
+
+<div className={'hide-code-block-extras'}>
+
+```rust reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/sdk/examples/how_tos/advanced_transactions/claim_transaction.rs#L40
+```
+
+</div>
+
+4. Await for the transaction to be accepted by the network by calling the [`Wallet.wait_for_transaction_acceptance()`](file:///home/lucas/Documents/IOTA/iota-sdk/target/doc/iota_sdk/wallet/core/struct.Wallet.html#method.wait_for_transaction_acceptance) function.
+
+<div className={'hide-code-block-extras'}>
+
+```rust reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/sdk/examples/how_tos/advanced_transactions/claim_transaction.rs#L43-L45
+```
+
+</div>
+
+</TabItem>
+<TabItem value="typescript-node" label="Typescript (Node.js)">
+
+1. Instantiate a [`Wallet`](http://localhost:3000/iota-sdk/2.0/references/nodejs/classes/Wallet) and [sync it](../accounts-and-addresses/check-balance.mdx).
+2. Retrieve all claimable outputs in the account by calling the [`Wallet.claimableOutputs()`](../../references/nodejs/classes/Wallet.md#claimableoutputs)
+   function.
+
+<div className={'hide-code-block-extras'}>
+
+```typescript reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/nodejs/examples/how_tos/advanced_transactions/claim_transaction.ts#L38
+```
+
+</div>
+
+3. Claim the outputs by calling the [`Wallet.claimOutputs()`](../../references/nodejs/classes/Wallet.md#claimoutputs) function.
+
+<div className={'hide-code-block-extras'}>
+
+```typescript reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/nodejs/examples/how_tos/advanced_transactions/claim_transaction.ts#L44
+```
+
+</div>
+
+4. Await for the [`Transaction`](../../references/nodejs/classes/Transaction.md) to get confirmed by calling the
+['wallet.waitForTransactionAcceptance'](../../references/nodejs/classes/Wallet.md#waitForTransactionAcceptance)
+function.
+
+<div className={'hide-code-block-extras'}>
+
+```typescript reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/nodejs/examples/how_tos/advanced_transactions/claim_transaction.ts#L47
+```
+
+</div>
+
+</TabItem>
+<TabItem value="python" label="Python">
+
+1. Instantiate a [`Wallet`](http://localhost:3000/iota-sdk/2.0/references/python/iota_sdk/wallet/) and [sync it](../accounts-and-addresses/check-balance.mdx).
+2. Retrieve all claimable outputs in the account by calling the [`Wallet.claimable_outputs()`](http://localhost:3000/iota-sdk/2.0/references/python/iota_sdk/wallet/#claimable_outputs)
+   function.
+
+<div className={'hide-code-block-extras'}>
+
+```python reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/python/examples/how_tos/advanced_transactions/claim_transaction.py#L25
+```
+
+</div>
+
+3. Claim all the outputs in the account by calling the [`Wallet.claim_outputs()`](http://localhost:3000/iota-sdk/2.0/references/python/iota_sdk/wallet/#claim_outputs) function.
+
+<div className={'hide-code-block-extras'}>
+
+```python reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/python/examples/how_tos/advanced_transactions/claim_transaction.py#L31
+```
+
+</div>
+
+4. Await for the transaction to get accepted by calling the [`Wallet.wait_for_transaction_acceptance()`](../../references/python/iota_sdk/wallet/wallet.md#wait_for_transaction_acceptance)
+function.
+
+<div className={'hide-code-block-extras'}>
+
+```python reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/python/examples/how_tos/advanced_transactions/advanced_transaction.py#L51-L52
+```
+
+</div>
+
+</TabItem>
+</Tabs>
+
+### Full Example Code
+
+<Tabs groupId="language" queryString>
+<TabItem value="rust" label="Rust">
+
+```rust reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/sdk/examples/how_tos/advanced_transactions/claim_transaction.rs
+```
+
+</TabItem>
+<TabItem value="typescript-node" label="Typescript (Node.js)">
+
+```typescript reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/nodejs/examples/how_tos/advanced_transactions/claim_transaction.ts
+```
+
+</TabItem>
+<TabItem value="python" label="Python">
+
+```python reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/python/examples/how_tos/advanced_transactions/claim_transaction.py
+```
+
+</TabItem>
+</Tabs>
+
+### Expected Output
+
+```plaintext
+Available outputs to claim:
+0xa8652127daebb702c5f7a758452886779156f9983513b604d4df53ba03e2ab4b0000
+0x1141f4403c6e6a8f49cf07c5af6a6d84a4434f36d0feabf14955d00ce273e82a0000
+0x166977bac6f564694c5ed949ef4d11f076edf03dc26813b54011bf0acd1bd7ec0000
+0x4c660f6fdfe839186fd1b1176769f34f6fc9843b9bbe2499694c921303b793600000
+0x4f04a922dcac8d22b95f1edb269a0aee056f2fa11bbcf0cbb408f937480e81190000
+0xebcc726e9de91de5885aeab1c16b910e3f4044887c4ef594dbf48b44199ba3220000
+Transaction sent: 0xee58a362aeb97abfac42e7b44c718ccf15d915456a1eb2046cde89af0d3fd216
+Block sent: https://explorer.shimmer.network/testnet/block/0xa51ad0cbe612d5f30ee9c96bbe840cb15ffafa8abdffcd571aa0153448e0ebe7
+```

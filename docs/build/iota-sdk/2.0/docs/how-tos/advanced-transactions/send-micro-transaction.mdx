@@ -1,0 +1,147 @@
+---
+title: Send a Micro Transaction
+description: 'How to send a microtransaction'
+image: /img/logo/iota_mark_light.png
+tags:
+  - how to
+  - micro-transaction
+  - send micro-transaction
+  - microtransaction
+  - send microtransaction
+  - nodejs
+  - python
+  - rust
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import TipFaucet from '../../_admonitions/_tip-faucet.md';
+
+Any transaction with an amount that is below the minimum
+[storage deposit](/learn/protocols/stardust/core-concepts/storage-deposit) is considered a
+microtransaction.
+
+The IOTA SDK has a convenient
+[`TransactionOption`](../../references/nodejs/interfaces/TransactionOptions.md#allowmicroamount)
+called [`allowMicroAmount`](../../references/nodejs/interfaces/TransactionOptions.md#allowmicroamount) to help you easily
+send a microtransaction.
+
+<TipFaucet />
+
+## Example Code
+
+<Tabs groupId="language" queryString>
+
+<TabItem value="rust" label="Rust">
+
+The following example will:
+
+1. Instantiate a [`Wallet`](http://localhost:3000/iota-sdk/2.0/references/python/iota_sdk/wallet/). and [sync it](../accounts-and-addresses/check-balance.mdx).
+2. Send a micro transaction using the
+   [`Wallet.send()`](file:///home/lucas/Documents/IOTA/iota-sdk/target/doc/iota_sdk/wallet/core/struct.Wallet.html#method.send) function with
+   the [`TransactionOption::allow_micro_amount`](file:///home/lucas/Documents/IOTA/iota-sdk/target/doc/iota_sdk/wallet/struct.TransactionOptions.html#structfield.allow_micro_amount)
+   set as `true`.
+
+<div className={'hide-code-block-extras'}>
+
+```rust reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/sdk/examples/how_tos/advanced_transactions/send_micro_transaction.rs#L47-L56
+```
+
+</div>
+
+3. Await for the transaction to get accepted by calling the [`Wallet.wait_for_transaction_acceptance()`](../../references/python/iota_sdk/wallet/wallet.md#wait_for_transaction_acceptance)
+    function.
+
+<div className={'hide-code-block-extras'}>
+
+```rust reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/sdk/examples/how_tos/advanced_transactions/send_micro_transaction.rs#L59-L61
+```
+
+</div>
+
+</TabItem>
+<TabItem value="typescript-node" label="Typescript (Node.js)">
+
+The following example will:
+
+1. Instantiate a [`Wallet`](http://localhost:3000/iota-sdk/2.0/references/nodejs/classes/Wallet) and [sync it](../accounts-and-addresses/check-balance.mdx).
+2. Send a micro transaction using the
+   [`Wallet.send()` function](../../references/nodejs/classes/Wallet.md#send) with
+   the [`TransactionOption:allowMicroAmount
+    `](../../references/nodejs/interfaces/TransactionOptions.md#allowmicroamount) set as `true`.
+
+<div className={'hide-code-block-extras'}>
+
+```typescript reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/nodejs/examples/how_tos/advanced_transactions/send_micro_transaction.ts#L38-L44
+```
+
+</div>
+
+</TabItem>
+<TabItem value="python" label="Python">
+
+The following example will:
+
+1. Instantiate a [`Wallet`](http://localhost:3000/iota-sdk/2.0/references/python/iota_sdk/wallet/). and [sync it](../accounts-and-addresses/check-balance.mdx).
+2. Send a micro transaction using the
+   [`Wallet.send_with_params()` function](http://localhost:3000/iota-sdk/2.0/references/python/iota_sdk/wallet/#send_with_params) with
+   the [`TransactionOption:allowMicroAmount`](http://localhost:3000/iota-sdk/2.0/references/python/iota_sdk/types/transaction_options/) set as `true`.
+
+<div className={'hide-code-block-extras'}>
+
+```python reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/nodejs/examples/how_tos/advanced_transactions/send_micro_transaction.ts#L38-L44
+```
+
+</div>
+
+4. Await for the transaction to get accepted by calling the [`Wallet.wait_for_transaction_acceptance()`](../../references/python/iota_sdk/wallet/wallet.md#wait_for_transaction_acceptance)
+function.
+
+
+<div className={'hide-code-block-extras'}>
+
+```python reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/python/examples/how_tos/advanced_transactions/send_micro_transaction.py#L32-L33
+```
+
+</div>
+</TabItem>
+
+</Tabs>
+
+### Full Example Code
+
+<Tabs groupId="language" queryString>
+<TabItem value="rust" label="Rust">
+
+```rust reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/sdk/examples/how_tos/advanced_transactions/send_micro_transaction.rs
+```
+
+</TabItem>
+<TabItem value="typescript-node" label="Typescript (Node.js)">
+
+```typescript reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/nodejs/examples/how_tos/advanced_transactions/send_micro_transaction.ts
+```
+
+</TabItem>
+<TabItem value="python" label="Python">
+
+```python reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/python/examples/how_tos/advanced_transactions/send_micro_transaction.py
+```
+
+</TabItem>
+</Tabs>
+
+### Expected Output
+
+```plaintext
+Transaction sent: 0x4f04a922dcac8d22b95f1edb269a0aee056f2fa11bbcf0cbb408f937480e8119
+Block included: https://explorer.shimmer.network/testnet/block/0xb7134950c962b88d280589e9431dcb70527c4cb72cb640e614c896643180007a
+```
