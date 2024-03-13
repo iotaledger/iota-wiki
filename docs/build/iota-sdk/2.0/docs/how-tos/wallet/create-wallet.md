@@ -102,22 +102,7 @@ https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/nodejs/examples/how_tos
 
 </div>
 
-3. Use the [`SecretManager`](http://localhost:3000/iota-sdk/2.0/references/nodejs/classes/SecretManager/) you created in
-   step 2 a `Ed255519` address by calling
-   the [`generateEd25519Addresses`](http://localhost:3000/iota-sdk/2.0/references/nodejs/classes/SecretManager/#generateed25519addresses)
-   function:
-
-<div className={'hide-code-block-extras'}>
-
-```typescript reference
-https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/nodejs/examples/how_tos/wallet/create-wallet.ts#L47-L55
-```
-
-</div>
-
-4. Define the [`WalletOptions`](http://localhost:3000/iota-sdk/2.0/references/nodejs/interfaces/WalletOptions/) to use
-   the [`address`](http://localhost:3000/iota-sdk/2.0/references/nodejs/interfaces/WalletOptions/#address) that you
-   created on step 3,
+3. Define the [`WalletOptions`](http://localhost:3000/iota-sdk/2.0/references/nodejs/interfaces/WalletOptions/) to use
    the [`storagePath`](http://localhost:3000/iota-sdk/2.0/references/nodejs/interfaces/WalletOptions/#storagepath) that
    is defined in
    the `.env` file,
@@ -132,7 +117,7 @@ https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/nodejs/examples/how_tos
 <div className={'hide-code-block-extras'}>
 
 ```typescript reference
-https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/nodejs/examples/how_tos/wallet/create-wallet.ts#L57-L67
+https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/nodejs/examples/how_tos/wallet/create-wallet.ts#L47-L56
 ```
 
 </div>
@@ -143,7 +128,7 @@ https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/nodejs/examples/how_tos
 <div className={'hide-code-block-extras'}>
 
 ```typescript reference
-https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/nodejs/examples/how_tos/wallet/create-wallet.ts#L69
+https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/nodejs/examples/how_tos/wallet/create-wallet.ts#L58
 ```
 
 </div>
@@ -160,7 +145,7 @@ https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/nodejs/examples/how_tos
 <div className={'hide-code-block-extras'}>
 
 ```python reference
-https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/python/examples/how_tos/wallet/create_wallet.py#L11-L12
+https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/python/examples/how_tos/wallet/create_wallet.py#L10-L11
 ```
 
 </div>
@@ -174,7 +159,7 @@ https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/python/examples/how_tos
 <div className={'hide-code-block-extras'}>
 
 ```python reference
-https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/python/examples/how_tos/wallet/create_wallet.py#L11-L12
+https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/python/examples/how_tos/wallet/create_wallet.py#L17-L18
 ```
 
 </div>
@@ -186,7 +171,7 @@ https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/python/examples/how_tos
 <div className={'hide-code-block-extras'}>
 
 ```python reference
-https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/python/examples/how_tos/wallet/create_wallet.py#L23
+https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/python/examples/how_tos/wallet/create_wallet.py#L22
 ```
 
 </div>
@@ -198,7 +183,7 @@ https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/python/examples/how_tos
 <div className={'hide-code-block-extras'}>
 
 ```python reference
-https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/python/examples/how_tos/wallet/create_wallet.py#L25-L27
+https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/python/examples/how_tos/wallet/create_wallet.py#L24-L26
 ```
 
 </div>
@@ -211,7 +196,7 @@ https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/python/examples/how_tos
 <div className={'hide-code-block-extras'}>
 
 ```python reference
-https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/python/examples/how_tos/wallet/create_wallet.py#L29-L36
+https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/python/examples/how_tos/wallet/create_wallet.py#L28-L35
 ```
 
 </div>

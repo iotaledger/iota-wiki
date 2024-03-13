@@ -1,0 +1,178 @@
+---
+title: Request Funds
+description: 'How to programmatically request testnet funds.'
+image: /img/logo/iota_mark_light.png
+tags:
+  - how to
+  - faucet
+  - testnet
+  - test funds
+  - nodejs
+  - python
+  - rust
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import TipFaucet from '../../_admonitions/_tip-faucet.md';
+
+Once you have [created your account](../accounts-and-addresses/create-account.mdx),
+you can start using the IOTA SDK for value transactions. Since these examples target the testnet, you can request funds
+using the `request_funds_from_faucet` function.
+
+<TipFaucet />
+
+## Example Code
+
+<Tabs groupId="language" queryString>
+<TabItem value="rust" label="Rust">
+
+1. Instantiate a [`Wallet`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/core/struct.Wallet.html), and [sync it](../accounts-and-addresses/check-balance.mdx).
+
+<div className={'hide-code-block-extras'}>
+
+```rust reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/sdk/examples/how_tos/simple_transaction/request_funds.rs#L25-L30
+```
+
+</div>
+
+2. Get the wallet's [`Bech32Address`](file:///home/lucas/Documents/IOTA/iota-sdk/target/doc/iota_sdk/types/block/address/bech32/struct.Bech32Address.html)
+ by calling the [`Wallet.address()`](file:///home/lucas/Documents/IOTA/iota-sdk/target/doc/iota_sdk/wallet/core/struct.Wallet.html#method.address)
+function.
+
+<div className={'hide-code-block-extras'}>
+
+```rust reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/sdk/examples/how_tos/simple_transaction/request_funds.rs#L33
+```
+
+</div>
+
+3. Request funds to the `FAUCET_URL` you defined in the `.env` file by calling the [`Client::utils::request_funds_from_faucet`](file:///home/lucas/Documents/IOTA/iota-sdk/target/doc/iota_sdk/client/utils/fn.request_funds_from_faucet.html) function.
+
+<div className={'hide-code-block-extras'}>
+
+```rust reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/sdk/examples/how_tos/simple_transaction/request_funds.rs#L39
+```
+
+</div>
+
+</TabItem>
+<TabItem value="typescript-node" label="Typescript (Node.js)">
+
+The following example will:
+
+1. Instantiate a [`Wallet`](http://localhost:3000/iota-sdk/2.0/references/nodejs/classes/Wallet/).
+
+<div className={'hide-code-block-extras'}>
+
+```typescript reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/nodejs/examples/how_tos/simple_transaction/request-funds.ts#L24-L26
+```
+
+</div>
+
+2. Retrieve the wallet's [`Address`](http://localhost:3000/iota-sdk/2.0/references/nodejs/classes/Address/) by calling the
+   [`Wallet.address()`](../../references/nodejs/classes/Wallet.md#address) function.
+
+<div className={'hide-code-block-extras'}>
+
+```typescript reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/nodejs/examples/how_tos/simple_transaction/request-funds.ts#L28
+```
+
+</div>
+
+3. Instantiate a [`Client`](http://localhost:3000/iota-sdk/2.0/references/nodejs/classes/Client/) by calling the [`wallet.getClient()`](http://localhost:3000/iota-sdk/2.0/references/nodejs/classes/Wallet/#getclient) function.
+
+<div className={'hide-code-block-extras'}>
+
+```typescript reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/nodejs/examples/how_tos/simple_transaction/request-funds.ts#L31
+```
+
+</div>
+
+3. Request funds to the `FAUCET_URL` you defined in the `.env` file by calling the [`Client.requestFundsFromFaucet`](../../references/nodejs/classes/Client.md#requestfundsfromfaucet) function.
+
+<div className={'hide-code-block-extras'}>
+
+```typescript reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/nodejs/examples/how_tos/simple_transaction/request-funds.ts#L32-L35
+```
+
+</div>
+
+</TabItem>
+<TabItem value="python" label="Python">
+
+1. Instantiate a [`Wallet`](http://localhost:3000/iota-sdk/2.0/references/python/iota_sdk/wallet/).
+
+<div className={'hide-code-block-extras'}>
+
+```python reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/python/examples/how_tos/simple_transaction/request_funds.py#L14
+```
+
+</div>
+
+2. Retrieve the wallet's [`Address`](http://localhost:3000/iota-sdk/2.0/references/python/iota_sdk/types/address/) by calling the
+[`Wallet.address()`](http://localhost:3000/iota-sdk/2.0/references/python/iota_sdk/wallet/#address) function.
+
+<div className={'hide-code-block-extras'}>
+
+```python reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/python/examples/how_tos/simple_transaction/request_funds.py#L16
+```
+
+</div>
+
+3. Instantiate a [`Client`](http://localhost:3000/iota-sdk/2.0/references/python/iota_sdk/client/) by calling the [`Wallet.get_client()`](http://localhost:3000/iota-sdk/2.0/references/python/iota_sdk/wallet/#get_client) function
+    and request funds to the `FAUCET_URL` you defined in the `.env` file by calling the [`Client.request_funds_from_faucet`](http://localhost:3000/iota-sdk/2.0/references/python/iota_sdk/client/_utils/#request_funds_from_faucet)
+   function.
+
+<div className={'hide-code-block-extras'}>
+
+```python reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/python/examples/how_tos/simple_transaction/request_funds.py#L19
+```
+
+</div>
+
+</TabItem>
+</Tabs>
+
+### Expected Output
+
+```plaintext
+rms1qpjt6zr7rfvl27le5xjcv0qhr90l92wtm6eu6v6jhtgvrjp7mwufq6nqxn8
+{"address":"rms1qpjt6zr7rfvl27le5xjcv0qhr90l92wtm6eu6v6jhtgvrjp7mwufq6nqxn8","waitingRequests":11}
+```
+
+### Full Example Code
+
+<Tabs groupId="language" queryString>
+<TabItem value="rust" label="Rust">
+
+```rust reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/sdk/examples/how_tos/simple_transaction/request_funds.rs
+```
+
+</TabItem>
+<TabItem value="typescript-node" label="Typescript (Node.js)">
+
+```typescript reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/nodejs/examples/how_tos/simple_transaction/request-funds.ts
+```
+
+</TabItem>
+<TabItem value="python" label="Python">
+
+```python reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/python/examples/how_tos/simple_transaction/request_funds.py
+```
+
+</TabItem>
+</Tabs>
