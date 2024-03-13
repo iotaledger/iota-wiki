@@ -1,0 +1,201 @@
+---
+title: Send Native Tokens
+sidebar_label: Send
+description: 'How to send native tokens'
+image: /img/logo/iota_mark_light.png
+tags:
+  - how to
+  - send native token
+  - send
+  - native token
+  - nodejs
+  - python
+  - rust
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+After you have [created](create.mdx) a
+[native token](/introduction/stardust/explanations/what_is_stardust/tokenization#native-tokens),
+you can easily send it by calling the `Wallet.send_native_tokens(params, options)` function.
+
+As with any output, you can set [output unlock conditions](/introduction/stardust/explanations/what_is_stardust/unlock_conditions).
+Keep in mind that if you set unlock conditions, whoever you send the native tokens to may need to claim them.
+
+## Example Code
+
+<Tabs groupId="language" queryString>
+<TabItem value="rust" label="Rust">
+
+
+1. Instantiate a [`Wallet`](file:///home/lucas/Documents/IOTA/iota-sdk/target/doc/iota_sdk/wallet/core/struct.Wallet.html) and [sync it](../accounts-and-addresses/check-balance.mdx).
+2. Search the account's balance for a native token with a balance of at least `SEND_NATIVE_TOKEN_AMOUNT`.
+
+<div className={'hide-code-block-extras'}>
+
+```rust reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/sdk/examples/how_tos/native_tokens/send.rs#L40-L43
+```
+
+</div>
+
+3. Prepare the outputs for the transaction by creating a new [`SendNativeTokensParams`](file:///home/lucas/Documents/IOTA/iota-sdk/target/doc/iota_sdk/wallet/struct.SendNativeTokenParams.html).
+
+<div className={'hide-code-block-extras'}>
+
+```rust reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/sdk/examples/how_tos/native_tokens/send.rs#L55-L58
+```
+
+</div>
+
+4. Send the native tokens by calling the [`Wallet.send_native_tokens()`](file:///home/lucas/Documents/IOTA/iota-sdk/target/doc/iota_sdk/wallet/core/struct.Wallet.html#method.send_native_tokens)
+   function.
+
+<div className={'hide-code-block-extras'}>
+
+```rust reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/sdk/examples/how_tos/native_tokens/send.rs#L60
+```
+
+</div>
+
+4. Await for the transaction to be accepted by the network by calling the [`Wallet.wait_for_transaction_acceptance()`](file:///home/lucas/Documents/IOTA/iota-sdk/target/doc/iota_sdk/wallet/core/struct.Wallet.html#method.wait_for_transaction_acceptance) function.
+
+<div className={'hide-code-block-extras'}>
+
+```rust reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/sdk/examples/how_tos/native_tokens/send.rs#L63-L65
+```
+
+</div>
+</TabItem>
+<TabItem value="typescript-node" label="Typescript (Node.js)">
+
+1. Instantiate a [`Wallet`](http://localhost:3000/iota-sdk/2.0/references/nodejs/classes/Wallet) and [sync it](../accounts-and-addresses/check-balance.mdx).
+2. Search the account's balance for a native token with a balance of at least `SEND_NATIVE_TOKEN_AMOUNT`.
+
+<div className={'hide-code-block-extras'}>
+
+```typescript reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/nodejs/examples/how_tos/native_tokens/send.ts#L42-L47
+```
+
+</div>
+
+3. Prepare the outputs for the transaction by creating a new `SendNativeTokensParams`.
+
+<div className={'hide-code-block-extras'}>
+
+```typescript reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/nodejs/examples/how_tos/native_tokens/send.ts#L43-L48
+```
+
+</div>
+
+4. Create the transaction that will send the tokens using the [`Wallet.sendNativeTokens()`](../../references/nodejs/classes/Wallet.md#sendnativetokens)
+   function,
+
+<div className={'hide-code-block-extras'}>
+
+```typescript reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/nodejs/examples/how_tos/native_tokens/send.ts#L57
+```
+
+</div>
+
+5. Await for the [`Transaction`](../../references/nodejs/classes/Transaction.md) to get confirmed by calling the
+[`Wallet.waitForTransactionAcceptance()`](../../references/nodejs/classes/Wallet.md#waitfortransactionacceptance)
+function.
+
+<div className={'hide-code-block-extras'}>
+
+```typescript reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/sdk/examples/how_tos/native_tokens/burn.rs#L68-L70
+```
+
+</div>
+
+</TabItem>
+<TabItem value="python" label="Python">
+
+1. Instantiate a [`Wallet`](http://localhost:3000/iota-sdk/2.0/references/python/iota_sdk/wallet/) and [sync it](../accounts-and-addresses/check-balance.mdx).
+2. Search the account's balance for a native token with a balance of at least 10.
+
+<div className={'hide-code-block-extras'}>
+
+```python reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/python/examples/how_tos/native_tokens/send.py#L15-L17
+```
+
+</div>
+
+3. Define the outputs for the transaction that will send the tokens by creating the `SendNativeTokensParams`.
+
+<div className={'hide-code-block-extras'}>
+
+```python reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/python/examples/how_tos/native_tokens/send.py#L24-L30
+```
+
+</div>
+
+4. Send the outputs from the previous step using the [`Wallet.send_native_tokens()`](../../references/python/iota_sdk/wallet/wallet.md#send_native_tokens)
+   function.
+
+<div className={'hide-code-block-extras'}>
+
+```python reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/python/examples/how_tos/native_tokens/send.py#L32
+```
+
+</div>
+
+5. Await for the transaction to get accepted by calling the [`Wallet.wait_for_transaction_acceptance()`](../../references/python/iota_sdk/wallet/wallet.md#wait_for_transaction_acceptance)
+function.
+
+<div className={'hide-code-block-extras'}>
+
+```python reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/python/examples/how_tos/native_tokens/send.py#L35-L36
+```
+
+</div>
+</TabItem>
+</Tabs>
+
+### Full Example Code
+
+<Tabs groupId="language" queryString>
+<TabItem value="rust" label="Rust">
+
+```rust reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/sdk/examples/how_tos/native_tokens/send.rs
+```
+
+</TabItem>
+<TabItem value="typescript-node" label="Typescript (Node.js)">
+
+```typescript reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/nodejs/examples/how_tos/native_tokens/send.ts
+```
+
+</TabItem>
+<TabItem value="python" label="Python">
+
+```python reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/python/examples/how_tos/native_tokens/send.py
+```
+
+</TabItem>
+</Tabs>
+
+### Expected Output
+
+```plaintext
+Balance before sending: 50
+Transaction sent: 0x9a1ea93962b5d4ba3a27053f4727dcc95b29ee35dc85c43d9d6be4635ab10463
+Block included: https://explorer.shimmer.network/testnet/block/0xb22cba455a3176ef62352f907b0fc5e5e49b4797563826141f8057cfa960a640
+Balance after sending: 40
+```

@@ -1,0 +1,143 @@
+---
+title: Melt Native Tokens
+sidebar_label: Decrease Circulating Supply
+description: 'How to melt native tokens'
+image: /img/logo/iota_mark_light.png
+tags:
+  - how to
+  - decrease native token circulating supply
+  - melt
+  - foundry
+  - nodejs
+  - python
+  - rust
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+Melting native tokens means converting or "melting" them into their foundry. This changes the circulating supply and allows for new tokens to be [minted](./mint.mdx) again.
+
+:::info
+If you melt your native tokens, you can still destroy the foundry that created them.
+:::
+
+## Example Code
+
+<Tabs groupId="language" queryString>
+<TabItem value="rust" label="Rust">
+
+1. Instantiate a [`Wallet`](file:///home/lucas/Documents/IOTA/iota-sdk/target/doc/iota_sdk/wallet/core/struct.Wallet.html) and [sync it](../accounts-and-addresses/check-balance.mdx).
+2. Melt `MELT_AMOUNT` native tokens by calling the [`Wallet.melt_native_token()`](file:///home/lucas/Documents/IOTA/iota-sdk/target/doc/iota_sdk/wallet/core/struct.Wallet.html#method.melt_native_token)
+   function.
+
+<div className={'hide-code-block-extras'}>
+
+```rust reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/sdk/examples/how_tos/native_tokens/melt.rs#L62
+```
+
+</div>
+
+3. Await for the [`Transaction`](../../references/nodejs/classes/Transaction.md) to get confirmed by calling the
+[`Wallet.waitForTransactionAcceptance()`](../../references/nodejs/classes/Wallet.md#waitfortransactionacceptance)
+function.
+
+<div className={'hide-code-block-extras'}>
+
+```rust reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/sdk/examples/how_tos/native_tokens/melt.rs#L65-L67
+```
+
+</div>
+</TabItem>
+<TabItem value="typescript-node" label="Typescript (Node.js)">
+
+1. Instantiate a [`Wallet`](http://localhost:3000/iota-sdk/2.0/references/nodejs/classes/Wallet) and [sync it](../accounts-and-addresses/check-balance.mdx).
+2. Create a transaction to melt `MELT_AMOUNT` native tokens by calling the [`Wallet.meltNativeToken()`](../../references/nodejs/classes/Wallet.md#meltnativetoken) <!-- TODO Update ref link -->
+   function.
+
+<div className={'hide-code-block-extras'}>
+
+```typescript reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/nodejs/examples/how_tos/native_tokens/melt.ts#L46
+```
+
+</div>
+
+5. Await for the [`Transaction`](../../references/nodejs/classes/Transaction.md) to get confirmed by calling the
+[`Wallet.waitForTransactionAcceptance()`](../../references/nodejs/classes/Wallet.md#waitfortransactionacceptance)
+function.
+
+<div className={'hide-code-block-extras'}>
+
+```typescript reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/nodejs/examples/how_tos/native_tokens/melt.ts#L50
+```
+
+</div>
+</TabItem>
+<TabItem value="python" label="Python">
+
+The following example will:
+
+1. Instantiate a [`Wallet`](http://localhost:3000/iota-sdk/2.0/references/python/iota_sdk/wallet/) and [sync it](../accounts-and-addresses/check-balance.mdx).
+2. Prepare to melt `melt_amount` native tokens transaction by calling the [`Wallet.prepare_melt_native_token()`](../../references/python/iota_sdk/wallet/wallet.md#prepare_melt_native_token)
+   function and send the prepared transaction using the [`Wallet.send()`](../../references/python/iota_sdk/wallet/wallet.md#send)
+   function.
+
+<div className={'hide-code-block-extras'}>
+
+```python reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/python/examples/how_tos/native_tokens/melt.py#L29
+```
+
+</div>
+
+3. Await for the transaction to get accepted by calling the [`Wallet.wait_for_transaction_acceptance()`](../../references/python/iota_sdk/wallet/wallet.md#wait_for_transaction_acceptance)
+function.
+
+<div className={'hide-code-block-extras'}>
+
+```python reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/python/examples/how_tos/native_tokens/create.py#L52-L53
+```
+
+</div>
+</TabItem>
+</Tabs>
+
+### Full Example Code
+
+<Tabs groupId="language" queryString>
+<TabItem value="rust" label="Rust">
+
+```rust reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/sdk/examples/how_tos/native_tokens/melt.rs
+```
+
+</TabItem>
+<TabItem value="typescript-node" label="Typescript (Node.js)">
+
+```typescript reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/nodejs/examples/how_tos/native_tokens/melt.ts
+```
+
+</TabItem>
+<TabItem value="python" label="Python">
+
+```python reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/python/examples/how_tos/native_tokens/melt.py
+```
+
+</TabItem>
+</Tabs>
+
+### Expected Output
+
+```plaintext
+Balance before melting: 100
+Transaction sent: 0x7b3b152127d3cf2921891ad1ea279ae484d559e4040a0d3ca8940c89cb64b34e
+Block included: https://explorer.shimmer.network/testnet/block/0x70d34d37e9a30d19b641ac24529c2fc512f8c9169ffa3521be4b05b7fefe8933
+Balance after melting: 90
+```

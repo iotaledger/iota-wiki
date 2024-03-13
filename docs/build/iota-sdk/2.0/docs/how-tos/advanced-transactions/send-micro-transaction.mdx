@@ -36,7 +36,7 @@ send a microtransaction.
 
 The following example will:
 
-1. Instantiate a [`Wallet`](http://localhost:3000/iota-sdk/2.0/references/python/iota_sdk/wallet/). and [sync it](../accounts-and-addresses/check-balance.mdx).
+1. Instantiate a [`Wallet`](http://localhost:3000/iota-sdk/2.0/references/python/iota_sdk/wallet/) and [sync it](../accounts-and-addresses/check-balance.mdx).
 2. Send a micro transaction using the
    [`Wallet.send()`](file:///home/lucas/Documents/IOTA/iota-sdk/target/doc/iota_sdk/wallet/core/struct.Wallet.html#method.send) function with
    the [`TransactionOption::allow_micro_amount`](file:///home/lucas/Documents/IOTA/iota-sdk/target/doc/iota_sdk/wallet/struct.TransactionOptions.html#structfield.allow_micro_amount)
@@ -50,8 +50,8 @@ https://github.com/iotaledger/iota-sdk/blob/2.0/sdk/examples/how_tos/advanced_tr
 
 </div>
 
-3. Await for the transaction to get accepted by calling the [`Wallet.wait_for_transaction_acceptance()`](../../references/python/iota_sdk/wallet/wallet.md#wait_for_transaction_acceptance)
-    function.
+3. Await for the transaction to be accepted by the network by calling the [`Wallet.wait_for_transaction_acceptance()`](file:///home/lucas/Documents/IOTA/iota-sdk/target/doc/iota_sdk/wallet/core/struct.Wallet.html#method.wait_for_transaction_acceptance) function.
+
 
 <div className={'hide-code-block-extras'}>
 
@@ -80,12 +80,23 @@ https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/nodejs/examples/how_tos
 
 </div>
 
+4. Await for the [`Transaction`](../../references/nodejs/classes/Transaction.md) to get confirmed by calling the
+[`Wallet.waitForTransactionAcceptance()`](../../references/nodejs/classes/Wallet.md#waitfortransactionacceptance)
+function.
+
+<div className={'hide-code-block-extras'}>
+
+```typescript reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/nodejs/examples/how_tos/advanced_transactions/advanced_transaction.ts#L63
+```
+
+</div>
 </TabItem>
 <TabItem value="python" label="Python">
 
 The following example will:
 
-1. Instantiate a [`Wallet`](http://localhost:3000/iota-sdk/2.0/references/python/iota_sdk/wallet/). and [sync it](../accounts-and-addresses/check-balance.mdx).
+1. Instantiate a [`Wallet`](http://localhost:3000/iota-sdk/2.0/references/python/iota_sdk/wallet/) and [sync it](../accounts-and-addresses/check-balance.mdx).
 2. Send a micro transaction using the
    [`Wallet.send_with_params()` function](http://localhost:3000/iota-sdk/2.0/references/python/iota_sdk/wallet/#send_with_params) with
    the [`TransactionOption:allowMicroAmount`](http://localhost:3000/iota-sdk/2.0/references/python/iota_sdk/types/transaction_options/) set as `true`.

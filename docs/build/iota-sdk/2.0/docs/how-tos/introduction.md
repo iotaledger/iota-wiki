@@ -16,7 +16,7 @@ beginner or an experienced developer, the how-to guides offer clear and concise 
 functionality into your projects easier.
 
 To make the most of the how-to guides in the IOTA SDK, identify the specific topic or functionality you want to explore.
-Whether [generating addresses](account-output/create-address.mdx), sending transactions,
+Whether [generating addresses](account-output/create.mdx), sending transactions,
 or minting NFTs, you can find dedicated guides that walk you through the process.
 
 With the how-to guides in the IOTA SDK, you can overcome implementation hurdles and gain a deeper understanding
