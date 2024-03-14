@@ -27,7 +27,7 @@ If you melt your native tokens, you can still destroy the foundry that created t
 <Tabs groupId="language" queryString>
 <TabItem value="rust" label="Rust">
 
-1. Instantiate a [`Wallet`](file:///home/lucas/Documents/IOTA/iota-sdk/target/doc/iota_sdk/wallet/core/struct.Wallet.html) and [sync it](../accounts-and-addresses/check-balance.mdx).
+1. Instantiate a [`Wallet`](file:///home/lucas/Documents/IOTA/iota-sdk/target/doc/iota_sdk/wallet/core/struct.Wallet.html) and [sync it](../wallet/check-balance.mdx).
 2. Melt `MELT_AMOUNT` native tokens by calling the [`Wallet.melt_native_token()`](file:///home/lucas/Documents/IOTA/iota-sdk/target/doc/iota_sdk/wallet/core/struct.Wallet.html#method.melt_native_token)
    function.
 
@@ -53,7 +53,7 @@ https://github.com/iotaledger/iota-sdk/blob/2.0/sdk/examples/how_tos/native_toke
 </TabItem>
 <TabItem value="typescript-node" label="Typescript (Node.js)">
 
-1. Instantiate a [`Wallet`](http://localhost:3000/iota-sdk/2.0/references/nodejs/classes/Wallet) and [sync it](../accounts-and-addresses/check-balance.mdx).
+1. Instantiate a [`Wallet`](http://localhost:3000/iota-sdk/2.0/references/nodejs/classes/Wallet) and [sync it](../wallet/check-balance.mdx).
 2. Create a transaction to melt `MELT_AMOUNT` native tokens by calling the [`Wallet.meltNativeToken()`](../../references/nodejs/classes/Wallet.md#meltnativetoken) <!-- TODO Update ref link -->
    function.
 
@@ -81,7 +81,7 @@ https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/nodejs/examples/how_tos
 
 The following example will:
 
-1. Instantiate a [`Wallet`](http://localhost:3000/iota-sdk/2.0/references/python/iota_sdk/wallet/) and [sync it](../accounts-and-addresses/check-balance.mdx).
+1. Instantiate a [`Wallet`](http://localhost:3000/iota-sdk/2.0/references/python/iota_sdk/wallet/) and [sync it](../wallet/check-balance.mdx).
 2. Prepare to melt `melt_amount` native tokens transaction by calling the [`Wallet.prepare_melt_native_token()`](../../references/python/iota_sdk/wallet/wallet.md#prepare_melt_native_token)
    function and send the prepared transaction using the [`Wallet.send()`](../../references/python/iota_sdk/wallet/wallet.md#send)
    function.

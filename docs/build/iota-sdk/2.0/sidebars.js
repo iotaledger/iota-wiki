@@ -130,15 +130,12 @@ module.exports = {
           items: [
             'how-tos/wallet/create-mnemonic',
             'how-tos/wallet/create-wallet',
-          ],
-        },/*
-        {
-          type: 'category',
-          label: 'Accounts and Addresses',
-          items: [
-
-          ],
-        },*/
+            'how-tos/wallet/check-balance',
+            'how-tos/wallet/list-transactions',
+            'how-tos/wallet/list-outputs',
+            'how-tos/wallet/consolidate-outputs'
+          ]
+        },
         {
           type: 'category',
           label: 'Simple Transaction',

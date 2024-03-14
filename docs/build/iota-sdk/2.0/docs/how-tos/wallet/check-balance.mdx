@@ -1,0 +1,186 @@
+---
+title: Check Balance
+description: "How to check a wallet account's balance."
+image: /img/logo/iota_mark_light.png
+tags:
+  - how to
+  - get balance
+  - check balance
+  - nodejs
+  - python
+  - rust
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import TipFaucet from '../../_admonitions/_tip-faucet.md';
+
+You can retrieve the balance for any [wallet you created](create-wallet.mdx) by calling the
+[`Wallet.getBalance()`](../../references/nodejs/classes/Wallet.md#getbalance) function. Bear in mind that you should
+always [`sync`](references/nodejs/classes/Wallet.md#sync) the [`Wallet`](../../references/nodejs/classes/Wallet.md)
+with the node to get the latest outputs. The sync function also returns the [`Balance`](http://localhost:3000/iota-sdk/2.0/references/nodejs/interfaces/Balance/).
+
+<TipFaucet />
+
+## Example Code
+
+<Tabs groupId="language" queryString>
+<TabItem value="rust" label="Rust">
+
+1. Instantiate a [`Wallet`](file:///home/lucas/Documents/IOTA/iota-sdk/target/doc/iota_sdk/wallet/core/struct.Wallet.html).
+2. Sync the wallet with the node to get the latest transactions and the wallet's
+   [Balance](file:///home/lucas/Documents/IOTA/iota-sdk/target/doc/iota_sdk/wallet/types/balance/struct.Balance.html) by calling
+   the [`Wallet.sync()`](file:///home/lucas/Documents/IOTA/iota-sdk/target/doc/iota_sdk/wallet/core/struct.Wallet.html#method.sync)
+   function.
+
+<div className={'hide-code-block-extras'}>
+
+```rust reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/sdk/examples/how_tos/wallet/check_balance.rs#L31
+```
+
+</div>
+
+</TabItem>
+<TabItem value="typescript-node" label="Typescript (Node.js)">
+
+1. Instantiate a [`Wallet`](http://localhost:3000/iota-sdk/2.0/references/nodejs/classes/Wallet).
+2. Sync the wallet with the node to get the latest transactions and the wallet's
+   [`Balance`](http://localhost:3000/iota-sdk/2.0/references/nodejs/interfaces/Balance/) by calling the
+   [`Wallet.sync()`](http://localhost:3000/iota-sdk/2.0/references/nodejs/classes/Wallet/#sync)
+   function.
+
+<div className={'hide-code-block-extras'}>
+
+```typescript reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/nodejs/examples/how_tos/wallet/check-balance.ts#L27
+```
+
+</div>
+
+3. After syncing, you can also retrieve the balance by calling [`wallet.getBalance()`](http://localhost:3000/iota-sdk/2.0/references/nodejs/classes/Wallet/#getbalance).
+
+<div className={'hide-code-block-extras'}>
+
+```typescript reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/nodejs/examples/how_tos/wallet/check-balance.ts#L30
+```
+
+</div>
+</TabItem>
+<TabItem value="python" label="Python">
+
+1. Instantiate a [`Wallet`](file:///home/lucas/Documents/IOTA/iota-sdk/target/doc/iota_sdk/wallet/core/struct.Wallet.html).
+2. `Sync` the wallet with the node to get the latest transactions and the wallet's
+   [`balance`](http://localhost:3000/iota-sdk/2.0/references/python/iota_sdk/types/balance/) by calling the
+   [`Wallet.sync()`](http://localhost:3000/iota-sdk/2.0/references/python/iota_sdk/wallet/#sync)
+   function.
+
+<div className={'hide-code-block-extras'}>
+
+```python reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/python/examples/how_tos/wallet/check_balance.py#L16
+```
+
+</div>
+
+</TabItem>
+</Tabs>
+
+### Full Example Code
+
+<Tabs groupId="language" queryString>
+<TabItem value="rust" label="Rust">
+
+```rust reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/sdk/examples/how_tos/wallet/check_balance.rs
+```
+
+</TabItem>
+<TabItem value="typescript-node" label="Typescript (Node.js)">
+
+```typescript reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/nodejs/examples/how_tos/wallet/check-balance.ts
+```
+
+</TabItem>
+<TabItem value="python" label="Python">
+
+```python reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/python/examples/how_tos/wallet/check_balance.py
+```
+
+</TabItem>
+</Tabs>
+
+### Expected Output
+
+<Tabs groupId="language" queryString>
+<TabItem value="rust" label="Rust">
+
+```plaintext
+Balance {
+    base_coin: BaseCoinBalance {
+    total: 1398000000,
+    available: 1398000000,
+    },
+    required_storage_deposit: RequiredStorageDeposit {
+    alias: 0,
+    basic: 213000,
+    foundry: 0,
+    nft: 0,
+    },
+    native_tokens: [],
+    nfts: [],
+    aliases: [],
+    foundries: [],
+    potentially_locked_outputs: {},
+}
+```
+
+</TabItem>
+<TabItem value="typescript-node" label="Typescript (Node.js)">
+
+```plaintext
+Balance {
+    baseCoin: {total: '1398000000', available: '1398000000', votingPower: '0'
+    },
+    requiredStorageDeposit: {
+    alias: '0',
+    basic: '213000',
+    foundry: '0',
+    nft: '0'
+    },
+    nativeTokens: [],
+    nfts: [],
+    aliases: [],
+    foundries: [],
+    potentiallyLockedOutputs: {}
+}
+```
+
+</TabItem>
+<TabItem value="python" label="Python">
+
+```plaintext
+Balance {
+    "baseCoin": {
+    "total": "1398000000",
+    "available": "1398000000"
+    },
+    "requiredStorageDeposit": {
+    "alias": "0",
+    "basic": "213000",
+    "foundry": "0",
+    "nft": "0"
+    },
+    "nativeTokens": [],
+    "nfts": [],
+    "aliases": [],
+    "foundries": [],
+    "potentiallyLockedOutputs": {}
+}
+```
+
+</TabItem>
+</Tabs>

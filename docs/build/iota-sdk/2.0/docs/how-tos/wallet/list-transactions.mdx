@@ -1,0 +1,194 @@
+---
+title: List Transactions
+description: 'How to list transactions'
+image: /img/logo/iota_mark_light.png
+tags:
+  - how to
+  - list transactions
+  - nodejs
+  - python
+  - rust
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+A wallet can have multiple transactions associated with it, capturing its history of sending and receiving assets
+or other activities. Transactions are linked to specific addresses, providing a transparent record of the Wallet's
+interactions and facilitating the secure transfer of value across the network.
+
+This guide will show you how to list all the transactions of all the addresses of an
+[`Wallet`](../../references/nodejs/classes/Wallet.md).
+
+:::tip Sync Options
+
+If you want to list incoming transactions, you need to specify that in your `sync` call.
+Transactions for outputs that you synced before with other sync options, will not be requested later.
+Also, only transactions that weren't pruned on the point of _syncing_ will be listed.
+
+:::tip
+
+## Example Code
+
+<Tabs groupId="language" queryString>
+<TabItem value="rust" label="Rust">
+
+1. Instantiate a [`Wallet`](file:///home/lucas/Documents/IOTA/iota-sdk/target/doc/iota_sdk/wallet/core/struct.Wallet.html)
+    and [sync it](./check-balance.mdx) sending the [`sync_incoming_transactions`](file:///home/lucas/Documents/IOTA/iota-sdk/target/doc/iota_sdk/wallet/struct.SyncOptions.html#structfield.sync_incoming_transactions)
+    [`SyncOptions`](file:///home/lucas/Documents/IOTA/iota-sdk/target/doc/iota_sdk/wallet/struct.SyncOptions.html) to `true`
+    to request incoming transactions.
+
+<div className={'hide-code-block-extras'}>
+
+```rust reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/sdk/examples/how_tos/wallet/list_transactions.rs#L28-L33
+```
+
+</div>
+
+2. Retrieve the [`WalletLedger`](file:///home/lucas/Documents/IOTA/iota-sdk/target/doc/iota_sdk/wallet/core/struct.WalletLedger.html)
+    for the Wallet by calling [`Wallet.ledger()`](file:///home/lucas/Documents/IOTA/iota-sdk/target/doc/iota_sdk/wallet/core/struct.Wallet.html#method.ledger)
+    function, and retrieve the wallet's [`Transactions`](file:///home/lucas/Documents/IOTA/iota-sdk/target/doc/iota_sdk/types/block/payload/signed_transaction/struct.Transaction.html)
+    by chaining a call to [`WalletLedger.transactions()`](file:///home/lucas/Documents/IOTA/iota-sdk/target/doc/iota_sdk/wallet/core/struct.WalletLedger.html#method.transactions).
+
+<div className={'hide-code-block-extras'}>
+
+```rust reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/sdk/examples/how_tos/wallet/list_transactions.rs#L37-L39
+```
+
+</div>
+
+3. Get all the incoming [Transactions](file:///home/lucas/Documents/IOTA/iota-sdk/target/doc/iota_sdk/types/block/payload/signed_transaction/struct.Transaction.html)
+    related to the `Wallet` by calling the
+   [`WalletLedger.incoming_transactions()`](file:///home/lucas/Documents/IOTA/iota-sdk/target/doc/iota_sdk/wallet/core/struct.WalletLedger.html#method.incoming_transactions)
+   function.
+
+<div className={'hide-code-block-extras'}>
+
+```rust reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/sdk/examples/how_tos/wallet/list_transactions.rs#L43-L45
+```
+
+</div>
+
+</TabItem>
+<TabItem value="typescript-node" label="Typescript (Node.js)">
+
+1. Instantiate a [`Wallet`](file:///home/lucas/Documents/IOTA/iota-sdk/target/doc/iota_sdk/wallet/core/struct.Wallet.html),
+    and [sync it](./check-balance.mdx) sending the [`syncIncomingTransactions`](http://localhost:3000/iota-sdk/2.0/references/nodejs/interfaces/SyncOptions/#syncincomingtransactions)
+    [`SyncOptions`]http://localhost:3000/iota-sdk/2.0/references/nodejs/interfaces/SyncOptions) as `true`
+    to request incoming transactions.
+
+<div className={'hide-code-block-extras'}>
+
+```typescript reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/nodejs/examples/how_tos/wallet/list-transactions.ts#L24
+```
+
+</div>
+
+2. Get all the [`Transactions`](../../references/nodejs/classes/Transaction.md)
+   related to the `Wallet` by calling the
+   [`Wallet.transactions()`](../../references/nodejs/classes/Wallet.md#transactions) function.
+
+<div className={'hide-code-block-extras'}>
+
+```typescript reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/nodejs/examples/how_tos/wallet/list-transactions.ts#L26-L29
+```
+
+</div>
+
+3. Get all the incoming `Transactions` related to the `Wallet` by calling the
+   [`Wallet.incomingTransactions()`](../../references/nodejs/classes/Wallet.md#incomingtransactions) function.
+
+<div className={'hide-code-block-extras'}>
+
+```typescript reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/nodejs/examples/how_tos/wallet/list-transactions.ts#L31-L35
+```
+
+</div>
+
+</TabItem>
+<TabItem value="python" label="Python">
+
+1. Instantiate a [`Wallet`](file:///home/lucas/Documents/IOTA/iota-sdk/target/doc/iota_sdk/wallet/core/struct.Wallet.html),
+    and [sync it](./check-balance.mdx) sending the `syncIncomingTransactions`
+    [`SyncOptions`](http://localhost:3000/iota-sdk/2.0/references/nodejs/interfaces/SyncOptions) as `True`
+    to request incoming transactions.
+
+<div className={'hide-code-block-extras'}>
+
+```python reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/python/examples/how_tos/wallet/list_transactions.py#L13
+```
+
+</div>
+
+2. Get all the `Transactions` related to the `Wallet` by calling the
+   [`Wallet.transactions()`](http://localhost:3000/iota-sdk/2.0/references/python/iota_sdk/wallet/#transactions)
+   function.
+
+<div className={'hide-code-block-extras'}>
+
+```python reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/python/examples/how_tos/wallet/list_transactions.py#L16
+```
+
+</div>
+
+3. Get all the incoming `Transactions` related to the `Wallet` by calling the
+   [`Wallet.incoming_transactions()`](http://localhost:3000/iota-sdk/2.0/references/python/iota_sdk/wallet#incoming_transactions)
+   function.
+
+<div className={'hide-code-block-extras'}>
+
+```python reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/python/examples/how_tos/wallet/list_transactions.py#L23
+```
+
+</div>
+
+</TabItem>
+</Tabs>
+
+### Full Example Code
+
+<Tabs groupId="language" queryString>
+<TabItem value="rust" label="Rust">
+
+```rust reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/sdk/examples/how_tos/wallet/list_transactions.rs
+```
+
+</TabItem>
+<TabItem value="typescript-node" label="Typescript (Node.js)">
+
+```typescript reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/nodejs/examples/how_tos/wallet/list-transactions.ts
+```
+
+</TabItem>
+<TabItem value="python" label="Python">
+
+```python reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/python/examples/how_tos/wallet/list_transactions.py
+```
+
+</TabItem>
+</Tabs>
+
+### Expected Output
+
+```plaintext
+Sent transactions:
+0x3b92c80c5d108b0b756989aafe8843b98f1981726e5ddfe70bb51bc8e0ad5dbc
+Received transactions:
+0x3461e923da5e8222fac50397493d2237030d3ad743ecce141300de9477441756
+0x22efc1c85c925d3cea275b355ef37c8c0795713ac5c0a1ec3d6634d6e9d13416
+0x033f3766d7f202d82af52a17242da3747d9e51ca79704854307fe30a67526a54
+0x738d5c74d03aa5e954e4028a963d42d5f2283d24d69abc994dcb89f55dd3f67c
+0xde54940601a3153f4cae4986ee83853ee17c7eae389a0d1d7b7c678c6dec5f20
+```

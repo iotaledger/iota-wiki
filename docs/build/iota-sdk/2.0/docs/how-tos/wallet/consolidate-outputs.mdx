@@ -1,0 +1,230 @@
+---
+title: Consolidate Outputs
+description: 'How to consolidate outputs'
+image: /img/logo/iota_mark_light.png
+tags:
+  - how to
+  - consolidate outputs
+  - nodejs
+  - python
+  - rust
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+[UTXOs](/tips/tips/TIP-0020#utxo) can accumulate over time as users perform transactions,
+resulting in a fragmented UTXO set with many small outputs. Consolidating these outputs allows you to reduce the overall
+number of UTXOs, which can improve transaction efficiency and reduce storage deposit fees.
+
+## Example Code
+
+<Tabs groupId="language" queryString>
+<TabItem value="rust" label="Rust">
+
+1. Instantiate a [`Wallet`](file:///home/lucas/Documents/IOTA/iota-sdk/target/doc/iota_sdk/wallet/core/struct.Wallet.html)
+    and [sync it](./check-balance.mdx).
+
+2. Call [`Wallet.consolidate_outputs()`](https://docs.rs/iota-sdk/latest/iota_sdk/wallet/account/struct.Account.html#method.consolidate_outputs)
+    passing the `force` option as `true` so the `Wallet` consolidates the [`Outputs`](file:///home/lucas/Documents/IOTA/iota-sdk/target/doc/iota_sdk/types/block/output/enum.Output.html)
+    even if the `output_threshold` hasn't been reached.
+
+<div className={'hide-code-block-extras'}>
+
+```rust reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/sdk/examples/how_tos/wallet/consolidate_outputs.rs#L67-L69
+```
+
+</div>
+
+4. Await for the `Transaction` to get confirmed by calling the [`Wallet.wait_for_transaction_acceptance()`](file:///home/lucas/Documents/IOTA/iota-sdk/target/doc/iota_sdk/wallet/core/struct.Wallet.html#method.wait_for_transaction_acceptance)
+   function.
+
+<div className={'hide-code-block-extras'}>
+
+```rust reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/sdk/examples/how_tos/wallet/consolidate_outputs.rs#L73-L75
+```
+
+</div>
+
+</TabItem>
+<TabItem value="typescript-node" label="Typescript (Node.js)">
+
+1. Instantiate a [`Wallet`](file:///home/lucas/Documents/IOTA/iota-sdk/target/doc/iota_sdk/wallet/core/struct.Wallet.html)
+    and [sync it](./check-balance.mdx).
+2. Call [`Wallet.consolidateOutputs()`](../../references/nodejs/classes/Wallet.md#consolidateoutputs) passing the `force`
+    [`ConsolidationParams`](http://localhost:3000/iota-sdk/2.0/references/nodejs/interfaces/ConsolidationParams/) as
+    `true` so the `Wallet` consolidates the [`Outputs`](http://localhost:3000/iota-sdk/2.0/references/nodejs/classes/Output/)
+    even if the `outputThreshold` hasn't been reached.
+
+<div className={'hide-code-block-extras'}>
+
+```typescript reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/nodejs/examples/how_tos/wallet/consolidate-outputs.ts#L65-L67
+```
+
+</div>
+
+3. Await for the `Transaction` to get confirmed by calling the [`Wallet.waitForTransactionAcceptance`](../../references/nodejs/classes/Wallet.md#waitfortransactionacceptance)
+   function.
+
+<div className={'hide-code-block-extras'}>
+
+```typescript reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/nodejs/examples/how_tos/wallet/consolidate-outputs.ts#L71
+```
+
+</div>
+
+</TabItem>
+<TabItem value="python" label="Python">
+
+The following example will:
+
+1. Instantiate a [`Wallet`](file:///home/lucas/Documents/IOTA/iota-sdk/target/doc/iota_sdk/wallet/core/struct.Wallet.html)
+    and [sync it](./check-balance.mdx).
+2. Call [`Wallet.consolidate_outputs()`](http://localhost:3000/iota-sdk/2.0/references/python/iota_sdk/wallet/#consolidate_outputs)
+    passing the `force` [`ConsolidationParams`](http://localhost:3000/iota-sdk/2.0/references/python/iota_sdk/types/consolidation_params/) as
+    `True` so the `Wallet` consolidates the [`Outputs`](http://localhost:3000/iota-sdk/2.0/references/python/iota_sdk/types/output/)
+    even if the `output_threshold` hasn't been reached.
+
+<div className={'hide-code-block-extras'}>
+
+```python reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/python/examples/how_tos/wallet/consolidate_outputs.py#L48
+```
+
+</div>
+
+4. Await for the `Transaction` to get confirmed by calling the [`Wallet.retry_transaction_until_included`](../../references/python/iota_sdk/wallet/wallet.md#wait_for_transaction_acceptance)
+   function.
+
+<div className={'hide-code-block-extras'}>
+
+```python reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/python/examples/how_tos/wallet/consolidate_outputs.py#L52-L53
+```
+
+</div>
+
+</TabItem>
+</Tabs>
+
+### Full Example Code
+
+<Tabs groupId="language" queryString>
+<TabItem value="rust" label="Rust">
+
+```rust reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/sdk/examples/how_tos/wallet/consolidate_outputs.rs
+```
+
+</TabItem>
+<TabItem value="typescript-node" label="Typescript (Node.js)">
+
+```typescript reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/nodejs/examples/how_tos/wallet/consolidate-outputs.ts
+```
+
+</TabItem>
+<TabItem value="python" label="Python">
+
+```python reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/python/examples/how_tos/wallet/consolidate_outputs.py
+```
+
+</TabItem>
+</Tabs>
+
+### Expected Output
+
+<Tabs groupId="language" queryString>
+<TabItem value="rust" label="Rust">
+
+```plaintext
+Account synced
+Outputs BEFORE consolidation:
+OUTPUT #0
+- address: Bech32Address(rms1qr58umklvtqa4yxxwmskgzyhx2axfe5tfvunu5gauqu9sns7ava3u3kehwq)
+- amount: 1000000
+- native tokens: Some(NativeTokens([]))
+OUTPUT #1
+- address: Bech32Address(rms1qr58umklvtqa4yxxwmskgzyhx2axfe5tfvunu5gauqu9sns7ava3u3kehwq)
+- amount: 998000000
+- native tokens: Some(NativeTokens([]))
+OUTPUT #2
+- address: Bech32Address(rms1qz7652a7c7s9pcur04x7jlmmnyfq8mpxgahmz50tzqutmv6p72vus60pqsd)
+- amount: 1000000
+- native tokens: Some(NativeTokens([]))
+Sending consolidation transaction...
+Transaction sent: 0x245f75cb1b985304ceb022687e5c70ed6a936d667258015303e3f7f9ec285bbf
+Transaction included: https://explorer.shimmer.network/testnet/block/0x5c06b0d2a16e22a54ca2f976a12d56515b58f8310c77de724b8d03dc4f862180
+Account synced
+Outputs AFTER consolidation:
+OUTPUT #0
+- address: Bech32Address(rms1qr58umklvtqa4yxxwmskgzyhx2axfe5tfvunu5gauqu9sns7ava3u3kehwq)
+- amount: 1000000000
+- native tokens: Some(NativeTokens([]))
+```
+
+</TabItem>
+<TabItem value="typescript-node" label="Typescript (Node.js)">
+
+```plaintext
+Account synced
+Outputs BEFORE consolidation:
+OUTPUT #0
+- address: rms1qr58umklvtqa4yxxwmskgzyhx2axfe5tfvunu5gauqu9sns7ava3u3kehwq
+- amount: 1000000
+- native tokens: undefined
+OUTPUT #1
+- address: rms1qr58umklvtqa4yxxwmskgzyhx2axfe5tfvunu5gauqu9sns7ava3u3kehwq
+- amount: 998000000
+- native tokens: undefined
+OUTPUT #2
+- address: rms1qz7652a7c7s9pcur04x7jlmmnyfq8mpxgahmz50tzqutmv6p72vus60pqsd
+- amount: 1000000
+- native tokens: undefined
+Sending consolidation transaction...
+Transaction sent: 0x245f75cb1b985304ceb022687e5c70ed6a936d667258015303e3f7f9ec285bbf
+Transaction included: https://explorer.shimmer.network/testnet/block/0x5c06b0d2a16e22a54ca2f976a12d56515b58f8310c77de724b8d03dc4f862180
+Account synced
+Outputs AFTER consolidation:
+OUTPUT #0
+- address: rms1qr58umklvtqa4yxxwmskgzyhx2axfe5tfvunu5gauqu9sns7ava3u3kehwq
+- amount: 1000000000
+- native tokens: undefined
+```
+
+</TabItem>
+<TabItem value="python" label="Python">
+
+```plaintext
+Account synced
+Outputs BEFORE consolidation:
+OUTPUT #0
+- address: rms1qr58umklvtqa4yxxwmskgzyhx2axfe5tfvunu5gauqu9sns7ava3u3kehwq
+- amount: 1000000
+- native tokens: None
+OUTPUT #1
+- address: rms1qr58umklvtqa4yxxwmskgzyhx2axfe5tfvunu5gauqu9sns7ava3u3kehwq
+- amount: 998000000
+- native tokens: None
+OUTPUT #2
+- address: rms1qz7652a7c7s9pcur04x7jlmmnyfq8mpxgahmz50tzqutmv6p72vus60pqsd
+- amount: 1000000
+- native tokens: None
+Sending consolidation transaction...
+Transaction sent: 0x245f75cb1b985304ceb022687e5c70ed6a936d667258015303e3f7f9ec285bbf
+Transaction included: https://explorer.shimmer.network/testnet/block/0x5c06b0d2a16e22a54ca2f976a12d56515b58f8310c77de724b8d03dc4f862180
+Account synced
+Outputs AFTER consolidation:
+OUTPUT #0
+- address: rms1qr58umklvtqa4yxxwmskgzyhx2axfe5tfvunu5gauqu9sns7ava3u3kehwq
+- amount: 1000000000
+- native tokens: None
+```
+
+</TabItem>
+</Tabs>
