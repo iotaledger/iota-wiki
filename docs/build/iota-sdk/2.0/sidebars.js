@@ -210,6 +210,14 @@ module.exports = {
         },
         {
           type: 'category',
+          label: 'NFT Collection',
+          items: [
+            'how-tos/nft-collection/mint-issuer-nft',
+            'how-tos/nft-collection/mint-collection',
+          ],
+        },
+        {
+          type: 'category',
           label: 'Client',
           items: [
             {
