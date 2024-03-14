@@ -1,0 +1,150 @@
+---
+description: 'Learn how to destroy an account output.'
+image: /img/logo/iota_mark_light.png
+tags:
+- how to
+- wallet
+- destroy
+- account output
+- nodejs
+- python
+- rust
+---
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Destroy an Account Output
+
+## Example Code
+
+<Tabs groupId="language" queryString>
+<TabItem value="rust" label="Rust">
+
+1. Instantiate a [Wallet](file:///home/lucas/Documents/IOTA/iota-sdk/target/doc/iota_sdk/wallet/core/struct.Wallet.html) and [sync it](../wallet/check-balance.mdx).
+2. Retrieve the first [`AccountId`](file:///home/lucas/Documents/IOTA/iota-sdk/target/doc/iota_sdk/types/block/output/account/struct.AccountId.html) from the
+[`Balance`](file:///home/lucas/Documents/IOTA/iota-sdk/target/doc/iota_sdk/wallet/types/struct.Balance.html) by calling
+the [`Balance.accounts()`](file:///home/lucas/Documents/IOTA/iota-sdk/target/doc/iota_sdk/wallet/types/struct.Balance.html#method.accounts) function.
+
+<div className={'hide-code-block-extras'}>
+
+```rust reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/sdk/examples/how_tos/account_output/destroy.rs#L30
+```
+
+</div>
+
+3. Destroy it by calling the [`Wallet.burn()`](file:///home/lucas/Documents/IOTA/iota-sdk/target/doc/iota_sdk/wallet/core/struct.Wallet.html#method.burn)
+    function and passing the `AccountId` as a param.
+
+<div className={'hide-code-block-extras'}>
+
+```rust reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/sdk/examples/how_tos/account_output/destroy.rs#L41
+```
+
+</div>
+
+4. Await for the transaction to be accepted by the network by calling the [`Wallet.wait_for_transaction_acceptance()`](file:///home/lucas/Documents/IOTA/iota-sdk/target/doc/iota_sdk/wallet/core/struct.Wallet.html#method.wait_for_transaction_acceptance) function.
+
+<div className={'hide-code-block-extras'}>
+
+```rust reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/sdk/examples/how_tos/account_output/destroy.rs#L44-L46
+```
+
+</div>
+</TabItem>
+<TabItem value="typescript-node" label="Typescript (Node.js)">
+
+1. Instantiate a [`Wallet`](http://localhost:3000/iota-sdk/2.0/references/nodejs/classes/Wallet) and [sync it](../wallet/check-balance.mdx).
+2. Retrieve the first [`AccountOutput`](http://localhost:3000/iota-sdk/2.0/references/nodejs/classes/AccountOutput/) from the
+[`Balance`](http://localhost:3000/iota-sdk/2.0/references/nodejs/interfaces/Balance/) by accessing
+the [`Balance.accounts](http://localhost:3000/iota-sdk/2.0/references/nodejs/interfaces/Balance/#accounts) property.
+
+<div className={'hide-code-block-extras'}>
+
+```typescript reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/nodejs/examples/how_tos/account_output/destroy.ts#L39
+```
+
+</div>
+
+3. Prepare the transaction that will destroy it by calling the [`Wallet.prepareDestroyAccount()`](http://localhost:3000/iota-sdk/2.0/references/nodejs/classes/Wallet/#preparedestroyaccount)
+    function, and send the prepared transaction by calling to [`PreparedTransaction.send()`](http://localhost:3000/iota-sdk/2.0/references/nodejs/classes/PreparedTransaction/#send).
+
+<div className={'hide-code-block-extras'}>
+
+```typescript reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/nodejs/examples/how_tos/account_output/request-funds.ts#L44-L47
+```
+
+</div>
+
+4. Await for the [`Transaction`](../../references/nodejs/classes/Transaction.md) to get confirmed by calling the
+    [`Wallet.waitForTransactionAcceptance()`](../../references/nodejs/classes/Wallet.md#waitfortransactionacceptance)
+    function.
+
+<div className={'hide-code-block-extras'}>
+
+```typescript reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/nodejs/examples/how_tos/account_output/destroy.ts#L60
+```
+
+</div>
+
+</TabItem>
+<TabItem value="python" label="Python">
+
+1. Instantiate a [`Wallet`](http://localhost:3000/iota-sdk/2.0/references/python/iota_sdk/wallet/) and [sync it](../wallet/check-balance.mdx).
+2. Retrieve the first [`AccountOutput`](http://localhost:3000/iota-sdk/2.0/references/python/iota_sdk/types/output/#accountoutput-objects) from the
+[`Balance`](http://localhost:3000/iota-sdk/2.0/references/python/iota_sdk/types/balance/) by accessing
+the `Balance.accounts` attribute.
+
+<div className={'hide-code-block-extras'}>
+
+```python reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/python/examples/how_tos/account_output/destroy.py#L20
+```
+
+</div>
+
+3. Prepare the transaction that will destroy it by calling the [`Wallet.prepare_destroy_account()`](http://localhost:3000/iota-sdk/2.0/references/python/iota_sdk/wallet/#prepare_destroy_account)
+    function, and send the prepared transaction by calling to [`PreparedTransaction.send()`](http://localhost:3000/iota-sdk/2.0/references/python/iota_sdk/wallet/prepared_transaction/#send).
+
+
+<div className={'hide-code-block-extras'}>
+
+```python reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/python/examples/how_tos/account_output/destroy.py#L25
+```
+
+</div>
+
+</TabItem>
+</Tabs>
+
+### Full Example Code
+
+<Tabs groupId="language" queryString>
+<TabItem value="rust" label="Rust">
+
+```rust reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/sdk/examples/how_tos/account_output/destroy.rs
+```
+
+</TabItem>
+<TabItem value="typescript-node" label="Typescript (Node.js)">
+
+```typescript reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/nodejs/examples/how_tos/account_output/request-funds.ts
+```
+
+</TabItem>
+<TabItem value="python" label="Python">
+
+```python reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/python/examples/how_tos/account_output/destroy.py
+```
+
+</TabItem>
+</Tabs>

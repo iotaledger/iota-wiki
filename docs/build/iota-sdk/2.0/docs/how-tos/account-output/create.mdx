@@ -1,0 +1,111 @@
+---
+description: 'You can create an account output using your implicit account creation address'
+image: /img/logo/iota_mark_light.png
+tags:
+  - how to
+  - wallet
+  - create
+  - account output
+  - nodejs
+  - python
+  - rust
+---
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Create an Account Output
+
+## Example Code
+
+<Tabs groupId="language" queryString>
+<TabItem value="rust" label="Rust">
+
+1. Instantiate a [Wallet](file:///home/lucas/Documents/IOTA/iota-sdk/target/doc/iota_sdk/wallet/core/struct.Wallet.html) and [sync it](../wallet/check-balance.mdx).
+2. Create an [account output](TODO add link to account output explanation) by calling the [`Wallet.create_account_output()`](file:///home/lucas/Documents/IOTA/iota-sdk/target/doc/iota_sdk/wallet/core/struct.Wallet.html#method.create_account_output) function.
+
+<div className={'hide-code-block-extras'}>
+
+```rust reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/sdk/examples/how_tos/account_output/create.rs#L43
+```
+
+</div>
+
+3. Await for the transaction to be accepted by the network by calling the [`Wallet.wait_for_transaction_acceptance()`](file:///home/lucas/Documents/IOTA/iota-sdk/target/doc/iota_sdk/wallet/core/struct.Wallet.html#method.wait_for_transaction_acceptance) function.
+
+<div className={'hide-code-block-extras'}>
+
+```rust reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/sdk/examples/how_tos/account_output/create.rs#L46-L48
+```
+
+</div>
+
+</TabItem>
+<TabItem value="typescript-node" label="Typescript (Node.js)">
+
+1. Instantiate a [`Wallet`](http://localhost:3000/iota-sdk/2.0/references/nodejs/classes/Wallet) and [sync it](../wallet/check-balance.mdx).
+2. Create an [account output](TODO add link to account output explanation) by calling the [`Wallet.createAccountOutput()`](http://localhost:3000/iota-sdk/2.0/references/nodejs/classes/Wallet/#createaccountoutput) function.
+
+<div className={'hide-code-block-extras'}>
+
+```typescript reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/nodejs/examples/how_tos/account_output/create.ts#L48
+```
+
+</div>
+
+3. Await for the [`Transaction`](../../references/nodejs/classes/Transaction.md) to get confirmed by calling the
+[`Wallet.waitForTransactionAcceptance()`](../../references/nodejs/classes/Wallet.md#waitfortransactionacceptance)
+function.
+
+<div className={'hide-code-block-extras'}>
+
+```typescript reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/nodejs/examples/how_tos/account_output/create.ts#L52
+```
+
+</div>
+
+</TabItem>
+<TabItem value="python" label="Python">
+
+1. Instantiate a [`Wallet`](http://localhost:3000/iota-sdk/2.0/references/python/iota_sdk/wallet/) and [sync it](../wallet/check-balance.mdx).
+2. Create an [account output](TODO add link to account output explanation) by calling the [`Wallet.create_account_output()`](file:///home/lucas/Documents/IOTA/iota-sdk/target/doc/iota_sdk/wallet/core/struct.Wallet.html#method.create_account_output) function.
+
+<div className={'hide-code-block-extras'}>
+
+```python reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/python/examples/how_tos/account_output/create.py#L24
+```
+
+</div>
+
+</TabItem>
+</Tabs>
+
+### Full Example Code
+
+<Tabs groupId="language" queryString>
+<TabItem value="rust" label="Rust">
+
+```rust reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/sdk/examples/how_tos/account_output/create.rs
+```
+
+</TabItem>
+<TabItem value="typescript-node" label="Typescript (Node.js)">
+
+```typescript reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/nodejs/examples/how_tos/account_output/create.ts
+```
+
+</TabItem>
+<TabItem value="python" label="Python">
+
+```python reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/python/examples/how_tos/account_output/create.py
+```
+
+</TabItem>
+</Tabs>

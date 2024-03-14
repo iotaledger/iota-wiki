@@ -1,0 +1,167 @@
+---
+description: 'Learn how to request funds from the faucet to an account output.'
+image: /img/logo/iota_mark_light.png
+tags:
+  - how to
+  - wallet
+  - get funds
+  - faucet
+  - account output
+  - nodejs
+  - python
+  - rust
+---
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Request Funds From the Faucet
+
+## Example Code
+
+<Tabs groupId="language" queryString>
+<TabItem value="rust" label="Rust">
+
+1. Instantiate a [Wallet](file:///home/lucas/Documents/IOTA/iota-sdk/target/doc/iota_sdk/wallet/core/struct.Wallet.html) and [sync it](../wallet/check-balance.mdx).
+2. Retrieve the first [`AccountId`](file:///home/lucas/Documents/IOTA/iota-sdk/target/doc/iota_sdk/types/block/output/account/struct.AccountId.html) from the
+    [`Balance`](file:///home/lucas/Documents/IOTA/iota-sdk/target/doc/iota_sdk/wallet/types/struct.Balance.html) by calling
+    the [`Balance.accounts()`](file:///home/lucas/Documents/IOTA/iota-sdk/target/doc/iota_sdk/wallet/types/struct.Balance.html#method.accounts) function.
+
+<div className={'hide-code-block-extras'}>
+
+```rust reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/sdk/examples/how_tos/account_output/request_funds.rs#L41
+```
+
+</div>
+
+3. Get the [`AccountAddress`](file:///home/lucas/Documents/IOTA/iota-sdk/target/doc/iota_sdk/types/block/address/struct.AccountAddress.html)
+    for the `AccountId` that was retrieved in step 2, and transform it to Bech32 using the
+    [`AccountAddress.toBech32()`](file:///home/lucas/Documents/IOTA/iota-sdk/target/doc/iota_sdk/types/block/address/account/struct.AccountAddress.html#method.to_bech32)
+    function.
+
+<div className={'hide-code-block-extras'}>
+
+```rust reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/sdk/examples/how_tos/account_output/request_funds.rs#L45
+```
+
+</div>
+
+4. Request funds from the faucet by calling the [`Utils.request_funds_from_faucet()`](file:///home/lucas/Documents/IOTA/iota-sdk/target/doc/iota_sdk/client/utils/fn.request_funds_from_faucet.html)
+    function.
+
+<div className={'hide-code-block-extras'}>
+
+```rust reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/sdk/examples/how_tos/account_output/request_funds.rs#L46
+```
+
+</div>
+</TabItem>
+<TabItem value="typescript-node" label="Typescript (Node.js)">
+
+1. Instantiate a [`Wallet`](http://localhost:3000/iota-sdk/2.0/references/nodejs/classes/Wallet) and [sync it](../wallet/check-balance.mdx).
+2. Retrieve the first [`AccountOutput`](http://localhost:3000/iota-sdk/2.0/references/nodejs/classes/AccountOutput/) from the
+    [`Balance`](http://localhost:3000/iota-sdk/2.0/references/nodejs/interfaces/Balance/) by accessing
+    the [`Balance.accounts](http://localhost:3000/iota-sdk/2.0/references/nodejs/interfaces/Balance/#accounts) property.
+
+<div className={'hide-code-block-extras'}>
+
+```typescript reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/nodejs/examples/how_tos/account_output/request-funds.ts#L38
+```
+
+</div>
+
+3. Get the [`AccountAddress`](http://localhost:3000/iota-sdk/2.0/references/nodejs/classes/AccountAddress/)
+    for the `AccountId` that was retrieved in step 2, and transform it to Bech32 using the
+    [`Utils.accountIdToBech32()`](http://localhost:3000/iota-sdk/2.0/references/nodejs/classes/Utils/#accountidtobech32)
+    function.
+
+<div className={'hide-code-block-extras'}>
+
+```typescript reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/nodejs/examples/how_tos/account_output/request-funds.ts#L44-L47
+```
+
+</div>
+
+4. Request funds from the faucet by calling the [`Client.requestFundsFromFaucet()`](http://localhost:3000/iota-sdk/2.0/references/nodejs/classes/Client/#requestfundsfromfaucet)
+function.
+
+<div className={'hide-code-block-extras'}>
+
+```typescript reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/nodejs/examples/how_tos/account_output/request-funds.ts#L49-L52
+```
+
+</div>
+
+</TabItem>
+<TabItem value="python" label="Python">
+
+1. Instantiate a [`Wallet`](http://localhost:3000/iota-sdk/2.0/references/python/iota_sdk/wallet/) and [sync it](../wallet/check-balance.mdx).
+2. Retrieve the first [`AccountOutput`](http://localhost:3000/iota-sdk/2.0/references/python/iota_sdk/types/output/#accountoutput-objects) from the
+    [`Balance`](http://localhost:3000/iota-sdk/2.0/references/python/iota_sdk/types/balance/) by accessing
+    the `Balance.accounts` attribute.
+
+<div className={'hide-code-block-extras'}>
+
+```python reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/python/examples/how_tos/account_output/request_funds.py#L26
+```
+
+</div>
+
+3. Get the [`AccountAddress`](http://localhost:3000/iota-sdk/2.0/references/python/iota_sdk/types/address/#accountaddress-objects)
+for the `AccountId` that was retrieved in step 2, and transform it to Bech32 using the
+[`Utils.account_id_to_bech32()`](http://localhost:3000/iota-sdk/2.0/references/python/iota_sdk/utils/#account_id_to_bech32)
+function.
+
+<div className={'hide-code-block-extras'}>
+
+```python reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/python/examples/how_tos/account_output/request_funds.py#L30-L31
+```
+
+</div>
+
+4. Request funds from the faucet by calling the [`Client.request_funds_from_faucet()`](http://localhost:3000/iota-sdk/2.0/references/python/iota_sdk/client/_utils/#request_funds_from_faucet)
+function.
+
+<div className={'hide-code-block-extras'}>
+
+```python reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/python/examples/how_tos/account_output/request_funds.py#L32-L33
+```
+
+</div>
+
+</TabItem>
+</Tabs>
+
+### Full Example Code
+
+<Tabs groupId="language" queryString>
+<TabItem value="rust" label="Rust">
+
+```rust reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/sdk/examples/how_tos/account_output/request_funds.rs
+```
+
+</TabItem>
+<TabItem value="typescript-node" label="Typescript (Node.js)">
+
+```typescript reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/nodejs/examples/how_tos/account_output/request-funds.ts
+```
+
+</TabItem>
+<TabItem value="python" label="Python">
+
+```python reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/python/examples/how_tos/account_output/request-funds.py
+```
+
+</TabItem>
+</Tabs>

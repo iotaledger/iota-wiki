@@ -138,6 +138,17 @@ module.exports = {
         },
         {
           type: 'category',
+          label: 'Account Outputs',
+          items:[
+            'how-tos/account-output/get-the-implicit-account-creation-address',
+            'how-tos/account-output/create',
+            'how-tos/account-output/request-funds',
+            'how-tos/account-output/send-amount',
+            'how-tos/account-output/destroy',
+          ]
+        },
+        {
+          type: 'category',
           label: 'Simple Transaction',
           items: [
             {
