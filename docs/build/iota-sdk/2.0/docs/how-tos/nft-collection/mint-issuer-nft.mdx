@@ -1,0 +1,201 @@
+---
+description: 'How to mint an issuer NFT'
+image: /img/logo/iota_mark_light.png
+tags:
+  - how to
+  - mint
+  - issuer nft
+  - collection
+  - nft
+  - nodejs
+  - python
+  - rust
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Mint an Issuer NFT
+
+## Example Code
+
+<Tabs groupId="language" queryString>
+<TabItem value="rust" label="Rust">
+
+1. Instantiate a [Wallet](file:///home/lucas/Documents/IOTA/iota-sdk/target/doc/iota_sdk/wallet/core/struct.Wallet.html) and [sync it](../wallet/check-balance.mdx).
+2. Create the [`MintNftParams`](file:///home/lucas/Documents/IOTA/iota-sdk/target/doc/iota_sdk/wallet/struct.MintNftParams.html)
+    and add immutable data by calling the [`MintNftParams.with_immutable_metadata()`](file:///home/lucas/Documents/IOTA/iota-sdk/target/doc/iota_sdk/wallet/operations/transaction/high_level/minting/mint_nfts/struct.MintNftParams.html#method.with_immutable_metadata)
+    function and adding the [`MetadataFeature`](file:///home/lucas/Documents/IOTA/iota-sdk/target/doc/iota_sdk/types/block/output/feature/metadata/struct.MetadataFeature.html).
+
+<div className={'hide-code-block-extras'}>
+
+```rust reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/sdk/examples/how_tos/nft_collection/00_mint_issuer_nft.rs#L50C9-L56
+```
+
+</div>
+
+3. Mint the NFT by calling [`Wallet.mint_nft()`](file:///home/lucas/Documents/IOTA/iota-sdk/target/doc/iota_sdk/wallet/core/struct.Wallet.html#method.mint_nfts).
+
+<div className={'hide-code-block-extras'}>
+
+```rust reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/sdk/examples/how_tos/nft_collection/00_mint_issuer_nft.rs#L57
+```
+
+</div>
+
+4. Await for the transaction to be accepted by the network by calling the [`Wallet.wait_for_transaction_acceptance()`](file:///home/lucas/Documents/IOTA/iota-sdk/target/doc/iota_sdk/wallet/core/struct.Wallet.html#method.wait_for_transaction_acceptance) function.
+
+<div className={'hide-code-block-extras'}>
+
+```rust reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/sdk/examples/how_tos/nft_collection/00_mint_issuer_nft.rs#L81-L83
+```
+
+</div>
+
+6. Get the NFT's ID from the outputs that were created by de transaction by creating a new
+    [`OutputId`](file:///home/lucas/Documents/IOTA/iota-sdk/target/doc/iota_sdk/types/block/output/struct.OutputId.html)
+    from the NFT transaction to get the `output_id` and passing that value to
+    [`NftId::from()`](file:///home/lucas/Documents/IOTA/iota-sdk/target/doc/iota_sdk/types/block/output/nft/struct.NftId.html#impl-From%3C%26OutputId%3E-for-NftId).
+    Take note of it so you can use it as the issuer of the [NFT collection](mint-collection.mdx).
+
+<div className={'hide-code-block-extras'}>
+
+```rust reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/sdk/examples/how_tos/nft_collection/00_mint_issuer_nft.rs#L61-L70
+```
+
+</div>
+</TabItem>
+<TabItem value="typescript-node" label="Typescript (Node.js)">
+
+1. Instantiate a [`Wallet`](http://localhost:3000/iota-sdk/2.0/references/nodejs/classes/Wallet) and [sync it](../wallet/check-balance.mdx).
+2. Create the [`MintNftParams`](http://localhost:3000/iota-sdk/2.0/references/nodejs/interfaces/MintNftParams/)
+    and add immutable data by passing the [`MintNftParams.immutableMetadata`](http://localhost:3000/iota-sdk/2.0/references/nodejs/interfaces/MintNftParams/#immutablemetadata) param.
+
+<div className={'hide-code-block-extras'}>
+
+```typescript reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/nodejs/examples/how_tos/nft_collection/00_mint_issuer_nft.ts#L50-L54
+```
+
+</div>
+
+3. Mint the NFT by calling [`Wallet.mintNfts()`](http://localhost:3000/iota-sdk/2.0/references/nodejs/classes/Wallet/#mintnfts).
+
+<div className={'hide-code-block-extras'}>
+
+```typescript reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/nodejs/examples/how_tos/nfts/mint_nft.ts#L58-L62
+```
+
+</div>
+
+4. Await for the [`Transaction`](../../references/nodejs/classes/Transaction.md) to get confirmed by calling the
+[`Wallet.waitForTransactionAcceptance()`](../../references/nodejs/classes/Wallet.md#waitfortransactionacceptance)
+function.
+
+<div className={'hide-code-block-extras'}>
+
+```typescript reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/nodejs/examples/how_tos/nft_collection/00_mint_issuer_nft.ts#L57-L60
+```
+
+</div>
+
+6. Get the NFT's ID from the outputs that were created by de transaction by calling
+    [`Utils.computeOutputId()`](http://localhost:3000/iota-sdk/2.0/references/nodejs/classes/Utils/#computeoutputid) function
+    to get the `outputId` and passing that value to
+    [`Utils.computeNftId()`](http://localhost:3000/iota-sdk/2.0/references/nodejs/classes/Utils/#computenftid).
+    Take note of it so you can use it as the issuer of the [NFT collection](mint-collection.mdx).
+
+<div className={'hide-code-block-extras'}>
+
+```typescript reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/nodejs/examples/how_tos/nft_collection/00_mint_issuer_nft.ts#L62-L81
+```
+
+</div>
+
+</TabItem>
+<TabItem value="python" label="Python">
+
+1. Instantiate a [`Wallet`](http://localhost:3000/iota-sdk/2.0/references/python/iota_sdk/wallet/) and [sync it](../wallet/check-balance.mdx).
+2. Create the [`MintNftParams`](http://localhost:3000/iota-sdk/2.0/references/python/iota_sdk/types/send_params/#mintnftparams-objects)
+    and add immutable data by setting the `MintNftParams.immutable_metadata` attribute.
+
+<div className={'hide-code-block-extras'}>
+
+```python reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/python/examples/how_tos/nft_collection/00_mint_issuer_nft.py#L22-L25
+```
+
+</div>
+
+2. Mint the NFT using the [`Wallet.mint_nfts()`](../../references/python/iota_sdk/wallet/wallet.md#mint_nfts) function.
+
+<div className={'hide-code-block-extras'}>
+
+```python reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/python/examples/how_tos/nft_collection/00_mint_issuer_nft.py#L28
+```
+
+</div>
+
+
+4. Await for the transaction to get accepted by calling the [`Wallet.wait_for_transaction_acceptance()`](../../references/python/iota_sdk/wallet/wallet.md#wait_for_transaction_acceptance)
+function.
+
+<div className={'hide-code-block-extras'}>
+
+```python reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/python/examples/how_tos/nft_collection/00_mint_issuer_nft.py#L30-L31
+```
+
+</div>
+
+5. Get the NFT's ID from the outputs that were created by de transaction by calling
+[`Utils.compute_output_id()`](http://localhost:3000/iota-sdk/2.0/references/python/iota_sdk/utils/#compute_output_id) function
+to get the `output_id` and passing that value to
+[`Utils.compute_output_id()`](http://localhost:3000/iota-sdk/2.0/references/python/iota_sdk/utils/#compute_nft_id).
+Take note of it so you can use it as the issuer of the [NFT collection](mint-collection.mdx).
+
+<div className={'hide-code-block-extras'}>
+
+```typescript reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/python/examples/how_tos/nft_collection/00_mint_issuer_nft.py#L38-L43
+```
+
+</div>
+</TabItem>
+</Tabs>
+
+## Full Example Code
+
+<Tabs groupId="language" queryString>
+<TabItem value="rust" label="Rust">
+
+```rust reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/sdk/examples/how_tos/nft_collection/00_mint_issuer_nft.rs
+```
+
+</TabItem>
+<TabItem value="typescript-node" label="Typescript (Node.js)">
+
+```typescript reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/nodejs/examples/how_tos/nft_collection/00_mint_issuer_nft.ts
+```
+
+</TabItem>
+<TabItem value="python" label="Python">
+
+```python reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/python/examples/how_tos/nft_collection/00_mint_issuer_nft.py
+```
+
+</TabItem>
+</Tabs>
+
+### Expected Output
