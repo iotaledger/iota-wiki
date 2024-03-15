@@ -20,12 +20,12 @@ This guide will show you how to list all the outputs that can be unlocked by a `
 <Tabs groupId="language" queryString>
 <TabItem value="rust" label="Rust">
 
-1. Instantiate a [`Wallet`](file:///home/lucas/Documents/IOTA/iota-sdk/target/doc/iota_sdk/wallet/core/struct.Wallet.html)
+1. Instantiate a [`Wallet`]((https://docs.rs/iota-sdk/latest/iota_sdk/wallet/core/struct.Wallet.html)
     and [sync it](./check-balance.mdx).
-2. Retrieve the [`WalletLedger`](file:///home/lucas/Documents/IOTA/iota-sdk/target/doc/iota_sdk/wallet/core/struct.WalletLedger.html)
-    for the Wallet by calling [`Wallet.ledger()`](file:///home/lucas/Documents/IOTA/iota-sdk/target/doc/iota_sdk/wallet/core/struct.Wallet.html#method.ledger)
-    function, and retrieve the wallet's [`Outputs`](file:///home/lucas/Documents/IOTA/iota-sdk/target/doc/iota_sdk/types/block/output/enum.Output.html)
-    by chaining a call to [`WalletLedger.outputs()`](file:///home/lucas/Documents/IOTA/iota-sdk/target/doc/iota_sdk/wallet/core/struct.WalletLedger.html#method.outputs).
+2. Retrieve the [`WalletLedger`]((https://docs.rs/iota-sdk/latest/iota_sdk/wallet/core/struct.WalletLedger.html)
+    for the Wallet by calling [`Wallet.ledger()`]((https://docs.rs/iota-sdk/latest/iota_sdk/wallet/core/struct.Wallet.html#method.ledger)
+    function, and retrieve the wallet's [`Outputs`]((https://docs.rs/iota-sdk/latest/iota_sdk/types/block/output/enum.Output.html)
+    by chaining a call to [`WalletLedger.outputs()`]((https://docs.rs/iota-sdk/latest/iota_sdk/wallet/core/struct.WalletLedger.html#method.outputs).
 
 
 <div className={'hide-code-block-extras'}>
@@ -37,7 +37,7 @@ https://github.com/iotaledger/iota-sdk/blob/2.0/sdk/examples/how_tos/wallet/list
 </div>
 
 3. Get all the unspent `Outputs` related to the `Wallet` by calling the
-   [`WalletLedger.unspent_outputs()`](file:///home/lucas/Documents/IOTA/iota-sdk/target/doc/iota_sdk/wallet/core/struct.WalletLedger.html#method.unspent_outputs) function.
+   [`WalletLedger.unspent_outputs()`]((https://docs.rs/iota-sdk/latest/iota_sdk/wallet/core/struct.WalletLedger.html#method.unspent_outputs) function.
 
 <div className={'hide-code-block-extras'}>
 
@@ -50,10 +50,10 @@ https://github.com/iotaledger/iota-sdk/blob/2.0/sdk/examples/how_tos/wallet/list
 </TabItem>
 <TabItem value="typescript-node" label="Typescript (Node.js)">
 
-1. Instantiate a [`Wallet`](file:///home/lucas/Documents/IOTA/iota-sdk/target/doc/iota_sdk/wallet/core/struct.Wallet.html)
+1. Instantiate a [`Wallet`]((https://docs.rs/iota-sdk/latest/iota_sdk/wallet/core/struct.Wallet.html)
     and [sync it](./check-balance.mdx).
-2. Get all the [`Outputs`](http://localhost:3000/iota-sdk/2.0/references/nodejs/classes/Output/)
-   related to the `Wallet` by calling the [`Wallet.outputs()`](http://localhost:3000/iota-sdk/2.0/references/nodejs/classes/Wallet/#outputs)
+2. Get all the [`Outputs`](../../references/nodejs/classes/Output.md/)
+   related to the `Wallet` by calling the [`Wallet.outputs()`](../../references/nodejs/classes/Wallet.md#outputs)
    function.
 
 <div className={'hide-code-block-extras'}>
@@ -65,7 +65,7 @@ https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/nodejs/examples/how_tos
 </div>
 
 3. Get all the unspent `Outputs` related to the `Wallet` by calling the
-[`Wallet.unspentOutputs()`](http://localhost:3000/iota-sdk/2.0/references/nodejs/classes/Wallet/#unspentoutputs) function.
+[`Wallet.unspentOutputs()`](../../references/nodejs/classes/Wallet.md#unspentoutputs) function.
 
 <div className={'hide-code-block-extras'}>
 
@@ -78,10 +78,10 @@ https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/nodejs/examples/how_tos
 </TabItem>
 <TabItem value="python" label="Python">
 
-1. Instantiate a [`Wallet`](file:///home/lucas/Documents/IOTA/iota-sdk/target/doc/iota_sdk/wallet/core/struct.Wallet.html)
+1. Instantiate a [`Wallet`](../../references/python/iota_sdk/wallet/wallet.md)
     and [sync it](./check-balance.mdx).
-2. Get all the [`Outputs`](http://localhost:3000/iota-sdk/2.0/references/python/iota_sdk/types/output/)
-   related to the `Wallet` by calling the [`Wallet.outputs()`](http://localhost:3000/iota-sdk/2.0/references/python/iota_sdk/wallet/#outputs)
+2. Get all the [`Outputs`](../../references/python/iota_sdk/types/output.md)
+   related to the `Wallet` by calling the [`Wallet.outputs()`](../../references/python/iota_sdk/wallet/wallet.md#outputs)
    function.
 
 <div className={'hide-code-block-extras'}>
@@ -93,7 +93,7 @@ https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/python/examples/how_tos
 </div>
 
 3. Get all the unspent `Outputs` related to the `Wallet` by calling the
-   [`Account.unspent_outputs()`](http://localhost:3000/iota-sdk/2.0/references/python/iota_sdk/wallet/#unspent_outputs) function.
+   [`Account.unspent_outputs()`](../../references/python/iota_sdk/wallet/wallet.md#unspent_outputs) function.
 
 <div className={'hide-code-block-extras'}>
 

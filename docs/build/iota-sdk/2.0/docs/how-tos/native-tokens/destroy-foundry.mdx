@@ -32,9 +32,9 @@ tokens but need to empty the foundry, you can decrease your native token supply 
 <Tabs groupId="language" queryString>
 <TabItem value="rust" label="Rust">
 
-1. Instantiate a [`Wallet`](file:///home/lucas/Documents/IOTA/iota-sdk/target/doc/iota_sdk/wallet/core/struct.Wallet.html) and [sync it](../wallet/check-balance.mdx).
+1. Instantiate a [`Wallet`]((https://docs.rs/iota-sdk/latest/iota_sdk/wallet/core/struct.Wallet.html) and [sync it](../wallet/check-balance.mdx).
 
-2. Get the first foundry in the wallet's balance by calling the [`Balance.foundries()`](file:///home/lucas/Documents/IOTA/iota-sdk/target/doc/iota_sdk/wallet/types/balance/struct.Balance.html#method.foundries) function.
+2. Get the first foundry in the wallet's balance by calling the [`Balance.foundries()`]((https://docs.rs/iota-sdk/latest/iota_sdk/wallet/types/balance/struct.Balance.html#method.foundries) function.
 
 <div className={'hide-code-block-extras'}>
 
@@ -55,7 +55,7 @@ https://github.com/iotaledger/iota-sdk/blob/2.0/sdk/examples/how_tos/native_toke
 </div>
 
 
-4. Burn the foundry by calling the [`Wallet.burn()`](file:///home/lucas/Documents/IOTA/iota-sdk/target/doc/iota_sdk/wallet/core/struct.Wallet.html#method.burn)
+4. Burn the foundry by calling the [`Wallet.burn()`]((https://docs.rs/iota-sdk/latest/iota_sdk/wallet/core/struct.Wallet.html#method.burn)
    function and passing the `foundry_id` as param.
 
 <div className={'hide-code-block-extras'}>
@@ -66,7 +66,7 @@ https://github.com/iotaledger/iota-sdk/blob/2.0/sdk/examples/how_tos/native_toke
 
 </div>
 
-5. Await for the transaction to be accepted by the network by calling the [`Wallet.wait_for_transaction_acceptance()`](file:///home/lucas/Documents/IOTA/iota-sdk/target/doc/iota_sdk/wallet/core/struct.Wallet.html#method.wait_for_transaction_acceptance) function.
+5. Await for the transaction to be accepted by the network by calling the [`Wallet.wait_for_transaction_acceptance()`]((https://docs.rs/iota-sdk/latest/iota_sdk/wallet/core/struct.Wallet.html#method.wait_for_transaction_acceptance) function.
 
 <div className={'hide-code-block-extras'}>
 
@@ -79,8 +79,8 @@ https://github.com/iotaledger/iota-sdk/blob/2.0/sdk/examples/how_tos/native_toke
 </TabItem>
 <TabItem value="typescript-node" label="Typescript (Node.js)">
 
-1. Instantiate a [`Wallet`](http://localhost:3000/iota-sdk/2.0/references/nodejs/classes/Wallet) and [sync it](../wallet/check-balance.mdx).
-2. Get the first foundry in the account's balance by getting the value of the [`Balance.foundries`](http://localhost:3000/iota-sdk/2.0/references/nodejs/interfaces/Balance/#foundries) property.
+1. Instantiate a [`Wallet`](../../references/nodejs/classes/Wallet.md) and [sync it](../wallet/check-balance.mdx).
+2. Get the first foundry in the account's balance by getting the value of the [`Balance.foundries`](../../references/nodejs/interfaces/Balance.md#foundries) property.
 
 <div className={'hide-code-block-extras'}>
 
@@ -116,8 +116,8 @@ https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/nodejs/examples/how_tos
 </TabItem>
 <TabItem value="python" label="Python">
 
-1. Instantiate a [`Wallet`](http://localhost:3000/iota-sdk/2.0/references/python/iota_sdk/wallet/) and [sync it](../wallet/check-balance.mdx).
-2. Get the first foundry in the account's balance byt retrieving the value of the [`Balance.foundries`](http://localhost:3000/iota-sdk/2.0/references/python/iota_sdk/types/balance/#balance-objects) attribute.
+1. Instantiate a [`Wallet`](../../references/python/iota_sdk/wallet/wallet.md) and [sync it](../wallet/check-balance.mdx).
+2. Get the first foundry in the account's balance byt retrieving the value of the [`Balance.foundries`](../../references/python/iota_sdk/types/balance.md#balance-objects) attribute.
 
 <div className={'hide-code-block-extras'}>
 

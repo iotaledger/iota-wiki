@@ -343,12 +343,12 @@ exports.articleRedirects = [
     to: '/iota-sdk/how-tos/simple-transaction/request-funds',
   },
   {
-    from: '/shimmer/develop/how-tos/seeds-account-output/account-output',
-    to: '/iota-sdk/explanations/account-output',
+    from: '/shimmer/develop/how-tos/seeds-accounts-and-addresses/accounts-and-addresses',
+    to: '/iota-sdk/explanations/accounts-and-addresses',
   },
   {
-    from: '/shimmer/develop/how-tos/seeds-account-output/seed-mnemonics',
-    to: '/iota-sdk/how-tos/account-output/create-mnemonic',
+    from: '/shimmer/develop/how-tos/seeds-accounts-and-addresses/seed-mnemonics',
+    to: '/iota-sdk/how-tos/accounts-and-addresses/create-mnemonic',
   },
   {
     from: '/shimmer/develop/how-tos/simple-transfer',

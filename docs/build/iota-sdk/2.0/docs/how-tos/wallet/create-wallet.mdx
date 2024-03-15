@@ -9,11 +9,11 @@ import TabItem from '@theme/TabItem';
 <TabItem value="rust" label="Rust">
 
 1. Build
-   a [`SecretManager`](file:///home/lucas/Documents/IOTA/iota-sdk/target/doc/iota_sdk/client/secret/enum.SecretManager.html).
+   a [`SecretManager`]((https://docs.rs/iota-sdk/latest/iota_sdk/client/secret/enum.SecretManager.html).
    This example uses
-   the [`StrongholdSecretManager`](file:///home/lucas/Documents/IOTA/iota-sdk/target/doc/iota_sdk/client/secret/stronghold/type.StrongholdSecretManager.html),
+   the [`StrongholdSecretManager`]((https://docs.rs/iota-sdk/latest/iota_sdk/client/secret/stronghold/type.StrongholdSecretManager.html),
    but you can choose any of
-   the [supported options](file:///home/lucas/Documents/IOTA/iota-sdk/target/doc/iota_sdk/client/secret/enum.SecretManagerDto.html):
+   the [supported options]((https://docs.rs/iota-sdk/latest/iota_sdk/client/secret/enum.SecretManagerDto.html):
 
 <div className={'hide-code-block-extras'}>
 
@@ -24,7 +24,7 @@ https://github.com/iotaledger/iota-sdk/blob/2.0/sdk/examples/how_tos/wallet/crea
 </div>
 
 2. Store a mnemonic to secure
-   your [`Wallet`](file:///home/lucas/Documents/IOTA/iota-sdk/target/doc/iota_sdk/wallet/core/struct.Wallet.html). This
+   your [`Wallet`]((https://docs.rs/iota-sdk/latest/iota_sdk/wallet/core/struct.Wallet.html). This
    examples uses the one stored in
    the [`.env`](https://github.com/iotaledger/iota-sdk/blob/2.0/sdk/examples/.env.example#L7-L8) file:
 
@@ -37,9 +37,9 @@ https://github.com/iotaledger/iota-sdk/blob/2.0/sdk/examples/how_tos/wallet/crea
 </div>
 
 3. Define
-   the [`ClientOptions`](file:///home/lucas/Documents/IOTA/iota-sdk/target/doc/iota_sdk/wallet/core/struct.Wallet.html#method.client_options)
+   the [`ClientOptions`]((https://docs.rs/iota-sdk/latest/iota_sdk/wallet/core/struct.Wallet.html#method.client_options)
    for the node URL specified in the `.env` by chaining a call
-   to [`with_node()`](file:///home/lucas/Documents/IOTA/iota-sdk/target/doc/iota_sdk/client/builder/struct.ClientBuilder.html#method.with_node):
+   to [`with_node()`]((https://docs.rs/iota-sdk/latest/iota_sdk/client/builder/struct.ClientBuilder.html#method.with_node):
 
 <div className={'hide-code-block-extras'}>
 
@@ -50,17 +50,17 @@ https://github.com/iotaledger/iota-sdk/blob/2.0/sdk/examples/how_tos/wallet/crea
 </div>
 
 4. Use
-   the [`Wallet::builder()`](file:///home/lucas/Documents/IOTA/iota-sdk/target/doc/iota_sdk/wallet/core/struct.WalletBuilder.html)
+   the [`Wallet::builder()`]((https://docs.rs/iota-sdk/latest/iota_sdk/wallet/core/struct.WalletBuilder.html)
    with chained calls to
-   [`.with_secret_manager()`](file:///home/lucas/Documents/IOTA/iota-sdk/target/doc/iota_sdk/wallet/core/builder/struct.WalletBuilder.html#method.with_secret_manager)
+   [`.with_secret_manager()`]((https://docs.rs/iota-sdk/latest/iota_sdk/wallet/core/builder/struct.WalletBuilder.html#method.with_secret_manager)
    to specify the `SecretManager` created on step 1,
-   [`.with_storage_path()`](file:///home/lucas/Documents/IOTA/iota-sdk/target/doc/iota_sdk/wallet/core/builder/struct.WalletBuilder.html#method.with_storage_path)
+   [`.with_storage_path()`]((https://docs.rs/iota-sdk/latest/iota_sdk/wallet/core/builder/struct.WalletBuilder.html#method.with_storage_path)
    to specify the database's path,  
-   [`.with_client_options()`](file:///home/lucas/Documents/IOTA/iota-sdk/target/doc/iota_sdk/wallet/core/builder/struct.WalletBuilder.html#method.with_client_options)
+   [`.with_client_options()`]((https://docs.rs/iota-sdk/latest/iota_sdk/wallet/core/builder/struct.WalletBuilder.html#method.with_client_options)
    to specify
-   the [`Client`](file:///home/lucas/Documents/IOTA/iota-sdk/target/doc/iota_sdk/client/core/struct.Client.html)
+   the [`Client`]((https://docs.rs/iota-sdk/latest/iota_sdk/client/core/struct.Client.html)
    options, and
-   [`.with_bip_path()`](file:///home/lucas/Documents/IOTA/iota-sdk/target/doc/iota_sdk/wallet/core/builder/struct.WalletBuilder.html#method.with_bip_path)
+   [`.with_bip_path()`]((https://docs.rs/iota-sdk/latest/iota_sdk/wallet/core/builder/struct.WalletBuilder.html#method.with_bip_path)
    to set the BIP44 path:
 
 <div className={'hide-code-block-extras'}>
@@ -75,11 +75,11 @@ https://github.com/iotaledger/iota-sdk/blob/2.0/sdk/examples/how_tos/wallet/crea
 <TabItem value="typescript-node" label="Typescript (Node.js)">
 
 1. Build
-   a [`SecretManager`](http://localhost:3000/iota-sdk/2.0/references/nodejs/classes/SecretManager/).
+   a [`SecretManager`](../../references/nodejs/classes/SecretManager.md.
    This example uses
-   the [`StrongholdSecretManager`](http://localhost:3000/iota-sdk/2.0/references/nodejs/interfaces/StrongholdSecretManager/),
+   the [`StrongholdSecretManager`](../../references/nodejs/interfaces/StrongholdSecretManager.md,
    but you can choose any of
-   the [supported options](http://localhost:3000/iota-sdk/2.0/references/nodejs/api_ref/#secretmanagertype):
+   the [supported options](../../references/nodejs/api_ref.md#secretmanagertype):
 
 <div className={'hide-code-block-extras'}>
 
@@ -90,7 +90,7 @@ https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/nodejs/examples/how_tos
 </div>
 
 2. Store a mnemonic to secure
-   your [`Wallet`](http://localhost:3000/iota-sdk/2.0/references/nodejs/classes/Wallet/). This
+   your [`Wallet`](../../references/nodejs/classes/Wallet.md). This
    examples uses the one stored in
    the [`.env`](https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/nodejs/examples/.env.example#L7-L8) file:
 
@@ -102,17 +102,17 @@ https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/nodejs/examples/how_tos
 
 </div>
 
-3. Define the [`WalletOptions`](http://localhost:3000/iota-sdk/2.0/references/nodejs/interfaces/WalletOptions/) to use
-   the [`storagePath`](http://localhost:3000/iota-sdk/2.0/references/nodejs/interfaces/WalletOptions/#storagepath) that
+3. Define the [`WalletOptions`](../../references/nodejs/interfaces/WalletOptions.md to use
+   the [`storagePath`](../../references/nodejs/interfaces/WalletOptions.md#storagepath) that
    is defined in
    the `.env` file,
-   the [`clientOptions`](http://localhost:3000/iota-sdk/2.0/references/nodejs/interfaces/WalletOptions/#clientoptions)
-   to use the [`node`](http://localhost:3000/iota-sdk/2.0/references/nodejs/interfaces/INode/) URL defined in the `.env`
+   the [`clientOptions`](../../references/nodejs/interfaces/WalletOptions.md#clientoptions)
+   to use the [`node`](../../references/nodejs/interfaces/INode.md URL defined in the `.env`
    file,
-   the [`bipPath.coinType`](http://localhost:3000/iota-sdk/2.0/references/nodejs/interfaces/WalletOptions/#bippath)
-   to use the IOTA [`CoinType`](http://localhost:3000/iota-sdk/2.0/references/nodejs/interfaces/Bip44/#cointype) and
+   the [`bipPath.coinType`](../../references/nodejs/interfaces/WalletOptions.md#bippath)
+   to use the IOTA [`CoinType`](../../references/nodejs/interfaces/Bip44.md#cointype) and
    the `strongholdSecretManager` that you created in step 1 as
-   a [`secretManager`](http://localhost:3000/iota-sdk/2.0/references/nodejs/interfaces/WalletOptions/#secretmanager):
+   a [`secretManager`](../../references/nodejs/interfaces/WalletOptions.md#secretmanager):
 
 <div className={'hide-code-block-extras'}>
 
@@ -122,8 +122,8 @@ https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/nodejs/examples/how_tos
 
 </div>
 
-5. Create the [`Wallet`](http://localhost:3000/iota-sdk/2.0/references/nodejs/classes/Wallet/) by
-   calling [`Wallet.create()`](http://localhost:3000/iota-sdk/2.0/references/nodejs/classes/Wallet/#create):
+5. Create the [`Wallet`](../../references/nodejs/classes/Wallet.md) by
+   calling [`Wallet.create()`](../../references/nodejs/classes/Wallet.md#create):
 
 <div className={'hide-code-block-extras'}>
 
@@ -137,7 +137,7 @@ https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/nodejs/examples/how_tos
 <TabItem value="python" label="Python">
 
 1. Instantiate
-   new [`ClientOptions`](http://localhost:3000/iota-sdk/2.0/references/python/iota_sdk/types/client_options/) ot
+   new [`ClientOptions`](../../references/python/iota_sdk/types/client_options.md) ot
    use the `node_url` defined in
    the [`.env`](https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/python/examples/.env.example) file, or default
    to the [Shimmer Testnet](https://wiki.iota.org/build/networks-endpoints/#public-testnet):
@@ -151,8 +151,8 @@ https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/python/examples/how_tos
 </div>
 
 2. Instantiate
-   a [`StrongholdSecretManager`](http://localhost:3000/iota-sdk/2.0/references/python/iota_sdk/secret_manager/#strongholdsecretmanager-objects)
-   as a [`secret_manager`](http://localhost:3000/iota-sdk/2.0/references/python/iota_sdk/secret_manager), using the
+   a [`StrongholdSecretManager`](../../references/python/iota_sdk/secret_manager/secret_manager.md#strongholdsecretmanager-objects)
+   as a [`secret_manager`](../../references/python/iota_sdk/secret_manager/secret_manager.md), using the
    variables defined in
    the [`.env`](https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/python/examples/.env.example):
 
@@ -165,7 +165,7 @@ https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/python/examples/how_tos
 </div>
 
 3. Use
-   the [`SecretManager`](http://localhost:3000/iota-sdk/2.0/references/python/iota_sdk/secret_manager/)
+   the [`SecretManager`](../../references/python/iota_sdk/secret_manager/secret_manager.md)
    to store a mnemonic from the `.env` file:
 
 <div className={'hide-code-block-extras'}>
@@ -176,7 +176,7 @@ https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/python/examples/how_tos
 
 </div>
 
-4. Define the [`Bip44`](http://localhost:3000/iota-sdk/2.0/references/python/iota_sdk/types/signature/#bip44-objects)
+4. Define the [`Bip44`](../../references/python/iota_sdk/types/signature.md#bip44-objects)
    path
    with the Shimmer `CoinType`:
 
@@ -189,9 +189,9 @@ https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/python/examples/how_tos
 </div>
 
 4. Define
-   the [`WalletOptions`](http://localhost:3000/iota-sdk/2.0/references/python/iota_sdk/wallet/#walletoptions-objects) to
+   the [`WalletOptions`](../../references/python/iota_sdk/wallet/wallet.md#walletoptions-objects) to
    use the variables you defined in the previous steps and create
-   the [`Wallet`](http://localhost:3000/iota-sdk/2.0/references/python/iota_sdk/wallet/):
+   the [`Wallet`](../../references/python/iota_sdk/wallet/wallet.md):
 
 <div className={'hide-code-block-extras'}>
 

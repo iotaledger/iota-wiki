@@ -20,10 +20,10 @@ import TabItem from '@theme/TabItem';
 <Tabs groupId="language" queryString>
 <TabItem value="rust" label="Rust">
 
-1. Define the [`SyncOptions`](file:///home/lucas/Documents/IOTA/iota-sdk/target/doc/iota_sdk/wallet/struct.SyncOptions.html)
-    to fetch [`BasicOutputs`](file:///home/lucas/Documents/IOTA/iota-sdk/target/doc/iota_sdk/types/block/output/basic/struct.BasicOutput.html)
-    for [`AccountOutputs`](file:///home/lucas/Documents/IOTA/iota-sdk/target/doc/iota_sdk/types/block/output/account/struct.AccountOutput.html)
-    by setting the `basic_outputs` field to `true` in the [`AccountSyncOptions`](file:///home/lucas/Documents/IOTA/iota-sdk/target/doc/iota_sdk/wallet/struct.AccountSyncOptions.html).
+1. Define the [`SyncOptions`]((https://docs.rs/iota-sdk/latest/iota_sdk/wallet/struct.SyncOptions.html)
+    to fetch [`BasicOutputs`]((https://docs.rs/iota-sdk/latest/iota_sdk/types/block/output/basic/struct.BasicOutput.html)
+    for [`AccountOutputs`]((https://docs.rs/iota-sdk/latest/iota_sdk/types/block/output/account/struct.AccountOutput.html)
+    by setting the `basic_outputs` field to `true` in the [`AccountSyncOptions`]((https://docs.rs/iota-sdk/latest/iota_sdk/wallet/struct.AccountSyncOptions.html).
 
 <div className={'hide-code-block-extras'}>
 
@@ -33,10 +33,10 @@ https://github.com/iotaledger/iota-sdk/blob/2.0/sdk/examples/how_tos/account_out
 
 </div>
 
-2. Instantiate a [Wallet](file:///home/lucas/Documents/IOTA/iota-sdk/target/doc/iota_sdk/wallet/core/struct.Wallet.html) and [sync it](../wallet/check-balance.mdx).
-3. Retrieve the first [`AccountId`](file:///home/lucas/Documents/IOTA/iota-sdk/target/doc/iota_sdk/types/block/output/account/struct.AccountId.html) from the
-[`Balance`](file:///home/lucas/Documents/IOTA/iota-sdk/target/doc/iota_sdk/wallet/types/struct.Balance.html) by calling
-the [`Balance.accounts()`](file:///home/lucas/Documents/IOTA/iota-sdk/target/doc/iota_sdk/wallet/types/struct.Balance.html#method.accounts) function.
+2. Instantiate a [Wallet]((https://docs.rs/iota-sdk/latest/iota_sdk/wallet/core/struct.Wallet.html) and [sync it](../wallet/check-balance.mdx).
+3. Retrieve the first [`AccountId`]((https://docs.rs/iota-sdk/latest/iota_sdk/types/block/output/account/struct.AccountId.html) from the
+[`Balance`]((https://docs.rs/iota-sdk/latest/iota_sdk/wallet/types/struct.Balance.html) by calling
+the [`Balance.accounts()`]((https://docs.rs/iota-sdk/latest/iota_sdk/wallet/types/struct.Balance.html#method.accounts) function.
 
 <div className={'hide-code-block-extras'}>
 
@@ -46,9 +46,9 @@ https://github.com/iotaledger/iota-sdk/blob/2.0/sdk/examples/how_tos/account_out
 
 </div>
 
-4. Get the [`AccountAddress`](file:///home/lucas/Documents/IOTA/iota-sdk/target/doc/iota_sdk/types/block/address/struct.AccountAddress.html)
+4. Get the [`AccountAddress`]((https://docs.rs/iota-sdk/latest/iota_sdk/types/block/address/struct.AccountAddress.html)
     for the `AccountId` that was retrieved in step 3, and transform it to Bech32 using the
-    [`AccountAddress.toBech32()`](file:///home/lucas/Documents/IOTA/iota-sdk/target/doc/iota_sdk/types/block/address/account/struct.AccountAddress.html#method.to_bech32)
+    [`AccountAddress.toBech32()`]((https://docs.rs/iota-sdk/latest/iota_sdk/types/block/address/account/struct.AccountAddress.html#method.to_bech32)
     function.
 
 <div className={'hide-code-block-extras'}>
@@ -59,7 +59,7 @@ https://github.com/iotaledger/iota-sdk/blob/2.0/sdk/examples/how_tos/account_out
 
 </div>
 
-5. Define the [Transaction inputs](file:///home/lucas/Documents/IOTA/iota-sdk/target/doc/iota_sdk/types/block/payload/signed_transaction/struct.Transaction.html#structfield.inputs)
+5. Define the [Transaction inputs]((https://docs.rs/iota-sdk/latest/iota_sdk/types/block/payload/signed_transaction/struct.Transaction.html#structfield.inputs)
     as the first `Output` that can be unlocked by the `AccountAddress`.
 
 <div className={'hide-code-block-extras'}>
@@ -70,8 +70,8 @@ https://github.com/iotaledger/iota-sdk/blob/2.0/sdk/examples/how_tos/account_out
 
 </div>
 
-6. Use the [`Wallet.send()`](file:///home/lucas/Documents/IOTA/iota-sdk/target/doc/iota_sdk/wallet/core/struct.Wallet.html#method.send)
-    function passing the inputs defined in step 4 in the  [`TransactionOptions`](file:///home/lucas/Documents/IOTA/iota-sdk/target/doc/iota_sdk/wallet/struct.TransactionOptions.html).
+6. Use the [`Wallet.send()`]((https://docs.rs/iota-sdk/latest/iota_sdk/wallet/core/struct.Wallet.html#method.send)
+    function passing the inputs defined in step 4 in the  [`TransactionOptions`]((https://docs.rs/iota-sdk/latest/iota_sdk/wallet/struct.TransactionOptions.html).
 
 <div className={'hide-code-block-extras'}>
 
@@ -81,7 +81,7 @@ https://github.com/iotaledger/iota-sdk/blob/2.0/sdk/examples/how_tos/account_out
 
 </div>
 
-7. Await for the transaction to be accepted by the network by calling the [`Wallet.wait_for_transaction_acceptance()`](file:///home/lucas/Documents/IOTA/iota-sdk/target/doc/iota_sdk/wallet/core/struct.Wallet.html#method.wait_for_transaction_acceptance) function.
+7. Await for the transaction to be accepted by the network by calling the [`Wallet.wait_for_transaction_acceptance()`]((https://docs.rs/iota-sdk/latest/iota_sdk/wallet/core/struct.Wallet.html#method.wait_for_transaction_acceptance) function.
 
 <div className={'hide-code-block-extras'}>
 
@@ -93,10 +93,10 @@ https://github.com/iotaledger/iota-sdk/blob/2.0/sdk/examples/how_tos/account_out
 </TabItem>
 <TabItem value="typescript-node" label="Typescript (Node.js)">
 
-1. Define the [`SyncOptions`](http://localhost:3000/iota-sdk/2.0/references/nodejs/interfaces/SyncOptions/)
-    to fetch [`BasicOutputs`](http://localhost:3000/iota-sdk/2.0/references/nodejs/classes/BasicOutput/)
-    for [`AccountOutputs`](http://localhost:3000/iota-sdk/2.0/references/nodejs/classes/AccountOutput/)
-    by setting the `basic_outputs` field to `true` in the [`AccountSyncOptions`](http://localhost:3000/iota-sdk/2.0/references/nodejs/interfaces/AccountSyncOptions/).
+1. Define the [`SyncOptions`](../../references/nodejs/interfaces/SyncOptions.md)
+    to fetch [`BasicOutputs`](../../references/nodejs/classes/BasicOutput.md)
+    for [`AccountOutputs`](../../references/nodejs/classes/AccountOutput.md)
+    by setting the `basic_outputs` field to `true` in the [`AccountSyncOptions`](../../references/nodejs/interfaces/AccountSyncOptions.md).
 
 <div className={'hide-code-block-extras'}>
 
@@ -106,10 +106,10 @@ https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/nodejs/examples/how_tos
 
 </div>
 
-2. Instantiate a [`Wallet`](http://localhost:3000/iota-sdk/2.0/references/nodejs/classes/Wallet) and [sync it](../wallet/check-balance.mdx).
-3. Retrieve the first [`AccountOutput`](http://localhost:3000/iota-sdk/2.0/references/nodejs/classes/AccountOutput/) from the
-    [`Balance`](http://localhost:3000/iota-sdk/2.0/references/nodejs/interfaces/Balance/) by accessing
-    the [`Balance.accounts](http://localhost:3000/iota-sdk/2.0/references/nodejs/interfaces/Balance/#accounts) property.
+2. Instantiate a [`Wallet`](../../references/nodejs/classes/Wallet.md) and [sync it](../wallet/check-balance.mdx).
+3. Retrieve the first [`AccountOutput`](../../references/nodejs/classes/AccountOutput.md) from the
+    [`Balance`](../../references/nodejs/interfaces/Balance.md) by accessing
+    the [`Balance.accounts](../../references/nodejs/interfaces/Balance.md#accounts) property.
 
 <div className={'hide-code-block-extras'}>
 
@@ -119,9 +119,9 @@ https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/nodejs/examples/how_tos
 
 </div>
 
-4. Get the [`AccountAddress`](http://localhost:3000/iota-sdk/2.0/references/nodejs/classes/AccountAddress/)
+4. Get the [`AccountAddress`](../../references/nodejs/classes/AccountAddress.md)
 for the `AccountId` that was retrieved in step 2, and transform it to Bech32 using the
-[`Utils.accountIdToBech32()`](http://localhost:3000/iota-sdk/2.0/references/nodejs/classes/Utils/#accountidtobech32)
+[`Utils.accountIdToBech32()`](../../references/nodejs/classes/Utils.md#accountidtobech32)
 function.
 
 <div className={'hide-code-block-extras'}>
@@ -132,7 +132,7 @@ https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/nodejs/examples/how_tos
 
 </div>
 
-5. Define the [Transaction inputs](http://localhost:3000/iota-sdk/2.0/references/nodejs/classes/Transaction/#inputs)
+5. Define the [Transaction inputs](../../references/nodejs/classes/Transaction.md#inputs)
     as the first `Output` that can be unlocked by the `AccountAddress`.
 
 <div className={'hide-code-block-extras'}>
@@ -143,8 +143,8 @@ https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/nodejs/examples/how_tos
 
 </div>
 
-6. Use the [`Wallet.sendWithParams()`](http://localhost:3000/iota-sdk/2.0/references/nodejs/classes/Wallet/#sendwithparams)
-    function passing the inputs defined in step 5 in the [`TransactionOptions`](http://localhost:3000/iota-sdk/2.0/references/nodejs/interfaces/TransactionOptions/).
+6. Use the [`Wallet.sendWithParams()`](../../references/nodejs/classes/Wallet.md#sendwithparams)
+    function passing the inputs defined in step 5 in the [`TransactionOptions`](../../references/nodejs/interfaces/TransactionOptions.md).
 
 <div className={'hide-code-block-extras'}>
 
@@ -169,10 +169,10 @@ https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/nodejs/examples/how_tos
 <TabItem value="python" label="Python">
 
 
-1. Define the [`SyncOptions`](http://localhost:3000/iota-sdk/2.0/references/python/iota_sdk/wallet/sync_options/#syncoptions-objects)
-to fetch [`BasicOutputs`](http://localhost:3000/iota-sdk/2.0/references/python/iota_sdk/types/output/#basicoutput-objects)
-for [`AccountOutputs`](http://localhost:3000/iota-sdk/2.0/references/nodejs/classes/AccountOutput/)
-by setting the `basic_outputs` field to `true` in the [`WalletSyncOptions`](http://localhost:3000/iota-sdk/2.0/references/python/iota_sdk/wallet/sync_options/#walletsyncoptions-objects).
+1. Define the [`SyncOptions`](../../references/python/iota_sdk/wallet/sync_options.md#syncoptions-objects)
+to fetch [`BasicOutputs`](../../references/python/iota_sdk/types/output.md#basicoutput-objects)
+for [`AccountOutputs`](../../references/nodejs/classes/AccountOutput.md)
+by setting the `basic_outputs` field to `true` in the [`WalletSyncOptions`](../../references/python/iota_sdk/wallet/sync_options.md#walletsyncoptions-objects).
 
 <div className={'hide-code-block-extras'}>
 
@@ -182,10 +182,10 @@ https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/python/examples/how_tos
 
 </div>
 
-2. Instantiate a [`Wallet`](http://localhost:3000/iota-sdk/2.0/references/python/iota_sdk/wallet/) and [sync it](../wallet/check-balance.mdx).
-3. Retrieve the first [`AccountOutput`](http://localhost:3000/iota-sdk/2.0/references/python/iota_sdk/types/output/#accountoutput-objects) from the
-    [`Balance`](http://localhost:3000/iota-sdk/2.0/references/python/iota_sdk/types/balance/) by accessing
-    the [`Balance.accounts](http://localhost:3000/iota-sdk/2.0/references/python/iota_sdk/types/balance/#balance-objects) attribute.
+2. Instantiate a [`Wallet`](../../references/python/iota_sdk/wallet/wallet.md) and [sync it](../wallet/check-balance.mdx).
+3. Retrieve the first [`AccountOutput`](../../references/python/iota_sdk/types/output.md#accountoutput-objects) from the
+    [`Balance`](../../references/python/iota_sdk/types/balance.md) by accessing
+    the [`Balance.accounts](../../references/python/iota_sdk/types/balance.md#balance-objects) attribute.
 
 <div className={'hide-code-block-extras'}>
 
@@ -195,9 +195,9 @@ https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/python/examples/how_tos
 
 </div>
 
-4. Get the [`AccountAddress`](http://localhost:3000/iota-sdk/2.0/references/python/iota_sdk/types/address/#accountaddress-objects)
+4. Get the [`AccountAddress`](../../references/python/iota_sdk/types/address.md#accountaddress-objects)
     for the `AccountId` that was retrieved in step 3, and transform it to Bech32 using the
-    [`Utils.account_id_to_bech32()`](http://localhost:3000/iota-sdk/2.0/references/python/iota_sdk/utils/#account_id_to_bech32)
+    [`Utils.account_id_to_bech32()`](../../references/python/iota_sdk/utils.md#account_id_to_bech32)
     function.
 
 <div className={'hide-code-block-extras'}>
@@ -208,7 +208,7 @@ https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/python/examples/how_tos
 
 </div>
 
-5. Define the [Transaction inputs](http://localhost:3000/iota-sdk/2.0/references/python/iota_sdk/types/input/)
+5. Define the [Transaction inputs](../../references/python/iota_sdk/types/input.md)
 as the first `Output` that can be unlocked by the `AccountAddress`.
 
 <div className={'hide-code-block-extras'}>
@@ -219,8 +219,8 @@ https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/python/examples/how_tos
 
 </div>
 
-6. Use the [`Wallet.send_with_params()`](http://localhost:3000/iota-sdk/2.0/references/python/iota_sdk/wallet/#send_with_params)
-function passing the inputs defined in step 5 in the [`TransactionOptions`](http://localhost:3000/iota-sdk/2.0/references/python/iota_sdk/types/transaction_options/).
+6. Use the [`Wallet.send_with_params()`](../../references/python/iota_sdk/wallet/wallet.md#send_with_params)
+function passing the inputs defined in step 5 in the [`TransactionOptions`](../../references/python/iota_sdk/types/transaction_options.md).
 
 <div className={'hide-code-block-extras'}>
 

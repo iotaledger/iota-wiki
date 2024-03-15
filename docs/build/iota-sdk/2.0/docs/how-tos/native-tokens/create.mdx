@@ -29,7 +29,7 @@ To create a Foundry you need an Alias Output which owns it. This Alias Output on
 <Tabs groupId="language" queryString>
 <TabItem value="rust" label="Rust">
 
-1. Instantiate a [`Wallet`](file:///home/lucas/Documents/IOTA/iota-sdk/target/doc/iota_sdk/wallet/core/struct.Wallet.html) and [sync it](../wallet/check-balance.mdx).
+1. Instantiate a [`Wallet`]((https://docs.rs/iota-sdk/latest/iota_sdk/wallet/core/struct.Wallet.html) and [sync it](../wallet/check-balance.mdx).
 2. Check the wallet's balance for an [`Account Output`](../account-output/create.mdx)
    it can use to create the [native tokens](/tips/tips/TIP-0018#native-tokens-in-outputs).
    If the account doesn't have any, it will create one.
@@ -52,7 +52,7 @@ https://github.com/iotaledger/iota-sdk/blob/2.0/sdk/examples/how_tos/native_toke
 
 </div>
 
-4. Define the [`CreateNativeTokenParams`](file:///home/lucas/Documents/IOTA/iota-sdk/target/doc/iota_sdk/wallet/struct.CreateNativeTokenParams.html).
+4. Define the [`CreateNativeTokenParams`]((https://docs.rs/iota-sdk/latest/iota_sdk/wallet/struct.CreateNativeTokenParams.html).
 
 <div className={'hide-code-block-extras'}>
 
@@ -62,7 +62,7 @@ https://github.com/iotaledger/iota-sdk/blob/2.0/sdk/examples/how_tos/native_toke
 
 </div>
 
-5. Create the native token using the [`Wallet.create_native_token()`](file:///home/lucas/Documents/IOTA/iota-sdk/target/doc/iota_sdk/wallet/core/struct.Wallet.html#method.create_native_token)
+5. Create the native token using the [`Wallet.create_native_token()`]((https://docs.rs/iota-sdk/latest/iota_sdk/wallet/core/struct.Wallet.html#method.create_native_token)
    function.
 
 <div className={'hide-code-block-extras'}>
@@ -73,7 +73,7 @@ https://github.com/iotaledger/iota-sdk/blob/2.0/sdk/examples/how_tos/native_toke
 
 </div>
 
-6. Await for the transaction to be accepted by the network by calling the [`Wallet.wait_for_transaction_acceptance()`](file:///home/lucas/Documents/IOTA/iota-sdk/target/doc/iota_sdk/wallet/core/struct.Wallet.html#method.wait_for_transaction_acceptance) function.
+6. Await for the transaction to be accepted by the network by calling the [`Wallet.wait_for_transaction_acceptance()`]((https://docs.rs/iota-sdk/latest/iota_sdk/wallet/core/struct.Wallet.html#method.wait_for_transaction_acceptance) function.
 
 
 <div className={'hide-code-block-extras'}>
@@ -86,7 +86,7 @@ https://github.com/iotaledger/iota-sdk/blob/2.0/sdk/examples/how_tos/native_toke
 </TabItem>
 <TabItem value="typescript-node" label="Typescript (Node.js)">
 
-1. Instantiate a [`Wallet`](http://localhost:3000/iota-sdk/2.0/references/nodejs/classes/Wallet) and [sync it](../wallet/check-balance.mdx).
+1. Instantiate a [`Wallet`](../../references/nodejs/classes/Wallet.md) and [sync it](../wallet/check-balance.mdx).
 2. Check the wallet's balance for an [`Account Output`](../account-output/create.mdx)
    it can use to create the [native tokens](/tips/tips/TIP-0018#native-tokens-in-outputs).
    If the account doesn't have any, it will create one.
@@ -99,7 +99,7 @@ https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/nodejs/examples/how_tos
 
 </div>
 
-3. Define [`Irc30Metadata`](http://localhost:3000/iota-sdk/2.0/references/nodejs/classes/Irc30Metadata/) and add a description by chaining a call to [`Irc30Metadata.withDescription()`](http://localhost:3000/iota-sdk/2.0/references/nodejs/classes/Irc30Metadata/#withdescription).
+3. Define [`Irc30Metadata`](../../references/nodejs/classes/Irc30Metadata.md) and add a description by chaining a call to [`Irc30Metadata.withDescription()`](../../references/nodejs/classes/Irc30Metadata.md#withdescription).
 
 <div className={'hide-code-block-extras'}>
 
@@ -120,8 +120,8 @@ https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/nodejs/examples/how_tos
 </div>
 
 5. Prepare the transaction that will create the native token using the
-   [`Account.prepareCreateNativeToken()`](http://localhost:3000/iota-sdk/2.0/references/nodejs/classes/Wallet/#preparecreatenativetoken)
-   function and send the prepared transaction using the [`Wallet.send()`](http://localhost:3000/iota-sdk/2.0/references/nodejs/classes/Wallet/#send)
+   [`Account.prepareCreateNativeToken()`](../../references/nodejs/classes/Wallet.md#preparecreatenativetoken)
+   function and send the prepared transaction using the [`Wallet.send()`](../../references/nodejs/classes/Wallet.md#send)
    function.
 
 <div className={'hide-code-block-extras'}>
@@ -146,7 +146,7 @@ https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/nodejs/examples/how_tos
 </TabItem>
 <TabItem value="python" label="Python">
 
-1. Instantiate a [`Wallet`](http://localhost:3000/iota-sdk/2.0/references/python/iota_sdk/wallet/) and [sync it](../wallet/check-balance.mdx).
+1. Instantiate a [`Wallet`](../../references/python/iota_sdk/wallet/wallet.md) and [sync it](../wallet/check-balance.mdx).
 2. Check the wallet's balance for an [`Account Output`](../account-output/create.mdx)
    it can use to create the [native tokens](/tips/tips/TIP-0018#native-tokens-in-outputs).
    If the account doesn't have any, it will create one.
@@ -159,7 +159,7 @@ https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/python/examples/how_tos
 
 </div>
 
-3. Define the [`Irc30Metadata`](http://localhost:3000/iota-sdk/2.0/references/python/iota_sdk/types/irc_30/).
+3. Define the [`Irc30Metadata`](../../references/python/iota_sdk/types/irc_30.md).
 
 <div className={'hide-code-block-extras'}>
 
@@ -169,7 +169,7 @@ https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/python/examples/how_tos
 
 </div>
 
-4. Define the [`CreateNativeTokenParams`](http://localhost:3000/iota-sdk/2.0/references/python/iota_sdk/types/send_params/#createnativetokenparams-objects).
+4. Define the [`CreateNativeTokenParams`](../../references/python/iota_sdk/types/send_params.md/#createnativetokenparams-objects).
 
 <div className={'hide-code-block-extras'}>
 

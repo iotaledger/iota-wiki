@@ -18,7 +18,7 @@ import TipFaucet from '../../_admonitions/_tip-faucet.md';
 You can retrieve the balance for any [wallet you created](create-wallet.mdx) by calling the
 [`Wallet.getBalance()`](../../references/nodejs/classes/Wallet.md#getbalance) function. Bear in mind that you should
 always [`sync`](references/nodejs/classes/Wallet.md#sync) the [`Wallet`](../../references/nodejs/classes/Wallet.md)
-with the node to get the latest outputs. The sync function also returns the [`Balance`](http://localhost:3000/iota-sdk/2.0/references/nodejs/interfaces/Balance/).
+with the node to get the latest outputs. The sync function also returns the [`Balance`](../../references/nodejs/interfaces/Balance.md).
 
 <TipFaucet />
 
@@ -27,10 +27,10 @@ with the node to get the latest outputs. The sync function also returns the [`Ba
 <Tabs groupId="language" queryString>
 <TabItem value="rust" label="Rust">
 
-1. Instantiate a [`Wallet`](file:///home/lucas/Documents/IOTA/iota-sdk/target/doc/iota_sdk/wallet/core/struct.Wallet.html).
+1. Instantiate a [`Wallet`]((https://docs.rs/iota-sdk/latest/iota_sdk/wallet/core/struct.Wallet.html).
 2. Sync the wallet with the node to get the latest transactions and the wallet's
-   [Balance](file:///home/lucas/Documents/IOTA/iota-sdk/target/doc/iota_sdk/wallet/types/balance/struct.Balance.html) by calling
-   the [`Wallet.sync()`](file:///home/lucas/Documents/IOTA/iota-sdk/target/doc/iota_sdk/wallet/core/struct.Wallet.html#method.sync)
+   [Balance]((https://docs.rs/iota-sdk/latest/iota_sdk/wallet/types/balance/struct.Balance.html) by calling
+   the [`Wallet.sync()`]((https://docs.rs/iota-sdk/latest/iota_sdk/wallet/core/struct.Wallet.html#method.sync)
    function.
 
 <div className={'hide-code-block-extras'}>
@@ -44,10 +44,10 @@ https://github.com/iotaledger/iota-sdk/blob/2.0/sdk/examples/how_tos/wallet/chec
 </TabItem>
 <TabItem value="typescript-node" label="Typescript (Node.js)">
 
-1. Instantiate a [`Wallet`](http://localhost:3000/iota-sdk/2.0/references/nodejs/classes/Wallet).
+1. Instantiate a [`Wallet`](../../references/nodejs/classes/Wallet.md).
 2. Sync the wallet with the node to get the latest transactions and the wallet's
-   [`Balance`](http://localhost:3000/iota-sdk/2.0/references/nodejs/interfaces/Balance/) by calling the
-   [`Wallet.sync()`](http://localhost:3000/iota-sdk/2.0/references/nodejs/classes/Wallet/#sync)
+   [`Balance`](../../references/nodejs/interfaces/Balance.md) by calling the
+   [`Wallet.sync()`](../../references/nodejs/classes/Wallet.md#sync)
    function.
 
 <div className={'hide-code-block-extras'}>
@@ -58,7 +58,7 @@ https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/nodejs/examples/how_tos
 
 </div>
 
-3. After syncing, you can also retrieve the balance by calling [`wallet.getBalance()`](http://localhost:3000/iota-sdk/2.0/references/nodejs/classes/Wallet/#getbalance).
+3. After syncing, you can also retrieve the balance by calling [`wallet.getBalance()`](../../references/nodejs/classes/Wallet.md#getbalance).
 
 <div className={'hide-code-block-extras'}>
 
@@ -70,10 +70,10 @@ https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/nodejs/examples/how_tos
 </TabItem>
 <TabItem value="python" label="Python">
 
-1. Instantiate a [`Wallet`](file:///home/lucas/Documents/IOTA/iota-sdk/target/doc/iota_sdk/wallet/core/struct.Wallet.html).
+1. Instantiate a [`Wallet`](../../references/python/iota_sdk/wallet/wallet.md).
 2. `Sync` the wallet with the node to get the latest transactions and the wallet's
-   [`balance`](http://localhost:3000/iota-sdk/2.0/references/python/iota_sdk/types/balance/) by calling the
-   [`Wallet.sync()`](http://localhost:3000/iota-sdk/2.0/references/python/iota_sdk/wallet/#sync)
+   [`balance`](../../references/python/iota_sdk/types/balance.md) by calling the
+   [`Wallet.sync()`](../../references/python/iota_sdk/wallet/wallet.md#sync)
    function.
 
 <div className={'hide-code-block-extras'}>

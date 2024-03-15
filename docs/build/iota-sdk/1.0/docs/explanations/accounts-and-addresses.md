@@ -12,7 +12,8 @@ tags:
   - exchanges
 ---
 
-# Account and Addresses
+# Account and Addresses !
+
 
 In [the IOTA SDK](../welcome.md), you can use an account model
 to [create an account for each user](#multi-account-model)

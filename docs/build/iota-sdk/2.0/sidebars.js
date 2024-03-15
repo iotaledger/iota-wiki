@@ -226,7 +226,6 @@ module.exports = {
             },
           ],
         },
-        'how-tos/exchange-guide',
       ],
     },
     {

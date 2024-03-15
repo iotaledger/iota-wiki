@@ -28,15 +28,15 @@ and [features](../outputs/features.mdx).
 
 The following example will:
 
-1. Instantiate a [`Wallet`](file:///home/lucas/Documents/IOTA/iota-sdk/target/doc/iota_sdk/wallet/core/struct.Wallet.html) and [sync it](../wallet/check-balance.mdx).
-2. Create a [`BasicOutput`](file:///home/lucas/Documents/IOTA/iota-sdk/target/doc/iota_sdk/types/block/output/basic/struct.BasicOutput.html)
+1. Instantiate a [`Wallet`]((https://docs.rs/iota-sdk/latest/iota_sdk/wallet/core/struct.Wallet.html) and [sync it](../wallet/check-balance.mdx).
+2. Create a [`BasicOutput`]((https://docs.rs/iota-sdk/latest/iota_sdk/types/block/output/basic/struct.BasicOutput.html)
    that is [time-locked](/learn/protocols/stardust/core-concepts/output-unlock-conditions#timelock) for one
-   hour by calling the [`BasicOutputBuilder()`](file:///home/lucas/Documents/IOTA/iota-sdk/target/doc/iota_sdk/types/block/output/basic/struct.BasicOutputBuilder.html)
-   function and passing the [`AddressUnlockCondition`](file:///home/lucas/Documents/IOTA/iota-sdk/target/doc/iota_sdk/types/block/output/unlock_condition/struct.AddressUnlockCondition.html) and
-   the [`TimelockUnlockCondition`](file:///home/lucas/Documents/IOTA/iota-sdk/target/doc/iota_sdk/types/block/output/unlock_condition/struct.TimelockUnlockCondition.html) in as
-   [`unlockConditions`](file:///home/lucas/Documents/IOTA/iota-sdk/target/doc/iota_sdk/types/block/output/unlock_condition/index.html)
+   hour by calling the [`BasicOutputBuilder()`]((https://docs.rs/iota-sdk/latest/iota_sdk/types/block/output/basic/struct.BasicOutputBuilder.html)
+   function and passing the [`AddressUnlockCondition`]((https://docs.rs/iota-sdk/latest/iota_sdk/types/block/output/unlock_condition/struct.AddressUnlockCondition.html) and
+   the [`TimelockUnlockCondition`]((https://docs.rs/iota-sdk/latest/iota_sdk/types/block/output/unlock_condition/struct.TimelockUnlockCondition.html) in as
+   [`unlockConditions`]((https://docs.rs/iota-sdk/latest/iota_sdk/types/block/output/unlock_condition/index.html)
    to the `BasicOutputBuilder()` by chaining calls to the
-   [`BasicOutputBuilder.add_unlock_condition()`](file:///home/lucas/Documents/IOTA/iota-sdk/target/doc/iota_sdk/types/block/output/account/struct.AccountOutputBuilder.html#method.add_unlock_condition)
+   [`BasicOutputBuilder.add_unlock_condition()`]((https://docs.rs/iota-sdk/latest/iota_sdk/types/block/output/account/struct.AccountOutputBuilder.html#method.add_unlock_condition)
 
 <div className={'hide-code-block-extras'}>
 
@@ -47,7 +47,7 @@ https://github.com/iotaledger/iota-sdk/blob/2.0/sdk/examples/how_tos/advanced_tr
 </div>
 
 3. Send the `BasicOutput` created in the previous step by calling the
-   [`Account.send_outputs()`](file:///home/lucas/Documents/IOTA/iota-sdk/target/doc/iota_sdk/wallet/core/struct.Wallet.html#method.send_outputs) function.
+   [`Account.send_outputs()`]((https://docs.rs/iota-sdk/latest/iota_sdk/wallet/core/struct.Wallet.html#method.send_outputs) function.
 
 <div className={'hide-code-block-extras'}>
 
@@ -57,7 +57,7 @@ https://github.com/iotaledger/iota-sdk/blob/2.0/sdk/examples/how_tos/advanced_tr
 
 </div>
 
-4. Await for the transaction to be accepted by the network by calling the [`Wallet.wait_for_transaction_acceptance()`](file:///home/lucas/Documents/IOTA/iota-sdk/target/doc/iota_sdk/wallet/core/struct.Wallet.html#method.wait_for_transaction_acceptance) function.
+4. Await for the transaction to be accepted by the network by calling the [`Wallet.wait_for_transaction_acceptance()`]((https://docs.rs/iota-sdk/latest/iota_sdk/wallet/core/struct.Wallet.html#method.wait_for_transaction_acceptance) function.
 
 <div className={'hide-code-block-extras'}>
 
@@ -72,7 +72,7 @@ https://github.com/iotaledger/iota-sdk/blob/2.0/sdk/examples/how_tos/advanced_tr
 
 The following example will:
 
-1. Instantiate a [`Wallet`](http://localhost:3000/iota-sdk/2.0/references/nodejs/classes/Wallet) and [sync it](../wallet/check-balance.mdx).
+1. Instantiate a [`Wallet`](../../references/nodejs/classes/Wallet.md) and [sync it](../wallet/check-balance.mdx).
 2. Create a [`BasicOutput`](../../references/nodejs/classes/BasicOutput.md) that is
    [time-locked](/learn/protocols/stardust/core-concepts/output-unlock-conditions#timelock) for one
    hour by calling the [`Client.buildBasicOutput()`](../../references/nodejs/classes/Client.md#buildbasicoutput)
@@ -114,7 +114,7 @@ https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/nodejs/examples/how_tos
 </TabItem>
 <TabItem value="python" label="Python">
 
-1. Instantiate a [`Wallet`](http://localhost:3000/iota-sdk/2.0/references/python/iota_sdk/wallet/) and [sync it](../wallet/check-balance.mdx).
+1. Instantiate a [`Wallet`](../../references/python/iota_sdk/wallet/wallet.md) and [sync it](../wallet/check-balance.mdx).
 2. Create a `BasicOutput` that is
    [time-locked](/learn/protocols/stardust/core-concepts/output-unlock-conditions#timelock) for one
    hour by calling the [`Client.build_basic_output()`](../../references/python/iota_sdk/client/client.md#build_basic_output)

@@ -30,9 +30,9 @@ https://github.com/iotaledger/iota-sdk/blob/2.0/sdk/examples/how_tos/nft_collect
 
 </div>
 
-2. Instantiate a [`Wallet`](file:///home/lucas/Documents/IOTA/iota-sdk/target/doc/iota_sdk/wallet/core/struct.Wallet.html) and [sync it](../wallet/check-balance.mdx).
-3. Create a new [`Bech32Address`](file:///home/lucas/Documents/IOTA/iota-sdk/target/doc/iota_sdk/types/block/address/struct.Bech32Address.html)
-    passing the human-readable part (hrp) of the wallet address, and a new [`NftAddress`](file:///home/lucas/Documents/IOTA/iota-sdk/target/doc/iota_sdk/types/block/address/struct.NftAddress.html)
+2. Instantiate a [`Wallet`]((https://docs.rs/iota-sdk/latest/iota_sdk/wallet/core/struct.Wallet.html) and [sync it](../wallet/check-balance.mdx).
+3. Create a new [`Bech32Address`]((https://docs.rs/iota-sdk/latest/iota_sdk/types/block/address/struct.Bech32Address.html)
+    passing the human-readable part (hrp) of the wallet address, and a new [`NftAddress`]((https://docs.rs/iota-sdk/latest/iota_sdk/types/block/address/struct.NftAddress.html)
     created from the `issuer_nft_id`.
 
 <div className={'hide-code-block-extras'}>
@@ -43,11 +43,11 @@ https://github.com/iotaledger/iota-sdk/blob/2.0/sdk/examples/how_tos/nft_collect
 
 </div>
 
-4. Create the [`MintNftParams`](file:///home/lucas/Documents/IOTA/iota-sdk/target/doc/iota_sdk/wallet/struct.MintNftParams.html)
+4. Create the [`MintNftParams`]((https://docs.rs/iota-sdk/latest/iota_sdk/wallet/struct.MintNftParams.html)
     for `NFT_COLLECTION_SIZE` NFTs adding immutable metadata by chaining a call to
-    [`MintNftParams.with_immutable_metadata()`](file:///home/lucas/Documents/IOTA/iota-sdk/target/doc/iota_sdk/wallet/struct.MintNftParams.html#method.with_immutable_metadata)
+    [`MintNftParams.with_immutable_metadata()`]((https://docs.rs/iota-sdk/latest/iota_sdk/wallet/struct.MintNftParams.html#method.with_immutable_metadata)
     and setting the address from step 3 as the issuer by chaining a call
-    [`MintNftParams.with_issuer()`](file:///home/lucas/Documents/IOTA/iota-sdk/target/doc/iota_sdk/wallet/struct.MintNftParams.html#method.with_issuer).
+    [`MintNftParams.with_issuer()`]((https://docs.rs/iota-sdk/latest/iota_sdk/wallet/struct.MintNftParams.html#method.with_issuer).
 
 <div className={'hide-code-block-extras'}>
 
@@ -57,8 +57,8 @@ https://github.com/iotaledger/iota-sdk/blob/2.0/sdk/examples/how_tos/nft_collect
 
 </div>
 
-5. Mint all the `nft_mint_params` by calling the [`Wallet.mint_nfts()`](file:///home/lucas/Documents/IOTA/iota-sdk/target/doc/iota_sdk/wallet/core/struct.Wallet.html#method.mint_nfts) function,
-    waiting for the transaction to be accepted by the network by calling the [`Wallet.wait_for_transaction_acceptance()`](file:///home/lucas/Documents/IOTA/iota-sdk/target/doc/iota_sdk/wallet/core/struct.Wallet.html#method.wait_for_transaction_acceptance) function.
+5. Mint all the `nft_mint_params` by calling the [`Wallet.mint_nfts()`]((https://docs.rs/iota-sdk/latest/iota_sdk/wallet/core/struct.Wallet.html#method.mint_nfts) function,
+    waiting for the transaction to be accepted by the network by calling the [`Wallet.wait_for_transaction_acceptance()`]((https://docs.rs/iota-sdk/latest/iota_sdk/wallet/core/struct.Wallet.html#method.wait_for_transaction_acceptance) function.
 
 <div className={'hide-code-block-extras'}>
 
@@ -73,7 +73,7 @@ https://github.com/iotaledger/iota-sdk/blob/2.0/sdk/examples/how_tos/nft_collect
 
 The following example will:
 
-1. Instantiate a [`Wallet`](http://localhost:3000/iota-sdk/2.0/references/nodejs/classes/Wallet) and [sync it](../wallet/check-balance.mdx).
+1. Instantiate a [`Wallet`](../../references/nodejs/classes/Wallet.md) and [sync it](../wallet/check-balance.mdx).
 2. Get the `issuerNftId` from the provided arguments. If you haven't done so already, you should [create an issuer NFT](mint-issuer-nft.mdx).
 
 <div className={'hide-code-block-extras'}>
@@ -84,8 +84,8 @@ https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/nodejs/examples/how_tos
 
 </div>
 
-3. Create a new [`Bech32Address`](http://localhost:3000/iota-sdk/2.0/references/nodejs/api_ref/#bech32address)
-    passing the human-readable part (hrp) of the client, and a new [`NftAddress`](http://localhost:3000/iota-sdk/2.0/references/nodejs/classes/NftAddress/)
+3. Create a new [`Bech32Address`](../../references/nodejs/api_ref.md#bech32address)
+    passing the human-readable part (hrp) of the client, and a new [`NftAddress`](../../references/nodejs/classes/NftAddress.md
     created from the `issuer_nft_id`.
 
 <div className={'hide-code-block-extras'}>
@@ -96,10 +96,10 @@ https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/nodejs/examples/how_tos
 
 </div>
 
-4. Create the [`MintNftParams`](http://localhost:3000/iota-sdk/2.0/references/nodejs/interfaces/MintNftParams/)
+4. Create the [`MintNftParams`](../../references/nodejs/interfaces/MintNftParams.md/)
     for `NFT_COLLECTION_SIZE` NFTs adding immutable metadata by chaining a setting the
-    [`MintNftParams.immutableMetadata()`](http://localhost:3000/iota-sdk/2.0/references/nodejs/interfaces/MintNftParams/#immutablemetadata)
-    property and setting the address from step 3 as the [issuer](http://localhost:3000/iota-sdk/2.0/references/nodejs/interfaces/MintNftParams/#issuer).
+    [`MintNftParams.immutableMetadata()`](../../references/nodejs/interfaces/MintNftParams.md/#immutablemetadata)
+    property and setting the address from step 3 as the [issuer](../../references/nodejs/interfaces/MintNftParams.md/#issuer).
 
 <div className={'hide-code-block-extras'}>
 
@@ -109,8 +109,8 @@ https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/nodejs/examples/how_tos
 
 </div>
 
-5. Mint all the `nftMintParams` by calling the [`Wallet.mintNfts()`](http://localhost:3000/iota-sdk/2.0/references/nodejs/classes/Wallet/#mintnfts) function,
-waiting for the transaction to be accepted by the network by calling the [`Wallet.waitForTransactionAcceptance()`](http://localhost:3000/iota-sdk/2.0/references/nodejs/classes/Wallet/#waitfortransactionacceptance) function.
+5. Mint all the `nftMintParams` by calling the [`Wallet.mintNfts()`](../../references/nodejs/classes/Wallet.md#mintnfts) function,
+waiting for the transaction to be accepted by the network by calling the [`Wallet.waitForTransactionAcceptance()`](../../references/nodejs/classes/Wallet.md#waitfortransactionacceptance) function.
 
 <div className={'hide-code-block-extras'}>
 
@@ -134,8 +134,8 @@ https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/python/examples/how_tos
 
 </div>
 
-2. Instantiate a [`Wallet`](http://localhost:3000/iota-sdk/2.0/references/python/iota_sdk/wallet/) and [sync it](../wallet/check-balance.mdx).
-3. Create a new `Bech32Address` passing the human-readable part (hrp) of the client, and a new [`NFTAddress`](http://localhost:3000/iota-sdk/2.0/references/nodejs/classes/NftAddress/)
+2. Instantiate a [`Wallet`](../../references/python/iota_sdk/wallet/wallet.md) and [sync it](../wallet/check-balance.mdx).
+3. Create a new `Bech32Address` passing the human-readable part (hrp) of the client, and a new [`NFTAddress`](../../references/nodejs/classes/NftAddress.md
     created from the `issuer_nft_id`.
 
 <div className={'hide-code-block-extras'}>
@@ -146,10 +146,10 @@ https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/python/examples/how_tos
 
 </div>
 
-4. Create the [`MintNftParams`](http://localhost:3000/iota-sdk/2.0/references/python/iota_sdk/types/send_params/#mintnftparams-objects)
+4. Create the [`MintNftParams`](../../references/python/iota_sdk/types/send_params.md#mintnftparams-objects)
     for `NFT_COLLECTION_SIZE` NFTs adding immutable metadata by chaining a setting the
-    [`Irc27Metadata`](http://localhost:3000/iota-sdk/2.0/references/python/iota_sdk/types/irc_27/)
-    property and setting the address from step 3 as the [issuer](http://localhost:3000/iota-sdk/2.0/references/nodejs/interfaces/MintNftParams/#issuer).
+    [`Irc27Metadata`](../../references/python/iota_sdk/types/irc_27.md)
+    property and setting the address from step 3 as the [issuer](../../references/nodejs/interfaces/MintNftParams.md#issuer).
 
 <div className={'hide-code-block-extras'}>
 
@@ -159,8 +159,8 @@ https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/python/examples/how_tos
 
 </div>
 
-5. Mint all the `nft_mint_params` by calling the [`Wallet.mint_nfts()`](http://localhost:3000/iota-sdk/2.0/references/python/iota_sdk/wallet/#mint_nfts) function,
-waiting for the transaction to be accepted by the network by calling the [`Wallet.wait_for_transaction_acceptance()`](http://localhost:3000/iota-sdk/2.0/references/python/iota_sdk/wallet/#wait_for_transaction_acceptance) function.
+5. Mint all the `nft_mint_params` by calling the [`Wallet.mint_nfts()`](../../references/python/iota_sdk/wallet/wallet.md#mint_nfts) function,
+waiting for the transaction to be accepted by the network by calling the [`Wallet.wait_for_transaction_acceptance()`](../../references/python/iota_sdk/wallet/wallet.md#wait_for_transaction_acceptance) function.
 
 <div className={'hide-code-block-extras'}>
 

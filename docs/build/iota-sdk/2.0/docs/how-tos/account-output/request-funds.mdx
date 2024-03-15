@@ -21,10 +21,10 @@ import TabItem from '@theme/TabItem';
 <Tabs groupId="language" queryString>
 <TabItem value="rust" label="Rust">
 
-1. Instantiate a [Wallet](file:///home/lucas/Documents/IOTA/iota-sdk/target/doc/iota_sdk/wallet/core/struct.Wallet.html) and [sync it](../wallet/check-balance.mdx).
-2. Retrieve the first [`AccountId`](file:///home/lucas/Documents/IOTA/iota-sdk/target/doc/iota_sdk/types/block/output/account/struct.AccountId.html) from the
-    [`Balance`](file:///home/lucas/Documents/IOTA/iota-sdk/target/doc/iota_sdk/wallet/types/struct.Balance.html) by calling
-    the [`Balance.accounts()`](file:///home/lucas/Documents/IOTA/iota-sdk/target/doc/iota_sdk/wallet/types/struct.Balance.html#method.accounts) function.
+1. Instantiate a [Wallet]((https://docs.rs/iota-sdk/latest/iota_sdk/wallet/core/struct.Wallet.html) and [sync it](../wallet/check-balance.mdx).
+2. Retrieve the first [`AccountId`]((https://docs.rs/iota-sdk/latest/iota_sdk/types/block/output/account/struct.AccountId.html) from the
+    [`Balance`]((https://docs.rs/iota-sdk/latest/iota_sdk/wallet/types/struct.Balance.html) by calling
+    the [`Balance.accounts()`]((https://docs.rs/iota-sdk/latest/iota_sdk/wallet/types/struct.Balance.html#method.accounts) function.
 
 <div className={'hide-code-block-extras'}>
 
@@ -34,9 +34,9 @@ https://github.com/iotaledger/iota-sdk/blob/2.0/sdk/examples/how_tos/account_out
 
 </div>
 
-3. Get the [`AccountAddress`](file:///home/lucas/Documents/IOTA/iota-sdk/target/doc/iota_sdk/types/block/address/struct.AccountAddress.html)
+3. Get the [`AccountAddress`]((https://docs.rs/iota-sdk/latest/iota_sdk/types/block/address/struct.AccountAddress.html)
     for the `AccountId` that was retrieved in step 2, and transform it to Bech32 using the
-    [`AccountAddress.toBech32()`](file:///home/lucas/Documents/IOTA/iota-sdk/target/doc/iota_sdk/types/block/address/account/struct.AccountAddress.html#method.to_bech32)
+    [`AccountAddress.toBech32()`]((https://docs.rs/iota-sdk/latest/iota_sdk/types/block/address/account/struct.AccountAddress.html#method.to_bech32)
     function.
 
 <div className={'hide-code-block-extras'}>
@@ -47,7 +47,7 @@ https://github.com/iotaledger/iota-sdk/blob/2.0/sdk/examples/how_tos/account_out
 
 </div>
 
-4. Request funds from the faucet by calling the [`Utils.request_funds_from_faucet()`](file:///home/lucas/Documents/IOTA/iota-sdk/target/doc/iota_sdk/client/utils/fn.request_funds_from_faucet.html)
+4. Request funds from the faucet by calling the [`Utils.request_funds_from_faucet()`]((https://docs.rs/iota-sdk/latest/iota_sdk/client/utils/fn.request_funds_from_faucet.html)
     function.
 
 <div className={'hide-code-block-extras'}>
@@ -60,10 +60,10 @@ https://github.com/iotaledger/iota-sdk/blob/2.0/sdk/examples/how_tos/account_out
 </TabItem>
 <TabItem value="typescript-node" label="Typescript (Node.js)">
 
-1. Instantiate a [`Wallet`](http://localhost:3000/iota-sdk/2.0/references/nodejs/classes/Wallet) and [sync it](../wallet/check-balance.mdx).
-2. Retrieve the first [`AccountOutput`](http://localhost:3000/iota-sdk/2.0/references/nodejs/classes/AccountOutput/) from the
-    [`Balance`](http://localhost:3000/iota-sdk/2.0/references/nodejs/interfaces/Balance/) by accessing
-    the [`Balance.accounts](http://localhost:3000/iota-sdk/2.0/references/nodejs/interfaces/Balance/#accounts) property.
+1. Instantiate a [`Wallet`](../../references/nodejs/classes/Wallet.md) and [sync it](../wallet/check-balance.mdx).
+2. Retrieve the first [`AccountOutput`](../../references/nodejs/classes/AccountOutput.md) from the
+    [`Balance`](../../references/nodejs/interfaces/Balance.md) by accessing
+    the [`Balance.accounts](../../references/nodejs/interfaces/Balance.md#accounts) property.
 
 <div className={'hide-code-block-extras'}>
 
@@ -73,9 +73,9 @@ https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/nodejs/examples/how_tos
 
 </div>
 
-3. Get the [`AccountAddress`](http://localhost:3000/iota-sdk/2.0/references/nodejs/classes/AccountAddress/)
+3. Get the [`AccountAddress`](../../references/nodejs/classes/AccountAddress.md)
     for the `AccountId` that was retrieved in step 2, and transform it to Bech32 using the
-    [`Utils.accountIdToBech32()`](http://localhost:3000/iota-sdk/2.0/references/nodejs/classes/Utils/#accountidtobech32)
+    [`Utils.accountIdToBech32()`](../../references/nodejs/classes/Utils.md#accountidtobech32)
     function.
 
 <div className={'hide-code-block-extras'}>
@@ -86,7 +86,7 @@ https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/nodejs/examples/how_tos
 
 </div>
 
-4. Request funds from the faucet by calling the [`Client.requestFundsFromFaucet()`](http://localhost:3000/iota-sdk/2.0/references/nodejs/classes/Client/#requestfundsfromfaucet)
+4. Request funds from the faucet by calling the [`Client.requestFundsFromFaucet()`](../../references/nodejs/classes/Client.md#requestfundsfromfaucet)
 function.
 
 <div className={'hide-code-block-extras'}>
@@ -100,9 +100,9 @@ https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/nodejs/examples/how_tos
 </TabItem>
 <TabItem value="python" label="Python">
 
-1. Instantiate a [`Wallet`](http://localhost:3000/iota-sdk/2.0/references/python/iota_sdk/wallet/) and [sync it](../wallet/check-balance.mdx).
-2. Retrieve the first [`AccountOutput`](http://localhost:3000/iota-sdk/2.0/references/python/iota_sdk/types/output/#accountoutput-objects) from the
-    [`Balance`](http://localhost:3000/iota-sdk/2.0/references/python/iota_sdk/types/balance/) by accessing
+1. Instantiate a [`Wallet`](../../references/python/iota_sdk/wallet/wallet.md) and [sync it](../wallet/check-balance.mdx).
+2. Retrieve the first [`AccountOutput`](../../references/python/iota_sdk/types/output.md#accountoutput-objects) from the
+    [`Balance`](../../references/python/iota_sdk/types/balance.md) by accessing
     the `Balance.accounts` attribute.
 
 <div className={'hide-code-block-extras'}>
@@ -113,9 +113,9 @@ https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/python/examples/how_tos
 
 </div>
 
-3. Get the [`AccountAddress`](http://localhost:3000/iota-sdk/2.0/references/python/iota_sdk/types/address/#accountaddress-objects)
+3. Get the [`AccountAddress`](../../references/python/iota_sdk/types/address.md#accountaddress-objects)
 for the `AccountId` that was retrieved in step 2, and transform it to Bech32 using the
-[`Utils.account_id_to_bech32()`](http://localhost:3000/iota-sdk/2.0/references/python/iota_sdk/utils/#account_id_to_bech32)
+[`Utils.account_id_to_bech32()`](../../references/python/iota_sdk/utils.md#account_id_to_bech32)
 function.
 
 <div className={'hide-code-block-extras'}>
@@ -126,7 +126,7 @@ https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/python/examples/how_tos
 
 </div>
 
-4. Request funds from the faucet by calling the [`Client.request_funds_from_faucet()`](http://localhost:3000/iota-sdk/2.0/references/python/iota_sdk/client/_utils/#request_funds_from_faucet)
+4. Request funds from the faucet by calling the [`Client.request_funds_from_faucet()`](../../references/python/iota_sdk/client/_utils.md#request_funds_from_faucet)
 function.
 
 <div className={'hide-code-block-extras'}>

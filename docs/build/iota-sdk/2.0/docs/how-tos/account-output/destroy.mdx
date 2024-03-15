@@ -20,10 +20,10 @@ import TabItem from '@theme/TabItem';
 <Tabs groupId="language" queryString>
 <TabItem value="rust" label="Rust">
 
-1. Instantiate a [Wallet](file:///home/lucas/Documents/IOTA/iota-sdk/target/doc/iota_sdk/wallet/core/struct.Wallet.html) and [sync it](../wallet/check-balance.mdx).
-2. Retrieve the first [`AccountId`](file:///home/lucas/Documents/IOTA/iota-sdk/target/doc/iota_sdk/types/block/output/account/struct.AccountId.html) from the
-[`Balance`](file:///home/lucas/Documents/IOTA/iota-sdk/target/doc/iota_sdk/wallet/types/struct.Balance.html) by calling
-the [`Balance.accounts()`](file:///home/lucas/Documents/IOTA/iota-sdk/target/doc/iota_sdk/wallet/types/struct.Balance.html#method.accounts) function.
+1. Instantiate a [Wallet]((https://docs.rs/iota-sdk/latest/iota_sdk/wallet/core/struct.Wallet.html) and [sync it](../wallet/check-balance.mdx).
+2. Retrieve the first [`AccountId`]((https://docs.rs/iota-sdk/latest/iota_sdk/types/block/output/account/struct.AccountId.html) from the
+[`Balance`]((https://docs.rs/iota-sdk/latest/iota_sdk/wallet/types/struct.Balance.html) by calling
+the [`Balance.accounts()`]((https://docs.rs/iota-sdk/latest/iota_sdk/wallet/types/struct.Balance.html#method.accounts) function.
 
 <div className={'hide-code-block-extras'}>
 
@@ -33,7 +33,7 @@ https://github.com/iotaledger/iota-sdk/blob/2.0/sdk/examples/how_tos/account_out
 
 </div>
 
-3. Destroy it by calling the [`Wallet.burn()`](file:///home/lucas/Documents/IOTA/iota-sdk/target/doc/iota_sdk/wallet/core/struct.Wallet.html#method.burn)
+3. Destroy it by calling the [`Wallet.burn()`]((https://docs.rs/iota-sdk/latest/iota_sdk/wallet/core/struct.Wallet.html#method.burn)
     function and passing the `AccountId` as a param.
 
 <div className={'hide-code-block-extras'}>
@@ -44,7 +44,7 @@ https://github.com/iotaledger/iota-sdk/blob/2.0/sdk/examples/how_tos/account_out
 
 </div>
 
-4. Await for the transaction to be accepted by the network by calling the [`Wallet.wait_for_transaction_acceptance()`](file:///home/lucas/Documents/IOTA/iota-sdk/target/doc/iota_sdk/wallet/core/struct.Wallet.html#method.wait_for_transaction_acceptance) function.
+4. Await for the transaction to be accepted by the network by calling the [`Wallet.wait_for_transaction_acceptance()`]((https://docs.rs/iota-sdk/latest/iota_sdk/wallet/core/struct.Wallet.html#method.wait_for_transaction_acceptance) function.
 
 <div className={'hide-code-block-extras'}>
 
@@ -56,10 +56,10 @@ https://github.com/iotaledger/iota-sdk/blob/2.0/sdk/examples/how_tos/account_out
 </TabItem>
 <TabItem value="typescript-node" label="Typescript (Node.js)">
 
-1. Instantiate a [`Wallet`](http://localhost:3000/iota-sdk/2.0/references/nodejs/classes/Wallet) and [sync it](../wallet/check-balance.mdx).
-2. Retrieve the first [`AccountOutput`](http://localhost:3000/iota-sdk/2.0/references/nodejs/classes/AccountOutput/) from the
-[`Balance`](http://localhost:3000/iota-sdk/2.0/references/nodejs/interfaces/Balance/) by accessing
-the [`Balance.accounts](http://localhost:3000/iota-sdk/2.0/references/nodejs/interfaces/Balance/#accounts) property.
+1. Instantiate a [`Wallet`](../../references/nodejs/classes/Wallet.md) and [sync it](../wallet/check-balance.mdx).
+2. Retrieve the first [`AccountOutput`](../../references/nodejs/classes/AccountOutput.md) from the
+[`Balance`](../../references/nodejs/interfaces/Balance.md) by accessing
+the [`Balance.accounts](../../references/nodejs/interfaces/Balance.md#accounts) property.
 
 <div className={'hide-code-block-extras'}>
 
@@ -69,8 +69,8 @@ https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/nodejs/examples/how_tos
 
 </div>
 
-3. Prepare the transaction that will destroy it by calling the [`Wallet.prepareDestroyAccount()`](http://localhost:3000/iota-sdk/2.0/references/nodejs/classes/Wallet/#preparedestroyaccount)
-    function, and send the prepared transaction by calling to [`PreparedTransaction.send()`](http://localhost:3000/iota-sdk/2.0/references/nodejs/classes/PreparedTransaction/#send).
+3. Prepare the transaction that will destroy it by calling the [`Wallet.prepareDestroyAccount()`](../../references/nodejs/classes/Wallet.md#preparedestroyaccount)
+    function, and send the prepared transaction by calling to [`PreparedTransaction.send()`](../../references/nodejs/classes/PreparedTransaction.md#send).
 
 <div className={'hide-code-block-extras'}>
 
@@ -95,9 +95,9 @@ https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/nodejs/examples/how_tos
 </TabItem>
 <TabItem value="python" label="Python">
 
-1. Instantiate a [`Wallet`](http://localhost:3000/iota-sdk/2.0/references/python/iota_sdk/wallet/) and [sync it](../wallet/check-balance.mdx).
-2. Retrieve the first [`AccountOutput`](http://localhost:3000/iota-sdk/2.0/references/python/iota_sdk/types/output/#accountoutput-objects) from the
-[`Balance`](http://localhost:3000/iota-sdk/2.0/references/python/iota_sdk/types/balance/) by accessing
+1. Instantiate a [`Wallet`](../../references/python/iota_sdk/wallet/wallet.md) and [sync it](../wallet/check-balance.mdx).
+2. Retrieve the first [`AccountOutput`](../../references/python/iota_sdk/types/output.md#accountoutput-objects) from the
+[`Balance`](../../references/python/iota_sdk/types/balance.md) by accessing
 the `Balance.accounts` attribute.
 
 <div className={'hide-code-block-extras'}>
@@ -108,8 +108,8 @@ https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/python/examples/how_tos
 
 </div>
 
-3. Prepare the transaction that will destroy it by calling the [`Wallet.prepare_destroy_account()`](http://localhost:3000/iota-sdk/2.0/references/python/iota_sdk/wallet/#prepare_destroy_account)
-    function, and send the prepared transaction by calling to [`PreparedTransaction.send()`](http://localhost:3000/iota-sdk/2.0/references/python/iota_sdk/wallet/prepared_transaction/#send).
+3. Prepare the transaction that will destroy it by calling the [`Wallet.prepare_destroy_account()`](../../references/python/iota_sdk/wallet/wallet.md#prepare_destroy_account)
+    function, and send the prepared transaction by calling to [`PreparedTransaction.send()`](../../references/python/iota_sdk/wallet/prepared_transaction.md#send).
 
 
 <div className={'hide-code-block-extras'}>

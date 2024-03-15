@@ -27,7 +27,7 @@ using the `request_funds_from_faucet` function.
 <Tabs groupId="language" queryString>
 <TabItem value="rust" label="Rust">
 
-1. Instantiate a [`Wallet`](file:///home/lucas/Documents/IOTA/iota-sdk/target/doc/iota_sdk/wallet/core/struct.Wallet.html) and [sync it](../wallet/check-balance.mdx).
+1. Instantiate a [`Wallet`]((https://docs.rs/iota-sdk/latest/iota_sdk/wallet/core/struct.Wallet.html) and [sync it](../wallet/check-balance.mdx).
 
 <div className={'hide-code-block-extras'}>
 
@@ -37,8 +37,8 @@ https://github.com/iotaledger/iota-sdk/blob/2.0/sdk/examples/how_tos/simple_tran
 
 </div>
 
-2. Get the wallet's [`Bech32Address`](file:///home/lucas/Documents/IOTA/iota-sdk/target/doc/iota_sdk/types/block/address/bech32/struct.Bech32Address.html)
- by calling the [`Wallet.address()`](file:///home/lucas/Documents/IOTA/iota-sdk/target/doc/iota_sdk/wallet/core/struct.Wallet.html#method.address)
+2. Get the wallet's [`Bech32Address`]((https://docs.rs/iota-sdk/latest/iota_sdk/types/block/address/bech32/struct.Bech32Address.html)
+ by calling the [`Wallet.address()`]((https://docs.rs/iota-sdk/latest/iota_sdk/wallet/core/struct.Wallet.html#method.address)
 function.
 
 <div className={'hide-code-block-extras'}>
@@ -49,7 +49,7 @@ https://github.com/iotaledger/iota-sdk/blob/2.0/sdk/examples/how_tos/simple_tran
 
 </div>
 
-3. Request funds to the `FAUCET_URL` you defined in the `.env` file by calling the [`Client::utils::request_funds_from_faucet`](file:///home/lucas/Documents/IOTA/iota-sdk/target/doc/iota_sdk/client/utils/fn.request_funds_from_faucet.html) function.
+3. Request funds to the `FAUCET_URL` you defined in the `.env` file by calling the [`Client::utils::request_funds_from_faucet`]((https://docs.rs/iota-sdk/latest/iota_sdk/client/utils/fn.request_funds_from_faucet.html) function.
 
 <div className={'hide-code-block-extras'}>
 
@@ -64,7 +64,7 @@ https://github.com/iotaledger/iota-sdk/blob/2.0/sdk/examples/how_tos/simple_tran
 
 The following example will:
 
-1. Instantiate a [`Wallet`](http://localhost:3000/iota-sdk/2.0/references/nodejs/classes/Wallet/).
+1. Instantiate a [`Wallet`](../../references/nodejs/classes/Wallet.md).
 
 <div className={'hide-code-block-extras'}>
 
@@ -74,7 +74,7 @@ https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/nodejs/examples/how_tos
 
 </div>
 
-2. Retrieve the wallet's [`Address`](http://localhost:3000/iota-sdk/2.0/references/nodejs/classes/Address/) by calling the
+2. Retrieve the wallet's [`Address`](../../references/nodejs/classes/Address.md by calling the
    [`Wallet.address()`](../../references/nodejs/classes/Wallet.md#address) function.
 
 <div className={'hide-code-block-extras'}>
@@ -85,7 +85,7 @@ https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/nodejs/examples/how_tos
 
 </div>
 
-3. Instantiate a [`Client`](http://localhost:3000/iota-sdk/2.0/references/nodejs/classes/Client/) by calling the [`wallet.getClient()`](http://localhost:3000/iota-sdk/2.0/references/nodejs/classes/Wallet/#getclient) function.
+3. Instantiate a [`Client`](../../references/nodejs/classes/Client.md) by calling the [`wallet.getClient()`](../../references/nodejs/classes/Wallet.md#getclient) function.
 
 <div className={'hide-code-block-extras'}>
 
@@ -108,7 +108,7 @@ https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/nodejs/examples/how_tos
 </TabItem>
 <TabItem value="python" label="Python">
 
-1. Instantiate a [`Wallet`](http://localhost:3000/iota-sdk/2.0/references/python/iota_sdk/wallet/).
+1. Instantiate a [`Wallet`](../../references/python/iota_sdk/wallet/wallet.md).
 
 <div className={'hide-code-block-extras'}>
 
@@ -118,8 +118,8 @@ https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/python/examples/how_tos
 
 </div>
 
-2. Retrieve the wallet's [`Address`](http://localhost:3000/iota-sdk/2.0/references/python/iota_sdk/types/address/) by calling the
-[`Wallet.address()`](http://localhost:3000/iota-sdk/2.0/references/python/iota_sdk/wallet/#address) function.
+2. Retrieve the wallet's [`Address`](../../references/python/iota_sdk/types/address.md) by calling the
+[`Wallet.address()`](../../references/python/iota_sdk/wallet/wallet.md#address) function.
 
 <div className={'hide-code-block-extras'}>
 
@@ -129,8 +129,8 @@ https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/python/examples/how_tos
 
 </div>
 
-3. Instantiate a [`Client`](http://localhost:3000/iota-sdk/2.0/references/python/iota_sdk/client/) by calling the [`Wallet.get_client()`](http://localhost:3000/iota-sdk/2.0/references/python/iota_sdk/wallet/#get_client) function
-    and request funds to the `FAUCET_URL` you defined in the `.env` file by calling the [`Client.request_funds_from_faucet`](http://localhost:3000/iota-sdk/2.0/references/python/iota_sdk/client/_utils/#request_funds_from_faucet)
+3. Instantiate a [`Client`](../../references/python/iota_sdk/client.md by calling the [`Wallet.get_client()`](../../references/python/iota_sdk/wallet/wallet.md#get_client) function
+    and request funds to the `FAUCET_URL` you defined in the `.env` file by calling the [`Client.request_funds_from_faucet`](../../references/python/iota_sdk/client/_utils.md#request_funds_from_faucet)
    function.
 
 <div className={'hide-code-block-extras'}>
