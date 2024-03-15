@@ -18,7 +18,7 @@ The magic contract provides you with a solidity interface to the core contracts.
 
 :::info WASM
 
-You can also use call and callView to interact with WASM contracts
+You can also use `call` and `callView` to interact with WASM contracts.
 
 :::
 
@@ -30,7 +30,7 @@ You can also use call and callView to interact with WASM contracts
 ISCAgentID memory agentID = ISC.sandbox.getSenderAccount();
 ```
 
-2. Initialize the parameters for the call by creating a new [`ISCDict`](../../reference/magic-contract/ISCTypes.md#iscdict). As you can see in the docs, [`getl2balancenativetokens`](../../reference/magic-contract/ISCAccounts.md#getl2balancenativetokens) takes two parameters. The Agent ID and the native token ID. So we have to create a dictionary with two key-value pairs. The key of the first pair(Agent ID) has to be `a` and the key for the second pair(native token ID) `N`.
+2. Initialize the parameters for the call by creating a new [`ISCDict`](../../reference/magic-contract/ISCTypes.md#iscdict). As you can see in the docs, [`getl2balancenativetokens`](../../reference/magic-contract/ISCAccounts.md#getl2balancenativetokens) takes two parameters.: the Agent ID and the native token ID. So, you have to create a dictionary with two key-value pairs. The key of the first pair (Agent ID) has to be `a` and the key for the second pair (native token ID) `N`.
 
 ```solidity
 ISCDict memory params = ISCDict(new ISCDictItem[](2));
@@ -38,7 +38,7 @@ params.items[0] = ISCDictItem("a", agentID.data);
 params.items[1] = ISCDictItem("N", nativeTokenID);
 ```
 
-3. Now we can use [`callView`](../../reference/magic-contract/ISCSandbox.md#callview) to call our contract. The first parameter is the core contract hname which we can get with the helper utility [`hn`](../../reference/magic-contract/ISCUtil.md#hn) and the second parameter is the function we want to call. The last parameter is the dictionary with all function parameters
+3. Now, you can use [`callView`](../../reference/magic-contract/ISCSandbox.md#callview) to call our contract. The first parameter is the core contract `hname`, which we can get with the helper utility [`hn`](../../reference/magic-contract/ISCUtil.md#hn), and the second parameter is the function we want to call. The last parameter is the dictionary with all function parameters.
 
 ```solidity
 ISCDict memory result = ISC.sandbox.callView(
@@ -48,7 +48,7 @@ ISCDict memory result = ISC.sandbox.callView(
 );
 ```
 
-4. Now we can either return or emit the result
+4. Next, you can either return or emit the result.
 
 ```solidity
 emit NativeTokenBalance(bytesToUint(result.items[0].value));
@@ -56,7 +56,7 @@ emit NativeTokenBalance(bytesToUint(result.items[0].value));
 
 :::info Return Dictionary
 
-Keep in mind that the call and callView functions will always retun a dictionary. And the values of these dictionary are always of type byte, so you need to take care of converting it yourself
+Keep in mind that the call and callView functions will always return a dictionary. The values of this dictionary are always of type byte, so you need to take care of converting it yourself.
 
 :::
 
