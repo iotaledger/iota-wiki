@@ -1,0 +1,12 @@
+Accounts BEFORE:
+[
+'0x851a1b57755a2c36c3f27600627fcec76a06d3b4b9ae95c9afd43d6f1c7b4674'
+]
+Sending the create-account transaction...
+Transaction sent: 0xf140163fc5ee0ad56456d35c5cbdc094716a5c3cab3e11de1d9ca6c7f79a592ffcbb0100
+Tx accepted in block: https://explorer.shimmer.network/alphanet/block/0x0c8283a6e7b8db217c279f59e825a025b922df7d1aa7e1d769fc0ebfc66e51a3fcbb0100
+Accounts AFTER:
+[
+'0x851a1b57755a2c36c3f27600627fcec76a06d3b4b9ae95c9afd43d6f1c7b4674',
+'0xd54b5d02ee7234c25cdeb476d4c34e7f77ab233781f8e3a12f7fee283a86c762'
+]

@@ -1,0 +1,152 @@
+---
+title: Get Node Information
+description: Sometimes it's needed to get certain info from the Node to determine for example if the node is synced or which features it has enabled. You can get this info from a Client instance.
+image: /img/logo/iota_mark_light.png
+tags:
+  - how to
+  - client
+  - load balancer
+  - node info
+  - nodejs
+  - python
+  - rust
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import AccountClient from '../../_admonitions/_account-client.md';
+import OutputNode from '../../_partials/_how-tos/client/get-info/node.md'
+import OutputRust from '../../_partials/_how-tos/client/get-info/rust.md'
+import OutputPython from '../../_partials/_how-tos/client/get-info/python.md'
+
+Obtaining a node's information allows you to gather important details about the node's current status and capabilities.
+By checking if a node is synced, you can ensure it has successfully synchronized with the network's latest state,
+providing accurate and up-to-date information.
+
+Additionally, knowing which features are enabled on a node helps you understand its functionalities and capabilities,
+allowing you to make informed decisions on interacting with the node and utilizing its specific features.
+
+<AccountClient />
+
+## Example Code
+
+<Tabs groupId="language" queryString>
+<TabItem value="rust" label="Rust">
+
+1. Create a [`Client`](https://docs.rs/iota-sdk/latest/iota_sdk/client/core/struct.Client.html) that will connect to the
+   node defined in your `.env` file's `NODE_URL` variable.
+
+<div className={'hide-code-block-extras'}>
+
+```rust reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/sdk/examples/how_tos/client/get_info.rs#L19-L28
+```
+
+</div>
+
+2. Use the created client to get the information of the specified url using the
+   [`Client.get_node_info()`](https://docs.rs/iota-sdk/latest/iota_sdk/client/core/struct.Client.html#method.get_node_info)
+   function.
+
+<div className={'hide-code-block-extras'}>
+
+```rust reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/sdk/examples/how_tos/client/get_info.rs#L31
+```
+
+</div>
+
+</TabItem>
+<TabItem value="typescript-node" label="Typescript (Node.js)">
+
+1. Create a [`Client`](../../references/nodejs/classes/Client.md) that will connect to the
+   node defined in your `.env` file's `NODE_URL` variable.
+
+<div className={'hide-code-block-extras'}>
+
+```typescript reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/nodejs/examples/how_tos/client/get-info.ts#L13-L22
+```
+
+</div>
+
+2. Use the created client to get the information of the specified url using the
+   [`Client.getNodeInfo()`](../../references/nodejs/classes/Client.md#getnodeinfo)
+   function.
+
+<div className={'hide-code-block-extras'}>
+
+```typescript reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/nodejs/examples/how_tos/client/get-info.ts#L25
+```
+
+</div>
+
+</TabItem>
+<TabItem value="python" label="Python">
+
+1. Create a [`Client`](../../references/python/iota_sdk/client/client.md) that will connect to the
+   node defined in your `.env` file's `NODE_URL` variable.
+
+<div className={'hide-code-block-extras'}>
+
+```python reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/python/examples/how_tos/client/get_info.py#L10-L13
+```
+
+</div>
+
+2. Use the created client to get the information of the specified url using the
+   [`Client.get_node_info()`](../../references/python/iota_sdk/client/_node_core_api.md#get_node_info)
+   function.
+
+<div className={'hide-code-block-extras'}>
+
+```python reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/python/examples/how_tos/client/get_info.py#L16
+```
+
+</div>
+
+</TabItem>
+</Tabs>
+
+## Full Example Code
+
+<Tabs groupId="language" queryString>
+<TabItem value="rust" label="Rust">
+
+```rust reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/sdk/examples/how_tos/client/get_info.rs
+```
+
+</TabItem>
+<TabItem value="typescript-node" label="Typescript (Node.js)">
+
+```typescript reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/nodejs/examples/how_tos/client/get-info.ts
+```
+
+</TabItem>
+<TabItem value="python" label="Python">
+
+```python reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/python/examples/how_tos/client/get_info.py
+```
+
+</TabItem>
+</Tabs>
+
+### Expected Output
+
+<Tabs groupId="language" queryString>
+<TabItem value="rust" label="Rust">
+<OutputRust />
+</TabItem>
+<TabItem value="typescript-node" label="Typescript (Node.js)">
+<OutputNode />
+</TabItem>
+<TabItem value="python" label="Python">
+<OutputPython />
+</TabItem>
+</Tabs>

@@ -1,0 +1,270 @@
+---
+description: 'Learn how to request funds from the faucet to an account output.'
+image: /img/logo/iota_mark_light.png
+tags:
+  - how to
+  - wallet
+  - send funds
+  - account output
+  - nodejs
+  - python
+  - rust
+---
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Send Funds From an Account Ouput
+
+## Example Code
+
+<Tabs groupId="language" queryString>
+<TabItem value="rust" label="Rust">
+
+1. Define the [`SyncOptions`]((https://docs.rs/iota-sdk/latest/iota_sdk/wallet/struct.SyncOptions.html)
+    to fetch [`BasicOutputs`]((https://docs.rs/iota-sdk/latest/iota_sdk/types/block/output/basic/struct.BasicOutput.html)
+    for [`AccountOutputs`]((https://docs.rs/iota-sdk/latest/iota_sdk/types/block/output/account/struct.AccountOutput.html)
+    by setting the `basic_outputs` field to `true` in the [`AccountSyncOptions`]((https://docs.rs/iota-sdk/latest/iota_sdk/wallet/struct.AccountSyncOptions.html).
+
+<div className={'hide-code-block-extras'}>
+
+```rust reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/sdk/examples/how_tos/account_output/send_amount.rs#L25-L31
+```
+
+</div>
+
+2. Instantiate a [Wallet]((https://docs.rs/iota-sdk/latest/iota_sdk/wallet/core/struct.Wallet.html) and [sync it](../wallet/check-balance.mdx).
+3. Retrieve the first [`AccountId`]((https://docs.rs/iota-sdk/latest/iota_sdk/types/block/output/account/struct.AccountId.html) from the
+[`Balance`]((https://docs.rs/iota-sdk/latest/iota_sdk/wallet/types/struct.Balance.html) by calling
+the [`Balance.accounts()`]((https://docs.rs/iota-sdk/latest/iota_sdk/wallet/types/struct.Balance.html#method.accounts) function.
+
+<div className={'hide-code-block-extras'}>
+
+```rust reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/sdk/examples/how_tos/account_output/send_amount.rs#L47
+```
+
+</div>
+
+4. Get the [`AccountAddress`]((https://docs.rs/iota-sdk/latest/iota_sdk/types/block/address/struct.AccountAddress.html)
+    for the `AccountId` that was retrieved in step 3, and transform it to Bech32 using the
+    [`AccountAddress.toBech32()`]((https://docs.rs/iota-sdk/latest/iota_sdk/types/block/address/account/struct.AccountAddress.html#method.to_bech32)
+    function.
+
+<div className={'hide-code-block-extras'}>
+
+```rust reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/sdk/examples/how_tos/account_output/send_amount.rs#L51
+```
+
+</div>
+
+5. Define the [Transaction inputs]((https://docs.rs/iota-sdk/latest/iota_sdk/types/block/payload/signed_transaction/struct.Transaction.html#structfield.inputs)
+    as the first `Output` that can be unlocked by the `AccountAddress`.
+
+<div className={'hide-code-block-extras'}>
+
+```rust reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/sdk/examples/how_tos/account_output/send_amount.rs#L54-L62
+```
+
+</div>
+
+6. Use the [`Wallet.send()`]((https://docs.rs/iota-sdk/latest/iota_sdk/wallet/core/struct.Wallet.html#method.send)
+    function passing the inputs defined in step 4 in the  [`TransactionOptions`]((https://docs.rs/iota-sdk/latest/iota_sdk/wallet/struct.TransactionOptions.html).
+
+<div className={'hide-code-block-extras'}>
+
+```rust reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/sdk/examples/how_tos/account_output/send_amount.rs#L64-L73
+```
+
+</div>
+
+7. Await for the transaction to be accepted by the network by calling the [`Wallet.wait_for_transaction_acceptance()`]((https://docs.rs/iota-sdk/latest/iota_sdk/wallet/core/struct.Wallet.html#method.wait_for_transaction_acceptance) function.
+
+<div className={'hide-code-block-extras'}>
+
+```rust reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/sdk/examples/how_tos/account_output/send_amount.rs#L74-L76
+```
+
+</div>
+</TabItem>
+<TabItem value="typescript-node" label="Typescript (Node.js)">
+
+1. Define the [`SyncOptions`](../../references/nodejs/interfaces/SyncOptions.md)
+    to fetch [`BasicOutputs`](../../references/nodejs/classes/BasicOutput.md)
+    for [`AccountOutputs`](../../references/nodejs/classes/AccountOutput.md)
+    by setting the `basic_outputs` field to `true` in the [`AccountSyncOptions`](../../references/nodejs/interfaces/AccountSyncOptions.md).
+
+<div className={'hide-code-block-extras'}>
+
+```typescript reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/nodejs/examples/how_tos/account_output/send-amount.ts#L28-L32
+```
+
+</div>
+
+2. Instantiate a [`Wallet`](../../references/nodejs/classes/Wallet.md) and [sync it](../wallet/check-balance.mdx).
+3. Retrieve the first [`AccountOutput`](../../references/nodejs/classes/AccountOutput.md) from the
+    [`Balance`](../../references/nodejs/interfaces/Balance.md) by accessing
+    the [`Balance.accounts](../../references/nodejs/interfaces/Balance.md#accounts) property.
+
+<div className={'hide-code-block-extras'}>
+
+```typescript reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/nodejs/examples/how_tos/account_output/send-amount.ts#L49
+```
+
+</div>
+
+4. Get the [`AccountAddress`](../../references/nodejs/classes/AccountAddress.md)
+for the `AccountId` that was retrieved in step 2, and transform it to Bech32 using the
+[`Utils.accountIdToBech32()`](../../references/nodejs/classes/Utils.md#accountidtobech32)
+function.
+
+<div className={'hide-code-block-extras'}>
+
+```typescript reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/nodejs/examples/how_tos/account_output/send-amount.ts#L55-L58
+```
+
+</div>
+
+5. Define the [Transaction inputs](../../references/nodejs/classes/Transaction.md#inputs)
+    as the first `Output` that can be unlocked by the `AccountAddress`.
+
+<div className={'hide-code-block-extras'}>
+
+```typescript reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/nodejs/examples/how_tos/account_output/send-amount.ts#L61-L64
+```
+
+</div>
+
+6. Use the [`Wallet.sendWithParams()`](../../references/nodejs/classes/Wallet.md#sendwithparams)
+    function passing the inputs defined in step 5 in the [`TransactionOptions`](../../references/nodejs/interfaces/TransactionOptions.md).
+
+<div className={'hide-code-block-extras'}>
+
+```typescript reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/nodejs/examples/how_tos/account_output/send-amount.ts#L66-L77
+```
+
+</div>
+
+7. Await for the [`Transaction`](../../references/nodejs/classes/Transaction.md) to get confirmed by calling the
+    [`Wallet.waitForTransactionAcceptance()`](../../references/nodejs/classes/Wallet.md#waitfortransactionacceptance)
+    function.
+
+<div className={'hide-code-block-extras'}>
+
+```typescript reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/nodejs/examples/how_tos/account_output/send-amount.ts#L78
+```
+
+</div>
+</TabItem>
+<TabItem value="python" label="Python">
+
+
+1. Define the [`SyncOptions`](../../references/python/iota_sdk/wallet/sync_options.md#syncoptions-objects)
+to fetch [`BasicOutputs`](../../references/python/iota_sdk/types/output.md#basicoutput-objects)
+for [`AccountOutputs`](../../references/nodejs/classes/AccountOutput.md)
+by setting the `basic_outputs` field to `true` in the [`WalletSyncOptions`](../../references/python/iota_sdk/wallet/sync_options.md#walletsyncoptions-objects).
+
+<div className={'hide-code-block-extras'}>
+
+```python reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/python/examples/how_tos/account_output/send_amount.py#L18
+```
+
+</div>
+
+2. Instantiate a [`Wallet`](../../references/python/iota_sdk/wallet/wallet.md) and [sync it](../wallet/check-balance.mdx).
+3. Retrieve the first [`AccountOutput`](../../references/python/iota_sdk/types/output.md#accountoutput-objects) from the
+    [`Balance`](../../references/python/iota_sdk/types/balance.md) by accessing
+    the [`Balance.accounts](../../references/python/iota_sdk/types/balance.md#balance-objects) attribute.
+
+<div className={'hide-code-block-extras'}>
+
+```python reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/python/examples/how_tos/account_output/send_amount.py#L25
+```
+
+</div>
+
+4. Get the [`AccountAddress`](../../references/python/iota_sdk/types/address.md#accountaddress-objects)
+    for the `AccountId` that was retrieved in step 3, and transform it to Bech32 using the
+    [`Utils.account_id_to_bech32()`](../../references/python/iota_sdk/utils.md#account_id_to_bech32)
+    function.
+
+<div className={'hide-code-block-extras'}>
+
+```python reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/python/examples/how_tos/account_output/send_amount.py#L29-L30
+```
+
+</div>
+
+5. Define the [Transaction inputs](../../references/python/iota_sdk/types/input.md)
+as the first `Output` that can be unlocked by the `AccountAddress`.
+
+<div className={'hide-code-block-extras'}>
+
+```python reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/python/examples/how_tos/account_output/send_amount.py#L33-L35
+```
+
+</div>
+
+6. Use the [`Wallet.send_with_params()`](../../references/python/iota_sdk/wallet/wallet.md#send_with_params)
+function passing the inputs defined in step 5 in the [`TransactionOptions`](../../references/python/iota_sdk/types/transaction_options.md).
+
+<div className={'hide-code-block-extras'}>
+
+```typescript reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/python/examples/how_tos/account_output/send_amount.py#L37-L44
+```
+
+</div>
+
+7. Await for the transaction to get accepted by calling the [`Wallet.wait_for_transaction_acceptance()`](../../references/python/iota_sdk/wallet/wallet.md#wait_for_transaction_acceptance)
+    function.
+
+<div className={'hide-code-block-extras'}>
+
+```python reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/python/examples/how_tos/account_output/send_amount.py#L45-L46
+```
+
+</div>
+</TabItem>
+</Tabs>
+
+### Full Example Code
+
+<Tabs groupId="language" queryString>
+<TabItem value="rust" label="Rust">
+
+```rust reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/sdk/examples/how_tos/account_output/send_amount.rs
+```
+
+</TabItem>
+<TabItem value="typescript-node" label="Typescript (Node.js)">
+
+```typescript reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/nodejs/examples/how_tos/account_output/send-amount.ts
+```
+
+</TabItem>
+<TabItem value="python" label="Python">
+
+```python reference
+https://github.com/iotaledger/iota-sdk/blob/2.0/bindings/python/examples/how_tos/account_output/send_amount.py
+```
+
+</TabItem>
+</Tabs>
