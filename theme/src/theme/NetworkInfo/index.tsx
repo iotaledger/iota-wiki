@@ -1,4 +1,5 @@
 import React from 'react';
+import { ChainId } from '../ChainId';
 
 function IOTA() {
   return (
@@ -100,7 +101,9 @@ function ShimmerEVM() {
         <tr>
           <td>Shimmer Token</td>
           <td>ISC / EVM</td>
-          <td>148</td>
+          <td>
+            <ChainId url='https://json-rpc.evm.shimmer.network' />
+          </td>
           <td>
             <a
               href='https://json-rpc.evm.shimmer.network'
@@ -217,7 +220,9 @@ function TestnetEVM() {
         <tr>
           <td>Testnet Tokens (no value)</td>
           <td>ISC / EVM</td>
-          <td>1073</td>
+          <td>
+            <ChainId url='https://json-rpc.evm.testnet.shimmer.network' />
+          </td>
           <td>
             <a
               href='https://json-rpc.evm.testnet.shimmer.network'

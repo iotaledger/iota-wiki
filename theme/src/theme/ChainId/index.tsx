@@ -1,3 +1,4 @@
+import React from 'react';
 import { useEffect, useState } from 'react';
 import { Web3 } from 'web3';
 
@@ -16,5 +17,5 @@ export function ChainId(props: ChainIdProps) {
       .catch((error) => setValue(`Error: ${error.message}`));
   }, []);
 
-  return value;
+  return <>{value}</>;
 }
