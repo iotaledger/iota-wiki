@@ -25,7 +25,27 @@ You can create a basic default configuration by running:
 wasp-cli init
 ```
 
-This command will create a configuration file named `wasp-cli.json` in the current directory.
+This command will create a configuration file named `wasp-cli.json` in `~/.wasp-cli/wasp-cli.json`.
+
+:::info Wallet Provider
+
+By default wasp-cli will store the seed in your OS keychain. You can change this behavior by running
+
+```shell
+wasp-cli wallet-provider (keychain, sdk_ledger, sdk_stronghold) [flags]
+```
+
+:::
+
+:::info Deprecated Seed storage
+
+If you use a version older then [1.0.3](https://github.com/iotaledger/wasp/releases/tag/v1.0.3-alpha.1) your seed is still stored as plain text. You can migrate to the keychain by using the following command:
+
+```shell
+wasp-cli wallet-migrate (keychain) [flags]
+```
+
+:::
 
 After this, you will need to tell the `wasp-cli` the location of the _Hornet node_ and the committee of Wasp nodes:
 
