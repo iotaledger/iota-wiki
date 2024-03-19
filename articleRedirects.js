@@ -399,10 +399,6 @@ exports.articleRedirects = [
     to: '/get-started/introduction/shimmer/shimmer-token',
   },
   {
-    from: '/shimmer/learn/smart-contracts/smart-contracts-chains',
-    to: '/learn/smart-contracts/isc-architecture',
-  },
-  {
     from: '/shimmer/learn/smart-contracts/smart-contracts-community-tutorials',
     to: '/learn/smart-contracts/introduction',
   },
@@ -460,7 +456,7 @@ exports.articleRedirects = [
   },
   {
     from: '/shimmer/smart-contracts/configuration',
-    to: '/wasp/configuration',
+    to: '/wasp/reference/configuration',
   },
   {
     from: '/shimmer/smart-contracts/contribute',
@@ -468,7 +464,7 @@ exports.articleRedirects = [
   },
   {
     from: '/shimmer/smart-contracts/metrics',
-    to: '/wasp/metrics',
+    to: '/wasp/reference/metrics',
   },
   {
     from: '/shimmer/learn/smart-contracts/introduction',

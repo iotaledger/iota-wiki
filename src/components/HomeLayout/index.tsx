@@ -183,7 +183,7 @@ export default function HomeLayout() {
                   smart contract chain using the IOTA Smart Contracts protocol.
                 </p>
                 <Link
-                  to='/wasp/running-a-node'
+                  to='/wasp/how-tos/running-a-node'
                   className='nodes__button button button--outline button--primary'
                 >
                   Run a smart contract node

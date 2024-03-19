@@ -50,5 +50,5 @@ The [IOTA Smart Contracts (ISC)](/learn/smart-contracts/introduction) bring scal
 contract functionality to the IOTA ecosystem. By anchoring multiple chains to the IOTA Tangle, ISC enables
 higher _throughput_ and lower fees than traditional single-chain solutions. Users have the freedom to create custom
 chains with control over gas fees and privacy settings, and the platform is virtual machine-agnostic, supporting both
-[Rust/Wasm](/wasp-wasm/introduction) and [Solidity/EVM](/wasp-evm/introduction)
+[Rust/Wasm](/isc/introduction) and [Solidity/EVM](/isc/introduction)
 smart contracts.

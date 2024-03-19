@@ -1,0 +1,54 @@
+---
+description: Networks and endpoints in the IOTA ecosystem.
+tags:
+  - mainnet
+  - shimmer
+  - devnet
+  - public testnet
+  - reference
+  - Endpoints
+---
+import { AddToMetaMaskButton, EVMNetworks } from '@theme/AddToMetaMaskButton';
+import { ChainId } from '@theme/ChainId';
+
+# Networks & Chains
+
+## ShimmerEVM
+
+[ShimmerEVM](https://explorer.evm.shimmer.network/) is the L2 EVM running on top of the Shimmer network.
+
+<AddToMetaMaskButton cfg={EVMNetworks['shimmerevm']} />
+
+| Base Token    | Protocol  | Chain ID                                              | RPC URL                                                                       | Explorer                             |
+|---------------|-----------|-------------------------------------------------------|-------------------------------------------------------------------------------|--------------------------------------|
+| Shimmer Token | ISC / EVM | <ChainId url='https://json-rpc.evm.shimmer.network'/> | https://json-rpc.evm.shimmer.network or wss://ws.json-rpc.evm.shimmer.network | https://explorer.evm.shimmer.network |
+
+## ShimmerEVM Testnet
+
+<AddToMetaMaskButton cfg={EVMNetworks['shimmerevm-testnet']} />
+
+[The ShimmerEVM Testnet](https://explorer.evm.testnet.shimmer.network/) runs as a layer 2 on top
+of the [Public Testnet](/build/networks-endpoints/#public-testnet). This network uses ISC to facilitate
+an Ethereum Virtual Machine and has an enshrined bridge to layer 1.
+
+:::info
+
+This network is subject to occasional resets (no data retention) which are usually announced with a one-week grace period.
+
+:::
+
+| Base Token                | Protocol  | Chain ID                                                      | RPC URL                                      | Faucet                                     | Explorer                                     |
+|---------------------------|-----------|---------------------------------------------------------------|----------------------------------------------|--------------------------------------------|----------------------------------------------|
+| Testnet Tokens (no value) | ISC / EVM | <ChainId url='https://json-rpc.evm.testnet.shimmer.network'/> | https://json-rpc.evm.testnet.shimmer.network | https://evm-faucet.testnet.shimmer.network | https://explorer.evm.testnet.shimmer.network |
+
+:::note
+
+The other values (network name and currency symbol) can be whatever value you like.
+
+:::
+
+## Core Contracts
+
+Both [ShimmerEVM](#shimmerEVM) and the [TestnetEVM](#testnetEVM) networks have 7
+[core contracts](../reference/core-contracts/overview.md) deployed, as well as the
+[Magic Contract](../reference/magic-contract.md).

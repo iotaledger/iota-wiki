@@ -1,0 +1,158 @@
+---
+description: 'Existing EVM tooling is compatible and can be used directly with an IOTA Smart Contracts chain running EVM.
+You can configure hardhat, metamask, remix, Ether.js and Web3.js among others.'
+image: /img/logo/WASP_logo_dark.png
+tags:
+
+- smart contracts
+- chain
+- EVM
+- Solidity
+- tooling
+- wasp-cli
+- hardhat
+- metamask
+- JSON-RPC
+- reference
+
+---
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import {AddToMetaMaskButton, EVMNetworks} from '@theme/AddToMetaMaskButton';
+import DeployAdmonition from '../_admonitions/_deploy_a_smart_contract.md';
+import { ChainId } from '@theme/ChainId';
+
+# Compatible Tools
+
+EVM on IOTA Smart Contracts has been integrated in a way that the existing EVM tooling is compatible and can be used
+directly with an IOTA Smart Contracts chain running EVM as long as you take a couple of things into account.
+
+## Tooling Considerations
+
+1. Please make sure you use the correct JSON-RPC endpoint URL in your tooling for your chain. If you're running your own chain, you can find the JSON-RPC
+endpoint URL in the Wasp dashboard (`[URL]/wasp/dashboard` when using `node-docker-setup`).
+2. Please ensure you use the correct `Chain ID` configured while starting the JSON-RPC service. If you did not explicitly define this while starting the service, the default Chain ID will be <ChainId url='https://json-rpc.evm.shimmer.network'/>
+for ShimmerEVM or <ChainId url='https://json-rpc.evm.testnet.shimmer.network' /> for the EVM Testnet.
+3. Fees are handled on the IOTA Smart Contracts chain level, not the EVM level. The chain will reject any requests with a different gas price than specified by the chain.
+
+:::caution
+
+Re-using an existing Chain ID is not recommended and can be a security risk. For production usage, register a unique Chain
+ID on [Chainlist](https://chainlist.org/) and use that instead of the default. **It is not possible to change the EVM
+chain ID after deployment.**
+
+:::
+
+## MetaMask
+
+[MetaMask](https://metamask.io/) is a popular EVM wallet which runs in a browser extension that allows you to
+interact with EVM chains and their applications (dApps).
+
+To use your EVM chain with MetaMask, simply open up MetaMask and click on the network drop-down list at the very top. At
+the bottom of this list, you will see the option `Add network`. On the new page you will see a list of popular network with the option `Add a network manually`.
+For example this would be the config to add the [ShimmerEVM](/build/networks-endpoints/#shimmerevm) and
+the [ShimmerEVM Testnet](/build/networks-endpoints/#shimmerevm-testnet):
+
+<Tabs>
+<TabItem value='testnet' label='Public Testnet'>
+<AddToMetaMaskButton cfg={EVMNetworks['shimmerevm-testnet']}/>
+
+- Network Name: `Public Testnet`
+- New RPC URL: `https://json-rpc.evm.testnet.shimmer.network/`
+- Chain ID: **<ChainId url='https://json-rpc.evm.testnet.shimmer.network'/>**
+- Currency Symbol: `SMR`
+- Block Explorer URL: `https://explorer.evm.testnet.shimmer.network/`
+
+</TabItem>
+<TabItem value='shimmerEVM' label='ShimmerEVM'>
+<AddToMetaMaskButton cfg={EVMNetworks['shimmerevm']}/>
+
+- Network Name: `ShimmerEVM`
+- New RPC URL: `https://json-rpc.evm.shimmer.network/`
+- Chain ID: **<ChainId url='https://json-rpc.evm.shimmer.network'/>**
+- Currency Symbol: `SMR`
+- Block Explorer URL: `https://explorer.evm.shimmer.network/`
+
+</TabItem>
+</Tabs>
+
+Ensure that your `RPC Url` and `Chain ID` are set correctly and match the dashboard values. The `Network Name` can be
+whatever you see fit. Click "Save" to add the [Public Testnet](/build/networks-endpoints/#public-testnet) to MetaMask.
+
+If you wish to use additional EVM chains with Metamask, you can add more Custom RPC networks, as long as they have a
+unique `Chain ID` and `RPC Url`. Once you have done this, you can start using MetaMask to manage your EVM wallet or
+issue/sign transactions with any dApp running on that network.
+
+### Remix
+
+If you also want to use the [Remix IDE](https://remix.ethereum.org/) to deploy any regular Solidity Smart Contract, you
+should set the environment as **Injected Provider - Metamask**, which should then connect with your MetaMask wallet.
+
+Click on the _Deploy & Run transactions_ button in the menu on the left and select `Injected Web3` from
+the `Environment` dropdown.
+
+![Select Injected Provider from the Environment dropdown](/img/evm/remix-injected-provider-metamask.png)
+
+<DeployAdmonition/>
+
+Metamask will ask to connect to Remix, and once connected, it will set the `Environment` to `Injected Web3` with
+the "Custom (<ChainId url='https://json-rpc.evm.shimmer.network'/>) network" or "Custom (<ChainId url='https://json-rpc.evm.testnet.shimmer.network'/>) network".
+
+![Environment will be set to Injected Web3](/img/evm/remix-injected-provider-set.png)]
+
+## Hardhat
+
+[Hardhat](https://hardhat.org/) is a command line toolbox that allows you to deploy, test, verify, and interact with
+Solidity smart contracts on an EVM chain. EVM chains running on IOTA Smart Contracts are compatible with Hardhat; simply
+make sure you add the correct network parameters to your `hardhat.config.js`, for example:
+
+<Tabs>
+<TabItem value='testnet' label='Public Testnet'>
+
+```javascript
+networks: {
+    'shimmerevm-testnet': {
+        url: 'https://json-rpc.evm.testnet.shimmer.network',
+        chainId: CHAIN_ID,
+        accounts: [YOUR PRIVATE KEY],
+    },
+},
+```
+***** Where `CHAIN_ID`= <ChainId url='https://json-rpc.evm.testnet.shimmer.network'/>
+
+</TabItem>
+<TabItem value='shimmerEVM' label='ShimmerEVM'>
+
+```javascript
+networks: {
+    'shimmerevm': {
+        url: 'https://json-rpc.evm.shimmer.network',
+        chainId: CHAIN_ID,
+        accounts: [YOUR PRIVATE KEY],
+    },
+},
+```
+***** Where `CHAIN_ID`= <ChainId url='https://json-rpc.evm.shimmer.network'/>
+
+</TabItem>
+</Tabs>
+
+<DeployAdmonition/>
+
+:::caution
+
+Currently, there is no validation service available for EVM/Solidity smart contracts on IOTA Smart Contracts, which is
+often offered through block explorer APIs.
+
+:::
+
+## Ethers.js/Web3.js
+
+If you input the correct configuration parameters for the JSON-RPC endpoint to talk
+to, [Ethers.js](https://docs.ethers.io/) and [Web3.js](https://web3js.readthedocs.io/) are also compatible with EVM
+chains on IOTA Smart Contracts. Alternatively, you can let both interact through MetaMask instead so that it uses the
+network configured in MetaMask. For more information on this, read their documentation.
+
+## Other Tooling
+
+Most tools available will be compatible if you enter the correct `Chain ID` and `RPC Url`.

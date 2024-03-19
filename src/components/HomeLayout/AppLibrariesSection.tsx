@@ -118,7 +118,7 @@ const LibrariesSection: FC = () => (
         </p>
         <div className='start-building__buttons'>
           <Link
-            to='/wasp-evm/introduction'
+            to='/isc/introduction'
             className='start-building__button button button--outline button--primary'
           >
             Learn about ISC
