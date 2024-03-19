@@ -25,7 +25,7 @@ You can create a basic default configuration by running:
 wasp-cli init
 ```
 
-This command will create a configuration file named `wasp-cli.json` in `~/.wasp-cli/wasp-cli.json`.
+This command will create a configuration file named `wasp-cli.json` in `~/.wasp-cli/wasp-cli.json` (you can change the default with the `-c, --config` flag).
 
 :::info Wallet Provider
 
