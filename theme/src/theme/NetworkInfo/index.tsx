@@ -1,6 +1,9 @@
 import React from 'react';
 import { ChainId } from '../ChainId';
 
+// TODO: Host network info in a top-level configuration file
+// and use it to generate these tables.
+
 function IOTA() {
   return (
     <table>
