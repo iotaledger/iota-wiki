@@ -1,5 +1,6 @@
 {
   "name": "@iota-wiki/plugin-tutorial",
+  "type": "module",
   "version": "1.0.6",
   "main": "dist/index.js",
   "types": "src/types.d.ts",
@@ -10,8 +11,8 @@
   },
   "packageManager": "yarn@3.2.2",
   "devDependencies": {
-    "@docusaurus/types": "3.0.0",
-    "typescript": "~5.2.2"
+    "@docusaurus/types": "3.1.1",
+    "typescript": "~5.4.3"
   },
   "files": [
     "dist",

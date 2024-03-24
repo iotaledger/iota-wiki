@@ -1,6 +1,6 @@
-const path = require('path');
-const defaultSettings = require('../common/defaultContentPlugin');
-const fs = require('fs');
+import path from 'path';
+import defaultSettings from '../common/defaultContentPlugin';
+import fs from 'fs';
 
 /**
  * Merges multiple configuration objects into one object.
@@ -146,7 +146,7 @@ function directoryExists(path) {
   }
 }
 
-module.exports = {
+export default {
   glob,
   merge,
   create_doc_plugin,

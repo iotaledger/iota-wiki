@@ -1,5 +1,6 @@
 {
   "name": "@iota-wiki/cli",
+  "type": "module",
   "description": "A command line utility to manage Wiki content and preview content locally.",
   "author": "IOTA community",
   "license": "MIT",
@@ -38,9 +39,9 @@
     "markdownlint-cli2": "^0.8.1",
     "node-html-parser": "^6.1.10",
     "prettier": "2.8.8",
-    "remark": "^14.0.2",
+    "remark": "^15.0.1",
     "remark-lint-no-dead-urls": "^1.1.0",
-    "unified-engine": "^10.1.0"
+    "unified-engine": "^11.2.0"
   },
   "devDependencies": {
     "@types/babel__generator": "^7",

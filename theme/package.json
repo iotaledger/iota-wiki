@@ -1,5 +1,6 @@
 {
   "name": "@iota-wiki/theme",
+  "type": "module",
   "version": "0.1.0",
   "description": "IOTA Wiki theme components",
   "main": "dist/index.js",
@@ -14,8 +15,8 @@
   },
   "dependencies": {
     "@artsy/to-title-case": "^1.1.0",
-    "@docusaurus/theme-classic": "3.0.0",
-    "@docusaurus/theme-common": "3.0.0",
+    "@docusaurus/theme-classic": "3.1.1",
+    "@docusaurus/theme-common": "3.1.1",
     "@iota-wiki/plugin-docs": "workspace:^",
     "@metamask/providers": "^10.2.1",
     "clsx": "^1.2.1",
@@ -24,13 +25,13 @@
     "web3": "^4.2.2"
   },
   "devDependencies": {
-    "@docusaurus/types": "3.0.0",
-    "@types/react": "18.2.71",
+    "@docusaurus/types": "3.2.0",
+    "@types/react": "^18.2.71",
     "copyfiles": "^2.4.1",
     "nodemon": "^2.0.16",
     "prettier": "^2.8.8",
     "react": "18.2.0",
-    "typescript": "~5.2.2"
+    "typescript": "^5.4.3"
   },
   "peerDependencies": {
     "react": "*"
