@@ -41,7 +41,7 @@
     "@iota-wiki/plugin-docs": "workspace:^",
     "@iota-wiki/plugin-tutorial": "workspace:^",
     "@iota-wiki/theme": "workspace:^",
-    "@mdx-js/react": "^1.6.21",
+    "@mdx-js/react": "^3.0.1",
     "@popperjs/core": "^2.11.5",
     "@saucelabs/theme-github-codeblock": "^0.2.3",
     "@svgr/webpack": "^5.5.0",

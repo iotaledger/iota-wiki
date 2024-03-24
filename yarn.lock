@@ -4175,7 +4175,7 @@ __metadata:
     "@iota-wiki/plugin-docs": "workspace:^"
     "@iota-wiki/plugin-tutorial": "workspace:^"
     "@iota-wiki/theme": "workspace:^"
-    "@mdx-js/react": ^1.6.21
+    "@mdx-js/react": ^3.0.1
     "@playwright/test": ^1.42.1
     "@popperjs/core": ^2.11.5
     "@saucelabs/theme-github-codeblock": ^0.2.3
@@ -4435,16 +4435,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@mdx-js/react@npm:^1.6.21":
-  version: 1.6.22
-  resolution: "@mdx-js/react@npm:1.6.22"
-  peerDependencies:
-    react: ^16.13.1 || ^17.0.0
-  checksum: bc84bd514bc127f898819a0c6f1a6915d9541011bd8aefa1fcc1c9bea8939f31051409e546bdec92babfa5b56092a16d05ef6d318304ac029299df5181dc94c8
-  languageName: node
-  linkType: hard
-
-"@mdx-js/react@npm:^3.0.0":
+"@mdx-js/react@npm:^3.0.0, @mdx-js/react@npm:^3.0.1":
   version: 3.0.1
   resolution: "@mdx-js/react@npm:3.0.1"
   dependencies:
