@@ -25,12 +25,12 @@
   },
   "devDependencies": {
     "@docusaurus/types": "3",
-    "@types/react": "18.2.51",
+    "@types/react": "^18.2.69",
     "copyfiles": "^2.4.1",
     "nodemon": "^2.0.16",
     "prettier": "^2.8.8",
     "react": "18.2.0",
-    "typescript": "^4.9"
+    "typescript": "^5.4.3"
   },
   "peerDependencies": {
     "react": "*"

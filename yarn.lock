@@ -3615,6 +3615,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@docusaurus/tsconfig@npm:^3.1.1":
+  version: 3.1.1
+  resolution: "@docusaurus/tsconfig@npm:3.1.1"
+  checksum: 042a03d5a282b314d3e923d3534b77dc5780e1fb3302a70a929e7e97677d2346e7e9f94452dd68f8d872eef1f02b640a686da43800e3cf0d66ee831acfad91ac
+  languageName: node
+  linkType: hard
+
 "@docusaurus/types@npm:2.4.3":
   version: 2.4.3
   resolution: "@docusaurus/types@npm:2.4.3"
@@ -4171,6 +4178,7 @@ __metadata:
     "@docusaurus/preset-classic": 3
     "@docusaurus/remark-plugin-npm2yarn": 3
     "@docusaurus/theme-common": 3
+    "@docusaurus/tsconfig": ^3.1.1
     "@iota-wiki/cli": "workspace:^"
     "@iota-wiki/plugin-docs": "workspace:^"
     "@iota-wiki/plugin-tutorial": "workspace:^"
@@ -4180,8 +4188,7 @@ __metadata:
     "@popperjs/core": ^2.11.5
     "@saucelabs/theme-github-codeblock": ^0.2.3
     "@svgr/webpack": ^5.5.0
-    "@tsconfig/docusaurus": ^1.0.6
-    "@types/react": 18.2.51
+    "@types/react": ^18.2.69
     "@types/react-dom": 18.2.14
     "@types/webpack-env": ^1.18.3
     "@typescript-eslint/eslint-plugin": ^5.62.0
@@ -4221,7 +4228,7 @@ __metadata:
     remark-math: ^3.0.1
     remark-remove-comments: ^0.2.0
     svgo: ^2.8.0
-    typescript: ^4.5.4
+    typescript: ^5.4.3
     url-loader: ^4.1.1
     utf-8-validate: ^6.0.3
     webpack: ^5.89.0
@@ -4236,7 +4243,7 @@ __metadata:
   dependencies:
     "@docusaurus/plugin-content-docs": 3
     "@docusaurus/types": 3
-    typescript: ^4.6.3
+    typescript: ^5.4.3
   languageName: unknown
   linkType: soft
 
@@ -4245,7 +4252,7 @@ __metadata:
   resolution: "@iota-wiki/plugin-tutorial@workspace:plugins/tutorial"
   dependencies:
     "@docusaurus/types": 3
-    typescript: ^4.6.3
+    typescript: ^5.4.3
   languageName: unknown
   linkType: soft
 
@@ -4259,7 +4266,7 @@ __metadata:
     "@docusaurus/types": 3
     "@iota-wiki/plugin-docs": "workspace:^"
     "@metamask/providers": ^10.2.1
-    "@types/react": 18.2.51
+    "@types/react": ^18.2.69
     clsx: ^1.2.1
     copyfiles: ^2.4.1
     html-react-parser: ^4.2.10
@@ -4267,7 +4274,7 @@ __metadata:
     prettier: ^2.8.8
     react: 18.2.0
     react-markdown: 6
-    typescript: ^4.9
+    typescript: ^5.4.3
     web3: ^4.2.2
   peerDependencies:
     react: "*"
@@ -6129,13 +6136,6 @@ __metadata:
   version: 0.2.0
   resolution: "@trysound/sax@npm:0.2.0"
   checksum: 11226c39b52b391719a2a92e10183e4260d9651f86edced166da1d95f39a0a1eaa470e44d14ac685ccd6d3df7e2002433782872c0feeb260d61e80f21250e65c
-  languageName: node
-  linkType: hard
-
-"@tsconfig/docusaurus@npm:^1.0.6":
-  version: 1.0.7
-  resolution: "@tsconfig/docusaurus@npm:1.0.7"
-  checksum: 8f5b14005d90b2008f10daf03a5edec86d2a7603e5641c579ea936a5c2d165a8c3007a72254fc4c2adb0554d73062f52bb97b30ff818f01c9215957822f3c4db
   languageName: node
   linkType: hard
 
@@ -22228,23 +22228,23 @@ plugin-image-zoom@flexanalytics/plugin-image-zoom:
   languageName: node
   linkType: hard
 
-"typescript@npm:^4.5.4, typescript@npm:^4.6.3, typescript@npm:^4.9":
-  version: 4.9.5
-  resolution: "typescript@npm:4.9.5"
+"typescript@npm:^5.4.3":
+  version: 5.4.3
+  resolution: "typescript@npm:5.4.3"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: ee000bc26848147ad423b581bd250075662a354d84f0e06eb76d3b892328d8d4440b7487b5a83e851b12b255f55d71835b008a66cbf8f255a11e4400159237db
+  checksum: d74d731527e35e64d8d2dcf2f897cf8cfbc3428be0ad7c48434218ba4ae41239f53be7c90714089db1068c05cae22436af2ecba71fd36ecc5e7a9118af060198
   languageName: node
   linkType: hard
 
-"typescript@patch:typescript@^4.5.4#~builtin<compat/typescript>, typescript@patch:typescript@^4.6.3#~builtin<compat/typescript>, typescript@patch:typescript@^4.9#~builtin<compat/typescript>":
-  version: 4.9.5
-  resolution: "typescript@patch:typescript@npm%3A4.9.5#~builtin<compat/typescript>::version=4.9.5&hash=bda367"
+"typescript@patch:typescript@^5.4.3#~builtin<compat/typescript>":
+  version: 5.4.3
+  resolution: "typescript@patch:typescript@npm%3A5.4.3#~builtin<compat/typescript>::version=5.4.3&hash=bda367"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: 2eee5c37cad4390385db5db5a8e81470e42e8f1401b0358d7390095d6f681b410f2c4a0c496c6ff9ebd775423c7785cdace7bcdad76c7bee283df3d9718c0f20
+  checksum: 3a62fe90aa79d68c9ce38ea5edb2957e62801c733b99f0e5a2b8b50922761f68f7d9a40d28c544b449866e81185cddb93cba2496d0ff3fa52ef5b1f8bcace38c
   languageName: node
   linkType: hard
 
