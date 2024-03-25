@@ -1,9 +1,6 @@
 import EVMCompatibility from '../_admonitions/_EVM_compatibility.md'
-import NetworkWarning from '../_admonitions/_network_warning.md'
 
 # Supported Virtual Machines & Languages
-
-<NetworkWarning/>
 
 The current release of IOTA Smart Contracts has support for [EVM/Solidity](#evmsolidity-based-smart-contracts) smart
 contracts, as well as experimental [Wasm](#wasm-vm-for-isc) smart contracts, providing compatibility with

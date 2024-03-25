@@ -11,12 +11,9 @@ tags:
   - explanation
 
 ---
-import NetworkWarning from './_admonitions/_network_warning.md'
 import OnOffLedgerRequest from './_partials/_on_off_ledger_request.md';
 
 # Introduction
-
-<NetworkWarning/>
 
 Smart contracts are deterministic applications that run on a distributed network with multiple
 [validators](explanations/validators.md) that execute and validate the same code.
