@@ -43,9 +43,14 @@ You can check the connection details in the [Networks & Endpoints section](/buil
 :::
 
 <Tabs>
-<TabItem value='testnet' label='ShimmerEVM Testnet'>
-<AddToMetaMaskButton cfg={EVMNetworks['shimmerevm-testnet']}/>
+<TabItem value='testnet' label='EVM Testnet'>
+<AddToMetaMaskButton cfg={EVMNetworks['evm-testnet']}/>
 </TabItem>
+
+<TabItem value='IOTAEVM' label='IOTA EVM'>
+<AddToMetaMaskButton cfg={EVMNetworks['iotaevm']}/>
+</TabItem>
+
 <TabItem value='shimmerEVM' label='Shimmer EVM'>
 <AddToMetaMaskButton cfg={EVMNetworks['shimmerevm']}/>
 </TabItem>
@@ -153,17 +158,31 @@ project. Here's a step-by-step guide:
 1. Add your preferred network parameters to the `hardhat.config.js`, for example:
 
 <Tabs>
-<TabItem value='testnet' label='ShimmerEVM Testnet'>
+<TabItem value='testnet' label='EVM Testnet'>
 
 ```javascript
 networks: {
-    'shimmerevm-testnet': {
+    'evm-testnet': {
         url: 'https://json-rpc.evm.testnet.shimmer.network',
         chainId:1073,
         accounts: ['YOUR PRIVATE KEY'],
     },
 }
 ```
+
+</TabItem>
+<TabItem value='iotaEVM' label='IOTA EVM'>
+
+```javascript
+networks: {
+  'iotaEVM': {
+    url: 'https://json-rpc.evm.iotaledger.net',
+    chainId: CHAIN_ID,
+    accounts: [YOUR PRIVATE KEY],
+  },
+},
+```
+***** Where `CHAIN_ID`= <ChainId url='https://json-rpc.evm.iotaledger.net'/>
 
 </TabItem>
 <TabItem value='shimmerEVM' label='Shimmer EVM'>
@@ -197,7 +216,7 @@ often offered through block explorer APIs.
 3. If you have no compilation errors, you can deploy your contract by running the following command:
 
    ```bash
-   npx hardhat run scripts/deploy.js --network shimmerevm-testnet
+   npx hardhat run scripts/deploy.js --network evm-testnet
    ```
 
    **Expected output**:
@@ -208,7 +227,7 @@ often offered through block explorer APIs.
    ***** `0x123456789ABCDEFGHIJK123456789ABCDEFGHIJK` is the contract unlock address.
 
 4. You can verify your contract by visiting
-   the [ShimmerEVM Testnet Explorer](https://explorer.evm.testnet.shimmer.network/),
+   the [EVM Testnet Explorer](https://explorer.evm.testnet.shimmer.network/),
    and searching for the address from the previous step. If you access the `Contract` tab, you should be able to see
    your code and interact with your contract.
 

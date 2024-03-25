@@ -128,9 +128,9 @@ Some important things to note are data types. `event` means that we can subscrib
 ```js
 module.exports = {
   solidity: '0.8.18',
-  defaultNetwork: 'shimmerevm-testnet',
+  defaultNetwork: 'evm-testnet',
   networks: {
-    'shimmerevm-testnet': {
+    'evm-testnet': {
       url: 'https://json-rpc.evm.testnet.shimmer.network',
       chainId: 1073,
       accounts: [priv_key],
@@ -190,21 +190,21 @@ npx hardhat compile
 Run this command in root of the project directory:
 
 ```sh
-npx hardhat run scripts/deploy.js --network shimmerevm-testnet
+npx hardhat run scripts/deploy.js --network evm-testnet
 ```
 
-The contract will be deployed on ShimmerEVM Testnet, and you can check the deployment status here on the [explorer](https://explorer.evm.testnet.shimmer.network/).
+The contract will be deployed on EVM Testnet, and you can check the deployment status here on the [explorer](https://explorer.evm.testnet.shimmer.network/).
 
 If you want to further verify your contract, add the following to your `hardhat.config.js`:
 
 ```js
 etherscan: {
   apiKey: {
-    'shimmerevm-testnet': 'ABCDE12345ABCDE12345ABCDE123456789',
+    'evm-testnet': 'ABCDE12345ABCDE12345ABCDE123456789',
   },
   customChains: [
     {
-      network: 'shimmerevm-testnet',
+      network: 'evm-testnet',
       chainId: 1073,
       urls: {
         apiURL: 'https://explorer.evm.testnet.shimmer.network/api',
@@ -218,7 +218,7 @@ etherscan: {
 Then you can verify by running:
 
 ```sh
-npx hardhat verify --network shimmerevm-testnet <address> <unlock time>
+npx hardhat verify --network evm-testnet <address> <unlock time>
 ```
 
 :::tip Address and unlock time
