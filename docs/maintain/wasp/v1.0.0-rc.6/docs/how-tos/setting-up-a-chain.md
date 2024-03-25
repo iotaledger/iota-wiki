@@ -17,6 +17,7 @@ tags:
 It is possible to run a "committee" of a single Wasp node, which is okay for testing purposes.
 
 However, in normal operation, multiple Wasp _nodes_ should be used.
+
 :::
 
 ## Requirements
