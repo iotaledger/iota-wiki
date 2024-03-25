@@ -71,7 +71,7 @@ the [EVM Testnet](/build/networks-endpoints/#evm-testnet):
 </Tabs>
 
 Ensure that your `RPC Url` and `Chain ID` are set correctly and match the dashboard values. The `Network Name` can be
-whatever you see fit. Click "Save" to add the [Public Testnet](/build/networks-endpoints/#public-testnet) to MetaMask.
+whatever you see fit. Click "Save" to add the [EVM Testnet](/build/networks-endpoints/#public-testnet) to MetaMask.
 
 If you wish to use additional EVM chains with Metamask, you can add more Custom RPC networks, as long as they have a
 unique `Chain ID` and `RPC Url`. Once you have done this, you can start using MetaMask to manage your EVM wallet or
@@ -103,15 +103,15 @@ Solidity smart contracts on an EVM chain. EVM chains running on IOTA Smart Contr
 make sure you add the correct network parameters to your `hardhat.config.js`, for example:
 
 <Tabs>
-<TabItem value='testnet' label='Public Testnet'>
+<TabItem value='testnet' label='EVM Testnet'>
 
-  ```javascript
+```javascript
   networks: {
-  'evm-testnet': {
-  url: 'https://json-rpc.evm.testnet.shimmer.network',
-  chainId: CHAIN_ID,
-  accounts: [YOUR PRIVATE KEY],
-},
+    'evm-testnet': {
+      url: 'https://json-rpc.evm.testnet.shimmer.network',
+      chainId: CHAIN_ID,
+      accounts: [YOUR PRIVATE KEY],
+  },
 },
   ```
   ***** Where `CHAIN_ID`= <ChainId url='https://json-rpc.evm.testnet.shimmer.network'/>
@@ -121,11 +121,11 @@ make sure you add the correct network parameters to your `hardhat.config.js`, fo
 
 ```javascript
 networks: {
-'iotaEVM': {
-url: 'https://json-rpc.evm.iotaledger.net',
-chainId: CHAIN_ID,
-accounts: [YOUR PRIVATE KEY],
-},
+  'iotaEVM': {
+    url: 'https://json-rpc.evm.iotaledger.net',
+    chainId: CHAIN_ID,
+    accounts: [YOUR PRIVATE KEY],
+  },
 },
 ```
 ***** Where `CHAIN_ID`= <ChainId url='https://json-rpc.evm.iotaledger.net'/>
