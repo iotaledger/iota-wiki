@@ -24,8 +24,8 @@ declare module '@theme/DocBanner' {
 declare module '@theme/NetworkInfo' {
   export default {
     IOTA: JSX.Element,
-    IOTAEVM: JSX.Element,
-    IOTAEVMAdditional: JSX.Element,
+    IotaEVM: JSX.Element,
+    IotaEVMAdditional: JSX.Element,
     Shimmer: JSX.Element,
     ShimmerEVM: JSX.Element,
     ShimmerEVMAdditional: JSX.Element,

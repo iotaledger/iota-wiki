@@ -30,9 +30,9 @@ export const EVMNetworks = {
     rpcUrls: ['https://json-rpc.evm.shimmer.network'],
     blockExplorerUrls: ['https://explorer.evm.shimmer.network/'],
   },
-  iotaevm: {
+  IotaEVM: {
     chainId: '0x2276',
-    chainName: 'IOTA EVM',
+    chainName: 'IotaEVM',
     nativeCurrency: {
       name: 'IOTA',
       symbol: 'IOTA',
