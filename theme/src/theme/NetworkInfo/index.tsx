@@ -47,6 +47,79 @@ function IOTA() {
   );
 }
 
+function IOTAEVM() {
+  return (
+    <table>
+      <thead>
+        <tr>
+          <th>Base Token</th>
+          <th>Protocol</th>
+          <th>Chain ID</th>
+          <th>RPC URL</th>
+          <th>Explorer</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>IOTA Token</td>
+          <td>ISC / EVM</td>
+          <td>
+            <ChainId url='https://json-rpc.evm.iotaledger.net' />
+          </td>
+          <td>
+            <a
+              href='https://json-rpc.evm.iotaledger.network'
+              target='_blank'
+              rel='noopener noreferrer'
+            >
+              https://json-rpc.evm.iotaledger.network
+            </a>{' '}
+            or wss://ws.json-rpc.evm.iotaledger.network
+          </td>
+          <td>
+            <a
+              href='https://iota-evm.blockscout.com'
+              target='_blank'
+              rel='noopener noreferrer'
+            >
+              https://iota-evm.blockscout.com
+            </a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  );
+}
+
+function IOTAEVMAdditional() {
+  return (
+    <table>
+      <thead>
+        <tr>
+          <th>Chain Address</th>
+          <th>Alias ID</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <a
+              href='https://explorer.iota.org/mainnet/addr/iota1pzt3mstq6khgc3tl0mwuzk3eqddkryqnpdxmk4nr25re2466uxwm28qqxu5'
+              target='_blank'
+              rel='noopener noreferrer'
+            >
+              iota1pzt3mstq6khgc3tl0mwuzk3eqddkryqnpdxmk4nr25re2466uxwm28qqxu5
+            </a>
+          </td>
+          <td>
+            0xccc7018e4fa63e5014332f45ddc8a5450da89572676d12d4d5e51c98d64155b3
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  );
+}
+
 function Shimmer() {
   return (
     <table>
@@ -290,6 +363,8 @@ function TestnetEVMAdditional() {
 
 export default {
   IOTA,
+  IOTAEVM,
+  IOTAEVMAdditional,
   Shimmer,
   ShimmerEVM,
   ShimmerEVMAdditional,

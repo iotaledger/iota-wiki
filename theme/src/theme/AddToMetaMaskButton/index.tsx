@@ -8,9 +8,9 @@ declare global {
 }
 
 export const EVMNetworks = {
-  'shimmerevm-testnet': {
+  'evm-testnet': {
     chainId: '0x431',
-    chainName: 'ShimmerEVM Testnet',
+    chainName: 'EVM Testnet',
     nativeCurrency: {
       name: 'Shimmer',
       symbol: 'SMR',
@@ -29,6 +29,17 @@ export const EVMNetworks = {
     },
     rpcUrls: ['https://json-rpc.evm.shimmer.network'],
     blockExplorerUrls: ['https://explorer.evm.shimmer.network/'],
+  },
+  iotaevm: {
+    chainId: '0x2276',
+    chainName: 'IOTA EVM',
+    nativeCurrency: {
+      name: 'IOTA',
+      symbol: 'IOTA',
+      decimals: 18, // Replace with the number of decimals of the native currency
+    },
+    rpcUrls: ['https://json-rpc.evm.iotaledger.net'],
+    blockExplorerUrls: ['https://iota-evm.blockscout.com'],
   },
 };
 

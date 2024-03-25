@@ -41,6 +41,16 @@ module.exports = {
           href: 'https://explorer.shimmer.network',
         },
         {
+          label: 'IOTA EVM Explorer',
+          type: 'link',
+          href: 'https://iota-evm.blockscout.com/',
+        },
+        {
+          label: 'IOTA EVM Toolkit',
+          type: 'link',
+          href: 'https://evm-toolkit.evm.iotaledger.net/',
+        },
+        {
           label: 'Shimmer EVM Explorer',
           type: 'link',
           href: 'https://explorer.evm.shimmer.network/',
@@ -51,12 +61,12 @@ module.exports = {
           href: 'https://evm-toolkit.evm.shimmer.network/',
         },
         {
-          label: 'Shimmer EVM Testnet Toolkit & Faucet',
+          label: 'EVM Testnet Toolkit & Faucet',
           type: 'link',
           href: 'https://evm-toolkit.evm.testnet.shimmer.network/',
         },
         {
-          label: 'Oracles for Shimmer EVM',
+          label: 'Oracles for IOTA EVM and ShimmerEVM',
           type: 'doc',
           id: 'oracles',
         },
