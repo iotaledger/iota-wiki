@@ -47,7 +47,7 @@ function IOTA() {
   );
 }
 
-function IOTAEVM() {
+function IotaEVM() {
   return (
     <table>
       <thead>
@@ -91,7 +91,7 @@ function IOTAEVM() {
   );
 }
 
-function IOTAEVMAdditional() {
+function IotaEVMAdditional() {
   return (
     <table>
       <thead>
@@ -363,8 +363,8 @@ function TestnetEVMAdditional() {
 
 export default {
   IOTA,
-  IOTAEVM,
-  IOTAEVMAdditional,
+  IotaEVM,
+  IotaEVMAdditional,
   Shimmer,
   ShimmerEVM,
   ShimmerEVMAdditional,
