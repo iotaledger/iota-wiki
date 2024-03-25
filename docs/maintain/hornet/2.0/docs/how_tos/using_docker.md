@@ -51,6 +51,14 @@ It includes everything required to setup a public node accessible by wallets and
 
 5. [curl](https://curl.se/).
 
+## Recommended Hardware Requirements
+
+We recommend that you run the docker image on a server with:
+
+* **CPU**: 8 core.
+* **RAM**: 16 GB.
+* **Disk space**: 250 GB SSD.
+* 
 ## Download the latest release
 
 <LinuxCommands/>
