@@ -98,7 +98,7 @@ incurring any fees or the [IOTA Sandbox](/iota-sandbox/getting-started/) if you 
 
 Once you have a complete batch of [automated tests](#automated-testing), manually testing your contract to ensure it
 behaves as expected in the real world is still good practice. However, to avoid incurring fees or deploying a faulty
-contract, you can manually test your contract using a sandboxed local network and the Shimmer EVM Testnet.
+contract, you can manually test your contract using a sandboxed local network and the EVM Testnet.
 
 Testing using the [IOTA Sandbox](/iota-sandbox/getting-started/) serves well for the first stage of automated and manual
 integration tests, as you have complete control over the entire local network. Once you are confident about how your
