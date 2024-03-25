@@ -74,15 +74,6 @@ enhancing application security and resilience.
 * **Security and Decentralization**: Opting for decentralized querying with subgraphs can reduce reliance on single data
   sources, increasing application robustness.
 
-## Considerations for Using Subgraphs
-
-While subgraphs simplify data querying, developing and debugging them can present challenges, including customization
-limits and potential costs.
-
-* **Development Complexity**: Learning the subgraph ecosystem and debugging can be daunting without adequate tooling.
-* **Customization Limits**: If your application requires highly specific indexing, a custom solution might be necessary.
-* **Cost and Indexing Speed**: Managing costs and ensuring efficient indexing are important factors when deciding to use
-  subgraphs.
 
 ## Subgraph Providers and Tools
 
