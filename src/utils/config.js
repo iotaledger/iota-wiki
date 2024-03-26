@@ -1,5 +1,5 @@
-const path = require('path');
-const defaultSettings = require('../common/defaultContentPlugin');
+import path from 'path';
+import defaultSettings from '../common/defaultContentPlugin';
 
 /**
  * Merges multiple configuration objects into one object.
@@ -137,7 +137,7 @@ async function create_doc_plugin({ ...options }) {
   ];
 }
 
-module.exports = {
+export default {
   glob,
   merge,
   create_doc_plugin,

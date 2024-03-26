@@ -1,21 +1,27 @@
-/** @type {import('@docusaurus/plugin-content-docs').Options} */
-module.exports = async () => {
-  const jargonPlugin = (await import('rehype-jargon')).default;
-  const jargonConfig = (await import('./../../common/jargon.js')).default;
+import remarkMath from 'remark-math';
+import remarkCodeImport from 'remark-code-import';
+import remarkImportPartial from 'remark-import-partial';
+import remarkRemoveComments from 'remark-remove-comments';
+import npm2yarn from '@docusaurus/remark-plugin-npm2yarn';
+import rehypeJargon from 'rehype-jargon';
+import rehypeJargonConfig from '../../common/jargon.js';
+import rehypeKatex from 'rehype-katex';
 
+/** @type {import('@docusaurus/plugin-content-docs').Options} */
+export default async () => {
   return {
     editUrl: 'https://github.com/iotaledger/iota-wiki/edit/main/',
     showLastUpdateTime: true,
     remarkPlugins: [
-      require('remark-math'),
-      require('remark-code-import'),
-      require('remark-import-partial'),
-      require('remark-remove-comments'),
-      [require('@docusaurus/remark-plugin-npm2yarn'), { sync: true }],
+      remarkMath,
+      remarkCodeImport,
+      remarkImportPartial,
+      remarkRemoveComments,
+      [npm2yarn, { sync: true }],
     ],
     rehypePlugins: [
-      require('rehype-katex'),
-      [jargonPlugin, { jargon: jargonConfig }],
+      rehypeKatex,
+      [rehypeJargon, { jargon: rehypeJargonConfig }],
     ],
   };
 };
