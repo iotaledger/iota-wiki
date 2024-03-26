@@ -24,7 +24,7 @@ You can also use `call` and `callView` to interact with WASM contracts.
 
 ## Example Code
 
-1. Get the [`AgentID`](../../explanations/how-accounts-work/) from the sender by calling ISC.sandbox.getSenderAccount().
+1. Get the [`AgentID`](../../explanations/how-accounts-work.md) from the sender by calling ISC.sandbox.getSenderAccount().
 
 ```solidity
 ISCAgentID memory agentID = ISC.sandbox.getSenderAccount();
