@@ -1,5 +1,6 @@
 {
   "name": "@iota-wiki/plugin-tutorial",
+  "type": "module",
   "version": "1.0.6",
   "main": "dist/index.js",
   "types": "src/types.d.ts",

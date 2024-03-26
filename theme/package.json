@@ -1,5 +1,6 @@
 {
   "name": "@iota-wiki/theme",
+  "type": "module",
   "version": "0.1.0",
   "description": "IOTA Wiki theme components",
   "main": "dist/index.js",
