@@ -7,7 +7,7 @@
     "build:theme": "yarn ./theme build",
     "checkout": "git submodule update --init",
     "checkout:remote": "yarn checkout --remote",
-    "generate:api": "docusaurus gen-api-docs all && ./scripts/get_sdk_references.sh",
+    "generate:api": "docusaurus gen-api-docs all && ./scripts/get_sdk_references.sh && ./scripts/get_wasp_references.sh",
     "lint": "eslint --cache --fix .",
     "lint:check": "eslint --cache .",
     "lint:links": "iota-wiki check",
