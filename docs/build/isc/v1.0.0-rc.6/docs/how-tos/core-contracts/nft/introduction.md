@@ -11,7 +11,7 @@ import DocCardList from '@theme/DocCardList';
 
 # Native NFT and ERC721
 
-The IOTA L1 has functionality to create NFTs, also called native NFTs. To use these NFTs on L2, you have
-a ERC20 contract called `ERC721NFTs` which contains all L1 NFTs owned by the chain. The following guides will show you how to [mint your own L1 NFT from L2](./mint-nft.md), and [use](./use-as-erc721.md) it with the `ERC721NFTs` contract.
+The IOTA L1 can create NFTs, also called native NFTs. To use these NFTs on L2, you have
+an ERC20 contract called `ERC721NFTs`, which contains all L1 NFTs owned by the chain. The following guides will show you how to [mint your own L1 NFT from L2](./mint-nft.md) and [use](./use-as-erc721.md) it with the `ERC721NFTs` contract.
 
 <DocCardList />

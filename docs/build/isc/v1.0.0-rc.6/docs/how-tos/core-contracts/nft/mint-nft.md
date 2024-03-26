@@ -11,7 +11,7 @@ import ExampleCodeIntro from '../../../_partials/how-tos/token/_example_code_int
 # Mint an NFT
 ## About NFTs
 
-The Stardust update allows you to create your own NFT. There ias also the [IRC27](/tips/tips/TIP-0027) for NFTs. This guide will show you how to create an IRC27 L1 NFT using a L2 smart contract.
+The Stardust update allows you to create your own NFTs. You can also use [IRC27](/tips/tips/TIP-0027) for NFTs. This guide will show you how to create an IRC27 L1 NFT using a L2 smart contract.
 
 ## Example Code
 
@@ -23,7 +23,7 @@ The Stardust update allows you to create your own NFT. There ias also the [IRC27
 ISCAgentID memory agentID = ISC.sandbox.getSenderAccount();
 ```
 
-3. Create a `IRC27Metadata` struct intitialised with all the needed data:
+3. Create an `IRC27Metadata` struct  with all the needed data:
 
 ```solidity
 IRC27NFTMetadata memory metadata = IRC27NFTMetadata({
@@ -35,9 +35,9 @@ IRC27NFTMetadata memory metadata = IRC27NFTMetadata({
 });
 ```
 
-4. Create all the data for the core contract call. To do that, we create a new `ISCDict` with 2 parameters like specified in the reference docs for [`mintNFT`](../../../reference/core-contracts/accounts.md#mintnfti-immutabledata-a-agentid-c-collectionid-w-withdrawonmint)
-`I` is the immutable metadata we fill with the IRC27 metadata and
-`a` is the AgendID of the owner of the NFT
+4. Create all the data for the core contract call. To do so, you should create a new `ISCDict` with 2 parameters like specified in the reference docs for [`mintNFT`](../../../reference/core-contracts/accounts.md#mintnfti-immutabledata-a-agentid-c-collectionid-w-withdrawonmint)
+* `I` is the immutable metadata we fill with the IRC27 metadata and
+* `a` is the AgendID of the owner of the NFT
 
 ```solidity
 ISCDict memory params = ISCDict(new ISCDictItem[](2));
@@ -47,11 +47,11 @@ params.items[1] = ISCDictItem("a", agentID.data);
 
 :::info IRC27NFTMetadataToString
 
-The full example below contains the `IRC27NFTMetadataToString` which just converts the IRC27Metadata struct into a string.
+The full example below calls the `IRC27NFTMetadataToString` function, which simply converts the IRC27Metadata struct into a string.
 
 :::
 
-5. Call the magic contract `call` function with all the parameters. We need to specify the core contract we want to call, which in our case is [`account`](../../../reference/core-contracts/accounts.md) and the function for [minting an NFT](../../../reference/core-contracts/accounts.md#mintnfti-immutabledata-a-agentid-c-collectionid-w-withdrawonmint)
+5. Call the magic contract `call` function with all the parameters. You should specify the core contract you want to call, which in this case is the [`account`](../../../reference/core-contracts/accounts.md) contract, and the function for [minting an NFT](../../../reference/core-contracts/accounts.md#mintnfti-immutabledata-a-agentid-c-collectionid-w-withdrawonmint)
 
 ```solidity
 ISCDict memory ret = ISC.sandbox.call(
@@ -62,7 +62,7 @@ ISCDict memory ret = ISC.sandbox.call(
 );
 ```
 
-6. The call return value will contain a mintID which we can use in for example another contract function to get the actual L1 NFT ID once it got created with the [`accounts.NFTIDbyMintID`](../../../reference/core-contracts/accounts.md#nftidbymintidd-mintid) function
+6. The call return value will contain a `mintID` which we can use in, for example, another contract function to get the actual L1 NFT ID once it is created using the [`accounts.NFTIDbyMintID`](../../../reference/core-contracts/accounts.md#nftidbymintidd-mintid) function
 
 ```solidity
 function getNFTIDFromMintID(bytes memory mintID) public view returns (bytes memory) {
