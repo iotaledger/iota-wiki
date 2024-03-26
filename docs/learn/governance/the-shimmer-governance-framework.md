@@ -62,10 +62,12 @@ Once an idea successfully passes phase 2, a vote is initiated in phase 3 using t
       </td>
       <td>
         <ul>
-          <li>Introducing an idea by posting in the
+          <li>
+            Introducing an idea by posting in the
             <a href="https://govern.iota.org/"> forum </a>
           </li>
-          <li>Approval by
+          <li>
+            Approval by
             <a href="#governance-forum-moderators"> moderator </a>
           </li>
           <li>The moderator adds the proposal to the phase 1 category</li>
@@ -80,15 +82,19 @@ Once an idea successfully passes phase 2, a vote is initiated in phase 3 using t
       <td>
         <ul>
           <li>Post in the forum</li>
-          <li>Follows a defined structure of the
+          <li>
+            Follows a defined structure of the
             <a href="#412-governance-proposal-template-phase-2--3--emergency-proposal"> governance template </a>
           </li>
-          <li>Approval by
+          <li>
+            Approval by
             <a href="#governance-forum-moderators"> moderator </a>
           </li>
-          <li>Receives a
+          <li>
+            Receives a
             <a href="#unique-identifier"> unique identifier number </a>
-            by a moderator</li>
+            by a moderator
+          </li>
           <li>A finalized concept ready to be voted on by the community (during phase 2, the proposal should not be possible to edit anymore)</li>
           <li>Includes a poll to signal soft consensus</li>
           <li>Poll duration 7 days</li>
@@ -96,9 +102,11 @@ Once an idea successfully passes phase 2, a vote is initiated in phase 3 using t
           <li>If accepted, it leads to a network-wide vote in Firefly</li>
           <li>Poll must include “Make no changes” option</li>
           <li>It is a non-binding decision</li>
-          <li>Can also be conducted as a runoff poll if any
+          <li>
+            Can also be conducted as a runoff poll if any
             <a href="#47-counter-proposals"> counter proposals </a>
-            qualify</li>
+            qualify
+          </li>
         </ul>
       </td>
       <td>
@@ -120,10 +128,12 @@ Once an idea successfully passes phase 2, a vote is initiated in phase 3 using t
       </td>
       <td>
         <ul>
-          <li>The post must discuss one of the
+          <li>
+            The post must discuss one of the
             <a href="/learn/governance/governance-scope"> parameters that are open for governance </a>
           </li>
-          <li>The post must follow the rules set for
+          <li>
+            The post must follow the rules set for
             <a href="#guaranteeing-stability---resubmital-delay"> resubmittal delays </a>
           </li>
           <li>Edits require reposting with versioning</li>
@@ -132,7 +142,8 @@ Once an idea successfully passes phase 2, a vote is initiated in phase 3 using t
       <td>
         <ul>
           <li>Poll must include “no changes” option</li>
-          <li>Follows a defined structure as described in the
+          <li>
+            Follows a defined structure as described in the
             <a href="#412-governance-proposal-template-phase-2--3--emergency-proposal"> proposal template </a>
           </li>
           <li>No edits allowed</li>
@@ -153,12 +164,15 @@ Once an idea successfully passes phase 2, a vote is initiated in phase 3 using t
       </td>
       <td>
         <ul>
-          <li>Ideas can be posted on the forum any time and should be discussed as long as needed.</li>
+          <li>
+            Ideas can be posted on the forum any time and should be discussed as long as needed
+          </li>
         </ul>
       </td>
       <td>
         <ul>
-          <li>Poll duration is seven days
+          <li>
+            Poll duration is seven days
           </li>
         </ul>
       </td>
@@ -186,7 +200,8 @@ Once an idea successfully passes phase 2, a vote is initiated in phase 3 using t
       <td>
         <ul>
           <li>Firefly vote: simple majority wins</li>
-          <li>Must reach 5% quorum of
+          <li>
+            Must reach 5% quorum of
             <a href="#maximum-achievable-votes"> maximum achieveable votes </a>
           </li>
         </ul>
@@ -194,21 +209,23 @@ Once an idea successfully passes phase 2, a vote is initiated in phase 3 using t
     </tr>
     <tr>
       <td>
-        <strong>Denied
-        </strong>
+        <strong>Denied</strong>
       </td>
       <td>
         <ul>
           <li>Spam</li>
-          <li>Does not talk about the
+          <li>
+            Does not talk about the
             <a href="/learn/governance/governance-scope"> parameters open for governance </a>
           </li>
           <li>Proposal has no engagement over 30 days</li>
           <li>Proposal doesn't reach a minimum of votes/likes</li>
-          <li>Proposal conflicts with the
+          <li>
+            Proposal conflicts with the
             <a href="#guaranteeing-stability---resubmital-delay"> resubmittal delay rules </a>
           </li>
-          <li>Proposal does not meet the
+          <li>
+            Proposal does not meet the
             <a href="#42-shimmer-governance-framework-guiding-principles"> guiding principles. </a>
           </li>
         </ul>
@@ -222,9 +239,9 @@ Once an idea successfully passes phase 2, a vote is initiated in phase 3 using t
       <td>
         <ul>
           <li>Option “Make no changes” reaches the simple majority of votes</li>
-          <li>Does not reach 5% quorum of
-            <a href="#maximum-achievable-votes">maximum achievable votes
-            </a>
+          <li>
+            Does not reach 5% quorum of
+            <a href="#maximum-achievable-votes">maximum achievable votes</a>
           </li>
           <li>Canceled through an emergency proposal submitted during the 7-day cooldown.</li>
         </ul>
@@ -533,90 +550,64 @@ The following parameters of this framework specification can be adjusted by a mo
       </td>
     </tr>
     <tr>
-      <td>Minimum required proposal likes in phase 1
-      </td>
-      <td>50 likes
-      </td>
+      <td>Minimum required proposal likes in phase 1</td>
+      <td>50 likes</td>
     </tr>
     <tr>
-      <td>Minimum required positive votes in a poll phase 1
-      </td>
-      <td>50 votes in favor of a proposal
-      </td>
+      <td>Minimum required positive votes in a poll phase 1</td>
+      <td>50 votes in favor of a proposal</td>
     </tr>
     <tr>
-      <td>Minimum required positive votes in a poll phase 2
-      </td>
-      <td>100 votes in favor of a proposal
-      </td>
+      <td>Minimum required positive votes in a poll phase 2</td>
+      <td>100 votes in favor of a proposal</td>
     </tr>
     <tr>
-      <td>Required majority to win in a poll in phase 1
-      </td>
-      <td>none
-      </td>
+      <td>Required majority to win in a poll in phase 1</td>
+      <td>none</td>
     </tr>
     <tr>
-      <td>Required majority to win in a poll in phase 2
-      </td>
-      <td>none
-      </td>
+      <td>Required majority to win in a poll in phase 2</td>
+      <td>none</td>
     </tr>
     <tr>
-      <td>Poll duration Phase 2
-      </td>
-      <td>7 days
-      </td>
+      <td>Poll duration Phase 2</td>
+      <td>7 days</td>
     </tr>
     <tr>
-      <td>Trust level 1 metrics
-      </td>
-      <td>tl1 requires topics entered: 3
+      <td>Trust level 1 metrics</td>
+      <td>
+        tl1 requires topics entered: 3
         <p>tl1 requires read posts: 3</p>
         <p>tl1 requires time spent mins: 25 min</p>
       </td>
     </tr>
     <tr>
-      <td>Emergency proposal phase 2 poll duration
-      </td>
-      <td>48 hours
-      </td>
+      <td>Emergency proposal phase 2 poll duration</td>
+      <td>48 hours</td>
     </tr>
     <tr>
-      <td>Emergency proposal phase 2 poll required positive votes
-      </td>
-      <td>200 votes in favor of the proposal
-      </td>
+      <td>Emergency proposal phase 2 poll required positive votes</td>
+      <td>200 votes in favor of the proposal</td>
     </tr>
     <tr>
-      <td>Cooldown duration after phase 3 vote
-      </td>
-      <td>7 days
-      </td>
+      <td>Cooldown duration after phase 3 vote</td>
+      <td>7 days</td>
     </tr>
     <tr>
-      <td>Season interval
-      </td>
-      <td>3 months
-      </td>
+      <td>Season interval</td>
+      <td>3 months</td>
     </tr>
     <tr>
-      <td>Time a phase 2 proposal must be submitted in advance to the moderators to be included in the next phase 2 poll round
-      </td>
-      <td>24 hours before the next phase 2 round begins (Monday 4 pm UTC)
-      </td>
+      <td>Time a phase 2 proposal must be submitted in advance to the moderators to be included in the next phase 2 poll round</td>
+      <td>24 hours before the next phase 2 round begins (Monday 4 pm UTC)</td>
     </tr>
     <tr>
-      <td>Automatical closing of topics after inactivity for xx days
-      </td>
-      <td>30 days
-      </td>
+      <td>Automatical closing of topics after inactivity for xx days</td>
+      <td>30 days</td>
     </tr>
     <tr>
-      <td>Moderator tasks and responsibilities
-      </td>
-      <td>As defined in the section 4.3  [Governance Forum Moderators][tasks and responsibilities]
-      </td>
+      <td>Moderator tasks and responsibilities</td>
+      <td>As defined in the section 4.3  [Governance Forum Moderators][tasks and responsibilities]</td>
     </tr>
   </tbody>
 </table>
