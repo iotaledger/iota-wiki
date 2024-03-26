@@ -21,6 +21,7 @@ import TabItem from '@theme/TabItem';
 import {AddToMetaMaskButton, EVMNetworks} from '@theme/AddToMetaMaskButton';
 import DeployAdmonition from '../_admonitions/_deploy_a_smart_contract.md';
 import { ChainId } from '@theme/ChainId';
+import NetworkInfo from '@theme/NetworkInfo';
 
 # Compatible Tools
 
@@ -29,21 +30,11 @@ directly with an IOTA Smart Contracts chain running EVM as long as you take a co
 
 ## Tooling Considerations
 
-<ol>
-    <li>
-        Please make sure you use the correct JSON-RPC endpoint URL in your tooling for your chain. If you're running your own chain, you can find the JSON-RPC
-        endpoint URL in the Wasp dashboard (<code>[URL]/wasp/dashboard</code> when using <code>node-docker-setup</code>).
-   </li>
-    <li>
-        Please ensure you use the correct `Chain ID` configured while starting the JSON-RPC service. If you did not
-        explicitly define this while starting the service, the default Chain ID will be <ChainId url='https://json-rpc.evm.shimmer.network'/>
-        for ShimmerEVM or <ChainId url='https://json-rpc.evm.testnet.shimmer.network' /> for the ShimmerEVM Testnet .
-    </li>
-    <li>
-        Fees are handled on the IOTA Smart Contracts chain level, not the EVM level. The chain will reject any requests with
-        a different gas price than specified by the chain.
-    </li>
-</ol>
+1. Please make sure you use the correct JSON-RPC endpoint URL in your tooling for your chain. If you're running your own chain, you can find the JSON-RPC
+endpoint URL in the Wasp dashboard (`[URL]/wasp/dashboard` when using `node-docker-setup`).
+2. Please ensure you use the correct `Chain ID` configured while starting the JSON-RPC service. If you did not explicitly define this while starting the service, the default Chain ID will be <ChainId url='https://json-rpc.evm.shimmer.network'/>
+for ShimmerEVM or <ChainId url='https://json-rpc.evm.testnet.shimmer.network' /> for the EVM Testnet.
+3. Fees are handled on the IOTA Smart Contracts chain level, not the EVM level. The chain will reject any requests with a different gas price than specified by the chain.
 
 :::caution
 
@@ -66,23 +57,11 @@ the [ShimmerEVM Testnet](/build/networks-endpoints/#shimmerevm-testnet):
 <Tabs>
 <TabItem value='testnet' label='Public Testnet'>
 <AddToMetaMaskButton cfg={EVMNetworks['shimmerevm-testnet']}/>
-
-- Network Name: `Public Testnet`
-- New RPC URL: `https://json-rpc.evm.testnet.shimmer.network/`
-- Chain ID: **<ChainId url='https://json-rpc.evm.testnet.shimmer.network'/>**
-- Currency Symbol: `SMR`
-- Block Explorer URL: `https://explorer.evm.testnet.shimmer.network/`
-
+<NetworkInfo.TestnetEVM />
 </TabItem>
 <TabItem value='shimmerEVM' label='ShimmerEVM'>
 <AddToMetaMaskButton cfg={EVMNetworks['shimmerevm']}/>
-
-- Network Name: `ShimmerEVM`
-- New RPC URL: `https://json-rpc.evm.shimmer.network/`
-- Chain ID: **<ChainId url='https://json-rpc.evm.shimmer.network'/>**
-- Currency Symbol: `SMR`
-- Block Explorer URL: `https://explorer.evm.shimmer.network/`
-
+<NetworkInfo.ShimmerEVM />
 </TabItem>
 </Tabs>
 
