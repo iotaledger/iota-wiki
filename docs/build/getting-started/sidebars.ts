@@ -61,6 +61,11 @@ module.exports = {
           id: 'oracles',
         },
         {
+          label: 'Subgraphs for Shimmer EVM',
+          type: 'doc',
+          id: 'subgraphs',
+        },
+        {
           label: 'Testnet Faucet',
           type: 'link',
           href: 'https://faucet.testnet.shimmer.network',
