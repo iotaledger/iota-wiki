@@ -8847,7 +8847,7 @@ __metadata:
 
 "docusaurus-plugin-openapi-docs@jlvandenhout/docusaurus-openapi-docs#head=patch&workspace=docusaurus-plugin-openapi-docs":
   version: 3.0.0-beta.10
-  resolution: "docusaurus-plugin-openapi-docs@https://github.com/jlvandenhout/docusaurus-openapi-docs.git#workspace=docusaurus-plugin-openapi-docs&commit=bb501aca9411ef890f18e5d7cc53e5e51ffb717d"
+  resolution: "docusaurus-plugin-openapi-docs@https://github.com/jlvandenhout/docusaurus-openapi-docs.git#workspace=docusaurus-plugin-openapi-docs&commit=81d13016cda4fe7a66b271b8f0a2b0b953ee3c34"
   dependencies:
     "@apidevtools/json-schema-ref-parser": ^11.5.4
     "@docusaurus/plugin-content-docs": ^3.0.1
@@ -8869,7 +8869,7 @@ __metadata:
     xml-formatter: ^2.6.1
   peerDependencies:
     react: ^16.8.4 || ^17.0.0 || ^18.0.0
-  checksum: 13d0759c26248db2e71fbbd259970162a86de2ae9cae2ef3d8feb5d3a1ef4108a1bcfe8cb3eacbb20256af9f536c9ca493d83f654d25c9b94de50a4e07dd2c42
+  checksum: f7027f032c6928ce40145d923c1487935810e96e70181b469ae45804fa98507ee9e1a57ee80ae5aab60a71aa1e47c0886a4da92c675d72c9504aded38caa853a
   languageName: node
   linkType: hard
 
@@ -8915,7 +8915,7 @@ __metadata:
 
 "docusaurus-theme-openapi-docs@jlvandenhout/docusaurus-openapi-docs#head=patch&workspace=docusaurus-theme-openapi-docs":
   version: 3.0.0-beta.10
-  resolution: "docusaurus-theme-openapi-docs@https://github.com/jlvandenhout/docusaurus-openapi-docs.git#workspace=docusaurus-theme-openapi-docs&commit=bb501aca9411ef890f18e5d7cc53e5e51ffb717d"
+  resolution: "docusaurus-theme-openapi-docs@https://github.com/jlvandenhout/docusaurus-openapi-docs.git#workspace=docusaurus-theme-openapi-docs&commit=81d13016cda4fe7a66b271b8f0a2b0b953ee3c34"
   dependencies:
     "@docusaurus/theme-common": ^3.0.1
     "@hookform/error-message": ^2.0.1
@@ -8945,7 +8945,7 @@ __metadata:
   peerDependencies:
     react: ^16.8.4 || ^17.0.0 || ^18.0.0
     react-dom: ^16.8.4 || ^17.0.0 || ^18.0.0
-  checksum: 2486b610a03d5930b3711c943253714e01641ffa6faca6c902e0f616a3a20c9c74b2ec04843b0164da56f7f4042248f6bdbcd40a729d6bd33981c4e1516ae9f8
+  checksum: 57f1afc686219ade845a952a989df4ab162af5aa10c4856774f6f69beeaccd3fb5de262ee67fd6a6d94a54c2e0d14085b7cc5eb547fe9c84a1bc857b8ba8edfa
   languageName: node
   linkType: hard
 
