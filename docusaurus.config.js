@@ -190,6 +190,9 @@ module.exports = async () => {
           crossorigin: 'anonymous',
         },
       ],
+      markdown: {
+        format: 'detect',
+      },
       presets: [
         [
           '@docusaurus/preset-classic',
