@@ -172,6 +172,27 @@ module.exports = {
               ],
             },
             {
+              type: 'category',
+              label: 'NFT',
+              items: [
+                {
+                  label: 'Introduction',
+                  type: 'doc',
+                  id: 'how-tos/core-contracts/nft/introduction',
+                },
+                {
+                  type: 'doc',
+                  label: 'Mint an NFT',
+                  id: 'how-tos/core-contracts/nft/mint-nft',
+                },
+                {
+                  type: 'doc',
+                  label: 'Use as ERC721',
+                  id: 'how-tos/core-contracts/nft/use-as-erc721',
+                },
+              ],
+            },
+            {
               type: 'doc',
               label: 'Get Randomness on L2',
               id: 'how-tos/core-contracts/get-randomness-on-l2',
