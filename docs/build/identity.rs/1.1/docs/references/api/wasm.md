@@ -2431,7 +2431,7 @@ the given `storage`.
 <a name="IotaDocument+createJwt"></a>
 
 ### ~~iotaDocument.createJwt(storage, fragment, payload, options) ⇒ [<code>Promise.&lt;Jws&gt;</code>](#Jws)~~
-***Deprecated***
+**_Deprecated_**
 
 Sign the `payload` according to `options` with the storage backed private key corresponding to the public key
 material in the verification method identified by the given `fragment.
