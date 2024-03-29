@@ -8868,7 +8868,7 @@ __metadata:
 
 "docusaurus-plugin-openapi-docs@jlvandenhout/docusaurus-openapi-docs#head=patch&workspace=docusaurus-plugin-openapi-docs":
   version: 3.0.0-beta.10
-  resolution: "docusaurus-plugin-openapi-docs@https://github.com/jlvandenhout/docusaurus-openapi-docs.git#workspace=docusaurus-plugin-openapi-docs&commit=81d13016cda4fe7a66b271b8f0a2b0b953ee3c34"
+  resolution: "docusaurus-plugin-openapi-docs@https://github.com/jlvandenhout/docusaurus-openapi-docs.git#workspace=docusaurus-plugin-openapi-docs&commit=9415372985f12c2ec82a370fbf929a16276e7d77"
   dependencies:
     "@apidevtools/json-schema-ref-parser": ^11.5.4
     "@docusaurus/plugin-content-docs": ^3.0.1
@@ -8936,7 +8936,7 @@ __metadata:
 
 "docusaurus-theme-openapi-docs@jlvandenhout/docusaurus-openapi-docs#head=patch&workspace=docusaurus-theme-openapi-docs":
   version: 3.0.0-beta.10
-  resolution: "docusaurus-theme-openapi-docs@https://github.com/jlvandenhout/docusaurus-openapi-docs.git#workspace=docusaurus-theme-openapi-docs&commit=81d13016cda4fe7a66b271b8f0a2b0b953ee3c34"
+  resolution: "docusaurus-theme-openapi-docs@https://github.com/jlvandenhout/docusaurus-openapi-docs.git#workspace=docusaurus-theme-openapi-docs&commit=9415372985f12c2ec82a370fbf929a16276e7d77"
   dependencies:
     "@docusaurus/theme-common": ^3.0.1
     "@hookform/error-message": ^2.0.1
@@ -8966,7 +8966,7 @@ __metadata:
   peerDependencies:
     react: ^16.8.4 || ^17.0.0 || ^18.0.0
     react-dom: ^16.8.4 || ^17.0.0 || ^18.0.0
-  checksum: 57f1afc686219ade845a952a989df4ab162af5aa10c4856774f6f69beeaccd3fb5de262ee67fd6a6d94a54c2e0d14085b7cc5eb547fe9c84a1bc857b8ba8edfa
+  checksum: 333a63b1cca91333823198dfdbcc7e3ab08dd41a52e64eb4231411b5d822eec1ec5a9264d21e3e0e926e04a49c026760737a2bc93d16b412cdfdc13d6dd94702
   languageName: node
   linkType: hard
 
