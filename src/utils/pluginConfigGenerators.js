@@ -34,14 +34,13 @@ function generatePluginConfig(pluginConfig, basePath) {
       plugin = {
         id: doc.id + (label ? '-' + label.replace(/\./g, '-') : ''),
         path: path.resolve(extended_base_path + '/docs'),
-        routeBasePath: plugin_name_path,
+        routeBasePath: plugin_name_path + '/' + label,
         sidebarPath: path.resolve(extended_base_path + '/sidebars.js'),
         ...(doc.versions.length > 1
           ? {
               versions: {
                 current: {
                   label,
-                  path: mainVersion.label === label ? undefined : label,
                   badge: true,
                 },
               },
@@ -72,32 +71,27 @@ function createVersionRedirects(versionedConfig) {
 
     if (mainVersion) {
       if (mainVersion.label != '') {
-        // Redirect deep version link (for plugins that have a version) to route base path
+        // Redirect route base path to deep version link (for plugins that have a version)
         redirects.push({
-          from: '/' + routeBasePath + '/' + mainVersion.label,
-          to: '/' + routeBasePath,
+          from: '/' + routeBasePath,
+          to: '/' + routeBasePath + '/' + mainVersion.label,
         });
       }
 
       // Redirect to main IOTA version
       redirects.push({
         from: '/' + routeBasePath + '/iota',
-        to: '/' + routeBasePath,
+        to: '/' + routeBasePath + '/' + mainVersion.label,
       });
     }
 
-    if (mainShimmerVersion && mainShimmerVersion !== mainVersion)
+    if (mainShimmerVersion) {
       // Redirect to main Shimmer version
       redirects.push({
         from: '/' + routeBasePath + '/shimmer/',
         to: '/' + routeBasePath + '/' + mainShimmerVersion.label,
       });
-    else if (mainShimmerVersion === mainVersion)
-      // Redirect to main Shimmer version if it is the main version
-      redirects.push({
-        from: '/' + routeBasePath + '/shimmer/',
-        to: '/' + routeBasePath,
-      });
+    }
   }
 
   return redirects;
