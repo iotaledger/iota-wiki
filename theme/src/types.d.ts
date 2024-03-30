@@ -20,3 +20,15 @@ declare module '@theme/AddToMetaMaskButton' {
 declare module '@theme/DocBanner' {
   export default function DocBanner(): JSX.Element;
 }
+
+declare module '@theme/NetworkInfo' {
+  export default {
+    IOTA: JSX.Element,
+    Shimmer: JSX.Element,
+    ShimmerEVM: JSX.Element,
+    ShimmerEVMAdditional: JSX.Element,
+    Testnet: JSX.Element,
+    TestnetEVM: JSX.Element,
+    TestnetEVMAdditional: JSX.Element,
+  };
+}

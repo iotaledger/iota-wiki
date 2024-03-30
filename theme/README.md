@@ -49,6 +49,16 @@ import code_snippet from '!!raw-loader!../../code_snippet.py'
   endString={'# end'} />
 ```
 
+### NetworkInfo
+
+A set of components showing information about the different networks.
+
+```
+import NetworkInfo from '@theme/NetworkInfo'
+
+<NetworkInfo.IOTA />
+```
+
 ## Swizzling components
 
 ```bash

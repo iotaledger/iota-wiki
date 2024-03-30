@@ -9,15 +9,7 @@
  Create as many sidebars as you want.
  */
 
-const fs = require('fs');
-
-function directoryExists(path) {
-  try {
-    return fs.statSync(path).isDirectory();
-  } catch (err) {
-    return false;
-  }
-}
+const { directoryExists } = require('../../../../src/utils/config');
 
 var python_references = {};
 if (directoryExists(__dirname + '/docs/references/python')) {

@@ -1,5 +1,6 @@
 const path = require('path');
 const defaultSettings = require('../common/defaultContentPlugin');
+const fs = require('fs');
 
 /**
  * Merges multiple configuration objects into one object.
@@ -137,9 +138,18 @@ async function create_doc_plugin({ ...options }) {
   ];
 }
 
+function directoryExists(path) {
+  try {
+    return fs.statSync(path).isDirectory();
+  } catch (err) {
+    return false;
+  }
+}
+
 module.exports = {
   glob,
   merge,
   create_doc_plugin,
   globStatic,
+  directoryExists,
 };
