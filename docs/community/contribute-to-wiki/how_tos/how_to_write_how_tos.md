@@ -15,7 +15,7 @@ Keep how tos atomic: let each describe one particular task at a time. It is easi
 
 ## How To Template
 
-If you do not know where to start, just take this template and replace everything in {CURLY BRACES} or rewrite whole sentences:
+If you do not know where to start, just take this template and replace everything in \{CURLY BRACES\} or rewrite whole sentences:
 
 ```markdown
 # How To {DO SOMETHING}

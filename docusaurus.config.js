@@ -190,6 +190,9 @@ module.exports = async () => {
           crossorigin: 'anonymous',
         },
       ],
+      markdown: {
+        format: 'detect',
+      },
       presets: [
         [
           '@docusaurus/preset-classic',
@@ -247,6 +250,7 @@ module.exports = async () => {
           'docusaurus-plugin-openapi-docs',
           {
             id: 'openapi',
+            docsPlugin: '@iota-wiki/plugin-docs',
             docsPluginId: 'apis', // e.g. "classic" or the plugin-content-docs id
             config: {
               coreApiShimmer: {

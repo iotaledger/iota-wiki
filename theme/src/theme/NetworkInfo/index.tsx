@@ -1,5 +1,5 @@
 import React from 'react';
-import { ChainId } from '../ChainId';
+import { ChainId } from '../ChainId/index.js';
 
 // TODO: Host network info in a top-level configuration file
 // and use it to generate these tables.

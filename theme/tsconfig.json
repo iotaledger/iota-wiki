@@ -5,15 +5,14 @@
   ],
   "compilerOptions": {
     /* Emit */
-    "target": "ES2020",
+    "target": "ES2022",
     "declaration": true,
     "jsx": "react-native",
     "noEmit": true,
-    // Will be overridden for client code
-    "module": "NodeNext",
+    "module": "ES2022",
 
     /* Module Resolution */
-    "moduleResolution": "NodeNext",
+    "moduleResolution": "Bundler",
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
     "isolatedModules": true,

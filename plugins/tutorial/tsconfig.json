@@ -1,12 +1,11 @@
 {
   "compilerOptions": {
-    "target": "ES2019",
-    "module": "NodeNext",
-    "moduleResolution": "node",
-    "esModuleInterop": true,
+    "target": "ES2022",
+    "module": "ES2022",
+    "moduleResolution": "Bundler",
     "rootDir": "src",
     "outDir": "dist",
-    "declaration": true
+    "skipLibCheck": true
   },
   "include": ["src"]
 }

@@ -1,9 +1,11 @@
 import { Command, Option } from 'clipanion';
 import path from 'path';
-import visit from 'unist-util-visit';
+import { visit } from 'unist-util-visit';
 import { Node } from 'unist';
 import checkUrl from 'link-check';
 import { parse } from 'node-html-parser';
+import { engine } from 'unified-engine';
+import { remark } from 'remark';
 
 const buildConfig = require.resolve('../docusaurus/config/build.js');
 const SUPPORTED_PLUGINS = [
@@ -42,8 +44,6 @@ export class Check extends Command {
 
   async execute() {
     console.time('check');
-    const { engine } = await import('unified-engine');
-    const { remark } = await import('remark');
 
     const directory = this.directory || process.cwd();
 
@@ -88,7 +88,7 @@ export class Check extends Command {
     await new Promise<number>((resolve, reject) =>
       engine(
         {
-          processor: remark(),
+          processor: remark,
           files: [pluginPaths],
           extensions: ['md', 'mdx'],
           plugins: [RemarkLinkVisitor],

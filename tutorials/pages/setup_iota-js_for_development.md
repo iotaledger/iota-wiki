@@ -32,7 +32,8 @@ npm init --yes
 ```
 
 3. Install the iota.js library and other helper dependencies:
-   :::note
+
+:::note
 
 The installation process might take a while
 
