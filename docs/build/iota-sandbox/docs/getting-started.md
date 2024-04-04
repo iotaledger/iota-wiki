@@ -47,7 +47,7 @@ mkdir iota-sandbox && cd iota-sandbox && curl -L https://github.com/iotaledger/i
 #### Set Up Your Environment
 
 In most cases, the default setup should be enough. So, you can do `cp .env.example .env` to use the default setup.
-But you can also edit the `.env` file to configure some optional settings:
+You can also edit the `.env` file to configure some optional settings:
 
 ```sh reference
 https://github.com/iotaledger/iota-sandbox/blob/main/sandbox/.env.example
