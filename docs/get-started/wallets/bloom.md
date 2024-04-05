@@ -31,7 +31,7 @@ multiple Web3 services, which was developed in collaboration with the IOTA Found
 ## Interoperability
 
 Bloom is compatible with Ledger Nano hardware wallets and also enables token, NFT, and data transfers between Layer 1 and
-Layer 2 chains without bridges, showcasing IOTA's powerful cross-architecture.
+Layer 2 chains without bridges, showcasing IOTA's powerful cross-chain architecture.
 
 ### Future Updates
 
