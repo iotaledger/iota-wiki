@@ -19,7 +19,8 @@ seamlessly transfer assets back and forth between Shimmer and ShimmerEVM without
 
 ## Security
 
-The Bloom Wallet underwent a thorough security audit by [Auditone](https://www.auditone.io/), ensuring its reliability and safety.
+The Bloom wallet underwent a thorough security audit by [Auditone](https://www.auditone.io/), ensuring its reliability and safety.
+
 
 ## Streamlined Identity Verification
 
