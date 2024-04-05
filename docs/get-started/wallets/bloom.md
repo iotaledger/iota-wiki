@@ -41,7 +41,8 @@ credentials like Gmail or iCloud, cementing its position as a versatile wallet f
 
 ## Download
 
-The Bloom Wallet is available on Mac, Windows, and Linux.
+The Bloom wallet is available on Mac, Windows, and Linux.
+
 You can find more information on Bloom's official website and download the Bloom wallet exclusively from:
 
 - [**Bloom**](https://bloomwallet.io/)**:** Official Website
