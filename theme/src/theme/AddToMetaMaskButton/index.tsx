@@ -1,5 +1,6 @@
 import React from 'react';
 import type { MetaMaskInpageProvider } from '@metamask/providers';
+import { NetworkProps } from '../constant';
 
 declare global {
   interface Window {
@@ -7,36 +8,7 @@ declare global {
   }
 }
 
-export const EVMNetworks = {
-  'shimmerevm-testnet': {
-    chainId: '0x431',
-    chainName: 'ShimmerEVM Testnet',
-    nativeCurrency: {
-      name: 'Shimmer',
-      symbol: 'SMR',
-      decimals: 18, // Replace with the number of decimals of the native currency
-    },
-    rpcUrls: ['https://json-rpc.evm.testnet.shimmer.network'],
-    blockExplorerUrls: ['https://explorer.evm.testnet.shimmer.network/'],
-  },
-  shimmerevm: {
-    chainId: '0x94',
-    chainName: 'ShimmerEVM',
-    nativeCurrency: {
-      name: 'Shimmer',
-      symbol: 'SMR',
-      decimals: 18, // Replace with the number of decimals of the native currency
-    },
-    rpcUrls: ['https://json-rpc.evm.shimmer.network'],
-    blockExplorerUrls: ['https://explorer.evm.shimmer.network/'],
-  },
-};
-
-interface MetaMaskButtonProps {
-  cfg: unknown;
-}
-
-export function AddToMetaMaskButton(props: MetaMaskButtonProps) {
+export function AddToMetaMaskButton(props: NetworkProps) {
   async function addNetwork() {
     if (!window.ethereum) {
       alert(
@@ -48,7 +20,7 @@ export function AddToMetaMaskButton(props: MetaMaskButtonProps) {
     try {
       await window.ethereum.request({
         method: 'wallet_addEthereumChain',
-        params: [props.cfg],
+        params: [props.evm],
       });
     } catch (error) {
       console.error(error);

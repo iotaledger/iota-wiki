@@ -10,7 +10,7 @@ description: 'Learn how to deploy smart contracts to Shimmer EVM and Shimmer EVM
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
-import {AddToMetaMaskButton, EVMNetworks} from '@theme/AddToMetaMaskButton';
+import {AddToMetaMaskButton, Networks} from '@theme/AddToMetaMaskButton';
 
 # Deploy a Smart Contract
 
@@ -44,10 +44,10 @@ You can check the connection details in the [Networks & Endpoints section](/buil
 
 <Tabs>
 <TabItem value='testnet' label='ShimmerEVM Testnet'>
-<AddToMetaMaskButton cfg={EVMNetworks['shimmerevm-testnet']}/>
+<AddToMetaMaskButton cfg={Networks['testnet'].evm}/>
 </TabItem>
 <TabItem value='shimmerEVM' label='Shimmer EVM'>
-<AddToMetaMaskButton cfg={EVMNetworks['shimmerevm']}/>
+<AddToMetaMaskButton cfg={Networks['shimmer'].evm}/>
 </TabItem>
 </Tabs>
 
