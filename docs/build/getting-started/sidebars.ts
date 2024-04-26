@@ -119,6 +119,33 @@ module.exports = {
               id: 'oracles',
             },
             {
+              type: 'category',
+              label: 'Safe Wallets',
+              collapsed: false,
+              link: {
+                type: 'generated-index',
+                title: 'Safe Wallets',
+                slug: '/tools/evm/safe',
+              },
+              items: [
+                {
+                  type: 'link',
+                  label: 'IOTA Safe Wallet',
+                  href: 'https://safe.iotaledger.net/',
+                },
+                {
+                  type: 'link',
+                  label: 'Shimmer Safe Wallet',
+                  href: 'https://safe.smr.network/',
+                }
+              ]
+            },
+            {
+              label: 'Multicall',
+              type: 'doc',
+              id: 'multicall',
+            },
+            {
               type: 'link',
               label: 'WASP CLI',
               description:
