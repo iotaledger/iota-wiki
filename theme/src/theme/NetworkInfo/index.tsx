@@ -65,7 +65,7 @@ function Evm(props: NetworkProps) {
           </td>
           <td>
             {props.evm.rpcUrls.map((url, index) => (
-              <CodeBlock>{url}</CodeBlock>
+              <CodeBlock key={index}>{url}</CodeBlock>
             ))}
           </td>
           <td>
