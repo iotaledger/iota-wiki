@@ -28,9 +28,7 @@ function L1(props: NetworkProps) {
               <p>{props.httpRestApi}</p>
             </a>
           </td>
-          <td>
-            {props.eventApi}
-          </td>
+          <td>{props.eventApi}</td>
           <td>
             <a
               href={props.permaNodeApi}
@@ -67,9 +65,7 @@ function Evm(props: NetworkProps) {
           </td>
           <td>
             {props.evm.rpcUrls.map((url, index) => (
-              <CodeBlock>
-                {url}
-              </CodeBlock>
+              <CodeBlock>{url}</CodeBlock>
             ))}
           </td>
           <td>
@@ -107,9 +103,7 @@ function EvmCustom(props: NetworkProps) {
               {props.evmCustom.chainAddress}
             </a>
           </td>
-          <td>
-            {props.evmCustom.aliasId}
-          </td>
+          <td>{props.evmCustom.aliasId}</td>
         </tr>
       </tbody>
     </table>
@@ -120,4 +114,4 @@ export default {
   L1,
   Evm,
   EvmCustom,
-}
+};
