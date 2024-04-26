@@ -137,8 +137,8 @@ module.exports = {
                   type: 'link',
                   label: 'Shimmer Safe Wallet',
                   href: 'https://safe.smr.network/',
-                }
-              ]
+                },
+              ],
             },
             {
               label: 'Multicall',
