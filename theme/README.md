@@ -29,9 +29,10 @@ module.exports = {
 A button to add the ShimmerEVM network to MetaMask.
 
 ```
-import {AddToMetaMaskButton} from '@theme/AddToMetaMaskButton'
+import { AddToMetaMaskButton } from '@theme/AddToMetaMaskButton'
+import { Networks } from '@theme/constant'
 
-<AddToMetaMaskButton />
+<AddToMetaMaskButton {...Networks['shimmer']}/>
 ```
 
 ### CodeSnippetBlock
@@ -55,8 +56,11 @@ A set of components showing information about the different networks.
 
 ```
 import NetworkInfo from '@theme/NetworkInfo'
+import { Networks } from '@theme/constant'
 
-<NetworkInfo.IOTA />
+<NetworkInfo.L1  {...Networks['iota']}/>
+<NetworkInfo.Evm  {...Networks['iota']}/>
+<NetworkInfo.EvmCustom  {...Networks['iota']}/>
 ```
 
 ## Swizzling components

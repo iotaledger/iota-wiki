@@ -1,7 +1,8 @@
 ---
 sidebar_position: 4
 ---
-import AddToMetaMaskButton from '@theme/AddToMetaMaskButton'
+import { AddToMetaMaskButton } from '@theme/AddToMetaMaskButton'
+import { Networks } from '@theme/constant'
 import CodeSnippetBlock from '@theme/CodeSnippetBlock'
 import code_snippet from '!!raw-loader!../../code_snippet.py'
 
@@ -152,4 +153,4 @@ This is <Highlight color="#1877F2">Facebook blue</Highlight> !
 
 ## AddToMetaMaskButton
 
-<AddToMetaMaskButton />
+<AddToMetaMaskButton {...Networks['shimmer']} />
