@@ -8,7 +8,8 @@ tags:
   - reference
   - Endpoints
 ---
-import { AddToMetaMaskButton, EVMNetworks } from '@theme/AddToMetaMaskButton';
+import { AddToMetaMaskButton } from '@theme/AddToMetaMaskButton';
+import { Networks } from '@theme/constant';
 import NetworkInfo from '@theme/NetworkInfo';
 
 # Networks & Chains
@@ -29,16 +30,16 @@ import NetworkInfo from '@theme/NetworkInfo';
 
 [ShimmerEVM](https://explorer.evm.shimmer.network/) is the L2 EVM running on top of the Shimmer network.
 
-<AddToMetaMaskButton cfg={EVMNetworks['shimmerevm']} />
+<AddToMetaMaskButton {...Networks['shimmer']} />
 
-<NetworkInfo.ShimmerEVM />
+<NetworkInfo.Evm {...Networks['shimmer']} />
 
 ## EVM Testnet
 
-<AddToMetaMaskButton cfg={EVMNetworks['evm-testnet']} />
+<AddToMetaMaskButton {...Networks['testnet']} />
 
-[The EVM Testnet](https://explorer.evm.testnet.shimmer.network/) runs as a layer 2 on top
-of the [EVM Testnet](/build/networks-endpoints/#public-testnet). This network uses ISC to facilitate
+[The ShimmerEVM Testnet](https://explorer.evm.testnet.shimmer.network/) runs as a layer 2 on top
+of the [Shimmer Testnet](/build/networks-endpoints#public-testnet). This network uses ISC to facilitate
 an Ethereum Virtual Machine and has an enshrined bridge to layer 1.
 
 :::info
@@ -47,7 +48,7 @@ This network is subject to occasional resets (no data retention) which are usual
 
 :::
 
-<NetworkInfo.TestnetEVM />
+<NetworkInfo.Evm {...Networks['shimmer']} />
 
 :::note
 

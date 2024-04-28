@@ -11,7 +11,8 @@ description: 'Learn how to deploy smart contracts to IotaEVM,  Shimmer EVM and E
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
-import {AddToMetaMaskButton, EVMNetworks} from '@theme/AddToMetaMaskButton';
+import {AddToMetaMaskButton } from '@theme/AddToMetaMaskButton';
+import { Networks } from '@theme/constant';
 
 # Deploy a Smart Contract
 
@@ -44,8 +45,8 @@ You can check the connection details in the [Networks & Endpoints section](/buil
 :::
 
 <Tabs>
-<TabItem value='testnet' label='EVM Testnet'>
-<AddToMetaMaskButton cfg={EVMNetworks['evm-testnet']}/>
+<TabItem value='testnet' label='ShimmerEVM Testnet'>
+<AddToMetaMaskButton {...Networks['testnet']}/>
 </TabItem>
 
 <TabItem value='IotaEVM' label='IotaEVM'>
@@ -53,7 +54,7 @@ You can check the connection details in the [Networks & Endpoints section](/buil
 </TabItem>
 
 <TabItem value='shimmerEVM' label='Shimmer EVM'>
-<AddToMetaMaskButton cfg={EVMNetworks['shimmerevm']}/>
+<AddToMetaMaskButton {...Networks['shimmer']}/>
 </TabItem>
 </Tabs>
 

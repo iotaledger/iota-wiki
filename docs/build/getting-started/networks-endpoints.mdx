@@ -12,7 +12,8 @@ tags:
   - Endpoints
 ---
 
-import { AddToMetaMaskButton, EVMNetworks } from '@theme/AddToMetaMaskButton';
+import { AddToMetaMaskButton } from '@theme/AddToMetaMaskButton';
+import { Networks } from '@theme/constant';
 import NetworkInfo from '@theme/NetworkInfo';
 import { ChainId } from '@theme/ChainId';
 
@@ -37,7 +38,7 @@ This network runs under a [Coordinator PoA scheme](/learn/protocols/coordinator/
 
 :::
 
-<NetworkInfo.IOTA />
+<NetworkInfo.L1 {...Networks['iota']}/>
 
 ### IOTA EVM
 
@@ -56,19 +57,19 @@ This network runs under a [Coordinator PoA scheme](/learn/protocols/coordinator/
 [Shimmer](https://explorer.iota.org/shimmer) is the staging network for new protocol versions before they hit IOTA
 Mainnet.
 
-<NetworkInfo.Shimmer />
+<NetworkInfo.L1 {...Networks['shimmer']} />
 
 ### ShimmerEVM
 
 [ShimmerEVM](https://explorer.evm.shimmer.network/) is the L2 EVM running on top of the Shimmer network.
 
-<AddToMetaMaskButton cfg={EVMNetworks['shimmerevm']} />
+<AddToMetaMaskButton {...Networks['shimmer']} />
 
-<NetworkInfo.ShimmerEVM />
+<NetworkInfo.Evm {...Networks['shimmer']} />
 
 #### Additional Info
 
-<NetworkInfo.ShimmerEVMAdditional />
+<NetworkInfo.EvmCustom {...Networks['shimmer']} />
 
 ## Public Testnet
 
@@ -78,11 +79,11 @@ Mainnet.
 This network is subject to occasional resets (no data retention) which are usually announced with a one-week grace period.
 :::
 
-<NetworkInfo.Testnet />
+<NetworkInfo.L1 {...Networks['testnet']} />
 
 ### EVM Testnet
 
-<AddToMetaMaskButton cfg={EVMNetworks['evm-testnet']} />
+<AddToMetaMaskButton {...Networks['testnet']} />
 
 [The EVM Testnet](https://explorer.evm.testnet.shimmer.network/) runs as a layer 2 on top
 of the Public Testnet. This network uses ISC to facilitate an Ethereum Virtual Machine and has an
@@ -94,8 +95,8 @@ This network is subject to occasional resets (no data retention) which are usual
 
 :::
 
-<NetworkInfo.TestnetEVM />
+<NetworkInfo.Evm {...Networks['testnet']} />
 
 #### Additional Info
 
-<NetworkInfo.TestnetEVMAdditional />
+<NetworkInfo.EvmCustom {...Networks['testnet']} />

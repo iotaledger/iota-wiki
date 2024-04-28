@@ -18,7 +18,8 @@ tags:
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
-import {AddToMetaMaskButton, EVMNetworks} from '@theme/AddToMetaMaskButton';
+import {AddToMetaMaskButton } from '@theme/AddToMetaMaskButton';
+import { Networks } from '@theme/constant';
 import DeployAdmonition from '../_admonitions/_deploy_a_smart_contract.md';
 import { ChainId } from '@theme/ChainId';
 import NetworkInfo from '@theme/NetworkInfo';
@@ -56,17 +57,17 @@ For example this would be the config to add the [ShimmerEVM](/build/networks-end
 the [EVM Testnet](/build/networks-endpoints/#evm-testnet):
 
 <Tabs>
-<TabItem value='testnet' label='EVM Testnet'>
-<AddToMetaMaskButton cfg={EVMNetworks['evm-testnet']}/>
-<NetworkInfo.TestnetEVM />
+<TabItem value='testnet' label='Shimmer Testnet'>
+<AddToMetaMaskButton {...Networks['testnet']}/>
+<NetworkInfo.Evm {...Networks['testnet']}/>
 </TabItem>
 <TabItem value='iotaEVM' label='IotaEVM'>
 <AddToMetaMaskButton cfg={EVMNetworks['iotaevm']}/>
 <NetworkInfo.IotaEVM />
 </TabItem>
 <TabItem value='shimmerEVM' label='ShimmerEVM'>
-<AddToMetaMaskButton cfg={EVMNetworks['shimmerevm']}/>
-<NetworkInfo.ShimmerEVM />
+<AddToMetaMaskButton {...Networks['shimmer']}/>
+<NetworkInfo.Evm {...Networks['shimmer']}/>
 </TabItem>
 </Tabs>
 

@@ -1,4 +1,5 @@
-import { AddToMetaMaskButton, EVMNetworks } from '@theme/AddToMetaMaskButton';
+import { AddToMetaMaskButton } from '@theme/AddToMetaMaskButton';
+import { Networks } from '@theme/constant';
 
 # Connect to EVM Testnet and deploy a Solidity Smart Contract
 
@@ -16,7 +17,7 @@ In this tutorial, we will connect to EVM Testnet, connect Metamask to it, get fu
 You can either just use the following button to add the EVM Testnet network to Metamask
 or enter the information manually.
 
-<AddToMetaMaskButton cfg={EVMNetworks['evm-testnet']} />
+<AddToMetaMaskButton {...Networks['testnet']} />
 
 To add the EVM Testnet network manually to your Metamask use following info:
 

@@ -16,7 +16,8 @@ tags:
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
-import {AddToMetaMaskButton, EVMNetworks} from '@theme/AddToMetaMaskButton';
+import {AddToMetaMaskButton } from '@theme/AddToMetaMaskButton';
+import { Networks } from '@theme/constant';
 
 # Send Funds From L1 to L2
 
@@ -49,14 +50,14 @@ You can use your [Firefly Wallet](https://firefly.iota.org/) to easily send L1 I
 1. The first thing you will need to do is add ShimmerEVM to Metamask by hitting the following button.
 
 <Tabs>
-<TabItem value='testnet' label='EVM Testnet'>
-<AddToMetaMaskButton cfg={EVMNetworks['evm-testnet']}/>
+<TabItem value='testnet' label='ShimmerEVM Testnet'>
+<AddToMetaMaskButton {...Networks['testnet']}/>
 </TabItem>
 <TabItem value='IotaEVM' label='IotaEVM'>
-<AddToMetaMaskButton cfg={EVMNetworks['iotaevm']}/>
+<AddToMetaMaskButton {...Networks['iota']}/>
 </TabItem>
 <TabItem value='shimmerEVM' label='ShimmerEVM'>
-<AddToMetaMaskButton cfg={EVMNetworks['shimmerevm']}/>
+<AddToMetaMaskButton {...Networks['shimmer']}/>
 </TabItem>
 </Tabs>
 
