@@ -27,7 +27,7 @@ If you are developing a production level application for IOTA, consider setting 
 have more control and to not run into any limits.
 :::
 
-## IOTA Mainnet
+## IOTA
 
 [The IOTA Mainnet](https://explorer.iota.org/mainnet) is the production network within the IOTA ecosystem using the IOTA
 token.
@@ -39,6 +39,34 @@ This network runs under a [Coordinator PoA scheme](/learn/protocols/coordinator/
 :::
 
 <NetworkInfo.L1 {...Networks['iota']}/>
+
+## IOTA Testnet
+
+[The IOTA Testnet](https://explorer.iota.org/iota-testnet) acts as a test bed for builders without any real world value.
+
+:::info
+This network is subject to occasional resets (no data retention) which are usually announced with a one-week grace period.
+:::
+
+<NetworkInfo.L1 {...Networks['iota_testnet']} />
+
+### IOTA EVM Testnet
+
+[IOTA EVM Testnet](https://explorer.evm.testnet.iotaledger.net) is the L2 EVM running on top of the IOTA Testnet network.
+
+:::info
+
+This network is subject to occasional resets (no data retention) which are usually announced with a one-week grace period.
+
+:::
+
+<AddToMetaMaskButton {...Networks['iota_testnet']} />
+
+<NetworkInfo.Evm {...Networks['iota_testnet']}/>
+
+#### Additional Info
+
+<NetworkInfo.EvmCustom {...Networks['iota_testnet']}/>
 
 ## Shimmer
 
@@ -59,22 +87,22 @@ Mainnet.
 
 <NetworkInfo.EvmCustom {...Networks['shimmer']} />
 
-## Public Testnet
+## Shimmer Testnet
 
-[The Public Testnet](https://explorer.iota.org/testnet) acts as a test bed for builders without any real world value.
+[The Shimmer Testnet](https://explorer.shimmer.network/shimmer-testnet) acts as a test bed for builders without any real world value.
 
 :::info
 This network is subject to occasional resets (no data retention) which are usually announced with a one-week grace period.
 :::
 
-<NetworkInfo.L1 {...Networks['testnet']} />
+<NetworkInfo.L1 {...Networks['shimmer_testnet']} />
 
 ### ShimmerEVM Testnet
 
-<AddToMetaMaskButton {...Networks['testnet']} />
+<AddToMetaMaskButton {...Networks['shimmer_testnet']} />
 
 [The ShimmerEVM Testnet](https://explorer.evm.testnet.shimmer.network/) runs as a layer 2 on top
-of the Public Testnet. This network uses ISC to facilitate an Ethereum Virtual Machine and has an
+of the Shimmer Testnet. This network uses ISC to facilitate an Ethereum Virtual Machine and has an
 enshrined bridge to layer 1.
 
 :::info
@@ -83,8 +111,8 @@ This network is subject to occasional resets (no data retention) which are usual
 
 :::
 
-<NetworkInfo.Evm {...Networks['testnet']} />
+<NetworkInfo.Evm {...Networks['shimmer_testnet']} />
 
 #### Additional Info
 
-<NetworkInfo.EvmCustom {...Networks['testnet']} />
+<NetworkInfo.EvmCustom {...Networks['shimmer_testnet']} />

@@ -8,15 +8,16 @@ tags:
 image: /img/logo/WASP_logo_dark.png
 description: 'Learn how to deploy smart contracts to Shimmer EVM and Shimmer EVM Testnet using popular tools like Remix and Hardhat.'
 ---
+import {AddToMetaMaskButton } from '@theme/AddToMetaMaskButton';
+import HardhatConfig from '../_partials/_hardhat_config.md';
+import MetamaskButtons from '../../../../_partials/_metamask_buttons.mdx';
+import { Networks } from '@theme/constant';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
-import {AddToMetaMaskButton } from '@theme/AddToMetaMaskButton';
-import { Networks } from '@theme/constant';
 
 # Deploy a Smart Contract
 
-You can deploy your smart contracts to [Shimmer EVM](https://explorer.evm.shimmer.network/) and
-the [Shimmer EVM Testnet](https://explorer.evm.testnet.shimmer.network/) using popular tools like [Remix](#remix)
+You can deploy your smart contracts to any of your [EVM chains](/build/networks-endpoints/) using popular tools like [Remix](#remix)
 and [Hardhat](#hardhat).
 
 :::tip Get a Basic Contract
@@ -43,14 +44,7 @@ You can check the connection details in the [Networks & Endpoints section](/buil
 
 :::
 
-<Tabs>
-<TabItem value='testnet' label='ShimmerEVM Testnet'>
-<AddToMetaMaskButton {...Networks['testnet']}/>
-</TabItem>
-<TabItem value='shimmerEVM' label='Shimmer EVM'>
-<AddToMetaMaskButton {...Networks['shimmer']}/>
-</TabItem>
-</Tabs>
+<MetamaskButtons/>
 
 ### 2. Access Remix IDE
 
@@ -153,34 +147,7 @@ project. Here's a step-by-step guide:
 
 1. Add your preferred network parameters to the `hardhat.config.js`, for example:
 
-<Tabs>
-<TabItem value='testnet' label='ShimmerEVM Testnet'>
-
-```javascript
-networks: {
-    'shimmerevm-testnet': {
-        url: 'https://json-rpc.evm.testnet.shimmer.network',
-        chainId:1073,
-        accounts: ['YOUR PRIVATE KEY'],
-    },
-}
-```
-
-</TabItem>
-<TabItem value='shimmerEVM' label='Shimmer EVM'>
-
-```javascript
-networks: {
-    'shimmerevm': {
-        url: 'https://json-rpc.evm.shimmer.network',
-        chainId: 148, 
-        accounts: [YOUR PRIVATE KEY],
-    },
-}
-```
-
-</TabItem>
-</Tabs>
+<HardhatConfig/>
 
 :::caution
 

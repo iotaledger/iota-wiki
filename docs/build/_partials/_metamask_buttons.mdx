@@ -1,0 +1,16 @@
+import { AddToMetaMaskButton } from '@theme/AddToMetaMaskButton';
+import { Networks } from '@theme/constant';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs groupId='network'>
+<TabItem value='iota_testnet' label='IOTA EVM Testnet'>
+<AddToMetaMaskButton {...Networks['iota_testnet']}/>
+</TabItem>
+<TabItem value='shimmer' label='ShimmerEVM'>
+<AddToMetaMaskButton {...Networks['shimmer']}/>
+</TabItem>
+<TabItem value='shimmer_testnet' label='ShimmerEVM Testnet'>
+<AddToMetaMaskButton {...Networks['shimmer_testnet']}/>
+</TabItem>
+</Tabs>
