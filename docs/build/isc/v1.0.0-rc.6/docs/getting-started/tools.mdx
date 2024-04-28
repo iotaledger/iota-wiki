@@ -57,17 +57,21 @@ For example this would be the config to add the [ShimmerEVM](/build/networks-end
 the [EVM Testnet](/build/networks-endpoints/#evm-testnet):
 
 <Tabs>
-<TabItem value='testnet' label='Shimmer Testnet'>
-<AddToMetaMaskButton {...Networks['testnet']}/>
-<NetworkInfo.Evm {...Networks['testnet']}/>
-</TabItem>
 <TabItem value='iotaEVM' label='IotaEVM'>
-<AddToMetaMaskButton cfg={EVMNetworks['iotaevm']}/>
-<NetworkInfo.IotaEVM />
+<AddToMetaMaskButton {...Networks['iota']}/>
+<NetworkInfo.Evm {...Networks['iota']}/>
+</TabItem>
+<TabItem value='iotaEVMTestnet' label='IotaEVM Testnet'>
+<AddToMetaMaskButton {...Networks['iota_testnet']}/>
+<NetworkInfo.Evm {...Networks['iota_testnet']}/>
 </TabItem>
 <TabItem value='shimmerEVM' label='ShimmerEVM'>
 <AddToMetaMaskButton {...Networks['shimmer']}/>
 <NetworkInfo.Evm {...Networks['shimmer']}/>
+</TabItem>
+<TabItem value='shimmerEVMTestnet' label='ShimmerEVM Testnet'>
+<AddToMetaMaskButton {...Networks['shimmer_testnet']}/>
+<NetworkInfo.Evm {...Networks['shimmer_testnet']}/>
 </TabItem>
 </Tabs>
 
@@ -104,7 +108,7 @@ Solidity smart contracts on an EVM chain. EVM chains running on IOTA Smart Contr
 make sure you add the correct network parameters to your `hardhat.config.js`, for example:
 
 <Tabs>
-<TabItem value='testnet' label='EVM Testnet'>
+<TabItem value='shimmer_testnet' label='ShimmerEVM Testnet'>
 
 ```javascript
   networks: {

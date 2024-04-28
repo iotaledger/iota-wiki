@@ -43,7 +43,7 @@ module.exports = {
         {
           label: 'IOTA EVM Explorer',
           type: 'link',
-          href: 'https://iota-evm.blockscout.com/',
+          href: 'https://explorer.evm.iota.org',
         },
         {
           label: 'IOTA EVM Toolkit',

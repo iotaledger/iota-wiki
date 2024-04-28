@@ -16,7 +16,7 @@ import { Networks } from '@theme/constant';
 
 # Deploy a Smart Contract
 
-You can deploy your smart contracts to [IotaEVM](https://iota-evm.blockscout.com/),
+You can deploy your smart contracts to [IotaEVM](https://explorer.evm.iota.org),
 [Shimmer EVM](https://explorer.evm.shimmer.network/) and the
 [EVM Testnet](https://explorer.evm.testnet.shimmer.network/) using popular tools like [Remix](#remix) and [Hardhat](#hardhat).
 
@@ -45,12 +45,12 @@ You can check the connection details in the [Networks & Endpoints section](/buil
 :::
 
 <Tabs>
-<TabItem value='testnet' label='ShimmerEVM Testnet'>
-<AddToMetaMaskButton {...Networks['testnet']}/>
+<TabItem value='shimmer_testnet' label='ShimmerEVM Testnet'>
+<AddToMetaMaskButton {...Networks['shimmer_testnet']}/>
 </TabItem>
 
 <TabItem value='IotaEVM' label='IotaEVM'>
-<AddToMetaMaskButton cfg={EVMNetworks['iotaevm']}/>
+<AddToMetaMaskButton {...Networks['iota']}/>
 </TabItem>
 
 <TabItem value='shimmerEVM' label='Shimmer EVM'>
@@ -160,7 +160,7 @@ project. Here's a step-by-step guide:
 1. Add your preferred network parameters to the `hardhat.config.js`, for example:
 
 <Tabs>
-<TabItem value='testnet' label='EVM Testnet'>
+<TabItem value='shimmer_testnet' label='ShimmerEVM Testnet'>
 
 ```javascript
 networks: {

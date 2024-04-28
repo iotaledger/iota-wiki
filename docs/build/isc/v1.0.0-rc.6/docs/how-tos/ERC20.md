@@ -74,7 +74,7 @@ Once you have deployed your contract, you can add your new custom token to your 
 
 1. Open Metamask, and click on the transaction that created the contract. From there, you can simply click
    on `View on block explorer` to visit the transaction details. Alternatively, you can copy the transaction ID and
-   visit the [IotaEVM Explorer](https://iota-evm.blockscout.com/),
+   visit the [IotaEVM Explorer](https://explorer.evm.iota.org),
    [ShimmerEVM Explorer](https://explorer.evm.testnet.shimmer.network/)
    or  [EVM Testnet Explorer](https://explorer.evm.testnet.shimmer.network/) and use the search bar to find transaction.
 
