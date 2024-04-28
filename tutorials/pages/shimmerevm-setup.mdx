@@ -1,4 +1,5 @@
-import { AddToMetaMaskButton, EVMNetworks } from '@theme/AddToMetaMaskButton';
+import { AddToMetaMaskButton } from '@theme/AddToMetaMaskButton';
+import { Networks } from '@theme/constant';
 
 # Connect to ShimmerEVM and deploy a Solidity Smart Contract
 
@@ -19,7 +20,7 @@ endpoints [here](/build/networks-endpoints/#shimmerevm).
 You can either just use the following button to add the ShimmerEVM network to Metamask
 or enter the information manually.
 
-<AddToMetaMaskButton cfg={EVMNetworks['shimmerevm']} />
+<AddToMetaMaskButton {...Networks['shimmer']} />
 
 To add the ShimmerEVM network manually to your Metamask use following info:
 

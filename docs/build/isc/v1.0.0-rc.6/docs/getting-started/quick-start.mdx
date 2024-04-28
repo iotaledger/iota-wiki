@@ -13,7 +13,8 @@ tags:
   - RPC
 ---
 
-import { AddToMetaMaskButton, EVMNetworks } from '@theme/AddToMetaMaskButton';
+import { AddToMetaMaskButton } from '@theme/AddToMetaMaskButton';
+import { Networks } from '@theme/constant';
 
 # ShimmerEVM Testnet Quickstart Guide
 
@@ -27,7 +28,7 @@ This guide will help you quickly get started with the [ShimmerEVM Testnet](/buil
 
 Click this button:
 
-<AddToMetaMaskButton cfg={EVMNetworks['shimmerevm-testnet']} />
+<AddToMetaMaskButton {...Networks['testnet']} />
 
 :::tip
 

@@ -18,7 +18,8 @@ tags:
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
-import {AddToMetaMaskButton, EVMNetworks} from '@theme/AddToMetaMaskButton';
+import {AddToMetaMaskButton } from '@theme/AddToMetaMaskButton';
+import { Networks } from '@theme/constant';
 import DeployAdmonition from '../_admonitions/_deploy_a_smart_contract.md';
 import { ChainId } from '@theme/ChainId';
 import NetworkInfo from '@theme/NetworkInfo';
@@ -56,12 +57,12 @@ the [ShimmerEVM Testnet](/build/networks-endpoints/#shimmerevm-testnet):
 
 <Tabs>
 <TabItem value='testnet' label='Public Testnet'>
-<AddToMetaMaskButton cfg={EVMNetworks['shimmerevm-testnet']}/>
-<NetworkInfo.TestnetEVM />
+<AddToMetaMaskButton {...Networks['testnet']}/>
+<NetworkInfo.Evm {...Networks['testnet']}/>
 </TabItem>
 <TabItem value='shimmerEVM' label='ShimmerEVM'>
-<AddToMetaMaskButton cfg={EVMNetworks['shimmerevm']}/>
-<NetworkInfo.ShimmerEVM />
+<AddToMetaMaskButton {...Networks['shimmer']}/>
+<NetworkInfo.Evm {...Networks['shimmer']}/>
 </TabItem>
 </Tabs>
 
