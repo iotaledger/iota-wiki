@@ -27,7 +27,7 @@ If you are developing a production level application for IOTA, consider setting 
 have more control and to not run into any limits.
 :::
 
-## IOTA Mainnet
+## IOTA
 
 [The IOTA Mainnet](https://explorer.iota.org/mainnet) is the production network within the IOTA ecosystem using the IOTA
 token.
@@ -40,9 +40,9 @@ This network runs under a [Coordinator PoA scheme](/learn/protocols/coordinator/
 
 <NetworkInfo.L1 {...Networks['iota']}/>
 
-### IOTA EVM
+### IotaEVM
 
-[IOTA EVM](https://explorer.evm.iota.org) is the L2 EVM running on top of the IOTA network.
+[IotaEVM](https://explorer.evm.iota.org) is the L2 EVM running on top of the IOTA network.
 
 <AddToMetaMaskButton {...Networks['iota']} />
 
@@ -52,7 +52,17 @@ This network runs under a [Coordinator PoA scheme](/learn/protocols/coordinator/
 
 <NetworkInfo.EvmCustom {...Networks['iota']}/>
 
-### IOTA EVM Testnet
+## IOTA Testnet
+
+[The IOTA Testnet](https://explorer.iota.org/iota-testnet) acts as a test bed for builders without any real world value.
+
+:::info
+This network is subject to occasional resets (no data retention) which are usually announced with a one-week grace period.
+:::
+
+<NetworkInfo.L1 {...Networks['iota_testnet']} />
+
+### IotaEVM Testnet
 
 [IOTA EVM Testnet](https://explorer.evm.testnet.iotaledger.net) is the L2 EVM running on top of the IOTA Testnet network.
 
