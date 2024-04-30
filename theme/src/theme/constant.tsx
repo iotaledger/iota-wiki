@@ -17,7 +17,7 @@ export const Networks = {
     explorer: 'https://explorer.iota.org/iota-testnet',
     evm: {
       chainId: '0x433',
-      chainName: 'IotaEVM Testnet',
+      chainName: 'IOTA EVM Testnet',
       nativeCurrency: {
         name: 'IOTA',
         symbol: 'IOTA',

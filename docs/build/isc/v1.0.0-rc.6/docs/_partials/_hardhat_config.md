@@ -19,7 +19,7 @@ networks: {
 </CodeBlock>
 
 </TabItem>
-<TabItem value='iota_testnet' label='IotaEVM Testnet'>
+<TabItem value='iota_testnet' label='IOTA EVM Testnet'>
 
 <CodeBlock language="js">
 {`
