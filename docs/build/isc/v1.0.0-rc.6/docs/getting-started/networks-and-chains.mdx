@@ -13,10 +13,31 @@ import { Networks } from '@theme/constant';
 import NetworkInfo from '@theme/NetworkInfo';
 
 # Networks & Chains
+## IOTA EVM Testnet
 
-## IotaEVM
+<AddToMetaMaskButton {...Networks['shimmer_testnet']} />
 
-[IotaEVM](https://explorer.evm.iota.org) is the L2 EVM running on top of the IOTA network.
+[The IOTA EVM Testnet](https://explorer.evm.testnet.iotaledger.net/) runs as a layer 2 on top
+of the [IOTA Testnet](/build/networks-endpoints#iota-testnet). This network uses ISC to facilitate
+an Ethereum Virtual Machine and has an enshrined bridge to layer 1.
+
+:::info
+
+This network is subject to occasional resets (no data retention) which are usually announced with a one-week grace period.
+
+:::
+
+<NetworkInfo.Evm {...Networks['shimmer_testnet']} />
+
+:::note
+
+The other values (network name and currency symbol) can be whatever value you like.
+
+:::
+
+## IOTA EVM
+
+[IOTA EVM](https://explorer.evm.iota.org) is the L2 EVM running on top of the IOTA network.
 
 <AddToMetaMaskButton {...Networks['iota']} />
 
@@ -26,12 +47,37 @@ import NetworkInfo from '@theme/NetworkInfo';
 
 <NetworkInfo.EvmCustom {...Networks['iota']}/>
 
-## IotaEVM Testnet
+## IOTA EVM Testnet
+
+<AddToMetaMaskButton {...Networks['iota_testnet']} />
+
+[The IOTA EVM Testnet](https://explorer.evm.testnet.iotaledger.net/) runs as a layer 2 on top
+of the [IOTA Testnet](/build/networks-endpoints#iota-testnet). This network uses ISC to facilitate
+
+:::info
+
+This network is subject to occasional resets (no data retention) which are usually announced with a one-week grace period.
+
+:::
+
+<NetworkInfo.Evm {...Networks['iota_testnet']} />
+
+:::note
+
+The other values (network name and currency symbol) can be whatever value you like.
+
+:::
+
+### Additional Info
+
+<NetworkInfo.EvmCustom {...Networks['iota_testnet']}/>
+
+## ShimmerEVM Testnet
 
 <AddToMetaMaskButton {...Networks['shimmer_testnet']} />
 
-[The IotaEVM Testnet](https://explorer.evm.testnet.iotaledger.net/) runs as a layer 2 on top
-of the [IOTA Testnet](/build/networks-endpoints#iota-testnet). This network uses ISC to facilitate
+[The ShimmerEVM Testnet](https://explorer.evm.testnet.shimmer.network/) runs as a layer 2 on top
+of the [Shimmer Testnet](/build/networks-endpoints#shimmer-testnet). This network uses ISC to facilitate
 an Ethereum Virtual Machine and has an enshrined bridge to layer 1.
 
 :::info
@@ -92,6 +138,6 @@ The other values (network name and currency symbol) can be whatever value you li
 
 ## Core Contracts
 
-[IotaEVM](#iotaEVM), [ShimmerEVM](#shimmerEVM) and the testnet networks have 7
+[IOTA EVM](#IOTAEVM), [ShimmerEVM](#shimmerEVM) and the testnet networks have 7
 [core contracts](../reference/core-contracts/overview.md) deployed, as well as the
 [Magic Contract](../reference/magic-contract/introduction.md).
