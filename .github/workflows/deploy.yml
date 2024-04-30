@@ -42,7 +42,5 @@ jobs:
         run: vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }}
       # Trigger Algolia crawler
       - name: Crawl
-        uses: algolia/algoliasearch-crawler-github-actions@v1
         run: |
-          curl -H "Content-Type: application/json" -X POST --user ${{ secrets.ALGOLIA_USER_ID }}:${{ secrets.ALGOLIA_API_KEY }} "https://crawler.algolia.com/api/1/crawlers/${{ secrets.ALGOLIA_CRAWLER_ID }}/run"
           curl -H "Content-Type: application/json" -X POST --user ${{ secrets.ALGOLIA_USER_ID }}:${{ secrets.ALGOLIA_API_KEY }} "https://crawler.algolia.com/api/1/crawlers/${{ secrets.ALGOLIA_CRAWLER_ID }}/reindex"
