@@ -22,7 +22,7 @@ The IOTA DID Method Specification describes a method of implementing the [Decent
 
 ## Data Types & Subschema Notation
 
-Data types and subschemas used throughout this TIP are defined in [TIP-21](https://github.com/iotaledger/tips/blob/v1.0.0/tips/TIP-0021/tip-0021.md).
+Data types and subschemas used throughout this TIP are defined in [TIP-21](https://github.com/iotaledger/tips/blob/main/tips/TIP-0021/tip-0021.md).
 
 ## Introduction
 
@@ -36,13 +36,13 @@ Data stored in an output and covered by the storage deposit will be stored in _a
 
 ### Alias Output
 
-The [Alias Output](https://github.com/iotaledger/tips/blob/v1.0.0/tips/TIP-0018/tip-0018.md#alias-output) is a specific implementation of the [UTXO state machine](https://github.com/iotaledger/tips/blob/v1.0.0/tips/TIP-0018/tip-0018.md#chain-constraint-in-utxo). Some of its relevant properties are:
+The [Alias Output](https://github.com/iotaledger/tips/blob/main/tips/TIP-0018/tip-0018.md#alias-output) is a specific implementation of the [UTXO state machine](https://github.com/iotaledger/tips/blob/main/tips/TIP-0018/tip-0018.md#chain-constraint-in-utxo). Some of its relevant properties are:
 
 - **Amount**: the amount of IOTA coins held by the output.
 - **Alias ID**: 32 byte array, a unique identifier of the alias, which is the BLAKE2b-256 hash
   of the Output ID that created it.
 - **State Index**: A counter that must increase by 1 every time the alias is state transitioned.
-- **State Metadata**: Dynamically sized array of arbitrary bytes with a length up to `Max Metadata Length`, as defined in [TIP-22](https://github.com/iotaledger/tips/blob/v1.0.0/tips/TIP-0022/tip-0022.md). Can only be changed by the state controller.
+- **State Metadata**: Dynamically sized array of arbitrary bytes with a length up to `Max Metadata Length`, as defined in [TIP-22](https://github.com/iotaledger/tips/blob/main/tips/TIP-0022/tip-0022.md). Can only be changed by the state controller.
 - **Unlock Conditions**:
   - State Controller Address Unlock Condition
   - Governor Address Unlock Condition
