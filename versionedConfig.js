@@ -41,6 +41,10 @@ exports.buildPluginsConfig = [
     subsection: 'build-layer-1',
     versions: [
       {
+        label: '1.3',
+        badges: ['IOTA', 'Shimmer'],
+      },
+      {
         label: '1.2',
         badges: ['IOTA', 'Shimmer'],
       },

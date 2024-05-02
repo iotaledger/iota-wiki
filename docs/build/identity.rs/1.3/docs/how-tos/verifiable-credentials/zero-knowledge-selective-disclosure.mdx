@@ -1,0 +1,151 @@
+---
+sidebar_label: Zero Knowledge Selective Disclosure
+description: Zero Knowledge selectively disclosable VCs.
+image: /img/Identity_icon.png
+tags:
+  - verifiable
+  - credentials
+  - Zero Knowledge
+  - Disclosure
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Zero Knowledge Selective Disclosure (ZK-SD-VCs)
+ZK-SD-VCs allow holders to verify their VCs without having to disclose to verifiers the entire VC's claim set. 
+This is done through the creation of a Zero Knowledge Proof (ZKP) that guaranties the integrity and authenticity
+of the VC, even when only partially disclosed to the verifier.
+
+:::note
+Although ZK-SD-VCs offer similar functionalities to [SD-JWT VCs](../selective-disclosure) - at least on a high level - they rely on completely different
+concepts and security concerns. For an user, the most notable difference is the shifted capability of choosing which fields can
+be concealed from a verifier. For ZK-SD-VCs it's the holder that has total control over which parts of the credential can be 
+undisclosed, whereas for SD-JWT VCs it's the issuer that decides which fields may be concealed by the holder.
+:::
+
+## Concepts
+### Issuance
+The issuer of a ZK-SD-VC creates the credential, signs it using the [BBS+](https://identity.foundation/bbs-signature/draft-irtf-cfrg-bbs-signatures.html) signature scheme
+and sends both the credential and the signature to the holder. To facilitate this process, the credential is first encoded 
+as a [JSON Proof Token](https://www.ietf.org/archive/id/draft-ietf-jose-json-proof-token-02.html) (JPT), which is then used as the payload of a 
+[JSON Web Proof](https://www.ietf.org/archive/id/draft-jmiller-jose-json-web-proof-00.html) (JWP) and sent to the holder as JPT. 
+:::note
+JWPs and JPTs can be reasoned about as the Zero Knowledge (ZK) based counterparts of JWSs and JWTs.
+:::
+In code, this process would look like the following snippet:
+<Tabs groupId="language" queryString>
+<TabItem value="rust" label="Rust">
+
+```rust reference
+https://github.com/iotaledger/identity.rs/blob/feat/jpt-bbs%2B-sd/examples/1_advanced/9_zkp.rs#L114-L141
+```
+
+</TabItem>
+<TabItem value="typescript-node" label="Typescript (Node.js)">
+
+```ts reference
+https://github.com/iotaledger/identity.rs/blob/feat/jpt-bbs%2B-sd/bindings/wasm/examples/src/1_advanced/8_zkp.ts#L109-L133
+```
+
+</TabItem>
+</Tabs>
+
+
+The user can notice how the VC issuer makes no prescription whatsoever regarding the disclosability of the VC's fields.
+
+### Holder presentation
+
+Once the holder receives a presentation challenge from a verifier, it construct a selective disclosure presentation for the requested credential
+and sends it back for verification. For this process the JWP in possession of the holder undergoes a transformation that allows the holder
+to conceal any fields from the credential's claims through the creation of a Zero Knowledge Proof (ZKP) of the issuer's signature and becomes a _presented JWP_.
+The proof value depends on the selected [JSON Proof Algorithm](https://www.ietf.org/archive/id/draft-ietf-jose-json-proof-algorithms-02.html) (JPA).
+
+<Tabs groupId="language" queryString>
+
+<TabItem value="rust" label="Rust">
+
+```rust reference
+https://github.com/iotaledger/identity.rs/blob/feat/jpt-bbs%2B-sd/examples/1_advanced/9_zkp.rs#L197-L223
+```
+
+</TabItem>
+<TabItem value="typescript-node" label="Typescript (Node.js)">
+
+```ts reference
+https://github.com/iotaledger/identity.rs/blob/feat/jpt-bbs%2B-sd/bindings/wasm/examples/src/1_advanced/8_zkp.ts#L109-L133
+```
+
+</TabItem>
+</Tabs>
+
+Here's an example presented JWP in it's JPT JSON serialization format:
+```
+{
+  "payloads": [
+    null,
+    "IkpheSI",
+    null,
+    "NDI"
+  ],
+  "issuer": "eyJpc3MiOiJodHRwczovL2lzc3Vlci50bGQiLCJjbGFpbXMiOlsiZmFt
+  aWx5X25hbWUiLCJnaXZlbl9uYW1lIiwiZW1haWwiLCJhZ2UiXSwidHlwIjoiSlBUIiw
+  icHJvb2ZfandrIjp7ImNydiI6IlAtMjU2Iiwia3R5IjoiRUMiLCJ4IjoiYWNiSVFpdU
+  1zM2k4X3VzekVqSjJ0cFR0Uk00RVUzeXo5MVBINkNkSDJWMCIsInkiOiJfS2N5TGo5d
+  ldNcHRubUt0bTQ2R3FEejh3Zjc0STVMS2dybDJHekgzblNFIn0sInByZXNlbnRhdGlv
+  bl9qd2siOnsiY3J2IjoiUC0yNTYiLCJrdHkiOiJFQyIsIngiOiJvQjFUUHJFX1FKSUw
+  2MWZVT09LNURwS2dkOGoyemJaSnRxcElMRFRKWDZJIiwieSI6IjNKcW5ya3VjTG9ia2
+  RSdU9xWlhPUDlNTWxiRnllbkZPTHlHbEctRlBBQ00ifSwiYWxnIjoiU1UtRVMyNTYif
+  Q",
+  "proof": "LJMiN6caEqShMJ5jPNts8OescqNq5vKSqkfAdSuGJA1GyJyyrfjkpAG0c
+  DJKZoUgomHu5MzYhTUsa0YRXVBnMB91RjonrnWVsakfXtfm2h7gHxA_8G1wkB09x09k
+  on2eK9gTv4iKw4GP6Rh02PEIAVAvnhtuiShMnPqVw1tCBdhweWzjyxJbG86J7Y8MDt2
+  H9f5hhHIwmSLwXYzCbD37WmvUEQ2_6whgAYB5ugSQN3BjXEviCA__VX3lbhH1RVc27E
+  YkRHdRgGQwWNtuExKz7OmwH8oWizplEtjWJ5WIlJpee79gQ9HTa2QIOT9bUDvjjkkO-
+  jK_zuDjZwh5MkrcaQ",
+  "presentation": "eyJub25jZSI6InVURUIzNzFsMXB6V0psN2FmQjB3aTBIV1VOaz
+  FMZS1iQ29tRkx4YThLLXMifQ"
+}
+```
+
+### Verification
+
+The verifier decodes the received JPT presentation and asserts the validity of the ZKP it contains, thus proving the
+authenticity and integrity of the presented credential, without knowledge of any of the undisclosed fields.
+
+<Tabs groupId="language" queryString>
+
+<TabItem value="rust" label="Rust">
+
+```rust reference
+https://github.com/iotaledger/identity.rs/blob/feat/jpt-bbs%2B-sd/examples/1_advanced/9_zkp.rs#L244-L257
+```
+
+</TabItem>
+<TabItem value="typescript-node" label="Typescript (Node.js)">
+
+```ts reference
+https://github.com/iotaledger/identity.rs/blob/feat/jpt-bbs%2B-sd/bindings/wasm/examples/src/1_advanced/8_zkp.ts#L109-L133
+```
+
+</TabItem>
+</Tabs>
+
+## Full Example Code
+
+<Tabs groupId="language" queryString>
+<TabItem value="rust" label="Rust">
+
+```rust reference
+https://github.com/iotaledger/identity.rs/blob/feat/jpt-bbs%2B-sd/examples/1_advanced/9_zkp.rs
+```
+
+</TabItem>
+<TabItem value="typescript-node" label="Typescript (Node.js)">
+
+```ts reference
+https://github.com/iotaledger/identity.rs/blob/feat/jpt-bbs%2B-sd/bindings/wasm/examples/src/1_advanced/8_zkp.ts
+```
+
+</TabItem>
+</Tabs>

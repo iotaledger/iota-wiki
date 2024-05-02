@@ -1,0 +1,64 @@
+---
+title: Alias Outputs
+description: UTXO Alias Ouput
+image: /img/Identity_icon.png
+tags:
+  - public keys
+  - utxo
+  - Method Specification
+  - Decentralized Identifiers
+  - overview
+  - DLT
+---
+
+# Alias Outputs
+
+:::info TL;DR
+
+The IOTA DID method uses Alias Outputs for storing DID Documents.
+Alias Outputs are created via transactions,
+and require a [storage deposit](/learn/protocols/stardust/core-concepts/storage-deposit/) to cover the data storage.
+The deposit is refundable upon destruction of the output.
+
+Each Alias Output has an `Alias ID` that becomes the basis for the DID,
+and which can be transferred through transactions to update DID Documents.
+
+:::
+
+
+The IOTA DID method uses the IOTA ledger, which is baed on the unspent transaction output (_UTXO_) model,
+as well as the features of the [Stardust](/introduction/stardust/explanations/what_is_stardust) upgrade,
+which are fundamental to the IOTA DID method.
+
+The Alias Output is used to store a DID Document on the ledger.
+It is a specific implementation of the UTXO _state machine_ that can hold arbitrary data in its `State Metadata`.
+The Alias Output has two kinds of controllers, a state controller and a governor.
+
+The state controller can only execute state transitions, which update the data in the `State Metadata`.
+
+The governor, on the contrary, can't update the `State Metadata` but can change controllers and even destroy the Alias Output.
+
+A controller can be either Ed25519 Address, [Alias Address or an _NFT_ Address](/learn/protocols/stardust/core-concepts/multi-asset-ledger/). Only one of each of these types can be set for an Alias Output.
+
+To create a new Alias Output, a transaction must be made that includes another Output as input,
+a Basic Output, for example, and the new Alias Output as output.
+
+### Storage Deposit
+
+The arbitrary data stored in the `State Metadata` of the Alias output must be covered by a
+[storage deposit](/learn/protocols/stardust/core-concepts/storage-deposit/).
+This helps to control the ledger size from growing uncontrollably while guaranteeing the data
+is indefinitely stored on the ledger, which is important for resolving DID Documents.
+This deposit is fully refundable and can be reclaimed when the output is destroyed.
+
+Both the state controller and the governor can control the tokens stored in the Alias Output.
+_Nodes_ expose an API to calculate the required deposit depending on the size of the data stored.
+
+### Alias ID
+
+Each Alias Output has an `Alias ID`. This ID is assigned after a transaction creates the Alias Output.
+The actual DID is derived from this `Alias ID`, so it will be unknown before publishing the transaction.
+Consequently, the DID inside the `State Metadata` is replaced by the placeholder `did:0:0` to indicate self.
+
+If a transaction has an Alias Output as input, its `Alias ID` can be kept by one of its outputs.
+This feature is necessary for updating the DID Documents since the DID itself is derived from the `Alias ID`.
