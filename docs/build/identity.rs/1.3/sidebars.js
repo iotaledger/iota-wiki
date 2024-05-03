@@ -102,6 +102,7 @@ module.exports = {
             'references/specifications/overview',
             'references/specifications/iota-did-method-spec',
             'references/specifications/revocation-bitmap-2022',
+            'references/specifications/revocation-timeframe-2024',
           ],
         },
       ],
