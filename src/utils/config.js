@@ -1,6 +1,7 @@
 const path = require('path');
 const defaultSettings = require('../common/defaultContentPlugin');
 const fs = require('fs');
+const pluginDocs = require('../plugins/docs');
 
 /**
  * Merges multiple configuration objects into one object.
@@ -129,8 +130,8 @@ async function create_doc_plugin({ ...options }) {
   }
 
   return [
-    '@iota-wiki/plugin-docs',
-    /** @type {import('@iota-wiki/plugin-docs').Options} */
+    pluginDocs,
+    /** @type {import('@site/src/plugins/docs/types').Options} */
     ({
       ...setting,
       ...options,

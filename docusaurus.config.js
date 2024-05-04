@@ -11,6 +11,7 @@ const {
 const {
   createVersionRedirects,
 } = require('./src/utils/pluginConfigGenerators');
+const pluginDocs = require('./src/plugins/docs');
 
 module.exports = async () => {
   const contentPlugins = await Promise.all(
@@ -444,7 +445,6 @@ module.exports = async () => {
       themes: [
         'docusaurus-theme-openapi-docs',
         '@saucelabs/theme-github-codeblock',
-        '@iota-wiki/theme',
       ],
       staticDirectories: [path.resolve(__dirname, 'static')],
     },

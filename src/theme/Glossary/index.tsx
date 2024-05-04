@@ -2,10 +2,10 @@ import React from 'react';
 import Heading from '@theme/Heading';
 import { toTitleCase } from '@artsy/to-title-case';
 import { clsx } from 'clsx';
+import parse from 'html-react-parser';
 
 export default function Glossary() {
   const glossary = require('@site/common/jargon.js');
-  const parse = require('html-react-parser');
 
   const sortedGlossary = Object.keys(glossary)
     .sort(function (a, b) {
