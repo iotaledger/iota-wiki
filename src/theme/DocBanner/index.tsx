@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDoc } from '@docusaurus/theme-common/internal';
-import { DocMetadata } from '../../../../src/plugins/docs';
+import { DocMetadata } from '../../plugins/docs';
 import ReactMarkdown from 'react-markdown';
 import './styles.css';
 

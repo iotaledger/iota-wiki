@@ -4,8 +4,6 @@ import type {
   Plugin,
 } from '@docusaurus/types';
 
-import type { NormalizedOptions, UserOptions } from '../typesypes';
-
 export interface Options {
   title: string;
   description: string;
