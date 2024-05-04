@@ -11,7 +11,6 @@ const {
 const {
   createVersionRedirects,
 } = require('./src/utils/pluginConfigGenerators');
-const pluginDocs = require('./src/plugins/docs');
 
 module.exports = async () => {
   const contentPlugins = await Promise.all(
@@ -420,7 +419,7 @@ module.exports = async () => {
                 },
               ];
 
-              let paths = [];
+              const paths = [];
               for (const redirect of redirects) {
                 if (existingPath.startsWith(redirect.to)) {
                   paths.push(existingPath.replace(redirect.to, redirect.from));
