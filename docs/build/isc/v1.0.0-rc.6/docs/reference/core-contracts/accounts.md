@@ -109,6 +109,9 @@ You can call this end point from the CLI using `wasp-cli chain create-native-tok
 
 The storage deposit for the new foundry must be provided via allowance (only the minimum required will be used).
 
+#### Returns
+
+- `s` (`uint32`): The serial number of the newly created foundry
 
 ### `nativeTokenModifySupply(s SerialNumber, d SupplyDeltaAbs, y DestroyTokens)`
 
