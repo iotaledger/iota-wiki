@@ -1,9 +1,9 @@
 ---
-description: Learn how to install and run a HORNET node using Docker.
-image: /img/banner/banner_hornet_using_docker.png
+description: Learn how to install and run a iota-CORE node using Docker.
+image: /img/icons/iota/iota_core.png
 tags:
   - IOTA Node
-  - HORNET Node
+  - IOTA-core Node
   - Docker
   - Install
   - Run
@@ -17,16 +17,15 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import LinuxCommands from '@site/docs/_admonitions/_linux-commands.md';
 
-# Install HORNET using Docker
+# Install the IOTA-core using Docker
 
-![HORNET Node using Docker](/img/banner/banner_hornet_using_docker.png)
 
-This guide represents the recommended setup to run a HORNET node.
-It includes everything required to setup a public node accessible by wallets and applications:
+This guide represents the recommended setup to run an IOTA-core node.
+It includes everything required to set up a public node accessible by wallets and applications:
 
-- [HORNET](https://github.com/iotaledger/hornet)
+- [IOTA-core](https://github.com/iotaledger/iota-core)
 - [Traefik](https://traefik.io) - Reverse proxy using SSL certificates to secure access to the node API and dashboard.
-- [Prometheus](https://prometheus.io) - Metrics scraper configured to collect all metrics from HORNET and INX extensions.
+- [Prometheus](https://prometheus.io) - Metrics scraper configured to collect all metrics from the IOTA-Core and INX extensions.
 - [Grafana](https://grafana.com) - Data visualizer that can be used to display the metrics collected by Prometheus.
 - [inx-dashboard](https://github.com/iotaledger/inx-dashboard) - Node dashboard.
 - [inx-indexer](https://github.com/iotaledger/inx-indexer) - Indexer extension for wallets and applications.
@@ -43,8 +42,8 @@ It includes everything required to setup a public node accessible by wallets and
 3. A registered domain name pointing to the public IP address of your server. _(optional if not using HTTPS)_
 4. Opening up the following ports in your servers firewall:
 
-- `15600 TCP` - Used for HORNET gossip.
-- `14626 UDP` - Used for HORNET autopeering.
+- `15600 TCP` - Used for the IOTA-Core gossip.
+- `14626 UDP` - Used for the IOTA-Core autopeering.
 - `80 TCP` - Used for HTTP. _(can be changed, see below)_
 - `443 TCP` - Used for HTTPS. _(optional if not using HTTPS)_
 - `4000 TCP/UDP` - Used for Wasp gossip. _(optional if not using Wasp)_
@@ -87,7 +86,7 @@ mkdir node-docker-setup && cd node-docker-setup && curl -L https://node-docker-s
 
 ### 1. Generate dashboard credentials
 
-To access your HORNET dashboard, a set of credentials need to be configured.
+To access your IOTA-Core dashboard, a set of credentials need to be configured.
 Run the following command to generate a password hash and salt for the dashboard:
 
 ```sh
@@ -152,7 +151,7 @@ https://github.com/iotaledger/node-docker-setup/blob/main/testnet/env_template
 
 ### 3. Setup neighbors
 
-Add your HORNET neighbor addresses to the `peering.json` file.
+Add your IOTA-Core neighbor addresses to the `peering.json` file.
 
 :::note
 
@@ -163,7 +162,7 @@ See [peering](../references/peering.md) for more information.
 
 ### 4. Create the `data` folder
 
-All files used by HORNET, the INX extensions, Wasp, Traefik & co will be stored in a directory called `data`.
+All files used by the IOTA-Core, the INX extensions, Wasp, Traefik & co will be stored in a directory called `data`.
 Docker image runs under user with user id `65532` and group id `65532`, so this directory needs to have the correct permissions to be accessed by the containers.
 To create this directory with correct permissions run the contained script:
 
@@ -175,7 +174,7 @@ To create this directory with correct permissions run the contained script:
 
 ### Starting the node
 
-You can start the HORNET node and INX extensions by running:
+You can start the IOTA-Core node and INX extensions by running:
 
 ```sh
 docker compose up -d
@@ -188,7 +187,7 @@ docker compose up -d
 After starting the node you will be able to access your services at the following endpoints:
 
 - API: `https://node.your-domain.com/api/routes`
-- HORNET Dashboard: `https://node.your-domain.com/dashboard`
+- IOTA-Core Dashboard: `https://node.your-domain.com/dashboard`
 - Grafana: `https://node.your-domain.com/grafana` _(optional if using "monitoring" profile)_
 - Legacy-API: `https://node.your-domain.com/api/core/v0/info` _(optional if using "history-legacy" profile)_
 - Chrysalis-API: `https://node.your-domain.com/api/core/v1/info` _(optional if using "history-chrysalis" profile)_
@@ -210,7 +209,7 @@ You can configure your wallet software to use `https://node.your-domain.com`
 After starting the node you will be able to access your services at the following endpoints:
 
 - API: `http://localhost/api/routes`
-- HORNET Dashboard: `http://localhost/dashboard`
+- IOTA-Core Dashboard: `http://localhost/dashboard`
 - Grafana: `http://localhost/grafana` _(optional if using "monitoring" profile)_
 - Legacy-API: `http://localhost/api/core/v0/info` _(optional if using "history-legacy" profile)_
 - Chrysalis-API: `http://localhost/api/core/v1/info` _(optional if using "history-chrysalis" profile)_
@@ -227,7 +226,7 @@ You can configure your wallet software to use `http://localhost`
 
 ### Displaying Log Output
 
-You can display the HORNET logs by running:
+You can display the IOTA-Core logs by running:
 
 ```sh
 docker compose logs -f hornet
@@ -238,7 +237,7 @@ docker compose logs -f hornet
 
 ### Stopping the node
 
-You can stop the HORNET node and INX extensions by running:
+You can stop the IOTA-Core node and INX extensions by running:
 
 ```sh
 docker compose down

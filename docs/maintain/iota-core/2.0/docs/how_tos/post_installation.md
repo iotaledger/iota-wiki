@@ -1,9 +1,9 @@
 ---
-description: Introducing the HORNET nodes configuration files and their settings.
-image: /img/logo/HORNET_logo.png
+description: Introducing the IOTA-core nodes configuration files and their settings.
+image: /img/icons/iota/iota_core.png
 tags:
   - IOTA Node
-  - HORNET Node
+  - IOTA-core Node
   - Configuration
   - REST API
   - Dashboard
@@ -12,7 +12,7 @@ tags:
 
 # Post-installation
 
-Once you have deployed HORNET, you can set all the parameters using configuration files.
+Once you have deployed the IOTA-core, you can set all the parameters using configuration files.
 
 ## Configuration Files
 
@@ -26,7 +26,7 @@ The most important configuration files are:
 There are default configuration files available that you can use:
 
 - `config_testnet.json` - Includes the default values required to join the Shimmer Testnet.
-- `config_defaults.json` - Includes all default parameters used by HORNET. You can use this file as a reference when customizing your `config.json`
+- `config_defaults.json` - Includes all default parameters used by the IOTA-core. You can use this file as a reference when customizing your `config.json`
 
 You can pick one of these files and use it as your `config.json` to join the configured network.
 
@@ -36,7 +36,7 @@ Please see the [`config.json`](../references/configuration.md) and [`peering.jso
 
 One of the tasks the the node is responsible for is exposing [API](../references/api_reference.md) to clients that would like to interact with the IOTA network, such as crypto wallets, exchanges, IoT devices, etc.
 
-By default, HORNET will expose the [Core REST API v2](../references/api_reference.md) on port `14265`.
+By default, the IOTA-core will expose the [Core REST API v2](../references/api_reference.md) on port `14265`.
 If you use the [recommended setup](using_docker.md) the API will be exposed on the default HTTPS port (`443`) and secured using an SSL certificate.
 
 Since offering the HTTP REST API to the public can consume your node's resources, there are options to restrict which routes can be called and other request limitations:
@@ -74,7 +74,7 @@ You can find all the HTTP REST API related options in the [`config.json` referen
 
 ## Update to 2.x.x
 
-You can update HORNET to the latest stable version with no breaking updates by running the following command:
+You can update the IOTA-core to the latest stable version with no breaking updates by running the following command:
 
 ```sh
 docker compose down && docker compose pull && docker compose up -d

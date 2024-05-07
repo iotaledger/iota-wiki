@@ -1,10 +1,10 @@
 ---
-description: HORNET is a powerful, easy to install node software written in Go. It provides the full node capabilities including full support of the latest network updates.
-image: /img/banner/banner_hornet.png
+description: The IOTA-Core is a powerful, easy to install node software written in Go. It provides the full node capabilities including full support of the latest network updates.
+image: /img/icons/iota/iota_core.png
 tags:
   - IOTA Node
-  - HORNET Node
-  - HORNET
+  - IOTA-core Node
+  - IOTA-core
   - IOTA
   - Shimmer
   - Node Software
@@ -12,11 +12,9 @@ tags:
   - explanation
 ---
 
-# Welcome to HORNET
+# Welcome to IOTA-Core
 
-![HORNET Node](/img/banner/banner_hornet.png)
-
-HORNET is a powerful, easy to install node software written in Go.
+The IOTA-Core is a powerful, easy to install node software written in Go.
 It provides the full node capabilities including full support of the latest network updates.
 
 By running your own node you have the following benefits:
@@ -26,4 +24,4 @@ By running your own node you have the following benefits:
 
 ## Source Code
 
-The source code of the project is available on [GitHub](https://github.com/iotaledger/hornet).
+The source code of the project is available on [GitHub](https://github.com/iotaledger/iota-core).
