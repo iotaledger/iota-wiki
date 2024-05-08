@@ -21,49 +21,199 @@ import LinuxCommands from '@site/docs/_admonitions/_linux-commands.md';
 
 # Validator Setup Guide
 
-Validators secure the network by issuing validation blocks and receive Mana as a reward. In order to become a validator, an accounts needs to be created that can issue blocks and the account needs to stake tokens. This guide explains how to create such an account and configure the validator plugin of the docker setup. This plugin will then attempt for the account to become a validator by issuing a candidacy announcement to the network and if selected into the committee, will start issuing validation blocks. Running a validator also means running a full node setup.
+Validators secure the network by issuing validation blocks and receive Mana as a reward. To become a validator, you need
+to create an account that can issue blocks, and the account needs to stake tokens. This guide explains how to create the
+account and configure the validator plugin of the docker setup.
+The validator plugin will then try to make the account a validator by issuing a candidacy announcement to the network.
+The validator plugin will start issuing validation blocks if selected for the committee.
 
-Throughout the guide, we will use the CLI wallet from the iota-sdk and the [node docker setup](./using_docker.md).
+:::info
 
-## Preliminaries
+Running a validator implies [running a full-node setup](using_docker.md).
 
-We use the following notation in this guide. If `Public Key` has a value of `0xff` then running the command `echo {Public Key}` means replacing the variable `{Public Key}` with its value, i.e. running the command `echo 0xff`.
+:::
 
-## Wallet setup
+Throughout the guide, we will use the CLI wallet from the iota-SDK and the [node docker setup](./using_docker.md).
 
-TODO: Link to CLI Wallet binaries once released, or keep the below manual instructions. (Those require Rust to be installed).
+:::tip notation
 
-1. `git clone -b 2.0 https://github.com/iotaledger/iota-sdk`
-2. `cd iota-sdk/cli`
-3. `cargo build --release`
-4. `cp ../target/release/wallet wallet`
-5. `./wallet init --node-url "https://api.iota2-testnet-domain"`. Alternatively, use the url of your own node.
-6. Select secret manager. Unless you have a ledger, select stronghold.
-7. Do you want to set the address of the new wallet? no.
-8. Select bip path: Select any bip path of your choice (e.g. IOTA is fine)
-9. Do you want to set an alias for the new wallet? yes.
-10. Enter a wallet alias of your choice.
+This guide uses the following notation. If `Public Key` has a value of `0xff`, then running the
+command `echo {Public Key}` means replacing the variable `{Public Key}` with its value, i.e., running the
+command `echo 0xff`.
 
-## Account Creation
+:::
 
-1. Run `implicit-account-creation-address` and copy the implicit-address.
-2. Enter the address at https://faucet.iota2-testnet-domain/ or run `faucet {implicit-address} --url https://faucet.iota2-testnet-domain/api/enqueue`
-3. Repeatedly run `sync` and `implicit-accounts` to see when you got the implicit account creation output.
-4. Repeatedly run `implicit-accounts` to view implicit accounts and wait until BIC changes from `None` to `Some(0)`, then copy the `Output Id`.
-5. Run `implicit-account-transition {Output Id}`
-6. Repeatedly run `sync` and `accounts` and make sure an account is displayed and it has Block Issuance Credit of `0`, which is the case if it displays `Some(0)` instead of `None`.
-7. Now you haven a block issuer account and can send transactions as you wish as long as you have enough Mana available.
+## Set Up the CLI Wallet
+
+You can download the CLI Wallet from the following link:
+TODO: Link to CLI Wallet binaries once released, or keep the below manual instructions. (Those require Rust to be
+installed).
+
+### Build From Source
+
+Please follow the instructions to build the CLI Wallet from source:
+
+#### 1. Clone the Repository
+
+You can clone the repository by running the following command:
+
+```bash
+git clone -b 2.0 https://github.com/iotaledger/iota-sdk
+```
+
+#### 2. Build
+
+After you have downloaded the source code, you can build it by changing the current directory to `iota-sdk/cli` and
+running the following command:
+
+```bash 
+cargo build --release
+```
+
+#### 3. (optional) Copy the Wallet
+
+For ease of access, you can copy the Wallet that you built into your current directory or even add it to your $PATH:
+
+```bash
+cp ../target/release/wallet wallet
+```
+
+#### 4. Connect to a Node
+
+You can use the following command to connect your wallet to a Testnet node — alternatively, your node’s URL:
+
+```bash
+./wallet init --node-url "https://api.iota2-testnet-domain"
+```
+
+#### 5. Configure Your Wallet
+
+Once you’ve connected your wallet to a node, you must answer the following setup questions:
+
+##### Select secret manager.
+
+Unless you have a ledger, select Stronghold.
+
+##### Do you want to set the address of the new wallet?
+
+No.
+
+##### Select bip path
+
+Select any bip path of your choice (e.g., IOTA is fine)
+
+##### Do you want to set an alias for the new wallet?
+
+Yes.
+
+Then, enter a wallet alias of your choice.
+
+## Create an Account
+
+### 1. Create an Implicit Account
+
+You can create an implicit account by running the following command:
+
+```
+./wallet implicit-account-creation-address
+``` 
+
+Please copy the implicit address returned by the command.
+
+### 2. Fund Your Account
+
+You can enter the address at the [Testnet Faucet](https://faucet.iota2-testnet-domain/) to fund your account or run the
+following command
+
+```bash
+./wallet faucet {implicit-address} --url https://faucet.iota2-testnet-domain/api/enqueue
+```
+
+### 3. Sync With the Node
+
+After creating and funding your implicit account, you should use the `sync` and `implicit-accounts` functionalities to
+retrieve the implicit account creation output.
+
+```bash 
+./wallet sync
+./wallet implicit-accounts
+```
+
+You should run this until the BIC changes from `None` to `Some(0)`, then copy the `Output Id`.
+
+### 4. Transition the Account
+
+You can transition your account by running the following command:
+
+```bash
+./wallt implicit-account-transition {Output Id}
+
+```
+
+### 5. Sync With the Node
+
+You can now `sync` with the node and run the `accounts` command to ensure an account is displayed with Block Issuance
+Credit of `0`, which is the case if it displays `Some(0)` instead of `None`.
+
+```bash
+./wallet sync
+./wallet accounts
+```
+
+You now have a block issuer account and can send transactions as you wish if you have enough Mana available.
 
 ## Adding a Block Issuer Key
 
-1. In the directory of the [node docker setup](./using_docker.md) file, run `docker compose run iota-core tools ed25519-key` to generate an Ed25519 keypair.
-2. Take a note of the `ed25519 public key` and `ed25519 private key` and add a `0x` at the beginning of the public key.
-3. Go back to the wallet.
-4. Repeatedly run `sync` and `accounts` and pick an account you want to use for the validator to issue validation blocks and copy its `Account ID` and its `Account Address`.
-5. Run `add-block-issuer-key {Account ID} {ed25519 public key}` (Note that the public key needs to have the `0x` prefix).
-6. Verify the key was successfully added by running `sync` and `accounts`, then copy the `Output ID` of the account and run `output {Output ID}`. In the shown output, within the `features` section, find the `block_issuer_keys` list. It should show two entries. It might look like this but with different values:
+### 1. Generate an Ed25519 Keypair
 
+In the directory of the [node docker setup](./using_docker.md) file, you can run the following command to generate an
+Ed25519 keypair:
+
+```bash
+docker compose run iota-core tools ed25519-key
 ```
+
+Please take note of the `ed25519 public key` and `ed25519 private key` and add a `0x` at the beginning of the public
+key.
+
+### 2. Select a Validator Account
+
+You can now return to the wallet and `sync` it. Afterward, you should run the `accounts` command to retrieve the list of
+available accounts and choose an account you want to use as a validator to issue validation block. Please take note of
+its `Account ID` and `Account Address`.
+
+```bash
+./wallet sync
+./wallet account
+```
+
+### 3. Add the Account as a Block Issuer
+
+You can add the account as a block issuer using the following command:
+
+:::note
+The public key needs to have the `0x` prefix.
+:::
+
+```bash
+./wallet add-block-issuer-key {Account ID} {ed25519 public key}
+```
+
+### 4. Verify
+
+You can verify you successfully added the key by running the `sync` and `accounts` commands. You should then copy
+the `Output ID` of the account and run the `output {Output ID}` command.
+
+```bash
+./wallet sync
+./wallet account
+./wallet output {Output ID}
+```
+
+You can find the `block_issuer_keys` list in the `features` section of the retrieved output. It should show two entries
+that look like these but with different values:
+
+```plaintext
 block_issuer_keys: BlockIssuerKeys(
     [
         0x16cbbea33ebcf2e17528737ee64b7b8290fe5c5b0d3c60a05a05bff3d2517b10,
@@ -71,33 +221,100 @@ block_issuer_keys: BlockIssuerKeys(
     ],
 ```
 
-## Begin Staking
+## Start Staking
 
-1. Run `sync` and `accounts` again and take a note of the `Account ID` of the account you want to use for validating the network.
-2. Run `output {Output ID}` and take a note of the `amount`. This is the highest possible amount you can stake. Decide on how much you want to stake, which can be anything between `1` and the displayed `amount` and note it as `Stake Amount`. Note that the higher your `Stake Amount`, the more likely it is that you will be selected into the validator committee, so setting `Stake Amount = amount` is preferred.
-3. Decide on a `Fixed Cost`. This value is not particularly important for the testnet. A recommended value is anywhere between 1 and 10.
-4. Run `begin-staking {Account ID} {Stake Amount} {Fixed Cost}`.
-5. Verify you successfully started staking by running `sync` and `accounts`, then copy the `Output ID` of the account and run `output {Output ID}`. In the shown output, within the `features` section find the `StakingFeature`. It should show the `Stake Amount` and `Fixed Cost` you just entered. It should look like this, but again, with the values you entered:
+### 1. Sync With the Node
+
+To start staking, you first need to run the `sync` and `accounts` commands and take note of the `Account ID` of the
+account you want to use as a validator.
+
+```bash
+./wallet sync
+./wallet account
+```
+
+### 2. Decide Your Stake Amount
+
+Next, you should run the `output {Output ID}` command and take note of the `amount`. This is the highest possible amount
+you can stake. Decide how much you want to stake. The `Stake Amount` can be anything between `1` and the
+displayed `amount`.
+
+```bash
+./wallet output {Output ID}
+```
+
+:::tip
+
+The higher your `Stake Amount`, the more likely you will be selected for the validator committee, so
+setting `Stake Amount = amount` is preferred.
 
 ```
+
+### 3. Decide on a `Fixed Cost
+
+This value is not particularly important for the Testnet. A recommended value is anywhere between 1 and 10.
+
+### 4. Begin Staking
+
+You can use the following command to start staking:
+
+```
+
+./wallet begin-staking {Account ID} {Stake Amount} {Fixed Cost}
+
+```
+
+You can verify you successfully started staking by running the `sync` and `accounts` commands, copying the `Output ID` of the account, and then running `output {Output ID}`. You should be able to find the `StakingFeature` in within the `features` section. It should show the `Stake Amount` and `Fixed Cost` you just entered. It should look like this, but with the values you entered:
+
+```
+
 StakingFeature {
-    staked_amount: 1000000000,
-    fixed_cost: 1,
-    ...
+staked_amount: 1000000000,
+fixed_cost: 1,
+...
+
 ```
 
-The account is now registered as a validator. Now we need to setup the infrastructure to actually issue validation blocks to secure the network.
+The account is now registered as a validator. Next, you must set up the infrastructure to issue validation blocks to secure the network.
 
 ## Prepare the Validator Plugin
 
-1. Running a validator requires that you run a full iota-core node as well. Follow the steps outlined [here](./using_docker.md) to setup the node. Follow the next steps either after you've successfully setup the node or while setting it up, at your choice.
-2. The `.env` file needs to be modified in the following ways.
-3. Uncomment the `COMPOSE_PROFILES` line below the validator service.
-4. Set the `Account Address` from earlier as the `VALIDATOR_ACCOUNT_ADDR`.
-5. Set the `ed25519 private key` from earlier as the `VALIDATOR_PRV_KEY` (**with no** 0x prefix).
-6. In order to issue a candidacy announcement to the network the used account needs Mana. It must be _allotted_ to the account which can be done via the `allot-mana` command in the CLI wallet or via the developer tools in Firefly.
-6. When you start the docker containers, an `inx-validator` container should be started. Check the logs to see if everything is working with: `docker logs -f inx-validator`.
+Running a validator requires running a full IOTA-core node. You can follow the steps outlined in the [how to install using Docker guide](./using_docker.md) to setup the node. 
 
-If the logs don't show any errors, you should be good to go. If your stake is high enough, the network will select you as a validator. You can check the stake requirements as follows: The total pool stake, which consists of your `Stake Amount` and all the stake that is delegated to your account, must be greater than the _Pool Stake_ of the last entry in this list: https://explorer.iota2-testnet-domain/alphanet/validators/. Note that this list might change every epoch so the stake requirements might also change.
+Follow the next steps after successfully setting up the node or while setting it up at your choice.
 
-Check your _Total pool stake_ by taking the `Account Address` and open this URL: `https://explorer.iota2-testnet-domain/alphanet/addr/{Account Address}` and open the _Validation_ tab.
+### 1. Update the `.env` File
+
+You must modify the `.env` file in the following ways:
+
+1. Uncomment the `COMPOSE_PROFILES` line below the validator service.
+2. Set the `Account Address` from earlier as the `VALIDATOR_ACCOUNT_ADDR`.
+3. Set the `ed25519 private key` from earlier as the `VALIDATOR_PRV_KEY` (**with no** 0x prefix).
+
+### 2. Allot Mana to the Account
+
+The selected account needs Mana to issue a candidacy announcement to the network. It must be _allotted_ to the account. You can do this using the  `allot-mana` command in the CLI wallet or the developer tools in Firefly.
+
+```bash
+./wallet allot-mana
+```
+
+### 3. Verify the `inx-validator`
+
+When you start the docker containers, an `inx-validator` container should also start. You can check the logs to see if
+everything is working with the following command:
+
+```bash
+docker logs -f inx-validator
+```
+
+If the logs don't show any errors, you should be good to go. The network will select you as a validator if your stake is
+high enough. You can check the stake requirements as follows: The total pool stake, which consists of
+your `Stake Amount` and all the stake that is delegated to your account, must be greater than the _Pool Stake_ of the
+last entry in the [validator list]( https://explorer.iota2-testnet-domain/alphanet/validators/). Note that this list
+might change every epoch, so the stake requirements might also change.
+
+You can check your _Total pool stake_ by taking the `Account Address`, opening the following URL, and checking
+the `Validation` tab:
+
+`https://explorer.iota2-testnet-domain/alphanet/addr/{Account Address}` 

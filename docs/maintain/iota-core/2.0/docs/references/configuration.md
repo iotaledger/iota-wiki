@@ -10,11 +10,9 @@ keywords:
   - Config
   - reference
 ---
-
-
 # Configuration
 
-IOTA core node uses a JSON standard format as a config file. If you are unsure about JSON syntax, you can find more information in the [official JSON specs](https://www.json.org).
+The IOTA core node uses a JSON standard format as a config file. If you are unsure about JSON syntax, you can find more information in the [official JSON specs](https://www.json.org).
 
 You can change the path of the config file by using the `-c` or `--config` argument while executing `iota-core` executable.
 

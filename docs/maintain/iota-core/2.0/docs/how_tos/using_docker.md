@@ -19,8 +19,7 @@ import LinuxCommands from '@site/docs/_admonitions/_linux-commands.md';
 
 # Install the IOTA-core using Docker
 
-
-This guide represents the recommended setup to run an IOTA-core node.
+This article guides the recommended setup to run an IOTA-core node.
 It includes everything required to set up a public node accessible by wallets and applications:
 
 - [IOTA-core](https://github.com/iotaledger/iota-core)
@@ -36,7 +35,7 @@ It includes everything required to set up a public node accessible by wallets an
 1. A recent release of Docker enterprise or community edition. Avoid using the Docker version shipped with your OS since these are mostly out of date. You can find installation instructions in the [official Docker documentation](https://docs.docker.com/engine/install/).
 2. [Docker Compose CLI plugin](https://docs.docker.com/compose/install/linux/).
 3. A registered domain name pointing to the public IP address of your server. _(optional if not using HTTPS)_
-4. Opening up the following ports in your servers firewall:
+4. Opening up the following ports in your server's firewall:
 
 - `15600 TCP` - Used for the IOTA-Core gossip.
 - `14626 UDP` - Used for the IOTA-Core autopeering.
@@ -69,7 +68,7 @@ mkdir node-docker-setup && cd node-docker-setup && curl -L https://node-docker-s
 
 ### 1. Generate dashboard credentials
 
-To access your IOTA-Core dashboard, a set of credentials need to be configured.
+To access your IOTA-Core dashboard, you need to configure credentials.
 Run the following command to generate a password hash and salt for the dashboard:
 
 ```sh
@@ -94,7 +93,7 @@ nano .env
 ```
 
 Follow the instructions provided in the file.  
-With `nano` you can save your changes and exit the editor using `CTRL+O` and `CTRL+X`.
+With `nano`, you can save your changes and exit the editor using `CTRL+O` and `CTRL+X`.
 
 :::note
 
@@ -118,7 +117,7 @@ Add your IOTA-Core neighbor addresses to the `peering.json` file.
 
 :::note
 
-This step is recommended, but optional if you are using autopeering.
+This step is recommended but optional if you are using autopeering.
 See [peering](../references/peering.md) for more information.
 
 :::
@@ -127,7 +126,7 @@ See [peering](../references/peering.md) for more information.
 
 All files used by the IOTA-Core, the INX extensions, Traefik & co will be stored in a directory called `data`.
 Docker image runs under user with user id `65532` and group id `65532`, so this directory needs to have the correct permissions to be accessed by the containers.
-To create this directory with correct permissions run the contained script:
+To create this directory with correct permissions, run the contained script:
 
 ```sh
 ./prepare_docker.sh
@@ -147,7 +146,7 @@ docker compose up -d
 
 #### HTTPS
 
-After starting the node you will be able to access your services at the following endpoints:
+After starting the node, you will be able to access your services at the following endpoints:
 
 - API: `https://node.your-domain.com/api/routes`
 - IOTA-Core Dashboard: `https://node.your-domain.com/dashboard`
@@ -155,9 +154,9 @@ After starting the node you will be able to access your services at the followin
 
 :::warning
 
-After starting your node for the first time, please change the default grafana credentials
-User: `admin`
-Password: `admin`
+After starting your node for the first time, please change the default grafana credentials.
+**User**: `admin`
+**Password**: `admin`
 
 :::
 
@@ -165,7 +164,7 @@ You can configure your wallet software to use `https://node.your-domain.com`.
 
 #### HTTP
 
-After starting the node you will be able to access your services at the following endpoints:
+After starting the node, you will be able to access your services at the following endpoints:
 
 - API: `http://localhost/api/routes`
 - IOTA-Core Dashboard: `http://localhost/dashboard`
@@ -173,7 +172,7 @@ After starting the node you will be able to access your services at the followin
 
 :::note
 
-If you changed the default `HTTP_PORT` value, you will need to add the port to the urls.
+If you changed the default `HTTP_PORT` value, you must add the port to the URLs.
 
 :::
 
@@ -200,13 +199,13 @@ docker compose down
 
 ### Tools
 
-To access the tools provided inside IOTA-Core you can use:
+To access the IOTA-Core tools, you can use the following command:
 
 ```sh
 docker compose run iota-core tool <tool-name>
 ```
 
-To see the list of tools included run:
+To see the list of tools included run the following:
 
 ```sh
 docker compose run iota-core tool -h
@@ -214,19 +213,19 @@ docker compose run iota-core tool -h
 
 ## JWT Auth
 
-To generate a JWT token to be used to access protected routes you can run:
+To generate a JWT token to be used to access protected routes, you can run the following:
 
 ```sh
 docker compose run iota-core tool jwt-api --databasePath data/p2pstore
 ```
 
-- If you changed the `restAPI.jwtAuth.salt` value in the `config.json`, then you need to pass that value as a parameter as `--salt <restAPI.jwtAuth.salt value from your config.json>`
+- If you changed the `restAPI.jwtAuth.salt` value in the `config.json`, then you need to pass that value as a parameter as `--salt <restAPI.jwtAuth.salt value from your config.json>`.
 
 ## INX
 
 This setup includes the INX extensions listed at the beginning of this guide.
-If you want to disable certain extensions you can comment out the different services in the `docker-compose.yml` file and restart the node.
+If you want to disable certain extensions, you can comment out the different services in the `docker-compose.yml` file and restart the node.
 
 # More Information
 
-For more information look at the [Github repository](https://github.com/iotaledger/node-docker-setup)
+You can find more information in the [GitHub repository](https://github.com/iotaledger/node-docker-setup)

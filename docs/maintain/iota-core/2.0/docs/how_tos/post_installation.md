@@ -25,7 +25,7 @@ The most important configuration files are:
 
 There are default configuration files available that you can use:
 
-- `config_testnet.json` - Includes the default values required to join the Shimmer Testnet.
+- `config_testnet.json` - Includes the default values required to join the Testnet.
 - `config_defaults.json` - Includes all default parameters used by the IOTA-core. You can use this file as a reference when customizing your `config.json`
 
 You can pick one of these files and use it as your `config.json` to join the configured network.
@@ -52,7 +52,7 @@ Since offering the HTTP REST API to the public can consume your node's resources
 To generate a JWT-token to be used with the protected routes you can run:
 
 ```sh
-./hornet tool jwt-api --databasePath <path to your p2pstore> --salt <restAPI.jwtAuth.salt value from your config.json>
+./iota-core tool jwt-api --databasePath <path to your p2pstore> --salt <restAPI.jwtAuth.salt value from your config.json>
 ```
 
 If you are running our [recommended setup](using_docker.md) then see [here](using_docker.md#tools).
@@ -72,7 +72,7 @@ When using our [recommended setup](using_docker.md) this is done for you automat
 
 You can find all the HTTP REST API related options in the [`config.json` reference](../references/configuration.md#restapi)
 
-## Update to 2.x.x
+## Update 
 
 You can update the IOTA-core to the latest stable version with no breaking updates by running the following command:
 

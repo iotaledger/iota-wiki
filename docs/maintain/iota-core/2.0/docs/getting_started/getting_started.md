@@ -14,27 +14,20 @@ tags:
 
 # Getting Started
 
-
-Running a node is an efficient way to use IOTA or Shimmer. By doing so, you have direct access to the Tangle instead of having to
-connect to and trust someone else's node. Additionally, you help the network to become more distributed and resilient.
-
-The node software is the backbone of the network. For an overview of tasks a node is responsible for, please
-see our [Node 101](/develop/nodes/explanations/nodes_101/) section.
-
-To make sure that your device meets the minimum security requirements for running a node, please
-see our [Security 101](/develop/nodes/explanations/security_101/) section.
+Running a node is an efficient way to use IOTA. By doing so, you have direct access to the Tangle instead of connecting
+to and trusting someone else's node. Additionally, you help the network to become more distributed and resilient.
 
 ## Recommended Requirements
 
-To handle a potential high rate of blocks per second, nodes need enough computational power to run reliably, and
-should have the minimum specs:
+To handle a potentially high rate of blocks per second, nodes need enough computational power to run reliably and
+should have the following minimum specs:
 
 - 4 cores or 4 vCPU.
 - 8 GB RAM.
 - SSD storage.
 - A public IP address.
 
-The amount of storage you need will depend on whether and how often you plan on _pruning_ old data from your local
+The amount of storage you will need will depend on whether and how often you plan on _pruning_ old data from your local
 database.
 
 The IOTA-Core exposes different functionality on different ports:
@@ -43,14 +36,15 @@ The IOTA-Core exposes different functionality on different ports:
 - `14626 UDP` - Autopeering port (optional).
 - `14265 TCP` - REST HTTP API port (optional).
 
-These ports are important for flawless node operation. The REST HTTP API port is optional and is only needed if
-you want to offer access to your node's API. All ports can be customized inside
+These ports are essential for flawless node operation. The REST HTTP API port is optional and is only needed if
+you want to offer access to your node's API. You can customize all ports using
 the [`config.json`](../how_tos/post_installation.md) file.
 
 ## Operating System
 
 The IOTA-Core is written in Go and can be deployed on all major platforms.
-The [recommended setup](../how_tos/using_docker.md) uses Docker to run the IOTA-Core together with some [INX](../inx-plugins) extensions secured behind a [Traefik](https://traefik.io) SSL reverse proxy.
+The [recommended setup](../how_tos/using_docker.md) uses Docker to run the IOTA-Core together with some INX extensions
+secured behind a [Traefik](https://traefik.io) SSL reverse proxy.
 
 ## Configuration
 

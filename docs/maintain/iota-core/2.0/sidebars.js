@@ -13,7 +13,7 @@ module.exports = {
   docs: [
     {
       type: 'category',
-      label: 'Hornet',
+      label: 'IOTA-core',
       collapsed: false,
       items: [
         {
@@ -31,7 +31,7 @@ module.exports = {
             {
               type: 'doc',
               id: 'how_tos/using_docker',
-              label: 'Install HORNET using Docker',
+              label: 'Install using Docker',
             },
             {
               type: 'doc',
