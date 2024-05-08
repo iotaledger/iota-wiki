@@ -119,8 +119,8 @@ module.exports = {
               id: 'oracles',
             },
             {
-              type: 'doc',
               label: 'IOTA Safe Wallet',
+              type: 'doc',
               id: 'safe',
             },
             {
