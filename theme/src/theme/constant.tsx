@@ -2,11 +2,19 @@ export const Networks = {
   iota: {
     baseToken: 'IOTA Token',
     protocol: 'Stardust',
-    httpRestApi: 'https://api.stardust-mainnet.iotaledger.net',
-    eventApi: 'wss://api.stardust-mainnet.iotaledger.net:443 (MQTT 3.1, /mqtt)',
-    permaNodeApi: 'https://chronicle.stardust-mainnet.iotaledger.net',
-    explorer: 'https://explorer.iota.org/mainnet',
+    httpRestApi: 'https://api.nova-testnet.iotaledger.net/',
+    eventApi: 'wss://api.nova-testnet.iotaledger.net:443 (MQTT 3.1, /mqtt)',
+    permaNodeApi: 'https://api.nova-testnet.iotaledger.net/',
+    explorer: 'https://explorer.iota.org/iota-testnet',
   },
+  iota_2_testnet: {
+    baseToken: 'Testnet Token (no value)',
+    protocol: 'IOTA 2.0',
+    httpRestApi: 'https://api.nova-testnet.iotaledger.net/',
+    eventApi: 'wss://api.nova-testnet.iotaledger.net:443 (MQTT 3.1, /mqtt)',
+    permaNodeApi: 'https://api.nova-testnet.iotaledger.net/',
+    explorer: 'https://explorer.iota.org/iota-testnet',
+    faucet: 'https://faucet.nova-testnet.iotaledger.net',},
   iota_testnet: {
     baseToken: 'Testnet Token (no value)',
     protocol: 'Stardust',
