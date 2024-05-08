@@ -292,7 +292,7 @@ You must modify the `.env` file in the following ways:
 
 ### 2. Allot Mana to the Account
 
-The selected account needs Mana to issue a candidacy announcement to the network. It must be _allotted_ to the account. You can do this using the  `allot-mana` command in the CLI wallet or the developer tools in Firefly.
+The selected account needs Mana to issue a candidacy announcement to the network. It must be _allotted_ to the account. You can do this using the `allot-mana` command in the CLI wallet or the developer tools in Firefly.
 
 ```bash
 ./wallet allot-mana
