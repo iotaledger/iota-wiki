@@ -147,7 +147,6 @@ You can transition your account by running the following command:
 
 ```bash
 ./wallt implicit-account-transition {Output Id}
-
 ```
 
 ### 5. Sync With the Node
@@ -166,7 +165,7 @@ You now have a block issuer account and can send transactions as you wish if you
 
 ### 1. Generate an Ed25519 Keypair
 
-In the directory of the [node docker setup](./using_docker.md) file, you can run the following command to generate an
+In the directory of the [node docker setup](./using_docker.md), you can run the following command to generate an
 Ed25519 keypair:
 
 ```bash
@@ -250,7 +249,7 @@ setting `Stake Amount = amount` is preferred.
 
 ```
 
-### 3. Decide on a `Fixed Cost
+### 3. Decide on a `Fixed Cost`
 
 This value is not particularly important for the Testnet. A recommended value is anywhere between 1 and 10.
 
@@ -264,7 +263,7 @@ You can use the following command to start staking:
 
 ```
 
-You can verify you successfully started staking by running the `sync` and `accounts` commands, copying the `Output ID` of the account, and then running `output {Output ID}`. You should be able to find the `StakingFeature` in within the `features` section. It should show the `Stake Amount` and `Fixed Cost` you just entered. It should look like this, but with the values you entered:
+You can verify you successfully started staking by running the `sync` and `accounts` commands, copying the `Output ID` of the account, and then running `output {Output ID}`. You should be able to find the `StakingFeature`  within the `features` section. It should show the `Stake Amount` and `Fixed Cost` you just entered. It should look like this, but with the values you entered:
 
 ```
 
