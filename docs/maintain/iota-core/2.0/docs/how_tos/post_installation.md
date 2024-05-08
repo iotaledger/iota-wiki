@@ -30,7 +30,7 @@ There are default configuration files available that you can use:
 
 You can pick one of these files and use it as your `config.json` to join the configured network.
 
-Please see the [`config.json`](../references/configuration.md) and [`peering.json`](../references/peering.md) articles for more information about the contents of the configuration files.
+Please see the [`config.json`](../references/configuration.md) and `peering.json` articles for more information about the contents of the configuration files.
 
 ## Configuring HTTP REST API
 
