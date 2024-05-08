@@ -34,7 +34,7 @@ Please see the [`config.json`](../references/configuration.md) and `peering.json
 
 ## Configuring HTTP REST API
 
-One of the tasks the the node is responsible for is exposing [API](../references/api_reference.md) to clients that would like to interact with the IOTA network, such as crypto wallets, exchanges, IoT devices, etc.
+One of the tasks the node is responsible for is exposing [API](../references/api_reference.md) to clients that would like to interact with the IOTA network, such as crypto wallets, exchanges, IoT devices, etc.
 
 By default, the IOTA-core will expose the [Core REST API v2](../references/api_reference.md) on port `14265`.
 If you use the [recommended setup](using_docker.md) the API will be exposed on the default HTTPS port (`443`) and secured using an SSL certificate.
