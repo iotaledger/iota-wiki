@@ -45,7 +45,7 @@ export const Networks = {
       },
       rpcUrls: [
         'https://json-rpc.evm.testnet.iotaledger.net',
-        'wss://ws.json-rpc.evm.testnet.iotaledger.net'
+        'wss://ws.json-rpc.evm.testnet.iotaledger.net',
       ],
       blockExplorerUrls: ['https://explorer.evm.testnet.iotaledger.net'],
     },
